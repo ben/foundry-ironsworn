@@ -19,7 +19,7 @@ export class SimpleItemSheet extends ItemSheet {
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
 			classes: ["worldbuilding", "sheet", "item"],
-			template: "public/systems/worldbuilding/templates/item-sheet.html",
+			template: "systems/worldbuilding/templates/item-sheet.html",
 			width: 520,
 			height: 480,
 		});

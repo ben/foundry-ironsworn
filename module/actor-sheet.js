@@ -21,7 +21,7 @@ export class SimpleActorSheet extends ActorSheet {
 	static get defaultOptions() {
 	  return mergeObject(super.defaultOptions, {
   	  classes: ["worldbuilding", "sheet", "actor"],
-  	  template: "public/systems/worldbuilding/templates/actor-sheet.html",
+  	  template: "systems/worldbuilding/templates/actor-sheet.html",
       width: 600,
       height: 600
     });
