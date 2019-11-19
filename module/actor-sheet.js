@@ -118,12 +118,12 @@ export class SimpleActorSheet extends ActorSheet {
 
     // Handle the free-form attributes list
     const formAttrs = expandObject(formData).data.attributes || {};
-    const attributes = Object.fromEntries(Object.entries(formAttrs).map(attr => {
-      let [k, v] = attr;
-      k = v["key"].trim();
+    const attributes = Object.values(formAttrs).reduce((obj, v) => {
+      let k = v["key"].trim();
       delete v["key"];
-      return [k, v];
-    }));
+      obj[k] = v;
+      return obj;
+    }, {});
     
     // Remove attributes which are no longer used
     for ( let k of Object.keys(this.object.data.data.attributes) ) {
@@ -131,9 +131,10 @@ export class SimpleActorSheet extends ActorSheet {
     }
 
     // Re-combine formData
-    formData = Object.fromEntries(Object.entries(formData).filter(a => !a[0].startsWith("data.attributes")));
-    formData["_id"] = this.object._id;
-    formData["data.attributes"] = attributes;
+    formData = Object.entries(formData).filter(e => !e[0].startsWith("data.attributes")).reduce((obj, e) => {
+      obj[e[0]] = e[1];
+      return obj;
+    }, {_id: this.object._id, "data.attributes": attributes});
     
     // Update the Actor
     return this.object.update(formData);
