@@ -120,6 +120,7 @@ export class SimpleActorSheet extends ActorSheet {
     const formAttrs = expandObject(formData).data.attributes || {};
     const attributes = Object.values(formAttrs).reduce((obj, v) => {
       let k = v["key"].trim();
+      if ( /[\s\.]/.test(k) )  return ui.notifications.error("Attribute keys may not contain spaces or periods");
       delete v["key"];
       obj[k] = v;
       return obj;
