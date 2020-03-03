@@ -19,7 +19,10 @@ Hooks.once("init", async function() {
 	 * Set an initiative formula for the system
 	 * @type {String}
 	 */
-	CONFIG.initiative.formula = "1d20";
+	CONFIG.Combat.initiative = {
+	  formula: "1d20",
+    decimals: 2
+  };
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
