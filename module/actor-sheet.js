@@ -33,14 +33,6 @@ export class SimpleActorSheet extends ActorSheet {
 	activateListeners(html) {
     super.activateListeners(html);
 
-    // Activate tabs
-    let tabs = html.find('.tabs');
-    let initial = this._sheetTab;
-    new Tabs(tabs, {
-      initial: initial,
-      callback: clicked => this._sheetTab = clicked.data("tab")
-    });
-
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
@@ -60,6 +52,17 @@ export class SimpleActorSheet extends ActorSheet {
 
     // Add or Remove Attribute
     html.find(".attributes").on("click", ".attribute-control", this._onClickAttributeControl.bind(this));
+  }
+
+  /* -------------------------------------------- */
+
+  /** @override */
+  setPosition(options={}) {
+    const position = super.setPosition(options);
+    const sheetBody = this.element.find(".sheet-body");
+    const bodyHeight = position.height - 192;
+    sheetBody.css("height", bodyHeight);
+    return position;
   }
 
   /* -------------------------------------------- */

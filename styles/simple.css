@@ -1,144 +1,139 @@
-.worldbuilding.sheet .window-content {
-    padding: 5px;
-    overflow-y: hidden;
+.worldbuilding {
+  /* Sheet Tabs */
+  /* Items List */
+  /* Attributes */
 }
-
-/* Sheet Header */
-.worldbuilding.sheet .sheet-header {
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex: 0 0 100px;
-    margin-bottom: 10px;
+.worldbuilding .window-content {
+  height: 100%;
+  padding: 5px;
+  overflow-y: hidden;
 }
-
-.worldbuilding.sheet .profile-img {
-    flex: 0 0 100px;
-    height: 100px;
-    margin-right: 10px;
+.worldbuilding .sheet-header {
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 10px;
 }
-
-.worldbuilding.sheet .header-fields {
-    flex: 1;
-    height: 100px;
+.worldbuilding .sheet-header .profile-img {
+  flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
 }
-
-.worldbuilding.sheet .charname {
-    height: 60px;
-    padding: 5px;
-    margin: 0;
-    border-bottom: 0;
+.worldbuilding .sheet-header .header-fields {
+  flex: 1;
+  height: 100px;
 }
-.worldbuilding.sheet .charname input {
-    width: 100%;
-    height: 100%;
-    margin: 0;
+.worldbuilding .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
 }
-
-.worldbuilding.sheet .resource {
-    height: 40px;
-    width: 50%;
-    padding: 3px 10px;
-    float: left;
+.worldbuilding .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
-.worldbuilding.sheet .resource input {
-    width: 100px;
-    height: 28px;
+.worldbuilding .resource {
+  width: 50%;
+  height: 40px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
 }
-
-/* Navigation Tabs */
-.worldbuilding.sheet .tabs {
-    flex: 0 0 40px;
-    border-top: 1px solid #AAA;
-    border-bottom: 1px solid #AAA;
+.worldbuilding .resource input {
+  width: 100px;
+  height: 28px;
 }
-
-.worldbuilding.sheet .tabs .item {
-    line-height: 40px;
-    font-weight: bold;
+.worldbuilding .tabs {
+  height: 40px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
 }
-
-.worldbuilding.sheet .tabs .item.active {
-    text-decoration: underline;
-    text-shadow: none;
+.worldbuilding .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
 }
-
-/* Content Tabs */
-.worldbuilding.sheet .sheet-body {
-    height: calc(100% - 160px);
+.worldbuilding .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
 }
-.worldbuilding.sheet .sheet-body .tab {
-    height: 100%;
+.worldbuilding .sheet-body {
+  overflow: hidden;
 }
-.worldbuilding.sheet .sheet-body .editor {
-    width: 100%;
-    height: 100%;
+.worldbuilding .sheet-body .tab {
+  height: 100%;
+  overflow-y: auto;
 }
-
-
-/* Items */
-.worldbuilding.sheet .items-list {
-    list-style: none;
-    margin: 7px 0;
-    padding: 0;
-    overflow-y: auto;
+.worldbuilding .editor,
+.worldbuilding .editor-content {
+  height: 100%;
 }
-.worldbuilding.sheet .items-list .item {
-    height: 30px;
-    line-height: 24px;
-    padding: 3px 0;
-    border-bottom: 1px solid #BBB;
+.worldbuilding .items-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  overflow-y: auto;
 }
-.worldbuilding.sheet .items-list .item img {
-    flex: 0 0 24px;
-    margin-right: 5px;
+.worldbuilding .items-list .item {
+  height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  border-bottom: 1px solid #BBB;
 }
-.worldbuilding.sheet .items-list .item-name {
-    margin: 0;
+.worldbuilding .items-list .item img {
+  flex: 0 0 24px;
+  margin-right: 5px;
 }
-.worldbuilding.sheet .items-list .item-controls {
-    flex: 0 0 36px;
+.worldbuilding .items-list .item-name {
+  margin: 0;
 }
-
-/* Attributes */
-.worldbuilding.sheet .attributes-header { 
-    padding: 5px;
-    margin: 5px 0;
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid #AAA;
-    border-radius: 2px;
-    text-align: center;
-    font-weight: bold;
+.worldbuilding .items-list .item-controls {
+  flex: 0 0 36px;
 }
-.worldbuilding.sheet .attribute-label { 
-    flex: 1.5;
+.worldbuilding .attributes-header {
+  padding: 5px;
+  margin: 5px 0;
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #AAA;
+  border-radius: 2px;
+  text-align: center;
+  font-weight: bold;
 }
-.worldbuilding.sheet .attribute-control { 
-    flex: 0 0 20px;
+.worldbuilding .attributes-header .attribute-label {
+  flex: 1.5;
 }
-
-.worldbuilding.sheet .attributes-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.worldbuilding .attributes-header .attribute-control {
+  flex: 0 0 20px;
 }
-
-.worldbuilding.sheet .attributes-list li > * {
-    margin: 0 3px;
-    height: 28px;
-    line-height: 24px;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    border-bottom: 1px solid #AAA;
+.worldbuilding .attributes-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-
-.worldbuilding.sheet .attribute-value.checkbox {
-    text-align: center;
+.worldbuilding .attributes-list li > * {
+  margin: 0 3px;
+  height: 28px;
+  line-height: 24px;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #AAA;
 }
-
-.worldbuilding.sheet .attributes-list li a.attribute-control {
-    border: none;
+.worldbuilding .attributes-list a.attribute-control {
+  flex: 0 0 20px;
+  text-align: center;
+  line-height: 28px;
+  border: none;
+}
+.worldbuilding.sheet.actor {
+  min-width: 560px;
+  min-height: 420px;
+}
+.worldbuilding.sheet.item {
+  min-width: 460px;
+  min-height: 400px;
 }
