@@ -17,6 +17,6 @@
   "secondaryTokenAttribute": "power",
   "url": "https://gitlab.com/foundrynet/worldbuilding/",
   "manifest": "https://gitlab.com/foundrynet/worldbuilding/raw/master/system.json",
-  "download": "https://gitlab.com/foundrynet/worldbuilding/-/archive/release-035/worldbuilding-release-035.zip",
+  "download": "https://gitlab.com/foundrynet/worldbuilding/-/archive/release-036/worldbuilding-release-036.zip",
   "license": "LICENSE.txt"
 }
