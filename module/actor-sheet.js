@@ -11,7 +11,8 @@ export class SimpleActorSheet extends ActorSheet {
   	  template: "systems/worldbuilding/templates/actor-sheet.html",
       width: 600,
       height: 600,
-      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}]
+      tabs: [{navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description"}],
+      dragDrop: [{dragSelector: ".item-list .item", dropSelector: null}]
     });
   }
 
