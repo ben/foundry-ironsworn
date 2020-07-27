@@ -1,14 +1,18 @@
 {
-  "name": "worldbuilding",
-  "title": "Simple World-Building",
-  "description": "A minimalist game system with very simple Actor and Item models to support free-form system agnostic gameplay.",
-  "version": 0.36,
+  "name": "foundry-ironsworn",
+  "title": "Ironsworn",
+  "description": "An implementation of the Ironsworn system. Based entirely on the Simple Worldbuilding System for Foundry designed by Atropos.",
+  "version": 0.1,
   "minimumCoreVersion": "0.5.6",
   "compatibleCoreVersion": "0.5.7",
   "templateVersion": 2,
   "author": "Atropos",
-  "esmodules": ["module/simple.js"],
-  "styles": ["styles/simple.css"],
+  "esmodules": [
+    "module/simple.js"
+  ],
+  "styles": [
+    "styles/simple.css"
+  ],
   "packs": [],
   "languages": [
     {
@@ -21,8 +25,8 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
-  "url": "https://gitlab.com/foundrynet/worldbuilding/",
-  "manifest": "https://gitlab.com/foundrynet/worldbuilding/raw/master/system.json",
-  "download": "https://gitlab.com/foundrynet/worldbuilding/-/archive/release-036/worldbuilding-release-036.zip",
+  "url": "https://github.com/ben/foundry-ironsworn",
+  "manifest": "https://github.com/ben/foundry-ironsworn/blob/master/system.json",
+  "download": "",
   "license": "LICENSE.txt"
 }
