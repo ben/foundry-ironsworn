@@ -1,0 +1,9 @@
+{
+  "SETTINGS.SimpleMacroShorthandN": "Shortened Macro Syntax",
+  "SETTINGS.SimpleMacroShorthandL": "Enable a shortened macro syntax which allows referencing attributes directly, for example @str instead of @attributes.str.value. Disable this setting if you need the ability to reference the full attribute model, for example @attributes.str.label.",
+  "SETTINGS.SimpleInitFormulaN": "Initiative Formula",
+  "SETTINGS.SimpleInitFormulaL": "Enter an initiative formula, such as d20+@dex",
+
+  "SIMPLE.NotifyInitFormulaUpdated": "Initiative formula was updated to:",
+  "SIMPLE.NotifyInitFormulaInvalid": "Initiative formula was invalid:"
+}

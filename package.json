@@ -1,0 +1,21 @@
+{
+  "name": "worldbuilding",
+  "version": "1.0.0",
+  "description": "CSS compiler for the Worldbuilding system",
+  "scripts": {
+    "css": "gulp css",
+    "watch": "gulp",
+    "gulp": "gulp"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "author": "",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-less": "^4.0.1"
+  },
+  "devDependencies": {}
+}
