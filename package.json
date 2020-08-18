@@ -1,7 +1,7 @@
 {
-  "name": "worldbuilding",
+  "name": "ironsworn-css",
   "version": "1.0.0",
-  "description": "CSS compiler for the Worldbuilding system",
+  "description": "CSS compiler for the Ironsworn system",
   "scripts": {
     "css": "gulp css",
     "watch": "gulp",

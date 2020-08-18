@@ -1,3 +1,4 @@
-# Simple Worldbuilding System
+# Ironsworn for Foundry VTT
 
-A simple game system for Foundry VTT which allows for flexible definition of Actors and Items to assist with worldbuilding or for running games which do not have a more complete system implementation available.
+This is an attempt to implement the Ironsworn rule set for Foundry VTT.
+It's based on the [Simple Worldbuilding System](https://gitlab.com/foundrynet/worldbuilding) that Atropos has kindly provided.

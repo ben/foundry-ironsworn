@@ -6,7 +6,7 @@ export class SimpleItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions () {
     return mergeObject(super.defaultOptions, {
-      classes: ['worldbuilding', 'sheet', 'item'],
+      classes: ['ironsworn', 'sheet', 'item'],
       template: 'systems/foundry-ironsworn/templates/item-sheet.html',
       width: 520,
       height: 480,
