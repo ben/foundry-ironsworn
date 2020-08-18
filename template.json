@@ -1,23 +1,12 @@
 {
   "Actor": {
     "types": [
-      "character"
+      "character",
+      "shared"
     ],
     "character": {
       "biography": "",
-      "attributes": {
-        "health": {
-          "value": 10,
-          "label": "Health"
-        },
-        "spirit": {
-          "value": 5,
-          "label": "Spirit"
-        },
-        "supply": {
-          "value": 5,
-          "label": "Supply"
-        },
+      "stats": {
         "edge": {
           "value": 1,
           "label": "Edge"
@@ -37,38 +26,77 @@
         "wits": {
           "value": 1,
           "label": "Wits"
-        },
-        "momentum": {
-          "value": 2,
-          "label": "Momentum",
-          "reset": {
-            "value": 2,
-            "label": "Reset"
-          },
-          "max": {
-            "value": 10,
-            "label": "Max"
-          }
-        },
-        "experience": {
-          "value": 0,
-          "label": "Experience"
         }
+      },
+      "health": {
+        "value": 10,
+        "label": "Health"
+      },
+      "spirit": {
+        "value": 5,
+        "label": "Spirit"
+      },
+      "supply": {
+        "value": 5,
+        "label": "Supply"
+      },
+      "momentum": {
+        "value": 2,
+        "label": "Momentum",
+        "reset": {
+          "value": 2,
+          "label": "Reset"
+        },
+        "max": {
+          "value": 10,
+          "label": "Max"
+        }
+      },
+      "experience": {
+        "value": 0,
+        "label": "Experience"
       },
       "vows": [],
       "bonds": [],
       "debility": {}
-    }
+    },
+    "shared": {}
   },
   "Item": {
     "types": [
-      "item"
+      "asset",
+      "progress",
+      "vow",
+      "bond"
     ],
-    "item": {
-      "description": "",
-      "quantity": 1,
-      "weight": 0,
-      "attributes": {}
+    "templates": {
+      "progress": {
+        "description": "",
+        "rank": "troublesome",
+        "current": 0
+      }
+    },
+    "progress": {
+      "templates": [
+        "progress"
+      ]
+    },
+    "vow": {
+      "templates": [
+        "progress"
+      ],
+      "threat": "",
+      "menace": 0
+    },
+    "asset": {
+      "title": "",
+      "fields": [],
+      "abilities": [],
+      "health": {
+        "current": 0,
+        "max": 0
+      },
+      "exclusiveOptions": []
     }
   }
 }
