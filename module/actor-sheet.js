@@ -6,10 +6,9 @@ export class IronswornActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions () {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'actor'],
-      template: 'systems/foundry-ironsworn/templates/actor-sheet.html',
-      width: 600,
-      height: 600,
+      cssClass: ['ironsworn', 'sheet', 'actor'],
+      width: 800,
+      height: 800,
       tabs: [
         {
           navSelector: '.sheet-tabs',
@@ -19,6 +18,12 @@ export class IronswornActorSheet extends ActorSheet {
       ],
       dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }]
     })
+  }
+
+  /** @override */
+  get template () {
+    const path = 'systems/foundry-ironsworn/templates/actor'
+    return `${path}/${this.actor.data.type}.html`
   }
 
   /* -------------------------------------------- */

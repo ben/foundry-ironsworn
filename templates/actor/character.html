@@ -1,3 +1,52 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+    <!-- Header row -->
+    <header class="sheet-header" style="flex-grow: 0">
+        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+        <div class="xp">(xp)</div>
+    </header>
+
+    <div class="flexrow">
+        <div class="flexcol momentum" style="flex: 1 0">
+            <label class="momentum-row"><input type="radio" name="momeentum" value="10" id="momentum10">10</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="9" id="momentum9">9</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="8" id="momentum8">8</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="7" id="momentum7">7</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="6" id="momentum6">6</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="5" id="momentum5">5</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="4" id="momentum4">4</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="3" id="momentum3">3</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="2" id="momentum2">2</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="1" id="momentum1">1</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="0" id="momentum0">0</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="-1" id="momentum-1">-1</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="-2" id="momentum-2">-2</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="-3" id="momentum-3">-3</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="-4" id="momentum-4">-4</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="-5" id="momentum-5">-5</label>
+            <label class="momentum-row"><input type="radio" name="momeentum" value="-6" id="momentum-6">-6</label>
+        </div>
+        <div class="flexcol" style="flex-grow: 0">(health/spirit/supply stack)</div>
+        <div class="flexcol">
+            <div class="flexrow" style="flex-grow: 0">(E/H/I/S/W stats)</div>
+            <div class="flexrow">
+                <div class="flexcol">
+                    assets & bonds
+                </div>
+                <div class="flexcol">
+                    vows, progreses, sites
+                </div>
+            </div>
+        </div>
+        <div class="flexcol" style="flex-grow: 0">
+            <div class="flexcol">moves</div>
+            <div class="flexcol">oracles</div>
+        </div>
+    </div>
+</form>
+
+<!--
 <form class="{{cssClass}}" autocomplete="off">
 
     {{!-- Sheet Header --}}
@@ -73,3 +122,4 @@
         </div>
     </section>
 </form>
+-->
