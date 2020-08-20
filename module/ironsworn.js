@@ -43,11 +43,22 @@ Hooks.once('init', async function () {
     title
   ) {
     const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
+    if (true) {
+      r.toMessage({ flavor: title })
+      return
+    }
+
+    const template = 'systems/foundry-ironsworn/templates/dice/roll.html'
+    const templateData = {
+      roll: r,
+      user: game.user._id
+    }
+    const content = await renderTemplate(template, templateData)
 
     const rollChatData = {
       type: CONST.CHAT_MESSAGE_TYPES.ROLL,
       roll: r,
-      flavor: title
+      content
     }
     ChatMessage.create(rollChatData)
   }
@@ -113,7 +124,6 @@ function classesForRoll (r) {
 
 Handlebars.registerHelper('actionDieFormula', function () {
   const r = this.roll.parts[0].rolls[0]
-  console.log({ actionRoll: r })
   const parts = [...r.parts]
   const d = parts.shift()
   const classes = classesForRoll(r)
