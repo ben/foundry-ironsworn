@@ -19,6 +19,7 @@ Hooks.once('init', async function () {
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
   CONFIG.Dice.template = 'systems/foundry-ironsworn/templates/dice/roll.html'
+  // CONFIG.Dice.tooltip = 'systems/foundry-ironsworn/templates/dice/tooltip.html'
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet)
@@ -78,6 +79,14 @@ Hooks.once('setup', () => {
     // Render the roll display template
     return renderTemplate(chatOptions.template, chatData)
   }
+})
+
+Handlebars.registerHelper('join', function (a, joiner) {
+  return a.join(joiner)
+})
+
+Handlebars.registerHelper('json', function (context) {
+  return JSON.stringify(context, null, 2)
 })
 
 Handlebars.registerHelper('ifIsIronswornRoll', function (options) {

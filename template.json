@@ -89,14 +89,41 @@
       "menace": 0
     },
     "asset": {
-      "title": "",
-      "fields": [],
-      "abilities": [],
+      "description": "",
+      "fields": [
+        {
+          "name": "Name",
+          "value": ""
+        }
+      ],
+      "abilities": [
+        {
+          "enabled": true,
+          "description": "the default ability of this asset"
+        },
+        {
+          "enabled": false,
+          "description": ""
+        },
+        {
+          "enabled": false,
+          "description": ""
+        }
+      ],
       "health": {
         "current": 0,
         "max": 0
       },
-      "exclusiveOptions": []
+      "exclusiveOptions": [
+        {
+          "name": "Option A",
+          "selecteed": true
+        },
+        {
+          "name": "Option B",
+          "selecteed": false
+        }
+      ]
     }
   }
 }
