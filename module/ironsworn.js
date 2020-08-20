@@ -18,6 +18,7 @@ Hooks.once('init', async function () {
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
+  CONFIG.Dice.template = 'systems/foundry-ironsworn/templates/dice/roll.html'
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet)
@@ -34,4 +35,103 @@ Hooks.once('init', async function () {
     default: true,
     config: true
   })
+
+  game.ironswornMoveRoll = async function (
+    bonusExpr = '0',
+    values = {},
+    title
+  ) {
+    const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
+
+    const rollChatData = {
+      type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+      roll: r,
+      flavor: title
+    }
+    ChatMessage.create(rollChatData)
+  }
+})
+
+Hooks.once('setup', () => {
+  Roll.prototype.render = async function (chatOptions = {}) {
+    chatOptions = mergeObject(
+      {
+        user: game.user._id,
+        flavor: null,
+        template: CONFIG.Dice.template,
+        blind: false
+      },
+      chatOptions
+    )
+    const isPrivate = chatOptions.isPrivate
+    // Execute the roll, if needed
+    if (!this._rolled) this.roll()
+    // Define chat data
+    const chatData = {
+      formula: isPrivate ? '???' : this.formula,
+      roll: this, // this is new
+      flavor: isPrivate ? null : chatOptions.flavor,
+      user: chatOptions.user,
+      tooltip: isPrivate ? '' : await this.getTooltip(),
+      total: isPrivate ? '?' : Math.round(this.total * 100) / 100
+    }
+    // Render the roll display template
+    return renderTemplate(chatOptions.template, chatData)
+  }
+})
+
+Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
+  if (!!this.formula.match(/^{d6.*d10,d10}$/)) {
+    return options.fn(this)
+  } else {
+    return options.inverse(this)
+  }
+})
+
+function classesForRoll (r) {
+  const d = r.dice[0]
+  const minRoll = Math.min(...d.sides)
+  const maxRoll = Math.max(...d.sides)
+  return [
+    d.constructor.name.toLowerCase(),
+    'd' + d.faces,
+    r.roll === minRoll ? 'min' : null,
+    r.roll === maxRoll ? 'max' : null
+  ]
+    .filter(x => x)
+    .join(' ')
+}
+
+Handlebars.registerHelper('actionDieFormula', function () {
+  const r = this.roll.parts[0].rolls[0]
+  console.log({ actionRoll: r })
+  const parts = [...r.parts]
+  const d = parts.shift()
+  const classes = classesForRoll(r)
+
+  return `<span class="roll ${classes}">${d.total}</span>${parts.join('')}`
+})
+
+Handlebars.registerHelper('challengeDice', function () {
+  const c1 = this.roll.parts[0].rolls[1]
+  const c2 = this.roll.parts[0].rolls[2]
+  const c1span = `<span class="roll ${classesForRoll(c1)}">${c1.total}</span>`
+  const c2span = `<span class="roll ${classesForRoll(c2)}">${c2.total}</span>`
+  return `${c1span} / ${c2span}`
+})
+
+Handlebars.registerHelper('ironswornHitType', function () {
+  const actionTotal = this.roll.parts[0].rolls[0].total
+  const challenge1 = this.roll.parts[0].rolls[1].total
+  const challenge2 = this.roll.parts[0].rolls[2].total
+  const match = challenge1 === challenge2
+  if (actionTotal <= Math.min(challenge1, challenge2)) {
+    if (match) return 'Complication!'
+    return 'Miss'
+  }
+  if (actionTotal > Math.max(challenge1, challenge2)) {
+    if (match) return 'Opportunity!'
+    return 'Strong Hit'
+  }
+  return 'Weak Hit'
 })
