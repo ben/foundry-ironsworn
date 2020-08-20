@@ -5,9 +5,9 @@
  */
 
 // Import Modules
-import { SimpleActor } from './actor.js'
-import { SimpleItemSheet } from './item-sheet.js'
-import { SimpleActorSheet } from './actor-sheet.js'
+import { IronswornActor } from './actor.js'
+import { IronswornItemSheet } from './item-sheet.js'
+import { IronswornActorSheet } from './actor-sheet.js'
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -17,13 +17,13 @@ Hooks.once('init', async function () {
   console.log(`Initializing Ironsworn System`)
 
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = SimpleActor
+  CONFIG.Actor.entityClass = IronswornActor
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet)
-  Actors.registerSheet('ironsworn', SimpleActorSheet, { makeDefault: true })
+  Actors.registerSheet('ironsworn', IronswornActorSheet, { makeDefault: true })
   Items.unregisterSheet('core', ItemSheet)
-  Items.registerSheet('ironsworn', SimpleItemSheet, { makeDefault: true })
+  Items.registerSheet('ironsworn', IronswornItemSheet, { makeDefault: true })
 
   // Register system settings
   game.settings.register('ironsworn', 'macroShorthand', {
