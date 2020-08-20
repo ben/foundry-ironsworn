@@ -138,9 +138,22 @@
   min-width: 460px;
   min-height: 400px;
 }
+.move-title {
+  text-align: center;
+  background: #eee;
+  border: 1px solid #999;
+  margin-bottom: 5px;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 30px;
+}
 .ironsworn-roll .dice-formula,
 .ironsworn-roll .dice-total {
   background-color: #eee;
+}
+.ironsworn-roll .hit-type {
+  font-size: 20px;
+  font-weight: bold;
 }
 .ironsworn-roll .roll {
   width: 24px;
@@ -150,7 +163,7 @@
   background-image: url("/icons/svg/d6-grey.svg");
   background-repeat: no-repeat;
   background-size: 24px 24px;
-  font-size: 16px;
+  font-size: 18px;
   color: #000;
   font-weight: bold;
   text-align: center;

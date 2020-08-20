@@ -2,9 +2,12 @@
   {{#ifIsIronswornRoll}}
 
   <div class="dice-result ironsworn-roll">
-    <div class="dice-formula">{{{actionDieFormula}}} vs. {{{challengeDice}}}</div>
+
+    <div class="dice-formula">
+      <p class="hit-type">{{ironswornHitType}}</p>
+      <p>{{{actionDieFormula}}} vs. {{{challengeDice}}}</p>
+    </div>
     {{{tooltip}}}
-    <h4 class="dice-total">{{ironswornHitType}}</h4>
   </div>
 
   {{else}}

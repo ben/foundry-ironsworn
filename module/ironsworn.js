@@ -44,7 +44,7 @@ Hooks.once('init', async function () {
   ) {
     const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
     if (true) {
-      r.toMessage({ flavor: title })
+      r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
       return
     }
 
@@ -137,14 +137,14 @@ Handlebars.registerHelper('actionDieFormula', function () {
   const d = parts.shift()
   const classes = classesForRoll(r)
 
-  return `<span class="roll ${classes}">${d.total}</span>${parts.join('')}`
+  return `<strong><span class="roll ${classes}">${d.total}</span>${parts.join('')}</strong>`
 })
 
 Handlebars.registerHelper('challengeDice', function () {
   const [c1, c2] = challengeRolls(this.roll)
   const c1span = `<span class="roll ${classesForRoll(c1)}">${c1.total}</span>`
   const c2span = `<span class="roll ${classesForRoll(c2)}">${c2.total}</span>`
-  return `${c1span} / ${c2span}`
+  return `${c1span} ${c2span}`
 })
 
 Handlebars.registerHelper('ironswornHitType', function () {
