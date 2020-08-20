@@ -11,7 +11,7 @@
     "module/ironsworn.js"
   ],
   "styles": [
-    "styles/simple.css"
+    "styles/ironsworn.css"
   ],
   "packs": [],
   "languages": [

@@ -138,3 +138,46 @@
   min-width: 460px;
   min-height: 400px;
 }
+.ironsworn-roll .dice-formula,
+.ironsworn-roll .dice-total {
+  background-color: #eee;
+}
+.ironsworn-roll .roll {
+  width: 24px;
+  line-height: 24px;
+  display: inline-block;
+  margin-right: 1px;
+  background-image: url("/icons/svg/d6-grey.svg");
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+.ironsworn-roll .roll.d4 {
+  background-image: url("/icons/svg/d4-grey.svg");
+}
+.ironsworn-roll .roll.d6 {
+  background-image: url("/icons/svg/d6-grey.svg");
+}
+.ironsworn-roll .roll.d8 {
+  background-image: url("/icons/svg/d8-grey.svg");
+}
+.ironsworn-roll .roll.d10 {
+  background-image: url("/icons/svg/d10-grey.svg");
+}
+.ironsworn-roll .roll.d12 {
+  background-image: url("/icons/svg/d12-grey.svg");
+}
+.ironsworn-roll .roll.d20 {
+  background-image: url("/icons/svg/d20-grey.svg");
+}
+.ironsworn-roll .roll.min {
+  color: #aa0200;
+  filter: sepia(0.5) hue-rotate(-60deg);
+}
+.ironsworn-roll .roll.max {
+  color: #18520b;
+  filter: sepia(0.5) hue-rotate(60deg);
+}
