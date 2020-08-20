@@ -101,7 +101,11 @@ Handlebars.registerHelper('json', function (context) {
 })
 
 Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
-  if (!!this.formula.match(/^{d6.*d10,d10}$/)) {
+  if (
+    this.roll.dice.length === 3 &&
+    this.roll.dice.filter(x => x.faces === 6).length === 1 &&
+    this.roll.dice.filter(x => x.faces === 10).length === 2
+  ) {
     return options.fn(this)
   } else {
     return options.inverse(this)
@@ -122,8 +126,13 @@ function classesForRoll (r) {
     .join(' ')
 }
 
+const actionRoll = roll => roll.parts[0].rolls.find(r => r.dice[0].faces === 6)
+
+const challengeRolls = roll =>
+  roll.parts[0].rolls.filter(r => r.dice[0].faces === 10)
+
 Handlebars.registerHelper('actionDieFormula', function () {
-  const r = this.roll.parts[0].rolls[0]
+  const r = actionRoll(this.roll)
   const parts = [...r.parts]
   const d = parts.shift()
   const classes = classesForRoll(r)
@@ -132,17 +141,15 @@ Handlebars.registerHelper('actionDieFormula', function () {
 })
 
 Handlebars.registerHelper('challengeDice', function () {
-  const c1 = this.roll.parts[0].rolls[1]
-  const c2 = this.roll.parts[0].rolls[2]
+  const [c1, c2] = challengeRolls(this.roll)
   const c1span = `<span class="roll ${classesForRoll(c1)}">${c1.total}</span>`
   const c2span = `<span class="roll ${classesForRoll(c2)}">${c2.total}</span>`
   return `${c1span} / ${c2span}`
 })
 
 Handlebars.registerHelper('ironswornHitType', function () {
-  const actionTotal = this.roll.parts[0].rolls[0].total
-  const challenge1 = this.roll.parts[0].rolls[1].total
-  const challenge2 = this.roll.parts[0].rolls[2].total
+  const actionTotal = actionRoll(this.roll).total
+  const [challenge1, challenge2] = challengeRolls(this.roll).map(x => x.total)
   const match = challenge1 === challenge2
   if (actionTotal <= Math.min(challenge1, challenge2)) {
     if (match) return 'Complication!'
