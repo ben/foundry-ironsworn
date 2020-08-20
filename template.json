@@ -6,58 +6,18 @@
     ],
     "character": {
       "biography": "",
-      "stats": {
-        "edge": {
-          "value": 1,
-          "label": "Edge"
-        },
-        "heart": {
-          "value": 1,
-          "label": "Heart"
-        },
-        "iron": {
-          "value": 1,
-          "label": "Iron"
-        },
-        "shadow": {
-          "value": 1,
-          "label": "Shadow"
-        },
-        "wits": {
-          "value": 1,
-          "label": "Wits"
-        }
-      },
-      "health": {
-        "value": 10,
-        "label": "Health"
-      },
-      "spirit": {
-        "value": 5,
-        "label": "Spirit"
-      },
-      "supply": {
-        "value": 5,
-        "label": "Supply"
-      },
-      "momentum": {
-        "value": 2,
-        "label": "Momentum",
-        "reset": {
-          "value": 2,
-          "label": "Reset"
-        },
-        "max": {
-          "value": 10,
-          "label": "Max"
-        }
-      },
-      "experience": {
-        "value": 0,
-        "label": "Experience"
-      },
-      "vows": [],
-      "bonds": [],
+      "edge": 1,
+      "heart": 1,
+      "iron": 1,
+      "shadow": 1,
+      "wits": 1,
+      "health": 5,
+      "spirit": 5,
+      "supply": 5,
+      "experience": 0,
+      "momentum": 2,
+      "momentumReset": 2,
+      "momentumMax": 10,
       "debility": {}
     },
     "shared": {}
@@ -67,7 +27,8 @@
       "asset",
       "progress",
       "vow",
-      "bond"
+      "bond",
+      "site"
     ],
     "templates": {
       "progress": {
@@ -88,7 +49,20 @@
       "threat": "",
       "menace": 0
     },
+    "bond": {
+      "notes": ""
+    },
+    "site": {
+      "templates": [
+        "progress"
+      ],
+      "objective": "",
+      "theme": "",
+      "domain": "",
+      "notes": ""
+    },
     "asset": {
+      "templates": [],
       "description": "",
       "fields": [
         {
