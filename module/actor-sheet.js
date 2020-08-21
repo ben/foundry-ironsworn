@@ -7,7 +7,7 @@ export class IronswornActorSheet extends ActorSheet {
   static get defaultOptions () {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor'],
-      width: 800,
+      width: 1000,
       height: 800,
       tabs: [
         {
@@ -45,7 +45,7 @@ export class IronswornActorSheet extends ActorSheet {
     if (!this.options.editable) return
 
     // Enable rolling stats
-    html.find('.rollable').click(this._rollStat.bind(this))
+    html.find('.stat.clickable').click(this._rollStat.bind(this))
 
     // Update Inventory Item
     html.find('.item-edit').click(ev => {

@@ -47,12 +47,24 @@
     }
   }
 
-  .margin {
+  .margin-left {
     flex: 0;
     border-right: 1px solid black;
     margin-right: 5px;
     padding-right: 35px;
     position: relative;
+  }
+
+  .margin-right {
+    flex: 0;
+    border-left: 1px solid black;
+    margin-left: 5px;
+    min-width: 200px;
+    position: relative;
+  }
+
+  h4 {
+    font-size: 22px;
   }
 
   .stack {
@@ -66,13 +78,13 @@
       position: absolute;
       left: 78px;
       padding-left: 5px;
-      font-size: 22px;
     }
 
     .stack-row {
       flex: 0 0 auto;
       width: 50px;
       border: 1px solid black;
+      margin-bottom: -1px;
       text-align: center;
       line-height: 28px;
       font-size: 18px;
@@ -80,6 +92,21 @@
       input[type="radio"] {
         appearance: none;
       }
+    }
+  }
+
+  .clickable {
+    transition: 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+      background: #ccc;
+      transition: 0.5s ease;
+    }
+
+    &:active {
+      background: #aaa;
+      transition: 0.2s ease;
     }
   }
 

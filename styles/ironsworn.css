@@ -43,12 +43,22 @@
 .ironsworn .sheet-header .xp {
   flex: 0;
 }
-.ironsworn .margin {
+.ironsworn .margin-left {
   flex: 0;
   border-right: 1px solid black;
   margin-right: 5px;
   padding-right: 35px;
   position: relative;
+}
+.ironsworn .margin-right {
+  flex: 0;
+  border-left: 1px solid black;
+  margin-left: 5px;
+  min-width: 200px;
+  position: relative;
+}
+.ironsworn h4 {
+  font-size: 22px;
 }
 .ironsworn .stack {
   margin-bottom: 20px;
@@ -61,18 +71,30 @@
   position: absolute;
   left: 78px;
   padding-left: 5px;
-  font-size: 22px;
 }
 .ironsworn .stack .stack-row {
   flex: 0 0 auto;
   width: 50px;
   border: 1px solid black;
+  margin-bottom: -1px;
   text-align: center;
   line-height: 28px;
   font-size: 18px;
 }
 .ironsworn .stack .stack-row input[type="radio"] {
   appearance: none;
+}
+.ironsworn .clickable {
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.ironsworn .clickable:hover {
+  background: #ccc;
+  transition: 0.5s ease;
+}
+.ironsworn .clickable:active {
+  background: #aaa;
+  transition: 0.2s ease;
 }
 .ironsworn .stats {
   flex: 0;
