@@ -6,7 +6,7 @@ export class IronswornActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions () {
     return mergeObject(super.defaultOptions, {
-      cssClass: ['ironsworn', 'sheet', 'actor'],
+      classes: ['ironsworn', 'sheet', 'actor'],
       width: 800,
       height: 800,
       tabs: [

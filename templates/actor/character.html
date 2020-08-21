@@ -1,14 +1,14 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
     <!-- Header row -->
-    <header class="sheet-header" style="flex-grow: 0">
+    <header class="sheet-header">
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
         <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
         <div class="xp">(xp)</div>
     </header>
 
     <div class="flexrow">
-        <div class="flexcol momentum" style="flex: 1 0">
+        <div class="flexcol momentum">
             <label class="momentum-row"><input type="radio" name="momeentum" value="10" id="momentum10">10</label>
             <label class="momentum-row"><input type="radio" name="momeentum" value="9" id="momentum9">9</label>
             <label class="momentum-row"><input type="radio" name="momeentum" value="8" id="momentum8">8</label>

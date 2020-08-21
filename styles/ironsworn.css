@@ -9,17 +9,17 @@
   overflow-y: hidden;
 }
 .ironsworn .sheet-header {
-  height: 100px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: 10px;
+  flex: 0 0 auto;
 }
 .ironsworn .sheet-header .profile-img {
-  flex: 0 0 100px;
-  height: 100px;
+  flex: 0 0 50px;
+  height: 50px;
   margin-right: 10px;
 }
 .ironsworn .sheet-header .header-fields {
@@ -27,6 +27,7 @@
   height: 100px;
 }
 .ironsworn .sheet-header h1.charname {
+  flex-grow: 1;
   height: 50px;
   padding: 0px;
   margin: 5px 0;
@@ -36,6 +37,23 @@
   width: 100%;
   height: 100%;
   margin: 0;
+}
+.ironsworn .sheet-header .xp {
+  flex: 1 0;
+}
+.ironsworn .momentum {
+  flex: 0 0 auto;
+}
+.ironsworn .momentum .momentum-row {
+  flex: 0 0 auto;
+  width: 50px;
+  height: 25px;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 25px;
+}
+.ironsworn .momentum .momentum-row input[type="radio"] {
+  appearance: none;
 }
 .ironsworn .resource {
   width: 50%;
@@ -146,6 +164,7 @@
   font-size: 22px;
   font-weight: bold;
   line-height: 30px;
+  font-variant: all-small-caps;
 }
 .ironsworn-roll .dice-formula,
 .ironsworn-roll .dice-total {
@@ -154,6 +173,7 @@
 .ironsworn-roll .hit-type {
   font-size: 20px;
   font-weight: bold;
+  font-variant: all-small-caps;
 }
 .ironsworn-roll .roll {
   width: 24px;
@@ -164,7 +184,6 @@
   background-repeat: no-repeat;
   background-size: 24px 24px;
   font-size: 18px;
-  color: #000;
   font-weight: bold;
   text-align: center;
 }
