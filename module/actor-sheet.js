@@ -44,6 +44,9 @@ export class IronswornActorSheet extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return
 
+    // Enable rolling stats
+    html.find('.rollable').click(this._rollStat.bind(this))
+
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
       const li = $(ev.currentTarget).parents('.item')
@@ -57,5 +60,14 @@ export class IronswornActorSheet extends ActorSheet {
       this.actor.deleteOwnedItem(li.data('itemId'))
       li.slideUp(200, () => this.render(false))
     })
+  }
+
+  _rollStat (event) {
+    event.preventDefault()
+
+    const el = event.currentTarget
+    const stat = el.dataset.stat
+    const label = `Roll +${stat}`
+    game.ironswornMoveRoll(`@${stat}`, this.actor.data.data, label)
   }
 }

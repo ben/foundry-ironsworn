@@ -61,19 +61,53 @@
             </div>
         </div>
         <div class="flexcol">
-            <div class="flexrow" style="flex-grow: 0">(E/H/I/S/W stats)</div>
-            <div class="flexrow">
-                <div class="flexcol">
-                    assets & bonds
+            <div class="flexrow stats">
+                <div class="stat rollable" data-stat="edge">
+                    <h4>Edge</h4>
+                    <h3>{{data.edge}}</h3>
                 </div>
-                <div class="flexcol">
-                    vows, progreses, sites
+                <div class="stat rollable" data-stat="heart">
+                    <h4>Heart</h4>
+                    <h3>{{data.heart}}</h3>
+                </div>
+                <div class="stat rollable" data-stat="iron">
+                    <h4>Iron</h4>
+                    <h3>{{data.iron}}</h3>
+                </div>
+                <div class="stat rollable" data-stat="shadow">
+                    <h4>Shadow</h4>
+                    <h3>{{data.shadow}}</h3>
+                </div>
+                <div class="stat rollable" data-stat="wits">
+                    <h4>Wits</h4>
+                    <h3>{{data.wits}}</h3>
                 </div>
             </div>
+
+            <div class="flexrow">
+
+                <div class="flexcol">
+                    <h2 style="text-align:center">assets</h2>
+                    <h2 style="text-align:center">bonds</h2>
+                </div>
+
+                <div class="flexcol">
+                    <h2 style="text-align:center">vows</h2>
+                    <h2 style="text-align:center">progress</h2>
+                    <h2 style="text-align:center">sites</h2>
+                </div>
+
+            </div>
         </div>
-        <div class="flexcol" style="flex-grow: 0">
-            <div class="flexcol">moves</div>
-            <div class="flexcol">oracles</div>
+        <div class="flexcol rightmargin" style="flex-grow: 0">
+
+            <div class="flexcol">
+                <h2 style="text-align:center">moves</h2>
+            </div>
+
+            <div class="flexcol">
+                <h2 style="text-align:center">oracles</h2>
+            </div>
         </div>
     </div>
 </form>

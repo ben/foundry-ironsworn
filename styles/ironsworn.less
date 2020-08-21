@@ -1,4 +1,6 @@
 .ironsworn {
+  font-variant: all-small-caps;
+
   .window-content {
     background: #eee;
     height: 100%;
@@ -64,7 +66,6 @@
       position: absolute;
       left: 78px;
       padding-left: 5px;
-      font-variant-caps: all-small-caps;
       font-size: 22px;
     }
 
@@ -82,7 +83,28 @@
     }
   }
 
-  .momentum {
+  .stats {
+    flex: 0;
+    justify-content: space-around;
+
+    .stat {
+      flex: 0;
+      border: 1px solid black;
+      text-align: center;
+      min-width: 75px;
+
+      h3 {
+        margin: 0;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 22px;
+      }
+
+      h4 {
+        margin: 0;
+        font-weight: bold;
+      }
+    }
   }
 
   .resource {
@@ -182,7 +204,7 @@
     margin: 0;
     padding: 0;
 
-    li > * {
+    li>* {
       margin: 0 3px;
       height: 28px;
       line-height: 24px;
@@ -223,6 +245,7 @@
 }
 
 .ironsworn-roll {
+
   .dice-formula,
   .dice-total {
     background-color: #eee;
