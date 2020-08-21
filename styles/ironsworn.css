@@ -7,7 +7,7 @@
   background: #eee;
   height: 100%;
   padding: 5px;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 .ironsworn .sheet-header {
   overflow: hidden;
@@ -51,6 +51,7 @@
 }
 .ironsworn .stack {
   margin-bottom: 20px;
+  flex-grow: 0;
 }
 .ironsworn .stack h4.vertical {
   transform: rotate(90deg);
