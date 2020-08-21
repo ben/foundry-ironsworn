@@ -34,52 +34,70 @@
         </div>
         <div class="flexcol margin-left">
             <div class="flexcol stack health">
-                <h4 class="vertical">Health</h4>
-                <label class="clickable stack-row"><input type="radio" name="health" value="5" id="health5">+5</label>
-                <label class="clickable stack-row"><input type="radio" name="health" value="4" id="health4">+4</label>
-                <label class="clickable stack-row"><input type="radio" name="health" value="3" id="health3">+3</label>
-                <label class="clickable stack-row"><input type="radio" name="health" value="2" id="health2">+2</label>
-                <label class="clickable stack-row"><input type="radio" name="health" value="1" id="health1">+1</label>
-                <label class="clickable stack-row"><input type="radio" name="health" value="0" id="health0">0</label>
+                <h4 class="vertical clickable text" data-stat="health">Health</h4>
+                <label class="clickable block stack-row"><input type="radio" name="health" value="5"
+                        id="health5">+5</label>
+                <label class="clickable block stack-row"><input type="radio" name="health" value="4"
+                        id="health4">+4</label>
+                <label class="clickable block stack-row"><input type="radio" name="health" value="3"
+                        id="health3">+3</label>
+                <label class="clickable block stack-row"><input type="radio" name="health" value="2"
+                        id="health2">+2</label>
+                <label class="clickable block stack-row"><input type="radio" name="health" value="1"
+                        id="health1">+1</label>
+                <label class="clickable block stack-row"><input type="radio" name="health" value="0"
+                        id="health0">0</label>
             </div>
             <div class="flexcol stack spirit">
-                <h4 class="vertical">Spirit</h4>
-                <label class="clickable stack-row"><input type="radio" name="spirit" value="5" id="spirit5">+5</label>
-                <label class="clickable stack-row"><input type="radio" name="spirit" value="4" id="spirit4">+4</label>
-                <label class="clickable stack-row"><input type="radio" name="spirit" value="3" id="spirit3">+3</label>
-                <label class="clickable stack-row"><input type="radio" name="spirit" value="2" id="spirit2">+2</label>
-                <label class="clickable stack-row"><input type="radio" name="spirit" value="1" id="spirit1">+1</label>
-                <label class="clickable stack-row"><input type="radio" name="spirit" value="0" id="spirit0">0</label>
+                <h4 class="vertical clickable text" data-stat="spirit">Spirit</h4>
+                <label class="clickable block stack-row"><input type="radio" name="spirit" value="5"
+                        id="spirit5">+5</label>
+                <label class="clickable block stack-row"><input type="radio" name="spirit" value="4"
+                        id="spirit4">+4</label>
+                <label class="clickable block stack-row"><input type="radio" name="spirit" value="3"
+                        id="spirit3">+3</label>
+                <label class="clickable block stack-row"><input type="radio" name="spirit" value="2"
+                        id="spirit2">+2</label>
+                <label class="clickable block stack-row"><input type="radio" name="spirit" value="1"
+                        id="spirit1">+1</label>
+                <label class="clickable block stack-row"><input type="radio" name="spirit" value="0"
+                        id="spirit0">0</label>
             </div>
             <div class="flexcol stack supply">
-                <h4 class="vertical">Supply</h4>
-                <label class="clickable stack-row"><input type="radio" name="supply" value="5" id="supply5">+5</label>
-                <label class="clickable stack-row"><input type="radio" name="supply" value="4" id="supply4">+4</label>
-                <label class="clickable stack-row"><input type="radio" name="supply" value="3" id="supply3">+3</label>
-                <label class="clickable stack-row"><input type="radio" name="supply" value="2" id="supply2">+2</label>
-                <label class="clickable stack-row"><input type="radio" name="supply" value="1" id="supply1">+1</label>
-                <label class="clickable stack-row"><input type="radio" name="supply" value="0" id="supply0">0</label>
+                <h4 class="vertical clickable text" data-stat="supply">Supply</h4>
+                <label class="clickable block stack-row"><input type="radio" name="supply" value="5"
+                        id="supply5">+5</label>
+                <label class="clickable block stack-row"><input type="radio" name="supply" value="4"
+                        id="supply4">+4</label>
+                <label class="clickable block stack-row"><input type="radio" name="supply" value="3"
+                        id="supply3">+3</label>
+                <label class="clickable block stack-row"><input type="radio" name="supply" value="2"
+                        id="supply2">+2</label>
+                <label class="clickable block stack-row"><input type="radio" name="supply" value="1"
+                        id="supply1">+1</label>
+                <label class="clickable block stack-row"><input type="radio" name="supply" value="0"
+                        id="supply0">0</label>
             </div>
         </div>
         <div class="flexcol">
             <div class="flexrow stats">
-                <div class="stat clickable" data-stat="edge">
+                <div class="stat clickable block" data-stat="edge">
                     <h4>Edge</h4>
                     <h3>{{data.edge}}</h3>
                 </div>
-                <div class="stat clickable" data-stat="heart">
+                <div class="stat clickable block" data-stat="heart">
                     <h4>Heart</h4>
                     <h3>{{data.heart}}</h3>
                 </div>
-                <div class="stat clickable" data-stat="iron">
+                <div class="stat clickable block" data-stat="iron">
                     <h4>Iron</h4>
                     <h3>{{data.iron}}</h3>
                 </div>
-                <div class="stat clickable" data-stat="shadow">
+                <div class="stat clickable block" data-stat="shadow">
                     <h4>Shadow</h4>
                     <h3>{{data.shadow}}</h3>
                 </div>
-                <div class="stat clickable" data-stat="wits">
+                <div class="stat clickable block" data-stat="wits">
                     <h4>Wits</h4>
                     <h3>{{data.wits}}</h3>
                 </div>

@@ -84,16 +84,28 @@
 .ironsworn .stack .stack-row input[type="radio"] {
   appearance: none;
 }
-.ironsworn .clickable {
+.ironsworn .clickable.block {
   transition: 0.5s ease;
   cursor: pointer;
 }
-.ironsworn .clickable:hover {
+.ironsworn .clickable.block:hover {
   background: #ccc;
   transition: 0.5s ease;
 }
-.ironsworn .clickable:active {
+.ironsworn .clickable.block:active {
   background: #aaa;
+  transition: 0.2s ease;
+}
+.ironsworn .clickable.text {
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.ironsworn .clickable.text:hover {
+  color: #ccc;
+  transition: 0.5s ease;
+}
+.ironsworn .clickable.text:active {
+  color: #aaa;
   transition: 0.2s ease;
 }
 .ironsworn .stats {

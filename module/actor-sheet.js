@@ -45,7 +45,7 @@ export class IronswornActorSheet extends ActorSheet {
     if (!this.options.editable) return
 
     // Enable rolling stats
-    html.find('.stat.clickable').click(this._rollStat.bind(this))
+    html.find('.clickable').click(this._rollStat.bind(this))
 
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
@@ -67,6 +67,7 @@ export class IronswornActorSheet extends ActorSheet {
 
     const el = event.currentTarget
     const stat = el.dataset.stat
+    if (!stat) return
     const label = `Roll +${stat}`
     game.ironswornMoveRoll(`@${stat}`, this.actor.data.data, label)
   }

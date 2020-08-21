@@ -95,7 +95,7 @@
     }
   }
 
-  .clickable {
+  .clickable.block {
     transition: 0.5s ease;
     cursor: pointer;
 
@@ -106,6 +106,21 @@
 
     &:active {
       background: #aaa;
+      transition: 0.2s ease;
+    }
+  }
+
+  .clickable.text {
+    transition: 0.5s ease;
+    cursor: pointer;
+
+    &:hover {
+      color: #ccc;
+      transition: 0.5s ease;
+    }
+
+    &:active {
+      color: #aaa;
       transition: 0.2s ease;
     }
   }
