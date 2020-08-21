@@ -4,6 +4,7 @@
   /* Attributes */
 }
 .ironsworn .window-content {
+  background: #eee;
   height: 100%;
   padding: 5px;
   overflow-y: hidden;
@@ -39,20 +40,36 @@
   margin: 0;
 }
 .ironsworn .sheet-header .xp {
-  flex: 1 0;
+  flex: 0;
 }
-.ironsworn .momentum {
-  flex: 0 0 auto;
+.ironsworn .margin {
+  flex: 0;
+  border-right: 1px solid black;
+  margin-right: 5px;
+  padding-right: 35px;
+  position: relative;
 }
-.ironsworn .momentum .momentum-row {
+.ironsworn .stack {
+  margin-bottom: 20px;
+}
+.ironsworn .stack h4.vertical {
+  transform: rotate(90deg);
+  transform-origin: 0 0;
+  float: right;
+  position: absolute;
+  left: 80px;
+  font-variant-caps: all-small-caps;
+  font-size: 22px;
+}
+.ironsworn .stack .stack-row {
   flex: 0 0 auto;
   width: 50px;
-  height: 25px;
   border: 1px solid black;
   text-align: center;
-  line-height: 25px;
+  line-height: 28px;
+  font-size: 18px;
 }
-.ironsworn .momentum .momentum-row input[type="radio"] {
+.ironsworn .stack .stack-row input[type="radio"] {
   appearance: none;
 }
 .ironsworn .resource {
@@ -68,8 +85,8 @@
 }
 .ironsworn .tabs {
   height: 40px;
-  border-top: 1px solid #AAA;
-  border-bottom: 1px solid #AAA;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 }
 .ironsworn .tabs .item {
   line-height: 40px;
@@ -101,7 +118,7 @@
   height: 30px;
   line-height: 24px;
   padding: 3px 0;
-  border-bottom: 1px solid #BBB;
+  border-bottom: 1px solid #bbb;
 }
 .ironsworn .item-list .item img {
   flex: 0 0 24px;
@@ -117,7 +134,7 @@
   padding: 5px;
   margin: 5px 0;
   background: rgba(0, 0, 0, 0.05);
-  border: 1px solid #AAA;
+  border: 1px solid #aaa;
   border-radius: 2px;
   text-align: center;
   font-weight: bold;
@@ -140,7 +157,7 @@
   background: transparent;
   border: none;
   border-radius: 0;
-  border-bottom: 1px solid #AAA;
+  border-bottom: 1px solid #aaa;
 }
 .ironsworn .attributes-list a.attribute-control {
   flex: 0 0 20px;
