@@ -67,8 +67,17 @@
     font-size: 22px;
   }
 
-  .item-list>* {
-    flex: 0 0 auto;
+  .move-list {
+    flex: 1 0 100px;
+    overflow-y: scroll;
+
+    li {
+      white-space: nowrap;
+    }
+
+    .move {
+      overflow-x: hidden;
+    }
   }
 
   .stack {
@@ -203,7 +212,7 @@
     list-style: none;
     margin: 7px 0;
     padding: 0;
-    overflow-y: auto;
+    // overflow-y: auto;
 
     .item {
       height: 30px;

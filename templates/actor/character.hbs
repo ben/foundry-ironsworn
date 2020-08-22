@@ -123,16 +123,61 @@
         </div>
         <div class="flexcol margin-right">
 
-            <div class="flexcol item-list">
-                <h4 style="text-align:center">moves</h4>
+            <h1 style="flex: 0 0 auto">moves</h1>
+            <div class="flexcol move-list">
             </div>
 
-            <div class="flexcol item-list">
-                <h4 style="text-align:center">oracles</h4>
+            <h1 style="flex: 0 0 auto">oracles</h1>
+            <div class="flexcol move-list">
+
+                {{#*inline "oracle"}}
+                <li class="item">
+                    <h3 class="clickable text move" data-table="Oracle: {{name}}">{{name}}</h3>
+                </li>
+                {{/inline}}
+
                 <ol class="item-list">
-                    <li class="item">
-                        <span class="clickable text" data-table="Oracle: Action">Action</span>
-                    </li>
+                    <h2>Plot</h2>
+                    {{> oracle name="Action"}}
+                    {{> oracle name="Theme"}}
+                    {{> oracle name="Combat Action"}}
+                    {{> oracle name="Settlement Trouble"}}
+                    {{> oracle name="Major Plot Twist"}}
+                    {{> oracle name="Mystic Backlash"}}
+                    {{> oracle name="Challenge Rank"}}
+                    <h2>Location</h2>
+                    {{> oracle name="Region"}}
+                    {{> oracle name="Location"}}
+                    {{> oracle name="Coastal Waters Location"}}
+                    {{> oracle name="Location Descriptor"}}
+                    {{> oracle name="Settlement Name"}}
+                    {{> oracle name="Settlement Name (Landscape Feature)"}}
+                    {{> oracle name="Settlement Name (Manmade Edifice)"}}
+                    {{> oracle name="Settlement Name (Creature)"}}
+                    {{> oracle name="Settlement Name (Historical Event)"}}
+                    {{> oracle name="Settlement Name (Old Language)"}}
+                    {{> oracle name="Settlement Name (Season or Environmental Aspect)"}}
+                    {{> oracle name="Settlement Name (Something Else)"}}
+                    {{> oracle name="Quick Settlement Name (Prefix)"}}
+                    {{> oracle name="Quick Settlement Name (Suffix)"}}
+                    <h2>Character</h2>
+                    {{> oracle name="Character Role"}}
+                    {{> oracle name="Character Goal"}}
+                    {{> oracle name="Character Descriptor"}}
+                    {{> oracle name="Character Disposition"}}
+                    <h2>Names</h2>
+                    {{> oracle name="Ironlander Names"}}
+                    {{> oracle name="Elf Names"}}
+                    {{> oracle name="Giant Names"}}
+                    {{> oracle name="Varou Names"}}
+                    {{> oracle name="Troll Names"}}
+                    <h2>Moves</h2>
+                    {{> oracle name="Choice (Almost Certain)"}}
+                    {{> oracle name="Choice (Likely)"}}
+                    {{> oracle name="Choice (50/50)"}}
+                    {{> oracle name="Choice (Unlikely)"}}
+                    {{> oracle name="Choice (Small Chance)"}}
+                    <!-- TODO: Delve oracles? -->
                 </ol>
             </div>
         </div>
