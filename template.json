@@ -28,7 +28,8 @@
       "progress",
       "vow",
       "bond",
-      "site"
+      "site",
+      "move"
     ],
     "templates": {
       "progress": {
@@ -98,6 +99,7 @@
           "selecteed": false
         }
       ]
-    }
+    },
+    "move": {}
   }
 }
