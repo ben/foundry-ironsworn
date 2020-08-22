@@ -23,7 +23,7 @@ export class IronswornActorSheet extends ActorSheet {
   /** @override */
   get template () {
     const path = 'systems/foundry-ironsworn/templates/actor'
-    return `${path}/${this.actor.data.type}.html`
+    return `${path}/${this.actor.data.type}.hbs`
   }
 
   /* -------------------------------------------- */
