@@ -47,15 +47,14 @@
   flex: 0;
   border-right: 1px solid black;
   margin-right: 5px;
-  padding-right: 35px;
+  padding-right: 25px;
   position: relative;
 }
 .ironsworn .margin-right {
-  flex: 0;
+  flex: 0 0 250px;
   border-left: 1px solid black;
   margin-left: 5px;
   padding-left: 10px;
-  min-width: 200px;
   position: relative;
 }
 .ironsworn h4 {
@@ -136,10 +135,9 @@
   justify-content: space-around;
 }
 .ironsworn .stats .stat {
-  flex: 0;
+  flex: 0 0 100px;
   border: 1px solid black;
   text-align: center;
-  min-width: 75px;
 }
 .ironsworn .stats .stat h3 {
   margin: 0;
