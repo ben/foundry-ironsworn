@@ -13,7 +13,15 @@
   "styles": [
     "styles/ironsworn.css"
   ],
-  "packs": [],
+  "packs": [
+    {
+      "name": "ironsworntables",
+      "label": "Ironsworn Tables",
+      "system": "foundry-ironsworn",
+      "path": "packs/tables.db",
+      "entity": "RollTable"
+    }
+  ],
   "languages": [
     {
       "lang": "en",
