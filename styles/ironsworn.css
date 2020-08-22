@@ -60,6 +60,9 @@
 .ironsworn h4 {
   font-size: 22px;
 }
+.ironsworn .item-list > * {
+  flex: 0 0 auto;
+}
 .ironsworn .stack {
   margin-bottom: 20px;
   flex-grow: 0;
