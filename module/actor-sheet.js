@@ -79,7 +79,7 @@ export class IronswornActorSheet extends ActorSheet {
         const pack = game.packs.get('foundry-ironsworn.ironsworntables')
         const index = await pack.getIndex()
         const entry = index.find(x => x.name == tableName)
-        table = await pack.getEntity(entry._id)
+        if (entry) table = await pack.getEntity(entry._id)
       }
       console.log({ table })
       if (table) table.draw()
