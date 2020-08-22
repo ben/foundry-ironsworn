@@ -18,7 +18,9 @@ Hooks.once('init', async function () {
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
-  CONFIG.Dice.template = 'systems/foundry-ironsworn/templates/dice/roll.hbs'
+  CONFIG.Dice.template = 'systems/foundry-ironsworn/templates/chat/roll.hbs'
+  // CONFIG.RollTable.resultTemplate =
+  //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
 
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet)
