@@ -1,0 +1,133 @@
+<form class="{{cssClass}}" autocomplete="off">
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs tabs" data-group="primary">
+        <a class="item" data-tab="view">View</a>
+        <a class="item" data-tab="edit">Edit</a>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+        <div class="tab" data-group="primary" data-tab="view">
+            <header class="sheet-header">
+                <h1>{{item.name}}</h1>
+            </header>
+
+            <p>{{{data.description}}}</p>
+
+            <ul>
+                {{#each data.options}}
+                <li>
+                    {{{description}}}:
+                    <a class="inline-roll" data-useAsset="{{useAsset}}" data-param="{{param}}" data-asset="{{asset}}">
+                        <i class="fas fa-dice-d10"></i>
+                        Roll +{{param}}.
+                    </a>
+                </li>
+                {{/each}}
+            </ul>
+
+            <hr>
+            <p>On a <strong>strong hit,</strong> {{{data.strongHit}}}</p>
+            <p>On a <strong>weak hit,</strong> {{{data.weakHit}}}</p>
+            <p>On a <strong>miss</strong>, {{{data.strongHit}}}</p>
+
+            {{!-- <pre><code>{{json data}}</code></pre> --}}
+        </div>
+
+        <div class="tab flexcol" data-group="primary" data-tab="edit">
+            <header class="sheet-header">
+                <h1>
+                    <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+                </h1>
+            </header>
+            <section style="flex: 1">
+                <input name="description" type="text" value="{{data.description}}" placeholder="When you..." />
+            </section>
+
+            {{#each data.options}}
+            <section>
+                <input name="data.options.{{@index}}.description" type="text" value="{{description}}"
+                    placeholder="With..." />
+                <label>
+                    <input type="checkbox" name="data.options.{{@index}}.useAsset" {{checked useAsset}} />
+                    Use stat from asset
+                </label>
+                <p>
+                    {{#if useAsset}}
+                    <span class="flexrow">
+                        <div class="flexcol">
+                            Asset name:
+                            <input name="data.options.{{@index}}.asset" type="text" value="{{asset}}"
+                                placeholder="edge" />
+                        </div>
+                        <div class="flexcol">
+                            Asset stat name:
+                            <input name="data.options.{{@index}}.param" type="text" value="{{param}}"
+                                placeholder="edge" />
+                        </div>
+                    </span>
+                    {{else}}
+                    Roll +
+                    <input name="data.options.{{@index}}.param" type="text" value="{{param}}" placeholder="edge" />
+                    {{/if}}
+                </p>
+            </section>
+            {{/each}}
+            <button>+</button>
+            <hr>
+            <section style="flex: 0">
+                <label>On a <strong>strong hit:</strong></label>
+                <input name="strongHit" type="text" value="{{data.strongHit}}" placeholder="you gain..." />
+                <label>On a <strong>weak hit:</strong></label>
+                <input name="strongHit" type="text" value="{{data.weakHit}}" placeholder="you can..." />
+                <label>On a <strong>miss:</strong></label>
+                <input name="strongHit" type="text" value="{{data.miss}}" placeholder="you fail..." />
+            </section>
+
+        </div>
+
+        <!--
+        {{!-- Description Tab --}}
+        <div class="tab" data-group="primary" data-tab="description">
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+
+        {{!-- Attributes Tab --}}
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+            <header class="attributes-header flexrow">
+                <span class="attribute-key">Attribute Key</span>
+                <span class="attribute-value">Value</span>
+                <span class="attribute-label">Label</span>
+                <span class="attribute-dtype">Data Type</span>
+                <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>
+            </header>
+
+            <ol class="attributes-list">
+                {{#each data.attributes as |attr key|}}
+                <li class="attribute flexrow" data-attribute="{{key}}">
+                    <input class="attribute-key" type="text" name="data.attributes.{{key}}.key" value="{{key}}" />
+                    {{#if attr.isCheckbox}}
+                    <label class="attribute-value checkbox"><input type="checkbox" name="data.attributes.{{key}}.value"
+                            {{checked attr.value}} /></label>
+                    {{else}}
+                    <input class="attribute-value" type="text" name="data.attributes.{{key}}.value"
+                        value="{{attr.value}}" data-dtype="{{attr.dtype}}" />
+                    {{/if}}
+                    <input class="attribute-label" type="text" name="data.attributes.{{key}}.label"
+                        value="{{attr.label}}" />
+                    <select class="attribute-dtype" name="data.attributes.{{key}}.dtype">
+                        {{#select attr.dtype}}
+                        {{#each ../dtypes as |t|}}
+                        <option value="{{t}}">{{t}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                    <a class="attribute-control" data-action="delete"><i class="fas fa-trash"></i></a>
+                </li>
+                {{/each}}
+            </ol>
+        </div>
+    -->
+    </section>
+</form>

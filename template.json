@@ -100,6 +100,18 @@
         }
       ]
     },
-    "move": {}
+    "move": {
+      "description": "When you <strong>do a thing</strong>...",
+      "options": [
+        {
+          "description": "With speed or agility",
+          "useAsset": false,
+          "param": "edge"
+        }
+      ],
+      "strongHit": "you gain advantage. Choose one: <ul><li>Take control: Make another move now (not a progress move); when you do, add +1.</li><li>Prepare to act: Take +2 momentum.</li></ul>",
+      "weakHit": "your advantage is short-lived. Take +1 momentum.",
+      "miss": "you fail or your assumptions betray you. <em>Pay the Price.</em>"
+    }
   }
 }

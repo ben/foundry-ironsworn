@@ -55,6 +55,15 @@ export class IronswornItemSheet extends ItemSheet {
   activateListeners (html) {
     super.activateListeners(html)
 
+    // Activate roll links
+    html.find('a.inline-roll').on('click', ev => {
+      ev.preventDefault()
+      const el = ev.currentTarget
+      const moveTitle = `${this.object.name} (${el.dataset.param})`
+      const rollData = this.object.isOwned ? this.object.owner : {}
+      game.ironswornMoveRoll(`@${el.dataset.param}`, rollData, moveTitle)
+    })
+
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return
 

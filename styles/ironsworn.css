@@ -1,8 +1,15 @@
 .ironsworn {
-  font-variant: all-small-caps;
   /* Sheet Tabs */
   /* Items List */
   /* Attributes */
+}
+.ironsworn h1,
+.ironsworn h2,
+.ironsworn h3,
+.ironsworn h4,
+.ironsworn h5,
+.ironsworn h6 {
+  font-variant: all-small-caps;
 }
 .ironsworn .window-content {
   background: #eee;
