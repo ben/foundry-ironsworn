@@ -149,6 +149,14 @@
   margin: 0;
   font-weight: bold;
 }
+.ironsworn .move-entry .move-summary {
+  white-space: normal;
+  font-variant: normal;
+  font-size: smaller;
+}
+.ironsworn .move-entry .move-summary li {
+  white-space: normal;
+}
 .ironsworn .resource {
   width: 50%;
   height: 40px;

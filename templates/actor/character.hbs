@@ -126,63 +126,14 @@
             <h1 style="flex: 0 0 auto">moves</h1>
             <div class="flexcol move-list">
                 <ol>
-                    <li>
-                        <h3>move</h3>
+                    {{#each moveOrder as |key|}}
+                    {{#with (lookup ../moves [key])}}
+                    {{log this}}
+                    <li class="move-entry" data-move="{{key}}">
+                        <h3>{{title}}</h3>
                     </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
-                    <li>
-                        <h3>move</h3>
-                    </li>
+                    {{/with}}
+                    {{/each}}
                 </ol>
             </div>
 

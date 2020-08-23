@@ -32,6 +32,8 @@ export class IronswornActorSheet extends ActorSheet {
   getData () {
     const data = super.getData()
     data.dtypes = ['String', 'Number', 'Boolean']
+    data.moves = MOVES
+    data.moveOrder = MOVE_ORDER
     return data
   }
 
@@ -46,6 +48,24 @@ export class IronswornActorSheet extends ActorSheet {
 
     // Enable rolling stats
     html.find('.clickable').click(this._rollStat.bind(this))
+
+    // Moves expand in place
+    html.find('.move-entry').click(ev => {
+      const li = $(ev.currentTarget)
+      const move = MOVES[li.data('move')]
+      const journalName = `Move: ${move.title}`
+      const entry = game.journal.entities.find(x => x.name === journalName)
+
+      if (li.hasClass('expanded')) {
+        const summary = li.children('.move-summary')
+        summary.slideUp(200, () => summary.remove())
+      } else {
+        const div = $(`<div class="move-summary">${entry.data.content}</div>`)
+        li.append(div.hide())
+        div.slideDown(200)
+      }
+      li.toggleClass('expanded')
+    })
 
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
@@ -84,5 +104,54 @@ export class IronswornActorSheet extends ActorSheet {
       console.log({ table })
       if (table) table.draw()
     }
+  }
+
+  async _rollDialog (key) {
+    const move = MOVES[key]
+    const html = await renderTemplate(
+      'systems/foundry-ironsworn/templates/move-dialog.hbs',
+      move
+    )
+
+    new Dialog({
+      title: move.title,
+      content: html,
+      buttons: {
+        roll: {
+          icon: '<i class="roll die d10"></i>',
+          label: 'Roll',
+          callback: function () {
+            console.log(this, 'Chose One')
+          }
+        }
+      }
+    }).render(true)
+  }
+}
+
+const MOVE_ORDER = ['faceDanger', 'secureAdvantage']
+const MOVES = {
+  faceDanger: {
+    title: 'Face Danger',
+    stats: [
+      { title: 'Edge', stat: 'edge' },
+      { title: 'Heart', stat: 'heart' },
+      { title: 'Iron', stat: 'iron' },
+      { title: 'Shadow', stat: 'shadow' },
+      { title: 'Wits', stat: 'wits' },
+      { title: "God's Stat (Devotant)", asset: 'Devotant' },
+      { title: 'Essence (Invoke)', asset: 'Invoke' }
+    ]
+  },
+  secureAdvantage: {
+    title: 'Secure an Advantage',
+    stats: [
+      { title: 'Edge', stat: 'edge' },
+      { title: 'Heart', stat: 'heart' },
+      { title: 'Iron', stat: 'iron' },
+      { title: 'Shadow', stat: 'shadow' },
+      { title: 'Wits', stat: 'wits' },
+      { title: 'Essence (Invoke)', asset: 'Invoke' }
+    ]
   }
 }
