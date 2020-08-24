@@ -1,3 +1,5 @@
+import { ironswornMoveRoll } from './ironsworn.js'
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -89,7 +91,7 @@ export class IronswornActorSheet extends ActorSheet {
     const stat = el.dataset.stat
     if (stat) {
       const label = `Roll +${stat}`
-      game.ironswornMoveRoll(`@${stat}`, this.actor.data.data, label)
+      ironswornMoveRoll(`@${stat}`, this.actor.data.data, label)
     }
 
     const tableName = el.dataset.table

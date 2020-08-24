@@ -37,32 +37,6 @@ Hooks.once('init', async function () {
     default: true,
     config: true
   })
-
-  game.ironswornMoveRoll = async function (
-    bonusExpr = '0',
-    values = {},
-    title
-  ) {
-    const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
-    if (true) {
-      r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
-      return
-    }
-
-    const template = 'systems/foundry-ironsworn/templates/dice/roll.html'
-    const templateData = {
-      roll: r,
-      user: game.user._id
-    }
-    const content = await renderTemplate(template, templateData)
-
-    const rollChatData = {
-      type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-      roll: r,
-      content
-    }
-    ChatMessage.create(rollChatData)
-  }
 })
 
 Hooks.once('setup', () => {
@@ -162,3 +136,46 @@ Handlebars.registerHelper('ironswornHitType', function () {
   }
   return 'Weak Hit'
 })
+
+export async function ironswornMoveRoll (bonusExpr = '0', values = {}, title) {
+  const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
+  if (true) {
+    r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
+    return
+  }
+
+  const template = 'systems/foundry-ironsworn/templates/dice/roll.html'
+  const templateData = {
+    roll: r,
+    user: game.user._id
+  }
+  const content = await renderTemplate(template, templateData)
+
+  const rollChatData = {
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    roll: r,
+    content
+  }
+  ChatMessage.create(rollChatData)
+}
+
+export async function ironswornRollDialog (data, stat, title) {
+  const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
+  const html = await renderTemplate(template, data)
+  let d = new Dialog({
+    title: title || `Roll +${stat}`,
+    content: html,
+    buttons: {
+      roll: {
+        icon: '<i class="fas fa-dice-d10"></i>',
+        label: 'Roll',
+        callback: x => {
+          const form = x[0].querySelector('form')
+          const bonus = form[0].value
+          ironswornMoveRoll(`@${stat}+${bonus}`, data, title)
+        }
+      }
+    }
+  })
+  d.render(true)
+}

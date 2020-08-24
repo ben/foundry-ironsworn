@@ -28,12 +28,10 @@
             {{/each}}
 
             {{#each data.abilities}}
-            <p>
-                <label class="attribute-value checkbox">
-                    <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} />
-                    {{ description }}
-                </label>
-            </p>
+            <div class="flexrow">
+                <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} />
+                <p>{{description}}</p>
+            </div>
             {{/each}}
 
             <pre><code>{{json data}}</code></pre>

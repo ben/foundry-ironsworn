@@ -1,3 +1,5 @@
+import { ironswornMoveRoll, ironswornRollDialog } from './ironsworn.js'
+
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
@@ -60,8 +62,11 @@ export class IronswornItemSheet extends ItemSheet {
       ev.preventDefault()
       const el = ev.currentTarget
       const moveTitle = `${this.object.name} (${el.dataset.param})`
-      const rollData = this.object.isOwned ? this.object.owner : {}
-      game.ironswornMoveRoll(`@${el.dataset.param}`, rollData, moveTitle)
+      const rollData = {
+        actor: this.object.isOwned ? this.object.owner : {},
+        param: el.dataset.param
+      }
+      return ironswornRollDialog(rollData.actor, el.dataset.param, moveTitle)
     })
 
     // Everything below here is only needed if the sheet is editable
