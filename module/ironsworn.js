@@ -161,7 +161,8 @@ export async function ironswornMoveRoll (bonusExpr = '0', values = {}, title) {
 
 export async function ironswornRollDialog (data, stat, title) {
   const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
-  const html = await renderTemplate(template, data)
+  const templateData = { data, stat }
+  const html = await renderTemplate(template, templateData)
   let d = new Dialog({
     title: title || `Roll +${stat}`,
     content: html,
