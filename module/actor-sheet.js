@@ -90,7 +90,7 @@ export class IronswornActorSheet extends ActorSheet {
 
     const stat = el.dataset.stat
     if (stat) {
-      ironswornRollDialog(this.actor.data.data, stat, `Rolling +${stat}`)
+      ironswornRollDialog(this.actor.data.data, stat, `Roll +${stat}`)
     }
 
     const tableName = el.dataset.table
