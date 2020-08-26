@@ -83,25 +83,24 @@
         </div>
         <div class="flexcol">
             <div class="flexrow stats">
-                <div class="stat clickable block" data-stat="edge">
-                    <h4>Edge</h4>
-                    <h3>{{data.edge}}</h3>
+                {{#*inline "stat"}}
+                <div class="stat clickable block" data-stat="{{stat}}">
+                    <h4>{{stat}}</h4>
+                    <h3>{{lookup data stat}}</h3>
                 </div>
-                <div class="stat clickable block" data-stat="heart">
-                    <h4>Heart</h4>
-                    <h3>{{data.heart}}</h3>
-                </div>
-                <div class="stat clickable block" data-stat="iron">
-                    <h4>Iron</h4>
-                    <h3>{{data.iron}}</h3>
-                </div>
-                <div class="stat clickable block" data-stat="shadow">
-                    <h4>Shadow</h4>
-                    <h3>{{data.shadow}}</h3>
-                </div>
-                <div class="stat clickable block" data-stat="wits">
-                    <h4>Wits</h4>
-                    <h3>{{data.wits}}</h3>
+                {{/inline}}
+
+
+                {{>stat stat="edge"}}
+                {{>stat stat="heart"}}
+                {{>stat stat="iron"}}
+                {{>stat stat="shadow"}}
+                {{>stat stat="wits"}}
+
+                <div class="clickable block flexcol edit">
+                    <p class="flexrow" style="align-items: center; padding-left: 4px;">
+                        <i class="fas fa-edit"></i>
+                    </p>
                 </div>
             </div>
 

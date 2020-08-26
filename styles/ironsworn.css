@@ -113,7 +113,7 @@
 .ironsworn .stack .stack-row input[type="radio"] {
   appearance: none;
 }
-.ironsworn .clickable.block {
+.ironsworn .clickable {
   transition: 0.5s ease;
   cursor: pointer;
 }
@@ -124,10 +124,6 @@
 .ironsworn .clickable.block:active {
   background: #aaa;
   transition: 0.2s ease;
-}
-.ironsworn .clickable.text {
-  transition: 0.5s ease;
-  cursor: pointer;
 }
 .ironsworn .clickable.text:hover {
   color: #ccc;
@@ -155,6 +151,20 @@
 .ironsworn .stats .stat h4 {
   margin: 0;
   font-weight: bold;
+}
+.ironsworn .stats .edit {
+  flex: 0 0 30px;
+  justify-items: center;
+  align-items: center;
+  border: 1px solid black;
+  transition: 0.5s ease;
+}
+.ironsworn .stats .edit.editing {
+  background: gray;
+}
+.ironsworn .stats .edit h4 {
+  transform: rotate(90deg);
+  transform-origin: 0 0;
 }
 .ironsworn .move-entry .move-summary {
   white-space: normal;

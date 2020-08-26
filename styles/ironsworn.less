@@ -130,33 +130,32 @@
     }
   }
 
-  .clickable.block {
+  .clickable {
     transition: 0.5s ease;
     cursor: pointer;
 
-    &:hover {
-      background: #ccc;
-      transition: 0.5s ease;
+    &.block {
+      &:hover {
+        background: #ccc;
+        transition: 0.5s ease;
+      }
+
+      &:active {
+        background: #aaa;
+        transition: 0.2s ease;
+      }
     }
 
-    &:active {
-      background: #aaa;
-      transition: 0.2s ease;
-    }
-  }
+    &.text {
+      &:hover {
+        color: #ccc;
+        transition: 0.5s ease;
+      }
 
-  .clickable.text {
-    transition: 0.5s ease;
-    cursor: pointer;
-
-    &:hover {
-      color: #ccc;
-      transition: 0.5s ease;
-    }
-
-    &:active {
-      color: #aaa;
-      transition: 0.2s ease;
+      &:active {
+        color: #aaa;
+        transition: 0.2s ease;
+      }
     }
   }
 
@@ -179,6 +178,24 @@
       h4 {
         margin: 0;
         font-weight: bold;
+      }
+
+    }
+
+    .edit {
+      flex: 0 0 30px;
+      justify-items: center;
+      align-items: center;
+      border: 1px solid black;
+      transition: 0.5s ease;
+
+      &.editing {
+        background: gray;
+      }
+
+      h4 {
+        transform: rotate(90deg);
+        transform-origin: 0 0;
       }
     }
   }
