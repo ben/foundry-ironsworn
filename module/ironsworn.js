@@ -67,6 +67,19 @@ Hooks.once('setup', () => {
   }
 })
 
+Hooks.on('createActor', async actor => {
+  debugger
+  if (actor.data.type !== 'character') return
+  const pack = game.packs.get('foundry-ironsworn.ironswornitems')
+  for (const indexEntry of await pack.getIndex()) {
+    console.log(indexEntry)
+    if (indexEntry.name.match(/^Move:/)) {
+      const item = await pack.getEntity(indexEntry._id)
+      console.log(await actor.createOwnedItem(item))
+    }
+  }
+})
+
 Handlebars.registerHelper('join', function (a, joiner) {
   return a.join(joiner)
 })

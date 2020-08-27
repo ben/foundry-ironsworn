@@ -127,7 +127,6 @@
                 <ol>
                     {{#each moveOrder as |key|}}
                     {{#with (lookup ../moves [key])}}
-                    {{log this}}
                     <li class="move-entry" data-move="{{key}}">
                         <h3>{{title}}</h3>
                     </li>

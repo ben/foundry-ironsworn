@@ -20,6 +20,13 @@
       "system": "foundry-ironsworn",
       "path": "packs/tables.db",
       "entity": "RollTable"
+    },
+    {
+      "name": "ironswornitems",
+      "label": "Ironsworn Items",
+      "system": "foundry-ironsworn",
+      "path": "packs/items.db",
+      "entity": "Item"
     }
   ],
   "languages": [
