@@ -62,7 +62,7 @@ export class IronswornItemSheet extends ItemSheet {
       ev.preventDefault()
       const el = ev.currentTarget
       const moveTitle = `${this.object.name} (${el.dataset.param})`
-      const actor = this.object.isOwned ? this.object.owner : {}
+      const actor = this.object.actor || {}
       return ironswornRollDialog(actor.data?.data, el.dataset.param, moveTitle)
     })
 
