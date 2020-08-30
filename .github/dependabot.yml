@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Enable version updates for Javascript packages
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "dependencies"
