@@ -8,5 +8,5 @@ It's based on the [Simple Worldbuilding System](https://gitlab.com/foundrynet/wo
 To install it, plug this URL into the install UI:
 
 ```
-https://raw.githubusercontent.com/ben/foundry-ironsworn/master/system.json
+https://raw.githubusercontent.com/ben/foundry-ironsworn/main/system.json
 ```
