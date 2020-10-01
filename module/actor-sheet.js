@@ -49,7 +49,16 @@ export class IronswornActorSheet extends ActorSheet {
     if (!this.options.editable) return
 
     // Enable rolling stats
-    html.find('.clickable').click(this._rollStat.bind(this))
+    html.find('.stat.clickable').click(this._rollStat.bind(this))
+
+    // Enable editing stats
+    html.find('#edit-stats').click(async ev => {
+      if (this.actor.getFlag('foundry-ironsworn', 'editStats')) {
+        await this.actor.unsetFlag('foundry-ironsworn', 'editStats')
+      } else {
+        await this.actor.setFlag('foundry-ironsworn', 'editStats', 'true')
+      }
+    })
 
     // Moves expand in place
     html.find('.move-entry').click(ev => {

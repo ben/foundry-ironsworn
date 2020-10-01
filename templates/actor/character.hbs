@@ -90,14 +90,28 @@
                 </div>
                 {{/inline}}
 
+                {{#*inline "statEdit"}}
+                <div class="stat block">
+                    <h4>{{stat}}</h4>
+                    <input name="data.{{stat}}" type="number" value="{{lookup data stat}}" />
+                </div>
+                {{/inline}}
 
+                {{#if actor.flags.foundry-ironsworn.editStats}}
+                {{>statEdit stat="edge"}}
+                {{>statEdit stat="heart"}}
+                {{>statEdit stat="iron"}}
+                {{>statEdit stat="shadow"}}
+                {{>statEdit stat="wits"}}
+                {{else}}
                 {{>stat stat="edge"}}
                 {{>stat stat="heart"}}
                 {{>stat stat="iron"}}
                 {{>stat stat="shadow"}}
                 {{>stat stat="wits"}}
+                {{/if}}
 
-                <div class="clickable block flexcol edit">
+                <div class="clickable block flexcol edit" id="edit-stats">
                     <p class="flexrow" style="align-items: center; padding-left: 4px;">
                         <i class="fas fa-edit"></i>
                     </p>
