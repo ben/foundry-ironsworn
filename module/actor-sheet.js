@@ -49,7 +49,7 @@ export class IronswornActorSheet extends ActorSheet {
     if (!this.options.editable) return
 
     // Enable rolling stats
-    html.find('.stat.clickable').click(this._rollStat.bind(this))
+    html.find('.clickable').click(this._rollStat.bind(this))
 
     // Enable editing stats
     html.find('#edit-stats').click(async ev => {
