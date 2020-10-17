@@ -80,6 +80,11 @@ Hooks.on('createActor', async actor => {
   }
 })
 
+// Autofucus on input box when rolling
+Hooks.on('renderIronswornRollDialog', async (dialog, html, data) => {
+  html.find('input').focus()
+})
+
 Handlebars.registerHelper('join', function (a, joiner) {
   return a.join(joiner)
 })
@@ -172,11 +177,13 @@ export async function ironswornMoveRoll (bonusExpr = '0', values = {}, title) {
   ChatMessage.create(rollChatData)
 }
 
+class IronswornRollDialog extends Dialog {}
+
 export async function ironswornRollDialog (data, stat, title) {
   const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
   const templateData = { data, stat }
   const html = await renderTemplate(template, templateData)
-  let d = new Dialog({
+  let d = new IronswornRollDialog({
     title: title || `Roll +${stat}`,
     content: html,
     buttons: {
@@ -185,11 +192,12 @@ export async function ironswornRollDialog (data, stat, title) {
         label: 'Roll',
         callback: x => {
           const form = x[0].querySelector('form')
-          const bonus = form[0].value
-          ironswornMoveRoll(`@${stat}+${bonus}`, data, title)
+          const bonus = parseInt(form[0].value, 10)
+          ironswornMoveRoll(`@${stat}+${bonus || 0}`, data, title)
         }
       }
-    }
+    },
+    default: 'roll'
   })
   d.render(true)
 }
