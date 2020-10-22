@@ -41,7 +41,7 @@
   "primaryTokenAttribute": "health",
   "secondaryTokenAttribute": "power",
   "url": "https://github.com/ben/foundry-ironsworn",
-  "manifest": "https://github.com/ben/foundry-ironsworn/blob/main/system.json",
+  "manifest": "https://raw.githubusercontent.com/ben/foundry-ironsworn/main/system.json",
   "download": "",
   "license": "LICENSE.txt"
 }
