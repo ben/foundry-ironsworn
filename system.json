@@ -27,6 +27,13 @@
       "system": "foundry-ironsworn",
       "path": "packs/items.db",
       "entity": "Item"
+    },
+    {
+      "name": "ironswornscenes",
+      "label": "Ironsworn Maps",
+      "system": "foundry-ironsworn",
+      "path": "packs/scenes.db",
+      "entity": "Scene"
     }
   ],
   "languages": [
