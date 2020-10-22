@@ -107,12 +107,11 @@ Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
 
 function classesForRoll (r) {
   const d = r.dice[0]
-  const minRoll = Math.min(...d.sides)
-  const maxRoll = Math.max(...d.sides)
+  const maxRoll = d.faces
   return [
     d.constructor.name.toLowerCase(),
     'd' + d.faces,
-    d.total === minRoll ? 'min' : null,
+    d.total === 1 ? 'min' : null,
     d.total === maxRoll ? 'max' : null
   ]
     .filter(x => x)
