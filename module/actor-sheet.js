@@ -48,8 +48,10 @@ export class IronswornActorSheet extends ActorSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return
 
-    // Enable rolling stats
+    // Handle most clickables
     html.find('.clickable').click(this._rollStat.bind(this))
+
+    html.find('#burn').click(this._burnMomentum.bind(this))
 
     // Enable editing stats
     html.find('#edit-stats').click(async ev => {
@@ -107,12 +109,15 @@ export class IronswornActorSheet extends ActorSheet {
     if (resource) {
       // Clicked a value in momentum/health/etc, set the value
       const newValue = parseInt(el.dataset.value)
-      await this.actor.update({
-        _id: this.actor.id,
-        data: {
-          [resource]: newValue
-        }
-      })
+      const { momentumMax } = this.actor.data.data
+      if (newValue <= momentumMax) {
+        await this.actor.update({
+          _id: this.actor.id,
+          data: {
+            [resource]: newValue
+          }
+        })
+      }
     }
 
     const tableName = el.dataset.table
@@ -150,6 +155,18 @@ export class IronswornActorSheet extends ActorSheet {
         }
       }
     }).render(true)
+  }
+
+  async _burnMomentum (event) {
+    event.preventDefault()
+
+    const { momentum, momentumReset } = this.actor.data.data
+    if (momentum > momentumReset) {
+      await this.actor.update({
+        _id: this.actor.id,
+        data: { momentum: momentumReset }
+      })
+    }
   }
 }
 

@@ -24,7 +24,9 @@
                 <h4 class="vertical">Momentum</h4>
                 {{>stack stat="momentum" from=10 to=-6}}
                 <hr />
-                <button style="width: 50px">Burn</button>
+                <div class="clickable block stack-row" id="burn">
+                    Burn
+                </div>
                 Reset: {{data.momentumReset}}
                 Max: {{data.momentumMax}}
             </div>
