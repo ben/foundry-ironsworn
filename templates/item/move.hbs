@@ -26,7 +26,7 @@
             <hr>
             <p>On a <strong>strong hit,</strong> {{{data.strongHit}}}</p>
             <p>On a <strong>weak hit,</strong> {{{data.weakHit}}}</p>
-            <p>On a <strong>miss</strong>, {{{data.strongHit}}}</p>
+            <p>On a <strong>miss</strong>, {{{data.miss}}}</p>
 
             {{!-- <pre><code>{{json data}}</code></pre> --}}
         </div>
@@ -74,11 +74,11 @@
             <hr>
             <section style="flex: 0">
                 <label>On a <strong>strong hit:</strong></label>
-                <input name="strongHit" type="text" value="{{data.strongHit}}" placeholder="you gain..." />
+                <input name="data.strongHit" type="text" value="{{data.strongHit}}" placeholder="you gain..." />
                 <label>On a <strong>weak hit:</strong></label>
-                <input name="strongHit" type="text" value="{{data.weakHit}}" placeholder="you can..." />
+                <input name="data.weakHit" type="text" value="{{data.weakHit}}" placeholder="you can..." />
                 <label>On a <strong>miss:</strong></label>
-                <input name="strongHit" type="text" value="{{data.miss}}" placeholder="you fail..." />
+                <input name="data.miss" type="text" value="{{data.miss}}" placeholder="you fail..." />
             </section>
 
         </div>
