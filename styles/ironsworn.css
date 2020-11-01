@@ -133,6 +133,10 @@
   color: #aaa;
   transition: 0.2s ease;
 }
+.ironsworn .clickable.selected {
+  color: white;
+  background: black;
+}
 .ironsworn .stats {
   flex: 0;
   justify-content: space-around;

@@ -9,76 +9,38 @@
         </div>
     </header>
 
+    {{#*inline "stack"}}
+    {{#rangeEach from=from to=to current=(lookup data stat)}}
+    <div class="clickable block stack-row {{stat}} {{#if isCurrent}} selected {{/if}}" data-resource="{{stat}}"
+        data-value="{{value}}">
+        {{valueStr}}
+    </div>
+    {{/rangeEach}}
+    {{/inline}}
+
     <div class="flexrow">
-        <div class="flexcol margin-left stack momentum">
-            <h4 class="vertical">Momentum</h4>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="10"
-                    id="momentum10">+10</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="9" id="momentum9">+9</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="8" id="momentum8">+8</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="7" id="momentum7">+7</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="6" id="momentum6">+6</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="5" id="momentum5">+5</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="4" id="momentum4">+4</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="3" id="momentum3">+3</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="2" id="momentum2">+2</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="1" id="momentum1">+1</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="0" id="momentum0">0</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="-1" id="momentum-1">-1</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="-2" id="momentum-2">-2</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="-3" id="momentum-3">-3</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="-4" id="momentum-4">-4</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="-5" id="momentum-5">-5</label>
-            <label class="clickable stack-row"><input type="radio" name="momentum" value="-6" id="momentum-6">-6</label>
-            <button style="width: 50px">Burn</button>
-            Reset: {{data.momentumReset}}
-            Max: {{data.momentumMax}}
+        <div class="flexcol margin-left">
+            <div class="flexcol stack momentum">
+                <h4 class="vertical">Momentum</h4>
+                {{>stack stat="momentum" from=10 to=-6}}
+                <hr />
+                <button style="width: 50px">Burn</button>
+                Reset: {{data.momentumReset}}
+                Max: {{data.momentumMax}}
+            </div>
         </div>
         <div class="flexcol margin-left">
             <div class="flexcol stack health">
                 <h4 class="vertical clickable text" data-stat="health">Health</h4>
-                <label class="clickable block stack-row"><input type="radio" name="health" value="5"
-                        id="health5">+5</label>
-                <label class="clickable block stack-row"><input type="radio" name="health" value="4"
-                        id="health4">+4</label>
-                <label class="clickable block stack-row"><input type="radio" name="health" value="3"
-                        id="health3">+3</label>
-                <label class="clickable block stack-row"><input type="radio" name="health" value="2"
-                        id="health2">+2</label>
-                <label class="clickable block stack-row"><input type="radio" name="health" value="1"
-                        id="health1">+1</label>
-                <label class="clickable block stack-row"><input type="radio" name="health" value="0"
-                        id="health0">0</label>
+                {{>stack stat="health" from=5 to=0}}
             </div>
             <div class="flexcol stack spirit">
                 <h4 class="vertical clickable text" data-stat="spirit">Spirit</h4>
-                <label class="clickable block stack-row"><input type="radio" name="spirit" value="5"
-                        id="spirit5">+5</label>
-                <label class="clickable block stack-row"><input type="radio" name="spirit" value="4"
-                        id="spirit4">+4</label>
-                <label class="clickable block stack-row"><input type="radio" name="spirit" value="3"
-                        id="spirit3">+3</label>
-                <label class="clickable block stack-row"><input type="radio" name="spirit" value="2"
-                        id="spirit2">+2</label>
-                <label class="clickable block stack-row"><input type="radio" name="spirit" value="1"
-                        id="spirit1">+1</label>
-                <label class="clickable block stack-row"><input type="radio" name="spirit" value="0"
-                        id="spirit0">0</label>
+                {{>stack stat="spirit" from=5 to=0}}
             </div>
             <div class="flexcol stack supply">
                 <h4 class="vertical clickable text" data-stat="supply">Supply</h4>
-                <label class="clickable block stack-row"><input type="radio" name="supply" value="5"
-                        id="supply5">+5</label>
-                <label class="clickable block stack-row"><input type="radio" name="supply" value="4"
-                        id="supply4">+4</label>
-                <label class="clickable block stack-row"><input type="radio" name="supply" value="3"
-                        id="supply3">+3</label>
-                <label class="clickable block stack-row"><input type="radio" name="supply" value="2"
-                        id="supply2">+2</label>
-                <label class="clickable block stack-row"><input type="radio" name="supply" value="1"
-                        id="supply1">+1</label>
-                <label class="clickable block stack-row"><input type="radio" name="supply" value="0"
-                        id="supply0">0</label>
+                {{>stack stat="supply" from=5 to=0}}
             </div>
         </div>
         <div class="flexcol">

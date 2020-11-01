@@ -99,11 +99,25 @@ export class IronswornActorSheet extends ActorSheet {
 
     const stat = el.dataset.stat
     if (stat) {
+      // Clicked a non-edit stat; trigger a roll
       ironswornRollDialog(this.actor.data.data, stat, `Roll +${stat}`)
+    }
+
+    const resource = el.dataset.resource
+    if (resource) {
+      // Clicked a value in momentum/health/etc, set the value
+      const newValue = parseInt(el.dataset.value)
+      await this.actor.update({
+        _id: this.actor.id,
+        data: {
+          [resource]: newValue
+        }
+      })
     }
 
     const tableName = el.dataset.table
     if (tableName) {
+      // Clicked an oracle, roll from the table
       let table = game.tables.find(x => x.name === tableName)
       if (!table) {
         const pack = game.packs.get('foundry-ironsworn.ironsworntables')
