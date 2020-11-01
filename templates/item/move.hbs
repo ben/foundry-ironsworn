@@ -9,10 +9,6 @@
     <section class="sheet-body">
 
         <div class="tab" data-group="primary" data-tab="view">
-            <header class="sheet-header">
-                <h1>{{item.name}}</h1>
-            </header>
-
             <p>{{{data.description}}}</p>
 
             <ul>
@@ -42,15 +38,15 @@
                 </h1>
             </header>
             <section style="flex: 1">
-                <input name="description" type="text" value="{{data.description}}" placeholder="When you..." />
+                <input name="data.description" type="text" value="{{data.description}}" placeholder="When you..." />
             </section>
 
-            {{#each data.options}}
-            <section>
-                <input name="data.options.{{@index}}.description" type="text" value="{{description}}"
+            {{#each data.options as |option key| }}
+            <section class="inset">
+                <input name="data.options.{{key}}.description" type="text" value="{{option.description}}"
                     placeholder="With..." />
                 <label>
-                    <input type="checkbox" name="data.options.{{@index}}.useAsset" {{checked useAsset}} />
+                    <input type="checkbox" name="data.options.{{key}}.useAsset" {{checked option.useAsset}} />
                     Use stat from asset
                 </label>
                 <p>
@@ -58,23 +54,23 @@
                     <span class="flexrow">
                         <div class="flexcol">
                             Asset name:
-                            <input name="data.options.{{@index}}.asset" type="text" value="{{asset}}"
+                            <input name="data.options.{{key}}.asset" type="text" value="{{option.asset}}"
                                 placeholder="edge" />
                         </div>
                         <div class="flexcol">
                             Asset stat name:
-                            <input name="data.options.{{@index}}.param" type="text" value="{{param}}"
+                            <input name="data.options.{{key}}.param" type="text" value="{{option.param}}"
                                 placeholder="edge" />
                         </div>
                     </span>
                     {{else}}
                     Roll +
-                    <input name="data.options.{{@index}}.param" type="text" value="{{param}}" placeholder="edge" />
+                    <input name="data.options.{{key}}.param" type="text" value="{{option.param}}" placeholder="edge" />
                     {{/if}}
                 </p>
             </section>
             {{/each}}
-            <button>+</button>
+            <button class="addOption">+</button>
             <hr>
             <section style="flex: 0">
                 <label>On a <strong>strong hit:</strong></label>

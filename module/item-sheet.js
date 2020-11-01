@@ -77,6 +77,15 @@ export class IronswornItemSheet extends ItemSheet {
         '.attribute-control',
         this._onClickAttributeControl.bind(this)
       )
+    html.find('.addOption').click(async () => {
+      const { options } = this.item.data.data
+      options.push({ description: '', param: 'edge' })
+      await this.item.update({
+        _id: this.item.id,
+        data: { options }
+      })
+      await this.item.render(true)
+    })
   }
 
   /* -------------------------------------------- */

@@ -177,6 +177,12 @@
   transform: rotate(90deg);
   transform-origin: 0 0;
 }
+.ironsworn .inset {
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid gray;
+  border-radius: 3px;
+}
 .ironsworn .move-entry .move-summary {
   white-space: normal;
   font-variant: normal;
