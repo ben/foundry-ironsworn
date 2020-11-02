@@ -111,12 +111,7 @@ export class IronswornActorSheet extends ActorSheet {
       const newValue = parseInt(el.dataset.value)
       const { momentumMax } = this.actor.data.data
       if (newValue <= momentumMax) {
-        await this.actor.update({
-          _id: this.actor.id,
-          data: {
-            [resource]: newValue
-          }
-        })
+        await this.actor.update({ data: { [resource]: newValue } })
       }
     }
 
