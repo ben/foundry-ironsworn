@@ -13,7 +13,7 @@
 
             <ul>
                 {{#each data.options}}
-                <li>
+                <li class="move-li">
                     {{{description}}}:
                     <a class="inline-roll" data-useAsset="{{useAsset}}" data-param="{{param}}" data-asset="{{asset}}">
                         <i class="fas fa-dice-d20"></i>
@@ -37,8 +37,8 @@
                     <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
                 </h1>
             </header>
-            <section style="flex: 1">
-                <input name="data.description" type="text" value="{{data.description}}" placeholder="When you..." />
+            <section class="inset">
+                {{editor content=data.description target="data.description" button=true owner=owner editable=true}}
             </section>
 
             {{#each data.options as |option key| }}
@@ -73,12 +73,20 @@
             <button class="addOption">+</button>
             <hr>
             <section style="flex: 0">
-                <label>On a <strong>strong hit:</strong></label>
-                <input name="data.strongHit" type="text" value="{{data.strongHit}}" placeholder="you gain..." />
-                <label>On a <strong>weak hit:</strong></label>
-                <input name="data.weakHit" type="text" value="{{data.weakHit}}" placeholder="you can..." />
-                <label>On a <strong>miss:</strong></label>
-                <input name="data.miss" type="text" value="{{data.miss}}" placeholder="you fail..." />
+                <section class="inset">
+                    <label>On a <strong>strong hit:</strong></label>
+                    {{editor content=data.strongHit target="data.strongHit" button=true owner=owner editable=true}}
+                </section>
+
+                <section class="inset">
+                    <label>On a <strong>weak hit:</strong></label>
+                    {{editor content=data.weakHit target="data.weakHit" button=true owner=owner editable=true}}
+                </section>
+
+                <section class="inset">
+                    <label>On a <strong>miss:</strong></label>
+                    {{editor content=data.miss target="data.miss" button=true owner=owner editable=true}}
+                </section>
             </section>
 
         </div>

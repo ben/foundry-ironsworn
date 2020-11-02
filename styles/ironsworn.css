@@ -226,6 +226,10 @@
 .ironsworn .editor,
 .ironsworn .editor-content {
   height: 100%;
+  min-height: 100px;
+}
+.ironsworn .move-li {
+  height: 1.5rem;
 }
 .ironsworn .item-list {
   list-style: none;
