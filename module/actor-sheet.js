@@ -33,10 +33,22 @@ export class IronswornActorSheet extends ActorSheet {
   /** @override */
   getData () {
     const data = super.getData()
-    data.dtypes = ['String', 'Number', 'Boolean']
-    data.moveItems = this.actor.items.entries.filter(
-      x => x.data.type === 'move'
-    )
+
+    data.movesForDisplay = []
+    for (const moveName of MOVES) {
+      if (moveName.startsWith('---')) {
+        data.movesForDisplay.push({
+          separator: true,
+          title: moveName.substr('--- '.length)
+        })
+      } else {
+        const move = this.actor.items.find(
+          x => x.type === 'move' && x.name === moveName
+        )
+        if (move) data.movesForDisplay.push(move)
+      }
+    }
+
     return data
   }
 
@@ -165,3 +177,47 @@ export class IronswornActorSheet extends ActorSheet {
     }
   }
 }
+
+const MOVES = [
+  '--- Fate',
+  'Pay the Price',
+  'Ask the Oracle',
+  '--- Combat',
+  'Enter the Fray',
+  'Strike',
+  'Clash',
+  'Turn the Tide',
+  'End the Fight',
+  'Battle',
+  '--- Adventure',
+  'Face Danger',
+  'Secure an Advantage',
+  'Gather Information',
+  'Heal',
+  'Resupply',
+  'Make Camp',
+  'Undertake a Journey',
+  'Reach Your Destination',
+  '--- Relationship',
+  'Compel',
+  'Sojourn',
+  'Draw the Circle',
+  'Forge a Bond',
+  'Test Your Bond',
+  'Aid Your Ally',
+  'Write Your Epilogue',
+  '--- Quest',
+  'Swear an Iron Vow',
+  'Reach a Milestone',
+  'Fulfill Your Vow',
+  'Forsake Your Vow',
+  'Advance',
+  '--- Suffer',
+  'Endure Harm',
+  'Endure Stress',
+  'Companion Endure Harm',
+  'Face Death',
+  'Face Desolation',
+  'Out of Supply',
+  'Face a Setback'
+]
