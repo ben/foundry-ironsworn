@@ -67,19 +67,6 @@ Hooks.once('setup', () => {
   }
 })
 
-Hooks.on('createActor', async actor => {
-  if (actor.data.type !== 'character') return
-  if (actor.items.size !== 0) return
-  const pack = game.packs.get('foundry-ironsworn.ironswornitems')
-  for (const indexEntry of await pack.getIndex()) {
-    console.log(indexEntry)
-    if (indexEntry.name.match(/^Move:/)) {
-      const item = await pack.getEntity(indexEntry._id)
-      console.log(await actor.createOwnedItem(item))
-    }
-  }
-})
-
 // Autofucus on input box when rolling
 Hooks.on('renderIronswornRollDialog', async (dialog, html, data) => {
   html.find('input').focus()

@@ -110,6 +110,14 @@
                     </li>
                     {{/with}}
                     {{/each}}
+
+                    {{#each actor.movesForDisplay}}
+                    {{#if separator}}
+                    <h2>{{title}}</h4>
+                        {{else}}
+                        <li>{{name}}</li>
+                        {{/if}}
+                        {{/each}}
                 </ol>
             </div>
 

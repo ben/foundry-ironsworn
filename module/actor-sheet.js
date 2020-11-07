@@ -34,8 +34,9 @@ export class IronswornActorSheet extends ActorSheet {
   getData () {
     const data = super.getData()
     data.dtypes = ['String', 'Number', 'Boolean']
-    data.moves = MOVES
-    data.moveOrder = MOVE_ORDER
+    data.moveItems = this.actor.items.entries.filter(
+      x => x.data.type === 'move'
+    )
     return data
   }
 
@@ -162,32 +163,5 @@ export class IronswornActorSheet extends ActorSheet {
         data: { momentum: momentumReset }
       })
     }
-  }
-}
-
-const MOVE_ORDER = ['faceDanger', 'secureAdvantage']
-const MOVES = {
-  faceDanger: {
-    title: 'Face Danger',
-    stats: [
-      { title: 'Edge', stat: 'edge' },
-      { title: 'Heart', stat: 'heart' },
-      { title: 'Iron', stat: 'iron' },
-      { title: 'Shadow', stat: 'shadow' },
-      { title: 'Wits', stat: 'wits' },
-      { title: "God's Stat (Devotant)", asset: 'Devotant' },
-      { title: 'Essence (Invoke)', asset: 'Invoke' }
-    ]
-  },
-  secureAdvantage: {
-    title: 'Secure an Advantage',
-    stats: [
-      { title: 'Edge', stat: 'edge' },
-      { title: 'Heart', stat: 'heart' },
-      { title: 'Iron', stat: 'iron' },
-      { title: 'Shadow', stat: 'shadow' },
-      { title: 'Wits', stat: 'wits' },
-      { title: 'Essence (Invoke)', asset: 'Invoke' }
-    ]
   }
 }
