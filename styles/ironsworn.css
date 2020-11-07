@@ -183,6 +183,10 @@
   border: 1px solid gray;
   border-radius: 3px;
 }
+.ironsworn .remove-option {
+  flex-grow: 0;
+  line-height: 26px;
+}
 .ironsworn .move-entry .move-summary {
   white-space: normal;
   font-variant: normal;

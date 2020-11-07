@@ -40,13 +40,9 @@ export class IronswornActor extends Actor {
   async addDefaultMoves () {
     const pack = game.packs.get('foundry-ironsworn.ironswornitems')
     const packIndex = await pack.getIndex()
-
-    for (const name of MOVES.filter(x => !x.startsWith('---'))) {
-      const itemEntry = packIndex.find(x => x.name === name)
-      if (itemEntry) {
-        const item = await pack.getEntity(itemEntry._id)
-        await this.createOwnedItem(item)
-      }
+    for (const itemEntry of packIndex) {
+      const item = await pack.getEntity(itemEntry._id)
+      if (item.type === 'move') await this.createOwnedItem(item)
     }
   }
 }

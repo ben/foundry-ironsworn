@@ -43,8 +43,11 @@
 
             {{#each data.options as |option key| }}
             <section class="inset">
-                <input name="data.options.{{key}}.description" type="text" value="{{option.description}}"
-                    placeholder="With..." />
+                <div class="flexrow">
+                    <input name="data.options.{{key}}.description" type="text" value="{{option.description}}"
+                        placeholder="With..." />
+                    <button class="remove-option" data-key={{key}}>-</button>
+                </div>
                 <label>
                     <input type="checkbox" name="data.options.{{key}}.useAsset" {{checked option.useAsset}} />
                     Use stat from asset
