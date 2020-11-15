@@ -18,7 +18,16 @@
       "momentum": 2,
       "momentumReset": 2,
       "momentumMax": 10,
-      "debility": {}
+      "debility": {
+        "corrupted": false,
+        "cursed": false,
+        "encumbered": false,
+        "maimed": false,
+        "shaken": false,
+        "tormented": false,
+        "unprepared": false,
+        "wounded": false
+      }
     },
     "shared": {}
   },

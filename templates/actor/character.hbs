@@ -85,15 +85,50 @@
             <div class="flexrow">
 
                 <div class="flexcol">
-                    <h1 style="text-align:center">assets</h1>
-                    <h1 style="text-align:center">bonds</h1>
-                    <h1 style="text-align:center">debilities</h1>
+                    <section class="sheet-area">
+                        <h1 style="text-align:center">Assets</h1>
+                    </section>
+                    <section class="sheet-area">
+                        <h1 style="text-align:center">Bonds</h1>
+                    </section>
+
+                    <section class="sheet-area">
+                        <h1 style="text-align:center">Debilities</h1>
+
+                        {{#*inline "debility"}}
+                        <label class="checkbox">
+                            <input type="checkbox" name="data.debility.{{name}}"
+                                {{checked (lookup data.debility name)}}>
+                            {{capitalize name}}
+                        </label>
+                        {{/inline}}
+
+                        <div class="flexrow">
+                            <div class="flexcol">
+                                <h3>Conditions</h3>
+                                {{>debility name="wounded"}}
+                                {{>debility name="unprepared"}}
+                                {{>debility name="shaken"}}
+                                {{>debility name="encumbered"}}
+                            </div>
+                            <div class="flexcol">
+                                <h3>Banes</h3>
+                                {{>debility name="maimed"}}
+                                {{>debility name="corrupted"}}
+
+                                <h3>Burdens</h3>
+                                {{>debility name="cursed"}}
+                                {{>debility name="tormented"}}
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
 
                 <div class="flexcol">
-                    <h1 style="text-align:center">vows</h1>
-                    <h1 style="text-align:center">progress</h1>
-                    <h1 style="text-align:center">sites</h1>
+                    <h1 style="text-align:center">Vows</h1>
+                    <h1 style="text-align:center">Progress</h1>
+                    <h1 style="text-align:center">Sites</h1>
                 </div>
 
             </div>

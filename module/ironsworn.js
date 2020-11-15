@@ -189,7 +189,6 @@ export async function ironswornRollDialog (data, stat, title) {
 }
 
 Handlebars.registerHelper('rangeEach', function (context, options) {
-  console.log({ self: this, context, options })
   const results = []
   for (let value = context.hash.from; value >= context.hash.to; value--) {
     const valueStr = value > 0 ? `+${value}` : value.toString()
@@ -204,4 +203,9 @@ Handlebars.registerHelper('rangeEach', function (context, options) {
     )
   }
   return results.join('\n')
+})
+
+Handlebars.registerHelper('capitalize', txt => {
+  const [first, ...rest] = txt
+  return `${first.toUpperCase()}${rest.join('')}`
 })

@@ -17,6 +17,14 @@
   padding: 5px;
   overflow-y: scroll;
 }
+.ironsworn .sheet-area {
+  border-top: 2px solid darkgray;
+}
+.ironsworn .sheet-area h1,
+.ironsworn .sheet-area h2,
+.ironsworn .sheet-area h3 {
+  border: none;
+}
 .ironsworn .sheet-header {
   overflow: hidden;
   display: flex;

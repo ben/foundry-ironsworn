@@ -52,3 +52,16 @@ Hooks.on('createActor', async actor => {
     await actor.addDefaultMoves()
   }
 })
+
+Hooks.on('updateActor', async (actor, data, opts) => {
+  // Debilities affect momentum limits
+  const numDebilitiesMarked = Object.values(actor.data.data.debility).filter(
+    x => x
+  ).length
+  actor.update({
+    data: {
+      momentumMax: 10 - numDebilitiesMarked,
+      momentumReset: 2 - numDebilitiesMarked
+    }
+  })
+})
