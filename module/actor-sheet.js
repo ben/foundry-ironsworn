@@ -76,25 +76,7 @@ export class IronswornActorSheet extends ActorSheet {
     })
 
     // Moves expand in place
-    html.find('.move-entry').click(ev => {
-      ev.preventDefault()
-      const target = $(ev.currentTarget)
-      const li = target.parents('li')
-      const itemId = li.data('id')
-      const item = this.actor.getOwnedItem(itemId)
-
-      if (li.hasClass('expanded')) {
-        const summary = li.children('.move-summary')
-        summary.slideUp(200, () => summary.remove())
-      } else {
-        const div = $(
-          `<div class="move-summary">${item.data.data.description}</div>`
-        )
-        li.append(div.hide())
-        div.slideDown(200)
-      }
-      li.toggleClass('expanded')
-    })
+    html.find('.move-entry').click(this._handleMoveExpand.bind(this))
 
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
@@ -108,6 +90,46 @@ export class IronswornActorSheet extends ActorSheet {
       const li = $(ev.currentTarget).parents('.item')
       this.actor.deleteOwnedItem(li.data('itemId'))
       li.slideUp(200, () => this.render(false))
+    })
+  }
+
+  async _handleMoveExpand (ev) {
+    ev.preventDefault()
+    const li = $(ev.currentTarget).parents('li')
+    const item = this.actor.getOwnedItem(li.data('id'))
+
+    if (li.hasClass('expanded')) {
+      const summary = li.children('.move-summary')
+      summary.slideUp(200, () => summary.remove())
+    } else {
+      const content = this._renderMove(item)
+      const div = $(`<div class="move-summary">${content}</div>`)
+      this._attachInlineRollListeners(div, item)
+      li.append(div.hide())
+      div.slideDown(200)
+    }
+    li.toggleClass('expanded')
+  }
+
+  _renderMove (move) {
+    const rendered = TextEditor.enrichHTML(move.data.data.description)
+    return rendered.replace(
+      /\(\(rollplus (.*?)\)\)/g,
+      `
+    <a class='inline-roll' data-param='$1'>
+      <i class='fas fa-dice-d20'></i>
+      Roll +$1.
+    </a>`
+    )
+  }
+
+  _attachInlineRollListeners (html, item) {
+    html.find('a.inline-roll').on('click', ev => {
+      ev.preventDefault()
+      const el = ev.currentTarget
+      const moveTitle = `${item.name} (${el.dataset.param})`
+      const actor = this.actor || {}
+      return ironswornRollDialog(actor.data?.data, el.dataset.param, moveTitle)
     })
   }
 
