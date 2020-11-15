@@ -1,5 +1,4 @@
 .ironsworn {
-
   h1,
   h2,
   h3,
@@ -79,10 +78,6 @@
     flex: 1 0 100px;
     overflow-y: scroll;
 
-    li {
-      white-space: nowrap;
-    }
-
     .move {
       overflow-x: hidden;
     }
@@ -92,7 +87,7 @@
       margin: 0;
       padding: 0;
 
-      &>h2 {
+      & > h2 {
         text-align: center;
         border-width: 1px 0;
         border-color: white;
@@ -224,15 +219,13 @@
     line-height: 26px;
   }
 
-  .move-entry {
-    .move-summary {
-      white-space: normal;
-      font-variant: normal;
-      font-size: smaller;
+  .move-row {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 3px;
+    margin: 3px 0;
 
-      li {
-        white-space: normal;
-      }
+    .move-entry {
     }
   }
 
@@ -338,7 +331,7 @@
     margin: 0;
     padding: 0;
 
-    li>* {
+    li > * {
       margin: 0 3px;
       height: 28px;
       line-height: 24px;
@@ -379,7 +372,6 @@
 }
 
 .ironsworn-roll {
-
   .dice-formula,
   .dice-total {
     background-color: #eee;

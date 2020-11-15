@@ -115,7 +115,9 @@
                     {{#if separator}}
                     <h2>{{title}}</h2>
                     {{else}}
-                    <li>{{name}}</li>
+                    <li class="move-row" data-id="{{_id}}">
+                        <div class="move-entry">{{name}}</div>
+                    </li>
                     {{/if}}
                     {{/each}}
                 </ol>

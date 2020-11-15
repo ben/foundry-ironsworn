@@ -71,9 +71,6 @@
   flex: 1 0 100px;
   overflow-y: scroll;
 }
-.ironsworn .move-list li {
-  white-space: nowrap;
-}
 .ironsworn .move-list .move {
   overflow-x: hidden;
 }
@@ -187,13 +184,11 @@
   flex-grow: 0;
   line-height: 26px;
 }
-.ironsworn .move-entry .move-summary {
-  white-space: normal;
-  font-variant: normal;
-  font-size: smaller;
-}
-.ironsworn .move-entry .move-summary li {
-  white-space: normal;
+.ironsworn .move-row {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 3px;
+  margin: 3px 0;
 }
 .ironsworn .resource {
   width: 50%;

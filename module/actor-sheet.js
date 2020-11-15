@@ -77,16 +77,19 @@ export class IronswornActorSheet extends ActorSheet {
 
     // Moves expand in place
     html.find('.move-entry').click(ev => {
-      const li = $(ev.currentTarget)
-      const move = MOVES[li.data('move')]
-      const journalName = `Move: ${move.title}`
-      const entry = game.journal.entities.find(x => x.name === journalName)
+      ev.preventDefault()
+      const target = $(ev.currentTarget)
+      const li = target.parents('li')
+      const itemId = li.data('id')
+      const item = this.actor.getOwnedItem(itemId)
 
       if (li.hasClass('expanded')) {
         const summary = li.children('.move-summary')
         summary.slideUp(200, () => summary.remove())
       } else {
-        const div = $(`<div class="move-summary">${entry.data.content}</div>`)
+        const div = $(
+          `<div class="move-summary">${item.data.data.description}</div>`
+        )
         li.append(div.hide())
         div.slideDown(200)
       }
