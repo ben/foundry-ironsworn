@@ -14,4 +14,4 @@ https://raw.githubusercontent.com/ben/foundry-ironsworn/main/system.json
 ## THIS IS PRE-RELEEASE SOFTWARE
 
 Not everything works, and what does only _barely_ works.
-Check #2 for a 1.0 to-do list.
+There's a [to-do list issue](https://github.com/ben/foundry-ironsworn/issues/2) if you're interested in helping out.
