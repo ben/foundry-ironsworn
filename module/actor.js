@@ -34,7 +34,12 @@ export class IronswornActor extends Actor {
 
   /** @override */
   prepareDerivedData () {
-    this.data.movesForDisplay = []
+    // Calculate momentum max/reset from debilities
+    const numDebilitiesMarked = Object.values(this.data.data.debility).filter(
+      x => x
+    ).length
+    this.data.data.momentumMax = 10 - numDebilitiesMarked
+    this.data.data.momentumReset = 2 - numDebilitiesMarked
   }
 
   async addDefaultMoves () {
@@ -51,17 +56,4 @@ Hooks.on('createActor', async actor => {
   if (actor.data.type === 'character') {
     await actor.addDefaultMoves()
   }
-})
-
-Hooks.on('updateActor', async (actor, data, opts) => {
-  // Debilities affect momentum limits
-  const numDebilitiesMarked = Object.values(actor.data.data.debility).filter(
-    x => x
-  ).length
-  actor.update({
-    data: {
-      momentumMax: 10 - numDebilitiesMarked,
-      momentumReset: 2 - numDebilitiesMarked
-    }
-  })
 })

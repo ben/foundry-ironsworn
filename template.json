@@ -16,8 +16,6 @@
       "supply": 5,
       "experience": 0,
       "momentum": 2,
-      "momentumReset": 2,
-      "momentumMax": 10,
       "debility": {
         "corrupted": false,
         "cursed": false,
