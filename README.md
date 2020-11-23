@@ -11,7 +11,7 @@ To install it, plug this URL into the install UI:
 https://raw.githubusercontent.com/ben/foundry-ironsworn/main/system.json
 ```
 
-## THIS IS PRE-RELEEASE SOFTWARE
+## THIS IS PRE-RELEASE SOFTWARE
 
 Not everything works, and what does only _barely_ works.
 There's a [to-do list issue](https://github.com/ben/foundry-ironsworn/issues/2) if you're interested in helping out.
