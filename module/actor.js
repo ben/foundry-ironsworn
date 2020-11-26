@@ -39,7 +39,7 @@ export class IronswornActor extends Actor {
       x => x
     ).length
     this.data.data.momentumMax = 10 - numDebilitiesMarked
-    this.data.data.momentumReset = 2 - numDebilitiesMarked
+    this.data.data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
   }
 
   async addDefaultMoves () {
