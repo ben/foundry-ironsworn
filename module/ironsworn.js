@@ -209,3 +209,35 @@ Handlebars.registerHelper('capitalize', txt => {
   const [first, ...rest] = txt
   return `${first.toUpperCase()}${rest.join('')}`
 })
+
+Handlebars.registerHelper('progressCharacters', ctx => {
+  console.log({ ctx })
+  const tickChar = [' ', '-', '+', '*'][ctx.data.current % 4]
+  let characters = []
+  for (let i = 0; i < Math.floor(ctx.data.current / 4); i++) {
+    characters.push('#')
+  }
+  if (characters.length < 10) {
+    characters.push(tickChar)
+  }
+  while (characters.length < 10) {
+    characters.push('&nbsp;')
+  }
+  return characters
+})
+
+export const RANKS = {
+  troublesome: 'Troublesome',
+  dangerous: 'Dangerous',
+  formidible: 'Formidible',
+  extreme: 'Extreme',
+  epic: 'Epic'
+}
+
+export const RANK_INCREMENTS = {
+  troublesome: 12,
+  dangerous: 8,
+  formidible: 4,
+  extreme: 2,
+  epic: 1
+}

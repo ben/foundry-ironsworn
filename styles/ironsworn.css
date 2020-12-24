@@ -294,6 +294,16 @@
   line-height: 28px;
   border: none;
 }
+.ironsworn .progress {
+  flex: 1;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+  text-align: center;
+}
+.nogrow {
+  flex-grow: 0;
+}
 .ironsworn.sheet.actor {
   min-width: 560px;
   min-height: 420px;

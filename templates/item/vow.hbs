@@ -1,0 +1,27 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+  <header class="sheet-header">
+    <h1>
+      <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+    </h1>
+  </header>
+
+  <section class="flexrow nogrow">
+    <label>Rank:</label>
+    <select name="data.rank">
+      {{selectOptions ranks selected=data.rank}}
+    </select>
+  </section>
+
+  <div class="flexrow nogrow">
+    {{#each (progressCharacters this)}}
+    <div class="progress block">{{{this}}}</div>
+    {{/each}}
+  </div>
+
+  <div class="flexrow nogrow">
+    <button class="unmarkProgress">&minus;</button>
+    <button class="clearProgress">Clear</button>
+    <button class="markProgress">&plus;</button>
+  </div>
+
+</form>

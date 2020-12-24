@@ -11,8 +11,11 @@
 
     {{#*inline "stack"}}
     {{#rangeEach from=from to=to current=(lookup data stat)}}
-    <div class="clickable block stack-row {{stat}} {{#if isCurrent}} selected {{/if}}" data-resource="{{stat}}"
-        data-value="{{value}}">
+    <div class="
+        clickable block stack-row
+        {{stat}}
+        {{#if isCurrent}} selected {{/if}}
+    " data-resource="{{stat}}" data-value="{{value}}">
         {{valueStr}}
     </div>
     {{/rangeEach}}
@@ -97,8 +100,8 @@
 
                         {{#*inline "debility"}}
                         <label class="checkbox">
-                            <input type="checkbox" name="data.debility.{{name}}"
-                                {{checked (lookup data.debility name)}}>
+                            <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.debility
+                                name)}}>
                             {{capitalize name}}
                         </label>
                         {{/inline}}
