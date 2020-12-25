@@ -108,17 +108,17 @@ function classesForRoll (r) {
 }
 
 const actionRoll = roll =>
-  roll.parts[0].rolls.find(r => r.dice.length === 0 || r.dice[0].faces === 6)
+  roll.terms[0].rolls.find(r => r.dice.length === 0 || r.dice[0].faces === 6)
 
 const challengeRolls = roll =>
-  roll.parts[0].rolls.filter(r => r.dice.length > 0 && r.dice[0].faces === 10)
+  roll.terms[0].rolls.filter(r => r.dice.length > 0 && r.dice[0].faces === 10)
 
 Handlebars.registerHelper('actionDieFormula', function () {
   const r = actionRoll(this.roll)
-  const parts = [...r.parts]
-  const d = parts.shift()
+  const terms = [...r.terms]
+  const d = terms.shift()
   const classes = classesForRoll(r)
-  return `<strong><span class="roll ${classes}">${d?.total || d}</span>${parts.join('')}</strong>`
+  return `<strong><span class="roll ${classes}">${d?.total || d}</span>${terms.join('')}</strong>`
 })
 
 Handlebars.registerHelper('challengeDice', function () {
@@ -194,7 +194,6 @@ Handlebars.registerHelper('capitalize', txt => {
 })
 
 Handlebars.registerHelper('progressCharacters', ctx => {
-  console.log({ ctx })
   const tickChar = [' ', '-', '+', '*'][ctx.data.current % 4]
   let characters = []
   for (let i = 0; i < Math.floor(ctx.data.current / 4); i++) {

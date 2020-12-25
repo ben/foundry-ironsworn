@@ -163,7 +163,6 @@ export class IronswornActorSheet extends ActorSheet {
         const entry = index.find(x => x.name == tableName)
         if (entry) table = await pack.getEntity(entry._id)
       }
-      console.log({ table })
       if (table) table.draw()
     }
   }
