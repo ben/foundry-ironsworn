@@ -1,4 +1,9 @@
-import { ironswornMoveRoll, ironswornRollDialog } from './ironsworn.js'
+import {
+  ironswornMoveRoll,
+  ironswornRollDialog,
+  RANKS,
+  RANK_INCREMENTS
+} from './ironsworn.js'
 
 /**
  * Extend the basic ItemSheet with some very simple modifications
@@ -10,14 +15,7 @@ export class IronswornItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'item'],
       width: 520,
-      height: 480,
-      tabs: [
-        {
-          navSelector: '.sheet-tabs',
-          contentSelector: '.sheet-body',
-          initial: 'description'
-        }
-      ]
+      height: 480
     })
   }
 
@@ -37,6 +35,11 @@ export class IronswornItemSheet extends ItemSheet {
     // for (let attr of Object.values(data.data.attributes)) {
     //   attr.isCheckbox = attr.dtype === 'Boolean'
     // }
+
+    if (this.item.type === 'vow') {
+      data.ranks = RANKS
+    }
+
     return data
   }
 
@@ -85,6 +88,24 @@ export class IronswornItemSheet extends ItemSheet {
       const options = Object.values(this.item.data.data.options || [])
       options.push({ description: '', param: 'edge' })
       await this.item.update({ data: { options } })
+    })
+
+    // Vow progress buttons
+    html.find('.markProgress').click(ev => {
+      ev.preventDefault()
+      const increment = RANK_INCREMENTS[this.item.data.data.rank]
+      const newValue = Math.min(this.item.data.data.current + increment, 40)
+      this.item.update({ 'data.current': newValue })
+    })
+    html.find('.fulfillProgress').click(ev => {
+      ev.preventDefault()
+      const progress = Math.floor(this.item.data.data.current / 4)
+      const r = new Roll(`{${progress},d10,d10}`).roll()
+      r.toMessage({ flavor:`<div class="move-title">Fulfill Vow: ${this.item.name}</div>` })
+    })
+    html.find('.clearProgress').click(ev => {
+      ev.preventDefault()
+      this.item.update({ 'data.current': 0 })
     })
   }
 
