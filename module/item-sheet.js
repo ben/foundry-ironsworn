@@ -90,17 +90,18 @@ export class IronswornItemSheet extends ItemSheet {
       await this.item.update({ data: { options } })
     })
 
+    // Vow progress buttons
     html.find('.markProgress').click(ev => {
       ev.preventDefault()
       const increment = RANK_INCREMENTS[this.item.data.data.rank]
       const newValue = Math.min(this.item.data.data.current + increment, 40)
       this.item.update({ 'data.current': newValue })
     })
-    html.find('.unmarkProgress').click(ev => {
+    html.find('.fulfillProgress').click(ev => {
       ev.preventDefault()
-      const increment = RANK_INCREMENTS[this.item.data.data.rank]
-      const newValue = Math.max(this.item.data.data.current - increment, 0)
-      this.item.update({ 'data.current': newValue })
+      const progress = Math.floor(this.item.data.data.current / 4)
+      const r = new Roll(`{${progress},d10,d10}`).roll()
+      r.toMessage({ flavor:`<div class="move-title">Fulfill Vow: ${this.item.name}</div>` })
     })
     html.find('.clearProgress').click(ev => {
       ev.preventDefault()
