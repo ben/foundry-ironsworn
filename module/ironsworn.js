@@ -68,6 +68,7 @@ Hooks.once('setup', () => {
 })
 
 // Autofucus on input box when rolling
+class IronswornRollDialog extends Dialog {}
 Hooks.on('renderIronswornRollDialog', async (dialog, html, data) => {
   html.find('input').focus()
 })
@@ -82,9 +83,10 @@ Handlebars.registerHelper('json', function (context) {
 
 Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
   if (
-    this.roll.dice.length === 3 &&
-    this.roll.dice.filter(x => x.faces === 6).length === 1 &&
-    this.roll.dice.filter(x => x.faces === 10).length === 2
+    (this.roll.dice.length === 3 &&
+      this.roll.dice.filter(x => x.faces === 6).length === 1 &&
+      this.roll.dice.filter(x => x.faces === 10).length === 2) ||
+    this.roll.formula.match(/{\d+,1d10,1d10}/)
   ) {
     return options.fn(this)
   } else {
@@ -94,29 +96,29 @@ Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
 
 function classesForRoll (r) {
   const d = r.dice[0]
-  const maxRoll = d.faces
+  const maxRoll = d?.faces || 10
   return [
-    d.constructor.name.toLowerCase(),
-    'd' + d.faces,
-    d.total === 1 ? 'min' : null,
-    d.total === maxRoll ? 'max' : null
+    d?.constructor.name.toLowerCase(),
+    d && 'd' + d.faces,
+    (d?.total || r.result) <= 1 ? 'min' : null,
+    (d?.total || r.result) == maxRoll ? 'max' : null
   ]
     .filter(x => x)
     .join(' ')
 }
 
-const actionRoll = roll => roll.parts[0].rolls.find(r => r.dice[0].faces === 6)
+const actionRoll = roll =>
+  roll.parts[0].rolls.find(r => r.dice.length === 0 || r.dice[0].faces === 6)
 
 const challengeRolls = roll =>
-  roll.parts[0].rolls.filter(r => r.dice[0].faces === 10)
+  roll.parts[0].rolls.filter(r => r.dice.length > 0 && r.dice[0].faces === 10)
 
 Handlebars.registerHelper('actionDieFormula', function () {
   const r = actionRoll(this.roll)
   const parts = [...r.parts]
   const d = parts.shift()
   const classes = classesForRoll(r)
-
-  return `<strong><span class="roll ${classes}">${d.total}</span>${parts.join('')}</strong>`
+  return `<strong><span class="roll ${classes}">${d?.total || d}</span>${parts.join('')}</strong>`
 })
 
 Handlebars.registerHelper('challengeDice', function () {
@@ -143,27 +145,8 @@ Handlebars.registerHelper('ironswornHitType', function () {
 
 export async function ironswornMoveRoll (bonusExpr = '0', values = {}, title) {
   const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
-  if (true) {
-    r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
-    return
-  }
-
-  const template = 'systems/foundry-ironsworn/templates/dice/roll.html'
-  const templateData = {
-    roll: r,
-    user: game.user._id
-  }
-  const content = await renderTemplate(template, templateData)
-
-  const rollChatData = {
-    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-    roll: r,
-    content
-  }
-  ChatMessage.create(rollChatData)
+  r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
 }
-
-class IronswornRollDialog extends Dialog {}
 
 export async function ironswornRollDialog (data, stat, title) {
   const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
