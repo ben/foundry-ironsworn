@@ -108,7 +108,7 @@
       ]
     },
     "move": {
-      "description": "When you <strong>do a thing</strong>, (((rollplus iron)))"
+      "description": "When you <strong>do a thing</strong>, ((rollplus iron))"
     }
   }
 }
