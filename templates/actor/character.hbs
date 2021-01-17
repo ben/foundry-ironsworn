@@ -132,18 +132,18 @@
                     <section class="sheet-area">
                         <h1 style="text-align:center">Vows</h1>
                         {{#each vows}}
-                        <div class="flexcol">
-                            <div class="flexrow">
-                                <h2 style="text-align: center;">{{name}}</h2>
-                            </div>
+                        <div class="flexcol vow" data-itemid="{{_id}}">
+                            <h2 style="text-align: center;">{{name}}</h2>
                             <div class="flexrow">
                                 {{#each (progressCharacters this.data.data)}}
                                 <div class="progress block">{{{this}}}</div>
                                 {{/each}}
-                            </div>
-                            <div class="flexrow">
-                                <button class="markProgress">Mark</button>
-                                <button class="fulfillProgress">Fulfill</button>
+                                <button class="markProgress" alt="Mark progress">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                                <button class="fulfillProgress" alt="Fulfill vow">
+                                    <i class="fas fa-check"></i>
+                                </button>
                             </div>
                         </div>
                         {{/each}}
