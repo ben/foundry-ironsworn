@@ -80,18 +80,21 @@ export class IronswornActorSheet extends ActorSheet {
     // Moves expand in place
     html.find('.move-entry').click(this._handleMoveExpand.bind(this))
 
-    // Vow progress buttons
+    // Vow buttons
     html.find('.markProgress').click(ev => {
-      ev.preventDefault()
       const itemId = $(ev.target).parents('.vow').data('itemid')
       const item = this.actor.items.find(x => x._id === itemId)
       return item.markProgress()
     })
     html.find('.fulfillProgress').click(ev => {
-      ev.preventDefault()
       const itemId = $(ev.target).parents('.vow').data('itemid')
       const item = this.actor.items.find(x => x._id === itemId)
       return item.fulfill()
+    })
+    html.find('.edit-vow').click(ev => {
+      const itemId = $(ev.target).parents('.vow').data('itemid')
+      const item = this.actor.items.find(x => x._id === itemId)
+      item.sheet.render(true)
     })
 
     // Update Inventory Item

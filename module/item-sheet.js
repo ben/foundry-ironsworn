@@ -93,21 +93,15 @@ export class IronswornItemSheet extends ItemSheet {
     // Vow progress buttons
     html.find('.markProgress').click(ev => {
       ev.preventDefault()
-      const itemId = ev.target.dataset.itemid
-      const item = game.items.get(itemId)
-      return item.markProgress()
+      return this.item.markProgress()
     })
     html.find('.fulfillProgress').click(ev => {
       ev.preventDefault()
-      const itemId = ev.target.dataset.itemid
-      const item = game.items.get(itemId)
-      return item.fulfill()
+      return this.item.fulfill()
     })
     html.find('.clearProgress').click(ev => {
       ev.preventDefault()
-      const itemId = ev.target.dataset.itemid
-      const item = game.items.get(itemId)
-      return item.clearProgress()
+      return this.item.clearProgress()
     })
   }
 

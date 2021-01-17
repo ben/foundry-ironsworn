@@ -133,17 +133,22 @@
                         <h1 style="text-align:center">Vows</h1>
                         {{#each vows}}
                         <div class="flexcol vow" data-itemid="{{_id}}">
-                            <h2 style="text-align: center;">{{name}}</h2>
+                            <div class="flexrow">
+                                <h2>{{name}}</h2>
+                                <div class="block clickable" style="flex-grow: 0;">
+                                    <i class="edit-vow fas fa-edit"></i>
+                                </div>
+                            </div>
                             <div class="flexrow">
                                 {{#each (progressCharacters this.data.data)}}
                                 <div class="progress block">{{{this}}}</div>
                                 {{/each}}
-                                <button class="markProgress" alt="Mark progress">
+                                <div class="block clickable markProgress" alt="Mark progress">
                                     <i class="fas fa-plus"></i>
-                                </button>
-                                <button class="fulfillProgress" alt="Fulfill vow">
+                                </div>
+                                <div class="block clickable fulfillProgress" alt="Fulfill vow">
                                     <i class="fas fa-check"></i>
-                                </button>
+                                </div>
                             </div>
                         </div>
                         {{/each}}
