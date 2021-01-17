@@ -103,6 +103,15 @@ export class IronswornItemSheet extends ItemSheet {
       ev.preventDefault()
       return this.item.clearProgress()
     })
+    html.find('.delete').click(async ev => {
+      ev.preventDefault()
+      await Dialog.confirm({
+        title: 'Delete Vow',
+        content: '<p>Are you sure? This cannot be undone.</p>',
+        yes: () => this.item.delete(),
+        defaultYes: false
+      })
+    })
   }
 
   /* -------------------------------------------- */
