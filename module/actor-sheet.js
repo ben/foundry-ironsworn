@@ -49,6 +49,8 @@ export class IronswornActorSheet extends ActorSheet {
       }
     }
 
+    data.vows = this.actor.items.filter(x => x.type === 'vow')
+
     return data
   }
 

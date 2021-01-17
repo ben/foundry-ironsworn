@@ -129,9 +129,17 @@
                 </div>
 
                 <div class="flexcol">
-                    <h1 style="text-align:center">Vows</h1>
-                    <h1 style="text-align:center">Progress</h1>
-                    <h1 style="text-align:center">Sites</h1>
+                    <section class="sheet-area">
+                        <h1 style="text-align:center">Vows</h1>
+                        {{#each vows}}
+                            <div class="flexrow">
+                                {{name}}
+                            </div>
+                        {{/each}}
+                    </section>
+                    <section class="sheet-area">
+                        <h1 style="text-align:center">Progress</h1>
+                    </section>
                 </div>
 
             </div>
