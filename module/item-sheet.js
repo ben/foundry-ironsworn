@@ -31,14 +31,8 @@ export class IronswornItemSheet extends ItemSheet {
   /** @override */
   getData () {
     const data = super.getData()
-    // data.dtypes = ['String', 'Number', 'Boolean']
-    // for (let attr of Object.values(data.data.attributes)) {
-    //   attr.isCheckbox = attr.dtype === 'Boolean'
-    // }
 
-    if (this.item.type === 'vow') {
-      data.ranks = RANKS
-    }
+    data.ranks = RANKS
 
     return data
   }

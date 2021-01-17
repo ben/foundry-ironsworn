@@ -6,7 +6,7 @@ import { RANKS, RANK_INCREMENTS } from './ironsworn.js'
  */
 export class IronswornItem extends Item {
   markProgress () {
-    if (this.type !== 'vow') return
+    if (this.data.data.rank === undefined) return
 
     const increment = RANK_INCREMENTS[this.data.data.rank]
     const newValue = Math.min(this.data.data.current + increment, 40)
@@ -14,12 +14,12 @@ export class IronswornItem extends Item {
   }
 
   clearProgress() {
-    if (this.type !== 'vow') return
+    if (this.data.data.rank === undefined) return
     return this.update({ 'data.current': 0 })
   }
 
   fulfill () {
-    if (this.type !== 'vow') return
+    if (this.data.data.rank === undefined) return
     const progress = Math.floor(this.data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`).roll()
     r.toMessage({

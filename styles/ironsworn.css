@@ -20,6 +20,9 @@
 .ironsworn .sheet-area {
   border-top: 2px solid darkgray;
 }
+.ironsworn .sheet-area:first-child {
+  border-top: none;
+}
 .ironsworn .sheet-area h1,
 .ironsworn .sheet-area h2,
 .ironsworn .sheet-area h3 {
@@ -71,6 +74,16 @@
   margin-left: 5px;
   padding-left: 10px;
   position: relative;
+}
+.ironsworn .margin-right h1 {
+  border: 2px solid black;
+  border-left: none;
+  border-right: none;
+  text-align: center;
+  margin-top: 5px;
+}
+.ironsworn .margin-right h1:first-child {
+  margin-top: 0;
 }
 .ironsworn h4 {
   font-size: 22px;
@@ -198,13 +211,14 @@
   padding: 3px;
   margin: 3px 0;
 }
-.ironsworn .vows .clickable {
+.ironsworn .progresses .clickable {
   padding: 5px;
   margin: 2px;
   text-align: center;
 }
-.ironsworn .vow {
+.ironsworn .progresses .item {
   border: 1px solid gray;
+  border-radius: 3px;
   padding: 5px;
   font-size: smaller;
   margin: 5px;

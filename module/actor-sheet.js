@@ -50,6 +50,7 @@ export class IronswornActorSheet extends ActorSheet {
     }
 
     data.vows = this.actor.items.filter(x => x.type === 'vow')
+    data.progresses = this.actor.items.filter(x => x.type === 'progress')
 
     return data
   }
@@ -80,30 +81,31 @@ export class IronswornActorSheet extends ActorSheet {
     // Moves expand in place
     html.find('.move-entry').click(this._handleMoveExpand.bind(this))
 
-    // Vow buttons
-    html.find('.add-vow').click(async ev => {
+    // Vow/progress buttons
+    html.find('.add-item').click(async ev => {
+      const itemType = $(ev.target).data('type')
       this.actor.createOwnedItem(
-        { type: 'vow', name: 'new vow' },
+        { type: itemType, name: `New ${itemType}` },
         { renderSheet: true }
       )
     })
     html.find('.markProgress').click(ev => {
       const itemId = $(ev.target)
-        .parents('.vow')
+        .parents('.item')
         .data('itemid')
       const item = this.actor.items.find(x => x._id === itemId)
       return item.markProgress()
     })
     html.find('.fulfillProgress').click(ev => {
       const itemId = $(ev.target)
-        .parents('.vow')
+        .parents('.item')
         .data('itemid')
       const item = this.actor.items.find(x => x._id === itemId)
       return item.fulfill()
     })
-    html.find('.edit-vow').click(ev => {
+    html.find('.edit-item').click(ev => {
       const itemId = $(ev.target)
-        .parents('.vow')
+        .parents('.item')
         .data('itemid')
       const item = this.actor.items.find(x => x._id === itemId)
       item.sheet.render(true)
