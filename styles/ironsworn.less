@@ -17,6 +17,9 @@
 
   .sheet-area {
     border-top: 2px solid darkgray;
+    &:first-child {
+      border-top: none;
+    }
 
     h1,
     h2,
@@ -78,6 +81,17 @@
     margin-left: 5px;
     padding-left: 10px;
     position: relative;
+
+    h1 {
+      border: 2px solid black;
+      border-left: none;
+      border-right: none;
+
+      margin-top: 5px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
   }
 
   h4 {
@@ -239,13 +253,16 @@
     }
   }
 
-  .progresses .clickable {
-    padding: 5px;
-    margin: 2px;
-    text-align: center;
+  .progresses {
+    .clickable {
+      padding: 5px;
+      margin: 2px;
+      text-align: center;
+    }
 
     .item {
       border: 1px solid gray;
+      border-radius: 3px;
       padding: 5px;
       font-size: smaller;
       margin: 5px;
