@@ -49,6 +49,8 @@ export class IronswornActorSheet extends ActorSheet {
       }
     }
 
+    data.vows = this.actor.items.filter(x => x.type === 'vow')
+
     return data
   }
 
@@ -77,6 +79,35 @@ export class IronswornActorSheet extends ActorSheet {
 
     // Moves expand in place
     html.find('.move-entry').click(this._handleMoveExpand.bind(this))
+
+    // Vow buttons
+    html.find('.add-vow').click(async ev => {
+      this.actor.createOwnedItem(
+        { type: 'vow', name: 'new vow' },
+        { renderSheet: true }
+      )
+    })
+    html.find('.markProgress').click(ev => {
+      const itemId = $(ev.target)
+        .parents('.vow')
+        .data('itemid')
+      const item = this.actor.items.find(x => x._id === itemId)
+      return item.markProgress()
+    })
+    html.find('.fulfillProgress').click(ev => {
+      const itemId = $(ev.target)
+        .parents('.vow')
+        .data('itemid')
+      const item = this.actor.items.find(x => x._id === itemId)
+      return item.fulfill()
+    })
+    html.find('.edit-vow').click(ev => {
+      const itemId = $(ev.target)
+        .parents('.vow')
+        .data('itemid')
+      const item = this.actor.items.find(x => x._id === itemId)
+      item.sheet.render(true)
+    })
 
     // Update Inventory Item
     html.find('.item-edit').click(ev => {

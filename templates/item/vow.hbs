@@ -13,15 +13,21 @@
   </section>
 
   <div class="flexrow nogrow">
-    {{#each (progressCharacters this)}}
+    {{#each (progressCharacters this.data)}}
     <div class="progress block">{{{this}}}</div>
     {{/each}}
   </div>
 
   <div class="flexrow nogrow">
     <button class="markProgress">Mark</button>
-    <button class="clearProgress">Clear</button>
     <button class="fulfillProgress">Fulfill</button>
+  </div>
+  <div class="flexrow nogrow">
+    <hr>
+  </div>
+  <div class="flexrow nogrow">
+    <button class="clearProgress">Clear</button>
+    <button class="delete"><i class="fas fa-trash"></i></button>
   </div>
 
 </form>

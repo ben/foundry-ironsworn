@@ -198,6 +198,17 @@
   padding: 3px;
   margin: 3px 0;
 }
+.ironsworn .vows .clickable {
+  padding: 5px;
+  margin: 2px;
+  text-align: center;
+}
+.ironsworn .vow {
+  border: 1px solid gray;
+  padding: 5px;
+  font-size: smaller;
+  margin: 5px;
+}
 .ironsworn .resource {
   width: 50%;
   height: 40px;
@@ -298,7 +309,7 @@
   flex: 1;
   border: 1px solid black;
   padding: 5px;
-  margin: 10px;
+  margin: 2px;
   text-align: center;
 }
 .nogrow {
