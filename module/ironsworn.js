@@ -6,6 +6,7 @@
 
 // Import Modules
 import { IronswornActor } from './actor.js'
+import { IronswornItem } from './item.js'
 import { IronswornItemSheet } from './item-sheet.js'
 import { IronswornActorSheet } from './actor-sheet.js'
 
@@ -18,6 +19,7 @@ Hooks.once('init', async function () {
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
+  CONFIG.Item.entityClass = IronswornItem
   CONFIG.Dice.template = 'systems/foundry-ironsworn/templates/chat/roll.hbs'
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
