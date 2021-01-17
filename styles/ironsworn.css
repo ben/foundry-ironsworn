@@ -198,15 +198,15 @@
   padding: 3px;
   margin: 3px 0;
 }
+.ironsworn .vows .clickable {
+  padding: 5px;
+  margin: 2px;
+  text-align: center;
+}
 .ironsworn .vow {
   border: 1px solid gray;
   padding: 5px;
   font-size: smaller;
-}
-.ironsworn .vow .clickable {
-  padding: 5px;
-  margin: 2px;
-  text-align: center;
 }
 .ironsworn .resource {
   width: 50%;
