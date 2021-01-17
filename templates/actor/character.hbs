@@ -21,6 +21,28 @@
     {{/rangeEach}}
     {{/inline}}
 
+    {{#*inline "progress"}}
+    <div class="flexcol item" data-itemid="{{_id}}">
+        <div class="flexrow">
+            <h2>{{name}} ({{data.data.rank}})</h2>
+            <div class="block clickable" style="flex-grow: 0;">
+                <i class="edit-item fas fa-edit"></i>
+            </div>
+        </div>
+        <div class="flexrow">
+            {{#each (progressCharacters this.data.data)}}
+            <div class="progress">{{{this}}}</div>
+            {{/each}}
+            <div class="clickable text markProgress" title="Mark progress">
+                <i class="fas fa-play"></i>
+            </div>
+            <div class="clickable text fulfillProgress" title="Fulfill vow">
+                <i class="fas fa-check"></i>
+            </div>
+        </div>
+    </div>
+    {{/inline}}
+
     <div class="flexrow">
         <div class="flexcol margin-left">
             <div class="flexcol stack momentum">
@@ -129,36 +151,24 @@
                 </div>
 
                 <div class="flexcol">
-                    <section class="sheet-area vows">
+                    <section class="sheet-area progresses">
                         <h1 style="text-align:center">Vows</h1>
                         {{#each vows}}
-                        <div class="flexcol vow" data-itemid="{{_id}}">
-                            <div class="flexrow">
-                                <h2>{{name}}</h2>
-                                <div class="block clickable" style="flex-grow: 0;">
-                                    <i class="edit-vow fas fa-edit"></i>
-                                </div>
-                            </div>
-                            <div class="flexrow">
-                                {{#each (progressCharacters this.data.data)}}
-                                <div class="progress">{{{this}}}</div>
-                                {{/each}}
-                                <div class="clickable text markProgress" title="Mark progress">
-                                    <i class="fas fa-play"></i>
-                                </div>
-                                <div class="clickable text fulfillProgress" title="Fulfill vow">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                            </div>
-                        </div>
+                        {{>progress}}
                         {{/each}}
-                        <div class="block clickable add-vow">
+                        <div class="block clickable add-item" data-type="vow">
                             <i class="fas fa-plus"></i>
                         </div>
 
                     </section>
-                    <section class="sheet-area">
+                    <section class="sheet-area progresses">
                         <h1 style="text-align:center">Progress</h1>
+                        {{#each progresses}}
+                        {{>progress}}
+                        {{/each}}
+                        <div class="block clickable add-item" data-type="progress">
+                            <i class="fas fa-plus"></i>
+                        </div>
                     </section>
                 </div>
 
