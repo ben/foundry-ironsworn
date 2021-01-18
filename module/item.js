@@ -52,6 +52,22 @@ export class IronswornItem extends Item {
   }
   deleteAbility (name) {
     const abilities = this.data.data.abilities
-    return this.update({ 'data.abilities': abilities.filter(x => x.name !== name) })
+    return this.update({
+      'data.abilities': abilities.filter(x => x.name !== name)
+    })
+  }
+
+  /**
+   * @override - render description for embed
+   */
+  async update (data, options) {
+    const updatedEntity = await super.update(data, options)
+    if (this.type === 'asset') {
+      const template =
+        'systems/foundry-ironsworn/templates/item/asset_embedded.hbs'
+      const rendered = await renderTemplate(template, updatedEntity.data)
+      await super.update({ 'data.rendered': rendered })
+    }
+    return updatedEntity
   }
 }
