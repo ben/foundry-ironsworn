@@ -72,12 +72,7 @@
     "asset": {
       "templates": [],
       "description": "",
-      "fields": [
-        {
-          "name": "Name",
-          "value": ""
-        }
-      ],
+      "fields": [],
       "abilities": [
         {
           "enabled": true,

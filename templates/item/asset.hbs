@@ -1,73 +1,50 @@
 <form class="{{cssClass}}" autocomplete="off">
-    {{!-- Sheet Tab Navigation --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="view">View</a>
-        <a class="item" data-tab="edit">Edit</a>
-    </nav>
-
-    {{!-- Sheet Body --}}
-    <section class="sheet-body">
-
-        <div class="tab" data-group="primary" data-tab="view">
-            <header class="sheet-header">
-                <img class="profile-img" src="{{item.img}}" title="{{item.name}}" />
-                <div class="header-fields">
-                    <h1 class="charname">
-                        {{item.name}}
-                    </h1>
-                    <h3>
-                        {{data.description}}
-                    </h3>
-                </div>
-            </header>
-
-            {{#each data.fields as |field|}}
-            <p>
-                {{field.name}}: {{field.value}}
-            </p>
-            {{/each}}
-
-            {{#each data.abilities}}
-            <div class="flexrow">
-                <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} />
-                <p>{{description}}</p>
-            </div>
-            {{/each}}
-
-            <pre><code>{{json data}}</code></pre>
+    <header class="sheet-header">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
+        <div class="header-fields">
+            <h1 class="charname">
+                <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+            </h1>
+            <h3>
+                <input name="data.description" type="text" value="{{data.description}}" placeholder="Description" />
+            </h3>
         </div>
+    </header>
 
-        <div class="tab" data-group="primary" data-tab="edit">
-            <header class="sheet-header">
-                <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
-                <div class="header-fields">
-                    <h1 class="charname">
-                        <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
-                    </h1>
-                    <h3>
-                        <input name="data.description" type="text" value="{{data.description}}"
-                            placeholder="Description" />
-                    </h3>
-                </div>
-            </header>
-
-            {{#each data.fields}}
-            <p>
-                <input class="attribute-value" type="text" name="data.fields.{{@index}}.name" value="{{name}}" />
-                <input class="attribute-value" type="text" name="data.fields.{{@index}}.value" value="{{value}}" />
-            </p>
-            {{/each}}
-
-            {{#each data.abilities}}
-            <p>
-                <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} />
-                <input class="attribute-value" type="text" name="data.abilities.{{@index}}.description"
-                    value="{{description}}" />
-            </p>
-            {{/each}}
+    <h2>Fields</h2>
+    {{#each data.fields}}
+    <div class="flexcol item">
+        <div class="flexrow">
+            <label style="flex-grow: 0;">Label:</label>
+            <input class="attribute-value" type="text" name="data.fields.{{@index}}.name" value="{{name}}" />
         </div>
+        <div class="flexrow">
+            <label style="flex-grow: 0;">Value:</label>
+            <input class="attribute-value" type="text" name="data.fields.{{@index}}.value" value="{{value}}" />
+        </div>
+        <div class="block clickable delete-field" data-index="{{@index}}">
+            <i class="fas fa-trash"></i>
+        </div>
+    </div>
+    {{/each}}
+    <div class="block clickable add-field">
+        <i class="fas fa-plus"></i>
+    </div>
 
-        <!--
+    <h2>Abilities</h2>
+    {{#each data.abilities}}
+    <div class="flexcol item">
+        <div class="flexrow">
+            <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} style="flex-grow: 0;" />
+            <input class="attribute-value" type="text" name="data.abilities.{{@index}}.description"
+                value="{{description}}" />
+        </div>
+    </div>
+    <p>
+    </p>
+    {{/each}}
+
+    <!--
         {{!-- Description Tab --}}
         <div class="tab" data-group="primary" data-tab="description">
             {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
@@ -109,5 +86,4 @@
             </ol>
         </div>
     -->
-    </section>
 </form>
