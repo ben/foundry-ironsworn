@@ -49,6 +49,7 @@ export class IronswornActorSheet extends ActorSheet {
       }
     }
 
+    data.assets = this.actor.items.filter(x => x.type === 'asset')
     data.vows = this.actor.items.filter(x => x.type === 'vow')
     data.progresses = this.actor.items.filter(x => x.type === 'progress')
 
@@ -80,6 +81,7 @@ export class IronswornActorSheet extends ActorSheet {
 
     // Moves expand in place
     html.find('.move-entry').click(this._handleMoveExpand.bind(this))
+    html.find('.asset-entry').click(this._handleAssetExpand.bind(this))
 
     // Vow/progress buttons
     html.find('.add-item').click(async ev => {
@@ -92,21 +94,21 @@ export class IronswornActorSheet extends ActorSheet {
     html.find('.markProgress').click(ev => {
       const itemId = $(ev.target)
         .parents('.item')
-        .data('itemid')
+        .data('id')
       const item = this.actor.items.find(x => x._id === itemId)
       return item.markProgress()
     })
     html.find('.fulfillProgress').click(ev => {
       const itemId = $(ev.target)
         .parents('.item')
-        .data('itemid')
+        .data('id')
       const item = this.actor.items.find(x => x._id === itemId)
       return item.fulfill()
     })
     html.find('.edit-item').click(ev => {
       const itemId = $(ev.target)
         .parents('.item')
-        .data('itemid')
+        .data('id')
       const item = this.actor.items.find(x => x._id === itemId)
       item.sheet.render(true)
     })
@@ -137,6 +139,24 @@ export class IronswornActorSheet extends ActorSheet {
     } else {
       const content = this._renderMove(item)
       const div = $(`<div class="move-summary">${content}</div>`)
+      this._attachInlineRollListeners(div, item)
+      li.append(div.hide())
+      div.slideDown(200)
+    }
+    li.toggleClass('expanded')
+  }
+
+  async _handleAssetExpand (ev) {
+    ev.preventDefault()
+    const li = $(ev.currentTarget).parents('li')
+    const item = this.actor.getOwnedItem(li.data('id'))
+
+    if (li.hasClass('expanded')) {
+      const summary = li.children('.asset-summary')
+      summary.slideUp(200, () => summary.remove())
+    } else {
+      const content = item.data.data.rendered
+      const div = $(`<div class="asset-summary">${content}</div>`)
       this._attachInlineRollListeners(div, item)
       li.append(div.hide())
       div.slideDown(200)

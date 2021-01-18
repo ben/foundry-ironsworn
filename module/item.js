@@ -62,11 +62,12 @@ export class IronswornItem extends Item {
    */
   async update (data, options) {
     const updatedEntity = await super.update(data, options)
-    if (this.type === 'asset') {
+    if (this.type === 'asset' && !data['data.rendered']) {
       const template =
         'systems/foundry-ironsworn/templates/item/asset_embedded.hbs'
-      const rendered = await renderTemplate(template, updatedEntity.data)
-      await super.update({ 'data.rendered': rendered })
+      console.log(updatedEntity.data)
+      const rendered = await renderTemplate(template, this.data)
+      await this.update({ 'data.rendered': rendered })
     }
     return updatedEntity
   }

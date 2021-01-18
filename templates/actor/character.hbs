@@ -22,7 +22,7 @@
     {{/inline}}
 
     {{#*inline "progress"}}
-    <div class="flexcol item" data-itemid="{{_id}}">
+    <div class="flexcol item" data-id="{{_id}}">
         <div class="flexrow">
             <h2>{{name}} ({{data.data.rank}})</h2>
             <div class="block clickable" style="flex-grow: 0;">
@@ -112,6 +112,22 @@
                 <div class="flexcol">
                     <section class="sheet-area">
                         <h1 style="text-align:center">Assets</h1>
+                        <div class="flexcol move-list">
+                            <ol>
+                                {{#each assets}}
+                                <li class="move-row item" data-id="{{_id}}">
+                                    <div class="asset-entry">
+                                        <div class="flexrow">
+                                            <span>{{name}}</span>
+                                            <div class="block clickable" style="flex-grow: 0;">
+                                                <i class="edit-item fas fa-edit"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </div>
                     </section>
                     <section class="sheet-area">
                         <h1 style="text-align:center">Bonds</h1>
