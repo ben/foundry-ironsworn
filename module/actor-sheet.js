@@ -137,7 +137,7 @@ export class IronswornActorSheet extends ActorSheet {
       const summary = li.children('.move-summary')
       summary.slideUp(200, () => summary.remove())
     } else {
-      const content = this._renderMove(item)
+      const content = this._parseRollPlus(item.data.data.description)
       const div = $(`<div class="move-summary">${content}</div>`)
       this._attachInlineRollListeners(div, item)
       li.append(div.hide())
@@ -155,7 +155,7 @@ export class IronswornActorSheet extends ActorSheet {
       const summary = li.children('.asset-summary')
       summary.slideUp(200, () => summary.remove())
     } else {
-      const content = item.data.data.rendered
+      const content = this._parseRollPlus(item.data.data.rendered)
       const div = $(`<div class="asset-summary">${content}</div>`)
       this._attachInlineRollListeners(div, item)
       li.append(div.hide())
@@ -164,8 +164,8 @@ export class IronswornActorSheet extends ActorSheet {
     li.toggleClass('expanded')
   }
 
-  _renderMove (move) {
-    const rendered = TextEditor.enrichHTML(move.data.data.description)
+  _parseRollPlus (text) {
+    const rendered = TextEditor.enrichHTML(text)
     return rendered.replace(
       /\(\(rollplus (.*?)\)\)/g,
       `
