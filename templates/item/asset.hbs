@@ -13,7 +13,7 @@
     <h2>Fields</h2>
     <div class="flexcol item-list">
         {{#each data.fields}}
-        <div class="flexrow item-row">
+        <div class="flexrow item-row" data-idx={{@index}}>
             <div class="flexcol">
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">Label:</label>
@@ -49,6 +49,9 @@
     <p>
     </p>
     {{/each}}
+
+    <hr>
+    <button class="delete">Delete Asset</button>
 
     <h3>Rendered</h3>
     {{{data.rendered}}}

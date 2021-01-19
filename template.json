@@ -72,11 +72,20 @@
     "asset": {
       "templates": [],
       "description": "",
-      "fields": [],
+      "fields": [
+        {
+          "name": "",
+          "value": ""
+        }
+      ],
       "abilities": [
         {
           "enabled": true,
           "description": "the default ability of this asset"
+        },
+        {
+          "enabled": false,
+          "description": ""
         },
         {
           "enabled": false,

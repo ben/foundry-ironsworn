@@ -107,7 +107,7 @@ export class IronswornActorSheet extends ActorSheet {
     })
     html.find('.edit-item').click(ev => {
       const itemId = $(ev.target)
-        .parents('.item')
+        .parents('.item-row')
         .data('id')
       const item = this.actor.items.find(x => x._id === itemId)
       item.sheet.render(true)
