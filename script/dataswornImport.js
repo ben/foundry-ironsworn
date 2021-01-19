@@ -3,6 +3,15 @@ const fetch = require('node-fetch')
 const fs = require('fs/promises')
 const util = require('util')
 
+function renderHtml (text) {
+  return markdown.toHTML(
+    text.replace(
+      /(roll )?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/g,
+      '((rollplus $2))'
+    )
+  )
+}
+
 async function doit () {
   // Assets
   const assetsJson = await fetch(
@@ -17,14 +26,10 @@ async function doit () {
         description: asset.Description,
         fields: asset['Input Fields']?.map(x => ({ name: x, value: '' })),
         abilities: asset.Abilities.map(x => {
-          let description = x.Name ? `**${x.Name}:** ${x.Text}` : x.Text
-          description = description.replace(
-            /(roll )?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/g,
-            '((rollplus $2))'
-          )
+          const description = x.Name ? `**${x.Name}:** ${x.Text}` : x.Text
           return {
             enabled: x.Enabled || false,
-            description: markdown.toHTML(description)
+            description: renderHtml(description)
           }
         }),
         health: asset.Health
@@ -34,6 +39,21 @@ async function doit () {
     })
   }
   await fs.writeFile('assets/assets.json', JSON.stringify(assets, null, 2))
+
+  // Moves
+  const movesJson = await fetch(
+    'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_moves.json'
+  ).then(x => x.json())
+  const moves = []
+  for (const category of Object.values(movesJson.Moves)) {
+    for (const moveName of Object.keys(category)) {
+      moves.push({
+        name: moveName,
+        data: { description: renderHtml(category[moveName].Text) }
+      })
+    }
+  }
+  await fs.writeFile('assets/moves.json', JSON.stringify(moves, null, 2))
 }
 
 doit().then(
