@@ -171,7 +171,7 @@ export class IronswornActorSheet extends ActorSheet {
       `
     <a class='inline-roll' data-param='$1'>
       <i class='fas fa-dice-d20'></i>
-      Roll +$1.
+      Roll +$1
     </a>`
     )
   }
