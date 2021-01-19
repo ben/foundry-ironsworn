@@ -9,6 +9,7 @@ import { IronswornActor } from './actor.js'
 import { IronswornItem } from './item.js'
 import { IronswornItemSheet } from './item-sheet.js'
 import { IronswornActorSheet } from './actor-sheet.js'
+import { importFromDatasworn } from './datasworn.js'
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -39,6 +40,10 @@ Hooks.once('init', async function () {
     default: true,
     config: true
   })
+
+  game.Ironsworn = {
+    importFromDatasworn
+  }
 })
 
 Hooks.once('setup', () => {
