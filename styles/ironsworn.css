@@ -88,19 +88,19 @@
 .ironsworn h4 {
   font-size: 22px;
 }
-.ironsworn .move-list {
+.ironsworn .item-list {
   flex: 1 0 100px;
   overflow-y: scroll;
 }
-.ironsworn .move-list .move {
+.ironsworn .item-list .move {
   overflow-x: hidden;
 }
-.ironsworn .move-list ol {
+.ironsworn .item-list ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-.ironsworn .move-list ol > h2 {
+.ironsworn .item-list ol > h2 {
   text-align: center;
   border-width: 1px 0;
   border-color: white;
@@ -205,11 +205,15 @@
   flex-grow: 0;
   line-height: 26px;
 }
-.ironsworn .move-row {
+.ironsworn .item-row {
   border: 1px solid black;
   border-radius: 2px;
   padding: 3px;
   margin: 3px 0;
+}
+.ironsworn .item-row .item-row-control {
+  flex-grow: 0;
+  padding: 5px;
 }
 .ironsworn .progresses .clickable {
   padding: 5px;

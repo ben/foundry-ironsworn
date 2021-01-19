@@ -1,6 +1,5 @@
 <form class="{{cssClass}}" autocomplete="off">
     <header class="sheet-header">
-        <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" />
         <div class="header-fields">
             <h1 class="charname">
                 <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
@@ -12,24 +11,31 @@
     </header>
 
     <h2>Fields</h2>
-    {{#each data.fields}}
-    <div class="flexcol item">
-        <div class="flexrow">
-            <label style="flex-grow: 0;">Label:</label>
-            <input class="attribute-value" type="text" name="data.fields.{{@index}}.name" value="{{name}}" />
+    <div class="flexcol item-list">
+        {{#each data.fields}}
+        <div class="flexrow item-row">
+            <div class="flexcol">
+                <div class="flexrow">
+                    <label style="flex-grow: 0; align-self: center;">Label:</label>
+                    &nbsp;
+                    <input class="attribute-value" type="text" name="data.fields.{{@index}}.name" value="{{name}}" />
+                </div>
+                <div class="flexrow">
+                    <label style="flex-grow: 0; align-self: center;">Value:</label>
+                    &nbsp;
+                    <input class="attribute-value" type="text" name="data.fields.{{@index}}.value" value="{{value}}" />
+                </div>
+            </div>
+            <div class="block clickable item-row-control delete-field" data-index="{{@index}}">
+                <i class="fas fa-trash"></i>
+            </div>
         </div>
-        <div class="flexrow">
-            <label style="flex-grow: 0;">Value:</label>
-            <input class="attribute-value" type="text" name="data.fields.{{@index}}.value" value="{{value}}" />
-        </div>
-        <div class="block clickable delete-field" data-index="{{@index}}">
-            <i class="fas fa-trash"></i>
+        {{/each}}
+        <div class="block clickable add-field" style="padding: 5px; text-align: center;">
+            <i class="fas fa-plus"></i>
         </div>
     </div>
-    {{/each}}
-    <div class="block clickable add-field">
-        <i class="fas fa-plus"></i>
-    </div>
+
 
     <h2>Abilities</h2>
     {{#each data.abilities}}
@@ -44,6 +50,6 @@
     </p>
     {{/each}}
 
-    {{!-- <h3>Rendered</h3>
-    {{{data.rendered}}} --}}
+    <h3>Rendered</h3>
+    {{{data.rendered}}}
 </form>
