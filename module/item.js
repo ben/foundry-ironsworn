@@ -57,18 +57,22 @@ export class IronswornItem extends Item {
     })
   }
 
-  /**
-   * @override - render description for embed
-   */
-  async update (data, options) {
-    const updatedEntity = await super.update(data, options)
-    if (this.type === 'asset' && !data['data.rendered']) {
-      const template =
-        'systems/foundry-ironsworn/templates/item/asset_embedded.hbs'
-      console.log(updatedEntity.data)
-      const rendered = await renderTemplate(template, this.data)
-      await this.update({ 'data.rendered': rendered })
-    }
-    return updatedEntity
+  async renderEmbed () {
+    const template =
+      'systems/foundry-ironsworn/templates/item/asset_embedded.hbs'
+    const rendered = renderTemplate(template, this.data)
+    await this.update({ 'data.rendered': rendered })
   }
 }
+
+Hooks.on('createItem', async item => {
+  if (item.data.type === 'asset') {
+    await item.renderEmbed()
+  }
+})
+
+Hooks.on('updateItem', async (item, diff) => {
+  if (!diff.data.rendered) {
+    await item.renderEmbed()
+  }
+})
