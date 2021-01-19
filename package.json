@@ -16,7 +16,7 @@
   "dependencies": {
     "gulp": "^4.0.2",
     "gulp-less": "^4.0.1",
-    "markdown": "^0.5.0",
+    "marked": "^1.2.7",
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {}

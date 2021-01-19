@@ -1,14 +1,15 @@
-const { markdown } = require('markdown')
+const marked = require('marked')
 const fetch = require('node-fetch')
 const fs = require('fs/promises')
 const util = require('util')
 
 function renderHtml (text) {
-  return markdown.toHTML(
+  return marked(
     text.replace(
-      /(roll )?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/g,
+      /(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi,
       '((rollplus $2))'
-    )
+    ),
+    { gfm: true }
   )
 }
 
@@ -24,7 +25,10 @@ async function doit () {
       name: `${asset['Asset Type']} / ${assetName}`,
       data: {
         description: asset.Description,
-        fields: asset['Input Fields']?.map(x => ({ name: x, value: '' })),
+        fields: (asset['Input Fields'] || []).map(x => ({
+          name: x,
+          value: ''
+        })),
         abilities: asset.Abilities.map(x => {
           const description = x.Name ? `**${x.Name}:** ${x.Text}` : x.Text
           return {
