@@ -66,22 +66,21 @@ export class IronswornItemSheet extends ItemSheet {
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return
 
-    html.find('.remove-option').click(async ev => {
+    html.find('.delete-field').click(async ev => {
       ev.preventDefault()
-
-      const key = parseInt(ev.currentTarget.dataset.key)
-      const itemToRemove = this.item.data.data.options[key]
-      let newOptions = Object.values(this.item.data.data.options)
-      newOptions = newOptions.filter(x => x !== itemToRemove)
-      this.item.update({ data: { options: newOptions } })
+      const idx = parseInt(
+        $(ev.target)
+          .parents('.item-row')
+          .data('idx')
+      )
+      const fields = Object.values(this.item.data.data.fields)
+      fields.splice(idx, 1)
+      await this.item.update({ 'data.fields': fields })
     })
-
-    html.find('.addOption').click(async ev => {
-      ev.preventDefault()
-
-      const options = Object.values(this.item.data.data.options || [])
-      options.push({ description: '', param: 'edge' })
-      await this.item.update({ data: { options } })
+    html.find('.add-field').click(async ev => {
+      const fields = Object.values(this.item.data.data.fields)
+      fields.push({name: '', value: ''})
+      await this.item.update({ 'data.fields': fields })
     })
 
     // Vow progress buttons
@@ -100,7 +99,7 @@ export class IronswornItemSheet extends ItemSheet {
     html.find('.delete').click(async ev => {
       ev.preventDefault()
       await Dialog.confirm({
-        title: 'Delete Vow',
+        title: 'Delete Item',
         content: '<p>Are you sure? This cannot be undone.</p>',
         yes: () => this.item.delete(),
         defaultYes: false

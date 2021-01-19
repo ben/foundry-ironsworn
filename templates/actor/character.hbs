@@ -22,7 +22,7 @@
     {{/inline}}
 
     {{#*inline "progress"}}
-    <div class="flexcol item" data-itemid="{{_id}}">
+    <div class="flexcol item" data-id="{{_id}}">
         <div class="flexrow">
             <h2>{{name}} ({{data.data.rank}})</h2>
             <div class="block clickable" style="flex-grow: 0;">
@@ -112,6 +112,22 @@
                 <div class="flexcol">
                     <section class="sheet-area">
                         <h1 style="text-align:center">Assets</h1>
+                        <div class="flexcol item-list">
+                            <ol>
+                                {{#each assets}}
+                                <li class="item-row" data-id="{{_id}}">
+                                    <div class="asset-entry">
+                                        <div class="flexrow">
+                                            <span>{{name}}</span>
+                                            <div class="block clickable" style="flex-grow: 0;">
+                                                <i class="edit-item fas fa-edit"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ol>
+                        </div>
                     </section>
                     <section class="sheet-area">
                         <h1 style="text-align:center">Bonds</h1>
@@ -177,7 +193,7 @@
         <div class="flexcol margin-right">
 
             <h1 style="flex: 0 0 auto">moves</h1>
-            <div class="flexcol move-list">
+            <div class="flexcol item-list">
                 <ol>
                     {{#each moveOrder as |key|}}
                     {{#with (lookup ../moves [key])}}
@@ -191,7 +207,7 @@
                     {{#if separator}}
                     <h2>{{title}}</h2>
                     {{else}}
-                    <li class="move-row" data-id="{{_id}}">
+                    <li class="item-row" data-id="{{_id}}">
                         <div class="move-entry">{{name}}</div>
                     </li>
                     {{/if}}
@@ -200,7 +216,7 @@
             </div>
 
             <h1 style="flex: 0 0 auto">oracles</h1>
-            <div class="flexcol move-list">
+            <div class="flexcol item-list">
 
                 {{#*inline "oracle"}}
                 <li class="item">
