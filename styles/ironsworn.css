@@ -19,6 +19,7 @@
 }
 .ironsworn .sheet-area {
   border-top: 2px solid darkgray;
+  margin: 5px;
 }
 .ironsworn .sheet-area:first-child {
   border-top: none;
