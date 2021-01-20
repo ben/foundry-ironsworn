@@ -23,9 +23,16 @@
     },
     {
       "name": "ironswornitems",
-      "label": "Ironsworn Items",
+      "label": "Ironsworn Moves",
       "system": "foundry-ironsworn",
       "path": "packs/items.db",
+      "entity": "Item"
+    },
+    {
+      "name": "ironswornassets",
+      "label": "Ironsworn Assets",
+      "system": "foundry-ironsworn",
+      "path": "packs/assets.db",
       "entity": "Item"
     },
     {
