@@ -13,7 +13,7 @@
   </section>
 
   <div class="flexrow nogrow">
-    {{#each (progressCharacters this.data)}}
+    {{#each (progressCharacters data.current)}}
     <div class="progress block">{{{this}}}</div>
     {{/each}}
   </div>

@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="flexrow">
-            {{#each (progressCharacters this.data.data)}}
+            {{#each (progressCharacters data.data.current)}}
             <div class="progress">{{{this}}}</div>
             {{/each}}
             <div class="clickable block markProgress" title="Mark progress">

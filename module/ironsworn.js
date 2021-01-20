@@ -200,10 +200,10 @@ Handlebars.registerHelper('capitalize', txt => {
   return `${first.toUpperCase()}${rest.join('')}`
 })
 
-Handlebars.registerHelper('progressCharacters', data => {
-  const tickChar = [' ', '-', '+', '*'][data.current % 4]
+Handlebars.registerHelper('progressCharacters', current => {
+  const tickChar = [' ', '-', '+', '*'][current % 4]
   let characters = []
-  for (let i = 0; i < Math.floor(data.current / 4); i++) {
+  for (let i = 0; i < Math.floor(current / 4); i++) {
     characters.push('#')
   }
   if (characters.length < 10) {
