@@ -129,11 +129,19 @@
                             </ol>
                         </div>
                     </section>
-                    <section class="sheet-area">
+                    <section class="sheet-area" style="flex-grow: 0;">
                         <h1 style="text-align:center">Bonds</h1>
+                        <div class="flexrow">
+                            {{#each (progressCharacters data.bondCount)}}
+                            <div class="progress">{{{this}}}</div>
+                            {{/each}}
+                            <div class="block clickable" style="flex-grow: 0; padding: 5px; margin: 2px;">
+                                <i class="fas fa-edit"></i>
+                            </div>
+                        </div>
                     </section>
 
-                    <section class="sheet-area">
+                    <section class="sheet-area" style="flex-grow: 0;">
                         <h1 style="text-align:center">Debilities</h1>
 
                         {{#*inline "debility"}}

@@ -52,6 +52,7 @@ export class IronswornActorSheet extends ActorSheet {
     data.assets = this.actor.items.filter(x => x.type === 'asset')
     data.vows = this.actor.items.filter(x => x.type === 'vow')
     data.progresses = this.actor.items.filter(x => x.type === 'progress')
+    data.bondCount = this.actor.items.filter(x => x.type === 'bond').length
 
     return data
   }
