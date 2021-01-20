@@ -85,7 +85,11 @@ export class IronswornActorSheet extends ActorSheet {
 
     // Vow/progress buttons
     html.find('.add-item').click(async ev => {
-      const itemType = $(ev.target).data('type')
+      let el = $(ev.target)
+      if (!el.hasClass('add-item')) {
+        el = el.parents('.add-item')
+      }
+      const itemType = el.data('type')
       this.actor.createOwnedItem(
         { type: itemType, name: `New ${itemType}` },
         { renderSheet: true }
