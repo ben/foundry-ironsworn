@@ -83,6 +83,11 @@ export class IronswornItemSheet extends ItemSheet {
       await this.item.update({ 'data.fields': fields })
     })
 
+    html.find('.track-target').click(async ev => {
+      const newValue = parseInt(ev.currentTarget.dataset.value)
+      await this.item.update({'data.track.current': newValue})
+    })
+
     // Vow progress buttons
     html.find('.markProgress').click(ev => {
       ev.preventDefault()

@@ -180,9 +180,17 @@ export async function ironswornRollDialog (data, stat, title) {
 
 Handlebars.registerHelper('rangeEach', function (context, options) {
   const results = []
-  for (let value = context.hash.from; value >= context.hash.to; value--) {
+  const { from, to, current } = context.hash
+
+  // Enable both directions of iteration
+  const increment = from > to ? -1 : 1
+  const shouldContinue = from > to
+    ? (x, y) => x >= y
+    : (x, y) => x <= y
+
+  for (let value = from; shouldContinue(value, to); value += increment) {
     const valueStr = value > 0 ? `+${value}` : value.toString()
-    const isCurrent = value === context.hash.current
+    const isCurrent = value === current
     results.push(
       context.fn({
         ...this,

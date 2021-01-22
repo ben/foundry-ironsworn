@@ -50,6 +50,29 @@
     </p>
     {{/each}}
 
+    <h2>Track</h2>
+    <div class="flexrow" style="align-items: baseline;">
+        <label>
+            <input type="checkbox" name="data.track.enabled" {{checked data.track.enabled}} style="flex-grow: 0;" />
+            <span>Enabled</span>
+        </label>
+        <span style="flex-grow: 0; margin: 0 5px;">Name</span>
+        <input type="text" name="data.track.name" value={{data.track.name}}>
+        <span style="flex-grow: 0; margin: 0 5px;">Max</span>
+        <input type="number" name="data.track.max" value={{data.track.max}}>
+    </div>
+    <div class="flexrow">
+        {{#rangeEach from=0 to=data.track.max current=data.track.current}}
+        <div class="
+            clickable block track-target progress
+            {{#if isCurrent}} selected {{/if}}
+        " data-value={{value}}>
+            {{value}}
+        </div>
+        {{/rangeEach}}
+    </div>
+
+
     <hr>
     <button class="delete">Delete Asset</button>
 
