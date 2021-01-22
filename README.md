@@ -1,7 +1,6 @@
 # Ironsworn for Foundry VTT
 
 This is an implementation of the [Ironsworn](https://www.ironswornrpg.com/) rule set for Foundry VTT.
-It's based on the [Simple Worldbuilding System](https://gitlab.com/foundrynet/worldbuilding) that Atropos has kindly provided.
 
 ![Screenshot, also showing Dice so Nice](https://user-images.githubusercontent.com/39902/104860543-06ce4780-58e1-11eb-8c8e-7543222f1875.png)
 
