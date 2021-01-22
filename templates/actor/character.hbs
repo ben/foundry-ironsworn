@@ -1,3 +1,39 @@
+{{log this}}
+
+{{#*inline "stack"}}
+{{#rangeEach from=from to=to current=(lookup data stat)}}
+<div class="
+        clickable block stack-row
+        {{stat}}
+        {{#if isCurrent}} selected {{/if}}
+    " data-resource="{{stat}}" data-value="{{value}}">
+    {{valueStr}}
+</div>
+{{/rangeEach}}
+{{/inline}}
+
+{{#*inline "progress"}}
+<div class="flexcol item-row" data-id="{{_id}}">
+    <div class="flexrow">
+        <h2>{{name}} ({{data.data.rank}})</h2>
+        <div class="block clickable" style="flex-grow: 0;">
+            <i class="edit-item fas fa-edit"></i>
+        </div>
+    </div>
+    <div class="flexrow">
+        {{#each (progressCharacters data.data.current)}}
+        <div class="progress">{{{this}}}</div>
+        {{/each}}
+        <div class="clickable block markProgress" title="Mark progress">
+            <i class="fas fa-play"></i>
+        </div>
+        <div class="clickable block fulfillProgress" title="Fulfill vow">
+            <i class="fas fa-check"></i>
+        </div>
+    </div>
+</div>
+{{/inline}}
+
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
     <!-- Header row -->
@@ -8,40 +44,6 @@
 
         </div>
     </header>
-
-    {{#*inline "stack"}}
-    {{#rangeEach from=from to=to current=(lookup data stat)}}
-    <div class="
-        clickable block stack-row
-        {{stat}}
-        {{#if isCurrent}} selected {{/if}}
-    " data-resource="{{stat}}" data-value="{{value}}">
-        {{valueStr}}
-    </div>
-    {{/rangeEach}}
-    {{/inline}}
-
-    {{#*inline "progress"}}
-    <div class="flexcol item-row" data-id="{{_id}}">
-        <div class="flexrow">
-            <h2>{{name}} ({{data.data.rank}})</h2>
-            <div class="block clickable" style="flex-grow: 0;">
-                <i class="edit-item fas fa-edit"></i>
-            </div>
-        </div>
-        <div class="flexrow">
-            {{#each (progressCharacters data.data.current)}}
-            <div class="progress">{{{this}}}</div>
-            {{/each}}
-            <div class="clickable block markProgress" title="Mark progress">
-                <i class="fas fa-play"></i>
-            </div>
-            <div class="clickable block fulfillProgress" title="Fulfill vow">
-                <i class="fas fa-check"></i>
-            </div>
-        </div>
-    </div>
-    {{/inline}}
 
     <div class="flexrow">
         <div class="flexcol margin-left">
