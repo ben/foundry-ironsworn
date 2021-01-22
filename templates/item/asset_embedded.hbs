@@ -7,9 +7,20 @@
 {{/if}}
 
 <ul>
-{{#each data.abilities}}
-{{#if enabled}}
-<li>{{{description}}}</li>
-{{/if}}
-{{/each}}
+  {{#each data.abilities}}
+  {{#if enabled}}
+  <li>{{{description}}}</li>
+  {{/if}}
+  {{/each}}
 </ul>
+
+{{#if data.track.enabled}}
+<div class="flexrow">
+  {{#rangeEach from=0 to=data.track.max current=data.track.current}}
+  <div class="clickable block track-target progress
+              {{#if isCurrent}} selected {{/if}}" data-value={{value}}>
+    {{value}}
+  </div>
+  {{/rangeEach}}
+</div>
+{{/if}}

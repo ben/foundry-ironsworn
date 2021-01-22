@@ -189,6 +189,12 @@ export class IronswornActorSheet extends ActorSheet {
       const actor = this.actor || {}
       return ironswornRollDialog(actor.data?.data, el.dataset.param, moveTitle)
     })
+
+    // Asset track
+    html.find('.track-target').click(ev => {
+      const newValue = parseInt(ev.currentTarget.dataset.value)
+      return item.update({ 'data.track.current': newValue })
+    })
   }
 
   async _rollStat (event) {
