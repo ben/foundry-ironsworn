@@ -11,7 +11,13 @@ To install it, plug this URL into the install UI:
 https://raw.githubusercontent.com/ben/foundry-ironsworn/main/system.json
 ```
 
-## THIS IS PRE-RELEASE SOFTWARE
+## How to use this
 
-Not everything works, and what does only _barely_ works.
-There's a [to-do list issue](https://github.com/ben/foundry-ironsworn/issues/2) if you're interested in helping out.
+Open up the "Ironsworn Maps" compendium, and drag one of the scenes into the scene tab.
+You can mark it up using the drawing tools.
+
+Create a new character, and customize the name and stats.
+Assets are in their own compendium, drag them onto your character sheet.
+
+Now you're ready to create vows, embark on journeys, and slay beasts.
+Keep track of your story using journal entries.
