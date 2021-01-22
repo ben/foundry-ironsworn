@@ -98,14 +98,14 @@ export class IronswornActorSheet extends ActorSheet {
     })
     html.find('.markProgress').click(ev => {
       const itemId = $(ev.target)
-        .parents('.item')
+        .parents('.item-row')
         .data('id')
       const item = this.actor.items.find(x => x._id === itemId)
       return item.markProgress()
     })
     html.find('.fulfillProgress').click(ev => {
       const itemId = $(ev.target)
-        .parents('.item')
+        .parents('.item-row')
         .data('id')
       const item = this.actor.items.find(x => x._id === itemId)
       return item.fulfill()
