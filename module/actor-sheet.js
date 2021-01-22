@@ -131,6 +131,18 @@ export class IronswornActorSheet extends ActorSheet {
       this.actor.deleteOwnedItem(li.data('itemId'))
       li.slideUp(200, () => this.render(false))
     })
+
+    // Asset tracks
+    html.find('.track-target').click(ev => {
+      const row = $(ev.currentTarget).parents('.item-row')
+      const item = this.actor.getOwnedItem(row.data('id'))
+      const newValue = parseInt(ev.currentTarget.dataset.value)
+      return item.update({ 'data.track.current': newValue })
+    })
+    html.find('.item-row').map((i, el) => {
+      const item = this.actor.getOwnedItem(el.dataset.id)
+      this._attachInlineRollListeners($(el), item)
+    })
   }
 
   async _handleMoveExpand (ev) {
@@ -156,17 +168,9 @@ export class IronswornActorSheet extends ActorSheet {
     const li = $(ev.currentTarget).parents('li')
     const item = this.actor.getOwnedItem(li.data('id'))
 
-    if (li.hasClass('expanded')) {
-      const summary = li.children('.asset-summary')
-      summary.slideUp(200, () => summary.remove())
-    } else {
-      const content = this._parseRollPlus(item.data.data.rendered)
-      const div = $(`<div class="asset-summary">${content}</div>`)
-      this._attachInlineRollListeners(div, item)
-      li.append(div.hide())
-      div.slideDown(200)
-    }
-    li.toggleClass('expanded')
+    const flagKey = `expanded-${item._id}`
+    const value = this.actor.getFlag('foundry-ironsworn', flagKey)
+    this.actor.setFlag('foundry-ironsworn', flagKey, !value)
   }
 
   _parseRollPlus (text) {
@@ -188,12 +192,6 @@ export class IronswornActorSheet extends ActorSheet {
       const moveTitle = `${item.name} (${el.dataset.param})`
       const actor = this.actor || {}
       return ironswornRollDialog(actor.data?.data, el.dataset.param, moveTitle)
-    })
-
-    // Asset track
-    html.find('.track-target').click(ev => {
-      const newValue = parseInt(ev.currentTarget.dataset.value)
-      return item.update({ 'data.track.current': newValue })
     })
   }
 

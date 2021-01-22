@@ -126,6 +126,15 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="asset-summary" style="display:
+                                    {{#if (lookup actor.data.flags.foundry-ironsworn (concat 'expanded-' _id))}}
+                                    block
+                                    {{else}}
+                                    none
+                                    {{/if}}
+                                    ;">
+                                    {{{enrichHtml data.data.rendered}}}
+                                    </div>
                                 </li>
                                 {{/each}}
                             </ol>

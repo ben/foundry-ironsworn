@@ -184,9 +184,7 @@ Handlebars.registerHelper('rangeEach', function (context, options) {
 
   // Enable both directions of iteration
   const increment = from > to ? -1 : 1
-  const shouldContinue = from > to
-    ? (x, y) => x >= y
-    : (x, y) => x <= y
+  const shouldContinue = from > to ? (x, y) => x >= y : (x, y) => x <= y
 
   for (let value = from; shouldContinue(value, to); value += increment) {
     const valueStr = value > 0 ? `+${value}` : value.toString()
@@ -221,6 +219,14 @@ Handlebars.registerHelper('progressCharacters', current => {
     characters.push('&nbsp;')
   }
   return characters
+})
+
+Handlebars.registerHelper('enrichHtml', text => {
+  const rendered = TextEditor.enrichHTML(text)
+  return rendered.replace(
+    /\(\(rollplus (.*?)\)\)/g,
+    "<a class='inline-roll' data-param='$1'><i class='fas fa-dice-d6'></i>Roll +$1</a>"
+  )
 })
 
 export const RANKS = {
