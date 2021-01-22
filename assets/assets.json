@@ -23,9 +23,11 @@
           "description": "<p><strong>Protective:</strong> When you <em>Make Camp</em>, your cat is alert to trouble. If you or an ally choose to relax, take +1 spirit. If you focus, take +1 momentum.</p>\n"
         }
       ],
-      "health": {
-        "current": 4,
-        "max": 4
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 4,
+        "current": 4
       }
     }
   },
@@ -53,9 +55,11 @@
           "description": "<p><strong>Ensnaring:</strong> When your spider sets a trap, add +1 as you <em>Enter the Fray</em> ((rollplus shadow)). On a strong hit, also inflict 2 harm.</p>\n"
         }
       ],
-      "health": {
-        "current": 4,
-        "max": 4
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 4,
+        "current": 4
       }
     }
   },
@@ -83,9 +87,11 @@
           "description": "<p><strong>Vigilant:</strong> When you <em>Face Danger</em> ((rollplus wits)) to detect an approaching threat, or when you <em>Enter the Fray</em> ((rollplus wits)) against an ambush, add +2.</p>\n"
         }
       ],
-      "health": {
-        "current": 3,
-        "max": 3
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 3,
+        "current": 3
       }
     }
   },
@@ -113,9 +119,11 @@
           "description": "<p><strong>Mighty:</strong> When you <em>Strike</em> or <em>Clash</em> at close range while mounted, add +1 and inflict +1 harm on a hit.</p>\n"
         }
       ],
-      "health": {
-        "current": 5,
-        "max": 5
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 5,
+        "current": 5
       }
     }
   },
@@ -143,9 +151,11 @@
           "description": "<p><strong>Loyal:</strong> When you <em>Endure Stress</em> in the company of your hound, add +1.</p>\n"
         }
       ],
-      "health": {
-        "current": 4,
-        "max": 4
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 4,
+        "current": 4
       }
     }
   },
@@ -173,9 +183,11 @@
           "description": "<p><strong>Bonded:</strong> Once you mark a bond with your companion, add +1 when you <em>Face Desolation</em> in their presence.</p>\n"
         }
       ],
-      "health": {
-        "current": 4,
-        "max": 4
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 4,
+        "current": 4
       }
     }
   },
@@ -203,9 +215,11 @@
           "description": "<p><strong>Overpowering:</strong> When you <em>Strike</em> or <em>Clash</em> by riding your mammoth against a pack of foes, add +1 and inflict +1 harm on a hit.</p>\n"
         }
       ],
-      "health": {
-        "current": 5,
-        "max": 5
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 5,
+        "current": 5
       }
     }
   },
@@ -233,9 +247,11 @@
           "description": "<p><strong>Embodying:</strong> When you <em>Face Death</em>, take your owl’s health as +momentum before you roll.</p>\n"
         }
       ],
-      "health": {
-        "current": 3,
-        "max": 3
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 3,
+        "current": 3
       }
     }
   },
@@ -263,9 +279,11 @@
           "description": "<p><strong>Diligent:</strong> When your raven carries messages for you, you may <em>Secure an Advantage</em>, <em>Gather Information</em>, or <em>Compel</em> from a distance.</p>\n"
         }
       ],
-      "health": {
-        "current": 2,
-        "max": 2
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 2,
+        "current": 2
       }
     }
   },
@@ -293,9 +311,11 @@
           "description": "<p><strong>Savage:</strong> When you <em>Strike</em> by commanding your wyvern to attack, ((rollplus heart)). Your wyvern inflicts 3 harm on a hit.</p>\n"
         }
       ],
-      "health": {
-        "current": 5,
-        "max": 5
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 5,
+        "current": 5
       }
     }
   },
@@ -316,7 +336,13 @@
           "enabled": false,
           "description": "<p>When you prepare an elixir, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -336,7 +362,13 @@
           "enabled": false,
           "description": "<p>Once per fight, when you leverage your animal or beast companion to make a move, reroll any dice. On a hit, take +1 momentum.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -362,7 +394,13 @@
           "enabled": false,
           "description": "<p>When you <em>Enter the Fray</em> bearing your banner, add +1 and take +1 momentum on a hit. When you burn momentum while carrying your banner in combat, take +1 momentum after you reset.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -383,7 +421,13 @@
           "enabled": false,
           "description": "<p>You have stared down death before: When you are at 0 health and <em>Endure Harm</em>, you may ((rollplus wits)) or ((rollplus heart)) (instead of ((rollplus health)) or ((rollplus iron))). If you do, take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -409,7 +453,13 @@
           "enabled": false,
           "description": "<p>When you <em>Strike</em> with your kin-blade to inflict savage harm (decide before rolling), add +1 and inflict +2 harm on a hit. Then, <em>Endure Stress</em> (2 stress).</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -429,7 +479,13 @@
           "enabled": false,
           "description": "<p>When you make a move in a crucial moment and score a miss, you may cling to thoughts of your bond-kin for courage or encouragement. If you do, reroll any dice. On another miss, in addition to the outcome of the move, you must mark shaken or corrupted. If both debilities are already marked, <em>Face Desolation</em>.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -449,7 +505,13 @@
           "enabled": false,
           "description": "<p>When you or an ally make a progress move and score a hit, you may perform a dance to commemorate the event. If you do, ((rollplus edge)). On a strong hit, you and each of your allies take +2 momentum and +1 spirit. On a weak hit, you take +1 momentum or +1 spirit, but your allies are unmoved.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -478,7 +540,13 @@
           "enabled": false,
           "description": "<p>When you <em>Sojourn</em> by sharing the word of your god, you may roll +your god’s stat. If you do, take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -503,7 +571,13 @@
           "enabled": false,
           "description": "<p>When you forgo your title or lineage and <em>Forge a Bond</em> as an equal, or when you <em>Swear an Iron Vow</em> to serve someone of a lower station, add +1 and take +1 momentum or +1 spirit on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -523,7 +597,13 @@
           "enabled": false,
           "description": "<p>When you <em>Resupply</em> by scavenging or looting, and score a strong hit with a match, you may envision finding an object of value. If you do, take +1 supply (instead of +2) and +1 wealth.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": true,
+        "name": "Wealth",
+        "max": 5,
+        "current": 0
+      }
     }
   },
   {
@@ -543,7 +623,13 @@
           "enabled": false,
           "description": "<p>When you <em>Make Camp</em> and choose the option to partake, you can create a restorative meal. If you do, you and your companions take +1 health. Any allies who choose to partake also take +1 health, and do not suffer -supply.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -563,7 +649,13 @@
           "enabled": false,
           "description": "<p>When you <em>Fulfill Your Vow</em> and score a miss, you may reroll one challenge die. If you score a miss again, reduce your maximum spirit by 1. You may recover this lost spirit when you next <em>Fulfill Your Vow</em> and score a strong hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -583,7 +675,13 @@
           "enabled": false,
           "description": "<p>When you throw caution to the wind and make an impulsive move in a risky situation, you may add +2. If you do, take +1 momentum on a strong hit, but count a weak hit as a miss.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -603,7 +701,13 @@
           "enabled": false,
           "description": "<p>When you <em>Resupply</em> within an enemy area by scavenging or looting, you may ((rollplus shadow)) (instead of ((rollplus wits))). If you do, take +1 momentum or +1 supply on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -623,7 +727,13 @@
           "enabled": false,
           "description": "<p>When you stand with your ally as they make a progress move, envision how you support them. Then, roll one challenge die. On a 1-9, your ally may replace one of their challenge dice with yours. On a 10, envision how you inadvertently undermine their action; your ally must replace their lowest challenge die with yours.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -644,7 +754,13 @@
           "enabled": false,
           "description": "<p>When you <em>Face Death</em> or <em>Face Desolation</em> while wearing the mask, you may roll +its stat (instead of ((rollplus heart))).</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -665,7 +781,13 @@
           "enabled": false,
           "description": "<p>When you <em>Fulfill Your Vow</em> on your marked quest and score a hit, you find redemption and automatically activate this ability at no cost. You may then improve one of your stats by +1 and discard this asset.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -685,7 +807,13 @@
           "enabled": false,
           "description": "<p>When you <em>Reach Your Destination</em> and score a strong hit, you recall or recognize something helpful about this place. Envision what it is, and take +2 momentum.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -705,7 +833,13 @@
           "enabled": false,
           "description": "<p>When you <em>Secure an Advantage</em> by revealing your true identity in a dramatic moment, reroll any dice.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -726,7 +860,13 @@
           "enabled": false,
           "description": "<p>When you bring death to your foe to <em>End the Fight</em>, you may burn momentum to cancel one (not both) of the challenge dice if your momentum is greater than the value of that die. If you do, <em>Endure Stress</em> (2 stress).</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -747,7 +887,13 @@
           "enabled": false,
           "description": "<p>When you <em>Secure an Advantage</em> ((rollplus wits)) by sizing up a perilous situation from the saddle, you are one with your horse’s instincts. Add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -768,7 +914,13 @@
           "enabled": false,
           "description": "<p>When you tattoo the essence of a new ritual onto your skin, envision the mark you create. You may then purchase and upgrade that ritual asset for 1 fewer experience.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -789,7 +941,13 @@
           "enabled": false,
           "description": "<p>You know the sly ways of death: When you <em>Face Death</em>, you may ((rollplus shadow)) (instead of ((rollplus heart))). On a weak hit, if you choose to undertake a deathbound quest, you may ((rollplus shadow)) (instead of ((rollplus heart))) and reroll any dice as you <em>Swear an Iron Vow</em>. When you <em>Fulfill Your Vow</em> on that quest and and mark experience, take +2 experience.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -809,7 +967,13 @@
           "enabled": false,
           "description": "<p>When you <em>Secure an Advantage</em> by studying someone or something in a charged situation, add +1 and take +1 momentum on a hit. When you also pierce the veil to explore deeper truths (decide before rolling), you may reroll any dice. If you do, count a weak hit as a miss.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -829,7 +993,13 @@
           "enabled": false,
           "description": "<p>When you slay a beast or horror (at least formidable), you may take a trophy and choose one.</p>\n<ul>\n<li>Power a ritual: When you or an ally make a ritual move, reroll any dice (one time only).</li>\n<li>Prove your worth: When you <em>Sojourn</em>, reroll any dice (one time only).</li>\n</ul>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -849,7 +1019,13 @@
           "enabled": false,
           "description": "<p>One time only, when you successfully <em>Fulfill Your Vow</em> (formidable or greater) in service to the spirit, choose one.</p>\n<ul>\n<li>Let them go: Take 2 experience for each marked ability and discard this asset.</li>\n<li>Deepen your connection: Add +1 more when you leverage this asset.</li>\n</ul>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -869,7 +1045,13 @@
           "enabled": false,
           "description": "<p>When you <em>Sojourn</em> within a community with which you share a bond, add +2 (instead of +1).</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -889,7 +1071,13 @@
           "enabled": false,
           "description": "<p>When you <em>Forge a Bond</em> for a relationship founded on a lie, choose one.</p>\n<ul>\n<li>Keep your secret: ((rollplus shadow)) (instead of ((rollplus heart))).</li>\n<li>Reveal the truth: ((rollplus heart)). On a strong hit, mark a bond twice and take 1 experience. A weak hit counts as a miss.</li>\n</ul>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -909,7 +1097,13 @@
           "enabled": false,
           "description": "<p>When you <em>Resupply</em> by looting the dead on a field of battle, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -929,7 +1123,13 @@
           "enabled": false,
           "description": "<p>When you <em>Enter the Fray</em> aboard a boat or ship, reroll any dice.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -949,7 +1149,13 @@
           "enabled": false,
           "description": "<p>When you <em>Swear an Iron Vow</em> to safely guide someone on a perilous journey, you may reroll any dice. When you <em>Fulfill Your Vow</em> and mark experience, take +1 experience.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -970,7 +1176,13 @@
           "enabled": false,
           "description": "<p>When you <em>Turn the Tide</em> with a sudden change of weapon or technique, and your next move is a <em>Strike</em>, add +1 and inflict +2 harm on a strong hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -990,7 +1202,13 @@
           "enabled": false,
           "description": "<p>When you <em>Make Camp</em> in the woodlands, you may ((rollplus wits)) (instead of ((rollplus supply))). If you do, you and your allies each choose 1 more option on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1015,7 +1233,13 @@
           "enabled": false,
           "description": "<p>When you give the item you create as a gift to commemorate an important event or relationship, you may (one time only) reroll any dice when you <em>Compel</em>, <em>Forge a Bond</em>, or <em>Test Your Bond</em>.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1036,7 +1260,13 @@
           "enabled": false,
           "description": "<p>When you <em>Resupply</em> by hunting, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1057,7 +1287,13 @@
           "enabled": false,
           "description": "<p>When you <em>Endure Harm</em> in a fight, and your health is above 0, you may let the pain inflame your wildness (decide before rolling). If you then score a strong hit and choose to embrace the pain, take +momentum equal to your remaining health. A weak hit counts as a miss.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1078,7 +1314,13 @@
           "enabled": false,
           "description": "<p>When you <em>Face Danger</em> or <em>Clash</em> against a brawling attack, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1099,7 +1341,13 @@
           "enabled": false,
           "description": "<p>Once per fight, when you <em>Secure an Advantage</em> ((rollplus shadow)) by performing a feint or misdirection, reroll any dice and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1120,7 +1368,13 @@
           "enabled": false,
           "description": "<p>When you <em>Draw the Circle</em>, choose one (before rolling).</p>\n<ul>\n<li>Add+2.</li>\n<li>Take+2 momentum on a hit.</li>\n</ul>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1140,7 +1394,13 @@
           "enabled": false,
           "description": "<p>When you craft a single arrow designated for a specific foe, envision the process and materials, and ((rollplus wits)). On a strong hit, take both. On a weak hit, choose one.</p>\n<ul>\n<li>Seeker: When a shooter uses the arrow to <em>Strike</em> or <em>Clash</em> against this foe, reroll any dice (one time only).</li>\n<li>Ravager: When a shooter uses the arrow to inflict harm against this foe, inflict +1d6 harm (one time only).</li>\n</ul>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1161,7 +1421,13 @@
           "enabled": false,
           "description": "<p>When you <em>Compel</em> in a situation where strength of arms is a factor, add +2.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1182,7 +1448,13 @@
           "enabled": false,
           "description": "<p>When you <em>Undertake a Journey</em> and score a strong hit, or if you accompany an ally who scores a strong hit on that move, your staff provides support and comfort in your travels; take +1 momentum.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1203,7 +1475,13 @@
           "enabled": false,
           "description": "<p>When forced to <em>Endure Harm</em> in a fight, you may instead sacrifice your shield and ignore all harm. If you do, the shield is destroyed. Once per fight, you also take initiative when you sacrifice your shield to avoid harm.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1224,7 +1502,13 @@
           "enabled": false,
           "description": "<p>When you <em>Secure an Advantage</em> by bracing your spear against a charging foe, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1245,7 +1529,13 @@
           "enabled": false,
           "description": "<p>When you <em>Secure an Advantage</em> by preparing stones of a special quality or material, add +1. Then, take +1 momentum or +1 supply on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1266,7 +1556,13 @@
           "enabled": false,
           "description": "<p>When you make a tribute to a fallen foe (formidable or greater) by carving a rune in the haft of your axe, ((rollplus heart)). On a strong hit, inflict +1d6 harm (one time only) when you <em>Strike</em> or <em>Clash</em>. On a weak hit, as above, but this death weighs on you; <em>Endure Stress</em> (2 stress).</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1287,7 +1583,13 @@
           "enabled": false,
           "description": "<p>When you <em>Swear an Iron Vow</em> by kneeling and grasping your sword’s blade, add +1 and take +1 momentum on a hit. If you let the edge draw blood from your hands, <em>Endure Harm</em> (1 harm) in exchange for an additional +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1308,7 +1610,13 @@
           "enabled": false,
           "description": "<p>When you <em>Turn the Tide</em>, you may <em>Strike</em> with all the fury and power you can muster. If you do (decide before rolling), you may reroll any dice and inflict +2 harm on a strong hit, but count a weak hit as a miss.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1328,7 +1636,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1349,9 +1663,11 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "health": {
-        "current": 6,
-        "max": 6
+      "track": {
+        "enabled": true,
+        "name": "Health",
+        "max": 6,
+        "current": 6
       }
     }
   },
@@ -1372,7 +1688,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1392,7 +1714,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1412,7 +1740,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1432,7 +1766,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 essence on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": true,
+        "name": "Essence",
+        "max": 6,
+        "current": 0
+      }
     }
   },
   {
@@ -1452,7 +1792,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1472,7 +1818,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1492,7 +1844,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": true,
+        "name": "Light",
+        "max": 6,
+        "current": 0
+      }
     }
   },
   {
@@ -1512,7 +1870,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1532,7 +1896,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1552,7 +1922,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1572,7 +1948,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1592,7 +1974,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1612,7 +2000,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1632,7 +2026,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1652,7 +2052,13 @@
           "enabled": false,
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1672,7 +2078,13 @@
           "enabled": false,
           "description": "<p>Once you <em>Forge a Bond</em> with your warband, take +1 momentum on a hit when you leverage a warband ability.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": true,
+        "name": "Strength",
+        "max": 4,
+        "current": 4
+      }
     }
   },
   {
@@ -1692,7 +2104,13 @@
           "enabled": false,
           "description": "<p>For every two boxes filled on your background vow progress track, take 1 experience. When you <em>Fulfill Your Vow</em>, your fate is at hand. Envision your final sacrifice and reroll any dice.</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   },
   {
@@ -1712,7 +2130,13 @@
           "enabled": false,
           "description": "<p>One time only, you may browse the archive’s forbidden depths. If you do, raise your wits by 1 and roll an action die. On 1-3, you must also mark corrupted or <em>Face Desolation</em> (ignoring momentum).</p>\n"
         }
-      ]
+      ],
+      "track": {
+        "enabled": false,
+        "name": "",
+        "max": 0,
+        "current": 0
+      }
     }
   }
 ]

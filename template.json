@@ -97,7 +97,9 @@
           "description": ""
         }
       ],
-      "health": {
+      "track": {
+        "enabled": false,
+        "name": "Health",
         "current": 0,
         "max": 0
       },

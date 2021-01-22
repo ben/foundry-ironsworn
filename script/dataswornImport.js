@@ -21,6 +21,25 @@ async function doit () {
   const assets = []
   for (const assetName of Object.keys(assetsJson.Assets)) {
     const asset = assetsJson.Assets[assetName]
+
+    const track = {
+      enabled: false,
+      name: '',
+      max: 0,
+      current: 0
+    }
+    if (asset.Health) {
+      track.enabled = true
+      track.name = 'Health'
+      track.max = track.current = asset.Health
+    }
+    if (asset['Asset Track']) {
+      track.enabled = true
+      track.name = asset['Asset Track'].Name
+      track.max = asset['Asset Track'].Max
+      track.current = asset['Asset Track']['Starting Value']
+    }
+
     assets.push({
       name: `${asset['Asset Type']} / ${assetName}`,
       data: {
@@ -36,9 +55,7 @@ async function doit () {
             description: renderHtml(description)
           }
         }),
-        health: asset.Health
-          ? { current: asset.Health, max: asset.Health }
-          : undefined
+        track,
       }
     })
   }
