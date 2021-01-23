@@ -42,7 +42,11 @@ export class IronswornActor extends Actor {
     this.data.data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
   }
 
-  async addDefaultMoves () {
+  async addDefaultItems () {
+    // Every character needs a bondset
+    await this.createOwnedItem({ type: 'bondset', name: 'bonds' })
+
+    // Moves
     const pack = game.packs.get('foundry-ironsworn.ironswornitems')
     const packIndex = await pack.getIndex()
     for (const itemEntry of packIndex) {
@@ -54,6 +58,6 @@ export class IronswornActor extends Actor {
 
 Hooks.on('createActor', async actor => {
   if (actor.data.type === 'character') {
-    await actor.addDefaultMoves()
+    await actor.addDefaultItems()
   }
 })

@@ -63,6 +63,11 @@ export class IronswornItem extends Item {
     const rendered = await renderTemplate(template, data)
     await this.update({ 'data.rendered': rendered })
   }
+
+  // Bondset methods
+  get count() {
+    return Object.values(this.data.data.bonds).length
+  }
 }
 
 Hooks.on('createItem', async item => {

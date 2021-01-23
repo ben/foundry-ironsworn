@@ -34,7 +34,7 @@
       "asset",
       "progress",
       "vow",
-      "bond",
+      "bondset",
       "site",
       "move"
     ],
@@ -58,8 +58,11 @@
       "threat": "",
       "menace": 0
     },
-    "bond": {
-      "notes": ""
+    "bondset": {
+      "bonds": [{
+        "name": "A community",
+        "notes": ""
+      }]
     },
     "site": {
       "templates": [

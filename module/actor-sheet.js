@@ -52,7 +52,7 @@ export class IronswornActorSheet extends ActorSheet {
     data.assets = this.actor.items.filter(x => x.type === 'asset')
     data.vows = this.actor.items.filter(x => x.type === 'vow')
     data.progresses = this.actor.items.filter(x => x.type === 'progress')
-    data.bondCount = this.actor.items.filter(x => x.type === 'bond').length
+    data.bonds = this.actor.items.find(x => x.type === 'bondset')
 
     return data
   }
@@ -114,6 +114,11 @@ export class IronswornActorSheet extends ActorSheet {
       const itemId = $(ev.target)
         .parents('.item-row')
         .data('id')
+      const item = this.actor.items.find(x => x._id === itemId)
+      item.sheet.render(true)
+    })
+    html.find('.edit-bonds').click(ev => {
+      const itemId = ev.target.dataset.id
       const item = this.actor.items.find(x => x._id === itemId)
       item.sheet.render(true)
     })

@@ -143,11 +143,11 @@
                     <section class="sheet-area" style="flex-grow: 0;">
                         <h1 style="text-align:center">Bonds</h1>
                         <div class="flexrow">
-                            {{#each (progressCharacters data.bondCount)}}
+                            {{#each (progressCharacters bonds.count)}}
                             <div class="progress">{{{this}}}</div>
                             {{/each}}
                             <div class="block clickable" style="flex-grow: 0; padding: 5px; margin: 2px;">
-                                <i class="fas fa-edit"></i>
+                                <i class="edit-bonds fas fa-edit" data-id="{{bonds._id}}"></i>
                             </div>
                         </div>
                     </section>
@@ -290,81 +290,3 @@
         </div>
     </div>
 </form>
-
-<!--
-<form class="{{cssClass}}" autocomplete="off">
-
-    {{!-- Sheet Header --}}
-    <header class="sheet-header">
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
-            <div class="resource">
-                <input type="text" name="data.health.value" value="{{data.health.value}}" data-dtype="Number" />
-                <span> / </span>
-                <input type="text" name="data.health.max" value="{{data.health.max}}" data-dtype="Number" />
-            </div>
-            <div class="resource">
-                <input type="text" name="data.power.value" value="{{data.power.value}}" data-dtype="Number" />
-                <span> / </span>
-                <input type="text" name="data.power.max" value="{{data.power.max}}" data-dtype="Number" />
-            </div>
-        </div>
-    </header>
-
-    {{!-- Sheet Tab Navigation --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="items">Items</a>
-        <a class="item" data-tab="attributes">Attributes</a>
-    </nav>
-
-    {{!-- Sheet Body --}}
-    <section class="sheet-body">
-
-        {{!-- Biography Tab --}}
-        <div class="tab biography" data-group="primary" data-tab="description">
-            {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
-        </div>
-
-        {{!-- Owned Items Tab --}}
-        <div class="tab items" data-group="primary" data-tab="items">
-            <ol class="item-list">
-                {{#each actor.items as |item id|}}
-                <li class="item flexrow" data-item-id="{{item._id}}">
-                    <img src="{{item.img}}" title="{{item.name}}" width="24" height="24" />
-                    <h4 class="item-name">{{item.name}}</h4>
-                    <div class="item-controls">
-                        <a class="item-control item-edit" title="Edit Item"><i class="fas fa-edit"></i></a>
-                        <a class="item-control item-delete" title="Delete Item"><i class="fas fa-trash"></i></a>
-                    </div>
-                </li>
-                {{/each}}
-            </ol>
-        </div>
-
-        {{!-- Attributes Tab --}}
-        <div class="tab attributes" data-group="primary" data-tab="attributes">
-            <header class="attributes-header flexrow">
-                <span class="attribute-key">Attribute Key</span>
-                <span class="attribute-value">Value</span>
-                <span class="attribute-label">Label</span>
-                <span class="attribute-dtype">Data Type</span>
-                <a class="attribute-control" data-action="create"><i class="fas fa-plus"></i></a>
-            </header>
-
-            <ol class="attributes-list">
-                {{#each actor.data.attributes as |attrib key|}}
-                <li class="attribute flexrow" data-attribute="{{key}}">
-                    <span class="attribute-label flexrow" name="data.attributes.{{key}}.label">{{attrib.label}}</span>
-                    <div class="attribute-editbox flexrow">
-                        <input type="text" class="attribute-value" name="data.attributes.{{key}}.value"
-                            value="{{attrib.value}}" data-dtype="Number" />
-                    </div>
-                </li>
-                {{/each}}
-            </ol>
-        </div>
-    </section>
-</form>
--->

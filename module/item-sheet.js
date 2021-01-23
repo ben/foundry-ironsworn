@@ -79,13 +79,13 @@ export class IronswornItemSheet extends ItemSheet {
     })
     html.find('.add-field').click(async ev => {
       const fields = Object.values(this.item.data.data.fields)
-      fields.push({name: '', value: ''})
+      fields.push({ name: '', value: '' })
       await this.item.update({ 'data.fields': fields })
     })
 
     html.find('.track-target').click(async ev => {
       const newValue = parseInt(ev.currentTarget.dataset.value)
-      await this.item.update({'data.track.current': newValue})
+      await this.item.update({ 'data.track.current': newValue })
     })
 
     // Vow progress buttons
@@ -109,6 +109,24 @@ export class IronswornItemSheet extends ItemSheet {
         yes: () => this.item.delete(),
         defaultYes: false
       })
+    })
+
+    // Bonds
+    html.find('.add-bond').click(ev => {
+      const bonds = Object.values(this.item.data.data.bonds)
+      bonds.push({ name: '', notes: '' })
+      return this.item.update({ 'data.bonds': bonds })
+    })
+    html.find('.delete-bond').click(async ev => {
+      ev.preventDefault()
+      const idx = parseInt(
+        $(ev.target)
+          .parents('.item-row')
+          .data('idx')
+      )
+      const bonds = Object.values(this.item.data.data.bonds)
+      bonds.splice(idx, 1)
+      await this.item.update({ 'data.bonds': bonds })
     })
   }
 
