@@ -7,6 +7,7 @@
   "IRONSWORN.Opportunity": "Opportunity!",
   "IRONSWORN.Complication": "Complication!",
 
+  "IRONSWORN.MarkProgress": "Mark Progress",
   "IRONSWORN.FulfillVow": "Fulfill Vow",
 
   "IRONSWORN.Troublesome": "Troublesome",
@@ -14,6 +15,34 @@
   "IRONSWORN.Formidible": "Formidible",
   "IRONSWORN.Extreme": "Extreme",
   "IRONSWORN.Epic": "Epic",
+
+  "IRONSWORN.Momentum": "Momentum",
+  "IRONSWORN.Health": "Health",
+  "IRONSWORN.Spirit": "Spirit",
+  "IRONSWORN.Edge": "Edge",
+  "IRONSWORN.Heart": "Heart",
+  "IRONSWORN.Iron": "Iron",
+  "IRONSWORN.Shadow": "Shadow",
+  "IRONSWORN.Wits": "Wits",
+
+  "IRONSWORN.Assets": "Assets",
+  "IRONSWORN.Bonds": "Bonds",
+  "IRONSWORN.Debilities": "Debilities",
+  "IRONSWORN.Conditions": "Conditions",
+  "IRONSWORN.Banes": "Banes",
+  "IRONSWORN.Burdens": "Burdens",
+  "IRONSWORN.Vows": "Vows",
+  "IRONSWORN.Progress": "Progress",
+  "IRONSWORN.Moves": "Moves",
+  "IRONSWORN.Oracles": "Oracles",
+  "IRONSWORN.Plot": "Plot",
+  "IRONSWORN.Location": "Location",
+  "IRONSWORN.Character": "Character",
+  "IRONSWORN.Names": "Names",
+
+  "IRONSWORN.Burn": "Burn",
+  "IRONSWORN.Reset": "Reset",
+  "IRONSWORN.Max": "Max",
 
   "IRONSWORN.DeleteItem": "Delete Item",
   "IRONSWORN.ConfirmDelete": "Are you sure? This cannot be undone."
