@@ -6,7 +6,7 @@
   </header>
 
   <section class="flexrow nogrow">
-    <label>Rank:</label>
+    <label>{{localize 'IRONSWORN.Rank'}}:</label>
     <select name="data.rank">
       {{selectOptions ranks selected=data.rank localize=true}}
     </select>
@@ -19,14 +19,14 @@
   </div>
 
   <div class="flexrow nogrow">
-    <button class="markProgress">Mark</button>
-    <button class="fulfillProgress">Fulfill</button>
+    <button class="markProgress">{{localize 'IRONSWORN.Mark'}}</button>
+    <button class="fulfillProgress">{{localize 'IRONSWORN.Fulfill'}}</button>
   </div>
   <div class="flexrow nogrow">
     <hr>
   </div>
   <div class="flexrow nogrow">
-    <button class="clearProgress">Clear</button>
+    <button class="clearProgress">{{localize 'IRONSWORN.Clear'}}</button>
     <button class="delete"><i class="fas fa-trash"></i></button>
   </div>
 

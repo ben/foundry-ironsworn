@@ -1,6 +1,6 @@
 <form class="{{cssClass}}" autocomplete="off">
   <header class="sheet-header">
-    <h1 class="charname">Bonds</h1>
+    <h1 class="charname">{{localize 'IRONSWORN.Bonds'}}</h1>
   </header>
 
   {{#each data.bonds}}
@@ -12,7 +12,6 @@
       </div>
 
     </div>
-    {{!-- {{editor content=notes target="data.bonds.{{@index}}.notes" button=false owner=owner editable=true}} --}}
     <textarea name="data.bonds.{{@index}}.notes">{{notes}}</textarea>
   </div>
   {{/each}}

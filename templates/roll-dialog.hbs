@@ -1,7 +1,7 @@
 <form>
-  <h3>Rolling +{{stat}}</h3>
+  <h3>{{localize 'IRONSWORN.Rolling'}} +{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h3>
   <div class="form-group">
-    <label>Bonus</label>
+    <label>{{localize 'IRONSWORN.Bonus'}}</label>
     <input name="bonus" />
   </div>
 </form>

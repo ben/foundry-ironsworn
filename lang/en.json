@@ -1,5 +1,7 @@
 {
   "IRONSWORN.Roll": "Roll",
+  "IRONSWORN.Rolling": "Rolling",
+  "IRONSWORN.Bonus": "Bonus",
   "IRONSWORN.Versus": "vs.",
   "IRONSWORN.StrongHit": "Strong Hit",
   "IRONSWORN.WeakHit": "Weak Hit",
@@ -9,6 +11,9 @@
 
   "IRONSWORN.MarkProgress": "Mark Progress",
   "IRONSWORN.FulfillVow": "Fulfill Vow",
+  "IRONSWORN.Mark": "Mark",
+  "IRONSWORN.Fulfill": "Fulfill",
+  "IRONSWORN.Clear": "Clear",
 
   "IRONSWORN.Troublesome": "Troublesome",
   "IRONSWORN.Dangerous": "Dangerous",
@@ -44,6 +49,17 @@
   "IRONSWORN.Reset": "Reset",
   "IRONSWORN.Max": "Max",
 
+  "IRONSWORN.Name": "Name",
+  "IRONSWORN.Description": "Description",
+  "IRONSWORN.Fields": "Fields",
+  "IRONSWORN.Label": "Label",
+  "IRONSWORN.Value": "Value",
+  "IRONSWORN.Abilities": "Abilities",
+  "IRONSWORN.Track": "Track",
+  "IRONSWORN.Enabled": "Enabled",
+  "IRONSWORN.Rank": "Rank",
+
   "IRONSWORN.DeleteItem": "Delete Item",
+  "IRONSWORN.DeleteAsset": "Delete Asset",
   "IRONSWORN.ConfirmDelete": "Are you sure? This cannot be undone."
 }
