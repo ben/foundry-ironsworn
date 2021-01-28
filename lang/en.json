@@ -7,9 +7,14 @@
   "IRONSWORN.Opportunity": "Opportunity!",
   "IRONSWORN.Complication": "Complication!",
 
+  "IRONSWORN.FulfillVow": "Fulfill Vow",
+
   "IRONSWORN.Troublesome": "Troublesome",
   "IRONSWORN.Dangerous": "Dangerous",
   "IRONSWORN.Formidible": "Formidible",
   "IRONSWORN.Extreme": "Extreme",
-  "IRONSWORN.Epic": "Epic"
+  "IRONSWORN.Epic": "Epic",
+
+  "IRONSWORN.DeleteItem": "Delete Item",
+  "IRONSWORN.ConfirmDelete": "Are you sure? This cannot be undone."
 }

@@ -26,7 +26,7 @@ export class IronswornItem extends Item {
     const progress = Math.floor(this.data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`).roll()
     r.toMessage({
-      flavor: `<div class="move-title">Fulfill Vow: ${this.name}</div>`
+      flavor: `<div class="move-title">${game.i18n.localize('IRONSWORN.FulfillVow')}: ${this.name}</div>`
     })
   }
 
@@ -35,7 +35,7 @@ export class IronswornItem extends Item {
    */
   createField () {
     const fields = this.data.data.fields
-    fields.push({ name: 'New field', value: '' })
+    fields.push({ name: '', value: '' })
     return this.update({ 'data.fields': fields })
   }
   deleteField (name) {

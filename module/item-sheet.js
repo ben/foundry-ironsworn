@@ -104,8 +104,8 @@ export class IronswornItemSheet extends ItemSheet {
     html.find('.delete').click(async ev => {
       ev.preventDefault()
       await Dialog.confirm({
-        title: 'Delete Item',
-        content: '<p>Are you sure? This cannot be undone.</p>',
+        title: game.i18n.localize('IRONSWORN.DeleteItem'),
+        content: `<p>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</p>`,
         yes: () => this.item.delete(),
         defaultYes: false
       })
@@ -161,41 +161,4 @@ export class IronswornItemSheet extends ItemSheet {
       await this._onSubmit(event)
     }
   }
-
-  /* -------------------------------------------- */
-
-  /** @override */
-  //   _updateObject (event, formData) {
-  //     // Handle the free-form attributes list
-  //     const formAttrs = expandObject(formData).data.attributes || {}
-  //     const attributes = Object.values(formAttrs).reduce((obj, v) => {
-  //       let k = v['key'].trim()
-  //       if (/[\s\.]/.test(k))
-  //         return ui.notifications.error(
-  //           'Attribute keys may not contain spaces or periods'
-  //         )
-  //       delete v['key']
-  //       obj[k] = v
-  //       return obj
-  //     }, {})
-
-  //     // Remove attributes which are no longer used
-  //     for (let k of Object.keys(this.object.data.data.attributes)) {
-  //       if (!attributes.hasOwnProperty(k)) attributes[`-=${k}`] = null
-  //     }
-
-  //     // Re-combine formData
-  //     formData = Object.entries(formData)
-  //       .filter(e => !e[0].startsWith('data.attributes'))
-  //       .reduce(
-  //         (obj, e) => {
-  //           obj[e[0]] = e[1]
-  //           return obj
-  //         },
-  //         { _id: this.object._id, 'data.attributes': attributes }
-  //       )
-
-  //     // Update the Item
-  //     return this.object.update(formData)
-  //   }
 }
