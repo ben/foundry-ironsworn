@@ -25,8 +25,9 @@ export class IronswornItem extends Item {
     if (this.data.data.rank === undefined) return
     const progress = Math.floor(this.data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`).roll()
+    const i18nKey = this.type === 'vow' ? 'IRONSWORN.FulfillVow' : 'IRONSWORN.ProgressRoll'
     r.toMessage({
-      flavor: `<div class="move-title">${game.i18n.localize('IRONSWORN.FulfillVow')}: ${this.name}</div>`
+      flavor: `<div class="move-title">${game.i18n.localize(i18nKey)}: ${this.name}</div>`
     })
   }
 
