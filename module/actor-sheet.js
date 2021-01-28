@@ -11,13 +11,6 @@ export class IronswornActorSheet extends ActorSheet {
       classes: ['ironsworn', 'sheet', 'actor'],
       width: 1200,
       height: 800,
-      tabs: [
-        {
-          navSelector: '.sheet-tabs',
-          contentSelector: '.sheet-body',
-          initial: 'description'
-        }
-      ],
       dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }]
     })
   }
@@ -185,7 +178,7 @@ export class IronswornActorSheet extends ActorSheet {
       `
     <a class='inline-roll' data-param='$1'>
       <i class='fas fa-dice-d6'></i>
-      Roll +$1
+      ${game.i18n.localize('IRONSWORN.Roll')} +$1
     </a>`
     )
   }
@@ -247,7 +240,7 @@ export class IronswornActorSheet extends ActorSheet {
       buttons: {
         roll: {
           icon: '<i class="roll die d10"></i>',
-          label: 'Roll',
+          label: game.i18n.localize('IRONSWORN.Roll'),
           callback: function () {
             console.log(this, 'Chose One')
           }

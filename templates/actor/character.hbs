@@ -24,10 +24,10 @@
         {{#each (progressCharacters data.data.current)}}
         <div class="progress">{{{this}}}</div>
         {{/each}}
-        <div class="clickable block markProgress" title="Mark progress">
+        <div class="clickable block markProgress" title="{{localize 'IRONSWORN.MarkProgress'}}">
             <i class="fas fa-play"></i>
         </div>
-        <div class="clickable block fulfillProgress" title="Fulfill vow">
+        <div class="clickable block fulfillProgress" title="{{localize 'IRONSWORN.FulfillVow'}}">
             <i class="fas fa-check"></i>
         </div>
     </div>
@@ -39,7 +39,7 @@
     <!-- Header row -->
     <header class="sheet-header">
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
-        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" /></h1>
         <div class="xp">
 
         </div>
@@ -48,27 +48,27 @@
     <div class="flexrow">
         <div class="flexcol margin-left">
             <div class="flexcol stack momentum">
-                <h4 class="vertical">Momentum</h4>
+                <h4 class="vertical">{{localize 'IRONSWORN.Momentum'}}</h4>
                 {{>stack stat="momentum" from=10 to=-6}}
                 <hr />
                 <div class="clickable block stack-row" id="burn">
-                    Burn
+                    {{localize 'IRONSWORN.Burn'}}
                 </div>
-                Reset: {{data.momentumReset}}
-                Max: {{data.momentumMax}}
+                {{localize 'IRONSWORN.Reset'}}: {{data.momentumReset}}
+                {{localize 'IRONSWORN.Max'}}: {{data.momentumMax}}
             </div>
         </div>
         <div class="flexcol margin-left">
             <div class="flexcol stack health">
-                <h4 class="vertical clickable text" data-stat="health">Health</h4>
+                <h4 class="vertical clickable text" data-stat="health">{{localize 'IRONSWORN.Health'}}</h4>
                 {{>stack stat="health" from=5 to=0}}
             </div>
             <div class="flexcol stack spirit">
-                <h4 class="vertical clickable text" data-stat="spirit">Spirit</h4>
+                <h4 class="vertical clickable text" data-stat="spirit">{{localize 'IRONSWORN.Spirit'}}</h4>
                 {{>stack stat="spirit" from=5 to=0}}
             </div>
             <div class="flexcol stack supply">
-                <h4 class="vertical clickable text" data-stat="supply">Supply</h4>
+                <h4 class="vertical clickable text" data-stat="supply">{{localize 'IRONSWORN.Supply'}}</h4>
                 {{>stack stat="supply" from=5 to=0}}
             </div>
         </div>
@@ -76,14 +76,14 @@
             <div class="flexrow stats">
                 {{#*inline "stat"}}
                 <div class="stat clickable block" data-stat="{{stat}}">
-                    <h4>{{stat}}</h4>
+                    <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
                     <h3>{{lookup data stat}}</h3>
                 </div>
                 {{/inline}}
 
                 {{#*inline "statEdit"}}
                 <div class="stat block">
-                    <h4>{{stat}}</h4>
+                    <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
                     <input name="data.{{stat}}" value="{{lookup data stat}}" />
                 </div>
                 {{/inline}}
@@ -113,7 +113,7 @@
 
                 <div class="flexcol">
                     <section class="sheet-area">
-                        <h1 style="text-align:center">Assets</h1>
+                        <h1 style="text-align:center">{{localize 'IRONSWORN.Assets'}}</h1>
                         <div class="flexcol item-list">
                             <ol>
                                 {{#each assets}}
@@ -141,7 +141,7 @@
                         </div>
                     </section>
                     <section class="sheet-area" style="flex-grow: 0;">
-                        <h1 style="text-align:center">Bonds</h1>
+                        <h1 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h1>
                         <div class="flexrow">
                             {{#each (progressCharacters bonds.count)}}
                             <div class="progress">{{{this}}}</div>
@@ -153,7 +153,7 @@
                     </section>
 
                     <section class="sheet-area" style="flex-grow: 0;">
-                        <h1 style="text-align:center">Debilities</h1>
+                        <h1 style="text-align:center">{{localize 'IRONSWORN.Debilities'}}</h1>
 
                         {{#*inline "debility"}}
                         <label class="checkbox">
@@ -165,18 +165,18 @@
 
                         <div class="flexrow">
                             <div class="flexcol">
-                                <h3>Conditions</h3>
+                                <h3>{{localize 'IRONSWORN.Conditions'}}</h3>
                                 {{>debility name="wounded"}}
                                 {{>debility name="unprepared"}}
                                 {{>debility name="shaken"}}
                                 {{>debility name="encumbered"}}
                             </div>
                             <div class="flexcol">
-                                <h3>Banes</h3>
+                                <h3>{{localize 'IRONSWORN.Banes'}}</h3>
                                 {{>debility name="maimed"}}
                                 {{>debility name="corrupted"}}
 
-                                <h3>Burdens</h3>
+                                <h3>{{localize 'IRONSWORN.Burdens'}}</h3>
                                 {{>debility name="cursed"}}
                                 {{>debility name="tormented"}}
                             </div>
@@ -187,7 +187,7 @@
 
                 <div class="flexcol">
                     <section class="sheet-area progresses">
-                        <h1 style="text-align:center">Vows</h1>
+                        <h1 style="text-align:center">{{localize 'IRONSWORN.Vows'}}</h1>
                         {{#each vows}}
                         {{>progress}}
                         {{/each}}
@@ -197,7 +197,7 @@
 
                     </section>
                     <section class="sheet-area progresses">
-                        <h1 style="text-align:center">Progress</h1>
+                        <h1 style="text-align:center">{{localize 'IRONSWORN.Progress'}}</h1>
                         {{#each progresses}}
                         {{>progress}}
                         {{/each}}
@@ -211,7 +211,7 @@
         </div>
         <div class="flexcol margin-right">
 
-            <h1 style="flex: 0 0 auto">moves</h1>
+            <h1 style="flex: 0 0 auto">{{localize 'IRONSWORN.Moves'}}</h1>
             <div class="flexcol item-list">
                 <ol>
                     {{#each moveOrder as |key|}}
@@ -234,7 +234,7 @@
                 </ol>
             </div>
 
-            <h1 style="flex: 0 0 auto">oracles</h1>
+            <h1 style="flex: 0 0 auto">{{localize 'IRONSWORN.Oracles'}}</h1>
             <div class="flexcol item-list">
 
                 {{#*inline "oracle"}}
@@ -244,7 +244,7 @@
                 {{/inline}}
 
                 <ol>
-                    <h2>Plot</h2>
+                    <h2>{{localize 'IRONSWORN.Plot'}}</h2>
                     {{> oracle name="Action"}}
                     {{> oracle name="Theme"}}
                     {{> oracle name="Combat Action"}}
@@ -252,7 +252,7 @@
                     {{> oracle name="Major Plot Twist"}}
                     {{> oracle name="Mystic Backlash"}}
                     {{> oracle name="Challenge Rank"}}
-                    <h2>Location</h2>
+                    <h2>{{localize 'IRONSWORN.Location'}}</h2>
                     {{> oracle name="Region"}}
                     {{> oracle name="Location"}}
                     {{> oracle name="Coastal Waters Location"}}
@@ -267,18 +267,18 @@
                     {{> oracle name="Settlement Name (Something Else)"}}
                     {{> oracle name="Quick Settlement Name (Prefix)"}}
                     {{> oracle name="Quick Settlement Name (Suffix)"}}
-                    <h2>Character</h2>
+                    <h2>{{localize 'IRONSWORN.Character'}}</h2>
                     {{> oracle name="Character Role"}}
                     {{> oracle name="Character Goal"}}
                     {{> oracle name="Character Descriptor"}}
                     {{> oracle name="Character Disposition"}}
-                    <h2>Names</h2>
+                    <h2>{{localize 'IRONSWORN.Names'}}</h2>
                     {{> oracle name="Ironlander Names"}}
                     {{> oracle name="Elf Names"}}
                     {{> oracle name="Giant Names"}}
                     {{> oracle name="Varou Names"}}
                     {{> oracle name="Troll Names"}}
-                    <h2>Moves</h2>
+                    <h2>{{localize 'IRONSWORN.Moves'}}</h2>
                     {{> oracle name="Choice (Almost Certain)"}}
                     {{> oracle name="Choice (Likely)"}}
                     {{> oracle name="Choice (50/50)"}}

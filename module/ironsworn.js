@@ -31,16 +31,6 @@ Hooks.once('init', async function () {
   Items.unregisterSheet('core', ItemSheet)
   Items.registerSheet('ironsworn', IronswornItemSheet, { makeDefault: true })
 
-  // Register system settings
-  game.settings.register('ironsworn', 'macroShorthand', {
-    name: 'SETTINGS.SimpleMacroShorthandN',
-    hint: 'SETTINGS.SimpleMacroShorthandL',
-    scope: 'world',
-    type: Boolean,
-    default: true,
-    config: true
-  })
-
   game.Ironsworn = {
     importFromDatasworn
   }
@@ -140,14 +130,14 @@ Handlebars.registerHelper('ironswornHitType', function () {
   const [challenge1, challenge2] = challengeRolls(this.roll).map(x => x.total)
   const match = challenge1 === challenge2
   if (actionTotal <= Math.min(challenge1, challenge2)) {
-    if (match) return 'Complication!'
-    return 'Miss'
+    if (match) return game.i18n.localize('IRONSWORN.Complication')
+    return game.i18n.localize('IRONSWORN.Miss')
   }
   if (actionTotal > Math.max(challenge1, challenge2)) {
-    if (match) return 'Opportunity!'
-    return 'Strong Hit'
+    if (match) return game.i18n.localize('IRONSWORN.Opportunity')
+    return game.i18n.localize('IRONSWORN.StrongHit')
   }
-  return 'Weak Hit'
+  return game.i18n.localize('IRONSWORN.WeakHit')
 })
 
 export async function ironswornMoveRoll (bonusExpr = '0', values = {}, title) {
@@ -165,7 +155,7 @@ export async function ironswornRollDialog (data, stat, title) {
     buttons: {
       roll: {
         icon: '<i class="fas fa-dice-d10"></i>',
-        label: 'Roll',
+        label: game.i18n.localize('IRONSWORN.Roll'),
         callback: x => {
           const form = x[0].querySelector('form')
           const bonus = parseInt(form[0].value, 10)
@@ -225,16 +215,16 @@ Handlebars.registerHelper('enrichHtml', text => {
   const rendered = TextEditor.enrichHTML(text)
   return rendered.replace(
     /\(\(rollplus (.*?)\)\)/g,
-    "<a class='inline-roll' data-param='$1'><i class='fas fa-dice-d6'></i>Roll +$1</a>"
+    `<a class='inline-roll' data-param='$1'><i class='fas fa-dice-d6'></i>${game.i18n.localize('IRONSWORN.Roll')} +$1</a>`
   )
 })
 
 export const RANKS = {
-  troublesome: 'Troublesome',
-  dangerous: 'Dangerous',
-  formidible: 'Formidible',
-  extreme: 'Extreme',
-  epic: 'Epic'
+  troublesome: 'IRONSWORN.Troublesome',
+  dangerous: 'IRONSWORN.Dangerous',
+  formidible: 'IRONSWORN.Formidible',
+  extreme: 'IRONSWORN.Extreme',
+  epic: 'IRONSWORN.Epic'
 }
 
 export const RANK_INCREMENTS = {
