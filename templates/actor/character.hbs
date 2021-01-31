@@ -39,9 +39,15 @@
     <!-- Header row -->
     <header class="sheet-header">
         <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
-        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" /></h1>
-        <div class="xp">
-
+        <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
+                placeholder="{{localize 'IRONSWORN.Name'}}" /></h1>
+        <div class="flexrow xp">
+            <h4 style="flex-grow: 0; margin: 5px;">XP</h4>
+            <div class="flexrow">
+                {{#rangeEach from=1 to=10 current=data.xp}}
+                <div class="clickable block xp" data-value="{{value}}"></div>
+                {{/rangeEach}}
+            </div>
         </div>
     </header>
 
@@ -133,7 +139,7 @@
                                     none
                                     {{/if}}
                                     ;">
-                                    {{{enrichHtml data.data.rendered}}}
+                                        {{{enrichHtml data.data.rendered}}}
                                     </div>
                                 </li>
                                 {{/each}}
