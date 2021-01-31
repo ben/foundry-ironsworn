@@ -60,7 +60,18 @@
   margin: 0;
 }
 .ironsworn .sheet-header .xp {
-  flex: 0;
+  flex-grow: 0;
+  flex-direction: row;
+  flex-basis: 140px;
+  align-items: center;
+}
+.ironsworn .sheet-header .xp .xp {
+  height: 15px;
+  flex-basis: 15px;
+  border: 1px solid black;
+  margin: 3px;
+  line-height: 13px;
+  text-align: center;
 }
 .ironsworn .margin-left {
   flex: 0;

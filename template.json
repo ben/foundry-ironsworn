@@ -25,7 +25,8 @@
         "tormented": false,
         "unprepared": false,
         "wounded": false
-      }
+      },
+      "xp": 0
     },
     "shared": {}
   },
