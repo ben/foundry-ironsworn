@@ -44,9 +44,13 @@
         <div class="flexrow xp">
             <h4 style="flex-grow: 0; margin: 5px;">XP</h4>
             <div class="flexrow">
-                {{#rangeEach from=1 to=10 current=data.xp}}
-                <div class="clickable block xp" data-value="{{value}}"></div>
+                {{#rangeEach from=1 to=9 current=data.xp}}
+                <div class="
+                    clickable block xp
+                    {{#if lteCurrent}} selected {{/if}}
+                " data-resource="xp" data-value="{{value}}"></div>
                 {{/rangeEach}}
+                <div class="clickable block xp clear" data-resource="xp" data-value="0">×</div>
             </div>
         </div>
     </header>

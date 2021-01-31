@@ -179,12 +179,14 @@ Handlebars.registerHelper('rangeEach', function (context, options) {
   for (let value = from; shouldContinue(value, to); value += increment) {
     const valueStr = value > 0 ? `+${value}` : value.toString()
     const isCurrent = value === current
+    const lteCurrent = value <= current
     results.push(
       context.fn({
         ...this,
         valueStr,
         value,
-        isCurrent
+        isCurrent,
+        lteCurrent
       })
     )
   }

@@ -208,7 +208,7 @@ export class IronswornActorSheet extends ActorSheet {
       // Clicked a value in momentum/health/etc, set the value
       const newValue = parseInt(el.dataset.value)
       const { momentumMax } = this.actor.data.data
-      if (newValue <= momentumMax) {
+      if (resource !== 'momentum' || newValue <= momentumMax) {
         await this.actor.update({ data: { [resource]: newValue } })
       }
     }
