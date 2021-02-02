@@ -58,39 +58,8 @@ export class IronswornItem extends Item {
     })
   }
 
-  async renderEmbed (data) {
-    const template =
-      'systems/foundry-ironsworn/templates/item/asset_embedded.hbs'
-    const rendered = await renderTemplate(template, data)
-    await this.update({ 'data.rendered': rendered })
-  }
-
   // Bondset methods
   get count() {
     return Object.values(this.data.data.bonds).length
   }
 }
-
-Hooks.on('createItem', async item => {
-  if (item.data.type === 'asset') {
-    await item.renderEmbed(item.data)
-  }
-})
-Hooks.on('createOwnedItem', async (owner, itemData) => {
-  if (itemData.type === 'asset') {
-    const item = owner.items.get(itemData._id)
-    await item.renderEmbed(itemData)
-  }
-})
-
-Hooks.on('updateItem', async (item, diff) => {
-  if (!diff.data.rendered) {
-    await item.renderEmbed(item.data)
-  }
-})
-Hooks.on('updateOwnedItem', async (owner, itemData, diff) => {
-  if (!diff.data.rendered) {
-    const item = owner.items.get(itemData._id)
-    await item.renderEmbed(itemData)
-  }
-})
