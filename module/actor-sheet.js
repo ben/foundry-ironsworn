@@ -118,6 +118,7 @@ export class IronswornActorSheet extends ActorSheet {
 
     // Update Inventory Item
     html.find('.item-edit').click(ev => {
+      ev.preventDefault()
       const li = $(ev.currentTarget).parents('.item')
       const item = this.actor.getOwnedItem(li.data('itemId'))
       item.sheet.render(true)
@@ -125,6 +126,7 @@ export class IronswornActorSheet extends ActorSheet {
 
     // Delete Inventory Item
     html.find('.item-delete').click(ev => {
+      ev.preventDefault()
       const li = $(ev.currentTarget).parents('.item')
       this.actor.deleteOwnedItem(li.data('itemId'))
       li.slideUp(200, () => this.render(false))
@@ -132,6 +134,7 @@ export class IronswornActorSheet extends ActorSheet {
 
     // Asset tracks
     html.find('.track-target').click(ev => {
+      ev.preventDefault()
       const row = $(ev.currentTarget).parents('.item-row')
       const item = this.actor.getOwnedItem(row.data('id'))
       const newValue = parseInt(ev.currentTarget.dataset.value)
@@ -140,6 +143,15 @@ export class IronswornActorSheet extends ActorSheet {
     html.find('.item-row').map((i, el) => {
       const item = this.actor.getOwnedItem(el.dataset.id)
       this._attachInlineRollListeners($(el), item)
+    })
+    html.find('.roll-asset-track').click(ev => {
+      const row = $(ev.currentTarget).parents('.item-row')
+      const item = this.actor.getOwnedItem(row.data('id'))
+      const data = {
+        ...this.getData(),
+        track: item.data.data.track.current
+      }
+      ironswornRollDialog(data, 'track', `${item.name}`)
     })
   }
 
