@@ -193,6 +193,8 @@ Handlebars.registerHelper('rangeEach', function (context, options) {
   return results.join('\n')
 })
 
+Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''))
+
 Handlebars.registerHelper('capitalize', txt => {
   const [first, ...rest] = txt
   return `${first.toUpperCase()}${rest.join('')}`
