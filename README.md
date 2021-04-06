@@ -20,3 +20,7 @@ Assets are in their own compendium, drag them onto your character sheet.
 
 Now you're ready to create vows, embark on journeys, and slay beasts.
 Keep track of your story using journal entries.
+
+## Ironsworn
+
+This work is based on Ironsworn (found at www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license  (creativecommons.org/licenses/by-nc-sa/4.0/).
