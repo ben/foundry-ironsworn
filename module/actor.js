@@ -22,14 +22,6 @@ export class IronswornActor extends Actor {
   async addDefaultItems () {
     // Every character needs a bondset
     await this.createOwnedItem({ type: 'bondset', name: 'bonds' })
-
-    // Moves
-    const pack = game.packs.get('foundry-ironsworn.ironswornitems')
-    const packIndex = await pack.getIndex()
-    for (const itemEntry of packIndex) {
-      const item = await pack.getEntity(itemEntry._id)
-      if (item.type === 'move') await this.createOwnedItem(item)
-    }
   }
 }
 
