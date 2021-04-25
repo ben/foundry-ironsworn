@@ -214,7 +214,7 @@ export class IronswornActorSheet extends ActorSheet {
     html.find('a.inline-roll').on('click', ev => {
       ev.preventDefault()
       const el = ev.currentTarget
-      const moveTitle = `${item.name} (${el.dataset.param})`
+      const moveTitle = `${item?.name || html.data('name')} (${el.dataset.param})`
       const actor = this.actor || {}
       return ironswornRollDialog(actor.data?.data, el.dataset.param, moveTitle)
     })
