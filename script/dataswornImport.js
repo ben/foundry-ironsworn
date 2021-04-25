@@ -68,6 +68,13 @@ async function doit () {
     }
   }
   await fs.writeFile('assets/moves.json', JSON.stringify(moves, null, 2))
+
+  // Also write descriptions to en lang file
+  const en = JSON.parse((await fs.readFile('lang/en.json')))
+  for (const move of moves) {
+    en[`IRONSWORN.Moves.${move.name}`] = move.data.description
+  }
+  await fs.writeFile('lang/en.json', JSON.stringify(en, null, 2))
 }
 
 doit().then(
