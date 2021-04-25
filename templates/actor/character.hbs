@@ -253,20 +253,13 @@
             <h1 style="flex: 0 0 auto">{{localize 'IRONSWORN.Moves'}}</h1>
             <div class="flexcol item-list">
                 <ol>
-                    {{#each moveOrder as |key|}}
-                    {{#with (lookup ../moves [key])}}
-                    <li class="move-entry" data-move="{{key}}">
-                        <h3>{{title}}</h3>
-                    </li>
-                    {{/with}}
-                    {{/each}}
-
-                    {{#each movesForDisplay}}
+                    {{#each builtInMoves}}
                     {{#if separator}}
                     <h2>{{title}}</h2>
                     {{else}}
-                    <li class="item-row" data-id="{{_id}}">
-                        <div class="move-entry">{{name}}</div>
+                    <li class="item-row" data-name="{{title}}">
+                        <div class="built-in-move-entry">{{title}}</div>
+                        <div class="move-summary" style="display: none;">{{{enrichHtml description}}}</div>
                     </li>
                     {{/if}}
                     {{/each}}

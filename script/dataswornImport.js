@@ -19,29 +19,22 @@ async function doit () {
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_assets.json'
   ).then(x => x.json())
   const assets = []
-  for (const assetName of Object.keys(assetsJson.Assets)) {
-    const asset = assetsJson.Assets[assetName]
-
+  for (const asset of assetsJson.Assets) {
     const track = {
       enabled: false,
       name: '',
       max: 0,
       current: 0
     }
-    if (asset.Health) {
-      track.enabled = true
-      track.name = 'Health'
-      track.max = track.current = asset.Health
-    }
     if (asset['Asset Track']) {
       track.enabled = true
       track.name = asset['Asset Track'].Name
       track.max = asset['Asset Track'].Max
-      track.current = asset['Asset Track']['Starting Value']
+      track.current = asset['Asset Track']['Starting Value'] ?? track.max
     }
 
     assets.push({
-      name: `${asset['Asset Type']} / ${assetName}`,
+      name: `${asset['Asset Type']} / ${asset.Name}`,
       data: {
         description: asset.Description,
         fields: (asset['Input Fields'] || []).map(x => ({
@@ -66,15 +59,23 @@ async function doit () {
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_moves.json'
   ).then(x => x.json())
   const moves = []
-  for (const category of Object.values(movesJson.Moves)) {
-    for (const moveName of Object.keys(category)) {
+  for (const category of movesJson.Categories) {
+    for (const move of category.Moves) {
       moves.push({
-        name: moveName,
-        data: { description: renderHtml(category[moveName].Text) }
+        name: move.Name,
+        data: { description: renderHtml(move.Text) }
       })
     }
   }
   await fs.writeFile('assets/moves.json', JSON.stringify(moves, null, 2))
+
+  // Also write descriptions to en lang file
+  const en = JSON.parse((await fs.readFile('lang/en.json')))
+  for (const move of moves) {
+    en[`IRONSWORN.Moves:${move.name}:title`] = move.name
+    en[`IRONSWORN.Moves:${move.name}:description`] = move.data.description
+  }
+  await fs.writeFile('lang/en.json', JSON.stringify(en, null, 2))
 }
 
 doit().then(

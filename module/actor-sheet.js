@@ -27,20 +27,22 @@ export class IronswornActorSheet extends ActorSheet {
   getData () {
     const data = super.getData()
 
-    data.movesForDisplay = []
+    data.builtInMoves = []
     for (const moveName of MOVES) {
       if (moveName.startsWith('---')) {
-        data.movesForDisplay.push({
+        data.builtInMoves.push({
           separator: true,
           title: moveName.substr('--- '.length)
         })
       } else {
-        const move = this.actor.items.find(
-          x => x.type === 'move' && x.name === moveName
-        )
-        if (move) data.movesForDisplay.push(move)
+        data.builtInMoves.push({
+          title: game.i18n.localize(`IRONSWORN.Moves:${moveName}:title`),
+          description: game.i18n.localize(`IRONSWORN.Moves:${moveName}:description`),
+        })
       }
     }
+
+    data.customMoves = this.actor.items.filter(x => x.type === 'move')
 
     data.assets = this.actor.items.filter(x => x.type === 'asset')
     data.vows = this.actor.items.filter(x => x.type === 'vow')
@@ -74,6 +76,7 @@ export class IronswornActorSheet extends ActorSheet {
     })
 
     // Moves expand in place
+    html.find('.built-in-move-entry').click(this._handleBuiltInMoveExpand.bind(this))
     html.find('.move-entry').click(this._handleMoveExpand.bind(this))
     html.find('.asset-entry').click(this._handleAssetExpand.bind(this))
 
@@ -155,6 +158,18 @@ export class IronswornActorSheet extends ActorSheet {
     })
   }
 
+  async _handleBuiltInMoveExpand (ev) {
+    ev.preventDefault()
+    const li = $(ev.currentTarget).parents('li')
+    const summary = li.children('.move-summary')
+    if (li.hasClass('expanded')) {
+      summary.slideUp(200)
+    } else {
+      summary.slideDown(200)
+    }
+    li.toggleClass('expanded')
+  }
+
   async _handleMoveExpand (ev) {
     ev.preventDefault()
     const li = $(ev.currentTarget).parents('li')
@@ -199,7 +214,7 @@ export class IronswornActorSheet extends ActorSheet {
     html.find('a.inline-roll').on('click', ev => {
       ev.preventDefault()
       const el = ev.currentTarget
-      const moveTitle = `${item.name} (${el.dataset.param})`
+      const moveTitle = `${item?.name || html.data('name')} (${el.dataset.param})`
       const actor = this.actor || {}
       return ironswornRollDialog(actor.data?.data, el.dataset.param, moveTitle)
     })
@@ -287,7 +302,7 @@ const MOVES = [
   'Battle',
   '--- Adventure',
   'Face Danger',
-  'Secure an Advantage',
+  'Secure An Advantage',
   'Gather Information',
   'Heal',
   'Resupply',
