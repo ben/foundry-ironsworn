@@ -1666,8 +1666,8 @@
       "track": {
         "enabled": true,
         "name": "Health",
-        "max": 6,
-        "current": 6
+        "max": 3,
+        "current": 3
       }
     }
   },
