@@ -3,8 +3,8 @@
   "title": "Ironsworn",
   "description": "An implementation of the Ironsworn system. Based entirely on the Simple Worldbuilding System for Foundry designed by Atropos.",
   "version": "0.2.5",
-  "minimumCoreVersion": "0.7.5",
-  "compatibleCoreVersion": "0.7.9",
+  "minimumCoreVersion": "0.8.2",
+  "compatibleCoreVersion": "0.8.2",
   "templateVersion": 2,
   "author": "Ben Straub",
   "esmodules": [
