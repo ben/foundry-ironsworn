@@ -1,7 +1,7 @@
 {{log this}}
 
 {{#*inline "stack"}}
-{{#rangeEach from=from to=to current=(lookup data stat)}}
+{{#rangeEach from=from to=to current=(lookup data.data stat)}}
 <div class="
         clickable block stack-row
         {{stat}}
@@ -44,7 +44,7 @@
         <div class="flexrow xp">
             <h4 style="flex-grow: 0; margin: 5px;">{{localize 'IRONSWORN.XP'}}</h4>
             <div class="flexrow">
-                {{#rangeEach from=1 to=9 current=data.xp}}
+                {{#rangeEach from=1 to=9 current=data.data.xp}}
                 <div class="
                     clickable block xp
                     {{#if lteCurrent}} selected {{/if}}
@@ -64,8 +64,8 @@
                 <div class="clickable block stack-row" id="burn">
                     {{localize 'IRONSWORN.Burn'}}
                 </div>
-                {{localize 'IRONSWORN.Reset'}}: {{data.momentumReset}}
-                {{localize 'IRONSWORN.Max'}}: {{data.momentumMax}}
+                {{localize 'IRONSWORN.Reset'}}: {{data.data.momentumReset}}
+                {{localize 'IRONSWORN.Max'}}: {{data.data.momentumMax}}
             </div>
         </div>
         <div class="flexcol margin-left">
@@ -94,7 +94,7 @@
                 {{#*inline "statEdit"}}
                 <div class="stat block">
                     <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-                    <input name="data.{{stat}}" value="{{lookup data stat}}" />
+                    <input name="data.data.{{stat}}" value="{{lookup data stat}}" />
                 </div>
                 {{/inline}}
 
@@ -196,7 +196,7 @@
 
                         {{#*inline "debility"}}
                         <label class="checkbox">
-                            <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.debility
+                            <input type="checkbox" name="data.data.debility.{{name}}" {{checked (lookup data.data.debility
                                 name)}}>
                             {{capitalize name}}
                         </label>

@@ -3,16 +3,16 @@
     <h1 class="charname">{{localize 'IRONSWORN.Bonds'}}</h1>
   </header>
 
-  {{#each data.bonds}}
+  {{#each data.data.bonds}}
   <div class="item-row" data-idx="{{@index}}">
     <div class="flexrow">
-      <input class="attribute-value" type="text" name="data.bonds.{{@index}}.name" value="{{name}}" />
+      <input class="attribute-value" type="text" name="data.data.bonds.{{@index}}.name" value="{{name}}" />
       <div class="block clickable item-row-control delete-bond" data-index="{{@index}}" style="flex-grow: 0;">
         <i class="fas fa-trash"></i>
       </div>
 
     </div>
-    <textarea name="data.bonds.{{@index}}.notes">{{notes}}</textarea>
+    <textarea name="data.data.bonds.{{@index}}.notes">{{notes}}</textarea>
   </div>
   {{/each}}
 

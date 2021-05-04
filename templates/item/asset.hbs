@@ -5,25 +5,25 @@
                 <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
             </h1>
             <h3>
-                <input name="data.description" type="text" value="{{data.description}}" placeholder="{{localize 'IRONSWORN.Description'}}" />
+                <input name="data.data.description" type="text" value="{{data.data.description}}" placeholder="{{localize 'IRONSWORN.Description'}}" />
             </h3>
         </div>
     </header>
 
     <h2>{{localize 'IRONSWORN.Fields'}}</h2>
     <div class="flexcol item-list">
-        {{#each data.fields}}
+        {{#each data.data.fields}}
         <div class="flexrow item-row" data-idx={{@index}}>
             <div class="flexcol">
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Label'}}:</label>
                     &nbsp;
-                    <input class="attribute-value" type="text" name="data.fields.{{@index}}.name" value="{{name}}" />
+                    <input class="attribute-value" type="text" name="data.data.fields.{{@index}}.name" value="{{name}}" />
                 </div>
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Value'}}:</label>
                     &nbsp;
-                    <input class="attribute-value" type="text" name="data.fields.{{@index}}.value" value="{{value}}" />
+                    <input class="attribute-value" type="text" name="data.data.fields.{{@index}}.value" value="{{value}}" />
                 </div>
             </div>
             <div class="block clickable item-row-control delete-field" data-index="{{@index}}">
@@ -38,11 +38,11 @@
 
 
     <h2>{{localize 'IRONSWORN.Abilities'}}</h2>
-    {{#each data.abilities}}
+    {{#each data.data.abilities}}
     <div class="flexcol item">
         <div class="flexrow">
-            <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} style="flex-grow: 0;" />
-            <input class="attribute-value" type="text" name="data.abilities.{{@index}}.description"
+            <input type="checkbox" name="data.data.abilities.{{@index}}.enabled" {{checked enabled}} style="flex-grow: 0;" />
+            <input class="attribute-value" type="textarea" name="data.data.abilities.{{@index}}.description"
                 value="{{description}}" />
         </div>
     </div>
