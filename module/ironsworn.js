@@ -49,7 +49,7 @@ Hooks.once('setup', () => {
     )
     const isPrivate = chatOptions.isPrivate
     // Execute the roll, if needed
-    if (!this._rolled) this.roll()
+    if (!this._evaluated) await this.evaluate()
     // Define chat data
     const chatData = {
       formula: isPrivate ? '???' : this.formula,
@@ -115,7 +115,8 @@ Handlebars.registerHelper('actionDieFormula', function () {
   const terms = [...r.terms]
   const d = terms.shift()
   const classes = classesForRoll(r)
-  return `<strong><span class="roll ${classes}">${d?.total || d}</span>${terms.join('')}</strong>`
+  const termStrings = terms.map(t => t.operator || t.number)
+  return `<strong><span class="roll ${classes}">${d?.total || d}</span>${termStrings.join('')}</strong>`
 })
 
 Handlebars.registerHelper('challengeDice', function () {
