@@ -19,8 +19,8 @@ Hooks.once('init', async function () {
   console.log(`Initializing Ironsworn System`)
 
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = IronswornActor
-  CONFIG.Item.entityClass = IronswornItem
+  CONFIG.Actor.documentClass = IronswornActor
+  CONFIG.Item.documentClass = IronswornItem
   CONFIG.Dice.template = 'systems/foundry-ironsworn/templates/chat/roll.hbs'
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
@@ -40,7 +40,7 @@ Hooks.once('setup', () => {
   Roll.prototype.render = async function (chatOptions = {}) {
     chatOptions = mergeObject(
       {
-        user: game.user._id,
+        user: game.user.id,
         flavor: null,
         template: CONFIG.Dice.template,
         blind: false

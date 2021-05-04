@@ -13,7 +13,7 @@
 {{/inline}}
 
 {{#*inline "progress"}}
-<div class="flexcol item-row" data-id="{{_id}}">
+<div class="flexcol item-row" data-id="{{id}}">
     <div class="flexrow">
         <h2>{{name}} ({{data.data.rank}})</h2>
         <div class="block clickable" style="flex-grow: 0;">
@@ -127,7 +127,7 @@
                         <div class="flexcol item-list">
                             <ol>
                                 {{#each assets}}
-                                <li class="item-row" data-id="{{_id}}">
+                                <li class="item-row" data-id="{{id}}">
                                     <div class="asset-entry">
                                         <div class="flexrow">
                                             <strong>{{name}}</strong>
@@ -137,7 +137,7 @@
                                         </div>
                                     </div>
                                     <div class="asset-summary" style="display:
-                                    {{#if (lookup actor.data.flags.foundry-ironsworn (concat 'expanded-' _id))}}
+                                    {{#if (lookup actor.data.flags.foundry-ironsworn (concat 'expanded-' id))}}
                                     block
                                     {{else}}
                                     none
@@ -186,7 +186,7 @@
                             <div class="progress">{{{this}}}</div>
                             {{/each}}
                             <div class="block clickable" style="flex-grow: 0; padding: 5px; margin: 2px;">
-                                <i class="edit-bonds fas fa-edit" data-id="{{bonds._id}}"></i>
+                                <i class="edit-bonds fas fa-edit" data-id="{{bonds.id}}"></i>
                             </div>
                         </div>
                     </section>
