@@ -1,5 +1,3 @@
-{{log this}}
-
 {{#*inline "stack"}}
 {{#rangeEach from=from to=to current=(lookup data.data stat)}}
 <div class="
@@ -196,8 +194,10 @@
 
                         {{#*inline "debility"}}
                         <label class="checkbox">
-                            <input type="checkbox" name="data.data.debility.{{name}}" {{checked (lookup data.data.debility
-                                name)}}>
+                            <input type="checkbox"
+                                   name="data.debility.{{name}}"
+                                   {{checked (lookup data.data.debility name)}}
+                            >
                             {{capitalize name}}
                         </label>
                         {{/inline}}
