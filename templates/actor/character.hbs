@@ -87,18 +87,18 @@
                 {{#*inline "stat"}}
                 <div class="stat clickable block" data-stat="{{stat}}">
                     <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-                    <h3>{{lookup data stat}}</h3>
+                    <h3>{{lookup data.data stat}}</h3>
                 </div>
                 {{/inline}}
 
                 {{#*inline "statEdit"}}
                 <div class="stat block">
                     <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-                    <input name="data.data.{{stat}}" value="{{lookup data stat}}" />
+                    <input name="data.{{stat}}" value="{{lookup data.data stat}}" />
                 </div>
                 {{/inline}}
 
-                {{#if actor.flags.foundry-ironsworn.editStats}}
+                {{#if actor.data.flags.foundry-ironsworn.editStats}}
                 {{>statEdit stat="edge"}}
                 {{>statEdit stat="heart"}}
                 {{>statEdit stat="iron"}}
