@@ -83,7 +83,7 @@ Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
     (this.roll.dice.length === 3 &&
       this.roll.dice.filter(x => x.faces === 6).length === 1 &&
       this.roll.dice.filter(x => x.faces === 10).length === 2) ||
-    this.roll.formula.match(/{\d+,1d10,1d10}/)
+    this.roll.formula.match(/{\d+,1?d10,1?d10}/)
   ) {
     return options.fn(this)
   } else {
