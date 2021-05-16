@@ -2,6 +2,10 @@
 
 ## In progress
 
+## 0.3.0
+
+- Foundry 0.8.x compatibility ([#20](https://github.com/ben/foundry-ironsworn/issues/20))
+
 ## 0.2.5
 
 - Added roll tables from the 'Ask the Oracle' move ([#19](https://github.com/ben/foundry-ironsworn/issues/19))
