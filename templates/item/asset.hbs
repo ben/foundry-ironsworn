@@ -5,7 +5,7 @@
                 <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
             </h1>
             <h3>
-                <input name="data.data.description" type="text" value="{{data.data.description}}" placeholder="{{localize 'IRONSWORN.Description'}}" />
+                <input name="data.description" type="text" value="{{data.data.description}}" placeholder="{{localize 'IRONSWORN.Description'}}" />
             </h3>
         </div>
     </header>
@@ -18,12 +18,12 @@
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Label'}}:</label>
                     &nbsp;
-                    <input class="attribute-value" type="text" name="data.data.fields.{{@index}}.name" value="{{name}}" />
+                    <input class="attribute-value" type="text" name="data.fields.{{@index}}.name" value="{{name}}" />
                 </div>
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Value'}}:</label>
                     &nbsp;
-                    <input class="attribute-value" type="text" name="data.data.fields.{{@index}}.value" value="{{value}}" />
+                    <input class="attribute-value" type="text" name="data.fields.{{@index}}.value" value="{{value}}" />
                 </div>
             </div>
             <div class="block clickable item-row-control delete-field" data-index="{{@index}}">
@@ -41,8 +41,8 @@
     {{#each data.data.abilities}}
     <div class="flexcol item">
         <div class="flexrow">
-            <input type="checkbox" name="data.data.abilities.{{@index}}.enabled" {{checked enabled}} style="flex-grow: 0;" />
-            <input class="attribute-value" type="textarea" name="data.data.abilities.{{@index}}.description"
+            <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} style="flex-grow: 0;" />
+            <input class="attribute-value" type="textarea" name="data.abilities.{{@index}}.description"
                 value="{{description}}" />
         </div>
     </div>
@@ -53,16 +53,16 @@
     <h2>{{localize 'IRONSWORN.Track'}}</h2>
     <div class="flexrow" style="align-items: baseline;">
         <label>
-            <input type="checkbox" name="data.track.enabled" {{checked data.track.enabled}} style="flex-grow: 0;" />
+            <input type="checkbox" name="data.track.enabled" {{checked data.data.track.enabled}} style="flex-grow: 0;" />
             <span>{{localize 'IRONSWORN.Enabled'}}</span>
         </label>
         <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Name'}}</span>
-        <input type="text" name="data.track.name" value={{data.track.name}}>
+        <input type="text" name="data.track.name" value={{data.data.track.name}}>
         <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Max'}}</span>
-        <input type="number" name="data.track.max" value={{data.track.max}}>
+        <input type="number" name="data.track.max" value={{data.data.track.max}}>
     </div>
     <div class="flexrow">
-        {{#rangeEach from=0 to=data.track.max current=data.track.current}}
+        {{#rangeEach from=0 to=data.data.track.max current=data.data.track.current}}
         <div class="
             clickable block track-target progress
             {{#if isCurrent}} selected {{/if}}
