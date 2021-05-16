@@ -19,8 +19,8 @@ Hooks.once('init', async function () {
   console.log(`Initializing Ironsworn System`)
 
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = IronswornActor
-  CONFIG.Item.entityClass = IronswornItem
+  CONFIG.Actor.documentClass = IronswornActor
+  CONFIG.Item.documentClass = IronswornItem
   CONFIG.Dice.template = 'systems/foundry-ironsworn/templates/chat/roll.hbs'
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
@@ -40,7 +40,7 @@ Hooks.once('setup', () => {
   Roll.prototype.render = async function (chatOptions = {}) {
     chatOptions = mergeObject(
       {
-        user: game.user._id,
+        user: game.user.id,
         flavor: null,
         template: CONFIG.Dice.template,
         blind: false
@@ -49,7 +49,7 @@ Hooks.once('setup', () => {
     )
     const isPrivate = chatOptions.isPrivate
     // Execute the roll, if needed
-    if (!this._rolled) this.roll()
+    if (!this._evaluated) await this.evaluate()
     // Define chat data
     const chatData = {
       formula: isPrivate ? '???' : this.formula,
@@ -83,7 +83,7 @@ Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
     (this.roll.dice.length === 3 &&
       this.roll.dice.filter(x => x.faces === 6).length === 1 &&
       this.roll.dice.filter(x => x.faces === 10).length === 2) ||
-    this.roll.formula.match(/{\d+,1d10,1d10}/)
+    this.roll.formula.match(/{\d+,1?d10,1?d10}/)
   ) {
     return options.fn(this)
   } else {
@@ -115,7 +115,8 @@ Handlebars.registerHelper('actionDieFormula', function () {
   const terms = [...r.terms]
   const d = terms.shift()
   const classes = classesForRoll(r)
-  return `<strong><span class="roll ${classes}">${d?.total || d}</span>${terms.join('')}</strong>`
+  const termStrings = terms.map(t => t.operator || t.number)
+  return `<strong><span class="roll ${classes}">${d?.total || d}</span>${termStrings.join('')}</strong>`
 })
 
 Handlebars.registerHelper('challengeDice', function () {

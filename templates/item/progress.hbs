@@ -8,12 +8,12 @@
   <section class="flexrow nogrow">
     <label>{{localize 'IRONSWORN.Rank'}}:</label>
     <select name="data.rank">
-      {{selectOptions ranks selected=data.rank localize=true}}
+      {{selectOptions ranks selected=data.data.rank localize=true}}
     </select>
   </section>
 
   <div class="flexrow nogrow">
-    {{#each (progressCharacters data.current)}}
+    {{#each (progressCharacters data.data.current)}}
     <div class="progress block">{{{this}}}</div>
     {{/each}}
   </div>

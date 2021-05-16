@@ -3,7 +3,7 @@
     <h1 class="charname">{{localize 'IRONSWORN.Bonds'}}</h1>
   </header>
 
-  {{#each data.bonds}}
+  {{#each data.data.bonds}}
   <div class="item-row" data-idx="{{@index}}">
     <div class="flexrow">
       <input class="attribute-value" type="text" name="data.bonds.{{@index}}.name" value="{{name}}" />

@@ -96,26 +96,26 @@ export class IronswornActorSheet extends ActorSheet {
       const itemId = $(ev.target)
         .parents('.item-row')
         .data('id')
-      const item = this.actor.items.find(x => x._id === itemId)
+      const item = this.actor.items.find(x => x.id === itemId)
       return item.markProgress()
     })
     html.find('.fulfillProgress').click(ev => {
       const itemId = $(ev.target)
         .parents('.item-row')
         .data('id')
-      const item = this.actor.items.find(x => x._id === itemId)
+      const item = this.actor.items.find(x => x.id === itemId)
       return item.fulfill()
     })
     html.find('.edit-item').click(ev => {
       const itemId = $(ev.target)
         .parents('.item-row')
         .data('id')
-      const item = this.actor.items.find(x => x._id === itemId)
+      const item = this.actor.items.find(x => x.id === itemId)
       item.sheet.render(true)
     })
     html.find('.edit-bonds').click(ev => {
       const itemId = ev.target.dataset.id
-      const item = this.actor.items.find(x => x._id === itemId)
+      const item = this.actor.items.find(x => x.id === itemId)
       item.sheet.render(true)
     })
 
@@ -123,7 +123,7 @@ export class IronswornActorSheet extends ActorSheet {
     html.find('.item-edit').click(ev => {
       ev.preventDefault()
       const li = $(ev.currentTarget).parents('.item')
-      const item = this.actor.getOwnedItem(li.data('itemId'))
+      const item = this.actor.items.get(li.data('itemId'))
       item.sheet.render(true)
     })
 
@@ -139,17 +139,17 @@ export class IronswornActorSheet extends ActorSheet {
     html.find('.track-target').click(ev => {
       ev.preventDefault()
       const row = $(ev.currentTarget).parents('.item-row')
-      const item = this.actor.getOwnedItem(row.data('id'))
+      const item = this.actor.items.get(row.data('id'))
       const newValue = parseInt(ev.currentTarget.dataset.value)
       return item.update({ 'data.track.current': newValue })
     })
     html.find('.item-row').map((i, el) => {
-      const item = this.actor.getOwnedItem(el.dataset.id)
+      const item = this.actor.items.get(el.dataset.id)
       this._attachInlineRollListeners($(el), item)
     })
     html.find('.roll-asset-track').click(ev => {
       const row = $(ev.currentTarget).parents('.item-row')
-      const item = this.actor.getOwnedItem(row.data('id'))
+      const item = this.actor.items.get(row.data('id'))
       const data = {
         ...this.getData(),
         track: item.data.data.track.current
@@ -173,7 +173,7 @@ export class IronswornActorSheet extends ActorSheet {
   async _handleMoveExpand (ev) {
     ev.preventDefault()
     const li = $(ev.currentTarget).parents('li')
-    const item = this.actor.getOwnedItem(li.data('id'))
+    const item = this.actor.items.get(li.data('id'))
 
     if (li.hasClass('expanded')) {
       const summary = li.children('.move-summary')
@@ -191,9 +191,9 @@ export class IronswornActorSheet extends ActorSheet {
   async _handleAssetExpand (ev) {
     ev.preventDefault()
     const li = $(ev.currentTarget).parents('li')
-    const item = this.actor.getOwnedItem(li.data('id'))
+    const item = this.actor.items.get(li.data('id'))
 
-    const flagKey = `expanded-${item._id}`
+    const flagKey = `expanded-${item.id}`
     const value = this.actor.getFlag('foundry-ironsworn', flagKey)
     this.actor.setFlag('foundry-ironsworn', flagKey, !value)
   }
@@ -246,9 +246,8 @@ export class IronswornActorSheet extends ActorSheet {
       let table = game.tables.find(x => x.name === tableName)
       if (!table) {
         const pack = game.packs.get('foundry-ironsworn.ironsworntables')
-        const index = await pack.getIndex()
-        const entry = index.find(x => x.name == tableName)
-        if (entry) table = await pack.getEntity(entry._id)
+        const entry = pack.index.find(x => x.name == tableName)
+        if (entry) table = await pack.getDocument(entry._id)
       }
       if (table) table.draw()
     }
@@ -282,7 +281,6 @@ export class IronswornActorSheet extends ActorSheet {
     const { momentum, momentumReset } = this.actor.data.data
     if (momentum > momentumReset) {
       await this.actor.update({
-        _id: this.actor.id,
         data: { momentum: momentumReset }
       })
     }

@@ -1,7 +1,5 @@
-{{log this}}
-
 {{#*inline "stack"}}
-{{#rangeEach from=from to=to current=(lookup data stat)}}
+{{#rangeEach from=from to=to current=(lookup data.data stat)}}
 <div class="
         clickable block stack-row
         {{stat}}
@@ -13,7 +11,7 @@
 {{/inline}}
 
 {{#*inline "progress"}}
-<div class="flexcol item-row" data-id="{{_id}}">
+<div class="flexcol item-row" data-id="{{id}}">
     <div class="flexrow">
         <h2>{{name}} ({{data.data.rank}})</h2>
         <div class="block clickable" style="flex-grow: 0;">
@@ -44,7 +42,7 @@
         <div class="flexrow xp">
             <h4 style="flex-grow: 0; margin: 5px;">{{localize 'IRONSWORN.XP'}}</h4>
             <div class="flexrow">
-                {{#rangeEach from=1 to=9 current=data.xp}}
+                {{#rangeEach from=1 to=9 current=data.data.xp}}
                 <div class="
                     clickable block xp
                     {{#if lteCurrent}} selected {{/if}}
@@ -64,8 +62,8 @@
                 <div class="clickable block stack-row" id="burn">
                     {{localize 'IRONSWORN.Burn'}}
                 </div>
-                {{localize 'IRONSWORN.Reset'}}: {{data.momentumReset}}
-                {{localize 'IRONSWORN.Max'}}: {{data.momentumMax}}
+                {{localize 'IRONSWORN.Reset'}}: {{data.data.momentumReset}}
+                {{localize 'IRONSWORN.Max'}}: {{data.data.momentumMax}}
             </div>
         </div>
         <div class="flexcol margin-left">
@@ -87,18 +85,18 @@
                 {{#*inline "stat"}}
                 <div class="stat clickable block" data-stat="{{stat}}">
                     <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-                    <h3>{{lookup data stat}}</h3>
+                    <h3>{{lookup data.data stat}}</h3>
                 </div>
                 {{/inline}}
 
                 {{#*inline "statEdit"}}
                 <div class="stat block">
                     <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-                    <input name="data.{{stat}}" value="{{lookup data stat}}" />
+                    <input name="data.{{stat}}" value="{{lookup data.data stat}}" />
                 </div>
                 {{/inline}}
 
-                {{#if actor.flags.foundry-ironsworn.editStats}}
+                {{#if actor.data.flags.foundry-ironsworn.editStats}}
                 {{>statEdit stat="edge"}}
                 {{>statEdit stat="heart"}}
                 {{>statEdit stat="iron"}}
@@ -127,7 +125,7 @@
                         <div class="flexcol item-list">
                             <ol>
                                 {{#each assets}}
-                                <li class="item-row" data-id="{{_id}}">
+                                <li class="item-row" data-id="{{id}}">
                                     <div class="asset-entry">
                                         <div class="flexrow">
                                             <strong>{{name}}</strong>
@@ -137,7 +135,7 @@
                                         </div>
                                     </div>
                                     <div class="asset-summary" style="display:
-                                    {{#if (lookup actor.data.flags.foundry-ironsworn (concat 'expanded-' _id))}}
+                                    {{#if (lookup actor.data.flags.foundry-ironsworn (concat 'expanded-' id))}}
                                     block
                                     {{else}}
                                     none
@@ -186,7 +184,7 @@
                             <div class="progress">{{{this}}}</div>
                             {{/each}}
                             <div class="block clickable" style="flex-grow: 0; padding: 5px; margin: 2px;">
-                                <i class="edit-bonds fas fa-edit" data-id="{{bonds._id}}"></i>
+                                <i class="edit-bonds fas fa-edit" data-id="{{bonds.id}}"></i>
                             </div>
                         </div>
                     </section>
@@ -196,8 +194,10 @@
 
                         {{#*inline "debility"}}
                         <label class="checkbox">
-                            <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.debility
-                                name)}}>
+                            <input type="checkbox"
+                                   name="data.debility.{{name}}"
+                                   {{checked (lookup data.data.debility name)}}
+                            >
                             {{capitalize name}}
                         </label>
                         {{/inline}}
