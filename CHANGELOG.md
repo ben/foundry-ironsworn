@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 0.3.1
+
 - Fix choice oracles ([#21](https://github.com/ben/foundry-ironsworn/issues/21))
 
 ## 0.3.0
