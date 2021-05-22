@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix choice oracles ([#21](https://github.com/ben/foundry-ironsworn/issues/21))
+
 ## 0.3.0
 
 - Foundry 0.8.x compatibility ([#20](https://github.com/ben/foundry-ironsworn/issues/20))
