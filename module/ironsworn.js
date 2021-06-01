@@ -196,10 +196,11 @@ Handlebars.registerHelper('rangeEach', function (context, options) {
 
 Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''))
 
-Handlebars.registerHelper('capitalize', txt => {
+export function capitalize (txt) {
   const [first, ...rest] = txt
   return `${first.toUpperCase()}${rest.join('')}`
-})
+}
+Handlebars.registerHelper('capitalize', capitalize)
 
 Handlebars.registerHelper('progressCharacters', current => {
   const tickChar = [' ', '-', '+', '*'][current % 4]
