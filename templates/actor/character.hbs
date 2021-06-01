@@ -55,29 +55,37 @@
 
     <div class="flexrow">
         <div class="flexcol margin-left">
-            <div class="flexcol stack momentum">
-                <h4 class="vertical">{{localize 'IRONSWORN.Momentum'}}</h4>
-                {{>stack stat="momentum" from=10 to=-6}}
-                <hr />
-                <div class="clickable block stack-row" id="burn">
-                    {{localize 'IRONSWORN.Burn'}}
+            <div class="flexrow" style="flex-wrap:nowrap;">
+                <div class="flexcol stack momentum">
+                    {{>stack stat="momentum" from=10 to=-6}}
+                    <hr style="flex-grow: 0;" />
+                    <div class="clickable block stack-row" style="padding: 0 5px;" id="burn">
+                        {{localize 'IRONSWORN.Burn'}}
+                    </div>
+                    {{localize 'IRONSWORN.Reset'}}: {{data.data.momentumReset}}
+                    {{localize 'IRONSWORN.Max'}}: {{data.data.momentumMax}}
                 </div>
-                {{localize 'IRONSWORN.Reset'}}: {{data.data.momentumReset}}
-                {{localize 'IRONSWORN.Max'}}: {{data.data.momentumMax}}
+                <h4 class="vertical">{{localize 'IRONSWORN.Momentum'}}</h4>
             </div>
         </div>
         <div class="flexcol margin-left">
-            <div class="flexcol stack health">
+            <div class="flexrow" style="flex-wrap: nowrap;">
+                <div class="flexcol stack health">
+                    {{>stack stat="health" from=5 to=0}}
+                </div>
                 <h4 class="vertical clickable text" data-stat="health">{{localize 'IRONSWORN.Health'}}</h4>
-                {{>stack stat="health" from=5 to=0}}
             </div>
-            <div class="flexcol stack spirit">
+            <div class="flexrow" style="flex-wrap: nowrap;">
+                <div class="flexcol stack spirit">
+                    {{>stack stat="spirit" from=5 to=0}}
+                </div>
                 <h4 class="vertical clickable text" data-stat="spirit">{{localize 'IRONSWORN.Spirit'}}</h4>
-                {{>stack stat="spirit" from=5 to=0}}
             </div>
-            <div class="flexcol stack supply">
+            <div class="flexrow" style="flex-wrap: nowrap;">
+                <div class="flexcol stack supply">
+                    {{>stack stat="supply" from=5 to=0}}
+                </div>
                 <h4 class="vertical clickable text" data-stat="supply">{{localize 'IRONSWORN.Supply'}}</h4>
-                {{>stack stat="supply" from=5 to=0}}
             </div>
         </div>
         <div class="flexcol">
@@ -165,7 +173,8 @@
                                                 {{value}}
                                             </div>
                                             {{/rangeEach}}
-                                            <div class="clickable block roll-asset-track" style="text-align: center; line-height: 40px;">
+                                            <div class="clickable block roll-asset-track"
+                                                style="text-align: center; line-height: 40px;">
                                                 <i class="fas fa-dice-d6"></i>
                                             </div>
                                         </div>
@@ -194,10 +203,8 @@
 
                         {{#*inline "debility"}}
                         <label class="checkbox">
-                            <input type="checkbox"
-                                   name="data.debility.{{name}}"
-                                   {{checked (lookup data.data.debility name)}}
-                            >
+                            <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.data.debility
+                                name)}}>
                             {{capitalize name}}
                         </label>
                         {{/inline}}
