@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 0.3.2
+
 - Fix some i18n issues ([#26](https://github.com/ben/foundry-ironsworn/issues/26))
 
 ## 0.3.1
