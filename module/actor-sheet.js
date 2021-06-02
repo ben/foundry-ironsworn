@@ -1,4 +1,4 @@
-import { ironswornRollDialog } from './ironsworn.js'
+import { ironswornRollDialog, capitalize } from './ironsworn.js'
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -227,7 +227,9 @@ export class IronswornActorSheet extends ActorSheet {
     const stat = el.dataset.stat
     if (stat) {
       // Clicked a non-edit stat; trigger a roll
-      ironswornRollDialog(this.actor.data.data, stat, `Roll +${stat}`)
+      const rollText = game.i18n.localize('IRONSWORN.Roll')
+      const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
+      ironswornRollDialog(this.actor.data.data, stat, `${rollText} +${statText}`)
     }
 
     const resource = el.dataset.resource

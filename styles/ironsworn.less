@@ -84,7 +84,6 @@
     flex: 0;
     border-right: 1px solid black;
     margin-right: 5px;
-    padding-right: 25px;
     position: relative;
   }
 
@@ -135,22 +134,18 @@
     }
   }
 
+  h4.vertical {
+    padding-left: 5px;
+    writing-mode: vertical-lr;
+  }
+
   .stack {
     margin-bottom: 20px;
     flex-grow: 0;
 
-    h4.vertical {
-      transform: rotate(90deg);
-      transform-origin: 0 0;
-      float: right;
-      position: absolute;
-      left: 78px;
-      padding-left: 5px;
-    }
-
     .stack-row {
       flex: 0 0 auto;
-      width: 50px;
+      min-width: 50px;
       border: 1px solid black;
       margin-bottom: -1px;
       text-align: center;

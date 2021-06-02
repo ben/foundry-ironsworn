@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix some i18n issues ([#26](https://github.com/ben/foundry-ironsworn/issues/26))
+
 ## 0.3.1
 
 - Fix choice oracles ([#21](https://github.com/ben/foundry-ironsworn/issues/21))
