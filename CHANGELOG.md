@@ -2,6 +2,10 @@
 
 ## In progress
 
+## 0.3.4
+
+- Actually include Español in system languages ([#28](https://github.com/ben/foundry-ironsworn/issues/28))
+
 ## 0.3.3
 
 - Translations update from Weblate ([#24](https://github.com/ben/foundry-ironsworn/pull/24))
