@@ -2,6 +2,10 @@
 
 ## In progress
 
+## 0.3.3
+
+- Translations update from Weblate ([#24](https://github.com/ben/foundry-ironsworn/pull/24))
+
 ## 0.3.2
 
 - Fix some i18n issues ([#26](https://github.com/ben/foundry-ironsworn/issues/26))
