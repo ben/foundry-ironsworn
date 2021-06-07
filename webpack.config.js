@@ -83,9 +83,9 @@ module.exports = (env) => {
                                 url: false,
                             },
                         },
-                        // {
-                        //     loader: "postcss-loader",
-                        // },
+                        {
+                            loader: "postcss-loader",
+                        },
                         {
                             loader: "less-loader",
                             options: {
