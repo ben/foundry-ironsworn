@@ -5,3 +5,7 @@
 # Node Modules
 node_modules/
 package-lock.json
+
+# Generated files
+.DS_Store
+dist
