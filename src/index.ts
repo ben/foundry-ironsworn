@@ -16,7 +16,7 @@ Hooks.once('init', async () => {
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
   CONFIG.Item.entityClass = IronswornItem
-//   TODO: CONFIG.Dice.template = 'systems/foundry-ironsworn/templates/chat/roll.hbs'
+
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
 
@@ -40,5 +40,34 @@ Hooks.once('init', async () => {
   // Some handy globals
   game.Ironsworn = {
     importFromDatasworn
+  }
+})
+
+Hooks.once('setup', () => {
+  Roll.prototype.render = async function (chatOptions = {}) {
+    const template = 'systems/foundry-ironsworn/templates/chat/roll.hbs'
+    chatOptions = mergeObject(
+      {
+        user: game?.user?.id,
+        flavor: null,
+        template: template,
+        blind: false
+      },
+      chatOptions
+    )
+    const isPrivate = chatOptions.isPrivate
+    // Execute the roll, if needed
+    if (!this._evaluated) await this.evaluate()
+    // Define chat data
+    const chatData = {
+      formula: isPrivate ? '???' : this.formula,
+      roll: this, // this is new
+      flavor: isPrivate ? null : chatOptions.flavor,
+      user: chatOptions.user,
+      tooltip: isPrivate ? '' : await this.getTooltip(),
+      total: isPrivate ? '?' : Math.round(this.total * 100) / 100
+    }
+    // Render the roll display template
+    return renderTemplate(chatOptions.template || template, chatData)
   }
 })
