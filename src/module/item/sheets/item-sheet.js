@@ -1,10 +1,5 @@
-import {
-  ironswornMoveRoll,
-  ironswornRollDialog,
-  RANKS,
-  RANK_INCREMENTS
-} from './ironsworn.js'
-
+import { RANKS, RANK_INCREMENTS } from "../../constants";
+import { IronswornRollDialog } from "../../helpers/roll";
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
@@ -60,7 +55,7 @@ export class IronswornItemSheet extends ItemSheet {
       const el = ev.currentTarget
       const moveTitle = `${this.object.name} (${el.dataset.param})`
       const actor = this.object.actor || {}
-      return ironswornRollDialog(actor.data?.data, el.dataset.param, moveTitle)
+      return IronswornRollDialog.showDialog(actor.data?.data, el.dataset.param, moveTitle)
     })
 
     // Everything below here is only needed if the sheet is editable
