@@ -8,10 +8,7 @@
   "templateVersion": 2,
   "author": "Ben Straub",
   "esmodules": [
-    "index.js"
-  ],
-  "styles": [
-    "styles/ironsworn.css"
+    "ironsworn.js"
   ],
   "packs": [
     {

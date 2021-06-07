@@ -25,7 +25,6 @@ module.exports = (env) => {
         entry: "./src/index.ts",
         watch: environment.watch,
         devtool: "inline-source-map",
-        stats: "minimal",
         mode: environment.mode,
         resolve: {
             extensions: [".wasm", ".mjs", ".ts", ".js", ".json"],
@@ -37,30 +36,14 @@ module.exports = (env) => {
         },
         devServer: {
             hot: true,
-            proxy: [
-                // {
-                //     context: (pathname, req) => {
-                //         if (req.headers.host.match("^foundry8.local")) {
-                //             return false;
-                //         }
-
-                //         return !pathname.match("^/ws");
-                //     },
-                //     target: "http://localhost:30000",
-                //     ws: true,
-                // },
-                {
-                    context: (pathname, req) => {
-                        if (req.headers.host.match("^foundry.local")) {
-                            return false;
-                        }
-
-                        return !pathname.match("^/ws");
-                    },
-                    target: "http://localhost:30000",
-                    ws: true,
+            writeToDisk: true,
+            proxy: [{
+                context: (pathname) => {
+                    return !pathname.match("^/sockjs");
                 },
-            ],
+                target: "http://localhost:30000",
+                ws: true,
+            }],
         },
         module: {
             rules: [
@@ -100,9 +83,9 @@ module.exports = (env) => {
                                 url: false,
                             },
                         },
-                        {
-                            loader: "postcss-loader",
-                        },
+                        // {
+                        //     loader: "postcss-loader",
+                        // },
                         {
                             loader: "less-loader",
                             options: {

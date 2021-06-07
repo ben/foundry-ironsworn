@@ -5,5 +5,5 @@
 import "./styles/ironsworn.less"
 
 Hooks.once('init', async () => {
-    console.log('Ironsworn | initializing system')
+    console.log('Ironsworn | initializing system!!!')
 })
