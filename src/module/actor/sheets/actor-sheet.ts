@@ -1,12 +1,13 @@
 import { IronswornRollDialog } from '../../helpers/roll'
 import { capitalize } from '../../helpers/util'
 import { IronswornItem } from '../../item/item'
+import { IronswornActor } from '../actor'
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
  */
-export class IronswornActorSheet extends ActorSheet {
+export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor> {
   /** @override */
   static get defaultOptions () {
     return mergeObject(super.defaultOptions, {
@@ -27,7 +28,7 @@ export class IronswornActorSheet extends ActorSheet {
 
   /** @override */
   getData () {
-    const data: any= super.getData()
+    const data: any = super.getData()
 
     data.builtInMoves = []
     for (const moveName of MOVES) {
