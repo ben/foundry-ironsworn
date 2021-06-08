@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Convert project to Typescript and Webpack ([#28](https://github.com/ben/foundry-ironsworn/pull/28))
+
 ## 0.3.4
 
 - Actually include Español in system languages ([#28](https://github.com/ben/foundry-ironsworn/issues/28))
