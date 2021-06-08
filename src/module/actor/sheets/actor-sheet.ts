@@ -1,4 +1,6 @@
 import { IronswornRollDialog } from '../../helpers/roll'
+import { capitalize } from '../../helpers/util'
+import { IronswornItem } from '../../item/item'
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -12,7 +14,7 @@ export class IronswornActorSheet extends ActorSheet {
       width: 1200,
       height: 800,
       dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }]
-    })
+    } as BaseEntitySheet.Options)
   }
 
   /** @override */
@@ -25,7 +27,7 @@ export class IronswornActorSheet extends ActorSheet {
 
   /** @override */
   getData () {
-    const data = super.getData()
+    const data: any= super.getData()
 
     data.builtInMoves = []
     for (const moveName of MOVES) {
@@ -67,7 +69,7 @@ export class IronswornActorSheet extends ActorSheet {
     html.find('#burn').click(this._burnMomentum.bind(this))
 
     // Enable editing stats
-    html.find('#edit-stats').click(async ev => {
+    html.find('#edit-stats').click(async _ev => {
       if (this.actor.getFlag('foundry-ironsworn', 'editStats')) {
         await this.actor.unsetFlag('foundry-ironsworn', 'editStats')
       } else {
@@ -96,27 +98,27 @@ export class IronswornActorSheet extends ActorSheet {
       const itemId = $(ev.target)
         .parents('.item-row')
         .data('id')
-      const item = this.actor.items.find(x => x.id === itemId)
-      return item.markProgress()
+      const item = this.actor.items.find(x => x.id === itemId) as IronswornItem
+      return item?.markProgress()
     })
     html.find('.fulfillProgress').click(ev => {
       const itemId = $(ev.target)
         .parents('.item-row')
         .data('id')
-      const item = this.actor.items.find(x => x.id === itemId)
-      return item.fulfill()
+      const item = this.actor.items.find(x => x.id === itemId) as IronswornItem
+      return item?.fulfill()
     })
     html.find('.edit-item').click(ev => {
       const itemId = $(ev.target)
         .parents('.item-row')
         .data('id')
       const item = this.actor.items.find(x => x.id === itemId)
-      item.sheet.render(true)
+      item?.sheet?.render(true)
     })
     html.find('.edit-bonds').click(ev => {
       const itemId = ev.target.dataset.id
       const item = this.actor.items.find(x => x.id === itemId)
-      item.sheet.render(true)
+      item?.sheet?.render(true)
     })
 
     // Update Inventory Item
@@ -124,7 +126,7 @@ export class IronswornActorSheet extends ActorSheet {
       ev.preventDefault()
       const li = $(ev.currentTarget).parents('.item')
       const item = this.actor.items.get(li.data('itemId'))
-      item.sheet.render(true)
+      item?.sheet?.render(true)
     })
 
     // Delete Inventory Item
@@ -141,18 +143,18 @@ export class IronswornActorSheet extends ActorSheet {
       const row = $(ev.currentTarget).parents('.item-row')
       const item = this.actor.items.get(row.data('id'))
       const newValue = parseInt(ev.currentTarget.dataset.value)
-      return item.update({ 'data.track.current': newValue })
+      return item?.update({ 'data.track.current': newValue })
     })
-    html.find('.item-row').map((i, el) => {
+    html.find('.item-row').map((_i, el) => {
       const item = this.actor.items.get(el.dataset.id)
       this._attachInlineRollListeners($(el), item)
     })
     html.find('.roll-asset-track').click(ev => {
       const row = $(ev.currentTarget).parents('.item-row')
-      const item = this.actor.items.get(row.data('id'))
+      const item = this.actor.items.get(row.data('id')) as IronswornItem
       const data = {
         ...this.getData(),
-        track: item.data.data.track.current
+        track: item?.data.data.track.current
       }
       IronswornRollDialog.showDialog(data, 'track', `${item.name}`)
     })
@@ -179,7 +181,7 @@ export class IronswornActorSheet extends ActorSheet {
       const summary = li.children('.move-summary')
       summary.slideUp(200, () => summary.remove())
     } else {
-      const content = this._parseRollPlus(item.data.data.description)
+      const content = this._parseRollPlus(item?.data.data.description)
       const div = $(`<div class="move-summary">${content}</div>`)
       this._attachInlineRollListeners(div, item)
       li.append(div.hide())
@@ -193,7 +195,7 @@ export class IronswornActorSheet extends ActorSheet {
     const li = $(ev.currentTarget).parents('li')
     const item = this.actor.items.get(li.data('id'))
 
-    const flagKey = `expanded-${item.id}`
+    const flagKey = `expanded-${item?.id}`
     const value = this.actor.getFlag('foundry-ironsworn', flagKey)
     this.actor.setFlag('foundry-ironsworn', flagKey, !value)
   }
@@ -245,36 +247,14 @@ export class IronswornActorSheet extends ActorSheet {
     const tableName = el.dataset.table
     if (tableName) {
       // Clicked an oracle, roll from the table
-      let table = game.tables.find(x => x.name === tableName)
+      let table = game.tables?.find(x => x.name === tableName)
       if (!table) {
-        const pack = game.packs.get('foundry-ironsworn.ironsworntables')
-        const entry = pack.index.find(x => x.name == tableName)
+        const pack = game.packs?.get('foundry-ironsworn.ironsworntables') as any
+        const entry = pack?.index.find(x => x.name == tableName)
         if (entry) table = await pack.getDocument(entry._id)
       }
       if (table) table.draw()
     }
-  }
-
-  async _rollDialog (key) {
-    const move = MOVES[key]
-    const html = await renderTemplate(
-      'systems/foundry-ironsworn/templates/move-dialog.hbs',
-      move
-    )
-
-    new Dialog({
-      title: move.title,
-      content: html,
-      buttons: {
-        roll: {
-          icon: '<i class="roll die d10"></i>',
-          label: game.i18n.localize('IRONSWORN.Roll'),
-          callback: function () {
-            console.log(this, 'Chose One')
-          }
-        }
-      }
-    }).render(true)
   }
 
   async _burnMomentum (event) {

@@ -4,11 +4,11 @@ function classesForRoll(r) {
   const d = r.dice[0]
   const maxRoll = d?.faces || 10
   return [
-      d?.constructor.name.toLowerCase(),
-      d && 'd' + d.faces,
-      (d?.total || r.result) <= 1 ? 'min' : null,
-      (d?.total || r.result) == maxRoll ? 'max' : null
-    ]
+    d?.constructor.name.toLowerCase(),
+    d && 'd' + d.faces,
+    (d?.total || r.result) <= 1 ? 'min' : null,
+    (d?.total || r.result) == maxRoll ? 'max' : null
+  ]
     .filter(x => x)
     .join(' ')
 }
@@ -98,6 +98,31 @@ export class IronswornHandlebarsHelpers {
         /\(\(rollplus (.*?)\)\)/g,
         `<a class='inline-roll' data-param='$1'><i class='fas fa-dice-d6'></i>${game.i18n.localize('IRONSWORN.Roll')} +$1</a>`
       )
+    })
+
+    Handlebars.registerHelper('rangeEach', function (context, _options) {
+      const results = [] as string[]
+      const { from, to, current } = context.hash
+
+      // Enable both directions of iteration
+      const increment = from > to ? -1 : 1
+      const shouldContinue = from > to ? (x, y) => x >= y : (x, y) => x <= y
+
+      for (let value = from; shouldContinue(value, to); value += increment) {
+        const valueStr = value > 0 ? `+${value}` : value.toString()
+        const isCurrent = value === current
+        const lteCurrent = value <= current
+        results.push(
+          context.fn({
+            ...this,
+            valueStr,
+            value,
+            isCurrent,
+            lteCurrent
+          })
+        )
+      }
+      return results.join('\n')
     })
   }
 }
