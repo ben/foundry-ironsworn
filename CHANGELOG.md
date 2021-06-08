@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 0.4.0
+
 - Convert project to Typescript and Webpack ([#28](https://github.com/ben/foundry-ironsworn/pull/28))
 
 ## 0.3.4
