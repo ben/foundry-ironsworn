@@ -69,12 +69,12 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
           .parents('.item-row')
           .data('idx')
       )
-      const fields = Object.values(this.item.data.data.fields)
+      const fields = Object.values((this.item.data.data as any).fields)
       fields.splice(idx, 1)
       await this.item.update({ 'data.fields': fields })
     })
     html.find('.add-field').click(async _ev => {
-      const fields = Object.values(this.item.data.data.fields)
+      const fields = Object.values((this.item.data.data as any).fields)
       fields.push({ name: '', value: '' })
       await this.item.update({ 'data.fields': fields })
     })
@@ -109,7 +109,7 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
 
     // Bonds
     html.find('.add-bond').click(_ev => {
-      const bonds = Object.values(this.item.data.data.bonds)
+      const bonds = Object.values((this.item.data.data as any).bonds)
       bonds.push({ name: '', notes: '' })
       return this.item.update({ 'data.bonds': bonds })
     })
@@ -120,7 +120,7 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
           .parents('.item-row')
           .data('idx')
       )
-      const bonds = Object.values(this.item.data.data.bonds)
+      const bonds = Object.values((this.item.data.data as any).bonds)
       bonds.splice(idx, 1)
       await this.item.update({ 'data.bonds': bonds })
     })

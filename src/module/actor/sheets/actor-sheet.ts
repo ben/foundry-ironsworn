@@ -152,12 +152,12 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     })
     html.find('.roll-asset-track').click(ev => {
       const row = $(ev.currentTarget).parents('.item-row')
-      const item = this.actor.items.get(row.data('id')) as IronswornItem
+      const item = this.actor.items.get(row.data('id'))
       const data = {
         ...this.getData(),
         track: item?.data.data.track.current
       }
-      IronswornRollDialog.showDialog(data, 'track', `${item.name}`)
+      IronswornRollDialog.showDialog(data, 'track', `${item?.name}`)
     })
   }
 
