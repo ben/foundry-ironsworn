@@ -1,0 +1,34 @@
+name: Release on Tag
+
+on:
+  push:
+    tags:
+      - '0.*'
+      - '1.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get Version
+        shell: bash
+        id: get-version
+        run: echo "::set-output name=version::$(node ./.github/workflows/get-version.js)"
+
+      - name: Install dependencies and run webpack
+        run: |
+          npm ci
+          npm run build:production
+
+      - name: Create installable system zip file
+        run: cd dist && zip -r ../ironsworn.zip *
+
+      - name: Create release
+        id: create_versioned_release
+        uses: ncipollo/release-action@v1
+        with:
+          name: ${{ steps.get-version.outputs.version }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifacts: './system/system.json,./ironsworn.zip'

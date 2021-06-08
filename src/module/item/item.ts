@@ -1,29 +1,30 @@
-import { RANKS, RANK_INCREMENTS } from './ironsworn.js'
+import { RANK_INCREMENTS } from '../constants'
+import { IronswornItemData } from './itemtypes'
 
 /**
  * Extend the base Iteem entity
  * @extends {Item}
  */
-export class IronswornItem extends Item {
+export class IronswornItem extends Item<IronswornItemData> {
   /**
    * Progress methods
    */
   markProgress () {
-    if (this.data.data.rank === undefined) return
+    if ((this.data.data as any).rank === undefined) return
 
-    const increment = RANK_INCREMENTS[this.data.data.rank]
-    const newValue = Math.min(this.data.data.current + increment, 40)
+    const increment = RANK_INCREMENTS[(this.data.data as any).rank]
+    const newValue = Math.min((this.data.data as any).current + increment, 40)
     return this.update({ 'data.current': newValue })
   }
 
   clearProgress () {
-    if (this.data.data.rank === undefined) return
+    if ((this.data.data as any).rank === undefined) return
     return this.update({ 'data.current': 0 })
   }
 
   fulfill () {
-    if (this.data.data.rank === undefined) return
-    const progress = Math.floor(this.data.data.current / 4)
+    if ((this.data.data as any).rank === undefined) return
+    const progress = Math.floor((this.data.data as any).current / 4)
     const r = new Roll(`{${progress},d10,d10}`).roll()
     const i18nKey = this.type === 'vow' ? 'IRONSWORN.FulfillVow' : 'IRONSWORN.ProgressRoll'
     r.toMessage({
@@ -35,16 +36,16 @@ export class IronswornItem extends Item {
    * Asset methods
    */
   createField () {
-    const fields = this.data.data.fields
+    const fields = (this.data.data as any).fields
     fields.push({ name: '', value: '' })
     return this.update({ 'data.fields': fields })
   }
   deleteField (name) {
-    const fields = this.data.data.fields
+    const fields = (this.data.data as any).fields
     return this.update({ 'data.fields': fields.filter(x => x.name !== name) })
   }
   createAbility () {
-    const abilitiese = this.data.data.abilities
+    const abilities = (this.data.data as any).abilities
     abilities.push({
       enabled: false,
       description: ''
@@ -52,7 +53,7 @@ export class IronswornItem extends Item {
     return this.update({ 'data.abilities': abilities })
   }
   deleteAbility (name) {
-    const abilities = this.data.data.abilities
+    const abilities = (this.data.data as any).abilities
     return this.update({
       'data.abilities': abilities.filter(x => x.name !== name)
     })
@@ -60,6 +61,6 @@ export class IronswornItem extends Item {
 
   // Bondset methods
   get count() {
-    return Object.values(this.data.data.bonds).length
+    return Object.values((this.data.data as any).bonds).length
   }
 }

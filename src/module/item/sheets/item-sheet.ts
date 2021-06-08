@@ -1,22 +1,18 @@
-import {
-  ironswornMoveRoll,
-  ironswornRollDialog,
-  RANKS,
-  RANK_INCREMENTS
-} from './ironsworn.js'
-
+import { RANKS } from "../../constants";
+import { IronswornRollDialog } from "../../helpers/roll";
+import { IronswornItem } from "../item";
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class IronswornItemSheet extends ItemSheet {
+export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>, IronswornItem> {
   /** @override */
   static get defaultOptions () {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'item'],
       width: 520,
       height: 480
-    })
+    } as BaseEntitySheet.Options)
   }
 
   /* -------------------------------------------- */
@@ -30,7 +26,7 @@ export class IronswornItemSheet extends ItemSheet {
 
   /** @override */
   getData () {
-    const data = super.getData()
+    const data: any = super.getData()
 
     data.ranks = RANKS
 
@@ -59,8 +55,8 @@ export class IronswornItemSheet extends ItemSheet {
       ev.preventDefault()
       const el = ev.currentTarget
       const moveTitle = `${this.object.name} (${el.dataset.param})`
-      const actor = this.object.actor || {}
-      return ironswornRollDialog(actor.data?.data, el.dataset.param, moveTitle)
+      const actor = this.object.actor
+      return IronswornRollDialog.showDialog(actor?.data.data, el.dataset.param, moveTitle)
     })
 
     // Everything below here is only needed if the sheet is editable
@@ -73,12 +69,12 @@ export class IronswornItemSheet extends ItemSheet {
           .parents('.item-row')
           .data('idx')
       )
-      const fields = Object.values(this.item.data.data.fields)
+      const fields = Object.values((this.item.data.data as any).fields)
       fields.splice(idx, 1)
       await this.item.update({ 'data.fields': fields })
     })
-    html.find('.add-field').click(async ev => {
-      const fields = Object.values(this.item.data.data.fields)
+    html.find('.add-field').click(async _ev => {
+      const fields = Object.values((this.item.data.data as any).fields)
       fields.push({ name: '', value: '' })
       await this.item.update({ 'data.fields': fields })
     })
@@ -112,8 +108,8 @@ export class IronswornItemSheet extends ItemSheet {
     })
 
     // Bonds
-    html.find('.add-bond').click(ev => {
-      const bonds = Object.values(this.item.data.data.bonds)
+    html.find('.add-bond').click(_ev => {
+      const bonds = Object.values((this.item.data.data as any).bonds)
       bonds.push({ name: '', notes: '' })
       return this.item.update({ 'data.bonds': bonds })
     })
@@ -124,41 +120,9 @@ export class IronswornItemSheet extends ItemSheet {
           .parents('.item-row')
           .data('idx')
       )
-      const bonds = Object.values(this.item.data.data.bonds)
+      const bonds = Object.values((this.item.data.data as any).bonds)
       bonds.splice(idx, 1)
       await this.item.update({ 'data.bonds': bonds })
     })
-  }
-
-  /* -------------------------------------------- */
-
-  /**
-   * Listen for click events on an attribute control to modify the composition of attributes in the sheet
-   * @param {MouseEvent} event    The originating left click event
-   * @private
-   */
-  async _onClickAttributeControl (event) {
-    event.preventDefault()
-    const a = event.currentTarget
-    const action = a.dataset.action
-    const attrs = this.object.data.data.attributes
-    const form = this.form
-
-    // Add new attribute
-    if (action === 'create') {
-      const nk = Object.keys(attrs).length + 1
-      let newKey = document.createElement('div')
-      newKey.innerHTML = `<input type="text" name="data.attributes.attr${nk}.key" value="attr${nk}"/>`
-      newKey = newKey.children[0]
-      form.appendChild(newKey)
-      await this._onSubmit(event)
-    }
-
-    // Remove existing attribute
-    else if (action === 'delete') {
-      const li = a.closest('.attribute')
-      li.parentElement.removeChild(li)
-      await this._onSubmit(event)
-    }
   }
 }
