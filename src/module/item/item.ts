@@ -10,7 +10,7 @@ export class IronswornItem extends Item<IronswornItemData> {
    * Progress methods
    */
   markProgress () {
-    if (!this.isProgress || (this.data.data as any).rank === undefined) return
+    if ((this.data.data as any).rank === undefined) return
 
     const increment = RANK_INCREMENTS[(this.data.data as any).rank]
     const newValue = Math.min((this.data.data as any).current + increment, 40)
@@ -62,9 +62,5 @@ export class IronswornItem extends Item<IronswornItemData> {
   // Bondset methods
   get count() {
     return Object.values((this.data.data as any).bonds).length
-  }
-
-  get isProgress() {
-    return this.type === 'progress'
   }
 }

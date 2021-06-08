@@ -1,8 +1,11 @@
+import { IronswornItem } from "../item/item"
+import { IronswornActorData } from "./actortypes"
+
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-export class IronswornActor extends Actor {
+export class IronswornActor extends Actor<IronswornActorData, IronswornItem> {
   /** @override */
   getRollData () {
     const data = super.getRollData()
@@ -12,11 +15,12 @@ export class IronswornActor extends Actor {
   /** @override */
   prepareDerivedData () {
     // Calculate momentum max/reset from debilities
-    const numDebilitiesMarked = Object.values(this.data.data.debility).filter(
+    const data = this.data.data as any
+    const numDebilitiesMarked = Object.values(data.debility).filter(
       x => x
     ).length
-    this.data.data.momentumMax = 10 - numDebilitiesMarked
-    this.data.data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
+    data.momentumMax = 10 - numDebilitiesMarked
+    data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
   }
 
   async addDefaultItems () {

@@ -155,7 +155,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
       const item = this.actor.items.get(row.data('id'))
       const data = {
         ...this.getData(),
-        track: item?.data.data.track.current
+        track: (item?.data.data as any).track.current
       }
       IronswornRollDialog.showDialog(data, 'track', `${item?.name}`)
     })
@@ -182,7 +182,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
       const summary = li.children('.move-summary')
       summary.slideUp(200, () => summary.remove())
     } else {
-      const content = this._parseRollPlus(item?.data.data.description)
+      const content = this._parseRollPlus((item?.data.data as any).description)
       const div = $(`<div class="move-summary">${content}</div>`)
       this._attachInlineRollListeners(div, item)
       li.append(div.hide())
@@ -239,7 +239,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     if (resource) {
       // Clicked a value in momentum/health/etc, set the value
       const newValue = parseInt(el.dataset.value)
-      const { momentumMax } = this.actor.data.data
+      const { momentumMax } = (this.actor.data.data as any)
       if (resource !== 'momentum' || newValue <= momentumMax) {
         await this.actor.update({ data: { [resource]: newValue } })
       }
@@ -261,7 +261,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
   async _burnMomentum (event) {
     event.preventDefault()
 
-    const { momentum, momentumReset } = this.actor.data.data
+    const { momentum, momentumReset } = (this.actor.data.data as any)
     if (momentum > momentumReset) {
       await this.actor.update({
         data: { momentum: momentumReset }
