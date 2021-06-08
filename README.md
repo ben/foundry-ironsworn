@@ -21,6 +21,17 @@ Assets are in their own compendium, drag them onto your character sheet.
 Now you're ready to create vows, embark on journeys, and slay beasts.
 Keep track of your story using journal entries.
 
+## How to hack on this
+
+1. Install Foundry 0.8 or later, and start it up.
+2. Install the main `foundry-ironsworn` system, and create a world that uses it.
+3. Clone this repo somewhere you can find it, and run `npm install`.
+4. Run `npm start` from this repository.
+5. Open a browser to http://localhost:8080.
+
+When you use that browser window, webpack will serve up freshly-built assets instead of the ones in the installed version of the system.
+Just remember to reload your browser window when you make a change.
+
 ## Ironsworn
 
 This work is based on Ironsworn (found at www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license  (creativecommons.org/licenses/by-nc-sa/4.0/).
