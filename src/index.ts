@@ -7,7 +7,7 @@ import { IronswornActorSheet } from "./module/actor/sheets/actor-sheet"
 import { importFromDatasworn } from "./module/datasworn"
 import { IronswornHandlebarsHelpers } from "./module/helpers/handlebars"
 import { IronswornItem } from "./module/item/item"
-import { IronswornItemSheet } from "./module/item/sheets/item-sheet"
+import { IronswornItemSheet } from "./module/item/item-sheet"
 import "./styles/ironsworn.less"
 
 Hooks.once('init', async () => {

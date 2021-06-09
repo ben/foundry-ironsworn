@@ -1,6 +1,6 @@
-import { RANKS } from "../../constants";
-import { IronswornRollDialog } from "../../helpers/roll";
-import { IronswornItem } from "../item";
+import { RANKS } from "../constants";
+import { IronswornRollDialog } from "../helpers/roll";
+import { IronswornItem } from "./item";
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
