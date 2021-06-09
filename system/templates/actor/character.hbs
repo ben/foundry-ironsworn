@@ -15,7 +15,7 @@
     <div class="flexrow">
         <h2>{{name}} ({{localize (concat 'IRONSWORN.' (capitalize data.data.rank))}})</h2>
         <div class="block clickable" style="flex-grow: 0;">
-            <i class="edit-item fas fa-edit"></i>
+            <i data-item="{{id}}" class="ironsworn__{{type}}__settings fas fa-edit"></i>
         </div>
     </div>
     <div class="flexrow">
@@ -117,12 +117,6 @@
                 {{>stat stat="shadow"}}
                 {{>stat stat="wits"}}
                 {{/if}}
-
-                <div class="clickable block flexcol edit" id="edit-stats">
-                    <p class="flexrow" style="align-items: center; padding-left: 4px;">
-                        <i class="fas fa-edit"></i>
-                    </p>
-                </div>
             </div>
 
             <div class="flexrow">

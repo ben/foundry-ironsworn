@@ -1,5 +1,5 @@
-import { BaseItem } from '../baseitem'
+import { ProgressItem } from '../progress/progressitem'
 
-export class VowItem extends BaseItem {
+export class VowItem extends ProgressItem {
   static entityName = 'vow'
 }

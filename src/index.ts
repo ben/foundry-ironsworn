@@ -4,13 +4,16 @@
 
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
-import { IronswornActorSheet } from './module/actor/sheets/actor-sheet'
+// import { IronswornActorSheet } from './module/actor/sheets/actor-sheet'
+import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { importFromDatasworn } from './module/datasworn'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { IronswornItem } from './module/item/item'
 import { IronswornItemSheet } from './module/item/item-sheet'
+import { ProgressSheet } from './module/item/progress/progresssheet'
 import { VowSheet } from './module/item/vow/vowsheet'
+
 import './styles/ironsworn.less'
 
 Hooks.once('init', async () => {
@@ -33,8 +36,17 @@ Hooks.once('init', async () => {
   Items.unregisterSheet('core', ItemSheet)
 
   // Register our own sheets
-  Actors.registerSheet('ironsworn', IronswornActorSheet, {
-    // types: [],
+  Actors.registerSheet('ironsworn', IronswornCharacterSheet, {
+    types: ['character'],
+    makeDefault: true,
+  })
+
+  Items.registerSheet('ironsworn', VowSheet, {
+    types: ['vow'],
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', ProgressSheet, {
+    types: ['progress'],
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', IronswornItemSheet, {
