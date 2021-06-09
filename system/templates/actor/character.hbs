@@ -131,8 +131,8 @@
                                     <div class="asset-entry">
                                         <div class="flexrow">
                                             <strong>{{name}}</strong>
-                                            <div class="block clickable" style="flex-grow: 0;">
-                                                <i class="edit-item fas fa-edit"></i>
+                                            <div data-item="{{id}}" class="block clickable ironsworn__{{type}}__settings" style="flex-grow: 0;">
+                                                <i class="fas fa-edit"></i>
                                             </div>
                                         </div>
                                     </div>
@@ -186,8 +186,8 @@
                             {{#each (progressCharacters bonds.count)}}
                             <div class="progress">{{{this}}}</div>
                             {{/each}}
-                            <div class="block clickable" style="flex-grow: 0; padding: 5px; margin: 2px;">
-                                <i class="edit-bonds fas fa-edit" data-id="{{bonds.id}}"></i>
+                            <div data-item="{{bonds.id}}" class="ironsworn__bondset__settings block clickable" style="flex-grow: 0; padding: 5px; margin: 2px;">
+                                <i class="fas fa-edit"></i>
                             </div>
                         </div>
                     </section>

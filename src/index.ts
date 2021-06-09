@@ -9,8 +9,11 @@ import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { importFromDatasworn } from './module/datasworn'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
+import { AssetSheet } from './module/item/asset/assetsheet'
+import { BondsetSheet } from './module/item/bondset/bondsetsheet'
 import { IronswornItem } from './module/item/item'
-import { IronswornItemSheet } from './module/item/item-sheet'
+// import { IronswornItemSheet } from './module/item/item-sheet'
+import { MoveSheet } from './module/item/move/movesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
 import { VowSheet } from './module/item/vow/vowsheet'
 
@@ -41,19 +44,22 @@ Hooks.once('init', async () => {
     makeDefault: true,
   })
 
-  Items.registerSheet('ironsworn', VowSheet, {
-    types: ['vow'],
+  Items.registerSheet('ironsworn', AssetSheet, {
+    types: ['asset'],
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', BondsetSheet, {
+    types: ['bondset'],
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', MoveSheet, {
+    types: ['move'],
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', ProgressSheet, {
     types: ['progress'],
     makeDefault: true,
   })
-  Items.registerSheet('ironsworn', IronswornItemSheet, {
-    // types: [],
-    makeDefault: true,
-  })
-
   Items.registerSheet('ironsworn', VowSheet, {
     types: ['vow'],
     makeDefault: true,
