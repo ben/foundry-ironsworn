@@ -9,6 +9,7 @@ import { importFromDatasworn } from './module/datasworn'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { IronswornItem } from './module/item/item'
 import { IronswornItemSheet } from './module/item/item-sheet'
+import { VowSheet } from './module/item/vow/vowsheet'
 import './styles/ironsworn.less'
 
 Hooks.once('init', async () => {
@@ -34,6 +35,11 @@ Hooks.once('init', async () => {
   })
   Items.registerSheet('ironsworn', IronswornItemSheet, {
     // types: [],
+    makeDefault: true,
+  })
+
+  Items.registerSheet('ironsworn', VowSheet, {
+    types: ['vow'],
     makeDefault: true,
   })
 
