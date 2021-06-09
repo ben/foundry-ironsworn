@@ -1,99 +1,97 @@
-import { RANKS } from "../constants";
+import { RANKS } from '../constants'
 
 interface ProgressBase {
-    rank: keyof typeof RANKS
-    current: number
+  rank: keyof typeof RANKS
+  current: number
 }
 
 ///////////////////////////////
 
 interface AssetField {
-    name: string
-    value: string
+  name: string
+  value: string
 }
 
 interface AssetAbility {
-    enabled: boolean
-    description: string
+  enabled: boolean
+  description: string
 }
 
 interface AssetExclusiveOption {
-    name: string,
-    selected: boolean
+  name: string
+  selected: boolean
 }
 
 interface AssetData {
-    fields: AssetField[]
-    abilities: AssetAbility[]
-    track: {
-        enabled: boolean
-        name: string
-        current: number
-        max: number
-    }
-    exclusiveOptions: AssetExclusiveOption[]
+  fields: AssetField[]
+  abilities: AssetAbility[]
+  track: {
+    enabled: boolean
+    name: string
+    current: number
+    max: number
+  }
+  exclusiveOptions: AssetExclusiveOption[]
 }
 
 export interface AssetItemData extends Item.Data<AssetData> {
-    type: "asset"
+  type: 'asset'
 }
 
 ///////////////////////////////
 
-interface ProgressData extends ProgressBase {
-}
+interface ProgressData extends ProgressBase {}
 
 export interface ProgressItemData extends Item.Data<ProgressData> {
-    type: "progress"
+  type: 'progress'
 }
 
 ///////////////////////////////
 
 interface VowData extends ProgressBase {
-    description: string
-    threat: string
-    menace: number
+  description: string
+  threat: string
+  menace: number
 }
 
 export interface VowItemData extends Item.Data<VowData> {
-    type: "vow"
+  type: 'vow'
 }
 
 ///////////////////////////////
 
 interface Bond {
-    name: string
-    notes: string
+  name: string
+  notes: string
 }
 
 interface BondsetData {
-    bonds: Bond[]
+  bonds: Bond[]
 }
 
 export interface BondsetItemData extends Item.Data<BondsetData> {
-    type: "bondset"
+  type: 'bondset'
 }
 
 ///////////////////////////////
 
 interface SiteData extends ProgressBase {
-    objective: string
-    theme: string
-    domain: string
-    notes: string
+  objective: string
+  theme: string
+  domain: string
+  notes: string
 }
 
 export interface SiteItemData extends Item.Data<SiteData> {
-    type: "site"
+  type: 'site'
 }
 
 ///////////////////////////////
 
-interface MoveData {
-}
+interface MoveData {}
 
 export interface MoveItemData extends Item.Data<MoveData> {
-    type: "asset"
+  type: 'asset'
 }
 
 ///////////////////////////////

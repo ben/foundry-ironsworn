@@ -1,23 +1,14 @@
-import { capitalize } from "./util"
+import { capitalize } from './util'
 
 function classesForRoll(r) {
   const d = r.dice[0]
   const maxRoll = d?.faces || 10
-  return [
-    d?.constructor.name.toLowerCase(),
-    d && 'd' + d.faces,
-    (d?.total || r.result) <= 1 ? 'min' : null,
-    (d?.total || r.result) == maxRoll ? 'max' : null
-  ]
-    .filter(x => x)
-    .join(' ')
+  return [d?.constructor.name.toLowerCase(), d && 'd' + d.faces, (d?.total || r.result) <= 1 ? 'min' : null, (d?.total || r.result) == maxRoll ? 'max' : null].filter((x) => x).join(' ')
 }
 
-const actionRoll = roll =>
-  roll.terms[0].rolls.find(r => r.dice.length === 0 || r.dice[0].faces === 6)
+const actionRoll = (roll) => roll.terms[0].rolls.find((r) => r.dice.length === 0 || r.dice[0].faces === 6)
 
-const challengeRolls = roll =>
-  roll.terms[0].rolls.filter(r => r.dice.length > 0 && r.dice[0].faces === 10)
+const challengeRolls = (roll) => roll.terms[0].rolls.filter((r) => r.dice.length > 0 && r.dice[0].faces === 10)
 
 export class IronswornHandlebarsHelpers {
   static registerHelpers() {
@@ -34,12 +25,7 @@ export class IronswornHandlebarsHelpers {
     })
 
     Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
-      if (
-        (this.roll.dice.length === 3 &&
-          this.roll.dice.filter(x => x.faces === 6).length === 1 &&
-          this.roll.dice.filter(x => x.faces === 10).length === 2) ||
-        this.roll.formula.match(/{\d+,1?d10,1?d10}/)
-      ) {
+      if ((this.roll.dice.length === 3 && this.roll.dice.filter((x) => x.faces === 6).length === 1 && this.roll.dice.filter((x) => x.faces === 10).length === 2) || this.roll.formula.match(/{\d+,1?d10,1?d10}/)) {
         return options.fn(this)
       } else {
         return options.inverse(this)
@@ -51,7 +37,7 @@ export class IronswornHandlebarsHelpers {
       const terms = [...r.terms]
       const d = terms.shift()
       const classes = classesForRoll(r)
-      const termStrings = terms.map(t => t.operator || t.number)
+      const termStrings = terms.map((t) => t.operator || t.number)
       return `<strong><span class="roll ${classes}">${d?.total || d}</span>${termStrings.join('')}</strong>`
     })
 
@@ -64,7 +50,7 @@ export class IronswornHandlebarsHelpers {
 
     Handlebars.registerHelper('ironswornHitType', function () {
       const actionTotal = actionRoll(this.roll).total
-      const [challenge1, challenge2] = challengeRolls(this.roll).map(x => x.total)
+      const [challenge1, challenge2] = challengeRolls(this.roll).map((x) => x.total)
       const match = challenge1 === challenge2
       if (actionTotal <= Math.min(challenge1, challenge2)) {
         if (match) return game.i18n.localize('IRONSWORN.Complication')
@@ -77,7 +63,7 @@ export class IronswornHandlebarsHelpers {
       return game.i18n.localize('IRONSWORN.WeakHit')
     })
 
-    Handlebars.registerHelper('progressCharacters', current => {
+    Handlebars.registerHelper('progressCharacters', (current) => {
       const tickChar = [' ', '-', '+', '*'][current % 4]
       const characters = [] as string[]
       for (let i = 0; i < Math.floor(current / 4); i++) {
@@ -92,12 +78,9 @@ export class IronswornHandlebarsHelpers {
       return characters
     })
 
-    Handlebars.registerHelper('enrichHtml', text => {
+    Handlebars.registerHelper('enrichHtml', (text) => {
       const rendered = TextEditor.enrichHTML(text)
-      return rendered.replace(
-        /\(\(rollplus (.*?)\)\)/g,
-        `<a class='inline-roll' data-param='$1'><i class='fas fa-dice-d6'></i>${game.i18n.localize('IRONSWORN.Roll')} +$1</a>`
-      )
+      return rendered.replace(/\(\(rollplus (.*?)\)\)/g, `<a class='inline-roll' data-param='$1'><i class='fas fa-dice-d6'></i>${game.i18n.localize('IRONSWORN.Roll')} +$1</a>`)
     })
 
     Handlebars.registerHelper('rangeEach', function (context, _options) {
@@ -118,7 +101,7 @@ export class IronswornHandlebarsHelpers {
             valueStr,
             value,
             isCurrent,
-            lteCurrent
+            lteCurrent,
           })
         )
       }

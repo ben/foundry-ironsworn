@@ -1,4 +1,4 @@
-export async function ironswornMoveRoll (bonusExpr = '0', values = {}, title: string) {
+export async function ironswornMoveRoll(bonusExpr = '0', values = {}, title: string) {
   const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
   r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
 }
@@ -15,14 +15,14 @@ export class IronswornRollDialog extends Dialog {
         roll: {
           icon: '<i class="fas fa-dice-d10"></i>',
           label: game.i18n.localize('IRONSWORN.Roll'),
-          callback: x => {
+          callback: (x) => {
             const form = x[0].querySelector('form')
             const bonus = parseInt(form[0].value, 10)
             ironswornMoveRoll(`@${stat}+${bonus || 0}`, data, title)
-          }
-        }
+          },
+        },
       },
-      default: 'roll'
+      default: 'roll',
     })
     d.render(true)
   }

@@ -9,17 +9,17 @@ import { IronswornActor } from '../actor'
  */
 export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor> {
   /** @override */
-  static get defaultOptions () {
+  static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor'],
       width: 1200,
       height: 800,
-      dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }]
+      dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }],
     } as BaseEntitySheet.Options)
   }
 
   /** @override */
-  get template () {
+  get template() {
     const path = 'systems/foundry-ironsworn/templates/actor'
     return `${path}/${this.actor.data.type}.hbs`
   }
@@ -27,7 +27,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
   /* -------------------------------------------- */
 
   /** @override */
-  getData () {
+  getData() {
     const data: any = super.getData()
 
     data.builtInMoves = []
@@ -35,7 +35,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
       if (moveName.startsWith('---')) {
         data.builtInMoves.push({
           separator: true,
-          title: moveName.substr('--- '.length)
+          title: moveName.substr('--- '.length),
         })
       } else {
         data.builtInMoves.push({
@@ -45,12 +45,12 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
       }
     }
 
-    data.customMoves = this.actor.items.filter(x => x.type === 'move')
+    data.customMoves = this.actor.items.filter((x) => x.type === 'move')
 
-    data.assets = this.actor.items.filter(x => x.type === 'asset')
-    data.vows = this.actor.items.filter(x => x.type === 'vow')
-    data.progresses = this.actor.items.filter(x => x.type === 'progress')
-    data.bonds = this.actor.items.find(x => x.type === 'bondset')
+    data.assets = this.actor.items.filter((x) => x.type === 'asset')
+    data.vows = this.actor.items.filter((x) => x.type === 'vow')
+    data.progresses = this.actor.items.filter((x) => x.type === 'progress')
+    data.bonds = this.actor.items.find((x) => x.type === 'bondset')
 
     return data
   }
@@ -58,7 +58,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
   /* -------------------------------------------- */
 
   /** @override */
-  activateListeners (html) {
+  activateListeners(html) {
     super.activateListeners(html)
 
     // Everything below here is only needed if the sheet is editable
@@ -70,7 +70,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     html.find('#burn').click(this._burnMomentum.bind(this))
 
     // Enable editing stats
-    html.find('#edit-stats').click(async _ev => {
+    html.find('#edit-stats').click(async (_ev) => {
       if (this.actor.getFlag('foundry-ironsworn', 'editStats')) {
         await this.actor.unsetFlag('foundry-ironsworn', 'editStats')
       } else {
@@ -84,46 +84,37 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     html.find('.asset-entry').click(this._handleAssetExpand.bind(this))
 
     // Vow/progress buttons
-    html.find('.add-item').click(async ev => {
+    html.find('.add-item').click(async (ev) => {
       let el = $(ev.target)
       if (!el.hasClass('add-item')) {
         el = el.parents('.add-item')
       }
       const itemType = el.data('type')
-      this.actor.createOwnedItem(
-        { type: itemType, name: `New ${itemType}` },
-        { renderSheet: true }
-      )
+      this.actor.createOwnedItem({ type: itemType, name: `New ${itemType}` }, { renderSheet: true })
     })
-    html.find('.markProgress').click(ev => {
-      const itemId = $(ev.target)
-        .parents('.item-row')
-        .data('id')
-      const item = this.actor.items.find(x => x.id === itemId) as IronswornItem
+    html.find('.markProgress').click((ev) => {
+      const itemId = $(ev.target).parents('.item-row').data('id')
+      const item = this.actor.items.find((x) => x.id === itemId) as IronswornItem
       return item?.markProgress()
     })
-    html.find('.fulfillProgress').click(ev => {
-      const itemId = $(ev.target)
-        .parents('.item-row')
-        .data('id')
-      const item = this.actor.items.find(x => x.id === itemId) as IronswornItem
+    html.find('.fulfillProgress').click((ev) => {
+      const itemId = $(ev.target).parents('.item-row').data('id')
+      const item = this.actor.items.find((x) => x.id === itemId) as IronswornItem
       return item?.fulfill()
     })
-    html.find('.edit-item').click(ev => {
-      const itemId = $(ev.target)
-        .parents('.item-row')
-        .data('id')
-      const item = this.actor.items.find(x => x.id === itemId)
+    html.find('.edit-item').click((ev) => {
+      const itemId = $(ev.target).parents('.item-row').data('id')
+      const item = this.actor.items.find((x) => x.id === itemId)
       item?.sheet?.render(true)
     })
-    html.find('.edit-bonds').click(ev => {
+    html.find('.edit-bonds').click((ev) => {
       const itemId = ev.target.dataset.id
-      const item = this.actor.items.find(x => x.id === itemId)
+      const item = this.actor.items.find((x) => x.id === itemId)
       item?.sheet?.render(true)
     })
 
     // Update Inventory Item
-    html.find('.item-edit').click(ev => {
+    html.find('.item-edit').click((ev) => {
       ev.preventDefault()
       const li = $(ev.currentTarget).parents('.item')
       const item = this.actor.items.get(li.data('itemId'))
@@ -131,7 +122,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     })
 
     // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
+    html.find('.item-delete').click((ev) => {
       ev.preventDefault()
       const li = $(ev.currentTarget).parents('.item')
       this.actor.deleteOwnedItem(li.data('itemId'))
@@ -139,7 +130,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     })
 
     // Asset tracks
-    html.find('.track-target').click(ev => {
+    html.find('.track-target').click((ev) => {
       ev.preventDefault()
       const row = $(ev.currentTarget).parents('.item-row')
       const item = this.actor.items.get(row.data('id'))
@@ -150,18 +141,18 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
       const item = this.actor.items.get(el.dataset.id)
       this._attachInlineRollListeners($(el), item)
     })
-    html.find('.roll-asset-track').click(ev => {
+    html.find('.roll-asset-track').click((ev) => {
       const row = $(ev.currentTarget).parents('.item-row')
       const item = this.actor.items.get(row.data('id'))
       const data = {
         ...this.getData(),
-        track: (item?.data.data as any).track.current
+        track: (item?.data.data as any).track.current,
       }
       IronswornRollDialog.showDialog(data, 'track', `${item?.name}`)
     })
   }
 
-  async _handleBuiltInMoveExpand (ev) {
+  async _handleBuiltInMoveExpand(ev) {
     ev.preventDefault()
     const li = $(ev.currentTarget).parents('li')
     const summary = li.children('.move-summary')
@@ -173,7 +164,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     li.toggleClass('expanded')
   }
 
-  async _handleMoveExpand (ev) {
+  async _handleMoveExpand(ev) {
     ev.preventDefault()
     const li = $(ev.currentTarget).parents('li')
     const item = this.actor.items.get(li.data('id'))
@@ -191,7 +182,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     li.toggleClass('expanded')
   }
 
-  async _handleAssetExpand (ev) {
+  async _handleAssetExpand(ev) {
     ev.preventDefault()
     const li = $(ev.currentTarget).parents('li')
     const item = this.actor.items.get(li.data('id'))
@@ -201,7 +192,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     this.actor.setFlag('foundry-ironsworn', flagKey, !value)
   }
 
-  _parseRollPlus (text) {
+  _parseRollPlus(text) {
     const rendered = TextEditor.enrichHTML(text)
     return rendered.replace(
       /\(\(rollplus (.*?)\)\)/g,
@@ -213,8 +204,8 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     )
   }
 
-  _attachInlineRollListeners (html, item) {
-    html.find('a.inline-roll').on('click', ev => {
+  _attachInlineRollListeners(html, item) {
+    html.find('a.inline-roll').on('click', (ev) => {
       ev.preventDefault()
       const el = ev.currentTarget
       const moveTitle = `${item?.name || html.data('name')} (${el.dataset.param})`
@@ -223,7 +214,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     })
   }
 
-  async _rollStat (event) {
+  async _rollStat(event) {
     event.preventDefault()
     const el = event.currentTarget
 
@@ -239,7 +230,7 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     if (resource) {
       // Clicked a value in momentum/health/etc, set the value
       const newValue = parseInt(el.dataset.value)
-      const { momentumMax } = (this.actor.data.data as any)
+      const { momentumMax } = this.actor.data.data as any
       if (resource !== 'momentum' || newValue <= momentumMax) {
         await this.actor.update({ data: { [resource]: newValue } })
       }
@@ -248,23 +239,23 @@ export class IronswornActorSheet extends ActorSheet<ActorSheet.Data<IronswornAct
     const tableName = el.dataset.table
     if (tableName) {
       // Clicked an oracle, roll from the table
-      let table = game.tables?.find(x => x.name === tableName)
+      let table = game.tables?.find((x) => x.name === tableName)
       if (!table) {
         const pack = game.packs?.get('foundry-ironsworn.ironsworntables') as any
-        const entry = pack?.index.find(x => x.name == tableName)
+        const entry = pack?.index.find((x) => x.name == tableName)
         if (entry) table = await pack.getDocument(entry._id)
       }
       if (table) table.draw()
     }
   }
 
-  async _burnMomentum (event) {
+  async _burnMomentum(event) {
     event.preventDefault()
 
-    const { momentum, momentumReset } = (this.actor.data.data as any)
+    const { momentum, momentumReset } = this.actor.data.data as any
     if (momentum > momentumReset) {
       await this.actor.update({
-        data: { momentum: momentumReset }
+        data: { momentum: momentumReset },
       })
     }
   }
@@ -311,5 +302,5 @@ const MOVES = [
   'Face Death',
   'Face Desolation',
   'Out of Supply',
-  'Face a Setback'
+  'Face a Setback',
 ]
