@@ -2,6 +2,7 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
+import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornActorSheet } from './module/actor/sheets/actor-sheet'
 import { importFromDatasworn } from './module/datasworn'
@@ -12,6 +13,8 @@ import './styles/ironsworn.less'
 
 Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
+
+  CONFIG.IRONSWORN = IRONSWORN
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
