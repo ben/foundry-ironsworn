@@ -14,8 +14,8 @@
 <div class="flexcol item-row" data-id="{{id}}">
     <div class="flexrow">
         <h2>{{name}} ({{localize (concat 'IRONSWORN.' (capitalize data.data.rank))}})</h2>
-        <div class="block clickable" style="flex-grow: 0;">
-            <i data-item="{{id}}" class="ironsworn__{{type}}__settings fas fa-edit"></i>
+        <div class="block clickable ironsworn__{{type}}__settings" data-item="{{id}}" style="flex-grow: 0;">
+            <i class="fas fa-edit"></i>
         </div>
     </div>
     <div class="flexrow">
