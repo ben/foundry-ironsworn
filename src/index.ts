@@ -7,6 +7,7 @@ import { IronswornActor } from './module/actor/actor'
 import { IronswornActorSheet } from './module/actor/sheets/actor-sheet'
 import { importFromDatasworn } from './module/datasworn'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
+import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { IronswornItem } from './module/item/item'
 import { IronswornItemSheet } from './module/item/item-sheet'
 import { VowSheet } from './module/item/vow/vowsheet'
@@ -16,6 +17,9 @@ Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
 
   CONFIG.IRONSWORN = IRONSWORN
+
+  // Preload all needed templates
+  await TemplatePreloader.preloadHandlebarsTemplates()
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
@@ -80,3 +84,26 @@ Hooks.once('setup', () => {
     return renderTemplate(chatOptions.template || template, chatData)
   }
 })
+
+/* -------------------------------- */
+/*	Webpack HMR                     */
+/* -------------------------------- */
+if (module.hot) {
+  module.hot.accept()
+
+  if (module.hot.status() === 'apply') {
+    for (const template in _templateCache) {
+      if (Object.prototype.hasOwnProperty.call(_templateCache, template)) {
+        delete _templateCache[template]
+      }
+    }
+
+    TemplatePreloader.preloadHandlebarsTemplates().then(() => {
+      for (const application in ui.windows) {
+        if (Object.prototype.hasOwnProperty.call(ui.windows, application)) {
+          ui.windows[application].render(true)
+        }
+      }
+    })
+  }
+}

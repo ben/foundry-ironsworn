@@ -7,8 +7,8 @@ const glob = require("glob");
 
 const allTemplates = () => {
     return glob
-        .sync("**/*.hbs", { cwd: path.join(__dirname, "templates") })
-        .map((file) => `"templates/${file}"`)
+        .sync("**/*.hbs", { cwd: path.join(__dirname, "system/templates") })
+        .map((file) => `"systems/foundry-ironsworn/templates/${file}"`)
         .join(", ");
 };
 
@@ -61,12 +61,12 @@ module.exports = (env) => {
                     use: ["ts-loader", "webpack-import-glob-loader", "source-map-loader"],
                 },
                 {
-                    test: /TemplatePreloader\.ts$/,
+                    test: /templatepreloader\.ts$/,
                     use: [
                         {
                             loader: "string-replace-loader",
                             options: {
-                                search: '"__ALL_TEMPLATES__"',
+                                search: "'__ALL_TEMPLATES__'",
                                 replace: allTemplates,
                             },
                         },
