@@ -1,3 +1,5 @@
+import { IronswornRollDialog } from '../../helpers/roll'
+import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
 
 export interface CharacterSheetOptions extends BaseEntitySheet.Options {
@@ -30,6 +32,8 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     // for (const sheetComponent in CONFIG.IRONSWORN.sheetComponents.actor) {
     //   CONFIG.IRONSWORN.sheetComponents.actor[sheetComponent].activateListeners(html, this)
     // }
+
+    html.find('.ironsworn__stat__roll').click((e) => this._onStatRoll.call(this, e))
   }
 
   getData() {
@@ -82,6 +86,18 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
 
     const currentValue = this.actor.getFlag('foundry-ironsworn', 'editStats')
     await this.actor.setFlag('foundry-ironsworn', 'editStats', !currentValue)
+  }
+
+  _onStatRoll(ev) {
+    ev.preventDefault()
+
+    const el = ev.currentTarget
+    const stat = el.dataset.stat
+    if (stat) {
+      const rollText = game.i18n.localize('IRONSWORN.Roll')
+      const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
+      IronswornRollDialog.showDialog(this.actor.data.data, stat, `${rollText} +${statText}`)
+    }
   }
 }
 

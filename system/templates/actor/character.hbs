@@ -83,25 +83,25 @@
                 <div class="flexcol stack health">
                     {{>stack stat="health" from=5 to=0}}
                 </div>
-                <h4 class="vertical clickable text" data-stat="health">{{localize 'IRONSWORN.Health'}}</h4>
+                <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="health">{{localize 'IRONSWORN.Health'}}</h4>
             </div>
             <div class="flexrow" style="flex-wrap: nowrap;">
                 <div class="flexcol stack spirit">
                     {{>stack stat="spirit" from=5 to=0}}
                 </div>
-                <h4 class="vertical clickable text" data-stat="spirit">{{localize 'IRONSWORN.Spirit'}}</h4>
+                <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="spirit">{{localize 'IRONSWORN.Spirit'}}</h4>
             </div>
             <div class="flexrow" style="flex-wrap: nowrap;">
                 <div class="flexcol stack supply">
                     {{>stack stat="supply" from=5 to=0}}
                 </div>
-                <h4 class="vertical clickable text" data-stat="supply">{{localize 'IRONSWORN.Supply'}}</h4>
+                <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="supply">{{localize 'IRONSWORN.Supply'}}</h4>
             </div>
         </div>
         <div class="flexcol">
             <div class="flexrow stats">
                 {{#*inline "stat"}}
-                <div class="stat clickable block" data-stat="{{stat}}">
+                <div class="stat clickable block ironsworn__stat__roll" data-stat="{{stat}}">
                     <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
                     <h3>{{lookup data.data stat}}</h3>
                 </div>
