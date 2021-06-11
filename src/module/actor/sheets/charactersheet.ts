@@ -87,8 +87,8 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
   async _toggleEditMode(e: JQuery.ClickEvent): Promise<void> {
     e.preventDefault()
 
-    const currentValue = this.actor.getFlag('foundry-ironsworn', 'editStats')
-    await this.actor.setFlag('foundry-ironsworn', 'editStats', !currentValue)
+    const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
+    await this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
   async _onBurnMomentum(ev) {

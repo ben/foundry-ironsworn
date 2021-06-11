@@ -15,13 +15,23 @@
 <div class="flexcol item-row" data-id="{{id}}">
     <div class="flexrow">
         <h2>{{name}} ({{localize (concat 'IRONSWORN.' (capitalize data.data.rank))}})</h2>
-        <div class="block clickable ironsworn__{{type}}__settings" data-item="{{id}}" style="flex-grow: 0;">
-            <i class="fas fa-edit"></i>
+        {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+        <div 
+          class="clickable block nogrow ironsworn__{{type}}__delete" 
+          data-item="{{id}}" 
+        >
+          <i class="fas fa-trash"></i>
+        </div>
+        {{/if}}
+        <div 
+          class="clickable block nogrow ironsworn__{{type}}__settings" 
+          data-item="{{id}}" 
+        >
+          <i class="fas fa-edit"></i>
         </div>
         <div
-          class="clickable block ironsworn__progress__mark"
+          class="clickable block nogrow ironsworn__progress__mark" {{! This works for vows too }}
           title="{{localize 'IRONSWORN.MarkProgress'}}"
-          style="flex-grow: 0;"
           data-item="{{id}}"
         >
             <i class="fas fa-play"></i>
@@ -115,7 +125,7 @@
                 </div>
                 {{/inline}}
 
-                {{#if actor.data.flags.foundry-ironsworn.editStats}}
+                {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                 {{>statEdit stat="edge"}}
                 {{>statEdit stat="heart"}}
                 {{>statEdit stat="iron"}}
