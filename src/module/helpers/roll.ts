@@ -1,3 +1,6 @@
+import { IronswornActor } from "../actor/actor"
+import { IronswornItem } from "../item/item"
+
 export async function ironswornMoveRoll(bonusExpr = '0', values = {}, title: string) {
   const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
   r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
@@ -32,3 +35,12 @@ export class IronswornRollDialog extends Dialog {
 Hooks.on('renderIronswornRollDialog', async (_dialog, html, _data) => {
   html.find('input').focus()
 })
+
+export function attachInlineRollListeners(html: JQuery, actor?: IronswornActor, item?: IronswornItem) {
+  html.find('a.inline-roll').on('click', (ev) => {
+    ev.preventDefault()
+    const el = ev.currentTarget
+    const moveTitle = `${item?.name || el.dataset.name} (${el.dataset.param})`
+    IronswornRollDialog.showDialog(actor?.data.data, el.dataset.param || '', moveTitle)
+  })
+}

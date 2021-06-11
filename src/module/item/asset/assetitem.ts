@@ -1,17 +1,24 @@
-import { IronswornRollDialog } from '../../helpers/roll'
+import { IronswornCharacterSheet } from '../../actor/sheets/charactersheet'
+import { attachInlineRollListeners, IronswornRollDialog } from '../../helpers/roll'
 import { BaseItem } from '../baseitem'
 import { AssetItemData } from '../itemtypes'
 
 export class AssetItem extends BaseItem {
   static entityName = 'asset'
 
-  static activateActorSheetListeners(html, sheet) {
+  static activateActorSheetListeners(html: JQuery, sheet: IronswornCharacterSheet) {
     super.activateActorSheetListeners(html, sheet)
 
     // TODO: rollables, tracks, etc.
-    html.find('.ironsworn__asset__expand').click((e) => this._onAssetHeaderClick.call(this, e, sheet))
-    html.find('.ironsworn__assettrack__value').click((e) => this._onTrackValueClick.call(this, e, sheet))
-    html.find('.ironsworn__assettrack__roll').click((e) => this._onTrackRollClick.call(this, e, sheet))
+    html.find('.ironsworn__asset__expand').on('click', (e) => this._onAssetHeaderClick.call(this, e, sheet))
+    html.find('.ironsworn__assettrack__value').on('click', (e) => this._onTrackValueClick.call(this, e, sheet))
+    html.find('.ironsworn__assettrack__roll').on('click', (e) => this._onTrackRollClick.call(this, e, sheet))
+
+    html.find('.ironsworn__asset').each((_i, el) => {
+      const itemId = el.dataset.item as string
+      const item = sheet.actor.items.get(itemId)
+      attachInlineRollListeners($(el), sheet.actor, item)
+    })
   }
 
   static _onAssetHeaderClick(ev: JQuery.ClickEvent, sheet: ActorSheet) {
