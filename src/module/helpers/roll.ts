@@ -36,11 +36,18 @@ Hooks.on('renderIronswornRollDialog', async (_dialog, html, _data) => {
   html.find('input').focus()
 })
 
-export function attachInlineRollListeners(html: JQuery, actor?: IronswornActor, item?: IronswornItem) {
+interface InlineRollListenerOptions {
+  actor?: IronswornActor
+  item?: IronswornItem
+  name?: string
+}
+
+export function attachInlineRollListeners(html: JQuery, opts?: InlineRollListenerOptions) {
+  const realOpts = {...opts}
   html.find('a.inline-roll').on('click', (ev) => {
     ev.preventDefault()
     const el = ev.currentTarget
-    const moveTitle = `${item?.name || el.dataset.name} (${el.dataset.param})`
-    IronswornRollDialog.showDialog(actor?.data.data, el.dataset.param || '', moveTitle)
+    const moveTitle = `${realOpts.item?.name || realOpts.name} (${el.dataset.param})`
+    IronswornRollDialog.showDialog(realOpts.actor?.data.data, el.dataset.param || '', moveTitle)
   })
 }

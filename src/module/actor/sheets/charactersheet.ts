@@ -37,6 +37,11 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     html.find('.ironsworn__stat__roll').on('click', (e) => this._onStatRoll.call(this, e))
     html.find('.ironsworn__stat__value').on('click', (e) => this._onStatSet.call(this, e))
     html.find('.ironsworn__momentum__burn').on('click', (e) => this._onBurnMomentum.call(this, e))
+    html.find('.ironsworn__builtin__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
+
+    html.find('.ironsworn__builtin__move').each((_i, el) => {
+      attachInlineRollListeners($(el), {actor: this.actor, name: el.dataset.name})
+    })
   }
 
   getData() {
@@ -89,6 +94,18 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
 
     const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
     this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
+  }
+
+  _handleBuiltInMoveExpand(e: JQuery.ClickEvent) {
+    e.preventDefault()
+    const li = $(e.currentTarget).parents('li')
+    const summary = li.children('.move-summary')
+    if (li.hasClass('expanded')) {
+      summary.slideUp(200)
+    } else {
+      summary.slideDown(200)
+    }
+    li.toggleClass('expanded')
   }
 
   _onBurnMomentum(ev) {
