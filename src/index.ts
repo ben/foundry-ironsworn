@@ -5,7 +5,6 @@
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
-import { importFromDatasworn } from './module/datasworn'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
@@ -65,11 +64,6 @@ Hooks.once('init', async () => {
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
-
-  // Some handy globals
-  game.Ironsworn = {
-    importFromDatasworn,
-  }
 })
 
 Hooks.once('setup', () => {

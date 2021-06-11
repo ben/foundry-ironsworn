@@ -1,3 +1,4 @@
+import { importFromDatasworn } from "./module/datasworn";
 import { AssetItem } from "./module/item/asset/assetitem"
 import { BaseItem } from "./module/item/baseitem";
 import { BondsetItem } from "./module/item/bondset/bondsetitem"
@@ -7,6 +8,7 @@ import { VowItem } from "./module/item/vow/vowitem";
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
+  importFromDatasworn: typeof importFromDatasworn
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -16,5 +18,7 @@ export const IRONSWORN: IronswornConfig = {
     MoveItem,
     ProgressItem,
     VowItem,
-  ]
+  ],
+
+  importFromDatasworn,
 }
