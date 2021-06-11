@@ -1,5 +1,5 @@
 import { RANK_INCREMENTS } from '../constants'
-import { IronswornItemData } from './itemtypes'
+import { AssetItemData, IronswornItemData, ProgressItemData } from './itemtypes'
 
 /**
  * Extend the base Iteem entity
@@ -12,8 +12,9 @@ export class IronswornItem extends Item<IronswornItemData> {
   markProgress() {
     if ((this.data.data as any).rank === undefined) return
 
-    const increment = RANK_INCREMENTS[(this.data.data as any).rank]
-    const newValue = Math.min((this.data.data as any).current + increment, 40)
+    const data = this.data as ProgressItemData
+    const increment = RANK_INCREMENTS[data.data.rank]
+    const newValue = Math.min(data.data.current + increment, 40)
     return this.update({ 'data.current': newValue })
   }
 
@@ -24,7 +25,8 @@ export class IronswornItem extends Item<IronswornItemData> {
 
   fulfill() {
     if ((this.data.data as any).rank === undefined) return
-    const progress = Math.floor((this.data.data as any).current / 4)
+    const data = this.data as ProgressItemData
+    const progress = Math.floor(data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`).roll()
     const i18nKey = this.type === 'vow' ? 'IRONSWORN.FulfillVow' : 'IRONSWORN.ProgressRoll'
     r.toMessage({
@@ -36,16 +38,19 @@ export class IronswornItem extends Item<IronswornItemData> {
    * Asset methods
    */
   createField() {
-    const fields = (this.data.data as any).fields
+    const data = this.data as AssetItemData
+    const fields = data.data.fields
     fields.push({ name: '', value: '' })
     return this.update({ 'data.fields': fields })
   }
   deleteField(name) {
-    const fields = (this.data.data as any).fields
+    const data = this.data as AssetItemData
+    const fields = data.data.fields
     return this.update({ 'data.fields': fields.filter((x) => x.name !== name) })
   }
   createAbility() {
-    const abilities = (this.data.data as any).abilities
+    const data = this.data as AssetItemData
+    const abilities = data.data.abilities
     abilities.push({
       enabled: false,
       description: '',
@@ -53,7 +58,8 @@ export class IronswornItem extends Item<IronswornItemData> {
     return this.update({ 'data.abilities': abilities })
   }
   deleteAbility(name) {
-    const abilities = (this.data.data as any).abilities
+    const data = this.data as AssetItemData
+    const abilities = data.data.abilities
     return this.update({
       'data.abilities': abilities.filter((x) => x.name !== name),
     })

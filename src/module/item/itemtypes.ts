@@ -13,6 +13,7 @@ interface AssetField {
 }
 
 interface AssetAbility {
+  name?: string
   enabled: boolean
   description: string
 }
@@ -40,7 +41,7 @@ export interface AssetItemData extends Item.Data<AssetData> {
 
 ///////////////////////////////
 
-interface ProgressData extends ProgressBase {}
+type ProgressData = ProgressBase
 
 export interface ProgressItemData extends Item.Data<ProgressData> {
   type: 'progress'
