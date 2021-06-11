@@ -11,7 +11,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor'],
-      width: 1200,
+      width: 1000,
       height: 800,
       dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }],
     } as CharacterSheetOptions)
