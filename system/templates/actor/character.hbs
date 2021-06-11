@@ -159,7 +159,16 @@
                                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                                         <div class="flexrow">
                                             <strong>{{name}}</strong>
-                                            <div data-item="{{id}}" class="block clickable ironsworn__{{type}}__settings" style="flex-grow: 0;">
+                                            {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+                                            <div 
+                                              class="clickable block nogrow ironsworn__{{type}}__delete" 
+                                              data-item="{{id}}" 
+                                              style="margin: 0 5px;"
+                                            >
+                                              <i class="fas fa-trash"></i>
+                                            </div>
+                                            {{/if}}
+                                            <div data-item="{{id}}" class="block clickable nogrow ironsworn__{{type}}__settings">
                                                 <i class="fas fa-edit"></i>
                                             </div>
                                         </div>

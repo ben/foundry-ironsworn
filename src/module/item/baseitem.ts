@@ -1,3 +1,5 @@
+import { capitalize } from "../helpers/util"
+
 export abstract class BaseItem {
   static entityName = ''
 
@@ -104,37 +106,20 @@ export abstract class BaseItem {
   /**
    * Itemtype agnostic handler for deleting an item via event.
    */
-  static _onItemDelete(e, sheet) {
+  static _onItemDelete(e, sheet: ActorSheet) {
     e.preventDefault()
     e.stopPropagation()
 
     const data = e.currentTarget.dataset
     const item = sheet.actor.items.get(data.item)
+    const titleKey = `IRONSWORN.Delete${capitalize(item?.type || '')}`
 
-    new Dialog(
-      {
-        title: `${game.i18n.localize('FAx.Dialog.EntityDelete')} ${item.name}`,
-        content: game.i18n.localize('FAx.Dialog.EntityDeleteText'),
-        default: 'submit',
-        buttons: {
-          cancel: {
-            icon: '<i class="fas fa-times"></i>',
-            label: game.i18n.localize('FAx.Dialog.Cancel'),
-            callback: () => null,
-          },
-          submit: {
-            icon: '<i class="fas fa-check"></i>',
-            label: game.i18n.localize('FAx.Dialog.Confirm'),
-            callback: async () => {
-              item.delete()
-            },
-          },
-        },
-      },
-      {
-        classes: ['ironsworn', 'ironsworn__dialog'],
-      }
-    ).render(true)
+    Dialog.confirm({
+      title: game.i18n.localize(titleKey),
+      content: `<p><strong>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</strong></p>`,
+      yes: () => item?.delete(),
+      defaultYes: false,
+    })
   }
 
   /*************************
