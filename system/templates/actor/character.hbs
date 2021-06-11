@@ -15,11 +15,9 @@
 <div class="flexcol item-row" data-id="{{id}}">
     <div class="flexrow">
         <h2>{{name}} ({{localize (concat 'IRONSWORN.' (capitalize data.data.rank))}})</h2>
-        {{#if actor.data.flags.foundry-ironsworn.editStats}}
         <div class="block clickable ironsworn__{{type}}__settings" data-item="{{id}}" style="flex-grow: 0;">
             <i class="fas fa-edit"></i>
         </div>
-        {{/if}}
         <div
           class="clickable block ironsworn__progress__mark"
           title="{{localize 'IRONSWORN.MarkProgress'}}"
