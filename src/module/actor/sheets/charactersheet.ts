@@ -37,7 +37,6 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     html.find('.ironsworn__stat__roll').click((e) => this._onStatRoll.call(this, e))
     html.find('.ironsworn__stat__value').click((e) => this._onStatSet.call(this, e))
     html.find('.ironsworn__momentum__burn').click((e) => this._onBurnMomentum.call(this, e))
-    html.find('.ironsworn__asset__expand').click((e) => this._onAssetHeaderClick.call(this, e))
   }
 
   getData() {
@@ -127,17 +126,6 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
       if (resource !== 'momentum' || newValue <= momentumMax) {
         await this.actor.update({ data: { [resource]: newValue } })
       }
-    }
-  }
-
-  async _onAssetHeaderClick(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
-    const el = ev.currentTarget
-    const itemId = el.dataset.item as string
-    const item = this.actor.items.get(itemId)
-    if (item) {
-      item.setFlag('foundry-ironsworn', 'expanded', !item.getFlag('foundry-ironsworn', 'expanded'))
     }
   }
 }
