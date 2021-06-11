@@ -1,4 +1,4 @@
-import { IronswornRollDialog } from '../../helpers/roll'
+import { attachInlineRollListeners, IronswornRollDialog } from '../../helpers/roll'
 import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
 import { IronswornCharacterData } from '../actortypes'
@@ -21,7 +21,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     return 'systems/foundry-ironsworn/templates/actor/character.hbs'
   }
 
-  activateListeners(html) {
+  activateListeners(html: JQuery) {
     super.activateListeners(html)
 
     // Custom sheet listeners for every ItemType
@@ -34,9 +34,9 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     //   CONFIG.IRONSWORN.sheetComponents.actor[sheetComponent].activateListeners(html, this)
     // }
 
-    html.find('.ironsworn__stat__roll').click((e) => this._onStatRoll.call(this, e))
-    html.find('.ironsworn__stat__value').click((e) => this._onStatSet.call(this, e))
-    html.find('.ironsworn__momentum__burn').click((e) => this._onBurnMomentum.call(this, e))
+    html.find('.ironsworn__stat__roll').on('click', (e) => this._onStatRoll.call(this, e))
+    html.find('.ironsworn__stat__value').on('click', (e) => this._onStatSet.call(this, e))
+    html.find('.ironsworn__momentum__burn').on('click', (e) => this._onBurnMomentum.call(this, e))
   }
 
   getData() {
@@ -84,19 +84,19 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     ]
   }
 
-  async _toggleEditMode(e: JQuery.ClickEvent): Promise<void> {
+  _toggleEditMode(e: JQuery.ClickEvent) {
     e.preventDefault()
 
     const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
-    await this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
+    this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
-  async _onBurnMomentum(ev) {
+  _onBurnMomentum(ev) {
     ev.preventDefault()
 
     const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
     if (momentum > momentumReset) {
-      await this.actor.update({
+      this.actor.update({
         data: { momentum: momentumReset },
       })
     }
@@ -114,7 +114,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     }
   }
 
-  async _onStatSet(ev: JQuery.ClickEvent) {
+  _onStatSet(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const el = ev.currentTarget
@@ -124,7 +124,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
       const newValue = parseInt(value)
       const { momentumMax } = this.actor.data.data as IronswornCharacterData
       if (resource !== 'momentum' || newValue <= momentumMax) {
-        await this.actor.update({ data: { [resource]: newValue } })
+        this.actor.update({ data: { [resource]: newValue } })
       }
     }
   }
