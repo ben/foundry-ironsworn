@@ -3,7 +3,7 @@ export const RANKS = {
   dangerous: 'IRONSWORN.Dangerous',
   formidible: 'IRONSWORN.Formidible',
   extreme: 'IRONSWORN.Extreme',
-  epic: 'IRONSWORN.Epic'
+  epic: 'IRONSWORN.Epic',
 }
 
 export const RANK_INCREMENTS = {
@@ -11,5 +11,5 @@ export const RANK_INCREMENTS = {
   dangerous: 8,
   formidible: 4,
   extreme: 2,
-  epic: 1
+  epic: 1,
 }

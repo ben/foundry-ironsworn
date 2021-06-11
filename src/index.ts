@@ -2,16 +2,27 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
-import { IronswornActor } from "./module/actor/actor"
-import { IronswornActorSheet } from "./module/actor/sheets/actor-sheet"
-import { importFromDatasworn } from "./module/datasworn"
-import { IronswornHandlebarsHelpers } from "./module/helpers/handlebars"
-import { IronswornItem } from "./module/item/item"
-import { IronswornItemSheet } from "./module/item/sheets/item-sheet"
-import "./styles/ironsworn.less"
+import { IRONSWORN } from './config'
+import { IronswornActor } from './module/actor/actor'
+import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
+import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
+import { TemplatePreloader } from './module/helpers/templatepreloader'
+import { AssetSheet } from './module/item/asset/assetsheet'
+import { BondsetSheet } from './module/item/bondset/bondsetsheet'
+import { IronswornItem } from './module/item/item'
+import { MoveSheet } from './module/item/move/movesheet'
+import { ProgressSheet } from './module/item/progress/progresssheet'
+import { VowSheet } from './module/item/vow/vowsheet'
+
+import './styles/ironsworn.less'
 
 Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
+
+  CONFIG.IRONSWORN = IRONSWORN
+
+  // Preload all needed templates
+  await TemplatePreloader.preloadHandlebarsTemplates()
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
@@ -25,22 +36,34 @@ Hooks.once('init', async () => {
   Items.unregisterSheet('core', ItemSheet)
 
   // Register our own sheets
-  Actors.registerSheet('ironsworn', IronswornActorSheet, {
-    // types: [],
-    makeDefault: true
+  Actors.registerSheet('ironsworn', IronswornCharacterSheet, {
+    types: ['character'],
+    makeDefault: true,
   })
-  Items.registerSheet('ironsworn', IronswornItemSheet, {
-    // types: [],
-    makeDefault: true
+
+  Items.registerSheet('ironsworn', AssetSheet, {
+    types: ['asset'],
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', BondsetSheet, {
+    types: ['bondset'],
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', MoveSheet, {
+    types: ['move'],
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', ProgressSheet, {
+    types: ['progress'],
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', VowSheet, {
+    types: ['vow'],
+    makeDefault: true,
   })
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
-
-  // Some handy globals
-  game.Ironsworn = {
-    importFromDatasworn
-  }
 })
 
 Hooks.once('setup', () => {
@@ -51,7 +74,7 @@ Hooks.once('setup', () => {
         user: game?.user?.id,
         flavor: null,
         template: template,
-        blind: false
+        blind: false,
       },
       chatOptions
     )
@@ -65,9 +88,32 @@ Hooks.once('setup', () => {
       flavor: isPrivate ? null : chatOptions.flavor,
       user: chatOptions.user,
       tooltip: isPrivate ? '' : await this.getTooltip(),
-      total: isPrivate ? '?' : Math.round(this.total * 100) / 100
+      total: isPrivate ? '?' : Math.round(this.total * 100) / 100,
     }
     // Render the roll display template
     return renderTemplate(chatOptions.template || template, chatData)
   }
 })
+
+/* -------------------------------- */
+/*	Webpack HMR                     */
+/* -------------------------------- */
+if (module.hot) {
+  module.hot.accept()
+
+  if (module.hot.status() === 'apply') {
+    for (const template in _templateCache) {
+      if (Object.prototype.hasOwnProperty.call(_templateCache, template)) {
+        delete _templateCache[template]
+      }
+    }
+
+    TemplatePreloader.preloadHandlebarsTemplates().then(() => {
+      for (const application in ui.windows) {
+        if (Object.prototype.hasOwnProperty.call(ui.windows, application)) {
+          ui.windows[application].render(true)
+        }
+      }
+    })
+  }
+}

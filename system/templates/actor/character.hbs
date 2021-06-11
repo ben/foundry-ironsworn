@@ -2,6 +2,7 @@
 {{#rangeEach from=from to=to current=(lookup data.data stat)}}
 <div class="
         clickable block stack-row
+        ironsworn__stat__value
         {{stat}}
         {{#if isCurrent}} selected {{/if}}
     " data-resource="{{stat}}" data-value="{{value}}">
@@ -14,20 +15,27 @@
 <div class="flexcol item-row" data-id="{{id}}">
     <div class="flexrow">
         <h2>{{name}} ({{localize (concat 'IRONSWORN.' (capitalize data.data.rank))}})</h2>
-        <div class="block clickable" style="flex-grow: 0;">
-            <i class="edit-item fas fa-edit"></i>
+        {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+        <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}">
+            <i class="fas fa-trash"></i>
+        </div>
+        {{/if}}
+        <div class="clickable block nogrow ironsworn__{{type}}__settings" data-item="{{id}}">
+            <i class="fas fa-edit"></i>
+        </div>
+        <div class="clickable block nogrow ironsworn__progress__mark" {{! This works for vows too }}
+            title="{{localize 'IRONSWORN.MarkProgress'}}" data-item="{{id}}">
+            <i class="fas fa-play"></i>
+        </div>
+        <div class="clickable block ironsworn__progress__fulfill" title="{{localize 'IRONSWORN.FulfillVow'}}"
+            style="flex-grow: 0;" data-item="{{id}}">
+            <i class="fas fa-check"></i>
         </div>
     </div>
     <div class="flexrow">
         {{#each (progressCharacters data.data.current)}}
         <div class="progress">{{{this}}}</div>
         {{/each}}
-        <div class="clickable block markProgress" title="{{localize 'IRONSWORN.MarkProgress'}}">
-            <i class="fas fa-play"></i>
-        </div>
-        <div class="clickable block fulfillProgress" title="{{localize 'IRONSWORN.FulfillVow'}}">
-            <i class="fas fa-check"></i>
-        </div>
     </div>
 </div>
 {{/inline}}
@@ -44,11 +52,14 @@
             <div class="flexrow">
                 {{#rangeEach from=1 to=9 current=data.data.xp}}
                 <div class="
-                    clickable block xp
+                    clickable block xp 
+                    ironsworn__stat__value
                     {{#if lteCurrent}} selected {{/if}}
                 " data-resource="xp" data-value="{{value}}"></div>
                 {{/rangeEach}}
-                <div class="clickable block xp clear" data-resource="xp" data-value="0">×</div>
+                <div class="clickable block xp clear ironsworn__stat__value" data-resource="xp" data-value="0">
+                    ×
+                </div>
             </div>
         </div>
     </header>
@@ -59,7 +70,7 @@
                 <div class="flexcol stack momentum">
                     {{>stack stat="momentum" from=10 to=-6}}
                     <hr style="flex-grow: 0;" />
-                    <div class="clickable block stack-row" style="padding: 0 5px;" id="burn">
+                    <div class="clickable block stack-row ironsworn__momentum__burn" style="padding: 0 5px;">
                         {{localize 'IRONSWORN.Burn'}}
                     </div>
                     {{localize 'IRONSWORN.Reset'}}: {{data.data.momentumReset}}
@@ -69,29 +80,32 @@
             </div>
         </div>
         <div class="flexcol margin-left">
-            <div class="flexrow" style="flex-wrap: nowrap;">
+            <div class="flexrow nogrow" style="flex-wrap: nowrap;">
                 <div class="flexcol stack health">
                     {{>stack stat="health" from=5 to=0}}
                 </div>
-                <h4 class="vertical clickable text" data-stat="health">{{localize 'IRONSWORN.Health'}}</h4>
+                <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="health">{{localize
+                    'IRONSWORN.Health'}}</h4>
             </div>
-            <div class="flexrow" style="flex-wrap: nowrap;">
+            <div class="flexrow nogrow" style="flex-wrap: nowrap;">
                 <div class="flexcol stack spirit">
                     {{>stack stat="spirit" from=5 to=0}}
                 </div>
-                <h4 class="vertical clickable text" data-stat="spirit">{{localize 'IRONSWORN.Spirit'}}</h4>
+                <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="spirit">{{localize
+                    'IRONSWORN.Spirit'}}</h4>
             </div>
-            <div class="flexrow" style="flex-wrap: nowrap;">
+            <div class="flexrow nogrow" style="flex-wrap: nowrap;">
                 <div class="flexcol stack supply">
                     {{>stack stat="supply" from=5 to=0}}
                 </div>
-                <h4 class="vertical clickable text" data-stat="supply">{{localize 'IRONSWORN.Supply'}}</h4>
+                <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="supply">{{localize
+                    'IRONSWORN.Supply'}}</h4>
             </div>
         </div>
         <div class="flexcol">
             <div class="flexrow stats">
                 {{#*inline "stat"}}
-                <div class="stat clickable block" data-stat="{{stat}}">
+                <div class="stat clickable block ironsworn__stat__roll" data-stat="{{stat}}">
                     <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
                     <h3>{{lookup data.data stat}}</h3>
                 </div>
@@ -104,7 +118,7 @@
                 </div>
                 {{/inline}}
 
-                {{#if actor.data.flags.foundry-ironsworn.editStats}}
+                {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                 {{>statEdit stat="edge"}}
                 {{>statEdit stat="heart"}}
                 {{>statEdit stat="iron"}}
@@ -117,141 +131,155 @@
                 {{>stat stat="shadow"}}
                 {{>stat stat="wits"}}
                 {{/if}}
-
-                <div class="clickable block flexcol edit" id="edit-stats">
-                    <p class="flexrow" style="align-items: center; padding-left: 4px;">
-                        <i class="fas fa-edit"></i>
-                    </p>
-                </div>
             </div>
 
-            <div class="flexrow">
+            <div class="flexcol">
+                <div class="flexrow">
 
-                <div class="flexcol">
-                    <section class="sheet-area">
-                        <h1 style="text-align:center">{{localize 'IRONSWORN.Assets'}}</h1>
-                        <div class="flexcol item-list">
-                            <ol>
-                                {{#each assets}}
-                                <li class="item-row" data-id="{{id}}">
-                                    <div class="asset-entry">
-                                        <div class="flexrow">
-                                            <strong>{{name}}</strong>
-                                            <div class="block clickable" style="flex-grow: 0;">
-                                                <i class="edit-item fas fa-edit"></i>
+                    <div class="flexcol">
+                        <section class="sheet-area">
+                            <h1 style="text-align:center">{{localize 'IRONSWORN.Assets'}}</h1>
+                            <div class="flexcol item-list">
+                                <ol>
+                                    {{#each assets}}
+                                    <li class="item-row ironsworn__asset" data-item="{{id}}">
+                                        <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
+                                            <div class="flexrow">
+                                                <strong>{{name}}</strong>
+                                                {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+                                                <div class="clickable block nogrow ironsworn__{{type}}__delete"
+                                                    data-item="{{id}}" style="margin: 0 5px;">
+                                                    <i class="fas fa-trash"></i>
+                                                </div>
+                                                {{/if}}
+                                                <div data-item="{{id}}"
+                                                    class="block clickable nogrow ironsworn__{{type}}__settings">
+                                                    <i class="fas fa-edit"></i>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="asset-summary" style="display:
-                                    {{#if (lookup actor.data.flags.foundry-ironsworn (concat 'expanded-' id))}}
+                                        <div class="asset-summary" style="display:
+                                    {{#if data.flags.foundry-ironsworn.expanded}}
                                     block
                                     {{else}}
                                     none
                                     {{/if}}
                                     ;">
-                                        {{#each data.data.fields}}
-                                        <p><strong>{{name}}:</strong> {{value}}</p>
-                                        {{/each}}
-
-                                        {{#if data.data.description}}
-                                        <p>{{{enrichHtml data.data.description}}}</p>
-                                        {{/if}}
-
-                                        <ul>
-                                            {{#each data.data.abilities}}
-                                            {{#if enabled}}
-                                            <li>{{{enrichHtml description}}}</li>
-                                            {{/if}}
+                                            {{#each data.data.fields}}
+                                            <p><strong>{{name}}:</strong> {{value}}</p>
                                             {{/each}}
-                                        </ul>
 
-                                        {{#if data.data.track.enabled}}
-                                        <div class="flexrow" style="line-height: 30px;">
-                                            {{#rangeEach from=0 to=data.data.track.max current=data.data.track.current}}
-                                            <div class="clickable block track-target progress
-                                                      {{#if isCurrent}} selected {{/if}}" data-value={{value}}>
-                                                {{value}}
+                                            {{#if data.data.description}}
+                                            <p>{{{enrichHtml data.data.description}}}</p>
+                                            {{/if}}
+
+                                            <ul>
+                                                {{#each data.data.abilities}}
+                                                {{#if enabled}}
+                                                <li>{{{enrichHtml description}}}</li>
+                                                {{/if}}
+                                                {{/each}}
+                                            </ul>
+
+                                            {{#if data.data.track.enabled}}
+                                            <div class="flexrow" style="line-height: 30px;">
+                                                {{#rangeEach from=0 to=data.data.track.max
+                                                current=data.data.track.current}}
+                                                <div class="
+                                                clickable block progress ironsworn__assettrack__value
+                                                {{#if isCurrent}} selected {{/if}}
+                                              " data-item="{{id}}" data-value={{value}}>
+                                                    {{value}}
+                                                </div>
+                                                {{/rangeEach}}
+                                                <div class="clickable block ironsworn__assettrack__roll"
+                                                    style="text-align: center; line-height: 40px;">
+                                                    <i class="fas fa-dice-d6"></i>
+                                                </div>
                                             </div>
-                                            {{/rangeEach}}
-                                            <div class="clickable block roll-asset-track"
-                                                style="text-align: center; line-height: 40px;">
-                                                <i class="fas fa-dice-d6"></i>
-                                            </div>
+                                            {{/if}}
+
                                         </div>
-                                        {{/if}}
-
-                                    </div>
-                                </li>
+                                    </li>
+                                    {{/each}}
+                                </ol>
+                            </div>
+                        </section>
+                        <section class="sheet-area" style="flex-grow: 0;">
+                            <h1 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h1>
+                            <div class="flexrow">
+                                {{#each (progressCharacters bonds.count)}}
+                                <div class="progress">{{{this}}}</div>
                                 {{/each}}
-                            </ol>
-                        </div>
-                    </section>
-                    <section class="sheet-area" style="flex-grow: 0;">
-                        <h1 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h1>
-                        <div class="flexrow">
-                            {{#each (progressCharacters bonds.count)}}
-                            <div class="progress">{{{this}}}</div>
+                                <div data-item="{{bonds.id}}" class="ironsworn__bondset__settings block clickable"
+                                    style="flex-grow: 0; padding: 5px; margin: 2px;">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="flexcol">
+                        <section class="sheet-area progresses">
+                            <h1 style="text-align:center">{{localize 'IRONSWORN.Vows'}}</h1>
+                            {{#each vows}}
+                            {{>progress}}
                             {{/each}}
-                            <div class="block clickable" style="flex-grow: 0; padding: 5px; margin: 2px;">
-                                <i class="edit-bonds fas fa-edit" data-id="{{bonds.id}}"></i>
+                            <div class="block clickable ironsworn__vow__add">
+                                <i class="fas fa-plus"></i>
                             </div>
-                        </div>
-                    </section>
 
-                    <section class="sheet-area" style="flex-grow: 0;">
-                        <h1 style="text-align:center">{{localize 'IRONSWORN.Debilities'}}</h1>
-
-                        {{#*inline "debility"}}
-                        <label class="checkbox">
-                            <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.data.debility
-                                name)}}>
-                            {{capitalize name}}
-                        </label>
-                        {{/inline}}
-
-                        <div class="flexrow">
-                            <div class="flexcol">
-                                <h3>{{localize 'IRONSWORN.Conditions'}}</h3>
-                                {{>debility name="wounded"}}
-                                {{>debility name="unprepared"}}
-                                {{>debility name="shaken"}}
-                                {{>debility name="encumbered"}}
+                        </section>
+                        <section class="sheet-area progresses">
+                            <h1 style="text-align:center">{{localize 'IRONSWORN.Progress'}}</h1>
+                            {{#each progresses}}
+                            {{>progress}}
+                            {{/each}}
+                            <div class="block clickable ironsworn__progress__add">
+                                <i class="fas fa-plus"></i>
                             </div>
-                            <div class="flexcol">
-                                <h3>{{localize 'IRONSWORN.Banes'}}</h3>
-                                {{>debility name="maimed"}}
-                                {{>debility name="corrupted"}}
-
-                                <h3>{{localize 'IRONSWORN.Burdens'}}</h3>
-                                {{>debility name="cursed"}}
-                                {{>debility name="tormented"}}
-                            </div>
-                        </div>
-                    </section>
+                        </section>
+                    </div>
 
                 </div>
+                <section class="sheet-area" style="flex-grow: 0;">
+                    <h1 style="text-align:center">{{localize 'IRONSWORN.Debilities'}}</h1>
 
-                <div class="flexcol">
-                    <section class="sheet-area progresses">
-                        <h1 style="text-align:center">{{localize 'IRONSWORN.Vows'}}</h1>
-                        {{#each vows}}
-                        {{>progress}}
-                        {{/each}}
-                        <div class="block clickable add-item" data-type="vow">
-                            <i class="fas fa-plus"></i>
-                        </div>
+                    {{#*inline "debility"}}
+                    <label class="checkbox">
+                        <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.data.debility
+                            name)}}>
+                        {{capitalize name}}
+                    </label>
+                    {{/inline}}
+                    <div class="flexrow">
+                        <div class="flexcol" style="flex:2;">
 
-                    </section>
-                    <section class="sheet-area progresses">
-                        <h1 style="text-align:center">{{localize 'IRONSWORN.Progress'}}</h1>
-                        {{#each progresses}}
-                        {{>progress}}
-                        {{/each}}
-                        <div class="block clickable add-item" data-type="progress">
-                            <i class="fas fa-plus"></i>
+                            <h3 style="border-bottom: 2px solid gray; margin-right: 5px;">{{localize 'IRONSWORN.Conditions'}}</h3>
+                            <div class="flexrow">
+                                <div class="flexcol">
+                                    {{>debility name="wounded"}}
+                                    {{>debility name="unprepared"}}
+
+                                </div>
+                                <div class="flexcol">
+                                    {{>debility name="shaken"}}
+                                    {{>debility name="encumbered"}}
+                                </div>
+                            </div>
                         </div>
-                    </section>
-                </div>
+                        <div class="flexcol">
+                            <h3 style="border-bottom: 2px solid gray; margin-right: 5px;">{{localize 'IRONSWORN.Banes'}}</h3>
+                            {{>debility name="maimed"}}
+                            {{>debility name="corrupted"}}
+                        </div>
+                        <div class="flexcol">
+                            <h3 style="border-bottom: 2px solid gray; margin-right: 5px;">{{localize 'IRONSWORN.Burdens'}}</h3>
+                            {{>debility name="cursed"}}
+                            {{>debility name="tormented"}}
+                        </div>
+                    </div>
+                </section>
 
             </div>
         </div>
@@ -264,8 +292,8 @@
                     {{#if separator}}
                     <h2>{{title}}</h2>
                     {{else}}
-                    <li class="item-row" data-name="{{title}}">
-                        <div class="built-in-move-entry">{{title}}</div>
+                    <li class="item-row ironsworn__builtin__move" data-name="{{title}}">
+                        <div class="ironsworn__builtin__move__expand">{{title}}</div>
                         <div class="move-summary" style="display: none;">{{{enrichHtml description}}}</div>
                     </li>
                     {{/if}}
@@ -278,7 +306,7 @@
 
                 {{#*inline "oracle"}}
                 <li class="item">
-                    <h3 class="clickable text move" data-table="Oracle: {{name}}">{{name}}</h3>
+                    <h3 class="clickable text move ironsworn__oracle" data-table="Oracle: {{name}}">{{name}}</h3>
                 </li>
                 {{/inline}}
 
