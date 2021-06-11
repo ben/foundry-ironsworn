@@ -1,6 +1,7 @@
 import { IronswornRollDialog } from '../../helpers/roll'
 import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
+import { IronswornCharacterData } from '../actortypes'
 
 export interface CharacterSheetOptions extends BaseEntitySheet.Options {
   xyz?: string
@@ -34,6 +35,8 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     // }
 
     html.find('.ironsworn__stat__roll').click((e) => this._onStatRoll.call(this, e))
+    html.find('.ironsworn__stat__value').click((e) => this._onStatSet.call(this, e))
+    html.find('.ironsworn__momentum__burn').click((e) => this._onBurnMomentum.call(this, e))
   }
 
   getData() {
@@ -88,6 +91,17 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     await this.actor.setFlag('foundry-ironsworn', 'editStats', !currentValue)
   }
 
+  async _onBurnMomentum(ev) {
+    ev.preventDefault()
+
+    const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
+    if (momentum > momentumReset) {
+      await this.actor.update({
+        data: { momentum: momentumReset },
+      })
+    }
+  }
+
   _onStatRoll(ev) {
     ev.preventDefault()
 
@@ -97,6 +111,21 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
       const rollText = game.i18n.localize('IRONSWORN.Roll')
       const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
       IronswornRollDialog.showDialog(this.actor.data.data, stat, `${rollText} +${statText}`)
+    }
+  }
+
+  async _onStatSet(ev) {
+    ev.preventDefault()
+
+    const el = ev.currentTarget
+    const { resource, value } = el.dataset
+    if (resource) {
+      // Clicked a value in momentum/health/etc, set the value
+      const newValue = parseInt(value)
+      const { momentumMax } = this.actor.data.data as IronswornCharacterData
+      if (resource !== 'momentum' || newValue <= momentumMax) {
+        await this.actor.update({ data: { [resource]: newValue } })
+      }
     }
   }
 }

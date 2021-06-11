@@ -2,6 +2,7 @@
 {{#rangeEach from=from to=to current=(lookup data.data stat)}}
 <div class="
         clickable block stack-row
+        ironsworn__stat__value
         {{stat}}
         {{#if isCurrent}} selected {{/if}}
     " data-resource="{{stat}}" data-value="{{value}}">
@@ -19,15 +20,15 @@
             <i class="fas fa-edit"></i>
         </div>
         {{/if}}
-        <div 
-          class="clickable block markProgress" 
+        <div
+          class="clickable block markProgress"
           title="{{localize 'IRONSWORN.MarkProgress'}}"
           style="flex-grow: 0;"
         >
             <i class="fas fa-play"></i>
         </div>
-        <div 
-          class="clickable block fulfillProgress" 
+        <div
+          class="clickable block fulfillProgress"
           title="{{localize 'IRONSWORN.FulfillVow'}}"
           style="flex-grow: 0;"
         >
@@ -69,7 +70,7 @@
                 <div class="flexcol stack momentum">
                     {{>stack stat="momentum" from=10 to=-6}}
                     <hr style="flex-grow: 0;" />
-                    <div class="clickable block stack-row" style="padding: 0 5px;" id="burn">
+                    <div class="clickable block stack-row ironsworn__momentum__burn" style="padding: 0 5px;">
                         {{localize 'IRONSWORN.Burn'}}
                     </div>
                     {{localize 'IRONSWORN.Reset'}}: {{data.data.momentumReset}}

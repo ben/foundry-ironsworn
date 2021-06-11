@@ -1,6 +1,6 @@
 import { IronswornItemData } from '../item/itemtypes'
 
-interface CharacterData {
+export interface IronswornCharacterData {
   biography: string
   edge: number
   heart: number
@@ -12,6 +12,8 @@ interface CharacterData {
   supply: number
   experience: number
   momentum: number
+  momentumMax: number
+  momentumReset: number
   debility: {
     corrupted: boolean
     cursed: boolean
@@ -25,7 +27,7 @@ interface CharacterData {
   xp: number
 }
 
-interface CharacterActorData extends Actor.Data<CharacterData, IronswornItemData> {
+interface CharacterActorData extends Actor.Data<IronswornCharacterData, IronswornItemData> {
   type: 'character'
 }
 
