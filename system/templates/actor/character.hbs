@@ -155,7 +155,7 @@
                         <div class="flexcol item-list">
                             <ol>
                                 {{#each assets}}
-                                <li class="item-row">
+                                <li class="item-row" data-item="{{id}}">
                                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                                         <div class="flexrow">
                                             <strong>{{name}}</strong>
@@ -199,12 +199,15 @@
                                         {{#if data.data.track.enabled}}
                                         <div class="flexrow" style="line-height: 30px;">
                                             {{#rangeEach from=0 to=data.data.track.max current=data.data.track.current}}
-                                            <div class="clickable block track-target progress
-                                                      {{#if isCurrent}} selected {{/if}}" data-value={{value}}>
+                                            <div 
+                                              class="
+                                                clickable block progress ironsworn__assettrack__value
+                                                {{#if isCurrent}} selected {{/if}}
+                                              " data-item="{{id}}" data-value={{value}}>
                                                 {{value}}
                                             </div>
                                             {{/rangeEach}}
-                                            <div class="clickable block roll-asset-track"
+                                            <div class="clickable block ironsworn__assettrack__roll"
                                                 style="text-align: center; line-height: 40px;">
                                                 <i class="fas fa-dice-d6"></i>
                                             </div>
