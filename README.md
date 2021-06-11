@@ -2,7 +2,7 @@
 
 This is an implementation of the [Ironsworn](https://www.ironswornrpg.com/) rule set for Foundry VTT.
 
-![Screenshot, also showing Dice so Nice](https://user-images.githubusercontent.com/39902/104860543-06ce4780-58e1-11eb-8c8e-7543222f1875.png)
+![Screenshot, also showing Dice so Nice](https://user-images.githubusercontent.com/39902/121752524-2b5fd180-cac5-11eb-8a1e-56523bef1a70.jpg)
 
 To install it, plug this URL into the install UI:
 
