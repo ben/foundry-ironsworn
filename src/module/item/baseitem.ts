@@ -1,4 +1,4 @@
-import { capitalize } from "../helpers/util"
+import { capitalize } from '../helpers/util'
 
 export abstract class BaseItem {
   static entityName = ''

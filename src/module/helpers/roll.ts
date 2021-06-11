@@ -1,5 +1,5 @@
-import { IronswornActor } from "../actor/actor"
-import { IronswornItem } from "../item/item"
+import { IronswornActor } from '../actor/actor'
+import { IronswornItem } from '../item/item'
 
 export async function ironswornMoveRoll(bonusExpr = '0', values = {}, title: string) {
   const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
@@ -43,7 +43,7 @@ interface InlineRollListenerOptions {
 }
 
 export function attachInlineRollListeners(html: JQuery, opts?: InlineRollListenerOptions) {
-  const realOpts = {...opts}
+  const realOpts = { ...opts }
   html.find('a.inline-roll').on('click', (ev) => {
     ev.preventDefault()
     const el = ev.currentTarget

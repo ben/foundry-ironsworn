@@ -17,7 +17,7 @@ export class AssetItem extends BaseItem {
     html.find('.ironsworn__asset').each((_i, el) => {
       const itemId = el.dataset.item as string
       const item = sheet.actor.items.get(itemId)
-      attachInlineRollListeners($(el), {actor: sheet.actor, item})
+      attachInlineRollListeners($(el), { actor: sheet.actor, item })
     })
   }
 
@@ -47,7 +47,7 @@ export class AssetItem extends BaseItem {
     if (item) {
       const data = {
         ...sheet.actor.getRollData(),
-        track: item.data.data.track.current
+        track: item.data.data.track.current,
       }
       IronswornRollDialog.showDialog(data, 'track', item.name)
     }
