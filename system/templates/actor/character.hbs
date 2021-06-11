@@ -21,16 +21,18 @@
         </div>
         {{/if}}
         <div
-          class="clickable block markProgress"
+          class="clickable block ironsworn__progress__mark"
           title="{{localize 'IRONSWORN.MarkProgress'}}"
           style="flex-grow: 0;"
+          data-item="{{id}}"
         >
             <i class="fas fa-play"></i>
         </div>
         <div
-          class="clickable block fulfillProgress"
+          class="clickable block ironsworn__progress__fulfill"
           title="{{localize 'IRONSWORN.FulfillVow'}}"
           style="flex-grow: 0;"
+          data-item="{{id}}"
         >
             <i class="fas fa-check"></i>
         </div>
