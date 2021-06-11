@@ -2,6 +2,10 @@
 
 ## In progress
 
+## 0.4.1
+
+- More code reorganization, and a couple of aesthetic changes ([#31](https://github.com/ben/foundry-ironsworn/pull/31))
+
 ## 0.4.0
 
 - Convert project to Typescript and Webpack ([#28](https://github.com/ben/foundry-ironsworn/pull/28))
