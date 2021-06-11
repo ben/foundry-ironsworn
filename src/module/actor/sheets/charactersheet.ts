@@ -38,6 +38,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     html.find('.ironsworn__stat__value').on('click', (e) => this._onStatSet.call(this, e))
     html.find('.ironsworn__momentum__burn').on('click', (e) => this._onBurnMomentum.call(this, e))
     html.find('.ironsworn__builtin__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
+    html.find('.ironsworn__oracle').on('click', (e) => this._handleOracleClick.call(this, e))
 
     html.find('.ironsworn__builtin__move').each((_i, el) => {
       attachInlineRollListeners($(el), {actor: this.actor, name: el.dataset.name})
@@ -107,6 +108,20 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     }
     li.toggleClass('expanded')
   }
+
+  async _handleOracleClick(e: JQuery.ClickEvent) {
+    e.preventDefault()
+    const tableName = e.currentTarget.dataset.table
+    let table = game.tables?.find((x) => x.name === tableName)
+    if (!table) {
+      const pack = game.packs?.get('foundry-ironsworn.ironsworntables') as any
+      if (pack) {
+        const entry = pack?.index.find((x) => x.name == tableName)
+        if (entry) table = await pack.getDocument(entry._id) as RollTable | undefined
+      }
+    }
+    if (table) table.draw()
+}
 
   _onBurnMomentum(ev) {
     ev.preventDefault()
