@@ -1,10 +1,11 @@
 {{#*inline "stack"}}
-{{#rangeEach from=from to=to current=(lookup data.data stat)}}
+{{#rangeEach from=from to=to current=(lookup data.data stat) min=min max=max}}
 <div class="
         clickable block stack-row
         ironsworn__stat__value
         {{stat}}
         {{#if isCurrent}} selected {{/if}}
+        {{#if isOutOfBounds}} disabled {{/if}}
     " data-resource="{{stat}}" data-value="{{value}}">
     {{valueStr}}
 </div>
@@ -68,7 +69,7 @@
         <div class="flexcol margin-left">
             <div class="flexrow" style="flex-wrap:nowrap;">
                 <div class="flexcol stack momentum">
-                    {{>stack stat="momentum" from=10 to=-6}}
+                    {{>stack stat="momentum" from=10 to=-6 max=data.data.momentumMax}}
                     <hr style="flex-grow: 0;" />
                     <div class="clickable block stack-row ironsworn__momentum__burn" style="padding: 0 5px;">
                         {{localize 'IRONSWORN.Burn'}}
