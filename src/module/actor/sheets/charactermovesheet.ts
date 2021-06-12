@@ -30,6 +30,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     html.find('.ironsworn__builtin__move').each((_i, el) => {
       attachInlineRollListeners($(el), { actor: this.actor, name: el.dataset.name })
     })
+    html.find('.ironsworn__oracle').on('click', (e) => this._handleOracleClick.call(this, e))
   }
 
   getData() {
@@ -63,6 +64,20 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
       summary.slideDown(200)
     }
     li.toggleClass('expanded')
+  }
+
+  async _handleOracleClick(e: JQuery.ClickEvent) {
+    e.preventDefault()
+    const tableName = e.currentTarget.dataset.table
+    let table = game.tables?.find((x) => x.name === tableName)
+    if (!table) {
+      const pack = game.packs?.get('foundry-ironsworn.ironsworntables') as any
+      if (pack) {
+        const entry = pack?.index.find((x) => x.name == tableName)
+        if (entry) table = (await pack.getDocument(entry._id)) as RollTable | undefined
+      }
+    }
+    table?.draw()
   }
 }
 
