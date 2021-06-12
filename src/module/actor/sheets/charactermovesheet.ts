@@ -18,6 +18,12 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
       width: 350,
       height: 800,
       left: 755,
+      tabs: [
+        {
+          navSelector: '.ironsworn__tabs__selector',
+          contentSelector: '.ironsworn__tabs__content',
+        },
+      ],
     } as FormApplication.Options)
   }
 
