@@ -85,7 +85,7 @@ export class IronswornHandlebarsHelpers {
 
     Handlebars.registerHelper('rangeEach', function (context, _options) {
       const results = [] as string[]
-      const { from, to, current } = context.hash
+      const { from, to, current, min, max } = context.hash
 
       // Enable both directions of iteration
       const increment = from > to ? -1 : 1
@@ -95,6 +95,9 @@ export class IronswornHandlebarsHelpers {
         const valueStr = value > 0 ? `+${value}` : value.toString()
         const isCurrent = value === current
         const lteCurrent = value <= current
+        const isAboveMax = max === undefined ? false : value > max
+        const isBelowMin = min === undefined ? false : value < min
+
         results.push(
           context.fn({
             ...this,
@@ -102,6 +105,9 @@ export class IronswornHandlebarsHelpers {
             value,
             isCurrent,
             lteCurrent,
+            isAboveMax,
+            isBelowMin,
+            isOutOfBounds: isAboveMax || isBelowMin,
           })
         )
       }

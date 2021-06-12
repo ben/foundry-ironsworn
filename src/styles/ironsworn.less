@@ -158,7 +158,18 @@
     }
   }
 
-  .clickable {
+  .clickable.disabled {
+    background: #ccc;
+    color: #888;
+    cursor: not-allowed;
+
+    &.selected {
+      color: white;
+      background: black;
+    }
+  }
+
+  .clickable:not(.disabled) {
     transition: 0.5s ease;
     cursor: pointer;
 

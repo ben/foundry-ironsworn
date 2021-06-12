@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Momentum boxes above max are disabled ([#32](https://github.com/ben/foundry-ironsworn/pull/32))
+
 ## 0.4.1
 
 - More code reorganization, and a couple of aesthetic changes ([#31](https://github.com/ben/foundry-ironsworn/pull/31))
