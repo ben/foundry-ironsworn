@@ -2,6 +2,7 @@ import { attachInlineRollListeners, IronswornRollDialog } from '../../helpers/ro
 import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
 import { IronswornCharacterData } from '../actortypes'
+import { CharacterMoveSheet } from './charactermovesheet'
 
 export interface CharacterSheetOptions extends BaseEntitySheet.Options {
   xyz?: string
@@ -11,14 +12,18 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor'],
-      width: 1000,
+      width: 700,
       height: 800,
+      left: 50,
+      template: 'systems/foundry-ironsworn/templates/actor/character.hbs',
       dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }],
     } as CharacterSheetOptions)
   }
 
-  get template() {
-    return 'systems/foundry-ironsworn/templates/actor/character.hbs'
+  constructor(actor, options) {
+    super(actor, options)
+
+    this._openMoveSheet()
   }
 
   activateListeners(html: JQuery) {
@@ -86,6 +91,12 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
         icon: 'fas fa-edit',
         onclick: (e) => this._toggleEditMode(e),
       },
+      {
+        class: 'ironsworn-open-move-sheet',
+        label: 'Moves',
+        icon: 'fas fa-directions',
+        onclick: (e) => this._openMoveSheet(e),
+      },
       ...super._getHeaderButtons(),
     ]
   }
@@ -95,6 +106,13 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
 
     const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
     this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
+  }
+
+  _openMoveSheet(e?: JQuery.ClickEvent) {
+    e?.preventDefault()
+
+    const sheetSetup = new CharacterMoveSheet(this.actor, {})
+    sheetSetup.render(true)
   }
 
   _handleBuiltInMoveExpand(e: JQuery.ClickEvent) {

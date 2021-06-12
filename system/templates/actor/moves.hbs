@@ -1,0 +1,16 @@
+<form class='{{cssClass}} flexcol' autocomplete='off'>
+  <div class='flexcol item-list'>
+    <ol>
+      {{#each builtInMoves}}
+        {{#if separator}}
+          <h2>{{title}}</h2>
+        {{else}}
+          <li class='item-row ironsworn__builtin__move' data-name='{{title}}'>
+            <div class='ironsworn__builtin__move__expand'>{{title}}</div>
+            <div class='move-summary' style='display: none;'>{{{enrichHtml description}}}</div>
+          </li>
+        {{/if}}
+      {{/each}}
+    </ol>
+  </div>
+</form>
