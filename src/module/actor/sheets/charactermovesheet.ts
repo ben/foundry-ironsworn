@@ -6,6 +6,18 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     return this.object
   }
 
+  constructor(object, options?: any) {
+    super(object, options)
+
+    this.actor.moveSheet = this
+  }
+
+  async close(opts?: any) {
+    this.actor.moveSheet = undefined
+
+    return super.close(opts)
+  }
+
   async _updateObject() {
     // No update necessary.
   }

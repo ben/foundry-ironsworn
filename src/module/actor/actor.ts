@@ -1,11 +1,14 @@
 import { IronswornItem } from '../item/item'
 import { IronswornActorData } from './actortypes'
+import { CharacterMoveSheet } from './sheets/charactermovesheet'
 
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
 export class IronswornActor extends Actor<IronswornActorData, IronswornItem> {
+  moveSheet?: CharacterMoveSheet
+
   /** @override */
   getRollData() {
     const data = super.getRollData()

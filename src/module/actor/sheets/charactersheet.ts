@@ -92,8 +92,11 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
   _openMoveSheet(e?: JQuery.ClickEvent) {
     e?.preventDefault()
 
-    const sheetSetup = new CharacterMoveSheet(this.actor, {})
-    sheetSetup.render(true)
+    if (this.actor.moveSheet) {
+      this.actor.moveSheet.render(true, {focus: true} as any) // TODO: fix this cast
+    } else {
+      new CharacterMoveSheet(this.actor).render(true)
+    }
   }
 
   _onBurnMomentum(ev) {
