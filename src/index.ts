@@ -86,6 +86,7 @@ Hooks.once('setup', () => {
     if (!this._evaluated) await this.evaluate()
     // Define chat data
     const chatData = {
+      themeClass: `theme-${IronswornSettings.theme}`,
       formula: isPrivate ? '???' : this.formula,
       roll: this, // this is new
       flavor: isPrivate ? null : chatOptions.flavor,
