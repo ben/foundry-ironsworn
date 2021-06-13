@@ -3,6 +3,7 @@
 ## In progress
 
 - Momentum boxes above max are disabled ([#32](https://github.com/ben/foundry-ironsworn/pull/32))
+- Separate sheet for moves ([#33](https://github.com/ben/foundry-ironsworn/pull/33))
 
 ## 0.4.1
 
