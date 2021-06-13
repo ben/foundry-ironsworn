@@ -5,6 +5,7 @@
 - Momentum boxes above max are disabled ([#32](https://github.com/ben/foundry-ironsworn/pull/32))
 - Separate sheet for moves ([#33](https://github.com/ben/foundry-ironsworn/pull/33))
 - Framework for multiple themes ([#35](https://github.com/ben/foundry-ironsworn/pull/35))
+- Move health/spirit/supply tracks to right side of sheet ([#36](https://github.com/ben/foundry-ironsworn/pull/36))
 
 ## 0.4.1
 
