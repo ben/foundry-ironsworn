@@ -8,12 +8,11 @@ export class IronswornSettings {
       type: String,
       choices: {
         ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
-        // TODO: starforged
+        starforged: 'IRONSWORN.Settings.Theme.Starforged',
       },
       default: 'ironsworn',
-      onChange: (value) => {
-        // TODO: re-render all open sheets
-        console.log({ value })
+      onChange: (_value) => {
+        window.location.reload()
       },
     })
   }
