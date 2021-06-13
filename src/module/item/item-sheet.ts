@@ -1,5 +1,6 @@
 import { RANKS } from '../constants'
 import { IronswornRollDialog } from '../helpers/roll'
+import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from './item'
 /**
  * Extend the basic ItemSheet with some very simple modifications
@@ -9,7 +10,7 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'item'],
+      classes: ['ironsworn', 'sheet', 'item', `theme-${IronswornSettings.theme}`],
       width: 520,
       height: 480,
     } as BaseEntitySheet.Options)

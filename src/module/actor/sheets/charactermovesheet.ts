@@ -1,4 +1,5 @@
 import { attachInlineRollListeners } from '../../helpers/roll'
+import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
 
 export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor> {
@@ -26,7 +27,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     return mergeObject(super.defaultOptions, {
       template: 'systems/foundry-ironsworn/templates/actor/moves.hbs',
       resizable: true,
-      classes: ['ironsworn', 'sheet', 'moves'],
+      classes: ['ironsworn', 'sheet', 'moves', `theme-${IronswornSettings.theme}`],
       width: 350,
       height: 800,
       left: 755,

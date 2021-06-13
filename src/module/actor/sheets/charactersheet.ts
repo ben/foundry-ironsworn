@@ -1,4 +1,5 @@
 import { attachInlineRollListeners, IronswornRollDialog } from '../../helpers/roll'
+import { IronswornSettings } from '../../helpers/settings'
 import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
 import { IronswornCharacterData } from '../actortypes'
@@ -11,7 +12,7 @@ export interface CharacterSheetOptions extends BaseEntitySheet.Options {
 export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor> {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'actor'],
+      classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
       width: 700,
       height: 800,
       left: 50,
