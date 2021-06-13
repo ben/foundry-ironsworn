@@ -15,7 +15,7 @@ import { MoveSheet } from './module/item/move/movesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
 import { VowSheet } from './module/item/vow/vowsheet'
 
-import './styles/ironsworn.less'
+import './styles/styles.less'
 
 Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
