@@ -6,6 +6,7 @@ import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
+import { IronswornSettings } from './module/helpers/settings'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
 import { BondsetSheet } from './module/item/bondset/bondsetsheet'
@@ -20,9 +21,6 @@ Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
 
   CONFIG.IRONSWORN = IRONSWORN
-
-  // Preload all needed templates
-  await TemplatePreloader.preloadHandlebarsTemplates()
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = IronswornActor
@@ -62,8 +60,13 @@ Hooks.once('init', async () => {
     makeDefault: true,
   })
 
+  // Preload all needed templates
+  await TemplatePreloader.preloadHandlebarsTemplates()
+
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
+
+  IronswornSettings.registerSettings()
 })
 
 Hooks.once('setup', () => {
