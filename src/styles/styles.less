@@ -1,3 +1,6 @@
+@import './themes/ironsworn.less';
+@import './themes/starforged.less';
+
 .ironsworn {
   h1,
   h2,
@@ -9,14 +12,13 @@
   }
 
   .window-content {
-    background: #eee;
     height: 100%;
     padding: 5px;
     overflow-y: scroll;
   }
 
   .sheet-area {
-    border-top: 2px solid darkgray;
+    border-top: 2px solid;
     &:first-child {
       border-top: none;
     }
@@ -72,7 +74,7 @@
       .xp {
         height: 15px;
         flex-basis: 15px;
-        border: 1px solid black;
+        border: 1px solid;
         margin: 3px;
         line-height: 13px;
         text-align: center;
@@ -82,20 +84,20 @@
 
   .margin-left {
     flex: 0;
-    border-right: 1px solid black;
+    border-right: 1px solid;
     margin-right: 5px;
     position: relative;
   }
 
   .margin-right {
     flex: 0 0 250px;
-    border-left: 1px solid black;
+    border-left: 1px solid;
     margin-left: 5px;
     padding-left: 10px;
     position: relative;
 
     h1 {
-      border: 2px solid black;
+      border: 2px solid;
       border-left: none;
       border-right: none;
       text-align: center;
@@ -127,9 +129,6 @@
       & > h2 {
         text-align: center;
         border-width: 1px 0;
-        border-color: white;
-        background-color: #aaa;
-        color: white;
       }
     }
   }
@@ -146,7 +145,7 @@
     .stack-row {
       flex: 0 0 auto;
       min-width: 50px;
-      border: 1px solid black;
+      border: 1px solid;
       margin-bottom: -1px;
       text-align: center;
       line-height: 28px;
@@ -159,47 +158,22 @@
   }
 
   .clickable.disabled {
-    background: #ccc;
-    color: #888;
     cursor: not-allowed;
-
-    &.selected {
-      color: white;
-      background: black;
-    }
   }
 
   .clickable:not(.disabled) {
     transition: 0.5s ease;
     cursor: pointer;
 
-    &.block {
-      &:hover {
-        background: #ccc;
-        transition: 0.5s ease;
-      }
-
-      &:active {
-        background: #aaa;
-        transition: 0.2s ease;
-      }
-    }
-
+    &.block,
     &.text {
       &:hover {
-        color: #ccc;
         transition: 0.5s ease;
       }
 
       &:active {
-        color: #aaa;
         transition: 0.2s ease;
       }
-    }
-
-    &.selected {
-      color: white;
-      background: black;
     }
   }
 
@@ -209,7 +183,7 @@
 
     .stat {
       flex: 0 0 100px;
-      border: 1px solid black;
+      border: 1px solid;
       text-align: center;
 
       h3 {
@@ -237,24 +211,15 @@
       flex: 0 0 30px;
       justify-items: center;
       align-items: center;
-      border: 1px solid black;
+      border: 1px solid;
       transition: 0.5s ease;
-
-      &.editing {
-        background: gray;
-      }
-
-      h4 {
-        transform: rotate(90deg);
-        transform-origin: 0 0;
-      }
     }
   }
 
   .inset {
     margin: 5px;
     padding: 5px;
-    border: 1px solid gray;
+    border: 1px solid;
     border-radius: 3px;
   }
 
@@ -264,7 +229,7 @@
   }
 
   .item-row {
-    border: 1px solid black;
+    border: 1px solid;
     border-radius: 2px;
     padding: 3px;
     margin: 3px 0;
@@ -283,7 +248,7 @@
     }
 
     .item {
-      border: 1px solid gray;
+      border: 1px solid;
       border-radius: 3px;
       padding: 5px;
       font-size: smaller;
@@ -307,8 +272,8 @@
   /* Sheet Tabs */
   .tabs {
     height: 40px;
-    border-top: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 
     .item {
       line-height: 40px;
@@ -352,7 +317,7 @@
       height: 30px;
       line-height: 24px;
       padding: 3px 0;
-      border-bottom: 1px solid #bbb;
+      border-bottom: 1px solid;
 
       img {
         flex: 0 0 24px;
@@ -369,51 +334,9 @@
     }
   }
 
-  /* Attributes */
-  .attributes-header {
-    padding: 5px;
-    margin: 5px 0;
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid #aaa;
-    border-radius: 2px;
-    text-align: center;
-    font-weight: bold;
-
-    .attribute-label {
-      flex: 1.5;
-    }
-
-    .attribute-control {
-      flex: 0 0 20px;
-    }
-  }
-
-  .attributes-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
-    li > * {
-      margin: 0 3px;
-      height: 28px;
-      line-height: 24px;
-      background: transparent;
-      border: none;
-      border-radius: 0;
-      border-bottom: 1px solid #aaa;
-    }
-
-    a.attribute-control {
-      flex: 0 0 20px;
-      text-align: center;
-      line-height: 28px;
-      border: none;
-    }
-  }
-
   .progress {
     flex: 1;
-    border: 1px solid black;
+    border: 1px solid;
     padding: 5px;
     margin: 2px;
     text-align: center;
@@ -436,8 +359,7 @@
 
 .move-title {
   text-align: center;
-  background: #eee;
-  border: 1px solid #999;
+  border: 1px solid;
   margin-bottom: 5px;
   font-size: 22px;
   font-weight: bold;
@@ -456,11 +378,6 @@
 }
 
 .ironsworn-roll {
-  .dice-formula,
-  .dice-total {
-    background-color: #eee;
-  }
-
   .hit-type {
     font-size: 20px;
     font-weight: bold;

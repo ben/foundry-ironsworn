@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap');
+
+.theme-starforged {
+  @dark-color: #3339;
+  @medium-color: #44aaaa99;
+  @light-color: #33999999;
+  @text-color: #6ff;
+
+  font-family: 'Carrois Gothic SC', sans-serif;
+  color: @text-color;
+
+  .window-content {
+    background-image: url('./systems/foundry-ironsworn/assets/windowbg.webp');
+    color: @text-color;
+  }
+
+  input {
+    background-color: @dark-color;
+    border: 0;
+    color: @text-color;
+
+    &:focus {
+      box-shadow: 0 0 10px @light-color;
+      cursor: pointer;
+    }
+  }
+
+  .sheet-area {
+    border-color: @medium-color;
+  }
+
+  .margin-left,
+  .margin-right {
+    border-color: black;
+    h1 {
+      border-color: black;
+    }
+  }
+
+  .stack-row {
+    border-color: black;
+  }
+
+  .edit {
+    border-color: black;
+
+    &.editing {
+      background: @medium-color;
+    }
+  }
+
+  .inset {
+    border-color: @medium-color;
+  }
+
+  .xp .xp {
+    border-color: black;
+  }
+
+  .item-row {
+    border-color: black;
+  }
+
+  .progresses .item {
+    border-color: @medium-color;
+  }
+
+  .tabs {
+    border-color: @medium-color;
+  }
+
+  .item-list {
+    ol > h2 {
+      border-color: white;
+      background-color: @dark-color;
+      color: white;
+    }
+
+    .item {
+      border-color: @medium-color;
+    }
+  }
+
+  .progress {
+    border-color: black;
+  }
+
+  .move-title {
+    background-color: @dark-color;
+    border-color: @dark-color;
+  }
+
+  .clickable {
+    border-radius: 8px;
+    
+    &.disabled {
+      color: @dark-color;
+
+      &.selected {
+        color: white;
+        background-color: black;
+      }
+    }
+
+    &:not(.disabled) {
+      &:hover {
+        background: @light-color;
+      }
+      &:active {
+        background-color: @medium-color;
+      }
+
+      &.selected {
+        color: white;
+        background: black;
+      }
+    }
+  }
+
+  .stats {
+    .stat {
+      border-color: black;
+    }
+  }
+
+  .ironsworn-roll {
+    .dice-formula,
+    .dice-total {
+      background-color: @dark-color;
+    }
+  }
+}
