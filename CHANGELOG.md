@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Restructure i18n files ([#37](https://github.com/ben/foundry-ironsworn/pull/37))
+
 ## 0.4.2
 
 - Momentum boxes above max are disabled ([#32](https://github.com/ben/foundry-ironsworn/pull/32))
