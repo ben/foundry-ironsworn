@@ -19,6 +19,8 @@ import './styles/styles.less'
 
 Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
+  IronswornSettings.registerSettings()
+
 
   CONFIG.IRONSWORN = IRONSWORN
 
@@ -65,8 +67,6 @@ Hooks.once('init', async () => {
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
-
-  IronswornSettings.registerSettings()
 })
 
 Hooks.once('setup', () => {
