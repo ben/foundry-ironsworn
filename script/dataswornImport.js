@@ -72,8 +72,10 @@ async function doit () {
   // Also write descriptions to en lang file
   const en = JSON.parse((await fs.readFile('system/lang/en.json')))
   for (const move of moves) {
-    en[`IRONSWORN.Moves:${move.name}:title`] = move.name
-    en[`IRONSWORN.Moves:${move.name}:description`] = move.data.description
+    en['IRONSWORN']['MoveContents'] ||= {}
+    en['IRONSWORN']['MoveContents'][move.name] ||= {}
+    en['IRONSWORN']['MoveContents'][move.name]['title'] = move.name
+    en['IRONSWORN']['MoveContents'][move.name]['description'] = move.data.description
   }
   await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2))
 }
