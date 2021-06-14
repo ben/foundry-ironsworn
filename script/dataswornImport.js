@@ -52,7 +52,7 @@ async function doit () {
       }
     })
   }
-  await fs.writeFile('assets/assets.json', JSON.stringify(assets, null, 2))
+  await fs.writeFile('system/assets/assets.json', JSON.stringify(assets, null, 2))
 
   // Moves
   const movesJson = await fetch(
@@ -67,15 +67,15 @@ async function doit () {
       })
     }
   }
-  await fs.writeFile('assets/moves.json', JSON.stringify(moves, null, 2))
+  await fs.writeFile('system/assets/moves.json', JSON.stringify(moves, null, 2))
 
   // Also write descriptions to en lang file
-  const en = JSON.parse((await fs.readFile('lang/en.json')))
+  const en = JSON.parse((await fs.readFile('system/lang/en.json')))
   for (const move of moves) {
     en[`IRONSWORN.Moves:${move.name}:title`] = move.name
     en[`IRONSWORN.Moves:${move.name}:description`] = move.data.description
   }
-  await fs.writeFile('lang/en.json', JSON.stringify(en, null, 2))
+  await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2))
 }
 
 doit().then(
