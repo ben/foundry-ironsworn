@@ -72,7 +72,6 @@
           <div class="nogrow">
             {{>stack stat="momentum" from=10 to=-6 max=data.data.momentumMax}}
           </div>
-          <hr style="flex-grow: 0;" />
           <div class="nogrow">
             <div class="clickable block stack-row ironsworn__momentum__burn" style="padding: 0 5px;">
               {{localize 'IRONSWORN.Burn'}}
@@ -140,7 +139,14 @@
                   <li class="item-row ironsworn__asset" data-item="{{id}}">
                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                       <div class="flexrow">
-                        <strong>{{name}}</strong>
+                        <strong>
+                          {{#if data.flags.foundry-ironsworn.expanded}}
+                          ⯆
+                          {{else}}
+                          ⯈
+                          {{/if}}
+                          {{name}}
+                        </strong>
                         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                         <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}"
                           style="margin: 0 5px;">
@@ -152,13 +158,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="asset-summary" style="display:
-                                    {{#if data.flags.foundry-ironsworn.expanded}}
-                                    block
-                                    {{else}}
-                                    none
-                                    {{/if}}
-                                    ;">
+                    <div class="flexcol asset-summary
+                    {{#unless data.flags.foundry-ironsworn.expanded}}
+                    collapsed
+                    {{/unless}}">
                       {{#each data.data.fields}}
                       <p><strong>{{name}}:</strong> {{value}}</p>
                       {{/each}}

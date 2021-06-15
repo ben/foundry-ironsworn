@@ -97,6 +97,15 @@
     font-size: 22px;
   }
 
+  .asset-summary {
+    transition: all 0.5s ease;
+    overflow: hidden;
+    
+    &.collapsed {
+      height: 0px;
+    }
+  }
+
   .item-list {
     flex: 1 0 100px;
     overflow-y: scroll;
