@@ -159,6 +159,31 @@
     }
   }
 
+  .track {
+    flex-wrap: nowrap;
+    
+    .track-box {
+      flex: 1 0 auto;
+      min-width: 20px;
+      line-height: 25px;
+      border: 1px solid;
+      border-left: none;
+      text-align: center;
+      align-items: center;
+      justify-items: center;
+
+      &:first-child {
+        border-left: 1px solid;
+        // border-top-left-radius: 5px;
+        // border-bottom-left-radius: 5px;
+      }
+      // &:last-child {
+      //   border-top-right-radius: 5px;
+      //   border-bottom-right-radius: 5px;
+      // }
+    }
+  }
+
   .clickable.disabled {
     cursor: not-allowed;
   }

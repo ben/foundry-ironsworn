@@ -34,9 +34,11 @@
     </div>
   </div>
   <div class="flexrow">
-    {{#each (progressCharacters data.data.current)}}
-    <div class="progress">{{{this}}}</div>
-    {{/each}}
+    <div class="flexrow track">
+      {{#each (progressCharacters data.data.current)}}
+      <div class="track-box">{{{this}}}</div>
+      {{/each}}
+    </div>
   </div>
 </div>
 {{/inline}}
@@ -122,9 +124,11 @@
             <section class="sheet-area" style="flex-grow: 0;">
               <h1 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h1>
               <div class="flexrow">
-                {{#each (progressCharacters bonds.count)}}
-                <div class="progress">{{{this}}}</div>
-                {{/each}}
+                <div class="flexrow track">
+                  {{#each (progressCharacters bonds.count)}}
+                  <div class="track-box">{{{this}}}</div>
+                  {{/each}}
+                </div>
                 <div data-item="{{bonds.id}}" class="ironsworn__bondset__settings block clickable"
                   style="flex-grow: 0; padding: 5px; margin: 2px;">
                   <i class="fas fa-edit"></i>
