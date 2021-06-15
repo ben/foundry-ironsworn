@@ -3,6 +3,7 @@
 ## In progress
 
 - Restructure i18n files ([#37](https://github.com/ben/foundry-ironsworn/pull/37))
+- Edit mode for assets ([#38](https://github.com/ben/foundry-ironsworn/pull/38))
 
 ## 0.4.2
 
