@@ -69,10 +69,14 @@
     <div class="flexcol margin-left">
       <div class="flexrow" style="flex-wrap:nowrap;">
         <div class="flexcol stack momentum">
-          {{>stack stat="momentum" from=10 to=-6 max=data.data.momentumMax}}
+          <div class="nogrow">
+            {{>stack stat="momentum" from=10 to=-6 max=data.data.momentumMax}}
+          </div>
           <hr style="flex-grow: 0;" />
-          <div class="clickable block stack-row ironsworn__momentum__burn" style="padding: 0 5px;">
-            {{localize 'IRONSWORN.Burn'}}
+          <div class="nogrow">
+            <div class="clickable block stack-row ironsworn__momentum__burn" style="padding: 0 5px;">
+              {{localize 'IRONSWORN.Burn'}}
+            </div>
           </div>
           {{localize 'IRONSWORN.Reset'}}: {{data.data.momentumReset}}
           {{localize 'IRONSWORN.Max'}}: {{data.data.momentumMax}}

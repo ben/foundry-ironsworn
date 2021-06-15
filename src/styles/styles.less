@@ -130,10 +130,20 @@
       flex: 0 0 auto;
       min-width: 50px;
       border: 1px solid;
-      margin-bottom: -1px;
+      border-top: none;
       text-align: center;
       line-height: 28px;
       font-size: 18px;
+
+      &:first-child {
+        border-top: 1px solid;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      &:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
 
       input[type='radio'] {
         appearance: none;
