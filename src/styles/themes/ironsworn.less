@@ -1,5 +1,5 @@
 .theme-ironsworn {
-  @background-color: #eee;
+  @background-color: white;
   @dark-color: #888;
   @medium-color: darkgray;
   @light-color: #ccc;
@@ -86,14 +86,25 @@
 
     &:not(.disabled) {
       &:hover {
-        background: @light-color;
+        &.block {
+          background: @medium-color;
+        }
+        &.text {
+          color: @medium-color;
+        }
       }
       &:active {
-        background-color: @medium-color;
+        &.block {
+          background: @light-color;
+        }
+        &.text {
+          color: @light-color;
+        }
       }
 
       &.selected {
         color: white;
+        border-color: black;
         background: black;
       }
     }
