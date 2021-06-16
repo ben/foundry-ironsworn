@@ -4,10 +4,14 @@
 @muted-color: #11777799;
 @medium-color: #33999999;
 @light-color: #55bbbb99;
-@background-gradient: radial-gradient(circle, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.75) 100%);
+@background-gradient: rgba(0,0,0,0.4); // radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
 
 @text-dark-color: #399;
 @text-light-color: #5cc;
+
+body {
+  font-family: 'Carrois Gothic SC', sans-serif;
+}
 
 ::-webkit-scrollbar-thumb {
   background: @dark-color;
@@ -19,8 +23,20 @@
 }
 
 .theme-starforged {
-  font-family: 'Carrois Gothic SC', sans-serif;
   color: @text-light-color;
+
+  h2, h3 {
+    border-bottom-color: @text-dark-color;
+  }
+
+  .inline-roll {
+    background: @dark-color;
+    border-color: @light-color;
+
+    &:hover {
+      text-shadow: 0 0 8px @text-light-color;
+    }
+  }
 
   .window-content {
     // background-color: rgba(0, 0, 0, 0.4);
@@ -96,19 +112,27 @@
   }
 }
 
+// .roll {
+//   color: @text-light-color;
+
+//   &.max {
+//   }
+
+//   &.min {
+
+//   }
+// }
+
 .chat-message {
-  background: @background-gradient;
-  color: @text-light-color;
-  border-color: @light-color;
   
   .dice-formula,
   .dice-total {
-    border-color: @text-light-color;
-    background-color: rgba(0, 0, 0, 0);
     background: @background-gradient;
+    color: @text-light-color;
+    // border-color: @text-light-color;
   }
 
-  .message-header {
-    color: @text-light-color;
-  }
+  // .message-header {
+  //   color: @text-light-color;
+  // }
 }
