@@ -34,6 +34,11 @@ export class IronswornItem extends Item<IronswornItemData> {
     })
   }
 
+  setRank(rank: string) {
+    if ((this.data.data as any).rank === undefined) return
+    return this.update({'data.rank': rank})
+  }
+
   /**
    * Asset methods
    */

@@ -133,7 +133,7 @@ export class IronswornHandlebarsHelpers {
               xmlns="http://www.w3.org/2000/svg" 
               height="15" 
               viewbox="0 0 17.32050807568877 20"
-              class="rank-pip ${isFilled ? 'filled' : ''} clickable svg" 
+              class="rank-pip ${isFilled ? 'filled' : ''} clickable svg ironsworn__progress__rank" 
               data-rank="${testRank}"
               data-item="${id}"
             >
