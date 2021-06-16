@@ -97,6 +97,19 @@
     font-size: 22px;
   }
 
+  .asset-summary {
+    transition: all 0.5s ease;
+    overflow: hidden;
+    
+    &.collapsed {
+      height: 0px;
+    }
+
+    ul, ol {
+      margin: 0;
+    }
+  }
+
   .item-list {
     flex: 1 0 100px;
     overflow-y: scroll;
@@ -123,7 +136,6 @@
   }
 
   .stack {
-    margin-bottom: 20px;
     flex-grow: 0;
 
     .stack-row {
@@ -148,6 +160,32 @@
       input[type='radio'] {
         appearance: none;
       }
+    }
+  }
+
+  .track {
+    flex-wrap: nowrap;
+    flex-grow: 1;
+
+    .track-box {
+      flex: 1 0;
+      min-width: 20px;
+      line-height: 25px;
+      border: 1px solid;
+      border-left: none;
+      text-align: center;
+      align-items: center;
+      justify-items: center;
+
+      &:first-child {
+        border-left: 1px solid;
+        // border-top-left-radius: 5px;
+        // border-bottom-left-radius: 5px;
+      }
+      // &:last-child {
+      //   border-top-right-radius: 5px;
+      //   border-bottom-right-radius: 5px;
+      // }
     }
   }
 

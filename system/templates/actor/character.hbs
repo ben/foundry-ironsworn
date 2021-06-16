@@ -34,9 +34,11 @@
     </div>
   </div>
   <div class="flexrow">
-    {{#each (progressCharacters data.data.current)}}
-    <div class="progress">{{{this}}}</div>
-    {{/each}}
+    <div class="flexrow track">
+      {{#each (progressCharacters data.data.current)}}
+      <div class="track-box">{{{this}}}</div>
+      {{/each}}
+    </div>
   </div>
 </div>
 {{/inline}}
@@ -72,7 +74,7 @@
           <div class="nogrow">
             {{>stack stat="momentum" from=10 to=-6 max=data.data.momentumMax}}
           </div>
-          <hr style="flex-grow: 0;" />
+          <hr class="nogrow" />
           <div class="nogrow">
             <div class="clickable block stack-row ironsworn__momentum__burn" style="padding: 0 5px;">
               {{localize 'IRONSWORN.Burn'}}
@@ -119,6 +121,21 @@
         <div class="flexrow">
 
           <div class="flexcol">
+            <section class="sheet-area" style="flex-grow: 0;">
+              <h1 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h1>
+              <div class="flexrow">
+                <div class="flexrow track">
+                  {{#each (progressCharacters bonds.count)}}
+                  <div class="track-box">{{{this}}}</div>
+                  {{/each}}
+                </div>
+                <div data-item="{{bonds.id}}" class="ironsworn__bondset__settings block clickable"
+                  style="flex-grow: 0; padding: 5px; margin: 2px;">
+                  <i class="fas fa-edit"></i>
+                </div>
+              </div>
+            </section>
+
             <section class="sheet-area">
               <h1 style="text-align:center">{{localize 'IRONSWORN.Assets'}}</h1>
               <div class="flexcol item-list">
@@ -127,7 +144,14 @@
                   <li class="item-row ironsworn__asset" data-item="{{id}}">
                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                       <div class="flexrow">
-                        <strong>{{name}}</strong>
+                        <h4>
+                          {{#if data.flags.foundry-ironsworn.expanded}}
+                          ⯆
+                          {{else}}
+                          ⯈
+                          {{/if}}
+                          {{name}}
+                        </h4>
                         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                         <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}"
                           style="margin: 0 5px;">
@@ -139,13 +163,10 @@
                         </div>
                       </div>
                     </div>
-                    <div class="asset-summary" style="display:
-                                    {{#if data.flags.foundry-ironsworn.expanded}}
-                                    block
-                                    {{else}}
-                                    none
-                                    {{/if}}
-                                    ;">
+                    <div class="flexcol asset-summary
+                    {{#unless data.flags.foundry-ironsworn.expanded}}
+                    collapsed
+                    {{/unless}}">
                       {{#each data.data.fields}}
                       <p><strong>{{name}}:</strong> {{value}}</p>
                       {{/each}}
@@ -163,19 +184,19 @@
                       </ul>
 
                       {{#if data.data.track.enabled}}
-                      <div class="flexrow" style="line-height: 30px;">
-                        {{#rangeEach from=0 to=data.data.track.max
-                        current=data.data.track.current}}
-                        <div class="
-                                                clickable block progress ironsworn__assettrack__value
-                                                {{#if isCurrent}} selected {{/if}}
-                                              " data-item="{{id}}" data-value={{value}}>
-                          {{value}}
-                        </div>
-                        {{/rangeEach}}
-                        <div class="clickable block ironsworn__assettrack__roll"
-                          style="text-align: center; line-height: 40px;">
-                          <i class="fas fa-dice-d6"></i>
+                      <div class="flexcol">
+                        <label class="clickable text ironsworn__assettrack__roll" >
+                          {{data.data.track.name}}
+                        </label>
+                        <div class="flexrow track">
+                          {{#rangeEach from=0 to=data.data.track.max
+                          current=data.data.track.current}}
+                          <div class="track-box clickable block ironsworn__assettrack__value
+                                                  {{#if isCurrent}} selected {{/if}}
+                                                " data-item="{{id}}" data-value={{value}}>
+                            {{value}}
+                          </div>
+                          {{/rangeEach}}
                         </div>
                       </div>
                       {{/if}}
@@ -184,18 +205,6 @@
                   </li>
                   {{/each}}
                 </ol>
-              </div>
-            </section>
-            <section class="sheet-area" style="flex-grow: 0;">
-              <h1 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h1>
-              <div class="flexrow">
-                {{#each (progressCharacters bonds.count)}}
-                <div class="progress">{{{this}}}</div>
-                {{/each}}
-                <div data-item="{{bonds.id}}" class="ironsworn__bondset__settings block clickable"
-                  style="flex-grow: 0; padding: 5px; margin: 2px;">
-                  <i class="fas fa-edit"></i>
-                </div>
               </div>
             </section>
           </div>
@@ -272,6 +281,7 @@
           {{>stack stat="health" from=5 to=0}}
         </div>
       </div>
+      <hr class="nogrow" />
       <div class="flexrow nogrow" style="flex-wrap: nowrap;">
         <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="spirit">
           {{localize 'IRONSWORN.Spirit'}}
@@ -280,6 +290,7 @@
           {{>stack stat="spirit" from=5 to=0}}
         </div>
       </div>
+      <hr class="nogrow" />
       <div class="flexrow nogrow" style="flex-wrap: nowrap;">
         <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="supply">
           {{localize 'IRONSWORN.Supply'}}
