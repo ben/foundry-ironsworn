@@ -65,10 +65,9 @@
         <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Max'}}</span>
         <input type="number" name="data.track.max" value={{data.data.track.max}}>
     </div>
-    <div class="flexrow">
+    <div class="flexrow track" style="margin-top: 5px;">
         {{#rangeEach from=0 to=data.data.track.max current=data.data.track.current}}
-        <div class="
-            clickable block track-target progress
+        <div class="track-box clickable block track-target
             {{#if isCurrent}} selected {{/if}}
         " data-value={{value}}>
             {{value}}

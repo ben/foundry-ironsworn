@@ -144,14 +144,14 @@
                   <li class="item-row ironsworn__asset" data-item="{{id}}">
                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                       <div class="flexrow">
-                        <strong>
+                        <h4>
                           {{#if data.flags.foundry-ironsworn.expanded}}
                           ⯆
                           {{else}}
                           ⯈
                           {{/if}}
                           {{name}}
-                        </strong>
+                        </h4>
                         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                         <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}"
                           style="margin: 0 5px;">
@@ -184,19 +184,19 @@
                       </ul>
 
                       {{#if data.data.track.enabled}}
-                      <div class="flexrow" style="line-height: 30px;">
-                        {{#rangeEach from=0 to=data.data.track.max
-                        current=data.data.track.current}}
-                        <div class="
-                                                clickable block progress ironsworn__assettrack__value
-                                                {{#if isCurrent}} selected {{/if}}
-                                              " data-item="{{id}}" data-value={{value}}>
-                          {{value}}
-                        </div>
-                        {{/rangeEach}}
-                        <div class="clickable block ironsworn__assettrack__roll"
-                          style="text-align: center; line-height: 40px;">
-                          <i class="fas fa-dice-d6"></i>
+                      <div class="flexcol">
+                        <label class="clickable text ironsworn__assettrack__roll" >
+                          {{data.data.track.name}}
+                        </label>
+                        <div class="flexrow track">
+                          {{#rangeEach from=0 to=data.data.track.max
+                          current=data.data.track.current}}
+                          <div class="track-box clickable block ironsworn__assettrack__value
+                                                  {{#if isCurrent}} selected {{/if}}
+                                                " data-item="{{id}}" data-value={{value}}>
+                            {{value}}
+                          </div>
+                          {{/rangeEach}}
                         </div>
                       </div>
                       {{/if}}

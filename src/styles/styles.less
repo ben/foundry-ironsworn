@@ -104,6 +104,10 @@
     &.collapsed {
       height: 0px;
     }
+
+    ul, ol {
+      margin: 0;
+    }
   }
 
   .item-list {
@@ -161,9 +165,10 @@
 
   .track {
     flex-wrap: nowrap;
-    
+    flex-grow: 1;
+
     .track-box {
-      flex: 1 0 auto;
+      flex: 1 0;
       min-width: 20px;
       line-height: 25px;
       border: 1px solid;
