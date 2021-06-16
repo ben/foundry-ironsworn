@@ -74,6 +74,15 @@
     border-color: @dark-color;
   }
 
+  .rank-pip {
+    fill: transparent;
+    stroke: black;
+
+    &.filled {
+      fill: black;
+    }
+  }
+
   .clickable {
     &.disabled {
       color: @dark-color;
@@ -92,6 +101,9 @@
         &.text {
           color: @medium-color;
         }
+        &.svg {
+          fill: @medium-color;
+        }
       }
       &:active {
         &.block {
@@ -100,12 +112,20 @@
         &.text {
           color: @light-color;
         }
+        &.svg {
+          fill: @light-color;
+        }
       }
 
       &.selected {
-        color: white;
-        border-color: black;
-        background: black;
+        &.block, &.text {
+          color: white;
+          border-color: black;
+          background: black;
+        }
+        &.svg {
+          fill: black;
+        }
       }
     }
   }
