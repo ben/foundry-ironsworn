@@ -7,7 +7,7 @@ This is an implementation of the [Ironsworn](https://www.ironswornrpg.com/) rule
 To install it, plug this URL into the install UI:
 
 ```
-https://raw.githubusercontent.com/ben/foundry-ironsworn/main/system.json
+https://raw.githubusercontent.com/ben/foundry-ironsworn/main/system/system.json
 ```
 
 ## How to use this
