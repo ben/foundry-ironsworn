@@ -149,14 +149,7 @@
                   <li class="item-row ironsworn__asset" data-item="{{id}}">
                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                       <div class="flexrow">
-                        <h4>
-                          {{#if data.flags.foundry-ironsworn.expanded}}
-                          ⯆
-                          {{else}}
-                          ⯈
-                          {{/if}}
-                          {{name}}
-                        </h4>
+                        <h4> {{name}} </h4>
                         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                         <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}"
                           style="margin: 0 5px;">

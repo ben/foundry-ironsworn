@@ -4,7 +4,7 @@
 @muted-color: #11777799;
 @medium-color: #33999999;
 @light-color: #55bbbb99;
-@background-gradient: rgba(0,0,0,0.4); // radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+@background-gradient: rgba(0, 0, 0, 0.4); // radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
 
 @text-dark-color: #399;
 @text-light-color: #5cc;
@@ -25,7 +25,8 @@ body {
 .theme-starforged {
   color: @text-light-color;
 
-  h2, h3 {
+  h2,
+  h3 {
     border-bottom-color: @text-dark-color;
   }
 
@@ -124,12 +125,25 @@ body {
 // }
 
 .chat-message {
-  
   .dice-formula,
   .dice-total {
-    background: @background-gradient;
+    background: rgba(0, 0, 0, 0.8);
     color: @text-light-color;
     // border-color: @text-light-color;
+
+    .die {
+      &.d6 {
+        background-image: url('systems/foundry-ironsworn/assets/d6.svg');
+      }
+      &.d10 {
+        background-image: url('systems/foundry-ironsworn/assets/d10.svg');
+      }
+      
+      &.min,
+      &.max {
+        color: @text-light-color;
+      }
+    }
   }
 
   // .message-header {
