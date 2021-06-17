@@ -1,23 +1,57 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap');
 
-.theme-starforged {
-  @dark-color: #3339;
-  @medium-color: #44aaaa99;
-  @light-color: #33999999;
-  @text-color: #6ff;
+@dark-color: #00333399;
+@muted-color: #11777799;
+@medium-color: #33999999;
+@light-color: #55bbbb99;
+@background-gradient: rgba(0, 0, 0, 0.4); // radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
 
+@text-dark-color: #399;
+@text-light-color: #5cc;
+
+body {
   font-family: 'Carrois Gothic SC', sans-serif;
-  color: @text-color;
+}
 
-  .window-content {
-    background-image: url('./systems/foundry-ironsworn/assets/windowbg.webp');
-    color: @text-color;
+::-webkit-scrollbar-thumb {
+  background: @dark-color;
+  border-color: @medium-color;
+}
+
+.window-app {
+  background-color: @background-gradient;
+  border: 1px solid @text-dark-color;
+}
+
+.theme-starforged {
+  color: @text-light-color;
+
+  h2,
+  h3 {
+    border-bottom-color: @light-color;
   }
 
-  input {
+  .inline-roll {
+    background: @dark-color;
+    border-color: @light-color; 
+
+    &:hover {
+      text-shadow: 0 0 8px @text-light-color;
+    }
+  }
+
+  .window-content {
+    // background-color: rgba(0, 0, 0, 0.4);
+    background: rgb(0, 0, 0);
+    background: @background-gradient;
+    background-image: none;
+    color: @text-light-color;
+  }
+
+  input, textarea {
     background-color: @dark-color;
     border: 0;
-    color: @text-color;
+    color: @text-light-color;
 
     &:focus {
       box-shadow: 0 0 10px @light-color;
@@ -26,120 +60,48 @@
   }
 
   .sheet-area {
-    border-color: @medium-color;
-  }
-
-  .margin-left,
-  .margin-right {
-    border-color: black;
-    h1 {
-      border-color: black;
-    }
-  }
-
-  .stack-row {
-    border-color: black;
-  }
-
-  .edit {
-    border-color: black;
-
-    &.editing {
-      background: @medium-color;
-    }
-  }
-
-  .inset {
-    border-color: @medium-color;
-  }
-
-  .xp .xp {
-    border-color: black;
-  }
-
-  .item-row {
-    border-color: black;
-  }
-
-  .progresses .item {
-    border-color: @medium-color;
-  }
-
-  .tabs {
-    border-color: @medium-color;
-  }
-
-  .item-list {
-    ol > h2 {
-      border-color: white;
-      background-color: @dark-color;
-      color: white;
-    }
-
-    .item {
-      border-color: @medium-color;
-    }
-  }
-
-  .progress {
-    border-color: black;
-  }
-
-  .move-title {
-    background-color: @dark-color;
-    border-color: @dark-color;
+    border-color: @light-color;
   }
 
   .rank-pip {
-    fill: transparent;
-    stroke: @medium-color;
+    fill: @medium-color;
 
     &.filled {
-      fill: @medium-color;
+      fill: @text-light-color;
+    }
+
+    path {
+      stroke-width: 0;
     }
   }
 
   .clickable {
     &.disabled {
-      color: @dark-color;
-
-      &.selected {
-        color: white;
-        background-color: black;
-      }
+      background: @dark-color;
+      color: @medium-color;
     }
 
     &:not(.disabled) {
+      color: @text-dark-color;
+
       &:hover {
-        &.block {
-          background: @light-color;
-        }
+        &.block,
         &.text {
-          color: @light-color;
+          color: @text-light-color;
         }
         &.svg {
           fill: @light-color;
         }
       }
-      &:active {
-        &.block {
-          background: @medium-color;
-        }
-        &.text {
-          color: @medium-color;
-        }
-        &.svg {
-          fill: @medium-color;
-        }
-      }
 
       &.selected {
-        &.block, &.text {
-          color: white;
-          background: black;
+        &.block,
+        &.text {
+          color: @text-light-color;
+          background-color: @dark-color;
         }
         &.svg {
-          fill: black;
+          fill: @dark-color;
         }
       }
     }
@@ -147,14 +109,67 @@
 
   .stats {
     .stat {
-      border-color: black;
+      border-color: @text-light-color;
     }
   }
 
-  .ironsworn-roll {
-    .dice-formula,
-    .dice-total {
-      background-color: @dark-color;
+  button, .button {
+    background-color: @dark-color;
+    border: 2px groove @text-dark-color;
+    color: @text-dark-color;
+
+    &:hover, &:focus {
+      box-shadow: 0 0 5px @text-light-color;
     }
   }
+
+  hr {
+    border-color: @light-color;
+  }
+}
+
+// .roll {
+//   color: @text-light-color;
+
+//   &.max {
+//   }
+
+//   &.min {
+
+//   }
+// }
+
+.ironsworn-roll .roll {
+  background-image: url('systems/foundry-ironsworn/assets/d6.svg');
+}
+
+.chat-message {
+  .dice-formula,
+  .dice-total {
+    background: rgba(0, 0, 0, 0.8);
+    color: @text-light-color;
+    // border-color: @text-light-color;
+
+    .die {
+      &.d6 {
+        background-image: url('systems/foundry-ironsworn/assets/d6.svg');
+      }
+      &.d10 {
+        background-image: url('systems/foundry-ironsworn/assets/d10.svg');
+      }
+      
+      &.min {
+        color: @text-light-color;
+        filter: hue-rotate(180deg);
+      }
+      &.max {
+        color: @text-light-color;
+        filter: hue-rotate(-60deg);
+      }
+    }
+  }
+
+  // .message-header {
+  //   color: @text-light-color;
+  // }
 }

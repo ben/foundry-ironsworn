@@ -260,7 +260,7 @@
         "Name": "Visual Theme",
         "Hint": "Select the visual look for this game. Requires a reload.",
         "Ironsworn": "Ironsworn Classic",
-        "Starforged": "Starforged"
+        "Starforged": "Starforged (experimental)"
       }
     }
   }

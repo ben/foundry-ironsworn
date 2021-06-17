@@ -6,6 +6,8 @@
 - Edit mode for assets ([#38](https://github.com/ben/foundry-ironsworn/pull/38))
 - Visual tweaks ([#39](https://github.com/ben/foundry-ironsworn/pull/39))
 - More visual tweaks ([#40](https://github.com/ben/foundry-ironsworn/pull/40))
+- Convert rank selection to a hex widget ([#41](https://github.com/ben/foundry-ironsworn/pull/41))
+- A better Starforged theme ([42](https://github.com/ben/foundry-ironsworn/pull/42))
 
 ## 0.4.2
 

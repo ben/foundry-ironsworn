@@ -149,14 +149,7 @@
                   <li class="item-row ironsworn__asset" data-item="{{id}}">
                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                       <div class="flexrow">
-                        <h4>
-                          {{#if data.flags.foundry-ironsworn.expanded}}
-                          ⯆
-                          {{else}}
-                          ⯈
-                          {{/if}}
-                          {{name}}
-                        </h4>
+                        <h4> {{name}} </h4>
                         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                         <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}"
                           style="margin: 0 5px;">
@@ -249,7 +242,7 @@
           <div class="flexrow">
             <div class="flexcol" style="flex:2;">
 
-              <h3 style="border-bottom: 2px solid gray; margin-right: 5px;">{{localize 'IRONSWORN.Conditions'}}</h3>
+              <h3 style="border-bottom: 2px solid; margin-right: 5px;">{{localize 'IRONSWORN.Conditions'}}</h3>
               <div class="flexrow">
                 <div class="flexcol">
                   {{>debility name="wounded"}}
@@ -263,12 +256,12 @@
               </div>
             </div>
             <div class="flexcol">
-              <h3 style="border-bottom: 2px solid gray; margin-right: 5px;">{{localize 'IRONSWORN.Banes'}}</h3>
+              <h3 style="border-bottom: 2px solid; margin-right: 5px;">{{localize 'IRONSWORN.Banes'}}</h3>
               {{>debility name="maimed"}}
               {{>debility name="corrupted"}}
             </div>
             <div class="flexcol">
-              <h3 style="border-bottom: 2px solid gray; margin-right: 5px;">{{localize 'IRONSWORN.Burdens'}}</h3>
+              <h3 style="border-bottom: 2px solid; margin-right: 5px;">{{localize 'IRONSWORN.Burdens'}}</h3>
               {{>debility name="cursed"}}
               {{>debility name="tormented"}}
             </div>
