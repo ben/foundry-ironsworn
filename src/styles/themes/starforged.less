@@ -124,6 +124,10 @@ body {
 //   }
 // }
 
+.ironsworn-roll .roll {
+  background-image: url('systems/foundry-ironsworn/assets/d6.svg');
+}
+
 .chat-message {
   .dice-formula,
   .dice-total {
@@ -139,9 +143,13 @@ body {
         background-image: url('systems/foundry-ironsworn/assets/d10.svg');
       }
       
-      &.min,
+      &.min {
+        color: @text-light-color;
+        filter: hue-rotate(180deg);
+      }
       &.max {
         color: @text-light-color;
+        filter: hue-rotate(-60deg);
       }
     }
   }
