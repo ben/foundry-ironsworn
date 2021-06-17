@@ -19,7 +19,8 @@ body {
 }
 
 .window-app {
-  background-color: transparent;
+  background-color: @background-gradient;
+  border: 1px solid @text-dark-color;
 }
 
 .theme-starforged {
@@ -27,12 +28,12 @@ body {
 
   h2,
   h3 {
-    border-bottom-color: @text-dark-color;
+    border-bottom-color: @light-color;
   }
 
   .inline-roll {
     background: @dark-color;
-    border-color: @light-color;
+    border-color: @light-color; 
 
     &:hover {
       text-shadow: 0 0 8px @text-light-color;
@@ -47,7 +48,7 @@ body {
     color: @text-light-color;
   }
 
-  input {
+  input, textarea {
     background-color: @dark-color;
     border: 0;
     color: @text-light-color;
@@ -59,7 +60,7 @@ body {
   }
 
   .sheet-area {
-    border-color: @dark-color;
+    border-color: @light-color;
   }
 
   .rank-pip {
@@ -110,6 +111,20 @@ body {
     .stat {
       border-color: @text-light-color;
     }
+  }
+
+  button, .button {
+    background-color: @dark-color;
+    border: 2px groove @text-dark-color;
+    color: @text-dark-color;
+
+    &:hover, &:focus {
+      box-shadow: 0 0 5px @text-light-color;
+    }
+  }
+
+  hr {
+    border-color: @light-color;
   }
 }
 
