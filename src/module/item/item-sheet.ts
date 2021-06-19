@@ -68,29 +68,6 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
       await this.item.update({ 'data.track.current': newValue })
     })
 
-    // Vow progress buttons
-    html.find('.markProgress').click((ev) => {
-      ev.preventDefault()
-      return this.item.markProgress()
-    })
-    html.find('.fulfillProgress').click((ev) => {
-      ev.preventDefault()
-      return this.item.fulfill()
-    })
-    html.find('.clearProgress').click((ev) => {
-      ev.preventDefault()
-      return this.item.clearProgress()
-    })
-    html.find('.delete').click(async (ev) => {
-      ev.preventDefault()
-      await Dialog.confirm({
-        title: game.i18n.localize('IRONSWORN.DeleteItem'),
-        content: `<p>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</p>`,
-        yes: () => this.item.delete(),
-        defaultYes: false,
-      })
-    })
-
     // Bonds
     html.find('.add-bond').click((_ev) => {
       const bonds = Object.values((this.item.data.data as any).bonds)
