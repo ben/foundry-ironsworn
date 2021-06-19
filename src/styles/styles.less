@@ -5,7 +5,7 @@
   h4,
   h5,
   h6 {
-    font-variant: all-small-caps;
+    text-transform: uppercase;
   }
 
   .window-content {
@@ -93,9 +93,6 @@
     position: relative;
   }
 
-  h4 {
-    font-size: 22px;
-  }
 
   .asset-summary {
     transition: all 0.5s ease;
@@ -130,9 +127,10 @@
     }
   }
 
-  h4.vertical {
-    padding-left: 5px;
+  .vertical {
+    padding: 0 5px;
     writing-mode: vertical-lr;
+    border: none;
   }
 
   .stack {
@@ -145,7 +143,6 @@
       border-top: none;
       text-align: center;
       line-height: 28px;
-      font-size: 18px;
 
       &:first-child {
         border-top: 1px solid;
@@ -288,7 +285,6 @@
       border: 1px solid;
       border-radius: 3px;
       padding: 5px;
-      font-size: smaller;
       margin: 5px;
     }
   }
@@ -398,7 +394,6 @@
   text-align: center;
   border: 1px solid;
   margin-bottom: 5px;
-  font-size: 22px;
   font-weight: bold;
   line-height: 30px;
   font-variant: all-small-caps;
@@ -416,7 +411,6 @@
 
 .ironsworn-roll {
   .hit-type {
-    font-size: 20px;
     font-weight: bold;
     font-variant: all-small-caps;
   }
@@ -429,7 +423,6 @@
     background-image: url('/icons/svg/d6-grey.svg');
     background-repeat: no-repeat;
     background-size: 24px 24px;
-    font-size: 18px;
     font-weight: bold;
     text-align: center;
   }

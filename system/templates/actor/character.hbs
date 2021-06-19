@@ -36,7 +36,7 @@
         <i class="fas fa-check"></i>
       </div>
     </div>
-    <h2>{{name}}</h2>
+    <h3>{{name}}</h3>
   </div>
   <div class="flexrow">
     <div class="flexrow track">
@@ -88,7 +88,7 @@
           {{localize 'IRONSWORN.Reset'}}: {{data.data.momentumReset}}
           {{localize 'IRONSWORN.Max'}}: {{data.data.momentumMax}}
         </div>
-        <h4 class="vertical">{{localize 'IRONSWORN.Momentum'}}</h4>
+        <h3 class="vertical">{{localize 'IRONSWORN.Momentum'}}</h3>
       </div>
     </div>
     <div class="flexcol">
@@ -127,7 +127,7 @@
 
           <div class="flexcol">
             <section class="sheet-area" style="flex-grow: 0;">
-              <h1 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h1>
+              <h2 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h2>
               <div class="flexrow">
                 <div class="flexrow track">
                   {{#each (progressCharacters bonds.count)}}
@@ -142,14 +142,14 @@
             </section>
 
             <section class="sheet-area">
-              <h1 style="text-align:center">{{localize 'IRONSWORN.Assets'}}</h1>
+              <h2 style="text-align:center">{{localize 'IRONSWORN.Assets'}}</h2>
               <div class="flexcol item-list">
                 <ol>
                   {{#each assets}}
                   <li class="item-row ironsworn__asset" data-item="{{id}}">
                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                       <div class="flexrow">
-                        <h4> {{name}} </h4>
+                        <h3> {{name}} </h3>
                         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                         <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}"
                           style="margin: 0 5px;">
@@ -183,9 +183,9 @@
 
                       {{#if data.data.track.enabled}}
                       <div class="flexcol">
-                        <label class="clickable text ironsworn__assettrack__roll">
+                        <h4 class="clickable text ironsworn__assettrack__roll">
                           {{data.data.track.name}}
-                        </label>
+                        </h4>
                         <div class="flexrow track">
                           {{#rangeEach from=0 to=data.data.track.max
                           current=data.data.track.current}}
@@ -209,7 +209,7 @@
 
           <div class="flexcol">
             <section class="sheet-area progresses">
-              <h1 style="text-align:center">{{localize 'IRONSWORN.Vows'}}</h1>
+              <h2 style="text-align:center">{{localize 'IRONSWORN.Vows'}}</h2>
               {{#each vows}}
               {{>progress}}
               {{/each}}
@@ -219,7 +219,7 @@
 
             </section>
             <section class="sheet-area progresses">
-              <h1 style="text-align:center">{{localize 'IRONSWORN.Progress'}}</h1>
+              <h2 style="text-align:center">{{localize 'IRONSWORN.Progress'}}</h2>
               {{#each progresses}}
               {{>progress}}
               {{/each}}
@@ -231,7 +231,7 @@
 
         </div>
         <section class="sheet-area" style="flex-grow: 0;">
-          <h1 style="text-align:center">{{localize 'IRONSWORN.Debilities'}}</h1>
+          <h2 style="text-align:center">{{localize 'IRONSWORN.Debilities'}}</h2>
 
           {{#*inline "debility"}}
           <label class="checkbox">
@@ -272,27 +272,27 @@
     </div>
     <div class="flexcol margin-right">
       <div class="flexrow nogrow" style="flex-wrap: nowrap;">
-        <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="health">
+        <h3 class="vertical clickable text ironsworn__stat__roll" data-stat="health">
           {{localize 'IRONSWORN.Health'}}
-        </h4>
+        </h3>
         <div class="flexcol stack health">
           {{>stack stat="health" from=5 to=0}}
         </div>
       </div>
       <hr class="nogrow" />
       <div class="flexrow nogrow" style="flex-wrap: nowrap;">
-        <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="spirit">
+        <h3 class="vertical clickable text ironsworn__stat__roll" data-stat="spirit">
           {{localize 'IRONSWORN.Spirit'}}
-        </h4>
+        </h3>
         <div class="flexcol stack spirit">
           {{>stack stat="spirit" from=5 to=0}}
         </div>
       </div>
       <hr class="nogrow" />
       <div class="flexrow nogrow" style="flex-wrap: nowrap;">
-        <h4 class="vertical clickable text ironsworn__stat__roll" data-stat="supply">
+        <h3 class="vertical clickable text ironsworn__stat__roll" data-stat="supply">
           {{localize 'IRONSWORN.Supply'}}
-        </h4>
+        </h3>
         <div class="flexcol stack supply">
           {{>stack stat="supply" from=5 to=0}}
         </div>
