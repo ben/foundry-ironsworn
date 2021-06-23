@@ -70,11 +70,6 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
       fields.splice(idx, 1)
       await this.item.update({ 'data.fields': fields })
     })
-    html.find('.add-field').click(async (_ev) => {
-      const fields = Object.values((this.item.data.data as any).fields)
-      fields.push({ name: '', value: '' })
-      await this.item.update({ 'data.fields': fields })
-    })
 
     html.find('.track-target').click(async (ev) => {
       const newValue = parseInt(ev.currentTarget.dataset.value)
