@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 0.4.4
+
 - Fix the asset sheet ([#45](https://github.com/ben/foundry-ironsworn/pull/45))
 - Unify and update the progress/vow sheets ([#46](https://github.com/ben/foundry-ironsworn/pull/46))
 - Restructure the use of headers ([#47](https://github.com/ben/foundry-ironsworn/pull/47))
