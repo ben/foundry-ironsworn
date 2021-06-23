@@ -18,20 +18,20 @@
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Label'}}:</label>
                     &nbsp;
-                    <input class="attribute-value" type="text" name="data.fields.{{@index}}.name" value="{{name}}" />
+                    <input class="attribute-value ironsworn__field__label" data-idx="{{@index}}" type="text" value="{{name}}" />
                 </div>
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Value'}}:</label>
                     &nbsp;
-                    <input class="attribute-value" type="text" name="data.fields.{{@index}}.value" value="{{value}}" />
+                    <input class="attribute-value ironsworn__field__value" data-idx="{{@index}}" type="text" value="{{value}}" />
                 </div>
             </div>
-            <div class="block clickable item-row-control delete-field" data-index="{{@index}}">
+            <div class="block clickable item-row-control ironsworn__field__delete" data-idx="{{@index}}">
                 <i class="fas fa-trash"></i>
             </div>
         </div>
         {{/each}}
-        <div class="block clickable add-field" style="padding: 5px; text-align: center;">
+        <div class="block clickable ironsworn__field__add" style="padding: 5px; text-align: center;">
             <i class="fas fa-plus"></i>
         </div>
     </div>
@@ -41,7 +41,7 @@
     {{#each data.data.abilities}}
     <div class="flexcol item">
         <div class="flexrow">
-            <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} style="flex-grow: 0;" />
+            <input type="checkbox" class="ironsworn__ability__enable" data-idx="{{@index}}" {{checked enabled}} style="flex-grow: 0;" />
             {{#if ../item.data.flags.foundry-ironsworn.edit-mode}}
             <input class="attribute-value" type="textarea" name="data.abilities.{{@index}}.description"
                 value="{{description}}" />

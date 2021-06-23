@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the asset sheet ([#45](https://github.com/ben/foundry-ironsworn/pull/45))
+
 ## 0.4.3
 
 - Restructure i18n files ([#37](https://github.com/ben/foundry-ironsworn/pull/37))

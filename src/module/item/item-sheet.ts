@@ -63,19 +63,6 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return
 
-    html.find('.delete-field').click(async (ev) => {
-      ev.preventDefault()
-      const idx = parseInt($(ev.target).parents('.item-row').data('idx'))
-      const fields = Object.values((this.item.data.data as any).fields)
-      fields.splice(idx, 1)
-      await this.item.update({ 'data.fields': fields })
-    })
-    html.find('.add-field').click(async (_ev) => {
-      const fields = Object.values((this.item.data.data as any).fields)
-      fields.push({ name: '', value: '' })
-      await this.item.update({ 'data.fields': fields })
-    })
-
     html.find('.track-target').click(async (ev) => {
       const newValue = parseInt(ev.currentTarget.dataset.value)
       await this.item.update({ 'data.track.current': newValue })
