@@ -9,6 +9,8 @@ export class AssetSheet extends IronswornItemSheet {
   }
 
   activateListeners(html: JQuery) {
+    if (!this.options.editable) return
+
     html.find('.ironsworn__ability__enable').on('click', (ev) => this._abilityToggle.call(this, ev))
     html.find('.ironsworn__field__add').on('click', (ev) => this._addField.call(this, ev))
     html.find('.ironsworn__field__label').on('blur', (ev) => this._updateFieldLabel.call(this, ev))
