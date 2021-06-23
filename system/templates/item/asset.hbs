@@ -41,7 +41,7 @@
     {{#each data.data.abilities}}
     <div class="flexcol item">
         <div class="flexrow">
-            <input type="checkbox" name="data.abilities.{{@index}}.enabled" {{checked enabled}} style="flex-grow: 0;" />
+            <input type="checkbox" class="ironsworn__ability__enable" data-idx="{{@index}}" {{checked enabled}} style="flex-grow: 0;" />
             {{#if ../item.data.flags.foundry-ironsworn.edit-mode}}
             <input class="attribute-value" type="textarea" name="data.abilities.{{@index}}.description"
                 value="{{description}}" />
