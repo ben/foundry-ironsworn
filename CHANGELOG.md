@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix the asset sheet ([#45](https://github.com/ben/foundry-ironsworn/pull/45))
+- Unify and update the progress/vow sheets ([#46](https://github.com/ben/foundry-ironsworn/pull/46))
 
 ## 0.4.3
 
