@@ -13,7 +13,6 @@ import { BondsetSheet } from './module/item/bondset/bondsetsheet'
 import { IronswornItem } from './module/item/item'
 import { MoveSheet } from './module/item/move/movesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
-import { VowSheet } from './module/item/vow/vowsheet'
 
 import './styles/styles.less'
 
@@ -56,11 +55,7 @@ Hooks.once('init', async () => {
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', ProgressSheet, {
-    types: ['progress'],
-    makeDefault: true,
-  })
-  Items.registerSheet('ironsworn', VowSheet, {
-    types: ['vow'],
+    types: ['vow', 'progress'],
     makeDefault: true,
   })
 
