@@ -16,6 +16,7 @@ export class AssetSheet extends IronswornItemSheet {
     html.find('.ironsworn__field__label').on('blur', (ev) => this._updateFieldLabel.call(this, ev))
     html.find('.ironsworn__field__value').on('blur', (ev) => this._updateFieldValue.call(this, ev))
     html.find('.ironsworn__field__delete').on('click', (ev) => this._deleteField.call(this, ev))
+    html.find('.ironsworn__asset__delete').on('click', (ev) => this.assetDelete.call(this, ev))
   }
 
   _getHeaderButtons() {
@@ -75,7 +76,7 @@ export class AssetSheet extends IronswornItemSheet {
     fields[idx].name = val
     this.item.update({ data: { fields } })
   }
-  
+
   _updateFieldValue(ev: JQuery.BlurEvent) {
     const assetData = this.item.data as AssetItemData
     const fields = Object.values(assetData.data.fields)
@@ -83,5 +84,16 @@ export class AssetSheet extends IronswornItemSheet {
     const val = $(ev.currentTarget).val()?.toString() || ''
     fields[idx].value = val
     this.item.update({ data: { fields } })
+  }
+
+  assetDelete(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    Dialog.confirm({
+      title: game.i18n.localize(`IRONSWORN.DeleteAsset`),
+      content: `<p><strong>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</strong></p>`,
+      yes: () => this.item.delete(),
+      defaultYes: false,
+    })
   }
 }

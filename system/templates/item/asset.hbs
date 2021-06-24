@@ -5,7 +5,8 @@
                 <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
             </h1>
             <h3>
-                <input name="data.description" type="text" value="{{data.data.description}}" placeholder="{{localize 'IRONSWORN.Description'}}" />
+                <input name="data.description" type="text" value="{{data.data.description}}"
+                    placeholder="{{localize 'IRONSWORN.Description'}}" />
             </h3>
         </div>
     </header>
@@ -18,12 +19,14 @@
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Label'}}:</label>
                     &nbsp;
-                    <input class="attribute-value ironsworn__field__label" data-idx="{{@index}}" type="text" value="{{name}}" />
+                    <input class="attribute-value ironsworn__field__label" data-idx="{{@index}}" type="text"
+                        value="{{name}}" />
                 </div>
                 <div class="flexrow">
                     <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Value'}}:</label>
                     &nbsp;
-                    <input class="attribute-value ironsworn__field__value" data-idx="{{@index}}" type="text" value="{{value}}" />
+                    <input class="attribute-value ironsworn__field__value" data-idx="{{@index}}" type="text"
+                        value="{{value}}" />
                 </div>
             </div>
             <div class="block clickable item-row-control ironsworn__field__delete" data-idx="{{@index}}">
@@ -41,7 +44,8 @@
     {{#each data.data.abilities}}
     <div class="flexcol item">
         <div class="flexrow">
-            <input type="checkbox" class="ironsworn__ability__enable" data-idx="{{@index}}" {{checked enabled}} style="flex-grow: 0;" />
+            <input type="checkbox" class="ironsworn__ability__enable" data-idx="{{@index}}" {{checked enabled}}
+                style="flex-grow: 0;" />
             {{#if ../item.data.flags.foundry-ironsworn.edit-mode}}
             <input class="attribute-value" type="textarea" name="data.abilities.{{@index}}.description"
                 value="{{description}}" />
@@ -57,7 +61,8 @@
     <h2>{{localize 'IRONSWORN.Track'}}</h2>
     <div class="flexrow" style="align-items: baseline;">
         <label>
-            <input type="checkbox" name="data.track.enabled" {{checked data.data.track.enabled}} style="flex-grow: 0;" />
+            <input type="checkbox" name="data.track.enabled" {{checked data.data.track.enabled}}
+                style="flex-grow: 0;" />
             <span>{{localize 'IRONSWORN.Enabled'}}</span>
         </label>
         <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Name'}}</span>
@@ -75,10 +80,6 @@
         {{/rangeEach}}
     </div>
 
-
     <hr>
-    <button class="delete">{{localize 'IRONSWORN.DeleteAsset'}}</button>
-
-    {{!-- <h3>Rendered</h3>
-    {{{data.rendered}}} --}}
+    <button class="ironsworn__asset__delete">{{localize 'IRONSWORN.DeleteAsset'}}</button>
 </form>
