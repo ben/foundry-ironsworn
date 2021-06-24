@@ -1,0 +1,43 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+    <div class="flexcol">
+        <div class="flexrow">
+
+            {{!-- Stats --}}
+            <div class="flexcol" style="margin: 5px;">
+                <h2 class="nogrow">Stats</h2>
+                <div class="flexrow stats">
+                    {{#*inline "stat"}}
+                    <div class="stat clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+                        <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
+                        <h3>{{lookup data.data stat}}</h3>
+                    </div>
+                    {{/inline}}
+
+                    {{>stat stat="edge"}}
+                    {{>stat stat="heart"}}
+                    {{>stat stat="iron"}}
+                    {{>stat stat="shadow"}}
+                    {{>stat stat="wits"}}
+                </div>
+            </div>
+
+            {{!-- Resources --}}
+            <div class="flexcol" style="margin: 5px;">
+                <h2 class="nogrow">Resources</h2>
+                <div class="flexrow">
+                    {{#*inline "resource"}}
+                    <div class="stat clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+                        <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
+                        <h3>{{lookup data.data stat}}</h3>
+                    </div>
+                    {{/inline}}
+
+                    {{>resource stat="momentum" min=-6 max=10}}
+                    {{>resource stat="health" min=0 max=5}}
+                    {{>resource stat="spirit" min=0 max=5}}
+                    {{>resource stat="supply" min=0 max=5}}
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
