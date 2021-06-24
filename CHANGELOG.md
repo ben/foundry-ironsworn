@@ -2,6 +2,10 @@
 
 ## In progress
 
+## 0.4.5
+
+- Increase the contrast of the Starforged theme ([#49](https://github.com/ben/foundry-ironsworn/pull/49))
+
 ## 0.4.4
 
 - Fix the asset sheet ([#45](https://github.com/ben/foundry-ironsworn/pull/45))
