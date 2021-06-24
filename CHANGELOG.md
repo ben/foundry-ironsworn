@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the asset-sheet delete button ([#51](https://github.com/ben/foundry-ironsworn/pull/51))
+
 ## 0.4.5
 
 - Increase the contrast of the Starforged theme ([#49](https://github.com/ben/foundry-ironsworn/pull/49))
