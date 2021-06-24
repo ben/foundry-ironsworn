@@ -4,10 +4,11 @@
 @muted-color: #11777799;
 @medium-color: #33999999;
 @light-color: #55bbbb99;
-@background-gradient: rgba(0, 0, 0, 0.4); // radial-gradient(circle, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+@background-gradient: rgba(0, 0, 0, 0.4);
 
 @text-dark-color: #399;
-@text-light-color: #5cc;
+@text-medium-color: #5cc;
+@text-light-color: #8ff;
 
 body {
   font-family: 'Carrois Gothic SC', sans-serif;
@@ -24,7 +25,7 @@ body {
 }
 
 .theme-starforged {
-  color: @text-light-color;
+  color: @text-medium-color;
 
   h2,
   h3 {
@@ -36,7 +37,7 @@ body {
     border-color: @light-color; 
 
     &:hover {
-      text-shadow: 0 0 8px @text-light-color;
+      text-shadow: 0 0 8px @text-medium-color;
     }
   }
 
@@ -45,13 +46,13 @@ body {
     background: rgb(0, 0, 0);
     background: @background-gradient;
     background-image: none;
-    color: @text-light-color;
+    color: @text-medium-color;
   }
 
   input, textarea {
     background-color: @dark-color;
     border: 0;
-    color: @text-light-color;
+    color: @text-medium-color;
 
     &:focus {
       box-shadow: 0 0 10px @light-color;
@@ -67,7 +68,7 @@ body {
     fill: @medium-color;
 
     &.filled {
-      fill: @text-light-color;
+      fill: @text-medium-color;
     }
 
     path {
@@ -87,7 +88,7 @@ body {
       &:hover {
         &.block,
         &.text {
-          color: @text-light-color;
+          color: @text-medium-color;
         }
         &.svg {
           fill: @light-color;
@@ -98,7 +99,7 @@ body {
         &.block,
         &.text {
           color: @text-light-color;
-          background-color: @dark-color;
+          background-color: @medium-color;
         }
         &.svg {
           fill: @dark-color;
@@ -109,7 +110,7 @@ body {
 
   .stats {
     .stat {
-      border-color: @text-light-color;
+      border-color: @text-medium-color;
     }
   }
 
@@ -119,7 +120,7 @@ body {
     color: @text-dark-color;
 
     &:hover, &:focus {
-      box-shadow: 0 0 5px @text-light-color;
+      box-shadow: 0 0 5px @text-medium-color;
     }
   }
 
@@ -127,17 +128,6 @@ body {
     border-color: @light-color;
   }
 }
-
-// .roll {
-//   color: @text-light-color;
-
-//   &.max {
-//   }
-
-//   &.min {
-
-//   }
-// }
 
 .ironsworn-roll .roll {
   background-image: url('systems/foundry-ironsworn/assets/d6.svg');
@@ -147,8 +137,7 @@ body {
   .dice-formula,
   .dice-total {
     background: rgba(0, 0, 0, 0.8);
-    color: @text-light-color;
-    // border-color: @text-light-color;
+    color: @text-medium-color;
 
     .die {
       &.d6 {
@@ -159,17 +148,13 @@ body {
       }
       
       &.min {
-        color: @text-light-color;
+        color: @text-medium-color;
         filter: hue-rotate(180deg);
       }
       &.max {
-        color: @text-light-color;
+        color: @text-medium-color;
         filter: hue-rotate(-60deg);
       }
     }
   }
-
-  // .message-header {
-  //   color: @text-light-color;
-  // }
 }
