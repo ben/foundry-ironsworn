@@ -266,10 +266,15 @@
         &:first-child {
           border-top: none;
         }
+
+        &.small {
+          flex-basis: 25px;
+          line-height: 25px;
+          flex-grow: 0;
+        }
       }
 
       .box {
-        justify-items: center;
         text-align: center;
         border-left: 1px solid;
         &:first-child {
