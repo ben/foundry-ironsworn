@@ -25,7 +25,6 @@ export interface IronswornCharacterData {
     wounded: boolean
   }
   xp: number
-  statRollBonus: number | undefined
 }
 
 interface CharacterActorData extends Actor.Data<IronswornCharacterData, IronswornItemData> {

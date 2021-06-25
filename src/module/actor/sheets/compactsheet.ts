@@ -6,12 +6,15 @@ import { IronswornCharacterData } from '../actortypes'
 import { CharacterMoveSheet } from './charactermovesheet'
 import { CharacterSheetOptions } from './charactersheet'
 
-export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor> {
-  constructor(actor, opts) {
-    super(actor, opts)
+export interface CompactCharacterSheetOptions extends BaseEntitySheet.Options {
+  statRollBonus: number
+}
 
-    const actorData = this.actor.data.data as IronswornCharacterData
-    actor.update({ data: { statRollBonus: actorData.statRollBonus || 0 } })
+
+export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor, CompactCharacterSheetOptions> {
+  constructor(actor, opts: CompactCharacterSheetOptions) {
+    opts.statRollBonus ||= 0
+    super(actor, opts)
   }
 
   static get defaultOptions() {
@@ -35,9 +38,6 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
 
   getData() {
     let data: any = super.getData()
-
-    const actorData = this.actor.data.data as IronswornCharacterData
-    data.statRollBonus = actorData.statRollBonus || 0
 
     // Allow every itemtype to add data to the actorsheet
     for (const itemType of CONFIG.IRONSWORN.itemClasses) {
@@ -84,9 +84,8 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     ev.preventDefault()
 
     const amt = parseInt(ev.currentTarget.dataset.amt || '0')
-    const actorData = this.actor.data.data as IronswornCharacterData
-    const current = actorData.statRollBonus || 0
-    this.actor.update({ data: { statRollBonus: current + amt } })
+    this.options.statRollBonus += amt
+    this.render(true)
   }
 
   async _onStatRoll(ev: JQuery.ClickEvent) {
@@ -96,12 +95,13 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     const stat = el.dataset.stat
     if (stat) {
       const actorData = this.actor.data.data as IronswornCharacterData
-      const bonus = actorData.statRollBonus || 0
+      const bonus = this.options.statRollBonus || 0
       const rollText = game.i18n.localize('IRONSWORN.Roll')
       const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
       const title = `${rollText} +${statText}`
       await ironswornMoveRoll(`@${stat}+${bonus}`, actorData, title)
-      this.actor.update({ data: { statRollBonus: 0 } })
+      this.options.statRollBonus = 0
+      this.render(true)
     }
   }
 
