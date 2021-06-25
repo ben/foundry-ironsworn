@@ -1,72 +1,81 @@
-<form class="{{cssClass}} flexcol" autocomplete="off">
-    {{!-- Stats --}}
-    <div class="flexcol" style="margin: 5px;">
-        <div class="flexrow stats">
-            {{#*inline "stat"}}
-            <div class="stat clickable block ironsworn__stat__roll" data-stat="{{stat}}">
-                <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-                <h3>{{lookup data.data stat}}</h3>
-            </div>
-            {{/inline}}
+<form class="{{cssClass}} flexcol compact" autocomplete="off">
+  {{!-- Stats --}}
+  <div class="flexcol boxgroup" style="margin: 5px;">
+    <div class="flexrow boxrow">
+      {{#*inline "stat"}}
+      <div class="box clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+        <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
+        <h3>{{lookup data.data stat}}</h3>
+      </div>
+      {{/inline}}
 
-            {{>stat stat="edge"}}
-            {{>stat stat="heart"}}
-            {{>stat stat="iron"}}
-            {{>stat stat="shadow"}}
-            {{>stat stat="wits"}}
-        </div>
+      {{>stat stat="edge"}}
+      {{>stat stat="heart"}}
+      {{>stat stat="iron"}}
+      {{>stat stat="shadow"}}
+      {{>stat stat="wits"}}
     </div>
-
-    {{!-- Resources --}}
-    <div class="flexcol" style="margin: 5px;">
-        <div class="flexrow stats">
-            {{#*inline "resource"}}
-            <div class="stat clickable block ironsworn__stat__roll" data-stat="{{stat}}">
-                <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-                <h3>{{lookup data.data stat}}</h3>
-            </div>
-            {{/inline}}
-
-            {{>resource stat="momentum" min=-6 max=10}}
-            {{>resource stat="health" min=0 max=5}}
-            {{>resource stat="spirit" min=0 max=5}}
-            {{>resource stat="supply" min=0 max=5}}
-        </div>
+    <div class="flexrow boxrow">
+      <p>bonuses go here</p>
     </div>
+  </div>
 
-    {{!-- Debilities --}}
-    <div class="flexcol">
-        {{#*inline "debility"}}
-        <label class="checkbox">
-            <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.data.debility name)}}>
-            {{capitalize name}}
-        </label>
-        {{/inline}}
-        <div class="flexrow nogrow">
-            <div class="flexcol" style="flex:2;">
-                <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Conditions'}}</h3>
-                <div class="flexrow">
-                    <div class="flexcol">
-                        {{>debility name="wounded"}}
-                        {{>debility name="unprepared"}}
-
-                    </div>
-                    <div class="flexcol">
-                        {{>debility name="shaken"}}
-                        {{>debility name="encumbered"}}
-                    </div>
-                </div>
-            </div>
-            <div class="flexcol">
-                <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Banes'}}</h3>
-                {{>debility name="maimed"}}
-                {{>debility name="corrupted"}}
-            </div>
-            <div class="flexcol">
-                <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Burdens'}}</h3>
-                {{>debility name="cursed"}}
-                {{>debility name="tormented"}}
-            </div>
+  {{!-- Resources --}}
+  <div class="flexcol boxgroup" style="margin: 5px;">
+    <div class="flexrow boxrow">
+      {{#*inline "resource"}}
+      <div class="box flexcol">
+        <div class="flexcol boxrow clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+          <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
+          <h3>{{lookup data.data stat}}</h3>
         </div>
+        <div class="flexrow boxrow">
+          <div class="box clickable block">&minus;</div>
+          <div class="box clickable block">&plus;</div>
+        </div>
+      </div>
+      {{/inline}}
+
+      {{>resource stat="momentum" min=-6 max=10}}
+      {{>resource stat="health" min=0 max=5}}
+      {{>resource stat="spirit" min=0 max=5}}
+      {{>resource stat="supply" min=0 max=5}}
     </div>
+  </div>
+
+  {{!-- Debilities --}}
+  <div class="flexcol">
+    {{#*inline "debility"}}
+    <label class="checkbox">
+      <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.data.debility name)}}>
+      {{capitalize name}}
+    </label>
+    {{/inline}}
+    <div class="flexrow nogrow">
+      <div class="flexcol" style="flex:2;">
+        <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Conditions'}}</h3>
+        <div class="flexrow">
+          <div class="flexcol">
+            {{>debility name="wounded"}}
+            {{>debility name="unprepared"}}
+
+          </div>
+          <div class="flexcol">
+            {{>debility name="shaken"}}
+            {{>debility name="encumbered"}}
+          </div>
+        </div>
+      </div>
+      <div class="flexcol">
+        <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Banes'}}</h3>
+        {{>debility name="maimed"}}
+        {{>debility name="corrupted"}}
+      </div>
+      <div class="flexcol">
+        <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Burdens'}}</h3>
+        {{>debility name="cursed"}}
+        {{>debility name="tormented"}}
+      </div>
+    </div>
+  </div>
 </form>

@@ -256,6 +256,29 @@
     }
   }
 
+  .compact {
+    .boxgroup {
+      border: 1px solid;
+      border-radius: 5px;
+
+      .boxrow {
+        border-top: 1px solid;
+        &:first-child {
+          border-top: none;
+        }
+      }
+
+      .box {
+        justify-items: center;
+        text-align: center;
+        border-left: 1px solid;
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+
   .inset {
     margin: 5px;
     padding: 5px;
