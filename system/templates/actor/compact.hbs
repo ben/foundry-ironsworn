@@ -17,7 +17,9 @@
     </div>
     <div class="flexrow boxrow small">
       <div class="box clickable block ironsworn__stat__bonusadajust" data-amt="-1">&minus;</div>
-      <div class="box">{{data.data.statRollBonus}}</div>
+      <div class="box" title="{{localize 'IRONSWORN.StatBonusTooltip'}}">
+        {{data.data.statRollBonus}}
+      </div>
       <div class="box clickable block ironsworn__stat__bonusadajust" data-amt="1">&plus;</div>
     </div>
   </div>
@@ -32,13 +34,16 @@
           <h3>{{lookup data.data stat}}</h3>
         </div>
         <div class="flexrow boxrow small">
-          <div class="box clickable block">&minus;</div>
-          <div class="box clickable block">&plus;</div>
+          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1" data-min="{{min}}">&minus;</div>
+          {{#if burn}}
+          <div class="box clickable block ironsworn__momentum__burn">{{localize 'IRONSWORN.Burn'}}</div>
+          {{/if}}
+          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1" data-max="{{max}}">&plus;</div>
         </div>
       </div>
       {{/inline}}
 
-      {{>resource stat="momentum" min=-6 max=10}}
+      {{>resource stat="momentum" min=-6 max=actor.data.data.momentumMax burn=true}}
       {{>resource stat="health" min=0 max=5}}
       {{>resource stat="spirit" min=0 max=5}}
       {{>resource stat="supply" min=0 max=5}}

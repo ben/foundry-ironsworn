@@ -29,6 +29,8 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
 
     html.find('.ironsworn__stat__roll').on('click', (e) => this._onStatRoll.call(this, e))
     html.find('.ironsworn__stat__bonusadajust').on('click', (e) => this._bonusAdjust.call(this, e))
+    html.find('.ironsworn__resource__adjust').on('click', (e) => this._resourceAdjust.call(this, e))
+    html.find('.ironsworn__momentum__burn').on('click', (e) => this._momentumBurn.call(this, e))
   }
 
   getData() {
@@ -100,6 +102,32 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
       const title = `${rollText} +${statText}`
       await ironswornMoveRoll(`@${stat}+${bonus}`, actorData, title)
       this.actor.update({ data: { statRollBonus: 0 } })
+    }
+  }
+
+  _resourceAdjust(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const amt = parseInt(ev.currentTarget.dataset.amt || '0')
+    const min = parseInt(ev.currentTarget.dataset.min || '-100')
+    const max = parseInt(ev.currentTarget.dataset.max || '100')
+    const { stat } = ev.currentTarget.dataset
+    const actorData = this.actor.data.data as IronswornCharacterData
+    let value = actorData[stat]
+    value += amt
+    if (value >= min && value <= max) {
+      this.actor.update({ data: { [stat]: value } })
+    }
+  }
+
+  _momentumBurn(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
+    if (momentum > momentumReset) {
+      this.actor.update({
+        data: { momentum: momentumReset },
+      })
     }
   }
 }

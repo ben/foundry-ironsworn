@@ -255,6 +255,7 @@
     "DeleteProgress": "Delete Progress",
     "DeleteAsset": "Delete Asset",
     "ConfirmDelete": "Are you sure? This cannot be undone.",
+    "StatBonusTooltip": "Bonus for the next stat roll",
     "Settings": {
       "Theme": {
         "Name": "Visual Theme",
