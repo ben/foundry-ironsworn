@@ -1,4 +1,4 @@
-import { attachInlineRollListeners, IronswornRollDialog } from '../../helpers/roll'
+import { IronswornRollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
@@ -7,6 +7,13 @@ import { CharacterMoveSheet } from './charactermovesheet'
 import { CharacterSheetOptions } from './charactersheet'
 
 export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor> {
+  constructor(actor, opts) {
+    super(actor, opts)
+
+    const actorData = this.actor.data.data as IronswornCharacterData
+    actor.update({data: {statRollBonus: actorData.statRollBonus || 0}})
+  }
+
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
@@ -20,31 +27,15 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    // Custom sheet listeners for every ItemType
-    // for (const itemClass of CONFIG.IRONSWORN.itemClasses) {
-    //   itemClass.activateActorSheetListeners(html, this)
-    // }
-
-    // Custom sheet listeners for every SheetComponent
-    // for (const sheetComponent in CONFIG.IRONSWORN.sheetComponents.actor) {
-    //   CONFIG.IRONSWORN.sheetComponents.actor[sheetComponent].activateListeners(html, this)
-    // }
-
     html.find('.ironsworn__stat__roll').on('click', (e) => this._onStatRoll.call(this, e))
-    html.find('.ironsworn__stat__value').on('click', (e) => this._onStatSet.call(this, e))
-
-    html.find('.ironsworn__builtin__move').each((_i, el) => {
-      attachInlineRollListeners($(el), { actor: this.actor, name: el.dataset.name })
-    })
+    html.find('.ironsworn__stat__bonusadajust').on('click', (e) => this._bonusAdjust.call(this, e))
   }
 
   getData() {
     let data: any = super.getData()
 
-    data.assets = this.actor.items.filter((x) => x.type === 'asset')
-    data.vows = this.actor.items.filter((x) => x.type === 'vow')
-    data.progresses = this.actor.items.filter((x) => x.type === 'progress')
-    data.bonds = this.actor.items.find((x) => x.type === 'bondset')
+    const actorData = this.actor.data.data as IronswornCharacterData
+    data.statRollBonus = actorData.statRollBonus || 0
 
     // Allow every itemtype to add data to the actorsheet
     for (const itemType of CONFIG.IRONSWORN.itemClasses) {
@@ -76,7 +67,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     }
   }
 
-  _onBurnMomentum(ev) {
+  _onBurnMomentum(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
@@ -85,6 +76,15 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
         data: { momentum: momentumReset },
       })
     }
+  }
+
+  _bonusAdjust(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const amt = parseInt(ev.currentTarget.dataset.amt || '0')
+    const actorData = this.actor.data.data as IronswornCharacterData
+    const current = actorData.statRollBonus || 0
+    this.actor.update({data: {statRollBonus: current + amt}})
   }
 
   _onStatRoll(ev: JQuery.ClickEvent) {
@@ -96,21 +96,6 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
       const rollText = game.i18n.localize('IRONSWORN.Roll')
       const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
       IronswornRollDialog.showDialog(this.actor.data.data, stat, `${rollText} +${statText}`)
-    }
-  }
-
-  _onStatSet(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
-    const el = ev.currentTarget
-    const { resource, value } = el.dataset
-    if (resource) {
-      // Clicked a value in momentum/health/etc, set the value
-      const newValue = parseInt(value)
-      const { momentumMax } = this.actor.data.data as IronswornCharacterData
-      if (resource !== 'momentum' || newValue <= momentumMax) {
-        this.actor.update({ data: { [resource]: newValue } })
-      }
     }
   }
 }

@@ -25,6 +25,7 @@ export interface IronswornCharacterData {
     wounded: boolean
   }
   xp: number
+  statRollBonus: number | undefined
 }
 
 interface CharacterActorData extends Actor.Data<IronswornCharacterData, IronswornItemData> {
@@ -34,7 +35,7 @@ interface CharacterActorData extends Actor.Data<IronswornCharacterData, Ironswor
 interface SharedData {}
 
 interface SharedActorData extends Actor.Data<SharedData, IronswornItemData> {
-  type: 'character'
+  type: 'shared'
 }
 
 export type IronswornActorData = CharacterActorData | SharedActorData
