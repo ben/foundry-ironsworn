@@ -37,7 +37,8 @@
           <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
             data-min="{{min}}">&minus;</div>
           {{#if burn}}
-          <div class="box clickable block ironsworn__momentum__burn" style="padding: 0 5px;">{{localize 'IRONSWORN.Burn'}}</div>
+          <div class="box clickable block ironsworn__momentum__burn" style="padding: 0 5px;">{{localize
+            'IRONSWORN.Burn'}}</div>
           {{/if}}
           <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1"
             data-max="{{max}}">&plus;</div>
@@ -60,16 +61,12 @@
       {{capitalize name}}
     </label>
     {{/inline}}
-    <div class="flexrow nogrow">
-      <div class="flexcol" style="flex:2;">
-        <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Conditions'}}</h3>
-        <div class="flexrow">
-          {{>debility name="wounded"}}
-          {{>debility name="unprepared"}}
-          {{>debility name="shaken"}}
-          {{>debility name="encumbered"}}
-        </div>
-      </div>
+
+    <div class="flexrow nogrow" style="padding: 0 1em;">
+      {{>debility name="wounded"}}
+      {{>debility name="unprepared"}}
+      {{>debility name="shaken"}}
+      {{>debility name="encumbered"}}
     </div>
   </div>
 </form>

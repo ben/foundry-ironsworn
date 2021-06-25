@@ -21,9 +21,9 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
       width: 560,
-      height: 235,
+      height: 228,
       template: 'systems/foundry-ironsworn/templates/actor/compact.hbs',
-      // resizable: false,
+      resizable: false,
     } as CharacterSheetOptions)
   }
 
