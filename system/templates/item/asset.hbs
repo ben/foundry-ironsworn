@@ -1,85 +1,82 @@
 <form class="{{cssClass}}" autocomplete="off">
-    <header class="sheet-header">
-        <div class="header-fields">
-            <h1 class="charname">
-                <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
-            </h1>
-            <h3>
-                <input name="data.description" type="text" value="{{data.data.description}}"
-                    placeholder="{{localize 'IRONSWORN.Description'}}" />
-            </h3>
-        </div>
-    </header>
-
-    <h2>{{localize 'IRONSWORN.Fields'}}</h2>
-    <div class="flexcol item-list">
-        {{#each data.data.fields}}
-        <div class="flexrow item-row" data-idx={{@index}}>
-            <div class="flexcol">
-                <div class="flexrow">
-                    <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Label'}}:</label>
-                    &nbsp;
-                    <input class="attribute-value ironsworn__field__label" data-idx="{{@index}}" type="text"
-                        value="{{name}}" />
-                </div>
-                <div class="flexrow">
-                    <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Value'}}:</label>
-                    &nbsp;
-                    <input class="attribute-value ironsworn__field__value" data-idx="{{@index}}" type="text"
-                        value="{{value}}" />
-                </div>
-            </div>
-            <div class="block clickable item-row-control ironsworn__field__delete" data-idx="{{@index}}">
-                <i class="fas fa-trash"></i>
-            </div>
-        </div>
-        {{/each}}
-        <div class="block clickable ironsworn__field__add" style="padding: 5px; text-align: center;">
-            <i class="fas fa-plus"></i>
-        </div>
+  <header class="sheet-header">
+    <div class="header-fields">
+      <h1 class="charname">
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
+      </h1>
+      <h3>
+        <input name="data.description" type="text" value="{{data.data.description}}"
+          placeholder="{{localize 'IRONSWORN.Description'}}" />
+      </h3>
     </div>
+  </header>
 
-
-    <h2>{{localize 'IRONSWORN.Abilities'}}</h2>
-    {{#each data.data.abilities}}
-    <div class="flexcol item">
+  <h2>{{localize 'IRONSWORN.Fields'}}</h2>
+  <div class="flexcol item-list">
+    {{#each data.data.fields}}
+    <div class="flexrow item-row" data-idx={{@index}}>
+      <div class="flexcol">
         <div class="flexrow">
-            <input type="checkbox" class="ironsworn__ability__enable" data-idx="{{@index}}" {{checked enabled}}
-                style="flex-grow: 0;" />
-            {{#if ../item.data.flags.foundry-ironsworn.edit-mode}}
-            <input class="attribute-value" type="textarea" name="data.abilities.{{@index}}.description"
-                value="{{description}}" />
-            {{else}}
-            <div>{{{enrichHtml description}}}</div>
-            {{/if}}
+          <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Label'}}:</label>
+          &nbsp;
+          <input class="attribute-value ironsworn__field__label" data-idx="{{@index}}" type="text" value="{{name}}" />
         </div>
+        <div class="flexrow">
+          <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Value'}}:</label>
+          &nbsp;
+          <input class="attribute-value ironsworn__field__value" data-idx="{{@index}}" type="text" value="{{value}}" />
+        </div>
+      </div>
+      <div class="block clickable item-row-control ironsworn__field__delete" data-idx="{{@index}}">
+        <i class="fas fa-trash"></i>
+      </div>
     </div>
-    <p>
-    </p>
     {{/each}}
-
-    <h2>{{localize 'IRONSWORN.Track'}}</h2>
-    <div class="flexrow" style="align-items: baseline;">
-        <label>
-            <input type="checkbox" name="data.track.enabled" {{checked data.data.track.enabled}}
-                style="flex-grow: 0;" />
-            <span>{{localize 'IRONSWORN.Enabled'}}</span>
-        </label>
-        <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Name'}}</span>
-        <input type="text" name="data.track.name" value={{data.data.track.name}}>
-        <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Max'}}</span>
-        <input type="number" name="data.track.max" value={{data.data.track.max}}>
+    <div class="block clickable ironsworn__field__add" style="padding: 5px; text-align: center;">
+      <i class="fas fa-plus"></i>
     </div>
-    <div class="flexrow track" style="margin-top: 5px;">
-        {{#rangeEach from=0 to=data.data.track.max current=data.data.track.current}}
-        <div class="track-box clickable block track-target
+  </div>
+
+
+  <h2>{{localize 'IRONSWORN.Abilities'}}</h2>
+  {{#each data.data.abilities}}
+  <div class="flexcol item">
+    <div class="flexrow">
+      <input type="checkbox" class="ironsworn__ability__enable" data-idx="{{@index}}" {{checked enabled}}
+        style="flex-grow: 0;" />
+      {{#if ../item.data.flags.foundry-ironsworn.edit-mode}}
+      <input class="attribute-value" type="textarea" name="data.abilities.{{@index}}.description"
+        value="{{description}}" />
+      {{else}}
+      <div>{{{enrichHtml description}}}</div>
+      {{/if}}
+    </div>
+  </div>
+  <p>
+  </p>
+  {{/each}}
+
+  <h2>{{localize 'IRONSWORN.Track'}}</h2>
+  <div class="flexrow" style="align-items: baseline;">
+    <label>
+      <input type="checkbox" name="data.track.enabled" {{checked data.data.track.enabled}} style="flex-grow: 0;" />
+      <span>{{localize 'IRONSWORN.Enabled'}}</span>
+    </label>
+    <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Name'}}</span>
+    <input type="text" name="data.track.name" value={{data.data.track.name}}>
+    <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Max'}}</span>
+    <input type="number" name="data.track.max" value={{data.data.track.max}}>
+  </div>
+  <div class="flexrow track" style="margin-top: 5px;">
+    {{#rangeEach from=0 to=data.data.track.max current=data.data.track.current}}
+    <div class="track-box clickable block track-target
             {{#if isCurrent}} selected {{/if}}
         " data-value={{value}}>
-            {{value}}
-        </div>
-        {{/rangeEach}}
+      {{value}}
     </div>
+    {{/rangeEach}}
+  </div>
 
-    <hr>
-    <button class="ironsworn__asset__delete">{{localize 'IRONSWORN.DeleteAsset'}}</button>
+  <hr>
+  <button class="ironsworn__asset__delete">{{localize 'IRONSWORN.DeleteAsset'}}</button>
 </form>
