@@ -1,4 +1,4 @@
-import { IronswornRollDialog } from '../../helpers/roll'
+import { ironswornMoveRoll } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
@@ -11,7 +11,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     super(actor, opts)
 
     const actorData = this.actor.data.data as IronswornCharacterData
-    actor.update({data: {statRollBonus: actorData.statRollBonus || 0}})
+    actor.update({ data: { statRollBonus: actorData.statRollBonus || 0 } })
   }
 
   static get defaultOptions() {
@@ -61,7 +61,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     e?.preventDefault()
 
     if (this.actor.moveSheet) {
-      this.actor.moveSheet.render(true, {focus: true} as any) // TODO: fix this cast
+      this.actor.moveSheet.render(true, { focus: true } as any) // TODO: fix this cast
     } else {
       new CharacterMoveSheet(this.actor).render(true)
     }
@@ -84,18 +84,22 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     const amt = parseInt(ev.currentTarget.dataset.amt || '0')
     const actorData = this.actor.data.data as IronswornCharacterData
     const current = actorData.statRollBonus || 0
-    this.actor.update({data: {statRollBonus: current + amt}})
+    this.actor.update({ data: { statRollBonus: current + amt } })
   }
 
-  _onStatRoll(ev: JQuery.ClickEvent) {
+  async _onStatRoll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const el = ev.currentTarget
     const stat = el.dataset.stat
     if (stat) {
+      const actorData = this.actor.data.data as IronswornCharacterData
+      const bonus = actorData.statRollBonus || 0
       const rollText = game.i18n.localize('IRONSWORN.Roll')
       const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
-      IronswornRollDialog.showDialog(this.actor.data.data, stat, `${rollText} +${statText}`)
+      const title = `${rollText} +${statText}`
+      await ironswornMoveRoll(`@${stat}+${bonus}`, actorData, title)
+      this.actor.update({ data: { statRollBonus: 0 } })
     }
   }
 }
