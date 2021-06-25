@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix the asset-sheet delete button ([#51](https://github.com/ben/foundry-ironsworn/pull/51))
+- Add a compact character sheet ([#50](https://github.com/ben/foundry-ironsworn/pull/50))
 
 ## 0.4.5
 
