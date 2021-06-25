@@ -256,6 +256,38 @@
     }
   }
 
+  .compact {
+    h3, h4, h5 {
+      margin: 3px 0;
+    }
+
+    .boxgroup {
+      border: 1px solid;
+      border-radius: 5px;
+
+      .boxrow {
+        border-top: 1px solid;
+        &:first-child {
+          border-top: none;
+        }
+
+        &.small {
+          flex-basis: 25px;
+          line-height: 25px;
+          flex-grow: 0;
+        }
+      }
+
+      .box {
+        text-align: center;
+        border-left: 1px solid;
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+  }
+
   .inset {
     margin: 5px;
     padding: 5px;
@@ -387,7 +419,6 @@
 
 .ironsworn.sheet.actor {
   min-width: 560px;
-  min-height: 420px;
 }
 
 .ironsworn.sheet.item {

@@ -34,7 +34,7 @@ interface CharacterActorData extends Actor.Data<IronswornCharacterData, Ironswor
 interface SharedData {}
 
 interface SharedActorData extends Actor.Data<SharedData, IronswornItemData> {
-  type: 'character'
+  type: 'shared'
 }
 
 export type IronswornActorData = CharacterActorData | SharedActorData
