@@ -30,15 +30,17 @@
       {{#*inline "resource"}}
       <div class="box flexcol">
         <div class="flexcol boxrow clickable block ironsworn__stat__roll" data-stat="{{stat}}">
-          <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-          <h3>{{lookup data.data stat}}</h3>
+          <h5>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h5>
+          <h4>{{lookup data.data stat}}</h4>
         </div>
         <div class="flexrow boxrow small">
-          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1" data-min="{{min}}">&minus;</div>
+          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
+            data-min="{{min}}">&minus;</div>
           {{#if burn}}
           <div class="box clickable block ironsworn__momentum__burn">{{localize 'IRONSWORN.Burn'}}</div>
           {{/if}}
-          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1" data-max="{{max}}">&plus;</div>
+          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1"
+            data-max="{{max}}">&plus;</div>
         </div>
       </div>
       {{/inline}}
@@ -62,26 +64,11 @@
       <div class="flexcol" style="flex:2;">
         <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Conditions'}}</h3>
         <div class="flexrow">
-          <div class="flexcol">
-            {{>debility name="wounded"}}
-            {{>debility name="unprepared"}}
-
-          </div>
-          <div class="flexcol">
-            {{>debility name="shaken"}}
-            {{>debility name="encumbered"}}
-          </div>
+          {{>debility name="wounded"}}
+          {{>debility name="unprepared"}}
+          {{>debility name="shaken"}}
+          {{>debility name="encumbered"}}
         </div>
-      </div>
-      <div class="flexcol">
-        <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Banes'}}</h3>
-        {{>debility name="maimed"}}
-        {{>debility name="corrupted"}}
-      </div>
-      <div class="flexcol">
-        <h3 style="border-bottom: 1px solid; margin-right: 5px;">{{localize 'IRONSWORN.Burdens'}}</h3>
-        {{>debility name="cursed"}}
-        {{>debility name="tormented"}}
       </div>
     </div>
   </div>
