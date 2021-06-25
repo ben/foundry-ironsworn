@@ -10,9 +10,7 @@
   "compatibleCoreVersion": "0.8.7",
   "templateVersion": 2,
   "author": "Ben Straub",
-  "esmodules": [
-    "ironsworn.js"
-  ],
+  "esmodules": ["ironsworn.js"],
   "packs": [
     {
       "name": "ironsworntables",

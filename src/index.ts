@@ -18,7 +18,7 @@ import './styles/styles.less'
 
 Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
-  
+
   // Bootstrap settings and pull in theme
   IronswornSettings.registerSettings()
   require(`./styles/themes/${IronswornSettings.theme}.less`)

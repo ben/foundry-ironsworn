@@ -1,12 +1,12 @@
 <form class="{{cssClass}}" autocomplete="off">
-    {{!-- Sheet Body --}}
-    <section class="sheet-body flexcol">
-        <header class="sheet-header">
-            <h1>
-                <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
-            </h1>
-        </header>
+  {{!-- Sheet Body --}}
+  <section class="sheet-body flexcol">
+    <header class="sheet-header">
+      <h1>
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
+      </h1>
+    </header>
 
-        {{editor content=data.data.description target="data.data.description" button=true owner=owner editable=true}}
-    </section>
+    {{editor content=data.data.description target="data.data.description" button=true owner=owner editable=true}}
+  </section>
 </form>

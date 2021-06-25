@@ -9,20 +9,20 @@
     "Miss": "Fehlschlag",
     "Opportunity": "Gelegenheit!",
     "Complication": "Verschlimmerung!",
-  
+
     "MarkProgress": "Markiere Fortschritt",
     "FulfillVow": "Eid erfüllen",
     "ProgressRoll": "Fortschrittswurf",
     "Mark": "Markiere",
     "Fulfill": "Erfülle",
     "Clear": "Loswerden",
-  
+
     "Troublesome": "Lästig",
     "Dangerous": "Gefährlich",
     "Formidible": "Gewaltig",
     "Extreme": "Extrem",
     "Epic": "Episch",
-  
+
     "Momentum": "Momentum",
     "Health": "Leben",
     "Spirit": "Willen",
@@ -32,7 +32,7 @@
     "Shadow": "Schatten",
     "Wits": "Verstand",
     "XP": "EP",
-  
+
     "Assets": "Ressourcen",
     "Bonds": "Bande",
     "Debilities": "Schwächen",
@@ -47,11 +47,11 @@
     "Location": "Schauplatz",
     "Character": "Charakter",
     "Names": "Namen",
-  
+
     "Burn": "Verbrennen",
     "Reset": "Zurücksetzen",
     "Max": "Maximum",
-  
+
     "Name": "Name",
     "Description": "Beschreibung",
     "Fields": "Felder",
@@ -61,7 +61,7 @@
     "Track": "Statusleiste",
     "Enabled": "Aktiviert",
     "Rank": "Rang",
-  
+
     "DeleteItem": "Gegenstand löschen",
     "DeleteAsset": "Ressourcen löschen",
     "ConfirmDelete": "Bist Du sicher? Dies kann nicht rückgängig gemacht werden."
