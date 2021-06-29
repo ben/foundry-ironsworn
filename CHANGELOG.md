@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 0.4.7
+
 - Fix the move sheet's description ([#54](https://github.com/ben/foundry-ironsworn/pull/54))
 
 ## 0.4.6
