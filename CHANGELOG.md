@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add a shared sheet ([#55](https://github.com/ben/foundry-ironsworn/pull/55))
+
 ## 0.4.7
 
 - Fix the move sheet's description ([#54](https://github.com/ben/foundry-ironsworn/pull/54))
