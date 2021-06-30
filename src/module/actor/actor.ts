@@ -10,28 +10,18 @@ export class IronswornActor extends Actor<IronswornActorData, IronswornItem> {
   moveSheet?: CharacterMoveSheet
 
   /** @override */
-  getRollData() {
-    const data = super.getRollData()
-    return data
-  }
-
-  /** @override */
   prepareDerivedData() {
     // Calculate momentum max/reset from debilities
     const data = this.data.data as any
-    const numDebilitiesMarked = Object.values(data.debility).filter((x) => x).length
-    data.momentumMax = 10 - numDebilitiesMarked
-    data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
-  }
 
-  async addDefaultItems() {
-    // Every character needs a bondset
-    await this.createOwnedItem({ type: 'bondset', name: 'bonds' })
+    if (this.data.type === 'character') {
+      const numDebilitiesMarked = Object.values(data.debility).filter((x) => x).length
+      data.momentumMax = 10 - numDebilitiesMarked
+      data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
+    }
   }
 }
 
 Hooks.on('createActor', async (actor) => {
-  if (actor.data.type === 'character') {
-    await actor.addDefaultItems()
-  }
+  await actor.createOwnedItem({ type: 'bondset', name: 'bonds' })
 })
