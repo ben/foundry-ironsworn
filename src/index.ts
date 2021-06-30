@@ -6,6 +6,7 @@ import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
+import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { IronswornSettings } from './module/helpers/settings'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
@@ -44,6 +45,10 @@ Hooks.once('init', async () => {
   })
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
     types: ['character'],
+  })
+  Actors.registerSheet('ironsworn', IronswornSharedSheet, {
+    types: ['shared'],
+    makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', AssetSheet, {
