@@ -1,15 +1,13 @@
 import { IronswornRollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
-import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
-import { IronswornCharacterData } from '../actortypes'
 
 export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor> {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'shared', `theme-${IronswornSettings.theme}`],
-      width: 325,
-      height: 500,
+      width: 350,
+      height: 700,
       template: 'systems/foundry-ironsworn/templates/actor/shared.hbs',
     } as BaseEntitySheet.Options)
   }
@@ -17,8 +15,8 @@ export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornAc
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html.find('.ironsworn__stat__roll').on('click', (e) => this._onStatRoll.call(this, e))
-    html.find('.ironsworn__stat__value').on('click', (e) => this._onStatSet.call(this, e))
+    html.find('.ironsworn__supply__roll').on('click', (e) => this._onSupplyRoll.call(this, e))
+    html.find('.ironsworn__supply__value').on('click', (e) => this._onSupplySet.call(this, e))
 
     // Custom sheet listeners for every ItemType
     for (const itemClass of CONFIG.IRONSWORN.itemClasses) {
@@ -60,30 +58,21 @@ export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornAc
     this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
-  _onStatRoll(ev: JQuery.ClickEvent) {
+  _onSupplyRoll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    const el = ev.currentTarget
-    const stat = el.dataset.stat
-    if (stat) {
-      const rollText = game.i18n.localize('IRONSWORN.Roll')
-      const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
-      IronswornRollDialog.showDialog(this.actor.data.data, stat, `${rollText} +${statText}`)
-    }
+    const rollText = game.i18n.localize('IRONSWORN.Roll')
+    const statText = game.i18n.localize('IRONSWORN.Supply')
+    IronswornRollDialog.showDialog(this.actor.data.data, 'supply', `${rollText} +${statText}`)
   }
 
-  _onStatSet(ev: JQuery.ClickEvent) {
+  _onSupplySet(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const el = ev.currentTarget
-    const { resource, value } = el.dataset
-    if (resource) {
-      // Clicked a value in momentum/health/etc, set the value
-      const newValue = parseInt(value)
-      const { momentumMax } = this.actor.data.data as IronswornCharacterData
-      if (resource !== 'momentum' || newValue <= momentumMax) {
-        this.actor.update({ data: { [resource]: newValue } })
-      }
-    }
+    const { value } = el.dataset
+    // Clicked a value in momentum/health/etc, set the value
+    const newValue = parseInt(value)
+    this.actor.update({ data: { supply: newValue } })
   }
 }

@@ -37,20 +37,24 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
   <section class="sheet-area" style="flex-grow: 0;">
-    <h2 class="clickable text ironsworn__stat__roll" data-stat="supply">{{localize 'IRONSWORN.Supply'}}</h2>
+    <h2 class="clickable text ironsworn__supply__roll">
+      {{localize 'IRONSWORN.Supply'}}
+    </h2>
     <div class="boxgroup" style="line-height: 25px;">
       <div class="flexrow boxrow">
         {{#rangeEach from=0 to=5 current=data.data.supply}}
         <div class="
-          box clickable block ironsworn__stat__value supply
+          box clickable block ironsworn__supply__value
           {{#if isCurrent}} selected {{/if}}
-        " data-resource="supply" data-value="{{value}}">
+        " data-value="{{value}}">
           {{valueStr}}
         </div>
         {{/rangeEach}}
       </div>
     </div>
+  </section>
 
+  <section class="sheet-area" style="flex-grow: 0;">
     <h2>{{localize 'IRONSWORN.Bonds'}}</h2>
     <div class="flexrow">
       <div class="flexrow track">
