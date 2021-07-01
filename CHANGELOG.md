@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 0.4.9
+
 - Add portrait and name fields to shared sheet ([#59](https://github.com/ben/foundry-ironsworn/pull/59))
 
 ## 0.4.8
