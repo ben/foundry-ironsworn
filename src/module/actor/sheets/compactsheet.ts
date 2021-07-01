@@ -117,6 +117,9 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     value += amt
     if (value >= min && value <= max) {
       this.actor.update({ data: { [stat]: value } })
+      if (stat === 'supply') {
+        IronswornSettings.maybeSetGlobalSupply(value)
+      }
     }
   }
 

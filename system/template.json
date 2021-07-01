@@ -28,7 +28,9 @@
       },
       "xp": 0
     },
-    "shared": {}
+    "shared": {
+      "supply": 5
+    }
   },
   "Item": {
     "types": [
