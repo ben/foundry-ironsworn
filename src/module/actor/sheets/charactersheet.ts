@@ -135,6 +135,9 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
       if (resource !== 'momentum' || newValue <= momentumMax) {
         this.actor.update({ data: { [resource]: newValue } })
       }
+      if (resource === 'supply') {
+        IronswornSettings.maybeSetGlobalSupply(newValue)
+      }
     }
   }
 }

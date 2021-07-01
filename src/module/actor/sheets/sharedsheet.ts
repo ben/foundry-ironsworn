@@ -74,5 +74,6 @@ export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornAc
     // Clicked a value in momentum/health/etc, set the value
     const newValue = parseInt(value)
     this.actor.update({ data: { supply: newValue } })
+    IronswornSettings.maybeSetGlobalSupply(newValue)
   }
 }

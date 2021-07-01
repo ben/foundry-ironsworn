@@ -15,9 +15,28 @@ export class IronswornSettings {
         window.location.reload()
       },
     })
+
+    game.settings.register('foundry-ironsworn', 'shared-supply', {
+      name: 'IRONSWORN.Settings.SharedSupply.Name',
+      hint: 'IRONSWORN.Settings.SharedSupply.Hint',
+      scope: 'world',
+      config: true,
+      type: Boolean,
+      default: true,
+    })
   }
 
   static get theme(): string {
     return game.settings.get('foundry-ironsworn', 'theme') as string
+  }
+
+  static async maybeSetGlobalSupply(value: number) {
+    if (!game.settings.get('foundry-ironsworn', 'shared-supply')) return
+
+    // TODO: use game.actors.contents instead when types update
+    const actorsToUpdate = game.actors?.entities?.filter((x) => ['character', 'shared'].includes(x.data.type)) || []
+    for (const actor of actorsToUpdate) {
+      await actor.update({ data: { supply: value } })
+    }
   }
 }
