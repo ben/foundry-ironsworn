@@ -36,6 +36,12 @@
 
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
+    <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
+        placeholder="{{localize 'IRONSWORN.Name'}}" /></h1>
+  </header>
+
   <section class="sheet-area" style="flex-grow: 0;">
     <h2 class="clickable text ironsworn__supply__roll">
       {{localize 'IRONSWORN.Supply'}}
