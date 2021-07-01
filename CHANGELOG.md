@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 0.4.8
+
 - Add a shared sheet ([#55](https://github.com/ben/foundry-ironsworn/pull/55))
 
 ## 0.4.7
