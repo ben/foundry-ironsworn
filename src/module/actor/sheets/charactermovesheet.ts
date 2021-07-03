@@ -66,6 +66,9 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         data.builtInMoves.push({
           title: game.i18n.localize(`IRONSWORN.MoveContents.${moveName}.title`),
           description: game.i18n.localize(`IRONSWORN.MoveContents.${moveName}.description`),
+          strong: game.i18n.localize(`IRONSWORN.MoveContents.${moveName}.strong`),
+          weak: game.i18n.localize(`IRONSWORN.MoveContents.${moveName}.weak`),
+          miss: game.i18n.localize(`IRONSWORN.MoveContents.${moveName}.miss`),
         })
       }
     }

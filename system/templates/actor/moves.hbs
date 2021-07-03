@@ -15,7 +15,12 @@
           {{else}}
           <li class='item-row ironsworn__builtin__move' data-name='{{title}}'>
             <h4 class='ironsworn__builtin__move__expand' style="margin: 0;">{{title}}</h4>
-            <div class='move-summary' style='display: none;'>{{{enrichHtml description}}}</div>
+            <div class='move-summary' style='display: none;'>
+              {{{enrichHtml description}}}
+              {{{enrichHtml strong}}}
+              {{{enrichHtml weak}}}
+              {{{enrichHtml miss}}}
+            </div>
           </li>
           {{/if}}
           {{/each}}
