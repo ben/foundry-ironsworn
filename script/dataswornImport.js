@@ -61,21 +61,40 @@ async function doit () {
   const moves = []
   for (const category of movesJson.Categories) {
     for (const move of category.Moves) {
+      let [_, description, strong, weak, miss] = move.Text.match(
+        /([\s\S]+)(On a \*\*strong hit\*\*, [\s\S]+)(On a \*\*weak hit\*\*, [\s\S]+)(On a \*\*miss\*\*, [\s\S]+)/
+      ) || []
+      if (!description) description = move.Text
       moves.push({
         name: move.Name,
-        data: { description: renderHtml(move.Text) }
+        data: {
+          source: {
+            name: move.Source.Name,
+            page: move.Source.Page,
+          },
+          stats: move.Stats,
+          description: marked(description || ''),
+          strong: marked(strong || '') || undefined,
+          weak: marked(weak || '') || undefined,
+          miss: marked(miss || '') || undefined,
+        },
       })
     }
   }
   await fs.writeFile('system/assets/moves.json', JSON.stringify(moves, null, 2))
 
   // Also write descriptions to en lang file
-  const en = JSON.parse((await fs.readFile('system/lang/en.json')))
+  const en = JSON.parse(await fs.readFile('system/lang/en.json'))
   for (const move of moves) {
     en['IRONSWORN']['MoveContents'] ||= {}
-    en['IRONSWORN']['MoveContents'][move.name] ||= {}
-    en['IRONSWORN']['MoveContents'][move.name]['title'] = move.name
-    en['IRONSWORN']['MoveContents'][move.name]['description'] = move.data.description
+    en['IRONSWORN']['MoveContents'][move.name] = {
+      ...en['IRONSWORN']['MoveContents'][move.name],
+      title: move.name,
+      description: move.data.description,
+      strong: move.data.strong,
+      weak: move.data.weak,
+      miss: move.data.miss,
+    }
   }
   await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2))
 }
