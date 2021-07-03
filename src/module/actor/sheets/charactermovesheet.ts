@@ -1,5 +1,4 @@
-import { cachedMoves } from '../../helpers/data'
-import { attachInlineRollListeners } from '../../helpers/roll'
+import { cachedMoves, moveDataByName } from '../../helpers/data'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
 
@@ -96,6 +95,10 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
 
   async _handleBuiltInMoveRoll(e: JQuery.ClickEvent) {
     e.preventDefault()
+    const moveName = e.currentTarget.dataset.name
+    const moveData = await moveDataByName(moveName)
+    if (moveData) {
+    }
   }
 
   async _handleOracleClick(e: JQuery.ClickEvent) {
