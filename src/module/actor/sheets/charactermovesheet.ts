@@ -52,9 +52,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
 
   activateListeners(html: JQuery) {
     html.find('.ironsworn__builtin__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
-    html.find('.ironsworn__builtin__move').each((_i, el) => {
-      attachInlineRollListeners($(el), { actor: this.actor, name: el.dataset.name })
-    })
+    html.find('.ironsworn__builtin__move__roll').on('click', (e) => this._handleBuiltInMoveRoll.call(this, e))
     html.find('.ironsworn__oracle').on('click', (e) => this._handleOracleClick.call(this, e))
   }
 
@@ -66,7 +64,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     for (const category of BuiltInMoves.Categories) {
       data.builtInMoves.push({
         separator: true,
-        title: category.Name.replace(/ Moves/, '')
+        title: category.Name.replace(/ Moves/, ''),
       })
       for (const move of category.Moves) {
         const baseKey = `IRONSWORN.MoveContents.${move.Name}`
@@ -94,6 +92,10 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
       summary.slideDown(200)
     }
     li.toggleClass('expanded')
+  }
+
+  async _handleBuiltInMoveRoll(e: JQuery.ClickEvent) {
+    e.preventDefault()
   }
 
   async _handleOracleClick(e: JQuery.ClickEvent) {
