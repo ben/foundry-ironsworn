@@ -1,4 +1,5 @@
 import { cachedMoves, moveDataByName } from '../../helpers/data'
+import { attachInlineRollListeners } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
 
@@ -53,6 +54,10 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     html.find('.ironsworn__builtin__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
     html.find('.ironsworn__builtin__move__roll').on('click', (e) => this._handleBuiltInMoveRoll.call(this, e))
     html.find('.ironsworn__oracle').on('click', (e) => this._handleOracleClick.call(this, e))
+
+    html.find('.ironsworn__builtin__move').each((_i, el) => {
+      attachInlineRollListeners($(el), { actor: this.actor, name: el.dataset.name })
+    })
   }
 
   async getData() {
@@ -98,6 +103,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     const moveName = e.currentTarget.dataset.name
     const moveData = await moveDataByName(moveName)
     if (moveData) {
+      console.log({ moveData })
     }
   }
 
