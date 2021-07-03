@@ -7,6 +7,15 @@ function translateOrEmpty(key: string): string {
   return str === key ? '' : str
 }
 
+let CACHED_MOVES
+async function cachedMoves(): Promise<any> {
+  if (!CACHED_MOVES) {
+    CACHED_MOVES = await fetch('/systems/foundry-ironsworn/assets/moves.json')
+      .then(x => x.json())
+  }
+  return CACHED_MOVES
+}
+
 export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor> {
   get actor() {
     return this.object
@@ -59,7 +68,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
 
   async getData() {
     const data: any = super.getData()
-    const BuiltInMoves = await fetch('/systems/foundry-ironsworn/assets/moves.json').then(x => x.json())
+    const BuiltInMoves = await cachedMoves()
 
     data.builtInMoves = []
     for (const category of BuiltInMoves.Categories) {
