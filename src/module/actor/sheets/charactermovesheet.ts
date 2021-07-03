@@ -70,6 +70,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
       for (const move of category.Moves) {
         const baseKey = `IRONSWORN.MoveContents.${move.Name}`
         data.builtInMoves.push({
+          ...move,
           title: game.i18n.localize(`${baseKey}.title`),
           description: game.i18n.localize(`${baseKey}.description`),
           strong: translateOrEmpty(`${baseKey}.strong`),
