@@ -1,3 +1,4 @@
+import { cachedMoves } from '../../helpers/data'
 import { attachInlineRollListeners } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
@@ -5,15 +6,6 @@ import { IronswornActor } from '../actor'
 function translateOrEmpty(key: string): string {
   const str = game.i18n.localize(key)
   return str === key ? '' : str
-}
-
-let CACHED_MOVES
-async function cachedMoves(): Promise<any> {
-  if (!CACHED_MOVES) {
-    CACHED_MOVES = await fetch('/systems/foundry-ironsworn/assets/moves.json')
-      .then(x => x.json())
-  }
-  return CACHED_MOVES
 }
 
 export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor> {
