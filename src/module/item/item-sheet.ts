@@ -1,5 +1,4 @@
 import { RANKS } from '../constants'
-import { IronswornRollDialog } from '../helpers/roll'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from './item'
 /**
@@ -50,15 +49,6 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
   /** @override */
   activateListeners(html) {
     super.activateListeners(html)
-
-    // Activate roll links
-    html.find('a.inline-roll').on('click', (ev) => {
-      ev.preventDefault()
-      const el = ev.currentTarget
-      const moveTitle = `${this.object.name} (${el.dataset.param})`
-      const actor = this.object.actor
-      return IronswornRollDialog.showDialog(actor?.data.data, el.dataset.param, moveTitle)
-    })
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return

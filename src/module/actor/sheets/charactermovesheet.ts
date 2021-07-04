@@ -1,5 +1,5 @@
 import { cachedMoves, moveDataByName } from '../../helpers/data'
-import { attachInlineRollListeners, IronswornMoveRollDialog } from '../../helpers/roll'
+import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
 
@@ -103,7 +103,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     const moveName = e.currentTarget.dataset.name
     const move = await moveDataByName(moveName)
     if (move) {
-      IronswornMoveRollDialog.show({
+      RollDialog.show({
         move,
         actor: this.actor,
       })

@@ -2,100 +2,109 @@ import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 import { AssetItemData } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
+import { IronswornSettings } from './settings'
 import { capitalize } from './util'
 
-interface MoveRollDialogOptions {
-  move: EnhancedDataswornMove
+interface RollDialogOptions {
   actor?: IronswornActor
   asset?: Item<AssetItemData>
+  move?: EnhancedDataswornMove
+  stat?: string
+  bonus?: number
 }
-export class IronswornMoveRollDialog extends Dialog {
-  static async show(opts: MoveRollDialogOptions) {
-    const template = 'systems/foundry-ironsworn/templates/move-roll-dialog.hbs'
-    const html = await renderTemplate(template, opts)
+
+export class RollDialog extends Dialog {
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
+      width: 500
+    } as Dialog.Options)
+  }
+
+  static async show(opts: RollDialogOptions) {
+    // Check inputs
+    if (!opts.move && !opts.stat && !(opts.move && opts.stat)) {
+      throw new Error('Must provide only one of `move` or `stat`')
+    }
+    if (opts.stat && opts.bonus !== undefined) {
+      // Got everything we need, just roll it
+      return this.doRoll(opts)
+    }
+
+    // Render content
+    const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
+    const content = await renderTemplate(template, opts)
+
     const callbackForStat = (stat: string) => (x) => {
       const form = x[0].querySelector('form')
       const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
-      rollAssetOrMove({
+      this.doRoll({
         ...opts,
         stat,
         bonus,
       })
     }
+
     const buttons = {}
-    for (const stat of opts.move.Stats) {
-      buttons[stat] = {
+    let title = ''
+    let defaultButton = ''
+    if (opts.move) {
+      title = opts.move.Name
+      defaultButton = opts.move.Stats[0]
+      for (const stat of opts.move.Stats) {
+        buttons[stat] = {
+          icon: '<i class="fas fa-dice-d6"></i>',
+          label: game.i18n.localize(`IRONSWORN.${capitalize(stat)}`),
+          callback: callbackForStat(stat),
+        }
+      }
+    } else if (opts.stat) {
+      const rollText = game.i18n.localize('IRONSWORN.Roll')
+      const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
+      title = `${rollText} +${statText}`
+      defaultButton = opts.stat
+      buttons[opts.stat] = {
         icon: '<i class="fas fa-dice-d6"></i>',
-        label: game.i18n.localize(`IRONSWORN.${capitalize(stat)}`),
-        callback: callbackForStat(stat)
+        label: statText,
+        callback: callbackForStat(opts.stat),
       }
     }
-    new IronswornMoveRollDialog({
-      title: opts.move.Name,
-      content: html,
+
+    return new RollDialog({
+      title,
+      content,
       buttons,
-      default: opts.move.Stats[0],
+      default: defaultButton,
     }).render(true)
   }
-}
 
-interface AssetMoveRollOptions {
-  move: EnhancedDataswornMove
-  actor?: IronswornActor
-  asset?: Item<AssetItemData>
-  stat?: string
-  bonus?: number
-}
-export async function rollAssetOrMove(opts: AssetMoveRollOptions) {
-  let actionExpr = 'd6'
-  if (opts.stat) actionExpr += ` + @${opts.stat}`
-  if (opts.bonus) actionExpr += ` + ${opts.bonus}`
-  const data = {
-    ...opts.actor?.getRollData(),
-    track: opts.asset?.data.data.track.current,
-  }
+  protected static doRoll(opts: RollDialogOptions) {
+    let actionExpr = 'd6'
+    if (opts.stat) actionExpr += ` + @${opts.stat}`
+    if (opts.bonus) actionExpr += ` + ${opts.bonus}`
+    const data = {
+      ...opts.actor?.getRollData(),
+      track: opts.asset?.data.data.track.current,
+    }
 
-  const r = new Roll(`{${actionExpr}, d10, d10}`, data).roll()
-  let moveTitle = opts.move.Name
-  if (opts.stat) moveTitle += ` (${opts.stat})`
-  r.toMessage({ flavor: `<div class="move-title">${moveTitle}</div>` })
-}
+    const r = new Roll(`{${actionExpr}, d10, d10}`, data).roll()
+    let title = ''
+    if (opts.move) {
+      title = opts.move.Name
+      if (opts.stat) title += ` (${opts.stat})`
+    } else if (opts.stat) {
+      const rollText = game.i18n.localize('IRONSWORN.Roll')
+      const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
+      title = `${rollText} +${statText}`
+    }
 
-export async function ironswornMoveRoll(bonusExpr = '0', values = {}, title: string) {
-  const r = new Roll(`{d6+${bonusExpr}, d10,d10}`, values).roll()
-  r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
-}
-
-export class IronswornRollDialog extends Dialog {
-  static async showDialog(data: any, stat: string, title: string) {
-    const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
-    const templateData = { data, stat }
-    const html = await renderTemplate(template, templateData)
-    const d = new IronswornRollDialog({
-      title: title || `Roll +${stat}`,
-      content: html,
-      buttons: {
-        roll: {
-          icon: '<i class="fas fa-dice-d10"></i>',
-          label: game.i18n.localize('IRONSWORN.Roll'),
-          callback: (x) => {
-            const form = x[0].querySelector('form')
-            const bonus = parseInt(form[0].value, 10)
-            ironswornMoveRoll(`@${stat}+${bonus || 0}`, data, title)
-          },
-        },
-      },
-      default: 'roll',
-    })
-    d.render(true)
+    // todo: custom rendering here
+    r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
   }
 }
 
 // Autofucus on input box when rolling
-Hooks.on('renderIronswornRollDialog', async (_dialog, html, _data) => {
-  html.find('input').focus()
-})
-Hooks.on('renderIronswornMoveRollDialog', async (_dialog, html, _data) => {
+Hooks.on('renderRollDialog', async (_dialog, html, _data) => {
   html.find('input').focus()
 })
 
@@ -110,7 +119,10 @@ export function attachInlineRollListeners(html: JQuery, opts?: InlineRollListene
   html.find('a.inline-roll').on('click', (ev) => {
     ev.preventDefault()
     const el = ev.currentTarget
-    const moveTitle = `${realOpts.item?.name || realOpts.name} (${el.dataset.param})`
-    IronswornRollDialog.showDialog(realOpts.actor?.data.data, el.dataset.param || '', moveTitle)
+    const stat = el.dataset.param
+    RollDialog.show({
+      actor: realOpts.actor,
+      stat,
+    })
   })
 }

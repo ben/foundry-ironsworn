@@ -1,4 +1,4 @@
-import { IronswornRollDialog } from '../../helpers/roll'
+import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
 
@@ -60,10 +60,10 @@ export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornAc
 
   _onSupplyRoll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-
-    const rollText = game.i18n.localize('IRONSWORN.Roll')
-    const statText = game.i18n.localize('IRONSWORN.Supply')
-    IronswornRollDialog.showDialog(this.actor.data.data, 'supply', `${rollText} +${statText}`)
+    RollDialog.show({
+      actor: this.actor,
+      stat: 'supply'
+    })
   }
 
   _onSupplySet(ev: JQuery.ClickEvent) {

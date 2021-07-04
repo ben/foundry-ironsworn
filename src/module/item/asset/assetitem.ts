@@ -1,5 +1,6 @@
+import { IronswornActor } from '../../actor/actor'
 import { IronswornCharacterSheet } from '../../actor/sheets/charactersheet'
-import { attachInlineRollListeners, IronswornRollDialog } from '../../helpers/roll'
+import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { BaseItem } from '../baseitem'
 import { AssetItemData } from '../itemtypes'
 
@@ -45,11 +46,11 @@ export class AssetItem extends BaseItem {
     const itemId = $(ev.currentTarget).parents('.item-row').data('item')
     const item = sheet.actor.items.get(itemId) as Item<AssetItemData>
     if (item) {
-      const data = {
-        ...sheet.actor.getRollData(),
-        track: item.data.data.track.current,
-      }
-      IronswornRollDialog.showDialog(data, 'track', item.name)
+      RollDialog.show({
+        actor: sheet.actor as IronswornActor,
+        asset: item,
+        stat: 'track',
+      })
     }
   }
 }
