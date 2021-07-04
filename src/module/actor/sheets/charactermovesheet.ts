@@ -1,6 +1,12 @@
-import { attachInlineRollListeners } from '../../helpers/roll'
+import { cachedMoves, moveDataByName } from '../../helpers/data'
+import { attachInlineRollListeners, IronswornMoveRollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
+
+function translateOrEmpty(key: string): string {
+  const str = game.i18n.localize(key)
+  return str === key ? '' : str
+}
 
 export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor> {
   get actor() {
@@ -46,26 +52,33 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
 
   activateListeners(html: JQuery) {
     html.find('.ironsworn__builtin__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
+    html.find('.ironsworn__builtin__move__roll').on('click', (e) => this._handleBuiltInMoveRoll.call(this, e))
+    html.find('.ironsworn__oracle').on('click', (e) => this._handleOracleClick.call(this, e))
+
     html.find('.ironsworn__builtin__move').each((_i, el) => {
       attachInlineRollListeners($(el), { actor: this.actor, name: el.dataset.name })
     })
-    html.find('.ironsworn__oracle').on('click', (e) => this._handleOracleClick.call(this, e))
   }
 
-  getData() {
+  async getData() {
     const data: any = super.getData()
+    const BuiltInMoves = await cachedMoves()
 
     data.builtInMoves = []
-    for (const moveName of MOVES) {
-      if (moveName.startsWith('---')) {
+    for (const category of BuiltInMoves.Categories) {
+      data.builtInMoves.push({
+        separator: true,
+        title: category.Name.replace(/ Moves/, ''),
+      })
+      for (const move of category.Moves) {
+        const baseKey = `IRONSWORN.MoveContents.${move.Name}`
         data.builtInMoves.push({
-          separator: true,
-          title: moveName.substr('--- '.length), // TODO: run this through i18n
-        })
-      } else {
-        data.builtInMoves.push({
-          title: game.i18n.localize(`IRONSWORN.MoveContents.${moveName}.title`),
-          description: game.i18n.localize(`IRONSWORN.MoveContents.${moveName}.description`),
+          ...move,
+          title: game.i18n.localize(`${baseKey}.title`),
+          description: game.i18n.localize(`${baseKey}.description`),
+          strong: translateOrEmpty(`${baseKey}.strong`),
+          weak: translateOrEmpty(`${baseKey}.weak`),
+          miss: translateOrEmpty(`${baseKey}.miss`),
         })
       }
     }
@@ -85,6 +98,18 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     li.toggleClass('expanded')
   }
 
+  async _handleBuiltInMoveRoll(e: JQuery.ClickEvent) {
+    e.preventDefault()
+    const moveName = e.currentTarget.dataset.name
+    const move = await moveDataByName(moveName)
+    if (move) {
+      IronswornMoveRollDialog.show({
+        move,
+        actor: this.actor,
+      })
+    }
+  }
+
   async _handleOracleClick(e: JQuery.ClickEvent) {
     e.preventDefault()
     const tableName = e.currentTarget.dataset.table
@@ -99,47 +124,3 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     table?.draw()
   }
 }
-
-const MOVES = [
-  '--- Fate',
-  'Pay the Price',
-  'Ask the Oracle',
-  '--- Combat',
-  'Enter the Fray',
-  'Strike',
-  'Clash',
-  'Turn the Tide',
-  'End the Fight',
-  'Battle',
-  '--- Adventure',
-  'Face Danger',
-  'Secure An Advantage',
-  'Gather Information',
-  'Heal',
-  'Resupply',
-  'Make Camp',
-  'Undertake a Journey',
-  'Reach Your Destination',
-  '--- Relationship',
-  'Compel',
-  'Sojourn',
-  'Draw the Circle',
-  'Forge a Bond',
-  'Test Your Bond',
-  'Aid Your Ally',
-  'Write Your Epilogue',
-  '--- Quest',
-  'Swear an Iron Vow',
-  'Reach a Milestone',
-  'Fulfill Your Vow',
-  'Forsake Your Vow',
-  'Advance',
-  '--- Suffer',
-  'Endure Harm',
-  'Endure Stress',
-  'Companion Endure Harm',
-  'Face Death',
-  'Face Desolation',
-  'Out of Supply',
-  'Face a Setback',
-]

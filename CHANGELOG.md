@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Rework move structure and enhance move sheet ([#62](https://github.com/ben/foundry-ironsworn/pull/62))
+
 ## 0.4.9
 
 - Add portrait and name fields to shared sheet ([#59](https://github.com/ben/foundry-ironsworn/pull/59))

@@ -52,32 +52,45 @@ async function doit () {
       }
     })
   }
-  await fs.writeFile('system/assets/assets.json', JSON.stringify(assets, null, 2))
+  await fs.writeFile('system/assets/assets.json', JSON.stringify(assets, null, 2) + '\n')
 
   // Moves
   const movesJson = await fetch(
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_moves.json'
   ).then(x => x.json())
-  const moves = []
+
+  // Just grab Datasworn, but split up the text into more structure
+  const i18nMoves = []
   for (const category of movesJson.Categories) {
-    for (const move of category.Moves) {
-      moves.push({
-        name: move.Name,
-        data: { description: renderHtml(move.Text) }
-      })
+    for (let move of category.Moves) {
+      let [_, Description, Strong, Weak, Miss] = move.Text.match(
+        /([\s\S]+)(On a \*\*strong hit\*\*, [\s\S]+)(On a \*\*weak hit\*\*, [\s\S]+)(On a \*\*miss\*\*, [\s\S]+)/
+      ) || []
+      if (!Description) Description = move.Text
+
+      move.Description = marked(Description || '') || undefined,
+      move.Strong = marked(Strong || '') || undefined,
+      move.Weak = marked(Weak || '') || undefined,
+      move.Miss = marked(Miss || '') || undefined,
+      i18nMoves.push(move)
     }
   }
-  await fs.writeFile('system/assets/moves.json', JSON.stringify(moves, null, 2))
+  await fs.writeFile('system/assets/moves.json', JSON.stringify(movesJson, null, 2) + '\n')
 
   // Also write descriptions to en lang file
-  const en = JSON.parse((await fs.readFile('system/lang/en.json')))
-  for (const move of moves) {
+  const en = JSON.parse(await fs.readFile('system/lang/en.json'))
+  for (const move of i18nMoves) {
     en['IRONSWORN']['MoveContents'] ||= {}
-    en['IRONSWORN']['MoveContents'][move.name] ||= {}
-    en['IRONSWORN']['MoveContents'][move.name]['title'] = move.name
-    en['IRONSWORN']['MoveContents'][move.name]['description'] = move.data.description
+    en['IRONSWORN']['MoveContents'][move.Name] = {
+      ...en['IRONSWORN']['MoveContents'][move.Name],
+      title: move.Name,
+      description: move.Description,
+      strong: move.Strong,
+      weak: move.Weak,
+      miss: move.Miss,
+    }
   }
-  await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2))
+  await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2) + '\n')
 }
 
 doit().then(
