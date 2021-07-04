@@ -1,5 +1,4 @@
 import { RANKS } from '../constants'
-import { attachInlineRollListeners } from '../helpers/roll'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from './item'
 /**

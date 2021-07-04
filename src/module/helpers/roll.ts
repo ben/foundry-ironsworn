@@ -5,10 +5,11 @@ import { EnhancedDataswornMove } from './data'
 import { capitalize } from './util'
 
 interface MoveRollDialogOptions {
-  move?: EnhancedDataswornMove
-  stat?: string
   actor?: IronswornActor
   asset?: Item<AssetItemData>
+  move?: EnhancedDataswornMove
+  stat?: string
+  bonus?: number
 }
 export class IronswornMoveRollDialog extends Dialog {
   static async show(opts: MoveRollDialogOptions) {
@@ -16,7 +17,12 @@ export class IronswornMoveRollDialog extends Dialog {
     if (!opts.move && !opts.stat && !(opts.move && opts.stat)) {
       throw new Error('Must provide only one of `move` or `stat`')
     }
+    if (opts.stat && opts.bonus) {
+      // Got everything we need, just roll it
+      return rollAssetOrMove(opts)
+    }
 
+    // Render content
     const template = 'systems/foundry-ironsworn/templates/move-roll-dialog.hbs'
     const content = await renderTemplate(template, opts)
 
@@ -55,7 +61,7 @@ export class IronswornMoveRollDialog extends Dialog {
       }
     }
 
-    new IronswornMoveRollDialog({
+    return new IronswornMoveRollDialog({
       title,
       content,
       buttons,
@@ -145,7 +151,7 @@ export function attachInlineRollListeners(html: JQuery, opts?: InlineRollListene
     const stat = el.dataset.param
     IronswornMoveRollDialog.show({
       actor: realOpts.actor,
-      stat
+      stat,
     })
   })
 }
