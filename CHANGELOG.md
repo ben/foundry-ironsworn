@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 0.5.0
+
 - Rework move structure and enhance move sheet ([#62](https://github.com/ben/foundry-ironsworn/pull/62))
 - Update roll-bonus dialog to allow selecting stat for moves ([#63](https://github.com/ben/foundry-ironsworn/pull/63))
 - _Much_ nicer chat cards for structured rolls ([#64](https://github.com/ben/foundry-ironsworn/pull/64))
