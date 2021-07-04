@@ -1,4 +1,5 @@
 import { IronswornActor } from '../actor/actor'
+import { createIronswornChatRoll } from '../chat/rolls'
 import { IronswornItem } from '../item/item'
 import { AssetItemData } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
@@ -17,7 +18,7 @@ export class RollDialog extends Dialog {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
-      width: 500
+      width: 500,
     } as Dialog.Options)
   }
 
@@ -87,19 +88,8 @@ export class RollDialog extends Dialog {
       track: opts.asset?.data.data.track.current,
     }
 
-    const r = new Roll(`{${actionExpr}, d10, d10}`, data).roll()
-    let title = ''
-    if (opts.move) {
-      title = opts.move.Name
-      if (opts.stat) title += ` (${opts.stat})`
-    } else if (opts.stat) {
-      const rollText = game.i18n.localize('IRONSWORN.Roll')
-      const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
-      title = `${rollText} +${statText}`
-    }
-
-    // todo: custom rendering here
-    r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
+    const r = new Roll(`{${actionExpr}, d10, d10}`, data)
+    createIronswornChatRoll({ roll: r, ...opts })
   }
 }
 
