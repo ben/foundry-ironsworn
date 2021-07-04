@@ -20,22 +20,45 @@ function challengeRoll(roll: any): [Roll, Roll] {
   return roll.terms[0].rolls.filter((x) => x.dice.length > 0 && x.dice[0].faces === 10)
 }
 
-function dieTotals(roll: any): { action: number; challenge1: number; challenge2: number } {
+interface DitTotals {
+  action: number
+  challenge1: number
+  challenge2: number
+  match: boolean
+}
+
+function dieTotals(roll: any): DitTotals {
   const challengeDice = challengeRoll(roll)
+  const [challenge1, challenge2] = challengeDice.map((x) => x.total as number)
   return {
     action: actionRoll(roll).total as number,
-    challenge1: challengeDice[0].total as number,
-    challenge2: challengeDice[1].total as number,
+    challenge1,
+    challenge2,
+    match: challenge1 === challenge2,
   }
 }
 
-function hitTypeForRoll(roll: Roll): string {
+enum HIT_TYPE {
+  MISS = 'MISS',
+  WEAK = 'WEAK',
+  STRONG = 'STRONG',
+}
+
+function hitType(roll: Roll): HIT_TYPE {
   const { action, challenge1, challenge2 } = dieTotals(roll)
-  const match = challenge1 === challenge2
-  if (action <= Math.min(challenge1, challenge2)) {
+
+  if (action <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
+  if (action > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
+  return HIT_TYPE.WEAK
+}
+
+function hitTypeText(roll: Roll) {
+  const { match } = dieTotals(roll)
+  const hit = hitType(roll)
+  if (hit === HIT_TYPE.MISS) {
     return game.i18n.localize(match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss')
   }
-  if (action > Math.max(challenge1, challenge2)) {
+  if (hit === HIT_TYPE.STRONG) {
     return game.i18n.localize(match ? 'IRONSWORN.Opportunity' : 'IRONSWORN.StrongHit')
   }
   return game.i18n.localize('IRONSWORN.WeakHit')
@@ -73,11 +96,22 @@ function generateCardTitle(params: RollMessageParams) {
   return rollText
 }
 
+function generateResultText(roll: Roll, move?: EnhancedDataswornMove): string | undefined {
+  if (!move) return undefined
+
+  switch (hitType(roll)) {
+    case HIT_TYPE.MISS: return move.Miss
+    case HIT_TYPE.WEAK: return move.Weak
+    case HIT_TYPE.STRONG: return move.Strong
+  }
+}
+
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: false } as any)
   const renderData = {
-    hitType: hitTypeForRoll(params.roll),
+    hitType: hitTypeText(params.roll),
     title: generateCardTitle(params),
+    resultText: generateResultText(params.roll, params.move),
     ...params,
   }
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/ironsworn-roll.hbs', renderData)

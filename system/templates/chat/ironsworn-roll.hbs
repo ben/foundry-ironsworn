@@ -15,8 +15,14 @@ title: "Face Danger (iron)"
 
   <div class="dice-result ironsworn-roll">
     <div class="dice-formula">
-      <p class="hit-type">{{hitType}}</p>
       <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
+    </div>
+    <div class="roll-result">
+      {{#if resultText}}
+      <p>{{{resultText}}}</p>
+      {{else}}
+      <p class="hit-type">{{hitType}}</p>
+      {{/if}}
     </div>
   </div>
 
