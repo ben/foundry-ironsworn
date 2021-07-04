@@ -4,7 +4,7 @@
   "description": "An implementation of the Ironsworn system. Based entirely on the Simple Worldbuilding System for Foundry designed by Atropos.",
   "version": "0.5.1",
   "url": "https://github.com/ben/foundry-ironsworn",
-  "manifest": "https://github.com/ben/foundry-ironsworn/releases/download/0.5.1/system.json",
+  "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
   "download": "https://github.com/ben/foundry-ironsworn/releases/download/0.5.1/ironsworn.zip",
   "minimumCoreVersion": "0.8.3",
   "compatibleCoreVersion": "0.8.8",
