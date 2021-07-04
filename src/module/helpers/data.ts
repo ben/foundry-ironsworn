@@ -1,4 +1,4 @@
-interface EnhancedDataswornMove {
+export interface EnhancedDataswornMove {
   Name: string
   Source: {
     Name: string
