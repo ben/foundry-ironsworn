@@ -2,7 +2,7 @@
 
 ## In progress
 
-## 0.5.0
+## 0.5.1
 
 - Rework move structure and enhance move sheet ([#62](https://github.com/ben/foundry-ironsworn/pull/62))
 - Update roll-bonus dialog to allow selecting stat for moves ([#63](https://github.com/ben/foundry-ironsworn/pull/63))
