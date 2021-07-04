@@ -32,7 +32,7 @@ export class RollDialog extends Dialog {
     }
 
     // Render content
-    const template = 'systems/foundry-ironsworn/templates/move-roll-dialog.hbs'
+    const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
     const content = await renderTemplate(template, opts)
 
     const callbackForStat = (stat: string) => (x) => {
