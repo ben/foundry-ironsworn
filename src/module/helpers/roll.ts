@@ -2,6 +2,7 @@ import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 import { AssetItemData } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
+import { IronswornSettings } from './settings'
 import { capitalize } from './util'
 
 interface RollDialogOptions {
@@ -11,7 +12,15 @@ interface RollDialogOptions {
   stat?: string
   bonus?: number
 }
+
 export class RollDialog extends Dialog {
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
+      width: 500
+    } as Dialog.Options)
+  }
+
   static async show(opts: RollDialogOptions) {
     // Check inputs
     if (!opts.move && !opts.stat && !(opts.move && opts.stat)) {
@@ -95,7 +104,7 @@ export class RollDialog extends Dialog {
 }
 
 // Autofucus on input box when rolling
-Hooks.on('renderIronswornMoveRollDialog', async (_dialog, html, _data) => {
+Hooks.on('renderRollDialog', async (_dialog, html, _data) => {
   html.find('input').focus()
 })
 
