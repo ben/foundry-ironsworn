@@ -1,5 +1,5 @@
 import { IronswornActor } from '../actor/actor'
-import { createIronswornChatRoll } from '../chat/rolls'
+import { createIronswornChatRoll, createIronswornMoveChat } from '../chat/rolls'
 import { IronswornItem } from '../item/item'
 import { AssetItemData } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
@@ -33,7 +33,7 @@ export class RollDialog extends Dialog {
     }
     if (opts.move && !opts.move.Stats) {
       // Just send the move text to chat
-      return this.sendMoveToChat(opts.move)
+      return createIronswornMoveChat(opts.move)
     }
 
     // Render content
@@ -94,15 +94,6 @@ export class RollDialog extends Dialog {
 
     const r = new Roll(`{${actionExpr}, d10, d10}`, data)
     createIronswornChatRoll({ roll: r, ...opts })
-  }
-
-  protected static sendMoveToChat(move: EnhancedDataswornMove) {
-    // TODO
-    console.log({ move })
-    ChatMessage.create({
-      speaker: ChatMessage.getSpeaker(),
-      content: `<h3>${move.Name}</h3>${move.Description}`,
-    })
   }
 }
 

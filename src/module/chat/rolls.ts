@@ -127,3 +127,11 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   const cls = CONFIG.ChatMessage.entityClass as any
   cls.create(messageData, {})
 }
+
+export async function createIronswornMoveChat(move:EnhancedDataswornMove) {
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', move)
+  ChatMessage.create({
+    speaker: ChatMessage.getSpeaker(),
+    content
+  })
+}
