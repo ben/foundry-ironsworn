@@ -31,6 +31,10 @@ export class RollDialog extends Dialog {
       // Got everything we need, just roll it
       return this.doRoll(opts)
     }
+    if (opts.move && !opts.move.Stats) {
+      // Just send the move text to chat
+      return this.sendMoveToChat(opts.move)
+    }
 
     // Render content
     const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
@@ -90,6 +94,15 @@ export class RollDialog extends Dialog {
 
     const r = new Roll(`{${actionExpr}, d10, d10}`, data)
     createIronswornChatRoll({ roll: r, ...opts })
+  }
+
+  protected static sendMoveToChat(move: EnhancedDataswornMove) {
+    // TODO
+    console.log({ move })
+    ChatMessage.create({
+      speaker: ChatMessage.getSpeaker(),
+      content: `<h3>${move.Name}</h3>${move.Description}`,
+    })
   }
 }
 
