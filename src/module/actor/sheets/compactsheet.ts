@@ -1,4 +1,4 @@
-import { IronswornMoveRollDialog } from '../../helpers/roll'
+import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
 import { IronswornCharacterData } from '../actortypes'
@@ -94,7 +94,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     const stat = el.dataset.stat
     if (stat) {
       const bonus = this.options.statRollBonus || 0
-      await IronswornMoveRollDialog.show({
+      await RollDialog.show({
         actor: this.actor,
         stat,
         bonus

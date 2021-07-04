@@ -1,4 +1,4 @@
-import { IronswornMoveRollDialog } from '../../helpers/roll'
+import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
 
@@ -60,7 +60,7 @@ export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornAc
 
   _onSupplyRoll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    IronswornMoveRollDialog.show({
+    RollDialog.show({
       actor: this.actor,
       stat: 'supply'
     })

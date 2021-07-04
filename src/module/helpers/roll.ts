@@ -4,22 +4,22 @@ import { AssetItemData } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
 import { capitalize } from './util'
 
-interface MoveRollDialogOptions {
+interface RollDialogOptions {
   actor?: IronswornActor
   asset?: Item<AssetItemData>
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number
 }
-export class IronswornMoveRollDialog extends Dialog {
-  static async show(opts: MoveRollDialogOptions) {
+export class RollDialog extends Dialog {
+  static async show(opts: RollDialogOptions) {
     // Check inputs
     if (!opts.move && !opts.stat && !(opts.move && opts.stat)) {
       throw new Error('Must provide only one of `move` or `stat`')
     }
-    if (opts.stat && opts.bonus) {
+    if (opts.stat && opts.bonus !== undefined) {
       // Got everything we need, just roll it
-      return rollAssetOrMove(opts)
+      return this.doRoll(opts)
     }
 
     // Render content
@@ -29,7 +29,7 @@ export class IronswornMoveRollDialog extends Dialog {
     const callbackForStat = (stat: string) => (x) => {
       const form = x[0].querySelector('form')
       const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
-      rollAssetOrMove({
+      this.doRoll({
         ...opts,
         stat,
         bonus,
@@ -61,42 +61,37 @@ export class IronswornMoveRollDialog extends Dialog {
       }
     }
 
-    return new IronswornMoveRollDialog({
+    return new RollDialog({
       title,
       content,
       buttons,
       default: defaultButton,
     }).render(true)
   }
-}
 
-interface AssetMoveRollOptions {
-  move?: EnhancedDataswornMove
-  actor?: IronswornActor
-  asset?: Item<AssetItemData>
-  stat?: string
-  bonus?: number
-}
-export async function rollAssetOrMove(opts: AssetMoveRollOptions) {
-  let actionExpr = 'd6'
-  if (opts.stat) actionExpr += ` + @${opts.stat}`
-  if (opts.bonus) actionExpr += ` + ${opts.bonus}`
-  const data = {
-    ...opts.actor?.getRollData(),
-    track: opts.asset?.data.data.track.current,
-  }
+  protected static doRoll(opts: RollDialogOptions) {
+    let actionExpr = 'd6'
+    if (opts.stat) actionExpr += ` + @${opts.stat}`
+    if (opts.bonus) actionExpr += ` + ${opts.bonus}`
+    const data = {
+      ...opts.actor?.getRollData(),
+      track: opts.asset?.data.data.track.current,
+    }
 
-  const r = new Roll(`{${actionExpr}, d10, d10}`, data).roll()
-  let title = ''
-  if (opts.move) {
-    title = opts.move.Name
-    if (opts.stat) title += ` (${opts.stat})`
-  } else if (opts.stat) {
-    const rollText = game.i18n.localize('IRONSWORN.Roll')
-    const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
-    title = `${rollText} +${statText}`
+    const r = new Roll(`{${actionExpr}, d10, d10}`, data).roll()
+    let title = ''
+    if (opts.move) {
+      title = opts.move.Name
+      if (opts.stat) title += ` (${opts.stat})`
+    } else if (opts.stat) {
+      const rollText = game.i18n.localize('IRONSWORN.Roll')
+      const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
+      title = `${rollText} +${statText}`
+    }
+
+    // todo: custom rendering here
+    r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
   }
-  r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
 }
 
 // Autofucus on input box when rolling
@@ -116,7 +111,7 @@ export function attachInlineRollListeners(html: JQuery, opts?: InlineRollListene
     ev.preventDefault()
     const el = ev.currentTarget
     const stat = el.dataset.param
-    IronswornMoveRollDialog.show({
+    RollDialog.show({
       actor: realOpts.actor,
       stat,
     })

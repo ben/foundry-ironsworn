@@ -1,4 +1,4 @@
-import { attachInlineRollListeners, IronswornMoveRollDialog } from '../../helpers/roll'
+import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
 import { IronswornCharacterData } from '../actortypes'
@@ -116,7 +116,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     const el = ev.currentTarget
     const stat = el.dataset.stat
     if (stat) {
-      IronswornMoveRollDialog.show({ actor: this.actor, stat })
+      RollDialog.show({ actor: this.actor, stat })
     }
   }
 
