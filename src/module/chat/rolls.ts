@@ -114,7 +114,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     resultText: generateResultText(params.roll, params.move),
     ...params,
   }
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/ironsworn-roll.hbs', renderData)
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll.hbs', renderData)
 
   const messageData = {
     speaker: ChatMessage.getSpeaker(),

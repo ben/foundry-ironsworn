@@ -77,7 +77,7 @@ Hooks.once('init', async () => {
 
 Hooks.once('setup', () => {
   Roll.prototype.render = async function (chatOptions = {}) {
-    const template = 'systems/foundry-ironsworn/templates/chat/roll.hbs'
+    const template = 'systems/foundry-ironsworn/templates/chat/default-roll.hbs'
     chatOptions = mergeObject(
       {
         user: game?.user?.id,
