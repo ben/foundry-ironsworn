@@ -1,6 +1,5 @@
-import { ironswornMoveRoll } from '../../helpers/roll'
+import { IronswornMoveRollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
-import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
 import { IronswornCharacterData } from '../actortypes'
 import { CharacterMoveSheet } from './charactermovesheet'
@@ -94,12 +93,12 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     const el = ev.currentTarget
     const stat = el.dataset.stat
     if (stat) {
-      const actorData = this.actor.data.data as IronswornCharacterData
       const bonus = this.options.statRollBonus || 0
-      const rollText = game.i18n.localize('IRONSWORN.Roll')
-      const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
-      const title = `${rollText} +${statText}`
-      await ironswornMoveRoll(`@${stat}+${bonus}`, actorData, title)
+      await IronswornMoveRollDialog.show({
+        actor: this.actor,
+        stat,
+        bonus
+      })
       this.options.statRollBonus = 0
       this.render(true)
     }
