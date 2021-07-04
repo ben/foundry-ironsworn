@@ -1,6 +1,5 @@
-import { attachInlineRollListeners, IronswornRollDialog } from '../../helpers/roll'
+import { attachInlineRollListeners, IronswornMoveRollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
-import { capitalize } from '../../helpers/util'
 import { IronswornActor } from '../actor'
 import { IronswornCharacterData } from '../actortypes'
 import { CharacterMoveSheet } from './charactermovesheet'
@@ -117,9 +116,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     const el = ev.currentTarget
     const stat = el.dataset.stat
     if (stat) {
-      const rollText = game.i18n.localize('IRONSWORN.Roll')
-      const statText = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
-      IronswornRollDialog.showDialog(this.actor.data.data, stat, `${rollText} +${statText}`)
+      IronswornMoveRollDialog.show({ actor: this.actor, stat })
     }
   }
 

@@ -1,3 +1,5 @@
+import { IronswornActor } from '../../actor/actor'
+import { attachInlineRollListeners } from '../../helpers/roll'
 import { IronswornItemSheet } from '../item-sheet'
 import { AssetItemData } from '../itemtypes'
 
@@ -17,6 +19,8 @@ export class AssetSheet extends IronswornItemSheet {
     html.find('.ironsworn__field__value').on('blur', (ev) => this._updateFieldValue.call(this, ev))
     html.find('.ironsworn__field__delete').on('click', (ev) => this._deleteField.call(this, ev))
     html.find('.ironsworn__asset__delete').on('click', (ev) => this.assetDelete.call(this, ev))
+
+    attachInlineRollListeners(html, {actor: this.actor as IronswornActor})
   }
 
   _getHeaderButtons() {

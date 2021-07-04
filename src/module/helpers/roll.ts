@@ -5,14 +5,21 @@ import { EnhancedDataswornMove } from './data'
 import { capitalize } from './util'
 
 interface MoveRollDialogOptions {
-  move: EnhancedDataswornMove
+  move?: EnhancedDataswornMove
+  stat?: string
   actor?: IronswornActor
   asset?: Item<AssetItemData>
 }
 export class IronswornMoveRollDialog extends Dialog {
   static async show(opts: MoveRollDialogOptions) {
+    // Check inputs
+    if (!opts.move && !opts.stat && !(opts.move && opts.stat)) {
+      throw new Error('Must provide only one of `move` or `stat`')
+    }
+
     const template = 'systems/foundry-ironsworn/templates/move-roll-dialog.hbs'
-    const html = await renderTemplate(template, opts)
+    const content = await renderTemplate(template, opts)
+
     const callbackForStat = (stat: string) => (x) => {
       const form = x[0].querySelector('form')
       const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
@@ -22,25 +29,43 @@ export class IronswornMoveRollDialog extends Dialog {
         bonus,
       })
     }
+
     const buttons = {}
-    for (const stat of opts.move.Stats) {
-      buttons[stat] = {
+    let title = ''
+    let defaultButton = ''
+    if (opts.move) {
+      title = opts.move.Name
+      defaultButton = opts.move.Stats[0]
+      for (const stat of opts.move.Stats) {
+        buttons[stat] = {
+          icon: '<i class="fas fa-dice-d6"></i>',
+          label: game.i18n.localize(`IRONSWORN.${capitalize(stat)}`),
+          callback: callbackForStat(stat),
+        }
+      }
+    } else if (opts.stat) {
+      const rollText = game.i18n.localize('IRONSWORN.Roll')
+      const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
+      title = `${rollText} +${statText}`
+      defaultButton = opts.stat
+      buttons[opts.stat] = {
         icon: '<i class="fas fa-dice-d6"></i>',
-        label: game.i18n.localize(`IRONSWORN.${capitalize(stat)}`),
-        callback: callbackForStat(stat)
+        label: statText,
+        callback: callbackForStat(opts.stat),
       }
     }
+
     new IronswornMoveRollDialog({
-      title: opts.move.Name,
-      content: html,
+      title,
+      content,
       buttons,
-      default: opts.move.Stats[0],
+      default: defaultButton,
     }).render(true)
   }
 }
 
 interface AssetMoveRollOptions {
-  move: EnhancedDataswornMove
+  move?: EnhancedDataswornMove
   actor?: IronswornActor
   asset?: Item<AssetItemData>
   stat?: string
@@ -56,9 +81,16 @@ export async function rollAssetOrMove(opts: AssetMoveRollOptions) {
   }
 
   const r = new Roll(`{${actionExpr}, d10, d10}`, data).roll()
-  let moveTitle = opts.move.Name
-  if (opts.stat) moveTitle += ` (${opts.stat})`
-  r.toMessage({ flavor: `<div class="move-title">${moveTitle}</div>` })
+  let title = ''
+  if (opts.move) {
+    title = opts.move.Name
+    if (opts.stat) title += ` (${opts.stat})`
+  } else if (opts.stat) {
+    const rollText = game.i18n.localize('IRONSWORN.Roll')
+    const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
+    title = `${rollText} +${statText}`
+  }
+  r.toMessage({ flavor: `<div class="move-title">${title}</div>` })
 }
 
 export async function ironswornMoveRoll(bonusExpr = '0', values = {}, title: string) {
@@ -110,7 +142,10 @@ export function attachInlineRollListeners(html: JQuery, opts?: InlineRollListene
   html.find('a.inline-roll').on('click', (ev) => {
     ev.preventDefault()
     const el = ev.currentTarget
-    const moveTitle = `${realOpts.item?.name || realOpts.name} (${el.dataset.param})`
-    IronswornRollDialog.showDialog(realOpts.actor?.data.data, el.dataset.param || '', moveTitle)
+    const stat = el.dataset.param
+    IronswornMoveRollDialog.show({
+      actor: realOpts.actor,
+      stat
+    })
   })
 }
