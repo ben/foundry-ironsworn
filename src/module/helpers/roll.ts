@@ -2,6 +2,7 @@ import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 import { AssetItemData } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
+import { capitalize } from './util'
 
 interface MoveRollDialogOptions {
   move: EnhancedDataswornMove
@@ -12,26 +13,28 @@ export class IronswornMoveRollDialog extends Dialog {
   static async show(opts: MoveRollDialogOptions) {
     const template = 'systems/foundry-ironsworn/templates/move-roll-dialog.hbs'
     const html = await renderTemplate(template, opts)
+    const callbackForStat = (stat: string) => (x) => {
+      const form = x[0].querySelector('form')
+      const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
+      rollAssetOrMove({
+        ...opts,
+        stat,
+        bonus,
+      })
+    }
+    const buttons = {}
+    for (const stat of opts.move.Stats) {
+      buttons[stat] = {
+        icon: '<i class="fas fa-dice-d6"></i>',
+        label: game.i18n.localize(`IRONSWORN.${capitalize(stat)}`),
+        callback: callbackForStat(stat)
+      }
+    }
     new IronswornMoveRollDialog({
       title: opts.move.Name,
       content: html,
-      buttons: {
-        roll: {
-          icon: '<i class="fas fa-dice-d6"></i>',
-          label: game.i18n.localize('IRONSWORN.Roll'),
-          callback: (x) => {
-            const form = x[0].querySelector('form')
-            const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
-            const stat = form.stat.value
-            rollAssetOrMove({
-              ...opts,
-              stat,
-              bonus,
-            })
-          },
-        }
-      },
-      default: 'roll',
+      buttons,
+      default: opts.move.Stats[0],
     }).render(true)
   }
 }
@@ -49,13 +52,13 @@ export async function rollAssetOrMove(opts: AssetMoveRollOptions) {
   if (opts.bonus) actionExpr += ` + ${opts.bonus}`
   const data = {
     ...opts.actor?.getRollData(),
-    track: opts.asset?.data.data.track.current
+    track: opts.asset?.data.data.track.current,
   }
 
   const r = new Roll(`{${actionExpr}, d10, d10}`, data).roll()
   let moveTitle = opts.move.Name
   if (opts.stat) moveTitle += ` (${opts.stat})`
-  r.toMessage({flavor: `<div class="move-title">${moveTitle}</div>`})
+  r.toMessage({ flavor: `<div class="move-title">${moveTitle}</div>` })
 }
 
 export async function ironswornMoveRoll(bonusExpr = '0', values = {}, title: string) {
