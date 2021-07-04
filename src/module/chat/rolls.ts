@@ -1,5 +1,6 @@
 import { IronswornActor } from '../actor/actor'
 import { EnhancedDataswornMove } from '../helpers/data'
+import { capitalize } from '../helpers/util'
 import { AssetItemData } from '../item/itemtypes'
 
 interface RollMessageParams {
@@ -40,11 +41,43 @@ function hitTypeForRoll(roll: Roll): string {
   return game.i18n.localize('IRONSWORN.WeakHit')
 }
 
+function generateCardTitle(params: RollMessageParams) {
+  if (params.move) {
+    let title = params.move.Name
+    if (params.stat) {
+      title += ` (${params.stat})`
+    }
+    return title
+  }
+
+  if (params.asset) {
+    const assetData = params.asset.data as AssetItemData
+    let title = params.asset.data.name
+    if (params.stat) {
+      if (params.stat === 'track') {
+        title += ` (${assetData.data.track.name})`
+      } else {
+        const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
+        title += `(${statText})`
+      }
+    }
+    return title
+  }
+
+  const rollText = game.i18n.localize('IRONSWORN.Roll')
+  if (params.stat) {
+    const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
+    return `${rollText} +${statText}`
+  }
+
+  return rollText
+}
+
 export async function createIronswornChatRoll(params: RollMessageParams) {
-  await params.roll.evaluate({async: false} as any)
+  await params.roll.evaluate({ async: false } as any)
   const renderData = {
-    speaker: ChatMessage.getSpeaker(),
     hitType: hitTypeForRoll(params.roll),
+    title: generateCardTitle(params),
     ...params,
   }
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/ironsworn-roll.hbs', renderData)
