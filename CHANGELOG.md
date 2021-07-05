@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Include move text in stat-choice dialog ([#68](https://github.com/ben/foundry-ironsworn/pull/68))
+
 ## 0.5.3
 ## 0.5.2
 ## 0.5.1
