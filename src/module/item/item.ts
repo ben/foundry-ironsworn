@@ -1,4 +1,7 @@
+import { IronswornActor } from '../actor/actor'
+import { createIronswornChatRoll } from '../chat/rolls'
 import { RANK_INCREMENTS } from '../constants'
+import { moveDataByName } from '../helpers/data'
 import { AssetItemData, IronswornItemData, ProgressItemData } from './itemtypes'
 
 /**
@@ -25,12 +28,26 @@ export class IronswornItem extends Item<IronswornItemData> {
 
   fulfill() {
     if ((this.data.data as any).rank === undefined) return
+    if (this.data.type === 'vow') return this.fulfillVow()
     const data = this.data as ProgressItemData
     const progress = Math.floor(data.data.current / 4)
-    const r = new Roll(`{${progress},d10,d10}`).roll()
-    const i18nKey = this.type === 'vow' ? 'IRONSWORN.FulfillVow' : 'IRONSWORN.ProgressRoll'
-    r.toMessage({
-      flavor: `<div class="move-title">${game.i18n.localize(i18nKey)}: ${this.name}</div>`,
+    const r = new Roll(`{${progress},d10,d10}`)
+    return r.toMessage({
+      flavor: `<div class="move-title">${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${this.name}</div>`,
+    })
+  }
+
+  async fulfillVow() {
+    const move = await moveDataByName('Fulfill Your Vow')
+    if (!move) throw new Error('Problem loading fulvill-vow move')
+    move.Name += `: ${this.data.name}`
+    const data = this.data as ProgressItemData
+    const progress = Math.floor(data.data.current / 4)
+    const r = new Roll(`{${progress},d10,d10}`)
+    createIronswornChatRoll({
+      actor: this.actor as IronswornActor || undefined,
+      move,
+      roll: r,
     })
   }
 

@@ -3,6 +3,7 @@
 ## In progress
 
 - Include move text in stat-choice dialog ([#68](https://github.com/ben/foundry-ironsworn/pull/68))
+- Use the "Fulfill Your Vow" move when trying to complete a vow ([#70](https://github.com/ben/foundry-ironsworn/pull/70))
 
 ## 0.5.3
 ## 0.5.2

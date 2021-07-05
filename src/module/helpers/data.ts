@@ -1,3 +1,5 @@
+import { cloneDeep } from 'lodash'
+
 export interface EnhancedDataswornMove {
   Name: string
   Source: {
@@ -28,8 +30,7 @@ interface EnhancedDataswornMoveData {
 let CACHED_MOVES
 export async function cachedMoves(): Promise<EnhancedDataswornMoveData> {
   if (!CACHED_MOVES) {
-    CACHED_MOVES = await fetch('/systems/foundry-ironsworn/assets/moves.json')
-      .then(x => x.json())
+    CACHED_MOVES = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
   }
   return CACHED_MOVES
 }
@@ -38,7 +39,7 @@ export async function moveDataByName(name: string): Promise<EnhancedDataswornMov
   const data = await cachedMoves()
   for (const category of data.Categories) {
     for (const move of category.Moves) {
-      if (move.Name === name) return move
+      if (move.Name === name) return cloneDeep(move)
     }
   }
   return undefined
