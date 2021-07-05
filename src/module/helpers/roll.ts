@@ -29,7 +29,7 @@ export class RollDialog extends Dialog {
     }
     if (opts.stat && opts.bonus !== undefined) {
       // Got everything we need, just roll it
-      return this.doRoll(opts)
+      return this.rollAndCreateChatMessage(opts)
     }
     if (opts.move && !opts.move.Stats) {
       // Just send the move text to chat
@@ -43,7 +43,7 @@ export class RollDialog extends Dialog {
     const callbackForStat = (stat: string) => (x) => {
       const form = x[0].querySelector('form')
       const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
-      this.doRoll({
+      this.rollAndCreateChatMessage({
         ...opts,
         stat,
         bonus,
@@ -83,7 +83,7 @@ export class RollDialog extends Dialog {
     }).render(true)
   }
 
-  protected static doRoll(opts: RollDialogOptions) {
+  protected static rollAndCreateChatMessage(opts: RollDialogOptions) {
     let actionExpr = 'd6'
     if (opts.stat) actionExpr += ` + @${opts.stat}`
     if (opts.bonus) actionExpr += ` + ${opts.bonus}`
