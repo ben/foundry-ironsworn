@@ -1,4 +1,9 @@
 <form>
+  {{#if move}}
+    <div>{{{move.Description}}}</div>
+    <hr>
+  {{/if}}
+
   <div class="form-group">
     <label>{{localize 'IRONSWORN.Bonus'}}</label>
     <input type="number" step="1" name="bonus" />
