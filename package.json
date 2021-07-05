@@ -11,8 +11,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@types/lodash": "^4.14.170",
     "gulp": "^4.0.2",
-    "gulp-less": "^4.0.1"
+    "gulp-less": "^4.0.1",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^0.7.10-0",
