@@ -1,6 +1,5 @@
 import { IronswornActor } from '../actor/actor'
 import { createIronswornChatRoll, createIronswornMoveChat } from '../chat/rolls'
-import { IronswornItem } from '../item/item'
 import { AssetItemData } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
 import { IronswornSettings } from './settings'
@@ -104,7 +103,6 @@ Hooks.on('renderRollDialog', async (_dialog, html, _data) => {
 
 interface InlineRollListenerOptions {
   actor?: IronswornActor
-  item?: IronswornItem
   name?: string
 }
 
