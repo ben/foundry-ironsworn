@@ -89,10 +89,16 @@ export interface SiteItemData extends Item.Data<SiteData> {
 
 ///////////////////////////////
 
-interface MoveData {}
+interface MoveData {
+  description: string
+  strong: string
+  weak: string
+  miss: string
+  stats: string[]
+}
 
 export interface MoveItemData extends Item.Data<MoveData> {
-  type: 'asset'
+  type: 'move'
 }
 
 ///////////////////////////////

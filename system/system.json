@@ -1,7 +1,7 @@
 {
   "name": "foundry-ironsworn",
   "title": "Ironsworn",
-  "description": "An implementation of the Ironsworn system. Based entirely on the Simple Worldbuilding System for Foundry designed by Atropos.",
+  "description": "An implementation of the Ironsworn system, by Shawn Tomkins.",
   "version": "0.5.4",
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",

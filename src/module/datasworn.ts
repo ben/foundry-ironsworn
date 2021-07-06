@@ -2,7 +2,7 @@ export async function importFromDatasworn() {
   // Empty out the packs
   for (const key of ['world.ironsworn-items', 'world.ironsworn-assets']) {
     const pack = game?.packs?.get(key)
-    if (!pack) return
+    if (!pack) continue
     await pack.render(true)
     const idsToDelete = pack.index.map((x) => x._id)
     for (const id of idsToDelete) {
@@ -12,12 +12,26 @@ export async function importFromDatasworn() {
 
   // Moves
   const movesPack = game?.packs?.get('world.ironsworn-items')
-  const movesJson = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
-  for (const move of movesJson) {
-    await movesPack?.createEntity({
-      type: 'move',
-      ...move,
-    })
+  if (movesPack) {
+    const movesJson = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
+    const movesToCreate = [] as any[]
+    for (const category of movesJson.Categories) {
+      for (const move of category.Moves) {
+        movesToCreate.push({
+          type: 'move',
+          name: move.Name,
+          img: 'icons/dice/d10black.svg',
+          data: {
+            description: move.Description,
+            strong: move.Strong,
+            weak: move.Weak,
+            miss: move.Miss,
+            stats: move.Stats || [],
+          },
+        })
+      }
+    }
+    await (Item as any).createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
   }
 
   // Assets

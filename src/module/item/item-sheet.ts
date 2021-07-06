@@ -60,16 +60,16 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
 
     // Bonds
     html.find('.add-bond').click((_ev) => {
-      const bonds = Object.values((this.item.data.data as any).bonds)
+      const bonds = Object.values((this.item.data.data as any).bonds) as any[]
       bonds.push({ name: '', notes: '' })
       return this.item.update({ 'data.bonds': bonds })
     })
     html.find('.delete-bond').click(async (ev) => {
       ev.preventDefault()
       const idx = parseInt($(ev.target).parents('.item-row').data('idx'))
-      const bonds = Object.values((this.item.data.data as any).bonds)
+      const bonds = Object.values(((this.item.data).data as any).bonds) as any[]
       bonds.splice(idx, 1)
-      await this.item.update({ 'data.bonds': bonds })
+      this.item.update({data: {bonds}})
     })
   }
 }

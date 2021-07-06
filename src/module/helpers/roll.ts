@@ -1,6 +1,5 @@
 import { IronswornActor } from '../actor/actor'
 import { createIronswornChatRoll, createIronswornMoveChat } from '../chat/rolls'
-import { IronswornItem } from '../item/item'
 import { AssetItemData } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
 import { IronswornSettings } from './settings'
@@ -31,7 +30,7 @@ export class RollDialog extends Dialog {
       // Got everything we need, just roll it
       return this.rollAndCreateChatMessage(opts)
     }
-    if (opts.move && !opts.move.Stats) {
+    if (opts.move && (!opts.move.Stats || opts.move.Stats.length === 0)) {
       // Just send the move text to chat
       return createIronswornMoveChat(opts.move)
     }
@@ -104,7 +103,6 @@ Hooks.on('renderRollDialog', async (_dialog, html, _data) => {
 
 interface InlineRollListenerOptions {
   actor?: IronswornActor
-  item?: IronswornItem
   name?: string
 }
 

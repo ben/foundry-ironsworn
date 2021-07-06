@@ -121,7 +121,11 @@
       ]
     },
     "move": {
-      "description": "When you <strong>do a thing</strong>, ((rollplus iron))"
+      "description": "When you <strong>do a thing</strong>...",
+      "strong": "",
+      "weak": "",
+      "miss": "",
+      "stats": ["iron"]
     }
   }
 }

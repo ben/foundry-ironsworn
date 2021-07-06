@@ -67,6 +67,7 @@ async function doit () {
         /([\s\S]+)(On a \*\*strong hit\*\*, [\s\S]+)(On a \*\*weak hit\*\*, [\s\S]+)(On a \*\*miss\*\*, [\s\S]+)/
       ) || []
       if (!Description) Description = move.Text
+      delete move.Text
 
       move.Description = marked(Description || '') || undefined,
       move.Strong = marked(Strong || '') || undefined,

@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Update move item structure and allow custom moves in move sheet ([#72](https://github.com/ben/foundry-ironsworn/pull/72))
+
 ## 0.5.4
 
 - Include move text in stat-choice dialog ([#68](https://github.com/ben/foundry-ironsworn/pull/68))

@@ -16,9 +16,7 @@ export class AssetItem extends BaseItem {
     html.find('.ironsworn__assettrack__roll').on('click', (e) => this._onTrackRollClick.call(this, e, sheet))
 
     html.find('.ironsworn__asset').each((_i, el) => {
-      const itemId = el.dataset.item as string
-      const item = sheet.actor.items.get(itemId)
-      attachInlineRollListeners($(el), { actor: sheet.actor, item })
+      attachInlineRollListeners($(el), { actor: sheet.actor })
     })
   }
 

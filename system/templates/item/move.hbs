@@ -1,12 +1,43 @@
-<form class="{{cssClass}}" autocomplete="off">
-  {{!-- Sheet Body --}}
+{{#*inline "statCheck"}}
+<label class="checkbox">
+  <input type="checkbox" class="ironsworn__move__stat" data-stat="{{stat}}">
+  {{localize (concat 'IRONSWORN.' (capitalize stat))}}
+</label>
+
+{{/inline}}
+
+<form class="{{cssClass}} flexcol" autocomplete="off">
   <section class="sheet-body flexcol">
     <header class="sheet-header">
-      <h1>
+      <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="50" width="50" />
+      <h1 class="charname">
         <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
       </h1>
     </header>
 
-    {{editor content=data.data.description target="data.description" button=true owner=owner editable=true}}
+    <div class="flexrow nogrow">
+      {{>statCheck stat='edge'}}
+      {{>statCheck stat='heart'}}
+      {{>statCheck stat='iron'}}
+      {{>statCheck stat='shadow'}}
+      {{>statCheck stat='wits'}}
+    </div>
+
+    <hr>
+
+    <h3>{{localize 'IRONSWORN.Description'}}</h3>
+    {{editor content=data.data.description target="data.description" button=true owner=owner}}
+    <hr>
+
+    <h3>{{localize 'IRONSWORN.StrongHit'}}</h3>
+    {{editor content=data.data.strong target="data.strong" button=true owner=owner}}
+    <hr>
+
+    <h3>{{localize 'IRONSWORN.WeakHit'}}</h3>
+    {{editor content=data.data.weak target="data.weak" button=true owner=owner}}
+    <hr>
+
+    <h3>{{localize 'IRONSWORN.Miss'}}</h3>
+    {{editor content=data.data.miss target="data.miss" button=true owner=owner}}
   </section>
 </form>
