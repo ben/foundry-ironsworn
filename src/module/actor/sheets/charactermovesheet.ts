@@ -51,12 +51,19 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
   }
 
   activateListeners(html: JQuery) {
-    html.find('.ironsworn__builtin__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
+    html.find('.ironsworn__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
     html.find('.ironsworn__builtin__move__roll').on('click', (e) => this._handleBuiltInMoveRoll.call(this, e))
+    html.find('.ironsworn__custom__move__roll').on('click', (e) => this._handleCustomMoveRoll.call(this, e))
     html.find('.ironsworn__oracle').on('click', (e) => this._handleOracleClick.call(this, e))
 
     html.find('.ironsworn__builtin__move').each((_i, el) => {
       attachInlineRollListeners($(el), { actor: this.actor, name: el.dataset.name })
+    })
+    html.find('.ironsworn__custom__move').each((_i, el) => {
+      const move = this.actor.items.get(el.dataset.id || '')
+      if (move) {
+        attachInlineRollListeners($(el), {actor: this.actor, name: move.name})
+      }
     })
   }
 
@@ -74,7 +81,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         const baseKey = `IRONSWORN.MoveContents.${move.Name}`
         data.builtInMoves.push({
           ...move,
-          title: game.i18n.localize(`${baseKey}.title`),
+          name: game.i18n.localize(`${baseKey}.title`),
           description: game.i18n.localize(`${baseKey}.description`),
           strong: translateOrEmpty(`${baseKey}.strong`),
           weak: translateOrEmpty(`${baseKey}.weak`),
@@ -82,6 +89,8 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         })
       }
     }
+
+    data.moves = this.actor.items.filter(x => x.type === 'move')
 
     return data
   }
@@ -105,6 +114,18 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     if (move) {
       RollDialog.show({
         move,
+        actor: this.actor,
+      })
+    }
+  }
+
+  async _handleCustomMoveRoll(e: JQuery.ClickEvent) {
+    e.preventDefault()
+    const moveId = e.currentTarget.dataset.id || ''
+    const move = await this.actor.items.get(moveId)
+    if (move) {
+      RollDialog.show({
+        move: move.getMoveData(),
         actor: this.actor,
       })
     }

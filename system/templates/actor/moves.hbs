@@ -9,17 +9,19 @@
     <section class="tab" data-tab="moves">
       <div class='flexcol item-list'>
         <ol>
+
+          {{!-- Built-in moves --}}
           {{#each builtInMoves}}
           {{#if separator}}
           <h2>{{title}}</h2>
           {{else}}
-          <li class="item-row ironsworn__builtin__move" data-name="{{title}}">
+          <li class="item-row ironsworn__builtin__move" data-name="{{name}}">
             <h4 style="margin: 0;" title="{{Source.Name}}, p{{Source.Page}}" class="flexrow">
               <i class="nogrow fa fa-dice-d6 clickable text ironsworn__builtin__move__roll"
-                style="padding: 1px; margin-right: 5px;" data-name="{{title}}">
+                style="padding: 1px; margin-right: 5px;" data-name="{{name}}">
               </i>
-              <span style="flex: 1" class='ironsworn__builtin__move__expand'>
-                {{title}}
+              <span style="flex: 1" class='ironsworn__move__expand'>
+                {{name}}
               </span>
             </h4>
             <div class='move-summary' style='display: none;'>
@@ -38,6 +40,38 @@
           </li>
           {{/if}}
           {{/each}}
+
+          {{!-- Custom moves --}}
+          {{#if moves.length}}
+          <h2>{{localize 'IRONSWORN.CustomMoves'}}</h2>
+          {{#each moves}}
+          {{log this}}
+          <li class="item-row ironsworn__custom__move" data-id="{{id}}">
+            <h4 style="margin: 0;" class="flexrow">
+              <i class="nogrow fa fa-dice-d6 clickable text ironsworn__custom__move__roll"
+                style="padding: 1px; margin-right: 5px;" data-id="{{id}}">
+              </i>
+              <span style="flex: 1" class='ironsworn__move__expand'>
+                {{name}}
+              </span>
+            </h4>
+            <div class='move-summary' style='display: none;'>
+              <p>
+                {{!-- TODO: edit/trash buttons --}}
+                {{#each data.data.stats}}
+                <a class='inline-roll' data-param='{{this}}'><i class='fas fa-dice-d6'></i>
+                  {{this}}
+                </a>
+                {{/each}}
+              </p>
+              {{{enrichHtml data.data.description}}}
+              {{#if data.data.strong}}{{{enrichHtml data.data.strong}}}{{/if}}
+              {{#if data.data.weak}}{{{enrichHtml data.data.weak}}}{{/if}}
+              {{#if data.data.miss}}{{{enrichHtml data.data.miss}}}{{/if}}
+            </div>
+          </li>
+          {{/each}}
+          {{/if}}
         </ol>
       </div>
     </section>

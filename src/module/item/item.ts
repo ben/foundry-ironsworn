@@ -1,8 +1,8 @@
 import { IronswornActor } from '../actor/actor'
 import { createIronswornChatRoll } from '../chat/rolls'
 import { RANK_INCREMENTS } from '../constants'
-import { moveDataByName } from '../helpers/data'
-import { AssetItemData, IronswornItemData, ProgressItemData } from './itemtypes'
+import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
+import { AssetItemData, IronswornItemData, MoveItemData, ProgressItemData } from './itemtypes'
 
 /**
  * Extend the base Iteem entity
@@ -49,6 +49,27 @@ export class IronswornItem extends Item<IronswornItemData> {
       move,
       roll: r,
     })
+  }
+
+  /**
+   * Move methods
+   */
+  getMoveData(): EnhancedDataswornMove {
+    if (this.type !== 'move') throw new Error(`tried to get move data from a ${this.type}`)
+    const data = this.data as MoveItemData
+    return {
+      Name: this.name,
+      Source: {
+        Name: "Custom",
+        Page: ""
+      },
+      Stats: data.data.stats,
+      Text: '',
+      Description: data.data.description,
+      Strong: data.data.strong,
+      Weak: data.data.weak,
+      Miss: data.data.miss,
+    }
   }
 
   /**
