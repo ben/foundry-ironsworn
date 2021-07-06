@@ -1,3 +1,11 @@
+{{#*inline "statCheck"}}
+<label class="checkbox">
+  <input type="checkbox" class="ironsworn__move__stat" data-stat="{{stat}}">
+  {{localize (concat 'IRONSWORN.' (capitalize stat))}}
+</label>
+
+{{/inline}}
+
 <form class="{{cssClass}} flexcol" autocomplete="off">
   {{!-- Sheet Body --}}
   <section class="sheet-body flexcol">
@@ -7,11 +15,17 @@
       </h1>
     </header>
 
+    <div class="flexrow nogrow">
+      {{>statCheck stat='edge'}}
+      {{>statCheck stat='heart'}}
+      {{>statCheck stat='iron'}}
+      {{>statCheck stat='shadow'}}
+      {{>statCheck stat='wits'}}
+    </div>
+
     {{editor content=data.data.description target="data.description" button=true owner=owner editable=true}}
     {{editor content=data.data.strong target="data.strong" button=true owner=owner editable=true}}
     {{editor content=data.data.weak target="data.weak" button=true owner=owner editable=true}}
     {{editor content=data.data.miss target="data.miss" button=true owner=owner editable=true}}
-
-    {{log this}}
   </section>
 </form>
