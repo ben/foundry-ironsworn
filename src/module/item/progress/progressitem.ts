@@ -33,6 +33,6 @@ export class ProgressItem extends BaseItem {
 
     const { item: itemId, rank } = ev.currentTarget.dataset
     const item = actorSheet.actor.items.get(itemId) as IronswornItem
-    item.setRank(rank)
+    item.update({data: {rank}})
   }
 }
