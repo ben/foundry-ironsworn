@@ -121,7 +121,11 @@
       ]
     },
     "move": {
-      "description": "When you <strong>do a thing</strong>, ((rollplus iron))"
+      "description": "When you <strong>do a thing</strong>...",
+      "strong": "On a <strong>strong hit</strong>, you are successful.",
+      "weak": "On a <strong>weak hit</strong>, you succeed, but face a troublesome cost.",
+      "miss": "On a <strong>miss</strong>, you fail, or your progress is undermined by a dramatic and costly turn of events.",
+      "stats": ["iron"]
     }
   }
 }
