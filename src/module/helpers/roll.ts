@@ -31,7 +31,7 @@ export class RollDialog extends Dialog {
       // Got everything we need, just roll it
       return this.rollAndCreateChatMessage(opts)
     }
-    if (opts.move && !opts.move.Stats) {
+    if (opts.move && (!opts.move.Stats || opts.move.Stats.length === 0)) {
       // Just send the move text to chat
       return createIronswornMoveChat(opts.move)
     }
