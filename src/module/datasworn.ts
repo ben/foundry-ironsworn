@@ -20,6 +20,7 @@ export async function importFromDatasworn() {
         movesToCreate.push({
           type: 'move',
           name: move.Name,
+          img: 'icons/dice/d10black.svg',
           data: {
             description: move.Description,
             strong: move.Strong,
