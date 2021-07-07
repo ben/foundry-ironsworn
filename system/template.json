@@ -112,11 +112,11 @@
       "exclusiveOptions": [
         {
           "name": "Option A",
-          "selecteed": true
+          "selected": true
         },
         {
           "name": "Option B",
-          "selecteed": false
+          "selected": false
         }
       ]
     },
