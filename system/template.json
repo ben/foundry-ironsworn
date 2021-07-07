@@ -37,6 +37,7 @@
       "asset",
       "progress",
       "vow",
+      "bond",
       "bondset",
       "site",
       "move"
@@ -68,8 +69,7 @@
       }]
     },
     "bond": {
-      "description": "",
-      "notes": ""
+      "description": ""
     },
     "site": {
       "templates": [

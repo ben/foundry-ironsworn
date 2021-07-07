@@ -130,11 +130,11 @@
               <h2 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h2>
               <div class="flexrow">
                 <div class="flexrow track">
-                  {{#each (progressCharacters bonds.count)}}
+                  {{#each (progressCharacters bondset.count)}}
                   <div class="track-box">{{{this}}}</div>
                   {{/each}}
                 </div>
-                <div data-item="{{bonds.id}}" class="ironsworn__bondset__settings block clickable"
+                <div data-item="{{bondset.id}}" class="ironsworn__bondset__settings block clickable"
                   style="flex-grow: 0; padding: 5px; margin: 2px;">
                   <i class="fas fa-edit"></i>
                 </div>

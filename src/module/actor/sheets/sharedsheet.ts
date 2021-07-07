@@ -29,7 +29,8 @@ export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornAc
 
     data.vows = this.actor.items.filter((x) => x.type === 'vow')
     data.progresses = this.actor.items.filter((x) => x.type === 'progress')
-    data.bonds = this.actor.items.find((x) => x.type === 'bondset')
+    data.bondset = this.actor.items.find((x) => x.type === 'bondset')
+    data.bonds = this.actor.items.filter((x) => x.type === 'bond')
 
     // Allow every itemtype to add data to the actorsheet
     for (const itemType of CONFIG.IRONSWORN.itemClasses) {
@@ -62,7 +63,7 @@ export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornAc
     ev.preventDefault()
     RollDialog.show({
       actor: this.actor,
-      stat: 'supply'
+      stat: 'supply',
     })
   }
 
