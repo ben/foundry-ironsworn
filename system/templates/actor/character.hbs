@@ -199,6 +199,20 @@
                       </div>
                       {{/if}}
 
+                      {{#if data.data.exclusiveOptions.length}}
+                      <div class="flexcol stack nogrow">
+                        {{#each data.data.exclusiveOptions}}
+                        <div class="
+                            clickable block stack-row ironsworn__assetoption
+                            {{#if selected}}selected{{/if}}
+                          " data-idx="{{@index}}"
+                        >
+                          {{name}}
+                        </div>
+                        {{/each}}
+                      </div>
+                      {{/if}}
+
                     </div>
                   </li>
                   {{/each}}
