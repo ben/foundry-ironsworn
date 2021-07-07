@@ -56,6 +56,7 @@ Hooks.once('init', async () => {
     types: ['asset'],
     makeDefault: true,
   })
+  // TODO: bond sheet
   Items.registerSheet('ironsworn', BondsetSheet, {
     types: ['bondset'],
     makeDefault: true,
