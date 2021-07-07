@@ -33,6 +33,14 @@ async function doit () {
       track.current = asset['Asset Track']['Starting Value'] ?? track.max
     }
 
+    const exclusiveOptions = []
+    for (const option of (asset.MultiFieldAssetTrack?.Fields || [])) {
+      exclusiveOptions.push({
+        name: option.ActiveText,
+        selected: option.IsActive
+      })
+    }
+
     assets.push({
       name: `${asset['Asset Type']} / ${asset.Name}`,
       data: {
@@ -49,6 +57,7 @@ async function doit () {
           }
         }),
         track,
+        exclusiveOptions,
       }
     })
   }

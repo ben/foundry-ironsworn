@@ -35,12 +35,10 @@ export async function importFromDatasworn() {
   }
 
   // Assets
-  const assetsPack = game?.packs?.get('world.ironsworn-assets')
   const assetsJson = await fetch('/systems/foundry-ironsworn/assets/assets.json').then((x) => x.json())
-  for (const asset of assetsJson) {
-    await assetsPack?.createEntity({
-      type: 'asset',
-      ...asset,
-    })
-  }
+  const assetsToCreate = assetsJson.map((raw) => ({
+    type: 'asset',
+    ...raw,
+  }))
+  await (Item as any).createDocuments(assetsToCreate, { pack: 'world.ironsworn-assets' })
 }

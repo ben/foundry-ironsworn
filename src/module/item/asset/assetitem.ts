@@ -14,6 +14,7 @@ export class AssetItem extends BaseItem {
     html.find('.ironsworn__asset__expand').on('click', (e) => this._onAssetHeaderClick.call(this, e, sheet))
     html.find('.ironsworn__assettrack__value').on('click', (e) => this._onTrackValueClick.call(this, e, sheet))
     html.find('.ironsworn__assettrack__roll').on('click', (e) => this._onTrackRollClick.call(this, e, sheet))
+    html.find('.ironsworn__assetoption').on('click', (e) => this._onAssetOptionClick.call(this, e, sheet))
 
     html.find('.ironsworn__asset').each((_i, el) => {
       attachInlineRollListeners($(el), { actor: sheet.actor })
@@ -49,6 +50,22 @@ export class AssetItem extends BaseItem {
         asset: item,
         stat: 'track',
       })
+    }
+  }
+
+  static _onAssetOptionClick(ev: JQuery.ClickEvent, sheet: ActorSheet) {
+    ev.preventDefault()
+
+    const itemId = $(ev.currentTarget).parents('.item-row').data('item')
+    const item = sheet.actor.items.get(itemId) as Item<AssetItemData>
+    if (item) {
+      const { idx } = ev.currentTarget.dataset
+      const exclusiveOptions = Object.values(item.data.data.exclusiveOptions)
+      for (const o of exclusiveOptions) {
+        o.selected = false
+      }
+      exclusiveOptions[idx].selected = true
+      item.update({ data: { exclusiveOptions } })
     }
   }
 }
