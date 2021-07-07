@@ -28,7 +28,8 @@
         "name": "Health",
         "max": 4,
         "current": 4
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -60,7 +61,8 @@
         "name": "Health",
         "max": 4,
         "current": 4
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -92,7 +94,8 @@
         "name": "Health",
         "max": 3,
         "current": 3
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -124,7 +127,8 @@
         "name": "Health",
         "max": 5,
         "current": 5
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -156,7 +160,8 @@
         "name": "Health",
         "max": 4,
         "current": 4
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -188,7 +193,8 @@
         "name": "Health",
         "max": 4,
         "current": 4
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -220,7 +226,8 @@
         "name": "Health",
         "max": 5,
         "current": 5
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -252,7 +259,8 @@
         "name": "Health",
         "max": 3,
         "current": 3
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -284,7 +292,8 @@
         "name": "Health",
         "max": 2,
         "current": 2
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -316,7 +325,8 @@
         "name": "Health",
         "max": 5,
         "current": 5
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -342,7 +352,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -368,7 +379,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -400,7 +412,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -427,7 +440,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -459,7 +473,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -485,7 +500,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -511,7 +527,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -546,7 +563,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -577,7 +595,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -603,7 +622,8 @@
         "name": "Wealth",
         "max": 5,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -629,7 +649,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -655,7 +676,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -681,7 +703,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -707,7 +730,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -733,7 +757,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -760,7 +785,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -787,7 +813,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -813,7 +840,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -839,7 +867,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -866,7 +895,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -893,7 +923,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -920,7 +951,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -947,7 +979,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -973,7 +1006,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -999,7 +1033,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1025,7 +1060,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1051,7 +1087,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1077,7 +1114,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1103,7 +1141,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1129,7 +1168,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1155,7 +1195,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1182,7 +1223,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1208,7 +1250,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1239,7 +1282,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1266,7 +1310,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1293,7 +1338,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1320,7 +1366,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1347,7 +1394,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1374,7 +1422,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1400,7 +1449,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1427,7 +1477,17 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": [
+        {
+          "name": "Lightly Armored",
+          "selected": false
+        },
+        {
+          "name": "Geared for War",
+          "selected": false
+        }
+      ]
     }
   },
   {
@@ -1454,7 +1514,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1481,7 +1542,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1508,7 +1570,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1535,7 +1598,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1562,7 +1626,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1589,7 +1654,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1616,7 +1682,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1642,7 +1709,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1666,9 +1734,10 @@
       "track": {
         "enabled": true,
         "name": "Health",
-        "max": 6,
+        "max": 3,
         "current": 3
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1694,7 +1763,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1720,7 +1790,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1746,7 +1817,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1772,7 +1844,8 @@
         "name": "Essence",
         "max": 6,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1798,7 +1871,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1824,7 +1898,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1850,7 +1925,8 @@
         "name": "Light",
         "max": 6,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1876,7 +1952,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1902,7 +1979,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1928,7 +2006,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1954,7 +2033,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -1980,7 +2060,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -2006,7 +2087,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -2032,7 +2114,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -2058,7 +2141,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -2084,7 +2168,8 @@
         "name": "Strength",
         "max": 4,
         "current": 4
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -2110,7 +2195,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   },
   {
@@ -2136,7 +2222,8 @@
         "name": "",
         "max": 0,
         "current": 0
-      }
+      },
+      "exclusiveOptions": []
     }
   }
 ]
