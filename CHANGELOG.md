@@ -2,6 +2,7 @@
 
 ## In progress
 
+- Implement radio-select options for assets ([#75](https://github.com/ben/foundry-ironsworn/pull/75))
 - Implement 6-health option for Awaken ritual ([#74](https://github.com/ben/foundry-ironsworn/pull/74))
 - Update move item structure and allow custom moves in move sheet ([#72](https://github.com/ben/foundry-ironsworn/pull/72))
 
