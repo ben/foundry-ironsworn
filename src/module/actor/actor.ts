@@ -1,5 +1,6 @@
 import { IronswornItem } from '../item/item'
 import { IronswornActorData } from './actortypes'
+import { CharacterBondSheet } from './sheets/characterbondsheet'
 import { CharacterMoveSheet } from './sheets/charactermovesheet'
 
 /**
@@ -8,6 +9,7 @@ import { CharacterMoveSheet } from './sheets/charactermovesheet'
  */
 export class IronswornActor extends Actor<IronswornActorData, IronswornItem> {
   moveSheet?: CharacterMoveSheet
+  bondSheet?: CharacterBondSheet
 
   /** @override */
   prepareDerivedData() {
@@ -24,4 +26,5 @@ export class IronswornActor extends Actor<IronswornActorData, IronswornItem> {
 
 Hooks.on('createActor', async (actor) => {
   await actor.createOwnedItem({ type: 'bondset', name: 'bonds' })
+  // TODO: await (Item as any).createDocument({type: 'bond', name: 'A community'}, {parent: actor})
 })

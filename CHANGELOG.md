@@ -2,6 +2,7 @@
 
 ## In progress
 
+- Use `bond` items instead of `bondset` items ([#73](https://github.com/ben/foundry-ironsworn/pull/73))
 - Update move item structure and allow custom moves in move sheet ([#72](https://github.com/ben/foundry-ironsworn/pull/72))
 
 ## 0.5.4

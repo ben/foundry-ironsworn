@@ -61,17 +61,28 @@ export interface VowItemData extends Item.Data<VowData> {
 
 ///////////////////////////////
 
-interface Bond {
+interface BondsetBond {
   name: string
   notes: string
 }
 
 interface BondsetData {
-  bonds: Bond[]
+  bonds: BondsetBond[]
 }
 
 export interface BondsetItemData extends Item.Data<BondsetData> {
   type: 'bondset'
+}
+
+///////////////////////////////
+
+interface Bond {
+  name: string
+  description: string
+}
+
+export interface BondItemData extends Item.Data<Bond> {
+  type: 'bond'
 }
 
 ///////////////////////////////
@@ -103,4 +114,4 @@ export interface MoveItemData extends Item.Data<MoveData> {
 
 ///////////////////////////////
 
-export type IronswornItemData = AssetItemData | ProgressItemData | VowItemData | BondsetItemData | SiteItemData | MoveItemData
+export type IronswornItemData = AssetItemData | ProgressItemData | VowItemData | BondItemData | BondsetItemData | SiteItemData | MoveItemData

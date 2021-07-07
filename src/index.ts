@@ -8,6 +8,7 @@ import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
+import { maybeMigrateData } from './module/helpers/migration'
 import { IronswornSettings } from './module/helpers/settings'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
@@ -55,6 +56,7 @@ Hooks.once('init', async () => {
     types: ['asset'],
     makeDefault: true,
   })
+  // TODO: bond sheet
   Items.registerSheet('ironsworn', BondsetSheet, {
     types: ['bondset'],
     makeDefault: true,
@@ -73,6 +75,10 @@ Hooks.once('init', async () => {
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
+})
+
+Hooks.once('ready', async () => {
+  await maybeMigrateData()
 })
 
 Hooks.once('setup', () => {
