@@ -66,7 +66,7 @@ export class IronswornHandlebarsHelpers {
 
     Handlebars.registerHelper('progressCharacters', (current) => {
       const tickChar = [' ', '-', '+', '*'][current % 4]
-      const characters = [] as string[]
+      const characters: string[] = []
       for (let i = 0; i < Math.floor(current / 4); i++) {
         characters.push('#')
       }
@@ -85,7 +85,7 @@ export class IronswornHandlebarsHelpers {
     })
 
     Handlebars.registerHelper('rangeEach', function (context, _options) {
-      const results = [] as string[]
+      const results: string[] = []
       const { from, to, current, min, max } = context.hash
 
       // Enable both directions of iteration
@@ -123,21 +123,21 @@ export class IronswornHandlebarsHelpers {
     Handlebars.registerPartial('rankHexes', (ctx, _opts) => {
       const { rank, id } = ctx
       const position = Object.keys(RANKS).indexOf(rank)
-      const hexes = [] as string[]
+      const hexes: string[] = []
       for (const testRank in RANKS) {
         const isFilled = position >= Object.keys(RANKS).indexOf(testRank)
         hexes.push(`
           <div class="nogrow" title="${game.i18n.localize(`IRONSWORN.${capitalize(testRank)}`)}">
-            <svg 
-              version="1.1" 
-              xmlns="http://www.w3.org/2000/svg" 
-              height="15" 
+            <svg
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              height="15"
               viewbox="0 0 17.32050807568877 20"
-              class="rank-pip ${isFilled ? 'filled' : ''} clickable svg ironsworn__progress__rank" 
+              class="rank-pip ${isFilled ? 'filled' : ''} clickable svg ironsworn__progress__rank"
               data-rank="${testRank}"
               data-item="${id}"
             >
-              <path 
+              <path
                 stroke-width="1"
                 d="M8.660254037844386 0L17.32050807568877 5L17.32050807568877 15L8.660254037844386 20L0 15L0 5Z">
               </path>
