@@ -87,7 +87,7 @@ export class IronswornCharacterSheet extends ActorSheet {
     e?.preventDefault()
 
     if (this.actor.moveSheet) {
-      this.actor.moveSheet.render(true, { focus: true } as any) // TODO: fix this cast
+      this.actor.moveSheet.render(true, { focus: true })
     } else {
       new CharacterMoveSheet(this.actor).render(true)
     }

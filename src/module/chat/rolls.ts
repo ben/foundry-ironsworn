@@ -108,7 +108,7 @@ function generateResultText(roll: Roll, move?: EnhancedDataswornMove): string | 
 }
 
 export async function createIronswornChatRoll(params: RollMessageParams) {
-  await params.roll.evaluate({ async: false } as any)
+  await params.roll.evaluate({ async: false })
   const renderData = {
     hitType: hitTypeText(params.roll),
     title: generateCardTitle(params),
@@ -125,8 +125,8 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   }
 
   // CONFIG.ChatMessage.documentClass.create(...)
-  const cls = CONFIG.ChatMessage.documentClass as any
-  cls.create(messageData, {})
+  const cls = CONFIG.ChatMessage.documentClass
+  cls.create(messageData as any, {})
 }
 
 export async function createIronswornMoveChat(move:EnhancedDataswornMove) {

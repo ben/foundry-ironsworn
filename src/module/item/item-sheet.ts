@@ -58,17 +58,22 @@ export class IronswornItemSheet extends ItemSheet {
     })
 
     // Bonds
-    html.find('.add-bond').click((_ev) => {
-      const bonds = Object.values((this.item.data.data as any).bonds) as any[]
-      bonds.push({ name: '', notes: '' })
-      return this.item.update({ 'data.bonds': bonds })
+    html.find('.add-bond').click((ev) => {
+      ev.preventDefault()
+      if (this.item.data.type === 'bondset') {
+        const bonds = Object.values(this.item.data.data.bonds)
+        bonds.push({ name: '', notes: '' })
+        this.item.update({ 'data.bonds': bonds })
+      }
     })
     html.find('.delete-bond').click(async (ev) => {
       ev.preventDefault()
-      const idx = parseInt($(ev.target).parents('.item-row').data('idx'))
-      const bonds = Object.values(((this.item.data).data as any).bonds) as any[]
-      bonds.splice(idx, 1)
-      this.item.update({data: {bonds}})
+      if (this.item.data.type === 'bondset') {
+        const idx = parseInt($(ev.target).parents('.item-row').data('idx'))
+        const bonds = Object.values(this.item.data.data.bonds)
+        bonds.splice(idx, 1)
+        this.item.update({ data: { bonds } })
+      }
     })
   }
 }

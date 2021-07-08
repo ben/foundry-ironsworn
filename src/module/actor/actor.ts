@@ -10,9 +10,8 @@ export class IronswornActor extends Actor {
   /** @override */
   prepareDerivedData() {
     // Calculate momentum max/reset from debilities
-    const data = this.data.data as any
-
     if (this.data.type === 'character') {
+      const data = this.data.data
       const numDebilitiesMarked = Object.values(data.debility).filter((x) => x).length
       data.momentumMax = 10 - numDebilitiesMarked
       data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
