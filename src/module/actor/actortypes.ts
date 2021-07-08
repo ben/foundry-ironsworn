@@ -25,22 +25,42 @@ interface CharacterDataSourceData {
   xp: number
 }
 
+interface CharacterDataPropertiesData extends CharacterDataSourceData {
+  momentumMax: number
+  momentumReset: number
+}
+
+interface CharacterDataProperties {
+  type: 'character'
+  data: CharacterDataPropertiesData
+}
+
 interface CharacterDataSource {
   type: 'character'
   data: CharacterDataSourceData
 }
 
 interface SharedDataSourceData {}
+interface SharedDataPropertiesData {}
 
 interface SharedDataSource {
   type: 'shared'
   data: SharedDataSourceData
 }
+interface SharedDataProperties {
+  type: 'shared'
+  data: SharedDataPropertiesData
+}
 
 export type ActorDataSource = CharacterDataSource | SharedDataSource
+export type ActorDataProperties = CharacterDataProperties | SharedDataProperties
 
 declare global {
   interface SourceConfig {
     Actor: ActorDataSource
+  }
+
+  interface DataConfig {
+    Actor: ActorDataProperties
   }
 }
