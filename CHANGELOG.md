@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Update to newest Foundry types ([#76](https://github.com/ben/foundry-ironsworn/pull/76))
+
 ## 1.0.0
 
 - Implement radio-select options for assets ([#75](https://github.com/ben/foundry-ironsworn/pull/75))
