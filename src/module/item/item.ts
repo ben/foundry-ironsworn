@@ -2,13 +2,13 @@ import { IronswornActor } from '../actor/actor'
 import { createIronswornChatRoll } from '../chat/rolls'
 import { RANK_INCREMENTS } from '../constants'
 import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
-import { AssetDataSource, ItemDataSource, MoveDataSource, ProgressDataSource } from './itemtypes'
+import { AssetDataSource, MoveDataSource, ProgressDataSource } from './itemtypes'
 
 /**
  * Extend the base Iteem entity
  * @extends {Item}
  */
-export class IronswornItem extends Item<ItemDataSource> {
+export class IronswornItem extends Item {
   /**
    * Progress methods
    */
@@ -106,5 +106,11 @@ export class IronswornItem extends Item<ItemDataSource> {
   // Bondset methods
   get count() {
     return Object.values((this.data.data as any).bonds).length
+  }
+}
+
+declare global {
+  interface DocumentClassConfig {
+    Item: typeof IronswornItem;
   }
 }

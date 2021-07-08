@@ -6,7 +6,7 @@ import { CharacterMoveSheet } from './sheets/charactermovesheet'
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
-export class IronswornActor extends Actor<ActorDataSource, IronswornItem> {
+export class IronswornActor extends Actor {
   moveSheet?: CharacterMoveSheet
 
   /** @override */
@@ -19,6 +19,12 @@ export class IronswornActor extends Actor<ActorDataSource, IronswornItem> {
       data.momentumMax = 10 - numDebilitiesMarked
       data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
     }
+  }
+}
+
+declare global {
+  interface DocumentClassConfig {
+    Actor: typeof IronswornActor
   }
 }
 
