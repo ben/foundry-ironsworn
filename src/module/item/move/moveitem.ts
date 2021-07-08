@@ -5,7 +5,5 @@ export class MoveItem extends BaseItem {
 
   static activateActorSheetListeners(html, sheet) {
     super.activateActorSheetListeners(html, sheet)
-
-    // TODO:
   }
 }

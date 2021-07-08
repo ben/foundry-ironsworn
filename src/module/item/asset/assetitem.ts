@@ -8,7 +8,6 @@ export class AssetItem extends BaseItem {
   static activateActorSheetListeners(html: JQuery, sheet: IronswornCharacterSheet) {
     super.activateActorSheetListeners(html, sheet)
 
-    // TODO: rollables, tracks, etc.
     html.find('.ironsworn__asset__expand').on('click', (e) => this._onAssetHeaderClick.call(this, e, sheet))
     html.find('.ironsworn__assettrack__value').on('click', (e) => this._onTrackValueClick.call(this, e, sheet))
     html.find('.ironsworn__assettrack__roll').on('click', (e) => this._onTrackRollClick.call(this, e, sheet))
