@@ -1,5 +1,4 @@
 import { BaseItem } from '../baseitem'
-import { IronswornItem } from '../item'
 
 export class ProgressItem extends BaseItem {
   static entityName = 'progress'
@@ -16,7 +15,7 @@ export class ProgressItem extends BaseItem {
     ev.preventDefault()
 
     const itemId = ev.currentTarget.dataset.item
-    const item = actorSheet.actor.items.get(itemId) as IronswornItem
+    const item = actorSheet.actor.items.get(itemId)
     item.markProgress()
   }
 
@@ -24,7 +23,7 @@ export class ProgressItem extends BaseItem {
     ev.preventDefault()
 
     const itemId = ev.currentTarget.dataset.item
-    const item = actorSheet.actor.items.get(itemId) as IronswornItem
+    const item = actorSheet.actor.items.get(itemId)
     item.fulfill()
   }
 
@@ -32,7 +31,7 @@ export class ProgressItem extends BaseItem {
     ev.preventDefault()
 
     const { item: itemId, rank } = ev.currentTarget.dataset
-    const item = actorSheet.actor.items.get(itemId) as IronswornItem
-    item.update({data: {rank}})
+    const item = actorSheet.actor.items.get(itemId)
+    item.update({ data: { rank } })
   }
 }

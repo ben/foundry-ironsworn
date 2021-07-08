@@ -1,4 +1,3 @@
-import { IronswornActor } from '../../actor/actor'
 import { IronswornCharacterSheet } from '../../actor/sheets/charactersheet'
 import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { BaseItem } from '../baseitem'
@@ -24,7 +23,7 @@ export class AssetItem extends BaseItem {
     ev.preventDefault()
 
     const el = ev.currentTarget
-    const itemId = el.dataset.item as string
+    const itemId = el.dataset.item
     const item = sheet.actor.items.get(itemId)
     item?.setFlag('foundry-ironsworn', 'expanded', !item.getFlag('foundry-ironsworn', 'expanded'))
   }
@@ -45,7 +44,7 @@ export class AssetItem extends BaseItem {
     const item = sheet.actor.items.get(itemId)
     if (item) {
       RollDialog.show({
-        actor: sheet.actor as IronswornActor,
+        actor: sheet.actor,
         asset: item,
         stat: 'track',
       })

@@ -2,7 +2,6 @@ import { IronswornActor } from '../actor/actor'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
-import { AssetDataSource } from '../item/itemtypes'
 
 interface RollMessageParams {
   roll: Roll
@@ -75,11 +74,10 @@ function generateCardTitle(params: RollMessageParams) {
   }
 
   if (params.asset) {
-    const assetData = params.asset.data as AssetDataSource
     let title = params.asset.data.name
     if (params.stat) {
       if (params.stat === 'track') {
-        title += ` (${assetData.data.track.name})`
+        title += ` (${this.assetData.data.track.name})`
       } else {
         const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
         title += `(${statText})`

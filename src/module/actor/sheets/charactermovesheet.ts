@@ -43,7 +43,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
           contentSelector: '.ironsworn__tabs__content',
         },
       ],
-    } as FormApplication.Options)
+    })
   }
 
   get title() {
