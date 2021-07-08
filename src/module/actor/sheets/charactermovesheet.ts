@@ -65,6 +65,11 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         attachInlineRollListeners($(el), { actor: this.actor, name: move.name || '' })
       }
     })
+
+    // Custom sheet listeners for every ItemType
+    for (const itemClass of CONFIG.IRONSWORN.itemClasses) {
+      itemClass.activateActorSheetListeners(html, this)
+    }
   }
 
   async getData() {
@@ -144,6 +149,6 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         }
       }
     }
-    (table as any)?.draw()
+    ;(table as any)?.draw()
   }
 }

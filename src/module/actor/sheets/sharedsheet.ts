@@ -61,7 +61,7 @@ export class IronswornSharedSheet extends ActorSheet {
     ev.preventDefault()
     RollDialog.show({
       actor: this.actor,
-      stat: 'supply'
+      stat: 'supply',
     })
   }
 
