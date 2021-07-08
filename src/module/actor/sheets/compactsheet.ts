@@ -1,7 +1,7 @@
 import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
-import { IronswornCharacterData } from '../actortypes'
+import { CharacterDataSourceData } from '../actortypes'
 import { CharacterMoveSheet } from './charactermovesheet'
 import { CharacterSheetOptions } from './charactersheet'
 
@@ -71,7 +71,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
   _onBurnMomentum(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
+    const { momentum, momentumReset } = this.actor.data.data as CharacterDataSourceData
     if (momentum > momentumReset) {
       this.actor.update({
         data: { momentum: momentumReset },
@@ -111,7 +111,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     const min = parseInt(ev.currentTarget.dataset.min || '-100')
     const max = parseInt(ev.currentTarget.dataset.max || '100')
     const { stat } = ev.currentTarget.dataset
-    const actorData = this.actor.data.data as IronswornCharacterData
+    const actorData = this.actor.data.data as CharacterDataSourceData
     let value = actorData[stat]
     value += amt
     if (value >= min && value <= max) {
@@ -125,7 +125,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
   _momentumBurn(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
+    const { momentum, momentumReset } = this.actor.data.data as CharacterDataSourceData
     if (momentum > momentumReset) {
       this.actor.update({
         data: { momentum: momentumReset },

@@ -23,7 +23,7 @@ interface AssetExclusiveOption {
   selected: boolean
 }
 
-interface AssetData {
+interface AssetDataSourceData {
   fields: AssetField[]
   abilities: AssetAbility[]
   track: {
@@ -35,28 +35,31 @@ interface AssetData {
   exclusiveOptions: AssetExclusiveOption[]
 }
 
-export interface AssetItemData extends Item.Data<AssetData> {
+export interface AssetDataSource {
   type: 'asset'
+  data: AssetDataSourceData
 }
 
 ///////////////////////////////
 
-type ProgressData = ProgressBase
+type ProgressDataSourceData = ProgressBase
 
-export interface ProgressItemData extends Item.Data<ProgressData> {
+export interface ProgressDataSource {
   type: 'progress'
+  data: ProgressDataSourceData
 }
 
 ///////////////////////////////
 
-interface VowData extends ProgressBase {
+interface VowDataSourceData extends ProgressBase {
   description: string
   threat: string
   menace: number
 }
 
-export interface VowItemData extends Item.Data<VowData> {
+export interface VowDataSource {
   type: 'vow'
+  data: VowDataSourceData
 }
 
 ///////////////////////////////
@@ -66,30 +69,32 @@ interface Bond {
   notes: string
 }
 
-interface BondsetData {
+interface BondsetDataSourceData {
   bonds: Bond[]
 }
 
-export interface BondsetItemData extends Item.Data<BondsetData> {
+export interface BondsetDataSource {
   type: 'bondset'
+  data: BondsetDataSourceData
 }
 
 ///////////////////////////////
 
-interface SiteData extends ProgressBase {
+interface SiteDataSourceData extends ProgressBase {
   objective: string
   theme: string
   domain: string
   notes: string
 }
 
-export interface SiteItemData extends Item.Data<SiteData> {
+export interface SiteDataSource {
   type: 'site'
+  data: SiteDataSourceData
 }
 
 ///////////////////////////////
 
-interface MoveData {
+interface MoveDataSourceData {
   description: string
   strong: string
   weak: string
@@ -97,10 +102,17 @@ interface MoveData {
   stats: string[]
 }
 
-export interface MoveItemData extends Item.Data<MoveData> {
+export interface MoveDataSource {
   type: 'move'
+  data: MoveDataSourceData
 }
 
 ///////////////////////////////
 
-export type IronswornItemData = AssetItemData | ProgressItemData | VowItemData | BondsetItemData | SiteItemData | MoveItemData
+export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | SiteDataSource | MoveDataSource
+
+declare global {
+  interface SourceConfig {
+    Item: ItemDataSource
+  }
+}

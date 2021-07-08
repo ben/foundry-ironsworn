@@ -1,12 +1,12 @@
 import { IronswornActor } from '../actor/actor'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { capitalize } from '../helpers/util'
-import { AssetItemData } from '../item/itemtypes'
+import { AssetDataSource } from '../item/itemtypes'
 
 interface RollMessageParams {
   roll: Roll
   actor?: IronswornActor
-  asset?: Item<AssetItemData>
+  asset?: Item<AssetDataSource>
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number
@@ -74,7 +74,7 @@ function generateCardTitle(params: RollMessageParams) {
   }
 
   if (params.asset) {
-    const assetData = params.asset.data as AssetItemData
+    const assetData = params.asset.data as AssetDataSource
     let title = params.asset.data.name
     if (params.stat) {
       if (params.stat === 'track') {

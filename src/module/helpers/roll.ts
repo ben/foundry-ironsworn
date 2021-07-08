@@ -1,13 +1,13 @@
 import { IronswornActor } from '../actor/actor'
 import { createIronswornChatRoll, createIronswornMoveChat } from '../chat/rolls'
-import { AssetItemData } from '../item/itemtypes'
+import { AssetDataSource } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
 import { IronswornSettings } from './settings'
 import { capitalize } from './util'
 
 interface RollDialogOptions {
   actor?: IronswornActor
-  asset?: Item<AssetItemData>
+  asset?: Item<AssetDataSource>
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number

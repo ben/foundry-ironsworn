@@ -2,7 +2,7 @@ import { IronswornActor } from '../../actor/actor'
 import { IronswornCharacterSheet } from '../../actor/sheets/charactersheet'
 import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { BaseItem } from '../baseitem'
-import { AssetItemData } from '../itemtypes'
+import { AssetDataSource } from '../itemtypes'
 
 export class AssetItem extends BaseItem {
   static entityName = 'asset'
@@ -43,7 +43,7 @@ export class AssetItem extends BaseItem {
     ev.preventDefault()
 
     const itemId = $(ev.currentTarget).parents('.item-row').data('item')
-    const item = sheet.actor.items.get(itemId) as Item<AssetItemData>
+    const item = sheet.actor.items.get(itemId) as Item<AssetDataSource>
     if (item) {
       RollDialog.show({
         actor: sheet.actor as IronswornActor,
@@ -57,7 +57,7 @@ export class AssetItem extends BaseItem {
     ev.preventDefault()
 
     const itemId = $(ev.currentTarget).parents('.item-row').data('item')
-    const item = sheet.actor.items.get(itemId) as Item<AssetItemData>
+    const item = sheet.actor.items.get(itemId) as Item<AssetDataSource>
     if (item) {
       const { idx } = ev.currentTarget.dataset
       const exclusiveOptions = Object.values(item.data.data.exclusiveOptions)

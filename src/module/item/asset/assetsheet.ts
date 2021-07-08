@@ -1,7 +1,7 @@
 import { IronswornActor } from '../../actor/actor'
 import { attachInlineRollListeners } from '../../helpers/roll'
 import { IronswornItemSheet } from '../item-sheet'
-import { AssetItemData } from '../itemtypes'
+import { AssetDataSource } from '../itemtypes'
 
 export class AssetSheet extends IronswornItemSheet {
   static get defaultOptions() {
@@ -27,8 +27,8 @@ export class AssetSheet extends IronswornItemSheet {
     attachInlineRollListeners(html, { actor: this.actor as IronswornActor })
   }
 
-  get assetData(): AssetItemData {
-    return this.item.data as AssetItemData
+  get assetData(): AssetDataSource {
+    return this.item.data as AssetDataSource
   }
 
   _getHeaderButtons() {

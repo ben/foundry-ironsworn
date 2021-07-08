@@ -1,7 +1,7 @@
 import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornActor } from '../actor'
-import { IronswornCharacterData } from '../actortypes'
+import { CharacterDataSourceData } from '../actortypes'
 import { CharacterMoveSheet } from './charactermovesheet'
 
 export interface CharacterSheetOptions extends BaseEntitySheet.Options {
@@ -102,7 +102,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
   _onBurnMomentum(ev) {
     ev.preventDefault()
 
-    const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
+    const { momentum, momentumReset } = this.actor.data.data as CharacterDataSourceData
     if (momentum > momentumReset) {
       this.actor.update({
         data: { momentum: momentumReset },
@@ -128,7 +128,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     if (resource) {
       // Clicked a value in momentum/health/etc, set the value
       const newValue = parseInt(value)
-      const { momentumMax } = this.actor.data.data as IronswornCharacterData
+      const { momentumMax } = this.actor.data.data as CharacterDataSourceData
       if (resource !== 'momentum' || newValue <= momentumMax) {
         this.actor.update({ data: { [resource]: newValue } })
       }

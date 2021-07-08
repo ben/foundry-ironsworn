@@ -1,6 +1,6 @@
 import { uniq } from 'lodash'
 import { IronswornItemSheet } from '../item-sheet'
-import { MoveItemData } from '../itemtypes'
+import { MoveDataSource } from '../itemtypes'
 
 export class MoveSheet extends IronswornItemSheet {
   static get defaultOptions() {
@@ -21,7 +21,7 @@ export class MoveSheet extends IronswornItemSheet {
     const stat = ev.currentTarget.dataset.stat
     if (!stat) return
 
-    const data = this.item.data as MoveItemData
+    const data = this.item.data as MoveDataSource
     let stats = data.data.stats
     if ($(ev.currentTarget).prop('checked')) {
       stats = uniq([...data.data.stats, stat])
@@ -32,7 +32,7 @@ export class MoveSheet extends IronswornItemSheet {
   }
 
   _setChecks(html: JQuery) {
-    const data = this.item.data as MoveItemData
+    const data = this.item.data as MoveDataSource
     html.find('.ironsworn__move__stat').each((_i, el) => {
       const stat = el.dataset.stat || ''
       $(el).prop('checked', data.data.stats.includes(stat))
