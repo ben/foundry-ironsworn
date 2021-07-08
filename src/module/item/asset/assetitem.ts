@@ -1,8 +1,6 @@
-import { IronswornActor } from '../../actor/actor'
 import { IronswornCharacterSheet } from '../../actor/sheets/charactersheet'
 import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { BaseItem } from '../baseitem'
-import { AssetItemData } from '../itemtypes'
 
 export class AssetItem extends BaseItem {
   static entityName = 'asset'
@@ -10,7 +8,6 @@ export class AssetItem extends BaseItem {
   static activateActorSheetListeners(html: JQuery, sheet: IronswornCharacterSheet) {
     super.activateActorSheetListeners(html, sheet)
 
-    // TODO: rollables, tracks, etc.
     html.find('.ironsworn__asset__expand').on('click', (e) => this._onAssetHeaderClick.call(this, e, sheet))
     html.find('.ironsworn__assettrack__value').on('click', (e) => this._onTrackValueClick.call(this, e, sheet))
     html.find('.ironsworn__assettrack__roll').on('click', (e) => this._onTrackRollClick.call(this, e, sheet))
@@ -25,7 +22,7 @@ export class AssetItem extends BaseItem {
     ev.preventDefault()
 
     const el = ev.currentTarget
-    const itemId = el.dataset.item as string
+    const itemId = el.dataset.item
     const item = sheet.actor.items.get(itemId)
     item?.setFlag('foundry-ironsworn', 'expanded', !item.getFlag('foundry-ironsworn', 'expanded'))
   }
@@ -43,10 +40,10 @@ export class AssetItem extends BaseItem {
     ev.preventDefault()
 
     const itemId = $(ev.currentTarget).parents('.item-row').data('item')
-    const item = sheet.actor.items.get(itemId) as Item<AssetItemData>
+    const item = sheet.actor.items.get(itemId)
     if (item) {
       RollDialog.show({
-        actor: sheet.actor as IronswornActor,
+        actor: sheet.actor,
         asset: item,
         stat: 'track',
       })
@@ -57,8 +54,8 @@ export class AssetItem extends BaseItem {
     ev.preventDefault()
 
     const itemId = $(ev.currentTarget).parents('.item-row').data('item')
-    const item = sheet.actor.items.get(itemId) as Item<AssetItemData>
-    if (item) {
+    const item = sheet.actor.items.get(itemId)
+    if (item && item.data.type === 'asset') {
       const { idx } = ev.currentTarget.dataset
       const exclusiveOptions = Object.values(item.data.data.exclusiveOptions)
       for (const o of exclusiveOptions) {

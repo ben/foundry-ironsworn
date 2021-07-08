@@ -1,13 +1,13 @@
 import { IronswornActor } from '../actor/actor'
 import { createIronswornChatRoll, createIronswornMoveChat } from '../chat/rolls'
-import { AssetItemData } from '../item/itemtypes'
+import { IronswornItem } from '../item/item'
 import { EnhancedDataswornMove } from './data'
 import { IronswornSettings } from './settings'
 import { capitalize } from './util'
 
 interface RollDialogOptions {
   actor?: IronswornActor
-  asset?: Item<AssetItemData>
+  asset?: IronswornItem
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number
@@ -18,7 +18,7 @@ export class RollDialog extends Dialog {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
       width: 500,
-    } as Dialog.Options)
+    })
   }
 
   static async show(opts: RollDialogOptions) {
@@ -88,7 +88,7 @@ export class RollDialog extends Dialog {
     if (opts.bonus) actionExpr += ` + ${opts.bonus}`
     const data = {
       ...opts.actor?.getRollData(),
-      track: opts.asset?.data.data.track.current,
+      track: opts.asset?.data.type === 'asset' ? opts.asset.data.data.track.current : undefined,
     }
 
     const r = new Roll(`{${actionExpr}, d10, d10}`, data)

@@ -18,6 +18,12 @@ import { ProgressSheet } from './module/item/progress/progresssheet'
 
 import './styles/styles.less'
 
+declare global {
+  interface LenientGlobalVariableTypes {
+    game: never; // the type doesn't matter
+  }
+}
+
 Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
 
@@ -28,8 +34,8 @@ Hooks.once('init', async () => {
   CONFIG.IRONSWORN = IRONSWORN
 
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = IronswornActor
-  CONFIG.Item.entityClass = IronswornItem
+  CONFIG.Actor.documentClass = IronswornActor
+  CONFIG.Item.documentClass = IronswornItem
 
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'

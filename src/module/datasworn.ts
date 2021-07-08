@@ -1,10 +1,12 @@
+import { ItemDataConstructorData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData"
+
 export async function importFromDatasworn() {
   // Empty out the packs
   for (const key of ['world.ironsworn-items', 'world.ironsworn-assets']) {
-    const pack = game?.packs?.get(key)
+    const pack = game.packs.get(key)
     if (!pack) continue
     await pack.render(true)
-    const idsToDelete = pack.index.map((x) => x._id)
+    const idsToDelete = pack.index.map((x: any) => x._id)
     for (const id of idsToDelete) {
       await pack.deleteEntity(id)
     }
@@ -14,7 +16,7 @@ export async function importFromDatasworn() {
   const movesPack = game?.packs?.get('world.ironsworn-items')
   if (movesPack) {
     const movesJson = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
-    const movesToCreate = [] as any[]
+    const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
     for (const category of movesJson.Categories) {
       for (const move of category.Moves) {
         movesToCreate.push({
@@ -31,7 +33,7 @@ export async function importFromDatasworn() {
         })
       }
     }
-    await (Item as any).createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
+    await Item.createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
   }
 
   // Assets
@@ -40,5 +42,5 @@ export async function importFromDatasworn() {
     type: 'asset',
     ...raw,
   }))
-  await (Item as any).createDocuments(assetsToCreate, { pack: 'world.ironsworn-assets' })
+  await Item.createDocuments(assetsToCreate, { pack: 'world.ironsworn-assets' })
 }

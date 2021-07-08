@@ -1,6 +1,4 @@
-import { IronswornItemData } from '../item/itemtypes'
-
-export interface IronswornCharacterData {
+interface CharacterDataSourceData {
   biography: string
   edge: number
   heart: number
@@ -12,8 +10,6 @@ export interface IronswornCharacterData {
   supply: number
   experience: number
   momentum: number
-  momentumMax: number
-  momentumReset: number
   debility: {
     corrupted: boolean
     cursed: boolean
@@ -27,14 +23,42 @@ export interface IronswornCharacterData {
   xp: number
 }
 
-interface CharacterActorData extends Actor.Data<IronswornCharacterData, IronswornItemData> {
+interface CharacterDataPropertiesData extends CharacterDataSourceData {
+  momentumMax: number
+  momentumReset: number
+}
+
+interface CharacterDataProperties {
   type: 'character'
+  data: CharacterDataPropertiesData
 }
 
-interface SharedData {}
+interface CharacterDataSource {
+  type: 'character'
+  data: CharacterDataSourceData
+}
 
-interface SharedActorData extends Actor.Data<SharedData, IronswornItemData> {
+interface SharedDataSourceData {}
+interface SharedDataPropertiesData {}
+
+interface SharedDataSource {
   type: 'shared'
+  data: SharedDataSourceData
+}
+interface SharedDataProperties {
+  type: 'shared'
+  data: SharedDataPropertiesData
 }
 
-export type IronswornActorData = CharacterActorData | SharedActorData
+export type ActorDataSource = CharacterDataSource | SharedDataSource
+export type ActorDataProperties = CharacterDataProperties | SharedDataProperties
+
+declare global {
+  interface SourceConfig {
+    Actor: ActorDataSource
+  }
+
+  interface DataConfig {
+    Actor: ActorDataProperties
+  }
+}

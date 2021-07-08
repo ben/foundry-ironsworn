@@ -1,16 +1,12 @@
 import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
-import { IronswornActor } from '../actor'
-import { IronswornCharacterData } from '../actortypes'
 import { CharacterMoveSheet } from './charactermovesheet'
-import { CharacterSheetOptions } from './charactersheet'
 
-export interface CompactCharacterSheetOptions extends BaseEntitySheet.Options {
+interface CompactCharacterSheetOptions extends ActorSheet.Options {
   statRollBonus: number
 }
 
-
-export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor, CompactCharacterSheetOptions> {
+export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterSheetOptions> {
   constructor(actor, opts: CompactCharacterSheetOptions) {
     opts.statRollBonus ||= 0
     super(actor, opts)
@@ -23,7 +19,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
       height: 228,
       template: 'systems/foundry-ironsworn/templates/actor/compact.hbs',
       resizable: false,
-    } as CharacterSheetOptions)
+    })
   }
 
   activateListeners(html: JQuery) {
@@ -62,7 +58,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     e?.preventDefault()
 
     if (this.actor.moveSheet) {
-      this.actor.moveSheet.render(true, { focus: true } as any) // TODO: fix this cast
+      this.actor.moveSheet.render(true, { focus: true })
     } else {
       new CharacterMoveSheet(this.actor).render(true)
     }
@@ -71,7 +67,8 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
   _onBurnMomentum(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
+    if (this.actor.data.type !== 'character') return
+    const { momentum, momentumReset } = this.actor.data.data
     if (momentum > momentumReset) {
       this.actor.update({
         data: { momentum: momentumReset },
@@ -111,7 +108,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
     const min = parseInt(ev.currentTarget.dataset.min || '-100')
     const max = parseInt(ev.currentTarget.dataset.max || '100')
     const { stat } = ev.currentTarget.dataset
-    const actorData = this.actor.data.data as IronswornCharacterData
+    const actorData = this.actor.data.data
     let value = actorData[stat]
     value += amt
     if (value >= min && value <= max) {
@@ -125,7 +122,8 @@ export class IronswornCompactCharacterSheet extends ActorSheet<ActorSheet.Data<I
   _momentumBurn(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    const { momentum, momentumReset } = this.actor.data.data as IronswornCharacterData
+    if (this.actor.data.type !== 'character') return
+    const { momentum, momentumReset } = this.actor.data.data
     if (momentum > momentumReset) {
       this.actor.update({
         data: { momentum: momentumReset },

@@ -1,12 +1,12 @@
 import { IronswornActor } from '../actor/actor'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { capitalize } from '../helpers/util'
-import { AssetItemData } from '../item/itemtypes'
+import { IronswornItem } from '../item/item'
 
 interface RollMessageParams {
   roll: Roll
   actor?: IronswornActor
-  asset?: Item<AssetItemData>
+  asset?: IronswornItem
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number
@@ -74,11 +74,10 @@ function generateCardTitle(params: RollMessageParams) {
   }
 
   if (params.asset) {
-    const assetData = params.asset.data as AssetItemData
     let title = params.asset.data.name
     if (params.stat) {
       if (params.stat === 'track') {
-        title += ` (${assetData.data.track.name})`
+        title += ` (${this.assetData.data.track.name})`
       } else {
         const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
         title += `(${statText})`
@@ -107,7 +106,7 @@ function generateResultText(roll: Roll, move?: EnhancedDataswornMove): string | 
 }
 
 export async function createIronswornChatRoll(params: RollMessageParams) {
-  await params.roll.evaluate({ async: false } as any)
+  await params.roll.evaluate({ async: false })
   const renderData = {
     hitType: hitTypeText(params.roll),
     title: generateCardTitle(params),
@@ -124,8 +123,8 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   }
 
   // CONFIG.ChatMessage.documentClass.create(...)
-  const cls = CONFIG.ChatMessage.entityClass as any
-  cls.create(messageData, {})
+  const cls = CONFIG.ChatMessage.documentClass
+  cls.create(messageData as any, {})
 }
 
 export async function createIronswornMoveChat(move:EnhancedDataswornMove) {

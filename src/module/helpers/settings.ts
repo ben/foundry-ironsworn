@@ -33,8 +33,7 @@ export class IronswornSettings {
   static async maybeSetGlobalSupply(value: number) {
     if (!game.settings.get('foundry-ironsworn', 'shared-supply')) return
 
-    // TODO: use game.actors.contents instead when types update
-    const actorsToUpdate = game.actors?.entities?.filter((x) => ['character', 'shared'].includes(x.data.type)) || []
+    const actorsToUpdate = game.actors?.contents.filter((x) => ['character', 'shared'].includes(x.data.type)) || []
     for (const actor of actorsToUpdate) {
       await actor.update({ data: { supply: value } })
     }
