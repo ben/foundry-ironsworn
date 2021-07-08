@@ -1,6 +1,7 @@
 import { cachedMoves, moveDataByName } from '../../helpers/data'
 import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
+import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
 
 function translateOrEmpty(key: string): string {
@@ -65,6 +66,11 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         attachInlineRollListeners($(el), { actor: this.actor, name: move.name || '' })
       }
     })
+
+    // Custom sheet listeners for every ItemType
+    for (const itemClass of CONFIG.IRONSWORN.itemClasses) {
+      itemClass.activateActorSheetListeners(html, this)
+    }
   }
 
   async getData() {
@@ -144,6 +150,15 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         }
       }
     }
-    (table as any)?.draw()
+    ;(table as any)?.draw()
   }
 }
+
+function rerenderMoveSheet(item: IronswornItem) {
+  if (item.data.type === 'move' && item.parent?.moveSheet) {
+    item.parent.moveSheet.render(true)
+  }
+}
+Hooks.on('updateItem', rerenderMoveSheet)
+Hooks.on('createItem', rerenderMoveSheet)
+Hooks.on('deleteItem', rerenderMoveSheet)

@@ -12,7 +12,7 @@ export class MoveSheet extends IronswornItemSheet {
     super.activateListeners(html)
 
     this._setChecks(html)
-    html.find('.ironsworn__move__stat').on('click', ev => this._checked.call(this, ev))
+    html.find('.ironsworn__move__stat').on('click', (ev) => this._checked.call(this, ev))
   }
 
   _checked(ev: JQuery.ClickEvent) {
@@ -25,9 +25,9 @@ export class MoveSheet extends IronswornItemSheet {
     if ($(ev.currentTarget).prop('checked')) {
       stats = uniq([...this.item.data.data.stats, stat])
     } else {
-      stats = stats.filter(x => x !== stat)
+      stats = stats.filter((x) => x !== stat)
     }
-    this.item.update({data: {stats}})
+    this.item.update({ data: { stats } })
   }
 
   _setChecks(html: JQuery) {

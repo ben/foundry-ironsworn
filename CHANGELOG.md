@@ -3,6 +3,7 @@
 ## In progress
 
 - Update to newest Foundry types ([#76](https://github.com/ben/foundry-ironsworn/pull/76))
+- Add edit/delete buttons to move sheet ([#77](https://github.com/ben/foundry-ironsworn/pull/77))
 
 ## 1.0.0
 

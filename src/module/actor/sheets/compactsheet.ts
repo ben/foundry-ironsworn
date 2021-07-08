@@ -94,7 +94,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
       await RollDialog.show({
         actor: this.actor,
         stat,
-        bonus
+        bonus,
       })
       this.options.statRollBonus = 0
       this.render(true)
