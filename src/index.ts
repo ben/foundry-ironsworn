@@ -34,8 +34,8 @@ Hooks.once('init', async () => {
   CONFIG.IRONSWORN = IRONSWORN
 
   // Define custom Entity classes
-  CONFIG.Actor.entityClass = IronswornActor
-  CONFIG.Item.entityClass = IronswornItem
+  CONFIG.Actor.documentClass = IronswornActor
+  CONFIG.Item.documentClass = IronswornItem
 
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'

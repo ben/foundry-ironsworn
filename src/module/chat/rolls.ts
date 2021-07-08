@@ -1,12 +1,13 @@
 import { IronswornActor } from '../actor/actor'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { capitalize } from '../helpers/util'
+import { IronswornItem } from '../item/item'
 import { AssetDataSource } from '../item/itemtypes'
 
 interface RollMessageParams {
   roll: Roll
   actor?: IronswornActor
-  asset?: Item<AssetDataSource>
+  asset?: IronswornItem
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number
@@ -124,7 +125,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   }
 
   // CONFIG.ChatMessage.documentClass.create(...)
-  const cls = CONFIG.ChatMessage.entityClass as any
+  const cls = CONFIG.ChatMessage.documentClass as any
   cls.create(messageData, {})
 }
 

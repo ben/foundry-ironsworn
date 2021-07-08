@@ -7,7 +7,7 @@ export class AssetSheet extends IronswornItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       height: 650,
-    } as BaseEntitySheet.Options)
+    })
   }
 
   activateListeners(html: JQuery) {

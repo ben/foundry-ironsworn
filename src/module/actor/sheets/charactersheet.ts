@@ -1,14 +1,8 @@
 import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
-import { IronswornActor } from '../actor'
-import { CharacterDataSourceData } from '../actortypes'
 import { CharacterMoveSheet } from './charactermovesheet'
 
-export interface CharacterSheetOptions extends BaseEntitySheet.Options {
-  xyz?: string
-}
-
-export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor> {
+export class IronswornCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
@@ -17,7 +11,7 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
       left: 50,
       template: 'systems/foundry-ironsworn/templates/actor/character.hbs',
       dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }],
-    } as CharacterSheetOptions)
+    })
   }
 
   constructor(actor, options) {
@@ -102,7 +96,8 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
   _onBurnMomentum(ev) {
     ev.preventDefault()
 
-    const { momentum, momentumReset } = this.actor.data.data as CharacterDataSourceData
+    if (this.actor.data.type !== 'character') return
+    const { momentum, momentumReset } = this.actor.data.data
     if (momentum > momentumReset) {
       this.actor.update({
         data: { momentum: momentumReset },
@@ -128,10 +123,14 @@ export class IronswornCharacterSheet extends ActorSheet<ActorSheet.Data<Ironswor
     if (resource) {
       // Clicked a value in momentum/health/etc, set the value
       const newValue = parseInt(value)
-      const { momentumMax } = this.actor.data.data as CharacterDataSourceData
-      if (resource !== 'momentum' || newValue <= momentumMax) {
-        this.actor.update({ data: { [resource]: newValue } })
+      if (resource === 'momentum' && this.actor.data.type === 'character') {
+        const { momentumMax } = this.actor.data.data
+        if (newValue > momentumMax) {
+          return
+        }
       }
+
+      this.actor.update({ data: { [resource]: newValue } })
       if (resource === 'supply') {
         IronswornSettings.maybeSetGlobalSupply(newValue)
       }

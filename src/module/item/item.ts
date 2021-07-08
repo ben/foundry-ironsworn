@@ -58,7 +58,7 @@ export class IronswornItem extends Item {
     if (this.type !== 'move') throw new Error(`tried to get move data from a ${this.type}`)
     const data = this.data as MoveDataSource
     return {
-      Name: this.name,
+      Name: this.name || '',
       Source: {
         Name: "Custom",
         Page: ""

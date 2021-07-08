@@ -1,5 +1,3 @@
-import { IronswornItem } from '../item/item'
-import { ActorDataSource } from './actortypes'
 import { CharacterMoveSheet } from './sheets/charactermovesheet'
 
 /**

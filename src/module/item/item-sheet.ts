@@ -1,18 +1,17 @@
 import { RANKS } from '../constants'
 import { IronswornSettings } from '../helpers/settings'
-import { IronswornItem } from './item'
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
  */
-export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>, IronswornItem> {
+export class IronswornItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'item', `theme-${IronswornSettings.theme}`],
       width: 520,
       height: 480,
-    } as BaseEntitySheet.Options)
+    })
   }
 
   /* -------------------------------------------- */
@@ -39,7 +38,7 @@ export class IronswornItemSheet extends ItemSheet<ItemSheet.Data<IronswornItem>,
   setPosition(options = {}) {
     const position = super.setPosition(options)
     const sheetBody = this.element.find('.sheet-body')
-    const bodyHeight = position.height - 82
+    const bodyHeight = (position?.height || 0) - 82
     sheetBody.css('height', bodyHeight)
     return position
   }

@@ -1,10 +1,10 @@
 export async function importFromDatasworn() {
   // Empty out the packs
   for (const key of ['world.ironsworn-items', 'world.ironsworn-assets']) {
-    const pack = game?.packs?.get(key)
+    const pack = game.packs.get(key)
     if (!pack) continue
     await pack.render(true)
-    const idsToDelete = pack.index.map((x) => x._id)
+    const idsToDelete = pack.index.map((x: any) => x._id)
     for (const id of idsToDelete) {
       await pack.deleteEntity(id)
     }

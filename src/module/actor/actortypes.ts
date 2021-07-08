@@ -10,8 +10,6 @@ interface CharacterDataSourceData {
   supply: number
   experience: number
   momentum: number
-  momentumMax: number
-  momentumReset: number
   debility: {
     corrupted: boolean
     cursed: boolean

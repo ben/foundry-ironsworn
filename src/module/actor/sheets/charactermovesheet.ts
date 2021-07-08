@@ -62,7 +62,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     html.find('.ironsworn__custom__move').each((_i, el) => {
       const move = this.actor.items.get(el.dataset.id || '')
       if (move) {
-        attachInlineRollListeners($(el), {actor: this.actor, name: move.name})
+        attachInlineRollListeners($(el), { actor: this.actor, name: move.name || '' })
       }
     })
   }
@@ -90,7 +90,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
       }
     }
 
-    data.moves = this.actor.items.filter(x => x.type === 'move')
+    data.moves = this.actor.items.filter((x) => x.type === 'move')
 
     return data
   }
@@ -136,12 +136,14 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     const tableName = e.currentTarget.dataset.table
     let table = game.tables?.find((x) => x.name === tableName)
     if (!table) {
-      const pack = game.packs?.get('foundry-ironsworn.ironsworntables') as any
+      const pack = game.packs?.get('foundry-ironsworn.ironsworntables')
       if (pack) {
-        const entry = pack?.index.find((x) => x.name == tableName)
-        if (entry) table = (await pack.getDocument(entry._id)) as RollTable | undefined
+        const entry = pack?.index.find((x: any) => x.name == tableName)
+        if (entry) {
+          table = (await pack.getDocument((entry as any)._id)) as RollTable | undefined
+        }
       }
     }
-    table?.draw()
+    (table as any)?.draw()
   }
 }

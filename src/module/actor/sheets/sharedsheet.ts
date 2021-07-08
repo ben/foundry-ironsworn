@@ -1,15 +1,14 @@
 import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
-import { IronswornActor } from '../actor'
 
-export class IronswornSharedSheet extends ActorSheet<ActorSheet.Data<IronswornActor>, IronswornActor> {
+export class IronswornSharedSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'shared', `theme-${IronswornSettings.theme}`],
       width: 350,
       height: 700,
       template: 'systems/foundry-ironsworn/templates/actor/shared.hbs',
-    } as BaseEntitySheet.Options)
+    })
   }
 
   activateListeners(html: JQuery) {

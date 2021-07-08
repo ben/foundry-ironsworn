@@ -6,7 +6,7 @@ export class MoveSheet extends IronswornItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       height: 600,
-    } as BaseEntitySheet.Options)
+    })
   }
 
   activateListeners(html: JQuery) {
