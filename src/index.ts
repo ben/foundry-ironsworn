@@ -18,6 +18,12 @@ import { ProgressSheet } from './module/item/progress/progresssheet'
 
 import './styles/styles.less'
 
+declare global {
+  interface LenientGlobalVariableTypes {
+    game: never; // the type doesn't matter
+  }
+}
+
 Hooks.once('init', async () => {
   console.log('Ironsworn | initializing system')
 
