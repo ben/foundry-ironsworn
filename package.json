@@ -5,7 +5,11 @@
   "scripts": {
     "build": "webpack",
     "build:production": "webpack --env mode=production",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "bump": "node script/bump-version.js",
+    "bump:patch": "node script/bump-version.js patch",
+    "bump:minor": "node script/bump-version.js minor",
+    "bump:major": "node script/bump-version.js major"
   },
   "author": "Ben Straub",
   "license": "MIT",
