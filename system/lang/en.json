@@ -334,6 +334,7 @@
     "Character": "Character",
     "Names": "Names",
     "Burn": "Burn",
+    "BurnForUpgrade": "Burn momentum for a {type}?",
     "Reset": "Reset",
     "Max": "Max",
     "Name": "Name",

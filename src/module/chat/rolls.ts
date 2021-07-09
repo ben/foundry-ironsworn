@@ -1,5 +1,6 @@
 import { IronswornActor } from '../actor/actor'
 import { EnhancedDataswornMove } from '../helpers/data'
+import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 
@@ -44,17 +45,18 @@ enum HIT_TYPE {
   STRONG = 'STRONG',
 }
 
-function hitType(roll: Roll): HIT_TYPE {
+function hitType(roll: Roll, override?: number): HIT_TYPE {
   const { action, challenge1, challenge2 } = dieTotals(roll)
+  const realAction = override || action
 
-  if (action <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
-  if (action > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
+  if (realAction <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
+  if (realAction > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
   return HIT_TYPE.WEAK
 }
 
-function hitTypeText(roll: Roll) {
+function hitTypeText(roll: Roll, override?: number) {
   const { match } = dieTotals(roll)
-  const hit = hitType(roll)
+  const hit = hitType(roll, override)
   if (hit === HIT_TYPE.MISS) {
     return game.i18n.localize(match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss')
   }
@@ -105,12 +107,29 @@ function generateResultText(roll: Roll, move?: EnhancedDataswornMove): string | 
   }
 }
 
+function generateMomentumHitType(roll: Roll, actor?: IronswornActor): string | undefined {
+  if (!actor || actor.data.type !== 'character') return undefined
+  const originalHitType = hitType(roll)
+  const momentumHitType = hitType(roll, actor.data.data.momentum)
+
+  switch (`${originalHitType} -> ${momentumHitType}`) {
+    case 'MISS -> STRONG':
+    case 'MISS -> WEAK':
+    case 'WEAK -> STRONG':
+      return hitTypeText(roll, actor.data.data.momentum)
+    default:
+      return undefined
+  }
+}
+
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: false })
   const renderData = {
+    themeClass: `theme-${IronswornSettings.theme}`,
     hitType: hitTypeText(params.roll),
     title: generateCardTitle(params),
     resultText: generateResultText(params.roll, params.move),
+    momentumHitType: generateMomentumHitType(params.roll, params.actor),
     ...params,
   }
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll.hbs', renderData)
@@ -124,7 +143,8 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
 
   // CONFIG.ChatMessage.documentClass.create(...)
   const cls = CONFIG.ChatMessage.documentClass
-  cls.create(messageData as any, {})
+  const message = await cls.create(messageData as any, {})
+  if (message) message.move = params.move
 }
 
 export async function createIronswornMoveChat(move:EnhancedDataswornMove) {
@@ -133,4 +153,11 @@ export async function createIronswornMoveChat(move:EnhancedDataswornMove) {
     speaker: ChatMessage.getSpeaker(),
     content
   })
+}
+
+// Crack open that message type
+declare global {
+  interface ChatMessage {
+    move?: EnhancedDataswornMove
+  }
 }
