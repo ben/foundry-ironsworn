@@ -7,6 +7,7 @@ import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
+import { IronswornChatCard } from './module/chat/cards'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { IronswornSettings } from './module/helpers/settings'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
@@ -79,6 +80,7 @@ Hooks.once('init', async () => {
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
+  IronswornChatCard.registerHooks()
 })
 
 Hooks.once('setup', () => {
