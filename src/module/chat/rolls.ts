@@ -97,28 +97,37 @@ function generateCardTitle(params: RollMessageParams) {
   return rollText
 }
 
-function generateResultText(roll: Roll, move?: EnhancedDataswornMove): string | undefined {
+function generateResultText(roll: Roll, move?: EnhancedDataswornMove, override?: number): string | undefined {
   if (!move) return undefined
 
-  switch (hitType(roll)) {
+  switch (hitType(roll, override)) {
     case HIT_TYPE.MISS: return move.Miss
     case HIT_TYPE.WEAK: return move.Weak
     case HIT_TYPE.STRONG: return move.Strong
   }
 }
 
-function generateMomentumHitType(roll: Roll, actor?: IronswornActor): string | undefined {
-  if (!actor || actor.data.type !== 'character') return undefined
+interface MomentumProps {
+  momentumHitType?: string
+  momentumResultText?: string
+}
+function momentumProps(roll: Roll, actor?: IronswornActor, move?: EnhancedDataswornMove): MomentumProps {
+  if (!actor || actor.data.type !== 'character') return {}
+  const momentum = actor.data.data.momentum
   const originalHitType = hitType(roll)
-  const momentumHitType = hitType(roll, actor.data.data.momentum)
+  const momentumHitType = hitType(roll, momentum)
+  const momentumHitTypeText = hitTypeText(roll, momentum)
 
   switch (`${originalHitType} -> ${momentumHitType}`) {
     case 'MISS -> STRONG':
     case 'MISS -> WEAK':
     case 'WEAK -> STRONG':
-      return hitTypeText(roll, actor.data.data.momentum)
+      return {
+        momentumHitType: momentumHitTypeText,
+        momentumResultText: generateResultText(roll, move, momentum) || momentumHitTypeText,
+      }
     default:
-      return undefined
+      return {}
   }
 }
 
@@ -129,7 +138,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     hitType: hitTypeText(params.roll),
     title: generateCardTitle(params),
     resultText: generateResultText(params.roll, params.move),
-    momentumHitType: generateMomentumHitType(params.roll, params.actor),
+    ...momentumProps(params.roll, params.actor, params.move),
     ...params,
   }
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll.hbs', renderData)
@@ -147,11 +156,11 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   if (message) message.move = params.move
 }
 
-export async function createIronswornMoveChat(move:EnhancedDataswornMove) {
+export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', move)
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
-    content
+    content,
   })
 }
 

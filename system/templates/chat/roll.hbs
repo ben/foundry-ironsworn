@@ -33,7 +33,9 @@ title: "Face Danger (iron)"
   <hr>
   <div class="momentum-burn">
     <p>{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitType}}</p>
-    <button>{{localize 'IRONSWORN.Burn'}}</button>
+    <button data-result="{{momentumResultText}}">
+      {{localize 'IRONSWORN.Burn'}}
+    </button>
   </div>
   {{/if}}
 
