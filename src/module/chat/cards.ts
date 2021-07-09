@@ -21,6 +21,12 @@ export class IronswornChatCard {
   _burnMomentum(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     console.log(this);
+
+    const {actor} = ev.target.dataset
+    const theActor = game.actors?.get(actor)
+    if (theActor) {
+      theActor.burnMomentum()
+    }
   }
 
   static async bind(message: ChatMessage, html: JQuery) {
