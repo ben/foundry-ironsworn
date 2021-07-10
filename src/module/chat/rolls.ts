@@ -21,18 +21,25 @@ function challengeRoll(roll: any): [Roll, Roll] {
   return roll.terms[0].rolls.filter((x) => x.dice.length > 0 && x.dice[0].faces === 10)
 }
 
-interface DitTotals {
+interface DieTotals {
   action: number
+  canceledAction: number
   challenge1: number
   challenge2: number
   match: boolean
 }
 
-function dieTotals(roll: any): DitTotals {
+function calculateDieTotals(roll: Roll): DieTotals {
+  const actionDie = actionRoll(roll)
   const challengeDice = challengeRoll(roll)
   const [challenge1, challenge2] = challengeDice.map((x) => x.total as number)
+
+  const canceledActionDie = new Roll(actionDie.formula.replace('1d6', '0'))
+  canceledActionDie.evaluate({async: false})
+
   return {
-    action: actionRoll(roll).total as number,
+    action: actionDie.total as number,
+    canceledAction: canceledActionDie.total as number,
     challenge1,
     challenge2,
     match: challenge1 === challenge2,
@@ -45,22 +52,17 @@ enum HIT_TYPE {
   STRONG = 'STRONG',
 }
 
-function hitType(roll: Roll, momentum?: number): HIT_TYPE {
-  const { action, challenge1, challenge2 } = dieTotals(roll)
-  const realAction = momentum || action
-
-  if (realAction <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
-  if (realAction > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
+function calculateHitType(action: number, challenge1: number, challenge2: number): HIT_TYPE {
+  if (action <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
+  if (action > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
   return HIT_TYPE.WEAK
 }
 
-function hitTypeText(roll: Roll, momentum?: number) {
-  const { match } = dieTotals(roll)
-  const hit = hitType(roll, momentum)
-  if (hit === HIT_TYPE.MISS) {
+function calculateHitTypeText(type: HIT_TYPE, match: boolean) {
+  if (type === HIT_TYPE.MISS) {
     return game.i18n.localize(match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss')
   }
-  if (hit === HIT_TYPE.STRONG) {
+  if (type === HIT_TYPE.STRONG) {
     return game.i18n.localize(match ? 'IRONSWORN.Opportunity' : 'IRONSWORN.StrongHit')
   }
   return game.i18n.localize('IRONSWORN.WeakHit')
@@ -97,10 +99,10 @@ function generateCardTitle(params: RollMessageParams) {
   return rollText
 }
 
-function generateResultText(roll: Roll, move?: EnhancedDataswornMove, momentum?: number): string | undefined {
+function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): string | undefined {
   if (!move) return undefined
 
-  switch (hitType(roll, momentum)) {
+  switch (type) {
     case HIT_TYPE.MISS: return move.Miss
     case HIT_TYPE.WEAK: return move.Weak
     case HIT_TYPE.STRONG: return move.Strong
@@ -110,13 +112,22 @@ function generateResultText(roll: Roll, move?: EnhancedDataswornMove, momentum?:
 interface MomentumProps {
   momentumHitType?: string
   momentumResultText?: string
+  negativeMomentumCancel?: boolean
 }
-function momentumProps(roll: Roll, actor?: IronswornActor, move?: EnhancedDataswornMove): MomentumProps {
+function calculateMomentumProps(roll: Roll, actor?: IronswornActor, move?: EnhancedDataswornMove): MomentumProps {
   if (!actor || actor.data.type !== 'character') return {}
+  const {action, challenge1, challenge2, match} = calculateDieTotals(roll)
+
   const momentum = actor.data.data.momentum
-  const originalHitType = hitType(roll)
-  const momentumHitType = hitType(roll, momentum)
-  const momentumHitTypeText = hitTypeText(roll, momentum)
+  if (momentum < 0) {
+    if (-momentum === action) return {
+      negativeMomentumCancel: true
+    }
+  }
+
+  const originalHitType = calculateHitType(action, challenge1, challenge2)
+  const momentumHitType = calculateHitType(momentum, challenge1, challenge2)
+  const momentumHitTypeText = calculateHitTypeText(momentumHitType, match)
 
   switch (`${originalHitType} -> ${momentumHitType}`) {
     case 'MISS -> STRONG':
@@ -124,7 +135,7 @@ function momentumProps(roll: Roll, actor?: IronswornActor, move?: EnhancedDatasw
     case 'WEAK -> STRONG':
       return {
         momentumHitType: momentumHitTypeText,
-        momentumResultText: generateResultText(roll, move, momentum) || momentumHitTypeText,
+        momentumResultText: calculateMoveResultText(momentumHitType, move) || momentumHitTypeText,
       }
     default:
       return {}
@@ -133,12 +144,21 @@ function momentumProps(roll: Roll, actor?: IronswornActor, move?: EnhancedDatasw
 
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: false })
+  const {action, canceledAction, challenge1, challenge2, match} = calculateDieTotals(params.roll)
+
+  // Calculate some parameters
+  let hitType = calculateHitType(action, challenge1, challenge2)
+  const momentumProps = calculateMomentumProps(params.roll, params.actor, params.move)
+  if (momentumProps.negativeMomentumCancel) {
+    hitType = calculateHitType(canceledAction, challenge1, challenge2)
+  }
+
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
-    hitType: hitTypeText(params.roll),
+    hitType: calculateHitTypeText(hitType, match),
     title: generateCardTitle(params),
-    resultText: generateResultText(params.roll, params.move),
-    ...momentumProps(params.roll, params.actor, params.move),
+    resultText: calculateMoveResultText(hitType, params.move),
+    ...momentumProps,
     ...params,
   }
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll.hbs', renderData)
