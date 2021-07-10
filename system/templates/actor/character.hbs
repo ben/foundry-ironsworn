@@ -14,29 +14,32 @@
 
 {{#*inline "progress"}}
 <div class="flexcol item-row" data-id="{{id}}">
-  <div class="flexcol">
-    <div class="flexrow">
-      <div class="flexrow">{{>rankHexes rank=data.data.rank id=id}}</div>
+  <div class="flexrow">
+    <img class="profile-img nogrow" src="{{img}}" title="{{name}}" height="38" style="margin-right: 5px;" />
+    <div class="flexcol">
+      <div class="flexrow">
+        <div class="flexrow">{{>rankHexes rank=data.data.rank id=id}}</div>
 
-      {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
-      <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}">
-        <i class="fas fa-trash"></i>
-      </div>
-      {{/if}}
+        {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+        <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}">
+          <i class="fas fa-trash"></i>
+        </div>
+        {{/if}}
 
-      <div class="clickable block nogrow ironsworn__{{type}}__settings" data-item="{{id}}">
-        <i class="fas fa-edit"></i>
+        <div class="clickable block nogrow ironsworn__{{type}}__settings" data-item="{{id}}">
+          <i class="fas fa-edit"></i>
+        </div>
+        <div class="clickable block nogrow ironsworn__progress__mark" {{! This works for vows too }}
+          title="{{localize 'IRONSWORN.MarkProgress'}}" data-item="{{id}}">
+          <i class="fas fa-play"></i>
+        </div>
+        <div class="clickable block ironsworn__progress__fulfill" title="{{localize 'IRONSWORN.FulfillVow'}}"
+          style="flex-grow: 0;" data-item="{{id}}">
+          <i class="fas fa-check"></i>
+        </div>
       </div>
-      <div class="clickable block nogrow ironsworn__progress__mark" {{! This works for vows too }}
-        title="{{localize 'IRONSWORN.MarkProgress'}}" data-item="{{id}}">
-        <i class="fas fa-play"></i>
-      </div>
-      <div class="clickable block ironsworn__progress__fulfill" title="{{localize 'IRONSWORN.FulfillVow'}}"
-        style="flex-grow: 0;" data-item="{{id}}">
-        <i class="fas fa-check"></i>
-      </div>
+      <h3>{{name}}</h3>
     </div>
-    <h3>{{name}}</h3>
   </div>
   <div class="flexrow">
     <div class="flexrow track">
