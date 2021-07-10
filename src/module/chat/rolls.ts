@@ -78,8 +78,8 @@ function generateCardTitle(params: RollMessageParams) {
   if (params.asset) {
     let title = params.asset.data.name
     if (params.stat) {
-      if (params.stat === 'track') {
-        title += ` (${this.assetData.data.track.name})`
+      if (params.stat === 'track' && params.asset?.data.type === 'asset') {
+        title += ` (${params.asset.data.data.track.name})`
       } else {
         const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
         title += `(${statText})`
