@@ -17,9 +17,9 @@ async function doit() {
   // Calculate next version
   const { version } = systemJson
   const versionParts = version.split('.')
-  if (mode === 'major') versionParts[0]++
-  if (mode === 'minor') versionParts[1]++
-  if (mode === 'patch') versionParts[2]++
+  if (mode === 'major') {versionParts[0]++; versionParts[1] = '0'; versionParts[2] = '0'}
+  if (mode === 'minor') {versionParts[1]++; versionParts[2] = '0'}
+  if (mode === 'patch') {versionParts[2]++}
   const nextVersion = versionParts.join('.')
 
   // Write out system file
