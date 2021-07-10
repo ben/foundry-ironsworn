@@ -31,7 +31,7 @@ export class IronswornChatCard {
 
     const parent = $(ev.currentTarget).parents('.message-content')
     parent.find('.roll-result').addClass('strikethru')
-    parent.find('.momentum-burn').html(`<h4>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h4>\n${result}`)
+    parent.find('.momentum-burn').html(`<h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>\n${result}`)
 
     const content = parent.html()
     await this.message?.update({ content })

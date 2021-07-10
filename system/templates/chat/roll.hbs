@@ -12,7 +12,7 @@ stat: "iron"
 title: "Face Danger (iron)"
 --}}
 
-<div class="flexcol {{themeClass}}">
+<div class="flexcol">
   <h3>{{title}}</h3>
 
   <div class="dice-result dice-tooltip dice-roll ironsworn-roll">
@@ -31,7 +31,7 @@ title: "Face Danger (iron)"
   {{#if momentumHitType}}
   <hr>
   <div class="momentum-burn">
-    <p>{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitType}}</p>
+    <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitType}}}</p>
     <button class="burn-momentum" data-actor={{actor.id}} data-result="{{momentumResultText}}">
       {{localize 'IRONSWORN.Burn'}}
     </button>
