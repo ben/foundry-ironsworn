@@ -336,6 +336,7 @@
     "Burn": "Burn",
     "BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",
     "MomentumBurnt": "Momentum Burn",
+    "NegativeMomentumCancel": "Negative momentum canceled action die",
     "Reset": "Reset",
     "Max": "Max",
     "Name": "Name",
