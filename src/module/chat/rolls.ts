@@ -23,6 +23,7 @@ function challengeRoll(roll: any): [Roll, Roll] {
 
 interface DieTotals {
   action: number
+  rawAction: number
   canceledAction: number
   challenge1: number
   challenge2: number
@@ -33,12 +34,14 @@ function calculateDieTotals(roll: Roll): DieTotals {
   const actionDie = actionRoll(roll)
   const challengeDice = challengeRoll(roll)
   const [challenge1, challenge2] = challengeDice.map((x) => x.total as number)
+  const rawActionDie = actionDie.terms.find(x => x instanceof Die)
 
   const canceledActionDie = new Roll(actionDie.formula.replace('1d6', '0'))
-  canceledActionDie.evaluate({async: false})
+  canceledActionDie.evaluate({ async: false })
 
   return {
     action: actionDie.total as number,
+    rawAction: rawActionDie?.total as number,
     canceledAction: canceledActionDie.total as number,
     challenge1,
     challenge2,
@@ -116,14 +119,13 @@ interface MomentumProps {
 }
 function calculateMomentumProps(roll: Roll, actor?: IronswornActor, move?: EnhancedDataswornMove): MomentumProps {
   if (!actor || actor.data.type !== 'character') return {}
-  const {action, challenge1, challenge2, match} = calculateDieTotals(roll)
+  const { action, rawAction, challenge1, challenge2, match } = calculateDieTotals(roll)
 
   const momentum = actor.data.data.momentum
-  if (momentum < 0) {
-    if (-momentum === action) return {
-      negativeMomentumCancel: true
+  if (momentum < 0 && -momentum === rawAction)
+    return {
+      negativeMomentumCancel: true,
     }
-  }
 
   const originalHitType = calculateHitType(action, challenge1, challenge2)
   const momentumHitType = calculateHitType(momentum, challenge1, challenge2)
@@ -144,7 +146,7 @@ function calculateMomentumProps(roll: Roll, actor?: IronswornActor, move?: Enhan
 
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: false })
-  const {action, canceledAction, challenge1, challenge2, match} = calculateDieTotals(params.roll)
+  const { action, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
 
   // Calculate some parameters
   let hitType = calculateHitType(action, challenge1, challenge2)
