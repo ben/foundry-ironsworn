@@ -45,18 +45,18 @@ enum HIT_TYPE {
   STRONG = 'STRONG',
 }
 
-function hitType(roll: Roll, override?: number): HIT_TYPE {
+function hitType(roll: Roll, momentum?: number): HIT_TYPE {
   const { action, challenge1, challenge2 } = dieTotals(roll)
-  const realAction = override || action
+  const realAction = momentum || action
 
   if (realAction <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
   if (realAction > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
   return HIT_TYPE.WEAK
 }
 
-function hitTypeText(roll: Roll, override?: number) {
+function hitTypeText(roll: Roll, momentum?: number) {
   const { match } = dieTotals(roll)
-  const hit = hitType(roll, override)
+  const hit = hitType(roll, momentum)
   if (hit === HIT_TYPE.MISS) {
     return game.i18n.localize(match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss')
   }
@@ -97,10 +97,10 @@ function generateCardTitle(params: RollMessageParams) {
   return rollText
 }
 
-function generateResultText(roll: Roll, move?: EnhancedDataswornMove, override?: number): string | undefined {
+function generateResultText(roll: Roll, move?: EnhancedDataswornMove, momentum?: number): string | undefined {
   if (!move) return undefined
 
-  switch (hitType(roll, override)) {
+  switch (hitType(roll, momentum)) {
     case HIT_TYPE.MISS: return move.Miss
     case HIT_TYPE.WEAK: return move.Weak
     case HIT_TYPE.STRONG: return move.Strong
