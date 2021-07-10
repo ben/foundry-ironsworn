@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Negative momentum cancels action die ([#81](https://github.com/ben/foundry-ironsworn/pull/81))
+
 ## 1.1.0
 
 - "Burn momentum" button in chat cards ([#78](https://github.com/ben/foundry-ironsworn/pull/78))

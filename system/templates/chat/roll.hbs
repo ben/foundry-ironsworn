@@ -20,6 +20,10 @@ title: "Face Danger (iron)"
       <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
     </div>
     <div class="roll-result">
+      {{#if negativeMomentumCancel}}
+      <p><em>{{localize 'IRONSWORN.NegativeMomentumCancel'}}</em></p>
+      {{/if}}
+
       {{#if resultText}}
       {{{resultText}}}
       {{else}}
