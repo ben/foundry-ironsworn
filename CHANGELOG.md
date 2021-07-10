@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.1.0
+
 - "Burn momentum" button in chat cards ([#78](https://github.com/ben/foundry-ironsworn/pull/78))
 - Images for vows and progress items ([#80](https://github.com/ben/foundry-ironsworn/pull/80))
 
