@@ -2,6 +2,8 @@
 
 ## In progress
 
+- "Burn momentum" button in chat cards ([#78](https://github.com/ben/foundry-ironsworn/pull/78))
+
 ## 1.0.1
 
 - Update to newest Foundry types ([#76](https://github.com/ben/foundry-ironsworn/pull/76))

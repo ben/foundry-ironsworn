@@ -17,6 +17,16 @@ export class IronswornActor extends Actor {
       data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
     }
   }
+
+  async burnMomentum() {
+    if (this.data.type != 'character') return
+    const { momentum, momentumReset } = this.data.data
+    if (momentum > momentumReset) {
+      this.update({
+        data: { momentum: momentumReset },
+      })
+    }
+  }
 }
 
 declare global {

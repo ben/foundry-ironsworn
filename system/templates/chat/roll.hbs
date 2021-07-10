@@ -1,7 +1,10 @@
 {{!--
+themeClass: "theme-ironsworn"
 actor: IronswornActor
 bonus: undefined | number
-hitType: "Strong Hit" (already i18n)
+hitType: "Weak Hit" (already i18n)
+resultText?: "On a strong hit, ..." (already i18n)
+momentumHitType: "Strong Hit" (already i18n)
 move: {Name: "Face Danger", Source: {…}, Stats: Array(5), Text: "When …", …}
 roll: Roll {data: {…}, options: {…}, terms: Array(1), _dice: Array(0), _formula: "{d6 + 2,d10,d10}", …}
 speaker: {scene: "fpNZNndvi1LZKq1u", actor: null, token: null, alias: "Gamemaster"}
@@ -9,21 +12,30 @@ stat: "iron"
 title: "Face Danger (iron)"
 --}}
 
-<div class="dice-tooltip dice-roll theme-ironsworn">
-  {{log this}}
+<div class="flexcol">
   <h3>{{title}}</h3>
 
-  <div class="dice-result ironsworn-roll">
+  <div class="dice-result dice-tooltip dice-roll ironsworn-roll">
     <div class="dice-formula">
       <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
     </div>
     <div class="roll-result">
       {{#if resultText}}
-      <p>{{{resultText}}}</p>
+      {{{resultText}}}
       {{else}}
-      <p>{{hitType}}</p>
+      {{hitType}}
       {{/if}}
     </div>
   </div>
+
+  {{#if momentumHitType}}
+  <hr>
+  <div class="momentum-burn">
+    <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitType}}}</p>
+    <button class="burn-momentum" data-actor={{actor.id}} data-result="{{momentumResultText}}">
+      {{localize 'IRONSWORN.Burn'}}
+    </button>
+  </div>
+  {{/if}}
 
 </div>

@@ -1,5 +1,6 @@
 import { IronswornActor } from '../actor/actor'
 import { EnhancedDataswornMove } from '../helpers/data'
+import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 
@@ -44,17 +45,18 @@ enum HIT_TYPE {
   STRONG = 'STRONG',
 }
 
-function hitType(roll: Roll): HIT_TYPE {
+function hitType(roll: Roll, override?: number): HIT_TYPE {
   const { action, challenge1, challenge2 } = dieTotals(roll)
+  const realAction = override || action
 
-  if (action <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
-  if (action > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
+  if (realAction <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
+  if (realAction > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
   return HIT_TYPE.WEAK
 }
 
-function hitTypeText(roll: Roll) {
+function hitTypeText(roll: Roll, override?: number) {
   const { match } = dieTotals(roll)
-  const hit = hitType(roll)
+  const hit = hitType(roll, override)
   if (hit === HIT_TYPE.MISS) {
     return game.i18n.localize(match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss')
   }
@@ -95,22 +97,48 @@ function generateCardTitle(params: RollMessageParams) {
   return rollText
 }
 
-function generateResultText(roll: Roll, move?: EnhancedDataswornMove): string | undefined {
+function generateResultText(roll: Roll, move?: EnhancedDataswornMove, override?: number): string | undefined {
   if (!move) return undefined
 
-  switch (hitType(roll)) {
+  switch (hitType(roll, override)) {
     case HIT_TYPE.MISS: return move.Miss
     case HIT_TYPE.WEAK: return move.Weak
     case HIT_TYPE.STRONG: return move.Strong
   }
 }
 
+interface MomentumProps {
+  momentumHitType?: string
+  momentumResultText?: string
+}
+function momentumProps(roll: Roll, actor?: IronswornActor, move?: EnhancedDataswornMove): MomentumProps {
+  if (!actor || actor.data.type !== 'character') return {}
+  const momentum = actor.data.data.momentum
+  const originalHitType = hitType(roll)
+  const momentumHitType = hitType(roll, momentum)
+  const momentumHitTypeText = hitTypeText(roll, momentum)
+
+  switch (`${originalHitType} -> ${momentumHitType}`) {
+    case 'MISS -> STRONG':
+    case 'MISS -> WEAK':
+    case 'WEAK -> STRONG':
+      return {
+        momentumHitType: momentumHitTypeText,
+        momentumResultText: generateResultText(roll, move, momentum) || momentumHitTypeText,
+      }
+    default:
+      return {}
+  }
+}
+
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: false })
   const renderData = {
+    themeClass: `theme-${IronswornSettings.theme}`,
     hitType: hitTypeText(params.roll),
     title: generateCardTitle(params),
     resultText: generateResultText(params.roll, params.move),
+    ...momentumProps(params.roll, params.actor, params.move),
     ...params,
   }
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll.hbs', renderData)
@@ -124,13 +152,21 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
 
   // CONFIG.ChatMessage.documentClass.create(...)
   const cls = CONFIG.ChatMessage.documentClass
-  cls.create(messageData as any, {})
+  const message = await cls.create(messageData as any, {})
+  if (message) message.move = params.move
 }
 
-export async function createIronswornMoveChat(move:EnhancedDataswornMove) {
+export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', move)
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
-    content
+    content,
   })
+}
+
+// Crack open that message type
+declare global {
+  interface ChatMessage {
+    move?: EnhancedDataswornMove
+  }
 }

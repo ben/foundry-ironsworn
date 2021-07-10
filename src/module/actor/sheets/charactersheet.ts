@@ -97,12 +97,7 @@ export class IronswornCharacterSheet extends ActorSheet {
     ev.preventDefault()
 
     if (this.actor.data.type !== 'character') return
-    const { momentum, momentumReset } = this.actor.data.data
-    if (momentum > momentumReset) {
-      this.actor.update({
-        data: { momentum: momentumReset },
-      })
-    }
+    this.actor.burnMomentum()
   }
 
   _onStatRoll(ev: JQuery.ClickEvent) {
