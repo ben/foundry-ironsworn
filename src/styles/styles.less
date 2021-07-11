@@ -168,26 +168,17 @@
   .track {
     flex-wrap: nowrap;
     flex-grow: 1;
+    align-items: center;
+    justify-content: center;
 
     .track-box {
-      flex: 1 0;
-      min-width: 20px;
-      line-height: 25px;
+      flex: 1 0 20px;
       border: 1px solid;
-      border-left: none;
+      margin-right: -1px;
+      stroke-width: 5;
       text-align: center;
       align-items: center;
       justify-items: center;
-
-      &:first-child {
-        border-left: 1px solid;
-        // border-top-left-radius: 5px;
-        // border-bottom-left-radius: 5px;
-      }
-      // &:last-child {
-      //   border-top-right-radius: 5px;
-      //   border-bottom-right-radius: 5px;
-      // }
     }
   }
 
