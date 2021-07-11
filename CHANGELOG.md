@@ -3,6 +3,7 @@
 ## In progress
 
 - Negative momentum cancels action die ([#81](https://github.com/ben/foundry-ironsworn/pull/81))
+- Better display for tick marks ([#82](https://github.com/ben/foundry-ironsworn/pull/82))
 
 ## 1.1.0
 
