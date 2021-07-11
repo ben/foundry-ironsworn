@@ -30,7 +30,7 @@
   <div class="flexrow">
     <div class="flexrow track">
       {{#each (progressCharacters data.data.current)}}
-      <div class="track-box">{{{this}}}</div>
+      <div class="flexcol track-box">{{{this}}}</div>
       {{/each}}
     </div>
   </div>
@@ -68,7 +68,7 @@
     <div class="flexrow">
       <div class="flexrow track">
         {{#each (progressCharacters bonds.count)}}
-        <div class="track-box">{{{this}}}</div>
+        <div class="flexcol track-box">{{{this}}}</div>
         {{/each}}
       </div>
       <div data-item="{{bonds.id}}" class="ironsworn__bondset__settings block clickable"

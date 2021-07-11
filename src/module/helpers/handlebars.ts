@@ -1,3 +1,4 @@
+import { range } from 'lodash'
 import { RANKS } from '../constants'
 import { capitalize } from './util'
 
@@ -64,19 +65,22 @@ export class IronswornHandlebarsHelpers {
       return game.i18n.localize('IRONSWORN.WeakHit')
     })
 
+    function tickMarkSvg(ticks: number): string {
+      let ret = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
+      if (ticks > 0) ret += '<line x1="15" y1="15" x2="85" y2="85" />'
+      if (ticks > 1) ret += '<line x1="85" y1="15" x2="15" y2="85" />'
+      if (ticks > 2) ret += '<line x1="15" y1="50" x2="85" y2="50" />'
+      if (ticks > 3) ret += '<line x1="50" y1="15" x2="50" y2="85" />'
+      return ret + "</svg>"
+    }
+
     Handlebars.registerHelper('progressCharacters', (current) => {
-      const tickChar = [' ', '-', '+', '*'][current % 4]
-      const characters: string[] = []
-      for (let i = 0; i < Math.floor(current / 4); i++) {
-        characters.push('#')
-      }
-      if (characters.length < 10) {
-        characters.push(tickChar)
-      }
-      while (characters.length < 10) {
-        characters.push('&nbsp;')
-      }
-      return characters
+      const ret: string[] = []
+      range(10).forEach(() => {
+        ret.push(tickMarkSvg(current))
+        current -= 4
+      })
+      return ret
     })
 
     Handlebars.registerHelper('enrichHtml', (text) => {
