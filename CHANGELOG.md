@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Remove "site" from the list of items a player can create ([#85](https://github.com/ben/foundry-ironsworn/pull/85))
+
 ## 1.1.1
 
 - Negative momentum cancels action die ([#81](https://github.com/ben/foundry-ironsworn/pull/81))
