@@ -21,7 +21,6 @@ async function doit () {
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_assets.json'
   ).then(x => x.json())
 
-  console.log('  Processing')
   const assets = []
   for (const asset of assetsJson.Assets) {
     const track = {
@@ -75,8 +74,7 @@ async function doit () {
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_moves.json'
     ).then(x => x.json())
 
-    // Just grab Datasworn, but split up the text into more structure
-    console.log('  Processing')
+  // Just grab Datasworn, but split up the text into more structure
   const i18nMoves = []
   for (const category of movesJson.Categories) {
     for (let move of category.Moves) {
@@ -117,9 +115,9 @@ async function doit () {
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_delve_themes.json'
   ).then(x => x.json())
 
-  // TODO: write local version
-  // console.log('  Processing')
-  // console.log('  Writing')
+  // Write local version
+  console.log('  Writing')
+  await fs.writeFile('system/assets/delve-themes.json', JSON.stringify(delveThemesJson, null, 2) + '\n')
 
   // Add text to en.json
   en.IRONSWORN.ThemeContents ||= {}
@@ -146,9 +144,9 @@ async function doit () {
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_delve_domains.json'
   ).then(x => x.json())
 
-  // TODO: write local version
-  // console.log('  Processing')
-  // console.log('  Writing')
+  // Write local version
+  console.log('  Writing')
+  await fs.writeFile('system/assets/delve-domains.json', JSON.stringify(delveDomainsJson, null, 2) + '\n')
 
   // Add text to en.json
   en.IRONSWORN.DomainContents ||= {}
