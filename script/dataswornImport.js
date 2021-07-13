@@ -150,7 +150,24 @@ async function doit () {
   // console.log('  Processing')
   // console.log('  Writing')
 
-  // TODO: add text to en.json
+  // Add text to en.json
+  en.IRONSWORN.DomainContents ||= {}
+  for (const domain of delveDomainsJson.Domains) {
+    en.IRONSWORN.DomainContents[domain.Name] = {
+      ...en.IRONSWORN.DomainContents[domain.Name],
+      title: domain.Name,
+      summary: domain.Summary,
+      description: marked(domain.Description),
+    }
+    for (let i = 0; i < domain.Features.length; i++) {
+      const feature = domain.Features[i]
+      en.IRONSWORN.DomainContents[domain.Name][`feature${i+1}`] = feature.Description
+    }
+    for (let i = 0; i < domain.Dangers.length; i++) {
+      const danger = domain.Dangers[i]
+      en.IRONSWORN.DomainContents[domain.Name][`danger${i+1}`] = danger.Description
+    }
+  }
 
   console.log('Writing en.json')
   await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2) + '\n')
