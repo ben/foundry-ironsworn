@@ -1,3 +1,4 @@
+import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { importFromDatasworn } from './module/datasworn'
 import { AssetItem } from './module/item/asset/assetitem'
@@ -9,6 +10,7 @@ import { VowItem } from './module/item/vow/vowitem'
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
+  actorClass: typeof IronswornActor
   importFromDatasworn: typeof importFromDatasworn
   applications: {
     createActorDialog: CreateActorDialog | null
@@ -17,6 +19,7 @@ export interface IronswornConfig {
 
 export const IRONSWORN: IronswornConfig = {
   itemClasses: [AssetItem, BondsetItem, MoveItem, ProgressItem, VowItem],
+  actorClass: IronswornActor,
 
   applications: {
     createActorDialog: null,
