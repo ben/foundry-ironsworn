@@ -378,7 +378,19 @@
         "feature2": "Inscrutable relics",
         "feature3": "Ancient artistry or craft",
         "feature4": "Preserved corpses or fossils",
-        "feature5": "Visions of this place in another time"
+        "feature5": "Visions of this place in another time",
+        "danger1": "Ancient trap",
+        "danger2": "Hazardous architecture or terrain",
+        "danger3": "Blocked or broken path",
+        "danger4": "Denizen protects an ancient secret",
+        "danger5": "Denizen reveres an ancient power",
+        "danger6": "Living relics of a lost age",
+        "danger7": "Ancient evil resurgent",
+        "danger8": "Dire warnings of a long-buried danger",
+        "danger9": "Ancient disease or contamination",
+        "danger10": "Artifact of terrible meaning or power",
+        "danger11": "Disturbing evidence of ancient wrongs",
+        "danger12": "Others seek power or knowledge"
       },
       "Corrupted": {
         "title": "Corrupted",
@@ -388,7 +400,19 @@
         "feature2": "Strange environmental disturbances",
         "feature3": "Mystic runes or markings",
         "feature4": "Blight or decay",
-        "feature5": "Evidence of a foul ritual"
+        "feature5": "Evidence of a foul ritual",
+        "danger1": "Denizen spawned from dark magic",
+        "danger2": "Denizen controls dark magic",
+        "danger3": "Denizen corrupted by dark magic",
+        "danger4": "Corruption marks you",
+        "danger5": "Innocents held in thrall",
+        "danger6": "Revelations of a terrible truth",
+        "danger7": "Mystic trap or trigger",
+        "danger8": "Mystic barrier or ward",
+        "danger9": "Illusions lead you astray",
+        "danger10": "Dark ritual in progress",
+        "danger11": "Lingering effects of a dark ritual",
+        "danger12": "Dread harbingers of a greater magic"
       },
       "Fortified": {
         "title": "Fortified",
@@ -398,7 +422,19 @@
         "feature2": "Guarded location",
         "feature3": "Storage or repository",
         "feature4": "Work or training area",
-        "feature5": "Command center or leadership"
+        "feature5": "Command center or leadership",
+        "danger1": "Denizen patrols the area",
+        "danger2": "Denizen on guard",
+        "danger3": "Denizen ready to sound the alarm",
+        "danger4": "Denizen sets an ambush",
+        "danger5": "Denizen lures you into a trap",
+        "danger6": "Denizens converge on this area",
+        "danger7": "Pets or underlings",
+        "danger8": "Unexpected alliance revealed",
+        "danger9": "Nefarious plans revealed",
+        "danger10": "Unexpected leader revealed",
+        "danger11": "Trap",
+        "danger12": "Alarm trigger"
       },
       "Hallowed": {
         "title": "Hallowed",
@@ -408,7 +444,19 @@
         "feature2": "Offerings or atonements",
         "feature3": "Religious relic or idol",
         "feature4": "Consecrated ground",
-        "feature5": "Dwellings or gathering place"
+        "feature5": "Dwellings or gathering place",
+        "danger1": "Denizen defends their sanctum",
+        "danger2": "Denizen enacts the will of their god",
+        "danger3": "Denizen seeks martyrdom",
+        "danger4": "Secret of the faith is revealed",
+        "danger5": "Greater purpose is revealed",
+        "danger6": "Unexpected disciples are revealed",
+        "danger7": "Divine manifestations",
+        "danger8": "Aspect of the faith beguiles you",
+        "danger9": "Unexpected leader is revealed",
+        "danger10": "Embodiment of a god or myth",
+        "danger11": "Protective ward or barrier",
+        "danger12": "Prophecies reveal a dark fate"
       },
       "Haunted": {
         "title": "Haunted",
@@ -418,7 +466,19 @@
         "feature2": "Blood was spilled here",
         "feature3": "Unnatural mists or darkness",
         "feature4": "Messages from beyond the grave",
-        "feature5": "Apparitions of a person or event"
+        "feature5": "Apparitions of a person or event",
+        "danger1": "Denizen haunts this area",
+        "danger2": "Unsettling sounds or foreboding signs",
+        "danger3": "Denizen attacks without warning",
+        "danger4": "Denizen makes a costly demand",
+        "danger5": "Denizen seizes your body or mind",
+        "danger6": "Denizen taunts or lures you",
+        "danger7": "A disturbing truth is revealed",
+        "danger8": "Frightening visions",
+        "danger9": "The environment is used against you",
+        "danger10": "Trickery leads you astray",
+        "danger11": "True nature of this place is revealed",
+        "danger12": "Sudden, shocking manifestation"
       },
       "Infested": {
         "title": "Infested",
@@ -428,7 +488,19 @@
         "feature2": "Abandoned nest",
         "feature3": "Ravaged terrain or architecture",
         "feature4": "Remains or carrion",
-        "feature5": "Hoarded food"
+        "feature5": "Hoarded food",
+        "danger1": "Denizens swarm and attack",
+        "danger2": "Toxic or sickening environment",
+        "danger3": "Denizen stalks you",
+        "danger4": "Denizen takes or destroys something",
+        "danger5": "Denizen reveals surprising cleverness",
+        "danger6": "Denizen guided by a greater threat",
+        "danger7": "Denizen blocks the path",
+        "danger8": "Denizen funnels you down a new path",
+        "danger9": "Denizen undermines the path",
+        "danger10": "Denizen lays in wait",
+        "danger11": "Trap or snare",
+        "danger12": "Victim’s horrible fate is revealed"
       },
       "Ravaged": {
         "title": "Ravaged",
@@ -438,7 +510,19 @@
         "feature2": "Abandoned or ruined dwelling",
         "feature3": "Untouched or preserved area",
         "feature4": "Traces of what was lost",
-        "feature5": "Ill-fated victims"
+        "feature5": "Ill-fated victims",
+        "danger1": "Precarious architecture or terrain",
+        "danger2": "Imminent collapse or destruction",
+        "danger3": "Path undermined",
+        "danger4": "Blocked or broken path",
+        "danger5": "Vestiges of a destructive force",
+        "danger6": "Unexpected environmental threat",
+        "danger7": "Echoes of a troubling past",
+        "danger8": "Signs of a horrible fate",
+        "danger9": "Denizen seeks retribution",
+        "danger10": "Denizen leverages the environment",
+        "danger11": "Denizen restores what was lost",
+        "danger12": "Ravages return anew"
       },
       "Wild": {
         "title": "Wild",
@@ -448,7 +532,19 @@
         "feature2": "Territorial markings",
         "feature3": "Impressive flora or fauna",
         "feature4": "Hunting ground or watering hole",
-        "feature5": "Remains or carrion"
+        "feature5": "Remains or carrion",
+        "danger1": "Denizen hunts",
+        "danger2": "Denizen strikes without warning",
+        "danger3": "Denizen leverages the environment",
+        "danger4": "Denizen wields unexpected abilities",
+        "danger5": "Denizen guided by a greater threat",
+        "danger6": "Denizen protects something",
+        "danger7": "Hazardous terrain",
+        "danger8": "Weather or environmental threat",
+        "danger9": "Benign aspect becomes a threat",
+        "danger10": "Overzealous hunter",
+        "danger11": "Disturbing evidence of a victim’s fate",
+        "danger12": "Ill-fated victim in danger"
       }
     }
   }

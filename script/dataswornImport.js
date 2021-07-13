@@ -121,7 +121,7 @@ async function doit () {
   // console.log('  Processing')
   // console.log('  Writing')
 
-  // TODO: add text to en.json
+  // Add text to en.json
   en.IRONSWORN.ThemeContents ||= {}
   for (const theme of delveThemesJson.Themes) {
     en.IRONSWORN.ThemeContents[theme.Name] = {
@@ -133,6 +133,10 @@ async function doit () {
     for (let i = 0; i < theme.Features.length; i++) {
       const feature = theme.Features[i]
       en.IRONSWORN.ThemeContents[theme.Name][`feature${i+1}`] = feature.Description
+    }
+    for (let i = 0; i < theme.Dangers.length; i++) {
+      const danger = theme.Dangers[i]
+      en.IRONSWORN.ThemeContents[theme.Name][`danger${i+1}`] = danger.Description
     }
   }
 
