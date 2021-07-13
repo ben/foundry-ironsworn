@@ -7,6 +7,11 @@ import { CharacterMoveSheet } from './sheets/charactermovesheet'
 export class IronswornActor extends Actor {
   moveSheet?: CharacterMoveSheet
 
+  static async createDialog(_data, _options = {}) {
+    CONFIG.IRONSWORN.applications.createActorDialog?.render(true)
+    return undefined
+  }
+
   /** @override */
   prepareDerivedData() {
     // Calculate momentum max/reset from debilities

@@ -1,5 +1,6 @@
 {
   "IRONSWORN": {
+    "CreateActor": "Create Actor",
     "Roll": "Roll",
     "Rolling": "Rolling",
     "Bonus": "Bonus",
