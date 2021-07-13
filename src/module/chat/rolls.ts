@@ -11,6 +11,7 @@ interface RollMessageParams {
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number
+  progress?: IronswornItem
 }
 
 function actionRoll(roll: any): Roll {
@@ -93,6 +94,10 @@ function generateCardTitle(params: RollMessageParams) {
     return title
   }
 
+  if (params.progress) {
+    return `${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${params.progress.name}`
+  }
+
   const rollText = game.i18n.localize('IRONSWORN.Roll')
   if (params.stat) {
     const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
@@ -148,11 +153,14 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: false })
   const { action, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
 
-  // Calculate some parameters
+  // Momentum: if this is not a progress roll, it might be possible to upgrade
   let hitType = calculateHitType(action, challenge1, challenge2)
-  const momentumProps = calculateMomentumProps(params.roll, params.actor, params.move)
-  if (momentumProps.negativeMomentumCancel) {
-    hitType = calculateHitType(canceledAction, challenge1, challenge2)
+  let momentumProps: MomentumProps = {}
+  if (!params.progress) {
+    momentumProps = calculateMomentumProps(params.roll, params.actor, params.move)
+    if (momentumProps.negativeMomentumCancel) {
+      hitType = calculateHitType(canceledAction, challenge1, challenge2)
+    }
   }
 
   const renderData = {
