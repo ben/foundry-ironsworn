@@ -38,7 +38,9 @@
       "progress",
       "vow",
       "bondset",
-      "move"
+      "move",
+      "delve-theme",
+      "delve-domain"
     ],
     "templates": {
       "progress": {
@@ -125,6 +127,192 @@
       "weak": "",
       "miss": "",
       "stats": ["iron"]
+    },
+    "delve-theme": {
+      "summary": "A one-line description",
+      "description": "This place is so old...",
+      "features": [
+        {
+          "low": 1,
+          "high": 4,
+          "description": ""
+        },
+        {
+          "low": 5,
+          "high": 8,
+          "description": ""
+        },
+        {
+          "low": 9,
+          "high": 12,
+          "description": ""
+        },
+        {
+          "low": 13,
+          "high": 16,
+          "description": ""
+        },
+        {
+          "low": 17,
+          "high": 20,
+          "description": ""
+        }
+      ],
+      "dangers": [
+        {
+          "low": 1,
+          "high": 5,
+          "description": ""
+        },
+        {
+          "low": 6,
+          "high": 10,
+          "description": ""
+        },
+        {
+          "low": 11,
+          "high": 12,
+          "description": ""
+        },
+        {
+          "low": 13,
+          "high": 14,
+          "description": ""
+        },
+        {
+          "low": 15,
+          "high": 16,
+          "description": ""
+        },
+        {
+          "low": 17,
+          "high": 18,
+          "description": ""
+        },
+        {
+          "low": 19,
+          "high": 20,
+          "description": ""
+        },
+        {
+          "low": 21,
+          "high": 22,
+          "description": ""
+        },
+        {
+          "low": 23,
+          "high": 24,
+          "description": ""
+        },
+        {
+          "low": 25,
+          "high": 26,
+          "description": ""
+        },
+        {
+          "low": 27,
+          "high": 28,
+          "description": ""
+        },
+        {
+          "low": 29,
+          "high": 30,
+          "description": ""
+        }
+      ]
+    },
+    "delve-domain": {
+      "summary": "A one-line description",
+      "description": "In this dark and dreary place...",
+      "features": [
+        {
+          "low": 21,
+          "high": 43,
+          "description": ""
+        },
+        {
+          "low": 44,
+          "high": 56,
+          "description": ""
+        },
+        {
+          "low": 57,
+          "high": 64,
+          "description": ""
+        },
+        {
+          "low": 65,
+          "high": 68,
+          "description": ""
+        },
+        {
+          "low": 69,
+          "high": 72,
+          "description": ""
+        },
+        {
+          "low": 73,
+          "high": 76,
+          "description": ""
+        },
+        {
+          "low": 77,
+          "high": 80,
+          "description": ""
+        },
+        {
+          "low": 81,
+          "high": 84,
+          "description": ""
+        },
+        {
+          "low": 85,
+          "high": 88,
+          "description": ""
+        },
+        {
+          "low": 89,
+          "high": 98,
+          "description": "Something unusual or unexpected"
+        },
+        {
+          "low": 99,
+          "high": 99,
+          "description": "You transition into a new theme"
+        },
+        {
+          "low": 100,
+          "high": 100,
+          "description": "You transition into a new domain"
+        }
+      ],
+      "dangers": [
+        {
+          "low": 31,
+          "high": 33,
+          "description": ""
+        },
+        {
+          "low": 34,
+          "high": 36,
+          "description": ""
+        },
+        {
+          "low": 37,
+          "high": 39,
+          "description": ""
+        },
+        {
+          "low": 40,
+          "high": 42,
+          "description": ""
+        },
+        {
+          "low": 43,
+          "high": 45,
+          "description": ""
+        }
+      ]
     }
   }
 }
