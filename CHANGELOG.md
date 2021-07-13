@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Momentum does not apply to progress rolls ([#86](https://github.com/ben/foundry-ironsworn/pull/86))
+
 ## 1.1.2
 
 - Remove "site" from the list of items a player can create ([#85](https://github.com/ben/foundry-ironsworn/pull/85))

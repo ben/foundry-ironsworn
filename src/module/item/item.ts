@@ -28,8 +28,10 @@ export class IronswornItem extends Item {
     if (this.data.type !== 'progress') return
     const progress = Math.floor(this.data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`)
-    return r.toMessage({
-      flavor: `<div class="move-title">${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${this.name}</div>`,
+    return createIronswornChatRoll({
+      actor: this.actor || undefined,
+      progress: this,
+      roll: r,
     })
   }
 
@@ -45,6 +47,7 @@ export class IronswornItem extends Item {
     createIronswornChatRoll({
       actor: this.actor || undefined,
       move,
+      progress: this,
       roll: r,
     })
   }
