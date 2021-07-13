@@ -42,6 +42,46 @@
     "Progress": "Progress",
     "Moves": "Moves",
     "CustomMoves": "Custom Moves",
+    "Oracles": "Oracles",
+    "Plot": "Plot",
+    "Location": "Location",
+    "Character": "Character",
+    "Names": "Names",
+    "Burn": "Burn",
+    "BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",
+    "MomentumBurnt": "Momentum Burn",
+    "NegativeMomentumCancel": "Negative momentum canceled action die",
+    "Reset": "Reset",
+    "Max": "Max",
+    "Name": "Name",
+    "Description": "Description",
+    "Fields": "Fields",
+    "Label": "Label",
+    "Value": "Value",
+    "Abilities": "Abilities",
+    "Options": "Options",
+    "Track": "Track",
+    "Enabled": "Enabled",
+    "Rank": "Rank",
+    "DeleteItem": "Delete Item",
+    "DeleteMove": "Delete Move",
+    "DeleteVow": "Delete Vow",
+    "DeleteProgress": "Delete Progress",
+    "DeleteAsset": "Delete Asset",
+    "ConfirmDelete": "Are you sure? This cannot be undone.",
+    "StatBonusTooltip": "Bonus for the next stat roll",
+    "Settings": {
+      "Theme": {
+        "Name": "Visual Theme",
+        "Hint": "Select the visual look for this game. Requires a reload.",
+        "Ironsworn": "Ironsworn Classic",
+        "Starforged": "Starforged (experimental)"
+      },
+      "SharedSupply": {
+        "Name": "Shared Supply Tracker",
+        "Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+      }
+    },
     "MoveContents": {
       "Face Danger": {
         "title": "Face Danger",
@@ -329,44 +369,86 @@
         "description": "<p>When <em>you make a move aided by an augmented asset</em>, roll your rarity die in place of your action die.</p>\n<p>On <em>any result</em> with 6 showing on the rarity die, the power of the rarity manifests in a dramatic and obvious way. You score an automatic <strong>strong hit</strong> and take +1 momentum.</p>\n<p>On a <em>hit</em> with 5 showing on the rarity die, the power of the rarity manifests in a subtle way. Take +1 momentum.</p>\n<p>On a <em>miss</em> with 1 showing on the rarity die, the rarity’s power fails or works against you.</p>\n"
       }
     },
-    "Oracles": "Oracles",
-    "Plot": "Plot",
-    "Location": "Location",
-    "Character": "Character",
-    "Names": "Names",
-    "Burn": "Burn",
-    "BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",
-    "MomentumBurnt": "Momentum Burn",
-    "NegativeMomentumCancel": "Negative momentum canceled action die",
-    "Reset": "Reset",
-    "Max": "Max",
-    "Name": "Name",
-    "Description": "Description",
-    "Fields": "Fields",
-    "Label": "Label",
-    "Value": "Value",
-    "Abilities": "Abilities",
-    "Options": "Options",
-    "Track": "Track",
-    "Enabled": "Enabled",
-    "Rank": "Rank",
-    "DeleteItem": "Delete Item",
-    "DeleteMove": "Delete Move",
-    "DeleteVow": "Delete Vow",
-    "DeleteProgress": "Delete Progress",
-    "DeleteAsset": "Delete Asset",
-    "ConfirmDelete": "Are you sure? This cannot be undone.",
-    "StatBonusTooltip": "Bonus for the next stat roll",
-    "Settings": {
-      "Theme": {
-        "Name": "Visual Theme",
-        "Hint": "Select the visual look for this game. Requires a reload.",
-        "Ironsworn": "Ironsworn Classic",
-        "Starforged": "Starforged (experimental)"
+    "ThemeContents": {
+      "Ancient": {
+        "title": "Ancient",
+        "summary": "This place holds the secrets of a bygone age.",
+        "description": "<p>An ancient site contains the mysteries, legacies, and dangers of another age.</p>\n<p>Walking the paths of this place is like stepping through time. Ruins and relics provide glimpses of long-forgotten people and events. The knowledge and power hidden here are a tempting lure, but those treasures may come with a dire cost. Some secrets are best left buried.</p>\n",
+        "feature1": "Evidence of lost knowledge",
+        "feature2": "Inscrutable relics",
+        "feature3": "Ancient artistry or craft",
+        "feature4": "Preserved corpses or fossils",
+        "feature5": "Visions of this place in another time"
       },
-      "SharedSupply": {
-        "Name": "Shared Supply Tracker",
-        "Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+      "Corrupted": {
+        "title": "Corrupted",
+        "summary": "This place is tainted by dark magic.",
+        "description": "<p>A corrupted site is befouled by dark forces. It might be the ancient magic of the Ironlands, or the residue of ancient evils, concentrated here like poisoned water soaked into a sponge. Perhaps a powerful mystic dwells in this place, one who walks a sinister path in search of power.</p>\n<p>When you enter a corrupted site, you can feel the wrongness of it down to your bones. The air is tainted with foul smells, or tinged with strange energies. You hear unintelligible whispers. Shadows lurk at the edge of your vision. The creatures of this place are twisted by corruption, and the people are in thrall to a dark influence.</p>\n",
+        "feature1": "Mystic focus or conduit",
+        "feature2": "Strange environmental disturbances",
+        "feature3": "Mystic runes or markings",
+        "feature4": "Blight or decay",
+        "feature5": "Evidence of a foul ritual"
+      },
+      "Fortified": {
+        "title": "Fortified",
+        "summary": "Foes defend this place against intruders.",
+        "description": "<p>A fortified site is held and defended by an enemy force. It might be an enemy camp, an outpost, a fortress, or a closely-guarded territory.</p>\n<p>Infiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to your objective.</p>\n",
+        "feature1": "Camp or quarters",
+        "feature2": "Guarded location",
+        "feature3": "Storage or repository",
+        "feature4": "Work or training area",
+        "feature5": "Command center or leadership"
+      },
+      "Hallowed": {
+        "title": "Hallowed",
+        "summary": "The faithful worship here.",
+        "description": "<p>A hallowed site is a place of great reverence, suffused with the power of old gods or the fervency of belief. It might be a location of religious significance, the resting place of legendary relics or figures, or the haven of a religious leader.</p>\n<p>Hallowed places may be warded by ancient rituals, or imbued with divine energy. But it is the faithful and the zealous who will sacrifice everything to defend this place.</p>\n",
+        "feature1": "Temple or altar",
+        "feature2": "Offerings or atonements",
+        "feature3": "Religious relic or idol",
+        "feature4": "Consecrated ground",
+        "feature5": "Dwellings or gathering place"
+      },
+      "Haunted": {
+        "title": "Haunted",
+        "summary": "Restless spirits are bound to this place.",
+        "description": "<p>Within a haunted site, dread, sadness, and fear are palpable. Disturbing sounds and visions lure the unwary and terrorize the vulnerable. Gird your will when you enter this place, for you walk at the boundary of life and death.</p>\n<p>Some lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. But all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing but hate for the living and a hunger for warmth which will never be sated.</p>\n",
+        "feature1": "Tomb or burial site",
+        "feature2": "Blood was spilled here",
+        "feature3": "Unnatural mists or darkness",
+        "feature4": "Messages from beyond the grave",
+        "feature5": "Apparitions of a person or event"
+      },
+      "Infested": {
+        "title": "Infested",
+        "summary": "Foul creatures dwell here.",
+        "description": "<p>Foul creatures swarm these sites, overwhelming trespassers with sheer numbers and unchecked ferocity. The denizens do little beyond multiplying, feeding, and expanding, ravenous for fresh kills to feed the swarm.</p>\n<p>Navigation through this place, across paths undermined by the hordes, may be perilous. The sights and smells may test your fortitude. But it is the creatures which pose the greatest threat, as they ambush and cut off your escape with unforeseen cunning.</p>\n",
+        "feature1": "Inhabited nest",
+        "feature2": "Abandoned nest",
+        "feature3": "Ravaged terrain or architecture",
+        "feature4": "Remains or carrion",
+        "feature5": "Hoarded food"
+      },
+      "Ravaged": {
+        "title": "Ravaged",
+        "summary": "Time, disaster, or strife have taken their toll.",
+        "description": "<p>Time, weather, war, or calamity have laid waste to a ravaged site. The terrain is precarious. Hazards lurk around every corner. You may face glimpses of a former greatness, but this place is a ruined shadow of what it once was.</p>\n<p>Traversing a ravaged site requires care, cunning, and quick wits to react to sudden perils. The environment here is your greatest enemy. It is a force, as willful as any intelligent adversary, which will see your quest undone.</p>\n",
+        "feature1": "Path of destruction",
+        "feature2": "Abandoned or ruined dwelling",
+        "feature3": "Untouched or preserved area",
+        "feature4": "Traces of what was lost",
+        "feature5": "Ill-fated victims"
+      },
+      "Wild": {
+        "title": "Wild",
+        "summary": "Nature prevails in this place.",
+        "description": "<p>Despite our attempts to extend our control into untracked reaches, the primal forces of nature still hold sway across the Ironlands. In those wild places, we must test our shields against tooth and claw, our wits against insidious creatures, and our resolve against dangerous terrain and harsh environments.</p>\n<p>Be wary when you enter the wild places of this world. Beyond the comforting walls of your village, you are not the hunter. You are the prey.</p>\n",
+        "feature1": "Denizen’s lair",
+        "feature2": "Territorial markings",
+        "feature3": "Impressive flora or fauna",
+        "feature4": "Hunting ground or watering hole",
+        "feature5": "Remains or carrion"
       }
     }
   }

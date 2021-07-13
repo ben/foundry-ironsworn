@@ -98,8 +98,8 @@ async function doit () {
 
   // Also write descriptions to en lang file
   const en = JSON.parse(await fs.readFile('system/lang/en.json'))
+  en.IRONSWORN.MoveContents ||= {}
   for (const move of i18nMoves) {
-    en.IRONSWORN.MoveContents ||= {}
     en.IRONSWORN.MoveContents[move.Name] = {
       ...en.IRONSWORN.MoveContents[move.Name],
       title: move.Name,
@@ -122,6 +122,19 @@ async function doit () {
   // console.log('  Writing')
 
   // TODO: add text to en.json
+  en.IRONSWORN.ThemeContents ||= {}
+  for (const theme of delveThemesJson.Themes) {
+    en.IRONSWORN.ThemeContents[theme.Name] = {
+      ...en.IRONSWORN.ThemeContents[theme.Name],
+      title: theme.Name,
+      summary: theme.Summary,
+      description: marked(theme.Description),
+    }
+    for (let i = 0; i < theme.Features.length; i++) {
+      const feature = theme.Features[i]
+      en.IRONSWORN.ThemeContents[theme.Name][`feature${i+1}`] = feature.Description
+    }
+  }
 
   console.log('Delve domains:')
   console.log('  Fetching')
