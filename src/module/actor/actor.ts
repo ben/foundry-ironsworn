@@ -7,8 +7,11 @@ import { CharacterMoveSheet } from './sheets/charactermovesheet'
 export class IronswornActor extends Actor {
   moveSheet?: CharacterMoveSheet
 
-  static async createDialog(_data, _options = {}) {
-    CONFIG.IRONSWORN.applications.createActorDialog?.render(true)
+  static async createDialog(data, _options = {}) {
+    if (CONFIG.IRONSWORN.applications.createActorDialog) {
+      CONFIG.IRONSWORN.applications.createActorDialog.options.folder = data?.folder
+      CONFIG.IRONSWORN.applications.createActorDialog.render(true)
+    }
     return undefined
   }
 
