@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.2.0
+
 - Momentum does not apply to progress rolls ([#86](https://github.com/ben/foundry-ironsworn/pull/86))
 - New-actor dialog ([#87](https://github.com/ben/foundry-ironsworn/pull/87))
 
