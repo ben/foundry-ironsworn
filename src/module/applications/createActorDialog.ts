@@ -1,3 +1,4 @@
+import { IronswornActor } from "../actor/actor"
 import { IronswornSettings } from "../helpers/settings"
 
 interface CreateActorDialogOptions extends FormApplication.Options {
@@ -21,7 +22,29 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     } as FormApplication.Options)
   }
 
-  activateListeners(html) {
+  activateListeners(html: JQuery) {
     super.activateListeners(html)
+
+    html.find('.ironsworn__character__create').on('click', ev => this._characterCreate.call(this, ev))
+    html.find('.ironsworn__shared__create').on('click', ev => this._sharedCreate.call(this, ev))
+  }
+
+  _characterCreate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    this._createWithFolder('Character', 'character')
+  }
+  _sharedCreate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    this._createWithFolder('Shared', 'shared')
+  }
+
+  async _createWithFolder(name: string, type: string) {
+    const data: any = {
+      name,
+      type,
+      folder: this.options.folder || undefined,
+    }
+    await IronswornActor.create(data, {renderSheet: true})
+    await this.close()
   }
 }
