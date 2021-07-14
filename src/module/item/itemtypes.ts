@@ -102,21 +102,33 @@ export interface BondsetDataProperties {
 
 ///////////////////////////////
 
-interface SiteDataSourceData extends ProgressBase {
-  objective: string
-  theme: string
-  domain: string
-  notes: string
-}
-interface SiteDataPropertiesData extends SiteDataSourceData {}
+interface DelveThemeDataSourceData {
 
-export interface SiteDataSource {
-  type: 'site'
-  data: SiteDataSourceData
 }
-export interface SiteDataProperties {
-  type: 'site'
-  data: SiteDataPropertiesData
+interface DelveThemeDataPropertiesData extends DelveThemeDataSourceData {}
+
+export interface DelveThemeDataSource {
+  type: 'delve-theme'
+  data: DelveThemeDataSourceData
+}
+export interface DelveThemeDataProperties {
+  type: 'delve-theme'
+  data: DelveThemeDataPropertiesData
+}
+///////////////////////////////
+
+interface DelveDomainDataSourceData {
+
+}
+interface DelveDomainDataPropertiesData extends DelveDomainDataSourceData {}
+
+export interface DelveDomainDataSource {
+  type: 'delve-domain'
+  data: DelveDomainDataSourceData
+}
+export interface DelveDomainDataProperties {
+  type: 'delve-domain'
+  data: DelveDomainDataPropertiesData
 }
 
 ///////////////////////////////
@@ -141,8 +153,8 @@ export interface MoveDataProperties {
 
 ///////////////////////////////
 
-export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | SiteDataSource | MoveDataSource
-export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | SiteDataProperties | MoveDataProperties
+export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | MoveDataSource | DelveThemeDataSource | DelveDomainDataSource
+export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | MoveDataProperties  | DelveThemeDataProperties | DelveDomainDataProperties
 
 declare global {
   interface SourceConfig {

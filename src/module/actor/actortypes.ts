@@ -38,6 +38,8 @@ interface CharacterDataSource {
   data: CharacterDataSourceData
 }
 
+////////////////////////////////////////
+
 interface SharedDataSourceData {}
 interface SharedDataPropertiesData {}
 
@@ -49,6 +51,24 @@ interface SharedDataProperties {
   type: 'shared'
   data: SharedDataPropertiesData
 }
+
+////////////////////////////////////////
+
+interface SiteDataSourceData {
+  // TODO: put stuff here
+}
+interface SiteDataPropertiesData extends SiteDataSourceData {}
+
+export interface SiteDataSource {
+  type: 'site'
+  data: SiteDataSourceData
+}
+export interface SiteDataProperties {
+  type: 'site'
+  data: SiteDataPropertiesData
+}
+
+////////////////////////////////////////
 
 export type ActorDataSource = CharacterDataSource | SharedDataSource
 export type ActorDataProperties = CharacterDataProperties | SharedDataProperties
