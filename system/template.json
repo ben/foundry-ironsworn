@@ -2,7 +2,8 @@
   "Actor": {
     "types": [
       "character",
-      "shared"
+      "shared",
+      "site"
     ],
     "character": {
       "biography": "",
@@ -30,6 +31,87 @@
     },
     "shared": {
       "supply": 5
+    },
+    "site": {
+      "objective": "",
+      "description": "",
+      "notes": "",
+      "rank": "troublesome",
+      "current": 0,
+      "denizens": [
+        {
+          "low": 1,
+          "high": 27,
+          "descriptor": "Very Common",
+          "description": ""
+        },
+        {
+          "low": 28,
+          "high": 41,
+          "descriptor": "Common",
+          "description": ""
+        },
+        {
+          "low": 42,
+          "high": 55,
+          "descriptor": "Common",
+          "description": ""
+        },
+        {
+          "low": 56,
+          "high": 69,
+          "descriptor": "Common",
+          "description": ""
+        },
+        {
+          "low": 70,
+          "high": 75,
+          "descriptor": "Uncommon",
+          "description": ""
+        },
+        {
+          "low": 76,
+          "high": 81,
+          "descriptor": "Uncommon",
+          "description": ""
+        },
+        {
+          "low": 82,
+          "high": 87,
+          "descriptor": "Uncommon",
+          "description": ""
+        },
+        {
+          "low": 88,
+          "high": 93,
+          "descriptor": "Uncommon",
+          "description": ""
+        },
+        {
+          "low": 94,
+          "high": 95,
+          "descriptor": "Rare",
+          "description": ""
+        },
+        {
+          "low": 96,
+          "high": 97,
+          "descriptor": "Rare",
+          "description": ""
+        },
+        {
+          "low": 98,
+          "high": 99,
+          "descriptor": "Rare",
+          "description": ""
+        },
+        {
+          "low": 100,
+          "high": 100,
+          "descriptor": "Unforeseen",
+          "description": ""
+        },
+      ]
     }
   },
   "Item": {
