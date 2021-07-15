@@ -102,8 +102,17 @@ export interface BondsetDataProperties {
 
 ///////////////////////////////
 
-interface DelveThemeDataSourceData {
+interface FeatureOrDanger {
+  low: number
+  high: number
+  description: string
+}
 
+interface DelveThemeDataSourceData {
+  summary: string
+  description: string
+  features: FeatureOrDanger[]
+  dangers: FeatureOrDanger[]
 }
 interface DelveThemeDataPropertiesData extends DelveThemeDataSourceData {}
 
@@ -118,7 +127,10 @@ export interface DelveThemeDataProperties {
 ///////////////////////////////
 
 interface DelveDomainDataSourceData {
-
+  summary: string
+  description: string
+  features: FeatureOrDanger[]
+  dangers: FeatureOrDanger[]
 }
 interface DelveDomainDataPropertiesData extends DelveDomainDataSourceData {}
 
@@ -154,7 +166,7 @@ export interface MoveDataProperties {
 ///////////////////////////////
 
 export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | MoveDataSource | DelveThemeDataSource | DelveDomainDataSource
-export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | MoveDataProperties  | DelveThemeDataProperties | DelveDomainDataProperties
+export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | MoveDataProperties | DelveThemeDataProperties | DelveDomainDataProperties
 
 declare global {
   interface SourceConfig {

@@ -14,8 +14,7 @@ import { IronswornSettings } from './module/helpers/settings'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
 import { BondsetSheet } from './module/item/bondset/bondsetsheet'
-import { DelveDomainSheet } from './module/item/delve-domain/delvedomainsheet'
-import { DelveThemeSheet } from './module/item/delve-theme/delvethemesheet'
+import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvethemeordomainsheet'
 import { IronswornItem } from './module/item/item'
 import { MoveSheet } from './module/item/move/movesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
@@ -73,12 +72,8 @@ Hooks.once('init', async () => {
     types: ['move'],
     makeDefault: true,
   })
-  Items.registerSheet('ironsworn', DelveThemeSheet, {
-    types: ['delve-theme'],
-    makeDefault: true,
-  })
-  Items.registerSheet('ironsworn', DelveDomainSheet, {
-    types: ['delve-domain'],
+  Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
+    types: ['delve-theme', 'delve-domain'],
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', ProgressSheet, {
