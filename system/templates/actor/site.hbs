@@ -9,9 +9,13 @@
   <div class="flexcol nogrow" style="margin-bottom: 1em;">
     <div class="flexrow">
       <div class="flexrow">{{>rankHexes rank=data.data.rank id=id}}</div>
-      <div class="clickable block nogrow ironsworn__progress__mark" {{! This works for vows too }}
-        title="{{localize 'IRONSWORN.MarkProgress'}}" data-item="{{id}}">
+      <div class="clickable block nogrow ironsworn__progress__mark" title="{{localize 'IRONSWORN.MarkProgress'}}"
+        data-item="{{id}}">
         <i class="fas fa-play"></i>
+      </div>
+      <div class="clickable block nogrow ironsworn__progress__clear" title="{{localize 'IRONSWORN.ClearProgress'}}"
+        data-item="{{id}}">
+        <i class="fas fa-trash"></i>
       </div>
     </div>
     <div class="flexrow track">
@@ -23,15 +27,36 @@
 
   <section class="boxgroup flexcol">
     <div class="flexrow boxrow nogrow">
-      <div class="flexrow box">moves</div>
+      <div class="box clickable block">
+        <h3>Reveal a Danger</h3>
+      </div>
+      <div class="box clickable block">
+        <h3>Random Denizen</h3>
+      </div>
     </div>
     <div class="flexrow boxrow">
       <div class="flexcol box">
-        Theme
+        <div class="flexcol">
+          {{#if theme}}
+          {{theme.name}}
+          {{else}}
+          <p>(open compendium)</p>
+          <p>— or —</p>
+          <p>(random theme)</p>
+          {{/if}}
+        </div>
+        <div class="flexcol">
+          {{#if domain}}
+          {{domain.name}}
+          {{else}}
+          <p>(open compendium)</p>
+          <p>— or —</p>
+          <p>(random domain)</p>
+          {{/if}}
+        </div>
       </div>
-      <div class="flexcol box">
-        Domain
-      </div>
+
+      <div class="flexcol box">(denizens)</div>
     </div>
   </section>
 </form>

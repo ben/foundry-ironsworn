@@ -1,6 +1,7 @@
-import { IronswornSettings } from "../../helpers/settings"
-import { IronswornItem } from "../../item/item"
-import { SiteDataSource } from "../actortypes"
+import { RANK_INCREMENTS } from '../../constants'
+import { IronswornSettings } from '../../helpers/settings'
+import { IronswornItem } from '../../item/item'
+import { SiteDataSource } from '../actortypes'
 
 interface Data extends ActorSheet.Data<ActorSheet.Options> {
   theme?: IronswornItem
@@ -40,16 +41,38 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
-  activateListeners(html: JQuery) {
-    super.activateListeners(html)
-  }
-
   async getData() {
     const data = await super.getData()
 
-    data.theme = this.actor.items.find(x => x.type === 'delve-theme')
-    data.domain = this.actor.items.find(x => x.type === 'delve-domain')
+    data.theme = this.actor.items.find((x) => x.type === 'delve-theme')
+    data.domain = this.actor.items.find((x) => x.type === 'delve-domain')
 
     return data
+  }
+
+  activateListeners(html: JQuery) {
+    super.activateListeners(html)
+
+    html.find('.ironsworn__progress__rank').on('click', ev => this._setRank.call(this, ev))
+    html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
+    html.find('.ironsworn__progress__clear').on('click', (ev) => this._clearProgress.call(this, ev))
+  }
+
+  _setRank(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    this.actor.update({ 'data.rank': ev.currentTarget.dataset.rank })
+  }
+
+  _markProgress(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const increment = RANK_INCREMENTS[this.siteData.data.rank]
+    const newValue = Math.min(this.siteData.data.current + increment, 40)
+    this.actor.update({ 'data.current': newValue })
+  }
+
+  _clearProgress(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    this.actor.update({ 'data.current': 0 })
   }
 }
