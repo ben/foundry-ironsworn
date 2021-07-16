@@ -6,4 +6,32 @@
         placeholder="{{localize 'IRONSWORN.Name'}}" /></h1>
   </header>
 
+  <div class="flexcol nogrow" style="margin-bottom: 1em;">
+    <div class="flexrow">
+      <div class="flexrow">{{>rankHexes rank=data.data.rank id=id}}</div>
+      <div class="clickable block nogrow ironsworn__progress__mark" {{! This works for vows too }}
+        title="{{localize 'IRONSWORN.MarkProgress'}}" data-item="{{id}}">
+        <i class="fas fa-play"></i>
+      </div>
+    </div>
+    <div class="flexrow track">
+      {{#each (progressCharacters data.data.current)}}
+      <div class="flexcol track-box" style="min-height: 50px;">{{{this}}}</div>
+      {{/each}}
+    </div>
+  </div>
+
+  <section class="boxgroup flexcol">
+    <div class="flexrow boxrow nogrow">
+      <div class="flexrow box">moves</div>
+    </div>
+    <div class="flexrow boxrow">
+      <div class="flexcol box">
+        Theme
+      </div>
+      <div class="flexcol box">
+        Domain
+      </div>
+    </div>
+  </section>
 </form>
