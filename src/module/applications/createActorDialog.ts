@@ -27,6 +27,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
     html.find('.ironsworn__character__create').on('click', (ev) => this._characterCreate.call(this, ev))
     html.find('.ironsworn__shared__create').on('click', (ev) => this._sharedCreate.call(this, ev))
+    html.find('.ironsworn__site__create').on('click', (ev) => this._siteCreate.call(this, ev))
   }
 
   async _characterCreate(ev: JQuery.ClickEvent) {
@@ -36,17 +37,23 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const table: any = await this._ironlanderNameTable()
     const drawResult = await table?.draw({ displayChat: false })
 
-    this._createWithFolder(drawResult.results[0]?.data.text, 'character')
+    this._createWithFolder(drawResult.results[0]?.data.text || 'Character', 'character', ev.currentTarget.dataset.img || undefined)
   }
 
   async _sharedCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    this._createWithFolder('Shared', 'shared')
+    this._createWithFolder('Shared', 'shared', ev.currentTarget.dataset.img || undefined)
   }
 
-  async _createWithFolder(name: string, type: string) {
+  async _siteCreate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
+  }
+
+  async _createWithFolder(name: string, type: string, img: string) {
     const data: any = {
       name,
+      img,
       type,
       folder: this.options.folder || undefined,
     }
