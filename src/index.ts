@@ -7,6 +7,7 @@ import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
+import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
@@ -57,6 +58,10 @@ Hooks.once('init', async () => {
   })
   Actors.registerSheet('ironsworn', IronswornSharedSheet, {
     types: ['shared'],
+    makeDefault: true,
+  })
+  Actors.registerSheet('ironsworn', IronswornSiteSheet, {
+    types: ['site'],
     makeDefault: true,
   })
 
