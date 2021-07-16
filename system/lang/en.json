@@ -46,6 +46,8 @@
     "Plot": "Plot",
     "Location": "Location",
     "Character": "Character",
+    "SharedSheet": "Shared Sheet",
+    "DelveSite": "Delve Site",
     "Names": "Names",
     "Burn": "Burn",
     "BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",

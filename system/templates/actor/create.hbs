@@ -5,7 +5,7 @@
 >
   <div class="flexcol" style="align-items: center;">
     <img src="{{img}}" width="75" height="75" alt="">
-    <h4>{{label}}</h4>
+    <h4>{{localize labelkey}}</h4>
   </div>
 </div>
 {{/inline}}
@@ -14,9 +14,9 @@
   <div class="flexrow boxgroup" style="margin: 30px;">
     <div class="flexrow boxrow">
 
-      {{>createBox type="character" label="Character" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{>createBox type="shared" label="Shared Sheet" img="icons/environment/settlement/wagon-black.webp"}}
-      {{>createBox type="site" label="Delve Site" img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
+      {{>createBox type="character" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
+      {{>createBox type="shared" labelkey="IRONSWORN.SharedSheet" img="icons/environment/settlement/wagon-black.webp"}}
+      {{>createBox type="site" labelkey="IRONSWORN.DelveSite" img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
 
     </div>
   </div>
