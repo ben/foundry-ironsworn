@@ -36,6 +36,20 @@
       "entity": "Item"
     },
     {
+      "name": "ironsworndelvethemes",
+      "label": "Ironsworn Delve Themes",
+      "system": "foundry-ironsworn",
+      "path": "packs/delve-themes.db",
+      "entity": "Item"
+    },
+    {
+      "name": "ironsworndelvedomains",
+      "label": "Ironsworn Delve Domains",
+      "system": "foundry-ironsworn",
+      "path": "packs/delve-domains.db",
+      "entity": "Item"
+    },
+    {
       "name": "ironswornscenes",
       "label": "Ironsworn Maps",
       "system": "foundry-ironsworn",
