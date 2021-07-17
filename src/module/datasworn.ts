@@ -1,8 +1,19 @@
-import { ItemDataConstructorData } from "@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData"
+import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+
+const THEME_IMAGES = {
+  Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
+  Corrupted: 'icons/magic/unholy/beam-impact-purple.webp',
+  Fortified: 'icons/environment/settlement/watchtower-cliff.webp',
+  Hallowed: 'icons/magic/holy/angel-wings-gray.webp',
+  Haunted: 'icons/creatures/magical/spirit-undead-horned-blue.webp',
+  Infested: 'icons/creatures/eyes/icy-cluster-blue.webp',
+  Ravaged: 'icons/environment/settlement/building-rubble.webp',
+  Wild: 'icons/magic/nature/root-vines-grow-brown.webp',
+}
 
 export async function importFromDatasworn() {
   // Empty out the packs
-  for (const key of ['world.ironsworn-items', 'world.ironsworn-assets']) {
+  for (const key of ['world.ironsworn-items', 'world.ironsworn-assets', 'world.ironsworn-delve-themes', 'world.ironsworn-delve-domains']) {
     const pack = game.packs.get(key)
     if (!pack) continue
     await pack.render(true)
@@ -43,4 +54,44 @@ export async function importFromDatasworn() {
     ...raw,
   }))
   await Item.createDocuments(assetsToCreate, { pack: 'world.ironsworn-assets' })
+
+  // Themes
+  const themesJson = await fetch('/systems/foundry-ironsworn/assets/delve-themes.json').then((x) => x.json())
+  const themesToCreate = themesJson.Themes.map((rawTheme) => {
+    const themeData = {
+      type: 'delve-theme',
+      name: rawTheme.Name,
+      img: THEME_IMAGES[rawTheme.Name],
+      data: {
+        summary: rawTheme.Summary,
+        description: rawTheme.Description,
+        features: [] as any[],
+        dangers: [] as any[],
+      },
+    }
+
+    let low = 1
+    for (const feature of rawTheme.Features) {
+      themeData.data.features.push({
+        low,
+        high: feature.Chance,
+        description: feature.Description,
+      })
+      low = feature.Chance + 1
+    }
+    low = 1
+    for (const danger of rawTheme.Dangers) {
+      themeData.data.dangers.push({
+        low,
+        high: danger.Chance,
+        description: danger.Description,
+      })
+      low = danger.Chance + 1
+    }
+
+    console.log(themeData)
+
+    return themeData
+  })
+  await Item.createDocuments(themesToCreate, { pack: 'world.ironsworn-delve-themes' })
 }
