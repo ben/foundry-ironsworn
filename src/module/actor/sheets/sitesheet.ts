@@ -69,6 +69,9 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
   activateListeners(html: JQuery) {
     super.activateListeners(html)
+    for (const itemClass of CONFIG.IRONSWORN.itemClasses) {
+      itemClass.activateActorSheetListeners(html, this)
+    }
 
     html.find('.ironsworn__progress__rank').on('click', (ev) => this._setRank.call(this, ev))
     html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
