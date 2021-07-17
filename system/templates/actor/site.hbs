@@ -1,23 +1,39 @@
 {{#*inline "subcard"}}
-<h4>{{localize titlekey}}</h4>
 
 {{#if item}}
 
-<div class="inset clickable block ironsworn__{{item.type}}__settings" style="padding: 1em;" data-item="{{item.id}}">
-  <h4 style="margin: 0;">{{item.name}}</h4>
+<div class="clickable block ironsworn__{{item.type}}__settings" style="padding: 1em; width: 100%; position: relative;"
+  data-item="{{item.id}}">
+
+  <div class="flexrow">
+    <h4 style="margin: 0;">{{item.name}}</h4>
+  </div>
+  <p>{{item.data.data.summary}}</p>
+
+  {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+  <div class="flexrow" style="position: absolute; right: 5px; top: 5px;">
+    <div class="clickable block nogrow ironsworn__{{item.type}}__delete" title="{{localize 'IRONSWORN.DeleteItem'}}"
+      data-item="{{item.id}}" style="padding: 5px;">
+      <i class="fas fa-trash"></i>
+    </div>
+  </div>
+  {{/if}}
 </div>
 
 {{else}}
 
-<div class="flexrow">
-  <div class="inset clickable block">
-    {{!-- TODO: use {{compendiumkey}} --}}
-    <p>open compendium</p>
-  </div>
-  <span>or</span>
-  <div class="inset clickable block">
-    {{!-- TODO: use {{compendiumkey}} --}}
-    <p>Randomize</p>
+<div class="flexcol">
+  <h4>{{localize titlekey}}</h4>
+  <div class="flexrow">
+    <div class="inset clickable block">
+      {{!-- TODO: use {{compendiumkey}} --}}
+      <p>open compendium</p>
+    </div>
+    <span>or</span>
+    <div class="inset clickable block">
+      {{!-- TODO: use {{compendiumkey}} --}}
+      <p>Randomize</p>
+    </div>
   </div>
 </div>
 
@@ -36,13 +52,17 @@
   <div class="flexcol nogrow" style="margin-bottom: 1em;">
     <div class="flexrow">
       <div class="flexrow">{{>rankHexes rank=data.data.rank id=id}}</div>
-      <div class="clickable block nogrow ironsworn__progress__mark" title="{{localize 'IRONSWORN.MarkProgress'}}"
-        data-item="{{id}}" style="padding: 5px;">
-        <i class="fas fa-play"></i>
-      </div>
+
+      {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
       <div class="clickable block nogrow ironsworn__progress__clear" title="{{localize 'IRONSWORN.ClearProgress'}}"
         data-item="{{id}}" style="padding: 5px;">
         <i class="fas fa-trash"></i>
+      </div>
+      {{/if}}
+
+      <div class="clickable block nogrow ironsworn__progress__mark" title="{{localize 'IRONSWORN.MarkProgress'}}"
+        data-item="{{id}}" style="padding: 5px;">
+        <i class="fas fa-play"></i>
       </div>
     </div>
     <div class="flexrow track">
@@ -53,7 +73,8 @@
   </div>
 
   <div class="flexrow nogrow" style="margin-bottom: 1em; align-items: center;">
-    <i class="nogrow fa fa-dice-d6" style="padding: 5px; margin-right: 5px; flex: 0;"></i>
+    <i class="nogrow fa fa-dice-d6 {{#unless (and theme domain)}}disabled{{/unless}}"
+      style="padding: 5px; margin-right: 5px; flex: 0;"></i>
     <div class="boxgroup flexrow">
       {{#each moves}}
       <div class="box clickable block ironsworn__builtin__move__roll" data-name="{{Name}}">
