@@ -11,6 +11,21 @@ const THEME_IMAGES = {
   Wild: 'icons/magic/nature/root-vines-grow-brown.webp',
 }
 
+const DOMAIN_IMAGES = {
+  Barrow: 'icons/environment/wilderness/cave-entrance-dwarven-hill.webp',
+  Cavern: 'icons/environment/wilderness/cave-entrance-mountain-blue.webp',
+  'Frozen Cavern': 'icons/magic/water/water-iceberg-bubbles.webp',
+  Icereach: 'icons/magic/water/barrier-ice-crystal-wall-jagged-blue.webp',
+  Mine: 'icons/environment/settlement/mine-cart-rocks-red.webp',
+  Pass: 'icons/environment/wilderness/cave-entrance-rocky.webp',
+  Ruin: 'icons/environment/wilderness/wall-ruins.webp',
+  'Sea Cave': 'icons/environment/wilderness/cave-entrance-island.webp',
+  Shadowfen: 'icons/environment/wilderness/cave-entrance.webp',
+  Stronghold: 'icons/environment/settlement/castle.webp',
+  Tanglewood: 'icons/environment/wilderness/terrain-forest-gray.webp',
+  Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp',
+}
+
 export async function importFromDatasworn() {
   // Empty out the packs
   for (const key of ['world.ironsworn-items', 'world.ironsworn-assets', 'world.ironsworn-delve-themes', 'world.ironsworn-delve-domains']) {
@@ -89,9 +104,45 @@ export async function importFromDatasworn() {
       low = danger.Chance + 1
     }
 
-    console.log(themeData)
-
     return themeData
   })
   await Item.createDocuments(themesToCreate, { pack: 'world.ironsworn-delve-themes' })
+
+  // Domains
+  const domainsJson = await fetch('/systems/foundry-ironsworn/assets/delve-domains.json').then((x) => x.json())
+  const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
+    const domainData = {
+      type: 'delve-theme',
+      name: rawDomain.Name,
+      img: DOMAIN_IMAGES[rawDomain.Name],
+      data: {
+        summary: rawDomain.Summary,
+        description: rawDomain.Description,
+        features: [] as any[],
+        dangers: [] as any[],
+      },
+    }
+
+    let low = 1
+    for (const feature of rawDomain.Features) {
+      domainData.data.features.push({
+        low,
+        high: feature.Chance,
+        description: feature.Description,
+      })
+      low = feature.Chance + 1
+    }
+    low = 1
+    for (const danger of rawDomain.Dangers) {
+      domainData.data.dangers.push({
+        low,
+        high: danger.Chance,
+        description: danger.Description,
+      })
+      low = danger.Chance + 1
+    }
+
+    return domainData
+  })
+  await Item.createDocuments(domainsToCreate, { pack: 'world.ironsworn-delve-domains' })
 }
