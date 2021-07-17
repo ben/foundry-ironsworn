@@ -57,13 +57,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   }
 
   async moves(): Promise<EnhancedDataswornMove[]> {
-    const sparseMoves = await Promise.all([
-      moveDataByName('Delve the Depths'),
-      moveDataByName('Find an Opportunity'),
-      moveDataByName('Reveal a Danger'),
-      moveDataByName('Locate Your Objective'),
-      moveDataByName('Escape the Depths'),
-    ])
+    const sparseMoves = await Promise.all([moveDataByName('Delve the Depths'), moveDataByName('Find an Opportunity'), moveDataByName('Reveal a Danger'), moveDataByName('Locate Your Objective'), moveDataByName('Escape the Depths')])
     return compact(sparseMoves)
   }
 
@@ -78,6 +72,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     html.find('.ironsworn__progress__clear').on('click', (ev) => this._clearProgress.call(this, ev))
 
     html.find('.ironsworn__builtin__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
+    html.find('.ironsworn__compendium__open').on('click', (ev) => this._openCompendium.call(this, ev))
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -104,6 +99,13 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     const move = await moveDataByName(ev.currentTarget.dataset.name)
     const actor = await this.findActor()
     RollDialog.show({ actor, move })
+  }
+
+  async _openCompendium(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    const { compendium } = ev.currentTarget.dataset
+    const pack = game.packs?.get(`foundry-ironsworn.${compendium}`)
+    pack?.render(true)
   }
 
   async findActor(): Promise<IronswornActor> {

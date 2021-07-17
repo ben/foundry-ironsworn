@@ -29,14 +29,8 @@
 <div class="flexcol">
   <h4>{{localize titlekey}}</h4>
   <div class="flexrow">
-    <div class="inset clickable block">
-      {{!-- TODO: use {{compendiumkey}} --}}
-      <p>open compendium</p>
-    </div>
-    <span>or</span>
-    <div class="inset clickable block">
-      {{!-- TODO: use {{compendiumkey}} --}}
-      <p>Randomize</p>
+    <div class="inset clickable block ironsworn__compendium__open" style="padding: 5px 2em;" data-compendium="{{compendiumkey}}">
+      <p>{{localize 'IRONSWORN.OpenCompendium'}}</p>
     </div>
   </div>
 </div>
@@ -104,10 +98,10 @@
 
     <div class="flexrow boxrow nogrow">
       <div class="flexcol box">
-        {{>subcard titlekey='IRONSWORN.Theme' item=theme compendiumkey=''}}
+        {{>subcard titlekey='IRONSWORN.Theme' item=theme compendiumkey='ironsworndelvethemes'}}
       </div>
       <div class="flexcol box">
-        {{>subcard titlekey='IRONSWORN.Domain' item=domain compendiumkey=''}}
+        {{>subcard titlekey='IRONSWORN.Domain' item=domain compendiumkey='ironsworndelvedomains'}}
       </div>
     </div>
   </div>
