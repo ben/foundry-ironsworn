@@ -1,7 +1,5 @@
 {{#*inline "fieldrows"}}
-{{log this}}
 {{#each (lookup data.data field)}}
-{{log this}}
 <tr>
   <td>
     {{#if (eq low high)}}{{low}}{{else}}{{low}} - {{high}}{{/if}}
