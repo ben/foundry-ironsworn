@@ -1,8 +1,10 @@
 import { compact } from 'lodash'
 import { RANK_INCREMENTS } from '../../constants'
-import {  EnhancedDataswornMove, moveDataByName } from '../../helpers/data'
+import { EnhancedDataswornMove, moveDataByName } from '../../helpers/data'
+import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
+import { IronswornActor } from '../actor'
 import { SiteDataSource } from '../actortypes'
 
 interface Data extends ActorSheet.Data<ActorSheet.Options> {
@@ -68,9 +70,11 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html.find('.ironsworn__progress__rank').on('click', ev => this._setRank.call(this, ev))
+    html.find('.ironsworn__progress__rank').on('click', (ev) => this._setRank.call(this, ev))
     html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
     html.find('.ironsworn__progress__clear').on('click', (ev) => this._clearProgress.call(this, ev))
+
+    html.find('.ironsworn__builtin__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -89,5 +93,25 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   _clearProgress(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this.actor.update({ 'data.current': 0 })
+  }
+
+  async _moveRoll(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const move = await moveDataByName(ev.currentTarget.dataset.name)
+    const actor = await this.findActor()
+    RollDialog.show({ actor, move })
+  }
+
+  async findActor(): Promise<IronswornActor> {
+    if (game.user?.character) return game.user.character
+
+    // TODO: if more than one character, prompt the user
+    const actor = game.actors?.find((x) => x.type === 'character')
+    if (!actor) {
+      ui.notifications?.error("Couldn't find a character for you")
+      throw new Error("Couldn't find an actor")
+    }
+    return actor
   }
 }
