@@ -112,7 +112,7 @@ export async function importFromDatasworn() {
   const domainsJson = await fetch('/systems/foundry-ironsworn/assets/delve-domains.json').then((x) => x.json())
   const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
     const domainData = {
-      type: 'delve-theme',
+      type: 'delve-domain',
       name: rawDomain.Name,
       img: DOMAIN_IMAGES[rawDomain.Name],
       data: {
