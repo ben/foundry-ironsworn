@@ -1,4 +1,6 @@
+import { compact } from 'lodash'
 import { RANK_INCREMENTS } from '../../constants'
+import {  EnhancedDataswornMove, moveDataByName } from '../../helpers/data'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { SiteDataSource } from '../actortypes'
@@ -6,6 +8,7 @@ import { SiteDataSource } from '../actortypes'
 interface Data extends ActorSheet.Data<ActorSheet.Options> {
   theme?: IronswornItem
   domain?: IronswornItem
+  moves: EnhancedDataswornMove[]
 }
 
 export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
@@ -16,7 +19,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'site', `theme-${IronswornSettings.theme}`],
-      width: 600,
+      width: 700,
       height: 700,
       template: 'systems/foundry-ironsworn/templates/actor/site.hbs',
     })
@@ -46,8 +49,20 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
     data.theme = this.actor.items.find((x) => x.type === 'delve-theme')
     data.domain = this.actor.items.find((x) => x.type === 'delve-domain')
+    data.moves = await this.moves()
 
     return data
+  }
+
+  async moves(): Promise<EnhancedDataswornMove[]> {
+    const sparseMoves = await Promise.all([
+      moveDataByName('Delve the Depths'),
+      moveDataByName('Find an Opportunity'),
+      moveDataByName('Reveal a Danger'),
+      moveDataByName('Locate Your Objective'),
+      moveDataByName('Escape the Depths'),
+    ])
+    return compact(sparseMoves)
   }
 
   activateListeners(html: JQuery) {

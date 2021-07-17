@@ -25,38 +25,44 @@
     </div>
   </div>
 
-  <section class="boxgroup flexcol">
-    <div class="flexrow boxrow nogrow">
-      <div class="box clickable block">
-        <h3>Reveal a Danger</h3>
+  <div class="flexrow nogrow" style="margin-bottom: 1em; align-items: center;">
+    <i class="nogrow fa fa-dice-d6" style="padding: 5px; margin-right: 5px; flex: 0;">
+    </i>
+    <div class="boxgroup flexrow">
+      {{#each moves}}
+      <div class="box clickable block ironsworn__builtin__move__roll" data-name="{{Name}}">
+        <h4 style="margin: 5px; align-items: center;" title="{{Source.Name}}, p{{Source.Page}}" class="flexrow">
+          <span style="flex: 1" class='ironsworn__move__expand'>
+            {{localize (concat 'IRONSWORN.MoveContents.' Name '.title')}}
+          </span>
+        </h4>
       </div>
-      <div class="box clickable block">
-        <h3>Random Denizen</h3>
-      </div>
+      {{/each}}
     </div>
+  </div>
+
+  <div class="boxgroup flexcol">
     <div class="flexrow boxrow">
       <div class="flexcol box">
-        <div class="flexcol">
-          {{#if theme}}
-          {{theme.name}}
-          {{else}}
-          <p>(open compendium)</p>
-          <p>— or —</p>
-          <p>(random theme)</p>
-          {{/if}}
-        </div>
-        <div class="flexcol">
-          {{#if domain}}
-          {{domain.name}}
-          {{else}}
-          <p>(open compendium)</p>
-          <p>— or —</p>
-          <p>(random domain)</p>
-          {{/if}}
-        </div>
+        {{#if theme}}
+        {{theme.name}}
+        {{else}}
+        <p>(open compendium)</p>
+        <p>— or —</p>
+        <p>(random theme)</p>
+        {{/if}}
       </div>
-
-      <div class="flexcol box">(denizens)</div>
+      <div class="flexcol box">
+        {{#if domain}}
+        {{domain.name}}
+        {{else}}
+        <p>(open compendium)</p>
+        <p>— or —</p>
+        <p>(random domain)</p>
+        {{/if}}
+      </div>
     </div>
-  </section>
+
+    <div class="flexrow boxrow">(denizens)</div>
+  </div>
 </form>
