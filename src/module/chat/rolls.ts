@@ -197,7 +197,8 @@ export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
 
 interface FeatureChatInput {
   roll: Roll
-  item: IronswornItem
+  theme?: IronswornItem
+  domain?: IronswornItem
   feature: FeatureOrDanger
 }
 

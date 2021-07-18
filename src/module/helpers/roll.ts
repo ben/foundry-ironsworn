@@ -133,18 +133,13 @@ export async function rollSiteFeature(params: SiteFeatureRollInput) {
   const themeData = params.theme.data as DelveThemeDataSource
 
   const roll = new Roll('1d100')
-  await roll.evaluate({ async: false })
+  await roll.evaluate({ async: true })
   if (roll.total === undefined) return
 
   // Find the theme/domain and the matching feature
-  let item = params.domain
-  let feature = domainData.data.features.find(x => x.low <= (roll.total || 0))
-  if (!feature) {
-    item = params.theme
-    feature = themeData.data.features.find(x => x.low <= (roll.total || 0))
-  }
-
+  const pred = (x) => x.low <= (roll.total || 0) && x.high >= (roll.total || 100)
+  const feature = domainData.data.features.find(pred) || themeData.data.features.find(pred)
   if (feature) {
-    return createIronswornFeatureChat({ roll, item, feature })
+    return createIronswornFeatureChat({ ...params, roll, feature })
   }
 }
