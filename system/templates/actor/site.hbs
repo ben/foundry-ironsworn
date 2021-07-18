@@ -72,20 +72,28 @@
     </div>
   </div>
 
+  <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em;">
+    <div class="flexrow boxrow nogrow">
+      <div class="flexcol box">
+        {{>subcard titlekey='IRONSWORN.Theme' item=theme compendiumkey='ironsworndelvethemes'}}
+      </div>
+      <div class="flexcol box">
+        {{>subcard titlekey='IRONSWORN.Domain' item=domain compendiumkey='ironsworndelvedomains'}}
+      </div>
+    </div>
+  </div>
+
   <div class="flexrow nogrow" style="margin-bottom: 1em; align-items: center;">
     <div class="boxgroup">
 
       <div class="flexrow boxrow">
-        {{#each moves}}
-        <div class="box flexrow clickable block ironsworn__builtin__move__roll" data-name="{{Name}}">
-          <h4 style="margin: 5px" title="{{Source.Name}}, p{{Source.Page}}">
-            {{localize (concat 'IRONSWORN.MoveContents.' Name '.title')}}
+        <div class="
+            box flexrow clickable block ironsworn__delve__roll
+          " style="justify-content: center; padding: 5px;">
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Delve the Depths.title'}}
           </h4>
         </div>
-        {{/each}}
-      </div>
-
-      <div class="flexrow boxrow">
         <div class="
             box flexrow clickable block ironsworn__feature__roll
             {{#unless (and theme domain)}}disabled{{/unless}}
@@ -102,19 +110,32 @@
             {{localize 'IRONSWORN.MoveContents.Reveal a Danger.title'}}
           </h4>
         </div>
+      </div>
 
+      <div class="flexrow boxrow">
+        <div class="
+            box flexrow clickable block ironsworn__opportunity__roll
+          " style="justify-content: center; padding: 5px;">
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Find an Opportunity.title'}}
+          </h4>
+        </div>
+        <div class="
+            box flexrow clickable block ironsworn__objective__roll
+          " style="justify-content: center; padding: 5px;">
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Locate Your Objective.title'}}
+          </h4>
+        </div>
+        <div class="
+            box flexrow clickable block ironsworn__escape__roll
+          " style="justify-content: center; padding: 5px;">
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Escape the Depths.title'}}
+          </h4>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em;">
-    <div class="flexrow boxrow nogrow">
-      <div class="flexcol box">
-        {{>subcard titlekey='IRONSWORN.Theme' item=theme compendiumkey='ironsworndelvethemes'}}
-      </div>
-      <div class="flexcol box">
-        {{>subcard titlekey='IRONSWORN.Domain' item=domain compendiumkey='ironsworndelvedomains'}}
-      </div>
     </div>
   </div>
 
