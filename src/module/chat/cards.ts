@@ -38,8 +38,6 @@ export class IronswornChatCard {
   }
 
   static async bind(message: ChatMessage, html: JQuery) {
-    console.log({ message, html })
-
     const existing = message.ironswornCard
     if (existing) {
       existing.updateBinding(message, html)

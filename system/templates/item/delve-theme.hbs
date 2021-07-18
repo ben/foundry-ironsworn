@@ -1,0 +1,41 @@
+{{#*inline "fieldrows"}}
+{{#each (lookup data.data field)}}
+<tr>
+  <td>
+    {{#if (eq low high)}}{{low}}{{else}}{{low}} - {{high}}{{/if}}
+  </td>
+  <td>
+    <input class="ironsworn__{{lookup .. 'field'}}__description" data-idx="{{@index}}" type="text" value="{{description}}" />
+  </td>
+</tr>
+{{/each}}
+{{/inline}}
+
+<form class="{{cssClass}}" autocomplete="off">
+  <header class="sheet-header">
+    <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="50" width="50" />
+    <h1>
+      <input name="name" type="text" value="{{item.name}}" placeholder="Name" />
+    </h1>
+  </header>
+
+  <section class="flexcol">
+    <input name="data.summary" type="text" value="{{data.data.summary}}"
+      placeholder="{{localize 'IRONSWORN.Summary'}}" />
+    {{editor content=data.data.description target="data.description" owner=owner}}
+  </section>
+
+  <h3>{{localize 'IRONSWORN.Features'}}</h3>
+  <table>
+    <tbody>
+      {{>fieldrows field="features"}}
+    </tbody>
+  </table>
+
+  <h3>{{localize 'IRONSWORN.Dangers'}}</h3>
+  <table>
+    <tbody>
+      {{>fieldrows field="dangers"}}
+    </tbody>
+  </table>
+</form>

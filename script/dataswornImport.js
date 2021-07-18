@@ -15,9 +15,12 @@ function renderHtml (text) {
 
 async function doit () {
   // Assets
+  console.log('Assets:')
+  console.log('  Fetching')
   const assetsJson = await fetch(
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_assets.json'
   ).then(x => x.json())
+
   const assets = []
   for (const asset of assetsJson.Assets) {
     const track = {
@@ -61,12 +64,15 @@ async function doit () {
       }
     })
   }
+  console.log('  Writing')
   await fs.writeFile('system/assets/assets.json', JSON.stringify(assets, null, 2) + '\n')
 
   // Moves
+  console.log('Moves:')
+  console.log('  Fetching')
   const movesJson = await fetch(
     'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_moves.json'
-  ).then(x => x.json())
+    ).then(x => x.json())
 
   // Just grab Datasworn, but split up the text into more structure
   const i18nMoves = []
@@ -85,14 +91,15 @@ async function doit () {
       i18nMoves.push(move)
     }
   }
+  console.log('  Writing')
   await fs.writeFile('system/assets/moves.json', JSON.stringify(movesJson, null, 2) + '\n')
 
   // Also write descriptions to en lang file
   const en = JSON.parse(await fs.readFile('system/lang/en.json'))
+  en.IRONSWORN.MoveContents ||= {}
   for (const move of i18nMoves) {
-    en['IRONSWORN']['MoveContents'] ||= {}
-    en['IRONSWORN']['MoveContents'][move.Name] = {
-      ...en['IRONSWORN']['MoveContents'][move.Name],
+    en.IRONSWORN.MoveContents[move.Name] = {
+      ...en.IRONSWORN.MoveContents[move.Name],
       title: move.Name,
       description: move.Description,
       strong: move.Strong,
@@ -100,6 +107,67 @@ async function doit () {
       miss: move.Miss,
     }
   }
+
+  // Delve: themes
+  console.log('Delve themes:')
+  console.log('  Fetching')
+  const delveThemesJson = await fetch(
+    'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_delve_themes.json'
+  ).then(x => x.json())
+
+  // Write local version
+  console.log('  Writing')
+  await fs.writeFile('system/assets/delve-themes.json', JSON.stringify(delveThemesJson, null, 2) + '\n')
+
+  // Add text to en.json
+  en.IRONSWORN.ThemeContents ||= {}
+  for (const theme of delveThemesJson.Themes) {
+    en.IRONSWORN.ThemeContents[theme.Name] = {
+      ...en.IRONSWORN.ThemeContents[theme.Name],
+      title: theme.Name,
+      summary: theme.Summary,
+      description: marked(theme.Description),
+    }
+    for (let i = 0; i < theme.Features.length; i++) {
+      const feature = theme.Features[i]
+      en.IRONSWORN.ThemeContents[theme.Name][`feature${i+1}`] = feature.Description
+    }
+    for (let i = 0; i < theme.Dangers.length; i++) {
+      const danger = theme.Dangers[i]
+      en.IRONSWORN.ThemeContents[theme.Name][`danger${i+1}`] = danger.Description
+    }
+  }
+
+  console.log('Delve domains:')
+  console.log('  Fetching')
+  const delveDomainsJson = await fetch(
+    'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_delve_domains.json'
+  ).then(x => x.json())
+
+  // Write local version
+  console.log('  Writing')
+  await fs.writeFile('system/assets/delve-domains.json', JSON.stringify(delveDomainsJson, null, 2) + '\n')
+
+  // Add text to en.json
+  en.IRONSWORN.DomainContents ||= {}
+  for (const domain of delveDomainsJson.Domains) {
+    en.IRONSWORN.DomainContents[domain.Name] = {
+      ...en.IRONSWORN.DomainContents[domain.Name],
+      title: domain.Name,
+      summary: domain.Summary,
+      description: marked(domain.Description),
+    }
+    for (let i = 0; i < domain.Features.length; i++) {
+      const feature = domain.Features[i]
+      en.IRONSWORN.DomainContents[domain.Name][`feature${i+1}`] = feature.Description
+    }
+    for (let i = 0; i < domain.Dangers.length; i++) {
+      const danger = domain.Dangers[i]
+      en.IRONSWORN.DomainContents[domain.Name][`danger${i+1}`] = danger.Description
+    }
+  }
+
+  console.log('Writing en.json')
   await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2) + '\n')
 }
 
