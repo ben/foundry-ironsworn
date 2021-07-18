@@ -1,6 +1,7 @@
 import { IronswornActor } from '../actor/actor'
-import { createIronswornChatRoll, createIronswornMoveChat } from '../chat/rolls'
+import { createIronswornChatRoll, createIronswornFeatureChat, createIronswornMoveChat } from '../chat/rolls'
 import { IronswornItem } from '../item/item'
+import { DelveDomainDataSource, DelveThemeDataSource } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
 import { IronswornSettings } from './settings'
 import { capitalize } from './util'
@@ -117,4 +118,33 @@ export function attachInlineRollListeners(html: JQuery, opts?: InlineRollListene
       stat,
     })
   })
+}
+
+interface SiteFeatureRollInput {
+  theme?: IronswornItem
+  domain?: IronswornItem
+}
+
+export async function rollSiteFeature(params: SiteFeatureRollInput) {
+  if (!params.theme || !params.domain) return
+  if (params.domain.type !== 'delve-domain' || params.theme.type !== 'delve-theme') return
+
+  const domainData = params.domain.data as DelveDomainDataSource
+  const themeData = params.theme.data as DelveThemeDataSource
+
+  const roll = new Roll('1d100')
+  await roll.evaluate({ async: false })
+  if (roll.total === undefined) return
+
+  // Find the theme/domain and the matching feature
+  let item = params.domain
+  let feature = domainData.data.features.find(x => x.low <= (roll.total || 0))
+  if (!feature) {
+    item = params.theme
+    feature = themeData.data.features.find(x => x.low <= (roll.total || 0))
+  }
+
+  if (feature) {
+    return createIronswornFeatureChat({ roll, item, feature })
+  }
 }

@@ -3,6 +3,7 @@ import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
+import { FeatureOrDanger } from '../item/itemtypes'
 
 interface RollMessageParams {
   roll: Roll
@@ -188,6 +189,20 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
 
 export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', move)
+  ChatMessage.create({
+    speaker: ChatMessage.getSpeaker(),
+    content,
+  })
+}
+
+interface FeatureChatInput {
+  roll: Roll
+  item: IronswornItem
+  feature: FeatureOrDanger
+}
+
+export async function createIronswornFeatureChat(params: FeatureChatInput) {
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/delve-feature.hbs', params)
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,

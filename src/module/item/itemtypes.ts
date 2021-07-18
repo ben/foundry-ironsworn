@@ -102,7 +102,7 @@ export interface BondsetDataProperties {
 
 ///////////////////////////////
 
-interface FeatureOrDanger {
+export interface FeatureOrDanger {
   low: number
   high: number
   description: string

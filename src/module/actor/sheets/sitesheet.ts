@@ -1,7 +1,7 @@
 import { compact } from 'lodash'
 import { RANK_INCREMENTS } from '../../constants'
 import { EnhancedDataswornMove, moveDataByName } from '../../helpers/data'
-import { RollDialog } from '../../helpers/roll'
+import { RollDialog, rollSiteFeature } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
@@ -16,6 +16,12 @@ interface Data extends ActorSheet.Data<ActorSheet.Options> {
 export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   get siteData() {
     return this.actor.data as SiteDataSource
+  }
+  get theme() {
+    return this.actor.items.find((x) => x.type === 'delve-theme')
+  }
+  get domain() {
+    return this.actor.items.find((x) => x.type === 'delve-domain')
   }
 
   static get defaultOptions() {
@@ -49,8 +55,8 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   async getData() {
     const data = await super.getData()
 
-    data.theme = this.actor.items.find((x) => x.type === 'delve-theme')
-    data.domain = this.actor.items.find((x) => x.type === 'delve-domain')
+    data.theme = this.theme
+    data.domain = this.domain
     data.moves = await this.moves()
 
     return data
@@ -73,6 +79,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
     html.find('.ironsworn__builtin__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
     html.find('.ironsworn__compendium__open').on('click', (ev) => this._openCompendium.call(this, ev))
+    html.find('.ironsworn__feature__roll').on('click', (ev) => this._randomFeature.call(this, ev))
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -101,14 +108,23 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     RollDialog.show({ actor, move })
   }
 
-  async _openCompendium(ev: JQuery.ClickEvent) {
+  _openCompendium(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     const { compendium } = ev.currentTarget.dataset
     const pack = game.packs?.get(`foundry-ironsworn.${compendium}`)
     pack?.render(true)
   }
 
-  async findActor(): Promise<IronswornActor> {
+  async _randomFeature(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    return rollSiteFeature({
+      domain: this.domain,
+      theme: this.theme
+    })
+  }
+
+  findActor(): IronswornActor {
     if (game.user?.character) return game.user.character
 
     // TODO: if more than one character, prompt the user
