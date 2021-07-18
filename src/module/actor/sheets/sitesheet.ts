@@ -1,7 +1,5 @@
-import { compact } from 'lodash'
 import { RANK_INCREMENTS } from '../../constants'
-import { EnhancedDataswornMove, moveDataByName } from '../../helpers/data'
-import { RollDialog, rollSiteFeature } from '../../helpers/roll'
+import { rollSiteFeature } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
@@ -10,7 +8,6 @@ import { SiteDataSource } from '../actortypes'
 interface Data extends ActorSheet.Data<ActorSheet.Options> {
   theme?: IronswornItem
   domain?: IronswornItem
-  moves: EnhancedDataswornMove[]
 }
 
 export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
@@ -57,20 +54,8 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
     data.theme = this.theme
     data.domain = this.domain
-    data.moves = await this.moves()
 
     return data
-  }
-
-  async moves(): Promise<EnhancedDataswornMove[]> {
-    const moveNames = [
-      'Delve the Depths',
-      'Find an Opportunity',
-      'Locate Your Objective',
-      'Escape the Depths'
-    ]
-    const sparseMoves = await Promise.all(moveNames.map(moveDataByName))
-    return compact(sparseMoves)
   }
 
   activateListeners(html: JQuery) {
@@ -83,10 +68,14 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
     html.find('.ironsworn__progress__clear').on('click', (ev) => this._clearProgress.call(this, ev))
 
-    html.find('.ironsworn__builtin__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
     html.find('.ironsworn__compendium__open').on('click', (ev) => this._openCompendium.call(this, ev))
+
+    html.find('.ironsworn__delve__roll').on('click', (ev) => this._delveDepths.call(this, ev))
     html.find('.ironsworn__feature__roll').on('click', (ev) => this._randomFeature.call(this, ev))
     html.find('.ironsworn__danger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
+    html.find('.ironsworn__opportunity__roll').on('click', (ev) => this._findOpportunity.call(this, ev))
+    html.find('.ironsworn__objective__roll').on('click', (ev) => this._locateObjective.call(this, ev))
+    html.find('.ironsworn__escape__roll').on('click', (ev) => this._escapeDepths.call(this, ev))
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -107,13 +96,13 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     this.actor.update({ 'data.current': 0 })
   }
 
-  async _moveRoll(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
+  // async _moveRoll(ev: JQuery.ClickEvent) {
+  //   ev.preventDefault()
 
-    const move = await moveDataByName(ev.currentTarget.dataset.name)
-    const actor = await this.findActor()
-    RollDialog.show({ actor, move })
-  }
+  //   const move = await moveDataByName(ev.currentTarget.dataset.name)
+  //   const actor = await this.findActor()
+  //   RollDialog.show({ actor, move })
+  // }
 
   _openCompendium(ev: JQuery.ClickEvent) {
     ev.preventDefault()
@@ -122,17 +111,31 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     pack?.render(true)
   }
 
-  _randomFeature(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
+  _delveDepths(_ev: JQuery.ClickEvent) {
+    // TODO:
+  }
 
+  _randomFeature(_ev: JQuery.ClickEvent) {
     rollSiteFeature({
       domain: this.domain,
       theme: this.theme,
     })
   }
 
-  async _revealDanger(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
+  async _revealDanger(_ev: JQuery.ClickEvent) {
+    // TODO: roll on the table
+  }
+
+  async _findOpportunity(_ev: JQuery.ClickEvent) {
+    // TODO:
+  }
+
+  async _locateObjective(_ev: JQuery.ClickEvent) {
+    // TODO: progress roll
+  }
+
+  async _escapeDepths(_ev: JQuery.ClickEvent) {
+    // TODO:
   }
 
   findActor(): IronswornActor {
