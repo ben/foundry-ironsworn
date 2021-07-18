@@ -5,9 +5,13 @@
 <div style="padding: 1em; width: 100%; position: relative;" data-item="{{item.id}}">
 
   <div class="flexrow">
-    <h4 style="margin: 0;">{{item.name}}</h4>
+    <img class="profile-img nogrow" src="{{item.img}}" title="{{name}}" height="38" style="margin-right: 5px;" />
+
+    <div class="flexcol">
+      <h4 style="margin: 0;">{{item.name}}</h4>
+      <p>{{item.data.data.summary}}</p>
+    </div>
   </div>
-  <p>{{item.data.data.summary}}</p>
 
   {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
   <div class="flexrow" style="position: absolute; right: 5px; top: 5px;">
@@ -85,8 +89,7 @@
 
       <div class="flexrow boxrow">
         <div class="
-            box flexrow clickable block
-            ironsworn__feature__roll
+            box flexrow clickable block ironsworn__feature__roll
             {{#unless (and theme domain)}}disabled{{/unless}}
           " style="justify-content: center; padding: 5px;">
           <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
@@ -94,8 +97,7 @@
           </h4>
         </div>
         <div class="
-           box flexrow clickable block
-          ironsworn__danger__roll
+           box flexrow clickable block ironsworn__danger__roll
           {{#unless (and theme domain)}}disabled{{/unless}}
         " style="justify-content: center; padding: 5px;">
           <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
