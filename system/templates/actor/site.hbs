@@ -72,44 +72,43 @@
 
   <div class="flexrow nogrow" style="margin-bottom: 1em; align-items: center;">
     <i class="nogrow fa fa-dice-d6" style="padding: 5px; margin-right: 5px; flex: 0;"></i>
-    <div class="boxgroup flexrow">
-      {{#each moves}}
-      <div class="box flexrow clickable block ironsworn__builtin__move__roll" data-name="{{Name}}">
-        <h4 style="margin: 5px" title="{{Source.Name}}, p{{Source.Page}}">
-          {{localize (concat 'IRONSWORN.MoveContents.' Name '.title')}}
-        </h4>
+    <div class="boxgroup">
+
+      <div class="flexrow boxrow">
+        {{#each moves}}
+        <div class="box flexrow clickable block ironsworn__builtin__move__roll" data-name="{{Name}}">
+          <h4 style="margin: 5px" title="{{Source.Name}}, p{{Source.Page}}">
+            {{localize (concat 'IRONSWORN.MoveContents.' Name '.title')}}
+          </h4>
+        </div>
+        {{/each}}
       </div>
-      {{/each}}
+
+      <div class="flexrow boxrow">
+        <div class="
+            box flexrow clickable block
+            ironsworn__feature__roll
+            {{#unless (and theme domain)}}disabled{{/unless}}
+          " style="justify-content: center; padding: 5px;">
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.Feature'}}
+          </h4>
+        </div>
+        <div class="
+           box flexrow clickable block
+          ironsworn__danger__roll
+          {{#unless (and theme domain)}}disabled{{/unless}}
+        " style="justify-content: center; padding: 5px;">
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Reveal a Danger.title'}}
+          </h4>
+        </div>
+
+      </div>
     </div>
   </div>
 
   <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em;">
-    <div class="boxrow">
-      <div class="
-          box flexrow nogrow clickable block
-          ironsworn__feature__roll
-          {{#unless (and theme domain)}}disabled{{/unless}}
-        " style="justify-content: center; padding: 5px;">
-        <i class="nogrow fa fa-dice-d6" style="padding: 5px; margin-right: 5px; flex: 0;"></i>
-        <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
-          {{localize 'IRONSWORN.Feature'}}
-        </h4>
-      </div>
-    </div>
-
-    <div class="boxrow">
-      <div class="
-           box flexrow nogrow clickable block
-          ironsworn__danger__roll
-          {{#unless (and theme domain)}}disabled{{/unless}}
-        " style="justify-content: center; padding: 5px;">
-        <i class="nogrow fa fa-dice-d6" style="padding: 5px; margin-right: 5px; flex: 0;"></i>
-        <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
-          {{localize 'IRONSWORN.MoveContents.Reveal a Danger.title'}}
-        </h4>
-      </div>
-    </div>
-
     <div class="flexrow boxrow nogrow">
       <div class="flexcol box">
         {{>subcard titlekey='IRONSWORN.Theme' item=theme compendiumkey='ironsworndelvethemes'}}
