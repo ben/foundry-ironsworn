@@ -123,7 +123,7 @@ export async function importFromDatasworn() {
       },
     }
 
-    let low = 1
+    let low = 21
     for (const feature of rawDomain.Features) {
       domainData.data.features.push({
         low,
@@ -132,7 +132,7 @@ export async function importFromDatasworn() {
       })
       low = feature.Chance + 1
     }
-    low = 1
+    low = 31
     for (const danger of rawDomain.Dangers) {
       domainData.data.dangers.push({
         low,
