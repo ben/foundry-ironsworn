@@ -1,8 +1,8 @@
 {{#*inline "subcard"}}
 
-{{#if item}} {{! Live item view }}
+<div style="padding: 1em; width: 100%; position: relative;">
 
-<div style="padding: 1em; width: 100%; position: relative;" data-item="{{item.id}}">
+  {{#if item}} {{! Live item view }}
 
   <div class="flexrow">
     <img class="profile-img nogrow" src="{{item.img}}" title="{{name}}" height="38" style="margin-right: 5px;" />
@@ -25,21 +25,19 @@
     </div>
   </div>
   {{/if}}
-</div>
 
-{{else}} {{! Prompt to drag an item in }}
+  {{else}} {{! Prompt to drag an item in }}
 
-<div class="flexcol">
-  <h4>{{localize titlekey}}</h4>
-  <div class="flexrow">
-    <div class="inset clickable block ironsworn__compendium__open" style="padding: 5px 2em;"
+  <div class="flexcol">
+    <h4 style="margin: 0;">{{localize titlekey}}</h4>
+    <p class="inset clickable block ironsworn__compendium__open" style="padding: 0 2em;"
       data-compendium="{{compendiumkey}}">
-      <p>{{localize 'IRONSWORN.OpenCompendium'}}</p>
-    </div>
+      {{localize 'IRONSWORN.OpenCompendium'}}
+    </p>
   </div>
-</div>
 
-{{/if}}
+  {{/if}}
+</div>
 
 {{/inline}}
 
