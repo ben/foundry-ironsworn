@@ -1,3 +1,4 @@
+import { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import { IronswornActor } from '../actor/actor'
 import { IronswornSettings } from '../helpers/settings'
 
@@ -50,11 +51,15 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
   }
 
-  async _createWithFolder(name: string, type: string, img: string) {
-    const data: any = {
+  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared', img: string) {
+    const data: ActorDataConstructorData & Record<string, any> = {
       name,
       img,
       type,
+      token: {
+        displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
+        actorLink: true,
+      },
       folder: this.options.folder || undefined,
     }
     await IronswornActor.create(data, { renderSheet: true })
