@@ -25,7 +25,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'site', `theme-${IronswornSettings.theme}`],
       width: 700,
-      height: 700,
+      height: 360,
       template: 'systems/foundry-ironsworn/templates/actor/site.hbs',
     })
   }
