@@ -63,7 +63,13 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   }
 
   async moves(): Promise<EnhancedDataswornMove[]> {
-    const sparseMoves = await Promise.all([moveDataByName('Delve the Depths'), moveDataByName('Find an Opportunity'), moveDataByName('Reveal a Danger'), moveDataByName('Locate Your Objective'), moveDataByName('Escape the Depths')])
+    const moveNames = [
+      'Delve the Depths',
+      'Find an Opportunity',
+      'Locate Your Objective',
+      'Escape the Depths'
+    ]
+    const sparseMoves = await Promise.all(moveNames.map(moveDataByName))
     return compact(sparseMoves)
   }
 
@@ -80,6 +86,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     html.find('.ironsworn__builtin__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
     html.find('.ironsworn__compendium__open').on('click', (ev) => this._openCompendium.call(this, ev))
     html.find('.ironsworn__feature__roll').on('click', (ev) => this._randomFeature.call(this, ev))
+    html.find('.ironsworn__danger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -115,13 +122,17 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     pack?.render(true)
   }
 
-  async _randomFeature(ev: JQuery.ClickEvent) {
+  _randomFeature(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    return rollSiteFeature({
+    rollSiteFeature({
       domain: this.domain,
-      theme: this.theme
+      theme: this.theme,
     })
+  }
+
+  async _revealDanger(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
   }
 
   findActor(): IronswornActor {
