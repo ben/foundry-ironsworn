@@ -331,8 +331,8 @@
           "Strong": "<p>On a <strong>strong hit</strong>, choose one.</p>\n<ul>\n<li>Shake it off: If your health is greater than 0, suffer -1 momentum in exchange for +1 health.</li>\n<li>Embrace the pain: Take +1 momentum.</li>\n</ul>\n",
           "Weak": "<p>On a <strong>weak hit</strong>, you press on.</p>\n",
           "Miss": "<p>On a <strong>miss</strong>, also suffer -1 momentum. If you are at 0 health, you must mark wounded or maimed (if currently unmarked) or roll on the following table.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-10</td>\n<td>The harm is mortal. <em>Face Death</em>.</td>\n</tr>\n<tr>\n<td>11-20</td>\n<td>You are dying. You need to Heal within an hour or two, or <em>Face Death.</em></td>\n</tr>\n<tr>\n<td>21-35</td>\n<td>You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to a foe not inclined to show mercy, <em>Face Death</em>.</td>\n</tr>\n<tr>\n<td>36-50</td>\n<td>You are reeling and fighting to stay conscious. If you engage in any vigorous activity (such as running or fighting) before taking a breather for a few minutes, roll on this table again (before resolving the other move).</td>\n</tr>\n<tr>\n<td>51-00</td>\n<td>You are battered but still standing.</td>\n</tr>\n</tbody></table>\n",
-          "oracles": {
-            "Endure Harm": {
+          "oracles": [
+            {
               "name": "Endure Harm",
               "table": [
                 {
@@ -362,7 +362,7 @@
                 }
               ]
             }
-          }
+          ]
         },
         {
           "Name": "Face Death",
@@ -407,8 +407,8 @@
           "Strong": "<p>On a <strong>strong hit</strong>, choose one.</p>\n<ul>\n<li>Shake it off: If your spirit is greater than 0, suffer -1 momentum in exchange for +1 spirit</li>\n<li>Embrace the darkness: Take +1 momentum</li>\n</ul>\n",
           "Weak": "<p>On a <strong>weak hit</strong>, you press on.</p>\n",
           "Miss": "<p>On a <strong>miss</strong>, also suffer -1 momentum. If you are at 0 spirit, you must mark shaken or corrupted (if currently unmarked) or roll on the following table.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-10</td>\n<td>You are overwhelmed. Face Desolation.</td>\n</tr>\n<tr>\n<td>11-25</td>\n<td>You give up. <em>Forsake Your Vow</em> (if possible, one relevant to your current crisis).</td>\n</tr>\n<tr>\n<td>26-50</td>\n<td>You give in to a fear or compulsion, and act against your better instincts.</td>\n</tr>\n<tr>\n<td>51-00</td>\n<td>You persevere.</td>\n</tr>\n</tbody></table>\n",
-          "oracles": {
-            "Endure Stress": {
+          "oracles": [
+            {
               "name": "Endure Stress",
               "table": [
                 {
@@ -433,7 +433,7 @@
                 }
               ]
             }
-          }
+          ]
         },
         {
           "Name": "Face Desolation",
@@ -532,8 +532,8 @@
             "Page": "105"
           },
           "Description": "<p>When <strong>you suffer the outcome of a move</strong>, choose one.</p>\n<ul>\n<li>Make the most obvious negative outcome happen.</li>\n<li>Envision two negative outcomes. Rate one as ‘likely’, and <em>Ask the Oracle</em> using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.</li>\n<li>Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-2</td>\n<td>Roll again and apply that result but make it worse. If you roll this result yet again, think of something dreadful that changes the course of your quest (<em>Ask the Oracle</em> if unsure) and make it happen.</td>\n</tr>\n<tr>\n<td>3-5</td>\n<td>A person or community you trusted loses faith in you, or acts against you.</td>\n</tr>\n<tr>\n<td>6-9</td>\n<td>A person or community you care about is exposed to danger.</td>\n</tr>\n<tr>\n<td>10-16</td>\n<td>You are separated from something or someone.</td>\n</tr>\n<tr>\n<td>17-23</td>\n<td>Your action has an unintended effect.</td>\n</tr>\n<tr>\n<td>24-32</td>\n<td>Something of value is lost or destroyed.</td>\n</tr>\n<tr>\n<td>33-41</td>\n<td>The current situation worsens.</td>\n</tr>\n<tr>\n<td>42-50</td>\n<td>A new danger or foe is revealed.</td>\n</tr>\n<tr>\n<td>51-59</td>\n<td>It causes a delay or puts you at a disadvantage.</td>\n</tr>\n<tr>\n<td>60-68</td>\n<td>It is harmful.</td>\n</tr>\n<tr>\n<td>69-76</td>\n<td>It is stressful.</td>\n</tr>\n<tr>\n<td>77-85</td>\n<td>A surprising development complicates your quest.</td>\n</tr>\n<tr>\n<td>86-90</td>\n<td>It wastes resources.</td>\n</tr>\n<tr>\n<td>91-94</td>\n<td>It forces you to act against your best intentions.</td>\n</tr>\n<tr>\n<td>95-98</td>\n<td>A friend, companion, or ally is put in harm’s way (or you are, if alone).</td>\n</tr>\n<tr>\n<td>99-00</td>\n<td>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</td>\n</tr>\n</tbody></table>\n",
-          "oracles": {
-            "Pay the Price": {
+          "oracles": [
+            {
               "name": "Pay the Price",
               "table": [
                 {
@@ -618,7 +618,7 @@
                 }
               ]
             }
-          }
+          ]
         },
         {
           "Name": "Ask the Oracle",
@@ -656,8 +656,8 @@
           "Strong": "<p>On a <strong>strong hit</strong>, you delve deeper. Mark progress and <em>Find an Opportunity</em>. </p>\n",
           "Weak": "<p>On a <strong>weak hit</strong>, roll on the following table according to your stat.</p>\n<table>\n<thead>\n<tr>\n<th>Edge</th>\n<th>Shadow</th>\n<th>Wits</th>\n<th>Weak Hit Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-45</td>\n<td>1-30</td>\n<td>1-40</td>\n<td>Mark progress and <em>Reveal a Danger</em>.</td>\n</tr>\n<tr>\n<td>46-65</td>\n<td>31-65</td>\n<td>41-55</td>\n<td>Mark progress.</td>\n</tr>\n<tr>\n<td>66-75</td>\n<td>66-90</td>\n<td>56-80</td>\n<td>Choose one: Mark progress or <em>Find an Opportunity</em>.</td>\n</tr>\n<tr>\n<td>76-80</td>\n<td>91-99</td>\n<td>81-99</td>\n<td>Take both: Mark progress and <em>Find an Opportunity</em>.</td>\n</tr>\n<tr>\n<td>81-00</td>\n<td>00</td>\n<td>00</td>\n<td>Mark progress twice and <em>Reveal a Danger</em>.</td>\n</tr>\n</tbody></table>\n",
           "Miss": "<p>On a <strong>miss</strong>, <em>Reveal a Danger</em>.</p>\n",
-          "oracles": {
-            "Delve the Depths - Edge": {
+          "oracles": [
+            {
               "name": "Delve the Depths - Edge",
               "stat": "edge",
               "table": [
@@ -688,7 +688,7 @@
                 }
               ]
             },
-            "Delve the Depths - Shadow": {
+            {
               "name": "Delve the Depths - Shadow",
               "stat": "shadow",
               "table": [
@@ -719,7 +719,7 @@
                 }
               ]
             },
-            "Delve the Depths - Wits": {
+            {
               "name": "Delve the Depths - Wits",
               "stat": "wits",
               "table": [
@@ -750,7 +750,7 @@
                 }
               ]
             }
-          }
+          ]
         },
         {
           "Name": "Find an Opportunity",
@@ -759,8 +759,8 @@
             "Page": "30"
           },
           "Description": "<p>When <strong>you encounter a helpful situation or feature within a site</strong>, roll on the following table. If you are making this move as a result of a strong hit on <em>Delve the Depths</em>, you may pick or envision an opportunity instead of rolling.</p>\n<p>Then, choose one.</p>\n<ul>\n<li>Gain insight or prepare: Take +1 momentum.</li>\n<li>Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. When you do, add +1 and take +1 momentum on a hit.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-25</td>\n<td>The terrain favors you, or you find a hidden path.</td>\n</tr>\n<tr>\n<td>26-45</td>\n<td>An aspect of the history or nature of this place is revealed.</td>\n</tr>\n<tr>\n<td>46-57</td>\n<td>You locate a secure area.</td>\n</tr>\n<tr>\n<td>58-68</td>\n<td>A clue offers insight or direction.</td>\n</tr>\n<tr>\n<td>69-78</td>\n<td>You get the drop on a denizen.</td>\n</tr>\n<tr>\n<td>79-86</td>\n<td>This area provides an opportunity to scavenge, forage, or hunt.</td>\n</tr>\n<tr>\n<td>87-90</td>\n<td>You locate an interesting or helpful object.</td>\n</tr>\n<tr>\n<td>91-94</td>\n<td>You are alerted to a potential threat.</td>\n</tr>\n<tr>\n<td>95-98</td>\n<td>You encounter a denizen who might support you.</td>\n</tr>\n<tr>\n<td>99-00</td>\n<td>You encounter a denizen in need of help.</td>\n</tr>\n</tbody></table>\n",
-          "oracles": {
-            "Find an Opportunity": {
+          "oracles": [
+            {
               "name": "Find an Opportunity",
               "table": [
                 {
@@ -815,7 +815,7 @@
                 }
               ]
             }
-          }
+          ]
         },
         {
           "Name": "Reveal a Danger",
@@ -824,8 +824,8 @@
             "Page": "34"
           },
           "Description": "<p>When <strong>you encounter a risky situation within a site</strong>, envision the danger or roll on the following table.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-30</td>\n<td>Check the theme card.</td>\n</tr>\n<tr>\n<td>31-45</td>\n<td>Check the domain card.</td>\n</tr>\n<tr>\n<td>46-57</td>\n<td>You encounter a hostile denizen.</td>\n</tr>\n<tr>\n<td>58-68</td>\n<td>You face an environmental or architectural hazard.</td>\n</tr>\n<tr>\n<td>69-76</td>\n<td>A discovery undermines or complicates your quest.</td>\n</tr>\n<tr>\n<td>77-79</td>\n<td>You confront a harrowing situation or sensation.</td>\n</tr>\n<tr>\n<td>80-82</td>\n<td>You face the consequences of an earlier choice or approach.</td>\n</tr>\n<tr>\n<td>83-85</td>\n<td>Your way is blocked or trapped.</td>\n</tr>\n<tr>\n<td>86-88</td>\n<td>A resource is diminished, broken, or lost.</td>\n</tr>\n<tr>\n<td>89-91</td>\n<td>You face a perplexing mystery or tough choice.</td>\n</tr>\n<tr>\n<td>92-94</td>\n<td>You lose your way or are delayed.</td>\n</tr>\n<tr>\n<td>95-00</td>\n<td>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</td>\n</tr>\n</tbody></table>\n",
-          "oracles": {
-            "Reveal a Danger": {
+          "oracles": [
+            {
               "name": "Reveal a Danger",
               "table": [
                 {
@@ -890,7 +890,7 @@
                 }
               ]
             },
-            "Reveal a Danger Alternate": {
+            {
               "name": "Reveal a Danger Alternate",
               "table": [
                 {
@@ -945,7 +945,7 @@
                 }
               ]
             }
-          }
+          ]
         },
         {
           "Name": "Check Your Gear",
@@ -1031,8 +1031,8 @@
             "Page": "154"
           },
           "Description": "<p>When <strong>you give ground to a threat through inaction, failure, or delay</strong>, roll on the table below and envision how the change manifests in your world (<em>Ask the Oracle</em> if unsure). </p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-30</td>\n<td>The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If you succeed, <em>Reach a Milestone</em>. Otherwise, mark menace.</td>\n</tr>\n<tr>\n<td>31-70</td>\n<td>The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.</td>\n</tr>\n<tr>\n<td>71-00</td>\n<td>The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.</td>\n</tr>\n</tbody></table>\n<p>On a match, this development also exposes a surprising aspect of the threat’s plan or nature.</p>\n<p>If <strong>you mark the last box on the threat’s menace track</strong>, the threat achieves its goal, or the final dire outcome occurs. You must <em>Forsake Your Vow</em>.</p>\n",
-          "oracles": {
-            "Advance a Threat": {
+          "oracles": [
+            {
               "name": "Advance a Threat",
               "table": [
                 {
@@ -1052,7 +1052,7 @@
                 }
               ]
             }
-          }
+          ]
         },
         {
           "Name": "Take a Hiatus",

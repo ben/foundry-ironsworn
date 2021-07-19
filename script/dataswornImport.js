@@ -99,20 +99,24 @@ async function doit() {
 
       const oracles = moveOraclesJson.Oracles.filter((x) => x.Move === move.Name)
       if (oracles.length > 0) {
-        move.oracles = {}
-        for (const oracle of oracles) {
+        move.oracles = oracles.map(oracle => {
           const stat = (oracle.Name.match(/ - (.*)$/) || [])[1]?.toLowerCase()
-          move.oracles[oracle.Name] = { name: oracle.Name, stat, table: [] }
+          const obj = {
+            name: oracle.Name,
+            stat,
+            table: []
+          }
           let low = 1
           for (const entry of oracle['Oracle Table']) {
-            move.oracles[oracle.Name].table.push({
+            obj.table.push({
               low,
               high: entry.Chance,
               description: marked.parseInline(entry.Description),
             })
             low = entry.Chance + 1
           }
-        }
+          return obj
+        })
       }
 
       i18nMoves.push(move)
