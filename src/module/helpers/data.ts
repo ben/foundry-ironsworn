@@ -12,6 +12,11 @@ export interface EnhancedDataswornMove {
   Strong: string | undefined
   Weak: string | undefined
   Miss: string | undefined
+  oracles?: {
+    name: string
+    stat?: string
+    table: {low: number, high: number, description: string}[]
+  }[]
 }
 
 interface EnhancedDataswornMoveCategory {

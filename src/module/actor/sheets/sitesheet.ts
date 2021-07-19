@@ -1,3 +1,4 @@
+import { HIT_TYPE } from '../../chat/rolls'
 import { RANK_INCREMENTS } from '../../constants'
 import { moveDataByName } from '../../helpers/data'
 import { RollDialog, rollSiteFeature } from '../../helpers/roll'
@@ -117,9 +118,20 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     RollDialog.show({
       move,
       actor,
-      callback: (hitType, stat) => {
-        console.log({hitType, stat});
+      callback: async (hitType, stat) => {
+        if (hitType != HIT_TYPE.WEAK) return
 
+        const oracleTable = (move?.oracles || []).find(x => x.stat === stat)
+        if (!oracleTable) return
+
+        const roll = new Roll('1d100')
+        await roll.evaluate({async: true})
+        if (roll.total == undefined) return
+        const total = roll.total
+
+        const entry = oracleTable.table.find(x => x.low <= total && x.high >= total)
+        if (!entry) return
+        console.log({entry})
       }
     })
   }
