@@ -3,23 +3,24 @@ const fetch = require('node-fetch')
 const fs = require('fs/promises')
 const util = require('util')
 
-function renderHtml (text) {
-  return marked(
-    text.replace(
-      /(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi,
-      '((rollplus $2))'
-    ),
-    { gfm: true }
-  )
+function renderHtml(text) {
+  return marked(text.replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'), { gfm: true })
 }
 
-async function doit () {
+async function dataswornJson(name) {
+  const resp = await fetch(`https://raw.githubusercontent.com/rsek/datasworn/master/${name}.json`)
+  return resp.json()
+}
+
+async function writeLocal(name, obj) {
+  return fs.writeFile(`system/assets/${name}.json`, JSON.stringify(obj, null, 2) + '\n')
+}
+
+async function doit() {
   // Assets
   console.log('Assets:')
   console.log('  Fetching')
-  const assetsJson = await fetch(
-    'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_assets.json'
-  ).then(x => x.json())
+  const assetsJson = await dataswornJson('ironsworn_assets')
 
   const assets = []
   for (const asset of assetsJson.Assets) {
@@ -27,7 +28,7 @@ async function doit () {
       enabled: false,
       name: '',
       max: 0,
-      current: 0
+      current: 0,
     }
     if (asset['Asset Track']) {
       track.enabled = true
@@ -37,10 +38,10 @@ async function doit () {
     }
 
     const exclusiveOptions = []
-    for (const option of (asset.MultiFieldAssetTrack?.Fields || [])) {
+    for (const option of asset.MultiFieldAssetTrack?.Fields || []) {
       exclusiveOptions.push({
         name: option.ActiveText,
-        selected: option.IsActive
+        selected: option.IsActive,
       })
     }
 
@@ -48,57 +49,83 @@ async function doit () {
       name: `${asset['Asset Type']} / ${asset.Name}`,
       data: {
         description: asset.Description,
-        fields: (asset['Input Fields'] || []).map(x => ({
+        fields: (asset['Input Fields'] || []).map((x) => ({
           name: x,
-          value: ''
+          value: '',
         })),
-        abilities: asset.Abilities.map(x => {
+        abilities: asset.Abilities.map((x) => {
           const description = x.Name ? `**${x.Name}:** ${x.Text}` : x.Text
           return {
             enabled: x.Enabled || false,
-            description: renderHtml(description)
+            description: renderHtml(description),
           }
         }),
         track,
         exclusiveOptions,
-      }
+      },
     })
   }
   console.log('  Writing')
-  await fs.writeFile('system/assets/assets.json', JSON.stringify(assets, null, 2) + '\n')
+  await writeLocal('assets', assets)
 
   // Moves
   console.log('Moves:')
   console.log('  Fetching')
-  const movesJson = await fetch(
-    'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_moves.json'
-    ).then(x => x.json())
+  const movesJson = await dataswornJson('ironsworn_moves')
+  const moveOraclesJson = await dataswornJson('ironsworn_move_oracles')
 
   // Just grab Datasworn, but split up the text into more structure
   const i18nMoves = []
   for (const category of movesJson.Categories) {
     for (let move of category.Moves) {
-      let [_, Description, Strong, Weak, Miss] = move.Text.match(
-        /([\s\S]+)(On a \*\*strong hit\*\*, [\s\S]+)(On a \*\*weak hit\*\*, [\s\S]+)(On a \*\*miss\*\*, [\s\S]+)/
-      ) || []
-      if (!Description) Description = move.Text
+      const resultRegex = /([\s\S]+)(On a \*\*strong hit\*\*, [\s\S]+)(On a \*\*weak hit\*\*, [\s\S]+)(On a \*\*miss\*\*, [\s\S]+)/
+      let [_, description, strong, weak, miss] = move.Text.match(resultRegex) || []
+
+      // Fixup for one specific move; the table is in the wrong place
+      if (move.Name === 'Delve the Depths') {
+        const tableRegex = /(Edge\s+\|\s+Shadow[\s\S]+)/
+        const table = miss.match(tableRegex)[1]
+        miss = miss.replace(tableRegex, '')
+        weak += table
+      }
+
+      if (!description) description = move.Text
       delete move.Text
 
-      move.Description = marked(Description || '') || undefined,
-      move.Strong = marked(Strong || '') || undefined,
-      move.Weak = marked(Weak || '') || undefined,
-      move.Miss = marked(Miss || '') || undefined,
+      move.Description = marked(description || '') || undefined
+      move.Strong = marked(strong || '') || undefined
+      move.Weak = marked(weak || '') || undefined
+      move.Miss = marked(miss || '') || undefined
+
+      const oracles = moveOraclesJson.Oracles.filter((x) => x.Move === move.Name)
+      if (oracles.length > 0) {
+        move.oracles = {}
+        for (const oracle of oracles) {
+          const stat = (oracle.Name.match(/ - (.*)$/) || [])[1]?.toLowerCase()
+          move.oracles[oracle.Name] = { name: oracle.Name, stat, table: [] }
+          let low = 1
+          for (const entry of oracle['Oracle Table']) {
+            move.oracles[oracle.Name].table.push({
+              low,
+              high: entry.Chance,
+              description: marked.parseInline(entry.Description),
+            })
+            low = entry.Chance + 1
+          }
+        }
+      }
+
       i18nMoves.push(move)
     }
   }
   console.log('  Writing')
-  await fs.writeFile('system/assets/moves.json', JSON.stringify(movesJson, null, 2) + '\n')
+  await writeLocal('moves', movesJson)
 
   // Also write descriptions to en lang file
   const en = JSON.parse(await fs.readFile('system/lang/en.json'))
   en.IRONSWORN.MoveContents ||= {}
   for (const move of i18nMoves) {
-    en.IRONSWORN.MoveContents[move.Name] = {
+    const obj = {
       ...en.IRONSWORN.MoveContents[move.Name],
       title: move.Name,
       description: move.Description,
@@ -106,18 +133,28 @@ async function doit () {
       weak: move.Weak,
       miss: move.Miss,
     }
+    if (move.oracles) {
+      obj.oracles = {}
+      for (const oracle of Object.values(move.oracles)) {
+        obj.oracles[oracle.name] = {}
+        let i = 1
+        for (const entry of oracle.table) {
+          obj.oracles[oracle.name][`entry${i}`] = entry.description
+          i++
+        }
+      }
+    }
+    en.IRONSWORN.MoveContents[move.Name] = obj
   }
 
   // Delve: themes
   console.log('Delve themes:')
   console.log('  Fetching')
-  const delveThemesJson = await fetch(
-    'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_delve_themes.json'
-  ).then(x => x.json())
+  const delveThemesJson = await dataswornJson('ironsworn_delve_themes')
 
   // Write local version
   console.log('  Writing')
-  await fs.writeFile('system/assets/delve-themes.json', JSON.stringify(delveThemesJson, null, 2) + '\n')
+  await writeLocal('delve-themes', delveThemesJson)
 
   // Add text to en.json
   en.IRONSWORN.ThemeContents ||= {}
@@ -130,23 +167,21 @@ async function doit () {
     }
     for (let i = 0; i < theme.Features.length; i++) {
       const feature = theme.Features[i]
-      en.IRONSWORN.ThemeContents[theme.Name][`feature${i+1}`] = feature.Description
+      en.IRONSWORN.ThemeContents[theme.Name][`feature${i + 1}`] = feature.Description
     }
     for (let i = 0; i < theme.Dangers.length; i++) {
       const danger = theme.Dangers[i]
-      en.IRONSWORN.ThemeContents[theme.Name][`danger${i+1}`] = danger.Description
+      en.IRONSWORN.ThemeContents[theme.Name][`danger${i + 1}`] = danger.Description
     }
   }
 
   console.log('Delve domains:')
   console.log('  Fetching')
-  const delveDomainsJson = await fetch(
-    'https://raw.githubusercontent.com/rsek/datasworn/master/ironsworn_delve_domains.json'
-  ).then(x => x.json())
+  const delveDomainsJson = await dataswornJson('ironsworn_delve_domains')
 
   // Write local version
   console.log('  Writing')
-  await fs.writeFile('system/assets/delve-domains.json', JSON.stringify(delveDomainsJson, null, 2) + '\n')
+  await writeLocal('delve-domains', delveDomainsJson)
 
   // Add text to en.json
   en.IRONSWORN.DomainContents ||= {}
@@ -159,11 +194,11 @@ async function doit () {
     }
     for (let i = 0; i < domain.Features.length; i++) {
       const feature = domain.Features[i]
-      en.IRONSWORN.DomainContents[domain.Name][`feature${i+1}`] = feature.Description
+      en.IRONSWORN.DomainContents[domain.Name][`feature${i + 1}`] = feature.Description
     }
     for (let i = 0; i < domain.Dangers.length; i++) {
       const danger = domain.Dangers[i]
-      en.IRONSWORN.DomainContents[domain.Name][`danger${i+1}`] = danger.Description
+      en.IRONSWORN.DomainContents[domain.Name][`danger${i + 1}`] = danger.Description
     }
   }
 
@@ -173,7 +208,7 @@ async function doit () {
 
 doit().then(
   () => process.exit(),
-  err => {
+  (err) => {
     console.error(err)
     process.exit(-1)
   }
