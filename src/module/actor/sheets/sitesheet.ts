@@ -1,5 +1,6 @@
 import { RANK_INCREMENTS } from '../../constants'
-import { rollSiteFeature } from '../../helpers/roll'
+import { moveDataByName } from '../../helpers/data'
+import { RollDialog, rollSiteFeature } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
@@ -100,19 +101,27 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   //   ev.preventDefault()
 
   //   const move = await moveDataByName(ev.currentTarget.dataset.name)
-  //   const actor = await this.findActor()
-  //   RollDialog.show({ actor, move })
+  //   const actor = this.findActor()
+    // RollDialog.show({ actor, move })
   // }
 
   _openCompendium(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
     const { compendium } = ev.currentTarget.dataset
     const pack = game.packs?.get(`foundry-ironsworn.${compendium}`)
     pack?.render(true)
   }
 
-  _delveDepths(_ev: JQuery.ClickEvent) {
-    // TODO:
+  async _delveDepths(_ev: JQuery.ClickEvent) {
+    const move = await moveDataByName('Delve the Depths')
+    const actor = this.findActor()
+    RollDialog.show({
+      move,
+      actor,
+      callback: (hitType, stat) => {
+        console.log({hitType, stat});
+
+      }
+    })
   }
 
   _randomFeature(_ev: JQuery.ClickEvent) {

@@ -1,5 +1,5 @@
 import { IronswornActor } from '../actor/actor'
-import { createIronswornChatRoll, createIronswornFeatureChat, createIronswornMoveChat } from '../chat/rolls'
+import { createIronswornChatRoll, createIronswornFeatureChat, createIronswornMoveChat, HIT_TYPE } from '../chat/rolls'
 import { IronswornItem } from '../item/item'
 import { DelveDomainDataSource, DelveThemeDataSource } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
@@ -12,6 +12,7 @@ interface RollDialogOptions {
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number
+  callback?: (result: HIT_TYPE, stat?: string) => any
 }
 
 export class RollDialog extends Dialog {

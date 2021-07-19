@@ -13,6 +13,7 @@ interface RollMessageParams {
   stat?: string
   bonus?: number
   progress?: IronswornItem
+  callback?: (result: HIT_TYPE, stat?: string) => any
 }
 
 function actionRoll(roll: any): Roll {
@@ -51,7 +52,7 @@ function calculateDieTotals(roll: Roll): DieTotals {
   }
 }
 
-enum HIT_TYPE {
+export enum HIT_TYPE {
   MISS = 'MISS',
   WEAK = 'WEAK',
   STRONG = 'STRONG',
@@ -185,6 +186,8 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   const cls = CONFIG.ChatMessage.documentClass
   const message = await cls.create(messageData as any, {})
   if (message) message.move = params.move
+
+  if (params.callback) params.callback(hitType, params.stat)
 }
 
 export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
