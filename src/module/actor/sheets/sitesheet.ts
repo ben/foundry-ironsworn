@@ -4,11 +4,17 @@ import { RollDialog, rollSiteFeature } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
-import { SiteDataSource } from '../actortypes'
+import { DenizenSlot, SiteDataSource } from '../actortypes'
+
+interface Denizen {
+  denizen: DenizenSlot
+  idx: number
+}
 
 interface Data extends ActorSheet.Data<ActorSheet.Options> {
   theme?: IronswornItem
   domain?: IronswornItem
+  denizenMatrix: Denizen[][]
 }
 
 export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
@@ -26,8 +32,9 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'site', `theme-${IronswornSettings.theme}`],
       width: 700,
-      height: 600,
+      height: 520,
       template: 'systems/foundry-ironsworn/templates/actor/site.hbs',
+      resizable: false,
     })
   }
 
@@ -56,6 +63,14 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     data.theme = this.theme
     data.domain = this.domain
 
+    // Layout indexes for denizens
+    const denizenAt = (idx) => ({ denizen: this.siteData.data.denizens[idx], idx })
+    data.denizenMatrix = [
+      [denizenAt(0), denizenAt(1), denizenAt(2), denizenAt(3)],
+      [denizenAt(4), denizenAt(5), denizenAt(6), denizenAt(7)],
+      [denizenAt(8), denizenAt(9), denizenAt(10), denizenAt(11)],
+    ]
+
     return data
   }
 
@@ -73,6 +88,8 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
     html.find('.ironsworn__feature__roll').on('click', (ev) => this._randomFeature.call(this, ev))
     html.find('.ironsworn__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
+
+    html.find('.ironsworn__denizen__name').on('blur', (ev) => this._setDenizenName.call(this, ev))
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -100,7 +117,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   }
 
   async _moveRoll(ev: JQuery.ClickEvent) {
-    const {move: movename} = ev.currentTarget.dataset
+    const { move: movename } = ev.currentTarget.dataset
     const move = await moveDataByName(movename)
     const actor = this.findActor()
     RollDialog.show({ move, actor })
@@ -111,6 +128,14 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
       domain: this.domain,
       theme: this.theme,
     })
+  }
+
+  _setDenizenName(ev: JQuery.BlurEvent) {
+    const val = $(ev.currentTarget).val()?.toString() || ''
+    const idx = parseInt(ev.target.dataset.idx)
+    const { denizens } = this.siteData.data
+    denizens[idx].description = val
+    this.actor.update({ data: { denizens } }, { render: false })
   }
 
   findActor(): IronswornActor {
