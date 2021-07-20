@@ -71,12 +71,8 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
     html.find('.ironsworn__compendium__open').on('click', (ev) => this._openCompendium.call(this, ev))
 
-    html.find('.ironsworn__delve__roll').on('click', (ev) => this._delveDepths.call(this, ev))
     html.find('.ironsworn__feature__roll').on('click', (ev) => this._randomFeature.call(this, ev))
-    html.find('.ironsworn__danger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
-    html.find('.ironsworn__opportunity__roll').on('click', (ev) => this._findOpportunity.call(this, ev))
-    html.find('.ironsworn__objective__roll').on('click', (ev) => this._locateObjective.call(this, ev))
-    html.find('.ironsworn__escape__roll').on('click', (ev) => this._escapeDepths.call(this, ev))
+    html.find('.ironsworn__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -103,8 +99,9 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     pack?.render(true)
   }
 
-  async _delveDepths(_ev: JQuery.ClickEvent) {
-    const move = await moveDataByName('Delve the Depths')
+  async _moveRoll(ev: JQuery.ClickEvent) {
+    const {move: movename} = ev.currentTarget.dataset
+    const move = await moveDataByName(movename)
     const actor = this.findActor()
     RollDialog.show({ move, actor })
   }
@@ -114,22 +111,6 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
       domain: this.domain,
       theme: this.theme,
     })
-  }
-
-  async _revealDanger(_ev: JQuery.ClickEvent) {
-    // TODO: roll on the table
-  }
-
-  async _findOpportunity(_ev: JQuery.ClickEvent) {
-    // TODO:
-  }
-
-  async _locateObjective(_ev: JQuery.ClickEvent) {
-    // TODO: progress roll
-  }
-
-  async _escapeDepths(_ev: JQuery.ClickEvent) {
-    // TODO:
   }
 
   findActor(): IronswornActor {
