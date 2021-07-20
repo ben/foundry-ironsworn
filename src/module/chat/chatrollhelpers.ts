@@ -210,6 +210,8 @@ export async function createIronswornFeatureChat(params: FeatureChatInput) {
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    roll: params.roll,
   } as any)
 }
 
