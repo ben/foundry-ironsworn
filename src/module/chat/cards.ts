@@ -1,9 +1,11 @@
-import { EnhancedDataswornMove } from '../helpers/data'
+import { capitalize } from 'lodash'
+import { moveDataByName } from '../helpers/data'
+import { MoveContentCallbacks } from './movecontentcallbacks'
+import { HIT_TYPE } from './chatrollhelpers'
 
 export class IronswornChatCard {
   id?: string | null
   roll?: Roll | null
-  move?: EnhancedDataswornMove
 
   constructor(message: ChatMessage, html: JQuery) {
     this.updateBinding(message, html)
@@ -17,7 +19,6 @@ export class IronswornChatCard {
     // Do not store html here
     this.id = message.id
     this.roll = message.roll
-    this.move = message.move
 
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
   }
@@ -25,13 +26,27 @@ export class IronswornChatCard {
   async _burnMomentum(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    const { actor, result } = ev.target.dataset
+    const { actor, move, stat, hittype } = ev.target.dataset
+
     const theActor = game.actors?.get(actor)
     theActor?.burnMomentum()
 
+    let bonusContent: string | undefined
+    let result: string | undefined
+    if (move) {
+      const theMove = await moveDataByName(move)
+      result = theMove && theMove[capitalize(hittype.toLowerCase())]
+      bonusContent = MoveContentCallbacks[move]?.call(this, hittype as HIT_TYPE, stat)
+    }
+
     const parent = $(ev.currentTarget).parents('.message-content')
     parent.find('.roll-result').addClass('strikethru')
-    parent.find('.momentum-burn').html(`<h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>\n${result}`)
+    parent.find('.roll-result button').prop('disabled', true)
+    parent.find('.momentum-burn').html(`
+      <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
+      ${result}
+      ${bonusContent || ''}
+    `)
 
     const content = parent.html()
     await this.message?.update({ content })

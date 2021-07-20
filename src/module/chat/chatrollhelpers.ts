@@ -4,6 +4,7 @@ import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 import { FeatureOrDanger } from '../item/itemtypes'
+import { MoveContentCallbacks } from './movecontentcallbacks'
 
 interface RollMessageParams {
   roll: Roll
@@ -13,7 +14,6 @@ interface RollMessageParams {
   stat?: string
   bonus?: number
   progress?: IronswornItem
-  callback?: (result: HIT_TYPE, stat?: string) => any
 }
 
 function actionRoll(roll: any): Roll {
@@ -120,11 +120,11 @@ function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): 
 }
 
 interface MomentumProps {
-  momentumHitType?: string
-  momentumResultText?: string
+  momentumHitType?: HIT_TYPE
+  momentumHitTypeI18n?: string
   negativeMomentumCancel?: boolean
 }
-function calculateMomentumProps(roll: Roll, actor?: IronswornActor, move?: EnhancedDataswornMove): MomentumProps {
+function calculateMomentumProps(roll: Roll, actor?: IronswornActor): MomentumProps {
   if (!actor || actor.data.type !== 'character') return {}
   const { action, rawAction, challenge1, challenge2, match } = calculateDieTotals(roll)
 
@@ -136,15 +136,15 @@ function calculateMomentumProps(roll: Roll, actor?: IronswornActor, move?: Enhan
 
   const originalHitType = calculateHitType(action, challenge1, challenge2)
   const momentumHitType = calculateHitType(momentum, challenge1, challenge2)
-  const momentumHitTypeText = calculateHitTypeText(momentumHitType, match)
+  const momentumHitTypeI18n = calculateHitTypeText(momentumHitType, match)
 
   switch (`${originalHitType} -> ${momentumHitType}`) {
     case 'MISS -> STRONG':
     case 'MISS -> WEAK':
     case 'WEAK -> STRONG':
       return {
-        momentumHitType: momentumHitTypeText,
-        momentumResultText: calculateMoveResultText(momentumHitType, move) || momentumHitTypeText,
+        momentumHitType,
+        momentumHitTypeI18n,
       }
     default:
       return {}
@@ -159,17 +159,21 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   let hitType = calculateHitType(action, challenge1, challenge2)
   let momentumProps: MomentumProps = {}
   if (!params.progress) {
-    momentumProps = calculateMomentumProps(params.roll, params.actor, params.move)
+    momentumProps = calculateMomentumProps(params.roll, params.actor)
     if (momentumProps.negativeMomentumCancel) {
       hitType = calculateHitType(canceledAction, challenge1, challenge2)
     }
   }
+
+  let bonusContent: string | undefined
+  if (params.move) bonusContent = MoveContentCallbacks[params.move?.Name]?.call(this, hitType, params.stat)
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
     hitType: calculateHitTypeText(hitType, match),
     title: generateCardTitle(params),
     resultText: calculateMoveResultText(hitType, params.move),
+    bonusContent,
     ...momentumProps,
     ...params,
   }
@@ -182,12 +186,8 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     roll: params.roll,
   }
 
-  // CONFIG.ChatMessage.documentClass.create(...)
   const cls = CONFIG.ChatMessage.documentClass
-  const message = await cls.create(messageData as any, {})
-  if (message) message.move = params.move
-
-  if (params.callback) params.callback(hitType, params.stat)
+  return cls.create(messageData as any, {})
 }
 
 export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
@@ -210,12 +210,11 @@ export async function createIronswornFeatureChat(params: FeatureChatInput) {
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,
-  })
+  } as any)
 }
 
 // Crack open that message type
-declare global {
-  interface ChatMessage {
-    move?: EnhancedDataswornMove
-  }
-}
+// declare global {
+//   interface ChatMessage {
+//   }
+// }

@@ -1,4 +1,3 @@
-import { HIT_TYPE } from '../../chat/rolls'
 import { RANK_INCREMENTS } from '../../constants'
 import { moveDataByName } from '../../helpers/data'
 import { RollDialog, rollSiteFeature } from '../../helpers/roll'
@@ -98,14 +97,6 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     this.actor.update({ 'data.current': 0 })
   }
 
-  // async _moveRoll(ev: JQuery.ClickEvent) {
-  //   ev.preventDefault()
-
-  //   const move = await moveDataByName(ev.currentTarget.dataset.name)
-  //   const actor = this.findActor()
-    // RollDialog.show({ actor, move })
-  // }
-
   _openCompendium(ev: JQuery.ClickEvent) {
     const { compendium } = ev.currentTarget.dataset
     const pack = game.packs?.get(`foundry-ironsworn.${compendium}`)
@@ -115,25 +106,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   async _delveDepths(_ev: JQuery.ClickEvent) {
     const move = await moveDataByName('Delve the Depths')
     const actor = this.findActor()
-    RollDialog.show({
-      move,
-      actor,
-      callback: async (hitType, stat) => {
-        if (hitType != HIT_TYPE.WEAK) return
-
-        const oracleTable = (move?.oracles || []).find(x => x.stat === stat)
-        if (!oracleTable) return
-
-        const roll = new Roll('1d100')
-        await roll.evaluate({async: true})
-        if (roll.total == undefined) return
-        const total = roll.total
-
-        const entry = oracleTable.table.find(x => x.low <= total && x.high >= total)
-        if (!entry) return
-        console.log({entry})
-      }
-    })
+    RollDialog.show({ move, actor })
   }
 
   _randomFeature(_ev: JQuery.ClickEvent) {
