@@ -21,6 +21,7 @@ export class IronswornChatCard {
     this.roll = message.roll
 
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
+    html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
@@ -46,6 +47,36 @@ export class IronswornChatCard {
       <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
       ${result}
       ${bonusContent || ''}
+    `)
+
+    const content = parent.html()
+    await this.message?.update({ content })
+  }
+
+  async _delveDepths(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const { stat } = ev.currentTarget.dataset
+    const move = await moveDataByName('Delve the Depths')
+    const oracle = move?.oracles?.find((x) => x.stat === stat)
+    if (!oracle) return
+
+    const roll = new Roll('1d100')
+    await roll.evaluate({ async: true })
+    const total = roll.total as number
+    const result = oracle.table.find((x) => x.low <= total && x.high >= total)
+    if (!result) return
+
+    const parent = $(ev.currentTarget).parents('.message-content')
+    parent.find('.bonus-content').html(`
+      <p class="flexrow" style="align-items: center;">
+        <span>${oracle.name}</span>
+        <span class="roll die d10" style="flex: 0 0 25px;">${total}</span>
+      </p>
+
+      <h4 class="dice-formula">
+        ${result.low}–${result.high}: ${result.description}
+      </h4>
     `)
 
     const content = parent.html()
