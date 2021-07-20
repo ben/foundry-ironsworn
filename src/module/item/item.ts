@@ -1,4 +1,4 @@
-import { createIronswornChatRoll } from '../chat/rolls'
+import { createIronswornChatRoll } from '../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../constants'
 import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 

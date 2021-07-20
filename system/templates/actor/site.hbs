@@ -1,0 +1,152 @@
+{{#*inline "subcard"}}
+
+<div style="padding: 1em; width: 100%; position: relative;">
+
+  {{#if item}} {{! Live item view }}
+
+  <div class="flexrow">
+    <img class="profile-img nogrow" src="{{item.img}}" title="{{name}}" height="38" style="margin-right: 5px;" />
+
+    <div class="flexcol">
+      <h4 style="margin: 0;">{{item.name}}</h4>
+      <p>{{item.data.data.summary}}</p>
+    </div>
+  </div>
+
+  {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+  <div class="flexrow" style="position: absolute; right: 5px; top: 5px;">
+    <div class="clickable block nogrow ironsworn__{{item.type}}__settings" title="{{localize 'IRONSWORN.Edit'}}"
+      data-item="{{item.id}}" style="padding: 5px;">
+      <i class="fas fa-edit"></i>
+    </div>
+    <div class="clickable block nogrow ironsworn__{{item.type}}__delete" title="{{localize 'IRONSWORN.DeleteItem'}}"
+      data-item="{{item.id}}" style="padding: 5px;">
+      <i class="fas fa-trash"></i>
+    </div>
+  </div>
+  {{/if}}
+
+  {{else}} {{! Prompt to drag an item in }}
+
+  <div class="flexcol">
+    <h4 style="margin: 0;">{{localize titlekey}}</h4>
+    <p class="inset clickable block ironsworn__compendium__open" style="padding: 0 2em;"
+      data-compendium="{{compendiumkey}}">
+      {{localize 'IRONSWORN.OpenCompendium'}}
+    </p>
+  </div>
+
+  {{/if}}
+</div>
+
+{{/inline}}
+
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
+    <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
+        placeholder="{{localize 'IRONSWORN.Name'}}" /></h1>
+  </header>
+
+  <div class="flexcol nogrow" style="margin-bottom: 1em;">
+    <div class="flexrow">
+      <div class="flexrow">{{>rankHexes rank=data.data.rank id=id}}</div>
+
+      {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+      <div class="clickable block nogrow ironsworn__progress__clear" title="{{localize 'IRONSWORN.ClearProgress'}}"
+        data-item="{{id}}" style="padding: 5px;">
+        <i class="fas fa-trash"></i>
+      </div>
+      {{/if}}
+
+      <div class="clickable block nogrow ironsworn__progress__mark" title="{{localize 'IRONSWORN.MarkProgress'}}"
+        data-item="{{id}}" style="padding: 5px;">
+        <i class="fas fa-play"></i>
+      </div>
+    </div>
+    <div class="flexrow track">
+      {{#each (progressCharacters data.data.current)}}
+      <div class="flexcol track-box" style="min-height: 50px;">{{{this}}}</div>
+      {{/each}}
+    </div>
+  </div>
+
+  <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em;">
+    <div class="flexrow boxrow nogrow">
+      <div class="flexcol box">
+        {{>subcard titlekey='IRONSWORN.Theme' item=theme compendiumkey='ironsworndelvethemes'}}
+      </div>
+      <div class="flexcol box">
+        {{>subcard titlekey='IRONSWORN.Domain' item=domain compendiumkey='ironsworndelvedomains'}}
+      </div>
+    </div>
+  </div>
+
+  <div class="flexrow nogrow" style="margin-bottom: 1em; align-items: center;">
+    <div class="boxgroup">
+
+      <div class="flexrow boxrow">
+        <div class="box flexrow clickable block ironsworn__move__roll"
+             style="justify-content: center; padding: 5px;"
+             data-move="Delve the Depths"
+        >
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Delve the Depths.title'}}
+          </h4>
+        </div>
+        <div class="
+              box flexrow clickable block ironsworn__feature__roll
+              {{#unless (and theme domain)}}disabled{{/unless}}"
+             style="justify-content: center; padding: 5px;"
+        >
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.Feature'}}
+          </h4>
+        </div>
+        <div class="
+              box flexrow clickable block ironsworn__move__roll
+              {{#unless (and theme domain)}}disabled{{/unless}}"
+             style="justify-content: center; padding: 5px;"
+             data-move="Reveal a Danger"
+        >
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Reveal a Danger.title'}}
+          </h4>
+        </div>
+      </div>
+
+      <div class="flexrow boxrow">
+        <div class="box flexrow clickable block ironsworn__move__roll"
+             style="justify-content: center; padding: 5px;"
+             data-move="Find an Opportunity"
+        >
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Find an Opportunity.title'}}
+          </h4>
+        </div>
+        <div class="box flexrow clickable block ironsworn__move__roll"
+             style="justify-content: center; padding: 5px;"
+             data-move="Locate Your Objective"
+        >
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Locate Your Objective.title'}}
+          </h4>
+        </div>
+        <div class="box flexrow clickable block ironsworn__move__roll"
+             style="justify-content: center; padding: 5px;"
+             data-move="Escape the Depths"
+        >
+          <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
+            {{localize 'IRONSWORN.MoveContents.Escape the Depths.title'}}
+          </h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  {{!-- <div class="boxgroup">
+    <div class="flexrow boxrow box">(denizens)</div>
+  </div> --}}
+</form>

@@ -1,9 +1,11 @@
-import { EnhancedDataswornMove } from '../helpers/data'
+import { capitalize } from 'lodash'
+import { moveDataByName } from '../helpers/data'
+import { MoveContentCallbacks } from './movecontentcallbacks'
+import { HIT_TYPE } from './chatrollhelpers'
 
 export class IronswornChatCard {
   id?: string | null
   roll?: Roll | null
-  move?: EnhancedDataswornMove
 
   constructor(message: ChatMessage, html: JQuery) {
     this.updateBinding(message, html)
@@ -17,29 +19,71 @@ export class IronswornChatCard {
     // Do not store html here
     this.id = message.id
     this.roll = message.roll
-    this.move = message.move
 
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
+    html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    const { actor, result } = ev.target.dataset
+    const { actor, move, stat, hittype } = ev.target.dataset
+
     const theActor = game.actors?.get(actor)
     theActor?.burnMomentum()
 
+    let bonusContent: string | undefined
+    let result: string | undefined
+    if (move) {
+      const theMove = await moveDataByName(move)
+      result = theMove && theMove[capitalize(hittype.toLowerCase())]
+      bonusContent = MoveContentCallbacks[move]?.call(this, hittype as HIT_TYPE, stat)
+    }
+
     const parent = $(ev.currentTarget).parents('.message-content')
     parent.find('.roll-result').addClass('strikethru')
-    parent.find('.momentum-burn').html(`<h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>\n${result}`)
+    parent.find('.roll-result button').prop('disabled', true)
+    parent.find('.momentum-burn').html(`
+      <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
+      ${result}
+      ${bonusContent || ''}
+    `)
+
+    const content = parent.html()
+    await this.message?.update({ content })
+  }
+
+  async _delveDepths(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const { stat } = ev.currentTarget.dataset
+    const move = await moveDataByName('Delve the Depths')
+    const oracle = move?.oracles?.find((x) => x.stat === stat)
+    if (!oracle) return
+
+    const roll = new Roll('1d100')
+    await roll.evaluate({ async: true })
+    const total = roll.total as number
+    const result = oracle.table.find((x) => x.low <= total && x.high >= total)
+    if (!result) return
+
+    const parent = $(ev.currentTarget).parents('.message-content')
+    parent.find('.bonus-content').html(`
+      <p class="flexrow" style="align-items: center;">
+        <span>${oracle.name}</span>
+        <span class="roll die d10" style="flex: 0 0 25px;">${total}</span>
+      </p>
+
+      <h4 class="dice-formula">
+        ${result.low}–${result.high}: ${result.description}
+      </h4>
+    `)
 
     const content = parent.html()
     await this.message?.update({ content })
   }
 
   static async bind(message: ChatMessage, html: JQuery) {
-    console.log({ message, html })
-
     const existing = message.ironswornCard
     if (existing) {
       existing.updateBinding(message, html)

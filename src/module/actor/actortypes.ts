@@ -38,6 +38,8 @@ interface CharacterDataSource {
   data: CharacterDataSourceData
 }
 
+////////////////////////////////////////
+
 interface SharedDataSourceData {}
 interface SharedDataPropertiesData {}
 
@@ -50,8 +52,38 @@ interface SharedDataProperties {
   data: SharedDataPropertiesData
 }
 
-export type ActorDataSource = CharacterDataSource | SharedDataSource
-export type ActorDataProperties = CharacterDataProperties | SharedDataProperties
+////////////////////////////////////////
+
+interface DenizenSlot {
+  low: number
+  high: number
+  descriptor: string
+  description: string
+}
+
+interface SiteDataSourceData {
+  objective: string
+  description: string
+  notes: string
+  rank: string
+  current: number
+  denizens: DenizenSlot[]
+}
+interface SiteDataPropertiesData extends SiteDataSourceData {}
+
+export interface SiteDataSource {
+  type: 'site'
+  data: SiteDataSourceData
+}
+export interface SiteDataProperties {
+  type: 'site'
+  data: SiteDataPropertiesData
+}
+
+////////////////////////////////////////
+
+export type ActorDataSource = CharacterDataSource | SharedDataSource | SiteDataSource
+export type ActorDataProperties = CharacterDataProperties | SharedDataProperties | SiteDataProperties
 
 declare global {
   interface SourceConfig {

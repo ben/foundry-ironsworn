@@ -12,6 +12,11 @@ export interface EnhancedDataswornMove {
   Strong: string | undefined
   Weak: string | undefined
   Miss: string | undefined
+  oracles?: {
+    name: string
+    stat?: string
+    table: {low: number, high: number, description: string}[]
+  }[]
 }
 
 interface EnhancedDataswornMoveCategory {
@@ -39,7 +44,17 @@ export async function moveDataByName(name: string): Promise<EnhancedDataswornMov
   const data = await cachedMoves()
   for (const category of data.Categories) {
     for (const move of category.Moves) {
-      if (move.Name === name) return cloneDeep(move)
+      if (move.Name === name) {
+        const theMove = cloneDeep(move)
+
+        // Translate that text
+        if (theMove.Description) theMove.Description = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.description`)
+        if (theMove.Strong) theMove.Strong = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.strong`)
+        if (theMove.Weak) theMove.Weak = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.weak`)
+        if (theMove.Miss) theMove.Miss = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.miss`)
+
+        return theMove
+      }
     }
   }
   return undefined

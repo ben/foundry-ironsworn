@@ -7,6 +7,7 @@ import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
+import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
@@ -14,6 +15,7 @@ import { IronswornSettings } from './module/helpers/settings'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
 import { BondsetSheet } from './module/item/bondset/bondsetsheet'
+import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvethemeordomainsheet'
 import { IronswornItem } from './module/item/item'
 import { MoveSheet } from './module/item/move/movesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
@@ -58,6 +60,10 @@ Hooks.once('init', async () => {
     types: ['shared'],
     makeDefault: true,
   })
+  Actors.registerSheet('ironsworn', IronswornSiteSheet, {
+    types: ['site'],
+    makeDefault: true,
+  })
 
   Items.registerSheet('ironsworn', AssetSheet, {
     types: ['asset'],
@@ -69,6 +75,10 @@ Hooks.once('init', async () => {
   })
   Items.registerSheet('ironsworn', MoveSheet, {
     types: ['move'],
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
+    types: ['delve-theme', 'delve-domain'],
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', ProgressSheet, {
