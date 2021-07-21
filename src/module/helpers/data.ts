@@ -1,5 +1,17 @@
 import { cloneDeep } from 'lodash'
 
+export type MoveOracleEntry = {
+  low: number
+  high: number
+  description: string
+}
+
+export type MoveOracle = {
+  name: string
+  stat?: string
+  table: MoveOracleEntry[]
+}
+
 export interface EnhancedDataswornMove {
   Name: string
   Source: {
@@ -12,11 +24,7 @@ export interface EnhancedDataswornMove {
   Strong: string | undefined
   Weak: string | undefined
   Miss: string | undefined
-  oracles?: {
-    name: string
-    stat?: string
-    table: {low: number, high: number, description: string}[]
-  }[]
+  oracles?: MoveOracle[]
 }
 
 interface EnhancedDataswornMoveCategory {

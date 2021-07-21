@@ -54,7 +54,7 @@ interface SharedDataProperties {
 
 ////////////////////////////////////////
 
-interface DenizenSlot {
+export interface DenizenSlot {
   low: number
   high: number
   descriptor: string

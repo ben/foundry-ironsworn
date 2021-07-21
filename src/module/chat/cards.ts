@@ -1,7 +1,9 @@
 import { capitalize } from 'lodash'
-import { moveDataByName } from '../helpers/data'
+import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE } from './chatrollhelpers'
+import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
+import { IronswornActor } from '../actor/actor'
 
 export class IronswornChatCard {
   id?: string | null
@@ -22,6 +24,7 @@ export class IronswornChatCard {
 
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
+    html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
@@ -37,7 +40,7 @@ export class IronswornChatCard {
     if (move) {
       const theMove = await moveDataByName(move)
       result = theMove && theMove[capitalize(hittype.toLowerCase())]
-      bonusContent = MoveContentCallbacks[move]?.call(this, hittype as HIT_TYPE, stat)
+      bonusContent = MoveContentCallbacks[move]?.call(this, { hitType: hittype as HIT_TYPE, stat })
     }
 
     const parent = $(ev.currentTarget).parents('.message-content')
@@ -61,24 +64,57 @@ export class IronswornChatCard {
     const oracle = move?.oracles?.find((x) => x.stat === stat)
     if (!oracle) return
 
-    const roll = new Roll('1d100')
-    await roll.evaluate({ async: true })
-    const total = roll.total as number
-    const result = oracle.table.find((x) => x.low <= total && x.high >= total)
+    const { result, rollTotal } = await rollOnOracle(oracle)
     if (!result) return
 
-    const parent = $(ev.currentTarget).parents('.message-content')
-    parent.find('.bonus-content').html(`
-      <p class="flexrow" style="align-items: center;">
-        <span>${oracle.name}</span>
-        <span class="roll die d10" style="flex: 0 0 25px;">${total}</span>
-      </p>
+    await this.replaceSelectorWith(
+      ev.currentTarget,
+      '.bonus-content',
+      `
+        <p class="flexrow" style="align-items: center;">
+          <span>${oracle.name}</span>
+          <span class="roll die d10" style="flex: 0 0 25px;">${rollTotal}</span>
+        </p>
 
-      <h4 class="dice-formula">
-        ${result.low}–${result.high}: ${result.description}
-      </h4>
-    `)
+        <h4 class="dice-formula">
+          ${result.low}–${result.high}: ${result.description}
+        </h4>
+      `
+    )
+  }
 
+  async _revealDanger(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const move = await moveDataByName('Reveal a Danger')
+    const oracle = move?.oracles && move.oracles[0]
+    if (!oracle) return
+
+    const siteId = ev.currentTarget.dataset.site
+    const site = game.actors?.contents.find((x) => x.id === siteId)
+
+    const { result, rollTotal } = await rollOnOracle(oracle)
+    const realResult = dangerFromSite(rollTotal, result, site)
+
+    await this.replaceSelectorWith(
+      ev.currentTarget,
+      '.bonus-content',
+      `
+        <p class="flexrow" style="align-items: center;">
+          <span>${oracle.name}</span>
+          <span class="roll die d10" style="flex: 0 0 25px;">${rollTotal}</span>
+        </p>
+
+        <h4 class="dice-formula">
+          ${realResult?.low}–${realResult?.high}: ${realResult?.description}
+        </h4>
+      `
+    )
+  }
+
+  async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {
+    const parent = $(el).parents('.message-content')
+    parent.find(selector).html(newContent)
     const content = parent.html()
     await this.message?.update({ content })
   }
@@ -102,4 +138,31 @@ declare global {
   interface ChatMessage {
     ironswornCard?: IronswornChatCard
   }
+}
+
+async function rollOnOracle(oracle: MoveOracle): Promise<{ result?: MoveOracleEntry; rollTotal: number }> {
+  const upperLimit = Math.max(...oracle.table.map((x) => x.high))
+  const roll = new Roll(`1d${upperLimit}`)
+  await roll.evaluate({ async: true })
+  const rollTotal = roll.total as number
+  const result = oracle.table.find((x) => x.low <= rollTotal && x.high >= rollTotal)
+  return { result, rollTotal }
+}
+
+function dangerFromSite(rollTotal: number, result?: MoveOracleEntry, site?: IronswornActor): MoveOracleEntry | undefined {
+  if (rollTotal > 45 || !site) return result
+
+  const theme = site.items.find((x) => x.type === 'delve-theme')
+  const themeData = theme?.data as DelveThemeDataProperties | undefined
+  let theResult = themeData?.data.dangers.find((x) => x.low <= rollTotal && x.high >= rollTotal)
+  if (theResult) {
+    theResult.description = `(${theme?.name}) ${theResult.description}`
+    return theResult
+  }
+
+  const domain = site.items.find((x) => x.type === 'delve-domain')
+  const domainData = domain?.data as DelveDomainDataProperties | undefined
+  theResult = domainData?.data.dangers.find((x) => x.low <= rollTotal && x.high >= rollTotal)
+  if (theResult) theResult.description = `(${domain?.name}) ${theResult.description}`
+  return theResult
 }

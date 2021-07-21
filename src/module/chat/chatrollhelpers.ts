@@ -37,7 +37,7 @@ function calculateDieTotals(roll: Roll): DieTotals {
   const actionDie = actionRoll(roll)
   const challengeDice = challengeRoll(roll)
   const [challenge1, challenge2] = challengeDice.map((x) => x.total as number)
-  const rawActionDie = actionDie.terms.find(x => x instanceof Die)
+  const rawActionDie = actionDie.terms.find((x) => x instanceof Die)
 
   const canceledActionDie = new Roll(actionDie.formula.replace('1d6', '0'))
   canceledActionDie.evaluate({ async: false })
@@ -113,9 +113,12 @@ function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): 
   if (!move) return undefined
 
   switch (type) {
-    case HIT_TYPE.MISS: return move.Miss
-    case HIT_TYPE.WEAK: return move.Weak
-    case HIT_TYPE.STRONG: return move.Strong
+    case HIT_TYPE.MISS:
+      return move.Miss
+    case HIT_TYPE.WEAK:
+      return move.Weak
+    case HIT_TYPE.STRONG:
+      return move.Strong
   }
 }
 
@@ -165,8 +168,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     }
   }
 
-  let bonusContent: string | undefined
-  if (params.move) bonusContent = MoveContentCallbacks[params.move?.Name]?.call(this, hitType, params.stat)
+  const bonusContent = MoveContentCallbacks[params.move?.Name || '']?.call(this, { hitType, stat: params.stat })
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
@@ -190,8 +192,9 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   return cls.create(messageData as any, {})
 }
 
-export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', move)
+export async function createIronswornMoveChat(opts: {move?: EnhancedDataswornMove, site?: IronswornActor}) {
+  const bonusContent = MoveContentCallbacks[opts.move?.Name || '']?.call(this, opts)
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', { ...opts, bonusContent })
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,

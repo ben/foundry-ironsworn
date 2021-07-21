@@ -4,6 +4,7 @@
 
 - Change compendium scene scale to 50
 - Delve sites ([#88](https://github.com/ben/foundry-ironsworn/pull/88))
+- Site denizens ([#89](https://github.com/ben/foundry-ironsworn/pull/89))
 
 ## 1.2.0
 

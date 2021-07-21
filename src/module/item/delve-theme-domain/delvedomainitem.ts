@@ -1,5 +1,5 @@
-import { IronswornCharacterSheet } from "../../actor/sheets/charactersheet";
-import { BaseItem } from "../baseitem";
+import { IronswornCharacterSheet } from '../../actor/sheets/charactersheet'
+import { BaseItem } from '../baseitem'
 
 export class DelveDomainItem extends BaseItem {
   static entityName = 'delve-domain'
