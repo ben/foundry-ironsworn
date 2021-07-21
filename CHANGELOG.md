@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.3.1
+
 - Fixed some layout issues
 - Updated readme
 - Sheets now use human-readable labels instead of minified Javascript garbage
