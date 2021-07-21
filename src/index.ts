@@ -51,38 +51,47 @@ Hooks.once('init', async () => {
   // Register our own sheets
   Actors.registerSheet('ironsworn', IronswornCharacterSheet, {
     types: ['character'],
+    label: 'Default character sheet',
     makeDefault: true,
   })
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
+    label: 'Compact sheet',
     types: ['character'],
   })
   Actors.registerSheet('ironsworn', IronswornSharedSheet, {
     types: ['shared'],
+    label: 'Shared sheet',
     makeDefault: true,
   })
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
     types: ['site'],
+    label: 'Site sheet',
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', AssetSheet, {
     types: ['asset'],
+    label: 'Asset sheet',
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', BondsetSheet, {
     types: ['bondset'],
+    label: 'Bondset sheet',
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', MoveSheet, {
     types: ['move'],
+    label: 'Move sheet',
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
     types: ['delve-theme', 'delve-domain'],
+    label: 'Delve Theme/Domain Sheet',
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', ProgressSheet, {
     types: ['vow', 'progress'],
+    label: 'Progress Sheet',
     makeDefault: true,
   })
 
