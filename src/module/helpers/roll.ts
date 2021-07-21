@@ -8,6 +8,7 @@ import { capitalize } from './util'
 
 interface RollDialogOptions {
   actor?: IronswornActor
+  site?: IronswornActor
   asset?: IronswornItem
   move?: EnhancedDataswornMove
   stat?: string
@@ -33,7 +34,7 @@ export class RollDialog extends Dialog {
     }
     if (opts.move && (!opts.move.Stats || opts.move.Stats.length === 0)) {
       // Just send the move text to chat
-      return createIronswornMoveChat(opts.move)
+      return createIronswornMoveChat(opts.move, opts.site)
     }
 
     // Render content

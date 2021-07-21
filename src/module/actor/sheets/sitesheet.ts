@@ -120,7 +120,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     const { move: movename } = ev.currentTarget.dataset
     const move = await moveDataByName(movename)
     const actor = this.findActor()
-    RollDialog.show({ move, actor })
+    RollDialog.show({ move, actor, site: this.actor })
   }
 
   _randomFeature(_ev: JQuery.ClickEvent) {

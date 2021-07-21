@@ -190,8 +190,8 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   return cls.create(messageData as any, {})
 }
 
-export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
-  const bonusContent = MoveContentCallbacks[move.Name]?.call(this)
+export async function createIronswornMoveChat(move: EnhancedDataswornMove, site?: IronswornActor) {
+  const bonusContent = MoveContentCallbacks[move.Name]?.call(this, {site})
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', { move, bonusContent })
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
