@@ -22,6 +22,7 @@ export class IronswornChatCard {
 
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
+    html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
@@ -59,6 +60,28 @@ export class IronswornChatCard {
     const { stat } = ev.currentTarget.dataset
     const move = await moveDataByName('Delve the Depths')
     const oracle = move?.oracles?.find((x) => x.stat === stat)
+    if (!oracle) return
+
+    const { result, rollTotal } = await rollOnOracle(oracle)
+    if (!result) return
+
+    await this.replaceSelectorWith(ev.currentTarget, '.bonus-content', `
+      <p class="flexrow" style="align-items: center;">
+        <span>${oracle.name}</span>
+        <span class="roll die d10" style="flex: 0 0 25px;">${rollTotal}</span>
+      </p>
+
+      <h4 class="dice-formula">
+        ${result.low}–${result.high}: ${result.description}
+      </h4>
+    `)
+  }
+
+  async _revealDanger(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const move = await moveDataByName('Reveal a Danger')
+    const oracle = move?.oracles && move.oracles[0]
     if (!oracle) return
 
     const { result, rollTotal } = await rollOnOracle(oracle)

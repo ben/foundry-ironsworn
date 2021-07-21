@@ -9,4 +9,6 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
             Roll that table
           </button>`
       : undefined,
+
+  'Reveal a Danger': () => '<button class="ironsworn__revealdanger__roll">Roll that table</button>',
 }
