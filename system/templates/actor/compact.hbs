@@ -3,7 +3,7 @@
   <div class="flexcol boxgroup" style="margin: 5px;">
     <div class="flexrow boxrow">
       {{#*inline "stat"}}
-      <div class="box clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+      <div class="box flexcol clickable block ironsworn__stat__roll" data-stat="{{stat}}">
         <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
         <h3>{{lookup data.data stat}}</h3>
       </div>
