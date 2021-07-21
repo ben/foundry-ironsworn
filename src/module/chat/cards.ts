@@ -1,5 +1,5 @@
 import { capitalize } from 'lodash'
-import { moveDataByName } from '../helpers/data'
+import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE } from './chatrollhelpers'
 
@@ -61,24 +61,24 @@ export class IronswornChatCard {
     const oracle = move?.oracles?.find((x) => x.stat === stat)
     if (!oracle) return
 
-    const roll = new Roll('1d100')
-    await roll.evaluate({ async: true })
-    const total = roll.total as number
-    const result = oracle.table.find((x) => x.low <= total && x.high >= total)
+    const { result, rollTotal } = await rollOnOracle(oracle)
     if (!result) return
 
-    const parent = $(ev.currentTarget).parents('.message-content')
-    parent.find('.bonus-content').html(`
+    await this.replaceSelectorWith(ev.currentTarget, '.bonus-content', `
       <p class="flexrow" style="align-items: center;">
         <span>${oracle.name}</span>
-        <span class="roll die d10" style="flex: 0 0 25px;">${total}</span>
+        <span class="roll die d10" style="flex: 0 0 25px;">${rollTotal}</span>
       </p>
 
       <h4 class="dice-formula">
         ${result.low}–${result.high}: ${result.description}
       </h4>
     `)
+  }
 
+  async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {
+    const parent = $(el).parents('.message-content')
+    parent.find(selector).html(newContent)
     const content = parent.html()
     await this.message?.update({ content })
   }
@@ -102,4 +102,13 @@ declare global {
   interface ChatMessage {
     ironswornCard?: IronswornChatCard
   }
+}
+
+async function rollOnOracle(oracle: MoveOracle): Promise<{ result?: MoveOracleEntry; rollTotal: number }> {
+  const upperLimit = Math.max(...oracle.table.map(x => x.high))
+  const roll = new Roll(`1d${upperLimit}`)
+  await roll.evaluate({ async: true })
+  const rollTotal = roll.total as number
+  const result = oracle.table.find((x) => x.low <= rollTotal && x.high >= rollTotal)
+  return { result, rollTotal }
 }
