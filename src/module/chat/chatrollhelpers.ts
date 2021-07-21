@@ -37,7 +37,7 @@ function calculateDieTotals(roll: Roll): DieTotals {
   const actionDie = actionRoll(roll)
   const challengeDice = challengeRoll(roll)
   const [challenge1, challenge2] = challengeDice.map((x) => x.total as number)
-  const rawActionDie = actionDie.terms.find(x => x instanceof Die)
+  const rawActionDie = actionDie.terms.find((x) => x instanceof Die)
 
   const canceledActionDie = new Roll(actionDie.formula.replace('1d6', '0'))
   canceledActionDie.evaluate({ async: false })
@@ -191,7 +191,8 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
 }
 
 export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', move)
+  const bonusContent = MoveContentCallbacks[move.Name]?.call(this, HIT_TYPE.STRONG)
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', { move, bonusContent })
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,

@@ -3,12 +3,18 @@
 --}}
 
 <div class="theme-ironsworn">
-  <h3>{{Name}}</h3>
+  <h3>{{move.Name}}</h3>
 
-  {{{Description}}}
+  {{{move.Description}}}
 
-  {{{Strong}}}
-  {{{Weak}}}
-  {{{Miss}}}
+  {{{move.Strong}}}
+  {{{move.Weak}}}
+  {{{move.Miss}}}
+
+  {{#if bonusContent}}
+  <div class="bonus-content">
+    {{{bonusContent}}}
+  </div>
+  {{/if}}
 
 </div>
