@@ -38,7 +38,7 @@ export class IronswornChatCard {
     if (move) {
       const theMove = await moveDataByName(move)
       result = theMove && theMove[capitalize(hittype.toLowerCase())]
-      bonusContent = MoveContentCallbacks[move]?.call(this, hittype as HIT_TYPE, stat)
+      bonusContent = MoveContentCallbacks[move]?.call(this, {hitType: hittype as HIT_TYPE, stat})
     }
 
     const parent = $(ev.currentTarget).parents('.message-content')

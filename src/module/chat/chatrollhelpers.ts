@@ -166,7 +166,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   }
 
   let bonusContent: string | undefined
-  if (params.move) bonusContent = MoveContentCallbacks[params.move?.Name]?.call(this, hitType, params.stat)
+  if (params.move) bonusContent = MoveContentCallbacks[params.move?.Name]?.call(this, {hitType, stat: params.stat})
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
@@ -191,7 +191,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
 }
 
 export async function createIronswornMoveChat(move: EnhancedDataswornMove) {
-  const bonusContent = MoveContentCallbacks[move.Name]?.call(this, HIT_TYPE.STRONG)
+  const bonusContent = MoveContentCallbacks[move.Name]?.call(this)
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', { move, bonusContent })
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
