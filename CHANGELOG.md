@@ -2,6 +2,10 @@
 
 ## In progress
 
+- Fixed some layout issues
+- Updated readme
+- Sheets now use human-readable labels instead of minified Javascript garbage
+
 ## 1.3.0
 
 - Change compendium scene scale to 50
