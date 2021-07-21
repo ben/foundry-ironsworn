@@ -113,9 +113,12 @@ function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): 
   if (!move) return undefined
 
   switch (type) {
-    case HIT_TYPE.MISS: return move.Miss
-    case HIT_TYPE.WEAK: return move.Weak
-    case HIT_TYPE.STRONG: return move.Strong
+    case HIT_TYPE.MISS:
+      return move.Miss
+    case HIT_TYPE.WEAK:
+      return move.Weak
+    case HIT_TYPE.STRONG:
+      return move.Strong
   }
 }
 
@@ -166,7 +169,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   }
 
   let bonusContent: string | undefined
-  if (params.move) bonusContent = MoveContentCallbacks[params.move?.Name]?.call(this, {hitType, stat: params.stat})
+  if (params.move) bonusContent = MoveContentCallbacks[params.move?.Name]?.call(this, { hitType, stat: params.stat })
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
@@ -191,7 +194,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
 }
 
 export async function createIronswornMoveChat(move: EnhancedDataswornMove, site?: IronswornActor) {
-  const bonusContent = MoveContentCallbacks[move.Name]?.call(this, {site})
+  const bonusContent = MoveContentCallbacks[move.Name]?.call(this, { site })
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', { move, bonusContent })
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),

@@ -10,14 +10,14 @@ type CallbackInput = {
 type Callback = (input: CallbackInput) => string | undefined
 
 export const MoveContentCallbacks: { [key: string]: Callback } = {
-  'Delve the Depths': ({hitType, stat}: CallbackInput) =>
+  'Delve the Depths': ({ hitType, stat }: CallbackInput) =>
     hitType === HIT_TYPE.WEAK
       ? ` <button class="ironsworn__delvedepths__roll" data-stat="${stat}">
             Roll that table
           </button>`
       : undefined,
 
-  'Reveal a Danger': ({site}: CallbackInput) => `
+  'Reveal a Danger': ({ site }: CallbackInput) => `
     <button class="ironsworn__revealdanger__roll"
             data-site="${site?.id}"
     >

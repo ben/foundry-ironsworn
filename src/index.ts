@@ -24,7 +24,7 @@ import './styles/styles.less'
 
 declare global {
   interface LenientGlobalVariableTypes {
-    game: never; // the type doesn't matter
+    game: never // the type doesn't matter
   }
 }
 
