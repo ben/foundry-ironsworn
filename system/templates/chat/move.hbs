@@ -2,19 +2,25 @@
 {Name: "Face Danger", Source: {…}, Stats: Array(5), Text: "When …", …}
 --}}
 
-<div class="theme-ironsworn">
+<div class="flexcol">
   <h3>{{move.Name}}</h3>
 
-  {{{move.Description}}}
+  <div class="dice-result dice-tooltip dice-roll ironsworn-roll" data-move="{{move.Name}}">
+    <div class="roll-result">
 
-  {{{move.Strong}}}
-  {{{move.Weak}}}
-  {{{move.Miss}}}
+      {{{move.Description}}}
 
-  {{#if bonusContent}}
-  <div class="bonus-content">
-    {{{bonusContent}}}
+      {{{move.Strong}}}
+      {{{move.Weak}}}
+      {{{move.Miss}}}
+
+      {{#if bonusContent}}
+      <div class="bonus-content">
+        {{{bonusContent}}}
+      </div>
+      {{/if}}
+
+    </div>
   </div>
-  {{/if}}
 
 </div>
