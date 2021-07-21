@@ -168,8 +168,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     }
   }
 
-  let bonusContent: string | undefined
-  if (params.move) bonusContent = MoveContentCallbacks[params.move?.Name]?.call(this, { hitType, stat: params.stat })
+  const bonusContent = MoveContentCallbacks[params.move?.Name || '']?.call(this, { hitType, stat: params.stat })
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
