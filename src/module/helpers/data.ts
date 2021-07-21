@@ -1,12 +1,12 @@
 import { cloneDeep } from 'lodash'
 
-export interface MoveOracleEntry {
+export type MoveOracleEntry = {
   low: number
   high: number
   description: string
 }
 
-export interface MoveOracle {
+export type MoveOracle = {
   name: string
   stat?: string
   table: MoveOracleEntry[]

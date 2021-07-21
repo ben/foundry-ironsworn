@@ -2,6 +2,8 @@ import { capitalize } from 'lodash'
 import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE } from './chatrollhelpers'
+import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
+import { IronswornActor } from '../actor/actor'
 
 export class IronswornChatCard {
   id?: string | null
@@ -84,8 +86,11 @@ export class IronswornChatCard {
     const oracle = move?.oracles && move.oracles[0]
     if (!oracle) return
 
+    const siteId = ev.currentTarget.dataset.site
+    const site = game.actors?.contents.find(x => x.id === siteId)
+
     const { result, rollTotal } = await rollOnOracle(oracle)
-    if (!result) return
+    const realResult = dangerFromSite(rollTotal, result, site)
 
     await this.replaceSelectorWith(ev.currentTarget, '.bonus-content', `
       <p class="flexrow" style="align-items: center;">
@@ -94,7 +99,7 @@ export class IronswornChatCard {
       </p>
 
       <h4 class="dice-formula">
-        ${result.low}–${result.high}: ${result.description}
+        ${realResult?.low}–${realResult?.high}: ${realResult?.description}
       </h4>
     `)
   }
@@ -134,4 +139,23 @@ async function rollOnOracle(oracle: MoveOracle): Promise<{ result?: MoveOracleEn
   const rollTotal = roll.total as number
   const result = oracle.table.find((x) => x.low <= rollTotal && x.high >= rollTotal)
   return { result, rollTotal }
+}
+
+function dangerFromSite(rollTotal: number, result?: MoveOracleEntry, site?: IronswornActor): MoveOracleEntry | undefined {
+  if (rollTotal > 45 || !site) return result
+
+  const theme = site.items.find(x => x.type === 'delve-theme')
+  const themeData = theme?.data as DelveThemeDataProperties | undefined
+  let theResult = themeData?.data.dangers.find(x => x.low <= rollTotal && x.high >= rollTotal)
+  if (theResult) {
+    theResult.description = `(${theme?.name}) ${theResult.description}`
+    return theResult
+  }
+
+  const domain = site.items.find(x => x.type === 'delve-domain')
+  const domainData = domain?.data as DelveDomainDataProperties | undefined
+  theResult = domainData?.data.dangers.find(x => x.low <= rollTotal && x.high >= rollTotal)
+  if (theResult)
+    theResult.description = `(${domain?.name}) ${theResult.description}`
+  return theResult
 }
