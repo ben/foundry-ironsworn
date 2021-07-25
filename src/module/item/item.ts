@@ -29,8 +29,9 @@ export class IronswornItem extends Item {
     const progress = Math.floor(this.data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`)
     return createIronswornChatRoll({
+      isProgress: true,
       actor: this.actor || undefined,
-      progress: this,
+      subtitle: this.name || undefined,
       roll: r,
     })
   }
@@ -45,10 +46,11 @@ export class IronswornItem extends Item {
     const progress = Math.floor(this.data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`)
     createIronswornChatRoll({
-      actor: this.actor || undefined,
+      isProgress: true,
       move,
-      progress: this,
       roll: r,
+      actor: this.actor || undefined,
+      subtitle: this.name || undefined,
     })
   }
 
