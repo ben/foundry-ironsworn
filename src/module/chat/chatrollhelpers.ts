@@ -1,4 +1,5 @@
 import { IronswornActor } from '../actor/actor'
+import { DenizenSlot } from '../actor/actortypes'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
@@ -195,7 +196,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   return cls.create(messageData as any, {})
 }
 
-export async function createIronswornMoveChat(opts: {move?: EnhancedDataswornMove, site?: IronswornActor}) {
+export async function createIronswornMoveChat(opts: { move?: EnhancedDataswornMove; site?: IronswornActor }) {
   const bonusContent = MoveContentCallbacks[opts.move?.Name || '']?.call(this, opts)
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', { ...opts, bonusContent })
   ChatMessage.create({
@@ -213,6 +214,22 @@ interface FeatureChatInput {
 
 export async function createIronswornFeatureChat(params: FeatureChatInput) {
   const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/delve-feature.hbs', params)
+  ChatMessage.create({
+    speaker: ChatMessage.getSpeaker(),
+    content,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    roll: params.roll,
+  } as any)
+}
+
+interface DenizenChatInput {
+  roll: Roll
+  site: IronswornActor
+  denizen: DenizenSlot
+}
+
+export async function createIronswornDenizenChat(params: DenizenChatInput) {
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/denizen.hbs', params)
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,

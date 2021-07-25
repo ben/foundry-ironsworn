@@ -1,7 +1,7 @@
-import { createIronswornChatRoll } from '../../chat/chatrollhelpers'
+import { createIronswornChatRoll, createIronswornDenizenChat } from '../../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../../constants'
 import { moveDataByName } from '../../helpers/data'
-import { maybeShowDice, RollDialog, rollSiteFeature } from '../../helpers/roll'
+import { RollDialog, rollSiteFeature } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
@@ -149,10 +149,15 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
   async _randomDenizen(_ev: JQuery.ClickEvent) {
     const roll = await new Roll('1d100').evaluate({ async: true })
-    maybeShowDice(roll)
     const result = roll.total as number
     const denizen = this.siteData.data.denizens.find((x) => x.low <= result && x.high >= result)
-    console.log(denizen)
+    if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
+    await createIronswornDenizenChat({ roll, denizen, site: this.actor })
+
+    // Denizen slot is empty; set focus and add a class
+    if (!denizen?.description) {
+      // TODO
+    }
   }
 
   _setDenizenName(ev: JQuery.BlurEvent) {
