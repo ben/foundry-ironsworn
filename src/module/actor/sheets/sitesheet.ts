@@ -1,4 +1,4 @@
-import { createIronswornChatRoll } from '../../chat/chatrollhelpers'
+import { createIronswornChatRoll, createIronswornDenizenChat } from '../../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../../constants'
 import { moveDataByName } from '../../helpers/data'
 import { RollDialog, rollSiteFeature } from '../../helpers/roll'
@@ -91,6 +91,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     html.find('.ironsworn__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
     html.find('.ironsworn__locateobjective__roll').on('click', (ev) => this._locateObjective.call(this, ev))
 
+    html.find('.ironsworn__random__denizen').on('click', (ev) => this._randomDenizen.call(this, ev))
     html.find('.ironsworn__denizen__name').on('blur', (ev) => this._setDenizenName.call(this, ev))
   }
 
@@ -146,7 +147,23 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     })
   }
 
+  async _randomDenizen(_ev: JQuery.ClickEvent) {
+    const roll = await new Roll('1d100').evaluate({ async: true })
+    const result = roll.total as number
+    const denizen = this.siteData.data.denizens.find((x) => x.low <= result && x.high >= result)
+    if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
+    await createIronswornDenizenChat({ roll, denizen, site: this.actor })
+
+    // Denizen slot is empty; set focus and add a class
+    if (!denizen?.description) {
+      const idx = this.siteData.data.denizens.indexOf(denizen)
+      const input = this.element.find(`.ironsworn__denizen__name[data-idx=${idx}]`)
+      input.addClass('highlight').trigger('focus')
+    }
+  }
+
   _setDenizenName(ev: JQuery.BlurEvent) {
+    $(ev.currentTarget).removeClass('highlight')
     const val = $(ev.currentTarget).val()?.toString() || ''
     const idx = parseInt(ev.target.dataset.idx)
     const { denizens } = this.siteData.data

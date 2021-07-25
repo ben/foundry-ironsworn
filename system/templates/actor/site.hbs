@@ -118,7 +118,8 @@
           {{localize 'IRONSWORN.MoveContents.Find an Opportunity.title'}}
         </h4>
       </div>
-      <div class="box flexrow clickable block ironsworn__locateobjective__roll" style="justify-content: center; padding: 5px;">
+      <div class="box flexrow clickable block ironsworn__locateobjective__roll"
+        style="justify-content: center; padding: 5px;">
         <h4 class="nogrow" style="margin: 0; white-space: nowrap;">
           {{localize 'IRONSWORN.MoveContents.Locate Your Objective.title'}}
         </h4>
@@ -133,7 +134,12 @@
 
   </div>
 
-  <h3>{{localize 'IRONSWORN.Denizens'}}</h3>
+  <h3>
+    {{localize 'IRONSWORN.Denizens'}}
+    <span class="ironsworn__random__denizen nogrow clickable block" style="padding: 5px;">
+      <i class="fa fa-dice-d6"></i>
+    </span>
+  </h3>
 
   <div class="boxgroup nogrow">
     {{#each denizenMatrix}}
