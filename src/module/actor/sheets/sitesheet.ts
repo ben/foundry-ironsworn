@@ -1,7 +1,7 @@
 import { createIronswornChatRoll } from '../../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../../constants'
 import { moveDataByName } from '../../helpers/data'
-import { RollDialog, rollSiteFeature } from '../../helpers/roll'
+import { maybeShowDice, RollDialog, rollSiteFeature } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
@@ -91,6 +91,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     html.find('.ironsworn__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
     html.find('.ironsworn__locateobjective__roll').on('click', (ev) => this._locateObjective.call(this, ev))
 
+    html.find('.ironsworn__random__denizen').on('click', (ev) => this._randomDenizen.call(this, ev))
     html.find('.ironsworn__denizen__name').on('blur', (ev) => this._setDenizenName.call(this, ev))
   }
 
@@ -144,6 +145,14 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
       domain: this.domain,
       theme: this.theme,
     })
+  }
+
+  async _randomDenizen(_ev: JQuery.ClickEvent) {
+    const roll = await new Roll('1d100').evaluate({ async: true })
+    maybeShowDice(roll)
+    const result = roll.total as number
+    const denizen = this.siteData.data.denizens.find((x) => x.low <= result && x.high >= result)
+    console.log(denizen)
   }
 
   _setDenizenName(ev: JQuery.BlurEvent) {
