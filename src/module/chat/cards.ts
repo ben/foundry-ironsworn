@@ -4,6 +4,7 @@ import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE } from './chatrollhelpers'
 import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
+import { maybeShowDice } from '../helpers/roll'
 
 export class IronswornChatCard {
   id?: string | null
@@ -144,6 +145,7 @@ async function rollOnOracle(oracle: MoveOracle): Promise<{ result?: MoveOracleEn
   const upperLimit = Math.max(...oracle.table.map((x) => x.high))
   const roll = new Roll(`1d${upperLimit}`)
   await roll.evaluate({ async: true })
+  maybeShowDice(roll)
   const rollTotal = roll.total as number
   const result = oracle.table.find((x) => x.low <= rollTotal && x.high >= rollTotal)
   return { result, rollTotal }

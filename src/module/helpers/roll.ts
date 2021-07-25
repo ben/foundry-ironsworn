@@ -144,3 +144,9 @@ export async function rollSiteFeature(params: SiteFeatureRollInput) {
     return createIronswornFeatureChat({ ...params, roll, feature })
   }
 }
+
+export function maybeShowDice(roll:Roll) {
+  const dice3d = (game as any).dice3d
+  if (!dice3d) return
+  dice3d.showForRoll(roll, game.user, true)
+}
