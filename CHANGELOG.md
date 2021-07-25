@@ -3,6 +3,7 @@
 ## In progress
 
 - Improve the "Locate Your Objective" experience ([#90](https://github.com/ben/foundry-ironsworn/pull/90))
+- Show dice-so-nice rolls when clicking in-chat-message table-roll buttons
 
 ## 1.3.1
 
