@@ -156,11 +156,14 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
     // Denizen slot is empty; set focus and add a class
     if (!denizen?.description) {
-      // TODO
+      const idx = this.siteData.data.denizens.indexOf(denizen)
+      const input = this.element.find(`.ironsworn__denizen__name[data-idx=${idx}]`)
+      input.addClass('highlight').trigger('focus')
     }
   }
 
   _setDenizenName(ev: JQuery.BlurEvent) {
+    $(ev.currentTarget).removeClass('highlight')
     const val = $(ev.currentTarget).val()?.toString() || ''
     const idx = parseInt(ev.target.dataset.idx)
     const { denizens } = this.siteData.data
