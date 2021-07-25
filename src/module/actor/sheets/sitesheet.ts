@@ -1,3 +1,4 @@
+import { createIronswornChatRoll } from '../../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../../constants'
 import { moveDataByName } from '../../helpers/data'
 import { RollDialog, rollSiteFeature } from '../../helpers/roll'
@@ -88,6 +89,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
     html.find('.ironsworn__feature__roll').on('click', (ev) => this._randomFeature.call(this, ev))
     html.find('.ironsworn__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
+    html.find('.ironsworn__locateobjective__roll').on('click', (ev) => this._locateObjective.call(this, ev))
 
     html.find('.ironsworn__denizen__name').on('blur', (ev) => this._setDenizenName.call(this, ev))
   }
@@ -121,6 +123,20 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     const move = await moveDataByName(movename)
     const actor = this.findActor()
     RollDialog.show({ move, actor, site: this.actor })
+  }
+
+  async _locateObjective(_ev: JQuery.ClickEvent) {
+    const move = await moveDataByName('Locate Your Objective')
+    const actor = this.findActor()
+    const progress = Math.floor(this.siteData.data.current / 4)
+    const roll = new Roll(`{${progress}, d10, d10}`)
+    createIronswornChatRoll({
+      isProgress: true,
+      move,
+      roll,
+      actor,
+      subtitle: this.actor.name || undefined,
+    })
   }
 
   _randomFeature(_ev: JQuery.ClickEvent) {

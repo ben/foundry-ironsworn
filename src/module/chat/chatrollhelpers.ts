@@ -75,11 +75,13 @@ function calculateHitTypeText(type: HIT_TYPE, match: boolean) {
   return game.i18n.localize('IRONSWORN.WeakHit')
 }
 
-function generateCardTitle(params: RollMessageParams) {
+function calculateCardTitle(params: RollMessageParams) {
   if (params.move) {
     let title = params.move.Name
     if (params.stat) {
       title += ` (${params.stat})`
+    } else if (params.subtitle) {
+      title += `: ${params.subtitle}`
     }
     return title
   }
@@ -91,7 +93,7 @@ function generateCardTitle(params: RollMessageParams) {
         title += ` (${params.asset.data.data.track.name})`
       } else {
         const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
-        title += `(${statText})`
+        title += ` (${statText})`
       }
     }
     return title
@@ -174,7 +176,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
     hitType: calculateHitTypeText(hitType, match),
-    title: generateCardTitle(params),
+    title: calculateCardTitle(params),
     resultText: calculateMoveResultText(hitType, params.move),
     bonusContent,
     ...momentumProps,
