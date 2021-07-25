@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Improve the "Locate Your Objective" experience ([#90](https://github.com/ben/foundry-ironsworn/pull/90))
+
 ## 1.3.1
 
 - Fixed some layout issues

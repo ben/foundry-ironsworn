@@ -13,7 +13,8 @@ interface RollMessageParams {
   move?: EnhancedDataswornMove
   stat?: string
   bonus?: number
-  progress?: IronswornItem
+  isProgress?: boolean
+  subtitle?: string
 }
 
 function actionRoll(roll: any): Roll {
@@ -74,11 +75,13 @@ function calculateHitTypeText(type: HIT_TYPE, match: boolean) {
   return game.i18n.localize('IRONSWORN.WeakHit')
 }
 
-function generateCardTitle(params: RollMessageParams) {
+function calculateCardTitle(params: RollMessageParams) {
   if (params.move) {
     let title = params.move.Name
     if (params.stat) {
       title += ` (${params.stat})`
+    } else if (params.subtitle) {
+      title += `: ${params.subtitle}`
     }
     return title
   }
@@ -90,14 +93,14 @@ function generateCardTitle(params: RollMessageParams) {
         title += ` (${params.asset.data.data.track.name})`
       } else {
         const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
-        title += `(${statText})`
+        title += ` (${statText})`
       }
     }
     return title
   }
 
-  if (params.progress) {
-    return `${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${params.progress.name}`
+  if (params.subtitle) {
+    return `${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${params.subtitle}`
   }
 
   const rollText = game.i18n.localize('IRONSWORN.Roll')
@@ -155,13 +158,13 @@ function calculateMomentumProps(roll: Roll, actor?: IronswornActor): MomentumPro
 }
 
 export async function createIronswornChatRoll(params: RollMessageParams) {
-  await params.roll.evaluate({ async: false })
+  await params.roll.evaluate({ async: true })
   const { action, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
   let hitType = calculateHitType(action, challenge1, challenge2)
   let momentumProps: MomentumProps = {}
-  if (!params.progress) {
+  if (!params.isProgress) {
     momentumProps = calculateMomentumProps(params.roll, params.actor)
     if (momentumProps.negativeMomentumCancel) {
       hitType = calculateHitType(canceledAction, challenge1, challenge2)
@@ -173,7 +176,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
     hitType: calculateHitTypeText(hitType, match),
-    title: generateCardTitle(params),
+    title: calculateCardTitle(params),
     resultText: calculateMoveResultText(hitType, params.move),
     bonusContent,
     ...momentumProps,
