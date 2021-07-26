@@ -1,6 +1,6 @@
 # Ironsworn for Foundry VTT
 
-This is an implementation of the [Ironsworn](https://www.ironswornrpg.com/) rule set for Foundry VTT.
+This is a Foundry VTT implementation of the **Ironsworn** and **Ironsworn Delve** rule sets by [Shawn Tomkin](https://www.ironswornrpg.com).
 
 
 ![Screenshot](https://user-images.githubusercontent.com/39902/126507113-139e395e-304d-440e-80f4-6d4eb87cd1a2.png)
