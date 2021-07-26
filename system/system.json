@@ -9,10 +9,36 @@
   "minimumCoreVersion": "0.8.3",
   "compatibleCoreVersion": "0.8.8",
   "templateVersion": 2,
+  "manifestPlusVersion": "1.2.0",
   "author": "Ben Straub",
-  "esmodules": [
-    "ironsworn.js"
+  "authors": [
+    {
+      "name": "Ben Straub",
+      "url": "https://ben.straub.cc",
+      "email": "email@example.com",
+      "discord": "benstraub#3706",
+      "reddit": "u/ben_straub",
+      "twitter": "@benstraub"
+    }
   ],
+  "media": [
+    {
+      "type": "screenshot",
+      "url": "https://user-images.githubusercontent.com/39902/126507113-139e395e-304d-440e-80f4-6d4eb87cd1a2.png",
+      "caption": "Main character sheet"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://user-images.githubusercontent.com/39902/126508523-fd9016ef-2206-476b-80a8-c29a99313239.png",
+      "caption": "Delve site and shared sheets"
+    },
+    {
+      "type": "cover",
+      "url": "https://user-images.githubusercontent.com/39902/126923081-2c5e70eb-62db-44ff-9933-7b42f45a7d91.jpg",
+      "caption": "Ironsworn"
+    }
+  ],
+  "esmodules": ["ironsworn.js"],
   "packs": [
     {
       "name": "ironsworntables",
