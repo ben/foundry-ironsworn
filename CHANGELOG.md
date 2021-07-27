@@ -3,8 +3,9 @@
 ## In progress
 
 ## 1.3.4
-
 ## 1.3.3
+
+- Adding [manifest+](https://foundryvtt.wiki/en/development/manifest-plus) fields to `system.json`
 
 ## 1.3.2
 
