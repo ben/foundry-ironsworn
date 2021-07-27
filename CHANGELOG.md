@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.3.6
+
 - Fixed input set to type=textarea:
   This one broke cursor interaction in Firefox.
 
