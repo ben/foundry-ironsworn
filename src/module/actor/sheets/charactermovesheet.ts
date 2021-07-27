@@ -119,7 +119,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     }
   }
 
-  _moveSearchClear(e: JQuery.ClickEvent) {
+  _moveSearchClear(_e: JQuery.ClickEvent) {
     this.element.find('.ironsworn__move__search').val('')
     this.element.find('ol.moves>h2').show()
     this.element.find('ol.moves li').show()
