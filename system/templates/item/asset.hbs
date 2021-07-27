@@ -45,7 +45,7 @@
       <input type="checkbox" class="ironsworn__ability__enable" data-idx="{{@index}}" {{checked enabled}}
         style="flex-grow: 0;" />
       {{#if ../item.data.flags.foundry-ironsworn.edit-mode}}
-      <input class="attribute-value" type="textarea" name="data.abilities.{{@index}}.description"
+      <input class="attribute-value" type="text" name="data.abilities.{{@index}}.description"
         value="{{description}}" />
       {{else}}
       <div>{{{enrichHtml description}}}</div>
