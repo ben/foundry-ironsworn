@@ -2,11 +2,17 @@
 
 ## In progress
 
+- Fixed input set to type=textarea:
+  This one broke cursor interaction in Firefox.
+
+- Fixed sheet not scaling correctly in Firefox
+
 ## 1.3.5
 
 - Add a search box to the character move sheet ([#92](https://github.com/ben/foundry-ironsworn/pull/92))
 
 ## 1.3.4
+
 ## 1.3.3
 
 - Adding [manifest+](https://foundryvtt.wiki/en/development/manifest-plus) fields to `system.json`
@@ -65,7 +71,9 @@
 - Use the "Fulfill Your Vow" move when trying to complete a vow ([#70](https://github.com/ben/foundry-ironsworn/pull/70))
 
 ## 0.5.3
+
 ## 0.5.2
+
 ## 0.5.1
 
 - Fixing auto-update logic
