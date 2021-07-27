@@ -54,6 +54,8 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
 
   activateListeners(html: JQuery) {
     html.find('.ironsworn__move__search').on('keyup', (ev) => this._moveSearch.call(this, ev))
+    html.find('.ironsworn__move__search__clear').on('click', (ev) => this._moveSearchClear.call(this, ev))
+
     html.find('.ironsworn__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
     html.find('.ironsworn__builtin__move__roll').on('click', (e) => this._handleBuiltInMoveRoll.call(this, e))
     html.find('.ironsworn__custom__move__roll').on('click', (e) => this._handleCustomMoveRoll.call(this, e))
@@ -113,6 +115,11 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
       this.element.find('ol.moves li').filter(negate(doesMatch)).hide()
       this.element.find('ol.moves li').filter(doesMatch).show()
     }
+  }
+
+  _moveSearchClear(e: JQuery.ClickEvent) {
+    this.element.find('.ironsworn__move__search').val('')
+    this.element.find('ol.moves li').show()
   }
 
   _handleBuiltInMoveExpand(e: JQuery.ClickEvent) {
