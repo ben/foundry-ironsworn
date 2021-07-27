@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.3.5
+
 - Add a search box to the character move sheet ([#92](https://github.com/ben/foundry-ironsworn/pull/92))
 
 ## 1.3.4
