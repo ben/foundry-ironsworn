@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the parsing and logic for the Sojourn move ([#96](https://github.com/ben/foundry-ironsworn/pull/96))
+
 ## 1.3.6
 
 - Fixed input set to type=textarea:
