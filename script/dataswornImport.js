@@ -16,6 +16,34 @@ async function writeLocal(name, obj) {
   return fs.writeFile(`system/assets/${name}.json`, JSON.stringify(obj, null, 2) + '\n')
 }
 
+function processMove(move) {
+  const resultRegex = /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \*\*weak hit\*\*, [\s\S]+?)(On a \*\*miss\*\*, [\s\S]+)/
+  let [_, description, strong, weak, miss] = move.Text.match(resultRegex) || []
+
+  // Fixup for Delve the Depths; the table is in the wrong place
+  if (move.Name === 'Delve the Depths') {
+    const tableRegex = /(Edge\s+\|\s+Shadow[\s\S]+)/
+    const table = miss.match(tableRegex)[1]
+    miss = miss.replace(tableRegex, '')
+    weak += table
+  }
+
+  // Fixup for Sojourn; we want the info in several places
+  if (move.Name === 'Sojourn') {
+    const categories =
+      'Clear a Condition\n\n  * Mend: Clear a wounded debility and take +1 health.\n  * Hearten: Clear a shaken debility and take +1 spirit.\n  * Equip: Clear an unprepared debility and take +1 supply. \n\nRecover\n\n  * Recuperate: Take +2 health for yourself and any companions.\n  * Consort: Take +2 spirit.\n  * Provision: Take +2 supply.\n  * Plan: Take +2 momentum. \n\nProvide Aid\n\n  * Take a quest: Envision what this community needs, or what trouble it is facing (*Ask the Oracle* if unsure). If you chose to help, *Swear an Iron Vow* and add +1.'
+
+    description = 'When **you spend time in a community seeking assistance**, roll +heart. If you share a bond, add +1.'
+    strong = `On **strong hit**, you and your allies may each choose two from within the categories below. If you share a bond, choose one more.\n\n${categories}`
+    weak = `On a **weak hit**, you and your allies may each choose one from within the categories below. If you share a bond, choose one more.\n\n${categories}`
+    miss = 'On a **miss**, you find no help here. *Pay the Price*.'
+  }
+
+  if (!description) description = move.Text
+
+  return { description, strong, weak, miss }
+}
+
 async function doit() {
   // Assets
   console.log('Assets:')
@@ -78,20 +106,9 @@ async function doit() {
   const i18nMoves = []
   for (const category of movesJson.Categories) {
     for (let move of category.Moves) {
-      const resultRegex = /([\s\S]+)(On a \*\*strong hit\*\*, [\s\S]+)(On a \*\*weak hit\*\*, [\s\S]+)(On a \*\*miss\*\*, [\s\S]+)/
-      let [_, description, strong, weak, miss] = move.Text.match(resultRegex) || []
+      const { description, strong, weak, miss } = processMove(move)
 
-      // Fixup for one specific move; the table is in the wrong place
-      if (move.Name === 'Delve the Depths') {
-        const tableRegex = /(Edge\s+\|\s+Shadow[\s\S]+)/
-        const table = miss.match(tableRegex)[1]
-        miss = miss.replace(tableRegex, '')
-        weak += table
-      }
-
-      if (!description) description = move.Text
       delete move.Text
-
       move.Description = marked(description || '') || undefined
       move.Strong = marked(strong || '') || undefined
       move.Weak = marked(weak || '') || undefined
@@ -99,12 +116,12 @@ async function doit() {
 
       const oracles = moveOraclesJson.Oracles.filter((x) => x.Move === move.Name)
       if (oracles.length > 0) {
-        move.oracles = oracles.map(oracle => {
+        move.oracles = oracles.map((oracle) => {
           const stat = (oracle.Name.match(/ - (.*)$/) || [])[1]?.toLowerCase()
           const obj = {
             name: oracle.Name,
             stat,
-            table: []
+            table: [],
           }
           let low = 1
           for (const entry of oracle['Oracle Table']) {
