@@ -19,6 +19,7 @@ async function writeLocal(name, obj) {
 function processMove(move) {
   const resultRegex = /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \*\*weak hit\*\*, [\s\S]+?)(On a \*\*miss\*\*, [\s\S]+)/
   let [_, description, strong, weak, miss] = move.Text.match(resultRegex) || []
+  let extradescription, extrastrong, extraweak, extramiss
 
   // Fixup for Delve the Depths; the table is in the wrong place
   if (move.Name === 'Delve the Depths') {
@@ -37,11 +38,15 @@ function processMove(move) {
     strong = `On **strong hit**, you and your allies may each choose two from within the categories below. If you share a bond, choose one more.\n\n${categories}`
     weak = `On a **weak hit**, you and your allies may each choose one from within the categories below. If you share a bond, choose one more.\n\n${categories}`
     miss = 'On a **miss**, you find no help here. *Pay the Price*.'
+    extradescription = 'On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1.'
+    extrastrong = 'On a **strong hit**, take +2 more for that action.'
+    extraweak = 'On a **weak hit**, take +1 more.'
+    extramiss = 'On a **miss**, it goes badly and you lose all benefits for that action.'
   }
 
   if (!description) description = move.Text
 
-  return { description, strong, weak, miss }
+  return { description, strong, weak, miss, extradescription, extrastrong, extraweak, extramiss }
 }
 
 async function doit() {
@@ -106,13 +111,17 @@ async function doit() {
   const i18nMoves = []
   for (const category of movesJson.Categories) {
     for (let move of category.Moves) {
-      const { description, strong, weak, miss } = processMove(move)
+      const { description, strong, weak, miss, extradescription, extrastrong, extraweak, extramiss } = processMove(move)
 
       delete move.Text
       move.Description = marked(description || '') || undefined
       move.Strong = marked(strong || '') || undefined
       move.Weak = marked(weak || '') || undefined
       move.Miss = marked(miss || '') || undefined
+      move.ExtraDescription = marked(extradescription || '') || undefined
+      move.ExtraStrong = marked(extrastrong || '') || undefined
+      move.ExtraWeak = marked(extraweak || '') || undefined
+      move.ExtraMiss = marked(extramiss || '') || undefined
 
       const oracles = moveOraclesJson.Oracles.filter((x) => x.Move === move.Name)
       if (oracles.length > 0) {
