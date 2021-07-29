@@ -13,15 +13,13 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
   'Delve the Depths': ({ hitType, stat }: CallbackInput) =>
     hitType === HIT_TYPE.WEAK
       ? ` <button class="ironsworn__delvedepths__roll" data-stat="${stat}">
-            Roll that table
+            <i class="fa fa-dice-d6"></i> Roll
           </button>`
       : undefined,
 
   'Reveal a Danger': ({ site }: CallbackInput) => `
-    <button class="ironsworn__revealdanger__roll"
-            data-site="${site?.id}"
-    >
-      Roll that table
+    <button class="ironsworn__revealdanger__roll" data-site="${site?.id}">
+      <i class="fa fa-dice-d6"></i> Roll
     </button>
   `,
 
@@ -30,10 +28,7 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
       ? ''
       : `
         <hr>
-        <p>On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1.</p>
-        <p>On a <strong>strong hit</strong>, take +2 more for that action.</p>
-        <p>On a <strong>weak hit</strong>, take +1 more.</p>
-        <p>On a <strong>miss</strong>, it goes badly and you lose all benefits for that action.</p>
+        <p>${game.i18n.localize('IRONSWORN.MoveContents.Sojourn.extradescription')}</p>
         <button class="ironsworn__sojourn__extra__roll">
           <i class="fa fa-dice-d6"></i> Roll +heart
         </button>
