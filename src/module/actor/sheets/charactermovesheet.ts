@@ -113,13 +113,13 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     const query = $(e.currentTarget).val()
     if (!query || query === '') {
       this.element.find('ol.moves>h2').show()
-      this.element.find('ol.moves li').show()
+      this.element.find('ol.moves>li').show()
     } else {
       this.element.find('ol.moves>h2').hide()
       const re = new RegExp($(e.currentTarget).val() as string, 'i')
       const doesMatch = (_i, el: HTMLElement): boolean => re.test($(el).find('h4').text())
-      this.element.find('ol.moves li').filter(negate(doesMatch)).hide()
-      this.element.find('ol.moves li').filter(doesMatch).show()
+      this.element.find('ol.moves>li').filter(negate(doesMatch)).hide()
+      this.element.find('ol.moves>li').filter(doesMatch).show()
     }
   }
 
