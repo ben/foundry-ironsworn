@@ -5,7 +5,6 @@ type CallbackInput = {
   hitType?: HIT_TYPE
   stat?: string
   site?: IronswornActor
-  actor?: IronswornActor
 }
 
 type Callback = (input: CallbackInput) => string | undefined
@@ -24,13 +23,13 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
     </button>
   `,
 
-  Sojourn: ({ hitType, actor }: CallbackInput) =>
+  Sojourn: ({ hitType }: CallbackInput) =>
     hitType === HIT_TYPE.MISS
       ? undefined
       : `
         <hr>
         <p>${game.i18n.localize('IRONSWORN.MoveContents.Sojourn.extradescription')}</p>
-        <button class="ironsworn__sojourn__extra__roll" data-actor="${actor?.id}">
+        <button class="ironsworn__sojourn__extra__roll">
           <i class="fa fa-dice-d6"></i> Roll +heart
         </button>
       `,

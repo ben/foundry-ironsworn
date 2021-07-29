@@ -5,6 +5,7 @@ import { HIT_TYPE } from './chatrollhelpers'
 import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
 import { maybeShowDice, RollDialog } from '../helpers/roll'
+import { defaultActor } from '../helpers/actors'
 
 export class IronswornChatCard {
   id?: string | null
@@ -114,11 +115,7 @@ export class IronswornChatCard {
     )
   }
 
-  async _sojournExtra(ev: JQuery.ClickEvent) {
-    const actorId = ev.currentTarget.dataset.actor
-    const actor = game.actors?.get(actorId)
-    if (!actor) return
-
+  async _sojournExtra(_ev: JQuery.ClickEvent) {
     const move = await moveDataByName('Sojourn')
     if (!move) return
 
@@ -129,6 +126,8 @@ export class IronswornChatCard {
     move.Miss = move.ExtraMiss || ''
     move.Stats = ['heart']
     delete move.ExtraDescription
+
+    const actor = defaultActor()
     RollDialog.show({move, actor})
   }
 
