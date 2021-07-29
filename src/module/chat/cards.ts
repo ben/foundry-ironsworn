@@ -4,7 +4,7 @@ import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE } from './chatrollhelpers'
 import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
-import { maybeShowDice } from '../helpers/roll'
+import { maybeShowDice, RollDialog } from '../helpers/roll'
 
 export class IronswornChatCard {
   id?: string | null
@@ -26,6 +26,7 @@ export class IronswornChatCard {
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
     html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
+    html.find('.ironsworn__sojourn__extra__roll').on('click', ev => this._sojournExtra.call(this, ev))
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
@@ -111,6 +112,24 @@ export class IronswornChatCard {
         </h4>
       `
     )
+  }
+
+  async _sojournExtra(ev: JQuery.ClickEvent) {
+    const actorId = ev.currentTarget.dataset.actor
+    const actor = game.actors?.get(actorId)
+    if (!actor) return
+
+    const move = await moveDataByName('Sojourn')
+    if (!move) return
+
+    move.Name = `${move.Name} – ${game.i18n.localize('IRONSWORN.Focus')}`
+    move.Description = move.ExtraDescription || ''
+    move.Strong = move.ExtraStrong || ''
+    move.Weak = move.ExtraWeak || ''
+    move.Miss = move.ExtraMiss || ''
+    move.Stats = ['heart']
+    delete move.ExtraDescription
+    RollDialog.show({move, actor})
   }
 
   async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {
