@@ -96,6 +96,10 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
           strong: translateOrEmpty(`${baseKey}.strong`),
           weak: translateOrEmpty(`${baseKey}.weak`),
           miss: translateOrEmpty(`${baseKey}.miss`),
+          extradescription: translateOrEmpty(`${baseKey}.extradescription`),
+          extrastrong: translateOrEmpty(`${baseKey}.extrastrong`),
+          extraweak: translateOrEmpty(`${baseKey}.extraweak`),
+          extramiss: translateOrEmpty(`${baseKey}.extramiss`),
         })
       }
     }
