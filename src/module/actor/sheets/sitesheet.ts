@@ -1,10 +1,10 @@
 import { createIronswornChatRoll, createIronswornDenizenChat } from '../../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../../constants'
+import { defaultActor } from '../../helpers/actors'
 import { moveDataByName } from '../../helpers/data'
 import { RollDialog, rollSiteFeature } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
-import { IronswornActor } from '../actor'
 import { DenizenSlot, SiteDataSource } from '../actortypes'
 
 interface Denizen {
@@ -122,13 +122,13 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   async _moveRoll(ev: JQuery.ClickEvent) {
     const { move: movename } = ev.currentTarget.dataset
     const move = await moveDataByName(movename)
-    const actor = this.findActor()
+    const actor = defaultActor()
     RollDialog.show({ move, actor, site: this.actor })
   }
 
   async _locateObjective(_ev: JQuery.ClickEvent) {
     const move = await moveDataByName('Locate Your Objective')
-    const actor = this.findActor()
+    const actor = defaultActor()
     const progress = Math.floor(this.siteData.data.current / 4)
     const roll = new Roll(`{${progress}, d10, d10}`)
     createIronswornChatRoll({
@@ -169,17 +169,5 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     const { denizens } = this.siteData.data
     denizens[idx].description = val
     this.actor.update({ data: { denizens } }, { render: false })
-  }
-
-  findActor(): IronswornActor {
-    if (game.user?.character) return game.user.character
-
-    // TODO: if more than one character, prompt the user
-    const actor = game.actors?.find((x) => x.type === 'character')
-    if (!actor) {
-      ui.notifications?.error("Couldn't find a character for you")
-      throw new Error("Couldn't find an actor")
-    }
-    return actor
   }
 }

@@ -24,6 +24,10 @@ export interface EnhancedDataswornMove {
   Strong: string | undefined
   Weak: string | undefined
   Miss: string | undefined
+  ExtraDescription?: string
+  ExtraStrong?: string
+  ExtraWeak?: string
+  ExtraMiss?: string
   oracles?: MoveOracle[]
 }
 

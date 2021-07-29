@@ -38,12 +38,18 @@
                 <a class='inline-roll' data-param='{{this}}'><i class='fas fa-dice-d6'></i>
                   {{this}}
                 </a>
+                &nbsp;
                 {{/each}}
               </p>
               {{{enrichHtml description}}}
               {{#if strong}}{{{enrichHtml strong}}}{{/if}}
               {{#if weak}}{{{enrichHtml weak}}}{{/if}}
               {{#if miss}}{{{enrichHtml miss}}}{{/if}}
+
+              {{#if extradescription}}<hr>{{{enrichHtml extradescription}}}{{/if}}
+              {{#if extrastrong}}{{{enrichHtml extrastrong}}}{{/if}}
+              {{#if extraweak}}{{{enrichHtml extraweak}}}{{/if}}
+              {{#if extramiss}}{{{enrichHtml extramiss}}}{{/if}}
             </div>
           </li>
           {{/if}}
