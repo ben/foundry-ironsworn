@@ -162,6 +162,10 @@ async function doit() {
       strong: move.Strong,
       weak: move.Weak,
       miss: move.Miss,
+      extradescription: move.ExtraDescription,
+      extrastrong: move.ExtraStrong,
+      extraweak: move.ExtraWeak,
+      extramiss: move.ExtraMiss,
     }
     if (move.oracles) {
       obj.oracles = {}

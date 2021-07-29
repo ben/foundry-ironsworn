@@ -167,10 +167,10 @@
         "strong": "<p>On <strong>strong hit</strong>, you and your allies may each choose two from within the categories below. If you share a bond, choose one more.</p>\n<p>Clear a Condition</p>\n<ul>\n<li>Mend: Clear a wounded debility and take +1 health.</li>\n<li>Hearten: Clear a shaken debility and take +1 spirit.</li>\n<li>Equip: Clear an unprepared debility and take +1 supply. </li>\n</ul>\n<p>Recover</p>\n<ul>\n<li>Recuperate: Take +2 health for yourself and any companions.</li>\n<li>Consort: Take +2 spirit.</li>\n<li>Provision: Take +2 supply.</li>\n<li>Plan: Take +2 momentum. </li>\n</ul>\n<p>Provide Aid</p>\n<ul>\n<li>Take a quest: Envision what this community needs, or what trouble it is facing (<em>Ask the Oracle</em> if unsure). If you chose to help, <em>Swear an Iron Vow</em> and add +1.</li>\n</ul>\n",
         "weak": "<p>On a <strong>weak hit</strong>, you and your allies may each choose one from within the categories below. If you share a bond, choose one more.</p>\n<p>Clear a Condition</p>\n<ul>\n<li>Mend: Clear a wounded debility and take +1 health.</li>\n<li>Hearten: Clear a shaken debility and take +1 spirit.</li>\n<li>Equip: Clear an unprepared debility and take +1 supply. </li>\n</ul>\n<p>Recover</p>\n<ul>\n<li>Recuperate: Take +2 health for yourself and any companions.</li>\n<li>Consort: Take +2 spirit.</li>\n<li>Provision: Take +2 supply.</li>\n<li>Plan: Take +2 momentum. </li>\n</ul>\n<p>Provide Aid</p>\n<ul>\n<li>Take a quest: Envision what this community needs, or what trouble it is facing (<em>Ask the Oracle</em> if unsure). If you chose to help, <em>Swear an Iron Vow</em> and add +1.</li>\n</ul>\n",
         "miss": "<p>On a <strong>miss</strong>, you find no help here. <em>Pay the Price</em>.</p>\n",
-        "extradescription": "On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1.",
-        "extrastrong": "On a <strong>strong hit</strong>, take +2 more for that action.",
-        "extraweak": "On a <strong>weak hit</strong>, take +1 more.",
-        "extramiss": "On a <strong>miss</strong>, it goes badly and you lose all benefits for that action."
+        "extradescription": "<p>On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1.</p>\n",
+        "extrastrong": "<p>On a <strong>strong hit</strong>, take +2 more for that action.</p>\n",
+        "extraweak": "<p>On a <strong>weak hit</strong>, take +1 more.</p>\n",
+        "extramiss": "<p>On a <strong>miss</strong>, it goes badly and you lose all benefits for that action.</p>\n"
       },
       "Draw the Circle": {
         "title": "Draw the Circle",
