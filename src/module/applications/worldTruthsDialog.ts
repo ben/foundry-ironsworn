@@ -71,8 +71,14 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
   }
 
   static async maybeShow() {
-    // Show this dialog if appropriate
+    // Bail if we're configured to not even try
     if (!game.settings.get('foundry-ironsworn', 'prompt-world-truths')) {
+      return
+    }
+
+    // Bail if the truths journal entry already exists
+    const journal = game.journal?.find((x) => x.name === game.i18n.localize('IRONSWORN.YourWorldTruths'))
+    if (journal) {
       return
     }
 
