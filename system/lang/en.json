@@ -96,6 +96,10 @@
       "SharedSupply": {
         "Name": "Shared Supply Tracker",
         "Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+      },
+      "PromptTruths": {
+        "Name": "Prompt for World Truths",
+        "Hint": "Prompt on startup to generate world truths using the dialog, if not already done."
       }
     },
     "MoveContents": {

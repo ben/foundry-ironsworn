@@ -23,7 +23,9 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
 
   static async maybeShow() {
     // Show this dialog if appropriate
-    // TODO: return if dont-bug-me setting is set
+    if (!game.settings.get('foundry-ironsworn', 'prompt-world-truths')) {
+      return
+    }
 
     const d = new Dialog({
       title: game.i18n.localize('IRONSWORN.YourWorldTruths'),
@@ -41,7 +43,9 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
         goaway: {
           icon: '<i class="fas fa-times"></i>',
           label: 'Never',
-          callback: () => {},
+          callback: () => {
+            game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
+          },
         },
       },
       default: 'two',

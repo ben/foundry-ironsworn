@@ -24,6 +24,15 @@ export class IronswornSettings {
       type: Boolean,
       default: true,
     })
+
+    game.settings.register('foundry-ironsworn', 'prompt-world-truths', {
+      name: 'IRONSWORN.Settings.PromptTruths.Name',
+      hint: 'IRONSWORN.Settings.PromptTruths.Hint',
+      scope: 'world',
+      config: true,
+      type: Boolean,
+      default: true,
+    })
   }
 
   static get theme(): string {
