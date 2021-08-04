@@ -50,7 +50,7 @@ function processMove(move) {
 }
 
 async function doit() {
-  // Assets
+  //////////////////////////////////////////////////
   console.log('Assets:')
   console.log('  Fetching')
   const assetsJson = await dataswornJson('ironsworn_assets')
@@ -101,7 +101,7 @@ async function doit() {
   console.log('  Writing')
   await writeLocal('assets', assets)
 
-  // Moves
+  //////////////////////////////////////////////////
   console.log('Moves:')
   console.log('  Fetching')
   const movesJson = await dataswornJson('ironsworn_moves')
@@ -181,7 +181,7 @@ async function doit() {
     en.IRONSWORN.MoveContents[move.Name] = obj
   }
 
-  // Delve: themes
+  //////////////////////////////////////////////////
   console.log('Delve themes:')
   console.log('  Fetching')
   const delveThemesJson = await dataswornJson('ironsworn_delve_themes')
@@ -209,6 +209,7 @@ async function doit() {
     }
   }
 
+  //////////////////////////////////////////////////
   console.log('Delve domains:')
   console.log('  Fetching')
   const delveDomainsJson = await dataswornJson('ironsworn_delve_domains')
@@ -233,6 +234,27 @@ async function doit() {
     for (let i = 0; i < domain.Dangers.length; i++) {
       const danger = domain.Dangers[i]
       en.IRONSWORN.DomainContents[domain.Name][`danger${i + 1}`] = danger.Description
+    }
+  }
+
+  //////////////////////////////////////////////////
+  console.log('Truths:')
+  console.log('  Fetching')
+  const truthsJson = await dataswornJson('ironsworn_world_truths')
+
+  console.log('  Writing')
+  await writeLocal('world-truths', truthsJson)
+
+  en.IRONSWORN.WorldTruths ||= {}
+  for (const truthCategory of truthsJson.Categories) {
+    en.IRONSWORN.WorldTruths[truthCategory.Name] = {
+      ...en.IRONSWORN.WorldTruths[truthCategory.name],
+      name: truthCategory.Name
+    }
+    for(let i=0; i<truthCategory.Options.length; i++) {
+      const option = truthCategory.Options[i]
+      en.IRONSWORN.WorldTruths[truthCategory.Name][`option${i+1}`] = option.Truth
+      en.IRONSWORN.WorldTruths[truthCategory.Name][`quest${i+1}`] = option.Quest
     }
   }
 

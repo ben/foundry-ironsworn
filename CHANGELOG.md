@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add a "Your Truths" worksheet ([#97](https://github.com/ben/foundry-ironsworn/pull/97))
+
 ## 1.3.7
 
 - Fix the parsing and logic for the Sojourn move ([#96](https://github.com/ben/foundry-ironsworn/pull/96))
