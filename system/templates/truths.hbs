@@ -4,9 +4,10 @@
 
   {{#each Options}}
   <div class="flexrow">
-    <input class="nogrow" style="flex-basis: 20px; margin: 8px;" type="radio" name="{{../Name}}" id="{{concat ../Name @index}}">
+    <input class="nogrow" style="flex-basis: 20px; margin: 8px;" type="radio" name="{{../Name}}"
+      id="{{concat ../Name '#' @index}}" value="{{Truth}}">
     <div class="flexcol">
-      <label for="{{concat ../Name @index}}">
+      <label for="{{concat ../Name '#' @index}}">
         <p>{{Truth}}</p>
         {{!-- TODO: I18n for 'Quest Starter:' --}}
         <p><em>Quest Starter: {{Quest}}</em></p>
@@ -16,10 +17,19 @@
   {{/each}}
 
   <div class="flexrow">
-    <input class="nogrow" style="flex-basis: 20px; margin: 5px 8px;" type="radio" name="{{Name}}" id="{{concat Name 'custom'}}">
+    <input class="nogrow" style="flex-basis: 20px; margin: 5px 8px;" type="radio" name="{{Name}}"
+      id="{{concat Name '#custom'}}">
     {{!-- TODO: i18n for 'Custom Truth' --}}
     <input type="text" class="ironsworn__custom__truth" placeholder="Custom Truth">
   </div>
 
   {{/each}}
+
+  <hr>
+
+  <button class="ironsworn__save__truths">
+    <i class="fas fa-feather"></i>
+    {{!-- TODO: i18n --}}
+    Save these choices
+  </button>
 </form>
