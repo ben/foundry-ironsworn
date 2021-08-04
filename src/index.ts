@@ -9,6 +9,7 @@ import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactshe
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
 import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { CreateActorDialog } from './module/applications/createActorDialog'
+import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { IronswornSettings } from './module/helpers/settings'
@@ -105,6 +106,7 @@ Hooks.once('init', async () => {
 
 Hooks.once('ready', () => {
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
+  WorldTruthsDialog.maybeShow()
 })
 
 Hooks.once('setup', () => {
