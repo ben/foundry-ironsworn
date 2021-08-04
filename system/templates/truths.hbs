@@ -1,18 +1,25 @@
 <form>
   {{#each truths.Categories}}
-  <h2>{{Name}}</h2>
+  <h2 style="margin-top: 1em;">{{Name}}</h2>
 
   {{#each Options}}
-  <input type="radio" name="{{../Name}}" id="{{concat ../Name @index}}">
-  <label for="{{concat ../Name @index}}">
-    <p>{{Truth}}</p>
-    {{!-- TODO: I18n for 'Quest Starter:' --}}
-    <p><em>Quest Starter: {{Quest}}</em></p>
-  </label>
+  <div class="flexrow">
+    <input class="nogrow" style="flex-basis: 20px; margin: 8px;" type="radio" name="{{../Name}}" id="{{concat ../Name @index}}">
+    <div class="flexcol">
+      <label for="{{concat ../Name @index}}">
+        <p>{{Truth}}</p>
+        {{!-- TODO: I18n for 'Quest Starter:' --}}
+        <p><em>Quest Starter: {{Quest}}</em></p>
+      </label>
+    </div>
+  </div>
   {{/each}}
-  <input type="radio" name="{{../Name}}" id="{{concat ../Name 'custom'}}">
-  {{!-- TODO: i18n for 'Custom Truth' --}}
-  <input type="text" id="{{concat ../Name 'custom'}}" placeholder="Custom Truth">
+
+  <div class="flexrow">
+    <input class="nogrow" style="flex-basis: 20px; margin: 5px 8px;" type="radio" name="{{Name}}" id="{{concat Name 'custom'}}">
+    {{!-- TODO: i18n for 'Custom Truth' --}}
+    <input type="text" id="{{concat Name 'custom'}}" placeholder="Custom Truth">
+  </div>
 
   {{/each}}
 </form>
