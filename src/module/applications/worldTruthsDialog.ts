@@ -21,6 +21,15 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
     // Nothing to do
   }
 
+  async getData() {
+    const truths = await fetch('/systems/foundry-ironsworn/assets/world-truths.json').then((x) => x.json())
+    // TODO: run truths text through I18n
+
+    return mergeObject(super.getData(), {
+      truths
+    })
+  }
+
   static async maybeShow() {
     // Show this dialog if appropriate
     if (!game.settings.get('foundry-ironsworn', 'prompt-world-truths')) {
