@@ -2,6 +2,9 @@
   "IRONSWORN": {
     "CreateActor": "Create Actor",
     "YourWorldTruths": "Your World: Truths",
+    "TruthQuestStarter": "Quest Starter:",
+    "SaveYourTruths": "Save Your Truths",
+    "CustomTruth": "Custom Truth",
     "Roll": "Roll",
     "Rolling": "Rolling",
     "Bonus": "Bonus",

@@ -23,7 +23,16 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
 
   async getData() {
     const truths = await fetch('/systems/foundry-ironsworn/assets/world-truths.json').then((x) => x.json())
-    // TODO: run truths text through I18n
+
+    // Run truths text through I18n
+    for (const category of truths.Categories) {
+      for (let i = 0; i < category.Options.length; i++) {
+        const option = category.Options[i]
+        option.Truth = game.i18n.localize(`IRONSWORN.WorldTruths.${category.Name}.option${i + 1}`)
+        option.Quest = game.i18n.localize(`IRONSWORN.WorldTruths.${category.Name}.quest${i + 1}`)
+      }
+      category.Name = game.i18n.localize(`IRONSWORN.WorldTruths.${category.Name}.name`)
+    }
 
     return mergeObject(super.getData(), {
       truths,
@@ -54,8 +63,8 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
     }
 
     const journal = await JournalEntry.create({
-      name: "Your World", // TODO: i18n
-      content: sections.join('\n')
+      name: game.i18n.localize('IRONSWORN.YourWorldTruths'),
+      content: sections.join('\n'),
     })
     journal?.sheet?.render(true)
     this.close()
