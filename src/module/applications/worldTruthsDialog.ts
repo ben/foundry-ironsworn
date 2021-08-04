@@ -26,24 +26,39 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
     // TODO: run truths text through I18n
 
     return mergeObject(super.getData(), {
-      truths
+      truths,
     })
   }
 
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html.find('.ironsworn__custom__truth').on('focus', ev => this._customTruthFocus.call(this, ev))
-    html.find('.ironsworn__save__truths').on('click', ev => this._save.call(this, ev))
-
+    html.find('.ironsworn__custom__truth').on('focus', (ev) => this._customTruthFocus.call(this, ev))
+    html.find('.ironsworn__save__truths').on('click', (ev) => this._save.call(this, ev))
   }
 
   _customTruthFocus(ev: JQuery.FocusEvent) {
     $(ev.currentTarget).siblings('input').prop('checked', true)
   }
 
-  _save(ev: JQuery.ClickEvent) {
+  async _save(ev: JQuery.ClickEvent) {
     ev.preventDefault()
+
+    // Get elements that are checked
+    const sections: string[] = []
+    for (const radio of this.element.find(':checked')) {
+      const { category } = radio.dataset
+      const descriptionElement = $(radio).parent().find('.description')
+      const description = descriptionElement.html() || `<p>${descriptionElement.val()}</p>`
+      sections.push(`<h2>${category}</h2> ${description}`)
+    }
+
+    const journal = await JournalEntry.create({
+      name: "Your World", // TODO: i18n
+      content: sections.join('\n')
+    })
+    journal?.sheet?.render(true)
+    this.close()
   }
 
   static async maybeShow() {
