@@ -12,8 +12,8 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
       id: 'world-truths-dialog',
       resizable: true,
       classes: ['ironsworn', 'sheet', 'world-truths', `theme-${IronswornSettings.theme}`],
-      width: 500,
-      height: 500,
+      width: 600,
+      height: 700,
     } as FormApplication.Options)
   }
 
@@ -28,6 +28,16 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
     return mergeObject(super.getData(), {
       truths
     })
+  }
+
+  activateListeners(html: JQuery) {
+    super.activateListeners(html)
+
+    html.find('.ironsworn__custom__truth').on('focus', ev => this._customTruthFocus.call(this, ev))
+  }
+
+  _customTruthFocus(ev: JQuery.FocusEvent) {
+    $(ev.currentTarget).siblings('input').prop('checked', true)
   }
 
   static async maybeShow() {
