@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.4.0
+
 - Add a "Your Truths" worksheet ([#97](https://github.com/ben/foundry-ironsworn/pull/97))
 
 ## 1.3.7
