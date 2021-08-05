@@ -86,7 +86,16 @@ export class IronswornHandlebarsHelpers {
 
     Handlebars.registerHelper('enrichHtml', (text) => {
       const rendered = TextEditor.enrichHTML(text)
-      return rendered.replace(/\(\(rollplus (.*?)\)\)/g, `<a class='inline-roll' data-param='$1'><i class='fas fa-dice-d6'></i>${game.i18n.localize('IRONSWORN.Roll')} +$1</a>`)
+      const rollText = game.i18n.localize('IRONSWORN.Roll')
+      return rendered.replace(
+        /\(\(rollplus (.*?)\)\)/g,
+        (_, stat) => `
+          <a class="inline-roll" data-param="${stat}">
+            <i class="fas fa-dice-d6"></i>
+            ${rollText} +${game.i18n.localize(`IRONSWORN.${capitalize(stat)}`).toLowerCase()}
+          </a>
+        `
+      )
     })
 
     Handlebars.registerHelper('rangeEach', function (context, _options) {
