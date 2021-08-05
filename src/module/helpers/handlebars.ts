@@ -17,6 +17,7 @@ export class IronswornHandlebarsHelpers {
     Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''))
 
     Handlebars.registerHelper('capitalize', capitalize)
+    Handlebars.registerHelper('lowercase', (str) => str.toLowerCase())
 
     Handlebars.registerHelper('join', function (a, joiner) {
       return a.join(joiner)

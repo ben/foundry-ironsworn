@@ -36,7 +36,7 @@
               <p>
                 {{#each Stats}}
                 <a class='inline-roll' data-param='{{this}}'><i class='fas fa-dice-d6'></i>
-                  {{this}}
+                  {{lowercase (localize (concat 'IRONSWORN.' (capitalize this)))}}
                 </a>
                 &nbsp;
                 {{/each}}
