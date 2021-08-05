@@ -253,9 +253,10 @@
           {{#*inline "debility"}}
           <label class="checkbox">
             <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.data.debility name)}}>
-            {{capitalize name}}
+            {{localize (concat 'IRONSWORN.' (capitalize name))}}
           </label>
           {{/inline}}
+
           <div class="flexrow">
             <div class="flexcol" style="flex:2;">
 

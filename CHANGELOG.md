@@ -2,6 +2,8 @@
 
 ## In progress
 
+- I18n fixes ([#99](https://github.com/ben/foundry-ironsworn/pull/99))
+
 ## 1.4.0
 
 - Add a "Your Truths" worksheet ([#97](https://github.com/ben/foundry-ironsworn/pull/97))

@@ -101,6 +101,8 @@ async function doit() {
   console.log('  Writing')
   await writeLocal('assets', assets)
 
+  // TODO: asset text in i18n files
+
   //////////////////////////////////////////////////
   console.log('Moves:')
   console.log('  Fetching')
