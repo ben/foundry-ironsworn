@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.4.1
+
 - I18n fixes ([#99](https://github.com/ben/foundry-ironsworn/pull/99))
 
 ## 1.4.0
