@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the spelling of "formidable" ([#105](https://github.com/ben/foundry-ironsworn/pull/105))
+
 ## 1.4.1
 
 - I18n fixes ([#99](https://github.com/ben/foundry-ironsworn/pull/99))
