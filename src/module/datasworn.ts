@@ -26,9 +26,11 @@ const DOMAIN_IMAGES = {
   Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp',
 }
 
+const FOE_IMAGES = {}
+
 export async function importFromDatasworn() {
   // Empty out the packs
-  for (const key of ['world.ironsworn-items', 'world.ironsworn-assets', 'world.ironsworn-delve-themes', 'world.ironsworn-delve-domains']) {
+  for (const key of ['world.ironsworn-items', 'world.ironsworn-assets', 'world.ironsworn-delve-themes', 'world.ironsworn-delve-domains', 'world.ironsworn-foes']) {
     const pack = game.packs.get(key)
     if (!pack) continue
     await pack.render(true)
@@ -39,28 +41,25 @@ export async function importFromDatasworn() {
   }
 
   // Moves
-  const movesPack = game?.packs?.get('world.ironsworn-items')
-  if (movesPack) {
-    const movesJson = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
-    const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-    for (const category of movesJson.Categories) {
-      for (const move of category.Moves) {
-        movesToCreate.push({
-          type: 'move',
-          name: move.Name,
-          img: 'icons/dice/d10black.svg',
-          data: {
-            description: move.Description,
-            strong: move.Strong,
-            weak: move.Weak,
-            miss: move.Miss,
-            stats: move.Stats || [],
-          },
-        })
-      }
+  const movesJson = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
+  const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const category of movesJson.Categories) {
+    for (const move of category.Moves) {
+      movesToCreate.push({
+        type: 'move',
+        name: move.Name,
+        img: 'icons/dice/d10black.svg',
+        data: {
+          description: move.Description,
+          strong: move.Strong,
+          weak: move.Weak,
+          miss: move.Miss,
+          stats: move.Stats || [],
+        },
+      })
     }
-    await Item.createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
   }
+  await Item.createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
 
   // Assets
   const assetsJson = await fetch('/systems/foundry-ironsworn/assets/assets.json').then((x) => x.json())
@@ -145,4 +144,28 @@ export async function importFromDatasworn() {
     return domainData
   })
   await Item.createDocuments(domainsToCreate, { pack: 'world.ironsworn-delve-domains' })
+
+  // Foes
+  const foesJson = await fetch('/systems/foundry-ironsworn/assets/foes.json').then((x) => x.json())
+  const foesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const category of foesJson.Categories) {
+    for (const foe of category.Foes) {
+      const description = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
+        ...foe,
+        Category: category.Name,
+        CategoryDescription: category.Description,
+      })
+
+      foesToCreate.push({
+        type: 'progress',
+        name: foe.Name,
+        img: FOE_IMAGES[foe.Name],
+        data: {
+          description,
+          rank: foe.Rank.toLowerCase()
+        },
+      })
+    }
+  }
+  await Item.createDocuments(foesToCreate, { pack: 'world.ironsworn-foes' })
 }
