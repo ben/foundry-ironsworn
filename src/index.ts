@@ -12,6 +12,7 @@ import { CreateActorDialog } from './module/applications/createActorDialog'
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
+import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
@@ -104,7 +105,9 @@ Hooks.once('init', async () => {
   IronswornChatCard.registerHooks()
 })
 
-Hooks.once('ready', () => {
+Hooks.once('ready', async () => {
+  await runDataMigrations()
+
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   WorldTruthsDialog.maybeShow()
 })
