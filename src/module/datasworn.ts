@@ -159,10 +159,10 @@ export async function importFromDatasworn() {
       foesToCreate.push({
         type: 'progress',
         name: foe.Name,
-        img: FOE_IMAGES[foe.Name],
+        img: FOE_IMAGES[foe.Name] || undefined,
         data: {
           description,
-          rank: foe.Rank.toLowerCase()
+          rank: foe.Rank.toLowerCase(),
         },
       })
     }

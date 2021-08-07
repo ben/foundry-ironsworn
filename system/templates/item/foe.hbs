@@ -31,7 +31,7 @@ CategoryDescription: "<p>Ironlanders are...</p>"
 --}}
 
 {{#*inline 'ticklist'}}
-<div class="flexcol box">
+<div class="flexcol box" style="justify-content: flex-start;">
   <h4 class="nogrow" style="margin: 0.5em;">{{name}}</h4>
   {{#each list}}
   <p class="nogrow">{{this}}</p>
@@ -43,7 +43,7 @@ CategoryDescription: "<p>Ironlanders are...</p>"
 
 {{{Description}}}
 
-<div class="boxgroup flexrow boxrow" style="align-items: flex-start; padding: 5px;">
+<div class="boxgroup flexrow boxrow">
   {{>ticklist name='Features' list=Features}}
   {{>ticklist name='Drives' list=Drives}}
   {{>ticklist name='Tactics' list=Tactics}}
