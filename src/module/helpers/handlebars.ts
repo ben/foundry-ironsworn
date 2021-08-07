@@ -19,8 +19,6 @@ export class IronswornHandlebarsHelpers {
     Handlebars.registerHelper('capitalize', capitalize)
     Handlebars.registerHelper('lowercase', (str) => str.toLowerCase())
 
-    })
-
     Handlebars.registerHelper('json', function (context) {
       return JSON.stringify(context, null, 2)
     })
