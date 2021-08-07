@@ -260,6 +260,25 @@ async function doit() {
     }
   }
 
+  //////////////////////////////////////////////////
+  console.log('Foes:')
+  console.log('  Fetching')
+  const foesJson = await dataswornJson('ironsworn_foes')
+
+  console.log('  Rendering')
+  for (const foeCategory of foesJson.Categories) {
+    foeCategory.Description = marked(foeCategory.Description).trim()
+    for (const foe of foeCategory.Foes) {
+      foe.Description = marked(foe.Description).trim()
+      foe.Quest = marked(foe.Quest).trim()
+      if (foe.Truth) foe.Truth = marked(foe.Truth).trim()
+    }
+  }
+
+
+  console.log('  Writing')
+  await writeLocal('foes', foesJson)
+
   console.log('Writing en.json')
   await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2) + '\n')
 }
