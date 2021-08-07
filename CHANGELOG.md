@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.4.2
+
 - Fix the spelling of "formidable" ([#105](https://github.com/ben/foundry-ironsworn/pull/105))
 - Include a "foes" compendium ([#106](https://github.com/ben/foundry-ironsworn/pull/106))
 
