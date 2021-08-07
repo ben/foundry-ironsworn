@@ -26,9 +26,70 @@ const DOMAIN_IMAGES = {
   Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp',
 }
 
+const FOE_IMAGES = {
+  Broken: 'icons/creatures/mammals/humanoid-fox-cat-archer.webp',
+  'Common Folk': 'icons/tools/hand/shovel-spade-steel-blue-brown.webp',
+  Hunter: 'icons/environment/people/archer.webp',
+  Mystic: 'icons/environment/people/cleric-orange.webp',
+  Raider: 'icons/sundries/flags/banner-flag-pirate.webp',
+  Warrior: 'icons/skills/melee/hand-grip-sword-red.webp',
+  Husk: 'icons/magic/earth/strike-body-stone-crumble.webp',
+  Zealot: 'icons/environment/people/cleric-grey.webp',
+  Elf: 'icons/creatures/magical/humanoid-horned-rider.webp',
+  Giant: 'icons/creatures/magical/humanoid-giant-forest-blue.webp',
+  Primordial: 'icons/creatures/magical/spirit-undead-horned-blue.webp',
+  Troll: 'icons/creatures/mammals/bull-horns-eyes-glowin-orange.webp',
+  Varou: 'icons/creatures/mammals/wolf-shadow-black.webp',
+  Atanya: 'icons/magic/air/wind-weather-sailing-ship.webp',
+  Merrow: 'icons/creatures/fish/fish-man-eye-green.webp',
+  Bear: 'icons/creatures/abilities/bear-roar-bite-brown-green.webp',
+  Boar: 'icons/commodities/treasure/figurine-boar.webp',
+  Gaunt: 'icons/magic/fire/elemental-creature-horse.webp',
+  'Marsh Rat': 'icons/creatures/mammals/rodent-rat-diseaed-gray.webp',
+  Wolf: 'icons/creatures/abilities/wolf-howl-moon-purple.webp',
+  Bladewing: 'icons/creatures/magical/spirit-undead-winged-ghost.webp',
+  'Carrion Newt': 'icons/creatures/reptiles/chameleon-camouflage-green-brown.webp',
+  'Cave Lion': 'icons/creatures/abilities/lion-roar-yellow.webp',
+  'Deep Rat': 'icons/creatures/mammals/rodent-rat-green.webp',
+  'Nightmare Spider': 'icons/creatures/invertebrates/spider-mandibles-brown.webp',
+  'Shroud Crab': 'icons/consumables/meat/claw-crab-lobster-serrated-pink.webp',
+  Trog: 'icons/creatures/reptiles/lizard-iguana-green.webp',
+  Basilisk: 'icons/creatures/reptiles/snake-poised-white.webp',
+  'Elder Beast': 'icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp',
+  'Harrow Spider': 'icons/creatures/invertebrates/spider-web-black.webp',
+  Leviathan: 'icons/creatures/reptiles/serpent-horned-green.webp',
+  Mammoth: 'icons/commodities/leather/fur-white.webp',
+  Wyvern: 'icons/creatures/abilities/wolf-heads-swirl-purple.webp',
+  Chitter: 'icons/creatures/invertebrates/bug-sixlegged-gray.webp',
+  Gnarl: 'icons/magic/nature/tree-animated-strike.webp',
+  'Iron-Wracked Beast': 'icons/environment/wilderness/statue-hound-horned.webp',
+  Kraken: 'icons/creatures/fish/squid-kraken-orange.webp',
+  Nightspawn: 'icons/creatures/unholy/demon-horned-black-yellow.webp',
+  Rhaskar: 'icons/creatures/fish/fish-marlin-swordfight-blue.webp',
+  Wyrm: 'icons/creatures/eyes/lizard-single-slit-pink.webp',
+  Bonewalker: 'icons/magic/death/undead-skeleton-worn-blue.webp',
+  Frostbound: 'icons/creatures/magical/spirit-undead-ghost-blue.webp',
+  Chimera: 'icons/creatures/magical/spirit-earth-stone-magma-yellow.webp',
+  Haunt: 'icons/magic/death/undead-ghost-strike-white.webp',
+  Hollow: 'icons/consumables/plants/grass-leaves-green.webp',
+  'Iron Revenant': 'icons/creatures/magical/construct-golem-stone-blue.webp',
+  Sodden: 'icons/magic/death/undead-ghost-scream-teal.webp',
+  Blighthound: 'icons/commodities/treasure/figurine-dog.webp',
+  'Bog Rot': 'icons/magic/death/hand-dirt-undead-zombie.webp',
+  Bonehorde: 'icons/skills/trades/academics-study-archaeology-bones.webp',
+  Thrall: 'icons/creatures/abilities/mouth-teeth-human.webp',
+  Wight: 'icons/creatures/magical/humanoid-silhouette-green.webp',
+  'Blood Thorn': 'icons/consumables/plants/thorned-stem-vine-green.webp',
+  'Circle of Stones': 'icons/environment/wilderness/arch-stone.webp',
+  Glimmer: 'icons/magic/nature/elemental-plant-humanoid.webp',
+  Gloom: 'icons/magic/perception/silhouette-stealth-shadow.webp',
+  Maelstrom: 'icons/magic/water/vortex-water-whirlpool.webp',
+  Tempest: 'icons/magic/lightning/bolts-salvo-clouds-sky.webp',
+}
+
 export async function importFromDatasworn() {
   // Empty out the packs
-  for (const key of ['world.ironsworn-items', 'world.ironsworn-assets', 'world.ironsworn-delve-themes', 'world.ironsworn-delve-domains']) {
+  for (const key of ['world.ironsworn-items', 'world.ironsworn-assets', 'world.ironsworn-delve-themes', 'world.ironsworn-delve-domains', 'world.ironsworn-foes']) {
     const pack = game.packs.get(key)
     if (!pack) continue
     await pack.render(true)
@@ -39,28 +100,25 @@ export async function importFromDatasworn() {
   }
 
   // Moves
-  const movesPack = game?.packs?.get('world.ironsworn-items')
-  if (movesPack) {
-    const movesJson = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
-    const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-    for (const category of movesJson.Categories) {
-      for (const move of category.Moves) {
-        movesToCreate.push({
-          type: 'move',
-          name: move.Name,
-          img: 'icons/dice/d10black.svg',
-          data: {
-            description: move.Description,
-            strong: move.Strong,
-            weak: move.Weak,
-            miss: move.Miss,
-            stats: move.Stats || [],
-          },
-        })
-      }
+  const movesJson = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
+  const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const category of movesJson.Categories) {
+    for (const move of category.Moves) {
+      movesToCreate.push({
+        type: 'move',
+        name: move.Name,
+        img: 'icons/dice/d10black.svg',
+        data: {
+          description: move.Description,
+          strong: move.Strong,
+          weak: move.Weak,
+          miss: move.Miss,
+          stats: move.Stats || [],
+        },
+      })
     }
-    await Item.createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
   }
+  await Item.createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
 
   // Assets
   const assetsJson = await fetch('/systems/foundry-ironsworn/assets/assets.json').then((x) => x.json())
@@ -145,4 +203,28 @@ export async function importFromDatasworn() {
     return domainData
   })
   await Item.createDocuments(domainsToCreate, { pack: 'world.ironsworn-delve-domains' })
+
+  // Foes
+  const foesJson = await fetch('/systems/foundry-ironsworn/assets/foes.json').then((x) => x.json())
+  const foesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const category of foesJson.Categories) {
+    for (const foe of category.Foes) {
+      const description = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
+        ...foe,
+        Category: category.Name,
+        CategoryDescription: category.Description,
+      })
+
+      foesToCreate.push({
+        type: 'progress',
+        name: foe.Name,
+        img: FOE_IMAGES[foe.Name] || undefined,
+        data: {
+          description,
+          rank: foe.Rank.toLowerCase(),
+        },
+      })
+    }
+  }
+  await Item.createDocuments(foesToCreate, { pack: 'world.ironsworn-foes' })
 }

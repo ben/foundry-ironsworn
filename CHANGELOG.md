@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix the spelling of "formidable" ([#105](https://github.com/ben/foundry-ironsworn/pull/105))
+- Include a "foes" compendium ([#106](https://github.com/ben/foundry-ironsworn/pull/106))
 
 ## 1.4.1
 

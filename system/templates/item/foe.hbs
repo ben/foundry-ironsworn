@@ -1,0 +1,59 @@
+{{!--
+
+{
+Name: "Broken",
+Rank: "Troublesome",
+Source: {
+Name: "Ironsworn rulebook",
+Page: "138"
+},
+Features: [
+"Crazed eyes",
+"Painted skin",
+"Feral Screams",
+"Scavenged clothing and weapons"
+],
+Drives: [
+"Show my power",
+"Share my pain"
+],
+Tactics: [
+"Spring from hiding",
+"Ferocious attacks"
+],
+Description: "<p>Another people sailed to the Ironlands...</p>",
+Quest: "<p>Years ago, an Ironlander child was...</p>",
+Truth?: "<p>Years ago, an Ironlander child was...</p>",
+Category: "Ironlanders",
+CategoryDescription: "<p>Ironlanders are...</p>"
+}
+
+--}}
+
+{{#*inline 'ticklist'}}
+<div class="flexcol box" style="justify-content: flex-start;">
+  <h4 class="nogrow" style="margin: 0.5em;">{{name}}</h4>
+  {{#each list}}
+  <p class="nogrow">{{this}}</p>
+  {{/each}}
+</div>
+{{/inline}}
+
+<h2>{{Name}}</h2>
+
+{{{Description}}}
+
+<div class="boxgroup flexrow boxrow">
+  {{>ticklist name='Features' list=Features}}
+  {{>ticklist name='Drives' list=Drives}}
+  {{>ticklist name='Tactics' list=Tactics}}
+</div>
+
+<em>{{{Quest}}}</em>
+
+{{#if Truth}}
+<em>{{{Truth}}}</em>
+{{/if}}
+
+<h2>{{Category}}</h2>
+{{{CategoryDescription}}}

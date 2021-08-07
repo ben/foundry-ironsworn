@@ -78,6 +78,13 @@
       "entity": "Item"
     },
     {
+      "name": "ironswornfoes",
+      "label": "Ironsworn Foes",
+      "system": "foundry-ironsworn",
+      "path": "packs/foes.db",
+      "entity": "Item"
+    },
+    {
       "name": "ironswornscenes",
       "label": "Ironsworn Maps",
       "system": "foundry-ironsworn",
