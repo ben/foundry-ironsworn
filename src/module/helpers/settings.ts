@@ -33,6 +33,13 @@ export class IronswornSettings {
       type: Boolean,
       default: true,
     })
+
+    game.settings.register('foundry-ironsworn', 'data-version', {
+      scope: 'world',
+      config: false,
+      type: Number,
+      default: 1
+    })
   }
 
   static get theme(): string {
