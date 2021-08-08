@@ -26,8 +26,9 @@
   </div>
   {{/if}}
 
-  {{else}} {{! Prompt to drag an item in }}
+  {{else}}
 
+  {{! Prompt to drag an item in }}
   <div class="flexcol">
     <h4 style="margin: 0;">{{localize titlekey}}</h4>
     <p class="inset clickable block ironsworn__compendium__open" style="padding: 0 2em;"
@@ -145,7 +146,7 @@
     {{#each denizenMatrix}}
     <div class="flexrow boxrow">
       {{#each this}}
-      <div class="box flexrow" style="padding: 3px;">
+      <div class="box flexrow ironsworn__denizen__drop" style="padding: 3px;" data-idx="{{idx}}">
         <label class="nogrow" style="white-space: nowrap; flex-basis: 4em; line-height: 26px;">
           {{#if (eq denizen.low denizen.high)}}
           {{denizen.low}}

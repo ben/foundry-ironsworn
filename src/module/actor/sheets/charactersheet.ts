@@ -10,7 +10,6 @@ export class IronswornCharacterSheet extends ActorSheet {
       height: 800,
       left: 50,
       template: 'systems/foundry-ironsworn/templates/actor/character.hbs',
-      dragDrop: [{ dragSelector: '.item-list .item', dropSelector: null }],
     })
   }
 
