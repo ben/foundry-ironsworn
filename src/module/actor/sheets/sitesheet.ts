@@ -121,6 +121,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     html.find('.ironsworn__locateobjective__roll').on('click', (ev) => this._locateObjective.call(this, ev))
 
     html.find('.ironsworn__random__denizen').on('click', (ev) => this._randomDenizen.call(this, ev))
+    html.find('.ironsworn__foe__compendium').on('click', (ev) => this._foeCompendium.call(this, ev))
     html.find('.ironsworn__denizen__name').on('blur', (ev) => this._setDenizenName.call(this, ev))
   }
 
@@ -190,6 +191,11 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
       const input = this.element.find(`.ironsworn__denizen__name[data-idx=${idx}]`)
       input.addClass('highlight').trigger('focus')
     }
+  }
+
+  async _foeCompendium(_ev: JQuery.ClickEvent) {
+    const pack = game.packs?.get(`foundry-ironsworn.ironswornfoes`)
+    pack?.render(true)
   }
 
   _setDenizenName(ev: JQuery.BlurEvent) {
