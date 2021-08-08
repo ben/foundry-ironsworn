@@ -156,6 +156,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
     // Denizen slot is empty; set focus and add a class
     if (!denizen?.description) {
+      await this.actor.setFlag('foundry-ironsworn', 'edit-mode', true)
       const idx = this.siteData.data.denizens.indexOf(denizen)
       const input = this.element.find(`.ironsworn__denizen__name[data-idx=${idx}]`)
       input.addClass('highlight').trigger('focus')
