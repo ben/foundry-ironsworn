@@ -146,15 +146,21 @@
     <div class="flexrow boxrow">
       {{#each this}}
       <div class="box flexrow" style="padding: 3px;">
-        <label class="nogrow" style="white-space: nowrap; flex-basis: 4em;">
+        <label class="nogrow" style="white-space: nowrap; flex-basis: 4em; line-height: 26px;">
           {{#if (eq denizen.low denizen.high)}}
           {{denizen.low}}
           {{else}}
           {{denizen.low}}–{{denizen.high}}
           {{/if}}
         </label>
+
+        {{#if ../../actor.data.flags.foundry-ironsworn.edit-mode}}
         <input type="text" class="ironsworn__denizen__name" data-idx="{{idx}}" value="{{denizen.description}}"
           placeholder="{{denizen.descriptor}}">
+        {{else}}
+        <div style="line-height: 26px;">{{{enrichHtml denizen.description}}}</div>
+        {{/if}}
+
       </div>
       {{/each}}
     </div>
