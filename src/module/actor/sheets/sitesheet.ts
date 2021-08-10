@@ -39,10 +39,6 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     })
   }
 
-  // _onDragOver(event: DragEvent) {
-  //   console.log('_onDragOver', event)
-  //   return super._onDragOver(event)
-  // }
 
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
     // Fetch the item. We only want to override denizens (progress-type items)
@@ -60,9 +56,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     if (!denizens[idx]) return false
 
     // Set the denizen description
-    const description = item.pack
-      ? `@Compendium[${item.pack}.${item.id}]{${item.name}}`
-      : item.link
+    const description = item.pack ? `@Compendium[${item.pack}.${item.id}]{${item.name}}` : item.link
     denizens[idx].description = description
     this.actor.update({ data: { denizens } }, { render: true })
     return true
@@ -110,6 +104,8 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
       itemClass.activateActorSheetListeners(html, this)
     }
 
+    html.on('dragenter', ev => this._maybeShowDragTargets.call(this, ev))
+
     html.find('.ironsworn__progress__rank').on('click', (ev) => this._setRank.call(this, ev))
     html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
     html.find('.ironsworn__progress__clear').on('click', (ev) => this._clearProgress.call(this, ev))
@@ -123,6 +119,10 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     html.find('.ironsworn__random__denizen').on('click', (ev) => this._randomDenizen.call(this, ev))
     html.find('.ironsworn__foe__compendium').on('click', (ev) => this._foeCompendium.call(this, ev))
     html.find('.ironsworn__denizen__name').on('blur', (ev) => this._setDenizenName.call(this, ev))
+  }
+
+  _maybeShowDragTargets(_ev: JQuery.DragEnterEvent) {
+    console.log(lastDraggedItemType);
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -207,3 +207,14 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     this.actor.update({ data: { denizens } }, { render: false })
   }
 }
+
+let lastDraggedItemType: string | undefined
+Hooks.on('renderCompendium', (_app, html, data) => {
+  html.find('.directory-item').on('dragstart', (ev: JQuery.DragStartEvent) => {
+    const { documentId } = ev.target.dataset
+    const packId = $(ev.target).parents('.compendium').data('pack')
+    const pack = game.packs.get(packId)
+    const indexEntry = pack?.index.get(documentId)
+    lastDraggedItemType = indexEntry?.type
+  })
+})
