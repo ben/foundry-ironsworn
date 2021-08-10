@@ -14,7 +14,11 @@
   </div>
 
   {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
-  <div class="flexrow" style="position: absolute; right: 5px; top: 5px;">
+  <div
+    class="flexrow drag-target"
+    data-drag-item-type="{{itemtype}}"
+    style="position: absolute; right: 5px; top: 5px;"
+  >
     <div class="clickable block nogrow ironsworn__{{item.type}}__settings" title="{{localize 'IRONSWORN.Edit'}}"
       data-item="{{item.id}}" style="padding: 5px;">
       <i class="fas fa-edit"></i>
@@ -29,7 +33,11 @@
   {{else}}
 
   {{! Prompt to drag an item in }}
-  <div class="flexcol">
+  <div
+    class="flexcol drag-target"
+    data-drag-item-type="{{itemtype}}"
+    style="position: absolute;"
+  >
     <h4 style="margin: 0;">{{localize titlekey}}</h4>
     <p class="inset clickable block ironsworn__compendium__open" style="padding: 0 2em;"
       data-compendium="{{compendiumkey}}">
@@ -77,10 +85,10 @@
   <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em;">
     <div class="flexrow boxrow nogrow">
       <div class="flexcol box">
-        {{>subcard titlekey='IRONSWORN.Theme' item=theme compendiumkey='ironsworndelvethemes'}}
+        {{>subcard titlekey='IRONSWORN.Theme' item=theme itemtype='delve-theme' compendiumkey='ironsworndelvethemes'}}
       </div>
       <div class="flexcol box">
-        {{>subcard titlekey='IRONSWORN.Domain' item=domain compendiumkey='ironsworndelvedomains'}}
+        {{>subcard titlekey='IRONSWORN.Domain' item=domain itemtype='delve-domain' compendiumkey='ironsworndelvedomains'}}
       </div>
     </div>
   </div>

@@ -39,8 +39,9 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     })
   }
 
-
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
+    this._hideDragTargets()
+
     // Fetch the item. We only want to override denizens (progress-type items)
     const item = await Item.fromDropData(data)
     if (!item) return false
@@ -104,7 +105,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
       itemClass.activateActorSheetListeners(html, this)
     }
 
-    html.on('dragenter', ev => this._maybeShowDragTargets.call(this, ev))
+    html.on('dragenter', (ev) => this._maybeShowDragTargets.call(this, ev))
 
     html.find('.ironsworn__progress__rank').on('click', (ev) => this._setRank.call(this, ev))
     html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
@@ -122,7 +123,19 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   }
 
   _maybeShowDragTargets(_ev: JQuery.DragEnterEvent) {
-    console.log(lastDraggedItemType);
+    if (!lastDraggedItemType) return
+    console.log(lastDraggedItemType)
+    if (['progress', 'delve-theme', 'delve-domain'].includes(lastDraggedItemType)) {
+      this._showDragTargets(lastDraggedItemType)
+    }
+  }
+
+  _showDragTargets(type: string) {
+    console.log(type)
+  }
+
+  _hideDragTargets() {
+    console.log(this)
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -209,7 +222,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 }
 
 let lastDraggedItemType: string | undefined
-Hooks.on('renderCompendium', (_app, html, data) => {
+Hooks.on('renderCompendium', (_app, html) => {
   html.find('.directory-item').on('dragstart', (ev: JQuery.DragStartEvent) => {
     const { documentId } = ev.target.dataset
     const packId = $(ev.target).parents('.compendium').data('pack')
