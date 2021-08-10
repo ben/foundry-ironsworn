@@ -14,11 +14,7 @@
   </div>
 
   {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
-  <div
-    class="flexrow drag-target"
-    data-drag-item-type="{{itemtype}}"
-    style="position: absolute; right: 5px; top: 5px;"
-  >
+  <div class="flexrow" style="position: absolute; right: 5px; top: 5px;">
     <div class="clickable block nogrow ironsworn__{{item.type}}__settings" title="{{localize 'IRONSWORN.Edit'}}"
       data-item="{{item.id}}" style="padding: 5px;">
       <i class="fas fa-edit"></i>
@@ -33,11 +29,7 @@
   {{else}}
 
   {{! Prompt to drag an item in }}
-  <div
-    class="flexcol drag-target"
-    data-drag-item-type="{{itemtype}}"
-    style="position: absolute;"
-  >
+  <div class="flexcol">
     <h4 style="margin: 0;">{{localize titlekey}}</h4>
     <p class="inset clickable block ironsworn__compendium__open" style="padding: 0 2em;"
       data-compendium="{{compendiumkey}}">
@@ -51,8 +43,7 @@
 
 {{/inline}}
 
-<form class="{{cssClass}} flexcol" autocomplete="off">
-
+<form class="{{cssClass}} flexcol" autocomplete="off" style="position: relative;">
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
     <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
@@ -84,10 +75,10 @@
 
   <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em;">
     <div class="flexrow boxrow nogrow">
-      <div class="flexcol box">
+      <div class="flexcol box drop-target" data-drop-type="delve-theme">
         {{>subcard titlekey='IRONSWORN.Theme' item=theme itemtype='delve-theme' compendiumkey='ironsworndelvethemes'}}
       </div>
-      <div class="flexcol box">
+      <div class="flexcol box drop-target" data-drop-type="delve-domain">
         {{>subcard titlekey='IRONSWORN.Domain' item=domain itemtype='delve-domain' compendiumkey='ironsworndelvedomains'}}
       </div>
     </div>
@@ -160,7 +151,12 @@
     {{#each denizenMatrix}}
     <div class="flexrow boxrow">
       {{#each this}}
-      <div class="box flexrow ironsworn__denizen__drop" style="padding: 3px;" data-idx="{{idx}}">
+      <div
+        class="box flexrow ironsworn__denizen__drop drop-target"
+        data-drop-type="progress"
+        style="padding: 3px;"
+        data-idx="{{idx}}"
+      >
         <label class="nogrow" style="white-space: nowrap; flex-basis: 4em; line-height: 26px;">
           {{#if (eq denizen.low denizen.high)}}
           {{denizen.low}}

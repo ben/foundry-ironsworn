@@ -106,6 +106,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     }
 
     html.on('dragenter', (ev) => this._maybeShowDragTargets.call(this, ev))
+    html.on('dragleave', (ev) => this._hideDragTargets.call(this, ev))
 
     html.find('.ironsworn__progress__rank').on('click', (ev) => this._setRank.call(this, ev))
     html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
@@ -132,10 +133,12 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
   _showDragTargets(type: string) {
     console.log(type)
+    $(this.element).find(`.drop-target[data-drop-type="${type}"]`).addClass('drag-highlight')
   }
 
-  _hideDragTargets() {
-    console.log(this)
+  _hideDragTargets(ev?: JQuery.DragLeaveEvent) {
+    console.log(this, ev)
+    $(this.element).find('.drop-target').removeClass('drag-highlight')
   }
 
   _setRank(ev: JQuery.ClickEvent) {
