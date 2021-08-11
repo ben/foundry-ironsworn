@@ -12,6 +12,8 @@
 {{/rangeEach}}
 {{/inline}}
 
+{{!--------------------------------------------------------------------------------}}
+
 {{#*inline "progress"}}
 <div class="flexcol item-row" data-id="{{id}}">
   <div class="flexrow">
@@ -35,7 +37,7 @@
         </div>
         <div class="clickable block ironsworn__progress__fulfill" title="{{localize 'IRONSWORN.FulfillVow'}}"
           style="flex-grow: 0;" data-item="{{id}}">
-          <i class="fas fa-check"></i>
+          <i class="fas fa-dice-d6"></i>
         </div>
       </div>
       <h4>{{name}}</h4>
@@ -50,6 +52,31 @@
   </div>
 </div>
 {{/inline}}
+
+{{!--------------------------------------------------------------------------------}}
+
+{{#*inline "bonds"}}
+<div class="flexcol item-row">
+  <div class="flexcol">
+    <div class="flexrow">
+      <h4>{{localize 'IRONSWORN.Bonds'}}</h4>
+      <div class="clickable block nogrow ironsworn__bondset__settings" data-item="{{bonds.id}}" style="margin: 2px;">
+        <i class="fas fa-edit"></i>
+      </div>
+      <div class="clickable block nogrow ironsworn__bondset__roll" data-item="{{bonds.id}}" style="margin: 2px;">
+        <i class="fas fa-dice-d6"></i>
+      </div>
+    </div>
+  </div>
+  <div class="flexrow track">
+    {{#each (progressCharacters bonds.count)}}
+    <div class="flexcol track-box">{{{this}}}</div>
+    {{/each}}
+  </div>
+</div>
+{{/inline}}
+
+{{!--------------------------------------------------------------------------------}}
 
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
@@ -130,18 +157,7 @@
 
           <div class="flexcol">
             <section class="sheet-area" style="flex-grow: 0;">
-              <h3>{{localize 'IRONSWORN.Bonds'}}</h3>
-              <div class="flexrow">
-                <div class="flexrow track">
-                  {{#each (progressCharacters bonds.count)}}
-                  <div class="flexcol track-box">{{{this}}}</div>
-                  {{/each}}
-                </div>
-                <div data-item="{{bonds.id}}" class="ironsworn__bondset__settings block clickable"
-                  style="flex-grow: 0; padding: 5px; margin: 2px;">
-                  <i class="fas fa-edit"></i>
-                </div>
-              </div>
+              {{>bonds}}
             </section>
 
             <section class="sheet-area">
@@ -208,8 +224,7 @@
                         <div class="
                             clickable block stack-row ironsworn__assetoption
                             {{#if selected}}selected{{/if}}
-                          " data-idx="{{@index}}"
-                        >
+                          " data-idx="{{@index}}">
                           {{name}}
                         </div>
                         {{/each}}
