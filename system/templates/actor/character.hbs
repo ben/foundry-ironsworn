@@ -161,80 +161,78 @@
               {{>bonds}}
 
               {{!-- <h3>{{localize 'IRONSWORN.Assets'}}</h3> --}}
-              <div class="flexcol item-list">
-                <ol>
-                  {{#each assets}}
-                  <li class="item-row ironsworn__asset" data-item="{{id}}">
-                    <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
-                      <div class="flexrow">
-                        <h4 style="margin: 0;">{{name}}</h4>
-                        {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
-                        <div class="clickable block nogrow progress-button ironsworn__{{type}}__delete"
-                          data-item="{{id}}" style="margin: 0 5px;">
-                          <i class="fas fa-trash"></i>
-                        </div>
-                        {{/if}}
-                        <div data-item="{{id}}"
-                          class="block clickable nogrow progress-button ironsworn__{{type}}__settings">
-                          <i class="fas fa-edit"></i>
-                        </div>
+              <div class="flexcol">
+                {{#each assets}}
+                <div class="item-row ironsworn__asset" data-item="{{id}}">
+                  <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
+                    <div class="flexrow">
+                      <h4 style="margin: 0; line-height: 20px;">{{name}}</h4>
+                      {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
+                      <div class="clickable block nogrow progress-button ironsworn__{{type}}__delete" data-item="{{id}}"
+                        style="margin: 0 5px;">
+                        <i class="fas fa-trash"></i>
+                      </div>
+                      {{/if}}
+                      <div data-item="{{id}}"
+                        class="block clickable nogrow progress-button ironsworn__{{type}}__settings">
+                        <i class="fas fa-edit"></i>
                       </div>
                     </div>
-                    <div class="flexcol asset-summary
+                  </div>
+                  <div class="flexcol asset-summary
                     {{#unless data.flags.foundry-ironsworn.expanded}}
                     collapsed
                     {{/unless}}">
-                      {{#each data.data.fields}}
-                      <p><strong>{{name}}:</strong> {{value}}</p>
-                      {{/each}}
+                    {{#each data.data.fields}}
+                    <p><strong>{{name}}:</strong> {{value}}</p>
+                    {{/each}}
 
-                      {{#if data.data.description}}
-                      <p>{{{enrichHtml data.data.description}}}</p>
+                    {{#if data.data.description}}
+                    <p>{{{enrichHtml data.data.description}}}</p>
+                    {{/if}}
+
+                    <ul>
+                      {{#each data.data.abilities}}
+                      {{#if enabled}}
+                      <li>{{{enrichHtml description}}}</li>
                       {{/if}}
+                      {{/each}}
+                    </ul>
 
-                      <ul>
-                        {{#each data.data.abilities}}
-                        {{#if enabled}}
-                        <li>{{{enrichHtml description}}}</li>
-                        {{/if}}
-                        {{/each}}
-                      </ul>
-
-                      {{#if data.data.track.enabled}}
-                      <div class="flexcol">
-                        <h4 style="margin-bottom: 3px;" class="clickable text ironsworn__assettrack__roll">
-                          {{data.data.track.name}}
-                        </h4>
-                        <div class="flexrow track">
-                          {{#rangeEach from=0 to=data.data.track.max
-                          current=data.data.track.current}}
-                          <div class="track-box clickable block ironsworn__assettrack__value
+                    {{#if data.data.track.enabled}}
+                    <div class="flexcol">
+                      <h4 style="margin-bottom: 3px;" class="clickable text ironsworn__assettrack__roll">
+                        {{data.data.track.name}}
+                      </h4>
+                      <div class="flexrow track">
+                        {{#rangeEach from=0 to=data.data.track.max
+                        current=data.data.track.current}}
+                        <div class="track-box clickable block ironsworn__assettrack__value
                                                   {{#if isCurrent}} selected {{/if}}
                                                 " data-item="{{id}}" data-value={{value}}>
-                            {{value}}
-                          </div>
-                          {{/rangeEach}}
+                          {{value}}
                         </div>
+                        {{/rangeEach}}
                       </div>
-                      {{/if}}
+                    </div>
+                    {{/if}}
 
-                      {{#if data.data.exclusiveOptions.length}}
-                      <div class="flexcol stack nogrow">
-                        {{#each data.data.exclusiveOptions}}
-                        <div class="
+                    {{#if data.data.exclusiveOptions.length}}
+                    <div class="flexcol stack nogrow">
+                      {{#each data.data.exclusiveOptions}}
+                      <div class="
                             clickable block stack-row ironsworn__assetoption
                             {{#if selected}}selected{{/if}}
                           " data-idx="{{@index}}">
-                          {{name}}
-                        </div>
-                        {{/each}}
+                        {{name}}
                       </div>
-                      {{/if}}
-
+                      {{/each}}
                     </div>
-                  </li>
-                  {{/each}}
-                </ol>
+                    {{/if}}
+
+                  </div>
+                </div>
+                {{/each}}
               </div>
             </section>
           </div>
