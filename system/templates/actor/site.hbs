@@ -75,10 +75,10 @@
 
   <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em;">
     <div class="flexrow boxrow nogrow">
-      <div class="flexcol box drop-target" data-drop-type="delve-theme">
+      <div class="flexcol box ironsworn__drop__target" data-drop-type="delve-theme">
         {{>subcard titlekey='IRONSWORN.Theme' item=theme itemtype='delve-theme' compendiumkey='ironsworndelvethemes'}}
       </div>
-      <div class="flexcol box drop-target" data-drop-type="delve-domain">
+      <div class="flexcol box ironsworn__drop__target" data-drop-type="delve-domain">
         {{>subcard titlekey='IRONSWORN.Domain' item=domain itemtype='delve-domain' compendiumkey='ironsworndelvedomains'}}
       </div>
     </div>
@@ -152,7 +152,7 @@
     <div class="flexrow boxrow">
       {{#each this}}
       <div
-        class="box flexrow ironsworn__denizen__drop drop-target"
+        class="box flexrow ironsworn__denizen__drop ironsworn__drop__target"
         data-drop-type="progress"
         style="padding: 3px;"
         data-idx="{{idx}}"
