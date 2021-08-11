@@ -160,8 +160,7 @@
 
               {{>bonds}}
 
-              {{!-- <h3>{{localize 'IRONSWORN.Assets'}}</h3> --}}
-              <div class="flexcol">
+              <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
                 {{#each assets}}
                 <div class="item-row ironsworn__asset" data-item="{{id}}">
                   <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
@@ -237,7 +236,7 @@
             </section>
           </div>
 
-          <div class="flexcol">
+          <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
             <section class="sheet-area progresses">
               <h3>{{localize 'IRONSWORN.Vows'}}</h3>
               {{#each vows}}
