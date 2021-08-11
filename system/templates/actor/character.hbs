@@ -38,7 +38,7 @@
           <i class="fas fa-check"></i>
         </div>
       </div>
-      <h3>{{name}}</h3>
+      <h4>{{name}}</h4>
     </div>
   </div>
   <div class="flexrow">
@@ -152,7 +152,7 @@
                   <li class="item-row ironsworn__asset" data-item="{{id}}">
                     <div class="asset-entry ironsworn__asset__expand" data-item="{{id}}">
                       <div class="flexrow">
-                        <h3> {{name}} </h3>
+                        <h4 style="margin: 0;">{{name}}</h4>
                         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
                         <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}"
                           style="margin: 0 5px;">
@@ -186,7 +186,7 @@
 
                       {{#if data.data.track.enabled}}
                       <div class="flexcol">
-                        <h4 class="clickable text ironsworn__assettrack__roll">
+                        <h4 style="margin-bottom: 3px;" class="clickable text ironsworn__assettrack__roll">
                           {{data.data.track.name}}
                         </h4>
                         <div class="flexrow track">
