@@ -130,7 +130,7 @@
 
           <div class="flexcol">
             <section class="sheet-area" style="flex-grow: 0;">
-              <h2 style="text-align:center">{{localize 'IRONSWORN.Bonds'}}</h2>
+              <h3>{{localize 'IRONSWORN.Bonds'}}</h3>
               <div class="flexrow">
                 <div class="flexrow track">
                   {{#each (progressCharacters bonds.count)}}
@@ -145,7 +145,7 @@
             </section>
 
             <section class="sheet-area">
-              <h2 style="text-align:center">{{localize 'IRONSWORN.Assets'}}</h2>
+              <h3>{{localize 'IRONSWORN.Assets'}}</h3>
               <div class="flexcol item-list">
                 <ol>
                   {{#each assets}}
@@ -226,7 +226,7 @@
 
           <div class="flexcol">
             <section class="sheet-area progresses">
-              <h2 style="text-align:center">{{localize 'IRONSWORN.Vows'}}</h2>
+              <h3>{{localize 'IRONSWORN.Vows'}}</h3>
               {{#each vows}}
               {{>progress}}
               {{/each}}
@@ -236,7 +236,7 @@
             </section>
 
             <section class="sheet-area progresses">
-              <h2 style="text-align:center">{{localize 'IRONSWORN.Progress'}}</h2>
+              <h3>{{localize 'IRONSWORN.Progress'}}</h3>
               {{#each progresses}}
               {{>progress}}
               {{/each}}
@@ -258,7 +258,7 @@
           <div class="flexrow">
             <div class="flexcol" style="flex:2;">
 
-              <h3 style="border-bottom: 2px solid; margin-right: 5px;">{{localize 'IRONSWORN.Conditions'}}</h3>
+              <h4>{{localize 'IRONSWORN.Conditions'}}</h4>
               <div class="flexrow">
                 <div class="flexcol">
                   {{>debility name="wounded"}}
@@ -272,12 +272,12 @@
               </div>
             </div>
             <div class="flexcol">
-              <h3 style="border-bottom: 2px solid; margin-right: 5px;">{{localize 'IRONSWORN.Banes'}}</h3>
+              <h4>{{localize 'IRONSWORN.Banes'}}</h4>
               {{>debility name="maimed"}}
               {{>debility name="corrupted"}}
             </div>
             <div class="flexcol">
-              <h3 style="border-bottom: 2px solid; margin-right: 5px;">{{localize 'IRONSWORN.Burdens'}}</h3>
+              <h4>{{localize 'IRONSWORN.Burdens'}}</h4>
               {{>debility name="cursed"}}
               {{>debility name="tormented"}}
             </div>
