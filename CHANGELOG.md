@@ -2,13 +2,16 @@
 
 ## In progress
 
+- Highlight drag targets on site sheet ([#108](https://github.com/ben/foundry-ironsworn/pull/108))
+
 ## 1.4.3
+
+- Add drag/drop support for foes into site sheet ([#107](https://github.com/ben/foundry-ironsworn/pull/107))
 
 ## 1.4.2
 
 - Fix the spelling of "formidable" ([#105](https://github.com/ben/foundry-ironsworn/pull/105))
 - Include a "foes" compendium ([#106](https://github.com/ben/foundry-ironsworn/pull/106))
-- Add drag/drop support for foes into site sheet ([#107](https://github.com/ben/foundry-ironsworn/pull/107))
 
 ## 1.4.1
 
