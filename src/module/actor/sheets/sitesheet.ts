@@ -39,11 +39,6 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     })
   }
 
-  // _onDragOver(event: DragEvent) {
-  //   console.log('_onDragOver', event)
-  //   return super._onDragOver(event)
-  // }
-
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
     // Fetch the item. We only want to override denizens (progress-type items)
     const item = await Item.fromDropData(data)
@@ -60,9 +55,7 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     if (!denizens[idx]) return false
 
     // Set the denizen description
-    const description = item.pack
-      ? `@Compendium[${item.pack}.${item.id}]{${item.name}}`
-      : item.link
+    const description = item.pack ? `@Compendium[${item.pack}.${item.id}]{${item.name}}` : item.link
     denizens[idx].description = description
     this.actor.update({ data: { denizens } }, { render: true })
     return true
