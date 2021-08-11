@@ -1,4 +1,4 @@
-import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
+import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
 import { CharacterMoveSheet } from './charactermovesheet'
 
@@ -35,10 +35,6 @@ export class IronswornCharacterSheet extends ActorSheet {
     html.find('.ironsworn__stat__roll').on('click', (e) => this._onStatRoll.call(this, e))
     html.find('.ironsworn__stat__value').on('click', (e) => this._onStatSet.call(this, e))
     html.find('.ironsworn__momentum__burn').on('click', (e) => this._onBurnMomentum.call(this, e))
-
-    html.find('.ironsworn__builtin__move').each((_i, el) => {
-      attachInlineRollListeners($(el), { actor: this.actor, name: el.dataset.name })
-    })
   }
 
   getData() {
@@ -75,16 +71,12 @@ export class IronswornCharacterSheet extends ActorSheet {
     ]
   }
 
-  _toggleEditMode(e: JQuery.ClickEvent) {
-    e.preventDefault()
-
+  _toggleEditMode(_e: JQuery.ClickEvent) {
     const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
     this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
-  _openMoveSheet(e?: JQuery.ClickEvent) {
-    e?.preventDefault()
-
+  _openMoveSheet(_e?: JQuery.ClickEvent) {
     if (this.actor.moveSheet) {
       this.actor.moveSheet.render(true, { focus: true })
     } else {
@@ -92,16 +84,12 @@ export class IronswornCharacterSheet extends ActorSheet {
     }
   }
 
-  _onBurnMomentum(ev) {
-    ev.preventDefault()
-
+  _onBurnMomentum(_ev: JQuery.ClickEvent) {
     if (this.actor.data.type !== 'character') return
     this.actor.burnMomentum()
   }
 
   _onStatRoll(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
     const el = ev.currentTarget
     const stat = el.dataset.stat
     if (stat) {
@@ -110,8 +98,6 @@ export class IronswornCharacterSheet extends ActorSheet {
   }
 
   _onStatSet(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
     const el = ev.currentTarget
     const { resource, value } = el.dataset
     if (resource) {
