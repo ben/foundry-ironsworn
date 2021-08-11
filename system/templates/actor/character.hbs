@@ -23,20 +23,20 @@
         <div class="flexrow">{{>rankHexes rank=data.data.rank id=id}}</div>
 
         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
-        <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}">
+        <div class="clickable block nogrow progress-button ironsworn__{{type}}__delete" data-item="{{id}}">
           <i class="fas fa-trash"></i>
         </div>
         {{/if}}
 
-        <div class="clickable block nogrow ironsworn__{{type}}__settings" data-item="{{id}}">
+        <div class="clickable block nogrow progress-button ironsworn__{{type}}__settings" data-item="{{id}}">
           <i class="fas fa-edit"></i>
         </div>
-        <div class="clickable block nogrow ironsworn__progress__mark" {{! This works for vows too }}
+        <div class="clickable block nogrow progress-button ironsworn__progress__mark" {{! This works for vows too }}
           title="{{localize 'IRONSWORN.MarkProgress'}}" data-item="{{id}}">
           <i class="fas fa-play"></i>
         </div>
-        <div class="clickable block ironsworn__progress__fulfill" title="{{localize 'IRONSWORN.FulfillVow'}}"
-          style="flex-grow: 0;" data-item="{{id}}">
+        <div class="clickable block progress-button ironsworn__progress__fulfill"
+          title="{{localize 'IRONSWORN.ProgressRoll'}}" style="flex-grow: 0;" data-item="{{id}}">
           <i class="fas fa-dice-d6"></i>
         </div>
       </div>
@@ -60,10 +60,10 @@
   <div class="flexcol">
     <div class="flexrow">
       <h4>{{localize 'IRONSWORN.Bonds'}}</h4>
-      <div class="clickable block nogrow ironsworn__bondset__settings" data-item="{{bonds.id}}" style="margin: 2px;">
+      <div class="clickable block nogrow progress-button ironsworn__bondset__settings" data-item="{{bonds.id}}">
         <i class="fas fa-edit"></i>
       </div>
-      <div class="clickable block nogrow ironsworn__bondset__roll" data-item="{{bonds.id}}" style="margin: 2px;">
+      <div class="clickable block nogrow progress-button ironsworn__bondset__roll" data-item="{{bonds.id}}">
         <i class="fas fa-dice-d6"></i>
       </div>
     </div>
@@ -156,12 +156,11 @@
         <div class="flexrow">
 
           <div class="flexcol">
-            <section class="sheet-area" style="flex-grow: 0;">
-              {{>bonds}}
-            </section>
-
             <section class="sheet-area">
-              <h3>{{localize 'IRONSWORN.Assets'}}</h3>
+
+              {{>bonds}}
+
+              {{!-- <h3>{{localize 'IRONSWORN.Assets'}}</h3> --}}
               <div class="flexcol item-list">
                 <ol>
                   {{#each assets}}
@@ -170,12 +169,13 @@
                       <div class="flexrow">
                         <h4 style="margin: 0;">{{name}}</h4>
                         {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
-                        <div class="clickable block nogrow ironsworn__{{type}}__delete" data-item="{{id}}"
-                          style="margin: 0 5px;">
+                        <div class="clickable block nogrow progress-button ironsworn__{{type}}__delete"
+                          data-item="{{id}}" style="margin: 0 5px;">
                           <i class="fas fa-trash"></i>
                         </div>
                         {{/if}}
-                        <div data-item="{{id}}" class="block clickable nogrow ironsworn__{{type}}__settings">
+                        <div data-item="{{id}}"
+                          class="block clickable nogrow progress-button ironsworn__{{type}}__settings">
                           <i class="fas fa-edit"></i>
                         </div>
                       </div>
@@ -245,17 +245,17 @@
               {{#each vows}}
               {{>progress}}
               {{/each}}
-              <div class="block clickable ironsworn__vow__add">
+              <div class="block clickable ironsworn__vow__add" style="text-align: center;">
                 <i class="fas fa-plus"></i>
               </div>
-            </section>
 
-            <section class="sheet-area progresses">
+              <hr>
+
               <h3>{{localize 'IRONSWORN.Progress'}}</h3>
               {{#each progresses}}
               {{>progress}}
               {{/each}}
-              <div class="block clickable ironsworn__progress__add">
+              <div class="block clickable ironsworn__progress__add" style="text-align: center;">
                 <i class="fas fa-plus"></i>
               </div>
             </section>
