@@ -40,8 +40,6 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   }
 
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
-    this._hideDragTargets()
-
     // Fetch the item. We only want to override denizens (progress-type items)
     const item = await Item.fromDropData(data)
     if (!item) return false
@@ -105,9 +103,6 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
       itemClass.activateActorSheetListeners(html, this)
     }
 
-    html.on('dragenter', (ev) => this._maybeShowDragTargets.call(this, ev))
-    html.on('dragleave', (ev) => this._hideDragTargets.call(this, ev))
-
     html.find('.ironsworn__progress__rank').on('click', (ev) => this._setRank.call(this, ev))
     html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
     html.find('.ironsworn__progress__clear').on('click', (ev) => this._clearProgress.call(this, ev))
@@ -121,24 +116,6 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     html.find('.ironsworn__random__denizen').on('click', (ev) => this._randomDenizen.call(this, ev))
     html.find('.ironsworn__foe__compendium').on('click', (ev) => this._foeCompendium.call(this, ev))
     html.find('.ironsworn__denizen__name').on('blur', (ev) => this._setDenizenName.call(this, ev))
-  }
-
-  _maybeShowDragTargets(_ev: JQuery.DragEnterEvent) {
-    if (!lastDraggedItemType) return
-    console.log(lastDraggedItemType)
-    if (['progress', 'delve-theme', 'delve-domain'].includes(lastDraggedItemType)) {
-      this._showDragTargets(lastDraggedItemType)
-    }
-  }
-
-  _showDragTargets(type: string) {
-    console.log(type)
-    $(this.element).find(`.drop-target[data-drop-type="${type}"]`).addClass('drag-highlight')
-  }
-
-  _hideDragTargets(ev?: JQuery.DragLeaveEvent) {
-    console.log(this, ev)
-    $(this.element).find('.drop-target').removeClass('drag-highlight')
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -223,14 +200,3 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     this.actor.update({ data: { denizens } }, { render: false })
   }
 }
-
-let lastDraggedItemType: string | undefined
-Hooks.on('renderCompendium', (_app, html) => {
-  html.find('.directory-item').on('dragstart', (ev: JQuery.DragStartEvent) => {
-    const { documentId } = ev.target.dataset
-    const packId = $(ev.target).parents('.compendium').data('pack')
-    const pack = game.packs.get(packId)
-    const indexEntry = pack?.index.get(documentId)
-    lastDraggedItemType = indexEntry?.type
-  })
-})
