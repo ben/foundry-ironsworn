@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.4.4
+
 - Highlight drag targets on site sheet ([#108](https://github.com/ben/foundry-ironsworn/pull/108))
 
 ## 1.4.3
