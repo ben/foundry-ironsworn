@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Streamline and downsize some text in the character sheet ([#109](https://github.com/ben/foundry-ironsworn/pull/109))
+
 ## 1.4.4
 
 - Highlight drag targets on site sheet ([#108](https://github.com/ben/foundry-ironsworn/pull/108))
