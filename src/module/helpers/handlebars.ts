@@ -37,7 +37,7 @@ export class IronswornHandlebarsHelpers {
       const d = terms.shift()
       const classes = classesForRoll(r)
       const termStrings = terms.map((t) => t.operator || t.number)
-      return `<strong><span class="roll ${classes}">${d?.total || d}</span>${termStrings.join('')}</strong>`
+      return `<strong><span class="roll ${classes}">${d?.total || 0}</span>${termStrings.join('')}</strong>`
     })
 
     Handlebars.registerHelper('challengeDice', function () {
