@@ -27,7 +27,7 @@ export class IronswornChatCard {
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
     html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
-    html.find('.ironsworn__sojourn__extra__roll').on('click', ev => this._sojournExtra.call(this, ev))
+    html.find('.ironsworn__sojourn__extra__roll').on('click', (ev) => this._sojournExtra.call(this, ev))
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
@@ -39,11 +39,18 @@ export class IronswornChatCard {
     theActor?.burnMomentum()
 
     let bonusContent: string | undefined
-    let result: string | undefined
+    let result: string
     if (move) {
       const theMove = await moveDataByName(move)
       result = theMove && theMove[capitalize(hittype.toLowerCase())]
       bonusContent = MoveContentCallbacks[move]?.call(this, { hitType: hittype as HIT_TYPE, stat })
+    } else {
+      // I wish this were easier
+      const i18nKey =
+        hittype === HIT_TYPE.STRONG ? 'StrongHit' :
+        hittype === HIT_TYPE.WEAK ? 'WeakHit' :
+        'Miss'
+      result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
     }
 
     const parent = $(ev.currentTarget).parents('.message-content')
@@ -51,7 +58,7 @@ export class IronswornChatCard {
     parent.find('.roll-result button').prop('disabled', true)
     parent.find('.momentum-burn').html(`
       <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
-      ${result}
+      ${result || ''}
       ${bonusContent || ''}
     `)
 
@@ -128,7 +135,7 @@ export class IronswornChatCard {
     delete move.ExtraDescription
 
     const actor = defaultActor()
-    RollDialog.show({move, actor})
+    RollDialog.show({ move, actor })
   }
 
   async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {
