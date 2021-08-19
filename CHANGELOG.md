@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.5.0
+
 - Streamline and downsize some text in the character sheet ([#109](https://github.com/ben/foundry-ironsworn/pull/109))
 - Fix a few bugs ([#116](https://github.com/ben/foundry-ironsworn/pull/116))
 
