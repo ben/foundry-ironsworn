@@ -21,6 +21,11 @@ function processMove(move) {
   let [_, description, strong, weak, miss] = move.Text.match(resultRegex) || []
   let extradescription, extrastrong, extraweak, extramiss
 
+  // Fixup for Companion Endure Harm, it includes a stat that's hard to implement
+  if (move.Name === 'Companion Endure Harm') {
+    move.Stats = move.Stats.filter(x => x !== 'companion health')
+  }
+
   // Fixup for Delve the Depths; the table is in the wrong place
   if (move.Name === 'Delve the Depths') {
     const tableRegex = /(Edge\s+\|\s+Shadow[\s\S]+)/

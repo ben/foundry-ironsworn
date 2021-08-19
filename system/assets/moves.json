@@ -389,8 +389,7 @@
             "Page": "94"
           },
           "Stats": [
-            "heart",
-            "companion health"
+            "heart"
           ],
           "Description": "<p>When <strong>your companion faces physical damage</strong>, they suffer -health equal to the amount of harm inflicted. If your companion’s health is 0, exchange any leftover -health for -momentum. Then, roll +heart or +your companion’s health, whichever is higher.</p>\n",
           "Strong": "<p>On a <strong>strong hit</strong>, your companion rallies. Give them +1 health.</p>\n",
