@@ -56,6 +56,9 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     html.find('.ironsworn__move__search').on('keyup', (ev) => this._moveSearch.call(this, ev))
     html.find('.ironsworn__move__search__clear').on('click', (ev) => this._moveSearchClear.call(this, ev))
 
+    html.find('.ironsworn__oracle__search').on('keyup', (ev) => this._oracleSearch.call(this, ev))
+    html.find('.ironsworn__oracle__search__clear').on('click', (ev) => this._oracleSearchClear.call(this, ev))
+
     html.find('.ironsworn__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
     html.find('.ironsworn__builtin__move__roll').on('click', (e) => this._handleBuiltInMoveRoll.call(this, e))
     html.find('.ironsworn__custom__move__roll').on('click', (e) => this._handleCustomMoveRoll.call(this, e))
@@ -128,6 +131,26 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     this.element.find('.ironsworn__move__search').val('')
     this.element.find('ol.moves>h2').show()
     this.element.find('ol.moves li').show()
+  }
+
+  _oracleSearch(e: JQuery.KeyUpEvent) {
+    const query = $(e.currentTarget).val()
+    if (!query || query === '') {
+      this.element.find('ol.oracles>h2').show()
+      this.element.find('ol.oracles>li').show()
+    } else {
+      this.element.find('ol.oracles>h2').hide()
+      const re = new RegExp($(e.currentTarget).val() as string, 'i')
+      const doesMatch = (_i, el: HTMLElement): boolean => re.test($(el).find('h4').text())
+      this.element.find('ol.oracles>li').filter(negate(doesMatch)).hide()
+      this.element.find('ol.oracles>li').filter(doesMatch).show()
+    }
+  }
+
+  _oracleSearchClear(_e: JQuery.ClickEvent) {
+    this.element.find('.ironsworn__oracle__search').val('')
+    this.element.find('ol.oracles>h2').show()
+    this.element.find('ol.oracles li').show()
   }
 
   _handleBuiltInMoveExpand(e: JQuery.ClickEvent) {
