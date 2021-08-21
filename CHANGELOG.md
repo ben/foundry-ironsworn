@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.5.1
+
 - Make the oracles and moves tabs of the move sheet behave more alike ([#120](https://github.com/ben/foundry-ironsworn/pull/120))
 
 ## 1.5.0
