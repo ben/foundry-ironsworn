@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Make the oracles and moves tabs of the move sheet behave more alike ([#120](https://github.com/ben/foundry-ironsworn/pull/120))
+
 ## 1.5.0
 
 - Streamline and downsize some text in the character sheet ([#109](https://github.com/ben/foundry-ironsworn/pull/109))
