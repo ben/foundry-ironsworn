@@ -96,7 +96,14 @@
       </div>
     </section>
 
-    <section class="tab" data-tab="oracles">
+    <section class="tab flexcol" data-tab="oracles">
+      <div class="flexrow nogrow" style="align-items: center;">
+        <input type="text" class="ironsworn__oracle__search" placeholder="{{localize 'IRONSWORN.Search'}}">
+        <div class="nogrow clickable block ironsworn__oracle__search__clear">
+          <i class="fa fa-times-circle" style="padding: 6px;"></i>
+        </div>
+      </div>
+
       <div class="flexcol item-list {{#if oraclesOpen}}open{{/if}}">
 
         {{#*inline "oracle"}}
@@ -105,7 +112,7 @@
         </li>
         {{/inline}}
 
-        <ol>
+        <ol class="oracles">
           <h2>{{localize 'IRONSWORN.Plot'}}</h2>
           {{> oracle name="Action"}}
           {{> oracle name="Theme"}}
