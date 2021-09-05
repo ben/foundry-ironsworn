@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add the missing "Settlement Name (Old Language) oracle ([#125](https://github.com/ben/foundry-ironsworn/pull/125))
+
 ## 1.5.1
 
 - Make the oracles and moves tabs of the move sheet behave more alike ([#120](https://github.com/ben/foundry-ironsworn/pull/120))
