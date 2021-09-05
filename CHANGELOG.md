@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.5.2
+
 - Add the missing "Settlement Name (Old Language) oracle ([#125](https://github.com/ben/foundry-ironsworn/pull/125))
 - Extend the Spanish-language translations ([#122](https://github.com/ben/foundry-ironsworn/pull/122))
 
