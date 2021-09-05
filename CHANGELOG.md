@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.5.3
+
 - Stop warning on Foundry 0.8.9
 
 ## 1.5.2
