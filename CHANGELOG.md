@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Stop warning on Foundry 0.8.9
+
 ## 1.5.2
 
 - Add the missing "Settlement Name (Old Language) oracle ([#125](https://github.com/ben/foundry-ironsworn/pull/125))

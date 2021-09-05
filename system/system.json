@@ -7,7 +7,7 @@
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
   "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.5.2/ironsworn.zip",
   "minimumCoreVersion": "0.8.3",
-  "compatibleCoreVersion": "0.8.8",
+  "compatibleCoreVersion": "0.8.9",
   "templateVersion": 2,
   "manifestPlusVersion": "1.2.0",
   "author": "Ben Straub",
