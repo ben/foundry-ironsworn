@@ -1,5 +1,6 @@
 /* eslint-disable */
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { VueLoaderPlugin } = require('vue-loader');
 const CopyPlugin = require("copy-webpack-plugin");
 const ESLintPlugin = require("eslint-webpack-plugin");
 const path = require("path");
@@ -28,7 +29,7 @@ module.exports = (env) => {
         mode: environment.mode,
         stats: "minimal",
         resolve: {
-            extensions: [".wasm", ".mjs", ".ts", ".js", ".json"],
+            extensions: [".wasm", ".mjs", ".ts", ".js", ".json", ".vue"],
         },
         output: {
             filename: "ironsworn.js",
@@ -56,6 +57,10 @@ module.exports = (env) => {
                           test: /\.hbs$/,
                           loader: "null-loader",
                       },
+                {
+                  test: /\.vue$/,
+                  use: ['vue-loader'],
+                },
                 {
                     test: /\.ts$/,
                     use: ["ts-loader", "webpack-import-glob-loader", "source-map-loader"],
@@ -98,6 +103,7 @@ module.exports = (env) => {
         },
         plugins: [
             new CleanWebpackPlugin(),
+            new VueLoaderPlugin(),
             new ESLintPlugin({
                 extensions: ["ts"],
             }),
