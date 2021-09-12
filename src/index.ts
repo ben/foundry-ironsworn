@@ -113,6 +113,12 @@ Hooks.once('ready', async () => {
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   WorldTruthsDialog.maybeShow()
+
+  if (typeof Dlopen !== 'undefined') {
+    Dlopen.register('vue-components', {
+      scripts: "/systems/foundry-ironsworn/vuecomponents.js",
+    });
+  }
 })
 
 Hooks.once('setup', () => {
