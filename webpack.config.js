@@ -18,9 +18,10 @@ const allVueComponents = () => {
     .sync('**/*.vue', { cwd: path.join(__dirname, 'src/module/vue') })
     .map((file) => {
       const basename = path.basename(file).replace('.vue', '')
+      const jsname = basename.replace(/[\W]/, '_')
       return `
-        import ${basename} from './${file}'
-        Vue.component('${basename}', ${basename})
+        import ${jsname} from './${file}'
+        Vue.component('${basename}', ${jsname})
       `
     })
     .join('\n')
@@ -47,7 +48,7 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.wasm', '.mjs', '.ts', '.js', '.json', '.vue'],
       alias: {
-        'vue$': 'vue/dist/vue.esm.js'
+        'Vue$': 'vue/dist/vue.esm.js'
       }
     },
     output: {

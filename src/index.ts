@@ -5,6 +5,7 @@
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
+import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
 import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
@@ -61,6 +62,10 @@ Hooks.once('init', async () => {
     label: 'Compact sheet',
     types: ['character'],
   })
+  Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
+    label: 'Character Sheet v2',
+    types: ['character'],
+  })
   Actors.registerSheet('ironsworn', IronswornSharedSheet, {
     types: ['shared'],
     label: 'Shared sheet',
@@ -115,9 +120,11 @@ Hooks.once('ready', async () => {
   WorldTruthsDialog.maybeShow()
 
   if (typeof Dlopen !== 'undefined') {
-    Dlopen.register('vue-components', {
-      scripts: "/systems/foundry-ironsworn/vuecomponents.js",
-    });
+    Dlopen.register('vuecomponents', {
+      scripts: '/systems/foundry-ironsworn/vuecomponents.js',
+    })
+
+    await Dlopen.loadDependencies(['vue', 'vuecomponents'])
   }
 })
 
