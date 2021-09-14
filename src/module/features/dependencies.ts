@@ -39,6 +39,7 @@ export async function maybePromptForDependencies() {
             })
 
             await Dlopen.loadDependencies(['vue', 'vuecomponents'])
+            require('./patchvue')
           } catch (error) {
             console.log('Dlopen was unable to load Vue. Now trying to load locally instead...')
           }

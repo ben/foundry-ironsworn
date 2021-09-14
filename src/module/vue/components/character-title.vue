@@ -17,13 +17,13 @@
       />
       <!-- <input
         :value="actor.name"
-        :placeholder="localize('IRONSWORN.Name')"
+        :placeholder="$t('IRONSWORN.Name')"
         name="name"
         type="text"
       /> -->
     </h1>
     <div class="flexrow xp">
-      <h4 style="flex-grow: 0; margin: 5px">{{ localize('IRONSWORN.XP') }}</h4>
+      <h4 style="flex-grow: 0; margin: 5px">{{ $t('IRONSWORN.XP') }}</h4>
       <div class="flexrow">
         <!-- {{#rangeEach from=1 to=9 current=data.data.xp}}
         <div class="
@@ -44,9 +44,10 @@
   </header>
 </template>
 
-<script lang="ts">
-import Vue from 'vue'
-export default Vue.extend({
-  props: ['actor'],
-})
+<script>
+export default {
+  props: {
+    actor: Object
+  }
+}
 </script>

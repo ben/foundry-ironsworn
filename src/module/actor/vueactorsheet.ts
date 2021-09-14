@@ -45,7 +45,7 @@ export class IronswornVueActorSheet extends ActorSheet {
       // Run Vue's render, assign it to our prop for tracking.
       .then((_rendered) => {
         // Prepare the actor data.
-        const el = this.element.find('.archmage-vueport')
+        const el = this.element.find('.ironsworn-vueport')
         // Render Vue and assign it to prevent later rendering.
         VuePort.render(null, el[0], { data: { actor: sheetData.actor, owner: this.actor.isOwner } }).then((vm) => {
           this._vm = vm
@@ -82,15 +82,15 @@ export class IronswornVueActorSheet extends ActorSheet {
 
   // Update initial content throughout all editors.
   _updateEditors(_html) {
-    // for (const [name, editor] of Object.entries(this.editors)) {
-    //   const data = this.object instanceof Document ? this.object.data : this.object
-    //   const initialContent = getProperty(data, name)
-    //   const div = $(this.element).find(`.editor-content[data-edit="${name}"]`)[0]
-    //   if (this.editors && this.editors[name]) {
-    //     this.editors[name].initial = initialContent
-    //     this.editors[name].options.target = div
-    //   }
-    // }
+    for (const [name] of Object.entries(this.editors)) {
+      const data = this.object instanceof Document ? this.object.data : this.object
+      const initialContent = getProperty(data, name)
+      const div = $(this.element).find(`.editor-content[data-edit="${name}"]`)[0]
+      if (this.editors && this.editors[name]) {
+        this.editors[name]!.initial = initialContent
+        this.editors[name]!.options.target = div
+      }
+    }
   }
 
   /** @override */
