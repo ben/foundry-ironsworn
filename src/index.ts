@@ -12,6 +12,7 @@ import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { IronswornChatCard } from './module/chat/cards'
+import { maybePromptForDependencies } from './module/features/dependencies'
 import { activateDragDropListeners } from './module/features/dragdrop'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { runDataMigrations } from './module/helpers/migrations'
@@ -114,18 +115,12 @@ Hooks.once('init', async () => {
 Hooks.once('ready', async () => {
   await runDataMigrations()
 
+  await maybePromptForDependencies()
+
   activateDragDropListeners()
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   WorldTruthsDialog.maybeShow()
-
-  if (typeof Dlopen !== 'undefined') {
-    Dlopen.register('vuecomponents', {
-      scripts: '/systems/foundry-ironsworn/vuecomponents.js',
-    })
-
-    await Dlopen.loadDependencies(['vue', 'vuecomponents'])
-  }
 })
 
 Hooks.once('setup', () => {
