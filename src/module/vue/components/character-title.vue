@@ -10,17 +10,11 @@
     />
     <h1 class="charname">
       <input
-        type="text"
-        name="name"
-        class="input-secondary"
-        v-model="actor.name"
-      />
-      <!-- <input
-        :value="actor.name"
         :placeholder="$t('IRONSWORN.Name')"
+        v-model="actor.name"
         name="name"
         type="text"
-      /> -->
+      />
     </h1>
     <div class="flexrow xp">
       <h4 style="flex-grow: 0; margin: 5px">{{ $t('IRONSWORN.XP') }}</h4>

@@ -27,6 +27,9 @@ export class IronswornCharacterSheetV2 extends IronswornVueActorSheet {
       data = itemType.getActorSheetData(data, this)
     }
 
+    data.actor = this.actor.toObject(false)
+    data.data = data.actor.data;
+
     return data
   }
 }

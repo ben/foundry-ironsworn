@@ -1,5 +1,8 @@
 <template>
+<div class="flexcol">
   <character-title :actor="actor"></character-title>
+  <pre><code>{{foo}}</code></pre>
+</div>
 </template>
 
 <script>
@@ -9,7 +12,7 @@ export default {
   },
   computed: {
     foo() {
-      return inspect(this.actor, {depth: 5})
+      return JSON.stringify(this.actor, null, 2)
     }
   },
   created(...args) {
