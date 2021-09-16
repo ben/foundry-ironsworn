@@ -25,13 +25,7 @@
           :thisValue="n"
           :currentValue="actor.data.xp"
         />
-        <div
-          class="clickable block xp clear ironsworn__stat__value"
-          data-resource="xp"
-          data-value="0"
-        >
-          ×
-        </div>
+        <xp-box :thisValue="0">×</xp-box>
       </div>
     </div>
   </header>

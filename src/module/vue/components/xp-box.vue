@@ -3,7 +3,9 @@
     :class="$concat('clickable block xp ironsworn__stat__value ', active)"
     data-resource="xp"
     :data-value="thisValue"
-  ></div>
+  >
+    <slot />
+  </div>
 </template>
 
 <script>
