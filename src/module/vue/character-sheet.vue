@@ -1,25 +1,19 @@
 <template>
-<div class="flexcol">
-  <character-title :actor="actor"></character-title>
-  <pre><code>{{foo}}</code></pre>
-</div>
+  <div class="flexcol">
+    <character-title :actor="actor"></character-title>
+    <pre><code>{{foo}}</code></pre>
+  </div>
 </template>
 
 <script>
 export default {
   props: {
-    actor: Object
+    actor: Object,
   },
   computed: {
     foo() {
       return JSON.stringify(this.actor, null, 2)
-    }
-  },
-  created(...args) {
-    console.log('created', args)
-  },
-  mounted(...args) {
-    console.log('mounted', args)
+    },
   },
 }
 </script>

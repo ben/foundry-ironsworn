@@ -47,7 +47,7 @@ export class IronswornVueActorSheet extends ActorSheet {
         // Prepare the actor data.
         const el = this.element.find('.ironsworn-vueport')
         // Render Vue and assign it to prevent later rendering.
-        VuePort.render(null, el[0], { data: { actor: sheetData.actor, owner: this.actor.isOwner } }).then((vm) => {
+        VuePort.render(null, el[0], { data: sheetData }).then((vm) => {
           this._vm = vm
           const html = $(this.element)
           this.activateVueListeners(html)
@@ -86,9 +86,10 @@ export class IronswornVueActorSheet extends ActorSheet {
       const data = this.object instanceof Document ? this.object.data : this.object
       const initialContent = getProperty(data, name)
       const div = $(this.element).find(`.editor-content[data-edit="${name}"]`)[0]
-      if (this.editors && this.editors[name]) {
-        this.editors[name]!.initial = initialContent
-        this.editors[name]!.options.target = div
+      const editor = this.editors && this.editors[name]
+      if (editor) {
+        editor.initial = initialContent
+        editor.options.target = div
       }
     }
   }

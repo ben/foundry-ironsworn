@@ -19,13 +19,12 @@
     <div class="flexrow xp">
       <h4 style="flex-grow: 0; margin: 5px">{{ $t('IRONSWORN.XP') }}</h4>
       <div class="flexrow">
-        <!-- {{#rangeEach from=1 to=9 current=data.data.xp}}
-        <div class="
-                    clickable block xp
-                    ironsworn__stat__value
-                    {{#if lteCurrent}} selected {{/if}}
-                " data-resource="xp" data-value="{{value}}"></div>
-        {{/rangeEach}} -->
+        <xp-box
+          v-for="n in xpArray"
+          v-bind:key="n"
+          :thisValue="n"
+          :currentValue="actor.data.xp"
+        />
         <div
           class="clickable block xp clear ironsworn__stat__value"
           data-resource="xp"
@@ -41,7 +40,12 @@
 <script>
 export default {
   props: {
-    actor: Object
-  }
+    actor: Object,
+  },
+  data() {
+    return {
+      xpArray: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    }
+  },
 }
 </script>
