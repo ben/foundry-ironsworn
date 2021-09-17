@@ -80,6 +80,14 @@ export class IronswornVueActorSheet extends ActorSheet {
     return super.close(options)
   }
 
+  activateListeners(html:JQuery) {
+    super.activateListeners(html)
+
+    if ( this.options.editable ) {
+      html.on('click', 'img[data-edit]', (event) => this._onEditImage(event));
+    }
+  }
+
   // Update initial content throughout all editors.
   _updateEditors(_html) {
     for (const [name] of Object.entries(this.editors)) {
