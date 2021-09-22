@@ -13,19 +13,19 @@
 export default {
   props: {
     actor: Object,
-    thisValue: Number,
-    currentValue: Number,
+    value: Number,
+    current: Number,
   },
 
   computed: {
     active() {
-      return this.thisValue <= this.currentValue ? 'selected' : ''
+      return this.value <= this.current ? 'selected' : ''
     },
   },
   methods: {
     click(event) {
       const actor = game.actors?.get(this.actor._id)
-      actor?.update({data: {xp: this.thisValue}})
+      actor?.update({data: {xp: this.value}})
     }
   }
 }

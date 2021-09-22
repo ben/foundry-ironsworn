@@ -23,10 +23,10 @@
           :actor="actor"
           v-for="n in xpArray"
           v-bind:key="n"
-          :thisValue="n"
-          :currentValue="actor.data.xp"
+          :value="n"
+          :current="actor.data.xp"
         />
-        <xp-box :actor="actor" :thisValue="0">×</xp-box>
+        <xp-box :actor="actor" :value="0">×</xp-box>
       </div>
     </div>
   </header>

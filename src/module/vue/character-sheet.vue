@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <character-title :actor="actor"></character-title>
+    <character-header :actor="actor"></character-header>
     <pre><code>{{foo}}</code></pre>
   </div>
 </template>
