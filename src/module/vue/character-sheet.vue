@@ -30,6 +30,54 @@
           <h4 class="vertical">{{ $t('IRONSWORN.Momentum') }}</h4>
         </div>
       </div>
+
+      <!-- Center area -->
+      <div class="flexcol">
+        (TODO: main body)
+      </div>
+
+      <!-- Stats on right -->
+      <div class="flexcol margin-right">
+        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+          <h4 class="vertical clickable text">{{ $t('IRONSWORN.Health') }}</h4>
+          <div class="flexcol stack health">
+            <stack
+              :actor="actor"
+              stat="health"
+              v-bind:top="5"
+              v-bind:bottom="0"
+            ></stack>
+          </div>
+        </div>
+
+        <hr class="nogrow">
+
+        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+          <h4 class="vertical clickable text">{{ $t('IRONSWORN.Spirit') }}</h4>
+          <div class="flexcol stack spirit">
+            <stack
+              :actor="actor"
+              stat="spirit"
+              v-bind:top="5"
+              v-bind:bottom="0"
+            ></stack>
+          </div>
+        </div>
+
+        <hr class="nogrow">
+
+        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+          <h4 class="vertical clickable text">{{ $t('IRONSWORN.Supply') }}</h4>
+          <div class="flexcol stack supply">
+            <stack
+              :actor="actor"
+              stat="supply"
+              v-bind:top="5"
+              v-bind:bottom="0"
+            ></stack>
+          </div>
+        </div>
+      </div>
     </div>
     <pre><code>{{foo}}</code></pre>
   </div>
