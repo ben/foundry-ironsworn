@@ -12,8 +12,8 @@
             <stack
               :actor="actor"
               stat="momentum"
-              v-bind:top="10"
-              v-bind:bottom="-6"
+              :top="10"
+              :bottom="-6"
               :softMax="actor.data.momentumMax"
             ></stack>
             <hr class="nogrow" />
@@ -41,40 +41,25 @@
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <h4 class="vertical clickable text">{{ $t('IRONSWORN.Health') }}</h4>
           <div class="flexcol stack health">
-            <stack
-              :actor="actor"
-              stat="health"
-              v-bind:top="5"
-              v-bind:bottom="0"
-            ></stack>
+            <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
           </div>
         </div>
 
-        <hr class="nogrow">
+        <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <h4 class="vertical clickable text">{{ $t('IRONSWORN.Spirit') }}</h4>
           <div class="flexcol stack spirit">
-            <stack
-              :actor="actor"
-              stat="spirit"
-              v-bind:top="5"
-              v-bind:bottom="0"
-            ></stack>
+            <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
           </div>
         </div>
 
-        <hr class="nogrow">
+        <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <h4 class="vertical clickable text">{{ $t('IRONSWORN.Supply') }}</h4>
           <div class="flexcol stack supply">
-            <stack
-              :actor="actor"
-              stat="supply"
-              v-bind:top="5"
-              v-bind:bottom="0"
-            ></stack>
+            <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
           </div>
         </div>
       </div>
