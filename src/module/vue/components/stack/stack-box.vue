@@ -42,8 +42,11 @@ export default {
   methods: {
     click(event) {
       const actor = game.actors?.get(this.actor._id)
-      actor?.update({data: {[this.stat]: this.value}})
-    }
-  }
+      actor?.update({ data: { [this.stat]: this.value } })
+      if (this.stat === 'supply') {
+        CONFIG.IRONSWORN.settings.maybeSetGlobalSupply(this.value)
+      }
+    },
+  },
 }
 </script>

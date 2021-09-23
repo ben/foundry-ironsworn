@@ -1,6 +1,7 @@
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { importFromDatasworn } from './module/datasworn'
+import { IronswornSettings } from './module/helpers/settings'
 import { AssetItem } from './module/item/asset/assetitem'
 import { BaseItem } from './module/item/baseitem'
 import { BondsetItem } from './module/item/bondset/bondsetitem'
@@ -17,6 +18,7 @@ export interface IronswornConfig {
   applications: {
     createActorDialog: CreateActorDialog | null
   }
+  settings: typeof IronswornSettings
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -28,4 +30,5 @@ export const IRONSWORN: IronswornConfig = {
   },
 
   importFromDatasworn,
+  settings: IronswornSettings,
 }
