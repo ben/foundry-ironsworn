@@ -3,7 +3,7 @@
     @click="click"
     :class="$concat('clickable block xp ironsworn__stat__value ', active)"
     data-resource="xp"
-    :data-value="thisValue"
+    v-bind:data-value="value"
   >
     <slot />
   </div>
