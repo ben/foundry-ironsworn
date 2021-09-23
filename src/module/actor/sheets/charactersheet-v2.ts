@@ -28,8 +28,31 @@ export class IronswornCharacterSheetV2 extends IronswornVueActorSheet {
     }
 
     data.actor = this.actor.toObject(false)
-    data.data = data.actor.data;
+    data.data = data.actor.data
 
     return data
+  }
+
+  _getHeaderButtons() {
+    return [
+      {
+        class: 'ironsworn-toggle-edit-mode',
+        label: 'Edit',
+        icon: 'fas fa-edit',
+        onclick: (e) => this._toggleEditMode(e),
+      },
+      // {
+      //   class: 'ironsworn-open-move-sheet',
+      //   label: 'Moves',
+      //   icon: 'fas fa-directions',
+      //   onclick: (e) => this._openMoveSheet(e),
+      // },
+      ...super._getHeaderButtons(),
+    ]
+  }
+
+  _toggleEditMode(_e: JQuery.ClickEvent) {
+    const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
+    this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 }
