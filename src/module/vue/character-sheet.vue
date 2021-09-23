@@ -42,11 +42,20 @@
           <attr-box :actor="actor" attr="wits"></attr-box>
         </div>
 
-        <!-- TODO: bonds -->
-        <!-- TODO: Assets -->
-        <!-- TODO: Vows & Progresses -->
+        <div class="flexrow">
+          <div class="flexcol">
+            <bonds :actor="actor"></bonds>
 
+            <h4>assets</h4>
+            <!-- TODO: Assets -->
+          </div>
+          <div class="flexcol">
+            <!-- TODO: Vows & Progresses -->
+            <h4>vows &amp; progresses</h4>
+          </div>
+        </div>
         <!-- TODO: Conditions & Banes & Burdens -->
+        <h4>Conditions &amp; Banes &amp; Burdens</h4>
       </div>
 
       <!-- Stats on right -->
