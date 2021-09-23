@@ -33,7 +33,20 @@
 
       <!-- Center area -->
       <div class="flexcol">
-        (TODO: main body)
+        <!-- Attributes -->
+        <div class="flexrow stats">
+          <attr-box :actor="actor" attr="edge"></attr-box>
+          <attr-box :actor="actor" attr="heart"></attr-box>
+          <attr-box :actor="actor" attr="iron"></attr-box>
+          <attr-box :actor="actor" attr="shadow"></attr-box>
+          <attr-box :actor="actor" attr="wits"></attr-box>
+        </div>
+
+        <!-- TODO: bonds -->
+        <!-- TODO: Assets -->
+        <!-- TODO: Vows & Progresses -->
+
+        <!-- TODO: Conditions & Banes & Burdens -->
       </div>
 
       <!-- Stats on right -->
