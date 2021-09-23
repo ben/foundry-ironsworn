@@ -1,9 +1,8 @@
 <template>
   <div
     @click="click"
-    :class="$concat('clickable block xp ironsworn__stat__value ', active)"
+    :class="$concat('clickable block xp ', active)"
     data-resource="xp"
-    v-bind:data-value="value"
   >
     <slot />
   </div>
@@ -25,8 +24,8 @@ export default {
   methods: {
     click(event) {
       const actor = game.actors?.get(this.actor._id)
-      actor?.update({data: {xp: this.value}})
-    }
-  }
+      actor?.update({ data: { xp: this.value } })
+    },
+  },
 }
 </script>
