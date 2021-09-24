@@ -32,7 +32,9 @@ export default {
       item?.sheet.render(true)
     },
     rollBonds() {
-
+      const actor = game.actors?.get(this.actor._id)
+      const item = actor.items.get(this.bonds._id)
+      item?.writeEpilogue()
     },
   },
 }
