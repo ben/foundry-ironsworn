@@ -1,7 +1,7 @@
 <template>
   <div
     @click="click"
-    :class="$concat('clickable block xp ', active)"
+    :class="classes"
     data-resource="xp"
   >
     <slot />
@@ -17,8 +17,16 @@ export default {
   },
 
   computed: {
-    active() {
-      return this.value <= this.current ? 'selected' : ''
+    classes() {
+      return {
+        clickable: true,
+        block: true,
+        xp: true,
+        selected: this.selected,
+      }
+    },
+    selected() {
+      return this.value <= this.current
     },
   },
   methods: {

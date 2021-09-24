@@ -1,5 +1,5 @@
 <template>
-  <div :class="$concat('stat block ', clickable)" @click="click">
+  <div :class="classes" @click="click">
     <h4>{{ $t(i18nKey) }}</h4>
     <div class="flexrow">
       <div class="clickable text" v-if="editMode" @click="decrement">
@@ -21,6 +21,13 @@ export default {
   },
 
   computed: {
+    classes() {
+      return {
+        stat: true,
+        block: true,
+        clickable: this.clickable,
+      }
+    },
     i18nKey() {
       return `IRONSWORN.${this.$capitalize(this.attr)}`
     },

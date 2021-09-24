@@ -1,14 +1,7 @@
 <template>
   <div
     @click="click"
-    :class="
-      $concat(
-        'clickable block stack-row ironsworn__stat__value ',
-        stat,
-        selected,
-        disabled
-      )
-    "
+    :class="classes"
     :data-resource="stat"
     :data-value="value"
   >
@@ -25,6 +18,16 @@ export default {
     softMax: Number,
   },
   computed: {
+    classes() {
+      return {
+        clickable: true,
+        block: true,
+        'stack-row': true,
+        [this.stat]: true,
+        selected: this.selected,
+        disabled: this.disabled,
+      }
+    },
     valueStr() {
       return this.value > 0 ? `+${this.value}` : this.value.toString()
     },
@@ -32,10 +35,10 @@ export default {
       return this.actor.data[this.stat]
     },
     selected() {
-      return this.current === this.value ? ' selected ' : ''
+      return this.current === this.value
     },
     disabled() {
-      return this.value > this.softMax ? ' disabled ' : ''
+      return this.value > this.softMax
     },
   },
 
