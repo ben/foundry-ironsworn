@@ -9,7 +9,7 @@
         <i class="fas fa-dice-d6"></i>
       </div>
     </div>
-    <div class="flexrow track">(track)</div>
+    <progress-track :ticks="bondcount" />
   </div>
 </template>
 
@@ -22,6 +22,9 @@ export default {
   computed: {
     bonds() {
       return this.actor.items.filter((x) => x.type === 'bondset')[0]
+    },
+    bondcount() {
+      return Object.values(this.bonds?.data.bonds).length
     },
   },
 
