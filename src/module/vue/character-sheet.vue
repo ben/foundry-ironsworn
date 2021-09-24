@@ -51,7 +51,13 @@
           </div>
           <div class="flexcol">
             <!-- TODO: Vows & Progresses -->
-            <h4>vows &amp; progresses</h4>
+            <div
+              class="flexcol ironsworn__drop__target"
+              data-drop-type="progress"
+            >
+              <!-- <h3>{{ $t('IRONSWORN.Vows') }}</h3> -->
+              <progress-box v-for="item in progressItems" :key="item._id" :item="item" />
+            </div>
           </div>
         </div>
         <!-- TODO: Conditions & Banes & Burdens -->
@@ -98,6 +104,12 @@ export default {
   computed: {
     foo() {
       return JSON.stringify(this.actor, null, 2)
+    },
+    progressItems() {
+      return [
+        ...this.actor.items.filter((x) => x.type === 'vow'),
+        ...this.actor.items.filter((x) => x.type === 'progress'),
+      ]
     },
   },
 
