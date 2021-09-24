@@ -44,24 +44,34 @@
 
         <div class="flexrow">
           <div class="flexcol">
-            <bonds :actor="actor"></bonds>
+            <section class="sheet-area">
+              <bonds :actor="actor"></bonds>
 
-            <h4>assets</h4>
-            <!-- TODO: Assets -->
+              <hr />
+              <h4>assets</h4>
+              <!-- TODO: Assets -->
+            </section>
           </div>
           <div class="flexcol">
             <!-- TODO: Vows & Progresses -->
             <div
-              class="flexcol ironsworn__drop__target"
+              class="flexcol sheet-area ironsworn__drop__target"
               data-drop-type="progress"
             >
               <!-- <h3>{{ $t('IRONSWORN.Vows') }}</h3> -->
-              <progress-box v-for="item in progressItems" :key="item._id" :item="item" />
+              <progress-box
+                v-for="item in progressItems"
+                :key="item._id"
+                :item="item"
+              />
             </div>
           </div>
         </div>
+
         <!-- TODO: Conditions & Banes & Burdens -->
-        <h4>Conditions &amp; Banes &amp; Burdens</h4>
+        <section class="sheet-area nogrow">
+          <h4>Conditions &amp; Banes &amp; Burdens</h4>
+        </section>
       </div>
 
       <!-- Stats on right -->

@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol item-row">
+  <div class="flexcol item-row nogrow">
     <!-- <div class="flexrow">
       <img
         class="profile-img nogrow"
