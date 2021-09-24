@@ -63,6 +63,7 @@
                 v-for="item in progressItems"
                 :key="item._id"
                 :item="item"
+                :actor="actor"
               />
             </div>
           </div>
