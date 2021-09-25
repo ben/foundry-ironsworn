@@ -12,31 +12,10 @@
         <div class="flexrow">
           <!-- <div class="flexrow">{{>rankHexes rank=data.data.rank id=id}}</div> -->
 
-          <div
-            v-if="editMode"
-            class="clickable block nogrow progress-button"
-          >
-            <i class="fas fa-trash"></i>
-          </div>
-
-          <div
-            class="clickable block nogrow progress-button"
-          >
-            <i class="fas fa-edit"></i>
-          </div>
-          <div
-            class="clickable block nogrow progress-button"
-            :title="$t('IRONSWORN.MarkProgress')"
-          >
-            <i class="fas fa-play"></i>
-          </div>
-          <div
-            class="clickable block progress-button ironsworn__progress__fulfill"
-            :title="$t('IRONSWORN.ProgressRoll')"
-            style="flex-grow: 0"
-          >
-            <i class="fas fa-dice-d6"></i>
-          </div>
+          <icon-button v-if="editMode" icon="trash" @click="destroy" />
+          <icon-button icon="edit" @click="edit" />
+          <icon-button icon="play" @click="advance" />
+          <icon-button icon="dice-d6" @click="fulfill" />
         </div>
         <h4>{{ item.name }}</h4>
       </div>
@@ -59,6 +38,35 @@ export default {
   computed: {
     editMode() {
       return this.actor.flags['foundry-ironsworn']['edit-mode']
+    },
+    foundryItem() {
+      const actor = game.actors?.get(this.actor._id)
+      return actor?.items.get(this.item._id)
+    },
+  },
+
+  methods: {
+    edit() {
+      this.foundryItem.sheet.render(true)
+    },
+    destroy() {
+      const item = this.foundryItem
+      const titleKey = `IRONSWORN.Delete${this.$capitalize(item?.type || '')}`
+
+      Dialog.confirm({
+        title: game.i18n.localize(titleKey),
+        content: `<p><strong>${game.i18n.localize(
+          'IRONSWORN.ConfirmDelete'
+        )}</strong></p>`,
+        yes: () => item?.delete(),
+        defaultYes: false,
+      })
+    },
+    advance() {
+      this.foundryItem.markProgress()
+    },
+    fulfill() {
+      this.foundryItem.fulfill()
     },
   },
 }
