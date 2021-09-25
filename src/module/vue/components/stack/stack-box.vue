@@ -44,6 +44,7 @@ export default {
 
   methods: {
     click(event) {
+      if (this.disabled) return
       const actor = game.actors?.get(this.actor._id)
       actor?.update({ data: { [this.stat]: this.value } })
       if (this.stat === 'supply') {
