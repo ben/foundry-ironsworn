@@ -10,10 +10,6 @@
       />
       <div class="flexcol">
         <div class="flexrow">
-          <!-- TODO: hex widget component -->
-          <!-- <div class="flexrow">
-            {{>rankHexes rank=data.data.rank id=id}}
-          </div> -->
           <rank-hexes :item="item" :actor="actor" />
 
           <icon-button v-if="editMode" icon="trash" @click="destroy" />

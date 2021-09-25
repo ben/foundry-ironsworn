@@ -1,19 +1,27 @@
 <template>
-  <div class="flexrow nogrow" :title="title">
+  <div :title="title" class="nogrow">
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      height="15"
-      viewbox="0 0 17.32050807568877 20"
+      viewbox="0 0 17 15"
+      class="rank-pip clickable svg"
       :class="classes"
     >
       <path
         stroke-width="1"
-        d="M8.660254037844386 0L17.32050807568877 5L17.32050807568877 15L8.660254037844386 20L0 15L0 5Z"
+        d="M 7.5 0 L 15 5 L 15 13 L 7.5 18 L 1 13 L 1 5 Z"
       ></path>
     </svg>
   </div>
 </template>
+
+<style lang="less" scoped>
+div {
+  width: 17px;
+  height: 15px;
+  padding: 0 1px;
+}
+</style>
 
 <script>
 export default {
@@ -30,11 +38,6 @@ export default {
     classes() {
       return {
         filled: this.selected,
-        'rank-pip': true,
-        nogrow: true,
-        clickable: true,
-        svg: true,
-        ironsworn__progress__rank: true,
       }
     },
   },

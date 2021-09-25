@@ -1,5 +1,5 @@
 <template>
-  <div class="flexrow">
+  <div class="flexrow" style="flex-wrap: nowrap">
     <rank-hex
       v-for="r in ranks"
       :key="r.rank"
