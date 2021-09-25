@@ -53,7 +53,6 @@
             </section>
           </div>
           <div class="flexcol">
-            <!-- TODO: Vows & Progresses -->
             <div
               class="flexcol sheet-area ironsworn__drop__target"
               data-drop-type="progress"
@@ -71,7 +70,7 @@
 
         <!-- TODO: Conditions & Banes & Burdens -->
         <section class="sheet-area nogrow">
-          <h4>Conditions &amp; Banes &amp; Burdens</h4>
+          <conditions :actor="actor" />
         </section>
       </div>
 
