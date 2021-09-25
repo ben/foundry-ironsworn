@@ -6,6 +6,7 @@
       viewbox="0 0 17 15"
       class="rank-pip clickable svg"
       :class="classes"
+      @click="click"
     >
       <path
         stroke-width="1"
@@ -41,5 +42,11 @@ export default {
       }
     },
   },
+
+  methods: {
+    click(ev) {
+      this.$emit('click', ev, this.rank)
+    }
+  }
 }
 </script>

@@ -5,6 +5,7 @@
       :key="r.rank"
       :rank="r.rank"
       :selected="r.selected"
+      @click="setRank"
     />
   </div>
 </template>
@@ -34,6 +35,14 @@ export default {
           selected,
         }
       })
+    },
+  },
+
+  methods: {
+    setRank(_ev, rank) {
+      const actor = game.actors?.get(this.actor._id)
+      const item = actor?.items.get(this.item._id)
+      item?.update({ data: { rank } })
     },
   },
 }
