@@ -78,7 +78,7 @@
       <!-- Stats on right -->
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text">
+          <h4 class="vertical-v2 clickable text" @click="rollStat('health')">
             {{ $t('IRONSWORN.Health') }}
           </h4>
           <div class="flexcol stack health">
@@ -89,7 +89,7 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text">
+          <h4 class="vertical-v2 clickable text" @click="rollStat('spirit')">
             {{ $t('IRONSWORN.Spirit') }}
           </h4>
           <div class="flexcol stack spirit">
@@ -100,7 +100,7 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text">
+          <h4 class="vertical-v2 clickable text" @click="rollStat('supply')">
             {{ $t('IRONSWORN.Supply') }}
           </h4>
           <div class="flexcol stack supply">
@@ -138,9 +138,13 @@ export default {
 
   methods: {
     burnMomentum() {
-      // TODO:
       const actor = game.actors?.get(this.actor._id)
       actor.burnMomentum()
+    },
+
+    rollStat(stat) {
+      const actor = game.actors?.get(this.actor._id)
+      CONFIG.IRONSWORN.RollDialog.show({ actor, stat })
     },
   },
 }
