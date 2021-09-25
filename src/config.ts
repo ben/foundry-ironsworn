@@ -1,5 +1,6 @@
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
+import { RANKS } from './module/constants'
 import { importFromDatasworn } from './module/datasworn'
 import { RollDialog } from './module/helpers/roll'
 import { IronswornSettings } from './module/helpers/settings'
@@ -21,6 +22,7 @@ export interface IronswornConfig {
   }
   IronswornSettings: typeof IronswornSettings
   RollDialog: typeof RollDialog
+  Ranks: typeof RANKS
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -35,4 +37,5 @@ export const IRONSWORN: IronswornConfig = {
 
   IronswornSettings,
   RollDialog,
+  Ranks: RANKS
 }
