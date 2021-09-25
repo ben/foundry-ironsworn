@@ -27,7 +27,7 @@
             {{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}
           </div>
 
-          <h4 class="vertical">{{ $t('IRONSWORN.Momentum') }}</h4>
+          <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
         </div>
       </div>
 
@@ -78,7 +78,9 @@
       <!-- Stats on right -->
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical clickable text">{{ $t('IRONSWORN.Health') }}</h4>
+          <h4 class="vertical-v2 clickable text">
+            {{ $t('IRONSWORN.Health') }}
+          </h4>
           <div class="flexcol stack health">
             <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
           </div>
@@ -87,7 +89,9 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical clickable text">{{ $t('IRONSWORN.Spirit') }}</h4>
+          <h4 class="vertical-v2 clickable text">
+            {{ $t('IRONSWORN.Spirit') }}
+          </h4>
           <div class="flexcol stack spirit">
             <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
           </div>
@@ -96,7 +100,9 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical clickable text">{{ $t('IRONSWORN.Supply') }}</h4>
+          <h4 class="vertical-v2 clickable text">
+            {{ $t('IRONSWORN.Supply') }}
+          </h4>
           <div class="flexcol stack supply">
             <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
           </div>
@@ -106,6 +112,12 @@
     <pre><code>{{foo}}</code></pre>
   </div>
 </template>
+
+<style lang="less" scoped>
+h4.vertical-v2 {
+  padding: 3px;
+}
+</style>
 
 <script>
 export default {
