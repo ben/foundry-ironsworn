@@ -47,9 +47,19 @@
             <section class="sheet-area">
               <bonds :actor="actor"></bonds>
 
-              <hr />
-              <h4>assets</h4>
-              <!-- TODO: Assets -->
+              <div
+                class="flexcol ironsworn__drop__target"
+                data-drop-type="asset"
+              >
+                <h4>assets</h4>
+
+                <asset
+                  v-for="(asset, i) in assets"
+                  :key="i"
+                  :actor="actor"
+                  :asset="asset"
+                />
+              </div>
             </section>
           </div>
           <div class="flexcol">
@@ -132,6 +142,9 @@ export default {
         ...this.actor.items.filter((x) => x.type === 'vow'),
         ...this.actor.items.filter((x) => x.type === 'progress'),
       ]
+    },
+    assets() {
+      return this.actor.items.filter((x) => x.type === 'asset')
     },
   },
 
