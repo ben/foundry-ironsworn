@@ -41,14 +41,12 @@
         style="margin-top: 5px"
         v-if="asset.data.exclusiveOptions.length > 0"
       >
-        <div
+        <asset-exclusiveoption
           v-for="(opt, i) in asset.data.exclusiveOptions"
           :key="i"
-          class="clickable block stack-row ironsworn__assetoption"
-        >
-          <!-- {{#if selected}}selected{{/if}} -->
-          {{ opt.name }}
-        </div>
+          :opt="opt"
+          @click="exclusiveOptionClick(i)"
+        />
       </div>
     </div>
   </div>
@@ -101,6 +99,13 @@ export default {
         asset: this.foundryItem,
         stat: 'track',
       })
+    },
+    exclusiveOptionClick(selectedIdx) {
+      const options = this.asset.data.exclusiveOptions
+      for (let i = 0; i < options.length; i++) {
+        options[i].selected = i === selectedIdx
+      }
+      this.foundryItem.update({ data: { exclusiveOptions: options } })
     },
   },
 }
