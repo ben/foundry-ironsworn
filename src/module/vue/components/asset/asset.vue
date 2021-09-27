@@ -62,7 +62,7 @@ export default {
   computed: {
     collapsedClass() {
       return {
-        collapsed: this.asset.flags['foundry-ironsworn']['expanded'],
+        collapsed: this.asset?.flags['foundry-ironsworn']?.expanded,
       }
     },
     editMode() {
@@ -92,6 +92,18 @@ export default {
       ev.stopPropagation()
       this.foundryItem.sheet.render(true)
       return false
+    },
+    destroy(ev) {
+      ev.stopPropagation()
+
+      Dialog.confirm({
+        title: this.$t('IRONSWORN.DeleteAsset'),
+        content: `<p><strong>${this.$t(
+          'IRONSWORN.ConfirmDelete'
+        )}</strong></p>`,
+        yes: () => this.foundryItem?.delete(),
+        defaultYes: false,
+      })
     },
     rollTrack() {
       CONFIG.IRONSWORN.RollDialog.show({
