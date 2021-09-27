@@ -10,6 +10,13 @@
   </div>
 </template>
 
+<style lang="less" scoped>
+.track-box:last-child {
+  margin-right: 0;
+}
+</style>
+
+
 <script>
 export default {
   props: {
@@ -20,7 +27,7 @@ export default {
   computed: {
     trackValues() {
       const ret = []
-      for (let i = 0; i < this.asset.data.track.max; i++) ret.push(i)
+      for (let i = 0; i <= this.asset.data.track.max; i++) ret.push(i)
       return ret
     },
   },
