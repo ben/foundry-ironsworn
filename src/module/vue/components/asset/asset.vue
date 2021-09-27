@@ -25,28 +25,16 @@
         ></li>
       </ul>
 
-      <!-- <div class="flexcol" v-if="asset.data.track.enabled">
+      <div class="flexcol" v-if="asset.data.track.enabled">
         <h4
+          class="clickable text"
           style="margin-bottom: 3px"
-          class="clickable text ironsworn__assettrack__roll"
+          @click="rollTrack"
         >
           {{ asset.data.track.name }}
         </h4>
-        <div class="flexrow track">
-          {{#rangeEach from=0 to=data.data.track.max
-                        current=data.data.track.current}}
-          <div
-            class="track-box clickable block ironsworn__assettrack__value
-                                                  {{#if isCurrent}} selected {{/if}}
-                                                "
-            data-item="{{id}}"
-            data-value="{{value}}"
-          >
-            {{ value }}
-          </div>
-          {{/rangeEach}}
-        </div>
-      </div> -->
+        <asset-track :actor="actor" :asset="asset" />
+      </div>
 
       <div
         class="flexcol stack nogrow"
@@ -67,9 +55,7 @@
 </template>
 
 <script>
-import iconButton from '../icon-button.vue'
 export default {
-  components: { iconButton },
   props: {
     actor: Object,
     asset: Object,
@@ -88,9 +74,11 @@ export default {
       const abilities = Object.values(this.asset.data.abilities)
       return abilities.filter((x) => x.enabled)
     },
+    foundryActor() {
+      return game.actors?.get(this.actor._id)
+    },
     foundryItem() {
-      const actor = game.actors?.get(this.actor._id)
-      return actor?.items.get(this.asset._id)
+      return this.foundryActor?.items.get(this.asset._id)
     },
   },
 
@@ -106,6 +94,13 @@ export default {
       ev.stopPropagation()
       this.foundryItem.sheet.render(true)
       return false
+    },
+    rollTrack() {
+      CONFIG.IRONSWORN.RollDialog.show({
+        actor: this.foundryActor,
+        asset: this.foundryItem,
+        stat: 'track',
+      })
     },
   },
 }
