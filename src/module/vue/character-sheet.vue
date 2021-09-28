@@ -45,8 +45,10 @@
         <div class="flexrow">
           <div class="flexcol">
             <section class="sheet-area">
+              <!-- Bonds -->
               <bonds :actor="actor"></bonds>
 
+              <!-- Assets -->
               <div
                 class="flexcol ironsworn__drop__target"
                 data-drop-type="asset"
@@ -63,22 +65,40 @@
             </section>
           </div>
           <div class="flexcol">
+            <!-- Vows & Progress -->
             <div
               class="flexcol sheet-area ironsworn__drop__target"
               data-drop-type="progress"
             >
-              <!-- <h3>{{ $t('IRONSWORN.Vows') }}</h3> -->
               <progress-box
                 v-for="item in progressItems"
                 :key="item._id"
                 :item="item"
                 :actor="actor"
               />
+
+              <div class="flexrow nogrow" style="text-align: center">
+                <div class="clickable block" @click="addProgressItem('vow')">
+                  <i class="fas fa-plus"></i>
+                  {{ $t('IRONSWORN.Vow') }}
+                </div>
+                <div
+                  class="clickable block"
+                  @click="addProgressItem('progress')"
+                >
+                  <i class="fas fa-plus"></i>
+                  {{ $t('IRONSWORN.Progress') }}
+                </div>
+                <div class="clickable block" @click="foes">
+                  <i class="fas fa-atlas"></i>
+                  {{ $t('IRONSWORN.Foes') }}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- TODO: Conditions & Banes & Burdens -->
+        <!-- Conditions & Banes & Burdens -->
         <section class="sheet-area nogrow">
           <conditions :actor="actor" />
         </section>
@@ -133,6 +153,7 @@ export default {
   props: {
     actor: Object,
   },
+
   computed: {
     foo() {
       return JSON.stringify(this.actor, null, 2)
@@ -157,6 +178,22 @@ export default {
     rollStat(stat) {
       const actor = game.actors?.get(this.actor._id)
       CONFIG.IRONSWORN.RollDialog.show({ actor, stat })
+    },
+
+    async addProgressItem(type) {
+      const itemData = {
+        name: this.$capitalize(type),
+        type,
+        sort: 9000000,
+      }
+      const actor = game.actors?.get(this.actor._id)
+      const item = await Item.create(itemData, { parent: actor })
+      item.sheet.render(true)
+    },
+
+    foes() {
+      const pack = game.packs?.get(`foundry-ironsworn.ironswornfoes`)
+      pack?.render(true)
     },
   },
 }
