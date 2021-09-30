@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol item-row nogrow">
+  <div class="flexcol nogrow">
     <div class="flexrow">
       <h4>{{ $t('IRONSWORN.Bonds') }}</h4>
       <icon-button icon="edit" @click="editBonds" />

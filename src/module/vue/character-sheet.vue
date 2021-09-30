@@ -44,16 +44,17 @@
 
         <div class="flexrow">
           <div class="flexcol">
-            <section class="sheet-area">
+            <section class="sheet-area flexcol">
               <!-- Bonds -->
               <bonds :actor="actor"></bonds>
 
+              <hr class="nogrow" />
               <!-- Assets -->
               <div
                 class="flexcol ironsworn__drop__target"
                 data-drop-type="asset"
               >
-                <h4>assets</h4>
+                <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
                 <asset
                   v-for="(asset, i) in assets"
@@ -61,6 +62,15 @@
                   :actor="actor"
                   :asset="asset"
                 />
+                <div class="flexrow nogrow" style="text-align: center">
+                  <div
+                    class="clickable block"
+                    @click="openCompendium('ironswornassets')"
+                  >
+                    <i class="fas fa-atlas"></i>
+                    {{ $t('IRONSWORN.Assets') }}
+                  </div>
+                </div>
               </div>
             </section>
           </div>
@@ -89,7 +99,10 @@
                   <i class="fas fa-plus"></i>
                   {{ $t('IRONSWORN.Progress') }}
                 </div>
-                <div class="clickable block" @click="foes">
+                <div
+                  class="clickable block"
+                  @click="openCompendium('ironswornfoes')"
+                >
                   <i class="fas fa-atlas"></i>
                   {{ $t('IRONSWORN.Foes') }}
                 </div>
@@ -138,7 +151,7 @@
         </div>
       </div>
     </div>
-    <pre><code>{{foo}}</code></pre>
+    <!-- <pre><code>{{foo}}</code></pre> -->
   </div>
 </template>
 
@@ -158,6 +171,9 @@ export default {
     foo() {
       return JSON.stringify(this.actor, null, 2)
     },
+    ironswornActor() {
+      return game.actors?.get(this.actor._id)
+    },
     progressItems() {
       return [
         ...this.actor.items.filter((x) => x.type === 'vow'),
@@ -171,13 +187,11 @@ export default {
 
   methods: {
     burnMomentum() {
-      const actor = game.actors?.get(this.actor._id)
-      actor.burnMomentum()
+      this.ironswornActor.burnMomentum()
     },
 
     rollStat(stat) {
-      const actor = game.actors?.get(this.actor._id)
-      CONFIG.IRONSWORN.RollDialog.show({ actor, stat })
+      CONFIG.IRONSWORN.RollDialog.show({ actor: this.ironswornActor, stat })
     },
 
     async addProgressItem(type) {
@@ -186,13 +200,12 @@ export default {
         type,
         sort: 9000000,
       }
-      const actor = game.actors?.get(this.actor._id)
-      const item = await Item.create(itemData, { parent: actor })
+      const item = await Item.create(itemData, { parent: this.ironswornActor })
       item.sheet.render(true)
     },
 
-    foes() {
-      const pack = game.packs?.get(`foundry-ironsworn.ironswornfoes`)
+    openCompendium(name) {
+      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
       pack?.render(true)
     },
   },

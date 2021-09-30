@@ -1,5 +1,5 @@
 <template>
-  <div class="item-row ironsworn__asset">
+  <div class="item-row ironsworn__asset nogrow">
     <div class="asset-entry" @click="toggle">
       <div class="flexrow">
         <h4 style="margin: 0; line-height: 20px">{{ asset.name }}</h4>

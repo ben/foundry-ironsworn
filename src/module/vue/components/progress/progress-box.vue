@@ -34,7 +34,7 @@
 div.item-row {
   padding-left: 0;
 }
-h4 {
+h4.vertical-v2 {
   padding-right: 2px;
 }
 </style>
