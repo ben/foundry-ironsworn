@@ -3,14 +3,15 @@
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      viewbox="0 0 17 15"
+      viewbox="-1 -1 17 15"
+      height="20px" width="18px"
       class="rank-pip clickable svg"
       :class="classes"
       @click="click"
     >
       <path
         stroke-width="1"
-        d="M 7.5 0 L 15 5 L 15 13 L 7.5 18 L 1 13 L 1 5 Z"
+        d="M 8.66 0 L 17.32 5 L 17.32 15 L 8.66 20 L 0 15 L 0 5 Z"
       ></path>
     </svg>
   </div>
@@ -18,9 +19,15 @@
 
 <style lang="less" scoped>
 div {
-  width: 17px;
-  height: 15px;
+  width: 13px;
+  height: 20px;
   padding: 0 1px;
+
+  svg {
+    margin: 0;
+    transform: scale(0.7);
+    transform-origin: top left;
+  }
 }
 </style>
 
@@ -46,7 +53,7 @@ export default {
   methods: {
     click(ev) {
       this.$emit('click', ev, this.rank)
-    }
-  }
+    },
+  },
 }
 </script>
