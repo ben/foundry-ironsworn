@@ -12,17 +12,19 @@
         <strong>{{ field.name }}:</strong> {{ field.value }}
       </p>
 
-      <p
-        v-if="asset.data.description"
-        v-html="$enrichHtml(asset.data.description)"
-      />
+      <with-rolllisteners element="p" :actor="actor">
+        <div v-html="$enrichHtml(asset.data.description)"></div>
+      </with-rolllisteners>
 
       <ul>
-        <li
+        <with-rolllisteners
           v-for="(ability, i) in enabledAbilities"
           :key="i"
-          v-html="$enrichHtml(ability.description)"
-        ></li>
+          element="li"
+          :actor="actor"
+        >
+          <div v-html="$enrichHtml(ability.description)"></div>
+        </with-rolllisteners>
       </ul>
 
       <div class="flexcol" v-if="asset.data.track.enabled">

@@ -2,7 +2,7 @@ import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { RANKS } from './module/constants'
 import { importFromDatasworn } from './module/datasworn'
-import { RollDialog } from './module/helpers/roll'
+import { attachInlineRollListeners, RollDialog } from './module/helpers/roll'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetItem } from './module/item/asset/assetitem'
 import { BaseItem } from './module/item/baseitem'
@@ -23,6 +23,7 @@ export interface IronswornConfig {
   IronswornSettings: typeof IronswornSettings
   RollDialog: typeof RollDialog
   Ranks: typeof RANKS
+  attachInlineRollListeners: typeof attachInlineRollListeners
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -37,5 +38,6 @@ export const IRONSWORN: IronswornConfig = {
 
   IronswornSettings,
   RollDialog,
-  Ranks: RANKS
+  Ranks: RANKS,
+  attachInlineRollListeners: attachInlineRollListeners
 }
