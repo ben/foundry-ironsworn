@@ -37,10 +37,18 @@ export default {
   props: {
     actor: Object,
   },
+
   data() {
     return {
       xpArray: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     }
+  },
+
+  watch: {
+    'actor.name'() {
+      const actor = game.actors?.get(this.actor._id)
+      actor.update({ name: this.actor.name })
+    },
   },
 }
 </script>
