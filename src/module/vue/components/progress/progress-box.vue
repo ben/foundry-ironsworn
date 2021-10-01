@@ -1,6 +1,6 @@
 <template>
-  <div class="flexrow item-row nogrow" >
-    <h4 class="vertical-v2 nogrow">{{ subtitle }}</h4>
+  <div class="flexrow item-row nogrow">
+    <h5 class="vertical-v2 nogrow">{{ subtitle }}</h5>
     <div class="flexcol">
       <div class="flexrow">
         <img
@@ -34,8 +34,10 @@
 div.item-row {
   padding-left: 0;
 }
-h4.vertical-v2 {
+h5.vertical-v2 {
   padding-right: 2px;
+  margin: 0;
+  font-weight: normal;
 }
 </style>
 
