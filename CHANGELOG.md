@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.6.0
+
 - Add a "v2" character sheet that uses Vue ([#126](https://github.com/ben/foundry-ironsworn/pull/126))
 
 ## 1.5.3
