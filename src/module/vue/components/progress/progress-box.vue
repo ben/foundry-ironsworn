@@ -50,7 +50,7 @@ export default {
 
   computed: {
     editMode() {
-      return this.actor.flags['foundry-ironsworn']['edit-mode']
+      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
     foundryItem() {
       const actor = game.actors?.get(this.actor._id)

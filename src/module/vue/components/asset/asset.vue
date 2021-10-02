@@ -68,7 +68,7 @@ export default {
       }
     },
     editMode() {
-      return this.actor.flags['foundry-ironsworn']['edit-mode']
+      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
     enabledAbilities() {
       const abilities = Object.values(this.asset.data.abilities)

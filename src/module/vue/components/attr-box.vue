@@ -32,7 +32,7 @@ export default {
       return `IRONSWORN.${this.$capitalize(this.attr)}`
     },
     editMode() {
-      return this.actor.flags['foundry-ironsworn']['edit-mode']
+      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
     clickable() {
       return this.editMode ? '' : ' clickable '
