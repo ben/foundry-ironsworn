@@ -5,12 +5,14 @@
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
+import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
 import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { IronswornChatCard } from './module/chat/cards'
+import { maybePromptForDependencies } from './module/features/dependencies'
 import { activateDragDropListeners } from './module/features/dragdrop'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { runDataMigrations } from './module/helpers/migrations'
@@ -61,6 +63,10 @@ Hooks.once('init', async () => {
     label: 'Compact sheet',
     types: ['character'],
   })
+  Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
+    label: 'Character Sheet v2',
+    types: ['character'],
+  })
   Actors.registerSheet('ironsworn', IronswornSharedSheet, {
     types: ['shared'],
     label: 'Shared sheet',
@@ -108,6 +114,8 @@ Hooks.once('init', async () => {
 
 Hooks.once('ready', async () => {
   await runDataMigrations()
+
+  await maybePromptForDependencies()
 
   activateDragDropListeners()
 
