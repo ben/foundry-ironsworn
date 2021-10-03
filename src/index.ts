@@ -56,15 +56,15 @@ Hooks.once('init', async () => {
   // Register our own sheets
   Actors.registerSheet('ironsworn', IronswornCharacterSheet, {
     types: ['character'],
-    label: 'Default character sheet',
+    label: 'Classic character sheet',
+  })
+  Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
+    label: 'Character sheet v2',
+    types: ['character'],
     makeDefault: true,
   })
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
     label: 'Compact sheet',
-    types: ['character'],
-  })
-  Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
-    label: 'Character Sheet v2',
     types: ['character'],
   })
   Actors.registerSheet('ironsworn', IronswornSharedSheet, {
