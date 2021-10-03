@@ -7,52 +7,67 @@
         <icon-button icon="edit" @click="edit" />
       </div>
     </div>
-    <div class="flexcol asset-summary" :class="collapsedClass">
-      <p v-for="(field, i) in asset.data.fields" :key="i">
-        <strong>{{ field.name }}:</strong> {{ field.value }}
-      </p>
+    <transition name="slide">
+      <div class="flexcol asset-summary" v-if="expanded">
+        <p v-for="(field, i) in asset.data.fields" :key="i">
+          <strong>{{ field.name }}:</strong> {{ field.value }}
+        </p>
 
-      <with-rolllisteners element="p" :actor="actor">
-        <div v-html="$enrichHtml(asset.data.description)"></div>
-      </with-rolllisteners>
-
-      <ul>
-        <with-rolllisteners
-          v-for="(ability, i) in enabledAbilities"
-          :key="i"
-          element="li"
-          :actor="actor"
-        >
-          <div v-html="$enrichHtml(ability.description)"></div>
+        <with-rolllisteners element="p" :actor="actor" v-if="asset.data.description">
+          <div v-html="$enrichHtml(asset.data.description)"></div>
         </with-rolllisteners>
-      </ul>
 
-      <div class="flexcol" v-if="asset.data.track.enabled">
-        <h4
-          class="clickable text"
-          style="margin-bottom: 3px"
-          @click="rollTrack"
+        <ul>
+          <with-rolllisteners
+            v-for="(ability, i) in enabledAbilities"
+            :key="i"
+            element="li"
+            :actor="actor"
+          >
+            <div v-html="$enrichHtml(ability.description)"></div>
+          </with-rolllisteners>
+        </ul>
+
+        <div class="flexcol" v-if="asset.data.track.enabled">
+          <h4
+            class="clickable text"
+            style="margin-bottom: 3px"
+            @click="rollTrack"
+          >
+            {{ asset.data.track.name }}
+          </h4>
+          <asset-track :actor="actor" :asset="asset" />
+        </div>
+
+        <div
+          class="flexcol stack nogrow"
+          style="margin-top: 5px"
+          v-if="asset.data.exclusiveOptions.length > 0"
         >
-          {{ asset.data.track.name }}
-        </h4>
-        <asset-track :actor="actor" :asset="asset" />
+          <asset-exclusiveoption
+            v-for="(opt, i) in asset.data.exclusiveOptions"
+            :key="i"
+            :opt="opt"
+            @click="exclusiveOptionClick(i)"
+          />
+        </div>
       </div>
-
-      <div
-        class="flexcol stack nogrow"
-        style="margin-top: 5px"
-        v-if="asset.data.exclusiveOptions.length > 0"
-      >
-        <asset-exclusiveoption
-          v-for="(opt, i) in asset.data.exclusiveOptions"
-          :key="i"
-          :opt="opt"
-          @click="exclusiveOptionClick(i)"
-        />
-      </div>
-    </div>
+    </transition>
   </div>
 </template>
+
+<style lang="less" scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.25s ease;
+  overflow: hidden;
+  max-height: 250px;
+}
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+}
+</style>
 
 <script>
 export default {
@@ -62,10 +77,8 @@ export default {
   },
 
   computed: {
-    collapsedClass() {
-      return {
-        collapsed: this.asset?.flags['foundry-ironsworn']?.expanded,
-      }
+    expanded() {
+      return this.asset?.flags['foundry-ironsworn']?.expanded || false
     },
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
@@ -87,7 +100,7 @@ export default {
       this.foundryItem?.setFlag(
         'foundry-ironsworn',
         'expanded',
-        !this.foundryItem.getFlag('foundry-ironsworn', 'expanded')
+        !this.asset?.flags['foundry-ironsworn']?.expanded
       )
     },
     edit(ev) {
