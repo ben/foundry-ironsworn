@@ -56,12 +56,14 @@
               >
                 <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
-                <asset
-                  v-for="(asset, i) in assets"
-                  :key="i"
-                  :actor="actor"
-                  :asset="asset"
-                />
+                <transition-group name="slide" tag="div" class="nogrow">
+                  <asset
+                    v-for="(asset, i) in assets"
+                    :key="i"
+                    :actor="actor"
+                    :asset="asset"
+                  />
+                </transition-group>
                 <div class="flexrow nogrow" style="text-align: center">
                   <div
                     class="clickable block"
@@ -80,12 +82,14 @@
               class="flexcol sheet-area ironsworn__drop__target"
               data-drop-type="progress"
             >
-              <progress-box
-                v-for="item in progressItems"
-                :key="item._id"
-                :item="item"
-                :actor="actor"
-              />
+              <transition-group name="slide" tag="div" class="nogrow">
+                <progress-box
+                  v-for="item in progressItems"
+                  :key="item._id"
+                  :item="item"
+                  :actor="actor"
+                />
+              </transition-group>
 
               <div class="flexrow nogrow" style="text-align: center">
                 <div class="clickable block" @click="addProgressItem('vow')">
@@ -158,6 +162,25 @@
 <style lang="less" scoped>
 h4.vertical-v2 {
   padding: 3px;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.4s ease;
+  overflow: hidden;
+  max-height: 80px;
+  opacity: 1;
+}
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 0;
+  border-bottom: 0;
 }
 </style>
 
