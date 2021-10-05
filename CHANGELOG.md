@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.6.1
+
 - Add Vue animations to character sheet ([#127](https://github.com/ben/foundry-ironsworn/pull/127))
 - Make v2 character sheet the default ([#128](https://github.com/ben/foundry-ironsworn/pull/128))
 
