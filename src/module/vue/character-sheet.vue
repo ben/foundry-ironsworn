@@ -58,8 +58,8 @@
 
                 <transition-group name="slide" tag="div" class="nogrow">
                   <asset
-                    v-for="(asset, i) in assets"
-                    :key="i"
+                    v-for="asset in assets"
+                    :key="asset._id"
                     :actor="actor"
                     :asset="asset"
                   />
@@ -91,26 +91,7 @@
                 />
               </transition-group>
 
-              <div class="flexrow nogrow" style="text-align: center">
-                <div class="clickable block" @click="addProgressItem('vow')">
-                  <i class="fas fa-plus"></i>
-                  {{ $t('IRONSWORN.Vow') }}
-                </div>
-                <div
-                  class="clickable block"
-                  @click="addProgressItem('progress')"
-                >
-                  <i class="fas fa-plus"></i>
-                  {{ $t('IRONSWORN.Progress') }}
-                </div>
-                <div
-                  class="clickable block"
-                  @click="openCompendium('ironswornfoes')"
-                >
-                  <i class="fas fa-atlas"></i>
-                  {{ $t('IRONSWORN.Foes') }}
-                </div>
-              </div>
+              <progress-controls :actor="actor" />
             </div>
           </div>
         </div>
@@ -160,15 +141,11 @@
 </template>
 
 <style lang="less" scoped>
-h4.vertical-v2 {
-  padding: 3px;
-}
-
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.4s ease;
   overflow: hidden;
-  max-height: 80px;
+  max-height: 83px;
   opacity: 1;
 }
 .slide-enter,
@@ -215,21 +192,6 @@ export default {
 
     rollStat(stat) {
       CONFIG.IRONSWORN.RollDialog.show({ actor: this.ironswornActor, stat })
-    },
-
-    async addProgressItem(type) {
-      const itemData = {
-        name: this.$capitalize(type),
-        type,
-        sort: 9000000,
-      }
-      const item = await Item.create(itemData, { parent: this.ironswornActor })
-      item.sheet.render(true)
-    },
-
-    openCompendium(name) {
-      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-      pack?.render(true)
     },
   },
 }

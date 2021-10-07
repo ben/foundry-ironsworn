@@ -8,6 +8,7 @@ import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
+import { IronswornSharedSheetV2 } from './module/actor/sheets/sharedsheet-v2'
 import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
@@ -71,6 +72,10 @@ Hooks.once('init', async () => {
     types: ['shared'],
     label: 'Shared sheet',
     makeDefault: true,
+  })
+  Actors.registerSheet('ironsworn', IronswornSharedSheetV2, {
+    types: ['shared'],
+    label: 'Shared sheet v2',
   })
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
     types: ['site'],
