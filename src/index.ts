@@ -72,11 +72,11 @@ Hooks.once('init', async () => {
   Actors.registerSheet('ironsworn', IronswornSharedSheetV2, {
     types: ['shared'],
     label: 'Shared sheet v2',
+    makeDefault: true,
   })
   Actors.registerSheet('ironsworn', IronswornSharedSheet, {
     types: ['shared'],
     label: 'Classic shared sheet',
-    makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
