@@ -55,10 +55,6 @@ Hooks.once('init', async () => {
   Items.unregisterSheet('core', ItemSheet)
 
   // Register our own sheets
-  Actors.registerSheet('ironsworn', IronswornCharacterSheet, {
-    types: ['character'],
-    label: 'Classic character sheet',
-  })
   Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
     label: 'Character sheet v2',
     types: ['character'],
@@ -68,15 +64,21 @@ Hooks.once('init', async () => {
     label: 'Compact sheet',
     types: ['character'],
   })
-  Actors.registerSheet('ironsworn', IronswornSharedSheet, {
-    types: ['shared'],
-    label: 'Shared sheet',
-    makeDefault: true,
+  Actors.registerSheet('ironsworn', IronswornCharacterSheet, {
+    types: ['character'],
+    label: 'Classic character sheet',
   })
+
   Actors.registerSheet('ironsworn', IronswornSharedSheetV2, {
     types: ['shared'],
     label: 'Shared sheet v2',
+    makeDefault: true,
   })
+  Actors.registerSheet('ironsworn', IronswornSharedSheet, {
+    types: ['shared'],
+    label: 'Classic shared sheet',
+  })
+
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
     types: ['site'],
     label: 'Site sheet',
