@@ -58,8 +58,8 @@
 
                 <transition-group name="slide" tag="div" class="nogrow">
                   <asset
-                    v-for="(asset, i) in assets"
-                    :key="i"
+                    v-for="asset in assets"
+                    :key="asset._id"
                     :actor="actor"
                     :asset="asset"
                   />
@@ -141,15 +141,11 @@
 </template>
 
 <style lang="less" scoped>
-h4.vertical-v2 {
-  padding: 3px;
-}
-
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.4s ease;
   overflow: hidden;
-  max-height: 80px;
+  max-height: 83px;
   opacity: 1;
 }
 .slide-enter,
