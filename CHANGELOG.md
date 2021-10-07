@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add a v2 shared sheet based on Vue ([#131](https://github.com/ben/foundry-ironsworn/pull/131))
+
 ## 1.6.1
 
 - Add Vue animations to character sheet ([#127](https://github.com/ben/foundry-ironsworn/pull/127))
