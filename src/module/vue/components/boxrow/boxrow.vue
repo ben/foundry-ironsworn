@@ -14,20 +14,30 @@
 <script>
 export default {
   props: {
-    items: {
-      type: Array,
-      validator(val) {
-        return val.every((x) => x?.text !== undefined && x?.value !== undefined)
-      },
+    min: Number,
+    max: Number,
+    current: Number,
+  },
+
+  computed: {
+    items() {
+      const ret = []
+      for (let i = this.min; i <= this.max; i++) {
+        ret.push({
+          text: `${i > 0 ? '+' : ''}${i}`,
+          value: i,
+          selected: i === this.current,
+        })
+      }
+      return ret
     },
   },
 
   methods: {
     click(el, value) {
-      this.$emit('click', el, value
-      )
-    }
-  }
+      this.$emit('click', el, value)
+    },
+  },
 }
 </script>
 

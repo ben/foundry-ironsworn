@@ -27,7 +27,9 @@
       <boxrow
         class="nogrow"
         style="line-height: 25px"
-        :items="supplyItems"
+        :min="0"
+        :max="5"
+        :current="actor.data.supply"
         @click="supplyClick"
       />
     </section>
@@ -52,10 +54,16 @@ export default {
         { text: '5', value: 5, selected: current === 5 },
       ]
     },
+
+    ironswornActor() {
+      return game.actors?.get(this.actor._id)
+    },
   },
 
   methods: {
-    supplyClick: console.log,
+    supplyClick(_ev, value) {
+      this.ironswornActor.update({ data: { supply: value } })
+      CONFIG.IRONSWORN.IronswornSettings.maybeSetGlobalSupply(value) }
   },
 }
 </script>
