@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.6.2
+
 - Add a v2 shared sheet based on Vue ([#131](https://github.com/ben/foundry-ironsworn/pull/131))
 - Rearrange sheets in dropdown, make v2 shared sheet the default ([#132](https://github.com/ben/foundry-ironsworn/pull/132))
 
