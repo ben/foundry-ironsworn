@@ -18,13 +18,29 @@
         />
       </h1>
     </header>
+
+    <div class="flexrow">
+      <rank-hexes :current="actor.data.rank" @click="setRank" />
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    actor: Object
-  }
+    actor: Object,
+  },
+
+  computed: {
+    ironswornActor() {
+      return game.actors?.get(this.actor._id)
+    }
+  },
+
+  methods: {
+    setRank(rank) {
+      this.ironswornActor.update({data: {rank}})
+    },
+  },
 }
 </script>
