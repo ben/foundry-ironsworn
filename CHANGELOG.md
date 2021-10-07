@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add a v2 site sheet based on vue ([#133](https://github.com/ben/foundry-ironsworn/pull/133))
+
 ## 1.6.2
 
 - Add a v2 shared sheet based on Vue ([#131](https://github.com/ben/foundry-ironsworn/pull/131))
