@@ -36,6 +36,30 @@
     <section class="sheet-area nogrow">
       <bonds :actor="actor" />
     </section>
+
+    <section class="sheet-area ironsworn__drop__target" data-drop-type="progress">
+      <progress-box
+        v-for="item in progressItems"
+        :key="item._id"
+        :item="item"
+        :actor="actor"
+      />
+
+      <div class="flexrow nogrow" style="text-align: center">
+        <div class="clickable block" @click="addProgressItem('vow')">
+          <i class="fas fa-plus"></i>
+          {{ $t('IRONSWORN.Vow') }}
+        </div>
+        <div class="clickable block" @click="addProgressItem('progress')">
+          <i class="fas fa-plus"></i>
+          {{ $t('IRONSWORN.Progress') }}
+        </div>
+        <div class="clickable block" @click="openCompendium('ironswornfoes')">
+          <i class="fas fa-atlas"></i>
+          {{ $t('IRONSWORN.Foes') }}
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -48,6 +72,13 @@ export default {
   computed: {
     ironswornActor() {
       return game.actors?.get(this.actor._id)
+    },
+
+    progressItems() {
+      return [
+        ...this.actor.items.filter((x) => x.type === 'vow'),
+        ...this.actor.items.filter((x) => x.type === 'progress'),
+      ]
     },
   },
 
@@ -62,6 +93,21 @@ export default {
         actor: this.ironswornActor,
         stat: 'supply',
       })
+    },
+
+    async addProgressItem(type) {
+      const itemData = {
+        name: this.$capitalize(type),
+        type,
+        sort: 9000000,
+      }
+      const item = await Item.create(itemData, { parent: this.ironswornActor })
+      item.sheet.render(true)
+    },
+
+    openCompendium(name) {
+      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
+      pack?.render(true)
     },
   },
 }
