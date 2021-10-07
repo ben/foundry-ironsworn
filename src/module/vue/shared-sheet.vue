@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <header class="sheet-header">
+    <header class="sheet-header nogrow">
       <img
         :src="actor.img"
         :title="actor.name"
@@ -19,19 +19,22 @@
       </h1>
     </header>
 
-    <section class="sheet-area">
-      <h2 class="clickable text nogrow">
+    <section class="sheet-area nogrow">
+      <h4 class="clickable text" @click="rollSupply">
         {{ $t('IRONSWORN.Supply') }}
-      </h2>
+      </h4>
 
       <boxrow
-        class="nogrow"
         style="line-height: 25px"
         :min="0"
         :max="5"
         :current="actor.data.supply"
-        @click="supplyClick"
+        @click="setSupply"
       />
+    </section>
+
+    <section class="sheet-area nogrow">
+      <bonds :actor="actor" />
     </section>
   </div>
 </template>
@@ -49,9 +52,16 @@ export default {
   },
 
   methods: {
-    supplyClick(_ev, value) {
+    setSupply(_ev, value) {
       this.ironswornActor.update({ data: { supply: value } })
       CONFIG.IRONSWORN.IronswornSettings.maybeSetGlobalSupply(value)
+    },
+
+    rollSupply() {
+      CONFIG.IRONSWORN.RollDialog.show({
+        actor: this.ironswornActor,
+        stat: 'supply',
+      })
     },
   },
 }
