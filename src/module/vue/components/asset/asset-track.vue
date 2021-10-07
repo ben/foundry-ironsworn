@@ -1,21 +1,11 @@
 <template>
-  <div class="flexrow track">
-    <assettrack-box
-      v-for="x of trackValues"
-      :key="x"
-      :value="x"
-      :actor="actor"
-      :asset="asset"
-    />
-  </div>
+  <boxrow
+    :min="0"
+    :max="asset.data.track.max"
+    :current="asset.data.track.current"
+    @click="click"
+  />
 </template>
-
-<style lang="less" scoped>
-.track-box:last-child {
-  margin-right: 0;
-}
-</style>
-
 
 <script>
 export default {
@@ -24,12 +14,18 @@ export default {
     asset: Object,
   },
 
-  computed: {
-    trackValues() {
-      const ret = []
-      for (let i = 0; i <= this.asset.data.track.max; i++) ret.push(i)
-      return ret
-    },
-  },
+  methods: {
+    click(_ev, value) {
+      const actor = game.actors?.get(this.actor._id)
+      const item = actor.items.get(this.asset._id)
+      item?.update({
+        data: {
+          track: {
+            current: value,
+          },
+        },
+      })
+    }
+  }
 }
 </script>
