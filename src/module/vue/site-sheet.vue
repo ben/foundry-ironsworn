@@ -37,6 +37,7 @@
           :item="theme"
           item-type="delve-theme"
           compendium-key="ironsworndelvethemes"
+          title-key="IRONSWORN.Theme"
         />
         <site-droparea
           class="box"
@@ -44,6 +45,7 @@
           :item="domain"
           item-type="delve-domain"
           compendium-key="ironsworndelvedomains"
+          title-key="IRONSWORN.Domain"
         />
       </div>
     </div>
@@ -120,6 +122,7 @@ export default {
     theme() {
       return this.actor.items.find((x) => x.type === 'delve-theme')
     },
+
     domain() {
       return this.actor.items.find((x) => x.type === 'delve-domain')
     },
