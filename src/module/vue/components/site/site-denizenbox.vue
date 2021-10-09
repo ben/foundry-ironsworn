@@ -15,9 +15,9 @@
 
     <input
       v-if="editMode"
+      ref="description"
       type="text"
-      class="ironsworn__denizen__name"
-      :data-idx="idx"
+      :class="{ highlight: focused }"
       :value="denizen.description"
       @input="input"
       :placeholder="denizen.descriptor"
@@ -30,11 +30,21 @@
   </div>
 </template>
 
+<style lang="less" scoped>
+input {
+  transition: 0.4s ease-out;
+}
+</style>
+
 <script>
 export default {
   props: {
     actor: Object,
     idx: Number,
+  },
+
+  data() {
+    return { focused: false }
   },
 
   computed: {
@@ -57,6 +67,13 @@ export default {
       const denizens = Object.values(this.ironswornActor.data.data.denizens)
       denizens[this.idx].description = val
       this.ironswornActor.update({ data: { denizens } })
+    },
+
+    focus() {
+      console.log('focusing', this)
+      this.focused = true
+      this.$refs.description.focus()
+      setTimeout(() => this.focused = false, 5000)
     },
   },
 }

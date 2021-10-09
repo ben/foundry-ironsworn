@@ -1,5 +1,6 @@
 <template>
   <div class="flexcol">
+    <!-- HEADER -->
     <header class="sheet-header">
       <img
         :src="actor.img"
@@ -19,12 +20,14 @@
       </h1>
     </header>
 
+    <!-- RANK -->
     <div class="flexrow nogrow">
       <rank-hexes :current="actor.data.rank" @click="setRank" />
       <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
       <icon-button icon="play" @click="markProgress" />
     </div>
 
+    <!-- PROGRESS -->
     <div class="flexrow track nogrow" style="margin-bottom: 1em">
       <progress-track :ticks="actor.data.current" />
     </div>
@@ -50,8 +53,8 @@
       </div>
     </div>
 
+    <!-- MOVES -->
     <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
-
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Delve the Depths" />
@@ -75,30 +78,30 @@
       </div>
     </div>
 
+    <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
       <icon-button icon="dice-d6" @click="randomDenizen" />
       <icon-button icon="atlas" @click="openFoeCompendium" />
     </h4>
-
     <div class="boxgroup nogrow">
       <div class="flexrow boxrow">
-        <site-denizenbox :actor="actor" :idx="0" />
-        <site-denizenbox :actor="actor" :idx="1" />
-        <site-denizenbox :actor="actor" :idx="2" />
-        <site-denizenbox :actor="actor" :idx="3" />
+        <site-denizenbox :actor="actor" :idx="0" ref="denizen-0" />
+        <site-denizenbox :actor="actor" :idx="1" ref="denizen-1" />
+        <site-denizenbox :actor="actor" :idx="2" ref="denizen-2" />
+        <site-denizenbox :actor="actor" :idx="3" ref="denizen-3" />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox :actor="actor" :idx="4" />
-        <site-denizenbox :actor="actor" :idx="5" />
-        <site-denizenbox :actor="actor" :idx="6" />
-        <site-denizenbox :actor="actor" :idx="7" />
+        <site-denizenbox :actor="actor" :idx="4" ref="denizen-4" />
+        <site-denizenbox :actor="actor" :idx="5" ref="denizen-5" />
+        <site-denizenbox :actor="actor" :idx="6" ref="denizen-6" />
+        <site-denizenbox :actor="actor" :idx="7" ref="denizen-7" />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox :actor="actor" :idx="8" />
-        <site-denizenbox :actor="actor" :idx="9" />
-        <site-denizenbox :actor="actor" :idx="10" />
-        <site-denizenbox :actor="actor" :idx="11" />
+        <site-denizenbox :actor="actor" :idx="8" ref="denizen-8" />
+        <site-denizenbox :actor="actor" :idx="9" ref="denizen-9" />
+        <site-denizenbox :actor="actor" :idx="10" ref="denizen-10" />
+        <site-denizenbox :actor="actor" :idx="11" ref="denizen-11" />
       </div>
     </div>
   </div>
@@ -200,6 +203,7 @@ export default {
       const denizen = this.ironswornActor.data.data.denizens.find(
         (x) => x.low <= result && x.high >= result
       )
+      const idx = this.ironswornActor.data.data.denizens.indexOf(denizen)
       if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
       await CONFIG.IRONSWORN.createIronswornDenizenChat({
         roll,
@@ -214,12 +218,7 @@ export default {
           'edit-mode',
           true
         )
-        // await new Promise(r => setTimeout(r, 100))
-        const idx = this.ironswornActor.data.data.denizens.indexOf(denizen)
-        const input = this.element.find(
-          `.ironsworn__denizen__name[data-idx=${idx}]`
-        )
-        input.addClass('highlight').trigger('focus')
+        this.$refs[`denizen-${idx}`]?.focus()
       }
     },
   },
