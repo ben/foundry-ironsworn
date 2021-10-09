@@ -11,7 +11,7 @@ export class IronswornSiteSheetV2 extends IronswornVueActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'site', `theme-${IronswornSettings.theme}`],
       width: 700,
-      height: 520,
+      height: 495,
       template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
       resizable: false,
       submitOnClose: true,

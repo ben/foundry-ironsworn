@@ -25,7 +25,7 @@
       <icon-button icon="play" @click="markProgress" />
     </div>
 
-    <div class="flexrow track nogrow">
+    <div class="flexrow track nogrow" style="margin-bottom: 1em">
       <progress-track :ticks="actor.data.current" />
     </div>
 
@@ -50,9 +50,9 @@
       </div>
     </div>
 
-    <h3 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h3>
+    <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
 
-    <div class="boxgroup moves" style="margin-bottom: 1em">
+    <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-movebox move="Delve the Depths" />
         <div
@@ -64,27 +64,36 @@
         <site-movebox move="Reveal a Danger" />
       </div>
       <div class="flexrow boxrow">
-        <site-movebox move="Delve the Depths" />
+        <site-movebox move="Find an Opportunity" />
         <site-movebox move="Locate Your Objective" />
-        <site-movebox move="Delve the Depths" />
+        <site-movebox move="Escape the Depths" />
       </div>
     </div>
 
-    <h3 class="flexrow nogrow">
+    <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
       <icon-button icon="dice-36" @click="randomDenizen" />
       <icon-button icon="atlas" @click="openFoeCompendium" />
-    </h3>
+    </h4>
 
     <div class="boxgroup nogrow">
       <div class="flexrow boxrow">
-        <div class="box">hey</div>
+        <site-denizenbox :actor="actor" :idx="0" />
+        <site-denizenbox :actor="actor" :idx="1" />
+        <site-denizenbox :actor="actor" :idx="2" />
+        <site-denizenbox :actor="actor" :idx="3" />
       </div>
       <div class="flexrow boxrow">
-        <div class="box">hey</div>
+        <site-denizenbox :actor="actor" :idx="4" />
+        <site-denizenbox :actor="actor" :idx="5" />
+        <site-denizenbox :actor="actor" :idx="6" />
+        <site-denizenbox :actor="actor" :idx="7" />
       </div>
       <div class="flexrow boxrow">
-        <div class="box">hey</div>
+        <site-denizenbox :actor="actor" :idx="8" />
+        <site-denizenbox :actor="actor" :idx="9" />
+        <site-denizenbox :actor="actor" :idx="10" />
+        <site-denizenbox :actor="actor" :idx="11" />
       </div>
     </div>
   </div>
