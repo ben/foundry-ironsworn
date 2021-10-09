@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.6.4
+
 - Make the Vue site sheet the default ([#141](https://github.com/ben/foundry-ironsworn/pull/141))
 
 ## 1.6.3
