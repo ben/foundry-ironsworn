@@ -58,6 +58,7 @@
         <div
           class="box flexrow clickable block"
           :class="{ disabled: !hasThemeAndDomain }"
+          @click="randomFeature"
         >
           <h4>{{ $t('IRONSWORN.Feature') }}</h4>
         </div>
@@ -130,9 +131,15 @@ export default {
     theme() {
       return this.actor.items.find((x) => x.type === 'delve-theme')
     },
+    ironswornTheme() {
+      return this.ironswornActor.items.find(x => x.id === this.theme._id)
+    },
 
     domain() {
       return this.actor.items.find((x) => x.type === 'delve-domain')
+    },
+    ironswornDomain() {
+      return this.ironswornActor.items.find(x => x.id === this.domain._id)
     },
 
     hasThemeAndDomain() {
@@ -158,6 +165,13 @@ export default {
     openFoeCompendium() {
       const pack = game.packs?.get(`foundry-ironsworn.ironswornfoes`)
       pack?.render(true)
+    },
+
+    randomFeature() {
+      CONFIG.IRONSWORN.rollSiteFeature({
+        theme: this.ironswornTheme,
+        domain: this.ironswornDomain,
+      })
     },
 
     async randomDenizen() {

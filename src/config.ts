@@ -5,7 +5,7 @@ import { RANKS, RANK_INCREMENTS } from './module/constants'
 import { importFromDatasworn } from './module/datasworn'
 import { defaultActor } from './module/helpers/actors'
 import { moveDataByName } from './module/helpers/data'
-import { attachInlineRollListeners, RollDialog } from './module/helpers/roll'
+import { attachInlineRollListeners, RollDialog, rollSiteFeature } from './module/helpers/roll'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetItem } from './module/item/asset/assetitem'
 import { BaseItem } from './module/item/baseitem'
@@ -31,6 +31,7 @@ export interface IronswornConfig {
   RankIncrements: typeof RANK_INCREMENTS
   attachInlineRollListeners: typeof attachInlineRollListeners
   createIronswornDenizenChat: typeof createIronswornDenizenChat
+  rollSiteFeature: typeof rollSiteFeature
   moveDataByName: typeof moveDataByName
   defaultActor: typeof defaultActor
 }
@@ -51,6 +52,7 @@ export const IRONSWORN: IronswornConfig = {
   RankIncrements: RANK_INCREMENTS,
   attachInlineRollListeners,
   createIronswornDenizenChat,
+  rollSiteFeature,
   moveDataByName,
   defaultActor,
 }
