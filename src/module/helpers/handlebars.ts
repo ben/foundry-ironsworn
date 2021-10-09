@@ -2,10 +2,24 @@ import { range } from 'lodash'
 import { RANKS } from '../constants'
 import { capitalize } from './util'
 
-function classesForRoll(r) {
+interface RollClassesOptions {
+  canceled: boolean
+}
+function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
+  const theOpts = {
+    ...{ canceled: false },
+    ...opts
+  }
   const d = r.dice[0]
   const maxRoll = d?.faces || 10
-  return [d?.constructor.name.toLowerCase(), d && 'd' + d.faces, (d?.total || r.result) <= 1 ? 'min' : null, (d?.total || r.result) == maxRoll ? 'max' : null].filter((x) => x).join(' ')
+  return [
+    d?.constructor.name.toLowerCase(),
+    d && 'd' + d.faces,
+    (d?.total || r.result) <= 1 ? 'min' : null,
+    (d?.total || r.result) == maxRoll ? 'max' : null,
+    theOpts.canceled ? 'canceled' : null,
+  ].filter((x) => x)
+  .join(' ')
 }
 
 const actionRoll = (roll) => roll.terms[0].rolls.find((r) => r.dice.length === 0 || r.dice[0].faces === 6)
@@ -35,7 +49,7 @@ export class IronswornHandlebarsHelpers {
       const r = actionRoll(this.roll)
       const terms = [...r.terms]
       const d = terms.shift()
-      const classes = classesForRoll(r)
+      const classes = classesForRoll(r, { canceled: this.negativeMomentumCancel })
       const termStrings = terms.map((t) => t.operator || t.number)
       return `<strong><span class="roll ${classes}">${d?.total || 0}</span>${termStrings.join('')}</strong>`
     })
