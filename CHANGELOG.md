@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Make tick marks a bit less square ([#138](https://github.com/ben/foundry-ironsworn/pull/138))
+
 ## 1.6.2
 
 - Add a v2 shared sheet based on Vue ([#131](https://github.com/ben/foundry-ironsworn/pull/131))
