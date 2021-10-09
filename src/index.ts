@@ -80,14 +80,14 @@ Hooks.once('init', async () => {
     label: 'Classic shared sheet',
   })
 
-  Actors.registerSheet('ironsworn', IronswornSiteSheet, {
-    types: ['site'],
-    label: 'Site sheet',
-    makeDefault: true,
-  })
   Actors.registerSheet('ironsworn', IronswornSiteSheetV2, {
     types: ['site'],
     label: 'Site sheet v2',
+    makeDefault: true,
+  })
+  Actors.registerSheet('ironsworn', IronswornSiteSheet, {
+    types: ['site'],
+    label: 'Classic site sheet',
   })
 
   Items.registerSheet('ironsworn', AssetSheet, {
