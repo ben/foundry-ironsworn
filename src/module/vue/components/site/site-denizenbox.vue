@@ -19,6 +19,7 @@
       class="ironsworn__denizen__name"
       :data-idx="idx"
       :value="denizen.description"
+      @input="input"
       :placeholder="denizen.descriptor"
     />
     <div
@@ -37,12 +38,25 @@ export default {
   },
 
   computed: {
+    ironswornActor() {
+      return game.actors?.get(this.actor._id)
+    },
+
     denizen() {
       return this.actor.data.denizens[this.idx]
     },
 
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
+    },
+  },
+
+  methods: {
+    input(ev) {
+      const val = ev.currentTarget.value || ''
+      const denizens = Object.values(this.ironswornActor.data.data.denizens)
+      denizens[this.idx].description = val
+      this.ironswornActor.update({ data: { denizens } })
     },
   },
 }
