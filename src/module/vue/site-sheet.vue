@@ -66,7 +66,11 @@
       </div>
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Find an Opportunity" />
-        <site-movebox :actor="actor" move="Locate Your Objective" />
+        <div class="box flexrow clickable block" @click="locateObjective">
+          <h4>
+            {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
+          </h4>
+        </div>
         <site-movebox :actor="actor" move="Escape the Depths" />
       </div>
     </div>
@@ -132,14 +136,14 @@ export default {
       return this.actor.items.find((x) => x.type === 'delve-theme')
     },
     ironswornTheme() {
-      return this.ironswornActor.items.find(x => x.id === this.theme._id)
+      return this.ironswornActor.items.find((x) => x.id === this.theme._id)
     },
 
     domain() {
       return this.actor.items.find((x) => x.type === 'delve-domain')
     },
     ironswornDomain() {
-      return this.ironswornActor.items.find(x => x.id === this.domain._id)
+      return this.ironswornActor.items.find((x) => x.id === this.domain._id)
     },
 
     hasThemeAndDomain() {
@@ -171,6 +175,22 @@ export default {
       CONFIG.IRONSWORN.rollSiteFeature({
         theme: this.ironswornTheme,
         domain: this.ironswornDomain,
+      })
+    },
+
+    async locateObjective() {
+      const move = await CONFIG.IRONSWORN.moveDataByName(
+        'Locate Your Objective'
+      )
+      const actor = CONFIG.IRONSWORN.defaultActor()
+      const progress = Math.floor(this.actor.data.current / 4)
+      const roll = new Roll(`{${progress}, d10, d10}`)
+      CONFIG.IRONSWORN.createIronswornChatRoll({
+        isProgress: true,
+        move,
+        roll,
+        actor,
+        subtitle: this.actor.name || undefined,
       })
     },
 

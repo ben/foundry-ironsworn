@@ -1,6 +1,6 @@
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
-import { createIronswornDenizenChat } from './module/chat/chatrollhelpers'
+import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
 import { RANKS, RANK_INCREMENTS } from './module/constants'
 import { importFromDatasworn } from './module/datasworn'
 import { defaultActor } from './module/helpers/actors'
@@ -30,6 +30,7 @@ export interface IronswornConfig {
   Ranks: typeof RANKS
   RankIncrements: typeof RANK_INCREMENTS
   attachInlineRollListeners: typeof attachInlineRollListeners
+  createIronswornChatRoll: typeof createIronswornChatRoll
   createIronswornDenizenChat: typeof createIronswornDenizenChat
   rollSiteFeature: typeof rollSiteFeature
   moveDataByName: typeof moveDataByName
@@ -51,6 +52,7 @@ export const IRONSWORN: IronswornConfig = {
   Ranks: RANKS,
   RankIncrements: RANK_INCREMENTS,
   attachInlineRollListeners,
+  createIronswornChatRoll,
   createIronswornDenizenChat,
   rollSiteFeature,
   moveDataByName,
