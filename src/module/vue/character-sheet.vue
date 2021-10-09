@@ -193,6 +193,11 @@ export default {
     rollStat(stat) {
       CONFIG.IRONSWORN.RollDialog.show({ actor: this.ironswornActor, stat })
     },
+
+    openCompendium(name) {
+      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
+      pack?.render(true)
+    },
   },
 }
 </script>
