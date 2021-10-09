@@ -72,7 +72,7 @@
 
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
-      <icon-button icon="dice-36" @click="randomDenizen" />
+      <icon-button icon="dice-d6" @click="randomDenizen" />
       <icon-button icon="atlas" @click="openFoeCompendium" />
     </h4>
 
@@ -120,7 +120,6 @@ export default {
 
   computed: {
     ironswornActor() {
-      console.log(this.actor)
       return game.actors?.get(this.actor._id)
     },
 
@@ -154,6 +153,31 @@ export default {
       const increment = CONFIG.IRONSWORN.RankIncrements[this.actor.data.rank]
       const newValue = Math.min(this.actor.data.current + increment, 40)
       this.ironswornActor.update({ 'data.current': newValue })
+    },
+
+    async randomDenizen() {
+      const roll = await new Roll('1d100').evaluate({ async: true })
+      const result = roll.total
+      const denizen = this.ironswornActor.data.data.denizens.find(
+        (x) => x.low <= result && x.high >= result
+      )
+      if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
+      await CONFIG.IRONSWORN.createIronswornDenizenChat({
+        roll,
+        denizen,
+        site: this.ironswornActor,
+      })
+
+      // Denizen slot is empty; set focus and add a class
+      if (!denizen?.description) {
+        await this.ironswornActor.setFlag('foundry-ironsworn', 'edit-mode', true)
+        // await new Promise(r => setTimeout(r, 100))
+        const idx = this.ironswornActor.data.data.denizens.indexOf(denizen)
+        const input = this.element.find(
+          `.ironsworn__denizen__name[data-idx=${idx}]`
+        )
+        input.addClass('highlight').trigger('focus')
+      }
     },
   },
 }
