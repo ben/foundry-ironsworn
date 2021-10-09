@@ -12,7 +12,7 @@
         />
         <div class="flexcol">
           <div class="flexrow">
-            <rank-hexes :item="item" :actor="actor" />
+            <rank-hexes :current="item.data.rank" @click="rankClick" />
             <icon-button v-if="editMode" icon="trash" @click="destroy" />
             <icon-button icon="edit" @click="edit" />
             <icon-button icon="play" @click="advance" />
@@ -77,6 +77,9 @@ export default {
         yes: () => item?.delete(),
         defaultYes: false,
       })
+    },
+    rankClick(rank) {
+      this.foundryItem.update({ data: { rank } })
     },
     advance() {
       this.foundryItem.markProgress()

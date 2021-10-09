@@ -3,6 +3,7 @@
 ## In progress
 
 - Make tick marks a bit less square ([#138](https://github.com/ben/foundry-ironsworn/pull/138))
+- Add a v2 site sheet based on vue ([#133](https://github.com/ben/foundry-ironsworn/pull/133))
 
 ## 1.6.2
 

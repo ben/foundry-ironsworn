@@ -1,8 +1,11 @@
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
-import { RANKS } from './module/constants'
+import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
+import { RANKS, RANK_INCREMENTS } from './module/constants'
 import { importFromDatasworn } from './module/datasworn'
-import { attachInlineRollListeners, RollDialog } from './module/helpers/roll'
+import { defaultActor } from './module/helpers/actors'
+import { moveDataByName } from './module/helpers/data'
+import { attachInlineRollListeners, RollDialog, rollSiteFeature } from './module/helpers/roll'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetItem } from './module/item/asset/assetitem'
 import { BaseItem } from './module/item/baseitem'
@@ -20,10 +23,18 @@ export interface IronswornConfig {
   applications: {
     createActorDialog: CreateActorDialog | null
   }
+
+  // These are for Vue
   IronswornSettings: typeof IronswornSettings
   RollDialog: typeof RollDialog
   Ranks: typeof RANKS
+  RankIncrements: typeof RANK_INCREMENTS
   attachInlineRollListeners: typeof attachInlineRollListeners
+  createIronswornChatRoll: typeof createIronswornChatRoll
+  createIronswornDenizenChat: typeof createIronswornDenizenChat
+  rollSiteFeature: typeof rollSiteFeature
+  moveDataByName: typeof moveDataByName
+  defaultActor: typeof defaultActor
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -39,5 +50,11 @@ export const IRONSWORN: IronswornConfig = {
   IronswornSettings,
   RollDialog,
   Ranks: RANKS,
-  attachInlineRollListeners: attachInlineRollListeners
+  RankIncrements: RANK_INCREMENTS,
+  attachInlineRollListeners,
+  createIronswornChatRoll,
+  createIronswornDenizenChat,
+  rollSiteFeature,
+  moveDataByName,
+  defaultActor,
 }
