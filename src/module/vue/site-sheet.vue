@@ -54,19 +54,19 @@
 
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
-        <site-movebox move="Delve the Depths" />
+        <site-movebox :actor="actor" move="Delve the Depths" />
         <div
           class="box flexrow clickable block"
           :class="{ disabled: !hasThemeAndDomain }"
         >
           <h4>{{ $t('IRONSWORN.Feature') }}</h4>
         </div>
-        <site-movebox move="Reveal a Danger" />
+        <site-movebox :actor="actor" move="Reveal a Danger" />
       </div>
       <div class="flexrow boxrow">
-        <site-movebox move="Find an Opportunity" />
-        <site-movebox move="Locate Your Objective" />
-        <site-movebox move="Escape the Depths" />
+        <site-movebox :actor="actor" move="Find an Opportunity" />
+        <site-movebox :actor="actor" move="Locate Your Objective" />
+        <site-movebox :actor="actor" move="Escape the Depths" />
       </div>
     </div>
 
@@ -155,6 +155,11 @@ export default {
       this.ironswornActor.update({ 'data.current': newValue })
     },
 
+    openFoeCompendium() {
+      const pack = game.packs?.get(`foundry-ironsworn.ironswornfoes`)
+      pack?.render(true)
+    },
+
     async randomDenizen() {
       const roll = await new Roll('1d100').evaluate({ async: true })
       const result = roll.total
@@ -170,7 +175,11 @@ export default {
 
       // Denizen slot is empty; set focus and add a class
       if (!denizen?.description) {
-        await this.ironswornActor.setFlag('foundry-ironsworn', 'edit-mode', true)
+        await this.ironswornActor.setFlag(
+          'foundry-ironsworn',
+          'edit-mode',
+          true
+        )
         // await new Promise(r => setTimeout(r, 100))
         const idx = this.ironswornActor.data.data.denizens.indexOf(denizen)
         const input = this.element.find(

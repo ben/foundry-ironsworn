@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="box flexrow clickable block"
-    @click="click"
-  >
+  <div class="box flexrow clickable block" @click="click">
     <h4 class="nogrow" style="margin: 0; white-space: nowrap">
       {{ $t(i18nKey) }}
     </h4>
@@ -12,17 +9,26 @@
 <script>
 export default {
   props: {
+    actor: Object,
     move: String,
   },
 
   computed: {
+    ironswornActor() {
+      return game.actors?.get(this.actor._id)
+    },
+
     i18nKey() {
       return `IRONSWORN.MoveContents.${this.move}.title`
     },
   },
 
   methods: {
-    click: console.log,
+    async click() {
+      const move = await CONFIG.IRONSWORN.moveDataByName(this.move)
+      const actor = CONFIG.IRONSWORN.defaultActor()
+      CONFIG.IRONSWORN.RollDialog.show({ move, actor, site: this.actor })
+    },
   },
 }
 </script>
