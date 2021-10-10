@@ -54,8 +54,9 @@ export function activateChangelogListeners() {
     return cls.create(messageData as any)
   })
 
-  Hooks.on('createItem', async (item: IronswornItem, _data: any, _options: Entity.CreateOptions, _userId: number) => {
+  Hooks.on('createItem', async (item: IronswornItem, _data: any, options: Entity.CreateOptions, _userId: number) => {
     if (!item.parent) return // No logging for unowned items, they don't matter
+    if (options.suppressLog) return
 
     const messageData: ChatMessageDataConstructorData = {
       content: `<em>Added ${item.name}</em>`,
@@ -67,8 +68,9 @@ export function activateChangelogListeners() {
     return cls.create(messageData as any)
   })
 
-  Hooks.on('deleteItem', async (item: IronswornItem, _options: Entity.DeleteOptions, _userId: number) => {
+  Hooks.on('deleteItem', async (item: IronswornItem, options: Entity.DeleteOptions, _userId: number) => {
     if (!item.parent) return // No logging for unowned items, they don't matter
+    if (options.suppressLog) return
 
     const messageData: ChatMessageDataConstructorData = {
       content: `<em>Deleted ${item.name}</em>`,
