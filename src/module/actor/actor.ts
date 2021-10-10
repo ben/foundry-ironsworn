@@ -46,3 +46,21 @@ declare global {
 Hooks.on('createActor', async (actor) => {
   await actor.createOwnedItem({ type: 'bondset', name: 'bonds' })
 })
+
+Hooks.on('updateActor', async (actor: IronswornActor, data: any, options: Entity.UpdateOptions, userId: number) => {
+  const content = Object.entries(data.data)
+    .map((val) => `${val[0]}: ${val[1]}`)
+    .join('\n')
+
+  for (const k of Object.keys(data.data)) {
+    console.log(`Actor: ${actor.data.data[k]}, data: ${data.data[k]}`)
+  }
+
+  const messageData = {
+    content,
+    type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
+  }
+
+  const cls = CONFIG.ChatMessage.documentClass
+  return cls.create(messageData as any, {})
+})
