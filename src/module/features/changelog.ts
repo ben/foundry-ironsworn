@@ -4,7 +4,7 @@ import { IronswornActor } from '../actor/actor'
 import { CharacterDataProperties } from '../actor/actortypes'
 import { RANKS } from '../constants'
 import { IronswornItem } from '../item/item'
-import { AssetDataProperties, ProgressDataProperties } from '../item/itemtypes'
+import { AssetDataProperties, BondsetDataProperties, ProgressDataProperties } from '../item/itemtypes'
 
 export function activateChangelogListeners() {
   Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any, options: Entity.UpdateOptions, _userId: number) => {
@@ -43,8 +43,9 @@ export function activateChangelogListeners() {
     }
     if (!content) return
 
+    const itemName = item.type === 'bondset' ? '' : item.name
     const messageData: ChatMessageDataConstructorData = {
-      content: `<em>${item.name} ${content}</em>`,
+      content: `<em>${itemName} ${content}</em>`,
       type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
       speaker: { actor: item.parent.id },
     }
@@ -142,6 +143,19 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         }
       }
     }
-    return JSON.stringify(data)
+    return undefined
+  },
+
+  bondset: (item: IronswornItem, data) => {
+    const bondsetData = item.data as BondsetDataProperties
+    if (data.data?.bonds !== undefined) {
+      if (bondsetData.data.bonds.length < data.data.bonds.length) {
+        return `Added a bond`
+      } else {
+        return `Lost a bond`
+      }
+    }
+
+    return undefined
   },
 }
