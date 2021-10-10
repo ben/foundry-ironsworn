@@ -1,7 +1,7 @@
 import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
 import { capitalize, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
-import { CharacterDataProperties } from '../actor/actortypes'
+import { CharacterDataProperties, SiteDataProperties } from '../actor/actortypes'
 import { RANKS } from '../constants'
 import { IronswornItem } from '../item/item'
 import { AssetDataProperties, BondsetDataProperties, ProgressDataProperties } from '../item/itemtypes'
@@ -117,6 +117,20 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       }
     }
 
+    return undefined
+  },
+
+  site: (actor: IronswornActor, data) => {
+    const siteData = actor.data as SiteDataProperties
+
+    if (data.data?.rank) {
+      const oldRank = game.i18n.localize(RANKS[siteData.data.rank])
+      const newRank = game.i18n.localize(RANKS[data.data.rank])
+      return `Rank changed from ${oldRank} to ${newRank}`
+    }
+    if (data.data?.current !== undefined) {
+      return `Progress ${data.data.current > siteData.data.current ? 'advanced' : 'reduced'}`
+    }
     return undefined
   },
 }
