@@ -34,6 +34,15 @@ export class IronswornSettings {
       default: true,
     })
 
+    game.settings.register('foundry-ironsworn', 'log-changes', {
+      name: 'IRONSWORN.Settings.LogChanges.Name',
+      hint: 'IRONSWORN.Settings.LogChanges.Hint',
+      scope: 'world',
+      config: true,
+      type: Boolean,
+      default: true,
+    })
+
     game.settings.register('foundry-ironsworn', 'data-version', {
       scope: 'world',
       config: false,
@@ -44,6 +53,10 @@ export class IronswornSettings {
 
   static get theme(): string {
     return game.settings.get('foundry-ironsworn', 'theme') as string
+  }
+
+  static get logCharacterChanges(): boolean {
+    return game.settings.get('foundry-ironsworn', 'log-changes') as boolean
   }
 
   static async maybeSetGlobalSupply(value: number) {

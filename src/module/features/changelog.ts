@@ -3,11 +3,13 @@ import { capitalize, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { CharacterDataProperties, SharedDataProperties, SiteDataProperties } from '../actor/actortypes'
 import { RANKS } from '../constants'
+import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
 import { AssetDataProperties, BondsetDataProperties, ProgressDataProperties } from '../item/itemtypes'
 
 export function activateChangelogListeners() {
   Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any, options: Entity.UpdateOptions, _userId: number) => {
+    if (!IronswornSettings.logCharacterChanges) return
     if (options.suppressLog) return
 
     let content: string | undefined
@@ -31,6 +33,7 @@ export function activateChangelogListeners() {
   })
 
   Hooks.on('preUpdateItem', async (item: IronswornItem, data: any, _options: Entity.UpdateOptions, _userId: number) => {
+    if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
 
     let content: string | undefined
@@ -55,6 +58,7 @@ export function activateChangelogListeners() {
   })
 
   Hooks.on('createItem', async (item: IronswornItem, options: Entity.CreateOptions, _userId: number) => {
+    if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
 
@@ -69,6 +73,7 @@ export function activateChangelogListeners() {
   })
 
   Hooks.on('deleteItem', async (item: IronswornItem, options: Entity.DeleteOptions, _userId: number) => {
+    if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
 
