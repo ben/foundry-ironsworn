@@ -42,10 +42,15 @@ export class RollDialog extends Dialog {
     const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
     const renderOpts = { ...opts } as any
     if (!opts.actor) {
-      renderOpts.allCharacters = sortBy(
+      const allCharacters = sortBy(
         game.actors?.filter((x) => x.type === 'character'),
         'name'
       )
+      if (allCharacters.length === 1) {
+        renderOpts.actor = allCharacters[0]
+      } else {
+        renderOpts.allCharacters = allCharacters
+      }
     }
     const content = await renderTemplate(template, renderOpts)
 
