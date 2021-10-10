@@ -12,13 +12,13 @@ export function activateChangelogListeners() {
 
     let content: string | undefined
     if (data.name) {
-      content = `renamed to '${data.name}'`
+      content = `Renamed to '${data.name}'`
     } else if (data.img) {
-      content = `updated image`
+      content = `Updated image`
     } else {
       content = ACTOR_TYPE_HANDLERS[actor.type]?.(actor, data)
+      if (!content) return
     }
-    if (!content) return
 
     const messageData: ChatMessageDataConstructorData = {
       content: `<em>${content}</em>`,
