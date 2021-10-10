@@ -53,6 +53,32 @@ export function activateChangelogListeners() {
     const cls = CONFIG.ChatMessage.documentClass
     return cls.create(messageData as any)
   })
+
+  Hooks.on('createItem', async (item: IronswornItem, _data: any, _options: Entity.CreateOptions, _userId: number) => {
+    if (!item.parent) return // No logging for unowned items, they don't matter
+
+    const messageData: ChatMessageDataConstructorData = {
+      content: `<em>Added ${item.name}</em>`,
+      type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
+      speaker: { actor: item.parent.id },
+    }
+
+    const cls = CONFIG.ChatMessage.documentClass
+    return cls.create(messageData as any)
+  })
+
+  Hooks.on('deleteItem', async (item: IronswornItem, _options: Entity.DeleteOptions, _userId: number) => {
+    if (!item.parent) return // No logging for unowned items, they don't matter
+
+    const messageData: ChatMessageDataConstructorData = {
+      content: `<em>Deleted ${item.name}</em>`,
+      type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
+      speaker: { actor: item.parent.id },
+    }
+
+    const cls = CONFIG.ChatMessage.documentClass
+    return cls.create(messageData as any)
+  })
 }
 
 type ActorTypeHandler = (IronswornActor, any) => string | undefined
