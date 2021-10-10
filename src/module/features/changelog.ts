@@ -54,7 +54,7 @@ export function activateChangelogListeners() {
     return cls.create(messageData as any)
   })
 
-  Hooks.on('createItem', async (item: IronswornItem, _data: any, options: Entity.CreateOptions, _userId: number) => {
+  Hooks.on('createItem', async (item: IronswornItem, options: Entity.CreateOptions, _userId: number) => {
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
 
