@@ -38,7 +38,7 @@ export class IronswornSettings {
       scope: 'world',
       config: false,
       type: Number,
-      default: 1
+      default: 1,
     })
   }
 
@@ -51,7 +51,7 @@ export class IronswornSettings {
 
     const actorsToUpdate = game.actors?.contents.filter((x) => ['character', 'shared'].includes(x.data.type)) || []
     for (const actor of actorsToUpdate) {
-      await actor.update({ data: { supply: value } })
+      await actor.update({ data: { supply: value } }, { suppressLog: true } as any)
     }
   }
 }

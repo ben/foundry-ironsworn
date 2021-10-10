@@ -7,7 +7,9 @@ import { IronswornItem } from '../item/item'
 import { AssetDataProperties, ProgressDataProperties } from '../item/itemtypes'
 
 export function activateChangelogListeners() {
-  Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any, _options: Entity.UpdateOptions, _userId: number) => {
+  Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any, options: Entity.UpdateOptions, _userId: number) => {
+    if (options.suppressLog) return
+
     let content: string | undefined
     if (data.name) {
       content = `renamed to '${data.name}'`
