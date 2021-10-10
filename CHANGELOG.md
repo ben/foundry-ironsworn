@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Log character changes to chat ([#143](https://github.com/ben/foundry-ironsworn/pull/143))
+
 ## 1.6.5
 
 - Actor select in move dialog if needed ([#142](https://github.com/ben/foundry-ironsworn/pull/142))
