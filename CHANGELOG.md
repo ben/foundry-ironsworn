@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.6.5
+
 - Actor select in move dialog if needed ([#142](https://github.com/ben/foundry-ironsworn/pull/142))
 
 ## 1.6.4
