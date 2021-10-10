@@ -1,11 +1,24 @@
 <form>
   {{#if move}}
-    <div>{{{enrichHtml move.Description}}}</div>
-    <hr>
+  <div>{{{enrichHtml move.Description}}}</div>
+  <hr>
   {{/if}}
 
   <div class="form-group">
     <label>{{localize 'IRONSWORN.Bonus'}}</label>
     <input type="number" step="1" name="bonus" />
   </div>
+
+  {{#unless actor}}
+  <div class="form-group">
+    <label for="char">{{localize 'IRONSWORN.Character'}}</label>
+    <select name="char">
+      {{#each allCharacters}}
+      <option value="{{id}}" {{#if (eq ../mruCharacter id)}}selected{{/if}}>
+        {{name}}
+      </option>
+      {{/each}}
+    </select>
+  </div>
+  {{/unless}}
 </form>
