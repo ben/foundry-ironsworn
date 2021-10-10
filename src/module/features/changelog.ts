@@ -109,9 +109,9 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
   asset: (item: IronswornItem, data) => {
     const assetData = item.data as AssetDataProperties
     if (data.data?.abilities !== undefined) {
-      const oldEnables = assetData.data.abilities.map(x => x.enabled)
-      const newEnables = data.data.abilities.map(x => x.enabled)
-      for (let i=0; i<oldEnables.length; i++) {
+      const oldEnables = assetData.data.abilities.map((x) => x.enabled)
+      const newEnables = data.data.abilities.map((x) => x.enabled)
+      for (let i = 0; i < oldEnables.length; i++) {
         if (oldEnables[i] !== newEnables[i]) {
           const descriptors = ['first', 'second', 'third', 'fourth', 'fifth']
           return `${newEnables[i] ? 'marked' : 'unmarked'} ${descriptors[i]} ability`
@@ -127,8 +127,18 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
     }
 
     if (data.data?.exclusiveOptions !== undefined) {
-      const selectedOption = data.data.exclusiveOptions.find(x => x.selected)
+      const selectedOption = data.data.exclusiveOptions.find((x) => x.selected)
       return `marked ${selectedOption.name}`
+    }
+
+    if (data.data?.fields !== undefined) {
+      for (let i = 0; i < data.data.fields.length; i++) {
+        const newField = data.data.fields[i]
+        const oldField = assetData.data.fields[i]
+        if (oldField && oldField?.value !== newField.value) {
+          return `set ${newField.name} to ${newField.value}`
+        }
+      }
     }
     return JSON.stringify(data)
   },
