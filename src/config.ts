@@ -1,3 +1,4 @@
+import * as lodash from 'lodash'
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
@@ -35,6 +36,7 @@ export interface IronswornConfig {
   rollSiteFeature: typeof rollSiteFeature
   moveDataByName: typeof moveDataByName
   defaultActor: typeof defaultActor
+  _: typeof lodash
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -57,4 +59,5 @@ export const IRONSWORN: IronswornConfig = {
   rollSiteFeature,
   moveDataByName,
   defaultActor,
+  _: lodash,
 }
