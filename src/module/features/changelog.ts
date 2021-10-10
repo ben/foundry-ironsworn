@@ -15,8 +15,6 @@ export function activateChangelogListeners() {
     let content: string | undefined
     if (data.name) {
       content = `Renamed to '${data.name}'`
-    } else if (data.img) {
-      content = `Updated image`
     } else {
       content = ACTOR_TYPE_HANDLERS[actor.type]?.(actor, data)
       if (!content) return
@@ -39,8 +37,6 @@ export function activateChangelogListeners() {
     let content: string | undefined
     if (data.name) {
       content = `renamed to '${data.name}'`
-    } else if (data.img) {
-      content = `updated image`
     } else {
       content = ITEM_TYPE_HANDLERS[item.type]?.(item, data)
     }
@@ -210,9 +206,11 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
   bondset: (item: IronswornItem, data) => {
     const bondsetData = item.data as BondsetDataProperties
     if (data.data?.bonds !== undefined) {
-      if (bondsetData.data.bonds.length < data.data.bonds.length) {
+      const oldLen = Object.values(bondsetData.data.bonds).length
+      const newLen = Object.values(data.data.bonds).length
+      if (oldLen < newLen) {
         return `Added a bond`
-      } else {
+      } else if (newLen < oldLen) {
         return `Lost a bond`
       }
     }
