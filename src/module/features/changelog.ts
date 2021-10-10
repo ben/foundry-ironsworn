@@ -125,6 +125,11 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const signPrefix = newValue > oldValue ? '+' : ''
       return `${signPrefix}${newValue - oldValue} ${assetData.data.track.name} (now ${newValue})`
     }
+
+    if (data.data?.exclusiveOptions !== undefined) {
+      const selectedOption = data.data.exclusiveOptions.find(x => x.selected)
+      return `marked ${selectedOption.name}`
+    }
     return JSON.stringify(data)
   },
 }

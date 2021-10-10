@@ -64,8 +64,8 @@ export class AssetSheet extends IronswornItemSheet {
 
     const { idx } = ev.currentTarget.dataset
     const exclusiveOptions = Object.values(this.assetData.data.exclusiveOptions)
-    for (const o of exclusiveOptions) {
-      o.selected = false
+    for (let i=0; i<exclusiveOptions.length; i++) {
+      exclusiveOptions[i] = {...exclusiveOptions[i], selected: false}
     }
     exclusiveOptions[idx].selected = true
     this.item.update({ data: { exclusiveOptions } })
