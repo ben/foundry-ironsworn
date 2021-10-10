@@ -1,28 +1,31 @@
 import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
+import { capitalize, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
+import { CharacterDataProperties } from '../actor/actortypes'
 import { RANKS } from '../constants'
 import { IronswornItem } from '../item/item'
-import { ProgressDataProperties } from '../item/itemtypes'
+import { AssetDataProperties, ProgressDataProperties } from '../item/itemtypes'
 
 export function activateChangelogListeners() {
   Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any, _options: Entity.UpdateOptions, _userId: number) => {
-    // Log updates to base stats, resource trackers, and debilities
-    const content = Object.entries(data.data)
-      .map((val) => `${val[0]}: ${val[1]}`)
-      .join('\n')
-
-    for (const k of Object.keys(data.data)) {
-      console.log(`Actor: ${actor.data.data[k]}, data: ${data.data[k]}`)
+    let content: string | undefined
+    if (data.name) {
+      content = `renamed to '${data.name}'`
+    } else if (data.img) {
+      content = `updated image`
+    } else {
+      content = ACTOR_TYPE_HANDLERS[actor.type]?.(actor, data)
     }
+    if (!content) return
 
     const messageData: ChatMessageDataConstructorData = {
-      content,
+      content: `<em>${content}</em>`,
       type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
       speaker: { actor: actor.id },
     }
 
     const cls = CONFIG.ChatMessage.documentClass
-    return cls.create(messageData as any, {})
+    return cls.create(messageData as any)
   })
 
   Hooks.on('preUpdateItem', async (item: IronswornItem, data: any, _options: Entity.UpdateOptions, _userId: number) => {
@@ -34,7 +37,7 @@ export function activateChangelogListeners() {
     } else if (data.img) {
       content = `updated image`
     } else {
-      content = itemTypeHandlers[item.type]?.(item, data)
+      content = ITEM_TYPE_HANDLERS[item.type]?.(item, data)
     }
     if (!content) return
 
@@ -49,9 +52,46 @@ export function activateChangelogListeners() {
   })
 }
 
-type ItemTypeHandler = (IronswornItem, any) => string
+type ActorTypeHandler = (IronswornActor, any) => string | undefined
+const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
+  character: (actor: IronswornActor, data) => {
+    const characterData = actor.data as CharacterDataProperties
+    if (data.data?.xp !== undefined) {
+      const oldXp = characterData.data.xp
+      const newXp = data.data.xp as number
+      if (newXp > oldXp) {
+        return `Marked ${newXp - oldXp} xp`
+      } else {
+        return `Unmarked ${oldXp - newXp} xp`
+      }
+    }
 
-const itemTypeHandlers: { [key: string]: ItemTypeHandler } = {
+    for (const stat of ['momentum', 'health', 'spirit', 'supply']) {
+      const newValue = get(data.data, stat)
+      if (newValue) {
+        const oldValue = get(characterData.data, stat)
+        const signPrefix = newValue > oldValue ? '+' : ''
+        const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
+        return `${signPrefix}${newValue - oldValue} ${i18nStat} (now ${newValue})`
+      }
+    }
+
+    for (const debility of ['corrupted', 'cursed', 'encumbered', 'maimed', 'shaken', 'tormented', 'unprepared', 'wounded']) {
+      const newValue = get(data.data.debility, debility)
+      if (newValue !== undefined) {
+        const oldValue = characterData.data.debility[debility]
+        if (oldValue === newValue) continue
+        const i18nDebility = game.i18n.localize(`IRONSWORN.${capitalize(debility)}`)
+        return `${newValue ? 'Set' : 'Cleared'} the ${i18nDebility} condition`
+      }
+    }
+
+    return undefined
+  },
+}
+
+type ItemTypeHandler = (IronswornItem, any) => string | undefined
+const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
   progress: (item: IronswornItem, data) => {
     const progressData = item.data as ProgressDataProperties
     if (data.data?.rank) {
@@ -62,11 +102,11 @@ const itemTypeHandlers: { [key: string]: ItemTypeHandler } = {
     if (data.data?.current !== undefined) {
       return `progress ${data.data.current > progressData.data.current ? 'advanced' : 'reduced'}`
     }
-    return JSON.stringify(data, null, 2)
+    return undefined
   },
-  vow: (item, data) => itemTypeHandlers.progress(item, data),
+  vow: (item, data) => ITEM_TYPE_HANDLERS.progress(item, data),
 
   asset: (item: IronswornItem, data) => {
     return JSON.stringify(data)
-  }
+  },
 }

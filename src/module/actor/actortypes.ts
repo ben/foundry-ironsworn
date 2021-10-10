@@ -28,7 +28,7 @@ interface CharacterDataPropertiesData extends CharacterDataSourceData {
   momentumReset: number
 }
 
-interface CharacterDataProperties {
+export interface CharacterDataProperties {
   type: 'character'
   data: CharacterDataPropertiesData
 }
