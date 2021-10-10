@@ -14,6 +14,7 @@ import { IronswornSiteSheetV2 } from './module/actor/sheets/sitesheet-v2'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { IronswornChatCard } from './module/chat/cards'
+import { activateChangelogListeners } from './module/features/changelog'
 import { maybePromptForDependencies } from './module/features/dependencies'
 import { activateDragDropListeners } from './module/features/dragdrop'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
@@ -130,6 +131,7 @@ Hooks.once('ready', async () => {
   await maybePromptForDependencies()
 
   activateDragDropListeners()
+  activateChangelogListeners()
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   WorldTruthsDialog.maybeShow()
