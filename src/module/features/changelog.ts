@@ -1,7 +1,7 @@
 import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
 import { capitalize, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
-import { CharacterDataProperties, SiteDataProperties } from '../actor/actortypes'
+import { CharacterDataProperties, SharedDataProperties, SiteDataProperties } from '../actor/actortypes'
 import { RANKS } from '../constants'
 import { IronswornItem } from '../item/item'
 import { AssetDataProperties, BondsetDataProperties, ProgressDataProperties } from '../item/itemtypes'
@@ -99,7 +99,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
 
     for (const stat of ['momentum', 'health', 'spirit', 'supply']) {
       const newValue = get(data.data, stat)
-      if (newValue) {
+      if (newValue !== undefined) {
         const oldValue = get(characterData.data, stat)
         const signPrefix = newValue > oldValue ? '+' : ''
         const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
@@ -115,6 +115,20 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
         const i18nDebility = game.i18n.localize(`IRONSWORN.${capitalize(debility)}`)
         return `${newValue ? 'Set' : 'Cleared'} the ${i18nDebility} condition`
       }
+    }
+
+    return undefined
+  },
+
+  shared: (actor: IronswornActor, data) => {
+    const sharedData = actor.data as SharedDataProperties
+
+    if (data.data?.supply !== undefined) {
+      const newValue = data.data.supply
+      const oldValue = sharedData.data.supply
+      const signPrefix = newValue > oldValue ? '+' : ''
+      const i18nStat = game.i18n.localize('IRONSWORN.Supply')
+      return `${signPrefix}${newValue - oldValue} ${i18nStat} (now ${newValue})`
     }
 
     return undefined

@@ -40,14 +40,16 @@ interface CharacterDataSource {
 
 ////////////////////////////////////////
 
-interface SharedDataSourceData {}
-interface SharedDataPropertiesData {}
+interface SharedDataSourceData {
+  supply: number
+}
+interface SharedDataPropertiesData extends SharedDataSourceData {}
 
 interface SharedDataSource {
   type: 'shared'
   data: SharedDataSourceData
 }
-interface SharedDataProperties {
+export interface SharedDataProperties {
   type: 'shared'
   data: SharedDataPropertiesData
 }
