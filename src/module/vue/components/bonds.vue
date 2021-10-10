@@ -20,7 +20,8 @@ export default {
       return this.actor.items.filter((x) => x.type === 'bondset')[0]
     },
     bondcount() {
-      return Object.values(this.bonds?.data.bonds).length
+      if (!this.bonds?.data?.bonds) return 0
+      return Object.values(this.bonds.data.bonds).length
     },
   },
 
