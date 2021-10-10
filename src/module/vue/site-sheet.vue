@@ -185,14 +185,12 @@ export default {
       const move = await CONFIG.IRONSWORN.moveDataByName(
         'Locate Your Objective'
       )
-      const actor = CONFIG.IRONSWORN.defaultActor()
       const progress = Math.floor(this.actor.data.current / 4)
       const roll = new Roll(`{${progress}, d10, d10}`)
       CONFIG.IRONSWORN.createIronswornChatRoll({
         isProgress: true,
         move,
         roll,
-        actor,
         subtitle: this.actor.name || undefined,
       })
     },
