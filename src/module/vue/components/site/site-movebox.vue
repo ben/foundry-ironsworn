@@ -26,8 +26,7 @@ export default {
   methods: {
     async click() {
       const move = await CONFIG.IRONSWORN.moveDataByName(this.move)
-      const actor = CONFIG.IRONSWORN.defaultActor()
-      CONFIG.IRONSWORN.RollDialog.show({ move, actor, site: this.actor })
+      CONFIG.IRONSWORN.RollDialog.show({ move, site: this.ironswornActor })
     },
   },
 }

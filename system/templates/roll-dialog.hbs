@@ -8,4 +8,15 @@
     <label>{{localize 'IRONSWORN.Bonus'}}</label>
     <input type="number" step="1" name="bonus" />
   </div>
+
+  {{#unless actor}}
+  <div class="form-group">
+    <label for="char">{{localize 'IRONSWORN.Character'}}</label>
+    <select name="char">
+      {{#each allCharacters}}
+      <option value="{{id}}">{{name}}</option>
+      {{/each}}
+    </select>
+  </div>
+  {{/unless}}
 </form>

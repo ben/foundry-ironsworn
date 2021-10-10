@@ -1,3 +1,4 @@
+import { sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { createIronswornChatRoll, createIronswornFeatureChat, createIronswornMoveChat } from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
@@ -39,13 +40,22 @@ export class RollDialog extends Dialog {
 
     // Render content
     const template = 'systems/foundry-ironsworn/templates/roll-dialog.hbs'
-    const content = await renderTemplate(template, opts)
+    const renderOpts = { ...opts } as any
+    if (!opts.actor) {
+      renderOpts.allCharacters = sortBy(
+        game.actors?.filter((x) => x.type === 'character'),
+        'name'
+      )
+    }
+    const content = await renderTemplate(template, renderOpts)
 
     const callbackForStat = (stat: string) => (x) => {
       const form = x[0].querySelector('form')
       const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
+      const actor = opts.actor ?? game.actors?.get(form.char.value)
       this.rollAndCreateChatMessage({
         ...opts,
+        actor,
         stat,
         bonus,
       })
@@ -145,7 +155,7 @@ export async function rollSiteFeature(params: SiteFeatureRollInput) {
   }
 }
 
-export function maybeShowDice(roll:Roll) {
+export function maybeShowDice(roll: Roll) {
   const dice3d = (game as any).dice3d
   if (!dice3d) return
   dice3d.showForRoll(roll, game.user, true)
