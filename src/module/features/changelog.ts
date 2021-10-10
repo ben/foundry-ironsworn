@@ -107,6 +107,24 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
   vow: (item, data) => ITEM_TYPE_HANDLERS.progress(item, data),
 
   asset: (item: IronswornItem, data) => {
+    const assetData = item.data as AssetDataProperties
+    if (data.data?.abilities !== undefined) {
+      const oldEnables = assetData.data.abilities.map(x => x.enabled)
+      const newEnables = data.data.abilities.map(x => x.enabled)
+      for (let i=0; i<oldEnables.length; i++) {
+        if (oldEnables[i] !== newEnables[i]) {
+          const descriptors = ['first', 'second', 'third', 'fourth', 'fifth']
+          return `${newEnables[i] ? 'marked' : 'unmarked'} ${descriptors[i]} ability`
+        }
+      }
+    }
+
+    if (data.data?.track?.current !== undefined) {
+      const newValue = data.data.track.current
+      const oldValue = assetData.data.track.current
+      const signPrefix = newValue > oldValue ? '+' : ''
+      return `${signPrefix}${newValue - oldValue} ${assetData.data.track.name} (now ${newValue})`
+    }
     return JSON.stringify(data)
   },
 }

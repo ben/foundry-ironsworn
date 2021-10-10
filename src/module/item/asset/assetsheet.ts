@@ -55,7 +55,7 @@ export class AssetSheet extends IronswornItemSheet {
 
     const { idx } = ev.currentTarget.dataset
     const abilities = Object.values(this.assetData.data.abilities)
-    abilities[idx].enabled = !abilities[idx].enabled
+    abilities[idx] = {...abilities[idx], enabled: !abilities[idx].enabled}
     this.item.update({ data: { abilities } })
   }
 
