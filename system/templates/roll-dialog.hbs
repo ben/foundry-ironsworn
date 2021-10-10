@@ -1,7 +1,7 @@
 <form>
   {{#if move}}
-    <div>{{{enrichHtml move.Description}}}</div>
-    <hr>
+  <div>{{{enrichHtml move.Description}}}</div>
+  <hr>
   {{/if}}
 
   <div class="form-group">
@@ -14,7 +14,9 @@
     <label for="char">{{localize 'IRONSWORN.Character'}}</label>
     <select name="char">
       {{#each allCharacters}}
-      <option value="{{id}}">{{name}}</option>
+      <option value="{{id}}" {{#if (eq ../mruCharacter id)}}selected{{/if}}>
+        {{name}}
+      </option>
       {{/each}}
     </select>
   </div>

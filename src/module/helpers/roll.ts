@@ -50,6 +50,7 @@ export class RollDialog extends Dialog {
         renderOpts.actor = allCharacters[0]
       } else {
         renderOpts.allCharacters = allCharacters
+        renderOpts.mruCharacter = opts.site?.getFlag('foundry-ironsworn', 'mru-character')
       }
     }
     const content = await renderTemplate(template, renderOpts)
@@ -57,7 +58,11 @@ export class RollDialog extends Dialog {
     const callbackForStat = (stat: string) => (x) => {
       const form = x[0].querySelector('form')
       const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
-      const actor = opts.actor ?? game.actors?.get(form.char.value)
+      let actor = opts.actor
+      if (form.char?.value) {
+        actor = game.actors?.get(form.char.value)
+        opts.site?.setFlag('foundry-ironsworn', 'mru-character', actor?.id)
+      }
       this.rollAndCreateChatMessage({
         ...opts,
         actor,
