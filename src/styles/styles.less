@@ -475,43 +475,45 @@ hr {
     background-size: 24px 24px;
     font-weight: bold;
     text-align: center;
-  }
 
-  .roll.d4 {
-    background-image: url('/icons/svg/d4-grey.svg');
-  }
+    &.d4 {
+      background-image: url('/icons/svg/d4-grey.svg');
+    }
 
-  .roll.d6 {
-    background-image: url('/icons/svg/d6-grey.svg');
-  }
+    &.d6 {
+      background-image: url('/icons/svg/d6-grey.svg');
+    }
 
-  .roll.d8 {
-    background-image: url('/icons/svg/d8-grey.svg');
-  }
+    &.d8 {
+      background-image: url('/icons/svg/d8-grey.svg');
+    }
 
-  .roll.d10 {
-    background-image: url('/icons/svg/d10-grey.svg');
-  }
+    &.d10 {
+      background-image: url('/icons/svg/d10-grey.svg');
+    }
 
-  .roll.d12 {
-    background-image: url('/icons/svg/d12-grey.svg');
-  }
+    &.d12 {
+      background-image: url('/icons/svg/d12-grey.svg');
+    }
 
-  .roll.d20 {
-    background-image: url('/icons/svg/d20-grey.svg');
-  }
+    &.d20 {
+      background-image: url('/icons/svg/d20-grey.svg');
+    }
 
-  .roll.min {
-    color: #aa0200;
-    filter: sepia(0.5) hue-rotate(-60deg);
-  }
+    &.min,
+    &.challenge.max {
+      color: #aa0200;
+      filter: drop-shadow(1px 1px 4px darkred);
+    }
 
-  .roll.max {
-    color: #18520b;
-    filter: sepia(0.5) hue-rotate(60deg);
-  }
+    &.max,
+    &.challenge.min {
+      color: #18520b;
+      filter: drop-shadow(1px 1px 4px darkgreen);
+    }
 
-  .roll.canceled {
-    filter: drop-shadow(0px 0px 5px orange);
+    &.canceled {
+      filter: drop-shadow(1px 1px 4px orange);
+    }
   }
 }
