@@ -2,6 +2,7 @@
 
 ## In progress
 
+- Update visual style for "best" and "worst" die rolls ([#145](https://github.com/ben/foundry-ironsworn/pull/145))
 - Log character changes to chat ([#143](https://github.com/ben/foundry-ironsworn/pull/143))
 
 ## 1.6.5
