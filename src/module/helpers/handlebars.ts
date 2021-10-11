@@ -4,10 +4,11 @@ import { capitalize } from './util'
 
 interface RollClassesOptions {
   canceled: boolean
+  type: 'action' | 'challenge' | undefined
 }
 function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
   const theOpts = {
-    ...{ canceled: false },
+    ...{ canceled: false, type: undefined },
     ...opts
   }
   const d = r.dice[0]
@@ -17,6 +18,7 @@ function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
     d && 'd' + d.faces,
     (d?.total || r.result) <= 1 ? 'min' : null,
     (d?.total || r.result) == maxRoll ? 'max' : null,
+    theOpts.type,
     theOpts.canceled ? 'canceled' : null,
   ].filter((x) => x)
   .join(' ')
@@ -49,15 +51,15 @@ export class IronswornHandlebarsHelpers {
       const r = actionRoll(this.roll)
       const terms = [...r.terms]
       const d = terms.shift()
-      const classes = classesForRoll(r, { canceled: this.negativeMomentumCancel })
+      const classes = classesForRoll(r, { canceled: this.negativeMomentumCancel, type: 'action' })
       const termStrings = terms.map((t) => t.operator || t.number)
       return `<strong><span class="roll ${classes}">${d?.total || 0}</span>${termStrings.join('')}</strong>`
     })
 
     Handlebars.registerHelper('challengeDice', function () {
       const [c1, c2] = challengeRolls(this.roll)
-      const c1span = `<span class="roll ${classesForRoll(c1)}">${c1.total}</span>`
-      const c2span = `<span class="roll ${classesForRoll(c2)}">${c2.total}</span>`
+      const c1span = `<span class="roll ${classesForRoll(c1, {type: 'challenge'})}">${c1.total}</span>`
+      const c2span = `<span class="roll ${classesForRoll(c2, {type: 'challenge'})}">${c2.total}</span>`
       return `${c1span} ${c2span}`
     })
 

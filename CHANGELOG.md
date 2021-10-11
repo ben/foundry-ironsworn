@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Update visual style for "best" and "worst" die rolls ([#145](https://github.com/ben/foundry-ironsworn/pull/145))
+
 ## 1.6.5
 
 - Actor select in move dialog if needed ([#142](https://github.com/ben/foundry-ironsworn/pull/142))
