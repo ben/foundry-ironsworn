@@ -34,11 +34,20 @@ export class IronswornSettings {
       default: true,
     })
 
+    game.settings.register('foundry-ironsworn', 'log-changes', {
+      name: 'IRONSWORN.Settings.LogChanges.Name',
+      hint: 'IRONSWORN.Settings.LogChanges.Hint',
+      scope: 'world',
+      config: true,
+      type: Boolean,
+      default: true,
+    })
+
     game.settings.register('foundry-ironsworn', 'data-version', {
       scope: 'world',
       config: false,
       type: Number,
-      default: 1
+      default: 1,
     })
   }
 
@@ -46,12 +55,16 @@ export class IronswornSettings {
     return game.settings.get('foundry-ironsworn', 'theme') as string
   }
 
+  static get logCharacterChanges(): boolean {
+    return game.settings.get('foundry-ironsworn', 'log-changes') as boolean
+  }
+
   static async maybeSetGlobalSupply(value: number) {
     if (!game.settings.get('foundry-ironsworn', 'shared-supply')) return
 
     const actorsToUpdate = game.actors?.contents.filter((x) => ['character', 'shared'].includes(x.data.type)) || []
     for (const actor of actorsToUpdate) {
-      await actor.update({ data: { supply: value } })
+      await actor.update({ data: { supply: value } }, { suppressLog: true } as any)
     }
   }
 }

@@ -45,10 +45,10 @@ export default {
   },
 
   watch: {
-    'actor.name'() {
+    'actor.name': CONFIG.IRONSWORN._.debounce(function() {
       const actor = game.actors?.get(this.actor._id)
       actor.update({ name: this.actor.name })
-    },
+    }, 1000),
   },
 }
 </script>

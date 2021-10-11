@@ -22,7 +22,7 @@ export class IronswornChatCard {
   updateBinding(message: ChatMessage, html: JQuery) {
     // Do not store html here
     this.id = message.id
-    this.roll = message.roll
+    this.roll = message.isRoll ? message.roll : undefined
 
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))

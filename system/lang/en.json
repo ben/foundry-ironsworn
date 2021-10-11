@@ -109,6 +109,34 @@
     "DeleteAsset": "Delete Asset",
     "ConfirmDelete": "Are you sure? This cannot be undone.",
     "StatBonusTooltip": "Bonus for the next stat roll",
+    "First": "first",
+    "Second": "second",
+    "Third": "third",
+    "Fourth": "fourth",
+    "Fifth": "fifth",
+    "ChangeLog": {
+      "Renamed": "Renamed to {name}",
+      "renamed": "renamed to {name}",
+      "Added": "Added {name}",
+      "Deleted": "Deleted {name}",
+      "MarkedXP": "Marked {amt} XP",
+      "UnmarkedXP": "Unmarked {amt} XP",
+      "AdjustedStat": "{amt} {stat} (now {val})",
+      "SetCondition": "Set the {condition} condition",
+      "ClearedCondition": "Cleared the {condition} condition",
+      "RankChanged": "Rank changed from {old} to {new}",
+      "rankChanged": "rank changed from {old} to {new}",
+      "ProgressAdvanced": "Progress advanced",
+      "progressAdvanced": "progress advanced",
+      "ProgressReduced": "Progress reduced",
+      "progressReduced": "progress reduced",
+      "MarkedAbility": "marked {pos} ability",
+      "UnmarkedAbility": "unmarked {pos} ability",
+      "MarkedOption": "marked {name}",
+      "SetField": "set {name} to {val}",
+      "AddBond": "Added a bond",
+      "LostBond": "Lost a bond"
+    },
     "Settings": {
       "Theme": {
         "Name": "Visual Theme",
@@ -119,6 +147,10 @@
       "SharedSupply": {
         "Name": "Shared Supply Tracker",
         "Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+      },
+      "LogChanges": {
+        "Name": "Log Character Updates",
+        "Hint": "If on, changes to character stats will be logged to the chat."
       },
       "PromptTruths": {
         "Name": "Prompt for World Truths",

@@ -55,7 +55,7 @@ export class AssetSheet extends IronswornItemSheet {
 
     const { idx } = ev.currentTarget.dataset
     const abilities = Object.values(this.assetData.data.abilities)
-    abilities[idx].enabled = !abilities[idx].enabled
+    abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
     this.item.update({ data: { abilities } })
   }
 
@@ -64,8 +64,8 @@ export class AssetSheet extends IronswornItemSheet {
 
     const { idx } = ev.currentTarget.dataset
     const exclusiveOptions = Object.values(this.assetData.data.exclusiveOptions)
-    for (const o of exclusiveOptions) {
-      o.selected = false
+    for (let i = 0; i < exclusiveOptions.length; i++) {
+      exclusiveOptions[i] = { ...exclusiveOptions[i], selected: false }
     }
     exclusiveOptions[idx].selected = true
     this.item.update({ data: { exclusiveOptions } })
@@ -125,7 +125,7 @@ export class AssetSheet extends IronswornItemSheet {
     const fields = Object.values(this.assetData.data.fields)
     const { idx } = ev.currentTarget.dataset
     const val = $(ev.currentTarget).val()?.toString() || ''
-    fields[idx].value = val
+    fields[idx] = { ...fields[idx], value: val }
     this.item.update({ data: { fields } })
   }
 
