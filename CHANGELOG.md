@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.7.0
+
 - Log character changes to chat ([#143](https://github.com/ben/foundry-ironsworn/pull/143))
 
 ## 1.6.6
