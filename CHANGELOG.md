@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.6.6
+
 - Update visual style for "best" and "worst" die rolls ([#145](https://github.com/ben/foundry-ironsworn/pull/145))
 - Add Russian-language translation (thanks, @HesperidesGardden!) ([#130](https://github.com/ben/foundry-ironsworn/pull/130) and [#146](https://github.com/ben/foundry-ironsworn/pull/146))
 
