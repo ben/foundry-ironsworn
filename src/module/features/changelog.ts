@@ -14,20 +14,13 @@ export function activateChangelogListeners() {
 
     let content: string | undefined
     if (data.name) {
-      content = `Renamed to '${data.name}'`
+      content = game.i18n.format('IRONSWORN.ChangeLog.Renamed', { name: data.name })
     } else {
       content = ACTOR_TYPE_HANDLERS[actor.type]?.(actor, data)
       if (!content) return
     }
 
-    const messageData: ChatMessageDataConstructorData = {
-      content: `<em>${content}</em>`,
-      type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
-      speaker: { actor: actor.id },
-    }
-
-    const cls = CONFIG.ChatMessage.documentClass
-    return cls.create(messageData as any)
+    sendToChat(actor, content)
   })
 
   Hooks.on('preUpdateItem', async (item: IronswornItem, data: any, _options: Entity.UpdateOptions, _userId: number) => {
@@ -36,21 +29,14 @@ export function activateChangelogListeners() {
 
     let content: string | undefined
     if (data.name) {
-      content = `renamed to '${data.name}'`
+      content = game.i18n.format('IRONSWORN.ChangeLog.renamed', { name: data.name })
     } else {
       content = ITEM_TYPE_HANDLERS[item.type]?.(item, data)
     }
     if (!content) return
 
     const itemName = item.type === 'bondset' ? '' : item.name
-    const messageData: ChatMessageDataConstructorData = {
-      content: `<em>${itemName} ${content}</em>`,
-      type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
-      speaker: { actor: item.parent.id },
-    }
-
-    const cls = CONFIG.ChatMessage.documentClass
-    return cls.create(messageData as any)
+    sendToChat(item.parent, `${itemName} ${content}`)
   })
 
   Hooks.on('createItem', async (item: IronswornItem, options: Entity.CreateOptions, _userId: number) => {
@@ -58,14 +44,7 @@ export function activateChangelogListeners() {
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
 
-    const messageData: ChatMessageDataConstructorData = {
-      content: `<em>Added ${item.name}</em>`,
-      type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
-      speaker: { actor: item.parent.id },
-    }
-
-    const cls = CONFIG.ChatMessage.documentClass
-    return cls.create(messageData as any)
+    sendToChat(item.parent, game.i18n.format('IRONSWORN.ChangeLog.Added', { name: item.name }))
   })
 
   Hooks.on('deleteItem', async (item: IronswornItem, options: Entity.DeleteOptions, _userId: number) => {
@@ -73,14 +52,7 @@ export function activateChangelogListeners() {
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
 
-    const messageData: ChatMessageDataConstructorData = {
-      content: `<em>Deleted ${item.name}</em>`,
-      type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
-      speaker: { actor: item.parent.id },
-    }
-
-    const cls = CONFIG.ChatMessage.documentClass
-    return cls.create(messageData as any)
+    sendToChat(item.parent, game.i18n.format('IRONSWORN.ChangeLog.Deleted', { name: item.name }))
   })
 }
 
@@ -92,9 +64,9 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       const oldXp = characterData.data.xp
       const newXp = data.data.xp as number
       if (newXp > oldXp) {
-        return `Marked ${newXp - oldXp} xp`
+        return game.i18n.format('IRONSWORN.ChangeLog.MarkedXP', { amt: newXp - oldXp })
       } else {
-        return `Unmarked ${oldXp - newXp} xp`
+        return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedXP', { amt: oldXp - newXp })
       }
     }
 
@@ -104,7 +76,11 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
         const oldValue = get(characterData.data, stat)
         const signPrefix = newValue > oldValue ? '+' : ''
         const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
-        return `${signPrefix}${newValue - oldValue} ${i18nStat} (now ${newValue})`
+        return game.i18n.format('IRONSWORN.ChangeLog.AdjustedStat', {
+          amt: `${signPrefix}${newValue - oldValue}`,
+          stat: i18nStat,
+          val: newValue,
+        })
       }
     }
 
@@ -114,7 +90,9 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
         const oldValue = characterData.data.debility[debility]
         if (oldValue === newValue) continue
         const i18nDebility = game.i18n.localize(`IRONSWORN.${capitalize(debility)}`)
-        return `${newValue ? 'Set' : 'Cleared'} the ${i18nDebility} condition`
+        const params = { condition: i18nDebility }
+        if (newValue) return game.i18n.format('IRONSWORN.ChangeLog.SetCondition', params)
+        return game.i18n.format('IRONSWORN.ChangeLog.ClearedCondition', params)
       }
     }
 
@@ -129,7 +107,11 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       const oldValue = sharedData.data.supply
       const signPrefix = newValue > oldValue ? '+' : ''
       const i18nStat = game.i18n.localize('IRONSWORN.Supply')
-      return `${signPrefix}${newValue - oldValue} ${i18nStat} (now ${newValue})`
+      return game.i18n.format('IRONSWORN.ChangeLog.AdjustedStat', {
+        amt: `${signPrefix}${newValue - oldValue}`,
+        stat: i18nStat,
+        val: newValue,
+      })
     }
 
     return undefined
@@ -141,10 +123,11 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
     if (data.data?.rank) {
       const oldRank = game.i18n.localize(RANKS[siteData.data.rank])
       const newRank = game.i18n.localize(RANKS[data.data.rank])
-      return `Rank changed from ${oldRank} to ${newRank}`
+      return game.i18n.format('IRONSWORN.ChangeLog.RankChanged', { old: oldRank, new: newRank })
     }
     if (data.data?.current !== undefined) {
-      return `Progress ${data.data.current > siteData.data.current ? 'advanced' : 'reduced'}`
+      const advanced = data.data.current > siteData.data.current
+      return game.i18n.localize(`IRONSWORN.ChangeLog.Progress${advanced ? 'Advanced' : 'Reduced'}`)
     }
     return undefined
   },
@@ -157,10 +140,11 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
     if (data.data?.rank) {
       const oldRank = game.i18n.localize(RANKS[progressData.data.rank])
       const newRank = game.i18n.localize(RANKS[data.data.rank])
-      return `rank changed from ${oldRank} to ${newRank}`
+      return game.i18n.format('IRONSWORN.ChangeLog.rankChanged', { old: oldRank, new: newRank })
     }
     if (data.data?.current !== undefined) {
-      return `progress ${data.data.current > progressData.data.current ? 'advanced' : 'reduced'}`
+      const advanced = data.data.current > progressData.data.current
+      return game.i18n.localize(`IRONSWORN.ChangeLog.progress${advanced ? 'Advanced' : 'Reduced'}`)
     }
     return undefined
   },
@@ -173,8 +157,10 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const newEnables = data.data.abilities.map((x) => x.enabled)
       for (let i = 0; i < oldEnables.length; i++) {
         if (oldEnables[i] !== newEnables[i]) {
-          const descriptors = ['first', 'second', 'third', 'fourth', 'fifth']
-          return `${newEnables[i] ? 'marked' : 'unmarked'} ${descriptors[i]} ability`
+          const descriptors = ['First', 'Second', 'Third', 'Fourth', 'Fifth']
+          const pos = game.i18n.localize(`IRONSWORN.${descriptors[i]}`)
+          if (newEnables[i]) return game.i18n.format('IRONSWORN.ChangeLog.MarkedAbility', {pos})
+          return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedAbility', {pos})
         }
       }
     }
@@ -183,12 +169,16 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const newValue = data.data.track.current
       const oldValue = assetData.data.track.current
       const signPrefix = newValue > oldValue ? '+' : ''
-      return `${signPrefix}${newValue - oldValue} ${assetData.data.track.name} (now ${newValue})`
+      return game.i18n.format('IRONSWORN.ChangeLog.AdjustedStat', {
+        amt: `${signPrefix}${newValue - oldValue}`,
+        stat: assetData.data.track.name,
+        val: newValue
+      })
     }
 
     if (data.data?.exclusiveOptions !== undefined) {
       const selectedOption = data.data.exclusiveOptions.find((x) => x.selected)
-      return `marked ${selectedOption.name}`
+      return game.i18n.format('IRONSWORN.ChangeLog.MarkedOption', {name: selectedOption.name})
     }
 
     if (data.data?.fields !== undefined) {
@@ -196,7 +186,7 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         const newField = data.data.fields[i]
         const oldField = assetData.data.fields[i]
         if (oldField && oldField?.value !== newField.value) {
-          return `set ${newField.name} to ${newField.value}`
+          return game.i18n.format('IRONSWORN.ChangeLog.SetField', {name: newField.name, val: newField.value})
         }
       }
     }
@@ -209,12 +199,23 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const oldLen = Object.values(bondsetData.data.bonds).length
       const newLen = Object.values(data.data.bonds).length
       if (oldLen < newLen) {
-        return `Added a bond`
+        return game.i18n.localize('IRONSWORN.ChangeLog.AddBond')
       } else if (newLen < oldLen) {
-        return `Lost a bond`
+        return game.i18n.localize('IRONSWORN.ChangeLog.LostBond')
       }
     }
 
     return undefined
   },
+}
+
+function sendToChat(actor: IronswornActor, msg: string) {
+  const messageData: ChatMessageDataConstructorData = {
+    content: `<em>${msg}</em>`,
+    type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
+    speaker: { actor: actor.id },
+  }
+
+  const cls = CONFIG.ChatMessage.documentClass
+  return cls.create(messageData as any)
 }
