@@ -1,5 +1,5 @@
 <template>
-  <div class="box flexrow clickable block" @click="click">
+  <div class="box flexrow clickable block" :class="{disabled: disabled}" @click="click">
     <h4 class="nogrow" style="margin: 0; white-space: nowrap">
       {{ $t(i18nKey) }}
     </h4>
@@ -11,6 +11,7 @@ export default {
   props: {
     actor: Object,
     move: String,
+    disabled: Boolean,
   },
 
   computed: {
@@ -21,6 +22,7 @@ export default {
 
   methods: {
     async click() {
+      if (this.disabled) return
       const move = await CONFIG.IRONSWORN.moveDataByName(this.move)
       CONFIG.IRONSWORN.RollDialog.show({ move, site: this.$actor() })
     },

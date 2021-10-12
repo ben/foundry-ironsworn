@@ -71,7 +71,7 @@
         >
           <h4>{{ $t('IRONSWORN.Feature') }}</h4>
         </div>
-        <site-movebox :actor="actor" move="Reveal a Danger" />
+        <site-movebox :actor="actor" move="Reveal a Danger" :disabled="!hasThemeAndDomain" />
       </div>
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Find an Opportunity" />
