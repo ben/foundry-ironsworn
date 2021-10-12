@@ -32,6 +32,11 @@
       <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
       <icon-button icon="play" @click="markProgress" />
     </div>
+
+    <!-- PROGRESS -->
+    <div class="flexrow track nogrow" style="margin-bottom: 1em">
+      <progress-track :ticks="item.data.current" />
+    </div>
   </div>
 </template>
 
@@ -62,6 +67,16 @@ export default {
   methods: {
     setRank(rank) {
       this.ironswornItem.update({ data: { rank } })
+    },
+
+    clearProgress() {
+      this.ironswornItem.update({ 'data.current': 0 })
+    },
+
+    markProgress() {
+      const increment = CONFIG.IRONSWORN.RankIncrements[this.item.data.rank]
+      const newValue = Math.min(this.item.data.current + increment, 40)
+      this.ironswornItem.update({ 'data.current': newValue })
     },
   },
 }
