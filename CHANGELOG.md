@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Vue progress/vow sheet ([#147](https://github.com/ben/foundry-ironsworn/pull/147))
+
 ## 1.7.0
 
 - Log character changes to chat ([#143](https://github.com/ben/foundry-ironsworn/pull/143))

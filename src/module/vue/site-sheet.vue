@@ -22,7 +22,13 @@
 
     <!-- RANK -->
     <div class="flexrow nogrow">
-      <rank-hexes :current="actor.data.rank" @click="setRank" />
+      <rank-hexes
+        :current="actor.data.rank"
+        @click="setRank"
+        class="nogrow"
+        style="margin-right: 1em"
+      />
+      <h4>{{ rankText }}</h4>
       <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
       <icon-button icon="play" @click="markProgress" />
     </div>
@@ -151,6 +157,10 @@ export default {
 
     hasThemeAndDomain() {
       return this.theme && this.domain
+    },
+
+    rankText() {
+      return this.$t(CONFIG.IRONSWORN.Ranks[this.actor.data.rank])
     },
   },
 
