@@ -1,4 +1,5 @@
 <template>
+  <!-- Poached fairly from Archmage https://git.io/JKUjs -->
   <div class="editor-wrapper">
     <div class="editor">
       <div
