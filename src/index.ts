@@ -27,6 +27,7 @@ import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvet
 import { IronswornItem } from './module/item/item'
 import { MoveSheet } from './module/item/move/movesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
+import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 
 import './styles/styles.less'
 
@@ -111,10 +112,15 @@ Hooks.once('init', async () => {
     label: 'Delve Theme/Domain Sheet',
     makeDefault: true,
   })
+
   Items.registerSheet('ironsworn', ProgressSheet, {
     types: ['vow', 'progress'],
     label: 'Progress Sheet',
     makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', ProgressSheetV2, {
+    types: ['vow', 'progress'],
+    label: 'Progress sheet v2',
   })
 
   // Preload all needed templates

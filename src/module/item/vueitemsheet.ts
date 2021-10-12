@@ -1,12 +1,22 @@
 import Vue from 'vue'
+import { IronswornSettings } from '../helpers/settings'
+import { IronswornItem } from './item'
 
-export class IronswornVueActorSheet extends ActorSheet {
+export class IronswornVueItemSheet extends ItemSheet {
   _vm: (Vue & Record<string, any>) | null
 
   /** @override */
-  constructor(opts?: any, data?: any) {
-    super(opts, data)
+  constructor(object: IronswornItem, opts?: any) {
+    super(object, opts)
     this._vm = null
+  }
+
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      classes: ['ironsworn', 'sheet', 'item', `theme-${IronswornSettings.theme}`],
+      width: 520,
+      height: 480,
+    })
   }
 
   /* ------------------------------------------------------------------------ */
@@ -21,10 +31,9 @@ export class IronswornVueActorSheet extends ActorSheet {
     if (this._vm) {
       const states = Application.RENDER_STATES
       if (this._state == states.RENDERING || this._state == states.RENDERED) {
-        // Update the Vue app with our updated actor/item/flag data.
-        if (sheetData?.data) Vue.set(this._vm.actor, 'data', sheetData.data)
-        if (sheetData?.actor?.items) Vue.set(this._vm.actor, 'items', sheetData.actor.items)
-        if (sheetData?.actor?.flags) Vue.set(this._vm.actor, 'flags', sheetData.actor.flags)
+        // Update the Vue app with our updated item/flag data.
+        if (sheetData?.data) Vue.set(this._vm.item, 'data', sheetData.data)
+        if (sheetData?.item?.flags) Vue.set(this._vm.item, 'flags', sheetData.item.flags)
         this._updateEditors($(this.element))
         this.activateVueListeners($(this.element), true)
         return this
@@ -44,7 +53,7 @@ export class IronswornVueActorSheet extends ActorSheet {
       })
       // Run Vue's render, assign it to our prop for tracking.
       .then((_rendered) => {
-        // Prepare the actor data.
+        // Prepare the item data.
         const el = this.element.find('.ironsworn-vueport')
         // Render Vue and assign it to prevent later rendering.
         VuePort.render(null, el[0], { data: sheetData }).then((vm) => {
