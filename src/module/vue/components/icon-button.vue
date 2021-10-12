@@ -1,5 +1,5 @@
 <template>
-  <div class="clickable block nogrow" @click="click">
+  <div class="flexrow clickable block nogrow" @click="click">
     <i :class="$concat('fas fa-', icon)"></i>
   </div>
 </template>
@@ -19,9 +19,13 @@ export default {
 </script>
 
 <style lang="less" scoped>
+div {
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+}
 i {
   padding: 3px;
   width: 22px;
-  text-align: center;
 }
 </style>
