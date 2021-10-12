@@ -22,6 +22,7 @@ export class IronswornVueItemSheet extends ItemSheet {
   getData() {
     const data: any = super.getData()
     data.item = this.item.toObject(false)
+    data.item.parent = this.item.parent?.toObject(false)
     data.data = data.item.data
     return data
   }
