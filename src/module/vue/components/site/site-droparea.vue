@@ -56,14 +56,6 @@ export default {
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
-
-    ironswornActor() {
-      return game.actors?.get(this.actor._id)
-    },
-
-    ironswornItem() {
-      return this.ironswornActor.items.get(this.item._id)
-    },
   },
 
   methods: {
@@ -75,13 +67,13 @@ export default {
         content: `<p><strong>${game.i18n.localize(
           'IRONSWORN.ConfirmDelete'
         )}</strong></p>`,
-        yes: () => this.ironswornItem?.delete(),
+        yes: () => this.$item()?.delete(),
         defaultYes: false,
       })
     },
 
     edit() {
-      this.ironswornItem.sheet.render(true)
+      this.$item().sheet.render(true)
     },
 
     openCompendium() {

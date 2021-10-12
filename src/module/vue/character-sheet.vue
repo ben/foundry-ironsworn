@@ -168,12 +168,6 @@ export default {
   },
 
   computed: {
-    foo() {
-      return JSON.stringify(this.actor, null, 2)
-    },
-    ironswornActor() {
-      return game.actors?.get(this.actor._id)
-    },
     progressItems() {
       return [
         ...this.actor.items.filter((x) => x.type === 'vow'),
@@ -187,11 +181,11 @@ export default {
 
   methods: {
     burnMomentum() {
-      this.ironswornActor.burnMomentum()
+      this.$actor().burnMomentum()
     },
 
     rollStat(stat) {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.ironswornActor, stat })
+      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor(), stat })
     },
 
     openCompendium(name) {
