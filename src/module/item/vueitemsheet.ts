@@ -19,6 +19,13 @@ export class IronswornVueItemSheet extends ItemSheet {
     })
   }
 
+  getData() {
+    const data: any = super.getData()
+    data.item = this.item.toObject(false)
+    data.data = data.item.data
+    return data
+  }
+
   /* ------------------------------------------------------------------------ */
   /*  Vue Rendering --------------------------------------------------------- */
   /* ------------------------------------------------------------------------ */
