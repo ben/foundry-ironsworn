@@ -17,3 +17,11 @@ Vue.prototype.$enrichHtml = (text) => {
     `
   )
 }
+
+Vue.prototype.$item = function() {
+  if (this.item?.parent) {
+    const actor = game.actors?.get(this.item.parent._id)
+    return actor?.items.get(this.item._id)
+  }
+  return game.items?.get(this.item._id)
+}

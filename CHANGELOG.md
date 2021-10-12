@@ -3,6 +3,7 @@
 ## In progress
 
 - Vue progress/vow sheet ([#147](https://github.com/ben/foundry-ironsworn/pull/147))
+- Vue bondset sheet ([#148](https://github.com/ben/foundry-ironsworn/pull/148))
 
 ## 1.7.0
 

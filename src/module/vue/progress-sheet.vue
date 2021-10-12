@@ -56,14 +56,6 @@ export default {
   },
 
   computed: {
-    ironswornItem() {
-      if (this.item.parent) {
-        const actor = game.actors?.get(this.item.parent._id)
-        return actor?.items.get(this.item._id)
-      }
-      return game.items?.get(this.item._id)
-    },
-
     editMode() {
       return this.item.flags['foundry-ironsworn']?.['edit-mode']
     },
@@ -75,17 +67,17 @@ export default {
 
   methods: {
     setRank(rank) {
-      this.ironswornItem.update({ data: { rank } })
+      this.$item().update({ data: { rank } })
     },
 
     clearProgress() {
-      this.ironswornItem.update({ 'data.current': 0 })
+      this.$item().update({ 'data.current': 0 })
     },
 
     markProgress() {
       const increment = CONFIG.IRONSWORN.RankIncrements[this.item.data.rank]
       const newValue = Math.min(this.item.data.current + increment, 40)
-      this.ironswornItem.update({ 'data.current': newValue })
+      this.$item().update({ 'data.current': newValue })
     },
   },
 }
