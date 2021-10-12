@@ -83,10 +83,6 @@ export default {
   },
 
   computed: {
-    ironswornActor() {
-      return game.actors?.get(this.actor._id)
-    },
-
     progressItems() {
       return [
         ...this.actor.items.filter((x) => x.type === 'vow'),
@@ -97,13 +93,13 @@ export default {
 
   methods: {
     setSupply(_ev, value) {
-      this.ironswornActor.update({ data: { supply: value } })
+      this.$actor().update({ data: { supply: value } })
       CONFIG.IRONSWORN.IronswornSettings.maybeSetGlobalSupply(value)
     },
 
     rollSupply() {
       CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.ironswornActor,
+        actor: this.$actor(),
         stat: 'supply',
       })
     },

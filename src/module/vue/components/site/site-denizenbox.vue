@@ -48,10 +48,6 @@ export default {
   },
 
   computed: {
-    ironswornActor() {
-      return game.actors?.get(this.actor._id)
-    },
-
     denizen() {
       return this.actor.data.denizens[this.idx]
     },
@@ -64,16 +60,16 @@ export default {
   methods: {
     input(ev) {
       const val = ev.currentTarget.value || ''
-      const denizens = Object.values(this.ironswornActor.data.data.denizens)
+      const denizens = Object.values(this.$actor().data.data.denizens)
       denizens[this.idx].description = val
-      this.ironswornActor.update({ data: { denizens } })
+      this.$actor().update({ data: { denizens } })
     },
 
     focus() {
       console.log('focusing', this)
       this.focused = true
       this.$refs.description.focus()
-      setTimeout(() => this.focused = false, 5000)
+      setTimeout(() => (this.focused = false), 5000)
     },
   },
 }

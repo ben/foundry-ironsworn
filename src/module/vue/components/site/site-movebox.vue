@@ -14,10 +14,6 @@ export default {
   },
 
   computed: {
-    ironswornActor() {
-      return game.actors?.get(this.actor._id)
-    },
-
     i18nKey() {
       return `IRONSWORN.MoveContents.${this.move}.title`
     },
@@ -26,7 +22,7 @@ export default {
   methods: {
     async click() {
       const move = await CONFIG.IRONSWORN.moveDataByName(this.move)
-      CONFIG.IRONSWORN.RollDialog.show({ move, site: this.ironswornActor })
+      CONFIG.IRONSWORN.RollDialog.show({ move, site: this.$actor() })
     },
   },
 }

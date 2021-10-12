@@ -25,3 +25,7 @@ Vue.prototype.$item = function() {
   }
   return game.items?.get(this.item._id)
 }
+
+Vue.prototype.$actor = function () {
+  return game.actors?.get(this.actor?._id)
+}

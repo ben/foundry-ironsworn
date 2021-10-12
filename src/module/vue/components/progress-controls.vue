@@ -21,12 +21,6 @@ export default {
     actor: Object,
   },
 
-  computed: {
-    ironswornActor() {
-      return game.actors?.get(this.actor._id)
-    },
-  },
-
   methods: {
     async addProgressItem(type) {
       const itemData = {
@@ -34,7 +28,7 @@ export default {
         type,
         sort: 9000000,
       }
-      const item = await Item.create(itemData, { parent: this.ironswornActor })
+      const item = await Item.create(itemData, { parent: this.$actor() })
       item.sheet.render(true)
     },
 
