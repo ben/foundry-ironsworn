@@ -37,6 +37,15 @@
     <div class="flexrow track nogrow" style="margin-bottom: 1em">
       <progress-track :ticks="item.data.current" />
     </div>
+
+    <!-- DESCRIPTION -->
+    <editor
+      :owner="owner"
+      target="data.description"
+      button="true"
+      editable="true"
+      :content="item.data.description"
+    />
   </div>
 </template>
 
