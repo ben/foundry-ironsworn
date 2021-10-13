@@ -5,6 +5,7 @@
 - Vue progress/vow sheet ([#147](https://github.com/ben/foundry-ironsworn/pull/147))
 - Vue bondset sheet ([#148](https://github.com/ben/foundry-ironsworn/pull/148))
 - Vue helper for finding a sheet's actor ([#149](https://github.com/ben/foundry-ironsworn/pull/149))
+- Fix scrollbars in all browsers ([#151](https://github.com/ben/foundry-ironsworn/pull/151))
 
 ## 1.7.0
 
