@@ -22,6 +22,7 @@ import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
 import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
+import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
 import { BondsetSheet } from './module/item/bondset/bondsetsheet'
 import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
 import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvethemeordomainsheet'
@@ -97,6 +98,10 @@ Hooks.once('init', async () => {
     types: ['asset'],
     label: 'Asset sheet',
     makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', AssetSheetV2, {
+    types: ['asset'],
+    label: 'Asset sheet v2',
   })
 
   Items.registerSheet('ironsworn', BondsetSheet, {
