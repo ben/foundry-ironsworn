@@ -11,7 +11,7 @@
       <span v-else>{{ item.data.description }}</span>
     </p>
 
-    <h4 class="nogrow">{{ $t('IRONSWORN.Fields') }}</h4>
+    <h3 class="nogrow">{{ $t('IRONSWORN.Fields') }}</h3>
     <div class="boxgroup nogrow">
       <div
         class="flexrow boxrow nogrow fieldrow"
@@ -39,6 +39,17 @@
         </div>
       </div>
     </div>
+
+    <h3 class="nogrow">{{ $t('IRONSWORN.Abilities') }}</h3>
+    <div class="flexrow" v-for="(ability, i) in item.data.abilities" :key="i">
+      <input
+        type="checkbox"
+        :checked="ability.enabled"
+        @change="markAbility(i)"
+      />
+      <input v-if="editMode" type="text" v-model="ability.description" />
+      <div v-else v-html="$enrichHtml(ability.description)" />
+    </div>
   </div>
 </template>
 
@@ -50,6 +61,9 @@
     padding: 0 0.5em;
     margin: 3px;
   }
+}
+h3 {
+  margin-top: 1em;
 }
 </style>
 
@@ -77,7 +91,16 @@ export default {
     'item.data.fields': {
       deep: true,
       handler: CONFIG.IRONSWORN._.debounce(function () {
-        this.$item().update({ data: { fields: this.item.data.fields } })
+        const fields = Object.values(this.item.data.fields)
+        this.$item().update({ data: { fields } })
+      }, 1000),
+    },
+
+    'item.data.abilities': {
+      deep: true,
+      handler: CONFIG.IRONSWORN._.debounce(function () {
+        const abilities = Object.values(this.item.data.abilities)
+        this.$item().update({ data: { abilities } })
       }, 1000),
     },
   },
@@ -93,6 +116,12 @@ export default {
       const fields = Object.values(this.item.data.fields)
       fields.splice(idx, 1)
       this.$item().update({ data: { fields } })
+    },
+
+    markAbility(idx) {
+      const abilities = Object.values(this.item.data.abilities)
+      abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
+      this.$item().update({ data: { abilities } })
     },
   },
 }
