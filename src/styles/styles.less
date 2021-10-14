@@ -1,3 +1,18 @@
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 1px #999 inset;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  outline: none;
+  border-radius: 3px;
+  background: #444;
+  border: 1px solid #222;
+}
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: #444 rgba(0, 0, 0, 0.1);
+}
+
 .ironsworn {
   h1,
   h2,
@@ -11,7 +26,7 @@
   .window-content {
     height: 100%;
     padding: 5px;
-    overflow-y: scroll;
+    scrollbar-width: thin;
   }
 
   .sheet-area {
@@ -115,6 +130,7 @@
   .item-list {
     flex: 1 0 100px;
     overflow-y: scroll;
+    scrollbar-width: thin;
 
     .move {
       overflow-x: hidden;
@@ -143,6 +159,7 @@
   .vertical-v2 {
     writing-mode: vertical-lr;
     border: none;
+    width: 1.25rem;
   }
 
   .stack {
