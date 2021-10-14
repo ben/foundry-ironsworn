@@ -50,6 +50,31 @@
       <input v-if="editMode" type="text" v-model="ability.description" />
       <div v-else v-html="$enrichHtml(ability.description)" />
     </div>
+
+    <h3 class="nogrow">{{ $t('IRONSWORN.Options') }}</h3>
+    <div class="boxgroup nogrow">
+      <div
+        class="flexrow boxrow fieldrow"
+        v-for="(option, i) in item.data.exclusiveOptions"
+        :key="i"
+      >
+        <div class="box">
+          <input
+            type="checkbox"
+            class="nogrow"
+            :checked="option.selected"
+            @change="markOption(i)"
+          />
+          <input type="text" v-if="editMode" v-model="option.name" />
+          <p v-else>{{ option.name }}</p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flexrow"
+      v-for="(option, i) in item.data.exclusiveOptions"
+      :key="i"
+    ></div>
   </div>
 </template>
 
@@ -117,6 +142,23 @@ export default {
         }
       }, 1000),
     },
+
+    'item.data.exclusiveOptions': {
+      deep: true,
+      handler: CONFIG.IRONSWORN._.debounce(function () {
+        if (
+          !CONFIG.IRONSWORN._.isEqual(
+            this.item.data.exclusiveOptions,
+            this.$item().data.data.exclusiveOptions
+          )
+        ) {
+          const exclusiveOptions = Object.values(
+            this.item.data.exclusiveOptions
+          )
+          this.$item().update({ data: { exclusiveOptions } })
+        }
+      }, 1000),
+    },
   },
 
   methods: {
@@ -136,6 +178,18 @@ export default {
       const abilities = Object.values(this.item.data.abilities)
       abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
       this.$item().update({ data: { abilities } })
+    },
+
+    markOption(idx) {
+      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
+
+      for (let i = 0; i < exclusiveOptions.length; i++) {
+        exclusiveOptions[i] = {
+          ...exclusiveOptions[i],
+          selected: i === idx,
+        }
+      }
+      this.$item().update({ data: { exclusiveOptions } })
     },
   },
 }
