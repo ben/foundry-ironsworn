@@ -52,29 +52,33 @@
     </div>
 
     <h3 class="nogrow">{{ $t('IRONSWORN.Options') }}</h3>
-    <div class="boxgroup nogrow">
-      <div
-        class="flexrow boxrow fieldrow"
-        v-for="(option, i) in item.data.exclusiveOptions"
-        :key="i"
-      >
-        <div class="box">
-          <input
-            type="checkbox"
-            class="nogrow"
-            :checked="option.selected"
-            @change="markOption(i)"
-          />
-          <input type="text" v-if="editMode" v-model="option.name" />
-          <p v-else>{{ option.name }}</p>
+    <div class="flexcol stack nogrow">
+      <div v-if="editMode">
+        <div
+          class="stack-row flexrow"
+          v-for="(option, i) in item.data.exclusiveOptions"
+          :key="i"
+        >
+          <input type="text" v-model="option.name" />
+          <icon-button icon="trash" @click="deleteOption(i)" />
+        </div>
+        <div
+          class="stack-row clickable block"
+          @click="addOption"
+          style="min-height: 1.5rem; align-items: center"
+        >
+          <i class="fas fa-plus" />
         </div>
       </div>
+      <div v-else>
+        <asset-exclusiveoption
+          v-for="(opt, i) in item.data.exclusiveOptions"
+          :key="i"
+          :opt="opt"
+          @click="markOption(i)"
+        />
+      </div>
     </div>
-    <div
-      class="flexrow"
-      v-for="(option, i) in item.data.exclusiveOptions"
-      :key="i"
-    ></div>
   </div>
 </template>
 
@@ -93,7 +97,9 @@ h3 {
 </style>
 
 <script>
+import iconButton from './components/icon-button.vue'
 export default {
+  components: { iconButton },
   props: {
     item: Object,
   },
@@ -162,7 +168,12 @@ export default {
   },
 
   methods: {
+    enterEditMode() {
+      this.$item().setFlag('foundry-ironsworn', 'edit-mode', true)
+    },
+
     addField() {
+      this.enterEditMode()
       const fields = Object.values(this.item.data.fields)
       fields.push({ name: ' ', value: ' ' })
       this.$item().update({ data: { fields } })
@@ -189,6 +200,19 @@ export default {
           selected: i === idx,
         }
       }
+      this.$item().update({ data: { exclusiveOptions } })
+    },
+
+    deleteOption(idx) {
+      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
+      exclusiveOptions.splice(idx, 1)
+      this.$item().update({ data: { exclusiveOptions } })
+    },
+
+    addOption() {
+      this.enterEditMode()
+      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
+      exclusiveOptions.push({ name: ' ', value: ' ' })
       this.$item().update({ data: { exclusiveOptions } })
     },
   },
