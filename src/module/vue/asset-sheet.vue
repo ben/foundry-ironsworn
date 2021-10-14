@@ -91,16 +91,30 @@ export default {
     'item.data.fields': {
       deep: true,
       handler: CONFIG.IRONSWORN._.debounce(function () {
-        const fields = Object.values(this.item.data.fields)
-        this.$item().update({ data: { fields } })
+        if (
+          !CONFIG.IRONSWORN._.isEqual(
+            this.item.data.fields,
+            this.$item().data.data.fields
+          )
+        ) {
+          const fields = Object.values(this.item.data.fields)
+          this.$item().update({ data: { fields } })
+        }
       }, 1000),
     },
 
     'item.data.abilities': {
       deep: true,
       handler: CONFIG.IRONSWORN._.debounce(function () {
-        const abilities = Object.values(this.item.data.abilities)
-        this.$item().update({ data: { abilities } })
+        if (
+          !CONFIG.IRONSWORN._.isEqual(
+            this.item.data.abilities,
+            this.$item().data.data.abilities
+          )
+        ) {
+          const abilities = Object.values(this.item.data.abilities)
+          this.$item().update({ data: { abilities } })
+        }
       }, 1000),
     },
   },
