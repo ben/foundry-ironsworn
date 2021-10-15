@@ -1,8 +1,11 @@
 import { IronswornVueItemSheet } from '../vueitemsheet'
 
 export class AssetSheetV2 extends IronswornVueItemSheet {
-  get template() {
-    return 'systems/foundry-ironsworn/templates/item/assetv2.hbs'
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      template: 'systems/foundry-ironsworn/templates/item/assetv2.hbs',
+      height: 650,
+    })
   }
 
   _getHeaderButtons() {
