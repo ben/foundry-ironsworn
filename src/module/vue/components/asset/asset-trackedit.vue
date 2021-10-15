@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="flexrow" style="align-items: baseline">
-      <label>
+    <div class="flexrow" style="align-items: center">
+      <label class="flexrow" style="align-items: center">
         <input
           type="checkbox"
           class="nogrow"
