@@ -43,15 +43,7 @@
 
     <!-- ABILITIES -->
     <h3>{{ $t('IRONSWORN.Abilities') }}</h3>
-    <div class="flexrow" v-for="(ability, i) in item.data.abilities" :key="i">
-      <input
-        type="checkbox"
-        :checked="ability.enabled"
-        @change="markAbility(i)"
-      />
-      <input v-if="editMode" type="text" v-model="ability.description" />
-      <div v-else v-html="$enrichHtml(ability.description)" />
-    </div>
+    <asset-abilitiesedit :item="item" />
 
     <!-- OPTIONS -->
     <div v-if="hasOptions || editMode">
@@ -109,7 +101,7 @@ export default {
 
     hasOptions() {
       return Object.values(this.item.data.exclusiveOptions || []).length > 0
-    }
+    },
   },
 
   watch: {
@@ -124,11 +116,6 @@ export default {
     'item.data.fields': {
       deep: true,
       handler: debouncedUpdate('fields'),
-    },
-
-    'item.data.abilities': {
-      deep: true,
-      handler: debouncedUpdate('abilities'),
     },
   },
 
