@@ -1,8 +1,8 @@
 <template>
   <boxrow
     :min="0"
-    :max="asset.data.track.max"
-    :current="asset.data.track.current"
+    :max="item.data.track.max"
+    :current="item.data.track.current"
     @click="click"
   />
 </template>
@@ -11,14 +11,12 @@
 export default {
   props: {
     actor: Object,
-    asset: Object,
+    item: Object,
   },
 
   methods: {
     click(_ev, value) {
-      const actor = game.actors?.get(this.actor._id)
-      const item = actor.items.get(this.asset._id)
-      item?.update({
+      this.$item()?.update({
         data: {
           track: {
             current: value,
