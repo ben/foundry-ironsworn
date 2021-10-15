@@ -18,10 +18,12 @@ Vue.prototype.$enrichHtml = (text) => {
   )
 }
 
-Vue.prototype.$item = function() {
-  if (this.item?.parent) {
-    const actor = game.actors?.get(this.item.parent._id)
-    return actor?.items.get(this.item._id)
+Vue.prototype.$item = function () {
+  const actorId = this.item?.parent?._id ?? this.actor?._id
+  if (actorId) {
+    const actor = game.actors?.get(actorId)
+    const item = actor?.items.get(this.item._id)
+    if (item) return item
   }
   return game.items?.get(this.item._id)
 }
