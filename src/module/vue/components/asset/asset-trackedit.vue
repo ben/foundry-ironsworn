@@ -41,15 +41,15 @@ export default {
 
   methods: {
     enableClick(ev) {
-      this.$item().update({ 'data.track.enabled': ev.target.checked })
+      this.$item.update({ 'data.track.enabled': ev.target.checked })
     },
 
     updateName() {
-      this.$item().update({ 'data.track.name': this.item.data.track.name })
+      this.$item.update({ 'data.track.name': this.item.data.track.name })
     },
 
     updateMax() {
-      this.$item().update({ 'data.track.max': this.item.data.track.max })
+      this.$item.update({ 'data.track.max': this.item.data.track.max })
     },
   },
 }

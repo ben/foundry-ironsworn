@@ -67,17 +67,17 @@ export default {
 
   methods: {
     setRank(rank) {
-      this.$item().update({ data: { rank } })
+      this.$item.update({ data: { rank } })
     },
 
     clearProgress() {
-      this.$item().update({ 'data.current': 0 })
+      this.$item.update({ 'data.current': 0 })
     },
 
     markProgress() {
       const increment = CONFIG.IRONSWORN.RankIncrements[this.item.data.rank]
       const newValue = Math.min(this.item.data.current + increment, 40)
-      this.$item().update({ 'data.current': newValue })
+      this.$item.update({ 'data.current': newValue })
     },
   },
 }

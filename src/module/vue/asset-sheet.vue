@@ -87,11 +87,11 @@ function debouncedUpdate(key) {
     if (
       !CONFIG.IRONSWORN._.isEqual(
         this.item.data[key],
-        this.$item().data.data[key]
+        this.$item.data.data[key]
       )
     ) {
       const newValue = Object.values(this.item.data[key])
-      this.$item().update({ data: { [key]: newValue } })
+      this.$item.update({ data: { [key]: newValue } })
     }
   }, 1000)
 }
@@ -114,11 +114,11 @@ export default {
 
   watch: {
     'item.name': CONFIG.IRONSWORN._.debounce(function () {
-      this.$item().update({ name: this.item.name })
+      this.$item.update({ name: this.item.name })
     }, 1000),
 
     'item.data.description': CONFIG.IRONSWORN._.debounce(function () {
-      this.$item().update({ data: { description: this.item.data.description } })
+      this.$item.update({ data: { description: this.item.data.description } })
     }, 1000),
 
     'item.data.fields': {
@@ -134,26 +134,20 @@ export default {
 
   methods: {
     enterEditMode() {
-      this.$item().setFlag('foundry-ironsworn', 'edit-mode', true)
+      this.$item.setFlag('foundry-ironsworn', 'edit-mode', true)
     },
 
     addField() {
       this.enterEditMode()
       const fields = Object.values(this.item.data.fields)
       fields.push({ name: ' ', value: ' ' })
-      this.$item().update({ data: { fields } })
+      this.$item.update({ data: { fields } })
     },
 
     deleteField(idx) {
       const fields = Object.values(this.item.data.fields)
       fields.splice(idx, 1)
-      this.$item().update({ data: { fields } })
-    },
-
-    markAbility(idx) {
-      const abilities = Object.values(this.item.data.abilities)
-      abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
-      this.$item().update({ data: { abilities } })
+      this.$item.update({ data: { fields } })
     },
   },
 }

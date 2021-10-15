@@ -60,9 +60,9 @@ export default {
   methods: {
     input(ev) {
       const val = ev.currentTarget.value || ''
-      const denizens = Object.values(this.$actor().data.data.denizens)
+      const denizens = Object.values(this.$actor.data.data.denizens)
       denizens[this.idx].description = val
-      this.$actor().update({ data: { denizens } })
+      this.$actor.update({ data: { denizens } })
     },
 
     focus() {

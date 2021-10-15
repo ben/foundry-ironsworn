@@ -181,11 +181,11 @@ export default {
 
   methods: {
     burnMomentum() {
-      this.$actor().burnMomentum()
+      this.$actor.burnMomentum()
     },
 
     rollStat(stat) {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor(), stat })
+      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
     },
 
     openCompendium(name) {

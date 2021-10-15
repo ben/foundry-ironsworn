@@ -16,7 +16,7 @@ export default {
 
   methods: {
     click(_ev, value) {
-      this.$item()?.update({
+      this.$item?.update({
         data: {
           track: {
             current: value,

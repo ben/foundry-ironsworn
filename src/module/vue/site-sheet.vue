@@ -141,14 +141,14 @@ export default {
       return this.actor.items.find((x) => x.type === 'delve-theme')
     },
     ironswornTheme() {
-      return this.$actor().items.find((x) => x.id === this.theme._id)
+      return this.$actor.items.find((x) => x.id === this.theme._id)
     },
 
     domain() {
       return this.actor.items.find((x) => x.type === 'delve-domain')
     },
     ironswornDomain() {
-      return this.$actor().items.find((x) => x.id === this.domain._id)
+      return this.$actor.items.find((x) => x.id === this.domain._id)
     },
 
     hasThemeAndDomain() {
@@ -162,17 +162,17 @@ export default {
 
   methods: {
     setRank(rank) {
-      this.$actor().update({ data: { rank } })
+      this.$actor.update({ data: { rank } })
     },
 
     clearProgress() {
-      this.$actor().update({ 'data.current': 0 })
+      this.$actor.update({ 'data.current': 0 })
     },
 
     markProgress() {
       const increment = CONFIG.IRONSWORN.RankIncrements[this.actor.data.rank]
       const newValue = Math.min(this.actor.data.current + increment, 40)
-      this.$actor().update({ 'data.current': newValue })
+      this.$actor.update({ 'data.current': newValue })
     },
 
     openFoeCompendium() {
@@ -205,20 +205,20 @@ export default {
     async randomDenizen() {
       const roll = await new Roll('1d100').evaluate({ async: true })
       const result = roll.total
-      const denizen = this.$actor().data.data.denizens.find(
+      const denizen = this.$actor.data.data.denizens.find(
         (x) => x.low <= result && x.high >= result
       )
-      const idx = this.$actor().data.data.denizens.indexOf(denizen)
+      const idx = this.$actor.data.data.denizens.indexOf(denizen)
       if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
       await CONFIG.IRONSWORN.createIronswornDenizenChat({
         roll,
         denizen,
-        site: this.$actor(),
+        site: this.$actor,
       })
 
       // Denizen slot is empty; set focus and add a class
       if (!denizen?.description) {
-        await this.$actor().setFlag(
+        await this.$actor.setFlag(
           'foundry-ironsworn',
           'edit-mode',
           true

@@ -42,7 +42,7 @@ export default {
 
   methods: {
     enterEditMode() {
-      this.$item().setFlag('foundry-ironsworn', 'edit-mode', true)
+      this.$item.setFlag('foundry-ironsworn', 'edit-mode', true)
     },
 
     markOption(idx) {
@@ -54,12 +54,12 @@ export default {
           selected: i === idx,
         }
       }
-      this.$item().update({ data: { exclusiveOptions } })
+      this.$item.update({ data: { exclusiveOptions } })
     },
 
     updateOptionName(idx) {
       const { exclusiveOptions } = this.item.data
-      this.$item().update({ data: { exclusiveOptions } })
+      this.$item.update({ data: { exclusiveOptions } })
     },
 
     deleteOption(idx) {
@@ -69,7 +69,7 @@ export default {
       if (needNewSelection && exclusiveOptions[0]) {
         exclusiveOptions[0].selected = true
       }
-      this.$item().update({ data: { exclusiveOptions } })
+      this.$item.update({ data: { exclusiveOptions } })
     },
 
     addOption() {
@@ -80,7 +80,7 @@ export default {
         value: ' ',
         selected: exclusiveOptions.every((x) => !x.selected),
       })
-      this.$item().update({ data: { exclusiveOptions } })
+      this.$item.update({ data: { exclusiveOptions } })
     },
   },
 }

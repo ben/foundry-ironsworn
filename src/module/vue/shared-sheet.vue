@@ -93,13 +93,13 @@ export default {
 
   methods: {
     setSupply(_ev, value) {
-      this.$actor().update({ data: { supply: value } })
+      this.$actor.update({ data: { supply: value } })
       CONFIG.IRONSWORN.IronswornSettings.maybeSetGlobalSupply(value)
     },
 
     rollSupply() {
       CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.$actor(),
+        actor: this.$actor,
         stat: 'supply',
       })
     },
