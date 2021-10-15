@@ -83,17 +83,13 @@ export default {
     },
   },
 
-  watch: {
-    'item.name': CONFIG.IRONSWORN._.debounce(function () {
-      this.$item.update({ name: this.item.name })
-    }, 1000),
-
-    'item.data.description': CONFIG.IRONSWORN._.debounce(function () {
-      this.$item.update({ data: { description: this.item.data.description } })
-    }, 1000),
-  },
-
   methods: {
+    setName() {
+      this.$item.update({ name: this.item.name })
+    },
+    setDescription() {
+      this.$item.update({ data: { description: this.item.data.description } })
+    },
   },
 }
 </script>
