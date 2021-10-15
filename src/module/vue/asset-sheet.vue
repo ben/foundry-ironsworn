@@ -1,19 +1,19 @@
 <template>
-  <div class="flexcol">
-    <header class="sheet-header nogrow">
+  <div>
+    <header class="sheet-header">
       <h1 class="charname">
         <input type="text" v-model="item.name" />
       </h1>
     </header>
 
-    <p class="nogrow">
+    <p>
       <input v-if="editMode" type="text" v-model="item.data.description" />
       <span v-else>{{ item.data.description }}</span>
     </p>
 
     <!-- FIELDS -->
-    <h3 class="nogrow">{{ $t('IRONSWORN.Fields') }}</h3>
-    <div class="boxgroup nogrow">
+    <h3>{{ $t('IRONSWORN.Fields') }}</h3>
+    <div class="boxgroup">
       <div
         class="flexrow boxrow nogrow fieldrow"
         v-for="(field, i) in item.data.fields"
@@ -42,7 +42,7 @@
     </div>
 
     <!-- ABILITIES -->
-    <h3 class="nogrow">{{ $t('IRONSWORN.Abilities') }}</h3>
+    <h3>{{ $t('IRONSWORN.Abilities') }}</h3>
     <div class="flexrow" v-for="(ability, i) in item.data.abilities" :key="i">
       <input
         type="checkbox"
@@ -54,8 +54,8 @@
     </div>
 
     <!-- OPTIONS -->
-    <h3 class="nogrow">{{ $t('IRONSWORN.Options') }}</h3>
-    <div class="flexcol stack nogrow">
+    <h3>{{ $t('IRONSWORN.Options') }}</h3>
+    <div class="flexcol stack">
       <div v-if="editMode">
         <div
           class="stack-row flexrow"
@@ -84,24 +84,8 @@
     </div>
 
     <!-- TRACK -->
-    <h3 class="nogrow">{{ $t('IRONSWORN.Track') }}</h3>
-    <div class="flexrow" style="align-items: baseline">
-      <label>
-        <input
-          type="checkbox"
-          class="nogrow"
-          :checked="item.data.track.enabled"
-        />
-        <span>{{ $t('IRONSWORN.Enabled') }}</span>
-      </label>
-      <span style="flex-grow: 0; margin: 0 5px">{{
-        $t('IRONSWORN.Name')
-      }}</span>
-      <input type="text" v-model="item.data.track.name" />
-      <span style="flex-grow: 0; margin: 0 5px">{{ $t('IRONSWORN.Max') }}</span>
-      <input type="number" v-model.number="item.data.track.max" />
-    </div>
-    <asset-track :actor="item.parent" :item="item" />
+    <h3>{{ $t('IRONSWORN.Track') }}</h3>
+    <asset-trackprops :item="item" />
   </div>
 </template>
 
@@ -121,6 +105,21 @@ h3 {
 
 <script>
 import iconButton from './components/icon-button.vue'
+
+function debouncedUpdate(key) {
+  return CONFIG.IRONSWORN._.debounce(function () {
+    if (
+      !CONFIG.IRONSWORN._.isEqual(
+        this.item.data[key],
+        this.$item().data.data[key]
+      )
+    ) {
+      const newValue = Object.values(this.item.data[key])
+      this.$item().update({ data: { [key]: newValue } })
+    }
+  }, 1000)
+}
+
 export default {
   components: { iconButton },
   props: {
@@ -144,49 +143,17 @@ export default {
 
     'item.data.fields': {
       deep: true,
-      handler: CONFIG.IRONSWORN._.debounce(function () {
-        if (
-          !CONFIG.IRONSWORN._.isEqual(
-            this.item.data.fields,
-            this.$item().data.data.fields
-          )
-        ) {
-          const fields = Object.values(this.item.data.fields)
-          this.$item().update({ data: { fields } })
-        }
-      }, 1000),
+      handler: debouncedUpdate('fields'),
     },
 
     'item.data.abilities': {
       deep: true,
-      handler: CONFIG.IRONSWORN._.debounce(function () {
-        if (
-          !CONFIG.IRONSWORN._.isEqual(
-            this.item.data.abilities,
-            this.$item().data.data.abilities
-          )
-        ) {
-          const abilities = Object.values(this.item.data.abilities)
-          this.$item().update({ data: { abilities } })
-        }
-      }, 1000),
+      handler: debouncedUpdate('abilities') ,
     },
 
     'item.data.exclusiveOptions': {
       deep: true,
-      handler: CONFIG.IRONSWORN._.debounce(function () {
-        if (
-          !CONFIG.IRONSWORN._.isEqual(
-            this.item.data.exclusiveOptions,
-            this.$item().data.data.exclusiveOptions
-          )
-        ) {
-          const exclusiveOptions = Object.values(
-            this.item.data.exclusiveOptions
-          )
-          this.$item().update({ data: { exclusiveOptions } })
-        }
-      }, 1000),
+      handler: debouncedUpdate('exclusiveOptions'),
     },
   },
 
