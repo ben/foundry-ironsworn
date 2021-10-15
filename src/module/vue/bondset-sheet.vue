@@ -22,18 +22,18 @@ export default {
     deleteBond(i) {
       const bonds = Object.values(this.item.data.bonds)
       bonds.splice(i, 1)
-      this.$item().update({ data: { bonds } })
+      this.$item.update({ data: { bonds } })
     },
 
     addBond() {
       const bonds = Object.values(this.item.data.bonds)
       bonds.push({ name: '', notes: '' })
-      this.$item().update({ data: { bonds } })
+      this.$item.update({ data: { bonds } })
     },
 
     save() {
       const bonds = Object.values(this.item.data.bonds)
-      this.$item().update({ data: { bonds } })
+      this.$item.update({ data: { bonds } })
     },
   },
 }

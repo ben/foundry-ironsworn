@@ -28,7 +28,7 @@ export default {
         type,
         sort: 9000000,
       }
-      const item = await Item.create(itemData, { parent: this.$actor() })
+      const item = await Item.create(itemData, { parent: this.$actor })
       item.sheet.render(true)
     },
 

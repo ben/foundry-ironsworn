@@ -24,7 +24,7 @@ export default {
     async click() {
       if (this.disabled) return
       const move = await CONFIG.IRONSWORN.moveDataByName(this.move)
-      CONFIG.IRONSWORN.RollDialog.show({ move, site: this.$actor() })
+      CONFIG.IRONSWORN.RollDialog.show({ move, site: this.$actor })
     },
   },
 }

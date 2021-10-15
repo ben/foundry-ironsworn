@@ -36,7 +36,7 @@
           >
             {{ asset.data.track.name }}
           </h4>
-          <asset-track :actor="actor" :asset="asset" />
+          <asset-track :actor="actor" :item="asset" />
         </div>
 
         <div

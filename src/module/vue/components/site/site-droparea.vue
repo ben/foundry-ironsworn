@@ -67,13 +67,13 @@ export default {
         content: `<p><strong>${game.i18n.localize(
           'IRONSWORN.ConfirmDelete'
         )}</strong></p>`,
-        yes: () => this.$item()?.delete(),
+        yes: () => this.$item?.delete(),
         defaultYes: false,
       })
     },
 
     edit() {
-      this.$item().sheet.render(true)
+      this.$item.sheet.render(true)
     },
 
     openCompendium() {
