@@ -2,44 +2,23 @@
   <div>
     <header class="sheet-header">
       <h1 class="charname">
-        <input type="text" v-model="item.name" />
+        <input type="text" v-model="item.name" @blur="setName" />
       </h1>
     </header>
 
     <p>
-      <input v-if="editMode" type="text" v-model="item.data.description" />
+      <input
+        v-if="editMode"
+        type="text"
+        v-model="item.data.description"
+        @blur="setDescription"
+      />
       <span v-else>{{ item.data.description }}</span>
     </p>
 
     <!-- FIELDS -->
     <h3>{{ $t('IRONSWORN.Fields') }}</h3>
-    <div class="boxgroup">
-      <div
-        class="flexrow boxrow nogrow fieldrow"
-        v-for="(field, i) in item.data.fields"
-        :key="i"
-      >
-        <div class="box flexrow" style="align-items: center">
-          <input v-if="editMode" type="text" v-model="field.name" />
-          <p v-else>{{ field.name }}</p>
-        </div>
-        <div class="box flexrow">
-          <input type="text" v-model="field.value" />
-        </div>
-        <div v-if="editMode" class="box flexrow nogrow">
-          <icon-button icon="trash" @click="deleteField(i)" />
-        </div>
-      </div>
-      <div class="flexrow boxrow nogrow">
-        <div
-          class="box clickable block"
-          @click="addField"
-          style="min-height: 1.5rem; align-items: center"
-        >
-          <i class="fas fa-plus" />
-        </div>
-      </div>
-    </div>
+    <asset-fieldsedit :item="item" />
 
     <!-- ABILITIES -->
     <h3>{{ $t('IRONSWORN.Abilities') }}</h3>
@@ -112,30 +91,9 @@ export default {
     'item.data.description': CONFIG.IRONSWORN._.debounce(function () {
       this.$item.update({ data: { description: this.item.data.description } })
     }, 1000),
-
-    'item.data.fields': {
-      deep: true,
-      handler: debouncedUpdate('fields'),
-    },
   },
 
   methods: {
-    enterEditMode() {
-      this.$item.setFlag('foundry-ironsworn', 'edit-mode', true)
-    },
-
-    addField() {
-      this.enterEditMode()
-      const fields = Object.values(this.item.data.fields)
-      fields.push({ name: ' ', value: ' ' })
-      this.$item.update({ data: { fields } })
-    },
-
-    deleteField(idx) {
-      const fields = Object.values(this.item.data.fields)
-      fields.splice(idx, 1)
-      this.$item.update({ data: { fields } })
-    },
   },
 }
 </script>
