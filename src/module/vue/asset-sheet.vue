@@ -11,6 +11,7 @@
       <span v-else>{{ item.data.description }}</span>
     </p>
 
+    <!-- FIELDS -->
     <h3 class="nogrow">{{ $t('IRONSWORN.Fields') }}</h3>
     <div class="boxgroup nogrow">
       <div
@@ -40,6 +41,7 @@
       </div>
     </div>
 
+    <!-- ABILITIES -->
     <h3 class="nogrow">{{ $t('IRONSWORN.Abilities') }}</h3>
     <div class="flexrow" v-for="(ability, i) in item.data.abilities" :key="i">
       <input
@@ -51,6 +53,7 @@
       <div v-else v-html="$enrichHtml(ability.description)" />
     </div>
 
+    <!-- OPTIONS -->
     <h3 class="nogrow">{{ $t('IRONSWORN.Options') }}</h3>
     <div class="flexcol stack nogrow">
       <div v-if="editMode">
@@ -79,6 +82,26 @@
         />
       </div>
     </div>
+
+    <!-- TRACK -->
+    <h3 class="nogrow">{{ $t('IRONSWORN.Track') }}</h3>
+    <div class="flexrow" style="align-items: baseline">
+      <label>
+        <input
+          type="checkbox"
+          class="nogrow"
+          :checked="item.data.track.enabled"
+        />
+        <span>{{ $t('IRONSWORN.Enabled') }}</span>
+      </label>
+      <span style="flex-grow: 0; margin: 0 5px">{{
+        $t('IRONSWORN.Name')
+      }}</span>
+      <input type="text" v-model="item.data.track.name" />
+      <span style="flex-grow: 0; margin: 0 5px">{{ $t('IRONSWORN.Max') }}</span>
+      <input type="number" v-model.number="item.data.track.max" />
+    </div>
+    <asset-track :actor="item.parent" :item="item" />
   </div>
 </template>
 
