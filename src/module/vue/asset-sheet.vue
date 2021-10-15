@@ -61,7 +61,7 @@
 
     <!-- TRACK -->
     <h3>{{ $t('IRONSWORN.Track') }}</h3>
-    <asset-trackprops :item="item" />
+    <asset-trackedit :item="item" />
   </div>
 </template>
 
@@ -154,31 +154,6 @@ export default {
       const abilities = Object.values(this.item.data.abilities)
       abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
       this.$item().update({ data: { abilities } })
-    },
-
-    markOption(idx) {
-      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
-
-      for (let i = 0; i < exclusiveOptions.length; i++) {
-        exclusiveOptions[i] = {
-          ...exclusiveOptions[i],
-          selected: i === idx,
-        }
-      }
-      this.$item().update({ data: { exclusiveOptions } })
-    },
-
-    deleteOption(idx) {
-      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
-      exclusiveOptions.splice(idx, 1)
-      this.$item().update({ data: { exclusiveOptions } })
-    },
-
-    addOption() {
-      this.enterEditMode()
-      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
-      exclusiveOptions.push({ name: ' ', value: ' ' })
-      this.$item().update({ data: { exclusiveOptions } })
     },
   },
 }
