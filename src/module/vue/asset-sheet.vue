@@ -54,33 +54,9 @@
     </div>
 
     <!-- OPTIONS -->
-    <h3>{{ $t('IRONSWORN.Options') }}</h3>
-    <div class="flexcol stack">
-      <div v-if="editMode">
-        <div
-          class="stack-row flexrow"
-          v-for="(option, i) in item.data.exclusiveOptions"
-          :key="i"
-        >
-          <input type="text" v-model="option.name" />
-          <icon-button icon="trash" @click="deleteOption(i)" />
-        </div>
-        <div
-          class="stack-row clickable block"
-          @click="addOption"
-          style="min-height: 1.5rem; align-items: center"
-        >
-          <i class="fas fa-plus" />
-        </div>
-      </div>
-      <div v-else>
-        <asset-exclusiveoption
-          v-for="(opt, i) in item.data.exclusiveOptions"
-          :key="i"
-          :opt="opt"
-          @click="markOption(i)"
-        />
-      </div>
+    <div v-if="hasOptions || editMode">
+      <h3>{{ $t('IRONSWORN.Options') }}</h3>
+      <asset-optionsedit :item="item" />
     </div>
 
     <!-- TRACK -->
@@ -130,6 +106,10 @@ export default {
     editMode() {
       return this.item.flags['foundry-ironsworn']?.['edit-mode']
     },
+
+    hasOptions() {
+      return Object.values(this.item.data.exclusiveOptions || []).length > 0
+    }
   },
 
   watch: {
@@ -148,12 +128,7 @@ export default {
 
     'item.data.abilities': {
       deep: true,
-      handler: debouncedUpdate('abilities') ,
-    },
-
-    'item.data.exclusiveOptions': {
-      deep: true,
-      handler: debouncedUpdate('exclusiveOptions'),
+      handler: debouncedUpdate('abilities'),
     },
   },
 
