@@ -17,8 +17,10 @@
     </p>
 
     <!-- FIELDS -->
-    <h3>{{ $t('IRONSWORN.Fields') }}</h3>
-    <asset-fieldsedit :item="item" />
+    <div v-if="hasFields || editMode">
+      <h3>{{ $t('IRONSWORN.Fields') }}</h3>
+      <asset-fieldsedit :item="item" />
+    </div>
 
     <!-- ABILITIES -->
     <h3>{{ $t('IRONSWORN.Abilities') }}</h3>
@@ -80,6 +82,10 @@ export default {
 
     hasOptions() {
       return Object.values(this.item.data.exclusiveOptions || []).length > 0
+    },
+
+    hasFields() {
+      return Object.values(this.item.data.fields || []).length > 0
     },
   },
 
