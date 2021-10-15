@@ -28,6 +28,15 @@
   </div>
 </template>
 
+<style lang="less" scoped>
+.stack-row {
+  align-items: stretch;
+  input {
+    margin: 2px 5px;
+  }
+}
+</style>
+
 <script>
 export default {
   props: {

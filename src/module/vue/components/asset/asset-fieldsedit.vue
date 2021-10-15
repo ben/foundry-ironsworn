@@ -16,7 +16,7 @@
         <icon-button icon="trash" @click="deleteField(i)" />
       </div>
     </div>
-    <div class="flexrow boxrow nogrow">
+    <div class="flexrow boxrow nogrow" v-if="editMode">
       <div
         class="box clickable block"
         @click="addField"
@@ -27,6 +27,16 @@
     </div>
   </div>
 </template>
+
+<style lang="less" scoped>
+.boxrow {
+  align-items: stretch;
+  input {
+    margin: 2px 5px;
+    text-align: left;
+  }
+}
+</style>
 
 <script>
 export default {
