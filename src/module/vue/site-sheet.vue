@@ -2,22 +2,8 @@
   <div class="flexcol">
     <!-- HEADER -->
     <header class="sheet-header">
-      <img
-        :src="actor.img"
-        :title="actor.name"
-        class="profile-img"
-        data-edit="img"
-        height="50"
-        width="50"
-      />
-      <h1 class="charname">
-        <input
-          :placeholder="$t('IRONSWORN.Name')"
-          v-model="actor.name"
-          name="name"
-          type="text"
-        />
-      </h1>
+      <document-img :document="actor" />
+      <document-name :document="actor" />
     </header>
 
     <!-- RANK -->

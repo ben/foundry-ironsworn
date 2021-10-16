@@ -3,11 +3,10 @@
     <h5 class="vertical-v2 nogrow">{{ subtitle }}</h5>
     <div class="flexcol">
       <div class="flexrow">
-        <img
-          class="profile-img nogrow"
-          :src="item.img"
-          :title="item.name"
-          height="38"
+        <document-img
+          :document="item"
+          :size="38"
+          class="nogrow"
           style="margin-right: 5px"
         />
         <div class="flexcol">

@@ -2,22 +2,8 @@
   <div class="flexcol">
     <!-- HEADER -->
     <header class="sheet-header nogrow">
-      <img
-        :src="item.img"
-        :title="item.name"
-        class="profile-img"
-        data-edit="img"
-        height="50"
-        width="50"
-      />
-      <h1 class="charname">
-        <input
-          :placeholder="$t('IRONSWORN.Name')"
-          v-model="item.name"
-          name="name"
-          type="text"
-        />
-      </h1>
+      <document-img :document="item" />
+      <document-name :document="item" />
     </header>
 
     <!-- RANK -->
