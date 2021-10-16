@@ -19,7 +19,7 @@
 
 <style lang="less" scoped>
 div {
-  width: 13px;
+  width: 14px;
   height: 20px;
   padding: 0 1px;
 
