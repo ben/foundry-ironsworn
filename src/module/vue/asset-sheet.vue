@@ -1,9 +1,7 @@
 <template>
   <div>
     <header class="sheet-header">
-      <h1 class="charname">
-        <input type="text" v-model="item.name" @blur="setName" />
-      </h1>
+      <document-name :document="item" />
     </header>
 
     <p>
@@ -53,24 +51,7 @@ h3 {
 </style>
 
 <script>
-import iconButton from './components/icon-button.vue'
-
-function debouncedUpdate(key) {
-  return CONFIG.IRONSWORN._.debounce(function () {
-    if (
-      !CONFIG.IRONSWORN._.isEqual(
-        this.item.data[key],
-        this.$item.data.data[key]
-      )
-    ) {
-      const newValue = Object.values(this.item.data[key])
-      this.$item.update({ data: { [key]: newValue } })
-    }
-  }, 1000)
-}
-
 export default {
-  components: { iconButton },
   props: {
     item: Object,
   },
@@ -90,9 +71,6 @@ export default {
   },
 
   methods: {
-    setName() {
-      this.$item.update({ name: this.item.name })
-    },
     setDescription() {
       this.$item.update({ data: { description: this.item.data.description } })
     },

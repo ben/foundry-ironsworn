@@ -2,11 +2,10 @@
   <div class="flexcol box ironsworn__drop__target" :data-drop-type="itemType">
     <div v-if="item" style="padding: 1em; position: relative">
       <div class="flexrow">
-        <img
-          class="profile-img nogrow"
-          :src="item.img"
-          :title="item.name"
-          height="38"
+        <document-img
+          :document="item"
+          :size="38"
+          class="nogrow"
           style="margin-right: 5px"
         />
 
