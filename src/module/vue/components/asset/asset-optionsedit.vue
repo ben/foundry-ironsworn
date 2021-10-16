@@ -1,14 +1,20 @@
 <template>
   <div class="flexcol stack">
     <div v-if="editMode">
-      <div
-        class="stack-row flexrow"
-        v-for="(option, i) in item.data.exclusiveOptions"
-        :key="i"
-      >
-        <input type="text" v-model="option.name" @blur="updateOptionName(i)" />
-        <icon-button icon="trash" @click="deleteOption(i)" />
-      </div>
+      <transition-group name="slide" tag="div">
+        <div
+          class="stack-row flexrow"
+          v-for="(option, i) in item.data.exclusiveOptions"
+          :key="i"
+        >
+          <input
+            type="text"
+            v-model="option.name"
+            @blur="updateOptionName(i)"
+          />
+          <icon-button icon="trash" @click="deleteOption(i)" />
+        </div>
+      </transition-group>
       <div
         class="stack-row clickable block"
         @click="addOption"
@@ -17,6 +23,7 @@
         <i class="fas fa-plus" />
       </div>
     </div>
+
     <div v-else>
       <asset-exclusiveoption
         v-for="(opt, i) in item.data.exclusiveOptions"
@@ -34,6 +41,24 @@
   input {
     margin: 2px 5px;
   }
+}
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease;
+  overflow: hidden;
+  max-height: 30px;
+  opacity: 1;
+}
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 0;
+  border-bottom: 0;
 }
 </style>
 
