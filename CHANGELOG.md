@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix [#111](https://github.com/ben/foundry-ironsworn/pull/111), which is an i18n bug ([#154](https://github.com/ben/foundry-ironsworn/pull/154))
+
 ## 1.7.2
 
 - Vue asset sheet ([#150](https://github.com/ben/foundry-ironsworn/pull/150))
