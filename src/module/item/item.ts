@@ -41,7 +41,6 @@ export class IronswornItem extends Item {
 
     const move = await moveDataByName('Fulfill Your Vow')
     if (!move) throw new Error('Problem loading fulvill-vow move')
-    move.Name += `: ${this.data.name}`
 
     const progress = Math.floor(this.data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`)
