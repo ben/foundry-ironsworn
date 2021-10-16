@@ -3,6 +3,7 @@
 ## In progress
 
 - Vue asset sheet ([#150](https://github.com/ben/foundry-ironsworn/pull/150))
+- Make the Vue sheets default for all types ([#152](https://github.com/ben/foundry-ironsworn/pull/152))
 
 ## 1.7.1
 
