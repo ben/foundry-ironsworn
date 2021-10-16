@@ -94,24 +94,24 @@ Hooks.once('init', async () => {
     label: 'Classic site sheet',
   })
 
-  Items.registerSheet('ironsworn', AssetSheet, {
-    types: ['asset'],
-    label: 'Asset sheet',
-    makeDefault: true,
-  })
   Items.registerSheet('ironsworn', AssetSheetV2, {
     types: ['asset'],
     label: 'Asset sheet v2',
-  })
-
-  Items.registerSheet('ironsworn', BondsetSheet, {
-    types: ['bondset'],
-    label: 'Bondset sheet',
     makeDefault: true,
   })
+  Items.registerSheet('ironsworn', AssetSheet, {
+    types: ['asset'],
+    label: 'Asset sheet',
+  })
+
   Items.registerSheet('ironsworn', BondsetSheetV2, {
     types: ['bondset'],
     label: 'Bondset sheet v2',
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', BondsetSheet, {
+    types: ['bondset'],
+    label: 'Bondset sheet',
   })
 
   Items.registerSheet('ironsworn', MoveSheet, {
@@ -125,14 +125,14 @@ Hooks.once('init', async () => {
     makeDefault: true,
   })
 
-  Items.registerSheet('ironsworn', ProgressSheet, {
-    types: ['vow', 'progress'],
-    label: 'Progress Sheet',
-    makeDefault: true,
-  })
   Items.registerSheet('ironsworn', ProgressSheetV2, {
     types: ['vow', 'progress'],
     label: 'Progress sheet v2',
+    makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', ProgressSheet, {
+    types: ['vow', 'progress'],
+    label: 'Progress Sheet',
   })
 
   // Preload all needed templates
