@@ -4,7 +4,7 @@
       <div
         class="flexrow boxrow nogrow fieldrow"
         v-for="(field, i) in item.data.fields"
-        :key="i"
+        :key="'field' + i"
       >
         <div class="box flexrow" style="align-items: center">
           <input

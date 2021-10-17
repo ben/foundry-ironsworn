@@ -3,7 +3,7 @@
     <div
       class="flexcol track-box"
       v-for="(box, i) in boxes"
-      :key="i"
+      :key="'box' + i"
       v-html="box"
     ></div>
   </div>
