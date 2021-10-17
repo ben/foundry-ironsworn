@@ -9,18 +9,22 @@
     </div>
     <transition name="slide">
       <div class="flexcol asset-summary" v-if="expanded">
-        <p v-for="(field, i) in asset.data.fields" :key="i">
+        <p v-for="(field, i) in asset.data.fields" :key="'field' + i">
           <strong>{{ field.name }}:</strong> {{ field.value }}
         </p>
 
-        <with-rolllisteners element="p" :actor="actor" v-if="asset.data.description">
+        <with-rolllisteners
+          element="p"
+          :actor="actor"
+          v-if="asset.data.description"
+        >
           <div v-html="$enrichHtml(asset.data.description)"></div>
         </with-rolllisteners>
 
         <ul>
           <with-rolllisteners
             v-for="(ability, i) in enabledAbilities"
-            :key="i"
+            :key="'ability' + i"
             element="li"
             :actor="actor"
           >
@@ -46,7 +50,7 @@
         >
           <asset-exclusiveoption
             v-for="(opt, i) in asset.data.exclusiveOptions"
-            :key="i"
+            :key="'option' + i"
             :opt="opt"
             @click="exclusiveOptionClick(i)"
           />

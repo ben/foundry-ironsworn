@@ -5,7 +5,7 @@
         <div
           class="stack-row flexrow"
           v-for="(option, i) in item.data.exclusiveOptions"
-          :key="i"
+          :key="'item' + i"
         >
           <input
             type="text"
@@ -27,7 +27,7 @@
     <div v-else>
       <asset-exclusiveoption
         v-for="(opt, i) in item.data.exclusiveOptions"
-        :key="i"
+        :key="'option' + i"
         :opt="opt"
         @click="markOption(i)"
       />

@@ -1,6 +1,10 @@
 <template>
   <div>
-    <div class="flexrow" v-for="(ability, i) in item.data.abilities" :key="i">
+    <div
+      class="flexrow"
+      v-for="(ability, i) in item.data.abilities"
+      :key="'ability' + i"
+    >
       <input
         type="checkbox"
         :checked="ability.enabled"

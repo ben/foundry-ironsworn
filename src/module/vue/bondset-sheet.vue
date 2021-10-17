@@ -4,7 +4,7 @@
       <div
         class="item-row nogrow"
         v-for="(bond, i) in item.data.bonds"
-        :key="i"
+        :key="'bond' + i"
       >
         <div class="flexrow" style="margin-bottom: 5px">
           <input type="text" v-model="bond.name" @blur="save" />
