@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Mark the system as commpatible with Foundry v9 ([#156](https://github.com/ben/foundry-ironsworn/pull/156))
+
 ## 1.7.3
 
 - Fix [#111](https://github.com/ben/foundry-ironsworn/pull/111), which is an i18n bug ([#154](https://github.com/ben/foundry-ironsworn/pull/154))
