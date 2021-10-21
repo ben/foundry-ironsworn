@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.7.4
+
 - Mark the system as commpatible with Foundry v9 ([#156](https://github.com/ben/foundry-ironsworn/pull/156))
 
 ## 1.7.3
