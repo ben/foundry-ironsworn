@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.8.0
+
 - Remove Chinese-language files ([#157](https://github.com/ben/foundry-ironsworn/pull/157))
 
 ## 1.7.4
