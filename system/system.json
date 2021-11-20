@@ -121,11 +121,6 @@
       "path": "lang/es.json"
     },
     {
-      "lang": "cn",
-      "name": "中文",
-      "path": "lang/cn.json"
-    },
-    {
       "lang": "rus",
       "name": "Pусский",
       "path": "lang/rus.json"
