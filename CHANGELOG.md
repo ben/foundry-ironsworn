@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Update NPM dependencies ([#160](https://github.com/ben/foundry-ironsworn/pull/160))
+
 ## 1.8.1
 
 - Fix oracle weights for the Challenge Rank table ([#159](https://github.com/ben/foundry-ironsworn/pull/159))
