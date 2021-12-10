@@ -44,5 +44,5 @@ declare global {
 }
 
 Hooks.on('createActor', async (actor) => {
-  await actor.createOwnedItem({ type: 'bondset', name: 'bonds' }, { suppressLog: true })
+  await Item.createDocuments([{ type: 'bondset', name: 'bonds' }], { parent: actor, suppressLog: true } as any)
 })
