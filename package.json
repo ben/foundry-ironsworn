@@ -17,7 +17,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.170",
     "gulp": "^4.0.2",
-    "gulp-less": "^4.0.1",
+    "gulp-less": "^5.0.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
