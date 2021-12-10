@@ -8,7 +8,7 @@ import { IronswornItem } from '../item/item'
 import { AssetDataProperties, BondsetDataProperties, ProgressDataProperties } from '../item/itemtypes'
 
 export function activateChangelogListeners() {
-  Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any, options: Entity.UpdateOptions, _userId: number) => {
+  Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any, options, _userId: number) => {
     if (!IronswornSettings.logCharacterChanges) return
     if (options.suppressLog) return
 
@@ -23,7 +23,7 @@ export function activateChangelogListeners() {
     sendToChat(actor, content)
   })
 
-  Hooks.on('preUpdateItem', async (item: IronswornItem, data: any, _options: Entity.UpdateOptions, _userId: number) => {
+  Hooks.on('preUpdateItem', async (item: IronswornItem, data: any, _options, _userId: number) => {
     if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
 
@@ -39,7 +39,7 @@ export function activateChangelogListeners() {
     sendToChat(item.parent, `${itemName} ${content}`)
   })
 
-  Hooks.on('createItem', async (item: IronswornItem, options: Entity.CreateOptions, _userId: number) => {
+  Hooks.on('createItem', async (item: IronswornItem, options, _userId: number) => {
     if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
@@ -47,7 +47,7 @@ export function activateChangelogListeners() {
     sendToChat(item.parent, game.i18n.format('IRONSWORN.ChangeLog.Added', { name: item.name }))
   })
 
-  Hooks.on('deleteItem', async (item: IronswornItem, options: Entity.DeleteOptions, _userId: number) => {
+  Hooks.on('deleteItem', async (item: IronswornItem, options, _userId: number) => {
     if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
