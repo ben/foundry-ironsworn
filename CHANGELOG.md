@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.8.2
+
 - Update NPM dependencies ([#160](https://github.com/ben/foundry-ironsworn/pull/160))
 - Fix an actor-creation bug ([#161](https://github.com/ben/foundry-ironsworn/pull/161))
 
