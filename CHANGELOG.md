@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.8.1
+
 - Fix oracle weights for the Challenge Rank table ([#159](https://github.com/ben/foundry-ironsworn/pull/159))
 
 ## 1.8.0
