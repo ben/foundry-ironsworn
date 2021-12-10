@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix oracle weights for the Challenge Rank table ([#159](https://github.com/ben/foundry-ironsworn/pull/159))
+
 ## 1.8.0
 
 - Remove Chinese-language files ([#157](https://github.com/ben/foundry-ironsworn/pull/157))
