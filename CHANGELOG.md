@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix 404 errors when `routePrefix` is configured ([#163](https://github.com/ben/foundry-ironsworn/pull/163))
+
 ## 1.8.2
 
 - Update NPM dependencies ([#160](https://github.com/ben/foundry-ironsworn/pull/160))
