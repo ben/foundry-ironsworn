@@ -47,7 +47,7 @@ interface EnhancedDataswornMoveData {
 let CACHED_MOVES
 export async function cachedMoves(): Promise<EnhancedDataswornMoveData> {
   if (!CACHED_MOVES) {
-    CACHED_MOVES = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
+    CACHED_MOVES = await fetch('systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
   }
   return CACHED_MOVES
 }

@@ -100,7 +100,7 @@ export async function importFromDatasworn() {
   }
 
   // Moves
-  const movesJson = await fetch('/systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
+  const movesJson = await fetch('systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   for (const category of movesJson.Categories) {
     for (const move of category.Moves) {
@@ -121,7 +121,7 @@ export async function importFromDatasworn() {
   await Item.createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
 
   // Assets
-  const assetsJson = await fetch('/systems/foundry-ironsworn/assets/assets.json').then((x) => x.json())
+  const assetsJson = await fetch('systems/foundry-ironsworn/assets/assets.json').then((x) => x.json())
   const assetsToCreate = assetsJson.map((raw) => ({
     type: 'asset',
     ...raw,
@@ -129,7 +129,7 @@ export async function importFromDatasworn() {
   await Item.createDocuments(assetsToCreate, { pack: 'world.ironsworn-assets' })
 
   // Themes
-  const themesJson = await fetch('/systems/foundry-ironsworn/assets/delve-themes.json').then((x) => x.json())
+  const themesJson = await fetch('systems/foundry-ironsworn/assets/delve-themes.json').then((x) => x.json())
   const themesToCreate = themesJson.Themes.map((rawTheme) => {
     const themeData = {
       type: 'delve-theme',
@@ -167,7 +167,7 @@ export async function importFromDatasworn() {
   await Item.createDocuments(themesToCreate, { pack: 'world.ironsworn-delve-themes' })
 
   // Domains
-  const domainsJson = await fetch('/systems/foundry-ironsworn/assets/delve-domains.json').then((x) => x.json())
+  const domainsJson = await fetch('systems/foundry-ironsworn/assets/delve-domains.json').then((x) => x.json())
   const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
     const domainData = {
       type: 'delve-domain',
@@ -205,7 +205,7 @@ export async function importFromDatasworn() {
   await Item.createDocuments(domainsToCreate, { pack: 'world.ironsworn-delve-domains' })
 
   // Foes
-  const foesJson = await fetch('/systems/foundry-ironsworn/assets/foes.json').then((x) => x.json())
+  const foesJson = await fetch('systems/foundry-ironsworn/assets/foes.json').then((x) => x.json())
   const foesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   for (const category of foesJson.Categories) {
     for (const foe of category.Foes) {
