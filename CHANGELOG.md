@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.8.3
+
 - Fix 404 errors when `routePrefix` is configured ([#163](https://github.com/ben/foundry-ironsworn/pull/163))
 
 ## 1.8.2
