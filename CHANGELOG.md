@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix world-truths dialog when `routePrefix` is configured ([#164](https://github.com/ben/foundry-ironsworn/pull/164))
+
 ## 1.8.3
 
 - Fix 404 errors when `routePrefix` is configured ([#163](https://github.com/ben/foundry-ironsworn/pull/163))

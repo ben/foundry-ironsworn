@@ -22,7 +22,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
   }
 
   async getData() {
-    const truths = await fetch('/systems/foundry-ironsworn/assets/world-truths.json').then((x) => x.json())
+    const truths = await fetch('systems/foundry-ironsworn/assets/world-truths.json').then((x) => x.json())
 
     // Run truths text through I18n
     for (const category of truths.Categories) {
