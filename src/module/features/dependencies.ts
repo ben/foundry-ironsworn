@@ -35,7 +35,7 @@ export async function maybePromptForDependencies() {
           // Preload Vue dependencies via Dlopen.
           try {
             Dlopen.register('vuecomponents', {
-              scripts: '/systems/foundry-ironsworn/vuecomponents.js',
+              scripts: 'systems/foundry-ironsworn/vuecomponents.js',
             })
 
             await Dlopen.loadDependencies(['vue', 'vuecomponents'])
