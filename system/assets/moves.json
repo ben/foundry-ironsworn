@@ -534,7 +534,7 @@
             "Name": "Ironsworn Rulebook",
             "Page": "105"
           },
-          "Description": "<p>When <strong>you suffer the outcome of a move</strong>, choose one.</p>\n<ul>\n<li>Make the most obvious negative outcome happen.</li>\n<li>Envision two negative outcomes. Rate one as ‘likely’, and <em>Ask the Oracle</em> using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.</li>\n<li>Roll on the following table. If you have difficulty interpreting the result to fit the current situation, roll again.</li>\n</ul>\n",
+          "Description": "<p>When <strong>you suffer the outcome of a move</strong>, choose one.</p>\n<ul>\n<li>Make the most obvious negative outcome happen.</li>\n<li>Envision two negative outcomes. Rate one as ‘likely’, and <em>Ask the Oracle</em> using the yes/no table. On a ‘yes’, make that outcome happen. Otherwise, make it the other.</li>\n<li>Roll on the @Compendium[foundry-ironsworn.ironsworntables.D4mUSL3IXtFRfMhi]{Pay the Price} table.. If you have difficulty interpreting the result to fit the current situation, roll again.</li>\n</ul>\n",
           "oracles": [
             {
               "name": "Pay the Price",
