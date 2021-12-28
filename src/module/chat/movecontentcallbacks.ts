@@ -33,4 +33,9 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
           <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
         </button>
       `,
+
+  'Pay the Price': () =>
+    `<button class="ironsworn__paytheprice__roll">
+      <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
+    </button`
 }

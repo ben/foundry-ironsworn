@@ -49,6 +49,13 @@ function processMove(move) {
     extramiss = 'On a **miss**, it goes badly and you lose all benefits for that action.'
   }
 
+  // Fixup for Pay the Price; we don't need the table here
+  if (move.Name === 'Pay the Price') {
+    const tableRegex = /Roll\s+\|\s+Result[\s\S]+/
+    description = move.Text.replace(tableRegex, '')
+    description = description.replace('Roll on the following table', 'Roll on the @Compendium[foundry-ironsworn.ironsworntables.D4mUSL3IXtFRfMhi]{Pay the Price} table.')
+  }
+
   if (!description) description = move.Text
 
   return { description, strong, weak, miss, extradescription, extrastrong, extraweak, extramiss }
