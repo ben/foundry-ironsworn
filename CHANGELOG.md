@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix a move sheet layout issue ([#166](https://github.com/ben/foundry-ironsworn/pull/166))
+- Upgrade support for "Pay the Price" ([#167](https://github.com/ben/foundry-ironsworn/pull/167))
 
 ## 1.8.4
 
