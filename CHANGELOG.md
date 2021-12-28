@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix a move sheet layout issue ([#166](https://github.com/ben/foundry-ironsworn/pull/166))
+
 ## 1.8.4
 
 - Fix world-truths dialog when `routePrefix` is configured ([#164](https://github.com/ben/foundry-ironsworn/pull/164))
