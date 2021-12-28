@@ -28,6 +28,7 @@ export class IronswornChatCard {
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
     html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
     html.find('.ironsworn__sojourn__extra__roll').on('click', (ev) => this._sojournExtra.call(this, ev))
+    html.find('.ironsworn__paytheprice__roll').on('click', (ev) => this._payThePriceExtra.call(this, ev))
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
@@ -136,6 +137,28 @@ export class IronswornChatCard {
 
     const actor = defaultActor()
     RollDialog.show({ move, actor })
+  }
+
+  async _payThePriceExtra(ev: JQuery.ClickEvent) {
+    const move = await moveDataByName('Pay the Price')
+    const oracle = move?.oracles?.[0]
+    if (!oracle) return
+
+    const { result, rollTotal } = await rollOnOracle(oracle)
+    await this.replaceSelectorWith(
+      ev.currentTarget,
+      '.bonus-content',
+      `
+        <p class="flexrow" style="align-items: center;">
+          <span>${oracle.name}</span>
+          <span class="roll die d10" style="flex: 0 0 25px;">${rollTotal}</span>
+        </p>
+
+        <h4 class="dice-formula">
+          ${result?.low}–${result?.high}: ${result?.description}
+        </h4>
+      `
+    )
   }
 
   async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {
