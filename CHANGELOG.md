@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add a hand-drawn map from Reddit to the scene compendium ([#168](https://github.com/ben/foundry-ironsworn/pull/168))
+
 ## 1.8.5
 
 - Fix a move sheet layout issue ([#166](https://github.com/ben/foundry-ironsworn/pull/166))
