@@ -54,6 +54,8 @@ Some things to remember:
 * If you change any of the `*.hbs` templates, use the command above before reloading your browser window.
 * Any Typescript or LESS changes only require a browser reload.
 
-## Ironsworn
+## Credits
 
 This work is based on Ironsworn (found at www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license  (creativecommons.org/licenses/by-nc-sa/4.0/).
+
+Hand-drawn map scene courtesy of [McSekcer](https://www.reddit.com/user/McSekcer/).
