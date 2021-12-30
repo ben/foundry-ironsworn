@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Swap in a higher-quality file for McSekcer's map ([#169](https://github.com/ben/foundry-ironsworn/pull/169))
+
 ## 1.8.6
 
 - Add a hand-drawn map from Reddit to the scene compendium ([#168](https://github.com/ben/foundry-ironsworn/pull/168))
