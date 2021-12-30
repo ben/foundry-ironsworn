@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.8.7
+
 - Swap in a higher-quality file for McSekcer's map ([#169](https://github.com/ben/foundry-ironsworn/pull/169))
 
 ## 1.8.6
