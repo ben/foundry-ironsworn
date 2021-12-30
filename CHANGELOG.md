@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.8.6
+
 - Add a hand-drawn map from Reddit to the scene compendium ([#168](https://github.com/ben/foundry-ironsworn/pull/168))
 
 ## 1.8.5
