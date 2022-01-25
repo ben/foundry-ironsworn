@@ -124,6 +124,11 @@
       "lang": "rus",
       "name": "Pусский",
       "path": "lang/rus.json"
+    },
+    {
+      "lang": "fr",
+      "name": "Français",
+      "path": "lang/fr.json"
     }
   ],
   "gridDistance": 5,

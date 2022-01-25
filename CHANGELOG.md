@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add french localization ([#175](https://github.com/ben/foundry-ironsworn/pull/175))
+
 ## 1.8.7
 
 - Swap in a higher-quality file for McSekcer's map ([#169](https://github.com/ben/foundry-ironsworn/pull/169))
