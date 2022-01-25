@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.9.0
+
 - Add french localization ([#175](https://github.com/ben/foundry-ironsworn/pull/175))
 
 ## 1.8.7
