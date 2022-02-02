@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add Starforged setting-truths dialog([#178](https://github.com/ben/foundry-ironsworn/pull/178))
+
 ## 1.9.0
 
 - Add french localization ([#175](https://github.com/ben/foundry-ironsworn/pull/175))
