@@ -7,7 +7,7 @@ export class SFSettingTruthsDialog extends FormApplication<FormApplication.Optio
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      title: game.i18n.localize('IRONSWORN.YourWorldTruths'),
+      title: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
       template: 'systems/foundry-ironsworn/templates/sf-truths.hbs',
       id: 'setting-truths-dialog',
       resizable: true,
