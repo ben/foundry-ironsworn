@@ -1,0 +1,43 @@
+<form>
+  {{log this}}
+  {{#each truths.[Setting Truths]}}
+  <h2 style="margin-top: 1em;">{{Name}}</h2>
+
+  {{#each Table}}
+  <div class="flexrow">
+    <input type="radio" name="{{../Name}} class=" nogrow" style="flex: 0 0 20px; margin: 8px;""
+      id=" {{concat ../Name '#' @index}}" data-category="{{../Name}}">
+    <div class="flexcol">
+      <label for="{{concat ../Name '#' @index}}" class="description">
+        <p>{{Description}}</p>
+        <p>{{Details}}</p>
+        {{#each Table}}
+        <div class="flexrow">
+          <input type="radio" name="{{../Description}} class=" nogrow" style="flex: 0 0 20px; margin: 8px;""
+            id=" {{concat ../Description '#' @index}}" data-category="{{../Description}}">
+          <label for="{{concat ../Description '#' @index}}">
+            <p>{{Description}}</p>
+          </label>
+        </div>
+        {{/each}}
+        <p><em>{{localize 'IRONSWORN.TruthQuestStarter'}} {{Quest}}</em></p>
+      </label>
+    </div>
+  </div>
+  {{/each}}
+
+  <div class="flexrow">
+    <input type="radio" name="{{Name}} class=" nogrow" style="flex: 0 0 20px; margin: 5px 8px;""
+      id=" {{concat Name '#custom' }}" data-category="{{Name}}">
+    <input type="text" class="ironsworn__custom__truth description" placeholder="{{localize 'IRONSWORN.CustomTruth'}}">
+  </div>
+
+  {{/each}}
+
+  <hr>
+
+  <button class="ironsworn__save__truths">
+    <i class="fas fa-feather"></i>
+    {{localize 'IRONSWORN.SaveYourTruths'}}
+  </button>
+</form>
