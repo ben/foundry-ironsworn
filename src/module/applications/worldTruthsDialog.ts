@@ -1,5 +1,5 @@
 import { IronswornSettings } from '../helpers/settings'
-import { SFSettingTruthsDialog } from './sfSettingTruthsDialog'
+import { sfSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
 
 export class WorldTruthsDialog extends FormApplication<FormApplication.Options> {
   constructor() {
@@ -96,7 +96,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
           ? {
               icon: '<i class="fas fa-user-astronaut"></i>',
               label: 'Yes (SF)',
-              callback: () => new SFSettingTruthsDialog().render(true),
+              callback: () => new sfSettingTruthsDialogVue().render(true),
             }
           : undefined) as any,
         no: {
