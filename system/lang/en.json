@@ -155,6 +155,10 @@
       "PromptTruths": {
         "Name": "Prompt for World Truths",
         "Hint": "Prompt on startup to generate world truths using the dialog, if not already done."
+      },
+      "SFBeta": {
+        "Name": "Show Starforged beta content",
+        "Hint": "Enables in-progress Starforged features."
       }
     },
     "MoveContents": {

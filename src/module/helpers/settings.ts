@@ -43,6 +43,15 @@ export class IronswornSettings {
       default: true,
     })
 
+    game.settings.register('foundry-ironsworn', 'starforged-beta', {
+      name: 'IRONSWORN.Settings.SFBeta.Name',
+      hint: 'IRONSWORN.Settings.SFBeta.Hint',
+      scope: 'world',
+      config: true,
+      type: Boolean,
+      default: false,
+    })
+
     game.settings.register('foundry-ironsworn', 'data-version', {
       scope: 'world',
       config: false,
