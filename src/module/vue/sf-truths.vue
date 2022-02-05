@@ -1,18 +1,28 @@
 <template>
   <div class="flexcol">
-    <div v-for="truth in truths" :key="truth.Name">
-      <h2 style="margin-top: 1em">{{ truth.Name }}</h2>
+    <div v-for="category in truths" :key="category.Name">
+      <h2 style="margin-top: 1em">{{ category.Name }}</h2>
 
       <sf-truth
-        v-for="(option, i) in truth.Table"
-        :key="i"
-        :radiogroup="truth.Name"
+        v-for="(option) in category.Table"
+        :key="option.Description"
+        :radiogroup="category.Name"
         :description="option.Description"
         :details="option.Details"
         :quest="option['Quest Starter']"
         :table="option.Table"
+        @change="radioselect"
       />
+
+      <!-- TODO: custom truth entry -->
     </div>
+
+    <hr />
+    <!-- TODO: wire up this button -->
+    <button class="ironsworn__save__truths">
+      <i class="fas fa-feather"></i>
+      {{ $t('IRONSWORN.SaveYourTruths') }}
+    </button>
   </div>
 </template>
 
@@ -23,14 +33,19 @@ export default {
   },
 
   data() {
-    const picked = {}
-    for (const option of this.truths) {
-      picked[option.Name] = null
-
-      for (let i = 0; i < (option.Table ?? []).length; i++) {}
+    const output = {}
+    for (const category of this.truths) {
+      output[category.Name] = null
     }
 
-    return { picked }
+    return { output }
   },
+
+  methods: {
+    radioselect(category, value) {
+      console.log(category, value)
+      this.output[category] = value
+    }
+  }
 }
 </script>
