@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol">
     <!-- Header row -->
-    <character-header :actor="actor"></character-header>
+    <sf-characterheader :actor="actor" />
 
     <!-- Main body row -->
     <div class="flexrow">
@@ -77,6 +77,21 @@
 export default {
   props: {
     actor: Object,
+  },
+
+  methods: {
+    burnMomentum() {
+      this.$actor.burnMomentum()
+    },
+
+    rollStat(stat) {
+      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
+    },
+
+    openCompendium(name) {
+      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
+      pack?.render(true)
+    },
   },
 }
 </script>
