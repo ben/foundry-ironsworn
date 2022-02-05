@@ -1,18 +1,22 @@
 <template>
-  <h1 class="charname">
+  <component :is="tag" class="charname">
     <input
       :placeholder="$t('IRONSWORN.Name')"
       v-model="document.name"
       name="name"
       type="text"
     />
-  </h1>
+  </component>
 </template>
 
 <script>
 export default {
   props: {
     document: Object,
+    tag: {
+      type: String,
+      default: 'h1',
+    },
   },
 
   methods: {

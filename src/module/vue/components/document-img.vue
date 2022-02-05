@@ -2,7 +2,7 @@
   <img
     :src="document.img"
     :title="document.name"
-    class="profile-img"
+    :style="style"
     data-edit="img"
     :height="size"
     :width="size"
@@ -14,8 +14,17 @@ export default {
   props: {
     document: Object,
     size: {
-      type: Number,
-      default: 50,
+      type: String,
+      default: '50px',
+    },
+  },
+
+  computed: {
+    style() {
+      return {
+        width: this.size,
+        height: this.size,
+      }
     },
   },
 }
