@@ -16,7 +16,7 @@
         </p>
         <p>{{ details }}</p>
 
-        <transition name="slide">
+        <transition name="slide" v-if="table">
           <div v-if="selected">
             <div
               class="flexrow"
@@ -85,9 +85,10 @@ export default {
     },
 
     radiovalue() {
+      const subOptionText = this.subOptionDescription ? `(${this.subOptionDescription})` : ''
       return `
         <p><strong>${this.description}</strong></p>
-        <p>${this.details} ${this.subOptionDescription}</p>
+        <p>${this.details} ${subOptionText}</p>
         <p><em>${this.$t('IRONSWORN.TruthQuestStarter')} ${this.quest}</em></p>
       `
     },
