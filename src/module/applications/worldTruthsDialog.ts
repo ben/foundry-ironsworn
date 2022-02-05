@@ -78,9 +78,12 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
     }
 
     // Bail if the truths journal entry already exists
-    const journal = game.journal?.find((x) => x.name === game.i18n.localize('IRONSWORN.YourWorldTruths'))
-    if (journal) {
-      return
+    const keysToTry = ['IRONSWORN.YourWorldTruths', 'IRONSWORN.SFSettingTruthsTitle']
+    for (const i18nkey of keysToTry) {
+      const journal = game.journal?.find((x) => x.name === game.i18n.localize(i18nkey))
+      if (journal) {
+        return
+      }
     }
 
     const d = new Dialog({
