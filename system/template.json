@@ -7,6 +7,8 @@
     ],
     "character": {
       "biography": "",
+      "pronouns": "",
+      "callsign": "",
       "edge": 1,
       "heart": 1,
       "iron": 1,
@@ -17,6 +19,11 @@
       "supply": 5,
       "experience": 0,
       "momentum": 2,
+      "legacies": {
+        "quests": 0,
+        "bonds": 0,
+        "discoveries": 0
+      },
       "debility": {
         "corrupted": false,
         "cursed": false,

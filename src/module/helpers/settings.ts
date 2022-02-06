@@ -64,6 +64,10 @@ export class IronswornSettings {
     return game.settings.get('foundry-ironsworn', 'theme') as string
   }
 
+  static get starforgedBeta(): boolean {
+    return game.settings.get('foundry-ironsworn', 'starforged-beta') as boolean
+  }
+
   static get logCharacterChanges(): boolean {
     return game.settings.get('foundry-ironsworn', 'log-changes') as boolean
   }

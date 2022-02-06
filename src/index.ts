@@ -7,6 +7,7 @@ import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
+import { StarforgedCharacterSheet } from './module/actor/sheets/sf-charactersheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
 import { IronswornSharedSheetV2 } from './module/actor/sheets/sharedsheet-v2'
 import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
@@ -65,6 +66,12 @@ Hooks.once('init', async () => {
     types: ['character'],
     makeDefault: true,
   })
+  if (CONFIG.IRONSWORN.IronswornSettings.starforgedBeta) {
+    Actors.registerSheet('ironsworn', StarforgedCharacterSheet, {
+      label: 'Starforged character sheet',
+      types: ['character'],
+    })
+  }
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
     label: 'Compact sheet',
     types: ['character'],
