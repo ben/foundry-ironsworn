@@ -55,7 +55,7 @@
           </div>
         </div>
         <keep-alive>
-          <component :is="currentTab.component" />
+          <component :is="currentTab.component" :actor="actor" />
         </keep-alive>
       </div>
 
