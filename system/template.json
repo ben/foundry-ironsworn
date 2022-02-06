@@ -21,8 +21,11 @@
       "momentum": 2,
       "legacies": {
         "quests": 0,
+        "questsXpSpent": 0,
         "bonds": 0,
-        "discoveries": 0
+        "bondsXpSpent": 0,
+        "discoveries": 0,
+        "discoveriesXpSpent": 0
       },
       "debility": {
         "corrupted": false,
