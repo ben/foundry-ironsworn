@@ -33,7 +33,14 @@
 
       <!-- Center area -->
       <div class="flexcol">
-        <!-- TODO: -->
+        <!-- Attributes -->
+        <div class="flexrow stats">
+          <attr-box :actor="actor" attr="edge"></attr-box>
+          <attr-box :actor="actor" attr="heart"></attr-box>
+          <attr-box :actor="actor" attr="iron"></attr-box>
+          <attr-box :actor="actor" attr="shadow"></attr-box>
+          <attr-box :actor="actor" attr="wits"></attr-box>
+        </div>
       </div>
 
       <!-- Stats on right -->
