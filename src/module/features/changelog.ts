@@ -85,7 +85,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
     }
 
     for (const debility of ['corrupted', 'cursed', 'encumbered', 'maimed', 'shaken', 'tormented', 'unprepared', 'wounded']) {
-      const newValue = get(data.data.debility, debility)
+      const newValue = get(data.data?.debility, debility)
       if (newValue !== undefined) {
         const oldValue = characterData.data.debility[debility]
         if (oldValue === newValue) continue
