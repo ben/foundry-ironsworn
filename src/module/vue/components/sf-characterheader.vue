@@ -5,13 +5,13 @@
     <div class="flexcol" style="flex-basis: 100px">
       <input
         type="text"
-        style="margin-bottom: 5px"
+        style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Name')"
         v-model="actor.name"
       />
       <input
         type="text"
-        style="margin-bottom: 5px"
+        style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Pronouns')"
         v-model="actor.data.pronouns"
       />
@@ -32,13 +32,9 @@
 </template>
 
 <style lang="less" scoped>
-// header input {
-//   margin-bottom: 4px;
-// }
-
-// header input:last {
-//   margin-bottom: 0;
-// }
+input, textarea {
+  border: none;
+}
 </style>
 
 <script>
