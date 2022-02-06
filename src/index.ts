@@ -66,10 +66,12 @@ Hooks.once('init', async () => {
     types: ['character'],
     makeDefault: true,
   })
-  Actors.registerSheet('ironsworn', StarforgedCharacterSheet, {
-    label: 'Starforged character sheet',
-    types: ['character'],
-  })
+  if (CONFIG.IRONSWORN.IronswornSettings.starforgedBeta) {
+    Actors.registerSheet('ironsworn', StarforgedCharacterSheet, {
+      label: 'Starforged character sheet',
+      types: ['character'],
+    })
+  }
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
     label: 'Compact sheet',
     types: ['character'],
