@@ -8,31 +8,40 @@
         style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Name')"
         v-model="actor.name"
+        ref="name"
+        @blur="save"
       />
       <input
         type="text"
         style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Pronouns')"
-        v-model="actor.data.pronouns"
+        :value="actor.data.pronouns"
+        ref="pronouns"
+        @blur="save"
       />
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Callsign')"
-        v-model="actor.data.callsign"
+        :value="actor.data.callsign"
+        ref="callsign"
+        @blur="save"
       />
     </div>
 
     <textarea
       rows="4"
-      v-model="actor.data.biography"
-      style="flex-basis: 300px; margin-left: 6px;"
+      :value="actor.data.biography"
+      ref="characteristics"
+      style="flex-basis: 300px; margin-left: 6px"
       :placeholder="$t('IRONSWORN.Characteristics')"
+      @blur="save"
     />
   </header>
 </template>
 
 <style lang="less" scoped>
-input, textarea {
+input,
+textarea {
   border: none;
 }
 </style>
@@ -41,6 +50,19 @@ input, textarea {
 export default {
   props: {
     actor: Object,
+  },
+
+  methods: {
+    save() {
+      this.$actor?.update({
+        name: this.$refs.name.value,
+        data: {
+          callsign: this.$refs.callsign.value,
+          pronouns: this.$refs.pronouns.value,
+          biography: this.$refs.characteristics.value,
+        },
+      })
+    },
   },
 }
 </script>
