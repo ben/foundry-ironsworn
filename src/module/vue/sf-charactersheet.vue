@@ -34,13 +34,29 @@
       <!-- Center area -->
       <div class="flexcol">
         <!-- Attributes -->
-        <div class="flexrow stats">
+        <div class="flexrow stats" style="margin-bottom: 10px">
           <attr-box :actor="actor" attr="edge"></attr-box>
           <attr-box :actor="actor" attr="heart"></attr-box>
           <attr-box :actor="actor" attr="iron"></attr-box>
           <attr-box :actor="actor" attr="shadow"></attr-box>
           <attr-box :actor="actor" attr="wits"></attr-box>
         </div>
+
+        <!-- Tabs -->
+        <div class="flexrow nogrow">
+          <div
+            class="tab"
+            v-for="tab in tabs"
+            :key="tab.titleKey"
+            :class="['clickable', 'block', { selected: currentTab === tab }]"
+            @click="currentTab = tab"
+          >
+            {{ $t(tab.titleKey) }}
+          </div>
+        </div>
+        <keep-alive>
+          <component :is="currentTab.component" />
+        </keep-alive>
       </div>
 
       <!-- Stats on right -->
@@ -80,10 +96,35 @@
   </div>
 </template>
 
+<style lang="less" scoped>
+.tab {
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid grey;
+  &.active {
+    background-color: darkgray;
+  }
+}
+</style>
+
 <script>
 export default {
   props: {
     actor: Object,
+  },
+
+  data() {
+    const tabs = [
+      { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
+      { titleKey: 'IRONSWORN.Bonds', component: 'sf-bonds' },
+      { titleKey: 'IRONSWORN.Progress', component: 'sf-progresses' },
+      { titleKey: 'IRONSWORN.Clocks', component: 'sf-clocks' },
+      { titleKey: 'IRONSWORN.Scenes', component: 'sf-scenes' },
+    ]
+    return {
+      tabs,
+      currentTab: tabs[0],
+    }
   },
 
   methods: {
