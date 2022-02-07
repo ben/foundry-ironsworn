@@ -14,12 +14,25 @@
         v-html="box"
       ></div>
     </div>
+
+    <div class="flexrow xp nogrow">
+      <xp-box
+        :actor="actor"
+        v-for="n in xpArray"
+        :key="n"
+        :value="n"
+        :current="xpSpent"
+      />
+    </div>
   </div>
 </template>
 
 <style lang="less" scoped>
 h4 {
   margin: 0.5rem 0;
+}
+.xp {
+  max-height: 25px;
 }
 </style>
 
@@ -46,6 +59,22 @@ export default {
     },
     ticks() {
       return this.actor.data.legacies[this.propKey] ?? 0
+    },
+    xpBoxCount() {
+      // 2 for each box up until 10, then 1 for each box afterwards
+      const fullBoxes = Math.floor(this.ticks / 4)
+      if (fullBoxes <= 10) {
+        return fullBoxes * 2
+      } else {
+        return fullBoxes + 10
+      }
+    },
+    xpArray() {
+      const ret = []
+      for (let i = 1; i <= this.xpBoxCount; i++) {
+        ret.push(i)
+      }
+      return ret
     },
     xpSpent() {
       return this.actor.data.legacies[`${this.propKey}XpSpent`] ?? 0
