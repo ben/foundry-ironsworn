@@ -1,20 +1,26 @@
 <template>
-  <div class="flexrow track">
-    <div
-      class="flexcol track-box"
-      v-for="(box, i) in boxes"
-      :key="`box${i}`"
-      v-html="box"
-    ></div>
+  <div class="flexcol">
+    <div class="flexrow">
+      <h4>{{ title }}</h4>
+      <icon-button v-if="editMode" icon="caret-left" @click="decrease" />
+      <icon-button icon="caret-right" @click="increase" />
+    </div>
+
+    <div class="flexrow track">
+      <div
+        class="flexcol track-box"
+        v-for="(box, i) in boxes"
+        :key="`box${i}`"
+        v-html="box"
+      ></div>
+    </div>
   </div>
 </template>
 
 <style lang="less" scoped>
-// .track .track-box {
-//   width: 40px;
-//   height: 40px;
-//   flex-grow: 0;
-// }
+h4 {
+  margin: 0.5rem 0;
+}
 </style>
 
 <script>
@@ -31,9 +37,13 @@ export default {
   props: {
     actor: Object,
     propKey: String,
+    title: String,
   },
 
   computed: {
+    editMode() {
+      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
+    },
     ticks() {
       return this.actor.data.legacies[this.propKey] ?? 0
     },
@@ -51,6 +61,21 @@ export default {
         remainingTicks -= 4
       }
       return ret
+    },
+  },
+
+  methods: {
+    adjust(inc) {
+      const current = this.actor.data?.legacies[this.propKey] ?? 0
+      this.$actor.update({
+        [`data.legacies.${this.propKey}`]: current + inc,
+      })
+    },
+    increase() {
+      this.adjust(1)
+    },
+    decrease() {
+      this.adjust(-1)
     },
   },
 }
