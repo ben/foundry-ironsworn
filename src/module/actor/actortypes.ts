@@ -20,6 +20,14 @@ interface CharacterDataSourceData {
     unprepared: boolean
     wounded: boolean
   }
+  legacies: {
+    quests: number
+    questsXpSpent: number
+    bonds: number
+    bondsXpSpent: number
+    discoveries: number
+    discoveriesXpSpent: number
+  }
   xp: number
 }
 

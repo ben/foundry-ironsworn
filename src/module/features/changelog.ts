@@ -60,6 +60,8 @@ type ActorTypeHandler = (IronswornActor, any) => string | undefined
 const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
   character: (actor: IronswornActor, data) => {
     const characterData = actor.data as CharacterDataProperties
+
+    // Ironsworn XP
     if (data.data?.xp !== undefined) {
       const oldXp = characterData.data.xp
       const newXp = data.data.xp as number
@@ -67,6 +69,19 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
         return game.i18n.format('IRONSWORN.ChangeLog.MarkedXP', { amt: newXp - oldXp })
       } else {
         return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedXP', { amt: oldXp - newXp })
+      }
+    }
+
+    // Starforged legacy XP
+    for (const kind of ['quests', 'bonds', 'discoveries']) {
+      const oldXp = characterData.data.legacies[`${kind}XpSpent`]
+      const newXp = data.data.legacies[`${kind}XpSpent`] as number
+      if (newXp !== undefined) {
+        if (newXp > oldXp) {
+          return game.i18n.format('IRONSWORN.ChangeLog.MarkedXP', { amt: newXp - oldXp })
+        } else {
+          return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedXP', { amt: oldXp - newXp })
+        }
       }
     }
 
@@ -159,8 +174,8 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         if (oldEnables[i] !== newEnables[i]) {
           const descriptors = ['First', 'Second', 'Third', 'Fourth', 'Fifth']
           const pos = game.i18n.localize(`IRONSWORN.${descriptors[i]}`)
-          if (newEnables[i]) return game.i18n.format('IRONSWORN.ChangeLog.MarkedAbility', {pos})
-          return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedAbility', {pos})
+          if (newEnables[i]) return game.i18n.format('IRONSWORN.ChangeLog.MarkedAbility', { pos })
+          return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedAbility', { pos })
         }
       }
     }
@@ -172,13 +187,13 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       return game.i18n.format('IRONSWORN.ChangeLog.AdjustedStat', {
         amt: `${signPrefix}${newValue - oldValue}`,
         stat: assetData.data.track.name,
-        val: newValue
+        val: newValue,
       })
     }
 
     if (data.data?.exclusiveOptions !== undefined) {
       const selectedOption = data.data.exclusiveOptions.find((x) => x.selected)
-      return game.i18n.format('IRONSWORN.ChangeLog.MarkedOption', {name: selectedOption.name})
+      return game.i18n.format('IRONSWORN.ChangeLog.MarkedOption', { name: selectedOption.name })
     }
 
     if (data.data?.fields !== undefined) {
@@ -186,7 +201,7 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         const newField = data.data.fields[i]
         const oldField = assetData.data.fields[i]
         if (oldField && oldField?.value !== newField.value) {
-          return game.i18n.format('IRONSWORN.ChangeLog.SetField', {name: newField.name, val: newField.value})
+          return game.i18n.format('IRONSWORN.ChangeLog.SetField', { name: newField.name, val: newField.value })
         }
       }
     }

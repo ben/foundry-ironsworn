@@ -2,9 +2,11 @@
 
 ## In progress
 
+- Starforged: legacy tracks ([#180](https://github.com/ben/foundry-ironsworn/pull/180))
+
 ## 1.10.0
 
-- Add Starforged setting-truths dialog([#178](https://github.com/ben/foundry-ironsworn/pull/178))
+- Add Starforged setting-truths dialog ([#178](https://github.com/ben/foundry-ironsworn/pull/178))
 - Add Starforged character sheet ([#179](https://github.com/ben/foundry-ironsworn/pull/179))
 
 ## 1.9.0
