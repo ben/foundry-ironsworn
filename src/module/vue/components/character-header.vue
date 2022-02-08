@@ -11,6 +11,7 @@
           v-bind:key="n"
           :value="n"
           :current="actor.data.xp"
+          @click="setXp(n)"
         />
         <xp-box :actor="actor" :value="0">×</xp-box>
       </div>
@@ -28,6 +29,12 @@ export default {
     return {
       xpArray: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     }
+  },
+
+  methods: {
+    setXp(n) {
+      this.$actor.update({ data: { xp: n } })
+    },
   },
 }
 </script>
