@@ -22,6 +22,7 @@
         :key="n"
         :value="n"
         :current="xpSpent"
+        @click="setXp(n)"
       />
     </div>
   </div>
@@ -32,7 +33,7 @@ h4 {
   margin: 0.5rem 0;
 }
 .xp {
-  max-height: 25px;
+  max-height: 40px;
 }
 </style>
 
@@ -105,6 +106,12 @@ export default {
     },
     decrease() {
       this.adjust(-1)
+    },
+
+    setXp(n) {
+      this.$actor.update({
+        data: { legacies: { [`${this.propKey}XpSpent`]: n } },
+      })
     },
   },
 }
