@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.1
+
 - Starforged: legacy tracks ([#180](https://github.com/ben/foundry-ironsworn/pull/180))
 
 ## 1.10.0
