@@ -2,6 +2,7 @@
   <div class="flexcol">
     <div class="flexrow">
       <h4>{{ title }}</h4>
+      <p v-if="overflow" class="nogrow" style="padding: 1px; margin-right: 10px">{{ overflow }}</p>
       <icon-button v-if="editMode" icon="caret-left" @click="decrease" />
       <icon-button icon="caret-right" @click="increase" />
     </div>
@@ -81,7 +82,10 @@ export default {
       return this.actor.data.legacies[`${this.propKey}XpSpent`] ?? 0
     },
     overflow() {
-      return Math.floor(this.ticks / 40) * 10
+      const n = Math.floor(this.ticks / 40) * 10
+      if (n > 0) {
+        return `(+${n})`
+      }
     },
     boxes() {
       const ret = []
