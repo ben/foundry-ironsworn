@@ -55,7 +55,11 @@
           </div>
         </div>
         <keep-alive>
-          <component :is="currentTab.component" :actor="actor" />
+          <component
+            :is="currentTab.component"
+            :actor="actor"
+            style="margin: 0.5rem"
+          />
         </keep-alive>
       </div>
 
