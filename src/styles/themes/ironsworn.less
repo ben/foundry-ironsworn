@@ -113,17 +113,6 @@
     &:not(.disabled) {
       &:hover {
         &.block {
-          background: @medium-color;
-        }
-        &.text {
-          color: @medium-color;
-        }
-        &.svg {
-          fill: @medium-color;
-        }
-      }
-      &:active {
-        &.block {
           background: @light-color;
         }
         &.text {
@@ -131,6 +120,17 @@
         }
         &.svg {
           fill: @light-color;
+        }
+      }
+      &:active {
+        &.block {
+          background: @medium-color;
+        }
+        &.text {
+          color: @medium-color;
+        }
+        &.svg {
+          fill: @medium-color;
         }
       }
 
