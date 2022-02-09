@@ -75,7 +75,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
     // Starforged legacy XP
     for (const kind of ['quests', 'bonds', 'discoveries']) {
       const oldXp = characterData.data.legacies[`${kind}XpSpent`]
-      const newXp = data.data.legacies[`${kind}XpSpent`] as number
+      const newXp = get(data.data, `legacies.${kind}XpSpent`)
       if (newXp !== undefined) {
         if (newXp > oldXp) {
           return game.i18n.format('IRONSWORN.ChangeLog.MarkedXP', { amt: newXp - oldXp })
