@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.2
+
 - Fix change logging and tweak a style ([#181](https://github.com/ben/foundry-ironsworn/pull/181))
 
 ## 1.10.1
