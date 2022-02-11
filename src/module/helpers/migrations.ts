@@ -1,32 +1,60 @@
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 
+// Utilities
+async function everyActor(fn: (a: IronswornActor) => any) {
+  // Game actors
+  for (const actor of game.actors?.contents ?? []) {
+    await fn(actor)
+  }
+
+  // Pack actors
+  for (const pack of game.packs.contents) {
+    if (pack.documentClass === Actor) {
+      for (const thing of pack.contents) {
+        fn(thing as IronswornActor)
+      }
+    }
+  }
+}
+async function everyItem(fn: (x: IronswornItem) => any) {
+  // Items
+  for (const item of game.items?.contents ?? []) {
+    await fn(item)
+  }
+
+  // Pack items
+  for (const pack of game.packs.contents) {
+    if (pack.documentClass === Item) {
+      for (const thing of pack.contents) {
+        fn(thing as IronswornItem)
+      }
+    }
+  }
+
+  // Actor-owned items (includes packs)
+  await everyActor(async (a) => {
+    for (const item of a.items.contents) {
+      await fn(item)
+    }
+  })
+}
+
+//----------------------------
+// Migration 0 (no-op)
 function noop() {
   // no-op
 }
 
+// Migration 1: "formidible" -> "formidable"
 async function fixFormidableSpelling() {
   // Iterate through everything that has a rank (sites, items, owned items), and change "formidible" to "formidable"
-  const setRank = async (x: IronswornActor | IronswornItem) => {
+  return everyItem(async (x: IronswornActor | IronswornItem) => {
     if ((x?.data?.data as any).rank === 'formidible') {
       console.log(`Upgrading ${x.type} / ${x.name}`)
       await x.update({ data: { rank: 'formidable' } })
     }
-  }
-  for (const item of game.items?.contents || []) {
-    await setRank(item)
-  }
-  for (const actor of game.actors?.contents || []) {
-    await setRank(actor)
-    for (const item of actor.items) {
-      await setRank(item)
-    }
-  }
-  for (const pack of game.packs.contents) {
-    for (const thing of pack.contents) {
-      await setRank(thing as any)
-    }
-  }
+  })
 }
 
 async function everythingIsAProgress() {
@@ -34,10 +62,7 @@ async function everythingIsAProgress() {
 }
 
 // index 1 is the function to run when upgrading from 1 to 2, and so on
-const MIGRATIONS = [noop,
-  fixFormidableSpelling,
-  everythingIsAProgress,
-]
+const MIGRATIONS = [noop, fixFormidableSpelling, everythingIsAProgress]
 const NEWEST_VERSION = MIGRATIONS.length
 
 export async function runDataMigrations() {
