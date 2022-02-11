@@ -12,7 +12,7 @@ async function everyActor(fn: (a: IronswornActor) => any) {
   for (const pack of game.packs.contents) {
     if (pack.documentClass === Actor) {
       for (const thing of pack.contents) {
-        fn(thing as IronswornActor)
+        await fn(thing as IronswornActor)
       }
     }
   }
@@ -27,7 +27,7 @@ async function everyItem(fn: (x: IronswornItem) => any) {
   for (const pack of game.packs.contents) {
     if (pack.documentClass === Item) {
       for (const thing of pack.contents) {
-        fn(thing as IronswornItem)
+        await fn(thing as IronswornItem)
       }
     }
   }
@@ -49,7 +49,7 @@ async function noop() {
 // Migration 1: "formidible" -> "formidable"
 async function fixFormidableSpelling() {
   // Iterate through everything that has a rank (sites, items, owned items), and change "formidible" to "formidable"
-  return everyItem(async (x) => {
+  await everyItem(async (x) => {
     if ((x?.data?.data as any).rank === 'formidible') {
       console.log(`Upgrading ${x.type} / ${x.name}`)
       await x.update({ data: { rank: 'formidable' } })
@@ -59,9 +59,10 @@ async function fixFormidableSpelling() {
 
 // Migration 2: convert vows to progresses with the "vow" subtype
 async function everythingIsAProgress() {
-  return everyItem(async (x) => {
+  await everyItem(async (x) => {
     if (['progress', 'vow'].includes(x.type)) {
-      x.update({
+      console.log(`Upgrading ${x.type} ${x.name}`)
+      await x.update({
         type: 'progress',
         data: { subtype: x.type },
       })
