@@ -145,7 +145,8 @@
       "templates": [
         "progress"
       ],
-      "subtype": "progress"
+      "subtype": "progress",
+      "starred": false
     },
     "vow": {
       "templates": [
