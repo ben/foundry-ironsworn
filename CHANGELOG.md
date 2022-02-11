@@ -2,7 +2,7 @@
 
 ## In progress
 
-- Implement the progresses tab, and update the way progress items work ([#182](https://github.com/ben/foundry-ironsworn/pull/182))
+- Implement the progresses tab ([#182](https://github.com/ben/foundry-ironsworn/pull/182))
 
 ## 1.10.2
 
