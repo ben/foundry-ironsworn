@@ -1,5 +1,5 @@
-import { IronswornActor } from "../actor/actor"
-import { IronswornItem } from "../item/item"
+import { IronswornActor } from '../actor/actor'
+import { IronswornItem } from '../item/item'
 
 function noop() {
   // no-op
@@ -10,7 +10,7 @@ async function fixFormidableSpelling() {
   const setRank = async (x: IronswornActor | IronswornItem) => {
     if ((x?.data?.data as any).rank === 'formidible') {
       console.log(`Upgrading ${x.type} / ${x.name}`)
-      await x.update({data: {rank: 'formidable'}})
+      await x.update({ data: { rank: 'formidable' } })
     }
   }
   for (const item of game.items?.contents || []) {
@@ -29,10 +29,14 @@ async function fixFormidableSpelling() {
   }
 }
 
+async function everythingIsAProgress() {
+  // TODO
+}
+
 // index 1 is the function to run when upgrading from 1 to 2, and so on
-const MIGRATIONS = [
-  noop,
-  fixFormidableSpelling
+const MIGRATIONS = [noop,
+  fixFormidableSpelling,
+  everythingIsAProgress,
 ]
 const NEWEST_VERSION = MIGRATIONS.length
 
