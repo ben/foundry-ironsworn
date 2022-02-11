@@ -1,39 +1,77 @@
-import { IronswornActor } from "../actor/actor"
-import { IronswornItem } from "../item/item"
+import { IronswornActor } from '../actor/actor'
+import { IronswornItem } from '../item/item'
 
-function noop() {
+// Utilities
+async function everyActor(fn: (a: IronswornActor) => any) {
+  // Game actors
+  for (const actor of game.actors?.contents ?? []) {
+    await fn(actor)
+  }
+
+  // Pack actors
+  for (const pack of game.packs.contents) {
+    if (pack.documentClass === Actor) {
+      for (const thing of pack.contents) {
+        await fn(thing as IronswornActor)
+      }
+    }
+  }
+}
+async function everyItem(fn: (x: IronswornItem) => any) {
+  // Items
+  for (const item of game.items?.contents ?? []) {
+    await fn(item)
+  }
+
+  // Pack items
+  for (const pack of game.packs.contents) {
+    if (pack.documentClass === Item) {
+      for (const thing of pack.contents) {
+        await fn(thing as IronswornItem)
+      }
+    }
+  }
+
+  // Actor-owned items (includes packs)
+  await everyActor(async (a) => {
+    for (const item of a.items.contents) {
+      await fn(item)
+    }
+  })
+}
+
+//----------------------------
+// Migration 0 (no-op)
+async function noop() {
   // no-op
 }
 
+// Migration 1: "formidible" -> "formidable"
 async function fixFormidableSpelling() {
   // Iterate through everything that has a rank (sites, items, owned items), and change "formidible" to "formidable"
-  const setRank = async (x: IronswornActor | IronswornItem) => {
+  await everyItem(async (x) => {
     if ((x?.data?.data as any).rank === 'formidible') {
       console.log(`Upgrading ${x.type} / ${x.name}`)
-      await x.update({data: {rank: 'formidable'}})
+      await x.update({ data: { rank: 'formidable' } })
     }
-  }
-  for (const item of game.items?.contents || []) {
-    await setRank(item)
-  }
-  for (const actor of game.actors?.contents || []) {
-    await setRank(actor)
-    for (const item of actor.items) {
-      await setRank(item)
+  })
+}
+
+// Migration 2: convert vows to progresses with the "vow" subtype
+async function everythingIsAProgress() {
+  await everyItem(async (x) => {
+    if (['progress', 'vow'].includes(x.type)) {
+      console.log(`Upgrading ${x.type} ${x.name}`)
+      await x.update({
+        type: 'progress',
+        data: { subtype: x.type },
+      })
     }
-  }
-  for (const pack of game.packs.contents) {
-    for (const thing of pack.contents) {
-      await setRank(thing as any)
-    }
-  }
+  })
 }
 
 // index 1 is the function to run when upgrading from 1 to 2, and so on
-const MIGRATIONS = [
-  noop,
-  fixFormidableSpelling
-]
+const MIGRATIONS: Array<() => Promise<any>> = [noop, fixFormidableSpelling, everythingIsAProgress]
 const NEWEST_VERSION = MIGRATIONS.length
 
 export async function runDataMigrations() {

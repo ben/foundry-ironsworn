@@ -45,10 +45,7 @@ export default {
 
   computed: {
     progressItems() {
-      return [
-        ...this.actor.items.filter((x) => x.type === 'vow'),
-        ...this.actor.items.filter((x) => x.type === 'progress'),
-      ]
+      return this.actor.items.filter((x) => x.type === 'progress')
     },
   },
 }

@@ -1,5 +1,6 @@
 import { RollDialog } from '../../helpers/roll'
 import { IronswornSettings } from '../../helpers/settings'
+import { IronswornItem } from '../../item/item'
 import { CharacterMoveSheet } from './charactermovesheet'
 
 export class IronswornCharacterSheet extends ActorSheet {
@@ -41,8 +42,9 @@ export class IronswornCharacterSheet extends ActorSheet {
     let data: any = super.getData()
 
     data.assets = this.actor.items.filter((x) => x.type === 'asset')
-    data.vows = this.actor.items.filter((x) => x.type === 'vow')
-    data.progresses = this.actor.items.filter((x) => x.type === 'progress')
+    const rawProgresses = this.actor.items.filter((x) => x.type === 'progress') as IronswornItem[]
+    data.vows = rawProgresses.filter(x => (x.data.data as any)?.subtype === 'vow')
+    data.progresses = rawProgresses.filter(x => (x.data.data as any)?.subtype === 'progress')
     data.bonds = this.actor.items.find((x) => x.type === 'bondset')
 
     // Allow every itemtype to add data to the actorsheet

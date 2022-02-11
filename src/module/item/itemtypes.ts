@@ -49,8 +49,10 @@ export interface AssetDataProperties {
 
 ///////////////////////////////
 
-type ProgressDataSourceData = ProgressBase
-type ProgressDataPropertiesData = ProgressBase
+interface ProgressDataSourceData extends ProgressBase {
+  subtype: String
+}
+interface ProgressDataPropertiesData extends ProgressDataSourceData {}
 
 export interface ProgressDataSource {
   type: 'progress'

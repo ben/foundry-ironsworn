@@ -3,6 +3,7 @@
 ## In progress
 
 - Implement the progresses tab ([#182](https://github.com/ben/foundry-ironsworn/pull/182))
+- Convert "vow" objects to "progress" objects ([#183](https://github.com/ben/foundry-ironsworn/pull/183))
 
 ## 1.10.2
 
