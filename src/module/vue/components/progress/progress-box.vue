@@ -56,7 +56,7 @@ export default {
       return actor?.items.get(this.item._id)
     },
     subtitle() {
-      return this.$t(`IRONSWORN.${this.$capitalize(this.item.type)}`)
+      return this.$t(`IRONSWORN.${this.$capitalize(this.item.data.subtype)}`)
     },
   },
 
