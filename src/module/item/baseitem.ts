@@ -132,18 +132,15 @@ export abstract class BaseItem {
    */
   static async createNewItem(itemData, sheet, render = true) {
     // Create item and render sheet afterwards
-    let newItem = await sheet.actor.createOwnedItem(itemData)
+    const newItems = await Item.createDocuments([itemData], {parent: sheet.actor})
+    const newItem = newItems[0]
 
     // Tokens don't return the new item
     if (!render || sheet.actor.isToken) return
 
-    if (newItem instanceof Array) {
-      newItem = newItem[0]
-    }
-
     // We have to reload the item for it to have a sheet
     // Todo: Fix to use renderSheet option on creation
-    const createdItem = sheet.actor.getOwnedItem(newItem._id)
+    const createdItem = sheet.actor.items.get(newItem.id)
     createdItem.sheet.render(true)
   }
 
