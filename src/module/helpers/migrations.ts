@@ -57,8 +57,16 @@ async function fixFormidableSpelling() {
   })
 }
 
+// Migration 2: convert vows to progresses with the "vow" subtype
 async function everythingIsAProgress() {
-  // TODO
+  return everyItem(async (x) => {
+    if (['progress', 'vow'].includes(x.type)) {
+      x.update({
+        type: 'progress',
+        data: { subtype: x.type },
+      })
+    }
+  })
 }
 
 // index 1 is the function to run when upgrading from 1 to 2, and so on
