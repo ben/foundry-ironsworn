@@ -22,10 +22,11 @@ export default {
   },
 
   methods: {
-    async addProgressItem(type) {
+    async addProgressItem(subtype) {
       const itemData = {
-        name: this.$capitalize(type),
-        type,
+        name: this.$capitalize(subtype),
+        type: 'progress',
+        data: { subtype },
         sort: 9000000,
       }
       const item = await Item.create(itemData, { parent: this.$actor })
