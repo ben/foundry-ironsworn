@@ -42,14 +42,14 @@ async function everyItem(fn: (x: IronswornItem) => any) {
 
 //----------------------------
 // Migration 0 (no-op)
-function noop() {
+async function noop() {
   // no-op
 }
 
 // Migration 1: "formidible" -> "formidable"
 async function fixFormidableSpelling() {
   // Iterate through everything that has a rank (sites, items, owned items), and change "formidible" to "formidable"
-  return everyItem(async (x: IronswornActor | IronswornItem) => {
+  return everyItem(async (x) => {
     if ((x?.data?.data as any).rank === 'formidible') {
       console.log(`Upgrading ${x.type} / ${x.name}`)
       await x.update({ data: { rank: 'formidable' } })
@@ -62,7 +62,7 @@ async function everythingIsAProgress() {
 }
 
 // index 1 is the function to run when upgrading from 1 to 2, and so on
-const MIGRATIONS = [noop, fixFormidableSpelling, everythingIsAProgress]
+const MIGRATIONS: Array<() => Promise<any>> = [noop, fixFormidableSpelling, everythingIsAProgress]
 const NEWEST_VERSION = MIGRATIONS.length
 
 export async function runDataMigrations() {
