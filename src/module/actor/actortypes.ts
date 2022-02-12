@@ -1,5 +1,6 @@
 interface CharacterDataSourceData {
   biography: string
+  notes: string
   edge: number
   heart: number
   iron: number
