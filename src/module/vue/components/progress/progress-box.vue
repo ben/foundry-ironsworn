@@ -17,7 +17,15 @@
             <icon-button icon="play" @click="advance" />
             <icon-button icon="dice-d6" @click="fulfill" />
           </div>
-          <h4>{{ item.name }}</h4>
+          <h4 class="flexrow">
+            <span>{{ item.name }}</span>
+            <icon-button
+              icon="star"
+              :solid="item.data.starred"
+              @click="toggleStar"
+              v-if="showStar"
+            />
+          </h4>
         </div>
       </div>
       <div class="flexrow">
@@ -45,6 +53,7 @@ export default {
   props: {
     actor: { type: Object, required: true },
     item: { type: Object, required: true },
+    showStar: Boolean,
   },
 
   computed: {
@@ -82,6 +91,9 @@ export default {
     },
     advance() {
       this.foundryItem.markProgress()
+    },
+    toggleStar() {
+      this.$item.update({ data: { starred: !this.item.data.starred } })
     },
     fulfill() {
       this.foundryItem.fulfill()
