@@ -5,6 +5,7 @@
 ## 1.10.4
 
 - Replace "Clocks" and "Scenes" with "Notes" ([#187](https://github.com/ben/foundry-ironsworn/pull/187))
+- Fix truths dialog and a Vue warning ([#188](https://github.com/ben/foundry-ironsworn/pull/188))
 
 ## 1.10.3
 
