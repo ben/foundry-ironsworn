@@ -22,6 +22,7 @@
             <icon-button
               icon="star"
               :solid="item.data.starred"
+              :tooltip="$t('IRONSWORN.StarProgress')"
               @click="toggleStar"
               v-if="showStar"
             />

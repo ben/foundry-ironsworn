@@ -1,5 +1,5 @@
 <template>
-  <div class="flexrow clickable block nogrow" @click="click">
+  <div class="flexrow clickable block nogrow" @click="click" :title="tooltip">
     <i :class="classes"></i>
   </div>
 </template>
@@ -9,6 +9,7 @@ export default {
   props: {
     icon: { type: String, required: true },
     solid: { type: Boolean, default: true },
+    tooltip: String
   },
 
   computed: {
@@ -18,7 +19,7 @@ export default {
         far: !this.solid,
         [`fa-${this.icon}`]: true,
       }
-    }
+    },
   },
 
   methods: {
