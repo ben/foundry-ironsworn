@@ -1,12 +1,21 @@
 <template>
   <div class="flexcol" style="margen: 1rem">
     <textarea
-      style="resize: none"
       v-model="actor.data.notes"
       @blur="save"
     ></textarea>
   </div>
 </template>
+
+<style lang="less" scoped>
+input,
+textarea {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  font-family: var(--font-primary);
+  resize: none;
+}
+</style>
 
 <script>
 export default {
