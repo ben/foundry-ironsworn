@@ -1,6 +1,6 @@
 <template>
   <div class="flexrow clickable block nogrow" @click="click">
-    <i :class="$concat('fas fa-', icon)"></i>
+    <i :class="classes"></i>
   </div>
 </template>
 
@@ -8,6 +8,17 @@
 export default {
   props: {
     icon: { type: String, required: true },
+    solid: { type: Boolean, default: true },
+  },
+
+  computed: {
+    classes() {
+      return {
+        fas: this.solid,
+        far: !this.solid,
+        [`fa-${this.icon}`]: true,
+      }
+    }
   },
 
   methods: {
