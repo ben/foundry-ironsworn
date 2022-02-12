@@ -4,6 +4,7 @@
 
 - Implement the progresses tab ([#182](https://github.com/ben/foundry-ironsworn/pull/182))
 - Convert "vow" objects to "progress" objects ([#183](https://github.com/ben/foundry-ironsworn/pull/183))
+- Starrable progress items show on the legacies tab ([#184](https://github.com/ben/foundry-ironsworn/pull/184))
 
 ## 1.10.2
 

@@ -51,6 +51,7 @@ export interface AssetDataProperties {
 
 interface ProgressDataSourceData extends ProgressBase {
   subtype: String
+  starred: Boolean
 }
 interface ProgressDataPropertiesData extends ProgressDataSourceData {}
 

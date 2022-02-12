@@ -9,6 +9,7 @@
         :key="item._id"
         :item="item"
         :actor="actor"
+        :showStar="true"
       />
     </transition-group>
 
