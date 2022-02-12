@@ -1,8 +1,27 @@
 <template>
   <div>
-    <legacy-track propKey="quests" :title="$t('IRONSWORN.Quests')" :actor="actor" />
-    <legacy-track propKey="bonds" :title="$t('IRONSWORN.Bonds')" :actor="actor" />
-    <legacy-track propKey="discoveries" :title="$t('IRONSWORN.Discoveries')" :actor="actor" />
+    <legacy-track
+      propKey="quests"
+      :title="$t('IRONSWORN.Quests')"
+      :actor="actor"
+    />
+    <legacy-track
+      propKey="bonds"
+      :title="$t('IRONSWORN.Bonds')"
+      :actor="actor"
+    />
+    <legacy-track
+      propKey="discoveries"
+      :title="$t('IRONSWORN.Discoveries')"
+      :actor="actor"
+    />
+
+    <progress-box
+      v-for="item in starredProgresses"
+      :key="item._id"
+      :item="item"
+      :actor="actor"
+    />
   </div>
 </template>
 
@@ -11,6 +30,14 @@ import LegacyTrack from '../legacy-track.vue'
 export default {
   props: {
     actor: Object,
+  },
+
+  computed: {
+    starredProgresses() {
+      return this.actor.items
+        .filter((x) => x.type === 'progress')
+        .filter((x) => x.data.starred)
+    },
   },
 }
 </script>
