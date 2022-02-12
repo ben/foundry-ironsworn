@@ -26,7 +26,7 @@
 
     <!-- DESCRIPTION -->
     <editor
-      :owner="owner"
+      :owner="true"
       target="data.description"
       button="true"
       editable="true"

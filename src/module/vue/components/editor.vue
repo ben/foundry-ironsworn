@@ -14,7 +14,16 @@
 
 <script>
 export default {
-  props: ['owner', 'target', 'content', 'button', 'editable'],
+  props: {
+    owner: {
+      type: Boolean,
+      default: false,
+    },
+    target: String,
+    content: String,
+    button: Boolean,
+    editable: Boolean,
+  },
   data: function () {
     return {
       canEdit: false,
@@ -23,9 +32,7 @@ export default {
   computed: {},
   methods: {
     enrichHtml() {
-      const button = Boolean(this.button)
-      const editable = Boolean(this.editable)
-      this.canEdit = button && editable
+      this.canEdit = this.button && this.editable
       let editor = TextEditor.enrichHTML(this.content || '', {
         secrets: this.owner,
         documents: true,

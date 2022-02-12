@@ -86,34 +86,36 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
       }
     }
 
+    const buttons = {
+      yes: {
+        icon: '<i class="fas fa-check"></i>',
+        label: 'Yes',
+        callback: () => new WorldTruthsDialog().render(true),
+      },
+      no: {
+        icon: '<i class="fas fa-times"></i>',
+        label: 'Not this time',
+      },
+      goaway: {
+        icon: '<i class="fas fa-times"></i>',
+        label: 'Never',
+        callback: () => {
+          game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
+        },
+      },
+    } as any
+    if (game.settings.get('foundry-ironsworn', 'starforged-beta')) {
+      buttons.sfyes = {
+        icon: '<i class="fas fa-user-astronaut"></i>',
+        label: 'Yes (SF)',
+        callback: () => new sfSettingTruthsDialogVue().render(true),
+      }
+    }
+
     const d = new Dialog({
       title: game.i18n.localize('IRONSWORN.YourWorldTruths'),
       content: '<p>Would you like to generate your world truths?</p>',
-      buttons: {
-        yes: {
-          icon: '<i class="fas fa-check"></i>',
-          label: 'Yes',
-          callback: () => new WorldTruthsDialog().render(true),
-        },
-        sfyes: (game.settings.get('foundry-ironsworn', 'starforged-beta')
-          ? {
-              icon: '<i class="fas fa-user-astronaut"></i>',
-              label: 'Yes (SF)',
-              callback: () => new sfSettingTruthsDialogVue().render(true),
-            }
-          : undefined) as any,
-        no: {
-          icon: '<i class="fas fa-times"></i>',
-          label: 'Not this time',
-        },
-        goaway: {
-          icon: '<i class="fas fa-times"></i>',
-          label: 'Never',
-          callback: () => {
-            game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
-          },
-        },
-      },
+      buttons,
       default: 'yes',
     })
     d.render(true)
