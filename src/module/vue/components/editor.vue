@@ -28,7 +28,7 @@ export default {
       this.canEdit = button && editable
       let editor = TextEditor.enrichHTML(this.content || '', {
         secrets: this.owner,
-        entities: true,
+        documents: true,
       })
       return editor
     },
