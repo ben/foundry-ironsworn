@@ -24,6 +24,7 @@ export default {
       return {
         width: this.size,
         height: this.size,
+        'flex-basis': 0,
       }
     },
   },
