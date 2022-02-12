@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.5
+
 ## 1.10.4
 
 - Replace "Clocks" and "Scenes" with "Notes" ([#187](https://github.com/ben/foundry-ironsworn/pull/187))
