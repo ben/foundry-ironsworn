@@ -4,7 +4,7 @@
       <div class="flexrow">
         <document-img
           :document="item"
-          :size="38"
+          size="38px"
           class="nogrow"
           style="margin-right: 5px"
         />

@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Replace "Clocks" and "Scenes" with "Notes" ([#187](https://github.com/ben/foundry-ironsworn/pull/187))
+
 ## 1.10.3
 
 - Implement the progresses tab ([#182](https://github.com/ben/foundry-ironsworn/pull/182))

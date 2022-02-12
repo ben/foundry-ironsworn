@@ -122,8 +122,7 @@ export default {
       { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
       { titleKey: 'IRONSWORN.Bonds', component: 'sf-bonds' },
       { titleKey: 'IRONSWORN.Progress', component: 'sf-progresses' },
-      { titleKey: 'IRONSWORN.Clocks', component: 'sf-clocks' },
-      { titleKey: 'IRONSWORN.Scenes', component: 'sf-scenes' },
+      { titleKey: 'IRONSWORN.Notes', component: 'sf-notes' },
     ]
     return {
       tabs,
