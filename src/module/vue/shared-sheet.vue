@@ -38,6 +38,13 @@
 
       <progress-controls :actor="actor" />
     </section>
+
+    <textarea
+      class="notes"
+      :placeholder="$t('IRONSWORN.Notes')"
+      v-model="actor.data.biography"
+      @blur="saveNotes"
+    />
   </div>
 </template>
 
@@ -59,6 +66,15 @@
   padding-bottom: 0;
   border-top: 0;
   border-bottom: 0;
+}
+
+textarea.notes {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  font-family: var(--font-primary);
+  resize: none;
+  flex: 1;
+  min-height: 150px;
 }
 </style>
 
@@ -88,6 +104,10 @@ export default {
         actor: this.$actor,
         stat: 'supply',
       })
+    },
+
+    saveNotes() {
+      this.$actor.update({ 'data.biography': this.actor.data.biography })
     },
   },
 }
