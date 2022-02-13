@@ -14,7 +14,8 @@
             <rank-hexes :current="item.data.rank" @click="rankClick" />
             <icon-button v-if="editMode" icon="trash" @click="destroy" />
             <icon-button icon="edit" @click="edit" />
-            <icon-button icon="play" @click="advance" />
+            <icon-button v-if="editMode" icon="caret-left" @click="retreat" />
+            <icon-button icon="caret-right" @click="advance" />
             <icon-button icon="dice-d6" @click="fulfill" />
           </div>
           <h4 class="flexrow">
@@ -91,7 +92,10 @@ export default {
       this.foundryItem.update({ data: { rank } })
     },
     advance() {
-      this.foundryItem.markProgress()
+      this.foundryItem.markProgress(1)
+    },
+    retreat() {
+      this.foundryItem.markProgress(-1)
     },
     toggleStar() {
       this.$item.update({ data: { starred: !this.item.data.starred } })
