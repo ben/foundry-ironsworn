@@ -26,10 +26,10 @@
 
     <!-- DESCRIPTION -->
     <editor
-      :owner="true"
       target="data.description"
-      button="true"
-      editable="true"
+      :owner="true"
+      :button="true"
+      :editable="true"
       :content="item.data.description"
     />
   </div>
