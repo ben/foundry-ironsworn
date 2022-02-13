@@ -2,6 +2,8 @@
 
 ## In progress
 
+- "Retreat" button for IS progress boxes ([#191](https://github.com/ben/foundry-ironsworn/pull/191))
+
 ## 1.10.6
 
 - Fix some Vue warnings ([#189](https://github.com/ben/foundry-ironsworn/pull/189))

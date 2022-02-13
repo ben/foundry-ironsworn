@@ -10,10 +10,10 @@ export class IronswornItem extends Item {
   /**
    * Progress methods
    */
-  markProgress() {
+  markProgress(numMarks = 1) {
     if (this.data.type !== 'vow' && this.data.type !== 'progress') return
 
-    const increment = RANK_INCREMENTS[this.data.data.rank]
+    const increment = RANK_INCREMENTS[this.data.data.rank] * numMarks
     const newValue = Math.min(this.data.data.current + increment, 40)
     return this.update({ 'data.current': newValue })
   }
