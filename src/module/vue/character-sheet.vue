@@ -93,6 +93,13 @@
 
               <progress-controls :actor="actor" />
             </div>
+
+            <textarea
+              class="notes"
+              :placeholder="$t('IRONSWORN.Notes')"
+              v-model="actor.data.biography"
+              @blur="saveNotes"
+            />
           </div>
         </div>
 
@@ -159,6 +166,15 @@
   border-top: 0;
   border-bottom: 0;
 }
+
+textarea.notes {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  font-family: var(--font-primary);
+  resize: none;
+  flex: 1;
+  min-height: 150px;
+}
 </style>
 
 <script>
@@ -169,9 +185,7 @@ export default {
 
   computed: {
     progressItems() {
-      return [
-        ...this.actor.items.filter((x) => x.type === 'progress'),
-      ]
+      return this.actor.items.filter((x) => x.type === 'progress')
     },
     assets() {
       return this.actor.items.filter((x) => x.type === 'asset')
@@ -190,6 +204,10 @@ export default {
     openCompendium(name) {
       const pack = game.packs?.get(`foundry-ironsworn.${name}`)
       pack?.render(true)
+    },
+
+    saveNotes() {
+      this.$actor.update({ 'data.biography': this.actor.data.biography })
     },
   },
 }

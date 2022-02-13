@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix some Vue warnings ([#189](https://github.com/ben/foundry-ironsworn/pull/189))
+- Add notes areas to the Ironsworn Vue sheets ([#190](https://github.com/ben/foundry-ironsworn/pull/190))
 
 ## 1.10.5
 
