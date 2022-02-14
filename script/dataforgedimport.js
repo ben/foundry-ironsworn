@@ -4,7 +4,7 @@ const fs = require('fs/promises')
 const util = require('util')
 
 function renderHtml(text) {
-  return marked(text.replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'), { gfm: true })
+  return marked.parse(text.replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'), { gfm: true })
 }
 
 async function dataforgedJson(name) {
