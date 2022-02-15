@@ -9,6 +9,13 @@
         :showStar="true"
       />
     </transition-group>
+
+    <div class="flexrow nogrow" style="text-align: center">
+      <div class="clickable block" @click="newBond">
+        <i class="fas fa-plus"></i>
+        {{ $t('IRONSWORN.Bond') }}
+      </div>
+    </div>
   </div>
 </template>
 
@@ -44,6 +51,21 @@ export default {
       return this.actor.items
         .filter((x) => x.type === 'progress')
         .filter((x) => x.data.subtype === 'bond')
+    },
+  },
+
+  methods: {
+    async newBond() {
+      const item = await Item.create(
+        {
+          name: 'Bond',
+          type: 'progress',
+          data: { subtype: 'bond' },
+          sort: 9000000,
+        },
+        { parent: this.$actor }
+      )
+      item.sheet.render(true)
     },
   },
 }
