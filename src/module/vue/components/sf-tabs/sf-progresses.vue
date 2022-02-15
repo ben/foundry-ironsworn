@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flexcol sheet-area ironsworn__drop__target"
+    class="flexcol ironsworn__drop__target"
     data-drop-type="progress"
   >
     <transition-group name="slide" tag="div" class="nogrow">
@@ -46,7 +46,9 @@ export default {
 
   computed: {
     progressItems() {
-      return this.actor.items.filter((x) => x.type === 'progress')
+      return this.actor.items
+        .filter((x) => x.type === 'progress')
+        .filter((x) => x.data.subtype !== 'bond')
     },
   },
 }
