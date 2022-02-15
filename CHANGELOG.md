@@ -3,6 +3,7 @@
 ## In progress
 
 - "Retreat" button for IS progress boxes ([#191](https://github.com/ben/foundry-ironsworn/pull/191))
+- Implement the "Bonds" tab ([#195](https://github.com/ben/foundry-ironsworn/pull/195))
 
 ## 1.10.6
 

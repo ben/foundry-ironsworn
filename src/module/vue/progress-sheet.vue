@@ -6,6 +6,17 @@
       <document-name :document="item" />
     </header>
 
+    <select
+      class="nogrow"
+      v-model="item.data.subtype"
+      @change="subtypeChange"
+      style="margin: 0.5rem 0"
+    >
+      <option value="vow">{{ $t('IRONSWORN.Vow') }}</option>
+      <option value="progress">{{ $t('IRONSWORN.Progress') }}</option>
+      <option value="bond">{{ $t('IRONSWORN.Bond') }}</option>
+    </select>
+
     <!-- RANK -->
     <div class="flexrow nogrow">
       <rank-hexes
@@ -64,6 +75,10 @@ export default {
       const increment = CONFIG.IRONSWORN.RankIncrements[this.item.data.rank]
       const newValue = Math.min(this.item.data.current + increment, 40)
       this.$item.update({ 'data.current': newValue })
+    },
+
+    subtypeChange(...args) {
+      this.$item.update({ data: { subtype: this.item.data.subtype } })
     },
   },
 }
