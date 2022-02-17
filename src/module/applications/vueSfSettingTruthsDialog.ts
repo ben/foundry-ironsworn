@@ -1,6 +1,6 @@
 import { VueApplication } from './vueapp'
 
-export class sfSettingTruthsDialogVue extends VueApplication {
+export class SFSettingTruthsDialogVue extends VueApplication {
   constructor() {
     super({})
   }
