@@ -1,11 +1,12 @@
 import { CharacterMoveSheet } from './sheets/charactermovesheet'
+import { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
  * @extends {Actor}
  */
 export class IronswornActor extends Actor {
-  moveSheet?: CharacterMoveSheet
+  moveSheet?: CharacterMoveSheet | SFCharacterMoveSheet
 
   static async createDialog(data, _options = {}) {
     if (CONFIG.IRONSWORN.applications.createActorDialog) {
