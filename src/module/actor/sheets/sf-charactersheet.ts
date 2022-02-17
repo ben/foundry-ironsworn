@@ -1,5 +1,6 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornVueActorSheet } from '../vueactorsheet'
+import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 // import { CharacterMoveSheet } from './charactermovesheet'
 
 export class StarforgedCharacterSheet extends IronswornVueActorSheet {
@@ -29,15 +30,15 @@ export class StarforgedCharacterSheet extends IronswornVueActorSheet {
     return data
   }
 
-  // render(...args) {
-  //   if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
-  //   return super.render(...args)
-  // }
+  render(...args) {
+    if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
+    return super.render(...args)
+  }
 
-  // close(...args) {
-  //   this.actor.moveSheet?.close(...args)
-  //   return super.close(...args)
-  // }
+  close(...args) {
+    this.actor.moveSheet?.close(...args)
+    return super.close(...args)
+  }
 
   _getHeaderButtons() {
     return [
@@ -51,7 +52,7 @@ export class StarforgedCharacterSheet extends IronswornVueActorSheet {
         class: 'ironsworn-open-move-sheet',
         label: 'Moves',
         icon: 'fas fa-directions',
-        onclick: console.log // (e) => this._openMoveSheet(e),
+        onclick: (e) => this._openMoveSheet(e),
       },
       ...super._getHeaderButtons(),
     ]
@@ -62,11 +63,8 @@ export class StarforgedCharacterSheet extends IronswornVueActorSheet {
     this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
-  // _openMoveSheet(_e?: JQuery.ClickEvent) {
-  //   if (this.actor.moveSheet) {
-  //     this.actor.moveSheet.render(true, { focus: true })
-  //   } else {
-  //     new CharacterMoveSheet(this.actor).render(true)
-  //   }
-  // }
+  _openMoveSheet(_e?: JQuery.ClickEvent) {
+    this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
+    this.actor.moveSheet.render(true, { focus: true })
+  }
 }
