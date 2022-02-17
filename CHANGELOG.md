@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Starforged moves/oracles sheet ([#197](https://github.com/ben/foundry-ironsworn/pull/197))
+
 ## 1.10.7
 
 - "Retreat" button for IS progress boxes ([#191](https://github.com/ben/foundry-ironsworn/pull/191))
