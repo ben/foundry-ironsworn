@@ -59,3 +59,5 @@ Some things to remember:
 This work is based on Ironsworn (found at www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license  (creativecommons.org/licenses/by-nc-sa/4.0/).
 
 Hand-drawn map scene courtesy of [McSekcer](https://www.reddit.com/user/McSekcer/).
+
+Starforged scenes courtesy of [Unsplash](https://unsplash.com), and used under their [license](https://unsplash.com/license).
