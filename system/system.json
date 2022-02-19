@@ -102,6 +102,13 @@
       "system": "foundry-ironsworn",
       "path": "packs/scenes.db",
       "entity": "Scene"
+    },
+    {
+      "name": "starforged-sectors",
+      "label": "Starforged Scenes",
+      "system": "foundry-ironsworn",
+      "path": "packs/starforged-sectors.db",
+      "entity": "Scene"
     }
   ],
   "languages": [
