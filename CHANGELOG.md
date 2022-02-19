@@ -3,6 +3,7 @@
 ## In progress
 
 - Starforged moves/oracles sheet ([#197](https://github.com/ben/foundry-ironsworn/pull/197))
+- Compendium of Starforged scenes ([#199](https://github.com/ben/foundry-ironsworn/pull/199))
 
 ## 1.10.7
 
