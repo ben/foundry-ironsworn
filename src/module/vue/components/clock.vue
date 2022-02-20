@@ -14,9 +14,10 @@
       stroke="black"
       stroke-width="2"
       class="clickable svg"
-      :class="hoverClass(i)"
-      @mouseover="hover(i)"
-      @mouseleave="leave(i)"
+      :class="wedgeClasses(i)"
+      @mouseover="hovered = i"
+      @mouseleave="hovered = -1"
+      @click="click(i)"
     ></path>
   </svg>
 </template>
@@ -72,17 +73,19 @@ export default {
   },
 
   methods: {
-    hover(i) {
-      console.log('hover', i)
-      this.hovered = i
-    },
-    leave(i) {
-      console.log('leave', i)
-      this.hovered = -1
+    wedgeClasses(i) {
+      return {
+        hover: this.hovered >= i,
+        selected: this.ticked > i,
+      }
     },
 
-    hoverClass(i) {
-      return { hover: this.hovered >= i }
+    click(i) {
+      // If 1 is marked and the click is on the first wedge, clear the clock
+      if (i === 0 && this.ticked === 1) {
+        i = -1
+      }
+      this.$emit('click', i + 1)
     },
   },
 }

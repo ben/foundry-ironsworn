@@ -67,6 +67,7 @@
             <clock
               :wedges="item.data.clockMax"
               :ticked="item.data.clockTicks"
+              @click="setClock"
             />
           </div>
           <div class="flexcol">
@@ -168,6 +169,10 @@ export default {
           hasClock: this.item.data.hasClock,
         },
       })
+    },
+
+    setClock(num) {
+      this.$item.update({ data: { clockTicks: num } })
     },
   },
 }
