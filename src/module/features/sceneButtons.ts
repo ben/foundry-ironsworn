@@ -13,12 +13,16 @@ export function activateSceneButtonListeners() {
 
     const sfControl: SceneControl = {
       name: 'Starforged',
-      title: 'Starforged Tools',
-      icon: 'fas fa-rocket',
+      title: 'Starforged Tools', // TODO: i18n
+      icon: 'fas fa-space-shuttle',
       layer: 'ironsworn',
       visible: true,
       activeTool: 'select',
-      tools: [{ name: 'select', icon: 'fas fa-expand', title: 'Select' }],
+      tools: [
+        { name: 'star', icon: 'fas fa-star', title: 'Create Star' },
+        { name: 'planet', icon: 'fas fa-globe-europe', title: 'Create Planet' },
+        { name: 'settlement', icon: 'fas fa-city', title: 'Create Settlement' },
+      ],
     }
 
     controls.push(sfControl)
