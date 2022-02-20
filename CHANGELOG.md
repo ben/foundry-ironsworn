@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.9
+
 - Progress items have clocks ([#200](https://github.com/ben/foundry-ironsworn/pull/200))
 
 ## 1.10.8
