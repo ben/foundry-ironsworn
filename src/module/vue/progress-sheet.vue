@@ -19,7 +19,11 @@
 
     <div class="nogrow">
       <label class="checkbox">
-        <input type="checkbox" v-model="item.data.hasTrack" />
+        <input
+          type="checkbox"
+          v-model="item.data.hasTrack"
+          @change="saveChecks"
+        />
         Progress Track
       </label>
 
@@ -49,7 +53,11 @@
 
     <div class="nogrow">
       <label class="checkbox">
-        <input type="checkbox" v-model="item.data.hasClock" />
+        <input
+          type="checkbox"
+          v-model="item.data.hasClock"
+          @change="saveChecks"
+        />
         Clock
       </label>
 
@@ -127,6 +135,15 @@ export default {
 
     subtypeChange(...args) {
       this.$item.update({ data: { subtype: this.item.data.subtype } })
+    },
+
+    saveChecks() {
+      this.$item.update({
+        data: {
+          hasTrack: this.item.data.hasTrack,
+          hasClock: this.item.data.hasClock,
+        },
+      })
     },
   },
 }
