@@ -2,8 +2,8 @@
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    height="100"
-    width="100"
+    :height="size"
+    :width="size"
     viewBox="-55 -55 110 110"
   >
     <path
@@ -50,6 +50,10 @@ export default {
     ticked: {
       type: Number,
       default: 2,
+    },
+    size: {
+      type: String,
+      default: '100',
     },
   },
 

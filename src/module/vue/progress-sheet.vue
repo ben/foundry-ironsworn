@@ -24,7 +24,7 @@
           v-model="item.data.hasTrack"
           @change="saveChecks"
         />
-        Progress Track
+        {{ $t('IRONSWORN.Track') }}
       </label>
 
       <transition name="slide">
@@ -58,7 +58,7 @@
           v-model="item.data.hasClock"
           @change="saveChecks"
         />
-        Clock
+        {{ $t('IRONSWORN.Clock') }}
       </label>
 
       <transition name="slide">

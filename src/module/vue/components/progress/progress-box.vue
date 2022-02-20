@@ -30,10 +30,17 @@
           </h4>
         </div>
       </div>
-      <div class="flexrow">
-        <div class="flexrow track">
-          <progress-track :ticks="item.data.current" />
-        </div>
+      <div class="flexrow" style="justify-content: center">
+        <progress-track :ticks="item.data.current" v-if="item.data.hasTrack" />
+        <clock
+          v-if="item.data.hasClock"
+          class="nogrow"
+          style="flex-basis: 50px; margin: 0 0.5rem"
+          :size="50"
+          :wedges="item.data.clockMax"
+          :ticked="item.data.clockTicks"
+          @click="setClock"
+        />
       </div>
     </div>
   </div>
@@ -102,6 +109,9 @@ export default {
     },
     fulfill() {
       this.foundryItem.fulfill()
+    },
+    setClock(num) {
+      this.$item.update({ data: { clockTicks: num } })
     },
   },
 }
