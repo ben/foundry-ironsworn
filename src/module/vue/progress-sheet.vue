@@ -62,8 +62,27 @@
       </label>
 
       <transition name="slide">
-        <div class="nogrow" v-if="item.data.hasClock">
-          (CLOCK)
+        <div class="flexrow nogrow" v-if="item.data.hasClock">
+          <div class="nogrow" style="margin: 0 1rem">
+            <clock
+              :wedges="item.data.clockMax"
+              :ticked="item.data.clockTicks"
+            />
+          </div>
+          <div class="flexcol">
+            Segments:
+            <select
+              class="nogrow"
+              v-model="item.data.clockMax"
+              @change="clockMaxChange"
+              style="margin: 0.5rem 0"
+            >
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="12">12</option>
+            </select>
+          </div>
         </div>
       </transition>
     </div>
@@ -133,8 +152,12 @@ export default {
       this.$item.update({ 'data.current': newValue })
     },
 
-    subtypeChange(...args) {
+    subtypeChange() {
       this.$item.update({ data: { subtype: this.item.data.subtype } })
+    },
+
+    clockMaxChange() {
+      this.$item.update({ data: { clockMax: this.item.data.clockMax } })
     },
 
     saveChecks() {
