@@ -4,13 +4,33 @@
     xmlns="http://www.w3.org/2000/svg"
     height="100"
     width="100"
-    viewBox="0 0 100 100"
+    viewBox="-55 -55 110 110"
   >
-    <circle r="50" cx="50" cy="50" fill="gray" class="clickable svg" />
+    <path
+      v-for="wedge in computedWedges"
+      :key="wedge.path"
+      :d="wedge.path"
+      fill="white"
+      stroke="black"
+      stroke-width="2"
+      class="clickable svg"
+    ></path>
   </svg>
 </template>
 
 <script>
+const R = 50
+
+function pathString(wedgeIdx, numWedges) {
+  const wedgeAngle = (2 * Math.PI) / numWedges
+  const startAngle = wedgeIdx * wedgeAngle - (Math.PI / 2)
+  const x1 = R * Math.cos(startAngle)
+  const y1 = R * Math.sin(startAngle)
+  const x2 = R * Math.cos(startAngle + wedgeAngle)
+  const y2 = R * Math.sin(startAngle + wedgeAngle)
+
+  return `M0,0 L${x1},${y1} A${R},${R} 0 0,1 ${x2},${y2} z`
+}
 export default {
   props: {
     wedges: {
@@ -20,6 +40,19 @@ export default {
     ticked: {
       type: Number,
       default: 2,
+    },
+  },
+
+  computed: {
+    computedWedges() {
+      const ret = []
+      for (let i = 0; i < this.wedges; i++) {
+        ret.push({
+          ticked: this.ticked <= i + 1,
+          path: pathString(i, this.wedges),
+        })
+      }
+      return ret
     },
   },
 }
