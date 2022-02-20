@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Progress items have clocks ([#200](https://github.com/ben/foundry-ironsworn/pull/200))
+
 ## 1.10.8
 
 - Starforged moves/oracles sheet ([#197](https://github.com/ben/foundry-ironsworn/pull/197))

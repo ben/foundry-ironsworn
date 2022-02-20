@@ -52,6 +52,10 @@ export interface AssetDataProperties {
 interface ProgressDataSourceData extends ProgressBase {
   subtype: String
   starred: Boolean
+  hasTrack: Boolean
+  hasClock: Boolean
+  clockTicks: Number
+  clockMax: Number
 }
 interface ProgressDataPropertiesData extends ProgressDataSourceData {}
 

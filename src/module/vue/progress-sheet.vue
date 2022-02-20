@@ -17,23 +17,79 @@
       <option value="bond">{{ $t('IRONSWORN.Bond') }}</option>
     </select>
 
-    <!-- RANK -->
-    <div class="flexrow nogrow">
-      <rank-hexes
-        :current="item.data.rank"
-        @click="setRank"
-        class="nogrow"
-        style="margin-right: 1em"
-      />
-      <h4>{{ rankText }}</h4>
-      <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
-      <icon-button icon="play" @click="markProgress" />
+    <div class="nogrow">
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          v-model="item.data.hasTrack"
+          @change="saveChecks"
+        />
+        {{ $t('IRONSWORN.Track') }}
+      </label>
+
+      <transition name="slide">
+        <div class="nogrow" v-if="item.data.hasTrack">
+          <!-- RANK -->
+          <div class="flexrow nogrow">
+            <rank-hexes
+              :current="item.data.rank"
+              @click="setRank"
+              class="nogrow"
+              style="margin-right: 1em"
+            />
+            <h4>{{ rankText }}</h4>
+            <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
+            <icon-button icon="play" @click="markProgress" />
+          </div>
+          <!-- PROGRESS -->
+          <div class="flexrow track nogrow" style="margin-bottom: 1em">
+            <progress-track :ticks="item.data.current" />
+          </div>
+        </div>
+      </transition>
     </div>
 
-    <!-- PROGRESS -->
-    <div class="flexrow track nogrow" style="margin-bottom: 1em">
-      <progress-track :ticks="item.data.current" />
+    <hr class="nogrow" />
+
+    <div class="nogrow">
+      <label class="checkbox">
+        <input
+          type="checkbox"
+          v-model="item.data.hasClock"
+          @change="saveChecks"
+        />
+        {{ $t('IRONSWORN.Clock') }}
+      </label>
+
+      <transition name="slide">
+        <div class="flexrow nogrow" v-if="item.data.hasClock">
+          <div class="nogrow" style="margin: 0 1rem">
+            <clock
+              :wedges="item.data.clockMax"
+              :ticked="item.data.clockTicks"
+              @click="setClock"
+            />
+          </div>
+          <div class="flexcol">
+            Segments:
+            <select
+              class="nogrow"
+              v-model="item.data.clockMax"
+              @change="clockMaxChange"
+              style="margin: 0.5rem 0"
+            >
+              <option value="4">4</option>
+              <option value="6">6</option>
+              <option value="8">8</option>
+              <option value="10">10</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+        </div>
+      </transition>
     </div>
+
+    <hr class="nogrow" />
 
     <!-- DESCRIPTION -->
     <editor
@@ -45,6 +101,27 @@
     />
   </div>
 </template>
+
+<style lang="less" scoped>
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.4s ease;
+  overflow: hidden;
+  max-height: 93px;
+  opacity: 1;
+}
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-top: 0;
+  border-bottom: 0;
+}
+</style>
 
 <script>
 export default {
@@ -77,8 +154,25 @@ export default {
       this.$item.update({ 'data.current': newValue })
     },
 
-    subtypeChange(...args) {
+    subtypeChange() {
       this.$item.update({ data: { subtype: this.item.data.subtype } })
+    },
+
+    clockMaxChange() {
+      this.$item.update({ data: { clockMax: this.item.data.clockMax } })
+    },
+
+    saveChecks() {
+      this.$item.update({
+        data: {
+          hasTrack: this.item.data.hasTrack,
+          hasClock: this.item.data.hasClock,
+        },
+      })
+    },
+
+    setClock(num) {
+      this.$item.update({ data: { clockTicks: num } })
     },
   },
 }

@@ -147,7 +147,11 @@
         "progress"
       ],
       "subtype": "progress",
-      "starred": false
+      "starred": false,
+      "hasTrack": true,
+      "hasClock": false,
+      "clockTicks": 0,
+      "clockMax": 6
     },
     "vow": {
       "templates": [

@@ -5,6 +5,12 @@ export class ProgressSheetV2 extends IronswornVueItemSheet {
     return 'systems/foundry-ironsworn/templates/item/progressv2.hbs'
   }
 
+  static get defaultOptions() {
+    return mergeObject(super.defaultOptions, {
+      height: 550,
+    })
+  }
+
   _getHeaderButtons() {
     return [
       {
