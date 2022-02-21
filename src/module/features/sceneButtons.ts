@@ -19,6 +19,7 @@ export function activateSceneButtonListeners() {
       visible: true,
       activeTool: 'select',
       tools: [
+        { name: 'star', icon: 'fas fa-globe', title: 'Create Sector' },
         { name: 'star', icon: 'fas fa-star', title: 'Create Star' },
         { name: 'planet', icon: 'fas fa-globe-europe', title: 'Create Planet' },
         { name: 'settlement', icon: 'fas fa-city', title: 'Create Settlement' },
