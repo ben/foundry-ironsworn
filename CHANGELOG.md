@@ -3,6 +3,7 @@
 ## In progress
 
 - Add scene buttons for generating things for sectors ([#201](https://github.com/ben/foundry-ironsworn/pull/201))
+- …that tell you to hold your horses ([#202](https://github.com/ben/foundry-ironsworn/pull/202))
 
 ## 1.10.9
 

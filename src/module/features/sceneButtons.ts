@@ -1,5 +1,9 @@
 import { IronswornSettings } from '../helpers/settings'
 
+function warn() {
+  ui.notifications?.warn('Soon™')
+}
+
 export function activateSceneButtonListeners() {
   if (!IronswornSettings.starforgedBeta) return
 
@@ -19,10 +23,10 @@ export function activateSceneButtonListeners() {
       visible: true,
       activeTool: 'select',
       tools: [
-        { name: 'star', icon: 'fas fa-globe', title: game.i18n.localize('IRONSWORN.NewSector') },
-        { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar') },
-        { name: 'planet', icon: 'fas fa-globe-europe', title: game.i18n.localize('IRONSWORN.NewPlanet') },
-        { name: 'settlement', icon: 'fas fa-city', title: game.i18n.localize('IRONSWORN.NewSettlement') },
+        { name: 'sector', icon: 'fas fa-globe', title: game.i18n.localize('IRONSWORN.NewSector'), onClick: warn },
+        { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar'), onClick: warn },
+        { name: 'planet', icon: 'fas fa-globe-europe', title: game.i18n.localize('IRONSWORN.NewPlanet'), onClick: warn },
+        { name: 'settlement', icon: 'fas fa-city', title: game.i18n.localize('IRONSWORN.NewSettlement'), onClick: warn },
       ],
     }
 
