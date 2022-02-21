@@ -2,7 +2,13 @@
   <div class="flexcol">
     <div class="flexrow">
       <h4>{{ title }}</h4>
-      <p v-if="overflow" class="nogrow" style="padding: 1px; margin-right: 10px">{{ overflow }}</p>
+      <p
+        v-if="overflow"
+        class="nogrow"
+        style="padding: 1px; margin-right: 10px"
+      >
+        {{ overflow }}
+      </p>
       <icon-button v-if="editMode" icon="caret-left" @click="decrease" />
       <icon-button icon="caret-right" @click="increase" />
     </div>
@@ -16,16 +22,7 @@
       ></div>
     </div>
 
-    <div class="flexrow xp nogrow">
-      <xp-box
-        :actor="actor"
-        v-for="n in xpArray"
-        :key="n"
-        :value="n"
-        :current="xpSpent"
-        @click="setXp(n)"
-      />
-    </div>
+    <xp-track :max="xpBoxCount" :marked="xpSpent" @click="setXp" />
   </div>
 </template>
 
