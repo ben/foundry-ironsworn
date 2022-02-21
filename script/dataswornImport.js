@@ -4,7 +4,7 @@ const fs = require('fs/promises')
 const util = require('util')
 
 function renderHtml(text) {
-  return marked.parse(text.replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'), { gfm: true })
+  return marked(text.replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'), { gfm: true })
 }
 
 async function dataswornJson(name) {
@@ -128,14 +128,14 @@ async function doit() {
       const { description, strong, weak, miss, extradescription, extrastrong, extraweak, extramiss } = processMove(move)
 
       delete move.Text
-      move.Description = marked.parse(description || '') || undefined
-      move.Strong = marked.parse(strong || '') || undefined
-      move.Weak = marked.parse(weak || '') || undefined
-      move.Miss = marked.parse(miss || '') || undefined
-      move.ExtraDescription = marked.parse(extradescription || '') || undefined
-      move.ExtraStrong = marked.parse(extrastrong || '') || undefined
-      move.ExtraWeak = marked.parse(extraweak || '') || undefined
-      move.ExtraMiss = marked.parse(extramiss || '') || undefined
+      move.Description = marked(description || '') || undefined
+      move.Strong = marked(strong || '') || undefined
+      move.Weak = marked(weak || '') || undefined
+      move.Miss = marked(miss || '') || undefined
+      move.ExtraDescription = marked(extradescription || '') || undefined
+      move.ExtraStrong = marked(extrastrong || '') || undefined
+      move.ExtraWeak = marked(extraweak || '') || undefined
+      move.ExtraMiss = marked(extramiss || '') || undefined
 
       const oracles = moveOraclesJson.Oracles.filter((x) => x.Move === move.Name)
       if (oracles.length > 0) {
@@ -211,7 +211,7 @@ async function doit() {
       ...en.IRONSWORN.ThemeContents[theme.Name],
       title: theme.Name,
       summary: theme.Summary,
-      description: marked.parse(theme.Description),
+      description: marked(theme.Description),
     }
     for (let i = 0; i < theme.Features.length; i++) {
       const feature = theme.Features[i]
@@ -239,7 +239,7 @@ async function doit() {
       ...en.IRONSWORN.DomainContents[domain.Name],
       title: domain.Name,
       summary: domain.Summary,
-      description: marked.parse(domain.Description),
+      description: marked(domain.Description),
     }
     for (let i = 0; i < domain.Features.length; i++) {
       const feature = domain.Features[i]
@@ -279,11 +279,11 @@ async function doit() {
 
   console.log('  Rendering')
   for (const foeCategory of foesJson.Categories) {
-    foeCategory.Description = marked.parse(foeCategory.Description).trim()
+    foeCategory.Description = marked(foeCategory.Description).trim()
     for (const foe of foeCategory.Foes) {
-      foe.Description = marked.parse(foe.Description).trim()
-      foe.Quest = marked.parse(foe.Quest).trim()
-      if (foe.Truth) foe.Truth = marked.parse(foe.Truth).trim()
+      foe.Description = marked(foe.Description).trim()
+      foe.Quest = marked(foe.Quest).trim()
+      if (foe.Truth) foe.Truth = marked(foe.Truth).trim()
     }
   }
 

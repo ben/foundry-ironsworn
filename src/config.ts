@@ -3,6 +3,7 @@ import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
 import { RANKS, RANK_INCREMENTS } from './module/constants'
+import { importFromDataforged } from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { defaultActor } from './module/helpers/actors'
 import { moveDataByName } from './module/helpers/data'
@@ -20,6 +21,7 @@ import { VowItem } from './module/item/vow/vowitem'
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
   actorClass: typeof IronswornActor
+  importFromDataforged: typeof importFromDataforged
   importFromDatasworn: typeof importFromDatasworn
   applications: {
     createActorDialog: CreateActorDialog | null
@@ -47,6 +49,7 @@ export const IRONSWORN: IronswornConfig = {
     createActorDialog: null,
   },
 
+  importFromDataforged,
   importFromDatasworn,
 
   IronswornSettings,
