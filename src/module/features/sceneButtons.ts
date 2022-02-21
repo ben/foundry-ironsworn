@@ -13,16 +13,16 @@ export function activateSceneButtonListeners() {
 
     const sfControl: SceneControl = {
       name: 'Starforged',
-      title: 'Starforged Tools', // TODO: i18n
+      title: game.i18n.localize('IRONSWORN.StarforgedTools'),
       icon: 'fas fa-space-shuttle',
       layer: 'ironsworn',
       visible: true,
       activeTool: 'select',
       tools: [
-        { name: 'star', icon: 'fas fa-globe', title: 'Create Sector' },
-        { name: 'star', icon: 'fas fa-star', title: 'Create Star' },
-        { name: 'planet', icon: 'fas fa-globe-europe', title: 'Create Planet' },
-        { name: 'settlement', icon: 'fas fa-city', title: 'Create Settlement' },
+        { name: 'star', icon: 'fas fa-globe', title: game.i18n.localize('IRONSWORN.NewSector') },
+        { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar') },
+        { name: 'planet', icon: 'fas fa-globe-europe', title: game.i18n.localize('IRONSWORN.NewPlanet') },
+        { name: 'settlement', icon: 'fas fa-city', title: game.i18n.localize('IRONSWORN.NewSettlement') },
       ],
     }
 
