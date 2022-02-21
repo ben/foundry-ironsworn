@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add scene buttons for generating things for sectors ([#201](https://github.com/ben/foundry-ironsworn/pull/201))
+
 ## 1.10.9
 
 - Progress items have clocks ([#200](https://github.com/ben/foundry-ironsworn/pull/200))

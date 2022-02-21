@@ -125,6 +125,11 @@
     "Third": "third",
     "Fourth": "fourth",
     "Fifth": "fifth",
+    "StarforgedTools": "Starforged Tools",
+    "NewSector": "New Sector",
+    "NewStar": "New Star",
+    "NewPlanet": "New Planet",
+    "NewSettlement": "New Settlement",
     "ChangeLog": {
       "Renamed": "Renamed to {name}",
       "renamed": "renamed to {name}",
