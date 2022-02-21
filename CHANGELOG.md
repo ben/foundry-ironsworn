@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.10
+
 - Add scene buttons for generating things for sectors ([#201](https://github.com/ben/foundry-ironsworn/pull/201))
 - …that tell you to hold your horses ([#202](https://github.com/ben/foundry-ironsworn/pull/202))
 - Starforged XP tracks: better usability ([#203](https://github.com/ben/foundry-ironsworn/pull/203))
