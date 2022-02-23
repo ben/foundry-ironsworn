@@ -85,7 +85,7 @@ function processAssets(idMap, en, df) {
 
   for (const dfAsset of df['assets.json']) {
     for (const dfAbility of dfAsset['Abilities']) {
-      dfAbility['Text'] = renderHtml(idMap, dfAbility['Text'], marked)
+      dfAbility['Text'] = renderHtml(idMap, dfAbility['Text'], marked.parse)
     }
   }
 
@@ -110,9 +110,9 @@ function processMoves(idMap, en, df) {
   for (const dfMove of df['moves.json']) {
     let [_, description, strong, weak, miss] = dfMove['Text'].match(DF_MOVE_TEXT_REGEX) || []
 
-    const markedIfDef = (text) => text ? renderHtml(idMap, text, marked) : undefined;
-    dfMove['Text'] = renderHtml(idMap, dfMove['Text'], marked)
-    dfMove['Description'] = description ? renderHtml(idMap, description, marked) : dfMove['Text']
+    const markedIfDef = (text) => text ? renderHtml(idMap, text, marked.parse) : undefined;
+    dfMove['Text'] = renderHtml(idMap, dfMove['Text'], marked.parse)
+    dfMove['Description'] = description ? renderHtml(idMap, description, marked.parse) : dfMove['Text']
     if (dfMove['Outcomes']) {
       dfMove['Outcomes']['Strong Hit']['Text'] = markedIfDef(dfMove['Outcomes']['Strong Hit']['Text'])
       dfMove['Outcomes']['Weak Hit']['Text'] = markedIfDef(dfMove['Outcomes']['Weak Hit']['Text'])
@@ -143,7 +143,7 @@ function processOracles(idMap, en, df) {
   for (const dfCategory of df['oracles.json']) {
     for (const dfOracle of dfCategory['Oracles']) {
       if (dfOracle['Description']) {
-        dfOracle['Description'] = renderHtml(idMap, dfOracle['Description'], marked);
+        dfOracle['Description'] = renderHtml(idMap, dfOracle['Description'], marked.parse);
       }
       if (dfOracle['Table']) {
         for (const dfTableRow of dfOracle['Table']) {
