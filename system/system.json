@@ -109,6 +109,34 @@
       "system": "foundry-ironsworn",
       "path": "packs/starforged-sectors.db",
       "entity": "Scene"
+    },
+    {
+      "name": "starforgedassets",
+      "label": "Starforged Assets",
+      "system": "foundry-ironsworn",
+      "path": "packs/starforged-assets.db",
+      "entity": "Item"
+    },
+    {
+      "name": "starforgedencounters",
+      "label": "Starforged Encounters",
+      "system": "foundry-ironsworn",
+      "path": "packs/starforged-encounters.db",
+      "entity": "Item"
+    },
+    {
+      "name": "starforgedmoves",
+      "label": "Starforged Moves",
+      "system": "foundry-ironsworn",
+      "path": "packs/starforged-moves.db",
+      "entity": "Item"
+    },
+    {
+      "name": "starforgedoracles",
+      "label": "Starforged Oracles",
+      "system": "foundry-ironsworn",
+      "path": "packs/starforged-oracles.db",
+      "entity": "RollTable"
     }
   ],
   "languages": [
