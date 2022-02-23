@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Import data from Dataforged, and generate compendia ([#205](https://github.com/ben/foundry-ironsworn/pull/205))
+
 ## 1.10.10
 
 - Add scene buttons for generating things for sectors ([#201](https://github.com/ben/foundry-ironsworn/pull/201))
