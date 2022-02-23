@@ -2,10 +2,10 @@
   "name": "foundry-ironsworn",
   "title": "Ironsworn",
   "description": "An implementation of the Ironsworn system, by Shawn Tomkins.",
-  "version": "1.10.5",
+  "version": "1.10.10",
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
-  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.10.5/ironsworn.zip",
+  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.10.10/ironsworn.zip",
   "minimumCoreVersion": "0.8.3",
   "compatibleCoreVersion": "9",
   "templateVersion": 2,
@@ -101,6 +101,13 @@
       "label": "Ironsworn Maps",
       "system": "foundry-ironsworn",
       "path": "packs/scenes.db",
+      "entity": "Scene"
+    },
+    {
+      "name": "starforged-sectors",
+      "label": "Starforged Scenes",
+      "system": "foundry-ironsworn",
+      "path": "packs/starforged-sectors.db",
       "entity": "Scene"
     },
     {
