@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.11
+
 - Import data from Dataforged, and generate compendia ([#205](https://github.com/ben/foundry-ironsworn/pull/205))
 
 ## 1.10.10
