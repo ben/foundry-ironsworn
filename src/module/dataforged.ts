@@ -24,7 +24,8 @@ export async function importFromDataforged() {
     if (!pack) continue
     await pack.render(true)
     // @ts-ignore IdQuery type is a little bogus
-    await pack.getDocuments({}).then(documents => Promise.all(documents.map((doc) => doc.delete())))
+    const idsToDelete = pack.index.map((x: any) => x._id)
+    await Item.deleteDocuments(idsToDelete, {pack: key})
   }
 
   const idMap = await fetch('systems/foundry-ironsworn/assets/sf-ids.json').then((x) => x.json())
