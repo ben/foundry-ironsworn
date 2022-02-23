@@ -121,17 +121,17 @@ function processMoves(idMap, en, df) {
   }
 
   // Also write descriptions to en lang file
-  en.IRONSWORN.MoveContents = en.IRONSWORN.MoveContents || {}
+  en.IRONSWORN.SFMoveContents = en.IRONSWORN.SFMoveContents || {}
   for (const dfMove of df['moves.json']) {
     const move = {
-      ...en.IRONSWORN.MoveContents[dfMove.Name],
+      ...en.IRONSWORN.SFMoveContents[dfMove.Name],
       title: dfMove['Name'],
       description: dfMove['Description'],
       strong: dfMove['Outcomes'] ? dfMove['Outcomes']['Strong Hit']['Text'] : undefined,
       weak: dfMove['Outcomes'] ? dfMove['Outcomes']['Weak Hit']['Text'] : undefined,
       miss: dfMove['Outcomes'] ? dfMove['Outcomes']['Miss']['Text'] : undefined,
     }
-    en.IRONSWORN.MoveContents[dfMove.Name] = move
+    en.IRONSWORN.SFMoveContents[dfMove.Name] = move
   }
 
   return df['moves.json']
