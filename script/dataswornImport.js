@@ -167,10 +167,10 @@ async function doit() {
 
   // Also write descriptions to en lang file
   const en = JSON.parse(await fs.readFile('system/lang/en.json'))
-  en.IRONSWORN.MoveContents ||= {}
+  en.IRONSWORN.SFMoveContents ||= {}
   for (const move of i18nMoves) {
     const obj = {
-      ...en.IRONSWORN.MoveContents[move.Name],
+      ...en.IRONSWORN.SFMoveContents[move.Name],
       title: move.Name,
       description: move.Description,
       strong: move.Strong,
@@ -192,7 +192,7 @@ async function doit() {
         }
       }
     }
-    en.IRONSWORN.MoveContents[move.Name] = obj
+    en.IRONSWORN.SFMoveContents[move.Name] = obj
   }
 
   //////////////////////////////////////////////////
