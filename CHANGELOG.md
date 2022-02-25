@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Implement the "oracles" tab of the SF movesheet ([#206](https://github.com/ben/foundry-ironsworn/pull/206))
+
 ## 1.10.11
 
 - Import data from Dataforged, and generate compendia ([#205](https://github.com/ben/foundry-ironsworn/pull/205))
