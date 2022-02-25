@@ -13,20 +13,43 @@ function setDeep(obj, key, val) {
   obj[parts[parts.length - 1]] = val
 }
 
+function oracleTree(obj) {
+  const ret = []
+
+  for (const k of Object.keys(obj)) {
+    const v = obj[k]
+    console.log({ k, v })
+    // A string? That's a rollable table ID
+    if (typeof(v) === 'string') {
+      ret.push({ title: k, tableId: v })
+    } else {
+      ret.push({ title: k, children: oracleTree(v) })
+    }
+  }
+
+  return ret
+}
+
 export default {
   props: {
     actor: Object,
   },
 
   data() {
-    const oracles = {}
+    let oracles = []
     const pack = this.getPack()
     if (pack) {
+      // Construct an index
+      const index = {}
       for (const table of pack.index.values()) {
-        setDeep(oracles, table.name, table._id)
+        setDeep(index, table.name, table._id)
       }
+
+      // Explode into objects
+      oracles = oracleTree(index)
     }
 
+    console.log(oracles)
     return {
       oracles,
     }
@@ -35,7 +58,7 @@ export default {
   methods: {
     getPack() {
       return game.packs.get('foundry-ironsworn.starforgedoracles')
-    }
-  }
+    },
+  },
 }
 </script>
