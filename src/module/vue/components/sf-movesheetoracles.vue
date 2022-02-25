@@ -19,21 +19,23 @@ export default {
   },
 
   data() {
-    return {
-      oracles: null,
-    }
-  },
-
-  async created() {
-    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-    if (!pack) return
-
     const oracles = {}
-    for (const table of pack.index.values()) {
-      setDeep(oracles, table.name, table._id)
+    const pack = this.getPack()
+    if (pack) {
+      for (const table of pack.index.values()) {
+        setDeep(oracles, table.name, table._id)
+      }
     }
-    console.log(oracles)
-    this.oracles = oracles
+
+    return {
+      oracles,
+    }
   },
+
+  methods: {
+    getPack() {
+      return game.packs.get('foundry-ironsworn.starforgedoracles')
+    }
+  }
 }
 </script>
