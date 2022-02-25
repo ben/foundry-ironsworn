@@ -1,5 +1,11 @@
 <template>
-  <h1>foo</h1>
+  <div class="flexcol">
+    <oracletree-node
+      v-for="oracle in oracles"
+      :key="oracle.key"
+      :oracle="oracle"
+    />
+  </div>
 </template>
 
 <script>
@@ -13,17 +19,20 @@ function setDeep(obj, key, val) {
   obj[parts[parts.length - 1]] = val
 }
 
-function oracleTree(obj) {
+function oracleTree(obj, fullkey) {
   const ret = []
 
   for (const k of Object.keys(obj)) {
     const v = obj[k]
-    console.log({ k, v })
+    const base = {
+      title: k,
+      key: `${fullkey}.${k}`,
+    }
     // A string? That's a rollable table ID
-    if (typeof(v) === 'string') {
-      ret.push({ title: k, tableId: v })
+    if (typeof v === 'string') {
+      ret.push({ ...base, tableId: v })
     } else {
-      ret.push({ title: k, children: oracleTree(v) })
+      ret.push({ ...base, children: oracleTree(v, `${fullkey}.${k}`) })
     }
   }
 
@@ -46,7 +55,7 @@ export default {
       }
 
       // Explode into objects
-      oracles = oracleTree(index)
+      oracles = oracleTree(index, '')
     }
 
     console.log(oracles)
