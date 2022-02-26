@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Implement the "moves" tab of the SF movesheet ([#207](https://github.com/ben/foundry-ironsworn/pull/207))
+
 ## 1.10.12
 
 - Implement the "oracles" tab of the SF movesheet ([#206](https://github.com/ben/foundry-ironsworn/pull/206))
