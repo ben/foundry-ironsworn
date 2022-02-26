@@ -58,7 +58,6 @@ export default {
       oracles = oracleTree(index, '')
     }
 
-    console.log(oracles)
     return {
       oracles,
     }
