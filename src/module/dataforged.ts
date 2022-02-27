@@ -45,6 +45,7 @@ export async function importFromDataforged() {
         weak: move['Outcomes']?.['Weak Hit']?.['Text'],
         miss: move['Outcomes']?.['Miss']?.['Text'],
         stats: move['Trigger']?.['Options']?.map((o) => o['Action roll']?.Stat?.toLowerCase()).filter((s) => s) || [],
+        sourceId: move['$id']
       },
     })
   }
