@@ -54,8 +54,9 @@ export default {
     ])
     const moves = {}
     for (const move of json) {
-      // TODO: use compendium IDs or datasworn $id's here
-      move.foundryItem = compendiumMoves.find((x) => x.name === move.Name)
+      move.foundryItem = compendiumMoves.find(
+        (x) => x.data.data.sourceId === move['$id']
+      )
       moves[move.Category] ||= { key: move.Category, moves: [] }
       moves[move.Category].moves.push(move)
     }
