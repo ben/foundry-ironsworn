@@ -7,7 +7,7 @@
 
       <sf-moverow
         v-for="move of movesForKey(ck)"
-        :key="move.key"
+        :key="move.$id"
         :actor="actor"
         :move="move"
       />
