@@ -79,6 +79,10 @@ function calculateHitTypeText(type: HIT_TYPE, match: boolean) {
 function calculateCardTitle(params: RollMessageParams) {
   if (params.move) {
     let title = game.i18n.localize(`IRONSWORN.MoveContents.${params.move.Name}.title`)
+    if (title.startsWith('IRONSWORN.')) {
+      title = params.move.Name
+    }
+
     if (params.stat) {
       title += ` (${game.i18n.localize('IRONSWORN.' + capitalize(params.stat))})`
     } else if (params.subtitle) {
