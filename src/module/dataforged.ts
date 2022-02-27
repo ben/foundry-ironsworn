@@ -25,7 +25,7 @@ export async function importFromDataforged() {
     await pack.render(true)
     // @ts-ignore IdQuery type is a little bogus
     const idsToDelete = pack.index.map((x: any) => x._id)
-    await Item.deleteDocuments(idsToDelete, {pack: key})
+    await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
   const idMap = await fetch('systems/foundry-ironsworn/assets/sf-ids.json').then((x) => x.json())
@@ -44,7 +44,8 @@ export async function importFromDataforged() {
         strong: move['Outcomes']?.['Strong Hit']?.['Text'],
         weak: move['Outcomes']?.['Weak Hit']?.['Text'],
         miss: move['Outcomes']?.['Miss']?.['Text'],
-        stats: move['Trigger']?.['Options']?.map((o) => o['Action roll']?.Stat?.toLowerCase()).filter((s) => s) || []
+        stats: move['Trigger']?.['Options']?.map((o) => o['Action roll']?.Stat?.toLowerCase()).filter((s) => s) || [],
+        sourceId: move['$id']
       },
     })
   }
@@ -77,43 +78,43 @@ export async function importFromDataforged() {
   // Encounters
   const encountersJson = await fetch('systems/foundry-ironsworn/assets/sf-encounters.json').then((x) => x.json())
   const encountersToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-    for (const encounter of encountersJson) {
-      const description = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
+  for (const encounter of encountersJson) {
+    const description = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
+      ...encounter,
+      Category: encounter['Nature'],
+      CategoryDescription: encounter['Summary'],
+      Quest: encounter['Quest Starter'],
+    })
+
+    encountersToCreate.push({
+      _id: idMap[encounter['$id']],
+      type: 'progress',
+      name: encounter['Name'],
+      data: {
+        description,
+        rank: getLegacyRank(encounter['Rank']),
+      },
+    })
+
+    for (const variant of encounter['Variants']) {
+      const variantDescription = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
         ...encounter,
-        Category: encounter['Nature'],
-        CategoryDescription: encounter['Summary'],
-        Quest: encounter['Quest Starter'],
+        ...variant,
+        Category: variant['Nature'] || encounter['Nature'],
+        CategoryDescription: variant['Summary'] || encounter['Summary'],
       })
 
       encountersToCreate.push({
-        _id: idMap[encounter['$id']],
+        _id: idMap[variant['$id']],
         type: 'progress',
-        name: encounter['Name'],
+        name: variant['Name'],
         data: {
-          description,
-          rank: getLegacyRank(encounter['Rank']),
+          description: variantDescription,
+          rank: getLegacyRank('Rank' in variant ? variant['Rank'] : encounter['Rank']),
         },
       })
-
-      for (const variant of encounter['Variants']) {
-        const variantDescription = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
-          ...encounter,
-          ...variant,
-          Category: variant['Nature'] || encounter['Nature'],
-          CategoryDescription: variant['Summary'] || encounter['Summary'],
-        })
-
-        encountersToCreate.push({
-          _id: idMap[variant['$id']],
-          type: 'progress',
-          name: variant['Name'],
-          data: {
-            description: variantDescription,
-            rank: getLegacyRank('Rank' in variant ? variant['Rank'] : encounter['Rank']),
-          },
-        })
-      }
     }
+  }
   await Item.createDocuments(encountersToCreate, { pack: 'foundry-ironsworn.starforgedencounters', keepId: true })
 
   // Oracles

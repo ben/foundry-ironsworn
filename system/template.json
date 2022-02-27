@@ -225,7 +225,8 @@
       "strong": "",
       "weak": "",
       "miss": "",
-      "stats": []
+      "stats": [],
+      "sourceId": ""
     },
     "delve-theme": {
       "summary": "A one-line description",

@@ -94,7 +94,7 @@ export async function importFromDatasworn() {
     if (!pack) continue
     await pack.render(true)
     const idsToDelete = pack.index.map((x: any) => x._id)
-    await Item.deleteDocuments(idsToDelete, {pack: key})
+    await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
   // Moves
