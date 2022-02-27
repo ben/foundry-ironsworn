@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.13
+
 - Implement the "moves" tab of the SF movesheet ([#207](https://github.com/ben/foundry-ironsworn/pull/207))
 
 ## 1.10.12
