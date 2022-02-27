@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Use dataforged `$id` properties to find moves in the compendium ([#208](https://github.com/ben/foundry-ironsworn/pull/208))
+
 ## 1.10.13
 
 - Implement the "moves" tab of the SF movesheet ([#207](https://github.com/ben/foundry-ironsworn/pull/207))
