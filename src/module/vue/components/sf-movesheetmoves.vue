@@ -7,7 +7,7 @@
 
       <div class="item-row" v-for="move of movesForKey(ck)" :key="move.key">
         <h4 style="margin: 0">
-          <i class="fa fa-dice-d6" />
+          <i class="fa fa-dice-d6 clickable text" @click="rollMove(move)" />
           {{ move.Name }}
         </h4>
       </div>
@@ -62,6 +62,17 @@ export default {
     movesForKey(ck) {
       return this.moves[ck]?.moves
     },
+
+    async rollMove(moveData) {
+      // TODO: use compendium IDs or datasworn $id's here
+      const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
+      const allMoves = await pack.getDocuments()
+      const move = allMoves.find(x => x.name === moveData.Name)
+      CONFIG.IRONSWORN.RollDialog.show({
+        actor: this.$actor,
+        move: move.getMoveData()
+      })
+    }
   },
 }
 </script>
