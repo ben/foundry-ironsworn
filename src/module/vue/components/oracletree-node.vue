@@ -2,8 +2,8 @@
   <div class="flexcol">
     <h4 class="clickable text" @click="click">
       <i class="fa fa-dice-d6" v-if="oracle.tableId" />
-      <span v-else-if="expanded">V</span>
-      <span v-else>&gt;</span>
+      <span v-else-if="expanded"><i class="fa fa-caret-down" /></span>
+      <span v-else><i class="fa fa-caret-right" /></span>
       {{ oracle.title }}
     </h4>
 
