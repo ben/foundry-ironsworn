@@ -158,6 +158,7 @@ interface MoveDataSourceData {
   weak: string
   miss: string
   stats: string[]
+  sourceId: string
 }
 interface MoveDataPropertiesData extends MoveDataSourceData {}
 
