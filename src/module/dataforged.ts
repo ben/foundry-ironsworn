@@ -41,10 +41,10 @@ export async function importFromDataforged() {
       img: 'icons/dice/d10black.svg',
       data: {
         description: move['Description'],
-        strong: move['Outcomes'] ? move['Outcomes']['Strong Hit']['Text'] : undefined,
-        weak: move['Outcomes'] ? move['Outcomes']['Weak Hit']['Text'] : undefined,
-        miss: move['Outcomes'] ? move['Outcomes']['Miss']['Text'] : undefined,
-        stats: move['Trigger'] ? move['Trigger']['Options']?.flatMap((o) => o['Action roll']).map((r) => r ? r['Stat'] : '').filter((s) => s) : []
+        strong: move['Outcomes']?.['Strong Hit']?.['Text'],
+        weak: move['Outcomes']?.['Weak Hit']?.['Text'],
+        miss: move['Outcomes']?.['Miss']?.['Text'],
+        stats: move['Trigger']?.['Options']?.map((o) => o['Action roll']?.Stat?.toLowerCase()).filter((s) => s) || []
       },
     })
   }
