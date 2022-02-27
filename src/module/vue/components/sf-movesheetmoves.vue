@@ -5,12 +5,12 @@
         {{ ck }}
       </h2>
 
-      <div class="item-row" v-for="move of movesForKey(ck)" :key="move.key">
-        <h4 style="margin: 0" >
-          <i class="fa fa-dice-d6 clickable text" @click="rollMove(move)" />
-          {{ move.Name }}
-        </h4>
-      </div>
+      <sf-moverow
+        v-for="move of movesForKey(ck)"
+        :key="move.key"
+        :actor="actor"
+        :move="move"
+      />
     </div>
   </div>
 </template>
@@ -55,25 +55,16 @@ export default {
     const moves = {}
     for (const move of json) {
       // TODO: use compendium IDs or datasworn $id's here
-      move.foundryItem = compendiumMoves.find(x => x.name === move.Name)
+      move.foundryItem = compendiumMoves.find((x) => x.name === move.Name)
       moves[move.Category] ||= { key: move.Category, moves: [] }
       moves[move.Category].moves.push(move)
     }
     this.moves = moves
   },
 
-  computed: {},
-
   methods: {
     movesForKey(ck) {
       return this.moves[ck]?.moves
-    },
-
-    async rollMove(moveData) {
-      CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.$actor,
-        move: moveData.foundryItem.getMoveData(),
-      })
     },
   },
 }
