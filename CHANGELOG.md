@@ -4,6 +4,7 @@
 
 - Use dataforged `$id` properties to find moves in the compendium ([#208](https://github.com/ben/foundry-ironsworn/pull/208))
 - i18n fallback for chat cards when rolling moves ([#209](https://github.com/ben/foundry-ironsworn/pull/209))
+- Search box for SF moves and oracles ([#210](https://github.com/ben/foundry-ironsworn/pull/210))
 
 ## 1.10.13
 

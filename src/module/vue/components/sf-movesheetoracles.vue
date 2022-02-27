@@ -1,10 +1,32 @@
 <template>
   <div class="flexcol">
-    <oracletree-node
-      v-for="oracle in oracles"
-      :key="oracle.key"
-      :oracle="oracle"
-    />
+    <div class="flexrow nogrow">
+      <input
+        type="text"
+        :placeholder="$t('IRONSWORN.Search')"
+        v-model="searchQuery"
+      />
+      <i
+        class="fa fa-times-circle nogrow clickable text"
+        @click="clearSearch"
+        style="padding: 6px"
+      />
+    </div>
+
+    <div v-if="searchResults">
+      <oracletree-node
+        v-for="oracle in searchResults"
+        :key="oracle.key"
+        :oracle="oracle"
+      />
+    </div>
+    <div v-else>
+      <oracletree-node
+        v-for="oracle in oracles"
+        :key="oracle.key"
+        :oracle="oracle"
+      />
+    </div>
   </div>
 </template>
 
@@ -46,12 +68,18 @@ export default {
 
   data() {
     let oracles = []
+    const sortedOracles = []
     const pack = this.getPack()
     if (pack) {
       // Construct an index
       const index = {}
       for (const table of pack.index.values()) {
         setDeep(index, table.name, table._id)
+        sortedOracles.push({
+          title: table.name,
+          key: table._id,
+          tableId: table._id,
+        })
       }
 
       // Explode into objects
@@ -60,13 +88,28 @@ export default {
 
     return {
       oracles,
+      sortedOracles,
+      searchQuery: '',
     }
+  },
+
+  computed: {
+    searchResults() {
+      if (!this.searchQuery) return null
+
+      const re = new RegExp(this.searchQuery, 'i')
+      return this.sortedOracles.filter((x) => re.test(x.title))
+    },
   },
 
   methods: {
     getPack() {
       return game.packs.get('foundry-ironsworn.starforgedoracles')
     },
+
+    clearSearch() {
+      this.searchQuery = ''
+    }
   },
 }
 </script>
