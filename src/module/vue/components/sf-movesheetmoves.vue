@@ -6,7 +6,7 @@
       </h2>
 
       <div class="item-row" v-for="move of movesForKey(ck)" :key="move.key">
-        <h4 style="margin: 0">
+        <h4 style="margin: 0" >
           <i class="fa fa-dice-d6 clickable text" @click="rollMove(move)" />
           {{ move.Name }}
         </h4>
@@ -47,9 +47,15 @@ export default {
   },
 
   async created() {
-    const json = await fetchJson()
+    const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
+    const [json, compendiumMoves] = await Promise.all([
+      fetchJson(),
+      pack.getDocuments(),
+    ])
     const moves = {}
     for (const move of json) {
+      // TODO: use compendium IDs or datasworn $id's here
+      move.foundryItem = compendiumMoves.find(x => x.name === move.Name)
       moves[move.Category] ||= { key: move.Category, moves: [] }
       moves[move.Category].moves.push(move)
     }
@@ -64,15 +70,11 @@ export default {
     },
 
     async rollMove(moveData) {
-      // TODO: use compendium IDs or datasworn $id's here
-      const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
-      const allMoves = await pack.getDocuments()
-      const move = allMoves.find(x => x.name === moveData.Name)
       CONFIG.IRONSWORN.RollDialog.show({
         actor: this.$actor,
-        move: move.getMoveData()
+        move: moveData.foundryItem.getMoveData(),
       })
-    }
+    },
   },
 }
 </script>
