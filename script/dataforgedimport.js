@@ -21,11 +21,11 @@ async function dataforgedJson(name) {
 
 async function fetchDataforged() {
   console.log('  Fetching Dataforged')
-  const assetsPromise = dataforgedJson('next/assets.json')
-  const encountersPromise = dataforgedJson('next/encounters.json')
-  const movesPromise = dataforgedJson('next/moves.json')
-  const oraclesPromise = dataforgedJson('next/oracles.json')
-  const truthsPromise = dataforgedJson('setting_truths.json')
+  const assetsPromise = dataforgedJson('starforged-assets.json')
+  const encountersPromise = dataforgedJson('starforged-encounters.json')
+  const movesPromise = dataforgedJson('starforged-moves.json')
+  const oraclesPromise = dataforgedJson('starforged-oracles.json')
+  const truthsPromise = dataforgedJson('starforged-setting_truths.json')
 
   return {
     'assets.json': await assetsPromise,
@@ -192,7 +192,7 @@ async function doit() {
     writeLocal('encounters', processEncounters(idMap, en, df)),
     writeLocal('moves', processMoves(idMap, en, df)),
     writeLocal('oracles', processOracles(idMap, en, df)),
-    writeLocal('setting-truths', processSettingTruths(idMap, en, df)),
+    // writeLocal('setting-truths', processSettingTruths(idMap, en, df)),
     writeLocal('ids', idMap),
   ]
   await Promise.all(writePromises)

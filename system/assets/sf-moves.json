@@ -12,8 +12,8 @@
       "Oracles / Moves / Begin a Session"
     ],
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you begin a significant session or chapter of play</strong>, do all of the following.</p>\n<ul>\n<li>Identify or adjust flagged content and @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000003]{Set a Flag}.</li>\n<li>Review or recap what happened last session.</li>\n<li>Set the scene by envisioning your character’s current situation and intent.</li>\n</ul>\n<p>In addition, you may spotlight a new danger, opportunity, or insight. This can include a scene hidden from your character’s perspective. If you do, envision a brief vignette (you may roll or choose on the table below for inspiration). Then, all players take +1 momentum as you return to play from the viewpoint of your characters.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-10</td>\n<td>Flashback reveals an aspect of your background or nature</td>\n</tr>\n<tr>\n<td>11-20</td>\n<td>Flashback reveals an aspect of another character, place, or faction</td>\n</tr>\n<tr>\n<td>21-30</td>\n<td>Influential character or faction is introduced or given new detail</td>\n</tr>\n<tr>\n<td>31-40</td>\n<td>Seemingly unrelated situations are shown to be connected</td>\n</tr>\n<tr>\n<td>41-50</td>\n<td>External factors create new danger, urgency, or importance for a quest</td>\n</tr>\n<tr>\n<td>51-60</td>\n<td>Important character is put in danger or suffers a misadventure</td>\n</tr>\n<tr>\n<td>61-70</td>\n<td>Key location is made unsafe or becomes mired in conflict</td>\n</tr>\n<tr>\n<td>71-80</td>\n<td>Unexpected return of an enemy or threat</td>\n</tr>\n<tr>\n<td>81-90</td>\n<td>Peril lies ahead or lurks just out of view</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>Unforeseen aid is on the way or within reach</td>\n</tr>\n</tbody></table>\n"
   },
@@ -27,8 +27,8 @@
     },
     "Text": "<p><strong>When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching</strong>, that content is now flagged.</p>\n<p>When you encounter content flagged as something to approach mindfully, pause to consider or discuss its role in your story. When you come across flagged content that you would rather adjust or omit, @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000005]{Change Your Fate}.</p>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching</strong>, that content is now flagged.</p>\n<p>When you encounter content flagged as something to approach mindfully, pause to consider or discuss its role in your story. When you come across flagged content that you would rather adjust or omit, @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000005]{Change Your Fate}.</p>\n"
   },
@@ -42,8 +42,8 @@
     },
     "Text": "<p><strong>When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment</strong>, pause and identify what needs to be changed. Choose as many options as appropriate.</p>\n<ul>\n<li><strong>Reframe:</strong> This didn’t happen the way you first thought. Envision the moment from another perspective in a way that diminishes or changes the content.</li>\n<li><strong>Refocus:</strong> This is not the most important thing happening right now. Envision how the spotlight shifts to change the focus.</li>\n<li><strong>Replace:</strong> This happens but with a small adjustment. Switch out an element and envision how this new detail changes the scenario.</li>\n<li><strong>Redirect:</strong> Adjust the trajectory to involve a helping hand. Envision how another person or party becomes involved.</li>\n<li><strong>Reshape:</strong> The situation changes completely. Envision what happened instead.</li>\n</ul>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment</strong>, pause and identify what needs to be changed. Choose as many options as appropriate.</p>\n<ul>\n<li><strong>Reframe:</strong> This didn’t happen the way you first thought. Envision the moment from another perspective in a way that diminishes or changes the content.</li>\n<li><strong>Refocus:</strong> This is not the most important thing happening right now. Envision how the spotlight shifts to change the focus.</li>\n<li><strong>Replace:</strong> This happens but with a small adjustment. Switch out an element and envision how this new detail changes the scenario.</li>\n<li><strong>Redirect:</strong> Adjust the trajectory to involve a helping hand. Envision how another person or party becomes involved.</li>\n<li><strong>Reshape:</strong> The situation changes completely. Envision what happened instead.</li>\n</ul>\n"
   },
@@ -57,8 +57,8 @@
     },
     "Text": "<p><strong>When you resolve a progress move or complete an intense scenario</strong>, take a few deep breaths and take some time to attend to the needs of your body. Reflect on what just happened and how it made you feel. Then, choose one.</p>\n<ul>\n<li>Move on: Continue the session. You or an ally may add +1 on the next move (not a progress move), bolstered by your reflection and past experiences.</li>\n<li>Stop for now: @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000009]{End a Session}.</li>\n</ul>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you resolve a progress move or complete an intense scenario</strong>, take a few deep breaths and take some time to attend to the needs of your body. Reflect on what just happened and how it made you feel. Then, choose one.</p>\n<ul>\n<li>Move on: Continue the session. You or an ally may add +1 on the next move (not a progress move), bolstered by your reflection and past experiences.</li>\n<li>Stop for now: @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000009]{End a Session}.</li>\n</ul>\n"
   },
@@ -72,8 +72,8 @@
     },
     "Text": "<p><strong>When you end a significant session or chapter of play</strong>, reflect on the events of the game and identify any missed opportunities to mark progress.</p>\n<ul>\n<li>If you strengthened your ties to a connection, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001l]{Develop Your Relationship}.</li>\n<li>If you moved forward on a quest, @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000013]{Reach a Milestone}.</li>\n</ul>\n<p>If there is a quest, connection, or other situation you would like to give focus in your next session, make note of it and take +1 momentum.</p>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you end a significant session or chapter of play</strong>, reflect on the events of the game and identify any missed opportunities to mark progress.</p>\n<ul>\n<li>If you strengthened your ties to a connection, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001l]{Develop Your Relationship}.</li>\n<li>If you moved forward on a quest, @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000013]{Reach a Milestone}.</li>\n</ul>\n<p>If there is a quest, connection, or other situation you would like to give focus in your next session, make note of it and take +1 momentum.</p>\n"
   },
@@ -139,8 +139,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you attempt something risky or react to an imminent threat</strong>, envision your action and roll. If you act...</p>\n<ul>\n<li>With speed, mobility, or agility: ((rollplus edge))</li>\n<li>With resolve, command, or sociability: ((rollplus heart))</li>\n<li>With strength, endurance, or aggression: ((rollplus iron))</li>\n<li>With deception, stealth, or trickery: ((rollplus shadow))</li>\n<li>With expertise, focus, or observation: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -206,8 +206,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you assess a situation, make preparations, or attempt to gain leverage</strong>, envision your action and roll. If you act...</p>\n<ul>\n<li>With speed, mobility, or agility: ((rollplus edge))</li>\n<li>With resolve, command, or sociability: ((rollplus heart))</li>\n<li>With strength, endurance, aggression: ((rollplus iron))</li>\n<li>With deception, stealth, or trickery: ((rollplus shadow))</li>\n<li>With expertise, focus, or observation: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -244,8 +244,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you search for clues, conduct an investigation, analyze evidence, or do research</strong>, ((rollplus wits)).</p>\n"
   },
@@ -297,8 +297,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you try to persuade someone or make them an offer</strong>, envision your approach. If you...</p>\n<ul>\n<li>Charm, pacify, encourage, or barter: ((rollplus heart))</li>\n<li>Threaten or incite: ((rollplus iron))</li>\n<li>Lie or swindle: ((rollplus shadow))</li>\n</ul>\n"
   },
@@ -312,8 +312,8 @@
     },
     "Text": "<p><strong>When you act in direct support of an ally</strong>, envision how you aid them. Then, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000000m]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000002u]{Gain Ground} to take action. If you score a hit, they (instead of you) take the benefits of the move.</p>\n<p>If you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000002u]{Gain Ground} and score a strong hit, you are both in control. On a <strong>weak hit</strong>, your ally is in control but you are in a bad spot.</p>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you act in direct support of an ally</strong>, envision how you aid them. Then, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000000m]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000002u]{Gain Ground} to take action. If you score a hit, they (instead of you) take the benefits of the move.</p>\n<p>If you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000002u]{Gain Ground} and score a strong hit, you are both in control. On a <strong>weak hit</strong>, your ally is in control but you are in a bad spot.</p>\n"
   },
@@ -350,8 +350,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you check to see if you have a specific helpful item or resource</strong>, ((rollplus supply)).</p>\n"
   },
@@ -388,8 +388,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you swear upon iron to complete a quest</strong>, write your vow and give it a rank. Then, ((rollplus heart)). If you swear this vow to a connection, add +1; if you share a bond, add +2.</p>\n"
   },
@@ -403,8 +403,8 @@
     },
     "Text": "<p><strong>When you make headway in your quest</strong> by doing any of the following...</p>\n<ul>\n<li>overcoming a critical obstacle</li>\n<li>gaining meaningful insight</li>\n<li>completing a perilous expedition</li>\n<li>acquiring a crucial item or resource</li>\n<li>earning vital support</li>\n<li>defeating a notable foe</li>\n</ul>\n<p>...you may mark progress per the rank of the vow.</p>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you make headway in your quest</strong> by doing any of the following...</p>\n<ul>\n<li>overcoming a critical obstacle</li>\n<li>gaining meaningful insight</li>\n<li>completing a perilous expedition</li>\n<li>acquiring a crucial item or resource</li>\n<li>earning vital support</li>\n<li>defeating a notable foe</li>\n</ul>\n<p>...you may mark progress per the rank of the vow.</p>\n"
   },
@@ -442,8 +442,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you reach the end of your quest</strong>, roll the challenge dice and compare to your progress.</p>\n"
   },
@@ -457,8 +457,8 @@
     },
     "Text": "<p><strong>When you renounce your quest, betray your promise, or the goal is lost to you</strong>, clear the vow.</p>\n<p>Then, envision the impact of this failure and choose one or more as appropriate to the nature of the vow. Any allies who shared this vow may also envision a cost.</p>\n<ul>\n<li>You are demoralized or dispirited: @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003z]{Endure Stress}.</li>\n<li>A connection loses faith: @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001u]{Test Your Relationship} when you next interact.</li>\n<li>You must abandon a path or resource: Discard an asset.</li>\n<li>Someone else pays a price: Envision how a person, being, or community bears the cost of the failure.</li>\n<li>Someone else takes advantage: Envision how an enemy gains power.</li>\n<li>Your reputation suffers: Envision how this failure marks you.</li>\n</ul>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you renounce your quest, betray your promise, or the goal is lost to you</strong>, clear the vow.</p>\n<p>Then, envision the impact of this failure and choose one or more as appropriate to the nature of the vow. Any allies who shared this vow may also envision a cost.</p>\n<ul>\n<li>You are demoralized or dispirited: @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003z]{Endure Stress}.</li>\n<li>A connection loses faith: @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001u]{Test Your Relationship} when you next interact.</li>\n<li>You must abandon a path or resource: Discard an asset.</li>\n<li>Someone else pays a price: Envision how a person, being, or community bears the cost of the failure.</li>\n<li>Someone else takes advantage: Envision how an enemy gains power.</li>\n<li>Your reputation suffers: Envision how this failure marks you.</li>\n</ul>\n"
   },
@@ -495,8 +495,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you search out a new relationship or give focus to an existing relationship (not an ally or companion)</strong>, ((rollplus heart)).</p>\n"
   },
@@ -537,8 +537,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you reinforce your relationship with a connection</strong> by doing any of the following...</p>\n<ul>\n<li>swearing a vow to undertake a perilous quest in their service</li>\n<li>completing a quest to their benefit</li>\n<li>leveraging their help in desperate circumstances</li>\n<li>giving them something of worth</li>\n<li>sharing a profound moment</li>\n<li>standing with them against hardship</li>\n<li>overcoming a test of your relationship</li>\n</ul>\n<p>...you may mark progress per the rank of the connection.</p>\n<p>If you already share a bond with the connection, do not mark progress. Instead, roll +their rank to learn the impact on your legacy: troublesome=+1; dangerous=+2; formidable=+3; extreme=+4; epic=+5. </p>\n"
   },
@@ -575,8 +575,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When your relationship with a connection is tested through conflict, betrayal, or circumstance</strong>, ((rollplus heart)). If you share a bond, add +1.</p>\n"
   },
@@ -614,8 +614,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When your relationship with a connection is ready to evolve</strong>, roll the challenge dice and compare to your progress.</p>\n"
   },
@@ -667,8 +667,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you trailblaze a route through perilous space, journey over hazardous terrain, or survey a mysterious site</strong>, give the expedition a name and rank. Then, for each segment of the expedition, envision your approach. If you...</p>\n<ul>\n<li>Move at speed: ((rollplus edge))</li>\n<li>Keep under the radar: ((rollplus shadow))</li>\n<li>Stay vigilant: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -688,7 +688,7 @@
         }
       ]
     },
-    "Text": "<p><strong>When you divert from an expedition to examine a notable location</strong>, ((rollplus wits)).</p>\n<p>On a <strong>strong hit</strong>, choose one. On a <strong>strong hit with a match</strong>, you may instead @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000020]{Make a Discovery}.</p>\n<ul>\n<li>Find an opportunity: Envision a favorable insight, situation, resource, or encounter. Then, take +2 momentum.</li>\n<li>Gain progress: Mark progress on your expedition, per its rank.</li>\n</ul>\n<p>On a <strong>weak hit</strong>, you uncover something interesting, but it is bound up in a peril or reveals an ominous aspect of this place. Envision what you encounter. Then, take +1 momentum.</p>\n<p>On a <strong>miss</strong> you encounter an immediate hardship or threat, and must @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000005b]{Pay the Price}. On a <strong>miss with a match</strong>, you may instead @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000023]{Confront Chaos}.</p>\n",
+    "Text": "<p><strong>When you divert from an expedition to examine a notable location</strong>, ((rollplus wits)).</p>\n<p>On a <strong>strong hit</strong>, choose one. On a <strong>strong hit with a match</strong>, you may instead @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000020]{Make a Discovery}.</p>\n<ul>\n<li>Find an opportunity: Envision a favorable insight, situation, resource, or encounter. Then, take +2 momentum.</li>\n<li>Gain progress: Mark progress on your expedition, per its rank.</li>\n</ul>\n<p>On a <strong>weak hit</strong>, you uncover something interesting, but it is bound up in a peril or reveals an ominous aspect of this place. Envision what you encounter. Then, take +1 momentum.</p>\n<p>On a <strong>miss</strong>, you encounter an immediate hardship or threat, and must @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000005b]{Pay the Price}. On a <strong>miss with a match</strong>, you may instead @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000023]{Confront Chaos}.</p>\n",
     "Outcomes": {
       "$id": "Moves / Explore a Waypoint / Outcomes",
       "Strong Hit": {
@@ -713,10 +713,10 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
-    "Description": "<p><strong>When you divert from an expedition to examine a notable location</strong>, ((rollplus wits)).</p>\n<p>On a <strong>strong hit</strong>, choose one. On a <strong>strong hit with a match</strong>, you may instead @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000020]{Make a Discovery}.</p>\n<ul>\n<li>Find an opportunity: Envision a favorable insight, situation, resource, or encounter. Then, take +2 momentum.</li>\n<li>Gain progress: Mark progress on your expedition, per its rank.</li>\n</ul>\n<p>On a <strong>weak hit</strong>, you uncover something interesting, but it is bound up in a peril or reveals an ominous aspect of this place. Envision what you encounter. Then, take +1 momentum.</p>\n<p>On a <strong>miss</strong> you encounter an immediate hardship or threat, and must @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000005b]{Pay the Price}. On a <strong>miss with a match</strong>, you may instead @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000023]{Confront Chaos}.</p>\n"
+    "Description": "<p><strong>When you divert from an expedition to examine a notable location</strong>, ((rollplus wits)).</p>\n"
   },
   {
     "$id": "Moves / Make a Discovery",
@@ -734,15 +734,15 @@
         }
       ]
     },
-    "Text": "<p><strong>When your exploration of a waypoint uncovers something wondrous</strong>, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-4</td>\n<td>Advanced technology waiting to be harnessed or salvaged</td>\n</tr>\n<tr>\n<td>5-8</td>\n<td>Ancient archive or message</td>\n</tr>\n<tr>\n<td>9-10</td>\n<td>Artificial consciousness evolved to a higher state</td>\n</tr>\n<tr>\n<td>11-12</td>\n<td>Clues to a crucial resource or uncharted domain</td>\n</tr>\n<tr>\n<td>13-14</td>\n<td>Envoy from another time or reality</td>\n</tr>\n<tr>\n<td>15-22</td>\n<td>Extraordinary natural phenomenon</td>\n</tr>\n<tr>\n<td>23-24</td>\n<td>First contact with intelligent life</td>\n</tr>\n<tr>\n<td>25-26</td>\n<td>Gateway to another time or alternate reality</td>\n</tr>\n<tr>\n<td>27-28</td>\n<td>Key to unlocking a language or method of communication</td>\n</tr>\n<tr>\n<td>29-34</td>\n<td>Lost or hidden people</td>\n</tr>\n<tr>\n<td>35-42</td>\n<td>Majestic or unusual lifeforms</td>\n</tr>\n<tr>\n<td>43-46</td>\n<td>Marvel of ancient engineering</td>\n</tr>\n<tr>\n<td>47-50</td>\n<td>Miraculously preserved artifact or specimen</td>\n</tr>\n<tr>\n<td>51-56</td>\n<td>Monumental architecture or artistry of an ancient civilization</td>\n</tr>\n<tr>\n<td>57-62</td>\n<td>Mysterious device or artifact of potential value</td>\n</tr>\n<tr>\n<td>63-66</td>\n<td>New understanding of an enduring mystery</td>\n</tr>\n<tr>\n<td>67-68</td>\n<td>Pathway or means of travel to a distant location</td>\n</tr>\n<tr>\n<td>69-70</td>\n<td>Person or lifeform with phenomenal abilities</td>\n</tr>\n<tr>\n<td>71-78</td>\n<td>Place of awe-inspiring beauty</td>\n</tr>\n<tr>\n<td>79-86</td>\n<td>Rare and valuable resource</td>\n</tr>\n<tr>\n<td>87-88</td>\n<td>Safeguarded or idyllic location</td>\n</tr>\n<tr>\n<td>89-90</td>\n<td>Visions or prophesies of the future</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>Roll Twice</td>\n</tr>\n</tbody></table>\n",
+    "Text": "<p><strong>When your exploration of a waypoint uncovers something wondrous</strong>, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-4</td>\n<td>Advanced technology waiting to be harnessed or salvaged</td>\n</tr>\n<tr>\n<td>5-8</td>\n<td>Ancient archive or message</td>\n</tr>\n<tr>\n<td>9-10</td>\n<td>Artificial consciousness evolved to a higher state</td>\n</tr>\n<tr>\n<td>11-12</td>\n<td>Clues to a crucial resource or uncharted domain</td>\n</tr>\n<tr>\n<td>13-14</td>\n<td>Envoy from another time or reality</td>\n</tr>\n<tr>\n<td>15-22</td>\n<td>Extraordinary natural phenomenon</td>\n</tr>\n<tr>\n<td>23-24</td>\n<td>First contact with intelligent life</td>\n</tr>\n<tr>\n<td>25-26</td>\n<td>Gateway to another time or alternate reality</td>\n</tr>\n<tr>\n<td>27-28</td>\n<td>Key to unlocking a language or method of communication</td>\n</tr>\n<tr>\n<td>29-34</td>\n<td>Lost or hidden people</td>\n</tr>\n<tr>\n<td>35-42</td>\n<td>Majestic or unusual lifeforms</td>\n</tr>\n<tr>\n<td>43-46</td>\n<td>Marvel of ancient engineering</td>\n</tr>\n<tr>\n<td>47-50</td>\n<td>Miraculously preserved artifact or specimen</td>\n</tr>\n<tr>\n<td>51-56</td>\n<td>Monumental architecture or artistry of an ancient civilization</td>\n</tr>\n<tr>\n<td>57-62</td>\n<td>Mysterious device or artifact of potential value</td>\n</tr>\n<tr>\n<td>63-66</td>\n<td>New understanding of an enduring mystery</td>\n</tr>\n<tr>\n<td>67-68</td>\n<td>Pathway or means of travel to a distant location</td>\n</tr>\n<tr>\n<td>69-70</td>\n<td>Person or lifeform with phenomenal abilities</td>\n</tr>\n<tr>\n<td>71-78</td>\n<td>Place of awe-inspiring beauty</td>\n</tr>\n<tr>\n<td>79-86</td>\n<td>Rare and valuable resource</td>\n</tr>\n<tr>\n<td>87-88</td>\n<td>Safeguarded or idyllic location</td>\n</tr>\n<tr>\n<td>89-90</td>\n<td>Visions or prophesies of the future</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>Roll twice</td>\n</tr>\n</tbody></table>\n",
     "Oracles": [
       "Oracles / Moves / Make a Discovery"
     ],
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
-    "Description": "<p><strong>When your exploration of a waypoint uncovers something wondrous</strong>, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-4</td>\n<td>Advanced technology waiting to be harnessed or salvaged</td>\n</tr>\n<tr>\n<td>5-8</td>\n<td>Ancient archive or message</td>\n</tr>\n<tr>\n<td>9-10</td>\n<td>Artificial consciousness evolved to a higher state</td>\n</tr>\n<tr>\n<td>11-12</td>\n<td>Clues to a crucial resource or uncharted domain</td>\n</tr>\n<tr>\n<td>13-14</td>\n<td>Envoy from another time or reality</td>\n</tr>\n<tr>\n<td>15-22</td>\n<td>Extraordinary natural phenomenon</td>\n</tr>\n<tr>\n<td>23-24</td>\n<td>First contact with intelligent life</td>\n</tr>\n<tr>\n<td>25-26</td>\n<td>Gateway to another time or alternate reality</td>\n</tr>\n<tr>\n<td>27-28</td>\n<td>Key to unlocking a language or method of communication</td>\n</tr>\n<tr>\n<td>29-34</td>\n<td>Lost or hidden people</td>\n</tr>\n<tr>\n<td>35-42</td>\n<td>Majestic or unusual lifeforms</td>\n</tr>\n<tr>\n<td>43-46</td>\n<td>Marvel of ancient engineering</td>\n</tr>\n<tr>\n<td>47-50</td>\n<td>Miraculously preserved artifact or specimen</td>\n</tr>\n<tr>\n<td>51-56</td>\n<td>Monumental architecture or artistry of an ancient civilization</td>\n</tr>\n<tr>\n<td>57-62</td>\n<td>Mysterious device or artifact of potential value</td>\n</tr>\n<tr>\n<td>63-66</td>\n<td>New understanding of an enduring mystery</td>\n</tr>\n<tr>\n<td>67-68</td>\n<td>Pathway or means of travel to a distant location</td>\n</tr>\n<tr>\n<td>69-70</td>\n<td>Person or lifeform with phenomenal abilities</td>\n</tr>\n<tr>\n<td>71-78</td>\n<td>Place of awe-inspiring beauty</td>\n</tr>\n<tr>\n<td>79-86</td>\n<td>Rare and valuable resource</td>\n</tr>\n<tr>\n<td>87-88</td>\n<td>Safeguarded or idyllic location</td>\n</tr>\n<tr>\n<td>89-90</td>\n<td>Visions or prophesies of the future</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>Roll Twice</td>\n</tr>\n</tbody></table>\n"
+    "Description": "<p><strong>When your exploration of a waypoint uncovers something wondrous</strong>, roll on the table below or choose one. Then, envision the nature of the discovery and how it is revealed. When you first experience or engage with the discovery, you and your allies may mark two ticks on your discoveries legacy track.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-4</td>\n<td>Advanced technology waiting to be harnessed or salvaged</td>\n</tr>\n<tr>\n<td>5-8</td>\n<td>Ancient archive or message</td>\n</tr>\n<tr>\n<td>9-10</td>\n<td>Artificial consciousness evolved to a higher state</td>\n</tr>\n<tr>\n<td>11-12</td>\n<td>Clues to a crucial resource or uncharted domain</td>\n</tr>\n<tr>\n<td>13-14</td>\n<td>Envoy from another time or reality</td>\n</tr>\n<tr>\n<td>15-22</td>\n<td>Extraordinary natural phenomenon</td>\n</tr>\n<tr>\n<td>23-24</td>\n<td>First contact with intelligent life</td>\n</tr>\n<tr>\n<td>25-26</td>\n<td>Gateway to another time or alternate reality</td>\n</tr>\n<tr>\n<td>27-28</td>\n<td>Key to unlocking a language or method of communication</td>\n</tr>\n<tr>\n<td>29-34</td>\n<td>Lost or hidden people</td>\n</tr>\n<tr>\n<td>35-42</td>\n<td>Majestic or unusual lifeforms</td>\n</tr>\n<tr>\n<td>43-46</td>\n<td>Marvel of ancient engineering</td>\n</tr>\n<tr>\n<td>47-50</td>\n<td>Miraculously preserved artifact or specimen</td>\n</tr>\n<tr>\n<td>51-56</td>\n<td>Monumental architecture or artistry of an ancient civilization</td>\n</tr>\n<tr>\n<td>57-62</td>\n<td>Mysterious device or artifact of potential value</td>\n</tr>\n<tr>\n<td>63-66</td>\n<td>New understanding of an enduring mystery</td>\n</tr>\n<tr>\n<td>67-68</td>\n<td>Pathway or means of travel to a distant location</td>\n</tr>\n<tr>\n<td>69-70</td>\n<td>Person or lifeform with phenomenal abilities</td>\n</tr>\n<tr>\n<td>71-78</td>\n<td>Place of awe-inspiring beauty</td>\n</tr>\n<tr>\n<td>79-86</td>\n<td>Rare and valuable resource</td>\n</tr>\n<tr>\n<td>87-88</td>\n<td>Safeguarded or idyllic location</td>\n</tr>\n<tr>\n<td>89-90</td>\n<td>Visions or prophesies of the future</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>Roll twice</td>\n</tr>\n</tbody></table>\n"
   },
   {
     "$id": "Moves / Confront Chaos",
@@ -757,8 +757,8 @@
       "Oracles / Moves / Confront Chaos"
     ],
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When your exploration of a waypoint uncovers something dreadful</strong>, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.</p>\n<p>For each result, when you first confront that aspect within the scope of the encounter, you and your allies may mark one tick on your discoveries legacy track.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-4</td>\n<td>Baneful weapon of mass destruction</td>\n</tr>\n<tr>\n<td>5-9</td>\n<td>Cataclysmic environmental effects</td>\n</tr>\n<tr>\n<td>10-12</td>\n<td>Dead given unnatural life</td>\n</tr>\n<tr>\n<td>13-17</td>\n<td>Destructive lifeform of monstrous proportion</td>\n</tr>\n<tr>\n<td>18-20</td>\n<td>Dread hallucinations or illusions</td>\n</tr>\n<tr>\n<td>21-24</td>\n<td>Harbingers of an imminent invasion</td>\n</tr>\n<tr>\n<td>25-27</td>\n<td>Horde of insatiable hunger or fury</td>\n</tr>\n<tr>\n<td>28-32</td>\n<td>Horrific lifeforms of inscrutable purpose</td>\n</tr>\n<tr>\n<td>33-36</td>\n<td>Impostors in human form</td>\n</tr>\n<tr>\n<td>37-41</td>\n<td>Machines made enemy</td>\n</tr>\n<tr>\n<td>42-45</td>\n<td>Malignant contagion or parasite</td>\n</tr>\n<tr>\n<td>46-50</td>\n<td>Messenger or signal with a dire warning</td>\n</tr>\n<tr>\n<td>51-53</td>\n<td>Passage to a grim alternate reality</td>\n</tr>\n<tr>\n<td>54-58</td>\n<td>People corrupted by chaos</td>\n</tr>\n<tr>\n<td>59-63</td>\n<td>Powerful distortions of time or space</td>\n</tr>\n<tr>\n<td>64-68</td>\n<td>Signs of an impending catastrophe</td>\n</tr>\n<tr>\n<td>69-72</td>\n<td>Site of a baffling disappearance</td>\n</tr>\n<tr>\n<td>73-77</td>\n<td>Site of a horrible disaster</td>\n</tr>\n<tr>\n<td>78-82</td>\n<td>Site of terrible carnage</td>\n</tr>\n<tr>\n<td>83-87</td>\n<td>Technology nullified or made unstable</td>\n</tr>\n<tr>\n<td>88-92</td>\n<td>Technology warped for dark purpose</td>\n</tr>\n<tr>\n<td>93-96</td>\n<td>Vault of dread technology or power</td>\n</tr>\n<tr>\n<td>97-100</td>\n<td>Worshipers of great and malevolent powers</td>\n</tr>\n</tbody></table>\n"
   },
@@ -796,8 +796,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When your expedition comes to an end</strong>, roll the challenge dice and compare to your progress.</p>\n"
   },
@@ -834,8 +834,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site</strong>, ((rollplus supply)).</p>\n"
   },
@@ -901,8 +901,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you initiate combat or are forced into a fight</strong>, envision your objective and give it a rank. If the combat includes discrete challenges or phases, set an objective with a rank for each.</p>\n<p>Then, roll to see if you are in control. If you are...</p>\n<ul>\n<li>On the move: ((rollplus edge))</li>\n<li>Facing off against your foe: ((rollplus heart))</li>\n<li>In the thick of it at close quarters: ((rollplus iron))</li>\n<li>Preparing to act against an unaware foe: ((rollplus shadow))</li>\n<li>Caught in a trap or sizing up the situation: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -968,8 +968,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you are in control and take action in a fight to reinforce your position or move toward an objective</strong>, envision your approach and roll. If you are...</p>\n<ul>\n<li>In pursuit, fleeing, or maneuvering: ((rollplus edge))</li>\n<li>Charging boldly into action, coming to the aid of others, negotiating, or commanding: ((rollplus heart))</li>\n<li>Gaining leverage with force, powering through, or making a threat: ((rollplus iron))</li>\n<li>Hiding, preparing an ambush, or misdirecting: ((rollplus shadow))</li>\n<li>Coordinating a plan, studying a situation, or cleverly gaining leverage: ((rollplus wits))</li>\n</ul>\n<p>On a <strong>hit</strong>, you stay in control. </p>\n"
   },
@@ -1035,8 +1035,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle</strong>, envision your approach and roll. If you are...</p>\n<ul>\n<li>In pursuit, fleeing, dodging, getting back into position, or taking cover: ((rollplus edge))</li>\n<li>Remaining stalwart against fear or temptation: ((rollplus heart))</li>\n<li>Blocking or diverting with force, or taking the hit: ((rollplus iron))</li>\n<li>Moving into hiding or creating a distraction: ((rollplus shadow))</li>\n<li>Changing the plan, finding a way out, or cleverly bypassing an obstacle: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -1081,8 +1081,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you are in control and assault a foe at close quarters</strong>, ((rollplus iron)); <strong>when you attack at a distance</strong>, ((rollplus edge)).</p>\n"
   },
@@ -1127,8 +1127,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you are in a bad spot and fight back against a foe at close quarters</strong>, ((rollplus iron)); <strong>when you exchange fire at a distance</strong>, ((rollplus edge)).</p>\n"
   },
@@ -1169,8 +1169,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you seize an objective in a fight</strong>, envision how you take decisive action. Then, roll the challenge dice and compare to your progress.</p>\n<p>If you are in control, check the result as normal. If you are in a bad spot, count a strong hit without a match as a weak hit, and a weak hit as a miss.</p>\n"
   },
@@ -1184,8 +1184,8 @@
     },
     "Text": "<p><strong>When you abandon or are deprived of an objective</strong>, envision the consequence of this failure, clear the objective, and @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000005b]{Pay the Price}.</p>\n<p>If the fight continues, you may create a new objective and give it a rank to represent the changing situation. If any objectives remain, the fight continues and you are in a bad spot.</p>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you abandon or are deprived of an objective</strong>, envision the consequence of this failure, clear the objective, and @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000005b]{Pay the Price}.</p>\n<p>If the fight continues, you may create a new objective and give it a rank to represent the changing situation. If any objectives remain, the fight continues and you are in a bad spot.</p>\n"
   },
@@ -1251,8 +1251,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you fight a battle and it happens in a blur</strong>, envision your objective and roll. If you primarily...</p>\n<ul>\n<li>Fight at range, or using your speed and the environment to your advantage: ((rollplus edge)).</li>\n<li>Fight depending on your courage, leadership, or companions: ((rollplus heart)).</li>\n<li>Fight in close to overpower your foe: ((rollplus iron)).</li>\n<li>Fight using trickery to befuddle your foe: ((rollplus shadow)).</li>\n<li>Fight using careful tactics to outsmart your foe: ((rollplus wits)).</li>\n</ul>\n"
   },
@@ -1266,8 +1266,8 @@
     },
     "Text": "<p><strong>When you are delayed or disadvantaged</strong>, suffer -1 momentum for a minor setback, -2 for a serious setback, or -3 for a major setback.</p>\n<p>When your momentum is at its minimum (-6) and you must suffer -momentum, choose one.</p>\n<ul>\n<li>Envision how the price is paid and apply the cost to a different suffer move.</li>\n<li>Envision how this undermines your progress on a vow, expedition, connection, or combat. Then, clear 1 unit of progress on that track per its rank: troublesome=3 boxes; dangerous=2 boxes; formidable=1 box; extreme=2 ticks; epic=1 tick.</li>\n</ul>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you are delayed or disadvantaged</strong>, suffer -1 momentum for a minor setback, -2 for a serious setback, or -3 for a major setback.</p>\n<p>When your momentum is at its minimum (-6) and you must suffer -momentum, choose one.</p>\n<ul>\n<li>Envision how the price is paid and apply the cost to a different suffer move.</li>\n<li>Envision how this undermines your progress on a vow, expedition, connection, or combat. Then, clear 1 unit of progress on that track per its rank: troublesome=3 boxes; dangerous=2 boxes; formidable=1 box; extreme=2 ticks; epic=1 tick.</li>\n</ul>\n"
   },
@@ -1310,8 +1310,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you face physical injury, fatigue, or illness</strong>, suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your health is 0, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} equal to any remaining harm.</p>\n<p>Then, if your health is 0 or you choose to resist the harm, ((rollplus health)) or ((rollplus iron)), whichever is higher.</p>\n"
   },
@@ -1354,8 +1354,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you face mental strain, shock, or despair</strong>, suffer -1 spirit for minor stress, -2 for serious stress, or -3 for major stress. If your spirit is 0, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} equal to any remaining stress.</p>\n<p>Then, if your spirit is 0 or you choose to resist the stress, ((rollplus spirit)) or ((rollplus heart)), whichever is higher.</p>\n"
   },
@@ -1375,7 +1375,7 @@
         }
       ]
     },
-    "Text": "<p><strong>When your companion faces physical hardship</strong>, they suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your companion&#39;s health is 0, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} equal to any remaining harm.</p>\n<p>Then, if their health is 0 or you choose to test their resilience, roll +your companion&#39;s ((rollplus health)).</p>\n<p>On a <strong>strong hit</strong>, your companion rallies. Give them +1 health.</p>\n<p>On a <strong>weak hit</strong>, if your companion&#39;s health is not 0, you may @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} (-1) and give them +1 health. Otherwise, they press on.</p>\n<p>On a <strong>miss</strong>, it&#39;s worse than you thought. They suffer an additional -1 health or you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} (-2). If your companion&#39;s health is 0, they are out of action until given aid. If their health is 0 and you rolled a miss with a match on this move, they are dead or destroyed; discard the asset.</p>\n",
+    "Text": "<p><strong>When your companion faces physical hardship</strong>, they suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your companion&#39;s health is 0, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} equal to any remaining harm.</p>\n<p>Then, if their health is 0 or you choose to test their resilience, roll +your companion&#39;s health.</p>\n<p>On a <strong>strong hit</strong>, your companion rallies. Give them +1 health.</p>\n<p>On a <strong>weak hit</strong>, if your companion&#39;s health is not 0, you may @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} (-1) and give them +1 health. Otherwise, they press on.</p>\n<p>On a <strong>miss</strong>, it&#39;s worse than you thought. They suffer an additional -1 health or you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} (-2). If your companion&#39;s health is 0, they are out of action until given aid. If their health is 0 and you rolled a miss with a match on this move, they are dead or destroyed; discard the asset.</p>\n",
     "Outcomes": {
       "$id": "Moves / Companion Takes a Hit / Outcomes",
       "Strong Hit": {
@@ -1396,10 +1396,10 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
-    "Description": "<p><strong>When your companion faces physical hardship</strong>, they suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your companion&#39;s health is 0, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} equal to any remaining harm.</p>\n<p>Then, if their health is 0 or you choose to test their resilience, roll +your companion&#39;s ((rollplus health)).</p>\n"
+    "Description": "<p><strong>When your companion faces physical hardship</strong>, they suffer -1 health for minor harm, -2 for serious harm, or -3 for major harm. If your companion&#39;s health is 0, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} equal to any remaining harm.</p>\n<p>Then, if their health is 0 or you choose to test their resilience, roll +your companion&#39;s health.</p>\n"
   },
   {
     "$id": "Moves / Sacrifice Resources",
@@ -1411,8 +1411,8 @@
     },
     "Text": "<p><strong>When you lose or consume resources</strong>, suffer -1 supply for a minor loss, -2 for a serious loss, or -3 for a major loss.</p>\n<p>If your supply is exhausted (reduced to 0), mark <strong>unprepared</strong>. When you suffer a loss of resources while unprepared, envision how this causes you hardship and apply the cost to a different suffer move.</p>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you lose or consume resources</strong>, suffer -1 supply for a minor loss, -2 for a serious loss, or -3 for a major loss.</p>\n<p>If your supply is exhausted (reduced to 0), mark <strong>unprepared</strong>. When you suffer a loss of resources while unprepared, envision how this causes you hardship and apply the cost to a different suffer move.</p>\n"
   },
@@ -1452,8 +1452,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When your vehicle faces a damaging situation or environment</strong>, suffer -1 integrity for minor damage, -2 for serious damage, or -3 for major damage. If your integrity is 0, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003q]{Lose Momentum} equal to any remaining damage.</p>\n<p>Then, if your integrity is 0 or you choose to resist the damage, roll +integrity.</p>\n"
   },
@@ -1490,8 +1490,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you spend time recovering within a community</strong>, ((rollplus heart)).</p>\n"
   },
@@ -1553,8 +1553,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you receive medical care or provide treatment</strong>, envision the situation and roll. If you...</p>\n<ul>\n<li>Receive treatment from someone (not an ally): ((rollplus iron))</li>\n<li>Mend your own wounds: ((rollplus iron)) or ((rollplus wits)), whichever is lower</li>\n<li>Obtain treatment for a companion: ((rollplus heart))</li>\n<li>Provide care: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -1591,8 +1591,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you socialize, share intimacy, or find a moment of peace</strong>, ((rollplus heart)).</p>\n"
   },
@@ -1651,8 +1651,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you attempt to bolster your readiness</strong>, envision the opportunity and your approach. If you...</p>\n<ul>\n<li>Barter or make an appeal: ((rollplus heart))</li>\n<li>Threaten or seize: ((rollplus iron))</li>\n<li>Steal or swindle: ((rollplus shadow))</li>\n<li>Scavenge or craft: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -1697,8 +1697,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you make repairs to your vehicles, modules, mechanical companions, or other devices</strong>, envision the situation and roll. If you...</p>\n<ul>\n<li>Make your own repairs, or direct a companion to make repairs: ((rollplus wits))</li>\n<li>Obtain repairs from someone (not an ally): ((rollplus supply))</li>\n</ul>\n<p>On a <strong>hit</strong>, you gain repair points as appropriate to the situation, per the table below. Additionally, you may @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003O]{Sacrifice Resources} and exchange each -1 of supply for 1 extra repair point (up to 3 points).</p>\n<table>\n<thead>\n<tr>\n<th>Situation</th>\n<th>Strong Hit</th>\n<th>Weak Hit</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>At a facility</td>\n<td>5 points</td>\n<td>3 points</td>\n</tr>\n<tr>\n<td>In the field</td>\n<td>3 points</td>\n<td>1 points</td>\n</tr>\n<tr>\n<td>Under fire</td>\n<td>2 points</td>\n<td>0 points</td>\n</tr>\n</tbody></table>\n<p>Spend repair points as follows. Unused points are discarded.</p>\n<ul>\n<li>Clear the battered impact on a vehicle: 2 points</li>\n<li>Fix one broken module: 2 points</li>\n<li>Take +1 integrity on a vehicle: 1 point</li>\n<li>Take +1 health for a mechanical companion: 1 point</li>\n<li>Repair any other device: 3 points</li>\n<li>Repair any other device, but with a complication or malfunction: 2 points</li>\n</ul>\n<p>On a <strong>miss</strong>, the repairs are not made and the situation worsens. @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000005b]{Pay the Price}.</p>\n"
   },
@@ -1735,8 +1735,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you encounter a situation where death is an immediate and unavoidable outcome</strong>, you are dead. <strong>When you are instead brought to the brink of death with a chance for recovery or redemption</strong>, ((rollplus heart)).</p>\n"
   },
@@ -1773,8 +1773,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you are brought to the brink of desolation</strong>, ((rollplus heart)).</p>\n"
   },
@@ -1812,8 +1812,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When your command vehicle is destroyed or irrevocably lost</strong>, you must discard the asset, along with any modules and docked support vehicles.</p>\n<p>If you survive, you may use your connections to replace some of what was lost. To learn the cost, roll the challenge dice and compare to the progress on your bonds legacy track.</p>\n"
   },
@@ -1827,8 +1827,8 @@
     },
     "Text": "<p><strong>When you fill a box (four ticks) on any legacy track</strong>, take 2 experience. This experience may be spent when you @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000050]{Advance}.</p>\n<p>Once you completely fill the tenth box on any legacy track, clear that track. You may start again marking progress on the cleared track, but earn experience at a reduced rate of 1 experience (instead of 2) for each filled progress box. If you make a progress roll against this track, resolve the outcome as if at 10 progress.</p>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you fill a box (four ticks) on any legacy track</strong>, take 2 experience. This experience may be spent when you @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000050]{Advance}.</p>\n<p>Once you completely fill the tenth box on any legacy track, clear that track. You may start again marking progress on the cleared track, but earn experience at a reduced rate of 1 experience (instead of 2) for each filled progress box. If you make a progress roll against this track, resolve the outcome as if at 10 progress.</p>\n"
   },
@@ -1842,8 +1842,8 @@
     },
     "Text": "<p><strong>When you develop your abilities, improve your resources, gain a reward, or boost your influence</strong>, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset. Choose from the following categories as appropriate to your focus and opportunities.</p>\n<ul>\n<li>Module: Upgrade your command vehicle</li>\n<li>Support Vehicle: Acquire or improve a secondary vehicle</li>\n<li>Path: Bolster your personal capabilities or follow a new calling</li>\n<li>Companion: Gain or improve a trusted helper</li>\n<li>Deed: Learn from your experiences or build a legacy</li>\n</ul>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you develop your abilities, improve your resources, gain a reward, or boost your influence</strong>, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset. Choose from the following categories as appropriate to your focus and opportunities.</p>\n<ul>\n<li>Module: Upgrade your command vehicle</li>\n<li>Support Vehicle: Acquire or improve a secondary vehicle</li>\n<li>Path: Bolster your personal capabilities or follow a new calling</li>\n<li>Companion: Gain or improve a trusted helper</li>\n<li>Deed: Learn from your experiences or build a legacy</li>\n</ul>\n"
   },
@@ -1885,8 +1885,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you retire from your life as Ironsworn, or succumb to death or desolation</strong>, you may create a new character in your established setting. If you do, roll the challenge dice and compare to each of the former character&#39;s legacy tracks: Quests, bonds, and discoveries (one roll per track).</p>\n<p>For each <strong>strong hit</strong>, choose one from below, or one from the weak hit or miss options.</p>\n<ul>\n<li>Follow their path: Take one path or companion asset from the former character (at no cost), including any marked abilities.</li>\n<li>Share a connection: Take one connection from the former character, including any accrued progress or bond benefits.</li>\n<li>Accept an inheritance: Take the former character&#39;s command vehicle and one module or support vehicle (at no cost), including any marked abilities.</li>\n</ul>\n<p>For each <strong>weak hit</strong>, choose one from below, or one from the miss options.</p>\n<ul>\n<li>See it through: Choose one of the former character&#39;s unfinished quests, and @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000000W]{Swear an Iron Vow} (with an automatic strong hit) to see it done. You may immediately mark up to half their earned progress (round down) on this quest.</li>\n<li>Rebuild a connection: Name one of the former character&#39;s connections, and envision how time or circumstances have changed them in a dramatic way. When you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001e]{Make a Connection} with them, take an automatic strong hit and mark two ticks on your bonds legacy track.</li>\n<li>Explore familiar ground: Name a location that was meaningful to the former character. When you first visit that place, envision how it has changed or is endangered. Then, mark two ticks on your discoveries legacy track.</li>\n</ul>\n<p>For each <strong>miss</strong>, choose one.</p>\n<ul>\n<li>Deal with the aftermath: Envision how one of your former character&#39;s foes has gained power or influence.</li>\n<li>Switch loyalties: Envision how you begin in opposition to your former character&#39;s beliefs, goals, or allegiances.</li>\n<li>Open Pandora&#39;s Box: Envision how an advancement or discovery has unleashed unexpectedly dire consequences.</li>\n</ul>\n"
   },
@@ -1907,8 +1907,8 @@
       "Oracles / Moves / Ask the Oracle / Almost Certain"
     ],
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events</strong>, you may...</p>\n<ul>\n<li>Draw a conclusion: Decide the answer based on the most interesting and obvious result.</li>\n<li>Spark an idea: Use an oracle table or other random prompt.</li>\n<li>Ask a yes/no question: Decide the odds of a yes, and roll on the table below to check the answer.</li>\n<li>Pick two: Envision two options. Rate one as likely, and roll on the table below to see if it is true. If not, it is the other.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Odds</th>\n<th>The answer is yes if you roll...</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Small Chance</td>\n<td>10 or less</td>\n</tr>\n<tr>\n<td>Unlikely</td>\n<td>25 or less</td>\n</tr>\n<tr>\n<td>50/50</td>\n<td>50 or less</td>\n</tr>\n<tr>\n<td>Likely</td>\n<td>75 or less</td>\n</tr>\n<tr>\n<td>Almost Certain</td>\n<td>90 or less</td>\n</tr>\n</tbody></table>\n<p>On a match, envision an extreme result or twist.</p>\n"
   },
@@ -1925,8 +1925,8 @@
       "Oracles / Moves / Pay the Price"
     ],
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you suffer the outcome of an action</strong>, choose one.</p>\n<ul>\n<li>Make the most obvious negative outcome happen.</li>\n<li>@Compendium[foundry-ironsworn.starforgedmoves.DF03000000000059]{Ask the Oracle} for inspiration. Interpret the answer as a hardship or complication appropriate to the current situation.</li>\n<li>Roll on the table below. If you have difficulty interpreting the result to fit the current situation, roll again.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-2</td>\n<td>A trusted individual or community acts against you</td>\n</tr>\n<tr>\n<td>3-4</td>\n<td>An individual or community you care about is exposed to danger</td>\n</tr>\n<tr>\n<td>5-7</td>\n<td>You encounter signs of a looming threat</td>\n</tr>\n<tr>\n<td>8-10</td>\n<td>You create an opportunity for an enemy</td>\n</tr>\n<tr>\n<td>11-14</td>\n<td>You face a tough choice</td>\n</tr>\n<tr>\n<td>15-18</td>\n<td>You face the consequences of an earlier choice</td>\n</tr>\n<tr>\n<td>19-22</td>\n<td>A surprising development complicates your quest</td>\n</tr>\n<tr>\n<td>23-26</td>\n<td>You are separated from something or someone</td>\n</tr>\n<tr>\n<td>27-32</td>\n<td>Your action causes collateral damage or has an unintended effect</td>\n</tr>\n<tr>\n<td>33-38</td>\n<td>Something of value is lost or destroyed</td>\n</tr>\n<tr>\n<td>39-44</td>\n<td>The environment or terrain introduces a new hazard</td>\n</tr>\n<tr>\n<td>45-50</td>\n<td>A new enemy is revealed</td>\n</tr>\n<tr>\n<td>51-56</td>\n<td>A friend, companion, or ally is in harm&#39;s way (or you are, if alone)</td>\n</tr>\n<tr>\n<td>57-62</td>\n<td>Your equipment or vehicle malfunctions</td>\n</tr>\n<tr>\n<td>63-68</td>\n<td>Your vehicle suffers damage</td>\n</tr>\n<tr>\n<td>69-74</td>\n<td>You waste resources</td>\n</tr>\n<tr>\n<td>75-81</td>\n<td>You are harmed</td>\n</tr>\n<tr>\n<td>82-88</td>\n<td>You are stressed</td>\n</tr>\n<tr>\n<td>89-95</td>\n<td>You are delayed or put at a disadvantage</td>\n</tr>\n<tr>\n<td>96-100</td>\n<td>Roll twice</td>\n</tr>\n</tbody></table>\n"
   },
@@ -1940,8 +1940,8 @@
     },
     "Text": "<p><strong>When you face an extended or complex challenge outside of a fight</strong>, name your objective and set its rank as formidable.</p>\n<p>Then, envision the situation and choose the number of segments for the scene’s tension clock.</p>\n<ul>\n<li>You are severely disadvantaged: Four segments</li>\n<li>You are on equal footing: Six segments</li>\n<li>You have strong advantage: Eight segments</li>\n</ul>\n<p>When the clock is full, you must @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000005F]{Finish the Scene}.</p>\n",
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you face an extended or complex challenge outside of a fight</strong>, name your objective and set its rank as formidable.</p>\n<p>Then, envision the situation and choose the number of segments for the scene’s tension clock.</p>\n<ul>\n<li>You are severely disadvantaged: Four segments</li>\n<li>You are on equal footing: Six segments</li>\n<li>You have strong advantage: Eight segments</li>\n</ul>\n<p>When the clock is full, you must @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000005F]{Finish the Scene}.</p>\n"
   },
@@ -2016,8 +2016,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you attempt something risky or react to an imminent threat within a scene challenge</strong>, envision your action and roll. If you act...</p>\n<ul>\n<li>With speed, mobility, or agility: ((rollplus edge))</li>\n<li>With resolve, command, or sociability: ((rollplus heart))</li>\n<li>With strength, endurance, or aggression: ((rollplus iron))</li>\n<li>With deception, stealth, or trickery: ((rollplus shadow))</li>\n<li>With expertise, focus, or observation: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -2092,8 +2092,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge</strong>, envision your action and roll. If you act...</p>\n<ul>\n<li>With speed, mobility, or agility: ((rollplus edge))</li>\n<li>With resolve, command, or sociability: ((rollplus heart))</li>\n<li>With strength, endurance, aggression: ((rollplus iron))</li>\n<li>With deception, stealth, or trickery: ((rollplus shadow))</li>\n<li>With expertise, focus, or observation: ((rollplus wits))</li>\n</ul>\n"
   },
@@ -2130,8 +2130,8 @@
       }
     },
     "Source": {
-      "Title": "Starforged Backer Preview",
-      "Date": "020122"
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "022322"
     },
     "Description": "<p><strong>When the scene challenge tension clock or progress track is filled, or when events lead to the scene’s conclusion</strong>, roll the challenge dice and compare to your progress.</p>\n"
   }
