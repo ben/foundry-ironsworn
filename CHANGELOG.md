@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Tweak some Dataforged import and fix some assets ([#211](https://github.com/ben/foundry-ironsworn/pull/211))
+
 ## 1.10.14
 
 - Use dataforged `$id` properties to find moves in the compendium ([#208](https://github.com/ben/foundry-ironsworn/pull/208))
