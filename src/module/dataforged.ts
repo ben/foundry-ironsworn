@@ -73,6 +73,7 @@ export async function importFromDataforged() {
         current: asset['Condition Meter']?.['Starting Value'],
         max: asset['Condition Meter']?.Max,
       },
+      exclusiveOptions: [], // TODO:
     },
   }))
   await Item.createDocuments(assetsToCreate, { pack: 'foundry-ironsworn.starforgedassets', keepId: true })
