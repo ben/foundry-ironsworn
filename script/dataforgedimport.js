@@ -3,13 +3,15 @@ const fetch = require('node-fetch')
 const fs = require('fs/promises')
 
 function renderHtml(idMap, text, markedFn) {
-  return markedFn(text
+  return markedFn(
+    text
       .replace(/\[([^\]]+)\]\(([^#]+)#[^)]+\)/g, (link, name, kind) => {
-        if (kind && kind !== 'Moves') return link;
+        if (kind && kind !== 'Moves') return link
         return `@Compendium[foundry-ironsworn.starforgedmoves.${idMap['Moves / ' + name]}]{${name}}`
       })
-      .replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))')
-      , { gfm: true })
+      .replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'),
+    { gfm: true }
+  )
 }
 
 async function dataforgedJson(name) {
@@ -42,23 +44,23 @@ async function writeLocal(name, obj) {
 }
 
 function base62(integer) {
-  const charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
   if (integer === 0) {
     return 0
   }
-  let s = [];
+  let s = []
   while (integer > 0) {
-    s = [charset[integer % 62], ...s];
-    integer = Math.floor(integer / 62);
+    s = [charset[integer % 62], ...s]
+    integer = Math.floor(integer / 62)
   }
-  return s.join('');
+  return s.join('')
 }
 
 // Could get clever and ensure IDs are stable, but dataforged may switch to
 // base62 ids and that would obviate the need for this at all.
 function buildIdMap(df) {
-  const idMap = {};
-  const dfFileKeys = Object.keys(df);
+  const idMap = {}
+  const dfFileKeys = Object.keys(df)
   for (let keyIx = 0; keyIx < dfFileKeys.length; keyIx++) {
     const paddedFileId = String(base62(keyIx + 1)).padStart(2, '0')
     const json = df[dfFileKeys[keyIx]]
@@ -80,7 +82,7 @@ function buildIdMap(df) {
   return idMap
 }
 
-function processAssets(idMap, en, df) {
+function processAssets(idMap, df) {
   console.log('Assets:')
 
   for (const dfAsset of df['assets.json']) {
@@ -92,7 +94,7 @@ function processAssets(idMap, en, df) {
   return df['assets.json']
 }
 
-function processEncounters(idMap, en, df) {
+function processEncounters(idMap, df) {
   console.log('Encounters:')
 
   // No actual work needs doing, no Markdown yet.
@@ -104,13 +106,13 @@ function processEncounters(idMap, en, df) {
 }
 
 const DF_MOVE_TEXT_REGEX = /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \*\*weak hit\*\*, [\s\S]+?)(On a \*\*miss\*\*, [\s\S]+)/
-function processMoves(idMap, en, df) {
+function processMoves(idMap, df) {
   console.log('Moves:')
 
   for (const dfMove of df['moves.json']) {
     let [_, description, strong, weak, miss] = dfMove['Text'].match(DF_MOVE_TEXT_REGEX) || []
 
-    const markedIfDef = (text) => text ? renderHtml(idMap, text, marked.parse) : undefined;
+    const markedIfDef = (text) => (text ? renderHtml(idMap, text, marked.parse) : undefined)
     dfMove['Text'] = renderHtml(idMap, dfMove['Text'], marked.parse)
     dfMove['Description'] = description ? renderHtml(idMap, description, marked.parse) : dfMove['Text']
     if (dfMove['Outcomes']) {
@@ -120,30 +122,16 @@ function processMoves(idMap, en, df) {
     }
   }
 
-  // Also write descriptions to en lang file
-  en.IRONSWORN.SFMoveContents = en.IRONSWORN.SFMoveContents || {}
-  for (const dfMove of df['moves.json']) {
-    const move = {
-      ...en.IRONSWORN.SFMoveContents[dfMove.Name],
-      title: dfMove['Name'],
-      description: dfMove['Description'],
-      strong: dfMove['Outcomes'] ? dfMove['Outcomes']['Strong Hit']['Text'] : undefined,
-      weak: dfMove['Outcomes'] ? dfMove['Outcomes']['Weak Hit']['Text'] : undefined,
-      miss: dfMove['Outcomes'] ? dfMove['Outcomes']['Miss']['Text'] : undefined,
-    }
-    en.IRONSWORN.SFMoveContents[dfMove.Name] = move
-  }
-
   return df['moves.json']
 }
 
-function processOracles(idMap, en, df) {
+function processOracles(idMap, df) {
   console.log('Oracles:')
 
   for (const dfCategory of df['oracles.json']) {
     for (const dfOracle of dfCategory['Oracles']) {
       if (dfOracle['Description']) {
-        dfOracle['Description'] = renderHtml(idMap, dfOracle['Description'], marked.parse);
+        dfOracle['Description'] = renderHtml(idMap, dfOracle['Description'], marked.parse)
       }
       if (dfOracle['Table']) {
         for (const dfTableRow of dfOracle['Table']) {
@@ -156,15 +144,10 @@ function processOracles(idMap, en, df) {
   return df['oracles.json']
 }
 
-function processSettingTruths(idMap, en, df) {
+function processSettingTruths(idMap, df) {
   console.log('Truths:')
 
-  en.IRONSWORN.SFSettingTruths = en.IRONSWORN.SFSettingTruths || {}
-  for (const dfTruthCategory of df['setting_truths.json']["Setting Truths"]) {
-    en.IRONSWORN.SFSettingTruths[dfTruthCategory.Name] = {
-      ...en.IRONSWORN.SFSettingTruths[dfTruthCategory.Name],
-      name: dfTruthCategory.Name,
-    }
+  for (const dfTruthCategory of df['setting_truths.json']['Setting Truths']) {
     for (let i = 0; i < dfTruthCategory.Table.length; i++) {
       const dfTruth = dfTruthCategory.Table[i]
       const truth = {
@@ -175,7 +158,6 @@ function processSettingTruths(idMap, en, df) {
       for (let j = 0; j < (dfTruth.Table || []).length; j++) {
         truth[`suboption${j + 1}`] = dfTruth.Table[j].Description
       }
-      en.IRONSWORN.SFSettingTruths[dfTruthCategory.Name][`option${i + 1}`] = truth
     }
   }
 
@@ -183,22 +165,18 @@ function processSettingTruths(idMap, en, df) {
 }
 
 async function doit() {
-  const en = JSON.parse(await fs.readFile('system/lang/en.json'))
   const df = await fetchDataforged()
   const idMap = buildIdMap(df)
 
   const writePromises = [
-    writeLocal('assets', processAssets(idMap, en, df)),
-    writeLocal('encounters', processEncounters(idMap, en, df)),
-    writeLocal('moves', processMoves(idMap, en, df)),
-    writeLocal('oracles', processOracles(idMap, en, df)),
-    // writeLocal('setting-truths', processSettingTruths(idMap, en, df)),
+    writeLocal('assets', processAssets(idMap, df)),
+    writeLocal('encounters', processEncounters(idMap, df)),
+    writeLocal('moves', processMoves(idMap, df)),
+    writeLocal('oracles', processOracles(idMap, df)),
+    // writeLocal('setting-truths', processSettingTruths(idMap, df)),
     writeLocal('ids', idMap),
   ]
   await Promise.all(writePromises)
-
-  console.log('Writing en.json')
-  await fs.writeFile('system/lang/en.json', JSON.stringify(en, null, 2) + '\n')
 }
 
 doit().then(
