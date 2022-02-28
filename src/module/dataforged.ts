@@ -67,9 +67,11 @@ export async function importFromDataforged() {
         enabled: ability['Enabled'] || false,
         description: ability['Text'],
       })),
-      /* TODO: FIXME */
       track: {
-        enabled: false,
+        enabled: !!asset['Condition Meter'],
+        name: asset['Condition Meter']?.Name,
+        current: asset['Condition Meter']?.['Starting Value'],
+        max: asset['Condition Meter']?.Max,
       },
     },
   }))
