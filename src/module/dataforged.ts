@@ -24,7 +24,7 @@ export async function importFromDataforged() {
     if (!pack) continue
     await pack.render(true)
     // @ts-ignore IdQuery type is a little bogus
-    const idsToDelete = pack.index.map((x: any) => x._id)
+    const idsToDelete = pack.index.map(x => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
@@ -44,7 +44,7 @@ export async function importFromDataforged() {
         strong: move['Outcomes']?.['Strong Hit']?.['Text'],
         weak: move['Outcomes']?.['Weak Hit']?.['Text'],
         miss: move['Outcomes']?.['Miss']?.['Text'],
-        stats: move['Trigger']?.['Options']?.map((o) => o['Action roll']?.Stat?.toLowerCase()).filter((s) => s) || [],
+        stats: move['Trigger']?.['Options']?.map(o => o['Action roll']?.Stat?.toLowerCase()).filter(s => s) || [],
         sourceId: move['$id']
       },
     })
