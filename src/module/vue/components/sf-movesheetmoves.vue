@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <div class="flexrow nogrow">
+    <div class="flexrow nogrow" style="margin-top: 0.5rem">
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
@@ -13,29 +13,41 @@
       />
     </div>
 
-    <div class="nogrow" v-if="searchQuery">
-      <sf-moverow
-        v-for="move of searchResults"
-        :key="move.$id"
-        :actor="actor"
-        :move="move"
-      />
-    </div>
-
-    <div class="nogrow" v-else v-for="ck of categoryKeys" :key="ck">
-      <h2>
-        {{ ck }}
-      </h2>
-
-      <sf-moverow
-        v-for="move of movesForKey(ck)"
-        :key="move.$id"
-        :actor="actor"
-        :move="move"
-      />
+    <div class="flexcol item-list">
+      <div class="nogrow" v-if="searchQuery">
+        <sf-moverow
+          v-for="move of searchResults"
+          :key="move.$id"
+          :actor="actor"
+          :move="move"
+        />
+      </div>
+      <div class="nogrow" v-else v-for="ck of categoryKeys" :key="ck">
+        <h2>
+          {{ ck }}
+        </h2>
+        <sf-moverow
+          v-for="move of movesForKey(ck)"
+          :key="move.$id"
+          :actor="actor"
+          :move="move"
+        />
+      </div>
     </div>
   </div>
 </template>
+
+<style lang="less" scoped>
+h2 {
+  border-color: white;
+  background-color: #888;
+  color: white;
+  margin: 0.3rem 0;
+}
+.item-list {
+  padding: 0 0.5rem;
+}
+</style>
 
 <script>
 async function fetchJson() {

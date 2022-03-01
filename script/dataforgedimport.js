@@ -112,7 +112,7 @@ function processMoves(idMap, df) {
   for (const dfMove of df['moves.json']) {
     let [_, description, strong, weak, miss] = dfMove['Text'].match(DF_MOVE_TEXT_REGEX) || []
 
-    const markedIfDef = (text) => (text ? renderHtml(idMap, text, marked.parse) : undefined)
+    const markedIfDef = (text) => (text ? renderHtml(idMap, text, marked.parseInline) : undefined)
     dfMove['Text'] = renderHtml(idMap, dfMove['Text'], marked.parse)
     dfMove['Description'] = description ? renderHtml(idMap, description, marked.parse) : dfMove['Text']
     if (dfMove['Outcomes']) {
