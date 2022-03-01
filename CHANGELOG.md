@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.15
+
 - Tweak some Dataforged import and fix some assets ([#211](https://github.com/ben/foundry-ironsworn/pull/211))
 - Expandable moves in the movesheet ([#213](https://github.com/ben/foundry-ironsworn/pull/213))
 
