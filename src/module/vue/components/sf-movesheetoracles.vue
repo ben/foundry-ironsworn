@@ -32,7 +32,7 @@
 
 <script>
 function setDeep(obj, key, val) {
-  const parts = key.split('/').map((x) => x.trim())
+  const parts = key.split(' / ').map((x) => x.trim())
   for (let i = 0; i < parts.length - 1; i++) {
     const part = parts[i]
     obj[part] ||= {}
