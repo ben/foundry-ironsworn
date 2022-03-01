@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <div class="flexrow nogrow">
+    <div class="flexrow nogrow" style="margin-top: 0.5rem">
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
@@ -13,22 +13,30 @@
       />
     </div>
 
-    <div v-if="searchResults">
-      <oracletree-node
-        v-for="oracle in searchResults"
-        :key="oracle.key"
-        :oracle="oracle"
-      />
-    </div>
-    <div v-else>
-      <oracletree-node
-        v-for="oracle in oracles"
-        :key="oracle.key"
-        :oracle="oracle"
-      />
+    <div class="flexcol item-list">
+      <div v-if="searchResults">
+        <oracletree-node
+          v-for="oracle in searchResults"
+          :key="oracle.key"
+          :oracle="oracle"
+        />
+      </div>
+      <div v-else>
+        <oracletree-node
+          v-for="oracle in oracles"
+          :key="oracle.key"
+          :oracle="oracle"
+        />
+      </div>
     </div>
   </div>
 </template>
+
+<style lang="less" scoped>
+.item-list {
+  padding: 0 0.5rem;
+}
+</style>
 
 <script>
 function setDeep(obj, key, val) {
@@ -109,7 +117,7 @@ export default {
 
     clearSearch() {
       this.searchQuery = ''
-    }
+    },
   },
 }
 </script>
