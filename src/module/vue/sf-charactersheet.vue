@@ -120,8 +120,9 @@ export default {
   data() {
     const tabs = [
       { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
-      { titleKey: 'IRONSWORN.Bonds', component: 'sf-bonds' },
       { titleKey: 'IRONSWORN.Progress', component: 'sf-progresses' },
+      { titleKey: 'IRONSWORN.Assets', component: 'sf-assets' },
+      { titleKey: 'IRONSWORN.Bonds', component: 'sf-bonds' },
       { titleKey: 'IRONSWORN.Notes', component: 'sf-notes' },
     ]
     return {
