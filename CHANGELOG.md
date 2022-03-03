@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Rough in an Assets tab for the Starforged sheet ([#215](https://github.com/ben/foundry-ironsworn/pull/215))
+
 ## 1.10.15
 
 - Tweak some Dataforged import and fix some assets ([#211](https://github.com/ben/foundry-ironsworn/pull/211))
