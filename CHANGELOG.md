@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.16
+
 - Rough in an Assets tab for the Starforged sheet ([#215](https://github.com/ben/foundry-ironsworn/pull/215))
 
 ## 1.10.15
