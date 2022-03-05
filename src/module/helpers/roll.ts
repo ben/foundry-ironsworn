@@ -48,6 +48,7 @@ export class RollDialog extends Dialog {
       )
       if (allCharacters.length === 1) {
         renderOpts.actor = allCharacters[0]
+        opts.actor = allCharacters[0]
       } else {
         renderOpts.allCharacters = allCharacters
         renderOpts.mruCharacter = opts.site?.getFlag('foundry-ironsworn', 'mru-character')
