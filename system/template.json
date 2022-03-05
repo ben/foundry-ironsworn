@@ -36,7 +36,12 @@
         "shaken": false,
         "tormented": false,
         "unprepared": false,
-        "wounded": false
+        "wounded": false,
+        "permanentlyharmed": false,
+        "traumatized": false,
+        "doomed": false,
+        "indebted": false,
+        "battered": false
       },
       "xp": 0
     },

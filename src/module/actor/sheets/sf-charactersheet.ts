@@ -8,7 +8,7 @@ export class StarforgedCharacterSheet extends IronswornVueActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
       width: 630,
-      height: 800,
+      height: 820,
       left: 50,
       submitOnClose: true,
       submitOnChange: true,

@@ -20,6 +20,11 @@ interface CharacterDataSourceData {
     tormented: boolean
     unprepared: boolean
     wounded: boolean
+    permanentlyharmed: boolean
+    traumatized: boolean
+    doomed: boolean
+    indebted: boolean
+    battered: boolean
   }
   legacies: {
     quests: number
@@ -52,7 +57,7 @@ interface CharacterDataSource {
 interface SharedDataSourceData {
   supply: number
 }
-interface SharedDataPropertiesData extends SharedDataSourceData {}
+interface SharedDataPropertiesData extends SharedDataSourceData { }
 
 interface SharedDataSource {
   type: 'shared'
@@ -80,7 +85,7 @@ interface SiteDataSourceData {
   current: number
   denizens: DenizenSlot[]
 }
-interface SiteDataPropertiesData extends SiteDataSourceData {}
+interface SiteDataPropertiesData extends SiteDataSourceData { }
 
 export interface SiteDataSource {
   type: 'site'
