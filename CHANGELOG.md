@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix a bug with the Delve move roller (thanks, @UmbralAlderman! [#216](https://github.com/ben/foundry-ironsworn/pull/216))
+- SF: add conditions to sheet ([#217](https://github.com/ben/foundry-ironsworn/pull/217))
 
 ## 1.10.16
 
