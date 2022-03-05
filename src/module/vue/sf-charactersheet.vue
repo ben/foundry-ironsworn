@@ -97,6 +97,10 @@
         </div>
       </div>
     </div>
+
+    <!-- Impacts -->
+    <hr>
+    <sf-impacts :actor=actor />
   </div>
 </template>
 
