@@ -99,8 +99,8 @@
     </div>
 
     <!-- Impacts -->
-    <hr>
-    <sf-impacts :actor=actor />
+    <hr class="nogrow">
+    <sf-impacts :actor=actor class="nogrow" />
   </div>
 </template>
 
