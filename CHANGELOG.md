@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix a bug with the Delve move roller (thanks, @UmbralAlderman! [#216](https://github.com/ben/foundry-ironsworn/pull/216))
+
 ## 1.10.16
 
 - Rough in an Assets tab for the Starforged sheet ([#215](https://github.com/ben/foundry-ironsworn/pull/215))
