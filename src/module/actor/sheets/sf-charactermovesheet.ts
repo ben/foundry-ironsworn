@@ -13,7 +13,7 @@ export class SFCharacterMoveSheet extends VueApplication {
       resizable: true,
       classes: ['ironsworn', 'sheet', 'moves', `theme-${IronswornSettings.theme}`],
       width: 350,
-      height: 800,
+      height: 820,
       left: 685,
     })
   }
