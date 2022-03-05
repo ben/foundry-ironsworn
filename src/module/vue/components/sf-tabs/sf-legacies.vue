@@ -16,6 +16,7 @@
       :actor="actor"
     />
 
+    <hr class="nogrow" v-if="starredProgresses.length > 0" />
     <progress-box
       v-for="item in starredProgresses"
       :key="item._id"
