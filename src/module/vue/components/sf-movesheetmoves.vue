@@ -139,6 +139,9 @@ export default {
           }
         }
       }
+
+      // Not found; just open the sheet
+      item.sheet?.render(true)
     }
   },
 }
