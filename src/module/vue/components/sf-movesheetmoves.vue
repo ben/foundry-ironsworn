@@ -123,6 +123,10 @@ export default {
     clearSearch() {
       this.searchQuery = ''
     },
+
+    highlightMove(item) {
+      console.log('movestab', item)
+    }
   },
 }
 </script>
