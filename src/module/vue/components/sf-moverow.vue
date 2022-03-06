@@ -1,5 +1,5 @@
 <template>
-  <div class="item-row">
+  <div class="item-row" :class="{ highlighted: move.highlighted }">
     <h4 style="margin: 0" class="flexrow" :title="tooltip">
       <i class="fa fa-dice-d6 clickable text nogrow" @click="rollMove" />
       <span @click="expanded = !expanded">{{ move.Name }}</span>
@@ -35,6 +35,10 @@ h4 {
 }
 i.fa-dice-d6 {
   padding-right: 0.5rem;
+}
+
+.item-row {
+  transition: all 0.4s ease;
 }
 
 .slide-enter-active,
@@ -85,6 +89,16 @@ export default {
     },
     miss() {
       return this.move.foundryItem?.data?.data?.miss
+    },
+  },
+
+  watch: {
+    'move.highlighted': async function (value) {
+      if (value) {
+        this.expanded = true
+        await new Promise((r) => setTimeout(r, 200))
+        this.$el.scrollIntoView()
+      }
     },
   },
 

@@ -15,6 +15,7 @@
       <component
         :is="currentTab.component"
         :actor="actor"
+        ref="activeTab"
       />
     </keep-alive>
   </div>
@@ -47,5 +48,13 @@ export default {
       currentTab: tabs[0],
     }
   },
+
+  methods: {
+    async highlightMove(item) {
+      this.currentTab = this.tabs[0]
+      await new Promise(r => setTimeout(r, 10))
+      this.$refs.activeTab?.['highlightMove']?.(item)
+    }
+  }
 }
 </script>

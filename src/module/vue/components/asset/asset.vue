@@ -17,6 +17,7 @@
           element="p"
           :actor="actor"
           v-if="asset.data.description"
+          @moveclick="moveclick"
         >
           <div v-html="$enrichHtml(asset.data.description)"></div>
         </with-rolllisteners>
@@ -27,6 +28,7 @@
             :key="'ability' + i"
             element="li"
             :actor="actor"
+            @moveclick="moveclick"
           >
             <div v-html="$enrichHtml(ability.description)"></div>
           </with-rolllisteners>
@@ -138,6 +140,9 @@ export default {
       }
       this.foundryItem.update({ data: { exclusiveOptions: options } })
     },
+    moveclick(item) {
+      this.$actor?.moveSheet?.highlightMove(item)
+    }
   },
 }
 </script>

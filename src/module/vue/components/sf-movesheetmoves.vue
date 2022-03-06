@@ -92,6 +92,7 @@ export default {
       move.foundryItem = compendiumMoves.find(
         (x) => x.data.data.sourceId === move['$id']
       )
+      move.highlighted = false
       moves[move.Category] ||= { key: move.Category, moves: [] }
       moves[move.Category].moves.push(move)
     }
@@ -123,6 +124,25 @@ export default {
     clearSearch() {
       this.searchQuery = ''
     },
+
+    async highlightMove(item) {
+      this.searchQuery = ''
+      await new Promise(r => setTimeout(r, 10))
+      // TODO: this doesn't support custom moves
+      for (const k of Object.keys(this.moves)) {
+        const moveCategory = this.moves[k]
+        for (const move of moveCategory.moves) {
+          if (move.$id === item.data.data.sourceId) {
+            move.highlighted = true
+            setTimeout(() => move.highlighted = false, 2000)
+            return
+          }
+        }
+      }
+
+      // Not found; just open the sheet
+      item.sheet?.render(true)
+    }
   },
 }
 </script>

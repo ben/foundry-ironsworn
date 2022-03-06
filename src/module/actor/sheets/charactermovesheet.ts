@@ -202,7 +202,13 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         }
       }
     }
-    ;(table as any)?.draw()
+    ; (table as any)?.draw()
+  }
+
+
+  async highlightMove(move: IronswornItem) {
+    console.log({ move })
+    move.sheet?.render(true)
   }
 }
 
