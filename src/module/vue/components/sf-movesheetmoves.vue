@@ -20,6 +20,7 @@
           :key="move.$id"
           :actor="actor"
           :move="move"
+          @moveclick="highlightMove"
         />
       </div>
       <div class="nogrow" v-else v-for="ck of categoryKeys" :key="ck">
@@ -31,6 +32,7 @@
           :key="move.$id"
           :actor="actor"
           :move="move"
+          @moveclick="highlightMove"
         />
       </div>
     </div>
