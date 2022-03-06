@@ -22,8 +22,13 @@ export default {
       ev.preventDefault()
 
       const { pack, id } = ev.currentTarget.dataset
+      if (!pack) {
+        const item = game.items?.get(id)
+        return item?.sheet?.render(true)
+      }
+
       const gamePack = game.packs.get(pack)
-      gamePack.getDocument(id).then(gameItem => {
+      gamePack?.getDocument(id)?.then(gameItem => {
         if (gameItem.type === 'move') {
           this.$emit('moveclick', gameItem)
         }
