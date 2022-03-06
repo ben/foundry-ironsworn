@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.18
+
 - Inline move links highlight moves in movesheet ([#218](https://github.com/ben/foundry-ironsworn/pull/218))
 
 ## 1.10.17
