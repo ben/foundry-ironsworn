@@ -208,6 +208,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
 
   async highlightMove(move: IronswornItem) {
     console.log({ move })
+    move.sheet?.render(true)
   }
 }
 
