@@ -10,6 +10,7 @@
         class="move-summary"
         :actor="actor"
         v-if="expanded"
+        @moveclick="moveclick"
       >
         <div v-html="$enrichHtml(description)" />
         <p v-if="strong">
@@ -109,6 +110,10 @@ export default {
         move: this.move.foundryItem.getMoveData(),
       })
     },
+
+    moveclick(item) {
+      this.$emit('moveclick', item)
+    }
   },
 }
 </script>
