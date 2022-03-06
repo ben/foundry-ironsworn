@@ -1,5 +1,6 @@
 import { VueApplication } from '../../applications/vueapp'
 import { IronswornSettings } from '../../helpers/settings'
+import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
 
 export class SFCharacterMoveSheet extends VueApplication {
@@ -23,10 +24,13 @@ export class SFCharacterMoveSheet extends VueApplication {
   }
 
   async getData() {
-    console.log(this)
     const data: any = super.getData()
     data.actor = this.actor.toObject(false)
     data.data = this.actor.data
     return data
+  }
+
+  async highlightMove(move: IronswornItem) {
+    console.log({move})
   }
 }
