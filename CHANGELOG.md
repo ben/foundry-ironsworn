@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Inline move links highlight moves in movesheet ([#218](https://github.com/ben/foundry-ironsworn/pull/218))
+
 ## 1.10.17
 
 - Fix a bug with the Delve move roller (thanks, @UmbralAlderman! [#216](https://github.com/ben/foundry-ironsworn/pull/216))
