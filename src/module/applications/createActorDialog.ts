@@ -33,6 +33,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     super.activateListeners(html)
 
     html.find('.ironsworn__character__create').on('click', (ev) => this._characterCreate.call(this, ev))
+    html.find('.ironsworn__sfcharacter__create').on('click', (ev) => this._sfcharacterCreate.call(this, ev))
+    html.find('.ironsworn__sfship__create').on('click', (ev) => this._sfshipCreate.call(this, ev))
     html.find('.ironsworn__shared__create').on('click', (ev) => this._sharedCreate.call(this, ev))
     html.find('.ironsworn__site__create').on('click', (ev) => this._siteCreate.call(this, ev))
   }
@@ -55,6 +57,16 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _siteCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
+  }
+
+  async _sfcharacterCreate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    // this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
+  }
+
+  async _sfshipCreate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    // this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
   }
 
   async _createWithFolder(name: string, type: 'character' | 'site' | 'shared', img: string) {
