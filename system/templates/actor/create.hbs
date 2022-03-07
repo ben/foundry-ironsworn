@@ -1,6 +1,5 @@
 {{#*inline "createBox"}}
-<div class="flexrow box clickable block ironsworn__{{type}}__create" style="align-items: center; padding: 1rem;"
-  data-img="{{img}}">
+<div class="flexrow box clickable block ironsworn__{{type}}__create" style="align-items: center; padding: 1rem;" data-img="{{img}}">
   <div class="flexcol" style="align-items: center;">
     <img src="{{img}}" width="75" height="75" alt="">
     <h4 style="margin: 0.1rem 0;">{{localize labelkey}}</h4>
@@ -27,9 +26,8 @@
   <div class="flexcol">
     <div class="flexrow boxrow">
 
-      {{>createBox type="character" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-brown.webp"}}
-      {{!-- {{>createBox type="ship" labelkey="IRONSWORN.SharedSheet"
-      img="icons/environment/settlement/wagon-black.webp"}} --}}
+      {{>createBox type="sfcharacter" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-brown.webp"}}
+      {{>createBox type="sfship" labelkey="IRONSWORN.Starship" img="icons/environment/settlement/wizard-castle.webp"}}
 
     </div>
     {{/if}}
