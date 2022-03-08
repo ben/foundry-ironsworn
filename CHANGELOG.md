@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add planet tokens from official sources ([#221](https://github.com/ben/foundry-ironsworn/pull/221))
+
 ## 1.10.19
 
 - Also turn these on inside the movesheet ([#219](https://github.com/ben/foundry-ironsworn/pull/219))
