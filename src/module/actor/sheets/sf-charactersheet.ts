@@ -1,7 +1,6 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornVueActorSheet } from '../vueactorsheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
-// import { CharacterMoveSheet } from './charactermovesheet'
 
 export class StarforgedCharacterSheet extends IronswornVueActorSheet {
   static get defaultOptions() {

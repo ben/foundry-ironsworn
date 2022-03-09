@@ -61,7 +61,11 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _sfcharacterCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    // this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
+
+    // Roll an Ironlander name
+    const name = await this._randomStarforgedName()
+
+    this._createWithFolder(name || 'Character', 'character', ev.currentTarget.dataset.img || undefined, 'ironsworn.StarforgedCharacterSheet')
   }
 
   async _sfshipCreate(ev: JQuery.ClickEvent) {
@@ -69,7 +73,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     this._createWithFolder('Starship', 'starship', ev.currentTarget.dataset.img || undefined)
   }
 
-  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared' | 'starship', img: string) {
+  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared' | 'starship', img: string, sheetClass?: string) {
     const data: ActorDataConstructorData & Record<string, any> = {
       name,
       img,
@@ -79,6 +83,9 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
         actorLink: true,
       },
       folder: this.options.folder || undefined,
+    }
+    if (sheetClass) {
+      data.flags = { core: { sheetClass } }
     }
     await IronswornActor.create(data, { renderSheet: true })
     await this.close()
@@ -92,5 +99,22 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const entry = pack?.index.find((x: any) => x.name === 'Oracle: Ironlander Names')
     if (entry) return pack?.getDocument((entry as any)._id) as RollTable | undefined
     return undefined
+  }
+
+  async _randomStarforgedName(): Promise<string | undefined> {
+    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+    if (!pack) return undefined
+
+    const firstOid = pack?.index.find((x: any) => x.name === 'Characters / Name / Given Name') as any
+    const lastOid = pack?.index.find((x: any) => x.name === 'Characters / Name / Family Name') as any
+    if (!firstOid || !lastOid) return undefined
+
+    const firstTable = await pack.getDocument(firstOid._id) as any // really a RollTable
+    const lastTable = await pack.getDocument(lastOid._id) as any // really a RollTable
+    if (!firstTable || !lastTable) return undefined
+
+    const first = await firstTable.draw({ displayChat: false })
+    const last = await lastTable.draw({ displayChat: false })
+    return `${first?.results[0]?.data.text} ${last?.results[0]?.data.text}`
   }
 }
