@@ -66,10 +66,10 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _sfshipCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    // this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
+    this._createWithFolder('Starship', 'starship', ev.currentTarget.dataset.img || undefined)
   }
 
-  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared', img: string) {
+  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared' | 'starship', img: string) {
     const data: ActorDataConstructorData & Record<string, any> = {
       name,
       img,
