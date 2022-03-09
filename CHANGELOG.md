@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.20
+
 - Add planet tokens from official sources ([#221](https://github.com/ben/foundry-ironsworn/pull/221))
 - Add a ship actor type ([#220](https://github.com/ben/foundry-ironsworn/pull/220))
 
