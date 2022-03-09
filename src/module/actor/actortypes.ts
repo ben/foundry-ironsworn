@@ -98,8 +98,26 @@ export interface SiteDataProperties {
 
 ////////////////////////////////////////
 
-export type ActorDataSource = CharacterDataSource | SharedDataSource | SiteDataSource
-export type ActorDataProperties = CharacterDataProperties | SharedDataProperties | SiteDataProperties
+interface StarshipDataSourceData {
+  health: number
+  battered: boolean
+  cursed: boolean
+}
+interface StarshipDataPropertiesData extends StarshipDataSourceData {}
+
+export interface StarshipDataSource {
+  type: 'starship'
+  data: StarshipDataSourceData
+}
+export interface StarshipDataProperties {
+  type: 'starship'
+  data: StarshipDataPropertiesData
+}
+
+////////////////////////////////////////
+
+export type ActorDataSource = CharacterDataSource | SharedDataSource | SiteDataSource | StarshipDataSource
+export type ActorDataProperties = CharacterDataProperties | SharedDataProperties | SiteDataProperties | StarshipDataProperties
 
 declare global {
   interface SourceConfig {

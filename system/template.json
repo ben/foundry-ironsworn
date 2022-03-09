@@ -3,7 +3,8 @@
     "types": [
       "character",
       "shared",
-      "site"
+      "site",
+      "starship"
     ],
     "character": {
       "biography": "",
@@ -128,6 +129,11 @@
           "description": ""
         }
       ]
+    },
+    "starship": {
+      "health": 5,
+      "battered": false,
+      "cursed": false
     }
   },
   "Item": {
