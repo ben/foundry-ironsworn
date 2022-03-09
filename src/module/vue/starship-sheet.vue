@@ -1,3 +1,6 @@
 <template>
-  <h1>starship</h1>
+  <div class="flexcol">
+    <h1>starship</h1>
+    <p>(TODO)</p>
+  </div>
 </template>
