@@ -1,23 +1,35 @@
 {{#*inline "createBox"}}
-<div class="flexrow box clickable block ironsworn__{{type}}__create"
-     style="align-items: center;"
-     data-img="{{img}}"
->
+<div class="flexrow box clickable block ironsworn__{{type}}__create" style="align-items: center; padding: 1rem;" data-img="{{img}}">
   <div class="flexcol" style="align-items: center;">
     <img src="{{img}}" width="75" height="75" alt="">
-    <h4>{{localize labelkey}}</h4>
+    <h4 style="margin: 0.1rem 0;">{{localize labelkey}}</h4>
   </div>
 </div>
 {{/inline}}
 
-<form class='{{cssClass}} flexrow' autocomplete='off'>
-  <div class="flexrow boxgroup" style="margin: 30px;">
+<form class='{{cssClass}} flexcol' autocomplete='off'>
+  {{#if sfenabled}}
+  <h4 class="nogrow" style="text-align: center;">Ironsworn</h4>
+  {{/if}}
+  <div class="flexcol">
     <div class="flexrow boxrow">
-
       {{>createBox type="character" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
       {{>createBox type="shared" labelkey="IRONSWORN.SharedSheet" img="icons/environment/settlement/wagon-black.webp"}}
-      {{>createBox type="site" labelkey="IRONSWORN.DelveSite" img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
+      {{>createBox type="site" labelkey="IRONSWORN.DelveSite"
+      img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
+    </div>
+  </div>
+
+  {{#if sfenabled}}
+  <hr class="nogrow">
+  <h4 class="boxrow nogrow" style="text-align: center;">Starforged</h4>
+  <div class="flexcol">
+    <div class="flexrow boxrow">
+
+      {{>createBox type="sfcharacter" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-brown.webp"}}
+      {{>createBox type="sfship" labelkey="IRONSWORN.Starship" img="icons/environment/settlement/wizard-castle.webp"}}
 
     </div>
+    {{/if}}
   </div>
 </form>

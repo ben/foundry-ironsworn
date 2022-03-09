@@ -19,14 +19,22 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       resizable: false,
       classes: ['ironsworn', 'sheet', 'new-actor', `theme-${IronswornSettings.theme}`],
       width: 500,
-      height: 230,
+      height: IronswornSettings.starforgedBeta ? 365 : 200,
     } as FormApplication.Options)
+  }
+
+  getData(_options?: Application.RenderOptions): any {
+    return {
+      sfenabled: IronswornSettings.starforgedBeta
+    }
   }
 
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
     html.find('.ironsworn__character__create').on('click', (ev) => this._characterCreate.call(this, ev))
+    html.find('.ironsworn__sfcharacter__create').on('click', (ev) => this._sfcharacterCreate.call(this, ev))
+    html.find('.ironsworn__sfship__create').on('click', (ev) => this._sfshipCreate.call(this, ev))
     html.find('.ironsworn__shared__create').on('click', (ev) => this._sharedCreate.call(this, ev))
     html.find('.ironsworn__site__create').on('click', (ev) => this._siteCreate.call(this, ev))
   }
@@ -51,7 +59,21 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
   }
 
-  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared', img: string) {
+  async _sfcharacterCreate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    // Roll an Ironlander name
+    const name = await this._randomStarforgedName()
+
+    this._createWithFolder(name || 'Character', 'character', ev.currentTarget.dataset.img || undefined, 'ironsworn.StarforgedCharacterSheet')
+  }
+
+  async _sfshipCreate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    this._createWithFolder('Starship', 'starship', ev.currentTarget.dataset.img || undefined)
+  }
+
+  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared' | 'starship', img: string, sheetClass?: string) {
     const data: ActorDataConstructorData & Record<string, any> = {
       name,
       img,
@@ -61,6 +83,9 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
         actorLink: true,
       },
       folder: this.options.folder || undefined,
+    }
+    if (sheetClass) {
+      data.flags = { core: { sheetClass } }
     }
     await IronswornActor.create(data, { renderSheet: true })
     await this.close()
@@ -74,5 +99,22 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const entry = pack?.index.find((x: any) => x.name === 'Oracle: Ironlander Names')
     if (entry) return pack?.getDocument((entry as any)._id) as RollTable | undefined
     return undefined
+  }
+
+  async _randomStarforgedName(): Promise<string | undefined> {
+    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+    if (!pack) return undefined
+
+    const firstOid = pack?.index.find((x: any) => x.name === 'Characters / Name / Given Name') as any
+    const lastOid = pack?.index.find((x: any) => x.name === 'Characters / Name / Family Name') as any
+    if (!firstOid || !lastOid) return undefined
+
+    const firstTable = await pack.getDocument(firstOid._id) as any // really a RollTable
+    const lastTable = await pack.getDocument(lastOid._id) as any // really a RollTable
+    if (!firstTable || !lastTable) return undefined
+
+    const first = await firstTable.draw({ displayChat: false })
+    const last = await lastTable.draw({ displayChat: false })
+    return `${first?.results[0]?.data.text} ${last?.results[0]?.data.text}`
   }
 }
