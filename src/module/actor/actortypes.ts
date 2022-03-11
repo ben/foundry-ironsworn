@@ -100,8 +100,10 @@ export interface SiteDataProperties {
 
 interface StarshipDataSourceData {
   health: number
-  battered: boolean
-  cursed: boolean
+  debility: {
+    battered: boolean
+    cursed: boolean
+  }
 }
 interface StarshipDataPropertiesData extends StarshipDataSourceData {}
 
