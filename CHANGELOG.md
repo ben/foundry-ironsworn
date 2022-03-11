@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Rough in a starship sheet ([#223](https://github.com/ben/foundry-ironsworn/pull/223))
+
 ## 1.10.20
 
 - Add planet tokens from official sources ([#221](https://github.com/ben/foundry-ironsworn/pull/221))

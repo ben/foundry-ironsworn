@@ -10,8 +10,8 @@ export class StarshipSheet extends IronswornVueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'starship', `theme-${IronswornSettings.theme}`],
-      width: 700,
-      height: 495,
+      width: 500,
+      height: 500,
       template: 'systems/foundry-ironsworn/templates/actor/starship.hbs',
       resizable: false,
       submitOnClose: true,

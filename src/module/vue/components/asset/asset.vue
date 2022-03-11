@@ -15,7 +15,7 @@
 
         <with-rolllisteners
           element="p"
-          :actor="actor"
+          :actor="actingActor"
           v-if="asset.data.description"
           @moveclick="moveclick"
         >
@@ -27,7 +27,7 @@
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
             element="li"
-            :actor="actor"
+            :actor="actingActor"
             @moveclick="moveclick"
           >
             <div v-html="$enrichHtml(ability.description)"></div>
@@ -99,6 +99,10 @@ export default {
     foundryItem() {
       return this.foundryActor?.items.get(this.asset._id)
     },
+    actingActor() {
+      if (this.actor.type === 'character') return this.actor
+      return CONFIG.IRONSWORN.defaultActor()?.toObject(false)
+    }
   },
 
   methods: {
@@ -141,7 +145,12 @@ export default {
       this.foundryItem.update({ data: { exclusiveOptions: options } })
     },
     moveclick(item) {
-      this.$actor?.moveSheet?.highlightMove(item)
+      let actorWithMoves = this.$actor
+      if (this.$actor?.type !== 'character') {
+        actorWithMoves = CONFIG.IRONSWORN.defaultActor()
+      }
+      actorWithMoves?.moveSheet?.render(true)
+      actorWithMoves?.moveSheet?.highlightMove(item)
     }
   },
 }

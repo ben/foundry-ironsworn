@@ -132,8 +132,10 @@
     },
     "starship": {
       "health": 5,
-      "battered": false,
-      "cursed": false
+      "debility": {
+        "battered": false,
+        "cursed": false
+      }
     }
   },
   "Item": {
