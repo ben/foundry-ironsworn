@@ -22,7 +22,6 @@ export async function importFromDataforged() {
   for (const key of ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles']) {
     const pack = game.packs.get(key)
     if (!pack) continue
-    await pack.render(true)
     // @ts-ignore IdQuery type is a little bogus
     const idsToDelete = pack.index.map(x => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
@@ -125,7 +124,7 @@ export async function importFromDataforged() {
   const oraclesToCreate = [] as (Record<string, unknown>)[]
   // Oracles JSON is a tree we wish to iterate through depth first adding
   // parents prior to their children, and children in order
-  const nodeStack = Array.from(oraclesJson).reverse() as (any)[]
+  const nodeStack = Array.from(oraclesJson).reverse() as any[]
   while (nodeStack.length) {
     const node = nodeStack.pop() as (Record<string, any>)
     if (node['Table']) {
@@ -147,6 +146,9 @@ export async function importFromDataforged() {
     // add children to stack
     if (node['Oracles']) {
       nodeStack.push(...Array.from(node['Oracles']).reverse())
+    }
+    if (node['Categories']) {
+      nodeStack.push(...Array.from(node['Categories']).reverse())
     }
   }
   await RollTable.createDocuments(oraclesToCreate, { pack: 'foundry-ironsworn.starforgedoracles', keepId: true })
