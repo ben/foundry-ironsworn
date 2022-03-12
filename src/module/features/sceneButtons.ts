@@ -1,7 +1,15 @@
+import { EditSectorDialog } from '../applications/sf/editSectorApp'
 import { IronswornSettings } from '../helpers/settings'
 
 function warn() {
   ui.notifications?.warn('Soon™')
+}
+
+function editSector() {
+  const sceneId = game.user?.viewedScene
+  if (sceneId) {
+    new EditSectorDialog(sceneId).render(true)
+  }
 }
 
 export function activateSceneButtonListeners() {
@@ -23,6 +31,7 @@ export function activateSceneButtonListeners() {
       visible: true,
       activeTool: 'select',
       tools: [
+        { name: 'edit', icon: 'fas fa-edit', title: game.i18n.localize('IRONSWORN.Edit'), onClick: editSector },
         { name: 'sector', icon: 'fas fa-globe', title: game.i18n.localize('IRONSWORN.NewSector'), onClick: warn },
         { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar'), onClick: warn },
         { name: 'planet', icon: 'fas fa-globe-europe', title: game.i18n.localize('IRONSWORN.NewPlanet'), onClick: warn },
