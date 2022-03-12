@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Update and fix some issues with Dataforged data ([#224](https://github.com/ben/foundry-ironsworn/pull/224))
+
 ## 1.10.21
 
 - Rough in a starship sheet ([#223](https://github.com/ben/foundry-ironsworn/pull/223))
