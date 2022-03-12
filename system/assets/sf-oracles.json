@@ -35026,12 +35026,64 @@
                 "Ceiling": null,
                 "Result": "Ideal"
               }
-            ],
+            ]
+          },
+          {
+            "$id": "Oracles / Planets / Tainted / Settlements",
+            "Name": "Settlements",
+            "Category": "Oracles / Planets / Tainted",
+            "Source": {
+              "Title": "Ironsworn: Starforged Rulebook",
+              "Date": "022322",
+              "Page": 317
+            },
+            "Display": {
+              "Title": "Settlements",
+              "Table": {
+                "Result columns": [
+                  {
+                    "Label": "Result",
+                    "Content": "Oracles / Planets / Tainted / Settlements / Terminus",
+                    "Key": "Result"
+                  }
+                ],
+                "Roll columns": [
+                  {
+                    "Label": "Terminus",
+                    "Content": "Oracles / Planets / Tainted / Settlements / Terminus"
+                  },
+                  {
+                    "Label": "Outlands",
+                    "Content": "Oracles / Planets / Tainted / Settlements / Outlands"
+                  },
+                  {
+                    "Label": "Expanse",
+                    "Content": "Oracles / Planets / Tainted / Settlements / Expanse"
+                  }
+                ]
+              }
+            },
+            "Usage": {
+              "Initial": true,
+              "Requires": {
+                "Attributes": [
+                  {
+                    "Key": "Region"
+                  },
+                  {
+                    "Key": "Planetary Class",
+                    "Values": [
+                      "Tainted"
+                    ]
+                  }
+                ]
+              }
+            },
             "Oracles": [
               {
-                "$id": "Oracles / Planets / Tainted / Atmosphere / Terminus",
+                "$id": "Oracles / Planets / Tainted / Settlements / Terminus",
                 "Name": "Terminus",
-                "Member of": "Oracles / Planets / Tainted / Atmosphere",
+                "Member of": "Oracles / Planets / Tainted / Settlements",
                 "Category": "Oracles / Planets / Tainted",
                 "Source": {
                   "Title": "Ironsworn: Starforged Rulebook",
@@ -35045,14 +35097,14 @@
                     "Result columns": [
                       {
                         "Label": "Result",
-                        "Content": "Oracles / Planets / Tainted / Atmosphere / Terminus",
+                        "Content": "Oracles / Planets / Tainted / Settlements / Terminus",
                         "Key": "Result"
                       }
                     ],
                     "Roll columns": [
                       {
                         "Label": "Roll",
-                        "Content": "Oracles / Planets / Tainted / Atmosphere / Terminus"
+                        "Content": "Oracles / Planets / Tainted / Settlements / Terminus"
                       }
                     ]
                   }
@@ -35062,10 +35114,7 @@
                   "Requires": {
                     "Attributes": [
                       {
-                        "Key": "Region",
-                        "Values": [
-                          "Terminus"
-                        ]
+                        "Key": "Region"
                       },
                       {
                         "Key": "Planetary Class",
@@ -35076,22 +35125,17 @@
                     ]
                   }
                 },
-                "Content": {
-                  "Part of speech": [
-                    "adjective"
-                  ]
-                },
                 "Table": [
                   {
                     "Floor": 1,
                     "Ceiling": 80,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Terminus / 1-80",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Terminus / 1-80",
                     "Result": "None"
                   },
                   {
                     "Floor": 81,
                     "Ceiling": 90,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Terminus / 81-90",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Terminus / 81-90",
                     "Result": "Orbital settlement",
                     "Game objects": [
                       {
@@ -35112,7 +35156,7 @@
                   {
                     "Floor": 91,
                     "Ceiling": 95,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Terminus / 91-95",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Terminus / 91-95",
                     "Result": "Planetside settlement",
                     "Game objects": [
                       {
@@ -35133,7 +35177,7 @@
                   {
                     "Floor": 96,
                     "Ceiling": 98,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Terminus / 96-98",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Terminus / 96-98",
                     "Result": "Multiple settlements",
                     "Game objects": [
                       {
@@ -35169,7 +35213,7 @@
                   {
                     "Floor": 99,
                     "Ceiling": 100,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Terminus / 99-100",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Terminus / 99-100",
                     "Result": "Settlements in conflict",
                     "Game objects": [
                       {
@@ -35205,9 +35249,9 @@
                 ]
               },
               {
-                "$id": "Oracles / Planets / Tainted / Atmosphere / Outlands",
+                "$id": "Oracles / Planets / Tainted / Settlements / Outlands",
                 "Name": "Outlands",
-                "Member of": "Oracles / Planets / Tainted / Atmosphere",
+                "Member of": "Oracles / Planets / Tainted / Settlements",
                 "Category": "Oracles / Planets / Tainted",
                 "Source": {
                   "Title": "Ironsworn: Starforged Rulebook",
@@ -35221,14 +35265,14 @@
                     "Result columns": [
                       {
                         "Label": "Result",
-                        "Content": "Oracles / Planets / Tainted / Atmosphere / Outlands",
+                        "Content": "Oracles / Planets / Tainted / Settlements / Outlands",
                         "Key": "Result"
                       }
                     ],
                     "Roll columns": [
                       {
                         "Label": "Roll",
-                        "Content": "Oracles / Planets / Tainted / Atmosphere / Outlands"
+                        "Content": "Oracles / Planets / Tainted / Settlements / Outlands"
                       }
                     ]
                   }
@@ -35238,10 +35282,7 @@
                   "Requires": {
                     "Attributes": [
                       {
-                        "Key": "Region",
-                        "Values": [
-                          "Outlands"
-                        ]
+                        "Key": "Region"
                       },
                       {
                         "Key": "Planetary Class",
@@ -35252,22 +35293,17 @@
                     ]
                   }
                 },
-                "Content": {
-                  "Part of speech": [
-                    "adjective"
-                  ]
-                },
                 "Table": [
                   {
                     "Floor": 1,
                     "Ceiling": 90,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Outlands / 1-90",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Outlands / 1-90",
                     "Result": "None"
                   },
                   {
                     "Floor": 91,
                     "Ceiling": 97,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Outlands / 91-97",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Outlands / 91-97",
                     "Result": "Orbital settlement",
                     "Game objects": [
                       {
@@ -35288,7 +35324,7 @@
                   {
                     "Floor": 98,
                     "Ceiling": 100,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Outlands / 98-100",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Outlands / 98-100",
                     "Result": "Planetside settlement",
                     "Game objects": [
                       {
@@ -35319,9 +35355,9 @@
                 ]
               },
               {
-                "$id": "Oracles / Planets / Tainted / Atmosphere / Expanse",
+                "$id": "Oracles / Planets / Tainted / Settlements / Expanse",
                 "Name": "Expanse",
-                "Member of": "Oracles / Planets / Tainted / Atmosphere",
+                "Member of": "Oracles / Planets / Tainted / Settlements",
                 "Category": "Oracles / Planets / Tainted",
                 "Source": {
                   "Title": "Ironsworn: Starforged Rulebook",
@@ -35335,14 +35371,14 @@
                     "Result columns": [
                       {
                         "Label": "Result",
-                        "Content": "Oracles / Planets / Tainted / Atmosphere / Expanse",
+                        "Content": "Oracles / Planets / Tainted / Settlements / Expanse",
                         "Key": "Result"
                       }
                     ],
                     "Roll columns": [
                       {
                         "Label": "Roll",
-                        "Content": "Oracles / Planets / Tainted / Atmosphere / Expanse"
+                        "Content": "Oracles / Planets / Tainted / Settlements / Expanse"
                       }
                     ]
                   }
@@ -35352,10 +35388,7 @@
                   "Requires": {
                     "Attributes": [
                       {
-                        "Key": "Region",
-                        "Values": [
-                          "Expanse"
-                        ]
+                        "Key": "Region"
                       },
                       {
                         "Key": "Planetary Class",
@@ -35366,22 +35399,17 @@
                     ]
                   }
                 },
-                "Content": {
-                  "Part of speech": [
-                    "adjective"
-                  ]
-                },
                 "Table": [
                   {
                     "Floor": 1,
                     "Ceiling": 95,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Expanse / 1-95",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Expanse / 1-95",
                     "Result": "None"
                   },
                   {
                     "Floor": 96,
                     "Ceiling": 98,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Expanse / 96-98",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Expanse / 96-98",
                     "Result": "Orbital settlement",
                     "Game objects": [
                       {
@@ -35402,7 +35430,7 @@
                   {
                     "Floor": 99,
                     "Ceiling": 100,
-                    "$id": "Oracles / Planets / Tainted / Atmosphere / Expanse / 99-100",
+                    "$id": "Oracles / Planets / Tainted / Settlements / Expanse / 99-100",
                     "Result": "Planetside settlement",
                     "Game objects": [
                       {
