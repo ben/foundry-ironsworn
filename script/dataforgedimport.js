@@ -1,6 +1,7 @@
 const marked = require('marked')
 const fetch = require('node-fetch')
 const fs = require('fs/promises')
+const { createHash } = require('crypto')
 
 function renderHtml(idMap, text, markedFn) {
   return markedFn(
@@ -56,21 +57,24 @@ function base62(integer) {
   return s.join('')
 }
 
-// Could get clever and ensure IDs are stable, but dataforged may switch to
-// base62 ids and that would obviate the need for this at all.
+function idHash(file, str) {
+  const hasher = createHash('sha256')
+  hasher.update('6a2da20943931e9834fc12cfe5bb47bbd9ae43489a30726962b576f4e3993e50') // salt
+  hasher.update(file)
+  hasher.update(str)
+  return hasher.digest('hex').toString().substring(48)
+}
+
 function buildIdMap(df) {
   const idMap = {}
   const dfFileKeys = Object.keys(df)
-  for (let keyIx = 0; keyIx < dfFileKeys.length; keyIx++) {
-    const paddedFileId = String(base62(keyIx + 1)).padStart(2, '0')
-    const json = df[dfFileKeys[keyIx]]
+  for (const fileKey of dfFileKeys) {
+    const json = df[fileKey]
     const nodeStack = Array.isArray(json) ? Array.from(json).reverse() : [json]
-    let itemIndex = 0
     while (nodeStack.length) {
       const node = nodeStack.pop()
       if (node && node['$id']) {
-        const paddedId = String(base62(++itemIndex)).padStart(12, '0')
-        idMap[node['$id']] = `DF${paddedFileId}${paddedId}`
+        idMap[node['$id']] = idHash(fileKey, node['$id'])
       }
       if (Array.isArray(node)) {
         nodeStack.push(...Array.from(node).reverse())
