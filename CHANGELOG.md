@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add a sector-edit dialog ([#224](https://github.com/ben/foundry-ironsworn/pull/225))
+
 ## 1.10.22
 
 - Update and fix some issues with Dataforged data ([#224](https://github.com/ben/foundry-ironsworn/pull/224))
