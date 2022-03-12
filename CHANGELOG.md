@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.22
+
 - Update and fix some issues with Dataforged data ([#224](https://github.com/ben/foundry-ironsworn/pull/224))
 
 ## 1.10.21
