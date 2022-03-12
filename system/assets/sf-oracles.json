@@ -18615,29 +18615,29 @@
             ]
           },
           {
-            "$id": "Oracles / Location Themes / Chaotic / Feature",
-            "Name": "Feature",
+            "$id": "Oracles / Location Themes / Chaotic / Opportunity",
+            "Name": "Opportunity",
             "Category": "Oracles / Location Themes / Chaotic",
-            "Description": "Use this table to reveal a new aspect of the location.",
+            "Description": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
             "Source": {
               "Title": "Ironsworn: Starforged Rulebook",
               "Date": "022322",
               "Page": 370
             },
             "Display": {
-              "Title": "Feature",
+              "Title": "Opportunity",
               "Table": {
                 "Result columns": [
                   {
                     "Label": "Result",
-                    "Content": "Oracles / Location Themes / Chaotic / Feature",
+                    "Content": "Oracles / Location Themes / Chaotic / Opportunity",
                     "Key": "Result"
                   }
                 ],
                 "Roll columns": [
                   {
                     "Label": "Roll",
-                    "Content": "Oracles / Location Themes / Chaotic / Feature"
+                    "Content": "Oracles / Location Themes / Chaotic / Opportunity"
                   }
                 ]
               }
@@ -18664,31 +18664,31 @@
               {
                 "Floor": 1,
                 "Ceiling": 20,
-                "$id": "Oracles / Location Themes / Chaotic / Feature / 1-20",
+                "$id": "Oracles / Location Themes / Chaotic / Opportunity / 1-20",
                 "Result": "Chaos ebbs or withdraws for a time"
               },
               {
                 "Floor": 21,
                 "Ceiling": 40,
-                "$id": "Oracles / Location Themes / Chaotic / Feature / 21-40",
+                "$id": "Oracles / Location Themes / Chaotic / Opportunity / 21-40",
                 "Result": "Chaos empowers you with strange but useful abilities"
               },
               {
                 "Floor": 41,
                 "Ceiling": 60,
-                "$id": "Oracles / Location Themes / Chaotic / Feature / 41-60",
+                "$id": "Oracles / Location Themes / Chaotic / Opportunity / 41-60",
                 "Result": "Chaos manifests as comforting or inspiring visions"
               },
               {
                 "Floor": 61,
                 "Ceiling": 80,
-                "$id": "Oracles / Location Themes / Chaotic / Feature / 61-80",
+                "$id": "Oracles / Location Themes / Chaotic / Opportunity / 61-80",
                 "Result": "Chaotic changes hamper your foes"
               },
               {
                 "Floor": 81,
                 "Ceiling": 100,
-                "$id": "Oracles / Location Themes / Chaotic / Feature / 81-100",
+                "$id": "Oracles / Location Themes / Chaotic / Opportunity / 81-100",
                 "Result": "Insight into the source or nature of the chaos"
               }
             ]
@@ -18982,29 +18982,29 @@
             ]
           },
           {
-            "$id": "Oracles / Location Themes / Fortified / Feature",
-            "Name": "Feature",
+            "$id": "Oracles / Location Themes / Fortified / Opportunity",
+            "Name": "Opportunity",
             "Category": "Oracles / Location Themes / Fortified",
-            "Description": "Use this table to reveal a new aspect of the location.",
+            "Description": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
             "Source": {
               "Title": "Ironsworn: Starforged Rulebook",
               "Date": "022322",
               "Page": 370
             },
             "Display": {
-              "Title": "Feature",
+              "Title": "Opportunity",
               "Table": {
                 "Result columns": [
                   {
                     "Label": "Result",
-                    "Content": "Oracles / Location Themes / Fortified / Feature",
+                    "Content": "Oracles / Location Themes / Fortified / Opportunity",
                     "Key": "Result"
                   }
                 ],
                 "Roll columns": [
                   {
                     "Label": "Roll",
-                    "Content": "Oracles / Location Themes / Fortified / Feature"
+                    "Content": "Oracles / Location Themes / Fortified / Opportunity"
                   }
                 ]
               }
@@ -19031,31 +19031,31 @@
               {
                 "Floor": 1,
                 "Ceiling": 20,
-                "$id": "Oracles / Location Themes / Fortified / Feature / 1-20",
+                "$id": "Oracles / Location Themes / Fortified / Opportunity / 1-20",
                 "Result": "Insight into the plans or methods of the enemy force"
               },
               {
                 "Floor": 21,
                 "Ceiling": 40,
-                "$id": "Oracles / Location Themes / Fortified / Feature / 21-40",
+                "$id": "Oracles / Location Themes / Fortified / Opportunity / 21-40",
                 "Result": "Opening to get the drop on an enemy"
               },
               {
                 "Floor": 41,
                 "Ceiling": 60,
-                "$id": "Oracles / Location Themes / Fortified / Feature / 41-60",
+                "$id": "Oracles / Location Themes / Fortified / Opportunity / 41-60",
                 "Result": "Opening to outmaneuver or escape enemies"
               },
               {
                 "Floor": 61,
                 "Ceiling": 80,
-                "$id": "Oracles / Location Themes / Fortified / Feature / 61-80",
+                "$id": "Oracles / Location Themes / Fortified / Opportunity / 61-80",
                 "Result": "Potential collaborator or informant reveals themselves"
               },
               {
                 "Floor": 81,
                 "Ceiling": 100,
-                "$id": "Oracles / Location Themes / Fortified / Feature / 81-100",
+                "$id": "Oracles / Location Themes / Fortified / Opportunity / 81-100",
                 "Result": "Access to useful equipment or weapons"
               }
             ]
@@ -19349,29 +19349,29 @@
             ]
           },
           {
-            "$id": "Oracles / Location Themes / Haunted / Feature",
-            "Name": "Feature",
+            "$id": "Oracles / Location Themes / Haunted / Opportunity",
+            "Name": "Opportunity",
             "Category": "Oracles / Location Themes / Haunted",
-            "Description": "Use this table to reveal a new aspect of the location.",
+            "Description": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
             "Source": {
               "Title": "Ironsworn: Starforged Rulebook",
               "Date": "022322",
               "Page": 370
             },
             "Display": {
-              "Title": "Feature",
+              "Title": "Opportunity",
               "Table": {
                 "Result columns": [
                   {
                     "Label": "Result",
-                    "Content": "Oracles / Location Themes / Haunted / Feature",
+                    "Content": "Oracles / Location Themes / Haunted / Opportunity",
                     "Key": "Result"
                   }
                 ],
                 "Roll columns": [
                   {
                     "Label": "Roll",
-                    "Content": "Oracles / Location Themes / Haunted / Feature"
+                    "Content": "Oracles / Location Themes / Haunted / Opportunity"
                   }
                 ]
               }
@@ -19398,19 +19398,19 @@
               {
                 "Floor": 1,
                 "Ceiling": 20,
-                "$id": "Oracles / Location Themes / Haunted / Feature / 1-20",
+                "$id": "Oracles / Location Themes / Haunted / Opportunity / 1-20",
                 "Result": "Encounter with a benign spirit or being"
               },
               {
                 "Floor": 21,
                 "Ceiling": 40,
-                "$id": "Oracles / Location Themes / Haunted / Feature / 21-40",
+                "$id": "Oracles / Location Themes / Haunted / Opportunity / 21-40",
                 "Result": "Helpful vision of past events"
               },
               {
                 "Floor": 41,
                 "Ceiling": 60,
-                "$id": "Oracles / Location Themes / Haunted / Feature / 41-60",
+                "$id": "Oracles / Location Themes / Haunted / Opportunity / 41-60",
                 "Result": "Message or clue offers insight into the nature of this haunting",
                 "Suggestions": {
                   "Oracle rolls": [
@@ -19421,13 +19421,13 @@
               {
                 "Floor": 61,
                 "Ceiling": 80,
-                "$id": "Oracles / Location Themes / Haunted / Feature / 61-80",
+                "$id": "Oracles / Location Themes / Haunted / Opportunity / 61-80",
                 "Result": "Secret area or path is revealed"
               },
               {
                 "Floor": 81,
                 "Ceiling": 100,
-                "$id": "Oracles / Location Themes / Haunted / Feature / 81-100",
+                "$id": "Oracles / Location Themes / Haunted / Opportunity / 81-100",
                 "Result": "Useful or interesting artifact or device"
               }
             ]
@@ -19721,29 +19721,29 @@
             ]
           },
           {
-            "$id": "Oracles / Location Themes / Infested / Feature",
-            "Name": "Feature",
+            "$id": "Oracles / Location Themes / Infested / Opportunity",
+            "Name": "Opportunity",
             "Category": "Oracles / Location Themes / Infested",
-            "Description": "Use this table to reveal a new aspect of the location.",
+            "Description": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
             "Source": {
               "Title": "Ironsworn: Starforged Rulebook",
               "Date": "022322",
               "Page": 370
             },
             "Display": {
-              "Title": "Feature",
+              "Title": "Opportunity",
               "Table": {
                 "Result columns": [
                   {
                     "Label": "Result",
-                    "Content": "Oracles / Location Themes / Infested / Feature",
+                    "Content": "Oracles / Location Themes / Infested / Opportunity",
                     "Key": "Result"
                   }
                 ],
                 "Roll columns": [
                   {
                     "Label": "Roll",
-                    "Content": "Oracles / Location Themes / Infested / Feature"
+                    "Content": "Oracles / Location Themes / Infested / Opportunity"
                   }
                 ]
               }
@@ -19770,31 +19770,31 @@
               {
                 "Floor": 1,
                 "Ceiling": 20,
-                "$id": "Oracles / Location Themes / Infested / Feature / 1-20",
+                "$id": "Oracles / Location Themes / Infested / Opportunity / 1-20",
                 "Result": "Clue to the nature or vulnerabilities of these creatures"
               },
               {
                 "Floor": 21,
                 "Ceiling": 40,
-                "$id": "Oracles / Location Themes / Infested / Feature / 21-40",
+                "$id": "Oracles / Location Themes / Infested / Opportunity / 21-40",
                 "Result": "Creatures turn on each other"
               },
               {
                 "Floor": 41,
                 "Ceiling": 60,
-                "$id": "Oracles / Location Themes / Infested / Feature / 41-60",
+                "$id": "Oracles / Location Themes / Infested / Opportunity / 41-60",
                 "Result": "Early warning of an attack or ambush"
               },
               {
                 "Floor": 61,
                 "Ceiling": 80,
-                "$id": "Oracles / Location Themes / Infested / Feature / 61-80",
+                "$id": "Oracles / Location Themes / Infested / Opportunity / 61-80",
                 "Result": "External event provides a helpful distraction"
               },
               {
                 "Floor": 81,
                 "Ceiling": 100,
-                "$id": "Oracles / Location Themes / Infested / Feature / 81-100",
+                "$id": "Oracles / Location Themes / Infested / Opportunity / 81-100",
                 "Result": "Helpful resource or equipment"
               }
             ]
@@ -20088,29 +20088,29 @@
             ]
           },
           {
-            "$id": "Oracles / Location Themes / Inhabited / Feature",
-            "Name": "Feature",
+            "$id": "Oracles / Location Themes / Inhabited / Opportunity",
+            "Name": "Opportunity",
             "Category": "Oracles / Location Themes / Inhabited",
-            "Description": "Use this table to reveal a new aspect of the location.",
+            "Description": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
             "Source": {
               "Title": "Ironsworn: Starforged Rulebook",
               "Date": "022322",
               "Page": 370
             },
             "Display": {
-              "Title": "Feature",
+              "Title": "Opportunity",
               "Table": {
                 "Result columns": [
                   {
                     "Label": "Result",
-                    "Content": "Oracles / Location Themes / Inhabited / Feature",
+                    "Content": "Oracles / Location Themes / Inhabited / Opportunity",
                     "Key": "Result"
                   }
                 ],
                 "Roll columns": [
                   {
                     "Label": "Roll",
-                    "Content": "Oracles / Location Themes / Inhabited / Feature"
+                    "Content": "Oracles / Location Themes / Inhabited / Opportunity"
                   }
                 ]
               }
@@ -20137,31 +20137,31 @@
               {
                 "Floor": 1,
                 "Ceiling": 20,
-                "$id": "Oracles / Location Themes / Inhabited / Feature / 1-20",
+                "$id": "Oracles / Location Themes / Inhabited / Opportunity / 1-20",
                 "Result": "Intriguing offer from an unexpected source"
               },
               {
                 "Floor": 21,
                 "Ceiling": 40,
-                "$id": "Oracles / Location Themes / Inhabited / Feature / 21-40",
+                "$id": "Oracles / Location Themes / Inhabited / Opportunity / 21-40",
                 "Result": "Lively festival or gathering place provides a chance to socialize"
               },
               {
                 "Floor": 41,
                 "Ceiling": 60,
-                "$id": "Oracles / Location Themes / Inhabited / Feature / 41-60",
+                "$id": "Oracles / Location Themes / Inhabited / Opportunity / 41-60",
                 "Result": "Local gossip proves interesting or helpful"
               },
               {
                 "Floor": 61,
                 "Ceiling": 80,
-                "$id": "Oracles / Location Themes / Inhabited / Feature / 61-80",
+                "$id": "Oracles / Location Themes / Inhabited / Opportunity / 61-80",
                 "Result": "Needed item, resource, or buyer is available"
               },
               {
                 "Floor": 81,
                 "Ceiling": 100,
-                "$id": "Oracles / Location Themes / Inhabited / Feature / 81-100",
+                "$id": "Oracles / Location Themes / Inhabited / Opportunity / 81-100",
                 "Result": "Old friend or connection resurfaces"
               }
             ]
@@ -20455,29 +20455,29 @@
             ]
           },
           {
-            "$id": "Oracles / Location Themes / Mechanical / Feature",
-            "Name": "Feature",
+            "$id": "Oracles / Location Themes / Mechanical / Opportunity",
+            "Name": "Opportunity",
             "Category": "Oracles / Location Themes / Mechanical",
-            "Description": "Use this table to reveal a new aspect of the location.",
+            "Description": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
             "Source": {
               "Title": "Ironsworn: Starforged Rulebook",
               "Date": "022322",
               "Page": 370
             },
             "Display": {
-              "Title": "Feature",
+              "Title": "Opportunity",
               "Table": {
                 "Result columns": [
                   {
                     "Label": "Result",
-                    "Content": "Oracles / Location Themes / Mechanical / Feature",
+                    "Content": "Oracles / Location Themes / Mechanical / Opportunity",
                     "Key": "Result"
                   }
                 ],
                 "Roll columns": [
                   {
                     "Label": "Roll",
-                    "Content": "Oracles / Location Themes / Mechanical / Feature"
+                    "Content": "Oracles / Location Themes / Mechanical / Opportunity"
                   }
                 ]
               }
@@ -20504,31 +20504,31 @@
               {
                 "Floor": 1,
                 "Ceiling": 20,
-                "$id": "Oracles / Location Themes / Mechanical / Feature / 1-20",
+                "$id": "Oracles / Location Themes / Mechanical / Opportunity / 1-20",
                 "Result": "Helpful device"
               },
               {
                 "Floor": 21,
                 "Ceiling": 40,
-                "$id": "Oracles / Location Themes / Mechanical / Feature / 21-40",
+                "$id": "Oracles / Location Themes / Mechanical / Opportunity / 21-40",
                 "Result": "Insight into the workings or purpose of the machines"
               },
               {
                 "Floor": 41,
                 "Ceiling": 60,
-                "$id": "Oracles / Location Themes / Mechanical / Feature / 41-60",
+                "$id": "Oracles / Location Themes / Mechanical / Opportunity / 41-60",
                 "Result": "Intelligent machine offers aid"
               },
               {
                 "Floor": 61,
                 "Ceiling": 80,
-                "$id": "Oracles / Location Themes / Mechanical / Feature / 61-80",
+                "$id": "Oracles / Location Themes / Mechanical / Opportunity / 61-80",
                 "Result": "Salvageable resource"
               },
               {
                 "Floor": 81,
                 "Ceiling": 100,
-                "$id": "Oracles / Location Themes / Mechanical / Feature / 81-100",
+                "$id": "Oracles / Location Themes / Mechanical / Opportunity / 81-100",
                 "Result": "Wondrous technology"
               }
             ]
@@ -20822,29 +20822,29 @@
             ]
           },
           {
-            "$id": "Oracles / Location Themes / Ruined / Feature",
-            "Name": "Feature",
+            "$id": "Oracles / Location Themes / Ruined / Opportunity",
+            "Name": "Opportunity",
             "Category": "Oracles / Location Themes / Ruined",
-            "Description": "Use this table to reveal a new aspect of the location.",
+            "Description": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
             "Source": {
               "Title": "Ironsworn: Starforged Rulebook",
               "Date": "022322",
               "Page": 370
             },
             "Display": {
-              "Title": "Feature",
+              "Title": "Opportunity",
               "Table": {
                 "Result columns": [
                   {
                     "Label": "Result",
-                    "Content": "Oracles / Location Themes / Ruined / Feature",
+                    "Content": "Oracles / Location Themes / Ruined / Opportunity",
                     "Key": "Result"
                   }
                 ],
                 "Roll columns": [
                   {
                     "Label": "Roll",
-                    "Content": "Oracles / Location Themes / Ruined / Feature"
+                    "Content": "Oracles / Location Themes / Ruined / Opportunity"
                   }
                 ]
               }
@@ -20871,31 +20871,31 @@
               {
                 "Floor": 1,
                 "Ceiling": 20,
-                "$id": "Oracles / Location Themes / Ruined / Feature / 1-20",
+                "$id": "Oracles / Location Themes / Ruined / Opportunity / 1-20",
                 "Result": "Access to an untouched or preserved area"
               },
               {
                 "Floor": 21,
                 "Ceiling": 40,
-                "$id": "Oracles / Location Themes / Ruined / Feature / 21-40",
+                "$id": "Oracles / Location Themes / Ruined / Opportunity / 21-40",
                 "Result": "Insight into what brought this place to ruin"
               },
               {
                 "Floor": 41,
                 "Ceiling": 60,
-                "$id": "Oracles / Location Themes / Ruined / Feature / 41-60",
+                "$id": "Oracles / Location Themes / Ruined / Opportunity / 41-60",
                 "Result": "Interesting or useful device or artifact"
               },
               {
                 "Floor": 61,
                 "Ceiling": 80,
-                "$id": "Oracles / Location Themes / Ruined / Feature / 61-80",
+                "$id": "Oracles / Location Themes / Ruined / Opportunity / 61-80",
                 "Result": "Salvageable equipment or resources"
               },
               {
                 "Floor": 81,
                 "Ceiling": 100,
-                "$id": "Oracles / Location Themes / Ruined / Feature / 81-100",
+                "$id": "Oracles / Location Themes / Ruined / Opportunity / 81-100",
                 "Result": "Shortcut or passage through the destruction"
               }
             ]
@@ -21189,29 +21189,29 @@
             ]
           },
           {
-            "$id": "Oracles / Location Themes / Sacred / Feature",
-            "Name": "Feature",
+            "$id": "Oracles / Location Themes / Sacred / Opportunity",
+            "Name": "Opportunity",
             "Category": "Oracles / Location Themes / Sacred",
-            "Description": "Use this table to reveal a new aspect of the location.",
+            "Description": "Use this table to help envision a beneficial encounter or event, such as when rolling a strong hit with a match in a location.",
             "Source": {
               "Title": "Ironsworn: Starforged Rulebook",
               "Date": "022322",
               "Page": 370
             },
             "Display": {
-              "Title": "Feature",
+              "Title": "Opportunity",
               "Table": {
                 "Result columns": [
                   {
                     "Label": "Result",
-                    "Content": "Oracles / Location Themes / Sacred / Feature",
+                    "Content": "Oracles / Location Themes / Sacred / Opportunity",
                     "Key": "Result"
                   }
                 ],
                 "Roll columns": [
                   {
                     "Label": "Roll",
-                    "Content": "Oracles / Location Themes / Sacred / Feature"
+                    "Content": "Oracles / Location Themes / Sacred / Opportunity"
                   }
                 ]
               }
@@ -21238,31 +21238,31 @@
               {
                 "Floor": 1,
                 "Ceiling": 20,
-                "$id": "Oracles / Location Themes / Sacred / Feature / 1-20",
+                "$id": "Oracles / Location Themes / Sacred / Opportunity / 1-20",
                 "Result": "Access to a hidden or sealed area"
               },
               {
                 "Floor": 21,
                 "Ceiling": 40,
-                "$id": "Oracles / Location Themes / Sacred / Feature / 21-40",
+                "$id": "Oracles / Location Themes / Sacred / Opportunity / 21-40",
                 "Result": "Encounter with a helpful adherent or heretic"
               },
               {
                 "Floor": 41,
                 "Ceiling": 60,
-                "$id": "Oracles / Location Themes / Sacred / Feature / 41-60",
+                "$id": "Oracles / Location Themes / Sacred / Opportunity / 41-60",
                 "Result": "Insight into the nature or history of the faith"
               },
               {
                 "Floor": 61,
                 "Ceiling": 80,
-                "$id": "Oracles / Location Themes / Sacred / Feature / 61-80",
+                "$id": "Oracles / Location Themes / Sacred / Opportunity / 61-80",
                 "Result": "Insight into the schemes or methods of religious zealots"
               },
               {
                 "Floor": 81,
                 "Ceiling": 100,
-                "$id": "Oracles / Location Themes / Sacred / Feature / 81-100",
+                "$id": "Oracles / Location Themes / Sacred / Opportunity / 81-100",
                 "Result": "Interesting or valuable artifact or device"
               }
             ]
@@ -21549,7 +21549,7 @@
           "Clue"
         ],
         "Category": "Oracles / Misc",
-        "Description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000000x]{Gather Information} to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000000x]{Gather Information} roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.</p>\n",
+        "Description": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.6e19f351a03b7aee]{Gather Information} to investigate a mystery, you might uncover clues in the form of messages, rumors, eyewitness reports, data, or physical evidence. You can use this oracle to help reveal what this evidence connects to or implicates. Then, use the outcome of the @Compendium[foundry-ironsworn.starforgedmoves.6e19f351a03b7aee]{Gather Information} roll—strong hit, weak hit, or miss—to guide whether the clue brings clarity or complications.</p>\n",
         "Source": {
           "Title": "Ironsworn: Starforged Rulebook",
           "Date": "022322",
@@ -23268,19 +23268,19 @@
             "Floor": 1,
             "Ceiling": 10,
             "$id": "Oracles / Moves / Endure Harm / 1-10",
-            "Result": "You suffer mortal harm. @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004D]{Face Death}."
+            "Result": "You suffer mortal harm. @Compendium[foundry-ironsworn.starforgedmoves.9e7bff4c937c6fe5]{Face Death}."
           },
           {
             "Floor": 11,
             "Ceiling": 20,
             "$id": "Oracles / Moves / Endure Harm / 11-20",
-            "Result": "You are dying. Within an hour or two, you must @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000044]{Heal} and raise your health above 0, or @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004D]{Face Death}."
+            "Result": "You are dying. Within an hour or two, you must @Compendium[foundry-ironsworn.starforgedmoves.e886030b4d738474]{Heal} and raise your health above 0, or @Compendium[foundry-ironsworn.starforgedmoves.9e7bff4c937c6fe5]{Face Death}."
           },
           {
             "Floor": 21,
             "Ceiling": 35,
             "$id": "Oracles / Moves / Endure Harm / 21-35",
-            "Result": "You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004D]{Face Death}."
+            "Result": "You are unconscious and out of action. If left alone, you come back to your senses in an hour or two. If you are vulnerable to ongoing harm, @Compendium[foundry-ironsworn.starforgedmoves.9e7bff4c937c6fe5]{Face Death}."
           },
           {
             "Floor": 36,
@@ -23333,13 +23333,13 @@
             "Floor": 1,
             "Ceiling": 10,
             "$id": "Oracles / Moves / Endure Stress / 1-10",
-            "Result": "You are overwhelmed. @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004K]{Face Desolation}."
+            "Result": "You are overwhelmed. @Compendium[foundry-ironsworn.starforgedmoves.a0b5e2335d21fcef]{Face Desolation}."
           },
           {
             "Floor": 11,
             "Ceiling": 25,
             "$id": "Oracles / Moves / Endure Stress / 11-25",
-            "Result": "You give up. @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001c]{Forsake Your Vow}."
+            "Result": "You give up. @Compendium[foundry-ironsworn.starforgedmoves.bff9f7bda602f28c]{Forsake Your Vow}."
           },
           {
             "Floor": 26,
@@ -23392,43 +23392,43 @@
             "Floor": 1,
             "Ceiling": 10,
             "$id": "Oracles / Moves / Withstand Damage / 1-10",
-            "Result": "Immediate catastrophic destruction. All aboard must @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003s]{Endure Harm} or @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004D]{Face Death}, as appropriate."
+            "Result": "Immediate catastrophic destruction. All aboard must @Compendium[foundry-ironsworn.starforgedmoves.5fa1062cdb21dd42]{Endure Harm} or @Compendium[foundry-ironsworn.starforgedmoves.9e7bff4c937c6fe5]{Face Death}, as appropriate."
           },
           {
             "Floor": 11,
             "Ceiling": 25,
             "$id": "Oracles / Moves / Withstand Damage / 11-25",
-            "Result": "Destruction is imminent and unavoidable. If you do not have the means or intention to get clear, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003s]{Endure Harm} or @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004D]{Face Death} as appropriate."
+            "Result": "Destruction is imminent and unavoidable. If you do not have the means or intention to get clear, @Compendium[foundry-ironsworn.starforgedmoves.5fa1062cdb21dd42]{Endure Harm} or @Compendium[foundry-ironsworn.starforgedmoves.9e7bff4c937c6fe5]{Face Death} as appropriate."
           },
           {
             "Floor": 26,
             "Ceiling": 40,
             "$id": "Oracles / Moves / Withstand Damage / 26-40",
-            "Result": "Destruction is imminent, but can be averted if you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004v]{Repair} your vehicle and raise its integrity above 0. If you fail, see 11-25."
+            "Result": "Destruction is imminent, but can be averted if you @Compendium[foundry-ironsworn.starforgedmoves.b1031f576f218aae]{Repair} your vehicle and raise its integrity above 0. If you fail, see 11-25."
           },
           {
             "Floor": 41,
             "Ceiling": 55,
             "$id": "Oracles / Moves / Withstand Damage / 41-55",
-            "Result": "You cannot @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004v]{Repair} this vehicle until you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004l]{Resupply} and obtain a crucial replacement part. If you roll this result again prior to that, see 11-25."
+            "Result": "You cannot @Compendium[foundry-ironsworn.starforgedmoves.b1031f576f218aae]{Repair} this vehicle until you @Compendium[foundry-ironsworn.starforgedmoves.3a59d205bdd3505b]{Resupply} and obtain a crucial replacement part. If you roll this result again prior to that, see 11-25."
           },
           {
             "Floor": 56,
             "Ceiling": 70,
             "$id": "Oracles / Moves / Withstand Damage / 56-70",
-            "Result": "The vehicle is crippled or out of your control. To get it back in action, you must @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000004v]{Repair} and raise its integrity above 0."
+            "Result": "The vehicle is crippled or out of your control. To get it back in action, you must @Compendium[foundry-ironsworn.starforgedmoves.b1031f576f218aae]{Repair} and raise its integrity above 0."
           },
           {
             "Floor": 71,
             "Ceiling": 85,
             "$id": "Oracles / Moves / Withstand Damage / 71-85",
-            "Result": "It&#39;s a rough ride. All aboard must make the @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003s]{Endure Harm}, @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003z]{Endure Stress}, or @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003G]{Companion Takes a Hit} move, suffering a serious (-2) cost."
+            "Result": "It&#39;s a rough ride. All aboard must make the @Compendium[foundry-ironsworn.starforgedmoves.5fa1062cdb21dd42]{Endure Harm}, @Compendium[foundry-ironsworn.starforgedmoves.a0cbba3ad66a491c]{Endure Stress}, or @Compendium[foundry-ironsworn.starforgedmoves.2765c37e9cbbb8d2]{Companion Takes a Hit} move, suffering a serious (-2) cost."
           },
           {
             "Floor": 86,
             "Ceiling": 95,
             "$id": "Oracles / Moves / Withstand Damage / 86-95",
-            "Result": "You’ve lost fuel, energy, or cargo. @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000003O]{Sacrifice Resources} (-2)."
+            "Result": "You’ve lost fuel, energy, or cargo. @Compendium[foundry-ironsworn.starforgedmoves.a685a57493bcc56d]{Sacrifice Resources} (-2)."
           },
           {
             "Floor": 96,
@@ -39476,7 +39476,7 @@
         "$id": "Oracles / Space / Sighting",
         "Name": "Sighting",
         "Category": "Oracles / Space",
-        "Description": "<p>Use the Space Sightings oracle to introduce a location or encounter on a spaceborne expedition. For example, roll on this table when you @Compendium[foundry-ironsworn.starforgedmoves.DF03000000000059]{Ask the Oracle} to envision the primary feature of a waypoint as you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001I]{Undertake an Expedition}. Check your result by referencing the column for your current location: Terminus, Outlands, or Expanse.</p>\n",
+        "Description": "<p>Use the Space Sightings oracle to introduce a location or encounter on a spaceborne expedition. For example, roll on this table when you @Compendium[foundry-ironsworn.starforgedmoves.c575eba41d23bf57]{Ask the Oracle} to envision the primary feature of a waypoint as you @Compendium[foundry-ironsworn.starforgedmoves.1a00b81fe1924f10]{Undertake an Expedition}. Check your result by referencing the column for your current location: Terminus, Outlands, or Expanse.</p>\n",
         "Source": {
           "Title": "Ironsworn: Starforged Rulebook",
           "Date": "022322",
@@ -41394,7 +41394,7 @@
         "$id": "Oracles / Space / Opportunity",
         "Name": "Opportunity",
         "Category": "Oracles / Space",
-        "Description": "<p>Choose or roll on this table when you want inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001I]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.DF0300000000001R]{Explore a Waypoint} and find an opportunity.</p>\n",
+        "Description": "<p>Choose or roll on this table when you want inspiration for a beneficial encounter or event on a spaceborne journey, such as when you roll a strong hit with a match as you @Compendium[foundry-ironsworn.starforgedmoves.1a00b81fe1924f10]{Undertake an Expedition}, or if you @Compendium[foundry-ironsworn.starforgedmoves.331fe0dd0a924583]{Explore a Waypoint} and find an opportunity.</p>\n",
         "Source": {
           "Title": "Ironsworn: Starforged Rulebook",
           "Date": "022322",
