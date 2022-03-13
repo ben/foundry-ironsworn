@@ -67,25 +67,29 @@
       </div>
     </header>
 
-    <section class="nogrow">
-      <div class="boxgroup boxrow"></div>
+    <section class="boxgroup flexcol nogrow" v-if="actor.data.subtype === 'planet'">
+      <div class="boxrow">
+        <div class="clickable block box">First look</div>
+      </div>
+      <div class="flexrow boxrow">
+        <div class="clickable block box">Observed from orbit (1-2)</div>
+        <div class="clickable block box">Planetside feature (1-2)</div>
+      </div>
+      <div class="flexrow boxrow">
+        <div class="clickable block box">Settlements</div>
+        <div class="clickable block box">Life</div>
+      </div>
     </section>
 
-    <!-- if planet -->
-    <button>settlements</button>
-    <!-- "create" button at right, auto triggered when rolled -->
-
-    <button>Observed</button>
-    <button>Planetside</button>
-    <button>Life</button>
-
-    <editor
-      target="data.description"
-      :owner="true"
-      :button="true"
-      :editable="true"
-      :content="actor.data.description"
-    />
+    <section>
+      <editor
+        target="data.description"
+        :owner="true"
+        :button="true"
+        :editable="true"
+        :content="actor.data.description"
+      />
+    </section>
   </div>
 </template>
 
