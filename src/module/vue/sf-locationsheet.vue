@@ -37,7 +37,7 @@
         <div class="flexrow nogrow">
           <document-name :document="actor" />
           <div
-            class="clickable block nogrow"
+            class="clickable block disabled nogrow"
             style="
               margin: 5px 0px;
               padding: 0 5px;
@@ -153,7 +153,14 @@ export default {
       this.$actor.update({ img, data: { klass } })
       // TODO: update prototype and all linked tokens
     },
-    randomizeName() {},
+
+    async randomizeName() {
+      // no oracle for this
+      const klass = capitalize(this.actor.data.klass)
+      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
+        `Oracles / Planets / ${this.actor} / Name`
+      )
+    },
     async randomizeKlass() {
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
         'Oracles / Planets / Class'
