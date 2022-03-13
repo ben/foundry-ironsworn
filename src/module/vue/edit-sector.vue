@@ -1,27 +1,18 @@
 <template>
   <div class="flexcol">
-    <div class="flexrow nogrow">
-      <label>
-        <input
-          type="radio"
-          :checked="isTerminus"
-          @change="setArea('terminus')"
-        />
-        {{ $t('IRONSWORN.Terminus') }}
-      </label>
-      <label>
-        <input
-          type="radio"
-          :checked="isOutlands"
-          @change="setArea('outlands')"
-        />
-        {{ $t('IRONSWORN.Outlands') }}
-      </label>
-      <label>
-        <input type="radio" :checked="isExpanse" @change="setArea('expanse')" />
-        {{ $t('IRONSWORN.Expanse') }}
-      </label>
-    </div>
+    <h4 class="nogrow">{{ $t('IRONSWORN.Region') }}</h4>
+    <label class="nogrow">
+      <input type="radio" v-model="region" value="terminus" />
+      {{ $t('IRONSWORN.Terminus') }}
+    </label>
+    <label class="nogrow">
+      <input type="radio" v-model="region" value="outlands" />
+      {{ $t('IRONSWORN.Outlands') }}
+    </label>
+    <label class="nogrow">
+      <input type="radio" v-model="region" value="expanse" />
+      {{ $t('IRONSWORN.Expanse') }}
+    </label>
   </div>
 </template>
 
@@ -32,32 +23,27 @@ export default {
   },
 
   computed: {
-    scene() {
-      return this.foundryScene()?.toObject(false)
-    },
-    currentArea() {
-      return this.scene?.flags['foundry-ironsworn']?.['area']
-    },
-    isTerminus() {
-      return this.currentArea === 'terminus'
-    },
-    isOutlands() {
-      return this.currentArea === 'outlands'
-    },
-    isExpanse() {
-      return this.currentArea === 'expanse'
-    },
-  },
-
-  methods: {
     foundryScene() {
       return game.scenes?.get(this.sceneid)
     },
+    scene() {
+      return this.foundryScene?.toObject(false)
+    },
+  },
 
-    setArea(value) {
-      this.foundryScene()?.setFlag('foundry-ironsworn', 'area', value)
-      this.scene.flags['foundry-ironsworn'].area = value
-      console.log(this.currentArea)
+  data() {
+    return {
+      region: null,
+    }
+  },
+
+  mounted() {
+    this.region = this.scene?.flags['foundry-ironsworn']?.['region']
+  },
+
+  watch: {
+    region(newRegion) {
+      this.foundryScene?.setFlag('foundry-ironsworn', 'region', this.region)
     },
   },
 }

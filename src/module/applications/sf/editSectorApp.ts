@@ -13,8 +13,8 @@ export class EditSectorDialog extends VueApplication {
       resizable: true,
       left: 115,
       top: 60,
-      width: 600,
-      height: 500,
+      width: 400,
+      height: 200,
     })
   }
 
