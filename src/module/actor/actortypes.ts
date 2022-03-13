@@ -118,6 +118,23 @@ export interface StarshipDataProperties {
 
 ////////////////////////////////////////
 
+interface LocationDataSourceData {
+  subtype: string
+  klass: string
+}
+interface LocationDataPropertiesData extends LocationDataSourceData {}
+
+export interface LocationDataSource {
+  type: 'location'
+  data: LocationDataSourceData
+}
+export interface LocationDataProperties {
+  type: 'location'
+  data: LocationDataPropertiesData
+}
+
+////////////////////////////////////////
+
 export type ActorDataSource = CharacterDataSource | SharedDataSource | SiteDataSource | StarshipDataSource
 export type ActorDataProperties = CharacterDataProperties | SharedDataProperties | SiteDataProperties | StarshipDataProperties
 
