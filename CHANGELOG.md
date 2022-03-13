@@ -4,6 +4,7 @@
 
 - Add a sector-edit dialog ([#224](https://github.com/ben/foundry-ironsworn/pull/225))
 - Add a location sheet with planet-gen tools ([#226](https://github.com/ben/foundry-ironsworn/pull/226))
+- Add some starship token images (thanks, @TW-wilsonam! [#228](https://github.com/ben/foundry-ironsworn/pull/228))
 
 ## 1.10.22
 
