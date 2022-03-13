@@ -91,9 +91,9 @@
           v-for="oracle of row"
           :class="{ highlighted: oracle.fl && firstLookHighlight }"
           :key="oracle.dfId"
-          @click="rollOracle(oracle.dfId)"
+          @click="rollOracle(oracle)"
         >
-          {{ oracle.title }}
+          {{ oracle.title }} <span v-if="oracle.qty">({{ oracle.qty }})</span>
         </div>
       </div>
     </section>
@@ -120,7 +120,8 @@
 </style>
 
 <script>
-import { capitalize } from 'lodash'
+import { capitalize, flatten } from 'lodash'
+
 function randomImage(subtype, klass) {
   if (subtype === 'planet') {
     const name = capitalize(klass)
@@ -198,6 +199,7 @@ export default {
             },
             {
               title: 'From Space',
+              qty: '1-2',
               dfId: `Oracles / Planets / ${kc} / Observed From Space`,
               fl: true,
             },
@@ -211,6 +213,7 @@ export default {
             { title: 'Life', dfId: `Oracles / Planets / ${kc} / Life` },
             {
               title: 'Planetside Feature',
+              qty: '1-2',
               dfId: `Oracles / Planets / ${kc} / Feature`,
             },
           ],
@@ -245,14 +248,14 @@ export default {
       this.saveKlass(evt.target.value)
     },
 
-    saveSubtype(subtype) {
-      this.$actor.update({ data: { subtype } })
+    async saveSubtype(subtype) {
+      await this.$actor.update({ data: { subtype } })
     },
-    saveKlass(klass) {
+    async saveKlass(klass) {
       const { subtype } = this.actor.data
       const img = randomImage(subtype, klass)
 
-      this.$actor.update({ img, data: { klass } })
+      await this.$actor.update({ img, data: { klass } })
       // TODO: update prototype and all linked tokens
     },
 
@@ -274,17 +277,29 @@ export default {
       const lctext = rawText.toLowerCase()
       const option = this.klassOptions.find((x) => lctext.match(x.value))
       if (option) {
-        this.saveKlass(option.value)
+        await this.saveKlass(option.value)
       }
     },
 
     async rollFirstLook() {
       console.log('first look!')
+      await this.randomizeKlass()
+      for (const oracle of flatten(this.oracles)) {
+        if (oracle.fl) {
+          await this.rollOracle(oracle)
+          // await new Promise((r) => setTimeout(r, 10))
+        }
+      }
     },
-    async rollOracle(dfId) {
-      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(dfId)
+    async rollOracle(oracle) {
+      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(oracle.dfId)
       const drawResult = await table?.draw()
-      console.log(drawResult?.results[0]?.data.text)
+      const drawText = drawResult?.results[0]?.data.text
+      if (!drawText) return
+
+      // Append to description
+      const description = `${this.actor.data.description}\n<p><strong>${oracle.title}:</strong> ${drawText}</p>`
+      await this.$actor.update({ data: { description } })
     },
   },
 }
