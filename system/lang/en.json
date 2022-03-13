@@ -142,6 +142,11 @@
     "NewStar": "New Star",
     "NewPlanet": "New Planet",
     "NewSettlement": "New Settlement",
+    "Sector": "Sector",
+    "Region": "Region",
+    "Terminus": "Terminus",
+    "Outlands": "Outlands",
+    "Expanse": "Expanse",
     "ChangeLog": {
       "Renamed": "Renamed to {name}",
       "renamed": "renamed to {name}",
