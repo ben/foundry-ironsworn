@@ -75,6 +75,15 @@
 </template>
 
 <script>
+import { capitalize } from 'lodash'
+function randomImage(subtype, klass) {
+  if (subtype === 'planet') {
+    const name = capitalize(klass)
+    const i = Math.floor(Math.random() * 2) + 1
+    return `systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-${name}-0${i}.webp`
+  }
+}
+
 export default {
   props: {
     actor: Object,
@@ -107,14 +116,17 @@ export default {
   },
 
   methods: {
-    saveSubtype() {
-      const subtype = this.actor.data.subtype
+    saveSubtype(evt) {
+      const subtype = evt.target.value
       this.$actor.update({ data: { subtype } })
     },
-    saveKlass() {
-      // TODO: update the image
-      const klass = this.actor.data.klass
-      this.$actor.update({ data: { klass } })
+    saveKlass(evt) {
+      const klass = evt.target.value
+      const { subtype } = this.actor.data
+      const img = randomImage(subtype, klass)
+
+      this.$actor.update({ img, data: { klass } })
+      // TODO: update prototype and all linked tokens
     },
     randomizeName() {},
     randomizeKlass() {},
