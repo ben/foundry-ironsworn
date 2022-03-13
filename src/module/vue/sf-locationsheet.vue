@@ -46,7 +46,11 @@
 
           <!-- Klass -->
           <div class="flexrow" style="flex-basis: 200px">
-            <select v-model="actor.data.klass" @change="klassChanged">
+            <select
+              v-model="actor.data.klass"
+              @change="klassChanged"
+              :class="{ highlighted: firstLookHighlight }"
+            >
               <option
                 v-for="opt in klassOptions"
                 :key="opt.value"
@@ -72,12 +76,19 @@
       v-if="actor.data.subtype === 'planet'"
     >
       <div class="boxrow">
-        <div class="clickable block box">First look</div>
+        <div
+          class="clickable block box"
+          @mouseenter="firstLookHighlight = true"
+          @mouseleave="firstLookHighlight = false"
+        >
+          <i class="fas fa-eye"></i> &nbsp; First look
+        </div>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
         <div
           class="clickable block box"
           v-for="oracle of row"
+          :class="{ highlighted: oracle.fl && firstLookHighlight }"
           :key="oracle.dfId"
         >
           {{ oracle.title }}
@@ -100,6 +111,9 @@
 <style lang="less" scoped>
 .box {
   padding: 7px;
+}
+.highlighted {
+  background: lightyellow;
 }
 </style>
 
@@ -124,6 +138,7 @@ export default {
     const region = scene.getFlag('foundry-ironsworn', 'region') || 'terminus'
     return {
       region,
+      firstLookHighlight: false,
     }
   },
 
@@ -170,27 +185,31 @@ export default {
     oracles() {
       const { subtype, klass } = this.actor.data
       const kc = capitalize(klass)
+      const rc = capitalize(this.region)
       if (subtype === 'planet') {
         return [
           [
             {
               title: 'Atmosphere',
               dfId: `Oracles / Planets / ${kc} / Atmosphere`,
+              fl: true,
             },
             {
               title: 'From Space',
               dfId: `Oracles / Planets / ${kc} / Observed From Space`,
+              fl: true,
             },
           ],
           [
             {
-              title: 'Planetside Feature',
-              dfId: `Oracles / Planets / ${kc} / Feature`,
+              title: 'Settlements',
+              dfId: `Oracles / Planets / ${kc} / Settlements / ${rc}`,
+              fl: true,
             },
             { title: 'Life', dfId: `Oracles / Planets / ${kc} / Life` },
             {
-              title: 'Settlements',
-              dfId: `Oracles / Planets / ${kc} / Settlements`,
+              title: 'Planetside Feature',
+              dfId: `Oracles / Planets / ${kc} / Feature`,
             },
           ],
           [
