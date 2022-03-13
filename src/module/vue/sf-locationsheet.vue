@@ -67,17 +67,21 @@
       </div>
     </header>
 
-    <section class="boxgroup flexcol nogrow" v-if="actor.data.subtype === 'planet'">
+    <section
+      class="boxgroup flexcol nogrow"
+      v-if="actor.data.subtype === 'planet'"
+    >
       <div class="boxrow">
         <div class="clickable block box">First look</div>
       </div>
-      <div class="flexrow boxrow">
-        <div class="clickable block box">Observed from orbit (1-2)</div>
-        <div class="clickable block box">Planetside feature (1-2)</div>
-      </div>
-      <div class="flexrow boxrow">
-        <div class="clickable block box">Settlements</div>
-        <div class="clickable block box">Life</div>
+      <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
+        <div
+          class="clickable block box"
+          v-for="oracle of row"
+          :key="oracle.dfId"
+        >
+          {{ oracle.title }}
+        </div>
       </div>
     </section>
 
@@ -92,6 +96,12 @@
     </section>
   </div>
 </template>
+
+<style lang="less" scoped>
+.box {
+  padding: 7px;
+}
+</style>
 
 <script>
 import { capitalize } from 'lodash'
@@ -155,6 +165,43 @@ export default {
         { value: 'artificial', label: 'Artificial Star' },
         { value: 'unstable', label: 'Unstable Star' },
       ]
+    },
+
+    oracles() {
+      const { subtype, klass } = this.actor.data
+      const kc = capitalize(klass)
+      if (subtype === 'planet') {
+        return [
+          [
+            {
+              title: 'Atmosphere',
+              dfId: `Oracles / Planets / ${kc} / Atmosphere`,
+            },
+            {
+              title: 'From Space',
+              dfId: `Oracles / Planets / ${kc} / Observed From Space`,
+            },
+          ],
+          [
+            {
+              title: 'Planetside Feature',
+              dfId: `Oracles / Planets / ${kc} / Feature`,
+            },
+            { title: 'Life', dfId: `Oracles / Planets / ${kc} / Life` },
+            {
+              title: 'Settlements',
+              dfId: `Oracles / Planets / ${kc} / Settlements`,
+            },
+          ],
+          [
+            { title: 'Peril', dfId: `Oracles / Planets / Peril / ${kc}` },
+            {
+              title: 'Opportunity',
+              dfId: `Oracles / Planets / Opportunity / ${kc}`,
+            },
+          ],
+        ]
+      }
     },
   },
 
