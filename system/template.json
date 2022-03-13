@@ -139,7 +139,8 @@
       }
     },
     "location": {
-      "subtype": "planet"
+      "subtype": "planet",
+      "klass": ""
     }
   },
   "Item": {
