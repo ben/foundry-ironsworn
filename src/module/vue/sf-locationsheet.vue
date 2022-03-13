@@ -20,6 +20,20 @@
         </div>
 
         <div class="flexrow nogrow">
+          <!-- Region -->
+          <select v-model="region" style="margin-right: 5px; flex-basis: 150px">
+            <option value="terminus">
+              {{ $t('IRONSWORN.Terminus') }}
+            </option>
+            <option value="outlands">
+              {{ $t('IRONSWORN.Outlands') }}
+            </option>
+            <option value="expanse">
+              {{ $t('IRONSWORN.Expanse') }}
+            </option>
+          </select>
+
+          <!-- Subtype -->
           <select
             style="margin-right: 5px; flex-basis: 150px"
             v-model="actor.data.subtype"
@@ -30,6 +44,7 @@
             <option value="star">Stellar Object</option>
           </select>
 
+          <!-- Klass -->
           <div class="flexrow" style="flex-basis: 200px">
             <select v-model="actor.data.klass" @change="klassChanged">
               <option
@@ -90,7 +105,12 @@ export default {
   },
 
   data() {
-    return {}
+    const sceneId = game.user.viewedScene
+    const scene = game.scenes.get(sceneId)
+    const region = scene.getFlag('foundry-ironsworn', 'region') || 'terminus'
+    return {
+      region,
+    }
   },
 
   computed: {
