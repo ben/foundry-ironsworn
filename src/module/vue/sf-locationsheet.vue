@@ -1,8 +1,24 @@
 <template>
   <div class="flexcol">
     <header class="sheet-header flexrow nogrow">
-      <document-img :document="actor" size="82px" />
+      <document-img :document="actor" size="82px" style="margin-top: 5px" />
       <div class="flexcol">
+        <div class="flexrow nogrow">
+          <document-name :document="actor" />
+          <div
+            class="clickable block disabled nogrow"
+            style="
+              margin: 5px 0px;
+              padding: 0 5px;
+              line-height: 50px;
+              margin-left: 5px;
+            "
+            @click="randomizeName"
+          >
+            <i class="fa fa-dice-d6" />
+          </div>
+        </div>
+
         <div class="flexrow nogrow">
           <select
             style="margin-right: 5px; flex-basis: 150px"
@@ -31,22 +47,6 @@
             >
               <i class="fa fa-dice-d6" />
             </div>
-          </div>
-        </div>
-
-        <div class="flexrow nogrow">
-          <document-name :document="actor" />
-          <div
-            class="clickable block disabled nogrow"
-            style="
-              margin: 5px 0px;
-              padding: 0 5px;
-              line-height: 50px;
-              margin-left: 5px;
-            "
-            @click="randomizeName"
-          >
-            <i class="fa fa-dice-d6" />
           </div>
         </div>
       </div>
