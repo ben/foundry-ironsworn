@@ -111,7 +111,27 @@ export default {
           { value: 'vital', label: 'Vital World' },
         ]
       }
-      return [] // TODO: settlements and stellar objects
+      if (this.actor.data.subtype === 'settlement') {
+        return [
+          { value: 'planetside', label: 'Planetside' },
+          { value: 'orbital', label: 'Orbital' },
+          { value: 'deepspace', label: 'Deep Space' },
+        ]
+      }
+      return [
+        { value: 'smoldering', label: 'Smoldering Red Star' },
+        { value: 'glowing', label: 'Glowing Orange Star' },
+        { value: 'burning', label: 'Burning Yellow Star' },
+        { value: 'blazing', label: 'Blazing Blue Star' },
+        { value: 'young', label: 'Young Star' },
+        { value: 'whitedwarf', label: 'White Dwarf' },
+        { value: 'corrupted', label: 'Corrupted Star' },
+        { value: 'neutron', label: 'Neutron Star' },
+        { value: 'double', label: 'Binary Stars' },
+        { value: 'blackhole', label: 'Black Hole' },
+        { value: 'artificial', label: 'Artificial Star' },
+        { value: 'unstable', label: 'Unstable Star' },
+      ]
     },
   },
 
