@@ -4,7 +4,8 @@
       "character",
       "shared",
       "site",
-      "starship"
+      "starship",
+      "location"
     ],
     "character": {
       "biography": "",
@@ -136,6 +137,9 @@
         "battered": false,
         "cursed": false
       }
+    },
+    "location": {
+      "subtype": "planet"
     }
   },
   "Item": {
