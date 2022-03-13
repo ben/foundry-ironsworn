@@ -5,7 +5,7 @@
       <div class="flexcol">
         <div class="flexrow nogrow">
           <select
-            style="margin-right: 5px"
+            style="margin-right: 5px; flex-basis: 150px"
             v-model="actor.data.subtype"
             @change="subtypeChanged"
           >
@@ -14,7 +14,7 @@
             <option value="star">Stellar Object</option>
           </select>
 
-          <div class="flexrow">
+          <div class="flexrow" style="flex-basis: 200px">
             <select v-model="actor.data.klass" @change="klassChanged">
               <option
                 v-for="opt in klassOptions"
@@ -141,7 +141,6 @@ export default {
     klassChanged(evt) {
       this.saveKlass(evt.target.value)
     },
-
 
     saveSubtype(subtype) {
       this.$actor.update({ data: { subtype } })
