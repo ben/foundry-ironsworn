@@ -80,6 +80,7 @@
           class="clickable block box"
           @mouseenter="firstLookHighlight = true"
           @mouseleave="firstLookHighlight = false"
+          @click="rollFirstLook"
         >
           <i class="fas fa-eye"></i> &nbsp; First look
         </div>
@@ -90,6 +91,7 @@
           v-for="oracle of row"
           :class="{ highlighted: oracle.fl && firstLookHighlight }"
           :key="oracle.dfId"
+          @click="rollOracle(oracle.dfId)"
         >
           {{ oracle.title }}
         </div>
@@ -213,10 +215,21 @@ export default {
             },
           ],
           [
-            { title: 'Peril', dfId: `Oracles / Planets / Peril / ${kc}` },
             {
-              title: 'Opportunity',
-              dfId: `Oracles / Planets / Opportunity / ${kc}`,
+              title: 'Peril (life)',
+              dfId: `Oracles / Planets / Peril / Lifebearing`,
+            },
+            {
+              title: 'Peril (no life)',
+              dfId: `Oracles / Planets / Peril / Lifeless`,
+            },
+            {
+              title: 'Opportunity (life)',
+              dfId: `Oracles / Planets / Opportunity / Lifebearing`,
+            },
+            {
+              title: 'Opportunity (no life)',
+              dfId: `Oracles / Planets / Opportunity / Lifeless`,
             },
           ],
         ]
@@ -263,6 +276,15 @@ export default {
       if (option) {
         this.saveKlass(option.value)
       }
+    },
+
+    async rollFirstLook() {
+      console.log('first look!')
+    },
+    async rollOracle(dfId) {
+      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(dfId)
+      const drawResult = await table?.draw()
+      console.log(drawResult?.results[0]?.data.text)
     },
   },
 }
