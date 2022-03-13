@@ -9,6 +9,7 @@ import { defaultActor } from './module/helpers/actors'
 import { moveDataByName } from './module/helpers/data'
 import { attachInlineRollListeners, RollDialog, rollSiteFeature } from './module/helpers/roll'
 import { IronswornSettings } from './module/helpers/settings'
+import { sfOracleByDataforgedId } from './module/helpers/util'
 import { AssetItem } from './module/item/asset/assetitem'
 import { BaseItem } from './module/item/baseitem'
 import { BondsetItem } from './module/item/bondset/bondsetitem'
@@ -38,6 +39,7 @@ export interface IronswornConfig {
   rollSiteFeature: typeof rollSiteFeature
   moveDataByName: typeof moveDataByName
   defaultActor: typeof defaultActor
+  sfOracleByDataforgedId: typeof sfOracleByDataforgedId
   _: typeof lodash
 }
 
@@ -62,5 +64,6 @@ export const IRONSWORN: IronswornConfig = {
   rollSiteFeature,
   moveDataByName,
   defaultActor,
+  sfOracleByDataforgedId,
   _: lodash,
 }

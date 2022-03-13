@@ -7,7 +7,7 @@
           <select
             style="margin-right: 5px"
             v-model="actor.data.subtype"
-            @change="saveSubtype"
+            @change="subtypeChanged"
           >
             <option value="planet">Planet</option>
             <option value="settlement">Settlement</option>
@@ -15,7 +15,7 @@
           </select>
 
           <div class="flexrow">
-            <select v-model="actor.data.klass" @change="saveKlass">
+            <select v-model="actor.data.klass" @change="klassChanged">
               <option
                 v-for="opt in klassOptions"
                 :key="opt.value"
@@ -97,7 +97,6 @@ export default {
     klassOptions() {
       if (this.actor.data.subtype === 'planet') {
         return [
-          { value: '', label: '(Planet Class)' },
           { value: 'desert', label: 'Desert World' },
           { value: 'furnace', label: 'Furnace World' },
           { value: 'grave', label: 'Grave World' },
@@ -136,12 +135,18 @@ export default {
   },
 
   methods: {
-    saveSubtype(evt) {
-      const subtype = evt.target.value
+    subtypeChanged(evt) {
+      this.saveSubtype(evt.target.value)
+    },
+    klassChanged(evt) {
+      this.saveKlass(evt.target.value)
+    },
+
+
+    saveSubtype(subtype) {
       this.$actor.update({ data: { subtype } })
     },
-    saveKlass(evt) {
-      const klass = evt.target.value
+    saveKlass(klass) {
       const { subtype } = this.actor.data
       const img = randomImage(subtype, klass)
 
@@ -149,7 +154,20 @@ export default {
       // TODO: update prototype and all linked tokens
     },
     randomizeName() {},
-    randomizeKlass() {},
+    async randomizeKlass() {
+      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
+        'Oracles / Planets / Class'
+      )
+      const result = await table?.draw()
+      const rawText = result?.results[0]?.data.text
+      if (!rawText) return
+
+      const lctext = rawText.toLowerCase()
+      const option = this.klassOptions.find((x) => lctext.match(x.value))
+      if (option) {
+        this.saveKlass(option.value)
+      }
+    },
   },
 }
 </script>
