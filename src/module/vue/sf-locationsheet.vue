@@ -4,9 +4,13 @@
       <document-img :document="actor" size="82px" style="margin-top: 5px" />
       <div class="flexcol">
         <div class="flexrow nogrow">
-          <document-name :document="actor" />
+          <document-name
+            :document="actor"
+            :class="{ highlighted: firstLookHighlight }"
+          />
           <div
             class="clickable block nogrow"
+            :class="{ highlighted: firstLookHighlight }"
             style="
               margin: 5px 0px;
               padding: 0 5px;
@@ -287,10 +291,10 @@ export default {
     async rollFirstLook() {
       console.log('first look!')
       await this.randomizeKlass()
+      await this.randomizeName()
       for (const oracle of flatten(this.oracles)) {
         if (oracle.fl) {
           await this.rollOracle(oracle)
-          // await new Promise((r) => setTimeout(r, 10))
         }
       }
     },
