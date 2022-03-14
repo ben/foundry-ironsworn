@@ -4,9 +4,13 @@
       <document-img :document="actor" size="82px" style="margin-top: 5px" />
       <div class="flexcol">
         <div class="flexrow nogrow">
-          <document-name :document="actor" />
+          <document-name
+            :document="actor"
+            :class="{ highlighted: firstLookHighlight }"
+          />
           <div
-            class="clickable block disabled nogrow"
+            class="clickable block nogrow"
+            :class="{ highlighted: firstLookHighlight }"
             style="
               margin: 5px 0px;
               padding: 0 5px;
@@ -262,9 +266,12 @@ export default {
     async randomizeName() {
       // no oracle for this
       const klass = capitalize(this.actor.data.klass)
-      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
-        `Oracles / Planets / ${this.actor} / Name`
+      const json = await CONFIG.IRONSWORN.sfOracleJsonByDataforgedId(
+        `Oracles / Planets / ${klass}`
       )
+      const name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
+      console.log(name)
+      this.$actor.update({ name })
     },
     async randomizeKlass() {
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
@@ -284,10 +291,10 @@ export default {
     async rollFirstLook() {
       console.log('first look!')
       await this.randomizeKlass()
+      await this.randomizeName()
       for (const oracle of flatten(this.oracles)) {
         if (oracle.fl) {
           await this.rollOracle(oracle)
-          // await new Promise((r) => setTimeout(r, 10))
         }
       }
     },

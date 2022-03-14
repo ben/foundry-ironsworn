@@ -16848,7 +16848,8 @@
         },
         "Content": {
           "Part of speech": [
-            "adjective"
+            "adjective",
+            "proper noun fragment"
           ]
         },
         "Table": [
@@ -17182,7 +17183,8 @@
         },
         "Content": {
           "Part of speech": [
-            "noun"
+            "noun",
+            "proper noun fragment"
           ],
           "Tags": [
             "organization",
@@ -17371,7 +17373,8 @@
         "Content": {
           "Part of speech": [
             "noun",
-            "plural"
+            "plural",
+            "proper noun fragment"
           ]
         },
         "Table": [
@@ -25243,6 +25246,28 @@
           "Page": 308
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Abalos",
+          "Audun",
+          "Bishop",
+          "Desolation",
+          "Dykuma",
+          "Fallow",
+          "Helios",
+          "Mirage",
+          "Morricone",
+          "Nux",
+          "Ordos",
+          "Petra",
+          "Pyla",
+          "Sabulo",
+          "Saffron",
+          "Sirocco",
+          "Sulis",
+          "Torrid",
+          "Umber",
+          "Vermillion"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -26327,6 +26352,28 @@
           "Page": 309
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Ash",
+          "Azula",
+          "Cinder",
+          "Cyrus",
+          "Draconus",
+          "Effigy",
+          "Ember",
+          "Flint",
+          "Hades",
+          "Hera",
+          "Ignis",
+          "Inferno",
+          "Ishum",
+          "Kresnik",
+          "Nemesis",
+          "Obsidian",
+          "Scorch",
+          "Tana",
+          "Vesta",
+          "Vesuvius"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -27404,6 +27451,28 @@
           "Page": 310
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Anubis",
+          "Banshee",
+          "Barrow",
+          "Cairn",
+          "Cerberus",
+          "Charon",
+          "Elysia",
+          "Keen",
+          "Kur",
+          "Lament",
+          "Mantus",
+          "Morrigan",
+          "Mourn",
+          "Necropolis",
+          "Orcus",
+          "Osiris",
+          "Requiem",
+          "Stygia",
+          "Tartarus",
+          "Thrace"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -28391,6 +28460,28 @@
           "Page": 311
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Beira",
+          "Boreas",
+          "Caradhras",
+          "Cicero",
+          "Demetria",
+          "Enten",
+          "Fissure",
+          "Frost",
+          "Gelida",
+          "Jotunn",
+          "Kanna",
+          "Karn",
+          "Kheimon",
+          "Moroz",
+          "Nix",
+          "Olwen",
+          "Osolok",
+          "Taiga",
+          "Thule",
+          "Varnholme"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -29475,6 +29566,28 @@
           "Page": 312
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Aether",
+          "Arrokoth",
+          "Esen",
+          "Hanish",
+          "Magnus",
+          "Magonia",
+          "Mistral",
+          "Nephele",
+          "Nimbus",
+          "Nuada",
+          "Nubium",
+          "Serein",
+          "Stratus",
+          "Taranis",
+          "Tempest",
+          "Tenzin",
+          "Tyr",
+          "Veil",
+          "Velum",
+          "Zephyr"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -30545,6 +30658,28 @@
           "Page": 313
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Acacia",
+          "Aster",
+          "Beryl",
+          "Celadon",
+          "Ceres",
+          "Damu",
+          "Dryad",
+          "Flora",
+          "Iridum",
+          "Iris",
+          "Kishar",
+          "Penumbra",
+          "Roris",
+          "Sylva",
+          "Tangle",
+          "Thorn",
+          "Venom",
+          "Verdure",
+          "Veris",
+          "Viridian"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -31670,6 +31805,28 @@
           "Page": 314
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Aegir",
+          "Alon",
+          "Clarion",
+          "Darya",
+          "Eldoris",
+          "Horizon",
+          "Hydra",
+          "Kai",
+          "Larimar",
+          "Lotan",
+          "Mira",
+          "Navini",
+          "Nerida",
+          "Oceanus",
+          "Pelagic",
+          "Proteus",
+          "Russalka",
+          "Siren",
+          "Thalassa",
+          "Triton"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -32816,6 +32973,28 @@
           "Page": 315
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Aphelion",
+          "Artemis",
+          "Capella",
+          "Cobalt",
+          "Crag",
+          "Dusk",
+          "Eos",
+          "Hecate",
+          "Imbrium",
+          "Latona",
+          "Losna",
+          "Orpheus",
+          "Ory",
+          "Quietus",
+          "Selene",
+          "Silas",
+          "Silex",
+          "Slate",
+          "Themis",
+          "Umbra"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -33886,6 +34065,28 @@
           "Page": 316
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Cavus",
+          "Chrysalis",
+          "Fragment",
+          "Havoc",
+          "Keres",
+          "Lux",
+          "Nemain",
+          "Praxis",
+          "Riven",
+          "Schism",
+          "Shell",
+          "Slag",
+          "Sliver",
+          "Sunder",
+          "Torment",
+          "Vestige",
+          "Vigrid",
+          "Vortex",
+          "Wrath",
+          "Zix"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -34904,6 +35105,28 @@
           "Page": 317
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Achlys",
+          "Animus",
+          "Bane",
+          "Blight",
+          "Carrion",
+          "Chitin",
+          "Datura",
+          "Dreck",
+          "Erra",
+          "Febris",
+          "Malacia",
+          "Miasma",
+          "Morbus",
+          "Pathosis",
+          "Pestis",
+          "Scourge",
+          "Telium",
+          "Timoris",
+          "Verus",
+          "Xanthous"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -35898,6 +36121,28 @@
           "Page": 318
         },
         "Category": "Oracles / Planets",
+        "Sample Names": [
+          "Chiron",
+          "Demeter",
+          "Erebos",
+          "Erembour",
+          "Feronia",
+          "Fortuna",
+          "Gaia",
+          "Harbinger",
+          "Haven",
+          "Hope",
+          "Morpheus",
+          "Nemus",
+          "Sapphire",
+          "Serenity",
+          "Sif",
+          "Silva",
+          "Sirona",
+          "Solstice",
+          "Vale",
+          "Valinor"
+        ],
         "Usage": {
           "Requires": {
             "Attributes": [
@@ -38895,13 +39140,19 @@
             "Floor": 2,
             "Ceiling": 2,
             "$id": "Oracles / Settlements / Name / 2",
-            "Result": "Altair"
+            "Result": "Altair",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 3,
             "Ceiling": 3,
             "$id": "Oracles / Settlements / Name / 3",
-            "Result": "Altura"
+            "Result": "Altura",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 4,
@@ -38931,7 +39182,10 @@
             "Floor": 8,
             "Ceiling": 8,
             "$id": "Oracles / Settlements / Name / 8",
-            "Result": "Astra"
+            "Result": "Astra",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 9,
@@ -38961,7 +39215,10 @@
             "Floor": 13,
             "Ceiling": 13,
             "$id": "Oracles / Settlements / Name / 13",
-            "Result": "Burnell"
+            "Result": "Burnell",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 14,
@@ -38985,7 +39242,10 @@
             "Floor": 17,
             "Ceiling": 17,
             "$id": "Oracles / Settlements / Name / 17",
-            "Result": "Deadrock"
+            "Result": "Deadrock",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 18,
@@ -39009,13 +39269,19 @@
             "Floor": 21,
             "Ceiling": 21,
             "$id": "Oracles / Settlements / Name / 21",
-            "Result": "Erebus"
+            "Result": "Erebus",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 22,
             "Ceiling": 22,
             "$id": "Oracles / Settlements / Name / 22",
-            "Result": "Eris"
+            "Result": "Eris",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 23,
@@ -39033,7 +39299,10 @@
             "Floor": 25,
             "Ceiling": 25,
             "$id": "Oracles / Settlements / Name / 25",
-            "Result": "Farpoint"
+            "Result": "Farpoint",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 26,
@@ -39045,7 +39314,10 @@
             "Floor": 27,
             "Ceiling": 27,
             "$id": "Oracles / Settlements / Name / 27",
-            "Result": "Florin"
+            "Result": "Florin",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 28,
@@ -39063,7 +39335,10 @@
             "Floor": 30,
             "Ceiling": 30,
             "$id": "Oracles / Settlements / Name / 30",
-            "Result": "Freya"
+            "Result": "Freya",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 31,
@@ -39087,25 +39362,37 @@
             "Floor": 34,
             "Ceiling": 34,
             "$id": "Oracles / Settlements / Name / 34",
-            "Result": "Helia"
+            "Result": "Helia",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 35,
             "Ceiling": 35,
             "$id": "Oracles / Settlements / Name / 35",
-            "Result": "Hypatia"
+            "Result": "Hypatia",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 36,
             "Ceiling": 36,
             "$id": "Oracles / Settlements / Name / 36",
-            "Result": "Hyperion"
+            "Result": "Hyperion",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 37,
             "Ceiling": 37,
             "$id": "Oracles / Settlements / Name / 37",
-            "Result": "Janus"
+            "Result": "Janus",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 38,
@@ -39117,37 +39404,55 @@
             "Floor": 39,
             "Ceiling": 39,
             "$id": "Oracles / Settlements / Name / 39",
-            "Result": "Kepler"
+            "Result": "Kepler",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 40,
             "Ceiling": 40,
             "$id": "Oracles / Settlements / Name / 40",
-            "Result": "Koshiba"
+            "Result": "Koshiba",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 41,
             "Ceiling": 41,
             "$id": "Oracles / Settlements / Name / 41",
-            "Result": "Lagrange"
+            "Result": "Lagrange",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 42,
             "Ceiling": 42,
             "$id": "Oracles / Settlements / Name / 42",
-            "Result": "Larissa"
+            "Result": "Larissa",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 43,
             "Ceiling": 43,
             "$id": "Oracles / Settlements / Name / 43",
-            "Result": "Lasthope"
+            "Result": "Lasthope",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 44,
             "Ceiling": 44,
             "$id": "Oracles / Settlements / Name / 44",
-            "Result": "Lastport"
+            "Result": "Lastport",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 45,
@@ -39165,13 +39470,19 @@
             "Floor": 47,
             "Ceiling": 47,
             "$id": "Oracles / Settlements / Name / 47",
-            "Result": "Luminus"
+            "Result": "Luminus",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 48,
             "Ceiling": 48,
             "$id": "Oracles / Settlements / Name / 48",
-            "Result": "Lyra"
+            "Result": "Lyra",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 49,
@@ -39189,25 +39500,37 @@
             "Floor": 51,
             "Ceiling": 51,
             "$id": "Oracles / Settlements / Name / 51",
-            "Result": "Moirai"
+            "Result": "Moirai",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 52,
             "Ceiling": 52,
             "$id": "Oracles / Settlements / Name / 52",
-            "Result": "Mudd"
+            "Result": "Mudd",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 53,
             "Ceiling": 53,
             "$id": "Oracles / Settlements / Name / 53",
-            "Result": "Neoma"
+            "Result": "Neoma",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 54,
             "Ceiling": 54,
             "$id": "Oracles / Settlements / Name / 54",
-            "Result": "Nerio"
+            "Result": "Nerio",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 55,
@@ -39219,13 +39542,19 @@
             "Floor": 56,
             "Ceiling": 56,
             "$id": "Oracles / Settlements / Name / 56",
-            "Result": "Nyx"
+            "Result": "Nyx",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 57,
             "Ceiling": 57,
             "$id": "Oracles / Settlements / Name / 57",
-            "Result": "Osseus"
+            "Result": "Osseus",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 58,
@@ -39243,7 +39572,10 @@
             "Floor": 60,
             "Ceiling": 60,
             "$id": "Oracles / Settlements / Name / 60",
-            "Result": "Paxton"
+            "Result": "Paxton",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 61,
@@ -39309,7 +39641,10 @@
             "Floor": 71,
             "Ceiling": 71,
             "$id": "Oracles / Settlements / Name / 71",
-            "Result": "Redhaven"
+            "Result": "Redhaven",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 72,
@@ -39333,7 +39668,10 @@
             "Floor": 75,
             "Ceiling": 75,
             "$id": "Oracles / Settlements / Name / 75",
-            "Result": "Rhiannon"
+            "Result": "Rhiannon",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 76,
@@ -39351,7 +39689,10 @@
             "Floor": 78,
             "Ceiling": 78,
             "$id": "Oracles / Settlements / Name / 78",
-            "Result": "Sagan"
+            "Result": "Sagan",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 79,
@@ -39363,7 +39704,10 @@
             "Floor": 80,
             "Ceiling": 80,
             "$id": "Oracles / Settlements / Name / 80",
-            "Result": "Selena"
+            "Result": "Selena",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 81,
@@ -39381,19 +39725,28 @@
             "Floor": 83,
             "Ceiling": 83,
             "$id": "Oracles / Settlements / Name / 83",
-            "Result": "Silvana"
+            "Result": "Silvana",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 84,
             "Ceiling": 84,
             "$id": "Oracles / Settlements / Name / 84",
-            "Result": "Sirius"
+            "Result": "Sirius",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 85,
             "Ceiling": 85,
             "$id": "Oracles / Settlements / Name / 85",
-            "Result": "Sisyphus"
+            "Result": "Sisyphus",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 86,
@@ -39411,7 +39764,10 @@
             "Floor": 88,
             "Ceiling": 88,
             "$id": "Oracles / Settlements / Name / 88",
-            "Result": "Starfall"
+            "Result": "Starfall",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 89,
@@ -39429,7 +39785,10 @@
             "Floor": 91,
             "Ceiling": 91,
             "$id": "Oracles / Settlements / Name / 91",
-            "Result": "Tyson"
+            "Result": "Tyson",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 92,
@@ -39447,7 +39806,10 @@
             "Floor": 94,
             "Ceiling": 94,
             "$id": "Oracles / Settlements / Name / 94",
-            "Result": "Vega"
+            "Result": "Vega",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 95,
@@ -39477,7 +39839,10 @@
             "Floor": 99,
             "Ceiling": 99,
             "$id": "Oracles / Settlements / Name / 99",
-            "Result": "Weyland"
+            "Result": "Weyland",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 100,
@@ -40327,7 +40692,8 @@
             },
             "Content": {
               "Part of speech": [
-                "adjective"
+                "adjective",
+                "proper noun fragment"
               ],
               "Tags": [
                 "template fragment"
@@ -40350,7 +40716,10 @@
                 "Floor": 5,
                 "Ceiling": 6,
                 "$id": "Oracles / Space / Sector Name / Prefix / 5-6",
-                "Result": "Asteria"
+                "Result": "Asteria",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 7,
@@ -40386,13 +40755,19 @@
                 "Floor": 17,
                 "Ceiling": 18,
                 "$id": "Oracles / Space / Sector Name / Prefix / 17-18",
-                "Result": "Cortana"
+                "Result": "Cortana",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 19,
                 "Ceiling": 20,
                 "$id": "Oracles / Space / Sector Name / Prefix / 19-20",
-                "Result": "Corvus"
+                "Result": "Corvus",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 21,
@@ -40404,25 +40779,38 @@
                 "Floor": 23,
                 "Ceiling": 24,
                 "$id": "Oracles / Space / Sector Name / Prefix / 23-24",
-                "Result": "Cygnus"
+                "Result": "Cygnus",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 25,
                 "Ceiling": 26,
                 "$id": "Oracles / Space / Sector Name / Prefix / 25-26",
-                "Result": "Delphi"
+                "Result": "Delphi",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 27,
                 "Ceiling": 28,
                 "$id": "Oracles / Space / Sector Name / Prefix / 27-28",
-                "Result": "Delphian"
+                "Result": "Delphian",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 29,
                 "Ceiling": 30,
                 "$id": "Oracles / Space / Sector Name / Prefix / 29-30",
-                "Result": "Devil's"
+                "Result": "Devil's",
+                "Part of speech": [
+                  "proper noun",
+                  "possessive case"
+                ]
               },
               {
                 "Floor": 31,
@@ -40434,7 +40822,10 @@
                 "Floor": 33,
                 "Ceiling": 34,
                 "$id": "Oracles / Space / Sector Name / Prefix / 33-34",
-                "Result": "Essus"
+                "Result": "Essus",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 35,
@@ -40452,7 +40843,11 @@
                 "Floor": 39,
                 "Ceiling": 40,
                 "$id": "Oracles / Space / Sector Name / Prefix / 39-40",
-                "Result": "Fool's"
+                "Result": "Fool's",
+                "Part of speech": [
+                  "proper noun",
+                  "possessive case"
+                ]
               },
               {
                 "Floor": 41,
@@ -40494,7 +40889,10 @@
                 "Floor": 53,
                 "Ceiling": 54,
                 "$id": "Oracles / Space / Sector Name / Prefix / 53-54",
-                "Result": "Invidia"
+                "Result": "Invidia",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 55,
@@ -40506,37 +40904,55 @@
                 "Floor": 57,
                 "Ceiling": 58,
                 "$id": "Oracles / Space / Sector Name / Prefix / 57-58",
-                "Result": "Kalidas"
+                "Result": "Kalidas",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 59,
                 "Ceiling": 60,
                 "$id": "Oracles / Space / Sector Name / Prefix / 59-60",
-                "Result": "Kronos"
+                "Result": "Kronos",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 61,
                 "Ceiling": 62,
                 "$id": "Oracles / Space / Sector Name / Prefix / 61-62",
-                "Result": "Lacuna"
+                "Result": "Lacuna",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 63,
                 "Ceiling": 64,
                 "$id": "Oracles / Space / Sector Name / Prefix / 63-64",
-                "Result": "Lumen"
+                "Result": "Lumen",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 65,
                 "Ceiling": 66,
                 "$id": "Oracles / Space / Sector Name / Prefix / 65-66",
-                "Result": "Mobius"
+                "Result": "Mobius",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 67,
                 "Ceiling": 68,
                 "$id": "Oracles / Space / Sector Name / Prefix / 67-68",
-                "Result": "Morien"
+                "Result": "Morien",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 69,
@@ -40554,7 +40970,10 @@
                 "Floor": 73,
                 "Ceiling": 74,
                 "$id": "Oracles / Space / Sector Name / Prefix / 73-74",
-                "Result": "Sanguis"
+                "Result": "Sanguis",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 75,
@@ -40584,13 +41003,19 @@
                 "Floor": 83,
                 "Ceiling": 84,
                 "$id": "Oracles / Space / Sector Name / Prefix / 83-84",
-                "Result": "Sindri"
+                "Result": "Sindri",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 85,
                 "Ceiling": 86,
                 "$id": "Oracles / Space / Sector Name / Prefix / 85-86",
-                "Result": "Solana"
+                "Result": "Solana",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 87,
@@ -40602,7 +41027,10 @@
                 "Floor": 89,
                 "Ceiling": 90,
                 "$id": "Oracles / Space / Sector Name / Prefix / 89-90",
-                "Result": "Sulaco"
+                "Result": "Sulaco",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 91,
@@ -40614,7 +41042,10 @@
                 "Floor": 93,
                 "Ceiling": 94,
                 "$id": "Oracles / Space / Sector Name / Prefix / 93-94",
-                "Result": "Thunor"
+                "Result": "Thunor",
+                "Part of speech": [
+                  "proper noun"
+                ]
               },
               {
                 "Floor": 95,
@@ -40676,7 +41107,8 @@
             },
             "Content": {
               "Part of speech": [
-                "noun"
+                "noun",
+                "proper noun fragment"
               ],
               "Tags": [
                 "template fragment",
@@ -43403,7 +43835,10 @@
             "Floor": 1,
             "Ceiling": 1,
             "$id": "Oracles / Starships / Name / 1",
-            "Result": "Arclight"
+            "Result": "Arclight",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 2,
@@ -43415,7 +43850,10 @@
             "Floor": 3,
             "Ceiling": 3,
             "$id": "Oracles / Starships / Name / 3",
-            "Result": "Artemis"
+            "Result": "Artemis",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 4,
@@ -43427,7 +43865,10 @@
             "Floor": 5,
             "Ceiling": 5,
             "$id": "Oracles / Starships / Name / 5",
-            "Result": "Atlas"
+            "Result": "Atlas",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 6,
@@ -43439,19 +43880,22 @@
             "Floor": 7,
             "Ceiling": 7,
             "$id": "Oracles / Starships / Name / 7",
-            "Result": "Avari&#39;s Wake"
+            "Result": "Avari’s Wake"
           },
           {
             "Floor": 8,
             "Ceiling": 8,
             "$id": "Oracles / Starships / Name / 8",
-            "Result": "Banshee&#39;s Cry"
+            "Result": "Banshee’s Cry"
           },
           {
             "Floor": 9,
             "Ceiling": 9,
             "$id": "Oracles / Starships / Name / 9",
-            "Result": "Beowulf"
+            "Result": "Beowulf",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 10,
@@ -43487,7 +43931,7 @@
             "Floor": 15,
             "Ceiling": 15,
             "$id": "Oracles / Starships / Name / 15",
-            "Result": "Dawn&#39;s Herald"
+            "Result": "Dawn’s Herald"
           },
           {
             "Floor": 16,
@@ -43529,7 +43973,10 @@
             "Floor": 22,
             "Ceiling": 22,
             "$id": "Oracles / Starships / Name / 22",
-            "Result": "Excalibur"
+            "Result": "Excalibur",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 23,
@@ -43577,7 +44024,7 @@
             "Floor": 30,
             "Ceiling": 30,
             "$id": "Oracles / Starships / Name / 30",
-            "Result": "Fortune&#39;s Favor"
+            "Result": "Fortune’s Favor"
           },
           {
             "Floor": 31,
@@ -43631,7 +44078,10 @@
             "Floor": 39,
             "Ceiling": 39,
             "$id": "Oracles / Starships / Name / 39",
-            "Result": "Invictus"
+            "Result": "Invictus",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 40,
@@ -43643,7 +44093,7 @@
             "Floor": 41,
             "Ceiling": 41,
             "$id": "Oracles / Starships / Name / 41",
-            "Result": "Karena&#39;s Reverie"
+            "Result": "Karena’s Reverie"
           },
           {
             "Floor": 42,
@@ -43655,7 +44105,7 @@
             "Floor": 43,
             "Ceiling": 43,
             "$id": "Oracles / Starships / Name / 43",
-            "Result": "Kuno&#39;s Hammer"
+            "Result": "Kuno’s Hammer"
           },
           {
             "Floor": 44,
@@ -43703,7 +44153,10 @@
             "Floor": 51,
             "Ceiling": 51,
             "$id": "Oracles / Starships / Name / 51",
-            "Result": "Mutara"
+            "Result": "Mutara",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 52,
@@ -43715,7 +44168,7 @@
             "Floor": 53,
             "Ceiling": 53,
             "$id": "Oracles / Starships / Name / 53",
-            "Result": "Newton&#39;s Folly"
+            "Result": "Newton’s Folly"
           },
           {
             "Floor": 54,
@@ -43781,13 +44234,13 @@
             "Floor": 64,
             "Ceiling": 64,
             "$id": "Oracles / Starships / Name / 64",
-            "Result": "Raven&#39;s Call"
+            "Result": "Raven’s Call"
           },
           {
             "Floor": 65,
             "Ceiling": 65,
             "$id": "Oracles / Starships / Name / 65",
-            "Result": "Raya&#39;s Promise"
+            "Result": "Raya’s Promise"
           },
           {
             "Floor": 66,
@@ -43817,13 +44270,16 @@
             "Floor": 70,
             "Ceiling": 70,
             "$id": "Oracles / Starships / Name / 70",
-            "Result": "Rubicon"
+            "Result": "Rubicon",
+            "Part of speech": [
+              "proper noun"
+            ]
           },
           {
             "Floor": 71,
             "Ceiling": 71,
             "$id": "Oracles / Starships / Name / 71",
-            "Result": "Sareea&#39;s Tribute"
+            "Result": "Sareea’s Tribute"
           },
           {
             "Floor": 72,
@@ -43883,7 +44339,10 @@
             "Floor": 81,
             "Ceiling": 81,
             "$id": "Oracles / Starships / Name / 81",
-            "Result": "Starfall"
+            "Result": "Starfall",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 82,
@@ -43895,7 +44354,10 @@
             "Floor": 83,
             "Ceiling": 83,
             "$id": "Oracles / Starships / Name / 83",
-            "Result": "Stormswept"
+            "Result": "Stormswept",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 84,
@@ -43913,7 +44375,10 @@
             "Floor": 86,
             "Ceiling": 86,
             "$id": "Oracles / Starships / Name / 86",
-            "Result": "Sureshot"
+            "Result": "Sureshot",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 87,
@@ -43967,7 +44432,7 @@
             "Floor": 95,
             "Ceiling": 95,
             "$id": "Oracles / Starships / Name / 95",
-            "Result": "Valora&#39;s Comet"
+            "Result": "Valora’s Comet"
           },
           {
             "Floor": 96,
@@ -43991,7 +44456,10 @@
             "Floor": 99,
             "Ceiling": 99,
             "$id": "Oracles / Starships / Name / 99",
-            "Result": "Voidtreader"
+            "Result": "Voidtreader",
+            "Part of speech": [
+              "compound noun"
+            ]
           },
           {
             "Floor": 100,
