@@ -6,7 +6,7 @@
         <div class="flexrow nogrow">
           <document-name :document="actor" />
           <div
-            class="clickable block disabled nogrow"
+            class="clickable block nogrow"
             style="
               margin: 5px 0px;
               padding: 0 5px;
@@ -262,9 +262,12 @@ export default {
     async randomizeName() {
       // no oracle for this
       const klass = capitalize(this.actor.data.klass)
-      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
-        `Oracles / Planets / ${this.actor} / Name`
+      const json = await CONFIG.IRONSWORN.sfOracleJsonByDataforgedId(
+        `Oracles / Planets / ${klass}`
       )
+      const name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
+      console.log(name)
+      this.$actor.update({ name })
     },
     async randomizeKlass() {
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
