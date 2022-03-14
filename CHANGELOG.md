@@ -3,6 +3,7 @@
 ## In progress
 
 - Random planet names ([#231](https://github.com/ben/foundry-ironsworn/pull/231))
+- Fix the Vue Ironsworn sheet's 0-xp button ([#232](https://github.com/ben/foundry-ironsworn/pull/232))
 
 ## 1.10.23
 

@@ -5,6 +5,7 @@
     <div class="flexrow xp">
       <h4 style="flex-grow: 0; margin: 5px">{{ $t('IRONSWORN.XP') }}</h4>
       <div class="flexrow">
+        <xp-box :actor="actor" :value="0" @click="setXp(0)">×</xp-box>
         <xp-box
           :actor="actor"
           v-for="n in xpArray"
@@ -13,7 +14,6 @@
           :current="actor.data.xp"
           @click="setXp(n)"
         />
-        <xp-box :actor="actor" :value="0">×</xp-box>
       </div>
     </div>
   </header>
