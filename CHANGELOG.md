@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Random planet names ([#231](https://github.com/ben/foundry-ironsworn/pull/231))
+
 ## 1.10.23
 
 - Add a sector-edit dialog ([#224](https://github.com/ben/foundry-ironsworn/pull/225))
