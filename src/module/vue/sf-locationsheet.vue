@@ -305,7 +305,10 @@ export default {
       if (!drawText) return
 
       // Append to description
-      const description = `${this.actor.data.description}\n<p><strong>${oracle.title}:</strong> ${drawText}</p>`
+      const description = `
+        ${this.actor.data.description ?? ''}\n
+        <p><strong>${oracle.title}:</strong> ${drawText}</p>
+      `
       await this.$actor.update({ data: { description } })
     },
   },
