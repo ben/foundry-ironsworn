@@ -39,7 +39,7 @@ export function activateChangelogListeners() {
     sendToChat(item.parent, `${itemName} ${content}`)
   })
 
-  Hooks.on('createItem', async (item: IronswornItem, options, _userId: number) => {
+  Hooks.on('preCreateItem', async (item: IronswornItem, options, _userId: number) => {
     if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
