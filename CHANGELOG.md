@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix a bug where creating progress/vow items would output to chat multiple times ([#235](https://github.com/ben/foundry-ironsworn/pull/235))
+
 ## 1.10.24
 
 - Random planet names ([#231](https://github.com/ben/foundry-ironsworn/pull/231))
