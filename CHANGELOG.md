@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix a bug where creating progress/vow items would output to chat multiple times ([#235](https://github.com/ben/foundry-ironsworn/pull/235))
+- Add a notes area to the delve sheet ([#236](https://github.com/ben/foundry-ironsworn/pull/236))
 
 ## 1.10.24
 
