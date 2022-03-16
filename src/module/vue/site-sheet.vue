@@ -24,6 +24,7 @@
       <progress-track :ticks="actor.data.current" />
     </div>
 
+    <!-- THEME/DOMAIN -->
     <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow nogrow">
         <site-droparea
@@ -57,7 +58,11 @@
         >
           <h4>{{ $t('IRONSWORN.Feature') }}</h4>
         </div>
-        <site-movebox :actor="actor" move="Reveal a Danger" :disabled="!hasThemeAndDomain" />
+        <site-movebox
+          :actor="actor"
+          move="Reveal a Danger"
+          :disabled="!hasThemeAndDomain"
+        />
       </div>
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Find an Opportunity" />
@@ -76,7 +81,7 @@
       <icon-button icon="dice-d6" @click="randomDenizen" />
       <icon-button icon="atlas" @click="openFoeCompendium" />
     </h4>
-    <div class="boxgroup nogrow">
+    <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-denizenbox :actor="actor" :idx="0" ref="denizen-0" />
         <site-denizenbox :actor="actor" :idx="1" ref="denizen-1" />
@@ -96,6 +101,10 @@
         <site-denizenbox :actor="actor" :idx="11" ref="denizen-11" />
       </div>
     </div>
+
+    <!-- NOTES -->
+    <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
+    <textarea v-model="actor.data.description" @blur="saveDescription" />
   </div>
 </template>
 
@@ -109,6 +118,13 @@
     margin: 0;
     white-space: nowrap;
   }
+}
+
+textarea {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-radius: 1px;
+  resize: none;
+  font-family: var(--font-primary);
 }
 </style>
 
@@ -204,13 +220,13 @@ export default {
 
       // Denizen slot is empty; set focus and add a class
       if (!denizen?.description) {
-        await this.$actor.setFlag(
-          'foundry-ironsworn',
-          'edit-mode',
-          true
-        )
+        await this.$actor.setFlag('foundry-ironsworn', 'edit-mode', true)
         this.$refs[`denizen-${idx}`]?.focus()
       }
+    },
+
+    async saveDescription() {
+      this.$actor.update({ 'data.description': this.actor.data.description })
     },
   },
 }
