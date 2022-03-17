@@ -36,13 +36,12 @@ function editSector() {
   }
 }
 
-async function newPlanet() {
-  console.log('new planet')
+async function newLocation(subtype: string, name: string) {
   const parentFolder = await ensureFolder('Locations', game.scenes?.current?.name ?? '???')
-  const actor = await IronswornActor.create({
+  const loc = await IronswornActor.create({
     type: 'location',
-    name: 'New Location',
-    data: { subtype: 'planet' },
+    name,
+    data: { subtype },
     token: {
       displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
       disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
@@ -50,9 +49,20 @@ async function newPlanet() {
     },
     folder: parentFolder?.id,
   })
-  actor?.sheet?.render(true)
-
   // TODO: place it on the map
+  loc?.sheet?.render(true)
+}
+
+function newPlanet() {
+  newLocation('planet', 'New Planet')
+}
+
+function newStar() {
+  newLocation('star', 'New Stellar Object')
+}
+
+function newSettlement() {
+  newLocation('settlement', 'New Settlement')
 }
 
 export function activateSceneButtonListeners() {
@@ -76,9 +86,9 @@ export function activateSceneButtonListeners() {
       tools: [
         { name: 'edit', icon: 'fas fa-edit', title: game.i18n.localize('IRONSWORN.Edit'), onClick: editSector },
         { name: 'sector', icon: 'fas fa-globe', title: game.i18n.localize('IRONSWORN.NewSector'), onClick: warn },
-        { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar'), onClick: warn },
+        { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar'), onClick: newStar },
         { name: 'planet', icon: 'fas fa-globe-europe', title: game.i18n.localize('IRONSWORN.NewPlanet'), onClick: newPlanet },
-        { name: 'settlement', icon: 'fas fa-city', title: game.i18n.localize('IRONSWORN.NewSettlement'), onClick: warn },
+        { name: 'settlement', icon: 'fas fa-city', title: game.i18n.localize('IRONSWORN.NewSettlement'), onClick: newSettlement },
       ],
     }
 
