@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Scene buttons generate actors in folders ([#237](https://github.com/ben/foundry-ironsworn/pull/237))
+
 ## 1.10.25
 
 - Fix a bug where creating progress/vow items would output to chat multiple times ([#235](https://github.com/ben/foundry-ironsworn/pull/235))
