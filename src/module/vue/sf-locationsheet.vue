@@ -260,7 +260,7 @@ export default {
       const img = randomImage(subtype, klass)
 
       await this.$actor.update({ img, data: { klass } })
-      // TODO: update prototype and all linked tokens
+      await this.updateAllTokens({ img })
     },
 
     async randomizeName() {
@@ -271,7 +271,8 @@ export default {
       )
       const name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
       console.log(name)
-      this.$actor.update({ name })
+      await this.$actor.update({ name })
+      await this.updateAllTokens({ name })
     },
     async randomizeKlass() {
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
@@ -305,8 +306,24 @@ export default {
       if (!drawText) return
 
       // Append to description
-      const description = `${this.actor.data.description}\n<p><strong>${oracle.title}:</strong> ${drawText}</p>`
+      const description = `
+        ${this.actor.data.description ?? ''}\n
+        <p><strong>${oracle.title}:</strong> ${drawText}</p>
+      `
       await this.$actor.update({ data: { description } })
+    },
+
+    async updateAllTokens(data) {
+      // Prototype token
+      await this.$actor.data.token.update(data)
+
+      // All tokens in the scene
+      const activeTokens = this.$actor.getActiveTokens()
+      const updates = activeTokens.map((at) => ({
+        _id: at.data._id,
+        ...data,
+      }))
+      await canvas.scene?.updateEmbeddedDocuments('Token', updates)
     },
   },
 }

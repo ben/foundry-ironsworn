@@ -86,6 +86,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       type,
       token: {
         displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
+        disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
         actorLink: true,
       },
       folder: this.options.folder || undefined,
