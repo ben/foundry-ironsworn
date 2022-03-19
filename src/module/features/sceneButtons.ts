@@ -13,7 +13,6 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
 
   for (const name of path) {
     if (directory === undefined) {
-      console.log('!!!')
       ui.notifications?.warn('Actor folders not found???')
       return
     }
@@ -36,6 +35,33 @@ function editSector() {
   }
 }
 
+async function dropToken(location: IronswornActor) {
+  if (!canvas?.scene || !canvas.stage || !canvas.grid) return
+
+  // Calculate coordinates in the center of the viewport
+  const {clientWidth, clientHeight} = document.documentElement;
+  const [cx, cy] = [clientWidth / 2, clientHeight / 2]; // Center of viewport
+  const t = canvas.stage.worldTransform;
+  const scale = canvas.stage.scale;
+  const [x, y] = [(cx - t.tx) / scale.x, (cy - t.ty) / scale.y];
+
+  // Snap to viewport
+  const td = await location.getTokenData({x, y})
+  const hw = canvas.grid.w/2;
+  const hh = canvas.grid.h/2;
+  const pos = canvas.grid.getSnappedPosition(td.x - (td.width*hw), td.y - (td.height*hh))
+  td.update(pos);
+
+  // TODO: avoid dropping this on top of another token
+
+  // Create the token
+  const cls = getDocumentClass("Token");
+  await cls.create(td, {parent: canvas.scene});
+
+  // Move the user back to the token layer
+  canvas.tokens?.activate()
+}
+
 async function newLocation(subtype: string, name: string) {
   const parentFolder = await ensureFolder('Locations', game.scenes?.current?.name ?? '???')
   const loc = await IronswornActor.create({
@@ -49,7 +75,9 @@ async function newLocation(subtype: string, name: string) {
     },
     folder: parentFolder?.id,
   })
-  // TODO: place it on the map
+  if (!loc) return
+
+  await dropToken(loc)
   loc?.sheet?.render(true)
 }
 
