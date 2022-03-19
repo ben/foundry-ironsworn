@@ -75,10 +75,7 @@
       </div>
     </header>
 
-    <section
-      class="boxgroup flexcol nogrow"
-      v-if="actor.data.subtype === 'planet'"
-    >
+    <section class="boxgroup flexcol nogrow">
       <div class="boxrow">
         <div
           class="clickable block box"
@@ -86,7 +83,7 @@
           @mouseleave="firstLookHighlight = false"
           @click="rollFirstLook"
         >
-          <i class="fas fa-eye"></i> &nbsp; First look
+          <i class="fas fa-dice"></i>
         </div>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
@@ -170,22 +167,51 @@ export default {
         return [
           { value: 'planetside', label: 'Planetside' },
           { value: 'orbital', label: 'Orbital' },
-          { value: 'deepspace', label: 'Deep Space' },
+          { value: 'deep space', label: 'Deep Space' },
         ]
       }
       return [
-        { value: 'smoldering', label: 'Smoldering Red Star' },
-        { value: 'glowing', label: 'Glowing Orange Star' },
-        { value: 'burning', label: 'Burning Yellow Star' },
-        { value: 'blazing', label: 'Blazing Blue Star' },
-        { value: 'young', label: 'Young Star' },
-        { value: 'whitedwarf', label: 'White Dwarf' },
-        { value: 'corrupted', label: 'Corrupted Star' },
-        { value: 'neutron', label: 'Neutron Star' },
-        { value: 'double', label: 'Binary Stars' },
-        { value: 'blackhole', label: 'Black Hole' },
-        { value: 'artificial', label: 'Artificial Star' },
-        { value: 'unstable', label: 'Unstable Star' },
+        { value: 'smoldering red star', label: 'Smoldering Red Star' },
+        { value: 'glowing orange star', label: 'Glowing Orange Star' },
+        { value: 'burning yellow star', label: 'Burning Yellow Star' },
+        { value: 'blazing blue star', label: 'Blazing Blue Star' },
+        {
+          value: 'young star incubating in a molecular cloud',
+          label: 'Young Star',
+        },
+        {
+          value: 'white dwarf shining with spectral light',
+          label: 'White Dwarf',
+        },
+        {
+          value: 'corrupted star radiating with unnatural light',
+          label: 'Corrupted Star',
+        },
+        {
+          value: 'neutron star surrounded by intense magnetic fields',
+          label: 'Neutron Star',
+        },
+        {
+          value:
+            'two stars in close orbit connected by fiery tendrils of energy',
+          label: 'Binary Stars',
+        },
+        {
+          value: 'black hole allows nothing to escape—not even light',
+          label: 'Black Hole',
+        },
+        {
+          value: 'hypergiant star generating turbulent solar winds',
+          label: 'Hypergiant',
+        },
+        {
+          value: 'artificial star constructed by a long-dead civilization',
+          label: 'Artificial Star',
+        },
+        {
+          value: 'unstable star showing signs of impending supernova',
+          label: 'Unstable Star',
+        },
       ]
     },
 
@@ -240,6 +266,36 @@ export default {
             },
           ],
         ]
+      } else if (subtype === 'settlement') {
+        return [
+          [
+            {
+              title: 'Population',
+              dfId: `Oracles / Settlements / Population / ${rc}`,
+              fl: true,
+            },
+            {
+              title: 'First Look',
+              dfId: 'Oracles / Settlements / First Look',
+              qty: '1-2',
+              fl: true,
+            },
+          ],
+          [
+            {
+              title: 'Initial Contact',
+              dfId: 'Oracles / Settlements / Initial Contact',
+            },
+            { title: 'Authority', dfId: 'Oracles / Settlements / Authority' },
+          ],
+          [
+            { title: 'Projects', dfId: 'Oracles / Settlements / Projects' },
+            { title: 'Trouble', dfId: 'Oracles / Settlements / Trouble' },
+          ],
+        ]
+      } else {
+        // stellar object
+        return []
       }
     },
   },
@@ -264,20 +320,35 @@ export default {
     },
 
     async randomizeName() {
-      // no oracle for this
-      const klass = capitalize(this.actor.data.klass)
-      const json = await CONFIG.IRONSWORN.sfOracleJsonByDataforgedId(
-        `Oracles / Planets / ${klass}`
-      )
-      const name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
-      console.log(name)
-      await this.$actor.update({ name })
-      await this.updateAllTokens({ name })
+      let name
+      if (this.actor.data.subtype === 'planet') {
+        // no oracle for this
+        const klass = capitalize(this.actor.data.klass)
+        const json = await CONFIG.IRONSWORN.sfOracleJsonByDataforgedId(
+          `Oracles / Planets / ${klass}`
+        )
+        name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
+      } else if (this.actor.data.subtype === 'settlement') {
+        const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
+          'Oracles / Settlements / Name'
+        )
+        const result = await table?.draw()
+        name = result?.results[0]?.data.text
+      }
+      if (name) {
+        await this.$actor.update({ name })
+        await this.updateAllTokens({ name })
+      }
     },
     async randomizeKlass() {
-      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
-        'Oracles / Planets / Class'
-      )
+      let tableKey
+      if (this.actor.data.subtype === 'planet')
+        tableKey = 'Oracles / Planets / Class'
+      if (this.actor.data.subtype === 'settlement')
+        tableKey = 'Oracles / Settlements / Location'
+      else tableKey = 'Oracles / Space / Stellar Object'
+
+      const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(tableKey)
       const result = await table?.draw()
       const rawText = result?.results[0]?.data.text
       if (!rawText) return
@@ -290,7 +361,6 @@ export default {
     },
 
     async rollFirstLook() {
-      console.log('first look!')
       await this.randomizeKlass()
       await this.randomizeName()
       for (const oracle of flatten(this.oracles)) {
