@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix a wrong-oracle bug with random-type rolling in the location sheet
+
 ## 1.10.26
 
 - Scene buttons generate actors in folders ([#237](https://github.com/ben/foundry-ironsworn/pull/237))

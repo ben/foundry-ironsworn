@@ -342,11 +342,13 @@ export default {
     },
     async randomizeKlass() {
       let tableKey
-      if (this.actor.data.subtype === 'planet')
+      if (this.actor.data.subtype === 'planet') {
         tableKey = 'Oracles / Planets / Class'
-      if (this.actor.data.subtype === 'settlement')
+      } else if (this.actor.data.subtype === 'settlement') {
         tableKey = 'Oracles / Settlements / Location'
-      else tableKey = 'Oracles / Space / Stellar Object'
+      } else {
+        tableKey = 'Oracles / Space / Stellar Object'
+      }
 
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(tableKey)
       const result = await table?.draw()
