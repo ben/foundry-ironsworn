@@ -75,10 +75,7 @@
       </div>
     </header>
 
-    <section
-      class="boxgroup flexcol nogrow"
-      v-if="actor.data.subtype === 'planet'"
-    >
+    <section class="boxgroup flexcol nogrow">
       <div class="boxrow">
         <div
           class="clickable block box"
@@ -86,7 +83,7 @@
           @mouseleave="firstLookHighlight = false"
           @click="rollFirstLook"
         >
-          <i class="fas fa-eye"></i> &nbsp; First look
+          <i class="fas fa-dice"></i>
         </div>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
@@ -240,6 +237,36 @@ export default {
             },
           ],
         ]
+      } else if (subtype === 'settlement') {
+        return [
+          [
+            {
+              title: 'Population',
+              dfId: `Oracles / Settlements / Population / ${rc}`,
+              fl: true,
+            },
+            {
+              title: 'First Look',
+              dfId: 'Oracles / Settlements / First Look',
+              qty: '1-2',
+              fl: true,
+            },
+          ],
+          [
+            {
+              title: 'Initial Contact',
+              dfId: 'Oracles / Settlements / Initial Contact',
+            },
+            { title: 'Authority', dfId: 'Oracles / Settlements / Authority' },
+          ],
+          [
+            { title: 'Projects', dfId: 'Oracles / Settlements / Projects' },
+            { title: 'Trouble', dfId: 'Oracles / Settlements / Trouble' },
+          ],
+        ]
+      } else {
+        // stellar object
+        return []
       }
     },
   },
