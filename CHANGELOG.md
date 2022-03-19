@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.27
+
 - Fix a wrong-oracle bug with random-type rolling in the location sheet
 
 ## 1.10.26
