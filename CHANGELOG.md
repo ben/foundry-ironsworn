@@ -3,6 +3,7 @@
 ## In progress
 
 - Scene buttons generate actors in folders ([#237](https://github.com/ben/foundry-ironsworn/pull/237))
+- …and also drop a token in the center of the viewport ([#239](https://github.com/ben/foundry-ironsworn/pull/239))
 
 ## 1.10.25
 
