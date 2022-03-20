@@ -46,6 +46,7 @@
             <option value="planet">Planet</option>
             <option value="settlement">Settlement</option>
             <option value="star">Stellar Object</option>
+            <option value="derelict">Derelict</option>
           </select>
 
           <!-- Klass -->
@@ -75,7 +76,7 @@
       </div>
     </header>
 
-    <section class="boxgroup flexcol nogrow">
+    <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
       <div class="boxrow">
         <div
           class="clickable block box"
@@ -148,154 +149,169 @@ export default {
 
   computed: {
     klassOptions() {
-      if (this.actor.data.subtype === 'planet') {
-        return [
-          { value: 'desert', label: 'Desert World' },
-          { value: 'furnace', label: 'Furnace World' },
-          { value: 'grave', label: 'Grave World' },
-          { value: 'ice', label: 'Ice World' },
-          { value: 'jovian', label: 'Jovian World' },
-          { value: 'jungle', label: 'Jungle World' },
-          { value: 'ocean', label: 'Ocean World' },
-          { value: 'rocky', label: 'Rocky World' },
-          { value: 'shattered', label: 'Shattered World' },
-          { value: 'tainted', label: 'Tainted World' },
-          { value: 'vital', label: 'Vital World' },
-        ]
+      switch (this.actor.data.subtype) {
+        case 'planet':
+          return [
+            { value: 'desert', label: 'Desert World' },
+            { value: 'furnace', label: 'Furnace World' },
+            { value: 'grave', label: 'Grave World' },
+            { value: 'ice', label: 'Ice World' },
+            { value: 'jovian', label: 'Jovian World' },
+            { value: 'jungle', label: 'Jungle World' },
+            { value: 'ocean', label: 'Ocean World' },
+            { value: 'rocky', label: 'Rocky World' },
+            { value: 'shattered', label: 'Shattered World' },
+            { value: 'tainted', label: 'Tainted World' },
+            { value: 'vital', label: 'Vital World' },
+          ]
+
+        case 'settlement':
+        case 'derelict':
+          return [
+            { value: 'planetside', label: 'Planetside' },
+            { value: 'orbital', label: 'Orbital' },
+            { value: 'deep space', label: 'Deep Space' },
+          ]
+
+        case 'star':
+          return [
+            { value: 'smoldering red star', label: 'Smoldering Red Star' },
+            { value: 'glowing orange star', label: 'Glowing Orange Star' },
+            { value: 'burning yellow star', label: 'Burning Yellow Star' },
+            { value: 'blazing blue star', label: 'Blazing Blue Star' },
+            {
+              value: 'young star incubating in a molecular cloud',
+              label: 'Young Star',
+            },
+            {
+              value: 'white dwarf shining with spectral light',
+              label: 'White Dwarf',
+            },
+            {
+              value: 'corrupted star radiating with unnatural light',
+              label: 'Corrupted Star',
+            },
+            {
+              value: 'neutron star surrounded by intense magnetic fields',
+              label: 'Neutron Star',
+            },
+            {
+              value:
+                'two stars in close orbit connected by fiery tendrils of energy',
+              label: 'Binary Stars',
+            },
+            {
+              value: 'black hole allows nothing to escape—not even light',
+              label: 'Black Hole',
+            },
+            {
+              value: 'hypergiant star generating turbulent solar winds',
+              label: 'Hypergiant',
+            },
+            {
+              value: 'artificial star constructed by a long-dead civilization',
+              label: 'Artificial Star',
+            },
+            {
+              value: 'unstable star showing signs of impending supernova',
+              label: 'Unstable Star',
+            },
+          ]
+
+        default:
+          throw new Error('bad type yo')
       }
-      if (this.actor.data.subtype === 'settlement') {
-        return [
-          { value: 'planetside', label: 'Planetside' },
-          { value: 'orbital', label: 'Orbital' },
-          { value: 'deep space', label: 'Deep Space' },
-        ]
-      }
-      return [
-        { value: 'smoldering red star', label: 'Smoldering Red Star' },
-        { value: 'glowing orange star', label: 'Glowing Orange Star' },
-        { value: 'burning yellow star', label: 'Burning Yellow Star' },
-        { value: 'blazing blue star', label: 'Blazing Blue Star' },
-        {
-          value: 'young star incubating in a molecular cloud',
-          label: 'Young Star',
-        },
-        {
-          value: 'white dwarf shining with spectral light',
-          label: 'White Dwarf',
-        },
-        {
-          value: 'corrupted star radiating with unnatural light',
-          label: 'Corrupted Star',
-        },
-        {
-          value: 'neutron star surrounded by intense magnetic fields',
-          label: 'Neutron Star',
-        },
-        {
-          value:
-            'two stars in close orbit connected by fiery tendrils of energy',
-          label: 'Binary Stars',
-        },
-        {
-          value: 'black hole allows nothing to escape—not even light',
-          label: 'Black Hole',
-        },
-        {
-          value: 'hypergiant star generating turbulent solar winds',
-          label: 'Hypergiant',
-        },
-        {
-          value: 'artificial star constructed by a long-dead civilization',
-          label: 'Artificial Star',
-        },
-        {
-          value: 'unstable star showing signs of impending supernova',
-          label: 'Unstable Star',
-        },
-      ]
     },
 
     oracles() {
       const { subtype, klass } = this.actor.data
       const kc = capitalize(klass)
       const rc = capitalize(this.region)
-      if (subtype === 'planet') {
-        return [
-          [
-            {
-              title: 'Atmosphere',
-              dfId: `Oracles / Planets / ${kc} / Atmosphere`,
-              fl: true,
-            },
-            {
-              title: 'From Space',
-              qty: '1-2',
-              dfId: `Oracles / Planets / ${kc} / Observed From Space`,
-              fl: true,
-            },
-          ],
-          [
-            {
-              title: 'Settlements',
-              dfId: `Oracles / Planets / ${kc} / Settlements / ${rc}`,
-              fl: true,
-            },
-            { title: 'Life', dfId: `Oracles / Planets / ${kc} / Life` },
-            {
-              title: 'Planetside Feature',
-              qty: '1-2',
-              dfId: `Oracles / Planets / ${kc} / Feature`,
-            },
-          ],
-          [
-            {
-              title: 'Peril (life)',
-              dfId: `Oracles / Planets / Peril / Lifebearing`,
-            },
-            {
-              title: 'Peril (no life)',
-              dfId: `Oracles / Planets / Peril / Lifeless`,
-            },
-            {
-              title: 'Opportunity (life)',
-              dfId: `Oracles / Planets / Opportunity / Lifebearing`,
-            },
-            {
-              title: 'Opportunity (no life)',
-              dfId: `Oracles / Planets / Opportunity / Lifeless`,
-            },
-          ],
-        ]
-      } else if (subtype === 'settlement') {
-        return [
-          [
-            {
-              title: 'Population',
-              dfId: `Oracles / Settlements / Population / ${rc}`,
-              fl: true,
-            },
-            {
-              title: 'First Look',
-              dfId: 'Oracles / Settlements / First Look',
-              qty: '1-2',
-              fl: true,
-            },
-          ],
-          [
-            {
-              title: 'Initial Contact',
-              dfId: 'Oracles / Settlements / Initial Contact',
-            },
-            { title: 'Authority', dfId: 'Oracles / Settlements / Authority' },
-          ],
-          [
-            { title: 'Projects', dfId: 'Oracles / Settlements / Projects' },
-            { title: 'Trouble', dfId: 'Oracles / Settlements / Trouble' },
-          ],
-        ]
-      } else {
-        // stellar object
-        return []
+      switch (subtype) {
+        case 'planet':
+          return [
+            [
+              {
+                title: 'Atmosphere',
+                dfId: `Oracles / Planets / ${kc} / Atmosphere`,
+                fl: true,
+              },
+              {
+                title: 'From Space',
+                qty: '1-2',
+                dfId: `Oracles / Planets / ${kc} / Observed From Space`,
+                fl: true,
+              },
+            ],
+            [
+              {
+                title: 'Settlements',
+                dfId: `Oracles / Planets / ${kc} / Settlements / ${rc}`,
+                fl: true,
+              },
+              { title: 'Life', dfId: `Oracles / Planets / ${kc} / Life` },
+              {
+                title: 'Planetside Feature',
+                qty: '1-2',
+                dfId: `Oracles / Planets / ${kc} / Feature`,
+              },
+            ],
+            [
+              {
+                title: 'Peril (life)',
+                dfId: `Oracles / Planets / Peril / Lifebearing`,
+              },
+              {
+                title: 'Peril (no life)',
+                dfId: `Oracles / Planets / Peril / Lifeless`,
+              },
+              {
+                title: 'Opportunity (life)',
+                dfId: `Oracles / Planets / Opportunity / Lifebearing`,
+              },
+              {
+                title: 'Opportunity (no life)',
+                dfId: `Oracles / Planets / Opportunity / Lifeless`,
+              },
+            ],
+          ]
+
+        case 'settlement':
+          return [
+            [
+              {
+                title: 'Population',
+                dfId: `Oracles / Settlements / Population / ${rc}`,
+                fl: true,
+              },
+              {
+                title: 'First Look',
+                dfId: 'Oracles / Settlements / First Look',
+                qty: '1-2',
+                fl: true,
+              },
+            ],
+            [
+              {
+                title: 'Initial Contact',
+                dfId: 'Oracles / Settlements / Initial Contact',
+              },
+              { title: 'Authority', dfId: 'Oracles / Settlements / Authority' },
+            ],
+            [
+              { title: 'Projects', dfId: 'Oracles / Settlements / Projects' },
+              { title: 'Trouble', dfId: 'Oracles / Settlements / Trouble' },
+            ],
+          ]
+
+        case 'star':
+          return [] // TODO
+
+        case 'derelict':
+          return [] // TODO
+
+        default:
+          throw new Error('bad type yo')
       }
     },
   },
@@ -320,34 +336,39 @@ export default {
     },
 
     async randomizeName() {
+      const { subtype, klass } = this.actor.data
       let name
-      if (this.actor.data.subtype === 'planet') {
+      if (subtype === 'planet') {
         // no oracle for this
-        const klass = capitalize(this.actor.data.klass)
+        const kc = capitalize(klass)
         const json = await CONFIG.IRONSWORN.sfOracleJsonByDataforgedId(
-          `Oracles / Planets / ${klass}`
+          `Oracles / Planets / ${kc}`
         )
         name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
-      } else if (this.actor.data.subtype === 'settlement') {
+      } else if (subtype === 'settlement') {
         const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
           'Oracles / Settlements / Name'
         )
         const result = await table?.draw()
         name = result?.results[0]?.data.text
       }
+
       if (name) {
         await this.$actor.update({ name })
         await this.updateAllTokens({ name })
       }
     },
+
     async randomizeKlass() {
       let tableKey
       if (this.actor.data.subtype === 'planet') {
         tableKey = 'Oracles / Planets / Class'
       } else if (this.actor.data.subtype === 'settlement') {
         tableKey = 'Oracles / Settlements / Location'
-      } else {
+      } else if (this.actor.data.subtype === 'star') {
         tableKey = 'Oracles / Space / Stellar Object'
+      } else if (this.actor.data.subtype === 'derelict') {
+        tableKey = 'Oracles / Derelicts / Location'
       }
 
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(tableKey)
