@@ -16,7 +16,7 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
       ui.notifications?.warn('Actor folders not found???')
       return
     }
-    const existing = directory.find(x => x.name === name)
+    const existing = directory.find((x) => x.name === name)
     if (existing) {
       parentFolder = existing
       directory = (existing as any).children
@@ -39,24 +39,24 @@ async function dropToken(location: IronswornActor) {
   if (!canvas?.scene || !canvas.stage || !canvas.grid) return
 
   // Calculate coordinates in the center of the viewport
-  const {clientWidth, clientHeight} = document.documentElement;
-  const [cx, cy] = [clientWidth / 2, clientHeight / 2]; // Center of viewport
-  const t = canvas.stage.worldTransform;
-  const scale = canvas.stage.scale;
-  const [x, y] = [(cx - t.tx) / scale.x, (cy - t.ty) / scale.y];
+  const { clientWidth, clientHeight } = document.documentElement
+  const [cx, cy] = [clientWidth / 2, clientHeight / 2] // Center of viewport
+  const t = canvas.stage.worldTransform
+  const scale = canvas.stage.scale
+  const [x, y] = [(cx - t.tx) / scale.x, (cy - t.ty) / scale.y]
 
   // Snap to viewport
-  const td = await location.getTokenData({x, y})
-  const hw = canvas.grid.w/2;
-  const hh = canvas.grid.h/2;
-  const pos = canvas.grid.getSnappedPosition(td.x - (td.width*hw), td.y - (td.height*hh))
-  td.update(pos);
+  const td = await location.getTokenData({ x, y })
+  const hw = canvas.grid.w / 2
+  const hh = canvas.grid.h / 2
+  const pos = canvas.grid.getSnappedPosition(td.x - td.width * hw, td.y - td.height * hh)
+  td.update(pos)
 
   // TODO: avoid dropping this on top of another token
 
   // Create the token
-  const cls = getDocumentClass("Token");
-  await cls.create(td, {parent: canvas.scene});
+  const cls = getDocumentClass('Token')
+  await cls.create(td, { parent: canvas.scene })
 
   // Move the user back to the token layer
   canvas.tokens?.activate()
