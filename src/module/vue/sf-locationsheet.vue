@@ -131,6 +131,15 @@ function randomImage(subtype, klass) {
     const i = Math.floor(Math.random() * 2) + 1
     return `systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-${name}-0${i}.webp`
   }
+  if (subtype === 'settlement') {
+    return `systems/foundry-ironsworn/assets/locations/rect-${klass.replace(/\s+/,'')}.webp`
+  }
+  if (subtype === 'derelict') {
+    return `systems/foundry-ironsworn/assets/locations/hex-${klass.replace(/\s+/,'')}.webp`
+  }
+  if (subtype === 'vault') {
+    return `systems/foundry-ironsworn/assets/locations/ellipse-${klass.replace(/\s+/,'')}.webp`
+  }
 }
 
 export default {
