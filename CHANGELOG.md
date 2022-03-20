@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Derelict/vault/settlement token images ([#244](https://github.com/ben/foundry-ironsworn/pull/244))
+
 ## 1.10.28
 
 - "Derelict" as a type of location ([#242](https://github.com/ben/foundry-ironsworn/pull/242))
