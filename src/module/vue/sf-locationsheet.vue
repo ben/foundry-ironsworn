@@ -225,7 +225,10 @@ export default {
 
     oracles() {
       const { subtype, klass } = this.actor.data
-      const kc = capitalize(klass)
+      const kc = klass
+        .split(' ')
+        .map((x) => capitalize(x))
+        .join(' ')
       const rc = capitalize(this.region)
       switch (subtype) {
         case 'planet':
@@ -308,7 +311,31 @@ export default {
           return [] // TODO
 
         case 'derelict':
-          return [] // TODO
+          return [
+            [
+              {
+                title: 'Type',
+                dfId: `Oracles / Derelicts / Type / ${kc}`,
+                fl: true,
+              },
+              {
+                title: 'Condition',
+                dfId: `Oracles / Derelicts / Condition`,
+                fl: true,
+              },
+            ],
+            [
+              {
+                title: 'Outer first look',
+                dfId: `Oracles / Derelicts / Outer First Look`,
+                fl: true,
+              },
+              {
+                title: 'Inner first look',
+                dfId: `Oracles / Derelicts / Inner First Look`,
+              },
+            ],
+          ]
 
         default:
           throw new Error('bad type yo')
