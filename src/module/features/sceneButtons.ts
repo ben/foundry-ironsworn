@@ -98,6 +98,10 @@ function newDerelict() {
   newLocation('derelict', 'NewDerelict')
 }
 
+function newVault() {
+  newLocation('vault', 'NewVault')
+}
+
 export function activateSceneButtonListeners() {
   if (!IronswornSettings.starforgedBeta) return
 
@@ -122,7 +126,8 @@ export function activateSceneButtonListeners() {
         { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar'), onClick: newStar },
         { name: 'planet', icon: 'fas fa-globe-europe', title: game.i18n.localize('IRONSWORN.NewPlanet'), onClick: newPlanet },
         { name: 'settlement', icon: 'fas fa-city', title: game.i18n.localize('IRONSWORN.NewSettlement'), onClick: newSettlement },
-        { name: 'derelict', icon: 'fab fa-quinscape', title: game.i18n.localize('IRONSWORN.NewDerelict'), onClick: newDerelict },
+        { name: 'derelict', icon: 'fab fa-rocketchat', title: game.i18n.localize('IRONSWORN.NewDerelict'), onClick: newDerelict },
+        { name: 'vault', icon: 'fab fa-quinscape', title: game.i18n.localize('IRONSWORN.NewVault'), onClick: newVault },
       ],
     }
 
