@@ -340,7 +340,73 @@ export default {
           ]
 
         case 'vault':
-          return []
+          return [
+            [
+              {
+                title: 'Scale',
+                dfId: `Oracles / Vaults / Scale`,
+                fl: true,
+              },
+              {
+                title: 'Form',
+                dfId: `Oracles / Vaults / Form`,
+                fl: true,
+              },
+              {
+                title: 'Shape',
+                dfId: `Oracles / Vaults / Shape`,
+                fl: true,
+              },
+            ],
+            [
+              {
+                title: 'Material',
+                dfId: `Oracles / Vaults / Material`,
+                fl: true,
+              },
+              {
+                title: 'Outer First Look',
+                dfId: `Oracles / Vaults / Outer First Look`,
+                fl: true,
+              },
+            ],
+            [
+              {
+                title: 'Interior First Look',
+                dfId: `Oracles / Vaults / Interior / First Look`,
+              },
+              {
+                title: 'Interior Feature',
+                dfId: `Oracles / Vaults / Interior / Feature`,
+              },
+              {
+                title: 'Interior Peril',
+                dfId: `Oracles / Vaults / Interior / Peril`,
+              },
+              {
+                title: 'Interior Opportunity',
+                dfId: `Oracles / Vaults / Interior / Opportunity`,
+              },
+            ],
+            [
+              {
+                title: 'Sanctum Purpose',
+                dfId: `Oracles / Vaults / Sanctum / Purpose`,
+              },
+              {
+                title: 'Sanctum Feature',
+                dfId: `Oracles / Vaults / Sanctum / Feature`,
+              },
+              {
+                title: 'Sanctum Peril',
+                dfId: `Oracles / Vaults / Sanctum / Peril`,
+              },
+              {
+                title: 'Sanctum Opportunity',
+                dfId: `Oracles / Vaults / Sanctum / Opportunity`,
+              },
+            ],
+          ]
 
         default:
           throw new Error('bad type yo')
