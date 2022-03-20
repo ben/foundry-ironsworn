@@ -62,7 +62,8 @@ async function dropToken(location: IronswornActor) {
   canvas.tokens?.activate()
 }
 
-async function newLocation(subtype: string, name: string) {
+async function newLocation(subtype: string, i18nKey: string) {
+  const name = game.i18n.localize(`IRONSWORN.${i18nKey}`)
   const parentFolder = await ensureFolder('Locations', game.scenes?.current?.name ?? '???')
   const loc = await IronswornActor.create({
     type: 'location',
@@ -82,15 +83,19 @@ async function newLocation(subtype: string, name: string) {
 }
 
 function newPlanet() {
-  newLocation('planet', 'New Planet')
+  newLocation('planet', 'NewPlanet')
 }
 
 function newStar() {
-  newLocation('star', 'New Stellar Object')
+  newLocation('star', 'NewStellar Object')
 }
 
 function newSettlement() {
-  newLocation('settlement', 'New Settlement')
+  newLocation('settlement', 'NewSettlement')
+}
+
+function newDerelict() {
+  newLocation('derelict', 'NewDerelict')
 }
 
 export function activateSceneButtonListeners() {
@@ -117,6 +122,7 @@ export function activateSceneButtonListeners() {
         { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar'), onClick: newStar },
         { name: 'planet', icon: 'fas fa-globe-europe', title: game.i18n.localize('IRONSWORN.NewPlanet'), onClick: newPlanet },
         { name: 'settlement', icon: 'fas fa-city', title: game.i18n.localize('IRONSWORN.NewSettlement'), onClick: newSettlement },
+        { name: 'derelict', icon: 'fab fa-quinscape', title: game.i18n.localize('IRONSWORN.NewDerelict'), onClick: newDerelict },
       ],
     }
 

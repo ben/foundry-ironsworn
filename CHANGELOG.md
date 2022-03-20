@@ -2,6 +2,8 @@
 
 ## In progress
 
+- "Derelict" as a type of location ([#242](https://github.com/ben/foundry-ironsworn/pull/242))
+
 ## 1.10.27
 
 - Fix a wrong-oracle bug with random-type rolling in the location sheet
