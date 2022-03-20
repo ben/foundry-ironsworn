@@ -47,6 +47,7 @@
             <option value="settlement">Settlement</option>
             <option value="star">Stellar Object</option>
             <option value="derelict">Derelict</option>
+            <option value="vault">Precursor Vault</option>
           </select>
 
           <!-- Klass -->
@@ -167,6 +168,7 @@ export default {
 
         case 'settlement':
         case 'derelict':
+        case 'vault':
           return [
             { value: 'planetside', label: 'Planetside' },
             { value: 'orbital', label: 'Orbital' },
@@ -337,6 +339,9 @@ export default {
             ],
           ]
 
+        case 'vault':
+          return []
+
         default:
           throw new Error('bad type yo')
       }
@@ -396,6 +401,8 @@ export default {
         tableKey = 'Oracles / Space / Stellar Object'
       } else if (this.actor.data.subtype === 'derelict') {
         tableKey = 'Oracles / Derelicts / Location'
+      } else if (this.actor.data.subtype === 'vault') {
+        tableKey = 'Oracles / Vaults / Location'
       }
 
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(tableKey)
