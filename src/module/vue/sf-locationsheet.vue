@@ -47,6 +47,7 @@
             <option value="settlement">Settlement</option>
             <option value="star">Stellar Object</option>
             <option value="derelict">Derelict</option>
+            <option value="vault">Precursor Vault</option>
           </select>
 
           <!-- Klass -->
@@ -167,6 +168,7 @@ export default {
 
         case 'settlement':
         case 'derelict':
+        case 'vault':
           return [
             { value: 'planetside', label: 'Planetside' },
             { value: 'orbital', label: 'Orbital' },
@@ -337,6 +339,75 @@ export default {
             ],
           ]
 
+        case 'vault':
+          return [
+            [
+              {
+                title: 'Scale',
+                dfId: `Oracles / Vaults / Scale`,
+                fl: true,
+              },
+              {
+                title: 'Form',
+                dfId: `Oracles / Vaults / Form`,
+                fl: true,
+              },
+              {
+                title: 'Shape',
+                dfId: `Oracles / Vaults / Shape`,
+                fl: true,
+              },
+            ],
+            [
+              {
+                title: 'Material',
+                dfId: `Oracles / Vaults / Material`,
+                fl: true,
+              },
+              {
+                title: 'Outer First Look',
+                dfId: `Oracles / Vaults / Outer First Look`,
+                fl: true,
+              },
+            ],
+            [
+              {
+                title: 'Interior First Look',
+                dfId: `Oracles / Vaults / Interior / First Look`,
+              },
+              {
+                title: 'Interior Feature',
+                dfId: `Oracles / Vaults / Interior / Feature`,
+              },
+              {
+                title: 'Interior Peril',
+                dfId: `Oracles / Vaults / Interior / Peril`,
+              },
+              {
+                title: 'Interior Opportunity',
+                dfId: `Oracles / Vaults / Interior / Opportunity`,
+              },
+            ],
+            [
+              {
+                title: 'Sanctum Purpose',
+                dfId: `Oracles / Vaults / Sanctum / Purpose`,
+              },
+              {
+                title: 'Sanctum Feature',
+                dfId: `Oracles / Vaults / Sanctum / Feature`,
+              },
+              {
+                title: 'Sanctum Peril',
+                dfId: `Oracles / Vaults / Sanctum / Peril`,
+              },
+              {
+                title: 'Sanctum Opportunity',
+                dfId: `Oracles / Vaults / Sanctum / Opportunity`,
+              },
+            ],
+          ]
+
         default:
           throw new Error('bad type yo')
       }
@@ -396,6 +467,8 @@ export default {
         tableKey = 'Oracles / Space / Stellar Object'
       } else if (this.actor.data.subtype === 'derelict') {
         tableKey = 'Oracles / Derelicts / Location'
+      } else if (this.actor.data.subtype === 'vault') {
+        tableKey = 'Oracles / Vaults / Location'
       }
 
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(tableKey)
