@@ -51,6 +51,11 @@
       "name": "vueport",
       "type": "module",
       "manifest": "https://raw.githubusercontent.com/ForgeVTT/fvtt-module-vueport/master/module.json"
+    },
+    {
+      "name": "lib-wrapper",
+      "type": "module",
+      "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json"
     }
   ],
   "packs": [
