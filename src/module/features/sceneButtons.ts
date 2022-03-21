@@ -62,7 +62,7 @@ async function dropToken(location: IronswornActor) {
   canvas.tokens?.activate()
 }
 
-async function newLocation(subtype: string, i18nKey: string) {
+async function newLocation(subtype: string, i18nKey: string, scale = 1) {
   const name = game.i18n.localize(`IRONSWORN.${i18nKey}`)
   const parentFolder = await ensureFolder('Locations', game.scenes?.current?.name ?? '???')
   const loc = await IronswornActor.create({
@@ -73,6 +73,7 @@ async function newLocation(subtype: string, i18nKey: string) {
       displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
       disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
       actorLink: true,
+      scale,
     },
     folder: parentFolder?.id,
   })
@@ -91,15 +92,15 @@ function newStar() {
 }
 
 function newSettlement() {
-  newLocation('settlement', 'NewSettlement')
+  newLocation('settlement', 'NewSettlement', 2)
 }
 
 function newDerelict() {
-  newLocation('derelict', 'NewDerelict')
+  newLocation('derelict', 'NewDerelict', 2)
 }
 
 function newVault() {
-  newLocation('vault', 'NewVault')
+  newLocation('vault', 'NewVault', 2)
 }
 
 export function activateSceneButtonListeners() {
