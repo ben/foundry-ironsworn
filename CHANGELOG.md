@@ -3,6 +3,7 @@
 ## In progress
 
 - Derelict/vault/settlement token images ([#244](https://github.com/ben/foundry-ironsworn/pull/244))
+- Ensure planets are drawn behind their neighbors ([#246](https://github.com/ben/foundry-ironsworn/pull/246))
 
 ## 1.10.28
 
