@@ -432,14 +432,16 @@ export default {
     },
 
     async saveSubtype(subtype) {
+      const img = randomImage(subtype, this.actor.data.klass)
       await this.$actor.update({ data: { subtype } })
+      await this.updateAllTokens({ img, scale: 2 })
     },
     async saveKlass(klass) {
       const { subtype } = this.actor.data
       const img = randomImage(subtype, klass)
 
       await this.$actor.update({ img, data: { klass } })
-      await this.updateAllTokens({ img })
+      await this.updateAllTokens({ img, scale: 2 })
     },
 
     async randomizeName() {
