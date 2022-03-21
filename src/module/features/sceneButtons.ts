@@ -92,15 +92,15 @@ function newStar() {
 }
 
 function newSettlement() {
-  newLocation('settlement', 'NewSettlement', 1.2)
+  newLocation('settlement', 'NewSettlement', 2)
 }
 
 function newDerelict() {
-  newLocation('derelict', 'NewDerelict', 1.2)
+  newLocation('derelict', 'NewDerelict', 2)
 }
 
 function newVault() {
-  newLocation('vault', 'NewVault', 1.2)
+  newLocation('vault', 'NewVault', 2)
 }
 
 export function activateSceneButtonListeners() {
