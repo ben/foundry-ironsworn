@@ -21,6 +21,7 @@ import { activateChangelogListeners } from './module/features/changelog'
 import { maybePromptForDependencies } from './module/features/dependencies'
 import { activateDragDropListeners } from './module/features/dragdrop'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
+import { registerZIndexHook } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
@@ -164,6 +165,7 @@ Hooks.once('init', async () => {
   IronswornHandlebarsHelpers.registerHelpers()
   IronswornChatCard.registerHooks()
   activateSceneButtonListeners()
+  registerZIndexHook()
 })
 
 Hooks.once('ready', async () => {
