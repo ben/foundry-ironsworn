@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol" style="margen: 1rem">
-    <VueEditor v-model="actor.data.notes" />
+    <VueEditor :editorToolbar="toolbar" v-model="actor.data.notes" />
   </div>
 </template>
 
@@ -13,6 +13,18 @@ export default {
 
   props: {
     actor: Object,
+  },
+
+  data() {
+    return {
+      toolbar: [
+        [{ header: [false, 1, 2, 3, 4] }],
+        ['bold', 'italic', 'underline'],
+        [{ list: 'ordered' }, { list: 'bullet' }],
+        ['blockquote', 'code-block'],
+        ['clean'],
+      ],
+    }
   },
 
   watch: {
