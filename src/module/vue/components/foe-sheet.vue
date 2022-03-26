@@ -84,12 +84,10 @@ export default {
   },
 
   watch: {
-    foe(newFoe) {
-      this.$actor.update({
-        name: newFoe.name,
-        // TODO: image
-      })
-      // TODO: token images
+    async foe(newFoe) {
+      const data = { name: newFoe?.name, img: newFoe?.img }
+      await this.$actor.update(data)
+      await this.$actor.data.token.update(data)
     },
   },
 
@@ -119,6 +117,6 @@ export default {
       const newValue = Math.min(this.foe.data.current + increment, 40)
       this.foundryFoe.update({ 'data.current': newValue })
     },
-},
+  },
 }
 </script>
