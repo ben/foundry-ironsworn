@@ -2,6 +2,8 @@
 
 ## In progress
 
+- A new HTML editor for the SF character notes tab ([#250](https://github.com/ben/foundry-ironsworn/pull/250))
+
 ## 1.10.29
 
 - Derelict/vault/settlement token images ([#244](https://github.com/ben/foundry-ironsworn/pull/244))

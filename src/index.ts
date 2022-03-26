@@ -105,7 +105,7 @@ Hooks.once('init', async () => {
   Actors.registerSheet('ironsworn', StarforgedLocationSheet, {
     types: ['location'],
     label: 'Starforged Location Sheet',
-    makeDefault: true
+    makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', IronswornSiteSheetV2, {
@@ -180,6 +180,13 @@ Hooks.once('ready', async () => {
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   WorldTruthsDialog.maybeShow()
+
+  // Quill theme stylesheet
+  const link = document.createElement('link')
+  // link.type = 'text/css'
+  link.rel = 'stylesheet'
+  link.href = '//cdn.quilljs.com/1.3.6/quill.bubble.css'
+  document.head.appendChild(link)
 })
 
 Hooks.once('setup', () => {
