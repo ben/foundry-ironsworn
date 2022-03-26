@@ -43,7 +43,10 @@ export default {
       default: [
         [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
         [{ list: 'ordered' }, { list: 'bullet' }],
-        ['link', 'image'],
+        [
+          'link',
+          // 'image'
+        ],
         ['clean'],
       ],
     },
