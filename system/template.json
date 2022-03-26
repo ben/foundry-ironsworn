@@ -50,6 +50,7 @@
     "shared": {
       "supply": 5
     },
+    "foe": {},
     "site": {
       "objective": "",
       "description": "",
