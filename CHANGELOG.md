@@ -3,6 +3,7 @@
 ## In progress
 
 - A new HTML editor for the SF character notes tab ([#250](https://github.com/ben/foundry-ironsworn/pull/250))
+- A "foe" actor type so that a progress item can have a token ([#252](https://github.com/ben/foundry-ironsworn/pull/252))
 
 ## 1.10.29
 
