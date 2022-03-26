@@ -37,12 +37,12 @@
 
     <div
       v-else
-      class="flexrow ironsworn__drop__target"
+      class="flexcol ironsworn__drop__target"
       data-drop-type="progress"
-      style="text-align: center"
+      style="text-align: center; justify-items: space-around"
     >
       <div class="clickable block" @click="addEmpty">
-        <i class="fas fa-plus"></i>
+        <i class="fas fa-file"></i>
         {{ $t('IRONSWORN.Progress') }}
       </div>
 
@@ -61,6 +61,13 @@
   </div>
 </template>
 
+<style lang="less" scoped>
+.ironsworn__drop__target .clickable.block {
+  padding: 1rem;
+  flex-grow: 0;
+}
+</style>
+
 <script>
 export default {
   props: {
@@ -72,7 +79,7 @@ export default {
       return this.actor.items.find((x) => x.type === 'progress')
     },
     foundryFoe() {
-      this.$actor.items.find((x) => x.id === this.foe?._id)
+      return this.$actor.items.get(this.foe._id)
     },
   },
 
@@ -87,10 +94,31 @@ export default {
   },
 
   methods: {
+    addEmpty() {
+      Item.create(
+        { name: 'Foe', type: 'progress', data: { subtype: 'foe' } },
+        { parent: this.$actor }
+      )
+    },
+
     openCompendium(name) {
       const pack = game.packs?.get(`foundry-ironsworn.${name}`)
       pack?.render(true)
     },
-  },
+
+    setRank(rank) {
+      this.foundryFoe?.update({ data: { rank } })
+    },
+
+    clearProgress() {
+      this.foundryFoe.update({ 'data.current': 0 })
+    },
+
+    markProgress() {
+      const increment = CONFIG.IRONSWORN.RankIncrements[this.foe.data.rank]
+      const newValue = Math.min(this.foe.data.current + increment, 40)
+      this.foundryFoe.update({ 'data.current': newValue })
+    },
+},
 }
 </script>
