@@ -33,11 +33,12 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     super.activateListeners(html)
 
     html.find('.ironsworn__character__create').on('click', (ev) => this._characterCreate.call(this, ev))
+    html.find('.ironsworn__shared__create').on('click', (ev) => this._sharedCreate.call(this, ev))
+    html.find('.ironsworn__site__create').on('click', (ev) => this._siteCreate.call(this, ev))
+    html.find('.ironsworn__foe__create').on('click', (ev) => this._foeCreate.call(this, ev))
     html.find('.ironsworn__sfcharacter__create').on('click', (ev) => this._sfcharacterCreate.call(this, ev))
     html.find('.ironsworn__sfship__create').on('click', (ev) => this._sfshipCreate.call(this, ev))
     html.find('.ironsworn__sflocation__create').on('click', (ev) => this._sfLocationCreate.call(this, ev))
-    html.find('.ironsworn__shared__create').on('click', (ev) => this._sharedCreate.call(this, ev))
-    html.find('.ironsworn__site__create').on('click', (ev) => this._siteCreate.call(this, ev))
   }
 
   async _characterCreate(ev: JQuery.ClickEvent) {
@@ -60,6 +61,11 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
   }
 
+  async _foeCreate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    this._createWithFolder('Foe', 'foe', ev.currentTarget.dataset.img || undefined)
+  }
+
   async _sfcharacterCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
@@ -79,7 +85,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     this._createWithFolder('Location', 'location', ev.currentTarget.dataset.img || undefined)
   }
 
-  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared' | 'starship' | 'location', img: string, sheetClass?: string) {
+  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared' | 'foe' | 'starship' | 'location', img: string, sheetClass?: string) {
     const data: ActorDataConstructorData & Record<string, any> = {
       name,
       img,
