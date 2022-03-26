@@ -60,6 +60,20 @@
   ],
   "packs": [
     {
+      "name": "foeactorsis",
+      "label": "Ironsworn Foe Actors",
+      "system": "foundry-ironsworn",
+      "path": "packs/foe-actors-is.db",
+      "entity": "Actor"
+    },
+    {
+      "name": "foeactorssf",
+      "label": "Starforged Foe Actors",
+      "system": "foundry-ironsworn",
+      "path": "packs/foe-actors-sf.db",
+      "entity": "Actor"
+    },
+    {
       "name": "ironsworntables",
       "label": "Ironsworn Tables",
       "system": "foundry-ironsworn",
