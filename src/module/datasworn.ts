@@ -1,4 +1,5 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+import { IronswornActor } from './actor/actor'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
@@ -87,9 +88,18 @@ const FOE_IMAGES = {
   Tempest: 'icons/magic/lightning/bolts-salvo-clouds-sky.webp',
 }
 
+const PACKS = [
+  'foundry-ironsworn.ironswornitems',
+  'foundry-ironsworn.ironswornassets',
+  'foundry-ironsworn.ironsworndelvethemes',
+  'foundry-ironsworn.ironsworndelvedomains',
+  'foundry-ironsworn.ironswornfoes',
+  'foundry-ironsworn.foeactorsis',
+]
+
 export async function importFromDatasworn() {
   // Empty out the packs
-  for (const key of ['world.ironsworn-items', 'world.ironsworn-assets', 'world.ironsworn-delve-themes', 'world.ironsworn-delve-domains', 'world.ironsworn-foes']) {
+  for (const key of PACKS) {
     const pack = game.packs.get(key)
     if (!pack) continue
     await pack.render(true)
@@ -116,7 +126,7 @@ export async function importFromDatasworn() {
       })
     }
   }
-  await Item.createDocuments(movesToCreate, { pack: 'world.ironsworn-items' })
+  await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.ironswornitems' })
 
   // Assets
   const assetsJson = await fetch('systems/foundry-ironsworn/assets/assets.json').then((x) => x.json())
@@ -124,7 +134,7 @@ export async function importFromDatasworn() {
     type: 'asset',
     ...raw,
   }))
-  await Item.createDocuments(assetsToCreate, { pack: 'world.ironsworn-assets' })
+  await Item.createDocuments(assetsToCreate, { pack: 'foundry-ironsworn.ironswornassets' })
 
   // Themes
   const themesJson = await fetch('systems/foundry-ironsworn/assets/delve-themes.json').then((x) => x.json())
@@ -162,7 +172,7 @@ export async function importFromDatasworn() {
 
     return themeData
   })
-  await Item.createDocuments(themesToCreate, { pack: 'world.ironsworn-delve-themes' })
+  await Item.createDocuments(themesToCreate, { pack: 'foundry-ironsworn.ironsworndelvethemes' })
 
   // Domains
   const domainsJson = await fetch('systems/foundry-ironsworn/assets/delve-domains.json').then((x) => x.json())
@@ -200,7 +210,7 @@ export async function importFromDatasworn() {
 
     return domainData
   })
-  await Item.createDocuments(domainsToCreate, { pack: 'world.ironsworn-delve-domains' })
+  await Item.createDocuments(domainsToCreate, { pack: 'foundry-ironsworn.ironsworndelvedomains' })
 
   // Foes
   const foesJson = await fetch('systems/foundry-ironsworn/assets/foes.json').then((x) => x.json())
@@ -224,5 +234,20 @@ export async function importFromDatasworn() {
       })
     }
   }
-  await Item.createDocuments(foesToCreate, { pack: 'world.ironsworn-foes' })
+  await Item.createDocuments(foesToCreate, { pack: 'foundry-ironsworn.ironswornfoes' })
+
+  // Foe actors
+  const foesPack = game.packs.get('foundry-ironsworn.ironswornfoes')
+  const foeItems = await foesPack?.getDocuments()
+  for (const foeItem of foeItems ?? []) {
+    const actor = await IronswornActor.create(
+      {
+        name: foeItem.name ?? 'wups',
+        img: foeItem.data.img,
+        type: 'foe',
+      },
+      { pack: 'foundry-ironsworn.foeactorsis' }
+    )
+    await actor?.createEmbeddedDocuments('Item', [foeItem.data])
+  }
 }
