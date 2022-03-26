@@ -6,6 +6,8 @@
       :editorOptions="options"
       v-bind:value="value"
       @input="$emit('input', $event)"
+      class="flexcol"
+      style="height: 100%"
     />
   </div>
 </template>
@@ -16,6 +18,13 @@
 }
 .ql-tooltip {
   z-index: 100;
+}
+.ql-toolbar {
+  flex-grow: 0;
+}
+.ql-container {
+  display: flex;
+  flex-grow: 1;
 }
 </style>
 
@@ -32,10 +41,9 @@ export default {
     toolbar: {
       type: Array,
       default: [
-        [{ header: [false, 1, 2, 3, 4] }],
-        ['bold', 'italic', 'underline'],
+        [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
         [{ list: 'ordered' }, { list: 'bullet' }],
-        ['blockquote', 'code-block'],
+        ['link', 'image'],
         ['clean'],
       ],
     },
