@@ -1,16 +1,13 @@
 <template>
   <div class="flexcol" style="margen: 1rem">
-    <VueEditor :editorToolbar="toolbar" v-model="actor.data.notes" />
+    <quill-editor v-model="actor.data.notes" :editorToolbar="toolbar" :editorOptions="options" />
   </div>
 </template>
 
 <script>
 import { debounce } from 'lodash'
-import { VueEditor } from 'vue2-editor'
 
 export default {
-  components: { VueEditor },
-
   props: {
     actor: Object,
   },
@@ -24,6 +21,9 @@ export default {
         ['blockquote', 'code-block'],
         ['clean'],
       ],
+      options: {
+        theme: 'bubble'
+      }
     }
   },
 
