@@ -1,4 +1,5 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+import { IronswornActor } from './actor/actor'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -11,6 +12,13 @@ function getLegacyRank(numericRank) {
   return 'epic'
 }
 
+const PACKS = [
+  'foundry-ironsworn.starforgedassets',
+  'foundry-ironsworn.starforgedencounters',
+  'foundry-ironsworn.starforgedmoves',
+  'foundry-ironsworn.starforgedoracles',
+  'foundry-ironsworn.foeactorssf'
+]
 /**
  * Converts JSON from dataforged resources into foundry packs. Requires packs to
  * already exist, but will empty them prior to repopulating. In a perfect world
@@ -19,7 +27,7 @@ function getLegacyRank(numericRank) {
  */
 export async function importFromDataforged() {
   // Empty out the packs
-  for (const key of ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles']) {
+  for (const key of PACKS) {
     const pack = game.packs.get(key)
     if (!pack) continue
     // @ts-ignore IdQuery type is a little bogus
@@ -118,6 +126,21 @@ export async function importFromDataforged() {
     }
   }
   await Item.createDocuments(encountersToCreate, { pack: 'foundry-ironsworn.starforgedencounters', keepId: true })
+
+  // Foes
+  const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
+  const foeItems = await foesPack?.getDocuments()
+  for (const foeItem of foeItems ?? []) {
+    const actor = await IronswornActor.create(
+      {
+        name: foeItem.name ?? 'wups',
+        img: foeItem.data.img,
+        type: 'foe',
+      },
+      { pack: 'foundry-ironsworn.foeactorssf' }
+    )
+    await actor?.createEmbeddedDocuments('Item', [foeItem.data])
+  }
 
   // Oracles
   const oraclesJson = await fetch('systems/foundry-ironsworn/assets/sf-oracles.json').then((x) => x.json())
