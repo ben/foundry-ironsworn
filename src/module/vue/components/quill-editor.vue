@@ -66,7 +66,10 @@ export default {
           toolbar: {
             container: this.toolbarOptions,
             handlers: {
-              image: console.log,
+              image() {
+                console.log(this)
+                return '<img src="https://placekitten.com/200/300" />'
+              },
             },
           },
         },
