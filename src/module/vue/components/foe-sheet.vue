@@ -106,16 +106,19 @@ export default {
 
     setRank(rank) {
       this.foundryFoe?.update({ data: { rank } })
+      this.foe.data.rank = rank
     },
 
     clearProgress() {
-      this.foundryFoe.update({ 'data.current': 0 })
+      this.foundryFoe?.update({ 'data.current': 0 })
+      this.foe.data.current = 0
     },
 
     markProgress() {
       const increment = CONFIG.IRONSWORN.RankIncrements[this.foe.data.rank]
       const newValue = Math.min(this.foe.data.current + increment, 40)
       this.foundryFoe.update({ 'data.current': newValue })
+      this.foe.data.current = newValue
     },
   },
 }
