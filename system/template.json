@@ -3,6 +3,7 @@
     "types": [
       "character",
       "shared",
+      "foe",
       "site",
       "starship",
       "location"
@@ -50,6 +51,7 @@
     "shared": {
       "supply": 5
     },
+    "foe": {},
     "site": {
       "objective": "",
       "description": "",

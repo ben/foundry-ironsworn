@@ -57,7 +57,7 @@ interface CharacterDataSource {
 interface SharedDataSourceData {
   supply: number
 }
-interface SharedDataPropertiesData extends SharedDataSourceData { }
+interface SharedDataPropertiesData extends SharedDataSourceData {}
 
 interface SharedDataSource {
   type: 'shared'
@@ -66,6 +66,20 @@ interface SharedDataSource {
 export interface SharedDataProperties {
   type: 'shared'
   data: SharedDataPropertiesData
+}
+
+////////////////////////////////////////
+
+interface FoeDataSourceData {}
+interface FoeDataPropertiesData extends FoeDataSourceData {}
+
+interface FoeDataSource {
+  type: 'foe'
+  data: FoeDataSourceData
+}
+export interface FoeDataProperties {
+  type: 'foe'
+  data: FoeDataPropertiesData
 }
 
 ////////////////////////////////////////
@@ -85,7 +99,7 @@ interface SiteDataSourceData {
   current: number
   denizens: DenizenSlot[]
 }
-interface SiteDataPropertiesData extends SiteDataSourceData { }
+interface SiteDataPropertiesData extends SiteDataSourceData {}
 
 export interface SiteDataSource {
   type: 'site'
@@ -135,8 +149,8 @@ export interface LocationDataProperties {
 
 ////////////////////////////////////////
 
-export type ActorDataSource = CharacterDataSource | SharedDataSource | SiteDataSource | StarshipDataSource | LocationDataSource
-export type ActorDataProperties = CharacterDataProperties | SharedDataProperties | SiteDataProperties | StarshipDataProperties | LocationDataProperties
+export type ActorDataSource = CharacterDataSource | SharedDataSource | FoeDataSource | SiteDataSource | StarshipDataSource | LocationDataSource
+export type ActorDataProperties = CharacterDataProperties | SharedDataProperties | FoeDataProperties | SiteDataProperties | StarshipDataProperties | LocationDataProperties
 
 declare global {
   interface SourceConfig {

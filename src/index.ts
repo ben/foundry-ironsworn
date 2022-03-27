@@ -7,6 +7,7 @@ import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
+import { FoeSheet } from './module/actor/sheets/foesheet'
 import { StarforgedCharacterSheet } from './module/actor/sheets/sf-charactersheet'
 import { StarforgedLocationSheet } from './module/actor/sheets/sf-locationsheet'
 import { IronswornSharedSheet } from './module/actor/sheets/sharedsheet'
@@ -94,6 +95,12 @@ Hooks.once('init', async () => {
   Actors.registerSheet('ironsworn', IronswornSharedSheet, {
     types: ['shared'],
     label: 'Classic shared sheet',
+  })
+
+  Actors.registerSheet('ironsworn', FoeSheet, {
+    types: ['foe'],
+    label: 'Foe Sheet',
+    makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', StarshipSheet, {
