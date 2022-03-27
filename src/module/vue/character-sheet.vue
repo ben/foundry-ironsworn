@@ -94,12 +94,7 @@
               <progress-controls :actor="actor" />
             </div>
 
-            <textarea
-              class="notes"
-              :placeholder="$t('IRONSWORN.Notes')"
-              v-model="actor.data.biography"
-              @blur="saveNotes"
-            />
+            <quill-editor v-model="actor.data.biography" />
           </div>
         </div>
 
@@ -189,6 +184,12 @@ export default {
     },
     assets() {
       return this.actor.items.filter((x) => x.type === 'asset')
+    },
+  },
+
+  watch: {
+    'actor.data.biography'() {
+      this.saveNotes()
     },
   },
 
