@@ -41,6 +41,11 @@ export default {
     placeholder: String,
     value: String,
 
+    theme: {
+      type: String,
+      default: 'snow',
+    },
+
     toolbarOptions: {
       type: Array,
       default: [
@@ -50,19 +55,12 @@ export default {
         ['clean'],
       ],
     },
-
-    // options: {
-    //   type: Object,
-    //   default: {
-    //     theme: 'bubble',
-    //   },
-    // },
   },
 
   data() {
     return {
       options: {
-        // theme: 'bubble', // TODO: make this configurable
+        theme: this.theme,
         modules: {
           toolbar: {
             container: this.toolbarOptions,
