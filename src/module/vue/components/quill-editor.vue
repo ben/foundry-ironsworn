@@ -32,6 +32,7 @@
 
 <script>
 import { VueEditor } from 'vue2-editor'
+import Delta from 'quill-delta'
 
 export default {
   components: { VueEditor },
@@ -61,14 +62,24 @@ export default {
   data() {
     return {
       options: {
-        theme: 'bubble', // TODO: make this configurable
+        // theme: 'bubble', // TODO: make this configurable
         modules: {
           toolbar: {
             container: this.toolbarOptions,
             handlers: {
               image() {
-                console.log(this)
-                return '<img src="https://placekitten.com/200/300" />'
+                const quill = this.quill
+                new FilePicker({
+                  type: 'image',
+                  callback(path) {
+                    const range = quill.getSelection(true)
+                    const delta = new Delta()
+                      .retain(range.index)
+                      .delete(range.length)
+                    delta.insert({ image: path })
+                    quill.updateContents(delta, 'user')
+                  },
+                }).render(true)
               },
             },
           },
