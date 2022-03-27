@@ -61,7 +61,7 @@ export default {
   data() {
     return {
       options: {
-        theme: 'bubble',
+        theme: 'bubble', // TODO: make this configurable
         modules: {
           toolbar: {
             container: this.toolbarOptions,
