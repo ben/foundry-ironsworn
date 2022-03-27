@@ -2,7 +2,6 @@
   <div style="border: 1px solid black">
     <VueEditor
       :placeholder="placeholder"
-      :editorToolbar="toolbar"
       :editorOptions="options"
       v-bind:value="value"
       @input="$emit('input', $event)"
@@ -41,25 +40,38 @@ export default {
     placeholder: String,
     value: String,
 
-    toolbar: {
+    toolbarOptions: {
       type: Array,
       default: [
         [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
         [{ list: 'ordered' }, { list: 'bullet' }],
-        [
-          'link',
-          // 'image'
-        ],
+        ['link', 'image'],
         ['clean'],
       ],
     },
 
-    options: {
-      type: Object,
-      default: {
+    // options: {
+    //   type: Object,
+    //   default: {
+    //     theme: 'bubble',
+    //   },
+    // },
+  },
+
+  data() {
+    return {
+      options: {
         theme: 'bubble',
+        modules: {
+          toolbar: {
+            container: this.toolbarOptions,
+            handlers: {
+              image: console.log,
+            },
+          },
+        },
       },
-    },
+    }
   },
 }
 </script>
