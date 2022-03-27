@@ -26,13 +26,7 @@
       <hr class="nogrow" />
 
       <!-- DESCRIPTION -->
-      <editor
-        target="data.description"
-        :owner="true"
-        :button="true"
-        :editable="true"
-        :content="foe.data.description"
-      />
+      <div v-html="foe.data.description" />
     </div>
 
     <div
