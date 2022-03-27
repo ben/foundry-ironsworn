@@ -2,7 +2,6 @@
   <div style="border: 1px solid black">
     <VueEditor
       :placeholder="placeholder"
-      :editorToolbar="toolbar"
       :editorOptions="options"
       v-bind:value="value"
       @input="$emit('input', $event)"
@@ -33,6 +32,7 @@
 
 <script>
 import { VueEditor } from 'vue2-editor'
+import Delta from 'quill-delta'
 
 export default {
   components: { VueEditor },
@@ -41,25 +41,49 @@ export default {
     placeholder: String,
     value: String,
 
-    toolbar: {
+    theme: {
+      type: String,
+      default: 'snow',
+    },
+
+    toolbarOptions: {
       type: Array,
       default: [
         [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
         [{ list: 'ordered' }, { list: 'bullet' }],
-        [
-          'link',
-          // 'image'
-        ],
+        ['link', 'image'],
         ['clean'],
       ],
     },
+  },
 
-    options: {
-      type: Object,
-      default: {
-        theme: 'bubble',
+  data() {
+    return {
+      options: {
+        theme: this.theme,
+        modules: {
+          toolbar: {
+            container: this.toolbarOptions,
+            handlers: {
+              image() {
+                const quill = this.quill
+                new FilePicker({
+                  type: 'image',
+                  callback(path) {
+                    const range = quill.getSelection(true)
+                    const delta = new Delta()
+                      .retain(range.index)
+                      .delete(range.length)
+                    delta.insert({ image: path })
+                    quill.updateContents(delta, 'user')
+                  },
+                }).render(true)
+              },
+            },
+          },
+        },
       },
-    },
+    }
   },
 }
 </script>
