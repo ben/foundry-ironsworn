@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="border: 1px solid black">
     <VueEditor
       :placeholder="placeholder"
       :editorToolbar="toolbar"
@@ -7,7 +7,7 @@
       v-bind:value="value"
       @input="$emit('input', $event)"
       class="flexcol"
-      style="height: 100%"
+      style="height: 100%; width: 100%"
     />
   </div>
 </template>
@@ -15,6 +15,9 @@
 <style lang="less">
 .ql-container {
   font-family: var(--font-primary) !important;
+}
+.ql-editor {
+  width: 100%;
 }
 .ql-tooltip {
   z-index: 100;

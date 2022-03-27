@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol" style="margen: 1rem">
+  <div class="flexcol">
     <quill-editor v-model="actor.data.notes" />
   </div>
 </template>
