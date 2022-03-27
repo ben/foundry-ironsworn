@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.31
+
 - HTML editor has configurable theme and can do image uploads ([#254](https://github.com/ben/foundry-ironsworn/pull/254))
 
 ## 1.10.30
