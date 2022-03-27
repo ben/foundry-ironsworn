@@ -26,20 +26,18 @@ export class FoeSheet extends IronswornVueActorSheet {
     return data
   }
 
-  // _getHeaderButtons() {
-  //   return [
-  //     {
-  //       class: 'ironsworn-toggle-edit-mode',
-  //       label: 'Edit',
-  //       icon: 'fas fa-edit',
-  //       onclick: (e) => this._toggleEditMode(e),
-  //     },
-  //     ...super._getHeaderButtons(),
-  //   ]
-  // }
-
-  // _toggleEditMode(_e: JQuery.ClickEvent) {
-  //   const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
-  //   this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
-  // }
+  _getHeaderButtons() {
+    return [
+      {
+        class: 'ironsworn-toggle-edit-mode',
+        label: 'Edit',
+        icon: 'fas fa-edit',
+        onclick: () => {
+          const item = this.actor.items.find((x) => x.type === 'progress')
+          item?.sheet?.render(true)
+        },
+      },
+      ...super._getHeaderButtons(),
+    ]
+  }
 }
