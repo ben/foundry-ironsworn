@@ -2,6 +2,8 @@
 
 ## In progress
 
+- HTML editor has configurable theme and can do image uploads ([#254](https://github.com/ben/foundry-ironsworn/pull/254))
+
 ## 1.10.30
 
 - A new HTML editor for the SF character notes tab ([#250](https://github.com/ben/foundry-ironsworn/pull/250))
