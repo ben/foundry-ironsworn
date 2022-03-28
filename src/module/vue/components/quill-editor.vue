@@ -1,11 +1,11 @@
 <template>
   <div
-    style="border: 1px solid"
-    :style="style"
-    @dragenter="highlight"
-    @dragleave="dehighlight"
-    @dragover="highlight"
-    @dragend="dehighlight"
+    style="border: 1px solid black"
+    :class="cssClasses"
+    @dragenter="dragHandler($event, true)"
+    @dragover="dragHandler($event, true)"
+    @dragleave="dragHandler($event, false)"
+    @dragend="dragHandler($event, false)"
     @drop="dropHandler"
   >
     <VueEditor
@@ -67,8 +67,8 @@ export default {
 
   data() {
     return {
-      style: {
-        'border-color': 'black'
+      cssClasses: {
+        'drag-highlight': false,
       },
       options: {
         theme: this.theme,
@@ -98,20 +98,17 @@ export default {
   },
 
   methods: {
-    highlight(ev) {
+    dragHandler(ev, highlight) {
+      console.log({ ev, highlight })
+      this.cssClasses['drag-highlight'] = highlight
       ev.preventDefault()
-      this.style['border-color'] = 'red'
-      return false
-    },
-    dehighlight(ev) {
-      ev.preventDefault()
-      this.style['border-color'] = 'black'
       return false
     },
 
     dropHandler(ev) {
       ev.preventDefault()
-      console.log(ev)
+      this.cssClasses['drag-highlight'] = false
+      console.log('Drop!', ev)
     },
   },
 }
