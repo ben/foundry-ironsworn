@@ -1,5 +1,13 @@
 <template>
-  <div style="border: 1px solid black">
+  <div
+    style="border: 1px solid"
+    :style="style"
+    @dragenter="highlight"
+    @dragleave="dehighlight"
+    @dragover="highlight"
+    @dragend="dehighlight"
+    @drop="dropHandler"
+  >
     <VueEditor
       :placeholder="placeholder"
       :editorOptions="options"
@@ -59,6 +67,9 @@ export default {
 
   data() {
     return {
+      style: {
+        'border-color': 'black'
+      },
       options: {
         theme: this.theme,
         modules: {
@@ -84,6 +95,24 @@ export default {
         },
       },
     }
+  },
+
+  methods: {
+    highlight(ev) {
+      ev.preventDefault()
+      this.style['border-color'] = 'red'
+      return false
+    },
+    dehighlight(ev) {
+      ev.preventDefault()
+      this.style['border-color'] = 'black'
+      return false
+    },
+
+    dropHandler(ev) {
+      ev.preventDefault()
+      console.log(ev)
+    },
   },
 }
 </script>
