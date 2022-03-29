@@ -40,6 +40,7 @@ export class IronswornVueItemSheet extends ItemSheet {
       const states = Application.RENDER_STATES
       if (this._state == states.RENDERING || this._state == states.RENDERED) {
         // Update the Vue app with our updated item/flag data.
+        if (sheetData?.item) Vue.set(this._vm, 'item', sheetData.item)
         if (sheetData?.data) Vue.set(this._vm.item, 'data', sheetData.data)
         if (sheetData?.item?.flags) Vue.set(this._vm.item, 'flags', sheetData.item.flags)
         this._updateEditors($(this.element))
