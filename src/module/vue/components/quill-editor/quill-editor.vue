@@ -1,6 +1,15 @@
 <template>
-  <div style="border: 1px solid black">
+  <div
+    style="border: 1px solid black"
+    :class="cssClasses"
+    @dragenter="dragHandler($event, true)"
+    @dragover="dragHandler($event, true)"
+    @dragleave="dragHandler($event, false)"
+    @dragend="dragHandler($event, false)"
+    @drop="dropHandler"
+  >
     <VueEditor
+      ref="quilleditor"
       :placeholder="placeholder"
       :editorOptions="options"
       v-bind:value="value"
@@ -14,6 +23,13 @@
 <style lang="less">
 .ql-container {
   font-family: var(--font-primary) !important;
+  display: flex;
+  flex-grow: 1;
+
+  a.entity-link.content-link {
+    text-decoration: none;
+    color: #555;
+  }
 }
 .ql-editor {
   width: 100%;
@@ -24,15 +40,12 @@
 .ql-toolbar {
   flex-grow: 0;
 }
-.ql-container {
-  display: flex;
-  flex-grow: 1;
-}
 </style>
 
 <script>
 import { VueEditor } from 'vue2-editor'
 import Delta from 'quill-delta'
+import FoundryLink from './foundry-link'
 
 export default {
   components: { VueEditor },
@@ -59,9 +72,13 @@ export default {
 
   data() {
     return {
+      cssClasses: {
+        'drag-highlight': false,
+      },
       options: {
         theme: this.theme,
         modules: {
+          // foundrylink: true,
           toolbar: {
             container: this.toolbarOptions,
             handlers: {
@@ -74,7 +91,7 @@ export default {
                     const delta = new Delta()
                       .retain(range.index)
                       .delete(range.length)
-                    delta.insert({ image: path })
+                      .insert({ image: path })
                     quill.updateContents(delta, 'user')
                   },
                 }).render(true)
@@ -84,6 +101,32 @@ export default {
         },
       },
     }
+  },
+
+  methods: {
+    dragHandler(ev, highlight) {
+      this.cssClasses['drag-highlight'] = highlight
+      return false
+    },
+
+    async dropHandler(ev) {
+      this.cssClasses['drag-highlight'] = false
+
+      const data = TextEditor.getDragEventData(ev)
+      const link = await TextEditor.getContentLink(data)
+      console.log('Drop!', data, link)
+
+      const quill = this.$refs.quilleditor.quill
+      const range = quill.getSelection(true)
+      const delta = new Delta()
+        .retain(range.index)
+        .delete(range.length)
+        .insert({ foundrylink: data })
+      await quill.updateContents(delta, 'user')
+
+      ev.preventDefault()
+      return false
+    },
   },
 }
 </script>
