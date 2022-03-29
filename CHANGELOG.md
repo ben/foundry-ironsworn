@@ -2,6 +2,8 @@
 
 ## In progress
 
+- HTML editor can now handle Foundry item drops ([#256](https://github.com/ben/foundry-ironsworn/pull/256))
+
 ## 1.10.31
 
 - HTML editor has configurable theme and can do image uploads ([#254](https://github.com/ben/foundry-ironsworn/pull/254))
