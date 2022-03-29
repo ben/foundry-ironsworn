@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.32
+
 - HTML editor can now handle Foundry item drops ([#256](https://github.com/ben/foundry-ironsworn/pull/256))
 
 ## 1.10.31
