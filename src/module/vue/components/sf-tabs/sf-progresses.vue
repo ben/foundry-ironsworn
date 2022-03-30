@@ -1,19 +1,21 @@
 <template>
-  <div
-    class="flexcol ironsworn__drop__target"
-    data-drop-type="progress"
-  >
-    <transition-group name="slide" tag="div" class="nogrow">
-      <progress-box
-        v-for="item in progressItems"
-        :key="item._id"
-        :item="item"
-        :actor="actor"
-        :showStar="true"
-      />
-    </transition-group>
+  <div class="flexcol">
+    <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
+      <transition-group name="slide" tag="div" class="nogrow">
+        <progress-box
+          v-for="item in progressItems"
+          :key="item._id"
+          :item="item"
+          :actor="actor"
+          :showStar="true"
+        />
+      </transition-group>
+      <progress-controls :actor="actor" />
+    </div>
 
-    <progress-controls :actor="actor" />
+    <div class="item-row nogrow">
+      <h4 class="clickable text"> <i class="fa fa-caret-right"></i> {{ $t('IRONSWORN.Completed') }}</h4>
+    </div>
   </div>
 </template>
 
