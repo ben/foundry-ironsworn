@@ -30,12 +30,13 @@
               :tooltip="completedTooltip"
             />
             <icon-button
-              v-if="editMode"
+              v-if="editMode && item.data.hasTrack"
               icon="caret-left"
               @click="retreat"
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
             />
             <icon-button
+              v-if="item.data.hasTrack"
               icon="caret-right"
               @click="advance"
               :tooltip="$t('IRONSWORN.MarkProgress')"
@@ -96,6 +97,9 @@ export default {
   computed: {
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
+    },
+    showTrackButtons() {
+      return this.item.data.hasTrack
     },
     foundryItem() {
       const actor = game.actors?.get(this.actor._id)
