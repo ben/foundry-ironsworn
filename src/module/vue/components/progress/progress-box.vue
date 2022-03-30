@@ -12,16 +12,39 @@
         <div class="flexcol">
           <div class="flexrow">
             <rank-hexes :current="item.data.rank" @click="rankClick" />
-            <icon-button v-if="editMode" icon="trash" @click="destroy" />
-            <icon-button icon="edit" @click="edit" />
+            <icon-button
+              v-if="editMode"
+              icon="trash"
+              @click="destroy"
+              :tooltip="$t('IRONSWORN.DeleteItem')"
+            />
+            <icon-button
+              icon="edit"
+              @click="edit"
+              :tooltip="$t('IRONSWORN.Edit')"
+            />
             <icon-button
               v-if="editMode"
               :icon="completedIcon"
               @click="toggleComplete"
+              :tooltip="completedTooltip"
             />
-            <icon-button v-if="editMode" icon="caret-left" @click="retreat" />
-            <icon-button icon="caret-right" @click="advance" />
-            <icon-button icon="dice-d6" @click="fulfill" />
+            <icon-button
+              v-if="editMode"
+              icon="caret-left"
+              @click="retreat"
+              :tooltip="$t('IRONSWORN.UnmarkProgress')"
+            />
+            <icon-button
+              icon="caret-right"
+              @click="advance"
+              :tooltip="$t('IRONSWORN.MarkProgress')"
+            />
+            <icon-button
+              icon="dice-d6"
+              @click="fulfill"
+              :tooltip="$t('IRONSWORN.ProgressRoll')"
+            />
           </div>
           <h4 class="flexrow">
             <span>{{ item.name }}</span>
@@ -86,6 +109,10 @@ export default {
         ? 'fa-check-circle'
         : 'fa-dot-circle'
       return `fab ${suffix}`
+    },
+    completedTooltip() {
+      const suffix = this.item.data.completed ? 'Completed' : 'NotCompleted'
+      return this.$t('IRONSWORN.' + suffix)
     },
   },
 
