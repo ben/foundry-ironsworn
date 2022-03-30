@@ -14,6 +14,11 @@
             <rank-hexes :current="item.data.rank" @click="rankClick" />
             <icon-button v-if="editMode" icon="trash" @click="destroy" />
             <icon-button icon="edit" @click="edit" />
+            <icon-button
+              v-if="editMode"
+              :icon="completedIcon"
+              @click="toggleComplete"
+            />
             <icon-button v-if="editMode" icon="caret-left" @click="retreat" />
             <icon-button icon="caret-right" @click="advance" />
             <icon-button icon="dice-d6" @click="fulfill" />
@@ -76,6 +81,12 @@ export default {
     subtitle() {
       return this.$t(`IRONSWORN.${this.$capitalize(this.item.data.subtype)}`)
     },
+    completedIcon() {
+      const suffix = this.item.data.completed
+        ? 'fa-check-circle'
+        : 'fa-dot-circle'
+      return `fab ${suffix}`
+    },
   },
 
   methods: {
@@ -103,6 +114,9 @@ export default {
     },
     retreat() {
       this.foundryItem.markProgress(-1)
+    },
+    toggleComplete() {
+      this.$item.update({ data: { completed: !this.item.data.completed } })
     },
     toggleStar() {
       this.$item.update({ data: { starred: !this.item.data.starred } })
