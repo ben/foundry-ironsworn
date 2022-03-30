@@ -17,6 +17,17 @@
       <option value="bond">{{ $t('IRONSWORN.Bond') }}</option>
     </select>
 
+    <hr class="nogrow" />
+    <label class="checkbox nogrow">
+      <input
+        type="checkbox"
+        v-model="item.data.completed"
+        @change="saveChecks"
+      />
+      {{ $t('IRONSWORN.Completed') }}
+    </label>
+    <hr class="nogrow" />
+
     <div class="nogrow">
       <label class="checkbox">
         <input
@@ -165,6 +176,7 @@ export default {
     saveChecks() {
       this.$item.update({
         data: {
+          completed: this.item.data.completed,
           hasTrack: this.item.data.hasTrack,
           hasClock: this.item.data.hasClock,
         },
