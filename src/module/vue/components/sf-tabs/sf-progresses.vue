@@ -13,19 +13,26 @@
       <progress-controls :actor="actor" />
     </div>
 
-    <div class="item-row nogrow">
+    <div class="item-row nogrow" style="margin-top: 1rem">
       <h3 class="clickable text" @click="expandCompleted = !expandCompleted">
         <i :class="completedCaretClass"></i> {{ $t('IRONSWORN.Completed') }}
       </h3>
-      <transition name="completed-slide" tag="div" class="nogrow">
+      <transition
+        name="completed-slide"
+        tag="div"
+        class="nogrow"
+        style="margin: 0; padding: 0"
+      >
         <div v-if="expandCompleted">
-          <progress-box
-            v-for="item in completedItems"
-            :key="item._id"
-            :item="item"
-            :actor="actor"
-            :showStar="true"
-          />
+          <transition-group name="slide" tag="div" class="nogrow">
+            <progress-box
+              v-for="item in completedItems"
+              :key="item._id"
+              :item="item"
+              :actor="actor"
+              :showStar="true"
+            />
+          </transition-group>
         </div>
       </transition>
     </div>
@@ -33,18 +40,25 @@
 </template>
 
 <style lang="less" scoped>
+h3 {
+  margin: 5px 0;
+  i {
+    width: 15px;
+    text-align: center;
+  }
+}
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.4s ease;
   overflow: hidden;
-  max-height: 83px;
+  max-height: 106px;
   opacity: 1;
 }
 .completed-slide-enter-active,
 .completed-slide-leave-active {
   transition: all 0.4s ease-out;
   overflow: hidden;
-  max-height: 1000px;
+  max-height: 400px;
   opacity: 1;
 }
 .slide-enter,
