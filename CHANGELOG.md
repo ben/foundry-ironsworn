@@ -2,6 +2,8 @@
 
 ## In progress
 
+- A widget for "completed" progress items in the SF sheet ([#257](https://github.com/ben/foundry-ironsworn/pull/257))
+
 ## 1.10.32
 
 - HTML editor can now handle Foundry item drops ([#256](https://github.com/ben/foundry-ironsworn/pull/256))
