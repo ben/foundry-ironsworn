@@ -243,6 +243,7 @@
     },
     "move": {
       "description": "When you <strong>do a thing</strong>...",
+      "fulltext": "",
       "strong": "",
       "weak": "",
       "miss": "",

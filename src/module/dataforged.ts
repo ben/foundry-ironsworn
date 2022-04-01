@@ -47,6 +47,7 @@ export async function importFromDataforged() {
       name: move['Name'],
       img: 'icons/dice/d10black.svg',
       data: {
+        fulltext: move['Text'],
         description: move['Description'],
         strong: move['Outcomes']?.['Strong Hit']?.['Text'],
         weak: move['Outcomes']?.['Weak Hit']?.['Text'],
