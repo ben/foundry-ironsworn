@@ -8,13 +8,18 @@
           :item="item"
           :actor="actor"
           :showStar="true"
+          @completed="progressCompleted"
         />
       </transition-group>
       <progress-controls :actor="actor" />
     </div>
 
     <div class="item-row nogrow" style="margin-top: 1rem">
-      <h3 class="clickable text" @click="expandCompleted = !expandCompleted">
+      <h3
+        class="clickable text"
+        :class="completedClass"
+        @click="expandCompleted = !expandCompleted"
+      >
         <i :class="completedCaretClass"></i> {{ $t('IRONSWORN.Completed') }}
       </h3>
       <transition
@@ -42,9 +47,14 @@
 <style lang="less" scoped>
 h3 {
   margin: 5px 0;
+  transition: background-color 0.2s ease;
   i {
     width: 15px;
     text-align: center;
+  }
+
+  &.highlighted {
+    background-color: lightyellow;
   }
 }
 .slide-enter-active,
@@ -85,6 +95,8 @@ export default {
   data() {
     return {
       expandCompleted: false,
+      highlightCompleted: false,
+      highlightCompletedTimer: null,
     }
   },
 
@@ -104,6 +116,20 @@ export default {
 
     completedCaretClass() {
       return 'fa fa-caret-' + (this.expandCompleted ? 'down' : 'right')
+    },
+
+    completedClass() {
+      return this.highlightCompleted ? 'highlighted' : undefined
+    },
+  },
+
+  methods: {
+    progressCompleted() {
+      this.highlightCompleted = true
+      clearTimeout(this.highlightCompletedTimer)
+      this.highlightCompletedTimer = setTimeout(() => {
+        this.highlightCompleted = false
+      }, 2000)
     },
   },
 }

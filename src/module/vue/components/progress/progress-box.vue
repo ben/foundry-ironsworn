@@ -147,7 +147,9 @@ export default {
       this.foundryItem.markProgress(-1)
     },
     toggleComplete() {
-      this.$item.update({ data: { completed: !this.item.data.completed } })
+      const completed = !this.item.data.completed
+      if (completed) this.$emit('completed')
+      this.$item.update({ data: { completed } })
     },
     toggleStar() {
       this.$item.update({ data: { starred: !this.item.data.starred } })
