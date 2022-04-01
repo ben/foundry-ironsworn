@@ -101,14 +101,8 @@
       </div>
     </section>
 
-    <section>
-      <editor
-        target="data.description"
-        :owner="true"
-        :button="true"
-        :editable="true"
-        :content="actor.data.description"
-      />
+    <section class="flexcol" style="margin-top: 1rem">
+      <quill-editor v-model="actor.data.description" />
     </section>
   </div>
 </template>
@@ -132,13 +126,22 @@ function randomImage(subtype, klass) {
     return `systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-${name}-0${i}.webp`
   }
   if (subtype === 'settlement') {
-    return `systems/foundry-ironsworn/assets/locations/settlement-${klass.replace(/\s+/,'')}.webp`
+    return `systems/foundry-ironsworn/assets/locations/settlement-${klass.replace(
+      /\s+/,
+      ''
+    )}.webp`
   }
   if (subtype === 'derelict') {
-    return `systems/foundry-ironsworn/assets/locations/derelict-${klass.replace(/\s+/,'')}.webp`
+    return `systems/foundry-ironsworn/assets/locations/derelict-${klass.replace(
+      /\s+/,
+      ''
+    )}.webp`
   }
   if (subtype === 'vault') {
-    return `systems/foundry-ironsworn/assets/locations/vault-${klass.replace(/\s+/,'')}.webp`
+    return `systems/foundry-ironsworn/assets/locations/vault-${klass.replace(
+      /\s+/,
+      ''
+    )}.webp`
   }
 }
 
@@ -423,6 +426,12 @@ export default {
     },
   },
 
+  watch: {
+    'actor.data.description'() {
+      this.$actor.update({ 'data.description': this.actor.data.description })
+    },
+  },
+
   methods: {
     subtypeChanged(evt) {
       this.saveSubtype(evt.target.value)
@@ -510,11 +519,15 @@ export default {
       if (!drawText) return
 
       // Append to description
-      const description = `
-        ${this.actor.data.description ?? ''}\n
-        <p><strong>${oracle.title}:</strong> ${drawText}</p>
-      `
-      await this.$actor.update({ data: { description } })
+      const parts = [
+        this.actor.data.description,
+        '<p><strong>',
+        oracle.title,
+        ':</strong> ',
+        drawText,
+        '</p>',
+      ]
+      await this.$actor.update({ data: { description: parts.join('') } })
     },
 
     async updateAllTokens(data) {

@@ -6,7 +6,7 @@ export class StarforgedLocationSheet extends IronswornVueActorSheet {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
       width: 400,
-      height: 500,
+      height: 600,
       submitOnClose: true,
       submitOnChange: true,
       template: 'systems/foundry-ironsworn/templates/actor/sf-location.hbs',
