@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.33
+
 - A widget for "completed" progress items in the SF sheet ([#257](https://github.com/ben/foundry-ironsworn/pull/257))
 
 ## 1.10.32
