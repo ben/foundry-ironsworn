@@ -11,7 +11,7 @@
           @completed="progressCompleted"
         />
       </transition-group>
-      <progress-controls :actor="actor" />
+      <progress-controls :actor="actor" foeCompendium="starforgedencounters" />
     </div>
 
     <div class="item-row nogrow" style="margin-top: 1rem">
