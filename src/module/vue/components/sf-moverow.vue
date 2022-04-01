@@ -12,19 +12,7 @@
         v-if="expanded"
         @moveclick="moveclick"
       >
-        <div v-html="$enrichHtml(description)" />
-        <p v-if="strong">
-          <strong>{{ $t('IRONSWORN.OnAStrongHit') }}:</strong>
-          <span v-html="$enrichHtml(strong)"></span>
-        </p>
-        <p v-if="weak">
-          <strong>{{ $t('IRONSWORN.OnAWeakHit') }}:</strong>
-          <span v-html="$enrichHtml(weak)"></span>
-        </p>
-        <p v-if="miss">
-          <strong>{{ $t('IRONSWORN.OnAMiss') }}:</strong>
-          <span v-html="$enrichHtml(miss)"></span>
-        </p>
+        <div v-html="$enrichHtml(fulltext)" />
       </with-rolllisteners>
     </transition>
   </div>
@@ -79,17 +67,8 @@ export default {
       return this.move.Source?.Title
     },
 
-    description() {
-      return this.move.foundryItem?.data?.data?.description
-    },
-    strong() {
-      return this.move.foundryItem?.data?.data?.strong
-    },
-    weak() {
-      return this.move.foundryItem?.data?.data?.weak
-    },
-    miss() {
-      return this.move.foundryItem?.data?.data?.miss
+    fulltext() {
+      return this.move.foundryItem?.data?.data?.fulltext
     },
   },
 
@@ -113,7 +92,7 @@ export default {
 
     moveclick(item) {
       this.$emit('moveclick', item)
-    }
+    },
   },
 }
 </script>
