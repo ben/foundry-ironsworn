@@ -12,11 +12,40 @@
         <div class="flexcol">
           <div class="flexrow">
             <rank-hexes :current="item.data.rank" @click="rankClick" />
-            <icon-button v-if="editMode" icon="trash" @click="destroy" />
-            <icon-button icon="edit" @click="edit" />
-            <icon-button v-if="editMode" icon="caret-left" @click="retreat" />
-            <icon-button icon="caret-right" @click="advance" />
-            <icon-button icon="dice-d6" @click="fulfill" />
+            <icon-button
+              v-if="editMode"
+              icon="trash"
+              @click="destroy"
+              :tooltip="$t('IRONSWORN.DeleteItem')"
+            />
+            <icon-button
+              icon="edit"
+              @click="edit"
+              :tooltip="$t('IRONSWORN.Edit')"
+            />
+            <icon-button
+              v-if="editMode"
+              :icon="completedIcon"
+              @click="toggleComplete"
+              :tooltip="completedTooltip"
+            />
+            <icon-button
+              v-if="editMode && item.data.hasTrack"
+              icon="caret-left"
+              @click="retreat"
+              :tooltip="$t('IRONSWORN.UnmarkProgress')"
+            />
+            <icon-button
+              v-if="item.data.hasTrack"
+              icon="caret-right"
+              @click="advance"
+              :tooltip="$t('IRONSWORN.MarkProgress')"
+            />
+            <icon-button
+              icon="dice-d6"
+              @click="fulfill"
+              :tooltip="$t('IRONSWORN.ProgressRoll')"
+            />
           </div>
           <h4 class="flexrow">
             <span>{{ item.name }}</span>
@@ -69,12 +98,25 @@ export default {
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
+    showTrackButtons() {
+      return this.item.data.hasTrack
+    },
     foundryItem() {
       const actor = game.actors?.get(this.actor._id)
       return actor?.items.get(this.item._id)
     },
     subtitle() {
       return this.$t(`IRONSWORN.${this.$capitalize(this.item.data.subtype)}`)
+    },
+    completedIcon() {
+      const suffix = this.item.data.completed
+        ? 'fa-check-circle'
+        : 'fa-dot-circle'
+      return `fab ${suffix}`
+    },
+    completedTooltip() {
+      const suffix = this.item.data.completed ? 'Completed' : 'NotCompleted'
+      return this.$t('IRONSWORN.' + suffix)
     },
   },
 
@@ -103,6 +145,11 @@ export default {
     },
     retreat() {
       this.foundryItem.markProgress(-1)
+    },
+    toggleComplete() {
+      const completed = !this.item.data.completed
+      if (completed) this.$emit('completed')
+      this.$item.update({ data: { completed } })
     },
     toggleStar() {
       this.$item.update({ data: { starred: !this.item.data.starred } })

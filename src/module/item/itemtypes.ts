@@ -3,6 +3,7 @@ import { RANKS } from '../constants'
 interface ProgressBase {
   rank: keyof typeof RANKS
   current: number
+  completed: Boolean
 }
 
 ///////////////////////////////

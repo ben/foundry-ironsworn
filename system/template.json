@@ -159,7 +159,8 @@
       "progress": {
         "description": "",
         "rank": "troublesome",
-        "current": 0
+        "current": 0,
+        "completed": false
       }
     },
     "progress": {
