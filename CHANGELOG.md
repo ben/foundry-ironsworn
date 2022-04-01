@@ -2,6 +2,8 @@
 
 ## In progress
 
+- The "Foes" button in the SF progresses tab was opening the wrong compendium ([#260](https://github.com/ben/foundry-ironsworn/pull/260))
+
 ## 1.10.33
 
 - A widget for "completed" progress items in the SF sheet ([#257](https://github.com/ben/foundry-ironsworn/pull/257))
