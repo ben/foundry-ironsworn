@@ -155,6 +155,7 @@ export interface DelveDomainDataProperties {
 
 interface MoveDataSourceData {
   description: string
+  fulltext: string
   strong: string
   weak: string
   miss: string
