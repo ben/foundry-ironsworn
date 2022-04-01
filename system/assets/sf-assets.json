@@ -66,7 +66,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -92,7 +92,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -125,7 +125,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -181,7 +181,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -207,7 +207,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -266,7 +266,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -292,7 +292,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -325,7 +325,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -411,7 +411,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -437,7 +437,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -463,7 +463,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -473,7 +473,7 @@
     "Abilities": [
       {
         "$id": "Assets / Sensor Array / Abilities / 1",
-        "Text": "<p>Your advanced sensors scan the paths ahead to help spot dangers. When you @Compendium[foundry-ironsworn.starforgedmoves.1a00b81fe1924f10]{Undertake an Expedition} (((rollplus wits))), and roll a 10 on only one challenge die, you may reroll that die.</p>\n",
+        "Text": "<p>Your advanced sensors scan the paths ahead to help spot dangers. When you @Compendium[foundry-ironsworn.starforgedmoves.1a00b81fe1924f10]{Undertake an Expedition} (((rollplus wits))), you may reroll one challenge die.</p>\n",
         "Enabled": true
       },
       {
@@ -505,7 +505,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -586,7 +586,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -596,12 +596,12 @@
     "Abilities": [
       {
         "$id": "Assets / Stealth Tech / Abilities / 1",
-        "Text": "<p>When you make a move against a specific foe or threat to avoid detection, add +1. If you @Compendium[foundry-ironsworn.starforgedmoves.f812c3b0a16cae17]{Enter the Fray} by ambushing an unaware foe, add +1 and mark progress on a strong hit.</p>\n",
+        "Text": "<p>Your vehicle is rigged for silent running. When you make a move against a specific foe or threat to avoid detection, add +1. If you @Compendium[foundry-ironsworn.starforgedmoves.f812c3b0a16cae17]{Enter the Fray} by ambushing an unaware foe, add +1 and mark progress on a strong hit.</p>\n",
         "Enabled": true
       },
       {
         "$id": "Assets / Stealth Tech / Abilities / 2",
-        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.1a00b81fe1924f10]{Undertake an Expedition} (((rollplus shadow))), and roll a 1 on your action die, you may reroll it.</p>\n",
+        "Text": "<p>When you travel stealthily as you @Compendium[foundry-ironsworn.starforgedmoves.1a00b81fe1924f10]{Undertake an Expedition} (((rollplus shadow))), you may reroll your action die.</p>\n",
         "Enabled": false
       },
       {
@@ -630,7 +630,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -645,7 +645,7 @@
       },
       {
         "$id": "Assets / Vehicle Bay / Abilities / 2",
-        "Text": "<p>When a support vehicle is destroyed, and you are able to retrieve its wreckage, you may @Compendium[foundry-ironsworn.starforgedmoves.c575eba41d23bf57]{Ask the Oracle} using the yes/no table if something can be salvaged from the mess. Make it &#39;50/50&#39;. On a yes, spend 2 experience to restore the support vehicle asset with all previously marked abilities. Until you @Compendium[foundry-ironsworn.starforgedmoves.b1031f576f218aae]{Repair} and bring it back to full working order, the vehicle is battered with 0 integrity.</p>\n",
+        "Text": "<p>When a support vehicle is destroyed, and you are able to retrieve its wreckage, you may @Compendium[foundry-ironsworn.starforgedmoves.c575eba41d23bf57]{Ask the Oracle} using the yes/no table if something can be salvaged from the mess. Make it 50/50. On a yes, spend 1 experience to restore the support vehicle asset with all previously marked abilities. Until you @Compendium[foundry-ironsworn.starforgedmoves.b1031f576f218aae]{Repair} and bring it back to full working order, the vehicle is battered with 0 integrity.</p>\n",
         "Enabled": false
       },
       {
@@ -656,7 +656,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -682,7 +682,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -730,7 +730,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -778,7 +778,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -866,7 +866,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -964,7 +964,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -987,7 +987,7 @@
       },
       {
         "$id": "Assets / Shuttle / Abilities / 2",
-        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.7c8a9d34258adbf5]{Face Danger} or @Compendium[foundry-ironsworn.starforgedmoves.37c235ecd9e38051]{React Under Fire} to navigate through hazardous skies or around obstacles, add +1 and take +1 momentum on a hit.</p>\n",
+        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.7c8a9d34258adbf5]{Face Danger} or @Compendium[foundry-ironsworn.starforgedmoves.37c235ecd9e38051]{React Under Fire} to navigate through hazardous skies, avoid obstacles, or evade an attack, add +1 and take +1 momentum on a hit.</p>\n",
         "Enabled": false
       },
       {
@@ -1012,7 +1012,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1128,7 +1128,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1205,7 +1205,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1249,7 +1249,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1278,7 +1278,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1362,7 +1362,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1389,7 +1389,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1472,7 +1472,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1512,7 +1512,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1546,7 +1546,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1557,7 +1557,7 @@
     "Abilities": [
       {
         "$id": "Assets / Blademaster / Abilities / 1",
-        "Text": "<p>When you <a href=\"#Clash\">Clash</a> or <a href=\"#Strike\">Strike</a> in close-quarters, add +1. On a strong hit with a match, you are unstoppable; mark progress.</p>\n",
+        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.44ba345ef9ff8bca]{Clash} or @Compendium[foundry-ironsworn.starforgedmoves.c5891ef55b649fcc]{Strike} in close-quarters, add +1. On a strong hit with a match, you are unstoppable; mark progress.</p>\n",
         "Enabled": true
       },
       {
@@ -1581,7 +1581,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1607,7 +1607,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1634,33 +1634,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
-    }
-  },
-  {
-    "$id": "Assets / Commander",
-    "Name": "Commander",
-    "Asset Type": "Path",
-    "Abilities": [
-      {
-        "$id": "Assets / Commander / Abilities / 1",
-        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a0e1b47a1fefd9c1]{Aid Your Ally} through leadership, coordination, or planning, add +1. On a strong hit, any allies who are present take +1 momentum.</p>\n",
-        "Enabled": true
-      },
-      {
-        "$id": "Assets / Commander / Abilities / 2",
-        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.f812c3b0a16cae17]{Enter the Fray} (((rollplus heart))) by coordinating with your team as they wade into the fight, make your move before your allies act. On a strong hit, all allies may take an automatic strong hit. On a strong hit with a match, also mark progress on any objectives in this fight.</p>\n",
-        "Enabled": false
-      },
-      {
-        "$id": "Assets / Commander / Abilities / 3",
-        "Text": "<p>When you make a move to influence someone (not an ally) through leadership, add +1 and take +1 momentum on a hit. On a strong hit with a match, your command galvanizes them into unexpected action. Take another +1 momentum, and mark 1 tick on your bonds legacy track.</p>\n",
-        "Enabled": false
-      }
-    ],
-    "Source": {
-      "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1711,7 +1685,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1737,7 +1711,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1874,7 +1848,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1900,7 +1874,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -1977,7 +1951,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2003,7 +1977,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2029,7 +2003,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2095,7 +2069,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2105,17 +2079,16 @@
     "Abilities": [
       {
         "$id": "Assets / Fugitive / Abilities / 1",
-        "Text": "<p>You are hunted by a power or authority. When you make a move, you may rely on your resourcefulness to improve the result to a strong hit. If you do, mark a box above to represent hunters closing in on you. On the third mark, a notable foe or force has tracked you down. If you overcome them or escape, clear the boxes and mark 1 tick on your quests legacy track.</p>\n",
+        "Text": "<p>You are hunted by a power or authority. When you make a move, you may improve the result to a strong hit. If you do, fill one segment of a four-segment clock to represent hunters closing in. When the clock is filled, a notable foe or force has tracked you down. If you overcome them or escape, reset the clock and mark 1 tick on your quests legacy track.</p>\n",
         "Inputs": [
           {
-            "Min": 0,
-            "Step": 1,
-            "Starting Value": 0,
+            "Input Type": "Clock",
+            "Clock Type": "Tension",
+            "Filled": 0,
             "Adjustable": true,
-            "$id": "Assets / Fugitive / Abilities / 1 / Inputs / Hunted",
-            "Name": "Hunted",
-            "Input Type": "Number",
-            "Max": 3
+            "$id": "Assets / Fugitive / Abilities / 1 / Inputs / Notable foe or force tracks you down",
+            "Name": "Notable foe or force tracks you down",
+            "Segments": 4
           }
         ],
         "Enabled": true
@@ -2133,7 +2106,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2159,7 +2132,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2194,7 +2167,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2221,7 +2194,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2247,7 +2220,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2273,7 +2246,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2299,7 +2272,36 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
+    }
+  },
+  {
+    "$id": "Assets / Leader",
+    "Name": "Leader",
+    "Aliases": [
+      "Commander"
+    ],
+    "Asset Type": "Path",
+    "Abilities": [
+      {
+        "$id": "Assets / Leader / Abilities / 1",
+        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a0e1b47a1fefd9c1]{Aid Your Ally} through leadership, coordination, or planning, add +1. On a strong hit, any allies who are present take +1 momentum.</p>\n",
+        "Enabled": true
+      },
+      {
+        "$id": "Assets / Leader / Abilities / 2",
+        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.f812c3b0a16cae17]{Enter the Fray} (((rollplus heart))) by coordinating with your team as they wade into the fight, make your move before your allies act. On a strong hit, all allies may take an automatic strong hit. On a strong hit with a match, also mark progress on any objectives in this fight.</p>\n",
+        "Enabled": false
+      },
+      {
+        "$id": "Assets / Leader / Abilities / 3",
+        "Text": "<p>When you make a move to influence someone (not an ally) through leadership, add +1 and take +1 momentum on a hit. On a strong hit with a match, your command galvanizes them into unexpected action. Take another +1 momentum, and mark 1 tick on your bonds legacy track.</p>\n",
+        "Enabled": false
+      }
+    ],
+    "Source": {
+      "Title": "Ironsworn: Starforged Assets",
+      "Date": "033122"
     }
   },
   {
@@ -2359,7 +2361,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2389,7 +2391,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2415,7 +2417,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2441,7 +2443,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2467,7 +2469,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2493,7 +2495,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2537,7 +2539,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2577,7 +2579,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2621,7 +2623,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2665,7 +2667,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2724,7 +2726,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2750,7 +2752,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2776,7 +2778,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2821,7 +2823,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2847,7 +2849,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2905,7 +2907,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2947,7 +2949,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2973,7 +2975,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -2999,7 +3001,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3043,7 +3045,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3124,7 +3126,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3223,7 +3225,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3246,12 +3248,12 @@
       },
       {
         "$id": "Assets / Glowcat / Abilities / 2",
-        "Text": "<p>When you <a href=\"#Compel\">Compel</a>, the glowcat’s reactions will help guide your approach; you may reroll your action die if its value is less than the glowcat’s health.</p>\n",
+        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.fb3e705412c8edb7]{Compel}, the glowcat’s reactions will help guide your approach; you may reroll your action die if its value is less than the glowcat’s health.</p>\n",
         "Enabled": false
       },
       {
         "$id": "Assets / Glowcat / Abilities / 3",
-        "Text": "<p>When you <a href=\"#Endure-Stress\">Endure Stress</a> in the company of the glowcat, add +1. On a strong hit with a match, take +momentum equal to their health.</p>\n",
+        "Text": "<p>When you @Compendium[foundry-ironsworn.starforgedmoves.a0cbba3ad66a491c]{Endure Stress} in the company of the glowcat, add +1. On a strong hit with a match, take +momentum equal to their health.</p>\n",
         "Enabled": false
       }
     ],
@@ -3270,7 +3272,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3317,7 +3319,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3381,7 +3383,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3468,7 +3470,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3515,7 +3517,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3614,7 +3616,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3666,7 +3668,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3748,7 +3750,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3766,7 +3768,7 @@
     "Abilities": [
       {
         "$id": "Assets / Voidglider / Abilities / 1",
-        "Text": "<p>Your voidglider companion cruises in your starship’s energy wake and helps guide the way on spacebound expeditions. When you @Compendium[foundry-ironsworn.starforgedmoves.1a00b81fe1924f10]{Undertake an Expedition} and score a strong hit, take +1 momentum.</p>\n",
+        "Text": "<p>Your voidglider companion cruises in your starship’s energy wake and can help guide the way on spaceborne journeys. When you @Compendium[foundry-ironsworn.starforgedmoves.1a00b81fe1924f10]{Undertake an Expedition}, add +1.</p>\n",
         "Enabled": true
       },
       {
@@ -3780,7 +3782,7 @@
               "Options": [
                 {
                   "$id": "Assets / Voidglider / Abilities / 2 / Alter Moves / * / Trigger / Options / 1",
-                  "Text": "riding the voidglider and make a move to detect or evade a threat by relying on its instincts",
+                  "Text": "When you are riding the voidglider and make a move to detect or evade a threat by relying on its instincts",
                   "Action roll": {
                     "Stat": "Assets / Voidglider / Condition Meter"
                   }
@@ -3793,7 +3795,7 @@
       },
       {
         "$id": "Assets / Voidglider / Abilities / 3",
-        "Text": "<p>When you make a move by signaling the voidglider to distract or attack a spacebound foe, roll +its health and take +1 momentum on a hit.</p>\n",
+        "Text": "<p>When you make a move by signaling the voidglider to distract or attack a spaceborne foe, roll +its health and take +1 momentum on a hit.</p>\n",
         "Alter Moves": [
           {
             "$id": "Assets / Voidglider / Abilities / 3 / Alter Moves / *",
@@ -3802,7 +3804,7 @@
               "Options": [
                 {
                   "$id": "Assets / Voidglider / Abilities / 3 / Alter Moves / * / Trigger / Options / 1",
-                  "Text": "signaling the voidglider to distract or attack a spacebound foe",
+                  "Text": "When you make a move by signaling the voidglider to distract or attack a spaceborne foe",
                   "Action roll": {
                     "Stat": "Assets / Voidglider / Condition Meter"
                   }
@@ -3829,7 +3831,7 @@
     },
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3864,7 +3866,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3899,7 +3901,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3918,35 +3920,34 @@
     "Abilities": [
       {
         "$id": "Assets / Marked / Abilities / 1",
-        "Text": "<p>Envision the title, sigil, uniform, or tattoo you bear in recognition of your achievements. When you @Compendium[foundry-ironsworn.starforgedmoves.fb3e705412c8edb7]{Compel} or @Compendium[foundry-ironsworn.starforgedmoves.1e449bc5d77b8c23]{Make a Connection} among those who would know or recognize your reputation, add +1 and take +1 momentum on a hit. On a strong hit with a match, your notoriety grows; mark 2 ticks on your bonds legacy track.</p>\n",
+        "Text": "<p>Envision the title, sigil, uniform, or tattoo you bear in recognition of your achievements. When you @Compendium[foundry-ironsworn.starforgedmoves.fb3e705412c8edb7]{Compel} or @Compendium[foundry-ironsworn.starforgedmoves.1e449bc5d77b8c23]{Make a Connection} among those who would know your reputation, add +1. On a strong hit with a match, your notoriety grows; mark 2 ticks on your bonds legacy track.</p>\n",
         "Enabled": true
       },
       {
         "$id": "Assets / Marked / Abilities / 2",
-        "Text": "<p>When you risk your reputation to overcome failure, reroll any dice. If you score a miss, make a mark on this asset. When you have 5 such marks, discard this asset.</p>\n",
+        "Text": "<p>When you risk your reputation to overcome a miss, reroll any dice. If you score a miss again, fill one segment of a six-segment clock to represent the stain on your reputation. When the clock is filled, discard this asset.</p>\n",
         "Inputs": [
           {
-            "Min": 0,
-            "Step": 1,
-            "Starting Value": 0,
+            "Input Type": "Clock",
+            "Clock Type": "Tension",
+            "Filled": 0,
             "Adjustable": true,
-            "$id": "Assets / Marked / Abilities / 2 / Inputs / Marks",
-            "Name": "Marks",
-            "Input Type": "Number",
-            "Max": 5
+            "$id": "Assets / Marked / Abilities / 2 / Inputs / Stains on your reputation",
+            "Name": "Stains on your reputation",
+            "Segments": 6
           }
         ],
         "Enabled": false
       },
       {
         "$id": "Assets / Marked / Abilities / 3",
-        "Text": "<p>Once per fight, when you @Compendium[foundry-ironsworn.starforgedmoves.7cc8a0cb36ac026f]{Gain Ground} through threat or leadership, reroll any dice and mark progress on a hit.</p>\n",
+        "Text": "<p>Once per fight, when you @Compendium[foundry-ironsworn.starforgedmoves.7cc8a0cb36ac026f]{Gain Ground} through intimidation or command, reroll any dice and mark progress on a hit.</p>\n",
         "Enabled": false
       }
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -3973,7 +3974,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -4018,7 +4019,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -4045,7 +4046,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   },
   {
@@ -4121,7 +4122,7 @@
     ],
     "Source": {
       "Title": "Ironsworn: Starforged Assets",
-      "Date": "030422"
+      "Date": "033122"
     }
   }
 ]
