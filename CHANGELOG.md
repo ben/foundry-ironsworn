@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Use the Quill editor in the location sheet ([#267](https://github.com/ben/foundry-ironsworn/pull/267))
+
 ## 1.10.34
 
 - The "Foes" button in the SF progresses tab was opening the wrong compendium ([#260](https://github.com/ben/foundry-ironsworn/pull/260))
