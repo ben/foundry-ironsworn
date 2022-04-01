@@ -23,21 +23,25 @@
       {{>statCheck stat='wits'}}
     </div>
 
-    <hr>
+    <hr class="nogrow">
 
-    <h3>{{localize 'IRONSWORN.Description'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.FullText'}}</h3>
+    {{editor content=data.data.description target="data.fulltext" button=true owner=owner}}
+    <hr class="nogrow">
+
+    <h3 class="nogrow">{{localize 'IRONSWORN.Description'}}</h3>
     {{editor content=data.data.description target="data.description" button=true owner=owner}}
-    <hr>
+    <hr class="nogrow">
 
-    <h3>{{localize 'IRONSWORN.StrongHit'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.StrongHit'}}</h3>
     {{editor content=data.data.strong target="data.strong" button=true owner=owner}}
-    <hr>
+    <hr class="nogrow">
 
-    <h3>{{localize 'IRONSWORN.WeakHit'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.WeakHit'}}</h3>
     {{editor content=data.data.weak target="data.weak" button=true owner=owner}}
-    <hr>
+    <hr class="nogrow">
 
-    <h3>{{localize 'IRONSWORN.Miss'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.Miss'}}</h3>
     {{editor content=data.data.miss target="data.miss" button=true owner=owner}}
   </section>
 </form>
