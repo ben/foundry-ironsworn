@@ -177,7 +177,9 @@
       "MarkedOption": "marked {name}",
       "SetField": "set {name} to {val}",
       "AddBond": "Added a bond",
-      "LostBond": "Lost a bond"
+      "LostBond": "Lost a bond",
+      "completedMarked": "marked completed",
+      "completedUnmarked": "unmarked completed"
     },
     "Settings": {
       "Theme": {

@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Chat log when the "completed" flag changes ([#270](https://github.com/ben/foundry-ironsworn/pull/270))
+
 ## 1.10.35
 
 - Use the Quill editor in the location sheet ([#267](https://github.com/ben/foundry-ironsworn/pull/267))

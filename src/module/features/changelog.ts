@@ -177,6 +177,9 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const advanced = data.data.current > progressData.data.current
       return game.i18n.localize(`IRONSWORN.ChangeLog.progress${advanced ? 'Advanced' : 'Reduced'}`)
     }
+    if (data.data?.completed !== undefined) {
+      return game.i18n.localize(`IRONSWORN.ChangeLog.completed${data.data?.completed ? 'Marked' : 'Unmarked'}`)
+    }
     return undefined
   },
   vow: (item, data) => ITEM_TYPE_HANDLERS.progress(item, data),
