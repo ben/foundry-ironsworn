@@ -53,7 +53,11 @@ export class IronswornChatCard {
     }
 
     console.log(item)
-    // TODO: if a move sheet is open, navaigate to this move's entry
+    for (const actor of game.actors?.contents || []) {
+      if (actor.moveSheet && actor.moveSheet._state >= 0 && actor.moveSheet.highlightMove) {
+        return actor.moveSheet.highlightMove(item)
+      }
+    }
     item.sheet?.render(true)
   }
 
