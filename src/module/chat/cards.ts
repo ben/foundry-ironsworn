@@ -6,6 +6,7 @@ import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/ite
 import { IronswornActor } from '../actor/actor'
 import { maybeShowDice, RollDialog } from '../helpers/roll'
 import { defaultActor } from '../helpers/actors'
+import { IronswornItem } from '../item/item'
 
 export class IronswornChatCard {
   id?: string | null
@@ -24,11 +25,36 @@ export class IronswornChatCard {
     this.id = message.id
     this.roll = message.isRoll ? message.roll : undefined
 
+    html
+      .find('a.content-link')
+      .removeClass('content-link') // Prevent default Foundry behavior
+      .on('click', (ev) => this._moveNavigate.call(this, ev))
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
     html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
     html.find('.ironsworn__sojourn__extra__roll').on('click', (ev) => this._sojournExtra.call(this, ev))
     html.find('.ironsworn__paytheprice__roll').on('click', (ev) => this._payThePriceExtra.call(this, ev))
+  }
+
+  async _moveNavigate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    const { pack, id } = ev.target.dataset
+
+    let item: IronswornItem | undefined
+    if (pack) {
+      const fPack = game.packs.get(pack)
+      item = (await fPack?.getDocument(id)) as IronswornItem
+    } else {
+      item = await game.items?.get(id)
+    }
+    if (item?.data.type !== 'move') {
+      console.log('falling through')
+      return (TextEditor as any)._onClickContentLink(ev)
+    }
+
+    console.log(item)
+    // TODO: if a move sheet is open, navaigate to this move's entry
+    item.sheet?.render(true)
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
