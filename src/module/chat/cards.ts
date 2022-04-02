@@ -54,7 +54,7 @@ export class IronswornChatCard {
 
     console.log(item)
     for (const actor of game.actors?.contents || []) {
-      if (actor.moveSheet && actor.moveSheet._state >= 0 && actor.moveSheet.highlightMove) {
+      if ((actor.moveSheet as any)?._state >= 0 && actor.moveSheet?.highlightMove) {
         return actor.moveSheet.highlightMove(item)
       }
     }
