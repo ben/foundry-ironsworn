@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.35
+
 - Use the Quill editor in the location sheet ([#267](https://github.com/ben/foundry-ironsworn/pull/267))
 - Clicking on moves in chat cards does a move-sheet navigation ([#269](https://github.com/ben/foundry-ironsworn/pull/269))
 
