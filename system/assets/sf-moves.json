@@ -5,7 +5,7 @@
     "Category": "Session Moves",
     "Trigger": {
       "$id": "Moves / Begin a Session / Trigger",
-      "Text": "<p>When you begin a significant session or chapter of play...</p>\n"
+      "Text": "When you begin a significant session or chapter of play..."
     },
     "Text": "<p><strong>When you begin a significant session or chapter of play</strong>, do all of the following.</p>\n<ul>\n<li>Identify or adjust flagged content and @Compendium[foundry-ironsworn.starforgedmoves.2cb20c888af7317b]{Set a Flag}.</li>\n<li>Review or recap what happened last session.</li>\n<li>Set the scene by envisioning your character’s current situation and intent.</li>\n</ul>\n<p>In addition, you may spotlight a new danger, opportunity, or insight. This can include a scene hidden from your character’s perspective. If you do, envision a brief vignette (you may roll or choose on the table below for inspiration). Then, all players take +1 momentum as you return to play from the viewpoint of your characters.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-10</td>\n<td>Flashback reveals an aspect of your background or nature</td>\n</tr>\n<tr>\n<td>11-20</td>\n<td>Flashback reveals an aspect of another character, place, or faction</td>\n</tr>\n<tr>\n<td>21-30</td>\n<td>Influential character or faction is introduced or given new detail</td>\n</tr>\n<tr>\n<td>31-40</td>\n<td>Seemingly unrelated situations are shown to be connected</td>\n</tr>\n<tr>\n<td>41-50</td>\n<td>External factors create new danger, urgency, or importance for a quest</td>\n</tr>\n<tr>\n<td>51-60</td>\n<td>Important character is put in danger or suffers a misadventure</td>\n</tr>\n<tr>\n<td>61-70</td>\n<td>Key location is made unsafe or becomes mired in conflict</td>\n</tr>\n<tr>\n<td>71-80</td>\n<td>Unexpected return of an enemy or threat</td>\n</tr>\n<tr>\n<td>81-90</td>\n<td>Peril lies ahead or lurks just out of view</td>\n</tr>\n<tr>\n<td>91-100</td>\n<td>Unforeseen aid is on the way or within reach</td>\n</tr>\n</tbody></table>\n",
     "Oracles": [
@@ -22,7 +22,7 @@
     "Category": "Session Moves",
     "Trigger": {
       "$id": "Moves / Set a Flag / Trigger",
-      "Text": "<p>When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching...</p>\n"
+      "Text": "When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching..."
     },
     "Text": "<p><strong>When you identify situations or topics you don’t want to include, don’t want to envision in detail, or otherwise may need mindfulness when approaching</strong>, that content is now flagged.</p>\n<p>When you encounter content flagged as something to approach mindfully, pause to consider or discuss its role in your story. When you come across flagged content that you would rather adjust or omit, @Compendium[foundry-ironsworn.starforgedmoves.82e19544e95fa4da]{Change Your Fate}.</p>\n",
     "Source": {
@@ -36,7 +36,7 @@
     "Category": "Session Moves",
     "Trigger": {
       "$id": "Moves / Change Your Fate / Trigger",
-      "Text": "<p>When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment...</p>\n"
+      "Text": "When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment..."
     },
     "Text": "<p><strong>When you encounter flagged content, reject an oracle, resist a consequence, or otherwise need to shift your circumstances within the game for your comfort or enjoyment</strong>, pause and identify what needs to be changed. Choose as many options as appropriate.</p>\n<ul>\n<li><strong>Reframe:</strong> This didn’t happen the way you first thought. Envision the moment from another perspective in a way that diminishes or changes the content.</li>\n<li><strong>Refocus:</strong> This is not the most important thing happening right now. Envision how the spotlight shifts to change the focus.</li>\n<li><strong>Replace:</strong> This happens but with a small adjustment. Switch out an element and envision how this new detail changes the scenario.</li>\n<li><strong>Redirect:</strong> Adjust the trajectory to involve a helping hand. Envision how another person or party becomes involved.</li>\n<li><strong>Reshape:</strong> The situation changes completely. Envision what happened instead.</li>\n</ul>\n",
     "Source": {
@@ -50,7 +50,7 @@
     "Category": "Session Moves",
     "Trigger": {
       "$id": "Moves / Take a Break / Trigger",
-      "Text": "<p>When you resolve a progress move or complete an intense scenario...</p>\n"
+      "Text": "When you resolve a progress move or complete an intense scenario..."
     },
     "Text": "<p><strong>When you resolve a progress move or complete an intense scenario</strong>, take a few deep breaths and take some time to attend to the needs of your body. Reflect on what just happened and how it made you feel. Then, choose one.</p>\n<ul>\n<li>Move on: Continue the session. You or an ally may add +1 on the next move (not a progress move), bolstered by your reflection and past experiences.</li>\n<li>Stop for now: @Compendium[foundry-ironsworn.starforgedmoves.29181a8771fedc2a]{End a Session}.</li>\n</ul>\n",
     "Source": {
@@ -64,7 +64,7 @@
     "Category": "Session Moves",
     "Trigger": {
       "$id": "Moves / End a Session / Trigger",
-      "Text": "<p>When you end a significant session or chapter of play...</p>\n"
+      "Text": "When you end a significant session or chapter of play..."
     },
     "Text": "<p><strong>When you end a significant session or chapter of play</strong>, reflect on the events of the game and identify any missed opportunities to mark progress.</p>\n<ul>\n<li>If you strengthened your ties to a connection, @Compendium[foundry-ironsworn.starforgedmoves.b7d3c053ed803731]{Develop Your Relationship}.</li>\n<li>If you moved forward on a quest, @Compendium[foundry-ironsworn.starforgedmoves.6b30c3c51a3471bd]{Reach a Milestone}.</li>\n</ul>\n<p>If there is a quest, connection, or other situation you would like to give focus in your next session, make note of it and take +1 momentum.</p>\n",
     "Source": {
@@ -78,7 +78,7 @@
     "Category": "Adventure Moves",
     "Trigger": {
       "$id": "Moves / Face Danger / Trigger",
-      "Text": "<p>When you attempt something risky or react to an imminent threat...</p>\n",
+      "Text": "When you attempt something risky or react to an imminent threat...",
       "Options": [
         {
           "$id": "Moves / Face Danger / Trigger / Options / 1",
@@ -144,7 +144,7 @@
     "Category": "Adventure Moves",
     "Trigger": {
       "$id": "Moves / Secure an Advantage / Trigger",
-      "Text": "<p>When you assess a situation, make preparations, or attempt to gain leverage...</p>\n",
+      "Text": "When you assess a situation, make preparations, or attempt to gain leverage...",
       "Options": [
         {
           "$id": "Moves / Secure an Advantage / Trigger / Options / 1",
@@ -210,7 +210,7 @@
     "Category": "Adventure Moves",
     "Trigger": {
       "$id": "Moves / Gather Information / Trigger",
-      "Text": "<p>When you search for clues, conduct an investigation, analyze evidence, or do research...</p>\n",
+      "Text": "When you search for clues, conduct an investigation, analyze evidence, or do research...",
       "Options": [
         {
           "$id": "Moves / Gather Information / Trigger / Options / 1",
@@ -247,7 +247,7 @@
     "Category": "Adventure Moves",
     "Trigger": {
       "$id": "Moves / Compel / Trigger",
-      "Text": "<p>When you try to persuade someone or make them an offer...</p>\n",
+      "Text": "When you try to persuade someone or make them an offer...",
       "Options": [
         {
           "$id": "Moves / Compel / Trigger / Options / 1",
@@ -299,7 +299,7 @@
     "Category": "Adventure Moves",
     "Trigger": {
       "$id": "Moves / Aid Your Ally / Trigger",
-      "Text": "<p>When you act in direct support of an ally...</p>\n"
+      "Text": "When you act in direct support of an ally..."
     },
     "Text": "<p><strong>When you act in direct support of an ally</strong>, envision how you aid them. Then, @Compendium[foundry-ironsworn.starforgedmoves.19b8caf937ee463c]{Secure an Advantage} or @Compendium[foundry-ironsworn.starforgedmoves.7cc8a0cb36ac026f]{Gain Ground} to take action. If you score a hit, they (instead of you) take the benefits of the move.</p>\n<p>If you @Compendium[foundry-ironsworn.starforgedmoves.7cc8a0cb36ac026f]{Gain Ground} and score a strong hit, you are both in control. On a <strong>weak hit</strong>, your ally is in control but you are in a bad spot.</p>\n",
     "Source": {
@@ -313,7 +313,7 @@
     "Category": "Adventure Moves",
     "Trigger": {
       "$id": "Moves / Check Your Gear / Trigger",
-      "Text": "<p>When you check to see if you have a specific helpful item or resource...</p>\n",
+      "Text": "When you check to see if you have a specific helpful item or resource...",
       "Options": [
         {
           "$id": "Moves / Check Your Gear / Trigger / Options / 1",
@@ -350,7 +350,7 @@
     "Category": "Quest Moves",
     "Trigger": {
       "$id": "Moves / Swear an Iron Vow / Trigger",
-      "Text": "<p>When you swear upon iron to complete a quest...</p>\n",
+      "Text": "When you swear upon iron to complete a quest...",
       "Options": [
         {
           "$id": "Moves / Swear an Iron Vow / Trigger / Options / 1",
@@ -387,7 +387,7 @@
     "Category": "Quest Moves",
     "Trigger": {
       "$id": "Moves / Reach a Milestone / Trigger",
-      "Text": "<p>When you make headway in your quest...</p>\n"
+      "Text": "When you make headway in your quest..."
     },
     "Text": "<p><strong>When you make headway in your quest</strong> by doing any of the following...</p>\n<ul>\n<li>overcoming a critical obstacle</li>\n<li>gaining meaningful insight</li>\n<li>completing a perilous expedition</li>\n<li>acquiring a crucial item or resource</li>\n<li>earning vital support</li>\n<li>defeating a notable foe</li>\n</ul>\n<p>...you may mark progress per the rank of the vow.</p>\n",
     "Source": {
@@ -402,7 +402,7 @@
     "Progress Move": true,
     "Trigger": {
       "$id": "Moves / Fulfill Your Vow / Trigger",
-      "Text": "<p>When you reach the end of your quest...</p>\n",
+      "Text": "When you reach the end of your quest...",
       "Options": [
         {
           "$id": "Moves / Fulfill Your Vow / Trigger / Options / 1",
@@ -439,7 +439,7 @@
     "Category": "Quest Moves",
     "Trigger": {
       "$id": "Moves / Forsake Your Vow / Trigger",
-      "Text": "<p>When you renounce your quest, betray your promise, or the goal is lost to you...</p>\n"
+      "Text": "When you renounce your quest, betray your promise, or the goal is lost to you..."
     },
     "Text": "<p><strong>When you renounce your quest, betray your promise, or the goal is lost to you</strong>, clear the vow.</p>\n<p>Then, envision the impact of this failure and choose one or more as appropriate to the nature of the vow. Any allies who shared this vow may also envision a cost.</p>\n<ul>\n<li>You are demoralized or dispirited: @Compendium[foundry-ironsworn.starforgedmoves.a0cbba3ad66a491c]{Endure Stress}.</li>\n<li>A connection loses faith: @Compendium[foundry-ironsworn.starforgedmoves.296c6d6d3bfdfadc]{Test Your Relationship} when you next interact.</li>\n<li>You must abandon a path or resource: Discard an asset.</li>\n<li>Someone else pays a price: Envision how a person, being, or community bears the cost of the failure.</li>\n<li>Someone else takes advantage: Envision how an enemy gains power.</li>\n<li>Your reputation suffers: Envision how this failure marks you.</li>\n</ul>\n",
     "Source": {
@@ -453,7 +453,7 @@
     "Category": "Connection Moves",
     "Trigger": {
       "$id": "Moves / Make a Connection / Trigger",
-      "Text": "<p>When you search out a new relationship or give focus to an existing relationship (not an ally or companion)...</p>\n",
+      "Text": "When you search out a new relationship or give focus to an existing relationship (not an ally or companion)...",
       "Options": [
         {
           "$id": "Moves / Make a Connection / Trigger / Options / 1",
@@ -490,7 +490,7 @@
     "Category": "Connection Moves",
     "Trigger": {
       "$id": "Moves / Develop Your Relationship / Trigger",
-      "Text": "<p>When you reinforce your relationship with a connection...</p>\n",
+      "Text": "When you reinforce your relationship with a connection...",
       "Options": [
         {
           "$id": "Moves / Develop Your Relationship / Trigger / Options / 1",
@@ -531,7 +531,7 @@
     "Category": "Connection Moves",
     "Trigger": {
       "$id": "Moves / Test Your Relationship / Trigger",
-      "Text": "<p>When your relationship with a connection is tested through conflict, betrayal, or circumstance...</p>\n",
+      "Text": "When your relationship with a connection is tested through conflict, betrayal, or circumstance...",
       "Options": [
         {
           "$id": "Moves / Test Your Relationship / Trigger / Options / 1",
@@ -569,7 +569,7 @@
     "Progress Move": true,
     "Trigger": {
       "$id": "Moves / Forge a Bond / Trigger",
-      "Text": "<p>When your relationship with a connection is ready to evolve...</p>\n",
+      "Text": "When your relationship with a connection is ready to evolve...",
       "Options": [
         {
           "$id": "Moves / Forge a Bond / Trigger / Options / 1",
@@ -606,7 +606,7 @@
     "Category": "Exploration Moves",
     "Trigger": {
       "$id": "Moves / Undertake an Expedition / Trigger",
-      "Text": "<p>When you trailblaze a route through perilous space, journey over hazardous terrain, or survey a mysterious site...</p>\n",
+      "Text": "When you trailblaze a route through perilous space, journey over hazardous terrain, or survey a mysterious site...",
       "Options": [
         {
           "$id": "Moves / Undertake an Expedition / Trigger / Options / 1",
@@ -658,7 +658,7 @@
     "Category": "Exploration Moves",
     "Trigger": {
       "$id": "Moves / Explore a Waypoint / Trigger",
-      "Text": "<p>When you divert from an expedition to examine a notable location...</p>\n",
+      "Text": "When you divert from an expedition to examine a notable location...",
       "Options": [
         {
           "$id": "Moves / Explore a Waypoint / Trigger / Options / 1",
@@ -703,7 +703,7 @@
     "Category": "Exploration Moves",
     "Trigger": {
       "$id": "Moves / Make a Discovery / Trigger",
-      "Text": "<p>When your exploration of a waypoint uncovers something wondrous</p>\n",
+      "Text": "When your exploration of a waypoint uncovers something wondrous",
       "Options": [
         {
           "$id": "Moves / Make a Discovery / Trigger / Options / 1",
@@ -728,7 +728,7 @@
     "Category": "Exploration Moves",
     "Trigger": {
       "$id": "Moves / Confront Chaos / Trigger",
-      "Text": "<p>When your exploration of a waypoint uncovers something dreadful...</p>\n"
+      "Text": "When your exploration of a waypoint uncovers something dreadful..."
     },
     "Text": "<p><strong>When your exploration of a waypoint uncovers something dreadful</strong>, decide the number of aspects: one, two, or three. Roll that number of times or choose that number of aspects on the table below. Then, envision how the encounter begins.</p>\n<p>For each result, when you first confront that aspect within the scope of the encounter, you and your allies may mark one tick on your discoveries legacy track.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-4</td>\n<td>Baneful weapon of mass destruction</td>\n</tr>\n<tr>\n<td>5-9</td>\n<td>Cataclysmic environmental effects</td>\n</tr>\n<tr>\n<td>10-12</td>\n<td>Dead given unnatural life</td>\n</tr>\n<tr>\n<td>13-17</td>\n<td>Destructive lifeform of monstrous proportion</td>\n</tr>\n<tr>\n<td>18-20</td>\n<td>Dread hallucinations or illusions</td>\n</tr>\n<tr>\n<td>21-24</td>\n<td>Harbingers of an imminent invasion</td>\n</tr>\n<tr>\n<td>25-27</td>\n<td>Horde of insatiable hunger or fury</td>\n</tr>\n<tr>\n<td>28-32</td>\n<td>Horrific lifeforms of inscrutable purpose</td>\n</tr>\n<tr>\n<td>33-36</td>\n<td>Impostors in human form</td>\n</tr>\n<tr>\n<td>37-41</td>\n<td>Machines made enemy</td>\n</tr>\n<tr>\n<td>42-45</td>\n<td>Malignant contagion or parasite</td>\n</tr>\n<tr>\n<td>46-50</td>\n<td>Messenger or signal with a dire warning</td>\n</tr>\n<tr>\n<td>51-53</td>\n<td>Passage to a grim alternate reality</td>\n</tr>\n<tr>\n<td>54-58</td>\n<td>People corrupted by chaos</td>\n</tr>\n<tr>\n<td>59-63</td>\n<td>Powerful distortions of time or space</td>\n</tr>\n<tr>\n<td>64-68</td>\n<td>Signs of an impending catastrophe</td>\n</tr>\n<tr>\n<td>69-72</td>\n<td>Site of a baffling disappearance</td>\n</tr>\n<tr>\n<td>73-77</td>\n<td>Site of a horrible disaster</td>\n</tr>\n<tr>\n<td>78-82</td>\n<td>Site of terrible carnage</td>\n</tr>\n<tr>\n<td>83-87</td>\n<td>Technology nullified or made unstable</td>\n</tr>\n<tr>\n<td>88-92</td>\n<td>Technology warped for dark purpose</td>\n</tr>\n<tr>\n<td>93-96</td>\n<td>Vault of dread technology or power</td>\n</tr>\n<tr>\n<td>97-100</td>\n<td>Worshipers of great and malevolent powers</td>\n</tr>\n</tbody></table>\n",
     "Oracles": [
@@ -746,7 +746,7 @@
     "Progress Move": true,
     "Trigger": {
       "$id": "Moves / Finish an Expedition / Trigger",
-      "Text": "<p>When your expedition comes to an end...</p>\n",
+      "Text": "When your expedition comes to an end...",
       "Options": [
         {
           "$id": "Moves / Finish an Expedition / Trigger / Options / 1",
@@ -783,7 +783,7 @@
     "Category": "Exploration Moves",
     "Trigger": {
       "$id": "Moves / Set a Course / Trigger",
-      "Text": "<p>When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site...</p>\n",
+      "Text": "When you follow a known route through perilous space, across hazardous terrain, or within a mysterious site...",
       "Options": [
         {
           "$id": "Moves / Set a Course / Trigger / Options / 1",
@@ -820,7 +820,7 @@
     "Category": "Combat Moves",
     "Trigger": {
       "$id": "Moves / Enter the Fray / Trigger",
-      "Text": "<p>When you initiate combat or are forced into a fight...</p>\n",
+      "Text": "When you initiate combat or are forced into a fight...",
       "Options": [
         {
           "$id": "Moves / Enter the Fray / Trigger / Options / 1",
@@ -886,7 +886,7 @@
     "Category": "Combat Moves",
     "Trigger": {
       "$id": "Moves / Gain Ground / Trigger",
-      "Text": "<p>When you are in control and take action in a fight to reinforce your position or move toward an objective...</p>\n",
+      "Text": "When you are in control and take action in a fight to reinforce your position or move toward an objective...",
       "Options": [
         {
           "$id": "Moves / Gain Ground / Trigger / Options / 1",
@@ -952,7 +952,7 @@
     "Category": "Combat Moves",
     "Trigger": {
       "$id": "Moves / React Under Fire / Trigger",
-      "Text": "<p>When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle...</p>\n",
+      "Text": "When you are in a bad spot and take action in a fight to avoid danger or overcome an obstacle...",
       "Options": [
         {
           "$id": "Moves / React Under Fire / Trigger / Options / 1",
@@ -1018,7 +1018,7 @@
     "Category": "Combat Moves",
     "Trigger": {
       "$id": "Moves / Strike / Trigger",
-      "Text": "<p>When you are in control and assault a foe at close quarters, or when you attack at a distance...</p>\n",
+      "Text": "When you are in control and assault a foe at close quarters, or when you attack at a distance...",
       "Options": [
         {
           "$id": "Moves / Strike / Trigger / Options / 1",
@@ -1063,7 +1063,7 @@
     "Category": "Combat Moves",
     "Trigger": {
       "$id": "Moves / Clash / Trigger",
-      "Text": "<p>When you are in a bad spot and fight back against a foe at close quarters, or when you exchange fire at a distance...</p>\n",
+      "Text": "When you are in a bad spot and fight back against a foe at close quarters, or when you exchange fire at a distance...",
       "Options": [
         {
           "$id": "Moves / Clash / Trigger / Options / 1",
@@ -1109,7 +1109,7 @@
     "Progress Move": true,
     "Trigger": {
       "$id": "Moves / Take Decisive Action / Trigger",
-      "Text": "<p>When you seize an objective in a fight...</p>\n",
+      "Text": "When you seize an objective in a fight...",
       "Options": [
         {
           "$id": "Moves / Take Decisive Action / Trigger / Options / 1",
@@ -1149,7 +1149,7 @@
     "Category": "Combat Moves",
     "Trigger": {
       "$id": "Moves / Face Defeat / Trigger",
-      "Text": "<p>When you abandon or are deprived of an objective...</p>\n"
+      "Text": "When you abandon or are deprived of an objective..."
     },
     "Text": "<p><strong>When you abandon or are deprived of an objective</strong>, envision the consequence of this failure, clear the objective, and @Compendium[foundry-ironsworn.starforgedmoves.d5be4b94ec029080]{Pay the Price}.</p>\n<p>If the fight continues, you may create a new objective and give it a rank to represent the changing situation. If any objectives remain, the fight continues and you are in a bad spot.</p>\n",
     "Source": {
@@ -1163,7 +1163,7 @@
     "Category": "Combat Moves",
     "Trigger": {
       "$id": "Moves / Battle / Trigger",
-      "Text": "<p>When you fight a battle and it happens in a blur...</p>\n",
+      "Text": "When you fight a battle and it happens in a blur...",
       "Options": [
         {
           "$id": "Moves / Battle / Trigger / Options / 1",
@@ -1229,7 +1229,7 @@
     "Category": "Suffer Moves",
     "Trigger": {
       "$id": "Moves / Lose Momentum / Trigger",
-      "Text": "<p>When you are delayed or disadvantaged</p>\n"
+      "Text": "When you are delayed or disadvantaged"
     },
     "Text": "<p><strong>When you are delayed or disadvantaged</strong>, suffer -1 momentum for a minor setback, -2 for a serious setback, or -3 for a major setback.</p>\n<p>When your momentum is at its minimum (-6) and you must suffer -momentum, choose one.</p>\n<ul>\n<li>Envision how the price is paid and apply the cost to a different suffer move.</li>\n<li>Envision how this undermines your progress on a vow, expedition, connection, or combat. Then, clear 1 unit of progress on that track per its rank: troublesome=3 boxes; dangerous=2 boxes; formidable=1 box; extreme=2 ticks; epic=1 tick.</li>\n</ul>\n",
     "Source": {
@@ -1243,7 +1243,7 @@
     "Category": "Suffer Moves",
     "Trigger": {
       "$id": "Moves / Endure Harm / Trigger",
-      "Text": "<p>When you face physical injury, fatigue, or illness...</p>\n",
+      "Text": "When you face physical injury, fatigue, or illness...",
       "Options": [
         {
           "$id": "Moves / Endure Harm / Trigger / Options / 1",
@@ -1286,7 +1286,7 @@
     "Category": "Suffer Moves",
     "Trigger": {
       "$id": "Moves / Endure Stress / Trigger",
-      "Text": "<p>When you face mental strain, shock, or despair...</p>\n",
+      "Text": "When you face mental strain, shock, or despair...",
       "Options": [
         {
           "$id": "Moves / Endure Stress / Trigger / Options / 1",
@@ -1329,7 +1329,7 @@
     "Category": "Suffer Moves",
     "Trigger": {
       "$id": "Moves / Companion Takes a Hit / Trigger",
-      "Text": "<p>When your companion faces physical hardship...</p>\n",
+      "Text": "When your companion faces physical hardship...",
       "Options": [
         {
           "$id": "Moves / Companion Takes a Hit / Trigger / Options / 1",
@@ -1370,7 +1370,7 @@
     "Category": "Suffer Moves",
     "Trigger": {
       "$id": "Moves / Sacrifice Resources / Trigger",
-      "Text": "<p>When you lose or consume resources...</p>\n"
+      "Text": "When you lose or consume resources..."
     },
     "Text": "<p><strong>When you lose or consume resources</strong>, suffer -1 supply for a minor loss, -2 for a serious loss, or -3 for a major loss.</p>\n<p>If your supply is exhausted (reduced to 0), mark <strong>unprepared</strong>. When you suffer a loss of resources while unprepared, envision how this causes you hardship and apply the cost to a different suffer move.</p>\n",
     "Source": {
@@ -1384,7 +1384,7 @@
     "Category": "Suffer Moves",
     "Trigger": {
       "$id": "Moves / Withstand Damage / Trigger",
-      "Text": "<p>When your vehicle faces a damaging situation or environment...</p>\n",
+      "Text": "When your vehicle faces a damaging situation or environment...",
       "Options": [
         {
           "$id": "Moves / Withstand Damage / Trigger / Options / 1",
@@ -1424,7 +1424,7 @@
     "Category": "Recover Moves",
     "Trigger": {
       "$id": "Moves / Sojourn / Trigger",
-      "Text": "<p>When you spend time recovering within a community...</p>\n",
+      "Text": "When you spend time recovering within a community...",
       "Options": [
         {
           "$id": "Moves / Sojourn / Trigger / Options / 1",
@@ -1461,7 +1461,7 @@
     "Category": "Recover Moves",
     "Trigger": {
       "$id": "Moves / Heal / Trigger",
-      "Text": "<p>When you receive medical care or provide treatment...</p>\n",
+      "Text": "When you receive medical care or provide treatment...",
       "Options": [
         {
           "$id": "Moves / Heal / Trigger / Options / 1",
@@ -1523,7 +1523,7 @@
     "Category": "Recover Moves",
     "Trigger": {
       "$id": "Moves / Hearten / Trigger",
-      "Text": "<p>When you socialize, share intimacy, or find a moment of peace...</p>\n",
+      "Text": "When you socialize, share intimacy, or find a moment of peace...",
       "Options": [
         {
           "$id": "Moves / Hearten / Trigger / Options / 1",
@@ -1560,7 +1560,7 @@
     "Category": "Recover Moves",
     "Trigger": {
       "$id": "Moves / Resupply / Trigger",
-      "Text": "<p>When you attempt to bolster your readiness...</p>\n",
+      "Text": "When you attempt to bolster your readiness...",
       "Options": [
         {
           "$id": "Moves / Resupply / Trigger / Options / 1",
@@ -1619,7 +1619,7 @@
     "Category": "Recover Moves",
     "Trigger": {
       "$id": "Moves / Repair / Trigger",
-      "Text": "<p>When you make repairs to your vehicles, modules, mechanical companions, or other devices...</p>\n",
+      "Text": "When you make repairs to your vehicles, modules, mechanical companions, or other devices...",
       "Options": [
         {
           "$id": "Moves / Repair / Trigger / Options / 1",
@@ -1664,7 +1664,7 @@
     "Category": "Threshold Moves",
     "Trigger": {
       "$id": "Moves / Face Death / Trigger",
-      "Text": "<p>When you are brought to the brink of death with a chance for recovery or redemption...</p>\n",
+      "Text": "When you are brought to the brink of death with a chance for recovery or redemption...",
       "Options": [
         {
           "$id": "Moves / Face Death / Trigger / Options / 1",
@@ -1701,7 +1701,7 @@
     "Category": "Threshold Moves",
     "Trigger": {
       "$id": "Moves / Face Desolation / Trigger",
-      "Text": "<p>When you are brought to the brink of desolation...</p>\n",
+      "Text": "When you are brought to the brink of desolation...",
       "Options": [
         {
           "$id": "Moves / Face Desolation / Trigger / Options / 1",
@@ -1739,7 +1739,7 @@
     "Progress Move": true,
     "Trigger": {
       "$id": "Moves / Overcome Destruction / Trigger",
-      "Text": "<p>When your command vehicle is destroyed or irrevocably lost...</p>\n",
+      "Text": "When your command vehicle is destroyed or irrevocably lost...",
       "Options": [
         {
           "$id": "Moves / Overcome Destruction / Trigger / Options / 1",
@@ -1776,7 +1776,7 @@
     "Category": "Legacy Moves",
     "Trigger": {
       "$id": "Moves / Earn Experience / Trigger",
-      "Text": "<p>When you fill a box (four ticks) on any legacy track...</p>\n"
+      "Text": "When you fill a box (four ticks) on any legacy track..."
     },
     "Text": "<p><strong>When you fill a box (four ticks) on any legacy track</strong>, take 2 experience. This experience may be spent when you @Compendium[foundry-ironsworn.starforgedmoves.a209ffb1d89d319c]{Advance}.</p>\n<p>Once you completely fill the tenth box on any legacy track, clear that track. You may start again marking progress on the cleared track, but earn experience at a reduced rate of 1 experience (instead of 2) for each filled progress box. If you make a progress roll against this track, resolve the outcome as if at 10 progress.</p>\n",
     "Source": {
@@ -1790,7 +1790,7 @@
     "Category": "Legacy Moves",
     "Trigger": {
       "$id": "Moves / Advance / Trigger",
-      "Text": "<p>When you develop your abilities, improve your resources, gain a reward, or boost your influence...</p>\n"
+      "Text": "When you develop your abilities, improve your resources, gain a reward, or boost your influence..."
     },
     "Text": "<p><strong>When you develop your abilities, improve your resources, gain a reward, or boost your influence</strong>, you may spend 3 experience to add a new asset, or 2 experience to upgrade an asset. Choose from the following categories as appropriate to your focus and opportunities.</p>\n<ul>\n<li>Module: Upgrade your command vehicle</li>\n<li>Support Vehicle: Acquire or improve a secondary vehicle</li>\n<li>Path: Bolster your personal capabilities or follow a new calling</li>\n<li>Companion: Gain or improve a trusted helper</li>\n<li>Deed: Learn from your experiences or build a legacy</li>\n</ul>\n",
     "Source": {
@@ -1805,7 +1805,7 @@
     "Progress Move": true,
     "Trigger": {
       "$id": "Moves / Continue a Legacy / Trigger",
-      "Text": "<p>When you retire from your life as Ironsworn, or succumb to death or desolation...</p>\n",
+      "Text": "When you retire from your life as Ironsworn, or succumb to death or desolation...",
       "Options": [
         {
           "$id": "Moves / Continue a Legacy / Trigger / Options / 1",
@@ -1846,7 +1846,7 @@
     "Category": "Fate Moves",
     "Trigger": {
       "$id": "Moves / Ask the Oracle / Trigger",
-      "Text": "<p>When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events...</p>\n"
+      "Text": "When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events..."
     },
     "Text": "<p><strong>When you seek to resolve questions, reveal details, discover locations, determine how other characters respond, or trigger encounters or events</strong>, you may...</p>\n<ul>\n<li>Draw a conclusion: Decide the answer based on the most interesting and obvious result.</li>\n<li>Spark an idea: Use an oracle table or other random prompt.</li>\n<li>Ask a yes/no question: Decide the odds of a yes, and roll on the table below to check the answer.</li>\n<li>Pick two: Envision two options. Rate one as likely, and roll on the table below to see if it is true. If not, it is the other.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Odds</th>\n<th>The answer is yes if you roll...</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Small Chance</td>\n<td>10 or less</td>\n</tr>\n<tr>\n<td>Unlikely</td>\n<td>25 or less</td>\n</tr>\n<tr>\n<td>50/50</td>\n<td>50 or less</td>\n</tr>\n<tr>\n<td>Likely</td>\n<td>75 or less</td>\n</tr>\n<tr>\n<td>Almost Certain</td>\n<td>90 or less</td>\n</tr>\n</tbody></table>\n<p>On a match, envision an extreme result or twist.</p>\n",
     "Oracles": [
@@ -1867,7 +1867,7 @@
     "Category": "Fate Moves",
     "Trigger": {
       "$id": "Moves / Pay the Price / Trigger",
-      "Text": "<p>When you suffer the outcome of an action...</p>\n"
+      "Text": "When you suffer the outcome of an action..."
     },
     "Text": "<p><strong>When you suffer the outcome of an action</strong>, choose one.</p>\n<ul>\n<li>Make the most obvious negative outcome happen.</li>\n<li>@Compendium[foundry-ironsworn.starforgedmoves.c575eba41d23bf57]{Ask the Oracle} for inspiration. Interpret the answer as a hardship or complication appropriate to the situation.</li>\n<li>Roll on the table below. If the result doesn’t fit the situation, roll again.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-2</td>\n<td>A trusted individual or community acts against you</td>\n</tr>\n<tr>\n<td>3-4</td>\n<td>An individual or community you care about is exposed to danger</td>\n</tr>\n<tr>\n<td>5-7</td>\n<td>You encounter signs of a looming threat</td>\n</tr>\n<tr>\n<td>8-10</td>\n<td>You create an opportunity for an enemy</td>\n</tr>\n<tr>\n<td>11-14</td>\n<td>You face a tough choice</td>\n</tr>\n<tr>\n<td>15-18</td>\n<td>You face the consequences of an earlier choice</td>\n</tr>\n<tr>\n<td>19-22</td>\n<td>A surprising development complicates your quest</td>\n</tr>\n<tr>\n<td>23-26</td>\n<td>You are separated from something or someone</td>\n</tr>\n<tr>\n<td>27-32</td>\n<td>Your action causes collateral damage or has an unintended effect</td>\n</tr>\n<tr>\n<td>33-38</td>\n<td>Something of value is lost or destroyed</td>\n</tr>\n<tr>\n<td>39-44</td>\n<td>The environment or terrain introduces a new hazard</td>\n</tr>\n<tr>\n<td>45-50</td>\n<td>A new enemy is revealed</td>\n</tr>\n<tr>\n<td>51-56</td>\n<td>A friend, companion, or ally is in harm&#39;s way (or you are, if alone)</td>\n</tr>\n<tr>\n<td>57-62</td>\n<td>Your equipment or vehicle malfunctions</td>\n</tr>\n<tr>\n<td>63-68</td>\n<td>Your vehicle suffers damage</td>\n</tr>\n<tr>\n<td>69-74</td>\n<td>You waste resources</td>\n</tr>\n<tr>\n<td>75-81</td>\n<td>You are harmed</td>\n</tr>\n<tr>\n<td>82-88</td>\n<td>You are stressed</td>\n</tr>\n<tr>\n<td>89-95</td>\n<td>You are delayed or put at a disadvantage</td>\n</tr>\n<tr>\n<td>96-100</td>\n<td>Roll twice</td>\n</tr>\n</tbody></table>\n",
     "Oracles": [
@@ -1884,7 +1884,7 @@
     "Category": "Scene Challenge Moves",
     "Trigger": {
       "$id": "Moves / Begin the Scene / Trigger",
-      "Text": "<p>When you face an extended or complex challenge outside of a fight...</p>\n"
+      "Text": "When you face an extended or complex challenge outside of a fight..."
     },
     "Text": "<p><strong>When you face an extended or complex challenge outside of a fight</strong>, name your objective and set its rank as formidable.</p>\n<p>Then, envision the situation and choose the number of segments for the scene’s tension clock.</p>\n<ul>\n<li>You are severely disadvantaged: Four segments</li>\n<li>You are on equal footing: Six segments</li>\n<li>You have strong advantage: Eight segments</li>\n</ul>\n<p>When the clock is full, you must @Compendium[foundry-ironsworn.starforgedmoves.c376907aa86dd244]{Finish the Scene}.</p>\n",
     "Source": {
@@ -1899,7 +1899,7 @@
     "Variant of": "Moves / Face Danger",
     "Trigger": {
       "$id": "Moves / Face Danger (Scene Challenge) / Trigger",
-      "Text": "<p>When you attempt something risky or react to an imminent threat within a scene challenge...</p>\n",
+      "Text": "When you attempt something risky or react to an imminent threat within a scene challenge...",
       "Options": [
         {
           "$id": "Moves / Face Danger (Scene Challenge) / Trigger / Options / 1",
@@ -1974,7 +1974,7 @@
     "Variant of": "Moves / Secure an Advantage",
     "Trigger": {
       "$id": "Moves / Secure an Advantage (Scene Challenge) / Trigger",
-      "Text": "<p>When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge...</p>\n",
+      "Text": "When you assess a situation, make preparations, or attempt to gain leverage within a scene challenge...",
       "Options": [
         {
           "$id": "Moves / Secure an Advantage (Scene Challenge) / Trigger / Options / 1",
@@ -2048,7 +2048,7 @@
     "Category": "Scene Challenge Moves",
     "Trigger": {
       "$id": "Moves / Finish the Scene / Trigger",
-      "Text": "<p>When the scene challenge tension clock or progress track is filled, or when events lead to the scene’s conclusion...</p>\n",
+      "Text": "When the scene challenge tension clock or progress track is filled, or when events lead to the scene’s conclusion...",
       "Options": [
         {
           "$id": "Moves / Finish the Scene / Trigger / Options / 1",

@@ -114,22 +114,21 @@ const DF_MOVE_TEXT_REGEX = /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \
 function processMoves(idMap, df) {
   console.log('Moves:')
 
-  const markdownKeys = [
-    'Text',
-    'Description',
-    'Trigger.Text',
-    'Outcomes.Strong Hit.Text',
-    'Outcomes.Strong Hit.With a Match.Text',
-    'Outcomes.Weak Hit.Text',
-    'Outcomes.Miss.Text',
-    'Outcomes.Miss.With a Match.Text',
-  ]
+  const markdownRenderers = {
+    Text: marked.parse,
+    'Trigger.Text': marked.parseInline,
+    'Outcomes.Strong Hit.Text': marked.parse,
+    'Outcomes.Strong Hit.With a Match.Text': marked.parse,
+    'Outcomes.Weak Hit.Text': marked.parse,
+    'Outcomes.Miss.Text': marked.parse,
+    'Outcomes.Miss.With a Match.Text': marked.parse,
+  }
 
   for (const dfMove of df['moves.json']) {
-    for (const k of markdownKeys) {
+    for (const [k, renderer] of Object.entries(markdownRenderers)) {
       const md = get(dfMove, k)
       if (md) {
-        set(dfMove, k, renderHtml(idMap, md, marked.parse))
+        set(dfMove, k, renderHtml(idMap, md, renderer))
       }
     }
   }
