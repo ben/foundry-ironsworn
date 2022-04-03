@@ -126,10 +126,11 @@ function processMoves(idMap, df) {
   ]
 
   for (const dfMove of df['moves.json']) {
-    let [_, description, strong, weak, miss] = dfMove['Text'].match(DF_MOVE_TEXT_REGEX) || []
     for (const k of markdownKeys) {
       const md = get(dfMove, k)
-      if (md) set(dfMove, k, renderHtml(idMap, md, marked.parseInline))
+      if (md) {
+        set(dfMove, k, renderHtml(idMap, md, marked.parse))
+      }
     }
   }
 
