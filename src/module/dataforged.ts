@@ -87,6 +87,25 @@ function textForMoveTriggerOptions(trigger: MoveTrigger): string {
   return ret
 }
 
+function statsForMove(move: any): string[] {
+  const options = move['Trigger']?.Options as MoveTriggerOption[] | undefined
+  if (!options) return []
+
+  const ret = [] as string[]
+  for (const option of options) {
+    const actionRoll = option['Action roll']
+    if (!actionRoll) continue
+
+    const fooOf = actionRoll['All of'] || actionRoll['Best of'] || actionRoll['Worst of']
+    if (fooOf) {
+      ret.push(...fooOf)
+    } else if (actionRoll.Stat) {
+      ret.push(actionRoll.Stat)
+    }
+  }
+  return ret.map(x => x.toLowerCase())
+}
+
 const PACKS = ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles', 'foundry-ironsworn.foeactorssf']
 /**
  * Converts JSON from dataforged resources into foundry packs. Requires packs to
@@ -127,7 +146,7 @@ export async function importFromDataforged() {
         weak: move['Outcomes']?.['Weak Hit']?.['Text'],
         miss: move['Outcomes']?.['Miss']?.['Text'],
         missmatch: move['Outcomes']?.['Miss']?.['With a Match']?.['Text'],
-        stats: move['Trigger']?.['Options']?.map((o) => o['Action roll']?.Stat?.toLowerCase()).filter((s) => s) || [],
+        stats: statsForMove(move),
         sourceId: move['$id'],
       },
     })
