@@ -1,3 +1,6 @@
+![Download count of latest release](https://img.shields.io/github/downloads/ben/foundry-ironsworn/latest/total)
+![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ffoundry-ironsworn)
+
 # Ironsworn for Foundry VTT
 
 This is a Foundry VTT implementation of the **Ironsworn** and **Ironsworn Delve** rule sets by [Shawn Tomkin](https://www.ironswornrpg.com).
