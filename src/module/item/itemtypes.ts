@@ -157,8 +157,10 @@ interface MoveDataSourceData {
   description: string
   fulltext: string
   strong: string
+  strongmatch: string
   weak: string
   miss: string
+  missmatch: string
   stats: string[]
   sourceId: string
 }
