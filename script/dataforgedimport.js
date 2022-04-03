@@ -2,6 +2,7 @@ const marked = require('marked')
 const fetch = require('node-fetch')
 const fs = require('fs/promises')
 const { createHash } = require('crypto')
+const { get, set } = require('lodash')
 
 function renderHtml(idMap, text, markedFn) {
   return markedFn(
@@ -113,16 +114,22 @@ const DF_MOVE_TEXT_REGEX = /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \
 function processMoves(idMap, df) {
   console.log('Moves:')
 
+  const markdownKeys = [
+    'Text',
+    'Description',
+    'Trigger.Text',
+    'Outcomes.Strong Hit.Text',
+    'Outcomes.Strong Hit.With a Match.Text',
+    'Outcomes.Weak Hit.Text',
+    'Outcomes.Miss.Text',
+    'Outcomes.Miss.With a Match.Text',
+  ]
+
   for (const dfMove of df['moves.json']) {
     let [_, description, strong, weak, miss] = dfMove['Text'].match(DF_MOVE_TEXT_REGEX) || []
-
-    const markedIfDef = (text) => (text ? renderHtml(idMap, text, marked.parseInline) : undefined)
-    dfMove['Text'] = renderHtml(idMap, dfMove['Text'], marked.parse)
-    dfMove['Description'] = description ? renderHtml(idMap, description, marked.parse) : dfMove['Text']
-    if (dfMove['Outcomes']) {
-      dfMove['Outcomes']['Strong Hit']['Text'] = markedIfDef(dfMove['Outcomes']['Strong Hit']['Text'])
-      dfMove['Outcomes']['Weak Hit']['Text'] = markedIfDef(dfMove['Outcomes']['Weak Hit']['Text'])
-      dfMove['Outcomes']['Miss']['Text'] = markedIfDef(dfMove['Outcomes']['Miss']['Text'])
+    for (const k of markdownKeys) {
+      const md = get(dfMove, k)
+      if (md) set(dfMove, k, renderHtml(idMap, md, marked.parseInline))
     }
   }
 
