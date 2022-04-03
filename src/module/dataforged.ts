@@ -50,8 +50,10 @@ export async function importFromDataforged() {
         fulltext: move['Text'],
         description: move['Description'],
         strong: move['Outcomes']?.['Strong Hit']?.['Text'],
+        strongmatch: move['Outcomes']?.['Strong Hit']?.['With a Match']?.['Text'],
         weak: move['Outcomes']?.['Weak Hit']?.['Text'],
         miss: move['Outcomes']?.['Miss']?.['Text'],
+        missmatch: move['Outcomes']?.['Miss']?.['With a Match']?.['Text'],
         stats: move['Trigger']?.['Options']?.map(o => o['Action roll']?.Stat?.toLowerCase()).filter(s => s) || [],
         sourceId: move['$id']
       },
