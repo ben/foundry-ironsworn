@@ -3,22 +3,91 @@ import { IronswornActor } from './actor/actor'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
-    case 1: return 'troublesome'
-    case 2: return 'dangerous'
-    case 3: return 'formidable'
-    case 4: return 'extreme'
-    case 5: return 'epic'
+    case 1:
+      return 'troublesome'
+    case 2:
+      return 'dangerous'
+    case 3:
+      return 'formidable'
+    case 4:
+      return 'extreme'
+    case 5:
+      return 'epic'
   }
   return 'epic'
 }
 
-const PACKS = [
-  'foundry-ironsworn.starforgedassets',
-  'foundry-ironsworn.starforgedencounters',
-  'foundry-ironsworn.starforgedmoves',
-  'foundry-ironsworn.starforgedoracles',
-  'foundry-ironsworn.foeactorssf'
-]
+interface MoveTriggerRoll {
+  'Best of'?: string[]
+  'Worst of'?: string[]
+  'All of'?: string[]
+  Stat?: string
+  Track?: string
+}
+interface MoveTriggerOption {
+  Text: string
+  'Action roll'?: MoveTriggerRoll
+  'Progress roll'?: MoveTriggerRoll
+}
+interface MoveTrigger {
+  Text: string
+  Options?: MoveTriggerOption[]
+}
+
+function textForMoveTriggerOption(option: MoveTriggerOption): string {
+  // Progress roll: "Roll +<track name>"
+  if (option['Progress roll']?.['Track']) {
+    return `Roll +${option['Progress roll']['Track']}.`
+  }
+
+  // Continue a legacy: "Roll all of Quests Legacy, ..."
+  if (option['Progress roll']?.['All of']) {
+    return 'Roll all of ' + option['Progress roll']['All of'].join(', ')
+  }
+
+  const unifiedRoll = option['Progress roll'] || option['Action roll']
+  if (!unifiedRoll) {
+    console.log('Thats weird', option)
+    return ''
+  }
+
+  // e.g. Endure Harm: "Roll <best/worst> of ((rollplus stat)), ..."
+  const fooOf = unifiedRoll['Best of'] || unifiedRoll['Worst of']
+  if (fooOf) {
+    const k = unifiedRoll['Best of'] ? 'best of' : 'worst of'
+    return `Roll ${k} ${fooOf.map((x) => `((rollplus ${x.toLowerCase()}))`)}`
+  }
+
+  // Every other thing: Roll +<stat>
+  if (unifiedRoll['Track']) {
+    return `Roll +${unifiedRoll['Track']}`
+  } else {
+    return `${option.Text}: ((rollplus ${unifiedRoll['Stat']}))`
+  }
+}
+
+function textForMoveTriggerOptions(trigger: MoveTrigger): string {
+  console.log(trigger)
+  let ret = trigger.Text
+
+  if (!trigger.Options || trigger.Options.length === 0) {
+    return ret
+  }
+
+  if (trigger.Options.length === 1) {
+    ret += ` ${textForMoveTriggerOption(trigger.Options[0])}`
+  } else {
+    ret = `<p>${ret}</p>\n<ul>`
+    for (const option of trigger.Options) {
+      ret += `<li>${textForMoveTriggerOption(option)}`
+    }
+    ret += '</ul>'
+  }
+
+  return ret
+}
+
+const PACKS = ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles', 'foundry-ironsworn.foeactorssf']
 /**
  * Converts JSON from dataforged resources into foundry packs. Requires packs to
  * already exist, but will empty them prior to repopulating. In a perfect world
@@ -31,7 +100,7 @@ export async function importFromDataforged() {
     const pack = game.packs.get(key)
     if (!pack) continue
     // @ts-ignore IdQuery type is a little bogus
-    const idsToDelete = pack.index.map(x => x._id)
+    const idsToDelete = pack.index.map((x) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
@@ -41,6 +110,10 @@ export async function importFromDataforged() {
   const movesJson = await fetch('systems/foundry-ironsworn/assets/sf-moves.json').then((x) => x.json())
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   for (const move of movesJson) {
+    // "description" is what shows up in the roll-this-move dialog
+    // We reconstruct it here from the options available
+    const description = textForMoveTriggerOptions(move.Trigger)
+
     movesToCreate.push({
       _id: idMap[move['$id']],
       type: 'move',
@@ -48,14 +121,14 @@ export async function importFromDataforged() {
       img: 'icons/dice/d10black.svg',
       data: {
         fulltext: move['Text'],
-        description: move['Description'],
+        description,
         strong: move['Outcomes']?.['Strong Hit']?.['Text'],
         strongmatch: move['Outcomes']?.['Strong Hit']?.['With a Match']?.['Text'],
         weak: move['Outcomes']?.['Weak Hit']?.['Text'],
         miss: move['Outcomes']?.['Miss']?.['Text'],
         missmatch: move['Outcomes']?.['Miss']?.['With a Match']?.['Text'],
-        stats: move['Trigger']?.['Options']?.map(o => o['Action roll']?.Stat?.toLowerCase()).filter(s => s) || [],
-        sourceId: move['$id']
+        stats: move['Trigger']?.['Options']?.map((o) => o['Action roll']?.Stat?.toLowerCase()).filter((s) => s) || [],
+        sourceId: move['$id'],
       },
     })
   }
@@ -69,10 +142,11 @@ export async function importFromDataforged() {
     name: `${asset['Asset Type']} / ${asset['Name']}`,
     data: {
       description: asset['Text'],
-      fields: asset['Input']?.map((name) => ({
-        name,
-        value: '',
-      })) || [],
+      fields:
+        asset['Input']?.map((name) => ({
+          name,
+          value: '',
+        })) || [],
       abilities: asset['Abilities'].map((ability) => ({
         enabled: ability['Enabled'] || false,
         description: ability['Text'],
@@ -147,12 +221,12 @@ export async function importFromDataforged() {
 
   // Oracles
   const oraclesJson = await fetch('systems/foundry-ironsworn/assets/sf-oracles.json').then((x) => x.json())
-  const oraclesToCreate = [] as (Record<string, unknown>)[]
+  const oraclesToCreate = [] as Record<string, unknown>[]
   // Oracles JSON is a tree we wish to iterate through depth first adding
   // parents prior to their children, and children in order
   const nodeStack = Array.from(oraclesJson).reverse() as any[]
   while (nodeStack.length) {
-    const node = nodeStack.pop() as (Record<string, any>)
+    const node = nodeStack.pop() as Record<string, any>
     if (node['Table']) {
       oraclesToCreate.push({
         _id: idMap[node['$id']],
@@ -163,10 +237,13 @@ export async function importFromDataforged() {
         replacement: true,
         displayRoll: true,
         /* folder: // would require using an additional module */
-        results: node['Table'].map((tableRow) => ({
-          range: [tableRow['Floor'], tableRow['Ceiling']],
-          text: tableRow['Result'],
-        } as Record<string, unknown>))
+        results: node['Table'].map(
+          (tableRow) =>
+            ({
+              range: [tableRow['Floor'], tableRow['Ceiling']],
+              text: tableRow['Result'],
+            } as Record<string, unknown>)
+        ),
       })
     }
     // add children to stack
