@@ -35,7 +35,7 @@
       <div class="flexcol nogrow">
         <div
           v-for="tab in tabs"
-          :key="tab.key"
+          :key="tab.titleKey"
           :class="[
             'clickable',
             'block',
@@ -88,32 +88,37 @@ export default {
   },
 
   data() {
+    const r = (x) => this.$enrichHtml(x)
     const tabs = [
       {
         titleKey: 'Description',
-        content: this.item.data.description,
+        content: r(this.item.data.description),
         key: 'data.description',
       },
       {
         titleKey: 'FullText',
-        content: this.item.data.fulltext,
+        content: r(this.item.data.fulltext),
         key: 'data.fulltext',
       },
       {
         titleKey: 'StrongHit',
-        content: this.item.data.strong,
+        content: r(this.item.data.strong),
         key: 'data.strong',
       },
       {
         titleKey: 'StrongHitMatch',
-        content: this.item.data.strongmatch,
+        content: r(this.item.data.strongmatch),
         key: 'data.strongmatch',
       },
-      { titleKey: 'WeakHit', content: this.item.data.weak, key: 'data.weak' },
-      { titleKey: 'Miss', content: this.item.data.miss, key: 'data.miss' },
+      {
+        titleKey: 'WeakHit',
+        content: r(this.item.data.weak),
+        key: 'data.weak',
+      },
+      { titleKey: 'Miss', content: r(this.item.data.miss), key: 'data.miss' },
       {
         titleKey: 'MissMatch',
-        content: this.item.data.missmatch,
+        content: r(this.item.data.missmatch),
         key: 'data.missmatch',
       },
     ]
@@ -140,7 +145,7 @@ export default {
     selectTab(tab) {
       this.currentTab = tab
       this.currentTab.content = this.$enrichHtml(this.currentTab.content)
-    }
+    },
   },
 }
 </script>
