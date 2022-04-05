@@ -1,5 +1,8 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
+import IMove from 'dataforged/src/types/moves/interfaces/IMove'
+import IMoveTrigger from 'dataforged/src/types/moves/interfaces/IMoveTrigger'
+import IMoveTriggerOption from 'dataforged/src/types/moves/interfaces/IMoveTriggerOption'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -17,24 +20,7 @@ function getLegacyRank(numericRank) {
   return 'epic'
 }
 
-interface MoveTriggerRoll {
-  'Best of'?: string[]
-  'Worst of'?: string[]
-  'All of'?: string[]
-  Stat?: string
-  Track?: string
-}
-interface MoveTriggerOption {
-  Text: string
-  'Action roll'?: MoveTriggerRoll
-  'Progress roll'?: MoveTriggerRoll
-}
-interface MoveTrigger {
-  Text: string
-  Options?: MoveTriggerOption[]
-}
-
-function textForMoveTriggerOption(option: MoveTriggerOption): string {
+function textForMoveTriggerOption(option: IMoveTriggerOption): string {
   // Progress roll: "Roll +<track name>"
   if (option['Progress roll']?.['Track']) {
     return `Roll +${option['Progress roll']['Track']}.`
@@ -66,7 +52,7 @@ function textForMoveTriggerOption(option: MoveTriggerOption): string {
   }
 }
 
-function textForMoveTriggerOptions(trigger: MoveTrigger): string {
+function textForMoveTriggerOptions(trigger: IMoveTrigger): string {
   console.log(trigger)
   let ret = trigger.Text
 
@@ -87,8 +73,8 @@ function textForMoveTriggerOptions(trigger: MoveTrigger): string {
   return ret
 }
 
-function statsForMove(move: any): string[] {
-  const options = move['Trigger']?.Options as MoveTriggerOption[] | undefined
+function statsForMove(move: IMove): string[] {
+  const options = move['Trigger']?.Options as IMoveTriggerOption[] | undefined
   if (!options) return []
 
   const ret = [] as string[]
