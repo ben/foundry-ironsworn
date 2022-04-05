@@ -49,17 +49,7 @@
         </div>
       </div>
       <div class="flexcol">
-        <!-- <editor
-          v-for="tab in tabs"
-          :key="tab.key"
-          v-if="currentTab === tab"
-          :target="tab.key"
-          :content="tab.content"
-          :owner="true"
-          :button="true"
-          :editable="true"
-        /> -->
-        <quill-editor v-model="currentTab.content" />
+        <textarea v-model="currentTab.content" @blur="saveText" />
       </div>
     </div>
   </div>
@@ -88,38 +78,33 @@ export default {
   },
 
   data() {
-    const r = (x) => this.$enrichHtml(x)
     const tabs = [
       {
         titleKey: 'Description',
-        content: r(this.item.data.description),
-        key: 'data.description',
+        property: 'description',
+        content: this.item.data.description,
       },
       {
         titleKey: 'FullText',
-        content: r(this.item.data.fulltext),
-        key: 'data.fulltext',
+        property: 'fulltext',
+        content: this.item.data.fulltext,
       },
       {
         titleKey: 'StrongHit',
-        content: r(this.item.data.strong),
-        key: 'data.strong',
+        property: 'strong',
+        content: this.item.data.strong,
       },
       {
         titleKey: 'StrongHitMatch',
-        content: r(this.item.data.strongmatch),
-        key: 'data.strongmatch',
+        property: 'strongmatch',
+        content: this.item.data.strongmatch,
       },
-      {
-        titleKey: 'WeakHit',
-        content: r(this.item.data.weak),
-        key: 'data.weak',
-      },
-      { titleKey: 'Miss', content: r(this.item.data.miss), key: 'data.miss' },
+      { titleKey: 'WeakHit', property: 'weak', content: this.item.data.weak },
+      { titleKey: 'Miss', property: 'miss', content: this.item.data.miss },
       {
         titleKey: 'MissMatch',
-        content: r(this.item.data.missmatch),
-        key: 'data.missmatch',
+        property: 'missmatch',
+        content: this.item.data.missmatch,
       },
     ]
     return {
@@ -142,9 +127,14 @@ export default {
       this.$item.update({ data: { stats } })
     },
 
+    saveText() {
+      const { content, property } = this.currentTab
+      this.$item.update({ data: { [property]: content } })
+    },
+
     selectTab(tab) {
       this.currentTab = tab
-      this.currentTab.content = this.$enrichHtml(this.currentTab.content)
+      this.currentTab.content = this.currentTab.content
     },
   },
 }
