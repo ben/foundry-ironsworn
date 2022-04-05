@@ -4,7 +4,7 @@ import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE } from './chatrollhelpers'
 import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
-import { maybeShowDice, RollDialog } from '../helpers/roll'
+import { maybeShowDice, RollDialog } from '../helpers/rolldialog'
 import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 

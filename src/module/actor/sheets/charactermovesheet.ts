@@ -1,6 +1,6 @@
 import { negate } from 'lodash'
 import { cachedMoves, moveDataByName } from '../../helpers/data'
-import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
+import { attachInlineRollListeners, RollDialog } from '../../helpers/rolldialog'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
