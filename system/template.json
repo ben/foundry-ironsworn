@@ -244,13 +244,18 @@
     "move": {
       "description": "When you <strong>do a thing</strong>...",
       "fulltext": "",
-      "strong": "",
-      "strongmatch": "",
-      "weak": "",
-      "miss": "",
-      "missmatch": "",
       "stats": [],
-      "sourceId": ""
+      "sourceId": "",
+      "triggers": [
+        { "stat": "iron", "description": "<strong>With strength</strong>..." }
+      ],
+      "outcomes": {
+        "strong": "",
+        "strongmatch": "",
+        "weak": "",
+        "miss": "",
+        "missmatch": ""
+      }
     },
     "delve-theme": {
       "summary": "A one-line description",

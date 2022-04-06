@@ -153,16 +153,24 @@ export interface DelveDomainDataProperties {
 
 ///////////////////////////////
 
+export interface MoveTrigger {
+  stat: string
+  description: string
+}
+
 interface MoveDataSourceData {
   description: string
   fulltext: string
-  strong: string
-  strongmatch: string
-  weak: string
-  miss: string
-  missmatch: string
   stats: string[]
   sourceId: string
+  triggers: MoveTrigger[]
+  outcomes: {
+    strong: string
+    strongmatch: string
+    weak: string
+    miss: string
+    missmatch: string
+  }
 }
 interface MoveDataPropertiesData extends MoveDataSourceData {}
 
