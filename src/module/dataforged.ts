@@ -1,7 +1,8 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
-import { isArray, isObject } from 'lodash'
+import { get, isArray, isObject, set } from 'lodash'
 import * as sfMovesJson from 'dataforged/starforged-moves.json'
+import IMove from 'dataforged/src/types/moves/interfaces/IMove'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -40,6 +41,22 @@ function cleanDollars(obj): any {
   return obj
 }
 
+function renderLinks(idMap: { [key: string]: string }, move: IMove) {
+  const textProperties = ['Text', 'Trigger.Text', 'Outcomes.Strong Hit.Text', 'Outcomes.Strong Hit.With a Match.Text', 'Outcomes.Weak Hit.Text', 'Outcomes.Miss.Text', 'Outcomes.Miss.With a Match.Text']
+  for (const prop of textProperties) {
+    const text = get(move, prop)
+    if (!text) continue
+    set(
+      move,
+      prop,
+      text.replace(/\[([^\]]+)\]\(([^#]+)#[^)]+\)/g, (link, name, kind) => {
+        if (kind && kind !== 'Moves') return link
+        return `@Compendium[foundry-ironsworn.starforgedmoves.${idMap['Moves / ' + name]}]{${name}}`
+      })
+    )
+  }
+}
+
 const PACKS = ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles', 'foundry-ironsworn.foeactorssf']
 /**
  * Converts JSON from dataforged resources into foundry packs. Requires packs to
@@ -65,6 +82,7 @@ export async function importFromDataforged() {
   for (const k of Object.keys(sfMovesJson)) {
     if (isNaN(parseInt(k))) continue
     const move = sfMovesJson[k]
+    renderLinks(idMap, move)
     const cleanMove = cleanDollars(move)
     movesToCreate.push({
       _id: idMap[cleanMove['dfid']],
