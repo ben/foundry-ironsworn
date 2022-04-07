@@ -153,7 +153,7 @@ Hooks.once('init', async () => {
   })
   Items.registerSheet('ironsworn', SFMoveSheet, {
     types: ['sfmove'],
-    label: 'Move sheet v2',
+    label: 'Starforged move sheet',
   })
   Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
     types: ['delve-theme', 'delve-domain'],
