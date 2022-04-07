@@ -1,6 +1,5 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
-import { MoveTrigger } from './item/itemtypes'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
@@ -98,20 +97,6 @@ const PACKS = [
   'foundry-ironsworn.foeactorsis',
 ]
 
-function triggersForMove(move): MoveTrigger[] {
-  const ret = [] as MoveTrigger[]
-  const lines = move.Description.split(/\n+/) as string[]
-  for (const stat of move.Stats ?? []) {
-    const re = new RegExp(`\\*(.*?)(, )?Roll \\+${stat}`, 'i')
-    const descriptionLine = lines.find(x => x.match(re))
-    ret.push({
-      stat,
-      description: descriptionLine?.match(re)?.[1]?.trim() ?? ''
-    })
-  }
-  return ret
-}
-
 export async function importFromDatasworn() {
   // Empty out the packs
   for (const key of PACKS) {
@@ -133,13 +118,10 @@ export async function importFromDatasworn() {
         img: 'icons/dice/d10black.svg',
         data: {
           description: move.Description,
-          fulltext: move.Description,
-          triggers: triggersForMove(move),
-          outcomes: {
-            strong: move.Strong,
-            weak: move.Weak,
-            miss: move.Miss,
-          }
+          strong: move.Strong,
+          weak: move.Weak,
+          miss: move.Miss,
+          stats: move.Stats || [],
         },
       })
     }
