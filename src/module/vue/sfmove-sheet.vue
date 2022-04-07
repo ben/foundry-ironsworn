@@ -4,7 +4,6 @@
       <document-name :document="item" />
     </header>
 
-    <!-- Editors -->
     <div class="flexrow">
       <!-- Tab selection on left -->
       <div class="flexcol nogrow" style="white-space: nowrap">
@@ -22,9 +21,21 @@
         />
 
         <hr class="nogrow" />
-        (stats)
+        <h4 class="flexrow nogrow">
+          <span class="flexrow">Actions</span>
+          <icon-button icon="fa fa-plus" @click="addTrigger" />
+        </h4>
+        <sfmove-tab
+          v-for="option in triggerOptions"
+          :key="option.key"
+          :currentProperty="currentProperty"
+          :title="option.title"
+          :property="option.property"
+          @click="switchContent"
+        />
 
         <hr class="nogrow" />
+        <h4 class="nogrow">Outcomes</h4>
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
@@ -73,11 +84,34 @@
 </style>
 
 <script>
-import { get } from 'lodash'
+import { get, set } from 'lodash'
 
 export default {
   props: {
     item: Object,
+  },
+
+  data() {
+    return {
+      currentProperty: 'Text',
+      currentContent: this.item.data.Text,
+    }
+  },
+
+  computed: {
+    triggerOptions() {
+      const itemTriggerOptions = this.item.data.Trigger?.Options || []
+      return itemTriggerOptions.map((x, i) => {
+        const title = x['Action roll']
+          ? `Roll +${x['Action roll'].Stat}`
+          : `${i + 1}`
+        return {
+          key: `option${i}`,
+          title,
+          property: `Trigger.Options[${i}].Text`,
+        }
+      })
+    },
   },
 
   watch: {
@@ -89,23 +123,29 @@ export default {
     },
   },
 
-  data() {
-    return {
-      currentProperty: 'Text',
-      currentContent: this.item.data.Text,
-    }
-  },
-
   methods: {
     switchContent(prop) {
       this.currentProperty = prop
       this.currentContent = get(this.item.data, prop)
     },
 
+    addTrigger() {
+      let { Options } = this.item.data.Trigger
+      Options ||= []
+      Options.push({ Text: '', 'Action roll': { Stat: 'Iron' } })
+      this.$item.update({ data: { Trigger: { Options } } })
+    },
+
     saveText() {
-      this.$item.update({
-        data: { [this.currentProperty]: this.currentContent },
-      })
+      if (this.currentProperty.includes('Options')) {
+        set(this.item.data, this.currentProperty, this.currentContent)
+        const { Options } = this.item.data.Trigger
+        this.$item.update({ data: { Trigger: { Options } } })
+      } else {
+        this.$item.update({
+          data: { [this.currentProperty]: this.currentContent },
+        })
+      }
     },
   },
 }

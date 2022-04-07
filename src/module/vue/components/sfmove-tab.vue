@@ -9,13 +9,14 @@
       { selected: currentProperty === property },
     ]"
   >
-    {{ $t('IRONSWORN.' + titleKey) }}
+    {{ title || $t('IRONSWORN.' + titleKey) }}
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    title: String,
     titleKey: String,
     property: String,
     currentProperty: String,
