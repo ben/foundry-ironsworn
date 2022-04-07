@@ -9,6 +9,7 @@
         "strict": true,
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
 
         "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
         "strictNullChecks": true /* Enable strict null checks. */,

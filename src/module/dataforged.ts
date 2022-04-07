@@ -1,8 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
+import * as sfMovesJson from "dataforged/starforged-moves.json";
 import IMove from 'dataforged/src/types/moves/interfaces/IMove'
-import IMoveTrigger from 'dataforged/src/types/moves/interfaces/IMoveTrigger'
-import IMoveTriggerOption from 'dataforged/src/types/moves/interfaces/IMoveTriggerOption'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -18,78 +17,6 @@ function getLegacyRank(numericRank) {
       return 'epic'
   }
   return 'epic'
-}
-
-function textForMoveTriggerOption(option: IMoveTriggerOption): string {
-  // Progress roll: "Roll +<track name>"
-  if (option['Progress roll']?.['Track']) {
-    return `Roll +${option['Progress roll']['Track']}.`
-  }
-
-  // Continue a legacy: "Roll all of Quests Legacy, ..."
-  if (option['Progress roll']?.['All of']) {
-    return 'Roll all of ' + option['Progress roll']['All of'].join(', ')
-  }
-
-  const unifiedRoll = option['Progress roll'] || option['Action roll']
-  if (!unifiedRoll) {
-    console.log('Thats weird', option)
-    return ''
-  }
-
-  // e.g. Endure Harm: "Roll <best/worst> of ((rollplus stat)), ..."
-  const fooOf = unifiedRoll['Best of'] || unifiedRoll['Worst of']
-  if (fooOf) {
-    const k = unifiedRoll['Best of'] ? 'best of' : 'worst of'
-    return `Roll ${k} ${fooOf.map((x) => `((rollplus ${x.toLowerCase()}))`)}`
-  }
-
-  // Every other thing: Roll +<stat>
-  if (unifiedRoll['Track']) {
-    return `Roll +${unifiedRoll['Track']}`
-  } else {
-    return `${option.Text}: ((rollplus ${unifiedRoll['Stat']}))`
-  }
-}
-
-function textForMoveTriggerOptions(trigger: IMoveTrigger): string {
-  console.log(trigger)
-  let ret = trigger.Text
-
-  if (!trigger.Options || trigger.Options.length === 0) {
-    return ret
-  }
-
-  if (trigger.Options.length === 1) {
-    ret += ` ${textForMoveTriggerOption(trigger.Options[0])}`
-  } else {
-    ret = `<p>${ret}</p>\n<ul>`
-    for (const option of trigger.Options) {
-      ret += `<li>${textForMoveTriggerOption(option)}`
-    }
-    ret += '</ul>'
-  }
-
-  return ret
-}
-
-function statsForMove(move: IMove): string[] {
-  const options = move['Trigger']?.Options as IMoveTriggerOption[] | undefined
-  if (!options) return []
-
-  const ret = [] as string[]
-  for (const option of options) {
-    const actionRoll = option['Action roll']
-    if (!actionRoll) continue
-
-    const fooOf = actionRoll['All of'] || actionRoll['Best of'] || actionRoll['Worst of']
-    if (fooOf) {
-      ret.push(...fooOf)
-    } else if (actionRoll.Stat) {
-      ret.push(actionRoll.Stat)
-    }
-  }
-  return ret.map(x => x.toLowerCase())
 }
 
 const PACKS = ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles', 'foundry-ironsworn.foeactorssf']
@@ -112,29 +39,14 @@ export async function importFromDataforged() {
   const idMap = await fetch('systems/foundry-ironsworn/assets/sf-ids.json').then((x) => x.json())
 
   // Moves
-  const movesJson = await fetch('systems/foundry-ironsworn/assets/sf-moves.json').then((x) => x.json())
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const move of movesJson) {
-    // "description" is what shows up in the roll-this-move dialog
-    // We reconstruct it here from the options available
-    const description = textForMoveTriggerOptions(move.Trigger)
-
+  for (const move of sfMovesJson) {
     movesToCreate.push({
       _id: idMap[move['$id']],
-      type: 'move',
+      type: 'sfmove',
       name: move['Name'],
       img: 'icons/dice/d10black.svg',
-      data: {
-        fulltext: move['Text'],
-        description,
-        strong: move['Outcomes']?.['Strong Hit']?.['Text'],
-        strongmatch: move['Outcomes']?.['Strong Hit']?.['With a Match']?.['Text'],
-        weak: move['Outcomes']?.['Weak Hit']?.['Text'],
-        miss: move['Outcomes']?.['Miss']?.['Text'],
-        missmatch: move['Outcomes']?.['Miss']?.['With a Match']?.['Text'],
-        stats: statsForMove(move),
-        sourceId: move['$id'],
-      },
+      data: move as IMove,
     })
   }
   await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.starforgedmoves', keepId: true })
