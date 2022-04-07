@@ -1,7 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
-import * as sfMovesJson from "dataforged/starforged-moves.json";
-import IMove from 'dataforged/src/types/moves/interfaces/IMove'
+import { isArray, isObject } from 'lodash'
+import * as sfMovesJson from 'dataforged/starforged-moves.json'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -17,6 +17,27 @@ function getLegacyRank(numericRank) {
       return 'epic'
   }
   return 'epic'
+}
+
+function cleanDollars(obj): any {
+  if (isArray(obj)) {
+    const ret = [] as any[]
+    for (const item of obj) {
+      ret.push(cleanDollars(item))
+    }
+    return ret
+  } else if (isObject(obj)) {
+    const ret = {} as any
+    for (const k of Object.keys(obj)) {
+      let newK = k
+      if (newK.startsWith('$')) {
+        newK = 'df' + k.substring(1)
+      }
+      ret[newK] = cleanDollars(obj[k])
+    }
+    return ret
+  }
+  return obj
 }
 
 const PACKS = ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles', 'foundry-ironsworn.foeactorssf']
@@ -40,13 +61,17 @@ export async function importFromDataforged() {
 
   // Moves
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const move of Object.values(sfMovesJson)) {
+  // Importing JSON doesn't come back with an array, but an object with integer keys
+  for (const k of Object.keys(sfMovesJson)) {
+    if (isNaN(parseInt(k))) continue
+    const move = sfMovesJson[k]
+    const cleanMove = cleanDollars(move)
     movesToCreate.push({
-      _id: idMap[move['$id']],
+      _id: idMap[cleanMove['dfid']],
       type: 'sfmove',
-      name: move['Name'],
+      name: cleanMove['Name'],
       img: 'icons/dice/d10black.svg',
-      data: move as IMove,
+      data: cleanMove,
     })
   }
   await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.starforgedmoves', keepId: true })
