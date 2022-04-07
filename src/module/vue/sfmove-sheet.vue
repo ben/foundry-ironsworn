@@ -31,7 +31,7 @@
           :currentProperty="currentProperty"
           :title="option.title"
           :property="option.property"
-          @click="switchContent"
+          @click="switchContent($event, option.actionPropKey)"
         />
 
         <hr class="nogrow" />
@@ -70,6 +70,9 @@
 
       <!-- Editor on right -->
       <div class="flexcol">
+        <div class="flexcol nogrow" v-if="currentActionProps">
+          (action controls)
+        </div>
         <textarea v-model="currentContent" @blur="saveText" />
       </div>
     </div>
@@ -95,6 +98,7 @@ export default {
     return {
       currentProperty: 'Text',
       currentContent: this.item.data.Text,
+      currentActionProps: undefined,
     }
   },
 
@@ -108,25 +112,19 @@ export default {
         return {
           key: `option${i}`,
           title,
+          actionPropKey: `Trigger.Options[${i}]`,
           property: `Trigger.Options[${i}].Text`,
         }
       })
     },
   },
 
-  watch: {
-    stats: {
-      deep: true,
-      handler(newStats, oldStats) {
-        console.log(newStats, oldStats)
-      },
-    },
-  },
-
   methods: {
-    switchContent(prop) {
+    switchContent(prop, actionPropKey = undefined) {
       this.currentProperty = prop
       this.currentContent = get(this.item.data, prop)
+      this.currentActionProps =
+        actionPropKey && get(this.item.data, actionPropKey)
     },
 
     addTrigger() {
