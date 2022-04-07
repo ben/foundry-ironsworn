@@ -40,7 +40,7 @@ export async function importFromDataforged() {
 
   // Moves
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const move of sfMovesJson) {
+  for (const move of Object.values(sfMovesJson)) {
     movesToCreate.push({
       _id: idMap[move['$id']],
       type: 'sfmove',

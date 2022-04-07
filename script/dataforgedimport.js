@@ -110,7 +110,6 @@ function processEncounters(idMap, df) {
   return df['encounters.json']
 }
 
-const DF_MOVE_TEXT_REGEX = /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \*\*weak hit\*\*, [\s\S]+?)(On a \*\*miss\*\*, [\s\S]+)/
 function processMoves(idMap, df) {
   console.log('Moves:')
 
@@ -182,7 +181,7 @@ async function doit() {
   const writePromises = [
     writeLocal('assets', processAssets(idMap, df)),
     writeLocal('encounters', processEncounters(idMap, df)),
-    writeLocal('moves', processMoves(idMap, df)),
+    // writeLocal('moves', processMoves(idMap, df)),
     writeLocal('oracles', processOracles(idMap, df)),
     // writeLocal('setting-truths', processSettingTruths(idMap, df)),
     writeLocal('ids', idMap),
