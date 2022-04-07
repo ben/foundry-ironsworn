@@ -1,3 +1,4 @@
+import IMove from 'dataforged/src/types/moves/interfaces/IMove'
 import { RANKS } from '../constants'
 
 interface ProgressBase {
@@ -153,24 +154,14 @@ export interface DelveDomainDataProperties {
 
 ///////////////////////////////
 
-export interface MoveTrigger {
-  stat: string
-  description: string
-}
-
 interface MoveDataSourceData {
   description: string
   fulltext: string
+  strong: string
+  weak: string
+  miss: string
   stats: string[]
   sourceId: string
-  triggers: MoveTrigger[]
-  outcomes: {
-    strong: string
-    strongmatch: string
-    weak: string
-    miss: string
-    missmatch: string
-  }
 }
 interface MoveDataPropertiesData extends MoveDataSourceData {}
 
@@ -185,8 +176,21 @@ export interface MoveDataProperties {
 
 ///////////////////////////////
 
-export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | MoveDataSource | DelveThemeDataSource | DelveDomainDataSource
-export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | MoveDataProperties | DelveThemeDataProperties | DelveDomainDataProperties
+interface SFMoveDataPropertiesData extends IMove {}
+
+export interface SFMoveDataSource {
+  type: 'sfmove'
+  data: IMove
+}
+export interface SFMoveDataProperties {
+  type: 'sfmove'
+  data: SFMoveDataPropertiesData
+}
+
+///////////////////////////////
+
+export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | MoveDataSource | SFMoveDataSource | DelveThemeDataSource | DelveDomainDataSource
+export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | MoveDataProperties | SFMoveDataProperties | DelveThemeDataProperties | DelveDomainDataProperties
 
 declare global {
   interface SourceConfig {

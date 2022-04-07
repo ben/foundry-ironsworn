@@ -1,9 +1,9 @@
 import { IronswornVueItemSheet } from '../vueitemsheet'
 
-export class MoveSheetV2 extends IronswornVueItemSheet {
+export class SFMoveSheet extends IronswornVueItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'systems/foundry-ironsworn/templates/item/movev2.hbs',
+      template: 'systems/foundry-ironsworn/templates/item/sfmove.hbs',
       height: 650,
     })
   }

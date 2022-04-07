@@ -152,6 +152,7 @@
       "vow",
       "bondset",
       "move",
+      "sfmove",
       "delve-theme",
       "delve-domain"
     ],
@@ -244,18 +245,27 @@
     "move": {
       "description": "When you <strong>do a thing</strong>...",
       "fulltext": "",
+      "strong": "",
+      "weak": "",
+      "miss": "",
       "stats": [],
-      "sourceId": "",
-      "triggers": [
-        { "stat": "iron", "description": "<strong>With strength</strong>..." }
-      ],
-      "outcomes": {
-        "strong": "",
-        "strongmatch": "",
-        "weak": "",
-        "miss": "",
-        "missmatch": ""
-      }
+      "sourceId": ""
+    },
+    "sfmove": {
+      "$id": "",
+      "Category": "",
+      "Progress Move": false,
+      "Variant of": "",
+      "Text": "",
+      "Trigger": { "Text": "", "Options": [] },
+      "Outcomes": {
+        "Strong Hit": {"Text": ""},
+        "Weak Hit": {"Text": ""},
+        "Miss": {"Text": ""}
+      },
+      "Oracles": [],
+      "Source": {"Title": ""},
+      "Suggestions": {}
     },
     "delve-theme": {
       "summary": "A one-line description",
