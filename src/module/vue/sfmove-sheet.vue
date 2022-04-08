@@ -70,8 +70,45 @@
 
       <!-- Editor on right -->
       <div class="flexcol">
-        <div class="flexcol nogrow" v-if="currentActionProps">
-          (action controls)
+        <div class="flexcol nogrow" v-if="currentActionType">
+          <div class="flexrow">
+            <label
+              v-for="x in ['Action roll', 'Progress roll', 'Custom stat roll']"
+              :key="x"
+            >
+              <input
+                type="radio"
+                name="actiontype"
+                :value="x"
+                v-model="currentActionType"
+                @change="saveActionProps"
+              />
+              {{ x }}
+            </label>
+          </div>
+
+          <div class="flexrow">
+            <label
+              v-for="x in [
+                singleStatLabel,
+                'Options',
+                'All of',
+                'Best of',
+                'Worst of',
+              ]"
+              :key="x"
+            >
+              <input
+                type="radio"
+                name="rollType"
+                :value="x"
+                v-model="currentRollType"
+                @change="saveActionProps"
+              />
+              {{ x }}
+            </label>
+          </div>
+          <input v-model="currentStatText" @change="saveActionProps" />
         </div>
         <textarea v-model="currentContent" @blur="saveText" />
       </div>
@@ -87,7 +124,7 @@
 </style>
 
 <script>
-import { get, set } from 'lodash'
+import { get, isArray, set } from 'lodash'
 
 export default {
   props: {
@@ -98,7 +135,9 @@ export default {
     return {
       currentProperty: 'Text',
       currentContent: this.item.data.Text,
-      currentActionProps: undefined,
+      currentActionType: undefined,
+      currentRollType: undefined,
+      currentStatText: undefined,
     }
   },
 
@@ -117,14 +156,48 @@ export default {
         }
       })
     },
+
+    singleStatLabel() {
+      if (this.currentActionType === 'Action roll') return 'Stat'
+      if (this.currentActionType === 'Progress roll') return 'Track'
+      return '???'
+    },
   },
 
   methods: {
     switchContent(prop, actionPropKey = undefined) {
+      console.log(prop, actionPropKey)
       this.currentProperty = prop
       this.currentContent = get(this.item.data, prop)
-      this.currentActionProps =
-        actionPropKey && get(this.item.data, actionPropKey)
+      const ap = actionPropKey && get(this.item.data, actionPropKey)
+      if (!ap) {
+        this.currentActionType = undefined
+        this.currentRollType = undefined
+        this.currentStatText = undefined
+        return
+      }
+
+      // Take this apart so it's (a) easy to write a UI on and (b) easy to reconstruct later
+      for (const k of ['Action roll', 'Progress roll', 'Custom stat roll']) {
+        if (ap[k]) {
+          this.currentActionType = k
+          for (const rk of [
+            'Stat',
+            'Track',
+            'Options',
+            'All of',
+            'Best of',
+            'Worst of',
+          ]) {
+            if (ap[k][rk]) {
+              this.currentRollType = rk
+              let rolls = ap[k][rk]
+              if (!isArray(rolls)) rolls = [rolls]
+              this.currentStatText = rolls.join(', ')
+            }
+          }
+        }
+      }
     },
 
     addTrigger() {
@@ -132,6 +205,11 @@ export default {
       Options ||= []
       Options.push({ Text: '', 'Action roll': { Stat: 'Iron' } })
       this.$item.update({ data: { Trigger: { Options } } })
+    },
+
+    saveActionProps() {
+      // TODO: reconstruct an IMoveTriggerOption and replace the one currently referenced
+      console.log(this)
     },
 
     saveText() {
