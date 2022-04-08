@@ -6,7 +6,7 @@
 
     <div class="flexrow">
       <!-- Tab selection on left -->
-      <div class="flexcol nogrow" style="white-space: nowrap">
+      <div class="flexcol nogrow" style="white-space: nowrap; max-width: 33%">
         <!-- These are always here -->
         <sfmove-tab
           :currentProperty="currentProperty"
@@ -87,19 +87,13 @@
                 v-model="currentActionType"
                 @change="saveActionProps"
               />
-              {{ x }}
+              {{ x.split(' ')[0] }}
             </label>
           </div>
 
           <div class="flexrow">
             <label
-              v-for="x in [
-                singleStatLabel,
-                'Options',
-                'All of',
-                'Best of',
-                'Worst of',
-              ]"
+              v-for="x in [singleStatLabel, 'All of', 'Best of', 'Worst of']"
               :key="x"
             >
               <input
@@ -212,6 +206,12 @@ export default {
 
     removeTrigger(option) {
       console.log(option)
+      const idx = this.triggerOptions.findIndex(x => x.key === option.key)
+      let { Options } = this.item.data.Trigger
+      Options ||= []
+      Options.splice(idx, 1)
+      this.$item.update({ data: { Trigger: { Options } } })
+      this.switchContent('Text')
     },
 
     saveActionProps() {
