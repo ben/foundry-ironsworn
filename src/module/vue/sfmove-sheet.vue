@@ -7,6 +7,7 @@
     <div class="flexrow">
       <!-- Tab selection on left -->
       <div class="flexcol nogrow" style="white-space: nowrap">
+        <!-- These are always here -->
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
@@ -20,6 +21,7 @@
           property="Trigger.Text"
         />
 
+        <!-- Actions -->
         <hr class="nogrow" />
         <h4 class="flexrow nogrow">
           <span class="flexrow">Actions</span>
@@ -32,8 +34,10 @@
           :title="option.title"
           :property="option.property"
           @click="switchContent($event, option.actionPropKey)"
+          @delete="removeTrigger(option)"
         />
 
+        <!-- Outcomes -->
         <hr class="nogrow" />
         <h4 class="nogrow">Outcomes</h4>
         <sfmove-tab
@@ -150,7 +154,7 @@ export default {
           : `${i + 1}`
         return {
           key: `option${i}`,
-          title,
+          title: x.Text || '...',
           actionPropKey: `Trigger.Options[${i}]`,
           property: `Trigger.Options[${i}].Text`,
         }
@@ -166,7 +170,6 @@ export default {
 
   methods: {
     switchContent(prop, actionPropKey = undefined) {
-      console.log(prop, actionPropKey)
       this.currentProperty = prop
       this.currentContent = get(this.item.data, prop)
       const ap = actionPropKey && get(this.item.data, actionPropKey)
@@ -205,6 +208,10 @@ export default {
       Options ||= []
       Options.push({ Text: '', 'Action roll': { Stat: 'Iron' } })
       this.$item.update({ data: { Trigger: { Options } } })
+    },
+
+    removeTrigger(option) {
+      console.log(option)
     },
 
     saveActionProps() {

@@ -6,12 +6,27 @@
       'block',
       'nogrow',
       'tab',
+      'flexrow',
       { selected: currentProperty === property },
     ]"
   >
-    {{ title || $t('IRONSWORN.' + titleKey) }}
+    <span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
+    <icon-button
+      class="nogrow"
+      v-if="$listeners.delete"
+      icon="fa fa-trash"
+      @click="$emit('delete')"
+    />
   </div>
 </template>
+
+<style lang="less" scoped>
+span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</style>
 
 <script>
 export default {
