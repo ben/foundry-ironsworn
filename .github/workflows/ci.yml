@@ -14,10 +14,10 @@ jobs:
           git config --global url."https://github.com/".insteadOf
           ssh://git@github.com/
 
-      - name: Use Node.js 16
+      - name: Use Node.js 14
         uses: actions/setup-node@v1
         with:
-          node-version: 16.x
+          node-version: 14.x
 
       - run: npm ci
       - run: npm run build
