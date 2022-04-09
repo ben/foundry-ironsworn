@@ -34,7 +34,7 @@ export class SFRollMoveDialog extends Dialog {
       buttons[i.toString()] = {
         label,
         icon: '<i class="fas fa-dice-d6"></i>',
-        callback: () => SFRollMoveDialog.callback(mode, stats),
+        callback: callback(actor, move, mode, stats),
       }
     }
 
@@ -56,7 +56,6 @@ export class SFRollMoveDialog extends Dialog {
       }
     }
 
-    console.log({ buttons })
     return new SFRollMoveDialog({
       title,
       content,
@@ -64,10 +63,18 @@ export class SFRollMoveDialog extends Dialog {
       default: '0',
     }).render(true)
   }
-
-  static async callback(mode: string, stats: string[]) {
-    console.log({ mode, stats })
+}
+function callback(actor: IronswornActor, move: IronswornItem, mode: string, stats: string[]) {
+  return async (x) => {
+    // TODO: extract data from form and send to rollAndCreateChatMessage
+    const form = x[0].querySelector('form')
+    const bonus = form.bonus.value ? parseInt(form.bonus.value ?? '0', 10) : 0
+    rollAndCreateChatMessage(actor, move, mode, stats, bonus)
   }
+}
+
+async function rollAndCreateChatMessage(actor: IronswornActor, move: IronswornItem, mode: string, stats: string[], bonus: number) {
+  console.log({actor, move, mode, stats, bonus})
 }
 
 async function createDataforgedMoveChat(move: IronswornItem) {
