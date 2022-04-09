@@ -127,7 +127,7 @@ export default {
       for (const k of Object.keys(this.moves)) {
         const moveCategory = this.moves[k]
         for (const move of moveCategory.moves) {
-          if (move.$id === item.data.data.sourceId) {
+          if (move.dfid === item.data.data.dfid) {
             move.highlighted = true
             setTimeout(() => move.highlighted = false, 2000)
             return

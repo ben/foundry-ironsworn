@@ -28,8 +28,8 @@ export default {
       }
 
       const gamePack = game.packs.get(pack)
-      gamePack?.getDocument(id)?.then(gameItem => {
-        if (gameItem.type === 'move') {
+      gamePack?.getDocument(id)?.then((gameItem) => {
+        if (['move', 'sfmove'].includes(gameItem.type)) {
           this.$emit('moveclick', gameItem)
         }
       })
