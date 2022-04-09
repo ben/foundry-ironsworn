@@ -253,7 +253,7 @@ export async function createStarforgedMoveRollChat(params: SFRollMessageParams) 
     ...momentumProps,
     ...params,
   }
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll.hbs', renderData)
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll-sf.hbs', renderData)
 
   const messageData = {
     speaker: ChatMessage.getSpeaker(),

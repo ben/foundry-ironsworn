@@ -1,0 +1,41 @@
+{{!--
+actor: IronswornActor {…}
+move: IronswornItem {parent: null, pack: 'foundry-ironsworn.starforgedmoves', data: ItemData, …}
+title: "Compel (Heart)"
+mode: "Stat"
+stats: ['Heart']
+bonus: 0
+hitType: "Miss"
+resultText: "They refuse or make a demand that costs you greatly. @Compendium[foundry-ironsworn.starforgedmoves.d5be4b94ec029080]{Pay the Price}."
+roll: Roll {data: {…}, options: {…}, terms: Array(1), _dice: Array(0), _formula: '{d6 + 2,d10,d10}', …}
+themeClass: "theme-ironsworn"
+--}}
+
+<div class="flexcol">
+  <h3>{{title}}</h3>
+
+  <div class="dice-result dice-tooltip dice-roll ironsworn-roll" data-moveid="{{move.data.data.dfid}}">
+    <div class="dice-formula">
+      <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
+    </div>
+    <div class="roll-result">
+      {{#if negativeMomentumCancel}}
+      <p><em>{{localize 'IRONSWORN.NegativeMomentumCancel'}}</em></p>
+      {{/if}}
+
+      <strong>{{hitType}}: </strong> {{{resultText}}}
+    </div>
+  </div>
+
+  {{#if momentumHitType}}
+  <hr>
+  <div class="momentum-burn">
+    <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitTypeI18n}}}</p>
+    <button class="burn-momentum-sf" data-actor="{{actor.id}}" data-move="{{move.id}}" data-mode="{{mode}}"
+      data-stats="{{stats}}" data-hittype="{{momentumHitType}}">
+      {{localize 'IRONSWORN.Burn'}}
+    </button>
+  </div>
+  {{/if}}
+
+</div>
