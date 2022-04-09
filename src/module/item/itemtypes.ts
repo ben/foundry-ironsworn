@@ -1,4 +1,4 @@
-import { IMove } from '../../../dataforged'
+import { IMove } from 'dataforged'
 import { RANKS } from '../constants'
 
 interface ProgressBase {

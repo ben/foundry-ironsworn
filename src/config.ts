@@ -20,7 +20,7 @@ import { DelveThemeItem } from './module/item/delve-theme-domain/delvethemeitem'
 import { MoveItem } from './module/item/move/moveitem'
 import { ProgressItem } from './module/item/progress/progressitem'
 import { VowItem } from './module/item/vow/vowitem'
-import { data as Dataforged } from '../dataforged'
+import { data as Dataforged } from 'dataforged'
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>

@@ -1,7 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { get, isArray, isObject, set } from 'lodash'
-import { data as Dataforged, IMove } from '../../dataforged'
+import { data as Dataforged, IMove } from 'dataforged'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
