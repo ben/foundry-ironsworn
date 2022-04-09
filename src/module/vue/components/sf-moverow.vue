@@ -84,10 +84,10 @@ export default {
 
   methods: {
     async rollMove() {
-      CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.$actor,
-        move: this.move.foundryItem.getMoveData(),
-      })
+      CONFIG.IRONSWORN.SFRollMoveDialog.show(
+        this.$actor,
+        this.move.foundryItem,
+      )
     },
 
     moveclick(item) {

@@ -32,6 +32,10 @@ export class IronswornHandlebarsHelpers {
       return JSON.stringify(context, null, 2)
     })
 
+    Handlebars.registerHelper('join', function (context, block) {
+      return context.join(block.hash.delimiter)
+    })
+
     Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
       if ((this.roll.dice.length === 3 && this.roll.dice.filter((x) => x.faces === 6).length === 1 && this.roll.dice.filter((x) => x.faces === 10).length === 2) || this.roll.formula.match(/{\d+,1?d10,1?d10}/)) {
         return options.fn(this)

@@ -9,6 +9,7 @@ import { importFromDatasworn } from './module/datasworn'
 import { defaultActor } from './module/helpers/actors'
 import { moveDataByName } from './module/helpers/data'
 import { attachInlineRollListeners, RollDialog, rollSiteFeature } from './module/helpers/rolldialog'
+import { SFRollMoveDialog } from './module/helpers/rolldialog-sf'
 import { IronswornSettings } from './module/helpers/settings'
 import { sfOracleByDataforgedId, sfOracleJsonByDataforgedId } from './module/helpers/util'
 import { AssetItem } from './module/item/asset/assetitem'
@@ -32,6 +33,7 @@ export interface IronswornConfig {
   // These are for Vue
   IronswornSettings: typeof IronswornSettings
   RollDialog: typeof RollDialog
+  SFRollMoveDialog: typeof SFRollMoveDialog
   Ranks: typeof RANKS
   RankIncrements: typeof RANK_INCREMENTS
   attachInlineRollListeners: typeof attachInlineRollListeners
@@ -59,6 +61,7 @@ export const IRONSWORN: IronswornConfig = {
 
   IronswornSettings,
   RollDialog,
+  SFRollMoveDialog,
   Ranks: RANKS,
   RankIncrements: RANK_INCREMENTS,
   attachInlineRollListeners,
