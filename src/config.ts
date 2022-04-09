@@ -20,6 +20,7 @@ import { DelveThemeItem } from './module/item/delve-theme-domain/delvethemeitem'
 import { MoveItem } from './module/item/move/moveitem'
 import { ProgressItem } from './module/item/progress/progressitem'
 import { VowItem } from './module/item/vow/vowitem'
+import { data as Dataforged } from '../dataforged'
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
@@ -44,6 +45,9 @@ export interface IronswornConfig {
   defaultActor: typeof defaultActor
   sfOracleByDataforgedId: typeof sfOracleByDataforgedId
   sfOracleJsonByDataforgedId: typeof sfOracleJsonByDataforgedId
+
+  Dataforged: typeof Dataforged
+
   _: typeof lodash
   marked: typeof marked
 }
@@ -72,6 +76,9 @@ export const IRONSWORN: IronswornConfig = {
   defaultActor,
   sfOracleByDataforgedId,
   sfOracleJsonByDataforgedId,
+
+  Dataforged,
+
   _: lodash,
   marked,
 }
