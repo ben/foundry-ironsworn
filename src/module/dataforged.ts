@@ -78,19 +78,18 @@ export async function importFromDataforged() {
   // Moves
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   // Importing JSON doesn't come back with an array, but an object with integer keys
-  const sfMovesJson = Dataforged.moves
-  for (const k of Object.keys(sfMovesJson)) {
-    if (isNaN(parseInt(k))) continue
-    const move = sfMovesJson[k]
-    renderLinks(idMap, move)
-    const cleanMove = cleanDollars(move)
-    movesToCreate.push({
-      _id: idMap[cleanMove['dfid']],
-      type: 'sfmove',
-      name: cleanMove['Name'],
-      img: 'icons/dice/d10black.svg',
-      data: cleanMove,
-    })
+  for (const category of Dataforged.moves) {
+    for (const move of category.Moves) {
+      renderLinks(idMap, move)
+      const cleanMove = cleanDollars(move)
+      movesToCreate.push({
+        _id: idMap[cleanMove['dfid']],
+        type: 'sfmove',
+        name: cleanMove['Name'],
+        img: 'icons/dice/d10black.svg',
+        data: cleanMove,
+      })
+    }
   }
   await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.starforgedmoves', keepId: true })
 
