@@ -1,1 +1,0 @@
-{"version":3,"file":"IMoveTriggerYaml.d.ts","sourceRoot":"","sources":["../../../src/yaml_in/moves/IMoveTriggerYaml.ts"],"names":[],"mappings":"AAAA,OAAO,KAAK,EAAE,cAAc,EAAE,gCAA2B;AACzD,OAAO,KAAK,EAAE,sBAAsB,EAAE,oBAA0B;AAEhE,MAAM,WAAW,gBAAgB;IAC/B,IAAI,EAAE,cAAc,CAAC;IACrB,OAAO,CAAC,EAAE,sBAAsB,EAAE,GAAG,SAAS,CAAC;CAChD"}
