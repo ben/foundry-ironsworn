@@ -61,12 +61,15 @@ export default {
 
     toolbarOptions: {
       type: Array,
-      default: [
-        [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
-        [{ list: 'ordered' }, { list: 'bullet' }],
-        ['link', 'image'],
-        ['clean'],
-      ],
+      default (){
+        return 
+          [
+            [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
+            [{ list: 'ordered' }, { list: 'bullet' }],
+            ['link', 'image'],
+            ['clean'],
+          ]
+      },
     },
   },
 

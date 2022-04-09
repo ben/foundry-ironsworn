@@ -5,6 +5,7 @@
 - Chat log when the "completed" flag changes ([#270](https://github.com/ben/foundry-ironsworn/pull/270))
 - Fix a typo in an Ironsworn oracle (Thanks @Porges! [#271](https://github.com/ben/foundry-ironsworn/pull/271))
 - Update the Spanish translation files (Thanks @WallaceMcGregor! [#268](https://github.com/ben/foundry-ironsworn/pull/268))
+- Updated a few functions to adhere to reactive data functionality ([#273](https://github.com/ben/foundry-ironsworn/pull/273))
 
 ## 1.10.35
 

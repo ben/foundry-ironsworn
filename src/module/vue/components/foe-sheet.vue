@@ -75,6 +75,9 @@ export default {
     foundryFoe() {
       return this.$actor.items.get(this.foe._id)
     },
+    rankText() {
+      return this.$t(CONFIG.IRONSWORN.Ranks[this.actor.data.rank])
+    },
   },
 
   watch: {
