@@ -1,4 +1,4 @@
-import IMove from 'dataforged/src/types/moves/interfaces/IMove'
+import { IMove } from '../../../dataforged'
 import { RANKS } from '../constants'
 
 interface ProgressBase {

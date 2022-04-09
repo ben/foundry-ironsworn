@@ -1,8 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { get, isArray, isObject, set } from 'lodash'
-import * as sfMovesJson from 'dataforged/starforged-moves.json'
-import IMove from 'dataforged/src/types/moves/interfaces/IMove'
+import { data as Dataforged, IMove } from '../../dataforged'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -79,6 +78,7 @@ export async function importFromDataforged() {
   // Moves
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   // Importing JSON doesn't come back with an array, but an object with integer keys
+  const sfMovesJson = Dataforged.moves
   for (const k of Object.keys(sfMovesJson)) {
     if (isNaN(parseInt(k))) continue
     const move = sfMovesJson[k]
