@@ -23,12 +23,12 @@
           @moveclick="highlightMove"
         />
       </div>
-      <div class="nogrow" v-else v-for="ck of categoryKeys" :key="ck">
+      <div class="nogrow" v-else v-for="category of categories" :key="category.$id">
         <h2>
-          {{ ck }}
+          {{ category.tname }}
         </h2>
         <sf-moverow
-          v-for="move of movesForKey(ck)"
+          v-for="move of category.Moves"
           :key="move.dfid"
           :actor="actor"
           :move="move"
@@ -52,8 +52,6 @@ h2 {
 </style>
 
 <script>
-import { cloneDeep } from 'lodash'
-
 export default {
   props: {
     actor: Object,
@@ -62,36 +60,27 @@ export default {
   data() {
     return {
       searchQuery: '',
-      moves: {},
-      categoryKeys: [
-        'Session Moves',
-        'Adventure Moves',
-        'Quest Moves',
-        'Connection Moves',
-        'Exploration Moves',
-        'Combat Moves',
-        'Suffer Moves',
-        'Threshold Moves',
-        'Recover Moves',
-        'Legacy Moves',
-        'Fate Moves',
-      ],
+      categories: [],
     }
   },
 
   async created() {
     const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
     const compendiumMoves = await pack.getDocuments()
-    const moves = {}
-    for (const cmove of compendiumMoves) {
-      const data = cloneDeep(cmove.data.data)
-      data.foundryItem = cmove
-      data.highlighted = false
 
-      moves[data.Category] ||= { key: data.Category, moves: [] }
-      moves[data.Category].moves.push(data)
+    const categories = CONFIG.IRONSWORN.Dataforged.moves
+    for (const category of categories) {
+      // Provide an i18n str for category names
+      category.tname = this.$t(`IRONSWORN.${category.Name}`)
+
+      for (const move of category.Moves) {
+        // Provide a Foundry move
+        move.foundryItem = compendiumMoves.find(
+          (x) => x.data.data.dfid === move.$id
+        )
+      }
     }
-    this.moves = moves
+    this.categories = categories
   },
 
   computed: {
@@ -122,14 +111,14 @@ export default {
 
     async highlightMove(item) {
       this.searchQuery = ''
-      await new Promise(r => setTimeout(r, 10))
+      await new Promise((r) => setTimeout(r, 10))
       // TODO: this doesn't support custom moves
       for (const k of Object.keys(this.moves)) {
         const moveCategory = this.moves[k]
         for (const move of moveCategory.moves) {
           if (move.dfid === item.data.data.dfid) {
             move.highlighted = true
-            setTimeout(() => move.highlighted = false, 2000)
+            setTimeout(() => (move.highlighted = false), 2000)
             return
           }
         }
@@ -137,7 +126,7 @@ export default {
 
       // Not found; just open the sheet
       item.sheet?.render(true)
-    }
+    },
   },
 }
 </script>
