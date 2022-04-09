@@ -1,4 +1,5 @@
 import { IronswornActor } from '../actor/actor'
+import { createStarforgedMoveRollChat } from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
 import { SFMoveDataProperties } from '../item/itemtypes'
 import { IronswornSettings } from './settings'
@@ -34,7 +35,7 @@ export class SFRollMoveDialog extends Dialog {
       buttons[i.toString()] = {
         label,
         icon: '<i class="fas fa-dice-d6"></i>',
-        callback: callback(actor, move, mode, stats),
+        callback: callback({ actor, move, mode, stats }),
       }
     }
 
@@ -64,17 +65,39 @@ export class SFRollMoveDialog extends Dialog {
     }).render(true)
   }
 }
-function callback(actor: IronswornActor, move: IronswornItem, mode: string, stats: string[]) {
+function callback(opts: { actor: IronswornActor; move: IronswornItem; mode: string; stats: string[] }) {
   return async (x) => {
     // TODO: extract data from form and send to rollAndCreateChatMessage
     const form = x[0].querySelector('form')
     const bonus = form.bonus.value ? parseInt(form.bonus.value ?? '0', 10) : 0
-    rollAndCreateChatMessage(actor, move, mode, stats, bonus)
+    rollAndCreateChatMessage({ ...opts, bonus })
   }
 }
 
-async function rollAndCreateChatMessage(actor: IronswornActor, move: IronswornItem, mode: string, stats: string[], bonus: number) {
-  console.log({actor, move, mode, stats, bonus})
+async function rollAndCreateChatMessage(opts: { actor: IronswornActor; move: IronswornItem; mode: string; stats: string[]; bonus: number }) {
+  const { actor, move, mode, stats, bonus } = opts
+  if (mode !== 'Stat') {
+    console.log({ actor, move, mode, stats, bonus })
+    return // TODO: implement best/worst/all of
+  }
+
+  let actionExpr = 'd6'
+  const stat = stats[0]
+  if (stat) actionExpr += ` + @${stat.toLowerCase()}`
+  if (bonus) actionExpr += ` + ${bonus}`
+  const data = {
+    ...actor?.getRollData(),
+  }
+
+  const roll = new Roll(`{${actionExpr}, d10, d10}`, data)
+  createStarforgedMoveRollChat({
+    roll,
+    actor,
+    move,
+    mode,
+    stats,
+    bonus,
+  })
 }
 
 async function createDataforgedMoveChat(move: IronswornItem) {
