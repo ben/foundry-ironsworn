@@ -17,7 +17,7 @@
       <div class="nogrow" v-if="searchQuery">
         <sf-moverow
           v-for="move of searchResults"
-          :key="move.$id"
+          :key="move.dfid"
           :actor="actor"
           :move="move"
           @moveclick="highlightMove"
@@ -29,7 +29,7 @@
         </h2>
         <sf-moverow
           v-for="move of movesForKey(ck)"
-          :key="move.$id"
+          :key="move.dfid"
           :actor="actor"
           :move="move"
           @moveclick="highlightMove"

@@ -47,7 +47,7 @@ export class IronswornChatCard {
     } else {
       item = await game.items?.get(id)
     }
-    if (item?.data.type !== 'move') {
+    if (!item || !['move', 'sfmove'].includes(item?.data?.type || '')) {
       console.log('falling through')
       return (TextEditor as any)._onClickContentLink(ev)
     }

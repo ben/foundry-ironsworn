@@ -17,6 +17,12 @@ export class SFRollMoveDialog extends Dialog {
       throw new Error('this only works with SF moves')
     }
 
+    // Bail out if there's nothing to choose
+    const data = move.data as SFMoveDataProperties
+    if (!data.data.Trigger.Options?.length) {
+      return createDataforgedMoveChat(move)
+    }
+
     const template = 'systems/foundry-ironsworn/templates/sf-move-roll-dialog.hbs'
     const renderOpts = { actor, move }
     const content = await renderTemplate(template, renderOpts)
@@ -32,7 +38,6 @@ export class SFRollMoveDialog extends Dialog {
       }
     }
 
-    const data = move.data as SFMoveDataProperties
     const options = data.data.Trigger.Options ?? []
     for (let i = 0; i < options.length; i++) {
       const option = options[i]
@@ -51,7 +56,7 @@ export class SFRollMoveDialog extends Dialog {
       }
     }
 
-    console.log({buttons})
+    console.log({ buttons })
     return new SFRollMoveDialog({
       title,
       content,
@@ -63,4 +68,12 @@ export class SFRollMoveDialog extends Dialog {
   static async callback(mode: string, stats: string[]) {
     console.log({ mode, stats })
   }
+}
+
+async function createDataforgedMoveChat(move: IronswornItem) {
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/sf-move.hbs', { move })
+  ChatMessage.create({
+    speaker: ChatMessage.getSpeaker(),
+    content,
+  })
 }
