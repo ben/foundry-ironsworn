@@ -12,7 +12,7 @@
         v-if="expanded"
         @moveclick="moveclick"
       >
-        <div v-html="$enrichHtml(fulltext)" />
+        <div v-html="$enrichMarkdown(move.Text)" />
       </with-rolllisteners>
     </transition>
   </div>

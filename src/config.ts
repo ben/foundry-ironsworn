@@ -1,4 +1,5 @@
 import * as lodash from 'lodash'
+import { marked } from 'marked'
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
@@ -42,6 +43,7 @@ export interface IronswornConfig {
   sfOracleByDataforgedId: typeof sfOracleByDataforgedId
   sfOracleJsonByDataforgedId: typeof sfOracleJsonByDataforgedId
   _: typeof lodash
+  marked: typeof marked
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -68,4 +70,5 @@ export const IRONSWORN: IronswornConfig = {
   sfOracleByDataforgedId,
   sfOracleJsonByDataforgedId,
   _: lodash,
+  marked,
 }

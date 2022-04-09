@@ -52,11 +52,7 @@ h2 {
 </style>
 
 <script>
-async function fetchJson() {
-  return fetch('systems/foundry-ironsworn/assets/sf-moves.json').then((x) =>
-    x.json()
-  )
-}
+import { cloneDeep } from 'lodash'
 
 export default {
   props: {
@@ -85,18 +81,15 @@ export default {
 
   async created() {
     const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
-    const [json, compendiumMoves] = await Promise.all([
-      fetchJson(),
-      pack.getDocuments(),
-    ])
+    const compendiumMoves = await pack.getDocuments()
     const moves = {}
-    for (const move of json) {
-      move.foundryItem = compendiumMoves.find(
-        (x) => x.data.data.sourceId === move['$id']
-      )
-      move.highlighted = false
-      moves[move.Category] ||= { key: move.Category, moves: [] }
-      moves[move.Category].moves.push(move)
+    for (const cmove of compendiumMoves) {
+      const data = cloneDeep(cmove.data.data)
+      data.foundryItem = cmove
+      data.highlighted = false
+
+      moves[data.Category] ||= { key: data.Category, moves: [] }
+      moves[data.Category].moves.push(data)
     }
     this.moves = moves
   },

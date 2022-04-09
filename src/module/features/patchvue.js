@@ -4,7 +4,7 @@ Vue.prototype.$capitalize = function (txt) {
   const [first, ...rest] = txt
   return `${first.toUpperCase()}${rest.join('')}`
 }
-Vue.prototype.$enrichHtml = (text) => {
+function enrichHtml(text) {
   const rendered = TextEditor.enrichHTML(text)
   const rollText = game.i18n.localize('IRONSWORN.Roll')
   return rendered.replace(
@@ -16,6 +16,11 @@ Vue.prototype.$enrichHtml = (text) => {
       </a>
     `
   )
+}
+Vue.prototype.$enrichHtml = enrichHtml
+Vue.prototype.$enrichMarkdown = (md) => {
+  const html = CONFIG.IRONSWORN.marked.parse(md)
+  return enrichHtml(html)
 }
 
 Object.defineProperty(Vue.prototype, '$item', {
