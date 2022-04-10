@@ -79,6 +79,7 @@ export default {
           (x) => x.data.data.dfid === move.$id
         )
         move.foundryItem = foundryItem?.toObject(true)
+        move.highlighted = false
       }
     }
     this.categories = categories
@@ -87,8 +88,8 @@ export default {
   computed: {
     sortedMoves() {
       const ret = []
-      for (const category of Object.keys(this.moves || {})) {
-        ret.push(...this.moves[category].moves)
+      for (const category of this.categories) {
+        ret.push(...category.Moves)
       }
       return ret
     },
