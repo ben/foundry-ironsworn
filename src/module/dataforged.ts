@@ -40,6 +40,31 @@ function cleanDollars(obj): any {
   return obj
 }
 
+async function hash(str: string): Promise<string> {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
+  const hexarr = Array.prototype.map.call(new Uint8Array(buf), (x) => ('00' + x.toString(16)).slice(-2))
+  return hexarr.join('').substring(48)
+}
+
+async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: string }> {
+  const ret = {}
+
+  const nodeStack = Object.values(data) as any[]
+  while (nodeStack.length) {
+    const node = nodeStack.pop()
+    if (node?.$id) {
+      ret[node.$id] = await hash(node.$id)
+    }
+    if (isArray(node)) {
+      nodeStack.push(...node.reverse())
+    } else if (node instanceof Object) {
+      nodeStack.push(...Object.values(node).reverse())
+    }
+  }
+
+  return ret
+}
+
 function renderLinks(idMap: { [key: string]: string }, move: IMove) {
   const textProperties = ['Text', 'Trigger.Text', 'Outcomes.Strong Hit.Text', 'Outcomes.Strong Hit.With a Match.Text', 'Outcomes.Weak Hit.Text', 'Outcomes.Miss.Text', 'Outcomes.Miss.With a Match.Text']
   for (const prop of textProperties) {
@@ -73,7 +98,7 @@ export async function importFromDataforged() {
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
-  const idMap = await fetch('systems/foundry-ironsworn/assets/sf-ids.json').then((x) => x.json())
+  const idMap = await generateIdMap(Dataforged)
 
   // Moves
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
