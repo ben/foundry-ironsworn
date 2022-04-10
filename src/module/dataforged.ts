@@ -67,15 +67,17 @@ async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: 
 
 function renderLinks(idMap: { [key: string]: string }, move: IMove) {
   const textProperties = ['Text', 'Trigger.Text', 'Outcomes.Strong Hit.Text', 'Outcomes.Strong Hit.With a Match.Text', 'Outcomes.Weak Hit.Text', 'Outcomes.Miss.Text', 'Outcomes.Miss.With a Match.Text']
+  const mdLinkRe = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
   for (const prop of textProperties) {
     const text = get(move, prop)
     if (!text) continue
     set(
       move,
       prop,
-      text.replace(/\[([^\]]+)\]\(([^#]+)#[^)]+\)/g, (link, name, kind) => {
-        if (kind && kind !== 'Moves') return link
-        return `@Compendium[foundry-ironsworn.starforgedmoves.${idMap['Moves / ' + name]}]{${name}}`
+      text.replace(mdLinkRe, (match, text, url) => {
+        const [kind] = url.split('/')
+        if (kind && kind !== 'Moves') return match
+        return `@Compendium[foundry-ironsworn.starforgedmoves.${idMap[url]}]{${text}}`
       })
     )
   }
@@ -102,7 +104,6 @@ export async function importFromDataforged() {
 
   // Moves
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  // Importing JSON doesn't come back with an array, but an object with integer keys
   for (const category of Dataforged.moves) {
     for (const move of category.Moves) {
       renderLinks(idMap, move)
