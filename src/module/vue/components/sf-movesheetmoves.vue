@@ -75,9 +75,10 @@ export default {
 
       for (const move of category.Moves) {
         // Provide a Foundry move
-        move.foundryItem = compendiumMoves.find(
+        const foundryItem = compendiumMoves.find(
           (x) => x.data.data.dfid === move.$id
         )
+        move.foundryItem = foundryItem?.toObject(true)
       }
     }
     this.categories = categories
@@ -113,10 +114,9 @@ export default {
       this.searchQuery = ''
       await new Promise((r) => setTimeout(r, 10))
       // TODO: this doesn't support custom moves
-      for (const k of Object.keys(this.moves)) {
-        const moveCategory = this.moves[k]
-        for (const move of moveCategory.moves) {
-          if (move.dfid === item.data.data.dfid) {
+      for (const category of this.categories) {
+        for (const move of category.Moves) {
+          if (move.$id === item.data.data.dfid) {
             move.highlighted = true
             setTimeout(() => (move.highlighted = false), 2000)
             return
