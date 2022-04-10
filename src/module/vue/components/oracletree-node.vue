@@ -1,16 +1,16 @@
 <template>
   <div class="flexcol">
     <h4 class="clickable text" @click="click">
-      <i class="fa fa-dice-d6" v-if="oracle.tableId" />
+      <i class="fa fa-dice-d6" v-if="oracle.foundryTableId" />
       <span v-else-if="expanded"><i class="fa fa-caret-down" /></span>
       <span v-else><i class="fa fa-caret-right" /></span>
-      {{ oracle.title }}
+      {{ oracle.Name }}
     </h4>
 
     <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
       <oracletree-node
-        v-for="child in oracle.children"
-        :key="child.key"
+        v-for="child in children"
+        :key="child.dfid"
         :oracle="child"
       />
     </div>
@@ -29,11 +29,20 @@ export default {
     }
   },
 
+  computed: {
+    children() {
+      return [
+        ...this.oracle.Categories ?? [],
+        ...this.oracle.Oracles ?? [],
+      ]
+    }
+  },
+
   methods: {
     async click() {
-      if (this.oracle.tableId) {
+      if (this.oracle.foundryTableId) {
         const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-        const table = await pack?.getDocument(this.oracle.tableId)
+        const table = await pack?.getDocument(this.oracle.foundryTableId)
         table?.draw()
       } else {
         this.expanded = !this.expanded

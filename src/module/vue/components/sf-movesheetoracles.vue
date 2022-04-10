@@ -23,7 +23,7 @@
       </div>
       <div v-else>
         <oracletree-node
-          v-for="oracle in oracles"
+          v-for="oracle in dfOracles"
           :key="oracle.key"
           :oracle="oracle"
         />
@@ -40,35 +40,6 @@
 
 <script>
 import { cloneDeep } from 'lodash'
-function setDeep(obj, key, val) {
-  const parts = key.split(' / ').map((x) => x.trim())
-  for (let i = 0; i < parts.length - 1; i++) {
-    const part = parts[i]
-    obj[part] ||= {}
-    obj = obj[part]
-  }
-  obj[parts[parts.length - 1]] = val
-}
-
-function oracleTree(obj, fullkey) {
-  const ret = []
-
-  for (const k of Object.keys(obj)) {
-    const v = obj[k]
-    const base = {
-      title: k,
-      key: `${fullkey}.${k}`,
-    }
-    // A string? That's a rollable table ID
-    if (typeof v === 'string') {
-      ret.push({ ...base, tableId: v })
-    } else {
-      ret.push({ ...base, children: oracleTree(v, `${fullkey}.${k}`) })
-    }
-  }
-
-  return ret
-}
 
 export default {
   props: {
