@@ -167,7 +167,7 @@ async function doit() {
     writeLocal('assets', processAssets(idMap, df)),
     writeLocal('encounters', processEncounters(idMap, df)),
     // writeLocal('moves', processMoves(idMap, df)),
-    writeLocal('oracles', processOracles(idMap, df)),
+    // writeLocal('oracles', processOracles(idMap, df)),
     // writeLocal('setting-truths', processSettingTruths(idMap, df)),
     writeLocal('ids', idMap),
   ]

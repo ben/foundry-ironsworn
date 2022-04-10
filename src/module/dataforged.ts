@@ -1,7 +1,8 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
-import { get, isArray, isObject, set } from 'lodash'
-import { data as Dataforged, IMove } from 'dataforged'
+import { cloneDeep, get, isArray, isObject, max, set } from 'lodash'
+import { data as Dataforged, IMove, IOracle, IOracleCategory } from 'dataforged'
+import { marked } from 'marked'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -49,7 +50,7 @@ async function hash(str: string): Promise<string> {
 async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: string }> {
   const ret = {}
 
-  const nodeStack = Object.values(data) as any[]
+  const nodeStack = cloneDeep(Object.values(data)) as any[]
   while (nodeStack.length) {
     const node = nodeStack.pop()
     if (node?.$id) {
@@ -65,25 +66,36 @@ async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: 
   return ret
 }
 
+const COMPENDIUM_KEY_MAP = {
+  'Moves': 'starforgedmoves',
+  'Oracles': 'starforgedoracles',
+}
+const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
+
+function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
+  return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
+    const [kind] = url.split('/')
+    const compendiumKey = COMPENDIUM_KEY_MAP[kind]
+    if (!compendiumKey) return match
+    return `@Compendium[foundry-ironsworn.${compendiumKey}.${idMap[url]}]{${text}}`
+  })
+}
+
 function renderLinks(idMap: { [key: string]: string }, move: IMove) {
   const textProperties = ['Text', 'Trigger.Text', 'Outcomes.Strong Hit.Text', 'Outcomes.Strong Hit.With a Match.Text', 'Outcomes.Weak Hit.Text', 'Outcomes.Miss.Text', 'Outcomes.Miss.With a Match.Text']
-  const mdLinkRe = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
   for (const prop of textProperties) {
     const text = get(move, prop)
     if (!text) continue
     set(
       move,
       prop,
-      text.replace(mdLinkRe, (match, text, url) => {
-        const [kind] = url.split('/')
-        if (kind && kind !== 'Moves') return match
-        return `@Compendium[foundry-ironsworn.starforgedmoves.${idMap[url]}]{${text}}`
-      })
+      renderLinksInStr(text, idMap)
     )
   }
 }
 
 const PACKS = ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles', 'foundry-ironsworn.foeactorssf']
+
 /**
  * Converts JSON from dataforged resources into foundry packs. Requires packs to
  * already exist, but will empty them prior to repopulating. In a perfect world
@@ -205,39 +217,42 @@ export async function importFromDataforged() {
   }
 
   // Oracles
-  const oraclesJson = await fetch('systems/foundry-ironsworn/assets/sf-oracles.json').then((x) => x.json())
   const oraclesToCreate = [] as Record<string, unknown>[]
   // Oracles JSON is a tree we wish to iterate through depth first adding
   // parents prior to their children, and children in order
-  const nodeStack = Array.from(oraclesJson).reverse() as any[]
-  while (nodeStack.length) {
-    const node = nodeStack.pop() as Record<string, any>
-    if (node['Table']) {
+  function processCategory(cat: IOracle | IOracleCategory) {
+    for (const oracle of cat.Oracles ?? []) {
+      for (const child of oracle.Oracles ?? []) {
+        processCategory(child)
+      }
+      if (!oracle.Table) continue
+      const description = marked.parseInline(renderLinksInStr(oracle.Description ?? '', idMap))
+      const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
       oraclesToCreate.push({
-        _id: idMap[node['$id']],
-        name: (node['$id'] as string).substring(10),
+        _id: idMap[oracle.$id],
+        name: oracle.$id,
         img: 'icons/dice/d10black.svg',
-        description: node['Description'],
-        formula: '1d100',
+        description,
+        formula: `d${maxRoll}`,
         replacement: true,
         displayRoll: true,
         /* folder: // would require using an additional module */
-        results: node['Table'].map(
+        results: oracle.Table?.map(
           (tableRow) =>
             ({
-              range: [tableRow['Floor'], tableRow['Ceiling']],
-              text: tableRow['Result'],
+              range: [tableRow.Floor, tableRow.Ceiling],
+              text: tableRow.Result && renderLinksInStr(tableRow.Result, idMap),
             } as Record<string, unknown>)
         ),
       })
     }
-    // add children to stack
-    if (node['Oracles']) {
-      nodeStack.push(...Array.from(node['Oracles']).reverse())
+    for (const child of cat.Oracles ?? []) {
+      processCategory(child)
     }
-    if (node['Categories']) {
-      nodeStack.push(...Array.from(node['Categories']).reverse())
-    }
+  }
+
+  for (const category of Dataforged.oracles) {
+    processCategory(category)
   }
   await RollTable.createDocuments(oraclesToCreate, { pack: 'foundry-ironsworn.starforgedoracles', keepId: true })
 }
