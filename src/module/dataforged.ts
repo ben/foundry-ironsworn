@@ -131,7 +131,7 @@ export async function importFromDataforged() {
           name,
           value: '',
         })) || [],
-      abilities: asset['Abilities'].map((ability) => ({
+      abilities: (asset['Abilities'] ?? []).map((ability) => ({
         enabled: ability['Enabled'] || false,
         description: ability['Text'],
       })),

@@ -45,23 +45,8 @@ async function writeLocal(name, obj) {
   return fs.writeFile(`system/assets/sf-${name}.json`, JSON.stringify(obj, null, 2) + '\n')
 }
 
-function base62(integer) {
-  const charset = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  if (integer === 0) {
-    return 0
-  }
-  let s = []
-  while (integer > 0) {
-    s = [charset[integer % 62], ...s]
-    integer = Math.floor(integer / 62)
-  }
-  return s.join('')
-}
-
 function idHash(file, str) {
   const hasher = createHash('sha256')
-  hasher.update('6a2da20943931e9834fc12cfe5bb47bbd9ae43489a30726962b576f4e3993e50') // salt
-  hasher.update(file)
   hasher.update(str)
   return hasher.digest('hex').toString().substring(48)
 }
@@ -91,7 +76,7 @@ function processAssets(idMap, df) {
   console.log('Assets:')
 
   for (const dfAsset of df['assets.json']) {
-    for (const dfAbility of dfAsset['Abilities']) {
+    for (const dfAbility of dfAsset['Abilities'] ?? []) {
       dfAbility['Text'] = renderHtml(idMap, dfAbility['Text'], marked.parse)
     }
   }
