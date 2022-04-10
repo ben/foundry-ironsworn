@@ -20,7 +20,7 @@ function getLegacyRank(numericRank) {
   return 'epic'
 }
 
-function cleanDollars(obj): any {
+export function cleanDollars(obj): any {
   if (isArray(obj)) {
     const ret = [] as any[]
     for (const item of obj) {

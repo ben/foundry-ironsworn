@@ -4,7 +4,7 @@ import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
 import { RANKS, RANK_INCREMENTS } from './module/constants'
-import { importFromDataforged } from './module/dataforged'
+import { cleanDollars, importFromDataforged } from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { defaultActor } from './module/helpers/actors'
 import { moveDataByName } from './module/helpers/data'
@@ -47,6 +47,7 @@ export interface IronswornConfig {
   sfOracleJsonByDataforgedId: typeof sfOracleJsonByDataforgedId
 
   Dataforged: typeof Dataforged
+  cleanDollars: typeof cleanDollars
 
   _: typeof lodash
   marked: typeof marked
@@ -78,6 +79,7 @@ export const IRONSWORN: IronswornConfig = {
   sfOracleJsonByDataforgedId,
 
   Dataforged,
+  cleanDollars,
 
   _: lodash,
   marked,

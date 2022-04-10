@@ -39,6 +39,7 @@
 </style>
 
 <script>
+import { cloneDeep } from 'lodash'
 function setDeep(obj, key, val) {
   const parts = key.split(' / ').map((x) => x.trim())
   for (let i = 0; i < parts.length - 1; i++) {
@@ -75,30 +76,29 @@ export default {
   },
 
   data() {
-    let oracles = []
-    const sortedOracles = []
-    const pack = this.getPack()
-    if (pack) {
-      // Construct an index
-      const index = {}
-      for (const table of pack.index.values()) {
-        setDeep(index, table.name, table._id)
-        sortedOracles.push({
-          title: table.name,
-          key: table._id,
-          tableId: table._id,
-        })
-      }
-
-      // Explode into objects
-      oracles = oracleTree(index, '')
-    }
-
+    const dfOracles = CONFIG.IRONSWORN.cleanDollars(cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles))
     return {
-      oracles,
-      sortedOracles,
+      dfOracles,
+      oracles: [],
+      sortedOracles: [],
       searchQuery: '',
     }
+  },
+
+  async created() {
+    // Get documents from pack
+    const tables = await this.getPack().getDocuments()
+
+    // Walk the DF oracles and decorate with Foundry IDs
+    const walk = (node) => {
+      const table = tables.find(x => x.data.flags.dfId === node.dfid)
+      if (table) {
+        Vue.set(node, 'foundryTableId', table.id)
+      }
+
+      (node.Oracles ?? []).forEach(walk)
+    }
+    this.dfOracles.forEach(walk)
   },
 
   computed: {
