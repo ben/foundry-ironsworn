@@ -67,8 +67,8 @@ async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: 
 }
 
 const COMPENDIUM_KEY_MAP = {
-  'Moves': 'starforgedmoves',
-  'Oracles': 'starforgedoracles',
+  Moves: 'starforgedmoves',
+  Oracles: 'starforgedoracles',
 }
 const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
 
@@ -86,11 +86,7 @@ function renderLinks(idMap: { [key: string]: string }, move: IMove) {
   for (const prop of textProperties) {
     const text = get(move, prop)
     if (!text) continue
-    set(
-      move,
-      prop,
-      renderLinksInStr(text, idMap)
-    )
+    set(move, prop, renderLinksInStr(text, idMap))
   }
 }
 
@@ -230,7 +226,11 @@ export async function importFromDataforged() {
       const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
       oraclesToCreate.push({
         _id: idMap[oracle.$id],
-        name: oracle.$id,
+        flags: {
+          dfId: oracle.$id,
+          category: oracle.Category,
+        },
+        name: oracle.Name,
         img: 'icons/dice/d10black.svg',
         description,
         formula: `d${maxRoll}`,
