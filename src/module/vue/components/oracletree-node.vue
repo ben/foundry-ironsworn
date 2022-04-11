@@ -1,10 +1,10 @@
 <template>
   <div class="flexcol">
     <h4 class="clickable text" @click="click">
-      <i class="fa fa-dice-d6" v-if="oracle.foundryTableId" />
+      <i class="fa fa-dice-d6" v-if="oracle.foundryTable" />
       <span v-else-if="expanded"><i class="fa fa-caret-down" /></span>
       <span v-else><i class="fa fa-caret-right" /></span>
-      {{ oracle.Name }}
+      {{ name }}
     </h4>
 
     <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
@@ -21,6 +21,7 @@
 export default {
   props: {
     oracle: Object,
+    breadcrumbs: Boolean,
   },
 
   data() {
@@ -31,19 +32,22 @@ export default {
 
   computed: {
     children() {
-      return [
-        ...this.oracle.Categories ?? [],
-        ...this.oracle.Oracles ?? [],
-      ]
+      return [...(this.oracle.Categories ?? []), ...(this.oracle.Oracles ?? [])]
+    },
+
+    name() {
+      const name = this.oracle.foundryItem?.name ?? this.oracle.Name
+      if (this.breadcrumbs) {
+        return `${this.oracle.Category}/${name}`
+      }
+      return name
     }
   },
 
   methods: {
     async click() {
-      if (this.oracle.foundryTableId) {
-        const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-        const table = await pack?.getDocument(this.oracle.foundryTableId)
-        table?.draw()
+      if (this.oracle.foundryTable) {
+        this.oracle.foundryTable.draw()
       } else {
         this.expanded = !this.expanded
       }

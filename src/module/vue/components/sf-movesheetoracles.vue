@@ -19,6 +19,7 @@
           v-for="oracle in searchResults"
           :key="oracle.key"
           :oracle="oracle"
+          :breadcrumbs="true"
         />
       </div>
       <div v-else>
@@ -48,10 +49,10 @@ export default {
 
   data() {
     const dfOracles = CONFIG.IRONSWORN.cleanDollars(cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles))
+
     return {
       dfOracles,
-      oracles: [],
-      sortedOracles: [],
+      flatOracles: [],
       searchQuery: '',
     }
   },
@@ -64,7 +65,8 @@ export default {
     const walk = (node) => {
       const table = tables.find(x => x.data.flags.dfId === node.dfid)
       if (table) {
-        Vue.set(node, 'foundryTableId', table.id)
+        Vue.set(node, 'foundryTable', table)
+        this.flatOracles.push(node)
       }
 
       (node.Oracles ?? []).forEach(walk)
@@ -77,7 +79,7 @@ export default {
       if (!this.searchQuery) return null
 
       const re = new RegExp(this.searchQuery, 'i')
-      return this.sortedOracles.filter((x) => re.test(x.title))
+      return this.flatOracles.filter((x) => re.test(x.foundryTable.name))
     },
   },
 
