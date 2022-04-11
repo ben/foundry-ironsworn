@@ -41,6 +41,12 @@ export function cleanDollars(obj): any {
   return obj
 }
 
+export async function getTableByDfId(dfid: string): Promise<RollTable | undefined> {
+  const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+  const docs = await pack?.getDocuments()
+  return docs?.find(x => x.getFlag('foundry-ironsworn', 'dfid') === dfid)
+}
+
 async function hash(str: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
   const hexarr = Array.prototype.map.call(new Uint8Array(buf), (x) => ('00' + x.toString(16)).slice(-2))
