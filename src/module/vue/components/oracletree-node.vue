@@ -36,7 +36,7 @@ export default {
     },
 
     name() {
-      const name = this.oracle.foundryItem?.name ?? this.$t(`IRONSWORN.${this.oracle.Display.Title}`)
+      const name = this.oracle.foundryTable?.name ?? this.$t(`IRONSWORN.${this.oracle.Display.Title}`)
       if (this.breadcrumbs) {
         return `${this.oracle.Category}/${name}`
       }
