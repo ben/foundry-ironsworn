@@ -79,7 +79,7 @@ export default {
       if (!this.searchQuery) return null
 
       const re = new RegExp(this.searchQuery, 'i')
-      return this.flatOracles.filter((x) => re.test(x.foundryTable.name))
+      return this.flatOracles.filter((x) => re.test(`${x.Category}/${x.foundryTable.name}`))
     },
   },
 
