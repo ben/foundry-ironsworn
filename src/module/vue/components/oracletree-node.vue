@@ -36,12 +36,12 @@ export default {
     },
 
     name() {
-      const name = this.oracle.foundryItem?.name ?? this.oracle.Name
+      const name = this.oracle.foundryItem?.name ?? this.$t(`IRONSWORN.${this.oracle.Display.Title}`)
       if (this.breadcrumbs) {
         return `${this.oracle.Category}/${name}`
       }
       return name
-    }
+    },
   },
 
   methods: {
