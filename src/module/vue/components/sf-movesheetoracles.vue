@@ -73,6 +73,7 @@ export default {
       }
 
       for (const child of node.Oracles ?? []) await walk(child)
+      for (const child of node.Categories ?? []) await walk(child)
     }
     for (const node of this.dfOracles) await walk(node)
   },
