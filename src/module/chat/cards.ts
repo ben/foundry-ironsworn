@@ -4,7 +4,7 @@ import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE } from './chatrollhelpers'
 import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
-import { maybeShowDice, RollDialog } from '../helpers/roll'
+import { maybeShowDice, RollDialog } from '../helpers/rolldialog'
 import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 
@@ -47,7 +47,7 @@ export class IronswornChatCard {
     } else {
       item = await game.items?.get(id)
     }
-    if (item?.data.type !== 'move') {
+    if (!item || !['move', 'sfmove'].includes(item?.data?.type || '')) {
       console.log('falling through')
       return (TextEditor as any)._onClickContentLink(ev)
     }

@@ -17,19 +17,19 @@
       <div class="nogrow" v-if="searchQuery">
         <sf-moverow
           v-for="move of searchResults"
-          :key="move.$id"
+          :key="move.dfid"
           :actor="actor"
           :move="move"
           @moveclick="highlightMove"
         />
       </div>
-      <div class="nogrow" v-else v-for="ck of categoryKeys" :key="ck">
+      <div class="nogrow" v-else v-for="category of categories" :key="category.$id">
         <h2>
-          {{ ck }}
+          {{ category.tname }}
         </h2>
         <sf-moverow
-          v-for="move of movesForKey(ck)"
-          :key="move.$id"
+          v-for="move of category.Moves"
+          :key="move.dfid"
           :actor="actor"
           :move="move"
           @moveclick="highlightMove"
@@ -52,12 +52,6 @@ h2 {
 </style>
 
 <script>
-async function fetchJson() {
-  return fetch('systems/foundry-ironsworn/assets/sf-moves.json').then((x) =>
-    x.json()
-  )
-}
-
 export default {
   props: {
     actor: Object,
@@ -66,46 +60,36 @@ export default {
   data() {
     return {
       searchQuery: '',
-      moves: {},
-      categoryKeys: [
-        'Session Moves',
-        'Adventure Moves',
-        'Quest Moves',
-        'Connection Moves',
-        'Exploration Moves',
-        'Combat Moves',
-        'Suffer Moves',
-        'Threshold Moves',
-        'Recover Moves',
-        'Legacy Moves',
-        'Fate Moves',
-      ],
+      categories: [],
     }
   },
 
   async created() {
     const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
-    const [json, compendiumMoves] = await Promise.all([
-      fetchJson(),
-      pack.getDocuments(),
-    ])
-    const moves = {}
-    for (const move of json) {
-      move.foundryItem = compendiumMoves.find(
-        (x) => x.data.data.sourceId === move['$id']
-      )
-      move.highlighted = false
-      moves[move.Category] ||= { key: move.Category, moves: [] }
-      moves[move.Category].moves.push(move)
+    const compendiumMoves = await pack.getDocuments()
+
+    const categories = CONFIG.IRONSWORN.Dataforged.moves
+    for (const category of categories) {
+      // Provide an i18n str for category names
+      category.tname = this.$t(`IRONSWORN.${category.Name}`)
+
+      for (const move of category.Moves) {
+        // Provide a Foundry move
+        const foundryItem = compendiumMoves.find(
+          (x) => x.data.data.dfid === move.$id
+        )
+        move.foundryItem = foundryItem?.toObject(true)
+        move.highlighted = false
+      }
     }
-    this.moves = moves
+    this.categories = categories
   },
 
   computed: {
     sortedMoves() {
       const ret = []
-      for (const category of Object.keys(this.moves || {})) {
-        ret.push(...this.moves[category].moves)
+      for (const category of this.categories) {
+        ret.push(...category.Moves)
       }
       return ret
     },
@@ -129,14 +113,13 @@ export default {
 
     async highlightMove(item) {
       this.searchQuery = ''
-      await new Promise(r => setTimeout(r, 10))
+      await new Promise((r) => setTimeout(r, 10))
       // TODO: this doesn't support custom moves
-      for (const k of Object.keys(this.moves)) {
-        const moveCategory = this.moves[k]
-        for (const move of moveCategory.moves) {
-          if (move.$id === item.data.data.sourceId) {
+      for (const category of this.categories) {
+        for (const move of category.Moves) {
+          if (move.$id === item.data.data.dfid) {
             move.highlighted = true
-            setTimeout(() => move.highlighted = false, 2000)
+            setTimeout(() => (move.highlighted = false), 2000)
             return
           }
         }
@@ -144,7 +127,7 @@ export default {
 
       // Not found; just open the sheet
       item.sheet?.render(true)
-    }
+    },
   },
 }
 </script>

@@ -1,3 +1,4 @@
+import { IMove } from 'dataforged'
 import { RANKS } from '../constants'
 
 interface ProgressBase {
@@ -175,8 +176,21 @@ export interface MoveDataProperties {
 
 ///////////////////////////////
 
-export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | MoveDataSource | DelveThemeDataSource | DelveDomainDataSource
-export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | MoveDataProperties | DelveThemeDataProperties | DelveDomainDataProperties
+interface SFMoveDataPropertiesData extends IMove {}
+
+export interface SFMoveDataSource {
+  type: 'sfmove'
+  data: IMove
+}
+export interface SFMoveDataProperties {
+  type: 'sfmove'
+  data: SFMoveDataPropertiesData
+}
+
+///////////////////////////////
+
+export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | MoveDataSource | SFMoveDataSource | DelveThemeDataSource | DelveDomainDataSource
+export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | MoveDataProperties | SFMoveDataProperties | DelveThemeDataProperties | DelveDomainDataProperties
 
 declare global {
   interface SourceConfig {

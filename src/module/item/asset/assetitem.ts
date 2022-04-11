@@ -1,5 +1,5 @@
 import { IronswornCharacterSheet } from '../../actor/sheets/charactersheet'
-import { attachInlineRollListeners, RollDialog } from '../../helpers/roll'
+import { attachInlineRollListeners, RollDialog } from '../../helpers/rolldialog'
 import { BaseItem } from '../baseitem'
 
 export class AssetItem extends BaseItem {

@@ -2,7 +2,7 @@ import { createIronswornChatRoll, createIronswornDenizenChat } from '../../chat/
 import { RANK_INCREMENTS } from '../../constants'
 import { defaultActor } from '../../helpers/actors'
 import { moveDataByName } from '../../helpers/data'
-import { RollDialog, rollSiteFeature } from '../../helpers/roll'
+import { RollDialog, rollSiteFeature } from '../../helpers/rolldialog'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { DenizenSlot, SiteDataSource } from '../actortypes'

@@ -1,13 +1,15 @@
 import * as lodash from 'lodash'
+import { marked } from 'marked'
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
 import { RANKS, RANK_INCREMENTS } from './module/constants'
-import { importFromDataforged } from './module/dataforged'
+import { cleanDollars, importFromDataforged } from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { defaultActor } from './module/helpers/actors'
 import { moveDataByName } from './module/helpers/data'
-import { attachInlineRollListeners, RollDialog, rollSiteFeature } from './module/helpers/roll'
+import { attachInlineRollListeners, RollDialog, rollSiteFeature } from './module/helpers/rolldialog'
+import { SFRollMoveDialog } from './module/helpers/rolldialog-sf'
 import { IronswornSettings } from './module/helpers/settings'
 import { sfOracleByDataforgedId, sfOracleJsonByDataforgedId } from './module/helpers/util'
 import { AssetItem } from './module/item/asset/assetitem'
@@ -18,6 +20,7 @@ import { DelveThemeItem } from './module/item/delve-theme-domain/delvethemeitem'
 import { MoveItem } from './module/item/move/moveitem'
 import { ProgressItem } from './module/item/progress/progressitem'
 import { VowItem } from './module/item/vow/vowitem'
+import { data as Dataforged } from 'dataforged'
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
@@ -31,6 +34,7 @@ export interface IronswornConfig {
   // These are for Vue
   IronswornSettings: typeof IronswornSettings
   RollDialog: typeof RollDialog
+  SFRollMoveDialog: typeof SFRollMoveDialog
   Ranks: typeof RANKS
   RankIncrements: typeof RANK_INCREMENTS
   attachInlineRollListeners: typeof attachInlineRollListeners
@@ -41,7 +45,12 @@ export interface IronswornConfig {
   defaultActor: typeof defaultActor
   sfOracleByDataforgedId: typeof sfOracleByDataforgedId
   sfOracleJsonByDataforgedId: typeof sfOracleJsonByDataforgedId
+
+  Dataforged: typeof Dataforged
+  cleanDollars: typeof cleanDollars
+
   _: typeof lodash
+  marked: typeof marked
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -57,6 +66,7 @@ export const IRONSWORN: IronswornConfig = {
 
   IronswornSettings,
   RollDialog,
+  SFRollMoveDialog,
   Ranks: RANKS,
   RankIncrements: RANK_INCREMENTS,
   attachInlineRollListeners,
@@ -67,5 +77,10 @@ export const IRONSWORN: IronswornConfig = {
   defaultActor,
   sfOracleByDataforgedId,
   sfOracleJsonByDataforgedId,
+
+  Dataforged,
+  cleanDollars,
+
   _: lodash,
+  marked,
 }

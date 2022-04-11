@@ -4,7 +4,7 @@ import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
-import { FeatureOrDanger } from '../item/itemtypes'
+import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 
 interface RollMessageParams {
@@ -16,6 +16,14 @@ interface RollMessageParams {
   bonus?: number
   isProgress?: boolean
   subtitle?: string
+}
+interface SFRollMessageParams {
+  roll: Roll
+  actor: IronswornActor
+  move: IronswornItem
+  mode: string
+  stats: string[]
+  bonus: number
 }
 
 function actionRoll(roll: any): Roll {
@@ -118,6 +126,10 @@ function calculateCardTitle(params: RollMessageParams) {
   return rollText
 }
 
+function calculateSFCardTitle(params: SFRollMessageParams) {
+  return `${params.move.name} (${game.i18n.localize('IRONSWORN.' + capitalize(params.stats[0]))})`
+}
+
 function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): string | undefined {
   if (!move) return undefined
 
@@ -129,6 +141,18 @@ function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): 
     case HIT_TYPE.STRONG:
       return move.Strong
   }
+}
+
+function calculateSFMoveResultText(type: HIT_TYPE, match: boolean, move: IronswornItem) {
+  const data = move.data as SFMoveDataProperties
+  const outcomeKey = {
+    [HIT_TYPE.MISS]: 'Miss',
+    [HIT_TYPE.WEAK]: 'Weak Hit',
+    [HIT_TYPE.STRONG]: 'Strong Hit',
+  }[type]
+  let outcome = data.data.Outcomes?.[outcomeKey]
+  if (match) outcome = outcome?.['With a Match'] ?? outcome
+  return outcome?.Text
 }
 
 interface MomentumProps {
@@ -208,6 +232,38 @@ export async function createIronswornMoveChat(opts: { move?: EnhancedDataswornMo
     speaker: ChatMessage.getSpeaker(),
     content,
   })
+}
+
+export async function createStarforgedMoveRollChat(params: SFRollMessageParams) {
+  await params.roll.evaluate({ async: true })
+  const { action, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
+
+  // Momentum: if this is not a progress roll, it might be possible to upgrade
+  let hitType = calculateHitType(action, challenge1, challenge2)
+  const momentumProps = calculateMomentumProps(params.roll, params.actor)
+  if (momentumProps.negativeMomentumCancel) {
+    hitType = calculateHitType(canceledAction, challenge1, challenge2)
+  }
+
+  const renderData = {
+    themeClass: `theme-${IronswornSettings.theme}`,
+    hitType: calculateHitTypeText(hitType, match),
+    title: calculateSFCardTitle(params),
+    resultText: calculateSFMoveResultText(hitType, match, params.move),
+    ...momentumProps,
+    ...params,
+  }
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll-sf.hbs', renderData)
+
+  const messageData = {
+    speaker: ChatMessage.getSpeaker(),
+    content,
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    roll: params.roll,
+  }
+
+  const cls = CONFIG.ChatMessage.documentClass
+  return cls.create(messageData as any, {})
 }
 
 interface FeatureChatInput {

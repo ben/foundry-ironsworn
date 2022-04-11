@@ -1,6 +1,7 @@
 import { range } from 'lodash'
 import { RANKS } from '../constants'
 import { capitalize } from './util'
+import { marked } from 'marked'
 
 interface RollClassesOptions {
   canceled: boolean
@@ -9,19 +10,11 @@ interface RollClassesOptions {
 function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
   const theOpts = {
     ...{ canceled: false, type: undefined },
-    ...opts
+    ...opts,
   }
   const d = r.dice[0]
   const maxRoll = d?.faces || 10
-  return [
-    d?.constructor.name.toLowerCase(),
-    d && 'd' + d.faces,
-    (d?.total || r.result) <= 1 ? 'min' : null,
-    (d?.total || r.result) == maxRoll ? 'max' : null,
-    theOpts.type,
-    theOpts.canceled ? 'canceled' : null,
-  ].filter((x) => x)
-  .join(' ')
+  return [d?.constructor.name.toLowerCase(), d && 'd' + d.faces, (d?.total || r.result) <= 1 ? 'min' : null, (d?.total || r.result) == maxRoll ? 'max' : null, theOpts.type, theOpts.canceled ? 'canceled' : null].filter((x) => x).join(' ')
 }
 
 const actionRoll = (roll) => roll.terms[0].rolls.find((r) => r.dice.length === 0 || r.dice[0].faces === 6)
@@ -37,6 +30,10 @@ export class IronswornHandlebarsHelpers {
 
     Handlebars.registerHelper('json', function (context) {
       return JSON.stringify(context, null, 2)
+    })
+
+    Handlebars.registerHelper('join', function (context, block) {
+      return context.join(block.hash.delimiter)
     })
 
     Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
@@ -58,8 +55,8 @@ export class IronswornHandlebarsHelpers {
 
     Handlebars.registerHelper('challengeDice', function () {
       const [c1, c2] = challengeRolls(this.roll)
-      const c1span = `<span class="roll ${classesForRoll(c1, {type: 'challenge'})}">${c1.total}</span>`
-      const c2span = `<span class="roll ${classesForRoll(c2, {type: 'challenge'})}">${c2.total}</span>`
+      const c1span = `<span class="roll ${classesForRoll(c1, { type: 'challenge' })}">${c1.total}</span>`
+      const c2span = `<span class="roll ${classesForRoll(c2, { type: 'challenge' })}">${c2.total}</span>`
       return `${c1span} ${c2span}`
     })
 
@@ -96,7 +93,7 @@ export class IronswornHandlebarsHelpers {
       return ret
     })
 
-    Handlebars.registerHelper('enrichHtml', (text) => {
+    function enrichHtml(text: string) {
       const rendered = TextEditor.enrichHTML(text)
       const rollText = game.i18n.localize('IRONSWORN.Roll')
       return rendered.replace(
@@ -108,6 +105,12 @@ export class IronswornHandlebarsHelpers {
           </a>
         `
       )
+    }
+    Handlebars.registerHelper('enrichHtml', enrichHtml)
+
+    Handlebars.registerHelper('enrichMarkdown', (md) => {
+      const html = marked.parse(md, { gfm: true })
+      return enrichHtml(html)
     })
 
     Handlebars.registerHelper('rangeEach', function (context, _options) {

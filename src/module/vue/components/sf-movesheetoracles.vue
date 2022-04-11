@@ -19,11 +19,12 @@
           v-for="oracle in searchResults"
           :key="oracle.key"
           :oracle="oracle"
+          :breadcrumbs="true"
         />
       </div>
       <div v-else>
         <oracletree-node
-          v-for="oracle in oracles"
+          v-for="oracle in dfOracles"
           :key="oracle.key"
           :oracle="oracle"
         />
@@ -39,35 +40,7 @@
 </style>
 
 <script>
-function setDeep(obj, key, val) {
-  const parts = key.split(' / ').map((x) => x.trim())
-  for (let i = 0; i < parts.length - 1; i++) {
-    const part = parts[i]
-    obj[part] ||= {}
-    obj = obj[part]
-  }
-  obj[parts[parts.length - 1]] = val
-}
-
-function oracleTree(obj, fullkey) {
-  const ret = []
-
-  for (const k of Object.keys(obj)) {
-    const v = obj[k]
-    const base = {
-      title: k,
-      key: `${fullkey}.${k}`,
-    }
-    // A string? That's a rollable table ID
-    if (typeof v === 'string') {
-      ret.push({ ...base, tableId: v })
-    } else {
-      ret.push({ ...base, children: oracleTree(v, `${fullkey}.${k}`) })
-    }
-  }
-
-  return ret
-}
+import { cloneDeep } from 'lodash'
 
 export default {
   props: {
@@ -75,30 +48,30 @@ export default {
   },
 
   data() {
-    let oracles = []
-    const sortedOracles = []
-    const pack = this.getPack()
-    if (pack) {
-      // Construct an index
-      const index = {}
-      for (const table of pack.index.values()) {
-        setDeep(index, table.name, table._id)
-        sortedOracles.push({
-          title: table.name,
-          key: table._id,
-          tableId: table._id,
-        })
-      }
-
-      // Explode into objects
-      oracles = oracleTree(index, '')
-    }
+    const dfOracles = CONFIG.IRONSWORN.cleanDollars(cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles))
 
     return {
-      oracles,
-      sortedOracles,
+      dfOracles,
+      flatOracles: [],
       searchQuery: '',
     }
+  },
+
+  async created() {
+    // Get documents from pack
+    const tables = await this.getPack().getDocuments()
+
+    // Walk the DF oracles and decorate with Foundry IDs
+    const walk = (node) => {
+      const table = tables.find(x => x.data.flags.dfId === node.dfid)
+      if (table) {
+        Vue.set(node, 'foundryTable', table)
+        this.flatOracles.push(node)
+      }
+
+      (node.Oracles ?? []).forEach(walk)
+    }
+    this.dfOracles.forEach(walk)
   },
 
   computed: {
@@ -106,7 +79,7 @@ export default {
       if (!this.searchQuery) return null
 
       const re = new RegExp(this.searchQuery, 'i')
-      return this.sortedOracles.filter((x) => re.test(x.title))
+      return this.flatOracles.filter((x) => re.test(x.foundryTable.name))
     },
   },
 

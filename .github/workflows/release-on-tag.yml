@@ -12,10 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Use Node.js 14
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
       - name: Get Version
         shell: bash
         id: get-version
         run: echo "::set-output name=version::$(node ./.github/workflows/get-version.js)"
+
+      - name: Reconfigure git to use HTTP authentication
+        run: >
+          git config --global url."https://github.com/".insteadOf
+          ssh://git@github.com/
 
       - name: Install dependencies and run webpack
         run: |

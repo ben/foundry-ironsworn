@@ -35,6 +35,7 @@ import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
 import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvethemeordomainsheet'
 import { IronswornItem } from './module/item/item'
 import { MoveSheet } from './module/item/move/movesheet'
+import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 
@@ -149,6 +150,10 @@ Hooks.once('init', async () => {
     types: ['move'],
     label: 'Move sheet',
     makeDefault: true,
+  })
+  Items.registerSheet('ironsworn', SFMoveSheet, {
+    types: ['sfmove'],
+    label: 'Starforged move sheet',
   })
   Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
     types: ['delve-theme', 'delve-domain'],

@@ -1,0 +1,34 @@
+{{#*inline "statDescription"}}
+{{#if [Action roll]}}
+roll +{{[Action roll].Stat}}
+{{else if [Best of]}}
+roll best of {{join [Best of] delimiter=", "}}
+{{else if [Worst of]}}
+roll worst of {{join [Worst of] delimiter=", "}}
+{{else if [All of]}}
+roll all of {{join [All of] delimiter=", "}}
+{{/if}}
+{{/inline}}
+
+<form>
+  <div>{{{enrichMarkdown move.data.data.Trigger.Text}}}</div>
+
+  {{#if move.data.data.Trigger.Options}}
+  <ul>
+    {{#each move.data.data.Trigger.Options}}
+    {{#if Text}}
+    <li>
+      {{ Text }}: <strong>{{>statDescription}}</strong>
+    </li>
+    {{/if}}
+    {{/each}}
+  </ul>
+  {{/if}}
+
+  <hr>
+
+  <div class="form-group">
+    <label>{{localize 'IRONSWORN.Bonus'}}</label>
+    <input type="number" step="1" name="bonus" />
+  </div>
+</form>

@@ -1,4 +1,4 @@
-import { RollDialog } from '../../helpers/roll'
+import { RollDialog } from '../../helpers/rolldialog'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { CharacterMoveSheet } from './charactermovesheet'

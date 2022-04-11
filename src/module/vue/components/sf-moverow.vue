@@ -2,7 +2,7 @@
   <div class="item-row" :class="{ highlighted: move.highlighted }">
     <h4 style="margin: 0" class="flexrow" :title="tooltip">
       <i class="fa fa-dice-d6 clickable text nogrow" @click="rollMove" />
-      <span @click="expanded = !expanded">{{ move.Name }}</span>
+      <span @click="expanded = !expanded">{{ move.foundryItem.name }}</span>
     </h4>
     <transition name="slide">
       <with-rolllisteners
@@ -12,7 +12,7 @@
         v-if="expanded"
         @moveclick="moveclick"
       >
-        <div v-html="$enrichHtml(fulltext)" />
+        <div v-html="$enrichMarkdown(move.foundryItem.data.Text)" />
       </with-rolllisteners>
     </transition>
   </div>
@@ -84,10 +84,10 @@ export default {
 
   methods: {
     async rollMove() {
-      CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.$actor,
-        move: this.move.foundryItem.getMoveData(),
-      })
+      CONFIG.IRONSWORN.SFRollMoveDialog.show(
+        this.$actor,
+        this.move.foundryItem,
+      )
     },
 
     moveclick(item) {
