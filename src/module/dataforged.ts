@@ -41,16 +41,20 @@ export function cleanDollars(obj): any {
   return obj
 }
 
-export async function getTableByDfId(dfid: string): Promise<RollTable | undefined> {
-  const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-  const docs = await pack?.getDocuments()
-  return docs?.find(x => x.getFlag('foundry-ironsworn', 'dfid') === dfid)
+const HASH_CACHE = {} as { [k: string]: string }
+export async function hashLookup(str: string): Promise<string> {
+  return (HASH_CACHE[str] ||= await hash(str))
 }
 
 async function hash(str: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
   const hexarr = Array.prototype.map.call(new Uint8Array(buf), (x) => ('00' + x.toString(16)).slice(-2))
   return hexarr.join('').substring(48)
+}
+
+export async function getTableByDfId(dfid: string): Promise<RollTable | undefined> {
+  const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+  return pack?.get(await hashLookup(dfid))
 }
 
 async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: string }> {

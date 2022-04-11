@@ -48,7 +48,9 @@ export default {
   },
 
   data() {
-    const dfOracles = CONFIG.IRONSWORN.cleanDollars(cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles))
+    const dfOracles = CONFIG.IRONSWORN.cleanDollars(
+      cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles)
+    )
 
     return {
       dfOracles,
@@ -58,20 +60,21 @@ export default {
   },
 
   async created() {
-    // Get documents from pack
-    const tables = await this.getPack().getDocuments()
+    // Make sure all the oracles are loaded
+    await this.getPack().getDocuments()
 
     // Walk the DF oracles and decorate with Foundry IDs
-    const walk = (node) => {
-      const table = tables.find(x => x.data.flags.dfId === node.dfid)
+    const walk = async (node) => {
+      const table = await CONFIG.IRONSWORN.getTableByDfId(node.dfid)
+      console.log(node.dfid, table)
       if (table) {
         Vue.set(node, 'foundryTable', table)
         this.flatOracles.push(node)
       }
 
-      (node.Oracles ?? []).forEach(walk)
+      for (const child of node.Oracles ?? []) await walk(child)
     }
-    this.dfOracles.forEach(walk)
+    for (const node of this.dfOracles) await walk(node)
   },
 
   computed: {
@@ -79,7 +82,9 @@ export default {
       if (!this.searchQuery) return null
 
       const re = new RegExp(this.searchQuery, 'i')
-      return this.flatOracles.filter((x) => re.test(`${x.Category}/${x.foundryTable.name}`))
+      return this.flatOracles.filter((x) =>
+        re.test(`${x.Category}/${x.foundryTable.name}`)
+      )
     },
   },
 
