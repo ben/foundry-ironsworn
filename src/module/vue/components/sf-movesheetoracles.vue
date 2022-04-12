@@ -14,21 +14,13 @@
     </div>
 
     <div class="flexcol item-list">
-      <div v-if="searchResults">
-        <oracletree-node
-          v-for="oracle in searchResults"
-          :key="oracle.key"
-          :oracle="oracle"
-          :breadcrumbs="true"
-        />
-      </div>
-      <div v-else>
-        <oracletree-node
-          v-for="oracle in dfOracles"
-          :key="oracle.key"
-          :oracle="oracle"
-        />
-      </div>
+      <oracletree-node
+        v-for="oracle in dfOracles"
+        :key="oracle.key"
+        :oracle="oracle"
+        :searchQuery="searchQuery"
+        ref="oracles"
+      />
     </div>
   </div>
 </template>
