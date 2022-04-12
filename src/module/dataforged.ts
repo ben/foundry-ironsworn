@@ -41,10 +41,20 @@ export function cleanDollars(obj): any {
   return obj
 }
 
+const HASH_CACHE = {} as { [k: string]: string }
+export async function hashLookup(str: string): Promise<string> {
+  return (HASH_CACHE[str] ||= await hash(str))
+}
+
 async function hash(str: string): Promise<string> {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
   const hexarr = Array.prototype.map.call(new Uint8Array(buf), (x) => ('00' + x.toString(16)).slice(-2))
   return hexarr.join('').substring(48)
+}
+
+export async function getTableByDfId(dfid: string): Promise<RollTable | undefined> {
+  const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+  return pack?.get(await hashLookup(dfid))
 }
 
 async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: string }> {
@@ -216,12 +226,8 @@ export async function importFromDataforged() {
   const oraclesToCreate = [] as Record<string, unknown>[]
   // Oracles JSON is a tree we wish to iterate through depth first adding
   // parents prior to their children, and children in order
-  function processCategory(cat: IOracle | IOracleCategory) {
-    for (const oracle of cat.Oracles ?? []) {
-      for (const child of oracle.Oracles ?? []) {
-        processCategory(child)
-      }
-      if (!oracle.Table) continue
+  async function processOracle(oracle: IOracle) {
+    if (oracle.Table) {
       const description = marked.parseInline(renderLinksInStr(oracle.Description ?? '', idMap))
       const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
       oraclesToCreate.push({
@@ -237,22 +243,22 @@ export async function importFromDataforged() {
         replacement: true,
         displayRoll: true,
         /* folder: // would require using an additional module */
-        results: oracle.Table?.map(
-          (tableRow) =>
-            ({
-              range: [tableRow.Floor, tableRow.Ceiling],
-              text: tableRow.Result && renderLinksInStr(tableRow.Result, idMap),
-            } as Record<string, unknown>)
-        ),
+        results: oracle.Table?.map((tableRow) => ({
+          range: [tableRow.Floor, tableRow.Ceiling],
+          text: tableRow.Result && renderLinksInStr(tableRow.Result, idMap),
+        })).filter((x) => x.range[0] !== null),
       })
     }
-    for (const child of cat.Oracles ?? []) {
-      processCategory(child)
-    }
+
+    for (const child of oracle.Oracles ?? []) await processOracle(child)
+  }
+  async function processCategory(cat: IOracleCategory) {
+    for (const oracle of cat.Oracles ?? []) await processOracle(oracle)
+    for (const child of cat.Categories ?? []) await processCategory(child)
   }
 
   for (const category of Dataforged.oracles) {
-    processCategory(category)
+    await processCategory(category)
   }
   await RollTable.createDocuments(oraclesToCreate, { pack: 'foundry-ironsworn.starforgedoracles', keepId: true })
 }

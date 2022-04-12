@@ -14,21 +14,13 @@
     </div>
 
     <div class="flexcol item-list">
-      <div v-if="searchResults">
-        <oracletree-node
-          v-for="oracle in searchResults"
-          :key="oracle.key"
-          :oracle="oracle"
-          :breadcrumbs="true"
-        />
-      </div>
-      <div v-else>
-        <oracletree-node
-          v-for="oracle in dfOracles"
-          :key="oracle.key"
-          :oracle="oracle"
-        />
-      </div>
+      <oracletree-node
+        v-for="oracle in dfOracles"
+        :key="oracle.key"
+        :oracle="oracle"
+        :searchQuery="searchQuery"
+        ref="oracles"
+      />
     </div>
   </div>
 </template>
@@ -48,7 +40,9 @@ export default {
   },
 
   data() {
-    const dfOracles = CONFIG.IRONSWORN.cleanDollars(cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles))
+    const dfOracles = CONFIG.IRONSWORN.cleanDollars(
+      cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles)
+    )
 
     return {
       dfOracles,
@@ -58,20 +52,21 @@ export default {
   },
 
   async created() {
-    // Get documents from pack
-    const tables = await this.getPack().getDocuments()
+    // Make sure all the oracles are loaded
+    await this.getPack().getDocuments()
 
     // Walk the DF oracles and decorate with Foundry IDs
-    const walk = (node) => {
-      const table = tables.find(x => x.data.flags.dfId === node.dfid)
+    const walk = async (node) => {
+      const table = await CONFIG.IRONSWORN.getTableByDfId(node.dfid)
       if (table) {
         Vue.set(node, 'foundryTable', table)
         this.flatOracles.push(node)
       }
 
-      (node.Oracles ?? []).forEach(walk)
+      for (const child of node.Oracles ?? []) await walk(child)
+      for (const child of node.Categories ?? []) await walk(child)
     }
-    this.dfOracles.forEach(walk)
+    for (const node of this.dfOracles) await walk(node)
   },
 
   computed: {
@@ -79,7 +74,9 @@ export default {
       if (!this.searchQuery) return null
 
       const re = new RegExp(this.searchQuery, 'i')
-      return this.flatOracles.filter((x) => re.test(x.foundryTable.name))
+      return this.flatOracles.filter((x) =>
+        re.test(`${x.Category}/${x.foundryTable.name}`)
+      )
     },
   },
 

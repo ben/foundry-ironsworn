@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Oracle tree search and i18n ([#277](https://github.com/ben/foundry-ironsworn/pull/277))
+
 ## 1.10.36
 
 - Chat log when the "completed" flag changes ([#270](https://github.com/ben/foundry-ironsworn/pull/270))
