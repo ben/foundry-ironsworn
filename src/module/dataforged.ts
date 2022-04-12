@@ -227,7 +227,6 @@ export async function importFromDataforged() {
   // Oracles JSON is a tree we wish to iterate through depth first adding
   // parents prior to their children, and children in order
   async function processOracle(oracle: IOracle) {
-    console.log(oracle.$id)
     if (oracle.Table) {
       const description = marked.parseInline(renderLinksInStr(oracle.Description ?? '', idMap))
       const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling

@@ -58,7 +58,6 @@ export default {
     // Walk the DF oracles and decorate with Foundry IDs
     const walk = async (node) => {
       const table = await CONFIG.IRONSWORN.getTableByDfId(node.dfid)
-      console.log(node.dfid, table)
       if (table) {
         Vue.set(node, 'foundryTable', table)
         this.flatOracles.push(node)

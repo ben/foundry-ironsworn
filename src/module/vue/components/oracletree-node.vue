@@ -57,13 +57,12 @@ export default {
     name() {
       return (
         this.oracle.foundryTable?.name ??
-        this.$t(`IRONSWORN.${this.oracle.Display.Title}`)
+        this.$t(`IRONSWORN.SFOracleCategories.${this.oracle.Display.Title}`)
       )
     },
 
     matchesSearch() {
       const re = new RegExp(this.searchQuery, 'i')
-      console.log(this.name, re, re.test(this.name))
       return re.test(this.name)
     },
 
