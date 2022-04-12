@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.37
+
 - Oracle tree search and i18n ([#277](https://github.com/ben/foundry-ironsworn/pull/277))
 
 ## 1.10.36
