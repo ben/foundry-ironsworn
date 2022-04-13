@@ -164,7 +164,7 @@ async function doit() {
   const idMap = buildIdMap(df)
 
   const writePromises = [
-    writeLocal('assets', processAssets(idMap, df)),
+    // writeLocal('assets', processAssets(idMap, df)),
     writeLocal('encounters', processEncounters(idMap, df)),
     // writeLocal('moves', processMoves(idMap, df)),
     // writeLocal('oracles', processOracles(idMap, df)),
