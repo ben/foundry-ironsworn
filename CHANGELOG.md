@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.39
+
 - Fix SF move rolling ([#280](https://github.com/ben/foundry-ironsworn/pull/280))
 
 ## 1.10.38
