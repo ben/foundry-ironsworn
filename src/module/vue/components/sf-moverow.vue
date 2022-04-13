@@ -84,10 +84,8 @@ export default {
 
   methods: {
     async rollMove() {
-      CONFIG.IRONSWORN.SFRollMoveDialog.show(
-        this.$actor,
-        this.move.foundryItem,
-      )
+      const move = await CONFIG.IRONSWORN.getMoveByDfId(this.move.$id)
+      CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, move)
     },
 
     moveclick(item) {

@@ -3,6 +3,7 @@ import { IronswornActor } from './actor/actor'
 import { cloneDeep, get, isArray, isObject, max, set } from 'lodash'
 import { data as Dataforged, IMove, IOracle, IOracleCategory } from 'dataforged'
 import { marked } from 'marked'
+import { IronswornItem } from './item/item'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -55,6 +56,11 @@ async function hash(str: string): Promise<string> {
 export async function getTableByDfId(dfid: string): Promise<RollTable | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
   return pack?.get(await hashLookup(dfid))
+}
+
+export async function getMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
+  const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
+  return pack?.get(await hashLookup(dfid)) as any
 }
 
 async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: string }> {
