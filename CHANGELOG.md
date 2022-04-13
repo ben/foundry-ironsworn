@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the SF asset import ([#279](https://github.com/ben/foundry-ironsworn/pull/279))
+
 ## 1.10.37
 
 - Oracle tree search and i18n ([#277](https://github.com/ben/foundry-ironsworn/pull/277))

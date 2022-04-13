@@ -11,7 +11,7 @@
         v-model="item.data.description"
         @blur="setDescription"
       />
-      <span v-else>{{ item.data.description }}</span>
+      <span v-else v-html="$enrichHtml(item.data.description)"></span>
     </p>
 
     <!-- FIELDS -->
