@@ -91,7 +91,11 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   })
 }
 
-function renderLinks(idMap: { [key: string]: string }, move: IMove) {
+function renderMarkdown(md:string, idMap: { [key: string]: string }, markedFn = marked.parse) {
+  return markedFn(renderLinksInStr(md, idMap))
+}
+
+function renderLinksInMove(idMap: { [key: string]: string }, move: IMove) {
   const textProperties = ['Text', 'Trigger.Text', 'Outcomes.Strong Hit.Text', 'Outcomes.Strong Hit.With a Match.Text', 'Outcomes.Weak Hit.Text', 'Outcomes.Miss.Text', 'Outcomes.Miss.With a Match.Text']
   for (const prop of textProperties) {
     const text = get(move, prop)
@@ -124,7 +128,7 @@ export async function importFromDataforged() {
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   for (const category of Dataforged.moves) {
     for (const move of category.Moves) {
-      renderLinks(idMap, move)
+      renderLinksInMove(idMap, move)
       const cleanMove = cleanDollars(move)
       movesToCreate.push({
         _id: idMap[cleanMove['dfid']],
@@ -138,31 +142,35 @@ export async function importFromDataforged() {
   await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.starforgedmoves', keepId: true })
 
   // Assets
-  const assetsJson = await fetch('systems/foundry-ironsworn/assets/sf-assets.json').then((x) => x.json())
-  const assetsToCreate = assetsJson.map((asset) => ({
-    _id: idMap[asset['$id']],
-    type: 'asset',
-    name: `${asset['Asset Type']} / ${asset['Name']}`,
-    data: {
-      description: asset['Text'],
-      fields:
-        asset['Input']?.map((name) => ({
-          name,
-          value: '',
-        })) || [],
-      abilities: (asset['Abilities'] ?? []).map((ability) => ({
-        enabled: ability['Enabled'] || false,
-        description: ability['Text'],
-      })),
-      track: {
-        enabled: !!asset['Condition Meter'],
-        name: asset['Condition Meter']?.Name,
-        current: asset['Condition Meter']?.['Starting Value'],
-        max: asset['Condition Meter']?.Max,
-      },
-      exclusiveOptions: [], // TODO:
-    },
-  }))
+  const assetsToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const assetType of Dataforged.assets) {
+    for (const asset of assetType.Assets) {
+      assetsToCreate.push({
+        type: 'asset',
+        _id: idMap[asset.$id],
+        name: `${assetType.Name} / ${asset.Name}`,
+        data: {
+          description: renderMarkdown(assetType.Description, idMap),
+          fields:
+            asset.Inputs?.map((input) => ({
+              name: input.Name,
+              value: '',
+            })) || [],
+          abilities: (asset.Abilities ?? []).map((ability) => ({
+            enabled: ability.Enabled || false,
+            description: renderMarkdown(ability.Text, idMap),
+          })),
+          track: {
+            enabled: !!asset['Condition Meter'],
+            name: asset['Condition Meter']?.Name,
+            current: asset['Condition Meter']?.['Starting Value'],
+            max: asset['Condition Meter']?.Max,
+          },
+          exclusiveOptions: [], // TODO:
+        },
+      })
+    }
+  }
   await Item.createDocuments(assetsToCreate, { pack: 'foundry-ironsworn.starforgedassets', keepId: true })
 
   // Encounters
