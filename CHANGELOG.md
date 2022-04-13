@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix SF move rolling ([#280](https://github.com/ben/foundry-ironsworn/pull/280))
+
 ## 1.10.38
 
 - Fix the SF asset import ([#279](https://github.com/ben/foundry-ironsworn/pull/279))
