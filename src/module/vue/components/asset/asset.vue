@@ -13,14 +13,14 @@
           <strong>{{ field.name }}:</strong> {{ field.value }}
         </p>
 
-        <with-rolllisteners
+        <!-- <with-rolllisteners
           element="p"
           :actor="actingActor"
           v-if="asset.data.description"
           @moveclick="moveclick"
         >
           <div v-html="$enrichHtml(asset.data.description)"></div>
-        </with-rolllisteners>
+        </with-rolllisteners> -->
 
         <ul>
           <with-rolllisteners
