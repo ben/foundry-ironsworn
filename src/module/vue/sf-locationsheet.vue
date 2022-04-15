@@ -250,45 +250,45 @@ export default {
             [
               {
                 title: 'Atmosphere',
-                dfId: `Oracles / Planets / ${kc} / Atmosphere`,
+                dfId: `Oracles/Planets/${kc}/Atmosphere`,
                 fl: true,
               },
               {
                 title: 'From Space',
                 qty: '1-2',
-                dfId: `Oracles / Planets / ${kc} / Observed From Space`,
+                dfId: `Oracles/Planets/${kc}/Observed_From_Space`,
                 fl: true,
               },
             ],
             [
               {
                 title: 'Settlements',
-                dfId: `Oracles / Planets / ${kc} / Settlements / ${rc}`,
+                dfId: `Oracles/Planets/${kc}/Settlements/${rc}`,
                 fl: true,
               },
-              { title: 'Life', dfId: `Oracles / Planets / ${kc} / Life` },
+              { title: 'Life', dfId: `Oracles/Planets/${kc}/Life` },
               {
                 title: 'Planetside Feature',
                 qty: '1-2',
-                dfId: `Oracles / Planets / ${kc} / Feature`,
+                dfId: `Oracles/Planets/${kc}/Feature`,
               },
             ],
             [
               {
                 title: 'Peril (life)',
-                dfId: `Oracles / Planets / Peril / Lifebearing`,
+                dfId: `Oracles/Planets/Peril/Lifebearing`,
               },
               {
                 title: 'Peril (no life)',
-                dfId: `Oracles / Planets / Peril / Lifeless`,
+                dfId: `Oracles/Planets/Peril/Lifeless`,
               },
               {
                 title: 'Opportunity (life)',
-                dfId: `Oracles / Planets / Opportunity / Lifebearing`,
+                dfId: `Oracles/Planets/Opportunity/Lifebearing`,
               },
               {
                 title: 'Opportunity (no life)',
-                dfId: `Oracles / Planets / Opportunity / Lifeless`,
+                dfId: `Oracles/Planets/Opportunity/Lifeless`,
               },
             ],
           ]
@@ -298,12 +298,12 @@ export default {
             [
               {
                 title: 'Population',
-                dfId: `Oracles / Settlements / Population / ${rc}`,
+                dfId: `Oracles/Settlements/Population/${rc}`,
                 fl: true,
               },
               {
                 title: 'First Look',
-                dfId: 'Oracles / Settlements / First Look',
+                dfId: 'Oracles/Settlements/First_Look',
                 qty: '1-2',
                 fl: true,
               },
@@ -311,13 +311,13 @@ export default {
             [
               {
                 title: 'Initial Contact',
-                dfId: 'Oracles / Settlements / Initial Contact',
+                dfId: 'Oracles/Settlements/Initial_Contact',
               },
-              { title: 'Authority', dfId: 'Oracles / Settlements / Authority' },
+              { title: 'Authority', dfId: 'Oracles/Settlements/Authority' },
             ],
             [
-              { title: 'Projects', dfId: 'Oracles / Settlements / Projects' },
-              { title: 'Trouble', dfId: 'Oracles / Settlements / Trouble' },
+              { title: 'Projects', dfId: 'Oracles/Settlements/Projects' },
+              { title: 'Trouble', dfId: 'Oracles/Settlements/Trouble' },
             ],
           ]
 
@@ -329,24 +329,24 @@ export default {
             [
               {
                 title: 'Type',
-                dfId: `Oracles / Derelicts / Type / ${kc}`,
+                dfId: `Oracles/Derelicts/Type/${kc}`,
                 fl: true,
               },
               {
                 title: 'Condition',
-                dfId: `Oracles / Derelicts / Condition`,
+                dfId: `Oracles/Derelicts/Condition`,
                 fl: true,
               },
             ],
             [
               {
                 title: 'Outer first look',
-                dfId: `Oracles / Derelicts / Outer First Look`,
+                dfId: `Oracles/Derelicts/Outer_First_Look`,
                 fl: true,
               },
               {
                 title: 'Inner first look',
-                dfId: `Oracles / Derelicts / Inner First Look`,
+                dfId: `Oracles/Derelicts/Inner_First_Look`,
               },
             ],
           ]
@@ -356,66 +356,66 @@ export default {
             [
               {
                 title: 'Scale',
-                dfId: `Oracles / Vaults / Scale`,
+                dfId: `Oracles/Vaults/Scale`,
                 fl: true,
               },
               {
                 title: 'Form',
-                dfId: `Oracles / Vaults / Form`,
+                dfId: `Oracles/Vaults/Form`,
                 fl: true,
               },
               {
                 title: 'Shape',
-                dfId: `Oracles / Vaults / Shape`,
+                dfId: `Oracles/Vaults/Shape`,
                 fl: true,
               },
             ],
             [
               {
                 title: 'Material',
-                dfId: `Oracles / Vaults / Material`,
+                dfId: `Oracles/Vaults/Material`,
                 fl: true,
               },
               {
                 title: 'Outer First Look',
-                dfId: `Oracles / Vaults / Outer First Look`,
+                dfId: `Oracles/Vaults/Outer_First_Look`,
                 fl: true,
               },
             ],
             [
               {
                 title: 'Interior First Look',
-                dfId: `Oracles / Vaults / Interior / First Look`,
+                dfId: `Oracles/Vaults/Interior/First_Look`,
               },
               {
                 title: 'Interior Feature',
-                dfId: `Oracles / Vaults / Interior / Feature`,
+                dfId: `Oracles/Vaults/Interior/Feature`,
               },
               {
                 title: 'Interior Peril',
-                dfId: `Oracles / Vaults / Interior / Peril`,
+                dfId: `Oracles/Vaults/Interior/Peril`,
               },
               {
                 title: 'Interior Opportunity',
-                dfId: `Oracles / Vaults / Interior / Opportunity`,
+                dfId: `Oracles/Vaults/Interior/Opportunity`,
               },
             ],
             [
               {
                 title: 'Sanctum Purpose',
-                dfId: `Oracles / Vaults / Sanctum / Purpose`,
+                dfId: `Oracles/Vaults/Sanctum/Purpose`,
               },
               {
                 title: 'Sanctum Feature',
-                dfId: `Oracles / Vaults / Sanctum / Feature`,
+                dfId: `Oracles/Vaults/Sanctum/Feature`,
               },
               {
                 title: 'Sanctum Peril',
-                dfId: `Oracles / Vaults / Sanctum / Peril`,
+                dfId: `Oracles/Vaults/Sanctum/Peril`,
               },
               {
                 title: 'Sanctum Opportunity',
-                dfId: `Oracles / Vaults / Sanctum / Opportunity`,
+                dfId: `Oracles/Vaults/Sanctum/Opportunity`,
               },
             ],
           ]
@@ -443,14 +443,22 @@ export default {
     async saveSubtype(subtype) {
       const img = randomImage(subtype, this.actor.data.klass)
       await this.$actor.update({ data: { subtype } })
-      await this.updateAllTokens({ img, scale: 2 })
+
+      const scale = {
+        planet: 1,
+        settlement: 2,
+        star: 1,
+        derelict: 2,
+        vault: 2,
+      }[subtype]
+      await this.updateAllTokens({ img, scale })
     },
     async saveKlass(klass) {
       const { subtype } = this.actor.data
       const img = randomImage(subtype, klass)
 
       await this.$actor.update({ img, data: { klass } })
-      await this.updateAllTokens({ img, scale: 2 })
+      await this.updateAllTokens({ img })
     },
 
     async randomizeName() {
@@ -460,12 +468,12 @@ export default {
         // no oracle for this
         const kc = capitalize(klass)
         const json = await CONFIG.IRONSWORN.sfOracleJsonByDataforgedId(
-          `Oracles / Planets / ${kc}`
+          `Oracles/Planets/${kc}`
         )
         name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
       } else if (subtype === 'settlement') {
         const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
-          'Oracles / Settlements / Name'
+          'Oracles/Settlements/Name'
         )
         const result = await table?.draw()
         name = result?.results[0]?.data.text
@@ -480,15 +488,15 @@ export default {
     async randomizeKlass() {
       let tableKey
       if (this.actor.data.subtype === 'planet') {
-        tableKey = 'Oracles / Planets / Class'
+        tableKey = 'Oracles/Planets/Class'
       } else if (this.actor.data.subtype === 'settlement') {
-        tableKey = 'Oracles / Settlements / Location'
+        tableKey = 'Oracles/Settlements/Location'
       } else if (this.actor.data.subtype === 'star') {
-        tableKey = 'Oracles / Space / Stellar Object'
+        tableKey = 'Oracles/Space/Stellar Object'
       } else if (this.actor.data.subtype === 'derelict') {
-        tableKey = 'Oracles / Derelicts / Location'
+        tableKey = 'Oracles/Derelicts/Location'
       } else if (this.actor.data.subtype === 'vault') {
-        tableKey = 'Oracles / Vaults / Location'
+        tableKey = 'Oracles/Vaults/Location'
       }
 
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(tableKey)

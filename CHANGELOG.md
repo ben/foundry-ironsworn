@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix location token and oracle bugs ([#284](https://github.com/ben/foundry-ironsworn/pull/284))
+
 ## 1.10.39
 
 - Fix SF move rolling ([#280](https://github.com/ben/foundry-ironsworn/pull/280))
