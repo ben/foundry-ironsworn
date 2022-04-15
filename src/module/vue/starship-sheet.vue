@@ -42,10 +42,10 @@
 
     <section class="flexrow nogrow">
       <div style="text-align: center">
-        <condition-checkbox class="nogrow" :actor="actor" name="battered" />
+        <condition-checkbox class="nogrow" :actor="actor" name="battered" :global="true" />
       </div>
       <div style="text-align: center">
-        <condition-checkbox class="nogrow" :actor="actor" name="cursed" />
+        <condition-checkbox class="nogrow" :actor="actor" name="cursed" :global="true" />
       </div>
     </section>
   </div>
