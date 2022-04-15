@@ -1,7 +1,7 @@
 import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
 import { capitalize, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
-import { CharacterDataProperties, SharedDataProperties, SiteDataProperties } from '../actor/actortypes'
+import { CharacterDataProperties, SharedDataProperties, SiteDataProperties, StarshipDataProperties } from '../actor/actortypes'
 import { RANKS } from '../constants'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
@@ -143,6 +143,25 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
         stat: i18nStat,
         val: newValue,
       })
+    }
+
+    return undefined
+  },
+
+  starship: (actor: IronswornActor, data) => {
+    const starshipData = actor.data as StarshipDataProperties
+    const debilities = [ 'cursed', 'battered' ]
+    for (const debility of debilities) {
+      const newValue = get(data.data?.debility, debility)
+      if (newValue !== undefined) {
+        const oldValue = starshipData.data.debility[debility]
+        if (oldValue === newValue) continue
+        const i18nDebility = game.i18n.localize(`IRONSWORN.${capitalize(debility)}`)
+        const params = { condition: i18nDebility }
+        // TODO: use "impact" if this is an SF character
+        if (newValue) return game.i18n.format('IRONSWORN.ChangeLog.SetCondition', params)
+        return game.i18n.format('IRONSWORN.ChangeLog.ClearedCondition', params)
+      }
     }
 
     return undefined
