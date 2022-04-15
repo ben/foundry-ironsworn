@@ -80,4 +80,12 @@ export class IronswornSettings {
       await actor.update({ data: { supply: value } }, { suppressLog: true } as any)
     }
   }
+
+  static async maybeSetGlobalCondition(name: string, value: boolean) {
+    const actorsToUpdate = game.actors?.contents.filter((x) => ['character', 'starship'].includes(x.data.type)) || []
+    console.log(actorsToUpdate)
+    for (const actor of actorsToUpdate) {
+      await actor.update({ data: { debility: { [name]: value } } }, { suppressLog: true } as any)
+    }
+  }
 }

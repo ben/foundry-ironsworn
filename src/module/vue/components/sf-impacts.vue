@@ -23,8 +23,8 @@
     </div>
     <div class="flexcol">
       <h5>{{ $t('IRONSWORN.Vehicle') }}</h5>
-      <condition-checkbox class="nogrow" :actor="actor" name="battered" />
-      <condition-checkbox class="nogrow" :actor="actor" name="cursed" />
+      <condition-checkbox class="nogrow" :actor="actor" name="battered" :global="true" />
+      <condition-checkbox class="nogrow" :actor="actor" name="cursed" :global="true" />
     </div>
   </div>
 </template>
