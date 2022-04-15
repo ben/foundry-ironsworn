@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix location token and oracle bugs ([#284](https://github.com/ben/foundry-ironsworn/pull/284))
+- Hide asset descriptions from inline view ([#285](https://github.com/ben/foundry-ironsworn/pull/285))
 
 ## 1.10.39
 
