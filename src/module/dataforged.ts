@@ -53,12 +53,12 @@ async function hash(str: string): Promise<string> {
   return hexarr.join('').substring(48)
 }
 
-export async function getTableByDfId(dfid: string): Promise<RollTable | undefined> {
+export async function getFoundryTableByDfId(dfid: string): Promise<RollTable | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
   return pack?.get(await hashLookup(dfid))
 }
 
-export async function getMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
+export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
   return pack?.get(await hashLookup(dfid)) as any
 }
