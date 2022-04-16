@@ -1,10 +1,10 @@
 import { compact } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
-import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
+import { getDFMoveByDfId } from '../dataforged'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
-import { capitalize } from '../helpers/util'
+import { capitalize, sfOracleByDataforgedId } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
 import { MoveContentCallbacks } from './movecontentcallbacks'
@@ -190,6 +190,13 @@ function calculateMomentumProps(roll: Roll, actor?: IronswornActor): MomentumPro
   }
 }
 
+export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
+  const { dfid } = (move.data as SFMoveDataProperties).data
+  const dfMove = await getDFMoveByDfId(dfid)
+  const dfIds = dfMove?.Oracles || []
+  return compact(await Promise.all(dfIds.map(sfOracleByDataforgedId)))
+}
+
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: true })
   const { action, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
@@ -253,6 +260,7 @@ export async function createStarforgedMoveRollChat(params: SFRollMessageParams) 
     hitType: calculateHitTypeText(hitType, match),
     title: calculateSFCardTitle(params),
     resultText: calculateSFMoveResultText(hitType, match, params.move),
+    nextOracles: await sfNextOracles(params.move),
     ...momentumProps,
     ...params,
   }

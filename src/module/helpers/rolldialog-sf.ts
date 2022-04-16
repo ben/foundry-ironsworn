@@ -1,6 +1,6 @@
 import { maxBy, minBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
-import { createStarforgedMoveRollChat } from '../chat/chatrollhelpers'
+import { createStarforgedMoveRollChat, sfNextOracles } from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
 import { SFMoveDataProperties } from '../item/itemtypes'
 import { IronswornSettings } from './settings'
@@ -112,7 +112,11 @@ async function rollAndCreateChatMessage(opts: { actor: IronswornActor; move: Iro
 }
 
 async function createDataforgedMoveChat(move: IronswornItem) {
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/sf-move.hbs', { move })
+  const params = {
+    move,
+    nextOracles: await sfNextOracles(move),
+  }
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/sf-move.hbs', params)
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,

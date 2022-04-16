@@ -63,6 +63,15 @@ export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem 
   return pack?.get(await hashLookup(dfid)) as any
 }
 
+export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> {
+  for (const category of Dataforged.moves) {
+    for (const move of category.Moves) {
+      if (move.$id === dfid) return move
+    }
+  }
+  return undefined
+}
+
 async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: string }> {
   const ret = {}
 
@@ -97,7 +106,7 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   })
 }
 
-function renderMarkdown(md:string, idMap: { [key: string]: string }, markedFn = marked.parse) {
+function renderMarkdown(md: string, idMap: { [key: string]: string }, markedFn = marked.parse) {
   return markedFn(renderLinksInStr(md, idMap))
 }
 
