@@ -4,7 +4,7 @@ import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
 import { RANKS, RANK_INCREMENTS } from './module/constants'
-import { cleanDollars, getTableByDfId, getMoveByDfId, importFromDataforged } from './module/dataforged'
+import { cleanDollars, getFoundryTableByDfId, getFoundryMoveByDfId, importFromDataforged } from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { defaultActor } from './module/helpers/actors'
 import { moveDataByName } from './module/helpers/data'
@@ -47,8 +47,8 @@ export interface IronswornConfig {
   sfOracleJsonByDataforgedId: typeof sfOracleJsonByDataforgedId
 
   Dataforged: typeof Dataforged
-  getTableByDfId: typeof getTableByDfId
-  getMoveByDfId: typeof getMoveByDfId
+  getTableByDfId: typeof getFoundryTableByDfId
+  getMoveByDfId: typeof getFoundryMoveByDfId
   cleanDollars: typeof cleanDollars
 
   _: typeof lodash
@@ -81,8 +81,8 @@ export const IRONSWORN: IronswornConfig = {
   sfOracleJsonByDataforgedId,
 
   Dataforged,
-  getTableByDfId,
-  getMoveByDfId,
+  getTableByDfId: getFoundryTableByDfId,
+  getMoveByDfId: getFoundryMoveByDfId,
   cleanDollars,
 
   _: lodash,

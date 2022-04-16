@@ -11,4 +11,14 @@
     </div>
   </div>
 
+  {{#if nextOracles}}
+  <hr>
+  {{#each nextOracles}}
+  <button class="starforged__oracle__roll" data-tableid="{{id}}">
+    <i class="fas fa-dice-d6"></i>
+    {{name}}
+  </button>
+  {{/each}}
+  {{/if}}
+
 </div>

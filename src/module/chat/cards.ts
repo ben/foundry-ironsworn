@@ -34,6 +34,7 @@ export class IronswornChatCard {
     html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
     html.find('.ironsworn__sojourn__extra__roll').on('click', (ev) => this._sojournExtra.call(this, ev))
     html.find('.ironsworn__paytheprice__roll').on('click', (ev) => this._payThePriceExtra.call(this, ev))
+    html.find('.starforged__oracle__roll').on('click', (ev) => this._sfOracleRoll.call(this, ev))
   }
 
   async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -76,11 +77,11 @@ export class IronswornChatCard {
       result = theMove && theMove[capitalize(hittype.toLowerCase())]
       bonusContent = MoveContentCallbacks[move]?.call(this, { hitType: hittype as HIT_TYPE, stat })
     } else {
-      // I wish this were easier
-      const i18nKey =
-        hittype === HIT_TYPE.STRONG ? 'StrongHit' :
-        hittype === HIT_TYPE.WEAK ? 'WeakHit' :
-        'Miss'
+      const i18nKey = {
+        [HIT_TYPE.STRONG]: 'StrongHit',
+        [HIT_TYPE.WEAK]: 'WeakHit',
+        [HIT_TYPE.MISS]: 'Miss',
+      }[hittype]
       result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
     }
 
@@ -189,6 +190,14 @@ export class IronswornChatCard {
         </h4>
       `
     )
+  }
+
+  async _sfOracleRoll(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+    const { tableid } = ev.target.dataset
+    const table = await pack?.getDocument(tableid) as any | undefined
+    table?.draw()
   }
 
   async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {

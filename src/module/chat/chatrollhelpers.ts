@@ -1,8 +1,10 @@
+import { compact } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
+import { getDFMoveByDfId } from '../dataforged'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
-import { capitalize } from '../helpers/util'
+import { capitalize, sfOracleByDataforgedId } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
 import { MoveContentCallbacks } from './movecontentcallbacks'
@@ -23,6 +25,7 @@ interface SFRollMessageParams {
   move: IronswornItem
   mode: string
   stats: string[]
+  usedStat: string
   bonus: number
 }
 
@@ -127,7 +130,7 @@ function calculateCardTitle(params: RollMessageParams) {
 }
 
 function calculateSFCardTitle(params: SFRollMessageParams) {
-  return `${params.move.name} (${game.i18n.localize('IRONSWORN.' + capitalize(params.stats[0]))})`
+  return `${params.move.name} (${game.i18n.localize('IRONSWORN.' + capitalize(params.usedStat))})`
 }
 
 function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): string | undefined {
@@ -185,6 +188,13 @@ function calculateMomentumProps(roll: Roll, actor?: IronswornActor): MomentumPro
     default:
       return {}
   }
+}
+
+export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
+  const { dfid } = (move.data as SFMoveDataProperties).data
+  const dfMove = await getDFMoveByDfId(dfid)
+  const dfIds = dfMove?.Oracles || []
+  return compact(await Promise.all(dfIds.map(sfOracleByDataforgedId)))
 }
 
 export async function createIronswornChatRoll(params: RollMessageParams) {
@@ -250,6 +260,7 @@ export async function createStarforgedMoveRollChat(params: SFRollMessageParams) 
     hitType: calculateHitTypeText(hitType, match),
     title: calculateSFCardTitle(params),
     resultText: calculateSFMoveResultText(hitType, match, params.move),
+    nextOracles: await sfNextOracles(params.move),
     ...momentumProps,
     ...params,
   }

@@ -53,14 +53,23 @@ async function hash(str: string): Promise<string> {
   return hexarr.join('').substring(48)
 }
 
-export async function getTableByDfId(dfid: string): Promise<RollTable | undefined> {
+export async function getFoundryTableByDfId(dfid: string): Promise<RollTable | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
   return pack?.get(await hashLookup(dfid))
 }
 
-export async function getMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
+export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
   return pack?.get(await hashLookup(dfid)) as any
+}
+
+export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> {
+  for (const category of Dataforged.moves) {
+    for (const move of category.Moves) {
+      if (move.$id === dfid) return move
+    }
+  }
+  return undefined
 }
 
 async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: string }> {
@@ -97,7 +106,7 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   })
 }
 
-function renderMarkdown(md:string, idMap: { [key: string]: string }, markedFn = marked.parse) {
+function renderMarkdown(md: string, idMap: { [key: string]: string }, markedFn = marked.parse) {
   return markedFn(renderLinksInStr(md, idMap))
 }
 
