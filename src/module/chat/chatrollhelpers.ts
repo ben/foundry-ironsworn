@@ -1,5 +1,7 @@
+import { compact } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
+import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
@@ -23,6 +25,7 @@ interface SFRollMessageParams {
   move: IronswornItem
   mode: string
   stats: string[]
+  usedStat: string
   bonus: number
 }
 
@@ -127,7 +130,7 @@ function calculateCardTitle(params: RollMessageParams) {
 }
 
 function calculateSFCardTitle(params: SFRollMessageParams) {
-  return `${params.move.name} (${game.i18n.localize('IRONSWORN.' + capitalize(params.stats[0]))})`
+  return `${params.move.name} (${game.i18n.localize('IRONSWORN.' + capitalize(params.usedStat))})`
 }
 
 function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): string | undefined {

@@ -1,3 +1,4 @@
+import { maxBy, minBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { createStarforgedMoveRollChat } from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
@@ -76,14 +77,23 @@ function callback(opts: { actor: IronswornActor; move: IronswornItem; mode: stri
 
 async function rollAndCreateChatMessage(opts: { actor: IronswornActor; move: IronswornItem; mode: string; stats: string[]; bonus: number }) {
   const { actor, move, mode, stats, bonus } = opts
-  if (mode !== 'Stat') {
+  let usedStat = stats[0].toLowerCase()
+
+  if (mode === 'Best of' || mode === 'Worst of') {
+    const statMap = {}
+    for (const x of stats) {
+      statMap[x.toLowerCase()] = actor.data.data[x.toLowerCase()]
+    }
+    const fn = (mode === 'Best of') ? maxBy : minBy
+    usedStat = fn(Object.keys(statMap), x => statMap[x]) ?? stats[0]
+  }
+  else if (mode !== 'Stat') {
     console.log({ actor, move, mode, stats, bonus })
     return // TODO: implement best/worst/all of
   }
 
   let actionExpr = 'd6'
-  const stat = stats[0]
-  if (stat) actionExpr += ` + @${stat.toLowerCase()}`
+  if (usedStat) actionExpr += ` + @${usedStat}`
   if (bonus) actionExpr += ` + ${bonus}`
   const data = {
     ...actor?.getRollData(),
@@ -96,6 +106,7 @@ async function rollAndCreateChatMessage(opts: { actor: IronswornActor; move: Iro
     move,
     mode,
     stats,
+    usedStat,
     bonus,
   })
 }
