@@ -196,7 +196,7 @@ export class IronswornChatCard {
     ev.preventDefault()
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     const { tableid } = ev.target.dataset
-    const table = pack?.get(tableid) as any | undefined
+    const table = await pack?.getDocument(tableid) as any | undefined
     table?.draw()
   }
 
