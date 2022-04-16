@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Provide oracle-rolling buttons on move chat cards ([#287](https://github.com/ben/foundry-ironsworn/pull/287))
+
 ## 1.10.40
 
 - Fix location token and oracle bugs ([#284](https://github.com/ben/foundry-ironsworn/pull/284))
