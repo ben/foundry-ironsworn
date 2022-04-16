@@ -33,9 +33,20 @@ themeClass: "theme-ironsworn"
     <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitTypeI18n}}}</p>
     <button class="burn-momentum-sf" data-actor="{{actor.id}}" data-move="{{move.id}}" data-mode="{{mode}}"
       data-stats="{{stats}}" data-hittype="{{momentumHitType}}">
+      <i class="fas fa-fire"></i>
       {{localize 'IRONSWORN.Burn'}}
     </button>
   </div>
+  {{/if}}
+
+  {{#if nextOracles}}
+  <hr>
+  {{#each nextOracles}}
+  <button class="sf-oracle" data-tableId="{{id}}">
+    <i class="fas fa-dice-d6"></i>
+    {{name}}
+  </button>
+  {{/each}}
   {{/if}}
 
 </div>
