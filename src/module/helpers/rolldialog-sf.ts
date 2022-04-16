@@ -77,19 +77,19 @@ function callback(opts: { actor: IronswornActor; move: IronswornItem; mode: stri
 
 async function rollAndCreateChatMessage(opts: { actor: IronswornActor; move: IronswornItem; mode: string; stats: string[]; bonus: number }) {
   const { actor, move, mode, stats, bonus } = opts
-  let usedStat = stats[0].toLowerCase()
 
+  const normalizedStats = stats.map((x) => x.toLowerCase())
+  let usedStat = normalizedStats[0]
   if (mode === 'Best of' || mode === 'Worst of') {
     const statMap = {}
-    for (const x of stats) {
-      statMap[x.toLowerCase()] = actor.data.data[x.toLowerCase()]
+    for (const x of normalizedStats) {
+      statMap[x] = actor.data.data[x]
     }
-    const fn = (mode === 'Best of') ? maxBy : minBy
-    usedStat = fn(Object.keys(statMap), x => statMap[x]) ?? stats[0]
-  }
-  else if (mode !== 'Stat') {
+    const fn = mode === 'Best of' ? maxBy : minBy
+    usedStat = fn(Object.keys(statMap), (x) => statMap[x]) ?? stats[0]
+  } else if (mode !== 'Stat') {
     console.log({ actor, move, mode, stats, bonus })
-    return // TODO: implement best/worst/all of
+    return // TODO: all of
   }
 
   let actionExpr = 'd6'
@@ -105,7 +105,7 @@ async function rollAndCreateChatMessage(opts: { actor: IronswornActor; move: Iro
     actor,
     move,
     mode,
-    stats,
+    stats: normalizedStats,
     usedStat,
     bonus,
   })
