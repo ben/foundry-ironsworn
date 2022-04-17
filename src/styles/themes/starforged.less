@@ -36,6 +36,9 @@ input.highlight:focus {
 
 .theme-starforged {
   color: @text-medium-color;
+  select {
+    color: @text-medium-color;
+  }
 
   h2,
   h3 {
@@ -92,9 +95,17 @@ input.highlight:focus {
   }
 
   .clickable {
+    &.svg {
+      fill: @dark-color;
+    }
+
     &.disabled {
       background: @dark-color;
       color: @medium-color;
+
+      &.svg {
+        fill: @dark-color;
+      }
     }
 
     &:not(.disabled) {
@@ -107,7 +118,7 @@ input.highlight:focus {
           color: @text-light-color;
         }
         &.svg {
-          fill: @light-color;
+          fill: @medium-color;
         }
       }
 
@@ -118,7 +129,7 @@ input.highlight:focus {
           background-color: @medium-color;
         }
         &.svg {
-          fill: @dark-color;
+          fill: @text-light-color;
         }
       }
     }
