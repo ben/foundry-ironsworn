@@ -2,7 +2,7 @@
   <div :class="{ highlighted: move.highlighted }">
     <h4 style="margin: 0" class="flexrow" :title="tooltip">
       <span class="clickable text" @click="rollMove">
-        <i class="fa fa-dice-d6 nogrow" />
+        <die-icon class="clickable block" />
         {{ move.foundryItem.name }}
       </span>
       <icon-button icon="eye" @click="expanded = !expanded" />

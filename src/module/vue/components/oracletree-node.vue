@@ -4,11 +4,9 @@
     <!-- Leaf node -->
     <div v-if="oracle.foundryTable">
       <h4 class="clickable text flexrow">
-        <i
-          class="fa fa-dice-d6 nogrow"
-          style="flex-basis: 20px"
+      <die-icon v-if="oracle.foundryTable" style="margin-bottom: -4px"
           @click="rollOracle"
-        />
+      />
         <span @click="rollOracle">{{ name }}</span>
         <icon-button
           v-if="oracle.foundryTable"
