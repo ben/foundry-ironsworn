@@ -1,5 +1,6 @@
 import { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import { IronswornActor } from '../actor/actor'
+import { getFoundryTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
 
 interface CreateActorDialogOptions extends FormApplication.Options {
@@ -118,12 +119,9 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     if (!pack) return undefined
 
-    const firstOid = pack?.index.find((x: any) => x.name === 'Characters / Name / Given Name') as any
-    const lastOid = pack?.index.find((x: any) => x.name === 'Characters / Name / Family Name') as any
-    if (!firstOid || !lastOid) return undefined
-
-    const firstTable = await pack.getDocument(firstOid._id) as any // really a RollTable
-    const lastTable = await pack.getDocument(lastOid._id) as any // really a RollTable
+    const firstTable = await getFoundryTableByDfId('Oracles/Characters/Name/Given_Name') as any
+    const lastTable = await getFoundryTableByDfId('Oracles/Characters/Name/Family_Name') as any
+    console.log(firstTable, lastTable)
     if (!firstTable || !lastTable) return undefined
 
     const first = await firstTable.draw({ displayChat: false })
