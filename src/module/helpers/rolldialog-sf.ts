@@ -21,7 +21,8 @@ export class SFRollMoveDialog extends Dialog {
 
     // Bail out if there's nothing to choose
     const data = move.data as SFMoveDataProperties
-    if (!data.data.Trigger.Options?.length) {
+    const options = (data.data.Trigger.Options ?? []).filter((x) => x['Roll type'] === 'Action roll')
+    if (!options.length) {
       return createDataforgedMoveChat(move)
     }
 
@@ -40,7 +41,6 @@ export class SFRollMoveDialog extends Dialog {
       }
     }
 
-    const options = data.data.Trigger.Options ?? []
     for (let i = 0; i < options.length; i++) {
       const option = options[i]
       const regularRolls = option['Action roll'] ?? option['Progress roll']

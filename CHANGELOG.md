@@ -3,6 +3,7 @@
 ## In progress
 
 - Reload the browser when SF beta flag is changed
+- Don't send progress rolls to a useless dialog flow
 
 ## 1.10.41
 
