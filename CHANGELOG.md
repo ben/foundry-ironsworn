@@ -4,6 +4,7 @@
 
 - Provide oracle-rolling buttons on move chat cards ([#287](https://github.com/ben/foundry-ironsworn/pull/287))
 - Implement "best of" and "worst of" move rolling (also [#287](https://github.com/ben/foundry-ironsworn/pull/287))
+- Display neighboring results when rolling oracles ([#288](https://github.com/ben/foundry-ironsworn/pull/288))
 
 ## 1.10.40
 
