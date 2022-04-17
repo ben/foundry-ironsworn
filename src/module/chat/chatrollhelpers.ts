@@ -1,4 +1,4 @@
-import { compact } from 'lodash'
+import { compact, sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
 import { getDFMoveByDfId } from '../dataforged'
@@ -310,8 +310,57 @@ export async function createIronswornDenizenChat(params: DenizenChatInput) {
   } as any)
 }
 
-// Crack open that message type
-// declare global {
-//   interface ChatMessage {
-//   }
-// }
+export async function rollAndDisplayOracleResult(table?: RollTable): Promise<string | undefined> {
+  console.log(table)
+  if (!table) {
+    return undefined
+  }
+
+  // Do the random roll
+  const tableDraw = await (table as any).draw({ displayChat: false })
+
+  // Parse the table rows
+  const tableRows = sortBy(
+    table.data.results.contents.map((x) => ({
+      low: x.data.range[0],
+      high: x.data.range[1],
+      text: x.data.text,
+      selected: false,
+    })),
+    'low'
+  )
+
+  // Grab the relevant rows
+  const roll = tableDraw.roll as Roll
+  const resultRow = tableRows.find((x) => x.low <= roll.result && roll.result <= x.high)
+  const resultIdx = tableRows.indexOf(resultRow)
+  const displayRows = compact([
+    tableRows[resultIdx - 1],
+    { ...resultRow, selected: true },
+    tableRows[resultIdx + 1]
+  ])
+
+  // Render the chat message content
+  const renderData = {
+    themeClass: `theme-${IronswornSettings.theme}`,
+    table,
+    roll,
+    displayRows,
+    result: tableDraw.results[0],
+  }
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/oracle-roll.hbs', renderData)
+
+  // Send out the chat card
+  const messageData = {
+    user: game.user,
+    speaker: ChatMessage.getSpeaker(),
+    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+    roll: tableDraw.roll,
+    sound: tableDraw.roll ? CONFIG.sounds.dice : null,
+    content,
+  } as any
+  await ChatMessage.create(messageData)
+
+  // Return the raw text
+  return resultRow.text
+}

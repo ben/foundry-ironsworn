@@ -55,7 +55,7 @@ async function hash(str: string): Promise<string> {
 
 export async function getFoundryTableByDfId(dfid: string): Promise<RollTable | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-  return pack?.get(await hashLookup(dfid))
+  return (await pack?.getDocument(await hashLookup(dfid))) || undefined
 }
 
 export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {

@@ -1,7 +1,7 @@
 import { capitalize } from 'lodash'
 import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
-import { HIT_TYPE } from './chatrollhelpers'
+import { HIT_TYPE, rollAndDisplayOracleResult } from './chatrollhelpers'
 import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
 import { maybeShowDice, RollDialog } from '../helpers/rolldialog'
@@ -197,7 +197,7 @@ export class IronswornChatCard {
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     const { tableid } = ev.target.dataset
     const table = await pack?.getDocument(tableid) as any | undefined
-    table?.draw()
+    rollAndDisplayOracleResult(table)
   }
 
   async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {

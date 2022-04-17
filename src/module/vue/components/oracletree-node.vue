@@ -82,7 +82,7 @@ export default {
   methods: {
     async click() {
       if (this.oracle.foundryTable) {
-        this.oracle.foundryTable.draw()
+        CONFIG.IRONSWORN.rollAndDisplayOracleResult(this.oracle.foundryTable)
       } else {
         this.manuallyExpanded = !this.manuallyExpanded
       }

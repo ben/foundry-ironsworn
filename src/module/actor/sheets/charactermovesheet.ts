@@ -1,4 +1,5 @@
 import { negate } from 'lodash'
+import { rollAndDisplayOracleResult } from '../../chat/chatrollhelpers'
 import { cachedMoves, moveDataByName } from '../../helpers/data'
 import { attachInlineRollListeners, RollDialog } from '../../helpers/rolldialog'
 import { IronswornSettings } from '../../helpers/settings'
@@ -202,9 +203,8 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         }
       }
     }
-    ; (table as any)?.draw()
+    rollAndDisplayOracleResult(table)
   }
-
 
   async highlightMove(move: IronswornItem) {
     console.log({ move })
