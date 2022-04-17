@@ -5,6 +5,7 @@
 - Reload the browser when SF beta flag is changed
 - Don't send progress rolls to a useless dialog flow
 - Fix background color of embedded links in Starforged theme
+- Bump dataforged to 0.4.x ([#290](https://github.com/ben/foundry-ironsworn/pull/290))
 
 ## 1.10.41
 
