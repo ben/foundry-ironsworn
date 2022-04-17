@@ -342,6 +342,7 @@ export async function rollAndDisplayOracleResult(table?: RollTable): Promise<str
 
   // Render the chat message content
   const renderData = {
+    themeClass: `theme-${IronswornSettings.theme}`,
     table,
     roll,
     displayRows,
@@ -361,5 +362,5 @@ export async function rollAndDisplayOracleResult(table?: RollTable): Promise<str
   await ChatMessage.create(messageData)
 
   // Return the raw text
-  return tableDraw?.results[0].data.text
+  return resultRow.text
 }

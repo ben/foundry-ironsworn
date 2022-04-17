@@ -121,7 +121,6 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
     const firstTable = await getFoundryTableByDfId('Oracles/Characters/Name/Given_Name') as any
     const lastTable = await getFoundryTableByDfId('Oracles/Characters/Name/Family_Name') as any
-    console.log(firstTable, lastTable)
     if (!firstTable || !lastTable) return undefined
 
     const first = await firstTable.draw({ displayChat: false })
