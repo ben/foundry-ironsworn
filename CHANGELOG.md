@@ -4,6 +4,7 @@
 
 - Reload the browser when SF beta flag is changed
 - Don't send progress rolls to a useless dialog flow
+- Fix background color of embedded links in Starforged theme
 
 ## 1.10.41
 

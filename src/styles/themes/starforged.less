@@ -100,7 +100,8 @@ input.highlight:focus {
     &:not(.disabled) {
       color: @text-dark-color;
 
-      &.hover, &:hover {
+      &.hover,
+      &:hover {
         &.block,
         &.text {
           color: @text-light-color;
@@ -147,6 +148,14 @@ input.highlight:focus {
 
   hr {
     border-color: @light-color;
+  }
+
+  a.content-link.entity-link {
+    background-color: @muted-color;
+
+    i {
+      color: @text-light-color;
+    }
   }
 }
 
