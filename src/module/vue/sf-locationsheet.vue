@@ -475,8 +475,7 @@ export default {
         const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(
           'Oracles/Settlements/Name'
         )
-        const result = await table?.draw()
-        name = result?.results[0]?.data.text
+        name = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       }
 
       if (name) {
@@ -500,8 +499,7 @@ export default {
       }
 
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(tableKey)
-      const result = await table?.draw()
-      const rawText = result?.results[0]?.data.text
+      const rawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!rawText) return
 
       const lctext = rawText.toLowerCase()
@@ -522,8 +520,7 @@ export default {
     },
     async rollOracle(oracle) {
       const table = await CONFIG.IRONSWORN.sfOracleByDataforgedId(oracle.dfId)
-      const drawResult = await table?.draw()
-      const drawText = drawResult?.results[0]?.data.text
+      const drawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!drawText) return
 
       // Append to description

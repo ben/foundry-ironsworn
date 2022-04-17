@@ -2,7 +2,7 @@ import * as lodash from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
-import { createIronswornChatRoll, createIronswornDenizenChat } from './module/chat/chatrollhelpers'
+import { createIronswornChatRoll, createIronswornDenizenChat, rollAndDisplayOracleResult } from './module/chat/chatrollhelpers'
 import { RANKS, RANK_INCREMENTS } from './module/constants'
 import { cleanDollars, getFoundryTableByDfId, getFoundryMoveByDfId, importFromDataforged } from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
@@ -45,6 +45,7 @@ export interface IronswornConfig {
   defaultActor: typeof defaultActor
   sfOracleByDataforgedId: typeof sfOracleByDataforgedId
   sfOracleJsonByDataforgedId: typeof sfOracleJsonByDataforgedId
+  rollAndDisplayOracleResult: typeof rollAndDisplayOracleResult
 
   Dataforged: typeof Dataforged
   getTableByDfId: typeof getFoundryTableByDfId
@@ -79,6 +80,7 @@ export const IRONSWORN: IronswornConfig = {
   defaultActor,
   sfOracleByDataforgedId,
   sfOracleJsonByDataforgedId,
+  rollAndDisplayOracleResult,
 
   Dataforged,
   getTableByDfId: getFoundryTableByDfId,
