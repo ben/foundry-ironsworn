@@ -1,3 +1,7 @@
+function reload() {
+  window.location.reload()
+}
+
 export class IronswornSettings {
   static registerSettings() {
     game.settings.register('foundry-ironsworn', 'theme', {
@@ -11,9 +15,7 @@ export class IronswornSettings {
         starforged: 'IRONSWORN.Settings.Theme.Starforged',
       },
       default: 'ironsworn',
-      onChange: (_value) => {
-        window.location.reload()
-      },
+      onChange: reload,
     })
 
     game.settings.register('foundry-ironsworn', 'shared-supply', {
@@ -50,6 +52,7 @@ export class IronswornSettings {
       config: true,
       type: Boolean,
       default: false,
+      onChange: reload,
     })
 
     game.settings.register('foundry-ironsworn', 'data-version', {

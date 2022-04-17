@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Reload the browser when SF beta flag is changed
+
 ## 1.10.41
 
 - Provide oracle-rolling buttons on move chat cards ([#287](https://github.com/ben/foundry-ironsworn/pull/287))
