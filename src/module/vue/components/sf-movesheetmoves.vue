@@ -41,10 +41,7 @@
 
 <style lang="less" scoped>
 h2 {
-  border-color: white;
-  background-color: #888;
-  color: white;
-  margin: 0.3rem 0;
+  margin: 0.5rem 0 0.3rem;
 }
 .item-list {
   padding: 0 0.5rem;

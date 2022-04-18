@@ -42,6 +42,7 @@ input.highlight:focus {
 
   h2,
   h3 {
+    color: @text-medium-color;
     border-bottom-color: @light-color;
   }
 
@@ -86,7 +87,7 @@ input.highlight:focus {
     fill: @medium-color;
 
     &.filled {
-      fill: @text-medium-color;
+      fill: @text-medium-color !important;
     }
 
     path {
@@ -181,6 +182,11 @@ input.highlight:focus {
 }
 
 .chat-message {
+  .message-content .theme-starforged {
+    background: black;
+    border: 1px solid @text-dark-color;
+  }
+
   .dice-formula,
   .dice-total {
     background: rgba(0, 0, 0, 0.8);
