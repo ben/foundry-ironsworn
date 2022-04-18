@@ -33,7 +33,8 @@ export class SFRollMoveDialog extends Dialog {
     const title = move.name || 'MOVE'
     const buttons = {}
     const addButton = (i: number, mode: string, stats: string[]) => {
-      const label = mode === 'Stat' ? stats[0] : `${mode} ${stats.join(', ')}`
+      // TODO: i18n
+      const label = mode === 'Any' ? stats[0] : `${mode} of ${stats.join(', ')}`
       buttons[i.toString()] = {
         label,
         icon: '<i class="fas fa-dice-d6"></i>',
@@ -43,19 +44,7 @@ export class SFRollMoveDialog extends Dialog {
 
     for (let i = 0; i < options.length; i++) {
       const option = options[i]
-      const regularRolls = option['Action roll'] ?? option['Progress roll']
-      if (regularRolls?.['All of']) {
-        addButton(i, 'All of', regularRolls['All of'])
-      }
-      if (regularRolls?.['Best of']) {
-        addButton(i, 'Best of', regularRolls['Best of'])
-      }
-      if (regularRolls?.['Worst of']) {
-        addButton(i, 'Worst of', regularRolls['Worst of'])
-      }
-      if (option['Action roll']?.Stat) {
-        addButton(i, 'Stat', [option['Action roll'].Stat])
-      }
+      addButton(i, option.Method, option.Using)
     }
 
     return new SFRollMoveDialog({
@@ -80,14 +69,14 @@ async function rollAndCreateChatMessage(opts: { actor: IronswornActor; move: Iro
 
   const normalizedStats = stats.map((x) => x.toLowerCase())
   let usedStat = normalizedStats[0]
-  if (mode === 'Best of' || mode === 'Worst of') {
+  if (mode === 'Highest' || mode === 'Lowest') {
     const statMap = {}
     for (const x of normalizedStats) {
       statMap[x] = actor.data.data[x]
     }
-    const fn = mode === 'Best of' ? maxBy : minBy
+    const fn = mode === 'Highest' ? maxBy : minBy
     usedStat = fn(Object.keys(statMap), (x) => statMap[x]) ?? stats[0]
-  } else if (mode !== 'Stat') {
+  } else if (mode !== 'Any') {
     console.log({ actor, move, mode, stats, bonus })
     return // TODO: all of
   }

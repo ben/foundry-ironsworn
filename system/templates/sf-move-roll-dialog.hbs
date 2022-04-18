@@ -1,12 +1,8 @@
 {{#*inline "statDescription"}}
-{{#if [Action roll]}}
-roll +{{[Action roll].Stat}}
-{{else if [Best of]}}
-roll best of {{join [Best of] delimiter=", "}}
-{{else if [Worst of]}}
-roll worst of {{join [Worst of] delimiter=", "}}
-{{else if [All of]}}
-roll all of {{join [All of] delimiter=", "}}
+{{#if (eq Using.length 1)}}
+roll +{{lookup Using 0}}
+{{else}}
+roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
 {{/if}}
 {{/inline}}
 
