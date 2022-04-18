@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.42
+
 - Reload the browser when SF beta flag is changed
 - Don't send progress rolls to a useless dialog flow
 - Fix some color issues in Starforged theme
