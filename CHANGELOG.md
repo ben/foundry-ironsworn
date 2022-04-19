@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.43
+
 - Replace crypto.subtle with sha.js for ID hashing ([#295](https://github.com/ben/foundry-ironsworn/pull/295))
 
 ## 1.10.42
