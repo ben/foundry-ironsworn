@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Replace crypto.subtle with sha.js for ID hashing ([#295](https://github.com/ben/foundry-ironsworn/pull/295))
+
 ## 1.10.42
 
 - Reload the browser when SF beta flag is changed

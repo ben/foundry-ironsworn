@@ -4,6 +4,7 @@ import { cloneDeep, get, isArray, isObject, max, set } from 'lodash'
 import { data as Dataforged, IMove, IOracle, IOracleCategory } from 'dataforged'
 import { marked } from 'marked'
 import { IronswornItem } from './item/item'
+import shajs from 'sha.js'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -43,24 +44,23 @@ export function cleanDollars(obj): any {
 }
 
 const HASH_CACHE = {} as { [k: string]: string }
-export async function hashLookup(str: string): Promise<string> {
-  return (HASH_CACHE[str] ||= await hash(str))
+export function hashLookup(str: string): string {
+  HASH_CACHE[str] ||= hash(str)
+  return HASH_CACHE[str]
 }
 
-async function hash(str: string): Promise<string> {
-  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str))
-  const hexarr = Array.prototype.map.call(new Uint8Array(buf), (x) => ('00' + x.toString(16)).slice(-2))
-  return hexarr.join('').substring(48)
+function hash(str: string): string {
+  return shajs('sha256').update(str).digest('hex').substring(48)
 }
 
 export async function getFoundryTableByDfId(dfid: string): Promise<RollTable | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-  return (await pack?.getDocument(await hashLookup(dfid))) || undefined
+  return (await pack?.getDocument(hashLookup(dfid))) || undefined
 }
 
 export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
-  return pack?.get(await hashLookup(dfid)) as any
+  return (await pack?.getDocument(hashLookup(dfid))) as IronswornItem | undefined
 }
 
 export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> {
@@ -72,14 +72,14 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
   return undefined
 }
 
-async function generateIdMap(data: typeof Dataforged): Promise<{ [key: string]: string }> {
+function generateIdMap(data: typeof Dataforged): { [key: string]: string } {
   const ret = {}
 
   const nodeStack = cloneDeep(Object.values(data)) as any[]
   while (nodeStack.length) {
     const node = nodeStack.pop()
     if (node?.$id) {
-      ret[node.$id] = await hash(node.$id)
+      ret[node.$id] = hash(node.$id)
     }
     if (isArray(node)) {
       nodeStack.push(...node.reverse())
@@ -137,7 +137,7 @@ export async function importFromDataforged() {
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
-  const idMap = await generateIdMap(Dataforged)
+  const idMap = generateIdMap(Dataforged)
 
   // Moves
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
