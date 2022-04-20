@@ -2,11 +2,12 @@ import { capitalize } from 'lodash'
 import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE, rollAndDisplayOracleResult } from './chatrollhelpers'
-import { DelveDomainDataProperties, DelveThemeDataProperties } from '../item/itemtypes'
+import { DelveDomainDataProperties, DelveThemeDataProperties, SFMoveDataProperties } from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
 import { maybeShowDice, RollDialog } from '../helpers/rolldialog'
 import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
+import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 
 export class IronswornChatCard {
   id?: string | null
@@ -30,6 +31,7 @@ export class IronswornChatCard {
       .removeClass('content-link') // Prevent default Foundry behavior
       .on('click', (ev) => this._moveNavigate.call(this, ev))
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
+    html.find('.burn-momentum-sf').on('click', (ev) => this._sfBurnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
     html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
     html.find('.ironsworn__sojourn__extra__roll').on('click', (ev) => this._sojournExtra.call(this, ev))
@@ -92,6 +94,42 @@ export class IronswornChatCard {
       <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
       ${result || ''}
       ${bonusContent || ''}
+    `)
+
+    const content = parent.html()
+    await this.message?.update({ content })
+  }
+
+  async _sfBurnMomentum(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    const { actor, move, stat, hittype, hittypetext } = ev.target.dataset
+    console.log({ actor, move, stat, hittype, hittypetext })
+
+    // Fetch the actor and move items
+    const theActor = game.actors?.get(actor)
+    const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
+    const theMove = await pack?.getDocument(move) as IronswornItem
+
+    // Get the new result
+    const k = {
+      [HIT_TYPE.STRONG]: 'Strong Hit',
+      [HIT_TYPE.WEAK]: 'Weak Hit',
+      [HIT_TYPE.MISS]: 'Miss',
+    }[hittype]
+    const moveData = theMove.data as SFMoveDataProperties
+    const newOutcome = moveData.data.Outcomes?.[k]?.Text
+
+    // Burn the momentum
+    theActor?.burnMomentum()
+
+    // Replace the chat-card HTML
+    const parent = $(ev.currentTarget).parents('.message-content')
+    parent.find('.roll-result').addClass('strikethru')
+    parent.find('.roll-result button').prop('disabled', true)
+    parent.find('.momentum-burn').html(`
+      <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
+      <strong>${hittypetext}:</strong>
+      ${IronswornHandlebarsHelpers.enrichMarkdown(newOutcome)}
     `)
 
     const content = parent.html()
