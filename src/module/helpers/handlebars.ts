@@ -93,25 +93,9 @@ export class IronswornHandlebarsHelpers {
       return ret
     })
 
-    function enrichHtml(text: string) {
-      const rendered = TextEditor.enrichHTML(text)
-      const rollText = game.i18n.localize('IRONSWORN.Roll')
-      return rendered.replace(
-        /\(\(rollplus (.*?)\)\)/g,
-        (_, stat) => `
-          <a class="inline-roll" data-param="${stat}">
-            <i class="fas fa-dice-d6"></i>
-            ${rollText} +${game.i18n.localize(`IRONSWORN.${capitalize(stat)}`).toLowerCase()}
-          </a>
-        `
-      )
-    }
-    Handlebars.registerHelper('enrichHtml', enrichHtml)
+    Handlebars.registerHelper('enrichHtml', this.enrichHtml)
 
-    Handlebars.registerHelper('enrichMarkdown', (md) => {
-      const html = marked.parse(md, { gfm: true })
-      return enrichHtml(html)
-    })
+    Handlebars.registerHelper('enrichMarkdown', this.enrichMarkdown)
 
     Handlebars.registerHelper('rangeEach', function (context, _options) {
       const results: string[] = []
@@ -176,5 +160,24 @@ export class IronswornHandlebarsHelpers {
       }
       return hexes.join('')
     })
+  }
+
+  static enrichHtml(text: string) {
+    const rendered = TextEditor.enrichHTML(text)
+    const rollText = game.i18n.localize('IRONSWORN.Roll')
+    return rendered.replace(
+      /\(\(rollplus (.*?)\)\)/g,
+      (_, stat) => `
+        <a class="inline-roll" data-param="${stat}">
+          <i class="fas fa-dice-d6"></i>
+          ${rollText} +${game.i18n.localize(`IRONSWORN.${capitalize(stat)}`).toLowerCase()}
+        </a>
+      `
+    )
+  }
+
+  static enrichMarkdown(md: string) {
+    const html = marked.parse(md, { gfm: true })
+    return IronswornHandlebarsHelpers.enrichHtml(html)
   }
 }

@@ -1,16 +1,21 @@
 {{!--
 actor: IronswornActor {…}
-move: IronswornItem {parent: null, pack: 'foundry-ironsworn.starforgedmoves', data: ItemData, …}
-title: "Compel (Heart)"
-mode: "Stat"
-stats: ['Heart']
 bonus: 0
-hitType: "Miss"
-resultText: "They refuse or make a demand that costs you greatly. @Compendium[foundry-ironsworn.starforgedmoves.d5be4b94ec029080]{Pay the Price}."
-roll: Roll {data: {…}, options: {…}, terms: Array(1), _dice: Array(0), _formula: '{d6 + 2,d10,d10}', …}
+hitType: "Weak Hit"
+mode: "Any"
+momentumHitType: "STRONG"
+momentumHitTypeI18n: "Strong Hit"
+move: IronswornItem {apps: {…}, _sheet: null, parent: null, pack: 'foundry-ironsworn.starforgedmoves', data: ItemData}
+nextOracles: []
+resultText: "You succeed, but not without a cost. Make a suffer move (-1)."
+roll: Roll {data: {…}, options: {…}, terms: Array(1), _dice: Array(0), _formula: '{d6 + 1,d10,d10}', …}
+stats: ['shadow']
 themeClass: "theme-ironsworn"
+title: "Face Danger (Shadow)"
+usedStat: "shadow"
 --}}
 
+{{log this}}
 <div class="flexcol">
   <h3>{{title}}</h3>
 
@@ -32,7 +37,7 @@ themeClass: "theme-ironsworn"
   <div class="momentum-burn">
     <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitTypeI18n}}}</p>
     <button class="burn-momentum-sf" data-actor="{{actor.id}}" data-move="{{move.id}}" data-mode="{{mode}}"
-      data-stats="{{stats}}" data-hittype="{{momentumHitType}}">
+      data-stat="{{usedStat}}" data-hittype="{{momentumHitType}}" data-hittypetext="{{momentumHitTypeI18n}}">
       <i class="fas fa-fire"></i>
       {{localize 'IRONSWORN.Burn'}}
     </button>
