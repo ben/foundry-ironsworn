@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.44
+
 - Implement momentum-burn button for Starforged moves ([#296](https://github.com/ben/foundry-ironsworn/pull/296))
 
 ## 1.10.43
