@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Implement momentum-burn button for Starforged moves ([#296](https://github.com/ben/foundry-ironsworn/pull/296))
+
 ## 1.10.43
 
 - Replace crypto.subtle with sha.js for ID hashing ([#295](https://github.com/ben/foundry-ironsworn/pull/295))
