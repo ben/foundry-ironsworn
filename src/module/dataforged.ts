@@ -143,60 +143,58 @@ export async function importFromDataforged() {
   await processMoves(idMap)
   await processAssets(idMap)
   await processOracles(idMap)
+  await processEncounters(idMap)
+  await processFoes()
+}
 
-  // Encounters
-  const encountersToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const encounter of Dataforged.encounters) {
-    const description = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
-      ...encounter,
-      variantLinks: encounter.Variants.map(x => renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)),
-    })
-
-    encountersToCreate.push({
-      _id: idMap[encounter['$id']],
-      type: 'progress',
-      name: encounter['Name'],
-      data: {
-        description,
-        rank: getLegacyRank(encounter['Rank']),
-      },
-    })
-
-    for (const variant of encounter['Variants']) {
-      const variantDescription = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
-        ...encounter,
-        ...variant,
-        Category: variant['Nature'] || encounter['Nature'],
-        CategoryDescription: variant['Summary'] || encounter['Summary'],
+async function processMoves(idMap: { [key: string]: string }) {
+  const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const category of Dataforged.moves) {
+    for (const move of category.Moves) {
+      renderLinksInMove(idMap, move)
+      const cleanMove = cleanDollars(move)
+      movesToCreate.push({
+        _id: idMap[cleanMove['dfid']],
+        type: 'sfmove',
+        name: cleanMove['Name'],
+        img: 'icons/dice/d10black.svg',
+        data: cleanMove,
       })
+    }
+  }
+  await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.starforgedmoves', keepId: true })
+}
 
-      encountersToCreate.push({
-        _id: idMap[variant['$id']],
-        type: 'progress',
-        name: variant['Name'],
+async function processAssets(idMap: { [key: string]: string }) {
+  const assetsToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const assetType of Dataforged.assets) {
+    for (const asset of assetType.Assets) {
+      assetsToCreate.push({
+        type: 'asset',
+        _id: idMap[asset.$id],
+        name: `${assetType.Name} / ${asset.Name}`,
         data: {
-          description: variantDescription,
-          rank: getLegacyRank('Rank' in variant ? variant['Rank'] : encounter['Rank']),
+          description: renderMarkdown(assetType.Description, idMap),
+          fields: asset.Inputs?.map((input) => ({
+            name: input.Name,
+            value: '',
+          })) || [],
+          abilities: (asset.Abilities ?? []).map((ability) => ({
+            enabled: ability.Enabled || false,
+            description: renderMarkdown(ability.Text, idMap),
+          })),
+          track: {
+            enabled: !!asset['Condition Meter'],
+            name: asset['Condition Meter']?.Name,
+            current: asset['Condition Meter']?.['Starting Value'],
+            max: asset['Condition Meter']?.Max,
+          },
+          exclusiveOptions: [], // TODO:
         },
       })
     }
   }
-  await Item.createDocuments(encountersToCreate, { pack: 'foundry-ironsworn.starforgedencounters', keepId: true })
-
-  // Foes
-  const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
-  const foeItems = await foesPack?.getDocuments()
-  for (const foeItem of foeItems ?? []) {
-    const actor = await IronswornActor.create(
-      {
-        name: foeItem.name ?? 'wups',
-        img: foeItem.data.img,
-        type: 'foe',
-      },
-      { pack: 'foundry-ironsworn.foeactorssf' }
-    )
-    await actor?.createEmbeddedDocuments('Item', [foeItem.data])
-  }
+  await Item.createDocuments(assetsToCreate, { pack: 'foundry-ironsworn.starforgedassets', keepId: true })
 }
 
 async function processOracles(idMap: { [key: string]: string }) {
@@ -243,52 +241,59 @@ async function processOracles(idMap: { [key: string]: string }) {
   await RollTable.createDocuments(oraclesToCreate, { pack: 'foundry-ironsworn.starforgedoracles', keepId: true })
 }
 
-async function processAssets(idMap: { [key: string]: string }) {
-  const assetsToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const assetType of Dataforged.assets) {
-    for (const asset of assetType.Assets) {
-      assetsToCreate.push({
-        type: 'asset',
-        _id: idMap[asset.$id],
-        name: `${assetType.Name} / ${asset.Name}`,
+async function processEncounters(idMap: { [key: string]: string }) {
+  const encountersToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const encounter of Dataforged.encounters) {
+    const description = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
+      ...encounter,
+      variantLinks: encounter.Variants.map(x => renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)),
+    })
+
+    encountersToCreate.push({
+      _id: idMap[encounter['$id']],
+      type: 'progress',
+      name: encounter['Name'],
+      data: {
+        description,
+        rank: getLegacyRank(encounter['Rank']),
+      },
+    })
+
+    for (const variant of encounter['Variants']) {
+      const variantDescription = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
+        ...encounter,
+        ...variant,
+        Category: variant['Nature'] || encounter['Nature'],
+        CategoryDescription: variant['Summary'] || encounter['Summary'],
+      })
+
+      encountersToCreate.push({
+        _id: idMap[variant['$id']],
+        type: 'progress',
+        name: variant['Name'],
         data: {
-          description: renderMarkdown(assetType.Description, idMap),
-          fields: asset.Inputs?.map((input) => ({
-            name: input.Name,
-            value: '',
-          })) || [],
-          abilities: (asset.Abilities ?? []).map((ability) => ({
-            enabled: ability.Enabled || false,
-            description: renderMarkdown(ability.Text, idMap),
-          })),
-          track: {
-            enabled: !!asset['Condition Meter'],
-            name: asset['Condition Meter']?.Name,
-            current: asset['Condition Meter']?.['Starting Value'],
-            max: asset['Condition Meter']?.Max,
-          },
-          exclusiveOptions: [], // TODO:
+          description: variantDescription,
+          rank: getLegacyRank('Rank' in variant ? variant['Rank'] : encounter['Rank']),
         },
       })
     }
   }
-  await Item.createDocuments(assetsToCreate, { pack: 'foundry-ironsworn.starforgedassets', keepId: true })
+  await Item.createDocuments(encountersToCreate, { pack: 'foundry-ironsworn.starforgedencounters', keepId: true })
 }
 
-async function processMoves(idMap: { [key: string]: string }) {
-  const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const category of Dataforged.moves) {
-    for (const move of category.Moves) {
-      renderLinksInMove(idMap, move)
-      const cleanMove = cleanDollars(move)
-      movesToCreate.push({
-        _id: idMap[cleanMove['dfid']],
-        type: 'sfmove',
-        name: cleanMove['Name'],
-        img: 'icons/dice/d10black.svg',
-        data: cleanMove,
-      })
-    }
+async function processFoes() {
+  const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
+  const foeItems = await foesPack?.getDocuments()
+  for (const foeItem of foeItems ?? []) {
+    const actor = await IronswornActor.create(
+      {
+        name: foeItem.name ?? 'wups',
+        img: foeItem.data.img,
+        type: 'foe',
+      },
+      { pack: 'foundry-ironsworn.foeactorssf' }
+    )
+    await actor?.createEmbeddedDocuments('Item', [foeItem.data])
   }
-  await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.starforgedmoves', keepId: true })
 }
+
