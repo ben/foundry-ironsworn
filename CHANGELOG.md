@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Centralize Dataforged import and improve encounter display ([#297](https://github.com/ben/foundry-ironsworn/pull/297))
+
 ## 1.10.44
 
 - Implement momentum-burn button for Starforged moves ([#296](https://github.com/ben/foundry-ironsworn/pull/296))
