@@ -94,6 +94,7 @@ function generateIdMap(data: typeof Dataforged): { [key: string]: string } {
 const COMPENDIUM_KEY_MAP = {
   Moves: 'starforgedmoves',
   Oracles: 'starforgedoracles',
+  Encounters: 'starforgedencounters',
 }
 const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
 
@@ -146,11 +147,9 @@ export async function importFromDataforged() {
   // Encounters
   const encountersToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   for (const encounter of Dataforged.encounters) {
-    const description = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
+    const description = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
       ...encounter,
-      Category: encounter['Nature'],
-      CategoryDescription: encounter['Summary'],
-      Quest: encounter['Quest Starter'],
+      variantLinks: encounter.Variants.map(x => renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)),
     })
 
     encountersToCreate.push({
@@ -164,7 +163,7 @@ export async function importFromDataforged() {
     })
 
     for (const variant of encounter['Variants']) {
-      const variantDescription = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
+      const variantDescription = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
         ...encounter,
         ...variant,
         Category: variant['Nature'] || encounter['Nature'],
