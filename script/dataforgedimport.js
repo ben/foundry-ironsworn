@@ -165,11 +165,11 @@ async function doit() {
 
   const writePromises = [
     // writeLocal('assets', processAssets(idMap, df)),
-    writeLocal('encounters', processEncounters(idMap, df)),
+    // writeLocal('encounters', processEncounters(idMap, df)),
     // writeLocal('moves', processMoves(idMap, df)),
     // writeLocal('oracles', processOracles(idMap, df)),
     // writeLocal('setting-truths', processSettingTruths(idMap, df)),
-    writeLocal('ids', idMap),
+    // writeLocal('ids', idMap),
   ]
   await Promise.all(writePromises)
 }

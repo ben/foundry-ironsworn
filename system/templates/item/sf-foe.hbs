@@ -1,0 +1,98 @@
+{{!--
+
+{
+  "$id": "Encounters/Chiton",
+  "Name": "Chiton",
+  "Nature": "Monster",
+  "Summary": "Insectoid horde",
+  "Rank": 2,
+  "Display": { "Title": "Chiton" },
+  "Features": [
+      "Arachnid monsters with blade-like limbs",
+      "Plated exoskeleton",
+      "Dripping mucus",
+      "Ripping, tearing maw"
+  ],
+  "Drives": [
+      "Build and expand the nest",
+      "Feed and protect the queen",
+      "Snuff out intelligent life"
+  ],
+  "Tactics": [
+      "Attack with lightning reflexes",
+      "Impale with bladed limbs",
+      "Drag victims back to the nest"
+  ],
+  "Description": "The chiton are not...",
+  "Quest Starter": "At a remote facility, researchers...",
+  "Source": {
+      "Title": "Ironsworn: Starforged Rulebook",
+      "Date": "040122",
+      "Page": 259
+  },
+  "Variants": [
+      {
+          "$id": "Encounters/Chiton/Chiton_Drone_Pack",
+          "Source": {
+              "Title": "Ironsworn: Starforged Rulebook",
+              "Date": "040122",
+              "Page": 259
+          },
+          "Name": "Chiton Drone Pack",
+          "Rank": 3,
+          "Display": { "Title": "Chiton Drone Pack" },
+          "Description": "Chiton drones...",
+          "Nature": "Monster",
+          "Variant of": "Encounters/Chiton"
+      },
+      {
+          "$id": "Encounters/Chiton/Chiton_Queen",
+          "Source": {
+              "Title": "Ironsworn: Starforged Rulebook",
+              "Date": "040122",
+              "Page": 259
+          },
+          "Name": "Chiton Queen",
+          "Rank": 4,
+          "Display": { "Title": "Chiton Queen" },
+          "Description": "The chiton queen is a...",
+          "Nature": "Monster",
+          "Variant of": "Encounters/Chiton"
+      }
+  ],
+  variantLinks: [
+    "@Compendium[foundry-ironsworn.starforgedencounters.41f15a07345089ab]{Chiton Drone Pack}",
+    "@Compendium[foundry-ironsworn.starforgedencounters.c43c089789607296]{Chiton Queen}",
+  ]
+}
+
+--}}
+
+{{#*inline 'ticklist'}}
+<div class="flexcol box" style="justify-content: flex-start;">
+  <h4 class="nogrow" style="margin: 0.5em;">{{name}}</h4>
+  {{#each list}}
+  <p class="nogrow">{{this}}</p>
+  {{/each}}
+</div>
+{{/inline}}
+
+<div class="boxgroup flexrow boxrow" style="margin-bottom: 0.5rem;">
+  {{>ticklist name='Features' list=Features}}
+  {{>ticklist name='Drives' list=Drives}}
+  {{>ticklist name='Tactics' list=Tactics}}
+</div>
+
+{{{enrichMarkdown Description}}}
+
+<blockquote>Quest Starter: {{{enrichMarkdown [Quest Starter]}}}</blockquote>
+
+{{#if variantLinks}}
+<h2>Variants</h2>
+<ul>
+  {{#each variantLinks}}
+  <li>{{this}}</li>
+  {{/each}}
+</ul>
+{{/if}}
+
