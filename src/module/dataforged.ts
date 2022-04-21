@@ -144,9 +144,8 @@ export async function importFromDataforged() {
   await processOracles(idMap)
 
   // Encounters
-  const encountersJson = await fetch('systems/foundry-ironsworn/assets/sf-encounters.json').then((x) => x.json())
   const encountersToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const encounter of encountersJson) {
+  for (const encounter of Dataforged.encounters) {
     const description = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
       ...encounter,
       Category: encounter['Nature'],
