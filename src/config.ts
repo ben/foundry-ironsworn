@@ -20,7 +20,7 @@ import { DelveThemeItem } from './module/item/delve-theme-domain/delvethemeitem'
 import { MoveItem } from './module/item/move/moveitem'
 import { ProgressItem } from './module/item/progress/progressitem'
 import { VowItem } from './module/item/vow/vowitem'
-import { data as Dataforged } from 'dataforged'
+import { starforged } from 'dataforged'
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
@@ -47,7 +47,7 @@ export interface IronswornConfig {
   sfOracleJsonByDataforgedId: typeof sfOracleJsonByDataforgedId
   rollAndDisplayOracleResult: typeof rollAndDisplayOracleResult
 
-  Dataforged: typeof Dataforged
+  Dataforged: typeof starforged
   getTableByDfId: typeof getFoundryTableByDfId
   getMoveByDfId: typeof getFoundryMoveByDfId
   cleanDollars: typeof cleanDollars
@@ -82,7 +82,7 @@ export const IRONSWORN: IronswornConfig = {
   sfOracleJsonByDataforgedId,
   rollAndDisplayOracleResult,
 
-  Dataforged,
+  Dataforged: starforged,
   getTableByDfId: getFoundryTableByDfId,
   getMoveByDfId: getFoundryMoveByDfId,
   cleanDollars,

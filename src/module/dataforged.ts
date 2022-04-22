@@ -1,7 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { cloneDeep, get, isArray, isObject, max, set } from 'lodash'
-import { data as Dataforged, IMove, IOracle, IOracleCategory } from 'dataforged'
+import { starforged, IMove, IOracle, IOracleCategory } from 'dataforged'
 import { marked } from 'marked'
 import { IronswornItem } from './item/item'
 import shajs from 'sha.js'
@@ -64,7 +64,7 @@ export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem 
 }
 
 export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> {
-  for (const category of Dataforged.moves) {
+  for (const category of starforged.moves) {
     for (const move of category.Moves) {
       if (move.$id === dfid) return move
     }
@@ -72,7 +72,7 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
   return undefined
 }
 
-function generateIdMap(data: typeof Dataforged): { [key: string]: string } {
+function generateIdMap(data: typeof starforged): { [key: string]: string } {
   const ret = {}
 
   const nodeStack = cloneDeep(Object.values(data)) as any[]
@@ -138,7 +138,7 @@ export async function importFromDataforged() {
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
-  const idMap = generateIdMap(Dataforged)
+  const idMap = generateIdMap(starforged)
 
   await processMoves(idMap)
   await processAssets(idMap)
@@ -149,7 +149,7 @@ export async function importFromDataforged() {
 
 async function processMoves(idMap: { [key: string]: string }) {
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const category of Dataforged.moves) {
+  for (const category of starforged.moves) {
     for (const move of category.Moves) {
       renderLinksInMove(idMap, move)
       const cleanMove = cleanDollars(move)
@@ -167,7 +167,7 @@ async function processMoves(idMap: { [key: string]: string }) {
 
 async function processAssets(idMap: { [key: string]: string }) {
   const assetsToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const assetType of Dataforged.assets) {
+  for (const assetType of starforged.assets) {
     for (const asset of assetType.Assets) {
       assetsToCreate.push({
         type: 'asset',
@@ -235,7 +235,7 @@ async function processOracles(idMap: { [key: string]: string }) {
       await processCategory(child)
   }
 
-  for (const category of Dataforged.oracles) {
+  for (const category of starforged.oracles) {
     await processCategory(category)
   }
   await RollTable.createDocuments(oraclesToCreate, { pack: 'foundry-ironsworn.starforgedoracles', keepId: true })
@@ -243,7 +243,7 @@ async function processOracles(idMap: { [key: string]: string }) {
 
 async function processEncounters(idMap: { [key: string]: string }) {
   const encountersToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const encounter of Dataforged.encounters) {
+  for (const encounter of starforged.encounters) {
     const description = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
       ...encounter,
       variantLinks: encounter.Variants.map(x => renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)),
