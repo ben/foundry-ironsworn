@@ -72,6 +72,24 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
   return undefined
 }
 
+export function getDFOracleByDfId(dfid: string): IOracle | undefined {
+  const walk = (oc: IOracleCategory) => {
+    for (const oracle of oc.Oracles ?? []) {
+      if (oracle.$id === dfid) return oracle
+    }
+    for (const cat of oc.Categories ?? []) {
+      const ret = walk(cat)
+      if (ret) return ret
+    }
+    return undefined
+  }
+  for (const cat of starforged.oracles) {
+    const ret = walk(cat)
+    if (ret) return ret
+  }
+  return undefined
+}
+
 function generateIdMap(data: typeof starforged): { [key: string]: string } {
   const ret = {}
 
