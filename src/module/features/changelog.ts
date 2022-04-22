@@ -47,7 +47,7 @@ export function activateChangelogListeners() {
     sendToChat(item.parent, game.i18n.format('IRONSWORN.ChangeLog.Added', { name: item.name }))
   })
 
-  Hooks.on('deleteItem', async (item: IronswornItem, options, _userId: number) => {
+  Hooks.on('preDeleteItem', async (item: IronswornItem, options, _userId: number) => {
     if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
