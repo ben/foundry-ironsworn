@@ -7,6 +7,8 @@ import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
 import { AssetDataProperties, BondsetDataProperties, ProgressDataProperties } from '../item/itemtypes'
 
+type ActorTypeHandler = (IronswornActor, any) => string | undefined
+
 export function activateChangelogListeners() {
   Hooks.on('preUpdateActor', async (actor: IronswornActor, data: any, options, _userId: number) => {
     if (!IronswornSettings.logCharacterChanges) return
@@ -56,7 +58,6 @@ export function activateChangelogListeners() {
   })
 }
 
-type ActorTypeHandler = (IronswornActor, any) => string | undefined
 const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
   character: (actor: IronswornActor, data) => {
     const characterData = actor.data as CharacterDataProperties
