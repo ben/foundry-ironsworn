@@ -84,7 +84,7 @@ export default {
 
   methods: {
     async rollMove() {
-      const move = await CONFIG.IRONSWORN.getMoveByDfId(this.move.$id)
+      const move = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryMoveByDfId(this.move.$id)
       CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, move)
     },
 

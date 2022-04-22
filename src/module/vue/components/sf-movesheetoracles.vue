@@ -40,7 +40,7 @@ export default {
   },
 
   data() {
-    const dfOracles = CONFIG.IRONSWORN.cleanDollars(
+    const dfOracles = CONFIG.IRONSWORN.dataforgedHelpers.cleanDollars(
       cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles)
     )
 
@@ -57,7 +57,7 @@ export default {
 
     // Walk the DF oracles and decorate with Foundry IDs
     const walk = async (node) => {
-      const table = await CONFIG.IRONSWORN.getTableByDfId(node.dfid)
+      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(node.dfid)
       if (table) {
         Vue.set(node, 'foundryTable', table)
         this.flatOracles.push(node)
