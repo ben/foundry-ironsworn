@@ -119,8 +119,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     if (!pack) return undefined
 
-    const firstTable = await getFoundryTableByDfId('Oracles/Characters/Name/Given_Name') as any
-    const lastTable = await getFoundryTableByDfId('Oracles/Characters/Name/Family_Name') as any
+    const firstTable = await getFoundryTableByDfId('Starforged/Oracles/Characters/Name/Given_Name') as any
+    const lastTable = await getFoundryTableByDfId('Starforged/Oracles/Characters/Name/Family_Name') as any
     if (!firstTable || !lastTable) return undefined
 
     const first = await firstTable.draw({ displayChat: false })
