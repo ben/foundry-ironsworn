@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.45
+
 - Centralize Dataforged import and improve encounter display ([#297](https://github.com/ben/foundry-ironsworn/pull/297))
 - Bump to latest Dataforged, which changes IDs and breaks links ([#299](https://github.com/ben/foundry-ironsworn/pull/299))
 - Fix double-logging of item deletion ([#300](https://github.com/ben/foundry-ironsworn/pull/300))
