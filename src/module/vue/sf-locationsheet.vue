@@ -250,45 +250,45 @@ export default {
             [
               {
                 title: 'Atmosphere',
-                dfId: `Oracles/Planets/${kc}/Atmosphere`,
+                dfId: `Starforged/Oracles/Planets/${kc}/Atmosphere`,
                 fl: true,
               },
               {
                 title: 'From Space',
                 qty: '1-2',
-                dfId: `Oracles/Planets/${kc}/Observed_From_Space`,
+                dfId: `Starforged/Oracles/Planets/${kc}/Observed_From_Space`,
                 fl: true,
               },
             ],
             [
               {
                 title: 'Settlements',
-                dfId: `Oracles/Planets/${kc}/Settlements/${rc}`,
+                dfId: `Starforged/Oracles/Planets/${kc}/Settlements/${rc}`,
                 fl: true,
               },
-              { title: 'Life', dfId: `Oracles/Planets/${kc}/Life` },
+              { title: 'Life', dfId: `Starforged/Oracles/Planets/${kc}/Life` },
               {
                 title: 'Planetside Feature',
                 qty: '1-2',
-                dfId: `Oracles/Planets/${kc}/Feature`,
+                dfId: `Starforged/Oracles/Planets/${kc}/Feature`,
               },
             ],
             [
               {
                 title: 'Peril (life)',
-                dfId: `Oracles/Planets/Peril/Lifebearing`,
+                dfId: `Starforged/Oracles/Planets/Peril/Lifebearing`,
               },
               {
                 title: 'Peril (no life)',
-                dfId: `Oracles/Planets/Peril/Lifeless`,
+                dfId: `Starforged/Oracles/Planets/Peril/Lifeless`,
               },
               {
                 title: 'Opportunity (life)',
-                dfId: `Oracles/Planets/Opportunity/Lifebearing`,
+                dfId: `Starforged/Oracles/Planets/Opportunity/Lifebearing`,
               },
               {
                 title: 'Opportunity (no life)',
-                dfId: `Oracles/Planets/Opportunity/Lifeless`,
+                dfId: `Starforged/Oracles/Planets/Opportunity/Lifeless`,
               },
             ],
           ]
@@ -298,12 +298,12 @@ export default {
             [
               {
                 title: 'Population',
-                dfId: `Oracles/Settlements/Population/${rc}`,
+                dfId: `Starforged/Oracles/Settlements/Population/${rc}`,
                 fl: true,
               },
               {
                 title: 'First Look',
-                dfId: 'Oracles/Settlements/First_Look',
+                dfId: 'Starforged/Oracles/Settlements/First_Look',
                 qty: '1-2',
                 fl: true,
               },
@@ -311,13 +311,13 @@ export default {
             [
               {
                 title: 'Initial Contact',
-                dfId: 'Oracles/Settlements/Initial_Contact',
+                dfId: 'Starforged/Oracles/Settlements/Initial_Contact',
               },
-              { title: 'Authority', dfId: 'Oracles/Settlements/Authority' },
+              { title: 'Authority', dfId: 'Starforged/Oracles/Settlements/Authority' },
             ],
             [
-              { title: 'Projects', dfId: 'Oracles/Settlements/Projects' },
-              { title: 'Trouble', dfId: 'Oracles/Settlements/Trouble' },
+              { title: 'Projects', dfId: 'Starforged/Oracles/Settlements/Projects' },
+              { title: 'Trouble', dfId: 'Starforged/Oracles/Settlements/Trouble' },
             ],
           ]
 
@@ -329,24 +329,24 @@ export default {
             [
               {
                 title: 'Type',
-                dfId: `Oracles/Derelicts/Type/${kc}`,
+                dfId: `Starforged/Oracles/Derelicts/Type/${kc}`,
                 fl: true,
               },
               {
                 title: 'Condition',
-                dfId: `Oracles/Derelicts/Condition`,
+                dfId: `Starforged/Oracles/Derelicts/Condition`,
                 fl: true,
               },
             ],
             [
               {
                 title: 'Outer first look',
-                dfId: `Oracles/Derelicts/Outer_First_Look`,
+                dfId: `Starforged/Oracles/Derelicts/Outer_First_Look`,
                 fl: true,
               },
               {
                 title: 'Inner first look',
-                dfId: `Oracles/Derelicts/Inner_First_Look`,
+                dfId: `Starforged/Oracles/Derelicts/Inner_First_Look`,
               },
             ],
           ]
@@ -356,66 +356,66 @@ export default {
             [
               {
                 title: 'Scale',
-                dfId: `Oracles/Vaults/Scale`,
+                dfId: `Starforged/Oracles/Vaults/Scale`,
                 fl: true,
               },
               {
                 title: 'Form',
-                dfId: `Oracles/Vaults/Form`,
+                dfId: `Starforged/Oracles/Vaults/Form`,
                 fl: true,
               },
               {
                 title: 'Shape',
-                dfId: `Oracles/Vaults/Shape`,
+                dfId: `Starforged/Oracles/Vaults/Shape`,
                 fl: true,
               },
             ],
             [
               {
                 title: 'Material',
-                dfId: `Oracles/Vaults/Material`,
+                dfId: `Starforged/Oracles/Vaults/Material`,
                 fl: true,
               },
               {
                 title: 'Outer First Look',
-                dfId: `Oracles/Vaults/Outer_First_Look`,
+                dfId: `Starforged/Oracles/Vaults/Outer_First_Look`,
                 fl: true,
               },
             ],
             [
               {
                 title: 'Interior First Look',
-                dfId: `Oracles/Vaults/Interior/First_Look`,
+                dfId: `Starforged/Oracles/Vaults/Interior/First_Look`,
               },
               {
                 title: 'Interior Feature',
-                dfId: `Oracles/Vaults/Interior/Feature`,
+                dfId: `Starforged/Oracles/Vaults/Interior/Feature`,
               },
               {
                 title: 'Interior Peril',
-                dfId: `Oracles/Vaults/Interior/Peril`,
+                dfId: `Starforged/Oracles/Vaults/Interior/Peril`,
               },
               {
                 title: 'Interior Opportunity',
-                dfId: `Oracles/Vaults/Interior/Opportunity`,
+                dfId: `Starforged/Oracles/Vaults/Interior/Opportunity`,
               },
             ],
             [
               {
                 title: 'Sanctum Purpose',
-                dfId: `Oracles/Vaults/Sanctum/Purpose`,
+                dfId: `Starforged/Oracles/Vaults/Sanctum/Purpose`,
               },
               {
                 title: 'Sanctum Feature',
-                dfId: `Oracles/Vaults/Sanctum/Feature`,
+                dfId: `Starforged/Oracles/Vaults/Sanctum/Feature`,
               },
               {
                 title: 'Sanctum Peril',
-                dfId: `Oracles/Vaults/Sanctum/Peril`,
+                dfId: `Starforged/Oracles/Vaults/Sanctum/Peril`,
               },
               {
                 title: 'Sanctum Opportunity',
-                dfId: `Oracles/Vaults/Sanctum/Opportunity`,
+                dfId: `Starforged/Oracles/Vaults/Sanctum/Opportunity`,
               },
             ],
           ]
