@@ -118,7 +118,7 @@ const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
 
 function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
-    const [kind] = url.split('/')
+    const kind = url.split('/')[1]
     const compendiumKey = COMPENDIUM_KEY_MAP[kind]
     if (!compendiumKey) return match
     return `@Compendium[foundry-ironsworn.${compendiumKey}.${idMap[url]}]{${text}}`
