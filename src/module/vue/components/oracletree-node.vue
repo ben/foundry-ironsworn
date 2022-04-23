@@ -1,10 +1,22 @@
 <template>
   <div class="flexcol nogrow" :class="{ hidden: hidden }">
-    <h4 class="clickable text" @click="click">
-      <i class="fa fa-dice-d6" v-if="oracle.foundryTable" />
-      <span v-else-if="expanded"><i class="fa fa-caret-down" /></span>
-      <span v-else><i class="fa fa-caret-right" /></span>
-      {{ name }}
+    <h4 class="clickable text flexrow">
+      <i
+        v-if="oracle.foundryTable"
+        class="fa fa-dice-d6 nogrow"
+        style="flex-basis: 20px"
+        @click="click"
+      />
+      <span v-else class="nogrow" style="flex-basis: 15px" @click="click">
+        <i v-if="expanded" class="fa fa-caret-down" />
+        <i v-else class="fa fa-caret-right" />
+      </span>
+      <span @click="click">{{ name }}</span>
+      <icon-button
+        v-if="oracle.foundryTable"
+        icon="eye"
+        @click="expandDetails"
+      />
     </h4>
 
     <transition name="slide">
@@ -41,7 +53,6 @@
   padding-top: 0;
   padding-bottom: 0;
 }
-
 </style>
 
 <script>
@@ -98,12 +109,16 @@ export default {
   },
 
   methods: {
-    async click() {
+    click() {
       if (this.oracle.foundryTable) {
         CONFIG.IRONSWORN.rollAndDisplayOracleResult(this.oracle.foundryTable)
       } else {
         this.manuallyExpanded = !this.manuallyExpanded
       }
+    },
+
+    expandDetails() {
+      console.log(this)
     },
   },
 }
