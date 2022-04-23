@@ -1,36 +1,52 @@
 <template>
   <div class="flexcol nogrow" :class="{ hidden: hidden }">
-    <h4 class="clickable text flexrow">
-      <i
-        v-if="oracle.foundryTable"
-        class="fa fa-dice-d6 nogrow"
-        style="flex-basis: 20px"
-        @click="click"
-      />
-      <span v-else class="nogrow" style="flex-basis: 15px" @click="click">
-        <i v-if="expanded" class="fa fa-caret-down" />
-        <i v-else class="fa fa-caret-right" />
-      </span>
-      <span @click="click">{{ name }}</span>
-      <icon-button
-        v-if="oracle.foundryTable"
-        icon="eye"
-        @click="expandDetails"
-      />
-    </h4>
-
-    <transition name="slide">
-      <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
-        <oracletree-node
-          v-for="child in children"
-          :key="child.dfid"
-          :oracle="child"
-          :searchQuery="searchQuery"
-          :parentMatchesSearch="matchesSearch"
-          ref="children"
+    <!-- TODO: split this into two components, yo -->
+    <!-- Leaf node -->
+    <div v-if="oracle.foundryTable">
+      <h4 class="clickable text flexrow">
+        <i
+          class="fa fa-dice-d6 nogrow"
+          style="flex-basis: 20px"
+          @click="rollOracle"
         />
-      </div>
-    </transition>
+        <span @click="rollOracle">{{ name }}</span>
+        <icon-button
+          v-if="oracle.foundryTable"
+          icon="eye"
+          @click="expanded = !expanded"
+        />
+      </h4>
+
+      <transition name="slide">
+        <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
+          (table preview)
+        </div>
+      </transition>
+    </div>
+
+    <!-- Branch node -->
+    <div v-else>
+      <h4 class="clickable text flexrow">
+        <span class="nogrow" style="flex-basis: 15px" @click="click">
+          <i v-if="expanded" class="fa fa-caret-down" />
+          <i v-else class="fa fa-caret-right" />
+        </span>
+        <span @click="click">{{ name }}</span>
+      </h4>
+
+      <transition name="slide">
+        <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
+          <oracletree-node
+            v-for="child in children"
+            :key="child.dfid"
+            :oracle="child"
+            :searchQuery="searchQuery"
+            :parentMatchesSearch="matchesSearch"
+            ref="children"
+          />
+        </div>
+      </transition>
+    </div>
   </div>
 </template>
 
@@ -118,6 +134,7 @@ export default {
     },
 
     expandDetails() {
+      this.expanded = !this.expanded
       console.log(this)
     },
   },
