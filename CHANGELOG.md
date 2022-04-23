@@ -3,6 +3,7 @@
 ## In progress
 
 - Prune Starforged sectors to just one ([#301](https://github.com/ben/foundry-ironsworn/pull/301))
+- Bump Dataforged for content fixes ([#302](https://github.com/ben/foundry-ironsworn/pull/302))
 
 ## 1.10.45
 
