@@ -13,12 +13,16 @@
         <icon-button
           v-if="oracle.foundryTable"
           icon="eye"
-          @click="expanded = !expanded"
+          @click="descriptionExpanded = !descriptionExpanded"
         />
       </h4>
 
       <transition name="slide">
-        <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
+        <div
+          class="flexcol"
+          v-if="descriptionExpanded"
+          style="margin-left: 1rem"
+        >
           (table preview)
         </div>
       </transition>
@@ -26,12 +30,15 @@
 
     <!-- Branch node -->
     <div v-else>
-      <h4 class="clickable text flexrow">
-        <span class="nogrow" style="flex-basis: 15px" @click="click">
+      <h4
+        class="clickable text flexrow"
+        @click="manuallyExpanded = !manuallyExpanded"
+      >
+        <span class="nogrow" style="flex-basis: 15px">
           <i v-if="expanded" class="fa fa-caret-down" />
           <i v-else class="fa fa-caret-right" />
         </span>
-        <span @click="click">{{ name }}</span>
+        {{ name }}
       </h4>
 
       <transition name="slide">
@@ -82,6 +89,7 @@ export default {
   data() {
     return {
       manuallyExpanded: false,
+      descriptionExpanded: false,
     }
   },
 
@@ -113,13 +121,12 @@ export default {
 
     hidden() {
       if (!this.searchQuery) return false
-      // todo: this or a parent or a child matches the search query
       return !(
         (
           this.matchesSearch || // This matches
           this.parentMatchesSearch || // Parent matches
           this.childMatchesSearch
-        ) // Child matches
+        )
       )
     },
   },
@@ -133,9 +140,8 @@ export default {
       }
     },
 
-    expandDetails() {
-      this.expanded = !this.expanded
-      console.log(this)
+    rollOracle() {
+      CONFIG.IRONSWORN.rollAndDisplayOracleResult(this.oracle.foundryTable)
     },
   },
 }
