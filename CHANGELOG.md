@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Prune Starforged sectors to just one ([#301](https://github.com/ben/foundry-ironsworn/pull/301))
+
 ## 1.10.45
 
 - Centralize Dataforged import and improve encounter display ([#297](https://github.com/ben/foundry-ironsworn/pull/297))
