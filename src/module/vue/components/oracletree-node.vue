@@ -7,16 +7,18 @@
       {{ name }}
     </h4>
 
-    <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
-      <oracletree-node
-        v-for="child in children"
-        :key="child.dfid"
-        :oracle="child"
-        :searchQuery="searchQuery"
-        :parentMatchesSearch="matchesSearch"
-        ref="children"
-      />
-    </div>
+    <transition name="slide">
+      <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
+        <oracletree-node
+          v-for="child in children"
+          :key="child.dfid"
+          :oracle="child"
+          :searchQuery="searchQuery"
+          :parentMatchesSearch="matchesSearch"
+          ref="children"
+        />
+      </div>
+    </transition>
   </div>
 </template>
 
@@ -24,6 +26,22 @@
 .hidden {
   display: none;
 }
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.4s ease;
+  max-height: 500px;
+  opacity: 1;
+}
+.slide-enter,
+.slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 </style>
 
 <script>
@@ -47,7 +65,7 @@ export default {
 
     childMatchesSearch() {
       this.searchQuery
-      return this.$refs.children?.find(x => x.matchesSearch)
+      return this.$refs.children?.find((x) => x.matchesSearch)
     },
 
     expanded() {
