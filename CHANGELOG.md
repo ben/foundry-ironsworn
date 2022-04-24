@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Refactor some CSS ([#305](https://github.com/ben/foundry-ironsworn/pull/305))
+
 ## 1.10.47
 
 - Better oracles in the movesheet ([#303](https://github.com/ben/foundry-ironsworn/pull/303))
