@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.49
+
 - Include extra text in oracle results ([#307](https://github.com/ben/foundry-ironsworn/pull/307))
 
 ## 1.10.48
