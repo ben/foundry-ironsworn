@@ -17,6 +17,7 @@
       <oracletree-node
         v-for="oracle in dfOracles"
         :key="oracle.key"
+        :actor="actor"
         :oracle="oracle"
         :searchQuery="searchQuery"
         ref="oracles"
