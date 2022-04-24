@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Include extra text in oracle results ([#307](https://github.com/ben/foundry-ironsworn/pull/307))
+
 ## 1.10.48
 
 - Refactor some CSS ([#305](https://github.com/ben/foundry-ironsworn/pull/305))
