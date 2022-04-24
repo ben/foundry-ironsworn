@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.47
+
 - Better oracles in the movesheet ([#303](https://github.com/ben/foundry-ironsworn/pull/303))
 
 ## 1.10.46
