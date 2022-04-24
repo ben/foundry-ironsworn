@@ -193,10 +193,11 @@ async function processAssets(idMap: { [key: string]: string }) {
         name: `${assetType.Name} / ${asset.Name}`,
         data: {
           description: renderMarkdown(assetType.Description, idMap),
-          fields: asset.Inputs?.map((input) => ({
-            name: input.Name,
-            value: '',
-          })) || [],
+          fields:
+            asset.Inputs?.map((input) => ({
+              name: input.Name,
+              value: '',
+            })) || [],
           abilities: (asset.Abilities ?? []).map((ability) => ({
             enabled: ability.Enabled || false,
             description: renderMarkdown(ability.Text, idMap),
@@ -236,21 +237,24 @@ async function processOracles(idMap: { [key: string]: string }) {
         replacement: true,
         displayRoll: true,
         /* folder: // would require using an additional module */
-        results: oracle.Table?.map((tableRow) => ({
-          range: [tableRow.Floor, tableRow.Ceiling],
-          text: tableRow.Result && renderLinksInStr(tableRow.Result, idMap),
-        })).filter((x) => x.range[0] !== null),
+        results: oracle.Table?.map((tableRow) => {
+          let text: string
+          if (tableRow.Result && tableRow.Summary) {
+            text = `${tableRow.Result} (${tableRow.Summary})`
+          } else text = tableRow.Result ?? ''
+          return {
+            range: [tableRow.Floor, tableRow.Ceiling],
+            text: tableRow.Result && renderLinksInStr(text, idMap),
+          }
+        }).filter((x) => x.range[0] !== null),
       })
     }
 
-    for (const child of oracle.Oracles ?? [])
-      await processOracle(child)
+    for (const child of oracle.Oracles ?? []) await processOracle(child)
   }
   async function processCategory(cat: IOracleCategory) {
-    for (const oracle of cat.Oracles ?? [])
-      await processOracle(oracle)
-    for (const child of cat.Categories ?? [])
-      await processCategory(child)
+    for (const oracle of cat.Oracles ?? []) await processOracle(oracle)
+    for (const child of cat.Categories ?? []) await processCategory(child)
   }
 
   for (const category of starforged.oracles) {
@@ -264,7 +268,7 @@ async function processEncounters(idMap: { [key: string]: string }) {
   for (const encounter of starforged.encounters) {
     const description = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
       ...encounter,
-      variantLinks: encounter.Variants.map(x => renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)),
+      variantLinks: encounter.Variants.map((x) => renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)),
     })
 
     encountersToCreate.push({
@@ -314,4 +318,3 @@ async function processFoes() {
     await actor?.createEmbeddedDocuments('Item', [foeItem.data])
   }
 }
-
