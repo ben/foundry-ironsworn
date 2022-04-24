@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Better oracles in the movesheet ([#303](https://github.com/ben/foundry-ironsworn/pull/303))
+
 ## 1.10.46
 
 - Prune Starforged sectors to just one ([#301](https://github.com/ben/foundry-ironsworn/pull/301))
