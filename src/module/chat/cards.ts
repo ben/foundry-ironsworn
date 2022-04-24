@@ -37,6 +37,7 @@ export class IronswornChatCard {
     html.find('.ironsworn__sojourn__extra__roll').on('click', (ev) => this._sojournExtra.call(this, ev))
     html.find('.ironsworn__paytheprice__roll').on('click', (ev) => this._payThePriceExtra.call(this, ev))
     html.find('.starforged__oracle__roll').on('click', (ev) => this._sfOracleRoll.call(this, ev))
+    html.find('.starforged__oracle__reroll').on('click', (ev) => this._sfOracleReroll.call(this, ev))
   }
 
   async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -235,6 +236,15 @@ export class IronswornChatCard {
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     const { tableid } = ev.target.dataset
     const table = await pack?.getDocument(tableid) as any | undefined
+    rollAndDisplayOracleResult(table)
+  }
+
+  async _sfOracleReroll(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+    const parent = $(ev.target).parent('.table-draw')
+    const tableId = parent.data('table-id')
+    const table = await pack?.getDocument(tableId) as any | undefined
     rollAndDisplayOracleResult(table)
   }
 
