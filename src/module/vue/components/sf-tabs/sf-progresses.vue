@@ -23,9 +23,9 @@
         <i :class="completedCaretClass"></i> {{ $t('IRONSWORN.Completed') }}
       </h3>
       <transition
-        name="completed-slide"
+        name="slide"
         tag="div"
-        class="nogrow"
+        class="nogrow completed"
         style="margin: 0; padding: 0"
       >
         <div v-if="expandCompleted">
@@ -59,30 +59,10 @@ h3 {
 }
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.4s ease;
-  overflow: hidden;
   max-height: 106px;
-  opacity: 1;
-}
-.completed-slide-enter-active,
-.completed-slide-leave-active {
-  transition: all 0.4s ease-out;
-  overflow: hidden;
-  max-height: 400px;
-  opacity: 1;
-}
-.slide-enter,
-.slide-leave-to,
-.completed-slide-enter,
-.completed-slide-leave-to {
-  max-height: 0;
-  opacity: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-top: 0;
-  border-bottom: 0;
+  &.completed {
+    max-height: 400px;
+  }
 }
 </style>
 

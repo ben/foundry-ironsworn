@@ -66,18 +66,7 @@
 }
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.4s ease;
-  max-height: 500px;
-  opacity: 1;
-}
-.slide-enter,
-.slide-leave-to {
-  max-height: 0;
-  opacity: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+  max-height: 1000px;
 }
 </style>
 
