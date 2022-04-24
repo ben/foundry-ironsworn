@@ -51,21 +51,7 @@
 <style lang="less" scoped>
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.4s ease;
-  overflow: hidden;
   max-height: 225px;
-  opacity: 1;
-}
-.slide-enter,
-.slide-leave-to {
-  max-height: 0;
-  opacity: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-top: 0;
-  border-bottom: 0;
 }
 </style>
 

@@ -65,13 +65,7 @@
 <style lang="less" scoped>
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.25s ease;
-  overflow: hidden;
-  max-height: 250px;
-}
-.slide-enter,
-.slide-leave-to {
-  max-height: 0;
+  max-height: 350px;
 }
 </style>
 

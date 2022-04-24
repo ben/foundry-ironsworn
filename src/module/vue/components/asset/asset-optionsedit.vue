@@ -44,21 +44,7 @@
 }
 .slide-enter-active,
 .slide-leave-active {
-  transition: all 0.3s ease;
-  overflow: hidden;
   max-height: 30px;
-  opacity: 1;
-}
-.slide-enter,
-.slide-leave-to {
-  max-height: 0;
-  opacity: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-top: 0;
-  border-bottom: 0;
 }
 </style>
 

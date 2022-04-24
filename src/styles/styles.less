@@ -543,3 +543,22 @@ table td:first-child {
   white-space: nowrap;
   padding-right: 0.5rem;
 }
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.4s ease;
+  overflow: hidden;
+  max-height: 500px; // NOTE: fill this in where you know the right number
+  opacity: 1;
+}
+.slide-enter,
+.slide-leave-to {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  border-top: 0 !important;
+  border-bottom: 0 !important;
+}
