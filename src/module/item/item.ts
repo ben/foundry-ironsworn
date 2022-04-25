@@ -113,6 +113,9 @@ export class IronswornItem extends Item {
     abilities.push({
       enabled: false,
       description: '',
+      hasClock: false,
+      clockMax: 4,
+      clockTicks: 0,
     })
     return this.update({ 'data.abilities': abilities })
   }
