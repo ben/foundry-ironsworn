@@ -25,7 +25,7 @@
           style="flex-basis: 100px"
           :wedges="ability.clockMax"
           :ticked="ability.clockTicks"
-          @click="setClock(ability)"
+          @click="setClock(i, $event)"
         />
       </div>
       <div class="flexrow" v-if="editMode">
@@ -71,6 +71,12 @@ export default {
     markAbility(idx) {
       const abilities = Object.values(this.item.data.abilities)
       abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
+      this.$item.update({ data: { abilities } })
+    },
+
+    setClock(abilityIdx, clockTicks) {
+      const abilities = Object.values(this.item.data.abilities)
+      abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
       this.$item.update({ data: { abilities } })
     },
 
