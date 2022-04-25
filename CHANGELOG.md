@@ -4,6 +4,8 @@
 
 ## 1.10.50
 
+- Some fixes to the Starforged theme ([#310](https://github.com/ben/foundry-ironsworn/pull/310))
+
 ## 1.10.49
 
 - Include extra text in oracle results ([#307](https://github.com/ben/foundry-ironsworn/pull/307))
