@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap');
 
-@dark-color: #00333399;
+@dark-overlay: #000000cc;
+@dark-color: #33999933;
 @muted-color: #11777799;
 @medium-color: #33999999;
 @light-color: #55bbbb99;
-@background-gradient: rgba(0, 0, 0, 0.4);
+@background-gradient: rgba(0, 0, 0, 0.6);
 
 @text-dark-color: #399;
-@text-medium-color: #5cc;
-@text-light-color: #8ff;
+@text-medium-color: #3ff;
+@text-light-color: #6ff;
 
 body {
   font-family: 'Carrois Gothic SC', sans-serif;
@@ -37,6 +38,7 @@ input.highlight:focus {
 .theme-starforged {
   color: @text-medium-color;
   select {
+    border-color: @dark-color;
     color: @text-medium-color;
   }
 
@@ -162,9 +164,10 @@ input.highlight:focus {
     border-color: @light-color;
   }
 
-  a.content-link.entity-link {
-    background-color: @muted-color;
-
+  .entity-link {
+    background-color: @dark-color;
+    border-color: @medium-color;
+    color: @text-medium-color;
     i {
       color: @text-light-color;
     }
@@ -183,15 +186,17 @@ input.highlight:focus {
 
 .chat-message {
   .message-content .theme-starforged {
-    background: black;
+    background: @dark-overlay;
     border: 1px solid @text-dark-color;
   }
 
   .dice-formula,
-  .dice-total {
-    background: rgba(0, 0, 0, 0.8);
+  .dice-total
+  {
+    background: @dark-overlay;
     color: @text-medium-color;
-
+    border-width: 0px;
+    padding: 5px 0px 5px 0px;
     .die {
       &.d6 {
         background-image: url('systems/foundry-ironsworn/assets/d6.svg');
@@ -212,7 +217,8 @@ input.highlight:focus {
   }
 
   table tr.selected {
-    background-color: @text-light-color;
-    color: @dark-color;
+    background-color: @medium-color;
+    color: @text-light-color;
   }
+
 }
