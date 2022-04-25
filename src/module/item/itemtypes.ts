@@ -18,6 +18,9 @@ interface AssetAbility {
   name?: string
   enabled: boolean
   description: string
+  hasClock: boolean
+  clockMax: number
+  clockTicks: number
 }
 
 interface AssetExclusiveOption {
