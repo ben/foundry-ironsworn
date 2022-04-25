@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix location-class and name rollers
+- Add clocks to asset abilities ([#311](https://github.com/ben/foundry-ironsworn/pull/311))
 
 ## 1.10.50
 
