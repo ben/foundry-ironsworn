@@ -487,15 +487,15 @@ export default {
     async randomizeKlass() {
       let tableKey
       if (this.actor.data.subtype === 'planet') {
-        tableKey = 'Oracles/Planets/Class'
+        tableKey = 'Starforged/Oracles/Planets/Class'
       } else if (this.actor.data.subtype === 'settlement') {
-        tableKey = 'Oracles/Settlements/Location'
+        tableKey = 'Starforged/Oracles/Settlements/Location'
       } else if (this.actor.data.subtype === 'star') {
-        tableKey = 'Oracles/Space/Stellar Object'
+        tableKey = 'Starforged/Oracles/Space/Stellar Object'
       } else if (this.actor.data.subtype === 'derelict') {
-        tableKey = 'Oracles/Derelicts/Location'
+        tableKey = 'Starforged/Oracles/Derelicts/Location'
       } else if (this.actor.data.subtype === 'vault') {
-        tableKey = 'Oracles/Vaults/Location'
+        tableKey = 'Starforged/Oracles/Vaults/Location'
       }
 
       const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(tableKey)

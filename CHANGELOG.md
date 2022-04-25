@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix location-class and name rollers
+
 ## 1.10.50
 
 - Some fixes to the Starforged theme ([#310](https://github.com/ben/foundry-ironsworn/pull/310))

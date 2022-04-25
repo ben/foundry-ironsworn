@@ -72,8 +72,9 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
   return undefined
 }
 
-export function getDFOracleByDfId(dfid: string): IOracle | undefined {
+export function getDFOracleByDfId(dfid: string): IOracle | IOracleCategory | undefined {
   const walk = (oc: IOracleCategory) => {
+    if (oc.$id === dfid) return oc
     for (const oracle of oc.Oracles ?? []) {
       if (oracle.$id === dfid) return oracle
     }
