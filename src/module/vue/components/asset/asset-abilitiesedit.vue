@@ -33,7 +33,7 @@
           <input
             type="checkbox"
             :checked="ability.hasClock"
-            @change="markClock(i)"
+            @change="enableClock(i)"
           />
           {{ $t('IRONSWORN.Clock') }}
         </label>
@@ -71,6 +71,17 @@ export default {
     markAbility(idx) {
       const abilities = Object.values(this.item.data.abilities)
       abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
+      this.$item.update({ data: { abilities } })
+    },
+
+    enableClock(idx) {
+      const abilities = Object.values(this.item.data.abilities)
+      abilities[idx] = { ...abilities[idx], hasClock: !abilities[idx].hasClock }
+      this.$item.update({ data: { abilities } })
+    },
+
+    clockMaxChange() {
+      const abilities = Object.values(this.item.data.abilities)
       this.$item.update({ data: { abilities } })
     },
 
