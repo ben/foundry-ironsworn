@@ -112,7 +112,7 @@
   padding: 7px;
 }
 .highlighted {
-  background: lightyellow;
+  background: #33999933;
 }
 </style>
 
