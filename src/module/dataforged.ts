@@ -1,7 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { cloneDeep, get, isArray, isObject, max, set } from 'lodash'
-import { starforged, IMove, IOracle, IOracleCategory } from 'dataforged'
+import { starforged, IMove, IOracle, IOracleCategory, IInputClock } from 'dataforged'
 import { marked } from 'marked'
 import { IronswornItem } from './item/item'
 import shajs from 'sha.js'
@@ -199,10 +199,24 @@ async function processAssets(idMap: { [key: string]: string }) {
               name: input.Name,
               value: '',
             })) || [],
-          abilities: (asset.Abilities ?? []).map((ability) => ({
-            enabled: ability.Enabled || false,
-            description: renderMarkdown(ability.Text, idMap),
-          })),
+          abilities: (asset.Abilities ?? []).map((ability) => {
+            const ret = {
+              enabled: ability.Enabled || false,
+              description: renderMarkdown(ability.Text, idMap),
+            } as any
+
+            for (const input of ability.Inputs ?? []) {
+              if (input['Input Type'] === 'Clock') {
+                const ic = input as IInputClock
+                ret.hasClock = true
+                ret.clockMax = ic.Segments
+                ret.clockTicks = ic.Filled
+              }
+              // TODO: other input types
+            }
+
+            return ret
+          }),
           track: {
             enabled: !!asset['Condition Meter'],
             name: asset['Condition Meter']?.Name,

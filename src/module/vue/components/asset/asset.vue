@@ -27,10 +27,20 @@
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
             element="li"
+            class="flexrow"
             :actor="actingActor"
             @moveclick="moveclick"
           >
+            <i class="fas fa-circle nogrow" style="margin: 1rem 0.5rem 0 0"></i>
             <div v-html="$enrichHtml(ability.description)"></div>
+            <clock
+              v-if="ability.hasClock"
+              class="nogrow"
+              style="flex-basis: 100px"
+              :wedges="ability.clockMax"
+              :ticked="ability.clockTicks"
+              @click="setAbilityClock(i, $event)"
+            />
           </with-rolllisteners>
         </ul>
 
@@ -96,7 +106,7 @@ export default {
     actingActor() {
       if (this.actor.type === 'character') return this.actor
       return CONFIG.IRONSWORN.defaultActor()?.toObject(false)
-    }
+    },
   },
 
   methods: {
@@ -145,7 +155,13 @@ export default {
       }
       actorWithMoves?.moveSheet?.render(true)
       actorWithMoves?.moveSheet?.highlightMove(item)
-    }
+    },
+
+    setAbilityClock(abilityIdx, clockTicks) {
+      const abilities = Object.values(this.asset.data.abilities)
+      abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
+      this.foundryItem.update({ data: { abilities } })
+    },
   },
 }
 </script>
