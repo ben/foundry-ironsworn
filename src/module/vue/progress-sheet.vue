@@ -14,7 +14,7 @@
     >
       <option value="vow">{{ $t('IRONSWORN.Vow') }}</option>
       <option value="progress">{{ $t('IRONSWORN.Progress') }}</option>
-      <option value="bond">{{ $t('IRONSWORN.Bond') }}</option>
+      <option value="bond">{{ $t('IRONSWORN.Connection') }}</option>
     </select>
 
     <hr class="nogrow" />
