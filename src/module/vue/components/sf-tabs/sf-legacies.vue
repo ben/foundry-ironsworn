@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import LegacyTrack from '../legacy-track.vue'
 export default {
   props: {
     actor: Object,

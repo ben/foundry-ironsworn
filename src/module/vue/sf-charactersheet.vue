@@ -126,7 +126,7 @@ export default {
       { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
       { titleKey: 'IRONSWORN.Assets', component: 'sf-assets' },
       { titleKey: 'IRONSWORN.Progress', component: 'sf-progresses' },
-      { titleKey: 'IRONSWORN.Bonds', component: 'sf-bonds' },
+      { titleKey: 'IRONSWORN.Connections', component: 'sf-connections' },
       { titleKey: 'IRONSWORN.Notes', component: 'sf-notes' },
     ]
     return {

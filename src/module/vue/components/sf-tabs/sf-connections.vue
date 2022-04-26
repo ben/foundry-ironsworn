@@ -2,7 +2,7 @@
   <div class="flexcol">
     <transition-group name="slide" tag="div" class="nogrow">
       <progress-box
-        v-for="item in bonds"
+        v-for="item in connections"
         :key="item._id"
         :item="item"
         :actor="actor"
@@ -11,7 +11,7 @@
     </transition-group>
 
     <div class="flexrow nogrow" style="text-align: center">
-      <div class="clickable block" @click="newBond">
+      <div class="clickable block" @click="newConnection">
         <i class="fas fa-plus"></i>
         {{ $t('IRONSWORN.Bond') }}
       </div>
@@ -33,20 +33,20 @@ export default {
   },
 
   computed: {
-    bonds() {
+    connections() {
       return this.actor.items
         .filter((x) => x.type === 'progress')
-        .filter((x) => x.data.subtype === 'bond')
+        .filter((x) => x.data.subtype === 'bond') // legacy name
     },
   },
 
   methods: {
-    async newBond() {
+    async newConnection() {
       const item = await Item.create(
         {
-          name: 'Bond',
+          name: game.i18n.localize('IRONSWORN.Connection'),
           type: 'progress',
-          data: { subtype: 'bond' },
+          data: { subtype: 'bond' }, // legacy name
           sort: 9000000,
         },
         { parent: this.$actor }

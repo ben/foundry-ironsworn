@@ -106,7 +106,9 @@ export default {
       return actor?.items.get(this.item._id)
     },
     subtitle() {
-      return this.$t(`IRONSWORN.${this.$capitalize(this.item.data.subtype)}`)
+      let subtype=this.$capitalize(this.item.data.subtype)
+      if (subtype === 'Bond') subtype = 'Connection' // translate name
+      return this.$t(`IRONSWORN.${subtype}`)
     },
     completedIcon() {
       const suffix = this.item.data.completed
