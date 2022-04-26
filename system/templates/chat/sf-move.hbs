@@ -7,7 +7,7 @@
 
   <div class="dice-result dice-tooltip dice-roll ironsworn-roll" data-move="{{move.Name}}">
     <div class="roll-result">
-      {{{enrichMarkdown move.data.data.Text}}}
+      {{{stripTables (enrichMarkdown move.data.data.Text)}}}
     </div>
   </div>
 

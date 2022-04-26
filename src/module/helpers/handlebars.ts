@@ -97,6 +97,8 @@ export class IronswornHandlebarsHelpers {
 
     Handlebars.registerHelper('enrichMarkdown', this.enrichMarkdown)
 
+    Handlebars.registerHelper('stripTables', this.stripTables)
+
     Handlebars.registerHelper('rangeEach', function (context, _options) {
       const results: string[] = []
       const { from, to, current, min, max } = context.hash
@@ -179,5 +181,9 @@ export class IronswornHandlebarsHelpers {
   static enrichMarkdown(md: string) {
     const html = marked.parse(md, { gfm: true })
     return IronswornHandlebarsHelpers.enrichHtml(html)
+  }
+
+  static stripTables(html: string) {
+    return html.replace(/<table>[\s\S]*<\/table>/mg ,'')
   }
 }
