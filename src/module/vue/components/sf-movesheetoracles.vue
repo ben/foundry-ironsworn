@@ -19,7 +19,7 @@
         :key="oracle.key"
         :actor="actor"
         :oracle="oracle"
-        :searchQuery="searchQuery"
+        :searchQuery="checkedSearchQuery"
         ref="oracles"
       />
     </div>
@@ -58,7 +58,10 @@ export default {
 
     // Walk the DF oracles and decorate with Foundry IDs
     const walk = async (node) => {
-      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(node.dfid)
+      const table =
+        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
+          node.dfid
+        )
       if (table) {
         Vue.set(node, 'foundryTable', table)
         this.flatOracles.push(node)
@@ -71,10 +74,19 @@ export default {
   },
 
   computed: {
+    checkedSearchQuery() {
+      try {
+        new RegExp(this.searchQuery)
+        return this.searchQuery
+      } catch (error) {
+        return ''
+      }
+    },
+
     searchResults() {
       if (!this.searchQuery) return null
 
-      const re = new RegExp(this.searchQuery, 'i')
+      const re = new RegExp(this.checkedSearchQuery, 'i')
       return this.flatOracles.filter((x) =>
         re.test(`${x.Category}/${x.foundryTable.name}`)
       )

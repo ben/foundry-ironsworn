@@ -23,7 +23,12 @@
           @moveclick="highlightMove"
         />
       </div>
-      <div class="nogrow" v-else v-for="category of categories" :key="category.$id">
+      <div
+        class="nogrow"
+        v-else
+        v-for="category of categories"
+        :key="category.$id"
+      >
         <h2>
           {{ category.tname }}
         </h2>
@@ -83,6 +88,15 @@ export default {
   },
 
   computed: {
+    checkedSearchQuery() {
+      try {
+        new RegExp(this.searchQuery)
+        return this.searchQuery
+      } catch (error) {
+        return ''
+      }
+    },
+
     sortedMoves() {
       const ret = []
       for (const category of this.categories) {
@@ -94,7 +108,7 @@ export default {
     searchResults() {
       if (!this.searchQuery) return null
 
-      const re = new RegExp(this.searchQuery, 'i')
+      const re = new RegExp(this.checkedSearchQuery, 'i')
       return this.sortedMoves.filter((x) => re.test(x.foundryItem.name))
     },
   },

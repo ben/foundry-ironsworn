@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Catch bad regexes in search boxes
+
 ## 1.10.51
 
 - Fix location-class and name rollers
