@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.52
+
 - Catch bad regexes in search boxes
 - "Bonds" -> "Connections" ([#315](https://github.com/ben/foundry-ironsworn/pull/315))
 
