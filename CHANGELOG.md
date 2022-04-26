@@ -2,7 +2,13 @@
 
 ## In progress
 
+- #317:
+  - Expand the move sheet when navigating to a move
+  - Strip tables from chat-log output for moves like _Pay the Price_ that don't roll any dice and have an oracle.
+
 ## 1.10.53
+
+- One more instance of "Bonds"
 
 ## 1.10.52
 

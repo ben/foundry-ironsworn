@@ -31,6 +31,7 @@ export class SFCharacterMoveSheet extends VueApplication {
   }
 
   async highlightMove(move: IronswornItem) {
+    this.maximize()
     this._vm?.$refs.child?.['highlightMove']?.(move)
   }
 }
