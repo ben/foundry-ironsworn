@@ -13,7 +13,7 @@
     <div class="flexrow nogrow" style="text-align: center">
       <div class="clickable block" @click="newConnection">
         <i class="fas fa-plus"></i>
-        {{ $t('IRONSWORN.Bond') }}
+        {{ $t('IRONSWORN.Connection') }}
       </div>
     </div>
   </div>
