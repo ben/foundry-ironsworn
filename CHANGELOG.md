@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.53
+
 ## 1.10.52
 
 - Catch bad regexes in search boxes
