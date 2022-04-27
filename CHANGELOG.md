@@ -3,6 +3,7 @@
 ## In progress
 
 - Update the starship sheet to be more useful ([#318](https://github.com/ben/foundry-ironsworn/pull/318))
+- Update the move sheet to better match the oracle sheet ([#320](https://github.com/ben/foundry-ironsworn/pull/320))
 
 ## 1.10.54
 
