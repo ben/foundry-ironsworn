@@ -3,6 +3,7 @@
 ## In progress
 
 - "Collapse all" buttons on move and oracle sheets ([#322](https://github.com/ben/foundry-ironsworn/pull/322))
+- Replace `▶ Descriptor + Focus` links in oracles with two links ([#323](https://github.com/ben/foundry-ironsworn/pull/323))
 
 ## 1.10.55
 
