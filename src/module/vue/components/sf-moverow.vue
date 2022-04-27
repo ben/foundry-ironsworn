@@ -22,6 +22,11 @@
 </template>
 
 <style lang="less" scoped>
+.move-summary {
+  border-left: 2px solid;
+  margin-left: 5px;
+  padding-left: 1rem;
+}
 h4 {
   margin: 0;
 }
