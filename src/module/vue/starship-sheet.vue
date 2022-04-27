@@ -5,51 +5,59 @@
       <document-name :document="actor" />
     </header>
 
-    <section class="nogrow">
-      <h4 class="clickable text" @click="rollHealth">
-        {{ $t('IRONSWORN.Health') }}
-      </h4>
-
-      <boxrow
-        style="line-height: 25px"
-        :min="0"
-        :max="5"
-        :current="actor.data.health"
-        @click="setHealth"
-      />
-    </section>
-
-    <hr class="nogrow" />
-
-    <section class="flexcol ironsworn__drop__target" data-drop-type="asset">
-      <transition-group name="slide" tag="div" class="nogrow">
-        <asset
-          v-for="asset in assets"
-          :key="asset._id"
-          :actor="actor"
-          :asset="asset"
-        />
-      </transition-group>
-      <div class="flexrow nogrow" style="text-align: center">
-        <div class="clickable block" @click="openCompendium">
-          <i class="fas fa-atlas" />
-          {{ $t('IRONSWORN.Assets') }}
-        </div>
+    <section class="flexrow nogrow">
+      <div
+        class="tab"
+        v-for="tab in tabs"
+        :key="tab.titleKey"
+        :class="['clickable', 'block', { selected: currentTab === tab }]"
+        @click="currentTab = tab"
+      >
+        {{ $t(tab.titleKey) }}
       </div>
     </section>
+
+    <keep-alive>
+      <component
+        :is="currentTab.component"
+        :actor="actor"
+        style="margin: 0.5rem"
+      />
+    </keep-alive>
 
     <hr class="nogrow" />
 
     <section class="flexrow nogrow">
       <div style="text-align: center">
-        <condition-checkbox class="nogrow" :actor="actor" name="battered" :global="true" />
+        <condition-checkbox
+          class="nogrow"
+          :actor="actor"
+          name="battered"
+          :global="true"
+        />
       </div>
       <div style="text-align: center">
-        <condition-checkbox class="nogrow" :actor="actor" name="cursed" :global="true" />
+        <condition-checkbox
+          class="nogrow"
+          :actor="actor"
+          name="cursed"
+          :global="true"
+        />
       </div>
     </section>
   </div>
 </template>
+
+<style lang="less" scoped>
+.tab {
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid grey;
+  &.active {
+    background-color: darkgray;
+  }
+}
+</style>
 
 <script>
 export default {
@@ -57,24 +65,18 @@ export default {
     actor: Object,
   },
 
-  computed: {
-    assets() {
-      return this.actor.items.filter((x) => x.type === 'asset')
-    },
+  data() {
+    const tabs = [
+      { titleKey: 'IRONSWORN.Assets', component: 'sf-assets' },
+      { titleKey: 'IRONSWORN.Notes', component: 'sf-notes' },
+    ]
+    return {
+      tabs,
+      currentTab: tabs[0],
+    }
   },
 
   methods: {
-    rollHealth() {
-      CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.$actor,
-        stat: 'health',
-      })
-    },
-
-    setHealth(_ev, value) {
-      this.$actor.update({ data: { health: value } })
-    },
-
     openCompendium() {
       const pack = game.packs?.get('foundry-ironsworn.starforgedassets')
       pack?.render(true)
