@@ -90,6 +90,10 @@ export default {
     moveclick(item) {
       this.$emit('moveclick', item)
     },
+
+    collapse() {
+      this.expanded = false
+    },
   },
 }
 </script>

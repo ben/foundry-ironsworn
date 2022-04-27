@@ -122,7 +122,7 @@ export default {
     },
 
     tablePreview() {
-      const description = this.oracle.foundryTable.data.description
+      const description = this.oracle.foundryTable.data.description || ''
       const tableRows = CONFIG.IRONSWORN._.sortBy(
         this.oracle.foundryTable.data.results.contents.map((x) => ({
           low: x.data.range[0],
@@ -165,6 +165,14 @@ export default {
       actorWithMoves?.moveSheet?.render(true)
       actorWithMoves?.moveSheet?.highlightMove(item)
     },
+
+    collapse() {
+      this.manuallyExpanded = false
+      this.descriptionExpanded = false
+      for (const child of this.$refs.children ?? []) {
+        child.collapse()
+      }
+    }
   },
 }
 </script>

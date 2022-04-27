@@ -11,6 +11,11 @@
         @click="clearSearch"
         style="padding: 6px"
       />
+      <i
+        class="fa fa-compress-alt nogrow clickable text"
+        @click="collapseAll"
+        style="padding: 6px"
+      />
     </div>
 
     <div class="flexcol item-list">
@@ -38,6 +43,7 @@
           :actor="actor"
           :move="move"
           @moveclick="highlightMove"
+          ref="allmoves"
         />
       </div>
     </div>
@@ -114,12 +120,14 @@ export default {
   },
 
   methods: {
-    movesForKey(ck) {
-      return this.moves[ck]?.moves
-    },
-
     clearSearch() {
       this.searchQuery = ''
+    },
+
+    collapseAll() {
+      for (const row of this.$refs.allmoves ?? []) {
+        row.collapse()
+      }
     },
 
     async highlightMove(item) {

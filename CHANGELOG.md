@@ -2,6 +2,8 @@
 
 ## In progress
 
+- "Collapse all" buttons on move and oracle sheets ([#322](https://github.com/ben/foundry-ironsworn/pull/322))
+
 ## 1.10.55
 
 - Update the starship sheet to be more useful ([#318](https://github.com/ben/foundry-ironsworn/pull/318))
