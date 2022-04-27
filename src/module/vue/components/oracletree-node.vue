@@ -122,7 +122,7 @@ export default {
     },
 
     tablePreview() {
-      const description = this.oracle.foundryTable.data.description
+      const description = this.oracle.foundryTable.data.description || ''
       const tableRows = CONFIG.IRONSWORN._.sortBy(
         this.oracle.foundryTable.data.results.contents.map((x) => ({
           low: x.data.range[0],
