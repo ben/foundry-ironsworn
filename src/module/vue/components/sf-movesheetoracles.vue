@@ -11,6 +11,11 @@
         @click="clearSearch"
         style="padding: 6px"
       />
+      <i
+        class="fa fa-compress-alt nogrow clickable text"
+        @click="collapseAll"
+        style="padding: 6px"
+      />
     </div>
 
     <div class="flexcol item-list">
@@ -100,6 +105,12 @@ export default {
 
     clearSearch() {
       this.searchQuery = ''
+    },
+
+    collapseAll() {
+      for (const node of this.$refs.oracles) {
+        node.collapse()
+      }
     },
   },
 }

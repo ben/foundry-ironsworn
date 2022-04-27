@@ -165,6 +165,14 @@ export default {
       actorWithMoves?.moveSheet?.render(true)
       actorWithMoves?.moveSheet?.highlightMove(item)
     },
+
+    collapse() {
+      this.manuallyExpanded = false
+      this.descriptionExpanded = false
+      for (const child of this.$refs.children ?? []) {
+        child.collapse()
+      }
+    }
   },
 }
 </script>
