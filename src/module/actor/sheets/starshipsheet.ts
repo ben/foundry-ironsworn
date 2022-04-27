@@ -13,7 +13,6 @@ export class StarshipSheet extends IronswornVueActorSheet {
       width: 500,
       height: 500,
       template: 'systems/foundry-ironsworn/templates/actor/starship.hbs',
-      resizable: false,
       submitOnClose: true,
       submitOnChange: true,
     })
