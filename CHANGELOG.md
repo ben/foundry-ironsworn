@@ -2,9 +2,11 @@
 
 ## In progress
 
+- Update the starship sheet to be more useful ([#318](https://github.com/ben/foundry-ironsworn/pull/318))
+
 ## 1.10.54
 
-- #317:
+- [#317](https://github.com/ben/foundry-ironsworn/pull/317):
   - Expand the move sheet when navigating to a move
   - Strip tables from chat-log output for moves like _Pay the Price_ that don't roll any dice and have an oracle.
 
