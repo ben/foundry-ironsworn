@@ -1,8 +1,11 @@
 <template>
-  <div class="item-row" :class="{ highlighted: move.highlighted }">
+  <div :class="{ highlighted: move.highlighted }">
     <h4 style="margin: 0" class="flexrow" :title="tooltip">
-      <i class="fa fa-dice-d6 clickable text nogrow" @click="rollMove" />
-      <span @click="expanded = !expanded">{{ move.foundryItem.name }}</span>
+      <span class="clickable text" @click="rollMove">
+        <i class="fa fa-dice-d6 nogrow" />
+        {{ move.foundryItem.name }}
+      </span>
+      <icon-button icon="eye" @click="expanded = !expanded" />
     </h4>
     <transition name="slide">
       <with-rolllisteners
@@ -72,7 +75,10 @@ export default {
 
   methods: {
     async rollMove() {
-      const move = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryMoveByDfId(this.move.$id)
+      const move =
+        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryMoveByDfId(
+          this.move.$id
+        )
       CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, move)
     },
 
