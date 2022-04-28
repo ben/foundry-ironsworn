@@ -1,5 +1,6 @@
 <template>
   <svg
+    class="ironsworn-d10"
     viewBox="40 40 100 125"
     xmlns="http://www.w3.org/2000/svg"
     @click="$emit('click')"

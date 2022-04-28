@@ -1,8 +1,8 @@
 <template>
   <div :class="{ highlighted: move.highlighted }">
-    <h4 style="margin: 0" class="flexrow" :title="tooltip">
-      <span class="clickable text" @click="rollMove">
-        <die-icon class="clickable block" />
+    <h4 style="margin: 0" class="clickable text flexrow" :title="tooltip">
+      <span @click="rollMove">
+        <die-icon class="clickable svg" />
         {{ move.foundryItem.name }}
       </span>
       <icon-button icon="eye" @click="expanded = !expanded" />
@@ -29,6 +29,10 @@
 }
 h4 {
   margin: 0;
+}
+svg {
+  margin-bottom: -4px;
+  transform: translate(0, 5px);
 }
 i.fa-dice-d6 {
   padding-right: 0.5rem;

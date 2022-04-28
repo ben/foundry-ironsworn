@@ -4,10 +4,10 @@
     <!-- Leaf node -->
     <div v-if="oracle.foundryTable">
       <h4 class="clickable text flexrow">
-      <die-icon v-if="oracle.foundryTable" style="margin-bottom: -4px"
-          @click="rollOracle"
-      />
-        <span @click="rollOracle">{{ name }}</span>
+        <span @click="rollOracle">
+          <die-icon v-if="oracle.foundryTable" class="clickable" />
+          {{ name }}
+        </span>
         <icon-button
           v-if="oracle.foundryTable"
           icon="eye"
@@ -59,6 +59,13 @@
 </template>
 
 <style lang="less" scoped>
+h4 {
+  margin-bottom: 4px;
+}
+svg {
+  margin-bottom: -4px;
+  transform: translate(0, 5px);
+}
 .hidden {
   display: none;
 }
@@ -170,7 +177,7 @@ export default {
       for (const child of this.$refs.children ?? []) {
         child.collapse()
       }
-    }
+    },
   },
 }
 </script>
