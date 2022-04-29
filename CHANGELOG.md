@@ -6,6 +6,7 @@
 - Replace `▶ Descriptor + Focus` links in oracles with two links ([#323](https://github.com/ben/foundry-ironsworn/pull/323))
 - Oracle chat cards: display "42" insteaed of "42-42" when high and low are equal
 - A better "not-completed" icon for progress items
+- Replace the cube icon with a custom d10 ([#327](https://github.com/ben/foundry-ironsworn/pull/327))
 
 ## 1.10.55
 
