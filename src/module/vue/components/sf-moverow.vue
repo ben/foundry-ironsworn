@@ -2,7 +2,7 @@
   <div :class="{ highlighted: move.highlighted }">
     <h4 style="margin: 0" class="clickable text flexrow" :title="tooltip">
       <span @click="rollMove">
-        <i class="isicon-d10-tilt"></i>
+        <i class="isicon-d10-tilt juicy"></i>
         {{ move.foundryItem.name }}
       </span>
       <icon-button icon="eye" @click="expanded = !expanded" />
@@ -30,10 +30,6 @@
 h4 {
   margin: 0;
 }
-i.fa-dice-d6 {
-  padding-right: 0.5rem;
-}
-
 .item-row {
   transition: all 0.4s ease;
 }

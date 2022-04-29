@@ -19,13 +19,15 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  font-size: 120%;
 
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+[class^="isicon-"].juicy, [class*=" isicon-"].juicy {
+  font-size: 120%;
+}
 .isicon-d10-tilt:before {
   content: "\e900";
 }
