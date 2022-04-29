@@ -116,11 +116,13 @@ const COMPENDIUM_KEY_MAP = {
   Encounters: 'starforgedencounters',
 }
 const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
-const DESCRIPTOR_FOCUS_RE = new RegExp('\\[⏵Descriptor \\+ Focus\\]\\(.*?\\)')
+const DESCRIPTOR_FOCUS_RE = new RegExp('\\[Descriptor \\+ Focus\\]\\(.*?\\)')
+const ACTION_THEME_RE = new RegExp('\\[Action \\+ Theme\\]\\(.*?\\)')
 
 function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
-  // Catch "Descriptor+Focus" and replace with two links
-  text = text.replace(DESCRIPTOR_FOCUS_RE, '⏵ [Descriptor](Starforged/Oracles/Core/Descriptor) + [Focus](Starforged/Oracles/Core/Focus)')
+  // Catch "Descriptor+Focus" or "Action+Theme" and replace with two links
+  text = text.replace(DESCRIPTOR_FOCUS_RE, '[Descriptor](Starforged/Oracles/Core/Descriptor) + [Focus](Starforged/Oracles/Core/Focus)')
+  text = text.replace(ACTION_THEME_RE, '[Action](Starforged/Oracles/Core/Action) + [Theme](Starforged/Oracles/Core/Theme)')
 
   return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
     const kind = url.split('/')[1]
