@@ -80,7 +80,7 @@ export class RollDialog extends Dialog {
       defaultButton = opts.move.Stats[0]
       for (const stat of opts.move.Stats) {
         buttons[stat] = {
-          icon: '<i class="fas fa-dice-d6"></i>',
+          icon: '<i class="isicon-d10-tilt"></i>',
           label: game.i18n.localize(`IRONSWORN.${capitalize(stat)}`),
           callback: callbackForStat(stat),
         }
@@ -91,7 +91,7 @@ export class RollDialog extends Dialog {
       title = `${rollText} +${statText}`
       defaultButton = opts.stat
       buttons[opts.stat] = {
-        icon: '<i class="fas fa-dice-d6"></i>',
+        icon: '<i class="isicon-d10-tilt"></i>',
         label: statText,
         callback: callbackForStat(opts.stat),
       }

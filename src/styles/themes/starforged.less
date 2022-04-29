@@ -98,7 +98,7 @@ input.highlight:focus {
   }
 
   .clickable {
-    &.svg {
+    svg, &.svg {
       fill: @dark-color;
     }
 
@@ -106,7 +106,7 @@ input.highlight:focus {
       background: @dark-color;
       color: @medium-color;
 
-      &.svg {
+      svg, &.svg {
         fill: @dark-color;
       }
     }
@@ -120,7 +120,7 @@ input.highlight:focus {
         &.text {
           color: @text-light-color;
         }
-        &.svg {
+        svg, &.svg {
           fill: @medium-color;
         }
       }
@@ -131,7 +131,7 @@ input.highlight:focus {
           color: @text-light-color;
           background-color: @medium-color;
         }
-        &.svg {
+        svg, &.svg {
           fill: @text-light-color;
         }
       }

@@ -78,7 +78,11 @@
     <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
-      <icon-button icon="dice-d6" @click="randomDenizen" />
+      <i
+        class="flexrow nogrow clickable text isicon-d10-tilt"
+        style="padding: 2px"
+        @click="randomDenizen"
+      />
       <icon-button icon="atlas" @click="openFoeCompendium" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">

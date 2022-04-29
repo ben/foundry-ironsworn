@@ -4,12 +4,10 @@
     <!-- Leaf node -->
     <div v-if="oracle.foundryTable">
       <h4 class="clickable text flexrow">
-        <i
-          class="fa fa-dice-d6 nogrow"
-          style="flex-basis: 20px"
-          @click="rollOracle"
-        />
-        <span @click="rollOracle">{{ name }}</span>
+        <span @click="rollOracle">
+          <i class="isicon-d10-tilt juicy"></i>
+          {{ name }}
+        </span>
         <icon-button
           v-if="oracle.foundryTable"
           icon="eye"
@@ -61,6 +59,9 @@
 </template>
 
 <style lang="less" scoped>
+h4 {
+  margin-bottom: 4px;
+}
 .hidden {
   display: none;
 }
@@ -172,7 +173,7 @@ export default {
       for (const child of this.$refs.children ?? []) {
         child.collapse()
       }
-    }
+    },
   },
 }
 </script>

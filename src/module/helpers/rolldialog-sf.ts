@@ -37,7 +37,7 @@ export class SFRollMoveDialog extends Dialog {
       const label = mode === 'Any' ? stats[0] : `${mode} of ${stats.join(', ')}`
       buttons[i.toString()] = {
         label,
-        icon: '<i class="fas fa-dice-d6"></i>',
+        icon: '<i class="isicon-d10-tilt"></i>',
         callback: callback({ actor, move, mode, stats }),
       }
     }
