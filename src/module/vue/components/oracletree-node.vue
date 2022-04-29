@@ -5,7 +5,7 @@
     <div v-if="oracle.foundryTable">
       <h4 class="clickable text flexrow">
         <span @click="rollOracle">
-          <die-icon v-if="oracle.foundryTable" class="clickable" />
+          <i class="isicon-d10-tilt"></i>
           {{ name }}
         </span>
         <icon-button

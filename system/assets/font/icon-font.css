@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'ironsworn-icons';
+  src:  url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc');
+  src:  url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc#iefix') format('embedded-opentype'),
+    url('systems/foundry-ironsworn/assets/font/isicons.ttf?4pb2yc') format('truetype'),
+    url('systems/foundry-ironsworn/assets/font/isicons.woff?4pb2yc') format('woff'),
+    url('systems/foundry-ironsworn/assets/font/isicons.svg?4pb2yc#isicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="isicon-"], [class*=" isicon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'ironsworn-icons' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-size: 120%;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.isicon-d10-tilt:before {
+  content: "\e900";
+}
