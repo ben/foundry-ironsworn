@@ -30,10 +30,6 @@
 h4 {
   margin: 0;
 }
-svg {
-  margin-bottom: -4px;
-  transform: translate(0, 5px);
-}
 i.fa-dice-d6 {
   padding-right: 0.5rem;
 }

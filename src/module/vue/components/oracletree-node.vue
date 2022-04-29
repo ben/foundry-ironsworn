@@ -62,10 +62,6 @@
 h4 {
   margin-bottom: 4px;
 }
-svg {
-  margin-bottom: -4px;
-  transform: translate(0, 5px);
-}
 .hidden {
   display: none;
 }

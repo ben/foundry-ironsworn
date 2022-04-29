@@ -1,7 +1,7 @@
 <template>
   <svg
     class="ironsworn-d10"
-    viewBox="40 40 100 125"
+    viewBox="40 40 100 100"
     xmlns="http://www.w3.org/2000/svg"
     @click="$emit('click')"
   >
@@ -42,5 +42,6 @@ svg {
   width: 18px;
   flex-basis: 18px;
   flex-grow: 0;
+  transform: translate(0, 3px);
 }
 </style>
