@@ -19,7 +19,7 @@
             "
             @click="randomizeName"
           >
-            <i class="fa fa-dice-d6" />
+            <i class="isicon-d10-tilt juicy" />
           </div>
         </div>
 
@@ -70,7 +70,7 @@
               style="margin-left: 5px; padding: 5px"
               @click="randomizeKlass"
             >
-              <i class="fa fa-dice-d6" />
+              <i class="isicon-d10-tilt juicy" />
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@
           @mouseleave="firstLookHighlight = false"
           @click="rollFirstLook"
         >
-          <i class="fas fa-dice"></i>
+          <i class="isicon-d10-tilt"></i>
         </div>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
