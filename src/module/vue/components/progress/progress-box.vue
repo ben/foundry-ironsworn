@@ -41,11 +41,14 @@
               @click="advance"
               :tooltip="$t('IRONSWORN.MarkProgress')"
             />
-            <icon-button
-              icon="dice-d6"
+            <div
+              v-if="item.data.hasTrack"
+              class="flexrow nogrow clickable block"
               @click="fulfill"
               :tooltip="$t('IRONSWORN.ProgressRoll')"
-            />
+            >
+              <i class="isicon-d10-tilt" style="padding: 3px"></i>
+            </div>
           </div>
           <h4 class="flexrow">
             <span>{{ item.name }}</span>
