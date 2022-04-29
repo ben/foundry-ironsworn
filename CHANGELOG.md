@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix oracle-result links to "action+theme" and strip undisplayable characters ([#328](https://github.com/ben/foundry-ironsworn/pull/328))
+
 ## 1.10.56
 
 - "Collapse all" buttons on move and oracle sheets ([#322](https://github.com/ben/foundry-ironsworn/pull/322))
