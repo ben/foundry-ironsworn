@@ -10,16 +10,6 @@ table: RollTable {parent: null, pack: 'foundry-ironsworn.starforgedoracles', dat
 <div class="table-draw {{themeClass}}" data-table-id="{{table.id}}">
   <h3>{{table.name}}</h3>
 
-  {{!-- Roll result --}}
-  <div class="dice-roll">
-    <div class="dice-result">
-      <h4 class="dice-total">
-        <i class="fas fa-dice-d20"></i>
-        {{roll.total}}
-      </h4>
-    </div>
-  </div>
-
   {{!-- Table rows --}}
   <table>
     <tbody>
@@ -27,7 +17,12 @@ table: RollTable {parent: null, pack: 'foundry-ironsworn.starforgedoracles', dat
       <tr class="{{#if selected}}selected{{/if}}">
         <td>{{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}</td>
         <td>{{text}}</td>
-        <td style="padding: 0 0.5rem;">{{#if selected}}<i class="fas fa-arrow-left"></i>{{/if}}</td>
+        <td style="padding: 0 5px; white-space: nowrap;">
+          {{#if selected}}
+          <i class="isicon-d10-tilt"></i>
+          {{../roll.total}}
+          {{/if}}
+        </td>
       </tr>
       {{/each}}
     </tbody>
