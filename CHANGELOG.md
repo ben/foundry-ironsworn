@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.56
+
 - "Collapse all" buttons on move and oracle sheets ([#322](https://github.com/ben/foundry-ironsworn/pull/322))
 - Replace `▶ Descriptor + Focus` links in oracles with two links ([#323](https://github.com/ben/foundry-ironsworn/pull/323))
 - Oracle chat cards: display "42" insteaed of "42-42" when high and low are equal
