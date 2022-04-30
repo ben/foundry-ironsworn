@@ -241,7 +241,11 @@ export class IronswornChatCard {
 
   async _sfOracleReroll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
+
+    // Pre-load documents to make sure we don't get an empty result (???)
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+    await pack?.getDocuments()
+
     const parent = $(ev.target).parent('.table-draw')
     const tableId = parent.data('table-id')
     const table = await pack?.getDocument(tableId) as any | undefined
