@@ -1,7 +1,7 @@
 import { compact, sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
-import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
+import { getDFMoveByDfId, getFoundryTableByDfId, i18nOraclePath } from '../dataforged'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
@@ -344,6 +344,7 @@ export async function rollAndDisplayOracleResult(table?: RollTable): Promise<str
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
     table,
+    oraclePath: i18nOraclePath(table.data.flags.dfId),
     roll,
     displayRows,
     result: tableDraw.results[0],

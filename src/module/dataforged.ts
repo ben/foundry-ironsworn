@@ -73,22 +73,64 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
 }
 
 export function getDFOracleByDfId(dfid: string): IOracle | IOracleCategory | undefined {
-  const walk = (oc: IOracleCategory) => {
-    if (oc.$id === dfid) return oc
-    for (const oracle of oc.Oracles ?? []) {
-      if (oracle.$id === dfid) return oracle
-    }
-    for (const cat of oc.Categories ?? []) {
-      const ret = walk(cat)
+  function walkCategory(cat: IOracleCategory) {
+    if (cat.$id === dfid) return cat
+    for (const childCat of cat.Categories ?? []) {
+      const ret = walkCategory(childCat)
       if (ret) return ret
     }
-    return undefined
+    for (const oracle of cat.Oracles ?? []) {
+      const ret = walkOracle(oracle)
+      if (ret) return ret
+    }
   }
+
+  function walkOracle(oracle: IOracle) {
+    if (oracle.$id === dfid) return oracle
+    for (const child of oracle.Oracles ?? []) {
+      const ret = walkOracle(child)
+      if (ret) return ret
+    }
+  }
+
   for (const cat of starforged.oracles) {
-    const ret = walk(cat)
+    const ret = walkCategory(cat)
     if (ret) return ret
   }
-  return undefined
+}
+
+export function i18nOraclePath(dfid: string): Promise<string | undefined> {
+  // Depth-first, translate on the way back up
+  function walkCategory(node: IOracleCategory) {
+    const i18nkey = `IRONSWORN.SFOracleCategories.${node.Name}`
+    for (const oracle of node.Oracles ?? []) {
+      if (testLeaf(oracle)) return game.i18n.localize(i18nkey)
+      const ret = walkOracleContainer(oracle)
+      if (ret) return `${game.i18n.localize(i18nkey)} / ${ret}`
+    }
+
+    for (const cat of node.Categories ?? []) {
+      const ret = walkCategory(cat)
+      if (ret) return `${game.i18n.localize(i18nkey)} / ${ret}`
+    }
+  }
+
+  function walkOracleContainer(node:IOracleCategory | IOracle) {
+    for (const child of node.Oracles ?? []) {
+      if (testLeaf(child)) {
+        return game.i18n.localize(`IRONSWORN.SFOracleCategories.${node.Name}`)
+      }
+    }
+  }
+
+  function testLeaf(node:IOracle): boolean {
+    return node.$id === dfid
+  }
+
+  for (const cat of starforged.oracles) {
+    const ret = walkCategory(cat)
+    if (ret) return ret
+  }
 }
 
 function generateIdMap(data: typeof starforged): { [key: string]: string } {
