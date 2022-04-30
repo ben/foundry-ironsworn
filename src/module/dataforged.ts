@@ -102,7 +102,7 @@ export function getDFOracleByDfId(dfid: string): IOracle | IOracleCategory | und
 export function i18nOraclePath(dfid: string): Promise<string | undefined> {
   // Depth-first, translate on the way back up
   function walkCategory(node: IOracleCategory) {
-    const i18nkey = `IRONSWORN.SFOracleCategories.${node.Name}`
+    const i18nkey = `IRONSWORN.SFOracleCategories.${node.Display.Title}`
     for (const oracle of node.Oracles ?? []) {
       if (testLeaf(oracle)) return game.i18n.localize(i18nkey)
       const ret = walkOracleContainer(oracle)
@@ -118,7 +118,7 @@ export function i18nOraclePath(dfid: string): Promise<string | undefined> {
   function walkOracleContainer(node:IOracleCategory | IOracle) {
     for (const child of node.Oracles ?? []) {
       if (testLeaf(child)) {
-        return game.i18n.localize(`IRONSWORN.SFOracleCategories.${node.Name}`)
+        return game.i18n.localize(`IRONSWORN.SFOracleCategories.${node.Display.Title}`)
       }
     }
   }
