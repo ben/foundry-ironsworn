@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.57
+
 - Fix oracle-result links to "action+theme" and strip undisplayable characters ([#328](https://github.com/ben/foundry-ironsworn/pull/328))
 - Try to prevent broken reroll button
 - Fix a table-layout problem
