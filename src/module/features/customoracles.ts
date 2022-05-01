@@ -30,7 +30,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   await augmentWithFolderContents(rootNode)
 
   // Fire the hook and allow extensions to modify the tree
-  Hooks.call('ironswornOracles', rootNode)
+  await Hooks.call('ironswornOracles', rootNode)
 
   return rootNode
 }

@@ -40,7 +40,12 @@ Keep track of your story using journal entries.
 
 ## Extensibility
 
-(TODO)
+**Custom oracles** can be added in one of two ways.
+The first is by creating a table folder called "Custom Oracles" (this name may be translated).
+Whatever folder and table structure is found there will be mirrored into the oracle sidebar.
+
+The second is more useful for modules, and involves intercepting the `ironswornOracles` hook.
+The type of object in the tree is shown in `customoracles.ts`.
 
 ## How to hack on this
 
