@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix oracle search ([#331](https://github.com/ben/foundry-ironsworn/pull/331))
+- Oracle chat-card output supports path to custom oracles ([#332](https://github.com/ben/foundry-ironsworn/pull/332))
 
 ## 1.10.58
 
