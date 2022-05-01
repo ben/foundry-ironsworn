@@ -61,3 +61,19 @@ async function walkOracle(oracle: IOracle): Promise<OracleTreeNode> {
 
   return node
 }
+
+export function findPathToNodeByTableId(rootNode: OracleTreeNode, tableId: string): OracleTreeNode[] {
+  const ret: OracleTreeNode[] = []
+  function walk(node:OracleTreeNode) {
+    ret.push(node)
+    if (node.table?.id === tableId) return true
+    for (const child of node.children) {
+      if (walk(child)) return true
+    }
+    ret.pop()
+    return false
+  }
+
+  walk(rootNode)
+  return ret
+}
