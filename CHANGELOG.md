@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Custom moves from folder and hook ([#334](https://github.com/ben/foundry-ironsworn/pull/334))
+
 ## 1.10.60
 
 - Oracle hooks can add tables to oracle nodes ([#333](https://github.com/ben/foundry-ironsworn/pull/333))
