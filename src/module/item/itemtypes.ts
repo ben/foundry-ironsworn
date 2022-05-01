@@ -165,6 +165,7 @@ interface MoveDataSourceData {
   miss: string
   stats: string[]
   sourceId: string
+  dfid: string
 }
 interface MoveDataPropertiesData extends MoveDataSourceData {}
 

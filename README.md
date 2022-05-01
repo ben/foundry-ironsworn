@@ -54,6 +54,12 @@ Hooks.on('ironswornOracles', (root) => {
 })
 ```
 
+**Custom moves** can be added in similar ways.
+They must be placed in an item folder called "Custom Moves" (translated), and regardless of the structure inside, they will show up in a "Custom Moves" section of the move sheet.
+
+There is also an `ironswornMoves` hook, which passes the final tree before display.
+See `custommoves.ts` for the structure of those objects.
+
 ## How to hack on this
 
 1. Install Foundry 0.8.8 or later, and start it up.

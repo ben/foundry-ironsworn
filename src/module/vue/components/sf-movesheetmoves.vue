@@ -22,7 +22,7 @@
       <div class="nogrow" v-if="searchQuery">
         <sf-moverow
           v-for="move of searchResults"
-          :key="move.dfid"
+          :key="move.displayName"
           :actor="actor"
           :move="move"
           @moveclick="highlightMove"
@@ -35,11 +35,11 @@
         :key="category.$id"
       >
         <h2>
-          {{ category.tname }}
+          {{ category.displayName }}
         </h2>
         <sf-moverow
-          v-for="move of category.Moves"
-          :key="move.dfid"
+          v-for="move of category.moves"
+          :key="move.displayName"
           :actor="actor"
           :move="move"
           @moveclick="highlightMove"
@@ -60,6 +60,8 @@ h2 {
 </style>
 
 <script>
+import { createStarforgedMoveTree } from '../../features/custommoves'
+
 export default {
   props: {
     actor: Object,
@@ -73,23 +75,15 @@ export default {
   },
 
   async created() {
-    const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
-    const compendiumMoves = await pack.getDocuments()
+    const categories = await createStarforgedMoveTree()
 
-    const categories = CONFIG.IRONSWORN.Dataforged.moves
+    // Decorate with the highlighted flag we'll need
     for (const category of categories) {
-      // Provide an i18n str for category names
-      category.tname = this.$t(`IRONSWORN.${category.Name}`)
-
-      for (const move of category.Moves) {
-        // Provide a Foundry move
-        const foundryItem = compendiumMoves.find(
-          (x) => x.data.data.dfid === move.$id
-        )
-        move.foundryItem = foundryItem?.toObject(true)
+      for (const move of category.moves) {
         move.highlighted = false
       }
     }
+
     this.categories = categories
   },
 
@@ -103,19 +97,15 @@ export default {
       }
     },
 
-    sortedMoves() {
-      const ret = []
-      for (const category of this.categories) {
-        ret.push(...category.Moves)
-      }
-      return ret
+    flatMoves() {
+      return CONFIG.IRONSWORN._.flatten(this.categories.map((x) => x.moves))
     },
 
     searchResults() {
-      if (!this.searchQuery) return null
+      if (!this.checkedSearchQuery) return null
 
       const re = new RegExp(this.checkedSearchQuery, 'i')
-      return this.sortedMoves.filter((x) => re.test(x.foundryItem.name))
+      return this.flatMoves.filter((x) => re.test(x.displayName))
     },
   },
 
@@ -133,10 +123,9 @@ export default {
     async highlightMove(item) {
       this.searchQuery = ''
       await new Promise((r) => setTimeout(r, 10))
-      // TODO: this doesn't support custom moves
       for (const category of this.categories) {
-        for (const move of category.Moves) {
-          if (move.$id === item.data.data.dfid) {
+        for (const move of category.moves) {
+          if (move.moveItem.id === item.id) {
             move.highlighted = true
             setTimeout(() => (move.highlighted = false), 2000)
             return

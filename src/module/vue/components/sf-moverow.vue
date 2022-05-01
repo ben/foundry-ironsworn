@@ -3,7 +3,7 @@
     <h4 style="margin: 0" class="clickable text flexrow" :title="tooltip">
       <span @click="rollMove">
         <i class="isicon-d10-tilt juicy"></i>
-        {{ move.foundryItem.name }}
+        {{ move.moveItem.name }}
       </span>
       <icon-button icon="eye" @click="expanded = !expanded" />
     </h4>
@@ -15,7 +15,7 @@
         v-if="expanded"
         @moveclick="moveclick"
       >
-        <div v-html="$enrichMarkdown(move.foundryItem.data.Text)" />
+        <div v-html="$enrichMarkdown(fulltext)" />
       </with-rolllisteners>
     </transition>
   </div>
@@ -56,11 +56,11 @@ export default {
   computed: {
     tooltip() {
       // TODO: page number, when it shows up
-      return this.move.Source?.Title
+      return this.move.dataforgedMove?.Source?.Title
     },
 
     fulltext() {
-      return this.move.foundryItem?.data?.data?.fulltext
+      return this.move.moveItem?.data?.data?.Text
     },
   },
 
@@ -76,11 +76,7 @@ export default {
 
   methods: {
     async rollMove() {
-      const move =
-        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryMoveByDfId(
-          this.move.$id
-        )
-      CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, move)
+      CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, this.move.moveItem)
     },
 
     moveclick(item) {
