@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol nogrow" :class="{ hidden: hidden }">
+  <div class="flexcol nogrow" :class="{ hidden: node.forceHidden }">
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
     <div v-if="node.table">
@@ -48,8 +48,6 @@
             :key="child.displayName"
             :actor="actor"
             :node="child"
-            :searchQuery="searchQuery"
-            :parentMatchesSearch="matchesSearch"
             ref="children"
           />
         </div>
@@ -76,8 +74,6 @@ export default {
   props: {
     actor: Object,
     node: Object,
-    searchQuery: String,
-    parentMatchesSearch: Boolean,
   },
 
   data() {
@@ -88,26 +84,8 @@ export default {
   },
 
   computed: {
-    childMatchesSearch() {
-      return this.$refs.children?.find((x) => x.matchesSearch)
-    },
-
     expanded() {
-      return this.manuallyExpanded || !!this.searchQuery
-    },
-
-    matchesSearch() {
-      const re = new RegExp(this.searchQuery, 'i')
-      return re.test(this.node.displayName)
-    },
-
-    hidden() {
-      if (!this.searchQuery) return false
-      return !(
-        this.matchesSearch ||
-        this.parentMatchesSearch ||
-        this.childMatchesSearch
-      )
+      return this.manuallyExpanded || this.node.forceExpanded
     },
 
     tablePreview() {

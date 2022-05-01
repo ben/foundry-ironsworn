@@ -48,21 +48,50 @@ export default {
   data() {
     return {
       searchQuery: '',
-      treeRoot: {children: []},
+      treeRoot: { children: [] },
     }
   },
 
   async created() {
-    this.treeRoot = await createStarforgedOracleTree()
+    const treeRoot = await createStarforgedOracleTree()
+    // Add the flags we'll use for UI stuff later
+    function walk(node) {
+      node.forceExpanded = node.forceHidden = false
+      node.children.forEach(walk)
+    }
+    walk(treeRoot)
+    this.treeRoot = treeRoot
   },
 
-  computed: {
-    checkedSearchQuery() {
+  watch: {
+    searchQuery(q) {
+      // If it's not a real regex, cancel the search
+      let re
       try {
-        new RegExp(this.searchQuery)
-        return this.searchQuery
-      } catch (error) {
-        return ''
+        re = new RegExp(q, 'i')
+      } catch  {}
+
+      if (q && re) {
+        // Walk the tree and test each name.
+        // Force expanded on all parent nodes leading to a match
+        const walk = (node, parentMatch) => {
+          const thisMatch = re.test(node.displayName)
+          let childMatch = false
+          for (const child of node.children) {
+            childMatch |= walk(child, thisMatch || parentMatch)
+          }
+          node.forceExpanded = parentMatch | thisMatch | childMatch
+          node.forceHidden = !node.forceExpanded
+          return thisMatch | childMatch
+        }
+        walk(this.treeRoot, false)
+      } else {
+        // Walk the tree setting all force flags to false
+        function resetflags(node) {
+          node.forceExpanded = node.forceHidden = false
+          for (const child of node.children) resetflags(child)
+        }
+        resetflags(this.treeRoot)
       }
     },
   },
