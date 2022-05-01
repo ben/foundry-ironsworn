@@ -28,7 +28,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
     rootNode.children.push(await walkOracleCategory(category))
   }
 
-  // TODO: Add in custom oracles from a well-known directory
+  // Add in custom oracles from a well-known directory
   await augmentWithFolderContents(rootNode)
 
   // Fire the hook and allow extensions to modify the tree
