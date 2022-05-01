@@ -1,9 +1,10 @@
 import { starforged, IOracle, IOracleCategory } from 'dataforged'
+import { compact } from 'lodash'
 import { getFoundryTableByDfId } from '../dataforged'
 
 export interface OracleTreeNode {
   dataforgedNode?: IOracle | IOracleCategory
-  table?: RollTable
+  tables: RollTable[]
   displayName: string
   children: OracleTreeNode[]
 }
@@ -11,6 +12,7 @@ export interface OracleTreeNode {
 const emptyNode = () =>
   ({
     displayName: '',
+    tables: [],
     children: [],
   } as OracleTreeNode)
 
@@ -54,7 +56,7 @@ async function walkOracle(oracle: IOracle): Promise<OracleTreeNode> {
   const node: OracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: oracle,
-    table,
+    tables: compact([table]),
     displayName: table?.name || game.i18n.localize(`IRONSWORN.SFOracleCategories.${oracle.Display.Title}`),
   }
 
@@ -85,7 +87,7 @@ async function augmentWithFolderContents(node:OracleTreeNode) {
     for (const table of folder.contents) {
       newNode.children.push({
         ...emptyNode(),
-        table,
+        tables: [table],
         displayName: table.name ?? '(table)',
       })
     }
@@ -98,7 +100,8 @@ export function findPathToNodeByTableId(rootNode: OracleTreeNode, tableId: strin
   const ret: OracleTreeNode[] = []
   function walk(node:OracleTreeNode) {
     ret.push(node)
-    if (node.table?.id === tableId) return true
+    const foundTable = node.tables.find(x => x.id === tableId)
+    if (foundTable) return true
     for (const child of node.children) {
       if (walk(child)) return true
     }
