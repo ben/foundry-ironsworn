@@ -26,7 +26,8 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
     ret.push(walkCategory(category, compendiumMoves))
   }
 
-  // TODO: Add custom moves from well-known folder
+  // Add custom moves from well-known folder
+  await augmentWithFolderContents(ret)
 
   // Fire the hook and allow extensions to modify the list
   await Hooks.call('ironswornMoves', ret)
@@ -55,4 +56,19 @@ function walkCategory(category: IMoveCategory, compendiumMoves: IronswornItem[])
   }
 
   return newCategory
+}
+
+async function augmentWithFolderContents(categories: MoveCategory[]) {
+  const name = game.i18n.localize('IRONSWORN.Custom Moves')
+  const folder = game.items?.directory?.folders.find((x) => x.name === name)
+  console.log(folder)
+  if (!folder || folder.contents.length == 0) return
+
+  categories.push({
+    displayName: name,
+    moves: folder.contents.map(moveItem => ({
+      displayName: moveItem.name,
+      moveItem,
+    })) as Move[]
+  })
 }

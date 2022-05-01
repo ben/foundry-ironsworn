@@ -56,7 +56,7 @@ export default {
   computed: {
     tooltip() {
       // TODO: page number, when it shows up
-      return this.move.dataforgedMove.Source?.Title
+      return this.move.dataforgedMove?.Source?.Title
     },
 
     fulltext() {
