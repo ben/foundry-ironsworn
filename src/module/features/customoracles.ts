@@ -27,6 +27,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   }
 
   // TODO: Add in custom oracles from a well-known directory
+  await augmentWithFolderContents(rootNode)
 
   // Fire the hook and allow extensions to modify the tree
   Hooks.call('ironswornOracles', rootNode)
@@ -60,6 +61,37 @@ async function walkOracle(oracle: IOracle): Promise<OracleTreeNode> {
   for (const childOracle of oracle.Oracles ?? []) node.children.push(await walkOracle(childOracle))
 
   return node
+}
+
+async function augmentWithFolderContents(node:OracleTreeNode) {
+  const name = game.i18n.localize('IRONSWORN.Custom Oracles')
+  const folder = game.tables?.directory?.folders.find(x => x.name === name)
+  if (!folder) return
+
+  function walkFolder(parent:OracleTreeNode, folder: Folder) {
+    // Add this folder
+    const newNode:OracleTreeNode = {
+      ...emptyNode(),
+      displayName: folder.name
+    }
+    parent.children.push(newNode)
+
+    // Add its folder children
+    for (const sub of folder.getSubfolders()) {
+      walkFolder(newNode, sub)
+    }
+
+    // Add its table children
+    for (const table of folder.contents) {
+      newNode.children.push({
+        ...emptyNode(),
+        table,
+        displayName: table.name ?? '(table)',
+      })
+    }
+  }
+
+  walkFolder(node, folder)
 }
 
 export function findPathToNodeByTableId(rootNode: OracleTreeNode, tableId: string): OracleTreeNode[] {
