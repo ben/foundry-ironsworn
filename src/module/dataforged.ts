@@ -73,64 +73,44 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
 }
 
 export function getDFOracleByDfId(dfid: string): IOracle | IOracleCategory | undefined {
-  function walkCategory(cat: IOracleCategory) {
-    if (cat.$id === dfid) return cat
-    for (const childCat of cat.Categories ?? []) {
-      const ret = walkCategory(childCat)
-      if (ret) return ret
-    }
-    for (const oracle of cat.Oracles ?? []) {
-      const ret = walkOracle(oracle)
-      if (ret) return ret
-    }
-  }
-
-  function walkOracle(oracle: IOracle) {
-    if (oracle.$id === dfid) return oracle
-    for (const child of oracle.Oracles ?? []) {
-      const ret = walkOracle(child)
-      if (ret) return ret
-    }
-  }
-
-  for (const cat of starforged.oracles) {
-    const ret = walkCategory(cat)
-    if (ret) return ret
-  }
+  const nodes = findOracleWithIntermediateNodes(dfid)
+  return nodes[nodes.length-1]
 }
 
-export function i18nOraclePath(dfid: string): Promise<string | undefined> {
-  // Depth-first, translate on the way back up
-  function walkCategory(node: IOracleCategory) {
-    const i18nkey = `IRONSWORN.SFOracleCategories.${node.Display.Title}`
-    for (const oracle of node.Oracles ?? []) {
-      if (testLeaf(oracle)) return game.i18n.localize(i18nkey)
-      const ret = walkOracleContainer(oracle)
-      if (ret) return `${game.i18n.localize(i18nkey)} / ${ret}`
+export function findOracleWithIntermediateNodes(dfid: string): Array<IOracle | IOracleCategory> {
+  const ret: Array<IOracle | IOracleCategory> = []
+
+  function walkCategory(cat:IOracleCategory): boolean {
+    ret.push(cat)
+
+    if (cat.$id === dfid) return true
+    for (const oracle of cat.Oracles ?? []) {
+      if (walkOracle(oracle)) return true
+    }
+    for (const childCat of cat.Categories ?? []) {
+      if (walkCategory(childCat)) return true
     }
 
-    for (const cat of node.Categories ?? []) {
-      const ret = walkCategory(cat)
-      if (ret) return `${game.i18n.localize(i18nkey)} / ${ret}`
-    }
+    ret.pop()
+    return false
   }
 
-  function walkOracleContainer(node:IOracleCategory | IOracle) {
-    for (const child of node.Oracles ?? []) {
-      if (testLeaf(child)) {
-        return game.i18n.localize(`IRONSWORN.SFOracleCategories.${node.Display.Title}`)
-      }
-    }
-  }
+  function walkOracle(oracle:IOracle): boolean {
+    ret.push(oracle)
 
-  function testLeaf(node:IOracle): boolean {
-    return node.$id === dfid
+    if (oracle.$id === dfid) return true
+    for (const childOracle of oracle.Oracles ?? []) {
+      if (walkOracle(childOracle)) return true
+    }
+
+    ret.pop()
+    return false
   }
 
   for (const cat of starforged.oracles) {
-    const ret = walkCategory(cat)
-    if (ret) return ret
+    walkCategory(cat)
   }
+  return ret
 }
 
 function generateIdMap(data: typeof starforged): { [key: string]: string } {
