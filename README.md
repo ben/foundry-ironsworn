@@ -38,6 +38,10 @@ Assets are in their own compendium, drag them onto your character sheet.
 Now you're ready to create vows, embark on journeys, and slay beasts.
 Keep track of your story using journal entries.
 
+## Extensibility
+
+(TODO)
+
 ## How to hack on this
 
 1. Install Foundry 0.8.8 or later, and start it up.
