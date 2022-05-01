@@ -1,5 +1,4 @@
-import { IOracle, IOracleCategory } from 'dataforged'
-import { starforged } from 'dataforged'
+import { starforged, IOracle, IOracleCategory } from 'dataforged'
 import { getFoundryTableByDfId } from '../dataforged'
 
 export interface OracleTreeNode {
@@ -15,9 +14,7 @@ const emptyNode = () =>
     children: [],
   } as OracleTreeNode)
 
-export async function createOracleTree(): Promise<OracleTreeNode> {
-  // TODO: are we doing Ironsworn or Starforged? SF only for now
-
+export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   const rootNode = emptyNode()
 
   // Make sure the compendium is loaded
