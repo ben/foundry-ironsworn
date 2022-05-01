@@ -65,16 +65,16 @@ async function walkOracle(oracle: IOracle): Promise<OracleTreeNode> {
   return node
 }
 
-async function augmentWithFolderContents(node:OracleTreeNode) {
+async function augmentWithFolderContents(node: OracleTreeNode) {
   const name = game.i18n.localize('IRONSWORN.Custom Oracles')
-  const rootFolder = game.tables?.directory?.folders.find(x => x.name === name)
+  const rootFolder = game.tables?.directory?.folders.find((x) => x.name === name)
   if (!rootFolder) return
 
-  function walkFolder(parent:OracleTreeNode, folder: Folder) {
+  function walkFolder(parent: OracleTreeNode, folder: Folder) {
     // Add this folder
-    const newNode:OracleTreeNode = {
+    const newNode: OracleTreeNode = {
       ...emptyNode(),
-      displayName: folder.name || '(folder)'
+      displayName: folder.name || '(folder)',
     }
     parent.children.push(newNode)
 
@@ -98,9 +98,9 @@ async function augmentWithFolderContents(node:OracleTreeNode) {
 
 export function findPathToNodeByTableId(rootNode: OracleTreeNode, tableId: string): OracleTreeNode[] {
   const ret: OracleTreeNode[] = []
-  function walk(node:OracleTreeNode) {
+  function walk(node: OracleTreeNode) {
     ret.push(node)
-    const foundTable = node.tables.find(x => x.id === tableId)
+    const foundTable = node.tables.find((x) => x.id === tableId)
     if (foundTable) return true
     for (const child of node.children) {
       if (walk(child)) return true
