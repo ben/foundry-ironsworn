@@ -20,10 +20,10 @@
 
     <div class="flexcol item-list">
       <oracletree-node
-        v-for="oracle in dfOracles"
-        :key="oracle.key"
+        v-for="node in treeRoot.children"
+        :key="node.displayName"
         :actor="actor"
-        :oracle="oracle"
+        :node="node"
         :searchQuery="checkedSearchQuery"
         ref="oracles"
       />
@@ -38,7 +38,7 @@
 </style>
 
 <script>
-import { cloneDeep } from 'lodash'
+import { createStarforgedOracleTree } from '../../features/customoracles'
 
 export default {
   props: {
@@ -46,36 +46,14 @@ export default {
   },
 
   data() {
-    const dfOracles = CONFIG.IRONSWORN.dataforgedHelpers.cleanDollars(
-      cloneDeep(CONFIG.IRONSWORN.Dataforged.oracles)
-    )
-
     return {
-      dfOracles,
-      flatOracles: [],
       searchQuery: '',
+      treeRoot: {children: []},
     }
   },
 
   async created() {
-    // Make sure all the oracles are loaded
-    await this.getPack().getDocuments()
-
-    // Walk the DF oracles and decorate with Foundry IDs
-    const walk = async (node) => {
-      const table =
-        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
-          node.dfid
-        )
-      if (table) {
-        Vue.set(node, 'foundryTable', table)
-        this.flatOracles.push(node)
-      }
-
-      for (const child of node.Oracles ?? []) await walk(child)
-      for (const child of node.Categories ?? []) await walk(child)
-    }
-    for (const node of this.dfOracles) await walk(node)
+    this.treeRoot = await createStarforgedOracleTree()
   },
 
   computed: {
@@ -87,22 +65,9 @@ export default {
         return ''
       }
     },
-
-    searchResults() {
-      if (!this.searchQuery) return null
-
-      const re = new RegExp(this.checkedSearchQuery, 'i')
-      return this.flatOracles.filter((x) =>
-        re.test(`${x.Category}/${x.foundryTable.name}`)
-      )
-    },
   },
 
   methods: {
-    getPack() {
-      return game.packs.get('foundry-ironsworn.starforgedoracles')
-    },
-
     clearSearch() {
       this.searchQuery = ''
     },
