@@ -1,7 +1,7 @@
 import { compact, sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
-import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
+import { findOracleWithIntermediateNodes, getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
@@ -340,10 +340,16 @@ export async function rollAndDisplayOracleResult(table?: RollTable): Promise<str
     tableRows[resultIdx + 1]
   ])
 
+  // Calculate the "path" to this oracle
+  const oracleNodes = findOracleWithIntermediateNodes(table.data.flags.dfId)
+  const pathNames = oracleNodes.map(x => x.Display.Title)
+  pathNames.pop()
+
   // Render the chat message content
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
     table,
+    oraclePath: pathNames.join(' / '),
     roll,
     displayRows,
     result: tableDraw.results[0],

@@ -73,22 +73,44 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
 }
 
 export function getDFOracleByDfId(dfid: string): IOracle | IOracleCategory | undefined {
-  const walk = (oc: IOracleCategory) => {
-    if (oc.$id === dfid) return oc
-    for (const oracle of oc.Oracles ?? []) {
-      if (oracle.$id === dfid) return oracle
+  const nodes = findOracleWithIntermediateNodes(dfid)
+  return nodes[nodes.length-1]
+}
+
+export function findOracleWithIntermediateNodes(dfid: string): Array<IOracle | IOracleCategory> {
+  const ret: Array<IOracle | IOracleCategory> = []
+
+  function walkCategory(cat:IOracleCategory): boolean {
+    ret.push(cat)
+
+    if (cat.$id === dfid) return true
+    for (const oracle of cat.Oracles ?? []) {
+      if (walkOracle(oracle)) return true
     }
-    for (const cat of oc.Categories ?? []) {
-      const ret = walk(cat)
-      if (ret) return ret
+    for (const childCat of cat.Categories ?? []) {
+      if (walkCategory(childCat)) return true
     }
-    return undefined
+
+    ret.pop()
+    return false
   }
+
+  function walkOracle(oracle:IOracle): boolean {
+    ret.push(oracle)
+
+    if (oracle.$id === dfid) return true
+    for (const childOracle of oracle.Oracles ?? []) {
+      if (walkOracle(childOracle)) return true
+    }
+
+    ret.pop()
+    return false
+  }
+
   for (const cat of starforged.oracles) {
-    const ret = walk(cat)
-    if (ret) return ret
+    walkCategory(cat)
   }
-  return undefined
+  return ret
 }
 
 function generateIdMap(data: typeof starforged): { [key: string]: string } {

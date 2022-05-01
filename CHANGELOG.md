@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Add the "path" to the rolled oracle to the chat card output ([#329](https://github.com/ben/foundry-ironsworn/pull/329))
+
 ## 1.10.57
 
 - Fix oracle-result links to "action+theme" and strip undisplayable characters ([#328](https://github.com/ben/foundry-ironsworn/pull/328))
