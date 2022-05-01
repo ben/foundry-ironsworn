@@ -2,14 +2,14 @@
   <div class="flexcol nogrow" :class="{ hidden: hidden }">
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
-    <div v-if="oracle.foundryTable">
+    <div v-if="node.table">
       <h4 class="clickable text flexrow">
         <span @click="rollOracle">
           <i class="isicon-d10-tilt juicy"></i>
-          {{ name }}
+          {{ node.displayName }}
         </span>
         <icon-button
-          v-if="oracle.foundryTable"
+          v-if="node.table"
           icon="eye"
           @click="descriptionExpanded = !descriptionExpanded"
         />
@@ -38,16 +38,16 @@
           <i v-if="expanded" class="fa fa-caret-down" />
           <i v-else class="fa fa-caret-right" />
         </span>
-        {{ name }}
+        {{ node.displayName }}
       </h4>
 
       <transition name="slide">
         <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
           <oracletree-node
-            v-for="child in children"
-            :key="child.dfid"
+            v-for="child in node.children"
+            :key="child.displayName"
             :actor="actor"
-            :oracle="child"
+            :node="child"
             :searchQuery="searchQuery"
             :parentMatchesSearch="matchesSearch"
             ref="children"
@@ -75,7 +75,7 @@ h4 {
 export default {
   props: {
     actor: Object,
-    oracle: Object,
+    node: Object,
     searchQuery: String,
     parentMatchesSearch: Boolean,
   },
@@ -88,12 +88,7 @@ export default {
   },
 
   computed: {
-    children() {
-      return [...(this.oracle.Categories ?? []), ...(this.oracle.Oracles ?? [])]
-    },
-
     childMatchesSearch() {
-      this.searchQuery
       return this.$refs.children?.find((x) => x.matchesSearch)
     },
 
@@ -101,31 +96,24 @@ export default {
       return this.manuallyExpanded || !!this.searchQuery
     },
 
-    name() {
-      return (
-        this.oracle.foundryTable?.name ??
-        this.$t(`IRONSWORN.SFOracleCategories.${this.oracle.Display.Title}`)
-      )
-    },
-
     matchesSearch() {
       const re = new RegExp(this.searchQuery, 'i')
-      return re.test(this.name)
+      return re.test(this.node.displayName)
     },
 
     hidden() {
       if (!this.searchQuery) return false
       return !(
-        this.matchesSearch || // This matches
-        this.parentMatchesSearch || // Parent matches
+        this.matchesSearch ||
+        this.parentMatchesSearch ||
         this.childMatchesSearch
       )
     },
 
     tablePreview() {
-      const description = this.oracle.foundryTable.data.description || ''
+      const description = this.node.table.data.description || ''
       const tableRows = CONFIG.IRONSWORN._.sortBy(
-        this.oracle.foundryTable.data.results.contents.map((x) => ({
+        this.node.table.data.results.contents.map((x) => ({
           low: x.data.range[0],
           high: x.data.range[1],
           text: x.data.text,
@@ -144,16 +132,8 @@ export default {
   },
 
   methods: {
-    click() {
-      if (this.oracle.foundryTable) {
-        CONFIG.IRONSWORN.rollAndDisplayOracleResult(this.oracle.foundryTable)
-      } else {
-        this.manuallyExpanded = !this.manuallyExpanded
-      }
-    },
-
     rollOracle() {
-      CONFIG.IRONSWORN.rollAndDisplayOracleResult(this.oracle.foundryTable)
+      CONFIG.IRONSWORN.rollAndDisplayOracleResult(this.node.table)
     },
 
     moveclick(item) {
