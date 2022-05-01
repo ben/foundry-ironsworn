@@ -1,7 +1,8 @@
 import { compact, sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
-import { findOracleWithIntermediateNodes, getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
+import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
+import { createStarforgedOracleTree, findPathToNodeByTableId } from '../features/customoracles'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
@@ -341,9 +342,11 @@ export async function rollAndDisplayOracleResult(table?: RollTable): Promise<str
   ])
 
   // Calculate the "path" to this oracle
-  const oracleNodes = findOracleWithIntermediateNodes(table.data.flags.dfId)
-  const pathNames = oracleNodes.map(x => x.Display.Title)
-  pathNames.pop()
+  const oracleTreeRoot = await createStarforgedOracleTree()
+  const pathElements = findPathToNodeByTableId(oracleTreeRoot, table.id || '')
+  const pathNames = pathElements.map(x => x.displayName)
+  pathNames.shift() // root node has no display name
+  pathNames.pop() // this is the one we rolled, it gets the main title
 
   // Render the chat message content
   const renderData = {
