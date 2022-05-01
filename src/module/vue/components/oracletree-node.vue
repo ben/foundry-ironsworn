@@ -2,14 +2,14 @@
   <div class="flexcol nogrow" :class="{ hidden: node.forceHidden }">
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
-    <div v-if="node.table">
+    <div v-if="isLeaf">
       <h4 class="clickable text flexrow">
         <span @click="rollOracle">
           <i class="isicon-d10-tilt juicy"></i>
           {{ node.displayName }}
         </span>
         <icon-button
-          v-if="node.table"
+          v-if="isLeaf"
           icon="eye"
           @click="descriptionExpanded = !descriptionExpanded"
         />
@@ -70,6 +70,7 @@ h4 {
 </style>
 
 <script>
+import { sample } from 'lodash'
 export default {
   props: {
     actor: Object,
@@ -84,34 +85,43 @@ export default {
   },
 
   computed: {
+    isLeaf() {
+      return this.node.tables.length > 0
+    },
+
     expanded() {
       return this.manuallyExpanded || this.node.forceExpanded
     },
 
     tablePreview() {
-      const description = this.node.table.data.description || ''
-      const tableRows = CONFIG.IRONSWORN._.sortBy(
-        this.node.table.data.results.contents.map((x) => ({
-          low: x.data.range[0],
-          high: x.data.range[1],
-          text: x.data.text,
-          selected: false,
-        })),
-        'low'
-      )
-      const markdownTable = [
-        '| Roll | Result |',
-        '| --- | --- |',
-        ...tableRows.map((x) => `| ${x.low}-${x.high} | ${x.text} |`),
-      ].join('\n')
+      const texts = this.node.tables.map(table => {
+        const description = table.data.description || ''
+        const tableRows = CONFIG.IRONSWORN._.sortBy(
+          table.data.results.contents.map((x) => ({
+            low: x.data.range[0],
+            high: x.data.range[1],
+            text: x.data.text,
+            selected: false,
+          })),
+          'low'
+        )
+        const markdownTable = [
+          '| Roll | Result |',
+          '| --- | --- |',
+          ...tableRows.map((x) => `| ${x.low}-${x.high} | ${x.text} |`),
+        ].join('\n')
 
-      return this.$enrichMarkdown(description + '\n\n' + markdownTable)
+        return description + '\n\n' + markdownTable
+      })
+
+      return this.$enrichMarkdown(texts.join('\n\n'))
     },
   },
 
   methods: {
     rollOracle() {
-      CONFIG.IRONSWORN.rollAndDisplayOracleResult(this.node.table)
+      const randomTable = sample(this.node.tables)
+      CONFIG.IRONSWORN.rollAndDisplayOracleResult(randomTable)
     },
 
     moveclick(item) {

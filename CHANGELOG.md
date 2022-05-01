@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Oracle hooks can add tables to oracle nodes ([#333](https://github.com/ben/foundry-ironsworn/pull/333))
+
 ## 1.10.59
 
 - Fix oracle search ([#331](https://github.com/ben/foundry-ironsworn/pull/331))

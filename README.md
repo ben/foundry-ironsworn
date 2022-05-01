@@ -46,6 +46,13 @@ Whatever folder and table structure is found there will be mirrored into the ora
 
 The second is more useful for modules, and involves intercepting the `ironswornOracles` hook.
 The type of object in the tree is shown in `customoracles.ts`.
+Here's a simple hoook that adds more rows to the "Background Assets" oracle:
+
+```js
+Hooks.on('ironswornOracles', (root) => {
+  root.children[0].children[0].tables.push(game.tables.get('MSjHr7AahxxJXAqe'))
+})
+```
 
 ## How to hack on this
 
