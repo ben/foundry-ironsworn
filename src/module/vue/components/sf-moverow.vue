@@ -3,7 +3,7 @@
     <h4 style="margin: 0" class="clickable text flexrow" :title="tooltip">
       <span @click="rollMove">
         <i class="isicon-d10-tilt juicy"></i>
-        {{ move.moveItem.name }}
+        {{ move.displayName }}
       </span>
       <icon-button icon="eye" @click="expanded = !expanded" />
     </h4>
