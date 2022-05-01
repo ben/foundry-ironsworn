@@ -31,7 +31,8 @@ export async function createOracleTree(): Promise<OracleTreeNode> {
 
   // TODO: Add in custom oracles from a well-known directory
 
-  // TODO: fire the hook and allow extensions to modify the tree
+  // Fire the hook and allow extensions to modify the tree
+  Hooks.call('ironswornOracles', rootNode)
 
   return rootNode
 }
