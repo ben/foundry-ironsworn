@@ -1,6 +1,6 @@
 import { IMove, IMoveCategory, starforged } from 'dataforged'
 import { IronswornItem } from '../item/item'
-import { MoveDataProperties, MoveDataSource } from '../item/itemtypes'
+import { MoveDataSource } from '../item/itemtypes'
 
 export interface MoveCategory {
   displayName: string
