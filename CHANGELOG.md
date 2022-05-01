@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix oracle search ([#331](https://github.com/ben/foundry-ironsworn/pull/331))
+
 ## 1.10.58
 
 - Add the "path" to the rolled oracle to the chat card output ([#329](https://github.com/ben/foundry-ironsworn/pull/329))
