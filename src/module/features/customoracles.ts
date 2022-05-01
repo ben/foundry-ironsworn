@@ -72,7 +72,7 @@ async function augmentWithFolderContents(node:OracleTreeNode) {
     // Add this folder
     const newNode:OracleTreeNode = {
       ...emptyNode(),
-      displayName: folder.name
+      displayName: folder.name || '(folder)'
     }
     parent.children.push(newNode)
 
