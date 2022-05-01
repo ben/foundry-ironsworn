@@ -3,6 +3,7 @@
 ## In progress
 
 - Add the "path" to the rolled oracle to the chat card output ([#329](https://github.com/ben/foundry-ironsworn/pull/329))
+- Allow custom oracles ([#330](https://github.com/ben/foundry-ironsworn/pull/330))
 
 ## 1.10.57
 
