@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.62
+
 - Fix the move editor ([#336](https://github.com/ben/foundry-ironsworn/pull/336))
 
 ## 1.10.61
