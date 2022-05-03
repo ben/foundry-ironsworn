@@ -181,13 +181,18 @@ export default {
       // Take this apart so it's (a) easy to write a UI on and (b) easy to reconstruct later
       this.currentRollType = ap['Roll type']
       this.currentMethod = ap.Method
-      this.currentStatText = ap.Using.join(',')
+      this.currentStatText = ap.Using?.join?.(',') ?? ''
     },
 
     addTrigger() {
       let { Options } = this.item.data.Trigger
       Options ||= []
-      Options.push({ Text: '', 'Action roll': { Stat: 'Iron' } })
+      Options.push({
+        Text: '',
+        Method: 'Any',
+        'Roll type': 'Action roll',
+        Using: 'Iron',
+      })
       this.$item.update({ data: { Trigger: { Options } } })
     },
 
