@@ -49,7 +49,7 @@ export function hashLookup(str: string): string {
   return HASH_CACHE[str]
 }
 
-function hash(str: string): string {
+export function hash(str: string): string {
   return shajs('sha256').update(str).digest('hex').substring(48)
 }
 

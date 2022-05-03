@@ -81,6 +81,13 @@
       "entity": "RollTable"
     },
     {
+      "name": "ironswornoracles",
+      "label": "Ironsworn Oracles",
+      "system": "foundry-ironsworn",
+      "path": "packs/ironsworn-oracles.db",
+      "entity": "RollTable"
+    },
+    {
       "name": "ironswornitems",
       "label": "Ironsworn Moves",
       "system": "foundry-ironsworn",

@@ -1,5 +1,9 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+import { IOracle, IOracleCategory, ironsworn } from 'dataforged'
+import { max } from 'lodash'
+import { marked } from 'marked'
 import { IronswornActor } from './actor/actor'
+import { hash } from './dataforged'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
@@ -95,6 +99,7 @@ const PACKS = [
   'foundry-ironsworn.ironsworndelvedomains',
   'foundry-ironsworn.ironswornfoes',
   'foundry-ironsworn.foeactorsis',
+  'foundry-ironsworn.ironswornoracles',
 ]
 
 export async function importFromDatasworn() {
@@ -102,7 +107,6 @@ export async function importFromDatasworn() {
   for (const key of PACKS) {
     const pack = game.packs.get(key)
     if (!pack) continue
-    await pack.render(true)
     const idsToDelete = pack.index.map((x: any) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
@@ -250,4 +254,51 @@ export async function importFromDatasworn() {
     )
     await actor?.createEmbeddedDocuments('Item', [foeItem.data])
   }
+
+  // Oracles from Dataforged
+  const oraclesToCreate = [] as Record<string, unknown>[]
+  async function processOracle(oracle: IOracle) {
+    if (oracle.Table) {
+      const description = marked.parseInline(oracle.Description ?? '')
+      const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
+      const tableData = {
+        _id: hash(oracle.$id),
+        flags: {
+          dfId: oracle.$id,
+          category: oracle.Category,
+        },
+        name: oracle.Name,
+        img: 'icons/dice/d10black.svg',
+        description,
+        formula: `d${maxRoll}`,
+        replacement: true,
+        displayRoll: true,
+        /* folder: // would require using an additional module */
+        results: oracle.Table?.map((tableRow) => {
+          let text: string
+          if (tableRow.Result && tableRow.Summary) {
+            text = `${tableRow.Result} (${tableRow.Summary})`
+          } else text = tableRow.Result ?? ''
+          return {
+            range: [tableRow.Floor, tableRow.Ceiling],
+            text: tableRow.Result && text,
+          }
+        }).filter((x) => x.range[0] !== null),
+      }
+      console.log(oracle.$id)
+      await RollTable.create(tableData, { pack: 'foundry-ironsworn.ironswornoracles', keepId: true })
+      oraclesToCreate.push(tableData)
+    }
+
+    for (const child of oracle.Oracles ?? []) await processOracle(child)
+  }
+  async function processCategory(cat: IOracleCategory) {
+    for (const oracle of cat.Oracles ?? []) await processOracle(oracle)
+    for (const child of cat.Categories ?? []) await processCategory(child)
+  }
+
+  for (const category of ironsworn.oracles) {
+    await processCategory(category)
+  }
+  // await RollTable.createDocuments(oraclesToCreate, { pack: 'foundry-ironsworn.ironswornoracles', keepId: true })
 }
