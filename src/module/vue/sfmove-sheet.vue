@@ -109,7 +109,7 @@
               </label>
             </div>
           </div>
-          <input v-model="currentStatText" @change="saveActionProps" />
+          <input v-model="currentStatText" @blur="saveActionProps" />
         </div>
         <textarea v-model="currentContent" @blur="saveText" />
       </div>
@@ -125,7 +125,7 @@
 </style>
 
 <script>
-import { get, isArray, set } from 'lodash'
+import { get, set } from 'lodash'
 
 export default {
   props: {
@@ -135,6 +135,7 @@ export default {
   data() {
     return {
       currentProperty: 'Text',
+      currentActionPropKey: undefined,
       currentContent: this.item.data.Text,
       currentRollType: undefined,
       currentMethod: undefined,
@@ -163,6 +164,7 @@ export default {
     switchContent(prop, actionPropKey = undefined) {
       this.currentProperty = prop
       this.currentContent = get(this.item.data, prop)
+      this.currentActionPropKey = actionPropKey
       // {
       //   Method: 'Any',
       //   'Roll type': 'Action roll',
@@ -171,17 +173,9 @@ export default {
       //   dfid: 'Starforged/Moves/Recover/Heal/Trigger/Options/1',
       // }
       const ap = actionPropKey && get(this.item.data, actionPropKey)
-      if (!ap) {
-        this.currentRollType = undefined
-        this.currentMethod = undefined
-        this.currentStatText = undefined
-        return
-      }
-
-      // Take this apart so it's (a) easy to write a UI on and (b) easy to reconstruct later
-      this.currentRollType = ap['Roll type']
-      this.currentMethod = ap.Method
-      this.currentStatText = ap.Using?.join?.(',') ?? ''
+      this.currentRollType = ap?.['Roll type']
+      this.currentMethod = ap?.Method
+      this.currentStatText = ap?.Using?.join?.(',') ?? ''
     },
 
     addTrigger() {
@@ -207,8 +201,12 @@ export default {
     },
 
     saveActionProps() {
-      // TODO: reconstruct an IMoveTriggerOption and replace the one currently referenced
-      console.log(this)
+      const opt = get(this.item.data, this.currentActionPropKey)
+      opt.Method = this.currentMethod
+      opt['Roll type'] = this.currentRollType
+      opt.Using = this.currentStatText.split(',').map((x) => x.trim())
+      set(this.item.data, this.currentActionPropKey, opt)
+      this.$item.update({ data: this.item.data })
     },
 
     saveText() {
