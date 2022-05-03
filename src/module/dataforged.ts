@@ -53,7 +53,7 @@ export function hash(str: string): string {
   return shajs('sha256').update(str).digest('hex').substring(48)
 }
 
-export async function getFoundryTableByDfId(dfid: string): Promise<RollTable | undefined> {
+export async function getFoundrySFTableByDfId(dfid: string): Promise<RollTable | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
   return (await pack?.getDocument(hashLookup(dfid))) || undefined
 }
