@@ -71,6 +71,14 @@ async function walkOracleCategory(cat: IOracleCategory, tableGetter: typeof getF
     node.children.push(await walkOracle(oracle, tableGetter))
   }
 
+  // Promote children of nodes that have a table
+  for (const child of node.children) {
+    if (child.tables.length > 0) {
+      node.children = [...node.children, ...child.children]
+      child.children = []
+    }
+  }
+
   return node
 }
 
@@ -87,6 +95,29 @@ async function walkOracle(oracle: IOracle, tableGetter: typeof getFoundrySFTable
   // Child oracles
   for (const childOracle of oracle.Oracles ?? []) {
     node.children.push(await walkOracle(childOracle, tableGetter))
+  }
+
+  // Subtables on results
+  for (const entry of oracle.Table ?? []) {
+    const name = entry.Result
+    if (entry.Subtable) {
+      const subtable = await tableGetter(`${oracle.$id}/${name}`)
+      if (subtable) {
+        node.children.push({
+          ...emptyNode(),
+          displayName: name,
+          tables: [subtable],
+        })
+      }
+    }
+  }
+
+  // Promote children of nodes that have a table
+  for (const child of node.children) {
+    if (child.tables.length > 0) {
+      node.children = [...node.children, ...child.children]
+      child.children = []
+    }
   }
 
   return node
