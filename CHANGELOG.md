@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the move editor ([#336](https://github.com/ben/foundry-ironsworn/pull/336))
+
 ## 1.10.61
 
 - Custom moves from folder and hook ([#334](https://github.com/ben/foundry-ironsworn/pull/334))
