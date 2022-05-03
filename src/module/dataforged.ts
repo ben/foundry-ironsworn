@@ -57,6 +57,10 @@ export async function getFoundrySFTableByDfId(dfid: string): Promise<RollTable |
   const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
   return (await pack?.getDocument(hashLookup(dfid))) || undefined
 }
+export async function getFoundryISTableByDfId(dfid: string): Promise<RollTable | undefined> {
+  const pack = game.packs.get('foundry-ironsworn.ironswornoracles')
+  return (await pack?.getDocument(hashLookup(dfid))) || undefined
+}
 
 export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
   const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
