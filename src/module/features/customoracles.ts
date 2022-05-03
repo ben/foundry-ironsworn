@@ -1,4 +1,4 @@
-import { starforged, IOracle, IOracleCategory } from 'dataforged'
+import { starforged, IOracle, IOracleCategory, ironsworn } from 'dataforged'
 import { compact } from 'lodash'
 import { getFoundryTableByDfId } from '../dataforged'
 
@@ -15,6 +15,27 @@ const emptyNode = () =>
     tables: [],
     children: [],
   } as OracleTreeNode)
+
+export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
+  const rootNode = emptyNode()
+
+  // Make sure the compendium is loaded
+  const pack = game.packs.get('foundry-ironsworn.ironswornoracles')
+  await pack?.getDocuments()
+
+  // Build the default tree
+  for (const category of ironsworn.oracles) {
+    rootNode.children.push(await walkOracleCategory(category))
+  }
+
+  // Add in custom oracles from a well-known directory
+  await augmentWithFolderContents(rootNode)
+
+  // Fire the hook and allow extensions to modify the tree
+  await Hooks.call('ironswornOracles', rootNode)
+
+  return rootNode
+}
 
 export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   const rootNode = emptyNode()
