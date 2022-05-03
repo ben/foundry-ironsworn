@@ -74,39 +74,42 @@
 
       <!-- Editor on right -->
       <div class="flexcol">
-        <div class="flexcol nogrow" v-if="currentActionType">
+        <div class="flexcol nogrow" v-if="currentRollType">
           <div class="flexrow">
-            <label
-              v-for="x in ['Action roll', 'Progress roll', 'Custom stat roll']"
-              :key="x"
-            >
-              <input
-                type="radio"
-                name="actiontype"
-                :value="x"
-                v-model="currentActionType"
-                @change="saveActionProps"
-              />
-              {{ x.split(' ')[0] }}
-            </label>
+            <div class="flexcol">
+              <label
+                class="nogrow"
+                v-for="x in ['Action roll', 'Progress roll']"
+                :key="x"
+              >
+                <input
+                  type="radio"
+                  name="actiontype"
+                  :value="x"
+                  v-model="currentRollType"
+                  @change="saveActionProps"
+                />
+                {{ x.split(' ')[0] }}
+              </label>
+            </div>
+            <div class="flexcol">
+              <label
+                class="nogrow"
+                v-for="x in ['Any', 'Highest', 'Lowest', 'All']"
+                :key="x"
+              >
+                <input
+                  type="radio"
+                  name="rollType"
+                  :value="x"
+                  v-model="currentMethod"
+                  @change="saveActionProps"
+                />
+                {{ x }}
+              </label>
+            </div>
           </div>
-
-          <div class="flexrow">
-            <label
-              v-for="x in [singleStatLabel, 'All of', 'Best of', 'Worst of']"
-              :key="x"
-            >
-              <input
-                type="radio"
-                name="rollType"
-                :value="x"
-                v-model="currentRollType"
-                @change="saveActionProps"
-              />
-              {{ x }}
-            </label>
-          </div>
-          <input v-model="currentStatText" @change="saveActionProps" />
+          <input v-model="currentStatText" @blur="saveActionProps" />
         </div>
         <textarea v-model="currentContent" @blur="saveText" />
       </div>
@@ -122,7 +125,7 @@
 </style>
 
 <script>
-import { get, isArray, set } from 'lodash'
+import { get, set } from 'lodash'
 
 export default {
   props: {
@@ -132,9 +135,10 @@ export default {
   data() {
     return {
       currentProperty: 'Text',
+      currentActionPropKey: undefined,
       currentContent: this.item.data.Text,
-      currentActionType: undefined,
       currentRollType: undefined,
+      currentMethod: undefined,
       currentStatText: undefined,
     }
   },
@@ -148,17 +152,11 @@ export default {
           : `${i + 1}`
         return {
           key: `option${i}`,
-          title: x.Text || '...',
+          title,
           actionPropKey: `Trigger.Options[${i}]`,
           property: `Trigger.Options[${i}].Text`,
         }
       })
-    },
-
-    singleStatLabel() {
-      if (this.currentActionType === 'Action roll') return 'Stat'
-      if (this.currentActionType === 'Progress roll') return 'Track'
-      return '???'
     },
   },
 
@@ -166,47 +164,35 @@ export default {
     switchContent(prop, actionPropKey = undefined) {
       this.currentProperty = prop
       this.currentContent = get(this.item.data, prop)
+      this.currentActionPropKey = actionPropKey
+      // {
+      //   Method: 'Any',
+      //   'Roll type': 'Action roll',
+      //   Text: 'Receive treatment from someone (not an ally)',
+      //   Using: ['Iron'],
+      //   dfid: 'Starforged/Moves/Recover/Heal/Trigger/Options/1',
+      // }
       const ap = actionPropKey && get(this.item.data, actionPropKey)
-      if (!ap) {
-        this.currentActionType = undefined
-        this.currentRollType = undefined
-        this.currentStatText = undefined
-        return
-      }
-
-      // Take this apart so it's (a) easy to write a UI on and (b) easy to reconstruct later
-      for (const k of ['Action roll', 'Progress roll', 'Custom stat roll']) {
-        if (ap[k]) {
-          this.currentActionType = k
-          for (const rk of [
-            'Stat',
-            'Track',
-            'Options',
-            'All of',
-            'Best of',
-            'Worst of',
-          ]) {
-            if (ap[k][rk]) {
-              this.currentRollType = rk
-              let rolls = ap[k][rk]
-              if (!isArray(rolls)) rolls = [rolls]
-              this.currentStatText = rolls.join(', ')
-            }
-          }
-        }
-      }
+      this.currentRollType = ap?.['Roll type']
+      this.currentMethod = ap?.Method
+      this.currentStatText = ap?.Using?.join?.(',') ?? ''
     },
 
     addTrigger() {
       let { Options } = this.item.data.Trigger
       Options ||= []
-      Options.push({ Text: '', 'Action roll': { Stat: 'Iron' } })
+      Options.push({
+        Text: '',
+        Method: 'Any',
+        'Roll type': 'Action roll',
+        Using: 'Iron',
+      })
       this.$item.update({ data: { Trigger: { Options } } })
     },
 
     removeTrigger(option) {
       console.log(option)
-      const idx = this.triggerOptions.findIndex(x => x.key === option.key)
+      const idx = this.triggerOptions.findIndex((x) => x.key === option.key)
       let { Options } = this.item.data.Trigger
       Options ||= []
       Options.splice(idx, 1)
@@ -215,8 +201,12 @@ export default {
     },
 
     saveActionProps() {
-      // TODO: reconstruct an IMoveTriggerOption and replace the one currently referenced
-      console.log(this)
+      const opt = get(this.item.data, this.currentActionPropKey)
+      opt.Method = this.currentMethod
+      opt['Roll type'] = this.currentRollType
+      opt.Using = this.currentStatText.split(',').map((x) => x.trim())
+      set(this.item.data, this.currentActionPropKey, opt)
+      this.$item.update({ data: this.item.data })
     },
 
     saveText() {
