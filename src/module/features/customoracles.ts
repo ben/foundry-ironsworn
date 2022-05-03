@@ -25,7 +25,7 @@ export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
 
   // Build the default tree
   for (const category of ironsworn.oracles) {
-    rootNode.children.push(await walkOracleCategory(category, 'IRONSWORN.ISOracleCategories', getFoundryISTableByDfId))
+    rootNode.children.push(await walkOracleCategory(category, getFoundryISTableByDfId))
   }
 
   // Add in custom oracles from a well-known directory
@@ -46,7 +46,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
 
   // Build the default tree
   for (const category of starforged.oracles) {
-    rootNode.children.push(await walkOracleCategory(category, 'IRONSWORN.SFOracleCategories', getFoundrySFTableByDfId))
+    rootNode.children.push(await walkOracleCategory(category, getFoundrySFTableByDfId))
   }
 
   // Add in custom oracles from a well-known directory
@@ -57,30 +57,37 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
 
   return rootNode
 }
-async function walkOracleCategory(cat: IOracleCategory, i18nKeyRoot: string, tableGetter: typeof getFoundrySFTableByDfId): Promise<OracleTreeNode> {
+async function walkOracleCategory(cat: IOracleCategory, tableGetter: typeof getFoundrySFTableByDfId): Promise<OracleTreeNode> {
   const node: OracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: cat,
-    displayName: game.i18n.localize(`${i18nKeyRoot}.${cat.Display.Title}`),
+    displayName: game.i18n.localize(`IRONSWORN.OracleCategories.${cat.Name}`),
   }
 
-  for (const childCat of cat.Categories ?? []) node.children.push(await walkOracleCategory(childCat, i18nKeyRoot, tableGetter))
-  for (const oracle of cat.Oracles ?? []) node.children.push(await walkOracle(oracle, i18nKeyRoot, tableGetter))
+  for (const childCat of cat.Categories ?? []) {
+    node.children.push(await walkOracleCategory(childCat, tableGetter))
+  }
+  for (const oracle of cat.Oracles ?? []) {
+    node.children.push(await walkOracle(oracle, tableGetter))
+  }
 
   return node
 }
 
-async function walkOracle(oracle: IOracle, i18nKeyRoot: string, tableGetter: typeof getFoundrySFTableByDfId): Promise<OracleTreeNode> {
+async function walkOracle(oracle: IOracle, tableGetter: typeof getFoundrySFTableByDfId): Promise<OracleTreeNode> {
   const table = await tableGetter(oracle.$id)
 
   const node: OracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: oracle,
     tables: compact([table]),
-    displayName: table?.name || game.i18n.localize(`${i18nKeyRoot}.${oracle.Display.Title}`),
+    displayName: table?.name || game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`),
   }
 
-  for (const childOracle of oracle.Oracles ?? []) node.children.push(await walkOracle(childOracle, i18nKeyRoot, tableGetter))
+  // Child oracles
+  for (const childOracle of oracle.Oracles ?? []) {
+    node.children.push(await walkOracle(childOracle, tableGetter))
+  }
 
   return node
 }
