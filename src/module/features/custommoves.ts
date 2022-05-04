@@ -22,7 +22,7 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   const compendiumMoves = (await pack?.getDocuments()) as IronswornItem[]
 
   // Construct the base tree
-  for (const category of starforged.moves) {
+  for (const category of starforged['Move Categories']) {
     ret.push(walkCategory(category, compendiumMoves))
   }
 

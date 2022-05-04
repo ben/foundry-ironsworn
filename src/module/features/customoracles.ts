@@ -1,4 +1,4 @@
-import { starforged, IOracle, IOracleCategory, ironsworn } from 'dataforged'
+import { starforged, IOracle, IOracleCategory } from 'dataforged'
 import { compact } from 'lodash'
 import { getFoundryISTableByDfId, getFoundrySFTableByDfId } from '../dataforged'
 
@@ -24,7 +24,7 @@ export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
   await pack?.getDocuments()
 
   // Build the default tree
-  for (const category of ironsworn.oracles) {
+    for (const category of starforged['Oracle Categories']) {
     rootNode.children.push(await walkOracleCategory(category, getFoundryISTableByDfId))
   }
 
@@ -45,7 +45,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   await pack?.getDocuments()
 
   // Build the default tree
-  for (const category of starforged.oracles) {
+  for (const category of starforged['Oracle Categories']) {
     rootNode.children.push(await walkOracleCategory(category, getFoundrySFTableByDfId))
   }
 
