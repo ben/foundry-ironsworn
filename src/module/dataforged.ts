@@ -326,6 +326,7 @@ async function processOracles(idMap: { [key: string]: string }) {
             text = `${tableRow.Result} (${tableRow.Summary})`
           } else text = tableRow.Result ?? ''
           return {
+            _id: idMap[tableRow.$id ?? ''],
             range: [tableRow.Floor, tableRow.Ceiling],
             text: tableRow.Result && renderLinksInStr(text, idMap),
           }
