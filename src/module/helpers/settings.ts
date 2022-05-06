@@ -29,7 +29,7 @@ export class IronswornSettings {
         ironsworn: 'IRONSWORN.Ironsworn',
         starforged: 'IRONSWORN.Starforged',
       },
-      default: 'ironsworn',
+      default: 'sheet',
     })
 
     game.settings.register('foundry-ironsworn', 'shared-supply', {
