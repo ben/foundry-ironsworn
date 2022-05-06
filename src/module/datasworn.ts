@@ -332,7 +332,7 @@ async function processDataforgedOracles() {
         tableData(
           oracle.Table,
           oracle.$id,
-          oracle.Display.Title,
+          oracle.Name,
           oracle.Category,
           oracle.Description ?? ''
         )
