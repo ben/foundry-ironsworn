@@ -94,6 +94,7 @@ const FOE_IMAGES = {
 
 const PACKS = [
   'foundry-ironsworn.ironswornitems',
+  'foundry-ironsworn.ironswornmoves',
   'foundry-ironsworn.ironswornassets',
   'foundry-ironsworn.ironsworndelvethemes',
   'foundry-ironsworn.ironsworndelvedomains',
@@ -131,6 +132,7 @@ export async function importFromDatasworn() {
     }
   }
   await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.ironswornitems' })
+  await processDataforgedMoves()
 
   // Assets
   const assetsJson = await fetch('systems/foundry-ironsworn/assets/assets.json').then((x) =>
@@ -263,6 +265,27 @@ export async function importFromDatasworn() {
 
   // Oracles from Dataforged
   await processDataforgedOracles()
+}
+
+async function processDataforgedMoves() {
+  const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  for (const category of ironsworn.moves) {
+    for (const move of category.Moves) {
+      renderLinksInMove(move)
+      const cleanMove = cleanDollars(move)
+      movesToCreate.push({
+        _id: hash(move.$id),
+        type: 'sfmove',
+        name: move['Name'],
+        img: 'icons/dice/d10black.svg',
+        data: cleanMove,
+      })
+    }
+  }
+  await Item.createDocuments(movesToCreate, {
+    pack: 'foundry-ironsworn.ironswornmoves',
+    keepId: true,
+  })
 }
 
 async function processDataforgedOracles() {
