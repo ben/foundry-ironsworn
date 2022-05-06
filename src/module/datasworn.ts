@@ -133,7 +133,9 @@ export async function importFromDatasworn() {
   await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.ironswornitems' })
 
   // Assets
-  const assetsJson = await fetch('systems/foundry-ironsworn/assets/assets.json').then((x) => x.json())
+  const assetsJson = await fetch('systems/foundry-ironsworn/assets/assets.json').then((x) =>
+    x.json()
+  )
   const assetsToCreate = assetsJson.map((raw) => ({
     type: 'asset',
     ...raw,
@@ -141,7 +143,9 @@ export async function importFromDatasworn() {
   await Item.createDocuments(assetsToCreate, { pack: 'foundry-ironsworn.ironswornassets' })
 
   // Themes
-  const themesJson = await fetch('systems/foundry-ironsworn/assets/delve-themes.json').then((x) => x.json())
+  const themesJson = await fetch('systems/foundry-ironsworn/assets/delve-themes.json').then((x) =>
+    x.json()
+  )
   const themesToCreate = themesJson.Themes.map((rawTheme) => {
     const themeData = {
       type: 'delve-theme',
@@ -179,7 +183,9 @@ export async function importFromDatasworn() {
   await Item.createDocuments(themesToCreate, { pack: 'foundry-ironsworn.ironsworndelvethemes' })
 
   // Domains
-  const domainsJson = await fetch('systems/foundry-ironsworn/assets/delve-domains.json').then((x) => x.json())
+  const domainsJson = await fetch('systems/foundry-ironsworn/assets/delve-domains.json').then((x) =>
+    x.json()
+  )
   const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
     const domainData = {
       type: 'delve-domain',
@@ -256,8 +262,18 @@ export async function importFromDatasworn() {
   }
 
   // Oracles from Dataforged
+  await processDataforgedOracles()
+}
+
+async function processDataforgedOracles() {
   const oraclesToCreate = [] as Record<string, unknown>[]
-  function tableData(table: IRow[], $id: string, name: string, category: string, description: string) {
+  function tableData(
+    table: IRow[],
+    $id: string,
+    name: string,
+    category: string,
+    description: string
+  ) {
     const renderedDescription = marked.parseInline(description ?? '')
     const maxRoll = max(table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
     return {
@@ -290,13 +306,25 @@ export async function importFromDatasworn() {
   function processOracle(oracle: IOracle) {
     if (oracle.Table) {
       oraclesToCreate.push(
-        tableData(oracle.Table, oracle.$id, oracle.Display.Title, oracle.Category, oracle.Description ?? '')
+        tableData(
+          oracle.Table,
+          oracle.$id,
+          oracle.Display.Title,
+          oracle.Category,
+          oracle.Description ?? ''
+        )
       )
       for (const tableEntry of oracle.Table) {
         if (tableEntry.Subtable) {
           const name = tableEntry.Result
           oraclesToCreate.push(
-            tableData(tableEntry.Subtable, `${oracle.$id}/${name}`, name, oracle.Category, tableEntry.Result)
+            tableData(
+              tableEntry.Subtable,
+              `${oracle.$id}/${name}`,
+              name,
+              oracle.Category,
+              tableEntry.Result
+            )
           )
         }
       }
