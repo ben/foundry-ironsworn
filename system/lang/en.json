@@ -1,5 +1,7 @@
 {
   "IRONSWORN": {
+    "Ironsworn": "Ironsworn",
+    "Starforged": "Starforged",
     "CreateActor": "Create Actor",
     "YourWorldTruths": "Your World: Truths",
     "TruthQuestStarter": "Quest Starter:",
@@ -200,6 +202,11 @@
         "Hint": "Select the visual look for this game. Requires a reload.",
         "Ironsworn": "Ironsworn Classic",
         "Starforged": "Starforged (experimental)"
+      },
+      "Tools": {
+        "Name": "Character Tools",
+        "Hint": "Which set of moves and oracles will appear when opening a character sheet.",
+        "Sheet": "Match sheet"
       },
       "SharedSupply": {
         "Name": "Shared Supply Tracker",
