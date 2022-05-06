@@ -2,6 +2,7 @@ import { RollDialog } from '../../helpers/rolldialog'
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { CharacterMoveSheet } from './charactermovesheet'
+import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class IronswornCharacterSheet extends ActorSheet {
   static get defaultOptions() {
@@ -82,7 +83,12 @@ export class IronswornCharacterSheet extends ActorSheet {
     if (this.actor.moveSheet) {
       this.actor.moveSheet.render(true, { focus: true })
     } else {
-      new CharacterMoveSheet(this.actor).render(true)
+      if (IronswornSettings.toolbox === 'starforged') {
+        this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
+        this.actor.moveSheet.render(true, { focus: true })
+        } else {
+        new CharacterMoveSheet(this.actor).render(true)
+      }
     }
   }
 

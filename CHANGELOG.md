@@ -3,6 +3,7 @@
 ## In progress
 
 - Use the Starforged-style oracle tree for Ironsworn, with Dataforged-powered tables ([#337](https://github.com/ben/foundry-ironsworn/pull/337))
+- Allow explicit setting of which toolbox to use ([#344](https://github.com/ben/foundry-ironsworn/pull/344))
 
 ## 1.10.62
 

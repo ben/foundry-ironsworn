@@ -1,6 +1,7 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornVueActorSheet } from '../vueactorsheet'
 import { CharacterMoveSheet } from './charactermovesheet'
+import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class IronswornCharacterSheetV2 extends IronswornVueActorSheet {
   static get defaultOptions() {
@@ -66,7 +67,12 @@ export class IronswornCharacterSheetV2 extends IronswornVueActorSheet {
     if (this.actor.moveSheet) {
       this.actor.moveSheet.render(true, { focus: true })
     } else {
-      new CharacterMoveSheet(this.actor).render(true)
+      if (IronswornSettings.toolbox === 'starforged') {
+        this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
+        this.actor.moveSheet.render(true, { focus: true })
+        } else {
+        new CharacterMoveSheet(this.actor).render(true)
+      }
     }
   }
 }

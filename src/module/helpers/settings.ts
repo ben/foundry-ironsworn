@@ -18,6 +18,20 @@ export class IronswornSettings {
       onChange: reload,
     })
 
+    game.settings.register('foundry-ironsworn', 'toolbox', {
+      name: 'IRONSWORN.Settings.Tools.Name',
+      hint: 'IRONSWORN.Settings.Tools.Hint',
+      scope: 'world',
+      config: true,
+      type: String,
+      choices: {
+        sheet: 'IRONSWORN.Settings.Tools.Sheet',
+        ironsworn: 'IRONSWORN.Ironsworn',
+        starforged: 'IRONSWORN.Starforged',
+      },
+      default: 'sheet',
+    })
+
     game.settings.register('foundry-ironsworn', 'shared-supply', {
       name: 'IRONSWORN.Settings.SharedSupply.Name',
       hint: 'IRONSWORN.Settings.SharedSupply.Hint',
@@ -65,6 +79,10 @@ export class IronswornSettings {
 
   static get theme(): string {
     return game.settings.get('foundry-ironsworn', 'theme') as string
+  }
+
+  static get toolbox(): string {
+    return game.settings.get('foundry-ironsworn', 'toolbox') as string
   }
 
   static get starforgedBeta(): boolean {

@@ -1,5 +1,6 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornVueActorSheet } from '../vueactorsheet'
+import { CharacterMoveSheet } from './charactermovesheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class StarforgedCharacterSheet extends IronswornVueActorSheet {
@@ -63,7 +64,11 @@ export class StarforgedCharacterSheet extends IronswornVueActorSheet {
   }
 
   _openMoveSheet(_e?: JQuery.ClickEvent) {
-    this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
-    this.actor.moveSheet.render(true, { focus: true })
+    if (IronswornSettings.toolbox === 'ironsworn') {
+      new CharacterMoveSheet(this.actor).render(true)
+    } else {
+      this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
+      this.actor.moveSheet.render(true, { focus: true })
+    }
   }
 }
