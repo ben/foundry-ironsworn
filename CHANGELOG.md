@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Use the Starforged-style oracle tree for Ironsworn, with Dataforged-powered tables ([#337](https://github.com/ben/foundry-ironsworn/pull/337))
+
 ## 1.10.62
 
 - Fix the move editor ([#336](https://github.com/ben/foundry-ironsworn/pull/336))
