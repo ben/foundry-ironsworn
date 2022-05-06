@@ -149,8 +149,20 @@ export interface LocationDataProperties {
 
 ////////////////////////////////////////
 
-export type ActorDataSource = CharacterDataSource | SharedDataSource | FoeDataSource | SiteDataSource | StarshipDataSource | LocationDataSource
-export type ActorDataProperties = CharacterDataProperties | SharedDataProperties | FoeDataProperties | SiteDataProperties | StarshipDataProperties | LocationDataProperties
+export type ActorDataSource =
+  | CharacterDataSource
+  | SharedDataSource
+  | FoeDataSource
+  | SiteDataSource
+  | StarshipDataSource
+  | LocationDataSource
+export type ActorDataProperties =
+  | CharacterDataProperties
+  | SharedDataProperties
+  | FoeDataProperties
+  | SiteDataProperties
+  | StarshipDataProperties
+  | LocationDataProperties
 
 declare global {
   interface SourceConfig {

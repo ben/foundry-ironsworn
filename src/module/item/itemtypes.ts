@@ -195,8 +195,24 @@ export interface SFMoveDataProperties {
 
 ///////////////////////////////
 
-export type ItemDataSource = AssetDataSource | ProgressDataSource | VowDataSource | BondsetDataSource | MoveDataSource | SFMoveDataSource | DelveThemeDataSource | DelveDomainDataSource
-export type ItemDataProperties = AssetDataProperties | ProgressDataProperties | VowDataProperties | BondsetDataProperties | MoveDataProperties | SFMoveDataProperties | DelveThemeDataProperties | DelveDomainDataProperties
+export type ItemDataSource =
+  | AssetDataSource
+  | ProgressDataSource
+  | VowDataSource
+  | BondsetDataSource
+  | MoveDataSource
+  | SFMoveDataSource
+  | DelveThemeDataSource
+  | DelveDomainDataSource
+export type ItemDataProperties =
+  | AssetDataProperties
+  | ProgressDataProperties
+  | VowDataProperties
+  | BondsetDataProperties
+  | MoveDataProperties
+  | SFMoveDataProperties
+  | DelveThemeDataProperties
+  | DelveDomainDataProperties
 
 declare global {
   interface SourceConfig {

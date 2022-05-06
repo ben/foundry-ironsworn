@@ -1,4 +1,4 @@
-import { VueApplication } from "../vueapp";
+import { VueApplication } from '../vueapp'
 
 export class EditSectorDialog extends VueApplication {
   constructor(protected sceneId: string) {

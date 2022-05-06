@@ -2,7 +2,11 @@ import * as lodash from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
-import { createIronswornChatRoll, createIronswornDenizenChat, rollAndDisplayOracleResult } from './module/chat/chatrollhelpers'
+import {
+  createIronswornChatRoll,
+  createIronswornDenizenChat,
+  rollAndDisplayOracleResult,
+} from './module/chat/chatrollhelpers'
 import { RANKS, RANK_INCREMENTS } from './module/constants'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'

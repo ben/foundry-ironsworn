@@ -1,4 +1,4 @@
-function getIndexEntry(el: HTMLElement): Pick<any, "type"> | undefined {
+function getIndexEntry(el: HTMLElement): Pick<any, 'type'> | undefined {
   const { documentId } = el.dataset
   const packId = $(el).parents('.compendium').data('pack')
   const pack = game.packs.get(packId)

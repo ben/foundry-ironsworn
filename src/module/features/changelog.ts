@@ -1,7 +1,12 @@
 import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
 import { capitalize, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
-import { CharacterDataProperties, SharedDataProperties, SiteDataProperties, StarshipDataProperties } from '../actor/actortypes'
+import {
+  CharacterDataProperties,
+  SharedDataProperties,
+  SiteDataProperties,
+  StarshipDataProperties,
+} from '../actor/actortypes'
 import { RANKS } from '../constants'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
@@ -113,7 +118,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       'traumatized',
       'doomed',
       'indebted',
-      'battered'
+      'battered',
     ]
     for (const debility of debilities) {
       const newValue = get(data.data?.debility, debility)
@@ -151,7 +156,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
 
   starship: (actor: IronswornActor, data) => {
     const starshipData = actor.data as StarshipDataProperties
-    const debilities = [ 'cursed', 'battered' ]
+    const debilities = ['cursed', 'battered']
     for (const debility of debilities) {
       const newValue = get(data.data?.debility, debility)
       if (newValue !== undefined) {
@@ -240,7 +245,10 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         const newField = data.data.fields[i]
         const oldField = assetData.data.fields[i]
         if (oldField && oldField?.value !== newField.value) {
-          return game.i18n.format('IRONSWORN.ChangeLog.SetField', { name: newField.name, val: newField.value })
+          return game.i18n.format('IRONSWORN.ChangeLog.SetField', {
+            name: newField.name,
+            val: newField.value,
+          })
         }
       }
     }

@@ -18,7 +18,7 @@ export class VueApplication extends Application {
 
   async render(force?: boolean, inputOptions?: Application.RenderOptions) {
     const options: Application.RenderOptions = inputOptions ?? {}
-    const appData = await this.getData() as any
+    const appData = (await this.getData()) as any
 
     // Exit if Vue has already rendered.
     if (this._vm) {

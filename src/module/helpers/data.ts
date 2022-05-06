@@ -60,7 +60,8 @@ export async function moveDataByName(name: string): Promise<EnhancedDataswornMov
         const theMove = cloneDeep(move)
 
         // Translate that text
-        if (theMove.Description) theMove.Description = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.description`)
+        if (theMove.Description)
+          theMove.Description = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.description`)
         if (theMove.Strong) theMove.Strong = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.strong`)
         if (theMove.Weak) theMove.Weak = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.weak`)
         if (theMove.Miss) theMove.Miss = game.i18n.localize(`IRONSWORN.MoveContents.${theMove.Name}.miss`)

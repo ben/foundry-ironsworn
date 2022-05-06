@@ -1,5 +1,5 @@
-import { IronswornSettings } from "../../helpers/settings";
-import { IronswornVueActorSheet } from "../vueactorsheet";
+import { IronswornSettings } from '../../helpers/settings'
+import { IronswornVueActorSheet } from '../vueactorsheet'
 
 export class StarforgedLocationSheet extends IronswornVueActorSheet {
   static get defaultOptions() {

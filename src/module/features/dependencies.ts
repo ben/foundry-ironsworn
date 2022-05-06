@@ -17,7 +17,8 @@ export async function maybePromptForDependencies() {
       if (prompt && gm) {
         Dialog.confirm({
           title: 'Enable dependencies?', // TODO: game.i18n.format('ARCHMAGE.UI.enableDependencies'),
-          content: 'This system requires the VuePort, dlopen, and libwrapper modules to be enabled. Would you like to enable them now?', // TODO: game.i18n.format('ARCHMAGE.UI.dependencyContent'),
+          content:
+            'This system requires the VuePort, dlopen, and libwrapper modules to be enabled. Would you like to enable them now?', // TODO: game.i18n.format('ARCHMAGE.UI.dependencyContent'),
           yes: async () => {
             const moduleSettings = game.settings.get('core', 'moduleConfiguration') as any
             moduleSettings['dlopen'] = true

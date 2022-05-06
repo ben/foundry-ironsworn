@@ -212,7 +212,10 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     }
   }
 
-  const bonusContent = MoveContentCallbacks[params.move?.Name || '']?.call(this, { hitType, stat: params.stat })
+  const bonusContent = MoveContentCallbacks[params.move?.Name || '']?.call(this, {
+    hitType,
+    stat: params.stat,
+  })
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
@@ -238,7 +241,10 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
 
 export async function createIronswornMoveChat(opts: { move?: EnhancedDataswornMove; site?: IronswornActor }) {
   const bonusContent = MoveContentCallbacks[opts.move?.Name || '']?.call(this, opts)
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', { ...opts, bonusContent })
+  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', {
+    ...opts,
+    bonusContent,
+  })
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,
@@ -335,16 +341,12 @@ export async function rollAndDisplayOracleResult(table?: RollTable): Promise<str
   const roll = tableDraw.roll as Roll
   const resultRow = tableRows.find((x) => x.low <= roll.result && roll.result <= x.high)
   const resultIdx = tableRows.indexOf(resultRow)
-  const displayRows = compact([
-    tableRows[resultIdx - 1],
-    { ...resultRow, selected: true },
-    tableRows[resultIdx + 1]
-  ])
+  const displayRows = compact([tableRows[resultIdx - 1], { ...resultRow, selected: true }, tableRows[resultIdx + 1]])
 
   // Calculate the "path" to this oracle
   const oracleTreeRoot = await createStarforgedOracleTree()
   const pathElements = findPathToNodeByTableId(oracleTreeRoot, table.id || '')
-  const pathNames = pathElements.map(x => x.displayName)
+  const pathNames = pathElements.map((x) => x.displayName)
   pathNames.shift() // root node has no display name
   pathNames.pop() // this is the one we rolled, it gets the main title
 

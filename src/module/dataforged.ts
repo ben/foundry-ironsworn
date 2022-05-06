@@ -78,13 +78,13 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
 
 export function getDFOracleByDfId(dfid: string): IOracle | IOracleCategory | undefined {
   const nodes = findOracleWithIntermediateNodes(dfid)
-  return nodes[nodes.length-1]
+  return nodes[nodes.length - 1]
 }
 
 export function findOracleWithIntermediateNodes(dfid: string): Array<IOracle | IOracleCategory> {
   const ret: Array<IOracle | IOracleCategory> = []
 
-  function walkCategory(cat:IOracleCategory): boolean {
+  function walkCategory(cat: IOracleCategory): boolean {
     ret.push(cat)
 
     if (cat.$id === dfid) return true
@@ -99,7 +99,7 @@ export function findOracleWithIntermediateNodes(dfid: string): Array<IOracle | I
     return false
   }
 
-  function walkOracle(oracle:IOracle): boolean {
+  function walkOracle(oracle: IOracle): boolean {
     ret.push(oracle)
 
     if (oracle.$id === dfid) return true
@@ -150,8 +150,14 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   text = text.replace('\u23f5', '')
 
   // Catch "Descriptor+Focus" or "Action+Theme" and replace with two links
-  text = text.replace(DESCRIPTOR_FOCUS_RE, '[Descriptor](Starforged/Oracles/Core/Descriptor) + [Focus](Starforged/Oracles/Core/Focus)')
-  text = text.replace(ACTION_THEME_RE, '[Action](Starforged/Oracles/Core/Action) + [Theme](Starforged/Oracles/Core/Theme)')
+  text = text.replace(
+    DESCRIPTOR_FOCUS_RE,
+    '[Descriptor](Starforged/Oracles/Core/Descriptor) + [Focus](Starforged/Oracles/Core/Focus)'
+  )
+  text = text.replace(
+    ACTION_THEME_RE,
+    '[Action](Starforged/Oracles/Core/Action) + [Theme](Starforged/Oracles/Core/Theme)'
+  )
 
   return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
     const kind = url.split('/')[1]
@@ -166,7 +172,15 @@ function renderMarkdown(md: string, idMap: { [key: string]: string }, markedFn =
 }
 
 function renderLinksInMove(idMap: { [key: string]: string }, move: IMove) {
-  const textProperties = ['Text', 'Trigger.Text', 'Outcomes.Strong Hit.Text', 'Outcomes.Strong Hit.With a Match.Text', 'Outcomes.Weak Hit.Text', 'Outcomes.Miss.Text', 'Outcomes.Miss.With a Match.Text']
+  const textProperties = [
+    'Text',
+    'Trigger.Text',
+    'Outcomes.Strong Hit.Text',
+    'Outcomes.Strong Hit.With a Match.Text',
+    'Outcomes.Weak Hit.Text',
+    'Outcomes.Miss.Text',
+    'Outcomes.Miss.With a Match.Text',
+  ]
   for (const prop of textProperties) {
     const text = get(move, prop)
     if (!text) continue
@@ -174,7 +188,13 @@ function renderLinksInMove(idMap: { [key: string]: string }, move: IMove) {
   }
 }
 
-const PACKS = ['foundry-ironsworn.starforgedassets', 'foundry-ironsworn.starforgedencounters', 'foundry-ironsworn.starforgedmoves', 'foundry-ironsworn.starforgedoracles', 'foundry-ironsworn.foeactorssf']
+const PACKS = [
+  'foundry-ironsworn.starforgedassets',
+  'foundry-ironsworn.starforgedencounters',
+  'foundry-ironsworn.starforgedmoves',
+  'foundry-ironsworn.starforgedoracles',
+  'foundry-ironsworn.foeactorssf',
+]
 
 /**
  * Converts JSON from dataforged resources into foundry packs. Requires packs to
@@ -216,7 +236,10 @@ async function processMoves(idMap: { [key: string]: string }) {
       })
     }
   }
-  await Item.createDocuments(movesToCreate, { pack: 'foundry-ironsworn.starforgedmoves', keepId: true })
+  await Item.createDocuments(movesToCreate, {
+    pack: 'foundry-ironsworn.starforgedmoves',
+    keepId: true,
+  })
 }
 
 async function processAssets(idMap: { [key: string]: string }) {
@@ -263,7 +286,10 @@ async function processAssets(idMap: { [key: string]: string }) {
       })
     }
   }
-  await Item.createDocuments(assetsToCreate, { pack: 'foundry-ironsworn.starforgedassets', keepId: true })
+  await Item.createDocuments(assetsToCreate, {
+    pack: 'foundry-ironsworn.starforgedassets',
+    keepId: true,
+  })
 }
 
 async function processOracles(idMap: { [key: string]: string }) {
@@ -310,7 +336,10 @@ async function processOracles(idMap: { [key: string]: string }) {
   for (const category of starforged.oracles) {
     await processCategory(category)
   }
-  await RollTable.createDocuments(oraclesToCreate, { pack: 'foundry-ironsworn.starforgedoracles', keepId: true })
+  await RollTable.createDocuments(oraclesToCreate, {
+    pack: 'foundry-ironsworn.starforgedoracles',
+    keepId: true,
+  })
 }
 
 async function processEncounters(idMap: { [key: string]: string }) {
@@ -350,7 +379,10 @@ async function processEncounters(idMap: { [key: string]: string }) {
       })
     }
   }
-  await Item.createDocuments(encountersToCreate, { pack: 'foundry-ironsworn.starforgedencounters', keepId: true })
+  await Item.createDocuments(encountersToCreate, {
+    pack: 'foundry-ironsworn.starforgedencounters',
+    keepId: true,
+  })
 }
 
 async function processFoes() {

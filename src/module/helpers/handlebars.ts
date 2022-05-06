@@ -14,7 +14,16 @@ function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
   }
   const d = r.dice[0]
   const maxRoll = d?.faces || 10
-  return [d?.constructor.name.toLowerCase(), d && 'd' + d.faces, (d?.total || r.result) <= 1 ? 'min' : null, (d?.total || r.result) == maxRoll ? 'max' : null, theOpts.type, theOpts.canceled ? 'canceled' : null].filter((x) => x).join(' ')
+  return [
+    d?.constructor.name.toLowerCase(),
+    d && 'd' + d.faces,
+    (d?.total || r.result) <= 1 ? 'min' : null,
+    (d?.total || r.result) == maxRoll ? 'max' : null,
+    theOpts.type,
+    theOpts.canceled ? 'canceled' : null,
+  ]
+    .filter((x) => x)
+    .join(' ')
 }
 
 const actionRoll = (roll) => roll.terms[0].rolls.find((r) => r.dice.length === 0 || r.dice[0].faces === 6)
@@ -37,7 +46,12 @@ export class IronswornHandlebarsHelpers {
     })
 
     Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
-      if ((this.roll.dice.length === 3 && this.roll.dice.filter((x) => x.faces === 6).length === 1 && this.roll.dice.filter((x) => x.faces === 10).length === 2) || this.roll.formula.match(/{\d+,1?d10,1?d10}/)) {
+      if (
+        (this.roll.dice.length === 3 &&
+          this.roll.dice.filter((x) => x.faces === 6).length === 1 &&
+          this.roll.dice.filter((x) => x.faces === 10).length === 2) ||
+        this.roll.formula.match(/{\d+,1?d10,1?d10}/)
+      ) {
         return options.fn(this)
       } else {
         return options.inverse(this)
@@ -184,6 +198,6 @@ export class IronswornHandlebarsHelpers {
   }
 
   static stripTables(html: string) {
-    return html.replace(/<table>[\s\S]*<\/table>/mg ,'')
+    return html.replace(/<table>[\s\S]*<\/table>/gm, '')
   }
 }

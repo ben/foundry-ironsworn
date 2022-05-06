@@ -57,7 +57,10 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
 
   return rootNode
 }
-async function walkOracleCategory(cat: IOracleCategory, tableGetter: typeof getFoundrySFTableByDfId): Promise<OracleTreeNode> {
+async function walkOracleCategory(
+  cat: IOracleCategory,
+  tableGetter: typeof getFoundrySFTableByDfId
+): Promise<OracleTreeNode> {
   const node: OracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: cat,

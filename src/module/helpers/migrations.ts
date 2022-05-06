@@ -94,6 +94,8 @@ export async function runDataMigrations() {
     game.settings.set('foundry-ironsworn', 'data-version', NEWEST_VERSION)
     ui.notifications?.warn('All done! Carry on.', { permanent: true })
   } catch (e) {
-    ui.notifications?.error("Whoops! That didn't work at all. Try reloading your browser to run it again.", { permanent: true })
+    ui.notifications?.error("Whoops! That didn't work at all. Try reloading your browser to run it again.", {
+      permanent: true,
+    })
   }
 }
