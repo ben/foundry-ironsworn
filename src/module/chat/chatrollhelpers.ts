@@ -1,7 +1,7 @@
 import { compact, sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
-import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
+import { getDFMoveByDfId, getFoundrySFTableByDfId } from '../dataforged'
 import { createStarforgedOracleTree, findPathToNodeByTableId } from '../features/customoracles'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
@@ -195,7 +195,7 @@ export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
   const { dfid } = (move.data as SFMoveDataProperties).data
   const dfMove = await getDFMoveByDfId(dfid)
   const dfIds = dfMove?.Oracles || []
-  return compact(await Promise.all(dfIds.map(getFoundryTableByDfId)))
+  return compact(await Promise.all(dfIds.map(getFoundrySFTableByDfId)))
 }
 
 export async function createIronswornChatRoll(params: RollMessageParams) {

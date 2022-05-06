@@ -1,6 +1,6 @@
-import { starforged, IOracle, IOracleCategory } from 'dataforged'
+import { starforged, IOracle, IOracleCategory, ironsworn } from 'dataforged'
 import { compact } from 'lodash'
-import { getFoundryTableByDfId } from '../dataforged'
+import { getFoundryISTableByDfId, getFoundrySFTableByDfId } from '../dataforged'
 
 export interface OracleTreeNode {
   dataforgedNode?: IOracle | IOracleCategory
@@ -16,16 +16,16 @@ const emptyNode = () =>
     children: [],
   } as OracleTreeNode)
 
-export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
+export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
   const rootNode = emptyNode()
 
   // Make sure the compendium is loaded
-  const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+  const pack = game.packs.get('foundry-ironsworn.ironswornoracles')
   await pack?.getDocuments()
 
   // Build the default tree
-  for (const category of starforged.oracles) {
-    rootNode.children.push(await walkOracleCategory(category))
+  for (const category of ironsworn.oracles) {
+    rootNode.children.push(await walkOracleCategory(category, getFoundryISTableByDfId))
   }
 
   // Add in custom oracles from a well-known directory
@@ -37,30 +37,88 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   return rootNode
 }
 
-async function walkOracleCategory(cat: IOracleCategory): Promise<OracleTreeNode> {
+export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
+  const rootNode = emptyNode()
+
+  // Make sure the compendium is loaded
+  const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
+  await pack?.getDocuments()
+
+  // Build the default tree
+  for (const category of starforged.oracles) {
+    rootNode.children.push(await walkOracleCategory(category, getFoundrySFTableByDfId))
+  }
+
+  // Add in custom oracles from a well-known directory
+  await augmentWithFolderContents(rootNode)
+
+  // Fire the hook and allow extensions to modify the tree
+  await Hooks.call('ironswornOracles', rootNode)
+
+  return rootNode
+}
+async function walkOracleCategory(cat: IOracleCategory, tableGetter: typeof getFoundrySFTableByDfId): Promise<OracleTreeNode> {
   const node: OracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: cat,
-    displayName: game.i18n.localize(`IRONSWORN.SFOracleCategories.${cat.Display.Title}`),
+    displayName: game.i18n.localize(`IRONSWORN.OracleCategories.${cat.Name}`),
   }
 
-  for (const childCat of cat.Categories ?? []) node.children.push(await walkOracleCategory(childCat))
-  for (const oracle of cat.Oracles ?? []) node.children.push(await walkOracle(oracle))
+  for (const childCat of cat.Categories ?? []) {
+    node.children.push(await walkOracleCategory(childCat, tableGetter))
+  }
+  for (const oracle of cat.Oracles ?? []) {
+    node.children.push(await walkOracle(oracle, tableGetter))
+  }
+
+  // Promote children of nodes that have a table
+  for (const child of node.children) {
+    if (child.tables.length > 0) {
+      node.children = [...node.children, ...child.children]
+      child.children = []
+    }
+  }
 
   return node
 }
 
-async function walkOracle(oracle: IOracle): Promise<OracleTreeNode> {
-  const table = await getFoundryTableByDfId(oracle.$id)
+async function walkOracle(oracle: IOracle, tableGetter: typeof getFoundrySFTableByDfId): Promise<OracleTreeNode> {
+  const table = await tableGetter(oracle.$id)
 
   const node: OracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: oracle,
     tables: compact([table]),
-    displayName: table?.name || game.i18n.localize(`IRONSWORN.SFOracleCategories.${oracle.Display.Title}`),
+    displayName: table?.name || game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`),
   }
 
-  for (const childOracle of oracle.Oracles ?? []) node.children.push(await walkOracle(childOracle))
+  // Child oracles
+  for (const childOracle of oracle.Oracles ?? []) {
+    node.children.push(await walkOracle(childOracle, tableGetter))
+  }
+
+  // Subtables on results
+  for (const entry of oracle.Table ?? []) {
+    const name = entry.Result
+    if (entry.Subtable) {
+      const subtable = await tableGetter(`${oracle.$id}/${name}`)
+      if (subtable) {
+        node.children.push({
+          ...emptyNode(),
+          displayName: name,
+          tables: [subtable],
+        })
+      }
+    }
+  }
+
+  // Promote children of nodes that have a table
+  for (const child of node.children) {
+    if (child.tables.length > 0) {
+      node.children = [...node.children, ...child.children]
+      child.children = []
+    }
+  }
 
   return node
 }

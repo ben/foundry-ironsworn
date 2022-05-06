@@ -61,7 +61,6 @@ function walkCategory(category: IMoveCategory, compendiumMoves: IronswornItem[])
 async function augmentWithFolderContents(categories: MoveCategory[]) {
   const name = game.i18n.localize('IRONSWORN.Custom Moves')
   const folder = (game.items?.directory as any)?.folders.find((x) => x.name === name) as Folder | undefined
-  console.log(folder)
   if (!folder || folder.contents.length == 0) return
 
   categories.push({
