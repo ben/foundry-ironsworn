@@ -43,8 +43,8 @@ export class IronswornCharacterSheet extends ActorSheet {
 
     data.assets = this.actor.items.filter((x) => x.type === 'asset')
     const rawProgresses = this.actor.items.filter((x) => x.type === 'progress') as IronswornItem[]
-    data.vows = rawProgresses.filter(x => (x.data.data as any)?.subtype === 'vow')
-    data.progresses = rawProgresses.filter(x => (x.data.data as any)?.subtype === 'progress')
+    data.vows = rawProgresses.filter((x) => (x.data.data as any)?.subtype === 'vow')
+    data.progresses = rawProgresses.filter((x) => (x.data.data as any)?.subtype === 'progress')
     data.bonds = this.actor.items.find((x) => x.type === 'bondset')
 
     // Allow every itemtype to add data to the actorsheet

@@ -122,13 +122,48 @@ export function activateSceneButtonListeners() {
       visible: true,
       activeTool: 'select',
       tools: [
-        { name: 'edit', icon: 'fas fa-edit', title: game.i18n.localize('IRONSWORN.Edit'), onClick: editSector },
-        { name: 'sector', icon: 'fas fa-globe', title: game.i18n.localize('IRONSWORN.NewSector'), onClick: warn },
-        { name: 'star', icon: 'fas fa-star', title: game.i18n.localize('IRONSWORN.NewStar'), onClick: newStar },
-        { name: 'planet', icon: 'fas fa-globe-europe', title: game.i18n.localize('IRONSWORN.NewPlanet'), onClick: newPlanet },
-        { name: 'settlement', icon: 'fas fa-city', title: game.i18n.localize('IRONSWORN.NewSettlement'), onClick: newSettlement },
-        { name: 'derelict', icon: 'fab fa-rocketchat', title: game.i18n.localize('IRONSWORN.NewDerelict'), onClick: newDerelict },
-        { name: 'vault', icon: 'fab fa-quinscape', title: game.i18n.localize('IRONSWORN.NewVault'), onClick: newVault },
+        {
+          name: 'edit',
+          icon: 'fas fa-edit',
+          title: game.i18n.localize('IRONSWORN.Edit'),
+          onClick: editSector,
+        },
+        {
+          name: 'sector',
+          icon: 'fas fa-globe',
+          title: game.i18n.localize('IRONSWORN.NewSector'),
+          onClick: warn,
+        },
+        {
+          name: 'star',
+          icon: 'fas fa-star',
+          title: game.i18n.localize('IRONSWORN.NewStar'),
+          onClick: newStar,
+        },
+        {
+          name: 'planet',
+          icon: 'fas fa-globe-europe',
+          title: game.i18n.localize('IRONSWORN.NewPlanet'),
+          onClick: newPlanet,
+        },
+        {
+          name: 'settlement',
+          icon: 'fas fa-city',
+          title: game.i18n.localize('IRONSWORN.NewSettlement'),
+          onClick: newSettlement,
+        },
+        {
+          name: 'derelict',
+          icon: 'fab fa-rocketchat',
+          title: game.i18n.localize('IRONSWORN.NewDerelict'),
+          onClick: newDerelict,
+        },
+        {
+          name: 'vault',
+          icon: 'fab fa-quinscape',
+          title: game.i18n.localize('IRONSWORN.NewVault'),
+          onClick: newVault,
+        },
       ],
     }
 

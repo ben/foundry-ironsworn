@@ -26,7 +26,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   getData(_options?: Application.RenderOptions): any {
     return {
-      sfenabled: IronswornSettings.starforgedBeta
+      sfenabled: IronswornSettings.starforgedBeta,
     }
   }
 
@@ -49,7 +49,11 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const table: any = await this._ironlanderNameTable()
     const drawResult = await table?.draw({ displayChat: false })
 
-    this._createWithFolder(drawResult.results[0]?.data.text || 'Character', 'character', ev.currentTarget.dataset.img || undefined)
+    this._createWithFolder(
+      drawResult.results[0]?.data.text || 'Character',
+      'character',
+      ev.currentTarget.dataset.img || undefined
+    )
   }
 
   async _sharedCreate(ev: JQuery.ClickEvent) {
@@ -73,7 +77,12 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     // Roll an Ironlander name
     const name = await this._randomStarforgedName()
 
-    this._createWithFolder(name || 'Character', 'character', ev.currentTarget.dataset.img || undefined, 'ironsworn.StarforgedCharacterSheet')
+    this._createWithFolder(
+      name || 'Character',
+      'character',
+      ev.currentTarget.dataset.img || undefined,
+      'ironsworn.StarforgedCharacterSheet'
+    )
   }
 
   async _sfshipCreate(ev: JQuery.ClickEvent) {
@@ -86,7 +95,12 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     this._createWithFolder('Location', 'location', ev.currentTarget.dataset.img || undefined)
   }
 
-  async _createWithFolder(name: string, type: 'character' | 'site' | 'shared' | 'foe' | 'starship' | 'location', img: string, sheetClass?: string) {
+  async _createWithFolder(
+    name: string,
+    type: 'character' | 'site' | 'shared' | 'foe' | 'starship' | 'location',
+    img: string,
+    sheetClass?: string
+  ) {
     const data: ActorDataConstructorData & Record<string, any> = {
       name,
       img,
@@ -119,8 +133,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     if (!pack) return undefined
 
-    const firstTable = await getFoundrySFTableByDfId('Starforged/Oracles/Characters/Name/Given_Name') as any
-    const lastTable = await getFoundrySFTableByDfId('Starforged/Oracles/Characters/Name/Family_Name') as any
+    const firstTable = (await getFoundrySFTableByDfId('Starforged/Oracles/Characters/Name/Given_Name')) as any
+    const lastTable = (await getFoundrySFTableByDfId('Starforged/Oracles/Characters/Name/Family_Name')) as any
     if (!firstTable || !lastTable) return undefined
 
     const first = await firstTable.draw({ displayChat: false })

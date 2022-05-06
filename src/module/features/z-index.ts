@@ -1,4 +1,3 @@
-
 function fixZIndex(wrapped, ...args) {
   wrapped(...args)
   if (this.actor?.type === 'location' && this.actor?.data.data.subtype === 'planet') {

@@ -64,7 +64,13 @@ function callback(opts: { actor: IronswornActor; move: IronswornItem; mode: stri
   }
 }
 
-async function rollAndCreateChatMessage(opts: { actor: IronswornActor; move: IronswornItem; mode: string; stats: string[]; bonus: number }) {
+async function rollAndCreateChatMessage(opts: {
+  actor: IronswornActor
+  move: IronswornItem
+  mode: string
+  stats: string[]
+  bonus: number
+}) {
   const { actor, move, mode, stats, bonus } = opts
 
   const normalizedStats = stats.map((x) => x.toLowerCase())

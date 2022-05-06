@@ -273,37 +273,31 @@ export async function importFromDatasworn() {
       replacement: true,
       displayRoll: true,
       /* folder: // would require using an additional module */
-      results: table?.map((tableRow) => {
-        let text: string
-        if (tableRow.Result && tableRow.Summary) {
-          text = `${tableRow.Result} (${tableRow.Summary})`
-        } else text = tableRow.Result ?? ''
-        return {
-          range: [tableRow.Floor, tableRow.Ceiling],
-          text: tableRow.Result && text,
-        }
-      }).filter((x) => x.range[0] !== null),
+      results: table
+        ?.map((tableRow) => {
+          let text: string
+          if (tableRow.Result && tableRow.Summary) {
+            text = `${tableRow.Result} (${tableRow.Summary})`
+          } else text = tableRow.Result ?? ''
+          return {
+            range: [tableRow.Floor, tableRow.Ceiling],
+            text: tableRow.Result && text,
+          }
+        })
+        .filter((x) => x.range[0] !== null),
     }
-}
+  }
   function processOracle(oracle: IOracle) {
     if (oracle.Table) {
-      oraclesToCreate.push(tableData(
-        oracle.Table,
-        oracle.$id,
-        oracle.Display.Title,
-        oracle.Category,
-        oracle.Description ?? ''
-      ))
+      oraclesToCreate.push(
+        tableData(oracle.Table, oracle.$id, oracle.Display.Title, oracle.Category, oracle.Description ?? '')
+      )
       for (const tableEntry of oracle.Table) {
         if (tableEntry.Subtable) {
           const name = tableEntry.Result
-          oraclesToCreate.push(tableData(
-            tableEntry.Subtable,
-            `${oracle.$id}/${name}`,
-            name,
-            oracle.Category,
-            tableEntry.Result,
-          ))
+          oraclesToCreate.push(
+            tableData(tableEntry.Subtable, `${oracle.$id}/${name}`, name, oracle.Category, tableEntry.Result)
+          )
         }
       }
     }
@@ -318,5 +312,8 @@ export async function importFromDatasworn() {
   for (const category of ironsworn.oracles) {
     await processCategory(category)
   }
-  await RollTable.createDocuments(oraclesToCreate, { pack: 'foundry-ironsworn.ironswornoracles', keepId: true })
+  await RollTable.createDocuments(oraclesToCreate, {
+    pack: 'foundry-ironsworn.ironswornoracles',
+    keepId: true,
+  })
 }

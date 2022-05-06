@@ -109,7 +109,7 @@ export class IronswornChatCard {
     // Fetch the actor and move items
     const theActor = game.actors?.get(actor)
     const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
-    const theMove = await pack?.getDocument(move) as IronswornItem
+    const theMove = (await pack?.getDocument(move)) as IronswornItem
 
     // Get the new result
     const k = {
@@ -235,7 +235,7 @@ export class IronswornChatCard {
     ev.preventDefault()
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     const { tableid } = ev.target.dataset
-    const table = await pack?.getDocument(tableid) as any | undefined
+    const table = (await pack?.getDocument(tableid)) as any | undefined
     rollAndDisplayOracleResult(table)
   }
 
@@ -248,7 +248,7 @@ export class IronswornChatCard {
 
     const parent = $(ev.target).parent('.table-draw')
     const tableId = parent.data('table-id')
-    const table = await pack?.getDocument(tableId) as any | undefined
+    const table = (await pack?.getDocument(tableId)) as any | undefined
     rollAndDisplayOracleResult(table)
   }
 
@@ -290,7 +290,11 @@ async function rollOnOracle(oracle: MoveOracle): Promise<{ result?: MoveOracleEn
   return { result, rollTotal }
 }
 
-function dangerFromSite(rollTotal: number, result?: MoveOracleEntry, site?: IronswornActor): MoveOracleEntry | undefined {
+function dangerFromSite(
+  rollTotal: number,
+  result?: MoveOracleEntry,
+  site?: IronswornActor
+): MoveOracleEntry | undefined {
   if (rollTotal > 45 || !site) return result
 
   const theme = site.items.find((x) => x.type === 'delve-theme')

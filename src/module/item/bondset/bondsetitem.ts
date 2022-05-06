@@ -10,7 +10,7 @@ export class BondsetItem extends BaseItem {
   }
 
   static _writeEpilogue(_ev: JQuery.ClickEvent, actorSheet: ActorSheet) {
-    const item = actorSheet.actor.items.find(x => x.type === 'bondset')
+    const item = actorSheet.actor.items.find((x) => x.type === 'bondset')
     item?.writeEpilogue()
   }
 }
