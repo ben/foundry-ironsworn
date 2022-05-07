@@ -491,7 +491,7 @@ export default {
       } else if (this.actor.data.subtype === 'settlement') {
         tableKey = 'Starforged/Oracles/Settlements/Location'
       } else if (this.actor.data.subtype === 'star') {
-        tableKey = 'Starforged/Oracles/Space/Stellar Object'
+        tableKey = 'Starforged/Oracles/Space/Stellar_Object'
       } else if (this.actor.data.subtype === 'derelict') {
         tableKey = 'Starforged/Oracles/Derelicts/Location'
       } else if (this.actor.data.subtype === 'vault') {

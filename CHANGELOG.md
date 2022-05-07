@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the stellar-object-type oracle roll button
+
 ## 1.10.64
 
 - Fix the name of new stellar objects
