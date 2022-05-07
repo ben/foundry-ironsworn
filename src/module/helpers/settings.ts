@@ -59,16 +59,6 @@ export class IronswornSettings {
       default: true,
     })
 
-    game.settings.register('foundry-ironsworn', 'starforged-beta', {
-      name: 'IRONSWORN.Settings.SFBeta.Name',
-      hint: 'IRONSWORN.Settings.SFBeta.Hint',
-      scope: 'world',
-      config: true,
-      type: Boolean,
-      default: false,
-      onChange: reload,
-    })
-
     game.settings.register('foundry-ironsworn', 'data-version', {
       scope: 'world',
       config: false,
@@ -83,10 +73,6 @@ export class IronswornSettings {
 
   static get toolbox(): string {
     return game.settings.get('foundry-ironsworn', 'toolbox') as string
-  }
-
-  static get starforgedBeta(): boolean {
-    return game.settings.get('foundry-ironsworn', 'starforged-beta') as boolean
   }
 
   static get logCharacterChanges(): boolean {
