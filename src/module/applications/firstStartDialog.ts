@@ -38,6 +38,7 @@ export class FirstStartDialog extends FormApplication<FormApplication.Options> {
         await game.settings.set('core', 'sheetClasses', setting)
       }
       if (name === 'moves') {
+        await game.settings.set('foundry-ironsworn', 'toolbox', value)
       }
       if (name === 'truths') {
       }
