@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.10.64
+
 - Fix the name of new stellar objects
 - Prevent chat logging of bondsets when creating characters
 - Fix location sheet oracle rolling
