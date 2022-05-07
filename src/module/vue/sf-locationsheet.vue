@@ -472,7 +472,7 @@ export default {
         )
         name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
       } else if (subtype === 'settlement') {
-        const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
+        const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
           'Starforged/Oracles/Settlements/Name'
         )
         name = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
@@ -498,7 +498,7 @@ export default {
         tableKey = 'Starforged/Oracles/Vaults/Location'
       }
 
-      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(tableKey)
+      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(tableKey)
       const rawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!rawText) return
 
@@ -519,7 +519,7 @@ export default {
       }
     },
     async rollOracle(oracle) {
-      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(oracle.dfId)
+      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(oracle.dfId)
       const drawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!drawText) return
 

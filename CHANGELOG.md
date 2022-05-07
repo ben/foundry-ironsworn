@@ -4,6 +4,7 @@
 
 - Fix the name of new stellar objects
 - Prevent chat logging of bondsets when creating characters
+- Fix location sheet oracle rolling
 
 ## 1.10.63
 
