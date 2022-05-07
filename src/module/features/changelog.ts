@@ -50,6 +50,7 @@ export function activateChangelogListeners() {
     if (!IronswornSettings.logCharacterChanges) return
     if (!item.parent) return // No logging for unowned items, they don't matter
     if (options.suppressLog) return
+    if (item.type === 'bondset') return // No need to log this
 
     sendToChat(item.parent, game.i18n.format('IRONSWORN.ChangeLog.Added', { name: item.name }))
   })

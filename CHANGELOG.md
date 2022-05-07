@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix the name of new stellar objects
+- Prevent chat logging of bondsets when creating characters
 
 ## 1.10.63
 
