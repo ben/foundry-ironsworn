@@ -88,7 +88,7 @@ function newPlanet() {
 }
 
 function newStar() {
-  newLocation('star', 'NewStellar Object')
+  newLocation('star', 'NewStar')
 }
 
 function newSettlement() {

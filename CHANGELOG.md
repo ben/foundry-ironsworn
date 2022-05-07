@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the name of new stellar objects
+
 ## 1.10.63
 
 - Use the Starforged-style oracle tree for Ironsworn, with Dataforged-powered tables ([#337](https://github.com/ben/foundry-ironsworn/pull/337))
