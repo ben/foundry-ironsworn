@@ -104,7 +104,7 @@ function newVault() {
 }
 
 export function activateSceneButtonListeners() {
-  if (IronswornSettings.toolbox !== 'starforged') return
+  if (!IronswornSettings.starforgedToolsEnabled) return
 
   CONFIG.Canvas.layers['ironsworn'] = { layerClass: IronswornCanvasLayer, group: 'primary' }
 

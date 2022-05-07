@@ -20,13 +20,13 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       resizable: false,
       classes: ['ironsworn', 'sheet', 'new-actor', `theme-${IronswornSettings.theme}`],
       width: 500,
-      height: IronswornSettings.toolbox === 'starforged' ? 365 : 200,
+      height: IronswornSettings.starforgedToolsEnabled ? 365 : 200,
     } as FormApplication.Options)
   }
 
   getData(_options?: Application.RenderOptions): any {
     return {
-      sfenabled: IronswornSettings.toolbox === 'starforged',
+      sfenabled: IronswornSettings.starforgedToolsEnabled,
     }
   }
 

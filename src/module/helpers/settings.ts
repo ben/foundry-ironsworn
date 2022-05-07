@@ -75,6 +75,15 @@ export class IronswornSettings {
     return game.settings.get('foundry-ironsworn', 'toolbox') as string
   }
 
+  static get starforgedToolsEnabled(): boolean {
+    if (this.toolbox === 'ironsworn') return false
+    if (this.toolbox === 'starforged') return true
+
+    // Set to "match sheet, so check the sheet"
+    const sheetClasses = game.settings.get('core', 'sheetClasses') as any
+    return sheetClasses.Actor.character === 'ironsworn.StarforgedCharacterSheet'
+  }
+
   static get logCharacterChanges(): boolean {
     return game.settings.get('foundry-ironsworn', 'log-changes') as boolean
   }
