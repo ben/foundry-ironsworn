@@ -19,8 +19,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       id: 'new-actor-dialog',
       resizable: false,
       classes: ['ironsworn', 'sheet', 'new-actor', `theme-${IronswornSettings.theme}`],
-      width: 500,
-      height: IronswornSettings.starforgedToolsEnabled ? 365 : 200,
+      width: 650,
+      height: 200,
     } as FormApplication.Options)
   }
 
