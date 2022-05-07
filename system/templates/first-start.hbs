@@ -11,6 +11,15 @@
     border: none;
     margin-top: 1rem;
   }
+
+  .first-start label.flexcol {
+    align-items: center;
+  }
+
+  .first-start img {
+    border: none;
+    width: 170px;
+  }
 </style>
 
 <form class="first-start">
@@ -22,15 +31,21 @@
   <div class="boxgroup">
     <div class="flexrow boxrow">
       <div class="box flexrow">
-        <label>
-          <input type="radio" name="sheet" id="ironsworn">
-          Ironsworn
+        <label class="flexcol">
+          <img src="systems/foundry-ironsworn/assets/welcome/ironsworn-sheet.jpg" alt="Ironsworn sheet">
+          <p>
+            <input type="radio" name="sheet" id="ironsworn">
+            Ironsworn
+          </p>
         </label>
       </div>
       <div class="box flexrow">
-        <label>
-          <input type="radio" name="sheet" id="starforged">
-          Starforged
+        <label class="flexcol">
+          <img src="systems/foundry-ironsworn/assets/welcome/starforged-sheet.jpg" alt="Starforged sheet">
+          <p>
+            <input type="radio" name="sheet" id="starforged">
+            Starforged
+          </p>
         </label>
       </div>
     </div>
