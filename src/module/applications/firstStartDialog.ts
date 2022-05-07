@@ -1,4 +1,6 @@
 import { IronswornSettings } from '../helpers/settings'
+import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
+import { WorldTruthsDialog } from './worldTruthsDialog'
 
 export class FirstStartDialog extends FormApplication<FormApplication.Options> {
   constructor() {
@@ -41,6 +43,17 @@ export class FirstStartDialog extends FormApplication<FormApplication.Options> {
         await game.settings.set('foundry-ironsworn', 'toolbox', value)
       }
       if (name === 'truths') {
+        if (value === 'never') {
+          await game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
+        }
+
+        if (value === 'ironsworn') {
+          new WorldTruthsDialog().render(true)
+        }
+
+        if (value === 'starforged') {
+          new SFSettingTruthsDialogVue().render(true)
+        }
       }
     }
 
