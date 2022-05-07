@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.11.0
+
 - Fix the stellar-object-type oracle roll button
 - Add a first-start dialog so the player can choose some options ([#346](https://github.com/ben/foundry-ironsworn/pull/346))
 - Move starforged content out of beta ([#348](https://github.com/ben/foundry-ironsworn/pull/348))
