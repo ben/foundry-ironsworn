@@ -1,5 +1,4 @@
 import { IronswornSettings } from '../helpers/settings'
-import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
 
 export class WorldTruthsDialog extends FormApplication<FormApplication.Options> {
   constructor() {
@@ -69,55 +68,5 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
     })
     journal?.sheet?.render(true)
     this.close()
-  }
-
-  static async maybeShow() {
-    // Bail if we're configured to not even try
-    if (!game.settings.get('foundry-ironsworn', 'prompt-world-truths')) {
-      return
-    }
-
-    // Bail if the truths journal entry already exists
-    const keysToTry = ['IRONSWORN.YourWorldTruths', 'IRONSWORN.SFSettingTruthsTitle']
-    for (const i18nkey of keysToTry) {
-      const journal = game.journal?.find((x) => x.name === game.i18n.localize(i18nkey))
-      if (journal) {
-        return
-      }
-    }
-
-    const buttons = {
-      yes: {
-        icon: '<i class="fas fa-check"></i>',
-        label: 'Yes',
-        callback: () => new WorldTruthsDialog().render(true),
-      },
-      no: {
-        icon: '<i class="fas fa-times"></i>',
-        label: 'Not this time',
-      },
-      goaway: {
-        icon: '<i class="fas fa-times"></i>',
-        label: 'Never',
-        callback: () => {
-          game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
-        },
-      },
-    } as any
-    if (game.settings.get('foundry-ironsworn', 'starforged-beta')) {
-      buttons.sfyes = {
-        icon: '<i class="fas fa-user-astronaut"></i>',
-        label: 'Yes (SF)',
-        callback: () => new SFSettingTruthsDialogVue().render(true),
-      }
-    }
-
-    const d = new Dialog({
-      title: game.i18n.localize('IRONSWORN.YourWorldTruths'),
-      content: '<p>Would you like to generate your world truths?</p>',
-      buttons,
-      default: 'yes',
-    })
-    d.render(true)
   }
 }

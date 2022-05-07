@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix the stellar-object-type oracle roll button
+- Add a first-start dialog so the player can choose some options ([#346](https://github.com/ben/foundry-ironsworn/pull/346))
 
 ## 1.10.64
 

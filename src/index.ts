@@ -16,7 +16,7 @@ import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { IronswornSiteSheetV2 } from './module/actor/sheets/sitesheet-v2'
 import { StarshipSheet } from './module/actor/sheets/starshipsheet'
 import { CreateActorDialog } from './module/applications/createActorDialog'
-import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
+import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { activateChangelogListeners } from './module/features/changelog'
 import { maybePromptForDependencies } from './module/features/dependencies'
@@ -191,7 +191,7 @@ Hooks.once('ready', async () => {
   activateChangelogListeners()
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
-  WorldTruthsDialog.maybeShow()
+  FirstStartDialog.maybeShow()
 
   // Quill theme stylesheet
   const link = document.createElement('link')
