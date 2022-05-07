@@ -2,7 +2,6 @@
   "IRONSWORN": {
     "Ironsworn": "Ironsworn",
     "Starforged": "Starforged",
-    "Welcome": "Welcome",
     "CreateActor": "Create Actor",
     "YourWorldTruths": "Your World: Truths",
     "TruthQuestStarter": "Quest Starter:",
@@ -225,6 +224,11 @@
         "Name": "Show Starforged beta content",
         "Hint": "Enables in-progress Starforged features."
       }
+    },
+    "First Start": {
+      "Welcome": "Welcome",
+      "Save": "Save",
+      "Intro": "Welcome to Ironsworn! There are just a few choices to make before starting."
     },
     "MoveContents": {
       "Face Danger": {

@@ -7,13 +7,13 @@ export class FirstStartDialog extends FormApplication<FormApplication.Options> {
 
   static get defaultOptions(): FormApplication.Options {
     return mergeObject(super.defaultOptions, {
-      title: game.i18n.localize('IRONSWORN.Welcome'),
+      title: game.i18n.localize('IRONSWORN.First Start.Welcome'),
       template: 'systems/foundry-ironsworn/templates/first-start.hbs',
       id: 'first-start-dialog',
       resizable: false,
       classes: ['ironsworn', 'sheet', 'first-start', `theme-${IronswornSettings.theme}`],
       width: 600,
-      height: 700,
+      height: 600,
     } as FormApplication.Options)
   }
 

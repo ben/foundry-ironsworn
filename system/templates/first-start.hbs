@@ -1,3 +1,102 @@
-<form>
-  <h1>{{localize 'IRONSWORN.Welcome'}}</h1>
+<style>
+  .first-start .box label {
+    padding: 1rem;
+  }
+
+  .first-start h1 {
+    border: none;
+  }
+
+  .first-start h2 {
+    border: none;
+    margin-top: 1rem;
+  }
+</style>
+
+<form class="first-start">
+  <h1>{{localize 'IRONSWORN.First Start.Welcome'}}</h1>
+  <p>{{localize 'IRONSWORN.First Start.Intro'}}</p>
+
+  <h2>Character sheet</h2>
+  <p>Which character sheet would you like to use as the default?</p>
+  <div class="boxgroup">
+    <div class="flexrow boxrow">
+      <div class="box flexrow">
+        <label>
+          <input type="radio" name="sheet" id="ironsworn">
+          Ironsworn
+        </label>
+      </div>
+      <div class="box flexrow">
+        <label>
+          <input type="radio" name="sheet" id="starforged">
+          Starforged
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <h2>Moves &amp; Oracles</h2>
+  <p>Which set of moves and oracles would you like to use?</p>
+  <div class="boxgroup">
+    <div class="flexrow boxrow">
+      <div class="box flexrow">
+        <label>
+          <input type="radio" name="moves" id="sheet">
+          Match sheet
+        </label>
+      </div>
+      <div class="box flexrow">
+        <label>
+          <input type="radio" name="moves" id="ironsworn">
+          Ironsworn
+        </label>
+      </div>
+      <div class="box flexrow">
+        <label>
+          <input type="radio" name="moves" id="starforged">
+          Starforged
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <h2>Setting truths</h2>
+  <p>Would you like to generate your setting's truths?</p>
+  <div class="boxgroup">
+    <div class="flexrow boxrow">
+      <div class="box flexcol">
+        <label>
+          <input type="radio" name="truths" id="ironsworn">
+          Yes, for Ironsworn
+        </label>
+      </div>
+      <div class="box flexcol">
+        <label>
+          <input type="radio" name="truths" id="starforged">
+          Yes, for Starforged
+        </label>
+      </div>
+    </div>
+    <div class="flexrow boxrow">
+      <div class="box flexcol">
+        <label>
+          <input type="radio" name="truths" id="no">
+          Remind me later
+        </label>
+      </div>
+      <div class="box flexcol">
+        <label>
+          <input type="radio" name="truths" id="never">
+          Never ask again
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <button class="ironsworn__save" style="margin: 1rem 0;">
+    <i class="fas fa-feather"></i>
+    {{localize 'IRONSWORN.First Start.Save'}}
+  </button>
+
 </form>
