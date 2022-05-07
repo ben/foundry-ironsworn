@@ -15,7 +15,7 @@ export class FirstStartDialog extends FormApplication<FormApplication.Options> {
       resizable: false,
       classes: ['ironsworn', 'sheet', 'first-start', `theme-${IronswornSettings.theme}`],
       width: 600,
-      height: 735,
+      height: 700,
     } as FormApplication.Options)
   }
 
@@ -43,10 +43,6 @@ export class FirstStartDialog extends FormApplication<FormApplication.Options> {
         await game.settings.set('foundry-ironsworn', 'toolbox', value)
       }
       if (name === 'truths') {
-        if (value === 'never') {
-          await game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
-        }
-
         if (value === 'ironsworn') {
           new WorldTruthsDialog().render(true)
         }
@@ -57,11 +53,15 @@ export class FirstStartDialog extends FormApplication<FormApplication.Options> {
       }
     }
 
+    game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
     this.close()
   }
 
   static async maybeShow() {
-    // TODO: only show on first start; maybe do a setting here?
+    if (!game.settings.get('foundry-ironsworn', 'prompt-world-truths')) {
+      return
+    }
+
     new FirstStartDialog().render(true)
   }
 }

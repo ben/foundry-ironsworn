@@ -217,8 +217,8 @@
         "Hint": "If on, changes to character stats will be logged to the chat."
       },
       "PromptTruths": {
-        "Name": "Prompt for World Truths",
-        "Hint": "Prompt on startup to generate world truths using the dialog, if not already done."
+        "Name": "First-Start Dialog",
+        "Hint": "Prompt on startup for defining game settings, such as character sheets and Truths."
       },
       "SFBeta": {
         "Name": "Show Starforged beta content",
