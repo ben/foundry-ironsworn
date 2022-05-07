@@ -59,16 +59,6 @@ export class IronswornSettings {
       default: true,
     })
 
-    game.settings.register('foundry-ironsworn', 'starforged-beta', {
-      name: 'IRONSWORN.Settings.SFBeta.Name',
-      hint: 'IRONSWORN.Settings.SFBeta.Hint',
-      scope: 'world',
-      config: true,
-      type: Boolean,
-      default: false,
-      onChange: reload,
-    })
-
     game.settings.register('foundry-ironsworn', 'data-version', {
       scope: 'world',
       config: false,
@@ -85,8 +75,13 @@ export class IronswornSettings {
     return game.settings.get('foundry-ironsworn', 'toolbox') as string
   }
 
-  static get starforgedBeta(): boolean {
-    return game.settings.get('foundry-ironsworn', 'starforged-beta') as boolean
+  static get starforgedToolsEnabled(): boolean {
+    if (this.toolbox === 'ironsworn') return false
+    if (this.toolbox === 'starforged') return true
+
+    // Set to "match sheet, so check the sheet"
+    const sheetClasses = game.settings.get('core', 'sheetClasses') as any
+    return sheetClasses.Actor.character === 'ironsworn.StarforgedCharacterSheet'
   }
 
   static get logCharacterChanges(): boolean {
