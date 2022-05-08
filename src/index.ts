@@ -19,6 +19,7 @@ import { CreateActorDialog } from './module/applications/createActorDialog'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { activateChangelogListeners } from './module/features/changelog'
+import { registerCompendiumCategoryHook } from './module/features/compendium-categories'
 import { maybePromptForDependencies } from './module/features/dependencies'
 import { activateDragDropListeners } from './module/features/dragdrop'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
@@ -177,6 +178,7 @@ Hooks.once('init', async () => {
   IronswornChatCard.registerHooks()
   activateSceneButtonListeners()
   registerZIndexHook()
+  registerCompendiumCategoryHook()
   registerTokenHUDButtons()
 })
 
