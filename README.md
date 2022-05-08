@@ -20,12 +20,12 @@ This allows you to mix and match the Ironsworn and Starforged materials, but if 
 Once you've chosen a ruleset, see below for how to get started.
 
 ## Getting started with Ironsworn
-First, you'll need a map of the Ironlands.
+You'll need a map of the Ironlands.
 Open the "Compendium Packs" tab on the sidebar, and look for "Ironsworn Maps" near the bottom.
 Drag one of those to the "Scenes" tab in the sidebar, and activate it.
 (You can also use your own, if you like.)
 
-Next, you'll need a character.
+You'll also need a character.
 Open up the actors tab, and hit "Create Actor".
 Use the "✎ Edit" button in the title bar to adjust your stats.
 Use the buttons on the sheet to add assets, vows and other progress items, or select one of the foes from the book.
@@ -56,7 +56,7 @@ To add locations to your sector, use the 🚀 button in the toolbox on the left-
 
 ![Starforged locations](https://user-images.githubusercontent.com/39902/167316581-50abab85-15eb-48c7-b6b5-c3cd8e8eb53c.png)
 
-Next you'll need a character.
+You'll also need a character.
 Open up the actors tab, and hit "Create Actor".
 Use the "✎ Edit" button in the title bar to adjust your stats.
 Use the buttons on the sheet to add assets, vows and other progress items, or select one of the foes from the book.
@@ -91,6 +91,8 @@ There is also an `ironswornMoves` hook, which passes the final tree before displ
 See `custommoves.ts` for the structure of those objects.
 
 # System Development
+
+Here's what you'll need to make changes to this system:
 
 1. Install Foundry 0.8.8 or later, and start it up.
 2. Install the main `foundry-ironsworn` system, and create a world that uses it.
