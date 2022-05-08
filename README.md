@@ -31,12 +31,12 @@ Use the "✎ Edit" button in the title bar to adjust your stats.
 Use the buttons on the sheet to add assets, vows and other progress items, or select one of the foes from the book.
 Use the row of hexes to set the rank of vows and progress, and the `▸` button to mark progress.
 
-![Ironsworn character sheet](https://user-images.githubusercontent.com/39902/167313766-fbfad416-4000-4f2f-95c0-3caa620b7319.jpg)
+![Ironsworn character sheet](https://user-images.githubusercontent.com/39902/167316572-eebc577b-c8e5-425e-87ce-e03381d4b110.png)
 
 If you're playing with a friend or two, there's a "Shared Sheet" actor type that's made for that.
 If you're playing with the Delve rules, you can use the "Site" actor type to track a location; use the buttons to open up the theme and domain compendia.
 
-![Delve and shared sheet](https://user-images.githubusercontent.com/39902/167313863-46eb5b32-0828-402d-9240-b077abdcb79a.jpg)
+![Delve and shared sheet](https://user-images.githubusercontent.com/39902/167316576-9f893b96-a6f3-4e4e-9293-62e354c46768.png)
 
 
 Now you're ready to create vows, embark on journeys, and slay beasts.
@@ -54,7 +54,7 @@ Open the "Compendium Packs" tab in the sidebar, and look for the "Starforged Sce
 
 To add locations to your sector, use the 🚀 button in the toolbox on the left-hand side of the Foundry window. There you'll find tools for adding planets, stars, settlements, derelicts, and vaults.
 
-![Starforged locations](https://user-images.githubusercontent.com/39902/167314419-32bbe6d0-f94f-4715-93b9-6f9efd5afbe4.jpg)
+![Starforged locations](https://user-images.githubusercontent.com/39902/167316581-50abab85-15eb-48c7-b6b5-c3cd8e8eb53c.png)
 
 Next you'll need a character.
 Open up the actors tab, and hit "Create Actor".
@@ -62,7 +62,7 @@ Use the "✎ Edit" button in the title bar to adjust your stats.
 Use the buttons on the sheet to add assets, vows and other progress items, or select one of the foes from the book.
 Use the row of hexes to set the rank of vows and progress, and the `▸` button to mark progress.
 
-![Starforged character sheet](https://user-images.githubusercontent.com/39902/167314525-a2c0924e-79d8-4f4f-91e5-e2dedcfa2241.jpg)
+![Starforged character sheet](https://user-images.githubusercontent.com/39902/167316584-0a3046a3-a468-4e10-9e92-7186006e6400.png)
 
 The tall, narrow sheet is where you can find moves and oracles to help you on your quest.
 Click the "die" icon for an assisted roll on any move or oracle.
