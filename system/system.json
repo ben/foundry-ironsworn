@@ -1,7 +1,7 @@
 {
   "name": "foundry-ironsworn",
-  "title": "Ironsworn",
-  "description": "An implementation of the Ironsworn system, by Shawn Tomkins.",
+  "title": "Ironsworn & Starforged",
+  "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkins.",
   "version": "1.11.3",
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
@@ -45,7 +45,7 @@
     {
       "type": "cover",
       "url": "https://user-images.githubusercontent.com/39902/126923081-2c5e70eb-62db-44ff-9933-7b42f45a7d91.jpg",
-      "caption": "Ironsworn"
+      "caption": "Ironsworn & Starforged"
     }
   ],
   "esmodules": [
