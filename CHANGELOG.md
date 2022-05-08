@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.11.3
+
 - Decorate rolltable compendia with category information ([#350](https://github.com/ben/foundry-ironsworn/pull/350))
 - Remove the bond track from shared sheets (in most cases) ([#352](https://github.com/ben/foundry-ironsworn/pull/352))
 
