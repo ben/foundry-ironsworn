@@ -1,9 +1,29 @@
+import { FirstStartDialog } from "../applications/firstStartDialog"
+
 function reload() {
   window.location.reload()
 }
 
 export class IronswornSettings {
   static registerSettings() {
+    game.settings.registerMenu('foundry-ironsworn', 'first-start-dialog', {
+      name: 'IRONSWORN.Settings.ConfigurationDialog.Name',
+      label: 'IRONSWORN.Settings.ConfigurationDialog.Label',
+      icon: 'fas fa-cog',
+      hint: 'IRONSWORN.Settings.ConfigurationDialog.Hint',
+      type: FirstStartDialog,
+      restricted: true,
+    })
+
+    game.settings.register('foundry-ironsworn', 'prompt-world-truths', {
+      name: 'IRONSWORN.Settings.PromptTruths.Name',
+      hint: 'IRONSWORN.Settings.PromptTruths.Hint',
+      scope: 'world',
+      config: true,
+      type: Boolean,
+      default: true,
+    })
+
     game.settings.register('foundry-ironsworn', 'theme', {
       name: 'IRONSWORN.Settings.Theme.Name',
       hint: 'IRONSWORN.Settings.Theme.Hint',
@@ -35,15 +55,6 @@ export class IronswornSettings {
     game.settings.register('foundry-ironsworn', 'shared-supply', {
       name: 'IRONSWORN.Settings.SharedSupply.Name',
       hint: 'IRONSWORN.Settings.SharedSupply.Hint',
-      scope: 'world',
-      config: true,
-      type: Boolean,
-      default: true,
-    })
-
-    game.settings.register('foundry-ironsworn', 'prompt-world-truths', {
-      name: 'IRONSWORN.Settings.PromptTruths.Name',
-      hint: 'IRONSWORN.Settings.PromptTruths.Hint',
       scope: 'world',
       config: true,
       type: Boolean,

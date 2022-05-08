@@ -217,8 +217,13 @@
         "Hint": "If on, changes to character stats will be logged to the chat."
       },
       "PromptTruths": {
-        "Name": "First-Start Dialog",
-        "Hint": "Prompt on startup for defining game settings, such as character sheets and Truths."
+        "Name": "Ironsworn/Starforged Dialog on Start",
+        "Hint": "Open the above dialog on startup."
+      },
+      "ConfigurationDialog": {
+        "Label": "Ironsworn/Starforged Configuration Dialog",
+        "Name": "Configuration Dialog",
+        "Hint": "Choose between Ironsworn and Starforged UI elements."
       },
       "SFBeta": {
         "Name": "Show Starforged beta content",
