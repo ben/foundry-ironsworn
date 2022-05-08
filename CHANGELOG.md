@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.11.2
+
 - Fix bonds on the shared sheet
 
 ## 1.11.1
