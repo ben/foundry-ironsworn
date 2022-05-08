@@ -92,7 +92,7 @@ export class IronswornSettings {
 
     // Set to "match sheet, so check the sheet"
     const sheetClasses = game.settings.get('core', 'sheetClasses') as any
-    return sheetClasses.Actor.character === 'ironsworn.StarforgedCharacterSheet'
+    return sheetClasses.Actor?.character === 'ironsworn.StarforgedCharacterSheet'
   }
 
   static get logCharacterChanges(): boolean {
