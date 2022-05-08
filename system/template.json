@@ -184,10 +184,7 @@
       "menace": 0
     },
     "bondset": {
-      "bonds": [{
-        "name": "A community",
-        "notes": ""
-      }]
+      "bonds": []
     },
     "site": {
       "templates": [
