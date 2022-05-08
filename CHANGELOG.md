@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Decorate rolltable compendia with category information ([#350](https://github.com/ben/foundry-ironsworn/pull/350))
+
 ## 1.11.2
 
 - Fix bonds on the shared sheet
