@@ -2,6 +2,9 @@
 
 ## In progress
 
+- Update the in-Foundry setup-screen name of the system
+- Add a "completed items" area to the shared sheet ([#353](https://github.com/ben/foundry-ironsworn/pull/353))
+
 ## 1.11.3
 
 - Decorate rolltable compendia with category information ([#350](https://github.com/ben/foundry-ironsworn/pull/350))
