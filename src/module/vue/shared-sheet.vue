@@ -29,14 +29,43 @@
     >
       <transition-group name="slide" tag="div" class="nogrow">
         <progress-box
-          v-for="item in progressItems"
+          v-for="item in activeItems"
           :key="item._id"
           :item="item"
           :actor="actor"
+          @completed="progressCompleted"
         />
       </transition-group>
 
       <progress-controls :actor="actor" />
+    </section>
+
+    <section class="item-row nogrow" style="margin-top: 1rem">
+      <h3
+        class="clickable text"
+        :class="completedClass"
+        @click="expandCompleted = !expandCompleted"
+      >
+        <i :class="completedCaretClass"></i> {{ $t('IRONSWORN.Completed') }}
+      </h3>
+      <transition
+        name="slide"
+        tag="div"
+        class="nogrow completed"
+        style="margin: 0; padding: 0"
+      >
+        <div v-if="expandCompleted">
+          <transition-group name="slide" tag="div" class="nogrow">
+            <progress-box
+              v-for="item in completedItems"
+              :key="item._id"
+              :item="item"
+              :actor="actor"
+              :showStar="true"
+            />
+          </transition-group>
+        </div>
+      </transition>
     </section>
 
     <textarea
@@ -52,6 +81,19 @@
 .slide-enter-active,
 .slide-leave-active {
   max-height: 83px;
+}
+
+h3 {
+  margin: 5px 0;
+  transition: background-color 0.2s ease;
+  i {
+    width: 15px;
+    text-align: center;
+  }
+
+  &.highlighted {
+    background-color: lightyellow;
+  }
 }
 
 textarea.notes {
@@ -70,6 +112,13 @@ export default {
     actor: Object,
   },
 
+  data() {
+    return {
+      expandCompleted: false,
+      highlightCompleted: false,
+    }
+  },
+
   computed: {
     progressItems() {
       return [
@@ -78,8 +127,23 @@ export default {
       ]
     },
 
+    activeItems() {
+      return this.progressItems.filter((x) => !x.data.completed)
+    },
+    completedItems() {
+      return this.progressItems.filter((x) => x.data.completed)
+    },
+
+    completedCaretClass() {
+      return 'fa fa-caret-' + (this.expandCompleted ? 'down' : 'right')
+    },
+
+    completedClass() {
+      return this.highlightCompleted ? 'highlighted' : undefined
+    },
+
     hasBonds() {
-      const bonds = this.actor.items.find(x => x.type === 'bondset')
+      const bonds = this.actor.items.find((x) => x.type === 'bondset')
       const markedBonds = bonds?.data?.bonds?.length
       return markedBonds && markedBonds > 0
     },
@@ -96,6 +160,14 @@ export default {
         actor: this.$actor,
         stat: 'supply',
       })
+    },
+
+    progressCompleted() {
+      this.highlightCompleted = true
+      clearTimeout(this.highlightCompletedTimer)
+      this.highlightCompletedTimer = setTimeout(() => {
+        this.highlightCompleted = false
+      }, 2000)
     },
 
     saveNotes() {
