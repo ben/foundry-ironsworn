@@ -45,7 +45,7 @@ declare global {
 }
 
 Hooks.on('createActor', async (actor: IronswornActor) => {
-  if (actor.type !== 'character') return
+  if (!['character', 'shared'].includes(actor.type)) return
   await Item.createDocuments([{ type: 'bondset', name: 'bonds' }], {
     parent: actor,
     suppressLog: true,

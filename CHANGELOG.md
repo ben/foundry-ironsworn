@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix bonds on the shared sheet
+
 ## 1.11.1
 
 - Add a system-settings button to open the IS/SF configuration dialog
