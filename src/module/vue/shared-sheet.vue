@@ -19,7 +19,7 @@
       />
     </section>
 
-    <section class="sheet-area nogrow">
+    <section v-if="hasBonds" class="sheet-area nogrow">
       <bonds :actor="actor" />
     </section>
 
@@ -76,6 +76,12 @@ export default {
         ...this.actor.items.filter((x) => x.type === 'vow'),
         ...this.actor.items.filter((x) => x.type === 'progress'),
       ]
+    },
+
+    hasBonds() {
+      const bonds = this.actor.items.find(x => x.type === 'bondset')
+      const markedBonds = bonds?.data?.bonds?.length
+      return markedBonds && markedBonds > 0
     },
   },
 
