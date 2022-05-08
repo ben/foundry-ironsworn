@@ -56,6 +56,9 @@ module.exports = (env) => {
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/systems/foundry-ironsworn/',
     },
+    optimization: {
+      minimize: false
+    },
     devServer: {
       hot: true,
       proxy: [

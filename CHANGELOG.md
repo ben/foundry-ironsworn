@@ -3,6 +3,7 @@
 ## In progress
 
 - Add a system-settings button to open the IS/SF configuration dialog
+- Prevent minimizing output JS, which fixes default-character-sheet selection
 
 ## 1.11.0
 
