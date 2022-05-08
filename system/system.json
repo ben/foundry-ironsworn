@@ -24,13 +24,23 @@
   "media": [
     {
       "type": "screenshot",
-      "url": "https://user-images.githubusercontent.com/39902/126507113-139e395e-304d-440e-80f4-6d4eb87cd1a2.png",
-      "caption": "Main character sheet"
+      "url": "https://user-images.githubusercontent.com/39902/167316572-eebc577b-c8e5-425e-87ce-e03381d4b110.png",
+      "caption": "Ironsworn character sheet"
     },
     {
       "type": "screenshot",
-      "url": "https://user-images.githubusercontent.com/39902/126508523-fd9016ef-2206-476b-80a8-c29a99313239.png",
+      "url": "https://user-images.githubusercontent.com/39902/167316576-9f893b96-a6f3-4e4e-9293-62e354c46768.png",
       "caption": "Delve site and shared sheets"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://user-images.githubusercontent.com/39902/167316584-0a3046a3-a468-4e10-9e92-7186006e6400.png",
+      "caption": "Starforged character sheet"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://user-images.githubusercontent.com/39902/167316581-50abab85-15eb-48c7-b6b5-c3cd8e8eb53c.png",
+      "caption": "Starforged locations"
     },
     {
       "type": "cover",
