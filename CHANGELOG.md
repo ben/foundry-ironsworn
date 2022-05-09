@@ -4,6 +4,7 @@
 
 - Update the in-Foundry setup-screen name of the system
 - Add a "completed items" area to the shared sheet ([#353](https://github.com/ben/foundry-ironsworn/pull/353))
+- Better handling of links to oracle categories ([#354](https://github.com/ben/foundry-ironsworn/pull/354))
 
 ## 1.11.3
 
