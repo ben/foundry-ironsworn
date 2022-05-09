@@ -182,7 +182,7 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
     const compendiumKey = COMPENDIUM_KEY_MAP[kind]
     if (!compendiumKey) return match
     if (idIsOracleCategory(url)) {
-      return `<a class="content-link oracle-category-link" data-dfid="${url}"><i class="fa fa-caret-right"></i>${text}</a>`
+      return `<a class="entity-link oracle-category-link" data-dfid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
     }
     return `@Compendium[foundry-ironsworn.${compendiumKey}.${idMap[url]}]{${text}}`
   })
