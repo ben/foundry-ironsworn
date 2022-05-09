@@ -69,7 +69,7 @@ export default {
       let re
       try {
         re = new RegExp(q, 'i')
-      } catch  {}
+      } catch {}
 
       if (q && re) {
         // Walk the tree and test each name.
@@ -105,6 +105,10 @@ export default {
       for (const node of this.$refs.oracles) {
         node.collapse()
       }
+    },
+
+    highlightOracle(dfid) {
+      console.log(dfid)
     },
   },
 }
