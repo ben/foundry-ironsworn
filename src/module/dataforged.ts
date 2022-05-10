@@ -145,22 +145,8 @@ const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
 const DESCRIPTOR_FOCUS_RE = new RegExp('\\[Descriptor \\+ Focus\\]\\(.*?\\)')
 const ACTION_THEME_RE = new RegExp('\\[Action \\+ Theme\\]\\(.*?\\)')
 
-let ORACLE_CATEGORY_IDS: { [k: string]: boolean }
-function idIsOracleCategory(dfid: string): boolean {
-  function walk(cat: IOracleCategory) {
-    ORACLE_CATEGORY_IDS[cat.$id] = true
-    for (const subcat of cat.Categories ?? []) {
-      walk(subcat)
-    }
-  }
-
-  if (!ORACLE_CATEGORY_IDS) {
-    ORACLE_CATEGORY_IDS = {}
-    for (const cat of starforged.oracles) {
-      walk(cat)
-    }
-  }
-  return ORACLE_CATEGORY_IDS[dfid] || false
+function idIsOracleLink(dfid: string): boolean {
+  return /^(Starforged|Ironsworn)\/Oracle/.test(dfid)
 }
 
 function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
@@ -181,7 +167,7 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
     const kind = url.split('/')[1]
     const compendiumKey = COMPENDIUM_KEY_MAP[kind]
     if (!compendiumKey) return match
-    if (idIsOracleCategory(url)) {
+    if (idIsOracleLink(url)) {
       return `<a class="entity-link oracle-category-link" data-dfid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
     }
     return `@Compendium[foundry-ironsworn.${compendiumKey}.${idMap[url]}]{${text}}`
