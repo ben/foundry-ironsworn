@@ -25,6 +25,7 @@
         :actor="actor"
         :node="node"
         :searchQuery="checkedSearchQuery"
+        @oracleclick="highlightOracle"
         ref="oracles"
       />
     </div>
@@ -38,6 +39,7 @@
 </style>
 
 <script>
+import { findOracleWithIntermediateNodes } from '../../dataforged'
 import { createStarforgedOracleTree } from '../../features/customoracles'
 
 export default {
@@ -69,7 +71,7 @@ export default {
       let re
       try {
         re = new RegExp(q, 'i')
-      } catch  {}
+      } catch {}
 
       if (q && re) {
         // Walk the tree and test each name.
@@ -105,6 +107,32 @@ export default {
       for (const node of this.$refs.oracles) {
         node.collapse()
       }
+    },
+
+    async highlightOracle(dfid) {
+      this.clearSearch()
+
+      // Find the path in the data tree
+      const dfOraclePath = findOracleWithIntermediateNodes(dfid)
+
+      // Wait for children to be present
+      while (!this.$refs.oracles) {
+        await new Promise(r => setTimeout(r, 10))
+      }
+
+      // Walk the component tree, expanding as we go
+      let children = this.$refs.oracles
+      let lastComponent
+      for (const dataNode of dfOraclePath) {
+        lastComponent = children.find(x => x.node.dataforgedNode.$id === dataNode.$id)
+        if (!lastComponent) break
+        lastComponent.expand()
+      await new Promise((r) => setTimeout(r, 50))
+        children = lastComponent.$refs.children
+      }
+
+      // Visual highlight on the target
+      lastComponent?.highlight()
     },
   },
 }

@@ -30,6 +30,7 @@ export class IronswornChatCard {
       .find('a.content-link')
       .removeClass('content-link') // Prevent default Foundry behavior
       .on('click', (ev) => this._moveNavigate.call(this, ev))
+    html.find('a.oracle-category-link').on('click', ev => this._oracleNavigate.call(this, ev))
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
     html.find('.burn-momentum-sf').on('click', (ev) => this._sfBurnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
@@ -63,6 +64,16 @@ export class IronswornChatCard {
       }
     }
     item.sheet?.render(true)
+  }
+
+  async _oracleNavigate(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+    const {dfid} = ev.target.dataset
+    for (const actor of game.actors?.contents || []) {
+      if ((actor.moveSheet as any)?._state >= 0 && actor.moveSheet?.highlightMove) {
+        return actor.moveSheet.highlightOracle(dfid)
+      }
+    }
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {

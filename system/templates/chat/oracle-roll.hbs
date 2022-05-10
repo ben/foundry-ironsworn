@@ -17,7 +17,7 @@ table: RollTable {parent: null, pack: 'foundry-ironsworn.starforgedoracles', dat
       {{#each displayRows}}
       <tr class="{{#if selected}}selected{{/if}}">
         <td>{{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}</td>
-        <td>{{text}}</td>
+        <td>{{{text}}}</td>
         <td style="padding: 0 5px; white-space: nowrap;">
           {{#if selected}}
           <i class="isicon-d10-tilt"></i>

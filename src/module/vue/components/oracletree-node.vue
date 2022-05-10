@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol nogrow" :class="{ hidden: node.forceHidden }">
+  <div class="flexcol nogrow movesheet-row" :class="{ hidden: node.forceHidden, highlighted }">
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
     <div v-if="isLeaf">
@@ -20,6 +20,7 @@
           element="div"
           :actor="actor"
           @moveclick="moveclick"
+          @oracleclick="oracleclick"
           class="flexcol"
           v-if="descriptionExpanded"
           v-html="tablePreview"
@@ -48,6 +49,7 @@
             :key="child.displayName"
             :actor="actor"
             :node="child"
+            @oracleclick="oracleclick"
             ref="children"
           />
         </div>
@@ -81,6 +83,7 @@ export default {
     return {
       manuallyExpanded: false,
       descriptionExpanded: false,
+      highlighted: false,
     }
   },
 
@@ -94,7 +97,7 @@ export default {
     },
 
     tablePreview() {
-      const texts = this.node.tables.map(table => {
+      const texts = this.node.tables.map((table) => {
         const description = table.data.description || ''
         const tableRows = CONFIG.IRONSWORN._.sortBy(
           table.data.results.contents.map((x) => ({
@@ -135,6 +138,10 @@ export default {
       actorWithMoves?.moveSheet?.highlightMove(item)
     },
 
+    oracleclick(dfid) {
+      this.$emit('oracleclick', dfid)
+    },
+
     collapse() {
       this.manuallyExpanded = false
       this.descriptionExpanded = false
@@ -142,6 +149,17 @@ export default {
         child.collapse()
       }
     },
+
+    expand() {
+      this.manuallyExpanded = true
+    },
+
+    async highlight() {
+      this.highlighted = true
+      this.$el.scrollIntoView()
+      await new Promise(r => setTimeout(r, 2000))
+      this.highlighted = false
+    }
   },
 }
 </script>

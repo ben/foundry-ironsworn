@@ -210,6 +210,10 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     console.log({ move })
     move.sheet?.render(true)
   }
+
+  async highlightOracle(dfid: string) {
+    console.log({dfid})
+  }
 }
 
 function rerenderMoveSheet(item: IronswornItem) {
