@@ -59,6 +59,10 @@
     }
   }
 
+  .movesheet-row.highlighted {
+    background-color: lightyellow;
+  }
+
   .progresses .item {
     border-color: @medium-color;
   }
@@ -116,14 +120,16 @@
     }
 
     &:not(.disabled) {
-      &.hover, &:hover {
+      &.hover,
+      &:hover {
         &.block {
           background: @light-color;
         }
         &.text {
           color: @light-color;
         }
-        svg, &.svg {
+        svg,
+        &.svg {
           fill: @light-color;
         }
       }
@@ -134,7 +140,8 @@
         &.text {
           color: @medium-color;
         }
-        svg, &.svg {
+        svg,
+        &.svg {
           fill: @medium-color;
         }
       }
@@ -146,7 +153,8 @@
           border-color: black;
           background: black;
         }
-        svg, &.svg {
+        svg,
+        &.svg {
           fill: black;
         }
       }
@@ -181,4 +189,3 @@
     color: @light-color;
   }
 }
-

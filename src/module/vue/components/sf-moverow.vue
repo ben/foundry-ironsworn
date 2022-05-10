@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ highlighted: move.highlighted }">
+  <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
     <h4 style="margin: 0" class="clickable text flexrow" :title="tooltip">
       <span @click="rollMove">
         <i class="isicon-d10-tilt juicy"></i>
