@@ -25,6 +25,7 @@
         :actor="actor"
         :node="node"
         :searchQuery="checkedSearchQuery"
+        @oracleclick="highlightOracle"
         ref="oracles"
       />
     </div>
@@ -109,6 +110,8 @@ export default {
     },
 
     async highlightOracle(dfid) {
+      this.clearSearch()
+
       // Find the path in the data tree
       const dfOraclePath = findOracleWithIntermediateNodes(dfid)
 

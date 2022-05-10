@@ -20,6 +20,7 @@
           element="div"
           :actor="actor"
           @moveclick="moveclick"
+          @oracleclick="oracleclick"
           class="flexcol"
           v-if="descriptionExpanded"
           v-html="tablePreview"
@@ -48,6 +49,7 @@
             :key="child.displayName"
             :actor="actor"
             :node="child"
+            @oracleclick="oracleclick"
             ref="children"
           />
         </div>
@@ -134,6 +136,10 @@ export default {
       console.log(actorWithMoves)
       actorWithMoves?.moveSheet?.render(true)
       actorWithMoves?.moveSheet?.highlightMove(item)
+    },
+
+    oracleclick(dfid) {
+      this.$emit('oracleclick', dfid)
     },
 
     collapse() {
