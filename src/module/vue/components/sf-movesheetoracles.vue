@@ -38,6 +38,7 @@
 </style>
 
 <script>
+import { findOracleWithIntermediateNodes } from '../../dataforged'
 import { createStarforgedOracleTree } from '../../features/customoracles'
 
 export default {
@@ -107,8 +108,28 @@ export default {
       }
     },
 
-    highlightOracle(dfid) {
-      console.log(dfid)
+    async highlightOracle(dfid) {
+      // Find the path in the data tree
+      const dfOraclePath = findOracleWithIntermediateNodes(dfid)
+
+      // Wait for children to be present
+      while (!this.$refs.oracles) {
+        await new Promise(r => setTimeout(r, 10))
+      }
+
+      // Walk the component tree, expanding as we go
+      let children = this.$refs.oracles
+      let lastComponent
+      for (const dataNode of dfOraclePath) {
+        lastComponent = children.find(x => x.node.dataforgedNode.$id === dataNode.$id)
+        if (!lastComponent) break
+        lastComponent.expand()
+      await new Promise((r) => setTimeout(r, 50))
+        children = lastComponent.$refs.children
+      }
+
+      // Visual highlight on the target
+      lastComponent?.highlight()
     },
   },
 }

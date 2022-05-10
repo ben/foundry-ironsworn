@@ -94,7 +94,7 @@ export default {
     },
 
     tablePreview() {
-      const texts = this.node.tables.map(table => {
+      const texts = this.node.tables.map((table) => {
         const description = table.data.description || ''
         const tableRows = CONFIG.IRONSWORN._.sortBy(
           table.data.results.contents.map((x) => ({
@@ -142,6 +142,14 @@ export default {
         child.collapse()
       }
     },
+
+    expand() {
+      this.manuallyExpanded = true
+    },
+
+    async highlight() {
+      this.$el.scrollIntoView()
+    }
   },
 }
 </script>

@@ -48,13 +48,13 @@ export default {
   methods: {
     async highlightMove(item) {
       this.currentTab = this.tabs[0]
-      await new Promise((r) => setTimeout(r, 10))
+      await this.$nextTick()
       this.$refs.activeTab?.['highlightMove']?.(item)
     },
 
     async highlightOracle(dfid) {
       this.currentTab = this.tabs[1]
-      await new Promise((r) => setTimeout(r, 10))
+      await this.$nextTick()
       this.$refs.activeTab?.['highlightOracle']?.(dfid)
     },
   },

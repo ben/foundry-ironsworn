@@ -145,9 +145,9 @@ const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
 const DESCRIPTOR_FOCUS_RE = new RegExp('\\[Descriptor \\+ Focus\\]\\(.*?\\)')
 const ACTION_THEME_RE = new RegExp('\\[Action \\+ Theme\\]\\(.*?\\)')
 
-let ORACLE_CATEGORY_IDS: {[k: string]: boolean}
+let ORACLE_CATEGORY_IDS: { [k: string]: boolean }
 function idIsOracleCategory(dfid: string): boolean {
-  function walk(cat:IOracleCategory) {
+  function walk(cat: IOracleCategory) {
     ORACLE_CATEGORY_IDS[cat.$id] = true
     for (const subcat of cat.Categories ?? []) {
       walk(subcat)
