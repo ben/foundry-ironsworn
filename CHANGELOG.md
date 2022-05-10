@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Also replace lone-oracle links ([#356](https://github.com/ben/foundry-ironsworn/pull/356))
+
 ## 1.11.5
 
 - Fixes a small visual glitch for content links in the chat bar
