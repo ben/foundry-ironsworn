@@ -4,6 +4,8 @@
 
 ## 1.11.5
 
+- Fixes a small visual glitch for content links in the chat bar
+
 ## 1.11.4
 
 - Update the in-Foundry setup-screen name of the system
