@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Avoid opening the roll dialog for some moves where the system can't find the stat to be rolled against (e.g. _Withstand Damage_)
+
 ## 1.11.6
 
 - Also replace lone-oracle links ([#356](https://github.com/ben/foundry-ironsworn/pull/356))

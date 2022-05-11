@@ -1,9 +1,21 @@
+import { IMoveTrigger } from 'dataforged'
 import { maxBy, minBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { createStarforgedMoveRollChat, sfNextOracles } from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
 import { SFMoveDataProperties } from '../item/itemtypes'
 import { IronswornSettings } from './settings'
+
+function rollableOptions(trigger: IMoveTrigger) {
+  if (!trigger.Options) return []
+
+  const actionOptions = trigger.Options.filter((x) => x['Roll type'] === 'Action roll')
+  if (!actionOptions.length) return []
+
+  const allowedUsings = ['Edge', 'Iron', 'Heart', 'Shadow', 'Wits']
+  return actionOptions
+    .filter(x => (x.Using as string[]).every(u => allowedUsings.includes(u)))
+}
 
 export class SFRollMoveDialog extends Dialog {
   static get defaultOptions() {
@@ -21,7 +33,7 @@ export class SFRollMoveDialog extends Dialog {
 
     // Bail out if there's nothing to choose
     const data = move.data as SFMoveDataProperties
-    const options = (data.data.Trigger.Options ?? []).filter((x) => x['Roll type'] === 'Action roll')
+    const options = rollableOptions(data.data.Trigger)
     if (!options.length) {
       return createDataforgedMoveChat(move)
     }
