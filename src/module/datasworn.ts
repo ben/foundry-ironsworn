@@ -309,7 +309,7 @@ export async function importFromDatasworn() {
     for (const child of cat.Categories ?? []) await processCategory(child)
   }
 
-  for (const category of ironsworn.oracles) {
+  for (const category of ironsworn['Oracle Categories']) {
     await processCategory(category)
   }
   await RollTable.createDocuments(oraclesToCreate, {

@@ -68,7 +68,7 @@ export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem 
 }
 
 export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> {
-  for (const category of starforged.moves) {
+  for (const category of starforged['Move Categories']) {
     for (const move of category.Moves) {
       if (move.$id === dfid) return move
     }
@@ -111,7 +111,7 @@ export function findOracleWithIntermediateNodes(dfid: string): Array<IOracle | I
     return false
   }
 
-  for (const cat of starforged.oracles) {
+  for (const cat of starforged['Oracle Categories']) {
     walkCategory(cat)
   }
   return ret
@@ -152,6 +152,9 @@ function idIsOracleLink(dfid: string): boolean {
 function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   // Strip "Black Medium Right-Pointing Triangle" characters
   text = text.replace('\u23f5', '')
+
+  // Strip brackets from e.g. factions/name template
+  text = text.replace(/\[(\[.*?\))\]/g, '$1')
 
   // Catch "Descriptor+Focus" or "Action+Theme" and replace with two links
   text = text.replace(
@@ -230,7 +233,7 @@ export async function importFromDataforged() {
 
 async function processMoves(idMap: { [key: string]: string }) {
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const category of starforged.moves) {
+  for (const category of starforged['Move Categories']) {
     for (const move of category.Moves) {
       renderLinksInMove(idMap, move)
       const cleanMove = cleanDollars(move)
@@ -251,7 +254,7 @@ async function processMoves(idMap: { [key: string]: string }) {
 
 async function processAssets(idMap: { [key: string]: string }) {
   const assetsToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const assetType of starforged.assets) {
+  for (const assetType of starforged['Asset Types']) {
     for (const asset of assetType.Assets) {
       assetsToCreate.push({
         type: 'asset',
@@ -326,6 +329,7 @@ async function processOracles(idMap: { [key: string]: string }) {
             text = `${tableRow.Result} (${tableRow.Summary})`
           } else text = tableRow.Result ?? ''
           return {
+            _id: idMap[tableRow.$id ?? ''],
             range: [tableRow.Floor, tableRow.Ceiling],
             text: tableRow.Result && renderLinksInStr(text, idMap),
           }
@@ -340,7 +344,7 @@ async function processOracles(idMap: { [key: string]: string }) {
     for (const child of cat.Categories ?? []) await processCategory(child)
   }
 
-  for (const category of starforged.oracles) {
+  for (const category of starforged['Oracle Categories']) {
     await processCategory(category)
   }
   await RollTable.createDocuments(oraclesToCreate, {
@@ -351,7 +355,7 @@ async function processOracles(idMap: { [key: string]: string }) {
 
 async function processEncounters(idMap: { [key: string]: string }) {
   const encountersToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const encounter of starforged.encounters) {
+  for (const encounter of starforged.Encounters) {
     const description = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
       ...encounter,
       variantLinks: encounter.Variants.map((x) => renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)),

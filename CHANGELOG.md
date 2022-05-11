@@ -5,6 +5,7 @@
 - Avoid opening the roll dialog for some moves where the system can't find the stat to be rolled against (e.g. _Withstand Damage_)
 - Add a d10 icon to asset-track headers, to better indicate that they're rollable
 - Add d10 icons to the health/spirit/supply headers, to better indicate that they're rollable
+- Bump to v1.0 of Dataforged ([#338](https://github.com/ben/foundry-ironsworn/pull/338))
 
 ## 1.11.6
 
