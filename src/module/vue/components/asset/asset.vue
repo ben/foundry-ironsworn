@@ -13,15 +13,6 @@
           <strong>{{ field.name }}:</strong> {{ field.value }}
         </p>
 
-        <!-- <with-rolllisteners
-          element="p"
-          :actor="actingActor"
-          v-if="asset.data.description"
-          @moveclick="moveclick"
-        >
-          <div v-html="$enrichHtml(asset.data.description)"></div>
-        </with-rolllisteners> -->
-
         <ul>
           <with-rolllisteners
             v-for="(ability, i) in enabledAbilities"
@@ -46,11 +37,15 @@
 
         <div class="flexcol" v-if="asset.data.track.enabled">
           <h4
-            class="clickable text"
+            class="clickable text flexrow"
             style="margin-bottom: 3px"
             @click="rollTrack"
           >
-            {{ asset.data.track.name }}
+            <span>{{ asset.data.track.name }}</span>
+            <i
+              class="isicon-d10-tilt juicy nogrow"
+              style="padding-right: 3px"
+            ></i>
           </h4>
           <asset-track :actor="actor" :item="asset" />
         </div>

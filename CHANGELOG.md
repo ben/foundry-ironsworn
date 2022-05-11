@@ -3,6 +3,7 @@
 ## In progress
 
 - Avoid opening the roll dialog for some moves where the system can't find the stat to be rolled against (e.g. _Withstand Damage_)
+- Add a d10 icon to asset-track headers, to better indicate that they're rollable
 
 ## 1.11.6
 
