@@ -153,6 +153,9 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   // Strip "Black Medium Right-Pointing Triangle" characters
   text = text.replace('\u23f5', '')
 
+  // Strip brackets from e.g. factions/name template
+  text = text.replace(/\[(\[.*?\))\]/g, '$1')
+
   // Catch "Descriptor+Focus" or "Action+Theme" and replace with two links
   text = text.replace(
     DESCRIPTOR_FOCUS_RE,
