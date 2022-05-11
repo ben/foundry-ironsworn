@@ -67,6 +67,7 @@
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <h4 class="vertical-v2 clickable text" @click="rollStat('health')">
+            <i class="isicon-d10-tilt"></i>
             {{ $t('IRONSWORN.Health') }}
           </h4>
           <div class="flexcol stack health">
@@ -78,6 +79,7 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <h4 class="vertical-v2 clickable text" @click="rollStat('spirit')">
+            <i class="isicon-d10-tilt"></i>
             {{ $t('IRONSWORN.Spirit') }}
           </h4>
           <div class="flexcol stack spirit">
@@ -89,6 +91,7 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <h4 class="vertical-v2 clickable text" @click="rollStat('supply')">
+            <i class="isicon-d10-tilt"></i>
             {{ $t('IRONSWORN.Supply') }}
           </h4>
           <div class="flexcol stack supply">
@@ -99,8 +102,8 @@
     </div>
 
     <!-- Impacts -->
-    <hr class="nogrow">
-    <sf-impacts :actor=actor class="nogrow" />
+    <hr class="nogrow" />
+    <sf-impacts :actor="actor" class="nogrow" />
   </div>
 </template>
 
