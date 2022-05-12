@@ -3,7 +3,7 @@ import { IOracle, IOracleCategory, ironsworn, IRow } from 'dataforged'
 import { max } from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from './actor/actor'
-import { hash } from './dataforged'
+import { cleanDollars, hash, renderLinksInMove } from './dataforged'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
@@ -269,7 +269,7 @@ export async function importFromDatasworn() {
 
 async function processDataforgedMoves() {
   const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
-  for (const category of ironsworn.moves) {
+  for (const category of ironsworn['Move Categories']) {
     for (const move of category.Moves) {
       renderLinksInMove(move)
       const cleanMove = cleanDollars(move)

@@ -22,7 +22,7 @@ export async function createIronswornMoveTree(): Promise<MoveCategory[]> {
   const compendiumMoves = (await pack?.getDocuments()) as IronswornItem[]
 
   // Construct the base tree
-  for (const category of ironsworn.moves) {
+  for (const category of ironsworn['Move Categories']) {
     ret.push(walkCategory(category, compendiumMoves))
   }
 
