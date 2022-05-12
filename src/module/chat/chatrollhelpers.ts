@@ -1,4 +1,5 @@
 import { compact, sortBy } from 'lodash'
+import { marked } from 'marked'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
 import { getDFMoveByDfId, getFoundrySFTableByDfId } from '../dataforged'
@@ -331,7 +332,7 @@ export async function rollAndDisplayOracleResult(table?: RollTable): Promise<str
     table.data.results.contents.map((x) => ({
       low: x.data.range[0],
       high: x.data.range[1],
-      text: x.data.text,
+      text: marked.parseInline(x.data.text),
       selected: false,
     })),
     'low'

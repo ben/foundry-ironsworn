@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Render oracle results on their way to chat
+
 ## 1.11.7
 
 - Avoid opening the roll dialog for some moves where the system can't find the stat to be rolled against (e.g. _Withstand Damage_)
