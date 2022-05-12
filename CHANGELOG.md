@@ -6,6 +6,7 @@
 - Add a d10 icon to asset-track headers, to better indicate that they're rollable
 - Add d10 icons to the health/spirit/supply headers, to better indicate that they're rollable
 - Bump to v1.0 of Dataforged ([#338](https://github.com/ben/foundry-ironsworn/pull/338))
+- Visual update to edge/heart/etc boxes including a d10 icon
 
 ## 1.11.6
 
