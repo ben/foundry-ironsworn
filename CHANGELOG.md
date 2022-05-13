@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.13.0
+
 ## 1.12.0
 
 - Render Markdown in oracle results on their way to chat
