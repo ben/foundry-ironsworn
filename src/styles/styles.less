@@ -452,9 +452,13 @@
     flex-grow: 0;
   }
 
-  input[type='number']::-webkit-inner-spin-button,
-  input[type='number']::-webkit-outer-spin-button {
-    -webkit-appearance: button !important;
+  input[type='number'] {
+    -moz-appearance: auto;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: button !important;
+      opacity: 1 !important;
+    }
   }
 }
 
