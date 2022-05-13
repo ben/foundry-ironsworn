@@ -2,7 +2,8 @@
 
 ## In progress
 
-- Render oracle results on their way to chat
+- Render Markdown in oracle results on their way to chat
+- Autofocus bonus input when SF roll-a-move dialog opens
 
 ## 1.11.7
 

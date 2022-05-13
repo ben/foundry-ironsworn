@@ -76,6 +76,11 @@ function callback(opts: { actor: IronswornActor; move: IronswornItem; mode: stri
   }
 }
 
+// Autofucus on input box when rolling
+Hooks.on('renderSFRollMoveDialog', async (_dialog, html, _data) => {
+  html.find('input').focus()
+})
+
 async function rollAndCreateChatMessage(opts: {
   actor: IronswornActor
   move: IronswornItem
