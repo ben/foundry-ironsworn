@@ -4,6 +4,7 @@
 
 - Render Markdown in oracle results on their way to chat
 - Autofocus bonus input when SF roll-a-move dialog opens
+- Make sure spinner buttons show up on numeric controls
 
 ## 1.11.7
 
