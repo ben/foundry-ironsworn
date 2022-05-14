@@ -38,7 +38,7 @@
 
     <div class="flexrow nogrow" style="margin-top: 5px">
       <!-- Klass -->
-      <label class="flexrow">
+      <label class="flexrow" style="position: relative">
         <!-- TODO: i18n and subtype text -->
         Type of (star):
         <select
@@ -47,19 +47,30 @@
           :class="{ highlighted: firstLookHighlight }"
           style="margin-left: 5px"
         >
-          <option v-for="opt in klassOptions" :key="opt.value" :value="opt.value">
+          <option
+            v-for="opt in klassOptions"
+            :key="opt.value"
+            :value="opt.value"
+          >
             {{ opt.label }}
           </option>
         </select>
+        <div
+          class="clickable block nogrow"
+          style="
+            padding: 0 3px;
+            position: absolute;
+            right: 20px;
+            height: 25px;
+            line-height: 30px;
+            top: 1px;
+          "
+          @click="randomizeKlass"
+          title="Random star type"
+        >
+          <i class="isicon-d10-tilt juicy" />
+        </div>
       </label>
-      <div
-        class="clickable block nogrow"
-        style="margin-left: 5px; padding: 5px 3px 3px 3px"
-        @click="randomizeKlass"
-        title="Random star type"
-      >
-        <i class="isicon-d10-tilt juicy" />
-      </div>
     </div>
 
     <header class="sheet-header flexrow nogrow">
