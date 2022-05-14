@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.15.1
+
 - Fix a tooltip
 
 ## 1.15.0
