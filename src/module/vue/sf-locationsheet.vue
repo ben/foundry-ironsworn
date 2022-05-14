@@ -119,9 +119,10 @@
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
         <div
-          class="clickable block box"
           v-for="oracle of row"
-          :class="{ highlighted: oracle.fl && firstLookHighlight }"
+          class="clickable block box"
+          :class="{ highlighted: oracle.fl && firstLookHighlight, disabled: oracle.requiresKlass && klassIsNotValid }"
+          :title="(oracle.requiresKlass && klassIsNotValid) ? 'Requires a type to be chosen' : undefined"
           :key="oracle.dfId"
           @click="rollOracle(oracle)"
         >
@@ -289,12 +290,14 @@ export default {
                 title: 'Atmosphere',
                 dfId: `Starforged/Oracles/Planets/${kc}/Atmosphere`,
                 fl: true,
+                requiresKlass: true,
               },
               {
                 title: 'From Space',
                 qty: '1-2',
                 dfId: `Starforged/Oracles/Planets/${kc}/Observed_From_Space`,
                 fl: true,
+                requiresKlass: true,
               },
             ],
             [
@@ -302,12 +305,18 @@ export default {
                 title: 'Settlements',
                 dfId: `Starforged/Oracles/Planets/${kc}/Settlements/${rc}`,
                 fl: true,
+                requiresKlass: true,
               },
-              { title: 'Life', dfId: `Starforged/Oracles/Planets/${kc}/Life` },
+              {
+                title: 'Life',
+                dfId: `Starforged/Oracles/Planets/${kc}/Life`,
+                requiresKlass: true,
+              },
               {
                 title: 'Planetside Feature',
                 qty: '1-2',
                 dfId: `Starforged/Oracles/Planets/${kc}/Feature`,
+                requiresKlass: true,
               },
             ],
             [
@@ -377,6 +386,7 @@ export default {
                 title: 'Type',
                 dfId: `Starforged/Oracles/Derelicts/Type/${kc}`,
                 fl: true,
+                requiresKlass: true,
               },
               {
                 title: 'Condition',
@@ -485,6 +495,11 @@ export default {
       }
       return false
     },
+
+    klassIsNotValid() {
+      const {klass} = this.actor.data
+      return true // TODO: fix
+    }
   },
 
   watch: {
