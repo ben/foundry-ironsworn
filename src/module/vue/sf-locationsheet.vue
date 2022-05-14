@@ -58,9 +58,9 @@
         <div
           class="clickable block nogrow"
           style="
-            padding: 0 3px;
+            padding: 0px 5px;
             position: absolute;
-            right: 20px;
+            right: 15px;
             height: 25px;
             line-height: 30px;
             top: 1px;
@@ -73,7 +73,7 @@
       </label>
     </div>
 
-    <header class="sheet-header flexrow nogrow">
+    <header class="sheet-header flexrow nogrow" style="position: relative">
       <document-img :document="actor" size="50px" />
       <div class="flexcol">
         <div class="flexrow nogrow">
@@ -85,11 +85,15 @@
             class="clickable block nogrow"
             :class="{ highlighted: firstLookHighlight }"
             style="
-              margin: 5px 0px;
-              padding: 0 5px;
-              line-height: 50px;
-              margin-left: 5px;
+              position: absolute;
+              padding: 0px 10px;
+              line-height: 53px;
+              right: 1px;
+              top: 6px;
+              height: 48px;
+              border-radius: 0 3px 3px 0;
             "
+            title="Random name"
             @click="randomizeName"
           >
             <i class="isicon-d10-tilt juicy" />
