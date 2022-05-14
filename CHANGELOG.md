@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Update the location sheet layout to clarify order of decisions ([#365](https://github.com/ben/foundry-ironsworn/pull/365))
+
 ## 1.14.0
 
 - Bump dataforged and fix the missing 50/50 oracle button in the chat card for "Ask the Oracle"

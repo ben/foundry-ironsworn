@@ -1,83 +1,110 @@
 <template>
   <div class="flexcol">
-    <header class="sheet-header flexrow nogrow">
-      <document-img :document="actor" size="82px" style="margin-top: 5px" />
+    <div class="flexrow nogrow">
+      <!-- Region -->
+      <label class="flexrow" style="margin-right: 10px; flex-basis: 150px">
+        <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
+        <select v-model="region" style="margin-left: 5px">
+          <option value="terminus">
+            {{ $t('IRONSWORN.Terminus') }}
+          </option>
+          <option value="outlands">
+            {{ $t('IRONSWORN.Outlands') }}
+          </option>
+          <option value="expanse">
+            {{ $t('IRONSWORN.Expanse') }}
+          </option>
+        </select>
+      </label>
+
+      <!-- Subtype -->
+      <label class="flexrow" style="flex-basis: 250px">
+        {{ $t('IRONSWORN.LocationType') }}
+        <select
+          v-model="actor.data.subtype"
+          @change="subtypeChanged"
+          style="margin-left: 5px"
+        >
+          <option value="planet">Planet</option>
+          <option value="settlement">Settlement</option>
+          <option value="star">Stellar Object</option>
+          <option value="derelict">Derelict</option>
+          <option value="vault">Precursor Vault</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="flexrow nogrow" style="margin-top: 5px">
+      <!-- Klass -->
+      <label class="flexrow" style="position: relative">
+        <!-- TODO: i18n and subtype text -->
+        <span class="select-label">Type of (star):</span>
+        <select
+          v-model="actor.data.klass"
+          @change="klassChanged"
+          :class="{ highlighted: firstLookHighlight }"
+          style="margin-left: 5px"
+        >
+          <option
+            v-for="opt in klassOptions"
+            :key="opt.value"
+            :value="opt.value"
+          >
+            {{ opt.label }}
+          </option>
+        </select>
+        <div
+          class="clickable block nogrow"
+          style="
+            padding: 0px 5px;
+            position: absolute;
+            right: 15px;
+            height: 25px;
+            line-height: 30px;
+            top: 1px;
+          "
+          @click="randomizeKlass"
+          :title="randomKlassTooltip"
+        >
+          <i class="isicon-d10-tilt juicy" />
+        </div>
+      </label>
+    </div>
+
+    <header class="sheet-header flexrow nogrow" style="position: relative">
+      <document-img :document="actor" size="50px" />
       <div class="flexcol">
         <div class="flexrow nogrow">
           <document-name
             :document="actor"
-            :class="{ highlighted: firstLookHighlight }"
+            :class="{ highlighted: firstLookHighlight && canRandomizeName }"
           />
           <div
+            v-if="canRandomizeName"
             class="clickable block nogrow"
-            :class="{ highlighted: firstLookHighlight }"
             style="
-              margin: 5px 0px;
-              padding: 0 5px;
-              line-height: 50px;
-              margin-left: 5px;
+              position: absolute;
+              padding: 0px 10px;
+              line-height: 53px;
+              right: 1px;
+              top: 6px;
+              height: 48px;
+              border-radius: 0 3px 3px 0;
             "
+            :title="$t('IRONSWORN.RandomName')"
             @click="randomizeName"
           >
             <i class="isicon-d10-tilt juicy" />
           </div>
         </div>
-
-        <div class="flexrow nogrow">
-          <!-- Region -->
-          <select v-model="region" style="margin-right: 5px; flex-basis: 150px">
-            <option value="terminus">
-              {{ $t('IRONSWORN.Terminus') }}
-            </option>
-            <option value="outlands">
-              {{ $t('IRONSWORN.Outlands') }}
-            </option>
-            <option value="expanse">
-              {{ $t('IRONSWORN.Expanse') }}
-            </option>
-          </select>
-
-          <!-- Subtype -->
-          <select
-            style="margin-right: 5px; flex-basis: 150px"
-            v-model="actor.data.subtype"
-            @change="subtypeChanged"
-          >
-            <option value="planet">Planet</option>
-            <option value="settlement">Settlement</option>
-            <option value="star">Stellar Object</option>
-            <option value="derelict">Derelict</option>
-            <option value="vault">Precursor Vault</option>
-          </select>
-
-          <!-- Klass -->
-          <div class="flexrow" style="flex-basis: 200px">
-            <select
-              v-model="actor.data.klass"
-              @change="klassChanged"
-              :class="{ highlighted: firstLookHighlight }"
-            >
-              <option
-                v-for="opt in klassOptions"
-                :key="opt.value"
-                :value="opt.value"
-              >
-                {{ opt.label }}
-              </option>
-            </select>
-            <div
-              class="clickable block nogrow"
-              style="margin-left: 5px; padding: 5px"
-              @click="randomizeKlass"
-            >
-              <i class="isicon-d10-tilt juicy" />
-            </div>
-          </div>
-        </div>
       </div>
     </header>
 
-    <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
+    <section
+      class="boxgroup flexcol nogrow"
+      style="margin-bottom: 1rem"
+      v-if="oracles.length > 0"
+    >
       <div class="boxrow">
         <div
           class="clickable block box"
@@ -85,14 +112,23 @@
           @mouseleave="firstLookHighlight = false"
           @click="rollFirstLook"
         >
-          <i class="isicon-d10-tilt"></i>
+          <i class="isicon-d10-tilt"></i> &nbsp;
+          {{ $t('IRONSWORN.RollForDetails') }}
         </div>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
         <div
-          class="clickable block box"
           v-for="oracle of row"
-          :class="{ highlighted: oracle.fl && firstLookHighlight }"
+          class="clickable block box"
+          :class="{
+            highlighted: oracle.fl && firstLookHighlight,
+            disabled: oracle.requiresKlass && klassIsNotValid,
+          }"
+          :title="
+            oracle.requiresKlass && klassIsNotValid
+              ? $t('IRONSWORN.RequiresLocationType')
+              : undefined
+          "
           :key="oracle.dfId"
           @click="rollOracle(oracle)"
         >
@@ -101,13 +137,21 @@
       </div>
     </section>
 
-    <section class="flexcol" style="margin-top: 1rem">
+    <section class="flexcol">
       <quill-editor v-model="actor.data.description" />
     </section>
   </div>
 </template>
 
 <style lang="less" scoped>
+label {
+  line-height: 27px;
+
+  .select-label {
+    flex-basis: 100px;
+    flex-grow: 0;
+  }
+}
 .box {
   padding: 7px;
 }
@@ -252,12 +296,14 @@ export default {
                 title: 'Atmosphere',
                 dfId: `Starforged/Oracles/Planets/${kc}/Atmosphere`,
                 fl: true,
+                requiresKlass: true,
               },
               {
                 title: 'From Space',
                 qty: '1-2',
                 dfId: `Starforged/Oracles/Planets/${kc}/Observed_From_Space`,
                 fl: true,
+                requiresKlass: true,
               },
             ],
             [
@@ -265,12 +311,18 @@ export default {
                 title: 'Settlements',
                 dfId: `Starforged/Oracles/Planets/${kc}/Settlements/${rc}`,
                 fl: true,
+                requiresKlass: true,
               },
-              { title: 'Life', dfId: `Starforged/Oracles/Planets/${kc}/Life` },
+              {
+                title: 'Life',
+                dfId: `Starforged/Oracles/Planets/${kc}/Life`,
+                requiresKlass: true,
+              },
               {
                 title: 'Planetside Feature',
                 qty: '1-2',
                 dfId: `Starforged/Oracles/Planets/${kc}/Feature`,
+                requiresKlass: true,
               },
             ],
             [
@@ -313,11 +365,20 @@ export default {
                 title: 'Initial Contact',
                 dfId: 'Starforged/Oracles/Settlements/Initial_Contact',
               },
-              { title: 'Authority', dfId: 'Starforged/Oracles/Settlements/Authority' },
+              {
+                title: 'Authority',
+                dfId: 'Starforged/Oracles/Settlements/Authority',
+              },
             ],
             [
-              { title: 'Projects', dfId: 'Starforged/Oracles/Settlements/Projects' },
-              { title: 'Trouble', dfId: 'Starforged/Oracles/Settlements/Trouble' },
+              {
+                title: 'Projects',
+                dfId: 'Starforged/Oracles/Settlements/Projects',
+              },
+              {
+                title: 'Trouble',
+                dfId: 'Starforged/Oracles/Settlements/Trouble',
+              },
             ],
           ]
 
@@ -331,6 +392,7 @@ export default {
                 title: 'Type',
                 dfId: `Starforged/Oracles/Derelicts/Type/${kc}`,
                 fl: true,
+                requiresKlass: true,
               },
               {
                 title: 'Condition',
@@ -424,6 +486,32 @@ export default {
           throw new Error('bad type yo')
       }
     },
+
+    canRandomizeName() {
+      const { subtype, klass } = this.actor.data
+
+      if (subtype === 'planet') {
+        const kc = capitalize(klass)
+        const json = CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
+          `Starforged/Oracles/Planets/${kc}`
+        )
+        if (json) return true
+      } else if (subtype === 'settlement') {
+        return true
+      }
+      return false
+    },
+
+    randomKlassTooltip() {
+      const { subtype } = this.actor.data
+      return this.$t(`IRONSWORN.Random${capitalize(subtype)}Type`)
+    },
+
+    klassIsNotValid() {
+      const { klass } = this.actor.data
+      const selectedOption = this.klassOptions.find((x) => x.value === klass)
+      return selectedOption === undefined
+    },
   },
 
   watch: {
@@ -465,16 +553,16 @@ export default {
       const { subtype, klass } = this.actor.data
       let name
       if (subtype === 'planet') {
-        // no oracle for this
         const kc = capitalize(klass)
         const json = await CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
           `Starforged/Oracles/Planets/${kc}`
         )
         name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
       } else if (subtype === 'settlement') {
-        const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
-          'Starforged/Oracles/Settlements/Name'
-        )
+        const table =
+          await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
+            'Starforged/Oracles/Settlements/Name'
+          )
         name = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       }
 
@@ -498,7 +586,10 @@ export default {
         tableKey = 'Starforged/Oracles/Vaults/Location'
       }
 
-      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(tableKey)
+      const table =
+        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
+          tableKey
+        )
       const rawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!rawText) return
 
@@ -519,7 +610,10 @@ export default {
       }
     },
     async rollOracle(oracle) {
-      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(oracle.dfId)
+      const table =
+        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
+          oracle.dfId
+        )
       const drawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!drawText) return
 
