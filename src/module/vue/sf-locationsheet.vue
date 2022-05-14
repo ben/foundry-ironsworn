@@ -83,7 +83,6 @@
           />
           <div
             class="clickable block nogrow"
-            :class="{ highlighted: firstLookHighlight }"
             style="
               position: absolute;
               padding: 0px 10px;
@@ -102,7 +101,7 @@
       </div>
     </header>
 
-    <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
+    <section class="boxgroup flexcol nogrow" style="margin-bottom: 1rem" v-if="oracles.length > 0">
       <div class="boxrow">
         <div
           class="clickable block box"
@@ -126,7 +125,7 @@
       </div>
     </section>
 
-    <section class="flexcol" style="margin-top: 1rem">
+    <section class="flexcol">
       <quill-editor v-model="actor.data.description" />
     </section>
   </div>
