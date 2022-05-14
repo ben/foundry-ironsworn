@@ -3,6 +3,7 @@
 ## In progress
 
 - Bump dataforged and fix the missing 50/50 oracle button in the chat card for "Ask the Oracle"
+- Oracle search: also match against Dataforged aliases
 
 ## 1.13.0
 

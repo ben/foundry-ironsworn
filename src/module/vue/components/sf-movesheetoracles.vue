@@ -77,13 +77,24 @@ export default {
         // Walk the tree and test each name.
         // Force expanded on all parent nodes leading to a match
         const walk = (node, parentMatch) => {
-          const thisMatch = re.test(node.displayName)
+          // Match against current name (i18n) but also aliases in Dataforged
+          let thisMatch = re.test(node.displayName)
+          for (const alias of node.dataforgedNode?.Aliases ?? []) {
+            thisMatch |= re.test(alias)
+          }
+
+          // Check for descendant matches
           let childMatch = false
           for (const child of node.children) {
             childMatch |= walk(child, thisMatch || parentMatch)
           }
+
+          // Expanded if part of a tree with a match
           node.forceExpanded = parentMatch | thisMatch | childMatch
+          // Hidden if not
           node.forceHidden = !node.forceExpanded
+
+          // Pass match up to ancestors
           return thisMatch | childMatch
         }
         walk(this.treeRoot, false)
