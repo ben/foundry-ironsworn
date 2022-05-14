@@ -79,9 +79,10 @@
         <div class="flexrow nogrow">
           <document-name
             :document="actor"
-            :class="{ highlighted: firstLookHighlight }"
+            :class="{ highlighted: firstLookHighlight && canRandomizeName }"
           />
           <div
+            v-if="canRandomizeName"
             class="clickable block nogrow"
             style="
               position: absolute;
@@ -101,7 +102,11 @@
       </div>
     </header>
 
-    <section class="boxgroup flexcol nogrow" style="margin-bottom: 1rem" v-if="oracles.length > 0">
+    <section
+      class="boxgroup flexcol nogrow"
+      style="margin-bottom: 1rem"
+      v-if="oracles.length > 0"
+    >
       <div class="boxrow">
         <div
           class="clickable block box"
@@ -464,6 +469,10 @@ export default {
         default:
           throw new Error('bad type yo')
       }
+    },
+
+    canRandomizeName() {
+      return ['planet', 'settlement'].includes(this.actor.data.subtype)
     },
   },
 
