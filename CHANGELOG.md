@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.15.2
+
 - Fix some placeholder text
 
 ## 1.15.1
