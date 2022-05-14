@@ -472,7 +472,18 @@ export default {
     },
 
     canRandomizeName() {
-      return ['planet', 'settlement'].includes(this.actor.data.subtype)
+      const { subtype, klass } = this.actor.data
+
+      if (subtype === 'planet') {
+        const kc = capitalize(klass)
+        const json = CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
+          `Starforged/Oracles/Planets/${kc}`
+        )
+        if (json) return true
+      } else if (subtype === 'settlement') {
+        return true
+      }
+      return false
     },
   },
 
@@ -515,7 +526,6 @@ export default {
       const { subtype, klass } = this.actor.data
       let name
       if (subtype === 'planet') {
-        // no oracle for this
         const kc = capitalize(klass)
         const json = await CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
           `Starforged/Oracles/Planets/${kc}`
