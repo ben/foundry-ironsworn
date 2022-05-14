@@ -2,9 +2,9 @@
   <div class="flexcol">
     <div class="flexrow nogrow">
       <!-- Region -->
-      <label class="flexrow" style="margin-right: 10px; flex-basis: 100px">
+      <label class="flexrow" style="margin-right: 10px; flex-basis: 150px">
         <!-- TODO: i18n -->
-        Region:
+        <span class="select-label">Region:</span>
         <select v-model="region" style="margin-left: 5px">
           <option value="terminus">
             {{ $t('IRONSWORN.Terminus') }}
@@ -40,7 +40,7 @@
       <!-- Klass -->
       <label class="flexrow" style="position: relative">
         <!-- TODO: i18n and subtype text -->
-        Type of (star):
+        <span class="select-label">Type of (star):</span>
         <select
           v-model="actor.data.klass"
           @change="klassChanged"
@@ -135,6 +135,11 @@
 <style lang="less" scoped>
 label {
   line-height: 27px;
+
+  .select-label {
+    flex-basis: 100px;
+    flex-grow: 0;
+  }
 }
 .box {
   padding: 7px;
