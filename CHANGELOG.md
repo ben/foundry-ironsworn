@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix some placeholder text
+
 ## 1.15.1
 
 - Fix a tooltip

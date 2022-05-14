@@ -18,7 +18,7 @@
       </label>
 
       <!-- Subtype -->
-      <label class="flexrow" style="flex-basis: 250px">
+      <label class="flexrow" style="flex-basis: 200px">
         {{ $t('IRONSWORN.LocationType') }}
         <select
           v-model="actor.data.subtype"
@@ -38,7 +38,7 @@
       <!-- Klass -->
       <label class="flexrow" style="position: relative">
         <!-- TODO: i18n and subtype text -->
-        <span class="select-label">Type of (star):</span>
+        <span class="select-label">{{ subtypeSelectText }}:</span>
         <select
           v-model="actor.data.klass"
           @change="klassChanged"
@@ -148,7 +148,7 @@ label {
   line-height: 27px;
 
   .select-label {
-    flex-basis: 100px;
+    flex-basis: 130px;
     flex-grow: 0;
   }
 }
@@ -505,6 +505,11 @@ export default {
     randomKlassTooltip() {
       const { subtype } = this.actor.data
       return this.$t(`IRONSWORN.Random${capitalize(subtype)}Type`)
+    },
+
+    subtypeSelectText() {
+      const { subtype } = this.actor.data
+      return this.$t(`IRONSWORN.${capitalize(subtype)}Type`)
     },
 
     klassIsNotValid() {
