@@ -1,7 +1,69 @@
 <template>
   <div class="flexcol">
+    <div class="flexrow nogrow">
+      <!-- Region -->
+      <label class="flexrow" style="margin-right: 10px; flex-basis: 100px">
+        <!-- TODO: i18n -->
+        Region:
+        <select v-model="region" style="margin-left: 5px">
+          <option value="terminus">
+            {{ $t('IRONSWORN.Terminus') }}
+          </option>
+          <option value="outlands">
+            {{ $t('IRONSWORN.Outlands') }}
+          </option>
+          <option value="expanse">
+            {{ $t('IRONSWORN.Expanse') }}
+          </option>
+        </select>
+      </label>
+
+      <!-- Subtype -->
+      <label class="flexrow" style="flex-basis: 250px">
+        <!-- TODO: i18n -->
+        Location type:
+        <select
+          v-model="actor.data.subtype"
+          @change="subtypeChanged"
+          style="margin-left: 5px"
+        >
+          <option value="planet">Planet</option>
+          <option value="settlement">Settlement</option>
+          <option value="star">Stellar Object</option>
+          <option value="derelict">Derelict</option>
+          <option value="vault">Precursor Vault</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="flexrow nogrow" style="margin-top: 5px">
+      <!-- Klass -->
+      <label class="flexrow">
+        <!-- TODO: i18n and subtype text -->
+        Type of (star):
+        <select
+          v-model="actor.data.klass"
+          @change="klassChanged"
+          :class="{ highlighted: firstLookHighlight }"
+          style="margin-left: 5px"
+        >
+          <option v-for="opt in klassOptions" :key="opt.value" :value="opt.value">
+            {{ opt.label }}
+          </option>
+        </select>
+      </label>
+      <div
+        class="clickable block nogrow"
+        style="margin-left: 5px; padding: 5px 3px 3px 3px"
+        @click="randomizeKlass"
+        title="Random star type"
+      >
+        <i class="isicon-d10-tilt juicy" />
+      </div>
+    </div>
+
     <header class="sheet-header flexrow nogrow">
-      <document-img :document="actor" size="82px" style="margin-top: 5px" />
+      <document-img :document="actor" size="50px" />
       <div class="flexcol">
         <div class="flexrow nogrow">
           <document-name
@@ -20,58 +82,6 @@
             @click="randomizeName"
           >
             <i class="isicon-d10-tilt juicy" />
-          </div>
-        </div>
-
-        <div class="flexrow nogrow">
-          <!-- Region -->
-          <select v-model="region" style="margin-right: 5px; flex-basis: 150px">
-            <option value="terminus">
-              {{ $t('IRONSWORN.Terminus') }}
-            </option>
-            <option value="outlands">
-              {{ $t('IRONSWORN.Outlands') }}
-            </option>
-            <option value="expanse">
-              {{ $t('IRONSWORN.Expanse') }}
-            </option>
-          </select>
-
-          <!-- Subtype -->
-          <select
-            style="margin-right: 5px; flex-basis: 150px"
-            v-model="actor.data.subtype"
-            @change="subtypeChanged"
-          >
-            <option value="planet">Planet</option>
-            <option value="settlement">Settlement</option>
-            <option value="star">Stellar Object</option>
-            <option value="derelict">Derelict</option>
-            <option value="vault">Precursor Vault</option>
-          </select>
-
-          <!-- Klass -->
-          <div class="flexrow" style="flex-basis: 200px">
-            <select
-              v-model="actor.data.klass"
-              @change="klassChanged"
-              :class="{ highlighted: firstLookHighlight }"
-            >
-              <option
-                v-for="opt in klassOptions"
-                :key="opt.value"
-                :value="opt.value"
-              >
-                {{ opt.label }}
-              </option>
-            </select>
-            <div
-              class="clickable block nogrow"
-              style="margin-left: 5px; padding: 5px"
-              @click="randomizeKlass"
-            >
-              <i class="isicon-d10-tilt juicy" />
-            </div>
           </div>
         </div>
       </div>
@@ -108,6 +118,9 @@
 </template>
 
 <style lang="less" scoped>
+label {
+  line-height: 27px;
+}
 .box {
   padding: 7px;
 }
@@ -313,11 +326,20 @@ export default {
                 title: 'Initial Contact',
                 dfId: 'Starforged/Oracles/Settlements/Initial_Contact',
               },
-              { title: 'Authority', dfId: 'Starforged/Oracles/Settlements/Authority' },
+              {
+                title: 'Authority',
+                dfId: 'Starforged/Oracles/Settlements/Authority',
+              },
             ],
             [
-              { title: 'Projects', dfId: 'Starforged/Oracles/Settlements/Projects' },
-              { title: 'Trouble', dfId: 'Starforged/Oracles/Settlements/Trouble' },
+              {
+                title: 'Projects',
+                dfId: 'Starforged/Oracles/Settlements/Projects',
+              },
+              {
+                title: 'Trouble',
+                dfId: 'Starforged/Oracles/Settlements/Trouble',
+              },
             ],
           ]
 
@@ -472,9 +494,10 @@ export default {
         )
         name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
       } else if (subtype === 'settlement') {
-        const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
-          'Starforged/Oracles/Settlements/Name'
-        )
+        const table =
+          await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
+            'Starforged/Oracles/Settlements/Name'
+          )
         name = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       }
 
@@ -498,7 +521,10 @@ export default {
         tableKey = 'Starforged/Oracles/Vaults/Location'
       }
 
-      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(tableKey)
+      const table =
+        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
+          tableKey
+        )
       const rawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!rawText) return
 
@@ -519,7 +545,10 @@ export default {
       }
     },
     async rollOracle(oracle) {
-      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(oracle.dfId)
+      const table =
+        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
+          oracle.dfId
+        )
       const drawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!drawText) return
 
