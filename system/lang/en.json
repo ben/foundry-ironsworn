@@ -155,7 +155,7 @@
     "DeleteAsset": "Delete Asset",
     "ConfirmDelete": "Are you sure? This cannot be undone.",
     "StatBonusTooltip": "Bonus for the next stat roll",
-    "RequiresLocationType": "{{$t('IRONSWORN.RandomName')}}",
+    "RequiresLocationType": "This oracle requires a location type to be selected.",
     "RandomPlanetType": "Random planet type",
     "RandomSettlementType": "Random settlement type",
     "RandomStarType": "Random star type",

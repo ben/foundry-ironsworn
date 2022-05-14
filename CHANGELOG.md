@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix a tooltip
+
 ## 1.15.0
 
 - Update the location sheet layout to clarify order of decisions ([#365](https://github.com/ben/foundry-ironsworn/pull/365))
