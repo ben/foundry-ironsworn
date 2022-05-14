@@ -3,8 +3,7 @@
     <div class="flexrow nogrow">
       <!-- Region -->
       <label class="flexrow" style="margin-right: 10px; flex-basis: 150px">
-        <!-- TODO: i18n -->
-        <span class="select-label">Region:</span>
+        <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
         <select v-model="region" style="margin-left: 5px">
           <option value="terminus">
             {{ $t('IRONSWORN.Terminus') }}
@@ -20,8 +19,7 @@
 
       <!-- Subtype -->
       <label class="flexrow" style="flex-basis: 250px">
-        <!-- TODO: i18n -->
-        Location type:
+        {{ $t('IRONSWORN.LocationType') }}
         <select
           v-model="actor.data.subtype"
           @change="subtypeChanged"
@@ -66,7 +64,7 @@
             top: 1px;
           "
           @click="randomizeKlass"
-          title="Random star type"
+          :title="randomKlassTooltip"
         >
           <i class="isicon-d10-tilt juicy" />
         </div>
@@ -93,7 +91,7 @@
               height: 48px;
               border-radius: 0 3px 3px 0;
             "
-            title="Random name"
+            :title="$t('IRONSWORN.RandomName')"
             @click="randomizeName"
           >
             <i class="isicon-d10-tilt juicy" />
@@ -114,15 +112,23 @@
           @mouseleave="firstLookHighlight = false"
           @click="rollFirstLook"
         >
-          <i class="isicon-d10-tilt"></i>
+          <i class="isicon-d10-tilt"></i> &nbsp;
+          {{ $t('IRONSWORN.RollForDetails') }}
         </div>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
         <div
           v-for="oracle of row"
           class="clickable block box"
-          :class="{ highlighted: oracle.fl && firstLookHighlight, disabled: oracle.requiresKlass && klassIsNotValid }"
-          :title="(oracle.requiresKlass && klassIsNotValid) ? 'Requires a type to be chosen' : undefined"
+          :class="{
+            highlighted: oracle.fl && firstLookHighlight,
+            disabled: oracle.requiresKlass && klassIsNotValid,
+          }"
+          :title="
+            oracle.requiresKlass && klassIsNotValid
+              ? $t('IRONSWORN.RequiresLocationType')
+              : undefined
+          "
           :key="oracle.dfId"
           @click="rollOracle(oracle)"
         >
@@ -496,10 +502,16 @@ export default {
       return false
     },
 
+    randomKlassTooltip() {
+      const { subtype } = this.actor.data
+      return this.$t(`IRONSWORN.Random${capitalize(subtype)}Type`)
+    },
+
     klassIsNotValid() {
-      const {klass} = this.actor.data
-      return true // TODO: fix
-    }
+      const { klass } = this.actor.data
+      const selectedOption = this.klassOptions.find((x) => x.value === klass)
+      return selectedOption === undefined
+    },
   },
 
   watch: {
