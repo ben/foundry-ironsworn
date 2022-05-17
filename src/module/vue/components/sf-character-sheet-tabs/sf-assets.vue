@@ -61,7 +61,7 @@ export default {
       pack?.render(true)
     },
 
-    async applySort(oldI, newI, before) {
+    async applySort(oldI, newI, sortBefore) {
       const foundryItems = this.$actor.items
         .filter((x) => x.type === 'asset')
         .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
@@ -69,7 +69,7 @@ export default {
       const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
         target: foundryItems[newI],
         siblings: foundryItems,
-        sortBefore: before,
+        sortBefore,
       })
       await Promise.all(
         updates.map(({ target, update }) => target.update(update))
