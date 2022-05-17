@@ -12,7 +12,7 @@ function rollableOptions(trigger: IMoveTrigger) {
   const actionOptions = trigger.Options.filter((x) => x['Roll type'] === 'Action roll')
   if (!actionOptions.length) return []
 
-  const allowedUsings = ['Edge', 'Iron', 'Heart', 'Shadow', 'Wits']
+  const allowedUsings = ['Edge', 'Iron', 'Heart', 'Shadow', 'Wits', 'Health', 'Spirit', 'Supply']
   return actionOptions
     .filter(x => (x.Using as string[]).every(u => allowedUsings.includes(u)))
 }
