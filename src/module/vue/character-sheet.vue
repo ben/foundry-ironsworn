@@ -57,12 +57,20 @@
                 <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
                 <transition-group name="slide" tag="div" class="nogrow">
-                  <asset
-                    v-for="asset in assets"
+                  <div
+                    class="flexrow"
+                    v-for="(asset, i) in assets"
                     :key="asset._id"
-                    :actor="actor"
-                    :asset="asset"
-                  />
+                  >
+                    <order-buttons
+                      v-if="editMode"
+                      :i="i"
+                      :length="assets.length"
+                      @sortUp="assetSortUp"
+                      @sortDown="assetSortDown"
+                    />
+                    <asset :actor="actor" :asset="asset" />
+                  </div>
                 </transition-group>
                 <div class="flexrow nogrow" style="text-align: center">
                   <div
@@ -83,12 +91,20 @@
               data-drop-type="progress"
             >
               <transition-group name="slide" tag="div" class="nogrow">
-                <progress-box
-                  v-for="item in progressItems"
+                <div
+                  class="flexrow nogrow"
+                  v-for="(item, i) in progressItems"
                   :key="item._id"
-                  :item="item"
-                  :actor="actor"
-                />
+                >
+                  <order-buttons
+                    v-if="editMode"
+                    :i="i"
+                    :length="progressItems.length"
+                    @sortUp="progressSortUp"
+                    @sortDown="progressSortDown"
+                  />
+                  <progress-box :item="item" :actor="actor" />
+                </div>
               </transition-group>
 
               <progress-controls :actor="actor" />
@@ -166,10 +182,17 @@ export default {
 
   computed: {
     progressItems() {
-      return this.actor.items.filter((x) => x.type === 'progress')
+      return this.actor.items
+        .filter((x) => x.type === 'progress')
+        .sort((a, b) => (a.sort || 0) - (b.sort || 0))
     },
     assets() {
-      return this.actor.items.filter((x) => x.type === 'asset')
+      return this.actor.items
+        .filter((x) => x.type === 'asset')
+        .sort((a, b) => (a.sort || 0) - (b.sort || 0))
+    },
+    editMode() {
+      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
   },
 
@@ -195,6 +218,36 @@ export default {
 
     saveNotes() {
       this.$actor.update({ 'data.biography': this.actor.data.biography })
+    },
+
+    async applySort(oldI, newI, sortBefore, collection) {
+      const sorted = collection.sort(
+        (a, b) => (a.data.sort || 0) - (b.data.sort || 0)
+      )
+      const updates = SortingHelpers.performIntegerSort(sorted[oldI], {
+        target: sorted[newI],
+        siblings: sorted,
+        sortBefore,
+      })
+      await Promise.all(
+        updates.map(({ target, update }) => target.update(update))
+      )
+    },
+    assetSortUp(i) {
+      const items = this.$actor.items.filter(x => x.type === 'asset')
+      this.applySort(i, i - 1, true, items)
+    },
+    assetSortDown(i) {
+      const items = this.$actor.items.filter(x => x.type === 'asset')
+      this.applySort(i, i + 1, false, items)
+    },
+    progressSortUp(i) {
+      const items = this.$actor.items.filter(x => x.type === 'progress')
+      this.applySort(i, i - 1, true, items)
+    },
+    progressSortDown(i) {
+      const items = this.$actor.items.filter(x => x.type === 'progress')
+      this.applySort(i, i + 1, false, items)
     },
   },
 }

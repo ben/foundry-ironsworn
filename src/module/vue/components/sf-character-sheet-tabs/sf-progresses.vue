@@ -152,7 +152,7 @@ export default {
       )
     },
 
-    sortUp(i, ...args) {
+    sortUp(i) {
       this.applySort(i, i - 1, true, (x) => !x.data.data.completed)
     },
     sortDown(i) {
