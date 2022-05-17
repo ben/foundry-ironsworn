@@ -2,7 +2,11 @@
   <div class="flexcol">
     <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
       <transition-group name="slide" tag="div" class="nogrow">
-        <div class="flexrow nogrow" v-for="item in activeItems" :key="item._id">
+        <div
+          class="flexrow nogrow"
+          v-for="(item, i) in activeItems"
+          :key="item._id"
+        >
           <order-buttons
             v-if="editMode"
             :i="i"
@@ -37,7 +41,11 @@
       >
         <div v-if="expandCompleted">
           <transition-group name="slide" tag="div" class="nogrow">
-            <div class="flexrow" v-for="(item, i) in completedItems" :key="item._id">
+            <div
+              class="flexrow"
+              v-for="(item, i) in completedItems"
+              :key="item._id"
+            >
               <order-buttons
                 v-if="editMode"
                 :i="i"
@@ -95,6 +103,7 @@ export default {
       return this.actor.items
         .filter((x) => x.type === 'progress')
         .filter((x) => x.data.subtype !== 'bond')
+        .sort((a, b) => (a.sort || 0) - (b.sort || 0))
     },
 
     activeItems() {
@@ -124,6 +133,36 @@ export default {
       this.highlightCompletedTimer = setTimeout(() => {
         this.highlightCompleted = false
       }, 2000)
+    },
+
+    async applySort(oldI, newI, sortBefore, filterFn) {
+      const foundryItems = this.$actor.items
+        .filter((x) => x.type === 'progress')
+        .filter((x) => x.data.data.subtype !== 'bond')
+        .filter(filterFn)
+        .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+
+      const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
+        target: foundryItems[newI],
+        siblings: foundryItems,
+        sortBefore,
+      })
+      await Promise.all(
+        updates.map(({ target, update }) => target.update(update))
+      )
+    },
+
+    sortUp(i, ...args) {
+      this.applySort(i, i - 1, true, (x) => !x.data.data.completed)
+    },
+    sortDown(i) {
+      this.applySort(i, i + 1, false, (x) => !x.data.data.completed)
+    },
+    completedSortUp(i) {
+      this.applySort(i, i - 1, true, (x) => x.data.data.completed)
+    },
+    completedSortDown(i) {
+      this.applySort(i, i + 1, false, (x) => x.data.data.completed)
     },
   },
 }
