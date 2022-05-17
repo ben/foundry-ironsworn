@@ -28,13 +28,24 @@
       data-drop-type="progress"
     >
       <transition-group name="slide" tag="div" class="nogrow">
-        <progress-box
-          v-for="item in activeItems"
+        <div
+          class="flexrow nogrow"
+          v-for="(item, i) in activeItems"
           :key="item._id"
-          :item="item"
-          :actor="actor"
-          @completed="progressCompleted"
-        />
+        >
+          <order-buttons
+            v-if="editMode"
+            :i="i"
+            :length="activeItems.length"
+            @sortUp="sortUp"
+            @sortDown="sortDown"
+          />
+          <progress-box
+            :item="item"
+            :actor="actor"
+            @completed="progressCompleted"
+          />
+        </div>
       </transition-group>
 
       <progress-controls :actor="actor" />
@@ -56,13 +67,20 @@
       >
         <div v-if="expandCompleted">
           <transition-group name="slide" tag="div" class="nogrow">
-            <progress-box
-              v-for="item in completedItems"
+            <div
+              class="flexrow"
+              v-for="(item, i) in completedItems"
               :key="item._id"
-              :item="item"
-              :actor="actor"
-              :showStar="true"
-            />
+            >
+              <order-buttons
+                v-if="editMode"
+                :i="i"
+                :length="completedItems.length"
+                @sortUp="completedSortUp"
+                @sortDown="completedSortDown"
+              />
+              <progress-box :item="item" :actor="actor" :showStar="true" />
+            </div>
           </transition-group>
         </div>
       </transition>
@@ -124,7 +142,7 @@ export default {
       return [
         ...this.actor.items.filter((x) => x.type === 'vow'),
         ...this.actor.items.filter((x) => x.type === 'progress'),
-      ]
+      ].sort((a, b) => (a.sort || 0) - (b.sort || 0))
     },
 
     activeItems() {
@@ -132,6 +150,10 @@ export default {
     },
     completedItems() {
       return this.progressItems.filter((x) => x.data.completed)
+    },
+
+    editMode() {
+      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
 
     completedCaretClass() {
@@ -172,6 +194,36 @@ export default {
 
     saveNotes() {
       this.$actor.update({ 'data.biography': this.actor.data.biography })
+    },
+
+    async applySort(oldI, newI, sortBefore, filterFn) {
+      const foundryItems = this.$actor.items
+        .filter((x) => x.type === 'progress')
+        .filter((x) => x.data.data.subtype !== 'bond')
+        .filter(filterFn)
+        .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+
+      const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
+        target: foundryItems[newI],
+        siblings: foundryItems,
+        sortBefore,
+      })
+      await Promise.all(
+        updates.map(({ target, update }) => target.update(update))
+      )
+    },
+
+    sortUp(i, ...args) {
+      this.applySort(i, i - 1, true, (x) => !x.data.data.completed)
+    },
+    sortDown(i) {
+      this.applySort(i, i + 1, false, (x) => !x.data.data.completed)
+    },
+    completedSortUp(i) {
+      this.applySort(i, i - 1, true, (x) => x.data.data.completed)
+    },
+    completedSortDown(i) {
+      this.applySort(i, i + 1, false, (x) => x.data.data.completed)
     },
   },
 }
