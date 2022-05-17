@@ -1,5 +1,5 @@
 <template>
-  <div class="flexrow item-row nogrow">
+  <div class="flexrow item-row">
     <h5 class="vertical-v2 nogrow">{{ subtitle }}</h5>
     <div class="flexcol">
       <div class="flexrow">

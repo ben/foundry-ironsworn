@@ -3,6 +3,7 @@
 ## In progress
 
 - Re-ordering for assets ([#368](https://github.com/ben/foundry-ironsworn/pull/368))
+- Re-ordering for progresses ([#369](https://github.com/ben/foundry-ironsworn/pull/369))
 
 ## 1.15.2
 
