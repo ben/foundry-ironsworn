@@ -2,14 +2,21 @@
   <div class="flexcol">
     <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
       <transition-group name="slide" tag="div" class="nogrow">
-        <progress-box
-          v-for="item in activeItems"
-          :key="item._id"
-          :item="item"
-          :actor="actor"
-          :showStar="true"
-          @completed="progressCompleted"
-        />
+        <div class="flexrow nogrow" v-for="item in activeItems" :key="item._id">
+          <order-buttons
+            v-if="editMode"
+            :i="i"
+            :length="activeItems.length"
+            @sortUp="sortUp"
+            @sortDown="sortDown"
+          />
+          <progress-box
+            :item="item"
+            :actor="actor"
+            :showStar="true"
+            @completed="progressCompleted"
+          />
+        </div>
       </transition-group>
       <progress-controls :actor="actor" foeCompendium="starforgedencounters" />
     </div>
@@ -30,13 +37,16 @@
       >
         <div v-if="expandCompleted">
           <transition-group name="slide" tag="div" class="nogrow">
-            <progress-box
-              v-for="item in completedItems"
-              :key="item._id"
-              :item="item"
-              :actor="actor"
-              :showStar="true"
-            />
+            <div class="flexrow" v-for="(item, i) in completedItems" :key="item._id">
+              <order-buttons
+                v-if="editMode"
+                :i="i"
+                :length="completedItems.length"
+                @sortUp="completedSortUp"
+                @sortDown="completedSortDown"
+              />
+              <progress-box :item="item" :actor="actor" :showStar="true" />
+            </div>
           </transition-group>
         </div>
       </transition>
@@ -92,6 +102,10 @@ export default {
     },
     completedItems() {
       return this.progressItems.filter((x) => x.data.completed)
+    },
+
+    editMode() {
+      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
 
     completedCaretClass() {
