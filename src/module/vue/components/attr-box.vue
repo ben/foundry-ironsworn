@@ -18,7 +18,6 @@
 
 <style lang="less" scoped>
 .bg-die {
-  transition: all 0.4s ease;
   position: absolute;
   left: 19px;
   top: -17px;
@@ -27,6 +26,7 @@
 }
 
 .stat:hover .bg-die {
+  transition: opacity 0.4s ease;
   opacity: 0.2;
 }
 </style>
