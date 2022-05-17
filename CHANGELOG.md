@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.15.4
+
 ## 1.15.3
 
 - Re-ordering for assets ([#368](https://github.com/ben/foundry-ironsworn/pull/368))
