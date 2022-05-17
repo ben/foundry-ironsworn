@@ -1,6 +1,6 @@
 <template>
-  <div class="item-row ironsworn__asset nogrow">
-    <div class="asset-entry" @click="toggle">
+  <div class="item-row flexcol ironsworn__asset">
+    <div class="asset-entry nogrow" @click="toggle">
       <div class="flexrow">
         <h4 style="margin: 0; line-height: 20px">{{ asset.name }}</h4>
         <icon-button v-if="editMode" icon="trash" @click="destroy" />

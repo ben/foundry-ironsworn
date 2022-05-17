@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Re-ordering for assets ([#368](https://github.com/ben/foundry-ironsworn/pull/368))
+
 ## 1.15.2
 
 - Fix some placeholder text
