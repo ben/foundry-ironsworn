@@ -59,12 +59,19 @@ export class IronswornHandlebarsHelpers {
     })
 
     Handlebars.registerHelper('actionDieFormula', function () {
+      console.log(this)
       const r = actionRoll(this.roll)
       const terms = [...r.terms]
       const d = terms.shift()
       const classes = classesForRoll(r, { canceled: this.negativeMomentumCancel, type: 'action' })
       const termStrings = terms.map((t) => t.operator || t.number)
-      return `<strong><span class="roll ${classes}">${d?.total || 0}</span>${termStrings.join('')}</strong>`
+      const actionDie = d?.total ?? 0
+      const totalParts = [
+        this.actionCapped ? `<abbr title="${game.i18n.localize('IRONSWORN.CappedAt10')}">` : '',
+        this.action.toString(),
+        this.actionCapped ? '</abbr>' : '',
+      ]
+      return `<span class="roll ${classes}">${actionDie}</span>${termStrings.join('')} = <strong>${totalParts.join('')}</strong>`
     })
 
     Handlebars.registerHelper('challengeDice', function () {
