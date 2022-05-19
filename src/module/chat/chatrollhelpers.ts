@@ -41,6 +41,7 @@ function challengeRoll(roll: any): [Roll, Roll] {
 
 interface DieTotals {
   action: number
+  actionCapped: boolean
   rawAction: number
   canceledAction: number
   challenge1: number
@@ -54,11 +55,20 @@ function calculateDieTotals(roll: Roll): DieTotals {
   const [challenge1, challenge2] = challengeDice.map((x) => x.total as number)
   const rawActionDie = actionDie.terms.find((x) => x instanceof Die)
 
+  // Cap action at 10
+  let action = actionDie.total as number
+  let actionCapped = false
+  if (action > 10) {
+    actionCapped = true
+    action = 10
+  }
+
   const canceledActionDie = new Roll(actionDie.formula.replace('1d6', '0'))
   canceledActionDie.evaluate({ async: false })
 
   return {
-    action: actionDie.total as number,
+    action,
+    actionCapped,
     rawAction: rawActionDie?.total as number,
     canceledAction: canceledActionDie.total as number,
     challenge1,
