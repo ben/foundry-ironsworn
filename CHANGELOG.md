@@ -2,9 +2,15 @@
 
 ## In progress
 
+- Cap action scores at 10 ([#371](https://github.com/ben/foundry-ironsworn/pull/371))
+
 ## 1.15.5
 
+- Re-enable rolling against health/spirit/supply
+
 ## 1.15.4
+
+- Re-ordering for progresses and assets on IS sheet
 
 ## 1.15.3
 
