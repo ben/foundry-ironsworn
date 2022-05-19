@@ -41,6 +41,7 @@ function challengeRoll(roll: any): [Roll, Roll] {
 
 interface DieTotals {
   action: number
+  actionCapped: boolean
   rawAction: number
   canceledAction: number
   challenge1: number
@@ -54,11 +55,20 @@ function calculateDieTotals(roll: Roll): DieTotals {
   const [challenge1, challenge2] = challengeDice.map((x) => x.total as number)
   const rawActionDie = actionDie.terms.find((x) => x instanceof Die)
 
+  // Cap action at 10
+  let action = actionDie.total as number
+  let actionCapped = false
+  if (action > 10) {
+    actionCapped = true
+    action = 10
+  }
+
   const canceledActionDie = new Roll(actionDie.formula.replace('1d6', '0'))
   canceledActionDie.evaluate({ async: false })
 
   return {
-    action: actionDie.total as number,
+    action,
+    actionCapped,
     rawAction: rawActionDie?.total as number,
     canceledAction: canceledActionDie.total as number,
     challenge1,
@@ -201,7 +211,7 @@ export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
 
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: true })
-  const { action, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
+  const { action, actionCapped, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
   let hitType = calculateHitType(action, challenge1, challenge2)
@@ -220,6 +230,8 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
+    action,
+    actionCapped,
     hitType: calculateHitTypeText(hitType, match),
     title: calculateCardTitle(params),
     resultText: calculateMoveResultText(hitType, params.move),
@@ -254,7 +266,7 @@ export async function createIronswornMoveChat(opts: { move?: EnhancedDataswornMo
 
 export async function createStarforgedMoveRollChat(params: SFRollMessageParams) {
   await params.roll.evaluate({ async: true })
-  const { action, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
+  const { action, actionCapped, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
   let hitType = calculateHitType(action, challenge1, challenge2)
@@ -265,6 +277,8 @@ export async function createStarforgedMoveRollChat(params: SFRollMessageParams) 
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
+    action,
+    actionCapped,
     hitType: calculateHitTypeText(hitType, match),
     title: calculateSFCardTitle(params),
     resultText: calculateSFMoveResultText(hitType, match, params.move),
