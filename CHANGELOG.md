@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.15.6
+
 - Cap action scores at 10 ([#371](https://github.com/ben/foundry-ironsworn/pull/371))
 
 ## 1.15.5
