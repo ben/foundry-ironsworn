@@ -332,7 +332,7 @@ export async function createIronswornDenizenChat(params: DenizenChatInput) {
   } as any)
 }
 
-export async function rollAndDisplayOracleResult(table?: RollTable): Promise<string | undefined> {
+export async function rollAndDisplayOracleResult(table?: RollTable, packName?: string): Promise<string | undefined> {
   console.log(table)
   if (!table) {
     return undefined
@@ -369,6 +369,7 @@ export async function rollAndDisplayOracleResult(table?: RollTable): Promise<str
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
     table,
+    packName,
     oraclePath: pathNames.join(' / '),
     roll,
     displayRows,

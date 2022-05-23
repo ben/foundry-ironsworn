@@ -7,7 +7,11 @@ roll: Roll {data: {…}, options: {…}, terms: Array(1), _dice: Array(0), _form
 table: RollTable {parent: null, pack: 'foundry-ironsworn.starforgedoracles', data: RollTableData, …}
 --}}
 
-<div class="table-draw {{themeClass}}" data-table-id="{{table.id}}">
+<div class="table-draw {{themeClass}}" data-table-id="{{table.id}}"
+  {{#if packName}}
+  data-pack-name="{{packName}}"
+  {{/if}}
+>
   <small>{{oraclePath}}</small>
   <h2>{{table.name}}</h2>
 

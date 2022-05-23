@@ -194,8 +194,10 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     e.preventDefault()
     const tableName = e.currentTarget.dataset.table
     let table = game.tables?.find((x) => x.name === tableName)
+    let packName: string | undefined
     if (!table) {
-      const pack = game.packs?.get('foundry-ironsworn.ironsworntables')
+      packName = 'foundry-ironsworn.ironsworntables'
+      const pack = game.packs?.get(packName)
       if (pack) {
         const entry = pack?.index.find((x: any) => x.name == tableName)
         if (entry) {
@@ -203,7 +205,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
         }
       }
     }
-    rollAndDisplayOracleResult(table)
+    rollAndDisplayOracleResult(table, packName)
   }
 
   async highlightMove(move: IronswornItem) {

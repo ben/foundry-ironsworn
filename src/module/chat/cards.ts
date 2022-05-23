@@ -247,20 +247,22 @@ export class IronswornChatCard {
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     const { tableid } = ev.target.dataset
     const table = (await pack?.getDocument(tableid)) as any | undefined
-    rollAndDisplayOracleResult(table)
+    rollAndDisplayOracleResult(table, 'foundry-ironsworn.starforgedoracles')
   }
 
   async _sfOracleReroll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    // Pre-load documents to make sure we don't get an empty result (???)
-    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-    await pack?.getDocuments()
-
     const parent = $(ev.target).parent('.table-draw')
     const tableId = parent.data('table-id')
+    const packName = parent.data('pack-name')
+
+    // Pre-load documents to make sure we don't get an empty result (???)
+    const pack = game.packs.get(packName || 'foundry-ironsworn.starforgedoracles')
+    await pack?.getDocuments()
+
     const table = (await pack?.getDocument(tableId)) as any | undefined
-    rollAndDisplayOracleResult(table)
+    rollAndDisplayOracleResult(table, 'foundry-ironsworn.starforgedoracles')
   }
 
   async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {
