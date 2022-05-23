@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.15.7
+
 - Fix "reroll" button in Ironsworn oracle-roll chat cards
 
 ## 1.15.6
