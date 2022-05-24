@@ -5,6 +5,7 @@
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
         v-model="searchQuery"
+        @keydown="preventSubmit"
       />
       <i
         class="fa fa-times-circle nogrow clickable text"
@@ -114,6 +115,13 @@ export default {
       this.searchQuery = ''
     },
 
+    preventSubmit(ev) {
+      if (ev.keyCode == 13) {
+        ev.preventDefault()
+        return false
+      }
+    },
+
     collapseAll() {
       for (const node of this.$refs.oracles) {
         node.collapse()
@@ -128,17 +136,19 @@ export default {
 
       // Wait for children to be present
       while (!this.$refs.oracles) {
-        await new Promise(r => setTimeout(r, 10))
+        await new Promise((r) => setTimeout(r, 10))
       }
 
       // Walk the component tree, expanding as we go
       let children = this.$refs.oracles
       let lastComponent
       for (const dataNode of dfOraclePath) {
-        lastComponent = children.find(x => x.node.dataforgedNode.$id === dataNode.$id)
+        lastComponent = children.find(
+          (x) => x.node.dataforgedNode.$id === dataNode.$id
+        )
         if (!lastComponent) break
         lastComponent.expand()
-      await new Promise((r) => setTimeout(r, 50))
+        await new Promise((r) => setTimeout(r, 50))
         children = lastComponent.$refs.children
       }
 

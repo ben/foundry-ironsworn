@@ -3,6 +3,7 @@
 ## In progress
 
 - Try a different method of ensuring compendium contents are loaded
+- Hitting "enter" in oracle/move search no longer breaks Foundry
 
 ## 1.15.7
 
