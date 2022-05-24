@@ -5,6 +5,7 @@
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
         v-model="searchQuery"
+        @keydown="preventSubmit"
       />
       <i
         class="fa fa-times-circle nogrow clickable text"
@@ -112,6 +113,13 @@ export default {
   methods: {
     clearSearch() {
       this.searchQuery = ''
+    },
+
+    preventSubmit(ev) {
+      if (ev.keyCode == 13) {
+        ev.preventDefault()
+        return false
+      }
     },
 
     collapseAll() {

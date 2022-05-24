@@ -1,6 +1,7 @@
 import { starforged, IOracle, IOracleCategory } from 'dataforged'
 import { compact } from 'lodash'
 import { getFoundryISTableByDfId, getFoundrySFTableByDfId } from '../dataforged'
+import { cachedDocumentsForPack } from './pack-cache'
 
 export interface OracleTreeNode {
   dataforgedNode?: IOracle | IOracleCategory
@@ -20,11 +21,10 @@ export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
   const rootNode = emptyNode()
 
   // Make sure the compendium is loaded
-  const pack = game.packs.get('foundry-ironsworn.ironswornoracles')
-  await pack?.getDocuments()
+  await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
 
   // Build the default tree
-    for (const category of starforged['Oracle Categories']) {
+  for (const category of starforged['Oracle Categories']) {
     rootNode.children.push(await walkOracleCategory(category, getFoundryISTableByDfId))
   }
 
@@ -41,8 +41,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   const rootNode = emptyNode()
 
   // Make sure the compendium is loaded
-  const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-  await pack?.getDocuments()
+  await cachedDocumentsForPack('foundry-ironsworn.starforgedoracles')
 
   // Build the default tree
   for (const category of starforged['Oracle Categories']) {
