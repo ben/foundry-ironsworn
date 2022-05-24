@@ -8,6 +8,7 @@ import { maybeShowDice, RollDialog } from '../helpers/rolldialog'
 import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
+import { cachedDocumentsForPack } from '../features/pack-cache'
 
 export class IronswornChatCard {
   id?: string | null
@@ -30,7 +31,7 @@ export class IronswornChatCard {
       .find('a.content-link')
       .removeClass('content-link') // Prevent default Foundry behavior
       .on('click', (ev) => this._moveNavigate.call(this, ev))
-    html.find('a.oracle-category-link').on('click', ev => this._oracleNavigate.call(this, ev))
+    html.find('a.oracle-category-link').on('click', (ev) => this._oracleNavigate.call(this, ev))
     html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
     html.find('.burn-momentum-sf').on('click', (ev) => this._sfBurnMomentum.call(this, ev))
     html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
@@ -68,7 +69,7 @@ export class IronswornChatCard {
 
   async _oracleNavigate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    const {dfid} = ev.target.dataset
+    const { dfid } = ev.target.dataset
     for (const actor of game.actors?.contents || []) {
       if ((actor.moveSheet as any)?._state >= 0 && actor.moveSheet?.highlightMove) {
         return actor.moveSheet.highlightOracle(dfid)
@@ -254,15 +255,14 @@ export class IronswornChatCard {
     ev.preventDefault()
 
     const parent = $(ev.target).parent('.table-draw')
+
+    const packName = parent.data('pack-name') || 'foundry-ironsworn.starforgedoracles'
+    const pack = game.packs.get(packName)
+    await cachedDocumentsForPack(packName) // Pre-load from server
+
     const tableId = parent.data('table-id')
-    const packName = parent.data('pack-name')
-
-    // Pre-load documents to make sure we don't get an empty result (???)
-    const pack = game.packs.get(packName || 'foundry-ironsworn.starforgedoracles')
-    await pack?.getDocuments()
-
-    const table = (await pack?.getDocument(tableId)) as any | undefined
-    rollAndDisplayOracleResult(table, 'foundry-ironsworn.starforgedoracles')
+    const table = await pack?.getDocument(tableId)
+    rollAndDisplayOracleResult(table as RollTable, 'foundry-ironsworn.starforgedoracles')
   }
 
   async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {

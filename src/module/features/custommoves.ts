@@ -1,6 +1,7 @@
 import { IMove, IMoveCategory, starforged } from 'dataforged'
 import { IronswornItem } from '../item/item'
 import { MoveDataSource } from '../item/itemtypes'
+import { cachedDocumentsForPack } from './pack-cache'
 
 export interface MoveCategory {
   displayName: string
@@ -18,12 +19,11 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   const ret = [] as MoveCategory[]
 
   // Make sure compendium is loaded
-  const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
-  const compendiumMoves = (await pack?.getDocuments()) as IronswornItem[]
+  const compendiumMoves = await cachedDocumentsForPack('foundry-ironsworn.starforgedmoves')
 
   // Construct the base tree
   for (const category of starforged['Move Categories']) {
-    ret.push(walkCategory(category, compendiumMoves))
+    ret.push(walkCategory(category, compendiumMoves as IronswornItem[]))
   }
 
   // Add custom moves from well-known folder

@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Try a different method of ensuring compendium contents are loaded
+
 ## 1.15.7
 
 - Fix "reroll" button in Ironsworn oracle-roll chat cards
