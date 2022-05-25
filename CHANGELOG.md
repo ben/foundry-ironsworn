@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.15.9
+
 - Reduce oracle-table re-loading from server
 
 ## 1.15.8
