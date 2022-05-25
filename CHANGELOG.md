@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Pre-load most game content on startup
+
 ## 1.15.9
 
 - Reduce oracle-table re-loading from server
