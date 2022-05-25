@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Reduce oracle-table re-loading from server
+
 ## 1.15.8
 
 - Try a different method of ensuring compendium contents are loaded

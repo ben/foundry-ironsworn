@@ -5,6 +5,7 @@ import { starforged, IMove, IOracle, IOracleCategory, IInputClock } from 'datafo
 import { marked } from 'marked'
 import { IronswornItem } from './item/item'
 import shajs from 'sha.js'
+import { cachedDocumentsForPack } from './features/pack-cache'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -54,17 +55,17 @@ export function hash(str: string): string {
 }
 
 export async function getFoundrySFTableByDfId(dfid: string): Promise<RollTable | undefined> {
-  const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-  return (await pack?.getDocument(hashLookup(dfid))) || undefined
+  const documents = await cachedDocumentsForPack('foundry-ironsworn.starforgedoracles')
+  return documents?.find(x => x.id === hashLookup(dfid))
 }
 export async function getFoundryISTableByDfId(dfid: string): Promise<RollTable | undefined> {
-  const pack = game.packs.get('foundry-ironsworn.ironswornoracles')
-  return (await pack?.getDocument(hashLookup(dfid))) || undefined
+  const documents = await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
+  return documents?.find(x => x.id === hashLookup(dfid))
 }
 
 export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
-  const pack = game.packs.get('foundry-ironsworn.starforgedmoves')
-  return (await pack?.getDocument(hashLookup(dfid))) as IronswornItem | undefined
+  const documents = await cachedDocumentsForPack('foundry-ironsworn.starforgedmoves')
+  return documents?.find(x => x.id === hashLookup(dfid)) as IronswornItem | undefined
 }
 
 export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> {
