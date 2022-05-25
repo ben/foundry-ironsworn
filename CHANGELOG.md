@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.15.10
+
 - Pre-load most game content on startup
 
 ## 1.15.9
