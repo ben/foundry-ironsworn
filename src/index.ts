@@ -22,6 +22,7 @@ import { activateChangelogListeners } from './module/features/changelog'
 import { registerCompendiumCategoryHook } from './module/features/compendium-categories'
 import { maybePromptForDependencies } from './module/features/dependencies'
 import { activateDragDropListeners } from './module/features/dragdrop'
+import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
 import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
 import { registerZIndexHook } from './module/features/z-index'
@@ -199,6 +200,9 @@ Hooks.once('ready', async () => {
   link.rel = 'stylesheet'
   link.href = '//cdn.quilljs.com/1.3.6/quill.bubble.css'
   document.head.appendChild(link)
+
+  // Pre-load all the oracles
+  await primeCommonPackCaches()
 })
 
 Hooks.once('setup', () => {

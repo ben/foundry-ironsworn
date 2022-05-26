@@ -2,6 +2,18 @@
 
 ## In progress
 
+## 1.15.11
+
+- Fix starting track values for assets ([#375](https://github.com/ben/foundry-ironsworn/pull/375))
+
+## 1.15.10
+
+- Pre-load most game content on startup
+
+## 1.15.9
+
+- Reduce oracle-table re-loading from server
+
 ## 1.15.8
 
 - Try a different method of ensuring compendium contents are loaded
