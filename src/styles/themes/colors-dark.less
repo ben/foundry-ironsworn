@@ -1,0 +1,233 @@
+@import 'mixins.less';
+
+// interpolates color variables for a light-on-dark theme. based on this module's original cyan-on-black theme for starforged
+.vars-colors-dark(@color-fg, @color-accent) {
+  @color-bg: #000000;
+  @color-light: lighten(@color-fg, 10%);
+  @color-dark: desaturate(darken(@color-fg, 20%), 50%);
+  --background-color: fade(@color-bg, 60%);
+  --dark-overlay: fade(@color-bg, 80%);
+  --text-dark-color: @color-dark;
+  --text-medium-color: @color-fg;
+  --text-light-color: @color-light;
+  --dark-color: fade(@color-dark, 20%);
+  --muted-color: fade(desaturate(darken(@color-fg, 34%), 25%), 60%);
+  --medium-color: fade(@color-dark, 60%);
+  --light-color: fade(darken(desaturate(@color-fg, 60%), 10%), 60%);
+  --accent-color: @color-accent;
+  --background-tone: fade(@color-bg, 60%);
+}
+
+.colors-dark {
+  .vars-colors-dark(#3ff, orange);
+  color: var(--text-medium-color);
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--dark-color);
+    border-color: var(--medium-color);
+  }
+  select {
+    border-color: var(--dark-color);
+    color: var(--text-medium-color);
+  }
+
+  h2,
+  .h2,
+  h3,
+  .h3 {
+    color: var(--text-medium-color);
+    border-bottom-color: var(--light-color);
+  }
+
+  input,
+  textarea {
+    background-color: var(--dark-color);
+    color: var(--text-medium-color);
+
+    &:focus {
+      box-shadow: 0 0 10px var(--light-color);
+    }
+  }
+  button,
+  .button {
+    background-color: var(--dark-color);
+    border-color: var(--text-dark-color);
+    color: var(--text-dark-color);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 5px var(--text-medium-color);
+    }
+  }
+
+  hr {
+    border-color: var(--light-color);
+  }
+
+  .window-app {
+    background-color: var(--background-color);
+    border-color: var(--text-dark-color);
+  }
+
+  input::placeholder {
+    color: var(--medium-color);
+  }
+
+  input.highlight:focus {
+    box-shadow: 0 0 5px var(--accent-color);
+    background-color: var(--medium-color);
+    color: var(--text-light-color);
+  }
+
+  .inline-roll {
+    background-color: var(--dark-color);
+    border-color: var(--light-color);
+
+    &:hover {
+      text-shadow: 0 0 8px var(--text-medium-color);
+    }
+  }
+
+  .window-content {
+    background-color: var(--background-color);
+    background-image: none;
+    color: var(--text-medium-color);
+  }
+
+  .sheet-area {
+    border-color: var(--light-color);
+  }
+
+  .track-box {
+    stroke: var(--text-medium-color);
+  }
+
+  .rank-pip {
+    fill: var(--medium-color);
+
+    &.filled {
+      fill: var(--text-medium-color) !important;
+    }
+
+    path {
+      stroke-width: 0;
+    }
+  }
+
+  .clickable {
+    svg,
+    &.svg {
+      fill: var(--dark-color);
+    }
+
+    &.disabled {
+      background-color: var(--dark-color);
+      color: var(--medium-color);
+
+      svg,
+      &.svg {
+        fill: var(--dark-color);
+      }
+    }
+
+    &:not(.disabled) {
+      color: var(--text-dark-color);
+
+      &.hover,
+      &:hover {
+        &.block,
+        &.text {
+          color: var(--text-light-color);
+        }
+        svg,
+        &.svg {
+          fill: var(--medium-color);
+        }
+      }
+
+      &.selected {
+        &.block,
+        &.text {
+          color: var(--text-light-color);
+          background-color: var(--medium-color);
+        }
+        svg,
+        &.svg {
+          fill: var(--text-light-color);
+        }
+      }
+    }
+  }
+
+  .drag-highlight {
+    background-color: var(--medium-color);
+  }
+
+  .stats {
+    .stat {
+      border-color: var(--text-medium-color);
+    }
+  }
+
+  .entity-link {
+    background-color: var(--dark-color);
+    border-color: var(--medium-color);
+    color: var(--text-medium-color);
+    i {
+      color: var(--text-light-color);
+    }
+  }
+
+  .movesheet-row.highlighted {
+    background-color: var(--muted-color);
+  }
+}
+
+.compact {
+  .bordergroup {
+    border-color: var(--light-color);
+  }
+}
+
+.ironsworn-roll .roll {
+  background-image: url('systems/foundry-ironsworn/assets/d6.svg');
+}
+
+.chat-message {
+  .message-content .theme-starforged {
+    background-color: var(--dark-overlay);
+    border-color: var(--text-dark-color);
+  }
+
+  .dice-formula,
+  .dice-total {
+    background-color: var(--dark-overlay);
+    color: var(--text-medium-color);
+    .die {
+      &.d6 {
+        background-image: url('systems/foundry-ironsworn/assets/d6.svg');
+      }
+      &.d10 {
+        background-image: url('systems/foundry-ironsworn/assets/d10.svg');
+      }
+
+      &.min {
+        color: var(--text-medium-color);
+        filter: hue-rotate(180deg);
+      }
+      &.max {
+        color: var(--text-medium-color);
+        filter: hue-rotate(-60deg);
+      }
+    }
+  }
+
+  table tr.selected {
+    background-color: var(--medium-color);
+    color: var(--text-light-color);
+
+    .entity-link {
+      color: var(--text-dark-color);
+    }
+  }
+}

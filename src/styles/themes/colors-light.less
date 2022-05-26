@@ -1,0 +1,193 @@
+.colors-light {
+  --text-color: black;
+  --background-color: white;
+  --dark-color: #888;
+  --medium-color: darkgray;
+  --light-color: #ccc;
+  --accent-color: palegoldenrod;
+
+  input::placeholder {
+    color: var(--medium-color);
+  }
+
+  input.highlight:focus {
+    background-color: var(--text-color);
+    color: var(--background-color);
+  }
+
+  .window-content {
+    background-color: var(--background-color);
+  }
+
+  .sheet-area {
+    border-color: var(--medium-color);
+  }
+
+  .margin-left,
+  .margin-right {
+    border-color: var(--text-color);
+    h1 {
+      border-color: var(--text-color);
+    }
+  }
+
+  .stack-row {
+    border-color: var(--text-color);
+  }
+
+  .edit {
+    border-color: var(--text-color);
+
+    &.editing {
+      background-color: var(--medium-color);
+    }
+  }
+
+  .inset {
+    border-color: var(--medium-color);
+  }
+
+  .xp .xp {
+    border-color: var(--text-color);
+  }
+
+  .item-row {
+    border-color: var(--text-color);
+    background-color: var(--background-color);
+
+    &.highlighted {
+      background-color: var(--accent-color);
+    }
+  }
+
+  .movesheet-row.highlighted {
+    background-color: var(--accent-color);
+  }
+
+  .progresses .item {
+    border-color: var(--medium-color);
+  }
+
+  .tabs {
+    border-color: var(--medium-color);
+  }
+
+  .item-list {
+    ol > h2,
+    ol > .h2 {
+      border-color: var(--background-color);
+      background-color: var(--dark-color);
+      color: var(--background-color);
+    }
+
+    .item {
+      border-color: var(--medium-color);
+    }
+  }
+
+  .progress {
+    border-color: var(--text-color);
+  }
+
+  .move-title {
+    background-color: var(--background-color);
+    border-color: var(--dark-color);
+  }
+
+  .track-box {
+    stroke: var(--text-color);
+  }
+
+  .rank-pip {
+    fill: transparent;
+    stroke: var(--text-color);
+
+    &.filled {
+      fill: var(--medium-color);
+    }
+  }
+
+  .clickable {
+    &.disabled {
+      color: var(--dark-color);
+
+      &.selected {
+        color: var(--background-color);
+        background-color: var(--text-color);
+      }
+    }
+
+    &:not(.disabled) {
+      &.hover,
+      &:hover {
+        &.block {
+          background-color: var(--light-color);
+        }
+        &.text {
+          color: var(--light-color);
+        }
+        svg,
+        &.svg {
+          fill: var(--light-color);
+        }
+      }
+      &:active {
+        &.block {
+          background: var(--medium-color);
+        }
+        &.text {
+          color: var(--medium-color);
+        }
+        svg,
+        &.svg {
+          fill: var(--medium-color);
+        }
+      }
+
+      &.selected {
+        &.block,
+        &.text {
+          color: var(--background-color);
+          border-color: var(--text-color);
+          background-color: var(--text-color);
+        }
+        svg,
+        &.svg {
+          fill: var(--text-color);
+        }
+      }
+    }
+  }
+
+  .drag-highlight {
+    background-color: var(--medium-color);
+  }
+
+  .stats {
+    .stat {
+      border-color: var(--text-color);
+    }
+  }
+
+  .compact {
+    .bordergroup {
+      border-color: var(--text-color);
+    }
+  }
+
+  .ironsworn-roll {
+    .dice-formula,
+    .dice-total {
+      background-color: var(--background-color);
+    }
+  }
+
+  table tr.selected {
+    background-color: var(--text-color);
+    color: var(--light-color);
+
+    .entity-link {
+      color: var(--text-color);
+    }
+  }
+}

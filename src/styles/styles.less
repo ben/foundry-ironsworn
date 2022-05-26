@@ -16,15 +16,6 @@
 }
 
 .ironsworn {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-transform: uppercase;
-  }
-
   .window-content {
     height: 100%;
     padding: 5px;
@@ -40,8 +31,12 @@
     padding-top: 7px;
 
     h1,
+    .h1,
     h2,
-    h3 {
+    .h2,
+    h3,
+    .h3 {
+      // TODO: investigate whether this needs to exist or what
       border: none;
     }
   }
@@ -79,6 +74,22 @@
         margin: 0;
       }
     }
+    input[type='text'] {
+      resize: none;
+    }
+  }
+
+  .bg-die {
+    position: absolute;
+    left: 19px;
+    top: -17px;
+    opacity: 0;
+    font-size: 35px;
+  }
+
+  .stat:hover .bg-die {
+    transition: opacity 0.4s ease;
+    opacity: 0.2;
   }
 
   .xp {
@@ -111,8 +122,11 @@
     position: relative;
   }
 
-  .asset-entry h3 {
-    margin-bottom: 0;
+  .asset-entry {
+    h3,
+    .h3 {
+      margin-bottom: 0;
+    }
   }
 
   .asset-summary {
@@ -143,7 +157,8 @@
       margin: 0;
       padding: 0;
 
-      & > h2 {
+      & > h2,
+      & > .h2 {
         text-align: center;
         border-width: 1px 0;
       }
@@ -251,14 +266,16 @@
       text-align: center;
       padding: 0.5rem 0;
 
-      h3 {
+      h3,
+      .h3 {
         margin: 0;
         margin-bottom: 5px;
         font-weight: bold;
         font-size: 22px;
       }
 
-      h4 {
+      h4,
+      .h4 {
         margin: 0;
         font-weight: bold;
       }
@@ -283,8 +300,11 @@
 
   .compact {
     h3,
+    .h3,
     h4,
-    h5 {
+    .h4,
+    h5,
+    .h5 {
       margin: 3px 0;
     }
   }
@@ -390,6 +410,19 @@
       text-decoration: underline;
       text-shadow: none;
     }
+
+    .tab {
+      text-align: center;
+      padding: 5px;
+      border-bottom: 1px solid grey;
+      &.active {
+        background-color: darkgray;
+      }
+    }
+    // from move sheet. i'm not sure this actually gets used though?
+    // .tab {
+    //   text-align: left;
+    // }
   }
 
   .sheet-body {
@@ -458,6 +491,52 @@
     &::-webkit-outer-spin-button {
       -webkit-appearance: button !important;
       opacity: 1 !important;
+    }
+  }
+  // ASSETS
+  .asset-sheet {
+    .fieldrow {
+      p,
+      input {
+        text-align: left;
+        padding: 0 0.5em;
+        margin: 3px;
+      }
+    }
+    h3 {
+      margin-top: 1em;
+    }
+  }
+  .location-sheet {
+    label {
+      line-height: 27px;
+
+      .select-label {
+        flex-basis: 130px;
+        flex-grow: 0;
+      }
+    }
+    .box {
+      padding: 7px;
+    }
+    .highlighted {
+      background: #33999933;
+    }
+  }
+  .move-sheet {
+    .vuetab {
+      text-align: center;
+      padding: 5px;
+      border-bottom: 1px solid grey;
+      &.active {
+        background-color: darkgray;
+      }
+    }
+  }
+  .bondset {
+    .slide-enter-active,
+    .slide-leave-active {
+      max-height: 93px;
     }
   }
 }
@@ -567,7 +646,8 @@ table td:first-child {
 }
 
 .table-draw {
-  h2 {
+  h2,
+  .h2 {
     border: none;
   }
   table {
