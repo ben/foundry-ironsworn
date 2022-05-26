@@ -289,7 +289,7 @@ async function processAssets(idMap: { [key: string]: string }) {
           track: {
             enabled: !!asset['Condition Meter'],
             name: asset['Condition Meter']?.Name,
-            current: asset['Condition Meter']?.['Starting Value'],
+            current: asset['Condition Meter']?.Value,
             max: asset['Condition Meter']?.Max,
           },
           exclusiveOptions: [], // TODO:
