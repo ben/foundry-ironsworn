@@ -1,8 +1,8 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol connections">
     <transition-group name="slide" tag="div" class="nogrow">
       <div
-        class="flexrow nogrow"
+        class="flexrow nogrow connection"
         v-for="(item, i) in connections"
         :key="item._id"
       >
@@ -17,7 +17,7 @@
       </div>
     </transition-group>
 
-    <div class="flexrow nogrow" style="text-align: center">
+    <div class="flexrow nogrow add-connection">
       <div class="clickable block" @click="newConnection">
         <i class="fas fa-plus"></i>
         {{ $t('IRONSWORN.Connection') }}
@@ -26,12 +26,6 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 83px;
-}
-</style>
 
 <script>
 export default {

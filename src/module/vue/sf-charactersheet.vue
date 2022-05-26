@@ -1,71 +1,66 @@
 <template>
-  <div class="flexcol">
+<!-- this should either be article or form, probably -->
+  <form class="flexcol pc-sheet" autocomplete="off">
     <!-- Header row -->
     <sf-characterheader :actor="actor" />
 
     <!-- Main body row -->
-    <div class="flexrow">
+    <section class="flexrow pc-sheet-main">
       <!-- Momentum on left -->
-      <div class="flexcol margin-left">
-        <div class="flexrow" style="flex-wrap: nowrap">
-          <div class="flexcol stack momentum">
-            <stack
-              :actor="actor"
-              stat="momentum"
-              :top="10"
-              :bottom="-6"
-              :softMax="actor.data.momentumMax"
-            ></stack>
-            <hr class="nogrow" />
-            <div class="nogrow">
-              <div class="clickable block stack-row" @click="burnMomentum">
-                {{ $t('IRONSWORN.Burn') }}
-              </div>
+      <section class="margin-left momentum">
+        <label class="h4 vertical-v2">{{ $t('IRONSWORN.Momentum') }}</label>
+        <stack
+          :actor="actor"
+          stat="momentum"
+          class="meter stack"
+          :top="10"
+          :bottom="-6"
+          :softMax="actor.data.momentumMax"
+        ></stack>
+        <!-- <hr class="nogrow" /> -->
+        <!-- TODO: replace the HR above with appropriate styling -->
+
+        <button class="clickable block stack-row burn-momentum" @click="burnMomentum">
+          {{ $t('IRONSWORN.Burn') }}
+        </button>
+        <span class="momentum-max-reset">{{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}</span>
+        <span class="momentum-max-reset">{{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}</span>
+      </section>
+      <!-- Stats -->
+      <section class="flexrow stats">
+        <attr-box :actor="actor" attr="edge"></attr-box>
+        <attr-box :actor="actor" attr="heart"></attr-box>
+        <attr-box :actor="actor" attr="iron"></attr-box>
+        <attr-box :actor="actor" attr="shadow"></attr-box>
+        <attr-box :actor="actor" attr="wits"></attr-box>
+      </section>
+      <section class="tabbed-pages">
+          <!-- Tabs -->
+          <nav class="flexrow nogrow tabs">
+            <!-- TODO: typically, the semantics of tabbed interfaces are best represented by an <a> element, since they're functionally just navigating to another 'page' -->
+            <div
+              class="tab"
+              v-for="tab in tabs"
+              :key="tab.titleKey"
+              :class="['clickable', 'block', { selected: currentTab === tab }]"
+              @click="currentTab = tab"
+            >
+              {{ $t(tab.titleKey) }}
             </div>
-
-            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}
-          </div>
-
-          <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
-        </div>
-      </div>
-
-      <!-- Center area -->
-      <div class="flexcol">
-        <!-- Attributes -->
-        <div class="flexrow stats" style="margin-bottom: 10px">
-          <attr-box :actor="actor" attr="edge"></attr-box>
-          <attr-box :actor="actor" attr="heart"></attr-box>
-          <attr-box :actor="actor" attr="iron"></attr-box>
-          <attr-box :actor="actor" attr="shadow"></attr-box>
-          <attr-box :actor="actor" attr="wits"></attr-box>
-        </div>
-
-        <!-- Tabs -->
-        <div class="flexrow nogrow">
-          <div
-            class="tab"
-            v-for="tab in tabs"
-            :key="tab.titleKey"
-            :class="['clickable', 'block', { selected: currentTab === tab }]"
-            @click="currentTab = tab"
-          >
-            {{ $t(tab.titleKey) }}
-          </div>
-        </div>
-        <keep-alive>
-          <component
-            :is="currentTab.component"
-            :actor="actor"
-            style="margin: 0.5rem"
-          />
-        </keep-alive>
-      </div>
-
-      <!-- Stats on right -->
-      <div class="flexcol margin-right">
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+          </nav>
+        <!-- content for tabs -->
+          <keep-alive>
+            <component
+              :is="currentTab.component"
+              :actor="actor"
+              class="tabbed-page"
+            />
+          </keep-alive>
+      </section>
+      <!-- Condition meters on right -->
+      <section class="flexcol condition-meters margin-right">
+        <section class="flexrow nogrow condition-meter meter">
+        <!-- TODO: label should probably be preferred to headers in this case -->
           <h4 class="vertical-v2 clickable text" @click="rollStat('health')">
             <i class="isicon-d10-tilt"></i>
             {{ $t('IRONSWORN.Health') }}
@@ -73,11 +68,11 @@
           <div class="flexcol stack health">
             <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
           </div>
-        </div>
-
+        </section>
+<!-- TODO: HR is inappropriate here -->
         <hr class="nogrow" />
 
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+        <section class="flexrow nogrow condition-meter meter">
           <h4 class="vertical-v2 clickable text" @click="rollStat('spirit')">
             <i class="isicon-d10-tilt"></i>
             {{ $t('IRONSWORN.Spirit') }}
@@ -85,38 +80,34 @@
           <div class="flexcol stack spirit">
             <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
           </div>
-        </div>
+        </section>
 
         <hr class="nogrow" />
 
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+        <section class="flexrow nogrow condition-meter meter">
           <h4 class="vertical-v2 clickable text" @click="rollStat('supply')">
+          <!-- TODO: proper aria annotation so non-semantic icon font element is announced/not announced correctly by screen readers.
+
+          or do it with a ::before or normal image stuff.
+          -->
             <i class="isicon-d10-tilt"></i>
             {{ $t('IRONSWORN.Supply') }}
           </h4>
           <div class="flexcol stack supply">
             <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </section>
+    </section>
 
     <!-- Impacts -->
-    <hr class="nogrow" />
+    <!-- TODO: ditch the HR. they're for paragraph-level text and have a specific semantic meaning. more info:
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
+    -->
+    <!-- <hr class="nogrow" /> -->
     <sf-impacts :actor="actor" class="nogrow" />
-  </div>
+  </form>
 </template>
-
-<style lang="less" scoped>
-.tab {
-  text-align: center;
-  padding: 5px;
-  border-bottom: 1px solid grey;
-  &.active {
-    background-color: darkgray;
-  }
-}
-</style>
 
 <script>
 export default {

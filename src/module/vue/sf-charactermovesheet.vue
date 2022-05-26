@@ -1,32 +1,28 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow" style="min-height: 30px">
-      <div
+  <div class="flexcol move-sheet">
+    <!-- TODO: refactor tab elements like this one for accessibility (annotation, IDs so the tab/panel relationship is made explicitly, etc)
+    MDN docs: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role
+    this one is incomplete.
+    a better bet might be to borrow from an existing component where someone's already put the work in:
+    https://github.com/jakedohm/vue-accessible-tabs
+    -->
+    <nav class="flexrow nogrow tabs" role="tablist">
+      <button
         class="vuetab"
+        role="tab"
         v-for="tab in tabs"
         :key="tab.titleKey"
         :class="['clickable', 'block', { selected: currentTab === tab }]"
         @click="currentTab = tab"
       >
         {{ $t(tab.titleKey) }}
-      </div>
-    </div>
+      </button>
+    </nav>
     <keep-alive>
       <component :is="currentTab.component" :actor="actor" ref="activeTab" />
     </keep-alive>
   </div>
 </template>
-
-<style lang="less" scoped>
-.vuetab {
-  text-align: center;
-  padding: 5px;
-  border-bottom: 1px solid grey;
-  &.active {
-    background-color: darkgray;
-  }
-}
-</style>
 
 <script>
 export default {

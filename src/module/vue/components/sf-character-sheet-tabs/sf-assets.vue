@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
+  <div class="player-assets flexcol ironsworn__drop__target" data-drop-type="asset">
     <transition-group name="slide" tag="div" class="nogrow">
       <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
         <order-buttons
@@ -12,7 +12,7 @@
         <asset :actor="actor" :asset="asset" />
       </div>
     </transition-group>
-    <div class="flexrow nogrow" style="text-align: center">
+    <div class="flexrow nogrow compendium-shortcut">
       <div class="clickable block" @click="openCompendium">
         <i class="fas fa-atlas" />
         {{ $t('IRONSWORN.Assets') }}

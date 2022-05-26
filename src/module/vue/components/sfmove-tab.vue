@@ -2,6 +2,7 @@
   <div
     @click="$emit('click', property)"
     :class="[
+      'move-tab',
       'clickable',
       'block',
       'nogrow',
@@ -20,13 +21,6 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-span {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-</style>
 
 <script>
 export default {

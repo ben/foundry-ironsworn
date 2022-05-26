@@ -49,14 +49,6 @@
 </template>
 
 <style lang="less" scoped>
-.tab {
-  text-align: center;
-  padding: 5px;
-  border-bottom: 1px solid grey;
-  &.active {
-    background-color: darkgray;
-  }
-}
 </style>
 
 <script>

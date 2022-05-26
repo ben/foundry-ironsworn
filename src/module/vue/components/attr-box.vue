@@ -1,35 +1,24 @@
 <template>
+<!-- TODO: should be a button -->
   <div :class="classes" @click="click">
     <h4>{{ $t(i18nKey) }}</h4>
+    <!-- TODO:excise inline styles -->
     <div class="flexrow" style="position: relative">
       <div v-if="!editMode" class="bg-die">
         <i class="isicon-d10-tilt"></i>
       </div>
+      <!-- TODO: should be a button -->
       <div class="clickable text" v-if="editMode" @click="decrement">
         &minus;
       </div>
       <h4>{{ actor.data[attr] }}</h4>
+      <!-- TODO: should be a button -->
       <div class="clickable text" v-if="editMode" @click="increment">
         &plus;
       </div>
     </div>
   </div>
 </template>
-
-<style lang="less" scoped>
-.bg-die {
-  position: absolute;
-  left: 19px;
-  top: -17px;
-  opacity: 0;
-  font-size: 35px;
-}
-
-.stat:hover .bg-die {
-  transition: opacity 0.4s ease;
-  opacity: 0.2;
-}
-</style>
 
 <script>
 export default {

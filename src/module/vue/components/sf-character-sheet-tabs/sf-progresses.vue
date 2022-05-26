@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol progress-tracks">
     <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
       <transition-group name="slide" tag="div" class="nogrow">
         <div
@@ -25,7 +25,7 @@
       <progress-controls :actor="actor" foeCompendium="starforgedencounters" />
     </div>
 
-    <div class="item-row nogrow" style="margin-top: 1rem">
+    <div class="item-row nogrow progress-tracker">
       <h3
         class="clickable text"
         :class="completedClass"
@@ -37,7 +37,6 @@
         name="slide"
         tag="div"
         class="nogrow completed"
-        style="margin: 0; padding: 0"
       >
         <div v-if="expandCompleted">
           <transition-group name="slide" tag="div" class="nogrow">
@@ -62,27 +61,6 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-h3 {
-  margin: 5px 0;
-  transition: background-color 0.2s ease;
-  i {
-    width: 15px;
-    text-align: center;
-  }
-
-  &.highlighted {
-    background-color: lightyellow;
-  }
-}
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 106px;
-  &.completed {
-    max-height: 400px;
-  }
-}
-</style>
 
 <script>
 export default {

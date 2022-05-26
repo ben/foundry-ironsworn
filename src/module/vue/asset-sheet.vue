@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="asset-sheet">
     <header class="sheet-header">
       <document-name :document="item" />
     </header>
@@ -35,20 +35,6 @@
     <asset-trackedit :item="item" />
   </div>
 </template>
-
-<style lang="less" scoped>
-.fieldrow {
-  p,
-  input {
-    text-align: left;
-    padding: 0 0.5em;
-    margin: 3px;
-  }
-}
-h3 {
-  margin-top: 1em;
-}
-</style>
 
 <script>
 export default {

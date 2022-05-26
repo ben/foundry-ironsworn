@@ -1,7 +1,7 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol setting-truths">
     <div v-for="category in truths" :key="category.Name">
-      <h2 style="margin-top: 1em">{{ category.Name }}</h2>
+      <h2 class="category-name">{{ category.Name }}</h2>
 
       <sf-truth
         v-for="option in category.Table"

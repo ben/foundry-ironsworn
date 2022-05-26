@@ -1,6 +1,7 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow" style="margin-top: 0.5rem">
+<!-- TODO: refactor as component -->
+  <div class="flexcol move-sheet-oracles">
+    <div class="flexrow nogrow move-sheet-search">
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
@@ -10,12 +11,10 @@
       <i
         class="fa fa-times-circle nogrow clickable text"
         @click="clearSearch"
-        style="padding: 6px"
       />
       <i
         class="fa fa-compress-alt nogrow clickable text"
         @click="collapseAll"
-        style="padding: 6px"
       />
     </div>
 
@@ -33,11 +32,6 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.item-list {
-  padding: 0 0.5rem;
-}
-</style>
 
 <script>
 import { findOracleWithIntermediateNodes } from '../../dataforged'

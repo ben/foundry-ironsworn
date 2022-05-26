@@ -2,10 +2,9 @@
   <header class="sheet-header flexrow">
     <document-img :document="actor" size="75px" />
 
-    <div class="flexcol" style="flex-basis: 100px">
+    <section class="character-vitals flexcol">
       <input
         type="text"
-        style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Name')"
         v-model="actor.name"
         ref="name"
@@ -13,7 +12,6 @@
       />
       <input
         type="text"
-        style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Pronouns')"
         :value="actor.data.pronouns"
         ref="pronouns"
@@ -26,28 +24,18 @@
         ref="callsign"
         @blur="save"
       />
-    </div>
+    </section>
 
     <textarea
       rows="4"
+      class="character-bio"
       :value="actor.data.biography"
       ref="characteristics"
-      style="flex-basis: 300px; margin-left: 6px"
       :placeholder="$t('IRONSWORN.Characteristics')"
       @blur="save"
     />
   </header>
 </template>
-
-<style lang="less" scoped>
-input,
-textarea {
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
-  font-family: var(--font-primary);
-  resize: none;
-}
-</style>
 
 <script>
 export default {

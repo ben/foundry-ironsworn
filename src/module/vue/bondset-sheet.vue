@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol bondset">
     <transition-group name="slide" tag="div" class="nogrow">
       <div
         class="item-row nogrow"
@@ -17,13 +17,6 @@
     <icon-button icon="plus" @click="addBond" style="text-align: center" />
   </div>
 </template>
-
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 93px;
-}
-</style>
 
 <script>
 export default {

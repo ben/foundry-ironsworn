@@ -1,10 +1,10 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol location-sheet">
     <div class="flexrow nogrow">
       <!-- Region -->
-      <label class="flexrow" style="margin-right: 10px; flex-basis: 150px">
+      <label class="flexrow region-picker">
         <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
-        <select v-model="region" style="margin-left: 5px">
+        <select v-model="region">
           <option value="terminus">
             {{ $t('IRONSWORN.Terminus') }}
           </option>
@@ -18,12 +18,11 @@
       </label>
 
       <!-- Subtype -->
-      <label class="flexrow" style="flex-basis: 200px">
+      <label class="flexrow subtype-picker">
         {{ $t('IRONSWORN.LocationType') }}
         <select
           v-model="actor.data.subtype"
           @change="subtypeChanged"
-          style="margin-left: 5px"
         >
           <option value="planet">Planet</option>
           <option value="settlement">Settlement</option>
@@ -34,16 +33,15 @@
       </label>
     </div>
 
-    <div class="flexrow nogrow" style="margin-top: 5px">
+
       <!-- Klass -->
-      <label class="flexrow" style="position: relative">
+      <label class="flexrow klass-picker">
         <!-- TODO: i18n and subtype text -->
         <span class="select-label">{{ subtypeSelectText }}:</span>
         <select
           v-model="actor.data.klass"
           @change="klassChanged"
           :class="{ highlighted: firstLookHighlight }"
-          style="margin-left: 5px"
         >
           <option
             v-for="opt in klassOptions"
@@ -53,25 +51,17 @@
             {{ opt.label }}
           </option>
         </select>
-        <div
+        <button
           class="clickable block nogrow"
-          style="
-            padding: 0px 5px;
-            position: absolute;
-            right: 15px;
-            height: 25px;
-            line-height: 30px;
-            top: 1px;
-          "
           @click="randomizeKlass"
           :title="randomKlassTooltip"
         >
           <i class="isicon-d10-tilt juicy" />
-        </div>
+        </button>
       </label>
-    </div>
 
-    <header class="sheet-header flexrow nogrow" style="position: relative">
+
+    <header class="sheet-header flexrow nogrow">
       <document-img :document="actor" size="50px" />
       <div class="flexcol">
         <div class="flexrow nogrow">
@@ -79,30 +69,20 @@
             :document="actor"
             :class="{ highlighted: firstLookHighlight && canRandomizeName }"
           />
-          <div
+          <button
             v-if="canRandomizeName"
-            class="clickable block nogrow"
-            style="
-              position: absolute;
-              padding: 0px 10px;
-              line-height: 53px;
-              right: 1px;
-              top: 6px;
-              height: 48px;
-              border-radius: 0 3px 3px 0;
-            "
+            class="clickable block nogrow name-randomize"
             :title="$t('IRONSWORN.RandomName')"
             @click="randomizeName"
           >
             <i class="isicon-d10-tilt juicy" />
-          </div>
+          </button>
         </div>
       </div>
     </header>
 
     <section
-      class="boxgroup flexcol nogrow"
-      style="margin-bottom: 1rem"
+      class="boxgroup flexcol nogrow oracle-roller-group"
       v-if="oracles.length > 0"
     >
       <div class="boxrow">
@@ -142,23 +122,6 @@
     </section>
   </div>
 </template>
-
-<style lang="less" scoped>
-label {
-  line-height: 27px;
-
-  .select-label {
-    flex-basis: 130px;
-    flex-grow: 0;
-  }
-}
-.box {
-  padding: 7px;
-}
-.highlighted {
-  background: #33999933;
-}
-</style>
 
 <script>
 import { capitalize, flatten } from 'lodash'

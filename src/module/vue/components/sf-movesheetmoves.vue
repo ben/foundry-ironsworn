@@ -1,6 +1,6 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow" style="margin-top: 0.5rem">
+  <div class="flexcol move-sheet-overview">
+    <div class="flexrow nogrow move-sheet-search">
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
@@ -10,16 +10,14 @@
       <i
         class="fa fa-times-circle nogrow clickable text"
         @click="clearSearch"
-        style="padding: 6px"
       />
       <i
         class="fa fa-compress-alt nogrow clickable text"
         @click="collapseAll"
-        style="padding: 6px"
       />
     </div>
-
-    <div class="flexcol item-list">
+<!-- TODO: if it's a list, it should be an actual list like <ul> -->
+    <div class="flexcol move-categories item-list">
       <div class="nogrow" v-if="searchQuery">
         <sf-moverow
           v-for="move of searchResults"
@@ -30,12 +28,12 @@
         />
       </div>
       <div
-        class="nogrow"
+        class="nogrow move-category"
         v-else
         v-for="category of categories"
         :key="category.$id"
       >
-        <h2>
+        <h2 class="h4">
           {{ category.displayName }}
         </h2>
         <sf-moverow
@@ -51,14 +49,6 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-h2 {
-  margin: 0.5rem 0 0.3rem;
-}
-.item-list {
-  padding: 0 0.5rem;
-}
-</style>
 
 <script>
 import { createStarforgedMoveTree } from '../../features/custommoves'

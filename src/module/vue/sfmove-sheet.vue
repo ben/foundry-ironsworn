@@ -1,12 +1,12 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol create-move">
     <header class="sheet-header">
       <document-name :document="item" />
     </header>
 
     <div class="flexrow">
       <!-- Tab selection on left -->
-      <div class="flexcol nogrow" style="white-space: nowrap; max-width: 33%">
+      <nav class="flexcol nogrow tabs">
         <!-- These are always here -->
         <sfmove-tab
           :currentProperty="currentProperty"
@@ -70,7 +70,7 @@
           titleKey="MissMatch"
           property="Outcomes.Miss.With a Match.Text"
         />
-      </div>
+      </nav>
 
       <!-- Editor on right -->
       <div class="flexcol">
@@ -116,13 +116,6 @@
     </div>
   </div>
 </template>
-
-<style lang="less" scoped>
-.tab {
-  padding: 5px;
-  text-align: left;
-}
-</style>
 
 <script>
 import { get, set } from 'lodash'

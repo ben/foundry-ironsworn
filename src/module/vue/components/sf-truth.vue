@@ -1,9 +1,8 @@
 <template>
-  <div class="flexrow">
+  <div class="flexrow setting-truth">
     <input
       type="radio"
       class="nogrow"
-      style="flex: 0 0 20px; margin: 8px"
       :name="radiogroup"
       :id="radioid"
       :value="radiovalue"
@@ -26,7 +25,6 @@
               <input
                 type="radio"
                 class="nogrow"
-                style="flex: 0 0 20px; margin: 8px"
                 :name="description"
                 :id="`${description}#${suboption.Description}`"
                 :value="suboption.Description"
@@ -47,13 +45,6 @@
     </div>
   </div>
 </template>
-
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 225px;
-}
-</style>
 
 <script>
 export default {
