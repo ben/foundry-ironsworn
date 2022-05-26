@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix starting track values for assets ([#375](https://github.com/ben/foundry-ironsworn/pull/375))
+
 ## 1.15.10
 
 - Pre-load most game content on startup
