@@ -30,17 +30,5 @@ export default {
     actor: Object,
     item: Object,
   },
-  methods: {
-    async click(_ev, value) {
-      console.log(this.item)
-      await this.$item?.update({
-        data: {
-          track: {
-            current: value,
-          },
-        },
-      })
-    },
-  },
 }
 </script>

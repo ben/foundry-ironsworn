@@ -8,6 +8,7 @@
 export default {
   props: {
     actor: Object,
+    item: Object,
     attr: String,
     tooltip: String,
     textContent: String,
@@ -28,7 +29,7 @@ export default {
 
   methods: {
     rollStat() {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat: this.attr })
+      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat: this.attr, asset: this.$item })
     },
   },
 }

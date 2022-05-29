@@ -1,15 +1,9 @@
 <template>
-  <header class="sheet-header flexrow">
+  <header class="sheet-header">
     <document-img :document="actor" size="75px" />
 
-    <section class="character-vitals flexcol">
-      <input
-        type="text"
-        :placeholder="$t('IRONSWORN.Name')"
-        v-model="actor.name"
-        ref="name"
-        @blur="save"
-      />
+    <section class="character-vitals">
+      <input type="text" :placeholder="$t('IRONSWORN.Name')" v-model="actor.name" ref="name" @blur="save" />
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Pronouns')"
@@ -37,6 +31,15 @@
   </header>
 </template>
 
+<style lang="less">
+@import '../../../styles/mixins.less';
+.sheet-header {
+  .flexrow();
+  .character-vitals {
+    .flexcol();
+  }
+}
+</style>
 <script>
 export default {
   props: {

@@ -33,7 +33,7 @@ export default {
   props: {
     actor: Object,
     attr: String,
-    item: Object, // optional. if present, the item's attribute will be used instead
+    item: Object, // optional. if present, the item's attribute will be used instead of the actor's
     min: Number,
     max: Number,
     asset: Object,
@@ -46,12 +46,6 @@ export default {
         // TODO: figure out how to get actor id??
         return `meter-${this.attr}-${this.actor._id}`
       }
-    },
-  },
-  methods: {
-    rollStat() {
-      console.log(this.$item)
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat: attr, asset: this.$item })
     },
   },
 }
