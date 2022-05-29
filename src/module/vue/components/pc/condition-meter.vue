@@ -1,29 +1,30 @@
 <template>
   <section class="condition-meter">
     <btn-actionroll
-      class="resource-meter-title h4 vertical-v2"
+      class="resource-meter-title h4"
       :actor="actor"
       :attr="attr"
       :tooltip="`Roll +${attr}`"
+      :item="item"
+      :id="`button-${conditionMeterId}`"
+    >
+      <slot></slot>
+    </btn-actionroll>
+    <resource-meter
+      :actor="actor"
+      :item="item"
+      :attr="attr"
+      :min="min"
+      :max="max"
+      :id="conditionMeterId"
+      :aria-labelledby="`button-${conditionMeterId}`"
     />
-    <resource-meter :id="`meter-${attr}`" :actor="actor" :attr="attr" :min="min" :max="max" />
   </section>
 </template>
 
 <style lang="less">
-@import '../../../../styles/mixins.less';
-@import '../../../../styles/fonts.less';
+// @import '../../../../styles/mixins.less';
 .condition-meter {
-  .flexrow();
-  flex-grow: 0;
-  button.resource-meter-title {
-    text-align: start;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: start;
-    gap: 0.25em;
-  }
 }
 </style>
 
@@ -32,14 +33,25 @@ export default {
   props: {
     actor: Object,
     attr: String,
+    item: Object, // optional. if present, the item's attribute will be used instead
     min: Number,
     max: Number,
-    i18nLabelKey: String,
     asset: Object,
+  },
+  computed: {
+    conditionMeterId() {
+      if (this.item) {
+        return `meter-${this.item._id}-${this.actor._id}`
+      } else {
+        // TODO: figure out how to get actor id??
+        return `meter-${this.attr}-${this.actor._id}`
+      }
+    },
   },
   methods: {
     rollStat() {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat: attr, asset })
+      console.log(this.$item)
+      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat: attr, asset: this.$item })
     },
   },
 }

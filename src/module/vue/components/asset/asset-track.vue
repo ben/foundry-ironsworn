@@ -1,11 +1,28 @@
 <template>
-  <boxrow
-    :min="0"
-    :max="item.data.track.max"
-    :current="item.data.track.current"
-    @click="click"
-  />
+  <condition-meter class="asset-track" :actor="actor" attr="track" min="0" :max="item.data.track.max" :item="item">
+    {{ item.data.track.name }}
+  </condition-meter>
 </template>
+
+<style lang="less">
+@import '../../../../styles/mixins.less';
+.asset-track {
+  &.condition-meter {
+    .flexcol();
+    button {
+      display: flex;
+      gap: 5px;
+      justify-content: start;
+      min-width: unset;
+      width: unset;
+    }
+    .resource-meter {
+      .flexrow();
+      flex-direction: row-reverse;
+    }
+  }
+}
+</style>
 
 <script>
 export default {
@@ -13,17 +30,17 @@ export default {
     actor: Object,
     item: Object,
   },
-
   methods: {
-    click(_ev, value) {
-      this.$item?.update({
+    async click(_ev, value) {
+      console.log(this.item)
+      await this.$item?.update({
         data: {
           track: {
             current: value,
           },
         },
       })
-    }
-  }
+    },
+  },
 }
 </script>

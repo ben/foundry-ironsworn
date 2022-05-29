@@ -1,6 +1,6 @@
 <template>
   <section class="momentum-widget">
-    <label :for="`meter-momentum`" class="resource-meter-title h4 vertical-v2">{{ $t('IRONSWORN.Momentum') }}</label>
+    <label :for="`meter-momentum`" class="resource-meter-title h4">{{ $t('IRONSWORN.Momentum') }}</label>
     <resource-meter
       :id="`meter-momentum`"
       :actor="actor"

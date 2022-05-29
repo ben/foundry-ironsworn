@@ -21,19 +21,19 @@
   }
   flex: 0 0 auto;
   min-width: 50px;
-  border: 1px solid;
   border-top: none;
   text-align: center;
   line-height: 28px;
-  &:first-child {
-    border-top: 1px solid;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-  }
-  &:last-child {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
-  }
+  border: 0;
+  // &:first-child {
+  //   border-top: 1px solid;
+  //   border-top-left-radius: 5px;
+  //   border-top-right-radius: 5px;
+  // }
+  // &:last-child {
+  //   border-bottom-left-radius: 5px;
+  //   border-bottom-right-radius: 5px;
+  // }
 }
 </style>
 

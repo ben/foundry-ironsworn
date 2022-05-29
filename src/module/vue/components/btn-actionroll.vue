@@ -1,11 +1,7 @@
 <template>
-  <isicon-button
-    @click="rollStat(attr)"
-    :title="tooltip"
-    :class="classes"
-    v-text="game.i18n.localize(i18nLabelKey)"
-    icon="d10-tilt"
-  />
+  <isicon-button @click="rollStat(attr)" :title="tooltip" :class="classes" icon="d10-tilt" :v-text="textContent">
+    <slot></slot>
+  </isicon-button>
 </template>
 
 <script>
@@ -14,11 +10,13 @@ export default {
     actor: Object,
     attr: String,
     tooltip: String,
+    textContent: String,
+    // i18nKey: String,
   },
   computed: {
-    i18nLabelKey() {
-      return `IRONSWORN.${this.$capitalize(this.attr)}`
-    },
+    // i18n() {
+    //   return game.i18n.localize(`IRONSWORN.${this.i18nKey ?? this.$capitalize(this.attr)}`)
+    // },
     classes() {
       return {
         [this.attr]: true,

@@ -20,13 +20,13 @@
   // }
 }
 
-.fake-hr(@hrStyle, @hrMargin) {
+.fake-hr(@hrStyle) {
   border-block-start: @hrStyle;
 }
 
 .fake-hr-children(@hrStyle, @hrMargin) {
   & > *:not(:first-child) {
-    .fake-hr(@hrStyle, @hrMargin);
+    .fake-hr(@hrStyle);
     padding-block-start: @hrMargin;
   }
   & > *:not(:last-child) {
@@ -83,3 +83,60 @@
     pointer-events: none;
   }
 }
+
+.vertical-v2 {
+  writing-mode: vertical-lr;
+  border: none;
+  width: 1.25rem;
+  &[class^='isicon-'],
+  &[class*=' isicon-'] {
+    &:before {
+      display: inherit;
+      transform: rotate(90deg);
+    }
+  }
+}
+
+.vertical {
+  // padding: 0 5px;
+  writing-mode: vertical-lr;
+  border: none;
+  width: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.clickable {
+  &.disabled {
+    // TODO: use the actual html attribute
+    cursor: not-allowed;
+  }
+  &:not(.disabled) {
+    transition: 0.5s ease;
+    cursor: pointer;
+    &.block,
+    &.text {
+      &:hover {
+        transition: 0.5s ease;
+      }
+      &:active {
+        transition: 0.2s ease;
+      }
+    }
+  }
+}
+
+// [class^='isicon-'],
+// [class*=' isicon-'] {
+//   &.icon-bg {
+//     position: relative;
+//     &:before {
+//       z-index: -2;
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       height: 100%;
+//       width: 100%;
+//       pointer-events: none;
+//     }
+//   }
+// }

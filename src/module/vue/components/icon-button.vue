@@ -1,5 +1,7 @@
 <template>
-  <button :class="classes" type="button" @click="click" :title="tooltip"></button>
+  <button :class="classes" type="button" @click="click" :title="tooltip" :v-text="textContent">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -8,6 +10,7 @@ export default {
     icon: { type: String, required: true },
     solid: { type: Boolean, default: true },
     tooltip: String,
+    textContent: String,
   },
 
   computed: {

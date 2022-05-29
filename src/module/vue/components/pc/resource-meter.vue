@@ -6,16 +6,27 @@
 
 <style lang="less">
 @import '../../../../styles/fonts.less';
-.resource-meter {
+fieldset.resource-meter {
+  background: currentColor;
+  gap: 1px;
   flex-grow: 0;
   .text-display();
+  border: 1px solid;
+  border-radius: 5px;
+  overflow: clip;
+  .meter-box {
+    background: var(--background-color);
+  }
 }
 </style>
 
 <script>
+import { IronswornActor } from '../../../actor/actor'
+import { IronswornItem } from '../../../item/item'
 export default {
   props: {
-    actor: Object,
+    actor: IronswornActor,
+    item: IronswornItem, // optional. if present, the item's attribute will be used instead
     attr: String,
     min: Number,
     max: Number,
@@ -33,12 +44,16 @@ export default {
   methods: {
     async updateAttr(value) {
       // console.log('clicked', value)
-      await this.$actor.data.update({ data: { [this.attr]: value } })
+      if (this.item) {
+        await this.$item?.update({ data: { [this.attr]: value } })
+      } else {
+        await this.$actor?.data.update({ data: { [this.attr]: value } })
+      }
     },
     async input(event) {
-      // console.log('input', event)
-      let newValue = event.srcElement._value // this prop gets the number value rather than getting the string value
-      await this.updateAttr(newValue)
+      // "_value" gets the number value, rather than getting the string "value"
+      console.log(event)
+      await this.updateAttr(event.targetElement._value)
     },
   },
 }

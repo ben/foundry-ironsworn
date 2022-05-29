@@ -3,23 +3,7 @@
     <sf-characterheader :actor="actor" />
     <momentum :actor="actor" />
     <stats :actor="actor" />
-    <section class="tabbed-pages">
-      <nav role="tablist">
-        <button
-          role="tab"
-          type="button"
-          v-for="tab in tabs"
-          :key="tab.titleKey"
-          :class="['clickable', 'block', { selected: currentTab === tab }]"
-          @click="currentTab = tab"
-        >
-          {{ $t(tab.titleKey) }}
-        </button>
-      </nav>
-      <keep-alive>
-        <component :is="currentTab.component" :actor="actor" role="tabpanel" />
-      </keep-alive>
-    </section>
+    <tabbed-panels :actor="actor" name="sf-main" :tabs="tabs" />
     <section class="condition-meters">
       <condition-meter
         v-for="meter in [health, spirit, supply]"
@@ -28,8 +12,9 @@
         :actor="actor"
         :min="meter.min"
         :max="meter.max"
-        :i18nLabelKey="meter.i18nLabelKey"
-      ></condition-meter>
+      >
+        {{ game.i18n.localize(meter.i18nLabelKey) }}
+      </condition-meter>
     </section>
     <sf-impacts :actor="actor" />
   </article>
@@ -70,12 +55,30 @@
     height: max-content;
   }
 
-  .resource-meter {
-    .flexcol();
-    min-width: 50px;
-    flex-wrap: nowrap;
+  .momentum-widget,
+  .condition-meters {
+    .resource-meter-title {
+      .vertical-v2();
+    }
+    .condition-meter {
+      .flexrow();
+      flex-grow: 0;
+      .resource-meter-title {
+        text-align: start;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: start;
+        gap: 0.25em;
+      }
+    }
+    .resource-meter {
+      .flexcol();
+      min-width: 50px;
+      flex-wrap: nowrap;
+    }
   }
-  .tabbed-pages {
+  .tabbed-panels {
     grid-row: 3;
     grid-column: 2;
     [role='tablist'] {

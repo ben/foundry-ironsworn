@@ -1,5 +1,7 @@
 <template>
-  <button :class="classes" type="button" @click="click" :title="tooltip" />
+  <button :class="classes" type="button" @click="click" :title="tooltip">
+    <slot></slot>
+  </button>
 </template>
 
 <script>
@@ -7,6 +9,7 @@ export default {
   props: {
     icon: { type: String, required: true },
     tooltip: String,
+    textContent: String,
   },
 
   computed: {
