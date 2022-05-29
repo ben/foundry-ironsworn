@@ -13,8 +13,7 @@ function rollableOptions(trigger: IMoveTrigger) {
   if (!actionOptions.length) return []
 
   const allowedUsings = ['Edge', 'Iron', 'Heart', 'Shadow', 'Wits', 'Health', 'Spirit', 'Supply']
-  return actionOptions
-    .filter(x => (x.Using as string[]).every(u => allowedUsings.includes(u)))
+  return actionOptions.filter((x) => (x.Using as string[]).every((u) => allowedUsings.includes(u)))
 }
 
 export class SFRollMoveDialog extends Dialog {

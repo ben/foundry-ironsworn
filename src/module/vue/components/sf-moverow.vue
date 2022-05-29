@@ -8,13 +8,7 @@
       <icon-button icon="eye" @click="expanded = !expanded" />
     </h4>
     <transition name="slide">
-      <with-rolllisteners
-        element="div"
-        class="move-summary"
-        :actor="actor"
-        v-if="expanded"
-        @moveclick="moveclick"
-      >
+      <with-rolllisteners element="div" class="move-summary" :actor="actor" v-if="expanded" @moveclick="moveclick">
         <div v-html="$enrichMarkdown(fulltext)" />
       </with-rolllisteners>
     </transition>

@@ -1,23 +1,23 @@
-<form class="{{cssClass}}" autocomplete="off">
-  <header class="sheet-header">
-    <h1 class="charname">{{localize 'IRONSWORN.Bonds'}}</h1>
+<form class='{{cssClass}}' autocomplete='off'>
+  <header class='sheet-header'>
+    <h1 class='charname'>{{localize 'IRONSWORN.Bonds'}}</h1>
   </header>
 
   {{#each data.data.bonds}}
-  <div class="item-row" data-idx="{{@index}}">
-    <div class="flexrow">
-      <input class="attribute-value" type="text" name="data.bonds.{{@index}}.name" value="{{name}}" />
-      <div class="block clickable item-row-control delete-bond" data-index="{{@index}}" style="flex-grow: 0;">
-        <i class="fas fa-trash"></i>
-      </div>
+    <div class='item-row' data-idx='{{@index}}'>
+      <div class='flexrow'>
+        <input class='attribute-value' type='text' name='data.bonds.{{@index}}.name' value='{{name}}' />
+        <div class='block clickable item-row-control delete-bond' data-index='{{@index}}' style='flex-grow: 0;'>
+          <i class='fas fa-trash'></i>
+        </div>
 
+      </div>
+      <textarea name='data.bonds.{{@index}}.notes'>{{notes}}</textarea>
     </div>
-    <textarea name="data.bonds.{{@index}}.notes">{{notes}}</textarea>
-  </div>
   {{/each}}
 
-  <div class="block clickable add-bond" style="padding: 5px; text-align: center;">
-    <i class="fas fa-plus"></i>
+  <div class='block clickable add-bond' style='padding: 5px; text-align: center;'>
+    <i class='fas fa-plus'></i>
   </div>
 
 </form>

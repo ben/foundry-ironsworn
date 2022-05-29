@@ -6,7 +6,7 @@ const less = require('gulp-less')
 /* ----------------------------------------- */
 
 const SIMPLE_LESS = ['styles/*.less']
-function compileLESS () {
+function compileLESS() {
   return gulp
     .src('styles/ironsworn.less')
     .pipe(less())
@@ -18,7 +18,7 @@ const css = gulp.series(compileLESS)
 /*  Watch Updates
 /* ----------------------------------------- */
 
-function watchUpdates () {
+function watchUpdates() {
   gulp.watch(SIMPLE_LESS, css)
 }
 

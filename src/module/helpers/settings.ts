@@ -1,4 +1,4 @@
-import { FirstStartDialog } from "../applications/firstStartDialog"
+import { FirstStartDialog } from '../applications/firstStartDialog'
 
 function reload() {
   window.location.reload()

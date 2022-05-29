@@ -9,7 +9,7 @@ export default {
   props: {
     icon: { type: String, required: true },
     solid: { type: Boolean, default: true },
-    tooltip: String
+    tooltip: String,
   },
 
   computed: {

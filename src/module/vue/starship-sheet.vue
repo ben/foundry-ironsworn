@@ -18,31 +18,17 @@
     </section>
 
     <keep-alive>
-      <component
-        :is="currentTab.component"
-        :actor="actor"
-        style="margin: 0.5rem"
-      />
+      <component :is="currentTab.component" :actor="actor" style="margin: 0.5rem" />
     </keep-alive>
 
     <hr class="nogrow" />
 
     <section class="flexrow nogrow">
       <div style="text-align: center">
-        <condition-checkbox
-          class="nogrow"
-          :actor="actor"
-          name="battered"
-          :global="true"
-        />
+        <condition-checkbox class="nogrow" :actor="actor" name="battered" :global="true" />
       </div>
       <div style="text-align: center">
-        <condition-checkbox
-          class="nogrow"
-          :actor="actor"
-          name="cursed"
-          :global="true"
-        />
+        <condition-checkbox class="nogrow" :actor="actor" name="cursed" :global="true" />
       </div>
     </section>
   </div>

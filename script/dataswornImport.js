@@ -265,10 +265,10 @@ async function doit() {
       ...en.IRONSWORN.WorldTruths[truthCategory.name],
       name: truthCategory.Name
     }
-    for(let i=0; i<truthCategory.Options.length; i++) {
+    for (let i = 0; i < truthCategory.Options.length; i++) {
       const option = truthCategory.Options[i]
-      en.IRONSWORN.WorldTruths[truthCategory.Name][`option${i+1}`] = option.Truth
-      en.IRONSWORN.WorldTruths[truthCategory.Name][`quest${i+1}`] = option.Quest
+      en.IRONSWORN.WorldTruths[truthCategory.Name][`option${i + 1}`] = option.Truth
+      en.IRONSWORN.WorldTruths[truthCategory.Name][`quest${i + 1}`] = option.Quest
     }
   }
 

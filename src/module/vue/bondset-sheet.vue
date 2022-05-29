@@ -1,11 +1,7 @@
 <template>
   <div class="flexcol">
     <transition-group name="slide" tag="div" class="nogrow">
-      <div
-        class="item-row nogrow"
-        v-for="(bond, i) in item.data.bonds"
-        :key="'bond' + i"
-      >
+      <div class="item-row nogrow" v-for="(bond, i) in item.data.bonds" :key="'bond' + i">
         <div class="flexrow" style="margin-bottom: 5px">
           <input type="text" v-model="bond.name" @blur="save" />
           <icon-button icon="trash" @click="deleteBond(i)" />

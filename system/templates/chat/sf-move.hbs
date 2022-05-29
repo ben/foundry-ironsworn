@@ -1,24 +1,24 @@
-{{!--
+{{!
 {Name: "Face Danger", Source: {…}, Stats: Array(5), Text: "When …", …}
---}}
+}}
 
-<div class="flexcol">
+<div class='flexcol'>
   <h3>{{move.name}}</h3>
 
-  <div class="dice-result dice-tooltip dice-roll ironsworn-roll" data-move="{{move.Name}}">
-    <div class="roll-result">
+  <div class='dice-result dice-tooltip dice-roll ironsworn-roll' data-move='{{move.Name}}'>
+    <div class='roll-result'>
       {{{stripTables (enrichMarkdown move.data.data.Text)}}}
     </div>
   </div>
 
   {{#if nextOracles}}
-  <hr>
-  {{#each nextOracles}}
-  <button class="starforged__oracle__roll" data-tableid="{{id}}">
-    <i class="isicon-d10-tilt"></i>
-    {{name}}
-  </button>
-  {{/each}}
+    <hr />
+    {{#each nextOracles}}
+      <button class='starforged__oracle__roll' data-tableid='{{id}}'>
+        <i class='isicon-d10-tilt'></i>
+        {{name}}
+      </button>
+    {{/each}}
   {{/if}}
 
 </div>

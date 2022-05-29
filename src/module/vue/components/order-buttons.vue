@@ -1,10 +1,6 @@
 <template>
   <div class="flexcol nogrow">
-    <i
-      class="clickable block fas fa-caret-up nogrow"
-      :class="{ disabled: i == 0 }"
-      @click="$emit('sortUp', i)"
-    ></i>
+    <i class="clickable block fas fa-caret-up nogrow" :class="{ disabled: i == 0 }" @click="$emit('sortUp', i)"></i>
     <i
       class="clickable block fas fa-caret-down nogrow"
       :class="{ disabled: i == length - 1 }"

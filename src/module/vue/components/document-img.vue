@@ -1,12 +1,5 @@
 <template>
-  <img
-    :src="document.img"
-    :title="document.name"
-    :style="style"
-    data-edit="img"
-    :height="size"
-    :width="size"
-  />
+  <img :src="document.img" :title="document.name" :style="style" data-edit="img" :height="size" :width="size" />
 </template>
 
 <script>

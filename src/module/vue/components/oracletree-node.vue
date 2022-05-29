@@ -8,11 +8,7 @@
           <i class="isicon-d10-tilt juicy"></i>
           {{ node.displayName }}
         </span>
-        <icon-button
-          v-if="isLeaf"
-          icon="eye"
-          @click="descriptionExpanded = !descriptionExpanded"
-        />
+        <icon-button v-if="isLeaf" icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
       </h4>
 
       <transition name="slide">
@@ -31,10 +27,7 @@
 
     <!-- Branch node -->
     <div v-else>
-      <h4
-        class="clickable text flexrow"
-        @click="manuallyExpanded = !manuallyExpanded"
-      >
+      <h4 class="clickable text flexrow" @click="manuallyExpanded = !manuallyExpanded">
         <span class="nogrow" style="flex-basis: 15px">
           <i v-if="expanded" class="fa fa-caret-down" />
           <i v-else class="fa fa-caret-right" />
@@ -157,9 +150,9 @@ export default {
     async highlight() {
       this.highlighted = true
       this.$el.scrollIntoView()
-      await new Promise(r => setTimeout(r, 2000))
+      await new Promise((r) => setTimeout(r, 2000))
       this.highlighted = false
-    }
+    },
   },
 }
 </script>

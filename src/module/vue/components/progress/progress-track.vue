@@ -1,11 +1,6 @@
 <template>
   <div class="flexrow track">
-    <div
-      class="flexcol track-box"
-      v-for="(box, i) in boxes"
-      :key="'box' + i"
-      v-html="box"
-    ></div>
+    <div class="flexcol track-box" v-for="(box, i) in boxes" :key="'box' + i" v-html="box"></div>
   </div>
 </template>
 

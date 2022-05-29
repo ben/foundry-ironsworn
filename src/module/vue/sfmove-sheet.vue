@@ -8,12 +8,7 @@
       <!-- Tab selection on left -->
       <div class="flexcol nogrow" style="white-space: nowrap; max-width: 33%">
         <!-- These are always here -->
-        <sfmove-tab
-          :currentProperty="currentProperty"
-          @click="switchContent"
-          titleKey="FullText"
-          property="Text"
-        />
+        <sfmove-tab :currentProperty="currentProperty" @click="switchContent" titleKey="FullText" property="Text" />
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
@@ -77,34 +72,14 @@
         <div class="flexcol nogrow" v-if="currentRollType">
           <div class="flexrow">
             <div class="flexcol">
-              <label
-                class="nogrow"
-                v-for="x in ['Action roll', 'Progress roll']"
-                :key="x"
-              >
-                <input
-                  type="radio"
-                  name="actiontype"
-                  :value="x"
-                  v-model="currentRollType"
-                  @change="saveActionProps"
-                />
+              <label class="nogrow" v-for="x in ['Action roll', 'Progress roll']" :key="x">
+                <input type="radio" name="actiontype" :value="x" v-model="currentRollType" @change="saveActionProps" />
                 {{ x.split(' ')[0] }}
               </label>
             </div>
             <div class="flexcol">
-              <label
-                class="nogrow"
-                v-for="x in ['Any', 'Highest', 'Lowest', 'All']"
-                :key="x"
-              >
-                <input
-                  type="radio"
-                  name="rollType"
-                  :value="x"
-                  v-model="currentMethod"
-                  @change="saveActionProps"
-                />
+              <label class="nogrow" v-for="x in ['Any', 'Highest', 'Lowest', 'All']" :key="x">
+                <input type="radio" name="rollType" :value="x" v-model="currentMethod" @change="saveActionProps" />
                 {{ x }}
               </label>
             </div>
@@ -147,9 +122,7 @@ export default {
     triggerOptions() {
       const itemTriggerOptions = this.item.data.Trigger?.Options || []
       return itemTriggerOptions.map((x, i) => {
-        const title = x['Action roll']
-          ? `Roll +${x['Action roll'].Stat}`
-          : `${i + 1}`
+        const title = x['Action roll'] ? `Roll +${x['Action roll'].Stat}` : `${i + 1}`
         return {
           key: `option${i}`,
           title,

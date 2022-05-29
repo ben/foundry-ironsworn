@@ -1,49 +1,31 @@
 <style>
-  .first-start .box label {
-    padding: 1rem;
-  }
-
-  .first-start h1 {
-    border: none;
-  }
-
-  .first-start h2 {
-    border: none;
-    margin-top: 1rem;
-  }
-
-  .first-start label.flexcol {
-    align-items: center;
-  }
-
-  .first-start img {
-    border: none;
-    width: 170px;
+  .first-start .box label { padding: 1rem; } .first-start h1 { border: none; } .first-start h2 { border: none;
+  margin-top: 1rem; } .first-start label.flexcol { align-items: center; } .first-start img { border: none; width: 170px;
   }
 </style>
 
-<form class="first-start">
+<form class='first-start'>
   <h1>{{localize 'IRONSWORN.First Start.Welcome'}}</h1>
   <p>{{localize 'IRONSWORN.First Start.Intro'}}</p>
 
   <h2>Character sheet</h2>
   <p>Which character sheet would you like to use as the default?</p>
-  <div class="boxgroup">
-    <div class="flexrow boxrow">
-      <div class="box flexrow">
-        <label class="flexcol">
-          <img src="systems/foundry-ironsworn/assets/welcome/ironsworn-sheet.jpg" alt="Ironsworn sheet">
+  <div class='boxgroup'>
+    <div class='flexrow boxrow'>
+      <div class='box flexrow'>
+        <label class='flexcol'>
+          <img src='systems/foundry-ironsworn/assets/welcome/ironsworn-sheet.jpg' alt='Ironsworn sheet' />
           <p>
-            <input type="radio" name="sheet" value="ironsworn.IronswornCharacterSheetV2">
+            <input type='radio' name='sheet' value='ironsworn.IronswornCharacterSheetV2' />
             Ironsworn
           </p>
         </label>
       </div>
-      <div class="box flexrow">
-        <label class="flexcol">
-          <img src="systems/foundry-ironsworn/assets/welcome/starforged-sheet.jpg" alt="Starforged sheet">
+      <div class='box flexrow'>
+        <label class='flexcol'>
+          <img src='systems/foundry-ironsworn/assets/welcome/starforged-sheet.jpg' alt='Starforged sheet' />
           <p>
-            <input type="radio" name="sheet" value="ironsworn.StarforgedCharacterSheet">
+            <input type='radio' name='sheet' value='ironsworn.StarforgedCharacterSheet' />
             Starforged
           </p>
         </label>
@@ -53,23 +35,23 @@
 
   <h2>Moves &amp; Oracles</h2>
   <p>Which set of moves and oracles would you like to use?</p>
-  <div class="boxgroup">
-    <div class="flexrow boxrow">
-      <div class="box flexrow">
+  <div class='boxgroup'>
+    <div class='flexrow boxrow'>
+      <div class='box flexrow'>
         <label>
-          <input type="radio" name="moves" value="ironsworn">
+          <input type='radio' name='moves' value='ironsworn' />
           Ironsworn
         </label>
       </div>
-      <div class="box flexrow">
+      <div class='box flexrow'>
         <label>
-          <input type="radio" name="moves" value="starforged">
+          <input type='radio' name='moves' value='starforged' />
           Starforged
         </label>
       </div>
-      <div class="box flexrow">
+      <div class='box flexrow'>
         <label>
-          <input type="radio" name="moves" value="sheet" checked="checked">
+          <input type='radio' name='moves' value='sheet' checked='checked' />
           Match sheet
         </label>
       </div>
@@ -78,31 +60,31 @@
 
   <h2>Setting truths</h2>
   <p>Would you like to generate your setting's truths?</p>
-  <div class="boxgroup">
-    <div class="flexrow boxrow">
-      <div class="box flexcol">
+  <div class='boxgroup'>
+    <div class='flexrow boxrow'>
+      <div class='box flexcol'>
         <label>
-          <input type="radio" name="truths" value="ironsworn">
+          <input type='radio' name='truths' value='ironsworn' />
           Yes, for Ironsworn
         </label>
       </div>
-      <div class="box flexcol">
+      <div class='box flexcol'>
         <label>
-          <input type="radio" name="truths" value="starforged">
+          <input type='radio' name='truths' value='starforged' />
           Yes, for Starforged
         </label>
       </div>
-      <div class="box flexcol">
+      <div class='box flexcol'>
         <label>
-          <input type="radio" name="truths" value="never">
+          <input type='radio' name='truths' value='never' />
           Never ask again
         </label>
       </div>
     </div>
   </div>
 
-  <button class="ironsworn__save" style="margin: 1rem 0;">
-    <i class="fas fa-check"></i>
+  <button class='ironsworn__save' style='margin: 1rem 0;'>
+    <i class='fas fa-check'></i>
     {{localize 'IRONSWORN.First Start.Save'}}
   </button>
 

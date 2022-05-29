@@ -214,7 +214,7 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
   }
 
   async highlightOracle(dfid: string) {
-    console.log({dfid})
+    console.log({ dfid })
   }
 }
 

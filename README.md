@@ -1,4 +1,3 @@
-
 # Ironsworn and Starforged for Foundry VTT
 
 ![Download count of latest release](https://img.shields.io/github/downloads/ben/foundry-ironsworn/latest/total)
@@ -20,6 +19,7 @@ This allows you to mix and match the Ironsworn and Starforged materials, but if 
 Once you've chosen a ruleset, see below for how to get started.
 
 ## Getting started with Ironsworn
+
 You'll need a map of the Ironlands.
 Open the "Compendium Packs" tab on the sidebar, and look for "Ironsworn Maps" near the bottom.
 Drag one of those to the "Scenes" tab in the sidebar, and activate it.
@@ -38,14 +38,12 @@ If you're playing with the Delve rules, you can use the "Site" actor type to tra
 
 ![Delve and shared sheet](https://user-images.githubusercontent.com/39902/167316576-9f893b96-a6f3-4e4e-9293-62e354c46768.png)
 
-
 Now you're ready to create vows, embark on journeys, and slay beasts.
 Keep track of your story using journal entries.
 
 The tall, narrow sheet is where you can find moves and oracles to help you on your quest.
 Click the "die" icon for an assisted roll on any move or oracle.
 The search box can be used to find a move or oracle by name.
-
 
 ## Getting started with Starforged
 
@@ -103,17 +101,17 @@ Here's what you'll need to make changes to this system:
 When you use that browser window, webpack will serve up freshly-built assets instead of the ones in the installed version of the system.
 Some things to remember:
 
-* Only the Javascript and stylesheets are served up by Webpack. If you change anything else, you'll want to do something like this before reloading:
+- Only the Javascript and stylesheets are served up by Webpack. If you change anything else, you'll want to do something like this before reloading:
   ```
   cp -R system/* ~/Library/Application\ Support/FoundryVTT/Data/systems/foundry-ironsworn/
   ```
-* If you make a change to `system.json` or any of the I18n files, you'll have to return to setup, use the command above, and start the world up again.
-* If you change any of the `*.hbs` templates, use the command above before reloading your browser window.
-* Any Typescript or LESS changes only require a browser reload.
+- If you make a change to `system.json` or any of the I18n files, you'll have to return to setup, use the command above, and start the world up again.
+- If you change any of the `*.hbs` templates, use the command above before reloading your browser window.
+- Any Typescript or LESS changes only require a browser reload.
 
 # Credits
 
-This work is based on Ironsworn (found at www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license  (creativecommons.org/licenses/by-nc-sa/4.0/).
+This work is based on Ironsworn (found at www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (creativecommons.org/licenses/by-nc-sa/4.0/).
 
 Hand-drawn map scene courtesy of [McSekcer](https://www.reddit.com/user/McSekcer/).
 

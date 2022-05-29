@@ -1,12 +1,12 @@
-{{!--
+{{!
 {Name: "Face Danger", Source: {…}, Stats: Array(5), Text: "When …", …}
---}}
+}}
 
-<div class="flexcol">
+<div class='flexcol'>
   <h3>{{move.Name}}</h3>
 
-  <div class="dice-result dice-tooltip dice-roll ironsworn-roll" data-move="{{move.Name}}">
-    <div class="roll-result">
+  <div class='dice-result dice-tooltip dice-roll ironsworn-roll' data-move='{{move.Name}}'>
+    <div class='roll-result'>
 
       {{{move.Description}}}
 
@@ -15,9 +15,9 @@
       {{{move.Miss}}}
 
       {{#if bonusContent}}
-      <div class="bonus-content">
-        {{{bonusContent}}}
-      </div>
+        <div class='bonus-content'>
+          {{{bonusContent}}}
+        </div>
       {{/if}}
 
     </div>

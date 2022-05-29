@@ -1,24 +1,24 @@
-<div class="dice-roll {{themeClass}}">
+<div class='dice-roll {{themeClass}}'>
   {{#ifIsIronswornRoll}}
 
-  <div class="dice-result ironsworn-roll">
+    <div class='dice-result ironsworn-roll'>
 
-    <div class="dice-formula">
-      <p class="hit-type">{{ironswornHitType}}</p>
-      <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
+      <div class='dice-formula'>
+        <p class='hit-type'>{{ironswornHitType}}</p>
+        <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
+      </div>
     </div>
-  </div>
 
   {{else}}
 
-  {{#if flavor}}
-  <div class="dice-flavor">{{flavor}}</div>
-  {{/if}}
-  <div class="dice-result">
-    <div class="dice-formula">{{formula}}</div>
-    {{{tooltip}}}
-    <h4 class="dice-total">{{total}}</h4>
-  </div>
+    {{#if flavor}}
+      <div class='dice-flavor'>{{flavor}}</div>
+    {{/if}}
+    <div class='dice-result'>
+      <div class='dice-formula'>{{formula}}</div>
+      {{{tooltip}}}
+      <h4 class='dice-total'>{{total}}</h4>
+    </div>
 
   {{/ifIsIronswornRoll}}
 </div>

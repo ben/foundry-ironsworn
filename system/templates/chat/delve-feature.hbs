@@ -1,17 +1,18 @@
-{{!--
+{{!
 {Name: "Face Danger", Source: {…}, Stats: Array(5), Text: "When …", …}
---}}
+}}
 
-<div class="dice-roll theme-ironsworn flexcol">
-  <div class="ironsworn-roll">
+<div class='dice-roll theme-ironsworn flexcol'>
+  <div class='ironsworn-roll'>
 
-    <p class="flexrow" style="align-items: center;">
+    <p class='flexrow' style='align-items: center;'>
       <span>{{localize 'IRONSWORN.Feature'}}: {{theme.name}} {{domain.name}}</span>
-      <span class="roll die d10" style="flex: 0 0 25px;">{{roll.total}}</span>
+      <span class='roll die d10' style='flex: 0 0 25px;'>{{roll.total}}</span>
     </p>
 
-    <h4 class="dice-formula">
-      {{feature.low}}–{{feature.high}}: {{feature.description}}
+    <h4 class='dice-formula'>
+      {{feature.low}}–{{feature.high}}:
+      {{feature.description}}
     </h4>
 
   </div>

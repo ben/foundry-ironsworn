@@ -254,14 +254,25 @@
       "Progress Move": false,
       "Variant of": "",
       "Text": "",
-      "Trigger": { "Text": "", "Options": [] },
+      "Trigger": {
+        "Text": "",
+        "Options": []
+      },
       "Outcomes": {
-        "Strong Hit": {"Text": ""},
-        "Weak Hit": {"Text": ""},
-        "Miss": {"Text": ""}
+        "Strong Hit": {
+          "Text": ""
+        },
+        "Weak Hit": {
+          "Text": ""
+        },
+        "Miss": {
+          "Text": ""
+        }
       },
       "Oracles": [],
-      "Source": {"Title": ""},
+      "Source": {
+        "Title": ""
+      },
       "Suggestions": {}
     },
     "delve-theme": {

@@ -1,14 +1,6 @@
 <template>
   <div class="nogrow">
-    <stack-box
-      v-for="x in values"
-      :key="x"
-      :actor="actor"
-      :stat="stat"
-      :value="x"
-      :softMax="softMax"
-    >
-    </stack-box>
+    <stack-box v-for="x in values" :key="x" :actor="actor" :stat="stat" :value="x" :softMax="softMax"> </stack-box>
   </div>
 </template>
 

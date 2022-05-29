@@ -9,13 +9,7 @@
       <div class="flexcol margin-left">
         <div class="flexrow" style="flex-wrap: nowrap">
           <div class="flexcol stack momentum">
-            <stack
-              :actor="actor"
-              stat="momentum"
-              :top="10"
-              :bottom="-6"
-              :softMax="actor.data.momentumMax"
-            ></stack>
+            <stack :actor="actor" stat="momentum" :top="10" :bottom="-6" :softMax="actor.data.momentumMax"></stack>
             <hr class="nogrow" />
             <div class="nogrow">
               <div class="clickable block stack-row" @click="burnMomentum">
@@ -23,8 +17,8 @@
               </div>
             </div>
 
-            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}
+            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }} {{ $t('IRONSWORN.Max') }}:
+            {{ actor.data.momentumMax }}
           </div>
 
           <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
@@ -55,11 +49,7 @@
           </div>
         </div>
         <keep-alive>
-          <component
-            :is="currentTab.component"
-            :actor="actor"
-            style="margin: 0.5rem"
-          />
+          <component :is="currentTab.component" :actor="actor" style="margin: 0.5rem" />
         </keep-alive>
       </div>
 

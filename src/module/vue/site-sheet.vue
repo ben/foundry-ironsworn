@@ -8,12 +8,7 @@
 
     <!-- RANK -->
     <div class="flexrow nogrow">
-      <rank-hexes
-        :current="actor.data.rank"
-        @click="setRank"
-        class="nogrow"
-        style="margin-right: 1em"
-      />
+      <rank-hexes :current="actor.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
       <h4>{{ rankText }}</h4>
       <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
       <icon-button icon="play" @click="markProgress" />
@@ -51,18 +46,10 @@
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Delve the Depths" />
-        <div
-          class="box flexrow clickable block"
-          :class="{ disabled: !hasThemeAndDomain }"
-          @click="randomFeature"
-        >
+        <div class="box flexrow clickable block" :class="{ disabled: !hasThemeAndDomain }" @click="randomFeature">
           <h4>{{ $t('IRONSWORN.Feature') }}</h4>
         </div>
-        <site-movebox
-          :actor="actor"
-          move="Reveal a Danger"
-          :disabled="!hasThemeAndDomain"
-        />
+        <site-movebox :actor="actor" move="Reveal a Danger" :disabled="!hasThemeAndDomain" />
       </div>
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Find an Opportunity" />
@@ -78,11 +65,7 @@
     <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
-      <i
-        class="flexrow nogrow clickable text isicon-d10-tilt"
-        style="padding: 2px"
-        @click="randomDenizen"
-      />
+      <i class="flexrow nogrow clickable text isicon-d10-tilt" style="padding: 2px" @click="randomDenizen" />
       <icon-button icon="atlas" @click="openFoeCompendium" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
@@ -195,9 +178,7 @@ export default {
     },
 
     async locateObjective() {
-      const move = await CONFIG.IRONSWORN.moveDataByName(
-        'Locate Your Objective'
-      )
+      const move = await CONFIG.IRONSWORN.moveDataByName('Locate Your Objective')
       const progress = Math.floor(this.actor.data.current / 4)
       const roll = new Roll(`{${progress}, d10, d10}`)
       CONFIG.IRONSWORN.createIronswornChatRoll({
@@ -211,9 +192,7 @@ export default {
     async randomDenizen() {
       const roll = await new Roll('1d100').evaluate({ async: true })
       const result = roll.total
-      const denizen = this.$actor.data.data.denizens.find(
-        (x) => x.low <= result && x.high >= result
-      )
+      const denizen = this.$actor.data.data.denizens.find((x) => x.low <= result && x.high >= result)
       const idx = this.$actor.data.data.denizens.indexOf(denizen)
       if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
       await CONFIG.IRONSWORN.createIronswornDenizenChat({

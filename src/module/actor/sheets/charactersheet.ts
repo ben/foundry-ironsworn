@@ -86,7 +86,7 @@ export class IronswornCharacterSheet extends ActorSheet {
       if (IronswornSettings.toolbox === 'starforged') {
         this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
         this.actor.moveSheet.render(true, { focus: true })
-        } else {
+      } else {
         new CharacterMoveSheet(this.actor).render(true)
       }
     }

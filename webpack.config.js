@@ -11,7 +11,7 @@ const allTemplates = () => {
     .sync('**/*.hbs', { cwd: path.join(__dirname, 'system/templates') })
     .map((file) => `"systems/foundry-ironsworn/templates/${file}"`)
     .join(', ')
-  }
+}
 
 const allVueComponents = () => {
   return glob
@@ -75,13 +75,13 @@ module.exports = (env) => {
       rules: [
         isDevelopment
           ? {
-              test: /\.hbs$/,
-              loader: 'raw-loader',
-            }
+            test: /\.hbs$/,
+            loader: 'raw-loader',
+          }
           : {
-              test: /\.hbs$/,
-              loader: 'null-loader',
-            },
+            test: /\.hbs$/,
+            loader: 'null-loader',
+          },
         {
           test: /\.vue$/,
           loader: 'vue-loader',

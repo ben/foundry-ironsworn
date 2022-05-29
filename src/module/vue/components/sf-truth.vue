@@ -18,11 +18,7 @@
 
         <transition name="slide" v-if="table">
           <div v-if="selected">
-            <div
-              class="flexrow"
-              v-for="(suboption) in table"
-              :key="suboption.Description"
-            >
+            <div class="flexrow" v-for="suboption in table" :key="suboption.Description">
               <input
                 type="radio"
                 class="nogrow"

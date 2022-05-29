@@ -1,10 +1,5 @@
 <template>
-  <div
-    @click="click"
-    :class="classes"
-    :data-resource="stat"
-    :data-value="value"
-  >
+  <div @click="click" :class="classes" :data-resource="stat" :data-value="value">
     {{ valueStr }}
   </div>
 </template>
