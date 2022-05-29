@@ -1,16 +1,11 @@
 <template>
-  <div class="asset-sheet">
+  <article class="asset-sheet">
     <header class="sheet-header">
       <document-name :document="item" />
     </header>
 
-    <p>
-      <input
-        v-if="editMode"
-        type="text"
-        v-model="item.data.description"
-        @blur="setDescription"
-      />
+    <p class="asset-description">
+      <input v-if="editMode" type="text" v-model="item.data.description" @blur="setDescription" />
       <span v-else v-html="$enrichHtml(item.data.description)"></span>
     </p>
 
@@ -33,8 +28,24 @@
     <!-- TRACK -->
     <h3>{{ $t('IRONSWORN.Track') }}</h3>
     <asset-trackedit :item="item" />
-  </div>
+  </article>
 </template>
+
+<style lang="less">
+.asset-sheet {
+  .fieldrow {
+    p,
+    input {
+      text-align: left;
+      padding: 0 0.5em;
+      margin: 3px;
+    }
+  }
+  h3 {
+    margin-top: 1em;
+  }
+}
+</style>
 
 <script>
 export default {
