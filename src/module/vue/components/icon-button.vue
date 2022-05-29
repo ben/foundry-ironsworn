@@ -1,7 +1,5 @@
 <template>
-  <div class="flexrow clickable block nogrow" @click="click" :title="tooltip">
-    <i :class="classes"></i>
-  </div>
+  <button :class="classes" type="button" @click="click" :title="tooltip"></button>
 </template>
 
 <script>
@@ -9,7 +7,7 @@ export default {
   props: {
     icon: { type: String, required: true },
     solid: { type: Boolean, default: true },
-    tooltip: String
+    tooltip: String,
   },
 
   computed: {
@@ -18,6 +16,9 @@ export default {
         fas: this.solid,
         far: !this.solid,
         [`fa-${this.icon}`]: true,
+        ['icon-button']: true,
+        clickable: true,
+        block: true,
       }
     },
   },
@@ -30,13 +31,15 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-div {
+<style lang="less">
+@import '../../../styles/mixins.less';
+.icon-button {
+  border: none;
+  flex-grow: 0;
+  background: none;
   align-content: center;
   text-align: center;
   justify-content: center;
-}
-i {
   padding: 3px;
   width: 22px;
 }

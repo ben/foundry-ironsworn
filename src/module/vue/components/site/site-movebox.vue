@@ -1,7 +1,7 @@
 <template>
-  <div class="box flexrow clickable block" :class="{disabled: disabled}" @click="click">
+  <div class="box flexrow clickable block" :class="{ disabled: disabled }" @click="click">
     <h4 class="nogrow" style="margin: 0; white-space: nowrap">
-      {{ $t(i18nKey) }}
+      {{ $t(i18nLabelKey) }}
     </h4>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   },
 
   computed: {
-    i18nKey() {
+    i18nLabelKey() {
       return `IRONSWORN.MoveContents.${this.move}.title`
     },
   },

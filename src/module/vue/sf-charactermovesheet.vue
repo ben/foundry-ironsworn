@@ -1,15 +1,10 @@
 <template>
-  <div class="flexcol move-sheet">
-    <!-- TODO: refactor tab elements like this one for accessibility (annotation, IDs so the tab/panel relationship is made explicitly, etc)
-    MDN docs: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/tab_role
-    this one is incomplete.
-    a better bet might be to borrow from an existing component where someone's already put the work in:
-    https://github.com/jakedohm/vue-accessible-tabs
-    -->
-    <nav class="flexrow nogrow tabs" role="tablist">
+  <article class="move-and-oracle-overview">
+    <nav role="tablist">
       <button
         class="vuetab"
         role="tab"
+        type="button"
         v-for="tab in tabs"
         :key="tab.titleKey"
         :class="['clickable', 'block', { selected: currentTab === tab }]"
@@ -19,10 +14,50 @@
       </button>
     </nav>
     <keep-alive>
-      <component :is="currentTab.component" :actor="actor" ref="activeTab" />
+      <component :is="currentTab.component" :actor="actor" role="tabpanel" ref="activeTab" />
     </keep-alive>
-  </div>
+  </article>
 </template>
+
+<style lang="less">
+@import '../../styles/styles.less';
+.move-and-oracle-overview {
+  .flexcol();
+  [role='tablist'] {
+    .flexrow();
+    flex-grow: 0;
+  }
+
+  .oracles-overview {
+  }
+  .accordion {
+    .flexcol();
+    ul {
+      li {
+        ul {
+        }
+      }
+    }
+  }
+  .overview {
+    flex-grow: 1;
+    .flexcol();
+    .overview-search {
+      margin-top: 0.5rem;
+      .flexrow();
+      flex-grow: 0;
+      i.fa {
+        padding: 6px;
+        flex-grow: 0;
+      }
+    }
+
+    .foundry-items {
+      padding: 0 0.5rem;
+    }
+  }
+}
+</style>
 
 <script>
 export default {
@@ -32,8 +67,8 @@ export default {
 
   data() {
     const tabs = [
-      { titleKey: 'IRONSWORN.Moves', component: 'sf-movesheetmoves' },
-      { titleKey: 'IRONSWORN.Oracles', component: 'sf-movesheetoracles' },
+      { titleKey: 'IRONSWORN.Moves', component: 'sf-movesoverview' },
+      { titleKey: 'IRONSWORN.Oracles', component: 'sf-oraclesoverview' },
     ]
     return {
       tabs,

@@ -1,4 +1,5 @@
 @import url('../../system/assets/font/icon-font.css');
+@import 'mixins.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
@@ -16,6 +17,11 @@
 }
 
 .ironsworn {
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border: none;
+  }
   .window-content {
     height: 100%;
     padding: 5px;
@@ -47,7 +53,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 10px;
     flex: 0 0 auto;
 
     .profile-img {
@@ -79,19 +84,6 @@
     }
   }
 
-  .bg-die {
-    position: absolute;
-    left: 19px;
-    top: -17px;
-    opacity: 0;
-    font-size: 35px;
-  }
-
-  .stat:hover .bg-die {
-    transition: opacity 0.4s ease;
-    opacity: 0.2;
-  }
-
   .xp {
     flex-grow: 0;
     flex-direction: row;
@@ -106,20 +98,6 @@
       line-height: 13px;
       text-align: center;
     }
-  }
-
-  .margin-left {
-    flex: 0;
-    border-right: 1px solid;
-    margin-right: 5px;
-    position: relative;
-  }
-
-  .margin-right {
-    flex: 0;
-    border-left: 1px solid;
-    margin-left: 5px;
-    position: relative;
   }
 
   .asset-entry {
@@ -143,28 +121,6 @@
     }
   }
 
-  .item-list {
-    flex: 1 0 100px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-
-    .move {
-      overflow-x: hidden;
-    }
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      & > h2,
-      & > .h2 {
-        text-align: center;
-        border-width: 1px 0;
-      }
-    }
-  }
-
   .vertical {
     // padding: 0 5px;
     writing-mode: vertical-lr;
@@ -181,33 +137,6 @@
     i {
       display: inline-block;
       transform: rotate(90deg);
-    }
-  }
-
-  .stack {
-    flex-grow: 0;
-
-    .stack-row {
-      flex: 0 0 auto;
-      min-width: 50px;
-      border: 1px solid;
-      border-top: none;
-      text-align: center;
-      line-height: 28px;
-
-      &:first-child {
-        border-top: 1px solid;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-      }
-      &:last-child {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-      }
-
-      input[type='radio'] {
-        appearance: none;
-      }
     }
   }
 
@@ -252,49 +181,6 @@
       &:active {
         transition: 0.2s ease;
       }
-    }
-  }
-
-  .stats {
-    flex: 0;
-    justify-content: space-around;
-
-    .stat {
-      flex: 0 0 75px;
-      border: 1px solid;
-      border-radius: 5px;
-      text-align: center;
-      padding: 0.5rem 0;
-
-      h3,
-      .h3 {
-        margin: 0;
-        margin-bottom: 5px;
-        font-weight: bold;
-        font-size: 22px;
-      }
-
-      h4,
-      .h4 {
-        margin: 0;
-        font-weight: bold;
-      }
-
-      input {
-        width: 50%;
-        margin-bottom: 5px;
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-      }
-    }
-
-    .edit {
-      flex: 0 0 30px;
-      justify-items: center;
-      align-items: center;
-      border: 1px solid;
-      transition: 0.5s ease;
     }
   }
 
@@ -395,44 +281,9 @@
     }
   }
 
-  /* Sheet Tabs */
-  .tabs {
-    height: 40px;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-
-    .item {
-      line-height: 40px;
-      font-weight: bold;
-    }
-
-    .item.active {
-      text-decoration: underline;
-      text-shadow: none;
-    }
-
-    .tab {
-      text-align: center;
-      padding: 5px;
-      border-bottom: 1px solid grey;
-      &.active {
-        background-color: darkgray;
-      }
-    }
-    // from move sheet. i'm not sure this actually gets used though?
-    // .tab {
-    //   text-align: left;
-    // }
-  }
-
   .sheet-body {
     height: 100%;
     overflow: hidden;
-
-    .tab {
-      height: 100%;
-      overflow-y: auto;
-    }
   }
 
   .editor,
@@ -446,13 +297,12 @@
   }
 
   /* Items List */
-  .item-list {
+  .foundry-items {
     list-style: none;
     margin: 7px 0;
     padding: 0;
     // overflow-y: auto;
-
-    .item {
+    .foundry-item {
       height: 30px;
       line-height: 24px;
       padding: 3px 0;
@@ -470,6 +320,26 @@
 
     .item-controls {
       flex: 0 0 36px;
+    }
+
+    .flexcol();
+    flex: 1 0 100px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+
+    .move-text {
+    }
+
+    ol {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      & > h2,
+      & > .h2 {
+        text-align: center;
+        border-width: 1px 0;
+      }
     }
   }
 
@@ -558,15 +428,6 @@ hr {
   min-height: 400px;
 }
 
-.move-title {
-  text-align: center;
-  border: 1px solid;
-  margin-bottom: 5px;
-  font-weight: bold;
-  line-height: 30px;
-  font-variant: all-small-caps;
-}
-
 .sheet.moves {
   .tab {
     display: none;
@@ -580,7 +441,6 @@ hr {
 .ironsworn-roll {
   .hit-type {
     font-weight: bold;
-    font-variant: all-small-caps;
   }
 
   .roll {

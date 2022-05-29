@@ -1,120 +1,126 @@
 <template>
-<!-- this should either be article or form, probably -->
-  <form class="flexcol pc-sheet" autocomplete="off">
-    <!-- Header row -->
+  <article class="sf-character-sheet">
     <sf-characterheader :actor="actor" />
-
-    <!-- Main body row -->
-    <section class="flexrow pc-sheet-main">
-      <!-- Momentum on left -->
-      <section class="margin-left momentum">
-        <label class="h4 vertical-v2">{{ $t('IRONSWORN.Momentum') }}</label>
-        <stack
-          :actor="actor"
-          stat="momentum"
-          class="meter stack"
-          :top="10"
-          :bottom="-6"
-          :softMax="actor.data.momentumMax"
-        ></stack>
-        <!-- <hr class="nogrow" /> -->
-        <!-- TODO: replace the HR above with appropriate styling -->
-
-        <button class="clickable block stack-row burn-momentum" @click="burnMomentum">
-          {{ $t('IRONSWORN.Burn') }}
+    <momentum :actor="actor" />
+    <stats :actor="actor" />
+    <section class="tabbed-pages">
+      <nav role="tablist">
+        <button
+          role="tab"
+          type="button"
+          v-for="tab in tabs"
+          :key="tab.titleKey"
+          :class="['clickable', 'block', { selected: currentTab === tab }]"
+          @click="currentTab = tab"
+        >
+          {{ $t(tab.titleKey) }}
         </button>
-        <span class="momentum-max-reset">{{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}</span>
-        <span class="momentum-max-reset">{{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}</span>
-      </section>
-      <!-- Stats -->
-      <section class="flexrow stats">
-        <attr-box :actor="actor" attr="edge"></attr-box>
-        <attr-box :actor="actor" attr="heart"></attr-box>
-        <attr-box :actor="actor" attr="iron"></attr-box>
-        <attr-box :actor="actor" attr="shadow"></attr-box>
-        <attr-box :actor="actor" attr="wits"></attr-box>
-      </section>
-      <section class="tabbed-pages">
-          <!-- Tabs -->
-          <nav class="flexrow nogrow tabs">
-            <!-- TODO: typically, the semantics of tabbed interfaces are best represented by an <a> element, since they're functionally just navigating to another 'page' -->
-            <div
-              class="tab"
-              v-for="tab in tabs"
-              :key="tab.titleKey"
-              :class="['clickable', 'block', { selected: currentTab === tab }]"
-              @click="currentTab = tab"
-            >
-              {{ $t(tab.titleKey) }}
-            </div>
-          </nav>
-        <!-- content for tabs -->
-          <keep-alive>
-            <component
-              :is="currentTab.component"
-              :actor="actor"
-              class="tabbed-page"
-            />
-          </keep-alive>
-      </section>
-      <!-- Condition meters on right -->
-      <section class="flexcol condition-meters margin-right">
-        <section class="flexrow nogrow condition-meter meter">
-        <!-- TODO: label should probably be preferred to headers in this case -->
-          <h4 class="vertical-v2 clickable text" @click="rollStat('health')">
-            <i class="isicon-d10-tilt"></i>
-            {{ $t('IRONSWORN.Health') }}
-          </h4>
-          <div class="flexcol stack health">
-            <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
-          </div>
-        </section>
-<!-- TODO: HR is inappropriate here -->
-        <hr class="nogrow" />
-
-        <section class="flexrow nogrow condition-meter meter">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('spirit')">
-            <i class="isicon-d10-tilt"></i>
-            {{ $t('IRONSWORN.Spirit') }}
-          </h4>
-          <div class="flexcol stack spirit">
-            <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
-          </div>
-        </section>
-
-        <hr class="nogrow" />
-
-        <section class="flexrow nogrow condition-meter meter">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('supply')">
-          <!-- TODO: proper aria annotation so non-semantic icon font element is announced/not announced correctly by screen readers.
-
-          or do it with a ::before or normal image stuff.
-          -->
-            <i class="isicon-d10-tilt"></i>
-            {{ $t('IRONSWORN.Supply') }}
-          </h4>
-          <div class="flexcol stack supply">
-            <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
-          </div>
-        </section>
-      </section>
+      </nav>
+      <keep-alive>
+        <component :is="currentTab.component" :actor="actor" role="tabpanel" />
+      </keep-alive>
     </section>
-
-    <!-- Impacts -->
-    <!-- TODO: ditch the HR. they're for paragraph-level text and have a specific semantic meaning. more info:
-    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr
-    -->
-    <!-- <hr class="nogrow" /> -->
-    <sf-impacts :actor="actor" class="nogrow" />
-  </form>
+    <section class="condition-meters">
+      <condition-meter
+        v-for="meter in [health, spirit, supply]"
+        :key="meter.attr"
+        :attr="meter.attr"
+        :actor="actor"
+        :min="meter.min"
+        :max="meter.max"
+        :i18nLabelKey="meter.i18nLabelKey"
+      ></condition-meter>
+    </section>
+    <sf-impacts :actor="actor" />
+  </article>
 </template>
+
+<style lang="less">
+@import '../../styles/styles.less';
+@import '../../styles/mixins.less';
+.sf-character-sheet {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-template-rows: max-content max-content 1fr max-content;
+  gap: 0.75em;
+
+  .sheet-header {
+    grid-row: 1;
+    grid-column: span 3;
+    gap: 6px;
+    .character-vitals {
+      flex-basis: 100px;
+      gap: 7px;
+    }
+    .character-bio {
+      flex-basis: 300px;
+    }
+  }
+
+  .momentum-widget {
+    grid-column: 1;
+    grid-row: span 2;
+    .margin-left();
+  }
+
+  .stats {
+    grid-row: 2;
+    grid-column: 2;
+    flex: 0;
+    height: max-content;
+  }
+
+  .resource-meter {
+    .flexcol();
+    min-width: 50px;
+    flex-wrap: nowrap;
+  }
+  .tabbed-pages {
+    grid-row: 3;
+    grid-column: 2;
+    [role='tablist'] {
+      .flexrow();
+      height: max-content;
+    }
+    [role='tabpanel'] {
+      margin: 0.5rem;
+    }
+    [role='tab'] {
+      .stripButton();
+      flex: 1 1 0;
+      border-top: 1px solid;
+      border-bottom: 1px solid;
+      text-align: center;
+      height: 100%;
+      overflow-y: auto;
+      padding: 5px;
+      font-weight: bold;
+      &.active {
+        background-color: darkgray;
+        text-decoration: underline;
+        text-shadow: none;
+      }
+    }
+  }
+  .condition-meters {
+    grid-column: 3;
+    grid-row: span 2;
+    .flexcol();
+    .margin-right();
+    .fake-hr-children(1px solid, 7px);
+  }
+  .impacts {
+    grid-column: span 3;
+    grid-row: 4;
+  }
+}
+</style>
 
 <script>
 export default {
   props: {
     actor: Object,
   },
-
   data() {
     const tabs = [
       { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
@@ -126,21 +132,19 @@ export default {
     return {
       tabs,
       currentTab: tabs[0],
+      health: { attr: 'health', i18nLabelKey: 'IRONSWORN.Health', min: 0, max: 5 },
+      spirit: { attr: 'spirit', i18nLabelKey: 'IRONSWORN.Spirit', min: 0, max: 5 },
+      supply: { attr: 'supply', i18nLabelKey: 'IRONSWORN.Supply', min: 0, max: 5 },
     }
   },
 
   methods: {
-    burnMomentum() {
-      this.$actor.burnMomentum()
-    },
-
-    rollStat(stat) {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
-    },
-
     openCompendium(name) {
       const pack = game.packs?.get(`foundry-ironsworn.${name}`)
       pack?.render(true)
+    },
+    updateAttr(attr, value) {
+      this.$actor.data.update({ data: { [attr]: value } })
     },
   },
 }

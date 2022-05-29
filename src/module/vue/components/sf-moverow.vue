@@ -1,26 +1,62 @@
+<!-- articles are standalone, therefore they can have their own independent header hierarchy
+
+    spec here: https://html.spec.whatwg.org/multipage/sections.html#the-article-element
+
+    its examples include some articles with self-contained h1s, so i guess that is the intent!
+
+    not sure how well assistive tech handles it in practice, tho.
+    TODO: research whether this would benefit from add'l aria annotation
+  -->
 <template>
-  <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
-    <h3 class="h4 clickable text flexrow" :title="tooltip">
-      <span @click="rollMove">
-        <i class="isicon-d10-tilt juicy"></i>
-        {{ move.displayName }}
-      </span>
+  <article class="move-text" :class="{ highlighted: move.highlighted }">
+    <header>
+      <isicon-button icon="d10-tilt" @click="rollMove"> </isicon-button>
+      <button type="button" @click="rollMove">
+        <h1 class="h4 clickable text move-title" :title="tooltip">
+          {{ move.displayName }}
+        </h1>
+      </button>
       <icon-button icon="eye" @click="expanded = !expanded" />
-    </h3>
+    </header>
     <transition name="slide">
-      <with-rolllisteners
-        element="div"
-        class="move-summary"
-        :actor="actor"
-        v-if="expanded"
-        @moveclick="moveclick"
-      >
-        <div v-html="$enrichMarkdown(fulltext)" />
-      </with-rolllisteners>
+      <ul class="move-category-list">
+        <with-rolllisteners v-if="expanded" element="div" class="move-summary" :actor="actor" @moveclick="moveclick">
+          <div v-html="$enrichMarkdown(fulltext)" />
+        </with-rolllisteners>
+      </ul>
     </transition>
-  </div>
+  </article>
 </template>
 
+<style lang="less">
+@import '../../../styles/fonts.less';
+@import '../../../styles/mixins.less';
+.move-text {
+  overflow-x: hidden;
+  header {
+    .flexrow();
+    border: 1px solid;
+    flex-wrap: nowrap;
+    .move-title {
+      .text-heading();
+      background: unset;
+      font-weight: bold;
+      line-height: 30px;
+      margin: 0;
+      padding: 0;
+      text-align: start;
+      border: none;
+    }
+    button {
+      border: none;
+      background: none;
+    }
+    .icon-button {
+      flex-grow: 0;
+    }
+  }
+}
+</style>
 
 <script>
 export default {

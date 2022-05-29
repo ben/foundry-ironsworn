@@ -1,19 +1,19 @@
 <template>
-  <div class="flexcol nogrow movesheet-row" :class="{ hidden: node.forceHidden, highlighted }">
+  <li
+    role="menuitem"
+    class="oracle-node flexcol nogrow movesheet-row"
+    :class="{ hidden: node.forceHidden, highlighted }"
+  >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
-    <div v-if="isLeaf">
-      <h4 class="clickable text flexrow">
+    <div v-if="isLeaf" class="oracle-node-leaf">
+      <span class="h4 clickable text flexrow">
         <span @click="rollOracle">
           <i class="isicon-d10-tilt juicy"></i>
           {{ node.displayName }}
         </span>
-        <icon-button
-          v-if="isLeaf"
-          icon="eye"
-          @click="descriptionExpanded = !descriptionExpanded"
-        />
-      </h4>
+        <icon-button v-if="isLeaf" icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
+      </span>
 
       <transition name="slide">
         <with-rolllisteners
@@ -30,20 +30,17 @@
     </div>
 
     <!-- Branch node -->
-    <div v-else>
-      <h4
-        class="clickable text flexrow"
-        @click="manuallyExpanded = !manuallyExpanded"
-      >
+    <div v-else class="oracle-node-branch" aria-haspopup="true" aria-expanded="expanded">
+      <span class="h4 clickable text flexrow" @click="manuallyExpanded = !manuallyExpanded">
         <span class="nogrow" style="flex-basis: 15px">
           <i v-if="expanded" class="fa fa-caret-down" />
           <i v-else class="fa fa-caret-right" />
         </span>
         {{ node.displayName }}
-      </h4>
+      </span>
 
       <transition name="slide">
-        <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
+        <ul class="flexcol" v-if="expanded" style="margin-left: 1rem">
           <oracletree-node
             v-for="child in node.children"
             :key="child.displayName"
@@ -52,22 +49,24 @@
             @oracleclick="oracleclick"
             ref="children"
           />
-        </div>
+        </ul>
       </transition>
     </div>
-  </div>
+  </li>
 </template>
 
-<style lang="less" scoped>
-h4 {
-  margin-bottom: 4px;
-}
-.hidden {
-  display: none;
-}
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 1000px;
+<style lang="less">
+.oracle-node {
+  h4 {
+    margin-bottom: 4px;
+  }
+  .hidden {
+    display: none;
+  }
+  .slide-enter-active,
+  .slide-leave-active {
+    max-height: 1000px;
+  }
 }
 </style>
 
@@ -157,9 +156,9 @@ export default {
     async highlight() {
       this.highlighted = true
       this.$el.scrollIntoView()
-      await new Promise(r => setTimeout(r, 2000))
+      await new Promise((r) => setTimeout(r, 2000))
       this.highlighted = false
-    }
+    },
   },
 }
 </script>

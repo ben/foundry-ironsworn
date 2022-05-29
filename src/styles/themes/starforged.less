@@ -1,178 +1,27 @@
 // @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;700&family=Encode+Sans+Semi+Expanded:wght@400;700;900&family=Encode+Sans:wght@400;700&family=Exo:wght@700;900&display=swap');
-
 ::-webkit-scrollbar-thumb {
   background: var(--dark-color);
   border-color: var(--medium-color);
 }
 
 @import '../styles.less';
-@import 'mixins.less';
+@import '../mixins.less';
 @import 'colors-dark.less';
-@import 'fonts.less';
-
-.layout-starforged {
-  button,
-  .button {
-    border-style: groove;
-    border-width: 2px;
-  }
-
-  input,
-  textarea {
-    border: 0;
-    &:focus {
-      cursor: pointer;
-    }
-  }
-
-  .rank-pip {
-    path {
-      stroke-width: 0;
-    }
-  }
-  // scope with pc-sheet class?
-  .sheet-header {
-    gap: 6px;
-
-    .character-vitals {
-      flex-basis: 100px;
-      gap: 7px;
-    }
-    .character-bio {
-      flex-basis: 300px;
-    }
-  }
-
-  .pc-sheet-main {
-    display: grid;
-    grid-template-columns: max-content 1fr max-content;
-    grid-template-rows: max-content 1fr;
-    gap: 5px 10px;
-    .momentum {
-      grid-column: 1;
-      grid-row: span 2;
-    }
-    .condition-meters {
-      grid-column: 3;
-      grid-row: span 2;
-    }
-    .stats {
-      grid-column: 2;
-    }
-    .tabbed-pages {
-      grid-column: 2;
-      grid-row: 2;
-    }
-    .meter {
-      min-width: 50px;
-      flex-wrap: nowrap;
-    }
-    .momentum {
-      display: grid;
-      grid-template-columns: minmax(50px, max-content) max-content;
-      .meter {
-        grid-column: 1;
-        grid-row: 1;
-      }
-      label {
-        grid-column: 2;
-        grid-row: 1;
-      }
-      .momentum-max-reset {
-        grid-column: 1;
-      }
-      .burn-momentum {
-        grid-column: 1;
-      }
-    }
-    .tabbed-page {
-      margin: 0.5rem;
-    }
-    .condition-meters {
-    }
-    .pc-sheet-main {
-      .stats {
-      }
-      .tabs {
-        height: max-content;
-        .tab {
-        }
-      }
-    }
-  }
-
-  .impacts {
-    .impact-category-name {
-      flex-grow: 0;
-      margin: 0.2rem 0;
-    }
-  }
-  .setting-truths {
-    .setting-truth {
-      .category-name {
-        margin-top: 1em;
-      }
-    }
-  }
-}
+@import '../fonts.less';
 
 .theme-starforged {
   .colors-dark();
   .fonts-starforged();
-  .layout-starforged();
-  .movesheet-row {
-    .move-summary {
-      border-left: 2px solid;
-      margin-left: 5px;
-      padding-left: 1rem;
-    }
-    .h4 {
-      margin: 0;
-    }
-    .item-row {
-      transition: all 0.4s ease;
-    }
-
-    .slide-enter-active,
-    .slide-leave-active {
-      max-height: 1000px;
-    }
-  }
+  font-family: var(--font-primary);
   .create-move {
-    .tabs {
+    [role='tablist'] {
+      .flexcol();
       white-space: nowrap;
       max-width: 33%;
     }
   }
-  .move-sheet {
-    display: flex;
-    direction: column;
-    // flex-grow: 1 0;
-    .vuetab {
-    }
-  }
-  .move-sheet-search {
-    margin-top: 0.5rem;
-    .fa-times-circle,
-    .fa-compress-alt {
-      padding: 6px;
-    }
-  }
-  .move-sheet-overview {
-    h2 {
-      margin: 0.5rem 0 0.3rem;
-    }
-    .item-list {
-      padding: 0 0.5rem;
-    }
-  }
-  .move-sheet-oracles {
-    .item-list {
-      padding: 0 0.5rem;
-    }
-  }
+
   .player-assets {
     .compendium-shortcut {
       text-align: center;
@@ -230,13 +79,6 @@
     }
     .oracle-roller-group {
       margin-bottom: 1rem;
-    }
-  }
-  .move-tab {
-    span {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
   }
   .progress-tracker {

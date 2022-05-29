@@ -1,7 +1,6 @@
 <template>
   <div
-    style="border: 1px solid black"
-    :class="cssClasses"
+    :class="`ql-drag-container `+cssClasses"
     @dragenter="dragHandler($event, true)"
     @dragover="dragHandler($event, true)"
     @dragleave="dragHandler($event, false)"
@@ -14,13 +13,20 @@
       :editorOptions="options"
       v-bind:value="value"
       @input="$emit('input', $event)"
-      class="flexcol"
-      style="height: 100%; width: 100%"
     />
   </div>
 </template>
 
 <style lang="less">
+@import "../../../../styles/mixins.less";
+.quillWrapper {
+  .flexcol();
+  height: 100%;
+  width: 100%;
+}
+.ql-drag-container {
+  border: 1px solid black
+}
 .ql-container {
   font-family: var(--font-primary) !important;
   display: flex;
@@ -62,7 +68,7 @@ export default {
     toolbarOptions: {
       type: Array,
       default (){
-        return 
+        return
           [
             [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
             [{ list: 'ordered' }, { list: 'bullet' }],

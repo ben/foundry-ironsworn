@@ -10,7 +10,8 @@
   font-display: block;
 }
 
-[class^="isicon-"], [class*=" isicon-"] {
+/* restrict to :before to prevent font changes to button text content*/
+[class^="isicon-"]:before, [class*=" isicon-"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ironsworn-icons' !important;
   speak: never;
@@ -25,7 +26,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="isicon-"].juicy, [class*=" isicon-"].juicy {
+[class^="isicon-"].juicy:before, [class*=" isicon-"].juicy:before {
   font-size: 120%;
 }
 .isicon-d10-tilt:before {

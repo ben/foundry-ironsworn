@@ -1,24 +1,12 @@
 <template>
-<!-- TODO: refactor as component -->
-  <div class="flexcol move-sheet-oracles">
-    <div class="flexrow nogrow move-sheet-search">
-      <input
-        type="text"
-        :placeholder="$t('IRONSWORN.Search')"
-        v-model="searchQuery"
-        @keydown="preventSubmit"
-      />
-      <i
-        class="fa fa-times-circle nogrow clickable text"
-        @click="clearSearch"
-      />
-      <i
-        class="fa fa-compress-alt nogrow clickable text"
-        @click="collapseAll"
-      />
-    </div>
-
-    <div class="flexcol item-list">
+  <!-- TODO: refactor as component(s) -->
+  <article class="overview oracle-overview">
+    <section class="overview-search" role="search">
+      <input type="text" :placeholder="$t('IRONSWORN.Search')" v-model="searchQuery" @keydown="preventSubmit" />
+      <i class="fa fa-times-circle clickable text" @click="clearSearch" />
+      <i class="fa fa-compress-alt clickable text" @click="collapseAll" />
+    </section>
+    <ul class="accordion foundry-items">
       <oracletree-node
         v-for="node in treeRoot.children"
         :key="node.displayName"
@@ -28,10 +16,9 @@
         @oracleclick="highlightOracle"
         ref="oracles"
       />
-    </div>
-  </div>
+    </ul>
+  </article>
 </template>
-
 
 <script>
 import { findOracleWithIntermediateNodes } from '../../dataforged'
@@ -137,9 +124,7 @@ export default {
       let children = this.$refs.oracles
       let lastComponent
       for (const dataNode of dfOraclePath) {
-        lastComponent = children.find(
-          (x) => x.node.dataforgedNode.$id === dataNode.$id
-        )
+        lastComponent = children.find((x) => x.node.dataforgedNode.$id === dataNode.$id)
         if (!lastComponent) break
         lastComponent.expand()
         await new Promise((r) => setTimeout(r, 50))

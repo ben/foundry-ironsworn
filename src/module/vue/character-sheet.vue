@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol player-character-sheet">
     <!-- Header row -->
     <character-header :actor="actor"></character-header>
 
@@ -158,20 +158,21 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 83px;
-}
-
-textarea.notes {
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
-  font-family: var(--font-primary);
-  resize: none;
-  flex: 1;
-  min-height: 150px;
-}
+<style lang="less">
+  .player-character-sheet {
+    .slide-enter-active,
+    .slide-leave-active {
+      max-height: 83px;
+    }
+    textarea.notes {
+      border-color: rgba(0, 0, 0, 0.1);
+      border-radius: 1px;
+      font-family: var(--font-primary);
+      resize: none;
+      flex: 1;
+      min-height: 150px;
+    }
+  }
 </style>
 
 <script>

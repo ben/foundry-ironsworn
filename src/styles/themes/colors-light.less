@@ -17,6 +17,7 @@
 
   .window-content {
     background-color: var(--background-color);
+    background-image: none;
   }
 
   .sheet-area {
@@ -31,7 +32,7 @@
     }
   }
 
-  .stack-row {
+  .meter-box {
     border-color: var(--text-color);
   }
 
@@ -68,11 +69,11 @@
     border-color: var(--medium-color);
   }
 
-  .tabs {
+  [role='tablist'] {
     border-color: var(--medium-color);
   }
 
-  .item-list {
+  .foundry-items {
     ol > h2,
     ol > .h2 {
       border-color: var(--background-color);
@@ -80,7 +81,7 @@
       color: var(--background-color);
     }
 
-    .item {
+    .foundry-item {
       border-color: var(--medium-color);
     }
   }
@@ -143,7 +144,6 @@
           fill: var(--medium-color);
         }
       }
-
       &.selected {
         &.block,
         &.text {
@@ -164,7 +164,7 @@
   }
 
   .stats {
-    .stat {
+    .attr-box {
       border-color: var(--text-color);
     }
   }

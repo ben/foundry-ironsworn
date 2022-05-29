@@ -20,10 +20,7 @@
       <!-- Subtype -->
       <label class="flexrow subtype-picker">
         {{ $t('IRONSWORN.LocationType') }}
-        <select
-          v-model="actor.data.subtype"
-          @change="subtypeChanged"
-        >
+        <select v-model="actor.data.subtype" @change="subtypeChanged">
           <option value="planet">Planet</option>
           <option value="settlement">Settlement</option>
           <option value="star">Stellar Object</option>
@@ -33,42 +30,25 @@
       </label>
     </div>
 
-
-      <!-- Klass -->
-      <label class="flexrow klass-picker">
-        <!-- TODO: i18n and subtype text -->
-        <span class="select-label">{{ subtypeSelectText }}:</span>
-        <select
-          v-model="actor.data.klass"
-          @change="klassChanged"
-          :class="{ highlighted: firstLookHighlight }"
-        >
-          <option
-            v-for="opt in klassOptions"
-            :key="opt.value"
-            :value="opt.value"
-          >
-            {{ opt.label }}
-          </option>
-        </select>
-        <button
-          class="clickable block nogrow"
-          @click="randomizeKlass"
-          :title="randomKlassTooltip"
-        >
-          <i class="isicon-d10-tilt juicy" />
-        </button>
-      </label>
-
+    <!-- Klass -->
+    <label class="flexrow klass-picker">
+      <!-- TODO: i18n and subtype text -->
+      <span class="select-label">{{ subtypeSelectText }}:</span>
+      <select v-model="actor.data.klass" @change="klassChanged" :class="{ highlighted: firstLookHighlight }">
+        <option v-for="opt in klassOptions" :key="opt.value" :value="opt.value">
+          {{ opt.label }}
+        </option>
+      </select>
+      <button class="clickable block nogrow" @click="randomizeKlass" :title="randomKlassTooltip">
+        <i class="isicon-d10-tilt juicy" />
+      </button>
+    </label>
 
     <header class="sheet-header flexrow nogrow">
       <document-img :document="actor" size="50px" />
       <div class="flexcol">
         <div class="flexrow nogrow">
-          <document-name
-            :document="actor"
-            :class="{ highlighted: firstLookHighlight && canRandomizeName }"
-          />
+          <document-name :document="actor" :class="{ highlighted: firstLookHighlight && canRandomizeName }" />
           <button
             v-if="canRandomizeName"
             class="clickable block nogrow name-randomize"
@@ -81,10 +61,7 @@
       </div>
     </header>
 
-    <section
-      class="boxgroup flexcol nogrow oracle-roller-group"
-      v-if="oracles.length > 0"
-    >
+    <section class="boxgroup flexcol nogrow oracle-roller-group" v-if="oracles.length > 0">
       <div class="boxrow">
         <div
           class="clickable block box"
@@ -104,11 +81,7 @@
             highlighted: oracle.fl && firstLookHighlight,
             disabled: oracle.requiresKlass && klassIsNotValid,
           }"
-          :title="
-            oracle.requiresKlass && klassIsNotValid
-              ? $t('IRONSWORN.RequiresLocationType')
-              : undefined
-          "
+          :title="oracle.requiresKlass && klassIsNotValid ? $t('IRONSWORN.RequiresLocationType') : undefined"
           :key="oracle.dfId"
           @click="rollOracle(oracle)"
         >
@@ -133,22 +106,13 @@ function randomImage(subtype, klass) {
     return `systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-${name}-0${i}.webp`
   }
   if (subtype === 'settlement') {
-    return `systems/foundry-ironsworn/assets/locations/settlement-${klass.replace(
-      /\s+/,
-      ''
-    )}.webp`
+    return `systems/foundry-ironsworn/assets/locations/settlement-${klass.replace(/\s+/, '')}.webp`
   }
   if (subtype === 'derelict') {
-    return `systems/foundry-ironsworn/assets/locations/derelict-${klass.replace(
-      /\s+/,
-      ''
-    )}.webp`
+    return `systems/foundry-ironsworn/assets/locations/derelict-${klass.replace(/\s+/, '')}.webp`
   }
   if (subtype === 'vault') {
-    return `systems/foundry-ironsworn/assets/locations/vault-${klass.replace(
-      /\s+/,
-      ''
-    )}.webp`
+    return `systems/foundry-ironsworn/assets/locations/vault-${klass.replace(/\s+/, '')}.webp`
   }
 }
 
@@ -170,6 +134,7 @@ export default {
   computed: {
     klassOptions() {
       switch (this.actor.data.subtype) {
+        // TODO: investigate feasibility of pulling these programmatically from dataforged, which iirc has some row metadata for setting attributes like these
         case 'planet':
           return [
             { value: 'desert', label: 'Desert World' },
@@ -217,8 +182,7 @@ export default {
               label: 'Neutron Star',
             },
             {
-              value:
-                'two stars in close orbit connected by fiery tendrils of energy',
+              value: 'two stars in close orbit connected by fiery tendrils of energy',
               label: 'Binary Stars',
             },
             {
@@ -289,6 +253,9 @@ export default {
               },
             ],
             [
+              // TODO: "peril" and "opportunity" oracles should be presented differently than other location oracles, because their usage is different: they don't normally get rolled at location generation time.
+              // however, they're useful oracles to keep on hand as a player explores a location.
+              // i've seen at least two less-experienced players go and roll a peril when generating an object using this module.
               {
                 title: 'Peril (life)',
                 dfId: `Starforged/Oracles/Planets/Peril/Lifebearing`,
@@ -455,9 +422,7 @@ export default {
 
       if (subtype === 'planet') {
         const kc = capitalize(klass)
-        const json = CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
-          `Starforged/Oracles/Planets/${kc}`
-        )
+        const json = CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(`Starforged/Oracles/Planets/${kc}`)
         if (json) return true
       } else if (subtype === 'settlement') {
         return true
@@ -522,15 +487,12 @@ export default {
       let name
       if (subtype === 'planet') {
         const kc = capitalize(klass)
-        const json = await CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
-          `Starforged/Oracles/Planets/${kc}`
-        )
+        const json = await CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(`Starforged/Oracles/Planets/${kc}`)
         name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
       } else if (subtype === 'settlement') {
-        const table =
-          await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
-            'Starforged/Oracles/Settlements/Name'
-          )
+        const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
+          'Starforged/Oracles/Settlements/Name'
+        )
         name = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       }
 
@@ -554,10 +516,7 @@ export default {
         tableKey = 'Starforged/Oracles/Vaults/Location'
       }
 
-      const table =
-        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
-          tableKey
-        )
+      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(tableKey)
       const rawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!rawText) return
 
@@ -578,22 +537,12 @@ export default {
       }
     },
     async rollOracle(oracle) {
-      const table =
-        await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
-          oracle.dfId
-        )
+      const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(oracle.dfId)
       const drawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
       if (!drawText) return
 
       // Append to description
-      const parts = [
-        this.actor.data.description,
-        '<p><strong>',
-        oracle.title,
-        ':</strong> ',
-        drawText,
-        '</p>',
-      ]
+      const parts = [this.actor.data.description, '<p><strong>', oracle.title, ':</strong> ', drawText, '</p>']
       await this.$actor.update({ data: { description: parts.join('') } })
     },
 

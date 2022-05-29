@@ -1,0 +1,85 @@
+// clone of foundry's flexcol for use as a mixin
+.flexcol {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  // & > * {
+  //   flex: 1;
+  // }
+}
+
+// clone of foundry's flexrow for use as a mixin
+.flexrow {
+  display: flex;
+  flex-direction: row;
+  // flex-wrap: wrap;
+  justify-content: flex-start;
+  // & > * {
+  //   flex: 1;
+  // }
+}
+
+.fake-hr(@hrStyle, @hrMargin) {
+  border-block-start: @hrStyle;
+}
+
+.fake-hr-children(@hrStyle, @hrMargin) {
+  & > *:not(:first-child) {
+    .fake-hr(@hrStyle, @hrMargin);
+    padding-block-start: @hrMargin;
+  }
+  & > *:not(:last-child) {
+    padding-block-end: @hrMargin;
+  }
+}
+
+.margin-left {
+  flex: 0;
+  border-right: 1px solid;
+  margin-right: 5px;
+  position: relative;
+}
+
+.margin-right {
+  flex: 0;
+  border-left: 1px solid;
+  margin-left: 5px;
+  position: relative;
+}
+// strips foundry's button styles
+.stripButton() {
+  width: unset;
+  margin: unset;
+  background: unset;
+  border: unset;
+  border-radius: unset;
+  font-size: unset;
+  line-height: unset;
+  font-family: unset;
+}
+
+.simpleButton() {
+  .stripButton();
+  background: none;
+  border: 1px solid;
+}
+
+// creates a click-insensitive :before pseudo-element with a background fill and image mask, positioned for use as an overlay on the parent. use with an svg @imgMask to recolor it.
+.stencil(@fill, @imgMask, @zIndex:-2) {
+  position: relative;
+  &:before {
+    background: @fill;
+    mask-image: @imgMask;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: @zIndex;
+    pointer-events: none;
+  }
+}

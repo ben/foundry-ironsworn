@@ -3,15 +3,15 @@
     <h4 class="nogrow">{{ $t('IRONSWORN.Region') }}</h4>
     <label class="nogrow">
       <input type="radio" v-model="region" value="terminus" />
-      {{ $t('IRONSWORN.Terminus') }}
+      <span class="label-text">{{ $t('IRONSWORN.Terminus') }}</span>
     </label>
     <label class="nogrow">
       <input type="radio" v-model="region" value="outlands" />
-      {{ $t('IRONSWORN.Outlands') }}
+      <span class="label-text">{{ $t('IRONSWORN.Outlands') }}</span>
     </label>
     <label class="nogrow">
       <input type="radio" v-model="region" value="expanse" />
-      {{ $t('IRONSWORN.Expanse') }}
+      <span class="label-text">{{ $t('IRONSWORN.Expanse') }}</span>
     </label>
   </div>
 </template>

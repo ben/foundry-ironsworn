@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Condensed:wght@400;700&family=Encode+Sans+Semi+Expanded:wght@400;700;900&family=Encode+Sans:wght@400;700&family=Exo:wght@700;900&family=Share+Tech+Mono&display=swap&display=swap');
+
+// font mixins
+.text-compact {
+  font-family: var(--font-compact);
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  word-spacing: 0.025em;
+  font-variant: normal;
+}
+.text-body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  letter-spacing: 0.025em;
+  word-spacing: 0.025em;
+  font-variant: normal;
+}
+
+.text-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  word-spacing: 0.025em;
+  font-variant: normal;
+
+  text-transform: uppercase;
+}
+
+.text-display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  word-spacing: 0.05em;
+  font-variant: normal;
+
+  text-transform: uppercase;
+}
+
+.fonts-basic {
+  --font-size-11: 0.6875rem;
+  --font-size-12: 0.75rem;
+  --font-size-13: 0.8125rem;
+  --font-size-14: 0.875rem;
+  --font-size-16: 1rem;
+  --font-size-18: 1.125rem;
+  --font-size-20: 1.25rem;
+  --font-size-24: 1.5rem;
+  --font-size-28: 1.75rem;
+  --line-height-12: 0.75rem;
+  --line-height-16: 1rem;
+  --line-height-20: 1.25rem;
+  --line-height-30: 1.875rem;
+
+  // These .h1 (etc) classes exist to make it easy to fake header-sized text (without the attending semantic baggage) by using them as mixins.
+
+  h1,
+  .h2,
+  h2,
+  .h2,
+  h3,
+  .h3 {
+    .text-display();
+  }
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    .text-heading();
+  }
+
+  h1,
+  .h1 {
+    font-size: var(--font-size-28);
+  }
+  h2,
+  .h2 {
+    font-size: var(--font-size-24);
+  }
+  h3,
+  .h3 {
+    font-size: var(--font-size-20);
+  }
+  h4,
+  .h4 {
+    font-size: var(--font-size-14);
+  }
+  input,
+  textarea {
+    .text-compact();
+  }
+}
+
+.fonts-starforged {
+  // for compact, legible display
+  --font-compact: 'Encode Sans Condensed', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  // lots of breathing room. for more comfortable reading of prose, and other places where dense text is undesirable.
+  // as the chat log and sheet benefit from more compact text, this. it might be well-suited to compendium articles, foe entries, etc.
+  --font-body: 'Encode Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Arial, sans-serif;
+  // for big headers, labels, interactive elements, etc where you want something eye-catching, with lots of personality.
+  --font-display: 'Exo', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Arial, sans-serif;
+  // the 'workhorse' header font. might also be used on interactive elements when the display font is inappropriate
+  --font-heading: 'Encode Sans Semi Expanded', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', Arial, sans-serif;
+
+  --font-mono: 'Share Tech Mono', Courier, monospace;
+  --font-primary: $--font-compact;
+
+  .fonts-basic();
+}
+
+.fonts-ironsworn {
+  // TODO: replace placeholder with handpicked fonts for ironsworn
+  .fonts-starforged();
+}
