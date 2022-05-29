@@ -35,10 +35,11 @@ export default {
     min: Number,
     max: Number,
     i18nLabelKey: String,
+    asset: Object,
   },
   methods: {
-    rollStat(stat) {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
+    rollStat() {
+      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat: attr, asset })
     },
   },
 }
