@@ -41,6 +41,7 @@ import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 
+import './styles/mixins.less'
 import './styles/styles.less'
 
 declare global {
