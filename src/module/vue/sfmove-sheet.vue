@@ -1,5 +1,5 @@
 <template>
-  <div class="create-move">
+  <article class="create-move">
     <header class="sheet-header">
       <document-name :document="item" />
     </header>
@@ -89,7 +89,7 @@
         <textarea v-model="currentContent" @blur="saveText" />
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script>

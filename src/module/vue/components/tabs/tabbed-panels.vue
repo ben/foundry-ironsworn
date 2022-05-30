@@ -32,6 +32,10 @@
 @import '../../../../styles/mixins.less';
 .tabbed-panels {
   .flexcol();
+  [role='tab'] {
+    .block();
+    .clickable();
+  }
   [role='tablist'] {
     .flexrow();
     flex-grow: 0;

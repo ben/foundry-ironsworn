@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol site-sheet">
     <!-- HEADER -->
     <header class="sheet-header">
       <document-img :document="actor" />
@@ -95,23 +95,25 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.moves {
-  .box {
-    justify-content: center;
-    padding: 5px;
+<style lang="less">
+.site-sheet {
+  .moves {
+    .box {
+      justify-content: center;
+      padding: 5px;
+    }
+    h4 {
+      margin: 0;
+      white-space: nowrap;
+    }
   }
-  h4 {
-    margin: 0;
-    white-space: nowrap;
-  }
-}
 
-textarea {
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
-  resize: none;
-  font-family: var(--font-primary);
+  textarea {
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 1px;
+    resize: none;
+    font-family: var(--font-primary);
+  }
 }
 </style>
 
