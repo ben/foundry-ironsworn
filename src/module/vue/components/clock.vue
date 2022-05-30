@@ -1,5 +1,6 @@
 <template>
   <svg
+    class="clock"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     :height="size"
@@ -22,8 +23,8 @@
   </svg>
 </template>
 
-<style lang="less" scoped>
-svg {
+<style lang="less">
+svg.clock {
   pointer-events: fill;
 }
 </style>

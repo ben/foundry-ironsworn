@@ -1,10 +1,20 @@
 <template>
-  <div class="box flexrow clickable block" :class="{ disabled: disabled }" @click="click">
-    <h4 class="nogrow" style="margin: 0; white-space: nowrap">
+  <div class="site-movebox box flexrow clickable block" :class="{ disabled: disabled }" @click="click">
+    <h4 class="site-movebox-title">
       {{ $t(i18nLabelKey) }}
     </h4>
   </div>
 </template>
+
+<style lang="less">
+.site-movebox {
+  .site-movebox-title {
+    margin: 0;
+    white-space: nowrap;
+    flex-grow: 0;
+  }
+}
+</style>
 
 <script>
 export default {

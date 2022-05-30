@@ -1,14 +1,10 @@
 <template>
-  <div
-    class="box flexrow ironsworn__denizen__drop ironsworn__drop__target"
+  <section
+    class="site-denizen-box box flexrow ironsworn__denizen__drop ironsworn__drop__target"
     data-drop-type="progress"
-    style="padding: 3px"
     :data-idx="idx"
   >
-    <label
-      class="nogrow"
-      style="white-space: nowrap; flex-basis: 4em; line-height: 26px"
-    >
+    <label class="denizen-dice-range nogrow">
       <span v-if="denizen.low === denizen.high">{{ denizen.low }}</span>
       <span v-else>{{ denizen.low }}–{{ denizen.high }}</span>
     </label>
@@ -22,17 +18,24 @@
       @input="input"
       :placeholder="denizen.descriptor"
     />
-    <div
-      v-else
-      style="line-height: 26px"
-      v-html="$enrichHtml(denizen.description)"
-    />
-  </div>
+    <div class="denizen-description" v-else v-html="$enrichHtml(denizen.description)" />
+  </section>
 </template>
 
-<style lang="less" scoped>
-input {
-  transition: 0.4s ease-out;
+<style lang="less">
+.site-denizen-box {
+  padding: 3px;
+  .denizen-dice-range,
+  .denizen-description {
+    line-height: 26px;
+  }
+  .denizen-dice-range {
+    white-space: nowrap;
+    flex-basis: 4em;
+  }
+  input {
+    transition: 0.4s ease-out;
+  }
 }
 </style>
 
