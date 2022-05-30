@@ -1,12 +1,5 @@
 <template>
-  <button
-    class="clickable block icon-button"
-    :class="classes"
-    type="button"
-    @click="click"
-    :title="tooltip"
-    :v-text="textContent"
-  >
+  <button class="clickable block icon-button" :class="classes" type="button" @click="click" :title="tooltip">
     <slot></slot>
   </button>
 </template>
