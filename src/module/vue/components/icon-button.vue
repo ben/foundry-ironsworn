@@ -41,6 +41,23 @@ export default {
   text-align: center;
   justify-content: center;
   padding: 3px;
-  width: 22px;
+  &:empty {
+    // only restricts width if there's no text or other elements in the button.
+    width: 22px;
+  }
+  &.fa,
+  &.fas,
+  &.far {
+    &:not(:before) {
+      -moz-osx-font-smoothing: unset;
+      -webkit-font-smoothing: unset;
+      display: unset;
+      font-style: unset;
+      font-variant: unset;
+      text-rendering: unset;
+      line-height: unset;
+      font-family: unset;
+    }
+  }
 }
 </style>

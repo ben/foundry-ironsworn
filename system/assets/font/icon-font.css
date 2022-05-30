@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'ironsworn-icons';
-  src:  url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc');
-  src:  url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc#iefix') format('embedded-opentype'),
+  src: url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc');
+  src: url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc#iefix') format('embedded-opentype'),
     url('systems/foundry-ironsworn/assets/font/isicons.ttf?4pb2yc') format('truetype'),
     url('systems/foundry-ironsworn/assets/font/isicons.woff?4pb2yc') format('woff'),
     url('systems/foundry-ironsworn/assets/font/isicons.svg?4pb2yc#isicons') format('svg');
@@ -11,7 +11,8 @@
 }
 
 /* restrict to :before to prevent font changes to button text content*/
-[class^="isicon-"]:before, [class*=" isicon-"]:before {
+[class^='isicon-']:before,
+[class*=' isicon-']:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ironsworn-icons' !important;
   speak: never;
@@ -26,9 +27,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="isicon-"].juicy:before, [class*=" isicon-"].juicy:before {
+[class^='isicon-'].juicy:before,
+[class*=' isicon-'].juicy:before {
   font-size: 120%;
 }
 .isicon-d10-tilt:before {
-  content: "\e900";
+  content: '\e900';
 }

@@ -17,7 +17,7 @@
         :actor="actor"
         :move="move"
       >
-        <sf-movetext class="movesheet-row move-text" role="menuitem" @moveclick="highlightMove" />
+        <sf-moverow class="movesheet-row move-text" role="menuitem" @moveclick="highlightMove" />
       </li>
     </ul>
     <ul v-else role="menu" class="accordion foundry-items">
@@ -28,7 +28,7 @@
           </h1>
           <ul>
             <li v-for="move of category.moves" :key="move.displayName + 'listitem'">
-              <sf-movetext
+              <sf-moverow
                 :key="move.displayName"
                 :actor="actor"
                 :move="move"

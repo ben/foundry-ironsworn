@@ -296,24 +296,6 @@ fieldset {
       opacity: 1 !important;
     }
   }
-  // ASSETS
-
-  .move-sheet {
-    .vuetab {
-      text-align: center;
-      padding: 5px;
-      border-bottom: 1px solid grey;
-      &.active {
-        background-color: darkgray;
-      }
-    }
-  }
-  .bondset {
-    .slide-enter-active,
-    .slide-leave-active {
-      max-height: 93px;
-    }
-  }
 }
 
 hr {
@@ -440,4 +422,46 @@ table td:first-child {
   padding-bottom: 0 !important;
   border-top: 0 !important;
   border-bottom: 0 !important;
+}
+
+// workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to something less semantically silly than <i>
+
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+  -moz-osx-font-smoothing: inherit;
+  speak: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  text-rendering: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  &:before {
+    speak: never;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+  }
+}
+
+.fa,
+.far,
+.fas {
+  &:before {
+    font-family: 'Font Awesome 5 Free';
+  }
+}
+
+.fa,
+.fas {
+  &:before {
+    font-weight: 900;
+  }
 }

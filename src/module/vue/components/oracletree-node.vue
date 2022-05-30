@@ -1,64 +1,42 @@
 <template>
-  <li
+  <oraclenode-leaf
+    v-if="isLeaf"
     role="menuitem"
+    :wrapper="wrapper"
     class="oracle-node flexcol nogrow movesheet-row"
     :class="{ hidden: node.forceHidden, highlighted }"
-  >
-    <!-- TODO: split this into two components, yo -->
-    <!-- Leaf node -->
-    <div v-if="isLeaf" class="oracle-node-leaf">
-      <span class="h4 clickable text flexrow">
-        <span @click="rollOracle">
-          <i class="isicon-d10-tilt juicy"></i>
-          {{ node.displayName }}
-        </span>
-        <icon-button v-if="isLeaf" icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
-      </span>
-
-      <transition name="slide">
-        <with-rolllisteners
-          element="div"
-          :actor="actor"
-          @moveclick="moveclick"
-          @oracleclick="oracleclick"
-          class="flexcol"
-          v-if="descriptionExpanded"
-          v-html="tablePreview"
-        >
-        </with-rolllisteners>
-      </transition>
-    </div>
-
-    <!-- Branch node -->
-    <div v-else class="oracle-node-branch" aria-haspopup="true" aria-expanded="expanded">
-      <span class="h4 clickable text flexrow" @click="manuallyExpanded = !manuallyExpanded">
-        <span class="nogrow" style="flex-basis: 15px">
-          <i v-if="expanded" class="fa fa-caret-down" />
-          <i v-else class="fa fa-caret-right" />
-        </span>
-        {{ node.displayName }}
-      </span>
-
-      <transition name="slide">
-        <ul class="flexcol" v-if="expanded" style="margin-left: 1rem">
-          <oracletree-node
-            v-for="child in node.children"
-            :key="child.displayName"
-            :actor="actor"
-            :node="child"
-            @oracleclick="oracleclick"
-            ref="children"
-          />
-        </ul>
-      </transition>
-    </div>
-  </li>
+    :actor="actor"
+    :node="node"
+    :descriptionExpanded="descriptionExpanded"
+  ></oraclenode-leaf>
+  <oraclenode-branch
+    v-else
+    role="menuitem"
+    :wrapper="wrapper"
+    class="oracle-node flexcol nogrow movesheet-row"
+    :class="{ hidden: node.forceHidden, highlighted }"
+    :actor="actor"
+    :node="node"
+    :manuallyExpanded="manuallyExpanded"
+    :descriptionExpanded="descriptionExpanded"
+    :highlighted="highlighted"
+  ></oraclenode-branch>
 </template>
 
 <style lang="less">
+@import '../../../styles/mixins.less';
 .oracle-node {
-  h4 {
-    margin-bottom: 4px;
+  gap: 4px;
+
+  .oracle-title {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-flow: row nowrap;
+    flex-grow: 1;
+    justify-content: start;
+    align-items: center;
+    line-height: 1;
   }
   .hidden {
     display: none;
@@ -71,11 +49,11 @@
 </style>
 
 <script>
-import { sample } from 'lodash'
 export default {
   props: {
     actor: Object,
     node: Object,
+    wrapper: String,
   },
 
   data() {
@@ -94,38 +72,9 @@ export default {
     expanded() {
       return this.manuallyExpanded || this.node.forceExpanded
     },
-
-    tablePreview() {
-      const texts = this.node.tables.map((table) => {
-        const description = table.data.description || ''
-        const tableRows = CONFIG.IRONSWORN._.sortBy(
-          table.data.results.contents.map((x) => ({
-            low: x.data.range[0],
-            high: x.data.range[1],
-            text: x.data.text,
-            selected: false,
-          })),
-          'low'
-        )
-        const markdownTable = [
-          '| Roll | Result |',
-          '| --- | --- |',
-          ...tableRows.map((x) => `| ${x.low}-${x.high} | ${x.text} |`),
-        ].join('\n')
-
-        return description + '\n\n' + markdownTable
-      })
-
-      return this.$enrichMarkdown(texts.join('\n\n'))
-    },
   },
 
   methods: {
-    rollOracle() {
-      const randomTable = sample(this.node.tables)
-      CONFIG.IRONSWORN.rollAndDisplayOracleResult(randomTable)
-    },
-
     moveclick(item) {
       console.log(item)
       let actorWithMoves = this.$actor

@@ -5,9 +5,10 @@
       <icon-button icon="times-circle" @click="clearSearch"></icon-button>
       <icon-button icon="compress-alt" @click="collapseAll"></icon-button>
     </form>
-    <ul class="accordion foundry-items">
+    <ul class="accordion foundry-items oracle-tree">
       <oracletree-node
         v-for="node in treeRoot.children"
+        wrapper="li"
         :key="node.displayName"
         :actor="actor"
         :node="node"
@@ -18,6 +19,19 @@
     </ul>
   </article>
 </template>
+
+<style lang="less">
+@import '../../../styles/fonts.less';
+.oracle-tree {
+  gap: 4px;
+  & > .oracle-node-branch {
+    & > .oracle-title {
+      // top level oracle categories get bigger text
+      .text-heading();
+    }
+  }
+}
+</style>
 
 <script>
 import { findOracleWithIntermediateNodes } from '../../dataforged'
