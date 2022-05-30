@@ -69,8 +69,9 @@ export default {
 
   computed: {
     tooltip() {
-      // TODO: page number, when it shows up
-      return this.move.dataforgedMove?.Source?.Title
+      const {Title, Page} = this.move.dataforgedMove?.Source ?? {}
+      if (!Title) return undefined
+      return `${Title} p${Page}`
     },
 
     fulltext() {
