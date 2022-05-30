@@ -1,30 +1,19 @@
 <template>
-  <div>
+  <section class="asset-meter-editor">
     <div class="flexrow" style="align-items: center">
       <label class="flexrow" style="align-items: center">
-        <input
-          type="checkbox"
-          class="nogrow"
-          :checked="item.data.track.enabled"
-          @change="enableClick"
-        />
+        <input type="checkbox" class="nogrow" :checked="item.data.track.enabled" @change="enableClick" />
         <span>{{ $t('IRONSWORN.Enabled') }}</span>
       </label>
 
-      <span style="flex-grow: 0; margin: 0 5px">{{
-        $t('IRONSWORN.Name')
-      }}</span>
+      <span style="flex-grow: 0; margin: 0 5px">{{ $t('IRONSWORN.Name') }}</span>
       <input type="text" @blur="updateName" v-model="item.data.track.name" />
 
       <span style="flex-grow: 0; margin: 0 5px">{{ $t('IRONSWORN.Max') }}</span>
-      <input
-        type="number"
-        @blur="updateMax"
-        v-model.number="item.data.track.max"
-      />
+      <input type="number" @blur="updateMax" v-model.number="item.data.track.max" />
     </div>
-    <asset-track style="margin-top: 5px" :actor="item.parent" :item="item" />
-  </div>
+    <asset-meter style="margin-top: 5px" :actor="item.parent" :item="item" />
+  </section>
 </template>
 
 <script>

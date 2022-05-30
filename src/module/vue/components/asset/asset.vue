@@ -35,7 +35,17 @@
           </with-rolllisteners>
         </ul>
 
-        <asset-meter v-if="asset.data.track.enabled" :actor="actor" :item="asset"></asset-meter>
+        <condition-meter
+          v-if="asset.data.track.enabled"
+          class="asset-meter"
+          :actor="actor"
+          attr="track"
+          min="0"
+          :max="asset.data.track.max"
+          :item="asset"
+        >
+          {{ asset.data.track.name }}
+        </condition-meter>
 
         <div class="flexcol stack nogrow" style="margin-top: 5px" v-if="asset.data.exclusiveOptions.length > 0">
           <asset-exclusiveoption
@@ -51,6 +61,7 @@
 </template>
 
 <style lang="less">
+@import '../../../../styles/mixins.less';
 .player-asset {
   .asset-entry {
     .asset-title {
@@ -78,6 +89,22 @@
     .slide-enter-active,
     .slide-leave-active {
       max-height: 350px;
+    }
+  }
+  .asset-meter {
+    &.condition-meter {
+      .flexcol();
+      button {
+        display: flex;
+        gap: 5px;
+        justify-content: start;
+        min-width: unset;
+        width: unset;
+      }
+      .resource-meter {
+        .flexrow();
+        flex-direction: row-reverse;
+      }
     }
   }
 }

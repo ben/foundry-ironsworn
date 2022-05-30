@@ -1,25 +1,13 @@
 <template>
-  <div class="flexcol stack">
+  <section class="asset-options-editor flexcol stack">
     <div v-if="editMode">
       <transition-group name="slide" tag="div">
-        <div
-          class="stack-row flexrow"
-          v-for="(option, i) in item.data.exclusiveOptions"
-          :key="'item' + i"
-        >
-          <input
-            type="text"
-            v-model="option.name"
-            @blur="updateOptionName(i)"
-          />
+        <div class="stack-row flexrow" v-for="(option, i) in item.data.exclusiveOptions" :key="'item' + i">
+          <input type="text" v-model="option.name" @blur="updateOptionName(i)" />
           <icon-button icon="trash" @click="deleteOption(i)" />
         </div>
       </transition-group>
-      <div
-        class="stack-row clickable block"
-        @click="addOption"
-        style="min-height: 1.5rem; align-items: center"
-      >
+      <div class="stack-row clickable block" @click="addOption" style="min-height: 1.5rem; align-items: center">
         <i class="fas fa-plus" />
       </div>
     </div>
@@ -32,19 +20,21 @@
         @click="markOption(i)"
       />
     </div>
-  </div>
+  </section>
 </template>
 
-<style lang="less" scoped>
-.stack-row {
-  align-items: stretch;
-  input {
-    margin: 2px 5px;
+<style lang="less">
+.stack {
+  .stack-row {
+    align-items: stretch;
+    input {
+      margin: 2px 5px;
+    }
   }
-}
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 30px;
+  .slide-enter-active,
+  .slide-leave-active {
+    max-height: 30px;
+  }
 }
 </style>
 

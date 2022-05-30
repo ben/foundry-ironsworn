@@ -1,11 +1,13 @@
 <template>
-  <div
-    class="clickable block stack-row"
+  <!-- this should probably be a radio select, TBH, but a button is still better than a div -->
+  <button
+    class="clickable block stack-row asset-exclusive-option"
+    type="button"
     :class="selectedClass"
     @click="$emit('click')"
   >
     {{ opt.name }}
-  </div>
+  </button>
 </template>
 
 <script>
