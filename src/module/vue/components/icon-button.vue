@@ -1,5 +1,12 @@
 <template>
-  <button :class="classes" type="button" @click="click" :title="tooltip" :v-text="textContent">
+  <button
+    class="clickable block icon-button"
+    :class="classes"
+    type="button"
+    @click="click"
+    :title="tooltip"
+    :v-text="textContent"
+  >
     <slot></slot>
   </button>
 </template>
@@ -19,9 +26,6 @@ export default {
         fas: this.solid,
         far: !this.solid,
         [`fa-${this.icon}`]: true,
-        ['icon-button']: true,
-        clickable: true,
-        block: true,
       }
     },
   },
