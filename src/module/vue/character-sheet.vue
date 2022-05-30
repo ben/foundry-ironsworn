@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol player-character-sheet">
+  <article class="flexcol player-character-sheet">
     <!-- Header row -->
     <character-header :actor="actor"></character-header>
 
@@ -132,7 +132,7 @@
       </div>
     </div>
     <!-- <pre><code>{{foo}}</code></pre> -->
-  </div>
+  </article>
 </template>
 
 <style lang="less">

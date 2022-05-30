@@ -1,28 +1,21 @@
 <template>
-  <article class="move-and-oracle-overview">
-    <nav role="tablist">
-      <button
-        class="vuetab"
-        role="tab"
-        type="button"
-        v-for="tab in tabs"
-        :key="tab.titleKey"
-        :class="['clickable', 'block', { selected: currentTab === tab }]"
-        @click="currentTab = tab"
-      >
-        {{ $t(tab.titleKey) }}
-      </button>
-    </nav>
-    <keep-alive>
-      <component :is="currentTab.component" :actor="actor" role="tabpanel" ref="activeTab" />
-    </keep-alive>
+  <article class="character-move-sheet">
+    <tabbed-panels :actor="actor" name="moves" :tabs="tabs" />
   </article>
 </template>
 
 <style lang="less">
 @import '../../styles/styles.less';
-.move-and-oracle-overview {
+.character-move-sheet {
   .flexcol();
+  .vuetab {
+    text-align: center;
+    padding: 5px;
+    border-bottom: 1px solid grey;
+    &.active {
+      background-color: darkgray;
+    }
+  }
   [role='tablist'] {
     .flexrow();
     flex-grow: 0;

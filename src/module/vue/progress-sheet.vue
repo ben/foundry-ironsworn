@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <article class="flexcol progress-sheet">
     <!-- HEADER -->
     <header class="sheet-header nogrow">
       <document-img :document="item" />
@@ -28,14 +28,14 @@
       <transition name="slide">
         <div class="nogrow" v-if="item.data.hasTrack">
           <!-- RANK -->
-          <div class="flexrow nogrow">
+          <div class="progress-track-rank flexrow nogrow">
             <rank-hexes :current="item.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
             <h4>{{ rankText }}</h4>
             <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
             <icon-button icon="play" @click="markProgress" />
           </div>
           <!-- PROGRESS -->
-          <div class="flexrow track nogrow" style="margin-bottom: 1em">
+          <div class="progress-track-bar flexrow track nogrow" style="margin-bottom: 1em">
             <progress-track :ticks="item.data.current" />
           </div>
         </div>
@@ -73,13 +73,15 @@
 
     <!-- DESCRIPTION -->
     <editor target="data.description" :owner="true" :button="true" :editable="true" :content="item.data.description" />
-  </div>
+  </article>
 </template>
 
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 93px;
+<style lang="less">
+.progress-sheet {
+  .slide-enter-active,
+  .slide-leave-active {
+    max-height: 93px;
+  }
 }
 </style>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol setting-truths">
+  <article class="flexcol setting-truths">
     <div v-for="category in truths" :key="category.Name">
       <h2 class="category-name">{{ category.Name }}</h2>
 
@@ -19,14 +19,11 @@
 
     <hr />
     <!-- TODO: wire up this button -->
-    <button
-      class="ironsworn__sf__save__truths"
-      @click.prevent="$root.$emit('submit', composedOutput)"
-    >
+    <button class="ironsworn__sf__save__truths" @click.prevent="$root.$emit('submit', composedOutput)">
       <i class="fas fa-feather"></i>
       {{ $t('IRONSWORN.SaveYourTruths') }}
     </button>
-  </div>
+  </article>
 </template>
 
 <script>
@@ -48,11 +45,7 @@ export default {
     composedOutput() {
       return this.truths
         .map((category) => category.Name)
-        .map((name) =>
-          this.output[name]
-            ? `<h2>${name}</h2>\n${this.output[name]}\n\n`
-            : undefined
-        )
+        .map((name) => (this.output[name] ? `<h2>${name}</h2>\n${this.output[name]}\n\n` : undefined))
         .filter((x) => x !== undefined)
         .join('\n')
     },

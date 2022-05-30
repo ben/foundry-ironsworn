@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <article class="flexcol">
     <h4 class="nogrow">{{ $t('IRONSWORN.Region') }}</h4>
     <label class="nogrow">
       <input type="radio" v-model="region" value="terminus" />
@@ -13,7 +13,7 @@
       <input type="radio" v-model="region" value="expanse" />
       <span class="label-text">{{ $t('IRONSWORN.Expanse') }}</span>
     </label>
-  </div>
+  </article>
 </template>
 
 <script>
