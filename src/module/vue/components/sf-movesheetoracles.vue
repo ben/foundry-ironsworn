@@ -1,11 +1,10 @@
 <template>
-  <!-- TODO: refactor as component(s) -->
   <article class="overview oracle-overview">
-    <section class="overview-search" role="search">
-      <input type="text" :placeholder="$t('IRONSWORN.Search')" v-model="searchQuery" @keydown="preventSubmit" />
-      <i class="fa fa-times-circle clickable text" @click="clearSearch" />
-      <i class="fa fa-compress-alt clickable text" @click="collapseAll" />
-    </section>
+    <form class="overview-search" role="search">
+      <input type="search" :placeholder="$t('IRONSWORN.Search')" v-model="searchQuery" @keydown="preventSubmit" />
+      <icon-button icon="times-circle" @click="clearSearch"></icon-button>
+      <icon-button icon="compress-alt" @click="collapseAll"></icon-button>
+    </form>
     <ul class="accordion foundry-items">
       <oracletree-node
         v-for="node in treeRoot.children"

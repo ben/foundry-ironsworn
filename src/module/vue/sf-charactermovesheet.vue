@@ -1,7 +1,5 @@
 <template>
-  <article class="character-move-sheet">
-    <tabbed-panels :actor="actor" name="moves" :tabs="tabs" />
-  </article>
+  <tabbed-panels wrapper="article" :actor="actor" name="moves" :tabs="tabs" class="character-move-sheet" />
 </template>
 
 <style lang="less">
@@ -38,8 +36,10 @@
     .overview-search {
       margin-top: 0.5rem;
       .flexrow();
-      flex-grow: 0;
-      i.fa {
+      input[type='search'] {
+        flex-grow: 1;
+      }
+      .fa {
         padding: 6px;
         flex-grow: 0;
       }
@@ -60,8 +60,8 @@ export default {
 
   data() {
     const tabs = [
-      { titleKey: 'IRONSWORN.Moves', component: 'sf-movesoverview' },
-      { titleKey: 'IRONSWORN.Oracles', component: 'sf-oraclesoverview' },
+      { titleKey: 'IRONSWORN.Moves', component: 'sf-movesheetmoves' },
+      { titleKey: 'IRONSWORN.Oracles', component: 'sf-movesheetoracles' },
     ]
     return {
       tabs,

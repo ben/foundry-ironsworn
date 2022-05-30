@@ -1,11 +1,12 @@
 <template>
-  <!-- TODO: refactor as component(s) -->
   <article class="moves-overview overview">
-    <header class="overview-search" role="search">
-      <input type="text" :placeholder="$t('IRONSWORN.Search')" v-model="searchQuery" @keydown="preventSubmit" />
-      <i class="fa fa-times-circle clickable text" @click="clearSearch" />
-      <i class="fa fa-compress-alt clickable text" @click="collapseAll" />
-    </header>
+    <!-- TODO: refactor this and the other move sheet searchbox as a component -->
+    <form class="overview-search" role="search">
+      <input type="search" :placeholder="$t('IRONSWORN.Search')" v-model="searchQuery" @keydown="preventSubmit" />
+      <icon-button icon="times-circle" @click="clearSearch"></icon-button>
+      <icon-button icon="compress-alt" @click="collapseAll"></icon-button>
+    </form>
+    <!-- TODO: refactor accordion component for generic use -->
     <ul v-if="searchQuery" role="menu" class="accordion foundry-items">
       <!-- if there's a search query, show only matched moves, with no category hierarchy -->
       <li

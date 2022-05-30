@@ -1,8 +1,8 @@
 <template>
-  <section class="tabbed-panels">
+  <component :is="wrapperElement" class="tabbed-panels">
     <nav role="tablist">
       <button
-        class="vuetab"
+        class="vuetab block clickable"
         role="tab"
         type="button"
         v-for="tab in tabs"
@@ -25,7 +25,7 @@
         ref="activeTab"
       />
     </keep-alive>
-  </section>
+  </component>
 </template>
 
 <style lang="less">
@@ -33,8 +33,8 @@
 .tabbed-panels {
   .flexcol();
   [role='tab'] {
-    .block();
-    .clickable();
+    // .block();
+    // .clickable();
   }
   [role='tablist'] {
     .flexrow();
@@ -45,8 +45,14 @@
 
 <script>
 export default {
+  computed: {
+    wrapperElement() {
+      return this.wrapper ?? 'section'
+    },
+  },
   props: {
     actor: Object,
+    wrapper: String,
     name: String, // used to distinguish this from other tab panels for purpose of ID generation
     tabs: [{ titleKey: String, component: Object }],
   },
