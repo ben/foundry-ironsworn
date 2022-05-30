@@ -27,7 +27,7 @@
 
     <!-- TRACK -->
     <h3>{{ $t('IRONSWORN.Track') }}</h3>
-    <asset-trackedit :item="item" />
+    <asset-meteredit :item="item" />
   </article>
 </template>
 

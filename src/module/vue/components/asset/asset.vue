@@ -1,8 +1,8 @@
 <template>
-  <div class="item-row flexcol ironsworn__asset">
+  <article class="player-asset item-row flexcol ironsworn__asset">
     <div class="asset-entry nogrow" @click="toggle">
       <div class="flexrow">
-        <h4 style="margin: 0; line-height: 20px">{{ asset.name }}</h4>
+        <h4 class="asset-title">{{ asset.name }}</h4>
         <icon-button v-if="editMode" icon="trash" @click="destroy" />
         <icon-button icon="edit" @click="edit" />
       </div>
@@ -35,7 +35,7 @@
           </with-rolllisteners>
         </ul>
 
-        <asset-track v-if="asset.data.track.enabled" :actor="actor" :item="asset"></asset-track>
+        <asset-meter v-if="asset.data.track.enabled" :actor="actor" :item="asset"></asset-meter>
 
         <div class="flexcol stack nogrow" style="margin-top: 5px" v-if="asset.data.exclusiveOptions.length > 0">
           <asset-exclusiveoption
@@ -47,32 +47,38 @@
         </div>
       </div>
     </transition>
-  </div>
+  </article>
 </template>
 
-<style lang="less" scoped>
-.asset-entry {
-  h3,
-  .h3 {
-    margin-bottom: 0;
+<style lang="less">
+.player-asset {
+  .asset-entry {
+    .asset-title {
+      margin: 0;
+      line-height: 20px;
+    }
+    h3,
+    .h3 {
+      margin-bottom: 0;
+    }
   }
-}
-.asset-summary {
-  transition: all 0.5s ease;
-  overflow: hidden;
+  .asset-summary {
+    transition: all 0.5s ease;
+    overflow: hidden;
 
-  &.collapsed {
-    height: 0px;
-  }
+    &.collapsed {
+      height: 0px;
+    }
 
-  ul,
-  ol {
-    margin: 0;
-  }
+    ul,
+    ol {
+      margin: 0;
+    }
 
-  .slide-enter-active,
-  .slide-leave-active {
-    max-height: 350px;
+    .slide-enter-active,
+    .slide-leave-active {
+      max-height: 350px;
+    }
   }
 }
 </style>
