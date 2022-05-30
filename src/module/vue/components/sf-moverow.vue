@@ -21,11 +21,11 @@
         <div class="flexrow">
           <button v-if="canRoll" @click="rollMove">
             <i class="isicon-d10-tilt"></i>
-            Roll
+            {{$t('IRONSWORN.Roll')}}
           </button>
           <button @click="sendToChat">
-            <i class="fas fa-comment"></i>
-            Chat
+            <i class="far fa-comment"></i>
+            {{$t('IRONSWORN.Chat')}}
           </button>
         </div>
         <div v-html="$enrichMarkdown(fulltext)" />
