@@ -79,7 +79,7 @@ export default {
     },
 
     canRoll() {
-      return true // TODO: move has useable triggers?
+      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
     },
   },
 

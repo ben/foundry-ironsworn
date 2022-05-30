@@ -13,8 +13,7 @@ function rollableOptions(trigger: IMoveTrigger) {
   if (!actionOptions.length) return []
 
   const allowedUsings = ['Edge', 'Iron', 'Heart', 'Shadow', 'Wits', 'Health', 'Spirit', 'Supply']
-  return actionOptions
-    .filter(x => (x.Using as string[]).every(u => allowedUsings.includes(u)))
+  return actionOptions.filter((x) => (x.Using as string[]).every((u) => allowedUsings.includes(u)))
 }
 
 export class SFRollMoveDialog extends Dialog {
@@ -67,6 +66,12 @@ export class SFRollMoveDialog extends Dialog {
     }).render(true)
   }
 
+  static moveHasRollableOptions(move: IronswornItem) {
+    const data = move.data as SFMoveDataProperties
+    const options = rollableOptions(data.data.Trigger)
+    return options.length > 0
+  }
+
   static async createDataforgedMoveChat(move: IronswornItem) {
     const params = {
       move,
@@ -78,7 +83,7 @@ export class SFRollMoveDialog extends Dialog {
       content,
     })
   }
-  }
+}
 
 function callback(opts: { actor: IronswornActor; move: IronswornItem; mode: string; stats: string[] }) {
   return async (x) => {
