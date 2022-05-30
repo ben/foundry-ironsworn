@@ -6,7 +6,9 @@
         style="padding-right: 0.5em"
         @click="rollMove"
       ></i>
-      <span class="clickable text" @click="expanded = !expanded"> {{ move.displayName }} </span>
+      <span class="clickable text" @click="expanded = !expanded">
+        {{ move.displayName }}
+      </span>
     </h4>
     <transition name="slide">
       <with-rolllisteners
@@ -17,11 +19,11 @@
         @moveclick="moveclick"
       >
         <div class="flexrow">
-          <button>
+          <button v-if="canRoll" @click="rollMove">
             <i class="isicon-d10-tilt"></i>
             Roll
           </button>
-          <button>
+          <button @click="sendToChat">
             <i class="fas fa-comment"></i>
             Chat
           </button>
@@ -74,6 +76,10 @@ export default {
     fulltext() {
       return this.move.moveItem?.data?.data?.Text
     },
+
+    canRoll() {
+      return true // TODO: move has useable triggers?
+    },
   },
 
   watch: {
@@ -87,8 +93,14 @@ export default {
   },
 
   methods: {
-    async rollMove() {
+    rollMove(e) {
+      e.preventDefault()
       CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, this.move.moveItem)
+    },
+
+    sendToChat(e) {
+      e.preventDefault()
+      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(this.move.moveItem)
     },
 
     moveclick(item) {
