@@ -3,6 +3,7 @@
 ## In progress
 
 - Bump Dataforged and import new Sundered Isles assets ([#378](https://github.com/ben/foundry-ironsworn/pull/378))
+- Rework click areas for SF moves ([#379](https://github.com/ben/foundry-ironsworn/pull/379))
 
 ## 1.15.11
 
