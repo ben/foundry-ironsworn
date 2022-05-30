@@ -16,6 +16,16 @@
         v-if="expanded"
         @moveclick="moveclick"
       >
+        <div class="flexrow">
+          <button>
+            <i class="isicon-d10-tilt"></i>
+            Roll
+          </button>
+          <button>
+            <i class="fas fa-comment"></i>
+            Chat
+          </button>
+        </div>
         <div v-html="$enrichMarkdown(fulltext)" />
       </with-rolllisteners>
     </transition>
