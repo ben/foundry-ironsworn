@@ -1,14 +1,13 @@
 // @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap');
 
+@import '../mixins.less';
+@import 'colors-dark.less';
+@import '../fonts.less';
+
 ::-webkit-scrollbar-thumb {
   background: var(--dark-color);
   border-color: var(--medium-color);
 }
-
-@import '../styles.less';
-@import '../mixins.less';
-@import 'colors-dark.less';
-@import '../fonts.less';
 
 .theme-starforged {
   .colors-dark();
@@ -37,50 +36,7 @@
       margin: 8px;
     }
   }
-  .location-sheet {
-    .sheet-header {
-      position: relative;
-    }
-    .region-picker {
-      margin-right: 10px;
-      flex-basis: 150px;
-      select {
-        margin-left: 5px;
-      }
-    }
-    .subtype-picker {
-      flex-basis: 200px;
-      select {
-        margin-left: 5px;
-      }
-    }
-    .klass-picker {
-      position: relative;
-      margin-top: 5px;
-      select {
-        margin-left: 5px;
-      }
-    }
-    button {
-      padding: 0px 5px;
-      position: absolute;
-      right: 15px;
-      height: 25px;
-      line-height: 30px;
-      top: 1px;
-    }
-    .name-randomize {
-      padding: 0px 10px;
-      line-height: 53px;
-      right: 1px;
-      top: 6px;
-      height: 48px;
-      border-radius: 0 3px 3px 0;
-    }
-    .oracle-roller-group {
-      margin-bottom: 1rem;
-    }
-  }
+
   .progress-tracker {
     margin-top: 1rem;
     .completed {

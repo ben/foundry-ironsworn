@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol location-sheet">
+  <article class="flexcol location-sheet">
     <div class="flexrow nogrow">
       <!-- Region -->
       <label class="flexrow region-picker">
@@ -93,8 +93,71 @@
     <section class="flexcol">
       <quill-editor v-model="actor.data.description" />
     </section>
-  </div>
+  </article>
 </template>
+
+<style lang="less">
+.location-sheet {
+  .sheet-header {
+    position: relative;
+  }
+  .region-picker {
+    margin-right: 10px;
+    flex-basis: 150px;
+    select {
+      margin-left: 5px;
+    }
+  }
+  .subtype-picker {
+    flex-basis: 200px;
+    select {
+      margin-left: 5px;
+    }
+  }
+  .klass-picker {
+    position: relative;
+    margin-top: 5px;
+    select {
+      margin-left: 5px;
+    }
+  }
+  button {
+    padding: 0px 5px;
+    position: absolute;
+    right: 15px;
+    height: 25px;
+    line-height: 30px;
+    top: 1px;
+  }
+  .name-randomize {
+    padding: 0px 10px;
+    line-height: 53px;
+    right: 1px;
+    top: 6px;
+    height: 48px;
+    border-radius: 0 3px 3px 0;
+  }
+  .oracle-roller-group {
+    margin-bottom: 1rem;
+  }
+}
+.location-sheet {
+  label {
+    line-height: 27px;
+
+    .select-label {
+      flex-basis: 130px;
+      flex-grow: 0;
+    }
+  }
+  .box {
+    padding: 7px;
+  }
+  .highlighted {
+    background: #33999933;
+  }
+}
+</style>
 
 <script>
 import { capitalize, flatten } from 'lodash'
