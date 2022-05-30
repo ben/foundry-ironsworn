@@ -1,12 +1,7 @@
 <template>
-  <div class="flexrow track">
-    <div
-      class="flexcol track-box"
-      v-for="(box, i) in boxes"
-      :key="'box' + i"
-      v-html="box"
-    ></div>
-  </div>
+  <section class="progress-track flexrow track">
+    <div class="flexcol track-box" v-for="(box, i) in boxes" :key="'box' + i" v-html="box"></div>
+  </section>
 </template>
 
 <script>

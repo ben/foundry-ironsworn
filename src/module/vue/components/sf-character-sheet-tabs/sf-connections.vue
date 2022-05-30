@@ -1,19 +1,9 @@
 <template>
   <div class="flexcol connections">
     <transition-group name="slide" tag="div" class="nogrow">
-      <div
-        class="flexrow nogrow connection"
-        v-for="(item, i) in connections"
-        :key="item._id"
-      >
-        <order-buttons
-          v-if="editMode"
-          :i="i"
-          :length="connections.length"
-          @sortUp="sortUp"
-          @sortDown="sortDown"
-        />
-        <progress-box :item="item" :actor="actor" :showStar="true" />
+      <div class="flexrow nogrow connection" v-for="(item, i) in connections" :key="item._id">
+        <order-buttons v-if="editMode" :i="i" :length="connections.length" @sortUp="sortUp" @sortDown="sortDown" />
+        <progress-tracker :item="item" :actor="actor" :showStar="true" />
       </div>
     </transition-group>
 
@@ -25,7 +15,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -71,9 +60,7 @@ export default {
         siblings: foundryItems,
         sortBefore,
       })
-      await Promise.all(
-        updates.map(({ target, update }) => target.update(update))
-      )
+      await Promise.all(updates.map(({ target, update }) => target.update(update)))
     },
 
     sortUp(i) {
