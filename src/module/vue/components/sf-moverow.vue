@@ -1,11 +1,12 @@
 <template>
   <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
-    <h4 style="margin: 0" class="clickable text flexrow" :title="tooltip">
-      <span @click="rollMove">
-        <i class="isicon-d10-tilt juicy"></i>
-        {{ move.displayName }}
-      </span>
-      <icon-button icon="eye" @click="expanded = !expanded" />
+    <h4 class="flexrow" :title="tooltip">
+      <i
+        class="isicon-d10-tilt juicy clickable text nogrow"
+        style="padding-right: 0.5em"
+        @click="rollMove"
+      ></i>
+      <span class="clickable text" @click="expanded = !expanded"> {{ move.displayName }} </span>
     </h4>
     <transition name="slide">
       <with-rolllisteners
@@ -29,6 +30,7 @@
 }
 h4 {
   margin: 0;
+  line-height: 1.4em;
 }
 .item-row {
   transition: all 0.4s ease;
