@@ -1,28 +1,25 @@
 <template>
   <article class="player-asset item-row flexcol ironsworn__asset">
-    <div class="asset-entry nogrow" @click="toggle">
-      <div class="flexrow">
-        <h4 class="asset-title">{{ asset.name }}</h4>
-        <icon-button v-if="editMode" icon="trash" @click="destroy" />
-        <icon-button icon="edit" @click="edit" />
-      </div>
-    </div>
+    <header class="asset-entry nogrow" @click="toggle">
+      <h1 class="asset-title">{{ asset.name }}</h1>
+      <icon-button v-if="editMode" icon="trash" @click="destroy" />
+      <icon-button icon="edit" @click="edit" />
+    </header>
     <transition name="slide">
-      <div class="flexcol asset-summary" v-if="expanded">
-        <p v-for="(field, i) in asset.data.fields" :key="'field' + i">
+      <section class="flexcol asset-summary" v-if="expanded">
+        <p class="asset-field" v-for="(field, i) in asset.data.fields" :key="'field' + i">
           <strong>{{ field.name }}:</strong> {{ field.value }}
         </p>
 
-        <ul>
+        <ul class="asset-abilities">
           <with-rolllisteners
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
             element="li"
-            class="flexrow"
+            class="flexrow fas fa-circle"
             :actor="actingActor"
             @moveclick="moveclick"
           >
-            <i class="fas fa-circle nogrow" style="margin: 1rem 0.5rem 0 0"></i>
             <div v-html="$enrichHtml(ability.description)"></div>
             <clock
               v-if="ability.hasClock"
@@ -55,7 +52,7 @@
             @click="exclusiveOptionClick(i)"
           />
         </div>
-      </div>
+      </section>
     </transition>
   </article>
 </template>
