@@ -34,16 +34,19 @@ export default {
 <style lang="less">
 @import '../../../styles/mixins.less';
 .icon-button {
-  border: none;
+  display: flex;
+  flex-flow: row nowrap;
   flex-grow: 0;
-  background: none;
   align-content: center;
   text-align: center;
   justify-content: center;
-  padding: 3px;
+  padding: 0.25em;
+  gap: 0.25em;
+  line-height: 1;
   &:empty {
-    // only restricts width if there's no text or other elements in the button.
-    width: 22px;
+    // restricts width + removes border if there's no text
+    width: 1.5em;
+    border: 0;
   }
   &.fa,
   &.fas,
