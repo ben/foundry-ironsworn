@@ -19,10 +19,10 @@
     <div v-else class="v-else-item">
       <div class="flexcol">
         <h4 style="margin: 0">{{ $t(titleKey) }}</h4>
-        <p class="inset clickable block" style="padding: 0 2em" @click="openCompendium">
-          <i class="fas fa-atlas"></i>
-          {{ $t('IRONSWORN.OpenCompendium') }}
-        </p>
+
+        <btn-compendium :compendium="`foundry-ironsworn.${this.compendiumKey}`">
+          {{ $t('IRONSWORN.OpenCompendium') }}</btn-compendium
+        >
       </div>
     </div>
   </section>
@@ -30,6 +30,10 @@
 
 <style lang="less">
 .site-drop-area {
+  .btn-compendium {
+    padding: 0 2em;
+    // also inset???
+  }
   // TODO: replace these class names with something more representative, after determining wtf these are supposed to represent
   .v-if-item {
     padding: 1em;

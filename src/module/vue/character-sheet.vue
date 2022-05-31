@@ -59,12 +59,11 @@
                     <asset :actor="actor" :asset="asset" />
                   </div>
                 </transition-group>
-                <div class="flexrow nogrow" style="text-align: center">
-                  <div class="clickable block" @click="openCompendium('ironswornassets')">
-                    <i class="fas fa-atlas"></i>
+                <sections class="asset-controls">
+                  <btn-compendium compendium="ironswornassets">
                     {{ $t('IRONSWORN.Assets') }}
-                  </div>
-                </div>
+                  </btn-compendium>
+                </sections>
               </div>
             </section>
           </div>
