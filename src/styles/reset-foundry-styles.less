@@ -1,0 +1,921 @@
+.ironsworn {
+  /* ---------------------------------------- */
+  /*  Text                                    */
+  /* ---------------------------------------- */
+  /* Headers */
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: unset;
+    padding: unset;
+    font-weight: unset;
+  }
+  h1 {
+    font-size: unset;
+    border-bottom: unset;
+  }
+  h2 {
+    font-size: unset;
+    border-bottom: unset;
+  }
+  h3 {
+    font-size: unset;
+  }
+  /* Links */
+  a {
+    cursor: unset;
+  }
+  a[href] {
+    color: unset;
+  }
+  a:hover {
+    text-shadow: unset;
+  }
+  a.entity-link,
+  a.content-link,
+  a.inline-roll {
+    background: unset;
+    padding: unset;
+    border: unset;
+    border-radius: unset;
+    white-space: unset;
+    word-break: unset;
+  }
+  a.entity-link i,
+  a.content-link i,
+  a.inline-roll i {
+    color: unset;
+  }
+  a.entity-link.playing i:before,
+  a.content-link.playing i:before,
+  a.inline-roll.playing i:before {
+    content: unset;
+  }
+  a.entity-link.broken,
+  a.content-link.broken {
+    background: unset;
+    border: unset;
+  }
+  a.inline-roll.gmroll {
+    background: unset;
+    border-color: unset;
+  }
+  a.inline-roll.blindroll {
+    background: unset;
+    border-color: unset;
+  }
+  /* Paragraph */
+  p {
+    margin: unset;
+  }
+  ::selection {
+    background: unset;
+    color: unset;
+  }
+  /* Standard Lists */
+  ul,
+  ol {
+    margin: unset;
+    padding: unset;
+  }
+  /* Definition Lists */
+  dl {
+    margin: unset;
+  }
+  dt {
+    font-weight: unset;
+  }
+  dd {
+    padding-left: unset;
+    margin: unset;
+  }
+  /* HR separators */
+  hr {
+    border: unset;
+    border-top: unset;
+    border-bottom: unset;
+  }
+
+  /* Blockquote */
+  blockquote {
+    margin: unset;
+    padding: unset;
+    border-left: unset;
+    font-style: unset;
+  }
+  blockquote em {
+    font-style: unset;
+  }
+
+  /* ---------------------------------------- */
+  /* Tables                                   */
+  /* ---------------------------------------- */
+  table {
+    width: unset;
+    border-collapse: unset;
+    background: unset;
+    border-top: unset;
+    border-bottom: unset;
+    margin: unset;
+  }
+  table thead {
+    background: unset;
+    color: unset;
+    text-shadow: unset;
+    border-bottom: unset;
+  }
+  table tr:nth-child(even) {
+    background-color: unset;
+  }
+  table td:first-child {
+    padding-left: unset;
+  }
+  table td,
+  table th {
+    padding: unset;
+  }
+
+  /* ----------------------------------------- */
+  /* Images
+/* ----------------------------------------- */
+  img {
+    box-sizing: unset;
+    border: unset;
+    border-radius: unset;
+    max-width: unset;
+  }
+  img.noborder {
+    border: unset;
+    box-shadow: unset;
+    outline: unset;
+  }
+  figure {
+    margin: unset;
+  }
+  figure img {
+    display: unset;
+    margin: unset;
+  }
+  figure figcaption {
+    margin-top: unset;
+    text-align: unset;
+    font-weight: unset;
+  }
+  /**
+ * Basic Application Wrapper
+ */
+  .app {
+    max-height: unset;
+    background: unset;
+    border-radius: unset;
+    box-shadow: unset;
+    margin: unset;
+    padding: unset;
+    color: unset;
+    z-index: unset;
+  }
+  /**
+ * Pop-Out Window Application
+ */
+  .window-app {
+    display: unset;
+    flex-direction: unset;
+    flex-wrap: unset;
+    justify-content: unset;
+    position: unset;
+    box-shadow: unset;
+    padding: unset;
+    z-index: unset;
+    /* Resizable movement handle */
+  }
+  .window-app > * {
+    flex: unset;
+  }
+  .window-app > .flex0 {
+    display: unset;
+    flex: unset;
+  }
+  .window-app > .flex1 {
+    flex: unset;
+  }
+  .window-app > .flex2 {
+    flex: unset;
+  }
+  .window-app > .flex3 {
+    flex: unset;
+  }
+  .window-app .window-header {
+    flex: unset;
+    overflow: unset;
+    padding: unset;
+    line-height: unset;
+    border-bottom: unset;
+  }
+  .window-app .window-header .window-title {
+    margin: unset;
+    word-break: unset;
+  }
+  .window-app .window-header a {
+    flex: unset;
+    margin: unset;
+  }
+  .window-app .window-header i[class^='fa'] {
+    margin-right: unset;
+  }
+  .window-app.minimized .window-header {
+    border: unset;
+  }
+  .window-app .window-content {
+    display: unset;
+    flex-direction: unset;
+    flex-wrap: unset;
+    justify-content: unset;
+    background: unset;
+    padding: unset;
+    color: unset;
+    overflow-y: unset;
+    overflow-x: unset;
+  }
+  .window-app .window-content > * {
+    flex: unset;
+  }
+  .window-app .window-content > .flex0 {
+    display: unset;
+    flex: unset;
+  }
+  .window-app .window-content > .flex1 {
+    flex: unset;
+  }
+  .window-app .window-content > .flex2 {
+    flex: unset;
+  }
+  .window-app .window-content > .flex3 {
+    flex: unset;
+  }
+  .window-app.zhover {
+    z-index: unset;
+  }
+  .window-app .window-resizable-handle {
+    width: unset;
+    height: unset;
+    position: unset;
+    bottom: unset;
+    right: unset;
+    background: unset;
+    padding: unset;
+    border: unset;
+    border-radius: unset;
+  }
+  .window-app .window-resizable-handle i.fas {
+    transform: unset;
+  }
+  .window-app.minimized .window-resizable-handle {
+    display: unset;
+  }
+  /* ----------------------------------------- */
+  /*  Context Dropdown Menu
+/* ----------------------------------------- */
+
+  .window-app #context-menu {
+    z-index: unset;
+  }
+
+  /* ---------------------------------------- */
+  /*  Forms                                   */
+  /* ---------------------------------------- */
+  form .form-group,
+  form .form-group-stacked {
+    clear: unset;
+    display: unset;
+    flex-direction: unset;
+    flex-wrap: unset;
+    margin: unset;
+    align-items: unset;
+  }
+  form .form-group > * {
+    flex: unset;
+  }
+  form .form-group > label {
+    flex: unset;
+  }
+  form .form-group label {
+    line-height: unset;
+  }
+  form .form-group .form-fields {
+    display: unset;
+    flex-direction: unset;
+    flex-wrap: unset;
+    justify-content: unset;
+    align-items: unset;
+  }
+  form .form-group .form-fields > * {
+    flex: unset;
+    margin: unset;
+  }
+  form .form-group .form-fields > *:last-child {
+    margin-right: unset;
+  }
+  form .form-group .form-fields > label {
+    flex: unset;
+    padding: unset;
+    text-align: unset;
+  }
+  form .form-group .form-fields > label.checkbox {
+    flex: unset;
+    padding: unset;
+  }
+  form .form-group .form-fields > input[type='checkbox'] {
+    flex: unset;
+  }
+  form .form-group .form-fields button {
+    flex: unset;
+    line-height: unset;
+  }
+  form .form-group .form-fields span.sep {
+    flex: unset;
+  }
+  form .form-group span.units {
+    flex: unset;
+    line-height: unset;
+    font-size: unset;
+    color: unset;
+  }
+  form .form-group-stacked > *,
+  form .form-group.stacked > * {
+    flex: unset;
+  }
+  form .form-group.slim .form-fields > label {
+    flex: unset;
+    font-size: unset;
+    color: unset;
+    text-align: unset;
+  }
+  form .form-group.slim .form-fields > input[type='number'],
+  form .form-group.slim .form-fields > input[type='text'] {
+    flex: unset;
+  }
+  form .form-group.hidden {
+    display: unset;
+  }
+  form h1.form-header,
+  form h2.form-header,
+  form h3.form-header {
+    margin: unset;
+    padding: unset;
+    color: unset;
+    border-top: unset;
+    border-bottom: unset;
+  }
+  form .notes,
+  form .hint {
+    flex: unset;
+    font-size: unset;
+    line-height: unset;
+    color: unset;
+    margin: unset;
+  }
+  /* ---------------------------------------- */
+  /* Form Inputs                              */
+  /* ---------------------------------------- */
+  input:focus {
+    outline: unset;
+  }
+  /* Text Input */
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='date'],
+  input[type='time'] {
+    width: unset;
+    min-width: unset;
+    height: unset;
+    background: unset;
+    padding: unset;
+    margin: unset;
+    color: unset;
+    font-family: unset;
+    font-size: unset;
+    text-align: unset;
+    line-height: unset;
+    border: unset;
+    border-radius: unset;
+    -webkit-user-select: unset;
+    -moz-user-select: unset;
+    -ms-user-select: unset;
+    user-select: unset;
+  }
+  input[type='text']:focus,
+  input[type='number']:focus,
+  input[type='password']:focus,
+  input[type='date']:focus,
+  input[type='time']:focus {
+    box-shadow: unset;
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: unset;
+  }
+  input[type='number'] {
+    -moz-appearance: unset;
+  }
+  input[type='checkbox'] {
+    flex: unset;
+    width: unset;
+    height: unset;
+    margin: unset;
+  }
+  input[type='checkbox']:checked {
+    -webkit-filter: unset;
+  }
+  input[type='radio'] {
+    position: unset;
+    top: unset;
+    margin: unset;
+  }
+  input[type='checkbox']:checked,
+  input[type='radio']:checked {
+    -webkit-filter: unset;
+  }
+  /* Checkbox Labels */
+  label.checkbox {
+    flex: unset;
+    padding: unset;
+    margin: unset;
+    height: unset;
+    line-height: unset;
+    font-size: unset;
+  }
+  label.checkbox > input[type='checkbox'] {
+    width: unset;
+    height: unset;
+    margin: unset;
+    position: unset;
+    top: unset;
+  }
+  label.checkbox.right > input[type='checkbox'] {
+    margin: unset;
+  }
+  /* Select Boxes */
+  select {
+    height: unset;
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    padding: unset;
+    text-overflow: unset;
+  }
+  select:focus {
+    box-shadow: unset;
+    outline: unset;
+  }
+  select[multiple] {
+    height: unset;
+    padding: unset;
+  }
+  option {
+    background: unset;
+  }
+  /* Text Areas */
+  textarea {
+    width: unset;
+    min-height: unset;
+    padding: unset;
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    font-family: unset;
+    -webkit-user-select: unset;
+    -moz-user-select: unset;
+    -ms-user-select: unset;
+    user-select: unset;
+  }
+  textarea:focus {
+    box-shadow: unset;
+    outline: unset;
+  }
+  /* Buttons */
+  button {
+    width: unset;
+    margin: unset;
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    font-size: unset;
+    line-height: unset;
+    font-family: unset;
+  }
+  button:hover,
+  button:focus {
+    outline: unset;
+    box-shadow: unset;
+  }
+  button:disabled {
+    color: unset;
+    box-shadow: unset;
+  }
+  button.hidden {
+    display: unset;
+  }
+  button > i {
+    margin-right: unset;
+  }
+  input:disabled {
+    border: unset;
+    color: unset;
+  }
+  input:disabled:hover {
+    border: unset;
+    box-shadow: unset;
+    outline: unset;
+  }
+  input::placeholder {
+    color: unset;
+    // opacity: unset;
+  }
+
+  /* Range Input */
+  input[type='range'] {
+    background: unset;
+    -webkit-appearance: unset;
+    height: unset;
+    margin: unset;
+    width: unset;
+  }
+  input[type='range']:focus {
+    outline: unset;
+  }
+  input[type='range']::-webkit-slider-runnable-track {
+    width: unset;
+    height: unset;
+    cursor: unset;
+    box-shadow: unset;
+    background: unset;
+    border-radius: unset;
+    border: unset;
+  }
+  input[type='range']::-webkit-slider-thumb {
+    box-shadow: unset;
+    border: unset;
+    height: unset;
+    width: unset;
+    border-radius: unset;
+    background: unset;
+    cursor: unset;
+    -webkit-appearance: unset;
+    margin-top: unset;
+  }
+  input[type='range']:focus::-webkit-slider-runnable-track {
+    background: unset;
+  }
+  input[type='range']::-moz-range-track {
+    width: unset;
+    height: unset;
+    cursor: unset;
+    box-shadow: unset;
+    background: unset;
+    border-radius: unset;
+    border: unset;
+  }
+  input[type='range']::-moz-range-thumb {
+    box-shadow: unset;
+    border: unset;
+    height: unset;
+    width: unset;
+    border-radius: unset;
+    background: unset;
+    cursor: unset;
+  }
+  input[type='range']::-ms-track {
+    width: unset;
+    height: unset;
+    cursor: unset;
+    background: unset;
+    border-color: unset;
+    color: unset;
+  }
+  input[type='range']::-ms-fill-lower {
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    box-shadow: unset;
+  }
+  input[type='range']::-ms-fill-upper {
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    box-shadow: unset;
+  }
+  input[type='range']::-ms-thumb {
+    box-shadow: unset;
+    border: unset;
+    height: unset;
+    width: unset;
+    border-radius: unset;
+    background: unset;
+    cursor: unset;
+  }
+  input[type='range']:focus::-ms-fill-lower {
+    background: unset;
+  }
+  input[type='range']:focus::-ms-fill-upper {
+    background: unset;
+  }
+  input[type='range'] + .range-value {
+    display: unset;
+    flex: unset;
+    text-align: unset;
+    border: unset;
+    padding: unset;
+    margin-left: unset;
+  }
+  /**
+ * Dark mode inputs
+ */
+  .dark button {
+    background: unset;
+    border: unset;
+  }
+  .dark input,
+  .dark select {
+    background: unset;
+  }
+
+  /* ----------------------------------------- */
+  /* Tabbed Containers
+/* ----------------------------------------- */
+  .tabs {
+    display: unset;
+    flex-direction: unset;
+    flex-wrap: unset;
+    justify-content: unset;
+  }
+  .tabs .item {
+    text-align: unset;
+  }
+  .tabs .item.active {
+    text-shadow: unset;
+  }
+  .tab[data-tab] {
+    display: unset;
+  }
+  .tab[data-tab].active {
+    display: unset;
+  }
+  .tab[data-tab].active.flexrow,
+  .tab[data-tab].active.flexcol {
+    display: unset;
+  }
+
+  /* ----------------------------------------- */
+  /* Dialog Window
+/* ----------------------------------------- */
+  .dialog .dialog-buttons {
+    display: unset;
+    flex-direction: unset;
+    flex-wrap: unset;
+    justify-content: unset;
+    justify-content: unset;
+  }
+  .dialog .dialog-buttons > * {
+    flex: unset;
+  }
+  .dialog .dialog-buttons > .flex0 {
+    display: unset;
+    flex: unset;
+  }
+  .dialog .dialog-buttons > .flex1 {
+    flex: unset;
+  }
+  .dialog .dialog-buttons > .flex2 {
+    flex: unset;
+  }
+  .dialog .dialog-buttons > .flex3 {
+    flex: unset;
+  }
+  .dialog .dialog-buttons button {
+    background: unset;
+    border: unset;
+    margin: unset;
+  }
+  .dialog .dialog-buttons button:last-child {
+    margin-right: unset;
+  }
+  .dialog .dialog-buttons button.default {
+    background: unset;
+    border: unset;
+  }
+
+  /* ----------------------------------------- */
+  /*  Dice Tooltip
+/* ----------------------------------------- */
+  .dice-tooltip .part-header {
+    margin: unset;
+    line-height: unset;
+    border-bottom: unset;
+  }
+  .dice-tooltip .part-header .part-formula {
+    font-weight: unset;
+    flex: unset;
+  }
+  .dice-tooltip .part-header .part-flavor {
+    flex: unset;
+    margin-right: unset;
+    font-size: unset;
+    color: unset;
+  }
+  .dice-tooltip .part-header .part-total {
+    flex: unset;
+    font-size: unset;
+    font-weight: unset;
+    padding: unset;
+    background: unset;
+    border: unset;
+    border-bottom: unset;
+    border-radius: unset;
+  }
+  .dice-tooltip .dice-rolls {
+    list-style: unset;
+    margin: unset;
+    padding: unset;
+    overflow: unset;
+  }
+  .dice-tooltip .dice-rolls .roll {
+    position: unset;
+    width: unset;
+    line-height: unset;
+    float: unset;
+    margin-right: unset;
+    background-image: unset;
+    background-repeat: unset;
+    background-size: unset;
+    font-size: unset;
+    color: unset;
+    font-weight: unset;
+    text-align: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.d4 {
+    background-image: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.d6 {
+    background-image: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.d8 {
+    background-image: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.d10 {
+    background-image: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.d12 {
+    background-image: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.d20 {
+    background-image: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.success,
+  .dice-tooltip .dice-rolls .roll.max {
+    color: unset;
+    filter: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.failure,
+  .dice-tooltip .dice-rolls .roll.min {
+    color: unset;
+    filter: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.discarded,
+  .dice-tooltip .dice-rolls .roll.rerolled {
+    color: unset;
+    filter: unset;
+  }
+  .dice-tooltip .dice-rolls .roll.exploded:before {
+    font-size: unset;
+    font-family: unset;
+    content: unset;
+    position: unset;
+    top: unset;
+    right: unset;
+  }
+
+  /* Single Chat Message */
+  .chat-message {
+    margin: unset;
+    padding: unset;
+    font-size: unset;
+    color: unset;
+    background: unset;
+    border: unset;
+    border-radius: unset;
+  }
+  .chat-message .message-header {
+    line-height: unset;
+    color: unset;
+  }
+  .chat-message .message-header .message-sender {
+    flex: unset;
+    margin: unset;
+    white-space: unset;
+  }
+  .chat-message .message-header .message-metadata {
+    flex: unset;
+    text-align: unset;
+    font-size: unset;
+  }
+  .chat-message .message-header .flavor-text,
+  .chat-message .message-header .whisper-to {
+    flex: unset;
+    font-size: unset;
+  }
+  .chat-message .message-content {
+    -webkit-user-select: unset;
+    -moz-user-select: unset;
+    -ms-user-select: unset;
+    user-select: unset;
+    word-break: unset;
+  }
+  .chat-message.emote {
+    background: unset;
+    border: unset;
+  }
+  .chat-message.whisper {
+    background: unset;
+    border: unset;
+  }
+  .chat-message.blind {
+    background: unset;
+    border: unset;
+  }
+  .chat-message .cards-notification {
+    align-items: unset;
+  }
+  .chat-message .cards-notification > .icon {
+    flex: unset;
+    height: unset;
+    margin-right: unset;
+  }
+  .chat-message .cards-notification > p {
+    margin: unset;
+  }
+  /* New Chat Message Form */
+  #chat-form {
+    height: unset;
+    flex: unset;
+    margin: unset;
+  }
+  #chat-form textarea {
+    width: unset;
+    height: unset;
+    resize: unset;
+    background: unset;
+  }
+  /* Roll Table Results */
+  .chat-message .table-draw .table-description {
+    border-top: unset;
+    color: unset;
+    font-size: unset;
+    padding: unset;
+  }
+  .chat-message .table-draw .table-results {
+    list-style: unset;
+    margin: unset;
+    padding: unset;
+  }
+  .chat-message .table-draw .table-results .table-result {
+    display: unset;
+    align-items: unset;
+    border-bottom: unset;
+    padding: unset;
+  }
+  .chat-message .table-draw .table-results .table-result img.result-image {
+    flex: unset;
+    width: unset;
+    height: unset;
+    margin-right: unset;
+    object-fit: unset;
+  }
+  .chat-message .table-draw .table-results .table-result .result-text {
+    margin: unset;
+    padding: unset;
+    line-height: unset;
+  }
+  .chat-message .table-draw .table-results .table-result:last-child {
+    border-bottom: unset;
+  }
+  /** Card Draws */
+  .chat-message .card-draw {
+    align-items: unset;
+  }
+  .chat-message .card-draw .card-face {
+    height: unset;
+    flex: unset;
+    margin-right: unset;
+  }
+  .chat-message .card-draw .card-name {
+    line-height: unset;
+    margin: unset;
+    font-weight: unset;
+  }
+  /* Popped-out Message */
+  .chat-popout .window-content {
+    padding: unset;
+  }
+}

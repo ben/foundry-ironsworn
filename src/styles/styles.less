@@ -1,7 +1,7 @@
+@import 'reset-foundry-styles.less';
+@import 'mixins.less';
 @import url('../../system/assets/font/icon-font.css');
 // @import 'fonts.less';
-@import 'mixins.less';
-
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
   border-radius: 4px;
@@ -30,6 +30,14 @@ fieldset {
     scrollbar-width: thin;
   }
 
+  input[type='text'],
+  textarea,
+  button {
+    border: 1px solid;
+    &::placeholder {
+      opacity: 0.25;
+    }
+  }
   .sheet-area {
     border-top: 2px solid;
     &:first-child {
@@ -38,430 +46,356 @@ fieldset {
     margin: 5px;
     padding-top: 7px;
 
-    h1,
-    .h1,
-    h2,
-    .h2,
-    h3,
-    .h3 {
-      // TODO: investigate whether this needs to exist or what
-      border: none;
-    }
-  }
-
-  .sheet-header {
-    overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    flex: 0 0 auto;
-
-    .profile-img {
-      flex: 0 0 50px;
-      height: 50px;
-      margin-right: 10px;
-    }
-
-    .header-fields {
-      flex: 1;
-      height: 100px;
-    }
-
-    h1.charname {
+    .track {
+      flex-wrap: nowrap;
       flex-grow: 1;
-      height: 50px;
-      padding: 0px;
-      margin: 5px 0;
-      border-bottom: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .clickable {
+      .clickable();
+    }
+
+    .compact {
+      h3,
+      .h3,
+      h4,
+      .h4,
+      h5,
+      .h5 {
+        margin: 3px 0;
+      }
+    }
+
+    .boxgroup {
+      border: 1px solid;
+      border-radius: 5px;
+
+      .boxrow {
+        border-top: 1px solid;
+        &:first-child {
+          border-top: none;
+        }
+
+        &.small {
+          flex-basis: 25px;
+          line-height: 25px;
+          flex-grow: 0;
+        }
+      }
+
+      .box {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        border-left: 1px solid;
+        &:first-child {
+          border-left: none;
+        }
+      }
+    }
+
+    .remove-option {
+      flex-grow: 0;
+      line-height: 26px;
+    }
+
+    .item-row {
+      border: 1px solid;
+      border-radius: 2px;
+      padding: 3px;
+      margin: 3px 0;
+
+      .item-row-control {
+        flex-grow: 0;
+        padding: 5px;
+      }
+    }
+
+    .movesheet-row {
+      transition: all 0.4s ease;
+    }
+
+    .progresses {
+      .item {
+        border: 1px solid;
+        border-radius: 3px;
+        padding: 5px;
+        margin: 5px;
+      }
+    }
+
+    .progress-button {
+      i {
+        padding: 3px;
+        width: 22px;
+        text-align: center;
+      }
+    }
+
+    .resource {
+      width: 50%;
+      height: 40px;
+      margin-top: 10px;
+      float: left;
+      text-align: center;
 
       input {
-        width: 100%;
-        height: 100%;
+        width: 100px;
+        height: 28px;
+      }
+    }
+
+    .sheet-body {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .editor,
+    .editor-content {
+      height: 100%;
+      min-height: 100px;
+    }
+
+    .move-li {
+      height: 1.5rem;
+    }
+
+    /* Items List */
+    .foundry-items {
+      list-style: none;
+      margin: 7px 0;
+      padding: 0;
+      // overflow-y: auto;
+      .foundry-item {
+        height: 30px;
+        line-height: 24px;
+        padding: 3px 0;
+        border-bottom: 1px solid;
+
+        img {
+          flex: 0 0 24px;
+          margin-right: 5px;
+        }
+      }
+
+      .item-name {
         margin: 0;
       }
-    }
-    input[type='text'] {
-      resize: none;
-    }
-  }
 
-  .xp {
-    flex-grow: 0;
-    flex-direction: row;
-    flex-basis: 140px;
-    align-items: center;
+      .item-controls {
+        flex: 0 0 36px;
+      }
 
-    .xp {
-      height: 15px;
-      flex-basis: 15px;
+      .flexcol();
+      flex: 1 0 100px;
+      overflow-y: scroll;
+      scrollbar-width: thin;
+
+      .move-text {
+      }
+
+      ol {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        & > h2,
+        & > .h2 {
+          text-align: center;
+          border-width: 1px 0;
+        }
+      }
+    }
+
+    .progress {
+      flex: 1;
       border: 1px solid;
-      margin: 3px;
-      line-height: 13px;
+      padding: 5px;
+      margin: 2px;
       text-align: center;
     }
-  }
 
-  .track {
-    flex-wrap: nowrap;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-
-    .track-box {
-      flex: 1 0 20px;
-      max-height: 30px;
-      border: 1px solid;
-      margin-right: -1px;
-      stroke-width: 5;
-      text-align: center;
-      align-items: center;
-      justify-items: center;
-    }
-  }
-
-  .clickable {
-    .clickable();
-  }
-
-  .compact {
-    h3,
-    .h3,
-    h4,
-    .h4,
-    h5,
-    .h5 {
-      margin: 3px 0;
-    }
-  }
-
-  .boxgroup {
-    border: 1px solid;
-    border-radius: 5px;
-
-    .boxrow {
-      border-top: 1px solid;
-      &:first-child {
-        border-top: none;
-      }
-
-      &.small {
-        flex-basis: 25px;
-        line-height: 25px;
-        flex-grow: 0;
-      }
-    }
-
-    .box {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      border-left: 1px solid;
-      &:first-child {
-        border-left: none;
-      }
-    }
-  }
-
-  .remove-option {
-    flex-grow: 0;
-    line-height: 26px;
-  }
-
-  .item-row {
-    border: 1px solid;
-    border-radius: 2px;
-    padding: 3px;
-    margin: 3px 0;
-
-    .item-row-control {
+    .nogrow {
       flex-grow: 0;
-      padding: 5px;
+    }
+
+    input[type='number'] {
+      -moz-appearance: auto;
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: button !important;
+        opacity: 1 !important;
+      }
     }
   }
 
-  .movesheet-row {
-    transition: all 0.4s ease;
+  hr {
+    width: 100%;
   }
 
-  .progresses {
-    .item {
-      border: 1px solid;
-      border-radius: 3px;
-      padding: 5px;
-      margin: 5px;
+  .strikethru * {
+    text-decoration: line-through;
+  }
+
+  .ironsworn.sheet.actor {
+    min-width: 630px;
+  }
+
+  .ironsworn.sheet.item {
+    min-width: 460px;
+    min-height: 400px;
+  }
+
+  .sheet.moves {
+    .tab {
+      display: none;
+
+      &.active {
+        display: flex;
+      }
     }
   }
 
-  .progress-button {
-    i {
-      padding: 3px;
-      width: 22px;
-      text-align: center;
+  .ironsworn-roll {
+    .hit-type {
+      font-weight: bold;
     }
-  }
 
-  .resource {
-    width: 50%;
-    height: 40px;
-    margin-top: 10px;
-    float: left;
-    text-align: center;
-
-    input {
-      width: 100px;
-      height: 28px;
-    }
-  }
-
-  .sheet-body {
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .editor,
-  .editor-content {
-    height: 100%;
-    min-height: 100px;
-  }
-
-  .move-li {
-    height: 1.5rem;
-  }
-
-  /* Items List */
-  .foundry-items {
-    list-style: none;
-    margin: 7px 0;
-    padding: 0;
-    // overflow-y: auto;
-    .foundry-item {
-      height: 30px;
+    .roll {
+      width: 24px;
       line-height: 24px;
-      padding: 3px 0;
-      border-bottom: 1px solid;
-
-      img {
-        flex: 0 0 24px;
-        margin-right: 5px;
-      }
-    }
-
-    .item-name {
-      margin: 0;
-    }
-
-    .item-controls {
-      flex: 0 0 36px;
-    }
-
-    .flexcol();
-    flex: 1 0 100px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-
-    .move-text {
-    }
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      & > h2,
-      & > .h2 {
-        text-align: center;
-        border-width: 1px 0;
-      }
-    }
-  }
-
-  .progress {
-    flex: 1;
-    border: 1px solid;
-    padding: 5px;
-    margin: 2px;
-    text-align: center;
-  }
-
-  .nogrow {
-    flex-grow: 0;
-  }
-
-  input[type='number'] {
-    -moz-appearance: auto;
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: button !important;
-      opacity: 1 !important;
-    }
-  }
-}
-
-hr {
-  width: 100%;
-}
-
-.strikethru * {
-  text-decoration: line-through;
-}
-
-.ironsworn.sheet.actor {
-  min-width: 630px;
-}
-
-.ironsworn.sheet.item {
-  min-width: 460px;
-  min-height: 400px;
-}
-
-.sheet.moves {
-  .tab {
-    display: none;
-
-    &.active {
-      display: flex;
-    }
-  }
-}
-
-.ironsworn-roll {
-  .hit-type {
-    font-weight: bold;
-  }
-
-  .roll {
-    width: 24px;
-    line-height: 24px;
-    display: inline-block;
-    margin-right: 1px;
-    background-image: url('icons/svg/d6-grey.svg');
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    font-weight: bold;
-    text-align: center;
-
-    &.d4 {
-      background-image: url('icons/svg/d4-grey.svg');
-    }
-
-    &.d6 {
+      display: inline-block;
+      margin-right: 1px;
       background-image: url('icons/svg/d6-grey.svg');
-    }
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      font-weight: bold;
+      text-align: center;
 
-    &.d8 {
-      background-image: url('icons/svg/d8-grey.svg');
-    }
+      &.d4 {
+        background-image: url('icons/svg/d4-grey.svg');
+      }
 
-    &.d10 {
-      background-image: url('icons/svg/d10-grey.svg');
-    }
+      &.d6 {
+        background-image: url('icons/svg/d6-grey.svg');
+      }
 
-    &.d12 {
-      background-image: url('icons/svg/d12-grey.svg');
-    }
+      &.d8 {
+        background-image: url('icons/svg/d8-grey.svg');
+      }
 
-    &.d20 {
-      background-image: url('icons/svg/d20-grey.svg');
-    }
+      &.d10 {
+        background-image: url('icons/svg/d10-grey.svg');
+      }
 
-    &.min,
-    &.challenge.max {
-      color: #aa0200;
-      filter: drop-shadow(1px 1px 4px darkred);
-    }
+      &.d12 {
+        background-image: url('icons/svg/d12-grey.svg');
+      }
 
-    &.max,
-    &.challenge.min {
-      color: #18520b;
-      filter: drop-shadow(1px 1px 4px darkgreen);
-    }
+      &.d20 {
+        background-image: url('icons/svg/d20-grey.svg');
+      }
 
-    &.canceled {
-      filter: drop-shadow(1px 1px 4px orange);
-    }
-  }
-}
+      &.min,
+      &.challenge.max {
+        color: #aa0200;
+        filter: drop-shadow(1px 1px 4px darkred);
+      }
 
-.bonus-content .dice-formula {
-  word-break: normal;
-}
+      &.max,
+      &.challenge.min {
+        color: #18520b;
+        filter: drop-shadow(1px 1px 4px darkgreen);
+      }
 
-table td:first-child {
-  white-space: nowrap;
-  padding-right: 0.5rem;
-}
-
-.table-draw {
-  h2,
-  .h2 {
-    border: none;
-  }
-  table {
-    td:first-child,
-    td:last-child {
-      width: 0;
+      &.canceled {
+        filter: drop-shadow(1px 1px 4px orange);
+      }
     }
   }
-}
 
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.4s ease;
-  overflow: hidden;
-  max-height: 500px; // NOTE: fill this in where you know the right number
-  opacity: 1;
-}
-.slide-enter,
-.slide-leave-to {
-  max-height: 0 !important;
-  opacity: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-}
-
-// workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to something less semantically silly than <i>
-
-.fa,
-.fab,
-.fad,
-.fal,
-.far,
-.fas {
-  -moz-osx-font-smoothing: inherit;
-  speak: inherit;
-  font-style: inherit;
-  font-variant: inherit;
-  text-rendering: inherit;
-  line-height: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  font-family: inherit;
-  &:before {
-    speak: never;
-    -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
+  .bonus-content .dice-formula {
+    word-break: normal;
   }
-}
 
-.fa,
-.far,
-.fas {
-  &:before {
-    font-family: 'Font Awesome 5 Free';
+  table td:first-child {
+    white-space: nowrap;
+    padding-right: 0.5rem;
   }
-}
 
-.fa,
-.fas {
-  &:before {
-    font-weight: 900;
+  .table-draw {
+    h2,
+    .h2 {
+      border: none;
+    }
+    table {
+      td:first-child,
+      td:last-child {
+        width: 0;
+      }
+    }
+  }
+
+  .slide-enter-active,
+  .slide-leave-active {
+    transition: all 0.4s ease;
+    overflow: hidden;
+    max-height: 500px; // NOTE: fill this in where you know the right number
+    opacity: 1;
+  }
+  .slide-enter,
+  .slide-leave-to {
+    max-height: 0 !important;
+    opacity: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    border-top: 0 !important;
+    border-bottom: 0 !important;
+  }
+
+  // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to something less semantically silly than <i>
+
+  .fa,
+  .fab,
+  .fad,
+  .fal,
+  .far,
+  .fas {
+    -moz-osx-font-smoothing: inherit;
+    speak: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    text-rendering: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    &:before {
+      speak: never;
+      -moz-osx-font-smoothing: grayscale;
+      font-style: normal;
+      font-variant: normal;
+      text-rendering: auto;
+      line-height: 1;
+    }
+  }
+
+  .fa,
+  .far,
+  .fas {
+    &:before {
+      font-family: 'Font Awesome 5 Free';
+    }
+  }
+
+  .fa,
+  .fas {
+    &:before {
+      font-weight: 900;
+    }
   }
 }
