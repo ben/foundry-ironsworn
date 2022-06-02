@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Bump Dataforged and import new Sundered Isles assets ([#378](https://github.com/ben/foundry-ironsworn/pull/378))
+
 ## 1.15.11
 
 - Fix starting track values for assets ([#375](https://github.com/ben/foundry-ironsworn/pull/375))
