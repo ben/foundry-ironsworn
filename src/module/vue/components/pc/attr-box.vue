@@ -10,10 +10,13 @@
   </section>
 </template>
 <style lang="less">
-@import '../../../styles/mixins.less';
-@import '../../../styles/fonts.less';
+@import '../../../../styles/mixins.less';
+@import '../../../../styles/fonts.less';
 .attr-box {
-  .flexcol();
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   @fillColor: black;
   border: 1px solid;
   border-radius: 5px;

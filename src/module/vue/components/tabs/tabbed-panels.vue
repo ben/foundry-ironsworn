@@ -31,13 +31,20 @@
 <style lang="less">
 @import '../../../../styles/mixins.less';
 .tabbed-panels {
-  .flexcol();
-  [role='tab'] {
-    // .block();
-    // .clickable();
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  [role='tab'],
+  [role^='tab '],
+  [role*=' tab'] {
+    flex-grow: 1;
   }
-  [role='tablist'] {
-    .flexrow();
+  [role^='tablist'],
+  [role*=' tablist'] {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     flex-grow: 0;
   }
 }

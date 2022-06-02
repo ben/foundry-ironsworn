@@ -83,7 +83,7 @@
                 </div>
               </transition-group>
 
-              <progress-controls :actor="actor" />
+              <itemlist-controls :actor="actor" />
             </div>
 
             <quill-editor theme="bubble" v-model="actor.data.biography" />

@@ -1,6 +1,7 @@
 <template>
-  <article class="player-asset item-row flexcol ironsworn__asset">
-    <header class="asset-entry nogrow" @click="toggle">
+  <!-- TODO: revise expandable components to accomodate this -->
+  <article class="ironsworn__asset">
+    <header class="asset-entry" @click="toggle">
       <h1 class="asset-title">{{ asset.name }}</h1>
       <icon-button v-if="editMode" icon="trash" @click="destroy" />
       <icon-button icon="edit" @click="edit" />
@@ -16,11 +17,11 @@
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
             element="li"
-            class="flexrow fas fa-circle"
+            class="asset-ability fas fa-circle"
             :actor="actingActor"
             @moveclick="moveclick"
           >
-            <div v-html="$enrichHtml(ability.description)"></div>
+            <section v-html="$enrichHtml(ability.description)"></section>
             <clock
               v-if="ability.hasClock"
               class="nogrow"
@@ -34,10 +35,12 @@
 
         <condition-meter
           v-if="asset.data.track.enabled"
+          :embedButtonInBar="true"
           class="asset-meter"
           :actor="actor"
           attr="track"
           min="0"
+          :tooltip="rollTooltip"
           :max="asset.data.track.max"
           :item="asset"
         >
@@ -59,30 +62,56 @@
 
 <style lang="less">
 @import '../../../../styles/mixins.less';
-.player-asset {
-  .asset-entry {
+
+.ironsworn__asset {
+  flex-grow: 1;
+  header.asset-entry {
+    flex-grow: 0;
+    align-items: center;
+    flex-flow: row nowrap;
+    display: flex;
+    justify-content: space-between;
+    display: flex;
+    flex-flow: row nowrap;
+    & > button {
+      flex-grow: 0;
+    }
+
     .asset-title {
       margin: 0;
-      line-height: 20px;
+      line-height: 1;
+      flex-grow: 1;
+      font-size: var(--font-size-16);
     }
     h3,
     .h3 {
       margin-bottom: 0;
     }
   }
+
   .asset-summary {
     transition: all 0.5s ease;
     overflow: hidden;
-
+    gap: 0.5rem;
     &.collapsed {
       height: 0px;
     }
-
     ul,
     ol {
       margin: 0;
     }
-
+    .asset-abilities {
+      padding: 0;
+      gap: 0.5rem;
+      .asset-ability {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 0.5rem;
+        &:before {
+          margin-top: 0.25em;
+        }
+      }
+    }
     .slide-enter-active,
     .slide-leave-active {
       max-height: 350px;
@@ -90,17 +119,26 @@
   }
   .asset-meter {
     &.condition-meter {
-      .flexcol();
-      button {
-        display: flex;
-        gap: 5px;
-        justify-content: start;
-        min-width: unset;
-        width: unset;
-      }
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      gap: 5px;
+
       .resource-meter {
-        .flexrow();
-        flex-direction: row-reverse;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-grow: 1;
+        flex-direction: row;
+        .action-roll {
+          flex-grow: 0;
+        }
+        .meter-box {
+          width: max-content;
+          min-width: unset;
+          flex-basis: 0;
+          flex-grow: 1;
+        }
       }
     }
   }
@@ -115,6 +153,9 @@ export default {
   },
 
   computed: {
+    rollTooltip() {
+      return `Roll +${this.asset.data.track.name.toLowerCase()} for this asset`
+    },
     expanded() {
       return this.asset?.flags['foundry-ironsworn']?.expanded || false
     },

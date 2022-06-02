@@ -11,7 +11,9 @@
 <style lang="less">
 @import '../../../../styles/mixins.less';
 .stats {
-  .flexrow();
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   justify-content: space-around;
   .attr-box {
     flex: 0 0 75px;

@@ -24,7 +24,7 @@
 </template>
 
 <style lang="less">
-@import '../../../styles/mixins.less';
+@import '../../../../styles/mixins.less';
 .oracle-node {
   gap: 4px;
 
@@ -76,12 +76,12 @@ export default {
 
   methods: {
     moveclick(item) {
-      console.log(item)
+      // console.log(item)
       let actorWithMoves = this.$actor
       if (this.$actor?.type !== 'character') {
         actorWithMoves = CONFIG.IRONSWORN.defaultActor()
       }
-      console.log(actorWithMoves)
+      // console.log(actorWithMoves)
       actorWithMoves?.moveSheet?.render(true)
       actorWithMoves?.moveSheet?.highlightMove(item)
     },

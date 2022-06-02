@@ -22,7 +22,8 @@
 
 <style lang="less">
 .starship-sheet {
-  [role='tabpanel'] {
+  [role^='tabpanel'],
+  [role*=' tabpanel'] {
     margin: 0.5rem;
   }
 }

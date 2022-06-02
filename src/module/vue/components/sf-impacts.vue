@@ -30,11 +30,16 @@
 @import '../../../styles/mixins.less';
 .sf-character-sheet {
   .impacts {
-    .flexrow();
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     gap: 0.2rem;
     justify-content: space-evenly;
     .impact-category {
-      .flexcol();
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
     }
     .impact-category-title {
       flex-grow: 0;

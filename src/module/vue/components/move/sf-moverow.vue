@@ -19,7 +19,7 @@
       <icon-button icon="eye" @click="expanded = !expanded" />
     </header>
     <transition name="slide">
-      <ul class="move-category-list">
+      <ul>
         <with-rolllisteners v-if="expanded" element="div" class="move-summary" :actor="actor" @moveclick="moveclick">
           <div v-html="$enrichMarkdown(fulltext)" />
         </with-rolllisteners>
@@ -29,12 +29,14 @@
 </template>
 
 <style lang="less">
-@import '../../../styles/fonts.less';
-@import '../../../styles/mixins.less';
+@import '../../../../styles/fonts.less';
+@import '../../../../styles/mixins.less';
 .move-text {
   overflow-x: hidden;
   header {
-    .flexrow();
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     border: 1px solid;
     flex-wrap: nowrap;
     .move-title {

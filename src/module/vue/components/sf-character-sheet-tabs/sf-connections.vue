@@ -1,20 +1,28 @@
 <template>
-  <div class="flexcol connections">
-    <transition-group name="slide" tag="div" class="nogrow">
-      <div class="flexrow nogrow connection" v-for="(item, i) in connections" :key="item._id">
+  <itemlist-page class="connections-page">
+    <transition-group name="slide" tag="foundryitem-list" class="progress-tracks">
+      <foundry-listitem class="item-progress" v-for="(item, i) in connections" :key="item._id">
         <order-buttons v-if="editMode" :i="i" :length="connections.length" @sortUp="sortUp" @sortDown="sortDown" />
         <progress-tracker :item="item" :actor="actor" :showStar="true" />
-      </div>
+      </foundry-listitem>
     </transition-group>
-
-    <div class="flexrow nogrow add-connection">
-      <div class="clickable block" @click="newConnection">
-        <i class="fas fa-plus"></i>
-        {{ $t('IRONSWORN.Connection') }}
-      </div>
-    </div>
-  </div>
+    <itemlist-controls
+      :actor="actor"
+      :progressTypes="[{ name: 'connection', i18n: 'Connection' }]"
+      :compendiumTypes="[]"
+    >
+    </itemlist-controls>
+  </itemlist-page>
 </template>
+
+<style lang="less">
+.connections-page {
+  .slide-enter-active,
+  .slide-leave-active {
+    max-height: 83px;
+  }
+}
+</style>
 
 <script>
 export default {
@@ -36,19 +44,6 @@ export default {
   },
 
   methods: {
-    async newConnection() {
-      const item = await Item.create(
-        {
-          name: game.i18n.localize('IRONSWORN.Connection'),
-          type: 'progress',
-          data: { subtype: 'bond' }, // legacy name
-          sort: 9000000,
-        },
-        { parent: this.$actor }
-      )
-      item.sheet.render(true)
-    },
-
     async applySort(oldI, newI, sortBefore) {
       const foundryItems = this.$actor.items
         .filter((x) => x.type === 'progress')

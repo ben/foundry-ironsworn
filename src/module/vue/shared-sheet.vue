@@ -25,7 +25,7 @@
         </div>
       </transition-group>
 
-      <progress-controls :actor="actor" />
+      <itemlist-controls :actor="actor" />
     </section>
 
     <section class="item-row nogrow" style="margin-top: 1rem">

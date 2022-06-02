@@ -1,5 +1,11 @@
 <template>
-  <button :class="classes" type="button" @click="click" :title="tooltip">
+  <button
+    class="clickable block icon-button"
+    :class="`isicon-${this.icon}`"
+    type="button"
+    @click="click"
+    :title="tooltip"
+  >
     <slot></slot>
   </button>
 </template>
@@ -9,18 +15,6 @@ export default {
   props: {
     icon: { type: String, required: true },
     tooltip: String,
-    textContent: String,
-  },
-
-  computed: {
-    classes() {
-      return {
-        [`isicon-${this.icon}`]: true,
-        ['icon-button']: true,
-        clickable: true,
-        block: true,
-      }
-    },
   },
 
   methods: {

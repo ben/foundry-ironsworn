@@ -1,15 +1,16 @@
 <template>
-  <div class="flexrow" style="flex-wrap: nowrap">
-    <rank-hex
-      v-for="r in ranks"
-      :key="r.rank"
-      :rank="r.rank"
-      :selected="r.selected"
-      @click="click(r.rank)"
-    />
-  </div>
+  <fieldset class="rank-hexes">
+    <rank-hex v-for="r in ranks" :key="r.rank" :rank="r.rank" :selected="r.selected" @click="click(r.rank)" />
+  </fieldset>
 </template>
-
+<style lang="less">
+.rank-hexes {
+  display: flex;
+  flex-flow: row nowrap;
+  width: max-content;
+  height: max-content;
+}
+</style>
 <script>
 export default {
   props: {

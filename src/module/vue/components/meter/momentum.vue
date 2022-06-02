@@ -9,9 +9,9 @@
       :max="10"
       :softMax="actor.data.momentumMax"
     />
-    <button type="button" :aria-controls="`meter-momentum`" class="clickable burn-momentum" @click="burnMomentum">
+    <icon-button :aria-controls="`meter-momentum`" class="burn-momentum" icon="fire" @click="burnMomentum">
       {{ $t('IRONSWORN.Burn') }}
-    </button>
+    </icon-button>
     <span class="momentum-max-reset">{{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}</span>
     <span class="momentum-max-reset">{{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}</span>
   </section>

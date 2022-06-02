@@ -65,7 +65,7 @@ export default {
       this.$emit('oracleclick', dfid)
     },
     moveclick(item) {
-      console.log(item)
+      // console.log(item)
       let actorWithMoves = this.$actor
       if (this.$actor?.type !== 'character') {
         actorWithMoves = CONFIG.IRONSWORN.defaultActor()

@@ -1,38 +1,65 @@
 <template>
-  <div class="flexcol progress-tracks">
-    <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
-      <transition-group name="slide" tag="div" class="nogrow">
-        <div class="flexrow nogrow" v-for="(item, i) in activeItems" :key="item._id">
-          <order-buttons v-if="editMode" :i="i" :length="activeItems.length" @sortUp="sortUp" @sortDown="sortDown" />
-          <progress-tracker :item="item" :actor="actor" :showStar="true" @completed="progressCompleted" />
-        </div>
-      </transition-group>
-      <progress-controls :actor="actor" foeCompendium="starforgedencounters" />
-    </div>
+  <itemlist-page class="progress-page">
+    <transition-group
+      name="slide"
+      tag="foundryitem-list"
+      class="progress-tracks ironsworn__drop__target"
+      data-drop-type="progress"
+    >
+      <foundry-listitem class="item-progress" v-for="(item, i) in activeItems" :key="item._id">
+        <order-buttons v-if="editMode" :i="i" :length="activeItems.length" @sortUp="sortUp" @sortDown="sortDown" />
+        <progress-tracker :item="item" :actor="actor" :showStar="true" @completed="progressCompleted" />
+      </foundry-listitem>
+    </transition-group>
 
-    <div class="item-row nogrow progress-tracker">
-      <h3 class="clickable text" :class="completedClass" @click="expandCompleted = !expandCompleted">
-        <i :class="completedCaretClass"></i> {{ $t('IRONSWORN.Completed') }}
-      </h3>
-      <transition name="slide" tag="div" class="nogrow completed">
-        <div v-if="expandCompleted">
-          <transition-group name="slide" tag="div" class="nogrow">
-            <div class="flexrow" v-for="(item, i) in completedItems" :key="item._id">
-              <order-buttons
-                v-if="editMode"
-                :i="i"
-                :length="completedItems.length"
-                @sortUp="completedSortUp"
-                @sortDown="completedSortDown"
-              />
-              <progress-tracker :item="item" :actor="actor" :showStar="true" />
-            </div>
-          </transition-group>
-        </div>
-      </transition>
-    </div>
-  </div>
+    <itemlist-controls :actor="actor" :compendiumTypes="[{ name: 'starforgedencounters', i18n: 'Foes' }]" />
+    <!-- TODO: rebuild with a dedicated component for collapsible elements -->
+
+    <expandable
+      wrapperTag="section"
+      transitionGroupTag="ul"
+      :baseId="`progress-completed-${actor._id}`"
+      :buttonText="$t('IRONSWORN.Completed')"
+      class="progress-completed"
+      transitionGroupClasses="progress-tracks foundry-item-list"
+    >
+      <foundry-listitem class="item-progress" v-for="(item, i) in completedItems" :key="item._id">
+        <order-buttons
+          v-if="editMode"
+          :i="i"
+          :length="completedItems.length"
+          @sortUp="completedSortUp"
+          @sortDown="completedSortDown"
+        />
+        <progress-tracker :item="item" :actor="actor" :showStar="true" />
+      </foundry-listitem>
+    </expandable>
+  </itemlist-page>
 </template>
+
+<style lang="less">
+.progress-page {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5em;
+  .progress-completed {
+    justify-content: stretch;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0.5em;
+    button.expand-toggle {
+      justify-content: center;
+    }
+    ul.expand-content {
+    }
+  }
+}
+.progress-tracks {
+  .item-progress {
+    padding: 0.25rem 0.5rem 0.5rem 0.25rem;
+  }
+}
+</style>
 
 <script>
 export default {
@@ -69,6 +96,10 @@ export default {
 
     completedCaretClass() {
       return 'fa fa-caret-' + (this.expandCompleted ? 'down' : 'right')
+    },
+
+    completedCaret() {
+      return `caret-${this.expandCompleted ? 'down' : 'right'}`
     },
 
     completedClass() {

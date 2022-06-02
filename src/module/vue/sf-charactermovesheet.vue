@@ -5,7 +5,10 @@
 <style lang="less">
 @import '../../styles/styles.less';
 .character-move-sheet {
-  .flexcol();
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   .vuetab {
     text-align: center;
     padding: 5px;
@@ -14,15 +17,21 @@
       background-color: darkgray;
     }
   }
-  [role='tablist'] {
-    .flexrow();
+  [role^='tablist'],
+  [role*=' tablist'] {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
     flex-grow: 0;
   }
 
   .oracles-overview {
   }
   .accordion {
-    .flexcol();
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     ul {
       li {
         ul {
@@ -32,10 +41,17 @@
   }
   .overview {
     flex-grow: 1;
-    .flexcol();
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    margin: 0.5rem;
     .overview-search {
-      margin-top: 0.5rem;
-      .flexrow();
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
       input[type='search'] {
         flex-grow: 1;
       }

@@ -17,7 +17,7 @@
 </template>
 
 <style lang="less">
-@import '../../../styles/fonts.less';
+@import '../../../../styles/fonts.less';
 
 .legacy-track {
   display: grid;

@@ -10,7 +10,6 @@ export default {
     icon: { type: String, required: true },
     solid: { type: Boolean, default: true },
     tooltip: String,
-    textContent: String,
   },
 
   computed: {
@@ -32,9 +31,10 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../../styles/mixins.less';
+@import '../../../../styles/mixins.less';
 .icon-button {
   display: flex;
+  align-items: center;
   flex-flow: row nowrap;
   flex-grow: 0;
   align-content: center;

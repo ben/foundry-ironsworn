@@ -3,7 +3,7 @@ import { RANK_INCREMENTS } from '../constants'
 import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 
 /**
- * Extend the base Iteem entity
+ * Extend the base Item entity
  * @extends {Item}
  */
 export class IronswornItem extends Item {
@@ -40,7 +40,7 @@ export class IronswornItem extends Item {
     if (this.data.type !== 'vow') return
 
     const move = await moveDataByName('Fulfill Your Vow')
-    if (!move) throw new Error('Problem loading fulvill-vow move')
+    if (!move) throw new Error('Problem loading fulfill-vow move')
 
     const progress = Math.floor(this.data.data.current / 4)
     const r = new Roll(`{${progress},d10,d10}`)

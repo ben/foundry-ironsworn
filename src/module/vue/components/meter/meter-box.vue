@@ -1,12 +1,12 @@
 <template>
-  <label :class="classes" :disabled="disabled">
+  <label class="meter-box clickable block" :class="classes" :disabled="disabled">
     <input
       type="radio"
       :name="attr"
-      :checked="selected ? '' : false"
+      :checked="selected"
       :disabled="disabled"
       :data-resource="attr"
-      :data-value="value"
+      :value="value"
       @input="input"
     />
     <span class="label-text">{{ valueStr }}</span>
@@ -42,18 +42,21 @@ export default {
   props: {
     actor: Object,
     attr: String,
+    item: Object, // optional. if present, the item's attribute will be used instead
     value: Number,
     softMax: Number,
+    selected: Boolean,
   },
   computed: {
     id() {
+      if (this.item) {
+        return `meter_${this.attr}_${this.value}_${this.item._id}`
+      }
+
       return `meter_${this.attr}_${this.value}_${this.actor._id}`
     },
     classes() {
       return {
-        'meter-box': true,
-        clickable: true,
-        block: true,
         [this.attr]: true,
         selected: this.selected,
         disabled: this.disabled,
@@ -62,27 +65,13 @@ export default {
     valueStr() {
       return this.value > 0 ? `+${this.value}` : this.value.toString()
     },
-    current() {
-      return this.actor.data[this.attr]
-    },
-    selected() {
-      return this.current === this.value
-    },
     disabled() {
       return this.value > this.softMax
     },
   },
-
   methods: {
     input(event) {
-      if (this.disabled) return
-      // TODO: replace with this.$actor
-      const actor = game.actors?.get(this.actor._id)
-      actor?.update({ data: { [this.attr]: this.value } })
-      console.log('meter-box', event)
-      if (this.attr === 'supply') {
-        CONFIG.IRONSWORN.IronswornSettings.maybeSetGlobalSupply(this.value)
-      }
+      this.$emit('input', event)
     },
   },
 }

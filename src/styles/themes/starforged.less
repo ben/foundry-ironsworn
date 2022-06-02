@@ -14,16 +14,11 @@
   .fonts-starforged();
   font-family: var(--font-primary);
   .create-move {
-    [role='tablist'] {
+    [role^='tablist'],
+    [role*=' tablist'] {
       .flexcol();
       white-space: nowrap;
       max-width: 33%;
-    }
-  }
-
-  .player-assets {
-    .compendium-shortcut {
-      text-align: center;
     }
   }
   .setting-truth {
@@ -44,17 +39,7 @@
       padding: 0;
     }
   }
-  .connections {
-    .slide-enter-active,
-    .slide-leave-active {
-      max-height: 83px;
-    }
-    .connection {
-    }
-    .add-connection {
-      text-align: center;
-    }
-  }
+
   .progress-tracks {
     h3 {
       margin: 5px 0;

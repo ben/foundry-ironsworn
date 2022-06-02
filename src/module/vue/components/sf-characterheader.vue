@@ -34,9 +34,14 @@
 <style lang="less">
 @import '../../../styles/mixins.less';
 .sheet-header {
-  .flexrow();
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   .character-vitals {
-    .flexcol();
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 }
 </style>

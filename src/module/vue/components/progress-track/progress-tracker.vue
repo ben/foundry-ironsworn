@@ -1,75 +1,96 @@
 <!-- formerly "progress-box". renamed because "progress box" refers to a specific mechanical element in IS/SF (the boxes that comprise a progress track), so the name should be reserved for that. "progress-tracker" is more descriptive, and has a relationship to "progress-track"
 -->
 <template>
-  <div class="progress-tracker flexrow item-row">
-    <h5 class="vertical-v2 nogrow">{{ subtitle }}</h5>
-    <div class="flexcol">
-      <div class="flexrow">
-        <document-img :document="item" size="38px" class="nogrow" style="margin-right: 5px" />
-        <div class="flexcol">
-          <div class="flexrow">
-            <rank-hexes :current="item.data.rank" @click="rankClick" />
-            <icon-button v-if="editMode" icon="trash" @click="destroy" :tooltip="$t('IRONSWORN.DeleteItem')" />
-            <icon-button icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
-            <icon-button v-if="editMode" :icon="completedIcon" @click="toggleComplete" :tooltip="completedTooltip" />
-            <icon-button
-              v-if="editMode && item.data.hasTrack"
-              icon="caret-left"
-              @click="retreat"
-              :tooltip="$t('IRONSWORN.UnmarkProgress')"
-            />
-            <icon-button
-              v-if="item.data.hasTrack"
-              icon="caret-right"
-              @click="advance"
-              :tooltip="$t('IRONSWORN.MarkProgress')"
-            />
-            <div
-              v-if="item.data.hasTrack"
-              class="flexrow nogrow clickable block"
-              @click="fulfill"
-              :tooltip="$t('IRONSWORN.ProgressRoll')"
-            >
-              <i class="isicon-d10-tilt" style="padding: 3px"></i>
-            </div>
-          </div>
-          <h4 class="flexrow">
-            <span>{{ item.name }}</span>
-            <icon-button
-              icon="star"
-              :solid="item.data.starred"
-              :tooltip="$t('IRONSWORN.StarProgress')"
-              @click="toggleStar"
-              v-if="showStar"
-            />
-          </h4>
-        </div>
-      </div>
-      <div class="flexrow" style="justify-content: center">
-        <progress-track :ticks="item.data.current" v-if="item.data.hasTrack" />
-        <clock
-          v-if="item.data.hasClock"
-          class="nogrow"
-          style="flex-basis: 50px; margin: 0 0.5rem"
-          :size="50"
-          :wedges="item.data.clockMax"
-          :ticked="item.data.clockTicks"
-          @click="setClock"
-        />
-      </div>
-    </div>
-  </div>
+  <section class="progress-tracker item-row">
+    <document-img :document="item" size="38px" />
+    <span class="progress-track-title">{{ item.name }}</span>
+    <span class="progress-track-type">{{ subtitle }}</span>
+    <progress-track :ticks="item.data.current" v-if="item.data.hasTrack" />
+    <clock
+      v-if="item.data.hasClock"
+      class="nogrow"
+      :size="50"
+      :wedges="item.data.clockMax"
+      :ticked="item.data.clockTicks"
+      @click="setClock"
+    />
+    <section class="progress-track-controls">
+      <rank-hexes :current="item.data.rank" @click="rankClick" />
+      <icon-button v-if="editMode" icon="trash" @click="destroy" :tooltip="$t('IRONSWORN.DeleteItem')" />
+      <icon-button icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
+      <icon-button v-if="editMode" :icon="completedIcon" @click="toggleComplete" :tooltip="completedTooltip" />
+      <icon-button
+        v-if="editMode && item.data.hasTrack"
+        icon="caret-left"
+        @click="retreat"
+        :tooltip="$t('IRONSWORN.UnmarkProgress')"
+      />
+      <icon-button
+        v-if="item.data.hasTrack"
+        icon="caret-right"
+        @click="advance"
+        :tooltip="$t('IRONSWORN.MarkProgress')"
+      />
+      <isicon-button
+        v-if="item.data.hasTrack"
+        icon="d10-tilt"
+        @click="fulfill"
+        :tooltip="$t('IRONSWORN.ProgressRoll')"
+      />
+      <icon-button
+        class="btn-star"
+        icon="star"
+        :solid="item.data.starred"
+        :tooltip="$t('IRONSWORN.StarProgress')"
+        @click="toggleStar"
+        v-if="showStar"
+      />
+    </section>
+  </section>
 </template>
 
 <style lang="less">
 .progress-tracker {
-  div.item-row {
-    padding-left: 0;
-  }
-  h5.vertical-v2 {
-    padding-right: 2px;
+  display: grid;
+  gap: 0.25em 0.5em;
+  grid-template-columns: min-content max-content 1fr max-content;
+  grid-template-rows: max-content max-content;
+  grid-template-areas:
+    'type img title controls'
+    'type img track track';
+}
+.progress-track-title {
+  grid-area: title;
+}
+.progress-track-type {
+  grid-area: type;
+}
+.doc-img {
+  grid-area: img;
+}
+.progress-track {
+  grid-area: track;
+}
+.progress-track-controls {
+  grid-area: controls;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: end;
+  align-items: end;
+}
+
+.progress-tracker {
+  .progress-track-type {
+    writing-mode: vertical-lr;
     margin: 0;
     font-weight: normal;
+    flex-grow: 0;
+  }
+  .doc-img {
+    flex-grow: 0;
+  }
+  div.item-row {
+    padding-left: 0;
   }
 }
 </style>

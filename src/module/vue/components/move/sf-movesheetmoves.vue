@@ -6,48 +6,18 @@
       <icon-button icon="times-circle" @click="clearSearch"></icon-button>
       <icon-button icon="compress-alt" @click="collapseAll"></icon-button>
     </form>
-    <!-- TODO: refactor accordion component for generic use -->
-    <ul v-if="searchQuery" role="menu" class="accordion foundry-items">
-      <!-- if there's a search query, show only matched moves, with no category hierarchy -->
-      <li
-        role="menuitem"
-        class="movesheet-row"
-        v-for="move of searchResults"
-        :key="move.displayName"
-        :actor="actor"
-        :move="move"
-      >
-        <sf-moverow class="movesheet-row move-text" role="menuitem" @moveclick="highlightMove" />
-      </li>
-    </ul>
-    <ul v-else role="menu" class="accordion foundry-items">
-      <li role="menuitem" class="movesheet-row" v-for="category of categories" :key="category.$id">
-        <article class="move-category">
-          <h1 class="h3 move-category-title">
-            {{ category.displayName }}
-          </h1>
-          <ul>
-            <li v-for="move of category.moves" :key="move.displayName + 'listitem'">
-              <sf-moverow
-                :key="move.displayName"
-                :actor="actor"
-                :move="move"
-                @moveclick="highlightMove"
-                ref="allmoves"
-              />
-            </li>
-          </ul>
-        </article>
-      </li>
-    </ul>
+
+    <move-leaflist v-if="searchQuery" :actor="actor" :moves="searchResults" />
+
+    <tree-moves v-else :categories="categories" :actor="actor" />
   </article>
 </template>
 
 <style lang="less">
 .moves-overview {
   .move-category {
-    .move-category-title {
-      margin: 0.5rem 0 0.3rem;
+    border: 1px solid;
+    .expand-toggle {
     }
     & > ul {
       padding-left: 0;
@@ -59,7 +29,8 @@
       }
     }
   }
-  [role='menuitem'] {
+  [role^='treeitem'],
+  [role*=' treeitem'] {
     flex-grow: 0;
   }
 }
@@ -88,7 +59,7 @@
 </style>
 
 <script>
-import { createStarforgedMoveTree } from '../../features/custommoves'
+import { createStarforgedMoveTree } from '../../../features/custommoves'
 
 export default {
   props: {

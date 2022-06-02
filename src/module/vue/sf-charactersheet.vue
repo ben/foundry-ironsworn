@@ -7,11 +7,13 @@
     <section class="condition-meters">
       <condition-meter
         v-for="meter in [health, spirit, supply]"
+        :tooltip="`Roll +${meter.attr}`"
         :key="meter.attr"
         :attr="meter.attr"
         :actor="actor"
         :min="meter.min"
         :max="meter.max"
+        :current="actor.data[meter.attr]"
       >
         {{ game.i18n.localize(meter.i18nLabelKey) }}
       </condition-meter>
@@ -45,6 +47,7 @@
   .momentum-widget {
     grid-column: 1;
     grid-row: span 2;
+    // height: max-content;
     .margin-left();
   }
 
@@ -61,7 +64,9 @@
       .vertical-v2();
     }
     .condition-meter {
-      .flexrow();
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
       flex-grow: 0;
       .resource-meter-title {
         text-align: start;
@@ -73,22 +78,32 @@
       }
     }
     .resource-meter {
-      .flexcol();
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
       min-width: 50px;
       flex-wrap: nowrap;
+      flex-grow: 0;
     }
   }
   .tabbed-panels {
     grid-row: 3;
     grid-column: 2;
-    [role='tablist'] {
-      .flexrow();
+    [role^='tablist'],
+    [role*=' tablist'] {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
       height: max-content;
     }
-    [role='tabpanel'] {
+    [role^='tabpanel'],
+    [role*=' tabpanel'] {
       margin: 0.5rem;
     }
-    [role='tab'] {
+    [role='tab'],
+    [role^='tab '],
+    [role*=' tab'] {
       .stripButton();
       flex: 1 1 0;
       border-top: 1px solid;
@@ -108,7 +123,11 @@
   .condition-meters {
     grid-column: 3;
     grid-row: span 2;
-    .flexcol();
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     .margin-right();
     .fake-hr-children(1px solid, 7px);
   }

@@ -1,18 +1,27 @@
 <template>
-  <div class="player-assets flexcol ironsworn__drop__target" data-drop-type="asset">
-    <transition-group name="slide" tag="div" class="nogrow">
-      <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
+  <itemlist-page class="assets-page ironsworn__drop__target" data-drop-type="asset">
+    <transition-group name="slide" tag="foundryitem-list" class="player-assets">
+      <foundry-listitem class="item-asset player-asset" v-for="(asset, i) in assets" :key="asset._id">
         <order-buttons v-if="editMode" :i="i" :length="assets.length" @sortUp="sortUp" @sortDown="sortDown" />
         <asset :actor="actor" :asset="asset" />
-      </div>
+      </foundry-listitem>
     </transition-group>
-    <div class="flexrow nogrow compendium-shortcut">
-      <btn-compendium compendium="starforgedassets">
-        {{ $t('IRONSWORN.Assets') }}
-      </btn-compendium>
-    </div>
-  </div>
+    <itemlist-controls
+      :actor="actor"
+      :progressTypes="[]"
+      :compendiumTypes="[{ name: 'starforgedassets', i18n: 'Assets' }]"
+    >
+    </itemlist-controls>
+  </itemlist-page>
 </template>
+
+<style lang="less">
+.player-asset {
+  gap: 0.5rem;
+  border: 1px solid lightgray;
+  padding: 0.5rem;
+}
+</style>
 
 <script>
 import { sortBy } from 'lodash'

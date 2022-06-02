@@ -1,5 +1,6 @@
 <template>
   <img
+    class="doc-img"
     :src="document.img"
     :title="document.name"
     :style="style"

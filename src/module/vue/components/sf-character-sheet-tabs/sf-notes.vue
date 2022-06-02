@@ -1,8 +1,13 @@
 <template>
-  <div class="flexcol">
+  <article class="notes-page flexcol">
     <quill-editor class="notes" v-model="actor.data.notes" />
-  </div>
+  </article>
 </template>
+
+<style lang="less">
+.notes-page {
+}
+</style>
 
 <script>
 import { debounce } from 'lodash'

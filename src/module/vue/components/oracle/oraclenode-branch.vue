@@ -31,7 +31,7 @@
 </template>
 
 <style lang="less">
-@import '../../../styles/mixins.less';
+@import '../../../../styles/mixins.less';
 .oracle-node-branch {
   .toggle {
   }

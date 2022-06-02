@@ -21,7 +21,7 @@
 </template>
 
 <style lang="less">
-@import '../../../styles/fonts.less';
+@import '../../../../styles/fonts.less';
 .oracle-tree {
   gap: 4px;
   & > .oracle-node-branch {
@@ -34,8 +34,8 @@
 </style>
 
 <script>
-import { findOracleWithIntermediateNodes } from '../../dataforged'
-import { createStarforgedOracleTree } from '../../features/customoracles'
+import { findOracleWithIntermediateNodes } from '../../../dataforged'
+import { createStarforgedOracleTree } from '../../../features/customoracles'
 
 export default {
   props: {

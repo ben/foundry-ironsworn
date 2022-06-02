@@ -1,10 +1,11 @@
 <template>
   <section class="condition-meter">
     <btn-actionroll
+      v-if="!embedButtonInBar"
       class="resource-meter-title h4"
       :actor="actor"
       :attr="attr"
-      :tooltip="`Roll +${attr}`"
+      :tooltip="tooltip"
       :item="item"
       :id="`button-${conditionMeterId}`"
     >
@@ -16,9 +17,22 @@
       :attr="attr"
       :min="min"
       :max="max"
+      :current="current"
       :id="conditionMeterId"
       :aria-labelledby="`button-${conditionMeterId}`"
-    />
+    >
+      <btn-actionroll
+        v-if="embedButtonInBar"
+        :tooltip="tooltip"
+        class="resource-meter-title h4"
+        :actor="actor"
+        :attr="attr"
+        :item="item"
+        :id="`button-${conditionMeterId}`"
+      >
+        <slot></slot>
+      </btn-actionroll>
+    </resource-meter>
   </section>
 </template>
 
@@ -31,12 +45,17 @@
 <script>
 export default {
   props: {
+    embedButtonInBar: {
+      type: Boolean,
+      default: false,
+    },
     actor: Object,
     attr: String,
     item: Object, // optional. if present, the item's attribute will be used instead of the actor's
     min: Number,
     max: Number,
-    asset: Object,
+    tooltip: String,
+    current: Number,
   },
   computed: {
     conditionMeterId() {

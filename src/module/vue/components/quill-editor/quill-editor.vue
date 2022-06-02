@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="`ql-drag-container `+cssClasses"
+    :class="`ql-drag-container ` + cssClasses"
     @dragenter="dragHandler($event, true)"
     @dragover="dragHandler($event, true)"
     @dragleave="dragHandler($event, false)"
@@ -18,14 +18,17 @@
 </template>
 
 <style lang="less">
-@import "../../../../styles/mixins.less";
+@import '../../../../styles/mixins.less';
 .quillWrapper {
-  .flexcol();
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   height: 100%;
   width: 100%;
 }
 .ql-drag-container {
-  border: 1px solid black
+  border: 1px solid black;
 }
 .ql-container {
   font-family: var(--font-primary) !important;
@@ -67,14 +70,14 @@ export default {
 
     toolbarOptions: {
       type: Array,
-      default (){
+      default() {
         return
-          [
-            [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
-            [{ list: 'ordered' }, { list: 'bullet' }],
-            ['link', 'image'],
-            ['clean'],
-          ]
+        ;[
+          [{ header: [false, 1, 2, 3, 4] }, 'bold', 'italic', 'underline'],
+          [{ list: 'ordered' }, { list: 'bullet' }],
+          ['link', 'image'],
+          ['clean'],
+        ]
       },
     },
   },
@@ -97,10 +100,7 @@ export default {
                   type: 'image',
                   callback(path) {
                     const range = quill.getSelection(true)
-                    const delta = new Delta()
-                      .retain(range.index)
-                      .delete(range.length)
-                      .insert({ image: path })
+                    const delta = new Delta().retain(range.index).delete(range.length).insert({ image: path })
                     quill.updateContents(delta, 'user')
                   },
                 }).render(true)
@@ -127,10 +127,7 @@ export default {
 
       const quill = this.$refs.quilleditor.quill
       const range = quill.getSelection(true)
-      const delta = new Delta()
-        .retain(range.index)
-        .delete(range.length)
-        .insert({ foundrylink: data })
+      const delta = new Delta().retain(range.index).delete(range.length).insert({ foundrylink: data })
       await quill.updateContents(delta, 'user')
 
       ev.preventDefault()

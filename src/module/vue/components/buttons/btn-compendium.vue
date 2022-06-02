@@ -1,6 +1,5 @@
 <template>
   <icon-button class="btn-compendium" icon="atlas" @click="openCompendium">
-    <!-- {{ $t('IRONSWORN.Assets') }} -->
     <slot></slot>
   </icon-button>
 </template>
@@ -14,7 +13,7 @@ export default {
   },
   methods: {
     async openCompendium() {
-      const pack = await game.packs?.get(`foundry-ironsworn.${this.compendium}`)
+      const pack = game.packs?.get(`foundry-ironsworn.${this.compendium}`)
       pack?.render(true)
     },
   },
