@@ -3,6 +3,7 @@
 ## In progress
 
 - Rename "Foe" to "NPC" in new-actor dialog
+- Avoid showing the "Housekeeping" warnings when first starting a new world
 
 ## 1.15.12
 

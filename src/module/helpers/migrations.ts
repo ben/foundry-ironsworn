@@ -82,8 +82,12 @@ export async function runDataMigrations() {
   let currentVersion = game.settings.get('foundry-ironsworn', 'data-version') as number
   if (currentVersion >= NEWEST_VERSION) return
 
+  const showWarnings = currentVersion >= 1 // Don't show these for a brand-new world
+
   try {
-    ui.notifications?.warn('Doing some system housecleaning, please wait...', { permanent: true })
+    if (showWarnings) {
+      ui.notifications?.warn('Doing some system housecleaning, please wait...')
+    }
 
     while (currentVersion < NEWEST_VERSION) {
       await MIGRATIONS[currentVersion]()
@@ -92,10 +96,15 @@ export async function runDataMigrations() {
 
     // All done
     game.settings.set('foundry-ironsworn', 'data-version', NEWEST_VERSION)
-    ui.notifications?.warn('All done! Carry on.', { permanent: true })
+    if (showWarnings) {
+      ui.notifications?.warn('All done! Carry on.')
+    }
   } catch (e) {
-    ui.notifications?.error("Whoops! That didn't work at all. Try reloading your browser to run it again.", {
-      permanent: true,
-    })
+    ui.notifications?.error(
+      'Well crap, data migration ran into a problem. Try reloading your browser to run it again.',
+      {
+        permanent: true,
+      }
+    )
   }
 }
