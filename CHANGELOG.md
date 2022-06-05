@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Rename "Foe" to "NPC" in new-actor dialog
+
 ## 1.15.12
 
 - Bump Dataforged and import new Sundered Isles assets ([#378](https://github.com/ben/foundry-ironsworn/pull/378))
