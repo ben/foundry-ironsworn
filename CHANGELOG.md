@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Propagate region setting from location to scene
+
 ## 1.15.13
 
 - Rename "Foe" to "NPC" in new-actor dialog
