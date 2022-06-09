@@ -86,11 +86,11 @@ export class IronswornHandlebarsHelpers {
       const [challenge1, challenge2] = challengeRolls(this.roll).map((x) => x.total)
       const match = challenge1 === challenge2
       if (actionTotal <= Math.min(challenge1, challenge2)) {
-        if (match) return game.i18n.localize('IRONSWORN.Complication')
+        if (match) return game.i18n.localize('IRONSWORN.MissMatch')
         return game.i18n.localize('IRONSWORN.Miss')
       }
       if (actionTotal > Math.max(challenge1, challenge2)) {
-        if (match) return game.i18n.localize('IRONSWORN.Opportunity')
+        if (match) return game.i18n.localize('IRONSWORN.StrongHitMatch')
         return game.i18n.localize('IRONSWORN.StrongHit')
       }
       return game.i18n.localize('IRONSWORN.WeakHit')

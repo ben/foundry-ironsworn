@@ -91,10 +91,10 @@ function calculateHitType(action: number, challenge1: number, challenge2: number
 
 function calculateHitTypeText(type: HIT_TYPE, match: boolean) {
   if (type === HIT_TYPE.MISS) {
-    return game.i18n.localize(match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss')
+    return game.i18n.localize(match ? 'IRONSWORN.MissMatch' : 'IRONSWORN.Miss')
   }
   if (type === HIT_TYPE.STRONG) {
-    return game.i18n.localize(match ? 'IRONSWORN.Opportunity' : 'IRONSWORN.StrongHit')
+    return game.i18n.localize(match ? 'IRONSWORN.StrongHitMatch' : 'IRONSWORN.StrongHit')
   }
   return game.i18n.localize('IRONSWORN.WeakHit')
 }
