@@ -3,6 +3,7 @@
 ## In progress
 
 - Propagate region setting from location to scene
+- SF theme: make journal editing more humane
 
 ## 1.15.13
 
