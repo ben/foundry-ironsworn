@@ -3,7 +3,7 @@
   <button
     class="clickable block stack-row asset-exclusive-option"
     type="button"
-    :class="selectedClass"
+    :aria-selected="opt.selected"
     @click="$emit('click')"
   >
     {{ opt.name }}
@@ -14,14 +14,6 @@
 export default {
   props: {
     opt: Object,
-  },
-
-  computed: {
-    selectedClass() {
-      return {
-        selected: this.opt.selected,
-      }
-    },
   },
 }
 </script>

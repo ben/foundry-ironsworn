@@ -7,7 +7,7 @@
 
     <div v-if="foe">
       <div class="flexrow nogrow">
-        <rank-hexes :current="foe.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
+        <challengerank-pips :current="foe.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
         <h4>{{ rankText }}</h4>
         <icon-button icon="trash" @click="clearProgress" />
         <icon-button icon="caret-right" @click="markProgress" />

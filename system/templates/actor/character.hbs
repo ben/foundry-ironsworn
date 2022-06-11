@@ -46,7 +46,7 @@
   <div class="flexrow">
     <div class="flexrow track">
       {{#each (progressCharacters data.data.current)}}
-      <div class="flexcol track-box">{{{this}}}</div>
+      <div class="flexcol progress-box">{{{this}}}</div>
       {{/each}}
     </div>
   </div>
@@ -70,7 +70,7 @@
   </div>
   <div class="flexrow track">
     {{#each (progressCharacters bonds.count)}}
-    <div class="flexcol track-box">{{{this}}}</div>
+    <div class="flexcol progress-box">{{{this}}}</div>
     {{/each}}
   </div>
 </div>
@@ -206,7 +206,7 @@
                       <div class="flexrow track">
                         {{#rangeEach from=0 to=data.data.track.max
                         current=data.data.track.current}}
-                        <div class="track-box clickable block ironsworn__assettrack__value
+                        <div class="progress-box clickable block ironsworn__assettrack__value
                                                   {{#if isCurrent}} selected {{/if}}
                                                 " data-item="{{id}}" data-value={{value}}>
                           {{value}}

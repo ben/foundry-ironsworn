@@ -1,0 +1,3 @@
+<template>
+  <svg></svg>
+</template>

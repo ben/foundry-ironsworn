@@ -1,18 +1,18 @@
 <template>
-  <section :class="classes" @click="click">
+  <component class="attr-box block text icon-bg-hover" :is="element" :actor="actor" :attr="attr">
     <span class="attr-name">{{ $t(i18nLabelKey) }}</span>
     <section class="attr-spinner">
       <button v-if="editMode" type="button" class="clickable text" @click="decrement">&minus;</button>
-      <!-- TODO: refactor as a spinner component -->
       <span class="attr-value">{{ actor.data[attr] }}</span>
       <button v-if="editMode" type="button" class="clickable text" @click="increment">&plus;</button>
     </section>
-  </section>
+  </component>
 </template>
 <style lang="less">
-@import '../../../../styles/mixins.less';
 @import '../../../../styles/fonts.less';
-.attr-box {
+
+button.attr-box,
+div.attr-box {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -26,27 +26,16 @@
   gap: 0.25rem;
   .text-display();
   //
-  &.bg-die {
-    // TODO: refactor as background mask mixin
-    // isicon-d10-tilt
-    .stencil(fade(@fillColor,0), 'system/assets/d10-tilt-mask.svg',-2);
-    &:hover {
-      transition: background-color 0.4s ease;
-      opacity: 0.2;
-      .stencil(fade(@fillColor,0.2), 'system/assets/d10-tilt-mask.svg',-2);
-    }
-  }
   .attr-name {
     font-size: var(--font-size-12);
   }
   .attr-spinner {
-    justify-content: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-flow: row nowrap;
     .attr-value {
       .text-display();
       font-size: var(--font-size-20);
-    }
-    button {
-      .simpleButton();
     }
   }
 }
@@ -60,6 +49,13 @@ export default {
   },
 
   computed: {
+    element() {
+      if (this.editMode) {
+        return 'div'
+      } else {
+        return 'btn-actionroll'
+      }
+    },
     classes() {
       return {
         'attr-box': true,

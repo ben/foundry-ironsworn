@@ -29,7 +29,7 @@
         <div class="nogrow" v-if="item.data.hasTrack">
           <!-- RANK -->
           <div class="progress-track-rank flexrow nogrow">
-            <rank-hexes :current="item.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
+            <challengerank-pips :current="item.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
             <h4>{{ rankText }}</h4>
             <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
             <icon-button icon="play" @click="markProgress" />

@@ -8,7 +8,7 @@
 
     <!-- RANK -->
     <div class="flexrow nogrow">
-      <rank-hexes :current="actor.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
+      <challengerank-pips :current="actor.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
       <h4>{{ rankText }}</h4>
       <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
       <icon-button icon="play" @click="markProgress" />
@@ -46,7 +46,7 @@
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Delve the Depths" />
-        <div class="box flexrow clickable block" :class="{ disabled: !hasThemeAndDomain }" @click="randomFeature">
+        <div class="box flexrow clickable block" :aria-disabled="!hasThemeAndDomain" @click="randomFeature">
           <h4>{{ $t('IRONSWORN.Feature') }}</h4>
         </div>
         <site-movebox :actor="actor" move="Reveal a Danger" :disabled="!hasThemeAndDomain" />

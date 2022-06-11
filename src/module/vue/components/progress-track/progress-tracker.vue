@@ -1,21 +1,21 @@
 <!-- formerly "progress-box". renamed because "progress box" refers to a specific mechanical element in IS/SF (the boxes that comprise a progress track), so the name should be reserved for that. "progress-tracker" is more descriptive, and has a relationship to "progress-track"
 -->
 <template>
-  <section class="progress-tracker item-row">
+  <article class="progress-tracker" :class="classes">
     <document-img :document="item" size="38px" />
-    <span class="progress-track-title">{{ item.name }}</span>
-    <span class="progress-track-type">{{ subtitle }}</span>
+    <h1 class="progress-track-title">{{ item.name }}</h1>
+    <span class="progress-track-type subtitle">{{ subtitle }}</span>
     <progress-track :ticks="item.data.current" v-if="item.data.hasTrack" />
     <clock
       v-if="item.data.hasClock"
-      class="nogrow"
       :size="50"
       :wedges="item.data.clockMax"
       :ticked="item.data.clockTicks"
       @click="setClock"
     />
+    <!-- <challengerank-pips :svg="challengeRankSvg" :current="item.data.rank" @click="rankClick" /> -->
+    <challenge-rank :pipSvg="challengeRankSvg" :item="item" :actor="actor" />
     <section class="progress-track-controls">
-      <rank-hexes :current="item.data.rank" @click="rankClick" />
       <icon-button v-if="editMode" icon="trash" @click="destroy" :tooltip="$t('IRONSWORN.DeleteItem')" />
       <icon-button icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
       <icon-button v-if="editMode" :icon="completedIcon" @click="toggleComplete" :tooltip="completedTooltip" />
@@ -37,46 +37,99 @@
         @click="fulfill"
         :tooltip="$t('IRONSWORN.ProgressRoll')"
       />
-      <icon-button
-        class="btn-star"
-        icon="star"
-        :solid="item.data.starred"
-        :tooltip="$t('IRONSWORN.StarProgress')"
-        @click="toggleStar"
-        v-if="showStar"
-      />
     </section>
-  </section>
+    <icon-button
+      class="btn-star"
+      icon="star"
+      :solid="item.data.starred"
+      :tooltip="$t('IRONSWORN.StarProgress')"
+      @click="toggleStar"
+      v-if="showStar"
+    />
+  </article>
 </template>
 
 <style lang="less">
 .progress-tracker {
+  @iconSize: 1.5rem;
   display: grid;
-  gap: 0.25em 0.5em;
-  grid-template-columns: min-content max-content 1fr max-content;
-  grid-template-rows: max-content max-content;
-  grid-template-areas:
-    'type img title controls'
-    'type img track track';
-}
-.progress-track-title {
-  grid-area: title;
-}
-.progress-track-type {
-  grid-area: type;
-}
-.doc-img {
-  grid-area: img;
-}
-.progress-track {
-  grid-area: track;
-}
-.progress-track-controls {
-  grid-area: controls;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: end;
-  align-items: end;
+  grid-template-columns: min-content (@iconSize*2) min-content 1fr @iconSize;
+  grid-template-rows: @iconSize @iconSize 1fr;
+  grid-auto-columns: min-content;
+  grid-auto-flow: row;
+
+  .progress-track-type {
+    grid-column: 1;
+    grid-row-end: span 3;
+    grid-row-start: 1;
+  }
+  .doc-img {
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: span 2;
+    align-self: center;
+    margin-right: 0.25rem;
+    background-color: var(--color-midtone);
+    border-radius: 0.25rem;
+  }
+  .challenge-rank {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .btn-star {
+    grid-row: 2;
+    grid-column: 5;
+    justify-self: end;
+  }
+  .progress-track-title {
+    align-self: end;
+    grid-row: 2;
+    grid-column-start: 3;
+    grid-column-end: span 2;
+    font-size: var(--font-size-16);
+    font-family: var(--font-compact);
+    text-transform: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    font-weight: 400;
+  }
+  .progress-track {
+    grid-row: 3;
+    grid-column-start: 2;
+    grid-column-end: span 4;
+    align-self: end;
+    margin-top: 0.25rem;
+  }
+  .progress-track-controls {
+    grid-row: 1;
+    grid-column-start: 4;
+    grid-column-end: span 2;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+  }
+  .clock ~ .progress-track-controls {
+    grid-column-start: 4;
+    grid-column-end: span 3;
+  }
+  .progress-track-type,
+  .progress-track-title {
+    line-height: 1;
+  }
+  .clock {
+    grid-row-start: 2;
+    grid-row-end: span 2;
+    flex-grow: 0;
+    margin-left: 0.25rem;
+    align-self: end;
+    margin-right: -0.35rem;
+    margin-bottom: -0.35rem;
+    // & ~ .progress-track-controls {
+    //   grid-column-start: 5;
+    //   grid-column-end: span 3;
+    // }
+  }
 }
 
 .progress-tracker {
@@ -101,9 +154,16 @@ export default {
     actor: { type: Object, required: true },
     item: { type: Object, required: true },
     showStar: Boolean,
+    challengeRankSvg: Object,
   },
 
   computed: {
+    classes() {
+      if (this.item.data.hasClock) {
+        return 'has-clock'
+      }
+      return ''
+    },
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
@@ -137,8 +197,8 @@ export default {
       const titleKey = `IRONSWORN.Delete${this.$capitalize(item?.type || '')}`
 
       Dialog.confirm({
-        title: game.i18n.localize(titleKey),
-        content: `<p><strong>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</strong></p>`,
+        title: $t(titleKey),
+        content: `<p><strong>${$t('IRONSWORN.ConfirmDelete')}</strong></p>`,
         yes: () => item?.delete(),
         defaultYes: false,
       })

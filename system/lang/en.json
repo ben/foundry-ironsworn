@@ -210,7 +210,18 @@
       "AddBond": "Added a bond",
       "LostBond": "Lost a bond",
       "completedMarked": "marked completed",
-      "completedUnmarked": "unmarked completed"
+      "completedUnmarked": "unmarked completed",
+      "conditionMeter": "condition meter",
+      "conditionMeters": "condition meters",
+      "meter": "{meterType} meter",
+      "rollPlusStat": "roll +{stat}",
+      "stat": "stat",
+      "stats": "stats",
+      "impact": "impact",
+      "impacts": "impacts",
+      "actionRollAdd": "add",
+      "actionRollAdds": "adds",
+      "action roll": "action roll"
     },
     "Settings": {
       "Theme": {

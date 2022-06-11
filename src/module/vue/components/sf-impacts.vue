@@ -26,7 +26,7 @@
 </template>
 
 <style lang="less">
-@import '../../../styles/styles.less';
+// @import '../../../styles/styles.less';
 @import '../../../styles/mixins.less';
 .sf-character-sheet {
   .impacts {

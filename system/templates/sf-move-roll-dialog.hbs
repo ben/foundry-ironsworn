@@ -5,26 +5,27 @@ roll +{{lookup Using 0}}
 roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
 {{/if}}
 {{/inline}}
+<dialog>
+  <form>
+    <div>{{{enrichMarkdown move.data.data.Trigger.Text}}}</div>
 
-<form>
-  <div>{{{enrichMarkdown move.data.data.Trigger.Text}}}</div>
-
-  {{#if move.data.data.Trigger.Options}}
-  <ul>
-    {{#each move.data.data.Trigger.Options}}
-    {{#if Text}}
-    <li>
-      {{ Text }}: <strong>{{>statDescription}}</strong>
-    </li>
+    {{#if move.data.data.Trigger.Options}}
+    <ul>
+      {{#each move.data.data.Trigger.Options}}
+      {{#if Text}}
+      <li>
+        {{ Text }}: <strong>{{>statDescription}}</strong>
+      </li>
+      {{/if}}
+      {{/each}}
+    </ul>
     {{/if}}
-    {{/each}}
-  </ul>
-  {{/if}}
 
-  <hr>
+    <hr>
 
-  <div class="form-group">
-    <label>{{localize 'IRONSWORN.Bonus'}}</label>
-    <input type="number" step="1" name="bonus" />
-  </div>
-</form>
+    <div class="form-group">
+      <label>{{localize 'IRONSWORN.Bonus'}}</label>
+      <input type="number" step="1" value="0" name="bonus" />
+    </div>
+  </form>
+</dialog>

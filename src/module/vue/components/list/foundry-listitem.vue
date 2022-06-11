@@ -8,12 +8,14 @@
 
 <style lang="less">
 .foundry-item {
-  flex-grow: 0;
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
-  border: 1px solid lightgrey;
+  border: 1px solid var(--color-bg-alt);
   border-radius: 0.25rem;
   padding: 0.5rem;
+  & > *:not(.item-order-controls) {
+    flex-grow: 1;
+  }
 }
 </style>

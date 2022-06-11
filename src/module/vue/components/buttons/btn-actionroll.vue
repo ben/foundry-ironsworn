@@ -1,7 +1,7 @@
 <template>
-  <isicon-button @click="rollStat()" :title="tooltip" class="action-roll" :class="attr" icon="d10-tilt">
+  <svgicon-button @click="rollStat()" :title="tooltip" class="opens-dialog action-roll" :class="attr" icon="d10-tilt">
     <slot></slot>
-  </isicon-button>
+  </svgicon-button>
 </template>
 
 <script>
@@ -15,7 +15,12 @@ export default {
   computed: {},
   methods: {
     rollStat() {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat: this.attr, asset: this.$item })
+      console.log(this.attr, this.item)
+      CONFIG.IRONSWORN.RollDialog.show({
+        actor: this.$actor,
+        stat: this.attr,
+        asset: this.item ? this.$item : undefined,
+      })
     },
   },
 }

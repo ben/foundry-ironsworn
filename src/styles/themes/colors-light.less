@@ -1,194 +1,149 @@
+@import '../brand-colors.less';
+
 .colors-light {
-  --text-color: black;
-  --background-color: white;
-  --dark-color: #888;
-  --medium-color: darkgray;
-  --light-color: #ccc;
-  --accent-color: palegoldenrod;
+  @color-fg: #000;
+  @color-bg: #fff;
+  @color-bg-alt: @sf-gray-lt;
+  @color-bg-alt-2: @sf-gray-dk;
+  @color-fg-lightest: #949494; // contrast ~3.03:1 vs #fff background
+  // these meets the WCAG AA minimum contrast for large text + graphical elements, but not small text (which is most text on the sheet. this includes placeholder text!
+  @color-bg-darkest: #5a5a5a; // contrast ~3.03 (against #000 foreground)
+  // these meets the WCAG AA minimum contrast for large text + graphical elements, but not small text (which is most text on the sheet. this includes placeholder text!
 
-  input::placeholder {
-    color: var(--medium-color);
-  }
+  @color-midtone: #777;
+  // this meets the WCAG AA minimum contrast for small text, on both light and dark grounds.
 
-  input.highlight:focus {
-    background-color: var(--text-color);
-    color: var(--background-color);
-  }
+  @color-accent: @sf-red;
+  @color-highlight: palegoldenrod;
 
+  --color-fg: @color-fg;
+  --color-bg: @color-bg;
+  --color-bg-alt: @color-bg-alt;
+  --color-bg-alt-2: @color-bg-alt-2;
+  --color-midtone: @color-midtone;
+  --color-accent: @color-accent;
+  --color-dark: #888;
+  --color-light: #ccc;
+
+  --color-highlight: @color-highlight;
+
+  --color-widget-fill: @color-midtone;
+  // "soft" inverted to suggest a low-opacity preview of the new choice
+  --color-fg-hover-link: var(--color-accent);
+  --color-fg-hover-preview: var(--color-bg);
+  --color-bg-hover-preview: var(--color-midtone);
+  --color-fg-active: var(--color-bg);
+  --color-bg-active: var(--color-accent);
+
+  --border-radius-sm: 5px;
+  --border-radius-lg: 7px;
+
+  // basic
   .window-content {
-    background-color: var(--background-color);
+    color: var(--color-fg);
+    background-color: var(--color-bg);
     background-image: none;
+    border-color: currentColor;
   }
 
-  .sheet-area {
-    border-color: var(--medium-color);
+  .subtitle {
+    opacity: 0.5;
+    font-size: 90%;
+  }
+  input::placeholder {
+    opacity: 0.5;
   }
 
-  .margin-left,
-  .margin-right {
-    border-color: var(--text-color);
-    h1 {
-      border-color: var(--text-color);
-    }
-  }
-
-  .resource-meter {
-    border-color: var(--text-color);
+  .inverse {
+    background-color: var(--color-fg);
+    color: var(--color-bg);
   }
 
   .edit {
-    border-color: var(--text-color);
-
     &.editing {
-      background-color: var(--medium-color);
+      background-color: var(--color-midtone);
     }
   }
 
   .inset {
-    border-color: var(--medium-color);
+    border-color: var(--color-midtone);
   }
 
-  .xp-track .xp-box {
-    border-color: var(--text-color);
-  }
-
-  .item-row {
-    border-color: var(--text-color);
-    background-color: var(--background-color);
-
+  .item-row,
+  .movesheet-row {
     &.highlighted {
-      background-color: var(--accent-color);
-    }
-  }
-
-  .movesheet-row.highlighted {
-    background-color: var(--accent-color);
-  }
-
-  .progresses .item {
-    border-color: var(--medium-color);
-  }
-
-  [role^='tablist'],
-  [role*=' tablist'] {
-    border-color: var(--medium-color);
-  }
-
-  .foundry-items {
-    ol > h2,
-    ol > .h2 {
-      border-color: var(--background-color);
-      background-color: var(--dark-color);
-      color: var(--background-color);
-    }
-
-    .foundry-item {
-      border-color: var(--medium-color);
-    }
-  }
-
-  .progress {
-    border-color: var(--text-color);
-  }
-
-  .move-title {
-    background-color: var(--background-color);
-    border-color: var(--dark-color);
-  }
-
-  .track-box {
-    stroke: var(--text-color);
-  }
-
-  .rank-pip {
-    fill: transparent;
-    stroke: var(--text-color);
-
-    &.filled {
-      fill: var(--medium-color);
-    }
-  }
-
-  .clickable {
-    &.disabled {
-      color: var(--dark-color);
-
-      &.selected {
-        color: var(--background-color);
-        background-color: var(--text-color);
-      }
-    }
-
-    &:not(.disabled) {
-      &.hover,
-      &:hover {
-        &.block {
-          background-color: var(--light-color);
-        }
-        &.text {
-          color: var(--light-color);
-        }
-        svg,
-        &.svg {
-          fill: var(--light-color);
-        }
-      }
-      &:active {
-        &.block {
-          background: var(--medium-color);
-        }
-        &.text {
-          color: var(--medium-color);
-        }
-        svg,
-        &.svg {
-          fill: var(--medium-color);
-        }
-      }
-      &.selected {
-        &.block,
-        &.text {
-          color: var(--background-color);
-          border-color: var(--text-color);
-          background-color: var(--text-color);
-        }
-        svg,
-        &.svg {
-          fill: var(--text-color);
-        }
-      }
+      background-color: @color-highlight;
     }
   }
 
   .drag-highlight {
-    background-color: var(--medium-color);
+    background-color: var(--color-midtone);
   }
 
-  .stats {
-    .attr-box {
-      border-color: var(--text-color);
+  table tr {
+    &[aria-selected='true'],
+    &.selected {
+      background-color: var(--color-fg);
+      color: var(--color-light);
     }
   }
+  // interactive elements: buttons, etc
 
-  .compact {
-    .bordergroup {
-      border-color: var(--text-color);
+  button[type='button'],
+  .clickable {
+    &.hover,
+    &:hover {
+      &.block {
+        &:not(.opens-dialog) {
+          background-color: var(--color-bg-hover-preview);
+          border-color: var(--color-bg-hover-preview);
+        }
+      }
+      &.text {
+        &.block {
+          &:not(.opens-dialog) {
+            color: var(--color-bg);
+          }
+        }
+        &:not(.block),
+        &.opens-dialog {
+          color: var(--color-fg-hover-link);
+        }
+      }
+      svg,
+      &.svg {
+        fill: var(--color-widget-fill);
+        fill-opacity: 0.25;
+      }
     }
-  }
-
-  .ironsworn-roll {
-    .dice-formula,
-    .dice-total {
-      background-color: var(--background-color);
+    &:active {
+      // TODO
+      // &.block {
+      //   background-color: var(--color-accent);
+      //   color: var(--color)
+      // }
+      // &.text {
+      //   color: var(--color-midtone);
+      // }
+      // svg,
+      // &.svg {
+      //   fill: var(--color-widget-fill);
+      //   fill-opacity: 0.25;
+      // }
     }
-  }
-
-  table tr.selected {
-    background-color: var(--text-color);
-    color: var(--light-color);
-
-    .entity-link {
-      color: var(--text-color);
+    &[aria-selected='true'],
+    &.selected {
+      &.block,
+      &.text {
+        color: var(--color-bg);
+        border-color: var(--color-fg);
+        background-color: var(--color-fg);
+      }
+      svg,
+      &.svg {
+        fill: var(--color-widget-fill);
+        fill-opacity: 1;
+      }
     }
   }
 }

@@ -1,11 +1,5 @@
 <template>
-  <button
-    class="clickable block icon-button"
-    :class="`isicon-${this.icon}`"
-    type="button"
-    @click="click"
-    :title="tooltip"
-  >
+  <button class="icon-button clickable" :class="classes" type="button" @click="click" :title="tooltip">
     <slot></slot>
   </button>
 </template>
@@ -15,8 +9,16 @@ export default {
   props: {
     icon: { type: String, required: true },
     tooltip: String,
+    hoverBg: Boolean,
   },
-
+  computed: {
+    classes() {
+      return {
+        [`isicon-${this.icon}`]: true,
+        ['icon-bg-hover']: this.hoverBg,
+      }
+    },
+  },
   methods: {
     click(event) {
       return this.$emit('click', event)

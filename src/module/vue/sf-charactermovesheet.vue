@@ -3,20 +3,12 @@
 </template>
 
 <style lang="less">
-@import '../../styles/styles.less';
+// @import '../../styles/styles.less';
 .character-move-sheet {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  .vuetab {
-    text-align: center;
-    padding: 5px;
-    border-bottom: 1px solid grey;
-    &.active {
-      background-color: darkgray;
-    }
-  }
   [role^='tablist'],
   [role*=' tablist'] {
     display: flex;
@@ -32,12 +24,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    ul {
-      li {
-        ul {
-        }
-      }
-    }
   }
   .overview {
     flex-grow: 1;

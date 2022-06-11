@@ -77,9 +77,9 @@
         <div
           v-for="oracle of row"
           class="clickable block box"
+          :aria-disabled="oracle.requiresKlass && klassIsNotValid"
           :class="{
             highlighted: oracle.fl && firstLookHighlight,
-            disabled: oracle.requiresKlass && klassIsNotValid,
           }"
           :title="oracle.requiresKlass && klassIsNotValid ? $t('IRONSWORN.RequiresLocationType') : undefined"
           :key="oracle.dfId"

@@ -2,14 +2,14 @@
   <component :is="wrapperElement" class="tabbed-panels">
     <nav role="tablist">
       <button
-        class="vuetab block clickable"
+        v-for="tab in tabs"
+        class="block clickable text"
         role="tab"
         type="button"
-        v-for="tab in tabs"
         :id="`tab-${name}-${tab.titleKey}-${actor._id}`"
         :aria-controls="`tabpanel-${name}-${tab.titleKey}-${actor._id}`"
+        :aria-selected="currentTab === tab"
         :key="tab.titleKey"
-        :class="['clickable', 'block', { selected: currentTab === tab }]"
         @click="currentTab = tab"
       >
         {{ $t(tab.titleKey) }}
@@ -38,7 +38,17 @@
   [role='tab'],
   [role^='tab '],
   [role*=' tab'] {
-    flex-grow: 1;
+    .stripButton();
+    flex: 1 1 0;
+    text-align: center;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    &.active {
+      background-color: darkgray;
+      text-decoration: underline;
+      text-shadow: none;
+    }
   }
   [role^='tablist'],
   [role*=' tablist'] {
@@ -46,6 +56,13 @@
     flex-direction: row;
     justify-content: flex-start;
     flex-grow: 0;
+    height: max-content;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+  }
+  [role^='tabpanel'],
+  [role*=' tabpanel'] {
+    margin: 0.5rem;
   }
 }
 </style>

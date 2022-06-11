@@ -34,14 +34,32 @@
 <style lang="less">
 @import '../../../styles/mixins.less';
 .sheet-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  // display: flex;
+  // flex-direction: row;
+  // justify-content: flex-start;
+  // height: 75px;
+  // gap: 0.25rem;
+
+  .doc-img {
+    margin: 0;
+  }
   .character-vitals {
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
+    gap: 0.125rem;
+    font-size: var(--font-size-14);
+    input[type='text'] {
+      flex-grow: 1;
+    }
+  }
+  .character-bio {
+    flex-grow: 2;
+    resize: none;
+    margin: 0;
+    font-size: var(--font-size-14);
   }
 }
 </style>

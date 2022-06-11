@@ -37,6 +37,8 @@
           v-if="asset.data.track.enabled"
           :embedButtonInBar="true"
           class="asset-meter"
+          orientation="horizontal"
+          :current="asset.data.track.current"
           :actor="actor"
           attr="track"
           min="0"
@@ -118,27 +120,21 @@
     }
   }
   .asset-meter {
-    &.condition-meter {
+    .resource-meter {
       display: flex;
       flex-direction: row;
       justify-content: flex-start;
-      gap: 5px;
+      flex-grow: 1;
+      flex-direction: row;
 
-      .resource-meter {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
+      .action-roll {
+        flex-grow: 0;
+      }
+      .resource-meter-box {
+        width: max-content;
+        min-width: unset;
+        flex-basis: 0;
         flex-grow: 1;
-        flex-direction: row;
-        .action-roll {
-          flex-grow: 0;
-        }
-        .meter-box {
-          width: max-content;
-          min-width: unset;
-          flex-basis: 0;
-          flex-grow: 1;
-        }
       }
     }
   }

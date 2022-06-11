@@ -5,8 +5,8 @@
 @import '../fonts.less';
 
 ::-webkit-scrollbar-thumb {
-  background: var(--dark-color);
-  border-color: var(--medium-color);
+  background: var(--color-dark);
+  border-color: var(--color-midtone);
 }
 
 .theme-starforged {
@@ -32,27 +32,7 @@
     }
   }
 
-  .progress-tracker {
-    margin-top: 1rem;
-    .completed {
-      margin: 0;
-      padding: 0;
-    }
-  }
-
   .progress-tracks {
-    h3 {
-      margin: 5px 0;
-      transition: background-color 0.2s ease;
-      i {
-        width: 15px;
-        text-align: center;
-      }
-
-      &.highlighted {
-        background-color: lightyellow;
-      }
-    }
     .slide-enter-active,
     .slide-leave-active {
       max-height: 106px;

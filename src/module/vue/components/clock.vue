@@ -25,6 +25,7 @@
 
 <style lang="less">
 svg.clock {
+  --color-widget-fill: var(--color-accent);
   pointer-events: fill;
 }
 </style>

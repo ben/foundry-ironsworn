@@ -1,8 +1,8 @@
 <template>
-  <section class="condition-meter">
+  <article class="condition-meter">
     <btn-actionroll
       v-if="!embedButtonInBar"
-      class="resource-meter-title h4"
+      class="resource-meter-title h4 text"
       :actor="actor"
       :attr="attr"
       :tooltip="tooltip"
@@ -12,32 +12,33 @@
       <slot></slot>
     </btn-actionroll>
     <resource-meter
+      :id="conditionMeterId"
       :actor="actor"
       :item="item"
       :attr="attr"
       :min="min"
       :max="max"
       :current="current"
-      :id="conditionMeterId"
+      :orientation="orientation"
       :aria-labelledby="`button-${conditionMeterId}`"
+      :withPlusSigns="false"
     >
       <btn-actionroll
         v-if="embedButtonInBar"
-        :tooltip="tooltip"
-        class="resource-meter-title h4"
+        class="resource-meter-title h4 text"
         :actor="actor"
         :attr="attr"
+        :tooltip="tooltip"
         :item="item"
         :id="`button-${conditionMeterId}`"
       >
         <slot></slot>
       </btn-actionroll>
     </resource-meter>
-  </section>
+  </article>
 </template>
 
 <style lang="less">
-// @import '../../../../styles/mixins.less';
 .condition-meter {
 }
 </style>
@@ -56,6 +57,7 @@ export default {
     max: Number,
     tooltip: String,
     current: Number,
+    orientation: { type: 'vertical' | 'horizontal', default: 'vertical' },
   },
   computed: {
     conditionMeterId() {

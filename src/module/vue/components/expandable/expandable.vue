@@ -6,7 +6,7 @@
       :aria-controls="contentId"
       :id="buttonId"
       class="expand-toggle"
-      :icon="caret"
+      :icon="icon"
       @click="isExpanded = !isExpanded"
     >
       {{ buttonText }}
@@ -61,16 +61,18 @@ export default {
     },
     wrapperTag: { type: String, default: 'section' },
     buttonText: String,
-    startOpen: { type: Boolean, default: false },
+    startExpanded: { type: Boolean, default: false },
+    iconExpanded: { type: String, default: 'caret-down' },
+    iconClosed: { type: String, default: 'caret-right' },
   },
   data() {
     return {
-      isExpanded: this.startOpen,
+      isExpanded: this.startExpanded,
     }
   },
   computed: {
-    caret() {
-      return this.isExpanded ? 'caret-down' : 'caret-right'
+    icon() {
+      return this.isExpanded ? this.iconExpanded : this.iconClosed
     },
     buttonId() {
       return `button-${this.baseId}`

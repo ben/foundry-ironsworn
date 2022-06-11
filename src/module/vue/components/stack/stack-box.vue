@@ -1,5 +1,5 @@
 <template>
-  <div @click="click" :class="classes" :data-resource="stat" :data-value="value">
+  <div @click="click" :class="classes" :data-resource="stat" :data-value="value" :aria-disabled="disabled">
     {{ valueStr }}
   </div>
 </template>
@@ -20,7 +20,6 @@ export default {
         'stack-row': true,
         [this.stat]: true,
         selected: this.selected,
-        disabled: this.disabled,
       }
     },
     valueStr() {

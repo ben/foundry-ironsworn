@@ -3,15 +3,15 @@
   @color-bg: #000000;
   @color-light: lighten(@color-fg, 10%);
   @color-dark: desaturate(darken(@color-fg, 20%), 50%);
-  --background-color: fade(@color-bg, 60%);
+  --color-bg: fade(@color-bg, 60%);
   --dark-overlay: fade(@color-bg, 80%);
   --text-dark-color: @color-dark;
   --text-medium-color: @color-fg;
   --text-light-color: @color-light;
-  --dark-color: fade(@color-dark, 20%);
+  --color-dark: fade(@color-dark, 20%);
   --muted-color: fade(desaturate(darken(@color-fg, 34%), 25%), 60%);
-  --medium-color: fade(@color-dark, 60%);
-  --light-color: fade(darken(desaturate(@color-fg, 60%), 10%), 60%);
+  --color-midtone: fade(@color-dark, 60%);
+  --color-light: fade(darken(desaturate(@color-fg, 60%), 10%), 60%);
   --accent-color: @color-accent;
   --background-tone: fade(@color-bg, 60%);
 }
@@ -21,11 +21,11 @@
   color: var(--text-medium-color);
 
   ::-webkit-scrollbar-thumb {
-    background-color: var(--dark-color);
-    border-color: var(--medium-color);
+    background-color: var(--color-dark);
+    border-color: var(--color-midtone);
   }
   select {
-    border-color: var(--dark-color);
+    border-color: var(--color-dark);
     color: var(--text-medium-color);
   }
 
@@ -34,21 +34,21 @@
   h3,
   .h3 {
     color: var(--text-medium-color);
-    border-bottom-color: var(--light-color);
+    border-bottom-color: var(--color-light);
   }
 
   input,
   textarea {
-    background-color: var(--dark-color);
+    background-color: var(--color-dark);
     color: var(--text-medium-color);
 
     &:focus {
-      box-shadow: 0 0 10px var(--light-color);
+      box-shadow: 0 0 10px var(--color-light);
     }
   }
   // button,
   .button {
-    background-color: var(--dark-color);
+    background-color: var(--color-dark);
     border-color: var(--text-dark-color);
     color: var(--text-dark-color);
 
@@ -59,27 +59,27 @@
   }
 
   hr {
-    border-color: var(--light-color);
+    border-color: var(--color-light);
   }
 
   .window-app {
-    background-color: var(--background-color);
+    background-color: var(--color-bg);
     border-color: var(--text-dark-color);
   }
 
   input::placeholder {
-    color: var(--medium-color);
+    color: var(--color-midtone);
   }
 
   input.highlight:focus {
     box-shadow: 0 0 5px var(--accent-color);
-    background-color: var(--medium-color);
+    background-color: var(--color-midtone);
     color: var(--text-light-color);
   }
 
   .inline-roll {
-    background-color: var(--dark-color);
-    border-color: var(--light-color);
+    background-color: var(--color-dark);
+    border-color: var(--color-light);
 
     &:hover {
       text-shadow: 0 0 8px var(--text-medium-color);
@@ -87,48 +87,36 @@
   }
 
   .window-content {
-    background-color: var(--background-color);
+    background-color: var(--color-bg);
     background-image: none;
     color: var(--text-medium-color);
   }
 
   .sheet-area {
-    border-color: var(--light-color);
+    border-color: var(--color-light);
   }
 
-  .track-box {
+  .progress-box {
     stroke: var(--text-medium-color);
-  }
-
-  .rank-pip {
-    fill: var(--medium-color);
-
-    &.filled {
-      fill: var(--text-medium-color) !important;
-    }
-
-    path {
-      stroke-width: 0;
-    }
   }
 
   .clickable {
     svg,
     &.svg {
-      fill: var(--dark-color);
+      fill: var(--color-dark);
     }
 
-    &.disabled {
-      background-color: var(--dark-color);
-      color: var(--medium-color);
+    &[aria-disabled='true'] {
+      background-color: var(--color-dark);
+      color: var(--color-midtone);
 
       svg,
       &.svg {
-        fill: var(--dark-color);
+        fill: var(--color-dark);
       }
     }
 
-    &:not(.disabled) {
+    &:not([aria-disabled='true']) {
       color: var(--text-dark-color);
 
       &.hover,
@@ -139,15 +127,16 @@
         }
         svg,
         &.svg {
-          fill: var(--medium-color);
+          fill: var(--color-midtone);
         }
       }
 
+      &[aria-selected='true'],
       &.selected {
         &.block,
         &.text {
           color: var(--text-light-color);
-          background-color: var(--medium-color);
+          background-color: var(--color-midtone);
         }
         svg,
         &.svg {
@@ -158,7 +147,7 @@
   }
 
   .drag-highlight {
-    background-color: var(--medium-color);
+    background-color: var(--color-midtone);
   }
 
   .stats {
@@ -168,8 +157,8 @@
   }
 
   .entity-link {
-    background-color: var(--dark-color);
-    border-color: var(--medium-color);
+    background-color: var(--color-dark);
+    border-color: var(--color-midtone);
     color: var(--text-medium-color);
     i {
       color: var(--text-light-color);
@@ -183,7 +172,7 @@
 
 .compact {
   .bordergroup {
-    border-color: var(--light-color);
+    border-color: var(--color-light);
   }
 }
 
@@ -220,12 +209,15 @@
     }
   }
 
-  table tr.selected {
-    background-color: var(--medium-color);
-    color: var(--text-light-color);
+  table tr {
+    &.selected,
+    &[aria-selected='true'] {
+      background-color: var(--color-midtone);
+      color: var(--text-light-color);
 
-    .entity-link {
-      color: var(--text-dark-color);
+      .entity-link {
+        color: var(--text-dark-color);
+      }
     }
   }
 }

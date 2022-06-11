@@ -1,24 +1,27 @@
-<form>
-  {{#if move}}
-  <div>{{{enrichHtml move.Description}}}</div>
-  <hr>
-  {{/if}}
+{{!-- <dialog> should wrap the whole window. unfortunately, foundry wraps dialogs in the semantically-useless <div>, but with "display: contents" that's not insurmountable --}}
+<dialog>
+  <form>
+    {{#if move}}
+    <div>{{{enrichHtml move.Description}}}</div>
+    <hr>
+    {{/if}}
 
-  <div class="form-group">
-    <label>{{localize 'IRONSWORN.Bonus'}}</label>
-    <input type="number" step="1" name="bonus" />
-  </div>
+    <div class="form-group">
+      <label>{{localize 'IRONSWORN.Bonus'}}</label>
+      <input type="number" step="1" value="0" name="bonus" />
+    </div>
 
-  {{#unless actor}}
-  <div class="form-group">
-    <label for="char">{{localize 'IRONSWORN.Character'}}</label>
-    <select name="char">
-      {{#each allCharacters}}
-      <option value="{{id}}" {{#if (eq ../mruCharacter id)}}selected{{/if}}>
-        {{name}}
-      </option>
-      {{/each}}
-    </select>
-  </div>
-  {{/unless}}
-</form>
+    {{#unless actor}}
+    <div class="form-group">
+      <label for="char">{{localize 'IRONSWORN.Character'}}</label>
+      <select name="char">
+        {{#each allCharacters}}
+        <option value="{{id}}" {{#if (eq ../mruCharacter id)}}selected{{/if}}>
+          {{name}}
+        </option>
+        {{/each}}
+      </select>
+    </div>
+    {{/unless}}
+  </form>
+</dialog>

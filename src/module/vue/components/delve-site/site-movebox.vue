@@ -1,5 +1,5 @@
 <template>
-  <div class="site-movebox box flexrow clickable block" :class="{ disabled: disabled }" @click="click">
+  <div class="site-movebox box flexrow clickable block" :aria-disabled="disabled" @click="click">
     <h4 class="site-movebox-title">
       {{ $t(i18nLabelKey) }}
     </h4>

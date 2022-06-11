@@ -1,13 +1,14 @@
 <template>
   <article class="sf-character-sheet">
     <sf-characterheader :actor="actor" />
-    <momentum :actor="actor" />
-    <stats :actor="actor" />
+    <momentum :actor="actor" :current="actor.data.momentum" />
+    <stats :actor="actor" :aria-label="$t('IRONSWORN.stats')" />
     <tabbed-panels :actor="actor" name="sf-main" :tabs="tabs" />
-    <section class="condition-meters">
+    <section class="condition-meters" :aria-label="$t('IRONSWORN.conditionMeters')">
       <condition-meter
         v-for="meter in [health, spirit, supply]"
-        :tooltip="`Roll +${meter.attr}`"
+        :aria-label="$t('IRONSWORN.meter', { meterType: $t(meter.i18nLabelKey) })"
+        :tooltip="$t('IRONSWORN.rollPlusStat', { stat: $t(meter.i18nLabelKey) })"
         :key="meter.attr"
         :attr="meter.attr"
         :actor="actor"
@@ -15,53 +16,66 @@
         :max="meter.max"
         :current="actor.data[meter.attr]"
       >
-        {{ game.i18n.localize(meter.i18nLabelKey) }}
+        {{ $t(meter.i18nLabelKey) }}
       </condition-meter>
     </section>
-    <sf-impacts :actor="actor" />
+    <sf-impacts :actor="actor" :aria-label="$t('IRONSWORN.impacts')" />
   </article>
 </template>
 
 <style lang="less">
-@import '../../styles/styles.less';
+// @import '../../styles/styles.less';
 @import '../../styles/mixins.less';
 .sf-character-sheet {
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  grid-template-rows: max-content max-content 1fr max-content;
-  gap: 0.75em;
+  // display: grid;
+  // grid-template-columns: max-content 1fr 1fr 1fr max-content;
+  // grid-template-rows: max-content max-content 1fr max-content;
+  // gap: 0.75rem;
 
-  .sheet-header {
-    grid-row: 1;
-    grid-column: span 3;
-    gap: 6px;
+  display: grid;
+  grid-template-columns: 75px 1fr 1fr 1fr 1fr 1fr 75px;
+  grid-template-rows: 75px max-content 1fr max-content;
+  gap: 0.5rem;
+  grid-template-areas:
+    'img vitals vitals bio bio bio bio'
+    'momentum stats stats stats stats stats meters'
+    'momentum main main main main main meters'
+    'impacts impacts impacts impacts impacts impacts impacts';
+  header.sheet-header {
+    display: contents;
+    .doc-img {
+      grid-area: img;
+    }
     .character-vitals {
-      flex-basis: 100px;
-      gap: 7px;
+      grid-area: vitals;
     }
     .character-bio {
-      flex-basis: 300px;
+      grid-area: bio;
     }
   }
 
   .momentum-widget {
-    grid-column: 1;
-    grid-row: span 2;
-    // height: max-content;
-    .margin-left();
+    // grid-column: 1;
+    // grid-row: span 2;
+    grid-area: momentum;
+    border-right: 1px solid;
   }
 
   .stats {
-    grid-row: 2;
-    grid-column: 2;
+    // grid-row: 2;
+    // grid-column: 2;
     flex: 0;
     height: max-content;
+    grid-area: stats;
   }
 
   .momentum-widget,
   .condition-meters {
     .resource-meter-title {
       .vertical-v2();
+      &:before {
+        transform: rotate(90deg);
+      }
     }
     .condition-meter {
       display: flex;
@@ -88,52 +102,24 @@
     }
   }
   .tabbed-panels {
-    grid-row: 3;
-    grid-column: 2;
-    [role^='tablist'],
-    [role*=' tablist'] {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      height: max-content;
-    }
-    [role^='tabpanel'],
-    [role*=' tabpanel'] {
-      margin: 0.5rem;
-    }
-    [role='tab'],
-    [role^='tab '],
-    [role*=' tab'] {
-      .stripButton();
-      flex: 1 1 0;
-      border-top: 1px solid;
-      border-bottom: 1px solid;
-      text-align: center;
-      height: 100%;
-      overflow-y: auto;
-      padding: 5px;
-      font-weight: bold;
-      &.active {
-        background-color: darkgray;
-        text-decoration: underline;
-        text-shadow: none;
-      }
-    }
+    grid-area: main;
   }
   .condition-meters {
-    grid-column: 3;
-    grid-row: span 2;
-
+    // grid-column: 3;
+    // grid-row: span 2;
+    grid-area: meters;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    .margin-right();
+    border-left: 1px solid;
     .fake-hr-children(1px solid, 7px);
   }
   .impacts {
-    grid-column: span 3;
-    grid-row: 4;
+    grid-area: impacts;
+    border-top: 1px solid;
+    // grid-column: span 3;
+    // grid-row: 4;
   }
 }
 </style>

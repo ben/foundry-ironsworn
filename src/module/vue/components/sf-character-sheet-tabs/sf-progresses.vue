@@ -8,7 +8,13 @@
     >
       <foundry-listitem class="item-progress" v-for="(item, i) in activeItems" :key="item._id">
         <order-buttons v-if="editMode" :i="i" :length="activeItems.length" @sortUp="sortUp" @sortDown="sortDown" />
-        <progress-tracker :item="item" :actor="actor" :showStar="true" @completed="progressCompleted" />
+        <progress-tracker
+          challengeRankSvg="hex-pip"
+          :item="item"
+          :actor="actor"
+          :showStar="true"
+          @completed="progressCompleted"
+        />
       </foundry-listitem>
     </transition-group>
 
@@ -31,17 +37,23 @@
           @sortUp="completedSortUp"
           @sortDown="completedSortDown"
         />
-        <progress-tracker :item="item" :actor="actor" :showStar="true" />
+        <progress-tracker challengeRankSvg="hex-pip" :item="item" :actor="actor" :showStar="true" />
       </foundry-listitem>
     </expandable>
   </itemlist-page>
 </template>
 
 <style lang="less">
+.progress-tracks {
+  .foundry-item {
+    padding: 0.25rem 0.5rem 0.5rem 0.125rem;
+  }
+}
 .progress-page {
   display: flex;
   flex-flow: column nowrap;
   gap: 0.5em;
+
   .progress-completed {
     justify-content: stretch;
     display: flex;
@@ -52,11 +64,6 @@
     }
     ul.expand-content {
     }
-  }
-}
-.progress-tracks {
-  .item-progress {
-    padding: 0.25rem 0.5rem 0.5rem 0.25rem;
   }
 }
 </style>

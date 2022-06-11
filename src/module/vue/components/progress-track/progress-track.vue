@@ -1,10 +1,20 @@
 <template>
-  <section class="progress-track flexrow track">
-    <track-box v-for="(box, i) in boxes" :key="`box${i}`" :boxTicks="box"> </track-box>
+  <fieldset class="progress-track track">
+    <progress-box v-for="(box, i) in boxes" :key="`box${i}`" :boxTicks="box"> </progress-box>
 
-    <slot></slot>
-  </section>
+    <slot>
+      <!-- intended for xp boxes, etc -->
+    </slot>
+  </fieldset>
 </template>
+
+<style lang="less">
+.progress-track {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 3px;
+}
+</style>
 
 <script>
 export default {

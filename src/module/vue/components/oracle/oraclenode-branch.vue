@@ -53,7 +53,7 @@ export default {
   },
   computed: {
     baseId() {
-      console.log(this.node.dataforgedNode.$id, this.node.children)
+      // console.log(this.node.dataforgedNode.$id, this.node.children)
       return `branch-${this.node.dataforgedNode.$id.toLowerCase().replaceAll(/[\W_]/g, '-')}-${this.actor._id}`
     },
     icon() {

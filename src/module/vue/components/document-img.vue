@@ -1,14 +1,12 @@
 <template>
-  <img
-    class="doc-img"
-    :src="document.img"
-    :title="document.name"
-    :style="style"
-    data-edit="img"
-    :height="size"
-    :width="size"
-  />
+  <img class="doc-img" :src="document.img" :title="document.name" data-edit="img" :height="size" :width="size" />
 </template>
+
+<style lang="less">
+.doc-img {
+  flex-basis: 0;
+}
+</style>
 
 <script>
 export default {
@@ -17,16 +15,6 @@ export default {
     size: {
       type: String,
       default: '50px',
-    },
-  },
-
-  computed: {
-    style() {
-      return {
-        width: this.size,
-        height: this.size,
-        'flex-basis': 0,
-      }
     },
   },
 }

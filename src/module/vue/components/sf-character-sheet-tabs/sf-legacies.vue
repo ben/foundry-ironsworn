@@ -1,7 +1,7 @@
 <template>
   <itemlist-page class="legacies-page">
     <transition-group name="slide" tag="foundryitem-list" class="legacy-tracks">
-      <foundry-listitem v-for="legacy in legacyData" :key="legacy.propKey">
+      <foundry-listitem v-for="legacy in legacyData" :key="legacy.propKey" :class="legacy.propKey">
         <legacy-track :propKey="legacy.propKey" :title="$t(`IRONSWORN.${legacy.i18n}`)" :actor="actor" />
       </foundry-listitem>
     </transition-group>
@@ -14,7 +14,7 @@
       data-drop-type="progress"
     >
       <foundry-listitem class="item-progress" v-for="item in starredProgresses" :key="item._id">
-        <progress-tracker :item="item" :actor="actor" />
+        <progress-tracker challengeRankSvg="hex-pip" :item="item" :actor="actor" />
       </foundry-listitem>
     </transition-group>
   </itemlist-page>
@@ -22,6 +22,23 @@
 
 <style lang="less">
 .legacies-page {
+  @import '../../../../styles/brand-colors.less';
+  .legacy-tracks {
+    .quests {
+      --theme-color: @legacy-quests;
+    }
+    .bonds {
+      --theme-color: @legacy-bonds;
+    }
+    .discoveries {
+      --theme-color: @legacy-discoveries;
+    }
+    .foundry-item {
+      border-color: var(--theme-color);
+      border-width: 2px;
+    }
+  }
+
   ul.starred-progress {
     border-top: 1px solid;
     padding-top: 0.5rem;

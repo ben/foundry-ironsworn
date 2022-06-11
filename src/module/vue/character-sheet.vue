@@ -79,7 +79,7 @@
                     @sortUp="progressSortUp"
                     @sortDown="progressSortDown"
                   />
-                  <progress-tracker :item="item" :actor="actor" />
+                  <progress-tracker :item="item" :actor="actor" challengeRankSvg="circle-pip" />
                 </div>
               </transition-group>
 

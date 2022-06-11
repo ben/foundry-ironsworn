@@ -1,17 +1,18 @@
 <template>
-  <section class="xp-track">
+  <div class="xp-track" tab-index="0">
     <button
       class="clickable block xp-box"
       type="button"
       v-for="(box, i) in computedBoxes"
       :key="box.key"
       :class="box.classes"
-      :disabled="box.classes.disabled"
+      :disabled="box.disabled"
+      :aria-disabled="box.disabled"
       @mouseover="hovered = i"
       @mouseleave="hovered = -1"
       @click="click(i)"
     />
-  </section>
+  </div>
 </template>
 
 <style lang="less">
@@ -30,7 +31,7 @@
     border: 1px solid;
     margin: 0;
     &:disabled {
-      opacity: 0.25;
+      opacity: 0.15;
       pointer-events: none;
     }
   }
@@ -42,6 +43,7 @@ export default {
   props: {
     max: Number,
     marked: Number,
+    overflow: { type: Boolean, default: false },
   },
   data() {
     return {
@@ -51,7 +53,7 @@ export default {
   computed: {
     computedBoxes() {
       const boxesPerTrack = 10
-      const xpPerBox = 2
+      const xpPerBox = this.overflow ? 1 : 2
       const xpBoxes = boxesPerTrack * xpPerBox
       let boxes = []
       for (let i = 0; i < xpBoxes; i++) {
@@ -61,8 +63,8 @@ export default {
             classes: {
               hover: this.hovered >= i,
               selected: this.marked >= i + 1,
-              disabled: false,
             },
+            disabled: false,
           })
         } else {
           boxes.push({
@@ -70,8 +72,8 @@ export default {
             classes: {
               hover: false,
               selected: false,
-              disabled: true,
             },
+            disabled: true,
           })
         }
       }

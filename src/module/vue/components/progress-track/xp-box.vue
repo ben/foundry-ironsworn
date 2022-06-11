@@ -1,7 +1,7 @@
 <template>
-  <div @click="$emit('click')" :class="classes" data-resource="xp">
+  <button type="button" :aria-selected="selected" @click="$emit('click')" class="clickable block xp" data-attr="xp">
     <slot />
-  </div>
+  </button>
 </template>
 
 <script>
@@ -13,14 +13,6 @@ export default {
   },
 
   computed: {
-    classes() {
-      return {
-        clickable: true,
-        block: true,
-        xp: true,
-        selected: this.selected,
-      }
-    },
     selected() {
       return this.value <= this.current
     },

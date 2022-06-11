@@ -9,6 +9,12 @@
   // }
 }
 
+.noborder {
+  border: unset;
+  box-shadow: unset;
+  outline: unset;
+}
+
 // clone of foundry's flexrow for use as a mixin
 .flexrow {
   display: flex;
@@ -34,19 +40,6 @@
   }
 }
 
-.margin-left {
-  flex: 0;
-  border-right: 1px solid;
-  margin-right: 5px;
-  position: relative;
-}
-
-.margin-right {
-  flex: 0;
-  border-left: 1px solid;
-  margin-left: 5px;
-  position: relative;
-}
 // strips foundry's button styles
 .stripButton() {
   width: unset;
@@ -113,15 +106,14 @@
 }
 
 .clickable {
-  &.disabled {
+  &[aria-disabled='true'] {
     // TODO: use the actual html attribute
     cursor: not-allowed;
   }
-  &:not(.disabled) {
+  &:not([aria-disabled='true']) {
     transition: 0.5s ease;
     cursor: pointer;
-    &.block,
-    &.text {
+    &:not(svg) {
       &:hover {
         transition: 0.5s ease;
       }

@@ -1,5 +1,5 @@
 <template>
-  <fieldset class="legacy-track">
+  <section class="legacy-track" :class="propKey">
     <legend class="legacy-track-title">{{ title }}</legend>
 
     <section class="legacy-track-controls">
@@ -12,8 +12,8 @@
 
     <progress-track :ticks="ticks"> </progress-track>
 
-    <xp-track :max="xpBoxCount" :marked="xpSpent" @click="setXp" />
-  </fieldset>
+    <xp-track :max="xpBoxCount" :marked="xpSpent" @click="setXp" :overflow="!!overflow" />
+  </section>
 </template>
 
 <style lang="less">

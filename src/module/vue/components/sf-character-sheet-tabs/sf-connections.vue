@@ -3,7 +3,7 @@
     <transition-group name="slide" tag="foundryitem-list" class="progress-tracks">
       <foundry-listitem class="item-progress" v-for="(item, i) in connections" :key="item._id">
         <order-buttons v-if="editMode" :i="i" :length="connections.length" @sortUp="sortUp" @sortDown="sortDown" />
-        <progress-tracker :item="item" :actor="actor" :showStar="true" />
+        <progress-tracker :item="item" challengeRankSvg="hex-pip" :actor="actor" :showStar="true" />
       </foundry-listitem>
     </transition-group>
     <itemlist-controls

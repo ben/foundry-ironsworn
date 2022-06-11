@@ -21,7 +21,7 @@
       <transition-group name="slide" tag="div" class="nogrow">
         <div class="flexrow nogrow" v-for="(item, i) in activeItems" :key="item._id">
           <order-buttons v-if="editMode" :i="i" :length="activeItems.length" @sortUp="sortUp" @sortDown="sortDown" />
-          <progress-tracker :item="item" :actor="actor" @completed="progressCompleted" />
+          <progress-tracker :item="item" :actor="actor" challengeRankSvg="circle-pip" @completed="progressCompleted" />
         </div>
       </transition-group>
 
@@ -43,7 +43,7 @@
                 @sortUp="completedSortUp"
                 @sortDown="completedSortDown"
               />
-              <progress-tracker :item="item" :actor="actor" :showStar="true" />
+              <progress-tracker :item="item" challengeRankSvg="circle-pip" :actor="actor" :showStar="true" />
             </div>
           </transition-group>
         </div>
