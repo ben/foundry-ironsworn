@@ -1,7 +1,7 @@
 <template>
   <btn-svgicon
     @click="rollStat()"
-    :title="tooltip"
+    :tooltip="tooltip"
     class="action-roll"
     :class="attr"
     icon="d10-tilt"

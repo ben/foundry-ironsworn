@@ -4,7 +4,7 @@
     :class="classes"
     type="button"
     @click="$emit('click')"
-    :title="tooltip"
+    :tooltip="tooltip"
     :aria-label="tooltip"
     :data-tooltip="tooltip"
   >
