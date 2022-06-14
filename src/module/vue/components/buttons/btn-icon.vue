@@ -20,10 +20,7 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../../../styles/mixins.less';
 .icon-button {
-  .clickable();
-  // .block();
   display: flex;
   align-items: center;
   flex-flow: row nowrap;
