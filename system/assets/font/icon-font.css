@@ -10,7 +10,7 @@
   font-display: block;
 }
 
-[class^="isicon-"], [class*=" isicon-"] {
+[class^="isicon-"]:before, [class*=" isicon-"]:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ironsworn-icons' !important;
   speak: never;
@@ -23,6 +23,10 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="isicon-"].vertical-v2:before, [class*=" isicon-"].vertical-v2:before {
+  transform: rotateZ(90deg);
 }
 
 [class^="isicon-"].juicy, [class*=" isicon-"].juicy {
