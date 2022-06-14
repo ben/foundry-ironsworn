@@ -1,5 +1,13 @@
 <template>
-  <svgicon-button @click="rollStat()" :title="tooltip" class="opens-dialog action-roll" :class="attr" icon="d10-tilt">
+  <svgicon-button
+    @click="rollStat()"
+    :title="tooltip"
+    class="action-roll"
+    :class="attr"
+    icon="d10-tilt"
+    aria-haspopup="dialog"
+  >
+    <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-haspopup -->
     <slot></slot>
   </svgicon-button>
 </template>

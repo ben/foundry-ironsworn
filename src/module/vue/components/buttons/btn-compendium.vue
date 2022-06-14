@@ -1,5 +1,5 @@
 <template>
-  <faicon-button class="btn-compendium" icon="atlas" @click="openCompendium">
+  <faicon-button class="btn-compendium" icon="atlas" @click="openCompendium" aria-haspopup="dialog">
     <slot></slot>
   </faicon-button>
 </template>

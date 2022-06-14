@@ -94,19 +94,19 @@
     &.hover,
     &:hover {
       &.block {
-        &:not(.opens-dialog) {
+        &:not([aria-haspopup='dialog']) {
           background-color: var(--color-bg-hover-preview);
           border-color: var(--color-bg-hover-preview);
         }
       }
       &.text {
         &.block {
-          &:not(.opens-dialog) {
+          &:not([aria-haspopup='dialog']) {
             color: var(--color-bg);
           }
         }
         &:not(.block),
-        &.opens-dialog {
+        &[aria-haspopup='dialog'] {
           color: var(--color-fg-hover-link);
         }
       }

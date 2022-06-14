@@ -3,12 +3,19 @@
     v-if="isProgressMove"
     @click="rollMove()"
     :title="tooltip"
-    class="opens-dialog progress-roll move-roll"
+    class="progress-roll move-roll"
     icon="d10-tilt"
   >
     <slot></slot>
   </isicon-button>
-  <svgicon-button v-else @click="rollMove()" :title="tooltip" class="opens-dialog action-roll move-roll" icon="d6-pips">
+  <svgicon-button
+    v-else
+    @click="rollMove()"
+    :title="tooltip"
+    class="action-roll move-roll"
+    icon="d6-pips"
+    aria-haspopup="dialog"
+  >
     <slot></slot>
   </svgicon-button>
 </template>
