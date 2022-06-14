@@ -11,9 +11,9 @@
           <div class="flexcol stack momentum">
             <stack :actor="actor" stat="momentum" :top="10" :bottom="-6" :softMax="actor.data.momentumMax"></stack>
             <hr class="nogrow" />
-            <btn-faicon class="nogrow block stack-row" icon="fire" @click="burnMomentum">
+            <btn-momentumburn class="nogrow block stack-row" :actor="actor">
               {{ $t('IRONSWORN.Burn') }}
-            </btn-faicon>
+            </btn-momentumburn>
 
             {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }} {{ $t('IRONSWORN.Max') }}:
             {{ actor.data.momentumMax }}
@@ -107,7 +107,6 @@
 </style>
 
 <script>
-import BtnRollstat from './components/buttons/btn-rollstat.vue.js'
 export default {
   props: {
     actor: Object,
@@ -126,9 +125,6 @@ export default {
     }
   },
   methods: {
-    burnMomentum() {
-      this.$actor.burnMomentum()
-    },
     rollStat(stat) {
       CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
     },
@@ -137,6 +133,5 @@ export default {
       pack?.render(true)
     },
   },
-  components: { BtnRollstat },
 }
 </script>

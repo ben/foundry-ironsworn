@@ -11,9 +11,10 @@
           <div class="flexcol stack momentum">
             <stack :actor="actor" stat="momentum" :top="10" :bottom="-6" :softMax="actor.data.momentumMax"></stack>
             <hr class="nogrow" />
-            <btn-faicon class="nogrow block stack-row" icon="fire" @click="burnMomentum">
+
+            <btn-momentumburn :actor="actor" class="nogrow block stack-row">
               {{ $t('IRONSWORN.Burn') }}
-            </btn-faicon>
+            </btn-momentumburn>
 
             {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }} {{ $t('IRONSWORN.Max') }}:
             {{ actor.data.momentumMax }}
@@ -152,7 +153,8 @@ textarea.notes {
 </style>
 
 <script>
-import BtnCompendium from './components/buttons/btn-compendium.vue.js'
+import BtnCompendium from './components/buttons/btn-compendium'
+import BtnMomentumburn from './components/buttons/btn-momentumburn'
 export default {
   props: {
     actor: Object,
@@ -213,6 +215,6 @@ export default {
       this.applySort(i, i + 1, false, items)
     },
   },
-  components: { BtnCompendium },
+  components: { BtnCompendium, BtnMomentumburn },
 }
 </script>

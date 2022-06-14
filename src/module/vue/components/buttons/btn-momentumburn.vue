@@ -1,5 +1,5 @@
 <template>
-  <btn-faicon icon="flame" class="burn-momentum">
+  <btn-faicon icon="flame" class="burn-momentum" @click="burnMomentum">
     <slot></slot>
   </btn-faicon>
 </template>
