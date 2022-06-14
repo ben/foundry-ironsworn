@@ -50,7 +50,7 @@
           class="block nogrow"
           style="padding: 0px 5px; position: absolute; right: 15px; height: 25px; line-height: 30px; top: 1px"
           @click="randomizeKlass"
-          :title="randomKlassTooltip"
+          :tooltip="randomKlassTooltip"
         />
       </label>
     </div>
@@ -74,7 +74,7 @@
               height: 48px;
               border-radius: 0 3px 3px 0;
             "
-            :title="$t('IRONSWORN.RandomName')"
+            :tooltip="$t('IRONSWORN.RandomName')"
             @click="randomizeName"
           />
         </div>

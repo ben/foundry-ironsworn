@@ -1,5 +1,5 @@
 <template>
-  <btn-isicon @click="rollProgress()" :title="tooltip" class="progress-roll" :class="attr" icon="d10-tilt">
+  <btn-isicon @click="rollProgress()" :tooltip="tooltip" class="progress-roll" :class="attr" icon="d10-tilt">
     <slot></slot>
   </btn-isicon>
 </template>
