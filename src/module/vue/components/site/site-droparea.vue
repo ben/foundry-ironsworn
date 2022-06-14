@@ -19,10 +19,9 @@
     <div v-else style="padding: 1em; width: 100%">
       <div class="flexcol">
         <h4 style="margin: 0">{{ $t(titleKey) }}</h4>
-        <p class="inset clickable block" style="padding: 0 2em" @click="openCompendium">
-          <i class="fas fa-atlas"></i>
-          {{ $t('IRONSWORN.OpenCompendium') }}
-        </p>
+        <btn-compendium :compendium="compendiumKey" style="padding: 0 2em" class="inset block">{{
+          $t('IRONSWORN.OpenCompendium')
+        }}</btn-compendium>
       </div>
     </div>
   </div>
@@ -58,11 +57,6 @@ export default {
 
     edit() {
       this.$item.sheet.render(true)
-    },
-
-    openCompendium() {
-      const pack = game.packs.get(`foundry-ironsworn.${this.compendiumKey}`)
-      pack?.render(true)
     },
   },
 }

@@ -8,10 +8,9 @@
       <i class="fas fa-plus"></i>
       {{ $t('IRONSWORN.Progress') }}
     </div>
-    <div class="clickable block" @click="openCompendium(foeCompendium)">
-      <i class="fas fa-atlas"></i>
+    <btn-compendium class="block" :compendium="ironswornfoes">
       {{ $t('IRONSWORN.Foes') }}
-    </div>
+    </btn-compendium>
   </div>
 </template>
 
@@ -21,8 +20,8 @@ export default {
     actor: Object,
     foeCompendium: {
       type: String,
-      default: "ironswornfoes"
-    }
+      default: 'ironswornfoes',
+    },
   },
 
   methods: {

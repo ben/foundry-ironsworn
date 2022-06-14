@@ -60,10 +60,9 @@
                   </div>
                 </transition-group>
                 <div class="flexrow nogrow" style="text-align: center">
-                  <div class="clickable block" @click="openCompendium('ironswornassets')">
-                    <i class="fas fa-atlas"></i>
+                  <btn-compendium class="block" compendium="ironswornassets">
                     {{ $t('IRONSWORN.Assets') }}
-                  </div>
+                  </btn-compendium>
                 </div>
               </div>
             </section>
@@ -152,11 +151,11 @@ textarea.notes {
 </style>
 
 <script>
+import BtnCompendium from './components/buttons/btn-compendium.vue.js'
 export default {
   props: {
     actor: Object,
   },
-
   computed: {
     progressItems() {
       return this.actor.items.filter((x) => x.type === 'progress').sort((a, b) => (a.sort || 0) - (b.sort || 0))
@@ -168,31 +167,25 @@ export default {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
   },
-
   watch: {
     'actor.data.biography'() {
       this.saveNotes()
     },
   },
-
   methods: {
     burnMomentum() {
       this.$actor.burnMomentum()
     },
-
     rollStat(stat) {
       CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
     },
-
     openCompendium(name) {
       const pack = game.packs?.get(`foundry-ironsworn.${name}`)
       pack?.render(true)
     },
-
     saveNotes() {
       this.$actor.update({ 'data.biography': this.actor.data.biography })
     },
-
     async applySort(oldI, newI, sortBefore, collection) {
       const sorted = collection.sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
       const updates = SortingHelpers.performIntegerSort(sorted[oldI], {
@@ -219,5 +212,6 @@ export default {
       this.applySort(i, i + 1, false, items)
     },
   },
+  components: { BtnCompendium },
 }
 </script>

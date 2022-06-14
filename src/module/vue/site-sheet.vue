@@ -66,7 +66,7 @@
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
       <i class="flexrow nogrow clickable text isicon-d10-tilt" style="padding: 2px" @click="randomDenizen" />
-      <btn-faicon icon="atlas" @click="openFoeCompendium" />
+      <btn-compendium compendium="ironswornfoes" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
@@ -162,11 +162,6 @@ export default {
       const increment = CONFIG.IRONSWORN.RankIncrements[this.actor.data.rank]
       const newValue = Math.min(this.actor.data.current + increment, 40)
       this.$actor.update({ 'data.current': newValue })
-    },
-
-    openFoeCompendium() {
-      const pack = game.packs?.get(`foundry-ironsworn.ironswornfoes`)
-      pack?.render(true)
     },
 
     randomFeature() {

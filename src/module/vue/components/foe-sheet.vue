@@ -34,15 +34,10 @@
         <i class="fas fa-file"></i>
         {{ $t('IRONSWORN.Progress') }}
       </div>
-
-      <div class="clickable block" @click="openCompendium('ironswornfoes')">
-        <i class="fas fa-atlas"></i>
-        {{ $t('IRONSWORN.Foes') }} (Ironsworn)
-      </div>
-      <div class="clickable block" @click="openCompendium('starforgedencounters')">
-        <i class="fas fa-atlas"></i>
-        {{ $t('IRONSWORN.Foes') }} (Starforged)
-      </div>
+      <btn-compendium class="block" compendium="ironswornfoes">{{ $t('IRONSWORN.Foes') }} (Ironsworn)</btn-compendium>
+      <btn-compendium class="block" compendium="starforgedencounters"
+        >{{ $t('IRONSWORN.Foes') }} (Starforged)</btn-compendium
+      >
     </div>
   </div>
 </template>
