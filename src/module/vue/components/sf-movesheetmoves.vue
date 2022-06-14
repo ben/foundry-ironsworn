@@ -1,23 +1,17 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow" style="margin-top: 0.5rem">
+  <article class="flexcol">
+    <form role="search" class="flexrow nogrow" style="margin-top: 0.5rem">
       <input
-        type="text"
+        type="search"
+        :title="$t('IRONSWORN.Search')"
+        :tooltip="$t('IRONSWORN.Search')"
         :placeholder="$t('IRONSWORN.Search')"
         v-model="searchQuery"
         @keydown="preventSubmit"
       />
-      <i
-        class="fa fa-times-circle nogrow clickable text"
-        @click="clearSearch"
-        style="padding: 6px"
-      />
-      <i
-        class="fa fa-compress-alt nogrow clickable text"
-        @click="collapseAll"
-        style="padding: 6px"
-      />
-    </div>
+      <btn-faicon icon="times-circle" class="nogrow text" @click="clearSearch" style="padding: 6px" />
+      <btn-faicon icon="compress-alt" class="nogrow text" @click="collapseAll" style="padding: 6px" />
+    </form>
 
     <div class="flexcol item-list">
       <div class="nogrow" v-if="searchQuery">
@@ -29,12 +23,7 @@
           @moveclick="highlightMove"
         />
       </div>
-      <div
-        class="nogrow"
-        v-else
-        v-for="category of categories"
-        :key="category.$id"
-      >
+      <div class="nogrow" v-else v-for="category of categories" :key="category.$id">
         <h2>
           {{ category.displayName }}
         </h2>
@@ -48,7 +37,7 @@
         />
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <style lang="less" scoped>

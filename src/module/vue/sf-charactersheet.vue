@@ -11,11 +11,9 @@
           <div class="flexcol stack momentum">
             <stack :actor="actor" stat="momentum" :top="10" :bottom="-6" :softMax="actor.data.momentumMax"></stack>
             <hr class="nogrow" />
-            <div class="nogrow">
-              <div class="clickable block stack-row" @click="burnMomentum">
-                {{ $t('IRONSWORN.Burn') }}
-              </div>
-            </div>
+            <btn-faicon class="nogrow block stack-row" icon="fire" @click="burnMomentum">
+              {{ $t('IRONSWORN.Burn') }}
+            </btn-faicon>
 
             {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }} {{ $t('IRONSWORN.Max') }}:
             {{ actor.data.momentumMax }}

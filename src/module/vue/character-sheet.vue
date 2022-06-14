@@ -11,11 +11,9 @@
           <div class="flexcol stack momentum">
             <stack :actor="actor" stat="momentum" :top="10" :bottom="-6" :softMax="actor.data.momentumMax"></stack>
             <hr class="nogrow" />
-            <div class="nogrow">
-              <btn-faicon class="clickable block stack-row" icon="fire" @click="burnMomentum">
-                {{ $t('IRONSWORN.Burn') }}
-              </btn-faicon>
-            </div>
+            <btn-faicon class="nogrow block stack-row" icon="fire" @click="burnMomentum">
+              {{ $t('IRONSWORN.Burn') }}
+            </btn-faicon>
 
             {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }} {{ $t('IRONSWORN.Max') }}:
             {{ actor.data.momentumMax }}
@@ -99,9 +97,10 @@
       <!-- Stats on right -->
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('health')">
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="health">
             {{ $t('IRONSWORN.Health') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack health">
             <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
           </div>
@@ -110,9 +109,10 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('spirit')">
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="spirit">
             {{ $t('IRONSWORN.Spirit') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack spirit">
             <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
           </div>
@@ -121,9 +121,10 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('supply')">
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="supply">
             {{ $t('IRONSWORN.Supply') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack supply">
             <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
           </div>

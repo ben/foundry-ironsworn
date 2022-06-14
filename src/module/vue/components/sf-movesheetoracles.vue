@@ -1,23 +1,17 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow" style="margin-top: 0.5rem">
+  <article class="flexcol">
+    <form role="search" class="flexrow nogrow" style="margin-top: 0.5rem">
       <input
-        type="text"
+        type="search"
+        :title="$t('IRONSWORN.Search')"
+        :tooltip="$t('IRONSWORN.Search')"
         :placeholder="$t('IRONSWORN.Search')"
         v-model="searchQuery"
         @keydown="preventSubmit"
       />
-      <i
-        class="fa fa-times-circle nogrow clickable text"
-        @click="clearSearch"
-        style="padding: 6px"
-      />
-      <i
-        class="fa fa-compress-alt nogrow clickable text"
-        @click="collapseAll"
-        style="padding: 6px"
-      />
-    </div>
+      <btn-faicon icon="times-circle" class="nogrow text" @click="clearSearch" style="padding: 6px" />
+      <btn-faicon icon="compress-alt" class="nogrow text" @click="collapseAll" style="padding: 6px" />
+    </form>
 
     <div class="flexcol item-list">
       <oracletree-node
@@ -30,7 +24,7 @@
         ref="oracles"
       />
     </div>
-  </div>
+  </article>
 </template>
 
 <style lang="less" scoped>
@@ -143,9 +137,7 @@ export default {
       let children = this.$refs.oracles
       let lastComponent
       for (const dataNode of dfOraclePath) {
-        lastComponent = children.find(
-          (x) => x.node.dataforgedNode.$id === dataNode.$id
-        )
+        lastComponent = children.find((x) => x.node.dataforgedNode.$id === dataNode.$id)
         if (!lastComponent) break
         lastComponent.expand()
         await new Promise((r) => setTimeout(r, 50))

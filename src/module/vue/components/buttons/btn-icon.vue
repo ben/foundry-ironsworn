@@ -1,3 +1,5 @@
+<!-- generic button used to build other icon buttons (for FA, IS, and SVG icons) -->
+<!-- the default value for a button element's type is "submit", which refreshes the page; "type=button" obviates the need for preventing the submit action with JS. -->
 <template>
   <button
     class="icon-button clickable"

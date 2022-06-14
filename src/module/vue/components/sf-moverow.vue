@@ -78,14 +78,6 @@ export default {
     },
   },
   methods: {
-    rollMove(e) {
-      e.preventDefault()
-      CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, this.move.moveItem)
-    },
-    sendToChat(e) {
-      e.preventDefault()
-      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(this.move.moveItem)
-    },
     moveclick(item) {
       this.$emit('moveclick', item)
     },

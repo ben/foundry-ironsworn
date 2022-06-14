@@ -46,18 +46,27 @@
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Delve the Depths" />
-        <div class="box flexrow clickable block" :class="{ disabled: !hasThemeAndDomain }" @click="randomFeature">
-          <h4>{{ $t('IRONSWORN.Feature') }}</h4>
-        </div>
+        <!-- TODO: double check styling here -->
+        <h4>
+          <button
+            type="button"
+            class="box flexrow clickable block"
+            :class="{ disabled: !hasThemeAndDomain }"
+            @click="randomFeature"
+          >
+            {{ $t('IRONSWORN.Feature') }}
+          </button>
+        </h4>
+
         <site-movebox :actor="actor" move="Reveal a Danger" :disabled="!hasThemeAndDomain" />
       </div>
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Find an Opportunity" />
-        <div class="box flexrow clickable block" @click="locateObjective">
-          <h4>
+        <h4>
+          <button type="button" class="box flexrow block" @click="locateObjective">
             {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
-          </h4>
-        </div>
+          </button>
+        </h4>
         <site-movebox :actor="actor" move="Escape the Depths" />
       </div>
     </div>
