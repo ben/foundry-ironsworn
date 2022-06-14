@@ -4,7 +4,7 @@
     :class="['move-tab', 'clickable', 'block', 'nogrow', 'tab', 'flexrow', { selected: currentProperty === property }]"
   >
     <span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
-    <faicon-button class="nogrow" v-if="$listeners.delete" icon="fa fa-trash" @click="$emit('delete')" />
+    <btn-faicon class="nogrow" v-if="$listeners.delete" icon="fa fa-trash" @click="$emit('delete')" />
   </div>
 </template>
 

@@ -2,7 +2,7 @@
 
 <template>
   <component :is="wrapperTag" class="expandable" :aria-expanded="isExpanded">
-    <faicon-button
+    <btn-faicon
       :aria-controls="contentId"
       :id="buttonId"
       class="expand-toggle"
@@ -10,7 +10,7 @@
       @click="isExpanded = !isExpanded"
     >
       {{ buttonText }}
-    </faicon-button>
+    </btn-faicon>
     <transition-group
       :aria-labelledby="buttonId"
       :aria-expanded="isExpanded"

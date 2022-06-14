@@ -1,6 +1,6 @@
 <template>
   <component :is="wrapper" class="oracle-node-branch" aria-haspopup="true" :aria-expanded="expanded">
-    <faicon-button
+    <btn-faicon
       :id="`button-${baseId}`"
       class="toggle clickable text flexrow oracle-title"
       :aria-controls="`content-${baseId}`"
@@ -8,7 +8,7 @@
       :icon="icon"
     >
       {{ node.displayName }}
-    </faicon-button>
+    </btn-faicon>
     <transition name="slide">
       <ul
         v-if="expanded"

@@ -9,8 +9,8 @@
       <div class="flexrow nogrow">
         <challengerank-pips :current="foe.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
         <h4>{{ rankText }}</h4>
-        <faicon-button icon="trash" @click="clearProgress" />
-        <faicon-button icon="caret-right" @click="markProgress" />
+        <btn-faicon icon="trash" @click="clearProgress" />
+        <btn-faicon icon="caret-right" @click="markProgress" />
       </div>
 
       <!-- PROGRESS -->

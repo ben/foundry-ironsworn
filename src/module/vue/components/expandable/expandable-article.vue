@@ -2,7 +2,7 @@
   <article class="expandable" :id="articleId" :aria-expanded="isExpanded">
     <header>
       <h1>
-        <faicon-button
+        <btn-faicon
           :aria-controls="contentId"
           :id="buttonId"
           class="expand-toggle"
@@ -13,7 +13,7 @@
         >
           {{ title }}
           <span class="subtitle" v-if="!!subtitle">{{ subtitle }}</span>
-        </faicon-button>
+        </btn-faicon>
       </h1>
       <slot name="headercontent"></slot>
     </header>

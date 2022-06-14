@@ -1,5 +1,5 @@
 <template>
-  <svgicon-button
+  <btn-svgicon
     @click="rollStat()"
     :title="tooltip"
     class="action-roll"
@@ -9,7 +9,7 @@
   >
     <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-haspopup -->
     <slot></slot>
-  </svgicon-button>
+  </btn-svgicon>
 </template>
 
 <script>

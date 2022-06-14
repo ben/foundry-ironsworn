@@ -1,7 +1,7 @@
 <template>
-  <svgicon-button icon="oracle" class="oracle-roll" @click="rollOracle" :title="tooltip">
+  <btn-svgicon icon="oracle" class="oracle-roll" @click="rollOracle" :title="tooltip">
     <slot></slot>
-  </svgicon-button>
+  </btn-svgicon>
 </template>
 
 <style lang="less"></style>

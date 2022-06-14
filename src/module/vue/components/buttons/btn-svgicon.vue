@@ -1,7 +1,7 @@
 <template>
-  <icon-button class="svg-icon" :class="classes" @click="$emit('click')" :tooltip="tooltip">
+  <btn-icon class="svg-icon" :class="classes" @click="$emit('click')" :tooltip="tooltip">
     <slot></slot>
-  </icon-button>
+  </btn-icon>
 </template>
 
 <style lang="less">

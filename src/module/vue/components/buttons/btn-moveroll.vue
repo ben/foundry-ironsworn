@@ -1,5 +1,5 @@
 <template>
-  <isicon-button
+  <btn-isicon
     v-if="isProgressMove"
     @click="rollMove()"
     :title="tooltip"
@@ -7,8 +7,8 @@
     icon="d10-tilt"
   >
     <slot></slot>
-  </isicon-button>
-  <svgicon-button
+  </btn-isicon>
+  <btn-svgicon
     v-else
     @click="rollMove()"
     :title="tooltip"
@@ -17,7 +17,7 @@
     aria-haspopup="dialog"
   >
     <slot></slot>
-  </svgicon-button>
+  </btn-svgicon>
 </template>
 
 <script>

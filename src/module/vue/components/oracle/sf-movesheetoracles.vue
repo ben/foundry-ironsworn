@@ -2,8 +2,8 @@
   <article class="overview oracle-overview">
     <form class="overview-search" role="search">
       <input type="search" :placeholder="$t('IRONSWORN.Search')" v-model="searchQuery" @keydown="preventSubmit" />
-      <faicon-button icon="times-circle" @click="clearSearch"></faicon-button>
-      <faicon-button icon="compress-alt" @click="collapseAll"></faicon-button>
+      <btn-faicon icon="times-circle" @click="clearSearch"></btn-faicon>
+      <btn-faicon icon="compress-alt" @click="collapseAll"></btn-faicon>
     </form>
     <ul class="accordion foundry-items oracle-tree">
       <oracletree-node

@@ -10,13 +10,13 @@
 <template>
   <article class="move-text" :class="{ highlighted: move.highlighted }">
     <header>
-      <isicon-button icon="d10-tilt" @click="rollMove"> </isicon-button>
+      <btn-isicon icon="d10-tilt" @click="rollMove"> </btn-isicon>
       <button type="button" @click="rollMove">
         <h1 class="h4 clickable text move-title" :title="tooltip">
           {{ move.displayName }}
         </h1>
       </button>
-      <faicon-button icon="eye" @click="expanded = !expanded" />
+      <btn-faicon icon="eye" @click="expanded = !expanded" />
     </header>
     <transition name="slide">
       <ul>

@@ -1,9 +1,9 @@
 <template>
-  <faicon-button class="move-chat" icon="comment" :tooltip="tooltip" @click="sendToChat">
+  <btn-faicon class="move-chat" icon="comment" :tooltip="tooltip" @click="sendToChat">
     <slot>
       <!-- {{$t('IRONSWORN.Chat')}} -->
     </slot>
-  </faicon-button>
+  </btn-faicon>
 </template>
 
 <style lang="less"></style>

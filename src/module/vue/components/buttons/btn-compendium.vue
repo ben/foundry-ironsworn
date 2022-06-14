@@ -1,7 +1,7 @@
 <template>
-  <faicon-button class="btn-compendium" icon="atlas" @click="openCompendium" aria-haspopup="dialog">
+  <btn-faicon class="btn-compendium" icon="atlas" @click="openCompendium" aria-haspopup="dialog">
     <slot></slot>
-  </faicon-button>
+  </btn-faicon>
 </template>
 
 <style lang="less"></style>

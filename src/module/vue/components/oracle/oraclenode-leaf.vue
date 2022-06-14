@@ -1,10 +1,10 @@
 <template>
   <component :is="wrapper" class="oracle-node-leaf">
     <span class="clickable text flexrow">
-      <isicon-button @click="rollOracle" class="juicy oracle-title" icon="d10-tilt">
+      <btn-isicon @click="rollOracle" class="juicy oracle-title" icon="d10-tilt">
         {{ node.displayName }}
-      </isicon-button>
-      <faicon-button icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
+      </btn-isicon>
+      <btn-faicon icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
     </span>
 
     <transition name="slide">

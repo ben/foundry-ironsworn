@@ -6,8 +6,8 @@
       <span v-if="overflow" class="legacy-overflow">
         {{ overflow }}
       </span>
-      <faicon-button v-if="editMode" icon="caret-left" @click="decrease" class="remove-progress" />
-      <faicon-button icon="caret-right" @click="increase" class="mark-progress" />
+      <btn-faicon v-if="editMode" icon="caret-left" @click="decrease" class="remove-progress" />
+      <btn-faicon icon="caret-right" @click="increase" class="mark-progress" />
     </section>
 
     <progress-track :ticks="ticks"> </progress-track>

@@ -8,13 +8,13 @@
       <div class="item-row nogrow" v-for="(bond, i) in item.data.bonds" :key="'bond' + i">
         <section class="flexrow inputs">
           <input type="text" v-model="bond.name" @blur="save" />
-          <faicon-button icon="trash" @click="deleteBond(i)" />
+          <btn-faicon icon="trash" @click="deleteBond(i)" />
         </section>
         <textarea v-model="bond.notes" @blur="save" />
       </div>
     </transition-group>
 
-    <faicon-button icon="plus" @click="addBond" />
+    <btn-faicon icon="plus" @click="addBond" />
   </article>
 </template>
 
