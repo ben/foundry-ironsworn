@@ -26,7 +26,6 @@ export default {
 </script>
 
 <style lang="less">
-@import '../../../../styles/mixins.less';
 .icon-button {
   &.fa,
   &.fas,
