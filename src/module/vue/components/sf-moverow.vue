@@ -43,8 +43,7 @@ h4 {
 </style>
 
 <script>
-import BtnRollmove from './buttons/btn-rollmove.vue.js'
-import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue.js'
+
 export default {
   props: {
     actor: Object,
@@ -85,6 +84,5 @@ export default {
       this.expanded = false
     },
   },
-  components: { BtnRollmove, BtnSendmovetochat },
 }
 </script>

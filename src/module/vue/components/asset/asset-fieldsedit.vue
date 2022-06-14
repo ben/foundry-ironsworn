@@ -36,7 +36,6 @@
 </style>
 
 <script>
-import BtnFaicon from '../buttons/btn-faicon.vue.js'
 export default {
   props: {
     item: Object,
@@ -66,6 +65,5 @@ export default {
       this.$item.update({ data: { fields } })
     },
   },
-  components: { BtnFaicon },
 }
 </script>

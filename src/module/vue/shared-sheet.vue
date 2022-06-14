@@ -91,7 +91,6 @@ textarea.notes {
 </style>
 
 <script>
-import BtnFaicon from './components/buttons/btn-faicon.vue.js'
 export default {
   props: {
     actor: Object,
@@ -177,6 +176,5 @@ export default {
       this.applySort(i, i + 1, false, (x) => x.data.data.completed)
     },
   },
-  components: { BtnFaicon },
 }
 </script>

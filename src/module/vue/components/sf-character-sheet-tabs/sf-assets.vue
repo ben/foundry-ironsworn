@@ -14,7 +14,6 @@
 
 <script>
 import { sortBy } from 'lodash'
-import BtnCompendium from '../buttons/btn-compendium.vue.js'
 
 export default {
   props: {
@@ -52,6 +51,5 @@ export default {
       this.applySort(i, i + 1, false)
     },
   },
-  components: { BtnCompendium },
 }
 </script>

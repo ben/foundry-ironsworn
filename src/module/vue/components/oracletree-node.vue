@@ -67,7 +67,6 @@ h4 {
 
 <script>
 import { sample } from 'lodash'
-import BtnOracle from './buttons/btn-oracle.vue.js'
 export default {
   props: {
     actor: Object,
@@ -147,6 +146,5 @@ export default {
       this.highlighted = false
     },
   },
-  components: { BtnOracle },
 }
 </script>

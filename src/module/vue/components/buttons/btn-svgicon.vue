@@ -5,7 +5,6 @@
 </template>
 
 <style lang="less">
-@import '../../../../styles/mixins.less';
 
 .svg-icon {
   &:before {

@@ -31,8 +31,8 @@
           <div class="flexrow nogrow">
             <rank-hexes :current="item.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
             <h4>{{ rankText }}</h4>
-            <btn-faicon v-if="editMode" icon="trash" @click="clearProgress" />
-            <btn-faicon icon="play" @click="markProgress" />
+            <btn-faicon class="block" v-if="editMode" icon="trash" @click="clearProgress" />
+            <btn-faicon class="block" icon="play" @click="markProgress" />
           </div>
           <!-- PROGRESS -->
           <div class="flexrow track nogrow" style="margin-bottom: 1em">

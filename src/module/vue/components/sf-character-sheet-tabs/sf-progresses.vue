@@ -63,7 +63,6 @@ h3 {
 </style>
 
 <script>
-import BtnFaicon from '../buttons/btn-faicon.vue.js'
 export default {
   props: {
     actor: Object,
@@ -132,6 +131,5 @@ export default {
       this.applySort(i, i + 1, false, (x) => x.data.data.completed)
     },
   },
-  components: { BtnFaicon },
 }
 </script>

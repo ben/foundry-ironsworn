@@ -65,7 +65,6 @@
 </style>
 
 <script>
-import BtnRollstat from '../buttons/btn-rollstat.vue.js'
 export default {
   props: {
     actor: Object,
@@ -139,6 +138,5 @@ export default {
       this.foundryItem.update({ data: { abilities } })
     },
   },
-  components: { BtnRollstat },
 }
 </script>
