@@ -7,16 +7,16 @@
         <div class="flexcol">
           <div class="flexrow">
             <rank-hexes :current="item.data.rank" @click="rankClick" />
-            <btn-isicon v-if="editMode" icon="trash" @click="destroy" :tooltip="$t('IRONSWORN.DeleteItem')" />
-            <btn-isicon icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
-            <btn-isicon v-if="editMode" :icon="completedIcon" @click="toggleComplete" :tooltip="completedTooltip" />
-            <btn-isicon
+            <btn-faicon v-if="editMode" icon="trash" @click="destroy" :tooltip="$t('IRONSWORN.DeleteItem')" />
+            <btn-faicon icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
+            <btn-faicon v-if="editMode" :icon="completedIcon" @click="toggleComplete" :tooltip="completedTooltip" />
+            <btn-faicon
               v-if="editMode && item.data.hasTrack"
               icon="caret-left"
               @click="retreat"
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
             />
-            <btn-isicon
+            <btn-faicon
               v-if="item.data.hasTrack"
               icon="caret-right"
               @click="advance"
@@ -33,7 +33,7 @@
           </div>
           <h4 class="flexrow">
             <span>{{ item.name }}</span>
-            <btn-isicon
+            <btn-faicon
               icon="star"
               :solid="item.data.starred"
               :tooltip="$t('IRONSWORN.StarProgress')"

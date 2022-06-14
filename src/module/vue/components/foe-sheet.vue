@@ -9,8 +9,8 @@
       <div class="flexrow nogrow">
         <rank-hexes :current="foe.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
         <h4>{{ rankText }}</h4>
-        <btn-isicon icon="trash" @click="clearProgress" />
-        <btn-isicon icon="caret-right" @click="markProgress" />
+        <btn-faicon icon="trash" @click="clearProgress" />
+        <btn-faicon icon="caret-right" @click="markProgress" />
       </div>
 
       <!-- PROGRESS -->

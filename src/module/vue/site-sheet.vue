@@ -10,8 +10,8 @@
     <div class="flexrow nogrow">
       <rank-hexes :current="actor.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
       <h4>{{ rankText }}</h4>
-      <btn-isicon v-if="editMode" icon="trash" @click="clearProgress" />
-      <btn-isicon icon="play" @click="markProgress" />
+      <btn-faicon v-if="editMode" icon="trash" @click="clearProgress" />
+      <btn-faicon icon="play" @click="markProgress" />
     </div>
 
     <!-- PROGRESS -->
@@ -66,7 +66,7 @@
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
       <i class="flexrow nogrow clickable text isicon-d10-tilt" style="padding: 2px" @click="randomDenizen" />
-      <btn-isicon icon="atlas" @click="openFoeCompendium" />
+      <btn-faicon icon="atlas" @click="openFoeCompendium" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">

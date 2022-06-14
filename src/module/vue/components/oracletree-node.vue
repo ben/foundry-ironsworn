@@ -8,7 +8,7 @@
           <i class="isicon-d10-tilt juicy"></i>
           {{ node.displayName }}
         </span>
-        <btn-isicon v-if="isLeaf" icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
+        <btn-faicon v-if="isLeaf" icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
       </h4>
 
       <transition name="slide">

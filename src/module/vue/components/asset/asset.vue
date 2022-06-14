@@ -3,8 +3,8 @@
     <div class="asset-entry nogrow" @click="toggle">
       <div class="flexrow">
         <h4 style="margin: 0; line-height: 20px">{{ asset.name }}</h4>
-        <btn-isicon v-if="editMode" icon="trash" @click="destroy" />
-        <btn-isicon icon="edit" @click="edit" />
+        <btn-faicon v-if="editMode" icon="trash" @click="destroy" />
+        <btn-faicon icon="edit" @click="edit" />
       </div>
     </div>
     <transition name="slide">

@@ -5,8 +5,8 @@
       <p v-if="overflow" class="nogrow" style="padding: 1px; margin-right: 10px">
         {{ overflow }}
       </p>
-      <btn-isicon v-if="editMode" icon="caret-left" @click="decrease" />
-      <btn-isicon icon="caret-right" @click="increase" />
+      <btn-faicon v-if="editMode" icon="caret-left" @click="decrease" />
+      <btn-faicon icon="caret-right" @click="increase" />
     </div>
 
     <div class="flexrow track">
