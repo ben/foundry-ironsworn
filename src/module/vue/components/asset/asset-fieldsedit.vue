@@ -10,7 +10,7 @@
           <input type="text" v-model="field.value" @blur="save" />
         </div>
         <div v-if="editMode" class="box flexrow nogrow">
-          <icon-button icon="trash" @click="deleteField(i)" />
+          <faicon-button icon="trash" @click="deleteField(i)" />
         </div>
       </div>
     </transition-group>

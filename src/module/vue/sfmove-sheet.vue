@@ -20,7 +20,7 @@
         <hr class="nogrow" />
         <h4 class="flexrow nogrow">
           <span class="flexrow">Actions</span>
-          <icon-button icon="fa fa-plus" @click="addTrigger" />
+          <faicon-button icon="fa fa-plus" @click="addTrigger" />
         </h4>
         <sfmove-tab
           v-for="option in triggerOptions"

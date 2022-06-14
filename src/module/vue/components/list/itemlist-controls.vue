@@ -1,7 +1,7 @@
 <template>
   <fieldset class="item-list-controls">
-    <icon-button v-for="track in progressTypes" :key="track.name" icon="plus" @click="addProgressItem(track.subtype)">
-      {{ $t(`IRONSWORN.${track.i18n}`) }}</icon-button
+    <faicon-button v-for="track in progressTypes" :key="track.name" icon="plus" @click="addProgressItem(track.subtype)">
+      {{ $t(`IRONSWORN.${track.i18n}`) }}</faicon-button
     >
     <btn-compendium v-for="compendium in compendiumTypes" :key="compendium.name" :compendium="compendium.name">
       {{ $t(`IRONSWORN.${compendium.i18n}`) }}</btn-compendium

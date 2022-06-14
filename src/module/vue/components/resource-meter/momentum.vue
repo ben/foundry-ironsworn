@@ -16,7 +16,7 @@
       :softMax="actor.data.momentumMax"
       :withPlusSigns="true"
     />
-    <icon-button
+    <faicon-button
       aria-label="Burn momentum"
       :aria-description="`Burn your momentum and reset it to ${actor.data.momentumReset}`"
       :aria-controls="`meter-momentum`"
@@ -25,7 +25,7 @@
       @click="burnMomentum"
     >
       {{ $t('IRONSWORN.Burn') }}
-    </icon-button>
+    </faicon-button>
     <span :aria-label="`Your momentum reset is actor.data.momentumReset`" class="momentum-max-reset"
       >{{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}</span
     >

@@ -16,16 +16,16 @@
     <!-- <challengerank-pips :svg="challengeRankSvg" :current="item.data.rank" @click="rankClick" /> -->
     <challenge-rank :pipSvg="challengeRankSvg" :item="item" :actor="actor" />
     <section class="progress-track-controls">
-      <icon-button v-if="editMode" icon="trash" @click="destroy" :tooltip="$t('IRONSWORN.DeleteItem')" />
-      <icon-button icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
-      <icon-button v-if="editMode" :icon="completedIcon" @click="toggleComplete" :tooltip="completedTooltip" />
-      <icon-button
+      <faicon-button v-if="editMode" icon="trash" @click="destroy" :tooltip="$t('IRONSWORN.DeleteItem')" />
+      <faicon-button icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
+      <faicon-button v-if="editMode" :icon="completedIcon" @click="toggleComplete" :tooltip="completedTooltip" />
+      <faicon-button
         v-if="editMode && item.data.hasTrack"
         icon="caret-left"
         @click="retreat"
         :tooltip="$t('IRONSWORN.UnmarkProgress')"
       />
-      <icon-button
+      <faicon-button
         v-if="item.data.hasTrack"
         icon="caret-right"
         @click="advance"
@@ -38,7 +38,7 @@
         :tooltip="$t('IRONSWORN.ProgressRoll')"
       />
     </section>
-    <icon-button
+    <faicon-button
       class="btn-star"
       icon="star"
       :solid="item.data.starred"

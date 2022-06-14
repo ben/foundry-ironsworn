@@ -10,8 +10,8 @@
         </div>
 
         <div class="flexrow" v-if="editMode" style="position: absolute; right: 5px; top: 5px">
-          <icon-button icon="trash" @click="destroy" />
-          <icon-button icon="edit" @click="edit" />
+          <faicon-button icon="trash" @click="destroy" />
+          <faicon-button icon="edit" @click="edit" />
         </div>
       </div>
     </div>

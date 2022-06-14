@@ -16,7 +16,7 @@
           {{ move.displayName }}
         </h1>
       </button>
-      <icon-button icon="eye" @click="expanded = !expanded" />
+      <faicon-button icon="eye" @click="expanded = !expanded" />
     </header>
     <transition name="slide">
       <ul>

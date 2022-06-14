@@ -3,8 +3,8 @@
     <!-- TODO: refactor this and the other move sheet searchbox as a component -->
     <form class="overview-search" role="search">
       <input type="search" :placeholder="$t('IRONSWORN.Search')" v-model="searchQuery" @keydown="preventSubmit" />
-      <icon-button icon="times-circle" @click="clearSearch"></icon-button>
-      <icon-button icon="compress-alt" @click="collapseAll"></icon-button>
+      <faicon-button icon="times-circle" @click="clearSearch"></faicon-button>
+      <faicon-button icon="compress-alt" @click="collapseAll"></faicon-button>
     </form>
 
     <move-leaflist v-if="searchQuery" :actor="actor" :moves="searchResults" />

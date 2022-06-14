@@ -1,7 +1,7 @@
 <template>
-  <icon-button class="btn-compendium" icon="atlas" @click="openCompendium">
+  <faicon-button class="btn-compendium" icon="atlas" @click="openCompendium">
     <slot></slot>
-  </icon-button>
+  </faicon-button>
 </template>
 
 <style lang="less"></style>

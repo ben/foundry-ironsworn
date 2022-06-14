@@ -1,7 +1,7 @@
 <template>
-  <button class="icon-button clickable" :class="classes" type="button" @click="click" :title="tooltip">
+  <icon-button :class="classes" @click="$emit('click')" :tooltip="tooltip">
     <slot></slot>
-  </button>
+  </icon-button>
 </template>
 
 <script>
@@ -17,11 +17,6 @@ export default {
         [`isicon-${this.icon}`]: true,
         ['icon-bg-hover']: this.hoverBg,
       }
-    },
-  },
-  methods: {
-    click(event) {
-      return this.$emit('click', event)
     },
   },
 }

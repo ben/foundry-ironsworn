@@ -4,7 +4,7 @@
       <isicon-button @click="rollOracle" class="juicy oracle-title" icon="d10-tilt">
         {{ node.displayName }}
       </isicon-button>
-      <icon-button icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
+      <faicon-button icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
     </span>
 
     <transition name="slide">

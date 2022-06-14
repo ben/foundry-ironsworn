@@ -1,32 +1,20 @@
 <template>
-  <button class="icon-button clickable" :class="classes" type="button" @click="click" :title="tooltip">
+  <button
+    class="icon-button clickable"
+    :class="classes"
+    type="button"
+    @click="$emit('click')"
+    :title="tooltip"
+    :aria-label="tooltip"
+    :data-tooltip="tooltip"
+  >
     <slot></slot>
   </button>
 </template>
-
 <script>
 export default {
   props: {
-    icon: { type: String, required: true },
-    solid: { type: Boolean, default: true },
     tooltip: String,
-    hoverBg: Boolean,
-  },
-  computed: {
-    classes() {
-      return {
-        fas: this.solid,
-        far: !this.solid,
-        [`fa-${this.icon}`]: true,
-        ['icon-bg-hover']: this.hoverBg,
-      }
-    },
-  },
-
-  methods: {
-    click(event) {
-      return this.$emit('click', event)
-    },
   },
 }
 </script>
@@ -50,20 +38,6 @@ export default {
     // restricts width + removes border if there's no text
     width: 1.5em;
     border: 0;
-  }
-  &.fa,
-  &.fas,
-  &.far {
-    &:not(:before) {
-      -moz-osx-font-smoothing: inherit;
-      -webkit-font-smoothing: inherit;
-      display: inherit;
-      font-style: inherit;
-      font-variant: inherit;
-      text-rendering: inherit;
-      line-height: inherit;
-      font-family: inherit;
-    }
   }
 }
 </style>

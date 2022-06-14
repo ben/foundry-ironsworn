@@ -3,8 +3,8 @@
   <article class="ironsworn__asset">
     <header class="asset-entry" @click="toggle">
       <h1 class="asset-title">{{ asset.name }}</h1>
-      <icon-button v-if="editMode" icon="trash" @click="destroy" />
-      <icon-button icon="edit" @click="edit" />
+      <faicon-button v-if="editMode" icon="trash" @click="destroy" />
+      <faicon-button icon="edit" @click="edit" />
     </header>
     <transition name="slide">
       <section class="flexcol asset-summary" v-if="expanded">

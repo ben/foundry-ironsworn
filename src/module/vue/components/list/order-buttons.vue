@@ -1,12 +1,17 @@
 <template>
   <section class="item-order-controls">
-    <icon-button icon="caret-up" :disabled="i == 0" :aria-disabled="i == 0" @click="$emit('sortUp', i)"></icon-button>
-    <icon-button
+    <faicon-button
+      icon="caret-up"
+      :disabled="i == 0"
+      :aria-disabled="i == 0"
+      @click="$emit('sortUp', i)"
+    ></faicon-button>
+    <faicon-button
       icon="caret-down"
       :disabled="i == length - 1"
       :aria-disabled="i == length - 1"
       @click="$emit('sortDown', i)"
-    ></icon-button>
+    ></faicon-button>
   </section>
 </template>
 
