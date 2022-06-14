@@ -2,24 +2,15 @@
   <div class="flexcol">
     <div class="flexrow">
       <h4>{{ title }}</h4>
-      <p
-        v-if="overflow"
-        class="nogrow"
-        style="padding: 1px; margin-right: 10px"
-      >
+      <p v-if="overflow" class="nogrow" style="padding: 1px; margin-right: 10px">
         {{ overflow }}
       </p>
-      <icon-button v-if="editMode" icon="caret-left" @click="decrease" />
-      <icon-button icon="caret-right" @click="increase" />
+      <btn-isicon v-if="editMode" icon="caret-left" @click="decrease" />
+      <btn-isicon icon="caret-right" @click="increase" />
     </div>
 
     <div class="flexrow track">
-      <div
-        class="flexcol track-box"
-        v-for="(box, i) in boxes"
-        :key="`box${i}`"
-        v-html="box"
-      ></div>
+      <div class="flexcol track-box" v-for="(box, i) in boxes" :key="`box${i}`" v-html="box"></div>
     </div>
 
     <xp-track :max="xpBoxCount" :marked="xpSpent" @click="setXp" />

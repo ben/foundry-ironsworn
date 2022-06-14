@@ -2,24 +2,12 @@
   <div class="flexcol stack">
     <div v-if="editMode">
       <transition-group name="slide" tag="div">
-        <div
-          class="stack-row flexrow"
-          v-for="(option, i) in item.data.exclusiveOptions"
-          :key="'item' + i"
-        >
-          <input
-            type="text"
-            v-model="option.name"
-            @blur="updateOptionName(i)"
-          />
-          <icon-button icon="trash" @click="deleteOption(i)" />
+        <div class="stack-row flexrow" v-for="(option, i) in item.data.exclusiveOptions" :key="'item' + i">
+          <input type="text" v-model="option.name" @blur="updateOptionName(i)" />
+          <btn-isicon icon="trash" @click="deleteOption(i)" />
         </div>
       </transition-group>
-      <div
-        class="stack-row clickable block"
-        @click="addOption"
-        style="min-height: 1.5rem; align-items: center"
-      >
+      <div class="stack-row clickable block" @click="addOption" style="min-height: 1.5rem; align-items: center">
         <i class="fas fa-plus" />
       </div>
     </div>
