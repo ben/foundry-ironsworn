@@ -1,15 +1,14 @@
 <template>
-  <btn-svgicon
+  <btn-isicon
     @click="rollStat()"
     :tooltip="tooltip"
-    class="action-roll"
+    class="action-roll stat-roll"
     :class="attr"
     icon="d10-tilt"
     aria-haspopup="dialog"
   >
-    <!-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-haspopup -->
     <slot></slot>
-  </btn-svgicon>
+  </btn-isicon>
 </template>
 
 <script>
@@ -23,7 +22,7 @@ export default {
   computed: {},
   methods: {
     rollStat() {
-      console.log(this.attr, this.item)
+      // console.log(this.attr, this.item)
       CONFIG.IRONSWORN.RollDialog.show({
         actor: this.$actor,
         stat: this.attr,

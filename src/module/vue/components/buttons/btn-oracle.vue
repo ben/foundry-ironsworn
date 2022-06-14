@@ -1,7 +1,7 @@
 <template>
-  <btn-svgicon icon="oracle" class="oracle-roll" @click="rollOracle" :tooltip="tooltip">
+  <btn-isicon icon="d10-tilt" class="oracle-roll" @click="rollOracle" :tooltip="tooltip">
     <slot></slot>
-  </btn-svgicon>
+  </btn-isicon>
 </template>
 
 <style lang="less"></style>

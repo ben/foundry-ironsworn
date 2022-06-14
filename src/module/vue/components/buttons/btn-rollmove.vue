@@ -1,23 +1,13 @@
 <template>
   <btn-isicon
-    v-if="isProgressMove"
-    @click="rollMove()"
-    :tooltip="tooltip"
-    class="progress-roll move-roll"
-    icon="d10-tilt"
-  >
-    <slot></slot>
-  </btn-isicon>
-  <btn-svgicon
-    v-else
     @click="rollMove()"
     :tooltip="tooltip"
     class="action-roll move-roll"
-    icon="d6-pips"
+    icon="d10-tilt"
     aria-haspopup="dialog"
   >
     <slot></slot>
-  </btn-svgicon>
+  </btn-isicon>
 </template>
 
 <script>
@@ -26,11 +16,6 @@ export default {
     actor: Object,
     move: Object,
     tooltip: String,
-  },
-  computed: {
-    isProgressMove() {
-      return this.move.moveItem?.data?.data?.['Progress Move']
-    },
   },
   methods: {
     async rollMove() {
