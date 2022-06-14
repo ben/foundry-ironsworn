@@ -9,13 +9,7 @@
       <div class="flexcol margin-left">
         <div class="flexrow" style="flex-wrap: nowrap">
           <div class="flexcol stack momentum">
-            <stack
-              :actor="actor"
-              stat="momentum"
-              :top="10"
-              :bottom="-6"
-              :softMax="actor.data.momentumMax"
-            ></stack>
+            <stack :actor="actor" stat="momentum" :top="10" :bottom="-6" :softMax="actor.data.momentumMax"></stack>
             <hr class="nogrow" />
             <div class="nogrow">
               <div class="clickable block stack-row" @click="burnMomentum">
@@ -23,8 +17,8 @@
               </div>
             </div>
 
-            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}
+            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }} {{ $t('IRONSWORN.Max') }}:
+            {{ actor.data.momentumMax }}
           </div>
 
           <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
@@ -55,21 +49,17 @@
           </div>
         </div>
         <keep-alive>
-          <component
-            :is="currentTab.component"
-            :actor="actor"
-            style="margin: 0.5rem"
-          />
+          <component :is="currentTab.component" :actor="actor" style="margin: 0.5rem" />
         </keep-alive>
       </div>
 
       <!-- Stats on right -->
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('health')">
-            <i class="isicon-d10-tilt"></i>
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="health">
             {{ $t('IRONSWORN.Health') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack health">
             <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
           </div>
@@ -78,10 +68,10 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('spirit')">
-            <i class="isicon-d10-tilt"></i>
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="spirit">
             {{ $t('IRONSWORN.Spirit') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack spirit">
             <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
           </div>
@@ -90,10 +80,10 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('supply')">
-            <i class="isicon-d10-tilt"></i>
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="supply">
             {{ $t('IRONSWORN.Supply') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack supply">
             <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
           </div>
@@ -119,11 +109,11 @@
 </style>
 
 <script>
+import BtnRollstat from './components/buttons/btn-rollstat.vue.js'
 export default {
   props: {
     actor: Object,
   },
-
   data() {
     const tabs = [
       { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
@@ -137,20 +127,18 @@ export default {
       currentTab: tabs[0],
     }
   },
-
   methods: {
     burnMomentum() {
       this.$actor.burnMomentum()
     },
-
     rollStat(stat) {
       CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
     },
-
     openCompendium(name) {
       const pack = game.packs?.get(`foundry-ironsworn.${name}`)
       pack?.render(true)
     },
   },
+  components: { BtnRollstat },
 }
 </script>

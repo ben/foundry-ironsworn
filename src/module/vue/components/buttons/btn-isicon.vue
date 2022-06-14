@@ -21,5 +21,3 @@ export default {
   },
 }
 </script>
-
-<!-- see icon-button for styling -->

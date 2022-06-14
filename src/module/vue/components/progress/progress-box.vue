@@ -22,14 +22,12 @@
               @click="advance"
               :tooltip="$t('IRONSWORN.MarkProgress')"
             />
-            <div
+            <btn-rollprogress
               v-if="item.data.hasTrack"
-              class="flexrow nogrow clickable block"
-              @click="fulfill"
               :tooltip="$t('IRONSWORN.ProgressRoll')"
-            >
-              <i class="isicon-d10-tilt" style="padding: 3px"></i>
-            </div>
+              class="flexrow nogrow block"
+              style="padding: 3px"
+            />
           </div>
           <h4 class="flexrow">
             <span>{{ item.name }}</span>
@@ -134,9 +132,6 @@ export default {
     },
     toggleStar() {
       this.$item.update({ data: { starred: !this.item.data.starred } })
-    },
-    fulfill() {
-      this.foundryItem.fulfill()
     },
     setClock(num) {
       this.$item.update({ data: { clockTicks: num } })

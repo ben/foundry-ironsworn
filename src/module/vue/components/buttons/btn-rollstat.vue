@@ -19,7 +19,6 @@ export default {
     attr: String,
     tooltip: String,
   },
-  computed: {},
   methods: {
     rollStat() {
       // console.log(this.attr, this.item)

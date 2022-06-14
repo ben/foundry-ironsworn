@@ -10,41 +10,18 @@
         {{ $t('IRONSWORN.Supply') }}
       </h4>
 
-      <boxrow
-        style="line-height: 25px"
-        :min="0"
-        :max="5"
-        :current="actor.data.supply"
-        @click="setSupply"
-      />
+      <boxrow style="line-height: 25px" :min="0" :max="5" :current="actor.data.supply" @click="setSupply" />
     </section>
 
     <section v-if="hasBonds" class="sheet-area nogrow">
       <bonds :actor="actor" />
     </section>
 
-    <section
-      class="sheet-area ironsworn__drop__target"
-      data-drop-type="progress"
-    >
+    <section class="sheet-area ironsworn__drop__target" data-drop-type="progress">
       <transition-group name="slide" tag="div" class="nogrow">
-        <div
-          class="flexrow nogrow"
-          v-for="(item, i) in activeItems"
-          :key="item._id"
-        >
-          <order-buttons
-            v-if="editMode"
-            :i="i"
-            :length="activeItems.length"
-            @sortUp="sortUp"
-            @sortDown="sortDown"
-          />
-          <progress-box
-            :item="item"
-            :actor="actor"
-            @completed="progressCompleted"
-          />
+        <div class="flexrow nogrow" v-for="(item, i) in activeItems" :key="item._id">
+          <order-buttons v-if="editMode" :i="i" :length="activeItems.length" @sortUp="sortUp" @sortDown="sortDown" />
+          <progress-box :item="item" :actor="actor" @completed="progressCompleted" />
         </div>
       </transition-group>
 
@@ -52,26 +29,20 @@
     </section>
 
     <section class="item-row nogrow" style="margin-top: 1rem">
-      <h3
-        class="clickable text"
-        :class="completedClass"
-        @click="expandCompleted = !expandCompleted"
-      >
-        <i :class="completedCaretClass"></i> {{ $t('IRONSWORN.Completed') }}
+      <h3>
+        <btn-faicon
+          class="text"
+          :class="completedClass"
+          :icon="completedCaretClass"
+          @click="expandCompleted = !expandCompleted"
+        >
+          {{ $t('IRONSWORN.Completed') }}
+        </btn-faicon>
       </h3>
-      <transition
-        name="slide"
-        tag="div"
-        class="nogrow completed"
-        style="margin: 0; padding: 0"
-      >
+      <transition name="slide" tag="div" class="nogrow completed" style="margin: 0; padding: 0">
         <div v-if="expandCompleted">
           <transition-group name="slide" tag="div" class="nogrow">
-            <div
-              class="flexrow"
-              v-for="(item, i) in completedItems"
-              :key="item._id"
-            >
+            <div class="flexrow" v-for="(item, i) in completedItems" :key="item._id">
               <order-buttons
                 v-if="editMode"
                 :i="i"
@@ -86,12 +57,7 @@
       </transition>
     </section>
 
-    <textarea
-      class="notes"
-      :placeholder="$t('IRONSWORN.Notes')"
-      v-model="actor.data.biography"
-      @blur="saveNotes"
-    />
+    <textarea class="notes" :placeholder="$t('IRONSWORN.Notes')" v-model="actor.data.biography" @blur="saveNotes" />
   </div>
 </template>
 
@@ -125,18 +91,17 @@ textarea.notes {
 </style>
 
 <script>
+import BtnFaicon from './components/buttons/btn-faicon.vue.js'
 export default {
   props: {
     actor: Object,
   },
-
   data() {
     return {
       expandCompleted: false,
       highlightCompleted: false,
     }
   },
-
   computed: {
     progressItems() {
       return [
@@ -144,46 +109,38 @@ export default {
         ...this.actor.items.filter((x) => x.type === 'progress'),
       ].sort((a, b) => (a.sort || 0) - (b.sort || 0))
     },
-
     activeItems() {
       return this.progressItems.filter((x) => !x.data.completed)
     },
     completedItems() {
       return this.progressItems.filter((x) => x.data.completed)
     },
-
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
-
     completedCaretClass() {
       return 'fa fa-caret-' + (this.expandCompleted ? 'down' : 'right')
     },
-
     completedClass() {
       return this.highlightCompleted ? 'highlighted' : undefined
     },
-
     hasBonds() {
       const bonds = this.actor.items.find((x) => x.type === 'bondset')
       const markedBonds = bonds?.data?.bonds?.length
       return markedBonds && markedBonds > 0
     },
   },
-
   methods: {
     setSupply(_ev, value) {
       this.$actor.update({ data: { supply: value } })
       CONFIG.IRONSWORN.IronswornSettings.maybeSetGlobalSupply(value)
     },
-
     rollSupply() {
       CONFIG.IRONSWORN.RollDialog.show({
         actor: this.$actor,
         stat: 'supply',
       })
     },
-
     progressCompleted() {
       this.highlightCompleted = true
       clearTimeout(this.highlightCompletedTimer)
@@ -191,28 +148,22 @@ export default {
         this.highlightCompleted = false
       }, 2000)
     },
-
     saveNotes() {
       this.$actor.update({ 'data.biography': this.actor.data.biography })
     },
-
     async applySort(oldI, newI, sortBefore, filterFn) {
       const foundryItems = this.$actor.items
         .filter((x) => x.type === 'progress')
         .filter((x) => x.data.data.subtype !== 'bond')
         .filter(filterFn)
         .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
-
       const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
         target: foundryItems[newI],
         siblings: foundryItems,
         sortBefore,
       })
-      await Promise.all(
-        updates.map(({ target, update }) => target.update(update))
-      )
+      await Promise.all(updates.map(({ target, update }) => target.update(update)))
     },
-
     sortUp(i, ...args) {
       this.applySort(i, i - 1, true, (x) => !x.data.data.completed)
     },
@@ -226,5 +177,6 @@ export default {
       this.applySort(i, i + 1, false, (x) => x.data.data.completed)
     },
   },
+  components: { BtnFaicon },
 }
 </script>

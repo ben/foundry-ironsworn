@@ -15,9 +15,7 @@
       </div>
     </transition-group>
     <div class="flexrow boxrow nogrow" v-if="editMode">
-      <div class="box clickable block" @click="addField" style="min-height: 1.5rem; align-items: center">
-        <i class="fas fa-plus" />
-      </div>
+      <btn-faicon icon="plus" class="box block" @click="addField" style="min-height: 1.5rem; align-items: center" />
     </div>
   </div>
 </template>
@@ -38,39 +36,36 @@
 </style>
 
 <script>
+import BtnFaicon from '../buttons/btn-faicon.vue.js'
 export default {
   props: {
     item: Object,
   },
-
   computed: {
     editMode() {
       return this.item.flags['foundry-ironsworn']?.['edit-mode']
     },
   },
-
   methods: {
     enterEditMode() {
       this.$item.setFlag('foundry-ironsworn', 'edit-mode', true)
     },
-
     addField() {
       this.enterEditMode()
       const fields = Object.values(this.item.data.fields)
       fields.push({ name: ' ', value: ' ' })
       this.$item.update({ data: { fields } })
     },
-
     deleteField(idx) {
       const fields = Object.values(this.item.data.fields)
       fields.splice(idx, 1)
       this.$item.update({ data: { fields } })
     },
-
     save() {
       const fields = Object.values(this.item.data.fields)
       this.$item.update({ data: { fields } })
     },
   },
+  components: { BtnFaicon },
 }
 </script>

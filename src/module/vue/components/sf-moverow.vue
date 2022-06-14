@@ -1,32 +1,20 @@
 <template>
   <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
     <h4 class="flexrow" :title="tooltip">
-      <i
-        class="isicon-d10-tilt juicy clickable text nogrow"
-        style="padding-right: 0.5em"
-        @click="rollMove"
-      ></i>
+      <btn-rollmove :hidden="!canRoll" :disabled="!canRoll" class="juicy text nogrow" :actor="actor" :move="move" />
       <span class="clickable text" @click="expanded = !expanded">
         {{ move.displayName }}
       </span>
     </h4>
     <transition name="slide">
-      <with-rolllisteners
-        element="div"
-        class="move-summary"
-        :actor="actor"
-        v-if="expanded"
-        @moveclick="moveclick"
-      >
+      <with-rolllisteners element="div" class="move-summary" :actor="actor" v-if="expanded" @moveclick="moveclick">
         <div class="flexrow">
-          <button v-if="canRoll" @click="rollMove">
-            <i class="isicon-d10-tilt"></i>
-            {{$t('IRONSWORN.Roll')}}
-          </button>
-          <button @click="sendToChat">
-            <i class="far fa-comment"></i>
-            {{$t('IRONSWORN.Chat')}}
-          </button>
+          <btn-rollmove v-if="canRoll" :actor="actor" :move="move">
+            {{ $t('IRONSWORN.Roll') }}
+          </btn-rollmove>
+          <btn-sendmovetochat :move="move">
+            {{ $t('IRONSWORN.Chat') }}
+          </btn-sendmovetochat>
         </div>
         <div v-html="$enrichMarkdown(fulltext)" />
       </with-rolllisteners>
@@ -55,34 +43,31 @@ h4 {
 </style>
 
 <script>
+import BtnRollmove from './buttons/btn-rollmove.vue.js'
+import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue.js'
 export default {
   props: {
     actor: Object,
     move: Object,
   },
-
   data() {
     return {
       expanded: false,
     }
   },
-
   computed: {
     tooltip() {
-      const {Title, Page} = this.move.dataforgedMove?.Source ?? {}
+      const { Title, Page } = this.move.dataforgedMove?.Source ?? {}
       if (!Title) return undefined
       return `${Title} p${Page}`
     },
-
     fulltext() {
       return this.move.moveItem?.data?.data?.Text
     },
-
     canRoll() {
       return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
     },
   },
-
   watch: {
     'move.highlighted': async function (value) {
       if (value) {
@@ -92,25 +77,22 @@ export default {
       }
     },
   },
-
   methods: {
     rollMove(e) {
       e.preventDefault()
       CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, this.move.moveItem)
     },
-
     sendToChat(e) {
       e.preventDefault()
       CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(this.move.moveItem)
     },
-
     moveclick(item) {
       this.$emit('moveclick', item)
     },
-
     collapse() {
       this.expanded = false
     },
   },
+  components: { BtnRollmove, BtnSendmovetochat },
 }
 </script>

@@ -65,7 +65,7 @@
     <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
-      <i class="flexrow nogrow clickable text isicon-d10-tilt" style="padding: 2px" @click="randomDenizen" />
+      <btn-isicon icon="d10-tilt" class="flexrow nogrow text" style="padding: 2px" @click="randomDenizen" />
       <btn-compendium compendium="ironswornfoes" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">

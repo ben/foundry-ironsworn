@@ -22,6 +22,7 @@
             :actor="actingActor"
             @moveclick="moveclick"
           >
+            <!-- TODO: redo as list style -->
             <i class="fas fa-circle nogrow" style="margin: 1rem 0.5rem 0 0"></i>
             <div v-html="$enrichHtml(ability.description)"></div>
             <clock
@@ -36,10 +37,10 @@
         </ul>
 
         <div class="flexcol" v-if="asset.data.track.enabled">
-          <h4 class="clickable text flexrow" style="margin-bottom: 3px" @click="rollTrack">
-            <span>{{ asset.data.track.name }}</span>
-            <i class="isicon-d10-tilt juicy nogrow" style="padding-right: 3px"></i>
-          </h4>
+          <!-- TODO: style as h4 -->
+          <btn-rollstat class="juicy text flexrow" :actor="actor" :item="asset" attr="track" style="margin-bottom: 3px">
+            {{ asset.data.track.name }}
+          </btn-rollstat>
           <asset-track :actor="actor" :item="asset" />
         </div>
 
@@ -64,12 +65,12 @@
 </style>
 
 <script>
+import BtnRollstat from '../buttons/btn-rollstat.vue.js'
 export default {
   props: {
     actor: Object,
     asset: Object,
   },
-
   computed: {
     expanded() {
       return this.asset?.flags['foundry-ironsworn']?.expanded || false
@@ -92,7 +93,6 @@ export default {
       return CONFIG.IRONSWORN.defaultActor()?.toObject(false)
     },
   },
-
   methods: {
     toggle() {
       this.foundryItem?.setFlag('foundry-ironsworn', 'expanded', !this.asset?.flags['foundry-ironsworn']?.expanded)
@@ -104,7 +104,6 @@ export default {
     },
     destroy(ev) {
       ev.stopPropagation()
-
       Dialog.confirm({
         title: this.$t('IRONSWORN.DeleteAsset'),
         content: `<p><strong>${this.$t('IRONSWORN.ConfirmDelete')}</strong></p>`,
@@ -134,12 +133,12 @@ export default {
       actorWithMoves?.moveSheet?.render(true)
       actorWithMoves?.moveSheet?.highlightMove(item)
     },
-
     setAbilityClock(abilityIdx, clockTicks) {
       const abilities = Object.values(this.asset.data.abilities)
       abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
       this.foundryItem.update({ data: { abilities } })
     },
   },
+  components: { BtnRollstat },
 }
 </script>

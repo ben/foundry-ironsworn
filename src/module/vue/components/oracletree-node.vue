@@ -4,10 +4,9 @@
     <!-- Leaf node -->
     <div v-if="isLeaf">
       <h4 class="clickable text flexrow">
-        <span @click="rollOracle">
-          <i class="isicon-d10-tilt juicy"></i>
+        <btn-oracle class="juicy" :node="node">
           {{ node.displayName }}
-        </span>
+        </btn-oracle>
         <btn-faicon v-if="isLeaf" icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
       </h4>
 
@@ -27,14 +26,16 @@
 
     <!-- Branch node -->
     <div v-else>
-      <h4 class="clickable text flexrow" @click="manuallyExpanded = !manuallyExpanded">
-        <span class="nogrow" style="flex-basis: 15px">
-          <i v-if="expanded" class="fa fa-caret-down" />
-          <i v-else class="fa fa-caret-right" />
-        </span>
-        {{ node.displayName }}
+      <h4 class="flexrow">
+        <btn-faicon
+          :icon="caretIcon"
+          class="clickable text nogrow"
+          @click="manuallyExpanded = !manuallyExpanded"
+          style="flex-basis: 15px"
+        >
+          {{ node.displayName }}
+        </btn-faicon>
       </h4>
-
       <transition name="slide">
         <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
           <oracletree-node
@@ -66,12 +67,12 @@ h4 {
 
 <script>
 import { sample } from 'lodash'
+import BtnOracle from './buttons/btn-oracle.vue.js'
 export default {
   props: {
     actor: Object,
     node: Object,
   },
-
   data() {
     return {
       manuallyExpanded: false,
@@ -79,16 +80,13 @@ export default {
       highlighted: false,
     }
   },
-
   computed: {
     isLeaf() {
       return this.node.tables.length > 0
     },
-
     expanded() {
       return this.manuallyExpanded || this.node.forceExpanded
     },
-
     tablePreview() {
       const texts = this.node.tables.map((table) => {
         const description = table.data.description || ''
@@ -106,20 +104,19 @@ export default {
           '| --- | --- |',
           ...tableRows.map((x) => `| ${x.low}-${x.high} | ${x.text} |`),
         ].join('\n')
-
         return description + '\n\n' + markdownTable
       })
-
       return this.$enrichMarkdown(texts.join('\n\n'))
     },
   },
-
   methods: {
+    caretIcon() {
+      return this.expanded ? 'caret-down' : 'caret-right'
+    },
     rollOracle() {
       const randomTable = sample(this.node.tables)
       CONFIG.IRONSWORN.rollAndDisplayOracleResult(randomTable)
     },
-
     moveclick(item) {
       console.log(item)
       let actorWithMoves = this.$actor
@@ -130,11 +127,9 @@ export default {
       actorWithMoves?.moveSheet?.render(true)
       actorWithMoves?.moveSheet?.highlightMove(item)
     },
-
     oracleclick(dfid) {
       this.$emit('oracleclick', dfid)
     },
-
     collapse() {
       this.manuallyExpanded = false
       this.descriptionExpanded = false
@@ -142,11 +137,9 @@ export default {
         child.collapse()
       }
     },
-
     expand() {
       this.manuallyExpanded = true
     },
-
     async highlight() {
       this.highlighted = true
       this.$el.scrollIntoView()
@@ -154,5 +147,6 @@ export default {
       this.highlighted = false
     },
   },
+  components: { BtnOracle },
 }
 </script>

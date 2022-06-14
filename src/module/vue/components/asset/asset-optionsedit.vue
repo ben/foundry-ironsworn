@@ -7,9 +7,12 @@
           <btn-faicon icon="trash" @click="deleteOption(i)" />
         </div>
       </transition-group>
-      <div class="stack-row clickable block" @click="addOption" style="min-height: 1.5rem; align-items: center">
-        <i class="fas fa-plus" />
-      </div>
+      <btn-faicon
+        icon="plus"
+        class="stack-row block"
+        @click="addOption"
+        style="min-height: 1.5rem; align-items: center"
+      />
     </div>
 
     <div v-else>

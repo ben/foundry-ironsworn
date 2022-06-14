@@ -30,10 +30,7 @@
       data-drop-type="progress"
       style="text-align: center; justify-items: space-around"
     >
-      <div class="clickable block" @click="addEmpty">
-        <i class="fas fa-file"></i>
-        {{ $t('IRONSWORN.Progress') }}
-      </div>
+      <btn-faicon @click="addEmpty" class="block" icon="file"> {{ $t('IRONSWORN.Progress') }}</btn-faicon>
       <btn-compendium class="block" compendium="ironswornfoes">{{ $t('IRONSWORN.Foes') }} (Ironsworn)</btn-compendium>
       <btn-compendium class="block" compendium="starforgedencounters"
         >{{ $t('IRONSWORN.Foes') }} (Starforged)</btn-compendium
