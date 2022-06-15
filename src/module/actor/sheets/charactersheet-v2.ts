@@ -6,7 +6,12 @@ import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 export class IronswornCharacterSheetV2 extends IronswornVueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'actor',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 700,
       height: 800,
       left: 50,

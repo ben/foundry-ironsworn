@@ -1,7 +1,12 @@
 <template>
   <div class="boxgroup">
     <div class="flexrow boxrow">
-      <boxrow-box v-for="(item, i) in items" :key="'box' + i" v-bind="item" @click="click" />
+      <boxrow-box
+        v-for="(item, i) in items"
+        :key="'box' + i"
+        v-bind="item"
+        @click="click"
+      />
     </div>
   </div>
 </template>

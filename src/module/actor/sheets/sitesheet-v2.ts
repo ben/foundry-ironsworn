@@ -9,7 +9,12 @@ export class IronswornSiteSheetV2 extends IronswornVueActorSheet {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'site', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'site',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 700,
       height: 650,
       template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
@@ -42,14 +47,18 @@ export class IronswornSiteSheetV2 extends IronswornVueActorSheet {
     }
 
     // Find which denizen slot this is going into
-    const dropTarget = $(event.target as HTMLElement).parents('.ironsworn__denizen__drop')[0]
+    const dropTarget = $(event.target as HTMLElement).parents(
+      '.ironsworn__denizen__drop'
+    )[0]
     if (!dropTarget) return false
     const idx = parseInt(dropTarget.dataset.idx || '')
     const { denizens } = this.siteData.data
     if (!denizens[idx]) return false
 
     // Set the denizen description
-    const description = item.pack ? `@Compendium[${item.pack}.${item.id}]{${item.name}}` : item.link
+    const description = item.pack
+      ? `@Compendium[${item.pack}.${item.id}]{${item.name}}`
+      : item.link
     denizens[idx].description = description
     this.actor.update({ data: { denizens } }, { render: true })
     return true

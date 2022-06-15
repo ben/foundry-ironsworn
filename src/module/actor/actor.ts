@@ -10,7 +10,8 @@ export class IronswornActor extends Actor {
 
   static async createDialog(data, _options = {}) {
     if (CONFIG.IRONSWORN.applications.createActorDialog) {
-      CONFIG.IRONSWORN.applications.createActorDialog.options.folder = data?.folder
+      CONFIG.IRONSWORN.applications.createActorDialog.options.folder =
+        data?.folder
       CONFIG.IRONSWORN.applications.createActorDialog.render(true)
     }
     return undefined
@@ -21,7 +22,9 @@ export class IronswornActor extends Actor {
     // Calculate momentum max/reset from debilities
     if (this.data.type === 'character') {
       const data = this.data.data
-      const numDebilitiesMarked = Object.values(data.debility).filter((x) => x).length
+      const numDebilitiesMarked = Object.values(data.debility).filter(
+        (x) => x
+      ).length
       data.momentumMax = 10 - numDebilitiesMarked
       data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
     }

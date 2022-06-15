@@ -13,7 +13,9 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
   'Delve the Depths': ({ hitType, stat }: CallbackInput) =>
     hitType === HIT_TYPE.WEAK
       ? ` <button class="ironsworn__delvedepths__roll" data-stat="${stat}">
-            <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
+            <i class="fa fa-dice-d6"></i> ${game.i18n.localize(
+              'IRONSWORN.Roll'
+            )}
           </button>`
       : undefined,
 
@@ -28,7 +30,9 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
       ? undefined
       : `
         <hr>
-        <p>${game.i18n.localize('IRONSWORN.MoveContents.Sojourn.extradescription')}</p>
+        <p>${game.i18n.localize(
+          'IRONSWORN.MoveContents.Sojourn.extradescription'
+        )}</p>
         <button class="ironsworn__sojourn__extra__roll">
           <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
         </button>

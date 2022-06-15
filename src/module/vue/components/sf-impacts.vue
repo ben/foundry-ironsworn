@@ -8,7 +8,11 @@
     </div>
     <div class="flexcol">
       <h5>{{ $t('IRONSWORN.LastingEffects') }}</h5>
-      <condition-checkbox class="nogrow" :actor="actor" name="permanentlyharmed" />
+      <condition-checkbox
+        class="nogrow"
+        :actor="actor"
+        name="permanentlyharmed"
+      />
       <condition-checkbox class="nogrow" :actor="actor" name="traumatized" />
     </div>
     <div class="flexcol">
@@ -19,8 +23,18 @@
     </div>
     <div class="flexcol">
       <h5>{{ $t('IRONSWORN.Vehicle') }}</h5>
-      <condition-checkbox class="nogrow" :actor="actor" name="battered" :global="true" />
-      <condition-checkbox class="nogrow" :actor="actor" name="cursed" :global="true" />
+      <condition-checkbox
+        class="nogrow"
+        :actor="actor"
+        name="battered"
+        :global="true"
+      />
+      <condition-checkbox
+        class="nogrow"
+        :actor="actor"
+        name="cursed"
+        :global="true"
+      />
     </div>
   </div>
 </template>

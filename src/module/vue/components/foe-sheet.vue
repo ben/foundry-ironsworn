@@ -7,7 +7,12 @@
 
     <div v-if="foe">
       <div class="flexrow nogrow">
-        <rank-hexes :current="foe.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
+        <rank-hexes
+          :current="foe.data.rank"
+          @click="setRank"
+          class="nogrow"
+          style="margin-right: 1em"
+        />
         <h4>{{ rankText }}</h4>
         <icon-button icon="trash" @click="clearProgress" />
         <icon-button icon="caret-right" @click="markProgress" />
@@ -39,7 +44,10 @@
         <i class="fas fa-atlas"></i>
         {{ $t('IRONSWORN.Foes') }} (Ironsworn)
       </div>
-      <div class="clickable block" @click="openCompendium('starforgedencounters')">
+      <div
+        class="clickable block"
+        @click="openCompendium('starforgedencounters')"
+      >
         <i class="fas fa-atlas"></i>
         {{ $t('IRONSWORN.Foes') }} (Starforged)
       </div>
@@ -82,7 +90,10 @@ export default {
 
   methods: {
     addEmpty() {
-      Item.create({ name: 'NPC', type: 'progress', data: { subtype: 'progress' } }, { parent: this.$actor })
+      Item.create(
+        { name: 'NPC', type: 'progress', data: { subtype: 'progress' } },
+        { parent: this.$actor }
+      )
     },
 
     openCompendium(name) {

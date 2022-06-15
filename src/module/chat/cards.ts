@@ -2,7 +2,11 @@ import { capitalize } from 'lodash'
 import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 import { HIT_TYPE, rollAndDisplayOracleResult } from './chatrollhelpers'
-import { DelveDomainDataProperties, DelveThemeDataProperties, SFMoveDataProperties } from '../item/itemtypes'
+import {
+  DelveDomainDataProperties,
+  DelveThemeDataProperties,
+  SFMoveDataProperties,
+} from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
 import { maybeShowDice, RollDialog } from '../helpers/rolldialog'
 import { defaultActor } from '../helpers/actors'
@@ -31,15 +35,33 @@ export class IronswornChatCard {
       .find('a.content-link')
       .removeClass('content-link') // Prevent default Foundry behavior
       .on('click', (ev) => this._moveNavigate.call(this, ev))
-    html.find('a.oracle-category-link').on('click', (ev) => this._oracleNavigate.call(this, ev))
-    html.find('.burn-momentum').on('click', (ev) => this._burnMomentum.call(this, ev))
-    html.find('.burn-momentum-sf').on('click', (ev) => this._sfBurnMomentum.call(this, ev))
-    html.find('.ironsworn__delvedepths__roll').on('click', (ev) => this._delveDepths.call(this, ev))
-    html.find('.ironsworn__revealdanger__roll').on('click', (ev) => this._revealDanger.call(this, ev))
-    html.find('.ironsworn__sojourn__extra__roll').on('click', (ev) => this._sojournExtra.call(this, ev))
-    html.find('.ironsworn__paytheprice__roll').on('click', (ev) => this._payThePriceExtra.call(this, ev))
-    html.find('.starforged__oracle__roll').on('click', (ev) => this._sfOracleRoll.call(this, ev))
-    html.find('.starforged__oracle__reroll').on('click', (ev) => this._sfOracleReroll.call(this, ev))
+    html
+      .find('a.oracle-category-link')
+      .on('click', (ev) => this._oracleNavigate.call(this, ev))
+    html
+      .find('.burn-momentum')
+      .on('click', (ev) => this._burnMomentum.call(this, ev))
+    html
+      .find('.burn-momentum-sf')
+      .on('click', (ev) => this._sfBurnMomentum.call(this, ev))
+    html
+      .find('.ironsworn__delvedepths__roll')
+      .on('click', (ev) => this._delveDepths.call(this, ev))
+    html
+      .find('.ironsworn__revealdanger__roll')
+      .on('click', (ev) => this._revealDanger.call(this, ev))
+    html
+      .find('.ironsworn__sojourn__extra__roll')
+      .on('click', (ev) => this._sojournExtra.call(this, ev))
+    html
+      .find('.ironsworn__paytheprice__roll')
+      .on('click', (ev) => this._payThePriceExtra.call(this, ev))
+    html
+      .find('.starforged__oracle__roll')
+      .on('click', (ev) => this._sfOracleRoll.call(this, ev))
+    html
+      .find('.starforged__oracle__reroll')
+      .on('click', (ev) => this._sfOracleReroll.call(this, ev))
   }
 
   async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -60,7 +82,10 @@ export class IronswornChatCard {
 
     console.log(item)
     for (const actor of game.actors?.contents || []) {
-      if ((actor.moveSheet as any)?._state >= 0 && actor.moveSheet?.highlightMove) {
+      if (
+        (actor.moveSheet as any)?._state >= 0 &&
+        actor.moveSheet?.highlightMove
+      ) {
         return actor.moveSheet.highlightMove(item)
       }
     }
@@ -71,7 +96,10 @@ export class IronswornChatCard {
     ev.preventDefault()
     const { dfid } = ev.target.dataset
     for (const actor of game.actors?.contents || []) {
-      if ((actor.moveSheet as any)?._state >= 0 && actor.moveSheet?.highlightMove) {
+      if (
+        (actor.moveSheet as any)?._state >= 0 &&
+        actor.moveSheet?.highlightMove
+      ) {
         return actor.moveSheet.highlightOracle(dfid)
       }
     }
@@ -259,16 +287,24 @@ export class IronswornChatCard {
 
     const parent = $(ev.target).parent('.table-draw')
 
-    const packName = parent.data('pack-name') || 'foundry-ironsworn.starforgedoracles'
+    const packName =
+      parent.data('pack-name') || 'foundry-ironsworn.starforgedoracles'
     const pack = game.packs.get(packName)
     await cachedDocumentsForPack(packName) // Pre-load from server
 
     const tableId = parent.data('table-id')
     const table = await pack?.getDocument(tableId)
-    rollAndDisplayOracleResult(table as RollTable, 'foundry-ironsworn.starforgedoracles')
+    rollAndDisplayOracleResult(
+      table as RollTable,
+      'foundry-ironsworn.starforgedoracles'
+    )
   }
 
-  async replaceSelectorWith(el: HTMLElement, selector: string, newContent: string) {
+  async replaceSelectorWith(
+    el: HTMLElement,
+    selector: string,
+    newContent: string
+  ) {
     const parent = $(el).parents('.message-content')
     parent.find(selector).html(newContent)
     const content = parent.html()
@@ -296,13 +332,17 @@ declare global {
   }
 }
 
-async function rollOnOracle(oracle: MoveOracle): Promise<{ result?: MoveOracleEntry; rollTotal: number }> {
+async function rollOnOracle(
+  oracle: MoveOracle
+): Promise<{ result?: MoveOracleEntry; rollTotal: number }> {
   const upperLimit = Math.max(...oracle.table.map((x) => x.high))
   const roll = new Roll(`1d${upperLimit}`)
   await roll.evaluate({ async: true })
   maybeShowDice(roll)
   const rollTotal = roll.total as number
-  const result = oracle.table.find((x) => x.low <= rollTotal && x.high >= rollTotal)
+  const result = oracle.table.find(
+    (x) => x.low <= rollTotal && x.high >= rollTotal
+  )
   return { result, rollTotal }
 }
 
@@ -315,7 +355,9 @@ function dangerFromSite(
 
   const theme = site.items.find((x) => x.type === 'delve-theme')
   const themeData = theme?.data as DelveThemeDataProperties | undefined
-  let theResult = themeData?.data.dangers.find((x) => x.low <= rollTotal && x.high >= rollTotal)
+  let theResult = themeData?.data.dangers.find(
+    (x) => x.low <= rollTotal && x.high >= rollTotal
+  )
   if (theResult) {
     theResult.description = `(${theme?.name}) ${theResult.description}`
     return theResult
@@ -323,7 +365,10 @@ function dangerFromSite(
 
   const domain = site.items.find((x) => x.type === 'delve-domain')
   const domainData = domain?.data as DelveDomainDataProperties | undefined
-  theResult = domainData?.data.dangers.find((x) => x.low <= rollTotal && x.high >= rollTotal)
-  if (theResult) theResult.description = `(${domain?.name}) ${theResult.description}`
+  theResult = domainData?.data.dangers.find(
+    (x) => x.low <= rollTotal && x.high >= rollTotal
+  )
+  if (theResult)
+    theResult.description = `(${domain?.name}) ${theResult.description}`
   return theResult
 }

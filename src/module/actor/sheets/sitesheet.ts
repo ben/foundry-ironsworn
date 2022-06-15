@@ -1,4 +1,7 @@
-import { createIronswornChatRoll, createIronswornDenizenChat } from '../../chat/chatrollhelpers'
+import {
+  createIronswornChatRoll,
+  createIronswornDenizenChat,
+} from '../../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../../constants'
 import { defaultActor } from '../../helpers/actors'
 import { moveDataByName } from '../../helpers/data'
@@ -31,7 +34,12 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'site', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'site',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 700,
       height: 520,
       template: 'systems/foundry-ironsworn/templates/actor/site.hbs',
@@ -48,14 +56,18 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     }
 
     // Find which denizen slot this is going into
-    const dropTarget = $(event.target as HTMLElement).parents('.ironsworn__denizen__drop')[0]
+    const dropTarget = $(event.target as HTMLElement).parents(
+      '.ironsworn__denizen__drop'
+    )[0]
     if (!dropTarget) return false
     const idx = parseInt(dropTarget.dataset.idx || '')
     const { denizens } = this.siteData.data
     if (!denizens[idx]) return false
 
     // Set the denizen description
-    const description = item.pack ? `@Compendium[${item.pack}.${item.id}]{${item.name}}` : item.link
+    const description = item.pack
+      ? `@Compendium[${item.pack}.${item.id}]{${item.name}}`
+      : item.link
     denizens[idx].description = description
     this.actor.update({ data: { denizens } }, { render: true })
     return true
@@ -106,19 +118,39 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
       itemClass.activateActorSheetListeners(html, this)
     }
 
-    html.find('.ironsworn__progress__rank').on('click', (ev) => this._setRank.call(this, ev))
-    html.find('.ironsworn__progress__mark').on('click', (ev) => this._markProgress.call(this, ev))
-    html.find('.ironsworn__progress__clear').on('click', (ev) => this._clearProgress.call(this, ev))
+    html
+      .find('.ironsworn__progress__rank')
+      .on('click', (ev) => this._setRank.call(this, ev))
+    html
+      .find('.ironsworn__progress__mark')
+      .on('click', (ev) => this._markProgress.call(this, ev))
+    html
+      .find('.ironsworn__progress__clear')
+      .on('click', (ev) => this._clearProgress.call(this, ev))
 
-    html.find('.ironsworn__compendium__open').on('click', (ev) => this._openCompendium.call(this, ev))
+    html
+      .find('.ironsworn__compendium__open')
+      .on('click', (ev) => this._openCompendium.call(this, ev))
 
-    html.find('.ironsworn__feature__roll').on('click', (ev) => this._randomFeature.call(this, ev))
-    html.find('.ironsworn__move__roll').on('click', (ev) => this._moveRoll.call(this, ev))
-    html.find('.ironsworn__locateobjective__roll').on('click', (ev) => this._locateObjective.call(this, ev))
+    html
+      .find('.ironsworn__feature__roll')
+      .on('click', (ev) => this._randomFeature.call(this, ev))
+    html
+      .find('.ironsworn__move__roll')
+      .on('click', (ev) => this._moveRoll.call(this, ev))
+    html
+      .find('.ironsworn__locateobjective__roll')
+      .on('click', (ev) => this._locateObjective.call(this, ev))
 
-    html.find('.ironsworn__random__denizen').on('click', (ev) => this._randomDenizen.call(this, ev))
-    html.find('.ironsworn__foe__compendium').on('click', (ev) => this._foeCompendium.call(this, ev))
-    html.find('.ironsworn__denizen__name').on('blur', (ev) => this._setDenizenName.call(this, ev))
+    html
+      .find('.ironsworn__random__denizen')
+      .on('click', (ev) => this._randomDenizen.call(this, ev))
+    html
+      .find('.ironsworn__foe__compendium')
+      .on('click', (ev) => this._foeCompendium.call(this, ev))
+    html
+      .find('.ironsworn__denizen__name')
+      .on('blur', (ev) => this._setDenizenName.call(this, ev))
   }
 
   _setRank(ev: JQuery.ClickEvent) {
@@ -176,7 +208,9 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
   async _randomDenizen(_ev: JQuery.ClickEvent) {
     const roll = await new Roll('1d100').evaluate({ async: true })
     const result = roll.total as number
-    const denizen = this.siteData.data.denizens.find((x) => x.low <= result && x.high >= result)
+    const denizen = this.siteData.data.denizens.find(
+      (x) => x.low <= result && x.high >= result
+    )
     if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
     await createIronswornDenizenChat({ roll, denizen, site: this.actor })
 
@@ -184,7 +218,9 @@ export class IronswornSiteSheet extends ActorSheet<ActorSheet.Options, Data> {
     if (!denizen?.description) {
       await this.actor.setFlag('foundry-ironsworn', 'edit-mode', true)
       const idx = this.siteData.data.denizens.indexOf(denizen)
-      const input = this.element.find(`.ironsworn__denizen__name[data-idx=${idx}]`)
+      const input = this.element.find(
+        `.ironsworn__denizen__name[data-idx=${idx}]`
+      )
       input.addClass('highlight').trigger('focus')
     }
   }

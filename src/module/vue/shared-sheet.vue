@@ -10,18 +10,41 @@
         {{ $t('IRONSWORN.Supply') }}
       </h4>
 
-      <boxrow style="line-height: 25px" :min="0" :max="5" :current="actor.data.supply" @click="setSupply" />
+      <boxrow
+        style="line-height: 25px"
+        :min="0"
+        :max="5"
+        :current="actor.data.supply"
+        @click="setSupply"
+      />
     </section>
 
     <section v-if="hasBonds" class="sheet-area nogrow">
       <bonds :actor="actor" />
     </section>
 
-    <section class="sheet-area ironsworn__drop__target" data-drop-type="progress">
+    <section
+      class="sheet-area ironsworn__drop__target"
+      data-drop-type="progress"
+    >
       <transition-group name="slide" tag="div" class="nogrow">
-        <div class="flexrow nogrow" v-for="(item, i) in activeItems" :key="item._id">
-          <order-buttons v-if="editMode" :i="i" :length="activeItems.length" @sortUp="sortUp" @sortDown="sortDown" />
-          <progress-box :item="item" :actor="actor" @completed="progressCompleted" />
+        <div
+          class="flexrow nogrow"
+          v-for="(item, i) in activeItems"
+          :key="item._id"
+        >
+          <order-buttons
+            v-if="editMode"
+            :i="i"
+            :length="activeItems.length"
+            @sortUp="sortUp"
+            @sortDown="sortDown"
+          />
+          <progress-box
+            :item="item"
+            :actor="actor"
+            @completed="progressCompleted"
+          />
         </div>
       </transition-group>
 
@@ -29,13 +52,26 @@
     </section>
 
     <section class="item-row nogrow" style="margin-top: 1rem">
-      <h3 class="clickable text" :class="completedClass" @click="expandCompleted = !expandCompleted">
+      <h3
+        class="clickable text"
+        :class="completedClass"
+        @click="expandCompleted = !expandCompleted"
+      >
         <i :class="completedCaretClass"></i> {{ $t('IRONSWORN.Completed') }}
       </h3>
-      <transition name="slide" tag="div" class="nogrow completed" style="margin: 0; padding: 0">
+      <transition
+        name="slide"
+        tag="div"
+        class="nogrow completed"
+        style="margin: 0; padding: 0"
+      >
         <div v-if="expandCompleted">
           <transition-group name="slide" tag="div" class="nogrow">
-            <div class="flexrow" v-for="(item, i) in completedItems" :key="item._id">
+            <div
+              class="flexrow"
+              v-for="(item, i) in completedItems"
+              :key="item._id"
+            >
               <order-buttons
                 v-if="editMode"
                 :i="i"
@@ -50,7 +86,12 @@
       </transition>
     </section>
 
-    <textarea class="notes" :placeholder="$t('IRONSWORN.Notes')" v-model="actor.data.biography" @blur="saveNotes" />
+    <textarea
+      class="notes"
+      :placeholder="$t('IRONSWORN.Notes')"
+      v-model="actor.data.biography"
+      @blur="saveNotes"
+    />
   </div>
 </template>
 
@@ -167,7 +208,9 @@ export default {
         siblings: foundryItems,
         sortBefore,
       })
-      await Promise.all(updates.map(({ target, update }) => target.update(update)))
+      await Promise.all(
+        updates.map(({ target, update }) => target.update(update))
+      )
     },
 
     sortUp(i, ...args) {

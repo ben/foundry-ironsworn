@@ -13,7 +13,12 @@ export class IronswornVueItemSheet extends ItemSheet {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'item', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'item',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 520,
       height: 480,
     })
@@ -42,7 +47,8 @@ export class IronswornVueItemSheet extends ItemSheet {
         // Update the Vue app with our updated item/flag data.
         if (sheetData?.item) Vue.set(this._vm, 'item', sheetData.item)
         if (sheetData?.data) Vue.set(this._vm.item, 'data', sheetData.data)
-        if (sheetData?.item?.flags) Vue.set(this._vm.item, 'flags', sheetData.item.flags)
+        if (sheetData?.item?.flags)
+          Vue.set(this._vm.item, 'flags', sheetData.item.flags)
         this._updateEditors($(this.element))
         this.activateVueListeners($(this.element), true)
         return this
@@ -94,7 +100,9 @@ export class IronswornVueItemSheet extends ItemSheet {
     // this._vm = null;
     // }, 500);
     // }
-    console.log('/////////////////////\r\nCLOSING SHEET\r\n/////////////////////')
+    console.log(
+      '/////////////////////\r\nCLOSING SHEET\r\n/////////////////////'
+    )
     return super.close(options)
   }
 
@@ -109,9 +117,12 @@ export class IronswornVueItemSheet extends ItemSheet {
   // Update initial content throughout all editors.
   _updateEditors(_html) {
     for (const [name] of Object.entries(this.editors)) {
-      const data = this.object instanceof Document ? this.object.data : this.object
+      const data =
+        this.object instanceof Document ? this.object.data : this.object
       const initialContent = getProperty(data, name)
-      const div = $(this.element).find(`.editor-content[data-edit="${name}"]`)[0]
+      const div = $(this.element).find(
+        `.editor-content[data-edit="${name}"]`
+      )[0]
       const editor = this.editors && this.editors[name]
       if (editor) {
         editor.initial = initialContent
@@ -154,7 +165,9 @@ export class IronswornVueItemSheet extends ItemSheet {
     // Place one-time executions after this line.
     if (repeat) return
 
-    html.find('.editor-content[data-edit]').each((_i, div) => this._activateEditor(div))
+    html
+      .find('.editor-content[data-edit]')
+      .each((_i, div) => this._activateEditor(div))
 
     // Input listeners.
     const inputs = '.section input[type="text"], .section input[type="number"]'

@@ -139,7 +139,16 @@
     }
   },
   "Item": {
-    "types": ["asset", "progress", "vow", "bondset", "move", "sfmove", "delve-theme", "delve-domain"],
+    "types": [
+      "asset",
+      "progress",
+      "vow",
+      "bondset",
+      "move",
+      "sfmove",
+      "delve-theme",
+      "delve-domain"
+    ],
     "templates": {
       "progress": {
         "description": "",

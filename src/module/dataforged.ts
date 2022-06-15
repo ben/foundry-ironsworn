@@ -1,7 +1,13 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { cloneDeep, get, isArray, isObject, max, set } from 'lodash'
-import { starforged, IMove, IOracle, IOracleCategory, IInputClock } from 'dataforged'
+import {
+  starforged,
+  IMove,
+  IOracle,
+  IOracleCategory,
+  IInputClock,
+} from 'dataforged'
 import { marked } from 'marked'
 import { IronswornItem } from './item/item'
 import shajs from 'sha.js'
@@ -54,21 +60,37 @@ export function hash(str: string): string {
   return shajs('sha256').update(str).digest('hex').substring(48)
 }
 
-export async function getFoundrySFTableByDfId(dfid: string): Promise<RollTable | undefined> {
-  const documents = await cachedDocumentsForPack('foundry-ironsworn.starforgedoracles')
+export async function getFoundrySFTableByDfId(
+  dfid: string
+): Promise<RollTable | undefined> {
+  const documents = await cachedDocumentsForPack(
+    'foundry-ironsworn.starforgedoracles'
+  )
   return documents?.find((x) => x.id === hashLookup(dfid))
 }
-export async function getFoundryISTableByDfId(dfid: string): Promise<RollTable | undefined> {
-  const documents = await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
+export async function getFoundryISTableByDfId(
+  dfid: string
+): Promise<RollTable | undefined> {
+  const documents = await cachedDocumentsForPack(
+    'foundry-ironsworn.ironswornoracles'
+  )
   return documents?.find((x) => x.id === hashLookup(dfid))
 }
 
-export async function getFoundryMoveByDfId(dfid: string): Promise<IronswornItem | undefined> {
-  const documents = await cachedDocumentsForPack('foundry-ironsworn.starforgedmoves')
-  return documents?.find((x) => x.id === hashLookup(dfid)) as IronswornItem | undefined
+export async function getFoundryMoveByDfId(
+  dfid: string
+): Promise<IronswornItem | undefined> {
+  const documents = await cachedDocumentsForPack(
+    'foundry-ironsworn.starforgedmoves'
+  )
+  return documents?.find((x) => x.id === hashLookup(dfid)) as
+    | IronswornItem
+    | undefined
 }
 
-export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> {
+export async function getDFMoveByDfId(
+  dfid: string
+): Promise<IMove | undefined> {
   for (const category of starforged['Move Categories']) {
     for (const move of category.Moves) {
       if (move.$id === dfid) return move
@@ -77,12 +99,16 @@ export async function getDFMoveByDfId(dfid: string): Promise<IMove | undefined> 
   return undefined
 }
 
-export function getDFOracleByDfId(dfid: string): IOracle | IOracleCategory | undefined {
+export function getDFOracleByDfId(
+  dfid: string
+): IOracle | IOracleCategory | undefined {
   const nodes = findOracleWithIntermediateNodes(dfid)
   return nodes[nodes.length - 1]
 }
 
-export function findOracleWithIntermediateNodes(dfid: string): Array<IOracle | IOracleCategory> {
+export function findOracleWithIntermediateNodes(
+  dfid: string
+): Array<IOracle | IOracleCategory> {
   const ret: Array<IOracle | IOracleCategory> = []
 
   function walkCategory(cat: IOracleCategory): boolean {
@@ -178,7 +204,11 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   })
 }
 
-function renderMarkdown(md: string, idMap: { [key: string]: string }, markedFn = marked.parse) {
+function renderMarkdown(
+  md: string,
+  idMap: { [key: string]: string },
+  markedFn = marked.parse
+) {
   return markedFn(renderLinksInStr(md, idMap))
 }
 
@@ -233,7 +263,8 @@ export async function importFromDataforged() {
 }
 
 async function processMoves(idMap: { [key: string]: string }) {
-  const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  const movesToCreate = [] as (ItemDataConstructorData &
+    Record<string, unknown>)[]
   for (const category of starforged['Move Categories']) {
     for (const move of category.Moves) {
       renderLinksInMove(idMap, move)
@@ -254,7 +285,8 @@ async function processMoves(idMap: { [key: string]: string }) {
 }
 
 async function processAssets(idMap: { [key: string]: string }) {
-  const assetsToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  const assetsToCreate = [] as (ItemDataConstructorData &
+    Record<string, unknown>)[]
   for (const assetType of starforged['Asset Types']) {
     for (const asset of assetType.Assets) {
       assetsToCreate.push({
@@ -309,7 +341,9 @@ async function processOracles(idMap: { [key: string]: string }) {
   // parents prior to their children, and children in order
   async function processOracle(oracle: IOracle) {
     if (oracle.Table) {
-      const description = marked.parseInline(renderLinksInStr(oracle.Description ?? '', idMap))
+      const description = marked.parseInline(
+        renderLinksInStr(oracle.Description ?? '', idMap)
+      )
       const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
       oraclesToCreate.push({
         _id: idMap[oracle.$id],
@@ -355,12 +389,18 @@ async function processOracles(idMap: { [key: string]: string }) {
 }
 
 async function processEncounters(idMap: { [key: string]: string }) {
-  const encountersToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
+  const encountersToCreate = [] as (ItemDataConstructorData &
+    Record<string, unknown>)[]
   for (const encounter of starforged.Encounters) {
-    const description = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
-      ...encounter,
-      variantLinks: encounter.Variants.map((x) => renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)),
-    })
+    const description = await renderTemplate(
+      'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
+      {
+        ...encounter,
+        variantLinks: encounter.Variants.map((x) =>
+          renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)
+        ),
+      }
+    )
 
     encountersToCreate.push({
       _id: idMap[encounter['$id']],
@@ -373,12 +413,15 @@ async function processEncounters(idMap: { [key: string]: string }) {
     })
 
     for (const variant of encounter['Variants']) {
-      const variantDescription = await renderTemplate('systems/foundry-ironsworn/templates/item/sf-foe.hbs', {
-        ...encounter,
-        ...variant,
-        Category: variant['Nature'] || encounter['Nature'],
-        CategoryDescription: variant['Summary'] || encounter['Summary'],
-      })
+      const variantDescription = await renderTemplate(
+        'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
+        {
+          ...encounter,
+          ...variant,
+          Category: variant['Nature'] || encounter['Nature'],
+          CategoryDescription: variant['Summary'] || encounter['Summary'],
+        }
+      )
 
       encountersToCreate.push({
         _id: idMap[variant['$id']],
@@ -386,7 +429,9 @@ async function processEncounters(idMap: { [key: string]: string }) {
         name: variant['Name'],
         data: {
           description: variantDescription,
-          rank: getLegacyRank('Rank' in variant ? variant['Rank'] : encounter['Rank']),
+          rank: getLegacyRank(
+            'Rank' in variant ? variant['Rank'] : encounter['Rank']
+          ),
         },
       })
     }

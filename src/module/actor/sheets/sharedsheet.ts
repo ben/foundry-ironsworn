@@ -4,7 +4,12 @@ import { IronswornSettings } from '../../helpers/settings'
 export class IronswornSharedSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'shared', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'shared',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 350,
       height: 700,
       template: 'systems/foundry-ironsworn/templates/actor/shared.hbs',
@@ -14,8 +19,12 @@ export class IronswornSharedSheet extends ActorSheet {
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html.find('.ironsworn__supply__roll').on('click', (e) => this._onSupplyRoll.call(this, e))
-    html.find('.ironsworn__supply__value').on('click', (e) => this._onSupplySet.call(this, e))
+    html
+      .find('.ironsworn__supply__roll')
+      .on('click', (e) => this._onSupplyRoll.call(this, e))
+    html
+      .find('.ironsworn__supply__value')
+      .on('click', (e) => this._onSupplySet.call(this, e))
 
     // Custom sheet listeners for every ItemType
     for (const itemClass of CONFIG.IRONSWORN.itemClasses) {

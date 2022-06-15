@@ -8,7 +8,12 @@ export class IronswornItemSheet extends ItemSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'item', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'item',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 520,
       height: 480,
     })

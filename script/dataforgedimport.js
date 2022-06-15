@@ -9,9 +9,14 @@ function renderHtml(idMap, text, markedFn) {
     text
       .replace(/\[([^\]]+)\]\(([^#]+)#[^)]+\)/g, (link, name, kind) => {
         if (kind && kind !== 'Moves') return link
-        return `@Compendium[foundry-ironsworn.starforgedmoves.${idMap['Moves / ' + name]}]{${name}}`
+        return `@Compendium[foundry-ironsworn.starforgedmoves.${
+          idMap['Moves / ' + name]
+        }]{${name}}`
       })
-      .replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'),
+      .replace(
+        /(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi,
+        '((rollplus $2))'
+      ),
     { gfm: true }
   )
 }
@@ -42,7 +47,10 @@ async function fetchDataforged() {
 
 async function writeLocal(name, obj) {
   console.log(`  Writing sf-${name}.json`)
-  return fs.writeFile(`system/assets/sf-${name}.json`, JSON.stringify(obj, null, 2) + '\n')
+  return fs.writeFile(
+    `system/assets/sf-${name}.json`,
+    JSON.stringify(obj, null, 2) + '\n'
+  )
 }
 
 function idHash(file, str) {
@@ -126,11 +134,19 @@ function processOracles(idMap, df) {
   for (const dfCategory of df['oracles.json']) {
     for (const dfOracle of dfCategory['Oracles']) {
       if (dfOracle['Description']) {
-        dfOracle['Description'] = renderHtml(idMap, dfOracle['Description'], marked.parse)
+        dfOracle['Description'] = renderHtml(
+          idMap,
+          dfOracle['Description'],
+          marked.parse
+        )
       }
       if (dfOracle['Table']) {
         for (const dfTableRow of dfOracle['Table']) {
-          dfTableRow['Result'] = renderHtml(idMap, dfTableRow['Result'], marked.parseInline)
+          dfTableRow['Result'] = renderHtml(
+            idMap,
+            dfTableRow['Result'],
+            marked.parseInline
+          )
         }
       }
     }
