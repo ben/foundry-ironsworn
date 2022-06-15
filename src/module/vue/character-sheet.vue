@@ -24,7 +24,8 @@
             </div>
 
             {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}
+            {{ $t('IRONSWORN.Max') }}:
+            {{ actor.data.momentumMax }}
           </div>
 
           <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
@@ -234,19 +235,19 @@ export default {
       )
     },
     assetSortUp(i) {
-      const items = this.$actor.items.filter(x => x.type === 'asset')
+      const items = this.$actor.items.filter((x) => x.type === 'asset')
       this.applySort(i, i - 1, true, items)
     },
     assetSortDown(i) {
-      const items = this.$actor.items.filter(x => x.type === 'asset')
+      const items = this.$actor.items.filter((x) => x.type === 'asset')
       this.applySort(i, i + 1, false, items)
     },
     progressSortUp(i) {
-      const items = this.$actor.items.filter(x => x.type === 'progress')
+      const items = this.$actor.items.filter((x) => x.type === 'progress')
       this.applySort(i, i - 1, true, items)
     },
     progressSortDown(i) {
-      const items = this.$actor.items.filter(x => x.type === 'progress')
+      const items = this.$actor.items.filter((x) => x.type === 'progress')
       this.applySort(i, i + 1, false, items)
     },
   },

@@ -3,7 +3,6 @@ import { Quill } from 'vue2-editor'
 const Inline = Quill.import('blots/inline')
 const Embed = Quill.import('blots/embed')
 
-
 export default class FoundryLink extends Embed {
   static create(value) {
     return FoundryLink.render(value)

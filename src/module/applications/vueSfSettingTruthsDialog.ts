@@ -16,8 +16,12 @@ export class SFSettingTruthsDialogVue extends VueApplication {
     })
   }
 
-  async getData(_options?: Application.RenderOptions): Promise<Record<string, unknown>> {
-    const truths = await fetch('systems/foundry-ironsworn/assets/sf-setting-truths.json').then((x) => x.json())
+  async getData(
+    _options?: Application.RenderOptions
+  ): Promise<Record<string, unknown>> {
+    const truths = await fetch(
+      'systems/foundry-ironsworn/assets/sf-setting-truths.json'
+    ).then((x) => x.json())
     return {
       truths: truths['Setting Truths'],
     }

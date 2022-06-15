@@ -3,7 +3,10 @@ import { marked } from 'marked'
 import { IronswornActor } from '../actor/actor'
 import { DenizenSlot } from '../actor/actortypes'
 import { getDFMoveByDfId, getFoundrySFTableByDfId } from '../dataforged'
-import { createStarforgedOracleTree, findPathToNodeByTableId } from '../features/customoracles'
+import {
+  createStarforgedOracleTree,
+  findPathToNodeByTableId,
+} from '../features/customoracles'
 import { EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
@@ -32,11 +35,15 @@ interface SFRollMessageParams {
 }
 
 function actionRoll(roll: any): Roll {
-  return roll.terms[0].rolls.find((x) => x.dice.length === 0 || x.dice[0].faces === 6)
+  return roll.terms[0].rolls.find(
+    (x) => x.dice.length === 0 || x.dice[0].faces === 6
+  )
 }
 
 function challengeRoll(roll: any): [Roll, Roll] {
-  return roll.terms[0].rolls.filter((x) => x.dice.length > 0 && x.dice[0].faces === 10)
+  return roll.terms[0].rolls.filter(
+    (x) => x.dice.length > 0 && x.dice[0].faces === 10
+  )
 }
 
 interface DieTotals {
@@ -83,7 +90,11 @@ export enum HIT_TYPE {
   STRONG = 'STRONG',
 }
 
-function calculateHitType(action: number, challenge1: number, challenge2: number): HIT_TYPE {
+function calculateHitType(
+  action: number,
+  challenge1: number,
+  challenge2: number
+): HIT_TYPE {
   if (action <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
   if (action > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
   return HIT_TYPE.WEAK
@@ -91,23 +102,31 @@ function calculateHitType(action: number, challenge1: number, challenge2: number
 
 function calculateHitTypeText(type: HIT_TYPE, match: boolean) {
   if (type === HIT_TYPE.MISS) {
-    return game.i18n.localize(match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss')
+    return game.i18n.localize(
+      match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss'
+    )
   }
   if (type === HIT_TYPE.STRONG) {
-    return game.i18n.localize(match ? 'IRONSWORN.Opportunity' : 'IRONSWORN.StrongHit')
+    return game.i18n.localize(
+      match ? 'IRONSWORN.Opportunity' : 'IRONSWORN.StrongHit'
+    )
   }
   return game.i18n.localize('IRONSWORN.WeakHit')
 }
 
 function calculateCardTitle(params: RollMessageParams) {
   if (params.move) {
-    let title = game.i18n.localize(`IRONSWORN.MoveContents.${params.move.Name}.title`)
+    let title = game.i18n.localize(
+      `IRONSWORN.MoveContents.${params.move.Name}.title`
+    )
     if (title.startsWith('IRONSWORN.')) {
       title = params.move.Name
     }
 
     if (params.stat) {
-      title += ` (${game.i18n.localize('IRONSWORN.' + capitalize(params.stat))})`
+      title += ` (${game.i18n.localize(
+        'IRONSWORN.' + capitalize(params.stat)
+      )})`
     } else if (params.subtitle) {
       title += `: ${params.subtitle}`
     }
@@ -121,7 +140,9 @@ function calculateCardTitle(params: RollMessageParams) {
       if (params.stat === 'track' && params.asset?.data.type === 'asset') {
         title += ` (${params.asset.data.data.track.name})`
       } else {
-        const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
+        const statText = game.i18n.localize(
+          `IRONSWORN.${capitalize(params.stat)}`
+        )
         title += ` (${statText})`
       }
     }
@@ -142,10 +163,15 @@ function calculateCardTitle(params: RollMessageParams) {
 }
 
 function calculateSFCardTitle(params: SFRollMessageParams) {
-  return `${params.move.name} (${game.i18n.localize('IRONSWORN.' + capitalize(params.usedStat))})`
+  return `${params.move.name} (${game.i18n.localize(
+    'IRONSWORN.' + capitalize(params.usedStat)
+  )})`
 }
 
-function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): string | undefined {
+function calculateMoveResultText(
+  type: HIT_TYPE,
+  move?: EnhancedDataswornMove
+): string | undefined {
   if (!move) return undefined
 
   switch (type) {
@@ -158,7 +184,11 @@ function calculateMoveResultText(type: HIT_TYPE, move?: EnhancedDataswornMove): 
   }
 }
 
-function calculateSFMoveResultText(type: HIT_TYPE, match: boolean, move: IronswornItem) {
+function calculateSFMoveResultText(
+  type: HIT_TYPE,
+  match: boolean,
+  move: IronswornItem
+) {
   const data = move.data as SFMoveDataProperties
   const outcomeKey = {
     [HIT_TYPE.MISS]: 'Miss',
@@ -175,9 +205,13 @@ interface MomentumProps {
   momentumHitTypeI18n?: string
   negativeMomentumCancel?: boolean
 }
-function calculateMomentumProps(roll: Roll, actor?: IronswornActor): MomentumProps {
+function calculateMomentumProps(
+  roll: Roll,
+  actor?: IronswornActor
+): MomentumProps {
   if (!actor || actor.data.type !== 'character') return {}
-  const { action, rawAction, challenge1, challenge2, match } = calculateDieTotals(roll)
+  const { action, rawAction, challenge1, challenge2, match } =
+    calculateDieTotals(roll)
 
   const momentum = actor.data.data.momentum
   if (momentum < 0 && -momentum === rawAction)
@@ -211,7 +245,14 @@ export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
 
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: true })
-  const { action, actionCapped, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
+  const {
+    action,
+    actionCapped,
+    canceledAction,
+    challenge1,
+    challenge2,
+    match,
+  } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
   let hitType = calculateHitType(action, challenge1, challenge2)
@@ -223,10 +264,13 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     }
   }
 
-  const bonusContent = MoveContentCallbacks[params.move?.Name || '']?.call(this, {
-    hitType,
-    stat: params.stat,
-  })
+  const bonusContent = MoveContentCallbacks[params.move?.Name || '']?.call(
+    this,
+    {
+      hitType,
+      stat: params.stat,
+    }
+  )
 
   const renderData = {
     themeClass: `theme-${IronswornSettings.theme}`,
@@ -239,7 +283,10 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     ...momentumProps,
     ...params,
   }
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll.hbs', renderData)
+  const content = await renderTemplate(
+    'systems/foundry-ironsworn/templates/chat/roll.hbs',
+    renderData
+  )
 
   const messageData = {
     speaker: ChatMessage.getSpeaker(),
@@ -252,21 +299,39 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   return cls.create(messageData as any, {})
 }
 
-export async function createIronswornMoveChat(opts: { move?: EnhancedDataswornMove; site?: IronswornActor }) {
-  const bonusContent = MoveContentCallbacks[opts.move?.Name || '']?.call(this, opts)
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/move.hbs', {
-    ...opts,
-    bonusContent,
-  })
+export async function createIronswornMoveChat(opts: {
+  move?: EnhancedDataswornMove
+  site?: IronswornActor
+}) {
+  const bonusContent = MoveContentCallbacks[opts.move?.Name || '']?.call(
+    this,
+    opts
+  )
+  const content = await renderTemplate(
+    'systems/foundry-ironsworn/templates/chat/move.hbs',
+    {
+      ...opts,
+      bonusContent,
+    }
+  )
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,
   })
 }
 
-export async function createStarforgedMoveRollChat(params: SFRollMessageParams) {
+export async function createStarforgedMoveRollChat(
+  params: SFRollMessageParams
+) {
   await params.roll.evaluate({ async: true })
-  const { action, actionCapped, canceledAction, challenge1, challenge2, match } = calculateDieTotals(params.roll)
+  const {
+    action,
+    actionCapped,
+    canceledAction,
+    challenge1,
+    challenge2,
+    match,
+  } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
   let hitType = calculateHitType(action, challenge1, challenge2)
@@ -286,7 +351,10 @@ export async function createStarforgedMoveRollChat(params: SFRollMessageParams) 
     ...momentumProps,
     ...params,
   }
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/roll-sf.hbs', renderData)
+  const content = await renderTemplate(
+    'systems/foundry-ironsworn/templates/chat/roll-sf.hbs',
+    renderData
+  )
 
   const messageData = {
     speaker: ChatMessage.getSpeaker(),
@@ -307,7 +375,10 @@ interface FeatureChatInput {
 }
 
 export async function createIronswornFeatureChat(params: FeatureChatInput) {
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/delve-feature.hbs', params)
+  const content = await renderTemplate(
+    'systems/foundry-ironsworn/templates/chat/delve-feature.hbs',
+    params
+  )
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,
@@ -323,7 +394,10 @@ interface DenizenChatInput {
 }
 
 export async function createIronswornDenizenChat(params: DenizenChatInput) {
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/denizen.hbs', params)
+  const content = await renderTemplate(
+    'systems/foundry-ironsworn/templates/chat/denizen.hbs',
+    params
+  )
   ChatMessage.create({
     speaker: ChatMessage.getSpeaker(),
     content,
@@ -332,7 +406,10 @@ export async function createIronswornDenizenChat(params: DenizenChatInput) {
   } as any)
 }
 
-export async function rollAndDisplayOracleResult(table?: RollTable, packName?: string): Promise<string | undefined> {
+export async function rollAndDisplayOracleResult(
+  table?: RollTable,
+  packName?: string
+): Promise<string | undefined> {
   console.log(table)
   if (!table) {
     return undefined
@@ -354,9 +431,15 @@ export async function rollAndDisplayOracleResult(table?: RollTable, packName?: s
 
   // Grab the relevant rows
   const roll = tableDraw.roll as Roll
-  const resultRow = tableRows.find((x) => x.low <= roll.result && roll.result <= x.high)
+  const resultRow = tableRows.find(
+    (x) => x.low <= roll.result && roll.result <= x.high
+  )
   const resultIdx = tableRows.indexOf(resultRow)
-  const displayRows = compact([tableRows[resultIdx - 1], { ...resultRow, selected: true }, tableRows[resultIdx + 1]])
+  const displayRows = compact([
+    tableRows[resultIdx - 1],
+    { ...resultRow, selected: true },
+    tableRows[resultIdx + 1],
+  ])
 
   // Calculate the "path" to this oracle
   const oracleTreeRoot = await createStarforgedOracleTree()
@@ -375,7 +458,10 @@ export async function rollAndDisplayOracleResult(table?: RollTable, packName?: s
     displayRows,
     result: tableDraw.results[0],
   }
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/oracle-roll.hbs', renderData)
+  const content = await renderTemplate(
+    'systems/foundry-ironsworn/templates/chat/oracle-roll.hbs',
+    renderData
+  )
 
   // Send out the chat card
   const messageData = {

@@ -15,8 +15,12 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html.find('.ironsworn__features__description').on('blur', (ev) => this._featureDescription.call(this, ev))
-    html.find('.ironsworn__dangers__description').on('blur', (ev) => this._dangerDescription.call(this, ev))
+    html
+      .find('.ironsworn__features__description')
+      .on('blur', (ev) => this._featureDescription.call(this, ev))
+    html
+      .find('.ironsworn__dangers__description')
+      .on('blur', (ev) => this._dangerDescription.call(this, ev))
   }
 
   _featureDescription(ev: JQuery.BlurEvent) {

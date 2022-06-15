@@ -5,13 +5,24 @@ import { BaseItem } from '../baseitem'
 export class AssetItem extends BaseItem {
   static entityName = 'asset'
 
-  static activateActorSheetListeners(html: JQuery, sheet: IronswornCharacterSheet) {
+  static activateActorSheetListeners(
+    html: JQuery,
+    sheet: IronswornCharacterSheet
+  ) {
     super.activateActorSheetListeners(html, sheet)
 
-    html.find('.ironsworn__asset__expand').on('click', (e) => this._onAssetHeaderClick.call(this, e, sheet))
-    html.find('.ironsworn__assettrack__value').on('click', (e) => this._onTrackValueClick.call(this, e, sheet))
-    html.find('.ironsworn__assettrack__roll').on('click', (e) => this._onTrackRollClick.call(this, e, sheet))
-    html.find('.ironsworn__assetoption').on('click', (e) => this._onAssetOptionClick.call(this, e, sheet))
+    html
+      .find('.ironsworn__asset__expand')
+      .on('click', (e) => this._onAssetHeaderClick.call(this, e, sheet))
+    html
+      .find('.ironsworn__assettrack__value')
+      .on('click', (e) => this._onTrackValueClick.call(this, e, sheet))
+    html
+      .find('.ironsworn__assettrack__roll')
+      .on('click', (e) => this._onTrackRollClick.call(this, e, sheet))
+    html
+      .find('.ironsworn__assetoption')
+      .on('click', (e) => this._onAssetOptionClick.call(this, e, sheet))
 
     html.find('.ironsworn__asset').each((_i, el) => {
       attachInlineRollListeners($(el), { actor: sheet.actor })
@@ -24,7 +35,11 @@ export class AssetItem extends BaseItem {
     const el = ev.currentTarget
     const itemId = el.dataset.item
     const item = sheet.actor.items.get(itemId)
-    item?.setFlag('foundry-ironsworn', 'expanded', !item.getFlag('foundry-ironsworn', 'expanded'))
+    item?.setFlag(
+      'foundry-ironsworn',
+      'expanded',
+      !item.getFlag('foundry-ironsworn', 'expanded')
+    )
   }
 
   static _onTrackValueClick(ev: JQuery.ClickEvent, sheet: ActorSheet) {

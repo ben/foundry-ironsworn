@@ -1,4 +1,4 @@
-import { FirstStartDialog } from "../applications/firstStartDialog"
+import { FirstStartDialog } from '../applications/firstStartDialog'
 
 function reload() {
   window.location.reload()
@@ -92,7 +92,9 @@ export class IronswornSettings {
 
     // Set to "match sheet, so check the sheet"
     const sheetClasses = game.settings.get('core', 'sheetClasses') as any
-    return sheetClasses.Actor?.character === 'ironsworn.StarforgedCharacterSheet'
+    return (
+      sheetClasses.Actor?.character === 'ironsworn.StarforgedCharacterSheet'
+    )
   }
 
   static get logCharacterChanges(): boolean {
@@ -102,17 +104,27 @@ export class IronswornSettings {
   static async maybeSetGlobalSupply(value: number) {
     if (!game.settings.get('foundry-ironsworn', 'shared-supply')) return
 
-    const actorsToUpdate = game.actors?.contents.filter((x) => ['character', 'shared'].includes(x.data.type)) || []
+    const actorsToUpdate =
+      game.actors?.contents.filter((x) =>
+        ['character', 'shared'].includes(x.data.type)
+      ) || []
     for (const actor of actorsToUpdate) {
-      await actor.update({ data: { supply: value } }, { suppressLog: true } as any)
+      await actor.update({ data: { supply: value } }, {
+        suppressLog: true,
+      } as any)
     }
   }
 
   static async maybeSetGlobalCondition(name: string, value: boolean) {
-    const actorsToUpdate = game.actors?.contents.filter((x) => ['character', 'starship'].includes(x.data.type)) || []
+    const actorsToUpdate =
+      game.actors?.contents.filter((x) =>
+        ['character', 'starship'].includes(x.data.type)
+      ) || []
     console.log(actorsToUpdate)
     for (const actor of actorsToUpdate) {
-      await actor.update({ data: { debility: { [name]: value } } }, { suppressLog: true } as any)
+      await actor.update({ data: { debility: { [name]: value } } }, {
+        suppressLog: true,
+      } as any)
     }
   }
 }

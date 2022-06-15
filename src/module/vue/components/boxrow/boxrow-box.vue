@@ -1,6 +1,6 @@
 <template>
   <div class="box clickable block" :class="classes" @click="click">
-    {{text}}
+    {{ text }}
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
   methods: {
     click(el) {
       this.$emit('click', el, this.value)
-    }
-  }
+    },
+  },
 }
 </script>

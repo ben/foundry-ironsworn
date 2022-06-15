@@ -20,7 +20,7 @@
           <div v-if="selected">
             <div
               class="flexrow"
-              v-for="(suboption) in table"
+              v-for="suboption in table"
               :key="suboption.Description"
             >
               <input
@@ -71,7 +71,9 @@ export default {
     },
 
     radiovalue() {
-      const subOptionText = this.subOptionDescription ? `(${this.subOptionDescription})` : ''
+      const subOptionText = this.subOptionDescription
+        ? `(${this.subOptionDescription})`
+        : ''
       return `
         <p><strong>${this.description}</strong></p>
         <p>${this.details} ${subOptionText}</p>

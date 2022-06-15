@@ -4,26 +4,38 @@ const fs = require('fs/promises')
 const util = require('util')
 
 function renderHtml(text) {
-  return marked.parse(text.replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'), { gfm: true })
+  return marked.parse(
+    text.replace(
+      /(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi,
+      '((rollplus $2))'
+    ),
+    { gfm: true }
+  )
 }
 
 async function dataswornJson(name) {
-  const resp = await fetch(`https://raw.githubusercontent.com/rsek/datasworn/master/${name}.json`)
+  const resp = await fetch(
+    `https://raw.githubusercontent.com/rsek/datasworn/master/${name}.json`
+  )
   return resp.json()
 }
 
 async function writeLocal(name, obj) {
-  return fs.writeFile(`system/assets/${name}.json`, JSON.stringify(obj, null, 2) + '\n')
+  return fs.writeFile(
+    `system/assets/${name}.json`,
+    JSON.stringify(obj, null, 2) + '\n'
+  )
 }
 
 function processMove(move) {
-  const resultRegex = /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \*\*weak hit\*\*, [\s\S]+?)(On a \*\*miss\*\*, [\s\S]+)/
+  const resultRegex =
+    /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \*\*weak hit\*\*, [\s\S]+?)(On a \*\*miss\*\*, [\s\S]+)/
   let [_, description, strong, weak, miss] = move.Text.match(resultRegex) || []
   let extradescription, extrastrong, extraweak, extramiss
 
   // Fixup for Companion Endure Harm, it includes a stat that's hard to implement
   if (move.Name === 'Companion Endure Harm') {
-    move.Stats = move.Stats.filter(x => x !== 'companion health')
+    move.Stats = move.Stats.filter((x) => x !== 'companion health')
   }
 
   // Fixup for Delve the Depths; the table is in the wrong place
@@ -39,26 +51,41 @@ function processMove(move) {
     const categories =
       'Clear a Condition\n\n  * Mend: Clear a wounded debility and take +1 health.\n  * Hearten: Clear a shaken debility and take +1 spirit.\n  * Equip: Clear an unprepared debility and take +1 supply. \n\nRecover\n\n  * Recuperate: Take +2 health for yourself and any companions.\n  * Consort: Take +2 spirit.\n  * Provision: Take +2 supply.\n  * Plan: Take +2 momentum. \n\nProvide Aid\n\n  * Take a quest: Envision what this community needs, or what trouble it is facing (*Ask the Oracle* if unsure). If you chose to help, *Swear an Iron Vow* and add +1.'
 
-    description = 'When **you spend time in a community seeking assistance**, roll +heart. If you share a bond, add +1.'
+    description =
+      'When **you spend time in a community seeking assistance**, roll +heart. If you share a bond, add +1.'
     strong = `On **strong hit**, you and your allies may each choose two from within the categories below. If you share a bond, choose one more.\n\n${categories}`
     weak = `On a **weak hit**, you and your allies may each choose one from within the categories below. If you share a bond, choose one more.\n\n${categories}`
     miss = 'On a **miss**, you find no help here. *Pay the Price*.'
-    extradescription = 'On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1.'
+    extradescription =
+      'On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1.'
     extrastrong = 'On a **strong hit**, take +2 more for that action.'
     extraweak = 'On a **weak hit**, take +1 more.'
-    extramiss = 'On a **miss**, it goes badly and you lose all benefits for that action.'
+    extramiss =
+      'On a **miss**, it goes badly and you lose all benefits for that action.'
   }
 
   // Fixup for Pay the Price; we don't need the table here
   if (move.Name === 'Pay the Price') {
     const tableRegex = /Roll\s+\|\s+Result[\s\S]+/
     description = move.Text.replace(tableRegex, '')
-    description = description.replace('Roll on the following table', 'Roll on the @Compendium[foundry-ironsworn.ironsworntables.D4mUSL3IXtFRfMhi]{Pay the Price} table.')
+    description = description.replace(
+      'Roll on the following table',
+      'Roll on the @Compendium[foundry-ironsworn.ironsworntables.D4mUSL3IXtFRfMhi]{Pay the Price} table.'
+    )
   }
 
   if (!description) description = move.Text
 
-  return { description, strong, weak, miss, extradescription, extrastrong, extraweak, extramiss }
+  return {
+    description,
+    strong,
+    weak,
+    miss,
+    extradescription,
+    extrastrong,
+    extraweak,
+    extramiss,
+  }
 }
 
 async function doit() {
@@ -125,7 +152,16 @@ async function doit() {
   const i18nMoves = []
   for (const category of movesJson.Categories) {
     for (let move of category.Moves) {
-      const { description, strong, weak, miss, extradescription, extrastrong, extraweak, extramiss } = processMove(move)
+      const {
+        description,
+        strong,
+        weak,
+        miss,
+        extradescription,
+        extrastrong,
+        extraweak,
+        extramiss,
+      } = processMove(move)
 
       delete move.Text
       move.Description = marked.parse(description || '') || undefined
@@ -137,7 +173,9 @@ async function doit() {
       move.ExtraWeak = marked.parse(extraweak || '') || undefined
       move.ExtraMiss = marked.parse(extramiss || '') || undefined
 
-      const oracles = moveOraclesJson.Oracles.filter((x) => x.Move === move.Name)
+      const oracles = moveOraclesJson.Oracles.filter(
+        (x) => x.Move === move.Name
+      )
       if (oracles.length > 0) {
         move.oracles = oracles.map((oracle) => {
           const stat = (oracle.Name.match(/ - (.*)$/) || [])[1]?.toLowerCase()
@@ -215,11 +253,13 @@ async function doit() {
     }
     for (let i = 0; i < theme.Features.length; i++) {
       const feature = theme.Features[i]
-      en.IRONSWORN.ThemeContents[theme.Name][`feature${i + 1}`] = feature.Description
+      en.IRONSWORN.ThemeContents[theme.Name][`feature${i + 1}`] =
+        feature.Description
     }
     for (let i = 0; i < theme.Dangers.length; i++) {
       const danger = theme.Dangers[i]
-      en.IRONSWORN.ThemeContents[theme.Name][`danger${i + 1}`] = danger.Description
+      en.IRONSWORN.ThemeContents[theme.Name][`danger${i + 1}`] =
+        danger.Description
     }
   }
 
@@ -243,11 +283,13 @@ async function doit() {
     }
     for (let i = 0; i < domain.Features.length; i++) {
       const feature = domain.Features[i]
-      en.IRONSWORN.DomainContents[domain.Name][`feature${i + 1}`] = feature.Description
+      en.IRONSWORN.DomainContents[domain.Name][`feature${i + 1}`] =
+        feature.Description
     }
     for (let i = 0; i < domain.Dangers.length; i++) {
       const danger = domain.Dangers[i]
-      en.IRONSWORN.DomainContents[domain.Name][`danger${i + 1}`] = danger.Description
+      en.IRONSWORN.DomainContents[domain.Name][`danger${i + 1}`] =
+        danger.Description
     }
   }
 
@@ -263,12 +305,14 @@ async function doit() {
   for (const truthCategory of truthsJson.Categories) {
     en.IRONSWORN.WorldTruths[truthCategory.Name] = {
       ...en.IRONSWORN.WorldTruths[truthCategory.name],
-      name: truthCategory.Name
+      name: truthCategory.Name,
     }
-    for(let i=0; i<truthCategory.Options.length; i++) {
+    for (let i = 0; i < truthCategory.Options.length; i++) {
       const option = truthCategory.Options[i]
-      en.IRONSWORN.WorldTruths[truthCategory.Name][`option${i+1}`] = option.Truth
-      en.IRONSWORN.WorldTruths[truthCategory.Name][`quest${i+1}`] = option.Quest
+      en.IRONSWORN.WorldTruths[truthCategory.Name][`option${i + 1}`] =
+        option.Truth
+      en.IRONSWORN.WorldTruths[truthCategory.Name][`quest${i + 1}`] =
+        option.Quest
     }
   }
 
@@ -286,7 +330,6 @@ async function doit() {
       if (foe.Truth) foe.Truth = marked.parse(foe.Truth).trim()
     }
   }
-
 
   console.log('  Writing')
   await writeLocal('foes', foesJson)

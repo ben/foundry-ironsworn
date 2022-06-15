@@ -1,5 +1,8 @@
 <template>
-  <div class="flexcol nogrow movesheet-row" :class="{ hidden: node.forceHidden, highlighted }">
+  <div
+    class="flexcol nogrow movesheet-row"
+    :class="{ hidden: node.forceHidden, highlighted }"
+  >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
     <div v-if="isLeaf">
@@ -157,9 +160,9 @@ export default {
     async highlight() {
       this.highlighted = true
       this.$el.scrollIntoView()
-      await new Promise(r => setTimeout(r, 2000))
+      await new Promise((r) => setTimeout(r, 2000))
       this.highlighted = false
-    }
+    },
   },
 }
 </script>

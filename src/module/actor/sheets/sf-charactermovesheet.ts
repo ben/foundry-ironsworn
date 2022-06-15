@@ -10,9 +10,15 @@ export class SFCharacterMoveSheet extends VueApplication {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'systems/foundry-ironsworn/templates/actor/sf-charactermoves.hbs',
+      template:
+        'systems/foundry-ironsworn/templates/actor/sf-charactermoves.hbs',
       resizable: true,
-      classes: ['ironsworn', 'sheet', 'moves', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'moves',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 350,
       height: 820,
       left: 685,

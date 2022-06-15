@@ -21,8 +21,8 @@ export default {
     actor: Object,
     foeCompendium: {
       type: String,
-      default: "ironswornfoes"
-    }
+      default: 'ironswornfoes',
+    },
   },
 
   methods: {

@@ -13,7 +13,9 @@
       (_, stat) => `
       <a class="inline-roll" data-param="${stat}">
         <i class="fas fa-dice-d6"></i>
-        ${rollText} +${game.i18n.localize(`IRONSWORN.${Vue.prototype.$capitalize(stat)}`).toLowerCase()}
+        ${rollText} +${game.i18n
+        .localize(`IRONSWORN.${Vue.prototype.$capitalize(stat)}`)
+        .toLowerCase()}
       </a>
     `
     )

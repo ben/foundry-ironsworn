@@ -24,7 +24,8 @@
             </div>
 
             {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}: {{ actor.data.momentumMax }}
+            {{ $t('IRONSWORN.Max') }}:
+            {{ actor.data.momentumMax }}
           </div>
 
           <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>

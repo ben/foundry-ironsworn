@@ -21,11 +21,11 @@
         <div class="flexrow">
           <button v-if="canRoll" @click="rollMove">
             <i class="isicon-d10-tilt"></i>
-            {{$t('IRONSWORN.Roll')}}
+            {{ $t('IRONSWORN.Roll') }}
           </button>
           <button @click="sendToChat">
             <i class="far fa-comment"></i>
-            {{$t('IRONSWORN.Chat')}}
+            {{ $t('IRONSWORN.Chat') }}
           </button>
         </div>
         <div v-html="$enrichMarkdown(fulltext)" />
@@ -69,7 +69,7 @@ export default {
 
   computed: {
     tooltip() {
-      const {Title, Page} = this.move.dataforgedMove?.Source ?? {}
+      const { Title, Page } = this.move.dataforgedMove?.Source ?? {}
       if (!Title) return undefined
       return `${Title} p${Page}`
     },
@@ -79,7 +79,9 @@ export default {
     },
 
     canRoll() {
-      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
+      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(
+        this.move.moveItem
+      )
     },
   },
 
@@ -101,7 +103,9 @@ export default {
 
     sendToChat(e) {
       e.preventDefault()
-      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(this.move.moveItem)
+      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(
+        this.move.moveItem
+      )
     },
 
     moveclick(item) {
