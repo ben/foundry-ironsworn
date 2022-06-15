@@ -1,9 +1,22 @@
 <template>
   <div>
-    <div class="flexcol" v-for="(ability, i) in item.data.abilities" :key="'ability' + i">
+    <div
+      class="flexcol"
+      v-for="(ability, i) in item.data.abilities"
+      :key="'ability' + i"
+    >
       <div class="flexrow">
-        <input type="checkbox" :checked="ability.enabled" @change="markAbility(i)" />
-        <input v-if="editMode" type="text" v-model="ability.description" @blur="save" />
+        <input
+          type="checkbox"
+          :checked="ability.enabled"
+          @change="markAbility(i)"
+        />
+        <input
+          v-if="editMode"
+          type="text"
+          v-model="ability.description"
+          @blur="save"
+        />
         <div v-else v-html="$enrichHtml(ability.description)" />
 
         <clock
@@ -17,10 +30,19 @@
       </div>
       <div class="flexrow" v-if="editMode">
         <label>
-          <input type="checkbox" :checked="ability.hasClock" @change="enableClock(i)" />
+          <input
+            type="checkbox"
+            :checked="ability.hasClock"
+            @change="enableClock(i)"
+          />
           {{ $t('IRONSWORN.Clock') }}
         </label>
-        <select class="nogrow" v-model="ability.clockMax" @change="clockMaxChange" style="margin: 0.5rem 0">
+        <select
+          class="nogrow"
+          v-model="ability.clockMax"
+          @change="clockMaxChange"
+          style="margin: 0.5rem 0"
+        >
           <option value="4">4 segments</option>
           <option value="6">6 segments</option>
           <option value="8">8 segments</option>

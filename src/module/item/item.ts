@@ -77,7 +77,8 @@ export class IronswornItem extends Item {
    * Move methods
    */
   getMoveData(): EnhancedDataswornMove {
-    if (this.data.type !== 'move') throw new Error(`tried to get move data from a ${this.type}`)
+    if (this.data.type !== 'move')
+      throw new Error(`tried to get move data from a ${this.type}`)
     return {
       Name: this.name || '',
       Source: {

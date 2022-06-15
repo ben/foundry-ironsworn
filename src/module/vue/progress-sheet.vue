@@ -6,7 +6,12 @@
       <document-name :document="item" />
     </header>
 
-    <select class="nogrow" v-model="item.data.subtype" @change="subtypeChange" style="margin: 0.5rem 0">
+    <select
+      class="nogrow"
+      v-model="item.data.subtype"
+      @change="subtypeChange"
+      style="margin: 0.5rem 0"
+    >
       <option value="vow">{{ $t('IRONSWORN.Vow') }}</option>
       <option value="progress">{{ $t('IRONSWORN.Progress') }}</option>
       <option value="bond">{{ $t('IRONSWORN.Connection') }}</option>
@@ -14,14 +19,22 @@
 
     <hr class="nogrow" />
     <label class="checkbox nogrow">
-      <input type="checkbox" v-model="item.data.completed" @change="saveChecks" />
+      <input
+        type="checkbox"
+        v-model="item.data.completed"
+        @change="saveChecks"
+      />
       {{ $t('IRONSWORN.Completed') }}
     </label>
     <hr class="nogrow" />
 
     <div class="nogrow">
       <label class="checkbox">
-        <input type="checkbox" v-model="item.data.hasTrack" @change="saveChecks" />
+        <input
+          type="checkbox"
+          v-model="item.data.hasTrack"
+          @change="saveChecks"
+        />
         {{ $t('IRONSWORN.Track') }}
       </label>
 
@@ -29,7 +42,12 @@
         <div class="nogrow" v-if="item.data.hasTrack">
           <!-- RANK -->
           <div class="flexrow nogrow">
-            <rank-hexes :current="item.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
+            <rank-hexes
+              :current="item.data.rank"
+              @click="setRank"
+              class="nogrow"
+              style="margin-right: 1em"
+            />
             <h4>{{ rankText }}</h4>
             <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
             <icon-button icon="play" @click="markProgress" />
@@ -46,18 +64,31 @@
 
     <div class="nogrow">
       <label class="checkbox">
-        <input type="checkbox" v-model="item.data.hasClock" @change="saveChecks" />
+        <input
+          type="checkbox"
+          v-model="item.data.hasClock"
+          @change="saveChecks"
+        />
         {{ $t('IRONSWORN.Clock') }}
       </label>
 
       <transition name="slide">
         <div class="flexrow nogrow" v-if="item.data.hasClock">
           <div class="nogrow" style="margin: 0 1rem">
-            <clock :wedges="item.data.clockMax" :ticked="item.data.clockTicks" @click="setClock" />
+            <clock
+              :wedges="item.data.clockMax"
+              :ticked="item.data.clockTicks"
+              @click="setClock"
+            />
           </div>
           <div class="flexcol">
             Segments:
-            <select class="nogrow" v-model="item.data.clockMax" @change="clockMaxChange" style="margin: 0.5rem 0">
+            <select
+              class="nogrow"
+              v-model="item.data.clockMax"
+              @change="clockMaxChange"
+              style="margin: 0.5rem 0"
+            >
               <option value="4">4</option>
               <option value="6">6</option>
               <option value="8">8</option>
@@ -72,7 +103,13 @@
     <hr class="nogrow" />
 
     <!-- DESCRIPTION -->
-    <editor target="data.description" :owner="true" :button="true" :editable="true" :content="item.data.description" />
+    <editor
+      target="data.description"
+      :owner="true"
+      :button="true"
+      :editable="true"
+      :content="item.data.description"
+    />
   </div>
 </template>
 

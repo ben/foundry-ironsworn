@@ -8,11 +8,21 @@ export class ProgressSheet extends IronswornItemSheet {
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html.find('.ironsworn__progress__mark').on('click', () => this.item.markProgress())
-    html.find('.ironsworn__progress__fulfill').on('click', () => this.item.fulfill())
-    html.find('.ironsworn__progress__clear').on('click', () => this.item.clearProgress())
-    html.find('.ironsworn__progress__rank').on('click', (e) => this._handleRankSet.call(this, e))
-    html.find('.ironsworn__progress__delete').on('click', (e) => this._handleDelete.call(this, e))
+    html
+      .find('.ironsworn__progress__mark')
+      .on('click', () => this.item.markProgress())
+    html
+      .find('.ironsworn__progress__fulfill')
+      .on('click', () => this.item.fulfill())
+    html
+      .find('.ironsworn__progress__clear')
+      .on('click', () => this.item.clearProgress())
+    html
+      .find('.ironsworn__progress__rank')
+      .on('click', (e) => this._handleRankSet.call(this, e))
+    html
+      .find('.ironsworn__progress__delete')
+      .on('click', (e) => this._handleDelete.call(this, e))
   }
 
   _handleRankSet(ev: JQuery.ClickEvent) {

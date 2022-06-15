@@ -1,13 +1,23 @@
 <template>
   <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
     <h4 class="flexrow" :title="tooltip">
-      <i class="isicon-d10-tilt juicy clickable text nogrow" style="padding-right: 0.5em" @click="rollMove"></i>
+      <i
+        class="isicon-d10-tilt juicy clickable text nogrow"
+        style="padding-right: 0.5em"
+        @click="rollMove"
+      ></i>
       <span class="clickable text" @click="expanded = !expanded">
         {{ move.displayName }}
       </span>
     </h4>
     <transition name="slide">
-      <with-rolllisteners element="div" class="move-summary" :actor="actor" v-if="expanded" @moveclick="moveclick">
+      <with-rolllisteners
+        element="div"
+        class="move-summary"
+        :actor="actor"
+        v-if="expanded"
+        @moveclick="moveclick"
+      >
         <div class="flexrow">
           <button v-if="canRoll" @click="rollMove">
             <i class="isicon-d10-tilt"></i>
@@ -69,7 +79,9 @@ export default {
     },
 
     canRoll() {
-      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
+      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(
+        this.move.moveItem
+      )
     },
   },
 
@@ -91,7 +103,9 @@ export default {
 
     sendToChat(e) {
       e.preventDefault()
-      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(this.move.moveItem)
+      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(
+        this.move.moveItem
+      )
     },
 
     moveclick(item) {

@@ -18,9 +18,14 @@ usedStat: "shadow"
 <div class='flexcol'>
   <h3>{{title}}</h3>
 
-  <div class='dice-result dice-tooltip dice-roll ironsworn-roll' data-moveid='{{move.data.data.dfid}}'>
+  <div
+    class='dice-result dice-tooltip dice-roll ironsworn-roll'
+    data-moveid='{{move.data.data.dfid}}'
+  >
     <div class='dice-formula'>
-      <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
+      <p>{{{actionDieFormula}}}
+        {{localize 'IRONSWORN.Versus'}}
+        {{{challengeDice}}}</p>
     </div>
     <div class='roll-result'>
       {{#if negativeMomentumCancel}}

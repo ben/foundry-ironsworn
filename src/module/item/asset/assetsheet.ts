@@ -12,16 +12,36 @@ export class AssetSheet extends IronswornItemSheet {
   activateListeners(html: JQuery) {
     if (!this.options.editable) return
 
-    html.find('.ironsworn__ability__enable').on('click', (ev) => this._abilityToggle.call(this, ev))
-    html.find('.ironsworn__option__enable').on('click', (ev) => this._optionToggle.call(this, ev))
-    html.find('.ironsworn__option__name').on('blur', (ev) => this._updateOptionName.call(this, ev))
-    html.find('.ironsworn__option__delete').on('click', (ev) => this._optionDelete.call(this, ev))
-    html.find('.ironsworn__option__add').on('click', (ev) => this._optionAdd.call(this, ev))
-    html.find('.ironsworn__field__add').on('click', (ev) => this._addField.call(this, ev))
-    html.find('.ironsworn__field__label').on('blur', (ev) => this._updateFieldLabel.call(this, ev))
-    html.find('.ironsworn__field__value').on('blur', (ev) => this._updateFieldValue.call(this, ev))
-    html.find('.ironsworn__field__delete').on('click', (ev) => this._deleteField.call(this, ev))
-    html.find('.ironsworn__asset__delete').on('click', (ev) => this.assetDelete.call(this, ev))
+    html
+      .find('.ironsworn__ability__enable')
+      .on('click', (ev) => this._abilityToggle.call(this, ev))
+    html
+      .find('.ironsworn__option__enable')
+      .on('click', (ev) => this._optionToggle.call(this, ev))
+    html
+      .find('.ironsworn__option__name')
+      .on('blur', (ev) => this._updateOptionName.call(this, ev))
+    html
+      .find('.ironsworn__option__delete')
+      .on('click', (ev) => this._optionDelete.call(this, ev))
+    html
+      .find('.ironsworn__option__add')
+      .on('click', (ev) => this._optionAdd.call(this, ev))
+    html
+      .find('.ironsworn__field__add')
+      .on('click', (ev) => this._addField.call(this, ev))
+    html
+      .find('.ironsworn__field__label')
+      .on('blur', (ev) => this._updateFieldLabel.call(this, ev))
+    html
+      .find('.ironsworn__field__value')
+      .on('blur', (ev) => this._updateFieldValue.call(this, ev))
+    html
+      .find('.ironsworn__field__delete')
+      .on('click', (ev) => this._deleteField.call(this, ev))
+    html
+      .find('.ironsworn__asset__delete')
+      .on('click', (ev) => this.assetDelete.call(this, ev))
 
     attachInlineRollListeners(html, { actor: this.actor || undefined })
   }
@@ -82,7 +102,9 @@ export class AssetSheet extends IronswornItemSheet {
   _optionAdd(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    const exclusiveOptions = Object.values(this.assetData.data.exclusiveOptions || [])
+    const exclusiveOptions = Object.values(
+      this.assetData.data.exclusiveOptions || []
+    )
     exclusiveOptions.push({ name: '', selected: false })
     this.item.update({ data: { exclusiveOptions } })
   }
@@ -91,7 +113,9 @@ export class AssetSheet extends IronswornItemSheet {
     ev.preventDefault()
 
     const { idx } = ev.currentTarget.dataset
-    const exclusiveOptions = Object.values(this.assetData.data.exclusiveOptions || [])
+    const exclusiveOptions = Object.values(
+      this.assetData.data.exclusiveOptions || []
+    )
     exclusiveOptions.splice(idx, 1)
     this.item.update({ data: { exclusiveOptions } })
   }
@@ -134,7 +158,9 @@ export class AssetSheet extends IronswornItemSheet {
 
     Dialog.confirm({
       title: game.i18n.localize(`IRONSWORN.DeleteAsset`),
-      content: `<p><strong>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</strong></p>`,
+      content: `<p><strong>${game.i18n.localize(
+        'IRONSWORN.ConfirmDelete'
+      )}</strong></p>`,
       yes: () => this.item.delete(),
       defaultYes: false,
     })

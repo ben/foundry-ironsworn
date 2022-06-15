@@ -1,6 +1,10 @@
 import { sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
-import { createIronswornChatRoll, createIronswornFeatureChat, createIronswornMoveChat } from '../chat/chatrollhelpers'
+import {
+  createIronswornChatRoll,
+  createIronswornFeatureChat,
+  createIronswornMoveChat,
+} from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
 import { DelveDomainDataSource, DelveThemeDataSource } from '../item/itemtypes'
 import { EnhancedDataswornMove } from './data'
@@ -51,14 +55,19 @@ export class RollDialog extends Dialog {
         opts.actor = allCharacters[0]
       } else {
         renderOpts.allCharacters = allCharacters
-        renderOpts.mruCharacter = opts.site?.getFlag('foundry-ironsworn', 'mru-character')
+        renderOpts.mruCharacter = opts.site?.getFlag(
+          'foundry-ironsworn',
+          'mru-character'
+        )
       }
     }
     const content = await renderTemplate(template, renderOpts)
 
     const callbackForStat = (stat: string) => (x) => {
       const form = x[0].querySelector('form')
-      const bonus = form.bonus.value ? parseInt(form.bonus.value, 10) : undefined
+      const bonus = form.bonus.value
+        ? parseInt(form.bonus.value, 10)
+        : undefined
       let actor = opts.actor
       if (form.char?.value) {
         actor = game.actors?.get(form.char.value)
@@ -111,7 +120,10 @@ export class RollDialog extends Dialog {
     if (opts.bonus) actionExpr += ` + ${opts.bonus}`
     const data = {
       ...opts.actor?.getRollData(),
-      track: opts.asset?.data.type === 'asset' ? opts.asset.data.data.track.current : undefined,
+      track:
+        opts.asset?.data.type === 'asset'
+          ? opts.asset.data.data.track.current
+          : undefined,
     }
 
     const r = new Roll(`{${actionExpr}, d10, d10}`, data)
@@ -129,7 +141,10 @@ interface InlineRollListenerOptions {
   name?: string
 }
 
-export function attachInlineRollListeners(html: JQuery, opts?: InlineRollListenerOptions) {
+export function attachInlineRollListeners(
+  html: JQuery,
+  opts?: InlineRollListenerOptions
+) {
   const realOpts = { ...opts }
   html.find('a.inline-roll').on('click', (ev) => {
     ev.preventDefault()
@@ -149,7 +164,11 @@ interface SiteFeatureRollInput {
 
 export async function rollSiteFeature(params: SiteFeatureRollInput) {
   if (!params.theme || !params.domain) return
-  if (params.domain.type !== 'delve-domain' || params.theme.type !== 'delve-theme') return
+  if (
+    params.domain.type !== 'delve-domain' ||
+    params.theme.type !== 'delve-theme'
+  )
+    return
 
   const domainData = params.domain.data as DelveDomainDataSource
   const themeData = params.theme.data as DelveThemeDataSource
@@ -159,8 +178,10 @@ export async function rollSiteFeature(params: SiteFeatureRollInput) {
   if (roll.total === undefined) return
 
   // Find the theme/domain and the matching feature
-  const pred = (x) => x.low <= (roll.total || 0) && x.high >= (roll.total || 100)
-  const feature = domainData.data.features.find(pred) || themeData.data.features.find(pred)
+  const pred = (x) =>
+    x.low <= (roll.total || 0) && x.high >= (roll.total || 100)
+  const feature =
+    domainData.data.features.find(pred) || themeData.data.features.find(pred)
   if (feature) {
     return createIronswornFeatureChat({ ...params, roll, feature })
   }

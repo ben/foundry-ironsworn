@@ -1,7 +1,10 @@
 import { IMoveTrigger } from 'dataforged'
 import { maxBy, minBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
-import { createStarforgedMoveRollChat, sfNextOracles } from '../chat/chatrollhelpers'
+import {
+  createStarforgedMoveRollChat,
+  sfNextOracles,
+} from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
 import { SFMoveDataProperties } from '../item/itemtypes'
 import { IronswornSettings } from './settings'
@@ -9,11 +12,24 @@ import { IronswornSettings } from './settings'
 function rollableOptions(trigger: IMoveTrigger) {
   if (!trigger.Options) return []
 
-  const actionOptions = trigger.Options.filter((x) => x['Roll type'] === 'Action roll')
+  const actionOptions = trigger.Options.filter(
+    (x) => x['Roll type'] === 'Action roll'
+  )
   if (!actionOptions.length) return []
 
-  const allowedUsings = ['Edge', 'Iron', 'Heart', 'Shadow', 'Wits', 'Health', 'Spirit', 'Supply']
-  return actionOptions.filter((x) => (x.Using as string[]).every((u) => allowedUsings.includes(u)))
+  const allowedUsings = [
+    'Edge',
+    'Iron',
+    'Heart',
+    'Shadow',
+    'Wits',
+    'Health',
+    'Spirit',
+    'Supply',
+  ]
+  return actionOptions.filter((x) =>
+    (x.Using as string[]).every((u) => allowedUsings.includes(u))
+  )
 }
 
 export class SFRollMoveDialog extends Dialog {
@@ -37,7 +53,8 @@ export class SFRollMoveDialog extends Dialog {
       return this.createDataforgedMoveChat(move)
     }
 
-    const template = 'systems/foundry-ironsworn/templates/sf-move-roll-dialog.hbs'
+    const template =
+      'systems/foundry-ironsworn/templates/sf-move-roll-dialog.hbs'
     const renderOpts = { actor, move }
     const content = await renderTemplate(template, renderOpts)
 
@@ -77,7 +94,10 @@ export class SFRollMoveDialog extends Dialog {
       move,
       nextOracles: await sfNextOracles(move),
     }
-    const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/sf-move.hbs', params)
+    const content = await renderTemplate(
+      'systems/foundry-ironsworn/templates/chat/sf-move.hbs',
+      params
+    )
     ChatMessage.create({
       speaker: ChatMessage.getSpeaker(),
       content,
@@ -85,7 +105,12 @@ export class SFRollMoveDialog extends Dialog {
   }
 }
 
-function callback(opts: { actor: IronswornActor; move: IronswornItem; mode: string; stats: string[] }) {
+function callback(opts: {
+  actor: IronswornActor
+  move: IronswornItem
+  mode: string
+  stats: string[]
+}) {
   return async (x) => {
     // TODO: extract data from form and send to rollAndCreateChatMessage
     const form = x[0].querySelector('form')

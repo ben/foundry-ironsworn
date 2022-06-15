@@ -1,10 +1,22 @@
 <template>
   <div
     @click="$emit('click', property)"
-    :class="['clickable', 'block', 'nogrow', 'tab', 'flexrow', { selected: currentProperty === property }]"
+    :class="[
+      'clickable',
+      'block',
+      'nogrow',
+      'tab',
+      'flexrow',
+      { selected: currentProperty === property },
+    ]"
   >
     <span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
-    <icon-button class="nogrow" v-if="$listeners.delete" icon="fa fa-trash" @click="$emit('delete')" />
+    <icon-button
+      class="nogrow"
+      v-if="$listeners.delete"
+      icon="fa fa-trash"
+      @click="$emit('delete')"
+    />
   </div>
 </template>
 

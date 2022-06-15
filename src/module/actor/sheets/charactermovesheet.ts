@@ -11,7 +11,11 @@ function translateOrEmpty(key: string): string {
   return str === key ? '' : str
 }
 
-export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor> {
+export class CharacterMoveSheet extends FormApplication<
+  any,
+  any,
+  IronswornActor
+> {
   get actor() {
     return this.object
   }
@@ -36,7 +40,12 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     return mergeObject(super.defaultOptions, {
       template: 'systems/foundry-ironsworn/templates/actor/moves.hbs',
       resizable: true,
-      classes: ['ironsworn', 'sheet', 'moves', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'moves',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 350,
       height: 800,
       left: 755,
@@ -54,24 +63,46 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
   }
 
   activateListeners(html: JQuery) {
-    html.find('.ironsworn__move__search').on('keyup', (ev) => this._moveSearch.call(this, ev))
-    html.find('.ironsworn__move__search__clear').on('click', (ev) => this._moveSearchClear.call(this, ev))
+    html
+      .find('.ironsworn__move__search')
+      .on('keyup', (ev) => this._moveSearch.call(this, ev))
+    html
+      .find('.ironsworn__move__search__clear')
+      .on('click', (ev) => this._moveSearchClear.call(this, ev))
 
-    html.find('.ironsworn__oracle__search').on('keyup', (ev) => this._oracleSearch.call(this, ev))
-    html.find('.ironsworn__oracle__search__clear').on('click', (ev) => this._oracleSearchClear.call(this, ev))
+    html
+      .find('.ironsworn__oracle__search')
+      .on('keyup', (ev) => this._oracleSearch.call(this, ev))
+    html
+      .find('.ironsworn__oracle__search__clear')
+      .on('click', (ev) => this._oracleSearchClear.call(this, ev))
 
-    html.find('.ironsworn__move__expand').on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
-    html.find('.ironsworn__builtin__move__roll').on('click', (e) => this._handleBuiltInMoveRoll.call(this, e))
-    html.find('.ironsworn__custom__move__roll').on('click', (e) => this._handleCustomMoveRoll.call(this, e))
-    html.find('.ironsworn__oracle').on('click', (e) => this._handleOracleClick.call(this, e))
+    html
+      .find('.ironsworn__move__expand')
+      .on('click', (e) => this._handleBuiltInMoveExpand.call(this, e))
+    html
+      .find('.ironsworn__builtin__move__roll')
+      .on('click', (e) => this._handleBuiltInMoveRoll.call(this, e))
+    html
+      .find('.ironsworn__custom__move__roll')
+      .on('click', (e) => this._handleCustomMoveRoll.call(this, e))
+    html
+      .find('.ironsworn__oracle')
+      .on('click', (e) => this._handleOracleClick.call(this, e))
 
     html.find('.ironsworn__builtin__move').each((_i, el) => {
-      attachInlineRollListeners($(el), { actor: this.actor, name: el.dataset.name })
+      attachInlineRollListeners($(el), {
+        actor: this.actor,
+        name: el.dataset.name,
+      })
     })
     html.find('.ironsworn__custom__move').each((_i, el) => {
       const move = this.actor.items.get(el.dataset.id || '')
       if (move) {
-        attachInlineRollListeners($(el), { actor: this.actor, name: move.name || '' })
+        attachInlineRollListeners($(el), {
+          actor: this.actor,
+          name: move.name || '',
+        })
       }
     })
 
@@ -89,7 +120,9 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     for (const category of BuiltInMoves.Categories) {
       data.builtInMoves.push({
         separator: true,
-        title: game.i18n.localize('IRONSWORN.' + category.Name.replace(/ Moves/, '')),
+        title: game.i18n.localize(
+          'IRONSWORN.' + category.Name.replace(/ Moves/, '')
+        ),
       })
       for (const move of category.Moves) {
         const baseKey = `IRONSWORN.MoveContents.${move.Name}`
@@ -122,7 +155,8 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     } else {
       this.element.find('ol.moves>h2').hide()
       const re = new RegExp($(e.currentTarget).val() as string, 'i')
-      const doesMatch = (_i, el: HTMLElement): boolean => re.test($(el).find('h4').text())
+      const doesMatch = (_i, el: HTMLElement): boolean =>
+        re.test($(el).find('h4').text())
       this.element.find('ol.moves>li').filter(negate(doesMatch)).hide()
       this.element.find('ol.moves>li').filter(doesMatch).show()
     }
@@ -142,7 +176,8 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
     } else {
       this.element.find('ol.oracles>h2').hide()
       const re = new RegExp($(e.currentTarget).val() as string, 'i')
-      const doesMatch = (_i, el: HTMLElement): boolean => re.test($(el).find('h4').text())
+      const doesMatch = (_i, el: HTMLElement): boolean =>
+        re.test($(el).find('h4').text())
       this.element.find('ol.oracles>li').filter(negate(doesMatch)).hide()
       this.element.find('ol.oracles>li').filter(doesMatch).show()
     }
@@ -201,7 +236,9 @@ export class CharacterMoveSheet extends FormApplication<any, any, IronswornActor
       if (pack) {
         const entry = pack?.index.find((x: any) => x.name == tableName)
         if (entry) {
-          table = (await pack.getDocument((entry as any)._id)) as RollTable | undefined
+          table = (await pack.getDocument((entry as any)._id)) as
+            | RollTable
+            | undefined
         }
       }
     }

@@ -1,5 +1,10 @@
 <template>
-  <boxrow :min="0" :max="item.data.track.max" :current="item.data.track.current" @click="click" />
+  <boxrow
+    :min="0"
+    :max="item.data.track.max"
+    :current="item.data.track.current"
+    @click="click"
+  />
 </template>
 
 <script>

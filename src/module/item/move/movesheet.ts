@@ -12,7 +12,9 @@ export class MoveSheet extends IronswornItemSheet {
     super.activateListeners(html)
 
     this._setChecks(html)
-    html.find('.ironsworn__move__stat').on('click', (ev) => this._checked.call(this, ev))
+    html
+      .find('.ironsworn__move__stat')
+      .on('click', (ev) => this._checked.call(this, ev))
   }
 
   _checked(ev: JQuery.ClickEvent) {

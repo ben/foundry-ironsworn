@@ -7,7 +7,12 @@ import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 export class IronswornCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'actor',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 700,
       height: 800,
       left: 50,
@@ -34,18 +39,30 @@ export class IronswornCharacterSheet extends ActorSheet {
     //   CONFIG.IRONSWORN.sheetComponents.actor[sheetComponent].activateListeners(html, this)
     // }
 
-    html.find('.ironsworn__stat__roll').on('click', (e) => this._onStatRoll.call(this, e))
-    html.find('.ironsworn__stat__value').on('click', (e) => this._onStatSet.call(this, e))
-    html.find('.ironsworn__momentum__burn').on('click', (e) => this._onBurnMomentum.call(this, e))
+    html
+      .find('.ironsworn__stat__roll')
+      .on('click', (e) => this._onStatRoll.call(this, e))
+    html
+      .find('.ironsworn__stat__value')
+      .on('click', (e) => this._onStatSet.call(this, e))
+    html
+      .find('.ironsworn__momentum__burn')
+      .on('click', (e) => this._onBurnMomentum.call(this, e))
   }
 
   getData() {
     let data: any = super.getData()
 
     data.assets = this.actor.items.filter((x) => x.type === 'asset')
-    const rawProgresses = this.actor.items.filter((x) => x.type === 'progress') as IronswornItem[]
-    data.vows = rawProgresses.filter((x) => (x.data.data as any)?.subtype === 'vow')
-    data.progresses = rawProgresses.filter((x) => (x.data.data as any)?.subtype === 'progress')
+    const rawProgresses = this.actor.items.filter(
+      (x) => x.type === 'progress'
+    ) as IronswornItem[]
+    data.vows = rawProgresses.filter(
+      (x) => (x.data.data as any)?.subtype === 'vow'
+    )
+    data.progresses = rawProgresses.filter(
+      (x) => (x.data.data as any)?.subtype === 'progress'
+    )
     data.bonds = this.actor.items.find((x) => x.type === 'bondset')
 
     // Allow every itemtype to add data to the actorsheet
