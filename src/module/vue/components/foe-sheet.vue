@@ -7,7 +7,12 @@
 
     <div v-if="foe">
       <div class="flexrow nogrow">
-        <rank-hexes :current="foe.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
+        <rank-hexes
+          :current="foe.data.rank"
+          @click="setRank"
+          class="nogrow"
+          style="margin-right: 1em"
+        />
         <h4>{{ rankText }}</h4>
         <btn-faicon icon="trash" @click="clearProgress" />
         <btn-faicon icon="caret-right" @click="markProgress" />
@@ -30,8 +35,12 @@
       data-drop-type="progress"
       style="text-align: center; justify-items: space-around"
     >
-      <btn-faicon @click="addEmpty" class="block" icon="file"> {{ $t('IRONSWORN.Progress') }}</btn-faicon>
-      <btn-compendium class="block" compendium="ironswornfoes">{{ $t('IRONSWORN.Foes') }} (Ironsworn)</btn-compendium>
+      <btn-faicon @click="addEmpty" class="block" icon="file">
+        {{ $t('IRONSWORN.Progress') }}</btn-faicon
+      >
+      <btn-compendium class="block" compendium="ironswornfoes"
+        >{{ $t('IRONSWORN.Foes') }} (Ironsworn)</btn-compendium
+      >
       <btn-compendium class="block" compendium="starforgedencounters"
         >{{ $t('IRONSWORN.Foes') }} (Starforged)</btn-compendium
       >

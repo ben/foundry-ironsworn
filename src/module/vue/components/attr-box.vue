@@ -6,9 +6,13 @@
       <div v-if="!editMode" class="bg-die">
         <i class="isicon-d10-tilt"></i>
       </div>
-      <div class="clickable text" v-if="editMode" @click="decrement">&minus;</div>
+      <div class="clickable text" v-if="editMode" @click="decrement">
+        &minus;
+      </div>
       <h4>{{ actor.data[attr] }}</h4>
-      <div class="clickable text" v-if="editMode" @click="increment">&plus;</div>
+      <div class="clickable text" v-if="editMode" @click="increment">
+        &plus;
+      </div>
     </div>
   </div>
 </template>

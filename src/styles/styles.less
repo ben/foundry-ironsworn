@@ -25,24 +25,25 @@
     text-transform: uppercase;
   }
 
-button:hover, button:focus {
-  background: unset;
-  border: unset;
-  outline: none;
-  box-shadow: unset;
-}
+  button:hover,
+  button:focus {
+    background: unset;
+    border: unset;
+    outline: none;
+    box-shadow: unset;
+  }
 
-button {
-  width: unset;
-  margin: unset;
-  background: unset;
-  border: unset;
-  border-radius: unset;
-  font-size: unset;
-  line-height: unset;
-  font-family: inherit;
-  cursor: pointer;
-}
+  button {
+    width: unset;
+    margin: unset;
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    font-size: unset;
+    line-height: unset;
+    font-family: inherit;
+    cursor: pointer;
+  }
 
   .window-content {
     height: 100%;
@@ -240,16 +241,15 @@ button {
   }
 
   .clickable {
-
     &.text {
       justify-content: flex-start;
     }
-    &.disabled, &[disabled=true] {
+    &.disabled,
+    &[disabled='true'] {
       cursor: not-allowed;
       pointer-events: none;
     }
-    &:not(.disabled):not[disabled=true] {
-
+    &:not(.disabled):not[disabled='true'] {
       transition: 0.5s ease;
       cursor: pointer;
       &.block,
@@ -620,31 +620,31 @@ table td:first-child {
   border-top: 0 !important;
   border-bottom: 0 !important;
 }
-  // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
+// workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
 .fa,
-  .fab,
-  .fad,
-  .fal,
-  .far,
-  .fas {
-    -moz-osx-font-smoothing: inherit;
-    speak: inherit;
-    font-style: inherit;
-    font-variant: inherit;
-    text-rendering: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    &:before {
-      speak: never;
-      -moz-osx-font-smoothing: grayscale;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      line-height: 1;
-    }
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+  -moz-osx-font-smoothing: inherit;
+  speak: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  text-rendering: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  &:before {
+    speak: never;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
   }
+}
 
 .fa,
 .far,
@@ -654,9 +654,9 @@ table td:first-child {
   }
 }
 
-  .fa,
-  .fas {
-    &:before {
-      font-weight: 900;
-    }
+.fa,
+.fas {
+  &:before {
+    font-weight: 900;
   }
+}

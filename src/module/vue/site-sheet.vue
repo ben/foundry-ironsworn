@@ -8,7 +8,12 @@
 
     <!-- RANK -->
     <div class="flexrow nogrow">
-      <rank-hexes :current="actor.data.rank" @click="setRank" class="nogrow" style="margin-right: 1em" />
+      <rank-hexes
+        :current="actor.data.rank"
+        @click="setRank"
+        class="nogrow"
+        style="margin-right: 1em"
+      />
       <h4>{{ rankText }}</h4>
       <btn-faicon v-if="editMode" icon="trash" @click="clearProgress" />
       <btn-faicon icon="play" @click="markProgress" />
@@ -58,12 +63,20 @@
           </button>
         </h4>
 
-        <site-movebox :actor="actor" move="Reveal a Danger" :disabled="!hasThemeAndDomain" />
+        <site-movebox
+          :actor="actor"
+          move="Reveal a Danger"
+          :disabled="!hasThemeAndDomain"
+        />
       </div>
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Find an Opportunity" />
         <h4>
-          <button type="button" class="box flexrow block" @click="locateObjective">
+          <button
+            type="button"
+            class="box flexrow block"
+            @click="locateObjective"
+          >
             {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
           </button>
         </h4>
@@ -74,7 +87,12 @@
     <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
-      <btn-isicon icon="d10-tilt" class="flexrow nogrow text" style="padding: 2px" @click="randomDenizen" />
+      <btn-isicon
+        icon="d10-tilt"
+        class="flexrow nogrow text"
+        style="padding: 2px"
+        @click="randomDenizen"
+      />
       <btn-compendium compendium="ironswornfoes" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
@@ -182,7 +200,9 @@ export default {
     },
 
     async locateObjective() {
-      const move = await CONFIG.IRONSWORN.moveDataByName('Locate Your Objective')
+      const move = await CONFIG.IRONSWORN.moveDataByName(
+        'Locate Your Objective'
+      )
       const progress = Math.floor(this.actor.data.current / 4)
       const roll = new Roll(`{${progress}, d10, d10}`)
       CONFIG.IRONSWORN.createIronswornChatRoll({
@@ -196,7 +216,9 @@ export default {
     async randomDenizen() {
       const roll = await new Roll('1d100').evaluate({ async: true })
       const result = roll.total
-      const denizen = this.$actor.data.data.denizens.find((x) => x.low <= result && x.high >= result)
+      const denizen = this.$actor.data.data.denizens.find(
+        (x) => x.low <= result && x.high >= result
+      )
       const idx = this.$actor.data.data.denizens.indexOf(denizen)
       if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
       await CONFIG.IRONSWORN.createIronswornDenizenChat({

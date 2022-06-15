@@ -1,11 +1,15 @@
 <template>
-  <btn-icon class="svg-icon" :class="classes" @click="$emit('click')" :tooltip="tooltip">
+  <btn-icon
+    class="svg-icon"
+    :class="classes"
+    @click="$emit('click')"
+    :tooltip="tooltip"
+  >
     <slot></slot>
   </btn-icon>
 </template>
 
 <style lang="less">
-
 .svg-icon {
   &:before {
     content: '';

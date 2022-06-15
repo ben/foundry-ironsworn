@@ -1,5 +1,11 @@
 <template>
-  <button type="button" @click="click" :class="classes" :data-resource="stat" :data-value="value">
+  <button
+    type="button"
+    @click="click"
+    :class="classes"
+    :data-resource="stat"
+    :data-value="value"
+  >
     {{ valueStr }}
   </button>
 </template>

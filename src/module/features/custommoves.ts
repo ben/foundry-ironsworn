@@ -19,7 +19,9 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   const ret = [] as MoveCategory[]
 
   // Make sure compendium is loaded
-  const compendiumMoves = await cachedDocumentsForPack('foundry-ironsworn.starforgedmoves')
+  const compendiumMoves = await cachedDocumentsForPack(
+    'foundry-ironsworn.starforgedmoves'
+  )
 
   // Construct the base tree
   for (const category of starforged['Move Categories']) {
@@ -35,7 +37,10 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   return ret
 }
 
-function walkCategory(category: IMoveCategory, compendiumMoves: IronswornItem[]): MoveCategory {
+function walkCategory(
+  category: IMoveCategory,
+  compendiumMoves: IronswornItem[]
+): MoveCategory {
   const newCategory = {
     displayName: game.i18n.localize(`IRONSWORN.${category.Name}`),
     dataforgedCategory: category,
@@ -43,7 +48,9 @@ function walkCategory(category: IMoveCategory, compendiumMoves: IronswornItem[])
   }
 
   for (const move of category.Moves) {
-    const moveItem = compendiumMoves?.find((x) => (x.data as MoveDataSource).data.dfid === move.$id)
+    const moveItem = compendiumMoves?.find(
+      (x) => (x.data as MoveDataSource).data.dfid === move.$id
+    )
     if (moveItem) {
       newCategory.moves.push({
         dataforgedMove: move,
@@ -60,7 +67,9 @@ function walkCategory(category: IMoveCategory, compendiumMoves: IronswornItem[])
 
 async function augmentWithFolderContents(categories: MoveCategory[]) {
   const name = game.i18n.localize('IRONSWORN.Custom Moves')
-  const folder = (game.items?.directory as any)?.folders.find((x) => x.name === name) as Folder | undefined
+  const folder = (game.items?.directory as any)?.folders.find(
+    (x) => x.name === name
+  ) as Folder | undefined
   if (!folder || folder.contents.length == 0) return
 
   categories.push({

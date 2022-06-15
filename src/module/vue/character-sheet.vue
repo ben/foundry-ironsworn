@@ -9,14 +9,21 @@
       <div class="flexcol margin-left">
         <div class="flexrow" style="flex-wrap: nowrap">
           <div class="flexcol stack momentum">
-            <stack :actor="actor" stat="momentum" :top="10" :bottom="-6" :softMax="actor.data.momentumMax"></stack>
+            <stack
+              :actor="actor"
+              stat="momentum"
+              :top="10"
+              :bottom="-6"
+              :softMax="actor.data.momentumMax"
+            ></stack>
             <hr class="nogrow" />
 
             <btn-momentumburn :actor="actor" class="nogrow block stack-row">
               {{ $t('IRONSWORN.Burn') }}
             </btn-momentumburn>
 
-            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }} {{ $t('IRONSWORN.Max') }}:
+            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
+            {{ $t('IRONSWORN.Max') }}:
             {{ actor.data.momentumMax }}
           </div>
 
@@ -43,11 +50,18 @@
 
               <hr class="nogrow" />
               <!-- Assets -->
-              <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
+              <div
+                class="flexcol ironsworn__drop__target"
+                data-drop-type="asset"
+              >
                 <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
                 <transition-group name="slide" tag="div" class="nogrow">
-                  <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
+                  <div
+                    class="flexrow"
+                    v-for="(asset, i) in assets"
+                    :key="asset._id"
+                  >
                     <order-buttons
                       v-if="editMode"
                       :i="i"
@@ -68,9 +82,16 @@
           </div>
           <div class="flexcol">
             <!-- Vows & Progress -->
-            <div class="flexcol sheet-area ironsworn__drop__target" data-drop-type="progress">
+            <div
+              class="flexcol sheet-area ironsworn__drop__target"
+              data-drop-type="progress"
+            >
               <transition-group name="slide" tag="div" class="nogrow">
-                <div class="flexrow nogrow" v-for="(item, i) in progressItems" :key="item._id">
+                <div
+                  class="flexrow nogrow"
+                  v-for="(item, i) in progressItems"
+                  :key="item._id"
+                >
                   <order-buttons
                     v-if="editMode"
                     :i="i"
@@ -161,10 +182,14 @@ export default {
   },
   computed: {
     progressItems() {
-      return this.actor.items.filter((x) => x.type === 'progress').sort((a, b) => (a.sort || 0) - (b.sort || 0))
+      return this.actor.items
+        .filter((x) => x.type === 'progress')
+        .sort((a, b) => (a.sort || 0) - (b.sort || 0))
     },
     assets() {
-      return this.actor.items.filter((x) => x.type === 'asset').sort((a, b) => (a.sort || 0) - (b.sort || 0))
+      return this.actor.items
+        .filter((x) => x.type === 'asset')
+        .sort((a, b) => (a.sort || 0) - (b.sort || 0))
     },
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
@@ -190,13 +215,17 @@ export default {
       this.$actor.update({ 'data.biography': this.actor.data.biography })
     },
     async applySort(oldI, newI, sortBefore, collection) {
-      const sorted = collection.sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+      const sorted = collection.sort(
+        (a, b) => (a.data.sort || 0) - (b.data.sort || 0)
+      )
       const updates = SortingHelpers.performIntegerSort(sorted[oldI], {
         target: sorted[newI],
         siblings: sorted,
         sortBefore,
       })
-      await Promise.all(updates.map(({ target, update }) => target.update(update)))
+      await Promise.all(
+        updates.map(({ target, update }) => target.update(update))
+      )
     },
     assetSortUp(i) {
       const items = this.$actor.items.filter((x) => x.type === 'asset')

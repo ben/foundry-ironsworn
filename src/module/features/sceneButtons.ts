@@ -22,7 +22,11 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
       directory = (existing as any).children
       continue
     }
-    parentFolder = await Folder.create({ type: 'Actor', name, parent: parentFolder?.id })
+    parentFolder = await Folder.create({
+      type: 'Actor',
+      name,
+      parent: parentFolder?.id,
+    })
     directory = (parentFolder as any).children
   }
   return parentFolder
@@ -49,7 +53,10 @@ async function dropToken(location: IronswornActor) {
   const td = await location.getTokenData({ x, y })
   const hw = canvas.grid.w / 2
   const hh = canvas.grid.h / 2
-  const pos = canvas.grid.getSnappedPosition(td.x - td.width * hw, td.y - td.height * hh)
+  const pos = canvas.grid.getSnappedPosition(
+    td.x - td.width * hw,
+    td.y - td.height * hh
+  )
   td.update(pos)
 
   // TODO: avoid dropping this on top of another token
@@ -64,7 +71,10 @@ async function dropToken(location: IronswornActor) {
 
 async function newLocation(subtype: string, i18nKey: string, scale = 1) {
   const name = game.i18n.localize(`IRONSWORN.${i18nKey}`)
-  const parentFolder = await ensureFolder('Locations', game.scenes?.current?.name ?? '???')
+  const parentFolder = await ensureFolder(
+    'Locations',
+    game.scenes?.current?.name ?? '???'
+  )
   const loc = await IronswornActor.create({
     type: 'location',
     name,
@@ -106,7 +116,10 @@ function newVault() {
 export function activateSceneButtonListeners() {
   if (!IronswornSettings.starforgedToolsEnabled) return
 
-  CONFIG.Canvas.layers['ironsworn'] = { layerClass: IronswornCanvasLayer, group: 'primary' }
+  CONFIG.Canvas.layers['ironsworn'] = {
+    layerClass: IronswornCanvasLayer,
+    group: 'primary',
+  }
 
   Hooks.on('getSceneControlButtons', (controls) => {
     console.log({ controls })

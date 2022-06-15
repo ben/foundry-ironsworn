@@ -1,5 +1,8 @@
 <template>
-  <div class="flexcol nogrow movesheet-row" :class="{ hidden: node.forceHidden, highlighted }">
+  <div
+    class="flexcol nogrow movesheet-row"
+    :class="{ hidden: node.forceHidden, highlighted }"
+  >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
     <div v-if="isLeaf">
@@ -7,7 +10,11 @@
         <btn-oracle class="juicy" :node="node">
           {{ node.displayName }}
         </btn-oracle>
-        <btn-faicon v-if="isLeaf" icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
+        <btn-faicon
+          v-if="isLeaf"
+          icon="eye"
+          @click="descriptionExpanded = !descriptionExpanded"
+        />
       </h4>
 
       <transition name="slide">

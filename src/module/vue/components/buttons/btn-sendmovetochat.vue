@@ -1,5 +1,10 @@
 <template>
-  <btn-faicon class="move-chat" icon="comment" :tooltip="tooltip" @click="sendToChat">
+  <btn-faicon
+    class="move-chat"
+    icon="comment"
+    :tooltip="tooltip"
+    @click="sendToChat"
+  >
     <slot>
       <!-- {{$t('IRONSWORN.Chat')}} -->
     </slot>
@@ -17,7 +22,9 @@ export default {
   methods: {
     sendToChat(e) {
       e.preventDefault()
-      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(this.move.moveItem)
+      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(
+        this.move.moveItem
+      )
     },
   },
 }

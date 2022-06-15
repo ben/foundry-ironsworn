@@ -23,9 +23,15 @@ export abstract class BaseItem {
     }
 
     // Default listeners for adding, configuring and deleting embedded items
-    html.find(`.ironsworn__${this.entityName}__add`).click((e) => this._onItemAdd.call(this, e, sheet))
-    html.find(`.ironsworn__${this.entityName}__settings`).click((e) => this._onItemSettings.call(this, e, sheet))
-    html.find(`.ironsworn__${this.entityName}__delete`).click((e) => this._onItemDelete.call(this, e, sheet))
+    html
+      .find(`.ironsworn__${this.entityName}__add`)
+      .click((e) => this._onItemAdd.call(this, e, sheet))
+    html
+      .find(`.ironsworn__${this.entityName}__settings`)
+      .click((e) => this._onItemSettings.call(this, e, sheet))
+    html
+      .find(`.ironsworn__${this.entityName}__delete`)
+      .click((e) => this._onItemDelete.call(this, e, sheet))
   }
 
   /**
@@ -120,7 +126,9 @@ export abstract class BaseItem {
 
     Dialog.confirm({
       title: game.i18n.localize(titleKey),
-      content: `<p><strong>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</strong></p>`,
+      content: `<p><strong>${game.i18n.localize(
+        'IRONSWORN.ConfirmDelete'
+      )}</strong></p>`,
       yes: () => item?.delete(),
       defaultYes: false,
     })
@@ -136,7 +144,9 @@ export abstract class BaseItem {
    */
   static async createNewItem(itemData, sheet, render = true) {
     // Create item and render sheet afterwards
-    const newItems = await Item.createDocuments([itemData], { parent: sheet.actor })
+    const newItems = await Item.createDocuments([itemData], {
+      parent: sheet.actor,
+    })
     const newItem = newItems[0]
 
     // Tokens don't return the new item

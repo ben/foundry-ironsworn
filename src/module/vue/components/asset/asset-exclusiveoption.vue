@@ -1,6 +1,10 @@
 <template>
   <!-- TODO: as radio set -->
-  <div class="clickable block stack-row" :class="selectedClass" @click="$emit('click')">
+  <div
+    class="clickable block stack-row"
+    :class="selectedClass"
+    @click="$emit('click')"
+  >
     {{ opt.name }}
   </div>
 </template>

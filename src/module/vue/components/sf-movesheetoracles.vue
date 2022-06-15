@@ -9,8 +9,18 @@
         v-model="searchQuery"
         @keydown="preventSubmit"
       />
-      <btn-faicon icon="times-circle" class="nogrow text" @click="clearSearch" style="padding: 6px" />
-      <btn-faicon icon="compress-alt" class="nogrow text" @click="collapseAll" style="padding: 6px" />
+      <btn-faicon
+        icon="times-circle"
+        class="nogrow text"
+        @click="clearSearch"
+        style="padding: 6px"
+      />
+      <btn-faicon
+        icon="compress-alt"
+        class="nogrow text"
+        @click="collapseAll"
+        style="padding: 6px"
+      />
     </form>
 
     <div class="flexcol item-list">
@@ -137,7 +147,9 @@ export default {
       let children = this.$refs.oracles
       let lastComponent
       for (const dataNode of dfOraclePath) {
-        lastComponent = children.find((x) => x.node.dataforgedNode.$id === dataNode.$id)
+        lastComponent = children.find(
+          (x) => x.node.dataforgedNode.$id === dataNode.$id
+        )
         if (!lastComponent) break
         lastComponent.expand()
         await new Promise((r) => setTimeout(r, 50))

@@ -1,13 +1,25 @@
 <template>
   <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
     <h4 class="flexrow" :title="tooltip">
-      <btn-rollmove :hidden="!canRoll" :disabled="!canRoll" class="juicy text nogrow" :actor="actor" :move="move" />
+      <btn-rollmove
+        :hidden="!canRoll"
+        :disabled="!canRoll"
+        class="juicy text nogrow"
+        :actor="actor"
+        :move="move"
+      />
       <span class="clickable text" @click="expanded = !expanded">
         {{ move.displayName }}
       </span>
     </h4>
     <transition name="slide">
-      <with-rolllisteners element="div" class="move-summary" :actor="actor" v-if="expanded" @moveclick="moveclick">
+      <with-rolllisteners
+        element="div"
+        class="move-summary"
+        :actor="actor"
+        v-if="expanded"
+        @moveclick="moveclick"
+      >
         <div class="flexrow">
           <btn-rollmove v-if="canRoll" :actor="actor" :move="move">
             {{ $t('IRONSWORN.Roll') }}
@@ -43,7 +55,6 @@ h4 {
 </style>
 
 <script>
-
 export default {
   props: {
     actor: Object,
@@ -64,7 +75,9 @@ export default {
       return this.move.moveItem?.data?.data?.Text
     },
     canRoll() {
-      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
+      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(
+        this.move.moveItem
+      )
     },
   },
   watch: {

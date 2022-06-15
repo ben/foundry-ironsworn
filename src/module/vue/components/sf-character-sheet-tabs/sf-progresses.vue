@@ -2,9 +2,24 @@
   <div class="flexcol">
     <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
       <transition-group name="slide" tag="div" class="nogrow">
-        <div class="flexrow nogrow" v-for="(item, i) in activeItems" :key="item._id">
-          <order-buttons v-if="editMode" :i="i" :length="activeItems.length" @sortUp="sortUp" @sortDown="sortDown" />
-          <progress-box :item="item" :actor="actor" :showStar="true" @completed="progressCompleted" />
+        <div
+          class="flexrow nogrow"
+          v-for="(item, i) in activeItems"
+          :key="item._id"
+        >
+          <order-buttons
+            v-if="editMode"
+            :i="i"
+            :length="activeItems.length"
+            @sortUp="sortUp"
+            @sortDown="sortDown"
+          />
+          <progress-box
+            :item="item"
+            :actor="actor"
+            :showStar="true"
+            @completed="progressCompleted"
+          />
         </div>
       </transition-group>
       <progress-controls :actor="actor" foeCompendium="starforgedencounters" />
@@ -20,10 +35,19 @@
           >{{ $t('IRONSWORN.Completed') }}</btn-faicon
         >
       </h3>
-      <transition name="slide" tag="div" class="nogrow completed" style="margin: 0; padding: 0">
+      <transition
+        name="slide"
+        tag="div"
+        class="nogrow completed"
+        style="margin: 0; padding: 0"
+      >
         <div v-if="expandCompleted">
           <transition-group name="slide" tag="div" class="nogrow">
-            <div class="flexrow" v-for="(item, i) in completedItems" :key="item._id">
+            <div
+              class="flexrow"
+              v-for="(item, i) in completedItems"
+              :key="item._id"
+            >
               <order-buttons
                 v-if="editMode"
                 :i="i"
@@ -116,7 +140,9 @@ export default {
         siblings: foundryItems,
         sortBefore,
       })
-      await Promise.all(updates.map(({ target, update }) => target.update(update)))
+      await Promise.all(
+        updates.map(({ target, update }) => target.update(update))
+      )
     },
     sortUp(i) {
       this.applySort(i, i - 1, true, (x) => !x.data.data.completed)

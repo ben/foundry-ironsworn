@@ -3,13 +3,32 @@
     <h5 class="vertical-v2 nogrow">{{ subtitle }}</h5>
     <div class="flexcol">
       <div class="flexrow">
-        <document-img :document="item" size="38px" class="nogrow" style="margin-right: 5px" />
+        <document-img
+          :document="item"
+          size="38px"
+          class="nogrow"
+          style="margin-right: 5px"
+        />
         <div class="flexcol">
           <div class="flexrow">
             <rank-hexes :current="item.data.rank" @click="rankClick" />
-            <btn-faicon v-if="editMode" icon="trash" @click="destroy" :tooltip="$t('IRONSWORN.DeleteItem')" />
-            <btn-faicon icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
-            <btn-faicon v-if="editMode" :icon="completedIcon" @click="toggleComplete" :tooltip="completedTooltip" />
+            <btn-faicon
+              v-if="editMode"
+              icon="trash"
+              @click="destroy"
+              :tooltip="$t('IRONSWORN.DeleteItem')"
+            />
+            <btn-faicon
+              icon="edit"
+              @click="edit"
+              :tooltip="$t('IRONSWORN.Edit')"
+            />
+            <btn-faicon
+              v-if="editMode"
+              :icon="completedIcon"
+              @click="toggleComplete"
+              :tooltip="completedTooltip"
+            />
             <btn-faicon
               v-if="editMode && item.data.hasTrack"
               icon="caret-left"
@@ -111,7 +130,9 @@ export default {
 
       Dialog.confirm({
         title: game.i18n.localize(titleKey),
-        content: `<p><strong>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</strong></p>`,
+        content: `<p><strong>${game.i18n.localize(
+          'IRONSWORN.ConfirmDelete'
+        )}</strong></p>`,
         yes: () => item?.delete(),
         defaultYes: false,
       })

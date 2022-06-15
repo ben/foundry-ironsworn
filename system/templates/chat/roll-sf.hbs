@@ -1,4 +1,4 @@
-{{!--
+{{!
 actor: IronswornActor {…}
 bonus: 0
 hitType: "Weak Hit"
@@ -13,43 +13,56 @@ stats: ['shadow']
 themeClass: "theme-ironsworn"
 title: "Face Danger (Shadow)"
 usedStat: "shadow"
---}}
+}}
 
-<div class="flexcol">
+<div class='flexcol'>
   <h3>{{title}}</h3>
 
-  <div class="dice-result dice-tooltip dice-roll ironsworn-roll" data-moveid="{{move.data.data.dfid}}">
-    <div class="dice-formula">
-      <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
+  <div
+    class='dice-result dice-tooltip dice-roll ironsworn-roll'
+    data-moveid='{{move.data.data.dfid}}'
+  >
+    <div class='dice-formula'>
+      <p>{{{actionDieFormula}}}
+        {{localize 'IRONSWORN.Versus'}}
+        {{{challengeDice}}}</p>
     </div>
-    <div class="roll-result">
+    <div class='roll-result'>
       {{#if negativeMomentumCancel}}
-      <p><em>{{localize 'IRONSWORN.NegativeMomentumCancel'}}</em></p>
+        <p><em>{{localize 'IRONSWORN.NegativeMomentumCancel'}}</em></p>
       {{/if}}
 
-      <strong>{{hitType}}: </strong> {{{enrichMarkdown resultText}}}
+      <strong>{{hitType}}: </strong>
+      {{{enrichMarkdown resultText}}}
     </div>
   </div>
 
   {{#if momentumHitType}}
-  <hr>
-  <div class="momentum-burn">
-    <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitTypeI18n}}}</p>
-    <button class="icon-button fas fa-flame burn-momentum-sf" data-actor="{{actor.id}}" data-move="{{move.id}}" data-mode="{{mode}}"
-      data-stat="{{usedStat}}" data-hittype="{{momentumHitType}}" data-hittypetext="{{momentumHitTypeI18n}}">
-      {{localize 'IRONSWORN.Burn'}}
-    </button>
-  </div>
+    <hr />
+    <div class='momentum-burn'>
+      <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitTypeI18n}}}</p>
+      <button
+        class='icon-button fas fa-flame burn-momentum-sf'
+        data-actor='{{actor.id}}'
+        data-move='{{move.id}}'
+        data-mode='{{mode}}'
+        data-stat='{{usedStat}}'
+        data-hittype='{{momentumHitType}}'
+        data-hittypetext='{{momentumHitTypeI18n}}'
+      >
+        {{localize 'IRONSWORN.Burn'}}
+      </button>
+    </div>
   {{/if}}
 
   {{#if nextOracles}}
-  <hr>
-  {{#each nextOracles}}
-  <button class="starforged__oracle__roll" data-tableid="{{id}}">
-    <i class="isicon-d10-tilt"></i>
-    {{name}}
-  </button>
-  {{/each}}
+    <hr />
+    {{#each nextOracles}}
+      <button class='starforged__oracle__roll' data-tableid='{{id}}'>
+        <i class='isicon-d10-tilt'></i>
+        {{name}}
+      </button>
+    {{/each}}
   {{/if}}
 
 </div>

@@ -44,7 +44,11 @@ export default {
     composedOutput() {
       return this.truths
         .map((category) => category.Name)
-        .map((name) => (this.output[name] ? `<h2>${name}</h2>\n${this.output[name]}\n\n` : undefined))
+        .map((name) =>
+          this.output[name]
+            ? `<h2>${name}</h2>\n${this.output[name]}\n\n`
+            : undefined
+        )
         .filter((x) => x !== undefined)
         .join('\n')
     },

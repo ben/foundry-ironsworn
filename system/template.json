@@ -1,13 +1,6 @@
 {
   "Actor": {
-    "types": [
-      "character",
-      "shared",
-      "foe",
-      "site",
-      "starship",
-      "location"
-    ],
+    "types": ["character", "shared", "foe", "site", "starship", "location"],
     "character": {
       "biography": "",
       "notes": "",
@@ -165,9 +158,7 @@
       }
     },
     "progress": {
-      "templates": [
-        "progress"
-      ],
+      "templates": ["progress"],
       "subtype": "progress",
       "starred": false,
       "hasTrack": true,
@@ -176,9 +167,7 @@
       "clockMax": 6
     },
     "vow": {
-      "templates": [
-        "progress"
-      ],
+      "templates": ["progress"],
       "description": "",
       "threat": "",
       "menace": 0
@@ -187,9 +176,7 @@
       "bonds": []
     },
     "site": {
-      "templates": [
-        "progress"
-      ],
+      "templates": ["progress"],
       "objective": "",
       "theme": "",
       "domain": "",
@@ -256,12 +243,12 @@
       "Text": "",
       "Trigger": { "Text": "", "Options": [] },
       "Outcomes": {
-        "Strong Hit": {"Text": ""},
-        "Weak Hit": {"Text": ""},
-        "Miss": {"Text": ""}
+        "Strong Hit": { "Text": "" },
+        "Weak Hit": { "Text": "" },
+        "Miss": { "Text": "" }
       },
       "Oracles": [],
-      "Source": {"Title": ""},
+      "Source": { "Title": "" },
       "Suggestions": {}
     },
     "delve-theme": {

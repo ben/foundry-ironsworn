@@ -38,13 +38,23 @@
 
         <div class="flexcol" v-if="asset.data.track.enabled">
           <!-- TODO: style as h4 -->
-          <btn-rollstat class="juicy text flexrow" :actor="actor" :item="asset" attr="track" style="margin-bottom: 3px">
+          <btn-rollstat
+            class="juicy text flexrow"
+            :actor="actor"
+            :item="asset"
+            attr="track"
+            style="margin-bottom: 3px"
+          >
             {{ asset.data.track.name }}
           </btn-rollstat>
           <asset-track :actor="actor" :item="asset" />
         </div>
 
-        <div class="flexcol stack nogrow" style="margin-top: 5px" v-if="asset.data.exclusiveOptions.length > 0">
+        <div
+          class="flexcol stack nogrow"
+          style="margin-top: 5px"
+          v-if="asset.data.exclusiveOptions.length > 0"
+        >
           <asset-exclusiveoption
             v-for="(opt, i) in asset.data.exclusiveOptions"
             :key="'option' + i"
@@ -94,7 +104,11 @@ export default {
   },
   methods: {
     toggle() {
-      this.foundryItem?.setFlag('foundry-ironsworn', 'expanded', !this.asset?.flags['foundry-ironsworn']?.expanded)
+      this.foundryItem?.setFlag(
+        'foundry-ironsworn',
+        'expanded',
+        !this.asset?.flags['foundry-ironsworn']?.expanded
+      )
     },
     edit(ev) {
       ev.stopPropagation()
@@ -105,7 +119,9 @@ export default {
       ev.stopPropagation()
       Dialog.confirm({
         title: this.$t('IRONSWORN.DeleteAsset'),
-        content: `<p><strong>${this.$t('IRONSWORN.ConfirmDelete')}</strong></p>`,
+        content: `<p><strong>${this.$t(
+          'IRONSWORN.ConfirmDelete'
+        )}</strong></p>`,
         yes: () => this.foundryItem?.delete(),
         defaultYes: false,
       })

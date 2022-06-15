@@ -17,19 +17,34 @@ async function doit() {
   // Calculate next version
   const { version } = systemJson
   const versionParts = version.split('.')
-  if (mode === 'major') {versionParts[0]++; versionParts[1] = '0'; versionParts[2] = '0'}
-  if (mode === 'minor') {versionParts[1]++; versionParts[2] = '0'}
-  if (mode === 'patch') {versionParts[2]++}
+  if (mode === 'major') {
+    versionParts[0]++
+    versionParts[1] = '0'
+    versionParts[2] = '0'
+  }
+  if (mode === 'minor') {
+    versionParts[1]++
+    versionParts[2] = '0'
+  }
+  if (mode === 'patch') {
+    versionParts[2]++
+  }
   const nextVersion = versionParts.join('.')
 
   // Write out system file
   systemJson.version = nextVersion
   systemJson.download = `https://github.com/ben/foundry-ironsworn/releases/download/${nextVersion}/ironsworn.zip`
-  await writeFile('./system/system.json', JSON.stringify(systemJson, null, 2) + '\n')
+  await writeFile(
+    './system/system.json',
+    JSON.stringify(systemJson, null, 2) + '\n'
+  )
 
   // Update the changelog
   const changelog = (await readFile('./CHANGELOG.md')).toString()
-  newChangelog = changelog.replace('## In progress', `## In progress\n\n## ${nextVersion}`)
+  newChangelog = changelog.replace(
+    '## In progress',
+    `## In progress\n\n## ${nextVersion}`
+  )
   await writeFile('./CHANGELOG.md', newChangelog)
 
   // Create a commit and a tag
@@ -38,7 +53,9 @@ async function doit() {
   execSync(`git tag '${nextVersion}'`).toString()
 
   // Push to origin
-  console.log(`DONE. Use 'git push origin main ${nextVersion}' to create a release.`)
+  console.log(
+    `DONE. Use 'git push origin main ${nextVersion}' to create a release.`
+  )
 }
 
 doit().then(

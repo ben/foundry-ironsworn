@@ -1,5 +1,10 @@
 <template>
-  <btn-isicon icon="d10-tilt" class="oracle-roll" @click="rollOracle" :tooltip="tooltip">
+  <btn-isicon
+    icon="d10-tilt"
+    class="oracle-roll"
+    @click="rollOracle"
+    :tooltip="tooltip"
+  >
     <slot></slot>
   </btn-isicon>
 </template>

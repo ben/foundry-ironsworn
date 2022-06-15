@@ -9,8 +9,18 @@
         v-model="searchQuery"
         @keydown="preventSubmit"
       />
-      <btn-faicon icon="times-circle" class="nogrow text" @click="clearSearch" style="padding: 6px" />
-      <btn-faicon icon="compress-alt" class="nogrow text" @click="collapseAll" style="padding: 6px" />
+      <btn-faicon
+        icon="times-circle"
+        class="nogrow text"
+        @click="clearSearch"
+        style="padding: 6px"
+      />
+      <btn-faicon
+        icon="compress-alt"
+        class="nogrow text"
+        @click="collapseAll"
+        style="padding: 6px"
+      />
     </form>
 
     <div class="flexcol item-list">
@@ -23,7 +33,12 @@
           @moveclick="highlightMove"
         />
       </div>
-      <div class="nogrow" v-else v-for="category of categories" :key="category.$id">
+      <div
+        class="nogrow"
+        v-else
+        v-for="category of categories"
+        :key="category.$id"
+      >
         <h2>
           {{ category.displayName }}
         </h2>

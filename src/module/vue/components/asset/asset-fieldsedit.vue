@@ -1,9 +1,18 @@
 <template>
   <div class="boxgroup">
     <transition-group name="slide" tag="div" class="nogrow">
-      <div class="flexrow boxrow nogrow fieldrow" v-for="(field, i) in item.data.fields" :key="'field' + i">
+      <div
+        class="flexrow boxrow nogrow fieldrow"
+        v-for="(field, i) in item.data.fields"
+        :key="'field' + i"
+      >
         <div class="box flexrow" style="align-items: center">
-          <input v-if="editMode" type="text" v-model="field.name" @blur="save" />
+          <input
+            v-if="editMode"
+            type="text"
+            v-model="field.name"
+            @blur="save"
+          />
           <p v-else>{{ field.name }}</p>
         </div>
         <div class="box flexrow">
@@ -15,7 +24,12 @@
       </div>
     </transition-group>
     <div class="flexrow boxrow nogrow" v-if="editMode">
-      <btn-faicon icon="plus" class="box block" @click="addField" style="min-height: 1.5rem; align-items: center" />
+      <btn-faicon
+        icon="plus"
+        class="box block"
+        @click="addField"
+        style="min-height: 1.5rem; align-items: center"
+      />
     </div>
   </div>
 </template>

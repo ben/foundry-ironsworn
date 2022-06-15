@@ -18,7 +18,12 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       template: 'systems/foundry-ironsworn/templates/actor/create.hbs',
       id: 'new-actor-dialog',
       resizable: false,
-      classes: ['ironsworn', 'sheet', 'new-actor', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'sheet',
+        'new-actor',
+        `theme-${IronswornSettings.theme}`,
+      ],
       width: 650,
       height: 200,
     } as FormApplication.Options)
@@ -33,13 +38,27 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html.find('.ironsworn__character__create').on('click', (ev) => this._characterCreate.call(this, ev))
-    html.find('.ironsworn__shared__create').on('click', (ev) => this._sharedCreate.call(this, ev))
-    html.find('.ironsworn__site__create').on('click', (ev) => this._siteCreate.call(this, ev))
-    html.find('.ironsworn__foe__create').on('click', (ev) => this._foeCreate.call(this, ev))
-    html.find('.ironsworn__sfcharacter__create').on('click', (ev) => this._sfcharacterCreate.call(this, ev))
-    html.find('.ironsworn__sfship__create').on('click', (ev) => this._sfshipCreate.call(this, ev))
-    html.find('.ironsworn__sflocation__create').on('click', (ev) => this._sfLocationCreate.call(this, ev))
+    html
+      .find('.ironsworn__character__create')
+      .on('click', (ev) => this._characterCreate.call(this, ev))
+    html
+      .find('.ironsworn__shared__create')
+      .on('click', (ev) => this._sharedCreate.call(this, ev))
+    html
+      .find('.ironsworn__site__create')
+      .on('click', (ev) => this._siteCreate.call(this, ev))
+    html
+      .find('.ironsworn__foe__create')
+      .on('click', (ev) => this._foeCreate.call(this, ev))
+    html
+      .find('.ironsworn__sfcharacter__create')
+      .on('click', (ev) => this._sfcharacterCreate.call(this, ev))
+    html
+      .find('.ironsworn__sfship__create')
+      .on('click', (ev) => this._sfshipCreate.call(this, ev))
+    html
+      .find('.ironsworn__sflocation__create')
+      .on('click', (ev) => this._sfLocationCreate.call(this, ev))
   }
 
   async _characterCreate(ev: JQuery.ClickEvent) {
@@ -58,17 +77,29 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _sharedCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    this._createWithFolder('Shared', 'shared', ev.currentTarget.dataset.img || undefined)
+    this._createWithFolder(
+      'Shared',
+      'shared',
+      ev.currentTarget.dataset.img || undefined
+    )
   }
 
   async _siteCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    this._createWithFolder('Site', 'site', ev.currentTarget.dataset.img || undefined)
+    this._createWithFolder(
+      'Site',
+      'site',
+      ev.currentTarget.dataset.img || undefined
+    )
   }
 
   async _foeCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    this._createWithFolder('NPC', 'foe', ev.currentTarget.dataset.img || undefined)
+    this._createWithFolder(
+      'NPC',
+      'foe',
+      ev.currentTarget.dataset.img || undefined
+    )
   }
 
   async _sfcharacterCreate(ev: JQuery.ClickEvent) {
@@ -87,12 +118,20 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _sfshipCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    this._createWithFolder('Starship', 'starship', ev.currentTarget.dataset.img || undefined)
+    this._createWithFolder(
+      'Starship',
+      'starship',
+      ev.currentTarget.dataset.img || undefined
+    )
   }
 
   async _sfLocationCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    this._createWithFolder('Location', 'location', ev.currentTarget.dataset.img || undefined)
+    this._createWithFolder(
+      'Location',
+      'location',
+      ev.currentTarget.dataset.img || undefined
+    )
   }
 
   async _createWithFolder(
@@ -120,12 +159,17 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   }
 
   async _ironlanderNameTable(): Promise<RollTable | undefined> {
-    const table = game.tables?.find((x) => x.name === 'Oracle: Ironlander Names')
+    const table = game.tables?.find(
+      (x) => x.name === 'Oracle: Ironlander Names'
+    )
     if (table) return table
 
     const pack = game.packs?.get('foundry-ironsworn.ironsworntables')
-    const entry = pack?.index.find((x: any) => x.name === 'Oracle: Ironlander Names')
-    if (entry) return pack?.getDocument((entry as any)._id) as RollTable | undefined
+    const entry = pack?.index.find(
+      (x: any) => x.name === 'Oracle: Ironlander Names'
+    )
+    if (entry)
+      return pack?.getDocument((entry as any)._id) as RollTable | undefined
     return undefined
   }
 
@@ -133,8 +177,12 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     if (!pack) return undefined
 
-    const firstTable = (await getFoundrySFTableByDfId('Starforged/Oracles/Characters/Name/Given_Name')) as any
-    const lastTable = (await getFoundrySFTableByDfId('Starforged/Oracles/Characters/Name/Family_Name')) as any
+    const firstTable = (await getFoundrySFTableByDfId(
+      'Starforged/Oracles/Characters/Name/Given_Name'
+    )) as any
+    const lastTable = (await getFoundrySFTableByDfId(
+      'Starforged/Oracles/Characters/Name/Family_Name'
+    )) as any
     if (!firstTable || !lastTable) return undefined
 
     const first = await firstTable.draw({ displayChat: false })
