@@ -57,7 +57,7 @@ interface CharacterDataSource {
 interface SharedDataSourceData {
   supply: number
 }
-interface SharedDataPropertiesData extends SharedDataSourceData {}
+type SharedDataPropertiesData = SharedDataSourceData
 
 interface SharedDataSource {
   type: 'shared'
@@ -71,7 +71,7 @@ export interface SharedDataProperties {
 ////////////////////////////////////////
 
 interface FoeDataSourceData {}
-interface FoeDataPropertiesData extends FoeDataSourceData {}
+type FoeDataPropertiesData = FoeDataSourceData
 
 interface FoeDataSource {
   type: 'foe'
@@ -99,7 +99,7 @@ interface SiteDataSourceData {
   current: number
   denizens: DenizenSlot[]
 }
-interface SiteDataPropertiesData extends SiteDataSourceData {}
+type SiteDataPropertiesData = SiteDataSourceData
 
 export interface SiteDataSource {
   type: 'site'
@@ -119,7 +119,7 @@ interface StarshipDataSourceData {
     cursed: boolean
   }
 }
-interface StarshipDataPropertiesData extends StarshipDataSourceData {}
+type StarshipDataPropertiesData = StarshipDataSourceData
 
 export interface StarshipDataSource {
   type: 'starship'
@@ -136,7 +136,7 @@ interface LocationDataSourceData {
   subtype: string
   klass: string
 }
-interface LocationDataPropertiesData extends LocationDataSourceData {}
+type LocationDataPropertiesData = LocationDataSourceData
 
 export interface LocationDataSource {
   type: 'location'
