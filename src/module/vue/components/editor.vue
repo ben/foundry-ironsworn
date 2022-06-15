@@ -2,11 +2,7 @@
   <!-- Poached fairly from Archmage https://git.io/JKUjs -->
   <div class="editor-wrapper">
     <div class="editor">
-      <div
-        class="editor-content"
-        :data-edit="target"
-        v-html="enrichHtml()"
-      ></div>
+      <div class="editor-content" :data-edit="target" v-html="enrichHtml()"></div>
       <a class="editor-edit" v-if="canEdit"><i class="fas fa-edit"></i></a>
     </div>
   </div>

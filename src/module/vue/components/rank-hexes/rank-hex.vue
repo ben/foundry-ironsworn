@@ -10,10 +10,7 @@
       :class="classes"
       @click="click"
     >
-      <path
-        stroke-width="1"
-        d="M 8.66 0 L 17.32 5 L 17.32 15 L 8.66 20 L 0 15 L 0 5 Z"
-      ></path>
+      <path stroke-width="1" d="M 8.66 0 L 17.32 5 L 17.32 15 L 8.66 20 L 0 15 L 0 5 Z"></path>
     </svg>
   </div>
 </template>

@@ -53,10 +53,7 @@ async function dropToken(location: IronswornActor) {
   const td = await location.getTokenData({ x, y })
   const hw = canvas.grid.w / 2
   const hh = canvas.grid.h / 2
-  const pos = canvas.grid.getSnappedPosition(
-    td.x - td.width * hw,
-    td.y - td.height * hh
-  )
+  const pos = canvas.grid.getSnappedPosition(td.x - td.width * hw, td.y - td.height * hh)
   td.update(pos)
 
   // TODO: avoid dropping this on top of another token
@@ -71,10 +68,7 @@ async function dropToken(location: IronswornActor) {
 
 async function newLocation(subtype: string, i18nKey: string, scale = 1) {
   const name = game.i18n.localize(`IRONSWORN.${i18nKey}`)
-  const parentFolder = await ensureFolder(
-    'Locations',
-    game.scenes?.current?.name ?? '???'
-  )
+  const parentFolder = await ensureFolder('Locations', game.scenes?.current?.name ?? '???')
   const loc = await IronswornActor.create({
     type: 'location',
     name,

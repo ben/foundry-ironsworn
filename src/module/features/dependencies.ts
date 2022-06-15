@@ -9,9 +9,7 @@ export async function maybePromptForDependencies() {
   // If the modules don't exist, warn the user.
   if (!dlopen || !vueport || !libwrapper) {
     if (gm) {
-      ui.notifications?.error(
-        'This system requires the dlopen and vueport modules to be installed.'
-      )
+      ui.notifications?.error('This system requires the dlopen and vueport modules to be installed.')
     }
   } else {
     // If the modules exist but aren't enabled, prompt the user.
@@ -22,18 +20,11 @@ export async function maybePromptForDependencies() {
           content:
             'This system requires the VuePort, dlopen, and libwrapper modules to be enabled. Would you like to enable them now?', // TODO: game.i18n.format('ARCHMAGE.UI.dependencyContent'),
           yes: async () => {
-            const moduleSettings = game.settings.get(
-              'core',
-              'moduleConfiguration'
-            ) as any
+            const moduleSettings = game.settings.get('core', 'moduleConfiguration') as any
             moduleSettings['dlopen'] = true
             moduleSettings['vueport'] = true
             moduleSettings['lib-wrapper'] = true
-            await game.settings.set(
-              'core',
-              'moduleConfiguration',
-              moduleSettings
-            )
+            await game.settings.set('core', 'moduleConfiguration', moduleSettings)
             window.location.reload()
           },
         })
@@ -53,9 +44,7 @@ export async function maybePromptForDependencies() {
             await Dlopen.loadDependencies(['vue', 'vuecomponents'])
             require('./patchvue')
           } catch (error) {
-            console.log(
-              'Dlopen was unable to load Vue. Now trying to load locally instead...'
-            )
+            console.log('Dlopen was unable to load Vue. Now trying to load locally instead...')
           }
         }
         loadDependencies()

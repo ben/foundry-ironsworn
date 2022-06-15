@@ -4,12 +4,7 @@ import { IronswornVueActorSheet } from '../vueactorsheet'
 export class FoeSheet extends IronswornVueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'shared',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      classes: ['ironsworn', 'sheet', 'shared', `theme-${IronswornSettings.theme}`],
       width: 400,
       height: 500,
       template: 'systems/foundry-ironsworn/templates/actor/foe.hbs',

@@ -71,11 +71,7 @@ async function everythingIsAProgress() {
 }
 
 // index 1 is the function to run when upgrading from 1 to 2, and so on
-const MIGRATIONS: Array<() => Promise<any>> = [
-  noop,
-  fixFormidableSpelling,
-  everythingIsAProgress,
-]
+const MIGRATIONS: Array<() => Promise<any>> = [noop, fixFormidableSpelling, everythingIsAProgress]
 const NEWEST_VERSION = MIGRATIONS.length
 
 export async function runDataMigrations() {
@@ -83,10 +79,7 @@ export async function runDataMigrations() {
   if (!game.user?.isGM) return
 
   // Bail if we're already at the newest version
-  let currentVersion = game.settings.get(
-    'foundry-ironsworn',
-    'data-version'
-  ) as number
+  let currentVersion = game.settings.get('foundry-ironsworn', 'data-version') as number
   if (currentVersion >= NEWEST_VERSION) return
 
   const showWarnings = currentVersion >= 1 // Don't show these for a brand-new world

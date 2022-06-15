@@ -12,12 +12,7 @@ export class VueApplication extends Application {
 
   static get defaultOptions(): Application.Options {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'item',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      classes: ['ironsworn', 'sheet', 'item', `theme-${IronswornSettings.theme}`],
     })
   }
 

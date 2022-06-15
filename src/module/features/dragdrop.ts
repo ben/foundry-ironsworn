@@ -12,19 +12,11 @@ export function activateDragDropListeners() {
       .on('dragstart', (ev: JQuery.DragStartEvent) => {
         // Add a class to the potential targets
         const indexEntry = getIndexEntry(ev.target)
-        $(document)
-          .find(
-            `.ironsworn__drop__target[data-drop-type="${indexEntry?.type}"]`
-          )
-          .addClass('drag-highlight')
+        $(document).find(`.ironsworn__drop__target[data-drop-type="${indexEntry?.type}"]`).addClass('drag-highlight')
       })
       .on('dragend', (ev: JQuery.DragEndEvent) => {
         const indexEntry = getIndexEntry(ev.target)
-        $(document)
-          .find(
-            `.ironsworn__drop__target[data-drop-type="${indexEntry?.type}"]`
-          )
-          .removeClass('drag-highlight')
+        $(document).find(`.ironsworn__drop__target[data-drop-type="${indexEntry?.type}"]`).removeClass('drag-highlight')
       })
   })
 }

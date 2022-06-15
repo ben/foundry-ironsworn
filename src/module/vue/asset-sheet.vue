@@ -5,12 +5,7 @@
     </header>
 
     <p>
-      <input
-        v-if="editMode"
-        type="text"
-        v-model="item.data.description"
-        @blur="setDescription"
-      />
+      <input v-if="editMode" type="text" v-model="item.data.description" @blur="setDescription" />
       <span v-else v-html="$enrichHtml(item.data.description)"></span>
     </p>
 

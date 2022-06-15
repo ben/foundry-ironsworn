@@ -36,25 +36,14 @@
         </ul>
 
         <div class="flexcol" v-if="asset.data.track.enabled">
-          <h4
-            class="clickable text flexrow"
-            style="margin-bottom: 3px"
-            @click="rollTrack"
-          >
+          <h4 class="clickable text flexrow" style="margin-bottom: 3px" @click="rollTrack">
             <span>{{ asset.data.track.name }}</span>
-            <i
-              class="isicon-d10-tilt juicy nogrow"
-              style="padding-right: 3px"
-            ></i>
+            <i class="isicon-d10-tilt juicy nogrow" style="padding-right: 3px"></i>
           </h4>
           <asset-track :actor="actor" :item="asset" />
         </div>
 
-        <div
-          class="flexcol stack nogrow"
-          style="margin-top: 5px"
-          v-if="asset.data.exclusiveOptions.length > 0"
-        >
+        <div class="flexcol stack nogrow" style="margin-top: 5px" v-if="asset.data.exclusiveOptions.length > 0">
           <asset-exclusiveoption
             v-for="(opt, i) in asset.data.exclusiveOptions"
             :key="'option' + i"
@@ -106,11 +95,7 @@ export default {
 
   methods: {
     toggle() {
-      this.foundryItem?.setFlag(
-        'foundry-ironsworn',
-        'expanded',
-        !this.asset?.flags['foundry-ironsworn']?.expanded
-      )
+      this.foundryItem?.setFlag('foundry-ironsworn', 'expanded', !this.asset?.flags['foundry-ironsworn']?.expanded)
     },
     edit(ev) {
       ev.stopPropagation()
@@ -122,9 +107,7 @@ export default {
 
       Dialog.confirm({
         title: this.$t('IRONSWORN.DeleteAsset'),
-        content: `<p><strong>${this.$t(
-          'IRONSWORN.ConfirmDelete'
-        )}</strong></p>`,
+        content: `<p><strong>${this.$t('IRONSWORN.ConfirmDelete')}</strong></p>`,
         yes: () => this.foundryItem?.delete(),
         defaultYes: false,
       })

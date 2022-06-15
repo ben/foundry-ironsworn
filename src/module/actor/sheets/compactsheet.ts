@@ -14,12 +14,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'actor',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
       width: 560,
       height: 228,
       template: 'systems/foundry-ironsworn/templates/actor/compact.hbs',
@@ -30,18 +25,10 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html
-      .find('.ironsworn__stat__roll')
-      .on('click', (e) => this._onStatRoll.call(this, e))
-    html
-      .find('.ironsworn__stat__bonusadajust')
-      .on('click', (e) => this._bonusAdjust.call(this, e))
-    html
-      .find('.ironsworn__resource__adjust')
-      .on('click', (e) => this._resourceAdjust.call(this, e))
-    html
-      .find('.ironsworn__momentum__burn')
-      .on('click', (e) => this._momentumBurn.call(this, e))
+    html.find('.ironsworn__stat__roll').on('click', (e) => this._onStatRoll.call(this, e))
+    html.find('.ironsworn__stat__bonusadajust').on('click', (e) => this._bonusAdjust.call(this, e))
+    html.find('.ironsworn__resource__adjust').on('click', (e) => this._resourceAdjust.call(this, e))
+    html.find('.ironsworn__momentum__burn').on('click', (e) => this._momentumBurn.call(this, e))
   }
 
   getData() {

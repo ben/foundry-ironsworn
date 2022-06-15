@@ -1,14 +1,10 @@
 @font-face {
   font-family: 'ironsworn-icons';
   src: url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc');
-  src: url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc#iefix')
-      format('embedded-opentype'),
-    url('systems/foundry-ironsworn/assets/font/isicons.ttf?4pb2yc')
-      format('truetype'),
-    url('systems/foundry-ironsworn/assets/font/isicons.woff?4pb2yc')
-      format('woff'),
-    url('systems/foundry-ironsworn/assets/font/isicons.svg?4pb2yc#isicons')
-      format('svg');
+  src: url('systems/foundry-ironsworn/assets/font/isicons.eot?4pb2yc#iefix') format('embedded-opentype'),
+    url('systems/foundry-ironsworn/assets/font/isicons.ttf?4pb2yc') format('truetype'),
+    url('systems/foundry-ironsworn/assets/font/isicons.woff?4pb2yc') format('woff'),
+    url('systems/foundry-ironsworn/assets/font/isicons.svg?4pb2yc#isicons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;

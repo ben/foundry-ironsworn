@@ -12,11 +12,7 @@ import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { defaultActor } from './module/helpers/actors'
 import { moveDataByName } from './module/helpers/data'
-import {
-  attachInlineRollListeners,
-  RollDialog,
-  rollSiteFeature,
-} from './module/helpers/rolldialog'
+import { attachInlineRollListeners, RollDialog, rollSiteFeature } from './module/helpers/rolldialog'
 import { SFRollMoveDialog } from './module/helpers/rolldialog-sf'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetItem } from './module/item/asset/assetitem'
@@ -59,15 +55,7 @@ export interface IronswornConfig {
 }
 
 export const IRONSWORN: IronswornConfig = {
-  itemClasses: [
-    AssetItem,
-    BondsetItem,
-    MoveItem,
-    ProgressItem,
-    VowItem,
-    DelveDomainItem,
-    DelveThemeItem,
-  ],
+  itemClasses: [AssetItem, BondsetItem, MoveItem, ProgressItem, VowItem, DelveDomainItem, DelveThemeItem],
   actorClass: IronswornActor,
 
   applications: {

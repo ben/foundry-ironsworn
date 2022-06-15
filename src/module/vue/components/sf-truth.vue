@@ -18,11 +18,7 @@
 
         <transition name="slide" v-if="table">
           <div v-if="selected">
-            <div
-              class="flexrow"
-              v-for="suboption in table"
-              :key="suboption.Description"
-            >
+            <div class="flexrow" v-for="suboption in table" :key="suboption.Description">
               <input
                 type="radio"
                 class="nogrow"
@@ -71,9 +67,7 @@ export default {
     },
 
     radiovalue() {
-      const subOptionText = this.subOptionDescription
-        ? `(${this.subOptionDescription})`
-        : ''
+      const subOptionText = this.subOptionDescription ? `(${this.subOptionDescription})` : ''
       return `
         <p><strong>${this.description}</strong></p>
         <p>${this.details} ${subOptionText}</p>

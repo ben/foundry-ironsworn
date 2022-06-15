@@ -1,22 +1,9 @@
 <template>
   <div class="flexcol">
     <div class="flexrow nogrow" style="margin-top: 0.5rem">
-      <input
-        type="text"
-        :placeholder="$t('IRONSWORN.Search')"
-        v-model="searchQuery"
-        @keydown="preventSubmit"
-      />
-      <i
-        class="fa fa-times-circle nogrow clickable text"
-        @click="clearSearch"
-        style="padding: 6px"
-      />
-      <i
-        class="fa fa-compress-alt nogrow clickable text"
-        @click="collapseAll"
-        style="padding: 6px"
-      />
+      <input type="text" :placeholder="$t('IRONSWORN.Search')" v-model="searchQuery" @keydown="preventSubmit" />
+      <i class="fa fa-times-circle nogrow clickable text" @click="clearSearch" style="padding: 6px" />
+      <i class="fa fa-compress-alt nogrow clickable text" @click="collapseAll" style="padding: 6px" />
     </div>
 
     <div class="flexcol item-list">
@@ -29,12 +16,7 @@
           @moveclick="highlightMove"
         />
       </div>
-      <div
-        class="nogrow"
-        v-else
-        v-for="category of categories"
-        :key="category.$id"
-      >
+      <div class="nogrow" v-else v-for="category of categories" :key="category.$id">
         <h2>
           {{ category.displayName }}
         </h2>

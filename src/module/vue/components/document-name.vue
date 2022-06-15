@@ -1,11 +1,6 @@
 <template>
   <component :is="tag" class="charname">
-    <input
-      :placeholder="$t('IRONSWORN.Name')"
-      v-model="document.name"
-      name="name"
-      type="text"
-    />
+    <input :placeholder="$t('IRONSWORN.Name')" v-model="document.name" name="name" type="text" />
   </component>
 </template>
 

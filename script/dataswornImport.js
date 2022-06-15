@@ -4,7 +4,10 @@ const fs = require('fs/promises')
 const util = require('util')
 
 function renderHtml(text) {
-  return marked.parse(text.replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'), { gfm: true })
+  return marked.parse(
+    text.replace(/(roll ?)?\+(iron|edge|wits|shadow|heart|health|spirit|supply)/gi, '((rollplus $2))'),
+    { gfm: true }
+  )
 }
 
 async function dataswornJson(name) {
@@ -17,13 +20,14 @@ async function writeLocal(name, obj) {
 }
 
 function processMove(move) {
-  const resultRegex = /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \*\*weak hit\*\*, [\s\S]+?)(On a \*\*miss\*\*, [\s\S]+)/
+  const resultRegex =
+    /([\s\S]+?)(On a \*\*strong hit\*\*, [\s\S]+?)(On a \*\*weak hit\*\*, [\s\S]+?)(On a \*\*miss\*\*, [\s\S]+)/
   let [_, description, strong, weak, miss] = move.Text.match(resultRegex) || []
   let extradescription, extrastrong, extraweak, extramiss
 
   // Fixup for Companion Endure Harm, it includes a stat that's hard to implement
   if (move.Name === 'Companion Endure Harm') {
-    move.Stats = move.Stats.filter(x => x !== 'companion health')
+    move.Stats = move.Stats.filter((x) => x !== 'companion health')
   }
 
   // Fixup for Delve the Depths; the table is in the wrong place
@@ -43,7 +47,8 @@ function processMove(move) {
     strong = `On **strong hit**, you and your allies may each choose two from within the categories below. If you share a bond, choose one more.\n\n${categories}`
     weak = `On a **weak hit**, you and your allies may each choose one from within the categories below. If you share a bond, choose one more.\n\n${categories}`
     miss = 'On a **miss**, you find no help here. *Pay the Price*.'
-    extradescription = 'On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1.'
+    extradescription =
+      'On a hit, you and your allies may each focus on one of your chosen recover actions and roll +heart again. If you share a bond, add +1.'
     extrastrong = 'On a **strong hit**, take +2 more for that action.'
     extraweak = 'On a **weak hit**, take +1 more.'
     extramiss = 'On a **miss**, it goes badly and you lose all benefits for that action.'
@@ -53,7 +58,10 @@ function processMove(move) {
   if (move.Name === 'Pay the Price') {
     const tableRegex = /Roll\s+\|\s+Result[\s\S]+/
     description = move.Text.replace(tableRegex, '')
-    description = description.replace('Roll on the following table', 'Roll on the @Compendium[foundry-ironsworn.ironsworntables.D4mUSL3IXtFRfMhi]{Pay the Price} table.')
+    description = description.replace(
+      'Roll on the following table',
+      'Roll on the @Compendium[foundry-ironsworn.ironsworntables.D4mUSL3IXtFRfMhi]{Pay the Price} table.'
+    )
   }
 
   if (!description) description = move.Text
@@ -263,7 +271,7 @@ async function doit() {
   for (const truthCategory of truthsJson.Categories) {
     en.IRONSWORN.WorldTruths[truthCategory.Name] = {
       ...en.IRONSWORN.WorldTruths[truthCategory.name],
-      name: truthCategory.Name
+      name: truthCategory.Name,
     }
     for (let i = 0; i < truthCategory.Options.length; i++) {
       const option = truthCategory.Options[i]
@@ -286,7 +294,6 @@ async function doit() {
       if (foe.Truth) foe.Truth = marked.parse(foe.Truth).trim()
     }
   }
-
 
   console.log('  Writing')
   await writeLocal('foes', foesJson)

@@ -13,12 +13,7 @@ export class FirstStartDialog extends FormApplication<FormApplication.Options> {
       template: 'systems/foundry-ironsworn/templates/first-start.hbs',
       id: 'first-start-dialog',
       resizable: false,
-      classes: [
-        'ironsworn',
-        'sheet',
-        'first-start',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      classes: ['ironsworn', 'sheet', 'first-start', `theme-${IronswornSettings.theme}`],
       width: 600,
       height: 700,
     } as FormApplication.Options)

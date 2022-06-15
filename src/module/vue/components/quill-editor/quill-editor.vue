@@ -91,10 +91,7 @@ export default {
                   type: 'image',
                   callback(path) {
                     const range = quill.getSelection(true)
-                    const delta = new Delta()
-                      .retain(range.index)
-                      .delete(range.length)
-                      .insert({ image: path })
+                    const delta = new Delta().retain(range.index).delete(range.length).insert({ image: path })
                     quill.updateContents(delta, 'user')
                   },
                 }).render(true)
@@ -121,10 +118,7 @@ export default {
 
       const quill = this.$refs.quilleditor.quill
       const range = quill.getSelection(true)
-      const delta = new Delta()
-        .retain(range.index)
-        .delete(range.length)
-        .insert({ foundrylink: data })
+      const delta = new Delta().retain(range.index).delete(range.length).insert({ foundrylink: data })
       await quill.updateContents(delta, 'user')
 
       ev.preventDefault()

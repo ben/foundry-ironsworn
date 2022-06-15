@@ -4,12 +4,7 @@ import { IronswornVueActorSheet } from '../vueactorsheet'
 export class StarforgedLocationSheet extends IronswornVueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'actor',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      classes: ['ironsworn', 'sheet', 'actor', `theme-${IronswornSettings.theme}`],
       width: 400,
       height: 600,
       submitOnClose: true,

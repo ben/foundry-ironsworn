@@ -26,11 +26,9 @@ function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
     .join(' ')
 }
 
-const actionRoll = (roll) =>
-  roll.terms[0].rolls.find((r) => r.dice.length === 0 || r.dice[0].faces === 6)
+const actionRoll = (roll) => roll.terms[0].rolls.find((r) => r.dice.length === 0 || r.dice[0].faces === 6)
 
-const challengeRolls = (roll) =>
-  roll.terms[0].rolls.filter((r) => r.dice.length > 0 && r.dice[0].faces === 10)
+const challengeRolls = (roll) => roll.terms[0].rolls.filter((r) => r.dice.length > 0 && r.dice[0].faces === 10)
 
 export class IronswornHandlebarsHelpers {
   static registerHelpers() {
@@ -72,9 +70,7 @@ export class IronswornHandlebarsHelpers {
       const termStrings = terms.map((t) => t.operator || t.number)
       const actionDie = d?.total ?? 0
       const totalParts = [
-        this.actionCapped
-          ? `<abbr title="${game.i18n.localize('IRONSWORN.CappedAt10')}">`
-          : '',
+        this.actionCapped ? `<abbr title="${game.i18n.localize('IRONSWORN.CappedAt10')}">` : '',
         this.action.toString(),
         this.actionCapped ? '</abbr>' : '',
       ]
@@ -94,9 +90,7 @@ export class IronswornHandlebarsHelpers {
 
     Handlebars.registerHelper('ironswornHitType', function () {
       const actionTotal = actionRoll(this.roll).total
-      const [challenge1, challenge2] = challengeRolls(this.roll).map(
-        (x) => x.total
-      )
+      const [challenge1, challenge2] = challengeRolls(this.roll).map((x) => x.total)
       const match = challenge1 === challenge2
       if (actionTotal <= Math.min(challenge1, challenge2)) {
         if (match) return game.i18n.localize('IRONSWORN.Complication')
@@ -176,17 +170,13 @@ export class IronswornHandlebarsHelpers {
       for (const testRank in RANKS) {
         const isFilled = position >= Object.keys(RANKS).indexOf(testRank)
         hexes.push(`
-          <div class="nogrow" title="${game.i18n.localize(
-            `IRONSWORN.${capitalize(testRank)}`
-          )}">
+          <div class="nogrow" title="${game.i18n.localize(`IRONSWORN.${capitalize(testRank)}`)}">
             <svg
               version="1.1"
               xmlns="http://www.w3.org/2000/svg"
               height="15"
               viewbox="0 0 17.32050807568877 20"
-              class="rank-pip ${
-                isFilled ? 'filled' : ''
-              } clickable svg ironsworn__progress__rank"
+              class="rank-pip ${isFilled ? 'filled' : ''} clickable svg ironsworn__progress__rank"
               data-rank="${testRank}"
               data-item="${id}"
             >
@@ -210,9 +200,7 @@ export class IronswornHandlebarsHelpers {
       (_, stat) => `
         <a class="inline-roll" data-param="${stat}">
           <i class="fas fa-dice-d6"></i>
-          ${rollText} +${game.i18n
-        .localize(`IRONSWORN.${capitalize(stat)}`)
-        .toLowerCase()}
+          ${rollText} +${game.i18n.localize(`IRONSWORN.${capitalize(stat)}`).toLowerCase()}
         </a>
       `
     )

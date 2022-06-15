@@ -5,10 +5,7 @@
     style="padding: 3px"
     :data-idx="idx"
   >
-    <label
-      class="nogrow"
-      style="white-space: nowrap; flex-basis: 4em; line-height: 26px"
-    >
+    <label class="nogrow" style="white-space: nowrap; flex-basis: 4em; line-height: 26px">
       <span v-if="denizen.low === denizen.high">{{ denizen.low }}</span>
       <span v-else>{{ denizen.low }}–{{ denizen.high }}</span>
     </label>
@@ -22,11 +19,7 @@
       @input="input"
       :placeholder="denizen.descriptor"
     />
-    <div
-      v-else
-      style="line-height: 26px"
-      v-html="$enrichHtml(denizen.description)"
-    />
+    <div v-else style="line-height: 26px" v-html="$enrichHtml(denizen.description)" />
   </div>
 </template>
 

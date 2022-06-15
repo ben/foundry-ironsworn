@@ -4,16 +4,10 @@ export function registerCompendiumCategoryHook() {
 
     const collection = opts.collection
     for (const el of html.find('.directory-item')) {
-      const table = (await collection.getDocument(
-        el.dataset.documentId
-      )) as RollTable
+      const table = (await collection.getDocument(el.dataset.documentId)) as RollTable
       if (table?.data?.flags?.category) {
-        const cat = table.data.flags.category
-          .replace(/(Starforged|Ironsworn)\/Oracles\//, '')
-          .replace(/_/g, ' ')
-        $(el).append(
-          `<small style="flex-grow: 0; white-space: nowrap">${cat}</small>`
-        )
+        const cat = table.data.flags.category.replace(/(Starforged|Ironsworn)\/Oracles\//, '').replace(/_/g, ' ')
+        $(el).append(`<small style="flex-grow: 0; white-space: nowrap">${cat}</small>`)
       }
     }
   })

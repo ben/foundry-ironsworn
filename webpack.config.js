@@ -48,8 +48,8 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.wasm', '.mjs', '.ts', '.js', '.json', '.vue'],
       alias: {
-        'Vue$': 'vue/dist/vue.esm.js'
-      }
+        Vue$: 'vue/dist/vue.esm.js',
+      },
     },
     output: {
       filename: '[name].js',
@@ -57,7 +57,7 @@ module.exports = (env) => {
       publicPath: '/systems/foundry-ironsworn/',
     },
     optimization: {
-      minimize: false
+      minimize: false,
     },
     devServer: {
       hot: true,
@@ -75,13 +75,13 @@ module.exports = (env) => {
       rules: [
         isDevelopment
           ? {
-            test: /\.hbs$/,
-            loader: 'raw-loader',
-          }
+              test: /\.hbs$/,
+              loader: 'raw-loader',
+            }
           : {
-            test: /\.hbs$/,
-            loader: 'null-loader',
-          },
+              test: /\.hbs$/,
+              loader: 'null-loader',
+            },
         {
           test: /\.vue$/,
           loader: 'vue-loader',
@@ -102,7 +102,7 @@ module.exports = (env) => {
             {
               loader: 'string-replace-loader',
               options: {
-                search: "// IMPORT_ALL_VUE_COMPONENTS",
+                search: '// IMPORT_ALL_VUE_COMPONENTS',
                 replace: allVueComponents,
               },
             },

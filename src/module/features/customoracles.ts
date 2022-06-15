@@ -25,9 +25,7 @@ export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
 
   // Build the default tree
   for (const category of starforged['Oracle Categories']) {
-    rootNode.children.push(
-      await walkOracleCategory(category, getFoundryISTableByDfId)
-    )
+    rootNode.children.push(await walkOracleCategory(category, getFoundryISTableByDfId))
   }
 
   // Add in custom oracles from a well-known directory
@@ -47,9 +45,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
 
   // Build the default tree
   for (const category of starforged['Oracle Categories']) {
-    rootNode.children.push(
-      await walkOracleCategory(category, getFoundrySFTableByDfId)
-    )
+    rootNode.children.push(await walkOracleCategory(category, getFoundrySFTableByDfId))
   }
 
   // Add in custom oracles from a well-known directory
@@ -88,19 +84,14 @@ async function walkOracleCategory(
   return node
 }
 
-async function walkOracle(
-  oracle: IOracle,
-  tableGetter: typeof getFoundrySFTableByDfId
-): Promise<OracleTreeNode> {
+async function walkOracle(oracle: IOracle, tableGetter: typeof getFoundrySFTableByDfId): Promise<OracleTreeNode> {
   const table = await tableGetter(oracle.$id)
 
   const node: OracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: oracle,
     tables: compact([table]),
-    displayName:
-      table?.name ||
-      game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`),
+    displayName: table?.name || game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`),
   }
 
   // Child oracles
@@ -136,9 +127,7 @@ async function walkOracle(
 
 async function augmentWithFolderContents(node: OracleTreeNode) {
   const name = game.i18n.localize('IRONSWORN.Custom Oracles')
-  const rootFolder = game.tables?.directory?.folders.find(
-    (x) => x.name === name
-  )
+  const rootFolder = game.tables?.directory?.folders.find((x) => x.name === name)
   if (!rootFolder) return
 
   function walkFolder(parent: OracleTreeNode, folder: Folder) {
@@ -167,10 +156,7 @@ async function augmentWithFolderContents(node: OracleTreeNode) {
   walkFolder(node, rootFolder)
 }
 
-export function findPathToNodeByTableId(
-  rootNode: OracleTreeNode,
-  tableId: string
-): OracleTreeNode[] {
+export function findPathToNodeByTableId(rootNode: OracleTreeNode, tableId: string): OracleTreeNode[] {
   const ret: OracleTreeNode[] = []
   function walk(node: OracleTreeNode) {
     ret.push(node)

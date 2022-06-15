@@ -2,13 +2,7 @@
   <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
     <transition-group name="slide" tag="div" class="nogrow">
       <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
-        <order-buttons
-          v-if="editMode"
-          :i="i"
-          :length="assets.length"
-          @sortUp="sortUp"
-          @sortDown="sortDown"
-        />
+        <order-buttons v-if="editMode" :i="i" :length="assets.length" @sortUp="sortUp" @sortDown="sortDown" />
         <asset :actor="actor" :asset="asset" />
       </div>
     </transition-group>
@@ -56,9 +50,7 @@ export default {
         siblings: foundryItems,
         sortBefore,
       })
-      await Promise.all(
-        updates.map(({ target, update }) => target.update(update))
-      )
+      await Promise.all(updates.map(({ target, update }) => target.update(update)))
     },
 
     sortUp(i) {

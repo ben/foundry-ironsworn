@@ -53,17 +53,14 @@ const FOE_IMAGES = {
   'Marsh Rat': 'icons/creatures/mammals/rodent-rat-diseaed-gray.webp',
   Wolf: 'icons/creatures/abilities/wolf-howl-moon-purple.webp',
   Bladewing: 'icons/creatures/magical/spirit-undead-winged-ghost.webp',
-  'Carrion Newt':
-    'icons/creatures/reptiles/chameleon-camouflage-green-brown.webp',
+  'Carrion Newt': 'icons/creatures/reptiles/chameleon-camouflage-green-brown.webp',
   'Cave Lion': 'icons/creatures/abilities/lion-roar-yellow.webp',
   'Deep Rat': 'icons/creatures/mammals/rodent-rat-green.webp',
-  'Nightmare Spider':
-    'icons/creatures/invertebrates/spider-mandibles-brown.webp',
+  'Nightmare Spider': 'icons/creatures/invertebrates/spider-mandibles-brown.webp',
   'Shroud Crab': 'icons/consumables/meat/claw-crab-lobster-serrated-pink.webp',
   Trog: 'icons/creatures/reptiles/lizard-iguana-green.webp',
   Basilisk: 'icons/creatures/reptiles/snake-poised-white.webp',
-  'Elder Beast':
-    'icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp',
+  'Elder Beast': 'icons/creatures/mammals/beast-horned-scaled-glowing-orange.webp',
   'Harrow Spider': 'icons/creatures/invertebrates/spider-web-black.webp',
   Leviathan: 'icons/creatures/reptiles/serpent-horned-green.webp',
   Mammoth: 'icons/commodities/leather/fur-white.webp',
@@ -115,11 +112,8 @@ export async function importFromDatasworn() {
   }
 
   // Moves
-  const movesJson = await fetch(
-    'systems/foundry-ironsworn/assets/moves.json'
-  ).then((x) => x.json())
-  const movesToCreate = [] as (ItemDataConstructorData &
-    Record<string, unknown>)[]
+  const movesJson = await fetch('systems/foundry-ironsworn/assets/moves.json').then((x) => x.json())
+  const movesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   for (const category of movesJson.Categories) {
     for (const move of category.Moves) {
       movesToCreate.push({
@@ -141,9 +135,7 @@ export async function importFromDatasworn() {
   })
 
   // Assets
-  const assetsJson = await fetch(
-    'systems/foundry-ironsworn/assets/assets.json'
-  ).then((x) => x.json())
+  const assetsJson = await fetch('systems/foundry-ironsworn/assets/assets.json').then((x) => x.json())
   const assetsToCreate = assetsJson.map((raw) => ({
     type: 'asset',
     ...raw,
@@ -153,9 +145,7 @@ export async function importFromDatasworn() {
   })
 
   // Themes
-  const themesJson = await fetch(
-    'systems/foundry-ironsworn/assets/delve-themes.json'
-  ).then((x) => x.json())
+  const themesJson = await fetch('systems/foundry-ironsworn/assets/delve-themes.json').then((x) => x.json())
   const themesToCreate = themesJson.Themes.map((rawTheme) => {
     const themeData = {
       type: 'delve-theme',
@@ -195,9 +185,7 @@ export async function importFromDatasworn() {
   })
 
   // Domains
-  const domainsJson = await fetch(
-    'systems/foundry-ironsworn/assets/delve-domains.json'
-  ).then((x) => x.json())
+  const domainsJson = await fetch('systems/foundry-ironsworn/assets/delve-domains.json').then((x) => x.json())
   const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
     const domainData = {
       type: 'delve-domain',
@@ -237,21 +225,15 @@ export async function importFromDatasworn() {
   })
 
   // Foes
-  const foesJson = await fetch(
-    'systems/foundry-ironsworn/assets/foes.json'
-  ).then((x) => x.json())
-  const foesToCreate = [] as (ItemDataConstructorData &
-    Record<string, unknown>)[]
+  const foesJson = await fetch('systems/foundry-ironsworn/assets/foes.json').then((x) => x.json())
+  const foesToCreate = [] as (ItemDataConstructorData & Record<string, unknown>)[]
   for (const category of foesJson.Categories) {
     for (const foe of category.Foes) {
-      const description = await renderTemplate(
-        'systems/foundry-ironsworn/templates/item/foe.hbs',
-        {
-          ...foe,
-          Category: category.Name,
-          CategoryDescription: category.Description,
-        }
-      )
+      const description = await renderTemplate('systems/foundry-ironsworn/templates/item/foe.hbs', {
+        ...foe,
+        Category: category.Name,
+        CategoryDescription: category.Description,
+      })
 
       foesToCreate.push({
         type: 'progress',
@@ -285,13 +267,7 @@ export async function importFromDatasworn() {
 
   // Oracles from Dataforged
   const oraclesToCreate = [] as Record<string, unknown>[]
-  function tableData(
-    table: IRow[],
-    $id: string,
-    name: string,
-    category: string,
-    description: string
-  ) {
+  function tableData(table: IRow[], $id: string, name: string, category: string, description: string) {
     const renderedDescription = marked.parseInline(description ?? '')
     const maxRoll = max(table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
     return {
@@ -324,25 +300,13 @@ export async function importFromDatasworn() {
   function processOracle(oracle: IOracle) {
     if (oracle.Table) {
       oraclesToCreate.push(
-        tableData(
-          oracle.Table,
-          oracle.$id,
-          oracle.Display.Title,
-          oracle.Category,
-          oracle.Description ?? ''
-        )
+        tableData(oracle.Table, oracle.$id, oracle.Display.Title, oracle.Category, oracle.Description ?? '')
       )
       for (const tableEntry of oracle.Table) {
         if (tableEntry.Subtable) {
           const name = tableEntry.Result
           oraclesToCreate.push(
-            tableData(
-              tableEntry.Subtable,
-              `${oracle.$id}/${name}`,
-              name,
-              oracle.Category,
-              tableEntry.Result
-            )
+            tableData(tableEntry.Subtable, `${oracle.$id}/${name}`, name, oracle.Category, tableEntry.Result)
           )
         }
       }

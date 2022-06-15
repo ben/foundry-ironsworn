@@ -11,12 +11,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
       template: 'systems/foundry-ironsworn/templates/truths.hbs',
       id: 'world-truths-dialog',
       resizable: true,
-      classes: [
-        'ironsworn',
-        'sheet',
-        'world-truths',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      classes: ['ironsworn', 'sheet', 'world-truths', `theme-${IronswornSettings.theme}`],
       width: 600,
       height: 700,
     } as FormApplication.Options)
@@ -27,24 +22,16 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
   }
 
   async getData() {
-    const truths = await fetch(
-      'systems/foundry-ironsworn/assets/world-truths.json'
-    ).then((x) => x.json())
+    const truths = await fetch('systems/foundry-ironsworn/assets/world-truths.json').then((x) => x.json())
 
     // Run truths text through I18n
     for (const category of truths.Categories) {
       for (let i = 0; i < category.Options.length; i++) {
         const option = category.Options[i]
-        option.Truth = game.i18n.localize(
-          `IRONSWORN.WorldTruths.${category.Name}.option${i + 1}`
-        )
-        option.Quest = game.i18n.localize(
-          `IRONSWORN.WorldTruths.${category.Name}.quest${i + 1}`
-        )
+        option.Truth = game.i18n.localize(`IRONSWORN.WorldTruths.${category.Name}.option${i + 1}`)
+        option.Quest = game.i18n.localize(`IRONSWORN.WorldTruths.${category.Name}.quest${i + 1}`)
       }
-      category.Name = game.i18n.localize(
-        `IRONSWORN.WorldTruths.${category.Name}.name`
-      )
+      category.Name = game.i18n.localize(`IRONSWORN.WorldTruths.${category.Name}.name`)
     }
 
     return mergeObject(super.getData(), {
@@ -55,12 +42,8 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
   activateListeners(html: JQuery) {
     super.activateListeners(html)
 
-    html
-      .find('.ironsworn__custom__truth')
-      .on('focus', (ev) => this._customTruthFocus.call(this, ev))
-    html
-      .find('.ironsworn__save__truths')
-      .on('click', (ev) => this._save.call(this, ev))
+    html.find('.ironsworn__custom__truth').on('focus', (ev) => this._customTruthFocus.call(this, ev))
+    html.find('.ironsworn__save__truths').on('click', (ev) => this._save.call(this, ev))
   }
 
   _customTruthFocus(ev: JQuery.FocusEvent) {
@@ -75,8 +58,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
     for (const radio of this.element.find(':checked')) {
       const { category } = radio.dataset
       const descriptionElement = $(radio).parent().find('.description')
-      const description =
-        descriptionElement.html() || `<p>${descriptionElement.val()}</p>`
+      const description = descriptionElement.html() || `<p>${descriptionElement.val()}</p>`
       sections.push(`<h2>${category}</h2> ${description}`)
     }
 

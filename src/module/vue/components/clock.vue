@@ -1,11 +1,5 @@
 <template>
-  <svg
-    version="1.1"
-    xmlns="http://www.w3.org/2000/svg"
-    :height="size"
-    :width="size"
-    viewBox="-55 -55 110 110"
-  >
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" :height="size" :width="size" viewBox="-55 -55 110 110">
     <path
       v-for="(wedge, i) in computedWedges"
       :key="wedge.path"
