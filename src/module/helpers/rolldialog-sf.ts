@@ -34,7 +34,7 @@ export class SFRollMoveDialog extends Dialog {
     const data = move.data as SFMoveDataProperties
     const options = rollableOptions(data.data.Trigger)
     if (!options.length) {
-      return createDataforgedMoveChat(move)
+      return this.createDataforgedMoveChat(move)
     }
 
     const template = 'systems/foundry-ironsworn/templates/sf-move-roll-dialog.hbs'
@@ -65,7 +65,26 @@ export class SFRollMoveDialog extends Dialog {
       default: '0',
     }).render(true)
   }
+
+  static moveHasRollableOptions(move: IronswornItem) {
+    const data = move.data as SFMoveDataProperties
+    const options = rollableOptions(data.data.Trigger)
+    return options.length > 0
+  }
+
+  static async createDataforgedMoveChat(move: IronswornItem) {
+    const params = {
+      move,
+      nextOracles: await sfNextOracles(move),
+    }
+    const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/sf-move.hbs', params)
+    ChatMessage.create({
+      speaker: ChatMessage.getSpeaker(),
+      content,
+    })
+  }
 }
+
 function callback(opts: { actor: IronswornActor; move: IronswornItem; mode: string; stats: string[] }) {
   return async (x) => {
     // TODO: extract data from form and send to rollAndCreateChatMessage
@@ -119,17 +138,5 @@ async function rollAndCreateChatMessage(opts: {
     stats: normalizedStats,
     usedStat,
     bonus,
-  })
-}
-
-async function createDataforgedMoveChat(move: IronswornItem) {
-  const params = {
-    move,
-    nextOracles: await sfNextOracles(move),
-  }
-  const content = await renderTemplate('systems/foundry-ironsworn/templates/chat/sf-move.hbs', params)
-  ChatMessage.create({
-    speaker: ChatMessage.getSpeaker(),
-    content,
   })
 }

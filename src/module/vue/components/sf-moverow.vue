@@ -1,14 +1,23 @@
 <template>
   <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
-    <h4 style="margin: 0" class="clickable text flexrow" :title="tooltip">
-      <span @click="rollMove">
-        <i class="isicon-d10-tilt juicy"></i>
+    <h4 class="flexrow" :title="tooltip">
+      <i class="isicon-d10-tilt juicy clickable text nogrow" style="padding-right: 0.5em" @click="rollMove"></i>
+      <span class="clickable text" @click="expanded = !expanded">
         {{ move.displayName }}
       </span>
-      <icon-button icon="eye" @click="expanded = !expanded" />
     </h4>
     <transition name="slide">
       <with-rolllisteners element="div" class="move-summary" :actor="actor" v-if="expanded" @moveclick="moveclick">
+        <div class="flexrow">
+          <button v-if="canRoll" @click="rollMove">
+            <i class="isicon-d10-tilt"></i>
+            {{ $t('IRONSWORN.Roll') }}
+          </button>
+          <button @click="sendToChat">
+            <i class="far fa-comment"></i>
+            {{ $t('IRONSWORN.Chat') }}
+          </button>
+        </div>
         <div v-html="$enrichMarkdown(fulltext)" />
       </with-rolllisteners>
     </transition>
@@ -23,6 +32,7 @@
 }
 h4 {
   margin: 0;
+  line-height: 1.4em;
 }
 .item-row {
   transition: all 0.4s ease;
@@ -49,12 +59,17 @@ export default {
 
   computed: {
     tooltip() {
-      // TODO: page number, when it shows up
-      return this.move.dataforgedMove?.Source?.Title
+      const { Title, Page } = this.move.dataforgedMove?.Source ?? {}
+      if (!Title) return undefined
+      return `${Title} p${Page}`
     },
 
     fulltext() {
       return this.move.moveItem?.data?.data?.Text
+    },
+
+    canRoll() {
+      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
     },
   },
 
@@ -69,8 +84,14 @@ export default {
   },
 
   methods: {
-    async rollMove() {
+    rollMove(e) {
+      e.preventDefault()
       CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, this.move.moveItem)
+    },
+
+    sendToChat(e) {
+      e.preventDefault()
+      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(this.move.moveItem)
     },
 
     moveclick(item) {
