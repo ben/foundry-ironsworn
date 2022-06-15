@@ -4,7 +4,11 @@
       <!-- Region -->
       <label class="flexrow" style="margin-right: 10px; flex-basis: 150px">
         <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
-        <select v-model="region" style="margin-left: 5px">
+        <select
+          v-model="region"
+          @change="regionChanged"
+          style="margin-left: 5px"
+        >
           <option value="terminus">
             {{ $t('IRONSWORN.Terminus') }}
           </option>
@@ -487,6 +491,12 @@ export default {
   },
 
   methods: {
+    regionChanged(evt) {
+      const sceneId = game.user?.viewedScene
+      const scene = game.scenes?.get(sceneId)
+      const newValue = evt.target.value
+      scene?.setFlag('foundry-ironsworn', 'region', newValue)
+    },
     subtypeChanged(evt) {
       this.saveSubtype(evt.target.value)
     },

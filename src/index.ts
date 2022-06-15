@@ -25,6 +25,7 @@ import { activateDragDropListeners } from './module/features/dragdrop'
 import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
 import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
+import { themeSetup } from './module/features/visual-theme'
 import { registerZIndexHook } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { runDataMigrations } from './module/helpers/migrations'
@@ -54,7 +55,9 @@ Hooks.once('init', async () => {
 
   // Bootstrap settings and pull in theme
   IronswornSettings.registerSettings()
-  require(`./styles/themes/${IronswornSettings.theme}.less`)
+
+  // Theme configuration
+  themeSetup()
 
   CONFIG.IRONSWORN = IRONSWORN
 

@@ -2,6 +2,17 @@
 
 ## In progress
 
+## 1.15.14
+
+- Propagate region setting from location to scene
+- SF theme: make journal editing more humane
+
+## 1.15.13
+
+- Rename "Foe" to "NPC" in new-actor dialog
+- Avoid showing the "Housekeeping" warnings when first starting a new world
+- Quick fix for tiny editor black-on-black problem
+
 ## 1.15.12
 
 - Bump Dataforged and import new Sundered Isles assets ([#378](https://github.com/ben/foundry-ironsworn/pull/378))

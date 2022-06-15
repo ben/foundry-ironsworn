@@ -68,7 +68,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _foeCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    this._createWithFolder('Foe', 'foe', ev.currentTarget.dataset.img || undefined)
+    this._createWithFolder('NPC', 'foe', ev.currentTarget.dataset.img || undefined)
   }
 
   async _sfcharacterCreate(ev: JQuery.ClickEvent) {

@@ -74,7 +74,10 @@ export default {
 
   methods: {
     addEmpty() {
-      Item.create({ name: 'Foe', type: 'progress', data: { subtype: 'foe' } }, { parent: this.$actor })
+      Item.create(
+        { name: 'NPC', type: 'progress', data: { subtype: 'progress' } },
+        { parent: this.$actor }
+      )
     },
 
     openCompendium(name) {
