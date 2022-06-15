@@ -174,8 +174,6 @@ textarea.notes {
 </style>
 
 <script>
-import BtnCompendium from './components/buttons/btn-compendium'
-import BtnMomentumburn from './components/buttons/btn-momentumburn'
 export default {
   props: {
     actor: Object,
@@ -244,6 +242,5 @@ export default {
       this.applySort(i, i + 1, false, items)
     },
   },
-  components: { BtnCompendium, BtnMomentumburn },
 }
 </script>
