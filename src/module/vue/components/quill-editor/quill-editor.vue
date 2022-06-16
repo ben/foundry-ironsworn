@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
   <div
     style="border: 1px solid black"
     :class="cssClasses"
@@ -132,4 +132,4 @@ export default {
     },
   },
 }
-</script> -->
+</script>

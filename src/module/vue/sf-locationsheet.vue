@@ -142,7 +142,7 @@
     </section>
 
     <section class="flexcol">
-      <!-- <quill-editor v-model="actor.data.description" /> -->
+      <quill-editor v-model="actor.data.description" />
     </section>
   </div>
 </template>

@@ -111,7 +111,7 @@
               <progress-controls :actor="actor" />
             </div>
 
-            <!-- <quill-editor theme="bubble" v-model="actor.data.biography" /> -->
+            <quill-editor theme="bubble" v-model="actor.data.biography" />
           </div>
         </div>
 
