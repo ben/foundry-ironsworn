@@ -5,7 +5,7 @@ export class SFSettingTruthsDialogVue extends VueApplication {
     super({})
   }
 
-  static get defaultOptions(): Application.Options {
+  static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
       template: 'systems/foundry-ironsworn/templates/sf-truths-vue.hbs',

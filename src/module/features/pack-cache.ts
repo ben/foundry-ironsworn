@@ -1,11 +1,13 @@
+import { BaseAdventure } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseAdventure.js'
+import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 
-type PackContents = (IronswornItem | JournalEntry | Macro | Playlist | Scene)[]
+type PackContents = StoredDocument<Scene | IronswornActor | Cards | IronswornItem | JournalEntry | Macro | Playlist | RollTable | BaseAdventure>[]
 const PACK_CACHE: { [key: string]: PackContents | undefined } = {}
 
 export async function cachedDocumentsForPack(
   packName: string
-): Promise<PackContents | undefined> {
+) {
   if (!PACK_CACHE[packName]) {
     console.log(`Loading documents for pack ${packName}`)
     const pack = game.packs.get(packName)

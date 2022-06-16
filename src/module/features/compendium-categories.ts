@@ -8,7 +8,7 @@ export function registerCompendiumCategoryHook() {
         el.dataset.documentId
       )) as RollTable
       if (table?.data?.flags?.category) {
-        const cat = table.data.flags.category
+        const cat = (table.data.flags.category as string)
           .replace(/(Starforged|Ironsworn)\/Oracles\//, '')
           .replace(/_/g, ' ')
         $(el).append(

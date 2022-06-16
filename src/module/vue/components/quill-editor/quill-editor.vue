@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div
     style="border: 1px solid black"
     :class="cssClasses"
@@ -45,7 +45,7 @@
 <script>
 import { VueEditor } from 'vue2-editor'
 import Delta from 'quill-delta'
-import FoundryLink from './foundry-link'
+// import FoundryLink from './foundry-link'
 
 export default {
   components: { VueEditor },
@@ -132,4 +132,4 @@ export default {
     },
   },
 }
-</script>
+</script> -->

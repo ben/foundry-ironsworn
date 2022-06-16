@@ -209,7 +209,15 @@ Hooks.once('ready', async () => {
 })
 
 Hooks.once('setup', () => {
-  Roll.prototype.render = async function (chatOptions = {}) {
+  Roll.prototype.render = async function (
+    chatOptions: {
+      user?: string | undefined
+      flavor?: string | undefined
+      template?: string | undefined
+      isPrivate?: boolean | undefined
+      blind?: boolean | undefined
+    } = {}
+  ) {
     const template = 'systems/foundry-ironsworn/templates/chat/default-roll.hbs'
     chatOptions = mergeObject(
       {

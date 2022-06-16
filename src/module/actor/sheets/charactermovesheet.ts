@@ -237,7 +237,7 @@ export class CharacterMoveSheet extends FormApplication<
         const entry = pack?.index.find((x: any) => x.name == tableName)
         if (entry) {
           table = (await pack.getDocument((entry as any)._id)) as
-            | RollTable
+            | StoredDocument<RollTable>
             | undefined
         }
       }

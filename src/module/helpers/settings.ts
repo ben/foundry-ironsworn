@@ -24,33 +24,41 @@ export class IronswornSettings {
       default: true,
     })
 
-    game.settings.register('foundry-ironsworn', 'theme', {
-      name: 'IRONSWORN.Settings.Theme.Name',
-      hint: 'IRONSWORN.Settings.Theme.Hint',
-      scope: 'world',
-      config: true,
-      type: String,
-      choices: {
-        ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
-        starforged: 'IRONSWORN.Settings.Theme.Starforged',
-      },
-      default: 'ironsworn',
-      onChange: reload,
-    })
+    game.settings.register<'foundry-ironsworn', 'theme', string>(
+      'foundry-ironsworn',
+      'theme',
+      {
+        name: 'IRONSWORN.Settings.Theme.Name',
+        hint: 'IRONSWORN.Settings.Theme.Hint',
+        scope: 'world',
+        config: true,
+        type: String,
+        choices: {
+          ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
+          starforged: 'IRONSWORN.Settings.Theme.Starforged',
+        },
+        default: 'ironsworn',
+        onChange: reload,
+      }
+    )
 
-    game.settings.register('foundry-ironsworn', 'toolbox', {
-      name: 'IRONSWORN.Settings.Tools.Name',
-      hint: 'IRONSWORN.Settings.Tools.Hint',
-      scope: 'world',
-      config: true,
-      type: String,
-      choices: {
-        sheet: 'IRONSWORN.Settings.Tools.Sheet',
-        ironsworn: 'IRONSWORN.Ironsworn',
-        starforged: 'IRONSWORN.Starforged',
-      },
-      default: 'sheet',
-    })
+    game.settings.register<'foundry-ironsworn', 'toolbox', string>(
+      'foundry-ironsworn',
+      'toolbox',
+      {
+        name: 'IRONSWORN.Settings.Tools.Name',
+        hint: 'IRONSWORN.Settings.Tools.Hint',
+        scope: 'world',
+        config: true,
+        type: String,
+        choices: {
+          sheet: 'IRONSWORN.Settings.Tools.Sheet',
+          ironsworn: 'IRONSWORN.Ironsworn',
+          starforged: 'IRONSWORN.Starforged',
+        },
+        default: 'sheet',
+      }
+    )
 
     game.settings.register('foundry-ironsworn', 'shared-supply', {
       name: 'IRONSWORN.Settings.SharedSupply.Name',

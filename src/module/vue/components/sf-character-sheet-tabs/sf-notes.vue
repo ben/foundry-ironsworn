@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <quill-editor v-model="actor.data.notes" />
+    <!-- <quill-editor v-model="actor.data.notes" /> -->
   </div>
 </template>
 

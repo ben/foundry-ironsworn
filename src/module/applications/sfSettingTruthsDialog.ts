@@ -1,6 +1,6 @@
 import { IronswornSettings } from '../helpers/settings'
 
-export class SFSettingTruthsDialog extends FormApplication<FormApplication.Options> {
+export class SFSettingTruthsDialog extends FormApplication<FormApplicationOptions> {
   constructor() {
     super({})
   }
@@ -19,7 +19,7 @@ export class SFSettingTruthsDialog extends FormApplication<FormApplication.Optio
       ],
       width: 600,
       height: 700,
-    } as FormApplication.Options)
+    } as FormApplicationOptions)
   }
 
   async _updateObject() {
