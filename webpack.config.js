@@ -61,6 +61,12 @@ module.exports = (env) => {
     },
     devServer: {
       hot: true,
+      client: {
+        overlay: {
+          errors: true,
+          warnings: true,
+        },
+      },
       proxy: [
         {
           context: (pathname) => {
