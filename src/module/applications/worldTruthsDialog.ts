@@ -1,6 +1,6 @@
 import { IronswornSettings } from '../helpers/settings'
 
-export class WorldTruthsDialog extends FormApplication<FormApplication.Options> {
+export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
   constructor() {
     super({})
   }
@@ -19,7 +19,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplication.Options> 
       ],
       width: 600,
       height: 700,
-    } as FormApplication.Options)
+    } as FormApplicationOptions)
   }
 
   async _updateObject() {

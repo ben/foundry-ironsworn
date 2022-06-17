@@ -158,7 +158,7 @@ async function augmentWithFolderContents(node: OracleTreeNode) {
     for (const table of folder.contents) {
       newNode.children.push({
         ...emptyNode(),
-        tables: [table],
+        tables: [table as RollTable],
         displayName: table.name ?? '(table)',
       })
     }
