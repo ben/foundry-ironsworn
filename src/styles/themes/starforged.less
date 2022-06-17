@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap');
 
+@theme-font: 'Carrois Gothic SC', sans-serif;
+
 @dark-overlay: #000000cc;
 @dark-color: #33999933;
 @muted-color: #11777799;
@@ -12,7 +14,7 @@
 @text-light-color: #6ff;
 
 body {
-  font-family: 'Carrois Gothic SC', sans-serif;
+  font-family: @theme-font;
 }
 
 input::placeholder {
@@ -42,6 +44,7 @@ input.highlight:focus {
 }
 
 .theme-starforged {
+  font-family: @theme-font;
   color: @text-medium-color;
   select {
     border-color: @dark-color;
@@ -104,49 +107,36 @@ input.highlight:focus {
   }
 
   .clickable {
+    color: @text-dark-color;
+    &.hover,
+    &:hover,
+    &:focus {
+      // box-shadow: 0 0 5px @text-medium-color;
+      filter: drop-shadow(0 0 5px @text-light-color);
+      &.block,
+      &.text {
+        color: @text-light-color;
+      }
+      svg,
+      &.svg {
+        fill: @medium-color;
+      }
+    }
+
+    &.selected {
+      &.block,
+      &.text {
+        color: @text-light-color;
+        background-color: @medium-color;
+      }
+      svg,
+      &.svg {
+        fill: @text-light-color;
+      }
+    }
     svg,
     &.svg {
       fill: @dark-color;
-    }
-
-    &.disabled,
-    &:disabled,
-    &[aria-disabled='true'] {
-      background: @dark-color;
-      color: @medium-color;
-
-      svg,
-      &.svg {
-        fill: @dark-color;
-      }
-    }
-
-    &:not(.disabled):not(:disabled):not[aria-disabled='true'] {
-      color: @text-dark-color;
-
-      &.hover,
-      &:hover {
-        &.block,
-        &.text {
-          color: @text-light-color;
-        }
-        svg,
-        &.svg {
-          fill: @medium-color;
-        }
-      }
-
-      &.selected {
-        &.block,
-        &.text {
-          color: @text-light-color;
-          background-color: @medium-color;
-        }
-        svg,
-        &.svg {
-          fill: @text-light-color;
-        }
-      }
     }
   }
 
@@ -160,23 +150,12 @@ input.highlight:focus {
     }
   }
 
-  button,
-  .button {
-    background-color: @dark-color;
-    border: 2px groove @text-dark-color;
-    color: @text-dark-color;
-
-    &:hover,
-    &:focus {
-      box-shadow: 0 0 5px @text-medium-color;
-    }
-  }
-
   hr {
     border-color: @light-color;
   }
 
-  .entity-link {
+  .entity-link,
+  .content-link {
     background-color: @dark-color;
     border-color: @medium-color;
     color: @text-medium-color;
@@ -235,7 +214,8 @@ input.highlight:focus {
     background-color: @medium-color;
     color: @text-light-color;
 
-    .entity-link {
+    .entity-link,
+    .content-link {
       color: @text-dark-color;
     }
   }
