@@ -9,6 +9,8 @@
     :tooltip="tooltip"
     :aria-label="tooltip"
     :data-tooltip="tooltip"
+    :disabled="disabled"
+    :aria-disabled="disabled"
   >
     <slot></slot>
   </button>
@@ -17,6 +19,7 @@
 export default {
   props: {
     tooltip: String,
+    disabled: Boolean,
   },
 }
 </script>
@@ -31,12 +34,11 @@ export default {
   justify-content: center;
   padding: 0.25em;
   gap: 0.25em;
-  line-height: 1;
   &:empty {
     // restricts width + removes border if there's no text
-    width: 1.5em;
     border: 0;
     flex-grow: 0;
+    line-height: 1;
   }
 }
 </style>

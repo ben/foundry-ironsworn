@@ -1,5 +1,10 @@
 <template>
-  <btn-icon :class="classes" @click="$emit('click')" :tooltip="tooltip">
+  <btn-icon
+    :class="classes"
+    @click="$emit('click')"
+    :tooltip="tooltip"
+    :disabled="disabled"
+  >
     <slot></slot>
   </btn-icon>
 </template>
@@ -10,6 +15,7 @@ export default {
     icon: { type: String, required: true },
     tooltip: String,
     hoverBg: Boolean,
+    disabled: Boolean,
   },
   computed: {
     classes() {

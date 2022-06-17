@@ -4,6 +4,7 @@
     :class="classes"
     @click="$emit('click')"
     :tooltip="tooltip"
+    :disabled="disabled"
   >
     <slot></slot>
   </btn-icon>
@@ -63,6 +64,7 @@ export default {
     tooltip: String,
     icon: String,
     hoverBg: Boolean,
+    disabled: Boolean,
   },
   computed: {
     classes() {

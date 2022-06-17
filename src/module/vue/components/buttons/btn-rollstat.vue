@@ -6,6 +6,7 @@
     :class="attr"
     icon="d10-tilt"
     aria-haspopup="dialog"
+    :disabled="disabled"
   >
     <slot></slot>
   </btn-isicon>
@@ -18,6 +19,7 @@ export default {
     item: Object, // the asset. only needed if this is an asset condition meter
     attr: String,
     tooltip: String,
+    disabled: Boolean,
   },
   methods: {
     rollStat() {

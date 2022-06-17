@@ -4,6 +4,7 @@
     icon="atlas"
     @click="openCompendium"
     aria-haspopup="dialog"
+    :disabled="disabled"
   >
     <slot></slot>
   </btn-faicon>
@@ -15,6 +16,7 @@
 export default {
   props: {
     compendium: String,
+    disabled: Boolean,
   },
   methods: {
     async openCompendium() {

@@ -5,6 +5,7 @@
     class="action-roll move-roll"
     icon="d10-tilt"
     aria-haspopup="dialog"
+    :disabled="disabled"
   >
     <slot></slot>
   </btn-isicon>
@@ -16,6 +17,7 @@ export default {
     actor: Object,
     move: Object,
     tooltip: String,
+    disabled: Boolean,
   },
   methods: {
     async rollMove() {

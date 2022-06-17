@@ -4,6 +4,7 @@
     class="oracle-roll"
     @click="rollOracle"
     :tooltip="tooltip"
+    :disabled="disabled"
   >
     <slot></slot>
   </btn-isicon>
@@ -17,6 +18,7 @@ export default {
   props: {
     tooltip: String,
     node: Object,
+    disabled: Boolean,
   },
   methods: {
     rollOracle() {

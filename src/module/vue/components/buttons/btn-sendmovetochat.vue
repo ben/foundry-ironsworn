@@ -4,6 +4,7 @@
     icon="comment"
     :tooltip="tooltip"
     @click="sendToChat"
+    :disabled="disabled"
   >
     <slot>
       <!-- {{$t('IRONSWORN.Chat')}} -->
@@ -18,6 +19,7 @@ export default {
   props: {
     move: Object,
     tooltip: String,
+    disabled: Boolean,
   },
   methods: {
     sendToChat(e) {

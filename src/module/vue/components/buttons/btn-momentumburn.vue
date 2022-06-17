@@ -1,5 +1,10 @@
 <template>
-  <btn-faicon icon="fire" class="burn-momentum" @click="burnMomentum">
+  <btn-faicon
+    icon="fire"
+    class="burn-momentum"
+    @click="burnMomentum"
+    :disabled="disabled"
+  >
     <slot></slot>
   </btn-faicon>
 </template>
@@ -8,6 +13,7 @@
 export default {
   props: {
     actor: Object,
+    disabled: Boolean,
   },
   methods: {
     burnMomentum() {

@@ -5,6 +5,7 @@
     class="progress-roll"
     :class="attr"
     icon="d10-tilt"
+    :disabled="disabled"
   >
     <slot></slot>
   </btn-isicon>
@@ -15,6 +16,7 @@ export default {
   props: {
     item: Object, // the progress track
     tooltip: String,
+    disabled: Boolean,
   },
   methods: {
     rollProgress() {
