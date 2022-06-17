@@ -15,8 +15,13 @@
         style="margin-right: 1em"
       />
       <h4>{{ rankText }}</h4>
-      <btn-faicon v-if="editMode" icon="trash" @click="clearProgress" />
-      <btn-faicon icon="caret-right" @click="markProgress" />
+      <btn-faicon
+        class="block"
+        v-if="editMode"
+        icon="trash"
+        @click="clearProgress"
+      />
+      <btn-faicon class="block" icon="caret-right" @click="markProgress" />
     </div>
 
     <!-- PROGRESS -->

@@ -19,8 +19,8 @@
           v-if="editMode"
           style="position: absolute; right: 5px; top: 5px"
         >
-          <btn-faicon icon="trash" @click="destroy" />
-          <btn-faicon icon="edit" @click="edit" />
+          <btn-faicon class="block" icon="trash" @click="destroy" />
+          <btn-faicon class="block" icon="edit" @click="edit" />
         </div>
       </div>
     </div>

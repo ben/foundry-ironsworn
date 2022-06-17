@@ -1,5 +1,8 @@
 <template>
-  <div class="flexcol nogrow movesheet-row" :class="{ hidden: node.forceHidden, highlighted }">
+  <div
+    class="flexcol nogrow movesheet-row"
+    :class="{ hidden: node.forceHidden, highlighted }"
+  >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
     <div v-if="isLeaf">
@@ -8,7 +11,12 @@
           <i class="isicon-d10-tilt juicy"></i>
           {{ node.displayName }}
         </span>
-        <btn-faicon v-if="isLeaf" icon="eye" @click="descriptionExpanded = !descriptionExpanded" />
+        <btn-faicon
+          class="block"
+          v-if="isLeaf"
+          icon="eye"
+          @click="descriptionExpanded = !descriptionExpanded"
+        />
       </h4>
 
       <transition name="slide">
@@ -27,7 +35,10 @@
 
     <!-- Branch node -->
     <div v-else>
-      <h4 class="clickable text flexrow" @click="manuallyExpanded = !manuallyExpanded">
+      <h4
+        class="clickable text flexrow"
+        @click="manuallyExpanded = !manuallyExpanded"
+      >
         <span class="nogrow" style="flex-basis: 15px">
           <i v-if="expanded" class="fa fa-caret-down" />
           <i v-else class="fa fa-caret-right" />

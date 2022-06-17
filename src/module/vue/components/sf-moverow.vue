@@ -2,7 +2,6 @@
   <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
     <h4 class="flexrow" :title="tooltip">
       <btn-rollmove
-        :hidden="!canRoll"
         :disabled="!canRoll"
         class="juicy text nogrow"
         :actor="actor"
@@ -21,10 +20,15 @@
         @moveclick="moveclick"
       >
         <div class="flexrow">
-          <btn-rollmove v-if="canRoll" :actor="actor" :move="move">
+          <btn-rollmove
+            class="block"
+            v-if="canRoll"
+            :actor="actor"
+            :move="move"
+          >
             {{ $t('IRONSWORN.Roll') }}
           </btn-rollmove>
-          <btn-sendmovetochat :move="move">
+          <btn-sendmovetochat class="block" :move="move">
             {{ $t('IRONSWORN.Chat') }}
           </btn-sendmovetochat>
         </div>
@@ -35,10 +39,19 @@
 </template>
 
 <style lang="less" scoped>
+.move-roll {
+  // &[aria-disabled='true'],
+  // &:disabled {
+  //   visibility: hidden;
+  // }
+}
 .move-summary {
   border-left: 2px solid;
   margin-left: 5px;
   padding-left: 1rem;
+  button.icon-button {
+    border: 1px solid;
+  }
 }
 h4 {
   margin: 0;

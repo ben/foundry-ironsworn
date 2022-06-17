@@ -51,10 +51,13 @@
       <progress-controls :actor="actor" />
     </section>
 
-    <section class="item-row nogrow" style="margin-top: 1rem">
+    <section
+      class="item-row nogrow progress-completed"
+      style="margin-top: 1rem"
+    >
       <h3>
         <btn-faicon
-          class="text"
+          class="text collapse-control"
           :class="completedClass"
           :icon="completedCaretClass"
           @click="expandCompleted = !expandCompleted"
@@ -99,6 +102,11 @@
 </template>
 
 <style lang="less" scoped>
+.progress-completed {
+  .collapse-control {
+    text-transform: uppercase;
+  }
+}
 .slide-enter-active,
 .slide-leave-active {
   max-height: 83px;

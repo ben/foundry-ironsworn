@@ -12,7 +12,7 @@
   >
     <span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
     <btn-faicon
-      class="nogrow"
+      class="nogrow block"
       v-if="$listeners.delete"
       icon="fa fa-trash"
       @click="$emit('delete')"

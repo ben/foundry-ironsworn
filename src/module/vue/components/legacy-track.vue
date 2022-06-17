@@ -9,8 +9,13 @@
       >
         {{ overflow }}
       </p>
-      <btn-faicon v-if="editMode" icon="caret-left" @click="decrease" />
-      <btn-faicon icon="caret-right" @click="increase" />
+      <btn-faicon
+        class="block"
+        v-if="editMode"
+        icon="caret-left"
+        @click="decrease"
+      />
+      <btn-faicon class="block" icon="caret-right" @click="increase" />
     </div>
 
     <div class="flexrow track">

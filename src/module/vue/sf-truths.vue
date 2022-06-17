@@ -19,7 +19,7 @@
 
     <hr />
     <!-- TODO: wire up this button -->
-    <btn-faicon class="ironsworn__sf__save__truths" icon="feather">
+    <btn-faicon class="ironsworn__sf__save__truths block" icon="feather">
       {{ $t('IRONSWORN.SaveYourTruths') }}
     </btn-faicon>
   </div>
