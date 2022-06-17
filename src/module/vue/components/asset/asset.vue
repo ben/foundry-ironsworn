@@ -41,7 +41,7 @@
           </with-rolllisteners>
         </ul>
 
-        <div class="flexcol" v-if="asset.data.track.enabled">
+        <div class="flexcol condition-meter" v-if="asset.data.track.enabled">
           <btn-rollstat
             class="juicy text flexrow"
             :actor="actor"
@@ -71,6 +71,9 @@
 </template>
 
 <style lang="less" scoped>
+.condition-meter {
+  gap: 3px;
+}
 .slide-enter-active,
 .slide-leave-active {
   max-height: 350px;
