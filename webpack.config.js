@@ -64,7 +64,7 @@ module.exports = (env) => {
       proxy: [
         {
           context: (pathname) => {
-            return !pathname.match('^/sockjs')
+            return !pathname.match('^/ws')
           },
           target: 'http://localhost:30000',
           ws: true,
