@@ -5,7 +5,7 @@ export class EditSectorDialog extends VueApplication {
     super({})
   }
 
-  static get defaultOptions(): Application.Options {
+  static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.Sector'),
       template: 'systems/foundry-ironsworn/templates/edit-sector.hbs',

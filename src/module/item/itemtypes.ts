@@ -4,7 +4,7 @@ import { RANKS } from '../constants'
 interface ProgressBase {
   rank: keyof typeof RANKS
   current: number
-  completed: Boolean
+  completed: boolean
 }
 
 ///////////////////////////////
@@ -55,12 +55,12 @@ export interface AssetDataProperties {
 ///////////////////////////////
 
 interface ProgressDataSourceData extends ProgressBase {
-  subtype: String
-  starred: Boolean
-  hasTrack: Boolean
-  hasClock: Boolean
-  clockTicks: Number
-  clockMax: Number
+  subtype: string
+  starred: boolean
+  hasTrack: boolean
+  hasClock: boolean
+  clockTicks: number
+  clockMax: number
 }
 interface ProgressDataPropertiesData extends ProgressDataSourceData {}
 

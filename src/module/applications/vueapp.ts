@@ -10,7 +10,7 @@ export class VueApplication extends Application {
     this._vm = null
   }
 
-  static get defaultOptions(): Application.Options {
+  static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
       classes: [
         'ironsworn',

@@ -2,12 +2,12 @@ import { IronswornSettings } from '../helpers/settings'
 import { SFSettingTruthsDialogVue } from './vueSfSettingTruthsDialog'
 import { WorldTruthsDialog } from './worldTruthsDialog'
 
-export class FirstStartDialog extends FormApplication<FormApplication.Options> {
+export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
   constructor() {
     super({})
   }
 
-  static get defaultOptions(): FormApplication.Options {
+  static get defaultOptions(): FormApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.First Start.Welcome'),
       template: 'systems/foundry-ironsworn/templates/first-start.hbs',
@@ -21,7 +21,7 @@ export class FirstStartDialog extends FormApplication<FormApplication.Options> {
       ],
       width: 600,
       height: 700,
-    } as FormApplication.Options)
+    } as FormApplicationOptions)
   }
 
   async _updateObject() {

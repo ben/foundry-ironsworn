@@ -1,9 +1,12 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
+import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
 import { IOracle, IOracleCategory, ironsworn, IRow } from 'dataforged'
 import { max } from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from './actor/actor'
 import { hash } from './dataforged'
+import { IronswornItem } from './item/item.js'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
@@ -270,7 +273,8 @@ export async function importFromDatasworn() {
 
   // Foe actors
   const foesPack = game.packs.get('foundry-ironsworn.ironswornfoes')
-  const foeItems = await foesPack?.getDocuments()
+  const foeItems =
+    (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
   for (const foeItem of foeItems ?? []) {
     const actor = await IronswornActor.create(
       {
@@ -280,18 +284,18 @@ export async function importFromDatasworn() {
       },
       { pack: 'foundry-ironsworn.foeactorsis' }
     )
-    await actor?.createEmbeddedDocuments('Item', [foeItem.data])
+    await actor?.createEmbeddedDocuments('Item', [foeItem.data as unknown as Record<string, unknown>])
   }
 
   // Oracles from Dataforged
-  const oraclesToCreate = [] as Record<string, unknown>[]
+  const oraclesToCreate: RollTableDataConstructorData[] = []
   function tableData(
     table: IRow[],
     $id: string,
     name: string,
     category: string,
     description: string
-  ) {
+  ): RollTableDataConstructorData {
     const renderedDescription = marked.parseInline(description ?? '')
     const maxRoll = max(table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
     return {
@@ -316,7 +320,7 @@ export async function importFromDatasworn() {
           return {
             range: [tableRow.Floor, tableRow.Ceiling],
             text: tableRow.Result && text,
-          }
+          } as TableResultDataConstructorData
         })
         .filter((x) => x.range[0] !== null),
     }
