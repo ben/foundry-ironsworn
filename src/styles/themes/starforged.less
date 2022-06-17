@@ -109,7 +109,9 @@ input.highlight:focus {
       fill: @dark-color;
     }
 
-    &.disabled {
+    &.disabled,
+    &:disabled,
+    &[aria-disabled='true'] {
       background: @dark-color;
       color: @medium-color;
 
@@ -119,7 +121,7 @@ input.highlight:focus {
       }
     }
 
-    &:not(.disabled) {
+    &:not(.disabled):not(:disabled):not[aria-disabled='true'] {
       color: @text-dark-color;
 
       &.hover,
