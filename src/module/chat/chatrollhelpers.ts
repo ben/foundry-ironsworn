@@ -432,7 +432,6 @@ export async function rollAndDisplayOracleResult(
 
   // Grab the relevant rows
   const roll = tableDraw.roll as Evaluated<Roll>
-  // FIXME this was Roll#result, which returns a string representing an arithmetic expression. i've replaced it with Roll#total as i suspect that's what intended
   const resultRow = tableRows.find(
     (x) => x.low <= roll.total && roll.total <= x.high
   ) as { low: number; high: number; text: string; selected: boolean }
