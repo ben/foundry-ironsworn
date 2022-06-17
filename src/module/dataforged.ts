@@ -68,7 +68,9 @@ export async function getFoundrySFTableByDfId(
   const documents = await cachedDocumentsForPack(
     'foundry-ironsworn.starforgedoracles'
   )
-  return documents?.find((x) => x.id === hashLookup(dfid)) as(StoredDocument<RollTable> | undefined)
+  return documents?.find((x) => x.id === hashLookup(dfid)) as
+    | StoredDocument<RollTable>
+    | undefined
 }
 export async function getFoundryISTableByDfId(
   dfid: string
@@ -448,7 +450,8 @@ async function processEncounters(idMap: { [key: string]: string }) {
 
 async function processFoes() {
   const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
-  const foeItems = (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
+  const foeItems =
+    (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
   for (const foeItem of foeItems ?? []) {
     const actor = await IronswornActor.create(
       {

@@ -284,7 +284,9 @@ export async function importFromDatasworn() {
       },
       { pack: 'foundry-ironsworn.foeactorsis' }
     )
-    await actor?.createEmbeddedDocuments('Item', [foeItem.data as unknown as Record<string, unknown>])
+    await actor?.createEmbeddedDocuments('Item', [
+      foeItem.data as unknown as Record<string, unknown>,
+    ])
   }
 
   // Oracles from Dataforged

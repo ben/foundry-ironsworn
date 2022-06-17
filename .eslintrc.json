@@ -25,7 +25,8 @@
     "@typescript-eslint/no-empty-interface": "off"
   },
   "overrides": [
-    {"files": ["*.js"],
+    {
+      "files": ["*.js"],
       "rules": {
         "@typescript-eslint/no-var-requires": "off"
       }
