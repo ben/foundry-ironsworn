@@ -1,4 +1,3 @@
-import { Evaluated } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll.js'
 import { compact, sortBy } from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from '../actor/actor'
@@ -417,7 +416,10 @@ export async function rollAndDisplayOracleResult(
   }
 
   // Do the random roll
-  const tableDraw = await(table).draw({ displayChat: false } as RollTable.DrawOptions)
+  // FIXME this typing is pretty gross, but exists as a workaround for an error in the LoFD typings package (as of 17 Jun 2022). it can be removed once that's fixed.
+  const tableDraw = await table.draw({
+    displayChat: false,
+  } as RollTable.DrawOptions)
 
   // Parse the table rows
   const tableRows = sortBy(
