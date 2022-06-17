@@ -35,8 +35,8 @@
   transform: rotateZ(90deg);
 }
 
-[class^='isicon-'].juicy,
-[class*=' isicon-'].juicy {
+[class^='isicon-'].juicy:before,
+[class*=' isicon-'].juicy:before {
   font-size: 120%;
 }
 .isicon-d10-tilt:before {
