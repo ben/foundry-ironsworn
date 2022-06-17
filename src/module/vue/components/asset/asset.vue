@@ -37,13 +37,11 @@
         </ul>
 
         <div class="flexcol" v-if="asset.data.track.enabled">
-          <!-- TODO: style as h4 -->
           <btn-rollstat
             class="juicy text flexrow"
             :actor="actor"
             :item="asset"
             attr="track"
-            style="margin-bottom: 3px"
           >
             {{ asset.data.track.name }}
           </btn-rollstat>
@@ -71,6 +69,11 @@
 .slide-enter-active,
 .slide-leave-active {
   max-height: 350px;
+}
+
+.stat-roll {
+  text-transform: uppercase;
+  line-height: 1;
 }
 </style>
 
