@@ -1,27 +1,23 @@
 <template>
-  <article class="flexcol">
-    <form role="search" class="flexrow nogrow" style="margin-top: 0.5rem">
+  <div class="flexcol">
+    <div class="flexrow nogrow" style="margin-top: 0.5rem">
       <input
-        type="search"
-        :title="$t('IRONSWORN.Search')"
-        :tooltip="$t('IRONSWORN.Search')"
+        type="text"
         :placeholder="$t('IRONSWORN.Search')"
         v-model="searchQuery"
         @keydown="preventSubmit"
       />
-      <btn-faicon
-        icon="times-circle"
-        class="nogrow text"
+      <i
+        class="fa fa-times-circle nogrow clickable text"
         @click="clearSearch"
         style="padding: 6px"
       />
-      <btn-faicon
-        icon="compress-alt"
-        class="nogrow text"
+      <i
+        class="fa fa-compress-alt nogrow clickable text"
         @click="collapseAll"
         style="padding: 6px"
       />
-    </form>
+    </div>
 
     <div class="flexcol item-list">
       <oracletree-node
@@ -34,7 +30,7 @@
         ref="oracles"
       />
     </div>
-  </article>
+  </div>
 </template>
 
 <style lang="less" scoped>
