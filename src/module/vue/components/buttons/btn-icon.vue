@@ -26,7 +26,6 @@ export default {
   display: flex;
   align-items: center;
   flex-flow: row nowrap;
-  flex-grow: 0;
   align-content: center;
   text-align: center;
   justify-content: center;
@@ -37,6 +36,7 @@ export default {
     // restricts width + removes border if there's no text
     width: 1.5em;
     border: 0;
+    flex-grow: 0;
   }
 }
 </style>
