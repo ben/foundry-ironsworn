@@ -16,7 +16,7 @@
       />
       <h4>{{ rankText }}</h4>
       <btn-faicon v-if="editMode" icon="trash" @click="clearProgress" />
-      <btn-faicon icon="play" @click="markProgress" />
+      <btn-faicon icon="caret-right" @click="markProgress" />
     </div>
 
     <!-- PROGRESS -->

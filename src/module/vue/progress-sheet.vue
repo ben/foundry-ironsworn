@@ -55,7 +55,11 @@
               icon="trash"
               @click="clearProgress"
             />
-            <btn-faicon class="block" icon="play" @click="markProgress" />
+            <btn-faicon
+              class="block"
+              icon="caret-right"
+              @click="markProgress"
+            />
           </div>
           <!-- PROGRESS -->
           <div class="flexrow track nogrow" style="margin-bottom: 1em">
