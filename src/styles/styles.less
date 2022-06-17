@@ -245,28 +245,27 @@
   }
 
   .clickable {
-    &.text {
-      justify-content: flex-start;
-    }
     &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
     &[aria-disabled="true"] {
       cursor: not-allowed;
       pointer-events: none;
+      opacity: 0.5;
     }
-    &:not(.disabled):not(:disabled):not([aria-disabled='true']) {
-      transition: 0.5s ease;
-      cursor: pointer;
-      &.block,
-      &.text {
-        &:hover {
-          transition: 0.5s ease;
-        }
-        &:active {
-          transition: 0.2s ease;
-        }
+    &.block,
+    &.text {
+      &:hover {
+        transition: 0.5s ease;
+      }
+      &:active {
+        transition: 0.2s ease;
       }
     }
+    &.text {
+      justify-content: flex-start;
+    }
+    transition: 0.5s ease;
+    cursor: pointer;
   }
 
   .stats {
