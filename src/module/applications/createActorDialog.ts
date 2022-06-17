@@ -3,7 +3,7 @@ import { IronswornActor } from '../actor/actor'
 import { getFoundrySFTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
 
-interface CreateActorDialogOptions extends FormApplication.Options {
+interface CreateActorDialogOptions extends FormApplicationOptions {
   folder: string
 }
 
@@ -26,7 +26,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       ],
       width: 650,
       height: 200,
-    } as FormApplication.Options)
+    } as FormApplicationOptions)
   }
 
   getData(_options?: Application.RenderOptions): any {

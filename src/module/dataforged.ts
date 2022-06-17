@@ -12,6 +12,8 @@ import { marked } from 'marked'
 import { IronswornItem } from './item/item'
 import shajs from 'sha.js'
 import { cachedDocumentsForPack } from './features/pack-cache'
+import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
+import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -62,19 +64,23 @@ export function hash(str: string): string {
 
 export async function getFoundrySFTableByDfId(
   dfid: string
-): Promise<RollTable | undefined> {
+): Promise<StoredDocument<RollTable> | undefined> {
   const documents = await cachedDocumentsForPack(
     'foundry-ironsworn.starforgedoracles'
   )
-  return documents?.find((x) => x.id === hashLookup(dfid))
+  return documents?.find((x) => x.id === hashLookup(dfid)) as
+    | StoredDocument<RollTable>
+    | undefined
 }
 export async function getFoundryISTableByDfId(
   dfid: string
-): Promise<RollTable | undefined> {
+): Promise<StoredDocument<RollTable> | undefined> {
   const documents = await cachedDocumentsForPack(
     'foundry-ironsworn.ironswornoracles'
   )
-  return documents?.find((x) => x.id === hashLookup(dfid))
+  return documents?.find((x) => x.id === hashLookup(dfid)) as
+    | StoredDocument<RollTable>
+    | undefined
 }
 
 export async function getFoundryMoveByDfId(
@@ -336,7 +342,7 @@ async function processAssets(idMap: { [key: string]: string }) {
 }
 
 async function processOracles(idMap: { [key: string]: string }) {
-  const oraclesToCreate = [] as Record<string, unknown>[]
+  const oraclesToCreate: RollTableDataConstructorData[] = []
   // Oracles JSON is a tree we wish to iterate through depth first adding
   // parents prior to their children, and children in order
   async function processOracle(oracle: IOracle) {
@@ -367,7 +373,7 @@ async function processOracles(idMap: { [key: string]: string }) {
             _id: idMap[tableRow.$id ?? ''],
             range: [tableRow.Floor, tableRow.Ceiling],
             text: tableRow.Result && renderLinksInStr(text, idMap),
-          }
+          } as TableResultDataConstructorData
         }).filter((x) => x.range[0] !== null),
       })
     }
@@ -444,7 +450,8 @@ async function processEncounters(idMap: { [key: string]: string }) {
 
 async function processFoes() {
   const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
-  const foeItems = await foesPack?.getDocuments()
+  const foeItems =
+    (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
   for (const foeItem of foeItems ?? []) {
     const actor = await IronswornActor.create(
       {
@@ -454,6 +461,8 @@ async function processFoes() {
       },
       { pack: 'foundry-ironsworn.foeactorssf' }
     )
-    await actor?.createEmbeddedDocuments('Item', [foeItem.data])
+    await actor?.createEmbeddedDocuments('Item', [
+      foeItem.data as unknown as Record<string, unknown>,
+    ])
   }
 }

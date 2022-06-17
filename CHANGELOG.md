@@ -2,6 +2,10 @@
 
 ## In progress
 
+- Code reorganization and format normalization
+- Update to the right version of the Foundry types
+- Fix the dev server for fewer errors, and so that HMR works
+
 ## 1.15.14
 
 - Propagate region setting from location to scene

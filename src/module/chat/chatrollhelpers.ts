@@ -1,3 +1,4 @@
+import { Evaluated } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll.js'
 import { compact, sortBy } from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from '../actor/actor'
@@ -416,7 +417,10 @@ export async function rollAndDisplayOracleResult(
   }
 
   // Do the random roll
-  const tableDraw = await (table as any).draw({ displayChat: false })
+  // FIXME this typing is pretty gross, but exists as a workaround for an error in the LoFD typings package (as of 17 Jun 2022). it can be removed once that's fixed.
+  const tableDraw = await table.draw({
+    displayChat: false,
+  } as RollTable.DrawOptions)
 
   // Parse the table rows
   const tableRows = sortBy(
@@ -430,10 +434,10 @@ export async function rollAndDisplayOracleResult(
   )
 
   // Grab the relevant rows
-  const roll = tableDraw.roll as Roll
+  const roll = tableDraw.roll as Evaluated<Roll>
   const resultRow = tableRows.find(
-    (x) => x.low <= roll.result && roll.result <= x.high
-  )
+    (x) => x.low <= roll.total && roll.total <= x.high
+  ) as { low: number; high: number; text: string; selected: boolean }
   const resultIdx = tableRows.indexOf(resultRow)
   const displayRows = compact([
     tableRows[resultIdx - 1],
@@ -475,5 +479,5 @@ export async function rollAndDisplayOracleResult(
   await ChatMessage.create(messageData)
 
   // Return the raw text
-  return resultRow.text
+  return resultRow?.text
 }
