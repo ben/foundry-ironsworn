@@ -1,3 +1,4 @@
+/* globals game CONFIG */
 import { Quill } from 'vue2-editor'
 
 const Inline = Quill.import('blots/inline')
