@@ -45,7 +45,7 @@
 <script>
 import { VueEditor } from 'vue2-editor'
 import Delta from 'quill-delta'
-// import FoundryLink from './foundry-link'
+import FoundryLink from './foundry-link'
 
 export default {
   components: { VueEditor },
