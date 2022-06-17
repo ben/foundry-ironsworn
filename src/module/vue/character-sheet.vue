@@ -17,16 +17,16 @@
               :softMax="actor.data.momentumMax"
             ></stack>
             <hr class="nogrow" />
+            <div>
+              <btn-momentumburn :actor="actor" class="nogrow block stack-row">
+                {{ $t('IRONSWORN.Burn') }}
+              </btn-momentumburn>
 
-            <btn-momentumburn :actor="actor" class="nogrow block stack-row">
-              {{ $t('IRONSWORN.Burn') }}
-            </btn-momentumburn>
-
-            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}:
-            {{ actor.data.momentumMax }}
+              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
+              {{ $t('IRONSWORN.Max') }}:
+              {{ actor.data.momentumMax }}
+            </div>
           </div>
-
           <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
         </div>
       </div>

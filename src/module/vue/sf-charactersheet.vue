@@ -17,13 +17,15 @@
               :softMax="actor.data.momentumMax"
             ></stack>
             <hr class="nogrow" />
-            <btn-momentumburn class="nogrow block stack-row" :actor="actor">
-              {{ $t('IRONSWORN.Burn') }}
-            </btn-momentumburn>
+            <div>
+              <btn-momentumburn class="nogrow block stack-row" :actor="actor">
+                {{ $t('IRONSWORN.Burn') }}
+              </btn-momentumburn>
 
-            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}:
-            {{ actor.data.momentumMax }}
+              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
+              {{ $t('IRONSWORN.Max') }}:
+              {{ actor.data.momentumMax }}
+            </div>
           </div>
 
           <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
@@ -63,7 +65,7 @@
       </div>
 
       <!-- Stats on right -->
-      <div class="flexcol margin-right">
+      <div class="flexcol margin-right condition-meters">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
           <btn-rollstat class="vertical-v2 text" :actor="actor" attr="health">
@@ -107,6 +109,11 @@
 </template>
 
 <style lang="less" scoped>
+.condition-meters {
+  .stat-roll {
+    text-transform: uppercase;
+  }
+}
 .tab {
   text-align: center;
   padding: 5px;
