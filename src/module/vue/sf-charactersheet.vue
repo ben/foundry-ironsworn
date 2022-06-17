@@ -44,7 +44,7 @@
         </div>
 
         <!-- Tabs -->
-        <div class="flexrow nogrow">
+        <div class="flexrow nogrow tablist">
           <div
             class="tab"
             v-for="tab in tabs"
@@ -114,10 +114,12 @@
     text-transform: uppercase;
   }
 }
+.tablist {
+  border-bottom: 1px solid grey;
+}
 .tab {
   text-align: center;
   padding: 5px;
-  border-bottom: 1px solid grey;
   &.active {
     background-color: darkgray;
   }
