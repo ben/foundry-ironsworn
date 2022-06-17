@@ -1,3 +1,4 @@
+import { Evaluated } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll.js'
 import { compact, sortBy } from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from '../actor/actor'
