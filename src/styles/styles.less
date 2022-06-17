@@ -16,6 +16,7 @@
 }
 
 .ironsworn {
+  font-family: var(--font-primary);
   h1,
   h2,
   h3,
@@ -23,6 +24,9 @@
   h5,
   h6 {
     text-transform: uppercase;
+  }
+  *::placeholder {
+    font-family: inherit;
   }
 
   button:hover,
@@ -39,8 +43,8 @@
     background: unset;
     border: unset;
     border-radius: unset;
-    font-size: unset;
-    line-height: unset;
+    // font-size: unset;
+    // line-height: unset;
     font-family: inherit;
     cursor: pointer;
   }
@@ -244,12 +248,13 @@
     &.text {
       justify-content: flex-start;
     }
-    &.disabled,
-    &[disabled='true'] {
+    &.disabled, // FIXME: ditch this class, its redundant with more semantic options
+    &:disabled
+    &[aria-disabled="true"] {
       cursor: not-allowed;
       pointer-events: none;
     }
-    &:not(.disabled):not[disabled='true'] {
+    &:not(.disabled):not(:disabled):not([aria-disabled='true']) {
       transition: 0.5s ease;
       cursor: pointer;
       &.block,
