@@ -158,6 +158,9 @@
 </template>
 
 <style lang="less" scoped>
+.stat-roll {
+  text-transform: uppercase;
+}
 .slide-enter-active,
 .slide-leave-active {
   max-height: 83px;

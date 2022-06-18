@@ -109,10 +109,8 @@
 </template>
 
 <style lang="less" scoped>
-.condition-meters {
-  .stat-roll {
-    text-transform: uppercase;
-  }
+.stat-roll {
+  text-transform: uppercase;
 }
 .tablist {
   border-bottom: 1px solid grey;
