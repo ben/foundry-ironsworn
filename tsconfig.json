@@ -12,6 +12,7 @@
     "checkJs": false,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
+    "jsx": "preserve",
 
     "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
     "strictNullChecks": true /* Enable strict null checks. */,
@@ -27,6 +28,10 @@
     "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
 
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+  },
+  "vueCompilerOptions": {
+    "target": 2
+    // "target": 2, // For Vue version <= 2.6.14
   },
   "exclude": ["node_modules", "webpack.config.js"]
 }

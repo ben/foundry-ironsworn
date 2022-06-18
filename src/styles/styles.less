@@ -206,7 +206,8 @@
       position: relative;
       z-index: 1;
       &:hover,
-      &.selected {
+      &.selected,
+      &[aria-selected='true'] {
         z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
       }
       &:first-child {

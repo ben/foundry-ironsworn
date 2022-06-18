@@ -1,17 +1,13 @@
 <template>
-  <component
-    :is="wrapperElement"
-    class="tabbed-panels"
-    :aria-orientation="ariaOrientation"
-  >
-    <nav role="tablist">
+  <component :is="wrapperElement" class="tabbed-panels">
+    <nav role="tablist" :aria-orientation="ariaOrientation">
       <button
         v-for="tab in tabs"
         class="block clickable text"
         role="tab"
         type="button"
-        :id="`tab-${name}-${tab.titleKey}-${actor._id}`"
-        :aria-controls="`tabpanel-${name}-${tab.titleKey}-${actor._id}`"
+        :id="tabId(tab)"
+        :aria-controls="tabPanelId(tab)"
         :aria-selected="currentTab === tab"
         :key="tab.titleKey"
         @click="currentTab = tab"
@@ -22,8 +18,8 @@
     <keep-alive>
       <component
         :is="currentTab.component"
-        :id="`tabpanel-${name}-${currentTab.titleKey}-${actor._id}`"
-        :aria-labelledby="`tab-${name}-${currentTab.titleKey}-${actor._id}`"
+        :id="tabPanelId(currentTab)"
+        :aria-labelledby="tabId(currentTab)"
         :actor="actor"
         role="tabpanel"
         ref="activeTab"
@@ -38,7 +34,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  [role='tab'],
+  [role='tab'], // so it doesn't catch things that only start with 'tab'
   [role^='tab '],
   [role*=' tab'] {
     border: 0;
@@ -48,21 +44,8 @@
     overflow-y: auto;
     padding: 5px;
     &[aria-selected='true'] {
-      background-color: darkgray;
       text-decoration: underline;
       text-shadow: none;
-    }
-  }
-  &[aria-orientation='horizontal'] {
-    [role^='tablist'],
-    [role*=' tablist'] {
-      border-block-end: 1px solid;
-    }
-  }
-  &[aria-orientation='vertical'] {
-    [role^='tablist'],
-    [role*=' tablist'] {
-      border-inline-end: 1px solid;
     }
   }
   [role^='tablist'],
@@ -72,10 +55,17 @@
     justify-content: flex-start;
     flex-grow: 0;
     height: max-content;
+    &[aria-orientation='horizontal'] {
+      border-block-end: 1px solid darkgrey;
+    }
+    &[aria-orientation='vertical'] {
+      border-inline-end: 1px solid darkgrey;
+    }
   }
   [role^='tabpanel'],
   [role*=' tabpanel'] {
     margin: 0.5rem;
+    flex: 1;
   }
 }
 </style>
@@ -84,10 +74,25 @@
 export default {
   props: {
     actor: Object,
-    wrapperElement: { type: String, default: 'section' },
-    name: String, // used to distinguish this from other tab panels for purpose of ID generation
-    tabs: [{ titleKey: String, component: Object }],
-    ariaOrientation: { type: String, default: 'horizontal' },
+    wrapperElement: { type: String, default: 'article' },
+    /* used to distinguish this from other tab panels for purpose of ID generation */
+    name: String,
+    tabs: Array,
+    ariaOrientation: {
+      type: String,
+      default: 'horizontal',
+    },
+  },
+  methods: {
+    stubId(tabData) {
+      return `${this.name}-${tabData.titleKey}-${this.actor._id}`
+    },
+    tabPanelId(tabData) {
+      return `tabpanel-${this.stubId(tabData)}`
+    },
+    tabId(tabData) {
+      return `tab-${this.stubId(tabData)}`
+    },
   },
   data() {
     return {

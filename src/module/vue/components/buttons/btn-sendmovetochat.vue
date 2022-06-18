@@ -23,7 +23,6 @@ export default {
   },
   methods: {
     sendToChat(e) {
-      e.preventDefault()
       CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(
         this.move.moveItem
       )
