@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="move-sheet flexcol">
     <header class="sheet-header">
       <document-name :document="item" />
     </header>
@@ -117,10 +117,13 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.tab {
-  padding: 5px;
-  text-align: left;
+<style lang="less">
+.movesheet-row {
+  transition: all 0.4s ease;
+
+  h4 {
+    align-items: center;
+  }
 }
 </style>
 
