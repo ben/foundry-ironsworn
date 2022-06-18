@@ -6,7 +6,7 @@
     <btn-faicon class="block" icon="plus" @click="addProgressItem('progress')">
       {{ $t('IRONSWORN.Progress') }}</btn-faicon
     >
-    <btn-compendium class="block" :compendium="ironswornfoes">
+    <btn-compendium class="block" :compendium="foeCompendium">
       {{ $t('IRONSWORN.Foes') }}
     </btn-compendium>
   </div>
