@@ -110,55 +110,42 @@
   }
 
   .clickable {
-    &.disabled,
-    &:disabled,
-    &[aria-disabled='true'] {
-      color: @dark-color;
-
-      &.selected {
-        color: white;
-        background-color: black;
+    &.hover,
+    &:hover {
+      &.block {
+        background: @light-color;
+      }
+      &.text {
+        color: @light-color;
+      }
+      svg,
+      &.svg {
+        fill: @light-color;
+      }
+    }
+    &:active {
+      &.block {
+        background: @medium-color;
+      }
+      &.text {
+        color: @medium-color;
+      }
+      svg,
+      &.svg {
+        fill: @medium-color;
       }
     }
 
-    &:not(.disabled):not(:disabled):not[aria-disabled='true'] {
-      &.hover,
-      &:hover {
-        &.block {
-          background: @light-color;
-        }
-        &.text {
-          color: @light-color;
-        }
-        svg,
-        &.svg {
-          fill: @light-color;
-        }
+    &.selected {
+      &.block,
+      &.text {
+        color: white;
+        border-color: black;
+        background: black;
       }
-      &:active {
-        &.block {
-          background: @medium-color;
-        }
-        &.text {
-          color: @medium-color;
-        }
-        svg,
-        &.svg {
-          fill: @medium-color;
-        }
-      }
-
-      &.selected {
-        &.block,
-        &.text {
-          color: white;
-          border-color: black;
-          background: black;
-        }
-        svg,
-        &.svg {
-          fill: black;
-        }
+      svg,
+      &.svg {
+        fill: black;
       }
     }
   }
