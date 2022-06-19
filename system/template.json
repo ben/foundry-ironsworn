@@ -1,6 +1,14 @@
 {
   "Actor": {
-    "types": ["character", "shared", "foe", "site", "starship", "location"],
+    "types": [
+      "character",
+      "shared",
+      "foe",
+      "site",
+      "starship",
+      "location",
+      "jenpc"
+    ],
     "character": {
       "biography": "",
       "notes": "",
@@ -136,7 +144,8 @@
     "location": {
       "subtype": "planet",
       "klass": ""
-    }
+    },
+    "jenpc": {}
   },
   "Item": {
     "types": [
@@ -147,7 +156,8 @@
       "move",
       "sfmove",
       "delve-theme",
-      "delve-domain"
+      "delve-domain",
+      "jeprogress"
     ],
     "templates": {
       "progress": {
@@ -447,6 +457,7 @@
           "description": ""
         }
       ]
-    }
+    },
+    "jeprogress": {}
   }
 }
