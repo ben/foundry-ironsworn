@@ -22,6 +22,7 @@ import { registerChatAlertHooks } from './module/features/chat-alert'
 import { registerCompendiumCategoryHook } from './module/features/compendium-categories'
 import { maybePromptForDependencies } from './module/features/dependencies'
 import { registerDragAndDropHooks } from './module/features/drag-and-drop'
+import { registerJournalHooks } from './module/features/journal-progress'
 import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
 import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
@@ -184,6 +185,7 @@ Hooks.once('init', async () => {
   registerZIndexHook()
   registerCompendiumCategoryHook()
   registerTokenHUDButtons()
+  registerJournalHooks()
 })
 
 Hooks.once('ready', async () => {
