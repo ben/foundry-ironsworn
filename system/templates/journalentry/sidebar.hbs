@@ -1,11 +1,5 @@
 <form class='{{cssClass}} flexcol' autocomplete='off'>
-  <h3 class="nogrow">Progress Options</h3>
-  {{log this}}
-  {{log (checked isProgress)}}
-
-  <label class="checkbox nogrow">
-    <input type="checkbox" class="ironsworn__is_progress" {{checked isProgress}}>
-    Track Progress
-  </label>
-
+  <journalentry-sidebar class="ironsworn-vueport" dependencies="vue vuecomponents" :je="je">
+    Loading…
+  </journalentry-sidebar>
 </form>
