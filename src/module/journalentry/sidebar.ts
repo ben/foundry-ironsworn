@@ -44,11 +44,30 @@ export class JournalEntrySidebar extends FormApplication<
 
     html.find('.ironsworn__is_progress').on('click', async (e) => {
       console.log(e)
-      await this.object.setFlag(
-        'foundry-ironsworn',
-        'isProgress',
-        $(e.currentTarget).prop('checked')
-      )
+      await this.setFlag('isProgress', $(e.currentTarget).prop('checked'))
+
+      if (this.getFlag('progressType') === undefined) {
+        await this._initFlags()
+      }
     })
+  }
+
+  private async _initFlags() {
+    await this.setFlag('progressType', 'progress')
+    await this.setFlag('complete', false)
+    await this.setFlag('hasTrack', true)
+    await this.setFlag('trackRank', 1)
+    await this.setFlag('trackTicks', 0)
+    await this.setFlag('hasClock', true)
+    await this.setFlag('clockTicks', 0)
+    await this.setFlag('clockMax', 6)
+  }
+
+  private setFlag(name: string, value: any) {
+    return this.object.setFlag('foundry-ironsworn', name, value)
+  }
+
+  private getFlag(name: string) {
+    return this.object.getFlag('foundry-ironsworn', name)
   }
 }
