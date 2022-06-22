@@ -22,11 +22,11 @@
     "alwaysStrict": true /* Parse in strict mode and emit "use strict" for each source file. */,
 
     /* Additional Checks */
-    "noUnusedParameters": true /* Report errors on unused parameters. */,
+    // "noUnusedParameters": true /* Report errors on unused parameters. */,
     "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
     "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
 
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
-  "exclude": ["node_modules", "webpack.config.js"]
+  "exclude": ["node_modules", "webpack.config.js", "gulpfile.js"]
 }
