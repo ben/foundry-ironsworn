@@ -1,0 +1,30 @@
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
+index 2eae92c..3824036 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
+@@ -1,9 +1,22 @@
+ /**
+- * Recursively sets keys of an object to optional. Used primarily for update methods
++ * Recursively sets keys of an object to optional. Used primarily for update methods.
++ *
++ * Recursion limited to a few levels deep to prevent segfaults.
+  * @internal
+  */
+-type DeepPartial<T> = {
+-  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
++type DeepPartial<T>  = {
++  [P in keyof T]?: T[P] extends object ?
++    ( {[P1 in keyof T[P]]?: T[P][P1] extends object ?
++      ({[P2 in keyof T[P][P1]]?: T[P][P1][P2] extends object ?
++        ({[P3 in keyof T[P][P1][P2]]?: T[P][P1][P2][P3] extends object ?
++          {[P4 in keyof T[P][P1][P2][P3]]?: T[P][P1][P2][P3][P4]}
++          : T[P][P1][P2][P3]
++        })
++        : T[P][P1][P2]
++      })
++      : T[P][P1]
++    } )
++  : T[P];
+ };
+ 
+ /**
