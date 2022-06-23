@@ -4,8 +4,8 @@ export function registerJournalHooks() {
   Hooks.on('getJournalSheetHeaderButtons', (sheet, buttons) => {
     buttons.unshift({
       class: 'ironsworn-sidebar',
-      label: 'Progress',
-      icon: 'fas fa-spinner',
+      label: 'Tools',
+      icon: 'fas fa-toolbox',
       onclick: (_e) => {
         const anySheet = sheet as any
         anySheet.sidebar ||= new JournalEntrySidebar(sheet.object, {

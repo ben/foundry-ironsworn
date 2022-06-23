@@ -13,6 +13,10 @@
 
     <transition name="slide">
       <section v-if="flags.isProgress">
+        <div class="flexrow">
+          <button>Actor</button>
+        </div>
+
         <select
           class="nogrow"
           v-model="flags.progressType"
