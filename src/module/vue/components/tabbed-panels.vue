@@ -34,6 +34,7 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  .item,
   [role='tab'], // so it doesn't catch things that only start with 'tab'
   [role^='tab '],
   [role*=' tab'] {
@@ -43,11 +44,14 @@
     height: 100%;
     overflow-y: auto;
     padding: 5px;
+    font-weight: bold;
+    &.active,
     &[aria-selected='true'] {
       text-decoration: underline;
       text-shadow: none;
     }
   }
+  .tabs,
   [role^='tablist'],
   [role*=' tablist'] {
     display: flex;
@@ -55,11 +59,14 @@
     justify-content: flex-start;
     flex-grow: 0;
     height: max-content;
+
     &[aria-orientation='horizontal'] {
-      border-block-end: 1px solid darkgrey;
+      border-block-start: 1px solid;
+      border-block-end: 1px solid;
     }
     &[aria-orientation='vertical'] {
-      border-inline-end: 1px solid darkgrey;
+      border-inline-start: 1px solid;
+      border-inline-end: 1px solid;
     }
   }
   [role^='tabpanel'],
@@ -74,13 +81,15 @@
 export default {
   props: {
     actor: Object,
-    wrapperElement: { type: String, default: 'article' },
+    wrapperElement: { type: String, default: 'section' },
     /* used to distinguish this from other tab panels for purpose of ID generation */
     name: String,
     tabs: Array,
+    // orientation of the tabs
     ariaOrientation: {
       type: String,
       default: 'horizontal',
+      options: ['horizontal', 'vertical'],
     },
   },
   methods: {
