@@ -1,10 +1,12 @@
 <template>
   <tabbed-panels
-    :actor="actor"
-    wrapperElement="article"
-    name="sf-charactermovesheet"
     ariaOrientation="horizontal"
+    name="sf-character-move-sheet"
+    class="sf-character-move-sheet-tabs"
+    wrapperElement="article"
+    :actor="actor"
     :tabs="tabs"
+    ref="tabs"
   >
   </tabbed-panels>
   <!-- <div class="flexcol">
@@ -52,13 +54,13 @@ export default {
     async highlightMove(item) {
       this.currentTab = this.tabs[0]
       await this.$nextTick()
-      this.$refs.activeTab?.['highlightMove']?.(item)
+      this.$refs.tabs.$refs.activeTab?.['highlightMove']?.(item)
     },
 
     async highlightOracle(dfid) {
       this.currentTab = this.tabs[1]
       await this.$nextTick()
-      this.$refs.activeTab?.['highlightOracle']?.(dfid)
+      this.$refs.tabs.$refs.activeTab?.['highlightOracle']?.(dfid)
     },
   },
 }
