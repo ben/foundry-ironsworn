@@ -1,8 +1,10 @@
 <template>
   <div class="item-row flexcol ironsworn__asset">
-    <div class="asset-entry nogrow" @click="toggle">
+    <div class="asset-entry nogrow">
       <div class="flexrow">
-        <h4 style="margin: 0; line-height: 20px">{{ asset.name }}</h4>
+        <h4 @click="toggle" style="margin: 0; line-height: 20px">
+          {{ asset.name }}
+        </h4>
         <btn-faicon
           class="block"
           v-if="editMode"
@@ -121,13 +123,11 @@ export default {
         !this.asset?.flags['foundry-ironsworn']?.expanded
       )
     },
-    edit(ev) {
-      ev.stopPropagation()
+    edit() {
       this.foundryItem.sheet.render(true)
       return false
     },
-    destroy(ev) {
-      ev.stopPropagation()
+    destroy() {
       Dialog.confirm({
         title: this.$t('IRONSWORN.DeleteAsset'),
         content: `<p><strong>${this.$t(
