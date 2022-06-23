@@ -39,6 +39,7 @@ export default {
     border: 0;
     flex-grow: 0;
     line-height: 1;
+    // min-width: 1.25em;
   }
 }
 </style>

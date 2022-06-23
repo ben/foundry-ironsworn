@@ -197,6 +197,7 @@
     flex-grow: 0;
 
     .stack-row {
+      // FIXME refactor as component and encapsulate the relevant css there
       flex: 0 0 auto;
       min-width: 50px;
       border: 1px solid;
@@ -205,6 +206,7 @@
       line-height: 28px;
       position: relative;
       z-index: 1;
+      padding: 0;
       &:hover,
       &.selected,
       &[aria-selected='true'] {
@@ -373,10 +375,6 @@
       flex-grow: 0;
       padding: 5px;
     }
-  }
-
-  .movesheet-row {
-    transition: all 0.4s ease;
   }
 
   .progresses {
