@@ -9,22 +9,6 @@
     ref="tabs"
   >
   </tabbed-panels>
-  <!-- <div class="flexcol">
-    <div class="flexrow nogrow tablist" style="min-height: 30px">
-      <div
-        class="vuetab"
-        v-for="tab in tabs"
-        :key="tab.titleKey"
-        :class="['clickable', 'block', { selected: currentTab === tab }]"
-        @click="currentTab = tab"
-      >
-        {{ $t(tab.titleKey) }}
-      </div>
-    </div>
-    <keep-alive>
-      <component :is="currentTab.component" :actor="actor" ref="activeTab" />
-    </keep-alive>
-  </div> -->
 </template>
 
 <script>
