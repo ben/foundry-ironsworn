@@ -34,6 +34,11 @@ export default {
   justify-content: center;
   padding: 0.25em;
   gap: 0.25em;
+  &:before {
+    height: 1em;
+    width: 1em;
+    line-height: 1;
+  }
   &:empty {
     // restricts width + removes border if there's no text
     border: 0;
