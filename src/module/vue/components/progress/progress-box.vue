@@ -50,7 +50,6 @@
               v-if="item.data.hasTrack"
               :tooltip="$t('IRONSWORN.ProgressRoll')"
               class="flexrow nogrow block"
-              style="padding: 3px"
             />
           </div>
           <h4 class="flexrow">
