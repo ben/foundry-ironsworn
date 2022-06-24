@@ -9,10 +9,6 @@
 
     <transition name="slide">
       <section v-if="flags.isProgress">
-        <div class="flexrow">
-          <button type="button">Actor</button>
-        </div>
-
         <select
           class="nogrow"
           v-model="flags.progressType"
@@ -98,6 +94,34 @@
             </div>
           </div>
         </transition>
+
+        <div v-if="connectedActor">
+          <a
+            class="entity-link content-link"
+            draggable="true"
+            data-type="Actor"
+            data-entity="Actor"
+            :data-id="connectedActor"
+            ><i class="fas fa-user"></i> Actor (drag to map)</a
+          >
+        </div>
+        <div v-else>
+          <button type="button" @click="createActor">Generate actor</button>
+        </div>
+
+        <div v-if="connectedItem">
+          <a
+            class="entity-link content-link"
+            draggable="true"
+            data-type="Item"
+            data-entity="Item"
+            :data-id="connectedItem"
+            ><i class="fas fa-user"></i> Item (drag to sheet)</a
+          >
+        </div>
+        <div v-else>
+          <button type="button" @click="createItem">Generate item</button>
+        </div>
       </section>
     </transition>
   </div>
@@ -117,6 +141,12 @@ export default {
     $journalEntry() {
       return game.journal.get(this.je._id)
     },
+
+    connectedActor() {
+      const { actorId } = this.flags
+      const actor = game.actors.get(actorId)
+      return actor ? actorId : undefined
+    },
   },
 
   methods: {
@@ -134,6 +164,17 @@ export default {
     setClock(ticks) {
       this.setFlag('clockTicks', ticks)
     },
+
+    async createActor() {
+      const actor = await Actor.create({
+        name: this.$journalEntry.name,
+        type: 'jenpc',
+      })
+
+      this.setFlag('actorId', actor.id)
+    },
+
+    createItem() {},
   },
 }
 </script>
