@@ -32,7 +32,6 @@ export class JournalEntrySidebar extends VueApplication {
 
   getData(options?: Partial<FormApplicationOptions> | undefined) {
     const data = super.getData(options) as any
-    console.log(data)
 
     data.je = this.journalEntry.toObject(false)
 

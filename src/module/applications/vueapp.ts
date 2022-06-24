@@ -30,6 +30,9 @@ export class VueApplication extends Application {
       const states = Application.RENDER_STATES
       if (this._state == states.RENDERING || this._state == states.RENDERED) {
         // Update the Vue app with our updated item/flag data.
+        for (const k of Object.keys(appData)) {
+          Vue.set(this._vm, k, appData[k])
+        }
         this.activateVueListeners($(this.element), true)
         return this
       }
