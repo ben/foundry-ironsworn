@@ -95,13 +95,13 @@
           </div>
         </transition>
 
-        <div v-if="connectedActor">
+        <div v-if="actorId">
           <a
             class="entity-link content-link"
             draggable="true"
             data-type="Actor"
             data-entity="Actor"
-            :data-id="connectedActor"
+            :data-id="actorId"
             ><i class="fas fa-user"></i> Actor (drag to map)</a
           >
         </div>
@@ -109,13 +109,13 @@
           <button type="button" @click="createActor">Generate actor</button>
         </div>
 
-        <div v-if="connectedItem">
+        <div v-if="itemId">
           <a
             class="entity-link content-link"
             draggable="true"
             data-type="Item"
             data-entity="Item"
-            :data-id="connectedItem"
+            :data-id="itemId"
             ><i class="fas fa-user"></i> Item (drag to sheet)</a
           >
         </div>
@@ -142,10 +142,16 @@ export default {
       return game.journal.get(this.je._id)
     },
 
-    connectedActor() {
+    actorId() {
       const { actorId } = this.flags
       const actor = game.actors.get(actorId)
       return actor ? actorId : undefined
+    },
+
+    itemId() {
+      const { itemId } = this.flags
+      const item = game.items.get(itemId)
+      return item ? itemId : undefined
     },
   },
 
@@ -174,7 +180,14 @@ export default {
       this.setFlag('actorId', actor.id)
     },
 
-    createItem() {},
+    async createItem() {
+      const item = await Item.create({
+        name: this.$journalEntry.name,
+        type: 'jeprogress',
+      })
+
+      this.setFlag('itemId', item.id)
+    },
   },
 }
 </script>
