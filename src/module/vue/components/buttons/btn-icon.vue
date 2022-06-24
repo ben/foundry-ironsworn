@@ -12,7 +12,9 @@
     :disabled="disabled"
     :aria-disabled="disabled"
   >
-    <slot></slot>
+    <span v-if="hasDefaultSlot" class="button-text">
+      <slot name="default"></slot>
+    </span>
   </button>
 </template>
 <script>
@@ -20,6 +22,11 @@ export default {
   props: {
     tooltip: String,
     disabled: Boolean,
+  },
+  computed: {
+    hasDefaultSlot() {
+      return !!this.$slots.default
+    },
   },
 }
 </script>
@@ -33,18 +40,41 @@ export default {
   text-align: center;
   justify-content: center;
   padding: 0.25em;
-  gap: 0.25em;
+  &:not(:empty) {
+    gap: 0.25em;
+  }
   &:before {
+    line-height: 1;
     height: 1em;
     width: 1em;
-    line-height: 1;
   }
   &:empty {
     // restricts width + removes border if there's no text
     border: 0;
     flex-grow: 0;
     line-height: 1;
+    height: max-content;
+    width: max-content;
+    padding: 2px;
+    gap: 0;
     // min-width: 1.25em;
+  }
+}
+
+// override to compensate for chrome user agent stylesheet bug: https://bugs.chromium.org/p/chromium/issues/detail?id=681917
+.icon-button {
+  .button-text {
+    // makes this seamless with existing buttons that don't need this styling
+    display: contents;
+  }
+  &.vertical-v2 {
+    writing-mode: unset; // prevents this fix from breaking the button layout in FF
+    flex-direction: column;
+    .button-text {
+      line-height: inherit;
+      display: inherit;
+      writing-mode: vertical-lr !important;
+    }
   }
 }
 </style>
