@@ -1,6 +1,6 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow">
+  <div class="flexcol legacy-track">
+    <div class="legacy-track-header flexrow">
       <h4>{{ title }}</h4>
       <p
         v-if="overflow"
@@ -37,6 +37,9 @@ h4 {
 }
 .xp {
   max-height: 40px;
+}
+.legacy-track-header {
+  align-items: center;
 }
 </style>
 
