@@ -3,24 +3,20 @@
     <h3>Progress Options</h3>
 
     <label class="checkbox">
-      <input
-        type="checkbox"
-        v-model="flags.isProgress"
-        @change="setIsProgress"
-      />
+      <input type="checkbox" v-model="flags.isProgress" @change="saveFlags" />
       Track Progress
     </label>
 
     <transition name="slide">
       <section v-if="flags.isProgress">
         <div class="flexrow">
-          <button>Actor</button>
+          <button type="button">Actor</button>
         </div>
 
         <select
           class="nogrow"
           v-model="flags.progressType"
-          @change="subtypeChange"
+          @change="saveFlags"
           style="margin: 0.5rem 0"
         >
           <option value="vow">{{ $t('IRONSWORN.Vow') }}</option>
@@ -32,7 +28,7 @@
           <input
             type="checkbox"
             v-model="flags.completed"
-            @change="updateComplete"
+            @change="saveFlags"
           />
           {{ $t('IRONSWORN.Completed') }}
         </label>
@@ -40,11 +36,7 @@
         <!-- Track -->
         <hr />
         <label class="checkbox">
-          <input
-            type="checkbox"
-            v-model="flags.hasTrack"
-            @change="updateHasTrack"
-          />
+          <input type="checkbox" v-model="flags.hasTrack" @change="saveFlags" />
           {{ $t('IRONSWORN.Track') }}
         </label>
 
@@ -76,11 +68,7 @@
         <hr />
 
         <label class="checkbox">
-          <input
-            type="checkbox"
-            v-model="flags.hasClock"
-            @change="saveChecks"
-          />
+          <input type="checkbox" v-model="flags.hasClock" @change="saveFlags" />
           {{ $t('IRONSWORN.Clock') }}
         </label>
 
@@ -98,7 +86,7 @@
               <select
                 class="nogrow"
                 v-model="flags.clockMax"
-                @change="clockMaxChange"
+                @change="saveFlags"
                 style="margin: 0.5rem 0"
               >
                 <option value="4">4</option>
@@ -124,6 +112,27 @@ export default {
   computed: {
     flags() {
       return this.je.flags['foundry-ironsworn']
+    },
+
+    $journalEntry() {
+      return game.journal.get(this.je._id)
+    },
+  },
+
+  methods: {
+    async setFlag(name, value) {
+      console.log(name, value)
+      return this.$journalEntry?.setFlag('foundry-ironsworn', name, value)
+    },
+
+    async saveFlags() {
+      for (const k of Object.keys(this.flags)) {
+        await this.setFlag(k, this.flags[k])
+      }
+    },
+
+    setClock(ticks) {
+      this.setFlag('clockTicks', ticks)
     },
   },
 }
