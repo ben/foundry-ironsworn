@@ -25,10 +25,12 @@
       <progress-controls :actor="actor" foeCompendium="starforgedencounters" />
     </div>
 
-    <div class="item-row nogrow" style="margin-top: 1rem">
+    <div class="item-row nogrow progress-completed" style="margin-top: 1rem">
+      <!-- TODO: refactor this as a component in PR for collapsible/progressive disclosure element -->
       <h3>
         <btn-faicon
-          class="text"
+          :disabled="completedItems.length === 0"
+          class="text collapse-control"
           :class="completedClass"
           :icon="completedCaret"
           @click="expandCompleted = !expandCompleted"
@@ -63,6 +65,23 @@
     </div>
   </div>
 </template>
+
+<style lang="less">
+.progress-completed {
+  .collapse-control {
+    text-transform: uppercase;
+    height: inherit;
+    width: inherit;
+    flex-grow: 1;
+  }
+  h3 {
+    display: flex;
+  }
+  .highlighted {
+    background-color: lightyellow;
+  }
+}
+</style>
 
 <style lang="less" scoped>
 h3 {

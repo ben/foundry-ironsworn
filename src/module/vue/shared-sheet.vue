@@ -57,9 +57,10 @@
     >
       <h3>
         <btn-faicon
+          :disabled="completedItems.length === 0"
           class="text collapse-control"
           :class="completedClass"
-          :icon="completedCaretClass"
+          :icon="completedCaret"
           @click="expandCompleted = !expandCompleted"
         >
           {{ $t('IRONSWORN.Completed') }}
@@ -102,11 +103,6 @@
 </template>
 
 <style lang="less" scoped>
-.progress-completed {
-  .collapse-control {
-    text-transform: uppercase;
-  }
-}
 .slide-enter-active,
 .slide-leave-active {
   max-height: 83px;
@@ -115,14 +111,6 @@
 h3 {
   margin: 5px 0;
   transition: background-color 0.2s ease;
-  i {
-    width: 15px;
-    text-align: center;
-  }
-
-  &.highlighted {
-    background-color: lightyellow;
-  }
 }
 
 textarea.notes {
@@ -162,7 +150,7 @@ export default {
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
-    completedCaretClass() {
+    completedCaret() {
       return 'fa fa-caret-' + (this.expandCompleted ? 'down' : 'right')
     },
     completedClass() {
