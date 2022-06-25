@@ -1,6 +1,6 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow">
+  <div class="flexcol legacy-track">
+    <div class="legacy-track-header flexrow">
       <h4>{{ title }}</h4>
       <p
         v-if="overflow"
@@ -9,8 +9,13 @@
       >
         {{ overflow }}
       </p>
-      <icon-button v-if="editMode" icon="caret-left" @click="decrease" />
-      <icon-button icon="caret-right" @click="increase" />
+      <btn-faicon
+        class="block"
+        v-if="editMode"
+        icon="caret-left"
+        @click="decrease"
+      />
+      <btn-faicon class="block" icon="caret-right" @click="increase" />
     </div>
 
     <div class="flexrow track">
@@ -32,6 +37,9 @@ h4 {
 }
 .xp {
   max-height: 40px;
+}
+.legacy-track-header {
+  align-items: center;
 }
 </style>
 

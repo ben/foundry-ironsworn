@@ -17,17 +17,16 @@
               :softMax="actor.data.momentumMax"
             ></stack>
             <hr class="nogrow" />
-            <div class="nogrow">
-              <div class="clickable block stack-row" @click="burnMomentum">
+            <div>
+              <btn-momentumburn :actor="actor" class="nogrow block stack-row">
                 {{ $t('IRONSWORN.Burn') }}
-              </div>
+              </btn-momentumburn>
+
+              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
+              {{ $t('IRONSWORN.Max') }}:
+              {{ actor.data.momentumMax }}
             </div>
-
-            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}:
-            {{ actor.data.momentumMax }}
           </div>
-
           <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
         </div>
       </div>
@@ -74,13 +73,9 @@
                   </div>
                 </transition-group>
                 <div class="flexrow nogrow" style="text-align: center">
-                  <div
-                    class="clickable block"
-                    @click="openCompendium('ironswornassets')"
-                  >
-                    <i class="fas fa-atlas"></i>
+                  <btn-compendium class="block" compendium="ironswornassets">
                     {{ $t('IRONSWORN.Assets') }}
-                  </div>
+                  </btn-compendium>
                 </div>
               </div>
             </section>
@@ -124,9 +119,10 @@
       <!-- Stats on right -->
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('health')">
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="health">
             {{ $t('IRONSWORN.Health') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack health">
             <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
           </div>
@@ -135,9 +131,10 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('spirit')">
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="spirit">
             {{ $t('IRONSWORN.Spirit') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack spirit">
             <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
           </div>
@@ -146,9 +143,10 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('supply')">
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="supply">
             {{ $t('IRONSWORN.Supply') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack supply">
             <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
           </div>
@@ -160,6 +158,9 @@
 </template>
 
 <style lang="less" scoped>
+.stat-roll {
+  text-transform: uppercase;
+}
 .slide-enter-active,
 .slide-leave-active {
   max-height: 83px;
@@ -180,7 +181,6 @@ export default {
   props: {
     actor: Object,
   },
-
   computed: {
     progressItems() {
       return this.actor.items
@@ -196,31 +196,25 @@ export default {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
   },
-
   watch: {
     'actor.data.biography'() {
       this.saveNotes()
     },
   },
-
   methods: {
     burnMomentum() {
       this.$actor.burnMomentum()
     },
-
     rollStat(stat) {
       CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
     },
-
     openCompendium(name) {
       const pack = game.packs?.get(`foundry-ironsworn.${name}`)
       pack?.render(true)
     },
-
     saveNotes() {
       this.$actor.update({ 'data.biography': this.actor.data.biography })
     },
-
     async applySort(oldI, newI, sortBefore, collection) {
       const sorted = collection.sort(
         (a, b) => (a.data.sort || 0) - (b.data.sort || 0)

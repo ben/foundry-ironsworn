@@ -19,13 +19,9 @@
 
     <hr />
     <!-- TODO: wire up this button -->
-    <button
-      class="ironsworn__sf__save__truths"
-      @click.prevent="$root.$emit('submit', composedOutput)"
-    >
-      <i class="fas fa-feather"></i>
+    <btn-faicon class="ironsworn__sf__save__truths block" icon="feather">
       {{ $t('IRONSWORN.SaveYourTruths') }}
-    </button>
+    </btn-faicon>
   </div>
 </template>
 

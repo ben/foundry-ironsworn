@@ -1,10 +1,17 @@
 <template>
   <div class="item-row flexcol ironsworn__asset">
-    <div class="asset-entry nogrow" @click="toggle">
+    <div class="asset-entry nogrow">
       <div class="flexrow">
-        <h4 style="margin: 0; line-height: 20px">{{ asset.name }}</h4>
-        <icon-button v-if="editMode" icon="trash" @click="destroy" />
-        <icon-button icon="edit" @click="edit" />
+        <h4 @click="toggle" style="margin: 0; line-height: 20px">
+          {{ asset.name }}
+        </h4>
+        <btn-faicon
+          class="block"
+          v-if="editMode"
+          icon="trash"
+          @click="destroy"
+        />
+        <btn-faicon class="block" icon="edit" @click="edit" />
       </div>
     </div>
     <transition name="slide">
@@ -22,6 +29,7 @@
             :actor="actingActor"
             @moveclick="moveclick"
           >
+            <!-- TODO: redo as list style -->
             <i class="fas fa-circle nogrow" style="margin: 1rem 0.5rem 0 0"></i>
             <div v-html="$enrichHtml(ability.description)"></div>
             <clock
@@ -35,18 +43,15 @@
           </with-rolllisteners>
         </ul>
 
-        <div class="flexcol" v-if="asset.data.track.enabled">
-          <h4
-            class="clickable text flexrow"
-            style="margin-bottom: 3px"
-            @click="rollTrack"
+        <div class="flexcol condition-meter" v-if="asset.data.track.enabled">
+          <btn-rollstat
+            class="juicy text flexrow"
+            :actor="actor"
+            :item="asset"
+            attr="track"
           >
-            <span>{{ asset.data.track.name }}</span>
-            <i
-              class="isicon-d10-tilt juicy nogrow"
-              style="padding-right: 3px"
-            ></i>
-          </h4>
+            {{ asset.data.track.name }}
+          </btn-rollstat>
           <asset-track :actor="actor" :item="asset" />
         </div>
 
@@ -68,9 +73,17 @@
 </template>
 
 <style lang="less" scoped>
+.condition-meter {
+  gap: 3px;
+}
 .slide-enter-active,
 .slide-leave-active {
   max-height: 350px;
+}
+
+.stat-roll {
+  text-transform: uppercase;
+  line-height: 1;
 }
 </style>
 
@@ -80,7 +93,6 @@ export default {
     actor: Object,
     asset: Object,
   },
-
   computed: {
     expanded() {
       return this.asset?.flags['foundry-ironsworn']?.expanded || false
@@ -103,7 +115,6 @@ export default {
       return CONFIG.IRONSWORN.defaultActor()?.toObject(false)
     },
   },
-
   methods: {
     toggle() {
       this.foundryItem?.setFlag(
@@ -112,14 +123,11 @@ export default {
         !this.asset?.flags['foundry-ironsworn']?.expanded
       )
     },
-    edit(ev) {
-      ev.stopPropagation()
+    edit() {
       this.foundryItem.sheet.render(true)
       return false
     },
-    destroy(ev) {
-      ev.stopPropagation()
-
+    destroy() {
       Dialog.confirm({
         title: this.$t('IRONSWORN.DeleteAsset'),
         content: `<p><strong>${this.$t(
@@ -151,7 +159,6 @@ export default {
       actorWithMoves?.moveSheet?.render(true)
       actorWithMoves?.moveSheet?.highlightMove(item)
     },
-
     setAbilityClock(abilityIdx, clockTicks) {
       const abilities = Object.values(this.asset.data.abilities)
       abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }

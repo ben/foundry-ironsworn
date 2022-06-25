@@ -16,6 +16,7 @@
 }
 
 .ironsworn {
+  font-family: var(--font-primary);
   h1,
   h2,
   h3,
@@ -23,6 +24,29 @@
   h5,
   h6 {
     text-transform: uppercase;
+  }
+  *::placeholder {
+    font-family: inherit;
+  }
+
+  button:hover,
+  button:focus {
+    background: unset;
+    border: unset;
+    outline: none;
+    box-shadow: unset;
+  }
+
+  button {
+    width: unset;
+    margin: unset;
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    // font-size: unset;
+    // line-height: unset;
+    font-family: inherit;
+    cursor: pointer;
   }
 
   .window-content {
@@ -173,13 +197,20 @@
     flex-grow: 0;
 
     .stack-row {
+      // FIXME refactor as component and encapsulate the relevant css there
       flex: 0 0 auto;
       min-width: 50px;
       border: 1px solid;
       border-top: none;
       text-align: center;
       line-height: 28px;
-
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      &:hover,
+      &.selected {
+        z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
+      }
       &:first-child {
         border-top: 1px solid;
         border-top-left-radius: 5px;
@@ -220,24 +251,28 @@
     margin: 1px !important;
   }
 
-  .clickable.disabled {
-    cursor: not-allowed;
-  }
-
-  .clickable:not(.disabled) {
-    transition: 0.5s ease;
-    cursor: pointer;
-
+  .clickable {
+    &.disabled, // FIXME: ditch this class, its redundant with more semantic options
+    &:disabled,
+    &[aria-disabled="true"] {
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.5;
+    }
     &.block,
     &.text {
       &:hover {
         transition: 0.5s ease;
       }
-
       &:active {
         transition: 0.2s ease;
       }
     }
+    &.text {
+      justify-content: flex-start;
+    }
+    transition: 0.5s ease;
+    cursor: pointer;
   }
 
   .stats {
@@ -339,10 +374,6 @@
       flex-grow: 0;
       padding: 5px;
     }
-  }
-
-  .movesheet-row {
-    transition: all 0.4s ease;
   }
 
   .progresses {
@@ -595,4 +626,44 @@ table td:first-child {
   padding-bottom: 0 !important;
   border-top: 0 !important;
   border-bottom: 0 !important;
+}
+// workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
+.fa,
+.fab,
+.fad,
+.fal,
+.far,
+.fas {
+  -moz-osx-font-smoothing: inherit;
+  speak: inherit;
+  font-style: inherit;
+  font-variant: inherit;
+  text-rendering: inherit;
+  line-height: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  &:before {
+    speak: never;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+  }
+}
+
+.fa,
+.far,
+.fas {
+  &:before {
+    font-family: 'Font Awesome 5 Free';
+  }
+}
+
+.fa,
+.fas {
+  &:before {
+    font-weight: 900;
+  }
 }

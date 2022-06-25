@@ -1,17 +1,14 @@
 <template>
   <div class="flexrow nogrow" style="text-align: center">
-    <div class="clickable block" @click="addProgressItem('vow')">
-      <i class="fas fa-plus"></i>
-      {{ $t('IRONSWORN.Vow') }}
-    </div>
-    <div class="clickable block" @click="addProgressItem('progress')">
-      <i class="fas fa-plus"></i>
-      {{ $t('IRONSWORN.Progress') }}
-    </div>
-    <div class="clickable block" @click="openCompendium(foeCompendium)">
-      <i class="fas fa-atlas"></i>
+    <btn-faicon class="block" icon="plus" @click="addProgressItem('vow')">
+      {{ $t('IRONSWORN.Vow') }}</btn-faicon
+    >
+    <btn-faicon class="block" icon="plus" @click="addProgressItem('progress')">
+      {{ $t('IRONSWORN.Progress') }}</btn-faicon
+    >
+    <btn-compendium class="block" :compendium="foeCompendium">
       {{ $t('IRONSWORN.Foes') }}
-    </div>
+    </btn-compendium>
   </div>
 </template>
 

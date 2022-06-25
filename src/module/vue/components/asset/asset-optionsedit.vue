@@ -12,16 +12,15 @@
             v-model="option.name"
             @blur="updateOptionName(i)"
           />
-          <icon-button icon="trash" @click="deleteOption(i)" />
+          <btn-faicon icon="trash" @click="deleteOption(i)" />
         </div>
       </transition-group>
-      <div
-        class="stack-row clickable block"
+      <btn-faicon
+        icon="plus"
+        class="stack-row block"
         @click="addOption"
         style="min-height: 1.5rem; align-items: center"
-      >
-        <i class="fas fa-plus" />
-      </div>
+      />
     </div>
 
     <div v-else>

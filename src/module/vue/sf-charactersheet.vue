@@ -17,15 +17,15 @@
               :softMax="actor.data.momentumMax"
             ></stack>
             <hr class="nogrow" />
-            <div class="nogrow">
-              <div class="clickable block stack-row" @click="burnMomentum">
+            <div>
+              <btn-momentumburn class="nogrow block stack-row" :actor="actor">
                 {{ $t('IRONSWORN.Burn') }}
-              </div>
-            </div>
+              </btn-momentumburn>
 
-            {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}:
-            {{ actor.data.momentumMax }}
+              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
+              {{ $t('IRONSWORN.Max') }}:
+              {{ actor.data.momentumMax }}
+            </div>
           </div>
 
           <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
@@ -44,7 +44,7 @@
         </div>
 
         <!-- Tabs -->
-        <div class="flexrow nogrow">
+        <div class="flexrow nogrow tablist">
           <div
             class="tab"
             v-for="tab in tabs"
@@ -65,12 +65,12 @@
       </div>
 
       <!-- Stats on right -->
-      <div class="flexcol margin-right">
+      <div class="flexcol margin-right condition-meters">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('health')">
-            <i class="isicon-d10-tilt"></i>
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="health">
             {{ $t('IRONSWORN.Health') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack health">
             <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
           </div>
@@ -79,10 +79,10 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('spirit')">
-            <i class="isicon-d10-tilt"></i>
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="spirit">
             {{ $t('IRONSWORN.Spirit') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack spirit">
             <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
           </div>
@@ -91,10 +91,10 @@
         <hr class="nogrow" />
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <h4 class="vertical-v2 clickable text" @click="rollStat('supply')">
-            <i class="isicon-d10-tilt"></i>
+          <!-- TODO: restyle as h4-like -->
+          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="supply">
             {{ $t('IRONSWORN.Supply') }}
-          </h4>
+          </btn-rollstat>
           <div class="flexcol stack supply">
             <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
           </div>
@@ -109,10 +109,15 @@
 </template>
 
 <style lang="less" scoped>
+.stat-roll {
+  text-transform: uppercase;
+}
+.tablist {
+  border-bottom: 1px solid grey;
+}
 .tab {
   text-align: center;
   padding: 5px;
-  border-bottom: 1px solid grey;
   &.active {
     background-color: darkgray;
   }
@@ -124,7 +129,6 @@ export default {
   props: {
     actor: Object,
   },
-
   data() {
     const tabs = [
       { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
@@ -138,16 +142,10 @@ export default {
       currentTab: tabs[0],
     }
   },
-
   methods: {
-    burnMomentum() {
-      this.$actor.burnMomentum()
-    },
-
     rollStat(stat) {
       CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
     },
-
     openCompendium(name) {
       const pack = game.packs?.get(`foundry-ironsworn.${name}`)
       pack?.render(true)

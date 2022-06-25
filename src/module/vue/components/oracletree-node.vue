@@ -11,7 +11,8 @@
           <i class="isicon-d10-tilt juicy"></i>
           {{ node.displayName }}
         </span>
-        <icon-button
+        <btn-faicon
+          class="block"
           v-if="isLeaf"
           icon="eye"
           @click="descriptionExpanded = !descriptionExpanded"

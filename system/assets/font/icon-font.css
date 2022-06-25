@@ -14,8 +14,8 @@
   font-display: block;
 }
 
-[class^='isicon-'],
-[class*=' isicon-'] {
+[class^='isicon-']:before,
+[class*=' isicon-']:before {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'ironsworn-icons' !important;
   speak: never;
@@ -30,8 +30,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^='isicon-'].juicy,
-[class*=' isicon-'].juicy {
+[class^='isicon-'].vertical-v2:before,
+[class*=' isicon-'].vertical-v2:before {
+  transform: rotateZ(90deg);
+}
+
+[class^='isicon-'].juicy:before,
+[class*=' isicon-'].juicy:before {
   font-size: 120%;
 }
 .isicon-d10-tilt:before {

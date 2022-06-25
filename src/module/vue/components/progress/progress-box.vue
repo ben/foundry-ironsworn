@@ -12,47 +12,50 @@
         <div class="flexcol">
           <div class="flexrow">
             <rank-hexes :current="item.data.rank" @click="rankClick" />
-            <icon-button
+            <btn-faicon
+              class="block"
               v-if="editMode"
               icon="trash"
               @click="destroy"
               :tooltip="$t('IRONSWORN.DeleteItem')"
             />
-            <icon-button
+            <btn-faicon
+              class="block"
               icon="edit"
               @click="edit"
               :tooltip="$t('IRONSWORN.Edit')"
             />
-            <icon-button
+            <btn-faicon
+              class="block"
               v-if="editMode"
               :icon="completedIcon"
               @click="toggleComplete"
               :tooltip="completedTooltip"
             />
-            <icon-button
+            <btn-faicon
+              class="block"
               v-if="editMode && item.data.hasTrack"
               icon="caret-left"
               @click="retreat"
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
             />
-            <icon-button
+            <btn-faicon
+              class="block"
               v-if="item.data.hasTrack"
               icon="caret-right"
               @click="advance"
               :tooltip="$t('IRONSWORN.MarkProgress')"
             />
-            <div
+            <btn-rollprogress
               v-if="item.data.hasTrack"
-              class="flexrow nogrow clickable block"
-              @click="fulfill"
               :tooltip="$t('IRONSWORN.ProgressRoll')"
-            >
-              <i class="isicon-d10-tilt" style="padding: 3px"></i>
-            </div>
+              class="flexrow nogrow block"
+            />
           </div>
           <h4 class="flexrow">
             <span>{{ item.name }}</span>
-            <icon-button
+            <btn-faicon
+              class="block"
               icon="star"
               :solid="item.data.starred"
               :tooltip="$t('IRONSWORN.StarProgress')"
@@ -155,9 +158,6 @@ export default {
     },
     toggleStar() {
       this.$item.update({ data: { starred: !this.item.data.starred } })
-    },
-    fulfill() {
-      this.foundryItem.fulfill()
     },
     setClock(num) {
       this.$item.update({ data: { clockTicks: num } })

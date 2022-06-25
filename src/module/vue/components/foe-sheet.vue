@@ -14,8 +14,8 @@
           style="margin-right: 1em"
         />
         <h4>{{ rankText }}</h4>
-        <icon-button icon="trash" @click="clearProgress" />
-        <icon-button icon="caret-right" @click="markProgress" />
+        <btn-faicon class="block" icon="trash" @click="clearProgress" />
+        <btn-faicon class="block" icon="caret-right" @click="markProgress" />
       </div>
 
       <!-- PROGRESS -->
@@ -35,22 +35,15 @@
       data-drop-type="progress"
       style="text-align: center; justify-items: space-around"
     >
-      <div class="clickable block" @click="addEmpty">
-        <i class="fas fa-file"></i>
-        {{ $t('IRONSWORN.Progress') }}
-      </div>
-
-      <div class="clickable block" @click="openCompendium('ironswornfoes')">
-        <i class="fas fa-atlas"></i>
-        {{ $t('IRONSWORN.Foes') }} (Ironsworn)
-      </div>
-      <div
-        class="clickable block"
-        @click="openCompendium('starforgedencounters')"
+      <btn-faicon @click="addEmpty" class="block" icon="file">
+        {{ $t('IRONSWORN.Progress') }}</btn-faicon
       >
-        <i class="fas fa-atlas"></i>
-        {{ $t('IRONSWORN.Foes') }} (Starforged)
-      </div>
+      <btn-compendium class="block" compendium="ironswornfoes"
+        >{{ $t('IRONSWORN.Foes') }} (Ironsworn)</btn-compendium
+      >
+      <btn-compendium class="block" compendium="starforgedencounters"
+        >{{ $t('IRONSWORN.Foes') }} (Starforged)</btn-compendium
+      >
     </div>
   </div>
 </template>

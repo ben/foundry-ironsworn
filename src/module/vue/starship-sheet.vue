@@ -5,7 +5,7 @@
       <document-name :document="actor" />
     </header>
 
-    <section class="flexrow nogrow">
+    <section class="flexrow nogrow tablist">
       <div
         class="tab"
         v-for="tab in tabs"
@@ -49,10 +49,12 @@
 </template>
 
 <style lang="less" scoped>
+.tablist {
+  border-bottom: 1px solid grey;
+}
 .tab {
   text-align: center;
   padding: 5px;
-  border-bottom: 1px solid grey;
   &.active {
     background-color: darkgray;
   }

@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <div class="flexrow nogrow" style="min-height: 30px">
+    <div class="flexrow nogrow tablist" style="min-height: 30px">
       <div
         class="vuetab"
         v-for="tab in tabs"
@@ -18,10 +18,12 @@
 </template>
 
 <style lang="less" scoped>
+.tablist {
+  border-bottom: 1px solid grey;
+}
 .vuetab {
   text-align: center;
   padding: 5px;
-  border-bottom: 1px solid grey;
   &.active {
     background-color: darkgray;
   }

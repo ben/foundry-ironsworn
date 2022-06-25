@@ -15,7 +15,7 @@ export function activateDragDropListeners() {
           // Add a class to the potential targets
           const indexEntry = getIndexEntry(ev.target) as ReturnType<
             typeof getIndexEntry
-          > & {type: string}
+          > & { type: string }
           $(document)
             .find(
               `.ironsworn__drop__target[data-drop-type="${indexEntry?.type}"]`

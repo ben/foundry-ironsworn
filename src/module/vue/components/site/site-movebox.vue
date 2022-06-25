@@ -1,13 +1,14 @@
 <template>
-  <div
-    class="box flexrow clickable block"
+  <button
+    type="button"
+    class="box flexrow block"
     :class="{ disabled: disabled }"
     @click="click"
   >
     <h4 class="nogrow" style="margin: 0; white-space: nowrap">
       {{ $t(i18nKey) }}
     </h4>
-  </div>
+  </button>
 </template>
 
 <script>

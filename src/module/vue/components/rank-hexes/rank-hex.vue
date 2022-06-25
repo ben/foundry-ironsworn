@@ -1,5 +1,5 @@
 <template>
-  <div :title="title" class="nogrow">
+  <div :title="title" :aria-label="title" :data-tooltip="title" class="nogrow">
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"

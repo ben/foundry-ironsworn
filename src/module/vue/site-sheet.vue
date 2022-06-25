@@ -15,8 +15,13 @@
         style="margin-right: 1em"
       />
       <h4>{{ rankText }}</h4>
-      <icon-button v-if="editMode" icon="trash" @click="clearProgress" />
-      <icon-button icon="play" @click="markProgress" />
+      <btn-faicon
+        class="block"
+        v-if="editMode"
+        icon="trash"
+        @click="clearProgress"
+      />
+      <btn-faicon class="block" icon="caret-right" @click="markProgress" />
     </div>
 
     <!-- PROGRESS -->
@@ -51,13 +56,18 @@
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Delve the Depths" />
-        <div
-          class="box flexrow clickable block"
-          :class="{ disabled: !hasThemeAndDomain }"
-          @click="randomFeature"
-        >
-          <h4>{{ $t('IRONSWORN.Feature') }}</h4>
-        </div>
+        <!-- TODO: double check styling here -->
+        <h4>
+          <button
+            type="button"
+            class="box flexrow clickable block"
+            :class="{ disabled: !hasThemeAndDomain }"
+            @click="randomFeature"
+          >
+            {{ $t('IRONSWORN.Feature') }}
+          </button>
+        </h4>
+
         <site-movebox
           :actor="actor"
           move="Reveal a Danger"
@@ -66,11 +76,15 @@
       </div>
       <div class="flexrow boxrow">
         <site-movebox :actor="actor" move="Find an Opportunity" />
-        <div class="box flexrow clickable block" @click="locateObjective">
-          <h4>
+        <h4>
+          <button
+            type="button"
+            class="box flexrow block"
+            @click="locateObjective"
+          >
             {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
-          </h4>
-        </div>
+          </button>
+        </h4>
         <site-movebox :actor="actor" move="Escape the Depths" />
       </div>
     </div>
@@ -78,12 +92,13 @@
     <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
-      <i
-        class="flexrow nogrow clickable text isicon-d10-tilt"
+      <btn-isicon
+        icon="d10-tilt"
+        class="flexrow nogrow text"
         style="padding: 2px"
         @click="randomDenizen"
       />
-      <icon-button icon="atlas" @click="openFoeCompendium" />
+      <btn-compendium compendium="ironswornfoes" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
@@ -179,11 +194,6 @@ export default {
       const increment = CONFIG.IRONSWORN.RankIncrements[this.actor.data.rank]
       const newValue = Math.min(this.actor.data.current + increment, 40)
       this.$actor.update({ 'data.current': newValue })
-    },
-
-    openFoeCompendium() {
-      const pack = game.packs?.get(`foundry-ironsworn.ironswornfoes`)
-      pack?.render(true)
     },
 
     randomFeature() {

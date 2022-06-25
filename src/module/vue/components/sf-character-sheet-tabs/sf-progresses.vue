@@ -25,13 +25,17 @@
       <progress-controls :actor="actor" foeCompendium="starforgedencounters" />
     </div>
 
-    <div class="item-row nogrow" style="margin-top: 1rem">
-      <h3
-        class="clickable text"
-        :class="completedClass"
-        @click="expandCompleted = !expandCompleted"
-      >
-        <i :class="completedCaretClass"></i> {{ $t('IRONSWORN.Completed') }}
+    <div class="item-row nogrow progress-completed" style="margin-top: 1rem">
+      <!-- TODO: refactor this as a component in PR for collapsible/progressive disclosure element -->
+      <h3>
+        <btn-faicon
+          :disabled="completedItems.length === 0"
+          class="text collapse-control"
+          :class="completedClass"
+          :icon="completedCaret"
+          @click="expandCompleted = !expandCompleted"
+          >{{ $t('IRONSWORN.Completed') }}</btn-faicon
+        >
       </h3>
       <transition
         name="slide"
@@ -62,6 +66,23 @@
   </div>
 </template>
 
+<style lang="less">
+.progress-completed {
+  .collapse-control {
+    text-transform: uppercase;
+    height: inherit;
+    width: inherit;
+    flex-grow: 1;
+  }
+  h3 {
+    display: flex;
+  }
+  .highlighted {
+    background-color: lightyellow;
+  }
+}
+</style>
+
 <style lang="less" scoped>
 h3 {
   margin: 5px 0;
@@ -89,7 +110,6 @@ export default {
   props: {
     actor: Object,
   },
-
   data() {
     return {
       expandCompleted: false,
@@ -97,7 +117,6 @@ export default {
       highlightCompletedTimer: null,
     }
   },
-
   computed: {
     progressItems() {
       return this.actor.items
@@ -105,27 +124,22 @@ export default {
         .filter((x) => x.data.subtype !== 'bond')
         .sort((a, b) => (a.sort || 0) - (b.sort || 0))
     },
-
     activeItems() {
       return this.progressItems.filter((x) => !x.data.completed)
     },
     completedItems() {
       return this.progressItems.filter((x) => x.data.completed)
     },
-
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
-
-    completedCaretClass() {
-      return 'fa fa-caret-' + (this.expandCompleted ? 'down' : 'right')
+    completedCaret() {
+      return this.expandCompleted ? 'caret-down' : 'caret-right'
     },
-
     completedClass() {
       return this.highlightCompleted ? 'highlighted' : undefined
     },
   },
-
   methods: {
     progressCompleted() {
       this.highlightCompleted = true
@@ -134,14 +148,12 @@ export default {
         this.highlightCompleted = false
       }, 2000)
     },
-
     async applySort(oldI, newI, sortBefore, filterFn) {
       const foundryItems = this.$actor.items
         .filter((x) => x.type === 'progress')
         .filter((x) => x.data.data.subtype !== 'bond')
         .filter(filterFn)
         .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
-
       const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
         target: foundryItems[newI],
         siblings: foundryItems,
@@ -151,7 +163,6 @@ export default {
         updates.map(({ target, update }) => target.update(update))
       )
     },
-
     sortUp(i) {
       this.applySort(i, i - 1, true, (x) => !x.data.data.completed)
     },

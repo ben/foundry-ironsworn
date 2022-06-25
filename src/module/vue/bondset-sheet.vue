@@ -8,13 +8,18 @@
       >
         <div class="flexrow" style="margin-bottom: 5px">
           <input type="text" v-model="bond.name" @blur="save" />
-          <icon-button icon="trash" @click="deleteBond(i)" />
+          <btn-faicon class="block" icon="trash" @click="deleteBond(i)" />
         </div>
         <textarea v-model="bond.notes" @blur="save" />
       </div>
     </transition-group>
 
-    <icon-button icon="plus" @click="addBond" style="text-align: center" />
+    <btn-faicon
+      class="block"
+      icon="plus"
+      @click="addBond"
+      style="text-align: center"
+    />
   </div>
 </template>
 

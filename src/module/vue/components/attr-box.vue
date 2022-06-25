@@ -2,6 +2,7 @@
   <div :class="classes" @click="click">
     <h4>{{ $t(i18nKey) }}</h4>
     <div class="flexrow" style="position: relative">
+      <!-- TODO: migrate to new attr box component -->
       <div v-if="!editMode" class="bg-die">
         <i class="isicon-d10-tilt"></i>
       </div>

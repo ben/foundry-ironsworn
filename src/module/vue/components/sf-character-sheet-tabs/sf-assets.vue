@@ -13,10 +13,9 @@
       </div>
     </transition-group>
     <div class="flexrow nogrow" style="text-align: center">
-      <div class="clickable block" @click="openCompendium">
-        <i class="fas fa-atlas" />
-        {{ $t('IRONSWORN.Assets') }}
-      </div>
+      <btn-compendium class="block" compendium="starforgedassets">{{
+        $t('IRONSWORN.Assets')
+      }}</btn-compendium>
     </div>
   </div>
 </template>
@@ -28,29 +27,24 @@ export default {
   props: {
     actor: Object,
   },
-
   computed: {
     editMode() {
       return this.actor.flags['foundry-ironsworn']?.['edit-mode']
     },
-
     assets() {
       const assets = this.actor.items.filter((x) => x.type === 'asset')
       return sortBy(assets, (x) => x.sort)
     },
   },
-
   methods: {
     openCompendium() {
       const pack = game.packs?.get('foundry-ironsworn.starforgedassets')
       pack?.render(true)
     },
-
     async applySort(oldI, newI, sortBefore) {
       const foundryItems = this.$actor.items
         .filter((x) => x.type === 'asset')
         .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
-
       const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
         target: foundryItems[newI],
         siblings: foundryItems,
@@ -60,7 +54,6 @@ export default {
         updates.map(({ target, update }) => target.update(update))
       )
     },
-
     sortUp(i) {
       this.applySort(i, i - 1, true)
     },

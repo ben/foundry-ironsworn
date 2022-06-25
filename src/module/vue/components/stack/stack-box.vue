@@ -1,12 +1,13 @@
 <template>
-  <div
+  <button
+    type="button"
     @click="click"
     :class="classes"
     :data-resource="stat"
     :data-value="value"
   >
     {{ valueStr }}
-  </div>
+  </button>
 </template>
 
 <script>

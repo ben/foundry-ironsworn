@@ -11,10 +11,10 @@
     ]"
   >
     <span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
-    <icon-button
-      class="nogrow"
+    <btn-faicon
+      class="nogrow block"
       v-if="$listeners.delete"
-      icon="fa fa-trash"
+      icon="trash"
       @click="$emit('delete')"
     />
   </div>

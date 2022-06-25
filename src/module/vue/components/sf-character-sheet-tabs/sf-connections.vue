@@ -18,10 +18,9 @@
     </transition-group>
 
     <div class="flexrow nogrow" style="text-align: center">
-      <div class="clickable block" @click="newConnection">
-        <i class="fas fa-plus"></i>
+      <btn-faicon icon="plus" class="block" @click="newConnection">
         {{ $t('IRONSWORN.Connection') }}
-      </div>
+      </btn-faicon>
     </div>
   </div>
 </template>

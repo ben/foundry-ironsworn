@@ -1,11 +1,12 @@
 <template>
   <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
     <h4 class="flexrow" :title="tooltip">
-      <i
-        class="isicon-d10-tilt juicy clickable text nogrow"
-        style="padding-right: 0.5em"
-        @click="rollMove"
-      ></i>
+      <btn-rollmove
+        :disabled="!canRoll"
+        class="juicy text nogrow"
+        :actor="actor"
+        :move="move"
+      />
       <span class="clickable text" @click="expanded = !expanded">
         {{ move.displayName }}
       </span>
@@ -18,15 +19,18 @@
         v-if="expanded"
         @moveclick="moveclick"
       >
-        <div class="flexrow">
-          <button v-if="canRoll" @click="rollMove">
-            <i class="isicon-d10-tilt"></i>
+        <div class="move-summary-buttons flexrow">
+          <btn-rollmove
+            class="block"
+            v-if="canRoll"
+            :actor="actor"
+            :move="move"
+          >
             {{ $t('IRONSWORN.Roll') }}
-          </button>
-          <button @click="sendToChat">
-            <i class="far fa-comment"></i>
+          </btn-rollmove>
+          <btn-sendmovetochat class="block" :move="move">
             {{ $t('IRONSWORN.Chat') }}
-          </button>
+          </btn-sendmovetochat>
         </div>
         <div v-html="$enrichMarkdown(fulltext)" />
       </with-rolllisteners>
@@ -35,14 +39,27 @@
 </template>
 
 <style lang="less" scoped>
+.move-roll {
+  // &[aria-disabled='true'],
+  // &:disabled {
+  //   visibility: hidden;
+  // }
+}
 .move-summary {
   border-left: 2px solid;
   margin-left: 5px;
   padding-left: 1rem;
+  button.icon-button {
+    border: 1px solid;
+  }
 }
 h4 {
   margin: 0;
   line-height: 1.4em;
+  gap: 0.25rem;
+}
+.move-summary-buttons {
+  gap: 0.5rem;
 }
 .item-row {
   transition: all 0.4s ease;
@@ -60,31 +77,26 @@ export default {
     actor: Object,
     move: Object,
   },
-
   data() {
     return {
       expanded: false,
     }
   },
-
   computed: {
     tooltip() {
       const { Title, Page } = this.move.dataforgedMove?.Source ?? {}
       if (!Title) return undefined
       return `${Title} p${Page}`
     },
-
     fulltext() {
       return this.move.moveItem?.data?.data?.Text
     },
-
     canRoll() {
       return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(
         this.move.moveItem
       )
     },
   },
-
   watch: {
     'move.highlighted': async function (value) {
       if (value) {
@@ -94,24 +106,10 @@ export default {
       }
     },
   },
-
   methods: {
-    rollMove(e) {
-      e.preventDefault()
-      CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, this.move.moveItem)
-    },
-
-    sendToChat(e) {
-      e.preventDefault()
-      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(
-        this.move.moveItem
-      )
-    },
-
     moveclick(item) {
       this.$emit('moveclick', item)
     },
-
     collapse() {
       this.expanded = false
     },

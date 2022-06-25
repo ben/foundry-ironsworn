@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO: as radio set -->
   <div
     class="clickable block stack-row"
     :class="selectedClass"

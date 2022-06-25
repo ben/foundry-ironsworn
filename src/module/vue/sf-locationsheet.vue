@@ -57,8 +57,9 @@
             {{ opt.label }}
           </option>
         </select>
-        <div
-          class="clickable block nogrow"
+        <btn-isicon
+          icon="d10-tilt juicy"
+          class="block nogrow"
           style="
             padding: 0px 5px;
             position: absolute;
@@ -68,10 +69,8 @@
             top: 1px;
           "
           @click="randomizeKlass"
-          :title="randomKlassTooltip"
-        >
-          <i class="isicon-d10-tilt juicy" />
-        </div>
+          :tooltip="randomKlassTooltip"
+        />
       </label>
     </div>
 
@@ -83,9 +82,11 @@
             :document="actor"
             :class="{ highlighted: firstLookHighlight && canRandomizeName }"
           />
-          <div
+
+          <btn-isicon
             v-if="canRandomizeName"
-            class="clickable block nogrow"
+            icon="d10-tilt juicy"
+            class="block nogrow"
             style="
               position: absolute;
               padding: 0px 10px;
@@ -95,11 +96,9 @@
               height: 48px;
               border-radius: 0 3px 3px 0;
             "
-            :title="$t('IRONSWORN.RandomName')"
+            :tooltip="$t('IRONSWORN.RandomName')"
             @click="randomizeName"
-          >
-            <i class="isicon-d10-tilt juicy" />
-          </div>
+          />
         </div>
       </div>
     </header>
@@ -110,25 +109,25 @@
       v-if="oracles.length > 0"
     >
       <div class="boxrow">
-        <div
-          class="clickable block box"
+        <btn-isicon
+          icon="d10-tilt"
+          class="block box"
           @mouseenter="firstLookHighlight = true"
           @mouseleave="firstLookHighlight = false"
           @click="rollFirstLook"
         >
-          <i class="isicon-d10-tilt"></i> &nbsp;
           {{ $t('IRONSWORN.RollForDetails') }}
-        </div>
+        </btn-isicon>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
-        <div
+        <btn-icon
           v-for="oracle of row"
-          class="clickable block box"
+          class="block box"
           :class="{
             highlighted: oracle.fl && firstLookHighlight,
             disabled: oracle.requiresKlass && klassIsNotValid,
           }"
-          :title="
+          :tooltip="
             oracle.requiresKlass && klassIsNotValid
               ? $t('IRONSWORN.RequiresLocationType')
               : undefined
@@ -136,8 +135,11 @@
           :key="oracle.dfId"
           @click="rollOracle(oracle)"
         >
-          {{ oracle.title }} <span v-if="oracle.qty">({{ oracle.qty }})</span>
-        </div>
+          {{ oracle.title }}
+          <span v-if="oracle.qty" class="oracle-quantity"
+            >({{ oracle.qty }})</span
+          >
+        </btn-icon>
       </div>
     </section>
 

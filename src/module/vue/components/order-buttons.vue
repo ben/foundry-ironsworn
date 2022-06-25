@@ -1,23 +1,26 @@
 <template>
-  <div class="flexcol nogrow">
-    <i
-      class="clickable block fas fa-caret-up nogrow"
+  <div class="flexcol nogrow order-buttons">
+    <!-- TODO: replace with better disabled attr? either aria-disabled or disabled attr -->
+    <btn-faicon
+      icon="caret-up"
+      class="block nogrow"
       :class="{ disabled: i == 0 }"
       @click="$emit('sortUp', i)"
-    ></i>
-    <i
-      class="clickable block fas fa-caret-down nogrow"
+    ></btn-faicon>
+    <btn-faicon
+      icon="caret-down"
+      class="block nogrow"
       :class="{ disabled: i == length - 1 }"
       @click="$emit('sortDown', i)"
-    ></i>
+    ></btn-faicon>
   </div>
 </template>
 
 <style lang="less" scoped>
-div {
+.order-buttons {
   padding-right: 3px;
 
-  i {
+  .icon-button {
     padding: 2px;
   }
 }
