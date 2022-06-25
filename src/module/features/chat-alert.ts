@@ -18,7 +18,7 @@ import {
 
 type ActorTypeHandler = (IronswornActor, any) => string | undefined
 
-export function activateChangelogListeners() {
+export function registerChatAlertHooks() {
   Hooks.on(
     'preUpdateActor',
     async (actor: IronswornActor, data: any, options, _userId: number) => {

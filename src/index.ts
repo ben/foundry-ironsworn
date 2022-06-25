@@ -18,10 +18,10 @@ import { StarshipSheet } from './module/actor/sheets/starshipsheet'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { IronswornChatCard } from './module/chat/cards'
-import { activateChangelogListeners } from './module/features/changelog'
+import { registerChatAlertHooks } from './module/features/chat-alert'
 import { registerCompendiumCategoryHook } from './module/features/compendium-categories'
 import { maybePromptForDependencies } from './module/features/dependencies'
-import { activateDragDropListeners } from './module/features/dragdrop'
+import { registerDragAndDropHooks } from './module/features/drag-and-drop'
 import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
 import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
@@ -191,8 +191,8 @@ Hooks.once('ready', async () => {
 
   await maybePromptForDependencies()
 
-  activateDragDropListeners()
-  activateChangelogListeners()
+  registerDragAndDropHooks()
+  registerChatAlertHooks()
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   FirstStartDialog.maybeShow()

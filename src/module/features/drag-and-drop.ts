@@ -5,7 +5,7 @@ function getIndexEntry(el: HTMLElement) {
   return pack?.index.get(documentId || '')
 }
 
-export function activateDragDropListeners() {
+export function registerDragAndDropHooks() {
   Hooks.on('renderCompendium', (_app, html) => {
     html
       .find('.directory-item')
