@@ -19,7 +19,7 @@
         v-if="expanded"
         @moveclick="moveclick"
       >
-        <div class="flexrow">
+        <div class="move-summary-buttons flexrow">
           <btn-rollmove
             class="block"
             v-if="canRoll"
@@ -56,6 +56,10 @@
 h4 {
   margin: 0;
   line-height: 1.4em;
+  gap: 0.25rem;
+}
+.move-summary-buttons {
+  gap: 0.5rem;
 }
 .item-row {
   transition: all 0.4s ease;
