@@ -27,7 +27,7 @@ export function registerChatAlertHooks() {
 
       let content: string | undefined
       if (data.name) {
-        content = game.i18n.format('IRONSWORN.ChangeLog.Renamed', {
+        content = game.i18n.format('IRONSWORN.ChatAlert.Renamed', {
           name: data.name,
         })
       } else {
@@ -47,7 +47,7 @@ export function registerChatAlertHooks() {
 
       let content: string | undefined
       if (data.name) {
-        content = game.i18n.format('IRONSWORN.ChangeLog.renamed', {
+        content = game.i18n.format('IRONSWORN.ChatAlert.renamed', {
           name: data.name,
         })
       } else {
@@ -70,7 +70,7 @@ export function registerChatAlertHooks() {
 
       sendToChat(
         item.parent,
-        game.i18n.format('IRONSWORN.ChangeLog.Added', { name: item.name })
+        game.i18n.format('IRONSWORN.ChatAlert.Added', { name: item.name })
       )
     }
   )
@@ -84,7 +84,7 @@ export function registerChatAlertHooks() {
 
       sendToChat(
         item.parent,
-        game.i18n.format('IRONSWORN.ChangeLog.Deleted', { name: item.name })
+        game.i18n.format('IRONSWORN.ChatAlert.Deleted', { name: item.name })
       )
     }
   )
@@ -99,11 +99,11 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       const oldXp = characterData.data.xp
       const newXp = data.data.xp as number
       if (newXp > oldXp) {
-        return game.i18n.format('IRONSWORN.ChangeLog.MarkedXP', {
+        return game.i18n.format('IRONSWORN.ChatAlert.MarkedXP', {
           amt: newXp - oldXp,
         })
       } else {
-        return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedXP', {
+        return game.i18n.format('IRONSWORN.ChatAlert.UnmarkedXP', {
           amt: oldXp - newXp,
         })
       }
@@ -115,11 +115,11 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       const newXp = get(data.data, `legacies.${kind}XpSpent`)
       if (newXp !== undefined) {
         if (newXp > oldXp) {
-          return game.i18n.format('IRONSWORN.ChangeLog.MarkedXP', {
+          return game.i18n.format('IRONSWORN.ChatAlert.MarkedXP', {
             amt: newXp - oldXp,
           })
         } else {
-          return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedXP', {
+          return game.i18n.format('IRONSWORN.ChatAlert.UnmarkedXP', {
             amt: oldXp - newXp,
           })
         }
@@ -132,7 +132,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
         const oldValue = get(characterData.data, stat)
         const signPrefix = newValue > oldValue ? '+' : ''
         const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
-        return game.i18n.format('IRONSWORN.ChangeLog.AdjustedStat', {
+        return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
           amt: `${signPrefix}${newValue - oldValue}`,
           stat: i18nStat,
           val: newValue,
@@ -166,8 +166,8 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
         const params = { condition: i18nDebility }
         // TODO: use "impact" if this is an SF character
         if (newValue)
-          return game.i18n.format('IRONSWORN.ChangeLog.SetCondition', params)
-        return game.i18n.format('IRONSWORN.ChangeLog.ClearedCondition', params)
+          return game.i18n.format('IRONSWORN.ChatAlert.SetCondition', params)
+        return game.i18n.format('IRONSWORN.ChatAlert.ClearedCondition', params)
       }
     }
 
@@ -182,7 +182,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       const oldValue = sharedData.data.supply
       const signPrefix = newValue > oldValue ? '+' : ''
       const i18nStat = game.i18n.localize('IRONSWORN.Supply')
-      return game.i18n.format('IRONSWORN.ChangeLog.AdjustedStat', {
+      return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
         amt: `${signPrefix}${newValue - oldValue}`,
         stat: i18nStat,
         val: newValue,
@@ -206,8 +206,8 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
         const params = { condition: i18nDebility }
         // TODO: use "impact" if this is an SF character
         if (newValue)
-          return game.i18n.format('IRONSWORN.ChangeLog.SetCondition', params)
-        return game.i18n.format('IRONSWORN.ChangeLog.ClearedCondition', params)
+          return game.i18n.format('IRONSWORN.ChatAlert.SetCondition', params)
+        return game.i18n.format('IRONSWORN.ChatAlert.ClearedCondition', params)
       }
     }
 
@@ -220,7 +220,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
     if (data.data?.rank) {
       const oldRank = game.i18n.localize(RANKS[siteData.data.rank])
       const newRank = game.i18n.localize(RANKS[data.data.rank])
-      return game.i18n.format('IRONSWORN.ChangeLog.RankChanged', {
+      return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
         old: oldRank,
         new: newRank,
       })
@@ -228,7 +228,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
     if (data.data?.current !== undefined) {
       const advanced = data.data.current > siteData.data.current
       return game.i18n.localize(
-        `IRONSWORN.ChangeLog.Progress${advanced ? 'Advanced' : 'Reduced'}`
+        `IRONSWORN.ChatAlert.Progress${advanced ? 'Advanced' : 'Reduced'}`
       )
     }
     return undefined
@@ -242,7 +242,7 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
     if (data.data?.rank) {
       const oldRank = game.i18n.localize(RANKS[progressData.data.rank])
       const newRank = game.i18n.localize(RANKS[data.data.rank])
-      return game.i18n.format('IRONSWORN.ChangeLog.rankChanged', {
+      return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
         old: oldRank,
         new: newRank,
       })
@@ -250,12 +250,12 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
     if (data.data?.current !== undefined) {
       const advanced = data.data.current > progressData.data.current
       return game.i18n.localize(
-        `IRONSWORN.ChangeLog.progress${advanced ? 'Advanced' : 'Reduced'}`
+        `IRONSWORN.ChatAlert.progress${advanced ? 'Advanced' : 'Reduced'}`
       )
     }
     if (data.data?.completed !== undefined) {
       return game.i18n.localize(
-        `IRONSWORN.ChangeLog.completed${
+        `IRONSWORN.ChatAlert.completed${
           data.data?.completed ? 'Marked' : 'Unmarked'
         }`
       )
@@ -274,10 +274,10 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
           const descriptors = ['First', 'Second', 'Third', 'Fourth', 'Fifth']
           const pos = game.i18n.localize(`IRONSWORN.${descriptors[i]}`)
           if (newEnables[i])
-            return game.i18n.format('IRONSWORN.ChangeLog.MarkedAbility', {
+            return game.i18n.format('IRONSWORN.ChatAlert.MarkedAbility', {
               pos,
             })
-          return game.i18n.format('IRONSWORN.ChangeLog.UnmarkedAbility', {
+          return game.i18n.format('IRONSWORN.ChatAlert.UnmarkedAbility', {
             pos,
           })
         }
@@ -288,7 +288,7 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const newValue = data.data.track.current
       const oldValue = assetData.data.track.current
       const signPrefix = newValue > oldValue ? '+' : ''
-      return game.i18n.format('IRONSWORN.ChangeLog.AdjustedStat', {
+      return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
         amt: `${signPrefix}${newValue - oldValue}`,
         stat: assetData.data.track.name,
         val: newValue,
@@ -297,7 +297,7 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
 
     if (data.data?.exclusiveOptions !== undefined) {
       const selectedOption = data.data.exclusiveOptions.find((x) => x.selected)
-      return game.i18n.format('IRONSWORN.ChangeLog.MarkedOption', {
+      return game.i18n.format('IRONSWORN.ChatAlert.MarkedOption', {
         name: selectedOption.name,
       })
     }
@@ -307,7 +307,7 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         const newField = data.data.fields[i]
         const oldField = assetData.data.fields[i]
         if (oldField && oldField?.value !== newField.value) {
-          return game.i18n.format('IRONSWORN.ChangeLog.SetField', {
+          return game.i18n.format('IRONSWORN.ChatAlert.SetField', {
             name: newField.name,
             val: newField.value,
           })
@@ -323,9 +323,9 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const oldLen = Object.values(bondsetData.data.bonds).length
       const newLen = Object.values(data.data.bonds).length
       if (oldLen < newLen) {
-        return game.i18n.localize('IRONSWORN.ChangeLog.AddBond')
+        return game.i18n.localize('IRONSWORN.ChatAlert.AddBond')
       } else if (newLen < oldLen) {
-        return game.i18n.localize('IRONSWORN.ChangeLog.LostBond')
+        return game.i18n.localize('IRONSWORN.ChatAlert.LostBond')
       }
     }
 

@@ -188,7 +188,7 @@
     "Expanse": "Expanse",
     "RotateCCW": "Rotate counter-clockwise",
     "RotateCW": "Rotate clockwise",
-    "ChangeLog": {
+    "ChatAlert": {
       "Renamed": "Renamed to {name}",
       "renamed": "renamed to {name}",
       "Added": "Added {name}",
