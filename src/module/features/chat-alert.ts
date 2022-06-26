@@ -273,7 +273,9 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         }
       }
       if (change > 1) {
-        i18nKey += 'Multiple'
+        i18nKey += 'MultipleSegments'
+      } else if (change === 1) {
+        i18nKey += 'OneSegment'
       }
       return game.i18n.format(i18nKey, {
         change,

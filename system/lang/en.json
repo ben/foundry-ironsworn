@@ -212,10 +212,10 @@
       "LostBond": "Lost a bond",
       "completedMarked": "marked completed",
       "completedUnmarked": "unmarked completed",
-      "clockAdvanced": "clock advanced to {new}⁄{max}",
-      "clockFilled": "clock advanced to {new}⁄{max}—clock filled!",
-      "clockAdvancedMultiple": "clock advanced by {change} to {new}⁄{max}",
-      "clockFilledMultiple": "clock advanced by {change} to {new}⁄{max}—clock filled!",
+      "clockAdvancedOneSegment": "clock advanced to {new}⁄{max}",
+      "clockFilledOneSegment": "clock advanced to {new}⁄{max}—clock filled!",
+      "clockAdvancedMultipleSegments": "clock advanced by {change} segments to {new}⁄{max}",
+      "clockFilledMultipleSegments": "clock advanced by {change} segments to {new}⁄{max}—clock filled!",
       "clockSet": "clock set to {new}⁄{max}"
     },
     "Settings": {
