@@ -208,7 +208,8 @@
       z-index: 1;
       padding: 0;
       &:hover,
-      &.selected {
+      &.selected,
+      &[aria-selected='true'] {
         z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
       }
       &:first-child {
@@ -403,23 +404,6 @@
     input {
       width: 100px;
       height: 28px;
-    }
-  }
-
-  /* Sheet Tabs */
-  .tabs {
-    height: 40px;
-    border-top: 1px solid;
-    border-bottom: 1px solid;
-
-    .item {
-      line-height: 40px;
-      font-weight: bold;
-    }
-
-    .item.active {
-      text-decoration: underline;
-      text-shadow: none;
     }
   }
 

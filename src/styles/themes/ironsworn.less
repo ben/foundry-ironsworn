@@ -67,7 +67,8 @@
     border-color: @medium-color;
   }
 
-  .tabs {
+  [role^='tablist'],
+  [role*=' tablist'] {
     border-color: @medium-color;
   }
 
@@ -110,12 +111,25 @@
   }
 
   .clickable {
+    &.disabled,
+    &:disabled,
+    &[aria-disabled='true'] {
+      color: @dark-color;
+    }
+
+    &.selected,
+    &[aria-selected='true'] {
+      color: white;
+      background-color: black;
+      border-color: black;
+    }
+
     &.hover,
     &:hover {
       &.block {
         background: @light-color;
       }
-      &.text {
+      &.text:not(.block) {
         color: @light-color;
       }
       svg,
@@ -127,7 +141,7 @@
       &.block {
         background: @medium-color;
       }
-      &.text {
+      &.text:not(.block) {
         color: @medium-color;
       }
       svg,
@@ -136,7 +150,8 @@
       }
     }
 
-    &.selected {
+    &.selected,
+    &[aria-selected='true'] {
       &.block,
       &.text {
         color: white;
@@ -173,13 +188,16 @@
     }
   }
 
-  table tr.selected {
-    background-color: @text-color;
-    color: @light-color;
+  table tr {
+    &.selected,
+    &[aria-selected='true'] {
+      background-color: @text-color;
+      color: @light-color;
 
-    .entity-link,
-    .content-link {
-      color: @text-color;
+      .entity-link,
+      .content-link {
+        color: @text-color;
+      }
     }
   }
 }

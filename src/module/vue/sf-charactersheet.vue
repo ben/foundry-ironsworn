@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol sf-character-sheet">
     <!-- Header row -->
     <sf-characterheader :actor="actor" />
 
@@ -43,25 +43,15 @@
           <attr-box :actor="actor" attr="wits"></attr-box>
         </div>
 
-        <!-- Tabs -->
-        <div class="flexrow nogrow tablist">
-          <div
-            class="tab"
-            v-for="tab in tabs"
-            :key="tab.titleKey"
-            :class="['clickable', 'block', { selected: currentTab === tab }]"
-            @click="currentTab = tab"
-          >
-            {{ $t(tab.titleKey) }}
-          </div>
-        </div>
-        <keep-alive>
-          <component
-            :is="currentTab.component"
-            :actor="actor"
-            style="margin: 0.5rem"
-          />
-        </keep-alive>
+        <tabbed-panels
+          aria-orientation="horizontal"
+          class="character-sheet-tabs"
+          name="character-sheet-tabs"
+          wrapperElement="section"
+          :actor="actor"
+          :tabs="tabs"
+        >
+        </tabbed-panels>
       </div>
 
       <!-- Stats on right -->
@@ -108,18 +98,18 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.stat-roll {
-  text-transform: uppercase;
-}
-.tablist {
-  border-bottom: 1px solid grey;
-}
-.tab {
-  text-align: center;
-  padding: 5px;
-  &.active {
-    background-color: darkgray;
+<style lang="less">
+.sf-character-sheet {
+  .stat-roll {
+    text-transform: uppercase;
+  }
+  .tabbed-panels.character-sheet-tabs {
+    [role^='tablist'],
+    [role*=' tablist'] {
+      &[aria-orientation='horizontal'] {
+        border-block-start: 0;
+      }
+    }
   }
 }
 </style>

@@ -5,25 +5,13 @@
       <document-name :document="actor" />
     </header>
 
-    <section class="flexrow nogrow tablist">
-      <div
-        class="tab"
-        v-for="tab in tabs"
-        :key="tab.titleKey"
-        :class="['clickable', 'block', { selected: currentTab === tab }]"
-        @click="currentTab = tab"
-      >
-        {{ $t(tab.titleKey) }}
-      </div>
-    </section>
-
-    <keep-alive>
-      <component
-        :is="currentTab.component"
-        :actor="actor"
-        style="margin: 0.5rem"
-      />
-    </keep-alive>
+    <tabbed-panels
+      :actor="actor"
+      :tabs="tabs"
+      name="starship-sheet-tabs"
+      ariaOrientation="horizontal"
+    >
+    </tabbed-panels>
 
     <hr class="nogrow" />
 

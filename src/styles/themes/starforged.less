@@ -126,7 +126,8 @@ input.highlight:focus {
       }
     }
 
-    &.selected {
+    &.selected,
+    &[aria-selected='true'] {
       &.block,
       &.text {
         color: @text-light-color;
@@ -213,13 +214,16 @@ input.highlight:focus {
     }
   }
 
-  table tr.selected {
-    background-color: @medium-color;
-    color: @text-light-color;
+  table tr {
+    &.selected,
+    &[aria-selected='true'] {
+      background-color: @medium-color;
+      color: @text-light-color;
 
-    .entity-link,
-    .content-link {
-      color: @text-dark-color;
+      .entity-link,
+      .content-link {
+        color: @text-dark-color;
+      }
     }
   }
 }
