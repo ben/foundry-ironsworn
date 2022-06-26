@@ -47,7 +47,6 @@
     font-weight: bold;
     &.active,
     &[aria-selected='true'] {
-      text-decoration: underline;
       text-shadow: none;
     }
   }
