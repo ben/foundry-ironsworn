@@ -61,7 +61,6 @@
     height: max-content;
 
     &[aria-orientation='horizontal'] {
-      border-block-start: 1px solid;
       border-block-end: 1px solid;
     }
     &[aria-orientation='vertical'] {
