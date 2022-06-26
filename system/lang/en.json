@@ -211,7 +211,13 @@
       "AddBond": "Added a bond",
       "LostBond": "Lost a bond",
       "completedMarked": "marked completed",
-      "completedUnmarked": "unmarked completed"
+      "completedUnmarked": "unmarked completed",
+      "clockAdvanced": "clock advanced from {old} to {new} of {max}",
+      "clockSet": "clock set to {new} of {max}",
+      "clockFilled": "clock filled ({max} segments)",
+      "ClockAdvanced": "Clock advanced from {old} to {new} of {max}",
+      "ClockSet": "Clock set to {new} of {max}",
+      "ClockFilled": "Clock filled ({max} segments)"
     },
     "Settings": {
       "Theme": {
