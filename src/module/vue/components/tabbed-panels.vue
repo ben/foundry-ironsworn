@@ -44,7 +44,6 @@
     height: 100%;
     overflow-y: auto;
     padding: 5px;
-    font-weight: bold;
     &.active,
     &[aria-selected='true'] {
       text-shadow: none;
