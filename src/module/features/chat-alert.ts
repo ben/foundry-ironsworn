@@ -253,6 +253,35 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         `IRONSWORN.ChatAlert.progress${advanced ? 'Advanced' : 'Reduced'}`
       )
     }
+    if (data.data?.clockTicks !== undefined) {
+      const change = data.data.clockTicks - progressData.data.clockTicks
+      const advanced = data.data.clockTicks > progressData.data.clockTicks
+      const filled = data.data.clockTicks >= progressData.data.clockMax
+      let i18nKey = 'IRONSWORN.ChatAlert.clock'
+      switch (true) {
+        case filled: {
+          i18nKey += 'Filled'
+          break
+        }
+        case advanced: {
+          i18nKey += 'Advanced'
+          break
+        }
+        default: {
+          i18nKey += 'Set'
+          break
+        }
+      }
+      if (change > 1) {
+        i18nKey += 'Multiple'
+      }
+      return game.i18n.format(i18nKey, {
+        change,
+        max: progressData.data.clockMax,
+        old: progressData.data.clockTicks,
+        new: data.data.clockTicks,
+      })
+    }
     if (data.data?.completed !== undefined) {
       return game.i18n.localize(
         `IRONSWORN.ChatAlert.completed${
