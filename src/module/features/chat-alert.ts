@@ -256,11 +256,11 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
     if (data.data?.clockTicks !== undefined) {
       const change = data.data.clockTicks - progressData.data.clockTicks
       const advanced = data.data.clockTicks > progressData.data.clockTicks
-      const filled = data.data.clockTicks >= progressData.data.clockMax
+      const completed = data.data.clockTicks >= progressData.data.clockMax
       let i18nKey = 'IRONSWORN.ChatAlert.clock'
       switch (true) {
-        case filled: {
-          i18nKey += 'Filled'
+        case completed: {
+          i18nKey += 'Completed'
           break
         }
         case advanced: {
