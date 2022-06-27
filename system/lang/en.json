@@ -215,9 +215,9 @@
       "clockAdvancedOneSegment": "clock advanced to {new}⁄{max}",
       "clockAdvancedTwoSegments": "clock advanced by {change} segments to {new}⁄{max}",
       "clockAdvancedManySegments": "clock advanced by {change} segments to {new}⁄{max}",
-      "clockFilledOneSegment": "clock advanced to {new}⁄{max}—clock filled!",
-      "clockFilledTwoSegments": "clock advanced by {change} segments to {new}⁄{max}—clock filled!",
-      "clockFilledManySegments": "clock advanced by {change} segments to {new}⁄{max}—clock filled!",
+      "clockCompletedOneSegment": "clock advanced to {new}⁄{max}—clock completed!",
+      "clockCompletedTwoSegments": "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
+      "clockCompletedManySegments": "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
       "clockSet": "clock set to {new}⁄{max}"
     },
     "Settings": {
