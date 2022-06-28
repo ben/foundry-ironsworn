@@ -114,7 +114,7 @@
     "Third": "troisième",
     "Fourth": "quatrième",
     "Fifth": "cinquième",
-    "ChangeLog": {
+    "ChatAlert": {
       "Renamed": "Renommé {name}",
       "renamed": "renommé {name}",
       "Added": "{name} ajouté",

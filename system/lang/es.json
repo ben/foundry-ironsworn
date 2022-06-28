@@ -152,7 +152,7 @@
     "Expanse": "Expanse",
     "RotateCCW": "Rotate counter-clockwise",
     "RotateCW": "Rotate clockwise",
-    "ChangeLog": {
+    "ChatAlert": {
       "Renamed": "Renombrado a {name}",
       "renamed": "renombrado a {name}",
       "Added": "{name} añadido",

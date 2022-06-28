@@ -188,7 +188,7 @@
     "Expanse": "Expanse",
     "RotateCCW": "Rotate counter-clockwise",
     "RotateCW": "Rotate clockwise",
-    "ChangeLog": {
+    "ChatAlert": {
       "Renamed": "Renamed to {name}",
       "renamed": "renamed to {name}",
       "Added": "Added {name}",
@@ -211,7 +211,14 @@
       "AddBond": "Added a bond",
       "LostBond": "Lost a bond",
       "completedMarked": "marked completed",
-      "completedUnmarked": "unmarked completed"
+      "completedUnmarked": "unmarked completed",
+      "clockAdvancedOneSegment": "clock advanced to {new}⁄{max}",
+      "clockAdvancedTwoSegments": "clock advanced by {change} segments to {new}⁄{max}",
+      "clockAdvancedManySegments": "clock advanced by {change} segments to {new}⁄{max}",
+      "clockCompletedOneSegment": "clock advanced to {new}⁄{max}—clock completed!",
+      "clockCompletedTwoSegments": "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
+      "clockCompletedManySegments": "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
+      "clockSet": "clock set to {new}⁄{max}"
     },
     "Settings": {
       "Theme": {
