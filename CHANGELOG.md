@@ -1,10 +1,17 @@
 # Changelog
 
 ## In progress
-
 - Code reorganization and format normalization
-- Update to the right version of the Foundry types
-- Fix the dev server for fewer errors, and so that HMR works
+
+## Next release
+- Code reorganization and format normalization for some components: 
+  * buttons ([#390](https://github.com/ben/foundry-ironsworn/pull/390))
+  * tabs ([#396](https://github.com/ben/foundry-ironsworn/pull/396))
+- Update Foundry typings to v9, and update other dependencies ([#392](https://github.com/ben/foundry-ironsworn/pull/392))
+- Fix the dev server for fewer errors, and so that HMR works ([#394](https://github.com/ben/foundry-ironsworn/pull/394))
+- Fix compilation segfaults with certain Foundry types ([#397](https://github.com/ben/foundry-ironsworn/pull/397))
+- Rename the chat messages that fire on certain events from "ChangeLog" to "ChatAlert" to disambiguate them ([b1b6af](https://github.com/ben/foundry-ironsworn/commit/b1b6af0f1f56fe6bd72106a3d8f498c5f8493a23), [#404](https://github.com/ben/foundry-ironsworn/pull/404))
+- Add ChatAlerts for advancing and completing Starforged Clocks ([#404](https://github.com/ben/foundry-ironsworn/pull/404))
 
 ## 1.15.14
 
