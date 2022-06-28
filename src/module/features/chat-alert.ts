@@ -273,7 +273,7 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         }
       }
       if (change > 2) {
-        i18nKey += 'MultipleSegments'
+        i18nKey += 'ManySegments'
       } else if (change === 2) {
         i18nKey += 'TwoSegments'
       } else if (change === 1) {
