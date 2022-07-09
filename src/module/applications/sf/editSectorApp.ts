@@ -1,12 +1,9 @@
 import { VueApplication } from '../vueapp'
+import editSectorVue from '../../vue/edit-sector.vue'
 
 export class EditSectorDialog extends VueApplication {
   constructor(protected sceneId: string) {
     super({})
-  }
-
-  async getVueData(): Promise<object> {
-    return {}
   }
 
   static get defaultOptions(): ApplicationOptions {
@@ -22,12 +19,11 @@ export class EditSectorDialog extends VueApplication {
     })
   }
 
-  getData(options) {
-    const data: any = super.getData(options)
+  async getVueData(): Promise<object> {
+    return { sceneId: this.sceneId }
+  }
 
-    data.sceneId = this.sceneId
-    console.log({ data })
-
-    return data
+  getComponents(): { [k: string]: any } {
+    return { 'edit-sector': editSectorVue }
   }
 }
