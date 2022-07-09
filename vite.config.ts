@@ -19,6 +19,7 @@ const config: UserConfig = {
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: true,
+    reportCompressedSize: true,
     lib: {
       name: 'ironsworn',
       entry: 'src/index.ts',
