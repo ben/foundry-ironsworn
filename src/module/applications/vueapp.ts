@@ -1,13 +1,15 @@
-import Vue from 'vue'
+import { App, ComponentPublicInstance, createApp } from 'vue'
 import { IronswornSettings } from '../helpers/settings'
 
-export class VueApplication extends Application {
-  _vm: (Vue & Record<string, any>) | null
+export abstract class VueApplication extends Application {
+  vueApp: App | undefined
+  vueRoot: ComponentPublicInstance | undefined
 
   /** @override */
   constructor(options) {
     super(options)
-    this._vm = null
+    this.vueApp = undefined
+    this.vueRoot = undefined
   }
 
   static get defaultOptions(): ApplicationOptions {
@@ -21,45 +23,77 @@ export class VueApplication extends Application {
     })
   }
 
-  async render(force?: boolean, inputOptions?: Application.RenderOptions) {
-    const options: Application.RenderOptions = inputOptions ?? {}
-    const appData = (await this.getData()) as any
-
-    // Exit if Vue has already rendered.
-    if (this._vm) {
-      const states = Application.RENDER_STATES
-      if (this._state == states.RENDERING || this._state == states.RENDERED) {
-        // Update the Vue app with our updated item/flag data.
-        this.activateVueListeners($(this.element), true)
-        return this
-      }
-      // TODO: Is destroying the app necessary?
-      // else {
-      //   this._vm.$destroy();
-      //   this._vm = null;
-      // }
+  async getData(_options?: Partial<ApplicationOptions>): Promise<object> {
+    console.log(await this.getVueData())
+    return {
+      context: {
+        options: this.options,
+        themeClass: `theme-${IronswornSettings.theme}`,
+        config: CONFIG.IRONSWORN,
+      },
+      ...(await this.getVueData()),
     }
-    // Run the normal Foundry render once.
-    this._render(force, options)
-      .catch((err) => {
-        err.message = `An error occurred while rendering ${this.constructor.name} ${this.appId}: ${err.message}`
-        console.error(err)
-        this._state = Application.RENDER_STATES.ERROR
-      })
-      // Run Vue's render, assign it to our prop for tracking.
-      .then((_rendered) => {
-        // Prepare the item data.
-        const el = this.element.find('.ironsworn-vueport')
-        // Render Vue and assign it to prevent later rendering.
-        VuePort.render(null, el[0], { data: appData }).then((vm) => {
-          this._vm = vm
-          const html = $(this.element)
-          this.activateVueListeners(html)
-        })
-      })
+  }
 
-    // Return per the overridden method.
+  abstract getVueData(): Promise<object>
+
+  async render(force?: boolean, inputOptions?: Application.RenderOptions) {
+    const context = await this.getData()
+    console.log(context)
+
+    if (this.vueApp) {
+      // Pass new values into the app
+      ;(this.vueRoot as any).updateContext(context)
+      return
+    }
+
+    console.log(this.getComponents())
+
+    // Render the Vue app
+    this.vueApp = createApp({
+      data() {
+        return { context }
+      },
+
+      components: this.getComponents(),
+
+      methods: {
+        updateContext(newCtx) {
+          for (const k of Object.keys(this.context)) {
+            this.context[k] = newCtx[k]
+          }
+        },
+      },
+    })
+
+    try {
+      // Execute Foundry's render.
+      await this._render(force, inputOptions)
+      // Run Vue's render, assign it to our prop for tracking.
+      this.vueRoot = this.vueApp.mount(`[data-appid="${this.appId}"] .vueroot`)
+      console.log(this.vueRoot)
+      this.activateVueListeners($(this.element), false)
+    } catch (err: any) {
+      this._state = Application.RENDER_STATES.ERROR
+      Hooks.onError('Application#render', err, {
+        msg: `An error occurred while rendering ${this.constructor.name} ${this.appId}`,
+        log: 'error',
+        ...inputOptions,
+      })
+      console.error(
+        `An error occurred while rendering ${this.constructor.name} ${this.appId}: ${err.message}`,
+        err
+      )
+    }
+
     return this
+  }
+
+  /**
+   * Implement to provide root component
+   */
+  getComponents(): { [k: string]: any } {
+    return {}
   }
 
   /**
@@ -67,6 +101,8 @@ export class VueApplication extends Application {
    * @param {jQuery} html
    */
   activateVueListeners(html: JQuery, repeat = false) {
+    this._dragHandler(html)
+
     // Place one-time executions after this line.
     if (repeat) return
 
@@ -77,10 +113,18 @@ export class VueApplication extends Application {
 
   _onFocus(event) {
     const target = event.currentTarget
-    setTimeout(function () {
+    setTimeout(() => {
       if (target == document.activeElement) {
         $(target).trigger('select')
       }
     }, 100)
+  }
+
+  _dragHandler(html) {
+    const dragHandler = (event) => this._onDragStart(event)
+    html.find('.item[data-draggable="true"]').each((i, li) => {
+      li.setAttribute('draggable', true)
+      li.addEventListener('dragstart', dragHandler, false)
+    })
   }
 }

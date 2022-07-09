@@ -5,6 +5,10 @@ export class SFSettingTruthsDialogVue extends VueApplication {
     super({})
   }
 
+  async getVueData(): Promise<object> {
+    return {}
+  }
+
   static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
@@ -29,13 +33,13 @@ export class SFSettingTruthsDialogVue extends VueApplication {
 
   activateVueListeners(html: JQuery<HTMLElement>, repeat?: boolean): void {
     super.activateVueListeners(html, repeat)
-    this._vm?.$on('submit', async (content) => {
-      const journal = await JournalEntry.create({
-        name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
-        content,
-      })
-      journal?.sheet?.render(true)
-      this.close()
-    })
+    // this.vueRoot.$on('submit', async (content) => {
+    //   const journal = await JournalEntry.create({
+    //     name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
+    //     content,
+    //   })
+    //   journal?.sheet?.render(true)
+    //   this.close()
+    // })
   }
 }

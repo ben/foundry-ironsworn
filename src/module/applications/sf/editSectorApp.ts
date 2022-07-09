@@ -5,6 +5,10 @@ export class EditSectorDialog extends VueApplication {
     super({})
   }
 
+  async getVueData(): Promise<object> {
+    return {}
+  }
+
   static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.Sector'),

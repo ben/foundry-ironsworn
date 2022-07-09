@@ -3,9 +3,15 @@ import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
 import { IronswornActor } from '../actor'
 
+import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
+
 export class SFCharacterMoveSheet extends VueApplication {
   constructor(protected actor: IronswornActor) {
     super({})
+  }
+
+  getComponents(): { [k: string]: any } {
+    return { 'sfcharacter-movesheet': CharacterMoveSheet }
   }
 
   static get defaultOptions() {
@@ -29,20 +35,17 @@ export class SFCharacterMoveSheet extends VueApplication {
     return `${game.i18n.localize('IRONSWORN.Moves')} — ${this.actor.name}`
   }
 
-  async getData() {
-    const data: any = super.getData()
-    data.actor = this.actor.toObject(false)
-    data.data = this.actor.data
-    return data
+  async getVueData(): Promise<object> {
+    return { actor: this.actor.toObject(false) }
   }
 
   async highlightMove(move: IronswornItem) {
     this.maximize()
-    return this._vm?.$refs.child?.['highlightMove']?.(move)
+    return (this.vueRoot?.$refs.child as any)?.['highlightMove']?.(move)
   }
 
   async highlightOracle(oracleId: string) {
     this.maximize()
-    return this._vm?.$refs.child?.['highlightOracle']?.(oracleId)
+    return (this.vueRoot?.$refs.child as any)?.['highlightOracle']?.(oracleId)
   }
 }
