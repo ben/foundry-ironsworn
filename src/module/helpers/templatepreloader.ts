@@ -1,4 +1,4 @@
-import '../../../system/templates/**/*.hbs'
+// import '../../../system/templates/**/*.hbs'
 
 export class TemplatePreloader {
   /**

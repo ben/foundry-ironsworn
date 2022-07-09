@@ -1,9 +1,9 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from './item'
 
 export class IronswornVueItemSheet extends ItemSheet {
-  _vm: (Vue & Record<string, any>) | null
+  _vm: Record<string, any> | null
 
   /** @override */
   constructor(object: IronswornItem, opts?: any) {

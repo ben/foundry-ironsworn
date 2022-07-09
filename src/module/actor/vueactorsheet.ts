@@ -1,7 +1,7 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 
 export class IronswornVueActorSheet extends ActorSheet {
-  _vm: (Vue & Record<string, any>) | null
+  _vm: Record<string, any> | null
 
   /** @override */
   constructor(opts?: any, data?: any) {
