@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "CSS compiler for the Ironsworn system",
   "scripts": {
-    "build": "webpack",
-    "build:production": "webpack --env mode=production",
-    "start": "webpack serve",
+    "build": "vite build",
+    "build:production": "vite build --minify",
+    "start": "vite",
     "bump": "node script/bump-version.js",
     "bump:patch": "node script/bump-version.js patch",
     "bump:minor": "node script/bump-version.js minor",
