@@ -1,5 +1,6 @@
 import { App, ComponentPublicInstance, createApp } from 'vue'
 import { IronswornSettings } from '../helpers/settings'
+import IronswornPlugin from '../vue/vue-plugin'
 
 export abstract class VueApplication extends Application {
   vueApp: App | undefined
@@ -65,6 +66,7 @@ export abstract class VueApplication extends Application {
         },
       },
     })
+    this.vueApp.use(IronswornPlugin)
 
     try {
       // Execute Foundry's render.
