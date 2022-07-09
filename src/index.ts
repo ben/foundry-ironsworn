@@ -189,7 +189,7 @@ Hooks.once('init', async () => {
 Hooks.once('ready', async () => {
   await runDataMigrations()
 
-  await maybePromptForDependencies()
+  // await maybePromptForDependencies()
 
   registerDragAndDropHooks()
   registerChatAlertHooks()
@@ -249,22 +249,22 @@ Hooks.once('setup', () => {
 /* -------------------------------- */
 /*	Webpack HMR                     */
 /* -------------------------------- */
-if (module.hot) {
-  module.hot.accept()
+// if (module.hot) {
+//   module.hot.accept()
 
-  if (module.hot.status() === 'apply') {
-    for (const template in _templateCache) {
-      if (Object.prototype.hasOwnProperty.call(_templateCache, template)) {
-        delete _templateCache[template]
-      }
-    }
+//   if (module.hot.status() === 'apply') {
+//     for (const template in _templateCache) {
+//       if (Object.prototype.hasOwnProperty.call(_templateCache, template)) {
+//         delete _templateCache[template]
+//       }
+//     }
 
-    TemplatePreloader.preloadHandlebarsTemplates().then(() => {
-      for (const application in ui.windows) {
-        if (Object.prototype.hasOwnProperty.call(ui.windows, application)) {
-          ui.windows[application].render(true)
-        }
-      }
-    })
-  }
-}
+//     TemplatePreloader.preloadHandlebarsTemplates().then(() => {
+//       for (const application in ui.windows) {
+//         if (Object.prototype.hasOwnProperty.call(ui.windows, application)) {
+//           ui.windows[application].render(true)
+//         }
+//       }
+//     })
+//   }
+// }

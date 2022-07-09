@@ -8,5 +8,5 @@ export function themeSetup() {
       '/systems/foundry-ironsworn/styles/starforged-tinymce.css'
   }
 
-  require(`../../styles/themes/${currentTheme}.less`)
+  // require(`../../styles/themes/${currentTheme}.less`)
 }
