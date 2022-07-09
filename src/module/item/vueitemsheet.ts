@@ -37,54 +37,54 @@ export class IronswornVueItemSheet extends ItemSheet {
   /* ------------------------------------------------------------------------ */
 
   /** @override */
-  render(force = false, options: any = {}) {
-    // Grab the sheetdata for both updates and new apps.
-    const sheetData = this.getData() as any
-    // Exit if Vue has already rendered.
-    if (this._vm) {
-      const states = Application.RENDER_STATES
-      if (this._state == states.RENDERING || this._state == states.RENDERED) {
-        // Update the Vue app with our updated item/flag data.
-        if (sheetData?.item) Vue.set(this._vm, 'item', sheetData.item)
-        if (sheetData?.data) Vue.set(this._vm.item, 'data', sheetData.data)
-        if (sheetData?.item?.flags)
-          Vue.set(this._vm.item, 'flags', sheetData.item.flags)
-        this._updateEditors($(this.element))
-        this.activateVueListeners($(this.element), true)
-        return this
-      }
-      // TODO: Is destroying the app necessary?
-      // else {
-      //   this._vm.$destroy();
-      //   this._vm = null;
-      // }
-    }
-    // Run the normal Foundry render once.
-    this._render(force, options)
-      .catch((err) => {
-        err.message = `An error occurred while rendering ${this.constructor.name} ${this.appId}: ${err.message}`
-        console.error(err)
-        this._state = Application.RENDER_STATES.ERROR
-      })
-      // Run Vue's render, assign it to our prop for tracking.
-      .then((_rendered) => {
-        // Prepare the item data.
-        const el = this.element.find('.ironsworn-vueport')
-        // Render Vue and assign it to prevent later rendering.
-        VuePort.render(null, el[0], { data: sheetData }).then((vm) => {
-          this._vm = vm
-          const html = $(this.element)
-          this.activateVueListeners(html)
-        })
-      })
-    // Update editable permission
-    options.editable = options.editable ?? this.object.isOwner
+  // render(force = false, options: any = {}) {
+  //   // Grab the sheetdata for both updates and new apps.
+  //   const sheetData = this.getData() as any
+  //   // Exit if Vue has already rendered.
+  //   if (this._vm) {
+  //     const states = Application.RENDER_STATES
+  //     if (this._state == states.RENDERING || this._state == states.RENDERED) {
+  //       // Update the Vue app with our updated item/flag data.
+  //       if (sheetData?.item) Vue.set(this._vm, 'item', sheetData.item)
+  //       if (sheetData?.data) Vue.set(this._vm.item, 'data', sheetData.data)
+  //       if (sheetData?.item?.flags)
+  //         Vue.set(this._vm.item, 'flags', sheetData.item.flags)
+  //       this._updateEditors($(this.element))
+  //       this.activateVueListeners($(this.element), true)
+  //       return this
+  //     }
+  //     // TODO: Is destroying the app necessary?
+  //     // else {
+  //     //   this._vm.$destroy();
+  //     //   this._vm = null;
+  //     // }
+  //   }
+  //   // Run the normal Foundry render once.
+  //   this._render(force, options)
+  //     .catch((err) => {
+  //       err.message = `An error occurred while rendering ${this.constructor.name} ${this.appId}: ${err.message}`
+  //       console.error(err)
+  //       this._state = Application.RENDER_STATES.ERROR
+  //     })
+  //     // Run Vue's render, assign it to our prop for tracking.
+  //     .then((_rendered) => {
+  //       // Prepare the item data.
+  //       const el = this.element.find('.ironsworn-vueport')
+  //       // Render Vue and assign it to prevent later rendering.
+  //       VuePort.render(null, el[0], { data: sheetData }).then((vm) => {
+  //         this._vm = vm
+  //         const html = $(this.element)
+  //         this.activateVueListeners(html)
+  //       })
+  //     })
+  //   // Update editable permission
+  //   options.editable = options.editable ?? this.object.isOwner
 
-    // Register the active Application with the referenced Documents
-    this.object.apps[this.appId] = this
-    // Return per the overridden method.
-    return this
-  }
+  //   // Register the active Application with the referenced Documents
+  //   this.object.apps[this.appId] = this
+  //   // Return per the overridden method.
+  //   return this
+  // }
 
   /** @override */
   async close(options = {}) {
