@@ -48,7 +48,7 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.wasm', '.mjs', '.ts', '.js', '.json', '.vue'],
       alias: {
-        Vue$: 'vue/dist/vue.esm.js',
+        Vue$: 'vue/dist/vue.esm-bundler.js',
       },
     },
     output: {

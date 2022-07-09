@@ -3,6 +3,11 @@ import vue from '@vitejs/plugin-vue'
 
 const config: UserConfig = {
   plugins: [vue()],
+  resolve: {
+    alias: {
+      vue: 'vue/dist/vue.esm-bundler.js',
+    },
+  },
   publicDir: 'system',
   base: '/systems/foundry-ironsworn/',
   server: {
