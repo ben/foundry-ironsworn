@@ -175,7 +175,7 @@ Hooks.once('init', async () => {
   })
 
   // Preload all needed templates
-  await TemplatePreloader.preloadHandlebarsTemplates()
+  // await TemplatePreloader.preloadHandlebarsTemplates()
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
