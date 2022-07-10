@@ -189,7 +189,7 @@ Hooks.once('init', async () => {
 Hooks.once('ready', async () => {
   await runDataMigrations()
 
-  // await maybePromptForDependencies()
+  await maybePromptForDependencies()
 
   registerDragAndDropHooks()
   registerChatAlertHooks()
