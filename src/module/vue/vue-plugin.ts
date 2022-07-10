@@ -1,5 +1,11 @@
 import { Plugin } from 'vue'
 
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $t: (string) => string
+  }
+}
+
 const plugin: Plugin = {
   install(app, ..._options) {
     app.config.globalProperties.$t = (k) => game.i18n.localize(k)
