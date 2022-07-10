@@ -3,7 +3,6 @@
 <template>
   <button
     class="icon-button clickable"
-    :class="classes"
     type="button"
     @click="$emit('click')"
     :tooltip="tooltip"
@@ -17,8 +16,11 @@
     </span>
   </button>
 </template>
-<script>
-export default {
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   props: {
     tooltip: String,
     disabled: Boolean,
@@ -28,7 +30,7 @@ export default {
       return !!this.$slots.default
     },
   },
-}
+})
 </script>
 
 <style lang="less">

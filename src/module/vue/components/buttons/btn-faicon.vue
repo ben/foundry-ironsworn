@@ -9,8 +9,11 @@
   </btn-icon>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import BtnIcon from './btn-icon.vue'
+
+export default defineComponent({
   props: {
     icon: { type: String, required: true },
     solid: { type: Boolean, default: true },
@@ -18,6 +21,11 @@ export default {
     hoverBg: Boolean,
     disabled: Boolean,
   },
+
+  components: {
+    BtnIcon,
+  },
+
   computed: {
     classes() {
       return {
@@ -28,7 +36,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style lang="less">
