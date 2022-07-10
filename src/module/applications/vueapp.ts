@@ -53,7 +53,7 @@ export abstract class VueApplication extends Application {
     // Render the Vue app
     this.vueApp = createApp({
       data() {
-        return { context }
+        return context
       },
 
       components: this.getComponents(),
