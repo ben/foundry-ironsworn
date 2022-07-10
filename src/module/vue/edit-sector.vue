@@ -16,8 +16,10 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   props: {
     sceneid: String,
   },
@@ -33,7 +35,7 @@ export default {
 
   data() {
     return {
-      region: null,
+      region: null as string | null,
     }
   },
 
@@ -42,9 +44,9 @@ export default {
   },
 
   watch: {
-    region(newRegion) {
-      this.foundryScene?.setFlag('foundry-ironsworn', 'region', this.region)
+    region(newRegion: string) {
+      this.foundryScene?.setFlag('foundry-ironsworn', 'region', newRegion)
     },
   },
-}
+})
 </script>
