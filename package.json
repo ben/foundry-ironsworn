@@ -20,8 +20,6 @@
     "@types/marked": "^4.0.3",
     "buffer": "^6.0.3",
     "dataforged": "^1.0",
-    "gulp": "^4.0.2",
-    "gulp-less": "^5.0.0",
     "lodash": "^4.17.21",
     "sha.js": "^2.4.11",
     "vue2-editor": "^2.10.3"
