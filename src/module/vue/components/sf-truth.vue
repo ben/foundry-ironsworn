@@ -5,43 +5,46 @@
       class="nogrow"
       style="flex: 0 0 20px; margin: 8px"
       :name="radiogroup"
-      :id="radioid"
+      :id="truth?.$id"
       :value="radiovalue"
       @change="changed"
     />
     <div class="flexcol">
-      <label :for="radioid">
+      <label :for="truth?.$id">
         <p>
-          <strong>{{ description }}</strong>
+          <strong>{{ truth?.Result }}</strong>
         </p>
-        <p>{{ details }}</p>
+        <p>{{ truth?.Description }}</p>
 
-        <transition name="slide" v-if="table">
-          <div v-if="selected">
+        <transition name="slide" v-if="truth?.Subtable">
+          <div v-show="selected">
             <div
               class="flexrow"
-              v-for="suboption in table"
-              :key="suboption.Description"
+              v-for="suboption in truth?.Subtable"
+              :key="suboption.$id || ''"
             >
               <input
                 type="radio"
                 class="nogrow"
                 style="flex: 0 0 20px; margin: 8px"
-                :name="description"
-                :id="`${description}#${suboption.Description}`"
-                :value="suboption.Description"
+                :name="truth?.$id"
+                :id="suboption.$id || ''"
+                :value="suboption.Result"
                 v-model="subOptionDescription"
                 @change="changed"
               />
-              <label :for="`${description}#${suboption.Description}`">
-                <p>{{ suboption.Description }}</p>
+              <label :for="suboption.$id || ''">
+                <p>{{ suboption.Result }}</p>
               </label>
             </div>
           </div>
         </transition>
 
         <p>
-          <em>{{ $t('IRONSWORN.TruthQuestStarter') }} {{ quest }}</em>
+          <em>
+            {{ $t('IRONSWORN.TruthQuestStarter') }}
+            {{ truth?.['Quest Starter'] }}
+          </em>
         </p>
       </label>
     </div>
@@ -55,30 +58,19 @@
 }
 </style>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+import { ISettingTruthOption } from 'dataforged'
+
+export default defineComponent({
   props: {
     radiogroup: String,
-    description: String,
-    details: String,
-    quest: String,
-    table: Array,
+    truth: Object as PropType<ISettingTruthOption>,
   },
 
-  computed: {
-    radioid() {
-      return `${this.radiogroup}#${this.description}`
-    },
-
-    radiovalue() {
-      const subOptionText = this.subOptionDescription
-        ? `(${this.subOptionDescription})`
-        : ''
-      return `
-        <p><strong>${this.description}</strong></p>
-        <p>${this.details} ${subOptionText}</p>
-        <p><em>${this.$t('IRONSWORN.TruthQuestStarter')} ${this.quest}</em></p>
-      `
+  emits: {
+    change(category: string, value: string) {
+      return category.length > 0 && value.length > 0
     },
   },
 
@@ -89,11 +81,27 @@ export default {
     }
   },
 
+  computed: {
+    radiovalue() {
+      const subOptionText = this.subOptionDescription
+        ? `(${this.subOptionDescription})`
+        : ''
+      return `
+        <p><strong>${this.truth.Result}</strong></p>
+        <p>${this.truth.Description} ${subOptionText}</p>
+        <p><em>
+          ${this.$t('IRONSWORN.TruthQuestStarter')}
+          ${this.truth['Quest Starter']}
+        </em></p>
+      `
+    },
+  },
+
   methods: {
     changed(evt) {
       this.selected = evt.target.checked
       this.$emit('change', this.radiogroup, this.radiovalue)
     },
   },
-}
+})
 </script>

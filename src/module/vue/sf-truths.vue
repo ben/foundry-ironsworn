@@ -3,14 +3,11 @@
     <div v-for="category in truths" :key="category.Name">
       <h2 style="margin-top: 1em">{{ category.Name }}</h2>
 
-      <sf-truth
+      <SfTruth
         v-for="option in category.Table"
-        :key="option.Description"
+        :key="option.$id"
         :radiogroup="category.Name"
-        :description="option.Description"
-        :details="option.Details"
-        :quest="option['Quest Starter']"
-        :table="option.Table"
+        :truth="option"
         @change="radioselect"
       />
 
@@ -18,22 +15,28 @@
     </div>
 
     <hr />
-    <!-- TODO: wire up this button -->
-    <btn-faicon class="ironsworn__sf__save__truths block" icon="feather">
+    <BtnFaicon class="block" icon="feather" @click="save">
       {{ $t('IRONSWORN.SaveYourTruths') }}
-    </btn-faicon>
+    </BtnFaicon>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent, PropType } from 'vue'
+import SfTruth from './components/sf-truth.vue'
+import BtnFaicon from './components/buttons/btn-faicon.vue'
+import { ISettingTruth } from 'dataforged'
+
+export default defineComponent({
   props: {
-    truths: Array,
+    truths: Array as PropType<ISettingTruth[]>,
   },
+
+  components: { SfTruth, BtnFaicon },
 
   data() {
     const output = {}
-    for (const category of this.truths) {
+    for (const category of this.truths ?? []) {
       output[category.Name] = null
     }
 
@@ -58,6 +61,15 @@ export default {
     radioselect(category, value) {
       this.output[category] = value
     },
+
+    async save(evt) {
+      console.log(evt, this.composedOutput)
+      // const journal = await JournalEntry.create({
+      //   name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
+      //   content: this.composedOutput,
+      // })
+      // journal?.sheet?.render(true)
+    },
   },
-}
+})
 </script>

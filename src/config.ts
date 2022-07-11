@@ -28,7 +28,7 @@ import { MoveItem } from './module/item/move/moveitem'
 import { ProgressItem } from './module/item/progress/progressitem'
 import { VowItem } from './module/item/vow/vowitem'
 import { starforged } from 'dataforged'
-import { SFCharacterMoveSheet } from './module/actor/sheets/sf-charactermovesheet'
+import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTruthsDialog'
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
@@ -55,7 +55,7 @@ export interface IronswornConfig {
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
 
-  SFCharacterMoveSheet: typeof SFCharacterMoveSheet
+  SFSettingTruthsDialogVue: typeof SFSettingTruthsDialogVue
 
   _: typeof lodash
   marked: typeof marked
@@ -92,7 +92,7 @@ export const IRONSWORN: IronswornConfig = {
   defaultActor,
   rollAndDisplayOracleResult,
 
-  SFCharacterMoveSheet,
+  SFSettingTruthsDialogVue,
 
   Dataforged: starforged,
   dataforgedHelpers,
