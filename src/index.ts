@@ -20,17 +20,15 @@ import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { registerChatAlertHooks } from './module/features/chat-alert'
 import { registerCompendiumCategoryHook } from './module/features/compendium-categories'
-import { maybePromptForDependencies } from './module/features/dependencies'
 import { registerDragAndDropHooks } from './module/features/drag-and-drop'
 import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
 import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
 import { themeSetup } from './module/features/visual-theme'
-import { registerZIndexHook } from './module/features/z-index'
+import { patchZIndex } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
-import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
 import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
 import { BondsetSheet } from './module/item/bondset/bondsetsheet'
@@ -180,8 +178,7 @@ Hooks.once('init', async () => {
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
   IronswornChatCard.registerHooks()
-  activateSceneButtonListeners()
-  registerZIndexHook()
+  patchZIndex()
   registerCompendiumCategoryHook()
   registerTokenHUDButtons()
 })
@@ -189,10 +186,9 @@ Hooks.once('init', async () => {
 Hooks.once('ready', async () => {
   await runDataMigrations()
 
-  await maybePromptForDependencies()
-
   registerDragAndDropHooks()
   registerChatAlertHooks()
+  activateSceneButtonListeners()
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   FirstStartDialog.maybeShow()
