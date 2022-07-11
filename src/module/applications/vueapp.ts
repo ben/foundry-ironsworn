@@ -25,7 +25,6 @@ export abstract class VueApplication extends Application {
   }
 
   async getData(_options?: Partial<ApplicationOptions>): Promise<object> {
-    console.log(await this.getVueData())
     return {
       context: {
         options: this.options,
@@ -40,15 +39,12 @@ export abstract class VueApplication extends Application {
 
   async render(force?: boolean, inputOptions?: Application.RenderOptions) {
     const context = await this.getData()
-    console.log(context)
 
     if (this.vueApp) {
       // Pass new values into the app
       ;(this.vueRoot as any).updateContext(context)
       return
     }
-
-    console.log(this.getComponents())
 
     // Render the Vue app
     this.vueApp = createApp({
@@ -73,7 +69,6 @@ export abstract class VueApplication extends Application {
       await this._render(force, inputOptions)
       // Run Vue's render, assign it to our prop for tracking.
       this.vueRoot = this.vueApp.mount(`[data-appid="${this.appId}"] .vueroot`)
-      console.log(this.vueRoot)
       this.activateVueListeners($(this.element), false)
     } catch (err: any) {
       this._state = Application.RENDER_STATES.ERROR
