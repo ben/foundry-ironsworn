@@ -5,7 +5,7 @@ const config: UserConfig = {
   plugins: [vue()],
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.esm-browser.js',
+      vue: 'vue/dist/vue.esm-bundler.js',
     },
   },
   publicDir: 'system',
@@ -30,6 +30,14 @@ const config: UserConfig = {
       entry: 'src/index.ts',
       formats: ['es'],
       fileName: () => 'ironsworn.js',
+    },
+    rollupOptions: {
+      output: {
+        assetFileNames(chunkInfo) {
+          if (chunkInfo.name === 'style.css') return 'ironsworn.css'
+          return chunkInfo.name
+        },
+      },
     },
   },
 }

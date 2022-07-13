@@ -58,6 +58,7 @@
   ],
 
   "esmodules": ["ironsworn.js"],
+  "styles": ["ironsworn.css"],
   "dependencies": [],
   "relationships": {
     "requires": []
