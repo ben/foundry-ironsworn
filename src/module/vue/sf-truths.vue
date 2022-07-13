@@ -15,7 +15,7 @@
     </div>
 
     <hr />
-    <BtnFaicon class="block" icon="feather" @click="save">
+    <BtnFaicon class="block" icon="feather" @click="saveTruths">
       {{ $t('IRONSWORN.SaveYourTruths') }}
     </BtnFaicon>
   </div>
@@ -62,13 +62,13 @@ export default defineComponent({
       this.output[category] = value
     },
 
-    async save(evt) {
-      console.log(evt, this.composedOutput)
-      // const journal = await JournalEntry.create({
-      //   name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
-      //   content: this.composedOutput,
-      // })
-      // journal?.sheet?.render(true)
+    async saveTruths(evt) {
+      if (!evt) return
+      const journal = await JournalEntry.create({
+        name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
+        content: this.composedOutput,
+      })
+      journal?.sheet?.render(true)
     },
   },
 })
