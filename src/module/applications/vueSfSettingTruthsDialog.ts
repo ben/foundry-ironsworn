@@ -1,12 +1,9 @@
 import { VueApplication } from './vueapp'
 import { starforged } from 'dataforged'
 import sfTruthsVue from '../vue/sf-truths.vue'
+import { Component } from 'vue'
 
 export class SFSettingTruthsDialogVue extends VueApplication {
-  constructor() {
-    super({})
-  }
-
   static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
@@ -18,27 +15,15 @@ export class SFSettingTruthsDialogVue extends VueApplication {
     })
   }
 
-  async getVueData(): Promise<object> {
+  async getVueData(): Promise<Record<string, any>> {
     return {
       truths: starforged['Setting Truths'],
     }
   }
 
-  getComponents(): { [k: string]: any } {
+  getComponents(): { [k: string]: Component } {
     return {
       'sf-truths': sfTruthsVue,
     }
-  }
-
-  activateVueListeners(html: JQuery<HTMLElement>, repeat?: boolean): void {
-    super.activateVueListeners(html, repeat)
-    // this.vueRoot?.$on('submit', async (content) => {
-    // const journal = await JournalEntry.create({
-    //   name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
-    //   content,
-    // })
-    // journal?.sheet?.render(true)
-    //   this.close()
-    // })
   }
 }

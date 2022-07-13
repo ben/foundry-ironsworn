@@ -33,6 +33,7 @@ export default defineComponent({
   },
 
   components: { SfTruth, BtnFaicon },
+  inject: ['context'],
 
   data() {
     const output = {}
@@ -69,6 +70,7 @@ export default defineComponent({
         content: this.composedOutput,
       })
       journal?.sheet?.render(true)
+      this.context.emitter.emit('closeApp')
     },
   },
 })

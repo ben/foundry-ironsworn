@@ -1,6 +1,7 @@
-import { App, ComponentPublicInstance, createApp } from 'vue'
+import { App, Component, ComponentPublicInstance, createApp } from 'vue'
 import { IronswornSettings } from '../helpers/settings'
 import IronswornPlugin from '../vue/vue-plugin'
+import mitt from 'mitt'
 
 export abstract class VueApplication extends Application {
   vueApp: App | undefined
@@ -13,43 +14,35 @@ export abstract class VueApplication extends Application {
     this.vueRoot = undefined
   }
 
-  static get defaultOptions(): ApplicationOptions {
-    return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'item',
-        `theme-${IronswornSettings.theme}`,
-      ],
-    })
-  }
-
-  async getData(_options?: Partial<ApplicationOptions>): Promise<object> {
+  async getData(_options?: Partial<ApplicationOptions>) {
     return {
       context: {
         options: this.options,
         themeClass: `theme-${IronswornSettings.theme}`,
         config: CONFIG.IRONSWORN,
+        emitter: mitt(),
       },
       ...(await this.getVueData()),
     }
   }
 
-  abstract getVueData(): Promise<object>
+  abstract getVueData(): Promise<Record<string, any>>
 
   async render(force?: boolean, inputOptions?: Application.RenderOptions) {
-    const context = await this.getData()
+    const data = await this.getData()
+
+    data.context.emitter.on('closeApp', () => this.close())
 
     if (this.vueApp) {
       // Pass new values into the app
-      ;(this.vueRoot as any).updateContext(context)
+      ;(this.vueRoot as any).updateContext(data)
       return
     }
 
     // Render the Vue app
     this.vueApp = createApp({
       data() {
-        return context
+        return data
       },
 
       components: this.getComponents(),
@@ -62,6 +55,7 @@ export abstract class VueApplication extends Application {
         },
       },
     })
+    this.vueApp.provide('context', data.context)
     this.vueApp.use(IronswornPlugin)
 
     try {
@@ -89,7 +83,7 @@ export abstract class VueApplication extends Application {
   /**
    * Implement to provide root component
    */
-  getComponents(): { [k: string]: any } {
+  getComponents(): { [k: string]: Component } {
     return {}
   }
 
