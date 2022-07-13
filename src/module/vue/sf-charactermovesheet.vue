@@ -11,11 +11,16 @@
   </tabbed-panels>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import tabbedPanels from './components/tabbed-panels.vue'
+
+export default defineComponent({
   props: {
     actor: Object,
   },
+
+  components: { tabbedPanels },
 
   data() {
     const tabs = [
@@ -47,5 +52,5 @@ export default {
       this.$refs.tabs.$refs.activeTab?.['highlightOracle']?.(dfid)
     },
   },
-}
+})
 </script>

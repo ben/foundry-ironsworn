@@ -7,7 +7,7 @@ import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
 
 export class SFCharacterMoveSheet extends VueApplication {
   constructor(protected actor: IronswornActor) {
-    super({})
+    super()
   }
 
   getComponents(): { [k: string]: any } {
@@ -19,12 +19,6 @@ export class SFCharacterMoveSheet extends VueApplication {
       template:
         'systems/foundry-ironsworn/templates/actor/sf-charactermoves.hbs',
       resizable: true,
-      classes: [
-        'ironsworn',
-        'sheet',
-        'moves',
-        `theme-${IronswornSettings.theme}`,
-      ],
       width: 350,
       height: 820,
       left: 685,
