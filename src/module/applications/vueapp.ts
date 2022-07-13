@@ -8,7 +8,7 @@ export abstract class VueApplication extends Application {
   vueRoot: ComponentPublicInstance | undefined
 
   /** @override */
-  constructor(options) {
+  constructor(options?: Partial<ApplicationOptions>) {
     super(options)
     this.vueApp = undefined
     this.vueRoot = undefined

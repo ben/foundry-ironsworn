@@ -181,6 +181,7 @@ Hooks.once('init', async () => {
   patchZIndex()
   registerCompendiumCategoryHook()
   registerTokenHUDButtons()
+  activateSceneButtonListeners()
 })
 
 Hooks.once('ready', async () => {
@@ -188,7 +189,6 @@ Hooks.once('ready', async () => {
 
   registerDragAndDropHooks()
   registerChatAlertHooks()
-  activateSceneButtonListeners()
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   FirstStartDialog.maybeShow()

@@ -3,7 +3,7 @@ import editSectorVue from '../../vue/edit-sector.vue'
 
 export class EditSectorDialog extends VueApplication {
   constructor(protected sceneId: string) {
-    super({})
+    super()
   }
 
   static get defaultOptions(): ApplicationOptions {

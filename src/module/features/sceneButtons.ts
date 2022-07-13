@@ -114,14 +114,13 @@ function newVault() {
 }
 
 export function activateSceneButtonListeners() {
-  if (!IronswornSettings.starforgedToolsEnabled) return
-
   CONFIG.Canvas.layers['ironsworn'] = {
     layerClass: IronswornCanvasLayer,
     group: 'primary',
   }
 
   Hooks.on('getSceneControlButtons', (controls) => {
+    if (!IronswornSettings.starforgedToolsEnabled) return
     console.log({ controls })
     if (!game.user?.isGM) {
       return controls
