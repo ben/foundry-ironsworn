@@ -7,16 +7,6 @@
       <sf-movesheetoracles />
     </tab>
   </tabs>
-  <!-- <tabbed-panels
-    ariaOrientation="horizontal"
-    name="sf-character-move-sheet"
-    class="sf-character-move-sheet-tabs"
-    wrapperElement="article"
-    :actor="actor"
-    :tabs="tabs"
-    ref="tabs"
-  >
-  </tabbed-panels> -->
 </template>
 
 <script lang="ts">

@@ -4,15 +4,20 @@
   </component>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
   props: {
     element: String,
-    actor: Object,
   },
+
+  inject: ['$actor'],
+
   mounted() {
-    const actor = game.actors?.get(this.actor._id)
-    CONFIG.IRONSWORN.attachInlineRollListeners($(this.$el), { actor })
+    CONFIG.IRONSWORN.attachInlineRollListeners($(this.$el), {
+      actor: this.$actor,
+    })
 
     $(this.$el).find('.entity-link').on('click', this.click)
   },
@@ -31,7 +36,7 @@ export default {
 
         const gamePack = game.packs.get(pack)
         gamePack?.getDocument(id)?.then((gameItem) => {
-          if (['move', 'sfmove'].includes(gameItem.type)) {
+          if (['move', 'sfmove'].includes(gameItem?.type)) {
             this.$emit('moveclick', gameItem)
           }
         })
@@ -46,5 +51,5 @@ export default {
       }
     },
   },
-}
+})
 </script>

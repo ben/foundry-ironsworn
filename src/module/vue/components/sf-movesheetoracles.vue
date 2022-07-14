@@ -23,9 +23,7 @@
       <oracletree-node
         v-for="node in treeRoot.children"
         :key="node.displayName"
-        :actor="actor"
         :node="node"
-        :searchQuery="checkedSearchQuery"
         @oracleclick="highlightOracle"
         ref="oracles"
       />
@@ -39,26 +37,29 @@
 }
 </style>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
-import { createStarforgedOracleTree } from '../../features/customoracles'
+import {
+  createStarforgedOracleTree,
+  OracleTreeNode,
+} from '../../features/customoracles'
+import oracletreeNode from './oracletree-node.vue'
 
-export default {
-  props: {
-    actor: Object,
-  },
+export default defineComponent({
+  components: { oracletreeNode },
 
   data() {
     return {
       searchQuery: '',
-      treeRoot: { children: [] },
+      treeRoot: { children: [], tables: [], displayName: '' } as OracleTreeNode,
     }
   },
 
   async created() {
     const treeRoot = await createStarforgedOracleTree()
     // Add the flags we'll use for UI stuff later
-    function walk(node) {
+    function walk(node: OracleTreeNode) {
       node.forceExpanded = node.forceHidden = false
       node.children.forEach(walk)
     }
@@ -87,16 +88,16 @@ export default {
           // Check for descendant matches
           let childMatch = false
           for (const child of node.children) {
-            childMatch |= walk(child, thisMatch || parentMatch)
+            childMatch ||= walk(child, thisMatch || parentMatch)
           }
 
           // Expanded if part of a tree with a match
-          node.forceExpanded = parentMatch | thisMatch | childMatch
+          node.forceExpanded = parentMatch || thisMatch || childMatch
           // Hidden if not
           node.forceHidden = !node.forceExpanded
 
           // Pass match up to ancestors
-          return thisMatch | childMatch
+          return thisMatch || childMatch
         }
         walk(this.treeRoot, false)
       } else {
@@ -120,6 +121,7 @@ export default {
         ev.preventDefault()
         return false
       }
+      return true
     },
 
     collapseAll() {
@@ -156,5 +158,5 @@ export default {
       lastComponent?.highlight()
     },
   },
-}
+})
 </script>

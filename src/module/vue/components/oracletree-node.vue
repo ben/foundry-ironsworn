@@ -9,24 +9,23 @@
       <h4 class="clickable text flexrow">
         <span @click="rollOracle">
           <i class="isicon-d10-tilt juicy"></i>
-          {{ node.displayName }}
+          {{ node?.displayName }}
         </span>
         <btn-faicon
-          class="block"
           v-if="isLeaf"
+          class="block nogrow"
           icon="eye"
-          @click="descriptionExpanded = !descriptionExpanded"
+          @click.once="descriptionExpanded = !descriptionExpanded"
         />
       </h4>
 
       <transition name="slide">
         <with-rolllisteners
+          v-if="descriptionExpanded"
           element="div"
-          :actor="actor"
           @moveclick="moveclick"
           @oracleclick="oracleclick"
           class="flexcol"
-          v-if="descriptionExpanded"
           v-html="tablePreview"
         >
         </with-rolllisteners>
@@ -43,15 +42,14 @@
           <i v-if="expanded" class="fa fa-caret-down" />
           <i v-else class="fa fa-caret-right" />
         </span>
-        {{ node.displayName }}
+        {{ node?.displayName }}
       </h4>
 
       <transition name="slide">
         <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
           <oracletree-node
-            v-for="child in node.children"
+            v-for="child in node?.children"
             :key="child.displayName"
-            :actor="actor"
             :node="child"
             @oracleclick="oracleclick"
             ref="children"
@@ -75,13 +73,22 @@ h4 {
 }
 </style>
 
-<script>
-import { sample } from 'lodash'
-export default {
+<script lang="ts">
+import { sample, sortBy } from 'lodash'
+import { defineComponent, PropType } from 'vue'
+import { OracleTreeNode } from '../../features/customoracles'
+import WithRolllisteners from './with-rolllisteners.vue'
+import BtnFaicon from './buttons/btn-faicon.vue'
+import { getFoundrySFTableByDfId } from '../../dataforged'
+
+export default defineComponent({
   props: {
-    actor: Object,
-    node: Object,
+    node: Object as PropType<OracleTreeNode>,
   },
+
+  inject: ['$actor'],
+
+  components: { WithRolllisteners, BtnFaicon },
 
   data() {
     return {
@@ -103,7 +110,7 @@ export default {
     tablePreview() {
       const texts = this.node.tables.map((table) => {
         const description = table.data.description || ''
-        const tableRows = CONFIG.IRONSWORN._.sortBy(
+        const tableRows = sortBy(
           table.data.results.contents.map((x) => ({
             low: x.data.range[0],
             high: x.data.range[1],
@@ -115,20 +122,24 @@ export default {
         const markdownTable = [
           '| Roll | Result |',
           '| --- | --- |',
-          ...tableRows.map((x) => `| ${x.low}-${x.high} | ${x.text} |`),
+          ...tableRows.map((x) => {
+            const firstCol = x.low === x.high ? x.low : `${x.low}-${x.high}`
+            return `| ${firstCol} | ${x.text} |`
+          }),
         ].join('\n')
-
         return description + '\n\n' + markdownTable
       })
-
       return this.$enrichMarkdown(texts.join('\n\n'))
     },
   },
 
   methods: {
-    rollOracle() {
-      const randomTable = sample(this.node.tables)
-      CONFIG.IRONSWORN.rollAndDisplayOracleResult(randomTable)
+    async rollOracle() {
+      const randomTableId = sample(this.node.tableIds)
+      const table =
+        (await getFoundrySFTableByDfId(randomTableId)) ||
+        game.tables?.get(randomTableId)
+      CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
     },
 
     moveclick(item) {
@@ -165,5 +176,5 @@ export default {
       this.highlighted = false
     },
   },
-}
+})
 </script>
