@@ -2,12 +2,12 @@
   <component :is="wrapperElement" class="flexcol tabbed-panels">
     <nav role="tablist" :aria-orientation="ariaOrientation">
       <button
-        v-for="(title, i) in tabTitles"
+        v-for="title in tabTitles"
         class="block clickable text"
         role="tab"
         type="button"
-        :id="tabId(i)"
-        :aria-controls="tabPanelId(i)"
+        :id="tabId(title)"
+        :aria-controls="tabPanelId(title)"
         :aria-selected="selectedTitle === title"
         :key="title"
         @click="selectedTitle = title"
@@ -46,10 +46,10 @@ const tabTitles = ref(slots?.default?.().map((tab) => tab.props?.title))
 const selectedTitle = ref(tabTitles?.value?.[0])
 provide('selectedTitle', selectedTitle)
 
-const actor = inject('actor') as IronswornActor | undefined
-const stubId = (i: number) => `${props.name}-${tabTitles[i]}-${actor?.id}`
-const tabPanelId = (i: number) => `tabpanel-${stubId(i)}`
-const tabId = (i: number) => `tab-${stubId(i)}`
+const actor = inject('$actor') as IronswornActor | undefined
+const stubId = (title: string) => `${props.name}-${title}-${actor?.id}`
+const tabPanelId = (title: string) => `tabpanel-${stubId(title)}`
+const tabId = (title: string) => `tab-${stubId(title)}`
 </script>
 
 <style lang="less">
