@@ -1,6 +1,6 @@
 import { App, Component, ComponentPublicInstance, createApp } from 'vue'
 import { IronswornSettings } from '../helpers/settings'
-import IronswornPlugin from '../vue/vue-plugin'
+import IronswornPlugin from './vue-plugin'
 import mitt from 'mitt'
 
 export abstract class VueApplication extends Application {
@@ -26,7 +26,9 @@ export abstract class VueApplication extends Application {
     }
   }
 
-  abstract getVueData(): Promise<Record<string, any>>
+  async getVueData(): Promise<Record<string, any>> {
+    return {}
+  }
 
   async render(force?: boolean, inputOptions?: Application.RenderOptions) {
     const data = await this.getData()
@@ -55,8 +57,7 @@ export abstract class VueApplication extends Application {
         },
       },
     })
-    this.vueApp.provide('context', data.context)
-    this.vueApp.use(IronswornPlugin)
+    this.setupApp(data)
 
     try {
       // Execute Foundry's render.
@@ -78,6 +79,14 @@ export abstract class VueApplication extends Application {
     }
 
     return this
+  }
+
+  /**
+   * Override to hook into Vue app before mounting
+   */
+  setupApp(data: Awaited<ReturnType<typeof this.getData>>) {
+    this.vueApp?.use(IronswornPlugin)
+    this.vueApp?.provide('context', data.context)
   }
 
   /**

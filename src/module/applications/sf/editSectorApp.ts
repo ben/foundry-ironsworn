@@ -1,4 +1,4 @@
-import { VueApplication } from '../vueapp'
+import { VueApplication } from '../../vue/vueapp'
 import editSectorVue from '../../vue/edit-sector.vue'
 
 export class EditSectorDialog extends VueApplication {
