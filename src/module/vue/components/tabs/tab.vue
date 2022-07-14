@@ -1,5 +1,5 @@
 <template>
-  <div class="tab" v-show="selectedTitle === title">
+  <div class="tab flexcol" v-show="selectedTitle === title">
     <slot></slot>
   </div>
 </template>

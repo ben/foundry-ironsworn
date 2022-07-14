@@ -1,5 +1,5 @@
 <template>
-  <component :is="wrapperElement" class="tabbed-panels">
+  <component :is="wrapperElement" class="flexcol tabbed-panels">
     <nav role="tablist" :aria-orientation="ariaOrientation">
       <button
         v-for="(title, i) in tabTitles"
