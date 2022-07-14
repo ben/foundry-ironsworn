@@ -16,9 +16,7 @@ import { defineComponent } from 'vue'
 import tabbedPanels from './components/tabbed-panels.vue'
 
 export default defineComponent({
-  props: {
-    actor: Object,
-  },
+  inject: ['actor'],
 
   components: { tabbedPanels },
 

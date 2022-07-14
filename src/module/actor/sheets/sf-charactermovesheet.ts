@@ -1,15 +1,9 @@
-import { VueApplication } from '../../applications/vueapp'
-import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
-import { IronswornActor } from '../actor'
+import { VueActorApp } from '../../vue/vueactorapp'
 
 import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
 
-export class SFCharacterMoveSheet extends VueApplication {
-  constructor(protected actor: IronswornActor) {
-    super()
-  }
-
+export class SFCharacterMoveSheet extends VueActorApp {
   getComponents(): { [k: string]: any } {
     return { 'sfcharacter-movesheet': CharacterMoveSheet }
   }
@@ -29,10 +23,7 @@ export class SFCharacterMoveSheet extends VueApplication {
     return `${game.i18n.localize('IRONSWORN.Moves')} — ${this.actor.name}`
   }
 
-  async getVueData(): Promise<object> {
-    return { actor: this.actor.toObject(false) }
-  }
-
+  // TODO: these probably still don't work
   async highlightMove(move: IronswornItem) {
     this.maximize()
     return (this.vueRoot?.$refs.child as any)?.['highlightMove']?.(move)
