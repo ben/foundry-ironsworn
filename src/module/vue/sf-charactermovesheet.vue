@@ -1,5 +1,13 @@
 <template>
-  <tabbed-panels
+  <tabs>
+    <tab :title="$t('IRONSWORN.Moves')">
+      <sf-movesheetmoves />
+    </tab>
+    <tab :title="$t('IRONSWORN.Oracles')">
+      <sf-movesheetoracles />
+    </tab>
+  </tabs>
+  <!-- <tabbed-panels
     ariaOrientation="horizontal"
     name="sf-character-move-sheet"
     class="sf-character-move-sheet-tabs"
@@ -8,34 +16,21 @@
     :tabs="tabs"
     ref="tabs"
   >
-  </tabbed-panels>
+  </tabbed-panels> -->
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import tabbedPanels from './components/tabbed-panels.vue'
+import Tab from './components/tabs/tab.vue'
+import Tabs from './components/tabs/tabs.vue'
+import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
+import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
 
 export default defineComponent({
   inject: ['actor'],
 
-  components: { tabbedPanels },
-
-  data() {
-    const tabs = [
-      {
-        titleKey: 'IRONSWORN.Moves',
-        component: 'sf-movesheetmoves',
-      },
-      {
-        titleKey: 'IRONSWORN.Oracles',
-        component: 'sf-movesheetoracles',
-      },
-    ]
-    return {
-      tabs,
-      currentTab: tabs[0],
-    }
-  },
+  components: { tabbedPanels, Tabs, Tab, SfMovesheetmoves, SfMovesheetoracles },
 
   methods: {
     async highlightMove(item) {
