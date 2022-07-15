@@ -1,16 +1,22 @@
 {
   "name": "foundry-ironsworn",
+  "id": "foundry-ironsworn",
   "title": "Ironsworn & Starforged",
   "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkins.",
+  "license": "LICENSE.txt",
+
   "version": "1.15.14",
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
   "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.15.14/ironsworn.zip",
-  "minimumCoreVersion": "0.8.3",
+
+  "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
-  "templateVersion": 2,
-  "manifestPlusVersion": "1.2.0",
-  "author": "Ben Straub",
+  "compatibility": {
+    "minimum": 9,
+    "verified": 9
+  },
+
   "authors": [
     {
       "name": "Ben Straub",
@@ -21,6 +27,8 @@
       "twitter": "@benstraub"
     }
   ],
+
+  "manifestPlusVersion": "1.2.0",
   "media": [
     {
       "type": "screenshot",
@@ -48,6 +56,7 @@
       "caption": "Ironsworn & Starforged"
     }
   ],
+
   "esmodules": ["ironsworn.js"],
   "dependencies": [
     {
@@ -66,113 +75,152 @@
       "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json"
     }
   ],
+  "relationships": {
+    "requires": [
+      {
+        "id": "dlopen",
+        "type": "module",
+        "manifest": "https://raw.githubusercontent.com/ForgeVTT/fvtt-module-dlopen/master/module.json",
+        "compatibility": {}
+      },
+      {
+        "id": "vueport",
+        "type": "module",
+        "manifest": "https://raw.githubusercontent.com/ForgeVTT/fvtt-module-vueport/master/module.json",
+        "compatibility": {}
+      },
+      {
+        "id": "lib-wrapper",
+        "type": "module",
+        "manifest": "https://github.com/ruipin/fvtt-lib-wrapper/releases/latest/download/module.json",
+        "compatibility": {}
+      }
+    ]
+  },
+
   "packs": [
     {
       "name": "foeactorsis",
       "label": "Ironsworn Foe Actors",
       "system": "foundry-ironsworn",
       "path": "packs/foe-actors-is.db",
-      "entity": "Actor"
+      "entity": "Actor",
+      "private": false
     },
     {
       "name": "foeactorssf",
       "label": "Starforged Foe Actors",
       "system": "foundry-ironsworn",
       "path": "packs/foe-actors-sf.db",
-      "entity": "Actor"
+      "entity": "Actor",
+      "private": false
     },
     {
       "name": "ironsworntables",
       "label": "Ironsworn Tables",
       "system": "foundry-ironsworn",
       "path": "packs/tables.db",
-      "entity": "RollTable"
+      "entity": "RollTable",
+      "private": false
     },
     {
       "name": "ironswornoracles",
       "label": "Ironsworn Oracles",
       "system": "foundry-ironsworn",
       "path": "packs/ironsworn-oracles.db",
-      "entity": "RollTable"
+      "entity": "RollTable",
+      "private": false
     },
     {
       "name": "ironswornitems",
       "label": "Ironsworn Moves",
       "system": "foundry-ironsworn",
       "path": "packs/items.db",
-      "entity": "Item"
+      "entity": "Item",
+      "private": false
     },
     {
       "name": "ironswornassets",
       "label": "Ironsworn Assets",
       "system": "foundry-ironsworn",
       "path": "packs/assets.db",
-      "entity": "Item"
+      "entity": "Item",
+      "private": false
     },
     {
       "name": "ironsworndelvethemes",
       "label": "Ironsworn Delve Themes",
       "system": "foundry-ironsworn",
       "path": "packs/delve-themes.db",
-      "entity": "Item"
+      "entity": "Item",
+      "private": false
     },
     {
       "name": "ironsworndelvedomains",
       "label": "Ironsworn Delve Domains",
       "system": "foundry-ironsworn",
       "path": "packs/delve-domains.db",
-      "entity": "Item"
+      "entity": "Item",
+      "private": false
     },
     {
       "name": "ironswornfoes",
       "label": "Ironsworn Foes",
       "system": "foundry-ironsworn",
       "path": "packs/foes.db",
-      "entity": "Item"
+      "entity": "Item",
+      "private": false
     },
     {
       "name": "ironswornscenes",
       "label": "Ironsworn Maps",
       "system": "foundry-ironsworn",
       "path": "packs/scenes.db",
-      "entity": "Scene"
+      "entity": "Scene",
+      "private": false
     },
     {
       "name": "starforged-sectors",
       "label": "Starforged Scenes",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-sectors.db",
-      "entity": "Scene"
+      "entity": "Scene",
+      "private": false
     },
     {
       "name": "starforgedassets",
       "label": "Starforged Assets",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-assets.db",
-      "entity": "Item"
+      "entity": "Item",
+      "private": false
     },
     {
       "name": "starforgedencounters",
       "label": "Starforged Encounters",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-encounters.db",
-      "entity": "Item"
+      "entity": "Item",
+      "private": false
     },
     {
       "name": "starforgedmoves",
       "label": "Starforged Moves",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-moves.db",
-      "entity": "Item"
+      "entity": "Item",
+      "private": false
     },
     {
       "name": "starforgedoracles",
       "label": "Starforged Oracles",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-oracles.db",
-      "entity": "RollTable"
+      "entity": "RollTable",
+      "private": false
     }
   ],
+
   "languages": [
     {
       "lang": "en",
@@ -199,10 +247,5 @@
       "name": "Français",
       "path": "lang/fr.json"
     }
-  ],
-  "gridDistance": 5,
-  "gridUnits": "ft",
-  "primaryTokenAttribute": "health",
-  "secondaryTokenAttribute": "power",
-  "license": "LICENSE.txt"
+  ]
 }
