@@ -8,6 +8,8 @@ export interface OracleTreeNode {
   tables: RollTable[]
   displayName: string
   children: OracleTreeNode[]
+  forceExpanded?: boolean
+  forceHidden?: boolean
 }
 
 const emptyNode = () =>
@@ -58,8 +60,12 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   // Fire the hook and allow extensions to modify the tree
   await Hooks.call('ironswornOracles', rootNode)
 
+  // Prevent Vue from adding reactivity to Foundry objects
+  walkAndFreezeTables(rootNode)
+
   return rootNode
 }
+
 async function walkOracleCategory(
   cat: IOracleCategory,
   tableGetter: typeof getFoundrySFTableByDfId
@@ -165,6 +171,13 @@ async function augmentWithFolderContents(node: OracleTreeNode) {
   }
 
   walkFolder(node, rootFolder)
+}
+
+function walkAndFreezeTables(node: OracleTreeNode) {
+  ;(node.tables as any) = Object.freeze(node.tables)
+  for (const child of node.children) {
+    walkAndFreezeTables(child)
+  }
 }
 
 export function findPathToNodeByTableId(

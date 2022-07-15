@@ -1,7 +1,7 @@
 <template>
   <div
     class="flexcol nogrow movesheet-row"
-    :class="{ hidden: node.forceHidden, highlighted }"
+    :class="{ hidden: node?.forceHidden, highlighted }"
   >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
