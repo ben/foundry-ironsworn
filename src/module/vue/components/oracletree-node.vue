@@ -15,7 +15,7 @@
           v-if="isLeaf"
           class="block nogrow"
           icon="eye"
-          @click.once="descriptionExpanded = !descriptionExpanded"
+          @click="descriptionExpanded = !descriptionExpanded"
         />
       </h4>
 
@@ -79,7 +79,6 @@ import { defineComponent, PropType } from 'vue'
 import { OracleTreeNode } from '../../features/customoracles'
 import WithRolllisteners from './with-rolllisteners.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
-import { getFoundrySFTableByDfId } from '../../dataforged'
 
 export default defineComponent({
   props: {
@@ -135,10 +134,7 @@ export default defineComponent({
 
   methods: {
     async rollOracle() {
-      const randomTableId = sample(this.node.tableIds)
-      const table =
-        (await getFoundrySFTableByDfId(randomTableId)) ||
-        game.tables?.get(randomTableId)
+      const table = sample(this.node.tables)
       CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
     },
 

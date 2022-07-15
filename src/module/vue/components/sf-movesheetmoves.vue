@@ -20,20 +20,22 @@
     </div>
 
     <div class="flexcol item-list">
+      <!-- Flat search results -->
       <div class="nogrow" v-if="searchQuery">
         <sf-moverow
           v-for="move of searchResults"
           :key="move.displayName"
-          :actor="actor"
           :move="move"
           @moveclick="highlightMove"
         />
       </div>
+
+      <!-- Categorized moves if not searching -->
       <div
         class="nogrow"
         v-else
         v-for="category of categories"
-        :key="category.$id"
+        :key="category.displayName"
       >
         <h2>
           {{ category.displayName }}
@@ -41,7 +43,6 @@
         <sf-moverow
           v-for="move of category.moves"
           :key="move.displayName"
-          :actor="actor"
           :move="move"
           @moveclick="highlightMove"
           ref="allmoves"
@@ -60,20 +61,25 @@ h2 {
 }
 </style>
 
-<script>
-import { createStarforgedMoveTree } from '../../features/custommoves'
+<script lang="ts">
+import { defineComponent } from 'vue'
+import {
+  createStarforgedMoveTree,
+  MoveCategory,
+} from '../../features/custommoves'
+import sfMoverow from './sf-moverow.vue'
 
-export default {
-  props: {
-    actor: Object,
-  },
+export default defineComponent({
+  inject: ['actor'],
 
   data() {
     return {
       searchQuery: '',
-      categories: [],
+      categories: [] as MoveCategory[],
     }
   },
+
+  components: { sfMoverow },
 
   async created() {
     const categories = await createStarforgedMoveTree()
@@ -145,5 +151,5 @@ export default {
       item.sheet?.render(true)
     },
   },
-}
+})
 </script>

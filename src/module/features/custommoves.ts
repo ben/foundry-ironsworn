@@ -34,6 +34,13 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   // Fire the hook and allow extensions to modify the list
   await Hooks.call('ironswornMoves', ret)
 
+  // Prevent Vue from adding reactivity to Foundry objects
+  for (const cat of ret) {
+    for (const move of cat.moves) {
+      ;(move.moveItem as any) = Object.freeze(move.moveItem)
+    }
+  }
+
   return ret
 }
 

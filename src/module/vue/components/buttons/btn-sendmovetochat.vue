@@ -14,8 +14,12 @@
 
 <style lang="less"></style>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import btnFaicon from './btn-faicon.vue'
+
+export default defineComponent({
+  components: { btnFaicon },
   props: {
     move: Object,
     tooltip: String,
@@ -28,5 +32,5 @@ export default {
       )
     },
   },
-}
+})
 </script>

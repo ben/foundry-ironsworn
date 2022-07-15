@@ -1,31 +1,24 @@
 <template>
-  <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
+  <div class="movesheet-row" :class="{ highlighted: move?.highlighted }">
     <h4 class="flexrow" :title="tooltip">
       <btn-rollmove
         :disabled="!canRoll"
         class="juicy text nogrow"
-        :actor="actor"
         :move="move"
       />
       <span class="clickable text" @click="expanded = !expanded">
-        {{ move.displayName }}
+        {{ move?.displayName }}
       </span>
     </h4>
     <transition name="slide">
       <with-rolllisteners
         element="div"
         class="move-summary"
-        :actor="actor"
         v-if="expanded"
         @moveclick="moveclick"
       >
         <div class="move-summary-buttons flexrow">
-          <btn-rollmove
-            class="block"
-            v-if="canRoll"
-            :actor="actor"
-            :move="move"
-          >
+          <btn-rollmove class="block" v-if="canRoll" :move="move">
             {{ $t('IRONSWORN.Roll') }}
           </btn-rollmove>
           <btn-sendmovetochat class="block" :move="move">
@@ -71,17 +64,28 @@ h4 {
 }
 </style>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { SFRollMoveDialog } from '../../helpers/rolldialog-sf'
+import BtnRollmove from './buttons/btn-rollmove.vue'
+import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
+import WithRolllisteners from './with-rolllisteners.vue'
+
+export default defineComponent({
   props: {
-    actor: Object,
     move: Object,
   },
+
+  inject: ['actor'],
+
+  components: { BtnRollmove, BtnSendmovetochat, WithRolllisteners },
+
   data() {
     return {
       expanded: false,
     }
   },
+
   computed: {
     tooltip() {
       const { Title, Page } = this.move.dataforgedMove?.Source ?? {}
@@ -92,11 +96,11 @@ export default {
       return this.move.moveItem?.data?.data?.Text
     },
     canRoll() {
-      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(
-        this.move.moveItem
-      )
+      return true
+      return SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
     },
   },
+
   watch: {
     'move.highlighted': async function (value) {
       if (value) {
@@ -106,6 +110,7 @@ export default {
       }
     },
   },
+
   methods: {
     moveclick(item) {
       this.$emit('moveclick', item)
@@ -114,5 +119,5 @@ export default {
       this.expanded = false
     },
   },
-}
+})
 </script>
