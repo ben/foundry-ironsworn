@@ -3,6 +3,7 @@ import { Plugin } from 'vue'
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $t: (string) => string
+    $capitalize: (string) => string
     $concat: (...args: any[]) => string
     $enrichMarkdown: (string) => string
   }
