@@ -1,3 +1,4 @@
+
 <template>
   <div :class="classes" @click="click">
     <h4>{{ $t(i18nKey) }}</h4>
@@ -32,49 +33,37 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    attr: String,
-  },
+<script lang="ts" setup>
+import { inject, computed, capitalize } from 'vue'
+import { IronswornActor } from '../../actor/actor'
+import { RollDialog } from '../../helpers/rolldialog'
 
-  computed: {
-    classes() {
-      return {
-        stat: true,
-        block: true,
-        clickable: this.clickable,
-      }
-    },
-    i18nKey() {
-      return `IRONSWORN.${this.$capitalize(this.attr)}`
-    },
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-    clickable() {
-      return this.editMode ? '' : ' clickable '
-    },
-  },
+const props = defineProps({ attr: { type: String, required: true } })
+const actor = inject('actor') as any
+const $actor = inject('$actor') as IronswornActor
 
-  methods: {
-    click() {
-      if (this.editMode) return
-      const actor = game.actors?.get(this.actor._id)
-      CONFIG.IRONSWORN.RollDialog.show({ actor, stat: this.attr })
-    },
+const clickable = computed(() => (this.editMode.value ? '' : ' clickable '))
+const classes = computed(() => ({
+  stat: true,
+  block: true,
+  clickable: clickable,
+}))
+const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
+const editMode = computed(
+  () => !!actor.flags['foundry-ironsworn']?.['edit-mode']
+)
 
-    increment() {
-      const value = parseInt(this.actor.data[this.attr]) + 1
-      const actor = game.actors?.get(this.actor._id)
-      actor?.update({ data: { [this.attr]: value } })
-    },
-    decrement() {
-      const value = parseInt(this.actor.data[this.attr]) - 1
-      const actor = game.actors?.get(this.actor._id)
-      actor?.update({ data: { [this.attr]: value } })
-    },
-  },
+function click() {
+  if (editMode.value) return
+  RollDialog.show({ actor: $actor, stat: props.attr })
+}
+
+function increment() {
+  const value = parseInt(actor.data[props.attr]) + 1
+  $actor?.update({ data: { [props.attr]: value } })
+}
+function decrement() {
+  const value = parseInt(actor.data[props.attr]) - 1
+  $actor?.update({ data: { [props.attr]: value } })
 }
 </script>

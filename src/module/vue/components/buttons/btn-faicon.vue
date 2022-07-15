@@ -9,36 +9,26 @@
   </btn-icon>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { computed, defineEmits } from 'vue'
 import BtnIcon from './btn-icon.vue'
 
-export default defineComponent({
-  props: {
-    icon: { type: String, required: true },
-    solid: { type: Boolean, default: true },
-    tooltip: String,
-    hoverBg: Boolean,
-    disabled: Boolean,
-  },
-
-  emits: ['click'],
-
-  components: {
-    BtnIcon,
-  },
-
-  computed: {
-    classes() {
-      return {
-        fas: this.solid,
-        far: !this.solid,
-        [`fa-${this.icon}`]: true,
-        ['icon-bg-hover']: this.hoverBg,
-      }
-    },
-  },
+const props = defineProps({
+  icon: { type: String, required: true },
+  solid: { type: Boolean, default: true },
+  tooltip: String,
+  hoverBg: Boolean,
+  disabled: Boolean,
 })
+
+defineEmits(['click'])
+
+const classes = computed(() => ({
+  fas: props.solid,
+  far: !props.solid,
+  [`fa-${props.icon}`]: true,
+  ['icon-bg-hover']: props.hoverBg,
+}))
 </script>
 
 <style lang="less">
