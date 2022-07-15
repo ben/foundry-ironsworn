@@ -1,11 +1,26 @@
 import { IronswornItem } from '../../item/item'
-import { VueActorApp } from '../../vue/vueactorapp'
+import { VueApplication } from '../../vue/vueapp'
 
 import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
+import { IronswornActor } from '../actor'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 
-export class SFCharacterMoveSheet extends VueActorApp {
-  getComponents(): { [k: string]: any } {
-    return { 'sfcharacter-movesheet': CharacterMoveSheet }
+export class SFCharacterMoveSheet extends VueApplication {
+  constructor(
+    protected actor: IronswornActor,
+    options?: Partial<ApplicationOptions>
+  ) {
+    super(options)
+  }
+
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'sfcharacter-movesheet': CharacterMoveSheet },
+      provides: { $actor: this.actor },
+      vueData: async () => ({
+        actor: this.actor.toObject(),
+      }),
+    }
   }
 
   static get defaultOptions() {

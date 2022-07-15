@@ -9,7 +9,7 @@ declare module '@vue/runtime-core' {
   }
 }
 
-const plugin: Plugin = {
+export const IronswornVuePlugin: Plugin = {
   install(app, ..._options) {
     app.config.globalProperties.$t = (k) => game.i18n.localize(k)
     app.config.globalProperties.$concat = (...args) => args.join('')
@@ -59,5 +59,3 @@ const plugin: Plugin = {
     })
   },
 }
-
-export default plugin

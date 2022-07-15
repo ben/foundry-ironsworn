@@ -9,31 +9,26 @@
   </tabs>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import tabbedPanels from './components/tabbed-panels.vue'
+<script lang="ts" setup>
 import Tab from './components/tabs/tab.vue'
 import Tabs from './components/tabs/tabs.vue'
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
+import { provide } from 'vue'
 
-export default defineComponent({
-  inject: ['actor'],
+const props = defineProps({ actor: { type: Object, required: true } })
 
-  components: { tabbedPanels, Tabs, Tab, SfMovesheetmoves, SfMovesheetoracles },
+provide('actor', props.actor)
 
-  methods: {
-    async highlightMove(item) {
-      this.currentTab = this.tabs[0]
-      await this.$nextTick()
-      this.$refs.tabs.$refs.activeTab?.['highlightMove']?.(item)
-    },
+async function highlightMove(item) {
+  this.currentTab = this.tabs[0]
+  await this.$nextTick()
+  this.$refs.tabs.$refs.activeTab?.['highlightMove']?.(item)
+}
 
-    async highlightOracle(dfid) {
-      this.currentTab = this.tabs[1]
-      await this.$nextTick()
-      this.$refs.tabs.$refs.activeTab?.['highlightOracle']?.(dfid)
-    },
-  },
-})
+async function highlightOracle(dfid) {
+  this.currentTab = this.tabs[1]
+  await this.$nextTick()
+  this.$refs.tabs.$refs.activeTab?.['highlightOracle']?.(dfid)
+}
 </script>

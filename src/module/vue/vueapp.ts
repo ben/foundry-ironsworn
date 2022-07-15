@@ -1,111 +1,32 @@
-import { App, Component, ComponentPublicInstance, createApp } from 'vue'
-import { IronswornSettings } from '../helpers/settings'
-import IronswornPlugin from './vue-plugin'
-import mitt from 'mitt'
+import { Component } from 'vue'
+import {
+  VueSheetRenderHelper,
+  VueSheetRenderHelperOptions,
+} from './vue-render-helper'
 
 export abstract class VueApplication extends Application {
-  vueApp: App | undefined
-  vueRoot: ComponentPublicInstance | undefined
-
-  /** @override */
-  constructor(options?: Partial<ApplicationOptions>) {
-    super(options)
-    this.vueApp = undefined
-    this.vueRoot = undefined
-  }
+  renderHelper: VueSheetRenderHelper | undefined
 
   static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, { classes: ['ironsworn'] })
   }
 
-  async getData(_options?: Partial<ApplicationOptions>) {
-    return {
-      context: {
-        options: this.options,
-        themeClass: `theme-${IronswornSettings.theme}`,
-        config: CONFIG.IRONSWORN,
-        emitter: mitt(),
-      },
-      ...(await this.getVueData()),
-    }
-  }
-
-  async getVueData(): Promise<Record<string, any>> {
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {}
   }
 
-  async render(force?: boolean, inputOptions?: Application.RenderOptions) {
-    const data = await this.getData()
-
-    data.context.emitter.on('closeApp', () => this.close())
-
-    if (this.vueApp) {
-      // Pass new values into the app
-      ;(this.vueRoot as any).updateContext(data)
-      return
-    }
-
-    // Render the Vue app
-    this.vueApp = createApp({
-      data() {
-        return data
-      },
-
-      components: this.getComponents(),
-
-      methods: {
-        updateContext(newCtx) {
-          for (const k of Object.keys(this.context)) {
-            this.context[k] = newCtx[k]
-          }
-        },
-      },
-    })
-    this.setupApp(data)
-
-    try {
-      // Execute Foundry's render.
-      await this._render(force, inputOptions)
-      // Run Vue's render, assign it to our prop for tracking.
-      this.vueRoot = this.vueApp.mount(`[data-appid="${this.appId}"] .vueroot`)
-      this.activateVueListeners($(this.element), false)
-    } catch (err: any) {
-      this._state = Application.RENDER_STATES.ERROR
-      Hooks.onError('Application#render', err, {
-        msg: `An error occurred while rendering ${this.constructor.name} ${this.appId}`,
-        log: 'error',
-        ...inputOptions,
-      })
-      console.error(
-        `An error occurred while rendering ${this.constructor.name} ${this.appId}: ${err.message}`,
-        err
-      )
-    }
-
+  render(force?: boolean, inputOptions?: Application.RenderOptions) {
+    this.renderHelper ||= new VueSheetRenderHelper(
+      this,
+      this.renderHelperOptions
+    )
+    this.renderHelper.render(force, inputOptions)
     return this
   }
 
   async close(options = {}) {
-    // Unmount and clean up the vue app on close.
-    this.vueApp?.unmount()
-    this.vueApp = undefined
-    this.vueRoot = undefined
+    this.renderHelper?.close()
     return super.close(options)
-  }
-
-  /**
-   * Override to hook into Vue app before mounting
-   */
-  setupApp(data: Awaited<ReturnType<typeof this.getData>>) {
-    this.vueApp?.use(IronswornPlugin)
-    this.vueApp?.provide('context', data.context)
-  }
-
-  /**
-   * Implement to provide root component
-   */
-  getComponents(): { [k: string]: Component } {
-    return {}
   }
 
   /**
