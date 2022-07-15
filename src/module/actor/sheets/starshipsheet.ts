@@ -1,8 +1,8 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { StarshipDataSource } from '../actortypes'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 
-export class StarshipSheet extends IronswornVueActorSheet {
+export class StarshipSheet extends VueActorSheet {
   get starshipData() {
     return this.actor.data as StarshipDataSource
   }

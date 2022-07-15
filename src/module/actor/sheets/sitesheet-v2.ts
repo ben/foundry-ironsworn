@@ -1,8 +1,8 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { SiteDataSource } from '../actortypes'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 
-export class IronswornSiteSheetV2 extends IronswornVueActorSheet {
+export class IronswornSiteSheetV2 extends VueActorSheet {
   get siteData() {
     return this.actor.data as SiteDataSource
   }

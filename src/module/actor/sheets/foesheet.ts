@@ -1,7 +1,7 @@
 import { IronswornSettings } from '../../helpers/settings'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 
-export class FoeSheet extends IronswornVueActorSheet {
+export class FoeSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: [
