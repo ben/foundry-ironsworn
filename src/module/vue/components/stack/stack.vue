@@ -3,7 +3,6 @@
     <stack-box
       v-for="x in values"
       :key="x"
-      :actor="actor"
       :stat="stat"
       :value="x"
       :softMax="softMax"
@@ -12,10 +11,13 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import stackBox from './stack-box.vue'
+
+export default defineComponent({
+  components: { stackBox },
   props: {
-    actor: Object,
     stat: String,
     top: Number,
     bottom: Number,
@@ -34,5 +36,5 @@ export default {
       return ret
     },
   },
-}
+})
 </script>

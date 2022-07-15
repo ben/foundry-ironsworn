@@ -49,11 +49,13 @@ textarea {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script lang="ts">
+import { defineComponent } from 'vue'
+import documentImg from './document-img.vue'
+
+export default defineComponent({
+  inject: ['actor'],
+  components: { documentImg },
 
   methods: {
     save() {
@@ -67,5 +69,5 @@ export default {
       })
     },
   },
-}
+})
 </script>

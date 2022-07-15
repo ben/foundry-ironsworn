@@ -10,7 +10,6 @@
         <div class="flexrow" style="flex-wrap: nowrap">
           <div class="flexcol stack momentum">
             <stack
-              :actor="actor"
               stat="momentum"
               :top="10"
               :bottom="-6"
@@ -114,11 +113,19 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
+<script lang="ts">
+import { defineComponent } from 'vue'
+import SfCharacterheader from './components/sf-characterheader.vue'
+import Stack from './components/stack/stack.vue'
+
+export default defineComponent({
+  inject: ['actor'],
+
+  components: {
+    SfCharacterheader,
+    Stack,
   },
+
   data() {
     const tabs = [
       { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
@@ -141,5 +148,5 @@ export default {
       pack?.render(true)
     },
   },
-}
+})
 </script>

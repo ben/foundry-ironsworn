@@ -10,10 +10,12 @@
   </button>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  inject: ['actor'],
   props: {
-    actor: Object,
     stat: String,
     value: Number,
     softMax: Number,
@@ -53,5 +55,5 @@ export default {
       }
     },
   },
-}
+})
 </script>
