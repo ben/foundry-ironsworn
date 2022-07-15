@@ -14,6 +14,10 @@ export abstract class VueApplication extends Application {
     this.vueRoot = undefined
   }
 
+  static get defaultOptions(): ApplicationOptions {
+    return mergeObject(super.defaultOptions, { classes: ['ironsworn'] })
+  }
+
   async getData(_options?: Partial<ApplicationOptions>) {
     return {
       context: {

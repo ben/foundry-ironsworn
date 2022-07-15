@@ -5,7 +5,7 @@ import '../../styles/themes/starforged.less'
 export function themeSetup() {
   const currentTheme = IronswornSettings.theme
 
-  $(document.body).addClass(`ironsworn`).addClass(`theme-${currentTheme}`)
+  $(document.body).addClass(`theme-${currentTheme}`)
 
   if (currentTheme === 'starforged') {
     CONFIG.TinyMCE.content_css =
