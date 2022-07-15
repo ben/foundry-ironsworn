@@ -6,6 +6,7 @@
 - Update to the right version of the Foundry types
 - Fix the dev server for fewer errors, and so that HMR works
 - Update `system.json` to include the new v10 fields
+- Port the code to Vue3 using Vite ([#407](https://github.com/ben/foundry-ironsworn/pull/407))
 
 ## 1.15.14
 
