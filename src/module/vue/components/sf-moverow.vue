@@ -96,7 +96,6 @@ export default defineComponent({
       return this.move.moveItem?.data?.data?.Text
     },
     canRoll() {
-      return true
       return SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
     },
   },
