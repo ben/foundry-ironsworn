@@ -85,6 +85,14 @@ export abstract class VueApplication extends Application {
     return this
   }
 
+  async close(options = {}) {
+    // Unmount and clean up the vue app on close.
+    this.vueApp?.unmount()
+    this.vueApp = undefined
+    this.vueRoot = undefined
+    return super.close(options)
+  }
+
   /**
    * Override to hook into Vue app before mounting
    */
