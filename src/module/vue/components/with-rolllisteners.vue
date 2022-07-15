@@ -41,13 +41,13 @@ export default defineComponent({
           }
         })
 
-        return this.$listeners['moveclick'] ? false : true
+        return this.$attrs['onMoveclick'] ? false : true
       }
 
       if (dfid) {
         // Probably an oracle category click
         this.$emit('oracleclick', dfid)
-        return this.$listeners['oracleclick'] ? false : true
+        return this.$attrs['onOracleclick'] ? false : true
       }
     },
   },
