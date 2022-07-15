@@ -43,8 +43,13 @@ h4 {
 }
 </style>
 
-<script>
-function ticksSvg(ticks) {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { IronswornActor } from '../../actor/actor'
+import BtnFaicon from './buttons/btn-faicon.vue'
+import XpTrack from './xp-track.vue'
+
+function ticksSvg(ticks: number) {
   let ret = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
   if (ticks > 0) ret += '<line x1="23" y1="23" x2="77" y2="77" />'
   if (ticks > 1) ret += '<line x1="77" y1="23" x2="23" y2="77" />'
@@ -53,12 +58,14 @@ function ticksSvg(ticks) {
   return ret + '</svg>'
 }
 
-export default {
+export default defineComponent({
   props: {
-    actor: Object,
     propKey: String,
     title: String,
   },
+  inject: ['actor', '$actor'],
+
+  components: { BtnFaicon, XpTrack },
 
   computed: {
     editMode() {
@@ -91,9 +98,10 @@ export default {
       if (n > 0) {
         return `(+${n})`
       }
+      return undefined
     },
     boxes() {
-      const ret = []
+      const ret = [] as string[]
       let remainingTicks = this.ticks % 40
       for (let i = 0; i < 10; i++) {
         ret.push(ticksSvg(remainingTicks))
@@ -106,9 +114,12 @@ export default {
   methods: {
     adjust(inc) {
       const current = this.actor.data?.legacies[this.propKey] ?? 0
-      this.$actor.update({
-        [`data.legacies.${this.propKey}`]: current + inc,
-      })
+      ;(this.$actor as IronswornActor).update(
+        {
+          [`data.legacies.${this.propKey}`]: current + inc,
+        },
+        { render: true }
+      )
     },
     increase() {
       this.adjust(1)
@@ -118,10 +129,13 @@ export default {
     },
 
     setXp(n) {
-      this.$actor.update({
-        data: { legacies: { [`${this.propKey}XpSpent`]: n } },
-      })
+      this.$actor.update(
+        {
+          data: { legacies: { [`${this.propKey}XpSpent`]: n } },
+        },
+        { render: true }
+      )
     },
   },
-}
+})
 </script>

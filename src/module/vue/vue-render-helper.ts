@@ -32,6 +32,7 @@ export class VueSheetRenderHelper {
   async render(...renderArgs) {
     const data = (await this.options.vueData()) as any
 
+    console.log(this.vueApp, data)
     if (this.vueApp) {
       // Pass new values into the app
       ;(this.vueRoot as any).updateContext(data)

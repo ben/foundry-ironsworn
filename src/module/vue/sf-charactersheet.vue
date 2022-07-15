@@ -21,9 +21,9 @@
                 {{ $t('IRONSWORN.Burn') }}
               </btn-momentumburn>
 
-              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
+              {{ $t('IRONSWORN.Reset') }}: {{ actor.momentumReset }}
               {{ $t('IRONSWORN.Max') }}:
-              {{ actor.data.momentumMax }}
+              {{ actor.momentumMax }}
             </div>
           </div>
 
@@ -35,22 +35,20 @@
       <div class="flexcol">
         <!-- Attributes -->
         <div class="flexrow stats" style="margin-bottom: 10px">
-          <attr-box :actor="actor" attr="edge"></attr-box>
-          <attr-box :actor="actor" attr="heart"></attr-box>
-          <attr-box :actor="actor" attr="iron"></attr-box>
-          <attr-box :actor="actor" attr="shadow"></attr-box>
-          <attr-box :actor="actor" attr="wits"></attr-box>
+          <attr-box attr="edge" />
+          <attr-box attr="heart" />
+          <attr-box attr="iron" />
+          <attr-box attr="shadow" />
+          <attr-box attr="wits" />
         </div>
 
-        <tabbed-panels
-          aria-orientation="horizontal"
-          class="character-sheet-tabs"
-          name="character-sheet-tabs"
-          wrapperElement="section"
-          :actor="actor"
-          :tabs="tabs"
-        >
-        </tabbed-panels>
+        <tabs class="character-sheet-tabs" name="character-sheet-tabs">
+          <tab :title="$t('IRONSWORN.Legacies')"> <sf-legacies /> </tab>
+          <!-- <tab :title="$t('IRONSWORN.Assets')"> <sf-assets /> </tab>
+          <tab :title="$t('IRONSWORN.Progress')"> <sf-progresses /> </tab>
+          <tab :title="$t('IRONSWORN.Connections')"> <sf-connections /> </tab>
+          <tab :title="$t('IRONSWORN.Notes')"> <sf-notes /> </tab> -->
+        </tabs>
       </div>
 
       <!-- Stats on right -->
@@ -61,7 +59,7 @@
             {{ $t('IRONSWORN.Health') }}
           </btn-rollstat>
           <div class="flexcol stack health">
-            <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
+            <stack stat="health" :top="5" :bottom="0"></stack>
           </div>
         </div>
 
@@ -69,11 +67,11 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="spirit">
+          <btn-rollstat class="vertical-v2 text" attr="spirit">
             {{ $t('IRONSWORN.Spirit') }}
           </btn-rollstat>
           <div class="flexcol stack spirit">
-            <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
+            <stack stat="spirit" :top="5" :bottom="0"></stack>
           </div>
         </div>
 
@@ -81,11 +79,11 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="supply">
+          <btn-rollstat class="vertical-v2 text" attr="supply">
             {{ $t('IRONSWORN.Supply') }}
           </btn-rollstat>
           <div class="flexcol stack supply">
-            <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
+            <stack stat="supply" :top="5" :bottom="0"></stack>
           </div>
         </div>
       </div>
@@ -115,15 +113,41 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import AttrBox from './components/attr-box.vue'
+import BtnMomentumburn from './components/buttons/btn-momentumburn.vue'
+import SfLegacies from './components/sf-character-sheet-tabs/sf-legacies.vue'
+import SfConnections from './components/sf-character-sheet-tabs/sf-connections.vue'
 import SfCharacterheader from './components/sf-characterheader.vue'
 import Stack from './components/stack/stack.vue'
+import Tabs from './components/tabs/tabs.vue'
+import Tab from './components/tabs/tab.vue'
+import btnRollstat from './components/buttons/btn-rollstat.vue'
+import btnIsicon from './components/buttons/btn-isicon.vue'
+import sfImpacts from './components/sf-impacts.vue'
 
 export default defineComponent({
-  inject: ['actor'],
+  props: {
+    actor: { type: Object, required: true },
+  },
+
+  provide() {
+    return {
+      actor: this.actor,
+    }
+  },
 
   components: {
     SfCharacterheader,
     Stack,
+    AttrBox,
+    BtnMomentumburn,
+    SfConnections,
+    SfLegacies,
+    Tabs,
+    Tab,
+    btnRollstat,
+    btnIsicon,
+    sfImpacts,
   },
 
   data() {
@@ -139,6 +163,7 @@ export default defineComponent({
       currentTab: tabs[0],
     }
   },
+
   methods: {
     rollStat(stat) {
       CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })

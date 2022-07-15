@@ -1,11 +1,12 @@
-import { Component, ComputedOptions, MethodOptions } from 'vue'
+import { Component, ComputedOptions, MethodOptions, render } from 'vue'
 import { IronswornSettings } from '../../helpers/settings'
 import SfCharacterSheet from '../../vue/sf-charactersheet.vue'
-import { VueActorApp } from '../../vue/vueactorapp'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 import { CharacterMoveSheet } from './charactermovesheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
-export class StarforgedCharacterSheet extends VueActorApp {
+export class StarforgedCharacterSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       template: 'systems/foundry-ironsworn/templates/actor/sf-character.hbs',
@@ -15,18 +16,19 @@ export class StarforgedCharacterSheet extends VueActorApp {
     })
   }
 
-  getComponents(): {
-    [k: string]: Component<any, any, any, ComputedOptions, MethodOptions>
-  } {
-    return { 'sf-charactersheet': SfCharacterSheet }
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'sf-charactersheet': SfCharacterSheet },
+    }
   }
 
-  render(...args) {
+  renderx(...args) {
+    super.render(...args)
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
-    return super.render(...args)
+    return this
   }
 
-  close(...args) {
+  closex(...args) {
     this.actor.moveSheet?.close(...args)
     return super.close(...args)
   }
