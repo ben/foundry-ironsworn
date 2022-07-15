@@ -31,6 +31,7 @@ export abstract class VueActorSheet extends ActorSheet {
     )
 
     this.renderHelper.render(true, options)
+    this.object.apps[this.appId] = this
     return this
   }
 

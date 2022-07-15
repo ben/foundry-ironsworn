@@ -22,13 +22,13 @@ export class StarforgedCharacterSheet extends VueActorSheet {
     }
   }
 
-  renderx(...args) {
+  render(...args) {
     super.render(...args)
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
     return this
   }
 
-  closex(...args) {
+  close(...args) {
     this.actor.moveSheet?.close(...args)
     return super.close(...args)
   }

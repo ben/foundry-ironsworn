@@ -49,7 +49,7 @@ export class VueSheetRenderHelper {
 
       provide: {
         context: {
-          options: this.app.getDataoptions,
+          options: this.app.options,
           themeClass: `theme-${IronswornSettings.theme}`,
           config: CONFIG.IRONSWORN,
         },
