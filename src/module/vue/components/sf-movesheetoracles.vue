@@ -78,11 +78,11 @@ export default defineComponent({
       if (q && re) {
         // Walk the tree and test each name.
         // Force expanded on all parent nodes leading to a match
-        const walk = (node, parentMatch) => {
+        const walk = (node: OracleTreeNode, parentMatch: boolean): boolean => {
           // Match against current name (i18n) but also aliases in Dataforged
           let thisMatch = re.test(node.displayName)
           for (const alias of node.dataforgedNode?.Aliases ?? []) {
-            thisMatch |= re.test(alias)
+            thisMatch ||= re.test(alias)
           }
 
           // Check for descendant matches
