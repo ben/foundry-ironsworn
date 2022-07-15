@@ -9,8 +9,13 @@
   </btn-icon>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import btnIcon from './btn-icon.vue'
+
+export default defineComponent({
+  components: { btnIcon },
+  emits: ['click'],
   props: {
     icon: { type: String, required: true },
     tooltip: String,
@@ -25,5 +30,5 @@ export default {
       }
     },
   },
-}
+})
 </script>

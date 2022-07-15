@@ -66,6 +66,7 @@ export default {
     hoverBg: Boolean,
     disabled: Boolean,
   },
+  emits: ['click'],
   computed: {
     classes() {
       return {

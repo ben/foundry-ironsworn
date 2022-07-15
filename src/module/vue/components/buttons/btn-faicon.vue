@@ -22,6 +22,8 @@ export default defineComponent({
     disabled: Boolean,
   },
 
+  emits: ['click'],
+
   components: {
     BtnIcon,
   },

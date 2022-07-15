@@ -25,6 +25,7 @@ export default defineComponent({
     tooltip: String,
     disabled: Boolean,
   },
+  emits: ['click'],
   computed: {
     hasDefaultSlot() {
       return !!this.$slots.default
