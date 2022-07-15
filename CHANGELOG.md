@@ -5,6 +5,7 @@
 - Code reorganization and format normalization
 - Update to the right version of the Foundry types
 - Fix the dev server for fewer errors, and so that HMR works
+- Update `system.json` to include the new v10 fields
 
 ## 1.15.14
 
