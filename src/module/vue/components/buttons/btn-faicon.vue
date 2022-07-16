@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, defineEmits } from 'vue'
+import { computed } from 'vue'
 import BtnIcon from './btn-icon.vue'
 
 const props = defineProps({

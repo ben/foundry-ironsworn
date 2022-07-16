@@ -50,30 +50,32 @@ h3 {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    item: Object,
-  },
+<script setup lang="ts">
+import { computed, inject, provide } from 'vue'
+import { IronswornItem } from '../item/item'
+import DocumentName from './components/document-name.vue'
 
-  computed: {
-    editMode() {
-      return this.item.flags['foundry-ironsworn']?.['edit-mode']
-    },
+const $item = inject('$item') as IronswornItem
 
-    hasOptions() {
-      return Object.values(this.item.data.exclusiveOptions || []).length > 0
-    },
+const props = defineProps<{ item: any }>()
+provide(
+  'item',
+  computed(() => props.item)
+)
 
-    hasFields() {
-      return Object.values(this.item.data.fields || []).length > 0
-    },
-  },
+const editMode = computed(() => {
+  return props.item.flags['foundry-ironsworn']?.['edit-mode']
+})
 
-  methods: {
-    setDescription() {
-      this.$item.update({ data: { description: this.item.data.description } })
-    },
-  },
+const hasOptions = computed(() => {
+  return Object.values(props.item.data.exclusiveOptions || []).length > 0
+})
+
+const hasFields = computed(() => {
+  return Object.values(props.item.data.fields || []).length > 0
+})
+
+function setDescription() {
+  $item.update({ data: { description: props.item.data.description } })
 }
 </script>

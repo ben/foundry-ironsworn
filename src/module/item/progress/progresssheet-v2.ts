@@ -1,6 +1,6 @@
-import { IronswornVueItemSheet } from '../vueitemsheet'
+import { VueItemSheet } from '../../vue/vueitemsheet'
 
-export class ProgressSheetV2 extends IronswornVueItemSheet {
+export class ProgressSheetV2 extends VueItemSheet {
   get template() {
     return 'systems/foundry-ironsworn/templates/item/progressv2.hbs'
   }

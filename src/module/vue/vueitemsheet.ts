@@ -1,30 +1,35 @@
+// import Vue from 'vue'
 import { merge } from 'lodash'
+import { IronswornSettings } from '../helpers/settings'
+import { IronswornItem } from '../item/item'
 import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
 } from './vue-render-helper'
 
-export abstract class VueActorSheet extends ActorSheet {
+export abstract class VueItemSheet extends ItemSheet {
   renderHelper: VueSheetRenderHelper | undefined
 
   abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
 
-  static get defaultOptions(): ActorSheet.Options {
+  static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'actor'],
+      classes: ['ironsworn', 'item'],
+      width: 520,
+      height: 480,
     })
   }
 
   render(
     force?: boolean | undefined,
-    options?: Application.RenderOptions<ActorSheet.Options> | undefined
+    options?: Application.RenderOptions<DocumentSheetOptions> | undefined
   ): this {
     this.renderHelper ||= new VueSheetRenderHelper(
       this,
       merge(
         {
-          provides: { $actor: this.actor },
-          vueData: () => ({ actor: this.actor.toObject() }),
+          provides: { $item: this.item },
+          vueData: () => ({ item: this.item.toObject() }),
         },
         this.renderHelperOptions
       )
@@ -32,10 +37,5 @@ export abstract class VueActorSheet extends ActorSheet {
 
     this.renderHelper.render(force, options)
     return this
-  }
-
-  close(options?: FormApplication.CloseOptions | undefined): Promise<void> {
-    this.renderHelper?.close()
-    return super.close(options)
   }
 }

@@ -1,6 +1,6 @@
-import { IronswornVueItemSheet } from '../vueitemsheet'
+import { VueItemSheet } from '../../vue/vueitemsheet'
 
-export class SFMoveSheet extends IronswornVueItemSheet {
+export class SFMoveSheet extends VueItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       template: 'systems/foundry-ironsworn/templates/item/sfmove.hbs',

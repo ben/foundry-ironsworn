@@ -1,5 +1,5 @@
 <template>
-  <component :is="tag" class="charname">
+  <component :is="tag || 'h1'" class="charname">
     <input
       :placeholder="$t('IRONSWORN.Name')"
       v-model="document.name"
@@ -9,21 +9,16 @@
   </component>
 </template>
 
-<script>
-export default {
-  props: {
-    document: Object,
-    tag: {
-      type: String,
-      default: 'h1',
-    },
-  },
+<script setup lang="ts">
+import { IronswornItem } from '../../item/item'
+import { inject } from 'vue'
+const props = defineProps<{ document: any; tag?: string }>()
 
-  methods: {
-    save() {
-      const document = this.$item ?? this.$actor
-      document?.update({ name: this.document.name })
-    },
-  },
+const $item = inject('$item') as IronswornItem
+const $actor = inject('$actor') as IronswornItem
+
+function save() {
+  const document = $item ?? $actor
+  document?.update({ name: props.document.name })
 }
 </script>

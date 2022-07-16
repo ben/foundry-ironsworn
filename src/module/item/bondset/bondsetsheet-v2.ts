@@ -1,6 +1,6 @@
-import { IronswornVueItemSheet } from '../vueitemsheet'
+import { VueItemSheet } from '../../vue/vueitemsheet'
 
-export class BondsetSheetV2 extends IronswornVueItemSheet {
+export class BondsetSheetV2 extends VueItemSheet {
   get template() {
     return 'systems/foundry-ironsworn/templates/item/bondsetv2.hbs'
   }
