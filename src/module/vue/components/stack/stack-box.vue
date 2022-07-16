@@ -10,50 +10,49 @@
   </button>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { computed, inject, Ref } from 'vue'
+import { IronswornActor } from '../../../actor/actor'
+import { CharacterDataProperties } from '../../../actor/actortypes'
+import { IronswornSettings } from '../../../helpers/settings'
 
-export default defineComponent({
-  inject: ['actor'],
-  props: {
-    stat: String,
-    value: Number,
-    softMax: Number,
-  },
-  computed: {
-    classes() {
-      return {
-        clickable: true,
-        block: true,
-        'stack-row': true,
-        [this.stat]: true,
-        selected: this.selected,
-        disabled: this.disabled,
-      }
-    },
-    valueStr() {
-      return this.value > 0 ? `+${this.value}` : this.value.toString()
-    },
-    current() {
-      return this.actor.data[this.stat]
-    },
-    selected() {
-      return this.current === this.value
-    },
-    disabled() {
-      return this.value > this.softMax
-    },
-  },
+const actor = inject('actor') as CharacterDataProperties
+const $actor = inject('$actor') as IronswornActor
 
-  methods: {
-    click(event) {
-      if (this.disabled) return
-      const actor = game.actors?.get(this.actor._id)
-      actor?.update({ data: { [this.stat]: this.value } })
-      if (this.stat === 'supply') {
-        CONFIG.IRONSWORN.IronswornSettings.maybeSetGlobalSupply(this.value)
-      }
-    },
-  },
+const props = defineProps<{
+  stat: string
+  value: number
+  softMax?: number
+}>()
+
+const valueStr = computed(() => {
+  return props.value > 0 ? `+${props.value}` : props.value.toString()
 })
+const current = computed(() => {
+  return actor.value.data[props.stat]
+})
+const selected = computed(() => {
+  return current.value === props.value
+})
+const disabled = computed(() => {
+  if (props.softMax === undefined) return false
+  return props.value > props.softMax
+})
+
+const classes = computed(() => ({
+  clickable: true,
+  block: true,
+  'stack-row': true,
+  [props.stat]: true,
+  selected: selected.value,
+  disabled: disabled.value,
+}))
+
+function click() {
+  if (disabled.value) return
+  $actor?.update({ data: { [props.stat]: props.value } })
+  if (props.stat === 'supply') {
+    IronswornSettings.maybeSetGlobalSupply(props.value)
+  }
+}
 </script>

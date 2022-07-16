@@ -42,7 +42,7 @@ export class VueSheetRenderHelper {
     // Render the Vue app
     this.vueApp = createApp({
       data() {
-        return { data: ref(data) }
+        return { data: data }
       },
 
       components: this.options.components,
@@ -64,6 +64,7 @@ export class VueSheetRenderHelper {
         },
       },
     })
+    this.vueApp.config.unwrapInjectedRef = true
     this.vueApp.use(IronswornVuePlugin)
 
     try {

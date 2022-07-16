@@ -11,30 +11,25 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { computed } from 'vue'
 import stackBox from './stack-box.vue'
 
-export default defineComponent({
-  components: { stackBox },
-  props: {
-    stat: String,
-    top: Number,
-    bottom: Number,
-    softMax: Number,
-  },
-  computed: {
-    values() {
-      const ret = []
-      const increment = this.top > this.bottom ? -1 : 1
-      let value = this.top
-      do {
-        const valueStr = value > 0 ? `+${value}` : value.toString()
-        ret.push(value)
-        value += increment
-      } while (value != this.bottom + increment)
-      return ret
-    },
-  },
+const props = defineProps<{
+  stat: string
+  top: number
+  bottom: number
+  softMax?: number
+}>()
+
+const values = computed(() => {
+  const ret = [] as number[]
+  const increment = props.top > props.bottom ? -1 : 1
+  let value = props.top
+  do {
+    ret.push(value)
+    value += increment
+  } while (value != props.bottom + increment)
+  return ret
 })
 </script>
