@@ -28,7 +28,6 @@ export class SFCharacterMoveSheet extends VueApplication {
     inputOptions?: Application.RenderOptions<ApplicationOptions> | undefined
   ): this {
     super.render(force, inputOptions)
-    this.actor.apps[this.appId] = this
     return this
   }
 

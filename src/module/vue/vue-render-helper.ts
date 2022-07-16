@@ -10,10 +10,11 @@ export interface VueSheetRenderHelperOptions {
 }
 
 export class VueSheetRenderHelper {
-  vueApp: App | undefined
+  vueApp: App<Element> | undefined
   vueRoot: ComponentPublicInstance | undefined
   emitter: ReturnType<typeof mitt>
   options: VueSheetRenderHelperOptions
+  vueListenersActive = false
 
   constructor(
     protected app: Application,
@@ -32,50 +33,62 @@ export class VueSheetRenderHelper {
   async render(...renderArgs) {
     const data = (await this.options.vueData()) as any
 
-    console.log(this.vueApp, data)
-    if (this.vueApp) {
-      // Pass new values into the app
+    // Create the Vue App instance
+    if (!this.vueApp || !this.vueRoot) {
+      this.vueRoot = undefined
+      this.vueApp = createApp({
+        data() {
+          return { data: data }
+        },
+
+        components: this.options.components,
+
+        provide: {
+          context: {
+            options: this.app.options,
+            themeClass: `theme-${IronswornSettings.theme}`,
+            config: CONFIG.IRONSWORN,
+          },
+          ...this.options.provides,
+        },
+
+        methods: {
+          updateData(newCtx) {
+            for (const k of Object.keys(this.data)) {
+              this.data[k] = newCtx[k]
+            }
+          },
+        },
+      })
+      this.vueApp.config.unwrapInjectedRef = true
+      this.vueApp.use(IronswornVuePlugin)
+    } else {
       ;(this.vueRoot as any).updateData(data)
+      if (!this.vueListenersActive) {
+        setTimeout(() => {
+          this.activateVueListeners($(this.app.element), true)
+        }, 150)
+      }
       return
     }
 
-    // Render the Vue app
-    this.vueApp = createApp({
-      data() {
-        return { data: data }
-      },
+    // Stop here if we're closing
+    if (this.app._state === Application.RENDER_STATES.CLOSING) return
 
-      components: this.options.components,
-
-      provide: {
-        context: {
-          options: this.app.options,
-          themeClass: `theme-${IronswornSettings.theme}`,
-          config: CONFIG.IRONSWORN,
-        },
-        ...this.options.provides,
-      },
-
-      methods: {
-        updateData(newCtx) {
-          for (const k of Object.keys(this.data)) {
-            this.data[k] = newCtx[k]
-          }
-        },
-      },
-    })
-    this.vueApp.config.unwrapInjectedRef = true
-    this.vueApp.use(IronswornVuePlugin)
-
+    // No active Vue root, so run Foundry's render and mount it
     try {
       // Execute Foundry's render.
       await this.app._render(...renderArgs)
 
       // Run Vue's render, assign it to our prop for tracking.
-      this.vueRoot = this.vueApp.mount(
-        `[data-appid="${this.app.appId}"] .vueroot`
-      )
-      this.activateVueListeners($(this.app.element), false)
+      const selector = `[data-appid="${this.app.appId}"] .vueroot`
+      let $appEl = $(selector)
+      if ($appEl.length > 0) {
+        this.vueRoot = this.vueApp.mount(selector)
+        setTimeout(() => {
+          this.activateVueListeners($(this.app.element), true)
+        }, 150)
+      }
     } catch (err: any) {
       this.app._state = Application.RENDER_STATES.ERROR
       Hooks.onError('Application#render', err, {
@@ -89,12 +102,15 @@ export class VueSheetRenderHelper {
       )
     }
 
-    return this
+    if (this.app instanceof FormApplication) {
+      this.app.object.apps[this.app.appId] = this.app
+    }
   }
 
   close() {
     this.vueApp?.unmount()
-    this.vueApp = this.vueRoot = undefined
+    this.vueApp = undefined
+    this.vueRoot = undefined
   }
 
   /**
