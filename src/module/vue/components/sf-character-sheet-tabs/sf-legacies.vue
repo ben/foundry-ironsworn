@@ -5,29 +5,24 @@
     <legacy-track propKey="discoveries" :title="$t('IRONSWORN.Discoveries')" />
 
     <hr class="nogrow" v-if="starredProgresses.length > 0" />
-    <!-- <progress-box
+    <progress-box
       v-for="item in starredProgresses"
       :key="item._id"
       :item="item"
-      :actor="actor"
-    /> -->
+    />
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { inject, Ref } from 'vue'
 import legacyTrack from '../legacy-track.vue'
+import progressBox from '../progress/progress-box.vue'
 
-export default defineComponent({
-  inject: ['actor'],
-  components: { legacyTrack },
+const actor = inject('actor') as Ref
 
-  computed: {
-    starredProgresses() {
-      return this.actor.items
-        .filter((x) => x.type === 'progress')
-        .filter((x) => x.data.starred)
-    },
-  },
-})
+function starredProgresses(): any[] {
+  return actor.value.items
+    .filter((x) => x.type === 'progress')
+    .filter((x) => x.data.starred)
+}
 </script>
