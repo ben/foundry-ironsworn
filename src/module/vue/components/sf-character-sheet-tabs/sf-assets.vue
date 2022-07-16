@@ -20,46 +20,42 @@
   </div>
 </template>
 
-<script>
+<script lang="ts" setup>
 import { sortBy } from 'lodash'
+import { computed, inject, Ref } from 'vue'
+import OrderButtons from '../order-buttons.vue'
+import Asset from '../asset/asset.vue'
+import BtnCompendium from '../buttons/btn-compendium.vue'
 
-export default {
-  props: {
-    actor: Object,
-  },
-  computed: {
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-    assets() {
-      const assets = this.actor.items.filter((x) => x.type === 'asset')
-      return sortBy(assets, (x) => x.sort)
-    },
-  },
-  methods: {
-    openCompendium() {
-      const pack = game.packs?.get('foundry-ironsworn.starforgedassets')
-      pack?.render(true)
-    },
-    async applySort(oldI, newI, sortBefore) {
-      const foundryItems = this.$actor.items
-        .filter((x) => x.type === 'asset')
-        .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
-      const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
-        target: foundryItems[newI],
-        siblings: foundryItems,
-        sortBefore,
-      })
-      await Promise.all(
-        updates.map(({ target, update }) => target.update(update))
-      )
-    },
-    sortUp(i) {
-      this.applySort(i, i - 1, true)
-    },
-    sortDown(i) {
-      this.applySort(i, i + 1, false)
-    },
-  },
+const actor = inject('actor') as Ref
+
+const editMode = computed(() => {
+  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
+})
+const assets = computed(() => {
+  const assets = actor.value.items.filter((x) => x.type === 'asset')
+  return sortBy(assets, (x) => x.sort)
+})
+
+function openCompendium() {
+  const pack = game.packs?.get('foundry-ironsworn.starforgedassets')
+  pack?.render(true)
+}
+async function applySort(oldI, newI, sortBefore) {
+  const foundryItems = this.$actor.items
+    .filter((x) => x.type === 'asset')
+    .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+  const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
+    target: foundryItems[newI],
+    siblings: foundryItems,
+    sortBefore,
+  })
+  await Promise.all(updates.map(({ target, update }) => target.update(update)))
+}
+function sortUp(i) {
+  this.applySort(i, i - 1, true)
+}
+function sortDown(i) {
+  this.applySort(i, i + 1, false)
 }
 </script>

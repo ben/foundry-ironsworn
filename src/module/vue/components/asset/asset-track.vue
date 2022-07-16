@@ -7,23 +7,23 @@
   />
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    item: Object,
-  },
+<script setup lang="ts">
+import { inject, computed } from 'vue'
+import { IronswornActor } from '../../../actor/actor'
+import Boxrow from '../boxrow/boxrow.vue'
 
-  methods: {
-    click(_ev, value) {
-      this.$item?.update({
-        data: {
-          track: {
-            current: value,
-          },
-        },
-      })
+const props = defineProps<{ item: any }>()
+const $actor = inject('$actor') as IronswornActor
+const $item = () => $actor.items.get(props.item._id)
+
+function click(value) {
+  console.log(value, props, $item())
+  $item()?.update({
+    data: {
+      track: {
+        current: value,
+      },
     },
-  },
+  })
 }
 </script>

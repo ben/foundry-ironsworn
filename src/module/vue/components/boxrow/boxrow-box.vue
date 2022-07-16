@@ -1,29 +1,14 @@
 <template>
-  <div class="box clickable block" :class="classes" @click="click">
+  <div
+    class="box clickable block"
+    :class="{ selected }"
+    @click="$emit('click', value)"
+  >
     {{ text }}
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    text: String,
-    value: Number,
-    selected: Boolean,
-  },
-
-  computed: {
-    classes() {
-      return {
-        selected: this.selected,
-      }
-    },
-  },
-
-  methods: {
-    click(el) {
-      this.$emit('click', el, this.value)
-    },
-  },
-}
+<script setup lang="ts">
+defineProps<{ text: string; value: number; selected: boolean }>()
+defineEmits(['click'])
 </script>
