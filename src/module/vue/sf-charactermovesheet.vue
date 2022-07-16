@@ -1,8 +1,8 @@
 <template>
   <tabs ref="tabs">
-    <!-- <tab :title="$t('IRONSWORN.Moves')">
+    <tab :title="$t('IRONSWORN.Moves')">
       <sf-movesheetmoves ref="moves" />
-    </tab> -->
+    </tab>
     <tab :title="$t('IRONSWORN.Oracles')">
       <Suspense>
         <sf-movesheetoracles ref="oracles" />

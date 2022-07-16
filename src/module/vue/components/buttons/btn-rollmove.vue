@@ -11,22 +11,21 @@
   </btn-isicon>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { inject } from 'vue'
+import { SFRollMoveDialog } from '../../../helpers/rolldialog-sf'
+import { $ActorKey } from '../../provisions'
 import btnIsicon from './btn-isicon.vue'
 
-export default defineComponent({
-  props: {
-    move: Object,
-    tooltip: String,
-    disabled: Boolean,
-  },
-  components: { btnIsicon },
-  inject: ['$actor'],
-  methods: {
-    async rollMove() {
-      CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, this.move.moveItem)
-    },
-  },
-})
+const props = defineProps<{
+  move?: any
+  tooltip?: string
+  disabled?: boolean
+}>()
+
+const $actor = inject($ActorKey)
+
+async function rollMove() {
+  if ($actor) SFRollMoveDialog.show($actor, props.move.moveItem)
+}
 </script>

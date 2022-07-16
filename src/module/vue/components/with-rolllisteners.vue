@@ -1,55 +1,48 @@
 <template>
-  <component :is="element">
+  <component :is="element" ref="el">
     <slot />
   </component>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { inject, onMounted, ref } from 'vue'
+import { $ActorKey } from '../provisions'
 
-export default defineComponent({
-  props: {
-    element: String,
-  },
+const props = defineProps<{ element: string }>()
 
-  inject: ['$actor'],
+const $actor = inject($ActorKey)
+const el = ref<HTMLElement>()
+onMounted(() => {
+  CONFIG.IRONSWORN.attachInlineRollListeners($(el.value), {
+    actor: $actor,
+  })
+})
 
-  mounted() {
-    CONFIG.IRONSWORN.attachInlineRollListeners($(this.$el), {
-      actor: this.$actor,
+function click(ev) {
+  ev.preventDefault()
+
+  const { pack, id, dfid } = ev.currentTarget.dataset
+  if (id) {
+    // Might be a move navigation click
+    if (!pack) {
+      const item = game.items?.get(id)
+      return item?.sheet?.render(true)
+    }
+
+    const gamePack = game.packs.get(pack)
+    gamePack?.getDocument(id)?.then((gameItem) => {
+      if (['move', 'sfmove'].includes(gameItem?.type)) {
+        this.$emit('moveclick', gameItem)
+      }
     })
 
-    $(this.$el).find('.entity-link').on('click', this.click)
-  },
+    return this.$attrs['onMoveclick'] ? false : true
+  }
 
-  methods: {
-    click(ev) {
-      ev.preventDefault()
-
-      const { pack, id, dfid } = ev.currentTarget.dataset
-      if (id) {
-        // Might be a move navigation click
-        if (!pack) {
-          const item = game.items?.get(id)
-          return item?.sheet?.render(true)
-        }
-
-        const gamePack = game.packs.get(pack)
-        gamePack?.getDocument(id)?.then((gameItem) => {
-          if (['move', 'sfmove'].includes(gameItem?.type)) {
-            this.$emit('moveclick', gameItem)
-          }
-        })
-
-        return this.$attrs['onMoveclick'] ? false : true
-      }
-
-      if (dfid) {
-        // Probably an oracle category click
-        this.$emit('oracleclick', dfid)
-        return this.$attrs['onOracleclick'] ? false : true
-      }
-    },
-  },
-})
+  if (dfid) {
+    // Probably an oracle category click
+    this.$emit('oracleclick', dfid)
+    return this.$attrs['onOracleclick'] ? false : true
+  }
+}
 </script>
