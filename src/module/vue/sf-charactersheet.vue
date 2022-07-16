@@ -125,10 +125,9 @@ import btnRollstat from './components/buttons/btn-rollstat.vue'
 import btnIsicon from './components/buttons/btn-isicon.vue'
 import sfImpacts from './components/sf-impacts.vue'
 import { IronswornActor } from '../actor/actor'
-import { CharacterDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
-  actor: CharacterDataProperties
+  actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
 
 provide(

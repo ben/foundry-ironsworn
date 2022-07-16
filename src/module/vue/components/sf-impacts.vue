@@ -33,8 +33,5 @@ h5 {
 </style>
 
 <script setup lang="ts">
-import { inject } from 'vue'
 import conditionCheckbox from './conditions/condition-checkbox.vue'
-
-const actor = inject('actor')
 </script>

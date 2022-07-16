@@ -10,22 +10,22 @@
 </template>
 
 <script lang="ts" setup>
-import { inject } from 'vue'
+import { inject, Ref } from 'vue'
 import { IronswornActor } from '../../../actor/actor'
 import { IronswornSettings } from '../../../helpers/settings'
 
-const actor = inject('actor')
+const actor = inject('actor') as Ref
 const $actor = inject('$actor') as IronswornActor
 
-const props = defineProps({
-  name: { type: String, required: true },
-  global: Boolean,
-})
+const props = defineProps<{
+  name: string
+  global?: boolean
+}>()
 
 async function input(ev) {
   const value = ev.currentTarget.checked
   let numDebilitiesMarked =
-    Object.values(actor.data.debility).filter((x) => x).length +
+    Object.values(actor.value.data.debility).filter((x) => x).length +
     (value ? 1 : -1)
   await $actor?.update({
     data: {
