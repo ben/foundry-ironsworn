@@ -6,6 +6,7 @@ declare module '@vue/runtime-core' {
     $capitalize: (string) => string
     $concat: (...args: any[]) => string
     $enrichMarkdown: (string) => string
+    $enrichHtml: (string) => string
   }
 }
 

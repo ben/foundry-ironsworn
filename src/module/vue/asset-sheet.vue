@@ -17,22 +17,22 @@
     <!-- FIELDS -->
     <div v-if="hasFields || editMode">
       <h3>{{ $t('IRONSWORN.Fields') }}</h3>
-      <asset-fieldsedit :item="item" />
+      <asset-fieldsedit />
     </div>
 
     <!-- ABILITIES -->
     <h3>{{ $t('IRONSWORN.Abilities') }}</h3>
-    <asset-abilitiesedit :item="item" />
+    <!-- <asset-abilitiesedit /> -->
 
     <!-- OPTIONS -->
     <div v-if="hasOptions || editMode">
       <h3>{{ $t('IRONSWORN.Options') }}</h3>
-      <asset-optionsedit :item="item" />
+      <!-- <asset-optionsedit /> -->
     </div>
 
     <!-- TRACK -->
     <h3>{{ $t('IRONSWORN.Track') }}</h3>
-    <asset-trackedit :item="item" />
+    <!-- <asset-trackedit /> -->
   </div>
 </template>
 
@@ -51,13 +51,17 @@ h3 {
 </style>
 
 <script setup lang="ts">
-import { computed, inject, provide } from 'vue'
+import { computed, inject, provide, Ref } from 'vue'
 import { IronswornItem } from '../item/item'
 import DocumentName from './components/document-name.vue'
+import AssetFieldsedit from './components/asset/asset-fieldsedit.vue'
+import AssetAbilitiesedit from './components/asset/asset-abilitiesedit.vue'
+import AssetOptionsedit from './components/asset/asset-optionsedit.vue'
+import AssetTrackedit from './components/asset/asset-trackedit.vue'
 
 const $item = inject('$item') as IronswornItem
 
-const props = defineProps<{ item: any }>()
+const props = defineProps<{ item: Ref }>()
 provide(
   'item',
   computed(() => props.item)
