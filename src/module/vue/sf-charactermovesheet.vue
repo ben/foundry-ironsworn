@@ -14,11 +14,14 @@ import Tab from './components/tabs/tab.vue'
 import Tabs from './components/tabs/tabs.vue'
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
-import { provide } from 'vue'
+import { computed, provide } from 'vue'
 
 const props = defineProps({ actor: { type: Object, required: true } })
 
-provide('actor', props.actor)
+provide(
+  'actor',
+  computed(() => props.actor)
+)
 
 async function highlightMove(item) {
   this.currentTab = this.tabs[0]

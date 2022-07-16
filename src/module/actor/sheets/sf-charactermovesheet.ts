@@ -23,6 +23,15 @@ export class SFCharacterMoveSheet extends VueApplication {
     }
   }
 
+  render(
+    force?: boolean | undefined,
+    inputOptions?: Application.RenderOptions<ApplicationOptions> | undefined
+  ): this {
+    super.render(force, inputOptions)
+    this.actor.apps[this.appId] = this
+    return this
+  }
+
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       template:
