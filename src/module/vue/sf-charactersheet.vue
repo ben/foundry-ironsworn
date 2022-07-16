@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol sf-character-sheet">
     <!-- Header row -->
-    <sf-characterheader :actor="actor" />
+    <sf-characterheader />
 
     <!-- Main body row -->
     <div class="flexrow">
@@ -21,9 +21,9 @@
                 {{ $t('IRONSWORN.Burn') }}
               </btn-momentumburn>
 
-              {{ $t('IRONSWORN.Reset') }}: {{ actor.momentumReset }}
+              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
               {{ $t('IRONSWORN.Max') }}:
-              {{ actor.momentumMax }}
+              {{ actor.data.momentumMax }}
             </div>
           </div>
 
@@ -111,8 +111,8 @@
 }
 </style>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { computed, inject, provide } from 'vue'
 import AttrBox from './components/attr-box.vue'
 import BtnMomentumburn from './components/buttons/btn-momentumburn.vue'
 import SfLegacies from './components/sf-character-sheet-tabs/sf-legacies.vue'
@@ -124,54 +124,20 @@ import Tab from './components/tabs/tab.vue'
 import btnRollstat from './components/buttons/btn-rollstat.vue'
 import btnIsicon from './components/buttons/btn-isicon.vue'
 import sfImpacts from './components/sf-impacts.vue'
+import { IronswornActor } from '../actor/actor'
+import { CharacterDataProperties } from '../actor/actortypes'
 
-export default defineComponent({
-  props: {
-    actor: { type: Object, required: true },
-  },
+const props = defineProps<{
+  actor: CharacterDataProperties
+}>()
 
-  provide() {
-    return {
-      actor: this.actor,
-    }
-  },
+provide(
+  'actor',
+  computed(() => props.actor)
+)
 
-  components: {
-    SfCharacterheader,
-    Stack,
-    AttrBox,
-    BtnMomentumburn,
-    SfConnections,
-    SfLegacies,
-    Tabs,
-    Tab,
-    btnRollstat,
-    btnIsicon,
-    sfImpacts,
-  },
-
-  data() {
-    const tabs = [
-      { titleKey: 'IRONSWORN.Legacies', component: 'sf-legacies' },
-      { titleKey: 'IRONSWORN.Assets', component: 'sf-assets' },
-      { titleKey: 'IRONSWORN.Progress', component: 'sf-progresses' },
-      { titleKey: 'IRONSWORN.Connections', component: 'sf-connections' },
-      { titleKey: 'IRONSWORN.Notes', component: 'sf-notes' },
-    ]
-    return {
-      tabs,
-      currentTab: tabs[0],
-    }
-  },
-
-  methods: {
-    rollStat(stat) {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
-    },
-    openCompendium(name) {
-      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-      pack?.render(true)
-    },
-  },
-})
+function openCompendium(name) {
+  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
+  pack?.render(true)
+}
 </script>

@@ -114,12 +114,9 @@ export default defineComponent({
   methods: {
     adjust(inc) {
       const current = this.actor.data?.legacies[this.propKey] ?? 0
-      ;(this.$actor as IronswornActor).update(
-        {
-          [`data.legacies.${this.propKey}`]: current + inc,
-        },
-        { render: true }
-      )
+      ;(this.$actor as IronswornActor).update({
+        [`data.legacies.${this.propKey}`]: current + inc,
+      })
     },
     increase() {
       this.adjust(1)
@@ -129,12 +126,9 @@ export default defineComponent({
     },
 
     setXp(n) {
-      this.$actor.update(
-        {
-          data: { legacies: { [`${this.propKey}XpSpent`]: n } },
-        },
-        { render: true }
-      )
+      this.$actor.update({
+        data: { legacies: { [`${this.propKey}XpSpent`]: n } },
+      })
     },
   },
 })

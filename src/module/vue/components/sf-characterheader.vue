@@ -7,7 +7,7 @@
         type="text"
         style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Name')"
-        v-model="actor.name"
+        v-model="actor.data.name"
         ref="name"
         @blur="save"
       />
@@ -49,25 +49,23 @@ textarea {
 }
 </style>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
+import { defineComponent, inject } from 'vue'
+import { IronswornActor } from '../../actor/actor'
+import { CharacterDataProperties } from '../../actor/actortypes'
 import documentImg from './document-img.vue'
 
-export default defineComponent({
-  inject: ['actor'],
-  components: { documentImg },
+const actor = inject('actor') as CharacterDataProperties
+const $actor = inject('$actor') as IronswornActor
 
-  methods: {
-    save() {
-      this.$actor?.update({
-        name: this.$refs.name.value,
-        data: {
-          callsign: this.$refs.callsign.value,
-          pronouns: this.$refs.pronouns.value,
-          biography: this.$refs.characteristics.value,
-        },
-      })
+function save() {
+  this.$actor?.update({
+    name: this.$refs.name.value,
+    data: {
+      callsign: this.$refs.callsign.value,
+      pronouns: this.$refs.pronouns.value,
+      biography: this.$refs.characteristics.value,
     },
-  },
-})
+  })
+}
 </script>

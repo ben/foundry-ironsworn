@@ -3,7 +3,6 @@
   <div :class="classes" @click="click">
     <h4>{{ $t(i18nKey) }}</h4>
     <div class="flexrow" style="position: relative">
-      <!-- TODO: migrate to new attr box component -->
       <div v-if="!editMode" class="bg-die">
         <i class="isicon-d10-tilt"></i>
       </div>
@@ -34,13 +33,15 @@
 </style>
 
 <script lang="ts" setup>
-import { inject, computed, capitalize } from 'vue'
+import { inject, computed, capitalize, Ref } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { RollDialog } from '../../helpers/rolldialog'
 
 const props = defineProps({ attr: { type: String, required: true } })
-const actor = inject('actor') as any
 const $actor = inject('$actor') as IronswornActor
+const actor = inject('actor') as Ref<
+  ReturnType<typeof IronswornActor.prototype.toObject>
+>
 
 const clickable = computed(() => (this.editMode.value ? '' : ' clickable '))
 const classes = computed(() => ({
@@ -50,7 +51,7 @@ const classes = computed(() => ({
 }))
 const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
 const editMode = computed(
-  () => !!actor.flags['foundry-ironsworn']?.['edit-mode']
+  () => !!(actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 )
 
 function click() {
@@ -59,11 +60,11 @@ function click() {
 }
 
 function increment() {
-  const value = parseInt(actor.data[props.attr]) + 1
+  const value = parseInt(actor.value.data[props.attr]) + 1
   $actor?.update({ data: { [props.attr]: value } })
 }
 function decrement() {
-  const value = parseInt(actor.data[props.attr]) - 1
+  const value = parseInt(actor.value.data[props.attr]) - 1
   $actor?.update({ data: { [props.attr]: value } })
 }
 </script>

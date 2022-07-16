@@ -1,4 +1,4 @@
-import { App, Component, ComponentPublicInstance, createApp, ref } from 'vue'
+import { App, Component, ComponentPublicInstance, createApp } from 'vue'
 import mitt from 'mitt'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornVuePlugin } from './vue-plugin'
@@ -35,7 +35,7 @@ export class VueSheetRenderHelper {
     console.log(this.vueApp, data)
     if (this.vueApp) {
       // Pass new values into the app
-      ;(this.vueRoot as any).updateContext(data)
+      ;(this.vueRoot as any).updateData(data)
       return
     }
 
@@ -57,7 +57,7 @@ export class VueSheetRenderHelper {
       },
 
       methods: {
-        updateContext(newCtx) {
+        updateData(newCtx) {
           for (const k of Object.keys(this.data)) {
             this.data[k] = newCtx[k]
           }

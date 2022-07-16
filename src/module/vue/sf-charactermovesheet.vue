@@ -1,10 +1,10 @@
 <template>
-  <tabs>
+  <tabs ref="tabs">
     <tab :title="$t('IRONSWORN.Moves')">
-      <sf-movesheetmoves />
+      <sf-movesheetmoves ref="moves" />
     </tab>
     <tab :title="$t('IRONSWORN.Oracles')">
-      <sf-movesheetoracles />
+      <sf-movesheetoracles ref="oracles" />
     </tab>
   </tabs>
 </template>
@@ -15,14 +15,18 @@ import Tabs from './components/tabs/tabs.vue'
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
 import { computed, provide } from 'vue'
+import { CharacterDataProperties } from '../actor/actortypes'
 
-const props = defineProps({ actor: { type: Object, required: true } })
+const props = defineProps<{
+  actor: CharacterDataProperties
+}>()
 
 provide(
   'actor',
   computed(() => props.actor)
 )
 
+// TODO: these almost certainly don't work
 async function highlightMove(item) {
   this.currentTab = this.tabs[0]
   await this.$nextTick()
