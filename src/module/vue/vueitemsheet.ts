@@ -1,7 +1,4 @@
-// import Vue from 'vue'
 import { merge } from 'lodash'
-import { IronswornSettings } from '../helpers/settings'
-import { IronswornItem } from '../item/item'
 import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
@@ -37,5 +34,10 @@ export abstract class VueItemSheet extends ItemSheet {
 
     this.renderHelper.render(force, options)
     return this
+  }
+
+  close(options?: FormApplication.CloseOptions | undefined): Promise<void> {
+    this.renderHelper?.close()
+    return super.close(options)
   }
 }
