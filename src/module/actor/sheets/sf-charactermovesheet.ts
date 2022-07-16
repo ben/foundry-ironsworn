@@ -4,6 +4,8 @@ import { VueApplication } from '../../vue/vueapp'
 import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
 import { IronswornActor } from '../actor'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { App } from 'vue'
+import { $ActorKey } from '../../vue/provisions'
 
 export class SFCharacterMoveSheet extends VueApplication {
   constructor(
@@ -16,11 +18,15 @@ export class SFCharacterMoveSheet extends VueApplication {
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
       components: { 'sfcharacter-movesheet': CharacterMoveSheet },
-      provides: { $actor: this.actor },
       vueData: async () => ({
         actor: this.actor.toObject(),
       }),
     }
+  }
+
+  setupVueApp(app: App<any>): void {
+    super.setupVueApp(app)
+    app.provide($ActorKey, this.actor)
   }
 
   render(

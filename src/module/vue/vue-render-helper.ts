@@ -6,7 +6,6 @@ import { IronswornVuePlugin } from './vue-plugin'
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
   components: { [k: string]: Component }
-  provides: { [k: string]: any }
 }
 
 export class VueSheetRenderHelper {
@@ -18,12 +17,12 @@ export class VueSheetRenderHelper {
 
   constructor(
     protected app: Application,
-    options?: Partial<VueSheetRenderHelperOptions>
+    options?: Partial<VueSheetRenderHelperOptions>,
+    protected appHook?: (App) => void
   ) {
     this.options = {
       vueData: async () => ({}),
       components: {},
-      provides: {},
       ...options,
     }
     this.emitter = mitt()
@@ -49,7 +48,6 @@ export class VueSheetRenderHelper {
             themeClass: `theme-${IronswornSettings.theme}`,
             config: CONFIG.IRONSWORN,
           },
-          ...this.options.provides,
         },
 
         methods: {
@@ -62,6 +60,7 @@ export class VueSheetRenderHelper {
       })
       this.vueApp.config.unwrapInjectedRef = true
       this.vueApp.use(IronswornVuePlugin)
+      this.appHook?.(this.vueApp)
     } else {
       ;(this.vueRoot as any).updateData(data)
       if (!this.vueListenersActive) {

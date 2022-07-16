@@ -1,4 +1,4 @@
-import { Component } from 'vue'
+import { App, Component } from 'vue'
 import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
@@ -15,10 +15,15 @@ export abstract class VueApplication extends Application {
     return {}
   }
 
+  setupVueApp(app: App) {
+    // Nowt to do here
+  }
+
   render(force?: boolean, inputOptions?: Application.RenderOptions) {
     this.renderHelper ||= new VueSheetRenderHelper(
       this,
-      this.renderHelperOptions
+      this.renderHelperOptions,
+      this.setupVueApp.bind(this)
     )
     this.renderHelper.render(force, inputOptions)
     return this

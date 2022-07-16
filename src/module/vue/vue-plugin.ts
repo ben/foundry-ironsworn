@@ -1,4 +1,6 @@
+import { marked } from 'marked'
 import { Plugin } from 'vue'
+import { $EnrichHtmlKey, $EnrichMarkdownKey } from './provisions'
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
@@ -10,6 +12,27 @@ declare module '@vue/runtime-core' {
   }
 }
 
+export function enrichHtml(text) {
+  const rendered = TextEditor.enrichHTML(text)
+  const rollText = game.i18n.localize('IRONSWORN.Roll')
+  return rendered.replace(
+    /\(\(rollplus (.*?)\)\)/g,
+    (_, stat) => `
+  <a class="inline-roll" data-param="${stat}">
+    <i class="fas fa-dice-d6"></i>
+    ${rollText} +${game.i18n
+      .localize(`IRONSWORN.${app.config.globalProperties.$capitalize(stat)}`)
+      .toLowerCase()}
+  </a>
+`
+  )
+}
+
+export function enrichMarkdown(md: string): string {
+  const html = marked.parse(md)
+  return enrichHtml(html)
+}
+
 export const IronswornVuePlugin: Plugin = {
   install(app, ..._options) {
     app.config.globalProperties.$t = (k) => game.i18n.localize(k)
@@ -18,28 +41,11 @@ export const IronswornVuePlugin: Plugin = {
       const [first, ...rest] = txt
       return `${first.toUpperCase()}${rest.join('')}`
     }
-    function enrichHtml(text) {
-      const rendered = TextEditor.enrichHTML(text)
-      const rollText = game.i18n.localize('IRONSWORN.Roll')
-      return rendered.replace(
-        /\(\(rollplus (.*?)\)\)/g,
-        (_, stat) => `
-      <a class="inline-roll" data-param="${stat}">
-        <i class="fas fa-dice-d6"></i>
-        ${rollText} +${game.i18n
-          .localize(
-            `IRONSWORN.${app.config.globalProperties.$capitalize(stat)}`
-          )
-          .toLowerCase()}
-      </a>
-    `
-      )
-    }
     app.config.globalProperties.$enrichHtml = enrichHtml
-    app.config.globalProperties.$enrichMarkdown = (md) => {
-      const html = CONFIG.IRONSWORN.marked.parse(md)
-      return enrichHtml(html)
-    }
+    app.provide($EnrichHtmlKey, enrichHtml)
+
+    app.config.globalProperties.$enrichMarkdown = enrichMarkdown
+    app.provide($EnrichMarkdownKey, enrichMarkdown)
 
     Object.defineProperty(app.config.globalProperties, '$item', {
       get: function () {

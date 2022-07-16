@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { inject, PropType, provide, ref, useSlots } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
+import { $ActorKey } from '../../provisions'
 
 const props = defineProps({
   // What to wrap this element in
@@ -46,7 +46,7 @@ const tabTitles = ref(slots?.default?.().map((tab) => tab.props?.title))
 const selectedTitle = ref(tabTitles?.value?.[0])
 provide('selectedTitle', selectedTitle)
 
-const actor = inject('$actor') as IronswornActor | undefined
+const actor = inject($ActorKey)
 const stubId = (title: string) => `${props.name}-${title}-${actor?.id}`
 const tabPanelId = (title: string) => `tabpanel-${stubId(title)}`
 const tabId = (title: string) => `tab-${stubId(title)}`

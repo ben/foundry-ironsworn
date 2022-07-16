@@ -1,10 +1,12 @@
 <template>
   <tabs ref="tabs">
-    <tab :title="$t('IRONSWORN.Moves')">
+    <!-- <tab :title="$t('IRONSWORN.Moves')">
       <sf-movesheetmoves ref="moves" />
-    </tab>
+    </tab> -->
     <tab :title="$t('IRONSWORN.Oracles')">
-      <sf-movesheetoracles ref="oracles" />
+      <Suspense>
+        <sf-movesheetoracles ref="oracles" />
+      </Suspense>
     </tab>
   </tabs>
 </template>
