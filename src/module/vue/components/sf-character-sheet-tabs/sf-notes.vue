@@ -1,31 +1,15 @@
 <template>
   <div class="flexcol">
-    <quill-editor v-model="actor.data.notes" />
+    <h1>TODO</h1>
+    <!-- <quill-editor v-model="actor.data.notes" /> -->
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import { debounce } from 'lodash'
+import { inject, Ref } from 'vue'
+import { $ActorKey } from '../../provisions'
 
-export default {
-  props: {
-    actor: Object,
-  },
-
-  watch: {
-    'actor.data.notes'() {
-      this.debouncedSave()
-    },
-  },
-
-  created() {
-    this.debouncedSave = debounce(this.save, 500)
-  },
-
-  methods: {
-    save() {
-      this.$actor.update({ 'data.notes': this.actor.data.notes })
-    },
-  },
-}
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 </script>
