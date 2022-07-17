@@ -1,11 +1,11 @@
 <template>
   <tabs ref="tabs">
     <tab :title="$t('IRONSWORN.Moves')">
-      <sf-movesheetmoves ref="moves" />
+      <sf-movesheetmoves ref="movesTab" />
     </tab>
     <tab :title="$t('IRONSWORN.Oracles')">
       <Suspense>
-        <sf-movesheetoracles ref="oracles" />
+        <sf-movesheetoracles ref="oraclesTab" />
       </Suspense>
     </tab>
   </tabs>
@@ -16,7 +16,7 @@ import Tab from './components/tabs/tab.vue'
 import Tabs from './components/tabs/tabs.vue'
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
-import { computed, provide } from 'vue'
+import { computed, nextTick, provide, ref } from 'vue'
 import { CharacterDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
@@ -29,15 +29,18 @@ provide(
 )
 
 // TODO: these almost certainly don't work
+const tabs = ref<InstanceType<typeof Tabs>>()
+const movesTab = ref<InstanceType<typeof SfMovesheetmoves>>()
 async function highlightMove(item) {
-  this.currentTab = this.tabs[0]
-  await this.$nextTick()
-  this.$refs.tabs.$refs.activeTab?.['highlightMove']?.(item)
+  tabs.value?.selectIndex(0)
+  await nextTick()
+  movesTab.value?.highlightMove(item)
 }
 
+const oraclesTab = ref<InstanceType<typeof SfMovesheetoracles>>()
 async function highlightOracle(dfid) {
-  this.currentTab = this.tabs[1]
-  await this.$nextTick()
-  this.$refs.tabs.$refs.activeTab?.['highlightOracle']?.(dfid)
+  tabs.value?.selectIndex(1)
+  await nextTick()
+  oraclesTab.value?.highlightOracle(dfid)
 }
 </script>

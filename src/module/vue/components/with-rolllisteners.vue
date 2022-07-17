@@ -13,11 +13,19 @@ const props = defineProps<{ element: string }>()
 const $actor = inject($ActorKey)
 const el = ref<HTMLElement>()
 onMounted(() => {
+  if (!el.value) {
+    console.error('wtf')
+    return
+  }
+
   CONFIG.IRONSWORN.attachInlineRollListeners($(el.value), {
     actor: $actor,
   })
+
+  $(el.value).find('.entity-link').on('click', click)
 })
 
+const $emit = defineEmits(['moveclick', 'oracleclick'])
 function click(ev) {
   ev.preventDefault()
 
@@ -32,7 +40,7 @@ function click(ev) {
     const gamePack = game.packs.get(pack)
     gamePack?.getDocument(id)?.then((gameItem) => {
       if (['move', 'sfmove'].includes(gameItem?.type)) {
-        this.$emit('moveclick', gameItem)
+        $emit('moveclick', gameItem)
       }
     })
 
@@ -41,7 +49,7 @@ function click(ev) {
 
   if (dfid) {
     // Probably an oracle category click
-    this.$emit('oracleclick', dfid)
+    $emit('oracleclick', dfid)
     return this.$attrs['onOracleclick'] ? false : true
   }
 }

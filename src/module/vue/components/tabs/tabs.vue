@@ -1,6 +1,6 @@
 <template>
-  <component :is="wrapperElement" class="flexcol tabbed-panels">
-    <nav role="tablist" :aria-orientation="ariaOrientation">
+  <component :is="wrapperElement ?? 'section'" class="flexcol tabbed-panels">
+    <nav role="tablist" :aria-orientation="ariaOrientation ?? 'horizontal'">
       <button
         v-for="title in tabTitles"
         class="block clickable text"
@@ -20,26 +20,14 @@
 </template>
 
 <script setup lang="ts">
-import { inject, PropType, provide, ref, useSlots } from 'vue'
+import { inject, provide, ref, useSlots } from 'vue'
 import { $ActorKey } from '../../provisions'
 
-const props = defineProps({
-  // What to wrap this element in
-  wrapperElement: {
-    type: String,
-    default: 'section',
-  },
-
-  /* used to distinguish this from other tab panels for purpose of ID generation */
-  name: String,
-
-  // orientation of the tabs
-  ariaOrientation: {
-    type: String as PropType<'horizontal' | 'vertical'>,
-    default: 'horizontal',
-    options: ['horizontal', 'vertical'],
-  },
-})
+const props = defineProps<{
+  wrapperElement?: string
+  name?: string
+  ariaOrientation?: 'horizontal' | 'vertical'
+}>()
 
 const slots = useSlots()
 const tabTitles = ref(slots?.default?.().map((tab) => tab.props?.title))
@@ -50,6 +38,11 @@ const actor = inject($ActorKey)
 const stubId = (title: string) => `${props.name}-${title}-${actor?.id}`
 const tabPanelId = (title: string) => `tabpanel-${stubId(title)}`
 const tabId = (title: string) => `tab-${stubId(title)}`
+
+const selectIndex = (i: number) => {
+  selectedTitle.value = tabTitles?.value?.[i]
+}
+defineExpose({ selectIndex })
 </script>
 
 <style lang="less">

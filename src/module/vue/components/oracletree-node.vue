@@ -160,11 +160,22 @@ function expand() {
   data.manuallyExpanded = true
 }
 
-const $el = ref<HTMLElement>(null)
+const $el = ref<HTMLElement>()
 async function highlight() {
   data.highlighted = true
-  $el.value.scrollIntoView()
-  await new Promise((r) => setTimeout(r, 2000))
-  data.highlighted = false
+  $el.value?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'center',
+  })
+  setTimeout(() => {
+    data.highlighted = false
+  }, 2000)
 }
+
+defineExpose({
+  dfId: () => props.node.dataforgedNode?.$id,
+  expand,
+  collapse,
+  highlight,
+})
 </script>

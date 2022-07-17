@@ -107,9 +107,9 @@ function collapseAll() {
   }
 }
 
-const oracles = ref<Component[]>([])
+const oracles = ref<InstanceType<typeof TreeNode>[]>([])
 async function highlightOracle(dfid) {
-  this.clearSearch()
+  clearSearch()
 
   // Find the path in the data tree
   const dfOraclePath = findOracleWithIntermediateNodes(dfid)
@@ -123,9 +123,7 @@ async function highlightOracle(dfid) {
   let children = oracles.value
   let lastComponent
   for (const dataNode of dfOraclePath) {
-    lastComponent = children.find(
-      (x: any) => x.node.dataforgedNode.$id === dataNode.$id
-    )
+    lastComponent = children.find((x: any) => x.dfId() === dataNode.$id)
     if (!lastComponent) break
     lastComponent.expand()
     await new Promise((r) => setTimeout(r, 50))
@@ -135,4 +133,5 @@ async function highlightOracle(dfid) {
   // Visual highlight on the target
   lastComponent?.highlight()
 }
+defineExpose({ highlightOracle })
 </script>
