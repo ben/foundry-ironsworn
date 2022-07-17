@@ -14,15 +14,15 @@
 </template>
 
 <script lang="ts" setup>
-import { inject, Ref } from 'vue'
+import { computed, inject, Ref } from 'vue'
 import legacyTrack from '../legacy-track.vue'
 import progressBox from '../progress/progress-box.vue'
 
 const actor = inject('actor') as Ref
 
-function starredProgresses(): any[] {
+const starredProgresses = computed(() => {
   return actor.value.items
     .filter((x) => x.type === 'progress')
     .filter((x) => x.data.starred)
-}
+})
 </script>
