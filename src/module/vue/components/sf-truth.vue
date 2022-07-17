@@ -17,7 +17,7 @@
         <p>{{ truth?.Description }}</p>
 
         <transition name="slide" v-if="truth?.Subtable">
-          <div v-show="selected">
+          <div v-show="data.selected">
             <div
               class="flexrow"
               v-for="suboption in truth?.Subtable"
@@ -58,50 +58,42 @@
 }
 </style>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script setup lang="ts">
+import { computed, defineComponent, PropType, reactive } from 'vue'
 import { ISettingTruthOption } from 'dataforged'
 
-export default defineComponent({
-  props: {
-    radiogroup: String,
-    truth: Object as PropType<ISettingTruthOption>,
-  },
+const props = defineProps<{
+  radiogroup: string
+  truth: ISettingTruthOption
+}>()
 
-  emits: {
-    change(category: string, value: string) {
-      return category.length > 0 && value.length > 0
-    },
-  },
-
-  data() {
-    return {
-      selected: false,
-      subOptionDescription: '',
-    }
-  },
-
-  computed: {
-    radiovalue() {
-      const subOptionText = this.subOptionDescription
-        ? `(${this.subOptionDescription})`
-        : ''
-      return `
-        <p><strong>${this.truth.Result}</strong></p>
-        <p>${this.truth.Description} ${subOptionText}</p>
-        <p><em>
-          ${this.$t('IRONSWORN.TruthQuestStarter')}
-          ${this.truth['Quest Starter']}
-        </em></p>
-      `
-    },
-  },
-
-  methods: {
-    changed(evt) {
-      this.selected = evt.target.checked
-      this.$emit('change', this.radiogroup, this.radiovalue)
-    },
+const $emit = defineEmits({
+  change(category: string, value: string) {
+    return category.length > 0 && value.length > 0
   },
 })
+
+const data = reactive({
+  selected: false,
+  subOptionDescription: '',
+})
+
+const radiovalue = computed(() => {
+  const subOptionText = data.subOptionDescription
+    ? `(${data.subOptionDescription})`
+    : ''
+  return `
+      <p><strong>${props.truth.Result}</strong></p>
+      <p>${props.truth.Description} ${subOptionText}</p>
+      <p><em>
+        ${game.i18n.localize('IRONSWORN.TruthQuestStarter')}
+        ${props.truth['Quest Starter']}
+      </em></p>
+    `
+})
+
+function changed(evt) {
+  data.selected = evt.target.checked
+  $emit('change', props.radiogroup, radiovalue.value)
+}
 </script>

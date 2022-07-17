@@ -2,8 +2,11 @@ import { InjectionKey } from 'vue'
 import { enrichHtml, enrichMarkdown } from './vue-plugin'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
+import mitt from 'mitt'
 
 // Provided by the Vue plugin
+export type Emitter = ReturnType<typeof mitt>
+export const $EmitterKey = Symbol('$emitter') as InjectionKey<Emitter>
 export const $EnrichHtmlKey = Symbol('$enrichHtml') as InjectionKey<
   typeof enrichHtml
 >

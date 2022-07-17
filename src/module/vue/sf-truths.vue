@@ -21,56 +21,45 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script setup lang="ts">
+import { computed, defineComponent, inject, PropType, reactive } from 'vue'
 import SfTruth from './components/sf-truth.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import { ISettingTruth } from 'dataforged'
+import { $EmitterKey } from './provisions'
 
-export default defineComponent({
-  props: {
-    truths: Array as PropType<ISettingTruth[]>,
-  },
+const emitter = inject($EmitterKey)
 
-  components: { SfTruth, BtnFaicon },
-  inject: ['context'],
+const props = defineProps<{ truths: ISettingTruth[] }>()
 
-  data() {
-    const output = {}
-    for (const category of this.truths ?? []) {
-      output[category.Name] = null
-    }
+const output = {}
+for (const category of props.truths ?? []) {
+  output[category.Name] = null
+}
 
-    return { output }
-  },
+const data = reactive({ output })
 
-  computed: {
-    composedOutput() {
-      return this.truths
-        .map((category) => category.Name)
-        .map((name) =>
-          this.output[name]
-            ? `<h2>${name}</h2>\n${this.output[name]}\n\n`
-            : undefined
-        )
-        .filter((x) => x !== undefined)
-        .join('\n')
-    },
-  },
+const composedOutput = computed(() =>
+  props.truths
+    .map((category) => category.Name)
+    .map((name) =>
+      data.output[name]
+        ? `<h2>${name}</h2>\n${data.output[name]}\n\n`
+        : undefined
+    )
+    .filter((x) => x !== undefined)
+    .join('\n')
+)
+function radioselect(category, value) {
+  data.output[category] = value
+}
 
-  methods: {
-    radioselect(category, value) {
-      this.output[category] = value
-    },
-
-    async saveTruths() {
-      const journal = await JournalEntry.create({
-        name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
-        content: this.composedOutput,
-      })
-      journal?.sheet?.render(true)
-      this.context.emitter.emit('closeApp')
-    },
-  },
-})
+async function saveTruths() {
+  const journal = await JournalEntry.create({
+    name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
+    content: composedOutput.value,
+  })
+  journal?.sheet?.render(true)
+  emitter?.emit('closeApp')
+}
 </script>

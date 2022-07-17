@@ -1,4 +1,4 @@
-import { App, Component } from 'vue'
+import { App } from 'vue'
 import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,

@@ -2,6 +2,7 @@ import { App, Component, ComponentPublicInstance, createApp } from 'vue'
 import mitt from 'mitt'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornVuePlugin } from './vue-plugin'
+import { $EmitterKey } from './provisions'
 
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
@@ -60,6 +61,7 @@ export class VueSheetRenderHelper {
       })
       this.vueApp.config.unwrapInjectedRef = true
       this.vueApp.use(IronswornVuePlugin)
+      this.vueApp.provide($EmitterKey, this.emitter)
       this.appHook?.(this.vueApp)
     } else {
       ;(this.vueRoot as any).updateData(data)

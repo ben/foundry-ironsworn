@@ -2,6 +2,7 @@ import { VueApplication } from '../vue/vueapp'
 import { starforged } from 'dataforged'
 import sfTruthsVue from '../vue/sf-truths.vue'
 import { Component } from 'vue'
+import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
 
 export class SFSettingTruthsDialogVue extends VueApplication {
   static get defaultOptions(): ApplicationOptions {
@@ -15,15 +16,13 @@ export class SFSettingTruthsDialogVue extends VueApplication {
     })
   }
 
-  async getVueData(): Promise<Record<string, any>> {
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      truths: starforged['Setting Truths'],
-    }
-  }
-
-  getComponents(): { [k: string]: Component } {
-    return {
-      'sf-truths': sfTruthsVue,
+      ...super.renderHelperOptions,
+      components: { 'sf-truths': sfTruthsVue },
+      vueData: async () => ({
+        truths: starforged['Setting Truths'],
+      }),
     }
   }
 }
