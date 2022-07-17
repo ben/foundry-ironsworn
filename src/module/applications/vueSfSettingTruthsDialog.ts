@@ -1,7 +1,6 @@
 import { VueApplication } from '../vue/vueapp'
 import { starforged } from 'dataforged'
 import sfTruthsVue from '../vue/sf-truths.vue'
-import { Component } from 'vue'
 import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
 
 export class SFSettingTruthsDialogVue extends VueApplication {
