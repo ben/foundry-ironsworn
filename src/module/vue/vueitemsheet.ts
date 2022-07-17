@@ -1,4 +1,3 @@
-import { merge } from 'lodash'
 import { App } from 'vue'
 import { $ItemKey } from './provisions'
 import {
@@ -29,13 +28,10 @@ export abstract class VueItemSheet extends ItemSheet {
   ): this {
     this.renderHelper ||= new VueSheetRenderHelper(
       this,
-      merge(
-        {
-          provides: { $item: this.item },
-          vueData: () => ({ item: this.item.toObject() }),
-        },
-        this.renderHelperOptions
-      ),
+      {
+        vueData: async () => ({ item: this.item.toObject() }),
+        ...this.renderHelperOptions,
+      },
       this.setupVueApp.bind(this)
     )
 

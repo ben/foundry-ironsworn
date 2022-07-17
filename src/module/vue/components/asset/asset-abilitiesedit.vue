@@ -40,7 +40,7 @@
         <select
           class="nogrow"
           v-model="ability.clockMax"
-          @change="clockMaxChange"
+          @change="clockMaxChange(i)"
           style="margin: 0.5rem 0"
         >
           <option value="4">4 segments</option>
@@ -55,46 +55,44 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    item: Object,
-  },
+<script setup lang="ts">
+import { computed, Ref, inject } from 'vue'
+import { $ItemKey } from '../../provisions'
+import Clock from '../clock.vue'
 
-  computed: {
-    editMode() {
-      return this.item.flags['foundry-ironsworn']?.['edit-mode']
-    },
-  },
+const item = inject('item') as Ref
+const $item = inject($ItemKey)
 
-  methods: {
-    markAbility(idx) {
-      const abilities = Object.values(this.item.data.abilities)
-      abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
-      this.$item.update({ data: { abilities } })
-    },
+const editMode = computed(
+  () => item.value?.flags['foundry-ironsworn']?.['edit-mode']
+)
 
-    enableClock(idx) {
-      const abilities = Object.values(this.item.data.abilities)
-      abilities[idx] = { ...abilities[idx], hasClock: !abilities[idx].hasClock }
-      this.$item.update({ data: { abilities } })
-    },
+function markAbility(idx) {
+  const abilities = Object.values(item.value?.data.abilities)
+  abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
+  $item?.update({ data: { abilities } })
+}
 
-    clockMaxChange() {
-      const abilities = Object.values(this.item.data.abilities)
-      this.$item.update({ data: { abilities } })
-    },
+function enableClock(idx) {
+  const abilities = Object.values(item.value?.data.abilities)
+  abilities[idx] = { ...abilities[idx], hasClock: !abilities[idx].hasClock }
+  $item?.update({ data: { abilities } })
+}
 
-    setClock(abilityIdx, clockTicks) {
-      const abilities = Object.values(this.item.data.abilities)
-      abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-      this.$item.update({ data: { abilities } })
-    },
+function clockMaxChange(idx: number) {
+  const abilities = Object.values(item.value?.data.abilities) as any[]
+  abilities[idx].clockMax = parseInt(abilities[idx].clockMax)
+  $item?.update({ data: { abilities } })
+}
 
-    save() {
-      const { abilities } = this.item.data
-      this.$item.update({ data: { abilities } })
-    },
-  },
+function setClock(abilityIdx: number, clockTicks: number) {
+  const abilities = Object.values(item.value?.data.abilities) as any[]
+  abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
+  $item?.update({ data: { abilities } })
+}
+
+function save() {
+  const { abilities } = item.value?.data
+  $item?.update({ data: { abilities } })
 }
 </script>

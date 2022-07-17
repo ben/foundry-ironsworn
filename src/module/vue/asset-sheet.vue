@@ -22,7 +22,7 @@
 
     <!-- ABILITIES -->
     <h3>{{ $t('IRONSWORN.Abilities') }}</h3>
-    <!-- <asset-abilitiesedit /> -->
+    <asset-abilitiesedit />
 
     <!-- OPTIONS -->
     <div v-if="hasOptions || editMode">

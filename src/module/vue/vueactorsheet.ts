@@ -1,4 +1,3 @@
-import { merge } from 'lodash'
 import { App } from 'vue'
 import { $ActorKey } from './provisions'
 import {
@@ -27,13 +26,10 @@ export abstract class VueActorSheet extends ActorSheet {
   ): this {
     this.renderHelper ||= new VueSheetRenderHelper(
       this,
-      merge(
-        {
-          provides: { $actor: this.actor },
-          vueData: () => ({ actor: this.actor.toObject() }),
-        },
-        this.renderHelperOptions
-      ),
+      {
+        vueData: async () => ({ actor: this.actor.toObject() }),
+        ...this.renderHelperOptions,
+      },
       this.setupVueApp.bind(this)
     )
 

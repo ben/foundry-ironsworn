@@ -2,8 +2,8 @@
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    :height="size"
-    :width="size"
+    :height="size ?? '100'"
+    :width="size ?? '100'"
     viewBox="-55 -55 110 110"
   >
     <path
@@ -15,8 +15,8 @@
       stroke-width="2"
       class="clickable svg"
       :class="wedgeClasses(i)"
-      @mouseover="hovered = i"
-      @mouseleave="hovered = -1"
+      @mouseover="data.hovered = i"
+      @mouseleave="data.hovered = -1"
       @click="click(i)"
     ></path>
   </svg>
@@ -28,7 +28,9 @@ svg {
 }
 </style>
 
-<script>
+<script setup lang="ts">
+import { reactive } from '@vue/reactivity'
+import { computed } from 'vue'
 const R = 50
 
 function pathString(wedgeIdx, numWedges) {
@@ -41,56 +43,39 @@ function pathString(wedgeIdx, numWedges) {
 
   return `M0,0 L${x1},${y1} A${R},${R} 0 0,1 ${x2},${y2} z`
 }
-export default {
-  props: {
-    wedges: {
-      type: Number,
-      default: 6,
-    },
-    ticked: {
-      type: Number,
-      default: 2,
-    },
-    size: {
-      type: String,
-      default: '100',
-    },
-  },
 
-  data() {
-    return {
-      hovered: -1,
-    }
-  },
+const props = defineProps<{
+  wedges: number
+  ticked: number
+  size?: string
+}>()
 
-  computed: {
-    computedWedges() {
-      const ret = []
-      for (let i = 0; i < this.wedges; i++) {
-        ret.push({
-          ticked: this.ticked <= i + 1,
-          path: pathString(i, this.wedges),
-        })
-      }
-      return ret
-    },
-  },
+const data = reactive({ hovered: -1 })
 
-  methods: {
-    wedgeClasses(i) {
-      return {
-        hover: this.hovered >= i,
-        selected: this.ticked > i,
-      }
-    },
+const computedWedges = computed(() => {
+  const ret = [] as { ticked: boolean; path: string }[]
+  for (let i = 0; i < props.wedges; i++) {
+    ret.push({
+      ticked: props.ticked <= i + 1,
+      path: pathString(i, props.wedges),
+    })
+  }
+  return ret
+})
 
-    click(i) {
-      // If 1 is marked and the click is on the first wedge, clear the clock
-      if (i === 0 && this.ticked === 1) {
-        i = -1
-      }
-      this.$emit('click', i + 1)
-    },
-  },
+function wedgeClasses(i) {
+  return {
+    hover: data.hovered >= i,
+    selected: props.ticked > i,
+  }
+}
+
+const $emit = defineEmits(['click'])
+function click(i: number) {
+  // If 1 is marked and the click is on the first wedge, clear the clock
+  if (i === 0 && props.ticked === 1) {
+    i = -1
+  }
+  $emit('click', i + 1)
 }
 </script>
