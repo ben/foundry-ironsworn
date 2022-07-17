@@ -7,8 +7,8 @@
       height="20px"
       width="18px"
       class="rank-pip clickable svg"
-      :class="classes"
-      @click="click"
+      :class="{ filled: selected }"
+      @click="$emit('click', rank)"
     >
       <path
         stroke-width="1"
@@ -32,29 +32,14 @@ div {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    rank: String,
-    selected: Boolean,
-  },
+<script setup lang="ts">
+import { computed, capitalize } from 'vue'
+const props = defineProps<{ rank: string; selected: boolean }>()
 
-  computed: {
-    title() {
-      const i18nKey = `IRONSWORN.${this.$capitalize(this.rank)}`
-      return game.i18n.localize(i18nKey)
-    },
-    classes() {
-      return {
-        filled: this.selected,
-      }
-    },
-  },
+const title = computed(() => {
+  const i18nKey = `IRONSWORN.${capitalize(props.rank)}`
+  return game.i18n.localize(i18nKey)
+})
 
-  methods: {
-    click(ev) {
-      this.$emit('click', ev, this.rank)
-    },
-  },
-}
+defineEmits(['click'])
 </script>

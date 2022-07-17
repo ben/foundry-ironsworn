@@ -48,6 +48,7 @@
             />
             <btn-rollprogress
               v-if="item.data.hasTrack"
+              :item="item"
               :tooltip="$t('IRONSWORN.ProgressRoll')"
               class="flexrow nogrow block"
             />
@@ -93,20 +94,26 @@ h5.vertical-v2 {
 </style>
 
 <script lang="ts" setup>
-import { computed, inject } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
+import { capitalize, computed, inject, Ref } from 'vue'
+import { $ActorKey } from '../../provisions'
+import Clock from '../clock.vue'
+import ProgressTrack from './progress-track.vue'
+import BtnRollprogress from '../buttons/btn-rollprogress.vue'
+import BtnFaicon from '../buttons/btn-faicon.vue'
+import RankHexes from '../rank-hexes/rank-hexes.vue'
+import DocumentImg from '../document-img.vue'
 
 const props = defineProps<{
   item: any
   showStar?: boolean
 }>()
 
-const actor = inject('actor')
-const $actor = inject('$actor') as IronswornActor
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 const $item = () => $actor?.items.get(props.item._id)
 
 const editMode = computed(() => {
-  return actor.flags['foundry-ironsworn']?.['edit-mode']
+  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })
 const showTrackButtons = computed(() => {
   return props.item.data.hasTrack
@@ -115,7 +122,7 @@ const foundryItem = computed(() => {
   return $actor?.items.get(props.item._id)
 })
 const subtitle = computed(() => {
-  let subtype = this.$capitalize(props.item.data.subtype)
+  let subtype = capitalize(props.item.data.subtype)
   if (subtype === 'Bond') subtype = 'Connection' // translate name
   return game.i18n.localize(`IRONSWORN.${subtype}`)
 })
@@ -128,11 +135,11 @@ const completedTooltip = computed(() => {
 })
 
 function edit() {
-  $item()?.sheet.render(true)
+  $item()?.sheet?.render(true)
 }
 function destroy() {
   const item = $item()
-  const titleKey = `IRONSWORN.Delete${this.$capitalize(item?.type || '')}`
+  const titleKey = `IRONSWORN.Delete${capitalize(item?.type || '')}`
 
   Dialog.confirm({
     title: game.i18n.localize(titleKey),
@@ -152,13 +159,15 @@ function advance() {
 function retreat() {
   $item()?.markProgress(-1)
 }
+
+const $emit = defineEmits(['completed'])
 function toggleComplete() {
-  const completed = !this.item.data.completed
-  if (completed) this.$emit('completed')
+  const completed = !props.item.data.completed
+  if (completed) $emit('completed')
   $item()?.update({ data: { completed } })
 }
 function toggleStar() {
-  $item()?.update({ data: { starred: !this.item.data.starred } })
+  $item()?.update({ data: { starred: !props.item.data.starred } })
 }
 function setClock(num) {
   $item()?.update({ data: { clockTicks: num } })

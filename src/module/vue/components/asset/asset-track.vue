@@ -23,7 +23,6 @@ const $item = () => {
 }
 
 function click(value) {
-  console.log($item())
   $item()?.update({
     data: {
       track: {

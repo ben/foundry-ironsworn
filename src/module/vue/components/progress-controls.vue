@@ -1,3 +1,4 @@
+
 <template>
   <div class="flexrow nogrow" style="text-align: center">
     <btn-faicon class="block" icon="plus" @click="addProgressItem('vow')">
@@ -12,32 +13,27 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    foeCompendium: {
-      type: String,
-      default: 'ironswornfoes',
-    },
-  },
+<script setup lang="ts">
+import { capitalize, inject } from 'vue'
+import { $ItemKey } from '../provisions'
+import BtnFaicon from './buttons/btn-faicon.vue'
+import BtnCompendium from './buttons/btn-compendium.vue'
 
-  methods: {
-    async addProgressItem(subtype) {
-      const itemData = {
-        name: this.$capitalize(subtype),
-        type: 'progress',
-        data: { subtype },
-        sort: 9000000,
-      }
-      const item = await Item.create(itemData, { parent: this.$actor })
-      item.sheet.render(true)
-    },
+const props = defineProps<{ foeCompendium?: string }>()
 
-    openCompendium(name) {
-      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-      pack?.render(true)
-    },
-  },
+async function addProgressItem(subtype) {
+  const itemData = {
+    name: capitalize(subtype),
+    type: 'progress',
+    data: { subtype },
+    sort: 9000000,
+  }
+  const item = await Item.create(itemData, { parent: this.$actor })
+  item?.sheet?.render(true)
+}
+
+function openCompendium(name) {
+  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
+  pack?.render(true)
 }
 </script>

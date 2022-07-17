@@ -5,36 +5,28 @@
       :key="r.rank"
       :rank="r.rank"
       :selected="r.selected"
-      @click="click(r.rank)"
+      @click="$emit('click', r.rank)"
     />
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    current: String,
-  },
+<script setup lang="ts">
+import { computed } from '@vue/runtime-core'
+import RankHex from './rank-hex.vue'
+const props = defineProps<{ current: string }>()
 
-  computed: {
-    ranks() {
-      const keys = Object.keys(CONFIG.IRONSWORN.Ranks)
-      const position = keys.indexOf(this.current)
-      return keys.map((r) => {
-        const rankIndex = keys.indexOf(r)
-        const selected = rankIndex <= position
-        return {
-          rank: r,
-          selected,
-        }
-      })
-    },
-  },
+const ranks = computed(() => {
+  const keys = Object.keys(CONFIG.IRONSWORN.Ranks)
+  const position = keys.indexOf(props.current)
+  return keys.map((r) => {
+    const rankIndex = keys.indexOf(r)
+    const selected = rankIndex <= position
+    return {
+      rank: r,
+      selected,
+    }
+  })
+})
 
-  methods: {
-    click(rank) {
-      this.$emit('click', rank)
-    },
-  },
-}
+defineEmits(['click'])
 </script>

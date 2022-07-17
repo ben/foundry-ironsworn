@@ -45,9 +45,9 @@
         <tabs class="character-sheet-tabs" name="character-sheet-tabs">
           <tab :title="$t('IRONSWORN.Legacies')"> <sf-legacies /> </tab>
           <tab :title="$t('IRONSWORN.Assets')"> <sf-assets /> </tab>
+          <tab :title="$t('IRONSWORN.Progress')"> <sf-progresses /> </tab>
         </tabs>
         <!--
-          <tab :title="$t('IRONSWORN.Progress')"> <sf-progresses /> </tab>
           <tab :title="$t('IRONSWORN.Connections')"> <sf-connections /> </tab>
           <tab :title="$t('IRONSWORN.Notes')"> <sf-notes /> </tab>
           -->
@@ -128,6 +128,7 @@ import btnIsicon from './components/buttons/btn-isicon.vue'
 import sfImpacts from './components/sf-impacts.vue'
 import { IronswornActor } from '../actor/actor'
 import SfAssets from './components/sf-character-sheet-tabs/sf-assets.vue'
+import SfProgresses from './components/sf-character-sheet-tabs/sf-progresses.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
