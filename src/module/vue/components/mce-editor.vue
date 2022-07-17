@@ -64,5 +64,4 @@ const mceConfig: RawEditorSettings = {
     )
   },
 }
-console.log(mceConfig)
 </script>

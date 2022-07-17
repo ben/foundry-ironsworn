@@ -134,8 +134,10 @@ function edit() {
 }
 function destroy() {
   Dialog.confirm({
-    title: this.$t('IRONSWORN.DeleteAsset'),
-    content: `<p><strong>${this.$t('IRONSWORN.ConfirmDelete')}</strong></p>`,
+    title: game.i18n.localize('IRONSWORN.DeleteAsset'),
+    content: `<p><strong>${game.i18n.localize(
+      'IRONSWORN.ConfirmDelete'
+    )}</strong></p>`,
     yes: () => foundryItem.value?.delete(),
     defaultYes: false,
   })
@@ -155,8 +157,8 @@ function exclusiveOptionClick(selectedIdx) {
   foundryItem.value?.update({ data: { exclusiveOptions: options } })
 }
 function moveclick(item) {
-  let actorWithMoves = this.$actor
-  if (this.$actor?.type !== 'character') {
+  let actorWithMoves = $actor
+  if ($actor?.type !== 'character') {
     actorWithMoves = CONFIG.IRONSWORN.defaultActor()
   }
   actorWithMoves?.moveSheet?.render(true)
