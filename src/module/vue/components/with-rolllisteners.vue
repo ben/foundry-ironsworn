@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { inject, onMounted, ref } from 'vue'
+import { inject, onMounted, ref, useAttrs } from 'vue'
 import { $ActorKey } from '../provisions'
 
 const props = defineProps<{ element: string }>()
@@ -26,6 +26,7 @@ onMounted(() => {
 })
 
 const $emit = defineEmits(['moveclick', 'oracleclick'])
+const $attrs = useAttrs()
 function click(ev) {
   ev.preventDefault()
 
@@ -44,13 +45,13 @@ function click(ev) {
       }
     })
 
-    return this.$attrs['onMoveclick'] ? false : true
+    return $attrs['onMoveclick'] ? false : true
   }
 
   if (dfid) {
     // Probably an oracle category click
     $emit('oracleclick', dfid)
-    return this.$attrs['onOracleclick'] ? false : true
+    return $attrs['onOracleclick'] ? false : true
   }
 }
 </script>

@@ -1,12 +1,16 @@
 <template>
-  <div class="movesheet-row" :class="{ highlighted: move?.highlighted }">
+  <div
+    class="movesheet-row"
+    :class="{ highlighted: move?.highlighted }"
+    ref="$el"
+  >
     <h4 class="flexrow" :title="tooltip">
       <btn-rollmove
         :disabled="!canRoll"
         class="juicy text nogrow"
         :move="move"
       />
-      <span class="clickable text" @click="expanded = !expanded">
+      <span class="clickable text" @click="data.expanded = !data.expanded">
         {{ move?.displayName }}
       </span>
     </h4>
@@ -14,7 +18,7 @@
       <with-rolllisteners
         element="div"
         class="move-summary"
-        v-if="expanded"
+        v-if="data.expanded"
         @moveclick="moveclick"
       >
         <div class="move-summary-buttons flexrow">
@@ -64,59 +68,48 @@ h4 {
 }
 </style>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed, defineComponent, nextTick, reactive, ref, watch } from 'vue'
+import { Move } from '../../features/custommoves'
 import { SFRollMoveDialog } from '../../helpers/rolldialog-sf'
 import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
 import WithRolllisteners from './with-rolllisteners.vue'
 
-export default defineComponent({
-  props: {
-    move: Object,
-  },
+const props = defineProps<{ move: Move }>()
+const data = reactive({ expanded: false })
 
-  inject: ['actor'],
+const tooltip = computed(() => {
+  const { Title, Page } = props.move.dataforgedMove?.Source ?? {}
+  if (!Title) return undefined
+  return `${Title} p${Page}`
+})
+const fulltext = computed(() => {
+  return props.move.moveItem?.data?.data?.Text
+})
+const canRoll = computed(() => {
+  return SFRollMoveDialog.moveHasRollableOptions(props.move.moveItem)
+})
 
-  components: { BtnRollmove, BtnSendmovetochat, WithRolllisteners },
+const $el = ref<HTMLElement>()
+const highlighted = computed(() => props.move.highlighted)
+watch(highlighted, async (value?: boolean) => {
+  if (value) {
+    data.expanded = true
+    await nextTick()
+    $el.value?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    })
+  }
+})
 
-  data() {
-    return {
-      expanded: false,
-    }
-  },
+const $emit = defineEmits(['moveclick'])
+function moveclick(item) {
+  $emit('moveclick', item)
+}
 
-  computed: {
-    tooltip() {
-      const { Title, Page } = this.move.dataforgedMove?.Source ?? {}
-      if (!Title) return undefined
-      return `${Title} p${Page}`
-    },
-    fulltext() {
-      return this.move.moveItem?.data?.data?.Text
-    },
-    canRoll() {
-      return SFRollMoveDialog.moveHasRollableOptions(this.move.moveItem)
-    },
-  },
-
-  watch: {
-    'move.highlighted': async function (value) {
-      if (value) {
-        this.expanded = true
-        await new Promise((r) => setTimeout(r, 200))
-        this.$el.scrollIntoView()
-      }
-    },
-  },
-
-  methods: {
-    moveclick(item) {
-      this.$emit('moveclick', item)
-    },
-    collapse() {
-      this.expanded = false
-    },
-  },
+defineExpose({
+  collapse: () => (data.expanded = false),
 })
 </script>
