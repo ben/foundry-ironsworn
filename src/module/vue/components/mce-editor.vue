@@ -1,8 +1,8 @@
 <template>
-  <div v-if="data.editing" class="editor">
+  <div v-if="data.editing" class="editor flexcol">
     <Editor v-bind="$attrs" :modelValue="modelValue" :init="mceConfig" />
   </div>
-  <div v-else class="editor">
+  <div v-else class="editor flexcol">
     <div class="editor-content" v-html="$enrichHtml(modelValue)" />
     <a class="editor-edit">
       <i class="fas fa-edit" @click="data.editing = true"></i>
@@ -18,11 +18,12 @@ import { nextTick, reactive } from 'vue'
 defineProps<{ modelValue: string }>()
 
 const data = reactive({ editing: false })
+const $emit = defineEmits<{ (e: 'save') }>()
 
 const mceConfig: RawEditorSettings = {
   ...CONFIG.TinyMCE,
 
-  file_pickercallback: (pickerCallback, _value, _meta) => {
+  file_picker_callback(pickerCallback, _value, _meta) {
     console.log(pickerCallback, _value, _meta)
     let filePicker = new FilePicker({
       type: 'image',
@@ -39,13 +40,12 @@ const mceConfig: RawEditorSettings = {
 
   save_enablewhendirty: false,
   save_onsavecallback: async (...args) => {
-    console.log(...args)
-    await nextTick()
-    await new Promise((r) => setTimeout(r, 100))
+    $emit('save')
     data.editing = false
   },
 
   init_instance_callback: (editor) => {
+    console.log(editor)
     const window = editor.getWin()
     editor.selection.setCursorLocation(
       editor.getBody(),
