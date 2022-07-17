@@ -32,61 +32,55 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script setup lang="ts">
+import { computed, inject, Ref } from 'vue'
+import { $ActorKey } from '../../provisions'
+import OrderButtons from '../order-buttons.vue'
+import ProgressBox from '../progress/progress-box.vue'
+import BtnFaicon from '../buttons/btn-faicon.vue'
 
-  computed: {
-    connections() {
-      return this.actor.items
-        .filter((x) => x.type === 'progress')
-        .filter((x) => x.data.subtype === 'bond') // legacy name
-        .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-    },
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-  },
+const connections = computed(() => {
+  return actor.value.items
+    .filter((x) => x.type === 'progress')
+    .filter((x) => x.data.subtype === 'bond') // legacy name
+    .sort((a, b) => (a.sort || 0) - (b.sort || 0))
+})
+const editMode = computed(() => {
+  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
+})
 
-  methods: {
-    async newConnection() {
-      const item = await Item.create(
-        {
-          name: game.i18n.localize('IRONSWORN.Connection'),
-          type: 'progress',
-          data: { subtype: 'bond' }, // legacy name
-          sort: 9000000,
-        },
-        { parent: this.$actor }
-      )
-      item.sheet.render(true)
+async function newConnection() {
+  const item = await Item.create(
+    {
+      name: game.i18n.localize('IRONSWORN.Connection'),
+      type: 'progress',
+      data: { subtype: 'bond' },
+      sort: 9000000,
     },
+    { parent: $actor }
+  )
+  item?.sheet?.render(true)
+}
 
-    async applySort(oldI, newI, sortBefore) {
-      const foundryItems = this.$actor.items
-        .filter((x) => x.type === 'progress')
-        .filter((x) => x.data.data.subtype === 'bond')
-        .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
-
-      const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
-        target: foundryItems[newI],
-        siblings: foundryItems,
-        sortBefore,
-      })
-      await Promise.all(
-        updates.map(({ target, update }) => target.update(update))
-      )
-    },
-
-    sortUp(i) {
-      this.applySort(i, i - 1, true)
-    },
-    sortDown(i) {
-      this.applySort(i, i + 1, false)
-    },
-  },
+async function applySort(oldI, newI, sortBefore) {
+  const foundryItems = this.$actor.items
+    .filter((x) => x.type === 'progress')
+    .filter((x) => x.data.data.subtype === 'bond')
+    .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+  const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
+    target: foundryItems[newI],
+    siblings: foundryItems,
+    sortBefore,
+  })
+  await Promise.all(updates.map(({ target, update }) => target.update(update)))
+}
+function sortUp(i) {
+  applySort(i, i - 1, true)
+}
+function sortDown(i) {
+  applySort(i, i + 1, false)
 }
 </script>
