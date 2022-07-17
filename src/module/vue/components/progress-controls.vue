@@ -15,11 +15,13 @@
 
 <script setup lang="ts">
 import { capitalize, inject } from 'vue'
-import { $ItemKey } from '../provisions'
+import { $ActorKey } from '../provisions'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 
 const props = defineProps<{ foeCompendium?: string }>()
+
+const $actor = inject($ActorKey)
 
 async function addProgressItem(subtype) {
   const itemData = {
@@ -28,7 +30,7 @@ async function addProgressItem(subtype) {
     data: { subtype },
     sort: 9000000,
   }
-  const item = await Item.create(itemData, { parent: this.$actor })
+  const item = await Item.create(itemData, { parent: $actor })
   item?.sheet?.render(true)
 }
 
