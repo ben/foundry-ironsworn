@@ -10,12 +10,12 @@
         {{ overflow }}
       </p>
       <btn-faicon
-        class="block"
+        class="block nogrow"
         v-if="editMode"
         icon="caret-left"
         @click="decrease"
       />
-      <btn-faicon class="block" icon="caret-right" @click="increase" />
+      <btn-faicon class="block nogrow" icon="caret-right" @click="increase" />
     </div>
 
     <div class="flexrow track">

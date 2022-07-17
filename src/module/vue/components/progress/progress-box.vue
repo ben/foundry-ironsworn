@@ -13,34 +13,34 @@
           <div class="flexrow">
             <rank-hexes :current="item.data.rank" @click="rankClick" />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               v-if="editMode"
               icon="trash"
               @click="destroy"
               :tooltip="$t('IRONSWORN.DeleteItem')"
             />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               icon="edit"
               @click="edit"
               :tooltip="$t('IRONSWORN.Edit')"
             />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               v-if="editMode"
               :icon="completedIcon"
               @click="toggleComplete"
               :tooltip="completedTooltip"
             />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               v-if="editMode && item.data.hasTrack"
               icon="caret-left"
               @click="retreat"
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
             />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               v-if="item.data.hasTrack"
               icon="caret-right"
               @click="advance"
