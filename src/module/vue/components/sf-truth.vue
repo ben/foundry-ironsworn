@@ -30,7 +30,7 @@
                 :name="truth?.$id"
                 :id="suboption.$id || ''"
                 :value="suboption.Result"
-                v-model="subOptionDescription"
+                v-model="data.subOptionDescription"
                 @change="changed"
               />
               <label :for="suboption.$id || ''">

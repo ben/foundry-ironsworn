@@ -80,7 +80,8 @@ import { Component, computed, inject, reactive, ref } from 'vue'
 import { OracleTreeNode } from '../../features/customoracles'
 import WithRolllisteners from './with-rolllisteners.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
-import { $ActorKey, $EnrichMarkdownKey } from '../provisions'
+import { $ActorKey, $EmitterKey, $EnrichMarkdownKey } from '../provisions'
+import { IronswornItem } from '../../item/item'
 
 const props = defineProps<{ node: OracleTreeNode }>()
 
@@ -131,15 +132,10 @@ async function rollOracle() {
   CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
 }
 
-function moveclick(item) {
-  console.log(item)
-  let actorWithMoves = this.$actor
-  if (this.$actor?.type !== 'character') {
-    actorWithMoves = CONFIG.IRONSWORN.defaultActor()
-  }
-  console.log(actorWithMoves)
-  actorWithMoves?.moveSheet?.render(true)
-  actorWithMoves?.moveSheet?.highlightMove(item)
+// Click on a move link: broadcast event
+const $emitter = inject($EmitterKey)
+function moveclick(item: IronswornItem) {
+  $emitter?.emit('highlightMove', item.id ?? '')
 }
 
 const $emit = defineEmits(['oracleclick'])
@@ -165,7 +161,7 @@ async function highlight() {
   data.highlighted = true
   $el.value?.scrollIntoView({
     behavior: 'smooth',
-    block: 'center',
+    block: 'start',
   })
   setTimeout(() => {
     data.highlighted = false

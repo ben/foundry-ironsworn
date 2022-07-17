@@ -26,7 +26,6 @@
           v-for="move of searchResults"
           :key="move.displayName"
           :move="move"
-          @moveclick="highlightMove"
         />
       </div>
 
@@ -44,7 +43,6 @@
           v-for="move of category.moves"
           :key="move.displayName"
           :move="move"
-          @moveclick="highlightMove"
           ref="allmoves"
         />
       </div>
@@ -63,8 +61,9 @@ h2 {
 
 <script setup lang="ts">
 import { flatten } from 'lodash'
-import { computed, inject, reactive, ref, Ref } from 'vue'
+import { computed, inject, nextTick, reactive, ref, Ref } from 'vue'
 import { createStarforgedMoveTree } from '../../features/custommoves'
+import { $EmitterKey } from '../provisions'
 import sfMoverow from './sf-moverow.vue'
 
 const actor = inject('actor') as Ref
@@ -112,20 +111,8 @@ function collapseAll() {
   }
 }
 
-async function highlightMove(item) {
-  this.searchQuery = ''
-  await new Promise((r) => setTimeout(r, 10))
-  for (const category of this.categories) {
-    for (const move of category.moves) {
-      if (move.moveItem.id === item.id) {
-        move.highlighted = true
-        setTimeout(() => (move.highlighted = false), 2000)
-        return
-      }
-    }
-  }
-
-  // Not found; just open the sheet
-  item.sheet?.render(true)
-}
+const $emitter = inject($EmitterKey)
+$emitter?.on('highlightMove', (_item) => {
+  data.searchQuery = ''
+})
 </script>

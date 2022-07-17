@@ -18,8 +18,9 @@ import Tab from './components/tabs/tab.vue'
 import Tabs from './components/tabs/tabs.vue'
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
-import { computed, nextTick, provide, ref } from 'vue'
+import { computed, inject, nextTick, provide, ref } from 'vue'
 import { CharacterDataProperties } from '../actor/actortypes'
+import { $EmitterKey } from './provisions'
 
 const props = defineProps<{
   actor: CharacterDataProperties
@@ -30,19 +31,13 @@ provide(
   computed(() => props.actor)
 )
 
-// TODO: these almost certainly don't work
+const $emitter = inject($EmitterKey)
+$emitter?.on('*', console.log)
+
 const tabs = ref<InstanceType<typeof Tabs>>()
 const movesTab = ref<InstanceType<typeof SfMovesheetmoves>>()
-async function highlightMove(item) {
-  tabs.value?.selectIndex(0)
-  await nextTick()
-  movesTab.value?.highlightMove(item)
-}
+$emitter?.on('highlightMove', () => tabs.value?.selectIndex(0))
 
 const oraclesTab = ref<InstanceType<typeof SfMovesheetoracles>>()
-async function highlightOracle(dfid) {
-  tabs.value?.selectIndex(1)
-  await nextTick()
-  oraclesTab.value?.highlightOracle(dfid)
-}
+$emitter?.on('highlightOracle', () => tabs.value?.selectIndex(1))
 </script>

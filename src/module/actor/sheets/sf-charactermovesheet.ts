@@ -55,7 +55,7 @@ export class SFCharacterMoveSheet extends VueApplication {
   // TODO: these probably still don't work
   async highlightMove(move: IronswornItem) {
     this.maximize()
-    return (this.vueRoot?.$refs.child as any)?.['highlightMove']?.(move)
+    this.renderHelper?.emitter.emit('highlightMove', move.id ?? '')
   }
 
   async highlightOracle(oracleId: string) {

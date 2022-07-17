@@ -1,7 +1,7 @@
 <template>
   <div
     class="movesheet-row"
-    :class="{ highlighted: move?.highlighted }"
+    :class="{ highlighted: data.highlighted }"
     ref="$el"
   >
     <h4 class="flexrow" :title="tooltip">
@@ -19,7 +19,9 @@
         element="div"
         class="move-summary"
         v-if="data.expanded"
-        @moveclick="moveclick"
+        :swallow-move-click="true"
+        :swallow-oracle-click="true"
+        @moveclick="moveClick"
       >
         <div class="move-summary-buttons flexrow">
           <btn-rollmove class="block" v-if="canRoll" :move="move">
@@ -69,15 +71,25 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import { computed, defineComponent, nextTick, reactive, ref, watch } from 'vue'
+import {
+  computed,
+  defineComponent,
+  inject,
+  nextTick,
+  reactive,
+  ref,
+  watch,
+} from 'vue'
 import { Move } from '../../features/custommoves'
 import { SFRollMoveDialog } from '../../helpers/rolldialog-sf'
+import { IronswornItem } from '../../item/item'
+import { $EmitterKey } from '../provisions'
 import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
 import WithRolllisteners from './with-rolllisteners.vue'
 
 const props = defineProps<{ move: Move }>()
-const data = reactive({ expanded: false })
+const data = reactive({ expanded: false, highlighted: false })
 
 const tooltip = computed(() => {
   const { Title, Page } = props.move.dataforgedMove?.Source ?? {}
@@ -92,21 +104,31 @@ const canRoll = computed(() => {
 })
 
 const $el = ref<HTMLElement>()
-const highlighted = computed(() => props.move.highlighted)
-watch(highlighted, async (value?: boolean) => {
-  if (value) {
+const $emitter = inject($EmitterKey)
+
+// Inbound move clicks: if this is the intended move, expand/highlight/scroll
+$emitter?.on('highlightMove', async (moveId) => {
+  if (moveId === props.move.moveItem.id) {
     data.expanded = true
+    data.highlighted = true
     await nextTick()
     $el.value?.scrollIntoView({
       behavior: 'smooth',
-      block: 'center',
+      block: 'start',
     })
+    await nextTick()
+    setTimeout(() => {
+      data.highlighted = false
+    }, 2000)
   }
 })
 
-const $emit = defineEmits(['moveclick'])
-function moveclick(item) {
-  $emit('moveclick', item)
+// Outbound link clicks: broadcast events
+function moveClick(move: IronswornItem) {
+  $emitter?.emit('highlightMove', move.id ?? '')
+}
+function oracleClick(dfId: string) {
+  $emitter?.emit('highlightOracle', dfId)
 }
 
 defineExpose({

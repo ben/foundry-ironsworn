@@ -13,7 +13,6 @@ export interface Move {
   displayName: string
   moveItem: IronswornItem
   dataforgedMove?: IMove
-  highlighted?: boolean
 }
 
 export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {

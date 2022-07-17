@@ -6,9 +6,15 @@
 
 <script setup lang="ts">
 import { inject, onMounted, ref, useAttrs } from 'vue'
-import { $ActorKey } from '../provisions'
+import { IronswornActor } from '../../actor/actor'
+import { IronswornItem } from '../../item/item'
+import { $ActorKey, $EmitterKey } from '../provisions'
 
-const props = defineProps<{ element: string }>()
+const props = defineProps<{
+  element: string
+  swallowMoveClick?: boolean
+  swallowOracleClick?: boolean
+}>()
 
 const $actor = inject($ActorKey)
 const el = ref<HTMLElement>()
@@ -26,12 +32,15 @@ onMounted(() => {
 })
 
 const $emit = defineEmits(['moveclick', 'oracleclick'])
+const $emitter = inject($EmitterKey)
 const $attrs = useAttrs()
-function click(ev) {
+async function click(ev: JQuery.ClickEvent) {
   ev.preventDefault()
+  ev.stopPropagation()
 
   const { pack, id, dfid } = ev.currentTarget.dataset
   if (id) {
+    // TODO: better fallback logic here, allow for custom moves
     // Might be a move navigation click
     if (!pack) {
       const item = game.items?.get(id)
@@ -39,19 +48,21 @@ function click(ev) {
     }
 
     const gamePack = game.packs.get(pack)
-    gamePack?.getDocument(id)?.then((gameItem) => {
-      if (['move', 'sfmove'].includes(gameItem?.type)) {
-        $emit('moveclick', gameItem)
-      }
-    })
+    const gameItem = (await gamePack?.getDocument(id)) as
+      | IronswornItem
+      | IronswornActor
+    if (gameItem && ['move', 'sfmove'].includes(gameItem.type)) {
+      $emit('moveclick', gameItem)
+    }
 
-    return $attrs['onMoveclick'] ? false : true
+    return props.swallowMoveClick
   }
 
   if (dfid) {
+    // TODO: allow for custom oracles
     // Probably an oracle category click
     $emit('oracleclick', dfid)
-    return $attrs['onOracleclick'] ? false : true
+    return !props.swallowOracleClick
   }
 }
 </script>
