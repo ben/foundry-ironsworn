@@ -66,12 +66,12 @@ async function newConnection() {
 }
 
 async function applySort(oldI, newI, sortBefore) {
-  const foundryItems = this.$actor.items
+  const foundryItems = $actor?.items
     .filter((x) => x.type === 'progress')
     .filter((x) => x.data.data.subtype === 'bond')
     .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
-    target: foundryItems[newI],
+    target: (foundryItems ?? [])[newI],
     siblings: foundryItems,
     sortBefore,
   })

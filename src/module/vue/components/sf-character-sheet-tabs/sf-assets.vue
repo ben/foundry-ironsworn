@@ -26,8 +26,10 @@ import { computed, inject, Ref } from 'vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
+import { $ActorKey } from '../../provisions'
 
 const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 
 const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
@@ -42,20 +44,20 @@ function openCompendium() {
   pack?.render(true)
 }
 async function applySort(oldI, newI, sortBefore) {
-  const foundryItems = this.$actor.items
+  const foundryItems = $actor?.items
     .filter((x) => x.type === 'asset')
     .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
-    target: foundryItems[newI],
+    target: (foundryItems ?? [])[newI],
     siblings: foundryItems,
     sortBefore,
   })
   await Promise.all(updates.map(({ target, update }) => target.update(update)))
 }
 function sortUp(i) {
-  this.applySort(i, i - 1, true)
+  applySort(i, i - 1, true)
 }
 function sortDown(i) {
-  this.applySort(i, i + 1, false)
+  applySort(i, i + 1, false)
 }
 </script>
