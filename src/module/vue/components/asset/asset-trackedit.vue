@@ -23,34 +23,30 @@
         v-model.number="item.data.track.max"
       />
     </div>
-    <asset-track style="margin-top: 5px" :actor="item.parent" :item="item" />
+    <asset-track style="margin-top: 5px" :actor="$item?.parent" :item="item" />
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    item: Object,
-  },
+<script setup lang="ts">
+import { computed, inject } from 'vue'
+import { $ItemKey } from '../../provisions'
+import AssetTrack from './asset-track.vue'
 
-  computed: {
-    editMode() {
-      return this.item.flags['foundry-ironsworn']?.['edit-mode']
-    },
-  },
+const item = inject('item') as Ref
+const editMode = computed(() => {
+  return item.value.flags['foundry-ironsworn']?.['edit-mode']
+})
 
-  methods: {
-    enableClick(ev) {
-      this.$item.update({ 'data.track.enabled': ev.target.checked })
-    },
+const $item = inject($ItemKey)
+function enableClick(ev) {
+  $item?.update({ 'data.track.enabled': ev.target.checked })
+}
 
-    updateName() {
-      this.$item.update({ 'data.track.name': this.item.data.track.name })
-    },
+function updateName() {
+  $item?.update({ 'data.track.name': item.value.data.track.name })
+}
 
-    updateMax() {
-      this.$item.update({ 'data.track.max': this.item.data.track.max })
-    },
-  },
+function updateMax() {
+  $item?.update({ 'data.track.max': item.value.data.track.max })
 }
 </script>

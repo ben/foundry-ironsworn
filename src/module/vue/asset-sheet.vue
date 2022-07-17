@@ -32,7 +32,7 @@
 
     <!-- TRACK -->
     <h3>{{ $t('IRONSWORN.Track') }}</h3>
-    <!-- <asset-trackedit /> -->
+    <asset-trackedit />
   </div>
 </template>
 
