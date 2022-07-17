@@ -112,12 +112,10 @@
     <hr class="nogrow" />
 
     <!-- DESCRIPTION -->
-    <editor
-      target="data.description"
-      :owner="true"
-      :button="true"
-      :editable="true"
-      :content="item.data.description"
+    <mce-editor
+      v-model="item.data.description"
+      @save="saveDescription"
+      @change="throttledSaveDescription"
     />
   </div>
 </template>
@@ -129,58 +127,72 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    item: Object,
-  },
+<script setup lang="ts">
+import { computed, inject, provide, Ref } from 'vue'
+import { $ItemKey } from './provisions'
+import DocumentImg from './components/document-img.vue'
+import DocumentName from './components/document-name.vue'
+import RankHexes from './components/rank-hexes/rank-hexes.vue'
+import BtnFaicon from './components/buttons/btn-faicon.vue'
+import ProgressTrack from './components/progress/progress-track.vue'
+import Clock from './components/clock.vue'
+import MceEditor from './components/mce-editor.vue'
+import { throttle } from 'lodash'
 
-  computed: {
-    editMode() {
-      return this.item.flags['foundry-ironsworn']?.['edit-mode']
-    },
+const $item = inject($ItemKey)
 
-    rankText() {
-      return this.$t(CONFIG.IRONSWORN.Ranks[this.item.data.rank])
-    },
-  },
+const props = defineProps<{ item: any }>()
+provide(
+  'item',
+  computed(() => props.item)
+)
 
-  methods: {
-    setRank(rank) {
-      this.$item.update({ data: { rank } })
-    },
+const editMode = computed(
+  () => props.item.flags['foundry-ironsworn']?.['edit-mode']
+)
 
-    clearProgress() {
-      this.$item.update({ 'data.current': 0 })
-    },
+const rankText = computed(() =>
+  game.i18n.localize(CONFIG.IRONSWORN.Ranks[props.item.data.rank])
+)
 
-    markProgress() {
-      const increment = CONFIG.IRONSWORN.RankIncrements[this.item.data.rank]
-      const newValue = Math.min(this.item.data.current + increment, 40)
-      this.$item.update({ 'data.current': newValue })
-    },
-
-    subtypeChange() {
-      this.$item.update({ data: { subtype: this.item.data.subtype } })
-    },
-
-    clockMaxChange() {
-      this.$item.update({ data: { clockMax: this.item.data.clockMax } })
-    },
-
-    saveChecks() {
-      this.$item.update({
-        data: {
-          completed: this.item.data.completed,
-          hasTrack: this.item.data.hasTrack,
-          hasClock: this.item.data.hasClock,
-        },
-      })
-    },
-
-    setClock(num) {
-      this.$item.update({ data: { clockTicks: num } })
-    },
-  },
+function setRank(rank) {
+  $item?.update({ data: { rank } })
 }
+
+function clearProgress() {
+  $item?.update({ 'data.current': 0 })
+}
+
+function markProgress() {
+  const increment = CONFIG.IRONSWORN.RankIncrements[props.item.data.rank]
+  const newValue = Math.min(props.item.data.current + increment, 40)
+  $item?.update({ 'data.current': newValue })
+}
+
+function subtypeChange() {
+  $item?.update({ data: { subtype: props.item.data.subtype } })
+}
+
+function clockMaxChange() {
+  $item?.update({ data: { clockMax: props.item.data.clockMax } })
+}
+
+function saveChecks() {
+  $item?.update({
+    data: {
+      completed: props.item.data.completed,
+      hasTrack: props.item.data.hasTrack,
+      hasClock: props.item.data.hasClock,
+    },
+  })
+}
+
+function setClock(num) {
+  $item?.update({ data: { clockTicks: num } })
+}
+
+function saveDescription() {
+  $item?.update({ data: { description: props.item.data.description } })
+}
+const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>

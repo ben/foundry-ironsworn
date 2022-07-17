@@ -61,7 +61,7 @@ import { $ItemKey } from './provisions'
 
 const $item = inject($ItemKey)
 
-const props = defineProps<{ item: Ref }>()
+const props = defineProps<{ item: any }>()
 provide(
   'item',
   computed(() => props.item)

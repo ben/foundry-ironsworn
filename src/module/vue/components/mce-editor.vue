@@ -46,7 +46,6 @@ const mceConfig: RawEditorSettings = {
   },
 
   init_instance_callback: (editor) => {
-    console.log(editor)
     const window = editor.getWin()
     editor.selection.setCursorLocation(
       editor.getBody(),
