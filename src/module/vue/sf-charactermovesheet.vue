@@ -1,7 +1,9 @@
 <template>
   <tabs ref="tabs">
     <tab :title="$t('IRONSWORN.Moves')">
-      <sf-movesheetmoves ref="movesTab" />
+      <Suspense>
+        <sf-movesheetmoves ref="movesTab" />
+      </Suspense>
     </tab>
     <tab :title="$t('IRONSWORN.Oracles')">
       <Suspense>

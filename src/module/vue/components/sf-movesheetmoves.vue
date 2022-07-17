@@ -4,12 +4,12 @@
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
-        v-model="searchQuery"
+        v-model="data.searchQuery"
         @keydown.enter.prevent
       />
       <i
         class="fa fa-times-circle nogrow clickable text"
-        @click="clearSearch"
+        @click="data.searchQuery = ''"
         style="padding: 6px"
       />
       <i
@@ -21,7 +21,7 @@
 
     <div class="flexcol item-list">
       <!-- Flat search results -->
-      <div class="nogrow" v-if="searchQuery">
+      <div class="nogrow" v-if="data.searchQuery">
         <sf-moverow
           v-for="move of searchResults"
           :key="move.displayName"
@@ -34,7 +34,7 @@
       <div
         class="nogrow"
         v-else
-        v-for="category of categories"
+        v-for="category of data.categories"
         :key="category.displayName"
       >
         <h2>
@@ -61,88 +61,71 @@ h2 {
 }
 </style>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import {
-  createStarforgedMoveTree,
-  MoveCategory,
-} from '../../features/custommoves'
+<script setup lang="ts">
+import { flatten } from 'lodash'
+import { computed, inject, reactive, ref, Ref } from 'vue'
+import { createStarforgedMoveTree } from '../../features/custommoves'
 import sfMoverow from './sf-moverow.vue'
 
-export default defineComponent({
-  inject: ['actor'],
+const actor = inject('actor') as Ref
 
-  data() {
-    return {
-      searchQuery: '',
-      categories: [] as MoveCategory[],
-    }
-  },
+const tempCategories = await createStarforgedMoveTree()
+for (const category of tempCategories) {
+  for (const move of category.moves) {
+    move.highlighted = false
+  }
+}
 
-  components: { sfMoverow },
-
-  async created() {
-    const categories = await createStarforgedMoveTree()
-
-    // Decorate with the highlighted flag we'll need
-    for (const category of categories) {
-      for (const move of category.moves) {
-        ;(move as any).highlighted = false
-      }
-    }
-
-    this.categories = categories
-  },
-
-  computed: {
-    checkedSearchQuery() {
-      try {
-        new RegExp(this.searchQuery)
-        return this.searchQuery
-      } catch (error) {
-        return ''
-      }
-    },
-
-    flatMoves() {
-      return CONFIG.IRONSWORN._.flatten(this.categories.map((x) => x.moves))
-    },
-
-    searchResults() {
-      if (!this.checkedSearchQuery) return null
-
-      const re = new RegExp(this.checkedSearchQuery, 'i')
-      return this.flatMoves.filter((x) => re.test(x.displayName))
-    },
-  },
-
-  methods: {
-    clearSearch() {
-      this.searchQuery = ''
-    },
-
-    collapseAll() {
-      for (const row of this.$refs.allmoves ?? []) {
-        row.collapse()
-      }
-    },
-
-    async highlightMove(item) {
-      this.searchQuery = ''
-      await new Promise((r) => setTimeout(r, 10))
-      for (const category of this.categories) {
-        for (const move of category.moves) {
-          if (move.moveItem.id === item.id) {
-            move.highlighted = true
-            setTimeout(() => (move.highlighted = false), 2000)
-            return
-          }
-        }
-      }
-
-      // Not found; just open the sheet
-      item.sheet?.render(true)
-    },
-  },
+const data = reactive({
+  searchQuery: '',
+  categories: tempCategories,
 })
+
+const checkedSearchQuery = computed(() => {
+  try {
+    new RegExp(data.searchQuery)
+    return data.searchQuery
+  } catch (error) {
+    return ''
+  }
+})
+
+const flatMoves = computed(() => {
+  return flatten(data.categories.map((x) => x.moves))
+})
+
+const searchResults = computed(() => {
+  if (!checkedSearchQuery.value) return null
+
+  const re = new RegExp(checkedSearchQuery.value, 'i')
+  return flatMoves.value.filter((x) => re.test(x.displayName))
+})
+
+function clearSearch() {
+  data.searchQuery = ''
+}
+
+const allmoves = ref<InstanceType<typeof sfMoverow>[]>([])
+function collapseAll() {
+  for (const row of allmoves.value ?? []) {
+    row.collapse()
+  }
+}
+
+async function highlightMove(item) {
+  this.searchQuery = ''
+  await new Promise((r) => setTimeout(r, 10))
+  for (const category of this.categories) {
+    for (const move of category.moves) {
+      if (move.moveItem.id === item.id) {
+        move.highlighted = true
+        setTimeout(() => (move.highlighted = false), 2000)
+        return
+      }
+    }
+  }
+
+  // Not found; just open the sheet
+  item.sheet?.render(true)
+}
 </script>
