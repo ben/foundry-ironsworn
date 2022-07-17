@@ -27,7 +27,7 @@
     <!-- OPTIONS -->
     <div v-if="hasOptions || editMode">
       <h3>{{ $t('IRONSWORN.Options') }}</h3>
-      <!-- <asset-optionsedit /> -->
+      <asset-optionsedit />
     </div>
 
     <!-- TRACK -->

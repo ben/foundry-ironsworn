@@ -9,18 +9,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    opt: Object,
-  },
+<script setup lang="ts">
+import { computed } from 'vue'
 
-  computed: {
-    selectedClass() {
-      return {
-        selected: this.opt.selected,
-      }
-    },
-  },
-}
+const props = defineProps<{ opt: any }>()
+const selectedClass = computed(() => ({
+  selected: props.opt.selected,
+}))
 </script>

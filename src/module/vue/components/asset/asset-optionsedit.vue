@@ -47,60 +47,64 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    item: Object,
-  },
+<script setup lang="ts">
+import { computed, inject, nextTick, Ref } from 'vue'
+import { $ItemKey } from '../../provisions'
+import BtnFaicon from '../buttons/btn-faicon.vue'
+import AssetExclusiveoption from './asset-exclusiveoption.vue'
 
-  computed: {
-    editMode() {
-      return this.item.flags['foundry-ironsworn']?.['edit-mode']
-    },
-  },
+const item = inject('item') as Ref
+const $item = inject($ItemKey)
 
-  methods: {
-    enterEditMode() {
-      this.$item.setFlag('foundry-ironsworn', 'edit-mode', true)
-    },
+const editMode = computed(() => {
+  return item.value.flags['foundry-ironsworn']?.['edit-mode']
+})
+function enterEditMode() {
+  $item?.setFlag('foundry-ironsworn', 'edit-mode', true)
+}
 
-    markOption(idx) {
-      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
+function markOption(idx) {
+  const exclusiveOptions = Object.values(
+    item.value?.data.exclusiveOptions
+  ) as any[]
 
-      for (let i = 0; i < exclusiveOptions.length; i++) {
-        exclusiveOptions[i] = {
-          ...exclusiveOptions[i],
-          selected: i === idx,
-        }
-      }
-      this.$item.update({ data: { exclusiveOptions } })
-    },
+  for (let i = 0; i < exclusiveOptions.length; i++) {
+    exclusiveOptions[i] = {
+      ...exclusiveOptions[i],
+      selected: i === idx,
+    }
+  }
+  $item?.update({ data: { exclusiveOptions } })
+}
 
-    updateOptionName(idx) {
-      const { exclusiveOptions } = this.item.data
-      this.$item.update({ data: { exclusiveOptions } })
-    },
+function updateOptionName(idx) {
+  const { exclusiveOptions } = item.value?.data
+  $item?.update({ data: { exclusiveOptions } })
+}
 
-    deleteOption(idx) {
-      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
-      const needNewSelection = exclusiveOptions[idx].selected
-      exclusiveOptions.splice(idx, 1)
-      if (needNewSelection && exclusiveOptions[0]) {
-        exclusiveOptions[0].selected = true
-      }
-      this.$item.update({ data: { exclusiveOptions } })
-    },
+function deleteOption(idx) {
+  const exclusiveOptions = Object.values(
+    item.value?.data.exclusiveOptions
+  ) as any[]
+  const needNewSelection = exclusiveOptions[idx].selected
+  exclusiveOptions.splice(idx, 1)
+  if (needNewSelection && exclusiveOptions[0]) {
+    exclusiveOptions[0].selected = true
+  }
+  $item?.update({ data: { exclusiveOptions } })
+}
 
-    addOption() {
-      this.enterEditMode()
-      const exclusiveOptions = Object.values(this.item.data.exclusiveOptions)
-      exclusiveOptions.push({
-        name: ' ',
-        value: ' ',
-        selected: exclusiveOptions.every((x) => !x.selected),
-      })
-      this.$item.update({ data: { exclusiveOptions } })
-    },
-  },
+async function addOption() {
+  enterEditMode()
+  await nextTick()
+  const exclusiveOptions = Object.values(
+    item.value?.data.exclusiveOptions
+  ) as any[]
+  exclusiveOptions.push({
+    name: ' ',
+    value: ' ',
+    selected: exclusiveOptions.every((x) => !x.selected),
+  })
+  $item?.update({ data: { exclusiveOptions } })
 }
 </script>
