@@ -12,10 +12,11 @@
 <script setup lang="ts">
 import { IronswornItem } from '../../item/item'
 import { inject } from 'vue'
+import { $ActorKey, $ItemKey } from '../provisions'
 const props = defineProps<{ document: any; tag?: string }>()
 
-const $item = inject('$item') as IronswornItem
-const $actor = inject('$actor') as IronswornItem
+const $item = inject($ItemKey, undefined)
+const $actor = inject($ActorKey, undefined)
 
 function save() {
   const document = $item ?? $actor

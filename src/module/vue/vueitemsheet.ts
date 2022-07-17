@@ -1,4 +1,6 @@
 import { merge } from 'lodash'
+import { App } from 'vue'
+import { $ItemKey } from './provisions'
 import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
@@ -7,14 +9,18 @@ import {
 export abstract class VueItemSheet extends ItemSheet {
   renderHelper: VueSheetRenderHelper | undefined
 
-  abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
-
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'item'],
       width: 520,
       height: 480,
     })
+  }
+
+  abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
+
+  setupVueApp(app: App) {
+    app.provide($ItemKey, this.item)
   }
 
   render(
@@ -29,7 +35,8 @@ export abstract class VueItemSheet extends ItemSheet {
           vueData: () => ({ item: this.item.toObject() }),
         },
         this.renderHelperOptions
-      )
+      ),
+      this.setupVueApp.bind(this)
     )
 
     this.renderHelper.render(force, options)

@@ -52,14 +52,14 @@ h3 {
 
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
-import { IronswornItem } from '../item/item'
 import DocumentName from './components/document-name.vue'
 import AssetFieldsedit from './components/asset/asset-fieldsedit.vue'
 import AssetAbilitiesedit from './components/asset/asset-abilitiesedit.vue'
 import AssetOptionsedit from './components/asset/asset-optionsedit.vue'
 import AssetTrackedit from './components/asset/asset-trackedit.vue'
+import { $ItemKey } from './provisions'
 
-const $item = inject('$item') as IronswornItem
+const $item = inject($ItemKey)
 
 const props = defineProps<{ item: Ref }>()
 provide(
@@ -80,6 +80,6 @@ const hasFields = computed(() => {
 })
 
 function setDescription() {
-  $item.update({ data: { description: props.item.data.description } })
+  $item?.update({ data: { description: props.item.data.description } })
 }
 </script>
