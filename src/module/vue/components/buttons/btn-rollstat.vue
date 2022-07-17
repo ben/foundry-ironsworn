@@ -14,8 +14,8 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
 import { RollDialog } from '../../../helpers/rolldialog'
+import { $ActorKey } from '../../provisions'
 import btnIsicon from './btn-isicon.vue'
 
 const props = defineProps({
@@ -25,7 +25,7 @@ const props = defineProps({
   disabled: Boolean,
 })
 
-const $actor = inject('$actor') as IronswornActor
+const $actor = inject($ActorKey)
 const $item = computed(() => game.items?.get(props.item._id))
 
 function rollStat() {

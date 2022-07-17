@@ -89,7 +89,6 @@
 
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
 import { RollDialog } from '../../../helpers/rolldialog'
 import { AssetAbility } from '../../../item/itemtypes'
 import BtnFaicon from '../buttons/btn-faicon.vue'
@@ -98,10 +97,11 @@ import AssetTrack from './asset-track.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
+import { $ActorKey } from '../../provisions'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject('actor') as Ref
-const $actor = inject('$actor') as IronswornActor
+const $actor = inject($ActorKey)
 
 const expanded = computed(() => {
   return props.asset?.flags['foundry-ironsworn']?.expanded || false

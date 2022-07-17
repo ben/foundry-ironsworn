@@ -1,18 +1,18 @@
 <template>
   <div class="flexcol nogrow order-buttons">
     <!-- TODO: replace with better disabled attr? either aria-disabled or disabled attr -->
-    <btn-faicon
+    <BtnFaicon
       icon="caret-up"
       class="block nogrow"
       :class="{ disabled: i == 0 }"
       @click="$emit('sortUp', i)"
-    ></btn-faicon>
-    <btn-faicon
+    ></BtnFaicon>
+    <BtnFaicon
       icon="caret-down"
       class="block nogrow"
       :class="{ disabled: i == length - 1 }"
       @click="$emit('sortDown', i)"
-    ></btn-faicon>
+    ></BtnFaicon>
   </div>
 </template>
 
@@ -26,11 +26,7 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    i: Number,
-    length: Number,
-  },
-}
+<script setup lang="ts">
+import BtnFaicon from './buttons/btn-faicon.vue'
+defineProps<{ i: number; length: number }>()
 </script>

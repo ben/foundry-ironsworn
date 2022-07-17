@@ -11,13 +11,11 @@
 
 <script lang="ts" setup>
 import { inject } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
+import { $ActorKey } from '../../provisions'
 import btnFaicon from './btn-faicon.vue'
 
-defineProps({
-  disabled: Boolean,
-})
-const $actor = inject('$actor') as IronswornActor
+defineProps<{ disabled?: boolean }>()
+const $actor = inject($ActorKey)
 
-const burnMomentum = () => $actor.burnMomentum()
+const burnMomentum = () => $actor?.burnMomentum()
 </script>

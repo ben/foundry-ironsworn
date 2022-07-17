@@ -11,11 +11,11 @@
 
 <script lang="ts" setup>
 import { inject, Ref } from 'vue'
-import { IronswornActor } from '../../../actor/actor'
 import { IronswornSettings } from '../../../helpers/settings'
+import { $ActorKey } from '../../provisions'
 
 const actor = inject('actor') as Ref
-const $actor = inject('$actor') as IronswornActor
+const $actor = inject($ActorKey)
 
 const props = defineProps<{
   name: string

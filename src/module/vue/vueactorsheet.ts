@@ -1,4 +1,6 @@
 import { merge } from 'lodash'
+import { App } from 'vue'
+import { $ActorKey } from './provisions'
 import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
@@ -7,12 +9,16 @@ import {
 export abstract class VueActorSheet extends ActorSheet {
   renderHelper: VueSheetRenderHelper | undefined
 
-  abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
-
   static get defaultOptions(): ActorSheet.Options {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'actor'],
     })
+  }
+
+  abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
+
+  setupVueApp(app: App) {
+    app.provide($ActorKey, this.actor)
   }
 
   render(
@@ -27,7 +33,8 @@ export abstract class VueActorSheet extends ActorSheet {
           vueData: () => ({ actor: this.actor.toObject() }),
         },
         this.renderHelperOptions
-      )
+      ),
+      this.setupVueApp.bind(this)
     )
 
     this.renderHelper.render(force, options)

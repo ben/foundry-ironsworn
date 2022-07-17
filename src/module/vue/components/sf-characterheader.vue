@@ -52,11 +52,11 @@ textarea {
 <script lang="ts" setup>
 import { debounce } from 'lodash'
 import { inject, ref, Ref } from 'vue'
-import { IronswornActor } from '../../actor/actor'
+import { $ActorKey } from '../provisions'
 import documentImg from './document-img.vue'
 
 const actor = inject('actor') as any
-const $actor = inject('$actor') as IronswornActor
+const $actor = inject($ActorKey)
 
 const name = ref<HTMLInputElement | null>(null)
 const callsign = ref<HTMLInputElement | null>(null)
@@ -64,7 +64,6 @@ const pronouns = ref<HTMLInputElement | null>(null)
 const characteristics = ref<HTMLInputElement | null>(null)
 
 const save = debounce(() => {
-  console.log('saving')
   $actor?.update({
     name: name.value?.value,
     data: {

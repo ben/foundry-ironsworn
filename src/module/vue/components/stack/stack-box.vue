@@ -15,9 +15,10 @@ import { computed, inject, Ref } from 'vue'
 import { IronswornActor } from '../../../actor/actor'
 import { CharacterDataProperties } from '../../../actor/actortypes'
 import { IronswornSettings } from '../../../helpers/settings'
+import { $ActorKey } from '../../provisions'
 
-const actor = inject('actor') as CharacterDataProperties
-const $actor = inject('$actor') as IronswornActor
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 
 const props = defineProps<{
   stat: string

@@ -18,7 +18,7 @@
             ></stack>
             <hr class="nogrow" />
             <div>
-              <btn-momentumburn :actor="actor" class="nogrow block stack-row">
+              <btn-momentumburn class="nogrow block stack-row">
                 {{ $t('IRONSWORN.Burn') }}
               </btn-momentumburn>
 
