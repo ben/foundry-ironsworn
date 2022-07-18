@@ -30,7 +30,12 @@
       <hr class="nogrow" />
 
       <!-- DESCRIPTION -->
-      <div v-html="foe.data.description" />
+      <mce-editor
+        v-model="foe.data.description"
+        @save="saveDescription"
+        @change="throttledSaveDescription"
+      />
+      <!-- <div v-html="foe.data.description" /> -->
     </div>
 
     <div
@@ -63,12 +68,14 @@
 import { computed, inject, provide } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { $ActorKey } from '../provisions'
+import { throttle } from 'lodash'
 import DocumentImg from './document-img.vue'
 import DocumentName from './document-name.vue'
 import RankHexes from './rank-hexes/rank-hexes.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import ProgressTrack from './progress/progress-track.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
+import MceEditor from './mce-editor.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
@@ -124,4 +131,11 @@ function markProgress() {
   foundryFoe.value.update({ 'data.current': newValue })
   foe.value.data.current = newValue
 }
+
+function saveDescription() {
+  foundryFoe.value?.update({
+    data: { description: foe.value?.data.description },
+  })
+}
+const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>

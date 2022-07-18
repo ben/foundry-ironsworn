@@ -6,7 +6,7 @@ export class FoeSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       template: 'systems/foundry-ironsworn/templates/actor/foe.hbs',
-      width: 400,
+      width: 450,
       height: 500,
     })
   }
