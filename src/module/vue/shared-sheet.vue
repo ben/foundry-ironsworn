@@ -93,17 +93,14 @@
       </transition>
     </section>
 
-    <mce-editor
-      v-model="actor.data.biography"
-      @save="saveNotes"
-      @change="throttledSaveNotes"
-    />
-    <!-- <textarea
-      class="notes"
-      :placeholder="$t('IRONSWORN.Notes')"
-      v-model="actor.data.biography"
-      @blur="saveNotes"
-    /> -->
+    <section class="sheet-area">
+      <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
+      <mce-editor
+        v-model="actor.data.biography"
+        @save="saveNotes"
+        @change="throttledSaveNotes"
+      />
+    </section>
   </div>
 </template>
 
