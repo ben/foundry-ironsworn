@@ -15,6 +15,9 @@ export interface Move {
   dataforgedMove?: IMove
 }
 
+// For some reason, rollupJs mangles this
+const MoveCategories = starforged.default['Move Categories']
+
 export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   const ret = [] as MoveCategory[]
 
@@ -24,7 +27,7 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   )
 
   // Construct the base tree
-  for (const category of starforged['Move Categories']) {
+  for (const category of MoveCategories) {
     ret.push(walkCategory(category, compendiumMoves as IronswornItem[]))
   }
 

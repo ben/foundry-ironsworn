@@ -12,6 +12,9 @@ export interface OracleTreeNode {
   forceHidden?: boolean
 }
 
+// For some reason, rollupJs mangles this
+const OracleCategories = starforged.default['Oracle Categories']
+
 const emptyNode = () =>
   ({
     displayName: '',
@@ -26,7 +29,7 @@ export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
   await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
 
   // Build the default tree
-  for (const category of starforged['Oracle Categories']) {
+  for (const category of OracleCategories) {
     rootNode.children.push(
       await walkOracleCategory(category, getFoundryISTableByDfId)
     )
@@ -48,7 +51,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   await cachedDocumentsForPack('foundry-ironsworn.starforgedoracles')
 
   // Build the default tree
-  for (const category of starforged['Oracle Categories']) {
+  for (const category of OracleCategories) {
     rootNode.children.push(
       await walkOracleCategory(category, getFoundrySFTableByDfId)
     )

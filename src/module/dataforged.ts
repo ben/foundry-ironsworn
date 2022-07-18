@@ -7,6 +7,7 @@ import {
   IOracle,
   IOracleCategory,
   IInputClock,
+  Starforged,
 } from 'dataforged'
 import { marked } from 'marked'
 import { IronswornItem } from './item/item'
@@ -14,6 +15,11 @@ import shajs from 'sha.js'
 import { cachedDocumentsForPack } from './features/pack-cache'
 import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
+
+// For some reason, rollupJs mangles this
+const MoveCategories = (starforged.default as Starforged)['Move Categories']
+const OracleCategories = (starforged.default as Starforged)['Oracle Categories']
+const AssetTypes = (starforged.default as Starforged)['Asset Types']
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -97,7 +103,7 @@ export async function getFoundryMoveByDfId(
 export async function getDFMoveByDfId(
   dfid: string
 ): Promise<IMove | undefined> {
-  for (const category of starforged['Move Categories']) {
+  for (const category of MoveCategories) {
     for (const move of category.Moves) {
       if (move.$id === dfid) return move
     }
@@ -144,7 +150,7 @@ export function findOracleWithIntermediateNodes(
     return false
   }
 
-  for (const cat of starforged['Oracle Categories']) {
+  for (const cat of OracleCategories) {
     walkCategory(cat)
   }
   return ret
@@ -271,7 +277,7 @@ export async function importFromDataforged() {
 async function processMoves(idMap: { [key: string]: string }) {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  for (const category of starforged['Move Categories']) {
+  for (const category of MoveCategories) {
     for (const move of category.Moves) {
       renderLinksInMove(idMap, move)
       const cleanMove = cleanDollars(move)
@@ -293,7 +299,7 @@ async function processMoves(idMap: { [key: string]: string }) {
 async function processAssets(idMap: { [key: string]: string }) {
   const assetsToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  for (const assetType of starforged['Asset Types']) {
+  for (const assetType of AssetTypes) {
     for (const asset of assetType.Assets) {
       assetsToCreate.push({
         type: 'asset',
@@ -385,7 +391,7 @@ async function processOracles(idMap: { [key: string]: string }) {
     for (const child of cat.Categories ?? []) await processCategory(child)
   }
 
-  for (const category of starforged['Oracle Categories']) {
+  for (const category of OracleCategories) {
     await processCategory(category)
   }
   await RollTable.createDocuments(oraclesToCreate, {
