@@ -18,7 +18,6 @@ const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
 
 const immediateSave = () => {
-  console.log('saving')
   $actor?.update({ 'data.notes': actor.value.data.notes })
 }
 const debouncedSave = debounce(immediateSave, 1000)

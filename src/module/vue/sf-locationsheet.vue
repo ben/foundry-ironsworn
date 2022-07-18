@@ -110,7 +110,7 @@
       style="margin-bottom: 1rem"
       v-if="oracles.length > 0"
     >
-      <div class="boxrow">
+      <div class="flexrow boxrow">
         <btn-isicon
           icon="d10-tilt"
           class="block box"
