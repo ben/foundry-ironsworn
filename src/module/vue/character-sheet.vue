@@ -73,7 +73,10 @@
                   </div>
                 </transition-group>
                 <div class="flexrow nogrow" style="text-align: center">
-                  <btn-compendium class="block" compendium="ironswornassets">
+                  <btn-compendium
+                    class="block nogrow"
+                    compendium="ironswornassets"
+                  >
                     {{ $t('IRONSWORN.Assets') }}
                   </btn-compendium>
                 </div>

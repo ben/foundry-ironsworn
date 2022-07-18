@@ -6,12 +6,12 @@
           {{ asset.name }}
         </h4>
         <btn-faicon
-          class="block"
+          class="block nogrow"
           v-if="editMode"
           icon="trash"
           @click="destroy"
         />
-        <btn-faicon class="block" icon="edit" @click="edit" />
+        <btn-faicon class="block nogrow" icon="edit" @click="edit" />
       </div>
     </div>
     <transition name="slide">
