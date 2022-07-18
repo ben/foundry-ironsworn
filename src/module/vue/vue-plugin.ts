@@ -1,5 +1,5 @@
 import { marked } from 'marked'
-import { Plugin } from 'vue'
+import { capitalize, Plugin } from 'vue'
 import { $EnrichHtmlKey, $EnrichMarkdownKey } from './provisions'
 
 declare module '@vue/runtime-core' {
@@ -21,7 +21,7 @@ export function enrichHtml(text) {
   <a class="inline-roll" data-param="${stat}">
     <i class="fas fa-dice-d6"></i>
     ${rollText} +${game.i18n
-      .localize(`IRONSWORN.${app.config.globalProperties.$capitalize(stat)}`)
+      .localize(`IRONSWORN.${capitalize(stat)}`)
       .toLowerCase()}
   </a>
 `

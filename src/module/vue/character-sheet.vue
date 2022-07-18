@@ -106,7 +106,13 @@
               <progress-controls :actor="actor" />
             </div>
 
-            <quill-editor theme="bubble" v-model="actor.data.biography" />
+            <hr class="nogrow" />
+            <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
+            <mce-editor
+              v-model="actor.data.biography"
+              @save="saveNotes"
+              @change="throttledSaveNotes"
+            />
           </div>
         </div>
 
@@ -153,7 +159,6 @@
         </div>
       </div>
     </div>
-    <!-- <pre><code>{{foo}}</code></pre> -->
   </div>
 </template>
 
@@ -176,74 +181,101 @@ textarea.notes {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
-  computed: {
-    progressItems() {
-      return this.actor.items
-        .filter((x) => x.type === 'progress')
-        .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-    },
-    assets() {
-      return this.actor.items
-        .filter((x) => x.type === 'asset')
-        .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-    },
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-  },
-  watch: {
-    'actor.data.biography'() {
-      this.saveNotes()
-    },
-  },
-  methods: {
-    burnMomentum() {
-      this.$actor.burnMomentum()
-    },
-    rollStat(stat) {
-      CONFIG.IRONSWORN.RollDialog.show({ actor: this.$actor, stat })
-    },
-    openCompendium(name) {
-      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-      pack?.render(true)
-    },
-    saveNotes() {
-      this.$actor.update({ 'data.biography': this.actor.data.biography })
-    },
-    async applySort(oldI, newI, sortBefore, collection) {
-      const sorted = collection.sort(
-        (a, b) => (a.data.sort || 0) - (b.data.sort || 0)
-      )
-      const updates = SortingHelpers.performIntegerSort(sorted[oldI], {
-        target: sorted[newI],
-        siblings: sorted,
-        sortBefore,
-      })
-      await Promise.all(
-        updates.map(({ target, update }) => target.update(update))
-      )
-    },
-    assetSortUp(i) {
-      const items = this.$actor.items.filter((x) => x.type === 'asset')
-      this.applySort(i, i - 1, true, items)
-    },
-    assetSortDown(i) {
-      const items = this.$actor.items.filter((x) => x.type === 'asset')
-      this.applySort(i, i + 1, false, items)
-    },
-    progressSortUp(i) {
-      const items = this.$actor.items.filter((x) => x.type === 'progress')
-      this.applySort(i, i - 1, true, items)
-    },
-    progressSortDown(i) {
-      const items = this.$actor.items.filter((x) => x.type === 'progress')
-      this.applySort(i, i + 1, false, items)
-    },
-  },
+<script setup lang="ts">
+import { $ActorKey } from './provisions'
+;('vue')
+import AttrBox from './components/attr-box.vue'
+import BtnMomentumburn from './components/buttons/btn-momentumburn.vue'
+import Stack from './components/stack/stack.vue'
+import btnRollstat from './components/buttons/btn-rollstat.vue'
+import btnIsicon from './components/buttons/btn-isicon.vue'
+import { IronswornActor } from '../actor/actor'
+import { provide, computed, inject } from 'vue'
+import { RollDialog } from '../helpers/rolldialog'
+import CharacterHeader from './components/character-header.vue'
+import DocumentImg from './components/document-img.vue'
+import DocumentName from './components/document-name.vue'
+import XpBox from './components/xp-box.vue'
+import Conditions from './components/conditions/conditions.vue'
+import { throttle } from 'lodash'
+import MceEditor from './components/mce-editor.vue'
+import ProgressControls from './components/progress-controls.vue'
+import ProgressBox from './components/progress/progress-box.vue'
+import BtnCompendium from './components/buttons/btn-compendium.vue'
+import Asset from './components/asset/asset.vue'
+import OrderButtons from './components/order-buttons.vue'
+import Bonds from './components/bonds.vue'
+
+const props = defineProps<{
+  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+}>()
+
+provide(
+  'actor',
+  computed(() => props.actor)
+)
+
+const $actor = inject($ActorKey)
+
+const progressItems = computed(() => {
+  return props.actor.items
+    .filter((x) => x.type === 'progress')
+    .sort((a, b) => (a.sort || 0) - (b.sort || 0))
+})
+const assets = computed(() => {
+  return props.actor.items
+    .filter((x) => x.type === 'asset')
+    .sort((a, b) => (a.sort || 0) - (b.sort || 0))
+})
+const editMode = computed(() => {
+  return props.actor.flags['foundry-ironsworn']?.['edit-mode']
+})
+
+//   'actor.data.biography'() {
+//   this.saveNotes()
+// },
+
+function burnMomentum() {
+  $actor?.burnMomentum()
+}
+function rollStat(stat) {
+  RollDialog.show({ actor: $actor, stat })
+}
+function openCompendium(name) {
+  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
+  pack?.render(true)
+}
+
+function saveNotes() {
+  $actor?.update({ 'data.biography': props.actor.data.biography })
+}
+const throttledSaveNotes = throttle(saveNotes, 1000)
+
+async function applySort(oldI, newI, sortBefore, collection) {
+  const sorted = collection.sort(
+    (a, b) => (a.data.sort || 0) - (b.data.sort || 0)
+  )
+  const updates = SortingHelpers.performIntegerSort(sorted[oldI], {
+    target: sorted[newI],
+    siblings: sorted,
+    sortBefore,
+  })
+  await Promise.all(updates.map(({ target, update }) => target.update(update)))
+}
+function assetSortUp(i) {
+  const items = $actor?.items.filter((x) => x.type === 'asset')
+  applySort(i, i - 1, true, items)
+}
+function assetSortDown(i) {
+  const items = $actor?.items.filter((x) => x.type === 'asset')
+  applySort(i, i + 1, false, items)
+}
+function progressSortUp(i) {
+  const items = $actor?.items.filter((x) => x.type === 'progress')
+  applySort(i, i - 1, true, items)
+}
+function progressSortDown(i) {
+  const items = $actor?.items.filter((x) => x.type === 'progress')
+  applySort(i, i + 1, false, items)
 }
 </script>

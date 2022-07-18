@@ -1,13 +1,12 @@
 <template>
   <header class="sheet-header">
-    <document-img :document="actor" />
+    <document-img :document="actor" style="margin: 5px" />
     <document-name :document="actor" />
     <div class="flexrow xp">
       <h4 style="flex-grow: 0; margin: 5px">{{ $t('IRONSWORN.XP') }}</h4>
       <div class="flexrow">
-        <xp-box :actor="actor" :value="0" @click="setXp(0)">×</xp-box>
+        <xp-box :value="0" @click="setXp(0)">×</xp-box>
         <xp-box
-          :actor="actor"
           v-for="n in xpArray"
           v-bind:key="n"
           :value="n"
@@ -19,22 +18,19 @@
   </header>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script setup lang="ts">
+import { reactive } from '@vue/reactivity'
+import { inject } from '@vue/runtime-core'
+import { $ActorKey } from '../provisions'
+import XpBox from './xp-box.vue'
+import DocumentImg from './document-img.vue'
+import DocumentName from './document-name.vue'
 
-  data() {
-    return {
-      xpArray: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-    }
-  },
+const actor = inject('actor') as Ref
+const xpArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-  methods: {
-    setXp(n) {
-      this.$actor.update({ data: { xp: n } })
-    },
-  },
+const $actor = inject($ActorKey)
+function setXp(n) {
+  $actor?.update({ data: { xp: n } })
 }
 </script>
