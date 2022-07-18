@@ -9,33 +9,27 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script setup lang="ts">
+import { inject, computed } from 'vue'
+import { $ActorKey } from '../provisions'
 
-  computed: {
-    bonds() {
-      return this.actor.items.filter((x) => x.type === 'bondset')[0]
-    },
-    bondcount() {
-      if (!this.bonds?.data?.bonds) return 0
-      return Object.values(this.bonds.data.bonds).length
-    },
-  },
+const actor = inject('actor') as any
+const $actor = inject($ActorKey)
 
-  methods: {
-    editBonds() {
-      const actor = game.actors?.get(this.actor._id)
-      const item = actor.items.get(this.bonds._id)
-      item?.sheet.render(true)
-    },
-    rollBonds() {
-      const actor = game.actors?.get(this.actor._id)
-      const item = actor.items.get(this.bonds._id)
-      item?.writeEpilogue()
-    },
-  },
+const bonds = computed(() => {
+  return actor.items.filter((x) => x.type === 'bondset')[0]
+})
+const bondcount = computed(() => {
+  if (!bonds.value?.data?.bonds) return 0
+  return Object.values(bonds.value.data.bonds).length
+})
+
+function editBonds() {
+  const item = $actor?.items.get(bonds.value._id)
+  item?.sheet?.render(true)
+}
+function rollBonds() {
+  const item = $actor?.items.get(bonds.value._id)
+  item?.writeEpilogue()
 }
 </script>

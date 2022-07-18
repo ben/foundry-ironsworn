@@ -7,7 +7,10 @@
     <btn-faicon class="block" icon="plus" @click="addProgressItem('progress')">
       {{ $t('IRONSWORN.Progress') }}</btn-faicon
     >
-    <btn-compendium class="block" :compendium="foeCompendium">
+    <btn-compendium
+      class="block"
+      :compendium="props.foeCompendium ?? 'foeactorsis'"
+    >
       {{ $t('IRONSWORN.Foes') }}
     </btn-compendium>
   </div>

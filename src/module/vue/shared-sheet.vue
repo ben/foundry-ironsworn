@@ -61,7 +61,7 @@
           class="text collapse-control"
           :class="completedClass"
           :icon="completedCaret"
-          @click="expandCompleted = !expandCompleted"
+          @click="data.expandCompleted = !data.expandCompleted"
         >
           {{ $t('IRONSWORN.Completed') }}
         </btn-faicon>
@@ -72,12 +72,12 @@
         class="nogrow completed"
         style="margin: 0; padding: 0"
       >
-        <div v-if="expandCompleted">
+        <div v-if="data.expandCompleted">
           <transition-group name="slide" tag="div" class="nogrow">
             <div
               class="flexrow"
               v-for="(item, i) in completedItems"
-              :key="item._id"
+              :key="item._id ?? ''"
             >
               <order-buttons
                 v-if="editMode"
@@ -93,12 +93,17 @@
       </transition>
     </section>
 
-    <textarea
+    <mce-editor
+      v-model="actor.data.biography"
+      @save="saveNotes"
+      @change="throttledSaveNotes"
+    />
+    <!-- <textarea
       class="notes"
       :placeholder="$t('IRONSWORN.Notes')"
       v-model="actor.data.biography"
       @blur="saveNotes"
-    />
+    /> -->
   </div>
 </template>
 
@@ -123,93 +128,108 @@ textarea.notes {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
-  data() {
-    return {
-      expandCompleted: false,
-      highlightCompleted: false,
-    }
-  },
-  computed: {
-    progressItems() {
-      return [
-        ...this.actor.items.filter((x) => x.type === 'vow'),
-        ...this.actor.items.filter((x) => x.type === 'progress'),
-      ].sort((a, b) => (a.sort || 0) - (b.sort || 0))
-    },
-    activeItems() {
-      return this.progressItems.filter((x) => !x.data.completed)
-    },
-    completedItems() {
-      return this.progressItems.filter((x) => x.data.completed)
-    },
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-    completedCaret() {
-      return 'fa fa-caret-' + (this.expandCompleted ? 'down' : 'right')
-    },
-    completedClass() {
-      return this.highlightCompleted ? 'highlighted' : undefined
-    },
-    hasBonds() {
-      const bonds = this.actor.items.find((x) => x.type === 'bondset')
-      const markedBonds = bonds?.data?.bonds?.length
-      return markedBonds && markedBonds > 0
-    },
-  },
-  methods: {
-    setSupply(_ev, value) {
-      this.$actor.update({ data: { supply: value } })
-      CONFIG.IRONSWORN.IronswornSettings.maybeSetGlobalSupply(value)
-    },
-    rollSupply() {
-      CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.$actor,
-        stat: 'supply',
-      })
-    },
-    progressCompleted() {
-      this.highlightCompleted = true
-      clearTimeout(this.highlightCompletedTimer)
-      this.highlightCompletedTimer = setTimeout(() => {
-        this.highlightCompleted = false
-      }, 2000)
-    },
-    saveNotes() {
-      this.$actor.update({ 'data.biography': this.actor.data.biography })
-    },
-    async applySort(oldI, newI, sortBefore, filterFn) {
-      const foundryItems = this.$actor.items
-        .filter((x) => x.type === 'progress')
-        .filter((x) => x.data.data.subtype !== 'bond')
-        .filter(filterFn)
-        .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
-      const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
-        target: foundryItems[newI],
-        siblings: foundryItems,
-        sortBefore,
-      })
-      await Promise.all(
-        updates.map(({ target, update }) => target.update(update))
-      )
-    },
-    sortUp(i, ...args) {
-      this.applySort(i, i - 1, true, (x) => !x.data.data.completed)
-    },
-    sortDown(i) {
-      this.applySort(i, i + 1, false, (x) => !x.data.data.completed)
-    },
-    completedSortUp(i) {
-      this.applySort(i, i - 1, true, (x) => x.data.data.completed)
-    },
-    completedSortDown(i) {
-      this.applySort(i, i + 1, false, (x) => x.data.data.completed)
-    },
-  },
+<script setup lang="ts">
+import { provide, computed, reactive, inject } from 'vue'
+import { IronswornActor } from '../actor/actor'
+import { RollDialog } from '../helpers/rolldialog'
+import { IronswornSettings } from '../helpers/settings'
+import { $ActorKey } from './provisions'
+import DocumentImg from './components/document-img.vue'
+import DocumentName from './components/document-name.vue'
+import Boxrow from './components/boxrow/boxrow.vue'
+import OrderButtons from './components/order-buttons.vue'
+import ProgressBox from './components/progress/progress-box.vue'
+import ProgressControls from './components/progress-controls.vue'
+import BtnFaicon from './components/buttons/btn-faicon.vue'
+import Bonds from './components/bonds.vue'
+import MceEditor from './components/mce-editor.vue'
+import { throttle } from 'lodash'
+
+const props =
+  defineProps<{ actor: ReturnType<typeof IronswornActor.prototype.toObject> }>()
+provide(
+  'actor',
+  computed(() => props.actor)
+)
+const $actor = inject($ActorKey)
+
+const data = reactive({
+  expandCompleted: false,
+  highlightCompleted: false,
+})
+
+const progressItems = computed(() => {
+  return [
+    ...props.actor.items.filter((x) => x.type === 'vow'),
+    ...props.actor.items.filter((x) => x.type === 'progress'),
+  ].sort((a, b) => (a.sort || 0) - (b.sort || 0))
+})
+const activeItems = computed(() => {
+  return progressItems.value.filter((x) => !x.data.completed)
+})
+const completedItems = computed(() => {
+  return progressItems.value.filter((x) => x.data.completed)
+})
+const editMode = computed(() => {
+  return props.actor.flags['foundry-ironsworn']?.['edit-mode']
+})
+const completedCaret = computed(() => {
+  return 'fa fa-caret-' + (data.expandCompleted ? 'down' : 'right')
+})
+const completedClass = computed(() => {
+  return data.highlightCompleted ? 'highlighted' : undefined
+})
+const hasBonds = computed(() => {
+  const bonds = props.actor.items.find((x) => x.type === 'bondset')
+  const markedBonds = bonds?.data?.bonds?.length
+  return markedBonds && markedBonds > 0
+})
+function setSupply(_ev, value) {
+  $actor?.update({ data: { supply: value } })
+  IronswornSettings.maybeSetGlobalSupply(value)
+}
+function rollSupply() {
+  RollDialog.show({
+    actor: $actor,
+    stat: 'supply',
+  })
+}
+
+let highlightCompletedTimer: NodeJS.Timer | undefined
+function progressCompleted() {
+  data.highlightCompleted = true
+  clearTimeout(highlightCompletedTimer)
+  highlightCompletedTimer = setTimeout(() => {
+    data.highlightCompleted = false
+  }, 2000)
+}
+function saveNotes() {
+  $actor?.update({ 'data.biography': props.actor.data.biography })
+}
+const throttledSaveNotes = throttle(saveNotes, 1000)
+async function applySort(oldI, newI, sortBefore, filterFn) {
+  const foundryItems = ($actor?.items ?? [])
+    .filter((x) => x.type === 'progress')
+    .filter((x) => x.data.data.subtype !== 'bond')
+    .filter(filterFn)
+    .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+  const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
+    target: foundryItems[newI],
+    siblings: foundryItems,
+    sortBefore,
+  })
+  await Promise.all(updates.map(({ target, update }) => target.update(update)))
+}
+function sortUp(i) {
+  applySort(i, i - 1, true, (x) => !x.data.data.completed)
+}
+function sortDown(i) {
+  applySort(i, i + 1, false, (x) => !x.data.data.completed)
+}
+function completedSortUp(i) {
+  applySort(i, i - 1, true, (x) => x.data.data.completed)
+}
+function completedSortDown(i) {
+  applySort(i, i + 1, false, (x) => x.data.data.completed)
 }
 </script>
