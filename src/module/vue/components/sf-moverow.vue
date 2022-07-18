@@ -60,7 +60,7 @@ h4 {
 .move-summary-buttons {
   gap: 0.5rem;
 }
-.item-row {
+.movesheet-row {
   transition: all 0.4s ease;
 }
 

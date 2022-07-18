@@ -62,6 +62,9 @@
 </template>
 
 <style lang="less" scoped>
+.movesheet-row {
+  transition: all 0.4s ease;
+}
 h4 {
   margin-bottom: 4px;
 }
