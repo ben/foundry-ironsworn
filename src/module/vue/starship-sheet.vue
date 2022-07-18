@@ -69,5 +69,3 @@ provide(
   computed(() => props.actor)
 )
 </script>
-
-  components: { documentImg },

@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol">
     <header class="sheet-header nogrow">
-      <document-img :document="actor" />
+      <document-img :document="actor" style="margin: 5px" />
       <document-name :document="actor" />
     </header>
 
@@ -14,8 +14,12 @@
           style="margin-right: 1em"
         />
         <h4>{{ rankText }}</h4>
-        <btn-faicon class="block" icon="trash" @click="clearProgress" />
-        <btn-faicon class="block" icon="caret-right" @click="markProgress" />
+        <btn-faicon class="block nogrow" icon="trash" @click="clearProgress" />
+        <btn-faicon
+          class="block nogrow"
+          icon="caret-right"
+          @click="markProgress"
+        />
       </div>
 
       <!-- PROGRESS -->
@@ -55,61 +59,69 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script setup lang="ts">
+import { computed, inject, provide } from 'vue'
+import { IronswornActor } from '../../actor/actor'
+import { $ActorKey } from '../provisions'
+import DocumentImg from './document-img.vue'
+import DocumentName from './document-name.vue'
+import RankHexes from './rank-hexes/rank-hexes.vue'
+import BtnFaicon from './buttons/btn-faicon.vue'
+import ProgressTrack from './progress/progress-track.vue'
+import BtnCompendium from './buttons/btn-compendium.vue'
 
-  computed: {
-    foe() {
-      return this.actor.items.find((x) => x.type === 'progress')
-    },
-    foundryFoe() {
-      return this.$actor.items.get(this.foe._id)
-    },
-    rankText() {
-      return this.$t(CONFIG.IRONSWORN.Ranks[this.actor.data.rank])
-    },
-  },
+const props = defineProps<{
+  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+}>()
+provide(
+  'actor',
+  computed(() => props.actor)
+)
 
-  watch: {
-    async foe(newFoe) {
-      const data = { name: newFoe?.name, img: newFoe?.img }
-      await this.$actor.update(data)
-      await this.$actor.data.token.update(data)
-    },
-  },
+const $actor = inject($ActorKey)
 
-  methods: {
-    addEmpty() {
-      Item.create(
-        { name: 'NPC', type: 'progress', data: { subtype: 'progress' } },
-        { parent: this.$actor }
-      )
-    },
+const foe = computed(() => {
+  return props.actor.items.find((x) => x.type === 'progress')
+})
+const foundryFoe = computed(() => {
+  return $actor?.items.get(foe.value._id)
+})
+const rankText = computed(() => {
+  return game.i18n.localize(CONFIG.IRONSWORN.Ranks[props.actor.data.rank])
+})
 
-    openCompendium(name) {
-      const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-      pack?.render(true)
-    },
+// async foe(newFoe) {
+//   const data = { name: newFoe?.name, img: newFoe?.img }
+//   await $actor?.update(data)
+//   await $actor?.data.token.update(data)
+// },
 
-    setRank(rank) {
-      this.foundryFoe?.update({ data: { rank } })
-      this.foe.data.rank = rank
-    },
+function addEmpty() {
+  Item.create(
+    { name: 'NPC', type: 'progress', data: { subtype: 'foe' } },
+    { parent: $actor }
+  )
+}
 
-    clearProgress() {
-      this.foundryFoe?.update({ 'data.current': 0 })
-      this.foe.data.current = 0
-    },
+function openCompendium(name) {
+  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
+  pack?.render(true)
+}
 
-    markProgress() {
-      const increment = CONFIG.IRONSWORN.RankIncrements[this.foe.data.rank]
-      const newValue = Math.min(this.foe.data.current + increment, 40)
-      this.foundryFoe.update({ 'data.current': newValue })
-      this.foe.data.current = newValue
-    },
-  },
+function setRank(rank) {
+  foundryFoe.value?.update({ data: { rank } })
+  foe.value.data.rank = rank
+}
+
+function clearProgress() {
+  foundryFoe.value?.update({ 'data.current': 0 })
+  foe.value.data.current = 0
+}
+
+function markProgress() {
+  const increment = CONFIG.IRONSWORN.RankIncrements[foe.value?.data.rank]
+  const newValue = Math.min(foe.value?.data.current + increment, 40)
+  foundryFoe.value.update({ 'data.current': newValue })
+  foe.value.data.current = newValue
 }
 </script>
