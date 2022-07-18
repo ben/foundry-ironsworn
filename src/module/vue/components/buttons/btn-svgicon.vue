@@ -48,7 +48,7 @@
   }
 }
 .svg-d10-tilt:before {
-  mask-image: url('./systems/foundry-ironsworn/assets/d10-tilt.svg');
+  mask-image: url('./systems/foundry-ironsworn/assets/d10v4.svg');
 }
 .svg-oracle:before {
   mask-image: url('./systems/foundry-ironsworn/assets/oracle.svg');
