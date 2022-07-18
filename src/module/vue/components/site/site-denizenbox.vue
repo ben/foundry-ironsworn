@@ -17,7 +17,7 @@
       v-if="editMode"
       ref="description"
       type="text"
-      :class="{ highlight: focused }"
+      :class="{ highlight: data.focused }"
       :value="denizen.description"
       @input="input"
       :placeholder="denizen.descriptor"
@@ -36,41 +36,38 @@ input {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    idx: Number,
-  },
+<script setup lang="ts">
+import { reactive, Ref } from '@vue/reactivity'
+import { inject } from '@vue/runtime-core'
+import { computed, ref } from 'vue'
+import { $ActorKey } from '../../provisions'
 
-  data() {
-    return { focused: false }
-  },
+const props = defineProps<{ idx: number }>()
+const data = reactive({ focused: false })
 
-  computed: {
-    denizen() {
-      return this.actor.data.denizens[this.idx]
-    },
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-  },
+const editMode = computed(() => {
+  return actor.value?.flags['foundry-ironsworn']?.['edit-mode']
+})
 
-  methods: {
-    input(ev) {
-      const val = ev.currentTarget.value || ''
-      const denizens = Object.values(this.$actor.data.data.denizens)
-      denizens[this.idx].description = val
-      this.$actor.update({ data: { denizens } })
-    },
+const denizen = computed(() => {
+  return actor.value?.data.denizens[props.idx]
+})
 
-    focus() {
-      console.log('focusing', this)
-      this.focused = true
-      this.$refs.description.focus()
-      setTimeout(() => (this.focused = false), 5000)
-    },
-  },
+function input(ev) {
+  const val = ev.currentTarget.value || ''
+  const denizens = Object.values($actor?.data.data.denizens) as any[]
+  denizens[props.idx].description = val
+  $actor?.update({ data: { denizens } })
 }
+
+const description = ref<HTMLElement>()
+function focus() {
+  data.focused = true
+  description.value?.focus()
+  setTimeout(() => (data.focused = false), 5000)
+}
+defineExpose({ focus })
 </script>
