@@ -1,4 +1,3 @@
-import { IronswornSettings } from '../../helpers/settings'
 import sfLocationsheetVue from '../../vue/sf-locationsheet.vue'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'

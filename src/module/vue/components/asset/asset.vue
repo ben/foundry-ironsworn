@@ -44,12 +44,7 @@
         </ul>
 
         <div class="flexcol condition-meter" v-if="asset.data.track.enabled">
-          <btn-rollstat
-            class="juicy text flexrow"
-            :actor="actor"
-            :item="asset"
-            attr="track"
-          >
+          <btn-rollstat class="juicy text flexrow" :item="asset" attr="track">
             {{ asset.data.track.name }}
           </btn-rollstat>
           <asset-track :actor="actor" :item="asset" />

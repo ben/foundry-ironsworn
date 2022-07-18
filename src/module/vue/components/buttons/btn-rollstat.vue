@@ -26,9 +26,15 @@ const props = defineProps({
 })
 
 const $actor = inject($ActorKey)
-const $item = computed(() => game.items?.get(props.item._id))
+const $item = computed(() => {
+  if ($actor) {
+    return $actor.items.find((x) => x.id === props.item._id)
+  }
+  return game.items?.get(item._id)
+})
 
 function rollStat() {
+  console.log(props, $item.value)
   RollDialog.show({
     actor: $actor,
     stat: props.attr,
