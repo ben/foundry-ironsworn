@@ -1,9 +1,5 @@
-<form class='{{cssClass}} flexcol' autocomplete='off'>
-  <sf-locationsheet
-    class='ironsworn-vueport'
-    dependencies='vue vuecomponents'
-    :actor='actor'
-  >
+<form class='{{cssClass}} flexcol vueroot' autocomplete='off'>
+  <sf-locationsheet :actor='data.actor'>
     Loading…
   </sf-locationsheet>
 </form>

@@ -6,6 +6,7 @@
     data-edit="img"
     :height="size"
     :width="size"
+    class="nogrow"
   />
 </template>
 

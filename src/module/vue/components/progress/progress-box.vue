@@ -72,7 +72,7 @@
           v-if="item.data.hasClock"
           class="nogrow"
           style="flex-basis: 50px; margin: 0 0.5rem"
-          :size="50"
+          size="50px"
           :wedges="item.data.clockMax"
           :ticked="item.data.clockTicks"
           @click="setClock"

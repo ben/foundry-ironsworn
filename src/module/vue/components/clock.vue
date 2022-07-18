@@ -2,8 +2,8 @@
   <svg
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
-    :height="size ?? '100'"
-    :width="size ?? '100'"
+    :height="size ?? '100px'"
+    :width="size ?? '100px'"
     viewBox="-55 -55 110 110"
   >
     <path
