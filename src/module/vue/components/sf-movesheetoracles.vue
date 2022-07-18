@@ -124,7 +124,7 @@ $emitter?.on('highlightOracle', async (dfid) => {
   let children = oracles.value
   let lastComponent
   for (const dataNode of dfOraclePath) {
-    const child = children.find((x: any) => x.dfId() === dataNode.$id)
+    const child = children?.find((x: any) => x.dfId() === dataNode.$id)
     if (!child) break
     child.expand()
     await nextTick()
