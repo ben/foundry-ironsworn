@@ -30,29 +30,33 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    item: Object,
-  },
+<script setup lang="ts">
+import { computed, inject, provide } from 'vue'
+import { $ItemKey } from './provisions'
+import BtnFaicon from '../vue/components/buttons/btn-faicon.vue'
 
-  methods: {
-    deleteBond(i) {
-      const bonds = Object.values(this.item.data.bonds)
-      bonds.splice(i, 1)
-      this.$item.update({ data: { bonds } })
-    },
+const props = defineProps<{ item: any }>()
+provide(
+  'item',
+  computed(() => props.item)
+)
 
-    addBond() {
-      const bonds = Object.values(this.item.data.bonds)
-      bonds.push({ name: '', notes: '' })
-      this.$item.update({ data: { bonds } })
-    },
+const $item = inject($ItemKey)
 
-    save() {
-      const bonds = Object.values(this.item.data.bonds)
-      this.$item.update({ data: { bonds } })
-    },
-  },
+function deleteBond(i) {
+  const bonds = Object.values(props.item.data.bonds)
+  bonds.splice(i, 1)
+  $item?.update({ data: { bonds } })
+}
+
+function addBond() {
+  const bonds = Object.values(props.item.data.bonds)
+  bonds.push({ name: '', notes: '' })
+  $item?.update({ data: { bonds } })
+}
+
+function save() {
+  const bonds = Object.values(props.item.data.bonds)
+  $item?.update({ data: { bonds } })
 }
 </script>

@@ -12,12 +12,14 @@
 <script setup lang="ts">
 import { inject, computed } from 'vue'
 import { $ActorKey } from '../provisions'
+import ProgressTrack from './progress/progress-track.vue'
+import btnFaicon from './buttons/btn-faicon.vue'
 
-const actor = inject('actor') as any
+const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
 
 const bonds = computed(() => {
-  return actor.items.filter((x) => x.type === 'bondset')[0]
+  return actor.value?.items.find((x) => x.type === 'bondset')
 })
 const bondcount = computed(() => {
   if (!bonds.value?.data?.bonds) return 0

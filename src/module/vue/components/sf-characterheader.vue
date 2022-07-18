@@ -55,7 +55,7 @@ import { inject, ref, Ref } from 'vue'
 import { $ActorKey } from '../provisions'
 import documentImg from './document-img.vue'
 
-const actor = inject('actor') as any
+const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
 
 const name = ref<HTMLInputElement | null>(null)
