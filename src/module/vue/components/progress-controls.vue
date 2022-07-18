@@ -9,7 +9,7 @@
     >
     <btn-compendium
       class="block"
-      :compendium="props.foeCompendium ?? 'foeactorsis'"
+      :compendium="props.foeCompendium ?? 'ironswornfoes'"
     >
       {{ $t('IRONSWORN.Foes') }}
     </btn-compendium>
