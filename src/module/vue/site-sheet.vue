@@ -2,7 +2,7 @@
   <div class="flexcol">
     <!-- HEADER -->
     <header class="sheet-header">
-      <document-img :document="actor" />
+      <document-img :document="actor" style="margin: 5px" />
       <document-name :document="actor" />
     </header>
 
@@ -16,12 +16,16 @@
       />
       <h4>{{ rankText }}</h4>
       <btn-faicon
-        class="block"
+        class="block nogrow"
         v-if="editMode"
         icon="trash"
         @click="clearProgress"
       />
-      <btn-faicon class="block" icon="caret-right" @click="markProgress" />
+      <btn-faicon
+        class="block nogrow"
+        icon="caret-right"
+        @click="markProgress"
+      />
     </div>
 
     <!-- PROGRESS -->
@@ -34,7 +38,6 @@
       <div class="flexrow boxrow nogrow">
         <site-droparea
           class="box"
-          :actor="actor"
           :item="theme"
           item-type="delve-theme"
           compendium-key="ironsworndelvethemes"
@@ -42,7 +45,6 @@
         />
         <site-droparea
           class="box"
-          :actor="actor"
           :item="domain"
           item-type="delve-domain"
           compendium-key="ironsworndelvedomains"
@@ -98,32 +100,84 @@
         style="padding: 2px"
         @click="randomDenizen"
       />
-      <btn-compendium compendium="ironswornfoes" />
+      <btn-compendium compendium="ironswornfoes" class="nogrow" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
-        <site-denizenbox :actor="actor" :idx="0" ref="denizen-0" />
-        <site-denizenbox :actor="actor" :idx="1" ref="denizen-1" />
-        <site-denizenbox :actor="actor" :idx="2" ref="denizen-2" />
-        <site-denizenbox :actor="actor" :idx="3" ref="denizen-3" />
+        <site-denizenbox
+          :actor="actor"
+          :idx="0"
+          :ref="(e) => (denizenRefs[0] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="1"
+          :ref="(e) => (denizenRefs[1] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="2"
+          :ref="(e) => (denizenRefs[2] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="3"
+          :ref="(e) => (denizenRefs[3] = e)"
+        />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox :actor="actor" :idx="4" ref="denizen-4" />
-        <site-denizenbox :actor="actor" :idx="5" ref="denizen-5" />
-        <site-denizenbox :actor="actor" :idx="6" ref="denizen-6" />
-        <site-denizenbox :actor="actor" :idx="7" ref="denizen-7" />
+        <site-denizenbox
+          :actor="actor"
+          :idx="4"
+          :ref="(e) => (denizenRefs[4] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="5"
+          :ref="(e) => (denizenRefs[5] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="6"
+          :ref="(e) => (denizenRefs[6] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="7"
+          :ref="(e) => (denizenRefs[7] = e)"
+        />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox :actor="actor" :idx="8" ref="denizen-8" />
-        <site-denizenbox :actor="actor" :idx="9" ref="denizen-9" />
-        <site-denizenbox :actor="actor" :idx="10" ref="denizen-10" />
-        <site-denizenbox :actor="actor" :idx="11" ref="denizen-11" />
+        <site-denizenbox
+          :actor="actor"
+          :idx="8"
+          :ref="(e) => (denizenRefs[8] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="9"
+          :ref="(e) => (denizenRefs[9] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="10"
+          :ref="(e) => (denizenRefs[10] = e)"
+        />
+        <site-denizenbox
+          :actor="actor"
+          :idx="11"
+          :ref="(e) => (denizenRefs[11] = e)"
+        />
       </div>
     </div>
 
     <!-- NOTES -->
     <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
-    <textarea v-model="actor.data.description" @blur="saveDescription" />
+    <MceEditor
+      v-model="actor.data.description"
+      @save="saveDescription"
+      @change="throttledSaveDescription"
+    />
   </div>
 </template>
 
@@ -147,101 +201,119 @@ textarea {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script setup lang="ts">
+import { provide, computed, inject, nextTick, ref } from 'vue'
+import { IronswornActor } from '../actor/actor'
+import { $ActorKey } from './provisions'
+import { throttle } from 'lodash'
+import DocumentImg from './components/document-img.vue'
+import DocumentName from './components/document-name.vue'
+import RankHexes from './components/rank-hexes/rank-hexes.vue'
+import BtnCompendium from './components/buttons/btn-compendium.vue'
+import BtnFaicon from './components/buttons/btn-faicon.vue'
+import ProgressTrack from './components/progress/progress-track.vue'
+import SiteDroparea from './components/site/site-droparea.vue'
+import SiteDenizenbox from './components/site/site-denizenbox.vue'
+import SiteMovebox from './components/site/site-movebox.vue'
+import MceEditor from './components/mce-editor.vue'
+import BtnIsicon from './components/buttons/btn-isicon.vue'
 
-  computed: {
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
+const props = defineProps<{
+  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+}>()
 
-    theme() {
-      return this.actor.items.find((x) => x.type === 'delve-theme')
-    },
-    ironswornTheme() {
-      return this.$actor.items.find((x) => x.id === this.theme._id)
-    },
+provide(
+  'actor',
+  computed(() => props.actor)
+)
 
-    domain() {
-      return this.actor.items.find((x) => x.type === 'delve-domain')
-    },
-    ironswornDomain() {
-      return this.$actor.items.find((x) => x.id === this.domain._id)
-    },
+const $actor = inject($ActorKey)
 
-    hasThemeAndDomain() {
-      return this.theme && this.domain
-    },
+const editMode = computed(() => {
+  return props.actor.flags['foundry-ironsworn']?.['edit-mode']
+})
 
-    rankText() {
-      return this.$t(CONFIG.IRONSWORN.Ranks[this.actor.data.rank])
-    },
-  },
+const theme = computed(() => {
+  return props.actor.items.find((x) => x.type === 'delve-theme')
+})
+const ironswornTheme = computed(() => {
+  return $actor?.items.find((x) => x.id === theme.value?._id)
+})
 
-  methods: {
-    setRank(rank) {
-      this.$actor.update({ data: { rank } })
-    },
+const domain = computed(() => {
+  return props.actor.items.find((x) => x.type === 'delve-domain')
+})
+const ironswornDomain = computed(() => {
+  return $actor?.items.find((x) => x.id === domain.value?._id)
+})
 
-    clearProgress() {
-      this.$actor.update({ 'data.current': 0 })
-    },
+const hasThemeAndDomain = computed(() => {
+  return theme.value && domain.value
+})
 
-    markProgress() {
-      const increment = CONFIG.IRONSWORN.RankIncrements[this.actor.data.rank]
-      const newValue = Math.min(this.actor.data.current + increment, 40)
-      this.$actor.update({ 'data.current': newValue })
-    },
+const rankText = computed(() => {
+  return game.i18n.localize(CONFIG.IRONSWORN.Ranks[props.actor.data.rank])
+})
 
-    randomFeature() {
-      if (!this.hasThemeAndDomain) return
-      CONFIG.IRONSWORN.rollSiteFeature({
-        theme: this.ironswornTheme,
-        domain: this.ironswornDomain,
-      })
-    },
-
-    async locateObjective() {
-      const move = await CONFIG.IRONSWORN.moveDataByName(
-        'Locate Your Objective'
-      )
-      const progress = Math.floor(this.actor.data.current / 4)
-      const roll = new Roll(`{${progress}, d10, d10}`)
-      CONFIG.IRONSWORN.createIronswornChatRoll({
-        isProgress: true,
-        move,
-        roll,
-        subtitle: this.actor.name || undefined,
-      })
-    },
-
-    async randomDenizen() {
-      const roll = await new Roll('1d100').evaluate({ async: true })
-      const result = roll.total
-      const denizen = this.$actor.data.data.denizens.find(
-        (x) => x.low <= result && x.high >= result
-      )
-      const idx = this.$actor.data.data.denizens.indexOf(denizen)
-      if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
-      await CONFIG.IRONSWORN.createIronswornDenizenChat({
-        roll,
-        denizen,
-        site: this.$actor,
-      })
-
-      // Denizen slot is empty; set focus and add a class
-      if (!denizen?.description) {
-        await this.$actor.setFlag('foundry-ironsworn', 'edit-mode', true)
-        this.$refs[`denizen-${idx}`]?.focus()
-      }
-    },
-
-    async saveDescription() {
-      this.$actor.update({ 'data.description': this.actor.data.description })
-    },
-  },
+function setRank(rank) {
+  $actor?.update({ data: { rank } })
 }
+
+function clearProgress() {
+  $actor?.update({ 'data.current': 0 })
+}
+
+function markProgress() {
+  const increment = CONFIG.IRONSWORN.RankIncrements[props.actor.data.rank]
+  const newValue = Math.min(props.actor.data.current + increment, 40)
+  $actor?.update({ 'data.current': newValue })
+}
+
+function randomFeature() {
+  if (!hasThemeAndDomain.value) return
+  CONFIG.IRONSWORN.rollSiteFeature({
+    theme: ironswornTheme.value,
+    domain: ironswornDomain.value,
+  })
+}
+
+async function locateObjective() {
+  const move = await CONFIG.IRONSWORN.moveDataByName('Locate Your Objective')
+  const progress = Math.floor(props.actor.data.current / 4)
+  const roll = new Roll(`{${progress}, d10, d10}`)
+  CONFIG.IRONSWORN.createIronswornChatRoll({
+    isProgress: true,
+    move,
+    roll,
+    subtitle: props.actor.name || undefined,
+  })
+}
+
+const denizenRefs = ref<{ [k: number]: HTMLElement }>({})
+async function randomDenizen() {
+  const roll = await new Roll('1d100').evaluate({ async: true })
+  const result = roll.total
+  const denizen = $actor?.data.data.denizens.find(
+    (x) => x.low <= result && x.high >= result
+  )
+  const idx = $actor?.data.data.denizens.indexOf(denizen)
+  if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
+  await CONFIG.IRONSWORN.createIronswornDenizenChat({
+    roll,
+    denizen,
+    site: $actor,
+  })
+
+  // Denizen slot is empty; set focus and add a class
+  if (!denizen?.description) {
+    await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
+    await nextTick()
+    denizenRefs.value[idx]?.focus()
+  }
+}
+
+function saveDescription() {
+  $actor?.update({ 'data.description': props.actor.data.description })
+}
+const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>
