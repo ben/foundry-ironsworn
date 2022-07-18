@@ -47,7 +47,7 @@
       </h4>
 
       <transition name="slide">
-        <div class="flexcol" v-if="expanded" style="margin-left: 1rem">
+        <div class="flexcol" v-show="expanded" style="margin-left: 1rem">
           <oracletree-node
             v-for="child in node?.children"
             :key="child.displayName"
@@ -138,9 +138,8 @@ function moveclick(item: IronswornItem) {
   $emitter?.emit('highlightMove', item.id ?? '')
 }
 
-const $emit = defineEmits(['oracleclick'])
 function oracleclick(dfid) {
-  $emit('oracleclick', dfid)
+  $emitter?.emit('highlightOracle', dfid)
 }
 
 const children = ref([] as any[])
@@ -157,21 +156,22 @@ function expand() {
 }
 
 const $el = ref<HTMLElement>()
-async function highlight() {
-  data.highlighted = true
-  $el.value?.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-  })
-  setTimeout(() => {
-    data.highlighted = false
-  }, 2000)
-}
+$emitter?.on('highlightOracle', (dfid) => {
+  if (props.node.dataforgedNode?.$id === dfid) {
+    data.highlighted = true
+    $el.value?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    })
+    setTimeout(() => {
+      data.highlighted = false
+    }, 2000)
+  }
+})
 
 defineExpose({
   dfId: () => props.node.dataforgedNode?.$id,
   expand,
   collapse,
-  highlight,
 })
 </script>

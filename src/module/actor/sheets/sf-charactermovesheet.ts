@@ -60,6 +60,6 @@ export class SFCharacterMoveSheet extends VueApplication {
 
   async highlightOracle(oracleId: string) {
     this.maximize()
-    return (this.vueRoot?.$refs.child as any)?.['highlightOracle']?.(oracleId)
+    this.renderHelper?.emitter.emit('highlightOracle', oracleId)
   }
 }

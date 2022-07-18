@@ -24,7 +24,6 @@
         v-for="node in treeRoot.children"
         :key="node.displayName"
         :node="node"
-        @oracleclick="highlightOracle"
         ref="oracles"
       />
     </div>
@@ -38,12 +37,13 @@
 </style>
 
 <script setup lang="ts">
-import { Component, reactive, ref, watch } from 'vue'
+import { inject, nextTick, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
 import {
   createStarforgedOracleTree,
   OracleTreeNode,
 } from '../../features/customoracles'
+import { $EmitterKey } from '../provisions'
 import TreeNode from './oracletree-node.vue'
 
 const tempTreeRoot = await createStarforgedOracleTree()
@@ -108,7 +108,8 @@ function collapseAll() {
 }
 
 const oracles = ref<InstanceType<typeof TreeNode>[]>([])
-async function highlightOracle(dfid) {
+const $emitter = inject($EmitterKey)
+$emitter?.on('highlightOracle', async (dfid) => {
   clearSearch()
 
   // Find the path in the data tree
@@ -116,22 +117,18 @@ async function highlightOracle(dfid) {
 
   // Wait for children to be present
   while (!oracles.value) {
-    await new Promise((r) => setTimeout(r, 10))
+    await nextTick()
   }
 
   // Walk the component tree, expanding as we go
   let children = oracles.value
   let lastComponent
   for (const dataNode of dfOraclePath) {
-    lastComponent = children.find((x: any) => x.dfId() === dataNode.$id)
-    if (!lastComponent) break
-    lastComponent.expand()
-    await new Promise((r) => setTimeout(r, 50))
-    children = lastComponent.$refs.children
+    const child = children.find((x: any) => x.dfId() === dataNode.$id)
+    if (!child) break
+    child.expand()
+    await nextTick()
+    children = child.$refs.children
   }
-
-  // Visual highlight on the target
-  lastComponent?.highlight()
-}
-defineExpose({ highlightOracle })
+})
 </script>
