@@ -184,7 +184,7 @@ const hasBonds = computed(() => {
   const markedBonds = bonds?.data?.bonds?.length
   return markedBonds && markedBonds > 0
 })
-function setSupply(_ev, value) {
+function setSupply(value) {
   $actor?.update({ data: { supply: value } })
   IronswornSettings.maybeSetGlobalSupply(value)
 }
