@@ -52,10 +52,12 @@ export class SFCharacterMoveSheet extends VueApplication {
     return `${game.i18n.localize('IRONSWORN.Moves')} — ${this.actor.name}`
   }
 
-  // TODO: these probably still don't work
   async highlightMove(move: IronswornItem) {
+    this.highlightMoveById(move.id ?? '')
+  }
+  highlightMoveById(moveId: string) {
     this.maximize()
-    this.renderHelper?.emitter.emit('highlightMove', move.id ?? '')
+    this.renderHelper?.emitter.emit('highlightMove', moveId)
   }
 
   async highlightOracle(oracleId: string) {

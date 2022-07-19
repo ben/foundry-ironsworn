@@ -19,8 +19,6 @@
         element="div"
         class="move-summary"
         v-if="data.expanded"
-        :swallow-move-click="true"
-        :swallow-oracle-click="true"
         @moveclick="moveClick"
       >
         <div class="move-summary-buttons flexrow">

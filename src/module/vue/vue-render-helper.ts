@@ -7,6 +7,7 @@ import { $EmitterKey, EmitterEvents, IronswornEmitter } from './provisions'
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
   components: { [k: string]: Component }
+  helperHook?: (helper: VueSheetRenderHelper) => any
 }
 
 export class VueSheetRenderHelper {
@@ -28,6 +29,8 @@ export class VueSheetRenderHelper {
     }
     this.emitter = mitt<EmitterEvents>()
     this.emitter.on('closeApp', () => this.app.close())
+
+    this.options.helperHook?.(this)
   }
 
   async render(...renderArgs) {

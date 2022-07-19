@@ -10,11 +10,7 @@ import { IronswornActor } from '../../actor/actor'
 import { IronswornItem } from '../../item/item'
 import { $ActorKey, $EmitterKey } from '../provisions'
 
-const props = defineProps<{
-  element: string
-  swallowMoveClick?: boolean
-  swallowOracleClick?: boolean
-}>()
+const props = defineProps<{ element: string }>()
 
 const $actor = inject($ActorKey)
 const el = ref<HTMLElement>()
@@ -34,6 +30,7 @@ onMounted(() => {
 const $emit = defineEmits(['moveclick', 'oracleclick'])
 const $emitter = inject($EmitterKey)
 const $attrs = useAttrs()
+
 async function click(ev: JQuery.ClickEvent) {
   ev.preventDefault()
   ev.stopPropagation()
@@ -55,14 +52,14 @@ async function click(ev: JQuery.ClickEvent) {
       $emit('moveclick', gameItem)
     }
 
-    return props.swallowMoveClick
+    return !!$attrs['onMoveclick']
   }
 
   if (dfid) {
     // TODO: allow for custom oracles
     // Probably an oracle category click
     $emit('oracleclick', dfid)
-    return !props.swallowOracleClick
+    return !!$attrs['onOracleclick']
   }
 }
 </script>

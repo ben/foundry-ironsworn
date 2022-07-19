@@ -3,7 +3,13 @@
     <Editor v-bind="$attrs" :modelValue="modelValue" :init="mceConfig" />
   </div>
   <div v-else class="editor flexcol">
-    <div class="editor-content" v-html="$enrichHtml(modelValue)" />
+    <with-rolllisteners
+      element="div"
+      @moveclick="moveClick"
+      @oracleclick="oracleClick"
+      class="editor-content"
+      v-html="$enrichHtml(modelValue)"
+    />
     <a class="editor-edit">
       <i class="fas fa-edit" @click="data.editing = true"></i>
     </a>
@@ -11,13 +17,26 @@
 </template>
 
 <script setup lang="ts">
-import Editor from '@tinymce/tinymce-vue'
 import { RawEditorSettings } from 'tinymce'
-import { nextTick, reactive } from 'vue'
+import { inject, reactive } from 'vue'
+import { $EmitterKey } from '../provisions'
+import { IronswornItem } from '../../item/item'
+import Editor from '@tinymce/tinymce-vue'
+import WithRolllisteners from './with-rolllisteners.vue'
 
 defineProps<{ modelValue: string }>()
 
 const data = reactive({ editing: false })
+
+// Outbound link clicks: broadcast events
+const $emitter = inject($EmitterKey)
+function moveClick(move: IronswornItem) {
+  $emitter?.emit('highlightMove', move.id ?? '')
+}
+function oracleClick(dfId: string) {
+  $emitter?.emit('highlightOracle', dfId)
+}
+
 const $emit = defineEmits<{ (e: 'save') }>()
 
 const mceConfig: RawEditorSettings = {
