@@ -101,13 +101,14 @@ function clearSearch() {
   search.q = ''
 }
 
+const oracles = ref<InstanceType<typeof TreeNode>[]>([])
+
 function collapseAll() {
-  for (const node of this.$refs.oracles) {
+  for (const node of oracles.value) {
     node.collapse()
   }
 }
 
-const oracles = ref<InstanceType<typeof TreeNode>[]>([])
 const $emitter = inject($EmitterKey)
 $emitter?.on('highlightOracle', async (dfid) => {
   clearSearch()

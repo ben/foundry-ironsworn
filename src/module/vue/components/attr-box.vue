@@ -44,11 +44,10 @@ const actor = inject('actor') as Ref<
   ReturnType<typeof IronswornActor.prototype.toObject>
 >
 
-const clickable = computed(() => (this.editMode.value ? '' : ' clickable '))
 const classes = computed(() => ({
   stat: true,
   block: true,
-  clickable: clickable,
+  clickable: !editMode.value,
 }))
 const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
 const editMode = computed(

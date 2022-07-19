@@ -544,10 +544,6 @@ function saveDescription() {
   $actor?.update({ 'data.description': props.actor.data.description })
 }
 const throttledSaveDescription = throttle(saveDescription, 1000)
-// watch: {
-//   'actor.data.description'() {
-//   },
-// },
 
 function regionChanged(evt) {
   const sceneId = game.user?.viewedScene
@@ -556,7 +552,7 @@ function regionChanged(evt) {
   scene?.setFlag('foundry-ironsworn', 'region', newValue)
 }
 function subtypeChanged(evt) {
-  this.saveSubtype(evt.target.value)
+  saveSubtype(evt.target.value)
 }
 function klassChanged(evt) {
   saveKlass(evt.target.value)
