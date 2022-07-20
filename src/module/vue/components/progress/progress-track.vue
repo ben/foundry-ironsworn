@@ -9,8 +9,9 @@
   </div>
 </template>
 
-<script>
-function ticksSvg(ticks) {
+<script setup lang="ts">
+import { computed } from '@vue/runtime-core'
+function ticksSvg(ticks: number) {
   let ret = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
   if (ticks > 0) ret += '<line x1="23" y1="23" x2="77" y2="77" />'
   if (ticks > 1) ret += '<line x1="77" y1="23" x2="23" y2="77" />'
@@ -19,21 +20,15 @@ function ticksSvg(ticks) {
   return ret + '</svg>'
 }
 
-export default {
-  props: {
-    ticks: Number,
-  },
+const props = defineProps<{ ticks: number }>()
 
-  computed: {
-    boxes() {
-      const ret = []
-      let remainingTicks = this.ticks
-      for (let i = 0; i < 10; i++) {
-        ret.push(ticksSvg(remainingTicks))
-        remainingTicks -= 4
-      }
-      return ret
-    },
-  },
-}
+const boxes = computed(() => {
+  const ret = [] as string[]
+  let remainingTicks = props.ticks
+  for (let i = 0; i < 10; i++) {
+    ret.push(ticksSvg(remainingTicks))
+    remainingTicks -= 4
+  }
+  return ret
+})
 </script>

@@ -4,26 +4,21 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    value: Number,
-    current: Number,
-  },
+<script setup lang="ts">
+import { computed } from '@vue/runtime-core'
+const props = defineProps<{ value: number; current: number }>()
 
-  computed: {
-    classes() {
-      return {
-        clickable: true,
-        block: true,
-        xp: true,
-        selected: this.selected,
-      }
-    },
-    selected() {
-      return this.value <= this.current
-    },
-  },
-}
+const classes = computed(() => {
+  return {
+    clickable: true,
+    block: true,
+    xp: true,
+    selected: selected.value,
+  }
+})
+const selected = computed(() => {
+  return props.value <= props.current
+})
+
+defineEmits(['click'])
 </script>

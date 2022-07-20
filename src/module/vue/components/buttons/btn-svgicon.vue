@@ -58,22 +58,20 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    tooltip: String,
-    icon: String,
-    hoverBg: Boolean,
-    disabled: Boolean,
-  },
-  emits: ['click'],
-  computed: {
-    classes() {
-      return {
-        [`svg-${this.icon}`]: true,
-        ['icon-bg-hover']: this.hoverBg,
-      }
-    },
-  },
-}
+<script setup lang="ts">
+import { computed } from '@vue/runtime-core'
+const props = defineProps<{
+  tooltip?: string
+  icon: string
+  hoverBg?: boolean
+  disabled?: boolean
+}>()
+defineEmits(['click'])
+
+const classes = computed(() => {
+  return {
+    [`svg-${props.icon}`]: true,
+    ['icon-bg-hover']: props.hoverBg,
+  }
+})
 </script>

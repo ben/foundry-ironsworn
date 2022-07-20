@@ -17,20 +17,14 @@
   </button>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script setup lang="ts">
+import { computed, useSlots } from '@vue/runtime-core'
 
-export default defineComponent({
-  props: {
-    tooltip: String,
-    disabled: Boolean,
-  },
-  emits: ['click'],
-  computed: {
-    hasDefaultSlot() {
-      return !!this.$slots.default
-    },
-  },
+defineProps<{ tooltip?: string; disabled?: boolean }>()
+
+const slots = useSlots()
+const hasDefaultSlot = computed(() => {
+  return !!slots.default
 })
 </script>
 
