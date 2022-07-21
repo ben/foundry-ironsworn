@@ -38,3 +38,48 @@
 .isicon-d10-tilt:before {
   content: '\e900';
 }
+
+
+
+  // d10-tilt,
+
+
+  // starforged, ironsworn, delve,
+
+
+@icons:
+  galaxy,
+  hexes,
+  modern-city,
+  spaceship,
+  ringed-planet,
+  star-prominences,
+  moebius-triangle,
+  broken-wall,
+  dna1,
+  vertical-banner
+  ;
+
+
+each(@icons, {
+  .isicon-@{value} {
+    &:before {
+      content: '';
+      mask-image: url('../../system/assets/icons/@{value}.svg');
+      mask-repeat: no-repeat;
+      mask-position: center;
+      // these are configured to make adding them from game-icons.net take as little effort as possible
+      // luminance means that #FFF has alpha = 1, and #000 has alpha = 0.
+      // 1) get an svg of the icon with the default settings from game-icons
+      // 2) drop it in system/assets/icons
+      // 3) add the corresponding filename to the @icons array
+      // 4) copy files to the foundry data folder as normal
+      mask-mode: luminance;
+      background-color: currentColor;
+      height: 100%;
+      display: block;
+      width: auto;
+      // padding: 0.05em;
+    }
+  }
+});

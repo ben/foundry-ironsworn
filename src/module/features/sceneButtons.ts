@@ -136,43 +136,44 @@ export function activateSceneButtonListeners() {
       tools: [
         {
           name: 'edit',
-          icon: 'fas fa-edit',
+          icon: 'isicon-galaxy',
+          // TODO: more informative string
           title: game.i18n.localize('IRONSWORN.Edit'),
           onClick: editSector,
         },
         {
           name: 'sector',
-          icon: 'fas fa-globe',
+          icon: 'isicon-hexes',
           title: game.i18n.localize('IRONSWORN.NewSector'),
           onClick: warn,
         },
         {
           name: 'star',
-          icon: 'fas fa-star',
+          icon: 'isicon-star-prominences',
           title: game.i18n.localize('IRONSWORN.NewStar'),
           onClick: newStar,
         },
         {
           name: 'planet',
-          icon: 'fas fa-globe-europe',
+          icon: 'isicon-ringed-planet',
           title: game.i18n.localize('IRONSWORN.NewPlanet'),
           onClick: newPlanet,
         },
         {
           name: 'settlement',
-          icon: 'fas fa-city',
+          icon: 'isicon-modern-city',
           title: game.i18n.localize('IRONSWORN.NewSettlement'),
           onClick: newSettlement,
         },
         {
           name: 'derelict',
-          icon: 'fab fa-rocketchat',
+          icon: 'isicon-broken-wall',
           title: game.i18n.localize('IRONSWORN.NewDerelict'),
           onClick: newDerelict,
         },
         {
           name: 'vault',
-          icon: 'fab fa-quinscape',
+          icon: 'isicon-moebius-triangle',
           title: game.i18n.localize('IRONSWORN.NewVault'),
           onClick: newVault,
         },
