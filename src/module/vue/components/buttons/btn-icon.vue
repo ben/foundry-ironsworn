@@ -4,7 +4,6 @@
   <button
     class="icon-button clickable"
     type="button"
-    @click="$emit('click')"
     :tooltip="tooltip"
     :aria-label="tooltip"
     :data-tooltip="tooltip"
