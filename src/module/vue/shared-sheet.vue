@@ -86,7 +86,7 @@
                 @sortUp="completedSortUp"
                 @sortDown="completedSortDown"
               />
-              <progress-box :item="item" :actor="actor" :showStar="true" />
+              <progress-box :item="item" :actor="actor" />
             </div>
           </transition-group>
         </div>
