@@ -72,7 +72,7 @@
                     <asset :actor="actor" :asset="asset" />
                   </div>
                 </transition-group>
-                <div class="flexrow nogrow" style="text-align: center">
+                <div class="flexcol nogrow" style="text-align: center">
                   <btn-compendium
                     class="block nogrow"
                     compendium="ironswornassets"
