@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.16.0
+
 - Replace the quirky Quill editor with a Vue wrapper around Foundry's TinyMCE.
 - Under-the-hood updates:
   - Code reorganization and format normalization
