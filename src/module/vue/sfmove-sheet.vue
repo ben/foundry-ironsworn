@@ -220,6 +220,6 @@ export default {
       }
     },
   },
-  components: { DocumentImg, DocumentName, SfmoveTab, BtnFaicon, MceEditor },
+  components: { DocumentName, SfmoveTab, BtnFaicon },
 }
 </script>
