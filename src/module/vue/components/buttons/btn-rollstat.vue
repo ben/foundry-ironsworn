@@ -12,24 +12,33 @@
   </btn-isicon>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    item: Object, // the asset. only needed if this is an asset condition meter
-    attr: String,
-    tooltip: String,
-    disabled: Boolean,
-  },
-  methods: {
-    rollStat() {
-      // console.log(this.attr, this.item)
-      CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.$actor,
-        stat: this.attr,
-        asset: this.item ? this.$item : undefined,
-      })
-    },
-  },
+<script lang="ts" setup>
+import { computed, inject } from 'vue'
+import { RollDialog } from '../../../helpers/rolldialog'
+import { $ActorKey } from '../../provisions'
+import btnIsicon from './btn-isicon.vue'
+
+const props = defineProps({
+  item: Object, // the asset. only needed if this is an asset condition meter
+  attr: String,
+  tooltip: String,
+  disabled: Boolean,
+})
+
+const $actor = inject($ActorKey)
+const $item = computed(() => {
+  return (
+    $actor?.items.find((x) => x.id === props.item?._id) ??
+    game.items?.get(props.item?._id)
+  )
+})
+
+function rollStat() {
+  console.log(props, $item.value)
+  RollDialog.show({
+    actor: $actor,
+    stat: props.attr,
+    asset: props.item ? $item.value : undefined,
+  })
 }
 </script>

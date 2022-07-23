@@ -1,31 +1,28 @@
 <template>
-  <div class="movesheet-row" :class="{ highlighted: move.highlighted }">
+  <div
+    class="movesheet-row"
+    :class="{ highlighted: data.highlighted }"
+    ref="$el"
+  >
     <h4 class="flexrow" :title="tooltip">
       <btn-rollmove
         :disabled="!canRoll"
         class="juicy text nogrow"
-        :actor="actor"
         :move="move"
       />
-      <span class="clickable text" @click="expanded = !expanded">
-        {{ move.displayName }}
+      <span class="clickable text" @click="data.expanded = !data.expanded">
+        {{ move?.displayName }}
       </span>
     </h4>
     <transition name="slide">
       <with-rolllisteners
         element="div"
         class="move-summary"
-        :actor="actor"
-        v-if="expanded"
-        @moveclick="moveclick"
+        v-if="data.expanded"
+        @moveclick="moveClick"
       >
         <div class="move-summary-buttons flexrow">
-          <btn-rollmove
-            class="block"
-            v-if="canRoll"
-            :actor="actor"
-            :move="move"
-          >
+          <btn-rollmove class="block" v-if="canRoll" :move="move">
             {{ $t('IRONSWORN.Roll') }}
           </btn-rollmove>
           <btn-sendmovetochat class="block" :move="move">
@@ -61,7 +58,7 @@ h4 {
 .move-summary-buttons {
   gap: 0.5rem;
 }
-.item-row {
+.movesheet-row {
   transition: all 0.4s ease;
 }
 
@@ -71,48 +68,68 @@ h4 {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    move: Object,
-  },
-  data() {
-    return {
-      expanded: false,
-    }
-  },
-  computed: {
-    tooltip() {
-      const { Title, Page } = this.move.dataforgedMove?.Source ?? {}
-      if (!Title) return undefined
-      return `${Title} p${Page}`
-    },
-    fulltext() {
-      return this.move.moveItem?.data?.data?.Text
-    },
-    canRoll() {
-      return CONFIG.IRONSWORN.SFRollMoveDialog.moveHasRollableOptions(
-        this.move.moveItem
-      )
-    },
-  },
-  watch: {
-    'move.highlighted': async function (value) {
-      if (value) {
-        this.expanded = true
-        await new Promise((r) => setTimeout(r, 200))
-        this.$el.scrollIntoView()
-      }
-    },
-  },
-  methods: {
-    moveclick(item) {
-      this.$emit('moveclick', item)
-    },
-    collapse() {
-      this.expanded = false
-    },
-  },
+<script setup lang="ts">
+import {
+  computed,
+  defineComponent,
+  inject,
+  nextTick,
+  reactive,
+  ref,
+  watch,
+} from 'vue'
+import { Move } from '../../features/custommoves'
+import { SFRollMoveDialog } from '../../helpers/rolldialog-sf'
+import { IronswornItem } from '../../item/item'
+import { $EmitterKey } from '../provisions'
+import BtnRollmove from './buttons/btn-rollmove.vue'
+import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
+import WithRolllisteners from './with-rolllisteners.vue'
+
+const props = defineProps<{ move: Move }>()
+const data = reactive({ expanded: false, highlighted: false })
+
+const tooltip = computed(() => {
+  const { Title, Page } = props.move.dataforgedMove?.Source ?? {}
+  if (!Title) return undefined
+  return `${Title} p${Page}`
+})
+const fulltext = computed(() => {
+  return props.move.moveItem?.data?.data?.Text
+})
+const canRoll = computed(() => {
+  return SFRollMoveDialog.moveHasRollableOptions(props.move.moveItem)
+})
+
+const $el = ref<HTMLElement>()
+const $emitter = inject($EmitterKey)
+
+// Inbound move clicks: if this is the intended move, expand/highlight/scroll
+$emitter?.on('highlightMove', async (moveId) => {
+  if (moveId === props.move.moveItem.id) {
+    data.expanded = true
+    data.highlighted = true
+    await nextTick()
+    $el.value?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    })
+    await nextTick()
+    setTimeout(() => {
+      data.highlighted = false
+    }, 2000)
+  }
+})
+
+// Outbound link clicks: broadcast events
+function moveClick(move: IronswornItem) {
+  $emitter?.emit('highlightMove', move.id ?? '')
 }
+function oracleClick(dfId: string) {
+  $emitter?.emit('highlightOracle', dfId)
+}
+
+defineExpose({
+  collapse: () => (data.expanded = false),
+})
 </script>

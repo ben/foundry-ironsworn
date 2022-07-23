@@ -246,8 +246,10 @@ export class CharacterMoveSheet extends FormApplication<
   }
 
   async highlightMove(move: IronswornItem) {
-    console.log({ move })
     move.sheet?.render(true)
+  }
+  highlightMoveById(moveId: string) {
+    // Not in this one
   }
 
   async highlightOracle(dfid: string) {

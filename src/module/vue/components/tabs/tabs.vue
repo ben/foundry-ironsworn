@@ -1,0 +1,92 @@
+<template>
+  <component :is="wrapperElement ?? 'section'" class="flexcol tabbed-panels">
+    <nav role="tablist" :aria-orientation="ariaOrientation ?? 'horizontal'">
+      <button
+        v-for="title in tabTitles"
+        class="block clickable text"
+        role="tab"
+        type="button"
+        :id="tabId(title)"
+        :aria-controls="tabPanelId(title)"
+        :aria-selected="selectedTitle === title"
+        :key="title"
+        @click="selectedTitle = title"
+      >
+        {{ title }}
+      </button>
+    </nav>
+    <slot></slot>
+  </component>
+</template>
+
+<script setup lang="ts">
+import { inject, provide, ref, useSlots } from 'vue'
+import { $ActorKey } from '../../provisions'
+
+const props = defineProps<{
+  wrapperElement?: string
+  name?: string
+  ariaOrientation?: 'horizontal' | 'vertical'
+}>()
+
+const slots = useSlots()
+const tabTitles = ref(slots?.default?.().map((tab) => tab.props?.title))
+const selectedTitle = ref(tabTitles?.value?.[0])
+provide('selectedTitle', selectedTitle)
+
+const actor = inject($ActorKey)
+const stubId = (title: string) => `${props.name}-${title}-${actor?.id}`
+const tabPanelId = (title: string) => `tabpanel-${stubId(title)}`
+const tabId = (title: string) => `tab-${stubId(title)}`
+
+const selectIndex = (i: number) => {
+  selectedTitle.value = tabTitles?.value?.[i]
+}
+defineExpose({ selectIndex })
+</script>
+
+<style lang="less">
+.tabbed-panels {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  .item,
+  [role='tab'], // so it doesn't catch things that only start with 'tab'
+  [role^='tab '],
+  [role*=' tab'] {
+    border: 0;
+    flex: 1 1 0;
+    text-align: center;
+    height: 100%;
+    overflow-y: auto;
+    padding: 5px;
+    &.active,
+    &[aria-selected='true'] {
+      text-shadow: none;
+    }
+  }
+  .tabs,
+  [role^='tablist'],
+  [role*=' tablist'] {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-grow: 0;
+    height: max-content;
+
+    &[aria-orientation='horizontal'] {
+      border-block-end: 1px solid;
+    }
+    &[aria-orientation='vertical'] {
+      border-inline-start: 1px solid;
+      border-inline-end: 1px solid;
+    }
+  }
+  [role^='tabpanel'],
+  [role*=' tabpanel'] {
+    margin: 0.5rem;
+    flex: 1;
+  }
+}
+</style>

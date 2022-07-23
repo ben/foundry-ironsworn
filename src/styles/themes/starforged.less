@@ -1,49 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap');
+@import './starforged-font.css'; // HACK to avoid import error
 
-@theme-font: 'Carrois Gothic SC', sans-serif;
+body.theme-starforged {
+  @theme-font: 'Carrois Gothic SC', sans-serif;
 
-@dark-overlay: #000000cc;
-@dark-color: #33999933;
-@muted-color: #11777799;
-@medium-color: #33999999;
-@light-color: #55bbbb99;
-@background-gradient: rgba(0, 0, 0, 0.6);
+  @dark-overlay: #000000cc;
+  @dark-color: #33999933;
+  @muted-color: #11777799;
+  @medium-color: #33999999;
+  @light-color: #55bbbb99;
+  @background-gradient: rgba(0, 0, 0, 0.6);
 
-@text-dark-color: #399;
-@text-medium-color: #3ff;
-@text-light-color: #6ff;
+  @text-dark-color: #399;
+  @text-medium-color: #3dd;
+  @text-light-color: #6ff;
 
-body {
-  font-family: @theme-font;
-}
+  body {
+    font-family: @theme-font;
+  }
 
-input::placeholder {
-  color: @medium-color;
-}
+  .app {
+    color: @text-medium-color;
+  }
 
-input.highlight:focus {
-  box-shadow: 0 0 5px orange;
-  background-color: @medium-color;
-  color: @text-light-color;
-}
+  input::placeholder {
+    color: @medium-color;
+  }
 
-::-webkit-scrollbar-thumb {
-  background: @dark-color;
-  border-color: @medium-color;
-}
+  input.highlight:focus {
+    box-shadow: 0 0 5px orange;
+    background-color: @medium-color;
+    color: @text-light-color;
+  }
 
-.window-app {
-  background-color: @background-gradient;
-  border: 1px solid @text-dark-color;
-}
+  ::-webkit-scrollbar-thumb {
+    background: @dark-color;
+    border-color: @medium-color;
+  }
 
-.editor {
-  color: @text-medium-color;
-  background-color: @background-gradient;
-  padding: 0.5rem;
-}
+  .window-app {
+    background-color: @background-gradient;
+    border: 1px solid @text-dark-color;
+  }
 
-.theme-starforged {
+  .editor {
+    color: @text-medium-color;
+    background-color: @background-gradient;
+    padding: 0.5rem;
+  }
+
   font-family: @theme-font;
   color: @text-medium-color;
   .dialog-buttons {
@@ -80,8 +84,9 @@ input.highlight:focus {
   }
 
   input,
-  textarea {
-    background-color: @dark-color;
+  textarea,
+  textarea#chat-message {
+    background: @dark-color;
     border: 0;
     color: @text-medium-color;
 
@@ -171,59 +176,118 @@ input.highlight:focus {
   .movesheet-row.highlighted {
     background-color: @muted-color;
   }
-}
 
-.compact {
-  .bordergroup {
-    border-color: @light-color;
-  }
-}
-
-.ironsworn-roll .roll {
-  background-image: url('systems/foundry-ironsworn/assets/d6.svg');
-}
-
-.chat-message {
-  .message-content .theme-starforged {
-    background: @dark-overlay;
-    border: 1px solid @text-dark-color;
+  .compact {
+    .bordergroup {
+      border-color: @light-color;
+    }
   }
 
-  .dice-formula,
-  .dice-total {
-    background: @dark-overlay;
+  .ironsworn-roll {
+    .roll {
+      background-image: url('systems/foundry-ironsworn/assets/d6.svg');
+    }
+  }
+
+  button {
+    background-color: @dark-color;
     color: @text-medium-color;
-    border-width: 0px;
-    padding: 5px 0px 5px 0px;
-    .die {
-      &.d6 {
-        background-image: url('systems/foundry-ironsworn/assets/d6.svg');
-      }
-      &.d10 {
-        background-image: url('systems/foundry-ironsworn/assets/d10.svg');
-      }
+    border-color: @muted-color;
 
-      &.min {
-        color: @text-medium-color;
-        filter: hue-rotate(180deg);
+    &:hover {
+      box-shadow: 0 0 5px @light-color;
+      color: @text-light-color;
+    }
+  }
+
+  select {
+    background-color: @dark-color;
+  }
+
+  input[type='checkbox'] {
+    background-color: @dark-color;
+  }
+
+  table {
+    border-color: @muted-color;
+  }
+
+  .chat-message {
+    background: @dark-overlay;
+    border-color: @muted-color;
+    color: @text-medium-color;
+
+    .message-header {
+      color: @text-dark-color;
+    }
+
+    .message-content {
+      border: 1px solid @text-dark-color;
+    }
+
+    .dice-formula,
+    .dice-total {
+      background: @dark-overlay;
+      color: @text-light-color;
+      border-width: 0px;
+      padding: 5px 0px 5px 0px;
+      .die {
+        &.d6 {
+          background-image: url('systems/foundry-ironsworn/assets/d6.svg');
+        }
+        &.d10 {
+          background-image: url('systems/foundry-ironsworn/assets/d10.svg');
+        }
+
+        &.min {
+          color: @text-medium-color;
+          filter: hue-rotate(180deg);
+        }
+        &.max {
+          color: @text-medium-color;
+          filter: hue-rotate(-60deg);
+        }
       }
-      &.max {
-        color: @text-medium-color;
-        filter: hue-rotate(-60deg);
+    }
+
+    table tr {
+      &.selected,
+      &[aria-selected='true'] {
+        background-color: @medium-color;
+        color: @text-light-color;
+
+        .entity-link,
+        .content-link {
+          color: @text-dark-color;
+        }
       }
     }
   }
 
-  table tr {
-    &.selected,
-    &[aria-selected='true'] {
-      background-color: @medium-color;
-      color: @text-light-color;
+  #sidebar-tabs {
+    border-color: @medium-color;
+    box-shadow: 0 0 10px @light-color;
 
-      .entity-link,
-      .content-link {
-        color: @text-dark-color;
+    .item {
+      color: @text-dark-color;
+      &.active {
+        color: @text-light-color;
+        border-color: @medium-color;
+        box-shadow: 0 0 6px inset @light-color;
+        text-shadow: 0 0 10px @light-color;
       }
+    }
+  }
+
+  #chat-controls {
+    .roll-type-select {
+      background-color: @dark-color;
+    }
+  }
+
+  .directory {
+    .directory-header .header-search input {
+      background-color: @dark-color;
     }
   }
 }

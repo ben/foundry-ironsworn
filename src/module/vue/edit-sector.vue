@@ -2,49 +2,34 @@
   <div class="flexcol">
     <h4 class="nogrow">{{ $t('IRONSWORN.Region') }}</h4>
     <label class="nogrow">
-      <input type="radio" v-model="region" value="terminus" />
+      <input type="radio" v-model="data.region" value="terminus" />
       {{ $t('IRONSWORN.Terminus') }}
     </label>
     <label class="nogrow">
-      <input type="radio" v-model="region" value="outlands" />
+      <input type="radio" v-model="data.region" value="outlands" />
       {{ $t('IRONSWORN.Outlands') }}
     </label>
     <label class="nogrow">
-      <input type="radio" v-model="region" value="expanse" />
+      <input type="radio" v-model="data.region" value="expanse" />
       {{ $t('IRONSWORN.Expanse') }}
     </label>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    sceneid: String,
-  },
+<script setup lang="ts">
+import { computed, defineComponent, reactive, watch } from 'vue'
 
-  computed: {
-    foundryScene() {
-      return game.scenes?.get(this.sceneid)
-    },
-    scene() {
-      return this.foundryScene?.toObject(false)
-    },
-  },
+const props = defineProps<{ sceneid: string }>()
 
-  data() {
-    return {
-      region: null,
-    }
-  },
-
-  mounted() {
-    this.region = this.scene?.flags['foundry-ironsworn']?.['region']
-  },
-
-  watch: {
-    region(newRegion) {
-      this.foundryScene?.setFlag('foundry-ironsworn', 'region', this.region)
-    },
-  },
+function foundryScene() {
+  return game.scenes?.get(props.sceneid)
 }
+const scene = computed(() => foundryScene()?.toObject() as any)
+
+const data = reactive({
+  region: scene.value?.flags['foundry-ironsworn']?.['region'],
+})
+watch(data, ({ region }) => {
+  foundryScene()?.setFlag('foundry-ironsworn', 'region', region)
+})
 </script>

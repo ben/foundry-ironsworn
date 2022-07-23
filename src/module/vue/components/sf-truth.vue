@@ -5,43 +5,46 @@
       class="nogrow"
       style="flex: 0 0 20px; margin: 8px"
       :name="radiogroup"
-      :id="radioid"
+      :id="truth?.$id"
       :value="radiovalue"
       @change="changed"
     />
     <div class="flexcol">
-      <label :for="radioid">
+      <label :for="truth?.$id">
         <p>
-          <strong>{{ description }}</strong>
+          <strong>{{ truth?.Result }}</strong>
         </p>
-        <p>{{ details }}</p>
+        <p>{{ truth?.Description }}</p>
 
-        <transition name="slide" v-if="table">
-          <div v-if="selected">
+        <transition name="slide" v-if="truth?.Subtable">
+          <div v-show="data.selected">
             <div
               class="flexrow"
-              v-for="suboption in table"
-              :key="suboption.Description"
+              v-for="suboption in truth?.Subtable"
+              :key="suboption.$id || ''"
             >
               <input
                 type="radio"
                 class="nogrow"
                 style="flex: 0 0 20px; margin: 8px"
-                :name="description"
-                :id="`${description}#${suboption.Description}`"
-                :value="suboption.Description"
-                v-model="subOptionDescription"
+                :name="truth?.$id"
+                :id="suboption.$id || ''"
+                :value="suboption.Result"
+                v-model="data.subOptionDescription"
                 @change="changed"
               />
-              <label :for="`${description}#${suboption.Description}`">
-                <p>{{ suboption.Description }}</p>
+              <label :for="suboption.$id || ''">
+                <p>{{ suboption.Result }}</p>
               </label>
             </div>
           </div>
         </transition>
 
         <p>
-          <em>{{ $t('IRONSWORN.TruthQuestStarter') }} {{ quest }}</em>
+          <em>
+            {{ $t('IRONSWORN.TruthQuestStarter') }}
+            {{ truth?.['Quest Starter'] }}
+          </em>
         </p>
       </label>
     </div>
@@ -55,45 +58,42 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    radiogroup: String,
-    description: String,
-    details: String,
-    quest: String,
-    table: Array,
-  },
+<script setup lang="ts">
+import { computed, defineComponent, PropType, reactive } from 'vue'
+import { ISettingTruthOption } from 'dataforged'
 
-  computed: {
-    radioid() {
-      return `${this.radiogroup}#${this.description}`
-    },
+const props = defineProps<{
+  radiogroup: string
+  truth: ISettingTruthOption
+}>()
 
-    radiovalue() {
-      const subOptionText = this.subOptionDescription
-        ? `(${this.subOptionDescription})`
-        : ''
-      return `
-        <p><strong>${this.description}</strong></p>
-        <p>${this.details} ${subOptionText}</p>
-        <p><em>${this.$t('IRONSWORN.TruthQuestStarter')} ${this.quest}</em></p>
-      `
-    },
+const $emit = defineEmits({
+  change(category: string, value: string) {
+    return category.length > 0 && value.length > 0
   },
+})
 
-  data() {
-    return {
-      selected: false,
-      subOptionDescription: '',
-    }
-  },
+const data = reactive({
+  selected: false,
+  subOptionDescription: '',
+})
 
-  methods: {
-    changed(evt) {
-      this.selected = evt.target.checked
-      this.$emit('change', this.radiogroup, this.radiovalue)
-    },
-  },
+const radiovalue = computed(() => {
+  const subOptionText = data.subOptionDescription
+    ? `(${data.subOptionDescription})`
+    : ''
+  return `
+      <p><strong>${props.truth.Result}</strong></p>
+      <p>${props.truth.Description} ${subOptionText}</p>
+      <p><em>
+        ${game.i18n.localize('IRONSWORN.TruthQuestStarter')}
+        ${props.truth['Quest Starter']}
+      </em></p>
+    `
+})
+
+function changed(evt) {
+  data.selected = evt.target.checked
+  $emit('change', props.radiogroup, radiovalue.value)
 }
 </script>

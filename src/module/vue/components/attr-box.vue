@@ -1,8 +1,8 @@
+
 <template>
   <div :class="classes" @click="click">
     <h4>{{ $t(i18nKey) }}</h4>
     <div class="flexrow" style="position: relative">
-      <!-- TODO: migrate to new attr box component -->
       <div v-if="!editMode" class="bg-die">
         <i class="isicon-d10-tilt"></i>
       </div>
@@ -32,49 +32,39 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    attr: String,
-  },
+<script lang="ts" setup>
+import { inject, computed, capitalize, Ref } from 'vue'
+import { IronswornActor } from '../../actor/actor'
+import { RollDialog } from '../../helpers/rolldialog'
+import { $ActorKey } from '../provisions'
 
-  computed: {
-    classes() {
-      return {
-        stat: true,
-        block: true,
-        clickable: this.clickable,
-      }
-    },
-    i18nKey() {
-      return `IRONSWORN.${this.$capitalize(this.attr)}`
-    },
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-    clickable() {
-      return this.editMode ? '' : ' clickable '
-    },
-  },
+const props = defineProps<{ attr: string }>()
+const $actor = inject($ActorKey)
+const actor = inject('actor') as Ref<
+  ReturnType<typeof IronswornActor.prototype.toObject>
+>
 
-  methods: {
-    click() {
-      if (this.editMode) return
-      const actor = game.actors?.get(this.actor._id)
-      CONFIG.IRONSWORN.RollDialog.show({ actor, stat: this.attr })
-    },
+const classes = computed(() => ({
+  stat: true,
+  block: true,
+  clickable: !editMode.value,
+}))
+const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
+const editMode = computed(
+  () => !!(actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
+)
 
-    increment() {
-      const value = parseInt(this.actor.data[this.attr]) + 1
-      const actor = game.actors?.get(this.actor._id)
-      actor?.update({ data: { [this.attr]: value } })
-    },
-    decrement() {
-      const value = parseInt(this.actor.data[this.attr]) - 1
-      const actor = game.actors?.get(this.actor._id)
-      actor?.update({ data: { [this.attr]: value } })
-    },
-  },
+function click() {
+  if (editMode.value) return
+  RollDialog.show({ actor: $actor, stat: props.attr })
+}
+
+function increment() {
+  const value = parseInt(actor.value.data[props.attr]) + 1
+  $actor?.update({ data: { [props.attr]: value } })
+}
+function decrement() {
+  const value = parseInt(actor.value.data[props.attr]) - 1
+  $actor?.update({ data: { [props.attr]: value } })
 }
 </script>

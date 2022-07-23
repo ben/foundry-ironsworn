@@ -1,35 +1,20 @@
-import { IronswornSettings } from '../../helpers/settings'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import sharedSheetVue from '../../vue/shared-sheet.vue'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 
-export class IronswornSharedSheetV2 extends IronswornVueActorSheet {
+export class IronswornSharedSheetV2 extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'shared',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      template: 'systems/foundry-ironsworn/templates/actor/shared-v2.hbs',
       width: 350,
       height: 700,
-      template: 'systems/foundry-ironsworn/templates/actor/shared-v2.hbs',
-      submitOnClose: true,
-      submitOnChange: true,
     })
   }
 
-  getData() {
-    let data: any = super.getData()
-
-    // Allow every itemtype to add data to the actorsheet
-    for (const itemType of CONFIG.IRONSWORN.itemClasses) {
-      data = itemType.getActorSheetData(data, this)
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'shared-sheet': sharedSheetVue },
     }
-
-    data.actor = this.actor.toObject(false)
-    data.data = data.actor.data
-
-    return data
   }
 
   _getHeaderButtons() {

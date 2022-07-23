@@ -1,31 +1,24 @@
 <template>
   <div class="flexcol">
-    <quill-editor v-model="actor.data.notes" />
+    <MceEditor
+      v-model="actor.data.notes"
+      @change="debouncedSave"
+      @save="immediateSave"
+    />
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
 import { debounce } from 'lodash'
+import { inject, Ref } from 'vue'
+import { $ActorKey } from '../../provisions'
+import MceEditor from '../mce-editor.vue'
 
-export default {
-  props: {
-    actor: Object,
-  },
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 
-  watch: {
-    'actor.data.notes'() {
-      this.debouncedSave()
-    },
-  },
-
-  created() {
-    this.debouncedSave = debounce(this.save, 500)
-  },
-
-  methods: {
-    save() {
-      this.$actor.update({ 'data.notes': this.actor.data.notes })
-    },
-  },
+const immediateSave = () => {
+  $actor?.update({ 'data.notes': actor.value.data.notes })
 }
+const debouncedSave = debounce(immediateSave, 1000)
 </script>

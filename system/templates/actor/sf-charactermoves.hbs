@@ -1,10 +1,5 @@
-<form class='{{cssClass}} flexcol' autocomplete='off'>
-  <sf-charactermovesheet
-    class='ironsworn-vueport'
-    dependencies='vue vuecomponents'
-    :actor='actor'
-    ref='child'
-  >
-    Loading…
-  </sf-charactermovesheet>
+<form class="{{cssClass}} flexcol vueroot" autocomplete="off">
+  <sfcharacter-movesheet :actor="data.actor" ref="child">
+    Whoops, an error occurred.
+  </sfcharacter-movesheet>
 </form>

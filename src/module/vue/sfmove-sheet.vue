@@ -129,12 +129,14 @@
 
 <script>
 import { get, set } from 'lodash'
+import DocumentName from './components/document-name.vue'
+import SfmoveTab from './components/sfmove-tab.vue'
+import BtnFaicon from './components/buttons/btn-faicon.vue'
 
 export default {
   props: {
     item: Object,
   },
-
   data() {
     return {
       currentProperty: 'Text',
@@ -145,7 +147,6 @@ export default {
       currentStatText: undefined,
     }
   },
-
   computed: {
     triggerOptions() {
       const itemTriggerOptions = this.item.data.Trigger?.Options || []
@@ -162,7 +163,6 @@ export default {
       })
     },
   },
-
   methods: {
     switchContent(prop, actionPropKey = undefined) {
       this.currentProperty = prop
@@ -180,7 +180,6 @@ export default {
       this.currentMethod = ap?.Method
       this.currentStatText = ap?.Using?.join?.(',') ?? ''
     },
-
     addTrigger() {
       let { Options } = this.item.data.Trigger
       Options ||= []
@@ -192,7 +191,6 @@ export default {
       })
       this.$item.update({ data: { Trigger: { Options } } })
     },
-
     removeTrigger(option) {
       console.log(option)
       const idx = this.triggerOptions.findIndex((x) => x.key === option.key)
@@ -202,7 +200,6 @@ export default {
       this.$item.update({ data: { Trigger: { Options } } })
       this.switchContent('Text')
     },
-
     saveActionProps() {
       const opt = get(this.item.data, this.currentActionPropKey)
       opt.Method = this.currentMethod
@@ -211,7 +208,6 @@ export default {
       set(this.item.data, this.currentActionPropKey, opt)
       this.$item.update({ data: this.item.data })
     },
-
     saveText() {
       if (this.currentProperty.includes('Options')) {
         set(this.item.data, this.currentProperty, this.currentContent)
@@ -224,5 +220,6 @@ export default {
       }
     },
   },
+  components: { DocumentName, SfmoveTab, BtnFaicon },
 }
 </script>

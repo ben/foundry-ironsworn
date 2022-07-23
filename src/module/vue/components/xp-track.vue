@@ -12,42 +12,43 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    max: Number,
-    marked: Number,
-  },
+<script lang="ts" setup>
+import { computed, ref } from 'vue'
 
-  data() {
-    return {
-      hovered: -1,
-    }
-  },
+const props = defineProps<{
+  max: number
+  marked: number
+}>()
 
-  computed: {
-    computedBoxes() {
-      const ret = []
-      for (let i = 0; i < this.max; i++) {
-        ret.push({
-          key: `box${i}`,
-          classes: {
-            hover: this.hovered >= i,
-            selected: this.marked >= i + 1,
-          },
-        })
-      }
-      return ret
-    },
-  },
+const hovered = ref(-1)
 
-  methods: {
-    click(i) {
-      if (i === 0 && this.marked === 1) {
-        i = -1
-      }
-      this.$emit('click', i + 1)
-    },
-  },
+interface Box {
+  key: string
+  classes: {
+    hover: boolean
+    selected: boolean
+  }
+}
+
+const computedBoxes = computed(() => {
+  const ret = [] as Box[]
+  for (let i = 0; i < props.max; i++) {
+    ret.push({
+      key: `box${i}`,
+      classes: {
+        hover: hovered.value >= i,
+        selected: props.marked >= i + 1,
+      },
+    })
+  }
+  return ret
+})
+
+const $emit = defineEmits<{ (e: 'click', value: number): void }>()
+function click(i) {
+  if (i === 0 && props.marked === 1) {
+    i = -1
+  }
+  $emit('click', i + 1)
 }
 </script>

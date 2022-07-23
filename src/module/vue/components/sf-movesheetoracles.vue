@@ -4,8 +4,8 @@
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
-        v-model="searchQuery"
-        @keydown="preventSubmit"
+        v-model="search.q"
+        @keydown.enter.prevent
       />
       <i
         class="fa fa-times-circle nogrow clickable text"
@@ -20,13 +20,10 @@
     </div>
 
     <div class="flexcol item-list">
-      <oracletree-node
+      <TreeNode
         v-for="node in treeRoot.children"
         :key="node.displayName"
-        :actor="actor"
         :node="node"
-        :searchQuery="checkedSearchQuery"
-        @oracleclick="highlightOracle"
         ref="oracles"
       />
     </div>
@@ -39,122 +36,100 @@
 }
 </style>
 
-<script>
+<script setup lang="ts">
+import { inject, nextTick, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
-import { createStarforgedOracleTree } from '../../features/customoracles'
+import {
+  createStarforgedOracleTree,
+  OracleTreeNode,
+} from '../../features/customoracles'
+import { $EmitterKey } from '../provisions'
+import TreeNode from './oracletree-node.vue'
 
-export default {
-  props: {
-    actor: Object,
-  },
-
-  data() {
-    return {
-      searchQuery: '',
-      treeRoot: { children: [] },
-    }
-  },
-
-  async created() {
-    const treeRoot = await createStarforgedOracleTree()
-    // Add the flags we'll use for UI stuff later
-    function walk(node) {
-      node.forceExpanded = node.forceHidden = false
-      node.children.forEach(walk)
-    }
-    walk(treeRoot)
-    this.treeRoot = treeRoot
-  },
-
-  watch: {
-    searchQuery(q) {
-      // If it's not a real regex, cancel the search
-      let re
-      try {
-        re = new RegExp(q, 'i')
-      } catch {}
-
-      if (q && re) {
-        // Walk the tree and test each name.
-        // Force expanded on all parent nodes leading to a match
-        const walk = (node, parentMatch) => {
-          // Match against current name (i18n) but also aliases in Dataforged
-          let thisMatch = re.test(node.displayName)
-          for (const alias of node.dataforgedNode?.Aliases ?? []) {
-            thisMatch |= re.test(alias)
-          }
-
-          // Check for descendant matches
-          let childMatch = false
-          for (const child of node.children) {
-            childMatch |= walk(child, thisMatch || parentMatch)
-          }
-
-          // Expanded if part of a tree with a match
-          node.forceExpanded = parentMatch | thisMatch | childMatch
-          // Hidden if not
-          node.forceHidden = !node.forceExpanded
-
-          // Pass match up to ancestors
-          return thisMatch | childMatch
-        }
-        walk(this.treeRoot, false)
-      } else {
-        // Walk the tree setting all force flags to false
-        function resetflags(node) {
-          node.forceExpanded = node.forceHidden = false
-          for (const child of node.children) resetflags(child)
-        }
-        resetflags(this.treeRoot)
-      }
-    },
-  },
-
-  methods: {
-    clearSearch() {
-      this.searchQuery = ''
-    },
-
-    preventSubmit(ev) {
-      if (ev.keyCode == 13) {
-        ev.preventDefault()
-        return false
-      }
-    },
-
-    collapseAll() {
-      for (const node of this.$refs.oracles) {
-        node.collapse()
-      }
-    },
-
-    async highlightOracle(dfid) {
-      this.clearSearch()
-
-      // Find the path in the data tree
-      const dfOraclePath = findOracleWithIntermediateNodes(dfid)
-
-      // Wait for children to be present
-      while (!this.$refs.oracles) {
-        await new Promise((r) => setTimeout(r, 10))
-      }
-
-      // Walk the component tree, expanding as we go
-      let children = this.$refs.oracles
-      let lastComponent
-      for (const dataNode of dfOraclePath) {
-        lastComponent = children.find(
-          (x) => x.node.dataforgedNode.$id === dataNode.$id
-        )
-        if (!lastComponent) break
-        lastComponent.expand()
-        await new Promise((r) => setTimeout(r, 50))
-        children = lastComponent.$refs.children
-      }
-
-      // Visual highlight on the target
-      lastComponent?.highlight()
-    },
-  },
+const tempTreeRoot = await createStarforgedOracleTree()
+// Add the flags we'll use for UI stuff later
+function walk(node: OracleTreeNode) {
+  node.forceExpanded = node.forceHidden = false
+  node.children.forEach(walk)
 }
+walk(tempTreeRoot)
+const treeRoot = reactive<OracleTreeNode>(tempTreeRoot)
+
+const search = reactive({ q: '' })
+watch(search, ({ q }) => {
+  // If it's not a real regex, cancel the search
+  let re
+  try {
+    re = new RegExp(q, 'i')
+  } catch {}
+
+  if (q && re) {
+    // Walk the tree and test each name.
+    // Force expanded on all parent nodes leading to a match
+    const walk = (node: OracleTreeNode, parentMatch: boolean): boolean => {
+      // Match against current name (i18n) but also aliases in Dataforged
+      let thisMatch = re.test(node.displayName)
+      for (const alias of node.dataforgedNode?.Aliases ?? []) {
+        thisMatch ||= re.test(alias)
+      }
+
+      // Check for descendant matches
+      let childMatch = false
+      for (const child of node.children) {
+        childMatch ||= walk(child, thisMatch || parentMatch)
+      }
+
+      // Expanded if part of a tree with a match
+      node.forceExpanded = parentMatch || thisMatch || childMatch
+      // Hidden if not
+      node.forceHidden = !node.forceExpanded
+
+      // Pass match up to ancestors
+      return thisMatch || childMatch
+    }
+    walk(treeRoot, false)
+  } else {
+    // Walk the tree setting all force flags to false
+    function resetflags(node) {
+      node.forceExpanded = node.forceHidden = false
+      for (const child of node.children) resetflags(child)
+    }
+    resetflags(treeRoot)
+  }
+})
+function clearSearch() {
+  search.q = ''
+}
+
+const oracles = ref<InstanceType<typeof TreeNode>[]>([])
+
+function collapseAll() {
+  for (const node of oracles.value) {
+    node.collapse()
+  }
+}
+
+const $emitter = inject($EmitterKey)
+$emitter?.on('highlightOracle', async (dfid) => {
+  clearSearch()
+
+  // Find the path in the data tree
+  const dfOraclePath = findOracleWithIntermediateNodes(dfid)
+
+  // Wait for children to be present
+  while (!oracles.value) {
+    await nextTick()
+  }
+
+  // Walk the component tree, expanding as we go
+  let children = oracles.value
+  let lastComponent
+  for (const dataNode of dfOraclePath) {
+    const child = children?.find((x: any) => x.dfId() === dataNode.$id)
+    if (!child) break
+    child.expand()
+    await nextTick()
+    children = child.$refs.children
+  }
+})
 </script>

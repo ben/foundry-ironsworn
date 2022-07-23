@@ -9,21 +9,24 @@
   </btn-icon>
 </template>
 
-<script>
-export default {
-  props: {
-    icon: { type: String, required: true },
-    tooltip: String,
-    hoverBg: Boolean,
-    disabled: Boolean,
-  },
-  computed: {
-    classes() {
-      return {
-        [`isicon-${this.icon}`]: true,
-        ['icon-bg-hover']: this.hoverBg,
-      }
-    },
-  },
-}
+<script setup lang="ts">
+import { computed } from 'vue'
+import btnIcon from './btn-icon.vue'
+
+defineEmits(['click'])
+
+const props = defineProps<{
+  icon: string
+  tooltip?: string
+  hoverBg?: boolean
+  disabled?: boolean
+}>()
+
+const classes = computed(() => {
+  return {
+    [`isicon-${props.icon}`]: true,
+    ['icon-bg-hover']: props.hoverBg,
+  }
+})
 </script>
+

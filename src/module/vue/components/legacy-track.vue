@@ -10,12 +10,12 @@
         {{ overflow }}
       </p>
       <btn-faicon
-        class="block"
+        class="block nogrow"
         v-if="editMode"
         icon="caret-left"
         @click="decrease"
       />
-      <btn-faicon class="block" icon="caret-right" @click="increase" />
+      <btn-faicon class="block nogrow" icon="caret-right" @click="increase" />
     </div>
 
     <div class="flexrow track">
@@ -43,8 +43,14 @@ h4 {
 }
 </style>
 
-<script>
-function ticksSvg(ticks) {
+<script setup lang="ts">
+import { computed, defineComponent, inject, Ref } from 'vue'
+import { IronswornActor } from '../../actor/actor'
+import { $ActorKey } from '../provisions'
+import BtnFaicon from './buttons/btn-faicon.vue'
+import XpTrack from './xp-track.vue'
+
+function ticksSvg(ticks: number) {
   let ret = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
   if (ticks > 0) ret += '<line x1="23" y1="23" x2="77" y2="77" />'
   if (ticks > 1) ret += '<line x1="77" y1="23" x2="23" y2="77" />'
@@ -53,75 +59,69 @@ function ticksSvg(ticks) {
   return ret + '</svg>'
 }
 
-export default {
-  props: {
-    actor: Object,
-    propKey: String,
-    title: String,
-  },
+const props = defineProps<{ propKey: string; title: string }>()
 
-  computed: {
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-    ticks() {
-      return this.actor.data.legacies[this.propKey] ?? 0
-    },
-    xpBoxCount() {
-      // 2 for each box up until 10, then 1 for each box afterwards
-      const fullBoxes = Math.floor(this.ticks / 4)
-      if (fullBoxes <= 10) {
-        return fullBoxes * 2
-      } else {
-        return fullBoxes + 10
-      }
-    },
-    xpArray() {
-      const ret = []
-      for (let i = 1; i <= this.xpBoxCount; i++) {
-        ret.push(i)
-      }
-      return ret
-    },
-    xpSpent() {
-      return this.actor.data.legacies[`${this.propKey}XpSpent`] ?? 0
-    },
-    overflow() {
-      const n = Math.floor(this.ticks / 40) * 10
-      if (n > 0) {
-        return `(+${n})`
-      }
-    },
-    boxes() {
-      const ret = []
-      let remainingTicks = this.ticks % 40
-      for (let i = 0; i < 10; i++) {
-        ret.push(ticksSvg(remainingTicks))
-        remainingTicks -= 4
-      }
-      return ret
-    },
-  },
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 
-  methods: {
-    adjust(inc) {
-      const current = this.actor.data?.legacies[this.propKey] ?? 0
-      this.$actor.update({
-        [`data.legacies.${this.propKey}`]: current + inc,
-      })
-    },
-    increase() {
-      this.adjust(1)
-    },
-    decrease() {
-      this.adjust(-1)
-    },
+const editMode = computed(() => {
+  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
+})
+const ticks = computed(() => {
+  return actor.value.data.legacies[props.propKey] ?? 0
+})
+const xpBoxCount = computed(() => {
+  // 2 for each box up until 10, then 1 for each box afterwards
+  const fullBoxes = Math.floor(ticks.value / 4)
+  if (fullBoxes <= 10) {
+    return fullBoxes * 2
+  } else {
+    return fullBoxes + 10
+  }
+})
+const xpArray = computed(() => {
+  const ret = []
+  for (let i = 1; i <= xpBoxCount.value; i++) {
+    ret.push(i)
+  }
+  return ret
+})
+const xpSpent = computed(() => {
+  return actor.value.data.legacies[`${props.propKey}XpSpent`] ?? 0
+})
+const overflow = computed(() => {
+  const n = Math.floor(ticks.value / 40) * 10
+  if (n > 0) {
+    return `(+${n})`
+  }
+  return undefined
+})
+const boxes = computed(() => {
+  const ret = [] as string[]
+  let remainingTicks = ticks.value % 40
+  for (let i = 0; i < 10; i++) {
+    ret.push(ticksSvg(remainingTicks))
+    remainingTicks -= 4
+  }
+  return ret
+})
 
-    setXp(n) {
-      this.$actor.update({
-        data: { legacies: { [`${this.propKey}XpSpent`]: n } },
-      })
-    },
-  },
+function adjust(inc) {
+  const current = actor.value.data?.legacies[props.propKey] ?? 0
+  $actor?.update({
+    [`data.legacies.${props.propKey}`]: current + inc,
+  })
+}
+function increase() {
+  adjust(1)
+}
+function decrease() {
+  adjust(-1)
+}
+
+function setXp(n) {
+  $actor?.update({
+    data: { legacies: { [`${props.propKey}XpSpent`]: n } },
+  })
 }
 </script>

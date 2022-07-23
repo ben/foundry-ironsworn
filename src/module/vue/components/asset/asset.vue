@@ -6,12 +6,12 @@
           {{ asset.name }}
         </h4>
         <btn-faicon
-          class="block"
+          class="block nogrow"
           v-if="editMode"
           icon="trash"
           @click="destroy"
         />
-        <btn-faicon class="block" icon="edit" @click="edit" />
+        <btn-faicon class="block nogrow" icon="edit" @click="edit" />
       </div>
     </div>
     <transition name="slide">
@@ -44,12 +44,7 @@
         </ul>
 
         <div class="flexcol condition-meter" v-if="asset.data.track.enabled">
-          <btn-rollstat
-            class="juicy text flexrow"
-            :actor="actor"
-            :item="asset"
-            attr="track"
-          >
+          <btn-rollstat class="juicy text flexrow" :item="asset" attr="track">
             {{ asset.data.track.name }}
           </btn-rollstat>
           <asset-track :actor="actor" :item="asset" />
@@ -87,83 +82,86 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    asset: Object,
-  },
-  computed: {
-    expanded() {
-      return this.asset?.flags['foundry-ironsworn']?.expanded || false
-    },
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-    enabledAbilities() {
-      const abilities = Object.values(this.asset.data.abilities)
-      return abilities.filter((x) => x.enabled)
-    },
-    foundryActor() {
-      return game.actors?.get(this.actor._id)
-    },
-    foundryItem() {
-      return this.foundryActor?.items.get(this.asset._id)
-    },
-    actingActor() {
-      if (this.actor.type === 'character') return this.actor
-      return CONFIG.IRONSWORN.defaultActor()?.toObject(false)
-    },
-  },
-  methods: {
-    toggle() {
-      this.foundryItem?.setFlag(
-        'foundry-ironsworn',
-        'expanded',
-        !this.asset?.flags['foundry-ironsworn']?.expanded
-      )
-    },
-    edit() {
-      this.foundryItem.sheet.render(true)
-      return false
-    },
-    destroy() {
-      Dialog.confirm({
-        title: this.$t('IRONSWORN.DeleteAsset'),
-        content: `<p><strong>${this.$t(
-          'IRONSWORN.ConfirmDelete'
-        )}</strong></p>`,
-        yes: () => this.foundryItem?.delete(),
-        defaultYes: false,
-      })
-    },
-    rollTrack() {
-      CONFIG.IRONSWORN.RollDialog.show({
-        actor: this.foundryActor,
-        asset: this.foundryItem,
-        stat: 'track',
-      })
-    },
-    exclusiveOptionClick(selectedIdx) {
-      const options = this.asset.data.exclusiveOptions
-      for (let i = 0; i < options.length; i++) {
-        options[i].selected = i === selectedIdx
-      }
-      this.foundryItem.update({ data: { exclusiveOptions: options } })
-    },
-    moveclick(item) {
-      let actorWithMoves = this.$actor
-      if (this.$actor?.type !== 'character') {
-        actorWithMoves = CONFIG.IRONSWORN.defaultActor()
-      }
-      actorWithMoves?.moveSheet?.render(true)
-      actorWithMoves?.moveSheet?.highlightMove(item)
-    },
-    setAbilityClock(abilityIdx, clockTicks) {
-      const abilities = Object.values(this.asset.data.abilities)
-      abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-      this.foundryItem.update({ data: { abilities } })
-    },
-  },
+<script setup lang="ts">
+import { computed, inject, Ref } from 'vue'
+import { RollDialog } from '../../../helpers/rolldialog'
+import { AssetAbility } from '../../../item/itemtypes'
+import BtnFaicon from '../buttons/btn-faicon.vue'
+import BtnRollstat from '../buttons/btn-rollstat.vue'
+import AssetTrack from './asset-track.vue'
+import AssetExclusiveoption from './asset-exclusiveoption.vue'
+import Clock from '../clock.vue'
+import WithRolllisteners from '../with-rolllisteners.vue'
+import { $ActorKey } from '../../provisions'
+
+const props = defineProps<{ asset: any }>()
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
+
+const expanded = computed(() => {
+  return props.asset?.flags['foundry-ironsworn']?.expanded || false
+})
+const editMode = computed(() => {
+  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
+})
+const enabledAbilities = computed(() => {
+  const abilities = Object.values(props.asset.data.abilities)
+  return abilities.filter((x) => x.enabled)
+})
+const foundryItem = computed(() => {
+  return $actor?.items.get(props.asset._id)
+})
+const actingActor = computed(() => {
+  if (actor.value.type === 'character') return actor.value
+  return CONFIG.IRONSWORN.defaultActor()?.toObject(false)
+})
+
+function toggle() {
+  foundryItem.value?.setFlag(
+    'foundry-ironsworn',
+    'expanded',
+    !props.asset?.flags['foundry-ironsworn']?.expanded
+  )
+}
+function edit() {
+  foundryItem.value?.sheet?.render(true)
+  return false
+}
+function destroy() {
+  Dialog.confirm({
+    title: game.i18n.localize('IRONSWORN.DeleteAsset'),
+    content: `<p><strong>${game.i18n.localize(
+      'IRONSWORN.ConfirmDelete'
+    )}</strong></p>`,
+    yes: () => foundryItem.value?.delete(),
+    defaultYes: false,
+  })
+}
+function rollTrack() {
+  RollDialog.show({
+    actor: $actor,
+    asset: foundryItem.value,
+    stat: 'track',
+  })
+}
+function exclusiveOptionClick(selectedIdx) {
+  const options = props.asset.data.exclusiveOptions
+  for (let i = 0; i < options.length; i++) {
+    options[i].selected = i === selectedIdx
+  }
+  foundryItem.value?.update({ data: { exclusiveOptions: options } })
+}
+function moveclick(item) {
+  let actorWithMoves = $actor
+  if ($actor?.type !== 'character') {
+    actorWithMoves = CONFIG.IRONSWORN.defaultActor()
+  }
+  actorWithMoves?.moveSheet?.render(true)
+  actorWithMoves?.moveSheet?.highlightMove(item)
+}
+function setAbilityClock(abilityIdx: number, clockTicks: number) {
+  const abilities = Object.values(props.asset.data.abilities) as AssetAbility[]
+  abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
+  foundryItem.value?.update({ data: { abilities } })
 }
 </script>

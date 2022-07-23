@@ -92,26 +92,24 @@ See `custommoves.ts` for the structure of those objects.
 
 Here's what you'll need to make changes to this system:
 
-1. Install Foundry 0.8.8 or later, and start it up.
+1. Install Foundry 9 or later, and start it up.
 2. Install the main `foundry-ironsworn` system, and create a world that uses it.
 3. Clone this repo somewhere you can find it, and run `npm install`.
 4. Run `npm start` from this repository.
 5. Open a browser to http://localhost:8080.
 
-When you use that browser window, webpack will serve up freshly-built assets instead of the ones in the installed version of the system.
+When you use that browser window, Vite will serve up freshly-built assets instead of the ones in the installed version of the system, and will do browser-window refreshes for you in many cases.
 Some things to remember:
 
-- Only the Javascript and stylesheets are served up by Webpack. If you change anything else, you'll want to do something like this before reloading:
+- Only the Javascript and stylesheets are served up by Vite. If you change anything else (like a `.hbs` file), you'll want to do something like this before reloading:
   ```
   cp -R system/* ~/Library/Application\ Support/FoundryVTT/Data/systems/foundry-ironsworn/
   ```
 - If you make a change to `system.json` or any of the I18n files, you'll have to return to setup, use the command above, and start the world up again.
-- If you change any of the `*.hbs` templates, use the command above before reloading your browser window.
-- Any Typescript or LESS changes only require a browser reload.
 
 # Credits
 
-This work is based on Ironsworn (found at www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (creativecommons.org/licenses/by-nc-sa/4.0/).
+This work is based on Ironsworn (found at https://www.ironswornrpg.com), created by Shawn Tomkin, and licensed for our use under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license (creativecommons.org/licenses/by-nc-sa/4.0/).
 
 Hand-drawn map scene courtesy of [McSekcer](https://www.reddit.com/user/McSekcer/).
 

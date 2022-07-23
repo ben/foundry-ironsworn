@@ -3,7 +3,6 @@
     @click="rollProgress()"
     :tooltip="tooltip"
     class="progress-roll"
-    :class="attr"
     icon="d10-tilt"
     :disabled="disabled"
   >
@@ -11,17 +10,23 @@
   </btn-isicon>
 </template>
 
-<script>
-export default {
-  props: {
-    item: Object, // the progress track
-    tooltip: String,
-    disabled: Boolean,
-  },
-  methods: {
-    rollProgress() {
-      this.$item.fulfill()
-    },
-  },
+<script setup lang="ts">
+import { inject } from '@vue/runtime-core'
+import { IronswornItem } from '../../../item/item'
+import { $ActorKey, $ItemKey } from '../../provisions'
+import BtnIsicon from './btn-isicon.vue'
+
+const props = defineProps<{ item: any; tooltip?: string; disabled?: boolean }>()
+
+const $actor = inject($ActorKey, undefined)
+
+function rollProgress() {
+  let item: IronswornItem | undefined
+  if ($actor) {
+    item = $actor.items.find((x) => x.id === props.item._id)
+  } else {
+    item = game.items?.get(props.item.id)
+  }
+  item?.fulfill()
 }
 </script>

@@ -2,40 +2,36 @@
   <div class="flexcol nogrow">
     <div class="flexrow">
       <h4>{{ $t('IRONSWORN.Bonds') }}</h4>
-      <btn-faicon class="block" icon="edit" @click="editBonds" />
-      <btn-faicon class="block" icon="dice-d6" @click="rollBonds" />
+      <btn-faicon class="block nogrow" icon="edit" @click="editBonds" />
+      <btn-faicon class="block nogrow" icon="dice-d6" @click="rollBonds" />
     </div>
     <progress-track :ticks="bondcount" />
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script setup lang="ts">
+import { inject, computed } from 'vue'
+import { $ActorKey } from '../provisions'
+import ProgressTrack from './progress/progress-track.vue'
+import btnFaicon from './buttons/btn-faicon.vue'
 
-  computed: {
-    bonds() {
-      return this.actor.items.filter((x) => x.type === 'bondset')[0]
-    },
-    bondcount() {
-      if (!this.bonds?.data?.bonds) return 0
-      return Object.values(this.bonds.data.bonds).length
-    },
-  },
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 
-  methods: {
-    editBonds() {
-      const actor = game.actors?.get(this.actor._id)
-      const item = actor.items.get(this.bonds._id)
-      item?.sheet.render(true)
-    },
-    rollBonds() {
-      const actor = game.actors?.get(this.actor._id)
-      const item = actor.items.get(this.bonds._id)
-      item?.writeEpilogue()
-    },
-  },
+const bonds = computed(() => {
+  return actor.value?.items.find((x) => x.type === 'bondset')
+})
+const bondcount = computed(() => {
+  if (!bonds.value?.data?.bonds) return 0
+  return Object.values(bonds.value.data.bonds).length
+})
+
+function editBonds() {
+  const item = $actor?.items.get(bonds.value._id)
+  item?.sheet?.render(true)
+}
+function rollBonds() {
+  const item = $actor?.items.get(bonds.value._id)
+  item?.writeEpilogue()
 }
 </script>

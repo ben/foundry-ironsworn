@@ -1,43 +1,39 @@
+import { Component, ComputedOptions, MethodOptions, render } from 'vue'
 import { IronswornSettings } from '../../helpers/settings'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import SfCharacterSheet from '../../vue/sf-charactersheet.vue'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 import { CharacterMoveSheet } from './charactermovesheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
-export class StarforgedCharacterSheet extends IronswornVueActorSheet {
+export class StarforgedCharacterSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'actor',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      template: 'systems/foundry-ironsworn/templates/actor/sf-character.hbs',
       width: 630,
       height: 820,
       left: 50,
-      submitOnClose: true,
-      submitOnChange: true,
-      template: 'systems/foundry-ironsworn/templates/actor/sf-character.hbs',
     })
   }
 
-  getData() {
-    let data: any = super.getData()
-
-    // Allow every itemtype to add data to the actorsheet
-    for (const itemType of CONFIG.IRONSWORN.itemClasses) {
-      data = itemType.getActorSheetData(data, this)
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'sf-charactersheet': SfCharacterSheet },
+      helperHook: (helper) => {
+        helper.emitter.on('highlightMove', (moveId) =>
+          this.actor.moveSheet?.highlightMoveById(moveId)
+        )
+        helper.emitter.on('highlightOracle', (oracleId) =>
+          this.actor.moveSheet?.highlightOracle(oracleId)
+        )
+      },
     }
-
-    data.actor = this.actor.toObject(false)
-    data.data = data.actor.data
-
-    return data
   }
 
   render(...args) {
+    super.render(...args)
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
-    return super.render(...args)
+    return this
   }
 
   close(...args) {

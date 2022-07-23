@@ -14,19 +14,19 @@
 
 <style lang="less"></style>
 
-<script>
-export default {
-  props: {
-    move: Object,
-    tooltip: String,
-    disabled: Boolean,
-  },
-  methods: {
-    sendToChat(e) {
-      CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(
-        this.move.moveItem
-      )
-    },
-  },
+<script setup lang="ts">
+import { Move } from '../../../features/custommoves'
+import btnFaicon from './btn-faicon.vue'
+
+const props = defineProps<{
+  move: Move
+  tooltip?: string
+  disabled?: boolean
+}>()
+
+function sendToChat(e) {
+  CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(
+    props.move.moveItem
+  )
 }
 </script>

@@ -11,32 +11,27 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    min: Number,
-    max: Number,
-    current: Number,
-  },
+<script setup lang="ts">
+import { computed } from 'vue'
+import boxrowBox from './boxrow-box.vue'
 
-  computed: {
-    items() {
-      const ret = []
-      for (let i = this.min; i <= this.max; i++) {
-        ret.push({
-          text: `${i > 0 ? '+' : ''}${i}`,
-          value: i,
-          selected: i === this.current,
-        })
-      }
-      return ret
-    },
-  },
+const props = defineProps<{ min: number; max: number; current: number }>()
 
-  methods: {
-    click(el, value) {
-      this.$emit('click', el, value)
-    },
-  },
+const items = computed(() => {
+  const ret = [] as any[]
+  for (let i = props.min; i <= props.max; i++) {
+    ret.push({
+      text: `${i > 0 ? '+' : ''}${i}`,
+      value: i,
+      selected: i === props.current,
+    })
+  }
+  return ret
+})
+
+const $emit = defineEmits<{ (e: 'click', value: number): void }>()
+function click(i) {
+  console.log(i)
+  $emit('click', i)
 }
 </script>

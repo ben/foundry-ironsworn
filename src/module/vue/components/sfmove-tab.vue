@@ -13,7 +13,7 @@
     <span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
     <btn-faicon
       class="nogrow block"
-      v-if="$listeners.delete"
+      v-if="$attrs.onDelete"
       icon="trash"
       @click="$emit('delete')"
     />
@@ -28,13 +28,15 @@ span {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    title: String,
-    titleKey: String,
-    property: String,
-    currentProperty: String,
-  },
-}
+<script setup lang="ts">
+import BtnFaicon from './buttons/btn-faicon.vue'
+
+const props = defineProps<{
+  title?: string
+  titleKey?: string
+  property: string
+  currentProperty: string
+}>()
+
+defineEmits<{ (e: 'click', property: string) }>()
 </script>

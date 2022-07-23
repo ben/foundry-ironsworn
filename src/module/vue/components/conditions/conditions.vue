@@ -4,32 +4,28 @@
       <h4>{{ $t('IRONSWORN.Conditions') }}</h4>
       <div class="flexrow">
         <div class="flexcol">
-          <condition-checkbox :actor="actor" name="wounded" />
-          <condition-checkbox :actor="actor" name="unprepared" />
+          <condition-checkbox name="wounded" />
+          <condition-checkbox name="unprepared" />
         </div>
         <div class="flexcol">
-          <condition-checkbox :actor="actor" name="shaken" />
-          <condition-checkbox :actor="actor" name="encumbered" />
+          <condition-checkbox name="shaken" />
+          <condition-checkbox name="encumbered" />
         </div>
       </div>
     </div>
     <div class="flexcol">
       <h4>{{ $t('IRONSWORN.Banes') }}</h4>
-      <condition-checkbox :actor="actor" name="maimed" />
-      <condition-checkbox :actor="actor" name="corrupted" />
+      <condition-checkbox name="maimed" />
+      <condition-checkbox name="corrupted" />
     </div>
     <div class="flexcol">
       <h4>{{ $t('IRONSWORN.Burdens') }}</h4>
-      <condition-checkbox :actor="actor" name="cursed" />
-      <condition-checkbox :actor="actor" name="tormented" />
+      <condition-checkbox name="cursed" />
+      <condition-checkbox name="tormented" />
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
-}
+<script setup lang="ts" >
+import ConditionCheckbox from './condition-checkbox.vue'
 </script>

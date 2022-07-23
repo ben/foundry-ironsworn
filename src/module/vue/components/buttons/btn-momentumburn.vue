@@ -9,16 +9,13 @@
   </btn-faicon>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    disabled: Boolean,
-  },
-  methods: {
-    burnMomentum() {
-      this.$actor.burnMomentum()
-    },
-  },
-}
+<script lang="ts" setup>
+import { inject } from 'vue'
+import { $ActorKey } from '../../provisions'
+import btnFaicon from './btn-faicon.vue'
+
+defineProps<{ disabled?: boolean }>()
+const $actor = inject($ActorKey)
+
+const burnMomentum = () => $actor?.burnMomentum()
 </script>

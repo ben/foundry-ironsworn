@@ -1,51 +1,43 @@
 <template>
-  <tabbed-panels
-    ariaOrientation="horizontal"
-    name="sf-character-move-sheet"
-    class="sf-character-move-sheet-tabs"
-    wrapperElement="article"
-    :actor="actor"
-    :tabs="tabs"
-    ref="tabs"
-  >
-  </tabbed-panels>
+  <tabs ref="tabs">
+    <tab :title="$t('IRONSWORN.Moves')">
+      <Suspense>
+        <sf-movesheetmoves ref="movesTab" />
+      </Suspense>
+    </tab>
+    <tab :title="$t('IRONSWORN.Oracles')">
+      <Suspense>
+        <sf-movesheetoracles ref="oraclesTab" />
+      </Suspense>
+    </tab>
+  </tabs>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script lang="ts" setup>
+import Tab from './components/tabs/tab.vue'
+import Tabs from './components/tabs/tabs.vue'
+import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
+import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
+import { computed, inject, nextTick, provide, ref } from 'vue'
+import { CharacterDataProperties } from '../actor/actortypes'
+import { $EmitterKey } from './provisions'
 
-  data() {
-    const tabs = [
-      {
-        titleKey: 'IRONSWORN.Moves',
-        component: 'sf-movesheetmoves',
-      },
-      {
-        titleKey: 'IRONSWORN.Oracles',
-        component: 'sf-movesheetoracles',
-      },
-    ]
-    return {
-      tabs,
-      currentTab: tabs[0],
-    }
-  },
+const props = defineProps<{
+  actor: CharacterDataProperties
+}>()
 
-  methods: {
-    async highlightMove(item) {
-      this.currentTab = this.tabs[0]
-      await this.$nextTick()
-      this.$refs.tabs.$refs.activeTab?.['highlightMove']?.(item)
-    },
+provide(
+  'actor',
+  computed(() => props.actor)
+)
 
-    async highlightOracle(dfid) {
-      this.currentTab = this.tabs[1]
-      await this.$nextTick()
-      this.$refs.tabs.$refs.activeTab?.['highlightOracle']?.(dfid)
-    },
-  },
-}
+const $emitter = inject($EmitterKey)
+$emitter?.on('*', (...args) => console.log(...args))
+
+const tabs = ref<InstanceType<typeof Tabs>>()
+const movesTab = ref<InstanceType<typeof SfMovesheetmoves>>()
+$emitter?.on('highlightMove', () => tabs.value?.selectIndex(0))
+
+const oraclesTab = ref<InstanceType<typeof SfMovesheetoracles>>()
+$emitter?.on('highlightOracle', () => tabs.value?.selectIndex(1))
 </script>

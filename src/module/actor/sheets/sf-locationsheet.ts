@@ -1,34 +1,19 @@
-import { IronswornSettings } from '../../helpers/settings'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import sfLocationsheetVue from '../../vue/sf-locationsheet.vue'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 
-export class StarforgedLocationSheet extends IronswornVueActorSheet {
+export class StarforgedLocationSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'actor',
-        `theme-${IronswornSettings.theme}`,
-      ],
-      width: 400,
-      height: 600,
-      submitOnClose: true,
-      submitOnChange: true,
       template: 'systems/foundry-ironsworn/templates/actor/sf-location.hbs',
+      width: 600,
+      height: 600,
     })
   }
 
-  getData() {
-    let data: any = super.getData()
-
-    // Allow every itemtype to add data to the actorsheet
-    for (const itemType of CONFIG.IRONSWORN.itemClasses) {
-      data = itemType.getActorSheetData(data, this)
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'sf-locationsheet': sfLocationsheetVue },
     }
-
-    data.actor = this.actor.toObject(false)
-    data.data = data.actor.data
-
-    return data
   }
 }

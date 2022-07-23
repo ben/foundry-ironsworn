@@ -1,4 +1,4 @@
-@import url('../../system/assets/font/icon-font.css');
+@import './icon-font.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
@@ -94,8 +94,8 @@
       flex-grow: 1;
       height: 50px;
       padding: 0px;
-      margin: 5px 0;
       border-bottom: 0;
+      margin: 0;
 
       input {
         width: 100%;
@@ -108,7 +108,7 @@
   .xp {
     flex-grow: 0;
     flex-direction: row;
-    flex-basis: 140px;
+    flex-basis: 130px;
     align-items: center;
 
     .xp {
@@ -524,34 +524,34 @@ hr {
     line-height: 24px;
     display: inline-block;
     margin-right: 1px;
-    background-image: url('icons/svg/d6-grey.svg');
+    background-image: url('../../icons/svg/d6-grey.svg');
     background-repeat: no-repeat;
     background-size: 24px 24px;
     font-weight: bold;
     text-align: center;
 
     &.d4 {
-      background-image: url('icons/svg/d4-grey.svg');
+      background-image: url('../../icons/svg/d4-grey.svg');
     }
 
     &.d6 {
-      background-image: url('icons/svg/d6-grey.svg');
+      background-image: url('../../icons/svg/d6-grey.svg');
     }
 
     &.d8 {
-      background-image: url('icons/svg/d8-grey.svg');
+      background-image: url('../../icons/svg/d8-grey.svg');
     }
 
     &.d10 {
-      background-image: url('icons/svg/d10-grey.svg');
+      background-image: url('../../icons/svg/d10-grey.svg');
     }
 
     &.d12 {
-      background-image: url('icons/svg/d12-grey.svg');
+      background-image: url('../../icons/svg/d12-grey.svg');
     }
 
     &.d20 {
-      background-image: url('icons/svg/d20-grey.svg');
+      background-image: url('../../icons/svg/d20-grey.svg');
     }
 
     &.min,
@@ -600,7 +600,7 @@ table td:first-child {
   max-height: 500px; // NOTE: fill this in where you know the right number
   opacity: 1;
 }
-.slide-enter,
+.slide-enter-from,
 .slide-leave-to {
   max-height: 0 !important;
   opacity: 0 !important;

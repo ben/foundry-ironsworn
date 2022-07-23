@@ -17,22 +17,22 @@
     <!-- FIELDS -->
     <div v-if="hasFields || editMode">
       <h3>{{ $t('IRONSWORN.Fields') }}</h3>
-      <asset-fieldsedit :item="item" />
+      <asset-fieldsedit />
     </div>
 
     <!-- ABILITIES -->
     <h3>{{ $t('IRONSWORN.Abilities') }}</h3>
-    <asset-abilitiesedit :item="item" />
+    <asset-abilitiesedit />
 
     <!-- OPTIONS -->
     <div v-if="hasOptions || editMode">
       <h3>{{ $t('IRONSWORN.Options') }}</h3>
-      <asset-optionsedit :item="item" />
+      <asset-optionsedit />
     </div>
 
     <!-- TRACK -->
     <h3>{{ $t('IRONSWORN.Track') }}</h3>
-    <asset-trackedit :item="item" />
+    <asset-trackedit />
   </div>
 </template>
 
@@ -50,30 +50,36 @@ h3 {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    item: Object,
-  },
+<script setup lang="ts">
+import { computed, inject, provide, Ref } from 'vue'
+import DocumentName from './components/document-name.vue'
+import AssetFieldsedit from './components/asset/asset-fieldsedit.vue'
+import AssetAbilitiesedit from './components/asset/asset-abilitiesedit.vue'
+import AssetOptionsedit from './components/asset/asset-optionsedit.vue'
+import AssetTrackedit from './components/asset/asset-trackedit.vue'
+import { $ItemKey } from './provisions'
 
-  computed: {
-    editMode() {
-      return this.item.flags['foundry-ironsworn']?.['edit-mode']
-    },
+const $item = inject($ItemKey)
 
-    hasOptions() {
-      return Object.values(this.item.data.exclusiveOptions || []).length > 0
-    },
+const props = defineProps<{ item: any }>()
+provide(
+  'item',
+  computed(() => props.item)
+)
 
-    hasFields() {
-      return Object.values(this.item.data.fields || []).length > 0
-    },
-  },
+const editMode = computed(() => {
+  return props.item.flags['foundry-ironsworn']?.['edit-mode']
+})
 
-  methods: {
-    setDescription() {
-      this.$item.update({ data: { description: this.item.data.description } })
-    },
-  },
+const hasOptions = computed(() => {
+  return Object.values(props.item.data.exclusiveOptions || []).length > 0
+})
+
+const hasFields = computed(() => {
+  return Object.values(props.item.data.fields || []).length > 0
+})
+
+function setDescription() {
+  $item?.update({ data: { description: props.item.data.description } })
 }
 </script>

@@ -1,50 +1,65 @@
 <template>
-  <component :is="element">
+  <component :is="element" ref="el">
     <slot />
   </component>
 </template>
 
-<script>
-export default {
-  props: {
-    element: String,
-    actor: Object,
-  },
-  mounted() {
-    const actor = game.actors?.get(this.actor._id)
-    CONFIG.IRONSWORN.attachInlineRollListeners($(this.$el), { actor })
+<script setup lang="ts">
+import { inject, onMounted, ref, useAttrs } from 'vue'
+import { IronswornActor } from '../../actor/actor'
+import { IronswornItem } from '../../item/item'
+import { $ActorKey, $EmitterKey } from '../provisions'
 
-    $(this.$el).find('.entity-link').on('click', this.click)
-  },
+const props = defineProps<{ element: string }>()
 
-  methods: {
-    click(ev) {
-      ev.preventDefault()
+const $actor = inject($ActorKey, undefined)
+const el = ref<HTMLElement>()
+onMounted(() => {
+  if (!el.value) {
+    console.error('wtf')
+    return
+  }
 
-      const { pack, id, dfid } = ev.currentTarget.dataset
-      if (id) {
-        // Might be a move navigation click
-        if (!pack) {
-          const item = game.items?.get(id)
-          return item?.sheet?.render(true)
-        }
+  CONFIG.IRONSWORN.attachInlineRollListeners($(el.value), {
+    actor: $actor,
+  })
 
-        const gamePack = game.packs.get(pack)
-        gamePack?.getDocument(id)?.then((gameItem) => {
-          if (['move', 'sfmove'].includes(gameItem.type)) {
-            this.$emit('moveclick', gameItem)
-          }
-        })
+  $(el.value).find('.entity-link').on('click', click)
+})
 
-        return this.$listeners['moveclick'] ? false : true
-      }
+const $emit = defineEmits(['moveclick', 'oracleclick'])
+const $emitter = inject($EmitterKey)
+const $attrs = useAttrs()
 
-      if (dfid) {
-        // Probably an oracle category click
-        this.$emit('oracleclick', dfid)
-        return this.$listeners['oracleclick'] ? false : true
-      }
-    },
-  },
+async function click(ev: JQuery.ClickEvent) {
+  ev.preventDefault()
+  ev.stopPropagation()
+
+  const { pack, id, dfid } = ev.currentTarget.dataset
+  if (id) {
+    // TODO: better fallback logic here, allow for custom moves
+    // Might be a move navigation click
+    if (!pack) {
+      const item = game.items?.get(id)
+      return item?.sheet?.render(true)
+    }
+
+    const gamePack = game.packs.get(pack)
+    const gameItem = (await gamePack?.getDocument(id)) as
+      | IronswornItem
+      | IronswornActor
+    if (gameItem && ['move', 'sfmove'].includes(gameItem.type)) {
+      $emit('moveclick', gameItem)
+    }
+
+    return !!$attrs['onMoveclick']
+  }
+
+  if (dfid) {
+    // TODO: allow for custom oracles
+    // Probably an oracle category click
+    $emit('oracleclick', dfid)
+    return !!$attrs['onOracleclick']
+  }
 }
 </script>

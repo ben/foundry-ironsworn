@@ -1,6 +1,6 @@
 <template>
   <btn-isicon
-    @click="rollMove()"
+    @click="rollMove"
     :tooltip="tooltip"
     class="action-roll move-roll"
     icon="d10-tilt"
@@ -11,18 +11,21 @@
   </btn-isicon>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    move: Object,
-    tooltip: String,
-    disabled: Boolean,
-  },
-  methods: {
-    async rollMove() {
-      CONFIG.IRONSWORN.SFRollMoveDialog.show(this.$actor, this.move.moveItem)
-    },
-  },
+<script setup lang="ts">
+import { inject } from 'vue'
+import { SFRollMoveDialog } from '../../../helpers/rolldialog-sf'
+import { $ActorKey } from '../../provisions'
+import btnIsicon from './btn-isicon.vue'
+
+const props = defineProps<{
+  move?: any
+  tooltip?: string
+  disabled?: boolean
+}>()
+
+const $actor = inject($ActorKey)
+
+async function rollMove() {
+  if ($actor) SFRollMoveDialog.show($actor, props.move.moveItem)
 }
 </script>

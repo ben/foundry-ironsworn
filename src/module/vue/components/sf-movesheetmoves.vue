@@ -4,12 +4,12 @@
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
-        v-model="searchQuery"
-        @keydown="preventSubmit"
+        v-model="data.searchQuery"
+        @keydown.enter.prevent
       />
       <i
         class="fa fa-times-circle nogrow clickable text"
-        @click="clearSearch"
+        @click="data.searchQuery = ''"
         style="padding: 6px"
       />
       <i
@@ -20,20 +20,21 @@
     </div>
 
     <div class="flexcol item-list">
-      <div class="nogrow" v-if="searchQuery">
+      <!-- Flat search results -->
+      <div class="nogrow" v-if="data.searchQuery">
         <sf-moverow
           v-for="move of searchResults"
           :key="move.displayName"
-          :actor="actor"
           :move="move"
-          @moveclick="highlightMove"
         />
       </div>
+
+      <!-- Categorized moves if not searching -->
       <div
         class="nogrow"
         v-else
-        v-for="category of categories"
-        :key="category.$id"
+        v-for="category of data.categories"
+        :key="category.displayName"
       >
         <h2>
           {{ category.displayName }}
@@ -41,9 +42,7 @@
         <sf-moverow
           v-for="move of category.moves"
           :key="move.displayName"
-          :actor="actor"
           :move="move"
-          @moveclick="highlightMove"
           ref="allmoves"
         />
       </div>
@@ -60,90 +59,60 @@ h2 {
 }
 </style>
 
-<script>
+<script setup lang="ts">
+import { flatten } from 'lodash'
+import { computed, inject, nextTick, reactive, ref, Ref } from 'vue'
 import { createStarforgedMoveTree } from '../../features/custommoves'
+import { $EmitterKey } from '../provisions'
+import sfMoverow from './sf-moverow.vue'
 
-export default {
-  props: {
-    actor: Object,
-  },
+const actor = inject('actor') as Ref
 
-  data() {
-    return {
-      searchQuery: '',
-      categories: [],
-    }
-  },
-
-  async created() {
-    const categories = await createStarforgedMoveTree()
-
-    // Decorate with the highlighted flag we'll need
-    for (const category of categories) {
-      for (const move of category.moves) {
-        move.highlighted = false
-      }
-    }
-
-    this.categories = categories
-  },
-
-  computed: {
-    checkedSearchQuery() {
-      try {
-        new RegExp(this.searchQuery)
-        return this.searchQuery
-      } catch (error) {
-        return ''
-      }
-    },
-
-    flatMoves() {
-      return CONFIG.IRONSWORN._.flatten(this.categories.map((x) => x.moves))
-    },
-
-    searchResults() {
-      if (!this.checkedSearchQuery) return null
-
-      const re = new RegExp(this.checkedSearchQuery, 'i')
-      return this.flatMoves.filter((x) => re.test(x.displayName))
-    },
-  },
-
-  methods: {
-    clearSearch() {
-      this.searchQuery = ''
-    },
-
-    preventSubmit(ev) {
-      if (ev.keyCode == 13) {
-        ev.preventDefault()
-        return false
-      }
-    },
-
-    collapseAll() {
-      for (const row of this.$refs.allmoves ?? []) {
-        row.collapse()
-      }
-    },
-
-    async highlightMove(item) {
-      this.searchQuery = ''
-      await new Promise((r) => setTimeout(r, 10))
-      for (const category of this.categories) {
-        for (const move of category.moves) {
-          if (move.moveItem.id === item.id) {
-            move.highlighted = true
-            setTimeout(() => (move.highlighted = false), 2000)
-            return
-          }
-        }
-      }
-
-      // Not found; just open the sheet
-      item.sheet?.render(true)
-    },
-  },
+const tempCategories = await createStarforgedMoveTree()
+for (const category of tempCategories) {
+  for (const move of category.moves) {
+    move.highlighted = false
+  }
 }
+
+const data = reactive({
+  searchQuery: '',
+  categories: tempCategories,
+})
+
+const checkedSearchQuery = computed(() => {
+  try {
+    new RegExp(data.searchQuery)
+    return data.searchQuery
+  } catch (error) {
+    return ''
+  }
+})
+
+const flatMoves = computed(() => {
+  return flatten(data.categories.map((x) => x.moves))
+})
+
+const searchResults = computed(() => {
+  if (!checkedSearchQuery.value) return null
+
+  const re = new RegExp(checkedSearchQuery.value, 'i')
+  return flatMoves.value.filter((x) => re.test(x.displayName))
+})
+
+function clearSearch() {
+  data.searchQuery = ''
+}
+
+const allmoves = ref<InstanceType<typeof sfMoverow>[]>([])
+function collapseAll() {
+  for (const row of allmoves.value ?? []) {
+    row.collapse()
+  }
+}
+
+const $emitter = inject($EmitterKey)
+$emitter?.on('highlightMove', (_item) => {
+  data.searchQuery = ''
+})
 </script>

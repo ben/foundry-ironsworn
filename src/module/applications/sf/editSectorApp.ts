@@ -1,8 +1,10 @@
-import { VueApplication } from '../vueapp'
+import { VueApplication } from '../../vue/vueapp'
+import editSectorVue from '../../vue/edit-sector.vue'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 
 export class EditSectorDialog extends VueApplication {
   constructor(protected sceneId: string) {
-    super({})
+    super()
   }
 
   static get defaultOptions(): ApplicationOptions {
@@ -18,12 +20,11 @@ export class EditSectorDialog extends VueApplication {
     })
   }
 
-  getData(options) {
-    const data: any = super.getData(options)
-
-    data.sceneId = this.sceneId
-    console.log({ data })
-
-    return data
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      ...super.renderHelperOptions,
+      components: { 'edit-sector': editSectorVue },
+      vueData: async () => ({ sceneId: this.sceneId }),
+    }
   }
 }

@@ -1,11 +1,40 @@
-import { VueApplication } from '../../applications/vueapp'
-import { IronswornSettings } from '../../helpers/settings'
 import { IronswornItem } from '../../item/item'
+import { VueApplication } from '../../vue/vueapp'
+
+import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
 import { IronswornActor } from '../actor'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { App } from 'vue'
+import { $ActorKey } from '../../vue/provisions'
 
 export class SFCharacterMoveSheet extends VueApplication {
-  constructor(protected actor: IronswornActor) {
-    super({})
+  constructor(
+    protected actor: IronswornActor,
+    options?: Partial<ApplicationOptions>
+  ) {
+    super(options)
+  }
+
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'sfcharacter-movesheet': CharacterMoveSheet },
+      vueData: async () => ({
+        actor: this.actor.toObject(),
+      }),
+    }
+  }
+
+  setupVueApp(app: App<any>): void {
+    super.setupVueApp(app)
+    app.provide($ActorKey, this.actor)
+  }
+
+  render(
+    force?: boolean | undefined,
+    inputOptions?: Application.RenderOptions<ApplicationOptions> | undefined
+  ): this {
+    super.render(force, inputOptions)
+    return this
   }
 
   static get defaultOptions() {
@@ -13,12 +42,6 @@ export class SFCharacterMoveSheet extends VueApplication {
       template:
         'systems/foundry-ironsworn/templates/actor/sf-charactermoves.hbs',
       resizable: true,
-      classes: [
-        'ironsworn',
-        'sheet',
-        'moves',
-        `theme-${IronswornSettings.theme}`,
-      ],
       width: 350,
       height: 820,
       left: 685,
@@ -29,20 +52,16 @@ export class SFCharacterMoveSheet extends VueApplication {
     return `${game.i18n.localize('IRONSWORN.Moves')} — ${this.actor.name}`
   }
 
-  async getData() {
-    const data: any = super.getData()
-    data.actor = this.actor.toObject(false)
-    data.data = this.actor.data
-    return data
-  }
-
   async highlightMove(move: IronswornItem) {
+    this.highlightMoveById(move.id ?? '')
+  }
+  highlightMoveById(moveId: string) {
     this.maximize()
-    return this._vm?.$refs.child?.['highlightMove']?.(move)
+    this.renderHelper?.emitter.emit('highlightMove', moveId)
   }
 
   async highlightOracle(oracleId: string) {
     this.maximize()
-    return this._vm?.$refs.child?.['highlightOracle']?.(oracleId)
+    this.renderHelper?.emitter.emit('highlightOracle', oracleId)
   }
 }

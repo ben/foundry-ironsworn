@@ -8,7 +8,12 @@ export interface OracleTreeNode {
   tables: RollTable[]
   displayName: string
   children: OracleTreeNode[]
+  forceExpanded?: boolean
+  forceHidden?: boolean
 }
+
+// For some reason, rollupJs mangles this
+const OracleCategories = starforged.default['Oracle Categories']
 
 const emptyNode = () =>
   ({
@@ -24,7 +29,7 @@ export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
   await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
 
   // Build the default tree
-  for (const category of starforged['Oracle Categories']) {
+  for (const category of OracleCategories) {
     rootNode.children.push(
       await walkOracleCategory(category, getFoundryISTableByDfId)
     )
@@ -46,7 +51,7 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   await cachedDocumentsForPack('foundry-ironsworn.starforgedoracles')
 
   // Build the default tree
-  for (const category of starforged['Oracle Categories']) {
+  for (const category of OracleCategories) {
     rootNode.children.push(
       await walkOracleCategory(category, getFoundrySFTableByDfId)
     )
@@ -58,8 +63,12 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   // Fire the hook and allow extensions to modify the tree
   await Hooks.call('ironswornOracles', rootNode)
 
+  // Prevent Vue from adding reactivity to Foundry objects
+  walkAndFreezeTables(rootNode)
+
   return rootNode
 }
+
 async function walkOracleCategory(
   cat: IOracleCategory,
   tableGetter: typeof getFoundrySFTableByDfId
@@ -165,6 +174,13 @@ async function augmentWithFolderContents(node: OracleTreeNode) {
   }
 
   walkFolder(node, rootFolder)
+}
+
+function walkAndFreezeTables(node: OracleTreeNode) {
+  ;(node.tables as any) = Object.freeze(node.tables)
+  for (const child of node.children) {
+    walkAndFreezeTables(child)
+  }
 }
 
 export function findPathToNodeByTableId(

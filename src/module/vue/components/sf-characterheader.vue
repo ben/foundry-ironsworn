@@ -2,14 +2,14 @@
   <header class="sheet-header flexrow">
     <document-img :document="actor" size="75px" />
 
-    <div class="flexcol" style="flex-basis: 100px">
+    <div class="flexcol" style="flex-basis: 100px; margin-left: 6px">
       <input
         type="text"
         style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Name')"
         v-model="actor.name"
         ref="name"
-        @blur="save"
+        @keyup="save"
       />
       <input
         type="text"
@@ -17,14 +17,14 @@
         :placeholder="$t('IRONSWORN.Pronouns')"
         :value="actor.data.pronouns"
         ref="pronouns"
-        @blur="save"
+        @keyup="save"
       />
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Callsign')"
         :value="actor.data.callsign"
         ref="callsign"
-        @blur="save"
+        @keyup="save"
       />
     </div>
 
@@ -34,7 +34,7 @@
       ref="characteristics"
       style="flex-basis: 300px; margin-left: 6px"
       :placeholder="$t('IRONSWORN.Characteristics')"
-      @blur="save"
+      @keyup="save"
     />
   </header>
 </template>
@@ -49,23 +49,28 @@ textarea {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-  },
+<script lang="ts" setup>
+import { debounce } from 'lodash'
+import { inject, ref, Ref } from 'vue'
+import { $ActorKey } from '../provisions'
+import documentImg from './document-img.vue'
 
-  methods: {
-    save() {
-      this.$actor?.update({
-        name: this.$refs.name.value,
-        data: {
-          callsign: this.$refs.callsign.value,
-          pronouns: this.$refs.pronouns.value,
-          biography: this.$refs.characteristics.value,
-        },
-      })
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
+
+const name = ref<HTMLInputElement | null>(null)
+const callsign = ref<HTMLInputElement | null>(null)
+const pronouns = ref<HTMLInputElement | null>(null)
+const characteristics = ref<HTMLInputElement | null>(null)
+
+const save = debounce(() => {
+  $actor?.update({
+    name: name.value?.value,
+    data: {
+      callsign: callsign.value?.value,
+      pronouns: pronouns.value?.value,
+      biography: characteristics.value?.value,
     },
-  },
-}
+  })
+}, 500)
 </script>

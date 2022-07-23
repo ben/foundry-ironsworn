@@ -48,7 +48,7 @@
   }
 }
 .svg-d10-tilt:before {
-  mask-image: url('./systems/foundry-ironsworn/assets/d10-tilt.svg');
+  mask-image: url('./systems/foundry-ironsworn/assets/d10v4.svg');
 }
 .svg-oracle:before {
   mask-image: url('./systems/foundry-ironsworn/assets/oracle.svg');
@@ -58,21 +58,20 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    tooltip: String,
-    icon: String,
-    hoverBg: Boolean,
-    disabled: Boolean,
-  },
-  computed: {
-    classes() {
-      return {
-        [`svg-${this.icon}`]: true,
-        ['icon-bg-hover']: this.hoverBg,
-      }
-    },
-  },
-}
+<script setup lang="ts">
+import { computed } from '@vue/runtime-core'
+const props = defineProps<{
+  tooltip?: string
+  icon: string
+  hoverBg?: boolean
+  disabled?: boolean
+}>()
+defineEmits(['click'])
+
+const classes = computed(() => {
+  return {
+    [`svg-${props.icon}`]: true,
+    ['icon-bg-hover']: props.hoverBg,
+  }
+})
 </script>

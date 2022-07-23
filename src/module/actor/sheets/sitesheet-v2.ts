@@ -1,41 +1,27 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { SiteDataSource } from '../actortypes'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import { VueActorSheet } from '../../vue/vueactorsheet'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import siteSheetVue from '../../vue/site-sheet.vue'
 
-export class IronswornSiteSheetV2 extends IronswornVueActorSheet {
-  get siteData() {
-    return this.actor.data as SiteDataSource
-  }
-
+export class IronswornSiteSheetV2 extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'site',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
       width: 700,
       height: 650,
-      template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
       resizable: false,
-      submitOnClose: true,
-      submitOnChange: true,
     })
   }
 
-  getData() {
-    let data: any = super.getData()
-
-    // Allow every itemtype to add data to the actorsheet
-    for (const itemType of CONFIG.IRONSWORN.itemClasses) {
-      data = itemType.getActorSheetData(data, this)
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'site-sheet': siteSheetVue },
     }
+  }
 
-    data.actor = this.actor.toObject(false)
-    data.data = data.actor.data
-
-    return data
+  get siteData() {
+    return this.actor.data as SiteDataSource
   }
 
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {

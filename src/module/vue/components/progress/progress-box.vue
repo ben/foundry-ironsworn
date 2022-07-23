@@ -13,34 +13,34 @@
           <div class="flexrow">
             <rank-hexes :current="item.data.rank" @click="rankClick" />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               v-if="editMode"
               icon="trash"
               @click="destroy"
               :tooltip="$t('IRONSWORN.DeleteItem')"
             />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               icon="edit"
               @click="edit"
               :tooltip="$t('IRONSWORN.Edit')"
             />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               v-if="editMode"
               :icon="completedIcon"
               @click="toggleComplete"
               :tooltip="completedTooltip"
             />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               v-if="editMode && item.data.hasTrack"
               icon="caret-left"
               @click="retreat"
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
             />
             <btn-faicon
-              class="block"
+              class="block nogrow"
               v-if="item.data.hasTrack"
               icon="caret-right"
               @click="advance"
@@ -48,6 +48,7 @@
             />
             <btn-rollprogress
               v-if="item.data.hasTrack"
+              :item="item"
               :tooltip="$t('IRONSWORN.ProgressRoll')"
               class="flexrow nogrow block"
             />
@@ -55,7 +56,7 @@
           <h4 class="flexrow">
             <span>{{ item.name }}</span>
             <btn-faicon
-              class="block"
+              class="block nogrow"
               icon="star"
               :solid="item.data.starred"
               :tooltip="$t('IRONSWORN.StarProgress')"
@@ -71,7 +72,7 @@
           v-if="item.data.hasClock"
           class="nogrow"
           style="flex-basis: 50px; margin: 0 0.5rem"
-          :size="50"
+          size="50px"
           :wedges="item.data.clockMax"
           :ticked="item.data.clockTicks"
           @click="setClock"
@@ -92,76 +93,83 @@ h5.vertical-v2 {
 }
 </style>
 
-<script>
-export default {
-  props: {
-    actor: { type: Object, required: true },
-    item: { type: Object, required: true },
-    showStar: Boolean,
-  },
+<script lang="ts" setup>
+import { capitalize, computed, inject, Ref } from 'vue'
+import { $ActorKey } from '../../provisions'
+import Clock from '../clock.vue'
+import ProgressTrack from './progress-track.vue'
+import BtnRollprogress from '../buttons/btn-rollprogress.vue'
+import BtnFaicon from '../buttons/btn-faicon.vue'
+import RankHexes from '../rank-hexes/rank-hexes.vue'
+import DocumentImg from '../document-img.vue'
 
-  computed: {
-    editMode() {
-      return this.actor.flags['foundry-ironsworn']?.['edit-mode']
-    },
-    showTrackButtons() {
-      return this.item.data.hasTrack
-    },
-    foundryItem() {
-      const actor = game.actors?.get(this.actor._id)
-      return actor?.items.get(this.item._id)
-    },
-    subtitle() {
-      let subtype = this.$capitalize(this.item.data.subtype)
-      if (subtype === 'Bond') subtype = 'Connection' // translate name
-      return this.$t(`IRONSWORN.${subtype}`)
-    },
-    completedIcon() {
-      return this.item.data.completed ? 'check-circle' : 'circle-notch'
-    },
-    completedTooltip() {
-      const suffix = this.item.data.completed ? 'Completed' : 'NotCompleted'
-      return this.$t('IRONSWORN.' + suffix)
-    },
-  },
+const props = defineProps<{
+  item: any
+  showStar?: boolean
+}>()
 
-  methods: {
-    edit() {
-      this.foundryItem.sheet.render(true)
-    },
-    destroy() {
-      const item = this.foundryItem
-      const titleKey = `IRONSWORN.Delete${this.$capitalize(item?.type || '')}`
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
+const $item = () => $actor?.items.get(props.item._id)
 
-      Dialog.confirm({
-        title: game.i18n.localize(titleKey),
-        content: `<p><strong>${game.i18n.localize(
-          'IRONSWORN.ConfirmDelete'
-        )}</strong></p>`,
-        yes: () => item?.delete(),
-        defaultYes: false,
-      })
-    },
-    rankClick(rank) {
-      this.foundryItem.update({ data: { rank } })
-    },
-    advance() {
-      this.foundryItem.markProgress(1)
-    },
-    retreat() {
-      this.foundryItem.markProgress(-1)
-    },
-    toggleComplete() {
-      const completed = !this.item.data.completed
-      if (completed) this.$emit('completed')
-      this.$item.update({ data: { completed } })
-    },
-    toggleStar() {
-      this.$item.update({ data: { starred: !this.item.data.starred } })
-    },
-    setClock(num) {
-      this.$item.update({ data: { clockTicks: num } })
-    },
-  },
+const editMode = computed(() => {
+  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
+})
+const showTrackButtons = computed(() => {
+  return props.item.data.hasTrack
+})
+const foundryItem = computed(() => {
+  return $actor?.items.get(props.item._id)
+})
+const subtitle = computed(() => {
+  let subtype = capitalize(props.item.data.subtype)
+  if (subtype === 'Bond') subtype = 'Connection' // translate name
+  return game.i18n.localize(`IRONSWORN.${subtype}`)
+})
+const completedIcon = computed(() => {
+  return props.item.data.completed ? 'check-circle' : 'circle-notch'
+})
+const completedTooltip = computed(() => {
+  const suffix = props.item.data.completed ? 'Completed' : 'NotCompleted'
+  return game.i18n.localize('IRONSWORN.' + suffix)
+})
+
+function edit() {
+  $item()?.sheet?.render(true)
+}
+function destroy() {
+  const item = $item()
+  const titleKey = `IRONSWORN.Delete${capitalize(item?.type || '')}`
+
+  Dialog.confirm({
+    title: game.i18n.localize(titleKey),
+    content: `<p><strong>${game.i18n.localize(
+      'IRONSWORN.ConfirmDelete'
+    )}</strong></p>`,
+    yes: () => item?.delete(),
+    defaultYes: false,
+  })
+}
+function rankClick(rank) {
+  $item()?.update({ data: { rank } })
+}
+function advance() {
+  $item()?.markProgress(1)
+}
+function retreat() {
+  $item()?.markProgress(-1)
+}
+
+const $emit = defineEmits(['completed'])
+function toggleComplete() {
+  const completed = !props.item.data.completed
+  if (completed) $emit('completed')
+  $item()?.update({ data: { completed } })
+}
+function toggleStar() {
+  $item()?.update({ data: { starred: !props.item.data.starred } })
+}
+function setClock(num) {
+  $item()?.update({ data: { clockTicks: num } })
 }
 </script>

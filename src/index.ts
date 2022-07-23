@@ -20,17 +20,15 @@ import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { registerChatAlertHooks } from './module/features/chat-alert'
 import { registerCompendiumCategoryHook } from './module/features/compendium-categories'
-import { maybePromptForDependencies } from './module/features/dependencies'
 import { registerDragAndDropHooks } from './module/features/drag-and-drop'
 import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
 import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
 import { themeSetup } from './module/features/visual-theme'
-import { registerZIndexHook } from './module/features/z-index'
+import { patchZIndex } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
-import { TemplatePreloader } from './module/helpers/templatepreloader'
 import { AssetSheet } from './module/item/asset/assetsheet'
 import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
 import { BondsetSheet } from './module/item/bondset/bondsetsheet'
@@ -41,8 +39,6 @@ import { MoveSheet } from './module/item/move/movesheet'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
-
-import './styles/styles.less'
 
 declare global {
   interface LenientGlobalVariableTypes {
@@ -174,22 +170,17 @@ Hooks.once('init', async () => {
     label: 'Progress Sheet',
   })
 
-  // Preload all needed templates
-  await TemplatePreloader.preloadHandlebarsTemplates()
-
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
   IronswornChatCard.registerHooks()
-  activateSceneButtonListeners()
-  registerZIndexHook()
+  patchZIndex()
   registerCompendiumCategoryHook()
   registerTokenHUDButtons()
+  activateSceneButtonListeners()
 })
 
 Hooks.once('ready', async () => {
   await runDataMigrations()
-
-  await maybePromptForDependencies()
 
   registerDragAndDropHooks()
   registerChatAlertHooks()
@@ -245,26 +236,3 @@ Hooks.once('setup', () => {
     return renderTemplate(chatOptions.template || template, chatData)
   }
 })
-
-/* -------------------------------- */
-/*	Webpack HMR                     */
-/* -------------------------------- */
-if (module.hot) {
-  module.hot.accept()
-
-  if (module.hot.status() === 'apply') {
-    for (const template in _templateCache) {
-      if (Object.prototype.hasOwnProperty.call(_templateCache, template)) {
-        delete _templateCache[template]
-      }
-    }
-
-    TemplatePreloader.preloadHandlebarsTemplates().then(() => {
-      for (const application in ui.windows) {
-        if (Object.prototype.hasOwnProperty.call(ui.windows, application)) {
-          ui.windows[application].render(true)
-        }
-      }
-    })
-  }
-}

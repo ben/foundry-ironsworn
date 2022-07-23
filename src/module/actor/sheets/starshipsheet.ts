@@ -1,40 +1,20 @@
-import { IronswornSettings } from '../../helpers/settings'
-import { StarshipDataSource } from '../actortypes'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import starshipSheetVue from '../../vue/starship-sheet.vue'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 
-export class StarshipSheet extends IronswornVueActorSheet {
-  get starshipData() {
-    return this.actor.data as StarshipDataSource
-  }
-
+export class StarshipSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'starship',
-        `theme-${IronswornSettings.theme}`,
-      ],
+      template: 'systems/foundry-ironsworn/templates/actor/starship.hbs',
       width: 500,
       height: 500,
-      template: 'systems/foundry-ironsworn/templates/actor/starship.hbs',
-      submitOnClose: true,
-      submitOnChange: true,
     })
   }
 
-  getData() {
-    let data: any = super.getData()
-
-    // Allow every itemtype to add data to the actorsheet
-    for (const itemType of CONFIG.IRONSWORN.itemClasses) {
-      data = itemType.getActorSheetData(data, this)
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'starship-sheet': starshipSheetVue },
     }
-
-    data.actor = this.actor.toObject(false)
-    data.data = data.actor.data
-
-    return data
   }
 
   _getHeaderButtons() {

@@ -49,35 +49,34 @@
 }
 </style>
 
-<script>
-export default {
-  props: {
-    item: Object,
-  },
-  computed: {
-    editMode() {
-      return this.item.flags['foundry-ironsworn']?.['edit-mode']
-    },
-  },
-  methods: {
-    enterEditMode() {
-      this.$item.setFlag('foundry-ironsworn', 'edit-mode', true)
-    },
-    addField() {
-      this.enterEditMode()
-      const fields = Object.values(this.item.data.fields)
-      fields.push({ name: ' ', value: ' ' })
-      this.$item.update({ data: { fields } })
-    },
-    deleteField(idx) {
-      const fields = Object.values(this.item.data.fields)
-      fields.splice(idx, 1)
-      this.$item.update({ data: { fields } })
-    },
-    save() {
-      const fields = Object.values(this.item.data.fields)
-      this.$item.update({ data: { fields } })
-    },
-  },
+<script setup lang="ts">
+import { computed, inject, Ref } from 'vue'
+import { $ItemKey } from '../../provisions'
+import BtnFaicon from '../buttons/btn-faicon.vue'
+
+const item = inject('item') as Ref
+const $item = inject($ItemKey)
+
+const editMode = computed(() => {
+  return item.value.flags['foundry-ironsworn']?.['edit-mode']
+})
+
+function enterEditMode() {
+  $item?.setFlag('foundry-ironsworn', 'edit-mode', true)
+}
+function addField() {
+  enterEditMode()
+  const fields = Object.values(item.value.data.fields)
+  fields.push({ name: ' ', value: ' ' })
+  $item?.update({ data: { fields } })
+}
+function deleteField(idx) {
+  const fields = Object.values(item.value.data.fields) as any[]
+  fields.splice(idx, 1)
+  $item?.update({ data: { fields } })
+}
+function save() {
+  const fields = Object.values(item.value.data.fields) as any[]
+  $item?.update({ data: { fields } })
 }
 </script>

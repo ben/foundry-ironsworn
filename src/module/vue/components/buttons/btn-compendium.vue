@@ -10,19 +10,13 @@
   </btn-faicon>
 </template>
 
-<style lang="less"></style>
+<script lang="ts" setup>
+import BtnFaicon from './btn-faicon.vue'
 
-<script>
-export default {
-  props: {
-    compendium: String,
-    disabled: Boolean,
-  },
-  methods: {
-    async openCompendium() {
-      const pack = game.packs?.get(`foundry-ironsworn.${this.compendium}`)
-      pack?.render(true)
-    },
-  },
+const props = defineProps<{ compendium: string; disabled?: boolean }>()
+
+async function openCompendium() {
+  const pack = game.packs?.get(`foundry-ironsworn.${props.compendium}`)
+  pack?.render(true)
 }
 </script>

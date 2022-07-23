@@ -1,34 +1,20 @@
-import { IronswornSettings } from '../../helpers/settings'
-import { IronswornVueActorSheet } from '../vueactorsheet'
+import foeSheetVue from '../../vue/components/foe-sheet.vue'
+import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { VueActorSheet } from '../../vue/vueactorsheet'
 
-export class FoeSheet extends IronswornVueActorSheet {
+export class FoeSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: [
-        'ironsworn',
-        'sheet',
-        'shared',
-        `theme-${IronswornSettings.theme}`,
-      ],
-      width: 400,
-      height: 500,
       template: 'systems/foundry-ironsworn/templates/actor/foe.hbs',
-      submitOnClose: true,
-      submitOnChange: true,
+      width: 450,
+      height: 500,
     })
   }
 
-  getData() {
-    let data: any = super.getData()
-
-    // Allow every itemtype to add data to the actorsheet
-    for (const itemType of CONFIG.IRONSWORN.itemClasses) {
-      data = itemType.getActorSheetData(data, this)
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'foe-sheet': foeSheetVue },
     }
-
-    data.actor = this.actor.toObject(false)
-
-    return data
   }
 
   _getHeaderButtons() {

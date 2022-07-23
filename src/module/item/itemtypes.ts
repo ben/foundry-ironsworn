@@ -14,7 +14,7 @@ interface AssetField {
   value: string
 }
 
-interface AssetAbility {
+export interface AssetAbility {
   name?: string
   enabled: boolean
   description: string

@@ -3,9 +3,7 @@
 <template>
   <button
     class="icon-button clickable"
-    :class="classes"
     type="button"
-    @click="$emit('click')"
     :tooltip="tooltip"
     :aria-label="tooltip"
     :data-tooltip="tooltip"
@@ -17,18 +15,16 @@
     </span>
   </button>
 </template>
-<script>
-export default {
-  props: {
-    tooltip: String,
-    disabled: Boolean,
-  },
-  computed: {
-    hasDefaultSlot() {
-      return !!this.$slots.default
-    },
-  },
-}
+
+<script setup lang="ts">
+import { computed, useSlots } from '@vue/runtime-core'
+
+defineProps<{ tooltip?: string; disabled?: boolean }>()
+
+const slots = useSlots()
+const hasDefaultSlot = computed(() => {
+  return !!slots.default
+})
 </script>
 
 <style lang="less">

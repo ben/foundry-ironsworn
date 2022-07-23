@@ -1,12 +1,17 @@
 import { IronswornSettings } from '../helpers/settings'
 
+import '../../styles/styles.less'
+import '../../styles/themes/ironsworn.less'
+import '../../styles/themes/starforged.less'
+
 export function themeSetup() {
   const currentTheme = IronswornSettings.theme
 
-  if (currentTheme === 'starforged') {
-    CONFIG.TinyMCE.content_css =
-      '/systems/foundry-ironsworn/styles/starforged-tinymce.css'
-  }
+  $(document.body).addClass(`theme-${currentTheme}`)
 
-  require(`../../styles/themes/${currentTheme}.less`)
+  if (currentTheme === 'starforged') {
+    CONFIG.TinyMCE.content_css?.push(
+      '/systems/foundry-ironsworn/styles/starforged-tinymce.css'
+    )
+  }
 }
