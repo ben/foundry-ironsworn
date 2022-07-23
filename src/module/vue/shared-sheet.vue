@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <header class="sheet-header nogrow">
+    <header class="sheet-header flexrow nogrow" style="gap: 5px">
       <document-img :document="actor" />
       <document-name :document="actor" />
     </header>

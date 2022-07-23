@@ -1,8 +1,8 @@
 <template>
   <div class="flexcol">
     <!-- HEADER -->
-    <header class="sheet-header">
-      <document-img :document="actor" style="margin: 5px" />
+    <header class="sheet-header" style="gap: 5px">
+      <document-img :document="actor" />
       <document-name :document="actor" />
     </header>
 

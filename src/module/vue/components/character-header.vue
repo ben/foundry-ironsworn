@@ -1,9 +1,9 @@
 <template>
-  <header class="sheet-header">
-    <document-img :document="actor" style="margin: 5px" />
+  <header class="sheet-header" style="gap: 5px">
+    <document-img :document="actor" />
     <document-name :document="actor" />
-    <div class="flexrow xp">
-      <h4 style="flex-grow: 0; margin: 5px">{{ $t('IRONSWORN.XP') }}</h4>
+    <div class="flexrow xp" style="gap: 5px">
+      <h4 class="nogrow" style="margin: 0">{{ $t('IRONSWORN.XP') }}</h4>
       <div class="flexrow">
         <xp-box :value="0" @click="setXp(0)">×</xp-box>
         <xp-box

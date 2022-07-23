@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol">
     <!-- Header row -->
-    <character-header :actor="actor"></character-header>
+    <character-header />
 
     <!-- Main body row -->
     <div class="flexrow">
@@ -196,8 +196,6 @@ import { IronswornActor } from '../actor/actor'
 import { provide, computed, inject } from 'vue'
 import { RollDialog } from '../helpers/rolldialog'
 import CharacterHeader from './components/character-header.vue'
-import DocumentImg from './components/document-img.vue'
-import DocumentName from './components/document-name.vue'
 import XpBox from './components/xp-box.vue'
 import Conditions from './components/conditions/conditions.vue'
 import { throttle } from 'lodash'
