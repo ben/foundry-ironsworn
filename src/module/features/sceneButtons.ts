@@ -136,44 +136,44 @@ export function activateSceneButtonListeners() {
       tools: [
         {
           name: 'edit',
-          icon: 'isicon-galaxy',
-          // TODO: more informative string
+          icon: 'isicon-region-sf',
+          // TODO: more informative string - 'set region'?
           title: game.i18n.localize('IRONSWORN.Edit'),
           onClick: editSector,
         },
         {
           name: 'sector',
-          icon: 'isicon-hexes',
+          icon: 'isicon-sector',
           title: game.i18n.localize('IRONSWORN.NewSector'),
           onClick: warn,
         },
         {
           name: 'star',
-          icon: 'isicon-star-prominences',
+          icon: 'isicon-stellar-object',
           title: game.i18n.localize('IRONSWORN.NewStar'),
           onClick: newStar,
         },
         {
           name: 'planet',
-          icon: 'isicon-ringed-planet',
+          icon: 'isicon-world',
           title: game.i18n.localize('IRONSWORN.NewPlanet'),
           onClick: newPlanet,
         },
         {
           name: 'settlement',
-          icon: 'isicon-modern-city',
+          icon: 'isicon-settlement-sf',
           title: game.i18n.localize('IRONSWORN.NewSettlement'),
           onClick: newSettlement,
         },
         {
           name: 'derelict',
-          icon: 'isicon-broken-wall',
+          icon: 'isicon-derelict',
           title: game.i18n.localize('IRONSWORN.NewDerelict'),
           onClick: newDerelict,
         },
         {
           name: 'vault',
-          icon: 'isicon-moebius-triangle',
+          icon: 'isicon-precursor-vault',
           title: game.i18n.localize('IRONSWORN.NewVault'),
           onClick: newVault,
         },

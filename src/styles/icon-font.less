@@ -39,47 +39,55 @@
   content: '\e900';
 }
 
+// these are configured to make adding them from game-icons.net take as little effort as possible
+// luminance means that #FFF has alpha = 1, and #000 has alpha = 0.
+// 1) get an svg of the icon with the default settings from game-icons
+// 2) drop it in system/assets/icons
+// 3) add the corresponding filename to the @icons hash object below
 
+// key = filename w/o extension
+// value = use alpha? (true: alpha, false: luminance)
+// use 'alpha' for icons that have a transparent background
+// use 'luminance' for icons that have a black background (e.g. game-icons default settings); the black will render as transparent
+// recommended to include the original filename as a comment - makes it easier to find + credit the original :)
+@icons: {
+  creature: false; // dna1
+  derelict: false; // crime-scene-tape
+  faction: false; // vertical-banner
+  monstrosity: false; // beast-eye
+  npc-sf: false; // id-card
+  precursor-vault: false; // moebius-triangle
+  region-sf: false; // galaxy
+  sector: false; // hexes
+  settlement-is: false; // huts-village
+  settlement-sf: false; // modern-city
+  starship: false; // spaceship
+  stellar-object: false; // star-prominences
+  world: false; // ringed-planet
 
-  // d10-tilt,
-
-
-  // starforged, ironsworn, delve,
-
-
-@icons:
-  galaxy,
-  hexes,
-  modern-city,
-  spaceship,
-  ringed-planet,
-  star-prominences,
-  moebius-triangle,
-  broken-wall,
-  dna1,
-  vertical-banner
-  ;
-
+  stat-edge: false; // https://game-icons.net/1x1/lorc/slicing-arrow.html
+  // edge alt: https://game-icons.net/1x1/lorc/wingfoot.html
+  // edge alt: https://game-icons.net/1x1/delapouite/liberty-wing.html
+  stat-heart: false; // crowned-heart https://game-icons.net/1x1/lorc/crowned-heart.html
+  stat-iron: false; // swords-emblem https://game-icons.net/1x1/lorc/swords-emblem.html
+  stat-shadow: false; // double-face-mask-1 https://game-icons.net/1x1/lorc/double-face-mask.html
+  // shadow alt: https://game-icons.net/1x1/lorc/eclipse.html
+  stat-wits: false; // star-pupil https://game-icons.net/1x1/lorc/star-pupil.html
+  // wits alt: https://game-icons.net/1x1/lorc/sheikah-eye.html
+};
 
 each(@icons, {
-  .isicon-@{value} {
+  .isicon-@{key} {
     &:before {
       content: '';
-      mask-image: url('../../system/assets/icons/@{value}.svg');
+      mask-image: url('/assets/icons/@{key}.svg');
       mask-repeat: no-repeat;
       mask-position: center;
-      // these are configured to make adding them from game-icons.net take as little effort as possible
-      // luminance means that #FFF has alpha = 1, and #000 has alpha = 0.
-      // 1) get an svg of the icon with the default settings from game-icons
-      // 2) drop it in system/assets/icons
-      // 3) add the corresponding filename to the @icons array
-      // 4) copy files to the foundry data folder as normal
-      mask-mode: luminance;
+      mask-mode: if((@value), alpha, luminance) ;
       background-color: currentColor;
       height: 100%;
       display: block;
       width: auto;
-      // padding: 0.05em;
     }
   }
 });
