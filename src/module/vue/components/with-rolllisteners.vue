@@ -12,7 +12,7 @@ import { $ActorKey, $EmitterKey } from '../provisions'
 
 const props = defineProps<{ element: string }>()
 
-const $actor = inject($ActorKey)
+const $actor = inject($ActorKey, undefined)
 const el = ref<HTMLElement>()
 onMounted(() => {
   if (!el.value) {

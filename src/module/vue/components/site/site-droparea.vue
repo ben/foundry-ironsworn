@@ -47,7 +47,6 @@ import DocumentImg from '../document-img.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 
-const actor = inject('actor') as any
 const props = defineProps<{
   item: any
   itemType: string
@@ -58,8 +57,9 @@ const props = defineProps<{
 const $actor = inject($ActorKey)
 const $item = $actor?.items.get(props.item._id)
 
+const actor = inject('actor') as any
 const editMode = computed(() => {
-  return props.item.flags['foundry-ironsworn']?.['edit-mode']
+  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })
 
 function destroy() {
