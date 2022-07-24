@@ -2,6 +2,8 @@
 
 ## In progress
 
+- A small fix that should allow DF Manual Rolls to work properly (fixes [#411](https://github.com/ben/foundry-ironsworn/issues/411))
+
 ## 1.16.0
 
 - Replace the quirky Quill editor with a Vue wrapper around Foundry's TinyMCE.
