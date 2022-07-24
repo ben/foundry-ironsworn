@@ -4,10 +4,10 @@
   "title": "Ironsworn & Starforged",
   "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkins.",
   "license": "LICENSE.txt",
-  "version": "1.16.0",
+  "version": "1.16.1",
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
-  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.16.0/ironsworn.zip",
+  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.16.1/ironsworn.zip",
   "minimumCoreVersion": "9",
   "compatibleCoreVersion": "9",
   "compatibility": {
