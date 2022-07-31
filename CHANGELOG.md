@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.16.2
+
 - First release that fully loads under Foundry v10 ([#413](https://github.com/ben/foundry-ironsworn/pull/413))
 
 ## 1.16.1
