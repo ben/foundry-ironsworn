@@ -9,10 +9,10 @@
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
   "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.16.1/ironsworn.zip",
   "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "9",
+  "compatibleCoreVersion": "10",
   "compatibility": {
     "minimum": 9,
-    "verified": 9
+    "verified": 10
   },
   "authors": [
     {

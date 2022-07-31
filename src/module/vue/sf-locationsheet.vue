@@ -31,7 +31,7 @@
     </div>
 
     <!-- Klass -->
-    <label class="flexrow" style="position: relative; gap: 10px">
+    <label class="flexrow nogrow" style="position: relative; gap: 10px">
       <!-- TODO: i18n and subtype text -->
       <span class="select-label">{{ subtypeSelectText }}:</span>
       <select
@@ -155,8 +155,12 @@ label {
 .box {
   padding: 7px;
 }
-.highlighted {
-  background: #33999933;
+.theme-starforged .highlighted {
+  background: #055;
+}
+
+.theme-ironsworn .highlighted {
+  background: #ccc;
 }
 </style>
 
