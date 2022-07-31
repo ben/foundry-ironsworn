@@ -2,6 +2,8 @@
 
 ## In progress
 
+- First release that fully loads under Foundry v10 ([#413](https://github.com/ben/foundry-ironsworn/pull/413))
+
 ## 1.16.1
 
 - A small fix that should allow DF Manual Rolls to work properly (fixes [#411](https://github.com/ben/foundry-ironsworn/issues/411))
