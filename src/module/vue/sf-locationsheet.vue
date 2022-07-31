@@ -155,8 +155,12 @@ label {
 .box {
   padding: 7px;
 }
-.highlighted {
-  background: #33999933;
+.theme-starforged .highlighted {
+  background: #055;
+}
+
+.theme-ironsworn .highlighted {
+  background: #ccc;
 }
 </style>
 
