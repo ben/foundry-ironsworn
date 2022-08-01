@@ -1,5 +1,5 @@
-import { IMoveTrigger } from 'dataforged'
-import { maxBy, minBy } from 'lodash'
+import { IMoveTrigger, RollMethod, RollType } from 'dataforged'
+import { kebabCase, maxBy, minBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import {
   createStarforgedMoveRollChat,
@@ -60,12 +60,17 @@ export class SFRollMoveDialog extends Dialog {
 
     const title = move.name || 'MOVE'
     const buttons = {}
-    const addButton = (i: number, mode: string, stats: string[]) => {
+    const addButton = (i: number, mode: RollMethod, stats: string[]) => {
       // TODO: i18n
       const label = mode === 'Any' ? stats[0] : `${mode} of ${stats.join(', ')}`
+
       buttons[i.toString()] = {
+        // use the below instead as a silly method for sneaking classes in
+        // buttons[
+        //   kebabCase(label) + ' clickable isicon-d10-tilt juicy icon-button'
+        // ] = {
         label,
-        icon: '<i class="isicon-d10-tilt"></i>',
+        icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: callback({ actor, move, mode, stats }),
       }
     }
@@ -108,7 +113,7 @@ export class SFRollMoveDialog extends Dialog {
 function callback(opts: {
   actor: IronswornActor
   move: IronswornItem
-  mode: string
+  mode: RollMethod
   stats: string[]
 }) {
   return async (x) => {
@@ -127,7 +132,7 @@ Hooks.on('renderSFRollMoveDialog', async (_dialog, html, _data) => {
 async function rollAndCreateChatMessage(opts: {
   actor: IronswornActor
   move: IronswornItem
-  mode: string
+  mode: RollMethod
   stats: string[]
   bonus: number
 }) {

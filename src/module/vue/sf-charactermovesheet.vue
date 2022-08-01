@@ -32,7 +32,7 @@ provide(
 )
 
 const $emitter = inject($EmitterKey)
-$emitter?.on('*', (...args) => console.log(...args))
+// $emitter?.on('*', (...args) => console.log(...args))
 
 const tabs = ref<InstanceType<typeof Tabs>>()
 const movesTab = ref<InstanceType<typeof SfMovesheetmoves>>()

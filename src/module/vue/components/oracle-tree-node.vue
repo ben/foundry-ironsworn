@@ -1,28 +1,26 @@
 <template>
   <div
     class="flexcol nogrow movesheet-row"
-    :class="{ hidden: node?.forceHidden, highlighted: data.highlighted }"
+    :class="{ hidden: node?.forceHidden, highlighted: state.highlighted }"
     ref="$el"
   >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
     <div v-if="isLeaf">
-      <h4 class="clickable text flexrow">
-        <span @click="rollOracle">
-          <i class="isicon-d10-tilt juicy"></i>
+      <h4 class="flexrow">
+        <btn-oracle class="juicy text" :node="node">
           {{ node?.displayName }}
-        </span>
+        </btn-oracle>
         <btn-faicon
-          v-if="isLeaf"
           class="block nogrow"
           icon="eye"
-          @click="data.descriptionExpanded = !data.descriptionExpanded"
+          @click="toggleDescription()"
         />
       </h4>
 
       <transition name="slide">
         <with-rolllisteners
-          v-if="data.descriptionExpanded"
+          v-if="state.descriptionExpanded"
           element="div"
           @moveclick="moveclick"
           @oracleclick="oracleclick"
@@ -35,20 +33,23 @@
 
     <!-- Branch node -->
     <div v-else>
-      <h4
-        class="clickable text flexrow"
-        @click="data.manuallyExpanded = !data.manuallyExpanded"
-      >
-        <span class="nogrow" style="flex-basis: 15px">
-          <i v-if="expanded" class="fa fa-caret-down" />
-          <i v-else class="fa fa-caret-right" />
-        </span>
-        {{ node?.displayName }}
+      <h4 class="flexrow">
+        <btn-faicon
+          class="juicy text"
+          :icon="state.manuallyExpanded ? 'caret-down' : 'caret-right'"
+          @click="toggleManually()"
+        >
+          {{ node?.displayName }}
+        </btn-faicon>
       </h4>
 
       <transition name="slide">
-        <div class="flexcol" v-show="expanded" style="margin-left: 1rem">
-          <oracletree-node
+        <div
+          v-if="state.manuallyExpanded"
+          class="flexcol"
+          style="margin-left: 1rem"
+        >
+          <oracle-tree-node
             v-for="child in node?.children"
             :key="child.displayName"
             :node="child"
@@ -67,6 +68,14 @@
 }
 h4 {
   margin-bottom: 4px;
+  line-height: 1;
+  height: min-content;
+  button {
+    line-height: 1;
+    text-transform: uppercase;
+    height: min-content;
+    padding: 0;
+  }
 }
 .hidden {
   display: none;
@@ -80,18 +89,19 @@ h4 {
 <script setup lang="ts">
 import { sample, sortBy } from 'lodash'
 import { Component, computed, inject, reactive, ref } from 'vue'
-import { OracleTreeNode } from '../../features/customoracles'
+import { IOracleTreeNode } from '../../features/customoracles'
 import WithRolllisteners from './with-rolllisteners.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
+import BtnOracle from './buttons/btn-oracle.vue'
 import { $ActorKey, $EmitterKey, $EnrichMarkdownKey } from '../provisions'
 import { IronswornItem } from '../../item/item'
 
-const props = defineProps<{ node: OracleTreeNode }>()
+const props = defineProps<{ node: IOracleTreeNode }>()
 
 const $actor = inject($ActorKey)
 
-const data = reactive({
-  manuallyExpanded: false,
+const state = reactive({
+  manuallyExpanded: props.node.forceExpanded ?? false,
   descriptionExpanded: false,
   highlighted: false,
 })
@@ -100,9 +110,14 @@ const isLeaf = computed(() => {
   return props.node.tables.length > 0
 })
 
-const expanded = computed(() => {
-  return data.manuallyExpanded || props.node.forceExpanded
-})
+function toggleDescription() {
+  // console.log('toggle description')
+  state.descriptionExpanded = !state.descriptionExpanded
+}
+function toggleManually() {
+  // console.log('toggle manually')
+  state.manuallyExpanded = !state.manuallyExpanded
+}
 
 const $enrichMarkdown = inject($EnrichMarkdownKey)
 const tablePreview = computed(() => {
@@ -130,11 +145,6 @@ const tablePreview = computed(() => {
   return $enrichMarkdown?.(texts.join('\n\n'))
 })
 
-async function rollOracle() {
-  const table = sample(props.node.tables)
-  CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
-}
-
 // Click on a move link: broadcast event
 const $emitter = inject($EmitterKey)
 function moveclick(item: IronswornItem) {
@@ -146,28 +156,28 @@ function oracleclick(dfid) {
 }
 
 const children = ref([] as any[])
+
 function collapse() {
-  data.manuallyExpanded = false
-  data.descriptionExpanded = false
+  state.manuallyExpanded = false
+  state.descriptionExpanded = false
   for (const child of children.value ?? []) {
     child.collapse()
   }
 }
-
 function expand() {
-  data.manuallyExpanded = true
+  state.manuallyExpanded = true
 }
 
 const $el = ref<HTMLElement>()
 $emitter?.on('highlightOracle', (dfid) => {
   if (props.node.dataforgedNode?.$id === dfid) {
-    data.highlighted = true
+    state.highlighted = true
     $el.value?.scrollIntoView({
       behavior: 'smooth',
       block: 'center',
     })
     setTimeout(() => {
-      data.highlighted = false
+      state.highlighted = false
     }, 2000)
   }
 })

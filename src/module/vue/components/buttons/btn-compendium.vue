@@ -5,9 +5,8 @@
     @click="openCompendium"
     aria-haspopup="dialog"
     :disabled="disabled"
-  >
-    <slot></slot>
-  </btn-faicon>
+    ><slot name="default"></slot
+  ></btn-faicon>
 </template>
 
 <script lang="ts" setup>

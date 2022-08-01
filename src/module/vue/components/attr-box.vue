@@ -1,11 +1,8 @@
-
 <template>
   <div :class="classes" @click="click">
+    <i v-if="!editMode" class="bg-die isicon-d10-tilt"></i>
     <h4>{{ $t(i18nKey) }}</h4>
     <div class="flexrow" style="position: relative">
-      <div v-if="!editMode" class="bg-die">
-        <i class="isicon-d10-tilt"></i>
-      </div>
       <div class="clickable text" v-if="editMode" @click="decrement">
         &minus;
       </div>
@@ -18,12 +15,17 @@
 </template>
 
 <style lang="less" scoped>
+.stat {
+  position: relative;
+}
 .bg-die {
   position: absolute;
-  left: 19px;
-  top: -17px;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
   opacity: 0;
-  font-size: 35px;
+  pointer-events: none;
 }
 
 .stat:hover .bg-die {

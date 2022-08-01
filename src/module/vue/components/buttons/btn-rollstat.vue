@@ -1,15 +1,14 @@
 <template>
   <btn-isicon
-    @click="rollStat()"
+    @click="rollStat"
     :tooltip="tooltip"
     class="action-roll stat-roll"
     :class="attr"
     icon="d10-tilt"
     aria-haspopup="dialog"
     :disabled="disabled"
-  >
-    <slot></slot>
-  </btn-isicon>
+    ><slot name="default"></slot
+  ></btn-isicon>
 </template>
 
 <script lang="ts" setup>
@@ -34,7 +33,7 @@ const $item = computed(() => {
 })
 
 function rollStat() {
-  console.log(props, $item.value)
+  // console.log(props, $item.value)
   RollDialog.show({
     actor: $actor,
     stat: props.attr,

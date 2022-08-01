@@ -20,7 +20,7 @@
     </div>
 
     <div class="flexcol item-list">
-      <TreeNode
+      <OracleTreeNode
         v-for="node in treeRoot.children"
         :key="node.displayName"
         :node="node"
@@ -41,19 +41,19 @@ import { inject, nextTick, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
 import {
   createStarforgedOracleTree,
-  OracleTreeNode,
+  IOracleTreeNode,
 } from '../../features/customoracles'
 import { $EmitterKey } from '../provisions'
-import TreeNode from './oracletree-node.vue'
+import OracleTreeNode from './oracle-tree-node.vue'
 
 const tempTreeRoot = await createStarforgedOracleTree()
 // Add the flags we'll use for UI stuff later
-function walk(node: OracleTreeNode) {
+function walk(node: IOracleTreeNode) {
   node.forceExpanded = node.forceHidden = false
   node.children.forEach(walk)
 }
 walk(tempTreeRoot)
-const treeRoot = reactive<OracleTreeNode>(tempTreeRoot)
+const treeRoot = reactive<IOracleTreeNode>(tempTreeRoot)
 
 const search = reactive({ q: '' })
 watch(search, ({ q }) => {
@@ -66,7 +66,7 @@ watch(search, ({ q }) => {
   if (q && re) {
     // Walk the tree and test each name.
     // Force expanded on all parent nodes leading to a match
-    const walk = (node: OracleTreeNode, parentMatch: boolean): boolean => {
+    const walk = (node: IOracleTreeNode, parentMatch: boolean): boolean => {
       // Match against current name (i18n) but also aliases in Dataforged
       let thisMatch = re.test(node.displayName)
       for (const alias of node.dataforgedNode?.Aliases ?? []) {
@@ -101,7 +101,7 @@ function clearSearch() {
   search.q = ''
 }
 
-const oracles = ref<InstanceType<typeof TreeNode>[]>([])
+const oracles = ref<InstanceType<typeof OracleTreeNode>[]>([])
 
 function collapseAll() {
   for (const node of oracles.value) {

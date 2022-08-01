@@ -2,12 +2,10 @@
   <btn-icon
     class="svg-icon"
     :class="classes"
-    @click="$emit('click')"
     :tooltip="tooltip"
     :disabled="disabled"
-  >
-    <slot></slot>
-  </btn-icon>
+    ><slot name="default"></slot
+  ></btn-icon>
 </template>
 
 <style lang="less">

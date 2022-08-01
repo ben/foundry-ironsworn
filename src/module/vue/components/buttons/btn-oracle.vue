@@ -5,26 +5,25 @@
     @click="rollOracle"
     :tooltip="tooltip"
     :disabled="disabled"
-  >
-    <slot></slot>
-  </btn-isicon>
+    ><slot name="default"></slot
+  ></btn-isicon>
 </template>
 
 <style lang="less"></style>
 
-<script>
+<script setup lang="ts">
 import { sample } from 'lodash'
-export default {
-  props: {
-    tooltip: String,
-    node: Object,
-    disabled: Boolean,
-  },
-  methods: {
-    rollOracle() {
-      const randomTable = sample(this.node.tables)
-      CONFIG.IRONSWORN.rollAndDisplayOracleResult(randomTable)
-    },
-  },
+import { IOracleTreeNode } from '../../../features/customoracles.js'
+import btnIsicon from './btn-isicon.vue'
+
+const props = defineProps<{
+  tooltip?: string
+  node: IOracleTreeNode
+  disabled?: boolean
+}>()
+
+function rollOracle() {
+  const randomTable = sample(props.node.tables)
+  CONFIG.IRONSWORN.rollAndDisplayOracleResult(randomTable)
 }
 </script>

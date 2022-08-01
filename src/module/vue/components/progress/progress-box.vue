@@ -56,7 +56,7 @@
           <h4 class="flexrow">
             <span>{{ item.name }}</span>
             <btn-faicon
-              class="block"
+              class="block nogrow"
               icon="star"
               :solid="item.data.starred"
               :tooltip="$t('IRONSWORN.StarProgress')"

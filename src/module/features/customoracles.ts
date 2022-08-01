@@ -3,11 +3,11 @@ import { compact } from 'lodash'
 import { getFoundryISTableByDfId, getFoundrySFTableByDfId } from '../dataforged'
 import { cachedDocumentsForPack } from './pack-cache'
 
-export interface OracleTreeNode {
+export interface IOracleTreeNode {
   dataforgedNode?: IOracle | IOracleCategory
   tables: RollTable[]
   displayName: string
-  children: OracleTreeNode[]
+  children: IOracleTreeNode[]
   forceExpanded?: boolean
   forceHidden?: boolean
 }
@@ -20,9 +20,9 @@ const emptyNode = () =>
     displayName: '',
     tables: [],
     children: [],
-  } as OracleTreeNode)
+  } as IOracleTreeNode)
 
-export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
+export async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
   const rootNode = emptyNode()
 
   // Make sure the compendium is loaded
@@ -44,7 +44,7 @@ export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
   return rootNode
 }
 
-export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
+export async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
   const rootNode = emptyNode()
 
   // Make sure the compendium is loaded
@@ -72,8 +72,8 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
 async function walkOracleCategory(
   cat: IOracleCategory,
   tableGetter: typeof getFoundrySFTableByDfId
-): Promise<OracleTreeNode> {
-  const node: OracleTreeNode = {
+): Promise<IOracleTreeNode> {
+  const node: IOracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: cat,
     displayName: game.i18n.localize(`IRONSWORN.OracleCategories.${cat.Name}`),
@@ -100,10 +100,10 @@ async function walkOracleCategory(
 async function walkOracle(
   oracle: IOracle,
   tableGetter: typeof getFoundrySFTableByDfId
-): Promise<OracleTreeNode> {
+): Promise<IOracleTreeNode> {
   const table = await tableGetter(oracle.$id)
 
-  const node: OracleTreeNode = {
+  const node: IOracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: oracle,
     tables: compact([table]),
@@ -143,16 +143,16 @@ async function walkOracle(
   return node
 }
 
-async function augmentWithFolderContents(node: OracleTreeNode) {
+async function augmentWithFolderContents(node: IOracleTreeNode) {
   const name = game.i18n.localize('IRONSWORN.Custom Oracles')
   const rootFolder = game.tables?.directory?.folders.find(
     (x) => x.name === name
   )
   if (!rootFolder) return
 
-  function walkFolder(parent: OracleTreeNode, folder: Folder) {
+  function walkFolder(parent: IOracleTreeNode, folder: Folder) {
     // Add this folder
-    const newNode: OracleTreeNode = {
+    const newNode: IOracleTreeNode = {
       ...emptyNode(),
       displayName: folder.name || '(folder)',
     }
@@ -176,7 +176,7 @@ async function augmentWithFolderContents(node: OracleTreeNode) {
   walkFolder(node, rootFolder)
 }
 
-function walkAndFreezeTables(node: OracleTreeNode) {
+function walkAndFreezeTables(node: IOracleTreeNode) {
   ;(node.tables as any) = Object.freeze(node.tables)
   for (const child of node.children) {
     walkAndFreezeTables(child)
@@ -184,11 +184,11 @@ function walkAndFreezeTables(node: OracleTreeNode) {
 }
 
 export function findPathToNodeByTableId(
-  rootNode: OracleTreeNode,
+  rootNode: IOracleTreeNode,
   tableId: string
-): OracleTreeNode[] {
-  const ret: OracleTreeNode[] = []
-  function walk(node: OracleTreeNode) {
+): IOracleTreeNode[] {
+  const ret: IOracleTreeNode[] = []
+  function walk(node: IOracleTreeNode) {
     ret.push(node)
     const foundTable = node.tables.find((x) => x.id === tableId)
     if (foundTable) return true

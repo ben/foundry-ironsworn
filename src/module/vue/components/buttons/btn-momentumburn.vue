@@ -4,9 +4,8 @@
     class="burn-momentum"
     @click="burnMomentum"
     :disabled="disabled"
-  >
-    <slot></slot>
-  </btn-faicon>
+    ><slot name="default"></slot
+  ></btn-faicon>
 </template>
 
 <script lang="ts" setup>

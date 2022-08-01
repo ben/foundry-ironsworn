@@ -1,12 +1,11 @@
 <template>
   <btn-icon
     :class="classes"
-    @click="$emit('click')"
     :tooltip="tooltip"
     :disabled="disabled"
-  >
-    <slot></slot>
-  </btn-icon>
+    @click="$emit('click')"
+    ><slot name="default"></slot
+  ></btn-icon>
 </template>
 
 <script lang="ts" setup>

@@ -129,7 +129,11 @@
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="health">
+          <btn-rollstat
+            class="nogrow vertical-v2 text"
+            :actor="actor"
+            attr="health"
+          >
             {{ $t('IRONSWORN.Health') }}
           </btn-rollstat>
           <div class="flexcol stack health">
@@ -141,7 +145,11 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="spirit">
+          <btn-rollstat
+            class="nogrow vertical-v2 text"
+            :actor="actor"
+            attr="spirit"
+          >
             {{ $t('IRONSWORN.Spirit') }}
           </btn-rollstat>
           <div class="flexcol stack spirit">
@@ -153,7 +161,11 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="supply">
+          <btn-rollstat
+            class="nogrow vertical-v2 text"
+            :actor="actor"
+            attr="supply"
+          >
             {{ $t('IRONSWORN.Supply') }}
           </btn-rollstat>
           <div class="flexcol stack supply">

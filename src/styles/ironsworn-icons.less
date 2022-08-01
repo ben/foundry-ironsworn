@@ -1,0 +1,81 @@
+[class^='isicon-']:before,
+[class*=' isicon-']:before {
+  content: '';
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  background-color: currentColor;
+  display: inline-block;
+  height: 1em;
+  width: 1em;
+  .vertical-v2& {
+    transform: rotateZ(90deg);
+  }
+  .juicy& {
+    font-size: 120%;
+  }
+}
+
+[class^='isicon-'],
+[class*=' isicon-'] {
+  i& {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1em;
+    width: 1em;
+    &.juicy {
+      font-size: 120%;
+    }
+    &:before {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+
+// these are configured to make adding them from game-icons.net take as little effort as possible
+// luminance means that #FFF has alpha = 1, and #000 has alpha = 0.
+// 1) get an svg of the icon with the default settings from game-icons
+// 2) drop it in system/assets/icons
+// 3) add the corresponding filename to the @icons hash object below
+
+// <path d="M0 0h512v512H0z" fill="#000" fill-opacity="1"></path>
+// <path fill-rule="nonzero" d="M0 0h512v512H0z"/>
+
+// key = filename w/o extension
+// value = use alpha? (true: alpha, false: luminance)
+// use 'alpha' for icons that have a transparent background
+// use 'luminance' for icons that have a black background (e.g. game-icons default settings); the black will render as transparent
+// please include the source URL as well (to make it easy to add credits, get the original if a variation is needed, etc)
+@icons: {
+  d10-tilt: true;
+  creature: true; // https://game-icons.net/1x1/lorc/dna1.html
+  derelict: true; // https://game-icons.net/1x1/delapouite/crime-scene-tape.html
+  faction: true; // https://game-icons.net/1x1/delapouite/vertical-banner.html
+  monstrosity: true; // https://game-icons.net/1x1/lorc/beast-eye.html
+  character: true; // https://game-icons.net/1x1/delapouite/character.html
+  character-id: true; // https://game-icons.net/1x1/delapouite/id-card.html
+  character-vitals: true; // https://game-icons.net/1x1/delapouite/skills.html
+  precursor-vault: true; // https://game-icons.net/1x1/lorc/moebius-triangle.html
+  region-sf: true; // https://game-icons.net/1x1/delapouite/galaxy.html
+  sector: true; // https://game-icons.net/1x1/skoll/hexes.html
+  settlement-is: true; // https://game-icons.net/1x1/delapouite/huts-village.html
+  settlement-sf: true; // https://game-icons.net/1x1/delapouite/modern-city.html
+  starship: true; // https://game-icons.net/1x1/delapouite/spaceship.html
+  stellar-object: true; // https://game-icons.net/1x1/lorc/star-prominences.html
+  world: true; // https://game-icons.net/1x1/lorc/ringed-planet.html
+  stat-edge: true; //https://game-icons.net/1x1/delapouite/liberty-wing.html
+  stat-heart: true; // https://game-icons.net/1x1/lorc/crowned-heart.html
+  stat-iron: true; // https://game-icons.net/1x1/lorc/swords-emblem.html
+  stat-shadow: true; // https://game-icons.net/1x1/lorc/double-face-mask.html
+  stat-wits: true; // https://game-icons.net/1x1/lorc/star-pupil.html
+};
+
+each(@icons, {
+  .isicon-@{key} {
+    &:before {
+      mask-image: url('/assets/icons/@{key}.svg');
+    }
+  }
+});

@@ -1,5 +1,6 @@
 import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import autoprefixer from 'autoprefixer'
 
 const config: UserConfig = {
   plugins: [vue()],
@@ -18,6 +19,11 @@ const config: UserConfig = {
         target: 'ws://localhost:30000',
         ws: true,
       },
+    },
+  },
+  css: {
+    postcss: {
+      plugins: [autoprefixer()],
     },
   },
   build: {

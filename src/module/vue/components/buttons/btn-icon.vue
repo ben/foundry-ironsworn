@@ -4,16 +4,15 @@
   <button
     class="icon-button clickable"
     type="button"
-    @click="$emit('click')"
     :tooltip="tooltip"
     :aria-label="tooltip"
     :data-tooltip="tooltip"
     :disabled="disabled"
     :aria-disabled="disabled"
   >
-    <span v-if="hasDefaultSlot" class="button-text">
-      <slot name="default"></slot>
-    </span>
+    <span v-if="hasDefaultSlot" class="button-text"
+      ><slot name="default"></slot
+    ></span>
   </button>
 </template>
 
@@ -22,9 +21,8 @@ import { computed, useSlots } from '@vue/runtime-core'
 
 defineProps<{ tooltip?: string; disabled?: boolean }>()
 
-const slots = useSlots()
 const hasDefaultSlot = computed(() => {
-  return !!slots.default
+  return !!useSlots().default()[0].children.length
 })
 </script>
 
@@ -36,14 +34,14 @@ const hasDefaultSlot = computed(() => {
   align-content: center;
   text-align: center;
   justify-content: center;
-  padding: 0.25em;
-  &:not(:empty) {
-    gap: 0.25em;
-  }
+  // padding: 2px;
+
+  padding: 1px;
   &:before {
-    line-height: 1;
-    height: 1em;
-    width: 1em;
+    padding: 1px;
+  }
+  &:not(:empty) {
+    gap: 3px;
   }
   &:empty {
     // restricts width + removes border if there's no text
@@ -52,9 +50,11 @@ const hasDefaultSlot = computed(() => {
     line-height: 1;
     height: max-content;
     width: max-content;
-    padding: 2px;
-    gap: 0;
-    // min-width: 1.25em;
+  }
+  &:before {
+    line-height: 1;
+    height: 1em;
+    width: 1em;
   }
 }
 
@@ -65,7 +65,7 @@ const hasDefaultSlot = computed(() => {
     display: contents;
   }
   &.vertical-v2 {
-    writing-mode: unset; // prevents this fix from breaking the button layout in FF
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     .button-text {
       line-height: inherit;
