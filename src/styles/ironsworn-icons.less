@@ -1,12 +1,12 @@
 [class^='isicon-']:before,
 [class*=' isicon-']:before {
   content: '';
+  display: inline-block;
+  background-color: currentColor; // inherits text color by default. any valid background is fine if you want to get fancy, though.
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-  background-color: currentColor;
-  display: inline-block;
-  height: 1em;
+  height: 1em; // height and width of the :before pseudo-element can be set as desired, these are just reasonable defaults
   width: 1em;
   .vertical-v2& {
     transform: rotateZ(90deg);
@@ -16,6 +16,28 @@
   }
 }
 
+[class^='isiconbg-'],
+[class*=' isiconbg-'] {
+  position: relative; // required for the pseudo-element's position to function
+  &:before {
+    // don't forget to set the background for this pseudo-element, too. typically this is a flat colour, but it'll work with any valid background (gradients, images, etc).
+    content: '';
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+// additional CSS to maintain compatibility with FVTT's icon fonts until FVTT drops icon fonts
+// if the icon needs to be clickable, btn-isicon should be preferred instead
 [class^='isicon-'],
 [class*=' isicon-'] {
   i& {
