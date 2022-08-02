@@ -34,12 +34,7 @@ const hasDefaultSlot = computed(() => {
   align-content: center;
   text-align: center;
   justify-content: center;
-  // padding: 2px;
-
-  padding: 1px;
-  &:before {
-    padding: 1px;
-  }
+  padding: 2px;
   &:not(:empty) {
     gap: 3px;
   }

@@ -129,7 +129,7 @@ export function activateSceneButtonListeners() {
     const sfControl: SceneControl = {
       name: 'Starforged',
       title: game.i18n.localize('IRONSWORN.StarforgedTools'),
-      icon: 'fas fa-space-shuttle',
+      icon: 'isicon-logo-starforged-dk',
       layer: 'ironsworn',
       visible: true,
       activeTool: 'select',

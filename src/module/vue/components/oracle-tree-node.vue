@@ -67,14 +67,14 @@
   transition: all 0.4s ease;
 }
 h4 {
-  margin-bottom: 4px;
+  margin: 0;
   line-height: 1;
   height: min-content;
   button {
     line-height: 1;
     text-transform: uppercase;
     height: min-content;
-    padding: 0;
+    padding: 3px;
   }
 }
 .hidden {
