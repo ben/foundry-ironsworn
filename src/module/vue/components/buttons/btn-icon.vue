@@ -1,4 +1,4 @@
-<!-- generic button used to build other icon buttons (for FA, IS, and SVG icons) -->
+<!-- generic button used to build other icon buttons that use an icon font or SVGs -->
 <!-- the default value for a button element's type is "submit", which refreshes the page; "type=button" obviates the need for preventing the submit action with JS. -->
 <template>
   <button
@@ -20,7 +20,7 @@
 import { computed, useSlots } from '@vue/runtime-core'
 
 defineProps<{ tooltip?: string; disabled?: boolean }>()
-
+// so the span can be omitted if there's no slot content
 const hasDefaultSlot = computed(() => {
   return !!useSlots().default()[0].children.length
 })
