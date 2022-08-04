@@ -33,7 +33,6 @@ const $item = computed(() => {
 })
 
 function rollStat() {
-  // console.log(props, $item.value)
   RollDialog.show({
     actor: $actor,
     stat: props.attr,

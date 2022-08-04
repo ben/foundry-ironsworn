@@ -111,11 +111,9 @@ const isLeaf = computed(() => {
 })
 
 function toggleDescription() {
-  // console.log('toggle description')
   state.descriptionExpanded = !state.descriptionExpanded
 }
 function toggleManually() {
-  // console.log('toggle manually')
   state.manuallyExpanded = !state.manuallyExpanded
 }
 

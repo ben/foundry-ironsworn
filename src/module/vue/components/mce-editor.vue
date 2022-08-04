@@ -44,7 +44,6 @@ const mceConfig: RawEditorSettings = {
 
   // TODO: this never gets called?
   file_picker_callback(pickerCallback, _value, _meta) {
-    // console.log(pickerCallback, _value, _meta)
     let filePicker = new FilePicker({
       type: 'image',
       callback: (path) => {
