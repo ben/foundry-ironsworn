@@ -5,8 +5,9 @@
     :tooltip="tooltip"
     @click="sendToChat"
     :disabled="disabled"
-    ><slot name="default"><!-- {{$t('IRONSWORN.Chat')}} --></slot></btn-faicon
   >
+    <slot name="default"><!-- {{$t('IRONSWORN.Chat')}} --></slot>
+  </btn-faicon>
 </template>
 
 <style lang="less"></style>

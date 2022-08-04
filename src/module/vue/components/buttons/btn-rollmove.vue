@@ -6,8 +6,9 @@
     icon="d10-tilt"
     aria-haspopup="dialog"
     :disabled="disabled"
-    ><slot name="default"></slot
-  ></btn-isicon>
+  >
+    <slot name="default"></slot>
+  </btn-isicon>
 </template>
 
 <script setup lang="ts">

@@ -4,8 +4,9 @@
     :tooltip="tooltip"
     :disabled="disabled"
     @click="$emit('click')"
-    ><slot name="default"></slot
-  ></btn-icon>
+  >
+    <slot name="default"></slot>
+  </btn-icon>
 </template>
 
 <script lang="ts" setup>

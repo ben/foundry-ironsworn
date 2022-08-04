@@ -5,8 +5,9 @@
     @click="rollOracle"
     :tooltip="tooltip"
     :disabled="disabled"
-    ><slot name="default"></slot
-  ></btn-isicon>
+  >
+    <slot name="default"></slot>
+  </btn-isicon>
 </template>
 
 <style lang="less"></style>

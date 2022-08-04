@@ -10,9 +10,9 @@
     :disabled="disabled"
     :aria-disabled="disabled"
   >
-    <span v-if="hasDefaultSlot" class="button-text"
-      ><slot name="default"></slot
-    ></span>
+    <span v-if="hasDefaultSlot" class="button-text">
+      <slot name="default"></slot>
+    </span>
   </button>
 </template>
 
