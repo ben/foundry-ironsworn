@@ -12,7 +12,7 @@
           {{ node?.displayName }}
         </btn-oracle>
         <btn-faicon
-          class="block nogrow"
+          class="block nogrow juicy show-oracle-info"
           icon="eye"
           @click="toggleDescription()"
         />
@@ -63,6 +63,12 @@
 </template>
 
 <style lang="less" scoped>
+.show-oracle-info {
+  &:before {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 .movesheet-row {
   transition: all 0.4s ease;
 }
@@ -74,7 +80,6 @@ h4 {
     line-height: 1;
     text-transform: uppercase;
     height: min-content;
-    padding: 3px;
   }
 }
 .hidden {
