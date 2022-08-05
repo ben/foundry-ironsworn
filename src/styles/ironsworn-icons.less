@@ -11,7 +11,16 @@
   .vertical-v2& {
     transform: rotateZ(90deg);
   }
-  .juicy& {
+}
+
+[class^='isiconbg-'],
+[class*=' isiconbg-'],
+[class^='isicon-'],
+[class*=' isicon-'],
+[class^='fa-'],
+[class*=' fa-'] {
+  i.juicy&,
+  &:not(i).juicy:before {
     font-size: 120%;
   }
 }
@@ -21,6 +30,8 @@
   position: relative; // required for the pseudo-element's position to function
   &:before {
     // don't forget to set the background for this pseudo-element, too. typically this is a flat colour, but it'll work with any valid background (gradients, images, etc).
+    // this defaults to currentColor, so that it's clear that it's actually working when it's used
+    background-color: currentColor;
     content: '';
     mask-repeat: no-repeat;
     mask-position: center;
@@ -30,9 +41,10 @@
     width: 100%;
     top: 0;
     left: 0;
-    position: absolute;
     z-index: 0;
-    pointer-events: none;
+    position: absolute;
+    box-sizing: border-box;
+    mask-origin: content-box; // this + above make this sensitive to padding on the :before pseudo-element.
   }
 }
 
@@ -46,9 +58,6 @@
     justify-content: center;
     height: 1em;
     width: 1em;
-    &.juicy {
-      font-size: 120%;
-    }
     &:before {
       height: 100%;
       width: 100%;
@@ -125,7 +134,7 @@
 //  https://game-icons.net/1x1/lorc/star-pupil.html
 
 each(@icons, {
-  .isicon-@{value} {
+  .isicon-@{value}, .isiconbg-@{value} {
     &:before {
       mask-image: url('/assets/icons/@{value}.svg');
   }}
