@@ -1,8 +1,7 @@
 <template>
   <div :class="classes" @click="click">
-    <i v-if="!editMode" class="bg-die isicon-d10-tilt"></i>
     <h4>{{ $t(i18nKey) }}</h4>
-    <div class="flexrow" style="position: relative">
+    <div class="flexrow">
       <div class="clickable text" v-if="editMode" @click="decrement">
         &minus;
       </div>
@@ -16,21 +15,23 @@
 
 <style lang="less" scoped>
 .stat {
-  position: relative;
-}
-.bg-die {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.stat:hover .bg-die {
-  transition: opacity 0.4s ease;
-  opacity: 0.2;
+  & > * {
+    position: relative; // must be set to manipulate z-index
+    z-index: 1;
+  }
+  &:before {
+    // styles dice background on hover
+    color: currentColor;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 0;
+    padding: 0.25em;
+  }
+  &:hover {
+    &:before {
+      opacity: 0.2;
+    }
+  }
 }
 </style>
 
@@ -50,6 +51,7 @@ const classes = computed(() => ({
   stat: true,
   block: true,
   clickable: !editMode.value,
+  'isiconbg-d10-tilt': !editMode.value,
 }))
 const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
 const editMode = computed(
