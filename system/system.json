@@ -4,19 +4,16 @@
   "title": "Ironsworn & Starforged",
   "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkins.",
   "license": "LICENSE.txt",
-
-  "version": "1.15.14",
+  "version": "1.16.2",
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
-  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.15.14/ironsworn.zip",
-
+  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.16.2/ironsworn.zip",
   "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "9",
+  "compatibleCoreVersion": "10",
   "compatibility": {
     "minimum": 9,
-    "verified": 9
+    "verified": 10
   },
-
   "authors": [
     {
       "name": "Ben Straub",
@@ -27,7 +24,6 @@
       "twitter": "@benstraub"
     }
   ],
-
   "manifestPlusVersion": "1.2.0",
   "media": [
     {
@@ -56,14 +52,16 @@
       "caption": "Ironsworn & Starforged"
     }
   ],
-
-  "esmodules": ["ironsworn.js"],
-  "styles": ["ironsworn.css"],
+  "esmodules": [
+    "ironsworn.js"
+  ],
+  "styles": [
+    "ironsworn.css"
+  ],
   "dependencies": [],
   "relationships": {
     "requires": []
   },
-
   "packs": [
     {
       "name": "foeactorsis",
@@ -186,7 +184,6 @@
       "private": false
     }
   ],
-
   "languages": [
     {
       "lang": "en",

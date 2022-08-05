@@ -1,14 +1,10 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow">
+  <div class="flexcol" style="gap: 5px">
+    <div class="flexrow nogrow" style="gap: 5px">
       <!-- Region -->
-      <label class="flexrow" style="margin-right: 10px; flex-basis: 150px">
+      <label class="flexrow" style="flex-basis: 150px; gap: 10px">
         <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
-        <select
-          v-model="region"
-          @change="regionChanged"
-          style="margin-left: 5px"
-        >
+        <select v-model="region" @change="regionChanged">
           <option value="terminus">
             {{ $t('IRONSWORN.Terminus') }}
           </option>
@@ -22,13 +18,9 @@
       </label>
 
       <!-- Subtype -->
-      <label class="flexrow" style="flex-basis: 200px">
+      <label class="flexrow" style="flex-basis: 200px; gap: 10px">
         {{ $t('IRONSWORN.LocationType') }}
-        <select
-          v-model="actor.data.subtype"
-          @change="subtypeChanged"
-          style="margin-left: 5px"
-        >
+        <select v-model="actor.data.subtype" @change="subtypeChanged">
           <option value="planet">Planet</option>
           <option value="settlement">Settlement</option>
           <option value="star">Stellar Object</option>
@@ -38,44 +30,40 @@
       </label>
     </div>
 
-    <div class="flexrow nogrow" style="margin-top: 5px">
-      <!-- Klass -->
-      <label class="flexrow" style="position: relative">
-        <!-- TODO: i18n and subtype text -->
-        <span class="select-label">{{ subtypeSelectText }}:</span>
-        <select
-          v-model="actor.data.klass"
-          @change="klassChanged"
-          :class="{ highlighted: data.firstLookHighlight }"
-          style="margin-left: 5px"
-        >
-          <option
-            v-for="opt in klassOptions"
-            :key="opt.value"
-            :value="opt.value"
-          >
-            {{ opt.label }}
-          </option>
-        </select>
-        <btn-isicon
-          icon="d10-tilt juicy"
-          class="block nogrow"
-          style="
-            padding: 0px 5px;
-            position: absolute;
-            right: 15px;
-            height: 25px;
-            line-height: 30px;
-            top: 1px;
-          "
-          @click="randomizeKlass"
-          :tooltip="randomKlassTooltip"
-        />
-      </label>
-    </div>
+    <!-- Klass -->
+    <label class="flexrow nogrow" style="position: relative; gap: 10px">
+      <!-- TODO: i18n and subtype text -->
+      <span class="select-label">{{ subtypeSelectText }}:</span>
+      <select
+        v-model="actor.data.klass"
+        @change="klassChanged"
+        :class="{ highlighted: data.firstLookHighlight }"
+      >
+        <option v-for="opt in klassOptions" :key="opt.value" :value="opt.value">
+          {{ opt.label }}
+        </option>
+      </select>
+      <btn-isicon
+        icon="d10-tilt juicy"
+        class="block nogrow"
+        style="
+          padding: 0px 5px;
+          position: absolute;
+          right: 15px;
+          height: 25px;
+          line-height: 30px;
+          top: 1px;
+        "
+        @click="randomizeKlass"
+        :tooltip="randomKlassTooltip"
+      />
+    </label>
 
-    <header class="sheet-header flexrow nogrow" style="position: relative">
-      <document-img :document="actor" size="50px" style="margin: 6px 6px 0 0" />
+    <header
+      class="sheet-header flexrow nogrow"
+      style="position: relative; gap: 5px"
+    >
+      <document-img :document="actor" size="50px" />
       <div class="flexcol">
         <div class="flexrow nogrow">
           <document-name
@@ -167,8 +155,12 @@ label {
 .box {
   padding: 7px;
 }
-.highlighted {
-  background: #33999933;
+.theme-starforged .highlighted {
+  background: #055;
+}
+
+.theme-ironsworn .highlighted {
+  background: #ccc;
 }
 </style>
 

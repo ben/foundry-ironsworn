@@ -2,11 +2,22 @@
 
 ## In progress
 
-- Code reorganization and format normalization
-- Update to the right version of the Foundry types
-- Fix the dev server for fewer errors, and so that HMR works
-- Update `system.json` to include the new v10 fields
-- Port the code to Vue3 using Vite ([#407](https://github.com/ben/foundry-ironsworn/pull/407))
+## 1.16.2
+
+- First release that fully loads under Foundry v10 ([#413](https://github.com/ben/foundry-ironsworn/pull/413))
+
+## 1.16.1
+
+- A small fix that should allow DF Manual Rolls to work properly (fixes [#411](https://github.com/ben/foundry-ironsworn/issues/411))
+
+## 1.16.0
+
+- Replace the quirky Quill editor with a Vue wrapper around Foundry's TinyMCE.
+- Under-the-hood updates:
+  - Code reorganization and format normalization
+  - Update to the right version of the Foundry types
+  - Update `system.json` to include the new v10 fields
+  - Port the code to Vue3 using Vite (also [#407](https://github.com/ben/foundry-ironsworn/pull/407))
 
 ## 1.15.14
 

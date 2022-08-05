@@ -1,8 +1,8 @@
 <template>
   <button
     type="button"
-    class="box flexrow block"
-    :class="{ disabled: disabled }"
+    class="box flexrow clickable block"
+    :class="{ disabled }"
     @click="click"
   >
     <h4 class="nogrow" style="margin: 0; white-space: nowrap">
@@ -11,26 +11,24 @@
   </button>
 </template>
 
-<script>
-export default {
-  props: {
-    actor: Object,
-    move: String,
-    disabled: Boolean,
-  },
+<script setup lang="ts">
+import { computed, inject, Ref } from 'vue'
+import { moveDataByName } from '../../../helpers/data'
+import { RollDialog } from '../../../helpers/rolldialog'
+import { $ActorKey } from '../../provisions'
+const props = defineProps<{
+  movename: string
+  disabled?: boolean
+}>()
 
-  computed: {
-    i18nKey() {
-      return `IRONSWORN.MoveContents.${this.move}.title`
-    },
-  },
+const actor = inject('actor') as Ref
+const $actor = inject($ActorKey)
 
-  methods: {
-    async click() {
-      if (this.disabled) return
-      const move = await CONFIG.IRONSWORN.moveDataByName(this.move)
-      CONFIG.IRONSWORN.RollDialog.show({ move, site: this.$actor })
-    },
-  },
+const i18nKey = computed(() => `IRONSWORN.MoveContents.${props.movename}.title`)
+
+async function click() {
+  if (props.disabled) return
+  const move = await moveDataByName(props.movename)
+  RollDialog.show({ move, site: $actor })
 }
 </script>

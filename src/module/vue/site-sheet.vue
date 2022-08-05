@@ -1,8 +1,8 @@
 <template>
   <div class="flexcol">
     <!-- HEADER -->
-    <header class="sheet-header">
-      <document-img :document="actor" style="margin: 5px" />
+    <header class="sheet-header" style="gap: 5px">
+      <document-img :document="actor" />
       <document-name :document="actor" />
     </header>
 
@@ -29,9 +29,11 @@
     </div>
 
     <!-- PROGRESS -->
-    <div class="flexrow track nogrow" style="margin-bottom: 1em">
-      <progress-track :ticks="actor.data.current" />
-    </div>
+    <progress-track
+      class="nogrow"
+      style="margin-bottom: 1em"
+      :ticks="actor.data.current"
+    />
 
     <!-- THEME/DOMAIN -->
     <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em">
@@ -57,37 +59,36 @@
     <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
-        <site-movebox :actor="actor" move="Delve the Depths" />
+        <site-movebox movename="Delve the Depths" />
         <!-- TODO: double check styling here -->
-        <h4>
-          <button
-            type="button"
-            class="box flexrow clickable block"
-            :class="{ disabled: !hasThemeAndDomain }"
-            @click="randomFeature"
-          >
+        <button
+          type="button"
+          class="box flexrow clickable block"
+          :class="{ disabled: !hasThemeAndDomain }"
+          @click="randomFeature"
+        >
+          <h4>
             {{ $t('IRONSWORN.Feature') }}
-          </button>
-        </h4>
+          </h4>
+        </button>
 
         <site-movebox
-          :actor="actor"
-          move="Reveal a Danger"
+          movename="Reveal a Danger"
           :disabled="!hasThemeAndDomain"
         />
       </div>
       <div class="flexrow boxrow">
-        <site-movebox :actor="actor" move="Find an Opportunity" />
-        <h4>
-          <button
-            type="button"
-            class="box flexrow block"
-            @click="locateObjective"
-          >
+        <site-movebox movename="Find an Opportunity" />
+        <button
+          type="button"
+          class="box flexrow clickable block"
+          @click="locateObjective"
+        >
+          <h4>
             {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
-          </button>
-        </h4>
-        <site-movebox :actor="actor" move="Escape the Depths" />
+          </h4>
+        </button>
+        <site-movebox movename="Escape the Depths" />
       </div>
     </div>
 

@@ -24,7 +24,6 @@ const style = computed(() => ({
   'flex-basis': 0,
 }))
 
-const $emit = defineEmits<{ (e: 'change', path: string) }>()
 const $actor = inject($ActorKey, undefined)
 const $item = inject($ItemKey, undefined)
 function click() {

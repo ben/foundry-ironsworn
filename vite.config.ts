@@ -2,6 +2,8 @@ import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import autoprefixer from 'autoprefixer'
 
+const PORT = 30000
+
 const config: UserConfig = {
   plugins: [vue()],
   resolve: {
@@ -14,9 +16,9 @@ const config: UserConfig = {
   server: {
     port: 8080,
     proxy: {
-      '^(?!/systems/foundry-ironsworn)': 'http://localhost:30000/',
+      '^(?!/systems/foundry-ironsworn)': `http://localhost:${PORT}/`,
       '/socket.io': {
-        target: 'ws://localhost:30000',
+        target: `ws://localhost:${PORT}`,
         ws: true,
       },
     },

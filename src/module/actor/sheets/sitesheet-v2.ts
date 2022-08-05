@@ -20,6 +20,10 @@ export class IronswornSiteSheetV2 extends VueActorSheet {
     }
   }
 
+  get siteData() {
+    return this.actor.data as SiteDataSource
+  }
+
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
     // Fetch the item. We only want to override denizens (progress-type items)
     const item = await Item.fromDropData(data)

@@ -129,7 +129,6 @@
 
 <script>
 import { get, set } from 'lodash'
-import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
 import SfmoveTab from './components/sfmove-tab.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
@@ -221,6 +220,6 @@ export default {
       }
     },
   },
-  components: { DocumentImg, DocumentName, SfmoveTab, BtnFaicon },
+  components: { DocumentName, SfmoveTab, BtnFaicon },
 }
 </script>

@@ -1,14 +1,14 @@
 <template>
   <div class="flexcol">
-    <header class="sheet-header nogrow">
+    <header class="sheet-header flexrow nogrow" style="gap: 5px">
       <document-img :document="actor" />
       <document-name :document="actor" />
     </header>
 
     <section class="sheet-area nogrow">
-      <h4 class="clickable text" @click="rollSupply">
+      <btn-rollstat class="text" attr="supply">
         {{ $t('IRONSWORN.Supply') }}
-      </h4>
+      </btn-rollstat>
 
       <boxrow
         style="line-height: 25px"
@@ -86,7 +86,7 @@
                 @sortUp="completedSortUp"
                 @sortDown="completedSortDown"
               />
-              <progress-box :item="item" :actor="actor" :showStar="true" />
+              <progress-box :item="item" :actor="actor" />
             </div>
           </transition-group>
         </div>
@@ -105,6 +105,10 @@
 </template>
 
 <style lang="less" scoped>
+.stat-roll {
+  text-transform: uppercase;
+}
+
 .slide-enter-active,
 .slide-leave-active {
   max-height: 83px;
@@ -141,9 +145,11 @@ import BtnFaicon from './components/buttons/btn-faicon.vue'
 import Bonds from './components/bonds.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
+import BtnRollstat from './components/buttons/btn-rollstat.vue'
 
-const props =
-  defineProps<{ actor: ReturnType<typeof IronswornActor.prototype.toObject> }>()
+const props = defineProps<{
+  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+}>()
 provide(
   'actor',
   computed(() => props.actor)

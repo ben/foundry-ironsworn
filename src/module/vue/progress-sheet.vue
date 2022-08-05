@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol">
     <!-- HEADER -->
-    <header class="sheet-header nogrow">
+    <header class="sheet-header flexrow nogrow" style="gap: 5px">
       <document-img :document="item" />
       <document-name :document="item" />
     </header>

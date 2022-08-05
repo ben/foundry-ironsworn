@@ -71,7 +71,7 @@ function calculateDieTotals(roll: Roll): DieTotals {
     action = 10
   }
 
-  const canceledActionDie = new Roll(actionDie.formula.replace('1d6', '0'))
+  const canceledActionDie = new Roll(actionDie.formula.replace(/1d6\S+/, '0'))
   canceledActionDie.evaluate({ async: false })
 
   return {

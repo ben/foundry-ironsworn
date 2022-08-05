@@ -27,10 +27,10 @@ const props = defineProps({
 
 const $actor = inject($ActorKey)
 const $item = computed(() => {
-  if ($actor) {
-    return $actor.items.find((x) => x.id === props.item._id)
-  }
-  return game.items?.get(item._id)
+  return (
+    $actor?.items.find((x) => x.id === props.item?._id) ??
+    game.items?.get(props.item?._id)
+  )
 })
 
 function rollStat() {

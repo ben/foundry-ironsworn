@@ -170,9 +170,6 @@ Hooks.once('init', async () => {
     label: 'Progress Sheet',
   })
 
-  // Preload all needed templates
-  // await TemplatePreloader.preloadHandlebarsTemplates()
-
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
   IronswornChatCard.registerHooks()
@@ -239,26 +236,3 @@ Hooks.once('setup', () => {
     return renderTemplate(chatOptions.template || template, chatData)
   }
 })
-
-/* -------------------------------- */
-/*	Webpack HMR                     */
-/* -------------------------------- */
-// if (module.hot) {
-//   module.hot.accept()
-
-//   if (module.hot.status() === 'apply') {
-//     for (const template in _templateCache) {
-//       if (Object.prototype.hasOwnProperty.call(_templateCache, template)) {
-//         delete _templateCache[template]
-//       }
-//     }
-
-//     TemplatePreloader.preloadHandlebarsTemplates().then(() => {
-//       for (const application in ui.windows) {
-//         if (Object.prototype.hasOwnProperty.call(ui.windows, application)) {
-//           ui.windows[application].render(true)
-//         }
-//       }
-//     })
-//   }
-// }

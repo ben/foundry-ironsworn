@@ -185,7 +185,15 @@ export function activateSceneButtonListeners() {
   })
 }
 
-class IronswornCanvasLayer extends CanvasLayer {
+// In v9 we can inherit directly from CanvasLayer and it's fine
+// In v10 we have to use InteractionLayer
+
+let baseKlass = CanvasLayer
+if (typeof InteractionLayer !== 'undefined') {
+  baseKlass = InteractionLayer
+}
+
+class IronswornCanvasLayer extends baseKlass {
   static get layerOptions() {
     return foundry.utils.mergeObject(super.layerOptions, {
       zIndex: 180,

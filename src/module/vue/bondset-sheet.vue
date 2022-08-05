@@ -2,24 +2,20 @@
   <div class="flexcol">
     <transition-group name="slide" tag="div" class="nogrow">
       <div
-        class="item-row nogrow"
+        class="item-row nogrow flexrow"
         v-for="(bond, i) in item.data.bonds"
+        style="gap: 5px"
         :key="'bond' + i"
       >
-        <div class="flexrow" style="margin-bottom: 5px">
+        <div class="flexcol" style="gap: 5px">
           <input type="text" v-model="bond.name" @blur="save" />
-          <btn-faicon class="block" icon="trash" @click="deleteBond(i)" />
+          <textarea v-model="bond.notes" @blur="save" />
         </div>
-        <textarea v-model="bond.notes" @blur="save" />
+        <BtnFaicon class="block nogrow" icon="trash" @click="deleteBond(i)" />
       </div>
     </transition-group>
 
-    <btn-faicon
-      class="block"
-      icon="plus"
-      @click="addBond"
-      style="text-align: center"
-    />
+    <BtnFaicon class="block nogrow" icon="plus" @click="addBond" />
   </div>
 </template>
 
