@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.16.3
+
 - Ironsworn sheet: completed area, and move notes to a tab ([#417](https://github.com/ben/foundry-ironsworn/pull/417))
 - Import Ironsworn moves from dataforged ([#418](https://github.com/ben/foundry-ironsworn/pull/418))
 - (Beta) Allow use of the new move/oracle UI for Ironsworn([#419](https://github.com/ben/foundry-ironsworn/pull/419))
