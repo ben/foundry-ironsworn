@@ -1,4 +1,4 @@
-import { IMove, IMoveCategory, starforged } from 'dataforged'
+import { IMove, IMoveCategory, starforged, ironsworn } from 'dataforged'
 import { IronswornItem } from '../item/item'
 import { MoveDataSource } from '../item/itemtypes'
 import { cachedDocumentsForPack } from './pack-cache'
@@ -16,18 +16,20 @@ export interface Move {
 }
 
 // For some reason, rollupJs mangles this
-const MoveCategories = starforged.default['Move Categories']
+const SFMoveCategories = starforged.default['Move Categories']
+const ISMoveCategories = ironsworn.default['Move Categories']
 
-export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
+async function createMoveTree(
+  compendiumName: string,
+  categories: IMoveCategory[]
+): Promise<MoveCategory[]> {
   const ret = [] as MoveCategory[]
 
   // Make sure compendium is loaded
-  const compendiumMoves = await cachedDocumentsForPack(
-    'foundry-ironsworn.starforgedmoves'
-  )
+  const compendiumMoves = await cachedDocumentsForPack(compendiumName)
 
   // Construct the base tree
-  for (const category of MoveCategories) {
+  for (const category of categories) {
     ret.push(walkCategory(category, compendiumMoves as IronswornItem[]))
   }
 
@@ -45,6 +47,14 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   }
 
   return ret
+}
+
+export async function createIronswornMoveTree(): Promise<MoveCategory[]> {
+  return createMoveTree('foundry-ironsworn.ironswornmoves', ISMoveCategories)
+}
+
+export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
+  return createMoveTree('foundry-ironsworn.starforgedmoves', SFMoveCategories)
 }
 
 function walkCategory(
