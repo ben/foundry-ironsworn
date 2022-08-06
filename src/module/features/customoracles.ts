@@ -1,4 +1,4 @@
-import { starforged, IOracle, IOracleCategory } from 'dataforged'
+import { starforged, ironsworn, IOracle, IOracleCategory } from 'dataforged'
 import { compact } from 'lodash'
 import { getFoundryISTableByDfId, getFoundrySFTableByDfId } from '../dataforged'
 import { cachedDocumentsForPack } from './pack-cache'
@@ -13,7 +13,8 @@ export interface OracleTreeNode {
 }
 
 // For some reason, rollupJs mangles this
-const OracleCategories = starforged.default['Oracle Categories']
+const SFOracleCategories = starforged.default['Oracle Categories']
+const ISOracleCategories = ironsworn.default['Oracle Categories']
 
 const emptyNode = () =>
   ({
@@ -22,39 +23,19 @@ const emptyNode = () =>
     children: [],
   } as OracleTreeNode)
 
-export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
+async function createOracleTree(
+  compendium: string,
+  categories: IOracleCategory[],
+  tableGetter: (dfid: string) => Promise<StoredDocument<RollTable> | undefined>
+): Promise<OracleTreeNode> {
   const rootNode = emptyNode()
 
   // Make sure the compendium is loaded
-  await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
+  await cachedDocumentsForPack(compendium)
 
   // Build the default tree
-  for (const category of OracleCategories) {
-    rootNode.children.push(
-      await walkOracleCategory(category, getFoundryISTableByDfId)
-    )
-  }
-
-  // Add in custom oracles from a well-known directory
-  await augmentWithFolderContents(rootNode)
-
-  // Fire the hook and allow extensions to modify the tree
-  await Hooks.call('ironswornOracles', rootNode)
-
-  return rootNode
-}
-
-export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
-  const rootNode = emptyNode()
-
-  // Make sure the compendium is loaded
-  await cachedDocumentsForPack('foundry-ironsworn.starforgedoracles')
-
-  // Build the default tree
-  for (const category of OracleCategories) {
-    rootNode.children.push(
-      await walkOracleCategory(category, getFoundrySFTableByDfId)
-    )
+  for (const category of categories) {
+    rootNode.children.push(await walkOracleCategory(category, tableGetter))
   }
 
   // Add in custom oracles from a well-known directory
@@ -67,6 +48,22 @@ export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
   walkAndFreezeTables(rootNode)
 
   return rootNode
+}
+
+export async function createIronswornOracleTree(): Promise<OracleTreeNode> {
+  return createOracleTree(
+    'foundry-ironsworn.ironswornoracles',
+    ISOracleCategories,
+    getFoundryISTableByDfId
+  )
+}
+
+export async function createStarforgedOracleTree(): Promise<OracleTreeNode> {
+  return createOracleTree(
+    'foundry-ironsworn.starforgedoracles',
+    SFOracleCategories,
+    getFoundrySFTableByDfId
+  )
 }
 
 async function walkOracleCategory(

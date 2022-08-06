@@ -67,6 +67,9 @@ export class StarforgedCharacterSheet extends VueActorSheet {
   _openMoveSheet(_e?: JQuery.ClickEvent) {
     if (IronswornSettings.toolbox === 'ironsworn') {
       new CharacterMoveSheet(this.actor).render(true)
+    } else if (IronswornSettings.dataforgedIronswornMoves) {
+      this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor, 'ironsworn')
+      this.actor.moveSheet.render(true, { focus: true })
     } else {
       this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
       this.actor.moveSheet.render(true, { focus: true })

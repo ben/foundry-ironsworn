@@ -252,6 +252,10 @@
       "SFBeta": {
         "Name": "Show Starforged beta content",
         "Hint": "Enables in-progress Starforged features."
+      },
+      "DataforgedIronswornMoves": {
+        "Name": "(Beta) New Ironsworn move-sheet UI",
+        "Hint": "If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization."
       }
     },
     "First Start": {
