@@ -55,12 +55,15 @@ const props = defineProps<{
 }>()
 
 const $actor = inject($ActorKey)
-const $item = $actor?.items.get(props.item._id)
 
 const actor = inject('actor') as any
 const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })
+
+function foundryitem() {
+  return props.item && $actor?.items.get(props.item._id)
+}
 
 function destroy() {
   const titleKey = 'IRONSWORN.DeleteItem'
@@ -70,12 +73,12 @@ function destroy() {
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
     )}</strong></p>`,
-    yes: () => $item?.delete(),
+    yes: () => foundryitem()?.delete(),
     defaultYes: false,
   })
 }
 
 function edit() {
-  $item?.sheet?.render(true)
+  foundryitem()?.sheet?.render(true)
 }
 </script>
