@@ -5,10 +5,10 @@
     <div class="flexrow xp" style="gap: 5px">
       <h4 class="nogrow" style="margin: 0">{{ $t('IRONSWORN.XP') }}</h4>
       <div class="flexrow">
-        <xp-box :value="0" @click="setXp(0)">×</xp-box>
+        <xp-box :key="0" :current="-1" :value="0" @click="setXp(0)"> × </xp-box>
         <xp-box
           v-for="n in xpArray"
-          v-bind:key="n"
+          :key="n"
           :value="n"
           :current="actor.data.xp"
           @click="setXp(n)"
