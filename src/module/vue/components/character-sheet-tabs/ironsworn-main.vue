@@ -30,72 +30,7 @@
         </div>
       </section>
     </div>
-    <div class="flexcol">
-      <!-- Vows & Progress -->
-      <div
-        class="flexcol sheet-area ironsworn__drop__target"
-        data-drop-type="progress"
-      >
-        <transition-group name="slide" tag="div" class="nogrow">
-          <div
-            class="flexrow nogrow"
-            v-for="(item, i) in activeItems"
-            :key="item._id"
-          >
-            <OrderButtons
-              v-if="editMode"
-              :i="i"
-              :length="activeItems.length"
-              @sortUp="progressSortUp"
-              @sortDown="progressSortDown"
-            />
-            <ProgressBox :item="item" @completed="progressCompleted" />
-          </div>
-        </transition-group>
-
-        <ProgressControls />
-      </div>
-
-      <div class="item-row nogrow progress-completed" style="margin-top: 1rem">
-        <!-- TODO: refactor this as a component in PR for collapsible/progressive disclosure element -->
-        <h3>
-          <BtnFaicon
-            :disabled="completedItems.length === 0"
-            class="text collapse-control"
-            :class="completedClass"
-            :icon="completedCaret"
-            @click="data.expandCompleted = !data.expandCompleted"
-          >
-            {{ $t('IRONSWORN.Completed') }}
-          </BtnFaicon>
-        </h3>
-        <transition
-          name="slide"
-          tag="div"
-          class="nogrow completed"
-          style="margin: 0; padding: 0"
-        >
-          <div v-if="data.expandCompleted">
-            <transition-group name="slide" tag="div" class="nogrow">
-              <div
-                class="flexrow"
-                v-for="(item, i) in completedItems"
-                :key="item._id"
-              >
-                <order-buttons
-                  v-if="editMode"
-                  :i="i"
-                  :length="completedItems.length"
-                  @sortUp="completedSortUp"
-                  @sortDown="completedSortDown"
-                />
-                <progress-box :item="item" :actor="actor" :showStar="true" />
-              </div>
-            </transition-group>
-          </div>
-        </transition>
-      </div>
-    </div>
+    <ActiveCompletedProgresses />
   </div>
 </template>
 
@@ -132,6 +67,7 @@ import ProgressBox from '../progress/progress-box.vue'
 import ProgressControls from '../progress-controls.vue'
 import { throttle } from 'lodash'
 import BtnFaicon from '../buttons/btn-faicon.vue'
+import ActiveCompletedProgresses from '../active-completed-progresses.vue'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
