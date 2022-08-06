@@ -59,7 +59,18 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
       this.actor.moveSheet.render(true, { focus: true })
     } else {
       if (IronswornSettings.toolbox === 'starforged') {
-        this.actor.moveSheet ||= new SFCharacterMoveSheet(this.actor)
+        this.actor.moveSheet ||= new SFCharacterMoveSheet(
+          this.actor,
+          'starforged',
+          { left: 755 }
+        )
+        this.actor.moveSheet.render(true, { focus: true })
+      } else if (IronswornSettings.dataforgedIronswornMoves) {
+        this.actor.moveSheet ||= new SFCharacterMoveSheet(
+          this.actor,
+          'ironsworn',
+          { left: 755 }
+        )
         this.actor.moveSheet.render(true, { focus: true })
       } else {
         new CharacterMoveSheet(this.actor).render(true)

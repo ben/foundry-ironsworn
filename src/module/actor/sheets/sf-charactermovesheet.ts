@@ -10,6 +10,7 @@ import { $ActorKey } from '../../vue/provisions'
 export class SFCharacterMoveSheet extends VueApplication {
   constructor(
     protected actor: IronswornActor,
+    protected toolset: 'ironsworn' | 'starforged' = 'starforged',
     options?: Partial<ApplicationOptions>
   ) {
     super(options)
@@ -20,6 +21,7 @@ export class SFCharacterMoveSheet extends VueApplication {
       components: { 'sfcharacter-movesheet': CharacterMoveSheet },
       vueData: async () => ({
         actor: this.actor.toObject(),
+        toolset: this.toolset,
       }),
     }
   }

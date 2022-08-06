@@ -47,7 +47,12 @@ import {
 import { $EmitterKey } from '../provisions'
 import TreeNode from './oracletree-node.vue'
 
-const tempTreeRoot = await createIronswornOracleTree()
+const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
+
+const tempTreeRoot =
+  props.toolset === 'ironsworn'
+    ? await createIronswornOracleTree()
+    : await createStarforgedOracleTree()
 // Add the flags we'll use for UI stuff later
 function walk(node: OracleTreeNode) {
   node.forceExpanded = node.forceHidden = false

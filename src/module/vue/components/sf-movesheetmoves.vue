@@ -69,9 +69,14 @@ import {
 import { $EmitterKey } from '../provisions'
 import sfMoverow from './sf-moverow.vue'
 
+const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
+
 const actor = inject('actor') as Ref
 
-const tempCategories = await createIronswornMoveTree()
+const tempCategories =
+  props.toolset === 'ironsworn'
+    ? await createIronswornMoveTree()
+    : await createStarforgedMoveTree()
 for (const category of tempCategories) {
   for (const move of category.moves) {
     move.highlighted = false
