@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Ironsworn sheet: completed area, and move notes to a tab ([#417](https://github.com/ben/foundry-ironsworn/pull/417))
+
 ## 1.16.2
 
 - First release that fully loads under Foundry v10 ([#413](https://github.com/ben/foundry-ironsworn/pull/413))
