@@ -52,12 +52,8 @@
       "caption": "Ironsworn & Starforged"
     }
   ],
-  "esmodules": [
-    "ironsworn.js"
-  ],
-  "styles": [
-    "ironsworn.css"
-  ],
+  "esmodules": ["ironsworn.js"],
+  "styles": ["ironsworn.css"],
   "dependencies": [],
   "relationships": {
     "requires": []
@@ -102,6 +98,13 @@
       "path": "packs/items.db",
       "entity": "Item",
       "private": false
+    },
+    {
+      "name": "ironswornmoves",
+      "label": "Ironsworn Moves v2",
+      "system": "foundry-ironsworn",
+      "path": "packs/ironsworn-moves.db",
+      "entity": "Item"
     },
     {
       "name": "ironswornassets",

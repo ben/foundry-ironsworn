@@ -3,6 +3,7 @@
 ## In progress
 
 - Ironsworn sheet: completed area, and move notes to a tab ([#417](https://github.com/ben/foundry-ironsworn/pull/417))
+- Import Ironsworn moves from dataforged ([#418](https://github.com/ben/foundry-ironsworn/pull/418))
 
 ## 1.16.2
 
