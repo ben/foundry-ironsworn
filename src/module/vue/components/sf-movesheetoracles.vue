@@ -40,13 +40,14 @@
 import { inject, nextTick, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
 import {
+  createIronswornOracleTree,
   createStarforgedOracleTree,
   OracleTreeNode,
 } from '../../features/customoracles'
 import { $EmitterKey } from '../provisions'
 import TreeNode from './oracletree-node.vue'
 
-const tempTreeRoot = await createStarforgedOracleTree()
+const tempTreeRoot = await createIronswornOracleTree()
 // Add the flags we'll use for UI stuff later
 function walk(node: OracleTreeNode) {
   node.forceExpanded = node.forceHidden = false

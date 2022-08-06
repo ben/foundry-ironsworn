@@ -62,13 +62,16 @@ h2 {
 <script setup lang="ts">
 import { flatten } from 'lodash'
 import { computed, inject, nextTick, reactive, ref, Ref } from 'vue'
-import { createStarforgedMoveTree } from '../../features/custommoves'
+import {
+  createIronswornMoveTree,
+  createStarforgedMoveTree,
+} from '../../features/custommoves'
 import { $EmitterKey } from '../provisions'
 import sfMoverow from './sf-moverow.vue'
 
 const actor = inject('actor') as Ref
 
-const tempCategories = await createStarforgedMoveTree()
+const tempCategories = await createIronswornMoveTree()
 for (const category of tempCategories) {
   for (const move of category.moves) {
     move.highlighted = false
