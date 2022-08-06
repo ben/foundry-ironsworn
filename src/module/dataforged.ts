@@ -176,9 +176,11 @@ function generateIdMap(data: typeof starforged): { [key: string]: string } {
 }
 
 const COMPENDIUM_KEY_MAP = {
-  Moves: 'starforgedmoves',
-  Oracles: 'starforgedoracles',
-  Encounters: 'starforgedencounters',
+  'Ironsworn/Moves': 'ironswornmoves',
+  'Ironsworn/Oracles': 'ironswornoracles',
+  'Starforged/Moves': 'starforgedmoves',
+  'Starforged/Oracles': 'starforgedoracles',
+  'Starforged/Encounters': 'starforgedencounters',
 }
 const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
 const DESCRIPTOR_FOCUS_RE = new RegExp('\\[Descriptor \\+ Focus\\]\\(.*?\\)')
@@ -206,7 +208,8 @@ function renderLinksInStr(text: string): string {
   )
 
   return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
-    const kind = url.split('/')[1]
+    const parts = url.split('/')
+    const kind = `${parts[0]}/${parts[1]}`
     const compendiumKey = COMPENDIUM_KEY_MAP[kind]
     if (!compendiumKey) return match
     if (idIsOracleLink(url)) {
