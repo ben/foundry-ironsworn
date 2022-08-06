@@ -222,7 +222,7 @@ function renderMarkdown(md: string, markedFn = marked.parse) {
   return markedFn(renderLinksInStr(md))
 }
 
-function renderLinksInMove(move: IMove) {
+export function renderLinksInMove(move: IMove) {
   const textProperties = [
     'Text',
     'Trigger.Text',
