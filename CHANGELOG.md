@@ -2,6 +2,8 @@
 
 ## In progress
 
+- (v10) Fix a bug with move navigation ([#421](https://github.com/ben/foundry-ironsworn/pull/421))
+
 ## 1.16.4
 
 - Custom conditions with custom names ([#420](https://github.com/ben/foundry-ironsworn/pull/420))
