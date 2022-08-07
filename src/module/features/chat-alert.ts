@@ -154,15 +154,17 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       'doomed',
       'indebted',
       'battered',
+      'custom1',
+      'custom2',
     ]
     for (const debility of debilities) {
       const newValue = get(data.data?.debility, debility)
       if (newValue !== undefined) {
         const oldValue = characterData.data.debility[debility]
         if (oldValue === newValue) continue
-        const i18nDebility = game.i18n.localize(
-          `IRONSWORN.${capitalize(debility)}`
-        )
+        const i18nDebility = debility.startsWith('custom')
+          ? get(characterData.data.debility, `${debility}name`)
+          : game.i18n.localize(`IRONSWORN.${capitalize(debility)}`)
         const params = { condition: i18nDebility }
         // TODO: use "impact" if this is an SF character
         if (newValue)
