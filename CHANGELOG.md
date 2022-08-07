@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.16.4
+
 - Custom conditions with custom names ([#420](https://github.com/ben/foundry-ironsworn/pull/420))
 
 ## 1.16.3
