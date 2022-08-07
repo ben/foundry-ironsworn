@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Custom conditions with custom names ([#420](https://github.com/ben/foundry-ironsworn/pull/420))
+
 ## 1.16.3
 
 - Ironsworn sheet: completed area, and move notes to a tab ([#417](https://github.com/ben/foundry-ironsworn/pull/417))

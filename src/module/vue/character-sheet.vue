@@ -49,7 +49,7 @@
 
         <!-- Conditions & Banes & Burdens -->
         <section class="sheet-area nogrow">
-          <conditions :actor="actor" />
+          <conditions />
         </section>
       </div>
 
@@ -114,7 +114,6 @@ import { provide, computed, inject } from 'vue'
 import { RollDialog } from '../helpers/rolldialog'
 import CharacterHeader from './components/character-header.vue'
 import Conditions from './components/conditions/conditions.vue'
-import { throttle } from 'lodash'
 import Tabs from './components/tabs/tabs.vue'
 import Tab from './components/tabs/tab.vue'
 import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
