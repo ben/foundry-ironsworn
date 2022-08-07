@@ -24,11 +24,10 @@ onMounted(() => {
     actor: $actor,
   })
 
-  $(el.value).find('.entity-link').on('click', click)
+  $(el.value).find('.content-link').on('click', click)
 })
 
 const $emit = defineEmits(['moveclick', 'oracleclick'])
-const $emitter = inject($EmitterKey)
 const $attrs = useAttrs()
 
 async function click(ev: JQuery.ClickEvent) {
