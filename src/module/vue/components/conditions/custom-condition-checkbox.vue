@@ -60,7 +60,6 @@ async function toggled(ev) {
 
 async function immediateNameUpdate() {
   const nk = nameKey.value
-  console.log(`data.debility.${nk}`, actor.value.data.debility[nk])
   await $actor?.update({
     [`data.debility.${nk}`]: actor.value.data.debility[nk],
   })
