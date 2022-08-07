@@ -13,6 +13,14 @@
     <condition-checkbox name="encumbered" />
     <condition-checkbox name="corrupted" />
     <condition-checkbox name="tormented" />
+
+    <custom-condition-checkbox
+      style="grid-column: 1 / 3"
+      debilitykey="custom1"
+    />
+    <custom-condition-checkbox
+      style="grid-column: 3 / 5"
+      debilitykey="custom2"
     />
   </div>
 </template>
@@ -25,4 +33,5 @@
 
 <script setup lang="ts" >
 import ConditionCheckbox from './condition-checkbox.vue'
+import CustomConditionCheckbox from './custom-condition-checkbox.vue'
 </script>
