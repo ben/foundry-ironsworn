@@ -4,6 +4,7 @@
 
 - (v10) Fix a bug with move navigation ([#421](https://github.com/ben/foundry-ironsworn/pull/421))
 - Properly announce setting and clearing of custom conditions in the chat window
+- Fix selection of movesheet with combinations of Ironsworn/Starforged sheets/toolboxes and beta checkbox
 
 ## 1.16.4
 
