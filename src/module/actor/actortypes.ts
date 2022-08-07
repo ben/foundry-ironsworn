@@ -25,6 +25,10 @@ interface CharacterDataSourceData {
     doomed: boolean
     indebted: boolean
     battered: boolean
+    custom1: boolean
+    custom1name: string
+    custom2: boolean
+    custom2name: string
   }
   legacies: {
     quests: number
