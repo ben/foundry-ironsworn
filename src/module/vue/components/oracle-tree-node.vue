@@ -100,6 +100,7 @@ import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { $ActorKey, $EmitterKey, $EnrichMarkdownKey } from '../provisions'
 import { IronswornItem } from '../../item/item'
+import { rollAndDisplayOracleResult } from '../../chat/chatrollhelpers'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 

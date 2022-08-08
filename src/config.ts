@@ -37,20 +37,6 @@ export interface IronswornConfig {
     createActorDialog: CreateActorDialog | null
   }
 
-  // These are for Vue
-  IronswornSettings: typeof IronswornSettings
-  RollDialog: typeof RollDialog
-  SFRollMoveDialog: typeof SFRollMoveDialog
-  Ranks: typeof RANKS
-  RankIncrements: typeof RANK_INCREMENTS
-  attachInlineRollListeners: typeof attachInlineRollListeners
-  createIronswornChatRoll: typeof createIronswornChatRoll
-  createIronswornDenizenChat: typeof createIronswornDenizenChat
-  rollSiteFeature: typeof rollSiteFeature
-  moveDataByName: typeof moveDataByName
-  defaultActor: typeof defaultActor
-  rollAndDisplayOracleResult: typeof rollAndDisplayOracleResult
-
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
 
@@ -75,19 +61,6 @@ export const IRONSWORN: IronswornConfig = {
   },
 
   importFromDatasworn,
-
-  IronswornSettings,
-  RollDialog,
-  SFRollMoveDialog,
-  Ranks: RANKS,
-  RankIncrements: RANK_INCREMENTS,
-  attachInlineRollListeners,
-  createIronswornChatRoll,
-  createIronswornDenizenChat,
-  rollSiteFeature,
-  moveDataByName,
-  defaultActor,
-  rollAndDisplayOracleResult,
 
   Dataforged: starforged,
   dataforgedHelpers,

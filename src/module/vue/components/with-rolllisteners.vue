@@ -7,6 +7,7 @@
 <script setup lang="ts">
 import { inject, onMounted, ref, useAttrs } from 'vue'
 import { IronswornActor } from '../../actor/actor'
+import { attachInlineRollListeners } from '../../helpers/rolldialog'
 import { IronswornItem } from '../../item/item'
 import { $ActorKey, $EmitterKey } from '../provisions'
 
@@ -20,7 +21,7 @@ onMounted(() => {
     return
   }
 
-  CONFIG.IRONSWORN.attachInlineRollListeners($(el.value), {
+  attachInlineRollListeners($(el.value), {
     actor: $actor,
   })
 

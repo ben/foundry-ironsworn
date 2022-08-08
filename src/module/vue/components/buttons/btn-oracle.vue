@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import { sample } from 'lodash'
+import { rollAndDisplayOracleResult } from '../../../chat/chatrollhelpers.js'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
 import btnIsicon from './btn-isicon.vue'
 
@@ -25,6 +26,6 @@ const props = defineProps<{
 
 function rollOracle() {
   const randomTable = sample(props.node.tables)
-  CONFIG.IRONSWORN.rollAndDisplayOracleResult(randomTable)
+  rollAndDisplayOracleResult(randomTable)
 }
 </script>

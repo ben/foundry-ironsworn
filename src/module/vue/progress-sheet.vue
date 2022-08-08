@@ -128,7 +128,8 @@
 </style>
 
 <script setup lang="ts">
-import { computed, inject, provide, Ref } from 'vue'
+import { computed, inject, provide } from 'vue'
+import { RANKS, RANK_INCREMENTS } from "../constants";
 import { $ItemKey } from './provisions'
 import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
@@ -152,7 +153,7 @@ const editMode = computed(
 )
 
 const rankText = computed(() =>
-  game.i18n.localize(CONFIG.IRONSWORN.Ranks[props.item.data.rank])
+  game.i18n.localize(RANKS[props.item.data.rank])
 )
 
 function setRank(rank) {
@@ -164,7 +165,7 @@ function clearProgress() {
 }
 
 function markProgress() {
-  const increment = CONFIG.IRONSWORN.RankIncrements[props.item.data.rank]
+  const increment = RANK_INCREMENTS[props.item.data.rank]
   const newValue = Math.min(props.item.data.current + increment, 40)
   $item?.update({ 'data.current': newValue })
 }

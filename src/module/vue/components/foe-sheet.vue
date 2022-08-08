@@ -76,6 +76,7 @@ import BtnFaicon from './buttons/btn-faicon.vue'
 import ProgressTrack from './progress/progress-track.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 import MceEditor from './mce-editor.vue'
+import { RANKS, RANK_INCREMENTS } from '../../constants'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
@@ -94,7 +95,7 @@ const foundryFoe = computed(() => {
   return $actor?.items.get(foe.value._id)
 })
 const rankText = computed(() => {
-  return game.i18n.localize(CONFIG.IRONSWORN.Ranks[props.actor.data.rank])
+  return game.i18n.localize(RANKS[props.actor.data.rank])
 })
 
 // async foe(newFoe) {
@@ -126,7 +127,7 @@ function clearProgress() {
 }
 
 function markProgress() {
-  const increment = CONFIG.IRONSWORN.RankIncrements[foe.value?.data.rank]
+  const increment = RANK_INCREMENTS[foe.value?.data.rank]
   const newValue = Math.min(foe.value?.data.current + increment, 40)
   foundryFoe.value.update({ 'data.current': newValue })
   foe.value.data.current = newValue

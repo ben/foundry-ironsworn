@@ -93,6 +93,7 @@ import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey } from '../../provisions'
+import { defaultActor } from '../../../helpers/actors'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject('actor') as Ref
@@ -113,7 +114,7 @@ const foundryItem = computed(() => {
 })
 const actingActor = computed(() => {
   if (actor.value.type === 'character') return actor.value
-  return CONFIG.IRONSWORN.defaultActor()?.toObject(false)
+  return defaultActor()?.toObject(false)
 })
 
 function toggle() {
@@ -154,7 +155,7 @@ function exclusiveOptionClick(selectedIdx) {
 function moveclick(item) {
   let actorWithMoves = $actor
   if ($actor?.type !== 'character') {
-    actorWithMoves = CONFIG.IRONSWORN.defaultActor()
+    actorWithMoves = defaultActor()
   }
   actorWithMoves?.moveSheet?.render(true)
   actorWithMoves?.moveSheet?.highlightMove(item)
