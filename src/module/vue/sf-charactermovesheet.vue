@@ -2,12 +2,12 @@
   <tabs ref="tabs">
     <tab :title="$t('IRONSWORN.Moves')">
       <Suspense>
-        <sf-movesheetmoves ref="movesTab" />
+        <sf-movesheetmoves ref="movesTab" :toolset="toolset" />
       </Suspense>
     </tab>
     <tab :title="$t('IRONSWORN.Oracles')">
       <Suspense>
-        <sf-movesheetoracles ref="oraclesTab" />
+        <sf-movesheetoracles ref="oraclesTab" :toolset="toolset" />
       </Suspense>
     </tab>
   </tabs>
@@ -24,6 +24,7 @@ import { $EmitterKey } from './provisions'
 
 const props = defineProps<{
   actor: CharacterDataProperties
+  toolset: 'ironsworn' | 'starforged'
 }>()
 
 provide(

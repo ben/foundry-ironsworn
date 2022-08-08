@@ -176,9 +176,11 @@ function generateIdMap(data: typeof starforged): { [key: string]: string } {
 }
 
 const COMPENDIUM_KEY_MAP = {
-  Moves: 'starforgedmoves',
-  Oracles: 'starforgedoracles',
-  Encounters: 'starforgedencounters',
+  'Ironsworn/Moves': 'ironswornmoves',
+  'Ironsworn/Oracles': 'ironswornoracles',
+  'Starforged/Moves': 'starforgedmoves',
+  'Starforged/Oracles': 'starforgedoracles',
+  'Starforged/Encounters': 'starforgedencounters',
 }
 const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
 const DESCRIPTOR_FOCUS_RE = new RegExp('\\[Descriptor \\+ Focus\\]\\(.*?\\)')
@@ -188,7 +190,7 @@ function idIsOracleLink(dfid: string): boolean {
   return /^(Starforged|Ironsworn)\/Oracle/.test(dfid)
 }
 
-function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
+function renderLinksInStr(text: string): string {
   // Strip "Black Medium Right-Pointing Triangle" characters
   text = text.replace('\u23f5', '')
 
@@ -206,25 +208,24 @@ function renderLinksInStr(text: any, idMap: { [key: string]: string }): any {
   )
 
   return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
-    const kind = url.split('/')[1]
+    const parts = url.split('/')
+    const kind = `${parts[0]}/${parts[1]}`
     const compendiumKey = COMPENDIUM_KEY_MAP[kind]
     if (!compendiumKey) return match
     if (idIsOracleLink(url)) {
       return `<a class="entity-link oracle-category-link" data-dfid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
     }
-    return `@Compendium[foundry-ironsworn.${compendiumKey}.${idMap[url]}]{${text}}`
+    return `@Compendium[foundry-ironsworn.${compendiumKey}.${hash(
+      url
+    )}]{${text}}`
   })
 }
 
-function renderMarkdown(
-  md: string,
-  idMap: { [key: string]: string },
-  markedFn = marked.parse
-) {
-  return markedFn(renderLinksInStr(md, idMap))
+function renderMarkdown(md: string, markedFn = marked.parse) {
+  return markedFn(renderLinksInStr(md))
 }
 
-function renderLinksInMove(idMap: { [key: string]: string }, move: IMove) {
+export function renderLinksInMove(move: IMove) {
   const textProperties = [
     'Text',
     'Trigger.Text',
@@ -237,7 +238,7 @@ function renderLinksInMove(idMap: { [key: string]: string }, move: IMove) {
   for (const prop of textProperties) {
     const text = get(move, prop)
     if (!text) continue
-    set(move, prop, renderLinksInStr(text, idMap))
+    set(move, prop, renderLinksInStr(text))
   }
 }
 
@@ -279,7 +280,7 @@ async function processMoves(idMap: { [key: string]: string }) {
     Record<string, unknown>)[]
   for (const category of MoveCategories) {
     for (const move of category.Moves) {
-      renderLinksInMove(idMap, move)
+      renderLinksInMove(move)
       const cleanMove = cleanDollars(move)
       movesToCreate.push({
         _id: idMap[cleanMove['dfid']],
@@ -306,7 +307,7 @@ async function processAssets(idMap: { [key: string]: string }) {
         _id: idMap[asset.$id],
         name: `${assetType.Name} / ${asset.Name}`,
         data: {
-          description: renderMarkdown(assetType.Description, idMap),
+          description: renderMarkdown(assetType.Description),
           fields:
             asset.Inputs?.map((input) => ({
               name: input.Name,
@@ -315,7 +316,7 @@ async function processAssets(idMap: { [key: string]: string }) {
           abilities: (asset.Abilities ?? []).map((ability) => {
             const ret = {
               enabled: ability.Enabled || false,
-              description: renderMarkdown(ability.Text, idMap),
+              description: renderMarkdown(ability.Text),
             } as any
 
             for (const input of ability.Inputs ?? []) {
@@ -354,7 +355,7 @@ async function processOracles(idMap: { [key: string]: string }) {
   async function processOracle(oracle: IOracle) {
     if (oracle.Table) {
       const description = marked.parseInline(
-        renderLinksInStr(oracle.Description ?? '', idMap)
+        renderLinksInStr(oracle.Description ?? '')
       )
       const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
       oraclesToCreate.push({
@@ -378,7 +379,7 @@ async function processOracles(idMap: { [key: string]: string }) {
           return {
             _id: idMap[tableRow.$id ?? ''],
             range: [tableRow.Floor, tableRow.Ceiling],
-            text: tableRow.Result && renderLinksInStr(text, idMap),
+            text: tableRow.Result && renderLinksInStr(text),
           } as TableResultDataConstructorData
         }).filter((x) => x.range[0] !== null),
       })
@@ -409,7 +410,7 @@ async function processEncounters(idMap: { [key: string]: string }) {
       {
         ...encounter,
         variantLinks: encounter.Variants.map((x) =>
-          renderLinksInStr(`[${x.Name}](${x.$id})`, idMap)
+          renderLinksInStr(`[${x.Name}](${x.$id})`)
         ),
       }
     )

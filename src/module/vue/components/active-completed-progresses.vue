@@ -107,11 +107,11 @@ h3 {
 
 <script setup lang="ts">
 import { computed, inject, reactive, Ref } from 'vue'
-import { $ActorKey } from '../../provisions'
-import OrderButtons from '../order-buttons.vue'
-import ProgressBox from '../progress/progress-box.vue'
-import ProgressControls from '../progress-controls.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import { $ActorKey } from '../provisions'
+import OrderButtons from './order-buttons.vue'
+import ProgressBox from './progress/progress-box.vue'
+import ProgressControls from './progress-controls.vue'
+import BtnFaicon from './buttons/btn-faicon.vue'
 
 const data = reactive({
   expandCompleted: false,

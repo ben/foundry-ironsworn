@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { inject, computed } from 'vue'
+import { inject, computed, Ref } from 'vue'
 import { $ActorKey } from '../provisions'
 import ProgressTrack from './progress/progress-track.vue'
 import btnFaicon from './buttons/btn-faicon.vue'

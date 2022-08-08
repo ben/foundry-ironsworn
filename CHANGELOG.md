@@ -2,6 +2,22 @@
 
 ## In progress
 
+## 1.16.5
+
+- (v10) Fix a bug with move navigation ([#421](https://github.com/ben/foundry-ironsworn/pull/421))
+- Properly announce setting and clearing of custom conditions in the chat window
+- Fix selection of movesheet with combinations of Ironsworn/Starforged sheets/toolboxes and beta checkbox
+
+## 1.16.4
+
+- Custom conditions with custom names ([#420](https://github.com/ben/foundry-ironsworn/pull/420))
+
+## 1.16.3
+
+- Ironsworn sheet: completed area, and move notes to a tab ([#417](https://github.com/ben/foundry-ironsworn/pull/417))
+- Import Ironsworn moves from dataforged ([#418](https://github.com/ben/foundry-ironsworn/pull/418))
+- (Beta) Allow use of the new move/oracle UI for Ironsworn([#419](https://github.com/ben/foundry-ironsworn/pull/419))
+
 ## 1.16.2
 
 - First release that fully loads under Foundry v10 ([#413](https://github.com/ben/foundry-ironsworn/pull/413))

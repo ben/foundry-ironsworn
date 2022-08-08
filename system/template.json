@@ -37,7 +37,11 @@
         "traumatized": false,
         "doomed": false,
         "indebted": false,
-        "battered": false
+        "battered": false,
+        "custom1": false,
+        "custom1name": "",
+        "custom2": false,
+        "custom2name": ""
       },
       "xp": 0
     },
