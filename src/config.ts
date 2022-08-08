@@ -28,6 +28,7 @@ import { MoveItem } from './module/item/move/moveitem'
 import { ProgressItem } from './module/item/progress/progressitem'
 import { VowItem } from './module/item/vow/vowitem'
 import { starforged } from 'dataforged'
+import { IronswornRoll } from './module/rolls'
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
@@ -36,6 +37,8 @@ export interface IronswornConfig {
   applications: {
     createActorDialog: CreateActorDialog | null
   }
+
+  IronswornRoll: typeof IronswornRoll
 
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
@@ -59,6 +62,8 @@ export const IRONSWORN: IronswornConfig = {
   applications: {
     createActorDialog: null,
   },
+
+  IronswornRoll,
 
   importFromDatasworn,
 
