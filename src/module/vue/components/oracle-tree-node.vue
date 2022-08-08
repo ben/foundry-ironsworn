@@ -12,7 +12,7 @@
           {{ node?.displayName }}
         </btn-oracle>
         <btn-faicon
-          class="block nogrow juicy show-oracle-info"
+          class="block nogrow show-oracle-info"
           icon="eye"
           @click="toggleDescription()"
         />
