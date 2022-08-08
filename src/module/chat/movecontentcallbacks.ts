@@ -1,5 +1,5 @@
 import { IronswornActor } from '../actor/actor'
-import { HIT_TYPE } from './chatrollhelpers'
+import { HIT_TYPE } from '../rolls/roll'
 
 type CallbackInput = {
   hitType?: HIT_TYPE

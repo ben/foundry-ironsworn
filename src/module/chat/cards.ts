@@ -1,7 +1,7 @@
 import { capitalize } from 'lodash'
 import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
-import { HIT_TYPE, rollAndDisplayOracleResult } from './chatrollhelpers'
+import { rollAndDisplayOracleResult } from './chatrollhelpers'
 import {
   DelveDomainDataProperties,
   DelveThemeDataProperties,
@@ -13,6 +13,7 @@ import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
+import { HIT_TYPE } from '../rolls/roll'
 
 export class IronswornChatCard {
   id?: string | null

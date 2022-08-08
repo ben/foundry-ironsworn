@@ -13,6 +13,7 @@ import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
+import { HIT_TYPE } from '../rolls/roll'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 
 interface RollMessageParams {
@@ -83,12 +84,6 @@ function calculateDieTotals(roll: Roll): DieTotals {
     challenge2,
     match: challenge1 === challenge2,
   }
-}
-
-export enum HIT_TYPE {
-  MISS = 'MISS',
-  WEAK = 'WEAK',
-  STRONG = 'STRONG',
 }
 
 function calculateHitType(
