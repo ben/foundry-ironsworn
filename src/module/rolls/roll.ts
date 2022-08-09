@@ -11,17 +11,27 @@ export enum HIT_TYPE {
   STRONG = 'STRONG',
 }
 
+// Input to rolling and resolution
 export interface PreRollOptions {
   automaticOutcome?: HIT_TYPE
   presetActionDie?: number // As in Armored #1
   threeChallengeDice?: boolean // As in Sleuth #1
 }
 
+// Input to rendering, can be updated after the fact
 export interface PostRollOptions {
-  actionBonus?: number // As in Kinetic #2
-  replacedChallenge1?: number // As in Loyalist #3
+  // As in Kinetic #2
+  allowActionBonus?: boolean
+  actionBonus?: number
+
+  // As in Loyalist #3
+  allowReplacingChallengeDice?: boolean
+  replacedChallenge1?: number
   replacedChallenge2?: number
-  replacedOutcome?: HIT_TYPE // As in Brawler #2 or Take Decisive Action
+
+  // As in Brawler #2 or Take Decisive Action
+  allowReplacingOutcome?: boolean
+  replacedOutcome?: HIT_TYPE
 }
 
 export class IronswornRoll {
