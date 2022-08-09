@@ -13,19 +13,35 @@ export enum ROLL_OUTCOME {
 
 // Input to rolling and resolution
 export interface PreRollOptions {
-  automaticOutcome?: ROLL_OUTCOME
-  presetActionDie?: number // As in Armored #1
-  threeChallengeDice?: boolean // As in Sleuth #1
+  progressValue?: number // indicates this is a progress roll, no action die will be rolled
+
+  automaticOutcome?: {
+    source: string
+    outcome: ROLL_OUTCOME
+  }
+  // As in Armored #1
+  presetActionDie?: {
+    source: string
+    value: number
+  }
+  // As in Sleuth #1
+  extraChallengeDice?: {
+    source: string
+    value: number
+  }
 }
 
 // Input to rendering, can be updated after the fact
 export interface PostRollOptions {
   // As in Kinetic #2
-  allowActionBonus?: boolean
-  actionBonus?: number
+  suggestedAdds?: {
+    // if present and non-empty, will suggest in the chat-card UI
+    source: string
+    add: number
+  }[]
+  adds?: number
 
   // As in Loyalist #3
-  allowReplacingChallengeDice?: boolean
   replacedChallenge1?: number
   replacedChallenge2?: number
 
