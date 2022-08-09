@@ -13,7 +13,7 @@ import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
-import { HIT_TYPE } from '../rolls/roll'
+import { ROLL_OUTCOME } from '../rolls/roll'
 
 export class IronswornChatCard {
   id?: string | null
@@ -120,14 +120,14 @@ export class IronswornChatCard {
       const theMove = await moveDataByName(move)
       result = theMove && theMove[capitalize(hittype.toLowerCase())]
       bonusContent = MoveContentCallbacks[move]?.call(this, {
-        hitType: hittype as HIT_TYPE,
+        hitType: hittype as ROLL_OUTCOME,
         stat,
       })
     } else {
       const i18nKey = {
-        [HIT_TYPE.STRONG]: 'StrongHit',
-        [HIT_TYPE.WEAK]: 'WeakHit',
-        [HIT_TYPE.MISS]: 'Miss',
+        [ROLL_OUTCOME.STRONG]: 'StrongHit',
+        [ROLL_OUTCOME.WEAK]: 'WeakHit',
+        [ROLL_OUTCOME.MISS]: 'Miss',
       }[hittype]
       result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
     }
@@ -157,9 +157,9 @@ export class IronswornChatCard {
 
     // Get the new result
     const k = {
-      [HIT_TYPE.STRONG]: 'Strong Hit',
-      [HIT_TYPE.WEAK]: 'Weak Hit',
-      [HIT_TYPE.MISS]: 'Miss',
+      [ROLL_OUTCOME.STRONG]: 'Strong Hit',
+      [ROLL_OUTCOME.WEAK]: 'Weak Hit',
+      [ROLL_OUTCOME.MISS]: 'Miss',
     }[hittype]
     const moveData = theMove.data as SFMoveDataProperties
     const newOutcome = moveData.data.Outcomes?.[k]?.Text

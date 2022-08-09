@@ -5,7 +5,7 @@
 // - Rolling that plays nicer with DF Manual Rolls (all in one go, not {d6+N,d10,d10})
 // - Rerolls update chat message
 
-export enum HIT_TYPE {
+export enum ROLL_OUTCOME {
   MISS = 'MISS',
   WEAK = 'WEAK',
   STRONG = 'STRONG',
@@ -13,7 +13,7 @@ export enum HIT_TYPE {
 
 // Input to rolling and resolution
 export interface PreRollOptions {
-  automaticOutcome?: HIT_TYPE
+  automaticOutcome?: ROLL_OUTCOME
   presetActionDie?: number // As in Armored #1
   threeChallengeDice?: boolean // As in Sleuth #1
 }
@@ -31,7 +31,7 @@ export interface PostRollOptions {
 
   // As in Brawler #2 or Take Decisive Action
   allowReplacingOutcome?: boolean
-  replacedOutcome?: HIT_TYPE
+  replacedOutcome?: ROLL_OUTCOME
 }
 
 export class IronswornRoll {

@@ -13,7 +13,7 @@ import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
-import { HIT_TYPE } from '../rolls/roll'
+import { ROLL_OUTCOME } from '../rolls/roll'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 
 interface RollMessageParams {
@@ -90,19 +90,19 @@ function calculateHitType(
   action: number,
   challenge1: number,
   challenge2: number
-): HIT_TYPE {
-  if (action <= Math.min(challenge1, challenge2)) return HIT_TYPE.MISS
-  if (action > Math.max(challenge1, challenge2)) return HIT_TYPE.STRONG
-  return HIT_TYPE.WEAK
+): ROLL_OUTCOME {
+  if (action <= Math.min(challenge1, challenge2)) return ROLL_OUTCOME.MISS
+  if (action > Math.max(challenge1, challenge2)) return ROLL_OUTCOME.STRONG
+  return ROLL_OUTCOME.WEAK
 }
 
-function calculateHitTypeText(type: HIT_TYPE, match: boolean) {
-  if (type === HIT_TYPE.MISS) {
+function calculateHitTypeText(type: ROLL_OUTCOME, match: boolean) {
+  if (type === ROLL_OUTCOME.MISS) {
     return game.i18n.localize(
       match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss'
     )
   }
-  if (type === HIT_TYPE.STRONG) {
+  if (type === ROLL_OUTCOME.STRONG) {
     return game.i18n.localize(
       match ? 'IRONSWORN.Opportunity' : 'IRONSWORN.StrongHit'
     )
@@ -165,31 +165,31 @@ function calculateSFCardTitle(params: SFRollMessageParams) {
 }
 
 function calculateMoveResultText(
-  type: HIT_TYPE,
+  type: ROLL_OUTCOME,
   move?: EnhancedDataswornMove
 ): string | undefined {
   if (!move) return undefined
 
   switch (type) {
-    case HIT_TYPE.MISS:
+    case ROLL_OUTCOME.MISS:
       return move.Miss
-    case HIT_TYPE.WEAK:
+    case ROLL_OUTCOME.WEAK:
       return move.Weak
-    case HIT_TYPE.STRONG:
+    case ROLL_OUTCOME.STRONG:
       return move.Strong
   }
 }
 
 function calculateSFMoveResultText(
-  type: HIT_TYPE,
+  type: ROLL_OUTCOME,
   match: boolean,
   move: IronswornItem
 ) {
   const data = move.data as SFMoveDataProperties
   const outcomeKey = {
-    [HIT_TYPE.MISS]: 'Miss',
-    [HIT_TYPE.WEAK]: 'Weak Hit',
-    [HIT_TYPE.STRONG]: 'Strong Hit',
+    [ROLL_OUTCOME.MISS]: 'Miss',
+    [ROLL_OUTCOME.WEAK]: 'Weak Hit',
+    [ROLL_OUTCOME.STRONG]: 'Strong Hit',
   }[type]
   let outcome = data.data.Outcomes?.[outcomeKey]
   if (match) outcome = outcome?.['With a Match'] ?? outcome
@@ -197,7 +197,7 @@ function calculateSFMoveResultText(
 }
 
 interface MomentumProps {
-  momentumHitType?: HIT_TYPE
+  momentumHitType?: ROLL_OUTCOME
   momentumHitTypeI18n?: string
   negativeMomentumCancel?: boolean
 }

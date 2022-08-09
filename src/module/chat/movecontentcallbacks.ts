@@ -1,8 +1,8 @@
 import { IronswornActor } from '../actor/actor'
-import { HIT_TYPE } from '../rolls/roll'
+import { ROLL_OUTCOME } from '../rolls/roll'
 
 type CallbackInput = {
-  hitType?: HIT_TYPE
+  hitType?: ROLL_OUTCOME
   stat?: string
   site?: IronswornActor
 }
@@ -11,7 +11,7 @@ type Callback = (input: CallbackInput) => string | undefined
 
 export const MoveContentCallbacks: { [key: string]: Callback } = {
   'Delve the Depths': ({ hitType, stat }: CallbackInput) =>
-    hitType === HIT_TYPE.WEAK
+    hitType === ROLL_OUTCOME.WEAK
       ? ` <button class="ironsworn__delvedepths__roll" data-stat="${stat}">
             <i class="fa fa-dice-d6"></i> ${game.i18n.localize(
               'IRONSWORN.Roll'
@@ -26,7 +26,7 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
   `,
 
   Sojourn: ({ hitType }: CallbackInput) =>
-    hitType === HIT_TYPE.MISS
+    hitType === ROLL_OUTCOME.MISS
       ? undefined
       : `
         <hr>
