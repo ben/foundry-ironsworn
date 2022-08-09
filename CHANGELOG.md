@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the first-start dialog save button ([#423](https://github.com/ben/foundry-ironsworn/pull/423))
+
 ## 1.16.5
 
 - (v10) Fix a bug with move navigation ([#421](https://github.com/ben/foundry-ironsworn/pull/421))
