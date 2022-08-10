@@ -89,7 +89,12 @@ export class IronswornRoll {
   }
 
   async evaluate() {
-    if (this.roll) return
+    if (
+      this.roll ||
+      (this.rawChallengeValues && this.rawChallengeValues.length > 0)
+    ) {
+      return
+    }
 
     // VALIDATE
     const isProgress = this.preRollOptions.progress !== undefined
@@ -98,9 +103,6 @@ export class IronswornRoll {
       throw new TypeError(
         'Exactly one of `action` and `progress` are required here'
       )
-    }
-    if (this.rawChallengeValues && this.rawChallengeValues.length > 0) {
-      throw new Error('Already rolled')
     }
 
     // Gather the dice we need to roll
@@ -126,6 +128,32 @@ export class IronswornRoll {
 
   async createOrUpdateChatMessage() {
     await this.evaluate()
+
+    const renderData = {
+      ironswornroll: JSON.stringify(this.serialize()),
+    }
+    const content = await renderTemplate(
+      'systems/foundry-ironsworn/templates/chat/ironsworn-roll.hbs',
+      renderData
+    )
+
+    if (this.chatMessageId) {
+      const msg = game.messages?.get(this.chatMessageId)
+      return msg?.update({ content })
+    } else {
+      const messageData = {
+        speaker: ChatMessage.getSpeaker(),
+        content,
+        type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+        roll: this.roll,
+      }
+
+      const cls = CONFIG.ChatMessage.documentClass
+      const msg = await cls.create(messageData as any, {})
+      this.chatMessageId = msg?.id
+      return msg
+    }
+
     // TODO: render to HTML and create/update chat message
     // TODO: include this.serialize() as data-ironswornroll
   }
@@ -144,13 +172,18 @@ export class IronswornRoll {
   ): Promise<IronswornRoll | undefined> {
     const msg = game.messages?.get(messageId)
     const html = await msg?.getHTML()
-    const json = html?.data('ironswornroll')
-    return json && IronswornRoll.fromJson(json)
+    const json = html?.find('.ironsworn-roll').data('ironswornroll')
+    if (!json) return undefined
+
+    const r = IronswornRoll.fromJson(json)
+    r.chatMessageId = messageId
+    r.roll = msg?.roll || undefined
+    return r
   }
 
-  static fromJson(json: string): IronswornRoll {
+  static fromJson(json: object): IronswornRoll {
     const ir = new IronswornRoll()
-    Object.assign(ir, JSON.parse(json))
+    Object.assign(ir, json)
     return ir
   }
 }
