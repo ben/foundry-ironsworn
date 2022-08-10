@@ -23,6 +23,7 @@ import { registerCompendiumCategoryHook } from './module/features/compendium-cat
 import { registerDragAndDropHooks } from './module/features/drag-and-drop'
 import { primeCommonPackCaches } from './module/features/pack-cache'
 import { activateSceneButtonListeners } from './module/features/sceneButtons'
+import { runStartupMacro } from './module/features/startup-macro'
 import { registerTokenHUDButtons } from './module/features/tokenRotateButtons'
 import { themeSetup } from './module/features/visual-theme'
 import { patchZIndex } from './module/features/z-index'
@@ -184,16 +185,10 @@ Hooks.once('ready', async () => {
 
   registerDragAndDropHooks()
   registerChatAlertHooks()
+  runStartupMacro()
 
   CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   FirstStartDialog.maybeShow()
-
-  // Quill theme stylesheet
-  const link = document.createElement('link')
-  // link.type = 'text/css'
-  link.rel = 'stylesheet'
-  link.href = '//cdn.quilljs.com/1.3.6/quill.bubble.css'
-  document.head.appendChild(link)
 
   // Pre-load all the oracles
   await primeCommonPackCaches()
