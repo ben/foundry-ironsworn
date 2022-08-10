@@ -6,7 +6,7 @@
     icon="d10-tilt"
     :disabled="disabled"
   >
-    <slot></slot>
+    <slot name="default"></slot>
   </btn-isicon>
 </template>
 

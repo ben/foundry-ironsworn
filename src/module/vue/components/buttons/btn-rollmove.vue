@@ -7,7 +7,7 @@
     aria-haspopup="dialog"
     :disabled="disabled"
   >
-    <slot></slot>
+    <slot name="default"></slot>
   </btn-isicon>
 </template>
 

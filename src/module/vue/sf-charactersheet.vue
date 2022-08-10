@@ -1,13 +1,17 @@
 <template>
   <div class="flexcol sf-character-sheet">
+    <!-- TODO: rm inline styles added to maintain consistent styling (required largely because of other inline styles) -->
     <!-- Header row -->
     <sf-characterheader />
 
     <!-- Main body row -->
     <div class="flexrow">
       <!-- Momentum on left -->
-      <div class="flexcol margin-left">
-        <div class="flexrow" style="flex-wrap: nowrap">
+      <div class="flexcol margin-left nogrow" style="width: min-content">
+        <div
+          class="flexrow nogrow"
+          style="flex-wrap: nowrap; width: min-content"
+        >
           <div class="flexcol stack momentum">
             <stack
               stat="momentum"
@@ -27,7 +31,9 @@
             </div>
           </div>
 
-          <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
+          <h4 class="vertical-v2 nogrow" style="width: 18px">
+            {{ $t('IRONSWORN.Momentum') }}
+          </h4>
         </div>
       </div>
 
@@ -55,7 +61,11 @@
       <div class="flexcol margin-right condition-meters">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="vertical-v2 text" :actor="actor" attr="health">
+          <btn-rollstat
+            class="vertical-v2 nogrow text"
+            :actor="actor"
+            attr="health"
+          >
             {{ $t('IRONSWORN.Health') }}
           </btn-rollstat>
           <div class="flexcol stack health">
@@ -67,7 +77,7 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="vertical-v2 text" attr="spirit">
+          <btn-rollstat class="vertical-v2 nogrow text" attr="spirit">
             {{ $t('IRONSWORN.Spirit') }}
           </btn-rollstat>
           <div class="flexcol stack spirit">
@@ -79,7 +89,7 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="vertical-v2 text" attr="supply">
+          <btn-rollstat class="vertical-v2 nogrow text" attr="supply">
             {{ $t('IRONSWORN.Supply') }}
           </btn-rollstat>
           <div class="flexcol stack supply">
@@ -99,6 +109,15 @@
 .sf-character-sheet {
   .stat-roll {
     text-transform: uppercase;
+  }
+  .condition-meters {
+    .icon-button {
+      flex-direction: column;
+      width: 18px;
+      .button-text {
+        writing-mode: vertical-lr;
+      }
+    }
   }
   .tabbed-panels.character-sheet-tabs {
     [role^='tablist'],

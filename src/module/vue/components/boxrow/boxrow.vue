@@ -31,7 +31,6 @@ const items = computed(() => {
 
 const $emit = defineEmits<{ (e: 'click', value: number): void }>()
 function click(i) {
-  console.log(i)
   $emit('click', i)
 }
 </script>

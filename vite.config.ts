@@ -1,5 +1,6 @@
 import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import autoprefixer from 'autoprefixer'
 
 const PORT = 30000
 
@@ -20,6 +21,11 @@ const config: UserConfig = {
         target: `ws://localhost:${PORT}`,
         ws: true,
       },
+    },
+  },
+  css: {
+    postcss: {
+      plugins: [autoprefixer()],
     },
   },
   build: {

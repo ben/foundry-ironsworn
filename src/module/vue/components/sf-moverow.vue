@@ -53,7 +53,7 @@
 h4 {
   margin: 0;
   line-height: 1.4em;
-  gap: 0.25rem;
+  gap: 0.2em;
 }
 .move-summary-buttons {
   gap: 0.5rem;

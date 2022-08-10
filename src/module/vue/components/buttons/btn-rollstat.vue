@@ -1,6 +1,6 @@
 <template>
   <btn-isicon
-    @click="rollStat()"
+    @click="rollStat"
     :tooltip="tooltip"
     class="action-roll stat-roll"
     :class="attr"
@@ -8,7 +8,7 @@
     aria-haspopup="dialog"
     :disabled="disabled"
   >
-    <slot></slot>
+    <slot name="default"></slot>
   </btn-isicon>
 </template>
 
@@ -34,7 +34,6 @@ const $item = computed(() => {
 })
 
 function rollStat() {
-  console.log(props, $item.value)
   RollDialog.show({
     actor: $actor,
     stat: props.attr,

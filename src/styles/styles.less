@@ -1,4 +1,4 @@
-@import './icon-font.less';
+@import './ironsworn-icons.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
@@ -33,15 +33,10 @@
     font-family: inherit;
   }
 
-  button:hover,
-  button:focus {
-    background: unset;
-    border: unset;
-    outline: none;
-    box-shadow: unset;
-  }
-
-  button {
+  button
+  // &.dialog .dialog-buttons button,
+  // &.dialog .dialog-buttons button.default
+  {
     width: unset;
     margin: unset;
     background: unset;
@@ -51,8 +46,14 @@
     // line-height: unset;
     font-family: inherit;
     cursor: pointer;
+    &:hover,
+    &:focus {
+      // background: unset;
+      // border: unset;
+      outline: none;
+      box-shadow: unset;
+    }
   }
-
   .window-content {
     height: 100%;
     padding: 5px;
@@ -189,7 +190,7 @@
   .vertical-v2 {
     writing-mode: vertical-lr;
     border: none;
-    width: 1.25rem;
+    // width: 1.25rem;
 
     i {
       display: inline-block;
@@ -256,7 +257,10 @@
     margin: 1px !important;
   }
 
-  .clickable {
+  // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
+  .interactive {
+    transition: 0.5s ease;
+    cursor: pointer;
     &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
     &[aria-disabled="true"] {
@@ -264,20 +268,25 @@
       pointer-events: none;
       opacity: 0.5;
     }
-    &.block,
-    &.text {
-      &:hover {
-        transition: 0.5s ease;
-      }
-      &:active {
-        transition: 0.2s ease;
-      }
+  }
+
+  &.dialog .dialog-buttons button {
+    // .interactive();
+    // TODO: reimplement the above when updating roll dialog
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    i {
+      height: 18px;
+      width: 18px;
     }
+  }
+
+  .clickable {
+    .interactive();
     &.text {
       justify-content: flex-start;
     }
-    transition: 0.5s ease;
-    cursor: pointer;
   }
 
   .stats {
