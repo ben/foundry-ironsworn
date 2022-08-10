@@ -5,67 +5,138 @@
 // - Rolling that plays nicer with DF Manual Rolls (all in one go, not {d6+N,d10,d10})
 // - Rerolls update chat message
 
+import { pick, range } from 'lodash'
+
 export enum ROLL_OUTCOME {
   MISS = 'MISS',
   WEAK = 'WEAK',
   STRONG = 'STRONG',
 }
 
+type SourcedValue<T = number> = {
+  source: string
+  value: T
+}
+
 // Input to rolling and resolution
 export interface PreRollOptions {
-  progressValue?: number // indicates this is a progress roll, no action die will be rolled
+  // Exactly one of `progress` or `action` is required
 
-  automaticOutcome?: {
-    source: string
-    outcome: ROLL_OUTCOME
+  // indicates this is a progress roll, no action die will be rolled
+  progress?: SourcedValue
+
+  // Indicates this is an action roll
+  action?: {
+    stat: SourcedValue
+    adds?: number
   }
+
+  automaticOutcome?: SourcedValue<ROLL_OUTCOME>
   // As in Armored #1
-  presetActionDie?: {
-    source: string
-    value: number
-  }
+  presetActionDie?: SourcedValue
   // As in Sleuth #1
-  extraChallengeDice?: {
-    source: string
-    value: number
-  }
+  extraChallengeDice?: SourcedValue
 }
 
 // Input to rendering, can be updated after the fact
 export interface PostRollOptions {
   // As in Kinetic #2
-  suggestedAdds?: {
-    // if present and non-empty, will suggest in the chat-card UI
-    source: string
-    add: number
-  }[]
-  adds?: number
+  // if present and non-empty, will suggest in the chat-card UI
+  suggestedAdds?: SourcedValue[]
+  adds?: SourcedValue[]
 
   // As in Loyalist #3
-  replacedChallenge1?: number
-  replacedChallenge2?: number
+  replacedChallenge1?: SourcedValue
+  replacedChallenge2?: SourcedValue
 
   // As in Brawler #2 or Take Decisive Action
   allowReplacingOutcome?: boolean
-  replacedOutcome?: ROLL_OUTCOME
+  replacedOutcome?: SourcedValue<ROLL_OUTCOME>
 }
 
 export class IronswornRoll {
-  rawActionDie?: number
-  rawChallenge1?: number
-  rawChallenge2?: number
-  rawChallenge3?: number
+  rawActionValue?: number
+  rawChallengeValues?: number[]
   preRollOptions: PreRollOptions = {}
   postRollOptions: PostRollOptions = {}
+
+  roll?: Roll
   chatMessageId?: string
 
-  roll() {
-    // TODO: perform the roll and render to chat
+  static action(stat: string, value: number, adds?: number): IronswornRoll {
+    const r = new IronswornRoll()
+    r.preRollOptions = {
+      action: {
+        stat: {
+          source: stat,
+          value,
+        },
+        adds,
+      },
+    }
+    return r
   }
 
-  toMessage() {
+  static progress(source: string, value: number): IronswornRoll {
+    const r = new IronswornRoll()
+    r.preRollOptions = {
+      progress: {
+        source,
+        value,
+      },
+    }
+    return r
+  }
+
+  async evaluate() {
+    if (this.roll) return
+
+    // VALIDATE
+    const isProgress = this.preRollOptions.progress !== undefined
+    const isAction = this.preRollOptions.action !== undefined
+    if ([isProgress, isAction].filter((x) => x).length !== 1) {
+      throw new TypeError(
+        'Exactly one of `action` and `progress` are required here'
+      )
+    }
+    if (this.rawChallengeValues && this.rawChallengeValues.length > 0) {
+      throw new Error('Already rolled')
+    }
+
+    // Gather the dice we need to roll
+    const diceTerms = [] as string[]
+    if (this.preRollOptions.action && !this.preRollOptions.presetActionDie) {
+      diceTerms.push('d6')
+    }
+    const numChallengeDice =
+      2 + (this.preRollOptions.extraChallengeDice?.value ?? 0)
+    diceTerms.push(...range(0, numChallengeDice).map((_) => 'd10'))
+
+    // Roll 'em
+    this.roll = new Roll(`{${diceTerms.join(', ')}}`)
+    await this.roll.roll({ async: true })
+
+    // Pull out raw results
+    const pool = this.roll.terms[0] as PoolTerm
+    const actionRoll = pool.rolls.find((x) => x.formula === '1d6')
+    this.rawActionValue = actionRoll?.total
+    const challengeRolls = pool.rolls.filter((x) => x.formula === '1d10')
+    this.rawChallengeValues = challengeRolls.map((x) => x.total as number)
+  }
+
+  async createOrUpdateChatMessage() {
+    await this.evaluate()
     // TODO: render to HTML and create/update chat message
-    // TODO: include JSON.stringify(this) as data-ironswornroll
+    // TODO: include this.serialize() as data-ironswornroll
+  }
+
+  serialize() {
+    return pick(this, [
+      'preRollOptions',
+      'postRollOptions',
+      'rawActionValue',
+      'rawChallengeValues',
+    ])
   }
 
   static async fromMessage(
@@ -74,8 +145,10 @@ export class IronswornRoll {
     const msg = game.messages?.get(messageId)
     const html = await msg?.getHTML()
     const json = html?.data('ironswornroll')
-    if (!json) return undefined
+    return json && IronswornRoll.fromJson(json)
+  }
 
+  static fromJson(json: string): IronswornRoll {
     const ir = new IronswornRoll()
     Object.assign(ir, JSON.parse(json))
     return ir
