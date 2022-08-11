@@ -133,7 +133,7 @@ export class IronswornRoll {
       ironswornroll: JSON.stringify(this.serialize()),
     }
     const content = await renderTemplate(
-      'systems/foundry-ironsworn/templates/chat/ironsworn-roll.hbs',
+      'systems/foundry-ironsworn/templates/rolls/chat-message.hbs',
       renderData
     )
 
