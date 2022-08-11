@@ -27,20 +27,51 @@ export class IronswornPrerollDialog extends Dialog {
     const statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
     const title = `${rollText} +${statText}`
 
-    const content = await this.renderContent({})
+    const propts = {
+      action: {
+        stat: {
+          source: name,
+          value,
+        },
+      },
+    }
+
+    const content = await this.renderContent({ action: true })
     const buttons = {
       [name]: {
         label: statText,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {
-          IronswornPrerollDialog.submitRoll(el, {
-            action: {
-              stat: {
-                source: name,
-                value,
-              },
-            },
-          })
+          IronswornPrerollDialog.submitRoll(el, propts)
+        },
+      },
+    }
+    return new IronswornPrerollDialog({
+      title,
+      content,
+      buttons,
+      default: name,
+    }).render(true)
+  }
+
+  static async showForProgress(name: string, value: number) {
+    const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')
+    const title = `${rollText}: ${name}`
+
+    const propts: PreRollOptions = {
+      progress: {
+        source: name,
+        value,
+      },
+    }
+
+    const content = await this.renderContent({})
+    const buttons = {
+      [name]: {
+        label: game.i18n.localize('IRONSWORN.Roll'),
+        icon: '<i class="isicon-d10-tilt juicy"></i>',
+        callback: (el: HTMLElement | JQuery<HTMLElement>) => {
+          IronswornPrerollDialog.submitRoll(el, propts)
         },
       },
     }
@@ -54,15 +85,19 @@ export class IronswornPrerollDialog extends Dialog {
 
   static showForMove(move: IronswornItem, actor: IronswornActor) {}
 
-  static showForProgress(name: string, value: number) {
-    const content = this.renderContent({})
-  }
-
   private static submitRoll(
     el: HTMLElement | JQuery<HTMLElement>,
     opts: PreRollOptions
   ) {
-    console.log(el, opts)
+    // Manual adds; only for action rolls
+    if (opts.action) {
+      const form = el[0].querySelector('form')
+      opts.action.adds = parseInt(form.adds.value || '0', 10)
+    }
+
+    const r = new IronswornRoll()
+    r.preRollOptions = opts
+    return r.createOrUpdateChatMessage()
   }
 
   private static renderContent(data: any) {
