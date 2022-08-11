@@ -19,6 +19,7 @@ export class IronswornPrerollDialog extends Dialog {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
       width: 500,
+      resizable: true,
     })
   }
 
@@ -27,7 +28,7 @@ export class IronswornPrerollDialog extends Dialog {
     const statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
     const title = `${rollText} +${statText}`
 
-    const propts = {
+    const prerollOpts = {
       action: {
         stat: {
           source: name,
@@ -36,13 +37,13 @@ export class IronswornPrerollDialog extends Dialog {
       },
     }
 
-    const content = await this.renderContent({ action: true })
+    const content = await this.renderContent({ prerollOpts, action: true })
     const buttons = {
       [name]: {
         label: statText,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {
-          IronswornPrerollDialog.submitRoll(el, propts)
+          IronswornPrerollDialog.submitRoll(el, prerollOpts)
         },
       },
     }
@@ -58,20 +59,20 @@ export class IronswornPrerollDialog extends Dialog {
     const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')
     const title = `${rollText}: ${name}`
 
-    const propts: PreRollOptions = {
+    const prerollOpts: PreRollOptions = {
       progress: {
         source: name,
         value,
       },
     }
 
-    const content = await this.renderContent({})
+    const content = await this.renderContent({ prerollOpts })
     const buttons = {
       [name]: {
         label: game.i18n.localize('IRONSWORN.Roll'),
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {
-          IronswornPrerollDialog.submitRoll(el, propts)
+          IronswornPrerollDialog.submitRoll(el, prerollOpts)
         },
       },
     }
@@ -89,10 +90,31 @@ export class IronswornPrerollDialog extends Dialog {
     el: HTMLElement | JQuery<HTMLElement>,
     opts: PreRollOptions
   ) {
+    const form = el[0].querySelector('form')
+    console.log(form, opts)
+
     // Manual adds; only for action rolls
     if (opts.action) {
-      const form = el[0].querySelector('form')
       opts.action.adds = parseInt(form.adds.value || '0', 10)
+    }
+
+    if (form.automaticOutcome.checked) {
+      opts.automaticOutcome = {
+        source: 'set manually',
+        value: form.automaticOutcomeValue.value,
+      }
+    }
+    if (form.presetActionDie.checked) {
+      opts.presetActionDie = {
+        source: 'set manually',
+        value: parseInt(form.presetActionDieValue.value || '0'),
+      }
+    }
+    if (form.extraChallengeDice.checked) {
+      opts.extraChallengeDice = {
+        source: 'set manually',
+        value: parseInt(form.extraChallengeDiceValue.value || '0'),
+      }
     }
 
     const r = new IronswornRoll()

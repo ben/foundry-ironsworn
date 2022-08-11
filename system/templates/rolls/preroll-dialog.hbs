@@ -5,4 +5,39 @@
     <input type="number" step="1" name="adds" value="0" />
   </div>
   {{/if}}
+
+  {{!-- TODO: simple options from the move + actor assets --}}
+
+  <details style="padding: 5px; margin: 5px 0; border: 1px solid">
+    <summary>{{localize 'IRONSWORN.RollDialog.AdvancedRollOptions'}}</summary>
+
+    <div class="form-group">
+      <label class="checkbox">
+        <input type="checkbox" name="automaticOutcome">
+        {{localize 'IRONSWORN.RollDialog.PredeterminedOutcome'}}
+      </label>
+      <select name="automaticOutcomeValue">
+        <option value="MISS">{{localize 'IRONSWORN.Miss'}}</option>
+        <option value="WEAK">{{localize 'IRONSWORN.WeakHit'}}</option>
+        <option value="STRONG">{{localize 'IRONSWORN.StrongHit'}}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox">
+        <input type="checkbox" name="presetActionDie">
+        {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
+      </label>
+      <input type="number" step="1" name="presetActionDieValue" value="0" />
+    </div>
+
+    <div class="form-group">
+      <label class="checkbox">
+        <input type="checkbox" name="extraChallengeDice">
+        {{localize 'IRONSWORN.RollDialog.ExtraChallengeDice'}}
+      </label>
+      <input type="number" step="1" name="extraChallengeDiceValue" value="0" />
+    </div>
+
+  </details>
 </form>

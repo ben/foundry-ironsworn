@@ -189,6 +189,12 @@
     "Expanse": "Expanse",
     "RotateCCW": "Rotate counter-clockwise",
     "RotateCW": "Rotate clockwise",
+    "RollDialog": {
+      "AdvancedRollOptions": "Advanced Options",
+      "PresetActionDie": "Preset Action Die",
+      "PredeterminedOutcome": "Predetermined Outcome",
+      "ExtraChallengeDice": "Extra Challenge Dice"
+    },
     "ChatAlert": {
       "Renamed": "Renamed to {name}",
       "renamed": "renamed to {name}",
