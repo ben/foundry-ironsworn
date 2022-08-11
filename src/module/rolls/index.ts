@@ -1,2 +1,2 @@
 export { IronswornRoll } from './roll'
-export { IronswornRollDialog } from './dialog'
+export { IronswornPrerollDialog } from './preroll-dialog'
