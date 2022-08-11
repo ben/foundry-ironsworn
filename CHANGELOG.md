@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix a v10 visual glitch around minimizing the move sheet
+
 ## 1.16.6
 
 - Fix the first-start dialog save button ([#423](https://github.com/ben/foundry-ironsworn/pull/423))
