@@ -2,6 +2,8 @@
 
 ## In progress
 
+## 1.16.7
+
 - Fix a v10 visual glitch around minimizing the move sheet
 - Fix a bug with a blank SF setting-truths dialog
 
