@@ -38,7 +38,6 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
     const setValues = this.element.find('form').serializeArray()
     for (const { name, value } of setValues) {
-      console.log({ name, value })
       if (name === 'sheet') {
         const setting = game.settings.get('core', 'sheetClasses') as any
         foundry.utils.mergeObject(setting, { 'Actor.character': value })
