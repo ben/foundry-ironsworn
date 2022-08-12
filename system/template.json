@@ -16,6 +16,8 @@
       "supply": 5,
       "experience": 0,
       "momentum": 2,
+      "momentumReset": 2,
+      "momentumMax": 10,
       "legacies": {
         "quests": 0,
         "questsXpSpent": 0,
