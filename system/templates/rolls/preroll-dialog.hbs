@@ -1,4 +1,28 @@
+{{#*inline "statDescription"}}
+{{#if (eq Using.length 1)}}
+roll +{{lookup Using 0}}
+{{else}}
+roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
+{{/if}}
+{{/inline}}
+
 <form>
+  {{#if move}}
+  <div>{{{enrichMarkdown move.data.data.Trigger.Text}}}</div>
+
+  {{#if move.data.data.Trigger.Options}}
+  <ul>
+    {{#each move.data.data.Trigger.Options}}
+    {{#if Text}}
+    <li>
+      {{ Text }}: <strong>{{>statDescription}}</strong>
+    </li>
+    {{/if}}
+    {{/each}}
+  </ul>
+  {{/if}}
+  {{/if}}
+
   {{#if action}}
   <div class="form-group">
     <label>{{localize 'IRONSWORN.Adds'}}</label>

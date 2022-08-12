@@ -13,7 +13,7 @@ export enum ROLL_OUTCOME {
   STRONG = 'STRONG',
 }
 
-type SourcedValue<T = number> = {
+export type SourcedValue<T = number> = {
   source: string
   value: T
 }
@@ -36,6 +36,10 @@ export interface PreRollOptions {
   presetActionDie?: SourcedValue
   // As in Sleuth #1
   extraChallengeDice?: SourcedValue
+
+  // Decided before the roll, but kept around for resolving updates later
+  moveId?: string // For custom moves
+  moveDfId?: string // for "official" moves
 }
 
 // Input to rendering, can be updated after the fact

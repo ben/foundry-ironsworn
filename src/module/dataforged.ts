@@ -92,12 +92,13 @@ export async function getFoundryISTableByDfId(
 export async function getFoundryMoveByDfId(
   dfid: string
 ): Promise<IronswornItem | undefined> {
-  const documents = await cachedDocumentsForPack(
-    'foundry-ironsworn.starforgedmoves'
-  )
-  return documents?.find((x) => x.id === hashLookup(dfid)) as
-    | IronswornItem
-    | undefined
+  const sfDocuments =
+    (await cachedDocumentsForPack('foundry-ironsworn.starforgedmoves')) ?? []
+  const isDocuments =
+    (await cachedDocumentsForPack('foundry-ironsworn.ironswornmoves')) ?? []
+  return [...sfDocuments, ...isDocuments]?.find(
+    (x) => x.id === hashLookup(dfid)
+  ) as IronswornItem | undefined
 }
 
 export async function getDFMoveByDfId(
