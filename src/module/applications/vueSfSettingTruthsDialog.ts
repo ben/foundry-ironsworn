@@ -20,7 +20,8 @@ export class SFSettingTruthsDialogVue extends VueApplication {
       ...super.renderHelperOptions,
       components: { 'sf-truths': sfTruthsVue },
       vueData: async () => ({
-        truths: starforged['Setting Truths'],
+        // Avoid rollupjs's over-aggressive tree shaking
+        truths: starforged.default['Setting Truths'],
       }),
     }
   }

@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineComponent, inject, PropType, reactive } from 'vue'
+import { computed, inject, reactive } from 'vue'
 import SfTruth from './components/sf-truth.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import { ISettingTruth } from 'dataforged'
