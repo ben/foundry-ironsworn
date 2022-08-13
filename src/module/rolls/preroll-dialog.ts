@@ -39,7 +39,7 @@ function resolvedStatForMode(
   actor: IronswornActor
 ): SourcedValue {
   const normalizedStats = stats.map((x) => x.toLowerCase())
-  let source = normalizedStats[0]
+  let stat = normalizedStats[0]
 
   if (mode === 'Highest' || mode === 'Lowest') {
     const statMap = {}
@@ -47,13 +47,16 @@ function resolvedStatForMode(
       statMap[x] = actor.data.data[x]
     }
     const fn = mode === 'Highest' ? maxBy : minBy
-    source = fn(Object.keys(statMap), (x) => statMap[x]) ?? stats[0]
+    stat = fn(Object.keys(statMap), (x) => statMap[x]) ?? stats[0]
   } else if (mode !== 'Any') {
     // TODO: 'all of'
     throw new Error(`Cannot handle rolling with '${mode}' mode`)
   }
 
-  return { source, value: actor.data.data[source] }
+  const source = `${actor.name} / ${game.i18n.localize(
+    `IRONSWORN.${capitalize(stat)}`
+  )}`
+  return { source, value: actor.data.data[stat] }
 }
 
 export class IronswornPrerollDialog extends Dialog {
