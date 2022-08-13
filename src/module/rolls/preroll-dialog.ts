@@ -235,14 +235,23 @@ export class IronswornPrerollDialog extends Dialog {
     return r.createOrUpdateChatMessage()
   }
 
-  private static renderContent(data: any) {
+  private static async renderRollGraphic(data: any): Promise<string> {
+    const graphicTemplate =
+      'systems/foundry-ironsworn/templates/rolls/roll-graphic.hbs'
+    return renderTemplate(graphicTemplate, data)
+  }
+
+  private static async renderContent(data: any): Promise<string> {
+    const graphic = await this.renderRollGraphic(data)
     const template =
       'systems/foundry-ironsworn/templates/rolls/preroll-dialog.hbs'
-    return renderTemplate(template, data)
+    return renderTemplate(template, { ...data, graphic })
   }
 
   activateListeners(html: JQuery<HTMLElement>): void {
     super.activateListeners(html)
+
+    // Resize when expanding the "advanced" section
     html.find('details').on('toggle', (ev) => {
       const delta = (ev.currentTarget.open ? 1 : -1) * 90
       const app = html.parents('.app')
