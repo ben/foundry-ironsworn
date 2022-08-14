@@ -10,7 +10,7 @@ type RenderData = {
   roll?: IronswornRoll
 
   adds: SourcedValue<number | string>[]
-  computedActionDie?: SourcedValue
+  computedActionDie?: SourcedValue<number | string>
   actionIsDie?: boolean
   actionMinMax?: string
 
@@ -33,6 +33,8 @@ export async function renderRollGraphic(
   // Compute action value
   if (prerollOptions.presetActionDie) {
     renderData.computedActionDie = prerollOptions.presetActionDie
+    renderData.computedActionDie.value =
+      renderData.computedActionDie.value.toString()
   } else if (prerollOptions.progress) {
     renderData.computedActionDie = prerollOptions.progress
   } else if (roll?.rawActionValue) {
@@ -49,7 +51,7 @@ export async function renderRollGraphic(
     // Move rolls will always add a stat
     renderData.adds.push({
       source: 'Select a stat',
-      value: '?',
+      value: `(${game.i18n.localize('IRONSWORN.Stat')})`,
     })
   }
   if (prerollOptions.action) {
