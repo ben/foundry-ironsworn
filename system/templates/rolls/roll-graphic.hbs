@@ -1,3 +1,47 @@
-<div class="roll">
-  <pre><code>{{json this}}</code></pre>
+<div class="roll dice-roll ironsworn-roll">
+
+  <div class="dice-formula">
+    <p>
+      {{!-- The action die or progress score --}}
+      <span class="action roll d6" title="{{computedActionDie.source}}">
+        {{#if computedActionDie.value}}
+        {{computedActionDie.value}}
+        {{else}}
+        &nbsp;
+        {{/if}}
+      </span>
+
+      {{#each adds}}
+      &plus;
+      <span title="{{source}}">{{value}}</span>
+      {{/each}}
+
+      {{localize 'IRONSWORN.Versus'}}
+
+      {{#each challengeDice}}
+      <span class="roll die d10 challenge" title="{{source}}">
+        {{#if value}}
+        {{value}}
+        {{else}}
+        &nbsp;
+        {{/if}}
+      </span>
+      {{/each}}
+
+      {{#if outcome}}
+      &equals;
+      <strong title="{{outcome.source}}">{{outcome.value}}</strong>
+      {{/if}}
+
+    </p>
+    {{!-- <p>
+      <span class="roll die d6 max action">6</span>+3 = <strong>9</strong>
+      {{localize 'IRONSWORN.Versus'}}
+      <span class="roll die d10 challenge">4</span>
+      <span class="roll die d10 challenge">8</span>
+    </p> --}}
+  </div>
+
+  {{!--
+  <pre><code>{{json this}}</code></pre> --}}
 </div>

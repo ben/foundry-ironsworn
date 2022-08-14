@@ -61,7 +61,6 @@ export class IronswornHandlebarsHelpers {
     })
 
     Handlebars.registerHelper('actionDieFormula', function () {
-      console.log(this)
       const r = actionRoll(this.roll)
       const terms = [...r.terms]
       const d = terms.shift()

@@ -1,12 +1,18 @@
 import { IMoveTrigger } from 'dataforged'
 import type { RollMethod } from 'dataforged'
-import { capitalize, maxBy, minBy } from 'lodash'
+import { capitalize, cloneDeep, maxBy, minBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
 import { SFMoveDataProperties } from '../item/itemtypes'
-import { IronswornRoll, PreRollOptions, SourcedValue } from './roll'
+import {
+  IronswornRoll,
+  PreRollOptions,
+  ROLL_OUTCOME,
+  SourcedValue,
+} from './roll'
+import { renderRollGraphic } from './roll-graphic'
 
 interface IronswornRollDalogOptions {}
 
@@ -60,6 +66,17 @@ function resolvedStatForMode(
 }
 
 export class IronswornPrerollDialog extends Dialog {
+  prerollOptions: PreRollOptions = {}
+
+  constructor(
+    pro: PreRollOptions,
+    data: Dialog.Data,
+    options?: Partial<Options>
+  ) {
+    super(data, options)
+    this.prerollOptions = pro
+  }
+
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
@@ -72,26 +89,27 @@ export class IronswornPrerollDialog extends Dialog {
     const statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
     const title = `${rollText} +${statText}`
 
-    const prerollOpts = {
+    const prerollOptions = {
       action: {
-        stat: {
-          source: name,
-          value,
-        },
+        source: name,
+        value,
       },
     }
 
-    const content = await this.renderContent({ prerollOpts, action: true })
+    const content = await this.renderContent({
+      prerollOptions,
+      action: true,
+    })
     const buttons = {
       [name]: {
         label: statText,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {
-          IronswornPrerollDialog.submitRoll(el, prerollOpts)
+          IronswornPrerollDialog.submitRoll(el, prerollOptions)
         },
       },
     }
-    return new IronswornPrerollDialog({
+    return new IronswornPrerollDialog(prerollOptions, {
       title,
       content,
       buttons,
@@ -103,24 +121,24 @@ export class IronswornPrerollDialog extends Dialog {
     const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')
     const title = `${rollText}: ${name}`
 
-    const prerollOpts: PreRollOptions = {
+    const prerollOptions: PreRollOptions = {
       progress: {
         source: name,
         value,
       },
     }
 
-    const content = await this.renderContent({ prerollOpts })
+    const content = await this.renderContent({ prerollOptions })
     const buttons = {
       [name]: {
         label: game.i18n.localize('IRONSWORN.Roll'),
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {
-          IronswornPrerollDialog.submitRoll(el, prerollOpts)
+          IronswornPrerollDialog.submitRoll(el, prerollOptions)
         },
       },
     }
-    return new IronswornPrerollDialog({
+    return new IronswornPrerollDialog(prerollOptions, {
       title,
       content,
       buttons,
@@ -148,20 +166,22 @@ export class IronswornPrerollDialog extends Dialog {
   private static async showForMoveItem(
     move: IronswornItem,
     actor: IronswornActor,
-    prerollOpts: PreRollOptions
+    prerollOptions: PreRollOptions
   ) {
     const data = move.data as SFMoveDataProperties
     const options = rollableOptions(data.data.Trigger)
     if (!options.length) {
       throw new Error(
-        `Move '${move.name}' (${JSON.stringify(prerollOpts)}) is not rollable`
+        `Move '${move.name}' (${JSON.stringify(
+          prerollOptions
+        )}) is not rollable`
       )
     }
 
     const title = move.name || 'MOVE'
 
     const content = await this.renderContent({
-      prerollOpts,
+      prerollOptions,
       move,
       actor,
       action: true,
@@ -179,9 +199,9 @@ export class IronswornPrerollDialog extends Dialog {
         label,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {
-          prerollOpts.action = { stat: resolvedStatForMode(mode, stats, actor) }
-          console.log(prerollOpts)
-          IronswornPrerollDialog.submitRoll(el, prerollOpts)
+          prerollOptions.action = resolvedStatForMode(mode, stats, actor)
+          console.log(prerollOptions)
+          IronswornPrerollDialog.submitRoll(el, prerollOptions)
         },
       }
     }
@@ -191,7 +211,7 @@ export class IronswornPrerollDialog extends Dialog {
       addButton(i, option.Method, option.Using)
     }
 
-    return new IronswornPrerollDialog({
+    return new IronswornPrerollDialog(prerollOptions, {
       title,
       content,
       buttons,
@@ -208,7 +228,7 @@ export class IronswornPrerollDialog extends Dialog {
 
     // Manual adds; only for action rolls
     if (opts.action) {
-      opts.action.adds = parseInt(form.adds.value || '0', 10)
+      opts.adds = parseInt(form.adds.value || '0', 10)
     }
 
     if (form.automaticOutcome.checked) {
@@ -235,17 +255,45 @@ export class IronswornPrerollDialog extends Dialog {
     return r.createOrUpdateChatMessage()
   }
 
-  private static async renderRollGraphic(data: any): Promise<string> {
-    const graphicTemplate =
-      'systems/foundry-ironsworn/templates/rolls/roll-graphic.hbs'
-    return renderTemplate(graphicTemplate, data)
-  }
-
   private static async renderContent(data: any): Promise<string> {
-    const graphic = await this.renderRollGraphic(data)
+    const graphic = await renderRollGraphic(data.prerollOptions)
     const template =
       'systems/foundry-ironsworn/templates/rolls/preroll-dialog.hbs'
     return renderTemplate(template, { ...data, graphic })
+  }
+
+  prerollOptionsWithFormData(): PreRollOptions {
+    const opts = cloneDeep(this.prerollOptions)
+    const form = this.element.find('form')
+
+    const valMap: Record<string, string> = form
+      .serializeArray()
+      .reduce((coll, { name, value }) => ({ ...coll, [name]: value }), {})
+    console.log(valMap)
+
+    opts.adds = parseInt(valMap.adds || '0')
+
+    if (valMap.automaticOutcome) {
+      opts.automaticOutcome = {
+        source: 'set manually',
+        value: valMap.automaticOutcomeValue as ROLL_OUTCOME,
+      }
+    }
+    if (valMap.presetActionDie) {
+      opts.presetActionDie = {
+        source: 'set manually',
+        value: parseInt(valMap.presetActionDieValue || '0'),
+      }
+    }
+    if (valMap.extraChallengeDice) {
+      opts.extraChallengeDice = {
+        source: 'set manually',
+        value: parseInt(valMap.extraChallengeDiceValue || '0'),
+      }
+    }
+
+    console.log(opts)
+    return opts
   }
 
   activateListeners(html: JQuery<HTMLElement>): void {
@@ -256,6 +304,13 @@ export class IronswornPrerollDialog extends Dialog {
       const delta = (ev.currentTarget.open ? 1 : -1) * 90
       const app = html.parents('.app')
       app.height((app.height() ?? 0) + delta)
+    })
+
+    // Re-render the graphic when controls change
+    html.find('input').on('change', async () => {
+      const pro = this.prerollOptionsWithFormData()
+      const graphic = await renderRollGraphic(pro)
+      this.element.find('.ironsworn-roll').replaceWith(graphic)
     })
   }
 }

@@ -26,10 +26,8 @@ export interface PreRollOptions {
   progress?: SourcedValue
 
   // Indicates this is an action roll
-  action?: {
-    stat: SourcedValue
-    adds?: number
-  }
+  action?: SourcedValue
+  adds?: number
 
   automaticOutcome?: SourcedValue<ROLL_OUTCOME>
   // As in Armored #1
