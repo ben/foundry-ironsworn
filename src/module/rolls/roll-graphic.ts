@@ -16,6 +16,7 @@ type RenderData = {
   actionMinMax?: string
   actionTotal?: number
   actionTotalCapped?: boolean
+  actionCanceledByNegativeMomentum?: boolean
 
   challengeDice: Partial<SourcedValue>[]
 
@@ -66,6 +67,12 @@ export async function renderRollGraphic(
     }
     if (roll.rawActionValue === 6) renderData.actionMinMax = 'max'
     if (roll.rawActionValue === 1) renderData.actionMinMax = 'min'
+    if (prerollOptions.momentum === -renderData.computedActionDie.value) {
+      renderData.actionCanceledByNegativeMomentum = true
+      renderData.computedActionDie.source = game.i18n.localize(
+        'IRONSWORN.NegativeMomentumCancel'
+      )
+    }
   }
 
   // Compute all the adds
@@ -94,7 +101,9 @@ export async function renderRollGraphic(
   } else if (prerollOptions.progress) {
     actionTotalTerms.push(prerollOptions.progress.value)
   } else if (roll?.rawActionValue !== undefined) {
-    actionTotalTerms.push(roll.rawActionValue)
+    actionTotalTerms.push(
+      renderData.actionCanceledByNegativeMomentum ? 0 : roll.rawActionValue
+    )
   } else actionTotalTerms.push(undefined)
   // Second term: the stat for an action roll
   if (prerollOptions.action) {
@@ -143,17 +152,17 @@ export async function renderRollGraphic(
       ),
     }
   } else {
+    let actionTotal = renderData.actionTotal
+    if (renderData.actionCanceledByNegativeMomentum) {
+      actionTotal = 0
+    }
     const challenge1 =
       roll?.postRollOptions.replacedChallenge1?.value ??
       roll?.rawChallengeValues?.[0]
     const challenge2 =
       roll?.postRollOptions.replacedChallenge1?.value ??
       roll?.rawChallengeValues?.[1]
-    const outcome = calculateHitType(
-      renderData.actionTotal,
-      challenge1,
-      challenge2
-    )
+    const outcome = calculateHitType(actionTotal, challenge1, challenge2)
     if (outcome) {
       renderData.outcome = {
         value: game.i18n.localize(outcomeKeys[outcome]),

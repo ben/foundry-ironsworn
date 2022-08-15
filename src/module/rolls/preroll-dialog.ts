@@ -13,6 +13,7 @@ import {
   SourcedValue,
 } from './roll'
 import { renderRollGraphic } from './roll-graphic'
+import { CharacterDataProperties } from '../actor/actortypes'
 
 interface IronswornRollDalogOptions {}
 
@@ -179,6 +180,9 @@ export class IronswornPrerollDialog extends Dialog {
     }
 
     const title = move.name || 'MOVE'
+    prerollOptions.momentum = (
+      actor.data as CharacterDataProperties
+    ).data.momentum
 
     const content = await this.renderContent({
       prerollOptions,

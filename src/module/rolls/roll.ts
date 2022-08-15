@@ -30,6 +30,9 @@ export interface PreRollOptions {
   action?: SourcedValue
   adds?: number
 
+  // Negative momentum can cancel an action die
+  momentum?: number
+
   automaticOutcome?: SourcedValue<ROLL_OUTCOME>
   // As in Armored #1
   presetActionDie?: SourcedValue
@@ -70,12 +73,10 @@ export class IronswornRoll {
     const r = new IronswornRoll()
     r.preRollOptions = {
       action: {
-        stat: {
-          source: stat,
-          value,
-        },
-        adds,
+        source: stat,
+        value,
       },
+      adds,
     }
     return r
   }
