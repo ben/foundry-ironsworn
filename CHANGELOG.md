@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix the values for momentum max/reset for new characters
+- Fix chat-message reroll and momentum-burn buttons for Ironsworn rolls (beta feature)
 
 ## 1.16.7
 
