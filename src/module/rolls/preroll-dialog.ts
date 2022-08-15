@@ -282,13 +282,13 @@ export class IronswornPrerollDialog extends Dialog {
     if (valMap.presetActionDie) {
       opts.presetActionDie = {
         source: 'set manually',
-        value: parseInt(valMap.presetActionDieValue || '0'),
+        value: parseInt(valMap.presetActionDieValue || '0', 10),
       }
     }
     if (valMap.extraChallengeDice) {
       opts.extraChallengeDice = {
         source: 'set manually',
-        value: parseInt(valMap.extraChallengeDiceValue || '0'),
+        value: parseInt(valMap.extraChallengeDiceValue || '0', 10),
       }
     }
 
@@ -307,10 +307,12 @@ export class IronswornPrerollDialog extends Dialog {
     })
 
     // Re-render the graphic when controls change
-    html.find('input').on('change', async () => {
+    const rerender = async () => {
       const pro = this.prerollOptionsWithFormData()
       const graphic = await renderRollGraphic(pro)
       this.element.find('.ironsworn-roll').replaceWith(graphic)
-    })
+    }
+    html.find('input').on('change', rerender)
+    html.find('select').on('change', rerender)
   }
 }

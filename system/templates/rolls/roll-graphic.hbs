@@ -16,6 +16,10 @@
       <span title="{{source}}">{{value}}</span>
       {{/each}}
 
+      {{#if actionTotal}}
+      = <strong>{{actionTotal}}</strong>
+      {{/if}}
+
       {{localize 'IRONSWORN.Versus'}}
 
       {{#each challengeDice}}
