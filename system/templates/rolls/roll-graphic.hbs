@@ -17,7 +17,14 @@
       {{/each}}
 
       {{#if actionTotal}}
-      = <strong>{{actionTotal}}</strong>
+      =
+      <strong>
+        {{#if actionTotalCapped}}
+        <abbr title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionTotal}}</abbr>
+        {{else}}
+        {{actionTotal}}
+        {{/if}}
+      </strong>
       {{/if}}
 
       {{localize 'IRONSWORN.Versus'}}

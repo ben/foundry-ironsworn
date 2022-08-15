@@ -269,7 +269,6 @@ export class IronswornPrerollDialog extends Dialog {
     const valMap: Record<string, string> = form
       .serializeArray()
       .reduce((coll, { name, value }) => ({ ...coll, [name]: value }), {})
-    console.log(valMap)
 
     opts.adds = parseInt(valMap.adds || '0')
 
@@ -292,7 +291,6 @@ export class IronswornPrerollDialog extends Dialog {
       }
     }
 
-    console.log(opts)
     return opts
   }
 

@@ -15,6 +15,7 @@ type RenderData = {
   actionIsDie?: boolean
   actionMinMax?: string
   actionTotal?: number
+  actionTotalCapped?: boolean
 
   challengeDice: Partial<SourcedValue>[]
 
@@ -104,6 +105,11 @@ export async function renderRollGraphic(
   // Will it add?
   if (actionTotalTerms.every((x) => x !== undefined)) {
     renderData.actionTotal = sum(actionTotalTerms)
+    // cap at 10
+    if (renderData.actionTotal > 10) {
+      renderData.actionTotal = 10
+      renderData.actionTotalCapped = true
+    }
   }
 
   // Compute challenge dice
