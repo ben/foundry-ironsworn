@@ -6,6 +6,7 @@
 // - Rerolls update chat message
 
 import { pick, range } from 'lodash'
+import { IronswornRollChatMessage } from './chat-message'
 
 export enum ROLL_OUTCOME {
   MISS = 'MISS',
@@ -129,35 +130,7 @@ export class IronswornRoll {
   }
 
   async createOrUpdateChatMessage() {
-    await this.evaluate()
-
-    const renderData = {
-      ironswornroll: this.serialize(),
-    }
-    const content = await renderTemplate(
-      'systems/foundry-ironsworn/templates/rolls/chat-message.hbs',
-      renderData
-    )
-
-    if (this.chatMessageId) {
-      const msg = game.messages?.get(this.chatMessageId)
-      return msg?.update({ content })
-    } else {
-      const messageData = {
-        speaker: ChatMessage.getSpeaker(),
-        content,
-        type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-        roll: this.roll,
-      }
-
-      const cls = CONFIG.ChatMessage.documentClass
-      const msg = await cls.create(messageData as any, {})
-      this.chatMessageId = msg?.id
-      return msg
-    }
-
-    // TODO: render to HTML and create/update chat message
-    // TODO: include this.serialize() as data-ironswornroll
+    return IronswornRollChatMessage.createOrUpdate(this)
   }
 
   serialize() {
@@ -167,20 +140,6 @@ export class IronswornRoll {
       'rawActionValue',
       'rawChallengeValues',
     ])
-  }
-
-  static async fromMessage(
-    messageId: string
-  ): Promise<IronswornRoll | undefined> {
-    const msg = game.messages?.get(messageId)
-    const html = await msg?.getHTML()
-    const json = html?.find('.ironsworn-roll').data('ironswornroll')
-    if (!json) return undefined
-
-    const r = IronswornRoll.fromJson(json)
-    r.chatMessageId = messageId
-    r.roll = msg?.roll || undefined
-    return r
   }
 
   static fromJson(json: object): IronswornRoll {
