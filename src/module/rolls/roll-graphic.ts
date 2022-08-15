@@ -117,6 +117,7 @@ export async function renderRollGraphic(
     renderData.challengeDice = roll.rawChallengeValues.map((x) => ({
       source: 'd10',
       value: x,
+      minmax: x === 1 ? 'min' : x === 10 ? 'max' : undefined,
     }))
   } else if (prerollOptions.extraChallengeDice) {
     for (let i = 0; i < prerollOptions.extraChallengeDice.value; i++) {

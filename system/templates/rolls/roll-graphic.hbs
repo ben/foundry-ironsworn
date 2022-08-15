@@ -3,7 +3,7 @@
   <div class="dice-formula">
     <p>
       {{!-- The action die or progress score --}}
-      <span class="action roll d6" title="{{computedActionDie.source}}">
+      <span class="action roll d6 {{actionMinMax}}" title="{{computedActionDie.source}}">
         {{#if computedActionDie.value}}
         {{computedActionDie.value}}
         {{else}}
@@ -30,7 +30,7 @@
       {{localize 'IRONSWORN.Versus'}}
 
       {{#each challengeDice}}
-      <span class="roll die d10 challenge" title="{{source}}">
+      <span class="roll die d10 challenge {{minmax}}" title="{{source}}">
         {{#if value}}
         {{value}}
         {{else}}
