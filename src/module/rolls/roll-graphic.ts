@@ -19,6 +19,24 @@ type RenderData = {
   outcome?: SourcedValue<ROLL_OUTCOME>
 }
 
+function calculateHitType(
+  action?: number,
+  challenge1?: number,
+  challenge2?: number
+): ROLL_OUTCOME | undefined {
+  if (
+    action === undefined ||
+    challenge1 === undefined ||
+    challenge2 === undefined
+  ) {
+    return undefined
+  }
+
+  if (action <= Math.min(challenge1, challenge2)) return ROLL_OUTCOME.MISS
+  if (action > Math.max(challenge1, challenge2)) return ROLL_OUTCOME.STRONG
+  return ROLL_OUTCOME.WEAK
+}
+
 export async function renderRollGraphic(
   prerollOptions: PreRollOptions,
   roll?: IronswornRoll
@@ -47,15 +65,14 @@ export async function renderRollGraphic(
   }
 
   // Compute all the adds
-  if (prerollOptions.moveDfId || prerollOptions.moveId) {
+  if (prerollOptions.action) {
+    renderData.adds.push(prerollOptions.action)
+  } else if (prerollOptions.moveDfId || prerollOptions.moveId) {
     // Move rolls will always add a stat
     renderData.adds.push({
       source: 'Select a stat',
       value: `(${game.i18n.localize('IRONSWORN.Stat')})`,
     })
-  }
-  if (prerollOptions.action) {
-    renderData.adds.push(prerollOptions.action)
   }
   if (prerollOptions.adds) {
     renderData.adds.push({
@@ -83,6 +100,21 @@ export async function renderRollGraphic(
   // Compute outcome
   if (prerollOptions.automaticOutcome) {
     renderData.outcome = prerollOptions.automaticOutcome
+  } else {
+    const action = prerollOptions.presetActionDie?.value ?? roll?.rawActionValue
+    const challenge1 =
+      roll?.postRollOptions.replacedChallenge1?.value ??
+      roll?.rawChallengeValues?.[0]
+    const challenge2 =
+      roll?.postRollOptions.replacedChallenge1?.value ??
+      roll?.rawChallengeValues?.[1]
+    const outcome = calculateHitType(action, challenge1, challenge2)
+    if (outcome) {
+      renderData.outcome = {
+        value: outcome,
+        source: game.i18n.localize('IRONSWORN.Roll'),
+      }
+    }
   }
 
   const graphicTemplate =
