@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import { sample } from 'lodash'
+import { inject } from 'vue'
 import { rollAndDisplayOracleResult } from '../../../chat/chatrollhelpers.js'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
 import btnIsicon from './btn-isicon.vue'
@@ -24,8 +25,14 @@ const props = defineProps<{
   disabled?: boolean
 }>()
 
+const toolset = inject<'ironsworn' | 'starforged'>('toolset')
+
 function rollOracle() {
   const randomTable = sample(props.node.tables)
-  rollAndDisplayOracleResult(randomTable)
+  const pack = {
+    ironsworn: 'foundry-ironsworn.ironswornoracles',
+    starforged: 'foundry-ironsworn.starforgedoracles',
+  }[toolset ?? '']
+  rollAndDisplayOracleResult(randomTable, pack)
 }
 </script>

@@ -37,7 +37,7 @@
 </style>
 
 <script setup lang="ts">
-import { inject, nextTick, reactive, ref, watch } from 'vue'
+import { inject, nextTick, provide, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
 import {
   createIronswornOracleTree,
@@ -48,6 +48,7 @@ import { $EmitterKey } from '../provisions'
 import OracleTreeNode from './oracle-tree-node.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
+provide('toolset', props.toolset)
 
 const tempTreeRoot =
   props.toolset === 'ironsworn'
