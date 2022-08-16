@@ -143,7 +143,6 @@ export async function renderRollGraphic(
     [ROLL_OUTCOME.WEAK]: 'IRONSWORN.WeakHit',
     [ROLL_OUTCOME.STRONG]: 'IRONSWORN.StrongHit',
   }
-
   if (prerollOptions.automaticOutcome) {
     renderData.outcome = {
       source: prerollOptions.automaticOutcome.source,
@@ -151,6 +150,12 @@ export async function renderRollGraphic(
         outcomeKeys[prerollOptions.automaticOutcome.value]
       ),
     }
+  } else if (
+    prerollOptions.extraChallengeDice &&
+    !roll?.postRollOptions.replacedChallenge1 &&
+    !roll?.postRollOptions.replacedChallenge2
+  ) {
+    // Rolled extra dice but haven't resolved that yet; no answers for you
   } else {
     let actionTotal = renderData.actionTotal
     if (renderData.actionCanceledByNegativeMomentum) {
