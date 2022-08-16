@@ -5,7 +5,9 @@
 // - Rolling that plays nicer with DF Manual Rolls (all in one go, not {d6+N,d10,d10})
 // - Rerolls update chat message
 
-import { pick, range } from 'lodash'
+import { pick, range, sum } from 'lodash'
+import { getFoundryMoveByDfId } from '../dataforged'
+import { IronswornItem } from '../item/item'
 import { IronswornRollChatMessage } from './chat-message'
 
 export enum ROLL_OUTCOME {
@@ -63,11 +65,19 @@ export interface PostRollOptions {
 export class IronswornRoll {
   rawActionValue?: number
   rawChallengeValues?: number[]
-  preRollOptions: PreRollOptions = {}
-  postRollOptions: PostRollOptions = {}
+  preRollOptions: PreRollOptions
+  postRollOptions: PostRollOptions
 
   roll?: Roll
   chatMessageId?: string
+
+  constructor(
+    preRollOpts: PreRollOptions = {},
+    postRollOpts: PostRollOptions = {}
+  ) {
+    this.preRollOptions = preRollOpts
+    this.postRollOptions = postRollOpts
+  }
 
   static action(stat: string, value: number, adds?: number): IronswornRoll {
     const r = new IronswornRoll()
@@ -141,6 +151,167 @@ export class IronswornRoll {
       'rawActionValue',
       'rawChallengeValues',
     ])
+  }
+
+  get actionDie(): SourcedValue | undefined {
+    if (this.preRollOptions.presetActionDie) {
+      return this.preRollOptions.presetActionDie
+    }
+
+    if (this.preRollOptions.progress) {
+      return this.preRollOptions.progress
+    }
+
+    if (this.rawActionValue) {
+      return {
+        source: 'd6',
+        value: this.rawActionValue, // TODO: post-roll override
+      }
+    }
+
+    return undefined
+  }
+
+  get canceledByNegativeMomentum(): boolean {
+    if (this.actionDie) {
+      return this.preRollOptions.momentum === -this.actionDie.value
+    }
+    // Unresolved rolls can't be canceled
+    return false
+  }
+
+  get adds(): Array<SourcedValue<string | number>> {
+    const ret: Array<SourcedValue<string | number>> = []
+
+    if (this.preRollOptions.action) {
+      ret.push(this.preRollOptions.action)
+    } else if (this.preRollOptions.moveDfId || this.preRollOptions.moveId) {
+      // move rolls will always add a stat
+      ret.push({
+        source: 'Select a stat',
+        value: `(${game.i18n.localize('IRONSWORN.Stat')})`,
+      })
+    }
+
+    if (this.preRollOptions.adds) {
+      ret.push({
+        source: game.i18n.localize('IRONSWORN.Adds'),
+        value: this.preRollOptions.adds,
+      })
+    }
+    // TODO: post-roll adds
+
+    return ret
+  }
+
+  private get rawActionTotal(): number | undefined {
+    const terms = [] as Array<number | undefined>
+
+    // First term: progress score or action-die roll
+    if (this.preRollOptions.presetActionDie) {
+      terms.push(
+        this.canceledByNegativeMomentum
+          ? 0
+          : this.preRollOptions.presetActionDie.value
+      )
+    } else if (this.preRollOptions.progress) {
+      terms.push(this.preRollOptions.progress.value)
+    } else if (this.rawActionValue !== undefined) {
+      terms.push(this.canceledByNegativeMomentum ? 0 : this.rawActionValue)
+    } else terms.push(undefined) // Not rolled yet
+
+    // Second term: the stat for an action roll
+    if (this.preRollOptions.action) {
+      terms.push(this.preRollOptions.action.value)
+    } else if (this.moveItem) {
+      // This is a move, but the action input isn't set, which means we haven't rolled yet
+      terms.push(undefined)
+    }
+
+    // Third term: all other adds
+    terms.push(this.preRollOptions.adds ?? 0)
+
+    // Will it add?
+    if (terms.every((x) => x !== undefined)) {
+      return sum(terms)
+    }
+    return undefined
+  }
+
+  get actionTotal(): number | undefined {
+    const ret = this.rawActionTotal
+    return ret === undefined ? undefined : Math.min(ret, 10)
+  }
+
+  get actionTotalCapped(): boolean {
+    return (this.rawActionTotal ?? 0) > 10
+  }
+
+  get challengeDiceValues(): SourcedValue<number | undefined>[] {
+    const ret = [] as SourcedValue<number | undefined>[]
+    if (this.rawChallengeValues !== undefined) {
+      // challenge dice have been rolled, report them
+      ret.push(
+        ...this.rawChallengeValues.map((x) => ({
+          source: 'd10',
+          value: x,
+        }))
+      )
+    } else {
+      // Not rolled yet. Definitely include two, then maybe some extras
+      ret.push({ source: '', value: undefined })
+      ret.push({ source: '', value: undefined })
+      if (this.preRollOptions.extraChallengeDice) {
+        for (let i = 0; i < this.preRollOptions.extraChallengeDice.value; i++) {
+          ret.push({
+            source: game.i18n.localize(
+              'IRONSWORN.RollDialog.ExtraChallengeDice'
+            ),
+            value: undefined,
+          })
+        }
+      }
+    }
+    // TODO: post-roll selection/overrides for challenge dice
+    return ret
+  }
+
+  // Either [N,N] or undefined
+  get finalChallengeDice(): undefined | number[] {
+    if (this.rawChallengeValues?.length === 2) {
+      return [
+        this.postRollOptions.replacedChallenge1?.value ??
+          this.rawChallengeValues[0],
+        this.postRollOptions.replacedChallenge2?.value ??
+          this.rawChallengeValues[1],
+      ]
+    }
+    // TODO: post-roll selections of >2 rolls
+    return undefined
+  }
+
+  get outcome(): SourcedValue<ROLL_OUTCOME> | undefined {
+    if (this.preRollOptions.automaticOutcome) {
+      return this.preRollOptions.automaticOutcome
+    }
+    if (!this.finalChallengeDice || this.actionTotal === undefined)
+      return undefined
+
+    const [c1, c2] = this.finalChallengeDice
+    let outcome = ROLL_OUTCOME.WEAK
+    if (this.actionTotal <= Math.min(c1, c2)) outcome = ROLL_OUTCOME.MISS
+    if (this.actionTotal > Math.max(c1, c2)) outcome = ROLL_OUTCOME.STRONG
+    return {
+      value: outcome,
+      source: game.i18n.localize('IRONSWORN.Roll'),
+    }
+  }
+
+  get moveItem(): Promise<IronswornItem | undefined> | undefined {
+    const { moveDfId, moveId } = this.preRollOptions
+    if (moveDfId) return getFoundryMoveByDfId(moveDfId)
+    if (moveId) return game.items?.get(moveId)
+    return undefined
   }
 
   static fromJson(json: object): IronswornRoll {
