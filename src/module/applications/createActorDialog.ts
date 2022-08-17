@@ -1,6 +1,6 @@
 import { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
 import { IronswornActor } from '../actor/actor'
-import { getFoundrySFTableByDfId } from '../dataforged'
+import { getFoundryTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
 
 interface CreateActorDialogOptions extends FormApplicationOptions {
@@ -177,10 +177,10 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     if (!pack) return undefined
 
-    const firstTable = (await getFoundrySFTableByDfId(
+    const firstTable = (await getFoundryTableByDfId(
       'Starforged/Oracles/Characters/Name/Given_Name'
     )) as any
-    const lastTable = (await getFoundrySFTableByDfId(
+    const lastTable = (await getFoundryTableByDfId(
       'Starforged/Oracles/Characters/Name/Family_Name'
     )) as any
     if (!firstTable || !lastTable) return undefined

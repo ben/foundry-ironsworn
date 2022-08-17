@@ -68,23 +68,15 @@ export function hash(str: string): string {
   return shajs('sha256').update(str).digest('hex').substring(48)
 }
 
-export async function getFoundrySFTableByDfId(
+export async function getFoundryTableByDfId(
   dfid: string
 ): Promise<StoredDocument<RollTable> | undefined> {
-  const documents = await cachedDocumentsForPack(
+  const isd = await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
+  const sfd = await cachedDocumentsForPack(
     'foundry-ironsworn.starforgedoracles'
   )
-  return documents?.find((x) => x.id === hashLookup(dfid)) as
-    | StoredDocument<RollTable>
-    | undefined
-}
-export async function getFoundryISTableByDfId(
-  dfid: string
-): Promise<StoredDocument<RollTable> | undefined> {
-  const documents = await cachedDocumentsForPack(
-    'foundry-ironsworn.ironswornoracles'
-  )
-  return documents?.find((x) => x.id === hashLookup(dfid)) as
+  const matcher = (x) => x.id === hashLookup(dfid)
+  return (isd?.find(matcher) ?? sfd?.find(matcher)) as
     | StoredDocument<RollTable>
     | undefined
 }

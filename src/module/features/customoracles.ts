@@ -1,6 +1,6 @@
 import { starforged, ironsworn, IOracle, IOracleCategory } from 'dataforged'
 import { compact } from 'lodash'
-import { getFoundryISTableByDfId, getFoundrySFTableByDfId } from '../dataforged'
+import { getFoundryTableByDfId } from '../dataforged'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface IOracleTreeNode {
@@ -25,8 +25,7 @@ const emptyNode = () =>
 
 async function createOracleTree(
   compendium: string,
-  categories: IOracleCategory[],
-  tableGetter: (dfid: string) => Promise<StoredDocument<RollTable> | undefined>
+  categories: IOracleCategory[]
 ): Promise<IOracleTreeNode> {
   const rootNode = emptyNode()
 
@@ -35,7 +34,7 @@ async function createOracleTree(
 
   // Build the default tree
   for (const category of categories) {
-    rootNode.children.push(await walkOracleCategory(category, tableGetter))
+    rootNode.children.push(await walkOracleCategory(category))
   }
 
   // Add in custom oracles from a well-known directory
@@ -54,7 +53,7 @@ export async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
   return createOracleTree(
     'foundry-ironsworn.ironswornoracles',
     ISOracleCategories,
-    getFoundryISTableByDfId
+    getFoundryTableByDfId
   )
 }
 
@@ -62,13 +61,12 @@ export async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
   return createOracleTree(
     'foundry-ironsworn.starforgedoracles',
     SFOracleCategories,
-    getFoundrySFTableByDfId
+    getFoundryTableByDfId
   )
 }
 
 async function walkOracleCategory(
-  cat: IOracleCategory,
-  tableGetter: typeof getFoundrySFTableByDfId
+  cat: IOracleCategory
 ): Promise<IOracleTreeNode> {
   const node: IOracleTreeNode = {
     ...emptyNode(),
@@ -77,10 +75,10 @@ async function walkOracleCategory(
   }
 
   for (const childCat of cat.Categories ?? []) {
-    node.children.push(await walkOracleCategory(childCat, tableGetter))
+    node.children.push(await walkOracleCategory(childCat))
   }
   for (const oracle of cat.Oracles ?? []) {
-    node.children.push(await walkOracle(oracle, tableGetter))
+    node.children.push(await walkOracle(oracle))
   }
 
   // Promote children of nodes that have a table
@@ -94,11 +92,8 @@ async function walkOracleCategory(
   return node
 }
 
-async function walkOracle(
-  oracle: IOracle,
-  tableGetter: typeof getFoundrySFTableByDfId
-): Promise<IOracleTreeNode> {
-  const table = await tableGetter(oracle.$id)
+async function walkOracle(oracle: IOracle): Promise<IOracleTreeNode> {
+  const table = await getFoundryTableByDfId(oracle.$id)
 
   const node: IOracleTreeNode = {
     ...emptyNode(),
@@ -111,14 +106,14 @@ async function walkOracle(
 
   // Child oracles
   for (const childOracle of oracle.Oracles ?? []) {
-    node.children.push(await walkOracle(childOracle, tableGetter))
+    node.children.push(await walkOracle(childOracle))
   }
 
   // Subtables on results
   for (const entry of oracle.Table ?? []) {
     const name = entry.Result
     if (entry.Subtable) {
-      const subtable = await tableGetter(`${oracle.$id}/${name}`)
+      const subtable = await getFoundryTableByDfId(`${oracle.$id}/${name}`)
       if (subtable) {
         node.children.push({
           ...emptyNode(),

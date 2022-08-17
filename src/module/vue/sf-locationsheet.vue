@@ -582,7 +582,7 @@ async function randomizeName() {
     name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
   } else if (subtype === 'settlement') {
     const table =
-      await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
+      await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
         'Starforged/Oracles/Settlements/Name'
       )
     name = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
@@ -608,8 +608,9 @@ async function randomizeKlass() {
     tableKey = 'Starforged/Oracles/Vaults/Location'
   }
 
-  const table =
-    await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(tableKey)
+  const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
+    tableKey
+  )
   const rawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
   if (!rawText) return
 
@@ -630,10 +631,9 @@ async function rollFirstLook() {
   }
 }
 async function rollOracle(oracle) {
-  const table =
-    await CONFIG.IRONSWORN.dataforgedHelpers.getFoundrySFTableByDfId(
-      oracle.dfId
-    )
+  const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
+    oracle.dfId
+  )
   const drawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
   if (!drawText) return
 
