@@ -34,6 +34,19 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
   </div>
   {{/if}}
 
+  {{#unless actor}}
+  <div class="form-group">
+    <label for="char">{{localize 'IRONSWORN.Character'}}</label>
+    <select name="char" id="char">
+      {{#each allActors}}
+      <option value="{{id}}">
+        {{name}}
+      </option>
+      {{/each}}
+    </select>
+  </div>
+  {{/unless}}
+
   {{!-- TODO: simple options from the move + actor assets --}}
 
   <details style="padding: 5px; margin: 5px 0; border: 1px solid">

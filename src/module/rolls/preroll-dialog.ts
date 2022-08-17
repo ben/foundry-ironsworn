@@ -1,6 +1,6 @@
 import { IMoveTrigger } from 'dataforged'
 import type { RollMethod } from 'dataforged'
-import { capitalize, cloneDeep, maxBy, minBy } from 'lodash'
+import { capitalize, cloneDeep, maxBy, minBy, sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
@@ -147,27 +147,27 @@ export class IronswornPrerollDialog extends Dialog {
     }).render(true)
   }
 
-  static async showForOfficialMove(moveDfId: string, actor: IronswornActor) {
+  static async showForOfficialMove(moveDfId: string, actor?: IronswornActor) {
     const moveItem = await getFoundryMoveByDfId(moveDfId)
     if (!moveItem) {
       throw new Error(`Couldn't find item for move '${moveDfId}'`)
     }
 
-    return this.showForMoveItem(moveItem, actor, { moveDfId })
+    return this.showForMoveItem(moveItem, { moveDfId }, actor)
   }
 
-  static async showForCustomMove(move: IronswornItem, actor: IronswornActor) {
+  static async showForCustomMove(move: IronswornItem, actor?: IronswornActor) {
     if (move.type !== 'sfmove') {
       throw new Error('this only works with SF moves')
     }
 
-    return this.showForMoveItem(move, actor, { moveId: move.id || undefined })
+    return this.showForMoveItem(move, { moveId: move.id || undefined }, actor)
   }
 
   private static async showForMoveItem(
     move: IronswornItem,
-    actor: IronswornActor,
-    prerollOptions: PreRollOptions
+    prerollOptions: PreRollOptions,
+    actor?: IronswornActor
   ) {
     const data = move.data as SFMoveDataProperties
     const options = rollableOptions(data.data.Trigger)
@@ -180,14 +180,23 @@ export class IronswornPrerollDialog extends Dialog {
     }
 
     const title = move.name || 'MOVE'
-    prerollOptions.momentum = (
-      actor.data as CharacterDataProperties
-    ).data.momentum
+    const allActors = [] as IronswornActor[]
+    if (actor) {
+      allActors.push(actor)
+    } else {
+      allActors.push(
+        ...sortBy(
+          game.actors?.filter((x) => x.type === 'character'),
+          'name'
+        )
+      )
+    }
 
     const content = await this.renderContent({
       prerollOptions,
       move,
       actor,
+      allActors,
       action: true,
     })
     const buttons = {}
@@ -202,9 +211,21 @@ export class IronswornPrerollDialog extends Dialog {
         // ] = {
         label,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
-        callback: (el: HTMLElement | JQuery<HTMLElement>) => {
-          prerollOptions.action = resolvedStatForMode(mode, stats, actor)
-          console.log(prerollOptions)
+        callback: (el: JQuery<HTMLElement>) => {
+          let rollingActor: IronswornActor
+          if (allActors.length === 1) {
+            rollingActor = allActors[0]
+          } else {
+            // Get the selected actor from the dialog
+            const actorId = el.find('#char').val() as string
+            rollingActor = game.actors?.get(actorId)!
+          }
+
+          // Set up for the roll
+          const actorData = rollingActor.data as CharacterDataProperties
+          prerollOptions.momentum = actorData.data.momentum
+          prerollOptions.action = resolvedStatForMode(mode, stats, rollingActor)
+
           IronswornPrerollDialog.submitRoll(el, prerollOptions)
         },
       }
@@ -254,9 +275,7 @@ export class IronswornPrerollDialog extends Dialog {
       }
     }
 
-    const r = new IronswornRoll()
-    r.preRollOptions = opts
-    return r.createOrUpdateChatMessage()
+    return new IronswornRoll(opts).createOrUpdateChatMessage()
   }
 
   private static async renderContent(data: any): Promise<string> {
