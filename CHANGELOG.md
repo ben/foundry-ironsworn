@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix the new-character dialog to correctly generate SF character names
+- Bump dataforged to [v1.5.0](https://github.com/rsek/dataforged/releases/tag/v1.5.0) and re-import data ([#433](https://github.com/ben/foundry-ironsworn/pull/433))
 
 ## 1.16.8
 
