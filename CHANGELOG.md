@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the new-character dialog to correctly generate SF character names
+
 ## 1.16.8
 
 - Fix the values for momentum max/reset for new characters
