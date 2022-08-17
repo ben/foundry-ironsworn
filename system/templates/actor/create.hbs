@@ -11,9 +11,14 @@
 <form class='{{cssClass}} flexcol' autocomplete='off'>
   <div class="flexcol">
     <div class="flexrow boxrow">
+      {{#if sfenabled}}
+      {{>createBox type="sfcharacter" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
+      {{else}}
       {{>createBox type="character" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{>createBox type="shared" labelkey="IRONSWORN.SharedSheet"
-      img="icons/environment/settlement/wagon-black.webp"}}
+      {{/if}}
+
+      {{>createBox type="shared" labelkey="IRONSWORN.SharedSheet" img="icons/environment/settlement/wagon-black.webp"}}
+
       {{#if sfenabled}}
       {{>createBox type="sfship" labelkey="IRONSWORN.Starship" img="icons/environment/settlement/wizard-castle.webp"}}
       {{>createBox type="sflocation" labelkey="IRONSWORN.Location"
@@ -22,6 +27,7 @@
       {{>createBox type="site" labelkey="IRONSWORN.DelveSite"
       img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
       {{/if}}
+
       {{>createBox type="foe" labelkey="IRONSWORN.NPC" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
     </div>
   </div>
