@@ -1,3 +1,4 @@
+import { IOutcomeInfo } from 'dataforged'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { ROLL_OUTCOME } from './roll'
@@ -64,6 +65,7 @@ export class IronswornRollChatMessage {
     const renderData = {
       graphic: await renderRollGraphic(this.roll.preRollOptions, this.roll),
       ironswornroll: this.roll.serialize(),
+      ...(await this.moveData()),
       ...this.momentumData(),
     }
     const content = await renderTemplate(
@@ -89,6 +91,41 @@ export class IronswornRollChatMessage {
     }
   }
 
+  private async moveData(): Promise<any> {
+    const move = await this.roll.moveItem
+    if (move?.data.type !== 'sfmove') return {}
+
+    // Original outcome
+    const ret = {} as any
+    const keys = {
+      [ROLL_OUTCOME.MISS]: 'Miss',
+      [ROLL_OUTCOME.WEAK]: 'Weak Hit',
+      [ROLL_OUTCOME.STRONG]: 'Strong Hit',
+    }
+    if (this.roll.preAdjustmentOutcome) {
+      const key = keys[this.roll.preAdjustmentOutcome.value]
+      let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
+      if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
+        dfOutcome = dfOutcome['With a Match']
+      if (dfOutcome) {
+        ret.originalMoveOutcome = dfOutcome.Text
+      }
+    }
+
+    // Adjusted outcome
+    if (this.roll.postAdjustmentOutcome) {
+      const key = keys[this.roll.postAdjustmentOutcome.value]
+      let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
+      if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
+        dfOutcome = dfOutcome['With a Match']
+      if (dfOutcome) {
+        ret.adjustedMoveOutcome = dfOutcome.Text
+      }
+    }
+
+    return ret
+  }
+
   private momentumData(): any {
     if (this.actor?.data.type !== 'character') return {}
 
@@ -98,13 +135,12 @@ export class IronswornRollChatMessage {
     const momentum = this.actor.data.data.momentum
     const momentumOutcome = rollResult(momentum, c1, c2)
 
-    switch (`${this.roll.outcome?.value} -> ${momentumOutcome}`) {
+    switch (`${this.roll.preAdjustmentOutcome?.value} -> ${momentumOutcome}`) {
       case 'MISS -> WEAK':
       case 'MISS -> STRONG':
       case 'WEAK -> STRONG':
         return {
-          momentumOutcome,
-          momentumOutcomeI18n: outcomeText(momentumOutcome, c1 === c2),
+          possibleMomentumBurn: outcomeText(momentumOutcome, c1 === c2),
         }
       default:
         return {}

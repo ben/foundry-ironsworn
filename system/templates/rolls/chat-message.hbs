@@ -3,10 +3,17 @@
     {{{graphic}}}
   </div>
 
-  {{#if momentumOutcome}}
+  {{!-- TODO: enable these in the renderer --}}
+  {{#if originalMoveOutcome}}
+  <div class="roll-result">
+    {{{enrichMarkdown originalMoveOutcome}}}
+  </div>
+  {{/if}}
+
+  {{#if possibleMomentumBurn}}
   <hr />
   <div class='momentum-burn'>
-    <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumOutcomeI18n}}}</p>
+    <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=possibleMomentumBurn}}}</p>
     <button class='icon-button fas fa-fire ironsworn-roll-burn-momentum'>
       {{localize 'IRONSWORN.Burn'}}
     </button>

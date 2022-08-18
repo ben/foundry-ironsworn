@@ -5,7 +5,7 @@
 // - Rolling that plays nicer with DF Manual Rolls (all in one go, not {d6+N,d10,d10})
 // - Rerolls update chat message
 
-import { pick, range, sum } from 'lodash'
+import { compact, pick, range, sum } from 'lodash'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
 import { IronswornRollChatMessage } from './chat-message'
@@ -196,7 +196,8 @@ export class IronswornRoll {
         value: this.preRollOptions.adds,
       })
     }
-    // TODO: post-roll adds
+
+    ret.push(...(this.postRollOptions.adds ?? []))
 
     return ret
   }
@@ -244,55 +245,55 @@ export class IronswornRoll {
     return (this.rawActionTotal ?? 0) > 10
   }
 
-  get challengeDiceValues(): SourcedValue<number | undefined>[] {
-    const ret = [] as SourcedValue<number | undefined>[]
+  get challengeDice(): SourcedValue<number | undefined>[] {
     if (this.rawChallengeValues !== undefined) {
       // challenge dice have been rolled, report them
-      ret.push(
-        ...this.rawChallengeValues.map((x) => ({
-          source: 'd10',
-          value: x,
-        }))
-      )
-    } else {
-      // Not rolled yet. Definitely include two, then maybe some extras
-      ret.push({ source: '', value: undefined })
-      ret.push({ source: '', value: undefined })
-      if (this.preRollOptions.extraChallengeDice) {
-        for (let i = 0; i < this.preRollOptions.extraChallengeDice.value; i++) {
-          ret.push({
-            source: game.i18n.localize(
-              'IRONSWORN.RollDialog.ExtraChallengeDice'
-            ),
-            value: undefined,
-          })
-        }
+      return this.rawChallengeValues.map((x) => ({
+        source: 'd10',
+        value: x,
+      }))
+    }
+
+    // Not rolled yet. Definitely include two, then maybe some extras
+    const ret = [
+      { source: '', value: undefined },
+      { source: '', value: undefined },
+    ] as SourcedValue<number | undefined>[]
+    if (this.preRollOptions.extraChallengeDice) {
+      for (let i = 0; i < this.preRollOptions.extraChallengeDice.value; i++) {
+        ret.push({
+          source: game.i18n.localize('IRONSWORN.RollDialog.ExtraChallengeDice'),
+          value: undefined,
+        })
       }
     }
-    // TODO: post-roll selection/overrides for challenge dice
     return ret
   }
 
   // Either [N,N] or undefined
   get finalChallengeDice(): undefined | number[] {
-    if (this.rawChallengeValues?.length === 2) {
-      return [
-        this.postRollOptions.replacedChallenge1?.value ??
-          this.rawChallengeValues[0],
-        this.postRollOptions.replacedChallenge2?.value ??
-          this.rawChallengeValues[1],
-      ]
+    const replaced = compact([
+      this.postRollOptions.replacedChallenge1,
+      this.postRollOptions.replacedChallenge2,
+    ])
+    if (replaced.length === 2) {
+      return replaced.map((x) => x.value)
     }
-    // TODO: post-roll selections of >2 rolls
+    if (this.rawChallengeValues?.length === 2) {
+      return this.rawChallengeValues
+    }
     return undefined
   }
 
-  get outcome(): SourcedValue<ROLL_OUTCOME> | undefined {
+  get isMatch(): boolean {
+    if (!this.finalChallengeDice) return false
+    const [c1, c2] = this.finalChallengeDice ?? []
+    return c1 === c2
+  }
+
+  get preAdjustmentOutcome(): SourcedValue<ROLL_OUTCOME> | undefined {
     if (this.preRollOptions.automaticOutcome) {
       return this.preRollOptions.automaticOutcome
-    }
-    if (this.postRollOptions.replacedOutcome) {
-      return this.postRollOptions.replacedOutcome
     }
     if (!this.finalChallengeDice || this.actionTotal === undefined)
       return undefined
@@ -305,6 +306,10 @@ export class IronswornRoll {
       value: outcome,
       source: game.i18n.localize('IRONSWORN.Roll'),
     }
+  }
+
+  get postAdjustmentOutcome(): SourcedValue<ROLL_OUTCOME> | undefined {
+    return this.postRollOptions.replacedOutcome ?? this.preAdjustmentOutcome
   }
 
   get moveItem(): Promise<IronswornItem | undefined> | undefined {

@@ -53,7 +53,7 @@ export async function renderRollGraphic(
   renderData.actionTotal = referenceRoll.actionTotal
   renderData.actionTotalCapped = referenceRoll.actionTotalCapped
 
-  renderData.challengeDice = referenceRoll.challengeDiceValues
+  renderData.challengeDice = referenceRoll.challengeDice
   for (const c of renderData.challengeDice ?? []) {
     if (c.value === 1) c.minmax = 'min'
     if (c.value === 10) c.minmax = 'max'
@@ -65,10 +65,12 @@ export async function renderRollGraphic(
     [ROLL_OUTCOME.STRONG]: 'IRONSWORN.StrongHit',
   }
 
-  if (referenceRoll.outcome) {
+  if (referenceRoll.preAdjustmentOutcome) {
     renderData.outcome = {
-      ...referenceRoll.outcome,
-      value: game.i18n.localize(outcomeKeys[referenceRoll.outcome.value]),
+      ...referenceRoll.preAdjustmentOutcome,
+      value: game.i18n.localize(
+        outcomeKeys[referenceRoll.preAdjustmentOutcome.value]
+      ),
     }
   }
 
