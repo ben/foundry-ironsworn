@@ -248,12 +248,11 @@ export class IronswornPrerollDialog extends Dialog {
     el: HTMLElement | JQuery<HTMLElement>,
     opts: PreRollOptions
   ) {
-    const form = el[0].querySelector('form')
-    console.log(form, opts)
+    const form = el[0].querySelector('form') as HTMLFormElement
 
     // Manual adds; only for action rolls
     if (opts.action) {
-      opts.adds = parseInt(form.adds.value || '0', 10)
+      opts.adds = form.adds.valueAsNumber
     }
 
     if (form.automaticOutcome.checked) {
@@ -265,13 +264,13 @@ export class IronswornPrerollDialog extends Dialog {
     if (form.presetActionDie.checked) {
       opts.presetActionDie = {
         source: 'set manually',
-        value: parseInt(form.presetActionDieValue.value || '0'),
+        value: form.presetActionDieValue.valueAsNumber,
       }
     }
     if (form.extraChallengeDice.checked) {
       opts.extraChallengeDice = {
         source: 'set manually',
-        value: parseInt(form.extraChallengeDiceValue.value || '0'),
+        value: form.extraChallengeDiceValueAsNumber,
       }
     }
 
