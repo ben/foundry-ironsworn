@@ -3,10 +3,15 @@
     {{{graphic}}}
   </div>
 
-  {{!-- TODO: enable these in the renderer --}}
-  {{#if originalMoveOutcome}}
+  {{#if moveOutcome}}
   <div class="roll-result">
-    {{{enrichMarkdown originalMoveOutcome}}}
+    <p>
+      {{#if outcomeReplacementReason}}
+      {{outcomeReplacementReason}}:
+      {{/if}}
+      <strong>{{outcomeText}}</strong>
+    </p>
+    {{{enrichMarkdown moveOutcome}}}
   </div>
   {{/if}}
 

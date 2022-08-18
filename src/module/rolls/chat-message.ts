@@ -52,6 +52,7 @@ export class IronswornRollChatMessage {
     const [c1, c2] = this.roll.finalChallengeDice ?? []
     if (c1 === undefined || c2 === undefined) return
 
+    await this.actor.burnMomentum()
     this.roll.postRollOptions.replacedOutcome = {
       value: rollResult(momentum, c1, c2),
       source: game.i18n.localize('IRONSWORN.MomentumBurnt'),
@@ -95,32 +96,29 @@ export class IronswornRollChatMessage {
     const move = await this.roll.moveItem
     if (move?.data.type !== 'sfmove') return {}
 
+    // Outcome can be overridden
+    const theOutcome =
+      this.roll.postAdjustmentOutcome?.value ??
+      this.roll.preAdjustmentOutcome?.value
+    if (!theOutcome) return {}
+
     // Original outcome
-    const ret = {} as any
+    const ret = {
+      outcomeText: outcomeText(theOutcome, this.roll.isMatch),
+      outcomeReplacementReason:
+        this.roll.postRollOptions.replacedOutcome?.source,
+    } as any
     const keys = {
       [ROLL_OUTCOME.MISS]: 'Miss',
       [ROLL_OUTCOME.WEAK]: 'Weak Hit',
       [ROLL_OUTCOME.STRONG]: 'Strong Hit',
     }
-    if (this.roll.preAdjustmentOutcome) {
-      const key = keys[this.roll.preAdjustmentOutcome.value]
-      let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
-      if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
-        dfOutcome = dfOutcome['With a Match']
-      if (dfOutcome) {
-        ret.originalMoveOutcome = dfOutcome.Text
-      }
-    }
-
-    // Adjusted outcome
-    if (this.roll.postAdjustmentOutcome) {
-      const key = keys[this.roll.postAdjustmentOutcome.value]
-      let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
-      if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
-        dfOutcome = dfOutcome['With a Match']
-      if (dfOutcome) {
-        ret.adjustedMoveOutcome = dfOutcome.Text
-      }
+    const key = keys[theOutcome]
+    let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
+    if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
+      dfOutcome = dfOutcome['With a Match']
+    if (dfOutcome) {
+      ret.moveOutcome = dfOutcome.Text
     }
 
     return ret
@@ -128,6 +126,9 @@ export class IronswornRollChatMessage {
 
   private momentumData(): any {
     if (this.actor?.data.type !== 'character') return {}
+
+    // If momentum has already been burnt, do not suggest more burns
+    if (this.roll.postRollOptions.replacedOutcome) return {}
 
     const [c1, c2] = this.roll.finalChallengeDice ?? []
     if (c1 === undefined || c2 === undefined) return {}
