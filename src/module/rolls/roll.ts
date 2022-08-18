@@ -44,6 +44,7 @@ export interface PreRollOptions {
   // Decided before the roll, but kept around for resolving updates later
   moveId?: string // For custom moves
   moveDfId?: string // for "official" moves
+  actorId?: string
 }
 
 // Input to rendering, can be updated after the fact
@@ -138,10 +139,6 @@ export class IronswornRoll {
     this.rawActionValue = actionRoll?.total
     const challengeRolls = pool.rolls.filter((x) => x.formula === '1d10')
     this.rawChallengeValues = challengeRolls.map((x) => x.total as number)
-  }
-
-  async createOrUpdateChatMessage() {
-    return IronswornRollChatMessage.createOrUpdate(this)
   }
 
   serialize() {
@@ -293,6 +290,9 @@ export class IronswornRoll {
   get outcome(): SourcedValue<ROLL_OUTCOME> | undefined {
     if (this.preRollOptions.automaticOutcome) {
       return this.preRollOptions.automaticOutcome
+    }
+    if (this.postRollOptions.replacedOutcome) {
+      return this.postRollOptions.replacedOutcome
     }
     if (!this.finalChallengeDice || this.actionTotal === undefined)
       return undefined

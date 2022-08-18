@@ -14,6 +14,7 @@ import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 import { ROLL_OUTCOME } from '../rolls/roll'
+import { IronswornRollChatMessage } from '../rolls'
 
 export class IronswornChatCard {
   id?: string | null
@@ -45,6 +46,9 @@ export class IronswornChatCard {
     html
       .find('.burn-momentum-sf')
       .on('click', (ev) => this._sfBurnMomentum.call(this, ev))
+    html
+      .find('.ironsworn-roll-burn-momentum')
+      .on('click', (ev) => this._irBurnMomentum.call(this, ev))
     html
       .find('.ironsworn__delvedepths__roll')
       .on('click', (ev) => this._delveDepths.call(this, ev))
@@ -181,6 +185,14 @@ export class IronswornChatCard {
 
     const content = parent.html()
     await this.message?.update({ content })
+  }
+
+  async _irBurnMomentum(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const msgId = $(ev.target).parents('.chat-message').data('message-id')
+    const irmsg = await IronswornRollChatMessage.fromMessage(msgId)
+    irmsg?.burnMomentum()
   }
 
   async _delveDepths(ev: JQuery.ClickEvent) {

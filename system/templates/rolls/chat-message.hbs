@@ -1,6 +1,15 @@
-<div class="ironsworn-roll flexcol" data-ironswornroll="{{ironswornroll}}">
+<div class="ironsworn-roll flexcol" data-ironswornroll="{{json ironswornroll}}">
   <div class="dice-result dice-tooltip dice-roll ironsworn-roll">
     {{{graphic}}}
   </div>
-  <pre><code>{{json ironswornroll}}</code></pre>
+
+  {{#if momentumOutcome}}
+  <hr />
+  <div class='momentum-burn'>
+    <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumOutcomeI18n}}}</p>
+    <button class='icon-button fas fa-fire ironsworn-roll-burn-momentum'>
+      {{localize 'IRONSWORN.Burn'}}
+    </button>
+  </div>
+  {{/if}}
 </div>

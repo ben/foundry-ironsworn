@@ -14,6 +14,7 @@ import {
 } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 import { CharacterDataProperties } from '../actor/actortypes'
+import { IronswornRollChatMessage } from '.'
 
 interface IronswornRollDalogOptions {}
 
@@ -169,6 +170,8 @@ export class IronswornPrerollDialog extends Dialog {
     prerollOptions: PreRollOptions,
     actor?: IronswornActor
   ) {
+    prerollOptions.actorId = actor?.id || undefined
+
     const data = move.data as SFMoveDataProperties
     const options = rollableOptions(data.data.Trigger)
     if (!options.length) {
@@ -274,7 +277,8 @@ export class IronswornPrerollDialog extends Dialog {
       }
     }
 
-    return new IronswornRoll(opts).createOrUpdateChatMessage()
+    const r = new IronswornRoll(opts)
+    return new IronswornRollChatMessage(r).createOrUpdate()
   }
 
   private static async renderContent(data: any): Promise<string> {
