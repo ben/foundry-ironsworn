@@ -13,7 +13,11 @@ import { MoveItem } from './module/item/move/moveitem'
 import { ProgressItem } from './module/item/progress/progressitem'
 import { VowItem } from './module/item/vow/vowitem'
 import { starforged } from 'dataforged'
-import { IronswornRoll, IronswornPrerollDialog } from './module/rolls'
+import {
+  IronswornRoll,
+  IronswornPrerollDialog,
+  IronswornRollChatMessage,
+} from './module/rolls'
 
 export interface IronswornConfig {
   itemClasses: Array<typeof BaseItem>
@@ -25,6 +29,7 @@ export interface IronswornConfig {
 
   IronswornRoll: typeof IronswornRoll
   IronswornPrerollDialog: typeof IronswornPrerollDialog
+  IronswornRollChatMessage: typeof IronswornRollChatMessage
 
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
@@ -51,6 +56,7 @@ export const IRONSWORN: IronswornConfig = {
 
   IronswornRoll,
   IronswornPrerollDialog,
+  IronswornRollChatMessage,
 
   importFromDatasworn,
 
