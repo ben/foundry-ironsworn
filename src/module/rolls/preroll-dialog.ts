@@ -86,7 +86,11 @@ export class IronswornPrerollDialog extends Dialog {
     })
   }
 
-  static async showForStat(name: string, value: number) {
+  static async showForStat(
+    name: string,
+    value: number,
+    actor?: IronswornActor
+  ) {
     const rollText = game.i18n.localize('IRONSWORN.Roll')
     const statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
     const title = `${rollText} +${statText}`
@@ -96,6 +100,8 @@ export class IronswornPrerollDialog extends Dialog {
         source: name,
         value,
       },
+
+      actorId: actor?.id || undefined,
     }
 
     const content = await this.renderContent({
@@ -119,7 +125,11 @@ export class IronswornPrerollDialog extends Dialog {
     }).render(true)
   }
 
-  static async showForProgress(name: string, value: number) {
+  static async showForProgress(
+    name: string,
+    value: number,
+    actor?: IronswornActor
+  ) {
     const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')
     const title = `${rollText}: ${name}`
 
@@ -128,6 +138,8 @@ export class IronswornPrerollDialog extends Dialog {
         source: name,
         value,
       },
+
+      actorId: actor?.id || undefined,
     }
 
     const content = await this.renderContent({ prerollOptions })
