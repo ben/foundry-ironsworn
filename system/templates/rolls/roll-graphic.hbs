@@ -3,15 +3,15 @@
   <div class="dice-formula">
     <p>
       {{!-- The action die or progress score --}}
-      <span class="action roll d6 {{actionMinMax}}
-        {{#if actionCanceledByNegativeMomentum}}canceled{{/if}}
-      " title="{{computedActionDie.source}}">
-        {{#if computedActionDie.value}}
-        {{computedActionDie.value}}
-        {{else}}
-        &nbsp;
-        {{/if}}
-      </span>
+      {{#if actionCanceledByNegativeMomentum}}<del>{{/if}}
+        <span class="action roll d6 {{actionMinMax}}" title="{{computedActionDie.source}}">
+          {{#if computedActionDie.value}}
+          {{computedActionDie.value}}
+          {{else}}
+          &nbsp;
+          {{/if}}
+        </span>
+        {{#if actionCanceledByNegativeMomentum}}</del>{{/if}}
 
       {{#each adds}}
       &plus;
