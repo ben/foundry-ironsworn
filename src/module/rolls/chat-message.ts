@@ -156,6 +156,9 @@ export class IronswornRollChatMessage {
   private momentumData(): any {
     if (this.actor?.data.type !== 'character') return {}
 
+    // Can't burn momentum on progress rolls
+    if (this.roll.preRollOptions.progress) return {}
+
     // If momentum has already been burnt, do not suggest more burns
     if (this.roll.postRollOptions.replacedOutcome) return {}
 
