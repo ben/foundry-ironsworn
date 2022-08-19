@@ -16,8 +16,6 @@ import { renderRollGraphic } from './roll-graphic'
 import { CharacterDataProperties } from '../actor/actortypes'
 import { IronswornRollChatMessage } from '.'
 
-interface IronswornRollDalogOptions {}
-
 function rollableOptions(trigger: IMoveTrigger) {
   if (!trigger.Options) return []
 
@@ -63,6 +61,40 @@ function resolvedStatForMode(
 
   const source = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
   return { source, value: actor.data.data[stat] }
+}
+
+function prerollOptionsWithFormData(
+  form: JQuery<HTMLFormElement>,
+  base: PreRollOptions
+): PreRollOptions {
+  const opts = cloneDeep(base)
+
+  const valMap: Record<string, string> = form
+    .serializeArray()
+    .reduce((coll, { name, value }) => ({ ...coll, [name]: value }), {})
+
+  opts.adds = parseInt(valMap.adds || '0')
+
+  if (valMap.automaticOutcome) {
+    opts.automaticOutcome = {
+      source: 'set manually',
+      value: valMap.automaticOutcomeValue as ROLL_OUTCOME,
+    }
+  }
+  if (valMap.presetActionDie) {
+    opts.presetActionDie = {
+      source: 'set manually',
+      value: parseInt(valMap.presetActionDieValue || '0', 10),
+    }
+  }
+  if (valMap.extraChallengeDice) {
+    opts.extraChallengeDice = {
+      source: 'set manually',
+      value: parseInt(valMap.extraChallengeDiceValue || '0', 10),
+    }
+  }
+
+  return opts
 }
 
 export class IronswornPrerollDialog extends Dialog {
@@ -263,33 +295,9 @@ export class IronswornPrerollDialog extends Dialog {
     el: HTMLElement | JQuery<HTMLElement>,
     opts: PreRollOptions
   ) {
-    const form = el[0].querySelector('form') as HTMLFormElement
+    const realOpts = prerollOptionsWithFormData($(el).find('form'), opts)
 
-    // Manual adds do not apply to progress rolls
-    if (!opts.progress) {
-      opts.adds = form.adds.valueAsNumber
-    }
-
-    if (form.automaticOutcome.checked) {
-      opts.automaticOutcome = {
-        source: 'set manually',
-        value: form.automaticOutcomeValue.value,
-      }
-    }
-    if (form.presetActionDie.checked) {
-      opts.presetActionDie = {
-        source: 'set manually',
-        value: form.presetActionDieValue.valueAsNumber,
-      }
-    }
-    if (form.extraChallengeDice.checked) {
-      opts.extraChallengeDice = {
-        source: 'set manually',
-        value: form.extraChallengeDiceValueAsNumber,
-      }
-    }
-
-    const r = new IronswornRoll(opts)
+    const r = new IronswornRoll(realOpts)
     return new IronswornRollChatMessage(r).createOrUpdate()
   }
 
@@ -298,38 +306,6 @@ export class IronswornPrerollDialog extends Dialog {
     const template =
       'systems/foundry-ironsworn/templates/rolls/preroll-dialog.hbs'
     return renderTemplate(template, { ...data, graphic })
-  }
-
-  prerollOptionsWithFormData(): PreRollOptions {
-    const opts = cloneDeep(this.prerollOptions)
-    const form = this.element.find('form')
-
-    const valMap: Record<string, string> = form
-      .serializeArray()
-      .reduce((coll, { name, value }) => ({ ...coll, [name]: value }), {})
-
-    opts.adds = parseInt(valMap.adds || '0')
-
-    if (valMap.automaticOutcome) {
-      opts.automaticOutcome = {
-        source: 'set manually',
-        value: valMap.automaticOutcomeValue as ROLL_OUTCOME,
-      }
-    }
-    if (valMap.presetActionDie) {
-      opts.presetActionDie = {
-        source: 'set manually',
-        value: parseInt(valMap.presetActionDieValue || '0', 10),
-      }
-    }
-    if (valMap.extraChallengeDice) {
-      opts.extraChallengeDice = {
-        source: 'set manually',
-        value: parseInt(valMap.extraChallengeDiceValue || '0', 10),
-      }
-    }
-
-    return opts
   }
 
   activateListeners(html: JQuery<HTMLElement>): void {
@@ -344,7 +320,10 @@ export class IronswornPrerollDialog extends Dialog {
 
     // Re-render the graphic when controls change
     const rerender = async () => {
-      const pro = this.prerollOptionsWithFormData()
+      const pro = prerollOptionsWithFormData(
+        this.element.find('form'),
+        this.prerollOptions
+      )
       const graphic = await renderRollGraphic(pro)
       this.element.find('.ironsworn-roll').replaceWith(graphic)
     }
