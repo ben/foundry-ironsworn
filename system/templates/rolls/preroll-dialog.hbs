@@ -34,7 +34,7 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
   </div>
   {{/if}}
 
-  {{#unless actor}}
+  {{#if showActorSelect}}
   <div class="form-group">
     <label for="char">{{localize 'IRONSWORN.Character'}}</label>
     <select name="char" id="char">
@@ -45,7 +45,7 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
       {{/each}}
     </select>
   </div>
-  {{/unless}}
+  {{/if}}
 
   {{!-- TODO: simple options from the move + actor assets --}}
 

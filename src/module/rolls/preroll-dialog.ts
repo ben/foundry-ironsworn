@@ -167,7 +167,7 @@ export class IronswornPrerollDialog extends Dialog {
     return this.showForMoveItem(moveItem, { moveDfId }, actor)
   }
 
-  static async showForCustomMove(move: IronswornItem, actor?: IronswornActor) {
+  static async showForMove(move: IronswornItem, actor?: IronswornActor) {
     if (move.type !== 'sfmove') {
       throw new Error('this only works with SF moves')
     }
@@ -204,12 +204,14 @@ export class IronswornPrerollDialog extends Dialog {
         )
       )
     }
+    const showActorSelect = allActors.length > 1
 
     const content = await this.renderContent({
       prerollOptions,
       move,
       actor,
       allActors,
+      showActorSelect,
       action: true,
     })
     const buttons = {}
