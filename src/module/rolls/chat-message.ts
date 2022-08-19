@@ -66,6 +66,7 @@ export class IronswornRollChatMessage {
     const renderData = {
       graphic: await renderRollGraphic(this.roll.preRollOptions, this.roll),
       ironswornroll: this.roll.serialize(),
+      move: await this.roll.moveItem,
       ...(await this.moveData()),
       ...this.momentumData(),
     }
