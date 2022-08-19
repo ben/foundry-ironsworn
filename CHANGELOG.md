@@ -2,6 +2,8 @@
 
 ## In progress
 
+- Fix the die-roll backgrounds in the SF theme
+
 ## 1.16.9
 
 - Fix the new-character dialog to correctly generate SF character names
