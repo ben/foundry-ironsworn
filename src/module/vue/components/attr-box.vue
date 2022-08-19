@@ -39,6 +39,7 @@
 import { inject, computed, capitalize, Ref } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { RollDialog } from '../../helpers/rolldialog'
+import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey } from '../provisions'
 
 const props = defineProps<{ attr: string }>()
@@ -60,7 +61,15 @@ const editMode = computed(
 
 function click() {
   if (editMode.value) return
-  RollDialog.show({ actor: $actor, stat: props.attr })
+
+  let attrName = game.i18n.localize('IRONSWORN.' + capitalize(props.attr))
+  if (attrName.startsWith('IRONSWORN.')) attrName = props.attr
+  const name = `${attrName} (${$actor?.name})`
+  IronswornPrerollDialog.showForStat(
+    name,
+    $actor?.data.data[props.attr],
+    $actor
+  )
 }
 
 function increment() {
