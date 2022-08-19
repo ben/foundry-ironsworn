@@ -122,7 +122,8 @@ export class IronswornPrerollDialog extends Dialog {
     actor?: IronswornActor
   ) {
     const rollText = game.i18n.localize('IRONSWORN.Roll')
-    const statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
+    let statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
+    if (statText.startsWith('IRONSWORN.')) statText = name
     const title = `${rollText} +${statText}`
 
     const prerollOptions: PreRollOptions = {

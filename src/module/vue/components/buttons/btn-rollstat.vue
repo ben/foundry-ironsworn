@@ -8,13 +8,14 @@
     aria-haspopup="dialog"
     :disabled="disabled"
   >
-    <slot name="default"></slot>
+    <slot ref="content" name="default"></slot>
   </btn-isicon>
 </template>
 
 <script lang="ts" setup>
-import { computed, inject } from 'vue'
+import { computed, inject, ref, useSlots } from 'vue'
 import { RollDialog } from '../../../helpers/rolldialog'
+import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
 import btnIsicon from './btn-isicon.vue'
 
@@ -33,7 +34,26 @@ const $item = computed(() => {
   )
 })
 
+const slots = useSlots()
+const slotText = computed(() => {
+  return slots.default?.()[0].children // This is the interesting line
+})
+
 function rollStat() {
+  if (props.item) {
+    const name = `${slotText.value?.toString()} (${props.item.name})`
+    return IronswornPrerollDialog.showForStat(
+      name,
+      $item.value?.data.data[props.attr ?? '']?.current,
+      $actor
+    )
+  } else if ($actor) {
+    return IronswornPrerollDialog.showForStat(
+      props.attr ?? '(stat)',
+      $actor.data.data[props.attr ?? ''],
+      $actor
+    )
+  }
   RollDialog.show({
     actor: $actor,
     stat: props.attr,

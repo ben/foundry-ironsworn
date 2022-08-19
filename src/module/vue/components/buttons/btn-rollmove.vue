@@ -14,6 +14,7 @@
 <script setup lang="ts">
 import { inject } from 'vue'
 import { SFRollMoveDialog } from '../../../helpers/rolldialog-sf'
+import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
 import btnIsicon from './btn-isicon.vue'
 
@@ -26,6 +27,11 @@ const props = defineProps<{
 const $actor = inject($ActorKey)
 
 async function rollMove() {
-  if ($actor) SFRollMoveDialog.show($actor, props.move.moveItem)
+  if (props.move.dataforgedMove)
+    return IronswornPrerollDialog.showForOfficialMove(
+      props.move.dataforgedMove.$id,
+      $actor
+    )
+  IronswornPrerollDialog.showForMove(props.move.moveItem, $actor)
 }
 </script>
