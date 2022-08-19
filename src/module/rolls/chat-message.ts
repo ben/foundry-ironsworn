@@ -1,4 +1,5 @@
 import { IOutcomeInfo } from 'dataforged'
+import { capitalize } from 'lodash'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { ROLL_OUTCOME } from './roll'
@@ -67,8 +68,9 @@ export class IronswornRollChatMessage {
       graphic: await renderRollGraphic(this.roll.preRollOptions, this.roll),
       ironswornroll: this.roll.serialize(),
       move: await this.roll.moveItem,
+      ...(await this.titleData()),
       ...(await this.moveData()),
-      ...this.momentumData(),
+      ...(await this.momentumData()),
     }
     const content = await renderTemplate(
       'systems/foundry-ironsworn/templates/rolls/chat-message.hbs',
@@ -91,6 +93,29 @@ export class IronswornRollChatMessage {
       this.roll.chatMessageId = msg?.id
       return msg
     }
+  }
+
+  private async titleData(): Promise<any> {
+    const move = await this.roll.moveItem
+
+    const { progress, stat } = this.roll.preRollOptions
+    if (progress) {
+      return {
+        title: `${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${
+          progress.source
+        }`,
+      }
+    }
+
+    if (!stat) throw new Error('Need progress or stat here')
+
+    if (move) {
+      return { title: `${move.name} (${stat.source})` }
+    }
+
+    let plusStat = game.i18n.localize('IRONSWORN.' + capitalize(stat.source))
+    if (plusStat.startsWith('IRONSWORN.')) plusStat = stat.source
+    return { title: `${game.i18n.localize('IRONSWORN.Roll')} +${plusStat}` }
   }
 
   private async moveData(): Promise<any> {
