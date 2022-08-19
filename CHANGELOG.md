@@ -3,6 +3,7 @@
 ## In progress
 
 - Fix the die-roll backgrounds in the SF theme
+- Don't open editors for non-editable items when clicking a move link and no character move sheet is open.
 
 ## 1.16.9
 
