@@ -29,7 +29,7 @@ export interface PreRollOptions {
   progress?: SourcedValue
 
   // Indicates this is an action roll
-  action?: SourcedValue
+  stat?: SourcedValue
   adds?: number
 
   // Negative momentum can cancel an action die
@@ -83,7 +83,7 @@ export class IronswornRoll {
   static action(stat: string, value: number, adds?: number): IronswornRoll {
     const r = new IronswornRoll()
     r.preRollOptions = {
-      action: {
+      stat: {
         source: stat,
         value,
       },
@@ -113,16 +113,16 @@ export class IronswornRoll {
 
     // VALIDATE
     const isProgress = this.preRollOptions.progress !== undefined
-    const isAction = this.preRollOptions.action !== undefined
-    if ([isProgress, isAction].filter((x) => x).length !== 1) {
+    const isStat = this.preRollOptions.stat !== undefined
+    if ([isProgress, isStat].filter((x) => x).length !== 1) {
       throw new TypeError(
-        'Exactly one of `action` and `progress` are required here'
+        'Exactly one of `stat` and `progress` are required here'
       )
     }
 
     // Gather the dice we need to roll
     const diceTerms = [] as string[]
-    if (this.preRollOptions.action && !this.preRollOptions.presetActionDie) {
+    if (this.preRollOptions.stat && !this.preRollOptions.presetActionDie) {
       diceTerms.push('d6')
     }
     const numChallengeDice =
@@ -180,8 +180,8 @@ export class IronswornRoll {
   get adds(): Array<SourcedValue<string | number>> {
     const ret: Array<SourcedValue<string | number>> = []
 
-    if (this.preRollOptions.action) {
-      ret.push(this.preRollOptions.action)
+    if (this.preRollOptions.stat) {
+      ret.push(this.preRollOptions.stat)
     } else if (this.preRollOptions.moveDfId || this.preRollOptions.moveId) {
       // move rolls will always add a stat
       ret.push({
@@ -219,8 +219,8 @@ export class IronswornRoll {
     } else terms.push(undefined) // Not rolled yet
 
     // Second term: the stat for an action roll
-    if (this.preRollOptions.action) {
-      terms.push(this.preRollOptions.action.value)
+    if (this.preRollOptions.stat) {
+      terms.push(this.preRollOptions.stat.value)
     } else if (this.moveItem) {
       // This is a move, but the action input isn't set, which means we haven't rolled yet
       terms.push(undefined)
@@ -315,7 +315,7 @@ export class IronswornRoll {
   get moveItem(): Promise<IronswornItem | undefined> | undefined {
     const { moveDfId, moveId } = this.preRollOptions
     if (moveDfId) return getFoundryMoveByDfId(moveDfId)
-    if (moveId) return game.items?.get(moveId)
+    if (moveId) return Promise.resolve(game.items?.get(moveId))
     return undefined
   }
 

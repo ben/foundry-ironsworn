@@ -61,9 +61,7 @@ function resolvedStatForMode(
     throw new Error(`Cannot handle rolling with '${mode}' mode`)
   }
 
-  const source = `${actor.name} / ${game.i18n.localize(
-    `IRONSWORN.${capitalize(stat)}`
-  )}`
+  const source = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
   return { source, value: actor.data.data[stat] }
 }
 
@@ -95,8 +93,8 @@ export class IronswornPrerollDialog extends Dialog {
     const statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
     const title = `${rollText} +${statText}`
 
-    const prerollOptions = {
-      action: {
+    const prerollOptions: PreRollOptions = {
+      stat: {
         source: name,
         value,
       },
@@ -239,7 +237,7 @@ export class IronswornPrerollDialog extends Dialog {
           // Set up for the roll
           const actorData = rollingActor.data as CharacterDataProperties
           prerollOptions.momentum = actorData.data.momentum
-          prerollOptions.action = resolvedStatForMode(mode, stats, rollingActor)
+          prerollOptions.stat = resolvedStatForMode(mode, stats, rollingActor)
 
           IronswornPrerollDialog.submitRoll(el, prerollOptions)
         },
@@ -265,8 +263,8 @@ export class IronswornPrerollDialog extends Dialog {
   ) {
     const form = el[0].querySelector('form') as HTMLFormElement
 
-    // Manual adds; only for action rolls
-    if (opts.action) {
+    // Manual adds do not apply to progress rolls
+    if (!opts.progress) {
       opts.adds = form.adds.valueAsNumber
     }
 
