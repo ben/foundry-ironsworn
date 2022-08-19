@@ -13,6 +13,7 @@
 </template>
 
 <script lang="ts" setup>
+import { capitalize } from 'lodash'
 import { computed, inject, ref, useSlots } from 'vue'
 import { RollDialog } from '../../../helpers/rolldialog'
 import { IronswornPrerollDialog } from '../../../rolls'
@@ -48,8 +49,12 @@ function rollStat() {
       $actor
     )
   } else if ($actor) {
+    let attrName = game.i18n.localize('IRONSWORN.' + capitalize(props.attr))
+    if (attrName.startsWith('IRONSWORN.')) attrName = props.attr
+    const name = `${attrName} (${$actor?.name})`
+
     return IronswornPrerollDialog.showForStat(
-      props.attr ?? '(stat)',
+      name,
       $actor.data.data[props.attr ?? ''],
       $actor
     )

@@ -38,7 +38,6 @@
 <script lang="ts" setup>
 import { inject, computed, capitalize, Ref } from 'vue'
 import { IronswornActor } from '../../actor/actor'
-import { RollDialog } from '../../helpers/rolldialog'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey } from '../provisions'
 
