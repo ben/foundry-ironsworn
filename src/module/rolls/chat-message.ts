@@ -1,7 +1,9 @@
 import { IOutcomeInfo } from 'dataforged'
-import { capitalize } from 'lodash'
+import { capitalize, compact } from 'lodash'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
+import { getFoundryTableByDfId } from '../dataforged'
+import { SFMoveDataProperties } from '../item/itemtypes'
 import { ROLL_OUTCOME } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 
@@ -71,6 +73,7 @@ export class IronswornRollChatMessage {
       ...(await this.titleData()),
       ...(await this.moveData()),
       ...(await this.momentumData()),
+      ...(await this.oraclesData()),
     }
     const content = await renderTemplate(
       'systems/foundry-ironsworn/templates/rolls/chat-message.hbs',
@@ -172,5 +175,17 @@ export class IronswornRollChatMessage {
       default:
         return {}
     }
+  }
+
+  private async oraclesData(): Promise<any> {
+    const move = await this.roll.moveItem
+    if (move?.type !== 'sfmove') return {}
+
+    const data = move.data as SFMoveDataProperties
+    const dfIds = data.data.Oracles ?? []
+    const nextOracles = compact(
+      await Promise.all(dfIds.map(getFoundryTableByDfId))
+    )
+    return { nextOracles }
   }
 }
