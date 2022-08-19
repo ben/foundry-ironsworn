@@ -17,6 +17,11 @@
     </p>
     {{{enrichMarkdown moveOutcome}}}
   </div>
+  {{else if outcomeReplacementReason}}
+  <p>
+    {{outcomeReplacementReason}}:
+    <strong>{{outcomeText}}</strong>
+  </p>
   {{/if}}
 
   {{#if possibleMomentumBurn}}
