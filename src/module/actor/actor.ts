@@ -17,22 +17,10 @@ export class IronswornActor extends Actor {
     return undefined
   }
 
-  /** @override */
-  prepareDerivedData() {
-    // Calculate momentum max/reset from debilities
-    if (this.data.type === 'character') {
-      const data = this.data.data
-      const numDebilitiesMarked = Object.values(data.debility).filter(
-        (x) => x
-      ).length
-      data.momentumMax = 10 - numDebilitiesMarked
-      data.momentumReset = Math.max(0, 2 - numDebilitiesMarked)
-    }
-  }
-
   async burnMomentum() {
     if (this.data.type != 'character') return
     const { momentum, momentumReset } = this.data.data
+    console.log({ momentum, momentumReset })
     if (momentum > momentumReset) {
       this.update({
         data: { momentum: momentumReset },
