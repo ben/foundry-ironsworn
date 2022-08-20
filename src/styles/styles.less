@@ -546,6 +546,8 @@ hr {
     }
   }
 
+  @dice-glow-offset: 0px 0px 5px;
+
   .roll {
     width: 24px;
     line-height: 24px;
@@ -584,8 +586,6 @@ hr {
       background-image: url('../../icons/svg/d20-grey.svg');
     }
 
-    @dice-glow-offset: 0px 0px 5px;
-
     &.min:not(.challenge),
     &.challenge.max {
       color: var(--ironsworn-color-danger) !important;
@@ -608,14 +608,14 @@ hr {
         @dice-glow-offset var(--ironsworn-color-warning-faded)
       ) !important;
     }
+  }
 
-    del .roll {
-      text-decoration: line-through;
-      color: var(--ironsworn-color-warning) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-warning-faded)
-      ) !important;
-    }
+  del .roll {
+    text-decoration: line-through;
+    color: var(--ironsworn-color-warning) !important;
+    filter: drop-shadow(
+      @dice-glow-offset var(--ironsworn-color-warning-faded)
+    ) !important;
   }
 }
 

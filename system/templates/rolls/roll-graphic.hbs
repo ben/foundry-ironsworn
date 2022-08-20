@@ -4,7 +4,7 @@
     <p>
       {{!-- The action die or progress score --}}
       {{#if actionCanceledByNegativeMomentum}}<del>{{/if}}
-        <span class="action roll d6 {{actionMinMax}}" title="{{computedActionDie.source}}">
+        <span class="action roll isiconbg-d6-blank {{actionMinMax}}" title="{{computedActionDie.source}}">
           {{#if computedActionDie.value}}
           {{computedActionDie.value}}
           {{else}}
@@ -32,7 +32,7 @@
       {{localize 'IRONSWORN.Versus'}}
 
       {{#each challengeDice}}
-      <span class="roll die d10 challenge {{minmax}}" title="{{source}}">
+      <span class="roll die isiconbg-d10-blank challenge {{minmax}}" title="{{source}}">
         {{#if value}}
         {{value}}
         {{else}}
