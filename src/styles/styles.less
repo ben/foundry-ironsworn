@@ -561,7 +561,9 @@ hr {
     }
 
     &.d6 {
-      // background-image: url('../../icons/svg/d6-grey.svg');
+      background-color: var(--ironsworn-dice-background);
+      mask-image: url('/assets/icons/d6-blank.svg');
+      content: '';
     }
 
     &.d8 {
@@ -569,7 +571,9 @@ hr {
     }
 
     &.d10 {
-      // background-image: url('../../icons/svg/d10-grey.svg');
+      background-color: var(--ironsworn-dice-background);
+      mask-image: url('/assets/icons/d10-blank.svg');
+      content: '';
     }
 
     &.d12 {
@@ -599,7 +603,10 @@ hr {
     }
 
     &.canceled {
-      filter: drop-shadow(@dice-glow-offset orange);
+      color: var(--ironsworn-color-warning) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-warning-faded)
+      ) !important;
     }
   }
 }
