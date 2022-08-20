@@ -26,7 +26,6 @@
             :key="'ability' + i"
             element="li"
             class="flexrow"
-            :actor="actingActor"
             @moveclick="moveclick"
           >
             <!-- TODO: redo as list style -->
@@ -47,7 +46,7 @@
           <btn-rollstat class="juicy text flexrow" :item="asset" attr="track">
             {{ asset.data.track.name }}
           </btn-rollstat>
-          <asset-track :actor="actor" :item="asset" />
+          <asset-track :item="asset" />
         </div>
 
         <div
@@ -83,7 +82,7 @@
 </style>
 
 <script setup lang="ts">
-import { computed, inject, Ref } from 'vue'
+import { computed, inject, provide, Ref } from 'vue'
 import { RollDialog } from '../../../helpers/rolldialog'
 import { AssetAbility } from '../../../item/itemtypes'
 import BtnFaicon from '../buttons/btn-faicon.vue'
@@ -92,12 +91,17 @@ import AssetTrack from './asset-track.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, $ItemKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject('actor') as Ref
+
 const $actor = inject($ActorKey)
+const foundryItem = $actor
+  ? $actor?.items.find((x) => x.id === props.asset._id)
+  : game.items?.get(props.item._id)
+provide($ItemKey, foundryItem)
 
 const expanded = computed(() => {
   return props.asset?.flags['foundry-ironsworn']?.expanded || false
@@ -109,23 +113,20 @@ const enabledAbilities = computed(() => {
   const abilities = Object.values(props.asset.data.abilities)
   return abilities.filter((x) => x.enabled)
 })
-const foundryItem = computed(() => {
-  return $actor?.items.get(props.asset._id)
-})
 const actingActor = computed(() => {
   if (actor.value.type === 'character') return actor.value
   return defaultActor()?.toObject(false)
 })
 
 function toggle() {
-  foundryItem.value?.setFlag(
+  foundryItem?.setFlag(
     'foundry-ironsworn',
     'expanded',
     !props.asset?.flags['foundry-ironsworn']?.expanded
   )
 }
 function edit() {
-  foundryItem.value?.sheet?.render(true)
+  foundryItem?.sheet?.render(true)
   return false
 }
 function destroy() {
@@ -134,14 +135,14 @@ function destroy() {
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
     )}</strong></p>`,
-    yes: () => foundryItem.value?.delete(),
+    yes: () => foundryItem?.delete(),
     defaultYes: false,
   })
 }
 function rollTrack() {
   RollDialog.show({
     actor: $actor,
-    asset: foundryItem.value,
+    asset: foundryItem,
     stat: 'track',
   })
 }
@@ -150,7 +151,7 @@ function exclusiveOptionClick(selectedIdx) {
   for (let i = 0; i < options.length; i++) {
     options[i].selected = i === selectedIdx
   }
-  foundryItem.value?.update({ data: { exclusiveOptions: options } })
+  foundryItem?.update({ data: { exclusiveOptions: options } })
 }
 function moveclick(item) {
   let actorWithMoves = $actor
@@ -163,6 +164,6 @@ function moveclick(item) {
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(props.asset.data.abilities) as AssetAbility[]
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-  foundryItem.value?.update({ data: { abilities } })
+  foundryItem?.update({ data: { abilities } })
 }
 </script>
