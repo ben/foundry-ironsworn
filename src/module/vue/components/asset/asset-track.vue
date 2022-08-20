@@ -12,7 +12,7 @@ import { inject } from 'vue'
 import { $ItemKey } from '../../provisions'
 import Boxrow from '../boxrow/boxrow.vue'
 
-const props = defineProps<{ item: any; actor?: any }>()
+const props = defineProps<{ item: any }>()
 
 const $item = inject($ItemKey)
 

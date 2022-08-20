@@ -46,7 +46,7 @@
           <btn-rollstat class="juicy text flexrow" :item="asset" attr="track">
             {{ asset.data.track.name }}
           </btn-rollstat>
-          <asset-track :actor="actor" :item="asset" />
+          <asset-track :item="asset" />
         </div>
 
         <div
