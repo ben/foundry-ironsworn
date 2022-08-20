@@ -7,21 +7,37 @@ import { SFMoveDataProperties } from '../item/itemtypes'
 import { ROLL_OUTCOME } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 
-function rollResult(a: number, c1: number, c2: number): ROLL_OUTCOME {
+function resolveIronswornRoll(a: number, c1: number, c2: number): ROLL_OUTCOME {
   if (a <= Math.min(c1, c2)) return ROLL_OUTCOME.MISS
-  if (a > Math.max(c1, c2)) return ROLL_OUTCOME.STRONG
-  return ROLL_OUTCOME.WEAK
+  if (a > Math.max(c1, c2)) return ROLL_OUTCOME.STRONG_HIT
+  return ROLL_OUTCOME.WEAK_HIT
 }
 
-function outcomeText(outcome: ROLL_OUTCOME, match: boolean): string {
-  let key = 'WeakHit'
-  if (outcome === ROLL_OUTCOME.MISS) {
-    key = match ? 'Complication' : 'Miss'
+function momentumBurnIsValid(
+  rawOutcome: ROLL_OUTCOME | undefined,
+  momentumOutcome: ROLL_OUTCOME
+) {
+  switch (true) {
+    case rawOutcome === ROLL_OUTCOME.MISS &&
+      momentumOutcome === ROLL_OUTCOME.WEAK_HIT:
+    case rawOutcome === ROLL_OUTCOME.MISS &&
+      momentumOutcome === ROLL_OUTCOME.STRONG_HIT:
+    case rawOutcome === ROLL_OUTCOME.WEAK_HIT &&
+      momentumOutcome === ROLL_OUTCOME.STRONG_HIT:
+      return true
+    default:
+      return false
   }
-  if (outcome === ROLL_OUTCOME.STRONG) {
-    key = match ? 'Opportunity' : 'StrongHit'
+}
+
+type RollOutcomeKey = `${ROLL_OUTCOME}` | `${ROLL_OUTCOME}_match`
+
+function outcomeText(outcome: ROLL_OUTCOME, match: boolean): RollOutcomeKey {
+  let key: RollOutcomeKey = outcome
+  if (match) {
+    key += '_match'
   }
-  return game.i18n.localize('IRONSWORN.' + key)
+  return game.i18n.localize('IRONSWORN.' + key) as RollOutcomeKey
 }
 
 export class IronswornRollChatMessage {
@@ -57,7 +73,7 @@ export class IronswornRollChatMessage {
 
     await this.actor.burnMomentum()
     this.roll.postRollOptions.replacedOutcome = {
-      value: rollResult(momentum, c1, c2),
+      value: resolveIronswornRoll(momentum, c1, c2),
       source: game.i18n.localize('IRONSWORN.MomentumBurnt'),
     }
     return this.createOrUpdate()
@@ -117,6 +133,11 @@ export class IronswornRollChatMessage {
     }
 
     let plusStat = game.i18n.localize('IRONSWORN.' + capitalize(stat.source))
+    // FIXME: oof. so, "roll" is a tricky word since in english it can function as a verb or a noun. it gets even more complicated when you introduce grammatical gender and word order.
+    // ultimately, each stat needs own "roll +X" string - the verb 'roll' might be conjugated differently in languages with grammatical gender (a bit under half of them), or in languages that use a word order other than subject-verb-object (a bit *over* half of them)
+    // it might be possible to infer this from existing translations of e.g. assets.
+    // Things with custom labels will still need
+    // Roll +{X} for some things will be tricky, e.g. assets where the user sets the label
     if (plusStat.startsWith('IRONSWORN.')) plusStat = stat.source
     return { title: `${game.i18n.localize('IRONSWORN.Roll')} +${plusStat}` }
   }
@@ -127,8 +148,7 @@ export class IronswornRollChatMessage {
 
     // Outcome can be overridden
     const theOutcome =
-      this.roll.postAdjustmentOutcome?.value ??
-      this.roll.preAdjustmentOutcome?.value
+      this.roll.finalOutcome?.value ?? this.roll.rawOutcome?.value
     if (!theOutcome) return {}
 
     // Original outcome
@@ -139,8 +159,8 @@ export class IronswornRollChatMessage {
     } as any
     const keys = {
       [ROLL_OUTCOME.MISS]: 'Miss',
-      [ROLL_OUTCOME.WEAK]: 'Weak Hit',
-      [ROLL_OUTCOME.STRONG]: 'Strong Hit',
+      [ROLL_OUTCOME.WEAK_HIT]: 'Weak Hit',
+      [ROLL_OUTCOME.STRONG_HIT]: 'Strong Hit',
     }
     const key = keys[theOutcome]
     let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
@@ -166,12 +186,13 @@ export class IronswornRollChatMessage {
     if (c1 === undefined || c2 === undefined) return {}
 
     const momentum = this.actor.data.data.momentum
-    const momentumOutcome = rollResult(momentum, c1, c2)
+    const momentumOutcome = resolveIronswornRoll(momentum, c1, c2)
 
-    switch (`${this.roll.preAdjustmentOutcome?.value} -> ${momentumOutcome}`) {
-      case 'MISS -> WEAK':
-      case 'MISS -> STRONG':
-      case 'WEAK -> STRONG':
+    // compare this.roll.rawOutcome?.value
+    // and momentumOutcome
+
+    switch (momentumBurnIsValid(this.roll.rawOutcome?.value, momentumOutcome)) {
+      case true:
         return {
           possibleMomentumBurn: outcomeText(momentumOutcome, c1 === c2),
         }

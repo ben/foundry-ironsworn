@@ -39,7 +39,7 @@ function rollableOptions(trigger: IMoveTrigger) {
   )
 }
 
-function resolvedStatForMode(
+function chooseStatToRoll(
   mode: RollMethod,
   stats: string[],
   actor: IronswornActor
@@ -70,6 +70,7 @@ function prerollOptionsWithFormData(
   const opts = cloneDeep(base)
 
   const valMap: Record<string, string> = form
+    // "in particular the element cannot be disabled and must contain a name attribute"
     .serializeArray()
     .reduce((coll, { name, value }) => ({ ...coll, [name]: value }), {})
 
@@ -97,13 +98,15 @@ function prerollOptionsWithFormData(
   return opts
 }
 
-export class IronswornPrerollDialog extends Dialog {
+export class IronswornPrerollDialog extends Dialog<
+  PreRollOptions & DialogOptions
+> {
   prerollOptions: PreRollOptions = {}
 
   constructor(
     pro: PreRollOptions,
     data: Dialog.Data,
-    options?: Partial<Options>
+    options?: Partial<DialogOptions>
   ) {
     super(data, options)
     this.prerollOptions = pro
@@ -272,7 +275,7 @@ export class IronswornPrerollDialog extends Dialog {
           // Set up for the roll
           const actorData = rollingActor.data as CharacterDataProperties
           prerollOptions.momentum = actorData.data.momentum
-          prerollOptions.stat = resolvedStatForMode(mode, stats, rollingActor)
+          prerollOptions.stat = chooseStatToRoll(mode, stats, rollingActor)
 
           IronswornPrerollDialog.submitRoll(el, prerollOptions)
         },
@@ -302,7 +305,14 @@ export class IronswornPrerollDialog extends Dialog {
     return new IronswornRollChatMessage(r).createOrUpdate()
   }
 
-  private static async renderContent(data: any): Promise<string> {
+  private static async renderContent(data: {
+    prerollOptions: PreRollOptions
+    move?: IronswornItem
+    actor?: IronswornActor
+    allActors?: IronswornActor[]
+    showActorSelect?: boolean
+    action?: boolean
+  }): Promise<string> {
     const graphic = await renderRollGraphic(data.prerollOptions)
     const template =
       'systems/foundry-ironsworn/templates/rolls/preroll-dialog.hbs'

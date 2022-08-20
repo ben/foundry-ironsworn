@@ -1,4 +1,6 @@
 import {
+  ACTION_DIE_SIDES,
+  CHALLENGE_DIE_SIDES,
   IronswornRoll,
   PreRollOptions,
   ROLL_OUTCOME,
@@ -13,9 +15,9 @@ type RenderData = {
   computedActionDie?: SourcedValue<number | string>
   actionIsDie?: boolean
   actionMinMax?: string
-  actionTotal?: number
-  actionTotalCapped?: boolean
-  actionCanceledByNegativeMomentum?: boolean
+  actionScore?: number
+  actionScoreCapped?: boolean
+  actionDieCanceledByNegativeMomentum?: boolean
 
   challengeDice: Partial<SourcedValue & { minmax?: string }>[]
 
@@ -39,10 +41,11 @@ export async function renderRollGraphic(
       ...referenceRoll.actionDie,
       value: referenceRoll.actionDie?.value?.toString(),
     }
-    if (referenceRoll.actionDie.value === 6) renderData.actionMinMax = 'max'
+    if (referenceRoll.actionDie.value === ACTION_DIE_SIDES)
+      renderData.actionMinMax = 'max'
     if (referenceRoll.actionDie.value === 1) renderData.actionMinMax = 'min'
     if (referenceRoll.canceledByNegativeMomentum) {
-      renderData.actionCanceledByNegativeMomentum = true
+      renderData.actionDieCanceledByNegativeMomentum = true
       renderData.computedActionDie.source = game.i18n.localize(
         'IRONSWORN.NegativeMomentumCancel'
       )
@@ -50,27 +53,19 @@ export async function renderRollGraphic(
   }
 
   renderData.adds = referenceRoll.adds
-  renderData.actionTotal = referenceRoll.actionTotal
-  renderData.actionTotalCapped = referenceRoll.actionTotalCapped
+  renderData.actionScore = referenceRoll.actionScore
+  renderData.actionScoreCapped = referenceRoll.actionScoreCapped
 
   renderData.challengeDice = referenceRoll.challengeDice
   for (const c of renderData.challengeDice ?? []) {
     if (c.value === 1) c.minmax = 'min'
-    if (c.value === 10) c.minmax = 'max'
+    if (c.value === CHALLENGE_DIE_SIDES) c.minmax = 'max'
   }
 
-  const outcomeKeys = {
-    [ROLL_OUTCOME.MISS]: 'IRONSWORN.Miss',
-    [ROLL_OUTCOME.WEAK]: 'IRONSWORN.WeakHit',
-    [ROLL_OUTCOME.STRONG]: 'IRONSWORN.StrongHit',
-  }
-
-  if (referenceRoll.preAdjustmentOutcome) {
+  if (referenceRoll.rawOutcome) {
     renderData.outcome = {
-      ...referenceRoll.preAdjustmentOutcome,
-      value: game.i18n.localize(
-        outcomeKeys[referenceRoll.preAdjustmentOutcome.value]
-      ),
+      ...referenceRoll.rawOutcome,
+      value: game.i18n.localize(referenceRoll.rawOutcome.value),
     }
   }
 

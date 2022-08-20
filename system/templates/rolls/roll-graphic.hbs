@@ -1,7 +1,7 @@
 <article class="dice-roll ironsworn-roll">
   <section class="dice-formula">
     {{!-- The action die or progress score --}}
-    {{#if actionCanceledByNegativeMomentum}}<del>{{/if}}
+    {{#if actionDieCanceledByNegativeMomentum}}<del>{{/if}}
       <span class="action roll d6 {{actionMinMax}}" title="{{computedActionDie.source}}">
         {{#if computedActionDie.value}}
         {{computedActionDie.value}}
@@ -9,20 +9,20 @@
         &nbsp;
         {{/if}}
       </span>
-      {{#if actionCanceledByNegativeMomentum}}</del>{{/if}}
+      {{#if actionDieCanceledByNegativeMomentum}}</del>{{/if}}
 
     {{#each adds}}
     &plus;
     <span title="{{source}}">{{value}}</span>
     {{/each}}
 
-    {{#if actionTotal}}
+    {{#if actionScore}}
     &equals;
     <strong>
-      {{#if actionTotalCapped}}
-      <span title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionTotal}}</span>
+      {{#if actionScoreCapped}}
+      <span title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionScore}}</span>
       {{else}}
-      {{actionTotal}}
+      {{actionScore}}
       {{/if}}
     </strong>
     {{/if}}

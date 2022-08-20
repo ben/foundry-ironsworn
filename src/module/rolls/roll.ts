@@ -10,10 +10,16 @@ import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
 import { IronswornRollChatMessage } from './chat-message'
 
+export const ROLL_SCORE_MAX = 10
+export const ACTION_DIE_SIDES = 6
+export const CHALLENGE_DIE_SIDES = 10
+export const ACTION_DIE_STR = `d${ACTION_DIE_SIDES}`
+export const CHALLENGE_DIE_STR = `d${CHALLENGE_DIE_SIDES}`
+
 export enum ROLL_OUTCOME {
-  MISS = 'MISS',
-  WEAK = 'WEAK',
-  STRONG = 'STRONG',
+  MISS = 'Miss',
+  WEAK_HIT = 'Weak_hit',
+  STRONG_HIT = 'Strong_hit',
 }
 
 export type SourcedValue<T = number> = {
@@ -64,8 +70,8 @@ export interface PostRollOptions {
 }
 
 export class IronswornRoll {
-  rawActionValue?: number
-  rawChallengeValues?: number[]
+  rawActionDieValue?: number
+  rawChallengeDiceValues?: number[]
   preRollOptions: PreRollOptions
   postRollOptions: PostRollOptions
 
@@ -79,25 +85,29 @@ export class IronswornRoll {
     this.preRollOptions = preRollOpts
     this.postRollOptions = postRollOpts
   }
-
-  static action(stat: string, value: number, adds?: number): IronswornRoll {
+  // TODO: a way to add arbitrary values for certain assets (Looper) and moves (Develop your Relationship)?
+  static action(
+    stat: string,
+    actionDieValue: number,
+    adds?: number
+  ): IronswornRoll {
     const r = new IronswornRoll()
     r.preRollOptions = {
       stat: {
         source: stat,
-        value,
+        value: actionDieValue,
       },
       adds,
     }
     return r
   }
 
-  static progress(source: string, value: number): IronswornRoll {
+  static progress(source: string, progressScore: number): IronswornRoll {
     const r = new IronswornRoll()
     r.preRollOptions = {
       progress: {
         source,
-        value,
+        value: progressScore,
       },
     }
     return r
@@ -106,7 +116,7 @@ export class IronswornRoll {
   async evaluate() {
     if (
       this.roll ||
-      (this.rawChallengeValues && this.rawChallengeValues.length > 0)
+      (this.rawChallengeDiceValues && this.rawChallengeDiceValues.length > 0)
     ) {
       return
     }
@@ -136,17 +146,17 @@ export class IronswornRoll {
     // Pull out raw results
     const pool = this.roll.terms[0] as PoolTerm
     const actionRoll = pool.rolls.find((x) => x.formula === '1d6')
-    this.rawActionValue = actionRoll?.total
+    this.rawActionDieValue = actionRoll?.total
     const challengeRolls = pool.rolls.filter((x) => x.formula === '1d10')
-    this.rawChallengeValues = challengeRolls.map((x) => x.total as number)
+    this.rawChallengeDiceValues = challengeRolls.map((x) => x.total as number)
   }
 
   serialize() {
     return pick(this, [
       'preRollOptions',
       'postRollOptions',
-      'rawActionValue',
-      'rawChallengeValues',
+      'rawActionDieValue',
+      'rawChallengeDiceValues',
     ])
   }
 
@@ -159,10 +169,10 @@ export class IronswornRoll {
       return this.preRollOptions.progress
     }
 
-    if (this.rawActionValue) {
+    if (this.rawActionDieValue) {
       return {
         source: 'd6',
-        value: this.rawActionValue, // TODO: post-roll override
+        value: this.rawActionDieValue, // TODO: post-roll override
       }
     }
 
@@ -202,7 +212,7 @@ export class IronswornRoll {
     return ret
   }
 
-  private get rawActionTotal(): number | undefined {
+  private get rawScore(): number | undefined {
     const terms = [] as Array<number | undefined>
 
     // First term: progress score or action-die roll
@@ -214,8 +224,8 @@ export class IronswornRoll {
       )
     } else if (this.preRollOptions.progress) {
       terms.push(this.preRollOptions.progress.value)
-    } else if (this.rawActionValue !== undefined) {
-      terms.push(this.canceledByNegativeMomentum ? 0 : this.rawActionValue)
+    } else if (this.rawActionDieValue !== undefined) {
+      terms.push(this.canceledByNegativeMomentum ? 0 : this.rawActionDieValue)
     } else terms.push(undefined) // Not rolled yet
 
     // Second term: the stat for an action roll
@@ -236,19 +246,19 @@ export class IronswornRoll {
     return undefined
   }
 
-  get actionTotal(): number | undefined {
-    const ret = this.rawActionTotal
-    return ret === undefined ? undefined : Math.min(ret, 10)
+  get actionScore(): number | undefined {
+    const ret = this.rawScore
+    return ret === undefined ? undefined : Math.min(ret, ROLL_SCORE_MAX)
   }
 
-  get actionTotalCapped(): boolean {
-    return (this.rawActionTotal ?? 0) > 10
+  get actionScoreCapped(): boolean {
+    return (this.rawScore ?? 0) > ROLL_SCORE_MAX
   }
 
   get challengeDice(): SourcedValue<number | undefined>[] {
-    if (this.rawChallengeValues !== undefined) {
+    if (this.rawChallengeDiceValues !== undefined) {
       // challenge dice have been rolled, report them
-      return this.rawChallengeValues.map((x) => ({
+      return this.rawChallengeDiceValues.map((x) => ({
         source: 'd10',
         value: x,
       }))
@@ -279,8 +289,8 @@ export class IronswornRoll {
     if (replaced.length === 2) {
       return replaced.map((x) => x.value)
     }
-    if (this.rawChallengeValues?.length === 2) {
-      return this.rawChallengeValues
+    if (this.rawChallengeDiceValues?.length === 2) {
+      return this.rawChallengeDiceValues
     }
     return undefined
   }
@@ -291,25 +301,25 @@ export class IronswornRoll {
     return c1 === c2
   }
 
-  get preAdjustmentOutcome(): SourcedValue<ROLL_OUTCOME> | undefined {
+  get rawOutcome(): SourcedValue<ROLL_OUTCOME> | undefined {
     if (this.preRollOptions.automaticOutcome) {
       return this.preRollOptions.automaticOutcome
     }
-    if (!this.finalChallengeDice || this.actionTotal === undefined)
+    if (!this.finalChallengeDice || this.actionScore === undefined)
       return undefined
 
     const [c1, c2] = this.finalChallengeDice
-    let outcome = ROLL_OUTCOME.WEAK
-    if (this.actionTotal <= Math.min(c1, c2)) outcome = ROLL_OUTCOME.MISS
-    if (this.actionTotal > Math.max(c1, c2)) outcome = ROLL_OUTCOME.STRONG
+    let outcome = ROLL_OUTCOME.WEAK_HIT
+    if (this.actionScore <= Math.min(c1, c2)) outcome = ROLL_OUTCOME.MISS
+    if (this.actionScore > Math.max(c1, c2)) outcome = ROLL_OUTCOME.STRONG_HIT
     return {
       value: outcome,
       source: game.i18n.localize('IRONSWORN.Roll'),
     }
   }
 
-  get postAdjustmentOutcome(): SourcedValue<ROLL_OUTCOME> | undefined {
-    return this.postRollOptions.replacedOutcome ?? this.preAdjustmentOutcome
+  get finalOutcome(): SourcedValue<ROLL_OUTCOME> | undefined {
+    return this.postRollOptions.replacedOutcome ?? this.rawOutcome
   }
 
   get moveItem(): Promise<IronswornItem | undefined> | undefined {

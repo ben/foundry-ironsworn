@@ -13,7 +13,12 @@ import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
-import { ROLL_OUTCOME } from '../rolls/roll'
+import {
+  ACTION_DIE_SIDES,
+  CHALLENGE_DIE_SIDES,
+  ROLL_OUTCOME,
+  ROLL_SCORE_MAX,
+} from '../rolls/roll'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 
 interface RollMessageParams {
@@ -38,73 +43,76 @@ interface SFRollMessageParams {
 
 function actionRoll(roll: any): Roll {
   return roll.terms[0].rolls.find(
-    (x) => x.dice.length === 0 || x.dice[0].faces === 6
+    (x) => x.dice.length === 0 || x.dice[0].faces === ACTION_DIE_SIDES
   )
 }
 
 function challengeRoll(roll: any): [Roll, Roll] {
   return roll.terms[0].rolls.filter(
-    (x) => x.dice.length > 0 && x.dice[0].faces === 10
+    (x) => x.dice.length > 0 && x.dice[0].faces === CHALLENGE_DIE_SIDES
   )
 }
 
 interface DieTotals {
-  action: number
-  actionCapped: boolean
-  rawAction: number
-  canceledAction: number
-  challenge1: number
-  challenge2: number
+  actionScore: number
+  actionScoreCapped: boolean
+  rawActionScore: number
+  canceledActionDie: number
+  challengeDie1: number
+  challengeDie2: number
   match: boolean
 }
 
 function calculateDieTotals(roll: Roll): DieTotals {
-  const actionDie = actionRoll(roll)
+  const actionDieRoll = actionRoll(roll)
   const challengeDice = challengeRoll(roll)
-  const [challenge1, challenge2] = challengeDice.map((x) => x.total as number)
-  const rawActionDie = actionDie.terms.find((x) => x instanceof Die)
+  const [challengeDie1, challengeDie2] = challengeDice.map(
+    (x) => x.total as number
+  )
+  const rawActionScore = actionDieRoll.terms.find((x) => x instanceof Die)
 
   // Cap action at 10
-  let action = actionDie.total as number
-  let actionCapped = false
-  if (action > 10) {
-    actionCapped = true
-    action = 10
+  let actionScore = actionDieRoll.total as number
+  let actionScoreCapped = false
+  if (actionScore > ROLL_SCORE_MAX) {
+    actionScoreCapped = true
+    actionScore = ROLL_SCORE_MAX
   }
 
-  const canceledActionDie = new Roll(actionDie.formula.replace(/1d6\S+/, '0'))
+  const canceledActionDie = new Roll(
+    actionDieRoll.formula.replace(/1d6\S+/, '0')
+  )
   canceledActionDie.evaluate({ async: false })
 
   return {
-    action,
-    actionCapped,
-    rawAction: rawActionDie?.total as number,
-    canceledAction: canceledActionDie.total as number,
-    challenge1,
-    challenge2,
-    match: challenge1 === challenge2,
+    actionScore,
+    actionScoreCapped,
+    rawActionScore: rawActionScore?.total as number,
+    canceledActionDie: canceledActionDie.total as number,
+    challengeDie1,
+    challengeDie2,
+    match: challengeDie1 === challengeDie2,
   }
 }
 
-function calculateHitType(
-  action: number,
-  challenge1: number,
-  challenge2: number
+function resolveRollOutcome(
+  score: number,
+  challengeDie1: number,
+  challengeDie2: number
 ): ROLL_OUTCOME {
-  if (action <= Math.min(challenge1, challenge2)) return ROLL_OUTCOME.MISS
-  if (action > Math.max(challenge1, challenge2)) return ROLL_OUTCOME.STRONG
-  return ROLL_OUTCOME.WEAK
+  if (score <= Math.min(challengeDie1, challengeDie2)) return ROLL_OUTCOME.MISS
+  if (score > Math.max(challengeDie1, challengeDie2))
+    return ROLL_OUTCOME.STRONG_HIT
+  return ROLL_OUTCOME.WEAK_HIT
 }
 
 function calculateHitTypeText(type: ROLL_OUTCOME, match: boolean) {
   if (type === ROLL_OUTCOME.MISS) {
-    return game.i18n.localize(
-      match ? 'IRONSWORN.Complication' : 'IRONSWORN.Miss'
-    )
+    return game.i18n.localize(match ? 'IRONSWORN.Miss_match' : 'IRONSWORN.Miss')
   }
-  if (type === ROLL_OUTCOME.STRONG) {
+  if (type === ROLL_OUTCOME.STRONG_HIT) {
     return game.i18n.localize(
-      match ? 'IRONSWORN.Opportunity' : 'IRONSWORN.StrongHit'
+      match ? 'IRONSWORN.Strong_hit_match' : 'IRONSWORN.Strong_hit'
     )
   }
   return game.i18n.localize('IRONSWORN.WeakHit')
@@ -173,9 +181,9 @@ function calculateMoveResultText(
   switch (type) {
     case ROLL_OUTCOME.MISS:
       return move.Miss
-    case ROLL_OUTCOME.WEAK:
+    case ROLL_OUTCOME.WEAK_HIT:
       return move.Weak
-    case ROLL_OUTCOME.STRONG:
+    case ROLL_OUTCOME.STRONG_HIT:
       return move.Strong
   }
 }
@@ -188,8 +196,8 @@ function calculateSFMoveResultText(
   const data = move.data as SFMoveDataProperties
   const outcomeKey = {
     [ROLL_OUTCOME.MISS]: 'Miss',
-    [ROLL_OUTCOME.WEAK]: 'Weak Hit',
-    [ROLL_OUTCOME.STRONG]: 'Strong Hit',
+    [ROLL_OUTCOME.WEAK_HIT]: 'Weak Hit',
+    [ROLL_OUTCOME.STRONG_HIT]: 'Strong Hit',
   }[type]
   let outcome = data.data.Outcomes?.[outcomeKey]
   if (match) outcome = outcome?.['With a Match'] ?? outcome
@@ -206,23 +214,38 @@ function calculateMomentumProps(
   actor?: IronswornActor
 ): MomentumProps {
   if (!actor || actor.data.type !== 'character') return {}
-  const { action, rawAction, challenge1, challenge2, match } =
-    calculateDieTotals(roll)
+  const {
+    actionScore: actionScore,
+    rawActionScore: rawActionDie,
+    challengeDie1,
+    challengeDie2,
+    match,
+  } = calculateDieTotals(roll)
 
   const momentum = actor.data.data.momentum
-  if (momentum < 0 && -momentum === rawAction)
+  if (momentum < 0 && -momentum === rawActionDie)
     return {
       negativeMomentumCancel: true,
     }
 
-  const originalHitType = calculateHitType(action, challenge1, challenge2)
-  const momentumHitType = calculateHitType(momentum, challenge1, challenge2)
+  const rawOutcome = resolveRollOutcome(
+    actionScore,
+    challengeDie1,
+    challengeDie2
+  )
+  const momentumHitType = resolveRollOutcome(
+    momentum,
+    challengeDie1,
+    challengeDie2
+  )
   const momentumHitTypeI18n = calculateHitTypeText(momentumHitType, match)
 
-  switch (`${originalHitType} -> ${momentumHitType}`) {
-    case 'MISS -> STRONG':
-    case 'MISS -> WEAK':
-    case 'WEAK -> STRONG':
+  switch (
+    `${rawOutcome} -> ${momentumHitType}` as `${typeof rawOutcome} -> ${typeof momentumHitType}`
+  ) {
+    case 'Miss -> Strong_hit':
+    case 'Miss -> Weak_hit':
+    case 'Weak_hit -> Strong_hit':
       return {
         momentumHitType,
         momentumHitTypeI18n,
@@ -242,21 +265,21 @@ export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
 export async function createIronswornChatRoll(params: RollMessageParams) {
   await params.roll.evaluate({ async: true })
   const {
-    action,
-    actionCapped,
-    canceledAction,
-    challenge1,
-    challenge2,
+    actionScore: action,
+    actionScoreCapped: actionCapped,
+    canceledActionDie: canceledAction,
+    challengeDie1,
+    challengeDie2,
     match,
   } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
-  let hitType = calculateHitType(action, challenge1, challenge2)
+  let hitType = resolveRollOutcome(action, challengeDie1, challengeDie2)
   let momentumProps: MomentumProps = {}
   if (!params.isProgress) {
     momentumProps = calculateMomentumProps(params.roll, params.actor)
     if (momentumProps.negativeMomentumCancel) {
-      hitType = calculateHitType(canceledAction, challenge1, challenge2)
+      hitType = resolveRollOutcome(canceledAction, challengeDie1, challengeDie2)
     }
   }
 
@@ -321,19 +344,23 @@ export async function createStarforgedMoveRollChat(
 ) {
   await params.roll.evaluate({ async: true })
   const {
-    action,
-    actionCapped,
-    canceledAction,
-    challenge1,
-    challenge2,
+    actionScore: action,
+    actionScoreCapped: actionCapped,
+    canceledActionDie,
+    challengeDie1,
+    challengeDie2,
     match,
   } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
-  let hitType = calculateHitType(action, challenge1, challenge2)
+  let hitType = resolveRollOutcome(action, challengeDie1, challengeDie2)
   const momentumProps = calculateMomentumProps(params.roll, params.actor)
   if (momentumProps.negativeMomentumCancel) {
-    hitType = calculateHitType(canceledAction, challenge1, challenge2)
+    hitType = resolveRollOutcome(
+      canceledActionDie,
+      challengeDie1,
+      challengeDie2
+    )
   }
 
   const renderData = {

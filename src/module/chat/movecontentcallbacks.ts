@@ -11,7 +11,7 @@ type Callback = (input: CallbackInput) => string | undefined
 
 export const MoveContentCallbacks: { [key: string]: Callback } = {
   'Delve the Depths': ({ hitType, stat }: CallbackInput) =>
-    hitType === ROLL_OUTCOME.WEAK
+    hitType === ROLL_OUTCOME.WEAK_HIT
       ? ` <button class="ironsworn__delvedepths__roll" data-stat="${stat}">
             <i class="fa fa-dice-d6"></i> ${game.i18n.localize(
               'IRONSWORN.Roll'

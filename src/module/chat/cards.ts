@@ -129,8 +129,8 @@ export class IronswornChatCard {
       })
     } else {
       const i18nKey = {
-        [ROLL_OUTCOME.STRONG]: 'StrongHit',
-        [ROLL_OUTCOME.WEAK]: 'WeakHit',
+        [ROLL_OUTCOME.STRONG_HIT]: 'Strong_hit',
+        [ROLL_OUTCOME.WEAK_HIT]: 'Weak_hit',
         [ROLL_OUTCOME.MISS]: 'Miss',
       }[hittype]
       result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
@@ -163,8 +163,8 @@ export class IronswornChatCard {
 
     // Get the new result
     const k = {
-      [ROLL_OUTCOME.STRONG]: 'Strong Hit',
-      [ROLL_OUTCOME.WEAK]: 'Weak Hit',
+      [ROLL_OUTCOME.STRONG_HIT]: 'Strong Hit',
+      [ROLL_OUTCOME.WEAK_HIT]: 'Weak Hit',
       [ROLL_OUTCOME.MISS]: 'Miss',
     }[hittype]
     const moveData = theMove.data as SFMoveDataProperties
