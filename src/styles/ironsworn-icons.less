@@ -28,6 +28,7 @@
 [class^='isiconbg-'],
 [class*=' isiconbg-'] {
   position: relative; // required for the pseudo-element's position to function
+  z-index: 1;
   &:before {
     // don't forget to set the background for this pseudo-element, too. typically this is a flat colour, but it'll work with any valid background (gradients, images, etc).
     // this defaults to currentColor, so that it's clear that it's actually working when it's used
@@ -41,7 +42,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
     position: absolute;
     box-sizing: border-box;
     mask-origin: content-box; // this + above make this sensitive to padding on the :before pseudo-element.
