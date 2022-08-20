@@ -42,8 +42,8 @@ async function doit() {
   // Update the changelog
   const changelog = (await readFile('./CHANGELOG.md')).toString()
   newChangelog = changelog.replace(
-    '## In progress',
-    `## In progress\n\n## ${nextVersion}`
+    '## Next Release',
+    `## Next Release\n\n## ${nextVersion}`
   )
   await writeFile('./CHANGELOG.md', newChangelog)
 
