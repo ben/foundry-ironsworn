@@ -26,7 +26,6 @@
             :key="'ability' + i"
             element="li"
             class="flexrow"
-            :actor="actingActor"
             @moveclick="moveclick"
           >
             <!-- TODO: redo as list style -->

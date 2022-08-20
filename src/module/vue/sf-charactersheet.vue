@@ -61,11 +61,7 @@
       <div class="flexcol margin-right condition-meters">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat
-            class="vertical-v2 nogrow text"
-            :actor="actor"
-            attr="health"
-          >
+          <btn-rollstat class="vertical-v2 nogrow text" attr="health">
             {{ $t('IRONSWORN.Health') }}
           </btn-rollstat>
           <div class="flexcol stack health">
@@ -101,7 +97,7 @@
 
     <!-- Impacts -->
     <hr class="nogrow" />
-    <sf-impacts :actor="actor" class="nogrow" />
+    <sf-impacts class="nogrow" />
   </div>
 </template>
 

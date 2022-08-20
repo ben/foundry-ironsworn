@@ -9,7 +9,7 @@
           @sortUp="sortUp"
           @sortDown="sortDown"
         />
-        <asset :actor="actor" :asset="asset" />
+        <asset :asset="asset" />
       </div>
     </transition-group>
     <div class="flexrow nogrow" style="text-align: center">
