@@ -106,66 +106,54 @@
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-denizenbox
-          :actor="actor"
           :idx="0"
           :ref="(e) => (denizenRefs[0] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="1"
           :ref="(e) => (denizenRefs[1] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="2"
           :ref="(e) => (denizenRefs[2] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="3"
           :ref="(e) => (denizenRefs[3] = e)"
         />
       </div>
       <div class="flexrow boxrow">
         <site-denizenbox
-          :actor="actor"
           :idx="4"
           :ref="(e) => (denizenRefs[4] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="5"
           :ref="(e) => (denizenRefs[5] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="6"
           :ref="(e) => (denizenRefs[6] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="7"
           :ref="(e) => (denizenRefs[7] = e)"
         />
       </div>
       <div class="flexrow boxrow">
         <site-denizenbox
-          :actor="actor"
           :idx="8"
           :ref="(e) => (denizenRefs[8] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="9"
           :ref="(e) => (denizenRefs[9] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="10"
           :ref="(e) => (denizenRefs[10] = e)"
         />
         <site-denizenbox
-          :actor="actor"
           :idx="11"
           :ref="(e) => (denizenRefs[11] = e)"
         />

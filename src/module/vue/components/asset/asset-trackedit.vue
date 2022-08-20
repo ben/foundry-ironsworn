@@ -23,7 +23,7 @@
         v-model.number="item.data.track.max"
       />
     </div>
-    <asset-track style="margin-top: 5px" :actor="$item?.parent" :item="item" />
+    <asset-track style="margin-top: 5px" :item="item" />
   </div>
 </template>
 

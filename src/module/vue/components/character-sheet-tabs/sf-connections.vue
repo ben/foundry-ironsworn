@@ -13,7 +13,7 @@
           @sortUp="sortUp"
           @sortDown="sortDown"
         />
-        <progress-box :item="item" :actor="actor" :showStar="true" />
+        <progress-box :item="item" :showStar="true" />
       </div>
     </transition-group>
 

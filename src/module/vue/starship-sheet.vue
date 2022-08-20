@@ -18,20 +18,10 @@
 
     <section class="flexrow nogrow">
       <div style="text-align: center">
-        <condition-checkbox
-          class="nogrow"
-          :actor="actor"
-          name="battered"
-          :global="true"
-        />
+        <condition-checkbox class="nogrow" name="battered" :global="true" />
       </div>
       <div style="text-align: center">
-        <condition-checkbox
-          class="nogrow"
-          :actor="actor"
-          name="cursed"
-          :global="true"
-        />
+        <condition-checkbox class="nogrow" name="cursed" :global="true" />
       </div>
     </section>
   </div>
