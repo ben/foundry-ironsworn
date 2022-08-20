@@ -52,12 +52,8 @@
       "caption": "Ironsworn & Starforged"
     }
   ],
-  "esmodules": [
-    "ironsworn.js"
-  ],
-  "styles": [
-    "ironsworn.css"
-  ],
+  "esmodules": ["ironsworn.js"],
+  "styles": ["ironsworn.css"],
   "dependencies": [],
   "relationships": {
     "requires": []
@@ -211,6 +207,11 @@
       "lang": "rus",
       "name": "Pусский",
       "path": "lang/rus.json"
+    },
+    {
+      "lang": "pl",
+      "name": "Polski",
+      "path": "lang/pl.json"
     },
     {
       "lang": "fr",

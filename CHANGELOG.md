@@ -2,6 +2,10 @@
 
 ## In progress
 
+- Fix the die-roll backgrounds in the SF theme
+- Don't open editors for non-editable items when clicking a move link and no character move sheet is open.
+- Add a start for Polish translations (see [#428](https://github.com/ben/foundry-ironsworn/issues/428))
+
 ## 1.16.9
 
 - Fix the new-character dialog to correctly generate SF character names

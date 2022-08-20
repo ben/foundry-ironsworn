@@ -80,7 +80,6 @@ export class IronswornChatCard {
       return (TextEditor as any)._onClickContentLink(ev)
     }
 
-    console.log(item)
     for (const actor of game.actors?.contents || []) {
       if (
         (actor.moveSheet as any)?._state >= 0 &&
@@ -89,7 +88,8 @@ export class IronswornChatCard {
         return actor.moveSheet.highlightMove(item)
       }
     }
-    item.sheet?.render(true)
+
+    // Found the item, but no move sheet open. Do nothing.
   }
 
   async _oracleNavigate(ev: JQuery.ClickEvent) {
