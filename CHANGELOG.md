@@ -1,6 +1,6 @@
 # Changelog
 
-## In progress
+## Next Release
 
 - Add a new dice-rolling engine, and upgrade the move/stat/track/progress rolling dialogs ([#422](https://github.com/ben/foundry-ironsworn/pull/422))
 - Fix the die-roll backgrounds in the SF theme
