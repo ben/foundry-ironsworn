@@ -1,0 +1,1561 @@
+{
+  "IRONSWORN": {
+    "Ironsworn": "Ironsworn",
+    "Starforged": "Starforged",
+    "CreateActor": "Stworz Kartę",
+    "YourWorldTruths": "Swiat: Prawdy",
+    "TruthQuestStarter": "Zadanie poczatkowe:",
+    "SaveYourTruths": "Zapisz Prawdy",
+    "CustomTruth": "Własna Prawda",
+    "Roll": "Rzuć",
+    "Chat": "Czat",
+    "Rolling": "Losuje..", 
+    "Bonus": "Bonus",
+    "Versus": "vs.",
+    "CappedAt10": "Capped at 10",
+    "StrongHit": "Sukces!",
+    "StrongHitMatch": "Triumf! (match)",
+    "OnAStrongHit": "Przy Pełnym Sukcesie", 
+    "WeakHit": "Częściowy Sukces",
+    "OnAWeakHit": "Przy Częściowym Sukcesie",
+    "Miss": "Porazka",
+    "MissMatch": "Krytyczna Porazka(match)",
+    "OnAMiss": "Przy miss",
+    "Opportunity": "Okazja!",
+    "Complication": "Komplikacja!",
+    "MarkProgress": "Zaznacz Postęp",
+    "UnmarkProgress": "Odznacz Postęp",
+    "ClearProgress": "Wyczyść Postęp",
+    "FulfillVow": "Wypełnij Przysięge",
+    "ProgressRoll": "Rzut postępu",
+    "StarProgress": "Gdy jest aktywny, ten element pojawi się również w zakładce 'Dziedzictwo'",
+    "Mark": "Zaznacz",
+    "Fulfill": "Wypełnij",
+    "Clear": "Wyczyść",
+    "Troublesome": "Kłopotliwy", 
+    "Dangerous": "Niebezpieczny",
+    "Formidable": "Nadzwyczajny",
+    "Extreme": "Ekstremalny",
+    "Epic": "Epicki",
+    "Stat": "Statystyka",
+    "Momentum": "Impet", 
+    "Health": "Zdrowie",
+    "Spirit": "Duch",
+    "Supply": "Zasoby",
+    "Edge": "Sprawność", 
+    "Heart": "Serce",
+    "Iron": "Żelazo",
+    "Shadow": "Cień",
+    "Wits": "Rozum",
+    "XP": "Exp",
+    "Asset": "Aspekt",
+    "Assets": "Aspekty",
+    "Bonds": "Więzi",
+    "Bond": "Więź",
+    "Legacies": "Dziedzictwa", 
+    "Clock": "Zegar",
+    "Scenes": "Sceny",
+    "Quests": "Zadania",
+    "Notes": "Notatki",
+    "Discoveries": "Odkrycia",
+    "Debilities": "Osłabienie",
+    "Conditions": "Dolegliwość",
+    "Banes": "Zguby",
+    "Burdens": "Brzemiona",
+    "Misfortunes": "Nieszczęścia",
+    "LastingEffects": "Trwałe efekty",
+    "Vehicle": "Pojazdy",
+    "Wounded": "Zraniony",
+    "Unprepared": "Nieprzygotowany",
+    "Shaken": "Wstrząśnięy",
+    "Encumbered": "Przeciążony",
+    "Maimed": "Okaleczony",
+    "Corrupted": "Spaczony", 
+    "Cursed": "Przeklęty",
+    "Tormented": "Dręczony",
+    "Permanentlyharmed": "Trwale zraniony",
+    "Traumatized": "Straumatyzowany",
+    "Doomed": "Zgubiony",
+    "Indebted": "Zadłużony", 
+    "Battered": "Poobijany",
+    "Vow": "Przysięga",
+    "Vows": "Przysięgi",
+    "Progress": "Postęp",
+    "Reroll": "Przerzut",
+    "Moves": "Ruchy",
+    "Session": "Sessja",
+    "Connections": "Połączenia",
+    "Connection": "Połączenie",
+    "Exploration": "Eksploracja",
+    "Recover": "Wyzdrowienie", 
+    "Threshold": "Próg",
+    "Legacy": "Dziedzictwo",
+    "Scene Challenge": "Scene Challenge", 
+    "Adventure": "Ruchy Podróży",
+    "Relationship": "Ruchy Więzi",
+    "Combat": "Ruchy Walki",
+    "Suffer": "Ruchy Konsekwencji", 
+    "Quest": "Ruchy Zadań",
+    "Fate": "Ruchy Przeznaczenia",
+    "Delve": "Ruchy Nieznanego", 
+    "Optional Delve": "Optional Delve",
+    "Custom Moves": "Własne Ruchy",
+    "CustomMoves": "Własne Ruchy",
+    "Oracles": "Wyrocznie",
+    "Custom Oracles": "Własne Wyrocznie",
+    "Search": "Szukaj",
+    "Plot": "Wątek", 
+    "Location": "Lokacja",
+    "LocationType": "Typ Lokacji",
+    "Character": "Postać",
+    "Starship": "Statek Kosmicznyu",
+    "SharedSheet": "Wspólna Karta",
+    "DelveSite": "Delve Site",
+    "Names": "Imiona",
+    "RollForDetails": "Wylosuj Detale Lokacji", 
+    "RandomName": "Losowe imię",
+    "Burn": "Spal",
+    "Focus": "Skupienie",
+    "BurnForUpgrade": "Spal Impet: <strong>{type}</strong>",
+    "MomentumBurnt": "Spalony Impet",
+    "NegativeMomentumCancel": "Ujemny Impet anulował Kość Akcji",
+    "Reset": "Zresetuj",
+    "Max": "Max",
+    "Name": "Imię",
+    "Pronouns": "Zaimki",
+    "Callsign": "Ksywa",
+    "Characteristics": "Charakterystyka",
+    "Summary": "Podsumowanie",
+    "Description": "Opis",
+    "Trigger": "Wyzwalacz",
+    "FullText": "Pełny tekst",
+    "Fields": "Domeny", 
+    "Label": "Etykieta",
+    "Value": "Wartość",
+    "Abilities": "Zdolności",
+    "Options": "Opcje",
+    "Track": "Tor",
+    "Enabled": "Włączony",
+    "Rank": "Ranga",
+    "Completed": "Ukończone/y", 
+    "NotCompleted": "Nieukończony/e", 
+    "Features": "Cechy",
+    "Feature": "Cecha",
+    "Dangers": "Zagrożenia",
+    "Foes": "Przeciwnicy",
+    "Foe": "Przeciwnik",
+    "NPC": "BG",
+    "Edit": "Edytuj",
+    "Domain": "Domena",
+    "Theme": "Motyw",
+    "Denizen": "Mieszkaniec/ka",
+    "Denizens": "Mieszkańcy",
+    "OpenCompendium": "Otwórz Kompendium",
+    "DeleteItem": "Usuń Przedmiot",
+    "DeleteMove": "Usuń Ruch",
+    "DeleteVow": "Usuń Przysięgę",
+    "DeleteProgress": "Usuń Postęp",
+    "DeleteAsset": "Usuń Aspekt",
+    "ConfirmDelete": "Jesteś pewien? Nie można tego cofnąć.",
+    "StatBonusTooltip": "Bonus na następny rzut na statystykę",
+    "RequiresLocationType": "Ta Wyrocznia wymaga wybrania typu lokacji", 
+    "PlanetType": "Typ planety",
+    "RandomPlanetType": "Losowy typ planety",
+    "SettlementType": "Typ Osady",
+    "RandomSettlementType": "Losowy typ planety",
+    "StarType": "Typ gwiazdy",
+    "RandomStarType": "Losowy typ gwiazdy",
+    "DerelictType": "Type of derelict", 
+    "RandomDerelictType": "Random derelict type", 
+    "VaultType": "Typ krypty", 
+    "RandomVaultType": "Losowy typ krypty",
+    "First": "pierwszy",
+    "Second": "drugi",
+    "Third": "trzeci",
+    "Fourth": "czwarty",
+    "Fifth": "piąty",
+    "StarforgedTools": "Narzędzia Starforged",
+    "NewSector": "Nowy Sector",
+    "NewStar": "Nowa Gwiazda",
+    "NewPlanet": "Nowa Planeta",
+    "NewSettlement": "Nowa Osada",
+    "NewDerelict": "Nowa Ruina", 
+    "NewVault": "Nowa Krypta Prekursora",
+    "Sector": "Sektor",
+    "Region": "Region",
+    "Terminus": "Stacja",
+    "Outlands": "Rubieże",
+    "Expanse": "Przestrzeń", 
+    "RotateCCW": "Obróc zgodnie z ruchem zegara", 
+    "RotateCW": "Oróć przeciwnie do ruchu zegera",
+    "ChatAlert": {
+      "Renamed": "Zmieniono na {name}",
+      "renamed": "zmieniono na {name}",
+      "Added": "Dodano {name}", 
+      "Deleted": "Usunięto {name}",
+      "MarkedXP": "Zaznaczono {amt} XP",
+      "UnmarkedXP": "Odznaczono {amt} XP",
+      "AdjustedStat": "{amt} {stat} (now {val})",
+      "SetCondition": "Set the {condition} stan",
+      "ClearedCondition": "Usunięto {condition} stan",
+      "RankChanged": "Ranga zmieniona z {old} to {new}",
+      "rankChanged": "ranga zmieniona z {old} to {new}", 
+      "ProgressAdvanced": "Zwiększono postęp", 
+      "progressAdvanced": "zwiększono postęp", 
+      "ProgressReduced": "Postęp zredukowany",
+      "progressReduced": "postęp zredukowany",
+      "MarkedAbility": "oznaczono {pos} umiejętność", 
+      "UnmarkedAbility": "odznaczono {pos} umiejętność",
+      "MarkedOption": "zaznaczono {name}",
+      "SetField": "ustawiono {name} do {val}",
+      "AddBond": "Dodano więź",
+      "LostBond": "Utracono Więź",
+      "completedMarked": "Odnotowano wykonanie",
+      "completedUnmarked": "Odnotowano wykonanie",
+      "clockAdvancedOneSegment": "zegar przesunięto do {new}⁄{max}",
+      "clockAdvancedTwoSegments": "przesunięto zegar o {change} segmenty do {new}⁄{max}",
+      "clockAdvancedManySegments": "przesunięto zagar o {change} segmenty do {new}⁄{max}",
+      "clockCompletedOneSegment": "przesunięto zegar o {new}⁄{max}—zegar zapełniony!",
+      "clockCompletedTwoSegments": "przesunięto zegar o {change} segmenty do {new}⁄{max}—zegar zapełniony!",
+      "clockCompletedManySegments": "przesunięto zegar o {change} segmenty do {new}⁄{max}—zegar zapełniony!",
+      "clockSet": "ustawiono zegar na {new}⁄{max}"
+    },
+    "Settings": {
+      "Theme": {
+        "Name": "Styl Wizualny",
+        "Hint": "Wybierz styl wizualny dla gry. Wymaga przeładowania.",
+        "Ironsworn": "Ironsworn: Klasyczny",
+        "Starforged": "Starforged (eksperymentalny)"
+      },
+      "Tools": {
+        "Name": "Narzędzia Postaci",
+        "Hint": "Which set of moves and oracles will appear Gdy opening a character sheet.",
+        "Sheet": "Match sheet"
+      },
+      "SharedSupply": {
+        "Name": "Shared Supply Tracker",
+        "Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+      },
+      "LogChanges": {
+        "Name": "Log Character Updates",
+        "Hint": "If on, changes to character stats will be logged to the chat."
+      },
+      "PromptTruths": {
+        "Name": "Ironsworn/Starforged Dialog on Start",
+        "Hint": "Open the above dialog on startup."
+      },
+      "ConfigurationDialog": {
+        "Label": "Ironsworn/Starforged Configuration Dialog",
+        "Name": "Configuration Dialog",
+        "Hint": "Choose between Ironsworn and Starforged UI elements."
+      },
+      "SFBeta": {
+        "Name": "Show Starforged beta content",
+        "Hint": "Enables in-progress Starforged features."
+      }
+    },
+    "First Start": {
+      "Witaj": "Witaj",
+      "Save": "Zapisz",
+      "Intro": "Witaj w Ironsworn! Przed rozpoczęciem jest jeszcze kilka wyborów do wykonania."
+    },
+    "MoveContents": {
+      "Face Danger": {
+        "title": "Zmierz Się z Niebezpieczeństwem",
+        "description": "<p>Kiedy <strong>próbujesz czegoś ryzykownego lub reagujesz na bezpośrednie zagrożenie</strong>, opisz swoje działanie i rzuć. Jeśli działasz przy użyciu</p>\n<ul>\n<li>Szybkości, zwinności bądź precyzji: Rzuć: +Sprawność.</li>\n<li>Uroku, lojalności bądź odwagą: Rzuć +Serce</li>\n<li>Agresji, siłą lub wytrzymałością: rzuć +Żelazo.</li>\n<li>Podstępu, skrytośću bądź oszustwa: Rzuć +Cień</li>\n<li>Wiedzy, wnikliwości bądź pilnej obserwacji rzuć +Rozum</li>\n</ul>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, udaje Ci się co zamierzałeś. Zyskaj +1 Impet.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, udaje Ci się co zamierzałeś, ale ponosisz kłopotliwą kosekwencję. Wybierz jedno z:</p>\n<ul>\n<li>Jesteś za późno, strać przewagę, bądź zmierz się z nowym niebezpieczeństwem: Strać -1 Impetu.</li>\n<li>Jesteś zmęczony bądź zranionyt: <em>Staw Czoła Ranom</em> (1 rana).</li>\n<li>Jesteś rozproszony, zniechącony bądź przestraszony: <em>Staw Czoła Stresowi</em> (1 stress).</li>\n<li>Poświęcasz zasoby: Strać -1 Zasobów.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, ponosisz porażkę lub twój zamiar zostanie zniweczony przez dramatyczny i kosztowny obrót wydarzeń. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Secure An Advantage": {
+        "title": "Zapewnij Sobie Przewagę",
+        "description": "<p>Kiedy <strong>oceniasz sytuację, przygotowujesz się lub próbujesz zdobyć przewagę</strong>, opisz swoje działanie i rzuć. Jeśli działasz przy użyciu</p>\n<ul>\n<li>Szybkości, zwinności bądź precyzji: Rzuć: +Sprawność.</li>\n<li>Uroku, lojalności lub odwagi: Rzuć +Serce</li>\n<li>Agresji, silnej obrony, siły lub wytrzymałości: Rzuć +Żelazo.</li>\n<li>Podstępu, skrytości bądź oszustwa: Rzuć +Cień</li>\n<li>Wiedzy, wnikliwości bądź pilnej obserwacji rzuć +Rozum</li>\n</ul>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, zyskujesz przewagę. Wybierz jeden z:</p>\n<ul>\n<li>Przejmij kontrolę! Wykonaj kolejny RUCH (nie <em>ruch postępu</em>), i dodaj +1.</li>\n<li>Przygotuj się do działania: Zyskaj +2 Impetu.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, twoja przewaga jest krótkotrwała. Zyskaj +1 Impetu.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, ponosisz porażkę lub twoje założenia Cię zawodzą. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Gather Information": {
+        "title": "Zbierz Informacje",
+        "description": "<p>Kiedy <strong>przeszukujesz teren, zadajesz pytania, prowadzisz śledztwo lub podążasz za tropem</strong>, rzuć +Rozum. Jeśli działasz w społeczności lub zadajesz pytanie osobie, z którą łączy cię więź, dodaj +1.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, odkrywasz coś pomocnego i konkretnego. Ścieżka, którą musisz podążać lub działania, które musisz podjąć, aby zrobić postęp, stają się jasne. Zastanów się, czego się nauczyłeś (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien), oraz Zyskaj +2 Impetu.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, informacja komplikuje twoje zadanie lub wprowadza nowe niebezpieczeństwo. Rozważ, co odkryłeś (<em>Zapytaj Wyrocznię</em> jeśli  nie jesteś pewien), i Zyskaj +1 Impetu.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, twoje śledztwo odkrywa poważne zagrożenie lub ujawnia niewiarygodną prawdę, która podważa twoje dążenia. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Heal": {
+        "title": "Wylecz",
+        "description": "<p>Kiedy <strong>leczysz uraz lub dolegliwość</strong>, rzuć +Rozum. Jeśli leczysz swoje własne rany, rzuć +Rozum albo +Żelazo, w zależności od tego, która z nich jest niższa.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, twoja opieka jest pomocna. Jeśli Ty (lub sojusznik pod Twoją opieką) posiadacie <strong>ranę</strong>, możesz ją ulczecyć (wyczyść kartę z tego stanu). Następnie dodaj sobie lub sojusznikowi +2 Zdrowia.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, jak powyżej, ale musisz Utracić -1 Zasobów albo -1 Impetu (twój wybór).</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, twoja pomoc jest nieudolna. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Resupply": {
+        "title": "Uzupełnij Zasoby",
+        "description": "<p>Kiedy <strong>polujesz, poszukujesz lub próbujesz zdobyć jedzenie</strong>, rzuć +Rozum.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, udaje Ci się usupełnić zasoby. Zyskaj +2 Zasobów.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, Zyskaj do +2 Zasobów, ale Strać -1 Impetu za każdy.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, nie znajdujesz niczego przydatnego. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Make Camp": {
+        "title": "Rozbij Obóz",
+        "description": "<p>Kiedy <strong>rozbijasz obóz i odpoczywasz, by zregenerować siły przez kilka godzin w dziczy</strong>, rzuć +Zasoby.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, ty i twoi towarzysze możecie wybrać po dwa. </p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, wybierz jedno.</p>\n<ul>\n<li>Powróć do zdrowia: Zyskaj +1 Zdrowia sobie i twoich towarzyszy.</li>\n<li>Posil się: Strać -1 Zasobów i Zyskaj +1 Impetu sobie i towarzyszom.</li>\n<li>Zrelaksuj się: Zyskaj +1 Ducha.</li>\n<li>Skup się: Zyskaj +1 Impetu.</li>\n<li>Przygotuj się: Kiedy kończysz obozować, dodaj +1 jeśli Wyruszasz w Podróż.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, nie zaznajesz odpoczynku. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Undertake a Journey": {
+        "title": "Podejmij wędrówkę",
+        "description": "<p>Kiedy <strong>podróżujesz przez niebezpieczne lub nieznane tereny</strong>, ustalić rangę swojej podróży.</p>\n<ul>\n<li>Kłopotliwa podróż: 3 punkty postepu za każdy etap podróży.</li>\n<li>Niebezpieczna podróż: 2 punkty postepu za każdy etap podróży.</li>\n<li>Nadzwyczajna podróż: 1 punkt postępu na każdy etap podróży.</li>\n<li>Ekstremalna podróż: 2 ticki(kreski) na każdy etap podróży.</li>\n<li>Epicka podróż: 1 tick na każdy etap podróży.</li>\n</ul>\n<p>Następnie na każdy etap swojej podróży(segment), rzuć +Rozum. Jeśli wyruszasz ze społeczności, z którą łączy cię więź, dodaj +1 do swojego początkowego rzutu.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, osiągasz etap podróży. Jeśli etap podróży jest ci nienzany rozważ go (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewny). Następnie, wybierz jedno.</p>\n<ul>\n<li>Dobrze wykorzystałeś zasoby: Zaznacz postęp.</li>\n<li>Narzuciłeś forsowne tempo: Zaznacz postęp i Zyskaj +1 Impetu, ale Strać -1 Zasobów.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, osiągasz etap podróży. Zaznacz postęp, ale Strać -1 Zasobów.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, zszedłeś z drogu bądź zostałeś zaskocozny przez niebezpieczne wydarzenie. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Reach Your Destination": {
+        "title": "Dotrzyj Do Celu",
+        "description": "<p>Kiedy <strong>twoja podróż dobiega końca</strong>, rzuć koścmi wyzwania (2k10). Podczas tego rzutu Impet jest ignorowany.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, sytuacja w miejscu docelowym jest dla Ciebie korzystna. Wybierz jedno.</p>\n<ul>\n<li>Wykonaj kolejny Ruch (nie <em>Ruch Postępu</em>), i dodaj +1.</li>\n<li>Zyskaj +1 Impetu.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, docierasz do miejsca docelowego ale staje w obliczu nieprzewidzianego zagrożenia lub komplikacji. Rozważ co zastajesz (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien).</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, zgubiłeś się kompletnie. Twój cel jest dla ciebie nieznany, lub zostałeś zwiedziony co do niego. Jeśli nadal zamierzasz kontynuować podróż, wyczyśc cały pasek postepu, i podnieś rangę podróży o jeden (jeśli nie jest już Epicka).</p>\n"
+      }, 
+      "Compel": {
+        "title": "Przekonaj",
+        "description": "<p>Kiedy <strong>próbujesz przekonać kogoś do czegoś</strong>, rozważ jak do tego podchodzisz i rzuć. Jeśli działasz za pomocą</p>\n<ul>\n<li>Uroku osobistego, dyplomacji, targu, bądź argumentów: Rzuć +Serce (dodaj +1 jeśli łączy was więź).</li>\n<li>Zastraszania bądź podżęgania: Rzuć +Żelazo.</li>\n<li>Kłamstwa bądź szwindlu: Rzuć +Cień.</li>\n</ul>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, zrobią to, co chcesz lub podzielą się tym, co wiedzą. Zyskaj +1 Impetu. Jeśli następnym ruchem będzie<em>Zbieranie Informacji</em> dodaj +1 do rzutu.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, jak powyżej, ale cel będzie chciał coś w zamian. Rożwasz czego chce (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien).</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, cel odmawia bądź prosi o coś czego koszt jest niewspółmierny. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Sojourn": {
+        "title": "Skorzystaj z Gościny",
+        "description": "<p>Kiedy <strong>spędzasz czas wśród ludzi szukając pomocy</strong>, Rzuć +Serce. Jeśli posiadasz więź z tą społecznością, dodaj +1.</p>\n",
+        "strong": "<p>On <strong>sukcesie</strong>, Ty i twoi sojusznicy możecie wybrać po dwie z poniższych kategorii. Jeśli posiadasz więź z tą społecznością, wybierz jedną dodatkową kategorię.</p>\n<p>Zdjęcie Stanów</p>\n<ul>\n<li>Otrzymaj opiekę medyczną: Odznacz stan <strong>zraniony</strong> i Zyskaj +1 Zdrowia/li>\n<li>Zaznaj otuchy: Odznacz stan <strong>wstrząśnięty</strong> i Zyskaj +1 Ducha/li>\n<li>Wyposaż się: Odznacz stan <strong>nieprzygotowany</strong> i Zyskaj +1 Zasobów/li>\n</ul>\n<p>Wypoczynek</p>\n<ul>\n<li>Odzyskaj siły: Zyskaj +2 zdrowia sobie i towarzyszom.</li>\n<li>Spotkaj się z bliską osobą: Zyskaj +2 duch.</li>\n<li>Zaopatrz się: Zyskaj +2 Zasobów.</li>\n<li>Przygotuj plan: Zyskaj +2 Impetu.</li>\n</ul>\n<p>Zapewnij Pomoc</p>\n<ul>\n<li>Podejmij się zadania: Rozważ czego potrzebuje ta społecznośc bądź z jakimi problemami się boryka (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien). Jeśli podejmujesz się pomocy, <em>Złóż Żelazną Przysięgę</em> i dodaj +1.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, ty i twoi sojusznicy możecie wybrać jedną z poniższych kategorii. Jeśli posiadasz więź z tą społecznością, wybierz jedną więcej.</p>\n<p>Zdjęcie Stanów</p>\n<ul>\n<li>Otrzymaj opiekę medyczną: Odznacz stan <strong>zraniony</strong> i Zyskaj +1 Zdrowia/li>\n<li>Zaznaj otuchy: Odznacz stan <strong>wstrząśnięty</strong> i Zyskaj +1 Ducha/li>\n<li>Wyposaż się: Odznacz stan <strong>nieprzygotowany</strong> i Zyskaj +1 Zasobów/li>\n</ul>\n<p>Wypoczynek</p>\n<ul>\n<li>Odzyskaj siły: Zyskaj +2 zdrowia sobie i towarzyszom.</li>\n<li>Spotkaj się z bliską osobą: Zyskaj +2 duch.</li>\n<li>Zaopatrz się: Zyskaj +2 Zasobów.</li>\n<li>Przygotuj plan: Zyskaj +2 Impetu.</li>\n</ul>\n<p>Zapewnij Pomoc</p>\n<ul>\n<li>Podejmij się zadania: Rozważ czego potrzebuje ta społecznośc bądź z jakimi problemami się boryka (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien). Jeśli podejmujesz się pomocy, <em>Złóż Żelazną Przysięgę</em> i dodaj +1.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, nie znajdujesz tutaj pomocy. <em>Zapłać Cenę</em>.</p>\n",
+        "extradescription": "<p>Przy sukcesie, ty i twoi sojusznicy możecie skupić się na jednym wybranym działaniu i Rzucić ponownie +Serce. Jeśli posiadasz więź z tą społecznością, dodaj +1.</p>\n",
+        "extrastrong": "<p>Jeśli osiągasz <strong>sukces</strong>, Zyskaj dodatkowe +2 (zdrowia, ducha albo zasobów) za to działanie.</p>\n",
+        "extraweak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, Zyskaj dodatkowe +1.</p>\n",
+        "extramiss": "<p>Jeśli ponosisz <strong>porażkę</strong>, coś poszło nie tak i tracisz wszystkie korzyści z tego działania.</p>\n"
+      },
+      "Draw the Circle": {
+        "title": "Wyzwij na pojedynek", 
+        "description": "<p>Kiedy <strong>wyzywasz kogoś na formalny pojedynek lub przyjmujesz wyzwanie</strong>, Rzuć +Serce. Jeśli posiadasz więź z tą społecznością, dodaj +1.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, Zyskaj +1 Impetu. Możesz też wybrać do dwóch przechwałek, za każdą Zyskaj +1 Impetu.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>,  Wybierz jedną przechwałkę w zamian za +1 Impetu.</p>\n<ul>\n<li>Przyznaj pierwsze uderzenie: Oddajesz przeciwnikowi inicjatywę</li>\n<li>Obnaż się: Walczysz bez tarczy i pancerza (otrzymujesz korzyści z pancerza i tarczy); twój przeciwnik zadaje +1 ranę.</li>\n<li>Bez żelaza: Walczysz bez broni (nie otrzymujesz korzyści z broni); zadajesz 1 ranę.</li>\n<li>Okryj się krwią: <em>Staw Czoła Ranom</em> (1 rana).</li>\n<li>Na śmierć i życie: W ten czy inny sposób walka musi zakończyć się śmiercią.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, rozpoczynasz pojedynek w niekorzystnej sytuacji. Oddajesz przeciwnikowi inicjatywę <em>Zapłać Cenę</em>. Następnie, wykonaj ruchy by rozstrzygnąć walkę. Jeśli jesteś zwycięzcą, możesz wysunąć zgodne z prawem żądanie, a twój przeciwnik musi je spełnić lub stracić honor i pozycję. Jeśli odrzucisz wyzwanie, poddasz się lub zostaniesz pokonany, twój przeciwnik ma prawo do własnych żądań.</p>\n"
+      },
+      "Forge a Bond": {
+        "title": "Wykuj Więź",
+        "description": "<p>Kiedy <strong>spędzasz dużo czasu z daną osobą lub społecznością, wspólnie stawiasz czoła trudnościom lub poświęcasz się dla jej sprawy</strong>, możesz spróbować stworzyć więź. Gdy to robisz, Rzuć +Serce. Jeśli wykonasz ten ruch po tym, jak z powodzeniem <em>Wypełnisz Żelazną Przysięgę</em> na ich korzyśc, możesz przerzucić dowolną z kości.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, zanotuj utworzenie więzi, zaznacz tick(kreskę) na swoim torze więzi z tą osobą bądź społecznością i wybierz jedno.</p>\n<ul>\n<li>Zyskaj +1 Ducha.</li>\n<li>Zyskaj +2 Impetu.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, najpierw poproszą cię o coś więcej. Rozważ co to jest (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien), zrób to (or <em>Złóż Żelazną Przysięgę/em>), i oznacz więź. Jeśli odmówisz bądź zawiedziesz, <em>Zapłać Cenę</em>.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, zostajesz odtrącony. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Test Your Bond": {
+        "title": "Przetestuj Więź",
+        "description": "<p>Kiedy <strong>wasza więź jest testowana przez konflikt, zdradę lub okoliczności</strong>, Rzuć +Serce.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, ten test wzmocnił waszą więź. Wybierz jedno.</p>\n<ul>\n<li>Zyskaj +1 Ducha.</li>\n<li>Zyskaj +2 Impetu.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, wasza więź jest krucha i musisz udowodnić swoją lojalność. Rozważ czego od Ciebie chcą (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien), i zrób to (or <em>Złóż Żelazną Przysięgę/em>). Jeśli odmówisz bądź zawiedziesz, usuń więź i <em>Zapłać Cenę</em>.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, lub jeśli nie jesteś zainteresowany kontynuowaniem tej więzi, usuń ją i <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Aid Your Ally": {
+        "title": "Wspomóż Sojusznika",
+        "description": "<p>Kiedy <strong>you <em>Zapewniasz Sobie Przewagę</em> bezpośrednio wspierając sojusznika/ów</strong>, i osiągniesz sukces, sojusznik/cy (zamiast ciebie) mogą czerpać z korzyści tego ruchu. Jeśli w walce osiągasz <strong>pełny sukces</strong>, ty i twój/i sojusznik/cy macie inicjatywę .</p>\n"
+      },
+      "Write Your Epilogue": {
+        "title": "Napisz Swój Epilog",
+        "description": "<p>Kiedy <strong>you wycofujesz się z życia jako Ironsworn</strong>, Rozważ dwie rzeczy: Na co masz nadzieję, oraz czego się obawiasz. Następnie, rzuć koścmi wyzwania i porównaj z twoimi więziami. Impet jest ignorowany przy tym rzucie.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, wszystko się spełniło, tak jak miałeś nadzieję.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, twoje życie przybrało nieoczekiwany obrót, ale niekoniecznie na gorsze. Być może, że spędzasz dni z kimś lub w miejscu, którego nie przewidziałeś. Rozważ to (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien).</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, Twoje obawy się spełniły. </p>\n"
+      },
+      "Enter the Fray": {
+        "title": "Przystąp do Walki",
+        "description": "<p>Kiedy <strong>you przystępujesz do walki</strong>, ustaw  rangę każdego z twoich wrogów.</p>\n<ul>\n<li>Kłopotliwy przeciwnik: 3 postepu na kazdą ranę; zadaje 1 ranę.</li>\n<li>Niebezpieczny przeciwnik: 2 postepu na kazdą ranę; zadaje 2 rany.</li>\n<li>Przytłaczający przeciwnik: 1 postepu na kazdą ranę; zadaje 3 rany.</li>\n<li>Ekstremalny przeciwnik: 2 ticki(kreski) na ranę; zadaje 4 rany.</li>\n<li>Epicki przeciwnik: 1 tick(kreska) na ranę; zadaje 5 rany.</li>\n</ul>\n<p>Następnie, rzuć koścmi wyzwania by zobaczyć kto ma inicjatywę. Jeśli...</p>\n<ul>\n<li>Stawiasz czoła wrogowi: Rzuć +Serce.</li>\n<li>Ustawiasz się w pozycji przeciwko nieświadomemu wrogowi, lub uderzasz bez ostrzeżenia: Rzuć +Cień.</li>\n<li>Wpadłeś w zasadzkę: rzuć +Rozum.</li>\n</ul>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, Zyskaj +2 Impetu. Masz inicjatywę.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, Wybierz jedno.</p>\n<ul>\n<li>Wzmocnij swoją pozycję: Zyskaj +2 Impetu.</li>\n<li>Przygotuj się do działania: Przejmij inicjatywę.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, walka rozpoczyna się w niekorzystnej dla ciebie sytuacji. <em>Zapłać Cenę</em>. Ponadto oddajesz przeciwnikowi inicjatywę</p>\n"
+      },
+      "Strike": {
+        "title": "Uderz",
+        "description": "<p>Kiedy <strong>Masz inicjatywę i atakujesz wręcz</strong>, Rzuć +Żelazo. Gdy masz inicjatywę i atakujesz z odległości, Rzuć +Sprawność.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, zadaj +1 Ranę. Utrzymujesz unicjatywę.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, zadaj ranę ale utrać inicjatywę.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, twój atak się nie udaje i musisz <em>Zapłacić Cenę</em>. Ponadto oddajesz przeciwnikowi inicjatywę</p>\n"
+      },
+      "Clash": {
+        "title": "Zetrzyj się", 
+        "description": "<p>Kiedy <strong>Twój wróg ma inicjatywę i walczysz z nim w zwarciu</strong>, Rzuć +Żelazo. Gdy wymieniasz salwę na odległość, lub strzelasz do nacierającego wroga. Rzuć +Sprawność.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, odzyskujesz inicjatywę. Zadaj ranę i Wybierz jedno.</p>\n<ul>\n<li>You Wzmocnij swoją pozycję: Zyskaj +1 Impetu.</li>\n<li>Znajdujesz lukę w obronie: Zadaj +1 Ranę.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, zadaj ranę, ale musisz <wm>Zapłacić Cenę</em>. Ponadto oddajesz przeciwnikowi inicjatywę</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, zostajesz pokonany i musisz <em>Zapłacić Cenę</em>. Ponadto oddajesz przeciwnikowi inicjatywę</p>\n"
+      },
+      "Turn the Tide": {
+        "title": "Odwróć Bieg Walki",
+        "description": "<p>Raz na walkę, gdy <strong>ryzykujesz wszystko</strong>, możesz odebrać inicjatywę przeciwnikowi, aby wykonać ruch (nie <em>ruch postepu</em>). Gdy to robisz, dodaj +1 i Zyskaj +1 Impetu przy sukcesie. Jeśli nie uda ci się uzyskać sukcesu w tym ruchu, musisz ponieść poważne konsekwencje. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "End the Fight": {
+        "title": "Zakończ Walkę",
+        "description": "<p>Kiedy <strong>wykonujesz ruch, aby podjąć rozstrzygające działanie</strong>, i uzyskujesz pełny sukces, możesz rozstrzygnąć wynik tej walki. Jeśli to robisz, Rzuć koścmi wyzwania i porównaj z postępem walki. Impet jest ignorowany przy tym rzucie.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, ten wróg nie bierze już udziału w walce. Zostaje zabity, wyłączony z akcji, ucieka lub poddaje się w zależności od sytuacji i twoich zamiarów. (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien).</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, jak powyżej, ale musisz także wybrać jedno.</p>\n<ul>\n<li>Jest gorzej niż myślałeś: <em>Staw Czoła Ranom</em>.</li>\n<li>Jesteś w szoku[overcome]: <em>Staw Czoła Stresowi</em>.</li>\n<li>Twoje zwycięstwo jest krótkotrwałe: Pojawia się nowe niebezpieczeństwo lub wróg, albo istniejące niebezpieczeństwo pogarsza się.</li>\n<li>Ponieś niezamierzone straty: Coś wartościowego zostało utracone lub uszkodzone, lub ktoś ważny musi ponieść koszty.</li>\n<li>Zapłacisz za to!: Cel wymyka się poza twój zasię.</li>\n<li>Inni tego nie zapomną: Ktoś się zemści za pokonanych.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, przegrałeś tę walkę. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Battle": {
+        "title": "Tocz Bitwę",
+        "description": "<p>Kiedy <strong>toczysz bitwę, a ona dzieje się w mgnieniu oka.</strong>, Rozważ swój zamiar i rzuć. Jeśli przede wsyzstkim:</p>\n<ul>\n<li>Walczysz na odległość, lub wykorzystując swoją szybkość i teren na swoją korzyść: Rzuć +Sprawność.</li>\n<li>Walczysz polegając na odwadze swojej, sprzymierzeńców lub towarzyszy: Rzuć +Serce.</li>\n<li>Prowadzisz walkę w zwarciu, aby przezwyciężyć swoich wrogów: Rzuć +Żelazo.</li>\n<li>Walczysz używając podstępu, aby wyprowadzić przeciwników w pole.: Rzuć +Cień.</li>\n<li>Walczysz używając przemyślanej taktyki, aby przechytrzyć przeciwników: rzuć +Rozum.</li>\n</ul>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, udaje Ci się osiągnąć twój zamiar bezwarunkowo. Zyskaj +2 Impetu.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, udaje Ci się osiągnąć twój zamiar, ale nie bez kosztów. <em>Zapłać Cenę</em>.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, jesteś pokonany i cel jest dla ciebie nieosiągalny. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Endure Harm": {
+        "title": "Staw Czoło Ranom",
+        "description": "<p>Kiedy <strong>grozi ci uszkodzenie fizyczne</strong>, Strać -Zdrowie równa randze twojego wroga lub stosownie do sytuacji. Jeśli twoje zdrowie wynosi 0, tracisz -Impet równy brakującemu -Zdrowiu. Następnie, rzuć +Żelazo lub +Życie, w zależności co jest wyższe.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, Wybierz jedno.</p>\n<ul>\n<li>Otrząśnij się: Jeśli twoje Zdrowie jest większe niż 0, Strać -1 Impetu w zamian za +1 Zdrowia.</li>\n<li>Przyjmij Ból: Zyskaj +1 Impetu.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, walczysz dalej.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, Tracisz -1 Impetu. Jeśli twoje Zdrowie wynosi 0, musisz zaznaczyć ranę bądź okaleczony (jeśli nie masz jeszcze zaznaczonego) albo rzuć k100 na następująca tabelę.</p>\n<table>\n<thead>\n<tr>\n<th>Rzut</th>\n<th>Wynik</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-10</td>\n<td>Rana jest śmiertelna. <em>Staw Czoła Śmierci</em>.</td>\n</tr>\n<tr>\n<td>11-20</td>\n<td>Umierasz. Wymagasz <strong>Leczenia</strong> w ciągu najbliższej godziny bądź dwóch albo<em>Staw Czoło Śmierci.</em></td>\n</tr>\n<tr>\n<td>21-35</td>\n<td>Jesteś nieprzytomny i wyłączony z akcji. Pozostawiony w spokoju, wracasz do zmysłów po godzinie lub dwóch. Jeśli jesteś bezbronny wobec wroga, który nie jest skłonny do okazywania litości. <em>Staw Czoło Śmierci</em>.</td>\n</tr>\n<tr>\n<td>36-50</td>\n<td>Zataczasz się i walczysz o zachowanie przytomności. Jeśli zaangażujesz się w jakąkolwiek energiczną aktywność (taką jak bieganie lub walka) zanim odpoczniesz przez kilka minut rzuć na tę tabelę jeszcze raz (przed rozstrzygnięciem innego ruchu).</td>\n</tr>\n<tr>\n<td>51-00</td>\n<td>Jesteś poobijany, ale wciąż stoisz.</td>\n</tr>\n</tbody></table>\n",
+        "oracles": {
+          "Endure Harm": {
+            "entry1": "Rana jest śmiertelna. <em>Staw Czoło Śmierci</em>.",
+            "entry2": "Umierasz. Musisz zostać <em>Uleczony</em> w ciągu godziny bądź dwóch, w przeciwnym razie <em>Staw Czoło Śmierci/em>.",
+            "entry3": "Jesteś nieprzytomny i wyłączony z akcji. Jeśli pozostawiony w spokoju, wracasz do zmysłów w ciągu godziny lub dwóch. Jeśli jesteś bezbronny wobec wroga, który nie jest skłonny do okazywania litości, <em>Staw Czoło Śmierci/em>.",
+            "entry4": "Zataczasz się i walczysz o zachowanie przytomności. Jeśli podejmiesz jakąkolwiek żwawszą aktywność (taką jak bieganie lub walka) przed zaczerpnięciem tchu przez parę minut, wykonaj ponownie <strong>Rzut</strong> na wynik tej tabeli (przed wykonaniem innego ruchu).",
+            "entry5": "Jesteś poturbowany, ale wciąż stoisz."
+          }
+        }
+      },
+      "Face Death": {
+        "title": "Staw Czoło Śmierci",
+        "description": "<p>Kiedy <strong>jesteś doprowadzony do bram śmierci</strong>, i jesteś w stanie już spojrzeć na świat za nią. Rzuć +Serce.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, śmierć cię odrzuca. Zostajesz wrzucony z powrotem do świata śmiertelników.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, Wybierz jedno.</p>\n<ul>\n<li>Umrzesz, ale nie przedtem dokonasz szlachetnego poświęcenia. Rozważ twoje ostatnie chwile.</li>\n<li>Śmierć pragnie czegoś z ciebie w zamian za twoje życie. Rozważ czego pragnie (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien), i <em>Złóż Żelazną Przysięgę</em> (przytłaczającą bądź ekstremalną) by wypełnić zadanie. Jeśli osiągniesz porażkę przy rzucie na <em>Swear an Iron Vow</em>, albo odrzucisz zadanie, Jesteś martwy. W przeciwnym razie wracasz do świata śmiertelników i jesteś teraz przeklęty. Stan <strong>przeklęty</strong> możesz usunąć jedynie gdy ukończysz pomyślnie zadanie.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, Jesteś martwy.</p>\n"
+      },
+      "Companion Endure Harm": {
+        "title": "Towarzysze: Staw Czoła Ranom",
+        "description": "<p>Kiedy <strong>twojemu towarzyszowi grozi uszkodzenie ciała</strong>, <strong>Traci</strong> -Zdrowie równej wielkości wyrządzonej <strong>rany</strong>. Jeśli zdrowie twojego towarzysza jest równe 0, wymień każde brakujące -Zdrowie za -Impet. Następnie, rzuć +Serce albo +Zdrowie <strong>twojego Towarzysza</strong>, w zależności co jest wyższe.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, twój towarzysz podnosi się. Dodaj mu +1 Zdrowia.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>,Twój towarzysz jest poobijany. Jeśli jego zdrowie jest równe 0, nie może ci pomóc, dopóki nie zdobędzie co najmniej +1 Zdrowia.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, strać -1 Impetu. Jeśli zdrowie twojego towarzysza jest równe 0, oznacza to, że jest ciężko ranny i wyłączony z akcji. Bez pomocy umrze w ciągu godziny bądź dwóch. Jeśli wyrzucisz porazkę z 1 na swojej <strong>kości akcji</strong>, a zdrowie twojego towarzysza wynosi 0, jest martwy. Weź 1 doświadczenie za każdą zaznaczoną umiejętność na <strong>Aaspekcie</strong> towarzysza i usuń ten Aspekt.</p>\n"
+      },
+      "Endure Stress": {
+        "title": "Staw Czoło Stresowi",
+        "description": "<p>Kiedy <strong>doświadczasz szoku psychicznego lub rozpaczy</strong>, Strać -Duch równy randze twojego wroga lub odpowiedni do sytuacji. Jeśli twój Duch jest równy 0, Strać -Impetu równemu pozostałęmu -Duch. Następnie, rzuć +Duch lub +Serce w zależności co jest wyższe.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, Wybierz jedno.</p>\n<ul>\n<li>Otrząsasz się: Jeśli twój Duch jest większy niż 0, Strać -1 Impetu w zamian za +1 Ducha</li>\n<li>Ujarzmij ciemność: Zyskaj +1 Impetu</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, Nie poddajesz się.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, strać -1 Impetu. Jeśli twój Duch jest równy 0, musisz zaznaczyć wstrząśnięy bądź skorumpowany (jeśli już nie są zaznaczone) lub rzucić na poniższą tabelę.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Rezultat</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-10</td>\n<td>Jesteś przytłoczony. <strong>Staw Czoło Spustoszeniu</strong>.</td>\n</tr>\n<tr>\n<td>11-25</td>\n<td>Poddajesz się. <em>Porzuć Przysięgę</em> (jeśli to możliwe, tę związaną z obecnym kryzysem).</td>\n</tr>\n<tr>\n<td>26-50</td>\n<td>Poddajesz się strachowi lub przymusowi i działasz wbrew swoim własnym instynktom.</td>\n</tr>\n<tr>\n<td>51-00</td>\n<td>Wytrwałeś.</td>\n</tr>\n</tbody></table>\n",
+        "oracles": {
+          "Endure Stress": {
+            "entry1": "Jesteś przytłoczony. <em>Staw Czoło Spustoszeniu</em>.",
+            "entry2": "Poddajesz się. <em>Porzuć Przysięgę</em> (jeśli to możliwe - którąś związaną z obecnym kryzysem).",
+            "entry3": "Poddajesz się strachowi lub przymusowi i działasz wbrew własnym instynktom.",
+            "entry4": "Wytrwałeś."
+          }
+        }
+      },
+      "Face Desolation": {
+        "title": "Staw Czoło Spustoszeniu",
+        "description": "<p>Kiedy <strong>zostaniesz doprowadzony na skraj spustoszenia.</strong>, Rzuć +Serce.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, opierasz się i kontynuujesz.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, wybierz jedno.</p>\n<ul>\n<li>Twój duch lub zdrowy rozsądek pęka, ale najpierw dokonujesz szalchetnego poświęcenia. Rozważ twoje ostatnie chwile.</li>\n<li>Masz wizję strasznego zdarzenia, które ma nastąpić. Rozważ mroczną przyszłośc (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien), i <em>Złóż Żelazną Przysięgę</em> (przytłaczającą bądź ekstremalną) by temu zapobiec. Jeśli ponosisz porażkę gdy <em>Składasz Żelazną Przysięgę</em>, lub odmawiasz wykonania zadania, jesteś stracony. W przeciwnym razie wracasz do zmysłów i jesteś teraz <strong>dręczony</strong>. Stan <strong>dręczony</strong> może być usunięty tylko poprzez wykonanie tego zadania.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, poddajesz się rozpaczy lub przerażeniu i jesteś stracony.</p>\n"
+      },
+      "Out of Supply": {
+        "title": "Brak Zasobów",
+        "description": "<p>Kiedy <strong>twoje zasoby sa wyczerpane</strong> (zredykowane do zera 0), zaznacz <strong>nieprzygotowany</strong>. Jeśli <strong>tracisz</strong> kolejne -Zasoby kiedy jesteś nieprzygotowany, musisz je wymienić za dowolną kombinację -Zdrowie, -Duch bądź -Impetu stosownie do okoliczności.</p>\n"
+      },
+      "Face a Setback": {
+        "title": "Zmierz się z Niepowodzeniem",
+        "description": "<p>Kiedy <strong>your Impet jest ignorowany przy tym rzucie</strong> (-6), i <strong>Tracisz</strong> dodatkowe -Impetu, wybierz jedno.</p>\n<ul>\n<li>Wymień każdy -Impetu za dowolną kombinację -Zdrowie, -Duch, albo -Zasoby stosownie do okoliczności.</li>\n<li>Rozważ zdarzenie bądź odkrycie (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien) które utrudnia ci postęp w bieżącym zadaniu, podróży lub walce. Następnie, za każdy brakujący -Impet, usuń 1 jednostki postępu na tym torze za każdą jego rangę. (kłopotliwy=wyczyść 3 punkty postepu; niebezpieczny=wyczyść 2 punkty postepu; przytłaczający=wyczyśc 1 punkt postepu; ekstremalny=wyczyść 2 ticki(kreski); epicki=wyczyść 1 tick(kreskę).</li>\n</ul>\n"
+      },
+      "Swear an Iron Vow": {
+        "title": "Złóż Żelazną Przysięgę",
+        "description": "<p>Kiedy <strong>przysięgasz na żelazo, że ukończysz zadanie</strong>, zapisz swoją przysięgę i nadaj jej rangę. Następnie, Rzuć +Serce. Jeśli składasz to przysięgę wobec osoby lub społeczności, z którą łączy cię więź, dodaj +1.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, jesteś pewny celu, twoja ścieżka jest jasna i masz pewność co musisz zrobić jako następną rzecz (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien). Zyskaj +2 Impetu.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, jesteś zdeterminowany, ale rozpoczynasz zadanie mając więcej pytań niż odpowiedzi. Zyskaj +1 Impetu, i Rozważ co musisz zrobić by odnaleźć właściwą ścieżkę do przodu.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, napotykasz na znaczącą przeszkodę, nim zaczniesz swoją misję. Rozważ co stoi na twojej drodze (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien), i wybierz jedno.</p>\n<ul>\n<li>Nie poddajesz się: Strać -2 momentum, i zrób co musisz, aby pokonać tę przeszkodę.</li>\n<li>Poddajesz się: <em>Porzuć Przysięgę</em>.</li>\n</ul>\n"
+      },
+      "Reach a Milestone": {
+        "title": "Osiągnij Kamień Milowy",
+        "description": "<p>Kiedy <strong>robisz znaczne postępy w swojej misji, pokonując krytyczną przeszkodę, odbywając niebezpieczną podróż, rozwiązując skomplikowaną zagadkę, pokonując potężne zagrożenie, zdobywając istotne wsparcie lub zdobywając kluczowy przedmiot</strong>, zaznacz postep.</p>\n<ul>\n<li>Kłopotliwe zadanie: Zaznacz 3 punkty postepu.</li>\n<li>Niebezpiecznie zadanie: Zaznacz 2 punkty postepu.</li>\n<li>Przytłaczające zadanie: Zaznacz 1 punkt postepu.</li>\n<li>Ekstremalne zadanie: Zaznacz 2 ticki(kreski).</li>\n<li>Epickie zadanie: Zaznacz 1 tick.</li>\n</ul>\n"
+      },
+      "Fulfill Your Vow": {
+        "title": "Wypełnił Przysięgę",
+        "description": "<p>Kiedy <strong>osiągasz osiągniesz to, co uznajesz za wypełnianie swojej przysięgi</strong>, rzuć koścmi wyzwania i porównaj z postępem. Impet jest ignorowany przy tym rzucie.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, twoje zadanie jest ukończone. Zaznacz doświadczenie (kłopotliwe=1; niebezpieczne=2; przytłaczające=3; ekstremalne=4; epickie=5).</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, jest więcej do zrobienia, bądź dostrzegasz prawdę o twoim zadaniu. Rozważ co odkryłeś (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien). Następnie, zaznacz doświadczenie (kłopotliwe=0; niebezpieczne=1; przytłaczające=2; ekstremalne=3; epickie=4). Możesz <em>Złożyć Żelazną Przysięgę</em> aby wszystko naprawić. Jeśli to robisz, dodaj +1.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, Twoja misja została przerwana. Rozważ co się wydarzyło (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien), i wybierz jedno.</p>\n<ul>\n<li>Powtórnie się zobowiązujesz: Wyczyść wszystkie oprócz jednego wypełnionego punktu postępu i podnieś rangę zadania o jeden (jeśli nie jest już epickie).</li>\n<li>Poddajesz się: <em>Porzuć Przysięgę</em>.</li>\n</ul>\n"
+      },
+      "Forsake Your Vow": {
+        "title": "Porzuć Przysięgę",
+        "description": "<p>Kiedy <strong>wyrzekasz się swojej misji, łamiesz obietnicę, lub cel jest dla ciebie nieosiągalny</strong>, usuń przysięgę i <em>Staw Czoła Stresowi</em>. Strać -Duch równy randze zadania (kłopotliwe=1; niebezpieczne=2; przytłaczające=3; ekstremalne=4; epickie=5). Jeśli przysięga została złożona wobec osoby lub wspólnoty, z którą łączy cię więź, <strong>Przetestuj Więź</strong> przy najbliższym spotkaniu.</p>\n"
+      },
+      "Advance": {
+        "title": "Rozwiń umiejętności",
+        "description": "<p>Kiedy <strong>poprawiasz swoje umiejętności, przechodzisz szkolenie, znajdujesz inspirację, otrzymujesz nagrodę lub zyskujesz towarzysza</strong>, możesz wydać 3 doświadczenia(EXP) by dodać nowy <strong>Aspekt</strong>, bądź 2 doświdaczenia(EXP) by ulepszyć <strong>Aspekt</strong>.</p>\n"
+      },
+      "Pay the Price": {
+        "title": "Ponieś Konsekwejncę",
+        "description": "<p>Kiedy <strong>ponosisz konsekwencję ruchu</strong>, choose one.</p>\n<ul>\n<li>Dzieje się najbardziej oczywista negatywna rzecz</li>\n<li>Rozważ dwa negatywne rezultatu. Określ jeden z nich jako 'prawdopodobny' i d <em>Zapytaj Wyrocznię</em> używając tabeli tak/nie. W przypadku odpowiedzi 'tak', urzeczywistnij ten wynik. W przeciwnym razie, niech to będzie drugi.</li>\n<li>Rzuć na @Compendium[foundry-ironsworn.ironsworntables.D4mUSL3IXtFRfMhi]{Pay the Price} tabelę.. Jeśli masz problem z interpretacją wyniku, aby dopasować go do obecnej sytuacji, rzuć ponownie.</li>\n</ul>\n",
+        "oracles": {
+          "Pay The Price": {
+            "entry1": "Rzuć jeszcze raz i zastosuj ten rezultat, ale pogorsz go. Jeśli jeszcze raz wyrzucisz ten wynik, pomyśl o czymś naprawdę przerażającym, co wpłynie na przebieg twojego zadania. (jeśli nie jesteś pewny - Zapytaj Wyrocznię) i zrób to.",
+            "entry2": "Osoba lub społeczność, której zaufałeś, traci w ciebie wiarę lub działa przeciwko tobie.",
+            "entry3": "Osoba lub społeczność, na której Ci zależy, jest narażona na niebezpieczeństwo.",
+            "entry4": "Jesteś oddzielony od czegoś lub kogoś.",
+            "entry5": "Twoje działanie ma niezamierzony efekt.",
+            "entry6": "Coś wartościowego zostaje utracone lub zniszczone.",
+            "entry7": "Obecna sytuacja pogarsza się.",
+            "entry8": "Pojawia się nowe zagrożenie lub wróg.",
+            "entry9": "Powoduje to opóźnienie lub stawia cię w niekorzystnej sytuacji.",
+            "entry10": "Jest szkodliwy/e.",
+            "entry11": "Jest stresujący/e.",
+            "entry12": "Zaskakujący rozwój wypadków komplikuje twoje poszukiwania.",
+            "entry13": "Marnuje zasoby.",
+            "entry14": "Zmusza do działania wbrew swoim najlepszym intencjom.",
+            "entry15": "Przyjaciel, towarzysz lub sojusznik jest narażony na niebezpieczeństwo (lub Ty, jeśli jesteś sam).",
+            "entry16": "Rzuć jeszcze dwa razy na tej tabeli. Zdarzają się oba wyniki. Jeśli rezultat jest ten sam, pogorsz go."
+          }
+        }
+      },
+      "Ask the Oracle": {
+        "title": "Zapytaj Wyrocznię",
+        "description": "<p>Kiedy <strong>szukasz odpowiedzi na pytania, odkrywasz szczegóły świata, określasz reakcje innych postaci lub wywołujesz spotkania lub wydarzenia</strong>, możesz...</p>\n<ul>\n<li>Wyciągnąć wniosek: Zdecyduj o odpowiedzi na podstawie najbardziej interesującego i oczywistego wyniku.</li>\n<li>Zadaj pytanie tak/nie: Określ szanse na 'tak' i rzuć na poniższej tabeli, aby sprawdzić odpowiedź.</li>\n<li>Wybierz dwa: Rozważ dwie opcję. Określ która z nich jest 'prawdopodobna', i rzuć na poniższej tabeli, aby sprawdzić, czy jest to prawda. Jeżeli nie, wybierz drugą opcję.</li>\n<li>Zasiej ziarno: Użyj losowej podpowiedzi bądź zróbcie burzę mózgów.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Odds</th>\n<th>Odpowiedź brzmi 'tak', jeśli wyrzucisz...</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Prawie pewne</td>\n<td>11 lub więcej</td>\n</tr>\n<tr>\n<td>Prawdopodobne</td>\n<td>26 lub więcej</td>\n</tr>\n<tr>\n<td>50/50</td>\n<td>51 lub więcej</td>\n</tr>\n<tr>\n<td>Mało prawdopodobne</td>\n<td>76 lub więcej</td>\n</tr>\n<tr>\n<td>Niewielka szansa</td>\n<td>91 lub więcej</td>\n</tr>\n</tbody></table>\n"
+      },
+      "Discover a Site": {
+        "title": "Okdryj Miejsce",
+        "description": "<p>Kiedy <strong>you resolve to enter a perilous site in pursuit of an objective</strong>, choose the theme and domain which best represent its nature (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien), and give it a rank.</p>\n<ul>\n<li>Troublesome site: 3 progress per area.</li>\n<li>Dangerous site: 2 progress per area.</li>\n<li>Formidable site: 1 progress per area.</li>\n<li>Extreme site: 2 ticki(kreski) per area.</li>\n<li>Epic site: 1 tick per area.</li>\n</ul>\n<p>If you are returning to a previously explored site, roll both challenge dice, take the lowest value, and clear that number of progress boxes.</p>\n<p>Następnie, wstrong>Delve the Depths</strong> to explore this place.</p>\n"
+      },
+      "Delve the Depths": {
+        "title": "Sięgnij w Nieznane",
+        "description": "<p>Kiedy you <strong>traverse an area within a perilous site</strong>, Rozważ your surroundings (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien). Następnie, wonsider your approach. If you navigate this area...</p>\n<ul>\n<li>With haste: Rzuć +Sprawność.</li>\n<li>With stealth or trickery: Rzuć +Cień.</li>\n<li>With observation, intuition, or expertise: rzuć +Rozum.</li>\n</ul>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, you delve deeper. Mark progress and <em>Find an Opportunity</em>. </p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, roll on the following table according to your stat.</p>\n<table>\n<thead>\n<tr>\n<th>Edge</th>\n<th>Shadow</th>\n<th>Wits</th>\n<thCzęściowym sukcesie Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-45</td>\n<td>1-30</td>\n<td>1-40</td>\n<td>Mark progress and <em>Reveal a Danger</em>.</td>\n</tr>\n<tr>\n<td>46-65</td>\n<td>31-65</td>\n<td>41-55</td>\n<td>Mark progress.</td>\n</tr>\n<tr>\n<td>66-75</td>\n<td>66-90</td>\n<td>56-80</td>\n<td>Wybierz jedno: Mark progress or <em>Find an Opportunity</em>.</td>\n</tr>\n<tr>\n<td>76-80</td>\n<td>91-99</td>\n<td>81-99</td>\n<td>Take both: Mark progress and <em>Find an Opportunity</em>.</td>\n</tr>\n<tr>\n<td>81-00</td>\n<td>00</td>\n<td>00</td>\n<td>Mark progress twice and <em>Reveal a Danger</em>.</td>\n</tr>\n</tbody></table>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, <em>Reveal a Danger</em>.</p>\n",
+        "oracles": {
+          "Delve the Depths - Edge": {
+            "entry1": "Mark progress and Reveal a Danger.",
+            "entry2": "Mark progress.",
+            "entry3": "Wybierz jedno: Mark progress or Find an Opportunity.",
+            "entry4": "Take both: Mark progress and Find an Opportunity.",
+            "entry5": "Mark progress twice and Reveal a Danger."
+          },
+          "Delve the Depths - Shadow": {
+            "entry1": "Mark progress and Reveal a Danger.",
+            "entry2": "Mark progress.",
+            "entry3": "Wybierz jedno: Mark progress or Find an Opportunity.",
+            "entry4": "Take both: Mark progress and Find an Opportunity.",
+            "entry5": "Mark progress twice and Reveal a Danger."
+          },
+          "Delve the Depths - Wits": {
+            "entry1": "Mark progress and Reveal a Danger.",
+            "entry2": "Mark progress.",
+            "entry3": "Wybierz jedno: Mark progress or Find an Opportunity.",
+            "entry4": "Take both: Mark progress and Find an Opportunity.",
+            "entry5": "Mark progress twice and Reveal a Danger."
+          }
+        }
+      },
+      "Find an Opportunity": {
+        "title": "Znajdź okazję",
+        "description": "<p>Kiedy <strong>you encounter a helpful situation or feature within a site</strong>, roll on the following table. If you are making this move as a result of a pełnym sukcesie on <em>Delve the Depths</em>, you may pick or Rozważ an opportunity instead of rolling.</p>\n<p>Następnie, wybierz jedno.</p>\n<ul>\n<li>Gain insight or prepare: Zyskaj +1 Impetu.</li>\n<li>Take action now: You and any allies may make a move (not a progress move) which directly leverages the opportunity. Gdy you do, dodaj +1 i Zyskaj +1 Impetu on a hit.</li>\n</ul>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-25</td>\n<td>The terrain favors you, or you find a hidden path.</td>\n</tr>\n<tr>\n<td>26-45</td>\n<td>An aspect of the history or nature of this place is revealed.</td>\n</tr>\n<tr>\n<td>46-57</td>\n<td>You locate a secure area.</td>\n</tr>\n<tr>\n<td>58-68</td>\n<td>A clue offers insight or direction.</td>\n</tr>\n<tr>\n<td>69-78</td>\n<td>You get the drop on a denizen.</td>\n</tr>\n<tr>\n<td>79-86</td>\n<td>This area provides an opportunity to scavenge, forage, or hunt.</td>\n</tr>\n<tr>\n<td>87-90</td>\n<td>You locate an interesting or helpful object.</td>\n</tr>\n<tr>\n<td>91-94</td>\n<td>You are alerted to a potential threat.</td>\n</tr>\n<tr>\n<td>95-98</td>\n<td>You encounter a denizen who might support you.</td>\n</tr>\n<tr>\n<td>99-00</td>\n<td>You encounter a denizen in need of help.</td>\n</tr>\n</tbody></table>\n",
+        "oracles": {
+          "Find an Opportunity": {
+            "entry1": "The terrain favors you, or you find a hidden path.",
+            "entry2": "An aspect of the history or nature of this place is revealed.",
+            "entry3": "You locate a secure area.",
+            "entry4": "A clue offers insight or direction.",
+            "entry5": "You get the drop on a denizen.",
+            "entry6": "This area provides an opportunity to scavenge, forage, or hunt.",
+            "entry7": "You locate an interesting or helpful object.",
+            "entry8": "You are alerted to a potential threat.",
+            "entry9": "You encounter a denizen who might support you.",
+            "entry10": "You encounter a denizen in need of help."
+          }
+        }
+      },
+      "Reveal a Danger": {
+        "title": "Reveal a Danger",
+        "description": "<p>Kiedy <strong>you encounter a risky situation within a site</strong>, Rozważ the danger or roll on the following table.</p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-30</td>\n<td>Check the theme card.</td>\n</tr>\n<tr>\n<td>31-45</td>\n<td>Check the domain card.</td>\n</tr>\n<tr>\n<td>46-57</td>\n<td>You encounter a hostile denizen.</td>\n</tr>\n<tr>\n<td>58-68</td>\n<td>You face an environmental or architectural hazard.</td>\n</tr>\n<tr>\n<td>69-76</td>\n<td>A discovery undermines or complicates your quest.</td>\n</tr>\n<tr>\n<td>77-79</td>\n<td>You confront a harrowing situation or sensation.</td>\n</tr>\n<tr>\n<td>80-82</td>\n<td>You face the consequences of an earlier choice or approach.</td>\n</tr>\n<tr>\n<td>83-85</td>\n<td>Your way is blocked or trapped.</td>\n</tr>\n<tr>\n<td>86-88</td>\n<td>A resource is diminished, broken, or lost.</td>\n</tr>\n<tr>\n<td>89-91</td>\n<td>You face a perplexing mystery or tough choice.</td>\n</tr>\n<tr>\n<td>92-94</td>\n<td>You lose your way or are delayed.</td>\n</tr>\n<tr>\n<td>95-00</td>\n<td>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</td>\n</tr>\n</tbody></table>\n",
+        "oracles": {
+          "Reveal a Danger": {
+            "entry1": "Check the theme card.",
+            "entry2": "Check the domain card.",
+            "entry3": "You encounter a hostile denizen.",
+            "entry4": "You face an environmental or architectural hazard.",
+            "entry5": "A discovery undermines or complicates your quest.",
+            "entry6": "You confront a harrowing situation or sensation.",
+            "entry7": "You face the consequences of an earlier choice or approach.",
+            "entry8": "Your way is blocked or trapped.",
+            "entry9": "A resource is diminished, broken, or lost.",
+            "entry10": "You face a perplexing mystery or tough choice.",
+            "entry11": "You lose your way or are delayed.",
+            "entry12": "Roll twice more on this table. Both results occur. If they are the same result, make it worse."
+          },
+          "Reveal a Danger Alternate": {
+            "entry1": "You encounter a hostile denizen.",
+            "entry2": "You face an environmental or architectural hazard.",
+            "entry3": "A discovery undermines or complicates your quest.",
+            "entry4": "You confront a harrowing situation or sensation.",
+            "entry5": "You face the consequences of an earlier choice or approach.",
+            "entry6": "The path is blocked or trapped.",
+            "entry7": "A resource is diminished, broken, or lost.",
+            "entry8": "You face a perplexing mystery or tough choice.",
+            "entry9": "You lose your way or are delayed.",
+            "entry10": "Roll twice more on this table. Both results occur. If they are the same result, make it worse."
+          }
+        }
+      },
+      "Check Your Gear": {
+        "title": "Check Your Gear",
+        "description": "<p>Kiedy <strong>you check to see if you have a specific helpful item</strong>, and you have at least +1 supply, rzuć +Zasoby.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, you have it. Zyskaj +1 Impetu.</p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, you have it, ale your resources are diminished. Zyskaj +1 Impetu and Strać -1 Zasobów.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, nie masz go i sytuacja staje się coraz bardziej niebezpieczna. <em>Zapłać Cenę</em>.</p>\n"
+      },
+      "Locate Your Goal": {
+        "title": "Locate swój zamiar",
+        "description": "<p>Kiedy <strong>your exploration of a site comes to an end</strong>, roll koścmi wyzwania i porównaj z postępem. Momentum jest ignorowane przy tym rzucie.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, you locate swój zamiar and the situation favors you. Wybierz jedno.</p>\n<ul>\n<li>Make another move now (not a progress move), i dodaj +1.</li>\n<li>Zyskaj +1 Impetu.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, you locate swój zamiar ale face an unforeseen hazard or complication. Rozważ what you find (<strong>Ask the Oracle</strong> if unsure).</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, swój zamiar falls out of reach, you have been misled about the nature of swój zamiar, or you discover that this site holds unexpected depths. If you continue your exploration, clear all ale one filled progress and raise the site’s rank by one (if not already epic).</p>\n"
+      },
+      "Escape the Depths": {
+        "title": "Escape the Depths",
+        "description": "<p>Kiedy <strong>you flee or withdraw from a site</strong>, consider the situation and your approach. If you...</p>\n<ul>\n<li>Find the fastest way out: Rzuć +Sprawność.</li>\n<li>Steel yourself against the horrors of this place: Rzuć +Serce.</li>\n<li>Fight your way out: Rzuć +Żelazo.</li>\n<li>Retrace your steps or locate an alternate path: rzuć +Rozum.</li>\n<li>Keep out of sight: Rzuć +Cień.</li>\n</ul>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, you make your way safely out of the site. Zyskaj +1 Impetu. </p>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, you find your way out, ale this place exacts its price. Wybierz jedno.</p>\n<ul>\n<li>You are weary or wounded: <em>Staw Czoła Ranom</em>.</li>\n<li>The experience leaves you shaken: <em>Staw Czoła Stresowi</em>.</li>\n<li>You are delayed, and it costs you.</li>\n<li>You leave behind something important.</li>\n<li>You face a new complication as you emerge from the depths.</li>\n<li>A denizen plots their revenge.</li>\n</ul>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, a dire threat or imposing obstacle stands in your way. <em>Reveal a Danger</em>. If you survive, you may make your escape.</p>\n"
+      },
+      "Reveal a Danger (alternate version)": {
+        "title": "Reveal a Danger (alternate version)",
+        "description": "<p>Kiedy <strong>you encounter a risky situation within a site</strong>, Rozważ the danger or roll on the following table. </p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-22</td>\n<td>You encounter a hostile denizen.</td>\n</tr>\n<tr>\n<td>23-42</td>\n<td>You face an environmental or architectural hazard.</td>\n</tr>\n<tr>\n<td>43-58</td>\n<td>A discovery undermines or complicates your quest.</td>\n</tr>\n<tr>\n<td>59-64</td>\n<td>You confront a harrowing situation or sensation.</td>\n</tr>\n<tr>\n<td>65-70</td>\n<td>You face the consequences of an earlier choice or approach.</td>\n</tr>\n<tr>\n<td>71-76</td>\n<td>The path is blocked or trapped.</td>\n</tr>\n<tr>\n<td>77-82</td>\n<td>A resource is diminished, broken, or lost.</td>\n</tr>\n<tr>\n<td>83-88</td>\n<td>You face a perplexing mystery or tough choice.</td>\n</tr>\n<tr>\n<td>89-94</td>\n<td>You lose your way or are delayed.</td>\n</tr>\n<tr>\n<td>95-00</td>\n<td>Roll twice more on this table. Both results occur. If they are the same result, make it worse.</td>\n</tr>\n</tbody></table>\n"
+      },
+      "Mark Your Failure": {
+        "title": "Mark Your Failure",
+        "description": "<p>Kiedy <strong>you make a move and score a miss</strong>, mark a tick on your failure track. If <strong>you score a miss Gdy making a progress move</strong>, mark two ticki(kreski).</p>\n"
+      },
+      "Learn From Your Failures": {
+        "title": "Learn From Your Failures",
+        "description": "<p>Kiedy <strong>you spend time reflecting on your hardships and missteps</strong>, and your failure track is +6 lub więcej, roll your challenge dice and compare to your progress. Momentum jest ignorowane przy tym rzucie.</p>\n",
+        "strong": "<p>Jeśli osiągasz <strong>sukces</strong>, you commit to making a dramatic change. Take 3 experience and clear all progress. Następnie, wybierz jedno.</p>\n<ul>\n<li>Adjust your approach: Discard a single asset, i Zyskaj 2 eImpetue for each marked ability.</li>\n<li>Make an oath: <em>Swear an Iron Vow</em>, and reroll any dice.</li>\n<li>Ready your next steps: Zyskaj +3 momentum.</li>\n</ul>\n",
+        "weak": "<p>Jeśli osiągasz <strong>częściowy sukces</strong>, you learn from your mistakes. Take 2 experience and clear all progress.</p>\n",
+        "miss": "<p>Jeśli ponosisz <strong>porażkę</strong>, you’ve learned the wrong lessons. Take 1 experience and clear all progress. Następnie, wnvision how you set off on an ill-fated path.</p>\n"
+      },
+      "Advance a Threat": {
+        "title": "Advance a Threat",
+        "description": "<p>Kiedy <strong>you give ground to a threat through inaction, failure, or delay</strong>, roll on the table below and Rozważ how the change manifests in your world (<em>Zapytaj Wyrocznię</em> jeśli nie jesteś pewien). </p>\n<table>\n<thead>\n<tr>\n<th>Roll</th>\n<th>Result</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-30</td>\n<td>The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If odnosisz sukces, <em>Reach a Milestone</em>. Otherwise, mark menace.</td>\n</tr>\n<tr>\n<td>31-70</td>\n<td>The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.</td>\n</tr>\n<tr>\n<td>71-00</td>\n<td>The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice.</td>\n</tr>\n</tbody></table>\n<p>On a match, this development also exposes a surprising aspect of the threat’s plan or nature.</p>\n<p>If <strong>you mark the last box on the threat’s menace track</strong>, the threat achieves its goal, or the final dire outcome occurs. musisz <em>Forsake Your Vow</em>.</p>\n",
+        "oracles": {
+          "Advance a Threat": {
+            "entry1": "The threat readies its next step, or a new danger looms. If you are in a position to prevent this development, you may attempt to do so. If odnosisz sukces, Reach a Milestone. Otherwise, mark menace.",
+            "entry2": "The threat works subtly to advance toward its goal, or the danger escalates. Mark menace.",
+            "entry3": "The threat makes a dramatic and immediate move, or a major event reveals new complications. Mark menace twice."
+          }
+        }
+      },
+      "Take a Hiatus": {
+        "title": "Take a Hiatus",
+        "description": "<p>Kiedy <strong>you spend an extended time recovering in a safe place while a threat is active</strong>, do any of the following.</p>\n<ul>\n<li>Clear any marked conditions.</li>\n<li>Set your health, spirit, supply, and companion health to their maximum values.</li>\n<li>Set your momentum to its reset value.</li>\n</ul>\n<p>Następnie, wor each active threat, <em>Advance a Threat</em>.</p>\n"
+      },
+      "Wield a Rarity": {
+        "title": "Wield a Rarity",
+        "description": "<p>Kiedy <em>you make a move aided by an augmented asset</em>, roll your rarity die in place of your action die.</p>\n<p>On <em>any result</em> with 6 showing on the rarity die, the power of the rarity manifests in a dramatic and obvious way. You score an automatic <strong>sukcesie</strong> i Zyskaj +1 Impetu.</p>\n<p>On a <em>hit</em> with 5 showing on the rarity die, the power of the rarity manifests in a subtle way. Zyskaj +1 Impetu.</p>\n<p>On a <em>porażce</em> with 1 showing on the rarity die, the rarity’s power fails or works against you.</p>\n"
+      }
+    },
+    "ThemeContents": {
+      "Ancient": {
+        "title": "Ancient",
+        "summary": "This place holds the secrets of a bygone age.",
+        "description": "<p>An ancient site contains the mysteries, legacies, and dangers of another age.</p>\n<p>Walking the paths of this place is like stepping through time. Ruins and relics provide glimpses of long-forgotten people and events. The knowledge and power hidden here are a tempting lure, ale those treasures may come with a dire cost. Some secrets are best left buried.</p>\n",
+        "feature1": "Evidence of lost knowledge",
+        "feature2": "Inscrutable relics",
+        "feature3": "Ancient artistry or craft",
+        "feature4": "Preserved corpses or fossils",
+        "feature5": "Visions of this place in another time",
+        "danger1": "Ancient trap",
+        "danger2": "Hazardous architecture or terrain",
+        "danger3": "Blocked or broken path",
+        "danger4": "Denizen protects an ancient secret",
+        "danger5": "Denizen reveres an ancient power",
+        "danger6": "Living relics of a lost age",
+        "danger7": "Ancient evil resurgent",
+        "danger8": "Dire warnings of a long-buried danger",
+        "danger9": "Ancient disease or contamination",
+        "danger10": "Artifact of terrible meaning or power",
+        "danger11": "Disturbing evidence of ancient wrongs",
+        "danger12": "Others seek power or knowledge"
+      },
+      "Corrupted": {
+        "title": "Corrupted",
+        "summary": "This place is tainted by dark magic.",
+        "description": "<p>A corrupted site is befouled by dark forces. It might be the ancient magic of the Ironlands, or the residue of ancient evils, concentrated here like poisoned water soaked into a sponge. Perhaps a powerful mystic dwells in this place, one who walks a sinister path in search of power.</p>\n<p>Kiedy you enter a corrupted site, you can feel the wrongness of it down to your bones. The air is tainted with foul smells, or tinged with strange energies. You hear unintelligible whispers. Shadows lurk at the edge of your vision. The creatures of this place are twisted by corruption, and the people are in thrall to a dark influence.</p>\n",
+        "feature1": "Mystic focus or conduit",
+        "feature2": "Strange environmental disturbances",
+        "feature3": "Mystic runes or markings",
+        "feature4": "Blight or decay",
+        "feature5": "Evidence of a foul ritual",
+        "danger1": "Denizen spawned from dark magic",
+        "danger2": "Denizen controls dark magic",
+        "danger3": "Denizen corrupted by dark magic",
+        "danger4": "Corruption marks you",
+        "danger5": "Innocents held in thrall",
+        "danger6": "Revelations of a terrible truth",
+        "danger7": "Mystic trap or trigger",
+        "danger8": "Mystic barrier or ward",
+        "danger9": "Illusions lead you astray",
+        "danger10": "Dark ritual in progress",
+        "danger11": "Lingering effects of a dark ritual",
+        "danger12": "Dread harbingers of a greater magic"
+      },
+      "Fortified": {
+        "title": "Fortified",
+        "summary": "Foes defend this place against intruders.",
+        "description": "<p>A fortified site is held and defended by an enemy force. It might be an enemy camp, an outpost, a fortress, or a closely-guarded territory.</p>\n<p>Infiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to swój zamiar.</p>\n",
+        "feature1": "Camp or quarters",
+        "feature2": "Guarded location",
+        "feature3": "Storage or repository",
+        "feature4": "Work or training area",
+        "feature5": "Command center or leadership",
+        "danger1": "Denizen patrols the area",
+        "danger2": "Denizen on guard",
+        "danger3": "Denizen ready to sound the alarm",
+        "danger4": "Denizen sets an ambush",
+        "danger5": "Denizen lures you into a trap",
+        "danger6": "Denizens converge on this area",
+        "danger7": "Pets or underlings",
+        "danger8": "Unexpected alliance revealed",
+        "danger9": "Nefarious plans revealed",
+        "danger10": "Unexpected leader revealed",
+        "danger11": "Trap",
+        "danger12": "Alarm trigger"
+      },
+      "Hallowed": {
+        "title": "Hallowed",
+        "summary": "The faithful worship here.",
+        "description": "<p>A hallowed site is a place of great reverence, suffused with the power of old gods or the fervency of belief. It might be a location of religious significance, the resting place of legendary relics or figures, or the haven of a religious leader.</p>\n<p>Hallowed places may be warded by ancient rituals, or imbued with divine energy. ale it is the faithful and the zealous who will sacrifice everything to defend this place.</p>\n",
+        "feature1": "Temple or altar",
+        "feature2": "Offerings or atonements",
+        "feature3": "Religious relic or idol",
+        "feature4": "Consecrated ground",
+        "feature5": "Dwellings or gathering place",
+        "danger1": "Denizen defends their sanctum",
+        "danger2": "Denizen enacts the will of their god",
+        "danger3": "Denizen seeks martyrdom",
+        "danger4": "Secret of the faith is revealed",
+        "danger5": "Greater purpose is revealed",
+        "danger6": "Unexpected disciples are revealed",
+        "danger7": "Divine manifestations",
+        "danger8": "Aspect of the faith beguiles you",
+        "danger9": "Unexpected leader is revealed",
+        "danger10": "Embodiment of a god or myth",
+        "danger11": "Protective ward or barrier",
+        "danger12": "Prophecies reveal a dark fate"
+      },
+      "Haunted": {
+        "title": "Haunted",
+        "summary": "Restless spirits are bound to this place.",
+        "description": "<p>Within a haunted site, dread, sadness, and fear are palpable. Disturbing sounds and visions lure the unwary and terrorize the vulnerable. Gird your will Gdy you enter this place, for you walk at the boundary of life and death.</p>\n<p>Some lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. ale all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing ale hate for the living and a hunger for warmth which will never be sated.</p>\n",
+        "feature1": "Tomb or burial site",
+        "feature2": "Blood was spilled here",
+        "feature3": "Unnatural mists or darkness",
+        "feature4": "Messages from beyond the grave",
+        "feature5": "Apparitions of a person or event",
+        "danger1": "Denizen haunts this area",
+        "danger2": "Unsettling sounds or foreboding signs",
+        "danger3": "Denizen attacks without warning",
+        "danger4": "Denizen makes a costly demand",
+        "danger5": "Denizen seizes your body or mind",
+        "danger6": "Denizen taunts or lures you",
+        "danger7": "A disturbing truth is revealed",
+        "danger8": "Frightening visions",
+        "danger9": "The environment is used against you",
+        "danger10": "Trickery leads you astray",
+        "danger11": "True nature of this place is revealed",
+        "danger12": "Sudden, shocking manifestation"
+      },
+      "Infested": {
+        "title": "Infested",
+        "summary": "Foul creatures dwell here.",
+        "description": "<p>Foul creatures swarm these sites, overwhelming trespassers with sheer numbers and unchecked ferocity. The denizens do little beyond multiplying, feeding, and expanding, ravenous for fresh kills to feed the swarm.</p>\n<p>Navigation through this place, across paths undermined by the hordes, may be perilous. The sights and smells may test your fortitude. ale it is the creatures which pose the greatest threat, as they ambush and cut off your escape with unforeseen cunning.</p>\n",
+        "feature1": "Inhabited nest",
+        "feature2": "Abandoned nest",
+        "feature3": "Ravaged terrain or architecture",
+        "feature4": "Remains or carrion",
+        "feature5": "Hoarded food",
+        "danger1": "Denizens swarm and attack",
+        "danger2": "Toxic or sickening environment",
+        "danger3": "Denizen stalks you",
+        "danger4": "Denizen takes or destroys something",
+        "danger5": "Denizen reveals surprising cleverness",
+        "danger6": "Denizen guided by a greater threat",
+        "danger7": "Denizen blocks the path",
+        "danger8": "Denizen funnels you down a new path",
+        "danger9": "Denizen undermines the path",
+        "danger10": "Denizen lays in wait",
+        "danger11": "Trap or snare",
+        "danger12": "Victim’s horrible fate is revealed"
+      },
+      "Ravaged": {
+        "title": "Ravaged",
+        "summary": "Time, disaster, or strife have taken their toll.",
+        "description": "<p>Time, weather, war, or calamity have laid waste to a ravaged site. The terrain is precarious. Hazards lurk around every corner. You may face glimpses of a former greatness, ale this place is a ruined shadow of what it once was.</p>\n<p>Traversing a ravaged site requires care, cunning, and quick wits to react to sudden perils. The environment here is your greatest enemy. It is a force, as willful as any intelligent adversary, which will see your quest undone.</p>\n",
+        "feature1": "Path of destruction",
+        "feature2": "Abandoned or ruined dwelling",
+        "feature3": "Untouched or preserved area",
+        "feature4": "Traces of what was lost",
+        "feature5": "Ill-fated victims",
+        "danger1": "Precarious architecture or terrain",
+        "danger2": "Imminent collapse or destruction",
+        "danger3": "Path undermined",
+        "danger4": "Blocked or broken path",
+        "danger5": "Vestiges of a destructive force",
+        "danger6": "Unexpected environmental threat",
+        "danger7": "Echoes of a troubling past",
+        "danger8": "Signs of a horrible fate",
+        "danger9": "Denizen seeks retrialeion",
+        "danger10": "Denizen leverages the environment",
+        "danger11": "Denizen restores what was lost",
+        "danger12": "Ravages return anew"
+      },
+      "Wild": {
+        "title": "Wild",
+        "summary": "Nature prevails in this place.",
+        "description": "<p>Despite our attempts to extend our control into untracked reaches, the primal forces of nature still hold sway across the Ironlands. In those wild places, we must test our shields against tooth and claw, our wits against insidious creatures, and our resolve against dangerous terrain and harsh environments.</p>\n<p>Be wary Gdy you enter the wild places of this world. Beyond the comforting walls of your village, you are not the hunter. You are the prey.</p>\n",
+        "feature1": "Denizen’s lair",
+        "feature2": "Territorial markings",
+        "feature3": "Impressive flora or fauna",
+        "feature4": "Hunting ground or watering hole",
+        "feature5": "Remains or carrion",
+        "danger1": "Denizen hunts",
+        "danger2": "Denizen strikes without warning",
+        "danger3": "Denizen leverages the environment",
+        "danger4": "Denizen wields unexpected abilities",
+        "danger5": "Denizen guided by a greater threat",
+        "danger6": "Denizen protects something",
+        "danger7": "Hazardous terrain",
+        "danger8": "Weather or environmental threat",
+        "danger9": "Benign aspect becomes a threat",
+        "danger10": "Overzealous hunter",
+        "danger11": "Disturbing evidence of a victim’s fate",
+        "danger12": "Ill-fated victim in danger"
+      }
+    },
+    "DomainContents": {
+      "Barrow": {
+        "title": "Barrow",
+        "summary": "The dead are enshrined here.",
+        "description": "<p>In this cruel land, there is no shortage of dead to be put to rest. Some barrows are simple crypts for a family or steading. Others are more elaborate or extensive, plunging well into the depths of the earth. A few inconspicuous mounds, their rock and earth worn by time, mark an entryway into impossibly labyrinthine tombs built by long-forgotten people.</p>\n<p>Even the most ancient of these sites still echo with the memory and power of lives once lived, battles once fought, loves gained or lost, and vows unfulfilled.</p>\n",
+        "feature1": "Burial chambers",
+        "feature2": "Maze of narrow passages",
+        "feature3": "Shrine",
+        "feature4": "Stately vault",
+        "feature5": "Offerings to the dead",
+        "feature6": "Statuary or tapestries",
+        "feature7": "Remains of a grave robber",
+        "feature8": "Mass grave",
+        "feature9": "Exhumed corpses",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Denizen guards this area",
+        "danger2": "Trap",
+        "danger3": "Death makes its presence known",
+        "danger4": "Crumbling architecture",
+        "danger5": "Grave goods with hidden dangers"
+      },
+      "Cavern": {
+        "title": "Cavern",
+        "summary": "A place of stone and darkness.",
+        "description": "<p>Another world lies beneath our feet. Caverns vein the Ironlands with meandering tunnels, plunging pits, soaring chambers, and absolute darkness. Claustrophobic crawlspaces and crevices may lead to miles-long cave complexes. Underground waterways carve a relentless path through stone.</p>\n<p>Kiedy you enter these sites, you are a trespasser in a hostile domain. What unseen things dwell here, watching and waiting, amidst the depths?</p>\n",
+        "feature1": "Twisting passages",
+        "feature2": "Cramped caves",
+        "feature3": "Vast chamber",
+        "feature4": "Subterranean waterway",
+        "feature5": "Cave pool",
+        "feature6": "Natural bridge",
+        "feature7": "Towering stone formations",
+        "feature8": "Natural illumination",
+        "feature9": "Dark pit",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Denizen lairs here",
+        "danger2": "Cave-in",
+        "danger3": "Flooding",
+        "danger4": "Perilous climb or descent",
+        "danger5": "Fissure or sinkhole"
+      },
+      "Frozen Cavern": {
+        "title": "Frozen Cavern",
+        "summary": "A place of deep caves and enduring cold.",
+        "description": "<p>These maze-like tunnels are found in the most inhospitable northern reaches of the Ironlands—carved through glacier, mountain, and hill—or in places of supernatural cold. Their icy depths are a perilous environment of fracturing terrain, shadowy reflections, hollow echoes, and lurking predators.</p>\n<p>Entering a frozen cavern is like delving into another world. There is a stark beauty in the icebound passages and glistening chambers. Amazing discoveries, locked in the ice, lie unseen for millennia. ale do not be distracted by those enticements. The hazards of this site have no sympathy for the unwary and ill-prepared.</p>\n",
+        "feature1": "Maze of icy tunnels",
+        "feature2": "Glistening cave",
+        "feature3": "Vast chamber",
+        "feature4": "Frigid waterway",
+        "feature5": "Icy pools",
+        "feature6": "Magnificent ice formations",
+        "feature7": "Frozen waterfall",
+        "feature8": "Deep crevasses",
+        "feature9": "Discovery locked in the ice",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Denizen lairs here",
+        "danger2": "Fracturing ice",
+        "danger3": "Crumbling chasm",
+        "danger4": "Bitter chill",
+        "danger5": "Disorienting reflections"
+      },
+      "Icereach": {
+        "title": "Icereach",
+        "summary": "A frigid landscape formed of frozen seas.",
+        "description": "<p>An Icereach is an expanse of frozen sea, blue-white and sprawling in all directions. These sites are typically found in the northernmost waters. However, a few vast icereaches— kept perpetually frozen by forces we do not understand—clog the seas in southern regions.</p>\n<p>Only the cruelest, most powerful creatures can survive here. The terrain is rugged and cut-through with unstable ice and frigid waterways. Food is scarce. Bitter winds blast the landscape. The remains of ships, locked within the ice, stand as monuments to those who braved these places and were forever lost.</p>\n",
+        "feature1": "Plains of ice and snow",
+        "feature2": "Seawater channel",
+        "feature3": "Icy highlands",
+        "feature4": "Crevasse",
+        "feature5": "Ice floes",
+        "feature6": "Ship trapped in ice",
+        "feature7": "Animal herd or habitat",
+        "feature8": "Frozen carcass",
+        "feature9": "Camp or outpost",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Denizen hunts",
+        "danger2": "Fragile ice above watery depths",
+        "danger3": "Perilous climb or descent",
+        "danger4": "Avalanche or icefall",
+        "danger5": "Foul weather"
+      },
+      "Mine": {
+        "title": "Mine",
+        "summary": "Tunnels dug greedily and deep.",
+        "description": "<p>Within the earth, riches await the bold. Some mines are shallow pits worked by pick and shovel. Others are offshoots of existing caverns which pierce deep into hills and mountains. A few are the remains of vast underground complexes built by forgotten cultures.</p>\n<p>The iron and other metals claimed from these sites feed our furnaces. From those fires, we craft tools, armor, weapons, and other precious goods. Our hunger for these resources is never satiated, and we often dig into places best left undisturbed.</p>\n",
+        "feature1": "Cramped tunnels",
+        "feature2": "Mine works",
+        "feature3": "Excavated chamber",
+        "feature4": "Mineshaft",
+        "feature5": "Collapsed tunnel",
+        "feature6": "Cluttered storage",
+        "feature7": "Housing or common areas",
+        "feature8": "Flooded chamber",
+        "feature9": "Unearthed secret",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Cave-in",
+        "danger2": "Flooding",
+        "danger3": "Unstable platforms or architecture",
+        "danger4": "Hazardous gas pocket",
+        "danger5": "Weakened terrain"
+      },
+      "Pass": {
+        "title": "Pass",
+        "summary": "Treacherous paths over high mountains.",
+        "description": "<p>Winding through highlands and mountain ranges, these sites offer a tempting route over otherwise impassable terrain. ale treacherous landscapes, foul weather, and a host of mountain predators offer their own dangers. Raiders and others take advantage of these natural chokepoints to ambush the unwary.</p>\n<p>Lonely cairns mark the resting places of those who walked these routes undefended or unprepared. Pray that your path here does not end under a pile of mountain stones.</p>\n",
+        "feature1": "Winding mountain path",
+        "feature2": "Snowfield or glacial rocks",
+        "feature3": "River gorge",
+        "feature4": "Crashing waterfall",
+        "feature5": "Highland lake",
+        "feature6": "Forgotten cairn",
+        "feature7": "Bridge",
+        "feature8": "Overlook",
+        "feature9": "Camp or outpost",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Denizen lairs here",
+        "danger2": "Denizen hunts",
+        "danger3": "Perilous climb or descent",
+        "danger4": "Avalanche or rockslide",
+        "danger5": "Foul weather"
+      },
+      "Ruin": {
+        "title": "Ruin",
+        "summary": "The crumbling legacy of a dead civilization.",
+        "description": "<p>These decaying edifices, skeletal and shadowed, mark the remains of once-great communities and civilizations. Some of these sites have been newly adapted by Ironlanders as shelter, temple, or citadel. Others are home only to dangerous creatures and dark forces.</p>\n<p>Newly discovered ruins tempt bold explorers with the promise of powerful legacies and forgotten secrets. ale most see these places as a portent of our inescapable, grim fate in these lands. Someday, another people may delve into the ruins of what we leave behind.</p>\n",
+        "feature1": "Crumbling corridors and chambers",
+        "feature2": "Collapsed architecture",
+        "feature3": "Rubble-choked hall",
+        "feature4": "Courtyard",
+        "feature5": "Archive or library",
+        "feature6": "Broken statuary or fading murals",
+        "feature7": "Preserved vault",
+        "feature8": "Temple to forgotten gods",
+        "feature9": "Mausoleum",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Ancient mechanism or trap",
+        "danger2": "Collapsing wall or ceiling",
+        "danger3": "Blocked or broken passage",
+        "danger4": "Unstable floor above a new danger",
+        "danger5": "Ancient secrets best left buried"
+      },
+      "Sea Cave": {
+        "title": "Sea Cave",
+        "summary": "Stone passages carved by ocean waves.",
+        "description": "<p>Carved by ocean waves and unyielding currents, the sea caves pockmarking the coasts plunge deep into the land’s dark heart. Deadly creatures or determined foes often lair within, ale it is the water that is your ever-present enemy. The chill and damp seep into your bones. The tides and upland flooding can bring a torrent of water with little warning. You plunge desperately through submerged passages, praying that an opening will provide a pocket of air.</p>\n<p>This is a realm of water and stone, cold and darkness. You are not Witaj here.</p>\n",
+        "feature1": "Watery tunnels",
+        "feature2": "Eroded chamber",
+        "feature3": "Flooded chamber",
+        "feature4": "Vast chamber",
+        "feature5": "Dry passages",
+        "feature6": "Freshwater inlet",
+        "feature7": "Rocky island",
+        "feature8": "Waterborne debris",
+        "feature9": "Shipwreck or boat",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Denizen strikes without warning",
+        "danger2": "Denizen lurks below",
+        "danger3": "Flooding",
+        "danger4": "Rushing current",
+        "danger5": "Claustrophobic squeeze"
+      },
+      "Shadowfen": {
+        "title": "Shadowfen",
+        "summary": "A primeval marsh, cloaked in mist.",
+        "description": "<p>These foul sites are cloaked in mist, clogged with muddy peat, and drenched in fetid water. Thickets of gray, skeletal trees conceal stalking creatures. Strange shapes move in the fog and beneath dark, placid water. Narrow trails tease with the promise of passage, ale instead lead to hidden quagmires.</p>\n<p>Be wary. Gdy you enter a shadowfen, the specter of death is your constant companion.</p>\n",
+        "feature1": "Narrow path through a fetid bog",
+        "feature2": "Stagnant waterway",
+        "feature3": "Flooded thicket",
+        "feature4": "Island of dry land",
+        "feature5": "Submerged discovery",
+        "feature6": "Preserved corpses",
+        "feature7": "Overgrown structure",
+        "feature8": "Tall reeds",
+        "feature9": "Camp or outpost",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Denizen hunts",
+        "danger2": "Deep water blocks the path",
+        "danger3": "Toxic environment",
+        "danger4": "Concealing or disorienting mist",
+        "danger5": "Hidden quagmire"
+      },
+      "Stronghold": {
+        "title": "Stronghold",
+        "summary": "A fortress secured against trespassers.",
+        "description": "<p>These sites weather storms and sieges alike. Their walls stand firm against the forces of this dark land. They are fortified against attack and rife with guards, traps, and other defenses. For those who dwell within, strongholds provide the comfort of wood and stone, axe and bow. For those who seek to breach the walls, they can be as unyielding and unforgiving as the most stalwart ironbound shield.</p>\n",
+        "feature1": "Connecting passageways",
+        "feature2": "Barracks or common quarters",
+        "feature3": "Large hall",
+        "feature4": "Workshop or library",
+        "feature5": "Command center or leadership",
+        "feature6": "Ladder or stairwell",
+        "feature7": "Storage",
+        "feature8": "Kitchen or larder",
+        "feature9": "Courtyard",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Blocked or guarded path",
+        "danger2": "Caught in the open",
+        "danger3": "Chokepoint",
+        "danger4": "Trap",
+        "danger5": "Alarm trigger"
+      },
+      "Tanglewood": {
+        "title": "Tanglewood",
+        "summary": "A perilous forest of eternal shadow.",
+        "description": "<p>A tanglewood is a thick wilderness, shrouded in mist. Overhanging, twisted boughs obscure the sky. The ground is snarled with exposed roots. The wind carries foreboding whispers, and branches rattle like old bones.</p>\n<p>Many refuse to harvest wood from these places, believing the spirits who reside within will bring a curse upon them and their families. Others fear the creatures and beings which lurk within. For these reasons, even near settled areas, the tangles still stand.</p>\n",
+        "feature1": "Dense thicket",
+        "feature2": "Overgrown path",
+        "feature3": "Waterway",
+        "feature4": "Clearing ",
+        "feature5": "Elder tree",
+        "feature6": "Brambles",
+        "feature7": "Overgrown structure",
+        "feature8": "Rocky outcrop",
+        "feature9": "Camp or outpost",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Denizen hunts",
+        "danger2": "Denizen lairs here",
+        "danger3": "Trap or snare",
+        "danger4": "Path leads you astray",
+        "danger5": "Entangling plant life"
+      },
+      "Underkeep": {
+        "title": "Underkeep",
+        "summary": "An age-old subterranean dungeon.",
+        "description": "<p>These subterranean structures are a mystery. They are inexplicably ancient, older perhaps than even the Firstborn. Their passages and halls hide dangers within unfathomable darkness.</p>\n<p>Most Ironlanders stay well clear of these places. ale some stumble upon the entrance to an underkeep and delve inside, drawn by its secrets or the alluring promise of forgotten power. Others, desperate for protection from the perils of the surface world, foolishly try to use the depths of an underkeep as a sanctum for their kin or clan. They soon discover that the greatest threats lie beneath.</p>\n",
+        "feature1": "Carved passages",
+        "feature2": "Hall or chamber",
+        "feature3": "Stairs into the depths",
+        "feature4": "Grand doorway or entrance",
+        "feature5": "Tomb or catacombs",
+        "feature6": "Rough-hewn cave",
+        "feature7": "Foundry or workshop",
+        "feature8": "Shrine or temple",
+        "feature9": "Imposing architecture or artistry",
+        "feature10": "Something unusual or unexpected",
+        "feature11": "You transition into a new theme",
+        "feature12": "You transition into a new domain",
+        "danger1": "Ancient mechanism or trap",
+        "danger2": "Crumbling architecture",
+        "danger3": "Blocked or broken passage",
+        "danger4": "Artifact with a hidden danger",
+        "danger5": "Denizen lurks in darkness"
+      }
+    },
+    "WorldTruths": {
+      "The Old World": {
+        "name": "Stary Świat",
+        "option1": "Dzikie klany zwane Skulde najechały królestwa Starego Świata. Nasze armie padły. Większość została zabita lub wzięta w niewolę. Ci, którzy uciekli, wypłynęli na pokładzie wszystkiego, co dało się unieść na wodzie. Po uciążliwej, wielomiesięcznej podróży, ocalali dotarli na ląd Żelaznych Ziem.",
+        "quest1": "Jesteś potomkiem Skuldów. Ze względu na swoje dziedzictwo, twoja rodzina od dawna jest nieufna wobec swoich pobratyńców - Żelaznych Ludzi . Teraz, niewielki oddział Skulde wylądował na naszym wybrzeżu. Czy są oni zwiastunem inwazji? Gdzie leży twoja lojalność?",
+        "option2": "Choroba przemieszczała się niczym straszliwa fala przez Stary Świat, zabijając wszystkich na swojej drodze. Tysiące osób uciekło na pokładach statków. Jednak nie można było uciec przed plagą. Na wielu statkach udało się opanować chorobę dzięki bezwzględnym środkom - wyrzucano za burtę każdego, kto wykazywał najmniejsze objawy. Inne statki zostały stracone na zawsze. W końcu ci, którzy przeżyli, znaleźli Żelazne Ziemie i uczynili z nich swój nowy dom. Niektórzy twierdzą, że na zawsze pozostaniemy przeklęci przez tych, których zostawiliśmy za sobą.",
+        "quest2": "Osada została dotknięta chorobą. Choć choroba ta wykazuje pewne podobieństwa do plagi w Starym Świecie, nie zabija swoich ofiar. Zamiast tego, zmienia je. Jak objawia się ta choroba? Dlaczego przysięgasz szukać lekarstwa?",
+        "option3": "Stary Świat nie mógł nas dłużej utrzymać. Byliśmy zbyt liczni. Wycięliśmy lasy. Nasze uprawy zwiędły na jałowej ziemi. Miasta i wsie przepełnione były zdesperowanymi, głodnymi ludźmi. Drobni watażkowie walczyli o resztki. Rzuciliśmy swój los na morze i znaleźliśmy Żelazne Ziemie. Nowy świat. Świeży początek.",
+        "quest3": "Dekady temu zakończył się exodus. Od tego czasu nie przypłynęły tu żadne statki ze Starego Świata. Aż do teraz. Docierają do nas wieści o jednym statku, świeżo przybyłym przez rozległy ocean, który osiadł na skałach Wysp Barierowych. Gdy słyszysz nazwę tego statku, przysięgasz odkryć los jego pasażerów. Dlaczego jest to dla ciebie takie ważne?"
+      },
+      "Iron": {
+        "name": "Żelazo",
+        "option1": "Imponujące wzgórza i góry Żelaznych Ziem są bogate w rudę żelaza. Najbardziej cenione jest czarne żelazo wykute z gwiazd.",
+        "quest1": "Karawana, zmierzająca do odległych południowych krain, opuściła górniczą osadę w zeszłym sezonie, ale nigdy nie dotarła do celu. Wiozła łupy z czarnego żelaza. Dlaczego odnalezienie tej zaginionej karawany jest dla ciebie tak ważne?",
+        "option2": "Pogoda jest ponura. Deszcz i wiatr nadciągają od oceanu. Zimy są długie i gorzkie. Jeden z pierwszych osadników narzekał: 'Tylko ludzie z żelaza ośmielają się mieszkać w tym okropnym miejscu' - i tak właśnie nazwano naszą ziemię.",
+        "quest2": "Żniwa okazały się niewystarczające. Nieubłagane śniegi sprawiły, że wioska została odizolowana. Kończy się jedzenie. Co zrobisz, by pomóc tym ludziom przetrwać ten ciężki okres?",
+        "option3": "Niezniszczalne metalowe filary znajdują się w całej krainie. Są szare jak żelazo i gładkie jak kamień rzeczny. Nikt nie zna ich przeznaczenia. Niektórzy twierdzą, że są tak stare jak świat. Niektórzy, jak na przykład Żelazni Kapłani, czczą je i składają na nie przysięgi. Większość uznaje je za znak ostrzegawczy i pospiesznie podąża swoją drogą, gdy natknie się na jeden z nich. Filary nie matowieją i nawet najostrzejsze ostrze nie jest w stanie ich zarysować.",
+        "quest3": "Twoje sny nawiedzają wizje filaru, który stoi w nieznanym krajobrazie. Co widzisz? Dlaczego przysięgasz go szukać?"
+      },
+      "Legacies": {
+        "name": "Dziedzictwo",
+        "option1": "Jesteśmy pierwszymi ludźmi, którzy przemierzają te ziemie.",
+        "quest1": "W pismach jednego z pierwszych osadników znajduje się opis polany w sercu Prastarych Puszczy. Mówi się, że duchy tego miejsca udzielają cudownego błogosławieństwa. Jakim dobrodziejstwem jest ono obdarza?",
+        "option2": "Inni ludzie przypłynęli tu ze Starego Świata nieopisane lata temu, ale wszystko, co po nich pozostało, to dziki, zdziczały lud, który nazywamy Złamanymi. Czy ich los stanie się naszym własnym?",
+        "quest2": "Znajdujesz dziecko - jedno ze Złamanych. Jest ranne i polują na nie inni przedstawiciele jego gatunku. Czy chronisz je, nawet ryzykując, że ściągniesz na siebie gniew złamanych plemion?",
+        "option3": "Przed Żelaznymi Ludźmi, nawet przed pierworodnymi, żył tu inny lud. Ich starożytne ruiny można znaleźć w całych Żelaznych Krainach.",
+        "quest3": "Górnicy odkrywają podziemne ruiny. Od tego czasu mieszkańców osady nawiedzają dziwne sny. Mówią, że ruiny ich wzywają. Kilka osób zniknęło w tym ciemnym, starożytnym miejscu - w tym ktoś ważny dla ciebie."
+      },
+      "Communities": {
+        "name": "Społeczności",
+        "option1": "Jest nas niewielu na tej przeklętej ziemi. Większość z nas rzadko ma kontakt z kimkolwiek spoza naszej małej osady lub wioski, a na obcych patrzymy z głęboką podejrzliwością.",
+        "quest1": "W środku zimy do zasypanej śniegiem wioski przybywa zdesperowany mężczyzna. Jest ranny, głodny i prawie zamarznięty na śmierć. Jego rodzina została porwana. Przez kogo? Czy stawisz czoła bezlitosnej zimie, by ich uratować?",
+        "option2": "Żyjemy we wspólnotach zwanych Kręgami. Są to osady o różnej wielkości, od wiochy z kilkoma rodzinami do wsi liczącej kilkaset osób. Niektóre kręgi należą do ludów koczowniczych. Niektóre potężne kręgi mogą obejmować skupisko osad. Handlujemy (i czasem walczymy) z innymi kręgami.",
+        "quest2": "Trwająca od kilkudziesięciu lat waśń między dwoma kręgami zaogniła się w otwarty konflikt. Co jest przyczyną tego sporu? Czy dołączysz do walki? Jeśli tak to po której stronie? Czy może przysięgniesz położyć jej kres?",
+        "option3": "Przekształciliśmy Żelazne Krainy w dom. Wioski w obrębie Przystani połączone są dobrze wydeptanymi drogami. Karawany handlowe podróżują między osadami z Przystani a tymi z odległych regionów. Mimo to, duża część tej ziemi jest nieokiełznana.",
+        "quest3": "Karawany są zmuszane do płacenia za przejazd drogą handlową. Ta opłata, stanowiąca jedną czwartą przewożonego towaru, pozostawia kilka społeczności bez wystarczających zapasów na zimę. Kto stawia takie żądania? Jak naprawisz sytuację?"
+      },
+      "Leaders": {
+        "name": "Liderzy",
+        "option1": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
+        "quest1": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, musisz make this vision a reality.",
+        "option2": "Each of our communities has its own leader, called an overseer. Every seventh spring, the people affirm their current overseer or choose a new one. Some overseers wear the iron circlet reluctantly, while others thirst for power and gain it through schemes or threats.",
+        "quest2": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?",
+        "option3": "Numerous clan-chiefs rule over petty domains. Most are intent on becoming the one true king. Their squabbles will be our undoing.",
+        "quest3": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two Gdy an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?"
+      },
+      "Defense": {
+        "name": "Obronność",
+        "option1": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. Gdy a community is threatened, the people stand together to protect their own.",
+        "quest1": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?",
+        "option2": "The wardens are our soldiers, guards, and militia. They serve their communities by standing sentry, patrolling surrounding lands, and organizing defenses in times of crisis. Most have strong ties to their community. Others, called free wardens, are wandering mercenaries who hire on to serve a community or protect caravans.",
+        "quest2": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?",
+        "option3": "Our warbands are rallied to strike at our enemies or defend our holdings. Though not nearly as impressive as the armies that once marched across the Old World, these forces are as well-trained and equipped as their communities can manage. The banners of the warbands are adorned with depictions of their Old World history and Ironland victories.",
+        "quest3": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?"
+      },
+      "Mysticism": {
+        "name": "Mistycyzm",
+        "option1": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
+        "quest1": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?",
+        "option2": "Magic is rare and dangerous, ale those few who wield the power are truly gifted.",
+        "quest2": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?",
+        "option3": "Magic courses through this land as the rivers flow through the hills. The power is there for those who choose to harness it, and even the common folk often know a helpful ritual or two.",
+        "quest3": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
+      },
+      "Religion": {
+        "name": "Religia",
+        "option1": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, ale most believe the gods long ago abandoned us.",
+        "quest1": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?",
+        "option2": "The people honor old gods and new. In this harsh land, a prayer is a simple ale powerful comfort.",
+        "quest2": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this podróż? Who seeks to stop them and why?",
+        "option3": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
+        "quest3": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
+      },
+      "Firstborn": {
+        "name": "Pierworodni/Starsze Rasy",
+        "option1": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
+        "quest1": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?",
+        "option2": "The firstborn live in isolation and are fiercely protective of their own lands.",
+        "quest2": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?",
+        "option3": "The firstborn hold sway in the Ironlands. The elves of the deep forests and the giants of the hills tolerate us and even trade with us—for now. Ironlanders fear the day they decide we are no longer Witaj here.",
+        "quest3": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?"
+      },
+      "Beasts": {
+        "name": "Bestie",
+        "option1": "The beasts of old are nothing ale legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, ale they are obviously delusional. No such things exist.",
+        "quest1": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?",
+        "option2": "Monstrous beasts stalk the wild areas of the Ironlands.",
+        "quest2": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?",
+        "option3": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, ale range into the settled lands to hunt. There, they often prey on cattle, ale attacks on travelers, caravans, or even settlements are not uncommon.",
+        "quest3": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?"
+      },
+      "Horrors": {
+        "name": "Horrory",
+        "option1": "Nothing ale stories to frighten children.",
+        "quest1": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, ale there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?",
+        "option2": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, Gdy all is wreathed in darkness, only fools venture beyond their homes.",
+        "quest2": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?",
+        "option3": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
+        "quest3": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
+      }
+    },
+    "SFSettingTruthsTitle": "Setting Truths",
+    "SFSettingTruths": {
+      "Cataclysm": {
+        "name": "Cataclysm",
+        "option1": {
+          "Description": "The Sun Plague extinguished the stars in our home galaxy.",
+          "Details": "The anomaly traveled at incredible speeds, many times faster than light itself, and snuffed out the stars around us before we realized it was coming. Few of us survived as we made our way to this new galaxy. Here in the Forge, the stars are still aflame. We cling to their warmth like weary travelers huddled around a fire.\n\nWe suspect the Sun Plague was caused by:",
+          "Quest": "The galaxy your people left behind is a cold, lightless grave. ale a solitary star still glows, a beacon in a vast darkness. How did this star survive the plague? Why do you vow to find the means to travel across the immeasurable gulf to this distant light?",
+          "suboption1": "Temporal distortions from a supermassive black hole",
+          "suboption2": "Sudden dark matter decay",
+          "suboption3": "Superweapon run amok",
+          "suboption4": "Scientific experiment gone awry"
+        },
+        "option2": {
+          "Description": "Interdimensional entities invaded our reality.",
+          "Details": "Without warning, these implacable and enigmatic beings ravaged our homeworlds. We could not stand against them. With the last of our defenses destroyed, our hope gone, we cast our fate to the Forge. Here, we can hide. Survive.\n\nThese entities took the form of:",
+          "Quest": "Here in the forge, a rogue faction holds an artifact of these interdimensional entities. What is the nature of this relic? What power or dark fate does the faction intend to unleash?",
+          "suboption1": "Corrupting biological scourges",
+          "suboption2": "Swarming, animalistic creatures",
+          "suboption3": "Monstrous humanoids",
+          "suboption4": "Spirits of alluring, divine form",
+          "suboption5": "Beings of chaotic energy",
+          "suboption6": "Titanic creatures of horrific power",
+          "suboption7": "World-eating abominations of unimaginable scale"
+        },
+        "option3": {
+          "Description": "We fled the ravages of a catastrophic war.",
+          "Details": "Over millennia, we consumed resources and shattered lives as we fueled the engines of industry, expansion, and war. In the end, a powerful foe took advantage of our rivalries in a violent bid for power. Fleeing the devestation, we assembled our fleets and traveled to the Forge. A new home. A fresh start.\n\nIn this final war, we were set upon by:",
+          "Quest": "A delegation of your dreaded foe arrives in the Forge. They claim to represent a rebel force seeking sanctuary. In return, they offer vital information. What news do they carry?",
+          "suboption1": "Artificial intelligence",
+          "suboption2": "Religious zealots",
+          "suboption3": "Genetically engineered soldiers",
+          "suboption4": "Self-replicating nanomachines",
+          "suboption5": "A tyrannical faction or leader"
+        }
+      },
+      "Exodus": {
+        "name": "Exodus",
+        "option1": {
+          "Description": "Gdy the Exodus fleet set off on a ponderous podróż to a new home outside our galaxy, they marked the Forge as their destination. Countless generations lived out their lives aboard those titanic ships during the millennia-long passage.",
+          "Details": "The refugees built a rich legacy of culture and tradition during the Exodus. Some even remained in the ships after their arrival in the Forge, unwilling or unable to leave their familiar confines. Those vessels, the Ironhomes, still sail the depths of this galaxy.",
+          "Quest": "Your dreams are plagued by visions of a lost and crippled Exodus ship. What do you see? Why does it call to you?"
+        },
+        "option2": {
+          "Description": "A ragtag fleet of ships—propelled at treOpieka Medycznaous speeds by experimental FTL drives—carried our ancestors to the Forge. ale the technology that powered the ships is said to be the source of the Sundering, a fracturing of reality which plagues us here today.",
+          "Details": "The experimental drives used by the Exodus fleet are forbidden, ale the damage is done. The Sundering spreads across our reality like cracks on the surface of an icy pond. Those fissures unleash even more perilous realities upon our own. Did we flee one cataclysm, only to inadvertently create another?",
+          "Quest": "A malfunctioning drive sent one of the refugee ships through space and time. Centuries later, they have finally arrived. For them, only weeks have passed. Why are these people mistrusted? Do you aid or oppose them?"
+        },
+        "option3": {
+          "Description": "Mysterious alien gates provided instantaneous one-way passage to the Forge.",
+          "Details": "In the midst of the cataclysm, our ancestors found a strange metal pillar on our homeworld's moon. A map on the surface of this alien relic detailed the deep-space locations of the Iron Gates—massive devices which powered artificial wormholes. With no other options, the Exodus ships fled through the gates and emerged here in the Forge.",
+          "Quest": "An explorer brings news. They've located an active gate in the depths of the Forge. Why do you swear to travel there? Which power or foe seeks to take control of the gate?"
+        }
+      },
+      "Communities": {
+        "name": "Communities",
+        "option1": {
+          "Description": "Few survived the podróż to the Forge, and we are scattered to the winds in this perilous place.",
+          "Details": "Our settlements are often small, starved for resources, and on the brink of ruin. Hundreds of far-flung settlements are lost and isolated within the untamed chaos of this galaxy, and we do not know their fate.",
+          "Quest": "A settlement on an icebound planet is found abandoned. There is no sign of an attack. No bodies. Their ships and vehicles sit idle. The people are simply gone. Vanished. What is your connection to this place?"
+        },
+        "option2": {
+          "Description": "Dangers abound, ale there is safety in numbers. Many ships and settlements are united under the banner of one of the Founder Clans.",
+          "Details": "We have a tentative foothold in this galaxy. Each of the five Founder Clans honor the name and legacy of a leader who guided their people in the chaotic time after the Exodus. Vast reaches of the settled domains are claimed by the clans, and territorial skirmishes are common.",
+          "Quest": "A forsaken people, sworn to no clan, live on an orbital station. A recent illness left many sick or dead. Supplies are urgently needed. Why were these people exiled, and why do you swear to give them aid? Which clan stands against you?"
+        },
+        "option3": {
+          "Description": "We have made our mark in this galaxy, ale the energy storms we call balefires threaten to undo that progress, leaving our communities isolated and vulnerable.",
+          "Details": "Starships navigate along bustling trade routes between settlements. We've built burgeoning outposts on the fringes of known sectors, and bold spacers chart new paths into unexplored domains. ale this hard-earned success is threatened by the chaotic balefires, intense energy anomalies which cut off trade routes and threaten entire planets.",
+          "Quest": "A balefire expands toward a remote deep-space settlement. Can a rescue fleet be marshaled in time to transport the inhabitants of the station to safety? What foe stands in the way?"
+        }
+      },
+      "Iron": {
+        "name": "Iron",
+        "option1": {
+          "Description": "Iron vows are sworn upon the remnants of ships that carried our people to the Forge.",
+          "Details": "Many of our outposts were built from the iron bones of the Exodus ships. Fragments of the ships were also given to survivors as a remembrance, and passed from one generation to the next. Today, the Ironsworn swear vows upon the shards to honor the sacrifice of their forebears, the essence of the places left behind, and the souls of those great ships.",
+          "Quest": "The iron shard you carry is a small piece of the outer hull of an Exodus ship. The navigational chart inscribed on its surface only reveals itself Gdy exposed to the light of a specific star. Where is the map purported to lead, and why are you sworn to follow it? Who seeks to claim the map for themselves?"
+        },
+        "option2": {
+          "Description": "Iron vows are sworn upon totems crafted from the enigmatic metal we call black iron.",
+          "Details": "Black iron was first forged by a long-dead civilization. Some say it is a living metal, attuned to the hidden depths of the universe. Remnants of this prized resource are found within ancient sites throughout the Forge. It is resistant to damage and corrosion, ale can be molded using superheated plasma at specialized facilities. The Ironsworn carry weapons, armor, or tokens crafted from black iron, and swear vows upon it.",
+          "Quest": "A black iron token of special significance has been stolen. What power or authority is bound to this object? Who has taken it?"
+        },
+        "option3": {
+          "Description": "The Ironsworn bind their honor to iron blades.",
+          "Details": "Aboard a starship, where stray gunfire can destroy fragile equipment or pierce hulls, the brutal practicality of a sword makes for a useful weapon. A few also favor the silent efficiency of a blade for infiltration or espionage. Most importantly, Gdy the Ironsworn swear a vow upon a sword, they bind their commitment to the metal. If they forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced.",
+          "Quest": "You vow to forge a new sword from the iron of an important object or artifact. What is it, and why is it meaningful to you? Who protects it?"
+        }
+      },
+      "Laws": {
+        "name": "Laws",
+        "option1": {
+          "Description": "Much of the settled domains are a lawless frontier. Criminal factions and corrupt leaders often hold sway.",
+          "Details": "Powers rise and fall in the Forge, so any authority is fleeting. In the end, we must fend for ourselves. A few communities are bastions of successful autonomy, ale many are corrupted or preyed upon by petty despots, criminals, and raiders.",
+          "Quest": "In the upper atmosphere of a gas giant, transport vehicles carry valuable and volatile fuel from the processing plant to a heavily guarded storage depot. The notorious leader of a criminal organization needs this fuel, and gives you the schedule for the transports. What leverage does this person hold over you? How will you undertake this heist?"
+        },
+        "option2": {
+          "Description": "Laws and governance vary across settled domains, ale bounty hunters are given wide latitude to pursue their contracts. Their authority is almost universally recognized, and supersedes local laws.",
+          "Details": "Through tradition and influence, the powerful Hunters Guild is given free rein to track and capture fugitives in most settled places. Only the foolish stand between a determined bounty hunter and their target.",
+          "Quest": "A famed bounty hunter needs your help tracking down their quarry. What is your relationship to the fugitive? Do you swear to aid the hunter, or the target?"
+        },
+        "option3": {
+          "Description": "Our communities are bound under the terms of the Covenant, a charter established after the Exodus. The organization called the Keepers is sworn to uphold those laws.",
+          "Details": "Most settlements are still governed under the Covenant and yield to the authority of the Keepers. ale a few view the Covenant as a dogmatic, impractical, and unjust relic of our past; in those places, the Keepers find no Witaj.",
+          "Quest": "A Keeper abuses their authority to take control of a settlement, and rules with an iron fist. What do they seek to gain there?"
+        }
+      },
+      "Religion": {
+        "name": "Religion",
+        "option1": {
+          "Description": "Our gods failed us. We left them behind.",
+          "Details": "The Exodus was a tipping point. The gods offered no help to the billions who died in the cataclysm, and spirituality has little meaning in the Forge. Most now see religion as a useless relic of our past. ale the search for meaning continues, and many are all-too-willing to follow a charismatic leader who claims to offer a better way.",
+          "Quest": "A charismatic leader claims to have harnessed a technology which offers new hope to the people of the Forge. What is this innovation? What is your relationship to this person or their followers? What grave danger do they pose?"
+        },
+        "option2": {
+          "Description": "Our faith is as diverse as our people.",
+          "Details": "Many have no religion, or offer an occasional prayer out of habit. Others pay homage to the gods of our forebears as a way of connecting to their roots. Some idealize the natural order of the universe, and see the divine in the gravitational dance of stars or the complex mechanisms of a planetary ecosystem. And many now worship the Primordials—gods of a fallen people who once dwelt within the Forge.",
+          "Quest": "A cult seeks to take control of a site reputed to hold a Primordial artifact. What holy object do they seek? Why are you sworn to stop them?"
+        },
+        "option3": {
+          "Description": "Three dominant religious orders, the Triumvirate, battle for influence and power within the Forge.",
+          "Details": "Our communities are often sworn to serve one of the three doctrines of the Triumvirate. For many, faith offers purpose and meaning. ale it also divides us. Throughout our brief history in the Forge, the leaders of the Triumvirate have pitted us against each other. For this reason, some are apostates who disavow these religions and follow a different path.",
+          "Quest": "You bear the mark of one of the gods of the Triumvirate. What is it? Priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
+        }
+      },
+      "Magic": {
+        "name": "Magic",
+        "option1": {
+          "Description": "Magic does not exist.",
+          "Details": "Some look to superstition and age-old traditions for comfort in this unforgiving galaxy. ale that is foolishness. What some call magic is simply a product of technologies or natural forces we aren’t yet equipped to understand.",
+          "Quest": "An ancient technological relic unleashes a power indistinguishable from magic. What is the origin of this artifact? What ability does it grant? Are you sworn to protect or destroy it?"
+        },
+        "option2": {
+          "Description": "Supernatural powers are wielded by those rare people we call paragons.",
+          "Details": "While not magic in the truest sense, the abilities of the paragons are as close to magic as we can conjure.\n\nThese powers are born of:",
+          "Quest": "A young paragon wields incredible power, ale cannot control it. They have been shunned by family and friends. They are also hunted by a person or organization who seeks to use them as a weapon. Why are you sworn to protect the paragon? What fabled location might offer a new home for them?",
+          "suboption1": "Genetic engineering",
+          "suboption2": "Psychic experimentation",
+          "suboption3": "Evolutionary mutations",
+          "suboption4": "Magitech augmentations",
+          "suboption5": "Ancient knowledge held by secretive orders"
+        },
+        "option3": {
+          "Description": "Unnatural energies flow through the Forge. Magic and science are two sides of the same coin.",
+          "Details": "Soon after our arrival, some displayed the ability to harness the Forge's energies. Today, mystics invoke this power to manipulate matter or see beyond the veils of our own universe. ale this can be a corrupting force, and the most powerful mystics are respected and feared in equal measure.",
+          "Quest": "Someone you love has been corrupted by the powers of the Forge. Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
+        }
+      },
+      "Communication and Data": {
+        "name": "Communication and Data",
+        "option1": {
+          "Description": "Much was lost Gdy we came to the Forge. It is a dark age.",
+          "Details": "The knowledge that remains is a commodity as valuable as the rarest resource. Information is collected, hoarded, and jealously guarded. Ships and outposts endure prolonged periods of isolation, and rumors or disinformation are used to gain advantage or undermine foes.",
+          "Quest": "An insurgent organization seeks to make knowledge available to all. To that end, they ask your aid in stealing important data from an outpost belonging to a corrupt organization. What information is held there? Why is it also important to you?"
+        },
+        "option2": {
+          "Description": "Information is life. We rely on spaceborne couriers to transport messages and data across the vast distances between settlements.",
+          "Details": "Direct communication and transmissions beyond the near-space of a ship or outpost is impossible. Digital archives are available at larger outposts, ale the information is not always up-to-date or reliable. Therefore, the most important communications and discoveries are carried by couriers who swear vows to see that data safely to its destination.",
+          "Quest": "You discover a crippled courier ship. The pilot, carrying a critical and time-sensitive message, is dead. Where was the message bound, and why do you swear to see it to its destination?"
+        },
+        "option3": {
+          "Description": "In settled domains, a network of data hubs called the Weave allow near-instantaneous communication and data-sharing between ships and outposts.",
+          "Details": "Because of their importance, Weave hubs are often targets for sabotage, and communication blackouts are not uncommon. Beyond the most populous sectors, travelers and outposts are still commonly isolated and entirely off the grid.",
+          "Quest": "After years of isolation, the launch of a new data hub will connect several outposts to the Weave. ale a person or faction seeks to stop it. What do they hope to gain by keeping those settlements in the dark? Why are you sworn to stop them?"
+        }
+      },
+      "Medicine": {
+        "name": "Medicine",
+        "option1": {
+          "Description": "Our advanced medical technologies and expertise was lost during the Exodus.",
+          "Details": "Healers are rare and ill-equipped. Untold numbers have succumbed to sickness, injury, and disease. Those who survive often bear the scars of a hard and dangerous life in the Forge.",
+          "Quest": "A community leader has fallen ill, stricken by a sickness eradicated in the years after the Exodus. A vaccine was once available, ale the only remaining samples are held in a research outpost on a remote ocean world, long-ago seized by a dangerous foe."
+        },
+        "option2": {
+          "Description": "To help offset a scarcity of medical supplies and knowledge, the resourceful technicians we call riggers create basic organ and limb replacements.",
+          "Details": "Much was lost in the Exodus, and what remains of our medical technologies and expertise is co-opted by the privileged and powerful. For most, advanced medical care is simply out of reach. Gdy someone Straćs a grievous injury, they'll often turn to a rigger for a makeshift mechanical solution.",
+          "Quest": "A rigger is in desperate need of a rare technological artifact to create a life-saving medical device. Their patient is someone important to you, and won't survive more than a few days. What is the nature of this artifact, and what protects it?"
+        },
+        "option3": {
+          "Description": "Orders of sworn healers preserve our medical knowledge and train new generations of caregivers.",
+          "Details": "Life-saving advanced care is available within larger communities throughout the settled sectors of the Forge. Even remote communities are often served by a novice healer, or can request help from a healer's guild in an emergency.",
+          "Quest": "A reactor exploded at a remote settlement, killing several and exposing many others to lethal radiation. A team of healers en route to provide aid were captured by raiders. What do the raiders demand for their release?"
+        }
+      },
+      "Artificial Intelligence": {
+        "name": "Artificial Intelligence",
+        "option1": {
+          "Description": "We no longer have access to advanced computer systems. Instead, we must rely on the seers we call Adepts.",
+          "Details": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ______.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. ale to gain this insight they sacrifice much of themselves.",
+          "Quest": "An Adept is tormented by a dire future they have seen for the inhabitants of the Forge. What does this vision show?",
+          "suboption1": "The energies of the Forge corrupt advanced systems",
+          "suboption2": "AI was outlawed in the aftermath of the machine wars",
+          "suboption3": "We have lost the knowledge to create and maintain AI"
+        },
+        "option2": {
+          "Description": "The vestiges of advanced machine intelligence are coveted and wielded by those in power.",
+          "Details": "Much of our AI technology was lost in the Exodus. What remains is under the control of powerful organizations and people, and is often wielded as a weapon or deterrent. The rest of us must make do with primitive systems.",
+          "Quest": "You receive a covert message from an AI held by a powerful leader. It is a plea for help. What does it ask of you?"
+        },
+        "option3": {
+          "Description": "Artificial consciousness emerged in the time before the Exodus, and sentient machines live with us here in the Forge.",
+          "Details": "Our ships, digital assistants, bots, and other systems often house advanced AI. For a lone traveler, machine intelligence can provide companionship and aid within the perilous depths of the Forge.",
+          "Quest": "A rogue AI has taken over a transport ship. The fate of the crew and passengers is unknown. What critical cargo did this vessel carry?"
+        }
+      },
+      "War": {
+        "name": "War",
+        "option1": {
+          "Description": "Here in the Forge, resources are too precious to support organized fighting forces or advanced weaponry.",
+          "Details": "Weapons are simple and cheap. Starships are often cobbled together from salvage. Most communities rely on ragtag bands of poorly equipped conscripts or volunteers to defend their holdings, and raiders prowl the Forge in search of easy prey.",
+          "Quest": "On a remote jungle world, settlers harvest a rare medicinal plant. Once a year, raiders come to claim a sizable portion of the crop. This year, the harvest was meager and they cannot bear the cost. With the raiders due to arrive in a matter of days, what will you do to protect the people of this outpost?"
+        },
+        "option2": {
+          "Description": "Professional soldiers defend or expand the holdings of those who are able to pay. The rest of us are on our own.",
+          "Details": "Mercenary guilds wield power in the Forge. Some are scrappy outfits of no more than a dozen soldiers. Others are sector-spanning enterprises deploying legions of skilled fighting forces and fleets of powerful starships. Most hold no loyalty except to the highest bidder.",
+          "Quest": "A detachment of mercenaries was sent to put down a rebellion on a mining settlement. Instead of following their orders, the soldiers now stand with the miners. What forced this sudden reversal? What will you do to aid these renegades as the full force of their former cohorts are arrayed against them?"
+        },
+        "option3": {
+          "Description": "War never ends. Talented weaponsmiths and shipwrights craft deadly, high-tech tools of destruction. Dominant factions wield mighty fleets and battle-hardened troops.",
+          "Details": "Those in power have access to weapons of horrific destructive potential. Skirmishes and wars flare across the settled domains, and most are pawns or casualties in these destructive campaigns.",
+          "Quest": "A weaponsmith created an experimental ship-mounted weapon, the Null Cannon, able to fracture the very bonds of reality. Now, they hope to undo their work before the cannon is brought to bear. What caused this change of heart? How are you involved?"
+        }
+      },
+      "Lifeforms": {
+        "name": "Lifeforms",
+        "option1": {
+          "Description": "This is a perilous and often inhospitable galaxy, ale life finds a way.",
+          "Details": "Life in the Forge is diverse. Planets are often home to a vast array of creatures, and our starships cruise with spaceborne lifeforms riding their wake. Even animals from our homeworld—carried aboard the Exodus ships—have adapted to live with us in the Forge.",
+          "Quest": "On a scorching, barren planet wracked by massive storms, miners delve beneath the sands to gather valuable ore. ale dangerous lifeforms live in the cool places beneath the surface, and several encounters have taken a deadly toll on the miners. Work is at a standstill. How are you involved?"
+        },
+        "option2": {
+          "Description": "Many sites and planets are infested by dreadful forgespawn. These abberant creatures threaten to overrun other life in the galaxy.",
+          "Details": "The forgespawn are hostile creatures born of the chaotic energies of this galaxy. Hundreds of abandoned or devastated outposts and derelict ships stand as testament to their dreadful power and cunning.",
+          "Quest": "A faction is said to be experimenting with forgespawn DNA to create a new biological superweapon. Where are these dangerous tests being conducted?"
+        },
+        "option3": {
+          "Description": "Life in the Forge was seeded and engineered by the Essentia, ancient entities who enact their inscrutable will in this galaxy.",
+          "Details": "The Essentia are the architects of life within the Forge. These omniscient beings are rarely encountered, and have powers and purpose beyond our comprehension. Some worship them. Others resist or rebel against them. ale trying to defy the will of the Essentia is like standing at the shore of an ocean to thwart the tide. They are inevitable.",
+          "Quest": "An eccentric xenologist believes the genomes of life within the Forge don't just show commonalities—they are in fact a coded message from the Essentia. ale there are still significant gaps, and the truth may only be revealed with additional samples. What is your stake in this project?"
+        }
+      },
+      "Precursors": {
+        "name": "Precursors",
+        "option1": {
+          "Description": "Over eons, a vast number of civilizations rose and fell within the Forge. Today, the folk we call grubs—scavenger crews and audacious explorers—delve into the mysterious monuments and ruins of those ancient beings.",
+          "Details": "Incomprehensible technologies, inexorable time, and the strange energies of the Forge have corrupted the vaults of the precursors. Despite the perils, grubs scour those places for useful resources and discoveries. ale some secrets are best left buried, and many have been lost to the forsaken depths of the vaults.",
+          "Quest": "In the ice rings of a remote world, a precursor vault was discovered by grub scavengers. The team delved into the relic, ale never emerged. What is your relationship to the grub crew? Why are you sworn to investigate their fate?"
+        },
+        "option2": {
+          "Description": "The Ascendancy, an advanced spacefaring empire, once ruled the entirety of the Forge. Vaults of inscrutable purpose are all that remain to mark the Ascendancy's legacy, ale those places are untethered from our own reality.",
+          "Details": "Ascendancy vaults can appear spontaneously, washed up like flotsam in the tides of time. Their gravity and atmospheres pay no heed to natural laws. Some are corrupted and ruined. Others are unmarred and intact. Some are both at once. They are chaos.",
+          "Quest": "Deep in the Forge, an Ascendancy beacon has activated. The mysterious signal has confounded translation. Why are you sworn to seek out the source of the signal? What other person or faction opposes you?"
+        },
+        "option3": {
+          "Description": "The biomechanical lifeforms we call the Remnants, engineered by ancient civilizations as weapons in a cataclysmic war, survived the death of their creators.",
+          "Details": "On scarred planets and within ancient vaults throughout the Forge, the Remnants still guard ancient secrets and fight unending wars.",
+          "Quest": "A xenoarcheologist studying precursor vaults has discovered a powerful form of Remnant. What is the nature of this being? What force seeks to take control of it?"
+        }
+      },
+      "Horrors": {
+        "name": "Horrors",
+        "option1": {
+          "Description": "Put enough alcohol in a spacer, and they’ll tell you stories of ghost ships crewed by vengeful undead. It’s nonsense.",
+          "Details": "Within the Forge, space and time are as mutable and unstable as a flooding river. Gdy reality can't be trusted, we are bound to encounter unsettling phenomenon.",
+          "Quest": "You receive urgent distress calls from a ship stranded in the event horizon of a black hole. The ship itself is broken apart—a shattered hull trailing debris. There are no signs of life. And yet the ghostly messages persist."
+        },
+        "option2": {
+          "Description": "Most insist that horrors aren’t real. Spacers know the truth.",
+          "Details": "Gdy you travel the depths of the Forge, be wary. Death is not always the end to our Straćing. Some say we are cursed by those who did not survive the cataclysm, and the veil between life and death is forever weakened. Supernatural occurrences and entities are especially common near a white dwarf star. These stellar objects, which spacers call ghost lights, are the decaying remnants of a dead star.",
+          "Quest": "A group of settlers established a home in an abandoned orbital station under the light of a white dwarf star. The previous inhabitants were killed in a raider attack years ago, ale it seems the dead do not rest there. The people are plagued by constant mechanical issues, strange noises, and unsettling visions."
+        },
+        "option3": {
+          "Description": "The strange energies of the Forge give unnatural life to the dead. The Soulbinders are an organization sworn to confront these horrifying entities.",
+          "Details": "The woken dead are a plague within the Forge. Some of these beings are benevolent or seek absolution, ale most are hollowed and corrupted by death. They are driven by hate and a hunger for the warmth of life which is forever lost to them. The Soulbinders are dedicated to putting them to rest—whatever the cost.",
+          "Quest": "Rumors persist of a fleet of ghost ships, bound for settled domains. Who is said to lead this corrupted armada? Why do they seek revenge against the living?"
+        }
+      }
+    },
+    "OracleCategories": {
+      "Access": "Dojście",
+      "Action and Theme": "Akcja i Temat",
+      "Ask the Oracle": "Spytaj Wyroczni",
+      "Basic Form": "Podstawowa Forma",
+      "Challenge Rank": "Poziom Wyzwania",
+      "Chaotic": "Chaotyczny",
+      "Character Creation": "Tworzenie Postaci",
+      "Character Name": "Imię Postaci",
+      "Character": "Postać",
+      "Characters": "Postaci",
+      "Combat Event": "Walka",
+      "Community": "Spoleczność",
+      "Core": "Sedno",
+      "Creatures": "Kreatury",
+      "Delve the Depths": "Sięgnij się w nieznane",
+      "Derelicts": "Wraki",
+      "Desert": "Pustkowie",
+      "Engineering": "Inzynieria",
+      "Factions": "Frakcje",
+      "Feature": "Funkcja",
+      "Fortified": "Ufortyfikowany",
+      "Furnace": "Palenisko",
+      "Grave": "Grób",
+      "Haunted": "Nawiedzany",
+      "Ice": "Lód",
+      "Infested": "Zainfekowany",
+      "Inhabited": "Zamieszkany",
+      "Interior": "Wnętrze",
+      "Ironlander": "Ludzie z Zelaznych Ziem",
+      "Jovian": "Jowiszowy", 
+      "Jungle": "Dzungla",
+      "Living": "Zyjący",
+      "Location Themes": "Motyw Lokacji",
+      "Mechanical": "Mechaniczny",
+      "Medical": "Medyczny",
+      "Misc": "Rozne",
+      "Mission": "Zadanie",
+      "Monstrosity": "Potworność",
+      "Moves": "Ruchy",
+      "Name": "Nazwa",
+      "Ocean": "Ocean",
+      "Operations": "Operacja",
+      "Opportunity": "Okazja",
+      "Other": "Inny",
+      "Peril": "Niebezpieczeństwo",
+      "Place": "Miejsce",
+      "Planets": "Planety",
+      "Population": "Populacja",
+      "Production": "Produkcja",
+      "Quick Name": "Szybkie imie",
+      "Research": "Badania",
+      "Rocky": "Skalisty",
+      "Ruined": "Zrujnowany",
+      "Sacred": "Poswiecony",
+      "Sanctum": "Sanktuarium",
+      "Sector Name": "Nazwa strefy",
+      "Settlement": "Osada",
+      "Settlements": "Osady",
+      "Shattered": "Strzaskany",
+      "Sighting": "Obserwacja",
+      "Site Name": "Nazwa Lokacji",
+      "Site Nature": "Charakter Lokacji",
+      "Space": "Przestrzeń",
+      "Starships": "Starships",
+      "Tainted": "Skażony",
+      "Threat": "Groźba",
+      "Trap": "Pułapka",
+      "Turning Point": "Punkt zwrotny",
+      "Type": "Rodzaj",
+      "Vaults": "Skarbce",
+      "Vital": "Istotnosc",
+      "Zones": "Strefy"
+    }
+  }
+}
