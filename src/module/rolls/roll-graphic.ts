@@ -54,6 +54,18 @@ export async function renderRollGraphic(
   renderData.actionTotalCapped = referenceRoll.actionTotalCapped
 
   renderData.challengeDice = referenceRoll.challengeDice
+  if (referenceRoll.finalChallengeDice) {
+    renderData.challengeDice = [
+      {
+        source: referenceRoll.challengeDice[0]?.source,
+        value: referenceRoll.finalChallengeDice[0],
+      },
+      {
+        source: referenceRoll.challengeDice[1]?.source,
+        value: referenceRoll.finalChallengeDice[1],
+      },
+    ]
+  }
   for (const c of renderData.challengeDice ?? []) {
     if (c.value === 1) c.minmax = 'min'
     if (c.value === 10) c.minmax = 'max'
