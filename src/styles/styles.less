@@ -13,6 +13,13 @@
 :root {
   scrollbar-width: thin;
   scrollbar-color: #444 rgba(0, 0, 0, 0.1);
+  --ironsworn-color-danger: hsl(0, 80%, 40%);
+  --ironsworn-color-danger-faded: hsl(0, 80%, 40%);
+  --ironsworn-color-warning: hsl(55, 100%, 50%);
+  --ironsworn-color-warning-faded: hsl(55, 100%, 50%);
+  --ironsworn-color-success: hsl(200, 80%, 40%);
+  --ironsworn-color-success-faded: hsl(200, 80%, 40%);
+  --ironsworn-dice-background: #afafaf;
 }
 
 .grid {
@@ -532,12 +539,18 @@ hr {
     font-variant: all-small-caps;
   }
 
+  [class*=' isiconbg-'],
+  [class^='isiconbg-'] {
+    &:before {
+      background-color: var(--ironsworn-dice-background);
+    }
+  }
+
   .roll {
     width: 24px;
     line-height: 24px;
     display: inline-block;
     margin-right: 1px;
-    background-image: url('../../icons/svg/d6-grey.svg');
     background-repeat: no-repeat;
     background-size: 24px 24px;
     font-weight: bold;
@@ -548,7 +561,9 @@ hr {
     }
 
     &.d6 {
-      background-image: url('../../icons/svg/d6-grey.svg');
+      background-color: var(--ironsworn-dice-background);
+      mask-image: url('/assets/icons/d6-blank.svg');
+      content: '';
     }
 
     &.d8 {
@@ -556,7 +571,9 @@ hr {
     }
 
     &.d10 {
-      background-image: url('../../icons/svg/d10-grey.svg');
+      background-color: var(--ironsworn-dice-background);
+      mask-image: url('/assets/icons/d10-blank.svg');
+      content: '';
     }
 
     &.d12 {
@@ -567,22 +584,38 @@ hr {
       background-image: url('../../icons/svg/d20-grey.svg');
     }
 
-    &.min,
+    @dice-glow-offset: 0px 0px 5px;
+
+    &.min:not(.challenge),
     &.challenge.max {
-      color: #aa0200;
-      filter: drop-shadow(1px 1px 4px darkred);
+      color: var(--ironsworn-color-danger) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-danger-faded)
+      );
     }
 
-    &.max,
+    &.max:not(.challenge),
     &.challenge.min {
-      color: #18520b;
-      filter: drop-shadow(1px 1px 4px darkgreen);
+      color: var(--ironsworn-color-success) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-success-faded)
+      );
     }
-  }
 
-  del .roll {
-    text-decoration: line-through;
-    filter: drop-shadow(1px 1px 4px orange);
+    &.canceled {
+      color: var(--ironsworn-color-warning) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-warning-faded)
+      ) !important;
+    }
+
+    del .roll {
+      text-decoration: line-through;
+      color: var(--ironsworn-color-warning) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-warning-faded)
+      ) !important;
+    }
   }
 }
 
