@@ -84,8 +84,13 @@ export class IronswornRollChatMessage {
       const msg = game.messages?.get(this.roll.chatMessageId)
       return msg?.update({ content })
     } else {
+      const speaker = ChatMessage.getSpeaker()
+      if (this.actor) {
+        speaker.actor = this.actor.id
+        speaker.alias = this.actor.name || undefined
+      }
       const messageData = {
-        speaker: ChatMessage.getSpeaker(),
+        speaker,
         content,
         type: CONST.CHAT_MESSAGE_TYPES.ROLL,
         roll: this.roll.roll,
