@@ -7,12 +7,28 @@ import { SFMoveDataProperties } from '../item/itemtypes'
 import { ROLL_OUTCOME } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 
-function computeRollOutcome(a: number, c1: number, c2: number): ROLL_OUTCOME {
-  if (a <= Math.min(c1, c2)) return ROLL_OUTCOME.MISS
-  if (a > Math.max(c1, c2)) return ROLL_OUTCOME.STRONG_HIT
+/**
+ * Computes the outcome of an Ironsworn action roll or progress roll.
+ * @param score The score (e.g. action score or progress score) to compare to the challenge dice.
+ * @param challengeDie1 The value of the first challenge die.
+ * @param challengeDie2 The value of the second challenge die.
+ */
+function computeRollOutcome(
+  score: number,
+  challengeDie1: number,
+  challengeDie2: number
+): ROLL_OUTCOME {
+  if (score <= Math.min(challengeDie1, challengeDie2)) return ROLL_OUTCOME.MISS
+  if (score > Math.max(challengeDie1, challengeDie2))
+    return ROLL_OUTCOME.STRONG_HIT
   return ROLL_OUTCOME.WEAK_HIT
 }
 
+/**
+ * Will burning momentum improve the outcome of an Ironsworn action roll?
+ * @param rawOutcome The outcome before burning momentum.
+ * @param momentumOutcome The outcome after burning momentum.
+ */
 function momentumBurnWouldUpgrade(
   rawOutcome: ROLL_OUTCOME | undefined,
   momentumOutcome: ROLL_OUTCOME
@@ -161,12 +177,12 @@ export class IronswornRollChatMessage {
       outcomeReplacementReason:
         this.roll.postRollOptions.replacedOutcome?.source,
     } as any
-    const keys = {
+    const defOutcomeKeys = {
       [ROLL_OUTCOME.MISS]: 'Miss',
       [ROLL_OUTCOME.WEAK_HIT]: 'Weak Hit',
       [ROLL_OUTCOME.STRONG_HIT]: 'Strong Hit',
     }
-    const key = keys[theOutcome]
+    const key = defOutcomeKeys[theOutcome]
     let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
     if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
       dfOutcome = dfOutcome['With a Match']
