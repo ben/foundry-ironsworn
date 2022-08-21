@@ -124,9 +124,6 @@ export interface PostRollOptions {
   replacedOutcome?: SourcedValue<ROLL_OUTCOME>
 }
 
-/**
- * For use in constructing user macros.
- */
 export class IronswornRoll {
   rawActionDieValue?: number
   rawChallengeDiceValues?: number[]
@@ -143,6 +140,7 @@ export class IronswornRoll {
     this.preRollOptions = preRollOpts
     this.postRollOptions = postRollOpts
   }
+
   static progress(source: string, progressScore: number): IronswornRoll {
     const r = new IronswornRoll()
     r.preRollOptions = {
