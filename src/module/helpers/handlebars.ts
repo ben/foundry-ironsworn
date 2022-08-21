@@ -21,7 +21,7 @@ function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
   const maxRoll = d?.faces || ROLL_SCORE_MAX
   return [
     d?.constructor.name.toLowerCase(),
-    d && 'd' + d.faces,
+    d && `isiconbg-d${d.faces}-blank`,
     (d?.total || r.result) <= 1 ? 'min' : null,
     (d?.total || r.result) == maxRoll ? 'max' : null,
     theOpts.type,

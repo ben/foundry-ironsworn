@@ -16,7 +16,6 @@
           />
           <progress-box
             :item="item"
-            :actor="actor"
             :showStar="true"
             @completed="progressCompleted"
           />
@@ -57,7 +56,7 @@
                 @sortUp="completedSortUp"
                 @sortDown="completedSortDown"
               />
-              <progress-box :item="item" :actor="actor" :showStar="true" />
+              <progress-box :item="item" :showStar="true" />
             </div>
           </transition-group>
         </div>

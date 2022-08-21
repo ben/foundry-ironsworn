@@ -212,7 +212,7 @@ export class IronswornChatCard {
       `
         <p class="flexrow" style="align-items: center;">
           <span>${oracle.name}</span>
-          <span class="roll die d10" style="flex: 0 0 25px;">${rollTotal}</span>
+          <span class="roll die d10 isiconbg-d10-blank" style="flex: 0 0 25px;">${rollTotal}</span>
         </p>
 
         <h4 class="dice-formula">
@@ -241,7 +241,7 @@ export class IronswornChatCard {
       `
         <p class="flexrow" style="align-items: center;">
           <span>${oracle.name}</span>
-          <span class="roll die d10" style="flex: 0 0 25px;">${rollTotal}</span>
+          <span class="roll die d10 isiconbg-d10-blank" style="flex: 0 0 25px;">${rollTotal}</span>
         </p>
 
         <h4 class="dice-formula">
@@ -279,7 +279,7 @@ export class IronswornChatCard {
       `
         <p class="flexrow" style="align-items: center;">
           <span>${oracle.name}</span>
-          <span class="roll die d10" style="flex: 0 0 25px;">${rollTotal}</span>
+          <span class="roll die d10 isiconbg-d10-blank" style="flex: 0 0 25px;">${rollTotal}</span>
         </p>
 
         <h4 class="dice-formula">

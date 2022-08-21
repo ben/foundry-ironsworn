@@ -10,7 +10,6 @@
         <div class="flexrow" style="flex-wrap: nowrap">
           <div class="flexcol stack momentum">
             <stack
-              :actor="actor"
               stat="momentum"
               :top="10"
               :bottom="-6"
@@ -35,11 +34,11 @@
       <div class="flexcol">
         <!-- Attributes -->
         <div class="flexrow stats">
-          <attr-box :actor="actor" attr="edge"></attr-box>
-          <attr-box :actor="actor" attr="heart"></attr-box>
-          <attr-box :actor="actor" attr="iron"></attr-box>
-          <attr-box :actor="actor" attr="shadow"></attr-box>
-          <attr-box :actor="actor" attr="wits"></attr-box>
+          <attr-box attr="edge"></attr-box>
+          <attr-box attr="heart"></attr-box>
+          <attr-box attr="iron"></attr-box>
+          <attr-box attr="shadow"></attr-box>
+          <attr-box attr="wits"></attr-box>
         </div>
 
         <tabs style="margin-top: 0.5rem">
@@ -57,15 +56,11 @@
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat
-            class="nogrow vertical-v2 text"
-            :actor="actor"
-            attr="health"
-          >
+          <btn-rollstat class="nogrow vertical-v2 text" attr="health">
             {{ $t('IRONSWORN.Health') }}
           </btn-rollstat>
           <div class="flexcol stack health">
-            <stack :actor="actor" stat="health" :top="5" :bottom="0"></stack>
+            <stack stat="health" :top="5" :bottom="0"></stack>
           </div>
         </div>
 
@@ -73,15 +68,11 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat
-            class="nogrow vertical-v2 text"
-            :actor="actor"
-            attr="spirit"
-          >
+          <btn-rollstat class="nogrow vertical-v2 text" attr="spirit">
             {{ $t('IRONSWORN.Spirit') }}
           </btn-rollstat>
           <div class="flexcol stack spirit">
-            <stack :actor="actor" stat="spirit" :top="5" :bottom="0"></stack>
+            <stack stat="spirit" :top="5" :bottom="0"></stack>
           </div>
         </div>
 
@@ -89,15 +80,11 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat
-            class="nogrow vertical-v2 text"
-            :actor="actor"
-            attr="supply"
-          >
+          <btn-rollstat class="nogrow vertical-v2 text" attr="supply">
             {{ $t('IRONSWORN.Supply') }}
           </btn-rollstat>
           <div class="flexcol stack supply">
-            <stack :actor="actor" stat="supply" :top="5" :bottom="0"></stack>
+            <stack stat="supply" :top="5" :bottom="0"></stack>
           </div>
         </div>
       </div>

@@ -1,43 +1,47 @@
 <article class="dice-roll ironsworn-roll">
   <section class="dice-formula">
-    {{!-- The action die or progress score --}}
-    {{#if actionDieCanceledByNegativeMomentum}}<del>{{/if}}
-      <span class="action roll d6 {{actionMinMax}}" title="{{computedActionDie.source}}">
-        {{#if computedActionDie.value}}
-        {{computedActionDie.value}}
+      {{!-- The action die or progress score --}}
+      {{#if actionDieCanceledByNegativeMomentum}}
+        <del>
+      {{/if}}
+        <span class="action roll d6 isiconbg-d6-blank {{actionMinMax}}" title="{{computedActionDie.source}}">
+          {{#if computedActionDie.value}}
+          {{computedActionDie.value}}
+          {{else}}
+          &nbsp;
+          {{/if}}
+        </span>
+      {{#if actionDieCanceledByNegativeMomentum}}
+        </del>
+      {{/if}}
+
+      {{#each adds}}
+      &plus;
+      <span title="{{source}}">{{value}}</span>
+      {{/each}}
+
+      {{#if actionTotal}}
+      &equals;
+      <strong>
+        {{#if actionTotalCapped}}
+        <span title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionTotal}}</span>
+        {{else}}
+        {{actionTotal}}
+        {{/if}}
+      </strong>
+      {{/if}}
+
+      {{localize 'IRONSWORN.Versus'}}
+
+      {{#each challengeDice}}
+      <span class="roll die isiconbg-d10-blank d10 challenge {{minmax}}" title="{{source}}">
+        {{#if value}}
+        {{value}}
         {{else}}
         &nbsp;
         {{/if}}
       </span>
-      {{#if actionDieCanceledByNegativeMomentum}}</del>{{/if}}
-
-    {{#each adds}}
-    &plus;
-    <span title="{{source}}">{{value}}</span>
-    {{/each}}
-
-    {{#if actionScore}}
-    &equals;
-    <strong>
-      {{#if actionScoreCapped}}
-      <span title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionScore}}</span>
-      {{else}}
-      {{actionScore}}
-      {{/if}}
-    </strong>
-    {{/if}}
-
-    {{localize 'IRONSWORN.Versus'}}
-
-    {{#each challengeDice}}
-    <span class="roll die d10 challenge {{minmax}}" title="{{source}}">
-      {{#if value}}
-      {{value}}
-      {{else}}
-      &nbsp;
-      {{/if}}
-    </span>
-    {{/each}}
+      {{/each}}
 
     {{#if outcome}}
     &equals;

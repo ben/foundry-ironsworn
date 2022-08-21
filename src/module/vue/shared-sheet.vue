@@ -20,7 +20,7 @@
     </section>
 
     <section v-if="hasBonds" class="sheet-area nogrow">
-      <bonds :actor="actor" />
+      <bonds />
     </section>
 
     <active-completed-progresses />
