@@ -70,7 +70,6 @@ function prerollOptionsWithFormData(
   const opts = cloneDeep(base)
 
   const valMap: Record<string, string> = form
-    // "in particular the element cannot be disabled and must contain a name attribute"
     .serializeArray()
     .reduce((coll, { name, value }) => ({ ...coll, [name]: value }), {})
 
