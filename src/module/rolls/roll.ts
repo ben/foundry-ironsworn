@@ -143,22 +143,6 @@ export class IronswornRoll {
     this.preRollOptions = preRollOpts
     this.postRollOptions = postRollOpts
   }
-  static rollPlusStat(
-    statKey: string,
-    statValue: number,
-    adds?: number
-  ): IronswornRoll {
-    const r = new IronswornRoll()
-    r.preRollOptions = {
-      stat: {
-        source: statKey,
-        value: statValue,
-      },
-      adds,
-    }
-    return r
-  }
-
   static progress(source: string, progressScore: number): IronswornRoll {
     const r = new IronswornRoll()
     r.preRollOptions = {
