@@ -1,34 +1,42 @@
-import { range } from 'lodash'
+import { compact, range } from 'lodash'
 import { RANKS } from '../constants'
 import { capitalize } from './util'
 import { marked } from 'marked'
 import {
+  ACTION_DICE_ROLLED,
   ACTION_DIE_SIDES,
+  CHALLENGE_DICE_ROLLED,
   CHALLENGE_DIE_SIDES,
-  ROLL_SCORE_MAX,
+  DIE_LOWEST_FACE,
+  SCORE_MAX,
 } from '../rolls/roll.js'
 
 interface RollClassesOptions {
   canceled: boolean
   type: 'action' | 'challenge' | undefined
 }
-function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
+function classesForRoll(
+  r: Roll<RollClassesOptions>,
+  opts?: Partial<RollClassesOptions>
+) {
   const theOpts = {
     ...{ canceled: false, type: undefined },
     ...opts,
   }
   const d = r.dice[0]
-  const maxRoll = d?.faces || ROLL_SCORE_MAX
-  return [
-    d?.constructor.name.toLowerCase(),
-    d && `isiconbg-d${d.faces}-blank`,
-    (d?.total || r.result) <= 1 ? 'min' : null,
-    (d?.total || r.result) == maxRoll ? 'max' : null,
-    theOpts.type,
-    theOpts.canceled ? 'canceled' : null,
-  ]
-    .filter((x) => x)
-    .join(' ')
+  const maxRoll = d?.faces || SCORE_MAX
+  const cssClasses = new DOMTokenList()
+  cssClasses.add(
+    ...compact([
+      d?.constructor.name.toLowerCase(),
+      d && `isiconbg-d${d.faces}-blank`,
+      (d?.total || r.result) <= DIE_LOWEST_FACE ? 'min' : null,
+      (d?.total || r.result) == maxRoll ? 'max' : null,
+      theOpts.type,
+      theOpts.canceled ? 'canceled' : null,
+    ])
+  )
+  return cssClasses.toString()
 }
 
 const actionRoll = (roll) =>
@@ -60,9 +68,10 @@ export class IronswornHandlebarsHelpers {
       if (
         (this.roll.dice.length === 3 &&
           this.roll.dice.filter((x) => x.faces === ACTION_DIE_SIDES).length ===
-            1 &&
+            ACTION_DICE_ROLLED &&
           this.roll.dice.filter((x) => x.faces === CHALLENGE_DIE_SIDES)
-            .length === 2) ||
+            .length === CHALLENGE_DICE_ROLLED) ||
+        // TODO: extract pattern, standardize as constant
         this.roll.formula.match(/{\d+,1?d10,1?d10}/)
       ) {
         return options.fn(this)

@@ -7,13 +7,13 @@ import { SFMoveDataProperties } from '../item/itemtypes'
 import { ROLL_OUTCOME } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 
-function resolveIronswornRoll(a: number, c1: number, c2: number): ROLL_OUTCOME {
+function computeRollOutcome(a: number, c1: number, c2: number): ROLL_OUTCOME {
   if (a <= Math.min(c1, c2)) return ROLL_OUTCOME.MISS
   if (a > Math.max(c1, c2)) return ROLL_OUTCOME.STRONG_HIT
   return ROLL_OUTCOME.WEAK_HIT
 }
 
-function momentumBurnIsValid(
+function momentumBurnWouldUpgrade(
   rawOutcome: ROLL_OUTCOME | undefined,
   momentumOutcome: ROLL_OUTCOME
 ) {
@@ -32,12 +32,12 @@ function momentumBurnIsValid(
 
 type RollOutcomeKey = `${ROLL_OUTCOME}` | `${ROLL_OUTCOME}_match`
 
-function outcomeText(outcome: ROLL_OUTCOME, match: boolean): RollOutcomeKey {
+function outcomeText(outcome: ROLL_OUTCOME, match: boolean) {
   let key: RollOutcomeKey = outcome
   if (match) {
     key += '_match'
   }
-  return game.i18n.localize('IRONSWORN.' + key) as RollOutcomeKey
+  return game.i18n.localize('IRONSWORN.' + key)
 }
 
 export class IronswornRollChatMessage {
@@ -73,7 +73,7 @@ export class IronswornRollChatMessage {
 
     await this.actor.burnMomentum()
     this.roll.postRollOptions.replacedOutcome = {
-      value: resolveIronswornRoll(momentum, c1, c2),
+      value: computeRollOutcome(momentum, c1, c2),
       source: game.i18n.localize('IRONSWORN.MomentumBurnt'),
     }
     return this.createOrUpdate()
@@ -141,8 +141,7 @@ export class IronswornRollChatMessage {
     // FIXME: oof. so, "roll" is a tricky word since in english it can function as a verb or a noun. it gets even more complicated when you introduce grammatical gender and word order.
     // ultimately, each stat needs own "roll +X" string - the verb 'roll' might be conjugated differently in languages with grammatical gender (a bit under half of them), or in languages that use a word order other than subject-verb-object (a bit *over* half of them)
     // it might be possible to infer this from existing translations of e.g. assets.
-    // Things with custom labels will still need
-    // Roll +{X} for some things will be tricky, e.g. assets where the user sets the label
+    // Things with custom labels will still need a roll +{x} fallback, tho
     if (plusStat.startsWith('IRONSWORN.')) plusStat = stat.source
     return { title: `${game.i18n.localize('IRONSWORN.Roll')} +${plusStat}` }
   }
@@ -191,12 +190,14 @@ export class IronswornRollChatMessage {
     if (c1 === undefined || c2 === undefined) return {}
 
     const momentum = this.actor.data.data.momentum
-    const momentumOutcome = resolveIronswornRoll(momentum, c1, c2)
+    const momentumOutcome = computeRollOutcome(momentum, c1, c2)
 
     // compare this.roll.rawOutcome?.value
     // and momentumOutcome
 
-    switch (momentumBurnIsValid(this.roll.rawOutcome?.value, momentumOutcome)) {
+    switch (
+      momentumBurnWouldUpgrade(this.roll.rawOutcome?.value, momentumOutcome)
+    ) {
       case true:
         return {
           possibleMomentumBurn: outcomeText(momentumOutcome, c1 === c2),

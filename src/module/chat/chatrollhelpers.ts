@@ -1,3 +1,5 @@
+// this file is basically deprecated. use cards.ts instead
+
 import { Evaluated } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll.js'
 import { compact, sortBy } from 'lodash'
 import { marked } from 'marked'
@@ -17,7 +19,7 @@ import {
   ACTION_DIE_SIDES,
   CHALLENGE_DIE_SIDES,
   ROLL_OUTCOME,
-  ROLL_SCORE_MAX,
+  SCORE_MAX,
 } from '../rolls/roll'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 
@@ -74,9 +76,9 @@ function calculateDieTotals(roll: Roll): DieTotals {
   // Cap action at 10
   let actionScore = actionDieRoll.total as number
   let actionScoreCapped = false
-  if (actionScore > ROLL_SCORE_MAX) {
+  if (actionScore > SCORE_MAX) {
     actionScoreCapped = true
-    actionScore = ROLL_SCORE_MAX
+    actionScore = SCORE_MAX
   }
 
   const canceledActionDie = new Roll(
