@@ -117,7 +117,7 @@ function calculateHitTypeText(type: ROLL_OUTCOME, match: boolean) {
       match ? 'IRONSWORN.Strong_hit_match' : 'IRONSWORN.Strong_hit'
     )
   }
-  return game.i18n.localize('IRONSWORN.WeakHit')
+  return game.i18n.localize('IRONSWORN.Weak_hit')
 }
 
 function calculateCardTitle(params: RollMessageParams) {

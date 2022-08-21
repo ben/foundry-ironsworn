@@ -26,6 +26,7 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
   </ul>
   {{/if}}
   {{/if}}
+  {{!-- TODO: consider doing this as a <figure> + <caption> ? --}}
   <div class="dice-roll ironsworn-roll">
     {{{graphic}}}
   </div>
@@ -71,8 +72,8 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
       </label>
       <select name="automaticOutcomeValue">
         <option value="MISS">{{localize 'IRONSWORN.Miss'}}</option>
-        <option value="WEAK">{{localize 'IRONSWORN.WeakHit'}}</option>
-        <option value="STRONG">{{localize 'IRONSWORN.Strong_hit'}}</option>
+        <option value="WEAK_HIT">{{localize 'IRONSWORN.Weak_hit'}}</option>
+        <option value="STRONG_HIT">{{localize 'IRONSWORN.Strong_hit'}}</option>
       </select>
     </fieldset>
 
