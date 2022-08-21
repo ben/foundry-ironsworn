@@ -22,9 +22,14 @@
 
       {{#if actionTotal}}
       &equals;
+      <style>
+        .action-score-capped {
+          text-decoration: dotted underline;
+        }
+      </style>
       <strong>
         {{#if actionTotalCapped}}
-        <span title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionTotal}}</span>
+        <span class="action-score-capped" title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionTotal}}</span>
         {{else}}
         {{actionTotal}}
         {{/if}}
