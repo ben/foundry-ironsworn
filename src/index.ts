@@ -70,7 +70,7 @@ Hooks.once('init', async () => {
 
   // Register our own sheets
   Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
-    label: 'Character sheet v2',
+    label: 'Ironsworn character sheet',
     types: ['character'],
     makeDefault: true,
   })
