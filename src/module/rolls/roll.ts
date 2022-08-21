@@ -8,7 +8,7 @@
 import { compact, pick, range, sum } from 'lodash'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
-import { IronswornRollChatMessage } from './chat-message'
+import { IronswornRollChatMessage, computeRollOutcome } from './chat-message'
 
 /**
  * The maximum action score (for Ironsworn action rolls) or progress score (for Ironsworn progress rolls).
@@ -41,12 +41,27 @@ export const DIE_LOWEST_FACE = 1
 export const ACTION_DIE_STR = `d${ACTION_DIE_SIDES}`
 export const CHALLENGE_DIE_STR = `d${CHALLENGE_DIE_SIDES}`
 
+/**
+ * Enumerates Ironsworn roll outcomes.
+ * The key corresponds to the i18n key that labels this outcome.
+ * The value is equal to the number of challenge dice beaten by the action score or progress score.
+ */
 export enum ROLL_OUTCOME {
-  MISS = 'Miss',
-  WEAK_HIT = 'Weak_hit',
-  STRONG_HIT = 'Strong_hit',
+  /**
+   * **Miss:** The score beats neither challenge die.
+   */
+  Miss = 0,
+  /**
+   * **Weak hit:** The score beats one challenge die.
+   */
+  Weak_hit = 1,
+  /**
+   * **Strong hit:** The score beats both challenge dice.
+   */
+  Strong_hit = 2,
 }
 
+// TODO: consider differentiating `source` from a new prop called e.g. `label`; it's pulling double duty now as both as something being tested for internal logic *and* as a user-facing label. even if those are mutually exclusive categories right now, it might be risky in the long term to conflate them.
 export type SourcedValue<T = number> = {
   source: string
   value: T
@@ -338,16 +353,16 @@ export class IronswornRoll {
   }
 
   // Either [N,N] or undefined
-  get finalChallengeDice(): undefined | number[] {
+  get finalChallengeDice(): undefined | [number, number] {
     const replaced = compact([
       this.postRollOptions.replacedChallenge1,
       this.postRollOptions.replacedChallenge2,
     ])
     if (replaced.length === 2) {
-      return replaced.map((x) => x.value)
+      return replaced.map((x) => x.value) as [number, number]
     }
     if (this.rawChallengeDiceValues?.length === 2) {
-      return this.rawChallengeDiceValues
+      return this.rawChallengeDiceValues as [number, number]
     }
     return undefined
   }
@@ -366,9 +381,7 @@ export class IronswornRoll {
       return undefined
 
     const [c1, c2] = this.finalChallengeDice
-    let outcome = ROLL_OUTCOME.WEAK_HIT
-    if (this.actionScore <= Math.min(c1, c2)) outcome = ROLL_OUTCOME.MISS
-    if (this.actionScore > Math.max(c1, c2)) outcome = ROLL_OUTCOME.STRONG_HIT
+    const outcome = computeRollOutcome(this.actionScore, c1, c2)
     return {
       value: outcome,
       source: game.i18n.localize('IRONSWORN.Roll'),

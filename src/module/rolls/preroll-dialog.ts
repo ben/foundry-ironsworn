@@ -69,11 +69,14 @@ function prerollOptionsWithFormData(
 ): PreRollOptions {
   const opts = cloneDeep(base)
 
-  const valMap: Record<string, string> = form
+  const valMap: Record<string, number> = form
     .serializeArray()
-    .reduce((coll, { name, value }) => ({ ...coll, [name]: value }), {})
+    .reduce(
+      (coll, { name, value }) => ({ ...coll, [name]: parseInt(value, 10) }),
+      {}
+    )
 
-  opts.adds = parseInt(valMap.adds || '0')
+  opts.adds = valMap.adds
 
   if (valMap.automaticOutcome) {
     opts.automaticOutcome = {
@@ -84,13 +87,13 @@ function prerollOptionsWithFormData(
   if (valMap.presetActionDie) {
     opts.presetActionDie = {
       source: 'set manually',
-      value: parseInt(valMap.presetActionDieValue || '0', 10),
+      value: valMap.presetActionDieValue,
     }
   }
   if (valMap.extraChallengeDice) {
     opts.extraChallengeDice = {
       source: 'set manually',
-      value: parseInt(valMap.extraChallengeDiceValue || '0', 10),
+      value: valMap.extraChallengeDiceValue,
     }
   }
 
@@ -113,6 +116,7 @@ export class IronswornPrerollDialog extends Dialog<
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
+      // FIXME: 'dialog' class may be unnecessary since the parent object will reliably have [role=dialog] selector
       classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
       width: 500,
     })

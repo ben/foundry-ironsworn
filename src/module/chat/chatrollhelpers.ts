@@ -1,4 +1,4 @@
-// this file is basically deprecated. use cards.ts instead
+// this file is basically deprecated. use rolls/chat-message.ts instead
 
 import { Evaluated } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll.js'
 import { compact, sortBy } from 'lodash'
@@ -102,17 +102,17 @@ function resolveRollOutcome(
   challengeDie1: number,
   challengeDie2: number
 ): ROLL_OUTCOME {
-  if (score <= Math.min(challengeDie1, challengeDie2)) return ROLL_OUTCOME.MISS
+  if (score <= Math.min(challengeDie1, challengeDie2)) return ROLL_OUTCOME.Miss
   if (score > Math.max(challengeDie1, challengeDie2))
-    return ROLL_OUTCOME.STRONG_HIT
-  return ROLL_OUTCOME.WEAK_HIT
+    return ROLL_OUTCOME."Strong Hit"
+  return ROLL_OUTCOME."Weak Hit"
 }
 
 function calculateHitTypeText(type: ROLL_OUTCOME, match: boolean) {
-  if (type === ROLL_OUTCOME.MISS) {
+  if (type === ROLL_OUTCOME.Miss) {
     return game.i18n.localize(match ? 'IRONSWORN.Miss_match' : 'IRONSWORN.Miss')
   }
-  if (type === ROLL_OUTCOME.STRONG_HIT) {
+  if (type === ROLL_OUTCOME.ST"Strong Hit"{
     return game.i18n.localize(
       match ? 'IRONSWORN.Strong_hit_match' : 'IRONSWORN.Strong_hit'
     )
@@ -181,12 +181,11 @@ function calculateMoveResultText(
   if (!move) return undefined
 
   switch (type) {
-    case ROLL_OUTCOME.MISS:
+    case ROLL_OUTCOME.Miss:
       return move.Miss
-    case ROLL_OUTCOME.WEAK_HIT:
+    case ROLL_OUTCOME."Weak Hit":
       return move.Weak
-    case ROLL_OUTCOME.STRONG_HIT:
-      return move.Strong
+    case ROLL_OUTCOME.STRO"Strong Hit"    return move.Strong
   }
 }
 
@@ -197,9 +196,9 @@ function calculateSFMoveResultText(
 ) {
   const data = move.data as SFMoveDataProperties
   const outcomeKey = {
-    [ROLL_OUTCOME.MISS]: 'Miss',
-    [ROLL_OUTCOME.WEAK_HIT]: 'Weak Hit',
-    [ROLL_OUTCOME.STRONG_HIT]: 'Strong Hit',
+    [ROLL_OUTCOME.Miss]: 'Miss',
+    [ROLL_OUTCOME."Weak Hit"]: 'Weak Hit',
+    [ROLL_OUTCOME.STRONG"Strong Hit"rong Hit',
   }[type]
   let outcome = data.data.Outcomes?.[outcomeKey]
   if (match) outcome = outcome?.['With a Match'] ?? outcome

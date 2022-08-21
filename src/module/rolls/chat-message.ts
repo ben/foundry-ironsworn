@@ -1,5 +1,5 @@
 import { IOutcomeInfo } from 'dataforged'
-import { capitalize, compact } from 'lodash'
+import { capitalize, compact, isUndefined } from 'lodash'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
@@ -13,15 +13,14 @@ import { renderRollGraphic } from './roll-graphic'
  * @param challengeDie1 The value of the first challenge die.
  * @param challengeDie2 The value of the second challenge die.
  */
-function computeRollOutcome(
+export function computeRollOutcome(
   score: number,
   challengeDie1: number,
   challengeDie2: number
 ): ROLL_OUTCOME {
-  if (score <= Math.min(challengeDie1, challengeDie2)) return ROLL_OUTCOME.MISS
-  if (score > Math.max(challengeDie1, challengeDie2))
-    return ROLL_OUTCOME.STRONG_HIT
-  return ROLL_OUTCOME.WEAK_HIT
+  return [challengeDie1, challengeDie2].filter(
+    (challengeDie) => score > challengeDie
+  ).length
 }
 
 /**
@@ -29,31 +28,30 @@ function computeRollOutcome(
  * @param rawOutcome The outcome before burning momentum.
  * @param momentumOutcome The outcome after burning momentum.
  */
-function momentumBurnWouldUpgrade(
+export function momentumBurnWouldUpgrade(
   rawOutcome: ROLL_OUTCOME | undefined,
   momentumOutcome: ROLL_OUTCOME
 ) {
-  switch (true) {
-    case rawOutcome === ROLL_OUTCOME.MISS &&
-      momentumOutcome === ROLL_OUTCOME.WEAK_HIT:
-    case rawOutcome === ROLL_OUTCOME.MISS &&
-      momentumOutcome === ROLL_OUTCOME.STRONG_HIT:
-    case rawOutcome === ROLL_OUTCOME.WEAK_HIT &&
-      momentumOutcome === ROLL_OUTCOME.STRONG_HIT:
-      return true
-    default:
-      return false
-  }
+  return rawOutcome ? momentumOutcome > rawOutcome : false
 }
 
-type RollOutcomeKey = `${ROLL_OUTCOME}` | `${ROLL_OUTCOME}_match`
+type i18nOutcomeKey =
+  | `${keyof typeof ROLL_OUTCOME}`
+  | `${keyof typeof ROLL_OUTCOME}_match`
 
-function outcomeText(outcome: ROLL_OUTCOME, match: boolean) {
-  let key: RollOutcomeKey = outcome
+export function outcomeKey(
+  outcome: ROLL_OUTCOME,
+  match: boolean
+): i18nOutcomeKey {
+  let key: i18nOutcomeKey = ROLL_OUTCOME[outcome] as keyof typeof ROLL_OUTCOME
   if (match) {
     key += '_match'
   }
-  return game.i18n.localize('IRONSWORN.' + key)
+  return key as i18nOutcomeKey
+}
+
+export function outcomeText(outcome: ROLL_OUTCOME, match: boolean) {
+  return game.i18n.localize('IRONSWORN.' + outcomeKey(outcome, match))
 }
 
 export class IronswornRollChatMessage {
@@ -177,12 +175,12 @@ export class IronswornRollChatMessage {
       outcomeReplacementReason:
         this.roll.postRollOptions.replacedOutcome?.source,
     } as any
-    const defOutcomeKeys = {
-      [ROLL_OUTCOME.MISS]: 'Miss',
-      [ROLL_OUTCOME.WEAK_HIT]: 'Weak Hit',
-      [ROLL_OUTCOME.STRONG_HIT]: 'Strong Hit',
+    const dfOutcomeKeys = {
+      [ROLL_OUTCOME.Miss]: 'Miss',
+      [ROLL_OUTCOME.Weak_hit]: 'Weak Hit',
+      [ROLL_OUTCOME.Strong_hit]: 'Strong Hit',
     }
-    const key = defOutcomeKeys[theOutcome]
+    const key = dfOutcomeKeys[theOutcome]
     let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
     if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
       dfOutcome = dfOutcome['With a Match']
@@ -206,21 +204,15 @@ export class IronswornRollChatMessage {
     if (c1 === undefined || c2 === undefined) return {}
 
     const momentum = this.actor.data.data.momentum
+    const rawOutcome = this.roll.rawOutcome?.value
     const momentumOutcome = computeRollOutcome(momentum, c1, c2)
 
-    // compare this.roll.rawOutcome?.value
-    // and momentumOutcome
-
-    switch (
-      momentumBurnWouldUpgrade(this.roll.rawOutcome?.value, momentumOutcome)
-    ) {
-      case true:
-        return {
-          possibleMomentumBurn: outcomeText(momentumOutcome, c1 === c2),
-        }
-      default:
-        return {}
+    if (!isUndefined(rawOutcome) && momentumOutcome > rawOutcome) {
+      return {
+        possibleMomentumBurn: outcomeText(momentumOutcome, c1 === c2),
+      }
     }
+    return {}
   }
 
   private async oraclesData(): Promise<any> {

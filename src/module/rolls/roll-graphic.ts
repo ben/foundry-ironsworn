@@ -14,14 +14,16 @@ type RenderData = {
   adds: SourcedValue<number | string>[]
   computedActionDie?: SourcedValue<number | string>
   actionIsDie?: boolean
-  actionMinMax?: string
+  actionMinMax?: 'min' | 'max' | undefined
   actionScore?: number
   actionScoreCapped?: boolean
   actionDieCanceledByNegativeMomentum?: boolean
 
-  challengeDice: Partial<SourcedValue & { minmax?: string }>[]
+  challengeDice: Partial<
+    SourcedValue & { minmax?: 'min' | 'max' | undefined }
+  >[]
 
-  outcome?: SourcedValue<string>
+  outcome?: SourcedValue<ROLL_OUTCOME>
 }
 
 export async function renderRollGraphic(
@@ -77,7 +79,7 @@ export async function renderRollGraphic(
   if (referenceRoll.rawOutcome) {
     renderData.outcome = {
       ...referenceRoll.rawOutcome,
-      value: game.i18n.localize(referenceRoll.rawOutcome.value),
+      value: referenceRoll.rawOutcome.value,
     }
   }
 

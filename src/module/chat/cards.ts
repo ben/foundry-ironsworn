@@ -111,7 +111,9 @@ export class IronswornChatCard {
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
+
+    // ev.preventDefault()
+    // ^ unneeded with type=button set on the element
 
     const { actor, move, stat, hittype } = ev.target.dataset
 
@@ -128,11 +130,7 @@ export class IronswornChatCard {
         stat,
       })
     } else {
-      const i18nKey = {
-        [ROLL_OUTCOME.STRONG_HIT]: 'Strong_hit',
-        [ROLL_OUTCOME.WEAK_HIT]: 'Weak_hit',
-        [ROLL_OUTCOME.MISS]: 'Miss',
-      }[hittype]
+      const i18nKey = ""
       result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
     }
 
@@ -163,9 +161,9 @@ export class IronswornChatCard {
 
     // Get the new result
     const k = {
-      [ROLL_OUTCOME.STRONG_HIT]: 'Strong Hit',
-      [ROLL_OUTCOME.WEAK_HIT]: 'Weak Hit',
-      [ROLL_OUTCOME.MISS]: 'Miss',
+      [ROLL_OUTCOME.ST"Strong Hit" 'Strong Hit',
+      [ROLL_OUTCOME."Weak Hit"]: 'Weak Hit',
+      [ROLL_OUTCOME.Miss]: 'Miss',
     }[hittype]
     const moveData = theMove.data as SFMoveDataProperties
     const newOutcome = moveData.data.Outcomes?.[k]?.Text
