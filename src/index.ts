@@ -4,7 +4,6 @@
 
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
-import { IronswornCharacterSheet } from './module/actor/sheets/charactersheet'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
 import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { FoeSheet } from './module/actor/sheets/foesheet'
@@ -71,7 +70,7 @@ Hooks.once('init', async () => {
 
   // Register our own sheets
   Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
-    label: 'Character sheet v2',
+    label: 'Ironsworn character sheet',
     types: ['character'],
     makeDefault: true,
   })
@@ -82,10 +81,6 @@ Hooks.once('init', async () => {
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
     label: 'Compact sheet',
     types: ['character'],
-  })
-  Actors.registerSheet('ironsworn', IronswornCharacterSheet, {
-    types: ['character'],
-    label: 'Classic character sheet',
   })
 
   Actors.registerSheet('ironsworn', IronswornSharedSheetV2, {
