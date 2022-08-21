@@ -25,18 +25,16 @@ function classesForRoll(
   }
   const d = r.dice[0]
   const maxRoll = d?.faces || SCORE_MAX
-  const cssClasses = new DOMTokenList()
-  cssClasses.add(
-    ...compact([
-      d?.constructor.name.toLowerCase(),
-      d && `isiconbg-d${d.faces}-blank`,
-      (d?.total || r.result) <= DIE_LOWEST_FACE ? 'min' : null,
-      (d?.total || r.result) == maxRoll ? 'max' : null,
-      theOpts.type,
-      theOpts.canceled ? 'canceled' : null,
-    ])
-  )
-  return cssClasses.toString()
+  return [
+    d?.constructor.name.toLowerCase(),
+    d && `isiconbg-d${d.faces}-blank`,
+    (d?.total || r.result) <= 1 ? 'min' : null,
+    (d?.total || r.result) == maxRoll ? 'max' : null,
+    theOpts.type,
+    theOpts.canceled ? 'canceled' : null,
+  ]
+    .filter((x) => x)
+    .join(' ')
 }
 
 const actionRoll = (roll) =>
