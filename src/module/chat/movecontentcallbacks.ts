@@ -41,5 +41,5 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
   'Pay the Price': () =>
     `<button class="ironsworn__paytheprice__roll">
       <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
-    </button`,
+    </button>`,
 }

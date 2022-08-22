@@ -31,14 +31,26 @@
     "Extreme": "Extremo",
     "Epic": "Épico",
     "Stat": "Característica",
-    "Momentum": "Impulso",
-    "Health": "Salud",
-    "Spirit": "Entereza",
-    "Supply": "Suministos",
-    "Edge": "Filo",
-    "Heart": "Corazón",
-    "Iron": "Hierro",
-    "Shadow": "Sombra",
+    "roll +x": "tira +{stat}",
+    "roll method": {
+      "Any": {
+        "2": "tira +{stat1} o +{stat2}"
+      },
+      "Highest": {
+        "2": "tira +{stat1} o +{stat2}, la que sea más alta"
+      },
+      "Lowest": {
+        "2": "tira +{stat1} o +{stat2}, la que sea menor"
+      }
+    },
+    "Momentum": "impulso",
+    "Health": "salud",
+    "Spirit": "entereza",
+    "Supply": "suministos",
+    "Edge": "filo",
+    "Heart": "corazón",
+    "Iron": "hierro",
+    "Shadow": "sombra",
     "Wits": "Mente",
     "XP": "EXP",
     "Asset": "Recurso",

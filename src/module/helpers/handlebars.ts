@@ -10,6 +10,8 @@ import {
   DIE_LOWEST_FACE,
   SCORE_MAX,
 } from '../rolls/roll.js'
+import { formatRollMethod, formatRollPlusStat } from '../rolls/chat-message.js'
+import { localeCapitalize } from '../rolls/preroll-dialog.js'
 
 interface RollClassesOptions {
   canceled: boolean
@@ -25,18 +27,16 @@ function classesForRoll(
   }
   const d = r.dice[0]
   const maxRoll = d?.faces || SCORE_MAX
-  const cssClasses = new DOMTokenList()
-  cssClasses.add(
-    ...compact([
-      d?.constructor.name.toLowerCase(),
-      d && `isiconbg-d${d.faces}-blank`,
-      (d?.total || r.result) <= DIE_LOWEST_FACE ? 'min' : null,
-      (d?.total || r.result) == maxRoll ? 'max' : null,
-      theOpts.type,
-      theOpts.canceled ? 'canceled' : null,
-    ])
-  )
-  return cssClasses.toString()
+  return [
+    d?.constructor.name.toLowerCase(),
+    d && `isiconbg-d${d.faces}-blank`,
+    (d?.total || r.result) <= 1 ? 'min' : null,
+    (d?.total || r.result) == maxRoll ? 'max' : null,
+    theOpts.type,
+    theOpts.canceled ? 'canceled' : null,
+  ]
+    .filter((x) => x)
+    .join(' ')
 }
 
 const actionRoll = (roll) =>
@@ -53,7 +53,9 @@ export class IronswornHandlebarsHelpers {
   static registerHelpers() {
     Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''))
 
-    Handlebars.registerHelper('capitalize', capitalize)
+    Handlebars.registerHelper('capitalize', localeCapitalize)
+    Handlebars.registerHelper('formatRollPlusStat', formatRollPlusStat)
+    Handlebars.registerHelper('formatRollMethod', formatRollMethod)
     Handlebars.registerHelper('lowercase', (str) => str.toLowerCase())
 
     Handlebars.registerHelper('json', function (context) {
@@ -223,15 +225,12 @@ export class IronswornHandlebarsHelpers {
 
   static enrichHtml(text: string) {
     const rendered = TextEditor.enrichHTML(text)
-    const rollText = game.i18n.localize('IRONSWORN.Roll')
     return rendered.replace(
       /\(\(rollplus (.*?)\)\)/g,
       (_, stat) => `
         <a class="inline-roll" data-param="${stat}">
           <i class="fas fa-dice-d6"></i>
-          ${rollText} +${game.i18n
-        .localize(`IRONSWORN.${capitalize(stat)}`)
-        .toLowerCase()}
+          ${formatRollPlusStat(stat)}
         </a>
       `
     )

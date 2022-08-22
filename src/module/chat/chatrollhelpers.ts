@@ -1,5 +1,4 @@
 // this file is basically deprecated. use rolls/chat-message.ts instead
-
 import { Evaluated } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/dice/roll.js'
 import { compact, sortBy } from 'lodash'
 import { marked } from 'marked'

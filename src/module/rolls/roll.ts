@@ -139,9 +139,6 @@ export interface PostRollOptions {
   replacedOutcome?: SourcedValue<ROLL_OUTCOME>
 }
 
-/**
- * This is intended as a way for (e.g.) a macro author to make use of this class without having to instantiate a complex object as an input. It's a shortcut, and we're not using it anywhere in the code. Given that use case, I don't think we need a TODO here to support passing in assets, because that's logic for a different layer — this class does rolling and storage, it doesn't know about assets.
- */
 export class IronswornRoll {
   rawActionDieValue?: number
   rawChallengeDiceValues?: number[]
@@ -157,21 +154,6 @@ export class IronswornRoll {
   ) {
     this.preRollOptions = preRollOpts
     this.postRollOptions = postRollOpts
-  }
-  static action(
-    stat: string,
-    actionDieValue: number,
-    adds?: number
-  ): IronswornRoll {
-    const r = new IronswornRoll()
-    r.preRollOptions = {
-      stat: {
-        source: stat,
-        value: actionDieValue,
-      },
-      adds,
-    }
-    return r
   }
 
   static progress(source: string, progressScore: number): IronswornRoll {
