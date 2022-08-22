@@ -11,7 +11,7 @@
       <ul class='trigger-options'>
         {{#each move.data.data.Trigger.Options}}
           {{#if Text}}
-            <li>
+            <li class='trigger-option'>
               {{Text}}:
               <strong>{{formatRollMethod Method Using}}</strong>
             </li>
@@ -20,10 +20,9 @@
       </ul>
     {{/if}}
   {{/if}}
-  {{! TODO: consider doing this as a <figure> + <caption> ? }}
-  <div class='dice-roll ironsworn-roll'>
+  <section class='dice-roll ironsworn-roll'>
     {{{graphic}}}
-  </div>
+  </section>
   <style>
     .form-group{ }
   </style>
