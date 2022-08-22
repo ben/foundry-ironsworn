@@ -32,6 +32,17 @@
     "Epic": "Épico",
     "Stat": "Característica",
     "roll +x": "tira +{stat}",
+    "roll method": {
+      "Any": {
+        "2": "tira +{stat1} o +{stat2}"
+      },
+      "Highest": {
+        "2": "tira +{stat1} o +{stat2}, la que sea más alta"
+      },
+      "Lowest": {
+        "2": "tira +{stat1} o +{stat2}, la que sea menor"
+      }
+    },
     "Momentum": "impulso",
     "Health": "salud",
     "Spirit": "entereza",

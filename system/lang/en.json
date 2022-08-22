@@ -42,9 +42,18 @@
     "roll +x": "roll +{stat}",
     "roll method": {
       "All": "roll all of {statList}",
-      "Highest": "roll highest of {statList}",
-      "Lowest": "roll lowest of {statList}",
-      "Any": "roll any of {statList}"
+      "Any": {
+        "2": "roll +{stat1} or +{stat2}",
+        "fallback": "roll any of {statList}"
+      },
+      "Highest": {
+        "2": "roll +{stat1} or +{stat2}, whichever is higher",
+        "fallback": "roll highest of {statList}"
+      },
+      "Lowest": {
+        "2": "roll +{stat1} or +{stat2}, whichever is lower",
+        "fallback": "roll lowest of {statList}"
+      }
     },
     "Momentum": "momentum",
     "Health": "health",

@@ -21,6 +21,17 @@
     "Extreme": "Extrem",
     "Epic": "Episch",
     "roll +x": "würfle +{stat}",
+    "roll method": {
+      "Any": {
+        "2": "würfle dann +{stat1} oder +{stat2}"
+      },
+      "Highest": {
+        "2": "würfle dann +{stat1} oder +{stat2}, je nachdem, was höher ist"
+      },
+      "Lowest": {
+        "2": "würfle dann +{stat1} oder +{stat2}, je nachdem, was niedriger ist"
+      }
+    },
     "Momentum": "Momentum",
     "Health": "Leben",
     "Spirit": "Willen",

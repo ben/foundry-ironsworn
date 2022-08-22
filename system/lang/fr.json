@@ -28,6 +28,17 @@
     "Epic": "Épique",
     "Stat": "Caractéristique",
     "roll +x": "faites un jet +{stat}",
+    "roll method": {
+      "Any": {
+        "2": "faites un jet +{stat1} ou +{stat2}"
+      },
+      "Highest": {
+        "2": "faites un jet +{stat1} ou +{stat2}, selon lequel est le plus élevé"
+      },
+      "Lowest": {
+        "2": "faites un jet +{stat1} ou +{stat2}, en utilisant la caractéristique la plus faible"
+      }
+    },
     "Momentum": "élan",
     "Health": "santé",
     "Spirit": "esprit",
