@@ -1,4 +1,4 @@
-import { IOutcomeInfo } from 'dataforged'
+import { IOutcomeInfo, RollMethod } from 'dataforged'
 import { capitalize, compact } from 'lodash'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
@@ -9,13 +9,43 @@ import { renderRollGraphic } from './roll-graphic'
 
 /**
  * Shortcut for composing a localized string similar to "roll +{stat}".
- * @param stat The stat to use -- should be lowercase, or have an initial capital letter.
- * @returns A localized string. If no stat
+ * @param stat The stat to use; should be lowercase, or have an initial capital letter.
+ * @returns A localized string. If no stat is available it uses the provided string as the stat name instead.
+ *  * @example
+ * ```typescript
+ * formatRollPlusStat("heart")
+ * // returns "roll +heart" for en.json
+ * ```
  */
 export function formatRollPlusStat(stat: string) {
   let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
   if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
   return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
+}
+
+/**
+ * Composes a localized string describing the stat options available to a particular move trigger. If there's only one stat available, it falls back to {@link formatRollPlusStat}
+ * @param rollMethod The Dataforged roll method to generate a string for.
+ * @param stats One or more stat strings.
+ * @example
+ * ```typescript
+ * formatRollMethod("Highest", ["Spirit", "Heart"])
+ * // returns "roll highest of spirit, heart" for en.json
+ * ```
+ */
+export function formatRollMethod(rollMethod: RollMethod, stats: string[]) {
+  if (stats.length === 1) {
+    return formatRollPlusStat(stats[0])
+  }
+  // TODO: the delimiter might be different for some languages, though not any of the ones we currently have localization data for. this might be addressed with a locale file key later.
+  const separator = ', '
+  const localizedStats = stats.map((stat) =>
+    game.i18n.localize('IRONSWORN.' + capitalize(stat))
+  )
+  const statList = localizedStats.join(separator)
+  return game.i18n.format(`IRONSWORN.roll method.${rollMethod}`, {
+    statList,
+  })
 }
 
 /**
