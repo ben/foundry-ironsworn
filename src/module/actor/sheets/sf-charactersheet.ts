@@ -3,7 +3,6 @@ import { IronswornSettings } from '../../helpers/settings'
 import SfCharacterSheet from '../../vue/sf-charactersheet.vue'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'
-import { CharacterMoveSheet } from './charactermovesheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class StarforgedCharacterSheet extends VueActorSheet {

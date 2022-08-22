@@ -2,7 +2,6 @@ import { IronswornSettings } from '../../helpers/settings'
 import characterSheetVue from '../../vue/character-sheet.vue'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'
-import { CharacterMoveSheet } from './charactermovesheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class IronswornCharacterSheetV2 extends VueActorSheet {
