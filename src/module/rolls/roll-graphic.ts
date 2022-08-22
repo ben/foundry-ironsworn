@@ -18,6 +18,7 @@ type RenderData = {
   actionScore?: number
   actionScoreCapped?: boolean
   actionDieCanceledByNegativeMomentum?: boolean
+  isMatch: boolean
 
   challengeDice: Partial<
     SourcedValue & { minmax?: 'min' | 'max' | undefined }
@@ -30,13 +31,14 @@ export async function renderRollGraphic(
   prerollOptions: PreRollOptions,
   roll?: IronswornRoll
 ) {
+  const referenceRoll = roll ?? new IronswornRoll(prerollOptions)
   const renderData: RenderData = {
     prerollOptions,
     roll,
     adds: [],
     challengeDice: [{}, {}],
+    isMatch: referenceRoll.isMatch,
   }
-  const referenceRoll = roll ?? new IronswornRoll(prerollOptions)
 
   if (referenceRoll.actionDie) {
     renderData.computedActionDie = {

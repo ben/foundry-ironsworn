@@ -15,8 +15,13 @@ import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
 import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
 import {
+  computeRollOutcome,
+  computeOutcomeText,
+} from '../rolls/chat-message.js'
+import {
   ACTION_DIE_SIDES,
   CHALLENGE_DIE_SIDES,
+  DfRollOutcome,
   ROLL_OUTCOME,
   SCORE_MAX,
 } from '../rolls/roll'
@@ -96,29 +101,6 @@ function calculateDieTotals(roll: Roll): DieTotals {
   }
 }
 
-function resolveRollOutcome(
-  score: number,
-  challengeDie1: number,
-  challengeDie2: number
-): ROLL_OUTCOME {
-  if (score <= Math.min(challengeDie1, challengeDie2)) return ROLL_OUTCOME.Miss
-  if (score > Math.max(challengeDie1, challengeDie2))
-    return ROLL_OUTCOME."Strong Hit"
-  return ROLL_OUTCOME."Weak Hit"
-}
-
-function calculateHitTypeText(type: ROLL_OUTCOME, match: boolean) {
-  if (type === ROLL_OUTCOME.Miss) {
-    return game.i18n.localize(match ? 'IRONSWORN.Miss_match' : 'IRONSWORN.Miss')
-  }
-  if (type === ROLL_OUTCOME.ST"Strong Hit"{
-    return game.i18n.localize(
-      match ? 'IRONSWORN.Strong_hit_match' : 'IRONSWORN.Strong_hit'
-    )
-  }
-  return game.i18n.localize('IRONSWORN.Weak_hit')
-}
-
 function calculateCardTitle(params: RollMessageParams) {
   if (params.move) {
     let title = game.i18n.localize(
@@ -179,13 +161,8 @@ function calculateMoveResultText(
 ): string | undefined {
   if (!move) return undefined
 
-  switch (type) {
-    case ROLL_OUTCOME.Miss:
-      return move.Miss
-    case ROLL_OUTCOME."Weak Hit":
-      return move.Weak
-    case ROLL_OUTCOME.STRO"Strong Hit"    return move.Strong
-  }
+  const dfOutcomeKey = DfRollOutcome[type]
+  return move[dfOutcomeKey]
 }
 
 function calculateSFMoveResultText(
@@ -194,14 +171,13 @@ function calculateSFMoveResultText(
   move: IronswornItem
 ) {
   const data = move.data as SFMoveDataProperties
-  const outcomeKey = {
-    [ROLL_OUTCOME.Miss]: 'Miss',
-    [ROLL_OUTCOME."Weak Hit"]: 'Weak Hit',
-    [ROLL_OUTCOME.STRONG"Strong Hit"rong Hit',
-  }[type]
-  let outcome = data.data.Outcomes?.[outcomeKey]
-  if (match) outcome = outcome?.['With a Match'] ?? outcome
-  return outcome?.Text
+  const dfOutcomeKey = DfRollOutcome[type]
+  const parentOutcome = data.data.Outcomes?.[dfOutcomeKey]
+
+  if (match) {
+    return parentOutcome['With a Match']?.Text ?? parentOutcome.Text
+  }
+  return parentOutcome.Text
 }
 
 interface MomentumProps {
@@ -228,31 +204,24 @@ function calculateMomentumProps(
       negativeMomentumCancel: true,
     }
 
-  const rawOutcome = resolveRollOutcome(
+  const rawOutcome = computeRollOutcome(
     actionScore,
     challengeDie1,
     challengeDie2
   )
-  const momentumHitType = resolveRollOutcome(
+  const momentumHitType = computeRollOutcome(
     momentum,
     challengeDie1,
     challengeDie2
   )
-  const momentumHitTypeI18n = calculateHitTypeText(momentumHitType, match)
+  const momentumHitTypeI18n = computeOutcomeText(momentumHitType, match)
 
-  switch (
-    `${rawOutcome} -> ${momentumHitType}` as `${typeof rawOutcome} -> ${typeof momentumHitType}`
-  ) {
-    case 'Miss -> Strong_hit':
-    case 'Miss -> Weak_hit':
-    case 'Weak_hit -> Strong_hit':
-      return {
-        momentumHitType,
-        momentumHitTypeI18n,
-      }
-    default:
-      return {}
-  }
+  if (momentumHitType > rawOutcome)
+    return {
+      momentumHitType,
+      momentumHitTypeI18n,
+    }
+  return {}
 }
 
 export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
@@ -274,12 +243,12 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
-  let hitType = resolveRollOutcome(action, challengeDie1, challengeDie2)
+  let hitType = computeRollOutcome(action, challengeDie1, challengeDie2)
   let momentumProps: MomentumProps = {}
   if (!params.isProgress) {
     momentumProps = calculateMomentumProps(params.roll, params.actor)
     if (momentumProps.negativeMomentumCancel) {
-      hitType = resolveRollOutcome(canceledAction, challengeDie1, challengeDie2)
+      hitType = computeRollOutcome(canceledAction, challengeDie1, challengeDie2)
     }
   }
 
@@ -295,7 +264,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     themeClass: `theme-${IronswornSettings.theme}`,
     action,
     actionCapped,
-    hitType: calculateHitTypeText(hitType, match),
+    hitType: computeOutcomeText(hitType, match),
     title: calculateCardTitle(params),
     resultText: calculateMoveResultText(hitType, params.move),
     bonusContent,
@@ -353,10 +322,10 @@ export async function createStarforgedMoveRollChat(
   } = calculateDieTotals(params.roll)
 
   // Momentum: if this is not a progress roll, it might be possible to upgrade
-  let hitType = resolveRollOutcome(action, challengeDie1, challengeDie2)
+  let hitType = computeRollOutcome(action, challengeDie1, challengeDie2)
   const momentumProps = calculateMomentumProps(params.roll, params.actor)
   if (momentumProps.negativeMomentumCancel) {
-    hitType = resolveRollOutcome(
+    hitType = computeRollOutcome(
       canceledActionDie,
       challengeDie1,
       challengeDie2
@@ -367,7 +336,7 @@ export async function createStarforgedMoveRollChat(
     themeClass: `theme-${IronswornSettings.theme}`,
     action,
     actionCapped,
-    hitType: calculateHitTypeText(hitType, match),
+    hitType: computeOutcomeText(hitType, match),
     title: calculateSFCardTitle(params),
     resultText: calculateSFMoveResultText(hitType, match, params.move),
     nextOracles: await sfNextOracles(params.move),

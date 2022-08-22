@@ -4,7 +4,7 @@ import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { SFMoveDataProperties } from '../item/itemtypes'
-import { ROLL_OUTCOME } from './roll'
+import { DfRollOutcome, ROLL_OUTCOME } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 
 /**
@@ -76,6 +76,22 @@ export function computeRollOutcome(
   return [challengeDie1, challengeDie2].filter(
     (challengeDie) => score > challengeDie
   ).length
+}
+
+/**
+ * Retrieves a localized string corresponding to a provided roll outcome.
+ * @param outcome The numeric outcome value to retrieve the string for.
+ * @param match Whether or not the outcome has matched challenge dice.
+ */
+export function computeOutcomeText(
+  outcome: ROLL_OUTCOME | DfRollOutcome,
+  match?: boolean | undefined
+) {
+  let outcomeKey = ROLL_OUTCOME[outcome]
+  if (match) {
+    outcomeKey += '_match'
+  }
+  return game.i18n.localize(`IRONSWORN.${outcomeKey}`)
 }
 
 /**

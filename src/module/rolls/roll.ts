@@ -61,6 +61,24 @@ export enum ROLL_OUTCOME {
   Strong_hit = 2,
 }
 
+/**
+ * Enumerates Dataforged move outcome keys using the same values as {@link ROLL_OUTCOME}
+ */
+export enum DfRollOutcome {
+  /**
+   * **Miss:** The score beats neither challenge die.
+   */
+  Miss = 0,
+  /**
+   * **Weak hit:** The score beats one challenge die.
+   */
+  'Weak Hit' = 1,
+  /**
+   * **Strong hit:** The score beats both challenge dice.
+   */
+  'Strong Hit' = 2,
+}
+
 // TODO: consider differentiating `source` from a new prop called e.g. `label`; it's pulling double duty now as both as something being tested for internal logic *and* as a user-facing label. even if those are mutually exclusive categories right now, it might be risky in the long term to conflate them.
 export type SourcedValue<T = number> = {
   source: string

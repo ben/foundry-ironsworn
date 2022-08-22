@@ -10,7 +10,11 @@ import {
   DIE_LOWEST_FACE,
   SCORE_MAX,
 } from '../rolls/roll.js'
-import { formatRollMethod, formatRollPlusStat } from '../rolls/chat-message.js'
+import {
+  computeOutcomeText,
+  formatRollMethod,
+  formatRollPlusStat,
+} from '../rolls/chat-message.js'
 import { localeCapitalize } from '../rolls/preroll-dialog.js'
 
 interface RollClassesOptions {
@@ -56,6 +60,7 @@ export class IronswornHandlebarsHelpers {
     Handlebars.registerHelper('capitalize', localeCapitalize)
     Handlebars.registerHelper('formatRollPlusStat', formatRollPlusStat)
     Handlebars.registerHelper('formatRollMethod', formatRollMethod)
+    Handlebars.registerHelper('computeOutcomeText', computeOutcomeText)
     Handlebars.registerHelper('lowercase', (str) => str.toLowerCase())
 
     Handlebars.registerHelper('json', function (context) {

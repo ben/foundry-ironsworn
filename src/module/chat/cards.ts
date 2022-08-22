@@ -13,7 +13,7 @@ import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
-import { ROLL_OUTCOME } from '../rolls/roll'
+import { DfRollOutcome, ROLL_OUTCOME } from '../rolls/roll'
 import { IronswornRollChatMessage } from '../rolls'
 
 export class IronswornChatCard {
@@ -111,7 +111,6 @@ export class IronswornChatCard {
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
-
     // ev.preventDefault()
     // ^ unneeded with type=button set on the element
 
@@ -130,7 +129,7 @@ export class IronswornChatCard {
         stat,
       })
     } else {
-      const i18nKey = ""
+      const i18nKey = ''
       result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
     }
 
@@ -160,11 +159,7 @@ export class IronswornChatCard {
       (await sfPack?.getDocument(move))) as IronswornItem
 
     // Get the new result
-    const k = {
-      [ROLL_OUTCOME.ST"Strong Hit" 'Strong Hit',
-      [ROLL_OUTCOME."Weak Hit"]: 'Weak Hit',
-      [ROLL_OUTCOME.Miss]: 'Miss',
-    }[hittype]
+    const k = DfRollOutcome[hittype]
     const moveData = theMove.data as SFMoveDataProperties
     const newOutcome = moveData.data.Outcomes?.[k]?.Text
 
