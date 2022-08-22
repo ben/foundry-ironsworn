@@ -57,6 +57,7 @@ export class IronswornSettings {
           starforged: 'IRONSWORN.Starforged',
         },
         default: 'sheet',
+        onChange: reload,
       }
     )
 
