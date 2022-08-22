@@ -344,7 +344,7 @@ export class IronswornPrerollDialog extends Dialog<
         this.prerollOptions
       )
       const graphic = await renderRollGraphic(pro)
-      this.element.find('.ironsworn-roll').replaceWith(graphic)
+      this.element.find('.roll-graphic').replaceWith(graphic)
     }
     html.find('input').on('change', rerender)
     html.find('select').on('change', rerender)
