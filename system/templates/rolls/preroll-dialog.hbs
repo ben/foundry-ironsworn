@@ -60,6 +60,7 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
       margin: 5px 0;
       border: 1px solid
     }
+    .advanced-roll-options-toggle {}
   </style>
 
   <details class="advanced-roll-options">
@@ -67,7 +68,8 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
 
     <fieldset class="form-group">
       <label class="checkbox">
-        <input type="checkbox" name="automaticOutcome">
+        <input type="checkbox"
+        class="advanced-roll-options-toggle" name="automaticOutcome">
         {{localize 'IRONSWORN.RollDialog.PredeterminedOutcome'}}
       </label>
       <select name="automaticOutcomeValue">
@@ -79,7 +81,8 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
 
     <fieldset class="form-group">
       <label class="checkbox">
-        <input type="checkbox" name="presetActionDie">
+        <input type="checkbox"
+        class="advanced-roll-options-toggle" name="presetActionDie">
         {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
       </label>
       <input type="number" step="1" name="presetActionDieValue" value="0" />
@@ -87,7 +90,8 @@ roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
 
     <fieldset class="form-group">
       <label class="checkbox">
-        <input type="checkbox" name="extraChallengeDice">
+        <input type="checkbox"
+        class="advanced-roll-options-toggle" name="extraChallengeDice">
         {{localize 'IRONSWORN.RollDialog.ExtraChallengeDice'}}
       </label>
       <input type="number" step="1" name="extraChallengeDiceValue" value="0" min="0" />
