@@ -20,6 +20,8 @@
     "Formidable": "Gewaltig",
     "Extreme": "Extrem",
     "Epic": "Episch",
+    "Stat": "Attribut",
+    "Stats": "Attribute",
     "roll +x": "würfle +{stat}",
     "roll method": {
       "Any": {
