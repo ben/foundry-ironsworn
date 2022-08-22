@@ -17,6 +17,11 @@ import { CharacterDataProperties } from '../actor/actortypes'
 import { IronswornRollChatMessage } from '.'
 import { formatRollPlusStat } from './chat-message.js'
 
+export function localeCapitalize(str: string) {
+  const locale = game.i18n.lang
+  return str[0].toLocaleUpperCase(locale) + str.slice(1)
+}
+
 function rollableOptions(trigger: IMoveTrigger) {
   if (!trigger.Options) return []
 
