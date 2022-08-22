@@ -1,4 +1,4 @@
-<article class="dice-formula">
+<article class="dice-formula roll-graphic">
   {{!-- The action die or progress score --}}
   {{#if actionDieCanceledByNegativeMomentum}}
   <del>
@@ -37,15 +37,17 @@
 
   <span class="roll-versus">{{localize 'IRONSWORN.Versus'}}</span>
 
-  {{#each challengeDice}}
-  <span class="roll die isiconbg-d10-blank d10 challenge {{minmax}}" title="{{source}}">
-    {{#if value}}
-    {{value}}
-    {{else}}
-    ?
-    {{/if}}
-  </span>
-  {{/each}}
+  <div class="challenge-dice">
+    {{#each challengeDice}}
+    <span class="roll die isiconbg-d10-blank d10 challenge {{minmax}}" title="{{source}}">
+      {{#if value}}
+      {{value}}
+      {{else}}
+      ?
+      {{/if}}
+    </span>
+    {{/each}}
+  </div>
 
   {{#if outcome}}
   <span class="math-symbol">&equals;</span>

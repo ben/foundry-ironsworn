@@ -1,13 +1,19 @@
 <style>
-  .preroll-dialog {} .roll-trigger-text {} .trigger-options {}
+  .preroll-dialog { display: flex; flex-direction: column; gap: 5px; }
 </style>
 <form class='preroll-dialog'>
   {{#if move}}
-    <section class='roll-trigger-text'>{{{enrichMarkdown
-        move.data.data.Trigger.Text
-      }}}</section>
+    <style>
+      .roll-trigger-text { }
+    </style>
+    <section class='roll-trigger-text'>
+      {{{enrichMarkdown move.data.data.Trigger.Text}}}
+    </section>
 
     {{#if move.data.data.Trigger.Options}}
+      <style>
+        .trigger-options { }
+      </style>
       <ul class='trigger-options'>
         {{#each move.data.data.Trigger.Options}}
           {{#if Text}}
