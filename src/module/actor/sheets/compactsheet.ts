@@ -1,6 +1,6 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornPrerollDialog } from '../../rolls'
-import { CharacterMoveSheet } from './charactermovesheet'
+import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class IronswornCompactCharacterSheet extends ActorSheet {
   static get defaultOptions() {
@@ -58,11 +58,14 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
   _openMoveSheet(e?: JQuery.ClickEvent) {
     e?.preventDefault()
 
-    if (this.actor.moveSheet) {
-      this.actor.moveSheet.render(true, { focus: true })
-    } else {
-      new CharacterMoveSheet(this.actor).render(true)
+    if (!this.actor.moveSheet) {
+      this.actor.moveSheet ||= new SFCharacterMoveSheet(
+        this.actor,
+        IronswornSettings.toolbox === 'starforged' ? 'starforged' : 'ironsworn',
+        { left: 755 }
+      )
     }
+    this.actor.moveSheet.render(true, { focus: true })
   }
 
   async _onStatRoll(ev: JQuery.ClickEvent) {
