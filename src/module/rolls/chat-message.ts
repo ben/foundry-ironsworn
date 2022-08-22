@@ -8,6 +8,17 @@ import { ROLL_OUTCOME } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 
 /**
+ * Shortcut for composing a localized string similar to "roll +{stat}".
+ * @param stat The stat to use -- should be lowercase, or have an initial capital letter.
+ * @returns A localized string. If no stat
+ */
+export function formatRollPlusStat(stat: string) {
+  let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
+  if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
+  return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
+}
+
+/**
  * Computes the outcome of an Ironsworn action roll or progress roll.
  * @param score The score (e.g. action score or progress score) to compare to the challenge dice.
  * @param challengeDie1 The value of the first challenge die.
@@ -152,14 +163,13 @@ export class IronswornRollChatMessage {
     if (move) {
       return { title: `${move.name} (${stat.source})` }
     }
-
-    let plusStat = game.i18n.localize('IRONSWORN.' + capitalize(stat.source))
-    // FIXME: oof. so, "roll" is a tricky word since in english it can function as a verb or a noun. it gets even more complicated when you introduce grammatical gender and word order.
-    // ultimately, each stat needs own "roll +X" string - the verb 'roll' might be conjugated differently in languages with grammatical gender (a bit under half of them), or in languages that use a word order other than subject-verb-object (a bit *over* half of them)
-    // it might be possible to infer this from existing translations of e.g. assets.
-    // Things with custom labels will still need a roll +{x} fallback, tho
-    if (plusStat.startsWith('IRONSWORN.')) plusStat = stat.source
-    return { title: `${game.i18n.localize('IRONSWORN.Roll')} +${plusStat}` }
+    let localizedStat = game.i18n.localize(
+      'IRONSWORN.' + capitalize(stat.source)
+    )
+    if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat.source
+    return {
+      title: game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat }),
+    }
   }
 
   private async moveData(): Promise<any> {

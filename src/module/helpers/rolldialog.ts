@@ -7,6 +7,7 @@ import {
 } from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
 import { DelveDomainDataSource, DelveThemeDataSource } from '../item/itemtypes'
+import { formatRollPlusStat } from '../rolls/chat-message.js'
 import { EnhancedDataswornMove } from './data'
 import { IronswornSettings } from './settings'
 import { capitalize } from './util'
@@ -95,9 +96,8 @@ export class RollDialog extends Dialog {
         }
       }
     } else if (opts.stat) {
-      const rollText = game.i18n.localize('IRONSWORN.Roll')
       const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
-      title = `${rollText} +${statText}`
+      title = formatRollPlusStat(opts.stat)
       defaultButton = opts.stat
       buttons[opts.stat] = {
         icon: '<i class="isicon-d10-tilt"></i>',

@@ -15,6 +15,7 @@ import {
 import { renderRollGraphic } from './roll-graphic'
 import { CharacterDataProperties } from '../actor/actortypes'
 import { IronswornRollChatMessage } from '.'
+import { formatRollPlusStat } from './chat-message.js'
 
 function rollableOptions(trigger: IMoveTrigger) {
   if (!trigger.Options) return []
@@ -123,10 +124,9 @@ export class IronswornPrerollDialog extends Dialog<
     value: number,
     actor?: IronswornActor
   ) {
-    const rollText = game.i18n.localize('IRONSWORN.Roll')
     let statText = game.i18n.localize(`IRONSWORN.${capitalize(name)}`)
     if (statText.startsWith('IRONSWORN.')) statText = name
-    const title = `${rollText} +${statText}`
+    const title = formatRollPlusStat(name)
 
     const prerollOptions: PreRollOptions = {
       stat: {

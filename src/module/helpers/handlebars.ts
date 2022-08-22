@@ -10,6 +10,7 @@ import {
   DIE_LOWEST_FACE,
   SCORE_MAX,
 } from '../rolls/roll.js'
+import { formatRollPlusStat } from '../rolls/chat-message.js'
 
 interface RollClassesOptions {
   canceled: boolean
@@ -221,15 +222,12 @@ export class IronswornHandlebarsHelpers {
 
   static enrichHtml(text: string) {
     const rendered = TextEditor.enrichHTML(text)
-    const rollText = game.i18n.localize('IRONSWORN.Roll')
     return rendered.replace(
       /\(\(rollplus (.*?)\)\)/g,
       (_, stat) => `
         <a class="inline-roll" data-param="${stat}">
           <i class="fas fa-dice-d6"></i>
-          ${rollText} +${game.i18n
-        .localize(`IRONSWORN.${capitalize(stat)}`)
-        .toLowerCase()}
+          ${formatRollPlusStat(stat)}
         </a>
       `
     )
