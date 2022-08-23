@@ -1,19 +1,9 @@
-<style>
-  .preroll-dialog { display: flex; flex-direction: column; gap: 5px; }
-</style>
 <form class='preroll-dialog'>
   {{#if move}}
-    <style>
-      .roll-trigger-text { }
-    </style>
     <section class='roll-trigger-text'>
       {{{enrichMarkdown move.data.data.Trigger.Text}}}
     </section>
-
     {{#if move.data.data.Trigger.Options}}
-      <style>
-        .trigger-options { }
-      </style>
       <ul class='trigger-options'>
         {{#each move.data.data.Trigger.Options}}
           {{#if Text}}
@@ -29,9 +19,6 @@
   <section class='dice-roll ironsworn-roll'>
     {{{graphic}}}
   </section>
-  <style>
-    .form-group{ }
-  </style>
   {{#if action}}
     <fieldset class='form-group'>
       <label for='roll-input-adds'>{{localize 'IRONSWORN.Adds'}}</label>
@@ -57,13 +44,7 @@
       </select>
     </fieldset>
   {{/if}}
-
   {{! TODO: simple options from the move + actor assets }}
-  <style>
-    .advanced-roll-options { padding: 5px; margin: 5px 0; border: 1px solid }
-    .advanced-roll-options-toggle {}
-  </style>
-
   <details class='advanced-roll-options'>
     <summary>{{localize 'IRONSWORN.RollDialog.AdvancedRollOptions'}}</summary>
 
