@@ -21,7 +21,7 @@
           />
         </div>
       </transition-group>
-      <progress-controls foeCompendium="starforgedencounters" />
+      <progress-controls :foeCompendium="foeCompendium" />
     </div>
 
     <div class="item-row nogrow progress-completed" style="margin-top: 1rem">
@@ -111,6 +111,7 @@ import OrderButtons from './order-buttons.vue'
 import ProgressBox from './progress/progress-box.vue'
 import ProgressControls from './progress-controls.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
+import { IronswornSettings } from '../../helpers/settings'
 
 const data = reactive({
   expandCompleted: false,
@@ -150,6 +151,12 @@ function progressCompleted() {
     data.highlightCompleted = false
   }, 2000)
 }
+
+const foeCompendium = computed(() => {
+  return IronswornSettings.starforgedToolsEnabled
+    ? 'starforgedencounters'
+    : 'ironswornfoes'
+})
 
 async function applySort(oldI, newI, sortBefore, filterFn) {
   const foundryItems = $actor?.items
