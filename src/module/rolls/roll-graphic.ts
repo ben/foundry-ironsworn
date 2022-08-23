@@ -20,9 +20,7 @@ type RenderData = {
   actionDieCanceledByNegativeMomentum?: boolean
   isMatch: boolean
 
-  challengeDice: Partial<
-    SourcedValue & { minmax?: 'min' | 'max' | undefined }
-  >[]
+  challengeDice: Partial<SourcedValue & { minmax?: 'min' | 'max' }>[]
 
   outcome?: SourcedValue<RollOutcome>
 }
