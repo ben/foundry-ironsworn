@@ -122,7 +122,6 @@ export class IronswornPrerollDialog extends Dialog<
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      // FIXME: 'dialog' class may be unnecessary since the parent object will reliably have [role=dialog] selector
       classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
       width: 500,
     })
