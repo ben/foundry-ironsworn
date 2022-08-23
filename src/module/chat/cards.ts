@@ -129,7 +129,7 @@ export class IronswornChatCard {
         stat,
       })
     } else {
-      const i18nKey = ''
+      const i18nKey = RollOutcome[hittype]
       result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
     }
 
