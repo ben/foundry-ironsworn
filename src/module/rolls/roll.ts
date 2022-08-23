@@ -8,7 +8,7 @@
 import { compact, pick, range, sum } from 'lodash'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
-import { IronswornRollChatMessage, computeRollOutcome } from './chat-message'
+import { computeRollOutcome } from './chat-message'
 
 /**
  * The maximum action score (for Ironsworn action rolls) or progress score (for Ironsworn progress rolls).
@@ -46,7 +46,7 @@ export const CHALLENGE_DIE_STR = `d${CHALLENGE_DIE_SIDES}`
  * The key corresponds to the i18n key that labels this outcome.
  * The value is equal to the number of challenge dice beaten by the action score or progress score.
  */
-export enum ROLL_OUTCOME {
+export enum RollOutcome {
   /**
    * **Miss:** The score beats neither challenge die.
    */
@@ -62,7 +62,7 @@ export enum ROLL_OUTCOME {
 }
 
 /**
- * Enumerates Dataforged move outcome keys using the same values as {@link ROLL_OUTCOME}
+ * Enumerates Dataforged move outcome keys using the same values as {@link RollOutcome}
  */
 export enum DfRollOutcome {
   /**
@@ -113,7 +113,7 @@ export interface PreRollOptions {
    */
   momentum?: number
 
-  automaticOutcome?: SourcedValue<ROLL_OUTCOME>
+  automaticOutcome?: SourcedValue<RollOutcome>
   /**
    * As in Armored #1
    */
@@ -154,7 +154,7 @@ export interface PostRollOptions {
    * As in Brawler #2 or Take Decisive Action
    */
   allowReplacingOutcome?: boolean
-  replacedOutcome?: SourcedValue<ROLL_OUTCOME>
+  replacedOutcome?: SourcedValue<RollOutcome>
 }
 
 export class IronswornRoll {
@@ -373,7 +373,7 @@ export class IronswornRoll {
     return c1 === c2
   }
 
-  get rawOutcome(): SourcedValue<ROLL_OUTCOME> | undefined {
+  get rawOutcome(): SourcedValue<RollOutcome> | undefined {
     if (this.preRollOptions.automaticOutcome) {
       return this.preRollOptions.automaticOutcome
     }
@@ -388,7 +388,7 @@ export class IronswornRoll {
     }
   }
 
-  get finalOutcome(): SourcedValue<ROLL_OUTCOME> | undefined {
+  get finalOutcome(): SourcedValue<RollOutcome> | undefined {
     return this.postRollOptions.replacedOutcome ?? this.rawOutcome
   }
 

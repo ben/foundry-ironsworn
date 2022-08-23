@@ -22,7 +22,7 @@ import {
   ACTION_DIE_SIDES,
   CHALLENGE_DIE_SIDES,
   DfRollOutcome,
-  ROLL_OUTCOME,
+  RollOutcome,
   SCORE_MAX,
 } from '../rolls/roll'
 import { MoveContentCallbacks } from './movecontentcallbacks'
@@ -156,7 +156,7 @@ function calculateSFCardTitle(params: SFRollMessageParams) {
 }
 
 function calculateMoveResultText(
-  type: ROLL_OUTCOME,
+  type: RollOutcome,
   move?: EnhancedDataswornMove
 ): string | undefined {
   if (!move) return undefined
@@ -166,7 +166,7 @@ function calculateMoveResultText(
 }
 
 function calculateSFMoveResultText(
-  type: ROLL_OUTCOME,
+  type: RollOutcome,
   match: boolean,
   move: IronswornItem
 ) {
@@ -181,7 +181,7 @@ function calculateSFMoveResultText(
 }
 
 interface MomentumProps {
-  momentumHitType?: ROLL_OUTCOME
+  momentumHitType?: RollOutcome
   momentumHitTypeI18n?: string
   negativeMomentumCancel?: boolean
 }

@@ -3,7 +3,7 @@ import {
   CHALLENGE_DIE_SIDES,
   IronswornRoll,
   PreRollOptions,
-  ROLL_OUTCOME,
+  RollOutcome,
   SourcedValue,
 } from './roll'
 
@@ -24,7 +24,7 @@ type RenderData = {
     SourcedValue & { minmax?: 'min' | 'max' | undefined }
   >[]
 
-  outcome?: SourcedValue<ROLL_OUTCOME>
+  outcome?: SourcedValue<RollOutcome>
 }
 
 export async function renderRollGraphic(

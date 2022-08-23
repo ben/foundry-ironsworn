@@ -9,7 +9,7 @@ import { SFMoveDataProperties } from '../item/itemtypes'
 import {
   IronswornRoll,
   PreRollOptions,
-  ROLL_OUTCOME,
+  RollOutcome,
   SourcedValue,
 } from './roll'
 import { renderRollGraphic } from './roll-graphic'
@@ -87,7 +87,7 @@ function prerollOptionsWithFormData(
   if (valMap.automaticOutcome) {
     opts.automaticOutcome = {
       source: 'set manually',
-      value: valMap.automaticOutcomeValue as ROLL_OUTCOME,
+      value: valMap.automaticOutcomeValue as RollOutcome,
     }
   }
   if (valMap.presetActionDie) {

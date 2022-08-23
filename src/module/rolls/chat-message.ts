@@ -4,7 +4,7 @@ import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { SFMoveDataProperties } from '../item/itemtypes'
-import { DfRollOutcome, ROLL_OUTCOME } from './roll'
+import { DfRollOutcome, RollOutcome } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 
 /**
@@ -72,7 +72,7 @@ export function computeRollOutcome(
   score: number,
   challengeDie1: number,
   challengeDie2: number
-): ROLL_OUTCOME {
+): RollOutcome {
   return [challengeDie1, challengeDie2].filter(
     (challengeDie) => score > challengeDie
   ).length
@@ -84,10 +84,10 @@ export function computeRollOutcome(
  * @param match Whether or not the outcome has matched challenge dice.
  */
 export function computeOutcomeText(
-  outcome: ROLL_OUTCOME | DfRollOutcome,
+  outcome: RollOutcome | DfRollOutcome,
   match?: boolean | undefined
 ) {
-  let outcomeKey = ROLL_OUTCOME[outcome]
+  let outcomeKey = RollOutcome[outcome]
   if (match) {
     outcomeKey += '_match'
   }
@@ -100,28 +100,28 @@ export function computeOutcomeText(
  * @param momentumOutcome The outcome after burning momentum.
  */
 export function momentumBurnWouldUpgrade(
-  rawOutcome: ROLL_OUTCOME | undefined,
-  momentumOutcome: ROLL_OUTCOME
+  rawOutcome: RollOutcome | undefined,
+  momentumOutcome: RollOutcome
 ) {
   return rawOutcome ? momentumOutcome > rawOutcome : false
 }
 
 type i18nOutcomeKey =
-  | `${keyof typeof ROLL_OUTCOME}`
-  | `${keyof typeof ROLL_OUTCOME}_match`
+  | `${keyof typeof RollOutcome}`
+  | `${keyof typeof RollOutcome}_match`
 
 export function outcomeKey(
-  outcome: ROLL_OUTCOME,
+  outcome: RollOutcome,
   match: boolean
 ): i18nOutcomeKey {
-  let key: i18nOutcomeKey = ROLL_OUTCOME[outcome] as keyof typeof ROLL_OUTCOME
+  let key: i18nOutcomeKey = RollOutcome[outcome] as keyof typeof RollOutcome
   if (match) {
     key += '_match'
   }
   return key as i18nOutcomeKey
 }
 
-export function outcomeText(outcome: ROLL_OUTCOME, match: boolean) {
+export function outcomeText(outcome: RollOutcome, match: boolean) {
   return game.i18n.localize('IRONSWORN.' + outcomeKey(outcome, match))
 }
 
@@ -246,9 +246,9 @@ export class IronswornRollChatMessage {
         this.roll.postRollOptions.replacedOutcome?.source,
     } as any
     const dfOutcomeKeys = {
-      [ROLL_OUTCOME.Miss]: 'Miss',
-      [ROLL_OUTCOME.Weak_hit]: 'Weak Hit',
-      [ROLL_OUTCOME.Strong_hit]: 'Strong Hit',
+      [RollOutcome.Miss]: 'Miss',
+      [RollOutcome.Weak_hit]: 'Weak Hit',
+      [RollOutcome.Strong_hit]: 'Strong Hit',
     }
     const key = dfOutcomeKeys[theOutcome]
     let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo

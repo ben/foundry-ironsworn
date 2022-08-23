@@ -13,7 +13,7 @@ import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
-import { DfRollOutcome, ROLL_OUTCOME } from '../rolls/roll'
+import { DfRollOutcome, RollOutcome } from '../rolls/roll'
 import { IronswornRollChatMessage } from '../rolls'
 
 export class IronswornChatCard {
@@ -125,7 +125,7 @@ export class IronswornChatCard {
       const theMove = await moveDataByName(move)
       result = theMove && theMove[capitalize(hittype.toLowerCase())]
       bonusContent = MoveContentCallbacks[move]?.call(this, {
-        hitType: hittype as ROLL_OUTCOME,
+        hitType: hittype as RollOutcome,
         stat,
       })
     } else {
