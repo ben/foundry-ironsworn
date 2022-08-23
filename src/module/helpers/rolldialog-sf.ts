@@ -69,7 +69,7 @@ export class SFRollMoveDialog extends Dialog {
         // buttons[
         //   kebabCase(label) + ' clickable isicon-d10-tilt juicy icon-button'
         // ] = {
-        label,
+        label: `<span class=button-text>${label}</span>`,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: callback({ actor, move, mode, stats }),
       }

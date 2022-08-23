@@ -151,7 +151,7 @@ export class IronswornPrerollDialog extends Dialog<
     })
     const buttons = {
       [name]: {
-        label: statText,
+        label: `<span class=button-text>${statText}</span>`,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {
           IronswornPrerollDialog.submitRoll(el, prerollOptions)
@@ -186,7 +186,9 @@ export class IronswornPrerollDialog extends Dialog<
     const content = await this.renderContent({ prerollOptions })
     const buttons = {
       [name]: {
-        label: game.i18n.localize('IRONSWORN.Roll'),
+        label: `<span class=button-text>${game.i18n.localize(
+          'IRONSWORN.Roll'
+        )}</span>`,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {
           IronswornPrerollDialog.submitRoll(el, prerollOptions)
@@ -267,7 +269,7 @@ export class IronswornPrerollDialog extends Dialog<
         // buttons[
         //   kebabCase(label) + ' clickable isicon-d10-tilt juicy icon-button'
         // ] = {
-        label,
+        label: `<span class=button-text>${label}</span>`,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: JQuery<HTMLElement>) => {
           let rollingActor: IronswornActor

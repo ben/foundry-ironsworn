@@ -17,8 +17,10 @@
   {{#if nextOracles}}
     <hr />
     {{#each nextOracles}}
-      <button class='starforged__oracle__roll' data-tableid='{{id}}'>
-        <i class='isicon-d10-tilt'></i>
+      <button
+        class='starforged__oracle__roll icon-button clickable isicon-d10-tilt'
+        data-tableid='{{id}}'
+      >
         {{name}}
       </button>
     {{/each}}
