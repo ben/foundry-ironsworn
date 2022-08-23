@@ -172,12 +172,12 @@ function calculateSFMoveResultText(
 ) {
   const data = move.data as SFMoveDataProperties
   const dfOutcomeKey = DfRollOutcome[type]
-  const parentOutcome = data.data.Outcomes?.[dfOutcomeKey]
+  const outcome = data.data.Outcomes?.[dfOutcomeKey]
 
   if (match) {
-    return parentOutcome['With a Match']?.Text ?? parentOutcome.Text
+    return outcome['With a Match']?.Text ?? outcome.Text
   }
-  return parentOutcome.Text
+  return outcome.Text
 }
 
 interface MomentumProps {
