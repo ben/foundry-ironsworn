@@ -5,7 +5,7 @@
 - Fix the die-roll backgrounds in the SF theme
 - Don't open editors for non-editable items when clicking a move link and no character move sheet is open.
 - Add a start for Polish translations (see [#428](https://github.com/ben/foundry-ironsworn/issues/428))
-- Retire the "Classic" character sheet ([#438](https://github.com/ben/foundry-ironsworn/pull/438))
+- Retire the "Classic" character ([#438](https://github.com/ben/foundry-ironsworn/pull/438)) and shared ([#440](https://github.com/ben/foundry-ironsworn/pull/440)) sheets
 
 ## 1.16.9
 
