@@ -9,7 +9,7 @@ import {
   createStarforgedOracleTree,
   findPathToNodeByTableId,
 } from '../features/customoracles'
-import { EnhancedDataswornMove } from '../helpers/data'
+import { DsRollOutcome, EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
@@ -156,12 +156,12 @@ function calculateSFCardTitle(params: SFRollMessageParams) {
 }
 
 function calculateMoveResultText(
-  type: RollOutcome,
+  outcome: RollOutcome,
   move?: EnhancedDataswornMove
 ): string | undefined {
   if (!move) return undefined
 
-  const dfOutcomeKey = DfRollOutcome[type]
+  const dfOutcomeKey = DsRollOutcome[outcome]
   return move[dfOutcomeKey]
 }
 
@@ -171,8 +171,8 @@ function calculateSFMoveResultText(
   move: IronswornItem
 ) {
   const data = move.data as SFMoveDataProperties
-  const dfOutcomeKey = DfRollOutcome[type]
-  const outcome = data.data.Outcomes?.[dfOutcomeKey]
+  const dsOutcomeKey = DfRollOutcome[type]
+  const outcome = data.data.Outcomes?.[dsOutcomeKey]
 
   if (match) {
     return outcome['With a Match']?.Text ?? outcome.Text
