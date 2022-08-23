@@ -101,14 +101,11 @@ function prerollOptionsWithFormData(
   const valMap: ValueMap = form
     .serializeArray()
     .reduce((coll, { name, value }) => {
-      console.log({ name, value })
       if (name == 'adds' || name.endsWith('Value')) {
         return { ...coll, [name]: parseInt(value, 10) }
       }
       return { ...coll, [name]: parseCheckbox(value) }
     }, {})
-
-  console.log(valMap)
 
   opts.adds = valMap.adds
 
