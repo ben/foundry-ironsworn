@@ -119,7 +119,7 @@ function callback(opts: {
   return async (x) => {
     // TODO: extract data from form and send to rollAndCreateChatMessage
     const form = x[0].querySelector('form')
-    const bonus = form.bonus.value ? parseInt(form.bonus.value ?? '0', 10) : 0
+    const bonus = form.bonus.valueAsNumber
     rollAndCreateChatMessage({ ...opts, bonus })
   }
 }

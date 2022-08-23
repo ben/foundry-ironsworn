@@ -235,8 +235,7 @@ export class IronswornRollChatMessage {
     if (move?.data.type !== 'sfmove') return {}
 
     // Outcome can be overridden
-    const theOutcome =
-      this.roll.finalOutcome?.value ?? this.roll.rawOutcome?.value
+    const theOutcome = this.roll.finalOutcome?.value
     if (!theOutcome) return {}
 
     // Original outcome

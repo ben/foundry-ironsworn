@@ -66,7 +66,7 @@ export class RollDialog extends Dialog {
 
     const callbackForStat = (stat: string) => (dialogData: JQuery) => {
       const form = dialogData[0].querySelector('form') as HTMLFormElement
-      const bonus = form.bonus.valueAsNumber ?? 0
+      const bonus = form.bonus.valueAsNumber
       let actor = opts.actor
       if (form.char?.value) {
         actor = game.actors?.get(form.char.value)

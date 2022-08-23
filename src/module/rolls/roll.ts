@@ -389,7 +389,10 @@ export class IronswornRoll {
   }
 
   get finalOutcome(): SourcedValue<RollOutcome> | undefined {
-    return this.postRollOptions.replacedOutcome ?? this.rawOutcome
+    if (typeof this.postRollOptions.replacedOutcome?.value === 'number') {
+      return this.postRollOptions.replacedOutcome
+    }
+    return this.rawOutcome
   }
 
   get moveItem(): Promise<IronswornItem | undefined> | undefined {

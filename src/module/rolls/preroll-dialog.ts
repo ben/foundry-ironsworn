@@ -69,18 +69,46 @@ function chooseStatToRoll(
   return { source, value: actor.data.data[stat] }
 }
 
+/**
+ * Parses a checkbox form element value into a boolean.
+ * @param value the checkbox value to be parsed
+ */
+function parseCheckbox(value?: string) {
+  switch (value) {
+    case 'on':
+      return true
+    case 'off':
+    default:
+      return false
+  }
+}
+
 function prerollOptionsWithFormData(
   form: JQuery<HTMLFormElement>,
   base: PreRollOptions
 ): PreRollOptions {
   const opts = cloneDeep(base)
+  type ValueMap = Record<string, boolean | number> & {
+    adds?: number
+    automaticOutcomeValue?: number
+    extraChallengeDiceValue?: number
+    presetActionDieValue?: number
+    automaticOutcome?: boolean
+    extraChallengeDice?: boolean
+    presetActionDie?: boolean
+  }
 
-  const valMap: Record<string, number> = form
+  const valMap: ValueMap = form
     .serializeArray()
-    .reduce(
-      (coll, { name, value }) => ({ ...coll, [name]: parseInt(value, 10) }),
-      {}
-    )
+    .reduce((coll, { name, value }) => {
+      console.log({ name, value })
+      if (name == 'adds' || name.endsWith('Value')) {
+        return { ...coll, [name]: parseInt(value, 10) }
+      }
+      return { ...coll, [name]: parseCheckbox(value) }
+    }, {})
+
+  console.log(valMap)
 
   opts.adds = valMap.adds
 
@@ -93,13 +121,13 @@ function prerollOptionsWithFormData(
   if (valMap.presetActionDie) {
     opts.presetActionDie = {
       source: 'set manually',
-      value: valMap.presetActionDieValue,
+      value: valMap.presetActionDieValue as number,
     }
   }
   if (valMap.extraChallengeDice) {
     opts.extraChallengeDice = {
       source: 'set manually',
-      value: valMap.extraChallengeDiceValue,
+      value: valMap.extraChallengeDiceValue as number,
     }
   }
 
