@@ -1,84 +1,99 @@
-{{#*inline "statDescription"}}
-{{#if (eq Using.length 1)}}
-roll +{{lookup Using 0}}
-{{else}}
-roll {{Method}} of {{join Using delimiter=', '}} {{!-- TODO: i18n --}}
-{{/if}}
-{{/inline}}
-
-<form class="preroll-dialog">
+<form class='preroll-dialog{{#if action}} action-roll-dialog{{else}} progress-roll-dialog{{/if}}'>
   {{#if move}}
-  <div>{{{enrichMarkdown move.data.data.Trigger.Text}}}</div>
-
-  {{#if move.data.data.Trigger.Options}}
-  <ul>
-    {{#each move.data.data.Trigger.Options}}
-    {{#if Text}}
-    <li>
-      {{ Text }}: <strong>{{>statDescription}}</strong>
-    </li>
+    <section class='roll-trigger-text'>
+      {{{enrichMarkdown move.data.data.Trigger.Text}}}
+    </section>
+    {{#if move.data.data.Trigger.Options}}
+      <ul class='trigger-options'>
+        {{#each move.data.data.Trigger.Options}}
+          {{#if Text}}
+            <li class='trigger-option'>
+              {{Text}}:
+              <strong>{{formatRollMethod Method Using}}</strong>
+            </li>
+          {{/if}}
+        {{/each}}
+      </ul>
     {{/if}}
-    {{/each}}
-  </ul>
   {{/if}}
-  {{/if}}
-
-  <div class="dice-roll ironsworn-roll">
+  <section class='dice-roll ironsworn-roll'>
     {{{graphic}}}
-  </div>
-
+  </section>
   {{#if action}}
-  <div class="form-group">
-    <label>{{localize 'IRONSWORN.Adds'}}</label>
-    <input type="number" step="1" name="adds" value="0" />
-  </div>
+    <fieldset class='form-group'>
+      <label for='roll-input-adds'>{{localize 'IRONSWORN.Adds'}}</label>
+      <input
+        id='roll-input-adds'
+        type='number'
+        step='1'
+        name='adds'
+        value='0'
+      />
+    </fieldset>
   {{/if}}
 
   {{#if showActorSelect}}
-  <div class="form-group">
-    <label for="char">{{localize 'IRONSWORN.Character'}}</label>
-    <select name="char" id="char">
-      {{#each allActors}}
-      <option value="{{id}}">
-        {{name}}
-      </option>
-      {{/each}}
-    </select>
-  </div>
+    <fieldset class='form-group'>
+      <label for='char'>{{localize 'IRONSWORN.Character'}}</label>
+      <select name='char' id='char' class='select-character'>
+        {{#each allActors}}
+          <option value='{{id}}'>
+            {{name}}
+          </option>
+        {{/each}}
+      </select>
+    </fieldset>
   {{/if}}
-
-  {{!-- TODO: simple options from the move + actor assets --}}
-
-  <details style="padding: 5px; margin: 5px 0; border: 1px solid">
+  {{! TODO: simple options from the move + actor assets }}
+  <details class='advanced-roll-options'>
     <summary>{{localize 'IRONSWORN.RollDialog.AdvancedRollOptions'}}</summary>
 
-    <div class="form-group">
-      <label class="checkbox">
-        <input type="checkbox" name="automaticOutcome">
+    <fieldset class='form-group'>
+      <label class='checkbox'>
+        <input
+          type='checkbox'
+          class='advanced-roll-options-toggle'
+          name='automaticOutcome'
+        />
         {{localize 'IRONSWORN.RollDialog.PredeterminedOutcome'}}
       </label>
-      <select name="automaticOutcomeValue">
-        <option value="MISS">{{localize 'IRONSWORN.Miss'}}</option>
-        <option value="WEAK">{{localize 'IRONSWORN.WeakHit'}}</option>
-        <option value="STRONG">{{localize 'IRONSWORN.StrongHit'}}</option>
+      <select name='automaticOutcomeValue'>
+        <option value='0'>{{localize 'IRONSWORN.Miss'}}</option>
+        <option value='1'>{{localize 'IRONSWORN.Weak_hit'}}</option>
+        <option value='2'>{{localize 'IRONSWORN.Strong_hit'}}</option>
       </select>
-    </div>
+    </fieldset>
 
-    <div class="form-group">
-      <label class="checkbox">
-        <input type="checkbox" name="presetActionDie">
-        {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
-      </label>
-      <input type="number" step="1" name="presetActionDieValue" value="0" />
-    </div>
-
-    <div class="form-group">
-      <label class="checkbox">
-        <input type="checkbox" name="extraChallengeDice">
+    {{#if action}}
+      <fieldset class='form-group'>
+        <label class='checkbox'>
+          <input
+            type='checkbox'
+            class='advanced-roll-options-toggle'
+            name='presetActionDie'
+          />
+          {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
+        </label>
+        <input type='number' step='1' name='presetActionDieValue' value='0' />
+      </fieldset>
+    {{/if}}
+    <fieldset class='form-group'>
+      <label class='checkbox'>
+        <input
+          type='checkbox'
+          class='advanced-roll-options-toggle'
+          name='extraChallengeDice'
+        />
         {{localize 'IRONSWORN.RollDialog.ExtraChallengeDice'}}
       </label>
-      <input type="number" step="1" name="extraChallengeDiceValue" value="0" min="0" />
-    </div>
+      <input
+        type='number'
+        step='1'
+        name='extraChallengeDiceValue'
+        value='0'
+        min='0'
+      />
+    </fieldset>
 
   </details>
 </form>

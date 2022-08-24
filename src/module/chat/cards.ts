@@ -13,7 +13,7 @@ import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
-import { ROLL_OUTCOME } from '../rolls/roll'
+import { DfRollOutcome, RollOutcome } from '../rolls/roll'
 import { IronswornRollChatMessage } from '../rolls'
 
 export class IronswornChatCard {
@@ -111,9 +111,12 @@ export class IronswornChatCard {
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
     const { actor, move, stat, hittype } = ev.target.dataset
+    const hitTypeKey = {
+      [RollOutcome.Miss]: 'Miss',
+      [RollOutcome.Weak_hit]: 'Weak',
+      [RollOutcome.Strong_hit]: 'Strong',
+    }[hittype]
 
     const theActor = game.actors?.get(actor)
     theActor?.burnMomentum()
@@ -122,18 +125,14 @@ export class IronswornChatCard {
     let result: string
     if (move) {
       const theMove = await moveDataByName(move)
-      result = theMove && theMove[capitalize(hittype.toLowerCase())]
+      result = theMove && theMove[hitTypeKey]
       bonusContent = MoveContentCallbacks[move]?.call(this, {
-        hitType: hittype as ROLL_OUTCOME,
+        hitType: hittype as RollOutcome,
         stat,
       })
     } else {
-      const i18nKey = {
-        [ROLL_OUTCOME.STRONG]: 'StrongHit',
-        [ROLL_OUTCOME.WEAK]: 'WeakHit',
-        [ROLL_OUTCOME.MISS]: 'Miss',
-      }[hittype]
-      result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
+      const i18nKey = 'IRONSWORN.' + RollOutcome[parseInt(hittype)]
+      result = `<strong>${game.i18n.localize(i18nKey)}</strong>`
     }
 
     const parent = $(ev.currentTarget).parents('.message-content')
@@ -162,11 +161,7 @@ export class IronswornChatCard {
       (await sfPack?.getDocument(move))) as IronswornItem
 
     // Get the new result
-    const k = {
-      [ROLL_OUTCOME.STRONG]: 'Strong Hit',
-      [ROLL_OUTCOME.WEAK]: 'Weak Hit',
-      [ROLL_OUTCOME.MISS]: 'Miss',
-    }[hittype]
+    const k = DfRollOutcome[hittype]
     const moveData = theMove.data as SFMoveDataProperties
     const newOutcome = moveData.data.Outcomes?.[k]?.Text
 

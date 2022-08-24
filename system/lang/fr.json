@@ -9,8 +9,8 @@
     "Rolling": "Lancement des dés",
     "Bonus": "Bonus",
     "Versus": "vs.",
-    "StrongHit": "Coup Fort",
-    "WeakHit": "Coup Faible",
+    "Strong_hit": "Coup Fort",
+    "Weak_hit": "Coup Faible",
     "Miss": "Échec",
     "Opportunity": "Opportunité!",
     "Complication": "Complication!",
@@ -27,15 +27,27 @@
     "Extreme": "Extrême",
     "Epic": "Épique",
     "Stat": "Caractéristique",
-    "Momentum": "Élan",
-    "Health": "Santé",
-    "Spirit": "Esprit",
-    "Supply": "Provisions",
-    "Edge": "Vivacité",
-    "Heart": "Cœur",
-    "Iron": "Fer",
-    "Shadow": "Ombre",
-    "Wits": "Astuces",
+    "roll +x": "faites un jet +{stat}",
+    "roll method": {
+      "Any": {
+        "2": "faites un jet +{stat1} ou +{stat2}"
+      },
+      "Highest": {
+        "2": "faites un jet +{stat1} ou +{stat2}, selon lequel est le plus élevé"
+      },
+      "Lowest": {
+        "2": "faites un jet +{stat1} ou +{stat2}, en utilisant la caractéristique la plus faible"
+      }
+    },
+    "Momentum": "élan",
+    "Health": "santé",
+    "Spirit": "esprit",
+    "Supply": "provisions",
+    "Edge": "vivacité",
+    "Heart": "cœur",
+    "Iron": "fer",
+    "Shadow": "ombre",
+    "Wits": "astuces",
     "XP": "XP",
     "Asset": "Atout",
     "Assets": "Atouts",

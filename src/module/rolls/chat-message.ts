@@ -1,27 +1,128 @@
-import { IOutcomeInfo } from 'dataforged'
-import { capitalize, compact } from 'lodash'
+import { IOutcomeInfo, RollMethod } from 'dataforged'
+import { capitalize, compact, fromPairs, isUndefined } from 'lodash'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { SFMoveDataProperties } from '../item/itemtypes'
-import { ROLL_OUTCOME } from './roll'
+import { DfRollOutcome, RollOutcome } from './roll'
 import { renderRollGraphic } from './roll-graphic'
 
-function rollResult(a: number, c1: number, c2: number): ROLL_OUTCOME {
-  if (a <= Math.min(c1, c2)) return ROLL_OUTCOME.MISS
-  if (a > Math.max(c1, c2)) return ROLL_OUTCOME.STRONG
-  return ROLL_OUTCOME.WEAK
+/**
+ * Shortcut for composing a localized string similar to "roll +{stat}".
+ * @param stat The stat to use; should be lowercase, or have an initial capital letter.
+ * @returns A localized string. If no stat is available it uses the provided string as the stat name instead.
+ *  * @example
+ * ```typescript
+ * formatRollPlusStat("heart")
+ * // returns "roll +heart" for en.json
+ * ```
+ */
+export function formatRollPlusStat(stat: string) {
+  let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
+  if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
+  return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
 }
 
-function outcomeText(outcome: ROLL_OUTCOME, match: boolean): string {
-  let key = 'WeakHit'
-  if (outcome === ROLL_OUTCOME.MISS) {
-    key = match ? 'Complication' : 'Miss'
+/**
+ * Composes a localized string describing the stat options available to a particular move trigger. Falls back to {@link formatRollPlusStat} when there's only one stat available.
+ * @param rollMethod The Dataforged roll method to generate a string for.
+ * @param stats One or more stat strings.
+ * @example formatRollMethod("Highest", ["Spirit", "Heart"])
+ * // returns "roll +wits or +iron, whichever is higher" for en.json
+ * @example formatRollMethod("Highest", ["Spirit", "Heart", "Wits"])
+ * // returns "roll highest of spirit, heart, wits" for en.json
+ */
+export function formatRollMethod(rollMethod: RollMethod, stats: string[]) {
+  // skip if there's no choice to be made
+  if (stats.length === 1) {
+    return formatRollPlusStat(stats[0])
   }
-  if (outcome === ROLL_OUTCOME.STRONG) {
-    key = match ? 'Opportunity' : 'StrongHit'
+  // canonical triggers have 2 stats; there's a good chance a nice string already exists, so we check for that first.
+  const localizedStats = stats.map((stat) =>
+    game.i18n.localize('IRONSWORN.' + capitalize(stat))
+  )
+  const methodKeyRoot = `IRONSWORN.roll method.${rollMethod}`
+  const possibleNiceKey = `${methodKeyRoot}.${stats.length}`
+  if (game.i18n.has(possibleNiceKey)) {
+    /**
+     * @example {stat1: "iron", stat2: "health"}
+     */
+    const statStringHash = fromPairs(
+      localizedStats.map((stat, index) => [`stat${index + 1}`, stat])
+    )
+    return game.i18n.format(possibleNiceKey, statStringHash)
   }
-  return game.i18n.localize('IRONSWORN.' + key)
+  const fallbackKey = `${methodKeyRoot}.fallback`
+
+  // TODO: figure out if the separator would differ in some languages?
+  const separator = ', '
+  const statList = localizedStats.join(separator)
+  return game.i18n.format(fallbackKey, {
+    statList,
+  })
+}
+
+/**
+ * Computes the outcome of an Ironsworn action roll or progress roll.
+ * @param score The score (e.g. action score or progress score) to compare to the challenge dice.
+ * @param challengeDie1 The value of the first challenge die.
+ * @param challengeDie2 The value of the second challenge die.
+ */
+export function computeRollOutcome(
+  score: number,
+  challengeDie1: number,
+  challengeDie2: number
+): RollOutcome {
+  return [challengeDie1, challengeDie2].filter(
+    (challengeDie) => score > challengeDie
+  ).length
+}
+
+/**
+ * Retrieves a localized string corresponding to a provided roll outcome.
+ * @param outcome The numeric outcome value to retrieve the string for.
+ * @param match Whether or not the outcome has matched challenge dice.
+ */
+export function computeOutcomeText(
+  outcome: RollOutcome | DfRollOutcome,
+  match?: boolean | undefined
+) {
+  let outcomeKey = RollOutcome[outcome]
+  if (match) {
+    outcomeKey += '_match'
+  }
+  return game.i18n.localize(`IRONSWORN.${outcomeKey}`)
+}
+
+/**
+ * Will burning momentum improve the outcome of an Ironsworn action roll?
+ * @param rawOutcome The outcome before burning momentum.
+ * @param momentumOutcome The outcome after burning momentum.
+ */
+export function momentumBurnWouldUpgrade(
+  rawOutcome: RollOutcome | undefined,
+  momentumOutcome: RollOutcome
+) {
+  return rawOutcome ? momentumOutcome > rawOutcome : false
+}
+
+type i18nOutcomeKey =
+  | `${keyof typeof RollOutcome}`
+  | `${keyof typeof RollOutcome}_match`
+
+export function outcomeKey(
+  outcome: RollOutcome,
+  match: boolean
+): i18nOutcomeKey {
+  let key: i18nOutcomeKey = RollOutcome[outcome] as keyof typeof RollOutcome
+  if (match) {
+    key += '_match'
+  }
+  return key as i18nOutcomeKey
+}
+
+export function outcomeText(outcome: RollOutcome, match: boolean) {
+  return game.i18n.localize('IRONSWORN.' + outcomeKey(outcome, match))
 }
 
 export class IronswornRollChatMessage {
@@ -57,7 +158,7 @@ export class IronswornRollChatMessage {
 
     await this.actor.burnMomentum()
     this.roll.postRollOptions.replacedOutcome = {
-      value: rollResult(momentum, c1, c2),
+      value: computeRollOutcome(momentum, c1, c2),
       source: game.i18n.localize('IRONSWORN.MomentumBurnt'),
     }
     return this.createOrUpdate()
@@ -120,10 +221,13 @@ export class IronswornRollChatMessage {
     if (move) {
       return { title: `${move.name} (${stat.source})` }
     }
-
-    let plusStat = game.i18n.localize('IRONSWORN.' + capitalize(stat.source))
-    if (plusStat.startsWith('IRONSWORN.')) plusStat = stat.source
-    return { title: `${game.i18n.localize('IRONSWORN.Roll')} +${plusStat}` }
+    let localizedStat = game.i18n.localize(
+      'IRONSWORN.' + capitalize(stat.source)
+    )
+    if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat.source
+    return {
+      title: game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat }),
+    }
   }
 
   private async moveData(): Promise<any> {
@@ -131,10 +235,8 @@ export class IronswornRollChatMessage {
     if (move?.data.type !== 'sfmove') return {}
 
     // Outcome can be overridden
-    const theOutcome =
-      this.roll.postAdjustmentOutcome?.value ??
-      this.roll.preAdjustmentOutcome?.value
-    if (!theOutcome) return {}
+    const theOutcome = this.roll.finalOutcome?.value
+    if (theOutcome === undefined) return {}
 
     // Original outcome
     const ret = {
@@ -142,12 +244,12 @@ export class IronswornRollChatMessage {
       outcomeReplacementReason:
         this.roll.postRollOptions.replacedOutcome?.source,
     } as any
-    const keys = {
-      [ROLL_OUTCOME.MISS]: 'Miss',
-      [ROLL_OUTCOME.WEAK]: 'Weak Hit',
-      [ROLL_OUTCOME.STRONG]: 'Strong Hit',
+    const dfOutcomeKeys = {
+      [RollOutcome.Miss]: 'Miss',
+      [RollOutcome.Weak_hit]: 'Weak Hit',
+      [RollOutcome.Strong_hit]: 'Strong Hit',
     }
-    const key = keys[theOutcome]
+    const key = dfOutcomeKeys[theOutcome]
     let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
     if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
       dfOutcome = dfOutcome['With a Match']
@@ -171,18 +273,15 @@ export class IronswornRollChatMessage {
     if (c1 === undefined || c2 === undefined) return {}
 
     const momentum = this.actor.data.data.momentum
-    const momentumOutcome = rollResult(momentum, c1, c2)
+    const rawOutcome = this.roll.rawOutcome?.value
+    const momentumBurnOutcome = computeRollOutcome(momentum, c1, c2)
 
-    switch (`${this.roll.preAdjustmentOutcome?.value} -> ${momentumOutcome}`) {
-      case 'MISS -> WEAK':
-      case 'MISS -> STRONG':
-      case 'WEAK -> STRONG':
-        return {
-          possibleMomentumBurn: outcomeText(momentumOutcome, c1 === c2),
-        }
-      default:
-        return {}
+    if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
+      return {
+        possibleMomentumBurn: outcomeText(momentumBurnOutcome, c1 === c2),
+      }
     }
+    return {}
   }
 
   private async oraclesData(): Promise<any> {

@@ -1,4 +1,5 @@
 @import './ironsworn-icons.less';
+@import 'mixins.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
@@ -283,6 +284,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    .button-text {
+      .clickable();
+      .nogrow();
+      .initial-caps();
+      width: max-content;
+      height: max-content;
+    }
+
     i {
       height: 18px;
       width: 18px;
@@ -534,6 +543,10 @@ hr {
 }
 
 .ironsworn-roll {
+  h3,
+  button {
+    .initial-caps();
+  }
   .hit-type {
     font-weight: bold;
     font-variant: all-small-caps;
@@ -621,6 +634,49 @@ hr {
 
 .bonus-content .dice-formula {
   word-break: normal;
+}
+
+// roll-graphic.hbs
+.dice-formula.roll-graphic {
+  padding: 0.25rem;
+  gap: 0.25rem;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  flex-direction: row;
+
+  .action-score-capped {
+    text-decoration: dotted underline;
+  }
+}
+
+// preroll-dialog.hbs
+.preroll-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  button {
+    .initial-caps();
+  }
+
+  .roll-trigger-text {
+  }
+
+  .trigger-options {
+  }
+
+  .form-group {
+    padding: 0;
+    border: none;
+  }
+
+  .advanced-roll-options {
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid;
+  }
+  .advanced-roll-options-toggle {
+  }
 }
 
 table td:first-child {

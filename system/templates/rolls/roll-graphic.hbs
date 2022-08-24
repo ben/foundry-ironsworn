@@ -1,54 +1,54 @@
-<div class="dice-roll ironsworn-roll">
+<article class="dice-formula roll-graphic">
+  {{!-- The action die or progress score --}}
+  {{#if actionDieCanceledByNegativeMomentum}}
+  <del>
+  {{/if}}
+  <span class="action roll d6 isiconbg-d6-blank {{actionMinMax}}" title="{{computedActionDie.source}}">
+    {{#if computedActionDie.value}}
+    {{computedActionDie.value}}
+    {{else}}
+    ?
+    {{/if}}
+  </span>
+  {{#if actionDieCanceledByNegativeMomentum}}
+  </del>
+  {{/if}}
 
-  <div class="dice-formula">
-    <p>
-      {{!-- The action die or progress score --}}
-      {{#if actionCanceledByNegativeMomentum}}<del>{{/if}}
-        <span class="action roll isiconbg-d6-blank {{actionMinMax}}" title="{{computedActionDie.source}}">
-          {{#if computedActionDie.value}}
-          {{computedActionDie.value}}
-          {{else}}
-          &nbsp;
-          {{/if}}
-        </span>
-        {{#if actionCanceledByNegativeMomentum}}</del>{{/if}}
+  {{#each adds}}
+  <span class="math-symbol">&plus;</span>
+  <span title="{{source}}">{{value}}</span>
+  {{/each}}
 
-      {{#each adds}}
-      &plus;
-      <span title="{{source}}">{{value}}</span>
-      {{/each}}
+  {{#if actionScore}}
+  <span class="math-symbol">&equals;</span>
+  <strong>
+    {{#if actionScoreCapped}}
+    <span class="action-score-capped" title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionScore}}</span>
+    {{else}}
+    {{actionScore}}
+    {{/if}}
+  </strong>
+  {{/if}}
 
-      {{#if actionTotal}}
-      &equals;
-      <strong>
-        {{#if actionTotalCapped}}
-        <abbr title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionTotal}}</abbr>
-        {{else}}
-        {{actionTotal}}
-        {{/if}}
-      </strong>
+  <span class="roll-versus">{{localize 'IRONSWORN.Versus'}}</span>
+
+  <div class="challenge-dice {{#if isMatch }}match{{/if}}">
+    {{#each challengeDice}}
+    <span class="roll die isiconbg-d10-blank d10 challenge {{minmax}}" title="{{source}}">
+      {{#if value}}
+      {{value}}
+      {{else}}
+      ?
       {{/if}}
-
-      {{localize 'IRONSWORN.Versus'}}
-
-      {{#each challengeDice}}
-      <span class="roll die isiconbg-d10-blank challenge {{minmax}}" title="{{source}}">
-        {{#if value}}
-        {{value}}
-        {{else}}
-        &nbsp;
-        {{/if}}
-      </span>
-      {{/each}}
-
-      {{#if outcome}}
-      &equals;
-      <strong title="{{outcome.source}}">{{outcome.value}}</strong>
-      {{/if}}
-
-    </p>
+    </span>
+    {{/each}}
   </div>
 
-  {{!--
-  <pre><code>{{json this}}</code></pre> --}}
-</div>
+  {{#if outcome}}
+  <span class="math-symbol">&equals;</span>
+  <strong class="outcome-text" title="{{outcome.source}}">{{computeOutcomeText outcome.value isMatch}}</strong>
+  {{/if}}
+{{!-- <pre><code>{{json this}}</code></pre> --}}
+</article>
+
+

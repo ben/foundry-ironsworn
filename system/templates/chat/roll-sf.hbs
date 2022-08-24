@@ -23,7 +23,7 @@ usedStat: "shadow"
     data-moveid='{{move.data.data.dfid}}'
   >
     <div class='dice-formula'>
-      <p>{{{actionDieFormula}}}
+      <p>{{{actionScoreFormula}}}
         {{localize 'IRONSWORN.Versus'}}
         {{{challengeDice}}}</p>
     </div>
@@ -43,6 +43,7 @@ usedStat: "shadow"
       <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitTypeI18n}}}</p>
       <button
         class='icon-button fas fa-fire burn-momentum-sf'
+        type='button'
         data-actor='{{actor.id}}'
         data-move='{{move.id}}'
         data-mode='{{mode}}'
@@ -58,8 +59,10 @@ usedStat: "shadow"
   {{#if nextOracles}}
     <hr />
     {{#each nextOracles}}
-      <button class='starforged__oracle__roll' data-tableid='{{id}}'>
-        <i class='isicon-d10-tilt'></i>
+      <button
+        class='starforged__oracle__roll icon-button clickable isicon-d10-tilt'
+        data-tableid='{{id}}'
+      >
         {{name}}
       </button>
     {{/each}}

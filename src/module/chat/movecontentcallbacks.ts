@@ -1,8 +1,8 @@
 import { IronswornActor } from '../actor/actor'
-import { ROLL_OUTCOME } from '../rolls/roll'
+import { RollOutcome } from '../rolls/roll'
 
 type CallbackInput = {
-  hitType?: ROLL_OUTCOME
+  hitType?: RollOutcome
   stat?: string
   site?: IronswornActor
 }
@@ -11,7 +11,7 @@ type Callback = (input: CallbackInput) => string | undefined
 
 export const MoveContentCallbacks: { [key: string]: Callback } = {
   'Delve the Depths': ({ hitType, stat }: CallbackInput) =>
-    hitType === ROLL_OUTCOME.WEAK
+    hitType === RollOutcome.Weak_hit
       ? ` <button class="ironsworn__delvedepths__roll" data-stat="${stat}">
             <i class="fa fa-dice-d6"></i> ${game.i18n.localize(
               'IRONSWORN.Roll'
@@ -26,7 +26,7 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
   `,
 
   Sojourn: ({ hitType }: CallbackInput) =>
-    hitType === ROLL_OUTCOME.MISS
+    hitType === RollOutcome.Miss
       ? undefined
       : `
         <hr>
@@ -41,5 +41,5 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
   'Pay the Price': () =>
     `<button class="ironsworn__paytheprice__roll">
       <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
-    </button`,
+    </button>`,
 }
