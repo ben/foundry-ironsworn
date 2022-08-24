@@ -64,18 +64,19 @@
       </select>
     </fieldset>
 
-    <fieldset class='form-group'>
-      <label class='checkbox'>
-        <input
-          type='checkbox'
-          class='advanced-roll-options-toggle'
-          name='presetActionDie'
-        />
-        {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
-      </label>
-      <input type='number' step='1' name='presetActionDieValue' value='0' />
-    </fieldset>
-
+    {{#if action}}
+      <fieldset class='form-group'>
+        <label class='checkbox'>
+          <input
+            type='checkbox'
+            class='advanced-roll-options-toggle'
+            name='presetActionDie'
+          />
+          {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
+        </label>
+        <input type='number' step='1' name='presetActionDieValue' value='0' />
+      </fieldset>
+    {{/if}}
     <fieldset class='form-group'>
       <label class='checkbox'>
         <input
