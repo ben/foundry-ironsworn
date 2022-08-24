@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.1
+
 - Make delve-site roll rendering a bit less ugly, until we can make it more pretty ([#446](https://github.com/ben/foundry-ironsworn/pull/446))
 
 ## 1.17.0
