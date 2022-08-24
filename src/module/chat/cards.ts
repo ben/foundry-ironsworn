@@ -210,7 +210,7 @@ export class IronswornChatCard {
           <span class="roll die d10 isiconbg-d10-blank" style="flex: 0 0 25px;">${rollTotal}</span>
         </p>
 
-        <h4 class="dice-formula">
+        <h4>
           ${result.low}–${result.high}: ${result.description}
         </h4>
       `
@@ -239,7 +239,7 @@ export class IronswornChatCard {
           <span class="roll die d10 isiconbg-d10-blank" style="flex: 0 0 25px;">${rollTotal}</span>
         </p>
 
-        <h4 class="dice-formula">
+        <h4>
           ${realResult?.low}–${realResult?.high}: ${realResult?.description}
         </h4>
       `
@@ -277,7 +277,7 @@ export class IronswornChatCard {
           <span class="roll die d10 isiconbg-d10-blank" style="flex: 0 0 25px;">${rollTotal}</span>
         </p>
 
-        <h4 class="dice-formula">
+        <h4>
           ${result?.low}–${result?.high}: ${result?.description}
         </h4>
       `
