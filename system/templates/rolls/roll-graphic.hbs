@@ -1,9 +1,9 @@
-<article class="dice-formula roll-graphic">
+<article class="roll-graphic dice-formula{{#if actionScore}} action-roll-formula{{else}} progress-roll-formula{{/if}}">
   {{!-- The action die or progress score --}}
   {{#if actionDieCanceledByNegativeMomentum}}
-  <del>
+  <del class="roll-term-cancelled">
   {{/if}}
-  <span class="action roll d6 isiconbg-d6-blank {{actionMinMax}}" title="{{computedActionDie.source}}">
+  <span class="action-die die action roll d6 isiconbg-d6-blank {{actionMinMax}}" title="{{computedActionDie.source}}">
     {{#if computedActionDie.value}}
     {{computedActionDie.value}}
     {{else}}
@@ -16,25 +16,25 @@
 
   {{#each adds}}
   <span class="math-symbol">&plus;</span>
-  <span title="{{source}}">{{value}}</span>
+  <span title="{{source}}" class="action-roll-add">{{value}}</span>
   {{/each}}
 
   {{#if actionScore}}
   <span class="math-symbol">&equals;</span>
-  <strong>
-    {{#if actionScoreCapped}}
-    <span class="action-score-capped" title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionScore}}</span>
-    {{else}}
+  <span class="score{{#if actionScoreCapped}} action-score-capped{{/if}}"
+  title="{{#if actionScoreCapped}}{{localize 'IRONSWORN.CappedAt10'}}{{/if}}"
+  >
     {{actionScore}}
-    {{/if}}
-  </strong>
+  </span>
   {{/if}}
 
-  <span class="roll-versus">{{localize 'IRONSWORN.Versus'}}</span>
+  <span class="roll-versus">
+    {{localize 'IRONSWORN.Versus'}}
+  </span>
 
-  <div class="challenge-dice {{#if isMatch }}match{{/if}}">
+  <div class="challenge-dice{{#if isMatch }} match{{/if}}">
     {{#each challengeDice}}
-    <span class="roll die isiconbg-d10-blank d10 challenge {{minmax}}" title="{{source}}">
+    <span class="roll die isiconbg-d10-blank d10 challenge challenge-die {{minmax}}" title="{{source}}">
       {{#if value}}
       {{value}}
       {{else}}
@@ -43,11 +43,6 @@
     </span>
     {{/each}}
   </div>
-
-  {{#if outcome}}
-  <span class="math-symbol">&equals;</span>
-  <strong class="outcome-text" title="{{outcome.source}}">{{computeOutcomeText outcome.value isMatch}}</strong>
-  {{/if}}
 {{!-- <pre><code>{{json this}}</code></pre> --}}
 </article>
 

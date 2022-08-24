@@ -2,7 +2,7 @@
   class='ironsworn-roll flexcol'
   data-ironswornroll='{{json ironswornroll}}'
 >
-  <h3>
+  <h3 class='ironsworn-roll-title'>
     {{title}}
   </h3>
 
@@ -10,49 +10,54 @@
     {{{graphic}}}
   </section>
 
-  {{#if moveOutcome}}
-    <section class='roll-result'>
-      <p>
-        {{#if outcomeReplacementReason}}
+  <section class='roll-outcome {{outcomeClass}}'>
+    <h4 class='outcome-label' title='{{outcome.source}}'>
+      {{#if outcomeReplacementReason}}
+        <span class='outcome-replacement-reason'>
           {{outcomeReplacementReason}}:
-        {{/if}}
-        <strong>{{outcomeText}}</strong>
-      </p>
-      {{{enrichMarkdown moveOutcome}}}
-    </section>
-  {{else if outcomeReplacementReason}}
-    <p>
-      {{outcomeReplacementReason}}:
-      <strong>{{outcomeText}}</strong>
-    </p>
-  {{/if}}
+        </span>
+      {{/if}}
+      <span class='outcome-text'>
+        {{outcomeText}}
+      </span>
+    </h4>
 
-  {{#if possibleMomentumBurn}}
-    <hr />
-    <section class='momentum-burn'>
-      <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=possibleMomentumBurn}}}</p>
-      <button
-        class='icon-button fas fa-fire ironsworn-roll-burn-momentum'
-        type='button'
-      >
-        {{localize 'IRONSWORN.Burn'}}
-      </button>
-    </section>
-  {{/if}}
+    {{#if moveOutcome}}
+      <section class='move-outcome'>
+        {{{enrichMarkdown moveOutcome}}}
+      </section>
+    {{/if}}
+  </section>
 
-  {{#if nextOracles}}
-    <hr />
-    <section class='move-oracle-buttons'>
-      {{#each nextOracles}}
+  <section class='outcome-shortcuts'>
+    {{#if possibleMomentumBurn}}
+      <hr />
+      <section class='momentum-burn'>
+        <p>{{{localize
+            'IRONSWORN.BurnForUpgrade'
+            type=possibleMomentumBurn
+          }}}</p>
         <button
-          class='starforged__oracle__roll icon-button isicon-d10-tilt'
+          class='icon-button fas fa-fire ironsworn-roll-burn-momentum'
           type='button'
-          data-tableid='{{id}}'
         >
-          {{name}}
+          {{localize 'IRONSWORN.Burn'}}
         </button>
-      {{/each}}
-    </section>
-  {{/if}}
-
+      </section>
+    {{/if}}
+    {{#if nextOracles}}
+      <hr />
+      <section class='move-oracle-buttons'>
+        {{#each nextOracles}}
+          <button
+            class='starforged__oracle__roll icon-button isicon-d10-tilt'
+            type='button'
+            data-tableid='{{id}}'
+          >
+            {{name}}
+          </button>
+        {{/each}}
+      </section>
+    {{/if}}
+  </section>
 </article>

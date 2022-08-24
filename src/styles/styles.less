@@ -637,19 +637,69 @@ hr {
 }
 
 // roll-graphic.hbs
-.dice-formula.roll-graphic {
-  padding: 0.25rem;
-  gap: 0.25rem;
-  display: flex;
-  margin: 0;
-  justify-content: center;
-  flex-direction: row;
 
+.ironsworn-roll-title {
+  margin: 0;
+}
+
+@graphic-gap: 0.25rem;
+
+.ironsworn-roll {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.roll-graphic.dice-formula {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: auto;
+  gap: @graphic-gap;
+  justify-content: center;
+  margin: 0;
+  padding: @graphic-gap;
+  * {
+    margin: 0;
+  }
+
+  .die {
+    flex-grow: 0;
+  }
   .action-score-capped {
     text-decoration: dotted underline;
   }
+  .score {
+    font-weight: bold;
+  }
+  .challenge-dice {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    gap: (@graphic-gap / 2);
+    .challenge-die {
+    }
+  }
 }
 
+.outcome-shortcuts {
+  display: contents;
+}
+.roll-outcome {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  * {
+    margin: 0;
+  }
+
+  .outcome-label {
+    display: flex;
+    flex-flow: row;
+    white-space: nowrap;
+    text-transform: uppercase;
+    justify-content: center;
+    font-size: larger;
+  }
+}
 // preroll-dialog.hbs
 .preroll-dialog {
   display: flex;

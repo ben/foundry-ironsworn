@@ -1,11 +1,18 @@
 import { IOutcomeInfo, RollMethod } from 'dataforged'
-import { capitalize, compact, fromPairs, isUndefined } from 'lodash'
+import { capitalize, compact, fromPairs, isUndefined, kebabCase } from 'lodash'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { SFMoveDataProperties } from '../item/itemtypes'
 import { DfRollOutcome, RollOutcome } from './roll'
 import { renderRollGraphic } from './roll-graphic'
+
+type MoveTemplateData = {
+  outcomeClass?: string
+  outcomeText?: string
+  outcomeReplacementReason?: string
+  moveOutcome?: string
+}
 
 /**
  * Shortcut for composing a localized string similar to "roll +{stat}".
@@ -120,11 +127,6 @@ export function outcomeKey(
   }
   return key as i18nOutcomeKey
 }
-
-export function outcomeText(outcome: RollOutcome, match: boolean) {
-  return game.i18n.localize('IRONSWORN.' + outcomeKey(outcome, match))
-}
-
 export class IronswornRollChatMessage {
   constructor(public roll: IronswornRoll, public actor?: IronswornActor) {
     if (!actor && roll.preRollOptions.actorId) {
@@ -176,6 +178,7 @@ export class IronswornRollChatMessage {
       ...(await this.momentumData()),
       ...(await this.oraclesData()),
     }
+    console.log('renderData', renderData)
     const content = await renderTemplate(
       'systems/foundry-ironsworn/templates/rolls/chat-message.hbs',
       renderData
@@ -204,7 +207,9 @@ export class IronswornRollChatMessage {
     }
   }
 
-  private async titleData(): Promise<any> {
+  private async titleData(): Promise<{
+    title: string
+  }> {
     const move = await this.roll.moveItem
 
     const { progress, stat } = this.roll.preRollOptions
@@ -219,7 +224,7 @@ export class IronswornRollChatMessage {
     if (!stat) throw new Error('Need progress or stat here')
 
     if (move) {
-      return { title: `${move.name} (${stat.source})` }
+      return { title: `${move.name} +${stat.source}` }
     }
     let localizedStat = game.i18n.localize(
       'IRONSWORN.' + capitalize(stat.source)
@@ -230,37 +235,34 @@ export class IronswornRollChatMessage {
     }
   }
 
-  private async moveData(): Promise<any> {
-    const move = await this.roll.moveItem
-    if (move?.data.type !== 'sfmove') return {}
-
+  private async moveData(): Promise<MoveTemplateData> {
     // Outcome can be overridden
     const theOutcome = this.roll.finalOutcome?.value
     if (theOutcome === undefined) return {}
 
     // Original outcome
-    const ret = {
-      outcomeText: outcomeText(theOutcome, this.roll.isMatch),
+    const ret: MoveTemplateData = {
+      outcomeText: computeOutcomeText(theOutcome, this.roll.isMatch),
+      outcomeClass: `${kebabCase(RollOutcome[theOutcome])}${
+        this.roll.isMatch ? ' match' : ''
+      }`,
       outcomeReplacementReason:
         this.roll.postRollOptions.replacedOutcome?.source,
-    } as any
-    const dfOutcomeKeys = {
-      [RollOutcome.Miss]: 'Miss',
-      [RollOutcome.Weak_hit]: 'Weak Hit',
-      [RollOutcome.Strong_hit]: 'Strong Hit',
     }
-    const key = dfOutcomeKeys[theOutcome]
+    const move = await this.roll.moveItem
+    if (move?.data.type !== 'sfmove') return ret
+
+    const key = DfRollOutcome[theOutcome]
     let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
     if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
       dfOutcome = dfOutcome['With a Match']
     if (dfOutcome) {
       ret.moveOutcome = dfOutcome.Text
     }
-
     return ret
   }
 
-  private momentumData(): any {
+  private momentumData() {
     if (this.actor?.data.type !== 'character') return {}
 
     // Can't burn momentum on progress rolls
@@ -278,7 +280,10 @@ export class IronswornRollChatMessage {
 
     if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
       return {
-        possibleMomentumBurn: outcomeText(momentumBurnOutcome, c1 === c2),
+        possibleMomentumBurn: computeOutcomeText(
+          momentumBurnOutcome,
+          c1 === c2
+        ),
       }
     }
     return {}

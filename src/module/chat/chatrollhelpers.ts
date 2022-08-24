@@ -111,9 +111,7 @@ function calculateCardTitle(params: RollMessageParams) {
     }
 
     if (params.stat) {
-      title += ` (${game.i18n.localize(
-        'IRONSWORN.' + capitalize(params.stat)
-      )})`
+      title += ` +${game.i18n.localize('IRONSWORN.' + capitalize(params.stat))}`
     } else if (params.subtitle) {
       title += `: ${params.subtitle}`
     }
@@ -125,12 +123,12 @@ function calculateCardTitle(params: RollMessageParams) {
     let title = params.asset.data.name
     if (params.stat) {
       if (params.stat === 'track' && params.asset?.data.type === 'asset') {
-        title += ` (${params.asset.data.data.track.name})`
+        title += ` +${params.asset.data.data.track.name}`
       } else {
         const statText = game.i18n.localize(
           `IRONSWORN.${capitalize(params.stat)}`
         )
-        title += ` (${statText})`
+        title += ` +${statText}`
       }
     }
     return title

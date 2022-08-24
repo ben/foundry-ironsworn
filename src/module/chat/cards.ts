@@ -136,8 +136,8 @@ export class IronswornChatCard {
     }
 
     const parent = $(ev.currentTarget).parents('.message-content')
-    parent.find('.roll-result').addClass('strikethru')
-    parent.find('.roll-result button').prop('disabled', true)
+    parent.find('.move-outcome').addClass('strikethru')
+    parent.find('.move-outcome button').prop('disabled', true)
     parent.find('.momentum-burn').html(`
       <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
       ${result || ''}
@@ -170,8 +170,8 @@ export class IronswornChatCard {
 
     // Replace the chat-card HTML
     const parent = $(ev.currentTarget).parents('.message-content')
-    parent.find('.roll-result').addClass('strikethru')
-    parent.find('.roll-result button').prop('disabled', true)
+    parent.find('.move-outcome').addClass('strikethru')
+    parent.find('.move-outcome button').prop('disabled', true)
     parent.find('.momentum-burn').html(`
       <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
       <strong>${hittypetext}:</strong>

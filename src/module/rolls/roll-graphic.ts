@@ -12,7 +12,7 @@ type RenderData = {
   roll?: IronswornRoll
 
   adds: SourcedValue<number | string>[]
-  computedActionDie?: SourcedValue<number | string>
+  computedActionDie?: SourcedValue<number>
   actionIsDie?: boolean
   actionMinMax?: 'min' | 'max' | undefined
   actionScore?: number
@@ -41,7 +41,7 @@ export async function renderRollGraphic(
   if (referenceRoll.actionDie) {
     renderData.computedActionDie = {
       ...referenceRoll.actionDie,
-      value: referenceRoll.actionDie?.value?.toString(),
+      value: referenceRoll.actionDie?.value,
     }
     if (referenceRoll.actionDie.value === ACTION_DIE_SIDES)
       renderData.actionMinMax = 'max'
@@ -82,6 +82,8 @@ export async function renderRollGraphic(
       value: referenceRoll.rawOutcome.value,
     }
   }
+
+  console.log('renderData', renderData)
 
   const graphicTemplate =
     'systems/foundry-ironsworn/templates/rolls/roll-graphic.hbs'
