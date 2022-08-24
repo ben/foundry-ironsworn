@@ -206,6 +206,13 @@ import SiteDenizenbox from './components/site/site-denizenbox.vue'
 import SiteMovebox from './components/site/site-movebox.vue'
 import MceEditor from './components/mce-editor.vue'
 import BtnIsicon from './components/buttons/btn-isicon.vue'
+import { RANKS, RANK_INCREMENTS } from '../constants'
+import {
+  createIronswornChatRoll,
+  createIronswornDenizenChat,
+} from '../chat/chatrollhelpers'
+import { rollSiteFeature } from '../helpers/rolldialog'
+import { moveDataByName } from '../helpers/data'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
@@ -241,7 +248,7 @@ const hasThemeAndDomain = computed(() => {
 })
 
 const rankText = computed(() => {
-  return game.i18n.localize(CONFIG.IRONSWORN.Ranks[props.actor.data.rank])
+  return game.i18n.localize(RANKS[props.actor.data.rank])
 })
 
 function setRank(rank) {
@@ -253,24 +260,24 @@ function clearProgress() {
 }
 
 function markProgress() {
-  const increment = CONFIG.IRONSWORN.RankIncrements[props.actor.data.rank]
+  const increment = RANK_INCREMENTS[props.actor.data.rank]
   const newValue = Math.min(props.actor.data.current + increment, 40)
   $actor?.update({ 'data.current': newValue })
 }
 
 function randomFeature() {
   if (!hasThemeAndDomain.value) return
-  CONFIG.IRONSWORN.rollSiteFeature({
+  rollSiteFeature({
     theme: ironswornTheme.value,
     domain: ironswornDomain.value,
   })
 }
 
 async function locateObjective() {
-  const move = await CONFIG.IRONSWORN.moveDataByName('Locate Your Objective')
+  const move = await moveDataByName('Locate Your Objective')
   const progress = Math.floor(props.actor.data.current / 4)
   const roll = new Roll(`{${progress}, d10, d10}`)
-  CONFIG.IRONSWORN.createIronswornChatRoll({
+  createIronswornChatRoll({
     isProgress: true,
     move,
     roll,
@@ -287,7 +294,7 @@ async function randomDenizen() {
   )
   const idx = $actor?.data.data.denizens.indexOf(denizen)
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
-  await CONFIG.IRONSWORN.createIronswornDenizenChat({
+  await createIronswornDenizenChat({
     roll,
     denizen,
     site: $actor,

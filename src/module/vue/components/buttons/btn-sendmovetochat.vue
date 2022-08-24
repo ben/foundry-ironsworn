@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import { Move } from '../../../features/custommoves'
+import { SFRollMoveDialog } from '../../../helpers/rolldialog-sf'
 import btnFaicon from './btn-faicon.vue'
 
 const props = defineProps<{
@@ -23,8 +24,6 @@ const props = defineProps<{
 }>()
 
 function sendToChat(e) {
-  CONFIG.IRONSWORN.SFRollMoveDialog.createDataforgedMoveChat(
-    props.move.moveItem
-  )
+  SFRollMoveDialog.createDataforgedMoveChat(props.move.moveItem)
 }
 </script>

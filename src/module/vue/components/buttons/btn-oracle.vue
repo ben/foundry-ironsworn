@@ -15,6 +15,7 @@
 <script setup lang="ts">
 import { sample } from 'lodash'
 import { inject } from 'vue'
+import { rollAndDisplayOracleResult } from '../../../chat/chatrollhelpers.js'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
 import btnIsicon from './btn-isicon.vue'
 
@@ -31,7 +32,7 @@ function rollOracle() {
   const pack = {
     ironsworn: 'foundry-ironsworn.ironswornoracles',
     starforged: 'foundry-ironsworn.starforgedoracles',
-  }[toolset]
-  CONFIG.IRONSWORN.rollAndDisplayOracleResult(randomTable, pack)
+  }[toolset ?? '']
+  rollAndDisplayOracleResult(randomTable, pack)
 }
 </script>

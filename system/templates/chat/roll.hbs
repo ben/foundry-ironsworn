@@ -21,9 +21,9 @@ callerContent: "<button>maybe</button>"
        {{#if move}}data-move="{{move.Name}}"{{/if}}
   >
     <div class="dice-formula">
-      <p>{{{actionDieFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
+      <p>{{{actionScoreFormula}}} {{localize 'IRONSWORN.Versus'}} {{{challengeDice}}}</p>
     </div>
-    <div class="roll-result">
+    <div class="move-outcome">
       {{#if negativeMomentumCancel}}
       <p><em>{{localize 'IRONSWORN.NegativeMomentumCancel'}}</em></p>
       {{/if}}
@@ -43,16 +43,16 @@ callerContent: "<button>maybe</button>"
   </div>
 
   {{#if momentumHitType}}
-  <hr>
   <div class="momentum-burn">
-    <p>{{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitTypeI18n}}}</p>
     <button class="icon-button fas fa-fire burn-momentum"
             data-actor="{{actor.id}}"
             data-move="{{move.Name}}"
             data-stat="{{stat}}"
             data-hittype="{{momentumHitType}}"
     >
-      {{localize 'IRONSWORN.Burn'}}
+      <span class="button-text">
+        {{{localize 'IRONSWORN.BurnForUpgrade' type=momentumHitTypeI18n}}}
+      </span>
     </button>
   </div>
   {{/if}}

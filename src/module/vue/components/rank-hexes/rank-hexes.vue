@@ -12,11 +12,12 @@
 
 <script setup lang="ts">
 import { computed } from '@vue/runtime-core'
+import { RANKS } from '../../../constants'
 import RankHex from './rank-hex.vue'
 const props = defineProps<{ current: string }>()
 
 const ranks = computed(() => {
-  const keys = Object.keys(CONFIG.IRONSWORN.Ranks)
+  const keys = Object.keys(RANKS)
   const position = keys.indexOf(props.current)
   return keys.map((r) => {
     const rankIndex = keys.indexOf(r)

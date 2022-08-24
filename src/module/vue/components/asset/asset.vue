@@ -74,10 +74,15 @@
 .slide-leave-active {
   max-height: 350px;
 }
-
 .stat-roll {
   text-transform: uppercase;
   line-height: 1;
+}
+</style>
+
+<style lang="less">
+.condition-meter .icon-button .button-text {
+  text-align: left;
 }
 </style>
 
@@ -92,6 +97,7 @@ import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey } from '../../provisions'
+import { defaultActor } from '../../../helpers/actors'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject('actor') as Ref
@@ -114,7 +120,7 @@ const enabledAbilities = computed(() => {
 })
 const actingActor = computed(() => {
   if (actor.value.type === 'character') return actor.value
-  return CONFIG.IRONSWORN.defaultActor()?.toObject(false)
+  return defaultActor()?.toObject(false)
 })
 
 function toggle() {
@@ -155,7 +161,7 @@ function exclusiveOptionClick(selectedIdx) {
 function moveclick(item) {
   let actorWithMoves = $actor
   if ($actor?.type !== 'character') {
-    actorWithMoves = CONFIG.IRONSWORN.defaultActor()
+    actorWithMoves = defaultActor()
   }
   actorWithMoves?.moveSheet?.render(true)
   actorWithMoves?.moveSheet?.highlightMove(item)

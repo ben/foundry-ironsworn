@@ -7,6 +7,7 @@ import {
 } from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
 import { DelveDomainDataSource, DelveThemeDataSource } from '../item/itemtypes'
+import { formatRollPlusStat } from '../rolls/chat-message.js'
 import { EnhancedDataswornMove } from './data'
 import { IronswornSettings } from './settings'
 import { capitalize } from './util'
@@ -63,11 +64,9 @@ export class RollDialog extends Dialog {
     }
     const content = await renderTemplate(template, renderOpts)
 
-    const callbackForStat = (stat: string) => (x) => {
-      const form = x[0].querySelector('form')
-      const bonus = form.bonus.value
-        ? parseInt(form.bonus.value, 10)
-        : undefined
+    const callbackForStat = (stat: string) => (dialogData: JQuery) => {
+      const form = dialogData[0].querySelector('form') as HTMLFormElement
+      const bonus = form.bonus.valueAsNumber
       let actor = opts.actor
       if (form.char?.value) {
         actor = game.actors?.get(form.char.value)
@@ -90,18 +89,20 @@ export class RollDialog extends Dialog {
       for (const stat of opts.move.Stats) {
         buttons[stat] = {
           icon: '<i class="isicon-d10-tilt"></i>',
-          label: game.i18n.localize(`IRONSWORN.${capitalize(stat)}`),
+          label:
+            '<span class=button-text>' +
+            game.i18n.localize(`IRONSWORN.${capitalize(stat)}`) +
+            '</span>',
           callback: callbackForStat(stat),
         }
       }
     } else if (opts.stat) {
-      const rollText = game.i18n.localize('IRONSWORN.Roll')
       const statText = game.i18n.localize(`IRONSWORN.${capitalize(opts.stat)}`)
-      title = `${rollText} +${statText}`
+      title = formatRollPlusStat(opts.stat)
       defaultButton = opts.stat
       buttons[opts.stat] = {
         icon: '<i class="isicon-d10-tilt"></i>',
-        label: statText,
+        label: `<span class=button-text>${statText}</span>`,
         callback: callbackForStat(opts.stat),
       }
     }

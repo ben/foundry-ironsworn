@@ -1,4 +1,5 @@
 import { cloneDeep } from 'lodash'
+import type { RollOutcome } from '../rolls/roll.js'
 
 export type MoveOracleEntry = {
   low: number
@@ -29,6 +30,23 @@ export interface EnhancedDataswornMove {
   ExtraWeak?: string
   ExtraMiss?: string
   oracles?: MoveOracle[]
+}
+
+/**
+ * Enumerates the outcome properties of {@link EnhancedDataswornMove} using the same values as {@link RollOutcome}
+ */
+export enum DsRollOutcome {
+  Miss = 0,
+  Weak = 1,
+  Strong = 2,
+}
+/**
+ * Enumerates the extra outcome properties of {@link EnhancedDataswornMove} using the same values as {@link RollOutcome}
+ */
+export enum DsRollOutcomeExtra {
+  ExtraMiss = 0,
+  ExtraWeak = 1,
+  ExtraStrong = 2,
 }
 
 interface EnhancedDataswornMoveCategory {

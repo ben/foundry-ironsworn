@@ -1,7 +1,7 @@
 import { capitalize } from 'lodash'
 import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
-import { HIT_TYPE, rollAndDisplayOracleResult } from './chatrollhelpers'
+import { rollAndDisplayOracleResult } from './chatrollhelpers'
 import {
   DelveDomainDataProperties,
   DelveThemeDataProperties,
@@ -13,6 +13,8 @@ import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
+import { DfRollOutcome, RollOutcome } from '../rolls/roll'
+import { IronswornRollChatMessage } from '../rolls'
 
 export class IronswornChatCard {
   id?: string | null
@@ -44,6 +46,9 @@ export class IronswornChatCard {
     html
       .find('.burn-momentum-sf')
       .on('click', (ev) => this._sfBurnMomentum.call(this, ev))
+    html
+      .find('.ironsworn-roll-burn-momentum')
+      .on('click', (ev) => this._irBurnMomentum.call(this, ev))
     html
       .find('.ironsworn__delvedepths__roll')
       .on('click', (ev) => this._delveDepths.call(this, ev))
@@ -106,9 +111,12 @@ export class IronswornChatCard {
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
     const { actor, move, stat, hittype } = ev.target.dataset
+    const hitTypeKey = {
+      [RollOutcome.Miss]: 'Miss',
+      [RollOutcome.Weak_hit]: 'Weak',
+      [RollOutcome.Strong_hit]: 'Strong',
+    }[hittype]
 
     const theActor = game.actors?.get(actor)
     theActor?.burnMomentum()
@@ -117,23 +125,19 @@ export class IronswornChatCard {
     let result: string
     if (move) {
       const theMove = await moveDataByName(move)
-      result = theMove && theMove[capitalize(hittype.toLowerCase())]
+      result = theMove && theMove[hitTypeKey]
       bonusContent = MoveContentCallbacks[move]?.call(this, {
-        hitType: hittype as HIT_TYPE,
+        hitType: hittype as RollOutcome,
         stat,
       })
     } else {
-      const i18nKey = {
-        [HIT_TYPE.STRONG]: 'StrongHit',
-        [HIT_TYPE.WEAK]: 'WeakHit',
-        [HIT_TYPE.MISS]: 'Miss',
-      }[hittype]
-      result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
+      const i18nKey = 'IRONSWORN.' + RollOutcome[parseInt(hittype)]
+      result = `<strong>${game.i18n.localize(i18nKey)}</strong>`
     }
 
     const parent = $(ev.currentTarget).parents('.message-content')
-    parent.find('.roll-result').addClass('strikethru')
-    parent.find('.roll-result button').prop('disabled', true)
+    parent.find('.move-outcome').addClass('strikethru')
+    parent.find('.move-outcome button').prop('disabled', true)
     parent.find('.momentum-burn').html(`
       <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
       ${result || ''}
@@ -157,11 +161,7 @@ export class IronswornChatCard {
       (await sfPack?.getDocument(move))) as IronswornItem
 
     // Get the new result
-    const k = {
-      [HIT_TYPE.STRONG]: 'Strong Hit',
-      [HIT_TYPE.WEAK]: 'Weak Hit',
-      [HIT_TYPE.MISS]: 'Miss',
-    }[hittype]
+    const k = DfRollOutcome[hittype]
     const moveData = theMove.data as SFMoveDataProperties
     const newOutcome = moveData.data.Outcomes?.[k]?.Text
 
@@ -170,8 +170,8 @@ export class IronswornChatCard {
 
     // Replace the chat-card HTML
     const parent = $(ev.currentTarget).parents('.message-content')
-    parent.find('.roll-result').addClass('strikethru')
-    parent.find('.roll-result button').prop('disabled', true)
+    parent.find('.move-outcome').addClass('strikethru')
+    parent.find('.move-outcome button').prop('disabled', true)
     parent.find('.momentum-burn').html(`
       <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
       <strong>${hittypetext}:</strong>
@@ -180,6 +180,14 @@ export class IronswornChatCard {
 
     const content = parent.html()
     await this.message?.update({ content })
+  }
+
+  async _irBurnMomentum(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const msgId = $(ev.target).parents('.chat-message').data('message-id')
+    const irmsg = await IronswornRollChatMessage.fromMessage(msgId)
+    irmsg?.burnMomentum()
   }
 
   async _delveDepths(ev: JQuery.ClickEvent) {

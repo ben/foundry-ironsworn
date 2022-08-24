@@ -1,19 +1,36 @@
-import { range } from 'lodash'
+import { compact, range } from 'lodash'
 import { RANKS } from '../constants'
 import { capitalize } from './util'
 import { marked } from 'marked'
+import {
+  ACTION_DICE_ROLLED,
+  ACTION_DIE_SIDES,
+  CHALLENGE_DICE_ROLLED,
+  CHALLENGE_DIE_SIDES,
+  DIE_LOWEST_FACE,
+  SCORE_MAX,
+} from '../rolls/roll.js'
+import {
+  computeOutcomeText,
+  formatRollMethod,
+  formatRollPlusStat,
+} from '../rolls/chat-message.js'
+import { localeCapitalize } from '../rolls/preroll-dialog.js'
 
 interface RollClassesOptions {
   canceled: boolean
   type: 'action' | 'challenge' | undefined
 }
-function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
+function classesForRoll(
+  r: Roll<RollClassesOptions>,
+  opts?: Partial<RollClassesOptions>
+) {
   const theOpts = {
     ...{ canceled: false, type: undefined },
     ...opts,
   }
   const d = r.dice[0]
-  const maxRoll = d?.faces || 10
+  const maxRoll = d?.faces || SCORE_MAX
   return [
     d?.constructor.name.toLowerCase(),
     d && `isiconbg-d${d.faces}-blank`,
@@ -27,16 +44,23 @@ function classesForRoll(r, opts?: Partial<RollClassesOptions>) {
 }
 
 const actionRoll = (roll) =>
-  roll.terms[0].rolls.find((r) => r.dice.length === 0 || r.dice[0].faces === 6)
+  roll.terms[0].rolls.find(
+    (r) => r.dice.length === 0 || r.dice[0].faces === ACTION_DIE_SIDES
+  )
 
 const challengeRolls = (roll) =>
-  roll.terms[0].rolls.filter((r) => r.dice.length > 0 && r.dice[0].faces === 10)
+  roll.terms[0].rolls.filter(
+    (r) => r.dice.length > 0 && r.dice[0].faces === CHALLENGE_DIE_SIDES
+  )
 
 export class IronswornHandlebarsHelpers {
   static registerHelpers() {
     Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''))
 
-    Handlebars.registerHelper('capitalize', capitalize)
+    Handlebars.registerHelper('capitalize', localeCapitalize)
+    Handlebars.registerHelper('formatRollPlusStat', formatRollPlusStat)
+    Handlebars.registerHelper('formatRollMethod', formatRollMethod)
+    Handlebars.registerHelper('computeOutcomeText', computeOutcomeText)
     Handlebars.registerHelper('lowercase', (str) => str.toLowerCase())
 
     Handlebars.registerHelper('json', function (context) {
@@ -50,8 +74,11 @@ export class IronswornHandlebarsHelpers {
     Handlebars.registerHelper('ifIsIronswornRoll', function (options) {
       if (
         (this.roll.dice.length === 3 &&
-          this.roll.dice.filter((x) => x.faces === 6).length === 1 &&
-          this.roll.dice.filter((x) => x.faces === 10).length === 2) ||
+          this.roll.dice.filter((x) => x.faces === ACTION_DIE_SIDES).length ===
+            ACTION_DICE_ROLLED &&
+          this.roll.dice.filter((x) => x.faces === CHALLENGE_DIE_SIDES)
+            .length === CHALLENGE_DICE_ROLLED) ||
+        // TODO: extract pattern, standardize as constant
         this.roll.formula.match(/{\d+,1?d10,1?d10}/)
       ) {
         return options.fn(this)
@@ -60,8 +87,7 @@ export class IronswornHandlebarsHelpers {
       }
     })
 
-    Handlebars.registerHelper('actionDieFormula', function () {
-      console.log(this)
+    Handlebars.registerHelper('actionScoreFormula', function () {
       const r = actionRoll(this.roll)
       const terms = [...r.terms]
       const d = terms.shift()
@@ -93,20 +119,20 @@ export class IronswornHandlebarsHelpers {
     })
 
     Handlebars.registerHelper('ironswornHitType', function () {
-      const actionTotal = actionRoll(this.roll).total
-      const [challenge1, challenge2] = challengeRolls(this.roll).map(
+      const actionScore = actionRoll(this.roll).total
+      const [challengeDie1, challengeDie2] = challengeRolls(this.roll).map(
         (x) => x.total
       )
-      const match = challenge1 === challenge2
-      if (actionTotal <= Math.min(challenge1, challenge2)) {
-        if (match) return game.i18n.localize('IRONSWORN.Complication')
+      const match = challengeDie1 === challengeDie2
+      if (actionScore <= Math.min(challengeDie1, challengeDie2)) {
+        if (match) return game.i18n.localize('IRONSWORN.Miss_match')
         return game.i18n.localize('IRONSWORN.Miss')
       }
-      if (actionTotal > Math.max(challenge1, challenge2)) {
-        if (match) return game.i18n.localize('IRONSWORN.Opportunity')
-        return game.i18n.localize('IRONSWORN.StrongHit')
+      if (actionScore > Math.max(challengeDie1, challengeDie2)) {
+        if (match) return game.i18n.localize('IRONSWORN.Strong_hit_match')
+        return game.i18n.localize('IRONSWORN.Strong_hit')
       }
-      return game.i18n.localize('IRONSWORN.WeakHit')
+      return game.i18n.localize('IRONSWORN.Weak_hit')
     })
 
     function tickMarkSvg(ticks: number): string {
@@ -204,15 +230,12 @@ export class IronswornHandlebarsHelpers {
 
   static enrichHtml(text: string) {
     const rendered = TextEditor.enrichHTML(text)
-    const rollText = game.i18n.localize('IRONSWORN.Roll')
     return rendered.replace(
       /\(\(rollplus (.*?)\)\)/g,
       (_, stat) => `
         <a class="inline-roll" data-param="${stat}">
           <i class="fas fa-dice-d6"></i>
-          ${rollText} +${game.i18n
-        .localize(`IRONSWORN.${capitalize(stat)}`)
-        .toLowerCase()}
+          ${formatRollPlusStat(stat)}
         </a>
       `
     )

@@ -57,7 +57,10 @@ const hasDefaultSlot = computed(() => {
 .icon-button {
   .button-text {
     // makes this seamless with existing buttons that don't need this styling
-    display: contents;
+    display: inline;
+    strong {
+      white-space: nowrap;
+    }
   }
   &.vertical-v2 {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF

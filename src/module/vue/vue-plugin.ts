@@ -1,5 +1,6 @@
 import { marked } from 'marked'
-import { capitalize, Plugin } from 'vue'
+import { Plugin } from 'vue'
+import { formatRollPlusStat } from '../rolls/chat-message.js'
 import { $EnrichHtmlKey, $EnrichMarkdownKey } from './provisions'
 
 declare module '@vue/runtime-core' {
@@ -14,15 +15,12 @@ declare module '@vue/runtime-core' {
 
 export function enrichHtml(text) {
   const rendered = TextEditor.enrichHTML(text)
-  const rollText = game.i18n.localize('IRONSWORN.Roll')
   return rendered.replace(
     /\(\(rollplus (.*?)\)\)/g,
     (_, stat) => `
   <a class="inline-roll" data-param="${stat}">
     <i class="fas fa-dice-d6"></i>
-    ${rollText} +${game.i18n
-      .localize(`IRONSWORN.${capitalize(stat)}`)
-      .toLowerCase()}
+    ${formatRollPlusStat(stat)}
   </a>
 `
   )

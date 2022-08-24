@@ -174,6 +174,7 @@ import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
 import BtnIcon from './components/buttons/btn-icon.vue'
 import MceEditor from './components/mce-editor.vue'
+import { rollAndDisplayOracleResult } from '../chat/chatrollhelpers'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
@@ -585,7 +586,7 @@ async function randomizeName() {
       await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
         'Starforged/Oracles/Settlements/Name'
       )
-    name = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
+    name = await rollAndDisplayOracleResult(table)
   }
 
   if (name) {
@@ -611,7 +612,7 @@ async function randomizeKlass() {
   const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
     tableKey
   )
-  const rawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
+  const rawText = await rollAndDisplayOracleResult(table)
   if (!rawText) return
 
   const lctext = rawText.toLowerCase()
@@ -634,7 +635,7 @@ async function rollOracle(oracle) {
   const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
     oracle.dfId
   )
-  const drawText = await CONFIG.IRONSWORN.rollAndDisplayOracleResult(table)
+  const drawText = await rollAndDisplayOracleResult(table)
   if (!drawText) return
 
   // Append to description

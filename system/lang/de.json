@@ -4,9 +4,11 @@
     "Rolling": "Würfeln",
     "Bonus": "Bonus",
     "Versus": "vs.",
-    "StrongHit": "Voller Erfolg",
-    "WeakHit": "Teilerfolg",
+    "Strong_hit": "Voller Erfolg",
+    "Strong_hit_match": "Voller Erfolg mit einem Pasch!",
+    "Weak_hit": "Teilerfolg",
     "Miss": "Fehlschlag",
+    "Miss_match": "Fehlschlag mit einem Pasch!",
     "Opportunity": "Gelegenheit!",
     "Complication": "Verschlimmerung!",
     "MarkProgress": "Markiere Fortschritt",
@@ -20,6 +22,20 @@
     "Formidable": "Gewaltig",
     "Extreme": "Extrem",
     "Epic": "Episch",
+    "Stat": "Attribut",
+    "Stats": "Attribute",
+    "roll +x": "würfle +{stat}",
+    "roll method": {
+      "Any": {
+        "2": "würfle dann +{stat1} oder +{stat2}"
+      },
+      "Highest": {
+        "2": "würfle dann +{stat1} oder +{stat2}, je nachdem, was höher ist"
+      },
+      "Lowest": {
+        "2": "würfle dann +{stat1} oder +{stat2}, je nachdem, was niedriger ist"
+      }
+    },
     "Momentum": "Momentum",
     "Health": "Leben",
     "Spirit": "Willen",
@@ -44,6 +60,8 @@
     "Character": "Charakter",
     "Names": "Namen",
     "Burn": "Verbrennen",
+    "BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
+    "MomentumBurnt": "Momentum verbrannt",
     "Reset": "Zurücksetzen",
     "Max": "Maximum",
     "Name": "Name",

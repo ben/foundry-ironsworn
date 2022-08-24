@@ -1,6 +1,7 @@
 import { createIronswornChatRoll } from '../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../constants'
 import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
+import { IronswornPrerollDialog } from '../rolls'
 
 /**
  * Extend the base Iteem entity
@@ -26,14 +27,13 @@ export class IronswornItem extends Item {
   fulfill() {
     if (this.data.type === 'vow') return this.fulfillVow()
     if (this.data.type !== 'progress') return
+
     const progress = Math.floor(this.data.data.current / 4)
-    const r = new Roll(`{${progress},d10,d10}`)
-    return createIronswornChatRoll({
-      isProgress: true,
-      actor: this.actor || undefined,
-      subtitle: this.name || undefined,
-      roll: r,
-    })
+    return IronswornPrerollDialog.showForProgress(
+      this.name || '(progress)',
+      progress,
+      this.actor || undefined
+    )
   }
 
   async fulfillVow() {

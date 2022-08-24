@@ -43,19 +43,19 @@
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="StrongHit"
+          titleKey="Strong_hit"
           property="Outcomes.Strong Hit.Text"
         />
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="StrongHitMatch"
+          titleKey="Strong_hit_match"
           property="Outcomes.Strong Hit.With a Match.Text"
         />
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="WeakHit"
+          titleKey="Weak_hit"
           property="Outcomes.Weak Hit.Text"
         />
         <sfmove-tab
@@ -67,7 +67,7 @@
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="MissMatch"
+          titleKey="Miss_match"
           property="Outcomes.Miss.With a Match.Text"
         />
       </div>

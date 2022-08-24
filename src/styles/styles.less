@@ -1,4 +1,5 @@
 @import './ironsworn-icons.less';
+@import 'mixins.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
@@ -283,6 +284,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    .button-text {
+      .clickable();
+      .nogrow();
+      .initial-caps();
+      width: max-content;
+      height: max-content;
+    }
+
     i {
       height: 18px;
       width: 18px;
@@ -534,6 +543,10 @@ hr {
 }
 
 .ironsworn-roll {
+  h3,
+  button {
+    .initial-caps();
+  }
   .hit-type {
     font-weight: bold;
     font-variant: all-small-caps;
@@ -545,6 +558,8 @@ hr {
       background-color: var(--ironsworn-dice-background);
     }
   }
+
+  @dice-glow-offset: 0px 0px 5px;
 
   .roll {
     width: 24px;
@@ -584,8 +599,6 @@ hr {
       background-image: url('../../icons/svg/d20-grey.svg');
     }
 
-    @dice-glow-offset: 0px 0px 5px;
-
     &.min:not(.challenge),
     &.challenge.max {
       color: var(--ironsworn-color-danger) !important;
@@ -609,10 +622,127 @@ hr {
       ) !important;
     }
   }
+
+  del .roll {
+    text-decoration: line-through;
+    color: var(--ironsworn-color-warning) !important;
+    filter: drop-shadow(
+      @dice-glow-offset var(--ironsworn-color-warning-faded)
+    ) !important;
+  }
 }
 
 .bonus-content .dice-formula {
   word-break: normal;
+}
+
+// roll-graphic.hbs
+
+.ironsworn-roll-title {
+  margin: 0;
+}
+
+@graphic-gap: 0.25rem;
+
+.ironsworn-roll {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.roll-graphic.dice-formula {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: auto;
+  gap: @graphic-gap;
+  justify-content: center;
+  margin: 0;
+  padding: @graphic-gap;
+  * {
+    margin: 0;
+  }
+
+  .die {
+    flex-grow: 0;
+  }
+  .indeterminate-value {
+    opacity: 0.5;
+  }
+  .action-score-capped {
+    text-decoration: dotted underline;
+  }
+  .score {
+    font-weight: bold;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .challenge-dice {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    gap: (@graphic-gap / 2);
+    .challenge-die {
+    }
+  }
+}
+
+.outcome-shortcuts {
+  display: contents;
+}
+.roll-outcome {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+  * {
+    margin: 0;
+  }
+
+  .outcome-label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: larger;
+    span {
+      display: inline;
+      white-space: nowrap;
+    }
+    .outcome-text {
+      font-weight: bold;
+    }
+  }
+}
+// preroll-dialog.hbs
+.preroll-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  button {
+    .initial-caps();
+  }
+
+  .roll-trigger-text {
+  }
+
+  .trigger-options {
+  }
+
+  .form-group {
+    padding: 0;
+    border: none;
+  }
+
+  .advanced-roll-options {
+    padding: 5px;
+    margin: 5px 0;
+    border: 1px solid;
+  }
+  .advanced-roll-options-toggle {
+  }
 }
 
 table td:first-child {

@@ -69,7 +69,7 @@ export class SFRollMoveDialog extends Dialog {
         // buttons[
         //   kebabCase(label) + ' clickable isicon-d10-tilt juicy icon-button'
         // ] = {
-        label,
+        label: `<span class=button-text>${label}</span>`,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: callback({ actor, move, mode, stats }),
       }
@@ -119,7 +119,7 @@ function callback(opts: {
   return async (x) => {
     // TODO: extract data from form and send to rollAndCreateChatMessage
     const form = x[0].querySelector('form')
-    const bonus = form.bonus.value ? parseInt(form.bonus.value ?? '0', 10) : 0
+    const bonus = form.bonus.valueAsNumber
     rollAndCreateChatMessage({ ...opts, bonus })
   }
 }

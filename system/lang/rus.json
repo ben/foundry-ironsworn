@@ -4,8 +4,8 @@
     "Rolling": "Бросить",
     "Bonus": "Бонус",
     "Versus": "против",
-    "StrongHit": "Полный успех",
-    "WeakHit": "Частичный успех",
+    "Strong_hit": "Полный успех",
+    "Weak_hit": "Частичный успех",
     "Miss": "Провал",
     "Opportunity": "Возможность",
     "Complication": "Осложнение",
@@ -20,14 +20,26 @@
     "Formidable": "Грозная",
     "Extreme": "Смертельная",
     "Epic": "Эпичная",
-    "Momentum": "Козырь",
-    "Health": "Здоровье",
-    "Spirit": "Дух",
-    "Edge": "Холод",
-    "Heart": "Нрав",
-    "Iron": "Сталь",
-    "Shadow": "Тень",
-    "Wits": "Ум",
+    "roll +x": "брось +{stat}",
+    "roll method": {
+      "Any": {
+        "2": "брось +{stat1} или +{stat2}"
+      },
+      "Highest": {
+        "2": "брось +{stat1} или +{stat2}, что выше"
+      },
+      "Lowest": {
+        "2": "брось +{stat1} или +{stat2}, что ниже"
+      }
+    },
+    "Momentum": "козырь",
+    "Health": "здоровье",
+    "Spirit": "дух",
+    "Edge": "холод",
+    "Heart": "нрав",
+    "Iron": "сталь",
+    "Shadow": "тень",
+    "Wits": "ум",
     "XP": "ОП",
     "Assets": "Буклеты",
     "Bonds": "Связи",
