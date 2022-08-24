@@ -74,10 +74,15 @@
 .slide-leave-active {
   max-height: 350px;
 }
-
 .stat-roll {
   text-transform: uppercase;
   line-height: 1;
+}
+</style>
+
+<style lang="less">
+.condition-meter .icon-button .button-text {
+  text-align: left;
 }
 </style>
 
