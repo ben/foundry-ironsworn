@@ -112,6 +112,11 @@ export class IronswornChatCard {
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
     const { actor, move, stat, hittype } = ev.target.dataset
+    const hitTypeKey = {
+      [RollOutcome.Miss]: 'Miss',
+      [RollOutcome.Weak_hit]: 'Weak',
+      [RollOutcome.Strong_hit]: 'Strong',
+    }[hittype]
 
     const theActor = game.actors?.get(actor)
     theActor?.burnMomentum()
@@ -120,14 +125,14 @@ export class IronswornChatCard {
     let result: string
     if (move) {
       const theMove = await moveDataByName(move)
-      result = theMove && theMove[capitalize(hittype.toLowerCase())]
+      result = theMove && theMove[hitTypeKey]
       bonusContent = MoveContentCallbacks[move]?.call(this, {
         hitType: hittype as RollOutcome,
         stat,
       })
     } else {
-      const i18nKey = RollOutcome[hittype]
-      result = `<strong>${game.i18n.localize('IRONSWORN.' + i18nKey)}</strong>`
+      const i18nKey = 'IRONSWORN.' + RollOutcome[parseInt(hittype)]
+      result = `<strong>${game.i18n.localize(i18nKey)}</strong>`
     }
 
     const parent = $(ev.currentTarget).parents('.message-content')
