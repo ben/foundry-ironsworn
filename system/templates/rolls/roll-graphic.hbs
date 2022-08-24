@@ -19,13 +19,13 @@
   <span title="{{source}}">{{value}}</span>
   {{/each}}
 
-  {{#if actionTotal}}
+  {{#if actionScore}}
   <span class="math-symbol">&equals;</span>
   <strong>
-    {{#if actionTotalCapped}}
-    <span class="action-score-capped" title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionTotal}}</span>
+    {{#if actionScoreCapped}}
+    <span class="action-score-capped" title="{{localize 'IRONSWORN.CappedAt10'}}">{{actionScore}}</span>
     {{else}}
-    {{actionTotal}}
+    {{actionScore}}
     {{/if}}
   </strong>
   {{/if}}
