@@ -664,11 +664,21 @@ hr {
   .die {
     flex-grow: 0;
   }
+  .indeterminate-value {
+    opacity: 0.5;
+  }
   .action-score-capped {
     text-decoration: dotted underline;
   }
   .score {
     font-weight: bold;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .challenge-dice {
     display: flex;
@@ -687,17 +697,23 @@ hr {
   display: flex;
   flex-flow: column;
   justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
   * {
     margin: 0;
   }
 
   .outcome-label {
-    display: flex;
-    flex-flow: row;
-    white-space: nowrap;
+    text-align: center;
     text-transform: uppercase;
-    justify-content: center;
     font-size: larger;
+    span {
+      display: inline;
+      white-space: nowrap;
+    }
+    .outcome-text {
+      font-weight: bold;
+    }
   }
 }
 // preroll-dialog.hbs

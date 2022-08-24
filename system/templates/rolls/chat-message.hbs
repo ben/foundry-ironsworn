@@ -14,7 +14,7 @@
     <h4 class='outcome-label' title='{{outcome.source}}'>
       {{#if outcomeReplacementReason}}
         <span class='outcome-replacement-reason'>
-          {{outcomeReplacementReason}}:
+          {{outcomeReplacementReason}}:&nbsp;<wbr />
         </span>
       {{/if}}
       <span class='outcome-text'>
@@ -31,22 +31,18 @@
 
   <section class='outcome-shortcuts'>
     {{#if possibleMomentumBurn}}
-      <hr />
       <section class='momentum-burn'>
-        <p>{{{localize
-            'IRONSWORN.BurnForUpgrade'
-            type=possibleMomentumBurn
-          }}}</p>
         <button
           class='icon-button fas fa-fire ironsworn-roll-burn-momentum'
           type='button'
         >
-          {{localize 'IRONSWORN.Burn'}}
+          <span class='button-text'>
+            {{{localize 'IRONSWORN.BurnForUpgrade' type=possibleMomentumBurn}}}
+          </span>
         </button>
       </section>
     {{/if}}
     {{#if nextOracles}}
-      <hr />
       <section class='move-oracle-buttons'>
         {{#each nextOracles}}
           <button
@@ -54,7 +50,7 @@
             type='button'
             data-tableid='{{id}}'
           >
-            {{name}}
+            <span class='button-text'>{{name}}</span>
           </button>
         {{/each}}
       </section>

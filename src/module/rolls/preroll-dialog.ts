@@ -127,7 +127,6 @@ function prerollOptionsWithFormData(
       value: valMap.extraChallengeDiceValue as number,
     }
   }
-
   return opts
 }
 
@@ -347,10 +346,15 @@ export class IronswornPrerollDialog extends Dialog<
     showActorSelect?: boolean
     action?: boolean
   }): Promise<string> {
-    const graphic = await renderRollGraphic(data.prerollOptions)
+    const newOptions = {
+      ...data.prerollOptions,
+      showOutcome: true,
+    }
+    console.log('preroll render options', newOptions)
+    const graphic = await renderRollGraphic(newOptions)
     const template =
       'systems/foundry-ironsworn/templates/rolls/preroll-dialog.hbs'
-    return renderTemplate(template, { ...data, graphic })
+    return renderTemplate(template, { ...data, graphic, showOutcome: true })
   }
 
   activateListeners(html: JQuery<HTMLElement>): void {

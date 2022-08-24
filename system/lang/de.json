@@ -61,6 +61,7 @@
     "Names": "Namen",
     "Burn": "Verbrennen",
     "BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
+    "MomentumBurnt": "Momentum verbrannt",
     "Reset": "Zurücksetzen",
     "Max": "Maximum",
     "Name": "Name",

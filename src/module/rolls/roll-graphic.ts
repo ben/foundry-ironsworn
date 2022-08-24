@@ -7,7 +7,7 @@ import {
   SourcedValue,
 } from './roll'
 
-type RenderData = {
+export type RenderData = {
   prerollOptions: PreRollOptions
   roll?: IronswornRoll
 
@@ -15,10 +15,12 @@ type RenderData = {
   computedActionDie?: SourcedValue<number>
   actionIsDie?: boolean
   actionMinMax?: 'min' | 'max' | undefined
-  actionScore?: number
+  score?: number
   actionScoreCapped?: boolean
   actionDieCanceledByNegativeMomentum?: boolean
   isMatch: boolean
+  isProgress: boolean
+  showOutcome: boolean
 
   challengeDice: Partial<SourcedValue & { minmax?: 'min' | 'max' }>[]
 
@@ -29,13 +31,17 @@ export async function renderRollGraphic(
   prerollOptions: PreRollOptions,
   roll?: IronswornRoll
 ) {
+  console.log('renderRollGraphic prerollOptions', prerollOptions)
+  console.log('renderRollGraphic roll', roll)
   const referenceRoll = roll ?? new IronswornRoll(prerollOptions)
   const renderData: RenderData = {
     prerollOptions,
     roll,
     adds: [],
     challengeDice: [{}, {}],
+    isProgress: prerollOptions.progress !== undefined,
     isMatch: referenceRoll.isMatch,
+    showOutcome: prerollOptions.showOutcome ?? true,
   }
 
   if (referenceRoll.actionDie) {
@@ -55,7 +61,7 @@ export async function renderRollGraphic(
   }
 
   renderData.adds = referenceRoll.adds
-  renderData.actionScore = referenceRoll.actionScore
+  renderData.score = referenceRoll.score
   renderData.actionScoreCapped = referenceRoll.actionScoreCapped
 
   renderData.challengeDice = referenceRoll.challengeDice
@@ -82,10 +88,12 @@ export async function renderRollGraphic(
       value: referenceRoll.rawOutcome.value,
     }
   }
-
-  console.log('renderData', renderData)
-
+  if (prerollOptions.showOutcome) {
+    console.log('this template is supposed to show the outcome')
+    renderData.showOutcome = true
+  }
   const graphicTemplate =
     'systems/foundry-ironsworn/templates/rolls/roll-graphic.hbs'
+  console.log('data to be passed to renderTemplate', renderData)
   return renderTemplate(graphicTemplate, renderData)
 }

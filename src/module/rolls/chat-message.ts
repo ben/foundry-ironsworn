@@ -169,8 +169,12 @@ export class IronswornRollChatMessage {
   async createOrUpdate() {
     await this.roll.evaluate()
 
+    // console.log('sent renderData', renderData)
     const renderData = {
-      graphic: await renderRollGraphic(this.roll.preRollOptions, this.roll),
+      graphic: await renderRollGraphic(
+        { ...this.roll.preRollOptions, showOutcome: false },
+        this.roll
+      ),
       ironswornroll: this.roll.serialize(),
       move: await this.roll.moveItem,
       ...(await this.titleData()),
@@ -178,7 +182,6 @@ export class IronswornRollChatMessage {
       ...(await this.momentumData()),
       ...(await this.oraclesData()),
     }
-    console.log('renderData', renderData)
     const content = await renderTemplate(
       'systems/foundry-ironsworn/templates/rolls/chat-message.hbs',
       renderData

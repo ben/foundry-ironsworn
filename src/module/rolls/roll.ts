@@ -134,6 +134,10 @@ export interface PreRollOptions {
    */
   moveDfId?: string
   actorId?: string
+  /**
+   * Whether to render the outcome info inside the roll graphic.
+   */
+  showOutcome?: boolean
 }
 
 // Input to rendering, can be updated after the fact
@@ -318,7 +322,7 @@ export class IronswornRoll {
     return undefined
   }
 
-  get actionScore(): number | undefined {
+  get score(): number | undefined {
     const ret = this.rawScore
     return ret === undefined ? undefined : Math.min(ret, SCORE_MAX)
   }
@@ -370,18 +374,17 @@ export class IronswornRoll {
   get isMatch(): boolean {
     if (!this.finalChallengeDice) return false
     const [c1, c2] = this.finalChallengeDice ?? []
-    return c1 === c2
+    return typeof c1 === 'number' && c1 === c2
   }
 
   get rawOutcome(): SourcedValue<RollOutcome> | undefined {
     if (this.preRollOptions.automaticOutcome) {
       return this.preRollOptions.automaticOutcome
     }
-    if (!this.finalChallengeDice || this.actionScore === undefined)
-      return undefined
+    if (!this.finalChallengeDice || this.score === undefined) return undefined
 
     const [c1, c2] = this.finalChallengeDice
-    const outcome = computeRollOutcome(this.actionScore, c1, c2)
+    const outcome = computeRollOutcome(this.score, c1, c2)
     return {
       value: outcome,
       source: game.i18n.localize('IRONSWORN.Roll'),
