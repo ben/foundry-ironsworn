@@ -236,7 +236,7 @@ export class IronswornRollChatMessage {
 
     // Outcome can be overridden
     const theOutcome = this.roll.finalOutcome?.value
-    if (!theOutcome) return {}
+    if (theOutcome === undefined) return {}
 
     // Original outcome
     const ret = {
