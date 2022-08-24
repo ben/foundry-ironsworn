@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.0
+
 - Add a new dice-rolling engine, and upgrade the move/stat/track/progress rolling dialogs ([#422](https://github.com/ben/foundry-ironsworn/pull/422))
 - Fix the die-roll backgrounds in the SF theme
 - Don't open editors for non-editable items when clicking a move link and no character move sheet is open.
