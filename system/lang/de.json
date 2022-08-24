@@ -60,6 +60,7 @@
     "Character": "Charakter",
     "Names": "Namen",
     "Burn": "Verbrennen",
+    "BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
     "Reset": "Zurücksetzen",
     "Max": "Maximum",
     "Name": "Name",
