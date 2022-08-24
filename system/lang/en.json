@@ -206,10 +206,10 @@
     "RotateCCW": "Rotate counter-clockwise",
     "RotateCW": "Rotate clockwise",
     "RollDialog": {
-      "AdvancedRollOptions": "Advanced Options",
-      "PresetActionDie": "Preset Action Die",
-      "PredeterminedOutcome": "Predetermined Outcome",
-      "ExtraChallengeDice": "Extra Challenge Dice"
+      "AdvancedRollOptions": "Advanced options",
+      "PresetActionDie": "Preset action die",
+      "PredeterminedOutcome": "Predetermined outcome",
+      "ExtraChallengeDice": "Extra challenge dice"
     },
     "ChatAlert": {
       "Renamed": "Renamed to {name}",
