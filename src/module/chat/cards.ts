@@ -111,9 +111,6 @@ export class IronswornChatCard {
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
-    // ev.preventDefault()
-    // ^ unneeded with type=button set on the element
-
     const { actor, move, stat, hittype } = ev.target.dataset
 
     const theActor = game.actors?.get(actor)
