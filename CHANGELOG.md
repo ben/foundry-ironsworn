@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Make delve-site roll rendering a bit less ugly, until we can make it more pretty ([#446](https://github.com/ben/foundry-ironsworn/pull/446))
+
 ## 1.17.0
 
 - Add a new dice-rolling engine, and upgrade the move/stat/track/progress rolling dialogs ([#422](https://github.com/ben/foundry-ironsworn/pull/422))
