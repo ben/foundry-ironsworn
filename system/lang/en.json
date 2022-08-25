@@ -13,14 +13,21 @@
     "Bonus": "Bonus",
     "Adds": "Adds",
     "Versus": "vs.",
+    "THREAT": {
+      "Threat": "threat",
+      "Threats": "threats",
+      "Menace": "menace",
+      "MarkMenace": "Mark menace"
+    },
     "COMBAT": {
       "Position": "position",
       "InControl": "in control",
       "InABadSpot": "in a bad spot",
       "PcIsInControl": "{name} is in control",
       "PcIsInABadSpot": "{name} is in a bad spot",
+      "PcTakesControl": "{name} takes control",
+      "PcIsPutInABadSpot": "{name} is put in a bad spot",
       "Initiative": "initiative",
-      "NoInitiative": "no initiative",
       "PcHasInitiative": "{name} has initiative",
       "PcDoesntHaveInitiative": "{name} doesn't have initiative",
       "PcTakesInitiative": "{name} takes initiative",
@@ -76,14 +83,17 @@
       "All": "roll all of {statList}",
       "Any": {
         "2": "roll +{stat1} or +{stat2}",
+        "3": "roll +{stat1}, +{stat2}, or +{stat3}",
         "fallback": "roll any of {statList}"
       },
       "Highest": {
         "2": "roll +{stat1} or +{stat2}, whichever is higher",
+        "3": "roll +{stat1}, +{stat2}, or +{stat3}, whichever is highest",
         "fallback": "roll highest of {statList}"
       },
       "Lowest": {
         "2": "roll +{stat1} or +{stat2}, whichever is lower",
+        "3": "roll +{stat1}, +{stat2}, or +{stat3}, whichever is lowest",
         "fallback": "roll lowest of {statList}"
       }
     },
@@ -199,7 +209,6 @@
     "Fate": "Fate",
     "Delve": "Delve",
     "Optional Delve": "Optional delve",
-    "Custom Moves": "Custom moves",
     "CustomMoves": "Custom moves",
     "Oracles": "Oracles",
     "Custom Oracles": "Custom oracles",
