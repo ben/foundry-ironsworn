@@ -1,4 +1,3 @@
-import { CharacterMoveSheet } from './sheets/charactermovesheet'
 import { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 /**
@@ -6,7 +5,7 @@ import { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
  * @extends {Actor}
  */
 export class IronswornActor extends Actor {
-  moveSheet?: CharacterMoveSheet | SFCharacterMoveSheet
+  moveSheet?: SFCharacterMoveSheet
 
   static async createDialog(data, _options = {}) {
     if (CONFIG.IRONSWORN.applications.createActorDialog) {

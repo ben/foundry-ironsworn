@@ -57,6 +57,7 @@ export class IronswornSettings {
           starforged: 'IRONSWORN.Starforged',
         },
         default: 'sheet',
+        onChange: reload,
       }
     )
 
@@ -76,15 +77,6 @@ export class IronswornSettings {
       config: true,
       type: Boolean,
       default: true,
-    })
-
-    game.settings.register('foundry-ironsworn', 'df-is-moves-oracles', {
-      name: 'IRONSWORN.Settings.DataforgedIronswornMoves.Name',
-      hint: 'IRONSWORN.Settings.DataforgedIronswornMoves.Hint',
-      scope: 'client',
-      config: true,
-      type: Boolean,
-      default: false,
     })
 
     game.settings.register('foundry-ironsworn', 'data-version', {
@@ -116,10 +108,6 @@ export class IronswornSettings {
 
   static get logCharacterChanges(): boolean {
     return !!game.settings.get('foundry-ironsworn', 'log-changes')
-  }
-
-  static get dataforgedIronswornMoves(): boolean {
-    return !!game.settings.get('foundry-ironsworn', 'df-is-moves-oracles')
   }
 
   static async maybeSetGlobalSupply(value: number) {
