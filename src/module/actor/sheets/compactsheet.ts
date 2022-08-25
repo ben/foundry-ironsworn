@@ -123,12 +123,8 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
   _momentumBurn(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    if (this.actor.data.type !== 'character') return
-    const { momentum, momentumReset } = this.actor.data.data
-    if (momentum > momentumReset) {
-      this.actor.update({
-        data: { momentum: momentumReset },
-      })
+    if (this.actor.data.type === 'character') {
+      this.actor.burnMomentum()
     }
   }
 }
