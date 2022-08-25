@@ -21,7 +21,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
         `theme-${IronswornSettings.theme}`,
       ],
       width: 560,
-      height: 240,
+      height: 210,
       template: 'systems/foundry-ironsworn/templates/actor/compact.hbs',
       resizable: false,
     })
@@ -33,9 +33,6 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
     html
       .find('.ironsworn__stat__roll')
       .on('click', (e) => this._onStatRoll.call(this, e))
-    html
-      .find('.ironsworn__stat__bonusadajust')
-      .on('click', (e) => this._bonusAdjust.call(this, e))
     html
       .find('.ironsworn__resource__adjust')
       .on('click', (e) => this._resourceAdjust.call(this, e))
@@ -75,14 +72,6 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
     } else {
       new CharacterMoveSheet(this.actor).render(true)
     }
-  }
-
-  _bonusAdjust(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
-    const amt = parseInt(ev.currentTarget.dataset.amt || '0')
-    this.options.statRollBonus += amt
-    this.render(true)
   }
 
   async _onStatRoll(ev: JQuery.ClickEvent) {
