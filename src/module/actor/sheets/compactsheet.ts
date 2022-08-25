@@ -2,16 +2,7 @@ import { IronswornSettings } from '../../helpers/settings'
 import { IronswornPrerollDialog } from '../../rolls'
 import { CharacterMoveSheet } from './charactermovesheet'
 
-interface CompactCharacterSheetOptions extends ActorSheet.Options {
-  statRollBonus: number
-}
-
-export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterSheetOptions> {
-  constructor(actor, opts: CompactCharacterSheetOptions) {
-    opts.statRollBonus ||= 0
-    super(actor, opts)
-  }
-
+export class IronswornCompactCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: [
@@ -80,14 +71,11 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
     const el = ev.currentTarget
     const stat = el.dataset.stat
     if (stat) {
-      const bonus = this.options.statRollBonus || 0
       IronswornPrerollDialog.showForStat(
         stat,
         this.actor.data.data[stat],
-        this.actor,
-        bonus
+        this.actor
       )
-      this.options.statRollBonus = 0
       this.render(true)
     }
   }
