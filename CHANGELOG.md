@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Freshen up the compact PC sheet, and use the new rolling pipeline ([#448](https://github.com/ben/foundry-ironsworn/pull/448))
+
 ## 1.17.1
 
 - Make delve-site roll rendering a bit less ugly, until we can make it more pretty ([#446](https://github.com/ben/foundry-ironsworn/pull/446))
