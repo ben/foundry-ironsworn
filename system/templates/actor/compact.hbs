@@ -22,7 +22,8 @@
     <div class="flexrow boxrow">
       {{#*inline "resource"}}
       <div class="box flexcol">
-        <div class="flexcol boxrow clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+        <div class="flexcol boxrow {{#unless burn}}clickable block ironsworn__stat__roll{{/unless}}"
+          data-stat="{{stat}}">
           <h5>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h5>
           <h4>{{lookup data.data stat}}</h4>
         </div>
