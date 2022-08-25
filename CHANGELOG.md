@@ -3,6 +3,7 @@
 ## Next Release
 
 - Freshen up the compact PC sheet, and use the new rolling pipeline ([#448](https://github.com/ben/foundry-ironsworn/pull/448))
+- Fix a bug where clicking on a progress-item's image would change the parent actor's image
 - Retire the Handlebars move/oracle sheet, in favor of the Vue one introduced in #419 ([#439](https://github.com/ben/foundry-ironsworn/pull/439))
 
 ## 1.17.1
