@@ -21,7 +21,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
         `theme-${IronswornSettings.theme}`,
       ],
       width: 560,
-      height: 228,
+      height: 240,
       template: 'systems/foundry-ironsworn/templates/actor/compact.hbs',
       resizable: false,
     })
