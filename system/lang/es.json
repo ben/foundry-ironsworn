@@ -1,6 +1,6 @@
 {
   "IRONSWORN": {
-    "CreateActor": "Crear Actor",
+    "CreateActor": "Crear actor",
     "YourWorldTruths": "Tu mundo: Las verdades",
     "TruthQuestStarter": "Ejemplo de búsqueda:",
     "SaveYourTruths": "Guardar tus Verdades",
@@ -17,12 +17,34 @@
     "Miss": "Fallo",
     "Miss_with_a_match": "¡Fallo con un partido!",
     "On_a_miss": "Con un fallo",
+    "THREAT": {
+      "Threat": "amenaza",
+      "Threats": "Amenazas",
+      "Menace": "amenaza",
+      "MarkMenace": "Marca amenaza"
+    },
+    "COMBAT": {
+      "Position": "Posición",
+      "InControl": "Tiene el control",
+      "PcIsInControl": "{name} tiene el control",
+      "InABadSpot": "En una posición difícil",
+      "PcIsInABadSpot": "{name} en una posición difícil",
+      "Initiative": "Iniciativa"
+    },
     "Opportunity": "Oportunidad",
     "Complication": "Complicación",
     "MarkProgress": "Registra el progreso",
     "ClearProgress": "Borrar progreso",
     "FulfillVow": "Cumplir tu juramento",
     "ProgressRoll": "Tirada de progreso",
+    "ProgressScore": "Puntuación de progreso",
+    "Outcome": "resultado",
+    "Outcomes": "Resultados",
+    "ActionDie": "Dado de acción",
+    "ActionRoll": "Tirada de acción",
+    "ActionScore": "Puntuación de acción",
+    "ChallengeDie": "Dado de desafío",
+    "ChallengeDice": "Dados de desafío",
     "StarProgress": "Cuando se activa, este elemento también aparecerá en la pestaña 'Legados'.",
     "Mark": "Marca",
     "Fulfill": "Completar",
@@ -32,7 +54,8 @@
     "Formidable": "Formidable",
     "Extreme": "Extremo",
     "Epic": "Épico",
-    "Stat": "Característica",
+    "Stat": "característica",
+    "Stats": "Características",
     "roll +x": "tira +{stat}",
     "roll method": {
       "Any": {
@@ -47,31 +70,38 @@
     },
     "Momentum": "impulso",
     "Health": "salud",
-    "Spirit": "entereza",
+    "Spirit": "espíritu",
     "Supply": "suministos",
     "Edge": "filo",
     "Heart": "corazón",
     "Iron": "hierro",
     "Shadow": "sombra",
-    "Wits": "mente",
+    "Wits": "ingenio",
     "XP": "EXP",
-    "Asset": "Recurso",
+    "Asset": "recurso",
     "Assets": "Recursos",
     "Bonds": "Vínculos",
-    "Bond": "Vínculo",
+    "Bond": "vínculo",
+    "Connections": "Conexiones",
+    "Connection": "conexión",
     "Legacies": "Legados",
+    "Legacy": "Legado",
     "Clock": "Reloj",
     "Scenes": "Escenas",
     "Quests": "Búsquedas",
     "Notes": "Notas",
-    "Discoveries": "Discoveries",
+    "Discoveries": "Descubrimientos",
+    "Discovery": "descubrimiento",
     "Debilities": "Debilidades",
+    "Debility": "debilidad",
+    "Impacts": "Impactos",
+    "Impact": "impacto",
     "Conditions": "Condiciones",
     "Banes": "Desgracias",
     "Burdens": "Cargas",
     "Misfortunes": "Misfortunes",
-    "LastingEffects": "Lasting Effects",
-    "Vehicle": "Vehicle",
+    "LastingEffects": "Lasting effects",
+    "Vehicle": "Vehicle troubles",
     "Wounded": "Herido",
     "Unprepared": "Sin suministros",
     "Shaken": "Conmocionado",
@@ -80,11 +110,11 @@
     "Corrupted": "Corrompido",
     "Cursed": "Maldito",
     "Tormented": "Atormentado",
-    "Permanentlyharmed": "Permanently Harmed",
-    "Traumatized": "Traumatized",
-    "Doomed": "Doomed",
-    "Indebted": "Indebted",
-    "Battered": "Battered",
+    "Permanentlyharmed": "Permanently harmed",
+    "Traumatized": "Traumatizado",
+    "Doomed": "Condenado",
+    "Indebted": "Endeudado",
+    "Battered": "Abollado",
     "Vow": "Juramento",
     "Vows": "Juramentos",
     "Progress": "Progreso",
@@ -133,6 +163,8 @@
     "Dangers": "Peligros",
     "Foes": "Oponentes",
     "Foe": "Oponente",
+    "NPC": "PNJ",
+    "NonPlayerCharacter": "personaje no jugador",
     "Edit": "Editar",
     "Domain": "Domain",
     "Theme": "Tema",
@@ -215,35 +247,35 @@
     "MoveContents": {
       "Face Danger": {
         "title": "Afrontar el peligro",
-        "description": "<p>Cuando <strong>intentas algo arreisgado o reaccionas ante una amenaza inminente</strong>, concreta cómo lo vas a hacer y tira. Si actúas...</p>\n<ul>\n<li>Con rapidez, agilidad o precisión, tira +filo.</li>\n<li>Con carisma, lealtad o coraje, tira +corazón.</li>\n<li>Con una acción agresiva, una defensa enérgica, fuerza o resistencia, tira +hierro.</li>\n<li>Con conocimientos, perspicacia u observación, tira +mente.</li>\n<li>Con sigilo, engaño o artimañas, tira +sombra.</li>\n</ul>\n",
+        "description": "<p>Cuando <strong>intentas algo arreisgado o reaccionas ante una amenaza inminente</strong>, concreta cómo lo vas a hacer y tira. Si actúas...</p>\n<ul>\n<li>Con rapidez, agilidad o precisión, tira +filo.</li>\n<li>Con carisma, lealtad o coraje, tira +corazón.</li>\n<li>Con una acción agresiva, una defensa enérgica, fuerza o resistencia, tira +hierro.</li>\n<li>Con conocimientos, perspicacia u observación, tira +ingenio.</li>\n<li>Con sigilo, engaño o artimañas, tira +sombra.</li>\n</ul>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, consigues lo que pretendías o evitas la amenaza. Ganas +1 de impulso.</p>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, tienes éxito, pero con un coste. Elige una:</p>\n<ul>\n<li>No llegarás a tiempo de...; se desvanece tu ventaja; o enfrentas un nuevo peligro: Pierdes -1 de impulso.</li>\n<li>El personaje se agota o resulta herido: Debes <em>Soportar el daño</em> (1 de daño).</li>\n<li>El personaje se asusta o desanima: Debes <em>Soportar el estrés</em> (1 de estrés).</li>\n<li>Gastas recursos: Pierdes -1 de suministros.</li>\n</ul>\n",
         "miss": "<p>Con un <strong>fallo</strong>, fracasas o tu progreso ses ve obstaculizado por un giro dramático de los acontecimientos que supondrá un coste. <em>Paga el precio</em>.</p>\n"
       },
       "Secure An Advantage": {
         "title": "Crear una ventaja",
-        "description": "<p>Cuando <strong>analizas una situación, te preparas o intentas mejorar tu efectividad</strong>, concreta cómo lo vas a hacer y tira. Si actúas...</p>\n<ul>\n<li>Con rapidez, agilidad o precisión, tira +filo.</li>\n<li>Con carisma, lealtad o coraje, tira +corazón.</li>\n<li>Con una acción agresiva, una defensa enérgica, fuerza o resistencia, tira +hierro.</li>\n<li>Con conocimientos, perspicacia u observación, tira +mente.</li>\n<li>Con sigilo, engaño o artimañas, tira +sombra.</li>\n</ul>\n",
+        "description": "<p>Cuando <strong>analizas una situación, te preparas o intentas mejorar tu efectividad</strong>, concreta cómo lo vas a hacer y tira. Si actúas...</p>\n<ul>\n<li>Con rapidez, agilidad o precisión, tira +filo.</li>\n<li>Con carisma, lealtad o coraje, tira +corazón.</li>\n<li>Con una acción agresiva, una defensa enérgica, fuerza o resistencia, tira +hierro.</li>\n<li>Con conocimientos, perspicacia u observación, tira +ingenio.</li>\n<li>Con sigilo, engaño o artimañas, tira +sombra.</li>\n</ul>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, ganas una ventaja. Elige una:</p>\n<ul>\n<li>Tomas el control: Haz otro movimiento inmediatamente —que no sea de progreso—; al hacer el movimiento suma +1.</li>\n<li>Te preparas para actuar: Ganas +2 de impulso.</li>\n</ul>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, tu ventaja es transitoria. Ganas +1 de impulso.</p>\n",
         "miss": "<p>Con un <strong>fallo</strong>, fracasas o tus suposiciones te la juegan. <em>Paga el precio</em>.</p>\n"
       },
       "Gather Information": {
         "title": "Reunir información",
-        "description": "<p>Cuando <strong>inspeccionas un área, haces preguntas, realizas una investigación o sigues un rastro</strong>, tira +mente. Si estás en una comunidad o haces preguntas a alguien con quien compartes un vínculo, suma +1.</p>\n",
+        "description": "<p>Cuando <strong>inspeccionas un área, haces preguntas, realizas una investigación o sigues un rastro</strong>, tira +ingenio. Si estás en una comunidad o haces preguntas a alguien con quien compartes un vínculo, suma +1.</p>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, descubres algo útil y específico. El camino que debes seguir o lo que debes hacer para progresar queda claro. Imagina qué es lo que descubres —en caso de duda, <em>Pregunta al oráculo</em>—. Ganas +2 de impulso.</p>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, la información complica tu búsqueda o introduce un nuevo peligro. Imagina qué descubres —en caso de duda, <em>Pregunta al oráculo</em>—. Ganas +1 de impulso.</p>\n",
         "miss": "<p>Con un <strong>fallo</strong>, tu investigación descubre una amenaza grave o revela una verdad incómoda que compromete tu búsqueda. <em>Paga el precio</em>.</p>\n"
       },
       "Heal": {
         "title": "Curar",
-        "description": "<p>Cuando <strong>tratas una lesión o una dolencia</strong>, tira +mente. Si estás tratando tus propias heridas, tira +mente o +hierro, la que sea menor.</p>\n",
+        "description": "<p>Cuando <strong>tratas una lesión o una dolencia</strong>, tira +ingenio. Si estás tratando tus propias heridas, tira +ingenio o +hierro, la que sea menor.</p>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, el tratamiento funciona. Si tu personaje o el personaje aliado que tratas está herido, puedes eliminar dicha condición. Después, tu personaje o el aliado gana +2 de salud.</p>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, como arriba, pero pierdes -1 de suministros o -1 de impulso, a tu elección.</p>\n",
         "miss": "<p>Con un <strong>fallo</strong>, el tratamiento es ineficaz. <em>Paga el precio</em>.</p>\n"
       },
       "Resupply": {
         "title": "Reabastecerte",
-        "description": "<p>Cuando <strong>cazas, forrajeas, recoges alimentos o rebuscas para encontrar algo de utilidad</strong>, tira +mente.</p>\n",
+        "description": "<p>Cuando <strong>cazas, forrajeas, recoges alimentos o rebuscas para encontrar algo de utilidad</strong>, tira +ingenio.</p>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, aumentas tus recursos. Ganas +2 de suministros.</p>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, ganas hasta +2 de suministros, pero pierdes -1 de impulso por cada punto de suministro ganado.</p>\n",
         "miss": "<p>Con un <strong>fallo</strong>, no encuentras nada de provecho. <em>Paga el precio</em>.</p>\n"
@@ -251,13 +283,13 @@
       "Make Camp": {
         "title": "Acampar",
         "description": "<p>Cuando <strong>descansas y te repones durante varias horas en la naturaleza</strong>, tira +suministros.</p>\n",
-        "strong": "<p>Con un <strong>éxito total</strong>, tú y cada aliado elegís dos.</p>\n<ul>\n<li>Recuperarte: Tanto tú como tus PNJ compañeros ganáis +1 de salud.</li>\n<li>Compartir: Pierdes -1 de suministros y tanto tú como tus PNJ compañeros ganáis +1 de salud.</li>\n<li>Relajarte: Ganas +1 de entereza.</li>\n<li>Concentrarte: Ganas +1 de impulso.</li>\n<li>Prepararte: Al abandonar el campamento, obtén una bonificación de +1 para <em>Viajar</em>.</li>\n</ul>\n",
-        "weak": "<p>Con un <strong>éxito parcial</li>, elegís una.</p>\n<ul>\n<li>Recuperarte: Tanto tú como tus PNJ compañeros ganáis +1 de salud.</li>\n<li>Compartir: Pierdes -1 de suministros y tanto tú como tus PNJ compañeros ganáis +1 de salud.</li>\n<li>Relajarte: Ganas +1 de entereza.</li>\n<li>Concentrarte: Ganas +1 de impulso.</li>\n<li>Prepararte: Al abandonar el campamento, obtén una bonificación de +1 para <em>Viajar</em>.</li>\n</ul>\n",
+        "strong": "<p>Con un <strong>éxito total</strong>, tú y cada aliado elegís dos.</p>\n<ul>\n<li>Recuperarte: Tanto tú como tus PNJ compañeros ganáis +1 de salud.</li>\n<li>Compartir: Pierdes -1 de suministros y tanto tú como tus PNJ compañeros ganáis +1 de salud.</li>\n<li>Relajarte: Ganas +1 de espíritu.</li>\n<li>Concentrarte: Ganas +1 de impulso.</li>\n<li>Prepararte: Al abandonar el campamento, obtén una bonificación de +1 para <em>Viajar</em>.</li>\n</ul>\n",
+        "weak": "<p>Con un <strong>éxito parcial</li>, elegís una.</p>\n<ul>\n<li>Recuperarte: Tanto tú como tus PNJ compañeros ganáis +1 de salud.</li>\n<li>Compartir: Pierdes -1 de suministros y tanto tú como tus PNJ compañeros ganáis +1 de salud.</li>\n<li>Relajarte: Ganas +1 de espíritu.</li>\n<li>Concentrarte: Ganas +1 de impulso.</li>\n<li>Prepararte: Al abandonar el campamento, obtén una bonificación de +1 para <em>Viajar</em>.</li>\n</ul>\n",
         "miss": "<p>Con un <strong>fallo</strong>, no hallas descanso. <em>Paga el precio</em>.</p>\n"
       },
       "Undertake a Journey": {
         "title": "Viajar",
-        "description": "<p>Cuando <strong>viajas por tierras desconocidas o peligrosas</strong>, primero determina el nivel de desafío de tu viaje.</p>\n<ul>\n<li>Un viaje problemático: 3 casillas (12 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje peligroso: 2 casillas (8 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje formidable: 1 casilla (4 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje extremo: 2 marcas por cada lugar de paso en el viaje.</li>\n<li>Un viaje épico: 1 marca por cada lugar de paso en el viaje.</li>\n</ul>\n<p>Después, para cada tramo del viaje, tira +mente. Si partes de una comunidad con la que tienes un vínculo, suma +1 a la tirada inicial.</p>\n",
+        "description": "<p>Cuando <strong>viajas por tierras desconocidas o peligrosas</strong>, primero determina el nivel de desafío de tu viaje.</p>\n<ul>\n<li>Un viaje problemático: 3 casillas (12 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje peligroso: 2 casillas (8 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje formidable: 1 casilla (4 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje extremo: 2 marcas por cada lugar de paso en el viaje.</li>\n<li>Un viaje épico: 1 marca por cada lugar de paso en el viaje.</li>\n</ul>\n<p>Después, para cada tramo del viaje, tira +ingenio. Si partes de una comunidad con la que tienes un vínculo, suma +1 a la tirada inicial.</p>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, llegas a un lugar de paso en tu viaje. Si no conoces el lugar, imagina cómo es —<em>Pregunta al oráculo</em>, en caso de duda—. A continuación, elige una:</p>\n<ul>\n<li>Haces buen uso de tus recursos: Registra el progreso.</li>\n<li>Forzar la marcha: Registras el progreso y ganas +1 de impulso, pero pierdes -1 de suministros.</li>\n</ul>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, alcanzas un lugar de paso en tu viaje. Registra el progreso, pero pierdes -1 de suministros.</p>\n",
         "miss": "<p>Con un <strong>fallo</strong>, tu viaje se ve interrumpido por un acontecimiento comprometido. <em>Paga el precio</em>.</p>\n"
@@ -279,8 +311,8 @@
       "Sojourn": {
         "title": "Pasar tiempo en una comunidad",
         "description": "<p>Cuando <strong>pasas tiempo en una comunidad buscando ayuda</strong>, tira +corazón. Suma +1 si compartes un vínculo con la comunidad.</p>\n",
-        "strong": "<p>Con un <strong>éxito total</strong>, tú y cada aliado podéis elegir dos opciones de entre las categorías que se presentan a continuación. Además, quienes compartan un vínculo con la comunidad pueden elegir una opción adicional.</p>\n<p>Eliminar una condición</p>\n<ul>\n<li>Recuperarse: El personaje ya no está herido. Ganas +1 de salud.</li>\n<li>Reconfortarse: El personaje ya no está conmocionado. Ganas +1 de entereza.</li>\n<li>Equiparse: El personaje ya no está sin suministros. Ganas +1 de suministro.</li>\n</ul>\n<p>Recuperación</p>\n<ul>\n<li>Reponerse: Tú y tus compañeros ganáis +2 de salud.</li>\n<li>Relacionarse: Ganas +2 de entereza.</li>\n<li>Aprovisionarse: Ganas +2 de suministros.</li>\n<li>Planificar: Ganas +2 de impulso.</li>\n</ul>\n<p>Prestar ayuda</p>\n<ul>\n<li>Iniciar una búsqueda: Establece lo que podría necesitar la comunidad o los problemas por los que podría estar pasando (<em>Pregunta al oráculo</em> en caso de duda). Si decides ayudar, procede a <em>Jurar por el Hierro</em> y suma +1 al hacerlo.</li>\n</ul>\n",
-        "weak": "<p>Con un <strong>éxito parcial</strong>, podéis elegir solo una opción. Además, quienes compartan un vínculo con la comunidad pueden elegir una opción adicional.</p>\n<p>Eliminar una condición</p>\n<ul>\n<li>Recuperarse: El personaje ya no está herido. Ganas +1 de salud.</li>\n<li>Reconfortarse: El personaje ya no está conmocionado. Ganas +1 de entereza.</li>\n<li>Equiparse: El personaje ya no está sin suministros. Ganas +1 de suministro.</li>\n</ul>\n<p>Recuperación</p>\n<ul>\n<li>Reponerse: Tú y tus compañeros ganáis +2 de salud.</li>\n<li>Relacionarse: Ganas +2 de entereza.</li>\n<li>Aprovisionarse: Ganas +2 de suministros.</li>\n<li>Planificar: Ganas +2 de impulso.</li>\n</ul>\n<p>Prestar ayuda</p>\n<ul>\n<li>Iniciar una búsqueda: Establece lo que podría necesitar la comunidad o los problemas por los que podría estar pasando (<em>Pregunta al oráculo</em> en caso de duda). Si decides ayudar, procede a <em>Jurar por el Hierro</em> y suma +1 al hacerlo.</li>\n</ul>\n",
+        "strong": "<p>Con un <strong>éxito total</strong>, tú y cada aliado podéis elegir dos opciones de entre las categorías que se presentan a continuación. Además, quienes compartan un vínculo con la comunidad pueden elegir una opción adicional.</p>\n<p>Eliminar una condición</p>\n<ul>\n<li>Recuperarse: El personaje ya no está herido. Ganas +1 de salud.</li>\n<li>Reconfortarse: El personaje ya no está conmocionado. Ganas +1 de espíritu.</li>\n<li>Equiparse: El personaje ya no está sin suministros. Ganas +1 de suministro.</li>\n</ul>\n<p>Recuperación</p>\n<ul>\n<li>Reponerse: Tú y tus compañeros ganáis +2 de salud.</li>\n<li>Relacionarse: Ganas +2 de espíritu.</li>\n<li>Aprovisionarse: Ganas +2 de suministros.</li>\n<li>Planificar: Ganas +2 de impulso.</li>\n</ul>\n<p>Prestar ayuda</p>\n<ul>\n<li>Iniciar una búsqueda: Establece lo que podría necesitar la comunidad o los problemas por los que podría estar pasando (<em>Pregunta al oráculo</em> en caso de duda). Si decides ayudar, procede a <em>Jurar por el Hierro</em> y suma +1 al hacerlo.</li>\n</ul>\n",
+        "weak": "<p>Con un <strong>éxito parcial</strong>, podéis elegir solo una opción. Además, quienes compartan un vínculo con la comunidad pueden elegir una opción adicional.</p>\n<p>Eliminar una condición</p>\n<ul>\n<li>Recuperarse: El personaje ya no está herido. Ganas +1 de salud.</li>\n<li>Reconfortarse: El personaje ya no está conmocionado. Ganas +1 de espíritu.</li>\n<li>Equiparse: El personaje ya no está sin suministros. Ganas +1 de suministro.</li>\n</ul>\n<p>Recuperación</p>\n<ul>\n<li>Reponerse: Tú y tus compañeros ganáis +2 de salud.</li>\n<li>Relacionarse: Ganas +2 de espíritu.</li>\n<li>Aprovisionarse: Ganas +2 de suministros.</li>\n<li>Planificar: Ganas +2 de impulso.</li>\n</ul>\n<p>Prestar ayuda</p>\n<ul>\n<li>Iniciar una búsqueda: Establece lo que podría necesitar la comunidad o los problemas por los que podría estar pasando (<em>Pregunta al oráculo</em> en caso de duda). Si decides ayudar, procede a <em>Jurar por el Hierro</em> y suma +1 al hacerlo.</li>\n</ul>\n",
         "miss": "<p>Con un <strong>fallo</strong>, no encontrarás ayuda en este lugar. <em>Paga el precio</em>.</p>\n",
         "extradescription": "<p>Con un éxito (total o parcial), tenéis la opción de volver a tirar +corazón en una de las acciones de «recuperación» que hayáis elegido. Quienes compartan un vínculo con la comunidad, suman +1.</p>\n",
         "extrastrong": "<p> Con un <strong>éxito total</strong>, ganas un +2 adicional en esa acción.</p>\n",
@@ -297,14 +329,14 @@
       "Forge a Bond": {
         "title": "Forjar un vínculo",
         "description": "<p>Cuando <strong>pasas un tiempo considerable con una persona o en una comunidad, trabajas en equipo para afrontar dificultades o haces causa común sin importar los sacrificios</strong>, puedes intentar crear un vínculo. Si lo intentas, tira +corazón. Si haces este movimiento después de <em>Cumplir tu juramento</em> en beneficio de la parte con la que intentas crear un vínculo, puedes volver a tirar cualquier dado.</p>\n",
-        "strong": "<p>Con un <strong>éxito total</strong>, toma nota del vínculo, haz una marca en el contador de progreso de tus vínculos y elige una.</p>\n<ul>\n<li>Ganas +1 de entereza.</li>\n<li>Ganas +2 de impulso.</li>\n</ul>\n",
+        "strong": "<p>Con un <strong>éxito total</strong>, toma nota del vínculo, haz una marca en el contador de progreso de tus vínculos y elige una.</p>\n<ul>\n<li>Ganas +1 de espíritu.</li>\n<li>Ganas +2 de impulso.</li>\n</ul>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, te piden algo primero. Imagina qué podría ser (<em>Pregunta al oráculo</em> en caso de duda), dáselo (o procede a <em>Jurar por el Hierro</em> que se lo darás) y haz una marca en el contador de progreso de tus vínculos. Si te niegas a darles lo que te piden o no consigues dárselo, <em>Paga el precio</em>.</p>\n",
         "miss": "<p>Con un <strong>fallo</strong> te rechazan. <em>Paga el precio</em>.</p>\n"
       },
       "Test Your Bond": {
         "title": "Poner a prueba un vínculo",
         "description": "<p>Cuando <strong>las circunstancias, un conflicto o una traición ponen a prueba uno de tus vínculos</strong>, tira +corazón.</p>\n",
-        "strong": "<p>Con un <strong>éxito total</strong>, las dificultades han reforzado el vínculo. Elige una.</p>\n<ul>\n<li>Ganas +1 de entereza.</li>\n<li>Ganas +2 de impulso.</li>\n</ul>\n",
+        "strong": "<p>Con un <strong>éxito total</strong>, las dificultades han reforzado el vínculo. Elige una.</p>\n<ul>\n<li>Ganas +1 de espíritu.</li>\n<li>Ganas +2 de impulso.</li>\n</ul>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, el vínculo se ha debilitado y debes demostrar tu lealtad. Imagina qué podría ser lo que la otra parte necesita para reforzar el vínculo (<em>Pregunta al oráculo</em> si no estás seguro) y llévalo a cabo (o procede a <em>Jurar por el Hierro</em> que lo harás). Si no estás dispuesto a hacerlo o fracasas al intentarlo, borra el vínculo y <em>Paga el precio</em>.</p>\n",
         "miss": "<p>Con un <strong>fallo</strong>, o si no tienes ya interés en conservar la relación, borra el vínculo y <em>Paga el precio</em>.</p>\n"
       },
@@ -321,7 +353,7 @@
       },
       "Enter the Fray": {
         "title": "Entrar en liza",
-        "description": "<p>Cuando <strong>entras en combate</strong>, establece primero el nivel de desafío de cada uno de tus oponentes.</p>\n<ul>\n<li>Un oponente problemático: por cada punto de daño que infliges, registras un progreso de 3 casillas completas (12 marcas); el oponente inflige daño 1.</li>\n<li>Un oponente peligroso: por cada punto de daño que infliges, registras un progreso de 2 casillas completas (8 marcas); el oponente inflige daño 2.</li>\n<li>Un oponente formidable: por cada punto de daño que infliges, registras un progreso de 1 casilla completa (4 marcas); el oponente inflige daño 3.</li>\n<li>Un oponente extremo: por cada punto de daño que infliges, haces 2 marcas; el oponente inflige daño 4.</li>\n<li>Un oponente épico: por cada punto de daño que infliges, haces 1 marca; el oponente inflige daño 5.</li>\n</ul>\n<p>Después, tira para determinar quién ha tomado el control de la situación. Si...</p>\n<ul>\n<li>Te enfrentas a tu oponente: Tira +corazón.</li>\n<li>Golpeas sin previo aviso a tu oponente o tomas una posición ventajosa si no se ha percatado de tu presencia: Tira +sombra.</li>\n<li>Te han emboscado: Tira +mente.</li>\n</ul>\n",
+        "description": "<p>Cuando <strong>entras en combate</strong>, establece primero el nivel de desafío de cada uno de tus oponentes.</p>\n<ul>\n<li>Un oponente problemático: por cada punto de daño que infliges, registras un progreso de 3 casillas completas (12 marcas); el oponente inflige daño 1.</li>\n<li>Un oponente peligroso: por cada punto de daño que infliges, registras un progreso de 2 casillas completas (8 marcas); el oponente inflige daño 2.</li>\n<li>Un oponente formidable: por cada punto de daño que infliges, registras un progreso de 1 casilla completa (4 marcas); el oponente inflige daño 3.</li>\n<li>Un oponente extremo: por cada punto de daño que infliges, haces 2 marcas; el oponente inflige daño 4.</li>\n<li>Un oponente épico: por cada punto de daño que infliges, haces 1 marca; el oponente inflige daño 5.</li>\n</ul>\n<p>Después, tira para determinar quién ha tomado el control de la situación. Si...</p>\n<ul>\n<li>Te enfrentas a tu oponente: Tira +corazón.</li>\n<li>Golpeas sin previo aviso a tu oponente o tomas una posición ventajosa si no se ha percatado de tu presencia: Tira +sombra.</li>\n<li>Te han emboscado: Tira +ingenio.</li>\n</ul>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, ganas +2 de impulso. Llevas la iniciativa.</p>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, elige una.</p>\n<ul>\n<li>Afianzas tu posición: Ganas +2 de impulso.</li>\n<li>Te dispones para actuar: Llevas la iniciativa.</li>\n</ul>\n",
         "miss": "<p>Con un <strong>fallo</strong>, comienzas el combate en situación de desventaja. <em>Paga el precio</em>. Tu oponente lleva la iniciativa.</p>\n"
@@ -353,7 +385,7 @@
       },
       "Battle": {
         "title": "Batalla simplificada",
-        "description": "<p>Cuando <strong>luchas en una batalla</strong> y todo se difumina y acaba antes de que te des cuenta, determina tu objetivo y tira. Si sobre todo...</p>\n<ul>\n<li>Luchas a distancia o usas la velocidad y el terreno a tu favor: Tira +filo.</li>\n<li>Luchas apelando al coraje, tus aliados o compañeros: Tira +corazón.</li>\n<li>Luchas cuerpo a cuerpo para aplastar a tus oponentes: Tira +hierro.</li>\n<li>Luchas empleando artimañas para confundir a tus oponentes: Tira +sombra.</li>\n<li>Luchas recurriendo a tu inteligencia para aventajar y superar a tus oponentes. Tira +mente.</li>\n</ul>\n",
+        "description": "<p>Cuando <strong>luchas en una batalla</strong> y todo se difumina y acaba antes de que te des cuenta, determina tu objetivo y tira. Si sobre todo...</p>\n<ul>\n<li>Luchas a distancia o usas la velocidad y el terreno a tu favor: Tira +filo.</li>\n<li>Luchas apelando al coraje, tus aliados o compañeros: Tira +corazón.</li>\n<li>Luchas cuerpo a cuerpo para aplastar a tus oponentes: Tira +hierro.</li>\n<li>Luchas empleando artimañas para confundir a tus oponentes: Tira +sombra.</li>\n<li>Luchas recurriendo a tu inteligencia para aventajar y superar a tus oponentes. Tira +ingenio.</li>\n</ul>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, logras tu objetivo sin condiciones. Ganas +2 de impulso.</p>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, logras tu objetivo, pero no sin un coste. <em>Paga el precio</em>.</p>\n",
         "miss": "<p>Con un <strong>fallo</strong>, te derrotan y no logras tu objetivo. <em>Paga el precio</em>.</p>\n"
@@ -390,10 +422,10 @@
       },
       "Endure Stress": {
         "title": "Soportar el estrés",
-        "description": "<p>Cuando <strong>te enfrentas a la desesperación o sufres un choque emocional</strong>, pierdes entereza igual al nivel de desafío de tu oponente o tanta como sea apropiado según la situación. Si tu entereza llega a 0, pierdes el sobrante en impulso en vez de en entereza.</p>\n<p>Después, tira +corazón o +entereza, la que sea más alta.</p>\n",
-        "strong": "<p>Con un <strong>éxito total</strong>, elige una.</p>\n<ul>\n<li>No era para tanto: Si tu entereza es mayor de 0, pierdes -1 de impulso y a cambio ganas +1 de entereza.</li>\n<li>Mi alimento es la oscuridad: Ganas +1 de impulso.</li>\n</ul>\n",
+        "description": "<p>Cuando <strong>te enfrentas a la desesperación o sufres un choque emocional</strong>, pierdes espíritu igual al nivel de desafío de tu oponente o tanta como sea apropiado según la situación. Si tu espíritu llega a 0, pierdes el sobrante en impulso en vez de en espíritu.</p>\n<p>Después, tira +corazón o +espíritu, la que sea más alta.</p>\n",
+        "strong": "<p>Con un <strong>éxito total</strong>, elige una.</p>\n<ul>\n<li>No era para tanto: Si tu espíritu es mayor de 0, pierdes -1 de impulso y a cambio ganas +1 de espíritu.</li>\n<li>Mi alimento es la oscuridad: Ganas +1 de impulso.</li>\n</ul>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, sigues adelante a pesar de las dificultades.</p>\n",
-        "miss": "<p>Con un <strong>fallo</strong>, pierdes -1 de impulso. Si tu entereza es 0, elige entre marcar la debilidad conmocionado o corrompido (si es que queda alguna por marcar) o tira en la siguiente tabla.</p>\n<table>\n<thead>\n<tr>\n<th>Tirada</th>\n<th>Resultado</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-10</td>\n<td>La situación te desborda. Debes <em>Afrontar la desolación</em>.</td>\n</tr>\n<tr>\n<td>11-25</td>\n<td>Te rindes. Debes <em>Romper tu juramento</em> (si es posible, rompes uno relevante para la crisis actual).</td>\n</tr>\n<tr>\n<td>26-50</td>\n<td>Te dejas llevar por el miedo o la presión y actúas en contra de tus propios intereses.</td>\n</tr>\n<tr>\n<td>51-00</td>\n<td>Perseveras.</td>\n</tr>\n</tbody></table>\n",
+        "miss": "<p>Con un <strong>fallo</strong>, pierdes -1 de impulso. Si tu espíritu es 0, elige entre marcar la debilidad conmocionado o corrompido (si es que queda alguna por marcar) o tira en la siguiente tabla.</p>\n<table>\n<thead>\n<tr>\n<th>Tirada</th>\n<th>Resultado</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>1-10</td>\n<td>La situación te desborda. Debes <em>Afrontar la desolación</em>.</td>\n</tr>\n<tr>\n<td>11-25</td>\n<td>Te rindes. Debes <em>Romper tu juramento</em> (si es posible, rompes uno relevante para la crisis actual).</td>\n</tr>\n<tr>\n<td>26-50</td>\n<td>Te dejas llevar por el miedo o la presión y actúas en contra de tus propios intereses.</td>\n</tr>\n<tr>\n<td>51-00</td>\n<td>Perseveras.</td>\n</tr>\n</tbody></table>\n",
         "oracles": {
           "Endure Stress": {
             "entry1": "La situación te desborda. Debes <em>Afrontar la desolación</em>.",
@@ -412,11 +444,11 @@
       },
       "Out of Supply": {
         "title": "Quedarse sin suministros",
-        "description": "<p>Cuando se <strong>agotan los suministros</strong> (quedan reducidos a 0), todo el mundo marca la condición sin suministros. Si sufrís más pérdidas de suministros mientras estáis sin suministros, todos los PJ deberán reducir su contador de salud, entereza o impulso (o una combinación de ellos) en esa misma cantidad (o una combinación equivalente) según las circunstancias.</p>\n"
+        "description": "<p>Cuando se <strong>agotan los suministros</strong> (quedan reducidos a 0), todo el mundo marca la condición sin suministros. Si sufrís más pérdidas de suministros mientras estáis sin suministros, todos los PJ deberán reducir su contador de salud, espíritu o impulso (o una combinación de ellos) en esa misma cantidad (o una combinación equivalente) según las circunstancias.</p>\n"
       },
       "Face a Setback": {
         "title": "Afrontar un contratiempo",
-        "description": "<p>Cuando <strong>tu impulso está en su valor mínimo (-6) y sufres una pérdida de impulso adicional</strong>, elige una.</p>\n<ul>\n<li>Absorbe la pérdida de impulso con una combinación equivalente de salud, entereza o suministros según sea apropiado a las circunstancias.</li>\n<li>Determina un suceso o descubrimiento (<em>Pregunta al oráculo</em> en caso de duda) que obstaculice tu progreso en una búsqueda, viaje o lucha actuales. Después, por cada punto de impulso perdido, borra una unidad de progreso en ese contador de acuerdo a su nivel de desafío (problemático=borra 3 casillas completas; peligroso=borra 2 casillas completas; formidable=borra 1 casilla completa; extremo=borra 2 marcas; épico=borra 1 marca).</li>\n</ul>\n"
+        "description": "<p>Cuando <strong>tu impulso está en su valor mínimo (-6) y sufres una pérdida de impulso adicional</strong>, elige una.</p>\n<ul>\n<li>Absorbe la pérdida de impulso con una combinación equivalente de salud, espíritu o suministros según sea apropiado a las circunstancias.</li>\n<li>Determina un suceso o descubrimiento (<em>Pregunta al oráculo</em> en caso de duda) que obstaculice tu progreso en una búsqueda, viaje o lucha actuales. Después, por cada punto de impulso perdido, borra una unidad de progreso en ese contador de acuerdo a su nivel de desafío (problemático=borra 3 casillas completas; peligroso=borra 2 casillas completas; formidable=borra 1 casilla completa; extremo=borra 2 marcas; épico=borra 1 marca).</li>\n</ul>\n"
       },
       "Swear an Iron Vow": {
         "title": "Jurar por el Hierro",
@@ -438,7 +470,7 @@
       },
       "Forsake Your Vow": {
         "title": "Romper tu juramento",
-        "description": "<p>Cuando <strong>renuncias a una búsqueda, traicionas tu promesa o tu meta se vuelve inalcanzable</strong>, borra el juramento y haz el movimiento <em>Soportar el estrés</em>. Pierdes tanta entereza como el nivel de desafío del juramento (problemático=1, peligroso=2, formidable=3, extremo=4 y épico=5).</p>\n"
+        "description": "<p>Cuando <strong>renuncias a una búsqueda, traicionas tu promesa o tu meta se vuelve inalcanzable</strong>, borra el juramento y haz el movimiento <em>Soportar el estrés</em>. Pierdes tanto espíritu como el nivel de desafío del juramento (problemático=1, peligroso=2, formidable=3, extremo=4 y épico=5).</p>\n"
       },
       "Advance": {
         "title": "Mejorar",
