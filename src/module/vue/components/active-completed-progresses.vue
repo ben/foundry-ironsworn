@@ -112,6 +112,9 @@ import ProgressBox from './progress/progress-box.vue'
 import ProgressControls from './progress-controls.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import { IronswornSettings } from '../../helpers/settings'
+import { compact } from 'lodash'
+
+const props = defineProps<{ exclude?: string }>()
 
 const data = reactive({
   expandCompleted: false,
@@ -121,10 +124,11 @@ const data = reactive({
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
 
+const excludedSubtypes = compact([props.exclude])
 const progressItems = computed(() => {
   return actor.value.items
     .filter((x) => x.type === 'progress')
-    .filter((x) => x.data.subtype !== 'bond')
+    .filter((x) => !excludedSubtypes.includes(x.data.subtype))
     .sort((a, b) => (a.sort || 0) - (b.sort || 0))
 })
 const activeItems = computed(() => {
@@ -161,7 +165,7 @@ const foeCompendium = computed(() => {
 async function applySort(oldI, newI, sortBefore, filterFn) {
   const foundryItems = $actor?.items
     .filter((x) => x.type === 'progress')
-    .filter((x) => x.data.data.subtype !== 'bond')
+    .filter((x) => !excludedSubtypes.includes(x.data.data.subtype))
     .filter(filterFn)
     .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
