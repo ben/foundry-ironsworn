@@ -1,5 +1,5 @@
 <template>
-  <active-completed-progresses />
+  <active-completed-progresses exclude="bond" />
 </template>
 
 <script setup lang="ts">
