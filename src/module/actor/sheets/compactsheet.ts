@@ -1,5 +1,5 @@
-import { RollDialog } from '../../helpers/rolldialog'
 import { IronswornSettings } from '../../helpers/settings'
+import { IronswornPrerollDialog } from '../../rolls'
 import { CharacterMoveSheet } from './charactermovesheet'
 
 interface CompactCharacterSheetOptions extends ActorSheet.Options {
@@ -92,11 +92,12 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
     const stat = el.dataset.stat
     if (stat) {
       const bonus = this.options.statRollBonus || 0
-      await RollDialog.show({
-        actor: this.actor,
+      IronswornPrerollDialog.showForStat(
         stat,
-        bonus,
-      })
+        this.actor.data.data[stat],
+        this.actor,
+        bonus
+      )
       this.options.statRollBonus = 0
       this.render(true)
     }
