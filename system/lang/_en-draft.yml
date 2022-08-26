@@ -30,7 +30,7 @@ IRONSWORN:
     5: fifth
 
   ALERT: # general purpose alerts
-    Renamed: '{oldName} renamed to {newName}'
+    Rename: '{oldName} renamed to {newName}'
     Add: 'Added {name}'
     Delete: 'Deleted {name}'
     MarkedOption: 'marked {name}'
@@ -75,10 +75,11 @@ IRONSWORN:
   ASSET:
     Card: asset card
     Cards: Asset cards
-    MarkedAbility: 'marked {ordinal} ability'
-    MarkedNamedAbility: 'marked ability {abilityName}'
-    UnmarkedAbility: 'unmarked {ordinal} ability'
-    UnmarkedNamedAbility: 'unmarked ability {abilityName}'
+    ALERT:
+      MarkAbility: 'marked {ordinal} ability'
+      MarkNamedAbility: 'marked ability {abilityName}'
+      UnmarkAbility: 'unmarked {ordinal} ability'
+      UnmarkNamedAbility: 'unmarked ability {abilityName}'
     Delete: Delete asset
     Abilities: Abilities
     Ability: ability
@@ -89,23 +90,23 @@ IRONSWORN:
   CLOCK:
     Tension: Tension clock
     Campaign: Campaign clock
-    Set: "clock set to {newValue}⁄{maxValue}"
-    ADVANCE:
-      AdvancedOneSegment: "clock advanced to {newValue}⁄{maxValue}",
-      AdvancedTwoSegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}",
-      AdvancedManySegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}",
-    COMPLETE:
-      CompletedOneSegment: "clock advanced to {newValue}⁄{maxValue}—clock completed!",
-      CompletedTwoSegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!",
-      CompletedManySegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!",
+    ALERT:
+      Set: "clock set to {newValue}⁄{maxValue}"
+      ADVANCE:
+        AdvanceOneSegment: "clock advanced to {newValue}⁄{maxValue}",
+        AdvanceTwoSegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}",
+        AdvanceManySegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}",
+      COMPLETE:
+        CompleteWithOneSegment: "clock advanced to {newValue}⁄{maxValue}—clock completed!",
+        CompleteWithTwoSegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!",
+        CompleteWithManySegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!",
 
   Bonds: Bonds
   Bond: bond
   BOND:
-    AddBond: Added a bond
-    LostBond: Lost a bond
-
-
+    ALERT:
+      Add: Added a bond
+      Lose: Lost a bond # 'broke' a bond?
 
   Track: Track # verb? noun?
 
@@ -115,13 +116,14 @@ IRONSWORN:
     Delete: Delete progress track
     Mark: Mark progress
     MarkAmount: Mark {amount} of progress
-    Marked: Marked {amount} of progress # TODO: unify case, include from {old} to {new}
     Erase: Erase progress
     EraseAmount: Erase {amount} of progress
-    Erased: Erased {amount} of progress
+    ALERT:
+      Mark: Marked {amount} of progress # TODO: unify case, include from {old} to {new}
+      Erase: Erased {amount} of progress
+      MarkComplete: Marked as complete
+      MarkIncomplete: Marked as incomplete
     Incomplete: Incomplete
-    MarkedComplete: Marked as complete
-    MarkedIncomplete: Marked as incomplete
     ProgressRoll: Progress roll
     MakeAProgressRoll: Make a progress roll
     ProgressScore: Progress score
@@ -146,7 +148,8 @@ IRONSWORN:
       Formidable: Formidable
       Extreme: Extreme
       Epic: Epic
-      Changed: 'Challenge rank changed from {old} to {new}'
+      ALERT:
+        Change: 'Challenge rank changed from {old} to {new}'
 
   Vow: vow
   Vows: Vows
@@ -180,20 +183,24 @@ IRONSWORN:
     ClearAll:
       Starforged: Face Defeat
     Initiative: Initiative
-    PcHasInitiative: '{name} has initiative'
-    PcDoesntHaveInitiative: "{name} doesn't have initiative"
-    PcTakesInitiative: '{name} takes initiative'
-    PcRetainsInitiative: '{name} retains initiative'
-    PcLosesInitiative: '{name} loses initiative'
+    STATUS:
+      PcHasInitiative: '{name} has initiative'
+      PcDoesntHaveInitiative: "{name} doesn't have initiative"
+      PcIsInControl: '{name} is in control'
+      PcIsInABadSpot: '{name} is in a bad spot'
+
+    ALERT:
+      PcTakeInitiative: '{name} took initiative'
+      PcRetainInitiative: '{name} retained initiative'
+      PcLoseInitiative: '{name} lost initiative'
+      PcTakesControl: '{name} takes control'
+      PcIsPutInABadSpot: '{name} is put in a bad spot'
     Position: Position
     InControl: In control
     InControlDescription: If you are in control, you can make proactive moves such as <move>Gain Ground</move> and <move>Strike</move>.
     InABadSpot: In a bad spot
     InABadSpotDescription: When in a bad spot, you must make reactive moves such as <move>React Under Fire</move> and <move>Clash</move>. The outcome of a combat move will describe your current position.
-    PcIsInControl: '{name} is in control'
-    PcIsInABadSpot: '{name} is in a bad spot'
-    PcTakesControl: '{name} takes control'
-    PcIsPutInABadSpot: '{name} is put in a bad spot'
+
 
 
   Connections: Connections
@@ -291,7 +298,8 @@ IRONSWORN:
   Stat: stat
   Stats: Stats
   STAT:
-    AdjustedStat: '{amt} {stat} (now {val})'
+    ALERT:
+      Set: '{amt} {stat} (now {val})'
     Edge: edge
     EdgeDescription: '<term>Edge</term>: quickness, agility, and prowess when fighting at a distance.'
     Heart: heart
@@ -329,8 +337,9 @@ IRONSWORN:
   Impact: impact
   Impacts: Impacts
   IMPACT:
-    Cleared: 'Cleared impact: {impact} '
-    Marked: 'Marked impact: {impact}'
+    ALERT:
+      Clear: 'Clear impact: {impact} '
+      Mark: 'Mark impact: {impact}'
     Misfortunes: Misfortunes
     MisfortunesDescription: 'If you are wounded, shaken, or unprepared, you cannot increase the associated condition meter until you make a <term>recover move</term> to clear the impact.'
     Burdens: Burdens
@@ -360,8 +369,9 @@ IRONSWORN:
   Debilities: Debilities
   Debility: debility
   DEBILITY:
-    Cleared: 'Cleared debility: {debility} '
-    Marked: 'Marked debility: {debility}'
+    ALERT:
+      Clear: 'Cleared debility: {debility} '
+      Mark: 'Marked debility: {debility}'
     Conditions: Conditions
     ConditionsDescription: 'If you are wounded, shaken, or unprepared, you cannot increase the associated track until you make a move to clear the debility.'
     Banes: Banes
@@ -477,6 +487,8 @@ IRONSWORN:
     Orbital: orbital
     DeepSpace: deep space
   Sector: Sector
+  SectorDescription:
+    A <term>sector</term> is a settled or explored area of space. In the fiction of your setting, sectors are named and provide the people of the Forge a common means of identifying a location or mapping the domains of a power or faction.
   Sectors: Sectors
   SECTOR:
     New: New sector
@@ -493,6 +505,9 @@ IRONSWORN:
     New: New world
     RandomType: Random planetary class
     Type: Planetary class
+  Settlement: Settlement
+  Settlements: Settlements
+  SettlementLore: A <term>settlement</term> is a location populated by other humans. Settlements can be planetside habitats, orbital stations, or deep space facilities. They offer a place for you to recuperate after your adventures in the Forge have taken their toll.
   SETTLEMENT:
     New: New settlement
     RandomType: Random settlement location
@@ -518,7 +533,16 @@ IRONSWORN:
   Region: Region
   REGION:
     Terminus: Terminus
+    TerminusDescription: Settlements are relatively common here, and spaceborne routes between communities are usually well-charted. <strong>If you want to focus on interacting with other people and communities, start here.</strong>
+    TerminusLore: Your people landed in this region following their exodus from their home galaxy. Settlements are common here. Factions compete for resources, and spaceborne caravans follow charted paths among the stars. But the Forge is a vast galaxy; even here, there are still unknown and isolated domains.
     Outlands: Outlands
+    OutlandsDescription: This region represents an area of recent expansion. Settlements here are scattered, and navigational paths are often uncharted and perilous. <strong>If you envision yourself as a spacer on a wild frontier, start here.</strong>
+    OutlandsLore: In the last few decades, your people have pushed deeper into the galaxy, searching for habitable planets, resources, and opportunities. Settlements within the Outlands are scattered, and navigation paths are often uncharted.
     Expanse: Expanse
+    ExpanseDescription: Only a few bold pioneers have delved these far-flung reaches. <strong>If you’re ready to face the dangers of lonely exploration within uncharted space, start here.</strong>
+    ExpanseLore: A few bold pioneers have delved the far-flung reaches of the Forge. Isolated settlements have been built among these distant domains, but they are usually lost and disconnected from the settled regions.
+    Void: Void
+    VoidLore: Beyond the Forge, there are only a few isolated stars and vast gulfs of nothing. Travel beyond the periphery of the Forge is difficult or impossible.
+    VoidDescription: In the reaches beyond the Forge, isolated stars are separated by vast gulfs of nothing. Travel and settling here is impractical if not impossible. Don’t start your campaign here.
 
 
