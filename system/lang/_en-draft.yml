@@ -1,0 +1,477 @@
+IRONSWORN:
+  Ironsworn: Ironsworn
+  IronswornDelve: 'Ironsworn: Delve'
+  Starforged: Starforged
+  IronswornStarforged: 'Ironsworn: Starforged'
+  # general - UI
+  Search: Search
+  Options: Options
+  Enabled: Enabled
+  Clear: Clear
+  Edit: Edit
+  RotateCCW: Rotate counter-clockwise
+  RotateCW: Rotate clockwise
+  AdvancedOptions: Advanced options
+  StarforgedTools: Starforged tools
+
+  ALERT: # general purpose alerts
+    Rename: '{oldName} renamed to {newName}'
+    Renamed: 'Renamed to {name}'
+    renamed: 'renamed to {name}'
+    Add: 'Added {name}'
+    Delete: 'Deleted {name}'
+    MarkedOption: 'marked {name}'
+    SetField: 'set {name} to {val}'
+  DeleteItem: Delete item
+  ConfirmDelete: Are you sure? This cannot be undone.
+  First: first
+  Second: second
+  Third: third
+  Fourth: fourth
+  Fifth: fifth
+  FIRST_START:
+    Welcome: Welcome
+    Save: Save
+    Intro: 'Welcome to Ironsworn! There are just a few choices to make before starting.'
+  SETTINGS:
+    Theme:
+      Name: Visual Theme
+      Hint: Select the visual look for this game. Requires a reload.
+      Ironsworn: Ironsworn Classic
+      Starforged: Starforged (experimental)
+    Tools:
+      Name: Character Tools
+      Hint: Which set of moves and oracles will appear when opening a character sheet.
+      Sheet: Match sheet
+    SharedSupply:
+      Name: Shared Supply Tracker
+      Hint: "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+    LogChanges:
+      Name: Log Character Updates
+      Hint: 'If on, changes to character stats will be logged to the chat.'
+    PromptTruths:
+      Name: Ironsworn/Starforged Dialog on Start
+      Hint: Open the above dialog on startup.
+    ConfigurationDialog:
+      Label: Ironsworn/Starforged Configuration Dialog
+      Name: Configuration Dialog
+      Hint: Choose between Ironsworn and Starforged UI elements.
+    SFBeta:
+      Name: Show Starforged beta content
+      Hint: Enables in-progress Starforged features.
+    DataforgedIronswornMoves:
+      Name: (Beta) New Ironsworn move-sheet UI
+      Hint: 'If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization.'
+
+  Asset: asset
+  Assets: Assets
+  ASSET:
+    Card: asset card
+    Cards: Asset cards
+    MarkAbility: 'marked {pos} ability'
+    UnmarkAbility: 'unmarked {pos} ability'
+    Delete: Delete asset
+    Abilities: Abilities
+    Type: Asset type
+
+
+  CreateActor: Create actor
+  Chat: Chat
+  Clock: clock
+  Clocks: Clocks
+  CLOCK:
+    Tension: Tension clock
+    Campaign: Campaign clock
+    Set: "clock set to {new}⁄{max}"
+    ADVANCE:
+      AdvancedOneSegment: "clock advanced to {new}⁄{max}",
+      AdvancedTwoSegments: "clock advanced by {change} segments to {new}⁄{max}",
+      AdvancedManySegments: "clock advanced by {change} segments to {new}⁄{max}",
+    COMPLETE:
+      CompletedOneSegment: "clock advanced to {new}⁄{max}—clock completed!",
+      CompletedTwoSegments: "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
+      CompletedManySegments: "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
+
+  Bonds: Bonds
+  Bond: bond
+  BOND:
+    AddBond: Added a bond
+    LostBond: Lost a bond
+
+
+  Completed: Completed
+  Mark: Mark
+  Track: Track # verb? noun?
+  OpenCompendium: Open compendium
+
+  Progress: Progress
+  PROGRESS:
+    Clear: Clear progress
+    Delete: Delete progress
+    Mark: Mark progress
+    Unmark: Unmark progress
+    completedMarked: marked completed
+    completedUnmarked: unmarked completed
+    Fulfill: Fulfill
+    NotCompleted: Not completed
+    advanced: progress advanced
+    Advanced: Progress advanced # TODO: unify case, include from {old} to {new}
+    reduced: progress reduced
+    Reduced: Progress reduced
+    ProgressRoll: Progress roll
+    ProgressScore: Progress score
+    Star: "When active, this item will also show up on the 'Legacies' tab."
+    Rank: Rank
+    ChallengeRank: Challenge rank
+    Track: Progress track
+    Recommit: Recommit
+    RecommitDescription:
+    RANK:
+      Troublesome: Troublesome
+      Dangerous: Dangerous
+      Formidable: Formidable
+      Extreme: Extreme
+      Epic: Epic
+      rankChanged: 'rank changed from {old} to {new}'
+      RankChanged: 'Rank changed from {old} to {new}'
+
+
+  Vow: vow
+  Vows: Vows
+  VOW:
+    Delete: Delete vow
+    FulfillVow: Fulfill vow # deprecate - use the move string instead
+    Milestone: milestone
+
+  COMBAT:
+    Initiative: Initiative
+    PcHasInitiative: '{name} has initiative'
+    PcDoesntHaveInitiative: "{name} doesn't have initiative"
+    PcTakesInitiative: '{name} takes initiative'
+    PcRetainsInitiative: '{name} retains initiative'
+    PcLosesInitiative: '{name} loses initiative'
+    Position: Position
+    InControl: In control
+    InABadSpot: In a bad spot
+    PcIsInControl: '{name} is in control'
+    PcIsInABadSpot: '{name} is in a bad spot'
+    PcTakesControl: '{name} takes control'
+    PcIsPutInABadSpot: '{name} is put in a bad spot'
+
+
+  Connections: Connections
+  Connection: Connection
+  DelveSite: Delve site
+
+  Features: Features
+  Feature: Feature
+  Dangers: Dangers
+  DELVE_SITE:
+    Domain: Domain
+    Theme: Theme
+  CONNECTION:
+  JOURNEY:
+  EXPEDITION:
+    Waypoint: waypoint
+
+  TRUTHS:
+    TITLE:
+      Classic: 'Your World: Truths'
+      Starforged: Setting Truths
+    QuestStarter: 'Quest Starter:'
+    Save: Save Your Truths
+    Custom: Custom Truth
+  ROLL:
+    Roll: Roll
+    Rolling: Rolling
+    Reroll: Reroll
+    Adds: Adds
+    Versus: vs.
+    ActionDie: Action die
+    ActionRoll: Action roll
+    ActionScore: Action score
+    ChallengeDie: Challenge die
+    ChallengeDice: Challenge dice
+    Outcome: outcome
+    Outcomes: Outcomes
+    RollPlusX: 'roll +{stat}'
+    DIALOG:
+      PresetActionDie: Preset action die
+      PredeterminedOutcome: Predetermined outcome
+      ExtraChallengeDice: Extra challenge dice
+      PresetChallengeDice: Preset challenge dice
+    OUTCOME:
+      Hit: Hit
+      StrongHit: Strong hit
+      StrongHitDescription: Your action score beats the value of both challenge dice. You succeed at what you are trying to do.
+      StrongHitMatch: 'Strong hit with a match!'
+      StrongHitMatchDescription: The match represents an interesting twist or new opportunity.
+      OnAStrongHit: On a strong hit
+      WeakHit: Weak hit
+      WeakHitDescription: 'Your action score beats only one of the challenge dice. You succeed, but with a cost or lesser effect.'
+      OnAWeakHit: On a weak hit
+      Miss: Miss
+      MissDescription: 'Your action score doesn’t beat either challenge die. You fail, or must make serious concessions.'
+      MissMatch: 'Miss with a match!'
+      MissMatchDescription: 'The match represents a heightened negative outcome, a complication, or new danger.'
+      OnAMiss: On a miss
+      OnAHit: On a hit
+      OnAMatch: On a match
+      CappedAt10: Action score is capped at 10
+    METHOD:
+      ALL:
+        Fallback: 'roll all of {statList}'
+      ANY:
+        '2': 'roll +{stat1} or +{stat2}'
+        '3': 'roll +{stat1}, +{stat2}, or +{stat3}'
+        Fallback: 'roll any of {statList}'
+      HIGHEST:
+        '2': 'roll +{stat1} or +{stat2}, whichever is higher'
+        '3': 'roll +{stat1}, +{stat2}, or +{stat3}, whichever is highest'
+        Fallback: 'roll highest of {statList}'
+      LOWEST:
+        '2': 'roll +{stat1} or +{stat2}, whichever is lower'
+        '3': 'roll +{stat1}, +{stat2}, or +{stat3}, whichever is lowest'
+        Fallback: 'roll lowest of {statList}'
+  Oracle: oracle
+  Oracles: Oracles
+  ORACLE:
+    Custom: Custom oracles
+    Roll: Roll oracle
+
+  Meter: meter
+  XMeter: '{x} meter'
+  ConditionMeter: condition meter
+  ConditionMeters: Condition meters
+  METER:
+    Momentum: momentum
+    MomentumDescription: 'Your <term>momentum meter</term> ranges from -6 to +10 and represents your inertia, luck, and confidence. It is located on the left side of your character sheet. Move results and asset abilities may prompt you to increase or decrease momentum.'
+    Health: health
+    HealthDescription: '<term>Health</term> represents your physical condition and stamina.'
+    Spirit: spirit
+    SpiritDescription: '<term>Spirit</term> is your morale and mental state.'
+    Supply: supply
+    SupplyDescriptionClassic: '<term>Supply</term> is an abstract representation of your preparedness, including ammo, food, water, and general upkeep.'
+    SupplyDescriptionStarforged: '<term>Supply</term> is an abstract representation of your overall preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep.'
+
+  Stat: stat
+  Stats: Stats
+  STAT:
+    AdjustedStat: '{amt} {stat} (now {val})'
+    Edge: edge
+    EdgeDescription: '<term>Edge</term>: quickness, agility, and prowess when fighting at a distance.'
+    Heart: heart
+    HeartDescription: '<term>Heart</term>: courage, willpower, empathy, sociability, and loyalty.'
+    Iron: iron
+    IronDescription: '<term>Iron</term>: physical strength, endurance, aggressiveness, and prowess when fighting at close quarters.'
+    Shadow: shadow
+    ShadowDescription: '<term>Shadow</term>: sneakiness, deceptiveness, and cunning.'
+    Wits: wits
+    WitsDescription: '<term>Wits</term>: expertise, knowledge, and observation.'
+  LEGACY:
+    Quests: Quests legacy
+    QuestsDescription: Swear vows and do what you must to see them fulfilled.
+    Bonds: Bonds legacy
+    BondsDescription: Create connections and build relationships.
+    Discoveries: Discoveries legacy
+    DiscoveriesDescription: Explore the Forge and unlock its mysteries.
+  MOMENTUM:
+    BurnMomentum: Burn momentum
+    BurnMomentumDescription: '<term>Burning momentum</term> is a powerful option to deliver a decisive result or avoid dire failure. When you have positive momentum, after you make an action roll, you may replace your action score with your current momentum value to improve your result.'
+    BurnForUpgrade: 'Burn momentum: <strong>{type}</strong>'
+    MomentumBurnt: Momentum burn
+    NegativeMomentumCancel: Negative momentum canceled action die
+    Reset: Reset
+    Max: Max
+    Burn: Burn
+  EXPERIENCE:
+    Xp: XP
+    MarkedXp: 'Marked {amt} XP'
+    UnmarkedXp: 'Unmarked {amt} XP'
+
+  Impact: impact
+  Impacts: Impacts
+  IMPACT:
+    ClearedImpact: 'Cleared the {impact} impact'
+    Misfortunes: Misfortunes
+    MisfortunesDescription: 'If you are wounded, shaken, or unprepared, you cannot increase the associated condition meter until you make a <term>recover move</term> to clear the impact.'
+    Burdens: Burdens
+    BurdensDescription: '<term>Burdens</term> leave you bound to new vows. Clearing a burden can only be accomplished by resolving the quest.'
+    LastingEffects: Lasting effects
+    LastingEffectsDescription: Lasting effects are permanent. They forever impact your character through the momentum adjustment and—more importantly—the narrative impact.
+    VehicleTroubles: Vehicle troubles
+    VehicleTroublesDescription: '<p><term>Vehicle troubles</term> are only a factor when you are piloting or aboard that vehicle. Otherwise, they do not count as an impact and do not affect your maximum momentum and momentum reset.</p><p>If playing with allies, a vehicle trouble affects anyone on the vehicle, regardless of who owns or manages the asset.</p>'
+    Wounded: Wounded
+    WoundedDescription: '<term>Wounded</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You are severely injured.  You cannot increase your health meter until you <move>Heal</move> to clear this impact.'
+    Tormented: Tormented
+    TormentedDescription: '<term>Tormented</term> is marked when you <move>Face Desolation</move>, gain visions of a distressing future, and undertake a quest to prevent that dire fate.'
+    PermanentlyHarmed: Permanently harmed
+    PermanentlyHarmedDescription: '<term>Permanently harmed</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You have suffered a wound that you must reckon with, such as the loss of an eye or hand. Or you bear physical scars that are a constant reminder of a harrowing incident.'
+    Traumatized: Traumatized
+    TraumatizedDescription: '<term>Traumatized</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. Your experiences have left you emotionally or mentally scarred.'
+    Unprepared: Unprepared
+    UnpreparedDescription: '<term>Unprepared</term> is marked when you <move>Sacrifice Resources</move> and are reduced to 0 supply. You are not properly equipped for the dangers of the Forge. Because you and your allies share the same supply value, you mark unprepared together. You cannot increase your supply meter until you <move>Resupply</move> to clear this impact.'
+    Shaken: Shaken
+    ShakenDescription: '<term>Shaken</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. You are despairing or distraught. You cannot increase your spirit meter until you <move>Hearten</move> to clear this impact.'
+    Doomed: Doomed
+    DoomedDescription: '<term>Doomed</term> is marked when you <move>Face Death</move> and return from death’s door with a soul-bound quest.'
+    Indebted: Indebted
+    IndebtedDescription: '<term>Indebted</term> is marked when you <move>Overcome Destruction</move>. To replace what was lost and repay the debt, you will take on a duty-bound quest.'
+    Battered: Battered
+    BatteredDescription: '<term>Battered</term> may be marked when your vehicle is at 0 integrity and you fail to <move>Withstand Damage</move>. It’s barely holding together. Until you successfully <move>Repair</move>, you cannot raise the vehicle’s integrity.'
+  Debilities: Debilities
+  Debility: debility
+  DEBILITY:
+    ClearedDebility: 'Cleared the {debility} debility'
+    Conditions: Conditions
+    ConditionsDescription: 'If you are wounded, shaken, or unprepared, you cannot increase the associated track until you make a move to clear the debility.'
+    Banes: Banes
+    BanesDescription: '<term>Banes</term> are permanent. They forever impact your character through the momentum adjustment and—more importantly—the narrative impact of being maimed or corrupted.'
+    Burdens: Burdens
+    BurdensDescription: '<term>Burdens</term> are a result of life-changing experiences that leave you bound to quests. Clearing a burden can only be accomplished by resolving the quest.'
+    Wounded: Wounded
+    WoundedDescription: '<term>Wounded</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You are severely injured and need treatment to recover. You cannot increase your health track until you <move>Heal</move> or <move>Sojourn</move> to clear this debility'
+    Unprepared: Unprepared
+    UnpreparedDescription: '<term>Unprepared</term> is marked when you are at 0 supply and are <move>Out of Supply</move>. You and your allies share the same supply value, and will mark unprepared together. You cannot increase your supply track until you <move>Sojourn</move> to clear this debility.'
+    Shaken: Shaken
+    ShakenDescription: '<term>Shaken</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. You are despairing or distraught, and need comfort to recover. You cannot increase your spirit track until you <move>Sojourn</move> to clear this debility.'
+    Encumbered: Encumbered
+    EncumberedDescription: '<term>Encumbered</term> is marked as appropriate to the circumstances when you are carrying excessive or cumbersome weight. Encumbered is cleared when you lighten your load.'
+    Maimed: Maimed
+    MaimedDescription: '<term>Maimed</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You have suffered a wound which causes you ongoing physical challenges, such as the loss of an eye or hand. Or, you bear horrific scars which serve as a constant reminder of your failures.'
+    Corrupted: Corrupted
+    CorruptedDescription: '<term>Corrupted</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. Your experiences have left you emotionally scarred. You are at the threshold of losing yourself to darkness.'
+    Cursed: Cursed
+    CursedDescription: '<term>Cursed</term> is marked when you <move>Face Death</move> and return with a soul-bound quest. This burden can only be cleared by completing the quest.'
+    Tormented: Tormented
+    TormentedDescription: '<term>Tormented</term> is marked when you <move>Face Desolation</move> and undertake a quest to prevent a dire future.'
+
+  THREAT:
+    Threat: threat
+    Threats: Threats
+    Menace: menace
+    MarkMenace: Mark menace
+  Integrity: integrity
+  Vehicle: vehicle
+  Vehicles: Vehicles
+  VEHICLE:
+    Integrity: vehicle integrity
+    COMMAND:
+      Integrity: command vehicle integrity
+    SUPPORT:
+      Integrity: support vehicle integrity
+    INCIDENTAL:
+      Integrity: incidental vehicle integrity
+      Vehicle: incidental vehicle
+      Vehicles: Incidental vehicles
+      Heavy: heavy incidental vehicle
+      Medium: medium incidental vehicle
+      Light: light incidental vehicle
+
+  Opportunity: Opportunity
+  CompanionHealth: companion health
+
+
+  Legacies: Legacies
+  Scenes: Scenes
+  Quests: Quests
+  Notes: Notes
+  Discoveries: Discoveries
+  Session: Session
+  Exploration: Exploration
+  Recover: Recover
+  Threshold: Threshold
+  Legacy: Legacy
+  Scene Challenge: Scene Challenge
+  Adventure: Adventure
+  Relationship: Relationship
+  Combat: Combat
+  Suffer: Suffer
+  Quest: Quest
+  Fate: Fate
+  Delve: Delve
+  Optional Delve: Optional delve
+  Plot: Plot
+  Location: Location
+  LocationType: Location type
+  Character: Character
+  Starship: Starship
+  Names: Names
+  RollForDetails: Roll location details
+  RandomName: Random name
+  Focus: Focus
+  SHEET:
+    Name: Name
+    Pronouns: Pronouns
+    Callsign: Callsign
+    Characteristics: Characteristics
+    Shared: Shared sheet
+    Summary: Summary
+    Description: Description
+    Trigger: Trigger
+    FullText: Full text
+    Fields: Fields
+    Label: Label
+    Value: Value
+
+  NPC:
+    Foes: Foes
+    Foe: Foe
+    Npc: NPC
+    Npcs: NPCs
+    NonPlayerCharacter: non-player character
+    NonPlayerCharacters: non-player characters
+    Denizen: denizen
+    Denizens: Denizens
+    Encounter: encounter
+    Encounters: Encounters
+
+  Move: move
+  Moves: Moves
+  MOVE:
+    Delete: Delete move
+    Custom: Custom moves
+
+
+  RequiresLocationType: This oracle requires a location type to be selected.
+  LOCATION:
+    Planetside: planetside
+    Orbital: orbital
+    DeepSpace: deep space
+  Sector: Sector
+  Sectors: Sectors
+  SECTOR:
+    New: New sector
+  StellarObject: Stellar object
+  STELLAR_OBJECT:
+    New: New stellar object
+    RandomType: Random stellar object
+    Type: Type of star
+  Planet: Planet
+  Planets: Planets
+  World: World
+  Worlds: Worlds
+  PLANET:
+    New: New world
+    RandomType: Random planetary class
+    Type: Planetary class
+  SETTLEMENT:
+    New: New settlement
+    RandomType: Random settlement location
+    Type: Settlement location
+  DERELICT:
+    New: New derelict
+    RandomType: Random derelict type
+    Type: Type of derelict
+  VAULT:
+    New: New precursor vault
+    RandomType: Random vault location
+    Type: Vault location
+
+  Region: Region
+  REGION:
+    Terminus: Terminus
+    Outlands: Outlands
+    Expanse: Expanse
+
+
