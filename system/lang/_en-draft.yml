@@ -7,28 +7,35 @@ IRONSWORN:
   Search: Search
   Options: Options
   Enabled: Enabled
+  Disabled: Disabled
   Clear: Clear
   Edit: Edit
   RotateCCW: Rotate counter-clockwise
   RotateCW: Rotate clockwise
   AdvancedOptions: Advanced options
   StarforgedTools: Starforged tools
+  Chat: Chat
+  CreateActor: Create actor
+  DeleteItem: Delete item
+  ConfirmDelete: Are you sure? This cannot be undone.
+  Completed: Completed
+  Mark: Mark
+  OpenCompendium: Open compendium
+
+  ORDINAL:
+    1: first
+    2: second
+    3: third
+    4: fourth
+    5: fifth
 
   ALERT: # general purpose alerts
-    Rename: '{oldName} renamed to {newName}'
-    Renamed: 'Renamed to {name}'
-    renamed: 'renamed to {name}'
+    Renamed: '{oldName} renamed to {newName}'
     Add: 'Added {name}'
     Delete: 'Deleted {name}'
     MarkedOption: 'marked {name}'
-    SetField: 'set {name} to {val}'
-  DeleteItem: Delete item
-  ConfirmDelete: Are you sure? This cannot be undone.
-  First: first
-  Second: second
-  Third: third
-  Fourth: fourth
-  Fifth: fifth
+    SetField: 'Set {fieldName} to {value}'
+
   FIRST_START:
     Welcome: Welcome
     Save: Save
@@ -68,29 +75,29 @@ IRONSWORN:
   ASSET:
     Card: asset card
     Cards: Asset cards
-    MarkAbility: 'marked {pos} ability'
-    UnmarkAbility: 'unmarked {pos} ability'
+    MarkedAbility: 'marked {ordinal} ability'
+    MarkedNamedAbility: 'marked ability {abilityName}'
+    UnmarkedAbility: 'unmarked {ordinal} ability'
+    UnmarkedNamedAbility: 'unmarked ability {abilityName}'
     Delete: Delete asset
     Abilities: Abilities
+    Ability: ability
     Type: Asset type
 
-
-  CreateActor: Create actor
-  Chat: Chat
   Clock: clock
   Clocks: Clocks
   CLOCK:
     Tension: Tension clock
     Campaign: Campaign clock
-    Set: "clock set to {new}⁄{max}"
+    Set: "clock set to {newValue}⁄{maxValue}"
     ADVANCE:
-      AdvancedOneSegment: "clock advanced to {new}⁄{max}",
-      AdvancedTwoSegments: "clock advanced by {change} segments to {new}⁄{max}",
-      AdvancedManySegments: "clock advanced by {change} segments to {new}⁄{max}",
+      AdvancedOneSegment: "clock advanced to {newValue}⁄{maxValue}",
+      AdvancedTwoSegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}",
+      AdvancedManySegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}",
     COMPLETE:
-      CompletedOneSegment: "clock advanced to {new}⁄{max}—clock completed!",
-      CompletedTwoSegments: "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
-      CompletedManySegments: "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
+      CompletedOneSegment: "clock advanced to {newValue}⁄{maxValue}—clock completed!",
+      CompletedTwoSegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!",
+      CompletedManySegments: "clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!",
 
   Bonds: Bonds
   Bond: bond
@@ -99,51 +106,79 @@ IRONSWORN:
     LostBond: Lost a bond
 
 
-  Completed: Completed
-  Mark: Mark
+
   Track: Track # verb? noun?
-  OpenCompendium: Open compendium
 
   Progress: Progress
   PROGRESS:
-    Clear: Clear progress
-    Delete: Delete progress
+    ClearAll: Clear all progress
+    Delete: Delete progress track
     Mark: Mark progress
-    Unmark: Unmark progress
-    completedMarked: marked completed
-    completedUnmarked: unmarked completed
-    Fulfill: Fulfill
-    NotCompleted: Not completed
-    advanced: progress advanced
-    Advanced: Progress advanced # TODO: unify case, include from {old} to {new}
-    reduced: progress reduced
-    Reduced: Progress reduced
+    MarkAmount: Mark {amount} of progress
+    Marked: Marked {amount} of progress # TODO: unify case, include from {old} to {new}
+    Erase: Erase progress
+    EraseAmount: Erase {amount} of progress
+    Erased: Erased {amount} of progress
+    Incomplete: Incomplete
+    MarkedComplete: Marked as complete
+    MarkedIncomplete: Marked as incomplete
     ProgressRoll: Progress roll
+    MakeAProgressRoll: Make a progress roll
     ProgressScore: Progress score
     Star: "When active, this item will also show up on the 'Legacies' tab."
     Rank: Rank
     ChallengeRank: Challenge rank
     Track: Progress track
     Recommit: Recommit
-    RecommitDescription:
+    TICK:
+      1: 1 tick
+      2: 2 ticks
+      3: 3 ticks
+      Many: "{value} ticks"
+    BOX:
+      1: 1 box
+      2: 2 boxes
+      3: 3 boxes
+      Many: "{value} boxes"
     RANK:
       Troublesome: Troublesome
       Dangerous: Dangerous
       Formidable: Formidable
       Extreme: Extreme
       Epic: Epic
-      rankChanged: 'rank changed from {old} to {new}'
-      RankChanged: 'Rank changed from {old} to {new}'
-
+      Changed: 'Challenge rank changed from {old} to {new}'
 
   Vow: vow
   Vows: Vows
   VOW:
     Delete: Delete vow
-    FulfillVow: Fulfill vow # deprecate - use the move string instead
-    Milestone: milestone
+    # compose like: MoveName: do the thing
+    MakeAProgressRoll: Fulfill Your Vow
+    MarkAmount: Reach a Milestone
+    ClearAll: Forsake Your Vow
+    Recommit: Recommit to the quest (after rolling a miss on Fulfill Your Vow)
+    RecommitDescription:
+      Starforged: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow’s rank by one (if not already epic).
+      Ironsworn: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).
 
+
+  JOURNEY:
+    Recommit: Continue your journey (after rolling a miss on Reach Your Destination)
+    RecommitDescription: Clear all but one filled progress, and raise the journey’s rank by one (if not already epic).
+  EXPEDITION:
+    MakeAProgressRoll: Finish an Expedition
+    Recommit: Return to the expedition (after rolling a miss on Finish an Expedition) # TODO: shorter/split label to make chat output nicer?
+    RecommitDescription: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the expedition’s rank by one (if not already epic).
+    Waypoint: waypoint
+    Waypoints: Waypoints
+    Anchorage: anchorage
+    Anchorages: Anchorages
   COMBAT:
+    MakeAProgressRoll:
+      Starforged: Take Decisive Action
+      Classic: End the Fight
+    ClearAll:
+      Starforged: Face Defeat
     Initiative: Initiative
     PcHasInitiative: '{name} has initiative'
     PcDoesntHaveInitiative: "{name} doesn't have initiative"
@@ -152,7 +187,9 @@ IRONSWORN:
     PcLosesInitiative: '{name} loses initiative'
     Position: Position
     InControl: In control
+    InControlDescription: If you are in control, you can make proactive moves such as <move>Gain Ground</move> and <move>Strike</move>.
     InABadSpot: In a bad spot
+    InABadSpotDescription: When in a bad spot, you must make reactive moves such as <move>React Under Fire</move> and <move>Clash</move>. The outcome of a combat move will describe your current position.
     PcIsInControl: '{name} is in control'
     PcIsInABadSpot: '{name} is in a bad spot'
     PcTakesControl: '{name} takes control'
@@ -170,9 +207,6 @@ IRONSWORN:
     Domain: Domain
     Theme: Theme
   CONNECTION:
-  JOURNEY:
-  EXPEDITION:
-    Waypoint: waypoint
 
   TRUTHS:
     TITLE:
@@ -203,15 +237,15 @@ IRONSWORN:
     OUTCOME:
       Hit: Hit
       StrongHit: Strong hit
-      StrongHitDescription: Your action score beats the value of both challenge dice. You succeed at what you are trying to do.
+      StrongHitDescription: You succeeded and are in control.
       StrongHitMatch: 'Strong hit with a match!'
       StrongHitMatchDescription: The match represents an interesting twist or new opportunity.
       OnAStrongHit: On a strong hit
       WeakHit: Weak hit
-      WeakHitDescription: 'Your action score beats only one of the challenge dice. You succeed, but with a cost or lesser effect.'
+      WeakHitDescription: 'You succeed, but with a cost or lesser effect.'
       OnAWeakHit: On a weak hit
       Miss: Miss
-      MissDescription: 'Your action score doesn’t beat either challenge die. You fail, or must make serious concessions.'
+      MissDescription: 'You failed or face a dramatic turn of events.'
       MissMatch: 'Miss with a match!'
       MissMatchDescription: 'The match represents a heightened negative outcome, a complication, or new danger.'
       OnAMiss: On a miss
@@ -282,17 +316,21 @@ IRONSWORN:
     MomentumBurnt: Momentum burn
     NegativeMomentumCancel: Negative momentum canceled action die
     Reset: Reset
+    ResetDescription: If you have one marked impact, your momentum reset is +1 (instead of +2). If you have more than one marked impact, your momentum reset is 0 (instead of +2).
     Max: Max
+    MaxDescription: Your max momentum is reduced by 1 for each marked impact. For example, one impact will drop your max momentum to +9. Three impacts will reduce it to +7.
     Burn: Burn
+  Experience: Experience
+  Xp: XP
   EXPERIENCE:
-    Xp: XP
-    MarkedXp: 'Marked {amt} XP'
-    UnmarkedXp: 'Unmarked {amt} XP'
+    Spent: 'Spent {amt} experience'
+    Refunded: 'Refunded {amt} experience'
 
   Impact: impact
   Impacts: Impacts
   IMPACT:
-    ClearedImpact: 'Cleared the {impact} impact'
+    Cleared: 'Cleared impact: {impact} '
+    Marked: 'Marked impact: {impact}'
     Misfortunes: Misfortunes
     MisfortunesDescription: 'If you are wounded, shaken, or unprepared, you cannot increase the associated condition meter until you make a <term>recover move</term> to clear the impact.'
     Burdens: Burdens
@@ -322,7 +360,8 @@ IRONSWORN:
   Debilities: Debilities
   Debility: debility
   DEBILITY:
-    ClearedDebility: 'Cleared the {debility} debility'
+    Cleared: 'Cleared debility: {debility} '
+    Marked: 'Marked debility: {debility}'
     Conditions: Conditions
     ConditionsDescription: 'If you are wounded, shaken, or unprepared, you cannot increase the associated track until you make a move to clear the debility.'
     Banes: Banes
@@ -394,7 +433,6 @@ IRONSWORN:
   Plot: Plot
   Location: Location
   LocationType: Location type
-  Character: Character
   Starship: Starship
   Names: Names
   RollForDetails: Roll location details
@@ -414,6 +452,7 @@ IRONSWORN:
     Label: Label
     Value: Value
 
+  Character: Character
   NPC:
     Foes: Foes
     Foe: Foe
@@ -431,7 +470,6 @@ IRONSWORN:
   MOVE:
     Delete: Delete move
     Custom: Custom moves
-
 
   RequiresLocationType: This oracle requires a location type to be selected.
   LOCATION:
@@ -467,7 +505,16 @@ IRONSWORN:
     New: New precursor vault
     RandomType: Random vault location
     Type: Vault location
-
+  CREATURE:
+    New: New creature
+    RandomEnvironment: Random environment
+    Environment: Environment
+    ENVIRONMENT:
+      Space: Space
+      Interior: Interior
+      Land: Land
+      Liquid: Liquid
+      Air: Air
   Region: Region
   REGION:
     Terminus: Terminus
