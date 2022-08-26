@@ -24,7 +24,7 @@ import {
   DfRollOutcome,
   RollOutcome,
   SCORE_MAX,
-} from '../rolls/roll'
+} from '../rolls/ironsworn-roll'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 
 interface RollMessageParams {

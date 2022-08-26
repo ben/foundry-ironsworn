@@ -11,7 +11,7 @@ import {
   PreRollOptions,
   RollOutcome,
   SourcedValue,
-} from './roll'
+} from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
 import { CharacterDataProperties } from '../actor/actortypes'
 import { IronswornRollChatMessage } from '.'

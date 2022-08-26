@@ -1,5 +1,5 @@
 import { cloneDeep } from 'lodash'
-import type { RollOutcome } from '../rolls/roll.js'
+import type { RollOutcome } from '../rolls/ironsworn-roll.js'
 
 export type MoveOracleEntry = {
   low: number

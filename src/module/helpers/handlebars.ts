@@ -9,7 +9,7 @@ import {
   CHALLENGE_DIE_SIDES,
   DIE_LOWEST_FACE,
   SCORE_MAX,
-} from '../rolls/roll.js'
+} from '../rolls/ironsworn-roll.js'
 import {
   computeOutcomeText,
   formatRollMethod,

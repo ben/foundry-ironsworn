@@ -5,7 +5,7 @@ import {
   PreRollOptions,
   RollOutcome,
   SourcedValue,
-} from './roll'
+} from './ironsworn-roll'
 
 export type RenderData = {
   prerollOptions: PreRollOptions

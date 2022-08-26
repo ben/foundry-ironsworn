@@ -4,7 +4,7 @@ import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { SFMoveDataProperties } from '../item/itemtypes'
-import { DfRollOutcome, RollOutcome } from './roll'
+import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
 
 type MoveTemplateData = {

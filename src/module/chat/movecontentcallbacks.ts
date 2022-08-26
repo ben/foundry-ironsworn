@@ -1,5 +1,5 @@
 import { IronswornActor } from '../actor/actor'
-import { RollOutcome } from '../rolls/roll'
+import { RollOutcome } from '../rolls/ironsworn-roll'
 
 type CallbackInput = {
   hitType?: RollOutcome

@@ -13,7 +13,7 @@ import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
-import { DfRollOutcome, RollOutcome } from '../rolls/roll'
+import { DfRollOutcome, RollOutcome } from '../rolls/ironsworn-roll'
 import { IronswornRollChatMessage } from '../rolls'
 
 export class IronswornChatCard {
