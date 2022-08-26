@@ -1,17 +1,8 @@
-import { RollDialog } from '../../helpers/rolldialog'
 import { IronswornSettings } from '../../helpers/settings'
-import { CharacterMoveSheet } from './charactermovesheet'
+import { IronswornPrerollDialog } from '../../rolls'
+import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
-interface CompactCharacterSheetOptions extends ActorSheet.Options {
-  statRollBonus: number
-}
-
-export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterSheetOptions> {
-  constructor(actor, opts: CompactCharacterSheetOptions) {
-    opts.statRollBonus ||= 0
-    super(actor, opts)
-  }
-
+export class IronswornCompactCharacterSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: [
@@ -21,7 +12,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
         `theme-${IronswornSettings.theme}`,
       ],
       width: 560,
-      height: 228,
+      height: 210,
       template: 'systems/foundry-ironsworn/templates/actor/compact.hbs',
       resizable: false,
     })
@@ -33,9 +24,6 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
     html
       .find('.ironsworn__stat__roll')
       .on('click', (e) => this._onStatRoll.call(this, e))
-    html
-      .find('.ironsworn__stat__bonusadajust')
-      .on('click', (e) => this._bonusAdjust.call(this, e))
     html
       .find('.ironsworn__resource__adjust')
       .on('click', (e) => this._resourceAdjust.call(this, e))
@@ -70,31 +58,14 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
   _openMoveSheet(e?: JQuery.ClickEvent) {
     e?.preventDefault()
 
-    if (this.actor.moveSheet) {
-      this.actor.moveSheet.render(true, { focus: true })
-    } else {
-      new CharacterMoveSheet(this.actor).render(true)
+    if (!this.actor.moveSheet) {
+      this.actor.moveSheet ||= new SFCharacterMoveSheet(
+        this.actor,
+        IronswornSettings.toolbox === 'starforged' ? 'starforged' : 'ironsworn',
+        { left: 755 }
+      )
     }
-  }
-
-  _onBurnMomentum(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
-    if (this.actor.data.type !== 'character') return
-    const { momentum, momentumReset } = this.actor.data.data
-    if (momentum > momentumReset) {
-      this.actor.update({
-        data: { momentum: momentumReset },
-      })
-    }
-  }
-
-  _bonusAdjust(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
-    const amt = parseInt(ev.currentTarget.dataset.amt || '0')
-    this.options.statRollBonus += amt
-    this.render(true)
+    this.actor.moveSheet.render(true, { focus: true })
   }
 
   async _onStatRoll(ev: JQuery.ClickEvent) {
@@ -103,13 +74,11 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
     const el = ev.currentTarget
     const stat = el.dataset.stat
     if (stat) {
-      const bonus = this.options.statRollBonus || 0
-      await RollDialog.show({
-        actor: this.actor,
+      IronswornPrerollDialog.showForStat(
         stat,
-        bonus,
-      })
-      this.options.statRollBonus = 0
+        this.actor.data.data[stat],
+        this.actor
+      )
       this.render(true)
     }
   }
@@ -135,12 +104,8 @@ export class IronswornCompactCharacterSheet extends ActorSheet<CompactCharacterS
   _momentumBurn(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    if (this.actor.data.type !== 'character') return
-    const { momentum, momentumReset } = this.actor.data.data
-    if (momentum > momentumReset) {
-      this.actor.update({
-        data: { momentum: momentumReset },
-      })
+    if (this.actor.data.type === 'character') {
+      this.actor.burnMomentum()
     }
   }
 }

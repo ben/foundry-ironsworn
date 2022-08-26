@@ -2,7 +2,6 @@ import { IronswornSettings } from '../../helpers/settings'
 import characterSheetVue from '../../vue/character-sheet.vue'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'
-import { CharacterMoveSheet } from './charactermovesheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class IronswornCharacterSheetV2 extends VueActorSheet {
@@ -55,28 +54,13 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
   }
 
   _openMoveSheet(_e?: JQuery.ClickEvent) {
-    if (this.actor.moveSheet) {
-      this.actor.moveSheet.render(true, { focus: true })
-    } else {
-      if (IronswornSettings.toolbox === 'starforged') {
-        this.actor.moveSheet ||= new SFCharacterMoveSheet(
-          this.actor,
-          'starforged',
-          { left: 755 }
-        )
-        this.actor.moveSheet.render(true, { focus: true })
-      } else {
-        if (IronswornSettings.dataforgedIronswornMoves) {
-          this.actor.moveSheet ||= new SFCharacterMoveSheet(
-            this.actor,
-            'ironsworn',
-            { left: 755 }
-          )
-          this.actor.moveSheet.render(true, { focus: true })
-        } else {
-          new CharacterMoveSheet(this.actor).render(true)
-        }
-      }
+    if (!this.actor.moveSheet) {
+      this.actor.moveSheet ||= new SFCharacterMoveSheet(
+        this.actor,
+        IronswornSettings.toolbox === 'starforged' ? 'starforged' : 'ironsworn',
+        { left: 755 }
+      )
     }
+    this.actor.moveSheet.render(true, { focus: true })
   }
 }

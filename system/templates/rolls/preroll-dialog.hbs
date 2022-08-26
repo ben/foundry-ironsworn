@@ -1,48 +1,42 @@
 <form class='preroll-dialog{{#if action}} action-roll-dialog{{else}} progress-roll-dialog{{/if}}'>
   {{#if move}}
-    <section class='roll-trigger-text'>
-      {{{enrichMarkdown move.data.data.Trigger.Text}}}
-    </section>
-    {{#if move.data.data.Trigger.Options}}
-      <ul class='trigger-options'>
-        {{#each move.data.data.Trigger.Options}}
-          {{#if Text}}
-            <li class='trigger-option'>
-              {{Text}}:
-              <strong>{{formatRollMethod Method Using}}</strong>
-            </li>
-          {{/if}}
-        {{/each}}
-      </ul>
+  <section class='roll-trigger-text'>
+    {{{enrichMarkdown move.data.data.Trigger.Text}}}
+  </section>
+  {{#if move.data.data.Trigger.Options}}
+  <ul class='trigger-options'>
+    {{#each move.data.data.Trigger.Options}}
+    {{#if Text}}
+    <li class='trigger-option'>
+      {{Text}}:
+      <strong>{{formatRollMethod Method Using}}</strong>
+    </li>
     {{/if}}
+    {{/each}}
+  </ul>
+  {{/if}}
   {{/if}}
   <section class='dice-roll ironsworn-roll'>
     {{{graphic}}}
   </section>
   {{#if action}}
-    <fieldset class='form-group'>
-      <label for='roll-input-adds'>{{localize 'IRONSWORN.Adds'}}</label>
-      <input
-        id='roll-input-adds'
-        type='number'
-        step='1'
-        name='adds'
-        value='0'
-      />
-    </fieldset>
+  <fieldset class='form-group'>
+    <label for='roll-input-adds'>{{localize 'IRONSWORN.Adds'}}</label>
+    <input id='roll-input-adds' type='number' step='1' name='adds' value='0' />
+  </fieldset>
   {{/if}}
 
   {{#if showActorSelect}}
-    <fieldset class='form-group'>
-      <label for='char'>{{localize 'IRONSWORN.Character'}}</label>
-      <select name='char' id='char' class='select-character'>
-        {{#each allActors}}
-          <option value='{{id}}'>
-            {{name}}
-          </option>
-        {{/each}}
-      </select>
-    </fieldset>
+  <fieldset class='form-group'>
+    <label for='char'>{{localize 'IRONSWORN.Character'}}</label>
+    <select name='char' id='char' class='select-character'>
+      {{#each allActors}}
+      <option value='{{id}}'>
+        {{name}}
+      </option>
+      {{/each}}
+    </select>
+  </fieldset>
   {{/if}}
   {{! TODO: simple options from the move + actor assets }}
   <details class='advanced-roll-options'>
@@ -50,11 +44,7 @@
 
     <fieldset class='form-group'>
       <label class='checkbox'>
-        <input
-          type='checkbox'
-          class='advanced-roll-options-toggle'
-          name='automaticOutcome'
-        />
+        <input type='checkbox' class='advanced-roll-options-toggle' name='automaticOutcome' />
         {{localize 'IRONSWORN.RollDialog.PredeterminedOutcome'}}
       </label>
       <select name='automaticOutcomeValue'>
@@ -65,34 +55,20 @@
     </fieldset>
 
     {{#if action}}
-      <fieldset class='form-group'>
-        <label class='checkbox'>
-          <input
-            type='checkbox'
-            class='advanced-roll-options-toggle'
-            name='presetActionDie'
-          />
-          {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
-        </label>
-        <input type='number' step='1' name='presetActionDieValue' value='0' />
-      </fieldset>
+    <fieldset class='form-group'>
+      <label class='checkbox'>
+        <input type='checkbox' class='advanced-roll-options-toggle' name='presetActionDie' />
+        {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
+      </label>
+      <input type='number' step='1' name='presetActionDieValue' value='0' />
+    </fieldset>
     {{/if}}
     <fieldset class='form-group'>
       <label class='checkbox'>
-        <input
-          type='checkbox'
-          class='advanced-roll-options-toggle'
-          name='extraChallengeDice'
-        />
+        <input type='checkbox' class='advanced-roll-options-toggle' name='extraChallengeDice' />
         {{localize 'IRONSWORN.RollDialog.ExtraChallengeDice'}}
       </label>
-      <input
-        type='number'
-        step='1'
-        name='extraChallengeDiceValue'
-        value='0'
-        min='0'
-      />
+      <input type='number' step='1' name='extraChallengeDiceValue' value='0' min='0' />
     </fieldset>
 
   </details>

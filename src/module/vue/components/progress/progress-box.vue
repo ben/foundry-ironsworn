@@ -94,8 +94,8 @@ h5.vertical-v2 {
 </style>
 
 <script lang="ts" setup>
-import { capitalize, computed, inject, Ref } from 'vue'
-import { $ActorKey } from '../../provisions'
+import { capitalize, computed, inject, provide, Ref } from 'vue'
+import { $ActorKey, $ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 import ProgressTrack from './progress-track.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
@@ -110,7 +110,9 @@ const props = defineProps<{
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
-const $item = () => $actor?.items.get(props.item._id)
+
+const $item = $actor?.items.get(props.item._id)
+provide($ItemKey, $item)
 
 const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
@@ -135,41 +137,40 @@ const completedTooltip = computed(() => {
 })
 
 function edit() {
-  $item()?.sheet?.render(true)
+  $item?.sheet?.render(true)
 }
 function destroy() {
-  const item = $item()
-  const titleKey = `IRONSWORN.Delete${capitalize(item?.type || '')}`
+  const titleKey = `IRONSWORN.Delete${capitalize($item?.type || '')}`
 
   Dialog.confirm({
     title: game.i18n.localize(titleKey),
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
     )}</strong></p>`,
-    yes: () => item?.delete(),
+    yes: () => $item?.delete(),
     defaultYes: false,
   })
 }
 function rankClick(rank) {
-  $item()?.update({ data: { rank } })
+  $item?.update({ data: { rank } })
 }
 function advance() {
-  $item()?.markProgress(1)
+  $item?.markProgress(1)
 }
 function retreat() {
-  $item()?.markProgress(-1)
+  $item?.markProgress(-1)
 }
 
 const $emit = defineEmits(['completed'])
 function toggleComplete() {
   const completed = !props.item.data.completed
   if (completed) $emit('completed')
-  $item()?.update({ data: { completed } })
+  $item?.update({ data: { completed } })
 }
 function toggleStar() {
-  $item()?.update({ data: { starred: !props.item.data.starred } })
+  $item?.update({ data: { starred: !props.item.data.starred } })
 }
 function setClock(num) {
-  $item()?.update({ data: { clockTicks: num } })
+  $item?.update({ data: { clockTicks: num } })
 }
 </script>

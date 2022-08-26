@@ -32,7 +32,7 @@ function click() {
     type: 'image',
     current: current,
     callback: (img) => {
-      const doc = $actor ?? $item
+      const doc = $item ?? $actor
       doc?.update({ img })
     },
   })

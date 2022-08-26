@@ -5,7 +5,7 @@
       {{#*inline "stat"}}
       <div class="box flexcol clickable block ironsworn__stat__roll" data-stat="{{stat}}">
         <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-        <h3>{{lookup data.data stat}}</h3>
+        <h2>{{lookup data.data stat}}</h2>
       </div>
       {{/inline}}
 
@@ -15,13 +15,6 @@
       {{>stat stat="shadow"}}
       {{>stat stat="wits"}}
     </div>
-    <div class="flexrow boxrow small">
-      <div class="box clickable block ironsworn__stat__bonusadajust" data-amt="-1">&minus;</div>
-      <div class="box" title="{{localize 'IRONSWORN.StatBonusTooltip'}}">
-        {{options.statRollBonus}}
-      </div>
-      <div class="box clickable block ironsworn__stat__bonusadajust" data-amt="1">&plus;</div>
-    </div>
   </div>
 
   {{!-- Resources --}}
@@ -29,7 +22,8 @@
     <div class="flexrow boxrow">
       {{#*inline "resource"}}
       <div class="box flexcol">
-        <div class="flexcol boxrow clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+        <div class="flexcol boxrow {{#unless burn}}clickable block ironsworn__stat__roll{{/unless}}"
+          data-stat="{{stat}}">
           <h5>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h5>
           <h4>{{lookup data.data stat}}</h4>
         </div>
