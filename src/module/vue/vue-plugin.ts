@@ -1,6 +1,6 @@
 import { marked } from 'marked'
 import { Plugin } from 'vue'
-import { formatRollPlusStat } from '../rolls/chat-message.js'
+import { formatRollPlusStat } from '../rolls/ironsworn-roll-message.js'
 import { $EnrichHtmlKey, $EnrichMarkdownKey } from './provisions'
 
 declare module '@vue/runtime-core' {

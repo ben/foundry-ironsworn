@@ -17,7 +17,7 @@ import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
 import {
   computeRollOutcome,
   computeOutcomeText,
-} from '../rolls/chat-message.js'
+} from '../rolls/ironsworn-roll-message.js'
 import {
   ACTION_DIE_SIDES,
   CHALLENGE_DIE_SIDES,

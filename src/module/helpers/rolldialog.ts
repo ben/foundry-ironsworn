@@ -7,7 +7,7 @@ import {
 } from '../chat/chatrollhelpers'
 import { IronswornItem } from '../item/item'
 import { DelveDomainDataSource, DelveThemeDataSource } from '../item/itemtypes'
-import { formatRollPlusStat } from '../rolls/chat-message.js'
+import { formatRollPlusStat } from '../rolls/ironsworn-roll-message.js'
 import { EnhancedDataswornMove } from './data'
 import { IronswornSettings } from './settings'
 import { capitalize } from './util'

@@ -15,7 +15,7 @@ import {
 import { renderRollGraphic } from './roll-graphic'
 import { CharacterDataProperties } from '../actor/actortypes'
 import { IronswornRollMessage } from '.'
-import { formatRollPlusStat } from './chat-message.js'
+import { formatRollPlusStat } from './ironsworn-roll-message.js'
 
 export function localeCapitalize(str: string) {
   const locale = game.i18n.lang

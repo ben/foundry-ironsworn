@@ -14,7 +14,7 @@ import {
   computeOutcomeText,
   formatRollMethod,
   formatRollPlusStat,
-} from '../rolls/chat-message.js'
+} from '../rolls/ironsworn-roll-message.js'
 import { localeCapitalize } from '../rolls/preroll-dialog.js'
 
 interface RollClassesOptions {
