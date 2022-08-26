@@ -127,7 +127,8 @@ export function outcomeKey(
   }
   return key as i18nOutcomeKey
 }
-export class IronswornRollChatMessage {
+
+export class IronswornRollMessage {
   constructor(public roll: IronswornRoll, public actor?: IronswornActor) {
     if (!actor && roll.preRollOptions.actorId) {
       this.actor = game.actors?.get(roll.preRollOptions.actorId)
@@ -136,7 +137,7 @@ export class IronswornRollChatMessage {
 
   static async fromMessage(
     messageId: string
-  ): Promise<IronswornRollChatMessage | undefined> {
+  ): Promise<IronswornRollMessage | undefined> {
     const msg = game.messages?.get(messageId)
     const html = await msg?.getHTML()
 
@@ -148,7 +149,7 @@ export class IronswornRollChatMessage {
     r.chatMessageId = messageId
     r.roll = msg?.roll || undefined
 
-    return new IronswornRollChatMessage(r)
+    return new IronswornRollMessage(r)
   }
 
   async burnMomentum() {

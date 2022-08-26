@@ -16,7 +16,7 @@ import { starforged } from 'dataforged'
 import {
   IronswornRoll,
   IronswornPrerollDialog,
-  IronswornRollChatMessage,
+  IronswornRollMessage,
 } from './module/rolls'
 
 export interface IronswornConfig {
@@ -29,7 +29,7 @@ export interface IronswornConfig {
 
   IronswornRoll: typeof IronswornRoll
   IronswornPrerollDialog: typeof IronswornPrerollDialog
-  IronswornRollChatMessage: typeof IronswornRollChatMessage
+  IronswornRollMessage: typeof IronswornRollMessage
 
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
@@ -56,7 +56,7 @@ export const IRONSWORN: IronswornConfig = {
 
   IronswornRoll,
   IronswornPrerollDialog,
-  IronswornRollChatMessage,
+  IronswornRollMessage,
 
   importFromDatasworn,
 

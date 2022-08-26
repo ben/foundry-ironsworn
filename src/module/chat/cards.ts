@@ -14,7 +14,7 @@ import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 import { DfRollOutcome, RollOutcome } from '../rolls/ironsworn-roll'
-import { IronswornRollChatMessage } from '../rolls'
+import { IronswornRollMessage } from '../rolls'
 
 export class IronswornChatCard {
   id?: string | null
@@ -186,7 +186,7 @@ export class IronswornChatCard {
     ev.preventDefault()
 
     const msgId = $(ev.target).parents('.chat-message').data('message-id')
-    const irmsg = await IronswornRollChatMessage.fromMessage(msgId)
+    const irmsg = await IronswornRollMessage.fromMessage(msgId)
     irmsg?.burnMomentum()
   }
 

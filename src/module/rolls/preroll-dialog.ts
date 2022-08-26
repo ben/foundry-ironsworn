@@ -14,7 +14,7 @@ import {
 } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
 import { CharacterDataProperties } from '../actor/actortypes'
-import { IronswornRollChatMessage } from '.'
+import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './chat-message.js'
 
 export function localeCapitalize(str: string) {
@@ -335,7 +335,7 @@ export class IronswornPrerollDialog extends Dialog<
     const realOpts = prerollOptionsWithFormData($(el).find('form'), opts)
 
     const r = new IronswornRoll(realOpts)
-    return new IronswornRollChatMessage(r).createOrUpdate()
+    return new IronswornRollMessage(r).createOrUpdate()
   }
 
   private static async renderContent(data: {
