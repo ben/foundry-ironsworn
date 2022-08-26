@@ -86,7 +86,7 @@ IRONSWORN:
   CreateActor: Create actor
   DEBILITY:
     ALERT:
-      Clear: 'Cleared debility: {debility} '
+      Clear: 'Cleared debility: {debility}'
       Mark: 'Marked debility: {debility}'
     Banes: Banes
     BanesDescription: <term>Banes</term> are permanent. They forever impact your character through the momentum adjustment and—more importantly—the narrative impact of being maimed or corrupted.
@@ -248,11 +248,11 @@ IRONSWORN:
     Custom: Custom oracles
     Roll: Roll oracle
   ORDINAL:
-    '1': first
-    '2': second
-    '3': third
-    '4': fourth
-    '5': fifth
+    1: first
+    2: second
+    3: third
+    4: fourth
+    5: fifth
   OpenCompendium: Open compendium
   Opportunity: Opportunity
   OptionalDelve: Optional delve
@@ -271,9 +271,9 @@ IRONSWORN:
       MarkComplete: Marked as complete
       MarkIncomplete: Marked as incomplete
     BOX:
-      '1': 1 box
-      '2': 2 boxes
-      '3': 3 boxes
+      1: 1 box
+      2: 2 boxes
+      3: 3 boxes
       Many: '{value} boxes'
     ChallengeRank: Challenge rank
     ClearAll: Clear all progress
@@ -298,9 +298,9 @@ IRONSWORN:
     Recommit: Recommit
     Star: When active, this item will also show up on the 'Legacies' tab.
     TICK:
-      '1': 1 tick
-      '2': 2 ticks
-      '3': 3 ticks
+      1: 1 tick
+      2: 2 ticks
+      3: 3 ticks
       Many: '{value} ticks'
     Track: Progress track
   Planet: Planet
@@ -359,16 +359,16 @@ IRONSWORN:
       ALL:
         Fallback: roll all of {statList}
       ANY:
-        '2': roll +{stat1} or +{stat2}
-        '3': roll +{stat1}, +{stat2}, or +{stat3}
+        2: roll +{stat1} or +{stat2}
+        3: roll +{stat1}, +{stat2}, or +{stat3}
         Fallback: roll any of {statList}
       HIGHEST:
-        '2': roll +{stat1} or +{stat2}, whichever is higher
-        '3': roll +{stat1}, +{stat2}, or +{stat3}, whichever is highest
+        2: roll +{stat1} or +{stat2}, whichever is higher
+        3: roll +{stat1}, +{stat2}, or +{stat3}, whichever is highest
         Fallback: roll highest of {statList}
       LOWEST:
-        '2': roll +{stat1} or +{stat2}, whichever is lower
-        '3': roll +{stat1}, +{stat2}, or +{stat3}, whichever is lowest
+        2: roll +{stat1} or +{stat2}, whichever is lower
+        3: roll +{stat1}, +{stat2}, or +{stat3}, whichever is lowest
         Fallback: roll lowest of {statList}
     OUTCOME:
       CappedAt10: Action score is capped at 10
@@ -395,7 +395,6 @@ IRONSWORN:
     Roll: Roll
     Rolling: Rolling
     Versus: vs.
-    Vs: vs.
   RandomName: Random name
   Region: Region
   Regions: Regions
@@ -406,19 +405,18 @@ IRONSWORN:
   SECTOR:
     BUILD:
       STEP:
-        '1': Choose your starting region
-        '10': Introduce a sector trouble
-        '11': Finalize the starting sector
-        '2': Determine the number of settlements
-        '3': Generate settlement details
-        '4': Generate planets
-        '5': Generate stars (optional)
-        '6': Create a sector map
-        '7': Create passages
-        '8': Zoom in on a settlement
-        '9': Create a local connection
+        1: Choose your starting region
+        2: Determine the number of settlements
+        3: Generate settlement details
+        4: Generate planets
+        5: Generate stars (optional)
+        6: Create a sector map
+        7: Create passages
+        8: Zoom in on a settlement
+        9: Create a local connection
+        10: Introduce a sector trouble
+        11: Finalize the starting sector
     Create: New sector
-    Lore: A <term>sector</term> is a settled or explored area of space. In the fiction of your setting, sectors are named and provide the people of the Forge a common means of identifying a location or mapping the domains of a power or faction.
   SETTINGS:
     ConfigurationDialog:
       Hint: Choose between Ironsworn and Starforged UI elements.
@@ -450,7 +448,6 @@ IRONSWORN:
       Sheet: Match sheet
   SETTLEMENT:
     Create: New settlement
-    Lore: A <term>settlement</term> is a location populated by other humans. Settlements can be planetside habitats, orbital stations, or deep space facilities. They offer a place for you to recuperate after your adventures in the Forge have taken their toll.
     RandomType: Random settlement location
     Type: Settlement location
   SHEET:
