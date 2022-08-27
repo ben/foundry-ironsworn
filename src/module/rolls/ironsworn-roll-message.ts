@@ -184,7 +184,7 @@ export class IronswornRollMessage {
       ...(await this.oraclesData()),
     }
     const content = await renderTemplate(
-      'systems/foundry-ironsworn/templates/rolls/chat-message.hbs',
+      'systems/foundry-ironsworn/templates/rolls/ironsworn-roll-message.hbs',
       renderData
     )
 
