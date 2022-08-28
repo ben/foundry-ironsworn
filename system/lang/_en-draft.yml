@@ -79,7 +79,7 @@ IRONSWORN:
     Description: A <term>connection</term> represents an important relationship with an NPC. Connections are not shipmates or companions. They are independent characters whose own lives occasionally intersect with your own. You might accompany the connection on a specific mission, but you’ll soon part ways as your duties and ambitions take you on separate paths.
     Shared: Shared connection
   CREATURE:
-    Create: Create new creature
+    Create: Create creature
     ENVIRONMENT:
       Air: Air
       Interior: Interior
@@ -133,7 +133,7 @@ IRONSWORN:
     Dangers: Dangers
     Danger: danger
   DERELICT:
-    Create: Create new derelict
+    Create: Create derelict
     RandomType: Random derelict type
     Type: Type of derelict
   DIALOG:
@@ -440,7 +440,7 @@ IRONSWORN:
         '7': Create passages
         '8': Zoom in on a settlement
         '9': Create a local connection
-    Create: Create new sector
+    Create: Create sector
   SETTINGS:
     ConfigurationDialog:
       Hint: Choose between Ironsworn and Starforged UI elements.
@@ -478,7 +478,7 @@ IRONSWORN:
       Classic: 'Your World: Truths'
       Starforged: Setting Truths
   SETTLEMENT:
-    Create: Create new settlement
+    Create: Create settlement
     RandomType: Random settlement location
     Type: Settlement location
   SHEET:
@@ -499,7 +499,7 @@ IRONSWORN:
     Wits: wits
     WitsDescription: Expertise, knowledge, and observation.
   STELLAR_OBJECT:
-    Create: Create new stellar object
+    Create: Create stellar object
     RandomType: Random stellar object
     Type: Type of star
   Search: Search
@@ -524,7 +524,7 @@ IRONSWORN:
     Threats: Threats
   Track: Track
   VAULT:
-    Create: Create new precursor vault
+    Create: Create precursor vault
     RandomType: Random vault location
     Type: Vault location
   VEHICLE:
