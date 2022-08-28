@@ -3,14 +3,12 @@ IRONSWORN:
     Add: Added {name}
     Delete: Deleted {name}
     MarkedOption: Marked {name}
-    Rename: Renamed {oldName} to {newName}
+    Rename: '{oldName} renamed to {newName}'
     SetField: '{fieldName} set to {value}'
   ASSET:
     ALERT:
-      MarkAbility: marked {ordinal} ability
-      MarkNamedAbility: marked ability {label}
-      UnmarkAbility: unmarked {ordinal} ability
-      UnmarkNamedAbility: unmarked ability {label}
+      MarkAbility: Marked ability \#{number}
+      ClearAbility: 'Cleared ability \#{number}'
     Abilities: Abilities
     Ability: ability
     Delete: Delete asset
@@ -20,9 +18,11 @@ IRONSWORN:
   Asset: asset
   Assets: Assets
   BOND:
+    Add: Add a bond
+    Lose: Lose a bond
     ALERT:
       Add: Added a bond
-      Lose: Lost a bond
+      Lose: Lose a bond
   Bond: bond
   Bonds: Bonds
   CHARACTER:
@@ -37,7 +37,7 @@ IRONSWORN:
     Foe: Foe
     Foes: Foes
     NonPlayer: non-player character
-    NonPlayers: non-player characters
+    NonPlayers: Non-player characters
     Npc: NPC
     Npcs: NPCs
     Pc: PC
@@ -128,6 +128,10 @@ IRONSWORN:
   DELVE_SITE:
     Domain: Domain
     Theme: Theme
+    Features: Feature
+    Feature: feature
+    Dangers: Dangers
+    Danger: danger
   DERELICT:
     Create: Create new derelict
     RandomType: Random derelict type
@@ -154,9 +158,14 @@ IRONSWORN:
     Waypoint: waypoint
     Waypoints: Waypoints
   EXPERIENCE:
-    Refunded: Refunded {amt} experience
-    Spent: Spent {amt} experience
+    ALERT:
+      Mark: Marked {number} experience
+      Refund: Refunded {number} experience
+      Spend: Spent {number} experience
     Xp: XP
+    Spend: Spend experience
+    Mark: Mark experience
+    Refund: Refund experience
   Edit: Edit
   Enable: Enable
   Enabled: Enabled
@@ -237,8 +246,9 @@ IRONSWORN:
     BurnMomentumDescription: <term>Burning momentum</term> is a powerful option to deliver a decisive result or avoid dire failure. When you have positive momentum, after you make an action roll, you may replace your action score with your current momentum value to improve your result.
     Max: Max
     MaxDescription: Your max momentum is reduced by 1 for each marked impact. For example, one impact will drop your max momentum to +9. Three impacts will reduce it to +7.
-    MomentumBurnt: Momentum burn
-    Reset: Reset
+    MomentumBurnt: Momentum burn # past tense, as in "Momentum was burned" or "Momentum burnt", or as a noun describing an event, "the momentum burn" (whichever makes more sense as a label for your language)
+    Reset: Reset # verb, as in "reset one's momentum"
+    ResetValue: Reset # noun, as in "one's [momentum] reset"; keep it short, as its used as a label in a narrow column
     ResetDescription: If you have one marked impact, your momentum reset is +1 (instead of +2). If you have more than one marked impact, your momentum reset is 0 (instead of +2).
   MOVE:
     Custom: Custom moves
@@ -251,12 +261,6 @@ IRONSWORN:
   ORACLE:
     Custom: Custom oracles
     Roll: Roll oracle
-  ORDINAL:
-    '1': first
-    '2': second
-    '3': third
-    '4': fourth
-    '5': fifth
   OpenCompendium: Open compendium
   Option: Option
   OptionalDelve: Optional delve
@@ -274,11 +278,20 @@ IRONSWORN:
       Mark: Marked {amount} of progress (now {currentScore}/10)
       MarkComplete: Marked as complete
       MarkIncomplete: Marked as incomplete
+    AddStar: When active, this item will also show up on the 'Legacies' tab.
     BOX:
       '1': 1 box
       '2': 2 boxes
       '3': 3 boxes
       Many: '{number} boxes'
+    CHALLENGE_RANK:
+      ALERT:
+        Change: Challenge rank changed from {old} to {new}
+      Dangerous: Dangerous
+      Epic: Epic
+      Extreme: Extreme
+      Formidable: Formidable
+      Troublesome: Troublesome
     ChallengeRank: Challenge rank
     ClearAmount: Clear {amount} of progress
     ClearTrack: Clear the progress track
@@ -289,31 +302,17 @@ IRONSWORN:
     MarkAmount: Mark {amount} of progress
     ProgressRoll: Progress roll
     ProgressScore: Progress score
-    RANK:
-      ALERT:
-        Change: Challenge rank changed from {old} to {new}
-      Dangerous: Dangerous
-      Epic: Epic
-      Extreme: Extreme
-      Formidable: Formidable
-      Troublesome: Troublesome
     Rank: Rank
     Recommit: Recommit
     RollAndCompare: Roll the challenge dice and compare to your progress ({number})
-    Star: When active, this item will also show up on the 'Legacies' tab.
     TICK:
       '1': 1 tick
       '2': 2 ticks
       '3': 3 ticks
       Many: '{value} ticks'
     Track: Progress track
-  Pc: PC
-  Pcs: PCs
   Planet: Planet
   Planets: Planets
-  PlayerCharacter: player character
-  PlayerCharacters: player characters
-  Plot: Plot
   Progress: Progress
   Quest: Quest
   Quests: Quests
@@ -350,27 +349,27 @@ IRONSWORN:
     Momentum: momentum
     MomentumDescription: Your <term>momentum meter</term> ranges from -6 to +10 and represents your inertia, luck, and confidence. It is located on the left side of your character sheet. Move results and asset abilities may prompt you to increase or decrease momentum.
     SUFFER:
-      Generic: Suffer -{amount} {resource}
-      Miss: Suffer -{amount} {resource} on a miss
-      MissMove: <move>{moveName}</move> (-{amount}) on a miss
-      Move: <move>{moveName}</move> (-{amount})
-      WeakHit: Suffer -{amount} {resource} on a weak hit
-      WeakHitMove: <move>{moveName}</move> (-{amount}) on a weak hit
+      Generic: Suffer -{number} {resource}
+      Miss: Suffer -{number} {resource} on a miss
+      MissMove: <move>{moveName}</move> (-{number}) on a miss
+      Move: <move>{moveName}</move> (-{number})
+      WeakHit: Suffer -{number} {resource} on a weak hit
+      WeakHitMove: <move>{moveName}</move> (-{number}) on a weak hit
     Spirit: spirit
     SpiritDescription: <term>Spirit</term> is your morale and mental state.
     Supply: supply
     SupplyDescriptionClassic: <term>Supply</term> is an abstract representation of your preparedness, including ammo, food, water, and general upkeep.
     SupplyDescriptionStarforged: <term>Supply</term> is an abstract representation of your overall preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep.
     TAKE:
-      Generic: Take +{amount} {resource}
-      Hit: Take +{amount} {resource} on a hit
-      StrongHit: Take +{amount} {resource} on a strong hit
-      WeakHit: Take +{amount} {resource} on a weak hit
+      Generic: Take +{number} {resource}
+      Hit: Take +{number} {resource} on a hit
+      StrongHit: Take +{number} {resource} on a strong hit
+      WeakHit: Take +{number} {resource} on a weak hit
   ROLL:
     ActionDie: Action die
     ActionRoll: Action roll
     ActionScore: Action score
-    AddPlus: Add +{value}
+    AddPlus: Add +{number}
     Adds: Adds
     ChallengeDice: Challenge dice
     ChallengeDie: Challenge die
@@ -417,7 +416,6 @@ IRONSWORN:
     PlusStat: roll +{stat}
     Reroll: Reroll
     Roll: Roll
-    Rolling: Rolling
     Versus: vs.
   Rarities: Rarities
   Rarity: rarity
@@ -446,14 +444,14 @@ IRONSWORN:
   SETTINGS:
     ConfigurationDialog:
       Hint: Choose between Ironsworn and Starforged UI elements.
-      Label: Ironsworn/Starforged Configuration Dialog
-      Name: Configuration Dialog
+      Label: Ironsworn/Starforged configuration dialog
+      Name: Configuration dialog
     EvenMatchesOnly:
       Hint: Resolve the impact of a match only when the challenge dice come up as an even number (2, 4, 6, 8, or 10).
       Name: Even matches only
     LogChanges:
       Hint: If on, changes to character stats will be logged to the chat.
-      Name: Log Character Updates
+      Name: Log character updates
     PromptTruths:
       Hint: Open the above dialog on startup.
       Name: Ironsworn/Starforged Dialog on Start
@@ -461,17 +459,24 @@ IRONSWORN:
       Hint: Enables in-progress Starforged features.
       Name: Show Starforged beta content
     SharedSupply:
-      Hint: If on, changing any character/shared supply tracker changes all other actors' supply trackers as well.
-      Name: Shared Supply Tracker
+      Hint: If on, changing any character/shared supply meter changes all other actors' supply meters as well.
+      Name: Shared supply meter
     Theme:
       Hint: Select the visual look for this game. Requires a reload.
       Ironsworn: Ironsworn Classic
-      Name: Visual Theme
+      Name: Visual theme
       Starforged: Starforged (experimental)
     Tools:
       Hint: Which set of moves and oracles will appear when opening a character sheet.
-      Name: Character Tools
+      Name: Character tools
       Sheet: Match sheet
+  SETTING_TRUTHS:
+    Custom: Custom Truth
+    QuestStarter: Quest Starter
+    Save: Save Your Truths
+    TITLE:
+      Classic: 'Your World: Truths'
+      Starforged: Setting Truths
   SETTLEMENT:
     Create: Create new settlement
     RandomType: Random settlement location
@@ -517,13 +522,6 @@ IRONSWORN:
     Menace: menace
     Threat: threat
     Threats: Threats
-  TRUTHS:
-    Custom: Custom Truth
-    QuestStarter: Quest Starter
-    Save: Save Your Truths
-    TITLE:
-      Classic: 'Your World: Truths'
-      Starforged: Setting Truths
   Track: Track
   VAULT:
     Create: Create new precursor vault
@@ -543,10 +541,6 @@ IRONSWORN:
     SUPPORT:
       Integrity: support vehicle integrity
   VOW:
-    ClearAll: Forsake Your Vow
-    Delete: Delete vow
-    MakeAProgressRoll: Fulfill Your Vow
-    MarkAmount: Reach a Milestone
     Recommit: Recommit to the quest (after rolling a miss on Fulfill Your Vow)
     RecommitDescription:
       Ironsworn: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).
