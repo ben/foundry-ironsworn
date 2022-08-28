@@ -52,16 +52,14 @@ async function createOracleTree(
 export async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
   return createOracleTree(
     'foundry-ironsworn.ironswornoracles',
-    ISOracleCategories,
-    getFoundryTableByDfId
+    ISOracleCategories
   )
 }
 
 export async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
   return createOracleTree(
     'foundry-ironsworn.starforgedoracles',
-    SFOracleCategories,
-    getFoundryTableByDfId
+    SFOracleCategories
   )
 }
 
