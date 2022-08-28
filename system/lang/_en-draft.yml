@@ -2,21 +2,20 @@ IRONSWORN:
   ALERT:
     Add: Added {name}
     Delete: Deleted {name}
-    MarkedOption: marked {name}
-    Rename: '{oldName} renamed to {newName}'
-    SetField: Set {fieldName} to {value}
+    MarkedOption: Marked {name}
+    Rename: Renamed {oldName} to {newName}
+    SetField: '{fieldName} set to {value}'
   ASSET:
     ALERT:
       MarkAbility: marked {ordinal} ability
-      MarkNamedAbility: marked ability {abilityName}
+      MarkNamedAbility: marked ability {label}
       UnmarkAbility: unmarked {ordinal} ability
-      UnmarkNamedAbility: unmarked ability {abilityName}
+      UnmarkNamedAbility: unmarked ability {label}
     Abilities: Abilities
     Ability: ability
-    Card: asset card
-    Cards: Asset cards
     Delete: Delete asset
     Type: Asset type
+  Add: Add
   AdvancedOptions: Advanced options
   Asset: asset
   Assets: Assets
@@ -26,6 +25,25 @@ IRONSWORN:
       Lose: Lost a bond
   Bond: bond
   Bonds: Bonds
+  CHARACTER:
+    Allies: Allies
+    Ally: ally
+    Companion: companion
+    Companions: Companions
+    Denizen: denizen
+    Denizens: Denizens
+    Encounter: encounter
+    Encounters: Encounters
+    Foe: Foe
+    Foes: Foes
+    NonPlayer: non-player character
+    NonPlayers: non-player characters
+    Npc: NPC
+    Npcs: NPCs
+    Pc: PC
+    Pcs: PCs
+    Player: player character
+    Players: Player characters
   CLOCK:
     ALERT:
       ADVANCE:
@@ -58,10 +76,10 @@ IRONSWORN:
       PcIsInABadSpot: '{name} is in a bad spot'
       PcIsInControl: '{name} is in control'
   CONNECTION:
-    Description: A <term>connection</term> represents an important relationship with a non-player character (NPC). Connections are not shipmates or companions. They are independent characters whose own lives occasionally intersect with your own. You might accompany the connection on a specific mission, but you’ll soon part ways as your duties and ambitions take you on separate paths.
+    Description: A <term>connection</term> represents an important relationship with an NPC. Connections are not shipmates or companions. They are independent characters whose own lives occasionally intersect with your own. You might accompany the connection on a specific mission, but you’ll soon part ways as your duties and ambitions take you on separate paths.
     Shared: Shared connection
   CREATURE:
-    Create: New creature
+    Create: Create new creature
     ENVIRONMENT:
       Air: Air
       Interior: Interior
@@ -70,19 +88,16 @@ IRONSWORN:
       Space: Space
     Environment: Environment
     RandomEnvironment: Random environment
-  Character: character
   Chat: Chat
   Clear: Clear
   Clock: clock
   Clocks: Clocks
   Combat: Combat
-  CompanionHealth: companion health
-  Completed: Completed
   ConditionMeter: condition meter
   ConditionMeters: Condition meters
-  ConfirmDelete: Are you sure? This cannot be undone.
   Connection: connection
   Connections: Connections
+  Create: Create
   CreateActor: Create actor
   DEBILITY:
     ALERT:
@@ -114,17 +129,21 @@ IRONSWORN:
     Domain: Domain
     Theme: Theme
   DERELICT:
-    Create: New derelict
+    Create: Create new derelict
     RandomType: Random derelict type
     Type: Type of derelict
+  DIALOG:
+    ConfirmDelete: Are you sure? This cannot be undone.
   Dangers: Dangers
   Debilities: Debilities
   Debility: debility
+  Delete: Delete
   DeleteItem: Delete item
   Delve: Delve
   DelveSite: Delve site
   Derelict: Derelict
   Derelicts: Derelicts
+  Description: Description
   Disabled: Disabled
   Discoveries: Discoveries
   EXPEDITION:
@@ -137,7 +156,9 @@ IRONSWORN:
   EXPERIENCE:
     Refunded: Refunded {amt} experience
     Spent: Spent {amt} experience
+    Xp: XP
   Edit: Edit
+  Enable: Enable
   Enabled: Enabled
   Expedition: Expedition
   Experience: Experience
@@ -147,6 +168,9 @@ IRONSWORN:
     Welcome: Welcome
   Feature: Feature
   Features: Features
+  Field: Field
+  Fields: Fields
+  FullText: Full text
   IMPACT:
     ALERT:
       Clear: 'Cleared impact: {impact} '
@@ -179,14 +203,14 @@ IRONSWORN:
     WoundedDescription: <term>Wounded</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You are severely injured.  You cannot increase your health meter until you <move>Heal</move> to clear this impact.
   Impact: impact
   Impacts: Impacts
-  Integrity: integrity
   Ironsworn: Ironsworn
   IronswornDelve: 'Ironsworn: Delve'
   IronswornStarforged: 'Ironsworn: Starforged'
   JOURNEY:
     Recommit: Continue your journey (after rolling a miss on Reach Your Destination)
     RecommitDescription: Clear all but one filled progress, and raise the journey’s rank by one (if not already epic).
-  Journey: Journey
+    Track: journey track
+  Journey: journey
   LEGACY:
     Bonds: Bonds legacy
     BondsDescription: Create connections and build relationships.
@@ -194,26 +218,19 @@ IRONSWORN:
     DiscoveriesDescription: Explore the Forge and unlock its mysteries.
     Quests: Quests legacy
     QuestsDescription: Swear vows and do what you must to see them fulfilled.
+    Track: legacy track
   LOCATION:
     DeepSpace: deep space
     Orbital: orbital
     Planetside: planetside
+  Label: Label
   Legacies: Legacies
   Legacy: Legacy
   Location: Location
   LocationType: Location type
-  METER:
-    Generic: '{x} meter'
-    Health: health
-    HealthDescription: <term>Health</term> represents your physical condition and stamina.
-    Momentum: momentum
-    MomentumDescription: Your <term>momentum meter</term> ranges from -6 to +10 and represents your inertia, luck, and confidence. It is located on the left side of your character sheet. Move results and asset abilities may prompt you to increase or decrease momentum.
-    Spirit: spirit
-    SpiritDescription: <term>Spirit</term> is your morale and mental state.
-    Supply: supply
-    SupplyDescriptionClassic: <term>Supply</term> is an abstract representation of your preparedness, including ammo, food, water, and general upkeep.
-    SupplyDescriptionStarforged: <term>Supply</term> is an abstract representation of your overall preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep.
   MOMENTUM:
+    ActionDieCancel: Negative momentum canceled action die
+    ActionDieCancelDescription: Your action die was cancelled because the number on the action die matched your negative momentum value. You can’t take a bonus from an asset ability triggered by that die. If an asset forces a penalty for a specific action die value, that outcome still applies.
     Burn: Burn
     BurnForUpgrade: 'Burn momentum: <strong>{type}</strong>'
     BurnMomentum: Burn momentum
@@ -221,7 +238,6 @@ IRONSWORN:
     Max: Max
     MaxDescription: Your max momentum is reduced by 1 for each marked impact. For example, one impact will drop your max momentum to +9. Three impacts will reduce it to +7.
     MomentumBurnt: Momentum burn
-    NegativeMomentumCancel: Negative momentum canceled action die
     Reset: Reset
     ResetDescription: If you have one marked impact, your momentum reset is +1 (instead of +2). If you have more than one marked impact, your momentum reset is 0 (instead of +2).
   MOVE:
@@ -231,55 +247,42 @@ IRONSWORN:
   Meter: meter
   Move: move
   Moves: Moves
-  NPC:
-    Denizen: denizen
-    Denizens: Denizens
-    Encounter: encounter
-    Encounters: Encounters
-    Foe: Foe
-    Foes: Foes
-    NonPlayerCharacter: non-player character
-    NonPlayerCharacters: non-player characters
-    Npc: NPC
-    Npcs: NPCs
-  Names: Names
   Notes: Notes
   ORACLE:
     Custom: Custom oracles
     Roll: Roll oracle
   ORDINAL:
-    1: first
-    2: second
-    3: third
-    4: fourth
-    5: fifth
+    '1': first
+    '2': second
+    '3': third
+    '4': fourth
+    '5': fifth
   OpenCompendium: Open compendium
-  Opportunity: Opportunity
+  Option: Option
   OptionalDelve: Optional delve
   Options: Options
   Oracle: oracle
   Oracles: Oracles
-  PC: PC
   PLANET:
-    Create: New world
+    Create: Create planet
     RandomType: Random planetary class
     Type: Planetary class
   PROGRESS:
     ALERT:
-      Erase: Erased {amount} of progress
-      Mark: Marked {amount} of progress
+      ClearAmount: Cleared {amount} of progress (now {currentScore}/10)
+      ClearTrack: Cleared the progress track
+      Mark: Marked {amount} of progress (now {currentScore}/10)
       MarkComplete: Marked as complete
       MarkIncomplete: Marked as incomplete
     BOX:
-      1: 1 box
-      2: 2 boxes
-      3: 3 boxes
-      Many: '{value} boxes'
+      '1': 1 box
+      '2': 2 boxes
+      '3': 3 boxes
+      Many: '{number} boxes'
     ChallengeRank: Challenge rank
-    ClearAll: Clear all progress
-    Delete: Delete progress track
-    Erase: Erase progress
-    EraseAmount: Erase {amount} of progress
+    ClearAmount: Clear {amount} of progress
+    ClearTrack: Clear the progress track
+    Delete: Delete track
     Incomplete: Incomplete
     MakeAProgressRoll: Make a progress roll
     Mark: Mark progress
@@ -296,16 +299,20 @@ IRONSWORN:
       Troublesome: Troublesome
     Rank: Rank
     Recommit: Recommit
+    RollAndCompare: Roll the challenge dice and compare to your progress ({number})
     Star: When active, this item will also show up on the 'Legacies' tab.
     TICK:
-      1: 1 tick
-      2: 2 ticks
-      3: 3 ticks
+      '1': 1 tick
+      '2': 2 ticks
+      '3': 3 ticks
       Many: '{value} ticks'
     Track: Progress track
+  Pc: PC
+  Pcs: PCs
   Planet: Planet
   Planets: Planets
   PlayerCharacter: player character
+  PlayerCharacters: player characters
   Plot: Plot
   Progress: Progress
   Quest: Quest
@@ -330,6 +337,18 @@ IRONSWORN:
       Label: Void
       Lore: Beyond the Forge, there are only a few isolated stars and vast gulfs of nothing. Travel beyond the periphery of the Forge is difficult or impossible.
   RESOURCE:
+    Health: health
+    HealthDescription: <term>Health</term> represents your physical condition and stamina.
+    Integrity: integrity
+    METER:
+      Generic: '{x} meter'
+      Health: Health meter
+      Integrity: Integrity meter
+      Momentum: Momentum meter
+      Spirit: Spirit meter
+      Supply: Supply meter
+    Momentum: momentum
+    MomentumDescription: Your <term>momentum meter</term> ranges from -6 to +10 and represents your inertia, luck, and confidence. It is located on the left side of your character sheet. Move results and asset abilities may prompt you to increase or decrease momentum.
     SUFFER:
       Generic: Suffer -{amount} {resource}
       Miss: Suffer -{amount} {resource} on a miss
@@ -337,6 +356,11 @@ IRONSWORN:
       Move: <move>{moveName}</move> (-{amount})
       WeakHit: Suffer -{amount} {resource} on a weak hit
       WeakHitMove: <move>{moveName}</move> (-{amount}) on a weak hit
+    Spirit: spirit
+    SpiritDescription: <term>Spirit</term> is your morale and mental state.
+    Supply: supply
+    SupplyDescriptionClassic: <term>Supply</term> is an abstract representation of your preparedness, including ammo, food, water, and general upkeep.
+    SupplyDescriptionStarforged: <term>Supply</term> is an abstract representation of your overall preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep.
     TAKE:
       Generic: Take +{amount} {resource}
       Hit: Take +{amount} {resource} on a hit
@@ -359,16 +383,16 @@ IRONSWORN:
       ALL:
         Fallback: roll all of {statList}
       ANY:
-        2: roll +{stat1} or +{stat2}
-        3: roll +{stat1}, +{stat2}, or +{stat3}
+        '2': roll +{stat1} or +{stat2}
+        '3': roll +{stat1}, +{stat2}, or +{stat3}
         Fallback: roll any of {statList}
       HIGHEST:
-        2: roll +{stat1} or +{stat2}, whichever is higher
-        3: roll +{stat1}, +{stat2}, or +{stat3}, whichever is highest
+        '2': roll +{stat1} or +{stat2}, whichever is higher
+        '3': roll +{stat1}, +{stat2}, or +{stat3}, whichever is highest
         Fallback: roll highest of {statList}
       LOWEST:
-        2: roll +{stat1} or +{stat2}, whichever is lower
-        3: roll +{stat1}, +{stat2}, or +{stat3}, whichever is lowest
+        '2': roll +{stat1} or +{stat2}, whichever is lower
+        '3': roll +{stat1}, +{stat2}, or +{stat3}, whichever is lowest
         Fallback: roll lowest of {statList}
     OUTCOME:
       CappedAt10: Action score is capped at 10
@@ -395,36 +419,38 @@ IRONSWORN:
     Roll: Roll
     Rolling: Rolling
     Versus: vs.
-  RandomName: Random name
+  Rarities: Rarities
+  Rarity: rarity
   Region: Region
   Regions: Regions
   RequiresLocationType: This oracle requires a location type to be selected.
+  Roll: Roll
   RollForDetails: Roll location details
   RotateCCW: Rotate counter-clockwise
   RotateCW: Rotate clockwise
   SECTOR:
     BUILD:
       STEP:
-        1: Choose your starting region
-        2: Determine the number of settlements
-        3: Generate settlement details
-        4: Generate planets
-        5: Generate stars (optional)
-        6: Create a sector map
-        7: Create passages
-        8: Zoom in on a settlement
-        9: Create a local connection
-        10: Introduce a sector trouble
-        11: Finalize the starting sector
-    Create: New sector
+        '1': Choose your starting region
+        '10': Introduce a sector trouble
+        '11': Finalize the starting sector
+        '2': Determine the number of settlements
+        '3': Generate settlement details
+        '4': Generate planets
+        '5': Generate stars (optional)
+        '6': Create a sector map
+        '7': Create passages
+        '8': Zoom in on a settlement
+        '9': Create a local connection
+    Create: Create new sector
   SETTINGS:
     ConfigurationDialog:
       Hint: Choose between Ironsworn and Starforged UI elements.
       Label: Ironsworn/Starforged Configuration Dialog
       Name: Configuration Dialog
-    DataforgedIronswornMoves:
-      Hint: If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization.
-      Name: (Beta) New Ironsworn move-sheet UI
+    EvenMatchesOnly:
+      Hint: Resolve the impact of a match only when the challenge dice come up as an even number (2, 4, 6, 8, or 10).
+      Name: Even matches only
     LogChanges:
       Hint: If on, changes to character stats will be logged to the chat.
       Name: Log Character Updates
@@ -447,25 +473,16 @@ IRONSWORN:
       Name: Character Tools
       Sheet: Match sheet
   SETTLEMENT:
-    Create: New settlement
+    Create: Create new settlement
     RandomType: Random settlement location
     Type: Settlement location
   SHEET:
     Callsign: Callsign
     Characteristics: Characteristics
-    Description: Description
-    Fields: Fields
-    FullText: Full text
     Label: Label
-    Name: Name
-    Pronouns: Pronouns
     Shared: Shared sheet
-    Summary: Summary
     Trigger: Trigger
-    Value: Value
   STAT:
-    ALERT:
-      Set: '{amt} {stat} (now {val})'
     Edge: edge
     EdgeDescription: Quickness, agility, and prowess when fighting at a distance.
     Heart: heart
@@ -477,10 +494,9 @@ IRONSWORN:
     Wits: wits
     WitsDescription: Expertise, knowledge, and observation.
   STELLAR_OBJECT:
-    Create: New stellar object
+    Create: Create new stellar object
     RandomType: Random stellar object
     Type: Type of star
-  Scenes: Scenes
   Search: Search
   Sector: Sector
   Sectors: Sectors
@@ -492,10 +508,11 @@ IRONSWORN:
   Stat: stat
   Stats: Stats
   StellarObject: Stellar object
+  Summary: Summary
   THREAT:
     ALERT:
-      MarkMenace: Marked menace on {name}
-      MarkMenaceValue: Marked {value} menace on {name}
+      MarkMenace: Marked menace on {title}
+      MarkMenaceNumber: Marked {number} menace on {title}
     MarkMenace: Mark menace
     Menace: menace
     Threat: threat
@@ -509,7 +526,7 @@ IRONSWORN:
       Starforged: Setting Truths
   Track: Track
   VAULT:
-    Create: New precursor vault
+    Create: Create new precursor vault
     RandomType: Random vault location
     Type: Vault location
   VEHICLE:
@@ -534,10 +551,10 @@ IRONSWORN:
     RecommitDescription:
       Ironsworn: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).
       Starforged: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow’s rank by one (if not already epic).
+  Value: Value
   Vehicle: vehicle
   Vehicles: Vehicles
   Vow: vow
   Vows: Vows
   World: World
   Worlds: Worlds
-  Xp: XP
