@@ -177,6 +177,12 @@ import {
 } from '../chat/chatrollhelpers'
 import { rollSiteFeature } from '../helpers/rolldialog'
 import { moveDataByName } from '../helpers/data'
+import {
+  DelveDomainDataSource,
+  DelveThemeDataSource,
+  FeatureOrDanger,
+} from '../item/itemtypes'
+import { OracleRollMessage, TableRow } from '../rolls'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
@@ -229,12 +235,28 @@ function markProgress() {
   $actor?.update({ 'data.current': newValue })
 }
 
-function randomFeature() {
+async function randomFeature() {
   if (!hasThemeAndDomain.value) return
-  rollSiteFeature({
-    theme: ironswornTheme.value,
-    domain: ironswornDomain.value,
-  })
+
+  const themeData = ironswornTheme.value?.data as DelveThemeDataSource
+  const domainData = ironswornDomain.value?.data as DelveDomainDataSource
+  const convertToRow = (f: FeatureOrDanger): TableRow => {
+    const { low, high, description } = f
+    return {
+      low,
+      high,
+      text: description,
+      selected: false,
+    }
+  }
+  const rows = [
+    ...themeData.data.features.map(convertToRow),
+    ...domainData.data.features.map(convertToRow),
+  ]
+  const title = game.i18n.localize('IRONSWORN.Feature')
+  const subtitle = `${$actor?.name} – ${ironswornTheme.value?.name} ${ironswornDomain.value?.name}`
+  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
+  orm.createOrUpdate()
 }
 
 async function locateObjective() {
