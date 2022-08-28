@@ -5,7 +5,6 @@ import {
   createIronswornOracleTree,
   createStarforgedOracleTree,
   findPathToNodeByDfId,
-  findPathToNodeByTableId,
 } from '../features/customoracles'
 
 export interface TableRow {
@@ -91,8 +90,12 @@ export class OracleRollMessage {
   /**
    * TODO: convert {@link rollAndDisplayOracleResult}
    */
-  static async fromRows(tableRows: TableRow[]) {
-    return new OracleRollMessage({ tableRows })
+  static async fromRows(
+    tableRows: TableRow[],
+    title: string,
+    subtitle?: string
+  ) {
+    return new OracleRollMessage({ tableRows, title, subtitle })
   }
 
   private async getRollTable(): Promise<RollTable | undefined> {
@@ -201,7 +204,14 @@ export class OracleRollMessage {
   }
 
   toJSON(): any {
-    return pick(this, ['dfOracleId', 'tableId', 'tablePack', 'rows'])
+    return pick(this, [
+      'dfOracleId',
+      'tableId',
+      'tablePack',
+      'tableRows',
+      'title',
+      'subtitle',
+    ])
   }
 
   static async fromMessage(

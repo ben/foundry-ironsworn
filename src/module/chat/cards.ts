@@ -14,7 +14,7 @@ import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 import { DfRollOutcome, RollOutcome } from '../rolls/ironsworn-roll'
-import { IronswornRollMessage } from '../rolls'
+import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 
 export class IronswornChatCard {
   id?: string | null
@@ -49,6 +49,9 @@ export class IronswornChatCard {
     html
       .find('.ironsworn-roll-burn-momentum')
       .on('click', (ev) => this._irBurnMomentum.call(this, ev))
+    html
+      .find('.oracle-roll .oracle-reroll')
+      .on('click', (ev) => this._oracleReroll.call(this, ev))
     html
       .find('.ironsworn__delvedepths__roll')
       .on('click', (ev) => this._delveDepths.call(this, ev))
@@ -187,7 +190,16 @@ export class IronswornChatCard {
 
     const msgId = $(ev.target).parents('.chat-message').data('message-id')
     const irmsg = await IronswornRollMessage.fromMessage(msgId)
-    irmsg?.burnMomentum()
+    return irmsg?.burnMomentum()
+  }
+
+  async _oracleReroll(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const msgId = $(ev.target).parents('.chat-message').data('message-id')
+    const orm = await OracleRollMessage.fromMessage(msgId)
+    await orm?.forceRoll()
+    return orm?.createOrUpdate()
   }
 
   async _delveDepths(ev: JQuery.ClickEvent) {
