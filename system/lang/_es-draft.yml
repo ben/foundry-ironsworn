@@ -1,0 +1,210 @@
+IRONSWORN:
+  ALERT:
+    Added: '{name} añadido'
+    Deleted: '{name} eliminado'
+    MarkedOption: Marcó {name}
+    Rename: '{oldName} renombrado a {newName}'
+    SetField: '{name} se estableció en {val}'
+  ASSET:
+    ALERT:
+      ClearAbility: Desmarcó la capacidad \#{number}
+      MarkAbility: Marcó la capacidad \#{number}
+    Abilities: Capacidades
+    Delete: Eliminar recurso
+  Asset: un recurso
+  Assets: Recursos
+  BOND:
+    ALERT:
+      Add: Añadió un vínculo
+      Lose: Perdió un vínculo
+  Bond: vínculo
+  Bonds: Vínculos
+  CHARACTER:
+    Foe: un oponente
+    Foes: Oponentes
+  Character: Personaje
+  Clear: Borrar
+  Clock: Reloj
+  Combat: Combate
+  ConfirmDelete: ¿Estás seguro? Esta acción no puede deshacerse.
+  CreateActor: Crear actor
+  CreateGeneric: Crear {item}
+  Creature: una criatura
+  Creatures: Criaturas
+  DEBILITIES:
+    Banes: Desgracias
+    Burdens: Cargas
+    Conditions: Condiciones
+    Corrupted: Eclipsado
+    Doomed: Condenado
+    Encumbered: Sobrecargado
+    Maimed: Lisiado
+    Shaken: Conmocionado
+    Tormented: Atormentado
+    Unprepared: Desprovisto
+    Wounded: Malherido
+  DELVE_SITE:
+    Dangers: Peligros
+    Domain: Dominio
+    Features: Características
+    Theme: Tema
+  Debilities: Debilidades
+  Delete: Eliminar
+  Description: Descripción
+  Denizen: un habitante
+  Denizens: Habitantes
+  EXPERIENCE:
+    ALERT:   # estado == status???
+      Mark: Marcó {number} de experiencia
+      Spend: Gastó {number} de experiencia
+    Mark: Marcar la experiencia
+    Spend: Gastar la experiencia
+    Xp: EXP
+  Edit: Editar
+  Enabled: Activado
+  Fields: Campos
+  IMPACT:
+    Burdens: Cargas
+    Cursed: Maldito
+    Doomed: Condenado
+    Shaken: Conmocionado
+    Tormented: Atormentado
+    Unprepared: Desprovisto
+    Wounded: Malherido
+  Label: Etiqueta
+  Legacy:
+  Legacies: Legados
+
+  LEGACY:
+    Discoveries: # Descubrimientos
+    Bonds: # Vínculos
+    Misiones: # Misiones
+  Location: Localización
+  MOMENTUM:
+    Burn: Quemar
+    BurnForUpgrade: 'Quemar ímpetu: <strong>{type}</strong>'
+    Max: Máximo
+    MomentumBurnt: Quemó ímpetu
+    NegativeMomentumCancel: Dado de acción cancelado por el ímpetu negativo
+    Reset: Reiniciar
+    ResetValue: Reinicio
+  MOVES:
+    Custom: Movimientos personalizados
+    Delete: Eliminar movimiento
+  Mark: Marcar
+  Moves: Movimientos
+  Name: Nombre
+  Notes: Notas
+  OpenCompendium: Abrir compendio
+  Options: Opciones
+  Oracles: Oráculos
+  PROGRESS:
+    AddStar: Cuando se activa, este elemento también aparecerá en la pestaña 'Legados'.
+    CHALLENGE_RANK:
+      ALERT:
+        Change: Cambió el rango de {old} a {new}
+      Dangerous: Peligroso
+      Epic: Épico
+      Extreme: Extremo
+      Formidable: Formidable
+      Troublesome: Problemático
+    Clear: Borrar progreso
+    Delete: Eliminar progreso
+    Mark: Marcar el progreso
+    Rank: rango
+    ChallengeRank: Rango de desafío
+  Progress: Progreso
+  Quest: misión
+  Quests: Misiones
+  RESOURCE:
+    Health: salud
+    Momentum: ímpetu
+    Spirit: espíritu
+    Supply: provisión
+    SUFFER:
+      Generic: sufrir -{number} de {resource}
+      Move: <move>{moveName}</move> (-{number})
+    TAKE:
+      Generic: toma +{number} de {resource}
+  ROLL:
+    ActionDie: dado de acción
+    ActionRoll: tirada de acción
+    ActionScore: puntuación de acción
+    ChallengeDice: dados de desafío
+    ChallengeDie: dado de desafío
+    AddPlus: Añadir +{number}
+    Adds: Adiciones
+    Add: adición
+    OUTCOME:
+      Miss: Fallo
+      MissDescription: Fracasas, o debes hacer serias concesiones.
+      MissWithAMatch: Fallo con un par!
+      OnAMiss: Con un fallo
+      OnAStrongHit: Con un acierto fuerte
+      OnAWeakHit: Con un acierto débil
+      StrongHit: Acierto fuerte
+      StrongHitDescription: Tienes éxito en lo que intentas hacer.
+      StrongHitWithAMatch: Acierto fuerte con un par!
+      WeakHit: Acierto débil
+      WeakHitDescription: Tienes éxito, pero con un costo o un efecto menor.
+    ProgressRoll: tirada de progreso
+    ProgressRoll: puntuación de progreso
+    Versus: vs.
+  Roll: Tirar
+  Journey: viaje
+  Journeys: Viajes
+  Settlement: asentamiento
+  Settlements: Asentamientos
+  Monstrosity: monstruosidad
+  Monstrosities: Monstruosidades
+  ORACLE:
+    COLUMN:
+      Roll: Tirada
+  SETTINGS:
+    LogChanges:
+      Hint: Si está activado, los cambios en las características del personaje se mostrarán en el chat.
+      Name: Registrar los cambios de los personajes
+    PromptTruths:
+      Hint: Si no se ha hecho ya, el sistema te preguntará si quieres elegir las verdades de tu mundo mediante una ventana emergente.
+      Name: Elegir tus verdades
+    SFBeta:
+      Hint: Activa las características de Starforged en desarrollo.
+      Name: Mostrar contenido beta de Starforged
+    SharedSupply:
+      Hint: Si está activo, cambiar los suministros en cualquier personaje también cambiará los suministros en todos los demás actores.
+      Name: Suministros compartidos
+    Theme:
+      Hint: Selecciona el aspecto visual para este mundo. Requiere recargar la página.
+      Ironsworn: Ironsworn clásico
+      Name: Tema
+      Starforged: Starforged (experimental)
+  SETTING_TRUTHS:
+    Custom: Otra verdad
+    QuestStarter: 'Inicio de Aventura:'
+    Save: Guardar tus Verdades
+    TITLE:
+      Classic: 'Tu mundo: Las verdades'
+  SHEET:
+    Shared: Ficha compartida
+  STAT:
+    Edge: filo
+    Heart: corazón
+    Iron: hierro
+    Shadow: sombra
+    Wits: ingenio
+  Search: Buscar
+  Stat: estad.
+  Stats: Estadísticas
+  Summary: Resumen
+  Track: marcador
+  PrecursorVault: una bóveda de precursores
+  PrecursorVaults: Bóvedas de precursores
+  Vault: una bóveda
+  Vaults: Bóvedas
+  VOW:
+    Delete: Eliminar Voto
+  Value: Valor
+  Vow: un voto
+  Vows: Votos
+  Starship: una nave estelar
+  Starships: Naves estelares
