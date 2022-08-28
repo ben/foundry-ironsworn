@@ -298,10 +298,12 @@ export class IronswornChatCard {
 
   async _sfOracleRoll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     const { tableid } = ev.target.dataset
-    const table = (await pack?.getDocument(tableid)) as any | undefined
-    rollAndDisplayOracleResult(table, 'foundry-ironsworn.starforgedoracles')
+    const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
+    const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
+    const table = ((await sfPack?.getDocument(tableid)) ??
+      (await isPack?.getDocument(tableid))) as RollTable | undefined
+    rollAndDisplayOracleResult(table, table?.pack || undefined)
   }
 
   async _sfOracleReroll(ev: JQuery.ClickEvent) {
