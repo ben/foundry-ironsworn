@@ -1,0 +1,282 @@
+IRONSWORN:
+  ALERT:
+    Add: '{name} ajouté'
+    Delete: '{name} supprimé'
+    MarkedOption: '{name} noté'
+    Rename: Renommé {oldName} pour {newName}
+    SetField: '{fieldName} défini à {value}'
+  ASSET:
+    ALERT:
+      MarkAbility: Capacité {ordinal} marquée
+      UnmarkAbility: Capacité {ordinal} effacée
+    Abilities: Capacités
+    Ability: capacité
+    Delete: Supprimer l'atout
+  Add: Ajouter
+  AdvancedOptions: Options avancées
+  Asset: atout
+  Assets: Atouts
+  BOND:
+    ALERT: null
+  Bond: lien
+  Bonds: Liens
+  CHARACTER:
+    Companion: compagnon
+    Companions: Compagnons
+    Denizen: habitant
+    Denizens: Habitants
+    Encounter: confrontation
+    Encounters: Confrontations
+    Foe: ennemi
+    Foes: Ennemies
+    NonPlayer: personnage non-joueur
+    NonPlayers: Personnages non-joueurs
+    Npc: PNJ
+    Npcs: PNJs
+    Pc: PJ
+    Pcs: PJs
+    Player: personnage joueur
+    Players: Personnages joueurs
+  CLOCK:
+    ALERT:
+      ADVANCE: null
+      COMPLETE: null
+  COMBAT:
+    ALERT:
+      PcLoseInitiative: '{name} perdé l’initiative'
+      PcRetainInitiative: '{name} conservé l’initiative'
+      PcTakeInitiative: '{name} gagné l’initiative'
+    Initiative: Initiative
+  Chat: Tchat
+  Clear: Effacer
+  Combat: Combat
+  Create: Créer
+  CreateActor: Créer un acteur
+  DEBILITY:
+    ALERT:
+      Clear: 'Effacé un handicap: {debility}'
+      Mark: 'Noté un handicap: {debility}'
+    Banes: Fléaux
+    BanesDescription: Les <term>ſléaux</term> sont permanents. Ils auront un impact déſinitif sur votre personnage par le biais d’une pénalité d’élan et, de manière plus importante, par l’impact narratif consistant à être mutilé ou corrompu.
+    Burdens: Fardeaux
+    BurdensDescription: Les <term>fardeaux</term> sont le résultat d’événements qui changent radicalement votre vie en vous liant à des quêtes. Se débarrasser d’un fardeau ne peut être accompli qu’en remplissant cette quête.
+    Conditions: États
+    ConditionsDescription: Si vous êtes blessé, secoué ou mal préparé vous ne pourrez pas augmenter les jauges associées.
+    Corrupted: Corrompu
+    CorruptedDescription: <term>Corrompu</term> peut être noté si votre esprit est à zéro et que vous échouez à <move>Subir un Stress</move>. Vos expériences vous ont dévasté émotionnellement. Vous êtes sur le point de succomber à vos plus sombres penchants.
+    Cursed: Maudit
+    CursedDescription: Vous notez <term>Maudit</term> lorsque vous <move>Faites Face à la Mort</move> et en réchappez avec une quête d’âme-liée, vous êtes désormais marqué. Ce fardeau ne peut être éliminé qu’en accomplissant cette quête.
+    Encumbered: Encombré
+    EncumberedDescription: <term>Encombré</term> est noté en conséquence logique, lorsque vous transportez un poids excessif ou un objet encombrant.
+    Maimed: Mutilé
+    MaimedDescription: <term>Mutilé</term> peut être marqué lorsque vous échouez à <move>Subir des Dégâts</move>. Vous avez subi une blessure qui vous impose une pénalité physique permanente, telle que la perte d’un oeil ou d’une main. Mais vous pouvez aussi porter d’horribles cicatrices qui sont un rappel constant de vos échecs passés.
+    Shaken: Secoué
+    ShakenDescription: <term>Secoué</term> peut être noté si votre esprit est déjà à zéro et que vous échouez à <move>Subir un Stress</move>. Vous êtes alors désespéré ou en détresse et vous devrez trouver du réconfort pour pouvoir récupérer.
+    Tormented: Tourmenté
+    TormentedDescription: Vous notez <term>Tourmenté</term> lorsque vous <move>Faites Face à la Désolation</move>, pour ensuite entreprendre une quête visant à éviter l’avènement d’un avenir terrible.
+    Unprepared: Mal préparé
+    UnpreparedDescription: <term>Mal préparé</term> est noté lorsque vous êtes déjà à zéro provisions et que vous êtes <move>À Court de Provisions</move>. Vos alliés et vous partagez la même jauge de provisions, ce qui les conduira également à noter qu’ils sont mal préparés.
+    Wounded: Blessé
+    WoundedDescription: <term>Blessé</term> peut être noté si votre santé est déjà à zéro et que vous échouez à Subir des Dégâts (page 101). Vous êtes alors grièvement blessé et devrez suivre un traitement pour pouvoir récupérer.
+  DELVE_SITE:
+    Domain: Domaine
+    Theme: Thème
+  DIALOG:
+    ConfirmDelete: Êtes-vous sûr? Cette action est irréversible.
+  Dangers: Dangers
+  Debilities: Handicaps
+  Debility: handicap
+  Delete: Supprimer
+  DeleteItem: Supprimer l'objet
+  Description: Description
+  EXPEDITION:
+    Waypoint: escale
+    Waypoints: Escales
+  EXPERIENCE:
+    Xp: XP
+  Edit: Modifier
+  Enable: Débloquer
+  Experience: Expérience
+  FIRST_START: null
+  Feature: Caractéristique
+  Features: Caractéristiques
+  Field: champ
+  Fields: Champs
+  IMPACT:
+    Burdens: Fardeaux
+    Shaken: Secoué
+    Tormented: Tourmenté
+    Unprepared: Mal préparé
+    Wounded: Blessé
+  Journey: voyage
+  Journeys: Voyages
+  Label: Étiquette
+  MOMENTUM:
+    ALERT:
+      BurnMomentum: Brûlé {oldValue} élan et réinitialisé à {newValue}
+    Burn: Brûler
+    BurnForUpgrade: "Brûler de l'élan: <strong>{type}</strong>"
+    BurnMomentum: Brûler de l'élan
+    Maximum: Maximum
+    MaximumLabel: Max
+    MomentumBurnt: Élan brûlé
+    NegativeMomentumCancel: L'élan négatif annule le dé d'action
+    ResetValue: Valeur de réinitialisation
+    ResetValueLabel: Réinit.
+  MOVE:
+    Custom: Actions personnalisées
+    Delete: Supprimer l'action
+  Mark: Noter
+  Move: action
+  Moves: Actions
+  NUMBER:
+    ORDINAL:
+      '1': premier
+      '2': second
+      '3': troisième
+      '4': quatrième
+      '5': cinquième
+  Name: Name
+  Notes: Notes
+  Option: Option
+  Options: Options
+  Oracle: oracle
+  Oracles: Oracles
+  PROGRESS:
+    BOX:
+      '1': 1 case
+      '2': 2 cases
+      '3': 3 cases
+      Many: '{number} cases'
+    ChallengeRank: Rang de défi
+    ClearAmount: Effacer {amount} de progrès
+    Delete: Supprimer la jauge de progrès
+    Mark: Noter votre progression
+    MarkAmount: Noter {amount} de progrès
+    ProgressRoll: Jet de progrès
+    ProgressScore: Score de progrès
+    RANK:
+      ALERT:
+        Change: Rang de défi changé de {old} pour {new}
+      Dangerous: Dangereux
+      Epic: Épique
+      Extreme: Extrême
+      Formidable: Redoutable
+      Troublesome: Pénible
+    RollAndCompare: Lancer les dés de défi et comparez-les à le progression ({value})
+    TICK:
+      '1': 1 coche
+      '2': 2 coches
+      '3': 3 coches
+      Many: '{value} coches'
+    Track: jauge de progrès
+  Progress: Progrès
+  Quest: quête
+  Quests: Quêtes
+  RESOURCE:
+    CompanionHealth: santé du compagnon
+    Health: santé
+    HealthDescription: Votre <term>santé</term> représente votre condition physique actuelle et votre endurance,
+    Momentum: élan
+    SUFFER:
+      ALERT:
+        Generic: Subi -{number} {resource}
+      Generic: Subir -{number} {resource}
+      Move: <move>{moveName}</move> (-{number})
+    Spirit: esprit
+    SpiritDescription: Votre <term>esprit</term> représente votre état mental actuel,
+    Supply: provisions
+    SupplyDescriptionClassic: Les <term>provisions</term> sont une représentation abstraite de votre degré de préparation et d’entretien du matériel courant, ce qui inclut vos munitions, ainsi que la quantité d’eau et de nourriture dont vous disposez.
+    TAKE:
+      ALERT:
+        Generic: Gagné +{number} {resource}
+      Generic: Gagner +{number} {resource}
+  ROLL:
+    ActionDie: dé d’action
+    ActionRoll: Jet d’action
+    ActionScore: Score d’action
+    Add: ajout
+    AddPlus: ajouter +1
+    Adds: Ajouts
+    ChallengeDice: dés du défi
+    ChallengeDie: dé du défi
+    METHOD:
+      ANY:
+        '2': faire un jet +{stat1} ou +{stat2}
+        '3': faire un jet +{stat1}, +{stat2} ou +{stat3}
+      HIGHEST:
+        '2': faire un jet +{stat1} ou +{stat2}, selon lequel est le plus élevé
+        '3': faire un jet +{stat1}, +{stat2} ou +{stat3}, selon lequel est le plus élevé
+      LOWEST:
+        '2': faire un jet +{stat1} ou +{stat2}, en utilisant la caractéristique la plus faible
+        '3': faire un jet +{stat1}, +{stat2} ou +{stat3}, en utilisant la caractéristique la plus faible
+    OUTCOME:
+      ActionScoreCap: Le score d’action ne peut jamais excéder 10 – toute valeur supérieure est ignorée.
+      Hit: Coup
+      Miss: Échec
+      MissDescription: Vous avez échoué ou vous avez un prix à payer.
+      MissMatch: Échec avec une égalité!
+      MissMatchDescription: L’égalité devrait représenter un résultat particulièrement négatif, une complication ou un nouveau danger. Les choses empirent pour vous d’une manière inattendue.
+      OnAHit: Sur un coup
+      OnAMatch: Sur une égalité
+      OnAMiss: Sur un échec
+      OnAStrongHit: Sur un coup fort
+      OnAWeakHit: Sur un coup faible
+      StrongHit: Coup fort
+      StrongHitDescription: Vous avez réussi. Vous avez le contrôle.
+      StrongHitMatch: Coup fort avec une égalité!
+      StrongHitMatchDescription: L’égalité devrait représenter un rebondissement dans le récit, quelque chose d’intéressant ou une nouvelle opportunité.
+      WeakHit: Coup faible
+      WeakHitDescription: Vous avez fait des progrès, mais vous n’avez pas le contrôle.
+    Outcome: résultat
+    Outcomes: Résultats
+    PlusStat: faire un jet +{stat}
+    Reroll: Relancer
+    Roll: Lancer les dés
+    Rolling: Lancement des dés
+    Versus: vs.
+  Roll: Lancer
+  SETTINGS:
+    EvenMatchesOnly:
+      Hint: Résolver l’impact d’une égalité uniquement quand les dés de défis affichent un résultat pair (2, 4, 6, 8, or 10).
+    LogChanges:
+      Hint: Si activé, les modifications faites sur la fiche d'un personnage seront journalisées dans le chat.
+      Name: Journalisation des modifications du personnage
+    PromptTruths:
+      Hint: Propose au démarrage de générer les Vérités de votre Monde avec l'assitant, si ce n'a pas été déjà fait.
+      Name: Proposition pour les Vérités du Monde
+    SharedSupply:
+      Hint: Si activé, la modification de la jauge de provision d'un personnage modifiera aussi les jauges de provisions de tous les autres acteurs.
+      Name: Jauge de provisions partagée
+    Theme:
+      Hint: Sélection du thème pour cette partie. Nécessite de recharger le monde.
+      Ironsworn: Ironsworn Classic
+      Name: Thème visuel
+      Starforged: Starforged (experimental)
+  SETTING_TRUTH:
+    CreateCustom: Créer un vérité personalisée
+    QuestStarter: Accroche de Quête
+    Save: Enregistrer vos Vérités
+    Truth: vérité
+    YourTruths: Vos Vérités
+  STAT:
+    Edge: vivacité
+    EdgeDescription: Rapidité, agilité et aptitude au combat à distance.
+    Heart: cœur
+    HeartDescription: Courage, volonté, empathie, sociabilité et loyauté.
+    Iron: fer
+    IronDescription: Force physique, endurance, agressivité et aptitude au combat rapproché.
+    Shadow: ombre
+    ShadowDescription: Discrétion, tromperie et ruse.
+    Wits: astuce
+    WitsDescription: Expertise, savoir et observation.
+  Search: Chercher
+  Stat: caractéristique
+  Stats: Caractéristiques
+  Summary: Résumé
+  Track: jauge
+  Value: Valeur
+  Vow: vœu
+  Vows: Vœux
+  Waypoint: escale
+  Waypoints: Escales
