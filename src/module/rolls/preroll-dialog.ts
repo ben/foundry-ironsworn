@@ -263,7 +263,7 @@ export class IronswornPrerollDialog extends Dialog<
 
     const title = move.name || 'MOVE'
     const allActors = [] as IronswornActor[]
-    if (actor) {
+    if (actor?.type === 'character') {
       allActors.push(actor)
     } else {
       allActors.push(
