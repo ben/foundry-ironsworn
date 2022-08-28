@@ -1,0 +1,28 @@
+<article class="table-draw oracle-roll flexcol" data-oracleroll="{{json oracleRoll}}">
+  {{#if subtitle}}
+  <small>{{subtitle}}</small>
+  {{/if}}
+  <h2 class="ironsworn-roll-title">{{title}}</h2>
+
+  <table>
+    <tbody>
+      {{#each displayRows}}
+      <tr class="{{#if selected}}selected{{/if}}">
+        <td>{{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}</td>
+        <td>{{{text}}}</td>
+        <td style="padding: 0 5px; white-space: nowrap;">
+          {{#if selected}}
+          <i class="isicon-d10-tilt"></i>
+          {{../oracleRoll.roll.total}}
+          {{/if}}
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+
+  <button class="oracle-reroll">
+    <i class="fas fa-undo-alt"></i>
+    {{localize 'IRONSWORN.Reroll'}}
+  </button>
+</article>

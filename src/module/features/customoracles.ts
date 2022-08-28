@@ -192,3 +192,19 @@ export function findPathToNodeByTableId(
   walk(rootNode)
   return ret
 }
+
+export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfId: string) {
+  const ret: IOracleTreeNode[] = []
+  function walk(node: IOracleTreeNode) {
+    ret.push(node)
+    if (node.dataforgedNode?.$id === dfId) return true
+    for (const child of node.children) {
+      if (walk(child)) return true
+    }
+    ret.pop()
+    return false
+  }
+
+  walk(rootNode)
+  return ret
+}
