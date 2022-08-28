@@ -53,6 +53,7 @@ IRONSWORN:
   Description: Descripción
   Denizen: un habitante
   Denizens: Habitantes
+  Discovery: descubrimiento
   EXPERIENCE:
     ALERT:   # estado == status???
       Mark: Marcó {number} de experiencia
@@ -72,13 +73,12 @@ IRONSWORN:
     Unprepared: Desprovisto
     Wounded: Malherido
   Label: Etiqueta
-  Legacy:
+  Legacy: legado
   Legacies: Legados
-
   LEGACY:
-    Discoveries: # Descubrimientos
-    Bonds: # Vínculos
-    Misiones: # Misiones
+    Discoveries: legado de descubrimientos # Descubrimientos
+    Bonds: legado de vínculos # Vínculos
+    Misiones: legado de misiones # Misiones
   Location: Localización
   MOMENTUM:
     Burn: Quemar
@@ -110,7 +110,7 @@ IRONSWORN:
       Troublesome: Problemático
     Clear: Borrar progreso
     Delete: Eliminar progreso
-    Mark: Marcar el progreso
+    Mark: Marcar progreso
     Rank: rango
     ChallengeRank: Rango de desafío
   Progress: Progreso
@@ -195,6 +195,8 @@ IRONSWORN:
   Search: Buscar
   Stat: estad.
   Stats: Estadísticas
+  StellarObject: un objeto estelar
+  StellarObjects: Objetos estelares
   Summary: Resumen
   Track: marcador
   PrecursorVault: una bóveda de precursores
