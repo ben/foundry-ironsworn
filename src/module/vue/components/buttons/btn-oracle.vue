@@ -15,8 +15,8 @@
 <script setup lang="ts">
 import { sample } from 'lodash'
 import { inject } from 'vue'
-import { rollAndDisplayOracleResult } from '../../../chat/chatrollhelpers.js'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
+import { OracleRollMessage } from '../../../rolls'
 import btnIsicon from './btn-isicon.vue'
 
 const props = defineProps<{
@@ -27,12 +27,14 @@ const props = defineProps<{
 
 const toolset = inject<'ironsworn' | 'starforged'>('toolset')
 
-function rollOracle() {
+async function rollOracle() {
   const randomTable = sample(props.node.tables)
   const pack = {
     ironsworn: 'foundry-ironsworn.ironswornoracles',
     starforged: 'foundry-ironsworn.starforgedoracles',
   }[toolset ?? '']
-  rollAndDisplayOracleResult(randomTable, pack)
+
+  const orm = await OracleRollMessage.fromTableId(randomTable?.id ?? '', pack)
+  orm.createOrUpdate()
 }
 </script>
