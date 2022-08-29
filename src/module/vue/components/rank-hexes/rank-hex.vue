@@ -1,5 +1,5 @@
 <template>
-  <div :title="title" :aria-label="title" :data-tooltip="title" class="nogrow">
+  <div :data-tooltip="tooltip" class="nogrow">
     <svg
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -34,10 +34,11 @@ div {
 
 <script setup lang="ts">
 import { computed, capitalize } from 'vue'
+import { RANKS } from '../../../constants.js'
 const props = defineProps<{ rank: string; selected: boolean }>()
 
-const title = computed(() => {
-  const i18nKey = `IRONSWORN.${capitalize(props.rank)}`
+const tooltip = computed(() => {
+  const i18nKey = RANKS[props.rank] + '.Label'
   return game.i18n.localize(i18nKey)
 })
 

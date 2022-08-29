@@ -139,7 +139,9 @@ export class IronswornChatCard {
     parent.find('.move-outcome').addClass('strikethru')
     parent.find('.move-outcome button').prop('disabled', true)
     parent.find('.momentum-burn').html(`
-      <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
+      <h3>${game.i18n.localize(
+        'IRONSWORN.MOMENTUM.BURN.OutcomeReplacementReason'
+      )}</h3>
       ${result || ''}
       ${bonusContent || ''}
     `)
@@ -173,7 +175,9 @@ export class IronswornChatCard {
     parent.find('.move-outcome').addClass('strikethru')
     parent.find('.move-outcome button').prop('disabled', true)
     parent.find('.momentum-burn').html(`
-      <h3>${game.i18n.localize('IRONSWORN.MomentumBurnt')}</h3>
+      <h3>${game.i18n.localize(
+        'IRONSWORN.MOMENTUM.BURN.OutcomeReplacementReason'
+      )}</h3>
       <strong>${hittypetext}:</strong>
       ${IronswornHandlebarsHelpers.enrichMarkdown(newOutcome)}
     `)

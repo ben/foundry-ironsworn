@@ -8,15 +8,13 @@
           :checked="item.data.track.enabled"
           @change="enableClick"
         />
-        <span>{{ $t('IRONSWORN.Enabled') }}</span>
+        <span>{{ $t('IRONSWORN.GENERIC.ENABLE.Label') }}</span>
       </label>
 
-      <span style="flex-grow: 0; margin: 0 5px">{{
-        $t('IRONSWORN.Name')
-      }}</span>
+      <span style="flex-grow: 0; margin: 0 5px">{{ $t('Name') }}</span>
       <input type="text" @blur="updateName" v-model="item.data.track.name" />
 
-      <span style="flex-grow: 0; margin: 0 5px">{{ $t('IRONSWORN.Max') }}</span>
+      <span style="flex-grow: 0; margin: 0 5px">{{ $t('Maximum') }}</span>
       <input
         type="number"
         @blur="updateMax"

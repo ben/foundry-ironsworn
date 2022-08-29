@@ -8,7 +8,7 @@
         <hr class="nogrow" />
         <!-- Assets -->
         <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
-          <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
+          <h4 class="nogrow">{{ $t('IRONSWORN.ASSET.Title') }}</h4>
 
           <transition-group name="slide" tag="div" class="nogrow">
             <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
@@ -24,7 +24,7 @@
           </transition-group>
           <div class="flexcol nogrow" style="text-align: center">
             <BtnCompendium class="block nogrow" compendium="ironswornassets">
-              {{ $t('IRONSWORN.Assets') }}
+              {{ $t('IRONSWORN.ASSET.Title') }}
             </BtnCompendium>
           </div>
         </div>

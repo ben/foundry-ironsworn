@@ -195,7 +195,7 @@ export class IronswornPrerollDialog extends Dialog<
     value: number,
     actor?: IronswornActor
   ) {
-    const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')
+    const rollText = game.i18n.localize('IRONSWORN.PROGRESS.ProgressRoll')
     const title = `${rollText}: ${name}`
 
     const prerollOptions: PreRollOptions = {
@@ -211,7 +211,7 @@ export class IronswornPrerollDialog extends Dialog<
     const buttons = {
       [name]: {
         label: `<span class=button-text>${game.i18n.localize(
-          'IRONSWORN.Roll'
+          'IRONSWORN.ROLL.Label'
         )}</span>`,
         icon: '<i class="isicon-d10-tilt juicy"></i>',
         callback: (el: HTMLElement | JQuery<HTMLElement>) => {

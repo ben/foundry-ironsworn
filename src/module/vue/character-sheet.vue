@@ -18,15 +18,31 @@
             <hr class="nogrow" />
             <div>
               <btn-momentumburn class="nogrow block stack-row">
-                {{ $t('IRONSWORN.Burn') }}
+                {{ $t('IRONSWORN.MOMENTUM.BURN.Label') }}
               </btn-momentumburn>
 
-              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-              {{ $t('IRONSWORN.Max') }}:
-              {{ actor.data.momentumMax }}
+              <span
+                class="momentum-reset"
+                data-tooltip="IRONSWORN.MOMENTUM.RESET"
+              >
+                {{ $t('IRONSWORN.MOMENTUM.RESET.Label') }}:
+                {{ actor.data.momentumReset }}
+              </span>
+              <span
+                class="momentum-max"
+                data-tooltip="IRONSWORN.MOMENTUM.MAXIMUM"
+              >
+                {{ $t('IRONSWORN.MOMENTUM.MAXIMUM.Label') }}:
+                {{ actor.data.momentumMax }}
+              </span>
             </div>
           </div>
-          <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
+          <h4
+            class="vertical-v2"
+            data-tooltip="IRONSWORN.RESOURCE.MOMENTUM.Description"
+          >
+            {{ $t('IRONSWORN.RESOURCE.MOMENTUM.Label') }}
+          </h4>
         </div>
       </div>
 
@@ -42,8 +58,8 @@
         </div>
 
         <tabs style="margin-top: 0.5rem">
-          <tab :title="$t('IRONSWORN.Character')"><ironsworn-main /></tab>
-          <tab :title="$t('IRONSWORN.Notes')"><ironsworn-notes /></tab>
+          <tab :title="$t('Character')"><ironsworn-main /></tab>
+          <tab :title="$t('Notes')"><ironsworn-notes /></tab>
         </tabs>
 
         <!-- Conditions & Banes & Burdens -->
@@ -57,7 +73,7 @@
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
           <btn-rollstat class="nogrow vertical-v2 text" attr="health">
-            {{ $t('IRONSWORN.Health') }}
+            {{ $t('IRONSWORN.RESOURCE.HEALTH.Label') }}
           </btn-rollstat>
           <div class="flexcol stack health">
             <stack stat="health" :top="5" :bottom="0"></stack>
@@ -69,7 +85,7 @@
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
           <btn-rollstat class="nogrow vertical-v2 text" attr="spirit">
-            {{ $t('IRONSWORN.Spirit') }}
+            {{ $t('IRONSWORN.RESOURCE.SPIRIT.Label') }}
           </btn-rollstat>
           <div class="flexcol stack spirit">
             <stack stat="spirit" :top="5" :bottom="0"></stack>
@@ -81,7 +97,7 @@
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
           <btn-rollstat class="nogrow vertical-v2 text" attr="supply">
-            {{ $t('IRONSWORN.Supply') }}
+            {{ $t('IRONSWORN.RESOURCE.SUPPLY.Label') }}
           </btn-rollstat>
           <div class="flexcol stack supply">
             <stack stat="supply" :top="5" :bottom="0"></stack>

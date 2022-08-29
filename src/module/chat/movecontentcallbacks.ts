@@ -14,14 +14,16 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
     hitType === RollOutcome.Weak_hit
       ? ` <button class="ironsworn__delvedepths__roll" data-stat="${stat}">
             <i class="fa fa-dice-d6"></i> ${game.i18n.localize(
-              'IRONSWORN.Roll'
+              'IRONSWORN.ROLL.Label'
             )}
           </button>`
       : undefined,
 
   'Reveal a Danger': ({ site }: CallbackInput) => `
     <button class="ironsworn__revealdanger__roll" data-site="${site?.id}">
-      <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
+      <i class="fa fa-dice-d6"></i> ${game.i18n.localize(
+        'IRONSWORN.ROLL.Label'
+      )}
     </button>
   `,
 
@@ -34,12 +36,16 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
           'IRONSWORN.MoveContents.Sojourn.extradescription'
         )}</p>
         <button class="ironsworn__sojourn__extra__roll">
-          <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
+          <i class="fa fa-dice-d6"></i> ${game.i18n.localize(
+            'IRONSWORN.ROLL.Label'
+          )}
         </button>
       `,
 
   'Pay the Price': () =>
     `<button class="ironsworn__paytheprice__roll">
-      <i class="fa fa-dice-d6"></i> ${game.i18n.localize('IRONSWORN.Roll')}
+      <i class="fa fa-dice-d6"></i> ${game.i18n.localize(
+        'IRONSWORN.ROLL.Label'
+      )}
     </button>`,
 }

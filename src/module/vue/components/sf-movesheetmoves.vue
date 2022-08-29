@@ -3,17 +3,20 @@
     <div class="flexrow nogrow" style="margin-top: 0.5rem">
       <input
         type="text"
-        :placeholder="$t('IRONSWORN.Search')"
+        :placeholder="$t('IRONSWORN.GENERIC.SEARCH.Label')"
+        :data-tooltip="'IRONSWORN.MOVE.SEARCH.Description'"
         v-model="data.searchQuery"
         @keydown.enter.prevent
       />
       <i
         class="fa fa-times-circle nogrow clickable text"
+        :data-tooltip="'IRONSWORN.GENERIC.CLEAR.Label'"
         @click="data.searchQuery = ''"
         style="padding: 6px"
       />
       <i
         class="fa fa-compress-alt nogrow clickable text"
+        :data-tooltip="'IRONSWORN.GENERIC.COLLAPSE.Label'"
         @click="collapseAll"
         style="padding: 6px"
       />

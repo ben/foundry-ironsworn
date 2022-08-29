@@ -51,7 +51,6 @@ IRONSWORN:
   Clear: Effacer
   Combat: Combat
   Create: Créer
-  CreateActor: Créer un acteur
   DEBILITY:
     ALERT:
       Clear: 'Effacé un handicap: {debility}'

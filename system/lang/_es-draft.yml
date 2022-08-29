@@ -1,10 +1,46 @@
 IRONSWORN:
+  VERB:
+    Add: Añadir
+    Delete: Eliminar
+    Create: Crear
+    Mark: Marcar
+    Clear: Borrar
+    Rename:
+    Reset: Reiniciar
+    Save: Guardar
+    Edit: Editar # or modificar
+    Cancel: Cancelar
+    Update: Actualizar
+    Commit Change: Aplicar cambios
+    Reset Changes: Reiniciar cambios
+    Save Changes: Guardar cambios
+    Roll: Tirar
+    Search: Buscar
+    Configure: Configurar
+    Disable: Deshabilitar
+    Enable: Habilitar
+    Deactivate: Desactivar
+  ADJECTIVE:
+    Disabled: Deshabilitado
+
+  NOUN:
+    Chat: Chat
+    Options: Opciones
+    Title: Título
+    Description: Descripción
+    Details: Detalles
+    Mode: Modo
+    Label: Etiqueta
+    Journal: Diario
+    JournalEntry: Entrada
+
   ALERT:
-    Added: '{name} añadido'
-    Deleted: '{name} eliminado'
-    MarkedOption: Marcó {name}
+    Add: '{name} añadido'
+    Delete: '{name} eliminado'
+    Mark: Marcó {name}
     Rename: '{oldName} renombrado a {newName}'
     SetField: '{name} se estableció en {val}'
+    Edit:
   ASSET:
     ALERT:
       ClearAbility: Desmarcó la capacidad \#{number}
@@ -27,8 +63,8 @@ IRONSWORN:
   Clock: Reloj
   Combat: Combate
   ConfirmDelete: ¿Estás seguro? Esta acción no puede deshacerse.
-  CreateActor: Crear actor
   CreateGeneric: Crear {item}
+  Create: Crear
   Creature: una criatura
   Creatures: Criaturas
   DEBILITIES:
@@ -50,12 +86,13 @@ IRONSWORN:
     Theme: Tema
   Debilities: Debilidades
   Delete: Eliminar
+  DeleteGeneric: Eliminar {item}
   Description: Descripción
   Denizen: un habitante
   Denizens: Habitantes
   Discovery: descubrimiento
   EXPERIENCE:
-    ALERT:   # estado == status???
+    ALERT:
       Mark: Marcó {number} de experiencia
       Spend: Gastó {number} de experiencia
     Mark: Marcar la experiencia
@@ -76,9 +113,9 @@ IRONSWORN:
   Legacy: legado
   Legacies: Legados
   LEGACY:
-    Discoveries: legado de descubrimientos # Descubrimientos
-    Bonds: legado de vínculos # Vínculos
-    Misiones: legado de misiones # Misiones
+    Discoveries: legado de descubrimientos
+    Bonds: legado de vínculos
+    Misiones: legado de misiones
   Location: Localización
   MOMENTUM:
     Burn: Quemar
@@ -103,11 +140,11 @@ IRONSWORN:
     CHALLENGE_RANK:
       ALERT:
         Change: Cambió el rango de {old} a {new}
-      Dangerous: Peligroso
-      Epic: Épico
-      Extreme: Extremo
-      Formidable: Formidable
-      Troublesome: Problemático
+      Dangerous: peligroso
+      Epic: épico
+      Extreme: extremo
+      Formidable: formidable
+      Troublesome: problemático
     Clear: Borrar progreso
     Delete: Eliminar progreso
     Mark: Marcar progreso
@@ -203,8 +240,6 @@ IRONSWORN:
   PrecursorVaults: Bóvedas de precursores
   Vault: una bóveda
   Vaults: Bóvedas
-  VOW:
-    Delete: Eliminar Voto
   Value: Valor
   Vow: un voto
   Vows: Votos

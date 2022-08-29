@@ -9,7 +9,7 @@ export class EditSectorDialog extends VueApplication {
 
   static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
-      title: game.i18n.localize('IRONSWORN.Sector'),
+      title: game.i18n.localize('IRONSWORN.DOCUMENT.Sector'),
       template: 'systems/foundry-ironsworn/templates/edit-sector.hbs',
       id: 'edit-sector-dialog',
       resizable: true,

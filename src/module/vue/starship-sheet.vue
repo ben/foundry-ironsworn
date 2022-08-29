@@ -6,10 +6,10 @@
     </header>
 
     <Tabs>
-      <Tab :title="$t('IRONSWORN.Assets')">
+      <Tab :title="$t('IRONSWORN.ASSET.Title')">
         <SfAssets />
       </Tab>
-      <Tab :title="$t('IRONSWORN.Notes')">
+      <Tab :title="$t('Notes')">
         <SfNotes />
       </Tab>
     </Tabs>

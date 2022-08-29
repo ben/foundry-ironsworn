@@ -11,7 +11,7 @@
     <header class="sheet-header">
       <img class="profile-img" src="{{item.img}}" data-edit="img" title="{{item.name}}" height="50" width="50" />
       <h1 class="charname">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'Name'}}" />
       </h1>
     </header>
 
@@ -25,23 +25,23 @@
 
     <hr class="nogrow">
 
-    <h3 class="nogrow">{{localize 'IRONSWORN.FullText'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.MOVE.FullText'}}</h3>
     {{editor content=data.data.description target="data.fulltext" button=true owner=owner}}
     <hr class="nogrow">
 
-    <h3 class="nogrow">{{localize 'IRONSWORN.Description'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.GENERIC.Description'}}</h3>
     {{editor content=data.data.description target="data.description" button=true owner=owner}}
     <hr class="nogrow">
 
-    <h3 class="nogrow">{{localize 'IRONSWORN.Strong_hit'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.OUTCOME.STRONG_HIT.Label'}}</h3>
     {{editor content=data.data.strong target="data.strong" button=true owner=owner}}
     <hr class="nogrow">
 
-    <h3 class="nogrow">{{localize 'IRONSWORN.Weak_hit'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.OUTCOME.WEAK_HIT.Label'}}</h3>
     {{editor content=data.data.weak target="data.weak" button=true owner=owner}}
     <hr class="nogrow">
 
-    <h3 class="nogrow">{{localize 'IRONSWORN.Miss'}}</h3>
+    <h3 class="nogrow">{{localize 'IRONSWORN.OUTCOME.MISS.Label'}}</h3>
     {{editor content=data.data.miss target="data.miss" button=true owner=owner}}
   </section>
 </form>

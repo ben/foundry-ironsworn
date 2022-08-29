@@ -55,7 +55,7 @@ export class AssetSheet extends IronswornItemSheet {
     if (this.options.editable) {
       ret.unshift({
         class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
+        label: game.i18n.localize('Edit'),
         icon: 'fas fa-edit',
         onclick: (e) => this._toggleEditMode(e),
       })

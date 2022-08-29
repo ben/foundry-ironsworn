@@ -278,7 +278,7 @@ export class IronswornRoll {
 
     if (this.preRollOptions.adds) {
       ret.push({
-        source: game.i18n.localize('IRONSWORN.Adds'),
+        source: game.i18n.localize('IRONSWORN.ROLL.Adds'),
         value: this.preRollOptions.adds,
       })
     }
@@ -348,7 +348,9 @@ export class IronswornRoll {
     if (this.preRollOptions.extraChallengeDice) {
       for (let i = 0; i < this.preRollOptions.extraChallengeDice.value; i++) {
         ret.push({
-          source: game.i18n.localize('IRONSWORN.RollDialog.ExtraChallengeDice'),
+          source: game.i18n.localize(
+            'IRONSWORN.ROLL.DIALOG.EXTRA_CHALLENGE_DICE.Label'
+          ),
           value: undefined,
         })
       }
@@ -387,7 +389,7 @@ export class IronswornRoll {
     const outcome = computeRollOutcome(this.score, c1, c2)
     return {
       value: outcome,
-      source: game.i18n.localize('IRONSWORN.Roll'),
+      source: game.i18n.localize('IRONSWORN.ROLL.Label'),
     }
   }
 

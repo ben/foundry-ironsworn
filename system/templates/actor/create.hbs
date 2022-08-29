@@ -12,23 +12,23 @@
   <div class="flexcol">
     <div class="flexrow boxrow">
       {{#if sfenabled}}
-      {{>createBox type="sfcharacter" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
+      {{>createBox type="sfcharacter" labelkey="IRONSWORN.DOCUMENT.PlayerCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
       {{else}}
-      {{>createBox type="character" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
+      {{>createBox type="character" labelkey="IRONSWORN.DOCUMENT.PlayerCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
       {{/if}}
 
-      {{>createBox type="shared" labelkey="IRONSWORN.SharedSheet" img="icons/environment/settlement/wagon-black.webp"}}
+      {{>createBox type="shared" labelkey="IRONSWORN.DOCUMENT.SharedSheet" img="icons/environment/settlement/wagon-black.webp"}}
 
       {{#if sfenabled}}
-      {{>createBox type="sfship" labelkey="IRONSWORN.Starship" img="icons/environment/settlement/wizard-castle.webp"}}
-      {{>createBox type="sflocation" labelkey="IRONSWORN.Location"
+      {{>createBox type="sfship" labelkey="IRONSWORN.DOCUMENT.Starship" img="icons/environment/settlement/wizard-castle.webp"}}
+      {{>createBox type="sflocation" labelkey="IRONSWORN.DOCUMENT.Location"
       img="systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp"}}
       {{else}}
-      {{>createBox type="site" labelkey="IRONSWORN.DelveSite"
+      {{>createBox type="site" labelkey="IRONSWORN.DOCUMENT.DelveSite"
       img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
       {{/if}}
 
-      {{>createBox type="foe" labelkey="IRONSWORN.NPC" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
+      {{>createBox type="foe" labelkey="IRONSWORN.DOCUMENT.Foe" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
     </div>
   </div>
 

@@ -16,22 +16,30 @@
 
     <!-- FIELDS -->
     <div v-if="hasFields || editMode">
-      <h3>{{ $t('IRONSWORN.Fields') }}</h3>
+      <h3>{{ $t('IRONSWORN.GENERIC.Fields') }}</h3>
       <asset-fieldsedit />
     </div>
 
     <!-- ABILITIES -->
-    <h3>{{ $t('IRONSWORN.Abilities') }}</h3>
+    <h3>{{ $t('IRONSWORN.ASSET.ABILITY.Title') }}</h3>
     <asset-abilitiesedit />
 
     <!-- OPTIONS -->
     <div v-if="hasOptions || editMode">
-      <h3>{{ $t('IRONSWORN.Options') }}</h3>
+      <h3>{{ $t('IRONSWORN.ASSET.Options') }}</h3>
       <asset-optionsedit />
     </div>
 
     <!-- TRACK -->
-    <h3>{{ $t('IRONSWORN.Track') }}</h3>
+    <h3>
+      {{
+        $t(
+          IronswornSettings.starforgedToolsEnabled
+            ? 'IRONSWORN.RESOURCE.STARFORGED.Label'
+            : 'IRONSWORN.RESOURCE.CLASSIC.Label'
+        )
+      }}
+    </h3>
     <asset-trackedit />
   </div>
 </template>
@@ -58,6 +66,7 @@ import AssetAbilitiesedit from './components/asset/asset-abilitiesedit.vue'
 import AssetOptionsedit from './components/asset/asset-optionsedit.vue'
 import AssetTrackedit from './components/asset/asset-trackedit.vue'
 import { $ItemKey } from './provisions'
+import { IronswornSettings } from '../helpers/settings.js'
 
 const $item = inject($ItemKey)
 

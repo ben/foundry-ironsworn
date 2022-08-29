@@ -6,8 +6,14 @@
     </header>
 
     <section class="sheet-area nogrow">
-      <btn-rollstat class="text" attr="supply">
-        {{ $t('IRONSWORN.Supply') }}
+      <btn-rollstat
+        class="text"
+        attr="supply"
+        :data-tooltip="`IRONSWORN.RESOURCE.SUPPLY.DESCRIPTION.${
+          IronswornSettings.starforgedToolsEnabled ? 'Starforged' : 'Classic'
+        }`"
+      >
+        {{ $t('IRONSWORN.RESOURCE.SUPPLY.Label') }}
       </btn-rollstat>
 
       <boxrow
@@ -26,7 +32,7 @@
     <active-completed-progresses />
 
     <section class="sheet-area">
-      <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
+      <h4 class="nogrow">{{ $t('Notes') }}</h4>
       <mce-editor
         v-model="actor.data.biography"
         @save="saveNotes"

@@ -1,8 +1,14 @@
 <template>
   <div>
-    <legacy-track propKey="quests" :title="$t('IRONSWORN.Quests')" />
-    <legacy-track propKey="bonds" :title="$t('IRONSWORN.Bonds')" />
-    <legacy-track propKey="discoveries" :title="$t('IRONSWORN.Discoveries')" />
+    <legacy-track
+      propKey="quests"
+      :title="$t('IRONSWORN.LEGACY.QUESTS.Label')"
+    />
+    <legacy-track propKey="bonds" :title="$t('IRONSWORN.LEGACY.BONDS.Label')" />
+    <legacy-track
+      propKey="discoveries"
+      :title="$t('IRONSWORN.LEGACY.DISCOVERIES.Label')"
+    />
 
     <hr class="nogrow" v-if="starredProgresses.length > 0" />
     <progress-box

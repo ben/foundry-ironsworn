@@ -23,7 +23,7 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
       continue
     }
     parentFolder = await Folder.create({
-      type: 'Actor',
+      type: game.i18n.localize('Actor'),
       name,
       parent: parentFolder?.id,
     })
@@ -69,8 +69,7 @@ async function dropToken(location: IronswornActor) {
   canvas.tokens?.activate()
 }
 
-async function newLocation(subtype: string, i18nKey: string, scale = 1) {
-  const name = game.i18n.localize(`IRONSWORN.${i18nKey}`)
+async function newLocation(subtype: string, name: string, scale = 1) {
   const parentFolder = await ensureFolder(
     'Locations',
     game.scenes?.current?.name ?? '???'
@@ -94,23 +93,51 @@ async function newLocation(subtype: string, i18nKey: string, scale = 1) {
 }
 
 function newPlanet() {
-  newLocation('planet', 'NewPlanet')
+  newLocation(
+    'planet',
+    game.i18n.format('DOCUMENT.Create', {
+      type: game.i18n.localize(game.i18n.localize('IRONSWORN.DOCUMENT.Planet')),
+    })
+  )
 }
 
 function newStar() {
-  newLocation('star', 'NewStar')
+  newLocation(
+    'star',
+    game.i18n.format('DOCUMENT.Create', {
+      type: game.i18n.localize('IRONSWORN.DOCUMENT.StellarObject'),
+    })
+  )
 }
 
 function newSettlement() {
-  newLocation('settlement', 'NewSettlement', 2)
+  newLocation(
+    'settlement',
+    game.i18n.format('DOCUMENT.Create', {
+      type: game.i18n.localize('IRONSWORN.DOCUMENT.Settlement'),
+    }),
+    2
+  )
 }
 
 function newDerelict() {
-  newLocation('derelict', 'NewDerelict', 2)
+  newLocation(
+    'derelict',
+    game.i18n.format('DOCUMENT.Create', {
+      type: game.i18n.localize('IRONSWORN.DOCUMENT.Derelict'),
+    }),
+    2
+  )
 }
 
 function newVault() {
-  newLocation('vault', 'NewVault', 2)
+  newLocation(
+    'vault',
+    game.i18n.format('DOCUMENT.Create', {
+      type: game.i18n.localize(game.i18n.localize('IRONSWORN.DOCUMENT.Vault')),
+    }),
+    2
+  )
 }
 
 export function activateSceneButtonListeners() {
@@ -128,7 +155,7 @@ export function activateSceneButtonListeners() {
 
     const sfControl: SceneControl = {
       name: 'Starforged',
-      title: game.i18n.localize('IRONSWORN.StarforgedTools'),
+      title: game.i18n.localize('IRONSWORN.TOOLS.STARFORGED.Label'),
       icon: 'isicon-logo-starforged-dk',
       layer: 'ironsworn',
       visible: true,
@@ -138,43 +165,55 @@ export function activateSceneButtonListeners() {
           name: 'edit',
           icon: 'isicon-region-sf',
           // TODO: more informative string - 'set region'?
-          title: game.i18n.localize('IRONSWORN.Edit'),
+          title: game.i18n.localize('Edit'),
           onClick: editSector,
         },
         {
           name: 'sector',
           icon: 'isicon-sector',
-          title: game.i18n.localize('IRONSWORN.NewSector'),
+          title: game.i18n.format('DOCUMENT.Create', {
+            type: game.i18n.localize('IRONSWORN.DOCUMENT.Sector'),
+          }),
           onClick: warn,
         },
         {
           name: 'star',
           icon: 'isicon-stellar-object',
-          title: game.i18n.localize('IRONSWORN.NewStar'),
+          title: game.i18n.format('DOCUMENT.Create', {
+            type: game.i18n.localize('IRONSWORN.DOCUMENT.StellarObject'),
+          }),
           onClick: newStar,
         },
         {
           name: 'planet',
           icon: 'isicon-world',
-          title: game.i18n.localize('IRONSWORN.NewPlanet'),
+          title: game.i18n.format('DOCUMENT.Create', {
+            type: game.i18n.localize('IRONSWORN.DOCUMENT.Planet'),
+          }),
           onClick: newPlanet,
         },
         {
           name: 'settlement',
           icon: 'isicon-settlement-sf',
-          title: game.i18n.localize('IRONSWORN.NewSettlement'),
+          title: game.i18n.format('DOCUMENT.Create', {
+            type: game.i18n.localize('IRONSWORN.DOCUMENT.Settlement'),
+          }),
           onClick: newSettlement,
         },
         {
           name: 'derelict',
           icon: 'isicon-derelict',
-          title: game.i18n.localize('IRONSWORN.NewDerelict'),
+          title: game.i18n.format('DOCUMENT.Create', {
+            type: game.i18n.localize('IRONSWORN.DOCUMENT.Derelict'),
+          }),
           onClick: newDerelict,
         },
         {
           name: 'vault',
           icon: 'isicon-precursor-vault',
-          title: game.i18n.localize('IRONSWORN.NewVault'),
+          title: game.i18n.format('DOCUMENT.Create', {
+            type: game.i18n.localize('IRONSWORN.DOCUMENT.Vault'),
+          }),
           onClick: newVault,
         },
       ],

@@ -14,7 +14,7 @@
     </transition-group>
     <div class="flexrow nogrow" style="text-align: center">
       <btn-compendium class="block" compendium="starforgedassets">{{
-        $t('IRONSWORN.Assets')
+        $t('IRONSWORN.ASSET.Title')
       }}</btn-compendium>
     </div>
   </div>

@@ -1,9 +1,9 @@
 export const RANKS = {
-  troublesome: 'IRONSWORN.Troublesome',
-  dangerous: 'IRONSWORN.Dangerous',
-  formidable: 'IRONSWORN.Formidable',
-  extreme: 'IRONSWORN.Extreme',
-  epic: 'IRONSWORN.Epic',
+  troublesome: 'IRONSWORN.PROGRESS.CHALLENGE_RANK.1',
+  dangerous: 'IRONSWORN.PROGRESS.CHALLENGE_RANK.2',
+  formidable: 'IRONSWORN.PROGRESS.CHALLENGE_RANK.3',
+  extreme: 'IRONSWORN.PROGRESS.CHALLENGE_RANK.4',
+  epic: 'IRONSWORN.PROGRESS.CHALLENGE_RANK.5',
 }
 
 export const RANK_INCREMENTS = {

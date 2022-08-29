@@ -1,9 +1,17 @@
 <template>
   <div class="grid">
-    <h5>{{ $t('IRONSWORN.Misfortunes') }}</h5>
-    <h5>{{ $t('IRONSWORN.LastingEffects') }}</h5>
-    <h5>{{ $t('IRONSWORN.Burdens') }}</h5>
-    <h5>{{ $t('IRONSWORN.Vehicle') }}</h5>
+    <h5 :data-tooltip="'IRONSWORN.IMPACT.MISFORTUNES.Description'">
+      {{ $t('IRONSWORN.IMPACT.MISFORTUNES.Title') }}
+    </h5>
+    <h5 :data-tooltip="'IRONSWORN.IMPACT.LASTING_EFFECTS.Description'">
+      {{ $t('IRONSWORN.IMPACT.LASTING_EFFECTS.Title') }}
+    </h5>
+    <h5 :data-tooltip="'IRONSWORN.IMPACT.BURDENS.Description'">
+      {{ $t('IRONSWORN.IMPACT.BURDENS.Title') }}
+    </h5>
+    <h5 :data-tooltip="'IRONSWORN.IMPACT.VEHICLE_TROUBLES.Description'">
+      {{ $t('IRONSWORN.IMPACT.VEHICLE_TROUBLES.Title') }}
+    </h5>
 
     <condition-checkbox class="nogrow" name="wounded" />
     <condition-checkbox class="nogrow" name="permanentlyharmed" />

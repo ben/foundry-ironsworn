@@ -58,8 +58,8 @@
     {{#if outcome}}
       <div class="outcome-label">
         <i class="fa fa-arrow-right"></i>
-        <span class="outcome-text">
-          {{{computeOutcomeText outcome.value false}}}
+        <span class="outcome-text" data-tooltip="{{{computeOutcomeDescription outcome.value}}}">
+          {{{computeOutcomeLabel outcome.value}}}
         </span>
       </div>
     {{/if}}

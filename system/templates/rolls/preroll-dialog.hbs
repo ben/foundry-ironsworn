@@ -21,14 +21,14 @@
   </section>
   {{#if action}}
   <fieldset class='form-group'>
-    <label for='roll-input-adds'>{{localize 'IRONSWORN.Adds'}}</label>
+    <label for='roll-input-adds'>{{localize 'IRONSWORN.ROLL.Adds'}}</label>
     <input id='roll-input-adds' type='number' step='1' name='adds' value='0' />
   </fieldset>
   {{/if}}
 
   {{#if showActorSelect}}
   <fieldset class='form-group'>
-    <label for='char'>{{localize 'IRONSWORN.Character'}}</label>
+    <label for='char'>{{localize 'Character'}}</label>
     <select name='char' id='char' class='select-character'>
       {{#each allActors}}
       <option value='{{id}}'>
@@ -40,17 +40,17 @@
   {{/if}}
   {{! TODO: simple options from the move + actor assets }}
   <details class='advanced-roll-options'>
-    <summary>{{localize 'IRONSWORN.RollDialog.AdvancedRollOptions'}}</summary>
+    <summary>{{localize 'IRONSWORN.GENERIC.AdvancedOptions'}}</summary>
 
     <fieldset class='form-group'>
       <label class='checkbox'>
         <input type='checkbox' class='advanced-roll-options-toggle' name='automaticOutcome' />
-        {{localize 'IRONSWORN.RollDialog.PredeterminedOutcome'}}
+        {{localize 'IRONSWORN.ROLL.DIALOG.PREDETERMINED_OUTCOME.Label'}}
       </label>
       <select name='automaticOutcomeValue'>
-        <option value='0'>{{localize 'IRONSWORN.Miss'}}</option>
-        <option value='1'>{{localize 'IRONSWORN.Weak_hit'}}</option>
-        <option value='2'>{{localize 'IRONSWORN.Strong_hit'}}</option>
+        <option value='0'>{{localize 'IRONSWORN.OUTCOME.MISS.Label'}}</option>
+        <option value='1'>{{localize 'IRONSWORN.OUTCOME.WEAK_HIT.Label'}}</option>
+        <option value='2'>{{localize 'IRONSWORN.OUTCOME.STRONG_HIT.Label'}}</option>
       </select>
     </fieldset>
 
@@ -58,7 +58,7 @@
     <fieldset class='form-group'>
       <label class='checkbox'>
         <input type='checkbox' class='advanced-roll-options-toggle' name='presetActionDie' />
-        {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
+        {{localize 'IRONSWORN.ROLL.DIALOG.PRESET_ACTION_DIE.Label'}}
       </label>
       <input type='number' step='1' name='presetActionDieValue' value='0' />
     </fieldset>
@@ -66,7 +66,7 @@
     <fieldset class='form-group'>
       <label class='checkbox'>
         <input type='checkbox' class='advanced-roll-options-toggle' name='extraChallengeDice' />
-        {{localize 'IRONSWORN.RollDialog.ExtraChallengeDice'}}
+        {{localize 'IRONSWORN.ROLL.DIALOG.EXTRA_CHALLENGE_DICE.Label'}}
       </label>
       <input type='number' step='1' name='extraChallengeDiceValue' value='0' min='0' />
     </fieldset>

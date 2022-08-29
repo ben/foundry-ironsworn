@@ -11,7 +11,8 @@ import {
   SCORE_MAX,
 } from '../rolls/roll.js'
 import {
-  computeOutcomeText,
+  computeOutcomeDescription,
+  computeOutcomeLabel,
   formatRollMethod,
   formatRollPlusStat,
 } from '../rolls/chat-message.js'
@@ -60,7 +61,11 @@ export class IronswornHandlebarsHelpers {
     Handlebars.registerHelper('capitalize', localeCapitalize)
     Handlebars.registerHelper('formatRollPlusStat', formatRollPlusStat)
     Handlebars.registerHelper('formatRollMethod', formatRollMethod)
-    Handlebars.registerHelper('computeOutcomeText', computeOutcomeText)
+    Handlebars.registerHelper('computeOutcomeLabel', computeOutcomeLabel)
+    Handlebars.registerHelper(
+      'computeOutcomeDescription',
+      computeOutcomeDescription
+    )
     Handlebars.registerHelper('lowercase', (str) => str.toLowerCase())
 
     Handlebars.registerHelper('json', function (context) {
@@ -125,14 +130,16 @@ export class IronswornHandlebarsHelpers {
       )
       const match = challengeDie1 === challengeDie2
       if (actionScore <= Math.min(challengeDie1, challengeDie2)) {
-        if (match) return game.i18n.localize('IRONSWORN.Miss_match')
-        return game.i18n.localize('IRONSWORN.Miss')
+        if (match)
+          return game.i18n.localize('IRONSWORN.OUTCOME.MISS.MATCH.Alert')
+        return game.i18n.localize('IRONSWORN.OUTCOME.MISS.Alert')
       }
       if (actionScore > Math.max(challengeDie1, challengeDie2)) {
-        if (match) return game.i18n.localize('IRONSWORN.Strong_hit_match')
-        return game.i18n.localize('IRONSWORN.Strong_hit')
+        if (match)
+          return game.i18n.localize('IRONSWORN.OUTCOME.STRONG_HIT.MATCH.Alert')
+        return game.i18n.localize('IRONSWORN.OUTCOME.STRONG_HIT.Alert')
       }
-      return game.i18n.localize('IRONSWORN.Weak_hit')
+      return game.i18n.localize('IRONSWORN.OUTCOME.WEAK_HIT.Alert')
     })
 
     function tickMarkSvg(ticks: number): string {

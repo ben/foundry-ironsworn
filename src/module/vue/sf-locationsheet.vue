@@ -3,16 +3,16 @@
     <div class="flexrow nogrow" style="gap: 5px">
       <!-- Region -->
       <label class="flexrow" style="flex-basis: 150px; gap: 10px">
-        <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
+        <span class="select-label">{{ $t('IRONSWORN.REGION.Title') }}</span>
         <select v-model="region" @change="regionChanged">
           <option value="terminus">
-            {{ $t('IRONSWORN.Terminus') }}
+            {{ $t('IRONSWORN.REGION.TERMINUS.Label') }}
           </option>
           <option value="outlands">
-            {{ $t('IRONSWORN.Outlands') }}
+            {{ $t('IRONSWORN.REGION.OUTLANDS.Label') }}
           </option>
           <option value="expanse">
-            {{ $t('IRONSWORN.Expanse') }}
+            {{ $t('IRONSWORN.REGION.EXPANSE.Label') }}
           </option>
         </select>
       </label>
@@ -21,11 +21,19 @@
       <label class="flexrow" style="flex-basis: 200px; gap: 10px">
         {{ $t('IRONSWORN.LocationType') }}
         <select v-model="actor.data.subtype" @change="subtypeChanged">
-          <option value="planet">Planet</option>
-          <option value="settlement">Settlement</option>
-          <option value="star">Stellar Object</option>
-          <option value="derelict">Derelict</option>
-          <option value="vault">Precursor Vault</option>
+          <option value="planet">{{ $t('IRONSWORN.DOCUMENT.Planet') }}</option>
+          <option value="settlement">
+            {{ $t('IRONSWORN.DOCUMENT.Settlement') }}
+          </option>
+          <option value="star">
+            {{ $t('IRONSWORN.DOCUMENT.StellarObject') }}
+          </option>
+          <option value="derelict">
+            {{ $t('IRONSWORN.DOCUMENT.Derelict') }}
+          </option>
+          <option value="vault">
+            {{ $t('IRONSWORN.DOCUMENT.PrecursorVault') }}
+          </option>
         </select>
       </label>
     </div>
@@ -106,7 +114,7 @@
           @mouseleave="data.firstLookHighlight = false"
           @click="rollFirstLook"
         >
-          {{ $t('IRONSWORN.RollForDetails') }}
+          {{ $t('IRONSWORN.LOCATION.RollForDetails') }}
         </btn-isicon>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
@@ -524,7 +532,7 @@ const randomKlassTooltip = computed(() => {
 
 const subtypeSelectText = computed(() => {
   const { subtype } = props.actor.data
-  return game.i18n.localize(`IRONSWORN.${capitalize(subtype)}Type`)
+  return game.i18n.localize(`IRONSWORN.${subtype.toUpperCase()}.Type`)
 })
 
 const klassIsNotValid = computed(() => {

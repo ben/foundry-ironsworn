@@ -1,7 +1,11 @@
 <template>
   <div class="flexcol legacy-track">
     <div class="legacy-track-header flexrow">
-      <h4>{{ title }}</h4>
+      <h4
+        :data-tooltip="`IRONSWORN.LEGACY.${propKey.toUpperCase()}.Description`"
+      >
+        {{ title }}
+      </h4>
       <p
         v-if="overflow"
         class="nogrow"
