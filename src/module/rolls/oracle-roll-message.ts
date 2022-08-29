@@ -157,6 +157,16 @@ export class OracleRollMessage {
     await this.roll.evaluate({ async: true })
   }
 
+  async getResult(): Promise<TableRow | undefined> {
+    await this.ensureRolled()
+
+    const rows = await this.getTableRows()
+    return rows.find(
+      (x) =>
+        x.low <= (this.roll?.total ?? 0) && (this.roll?.total ?? 0) <= x.high
+    )
+  }
+
   private async oraclePath(): Promise<string | undefined> {
     if (!this.tableId) return undefined
 
