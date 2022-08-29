@@ -69,29 +69,40 @@ IRONSWORN:
     ALERT:
       Clear: 'Cleared debility: {debility}'
       Mark: 'Marked debility: {debility}'
-    Banes: Banes
-    BanesDescription: <term>Banes</term> are permanent. They forever impact your character through the momentum adjustment and—more importantly—the narrative impact of being maimed or corrupted.
-    Burdens: Burdens
-    BurdensDescription: <term>Burdens</term> are a result of life-changing experiences that leave you bound to quests. Clearing a burden can only be accomplished by resolving the quest.
-    Conditions: Conditions
-    ConditionsDescription: If you are wounded, shaken, or unprepared, you cannot increase the associated track until you make a move to clear the debility.
-    Corrupted: Corrupted
-    CorruptedDescription: <term>Corrupted</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. Your experiences have left you emotionally scarred. You are at the threshold of losing yourself to darkness.
-    Cursed: Cursed
-    CursedDescription: <term>Cursed</term> is marked when you <move>Face Death</move> and return with a soul-bound quest. This burden can only be cleared by completing the quest.
-    Encumbered: Encumbered
-    EncumberedDescription: <term>Encumbered</term> is marked as appropriate to the circumstances when you are carrying excessive or cumbersome weight. Encumbered is cleared when you lighten your load.
-    Maimed: Maimed
-    MaimedDescription: <term>Maimed</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You have suffered a wound which causes you ongoing physical challenges, such as the loss of an eye or hand. Or, you bear horrific scars which serve as a constant reminder of your failures.
-    Shaken: Shaken
-    ShakenDescription: <term>Shaken</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. You are despairing or distraught, and need comfort to recover. You cannot increase your spirit track until you <move>Sojourn</move> to clear this debility.
+    BANES:
+      Title: Banes
+      Description: <term>Banes</term> are permanent. They forever impact your character through the momentum adjustment and—more importantly—the narrative impact of being maimed or corrupted.
+    BURDENS:
+      Title: Burdens
+      Description: <term>Burdens</term> are a result of life-changing experiences that leave you bound to quests. Clearing a burden can only be accomplished by resolving the quest.
+    CONDITIONS:
+      Title: Conditions
+      Description: If you are wounded, shaken, or unprepared, you cannot increase the associated track until you make a move to clear the debility.
+    CORRUPTED:
+      Label: Corrupted
+      Description: <term>Corrupted</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. Your experiences have left you emotionally scarred. You are at the threshold of losing yourself to darkness.
+    CURSED:
+      Label: Cursed
+      Description: <term>Cursed</term> is marked when you <move>Face Death</move> and return with a soul-bound quest. This burden can only be cleared by completing the quest.
+    ENCUMBERED:
+      Label: Encumbered
+      Description: <term>Encumbered</term> is marked as appropriate to the circumstances when you are carrying excessive or cumbersome weight. Encumbered is cleared when you lighten your load.
+    MAIMED:
+      Label: Maimed
+      Description: <term>Maimed</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You have suffered a wound which causes you ongoing physical challenges, such as the loss of an eye or hand. Or, you bear horrific scars which serve as a constant reminder of your failures.
+    SHAKEN:
+      Label: Shaken
+      Description: <term>Shaken</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. You are despairing or distraught, and need comfort to recover. You cannot increase your spirit track until you <move>Sojourn</move> to clear this debility.
     Title: Debilities
-    Tormented: Tormented
-    TormentedDescription: <term>Tormented</term> is marked when you <move>Face Desolation</move> and undertake a quest to prevent a dire future.
-    Unprepared: Unprepared
-    UnpreparedDescription: <term>Unprepared</term> is marked when you are at 0 supply and are <move>Out of Supply</move>. You and your allies share the same supply value, and will mark unprepared together. You cannot increase your supply track until you <move>Sojourn</move> to clear this debility.
-    Wounded: Wounded
-    WoundedDescription: <term>Wounded</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You are severely injured and need treatment to recover. You cannot increase your health track until you <move>Heal</move> or <move>Sojourn</move> to clear this debility
+    TORMENTED:
+      Label: Tormented
+      Description: <term>Tormented</term> is marked when you <move>Face Desolation</move> and undertake a quest to prevent a dire future.
+    UNPREPARED:
+      Label: Unprepared
+      Description: <term>Unprepared</term> is marked when you are at 0 supply and are <move>Out of Supply</move>. You and your allies share the same supply value, and will mark unprepared together. You cannot increase your supply track until you <move>Sojourn</move> to clear this debility.
+    WOUNDED:
+      Label: Wounded
+      Description: <term>Wounded</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You are severely injured and need treatment to recover. You cannot increase your health track until you <move>Heal</move> or <move>Sojourn</move> to clear this debility
   DELVE_SITE:
     Danger: Danger
     DangersTitle: Dangers
@@ -238,19 +249,19 @@ IRONSWORN:
   Label: Label
   LocationType: Location type
   MOMENTUM:
-    ActionDieCancel: Negative momentum canceled action die
-    ActionDieCancelDescription: Your action die was cancelled because the number on the action die matched your negative momentum value. You can’t take a bonus from an asset ability triggered by that die. If an asset forces a penalty for a specific action die value, that outcome still applies.
-    Burn: Burn
-    BurnForUpgrade: 'Burn momentum: <strong>{type}</strong>'
-    BurnMomentum: Burn momentum
-    BurnMomentumDescription: <term>Burning momentum</term> is a powerful option to deliver a decisive result or avoid dire failure. When you have positive momentum, after you make an action roll, you may replace your action score with your current momentum value to improve your result.
-    Max: Max
-    MaxDescription: Your max momentum is reduced by 1 for each marked impact. For example, one impact will drop your max momentum to +9. Three impacts will reduce it to +7.
-    MomentumBurnt: Momentum burn
-    Reset: Reset
-    ResetDescription: If you have one marked impact, your momentum reset is +1 (instead of +2). If you have more than one marked impact, your momentum reset is 0 (instead of +2).
-    ResetValue: Reset
-    Title: Momentum
+    ACTION_DIE_CANCEL:
+      Description: Your action die was cancelled because the number on the action die matched your negative momentum value. You can’t take a bonus from an asset ability triggered by that die. If an asset forces a penalty for a specific action die value, that outcome still applies.
+    BURN:
+      Label: Burn
+      Description: <term>Burning momentum</term> is a powerful option to deliver a decisive result or avoid dire failure. When you have positive momentum, after you make an action roll, you may replace your action score with your current momentum value to improve your result.
+      OutcomeReplacement: 'Burn momentum: <strong>{type}</strong>'
+      OutcomeReplacementReason: Momentum burn
+    MAXIMUM:
+      Label: Max
+      Description: Your max momentum is reduced by 1 for each marked impact. For example, one impact will drop your max momentum to +9. Three impacts will reduce it to +7.
+    RESET:
+      Label: Reset
+      Description: If you have one marked impact, your momentum reset is +1 (instead of +2). If you have more than one marked impact, your momentum reset is 0 (instead of +2).
   MOVE:
     Custom: Custom moves
     Delete: Delete move
@@ -390,30 +401,32 @@ IRONSWORN:
         '2': roll +{attr1} or +{attr2}, whichever is lower
         '3': roll +{attr1}, +{attr2}, or +{attr3}, whichever is lowest
         Fallback: roll lowest of {attrList}
+    CappedAt10: Action score is capped at 10
     OUTCOME:
-      CappedAt10: Action score is capped at 10
+      Label: Outcome
+      Title: Outcomes
       HIT:
         Label: Hit
         OnOutcome: On a hit
       MISS:
         Description: You failed or face a dramatic turn of events.
         Label: Miss
-        Match: Miss with a match!
-        MatchDescription: The match represents a heightened negative outcome, a complication, or new danger.
+        MATCH:
+          Label: Miss with a match!
+          Description: The match represents a heightened negative outcome, a complication, or new danger.
         OnOutcome: On a miss
       OnAMatch: On a match
       STRONG_HIT:
         Description: You succeeded and are in control.
         Label: Strong hit
-        Match: Strong hit with a match!
-        MatchDescription: The match represents an interesting twist or new opportunity.
+        MATCH:
+          Label: Strong hit with a match!
+          Description: The match represents an interesting twist or new opportunity.
         OnOutcome: On a strong hit
       WEAK_HIT:
         Description: You succeed, but with a cost or lesser effect.
         Label: Weak hit
         OnOutcome: On a weak hit
-    Outcome: outcome
-    Outcomes: Outcomes
     PlusStat: roll +{attr}
     Reroll: Reroll
     Versus: vs.
