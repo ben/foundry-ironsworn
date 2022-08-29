@@ -5,6 +5,7 @@ import {
   createIronswornOracleTree,
   createStarforgedOracleTree,
   findPathToNodeByDfId,
+  findPathToNodeByTableId,
 } from '../features/customoracles'
 
 export interface TableRow {
@@ -156,6 +157,19 @@ export class OracleRollMessage {
     await this.roll.evaluate({ async: true })
   }
 
+  private async oraclePath(): Promise<string | undefined> {
+    if (!this.tableId) return undefined
+
+    const starforgedRoot = await createStarforgedOracleTree()
+    const ironswornRooot = await createIronswornOracleTree()
+    const pathElements =
+      findPathToNodeByTableId(starforgedRoot, this.tableId) ??
+      findPathToNodeByTableId(ironswornRooot, this.tableId)
+    pathElements.shift() // no display name for root node
+    pathElements.pop() // last node is the table we rolled
+    return pathElements.map((x) => x.displayName).join(' / ')
+  }
+
   async createOrUpdate() {
     await this.ensureRolled()
 
@@ -172,9 +186,11 @@ export class OracleRollMessage {
       { ...resultRow, selected: true },
       rows[resultIdx + 1],
     ])
+
+    const table = await this.getRollTable()
     const renderData = {
-      title: this.title ?? (await this.getRollTable())?.name,
-      subtitle: this.subtitle,
+      title: this.title ?? table?.name,
+      subtitle: this.subtitle ?? (await this.oraclePath()),
       displayRows,
       oracleRoll: this,
     }
