@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Remove "Oracle NN:" from Ironsworn oracle names ([#453](https://github.com/ben/foundry-ironsworn/pull/453))
+
 ## 1.17.2
 
 - Freshen up the compact PC sheet, and use the new rolling pipeline ([#448](https://github.com/ben/foundry-ironsworn/pull/448))
