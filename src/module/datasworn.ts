@@ -335,7 +335,7 @@ export async function importFromDatasworn() {
         tableData(
           oracle.Table,
           oracle.$id,
-          oracle.Display.Title,
+          oracle.Display.Title.replace(/Oracle \d+:\s+/, ''),
           oracle.Category,
           oracle.Description ?? ''
         )
