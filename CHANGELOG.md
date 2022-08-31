@@ -3,6 +3,7 @@
 ## Next Release
 
 - Remove "Oracle NN:" from Ironsworn oracle names ([#453](https://github.com/ben/foundry-ironsworn/pull/453))
+- Fix a visual glitch with progress tracks in v10
 
 ## 1.17.2
 

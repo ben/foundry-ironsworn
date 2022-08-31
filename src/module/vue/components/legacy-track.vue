@@ -18,14 +18,7 @@
       <btn-faicon class="block nogrow" icon="caret-right" @click="increase" />
     </div>
 
-    <div class="flexrow track">
-      <div
-        class="flexcol track-box"
-        v-for="(box, i) in boxes"
-        :key="`box${i}`"
-        v-html="box"
-      ></div>
-    </div>
+    <progress-track :ticks="displayTicks" />
 
     <xp-track :max="xpBoxCount" :marked="xpSpent" @click="setXp" />
   </div>
@@ -49,15 +42,7 @@ import { IronswornActor } from '../../actor/actor'
 import { $ActorKey } from '../provisions'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import XpTrack from './xp-track.vue'
-
-function ticksSvg(ticks: number) {
-  let ret = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">'
-  if (ticks > 0) ret += '<line x1="23" y1="23" x2="77" y2="77" />'
-  if (ticks > 1) ret += '<line x1="77" y1="23" x2="23" y2="77" />'
-  if (ticks > 2) ret += '<line x1="15" y1="50" x2="85" y2="50" />'
-  if (ticks > 3) ret += '<line x1="50" y1="15" x2="50" y2="85" />'
-  return ret + '</svg>'
-}
+import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{ propKey: string; title: string }>()
 
@@ -67,9 +52,12 @@ const $actor = inject($ActorKey)
 const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })
+
 const ticks = computed(() => {
   return actor.value.data.legacies[props.propKey] ?? 0
 })
+const displayTicks = computed(() => ticks.value % 40)
+
 const xpBoxCount = computed(() => {
   // 2 for each box up until 10, then 1 for each box afterwards
   const fullBoxes = Math.floor(ticks.value / 4)
@@ -95,15 +83,6 @@ const overflow = computed(() => {
     return `(+${n})`
   }
   return undefined
-})
-const boxes = computed(() => {
-  const ret = [] as string[]
-  let remainingTicks = ticks.value % 40
-  for (let i = 0; i < 10; i++) {
-    ret.push(ticksSvg(remainingTicks))
-    remainingTicks -= 4
-  }
-  return ret
 })
 
 function adjust(inc) {
