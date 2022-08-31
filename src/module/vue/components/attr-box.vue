@@ -36,6 +36,7 @@
 </style>
 
 <script lang="ts" setup>
+import { upperCase } from 'lodash'
 import { inject, computed, capitalize, Ref } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { IronswornPrerollDialog } from '../../rolls'
@@ -53,7 +54,7 @@ const classes = computed(() => ({
   clickable: !editMode.value,
   'isiconbg-d10-tilt': !editMode.value,
 }))
-const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)
+const i18nKey = computed(() => `IRONSWORN.STAT.${upperCase(props.attr)}.Label`)
 const editMode = computed(
   () => !!(actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 )

@@ -1,0 +1,70 @@
+RONSWORN:
+  ASSET:
+    Abilities: Eigenschaften
+    DeleteAsset: Ressourcen löschen
+  Assets: Ressourcen
+  Bonds: Bande
+  Character: Charakter
+  Clear: Loswerden
+  ConfirmDelete: Bist Du sicher? Dies kann nicht rückgängig gemacht werden.
+  DEBILITIES:
+    Banes: Verhängnisse
+    Burdens: Bürden
+    Conditions: Zustände
+  Debilities: Schwächen
+  DeleteItem: Gegenstand löschen
+  Description: Beschreibung
+  EXPERIENCE:
+    XP: EP
+  Enabled: Aktiviert
+  Fields: Felder
+  Label: Beschriftung
+  MOMENTUM:
+    Burn: Verbrennen
+    BurnForUpgrade: 'Momentum verbrennst: <strong>{type}</strong>'
+    Reset: Zurücksetzen
+  Mark: Markiere
+  Moves: Spielzüge
+  Name: Name
+  Oracles: Orakel
+  PROGRESS:
+    CHALLENGE_RANK:
+      Dangerous: Gefährlich
+      Epic: Episch
+      Extreme: Extrem
+      Formidable: Gewaltig
+      Troublesome: Lästig
+    Rank: Rang
+  Progress: Fortschritt
+  RESOURCE:
+    Health: Leben
+    Momentum: Momentum
+    Spirit: Willen
+  ROLL:
+    METHOD:
+      Any:
+        '2': würfle dann +{stat1} oder +{stat2}
+      Highest:
+        '2': würfle dann +{stat1} oder +{stat2}, je nachdem, was höher ist
+      Lowest:
+        '2': würfle dann +{stat1} oder +{stat2}, je nachdem, was niedriger ist
+    OUTCOME:
+      Miss: Fehlschlag
+      MissMatch: Fehlschlag mit einem Pasch!
+      StrongHit: Voller Erfolg
+      StrongHitWithAMatch: Voller Erfolg mit einem Pasch!
+      WeakHit: Teilerfolg
+    RollPlus: würfle +{stat}
+    Versus: vs.
+  Roll: Wurf
+  Rolling: Würfeln
+  STAT:
+    Edge: Geschick
+    Heart: Herz
+    Iron: Eisen
+    Shadow: Schatten
+    Wits: Verstand
+  Stat: Attribut
+  Stats: Attribute
+  Track: Statusleiste
+  Value: Wert

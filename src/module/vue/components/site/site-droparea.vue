@@ -66,7 +66,7 @@ function foundryitem() {
 }
 
 function destroy() {
-  const titleKey = 'IRONSWORN.DeleteItem'
+  const titleKey = 'Delete'
 
   Dialog.confirm({
     title: game.i18n.localize(titleKey),

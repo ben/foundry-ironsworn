@@ -20,7 +20,7 @@ export class ProgressSheetV2 extends VueItemSheet {
     return [
       {
         class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
+        label: game.i18n.localize('Edit'),
         icon: 'fas fa-edit',
         onclick: (e) => this._toggleEditMode(e),
       },

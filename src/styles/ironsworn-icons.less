@@ -29,6 +29,7 @@
 [class*=' isiconbg-'] {
   position: relative; // required for the pseudo-element's position to function
   z-index: 1;
+  mask-repeat: no-repeat;
   &:before {
     // don't forget to set the background for this pseudo-element, too. typically this is a flat colour, but it'll work with any valid background (gradients, images, etc).
     // this defaults to currentColor, so that it's clear that it's actually working when it's used

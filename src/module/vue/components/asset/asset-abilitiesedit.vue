@@ -35,7 +35,7 @@
             :checked="ability.hasClock"
             @change="enableClock(i)"
           />
-          {{ $t('IRONSWORN.Clock') }}
+          {{ $t('IRONSWORN.DOCUMENT.Clock') }}
         </label>
         <select
           class="nogrow"

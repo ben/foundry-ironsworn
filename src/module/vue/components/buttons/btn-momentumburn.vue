@@ -4,6 +4,7 @@
     class="burn-momentum"
     @click="burnMomentum"
     :disabled="disabled"
+    data-tooltip="IRONSWORN.MOMENTUM.BURN.Description"
   >
     <slot name="default"></slot>
   </btn-faicon>

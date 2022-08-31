@@ -6,7 +6,8 @@
       <input
         type="text"
         style="margin-bottom: 7px"
-        :placeholder="$t('IRONSWORN.Name')"
+        :placeholder="$t('Name')"
+        :data-tooltip="$t('Name')"
         v-model="actor.name"
         ref="name"
         @keyup="save"
@@ -14,14 +15,16 @@
       <input
         type="text"
         style="margin-bottom: 7px"
-        :placeholder="$t('IRONSWORN.Pronouns')"
+        :placeholder="$t('IRONSWORN.PC.Pronouns')"
+        :data-tooltip="$t('IRONSWORN.PC.Pronouns')"
         :value="actor.data.pronouns"
         ref="pronouns"
         @keyup="save"
       />
       <input
         type="text"
-        :placeholder="$t('IRONSWORN.Callsign')"
+        :placeholder="$t('IRONSWORN.PC.Callsign')"
+        :data-tooltip="$t('IRONSWORN.PC.Callsign')"
         :value="actor.data.callsign"
         ref="callsign"
         @keyup="save"
@@ -33,7 +36,8 @@
       :value="actor.data.biography"
       ref="characteristics"
       style="flex-basis: 300px; margin-left: 6px"
-      :placeholder="$t('IRONSWORN.Characteristics')"
+      :placeholder="$t('IRONSWORN.PC.Characteristics')"
+      :data-tooltip="$t('IRONSWORN.PC.Characteristics')"
       @keyup="save"
     />
   </header>

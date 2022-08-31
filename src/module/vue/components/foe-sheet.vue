@@ -45,13 +45,13 @@
       style="text-align: center; justify-items: space-around"
     >
       <btn-faicon @click="addEmpty" class="block" icon="file">
-        {{ $t('IRONSWORN.Progress') }}</btn-faicon
+        {{ $t('IRONSWORN.DOCUMENT.Progress') }}</btn-faicon
       >
       <btn-compendium class="block" compendium="ironswornfoes"
-        >{{ $t('IRONSWORN.Foes') }} (Ironsworn)</btn-compendium
+        >{{ $t('IRONSWORN.DOCUMENT.Foe') }} (Ironsworn)</btn-compendium
       >
       <btn-compendium class="block" compendium="starforgedencounters"
-        >{{ $t('IRONSWORN.Foes') }} (Starforged)</btn-compendium
+        >{{ $t('IRONSWORN.DOCUMENT.Foe') }} (Starforged)</btn-compendium
       >
     </div>
   </div>
@@ -95,7 +95,7 @@ const foundryFoe = computed(() => {
   return $actor?.items.get(foe.value._id)
 })
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[props.actor.data.rank])
+  return game.i18n.localize(RANKS[props.actor.data.rank] + '.Label')
 })
 
 // async foe(newFoe) {

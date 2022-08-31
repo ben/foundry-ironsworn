@@ -86,7 +86,7 @@ function walkCategory(
 }
 
 async function augmentWithFolderContents(categories: MoveCategory[]) {
-  const name = game.i18n.localize('IRONSWORN.Custom Moves')
+  const name = game.i18n.localize('IRONSWORN.CustomMoves')
   const folder = (game.items?.directory as any)?.folders.find(
     (x) => x.name === name
   ) as Folder | undefined

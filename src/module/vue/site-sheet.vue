@@ -105,63 +105,27 @@
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
-        <site-denizenbox
-          :idx="0"
-          :ref="(e) => (denizenRefs[0] = e)"
-        />
-        <site-denizenbox
-          :idx="1"
-          :ref="(e) => (denizenRefs[1] = e)"
-        />
-        <site-denizenbox
-          :idx="2"
-          :ref="(e) => (denizenRefs[2] = e)"
-        />
-        <site-denizenbox
-          :idx="3"
-          :ref="(e) => (denizenRefs[3] = e)"
-        />
+        <site-denizenbox :idx="0" :ref="(e) => (denizenRefs[0] = e)" />
+        <site-denizenbox :idx="1" :ref="(e) => (denizenRefs[1] = e)" />
+        <site-denizenbox :idx="2" :ref="(e) => (denizenRefs[2] = e)" />
+        <site-denizenbox :idx="3" :ref="(e) => (denizenRefs[3] = e)" />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox
-          :idx="4"
-          :ref="(e) => (denizenRefs[4] = e)"
-        />
-        <site-denizenbox
-          :idx="5"
-          :ref="(e) => (denizenRefs[5] = e)"
-        />
-        <site-denizenbox
-          :idx="6"
-          :ref="(e) => (denizenRefs[6] = e)"
-        />
-        <site-denizenbox
-          :idx="7"
-          :ref="(e) => (denizenRefs[7] = e)"
-        />
+        <site-denizenbox :idx="4" :ref="(e) => (denizenRefs[4] = e)" />
+        <site-denizenbox :idx="5" :ref="(e) => (denizenRefs[5] = e)" />
+        <site-denizenbox :idx="6" :ref="(e) => (denizenRefs[6] = e)" />
+        <site-denizenbox :idx="7" :ref="(e) => (denizenRefs[7] = e)" />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox
-          :idx="8"
-          :ref="(e) => (denizenRefs[8] = e)"
-        />
-        <site-denizenbox
-          :idx="9"
-          :ref="(e) => (denizenRefs[9] = e)"
-        />
-        <site-denizenbox
-          :idx="10"
-          :ref="(e) => (denizenRefs[10] = e)"
-        />
-        <site-denizenbox
-          :idx="11"
-          :ref="(e) => (denizenRefs[11] = e)"
-        />
+        <site-denizenbox :idx="8" :ref="(e) => (denizenRefs[8] = e)" />
+        <site-denizenbox :idx="9" :ref="(e) => (denizenRefs[9] = e)" />
+        <site-denizenbox :idx="10" :ref="(e) => (denizenRefs[10] = e)" />
+        <site-denizenbox :idx="11" :ref="(e) => (denizenRefs[11] = e)" />
       </div>
     </div>
 
     <!-- NOTES -->
-    <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
+    <h4 class="nogrow">{{ $t('Notes') }}</h4>
     <MceEditor
       v-model="actor.data.description"
       @save="saveDescription"
@@ -248,7 +212,7 @@ const hasThemeAndDomain = computed(() => {
 })
 
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[props.actor.data.rank])
+  return game.i18n.localize(RANKS[props.actor.data.rank] + '.Label')
 })
 
 function setRank(rank) {

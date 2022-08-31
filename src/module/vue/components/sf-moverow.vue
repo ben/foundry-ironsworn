@@ -23,10 +23,10 @@
       >
         <div class="move-summary-buttons flexrow">
           <btn-rollmove class="block" v-if="canRoll" :move="move">
-            {{ $t('IRONSWORN.Roll') }}
+            {{ $t('IRONSWORN.ROLL.Label') }}
           </btn-rollmove>
           <btn-sendmovetochat class="block" :move="move">
-            {{ $t('IRONSWORN.Chat') }}
+            {{ $t('IRONSWORN.GENERIC.Chat') }}
           </btn-sendmovetochat>
         </div>
         <div v-html="$enrichMarkdown(fulltext)" />

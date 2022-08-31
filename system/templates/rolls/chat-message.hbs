@@ -17,8 +17,11 @@
           {{outcomeReplacementReason}}:&nbsp;<wbr />
         </span>
       {{/if}}
-      <span class='outcome-text'>
-        {{outcomeText}}
+      <span
+        class='outcome-text'
+        data-tooltip='{{{computeOutcomeDescription outcome.value}}}'
+      >
+        {{outcomeLabel}}
       </span>
     </h4>
 
@@ -37,7 +40,10 @@
           type='button'
         >
           <span class='button-text'>
-            {{{localize 'IRONSWORN.BurnForUpgrade' type=possibleMomentumBurn}}}
+            {{{localize
+              'IRONSWORN.MOMENTUM.BURN.OutcomeReplacement'
+              type=possibleMomentumBurn
+            }}}
           </span>
         </button>
       </section>

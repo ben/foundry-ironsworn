@@ -22,17 +22,22 @@
             <hr class="nogrow" />
             <div>
               <btn-momentumburn class="nogrow block stack-row">
-                {{ $t('IRONSWORN.Burn') }}
+                {{ $t('IRONSWORN.MOMENTUM.BURN.Label') }}
               </btn-momentumburn>
 
-              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-              {{ $t('IRONSWORN.Max') }}:
+              {{ $t('IRONSWORN.MOMENTUM.RESET.Label') }}:
+              {{ actor.data.momentumReset }}
+              {{ $t('IRONSWORN.MOMENTUM.MAXIMUM.Label') }}:
               {{ actor.data.momentumMax }}
             </div>
           </div>
 
-          <h4 class="vertical-v2 nogrow" style="width: 18px">
-            {{ $t('IRONSWORN.Momentum') }}
+          <h4
+            class="vertical-v2 nogrow"
+            style="width: 18px"
+            data-tooltip="IRONSWORN.RESOURCE.MOMENTUM.Description"
+          >
+            {{ $t('IRONSWORN.RESOURCE.MOMENTUM.Label') }}
           </h4>
         </div>
       </div>
@@ -41,28 +46,51 @@
       <div class="flexcol">
         <!-- Attributes -->
         <div class="flexrow stats" style="margin-bottom: 10px">
-          <attr-box attr="edge" />
-          <attr-box attr="heart" />
-          <attr-box attr="iron" />
-          <attr-box attr="shadow" />
-          <attr-box attr="wits" />
+          <attr-box
+            attr="edge"
+            :data-tooltip="'IRONSWORN.STAT.EDGE.Description'"
+          />
+          <attr-box
+            attr="heart"
+            :data-tooltip="'IRONSWORN.STAT.HEART.Description'"
+          />
+          <attr-box
+            attr="iron"
+            :data-tooltip="'IRONSWORN.STAT.IRON.Description'"
+          />
+          <attr-box
+            attr="shadow"
+            :data-tooltip="'IRONSWORN.STAT.SHADOW.Description'"
+          />
+          <attr-box
+            attr="wits"
+            :data-tooltip="'IRONSWORN.STAT.WITS.Description'"
+          />
         </div>
 
         <tabs class="character-sheet-tabs" name="character-sheet-tabs">
-          <tab :title="$t('IRONSWORN.Legacies')"> <sf-legacies /> </tab>
-          <tab :title="$t('IRONSWORN.Assets')"> <sf-assets /> </tab>
-          <tab :title="$t('IRONSWORN.Progress')"> <sf-progresses /> </tab>
-          <tab :title="$t('IRONSWORN.Connections')"> <sf-connections /> </tab>
-          <tab :title="$t('IRONSWORN.Notes')"> <sf-notes /> </tab>
+          <tab :title="$t('IRONSWORN.LEGACY.Title')"> <sf-legacies /> </tab>
+          <tab :title="$t('IRONSWORN.ASSET.Title')"> <sf-assets /> </tab>
+          <tab :title="$t('IRONSWORN.PROGRESS.Title')">
+            <sf-progresses />
+          </tab>
+          <tab :title="$t('IRONSWORN.CONNECTION.Title')">
+            <sf-connections />
+          </tab>
+          <tab :title="$t('Notes')"> <sf-notes /> </tab>
         </tabs>
       </div>
 
       <!-- Stats on right -->
       <div class="flexcol margin-right condition-meters">
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+        <div
+          class="flexrow nogrow"
+          style="flex-wrap: nowrap"
+          :data-tooltip="'IRONSWORN.RESOURCE.HEALTH.Description'"
+        >
           <!-- TODO: restyle as h4-like -->
           <btn-rollstat class="vertical-v2 nogrow text" attr="health">
-            {{ $t('IRONSWORN.Health') }}
+            {{ $t('IRONSWORN.RESOURCE.HEALTH.Label') }}
           </btn-rollstat>
           <div class="flexcol stack health">
             <stack stat="health" :top="5" :bottom="0"></stack>
@@ -71,10 +99,14 @@
 
         <hr class="nogrow" />
 
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+        <div
+          class="flexrow nogrow"
+          style="flex-wrap: nowrap"
+          :data-tooltip="'IRONSWORN.RESOURCE.SPIRIT.Description'"
+        >
           <!-- TODO: restyle as h4-like -->
           <btn-rollstat class="vertical-v2 nogrow text" attr="spirit">
-            {{ $t('IRONSWORN.Spirit') }}
+            {{ $t('IRONSWORN.RESOURCE.SPIRIT.Label') }}
           </btn-rollstat>
           <div class="flexcol stack spirit">
             <stack stat="spirit" :top="5" :bottom="0"></stack>
@@ -83,10 +115,14 @@
 
         <hr class="nogrow" />
 
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
+        <div
+          class="flexrow nogrow"
+          style="flex-wrap: nowrap"
+          :data-tooltip="'IRONSWORN.RESOURCE.SUPPLY.DESCRIPTION.Starforged'"
+        >
           <!-- TODO: restyle as h4-like -->
           <btn-rollstat class="vertical-v2 nogrow text" attr="supply">
-            {{ $t('IRONSWORN.Supply') }}
+            {{ $t('IRONSWORN.RESOURCE.SUPPLY.Label') }}
           </btn-rollstat>
           <div class="flexcol stack supply">
             <stack stat="supply" :top="5" :bottom="0"></stack>

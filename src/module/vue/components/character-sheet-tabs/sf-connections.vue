@@ -19,7 +19,7 @@
 
     <div class="flexrow nogrow" style="text-align: center">
       <btn-faicon icon="plus" class="block" @click="newConnection">
-        {{ $t('IRONSWORN.Connection') }}
+        {{ $t('IRONSWORN.DOCUMENT.Connection') }}
       </btn-faicon>
     </div>
   </div>
@@ -55,7 +55,7 @@ const editMode = computed(() => {
 async function newConnection() {
   const item = await Item.create(
     {
-      name: game.i18n.localize('IRONSWORN.Connection'),
+      name: game.i18n.localize('IRONSWORN.DOCUMENT.Connection'),
       type: 'progress',
       data: { subtype: 'bond' },
       sort: 9000000,

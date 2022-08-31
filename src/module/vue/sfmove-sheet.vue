@@ -11,13 +11,13 @@
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="FullText"
+          titleKey="MOVE.FullText"
           property="Text"
         />
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="Trigger"
+          titleKey="MOVE.Trigger"
           property="Trigger.Text"
         />
 
@@ -43,31 +43,31 @@
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="Strong_hit"
+          titleKey="ROLL.OUTCOME.STRONG_HIT.Label"
           property="Outcomes.Strong Hit.Text"
         />
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="Strong_hit_match"
+          titleKey="ROLL.OUTCOME.STRONG_HIT.MATCH.Label"
           property="Outcomes.Strong Hit.With a Match.Text"
         />
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="Weak_hit"
+          titleKey="ROLL.OUTCOME.WEAK_HIT.Label"
           property="Outcomes.Weak Hit.Text"
         />
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="Miss"
+          titleKey="ROLL.OUTCOME.MISS.Label"
           property="Outcomes.Miss.Text"
         />
         <sfmove-tab
           :currentProperty="currentProperty"
           @click="switchContent"
-          titleKey="Miss_match"
+          titleKey="ROLL.OUTCOME.MISS.MATCH.Label"
           property="Outcomes.Miss.With a Match.Text"
         />
       </div>

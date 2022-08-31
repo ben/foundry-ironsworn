@@ -21,7 +21,7 @@ export class IronswornSharedSheetV2 extends VueActorSheet {
     return [
       {
         class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
+        label: game.i18n.localize('Edit'),
         icon: 'fas fa-edit',
         onclick: (e) => this._toggleEditMode(e),
       },

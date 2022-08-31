@@ -9,7 +9,7 @@ import { renderRollGraphic } from './roll-graphic'
 
 type MoveTemplateData = {
   outcomeClass?: string
-  outcomeText?: string
+  outcomeLabel?: string
   outcomeReplacementReason?: string
   moveOutcome?: string
 }
@@ -27,7 +27,7 @@ type MoveTemplateData = {
 export function formatRollPlusStat(stat: string) {
   let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
   if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
-  return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
+  return game.i18n.format('IRONSWORN.ROLL.PlusStat', { attr: localizedStat })
 }
 
 /**
@@ -86,19 +86,37 @@ export function computeRollOutcome(
 }
 
 /**
- * Retrieves a localized string corresponding to a provided roll outcome.
+ * Selects a localized string to label roll outcome.
  * @param outcome The numeric outcome value to retrieve the string for.
  * @param match Whether or not the outcome has matched challenge dice.
  */
-export function computeOutcomeText(
+export function computeOutcomeLabel(
   outcome: RollOutcome | DfRollOutcome,
   match?: boolean | undefined
 ) {
-  let outcomeKey = RollOutcome[outcome]
+  let outcomeKey = RollOutcome[outcome].toUpperCase()
   if (match) {
-    outcomeKey += '_match'
+    outcomeKey += '.MATCH'
   }
-  return game.i18n.localize(`IRONSWORN.${outcomeKey}`)
+  return game.i18n.localize(`IRONSWORN.OUTCOME.${outcomeKey}.Label`)
+}
+
+/**
+ * Selects a localized string to describe a roll outcome, e.g. in a tooltip.
+ * @param outcome The numeric outcome value to retrieve the string for.
+ * @param match Whether or not the outcome has matched challenge dice.
+ */
+export function computeOutcomeDescription(
+  outcome: RollOutcome | DfRollOutcome,
+  match?: boolean | undefined
+) {
+  const outcomeKey = RollOutcome[outcome].toUpperCase()
+  let result = game.i18n.localize(`IRONSWORN.OUTCOME.${outcomeKey}.Description`)
+  if (match) {
+    const matchKey = `IRONSWORN.OUTCOME.${outcomeKey}.MATCH.Description`
+    result = `<p>${result}</p><p>${game.i18n.localize(matchKey)}</p>`
+  }
+  return result
 }
 
 /**
@@ -161,7 +179,7 @@ export class IronswornRollChatMessage {
     await this.actor.burnMomentum()
     this.roll.postRollOptions.replacedOutcome = {
       value: computeRollOutcome(momentum, c1, c2),
-      source: game.i18n.localize('IRONSWORN.MomentumBurnt'),
+      source: game.i18n.localize('IRONSWORN.MOMENTUM.BURN.Label'),
     }
     return this.createOrUpdate()
   }
@@ -218,7 +236,7 @@ export class IronswornRollChatMessage {
     const { progress, stat } = this.roll.preRollOptions
     if (progress) {
       return {
-        title: `${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${
+        title: `${game.i18n.localize('IRONSWORN.PROGRESS.ProgressRoll')}: ${
           progress.source
         }`,
       }
@@ -234,7 +252,9 @@ export class IronswornRollChatMessage {
     )
     if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat.source
     return {
-      title: game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat }),
+      title: game.i18n.format('IRONSWORN.ROLL.PlusStat', {
+        attr: localizedStat,
+      }),
     }
   }
 
@@ -245,7 +265,7 @@ export class IronswornRollChatMessage {
 
     // Original outcome
     const ret: MoveTemplateData = {
-      outcomeText: computeOutcomeText(theOutcome, this.roll.isMatch),
+      outcomeLabel: computeOutcomeLabel(theOutcome, this.roll.isMatch),
       outcomeClass: `${kebabCase(RollOutcome[theOutcome])}${
         this.roll.isMatch ? ' match' : ''
       }`,
@@ -283,7 +303,7 @@ export class IronswornRollChatMessage {
 
     if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
       return {
-        possibleMomentumBurn: computeOutcomeText(
+        possibleMomentumBurn: computeOutcomeLabel(
           momentumBurnOutcome,
           c1 === c2
         ),

@@ -3,7 +3,9 @@
     <document-img :document="actor" />
     <document-name :document="actor" />
     <div class="flexrow xp" style="gap: 5px">
-      <h4 class="nogrow" style="margin: 0">{{ $t('IRONSWORN.XP') }}</h4>
+      <h4 class="nogrow" style="margin: 0">
+        {{ $t('IRONSWORN.EXPERIENCE.Xp') }}
+      </h4>
       <div class="flexrow">
         <xp-box :key="0" :current="-1" :value="0" @click="setXp(0)"> × </xp-box>
         <xp-box

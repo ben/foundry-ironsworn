@@ -42,7 +42,7 @@
 
         <p>
           <em>
-            {{ $t('IRONSWORN.TruthQuestStarter') }}
+            {{ $t('IRONSWORN.TruthQuestStarter') }}:
             {{ truth?.['Quest Starter'] }}
           </em>
         </p>
@@ -86,7 +86,7 @@ const radiovalue = computed(() => {
       <p><strong>${props.truth.Result}</strong></p>
       <p>${props.truth.Description} ${subOptionText}</p>
       <p><em>
-        ${game.i18n.localize('IRONSWORN.TruthQuestStarter')}
+        ${game.i18n.localize('IRONSWORN.TruthQuestStarter')}:
         ${props.truth['Quest Starter']}
       </em></p>
     `

@@ -1,0 +1,609 @@
+IRONSWORN:
+  ASSET:
+    Description: <term>Assets</term> represent your background, skills, traits, companions, and resources. They have <term>abilities</term> that give you additional options and bonuses when making a move—or sometimes act as their own self-contained moves.
+    ABILITY:
+      CLEAR:
+        Alert: Cleared ability \#{number}
+      MARK:
+        Alert: Marked ability \#{number}
+      Title: Abilities
+    Ability: ability
+    Options: Options
+    Title: Assets
+  BOND:
+    Label: Bonds track
+    Title: Bonds
+  CLOCK:
+    ALERT:
+      ADVANCE:
+        AdvanceManySegments: Clock advanced by {change} segments to {newValue}⁄{maxValue}
+        AdvanceOneSegment: Clock advanced to {newValue}⁄{maxValue}
+        AdvanceTwoSegments: Clock advanced by {change} segments to {newValue}⁄{maxValue}
+      COMPLETE:
+        CompleteWithManySegments: Clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!
+        CompleteWithOneSegment: Clock advanced to {newValue}⁄{maxValue}—clock completed!
+        CompleteWithTwoSegments: Clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!
+      SET:
+        Alert: Clock set to {newValue}⁄{maxValue}
+    Campaign: Campaign clock
+    SEGMENT:
+      Label: segment
+      Title: Segments
+    Tension: Tension clock
+    Title: Clocks
+  COMBAT:
+    INITIATIVE:
+      Label: Initiative
+      'false':
+        GAIN:
+          Alert: '{name} lost initiative'
+        KEEP:
+          Alert: '{name} remains without initiative'
+        Label: No initiative
+      'true':
+        GAIN:
+          Alert: '{name} took initiative'
+        KEEP: '{name} retained initiative'
+        Label: Has initiative
+    POSITION:
+      IN_A_BAD_SPOT:
+        Description: When in a bad spot, you must make reactive moves such as <move>React Under Fire</move> and <move>Clash</move>. The outcome of a combat move will describe your current position.
+        GAIN:
+          Alert: '{name} is put in a bad spot'
+        KEEP:
+          Alert: '{name} remains in a bad spot'
+        Label: In a bad spot
+      IN_CONTROL:
+        Description: If you are in control, you can make proactive moves such as <move>Gain Ground</move> and <move>Strike</move>.
+        GAIN:
+          Alert: '{name} takes control'
+        KEEP:
+          Alert: '{name} remains in control'
+        Label: In control
+      Label: Position
+    Title: Combat
+  COMPENDIUM:
+    Open: Open compendium
+  CONNECTION:
+    Description: A <term>connection</term> represents an important relationship with an NPC. Connections are not shipmates or companions. They are independent characters whose own lives occasionally intersect with your own. You might accompany the connection on a specific mission, but you’ll soon part ways as your duties and ambitions take you on separate paths.
+    Shared: Shared connection
+    Title: Connections
+  DEBILITY:
+    BANES:
+      Description: <term>Banes</term> are permanent. They forever impact your character through the momentum adjustment and—more importantly—the narrative impact of being maimed or corrupted.
+      Title: Banes
+    BURDENS:
+      Description: <term>Burdens</term> are a result of life-changing experiences that leave you bound to quests. Clearing a burden can only be accomplished by resolving the quest.
+      Title: Burdens
+    CONDITIONS:
+      Description: If you are wounded, shaken, or unprepared, you cannot increase the associated track until you make a move to clear the debility.
+      Title: Conditions
+    CORRUPTED:
+      Description: <term>Corrupted</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. Your experiences have left you emotionally scarred. You are at the threshold of losing yourself to darkness.
+      Label: Corrupted
+    DOOMED:
+      Description: <term>Doomed</term> is marked when you <move>Face Death</move> and return from death’s door with a soul-bound quest.
+      Label: Doomed
+    ENCUMBERED:
+      Description: <term>Encumbered</term> is marked as appropriate to the circumstances when you are carrying excessive or cumbersome weight. Encumbered is cleared when you lighten your load.
+      Label: Encumbered
+    MAIMED:
+      Description: <term>Maimed</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You have suffered a wound which causes you ongoing physical challenges, such as the loss of an eye or hand. Or, you bear horrific scars which serve as a constant reminder of your failures.
+      Label: Maimed
+    SHAKEN:
+      Description: <term>Shaken</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. You are despairing or distraught, and need comfort to recover. You cannot increase your spirit track until you <move>Sojourn</move> to clear this debility.
+      Label: Shaken
+    TORMENTED:
+      Description: <term>Tormented</term> is marked when you <move>Face Desolation</move> and undertake a quest to prevent a dire future.
+      Label: Tormented
+    Title: Debilities
+    UNPREPARED:
+      Description: <term>Unprepared</term> is marked when you are at 0 supply and are <move>Out of Supply</move>. You and your allies share the same supply value, and will mark unprepared together. You cannot increase your supply track until you <move>Sojourn</move> to clear this debility.
+      Label: Unprepared
+    WOUNDED:
+      Description: <term>Wounded</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You are severely injured and need treatment to recover. You cannot increase your health track until you <move>Heal</move> or <move>Sojourn</move> to clear this debility
+      Label: Wounded
+  DELVE_SITE:
+    Danger: Danger
+    DangersTitle: Dangers
+    Domain: Domain
+    Feature: Feature
+    FeaturesTitle: Features
+    Theme: Theme
+    Title: Delve sites
+  DERELICT:
+    RandomType: Random derelict location
+    Type: Derelict location
+  DOCUMENT:
+    Anomaly: Anomaly
+    Asset: Asset
+    Bond: Bond
+    Clock: Clock
+    Connection: Connection
+    Creature: Creature
+    Debility: Debility
+    DelveSite: Delve site
+    Derelict: Derelict
+    Encounter: Encounter
+    Expedition: Expedition
+    Foe: Foe
+    Impact: Impact
+    IncidentalVehicle: Incidental vehicle
+    Legacy: Legacy
+    Location: Location
+    Monstrosity: Monstrosity
+    Move: Move
+    NonPlayerCharacter: Non-player character
+    OracleTable: Oracle table
+    Planet: Planet
+    PlayerCharacter: Player character
+    PrecursorVault: Precursor Vault
+    Progress: Progress
+    ProgressTrack: Progress track
+    Rarity: Rarity
+    Region: Region
+    SceneChallenge: Scene challenge
+    Sector: Sector
+    Settlement: Settlement
+    Shared: Shared
+    SharedSheet: Shared sheet
+    Star: Stellar Object
+    Starship: Starship
+    Truth: Truth
+    Vault: Vault
+    Vow: Vow
+    Waypoint: Waypoint
+  ENCOUNTER:
+    Title: Encounters
+    VARIANT:
+      Label: Variant
+      Title: Variants
+  EXPERIENCE:
+    CLEAR:
+      Alert: Cleared {number} experience
+    MARK:
+      Alert: Marked {number} experience
+      Label: Mark experience
+    REFUND:
+      Alert: Refunded {number} experience
+      Label: Refund experience
+    SPEND:
+      Alert: Spent {number} experience
+      Label: Spend experience
+    Title: Experience
+    Xp: XP
+  FIRST_START:
+    Intro: Welcome to Ironsworn! There are just a few choices to make before starting.
+    Save: Save
+    Welcome: Welcome
+  GAME:
+    Classic: Classic
+    Delve: Delve
+    Ironsworn: Ironsworn
+    IronswornClassic: Ironsworn classic
+    IronswornDelve: 'Ironsworn: Delve'
+    IronswornStarforged: 'Ironsworn: Starforged'
+    Starforged: Starforged
+  GENERIC:
+    ADD:
+      Alert: Added <i>{entity}</i>
+      Label: Add
+    AdvancedOptions: Advanced options
+    CLEAR:
+      Alert: Cleared <i>{entity}</i>
+      Label: Clear
+    COLLAPSE:
+      Label: Collapse
+    Chat: Chat
+    DELETE:
+      Alert: Deleted <i>{entity}</i>
+      Confirm: Are you sure? This cannot be undone.
+      Label: Delete
+    DESCRIPTION:
+      Label: Description
+    EDIT:
+      Alert: <i>{entity}</i> set to {value}
+      Label: Edit
+    ENABLE:
+      Label: Enable
+    Field: Field
+    Fields: Fields
+    LABEL:
+      Label: Label
+    MARK:
+      Alert: Marked <i>{entity}</i>
+      Label: Mark
+    OPEN:
+      Label: Open
+    QuestStarter: Quest starter
+    RENAME:
+      Alert: <i>{oldName}</i> renamed to <i>{newName}</i>
+      Label: Rename
+    SAVE:
+      Label: Save
+    SEARCH:
+      Label: Search
+    SUMMARY:
+      Label: Summary
+  IMPACT:
+    BATTERED:
+      Description: <term>Battered</term> may be marked when your vehicle is at 0 integrity and you fail to <move>Withstand Damage</move>. It’s barely holding together. Until you successfully <move>Repair</move>, you cannot raise the vehicle’s integrity.
+      Label: Battered
+    BURDENS:
+      Description: <term>Burdens</term> leave you bound to new vows. Clearing a burden can only be accomplished by resolving the quest.
+      Title: Burdens
+    CURSED:
+      Description: <term>Cursed</term> is marked when you <move>Face Death</move> and return with a soul-bound quest. This burden can only be cleared by completing the quest.
+      Label: Cursed
+    DOOMED:
+      Description: <term>Doomed</term> is marked when you <move>Face Death</move> and return from death’s door with a soul-bound quest.
+      Label: Doomed
+    Description: You suffer <term>impacts</term> as you face harrowing challenges. Some impacts are temporary and easily mended; others are permanent.
+    INDEBTED:
+      Description: <term>Indebted</term> is marked when you <move>Overcome Destruction</move>. To replace what was lost and repay the debt, you will take on a duty-bound quest.
+      Label: Indebted
+    LASTING_EFFECTS:
+      Description: Lasting effects are permanent. They forever impact your character through the momentum adjustment and—more importantly—the narrative impact.
+      Title: Lasting effects
+    MISFORTUNES:
+      Description: If you are wounded, shaken, or unprepared, you cannot increase the associated condition meter until you make a <term>recover move</term> to clear the impact.
+      Title: Misfortunes
+    PERMANENTLY_HARMED:
+      Description: <term>Permanently harmed</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You have suffered a wound that you must reckon with, such as the loss of an eye or hand. Or you bear physical scars that are a constant reminder of a harrowing incident.
+      Label: Permanently harmed
+    SHAKEN:
+      Description: <term>Shaken</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. You are despairing or distraught. You cannot increase your spirit meter until you <move>Hearten</move> to clear this impact.
+      Label: Shaken
+    TORMENTED:
+      Description: <term>Tormented</term> is marked when you <move>Face Desolation</move>, gain visions of a distressing future, and undertake a quest to prevent that dire fate.
+      Label: Tormented
+    TRAUMATIZED:
+      Description: <term>Traumatized</term> may be marked when you are at 0 spirit and fail to <move>Endure Stress</move>. Your experiences have left you emotionally or mentally scarred.
+      Label: Traumatized
+    Title: Impacts
+    UNPREPARED:
+      Description: <term>Unprepared</term> is marked when you <move>Sacrifice Resources</move> and are reduced to 0 supply. You are not properly equipped for the dangers of the Forge. Because you and your allies share the same supply value, you mark unprepared together. You cannot increase your supply meter until you <move>Resupply</move> to clear this impact.
+      Label: Unprepared
+    VEHICLE_TROUBLES:
+      Description: <p><term>Vehicle troubles</term> are only a factor when you are piloting or aboard that vehicle. Otherwise, they do not count as an impact and do not affect your maximum momentum and momentum reset.</p><p>If playing with allies, a vehicle trouble affects anyone on the vehicle, regardless of who owns or manages the asset.</p>
+      Title: Vehicle troubles
+    WOUNDED:
+      Description: <term>Wounded</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You are severely injured.  You cannot increase your health meter until you <move>Heal</move> to clear this impact.
+      Label: Wounded
+  LEGACY:
+    BONDS:
+      Description: Create connections and build relationships.
+      Label: Bonds
+    DISCOVERIES:
+      Description: Explore the Forge and unlock its mysteries.
+      Label: Discoveries
+    Label: As you fulfill vows, form bonds, and explore the galaxy, you gain <term>experience</term> on <term>legacy tracks</term>.
+    QUESTS:
+      Description: Swear vows and do what you must to see them fulfilled.
+      Label: Quests
+    Title: Legacies
+    Track: legacy track
+  LOCATION:
+    DeepSpace: deep space
+    Orbital: orbital
+    Planetside: planetside
+    RequiresType: This oracle requires a location type to be selected.
+    RollForDetails: Roll location details
+    Type: Location type
+  MOMENTUM:
+    ACTION_DIE_CANCEL:
+      Description: Your action die was cancelled because the number on the action die matched your negative momentum value. You can’t take a bonus from an asset ability triggered by that die. If an asset forces a penalty for a specific action die value, that outcome still applies.
+    BURN:
+      Description: When you have positive momentum, after you make an action roll, you may replace your action score with your current momentum value to improve your result.
+      Label: Burn
+      OutcomeReplacement: 'Burn momentum: <strong>{type}</strong>'
+      OutcomeReplacementReason: Momentum burn
+    MAXIMUM:
+      Description: Impacts reduce your max momentum. Each marked impact reduces your max momentum (normally 10) by 1.
+      Label: Max
+    RESET:
+      Description: If you have one marked impact, your momentum reset is +1 (instead of +2). If you have more than one marked impact, your momentum reset is 0 (instead of +2).
+      Label: Reset
+  MOVE:
+    Description: <term>Moves</term> are self-contained systems to resolve an action, scene, or question. There are moves to cover most uncertain or risky situations you encounter. Moves are centered on the players and protagonists. Other characters do not make moves.
+    Custom: Custom moves
+    Delete: Delete move
+    FullText: Full text
+    SEARCH:
+      Description: Start typing to filter moves by their names and categories.
+    Title: Moves
+    TRIGGER:
+      Label: Trigger
+      Description: This is the move’s trigger. <term>Triggers</term> are phrased as “when you [blank].” When you do that thing, or encounter that situation, make the move.
+  ORACLE:
+    Custom: Custom oracles
+    Roll: Roll oracle
+    SEARCH:
+      Description: Start typing to filter oracles by their names and categories.
+    Title: Oracles
+  PC:
+    Callsign: Callsign
+    Characteristics: Characteristics
+    Pronouns: Pronouns
+  PLANET:
+    RandomType: Random planetary class
+    Type: Planetary class
+  PROGRESS:
+    BOX:
+      '1': 1 box
+      '2': 2 boxes
+      '3': 3 boxes
+      Many: '{number} boxes'
+    CHALLENGE_RANK:
+      '1':
+        Attr: troublesome
+        Label: Troublesome
+      '2':
+        Attr: dangerous
+        Label: Dangerous
+      '3':
+        Attr: formidable
+        Label: Formidable
+      '4':
+        Attr: extreme
+        Label: Extreme
+      '5':
+        Attr: epic
+        Label: Epic
+      Label: Challenge rank
+      SET:
+        Alert: Challenge rank changed from {oldAttr} to {newAttr}
+    CLEAR:
+      Alert: Cleared {amount} of progress (now {currentScore}/10)
+      Label: Clear {amount} of progress
+    COMPLETE:
+      CLEAR:
+        Alert: Marked as incomplete
+      MARK:
+        Alert: Marked as complete
+        Label: Completed
+    Incomplete: Incomplete
+    MARK:
+      Alert: Marked {amount} of progress (now {currentScore}/10)
+      Label: Mark {amount} of progress
+    ProgressRoll: Progress roll
+    ProgressScore: Progress score
+    Rank: Rank
+    Recommit: Recommit
+    Roll: Roll progress
+    RollAndCompare: Roll the challenge dice and compare to your progress ({number})
+    STAR:
+      Description: When active, this item will also show up on the 'Legacies' tab.
+    TICK:
+      '1': 1 tick
+      '2': 2 ticks
+      '3': 3 ticks
+      Many: '{value} ticks'
+    Title: Progress
+    Track: Track
+  REGION:
+    Description: 'The Forge is divided broadly into four regions. The choices you made when you selected your campaign truths will influence how you envision the regions and the people who live there. But the relative differences between the regions will remain the same: The Terminus is where the bulk of your people live, the Outlands is an expanding frontier, and the Expanse is what lies beyond.'
+    EXPANSE:
+      Description: Only a few bold pioneers have delved these far-flung reaches. <strong>If you’re ready to face the dangers of lonely exploration within uncharted space, start here.</strong>
+      Label: Expanse
+      Lore: A few bold pioneers have delved the far-flung reaches of the Forge. Isolated settlements have been built among these distant domains, but they are usually lost and disconnected from the settled regions.
+    OUTLANDS:
+      Description: This region represents an area of recent expansion. Settlements here are scattered, and navigational paths are often uncharted and perilous. <strong>If you envision yourself as a spacer on a wild frontier, start here.</strong>
+      Label: Outlands
+      Lore: In the last few decades, your people have pushed deeper into the galaxy, searching for habitable planets, resources, and opportunities. Settlements within the Outlands are scattered, and navigation paths are often uncharted.
+    TERMINUS:
+      Description: Settlements are relatively common here, and spaceborne routes between communities are usually well-charted. <strong>If you want to focus on interacting with other people and communities, start here.</strong>
+      Label: Terminus
+      Lore: Your people landed in this region following their exodus from their home galaxy. Settlements are common here. Factions compete for resources, and spaceborne caravans follow charted paths among the stars. But the Forge is a vast galaxy; even here, there are still unknown and isolated domains.
+    Title: Select region
+    VOID:
+      Description: In the reaches beyond the Forge, isolated stars are separated by vast gulfs of nothing. Travel and settling here is impractical if not impossible. Don’t start your campaign here.
+      Label: Void
+      Lore: Beyond the Forge, there are only a few isolated stars and vast gulfs of nothing. Travel beyond the periphery of the Forge is difficult or impossible.
+  RESOURCE:
+    CLASSIC:
+      Label: Status track
+      Title: Status tracks
+    HEALTH:
+      Attr: health
+      Description: <term>Health</term> represents your physical condition and stamina.
+      Label: Health
+    INTEGRITY:
+      Attr: integrity
+      Label: Integrity
+    MOMENTUM:
+      Attr: momentum
+      Description: Your <term>momentum meter</term> ranges from -6 to +10 and represents your inertia, luck, and confidence. Move results and asset abilities may prompt you to increase or decrease momentum.
+      Label: Momentum
+    SPIRIT:
+      Attr: spirit
+      Description: <term>Spirit</term> is your morale and mental state.
+      Label: Spirit
+    STARFORGED:
+      Description: The <term>condition meters</term> for <term>health</term>, <term>spirit</term>, and <term>supply</term> represent your overall readiness.
+      Label: Condition meter
+      Title: Condition meters
+    SUFFER:
+      Alert: Suffered -{number} {attr} (now {newValue})
+      Label: Suffer -{number} {attr}
+    SUPPLY:
+      Attr: supply
+      DESCRIPTION:
+        Classic: <term>Supply</term> is an abstract representation of your preparedness, including ammo, food, water, and general upkeep.
+        Starforged: <term>Supply</term> is an abstract representation of your overall preparedness, including food, water, fuel, weapons, ammo, equipment, cargo, money, and general upkeep.
+      Label: Supply
+    TAKE:
+      Alert: Took +{number} {attr} (now {newValue})
+      Label: Take +{number} {attr}
+    Track: '{attr} track'
+  ROLL:
+    ActionDie: Action die
+    ActionRoll: Action roll
+    ActionScore: Action score
+    ActionScoreCap: The action score is never greater than 10—anything over that is ignored.
+    AddPlus: Add +{number}
+    Adds: Adds
+    ChallengeDice: Challenge dice
+    ChallengeDie: Challenge die
+    DIALOG:
+      EXTRA_CHALLENGE_DICE:
+        Label: Extra challenge dice
+      PREDETERMINED_OUTCOME:
+        Label: Predetermined outcome
+      PRESET_ACTION_DIE:
+        Label: Preset action die
+      PRESET_CHALLENGE_DICE:
+        Label: Preset challenge dice
+    Label: Roll
+    METHOD:
+      ALL:
+        Fallback: roll all of {attrList}
+      ANY:
+        '2': roll +{attr1} or +{attr2}
+        '3': roll +{attr1}, +{attr2}, or +{attr3}
+        Fallback: roll any of {attrList}
+      HIGHEST:
+        '2': roll +{attr1} or +{attr2}, whichever is higher
+        '3': roll +{attr1}, +{attr2}, or +{attr3}, whichever is highest
+        Fallback: roll highest of {attrList}
+      LOWEST:
+        '2': roll +{attr1} or +{attr2}, whichever is lower
+        '3': roll +{attr1}, +{attr2}, or +{attr3}, whichever is lowest
+        Fallback: roll lowest of {attrList}
+    OUTCOME:
+      HIT:
+        Label: Hit
+        OnOutcome: On a hit
+      Label: Outcome
+      MISS:
+        Alert: Miss
+        Description: You have lost control of the situation. You encounter hardships, new dangers, or increasing risk. What happens next?
+        Label: Miss
+        MATCH:
+          Alert: Miss with a match!
+          Description: The match represents a heightened negative outcome, a complication, or new danger.
+          Label: Miss with a match
+        OnOutcome: On a miss
+      OnAMatch: On a match
+      STRONG_HIT:
+        Alert: Strong hit
+        Description: You are in control. You are driving the narrative and taking proactive actions. What do you do next?
+        Label: Strong hit
+        MATCH:
+          Alert: Strong hit with a match!
+          Description: The match represents an interesting twist or new opportunity.
+          Label: Strong hit with a match
+        OnOutcome: On a strong hit
+      Title: Outcomes
+      WEAK_HIT:
+        Alert: Weak hit
+        Description: The situation is slipping out of your control. Instead of acting, you react. How do you respond?
+        Label: Weak hit
+        OnOutcome: On a weak hit
+    PlusStat: roll +{attr}
+    Reroll: Reroll
+    Versus: vs.
+  ROTATE:
+    Ccw: Rotate counter-clockwise
+    Cw: Rotate clockwise
+  SECTOR:
+    BUILD:
+      STEP:
+        '1': Choose your starting region
+        '10': Introduce a sector trouble
+        '11': Finalize the starting sector
+        '2': Determine the number of settlements
+        '3': Generate settlement details
+        '4': Generate planets
+        '5': Generate stars (optional)
+        '6': Create a sector map
+        '7': Create passages
+        '8': Zoom in on a settlement
+        '9': Create a local connection
+  SETTINGS:
+    ConfigurationDialog:
+      Hint: Choose between Ironsworn and Starforged UI elements.
+      Label: Ironsworn/Starforged configuration dialog
+      Name: Configuration dialog
+    EvenMatchesOnly:
+      Hint: Resolve the impact of a match only when the challenge dice come up as an even number (2, 4, 6, 8, or 10).
+      Name: Even matches only
+    LogChanges:
+      Hint: If on, changes to character stats will be logged to the chat.
+      Name: Log character updates
+    PromptTruths:
+      Hint: Open the above dialog on startup.
+      Name: Ironsworn/Starforged Dialog on Start
+    SFBeta:
+      Hint: Enables in-progress Starforged features.
+      Name: Show Starforged beta content
+    SharedSupply:
+      Hint: If on, changing any character/shared supply meter changes all other actors' supply meters as well.
+      Name: Shared supply meter
+    Theme:
+      Hint: Select the visual look for this game. Requires a reload.
+      Ironsworn: Ironsworn Classic
+      Name: Visual theme
+      Starforged: Starforged (experimental)
+    Tools:
+      Hint: Which set of moves and oracles will appear when opening a character sheet.
+      Name: Character tools
+      Sheet: Match sheet
+  SETTING_TRUTHS:
+    Custom: Custom Truth
+    Save: Save Your Truths
+    TITLE:
+      Classic: 'Your World: Truths'
+      Starforged: Setting Truths
+  SETTLEMENT:
+    RandomType: Random settlement location
+    Type: Settlement location
+  STAR:
+    RandomType: Random stellar object
+    Type: Type of stellar object
+  STAT:
+    Description: Your five <term>stats</term> are core to your character’s capabilities, nature, and approach. A stat is often added as a bonus when you take action.
+    EDGE:
+      Attr: edge
+      Description: Quickness, agility, and prowess when fighting at a distance.
+      Label: Edge
+    HEART:
+      Attr: heart
+      Description: Courage, willpower, empathy, sociability, and loyalty.
+      Label: Heart
+    IRON:
+      Attr: iron
+      Description: Physical strength, endurance, aggressiveness, and prowess when fighting at close quarters.
+      Label: Iron
+    SHADOW:
+      Attr: shadow
+      Description: Sneakiness, deceptiveness, and cunning.
+      Label: Shadow
+    Title: Stats
+    WITS:
+      Attr: wits
+      Description: Expertise, knowledge, and observation.
+      Label: Wits
+  THREAT:
+    Label: Threat
+    MARK:
+      Alert: Marked {number} menace on {title}
+      Label: Mark menace
+    Menace: menace
+    Title: Threats
+  TOOLS:
+    STARFORGED:
+      Label: Starforged tools
+  VAULT:
+    RandomType: Random vault location
+    Title: Vaults
+    Type: Vault location
+  VOW:
+    Description: Vows are sacred oaths to complete perilous quests.
+    Recommit: Recommit to the quest (after rolling a miss on Fulfill Your Vow)
+    RecommitDescription:
+      Ironsworn: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).
+      Starforged: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow’s rank by one (if not already epic).
+    Title: Vows
+  NonPlayerCharacter:
+    Description: <term>NPCs</term> (non-player characters and creatures) are the other characters who inhabit your universe. They can have a single mechanical attribute, their <term>rank</term>, to help set their relative scale and abilities. But you do not roll dice for them. When you attempt to influence them, oppose them, or aid them, take action from your character’s perspective.

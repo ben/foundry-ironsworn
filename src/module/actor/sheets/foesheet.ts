@@ -21,7 +21,7 @@ export class FoeSheet extends VueActorSheet {
     return [
       {
         class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
+        label: game.i18n.localize('Edit'),
         icon: 'fas fa-edit',
         onclick: () => {
           const item = this.actor.items.find((x) => x.type === 'progress')

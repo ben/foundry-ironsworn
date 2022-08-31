@@ -2,7 +2,7 @@
   <header class="sheet-header">
     <div class="header-fields">
       <h1 class="charname">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'Name'}}" />
       </h1>
       <h3>
         <input name="data.description" type="text" value="{{data.data.description}}"
@@ -11,7 +11,7 @@
     </div>
   </header>
 
-  <h2>{{localize 'IRONSWORN.Fields'}}</h2>
+  <h2>{{localize 'IRONSWORN.GENERIC.Fields'}}</h2>
   <div class="flexcol item-list">
     {{#each data.data.fields}}
     <div class="flexrow item-row" data-idx={{@index}}>
@@ -56,7 +56,7 @@
   </p>
   {{/each}}
 
-  <h2>{{localize 'IRONSWORN.Options'}}</h2>
+  <h2>{{localize 'IRONSWORN.ASSET.Options'}}</h2>
   {{#each data.data.exclusiveOptions}}
   <div class="flexrow">
     <input type="checkbox" class="ironsworn__option__enable" data-idx="{{@index}}" {{checked selected}}
@@ -77,9 +77,9 @@
       <input type="checkbox" name="data.track.enabled" {{checked data.data.track.enabled}} style="flex-grow: 0;" />
       <span>{{localize 'IRONSWORN.Enabled'}}</span>
     </label>
-    <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Name'}}</span>
+    <span style="flex-grow: 0; margin: 0 5px;">{{localize 'Name'}}</span>
     <input type="text" name="data.track.name" value={{data.data.track.name}}>
-    <span style="flex-grow: 0; margin: 0 5px;">{{localize 'IRONSWORN.Max'}}</span>
+    <span style="flex-grow: 0; margin: 0 5px;">{{localize 'Maximum'}}</span>
     <input type="number" name="data.track.max" value={{data.data.track.max}}>
   </div>
   <div class="flexrow track" style="margin-top: 5px;">

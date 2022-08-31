@@ -16,7 +16,7 @@ import { IronswornItem } from '../item/item'
 import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
 import {
   computeRollOutcome,
-  computeOutcomeText,
+  computeOutcomeLabel,
 } from '../rolls/chat-message.js'
 import {
   ACTION_DIE_SIDES,
@@ -135,10 +135,12 @@ function calculateCardTitle(params: RollMessageParams) {
   }
 
   if (params.subtitle) {
-    return `${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${params.subtitle}`
+    return `${game.i18n.localize('IRONSWORN.PROGRESS.ProgressRoll')}: ${
+      params.subtitle
+    }`
   }
 
-  const rollText = game.i18n.localize('IRONSWORN.Roll')
+  const rollText = game.i18n.localize('IRONSWORN.ROLL.Label')
   if (params.stat) {
     const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
     return `${rollText} +${statText}`
@@ -212,7 +214,7 @@ function calculateMomentumProps(
     challengeDie1,
     challengeDie2
   )
-  const momentumHitTypeI18n = computeOutcomeText(momentumHitType, match)
+  const momentumHitTypeI18n = computeOutcomeLabel(momentumHitType, match)
 
   if (momentumHitType > rawOutcome)
     return {
@@ -262,7 +264,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
     themeClass: `theme-${IronswornSettings.theme}`,
     action,
     actionCapped,
-    hitType: computeOutcomeText(hitType, match),
+    hitType: computeOutcomeLabel(hitType, match),
     title: calculateCardTitle(params),
     resultText: calculateMoveResultText(hitType, params.move),
     bonusContent,
@@ -334,7 +336,7 @@ export async function createStarforgedMoveRollChat(
     themeClass: `theme-${IronswornSettings.theme}`,
     action,
     actionCapped,
-    hitType: computeOutcomeText(hitType, match),
+    hitType: computeOutcomeLabel(hitType, match),
     title: calculateSFCardTitle(params),
     resultText: calculateSFMoveResultText(hitType, match, params.move),
     nextOracles: await sfNextOracles(params.move),

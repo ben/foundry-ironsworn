@@ -1,16 +1,17 @@
 <template>
-  <label class="checkbox">
+  <label class="checkbox" :data-tooltip="getDescriptionKey()">
     <input
       type="checkbox"
       @change="input"
       :checked="actor.data.debility[name]"
     />
-    {{ $t(`IRONSWORN.${$capitalize(name)}`) }}
+    {{ $t(getLabelKey()) }}
   </label>
 </template>
 
 <script lang="ts" setup>
 import { inject, nextTick, Ref } from 'vue'
+import { DebilityKeys, ImpactKeys } from '../../../features/chat-alert.js'
 import { IronswornSettings } from '../../../helpers/settings'
 import { $ActorKey } from '../../provisions'
 
@@ -20,7 +21,21 @@ const $actor = inject($ActorKey)
 const props = defineProps<{
   name: string
   global?: boolean
+  /**
+   * Whether to use Ironsown-classic-style "Debilities" instead of "Impacts"
+   */
+  classic?: boolean
 }>()
+
+function getDescriptionKey() {
+  return `${
+    (props.classic ? DebilityKeys : ImpactKeys)[props.name]
+  }.Description`
+}
+
+function getLabelKey() {
+  return `${(props.classic ? DebilityKeys : ImpactKeys)[props.name]}.Label`
+}
 
 async function input(ev) {
   const value = ev.currentTarget.checked

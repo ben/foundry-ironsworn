@@ -14,7 +14,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      title: game.i18n.localize('IRONSWORN.CreateActor'),
+      title: game.i18n.format('DOCUMENT.Create', { entity: 'DOCUMENT.Actor' }),
       template: 'systems/foundry-ironsworn/templates/actor/create.hbs',
       id: 'new-actor-dialog',
       resizable: false,
@@ -69,7 +69,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const drawResult = await table?.draw({ displayChat: false })
 
     this._createWithFolder(
-      drawResult.results[0]?.data.text || 'Character',
+      drawResult.results[0]?.data.text || game.i18n.localize('Character'),
       'character',
       ev.currentTarget.dataset.img || undefined
     )
@@ -78,7 +78,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sharedCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'Shared',
+      game.i18n.localize('IRONSWORN.DOCUMENT.Shared'),
       'shared',
       ev.currentTarget.dataset.img || undefined
     )
@@ -87,7 +87,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _siteCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'Site',
+      game.i18n.localize('IRONSWORN.DOCUMENT.DelveSite'),
       'site',
       ev.currentTarget.dataset.img || undefined
     )
@@ -96,7 +96,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _foeCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'NPC',
+      game.i18n.localize('IRONSWORN.DOCUMENT.Encounter'),
       'foe',
       ev.currentTarget.dataset.img || undefined
     )
@@ -105,11 +105,11 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfcharacterCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    // Roll an Ironlander name
+    // Roll a Starforged name
     const name = await this._randomStarforgedName()
 
     this._createWithFolder(
-      name || 'Character',
+      name || game.i18n.localize('Character'),
       'character',
       ev.currentTarget.dataset.img || undefined,
       'ironsworn.StarforgedCharacterSheet'
@@ -119,7 +119,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfshipCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'Starship',
+      game.i18n.localize('IRONSWORN.DOCUMENT.Starship'),
       'starship',
       ev.currentTarget.dataset.img || undefined
     )
@@ -128,7 +128,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfLocationCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'Location',
+      game.i18n.localize('IRONSWORN.DOCUMENT.Location'),
       'location',
       ev.currentTarget.dataset.img || undefined
     )
@@ -160,6 +160,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _ironlanderNameTable(): Promise<RollTable | undefined> {
     const table = game.tables?.find(
+      // TODO: consider including the delve "Namesake" table (which the text suggests for use in addition to the ironlander names table)
       (x) => x.name === 'Oracle: Ironlander Names'
     )
     if (table) return table
@@ -176,7 +177,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _randomStarforgedName(): Promise<string | undefined> {
     const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     if (!pack) return undefined
-
+    // TODO: SF notes that given names can often be usd as family names and vice versa, so we could potentially randomize which table is used to offer a greater variety of results
     const firstTable = (await getFoundryTableByDfId(
       'Starforged/Oracles/Characters/Name/Given_Name'
     )) as any

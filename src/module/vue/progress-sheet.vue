@@ -12,9 +12,11 @@
       @change="subtypeChange"
       style="margin: 0.5rem 0"
     >
-      <option value="vow">{{ $t('IRONSWORN.Vow') }}</option>
-      <option value="progress">{{ $t('IRONSWORN.Progress') }}</option>
-      <option value="bond">{{ $t('IRONSWORN.Connection') }}</option>
+      <option value="vow">{{ $t('IRONSWORN.DOCUMENT.Vow') }}</option>
+      <option value="progress">
+        {{ $t('IRONSWORN.DOCUMENT.Progress') }}
+      </option>
+      <option value="bond">{{ $t('IRONSWORN.DOCUMENT.Connection') }}</option>
     </select>
 
     <hr class="nogrow" />
@@ -24,7 +26,7 @@
         v-model="item.data.completed"
         @change="saveChecks"
       />
-      {{ $t('IRONSWORN.Completed') }}
+      {{ $t('IRONSWORN.PROGRESS.COMPLETE.MARK.Label') }}
     </label>
     <hr class="nogrow" />
 
@@ -35,7 +37,7 @@
           v-model="item.data.hasTrack"
           @change="saveChecks"
         />
-        {{ $t('IRONSWORN.Track') }}
+        {{ $t('IRONSWORN.PROGRESS.Track') }}
       </label>
 
       <transition name="slide">
@@ -78,7 +80,7 @@
           v-model="item.data.hasClock"
           @change="saveChecks"
         />
-        {{ $t('IRONSWORN.Clock') }}
+        {{ $t('IRONSWORN.DOCUMENT.Clock') }}
       </label>
 
       <transition name="slide">
@@ -91,7 +93,7 @@
             />
           </div>
           <div class="flexcol">
-            Segments:
+            {{ $t('IRONSWORN.CLOCK.SEGMENT.Title') }}
             <select
               class="nogrow"
               v-model="item.data.clockMax"
@@ -129,7 +131,7 @@
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
-import { RANKS, RANK_INCREMENTS } from "../constants";
+import { RANKS, RANK_INCREMENTS } from '../constants'
 import { $ItemKey } from './provisions'
 import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
@@ -153,7 +155,7 @@ const editMode = computed(
 )
 
 const rankText = computed(() =>
-  game.i18n.localize(RANKS[props.item.data.rank])
+  game.i18n.localize(RANKS[props.item.data.rank] + '.Label')
 )
 
 function setRank(rank) {

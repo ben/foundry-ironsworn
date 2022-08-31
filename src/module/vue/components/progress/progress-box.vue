@@ -17,13 +17,13 @@
               v-if="editMode"
               icon="trash"
               @click="destroy"
-              :tooltip="$t('IRONSWORN.DeleteItem')"
+              :tooltip="$t('Delete')"
             />
             <btn-faicon
               class="block nogrow"
               icon="edit"
               @click="edit"
-              :tooltip="$t('IRONSWORN.Edit')"
+              :tooltip="$t('Edit')"
             />
             <btn-faicon
               class="block nogrow"
@@ -49,7 +49,7 @@
             <btn-rollprogress
               v-if="item.data.hasTrack"
               :item="item"
-              :tooltip="$t('IRONSWORN.ProgressRoll')"
+              :tooltip="$t('IRONSWORN.PROGRESS.ProgressRoll')"
               class="flexrow nogrow block"
             />
           </div>
@@ -126,7 +126,7 @@ const foundryItem = computed(() => {
 const subtitle = computed(() => {
   let subtype = capitalize(props.item.data.subtype)
   if (subtype === 'Bond') subtype = 'Connection' // translate name
-  return game.i18n.localize(`IRONSWORN.${subtype}`)
+  return game.i18n.localize(`IRONSWORN.DOCUMENT.${subtype}`)
 })
 const completedIcon = computed(() => {
   return props.item.data.completed ? 'check-circle' : 'circle-notch'

@@ -15,11 +15,11 @@
 
   {{#if actor.data.flags.foundry-ironsworn.edit-mode}}
   <div class="flexrow" style="position: absolute; right: 5px; top: 5px;">
-    <div class="clickable block nogrow ironsworn__{{item.type}}__settings" title="{{localize 'IRONSWORN.Edit'}}"
+    <div class="clickable block nogrow ironsworn__{{item.type}}__settings" title="{{localize 'Edit'}}"
       data-item="{{item.id}}" style="padding: 5px;">
       <i class="fas fa-edit"></i>
     </div>
-    <div class="clickable block nogrow ironsworn__{{item.type}}__delete" title="{{localize 'IRONSWORN.DeleteItem'}}"
+    <div class="clickable block nogrow ironsworn__{{item.type}}__delete" title="{{localize 'Delete'}}"
       data-item="{{item.id}}" style="padding: 5px;">
       <i class="fas fa-trash"></i>
     </div>
@@ -47,7 +47,7 @@
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="50" width="50" />
     <h1 class="charname"><input name="name" type="text" value="{{actor.name}}"
-        placeholder="{{localize 'IRONSWORN.Name'}}" /></h1>
+        placeholder="{{localize 'Name'}}" /></h1>
   </header>
 
   <div class="flexcol nogrow" style="margin-bottom: 1em;">
@@ -84,7 +84,7 @@
     </div>
   </div>
 
-  <h3>{{localize 'IRONSWORN.Moves'}}</h3>
+  <h3>{{localize 'IRONSWORN.MOVES.Title'}}</h3>
 
   <div class="boxgroup" style="margin-bottom: 1em;">
 
