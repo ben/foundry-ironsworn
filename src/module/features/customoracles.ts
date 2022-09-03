@@ -52,16 +52,14 @@ async function createOracleTree(
 export async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
   return createOracleTree(
     'foundry-ironsworn.ironswornoracles',
-    ISOracleCategories,
-    getFoundryTableByDfId
+    ISOracleCategories
   )
 }
 
 export async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
   return createOracleTree(
     'foundry-ironsworn.starforgedoracles',
-    SFOracleCategories,
-    getFoundryTableByDfId
+    SFOracleCategories
   )
 }
 
@@ -184,6 +182,22 @@ export function findPathToNodeByTableId(
     ret.push(node)
     const foundTable = node.tables.find((x) => x.id === tableId)
     if (foundTable) return true
+    for (const child of node.children) {
+      if (walk(child)) return true
+    }
+    ret.pop()
+    return false
+  }
+
+  walk(rootNode)
+  return ret
+}
+
+export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfId: string) {
+  const ret: IOracleTreeNode[] = []
+  function walk(node: IOracleTreeNode) {
+    ret.push(node)
+    if (node.dataforgedNode?.$id === dfId) return true
     for (const child of node.children) {
       if (walk(child)) return true
     }

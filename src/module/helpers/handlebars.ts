@@ -9,12 +9,12 @@ import {
   CHALLENGE_DIE_SIDES,
   DIE_LOWEST_FACE,
   SCORE_MAX,
-} from '../rolls/roll.js'
+} from '../rolls/ironsworn-roll.js'
 import {
   computeOutcomeText,
   formatRollMethod,
   formatRollPlusStat,
-} from '../rolls/chat-message.js'
+} from '../rolls/ironsworn-roll-message.js'
 import { localeCapitalize } from '../rolls/preroll-dialog.js'
 
 interface RollClassesOptions {

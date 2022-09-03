@@ -8,7 +8,7 @@
 import { compact, pick, range, sum } from 'lodash'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
-import { computeRollOutcome } from './chat-message'
+import { computeRollOutcome } from './ironsworn-roll-message'
 
 /**
  * The maximum action score (for Ironsworn action rolls) or progress score (for Ironsworn progress rolls).

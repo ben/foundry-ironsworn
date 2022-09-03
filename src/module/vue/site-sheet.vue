@@ -105,58 +105,22 @@
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
-        <site-denizenbox
-          :idx="0"
-          :ref="(e) => (denizenRefs[0] = e)"
-        />
-        <site-denizenbox
-          :idx="1"
-          :ref="(e) => (denizenRefs[1] = e)"
-        />
-        <site-denizenbox
-          :idx="2"
-          :ref="(e) => (denizenRefs[2] = e)"
-        />
-        <site-denizenbox
-          :idx="3"
-          :ref="(e) => (denizenRefs[3] = e)"
-        />
+        <site-denizenbox :idx="0" :ref="(e) => (denizenRefs[0] = e)" />
+        <site-denizenbox :idx="1" :ref="(e) => (denizenRefs[1] = e)" />
+        <site-denizenbox :idx="2" :ref="(e) => (denizenRefs[2] = e)" />
+        <site-denizenbox :idx="3" :ref="(e) => (denizenRefs[3] = e)" />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox
-          :idx="4"
-          :ref="(e) => (denizenRefs[4] = e)"
-        />
-        <site-denizenbox
-          :idx="5"
-          :ref="(e) => (denizenRefs[5] = e)"
-        />
-        <site-denizenbox
-          :idx="6"
-          :ref="(e) => (denizenRefs[6] = e)"
-        />
-        <site-denizenbox
-          :idx="7"
-          :ref="(e) => (denizenRefs[7] = e)"
-        />
+        <site-denizenbox :idx="4" :ref="(e) => (denizenRefs[4] = e)" />
+        <site-denizenbox :idx="5" :ref="(e) => (denizenRefs[5] = e)" />
+        <site-denizenbox :idx="6" :ref="(e) => (denizenRefs[6] = e)" />
+        <site-denizenbox :idx="7" :ref="(e) => (denizenRefs[7] = e)" />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox
-          :idx="8"
-          :ref="(e) => (denizenRefs[8] = e)"
-        />
-        <site-denizenbox
-          :idx="9"
-          :ref="(e) => (denizenRefs[9] = e)"
-        />
-        <site-denizenbox
-          :idx="10"
-          :ref="(e) => (denizenRefs[10] = e)"
-        />
-        <site-denizenbox
-          :idx="11"
-          :ref="(e) => (denizenRefs[11] = e)"
-        />
+        <site-denizenbox :idx="8" :ref="(e) => (denizenRefs[8] = e)" />
+        <site-denizenbox :idx="9" :ref="(e) => (denizenRefs[9] = e)" />
+        <site-denizenbox :idx="10" :ref="(e) => (denizenRefs[10] = e)" />
+        <site-denizenbox :idx="11" :ref="(e) => (denizenRefs[11] = e)" />
       </div>
     </div>
 
@@ -213,6 +177,12 @@ import {
 } from '../chat/chatrollhelpers'
 import { rollSiteFeature } from '../helpers/rolldialog'
 import { moveDataByName } from '../helpers/data'
+import {
+  DelveDomainDataSource,
+  DelveThemeDataSource,
+  FeatureOrDanger,
+} from '../item/itemtypes'
+import { OracleRollMessage, TableRow } from '../rolls'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
@@ -265,12 +235,28 @@ function markProgress() {
   $actor?.update({ 'data.current': newValue })
 }
 
-function randomFeature() {
+async function randomFeature() {
   if (!hasThemeAndDomain.value) return
-  rollSiteFeature({
-    theme: ironswornTheme.value,
-    domain: ironswornDomain.value,
-  })
+
+  const themeData = ironswornTheme.value?.data as DelveThemeDataSource
+  const domainData = ironswornDomain.value?.data as DelveDomainDataSource
+  const convertToRow = (f: FeatureOrDanger): TableRow => {
+    const { low, high, description } = f
+    return {
+      low,
+      high,
+      text: description,
+      selected: false,
+    }
+  }
+  const rows = [
+    ...themeData.data.features.map(convertToRow),
+    ...domainData.data.features.map(convertToRow),
+  ]
+  const title = game.i18n.localize('IRONSWORN.Feature')
+  const subtitle = `${$actor?.name} – ${ironswornTheme.value?.name} ${ironswornDomain.value?.name}`
+  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
+  orm.createOrUpdate()
 }
 
 async function locateObjective() {

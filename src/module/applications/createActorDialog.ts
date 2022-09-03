@@ -174,9 +174,6 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   }
 
   async _randomStarforgedName(): Promise<string | undefined> {
-    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
-    if (!pack) return undefined
-
     const firstTable = (await getFoundryTableByDfId(
       'Starforged/Oracles/Characters/Name/Given_Name'
     )) as any

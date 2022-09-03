@@ -13,8 +13,8 @@ import { defaultActor } from '../helpers/actors'
 import { IronswornItem } from '../item/item'
 import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
-import { DfRollOutcome, RollOutcome } from '../rolls/roll'
-import { IronswornRollChatMessage } from '../rolls'
+import { DfRollOutcome, RollOutcome } from '../rolls/ironsworn-roll'
+import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 
 export class IronswornChatCard {
   id?: string | null
@@ -49,6 +49,9 @@ export class IronswornChatCard {
     html
       .find('.ironsworn-roll-burn-momentum')
       .on('click', (ev) => this._irBurnMomentum.call(this, ev))
+    html
+      .find('.oracle-roll .oracle-reroll')
+      .on('click', (ev) => this._oracleReroll.call(this, ev))
     html
       .find('.ironsworn__delvedepths__roll')
       .on('click', (ev) => this._delveDepths.call(this, ev))
@@ -186,8 +189,17 @@ export class IronswornChatCard {
     ev.preventDefault()
 
     const msgId = $(ev.target).parents('.chat-message').data('message-id')
-    const irmsg = await IronswornRollChatMessage.fromMessage(msgId)
-    irmsg?.burnMomentum()
+    const irmsg = await IronswornRollMessage.fromMessage(msgId)
+    return irmsg?.burnMomentum()
+  }
+
+  async _oracleReroll(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const msgId = $(ev.target).parents('.chat-message').data('message-id')
+    const orm = await OracleRollMessage.fromMessage(msgId)
+    await orm?.forceRoll()
+    return orm?.createOrUpdate()
   }
 
   async _delveDepths(ev: JQuery.ClickEvent) {
@@ -286,10 +298,12 @@ export class IronswornChatCard {
 
   async _sfOracleRoll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    const pack = game.packs.get('foundry-ironsworn.starforgedoracles')
     const { tableid } = ev.target.dataset
-    const table = (await pack?.getDocument(tableid)) as any | undefined
-    rollAndDisplayOracleResult(table, 'foundry-ironsworn.starforgedoracles')
+    const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
+    const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
+    const table = ((await sfPack?.getDocument(tableid)) ??
+      (await isPack?.getDocument(tableid))) as RollTable | undefined
+    rollAndDisplayOracleResult(table, table?.pack || undefined)
   }
 
   async _sfOracleReroll(ev: JQuery.ClickEvent) {
