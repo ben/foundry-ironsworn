@@ -21,7 +21,9 @@ async function ensureFolder(...path: string[]): Promise<Folder | undefined> {
     const existing = directory.find((x) => x.name === name)
     if (existing) {
       parentFolder = existing
-      directory = (existing as any).children.map((x) => x.folder)
+      directory = (existing as any).children.map((child) => {
+        return child.folder /* v10 */ || child /* v9 */
+      })
       continue
     }
     parentFolder = await Folder.create({
