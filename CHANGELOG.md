@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.4
+
 - Fix a bug with creating duplicate folders with scene buttons in v10 ([#454](https://github.com/ben/foundry-ironsworn/pull/454))
 - New oracle-rolling pipeline ([#452](https://github.com/ben/foundry-ironsworn/pull/452))
 
