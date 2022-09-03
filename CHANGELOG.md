@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Fix a bug with creating duplicate folders with scene buttons in v10 ([#454](https://github.com/ben/foundry-ironsworn/pull/454))
 ## 1.17.3
 
 - Remove "Oracle NN:" from Ironsworn oracle names ([#453](https://github.com/ben/foundry-ironsworn/pull/453))
