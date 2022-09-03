@@ -767,6 +767,22 @@ table td:first-child {
   }
 }
 
+.hover-controls-anchor {
+  position: relative;
+
+  .hover-controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  &:hover .hover-controls {
+    opacity: 1;
+  }
+}
+
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.4s ease;
