@@ -28,10 +28,10 @@ function maybeShowDice(roll: Roll) {
  * initiated so it can be performed again.
  */
 export class OracleRollMessage {
-  // A valid object has either `dfId`, `tableId`, or `rows`
+  // A valid object has either `dfOracleId`, `tableId`, or `tableRows`
   protected dfOracleId?: string
   protected tableId?: string
-  protected tablePack?: string
+  protected tablePack?: string // valid if tableId is set
   protected tableRows?: TableRow[]
 
   // Display properties
@@ -88,9 +88,6 @@ export class OracleRollMessage {
     return new OracleRollMessage({ tableId, tablePack })
   }
 
-  /**
-   * TODO: convert {@link rollAndDisplayOracleResult}
-   */
   static async fromRows(
     tableRows: TableRow[],
     title: string,
@@ -115,27 +112,25 @@ export class OracleRollMessage {
   }
 
   /**
-   *
    * @returns Rows in the table in a format suitable for display, sorted by `low`
    */
   private async getTableRows(): Promise<TableRow[]> {
-    if (this.tableRows) return this.tableRows
+    let localRows = this.tableRows
+    if (!localRows) {
+      const table = await this.getRollTable()
+      if (table) {
+        localRows = table.data.results.contents.map((x) => ({
+          low: x.data.range[0],
+          high: x.data.range[1],
+          text: marked.parseInline(x.data.text),
+          selected: false,
+        }))
+      } else {
+        localRows = []
+      }
+    }
 
-    const table = await this.getRollTable()
-    return table
-      ? sortBy(
-          table.data.results.contents.map(
-            (x) =>
-              ({
-                low: x.data.range[0],
-                high: x.data.range[1],
-                text: marked.parseInline(x.data.text),
-                selected: false,
-              } as TableRow)
-          ),
-          'low'
-        )
-      : []
+    return sortBy(localRows, 'low')
   }
 
   /**
@@ -146,12 +141,11 @@ export class OracleRollMessage {
   }
 
   /**
-   * Roll for a result, even if already rolled
+   * Always roll or reroll for a result, even if already rolled
    */
   async forceRoll() {
     const rows = await this.getTableRows()
 
-    // Just gonna assume here that the rows are sorted and that they don't overlap
     const highestValue = rows[rows.length - 1].high
     this.roll = new Roll(`1d${highestValue}`)
     await this.roll.evaluate({ async: true })
