@@ -221,7 +221,7 @@ function randomImage(subtype, klass) {
   }
 }
 
-const klassOptions = computed(() => {
+const klassOptions = computed((): { value: string; label: string }[] => {
   switch (props.actor.data.subtype) {
     case 'planet':
       return [
@@ -297,7 +297,14 @@ const klassOptions = computed(() => {
   }
 })
 
-const oracles = computed(() => {
+interface OracleSpec {
+  title: string
+  dfId: string
+  qty?: string
+  fl?: boolean
+  requiresKlass?: boolean
+}
+const oracles = computed((): OracleSpec[][] => {
   const { subtype, klass } = props.actor.data
   const kc = klass
     .split(' ')
@@ -671,10 +678,11 @@ async function updateAllTokens(data) {
 
   // All tokens in the scene
   const activeTokens = $actor?.getActiveTokens()
-  const updates = activeTokens.map((at) => ({
-    _id: at.data._id,
-    ...data,
-  }))
-  await canvas.scene?.updateEmbeddedDocuments('Token', updates)
+  const updates =
+    activeTokens?.map((at) => ({
+      _id: at.data._id,
+      ...data,
+    })) ?? []
+  await canvas?.scene?.updateEmbeddedDocuments('Token', updates)
 }
 </script>
