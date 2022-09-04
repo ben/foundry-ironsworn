@@ -30,6 +30,7 @@
 import { computed, inject, provide } from 'vue'
 import { $ItemKey } from './provisions'
 import BtnFaicon from '../vue/components/buttons/btn-faicon.vue'
+import { BondsetDataPropertiesData } from '../item/itemtypes'
 
 const props = defineProps<{ item: any }>()
 provide(
@@ -40,19 +41,22 @@ provide(
 const $item = inject($ItemKey)
 
 function deleteBond(i) {
-  const bonds = Object.values(props.item.data.bonds)
+  const data = props.item.data as BondsetDataPropertiesData
+  const bonds = Object.values(data.bonds)
   bonds.splice(i, 1)
   $item?.update({ data: { bonds } })
 }
 
 function addBond() {
-  const bonds = Object.values(props.item.data.bonds)
+  const data = props.item.data as BondsetDataPropertiesData
+  const bonds = Object.values(data.bonds)
   bonds.push({ name: '', notes: '' })
   $item?.update({ data: { bonds } })
 }
 
 function save() {
-  const bonds = Object.values(props.item.data.bonds)
+  const data = props.item.data as BondsetDataPropertiesData
+  const bonds = Object.values(data.bonds)
   $item?.update({ data: { bonds } })
 }
 </script>

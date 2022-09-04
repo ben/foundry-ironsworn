@@ -19,8 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from '@vue/reactivity'
-import { inject } from '@vue/runtime-core'
+import { Ref, inject } from 'vue'
 import { $ActorKey } from '../provisions'
 import XpBox from './xp-box.vue'
 import DocumentImg from './document-img.vue'

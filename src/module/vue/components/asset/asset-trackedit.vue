@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, inject } from 'vue'
+import { computed, inject, Ref } from 'vue'
 import { $ItemKey } from '../../provisions'
 import AssetTrack from './asset-track.vue'
 

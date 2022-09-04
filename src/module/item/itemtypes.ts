@@ -40,7 +40,7 @@ interface AssetDataSourceData {
   exclusiveOptions: AssetExclusiveOption[]
 }
 
-interface AssetDataPropertiesData extends AssetDataSourceData {}
+export interface AssetDataPropertiesData extends AssetDataSourceData {}
 
 export interface AssetDataSource {
   type: 'asset'
@@ -101,7 +101,7 @@ interface Bond {
 interface BondsetDataSourceData {
   bonds: Bond[]
 }
-interface BondsetDataPropertiesData extends BondsetDataSourceData {}
+export interface BondsetDataPropertiesData extends BondsetDataSourceData {}
 
 export interface BondsetDataSource {
   type: 'bondset'

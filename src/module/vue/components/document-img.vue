@@ -36,6 +36,6 @@ function click() {
       doc?.update({ img })
     },
   })
-  return fp.browse()
+  return fp.browse(current)
 }
 </script>

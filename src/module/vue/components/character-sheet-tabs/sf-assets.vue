@@ -47,7 +47,7 @@ async function applySort(oldI, newI, sortBefore) {
   const foundryItems = $actor?.items
     .filter((x) => x.type === 'asset')
     .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
-  const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
+  const updates = SortingHelpers.performIntegerSort(foundryItems?.[oldI], {
     target: (foundryItems ?? [])[newI],
     siblings: foundryItems,
     sortBefore,
