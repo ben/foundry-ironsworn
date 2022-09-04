@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a visual glitch with the "Health" label buttons in the Ironsworn sheet.
+
 ## 1.17.4
 
 - Fix a bug with creating duplicate folders with scene buttons in v10 ([#454](https://github.com/ben/foundry-ironsworn/pull/454))
