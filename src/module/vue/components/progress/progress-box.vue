@@ -1,6 +1,6 @@
 <template>
   <div class="flexrow item-row">
-    <h5 class="vertical-v2 nogrow">{{ subtitle }}</h5>
+    <h5 class="vertical nogrow">{{ subtitle }}</h5>
     <div class="flexcol">
       <div class="flexrow">
         <document-img
@@ -86,7 +86,7 @@
 div.item-row {
   padding-left: 0;
 }
-h5.vertical-v2 {
+h5.vertical {
   padding-right: 2px;
   margin: 0;
   font-weight: normal;

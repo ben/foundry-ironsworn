@@ -62,7 +62,7 @@ const hasDefaultSlot = computed(() => {
       white-space: nowrap;
     }
   }
-  &.vertical-v2 {
+  &.vertical {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     .button-text {

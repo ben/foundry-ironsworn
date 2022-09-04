@@ -26,7 +26,7 @@
               {{ actor.data.momentumMax }}
             </div>
           </div>
-          <h4 class="vertical-v2">{{ $t('IRONSWORN.Momentum') }}</h4>
+          <h4 class="vertical">{{ $t('IRONSWORN.Momentum') }}</h4>
         </div>
       </div>
 
@@ -56,7 +56,7 @@
       <div class="flexcol margin-right">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="nogrow vertical-v2 text" attr="health">
+          <btn-rollstat class="nogrow vertical text" attr="health">
             {{ $t('IRONSWORN.Health') }}
           </btn-rollstat>
           <div class="flexcol stack health">
@@ -68,7 +68,7 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="nogrow vertical-v2 text" attr="spirit">
+          <btn-rollstat class="nogrow vertical text" attr="spirit">
             {{ $t('IRONSWORN.Spirit') }}
           </btn-rollstat>
           <div class="flexcol stack spirit">
@@ -80,7 +80,7 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="nogrow vertical-v2 text" attr="supply">
+          <btn-rollstat class="nogrow vertical text" attr="supply">
             {{ $t('IRONSWORN.Supply') }}
           </btn-rollstat>
           <div class="flexcol stack supply">
