@@ -22,7 +22,7 @@ import { computed, useSlots } from '@vue/runtime-core'
 defineProps<{ tooltip?: string; disabled?: boolean }>()
 // so the span can be omitted if there's no slot content
 const hasDefaultSlot = computed(() => {
-  return !!useSlots().default()[0].children.length
+  return !!useSlots().default?.()[0].children?.length
 })
 </script>
 

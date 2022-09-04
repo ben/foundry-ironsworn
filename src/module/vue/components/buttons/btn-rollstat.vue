@@ -40,7 +40,7 @@ const slotText = computed(() => {
   return slots.default?.()[0].children // This is the interesting line
 })
 
-function rollStat() {
+function rollStat(): any {
   if (props.item) {
     const name = `${slotText.value?.toString()} (${props.item.name})`
     return IronswornPrerollDialog.showForStat(

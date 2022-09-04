@@ -40,6 +40,7 @@ input {
 import { reactive, Ref } from '@vue/reactivity'
 import { inject } from '@vue/runtime-core'
 import { computed, ref } from 'vue'
+import { SiteDataProperties } from '../../../actor/actortypes'
 import { $ActorKey } from '../../provisions'
 
 const props = defineProps<{ idx: number }>()
@@ -58,7 +59,9 @@ const denizen = computed(() => {
 
 function input(ev) {
   const val = ev.currentTarget.value || ''
-  const denizens = Object.values($actor?.data.data.denizens) as any[]
+  const data = $actor?.data as SiteDataProperties | undefined
+  if (!data) return
+  const denizens = Object.values(data.data.denizens)
   denizens[props.idx].description = val
   $actor?.update({ data: { denizens } })
 }

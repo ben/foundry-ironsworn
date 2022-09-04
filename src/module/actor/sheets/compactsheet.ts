@@ -32,17 +32,6 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
       .on('click', (e) => this._momentumBurn.call(this, e))
   }
 
-  getData() {
-    let data: any = super.getData()
-
-    // Allow every itemtype to add data to the actorsheet
-    for (const itemType of CONFIG.IRONSWORN.itemClasses) {
-      data = itemType.getActorSheetData(data, this)
-    }
-
-    return data
-  }
-
   _getHeaderButtons() {
     return [
       {

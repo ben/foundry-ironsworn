@@ -33,7 +33,7 @@ async function addProgressItem(subtype) {
     data: { subtype },
     sort: 9000000,
   }
-  const item = await Item.create(itemData, { parent: $actor })
+  const item = await Item.create(itemData as any, { parent: $actor })
   item?.sheet?.render(true)
 }
 

@@ -57,7 +57,7 @@ h3 {
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, reactive } from 'vue'
+import { computed, inject, reactive, Ref } from 'vue'
 import { $ActorKey } from '../../provisions'
 import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'

@@ -89,7 +89,7 @@
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
 import { RollDialog } from '../../../helpers/rolldialog'
-import { AssetAbility } from '../../../item/itemtypes'
+import { AssetAbility, AssetDataPropertiesData } from '../../../item/itemtypes'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
 import AssetTrack from './asset-track.vue'
@@ -115,7 +115,8 @@ const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })
 const enabledAbilities = computed(() => {
-  const abilities = Object.values(props.asset.data.abilities)
+  const data = props.asset.data as AssetDataPropertiesData
+  const abilities = Object.values(data.abilities)
   return abilities.filter((x) => x.enabled)
 })
 const actingActor = computed(() => {

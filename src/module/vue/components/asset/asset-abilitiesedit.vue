@@ -57,6 +57,7 @@
 
 <script setup lang="ts">
 import { computed, Ref, inject } from 'vue'
+import { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 
@@ -68,13 +69,15 @@ const editMode = computed(
 )
 
 function markAbility(idx) {
-  const abilities = Object.values(item.value?.data.abilities)
+  const data = item.value?.data as AssetDataPropertiesData
+  const abilities = Object.values(data.abilities)
   abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
   $item?.update({ data: { abilities } })
 }
 
 function enableClock(idx) {
-  const abilities = Object.values(item.value?.data.abilities)
+  const data = item.value?.data as AssetDataPropertiesData
+  const abilities = Object.values(data.abilities)
   abilities[idx] = { ...abilities[idx], hasClock: !abilities[idx].hasClock }
   $item?.update({ data: { abilities } })
 }

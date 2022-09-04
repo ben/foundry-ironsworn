@@ -79,8 +79,8 @@ import {
   watch,
 } from 'vue'
 import { Move } from '../../features/custommoves'
-import { SFRollMoveDialog } from '../../helpers/rolldialog-sf'
 import { IronswornItem } from '../../item/item'
+import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
 import { $EmitterKey } from '../provisions'
 import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
@@ -98,7 +98,7 @@ const fulltext = computed(() => {
   return props.move.moveItem?.data?.data?.Text
 })
 const canRoll = computed(() => {
-  return SFRollMoveDialog.moveHasRollableOptions(props.move.moveItem)
+  return moveHasRollableOptions(props.move.moveItem)
 })
 
 const $el = ref<HTMLElement>()
