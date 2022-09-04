@@ -45,6 +45,13 @@ function rollableOptions(trigger: IMoveTrigger) {
   )
 }
 
+export function moveHasRollableOptions(move: IronswornItem) {
+  if (move.type !== 'sfmove') return false
+  const data = move.data as SFMoveDataProperties
+  const options = rollableOptions(data.data.Trigger)
+  return options.length > 0
+}
+
 function chooseStatToRoll(
   mode: RollMethod,
   stats: string[],
