@@ -13,7 +13,6 @@
 
 <script setup lang="ts">
 import { inject } from 'vue'
-import { SFRollMoveDialog } from '../../../helpers/rolldialog-sf'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
 import btnIsicon from './btn-isicon.vue'

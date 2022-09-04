@@ -13,8 +13,8 @@
 <style lang="less"></style>
 
 <script setup lang="ts">
+import { createSfMoveChatMessage } from '../../../chat/sf-move-chat-message'
 import { Move } from '../../../features/custommoves'
-import { SFRollMoveDialog } from '../../../helpers/rolldialog-sf'
 import btnFaicon from './btn-faicon.vue'
 
 const props = defineProps<{
@@ -24,6 +24,6 @@ const props = defineProps<{
 }>()
 
 function sendToChat(e) {
-  SFRollMoveDialog.createDataforgedMoveChat(props.move.moveItem)
+  createSfMoveChatMessage(props.move.moveItem)
 }
 </script>
