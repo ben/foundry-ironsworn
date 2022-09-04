@@ -31,7 +31,7 @@
             </div>
           </div>
 
-          <h4 class="vertical nogrow" style="width: 18px">
+          <h4 class="vertical nogrow">
             {{ $t('IRONSWORN.Momentum') }}
           </h4>
         </div>
@@ -109,7 +109,6 @@
   .condition-meters {
     .icon-button {
       flex-direction: column;
-      width: 18px;
       .button-text {
         writing-mode: vertical-lr;
       }
