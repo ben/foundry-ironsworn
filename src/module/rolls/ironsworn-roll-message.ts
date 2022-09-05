@@ -172,10 +172,7 @@ export class IronswornRollMessage {
 
     // console.log('sent renderData', renderData)
     const renderData = {
-      graphic: await renderRollGraphic(
-        { ...this.roll.preRollOptions, showOutcome: false },
-        this.roll
-      ),
+      graphic: await renderRollGraphic({ roll: this.roll, hideOutcome: true }),
       ironswornroll: this.roll.serialize(),
       move: await this.roll.moveItem,
       ...(await this.titleData()),

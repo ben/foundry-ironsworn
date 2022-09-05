@@ -353,15 +353,12 @@ export class IronswornPrerollDialog extends Dialog<
     showActorSelect?: boolean
     action?: boolean
   }): Promise<string> {
-    const newOptions = {
-      ...data.prerollOptions,
-      showOutcome: true,
-    }
-    console.log('preroll render options', newOptions)
-    const graphic = await renderRollGraphic(newOptions)
+    const graphic = await renderRollGraphic({
+      preRollOptions: data.prerollOptions,
+    })
     const template =
       'systems/foundry-ironsworn/templates/rolls/preroll-dialog.hbs'
-    return renderTemplate(template, { ...data, graphic, showOutcome: true })
+    return renderTemplate(template, { ...data, graphic })
   }
 
   activateListeners(html: JQuery<HTMLElement>): void {
@@ -380,7 +377,7 @@ export class IronswornPrerollDialog extends Dialog<
         this.element.find('form'),
         this.prerollOptions
       )
-      const graphic = await renderRollGraphic(pro)
+      const graphic = await renderRollGraphic({ preRollOptions: pro })
       this.element.find('.roll-graphic').replaceWith(graphic)
     }
     html.find('input').on('change', rerender)

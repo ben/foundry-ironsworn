@@ -7,8 +7,8 @@ import {
   SourcedValue,
 } from './ironsworn-roll'
 
-export type RenderData = {
-  prerollOptions: PreRollOptions
+interface RenderData {
+  preRollOptions: PreRollOptions
   roll?: IronswornRoll
 
   adds: SourcedValue<number | string>[]
@@ -20,39 +20,45 @@ export type RenderData = {
   actionDieCanceledByNegativeMomentum?: boolean
   isMatch: boolean
   isProgress: boolean
-  showOutcome: boolean
+  hideOutcome?: boolean
 
   challengeDice: Partial<SourcedValue & { minmax?: 'min' | 'max' }>[]
 
   outcome?: SourcedValue<RollOutcome>
 }
 
-export async function renderRollGraphic(
-  prerollOptions: PreRollOptions,
+interface RollGraphicRenderOpts {
   roll?: IronswornRoll
-) {
-  console.log('renderRollGraphic prerollOptions', prerollOptions)
-  console.log('renderRollGraphic roll', roll)
-  const referenceRoll = roll ?? new IronswornRoll(prerollOptions)
+
+  // Fallback for rendering if roll is not present
+  preRollOptions?: PreRollOptions
+
+  // prevent showing outcome
+  hideOutcome?: boolean
+}
+
+export async function renderRollGraphic(opts: RollGraphicRenderOpts) {
+  if (!opts.roll && !opts.preRollOptions) {
+    throw new Error('Need roll or preRollOptions here')
+  }
+  opts.roll ||= new IronswornRoll(opts.preRollOptions)
   const renderData: RenderData = {
-    prerollOptions,
-    roll,
+    ...opts,
     adds: [],
     challengeDice: [{}, {}],
-    isProgress: prerollOptions.progress !== undefined,
-    isMatch: referenceRoll.isMatch,
-    showOutcome: prerollOptions.showOutcome ?? true,
+    isProgress: opts.roll.preRollOptions.progress !== undefined,
+    isMatch: opts.roll.isMatch,
   }
 
-  if (referenceRoll.actionDie) {
+  if (opts.roll.actionDie) {
     renderData.computedActionDie = {
-      ...referenceRoll.actionDie,
-      value: referenceRoll.actionDie?.value,
+      ...opts.roll.actionDie,
+      value: opts.roll.actionDie?.value,
     }
-    if (referenceRoll.actionDie.value === ACTION_DIE_SIDES)
+    if (opts.roll.actionDie.value === ACTION_DIE_SIDES)
       renderData.actionMinMax = 'max'
-    if (referenceRoll.actionDie.value === 1) renderData.actionMinMax = 'min'
-    if (referenceRoll.canceledByNegativeMomentum) {
+    if (opts.roll.actionDie.value === 1) renderData.actionMinMax = 'min'
+    if (opts.roll.canceledByNegativeMomentum) {
       renderData.actionDieCanceledByNegativeMomentum = true
       renderData.computedActionDie.source = game.i18n.localize(
         'IRONSWORN.NegativeMomentumCancel'
@@ -60,20 +66,20 @@ export async function renderRollGraphic(
     }
   }
 
-  renderData.adds = referenceRoll.adds
-  renderData.score = referenceRoll.score
-  renderData.actionScoreCapped = referenceRoll.actionScoreCapped
+  renderData.adds = opts.roll.adds
+  renderData.score = opts.roll.score
+  renderData.actionScoreCapped = opts.roll.actionScoreCapped
 
-  renderData.challengeDice = referenceRoll.challengeDice
-  if (referenceRoll.finalChallengeDice) {
+  renderData.challengeDice = opts.roll.challengeDice
+  if (opts.roll.finalChallengeDice) {
     renderData.challengeDice = [
       {
-        source: referenceRoll.challengeDice[0]?.source,
-        value: referenceRoll.finalChallengeDice[0],
+        source: opts.roll.challengeDice[0]?.source,
+        value: opts.roll.finalChallengeDice[0],
       },
       {
-        source: referenceRoll.challengeDice[1]?.source,
-        value: referenceRoll.finalChallengeDice[1],
+        source: opts.roll.challengeDice[1]?.source,
+        value: opts.roll.finalChallengeDice[1],
       },
     ]
   }
@@ -82,15 +88,11 @@ export async function renderRollGraphic(
     if (c.value === CHALLENGE_DIE_SIDES) c.minmax = 'max'
   }
 
-  if (referenceRoll.rawOutcome) {
+  if (opts.roll.rawOutcome) {
     renderData.outcome = {
-      ...referenceRoll.rawOutcome,
-      value: referenceRoll.rawOutcome.value,
+      ...opts.roll.rawOutcome,
+      value: opts.roll.rawOutcome.value,
     }
-  }
-  if (prerollOptions.showOutcome) {
-    console.log('this template is supposed to show the outcome')
-    renderData.showOutcome = true
   }
   const graphicTemplate =
     'systems/foundry-ironsworn/templates/rolls/roll-graphic.hbs'

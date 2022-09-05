@@ -134,10 +134,6 @@ export interface PreRollOptions {
    */
   moveDfId?: string
   actorId?: string
-  /**
-   * Whether to render the outcome info inside the roll graphic.
-   */
-  showOutcome?: boolean
 }
 
 // Input to rendering, can be updated after the fact
