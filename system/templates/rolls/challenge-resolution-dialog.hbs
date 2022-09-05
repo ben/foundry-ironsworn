@@ -1,3 +1,17 @@
 <form class="challenge-resolution-dialog">
-  <h1>resolve it</h1>
+  {{log this}}
+
+  <div class="grid" style="margin: 1em; justify-items: center">
+    {{#each dice}}
+    <input style="grid-column:1; margin: 7px; width: 30px; justify-self: end" type="radio" name="die1"
+      id="{{@index}}" />
+    <div class="ironsworn-roll roll-graphic dice-formula">
+      <span class="roll die isiconbg-d10-blank d10 challenge challenge-die {{minmax}}">
+        {{value}}
+      </span>
+    </div>
+    <input style="grid-column:3; margin: 7px; width: 30px; justify-self: start" type="radio" name="die2"
+      id="{{@index}}" />
+    {{/each}}
+  </div>
 </form>

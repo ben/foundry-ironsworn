@@ -33,7 +33,13 @@ export class ChallengeResolutionDialog extends Dialog {
     // Render the dialog
     const template =
       'systems/foundry-ironsworn/templates/rolls/challenge-resolution-dialog.hbs'
-    const renderData = { msg }
+    const renderData = {
+      msg,
+      dice: msg.roll.rawChallengeDiceValues!.map((x) => ({
+        value: x,
+        minmax: x === 1 ? 'min' : x === 10 ? 'max' : undefined,
+      })),
+    }
     const content = await renderTemplate(template, renderData)
     const buttons = {
       save: { label: 'Commit' },
@@ -44,5 +50,11 @@ export class ChallengeResolutionDialog extends Dialog {
       buttons,
       default: 'save',
     }).render(true)
+  }
+
+  activateListeners(html: JQuery<HTMLElement>): void {
+    super.activateListeners(html)
+
+    html.find('input:radio').on('change', console.log)
   }
 }
