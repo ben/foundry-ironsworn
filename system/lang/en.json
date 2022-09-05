@@ -133,6 +133,7 @@
     "RandomName": "Random name",
     "Burn": "Burn",
     "Focus": "Focus",
+    "ResolveChallenge": "Resolve Challenge",
     "BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",
     "MomentumBurnt": "Momentum Burn",
     "NegativeMomentumCancel": "Negative momentum canceled action die",

@@ -177,6 +177,7 @@ export class IronswornRollMessage {
       move: await this.roll.moveItem,
       ...(await this.titleData()),
       ...(await this.moveData()),
+      ...(await this.challengeDiceData()),
       ...(await this.momentumData()),
       ...(await this.oraclesData()),
     }
@@ -261,6 +262,17 @@ export class IronswornRollMessage {
       ret.moveOutcome = dfOutcome.Text
     }
     return ret
+  }
+
+  private challengeDiceData() {
+    // Only continue if this roll needs manual resolution
+    if (!this.roll.preRollOptions.extraChallengeDice) return {}
+    const { replacedChallenge1, replacedChallenge2 } = this.roll.postRollOptions
+    if (replacedChallenge1 && replacedChallenge2) return {}
+
+    return {
+      unresolved: true,
+    }
   }
 
   private momentumData() {
