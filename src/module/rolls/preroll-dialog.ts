@@ -16,6 +16,7 @@ import { renderRollGraphic } from './roll-graphic'
 import { CharacterDataProperties } from '../actor/actortypes'
 import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
+import { ChallengeResolutionDialog } from './challenge-resolution-dialog'
 
 export function localeCapitalize(str: string) {
   const locale = game.i18n.lang
@@ -335,14 +336,19 @@ export class IronswornPrerollDialog extends Dialog<
     }).render(true)
   }
 
-  private static submitRoll(
+  private static async submitRoll(
     el: HTMLElement | JQuery<HTMLElement>,
     opts: PreRollOptions
   ) {
     const realOpts = prerollOptionsWithFormData($(el).find('form'), opts)
 
     const r = new IronswornRoll(realOpts)
-    return new IronswornRollMessage(r).createOrUpdate()
+    const msg = new IronswornRollMessage(r)
+    await msg.createOrUpdate()
+
+    // Show resolution dialog if needed
+    if (r.preRollOptions.extraChallengeDice)
+      ChallengeResolutionDialog.showForMessage(msg.roll.chatMessageId)
   }
 
   private static async renderContent(data: {
