@@ -17,7 +17,7 @@ export class ChallengeResolutionDialog extends VueApplication {
       template:
         'systems/foundry-ironsworn/templates/rolls/challenge-resolution-dialog.hbs',
       width: 300,
-      height: 250,
+      height: 280,
     })
   }
 
