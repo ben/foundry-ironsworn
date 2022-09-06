@@ -1,6 +1,6 @@
 <template>
   <form class="challenge-resolution-dialog flexcol" style="flex-grow: 1">
-    <div class="grid" style="margin: 1em; justify-items: center; flex-grow: 1">
+    <div class="grid">
       <div class="flexrow" v-for="(row, i) in state.rows" :key="`row${i}`">
         <input
           type="radio"
@@ -42,9 +42,16 @@
 </template>
 
 <style lang="less" scoped>
+div.grid {
+  margin: 1em;
+  justify-items: center;
+  flex-grow: 1;
+}
+
 input {
   margin: 7px;
   width: 30px;
+
   &.a {
     grid-column: 1;
     justify-self: end;
