@@ -5,7 +5,7 @@
 // - Rolling that plays nicer with DF Manual Rolls (all in one go, not {d6+N,d10,d10})
 // - Rerolls update chat message
 
-import { compact, pick, range, sum } from 'lodash'
+import { cloneDeep, compact, pick, range, sum } from 'lodash'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
 import { computeRollOutcome } from './ironsworn-roll-message'
@@ -405,5 +405,10 @@ export class IronswornRoll {
     const ir = new IronswornRoll()
     Object.assign(ir, json)
     return ir
+  }
+
+  clone(): IronswornRoll {
+    const json = this.serialize()
+    return IronswornRoll.fromJson(cloneDeep(json))
   }
 }

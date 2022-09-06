@@ -23,6 +23,12 @@
         />
       </div>
     </div>
+
+    <section
+      class="dice-result dice-tooltip dice-roll ironsworn-roll"
+      v-html="state.renderedGraphic"
+    ></section>
+
     <div
       class="boxgroup"
       style="margin-top: 1rem"
@@ -65,9 +71,11 @@ input {
 </style>
 
 <script setup lang="ts">
-import { isArrayLikeObject } from 'lodash'
-import { computed, reactive } from 'vue'
+import { cloneDeep } from 'lodash'
+import { computed, nextTick, reactive } from 'vue'
 import { IronswornRollMessage } from '../rolls'
+import { IronswornRoll } from '../rolls/ironsworn-roll'
+import { renderRollGraphic } from '../rolls/roll-graphic'
 
 const props = defineProps<{ messageId: string }>()
 const irm = await IronswornRollMessage.fromMessage(props.messageId)
@@ -79,6 +87,7 @@ const state = reactive({
       dieValue: d,
       choice: '' as AOrB,
     })) ?? [],
+  renderedGraphic: undefined as string | undefined,
 })
 
 function update(i: number, value: AOrB) {
@@ -89,7 +98,34 @@ function update(i: number, value: AOrB) {
 
   // Set this choice
   state.rows[i].choice = value
+
+  updateRollGraphic()
 }
+
+async function updateRollGraphic() {
+  if (!irm) return
+  const roll = irm.roll.clone()
+
+  // Get the choices
+  const die1 = state.rows.find((x) => x.choice === 'a')?.dieValue
+  if (die1) {
+    roll.postRollOptions.replacedChallenge1 = {
+      source: 'manual',
+      value: die1,
+    }
+  }
+  const die2 = state.rows.find((x) => x.choice === 'b')?.dieValue
+  if (die2) {
+    roll.postRollOptions.replacedChallenge2 = {
+      source: 'manual',
+      value: die2,
+    }
+  }
+
+  // Render the graphic
+  state.renderedGraphic = await renderRollGraphic({ roll })
+}
+updateRollGraphic()
 
 const saveDisabled = computed(() => {
   const hasA = !!state.rows.find((x) => x.choice === 'a')

@@ -96,6 +96,5 @@ export async function renderRollGraphic(opts: RollGraphicRenderOpts) {
   }
   const graphicTemplate =
     'systems/foundry-ironsworn/templates/rolls/roll-graphic.hbs'
-  console.log('data to be passed to renderTemplate', renderData)
   return renderTemplate(graphicTemplate, renderData)
 }
