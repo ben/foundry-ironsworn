@@ -105,7 +105,8 @@ export class OracleRollMessage {
 
     if (this.tablePack) {
       const pack = game.packs.get(this.tablePack)
-      return pack?.get(this.tableId ?? '') as RollTable
+      const packTable = pack?.get(this.tableId ?? '') as RollTable
+      if (packTable) return packTable
     }
 
     return game.tables?.get(this.tableId ?? '')

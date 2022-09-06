@@ -3,6 +3,7 @@
 ## Next Release
 
 - Fix a visual glitch with the "Health" label buttons in the Ironsworn sheet.
+- Fix a custom-oracles bug introduced with the new pipeline
 
 ## 1.17.4
 
