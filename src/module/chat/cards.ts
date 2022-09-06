@@ -201,7 +201,7 @@ export class IronswornChatCard {
     ev.preventDefault()
 
     const msgId = $(ev.target).parents('.chat-message').data('message-id')
-    ChallengeResolutionDialog.showForMessage(msgId)
+    new ChallengeResolutionDialog(msgId).render(true)
   }
 
   async _oracleReroll(ev: JQuery.ClickEvent) {

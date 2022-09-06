@@ -348,7 +348,7 @@ export class IronswornPrerollDialog extends Dialog<
 
     // Show resolution dialog if needed
     if (r.preRollOptions.extraChallengeDice)
-      ChallengeResolutionDialog.showForMessage(msg.roll.chatMessageId)
+      new ChallengeResolutionDialog(msg.roll.chatMessageId!).render(true)
   }
 
   private static async renderContent(data: {
