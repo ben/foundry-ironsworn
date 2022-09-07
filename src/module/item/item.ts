@@ -15,7 +15,9 @@ export class IronswornItem extends Item {
     if (this.data.type !== 'vow' && this.data.type !== 'progress') return
 
     const increment = RANK_INCREMENTS[this.data.data.rank] * numMarks
-    const newValue = Math.min(this.data.data.current + increment, 40)
+    let newValue = this.data.data.current + increment
+    newValue = Math.min(newValue, 40)
+    newValue = Math.max(newValue, 0)
     return this.update({ 'data.current': newValue })
   }
 
