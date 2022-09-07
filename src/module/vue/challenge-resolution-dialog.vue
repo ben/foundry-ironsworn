@@ -36,8 +36,10 @@
     >
       <div class="boxrow flexrow">
         <button
+          type="button"
           class="clickable block save"
           :class="{ disabled: saveDisabled }"
+          @click="save"
         >
           <i class="fas fa-check"></i>
           {{ $t('Save') }}
@@ -71,11 +73,10 @@ input {
 </style>
 
 <script setup lang="ts">
-import { cloneDeep } from 'lodash'
-import { computed, nextTick, reactive } from 'vue'
+import { computed, inject, reactive } from 'vue'
 import { IronswornRollMessage } from '../rolls'
-import { IronswornRoll } from '../rolls/ironsworn-roll'
 import { renderRollGraphic } from '../rolls/roll-graphic'
+import { $EmitterKey } from './provisions'
 
 const props = defineProps<{ messageId: string }>()
 const irm = await IronswornRollMessage.fromMessage(props.messageId)
@@ -102,19 +103,25 @@ function update(i: number, value: AOrB) {
   updateRollGraphic()
 }
 
+function selectedDiceValues(): [number | undefined, number | undefined] {
+  return [
+    state.rows.find((x) => x.choice === 'a')?.dieValue,
+    state.rows.find((x) => x.choice === 'b')?.dieValue,
+  ]
+}
+
 async function updateRollGraphic() {
   if (!irm) return
   const roll = irm.roll.clone()
 
   // Get the choices
-  const die1 = state.rows.find((x) => x.choice === 'a')?.dieValue
+  const [die1, die2] = selectedDiceValues()
   if (die1) {
     roll.postRollOptions.replacedChallenge1 = {
       source: 'manual',
       value: die1,
     }
   }
-  const die2 = state.rows.find((x) => x.choice === 'b')?.dieValue
   if (die2) {
     roll.postRollOptions.replacedChallenge2 = {
       source: 'manual',
@@ -132,4 +139,23 @@ const saveDisabled = computed(() => {
   const hasB = !!state.rows.find((x) => x.choice === 'b')
   return !(hasA && hasB)
 })
+
+const $emitter = inject($EmitterKey)
+function save() {
+  if (!irm) return
+  const [die1, die2] = selectedDiceValues()
+  if (die1 === undefined || die2 === undefined) return
+
+  irm.roll.postRollOptions.replacedChallenge1 = {
+    source: 'manual',
+    value: die1,
+  }
+  irm.roll.postRollOptions.replacedChallenge2 = {
+    source: 'manual',
+    value: die2,
+  }
+
+  irm.createOrUpdate()
+  $emitter?.emit('closeApp')
+}
 </script>
