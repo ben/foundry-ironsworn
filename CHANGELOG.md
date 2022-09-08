@@ -3,6 +3,7 @@
 ## Next Release
 
 - Prevent progress tracks from having negative values
+- Fix a bug when clicking a post-move oracle-roll button in the chat
 
 ## 1.17.5
 

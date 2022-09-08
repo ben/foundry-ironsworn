@@ -298,7 +298,7 @@ export class IronswornChatCard {
 
   async _sfOracleRoll(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    const { tableid } = ev.target.dataset
+    const { tableid } = ev.currentTarget.dataset
     const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
     const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
     const table = ((await sfPack?.getDocument(tableid)) ??
