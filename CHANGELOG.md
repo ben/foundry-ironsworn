@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Starforged-theme editor color fixes
+
 ## 1.17.6
 
 - Prevent progress tracks from having negative values
