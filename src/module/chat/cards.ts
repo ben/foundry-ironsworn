@@ -15,6 +15,7 @@ import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 import { DfRollOutcome, RollOutcome } from '../rolls/ironsworn-roll'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
+import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 
 export class IronswornChatCard {
   id?: string | null
@@ -52,6 +53,9 @@ export class IronswornChatCard {
     html
       .find('.oracle-roll .oracle-reroll')
       .on('click', (ev) => this._oracleReroll.call(this, ev))
+    html
+      .find('.ironsworn-roll-resolve')
+      .on('click', (ev) => this._resolveChallenge.call(this, ev))
     html
       .find('.ironsworn__delvedepths__roll')
       .on('click', (ev) => this._delveDepths.call(this, ev))
@@ -191,6 +195,13 @@ export class IronswornChatCard {
     const msgId = $(ev.target).parents('.chat-message').data('message-id')
     const irmsg = await IronswornRollMessage.fromMessage(msgId)
     return irmsg?.burnMomentum()
+  }
+
+  async _resolveChallenge(ev: JQuery.ClickEvent) {
+    ev.preventDefault()
+
+    const msgId = $(ev.target).parents('.chat-message').data('message-id')
+    ChallengeResolutionDialog.showForMessage(msgId)
   }
 
   async _oracleReroll(ev: JQuery.ClickEvent) {

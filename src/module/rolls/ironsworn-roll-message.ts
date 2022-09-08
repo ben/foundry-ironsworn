@@ -161,7 +161,7 @@ export class IronswornRollMessage {
 
     await this.actor.burnMomentum()
     this.roll.postRollOptions.replacedOutcome = {
-      value: computeRollOutcome(momentum, c1, c2),
+      value: computeRollOutcome(momentum, c1.value, c2.value),
       source: game.i18n.localize('IRONSWORN.MomentumBurnt'),
     }
     return this.createOrUpdate()
@@ -172,14 +172,12 @@ export class IronswornRollMessage {
 
     // console.log('sent renderData', renderData)
     const renderData = {
-      graphic: await renderRollGraphic(
-        { ...this.roll.preRollOptions, showOutcome: false },
-        this.roll
-      ),
+      graphic: await renderRollGraphic({ roll: this.roll, hideOutcome: true }),
       ironswornroll: this.roll.serialize(),
       move: await this.roll.moveItem,
       ...(await this.titleData()),
       ...(await this.moveData()),
+      ...(await this.challengeDiceData()),
       ...(await this.momentumData()),
       ...(await this.oraclesData()),
     }
@@ -266,6 +264,17 @@ export class IronswornRollMessage {
     return ret
   }
 
+  private challengeDiceData() {
+    // Only continue if this roll needs manual resolution
+    if (!this.roll.preRollOptions.extraChallengeDice) return {}
+    const { replacedChallenge1, replacedChallenge2 } = this.roll.postRollOptions
+    if (replacedChallenge1 && replacedChallenge2) return {}
+
+    return {
+      unresolved: true,
+    }
+  }
+
   private momentumData() {
     if (this.actor?.data.type !== 'character') return {}
 
@@ -286,7 +295,7 @@ export class IronswornRollMessage {
       return {
         possibleMomentumBurn: computeOutcomeText(
           momentumBurnOutcome,
-          c1 === c2
+          c1.value === c2.value
         ),
       }
     }

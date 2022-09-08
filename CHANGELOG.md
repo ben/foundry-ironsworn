@@ -3,6 +3,7 @@
 ## Next Release
 
 - Starforged-theme editor color fixes
+- Add a dialog for resolving a roll with extra challenge dice ([#458](https://github.com/ben/foundry-ironsworn/pull/458))
 
 ## 1.17.6
 

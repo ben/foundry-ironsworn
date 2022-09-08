@@ -5,7 +5,7 @@
 // - Rolling that plays nicer with DF Manual Rolls (all in one go, not {d6+N,d10,d10})
 // - Rerolls update chat message
 
-import { compact, pick, range, sum } from 'lodash'
+import { cloneDeep, compact, pick, range, sum } from 'lodash'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornItem } from '../item/item'
 import { computeRollOutcome } from './ironsworn-roll-message'
@@ -134,10 +134,6 @@ export interface PreRollOptions {
    */
   moveDfId?: string
   actorId?: string
-  /**
-   * Whether to render the outcome info inside the roll graphic.
-   */
-  showOutcome?: boolean
 }
 
 // Input to rendering, can be updated after the fact
@@ -357,16 +353,19 @@ export class IronswornRoll {
   }
 
   // Either [N,N] or undefined
-  get finalChallengeDice(): undefined | [number, number] {
+  get finalChallengeDice(): undefined | [SourcedValue, SourcedValue] {
     const replaced = compact([
       this.postRollOptions.replacedChallenge1,
       this.postRollOptions.replacedChallenge2,
     ])
     if (replaced.length === 2) {
-      return replaced.map((x) => x.value) as [number, number]
+      return replaced as [SourcedValue, SourcedValue]
     }
     if (this.rawChallengeDiceValues?.length === 2) {
-      return this.rawChallengeDiceValues as [number, number]
+      return this.rawChallengeDiceValues.map((d) => ({
+        source: 'd10',
+        value: d,
+      })) as [SourcedValue, SourcedValue]
     }
     return undefined
   }
@@ -374,7 +373,7 @@ export class IronswornRoll {
   get isMatch(): boolean {
     if (!this.finalChallengeDice) return false
     const [c1, c2] = this.finalChallengeDice ?? []
-    return typeof c1 === 'number' && c1 === c2
+    return c1 !== undefined && c1.value === c2.value
   }
 
   get rawOutcome(): SourcedValue<RollOutcome> | undefined {
@@ -384,7 +383,7 @@ export class IronswornRoll {
     if (!this.finalChallengeDice || this.score === undefined) return undefined
 
     const [c1, c2] = this.finalChallengeDice
-    const outcome = computeRollOutcome(this.score, c1, c2)
+    const outcome = computeRollOutcome(this.score, c1.value, c2.value)
     return {
       value: outcome,
       source: game.i18n.localize('IRONSWORN.Roll'),
@@ -409,5 +408,10 @@ export class IronswornRoll {
     const ir = new IronswornRoll()
     Object.assign(ir, json)
     return ir
+  }
+
+  clone(): IronswornRoll {
+    const json = this.serialize()
+    return IronswornRoll.fromJson(cloneDeep(json))
   }
 }
