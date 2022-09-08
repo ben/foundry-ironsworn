@@ -43,7 +43,9 @@ body.theme-starforged {
     border-color: @medium-color;
   }
 
-  .window-app {
+  .window-app,
+  .journal-entry .journal-entry-content {
+    background: initial;
     background-color: @background-gradient;
     border: 1px solid @text-dark-color;
   }
@@ -51,7 +53,17 @@ body.theme-starforged {
   .editor {
     color: @text-medium-color;
     background-color: @background-gradient;
+  }
+
+  .ProseMirror {
+    background-color: @dark-color;
     padding: 0.5rem;
+  }
+
+  .tox .tox-editor-header,
+  .tox .tox-toolbar-overlord,
+  .tox .tox-toolbar__primary {
+    background-color: @background-gradient;
   }
 
   font-family: @theme-font;
@@ -195,7 +207,9 @@ body.theme-starforged {
     }
   }
 
-  button {
+  button,
+  .prosemirror button,
+  .tox .tox-tbtn--bespoke {
     background-color: @dark-color;
     color: @text-medium-color;
     border-color: @muted-color;
