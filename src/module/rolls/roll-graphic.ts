@@ -72,16 +72,7 @@ export async function renderRollGraphic(opts: RollGraphicRenderOpts) {
 
   renderData.challengeDice = opts.roll.challengeDice
   if (opts.roll.finalChallengeDice) {
-    renderData.challengeDice = [
-      {
-        source: opts.roll.challengeDice[0]?.source,
-        value: opts.roll.finalChallengeDice[0],
-      },
-      {
-        source: opts.roll.challengeDice[1]?.source,
-        value: opts.roll.finalChallengeDice[1],
-      },
-    ]
+    renderData.challengeDice = opts.roll.finalChallengeDice
   }
   for (const c of renderData.challengeDice ?? []) {
     if (c.value === 1) c.minmax = 'min'
