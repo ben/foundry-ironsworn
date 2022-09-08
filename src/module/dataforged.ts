@@ -183,7 +183,7 @@ function idIsOracleLink(dfid: string): boolean {
   return /^(Starforged|Ironsworn)\/Oracle/.test(dfid)
 }
 
-function renderLinksInStr(text: string): string {
+export function renderLinksInStr(text: string): string {
   // Strip "Black Medium Right-Pointing Triangle" characters
   text = text.replace('\u23f5', '')
 

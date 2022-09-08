@@ -5,7 +5,12 @@ import { IOracle, IOracleCategory, ironsworn, IRow } from 'dataforged'
 import { max } from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from './actor/actor'
-import { cleanDollars, hash, renderLinksInMove } from './dataforged'
+import {
+  cleanDollars,
+  hash,
+  renderLinksInMove,
+  renderLinksInStr,
+} from './dataforged'
 import { IronswornItem } from './item/item.js'
 
 const THEME_IMAGES = {
@@ -323,7 +328,7 @@ export async function importFromDatasworn() {
           } else text = tableRow.Result ?? ''
           return {
             range: [tableRow.Floor, tableRow.Ceiling],
-            text: tableRow.Result && text,
+            text: tableRow.Result && renderLinksInStr(text),
           } as TableResultDataConstructorData
         })
         .filter((x) => x.range[0] !== null),

@@ -4,6 +4,7 @@
 
 - Prevent progress tracks from having negative values
 - Fix a bug when clicking a post-move oracle-roll button in the chat
+- Render links in Ironsworn oracles on import
 
 ## 1.17.5
 
