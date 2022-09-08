@@ -32,7 +32,9 @@
     <div
       class="boxgroup"
       style="margin-top: 1rem"
-      :data-tooltip="saveDisabled ? 'Make valid choices' : undefined"
+      :data-tooltip="
+        saveDisabled ? $t('IRONSWORN.ResolveChallengeDisabled') : undefined
+      "
     >
       <div class="boxrow flexrow">
         <button

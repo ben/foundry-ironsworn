@@ -134,6 +134,7 @@
     "Burn": "Burn",
     "Focus": "Focus",
     "ResolveChallenge": "Resolve Challenge",
+    "ResolveChallengeDisabled": "Choose your final two challenge dice",
     "BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",
     "MomentumBurnt": "Momentum Burn",
     "NegativeMomentumCancel": "Negative momentum canceled action die",

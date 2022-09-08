@@ -3,7 +3,7 @@ import { VueApplication } from '../vue/vueapp'
 import VueDialog from '../vue/challenge-resolution-dialog.vue'
 
 export class ChallengeResolutionDialog extends VueApplication {
-  constructor(
+  private constructor(
     protected messageId: string,
     options?: Partial<ApplicationOptions>
   ) {
