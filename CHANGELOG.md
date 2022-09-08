@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Add a dialog for resolving a roll with extra challenge dice ([#458](https://github.com/ben/foundry-ironsworn/pull/458))
+
 ## 1.17.6
 
 - Prevent progress tracks from having negative values
