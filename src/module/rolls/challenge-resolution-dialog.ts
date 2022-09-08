@@ -10,15 +10,28 @@ export class ChallengeResolutionDialog extends VueApplication {
     super(options)
   }
 
+  static openDialogs = {} as { [k: string]: ChallengeResolutionDialog }
+
   static async showForMessage(messageId: string) {
-    const foundryMessage = game.messages?.get(messageId)
+    // Prevent duplicates
+    if (this.openDialogs[messageId]) {
+      return this.openDialogs[messageId].render(true)
+    }
+
     const el = $(`.chat-message[data-message-id="${messageId}"`)
     if (!el) return
 
-    return new ChallengeResolutionDialog(messageId, {
+    this.openDialogs[messageId] = new ChallengeResolutionDialog(messageId, {
       left: window.innerWidth - 620,
       top: Math.min(el[0].offsetTop - 50, window.innerHeight - 300),
     }).render(true)
+
+    return this.openDialogs[messageId]
+  }
+
+  close(options?: {}): Promise<void> {
+    delete ChallengeResolutionDialog.openDialogs[this.messageId]
+    return super.close(options)
   }
 
   static get defaultOptions() {
