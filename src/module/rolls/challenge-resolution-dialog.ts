@@ -12,16 +12,12 @@ export class ChallengeResolutionDialog extends VueApplication {
 
   static async showForMessage(messageId: string) {
     const foundryMessage = game.messages?.get(messageId)
-    const el = await foundryMessage?.getHTML()
+    const el = $(`.chat-message[data-message-id="${messageId}"`)
     if (!el) return
 
-    console.log({
-      left: window.innerWidth - 620,
-      top: Math.min(el[0].offsetTop, window.innerHeight - 300),
-    })
     return new ChallengeResolutionDialog(messageId, {
       left: window.innerWidth - 620,
-      top: Math.min(el[0].offsetTop, window.innerHeight - 300),
+      top: Math.min(el[0].offsetTop - 50, window.innerHeight - 300),
     }).render(true)
   }
 
