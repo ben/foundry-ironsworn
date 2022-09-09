@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix Ironsworn moves and oracles
+
 ## 1.17.7
 
 - Starforged-theme editor color fixes

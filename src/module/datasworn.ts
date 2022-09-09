@@ -1,7 +1,13 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
-import { IOracle, IOracleCategory, ironsworn, IRow } from 'dataforged'
+import {
+  IMoveCategory,
+  IOracle,
+  IOracleCategory,
+  ironsworn,
+  IRow,
+} from 'dataforged'
 import { max } from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from './actor/actor'
@@ -368,7 +374,10 @@ export async function importFromDatasworn() {
     for (const child of cat.Categories ?? []) await processCategory(child)
   }
 
-  for (const category of ironsworn['Oracle Categories']) {
+  const OracleCategories = ironsworn.default[
+    'Oracle Categories'
+  ] as IOracleCategory[]
+  for (const category of OracleCategories) {
     await processCategory(category)
   }
   await RollTable.createDocuments(oraclesToCreate, {
@@ -380,7 +389,8 @@ export async function importFromDatasworn() {
 async function processDataforgedMoves() {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  for (const category of ironsworn['Move Categories']) {
+  const MoveCategories = ironsworn.default['Move Categories'] as IMoveCategory[]
+  for (const category of MoveCategories) {
     for (const move of category.Moves) {
       renderLinksInMove(move)
       const cleanMove = cleanDollars(move)
