@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.8
+
 - Fix Ironsworn moves and oracles
 
 ## 1.17.7
