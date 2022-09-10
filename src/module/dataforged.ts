@@ -254,6 +254,10 @@ export async function importFromDataforged() {
   for (const key of PACKS) {
     const pack = game.packs.get(key)
     if (!pack) continue
+
+    // Unlock all the packs
+    await pack.configure({ locked: false })
+
     // @ts-ignore IdQuery type is a little bogus
     const idsToDelete = pack.index.map((x) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
@@ -266,6 +270,11 @@ export async function importFromDataforged() {
   await processOracles(idMap)
   await processEncounters(idMap)
   await processFoes()
+
+  // Lock the packs again
+  for (const key of PACKS) {
+    await game.packs.get(key)?.configure({ locked: true })
+  }
 }
 
 async function processMoves(idMap: { [key: string]: string }) {
