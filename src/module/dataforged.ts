@@ -265,11 +265,11 @@ export async function importFromDataforged() {
 
   const idMap = generateIdMap(starforged)
 
-  await processMoves(idMap)
-  await processAssets(idMap)
-  await processOracles(idMap)
-  await processEncounters(idMap)
-  await processFoes()
+  await processSFMoves(idMap)
+  await processSFAssets(idMap)
+  await processSFOracles(idMap)
+  await processSFEncounters(idMap)
+  await processSFFoes()
 
   // Lock the packs again
   for (const key of PACKS) {
@@ -277,7 +277,7 @@ export async function importFromDataforged() {
   }
 }
 
-async function processMoves(idMap: { [key: string]: string }) {
+async function processSFMoves(idMap: { [key: string]: string }) {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
   for (const category of MoveCategories) {
@@ -299,7 +299,7 @@ async function processMoves(idMap: { [key: string]: string }) {
   })
 }
 
-async function processAssets(idMap: { [key: string]: string }) {
+async function processSFAssets(idMap: { [key: string]: string }) {
   const assetsToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
   for (const assetType of AssetTypes) {
@@ -350,7 +350,7 @@ async function processAssets(idMap: { [key: string]: string }) {
   })
 }
 
-async function processOracles(idMap: { [key: string]: string }) {
+async function processSFOracles(idMap: { [key: string]: string }) {
   const oraclesToCreate: RollTableDataConstructorData[] = []
   // Oracles JSON is a tree we wish to iterate through depth first adding
   // parents prior to their children, and children in order
@@ -403,7 +403,7 @@ async function processOracles(idMap: { [key: string]: string }) {
   })
 }
 
-async function processEncounters(idMap: { [key: string]: string }) {
+async function processSFEncounters(idMap: { [key: string]: string }) {
   const encountersToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
   for (const encounter of starforged.Encounters) {
@@ -457,7 +457,7 @@ async function processEncounters(idMap: { [key: string]: string }) {
   })
 }
 
-async function processFoes() {
+async function processSFFoes() {
   const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
   const foeItems =
     (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
