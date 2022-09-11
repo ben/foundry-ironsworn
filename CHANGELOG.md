@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.10
+
 - Fix momentum calculation
 
 ## 1.17.9
