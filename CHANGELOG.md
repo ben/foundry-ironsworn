@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.9
+
 - Fix the move editor sheet
 
 ## 1.17.8
