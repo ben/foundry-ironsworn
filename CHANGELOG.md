@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix the move editor sheet
+
 ## 1.17.8
 
 - Fix Ironsworn moves and oracles
