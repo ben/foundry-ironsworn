@@ -289,7 +289,7 @@ export class IronswornRollMessage {
 
     const momentum = this.actor.data.data.momentum
     const rawOutcome = this.roll.rawOutcome?.value
-    const momentumBurnOutcome = computeRollOutcome(momentum, c1, c2)
+    const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
 
     if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
       return {

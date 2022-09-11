@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix momentum calculation
+
 ## 1.17.9
 
 - Fix the move editor sheet
