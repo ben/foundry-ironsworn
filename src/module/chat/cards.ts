@@ -314,7 +314,13 @@ export class IronswornChatCard {
     const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
     const table = ((await sfPack?.getDocument(tableid)) ??
       (await isPack?.getDocument(tableid))) as RollTable | undefined
-    rollAndDisplayOracleResult(table, table?.pack || undefined)
+    if (!table?.id) return
+
+    const msg = await OracleRollMessage.fromTableId(
+      table.id,
+      table.pack || undefined
+    )
+    msg.createOrUpdate()
   }
 
   async _sfOracleReroll(ev: JQuery.ClickEvent) {
@@ -329,7 +335,13 @@ export class IronswornChatCard {
 
     const tableId = parent.data('table-id')
     const table = await pack?.getDocument(tableId)
-    rollAndDisplayOracleResult(table as RollTable, packName)
+    if (!table?.id) return
+
+    const msg = await OracleRollMessage.fromTableId(
+      table.id,
+      table.pack || undefined
+    )
+    msg.createOrUpdate()
   }
 
   async replaceSelectorWith(
