@@ -1,7 +1,6 @@
-import { capitalize } from 'lodash'
+import { compact, flatten } from 'lodash'
 import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
-import { rollAndDisplayOracleResult } from './chatrollhelpers'
 import {
   DelveDomainDataProperties,
   DelveThemeDataProperties,
@@ -16,6 +15,7 @@ import { cachedDocumentsForPack } from '../features/pack-cache'
 import { DfRollOutcome, RollOutcome } from '../rolls/ironsworn-roll'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
+import { getFoundryTableByDfId } from '../dataforged'
 
 export class IronswornChatCard {
   id?: string | null
@@ -29,10 +29,45 @@ export class IronswornChatCard {
     return game.messages?.get(this.id || '')
   }
 
+  async attachMoveOracleContextMenu(html: JQuery) {
+    // Set up context-menu bindings
+    const moveLinks = html.find('a[draggable]')
+    const maybeTablePromises = moveLinks.map((_i, el) => {
+      const { pack, id } = el.dataset
+      if (!pack || !id) return []
+
+      const fPack = game.packs.get(pack)
+      const fItem = fPack?.get(id) as IronswornItem
+      if (fItem?.type !== 'sfmove') return []
+
+      const data = fItem.data as SFMoveDataProperties
+      const oracleIds = data.data.Oracles ?? []
+      return Promise.all(oracleIds.map(getFoundryTableByDfId))
+    })
+    const tables = compact(flatten(await Promise.all(maybeTablePromises)))
+    if (tables.length === 0) return
+
+    ContextMenu.create(
+      ui.chat!,
+      html,
+      `.message-content`,
+      tables.map((t) => ({
+        name: t.name || '',
+        icon: '<i class="isicon-d10-tilt"></i>',
+        callback: async () => {
+          const msg = await OracleRollMessage.fromTableId(t.id, t.pack)
+          msg.createOrUpdate()
+        },
+      }))
+    )
+  }
+
   updateBinding(message: ChatMessage, html: JQuery) {
     // Do not store html here
     this.id = message.id
     this.roll = message.isRoll ? message.roll : undefined
+
+    this.attachMoveOracleContextMenu(html)
 
     html
       .find('a.content-link')
