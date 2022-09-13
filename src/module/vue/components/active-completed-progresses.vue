@@ -33,7 +33,7 @@
           :class="completedClass"
           :icon="completedCaret"
           @click="data.expandCompleted = !data.expandCompleted"
-          >{{ $t('IRONSWORN.Completed') }}</btn-faicon
+          >{{ $t('IRONSWORN.COMPLETE.Title') }}</btn-faicon
         >
       </h3>
       <transition

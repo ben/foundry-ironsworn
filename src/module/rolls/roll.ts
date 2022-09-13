@@ -272,7 +272,7 @@ export class IronswornRoll {
       // move rolls will always add a stat
       ret.push({
         source: 'Select a stat',
-        value: `(${game.i18n.localize('IRONSWORN.Stat')})`,
+        value: `(${game.i18n.localize('IRONSWORN.STAT.Label')})`,
       })
     }
 

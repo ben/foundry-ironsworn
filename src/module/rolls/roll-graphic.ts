@@ -55,7 +55,7 @@ export async function renderRollGraphic(
     if (referenceRoll.canceledByNegativeMomentum) {
       renderData.actionDieCanceledByNegativeMomentum = true
       renderData.computedActionDie.source = game.i18n.localize(
-        'IRONSWORN.NegativeMomentumCancel'
+        'IRONSWORN.MOMENTUM.ACTION_DIE_CANCEL.Decription'
       )
     }
   }

@@ -86,7 +86,7 @@ export class SFSettingTruthsDialog extends FormApplication<FormApplicationOption
     console.log(sections)
 
     // const journal = await JournalEntry.create({
-    //   name: game.i18n.localize('IRONSWORN.YourWorldTruths'),
+    //   name: game.i18n.localize('IRONSWORN.TRUTHS.JOURNAL.STARFORGED.Title'),
     //   content: sections.join('\n'),
     // })
     // journal?.sheet?.render(true)

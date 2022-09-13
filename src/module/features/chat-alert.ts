@@ -1,5 +1,5 @@
 import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
-import { capitalize, compact, get } from 'lodash'
+import { compact, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import {
   CharacterDataProperties,
@@ -129,7 +129,7 @@ export function registerChatAlertHooks() {
 
       sendToChat(
         item.parent,
-        game.i18n.format('IRONSWORN.GENERIC.ADD.Alert', { entity: item.name })
+        game.i18n.format('IRONSWORN.GENERIC.ADD.Alert', { name: item.name })
       )
     }
   )
@@ -144,7 +144,7 @@ export function registerChatAlertHooks() {
       sendToChat(
         item.parent,
         game.i18n.format('IRONSWORN.GENERIC.DELETE.Alert', {
-          entity: item.name,
+          name: item.name,
         })
       )
     }
@@ -231,7 +231,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
                   : DebilityKeys[debility]
               }`
             )
-        const params = { entity: i18nDebility }
+        const params = { name: i18nDebility }
         // TODO: use "impact" if this is an SF character
         if (newValue)
           return game.i18n.format('IRONSWORN.GENERIC.MARK.Alert', params)
@@ -246,15 +246,14 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
     const sharedData = actor.data as SharedDataProperties
 
     if (data.data?.supply !== undefined) {
-      const newValue = data.data.supply
-      const oldValue = sharedData.data.supply
-      const signPrefix = newValue > oldValue ? '+' : ''
-      const i18nStat = game.i18n.localize('IRONSWORN.RESOURCE.SUPPLY.Label')
-      return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
-        amt: `${signPrefix}${newValue - oldValue}`,
-        stat: i18nStat,
-        val: newValue,
-      })
+      const newValue = get(data.data, 'supply')
+      const oldValue = get(sharedData.data, 'supply')
+      const isSuffer = oldValue > newValue
+      const attr = game.i18n.localize('IRONSWORN.RESOURCE.SUPPLY.Attr')
+      const formatOptions = { number: newValue - oldValue, attr, newValue }
+      const templateKey =
+        'IRONSWORN.RESOURCE.' + isSuffer ? 'SUFFER' : 'TAKE' + '.Alert'
+      return game.i18n.format(templateKey, formatOptions)
     }
 
     return undefined
@@ -275,7 +274,7 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
               : DebilityKeys[debility]
           }`
         )
-        const params = { entity: i18nDebility }
+        const params = { name: i18nDebility }
         // TODO: use "impact" if this is an SF character
         if (newValue)
           return game.i18n.format('IRONSWORN.GENERIC.MARKED.Alert', params)
@@ -313,60 +312,58 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
   progress: (item: IronswornItem, data) => {
     const progressData = item.data as ProgressDataProperties
     if (data.data?.rank) {
-      const oldRank = game.i18n.localize(
+      const oldAttr = game.i18n.localize(
         RANKS[progressData.data.rank] + '.Attr'
       )
-      const newRank = game.i18n.localize(RANKS[data.data.rank] + '.Attr')
-      return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
-        old: oldRank,
-        new: newRank,
+      const newAttr = game.i18n.localize(RANKS[data.data.rank] + '.Attr')
+      return game.i18n.format('IRONSWORN.PROGRESS.CHALLEGE_RANK.SET.Alert', {
+        oldAttr,
+        newAttr,
       })
     }
     if (data.data?.current !== undefined) {
-      const advanced = data.data.current > progressData.data.current
-      return game.i18n.localize(
-        `IRONSWORN.ChatAlert.progress${advanced ? 'Advanced' : 'Reduced'}`
+      const delta = data.data.current - progressData.data.current
+      const isAdvancing = data.data.current > progressData.data.current
+      const currentScore = data.data.current % 4
+      const deltaString = stringifyProgress(Math.abs(delta))
+      return game.i18n.format(
+        `IRONSWORN.PROGRESS.${isAdvancing ? 'MARK' : 'CLEAR'}.Alert`,
+        { amount: deltaString, currentScore }
       )
     }
     if (data.data?.clockTicks !== undefined) {
       const change = data.data.clockTicks - progressData.data.clockTicks
-      const advanced = data.data.clockTicks > progressData.data.clockTicks
-      const completed = data.data.clockTicks >= progressData.data.clockMax
-      let i18nKey = 'IRONSWORN.ChatAlert.clock'
+      const isAdvancing = data.data.clockTicks > progressData.data.clockTicks
+      const isCompleting = data.data.clockTicks >= progressData.data.clockMax
+      const newValue = data.data.clockTicks
+      const oldValue = progressData.data.clockTicks
+      const maxValue = progressData.data.clockMax
+      let i18nKey = 'IRONSWORN.CLOCK'
       switch (true) {
-        case completed: {
-          i18nKey += 'Completed'
+        case isCompleting: {
+          i18nKey += '.COMPLETE.ALERT'
           break
         }
-        case advanced: {
-          i18nKey += 'Advanced'
+        case isAdvancing: {
+          i18nKey += '.ADVANCE.ALERT'
           break
         }
         default: {
-          i18nKey += 'Set'
-          break
+          i18nKey += '.SET.Alert'
+          return game.i18n.format(i18nKey, { newValue, maxValue })
         }
       }
       if (change > 2) {
-        i18nKey += 'ManySegments'
-      } else if (change === 2) {
-        i18nKey += 'TwoSegments'
-      } else if (change === 1) {
-        i18nKey += 'OneSegment'
+        i18nKey += '.Many'
+      } else {
+        i18nKey += `.${change}`
       }
       return game.i18n.format(i18nKey, {
         change,
-        max: progressData.data.clockMax,
-        old: progressData.data.clockTicks,
-        new: data.data.clockTicks,
+        maxValue,
+        oldValue,
+        newValue,
       })
-    }
-    if (data.data?.completed !== undefined) {
-      return game.i18n.localize(
-        `IRONSWORN.ChatAlert.completed${
-          data.data?.completed ? 'Marked' : 'Unmarked'
-        }`
-      )
     }
     return undefined
   },
@@ -379,14 +376,12 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const newEnables = data.data.abilities.map((x) => x.enabled)
       for (let i = 0; i < oldEnables.length; i++) {
         if (oldEnables[i] !== newEnables[i]) {
-          const descriptors = ['First', 'Second', 'Third', 'Fourth', 'Fifth']
-          const pos = game.i18n.localize(`IRONSWORN.${descriptors[i]}`)
           if (newEnables[i])
-            return game.i18n.format('IRONSWORN.ChatAlert.MarkedAbility', {
-              pos,
+            return game.i18n.format('IRONSWORN.ASSET.ABILITY.MARK.Alert', {
+              number: i + 1,
             })
-          return game.i18n.format('IRONSWORN.ChatAlert.UnmarkedAbility', {
-            pos,
+          return game.i18n.format('IRONSWORN.ASSET.ABILITY.CLEAR.Alert', {
+            number: i + 1,
           })
         }
       }
@@ -395,17 +390,20 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
     if (data.data?.track?.current !== undefined) {
       const newValue = data.data.track.current
       const oldValue = assetData.data.track.current
-      const signPrefix = newValue > oldValue ? '+' : ''
-      return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
-        amt: `${signPrefix}${newValue - oldValue}`,
-        stat: assetData.data.track.name,
-        val: newValue,
-      })
+      const isSuffer = newValue > oldValue
+      const formatOptions = {
+        number: newValue - oldValue,
+        attr: data.data.track.name,
+        newValue,
+      }
+      const templateKey =
+        'IRONSWORN.RESOURCE.' + isSuffer ? 'SUFFER' : 'TAKE' + '.Alert'
+      return game.i18n.format(templateKey, formatOptions)
     }
 
     if (data.data?.exclusiveOptions !== undefined) {
       const selectedOption = data.data.exclusiveOptions.find((x) => x.selected)
-      return game.i18n.format('IRONSWORN.ChatAlert.MarkedOption', {
+      return game.i18n.format('IRONSWORN.GENERIC.MARK.Alert', {
         name: selectedOption.name,
       })
     }
@@ -415,9 +413,9 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         const newField = data.data.fields[i]
         const oldField = assetData.data.fields[i]
         if (oldField && oldField?.value !== newField.value) {
-          return game.i18n.format('IRONSWORN.ChatAlert.SetField', {
+          return game.i18n.format('IRONSWORN.GENERIC.EDIT.Alert', {
             name: newField.name,
-            val: newField.value,
+            value: newField.value,
           })
         }
       }
@@ -431,9 +429,9 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       const oldLen = Object.values(bondsetData.data.bonds).length
       const newLen = Object.values(data.data.bonds).length
       if (oldLen < newLen) {
-        return game.i18n.localize('IRONSWORN.ChatAlert.AddBond')
+        return game.i18n.localize('IRONSWORN.BOND.ADD.Alert')
       } else if (newLen < oldLen) {
-        return game.i18n.localize('IRONSWORN.ChatAlert.LostBond')
+        return game.i18n.localize('IRONSWORN.BOND.DELETE.Alert')
       }
     }
 
@@ -443,7 +441,7 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
 
 function sendToChat(actor: IronswornActor, msg: string) {
   const messageData: ChatMessageDataConstructorData = {
-    content: `<em>${msg}</em>`,
+    content: `<i>${msg}</i>`,
     type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
     speaker: { actor: actor.id },
   }

@@ -136,7 +136,7 @@ async function walkOracle(oracle: IOracle): Promise<IOracleTreeNode> {
 }
 
 async function augmentWithFolderContents(node: IOracleTreeNode) {
-  const name = game.i18n.localize('IRONSWORN.Custom Oracles')
+  const name = game.i18n.localize('IRONSWORN.ORACLES.Custom')
   const rootFolder = game.tables?.directory?.folders.find(
     (x) => x.name === name
   )

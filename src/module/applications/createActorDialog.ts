@@ -14,7 +14,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      title: game.i18n.format('DOCUMENT.Create', { entity: 'DOCUMENT.Actor' }),
+      title: game.i18n.format('DOCUMENT.Create', { type: 'DOCUMENT.Actor' }),
       template: 'systems/foundry-ironsworn/templates/actor/create.hbs',
       id: 'new-actor-dialog',
       resizable: false,

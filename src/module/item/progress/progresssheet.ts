@@ -34,7 +34,9 @@ export class ProgressSheet extends IronswornItemSheet {
     ev.preventDefault()
     Dialog.confirm({
       title: game.i18n.localize('Delete'),
-      content: `<p>${game.i18n.localize('IRONSWORN.ConfirmDelete')}</p>`,
+      content: `<p>${game.i18n.localize(
+        'IRONSWORN.GENERIC.DELETE.Confirm'
+      )}</p>`,
       yes: () => this.item.delete(),
       defaultYes: false,
     })

@@ -104,7 +104,9 @@ export class IronswornHandlebarsHelpers {
       const actionDie = d?.total ?? 0
       const totalParts = [
         this.actionCapped
-          ? `<abbr title="${game.i18n.localize('IRONSWORN.CappedAt10')}">`
+          ? `<abbr title="${game.i18n.localize(
+              'IRONSWORN.ROLL.ActionScoreCap'
+            )}">`
           : '',
         this.action.toString(),
         this.actionCapped ? '</abbr>' : '',

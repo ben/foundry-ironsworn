@@ -12,13 +12,13 @@ function HUDCallback(_hud, html, token) {
   const leftButton = document.createElement('div')
   leftButton.classList.add('control-icon')
   leftButton.innerHTML = '<i class="fas fa-undo" />'
-  leftButton.title = game.i18n.localize('IRONSWORN.RotateCCW')
+  leftButton.title = game.i18n.localize('IRONSWORN.ROTATE.Ccw')
   $(leftButton).on('click', (ev) => rotateTokenBy(ev, token, -60))
 
   const rightButton = document.createElement('div')
   rightButton.classList.add('control-icon')
   rightButton.innerHTML = '<i class="fas fa-redo" />'
-  rightButton.title = game.i18n.localize('IRONSWORN.RotateCW')
+  rightButton.title = game.i18n.localize('IRONSWORN.ROTATE.Cw')
   $(rightButton).on('click', (ev) => rotateTokenBy(ev, token, 60))
 
   html.find('div.left').prepend(leftButton)

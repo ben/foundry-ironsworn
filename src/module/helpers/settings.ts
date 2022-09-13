@@ -7,17 +7,17 @@ function reload() {
 export class IronswornSettings {
   static registerSettings() {
     game.settings.registerMenu('foundry-ironsworn', 'first-start-dialog', {
-      name: 'IRONSWORN.Settings.ConfigurationDialog.Name',
-      label: 'IRONSWORN.Settings.ConfigurationDialog.Label',
+      name: 'IRONSWORN.SETTINGS.ConfigurationDialog.Name',
+      label: 'IRONSWORN.SETTINGS.ConfigurationDialog.Label',
       icon: 'fas fa-cog',
-      hint: 'IRONSWORN.Settings.ConfigurationDialog.Hint',
+      hint: 'IRONSWORN.SETTINGS.ConfigurationDialog.Hint',
       type: FirstStartDialog,
       restricted: true,
     })
 
     game.settings.register('foundry-ironsworn', 'prompt-world-truths', {
-      name: 'IRONSWORN.Settings.PromptTruths.Name',
-      hint: 'IRONSWORN.Settings.PromptTruths.Hint',
+      name: 'IRONSWORN.SETTINGS.PromptTruths.Name',
+      hint: 'IRONSWORN.SETTINGS.PromptTruths.Hint',
       scope: 'world',
       config: true,
       type: Boolean,
@@ -28,14 +28,14 @@ export class IronswornSettings {
       'foundry-ironsworn',
       'theme',
       {
-        name: 'IRONSWORN.Settings.Theme.Name',
-        hint: 'IRONSWORN.Settings.Theme.Hint',
+        name: 'IRONSWORN.SETTINGS.Theme.Name',
+        hint: 'IRONSWORN.SETTINGS.Theme.Hint',
         scope: 'world',
         config: true,
         type: String,
         choices: {
-          ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
-          starforged: 'IRONSWORN.Settings.Theme.Starforged',
+          ironsworn: 'IRONSWORN.SETTINGS.Theme.Ironsworn',
+          starforged: 'IRONSWORN.SETTINGS.Theme.Starforged',
         },
         default: 'ironsworn',
         onChange: reload,
@@ -46,15 +46,15 @@ export class IronswornSettings {
       'foundry-ironsworn',
       'toolbox',
       {
-        name: 'IRONSWORN.Settings.Tools.Name',
-        hint: 'IRONSWORN.Settings.Tools.Hint',
+        name: 'IRONSWORN.SETTINGS.Tools.Name',
+        hint: 'IRONSWORN.SETTINGS.Tools.Hint',
         scope: 'world',
         config: true,
         type: String,
         choices: {
-          sheet: 'IRONSWORN.Settings.Tools.Sheet',
-          ironsworn: 'IRONSWORN.Ironsworn',
-          starforged: 'IRONSWORN.Starforged',
+          sheet: 'IRONSWORN.SETTINGS.Tools.Sheet',
+          ironsworn: 'IRONSWORN.GAME.IronswornClassic',
+          starforged: 'IRONSWORN.GAME.IronswornStarforged',
         },
         default: 'sheet',
         onChange: reload,
@@ -62,8 +62,8 @@ export class IronswornSettings {
     )
 
     game.settings.register('foundry-ironsworn', 'shared-supply', {
-      name: 'IRONSWORN.Settings.SharedSupply.Name',
-      hint: 'IRONSWORN.Settings.SharedSupply.Hint',
+      name: 'IRONSWORN.SETTINGS.SharedSupply.Name',
+      hint: 'IRONSWORN.SETTINGS.SharedSupply.Hint',
       scope: 'world',
       config: true,
       type: Boolean,
@@ -71,8 +71,8 @@ export class IronswornSettings {
     })
 
     game.settings.register('foundry-ironsworn', 'log-changes', {
-      name: 'IRONSWORN.Settings.LogChanges.Name',
-      hint: 'IRONSWORN.Settings.LogChanges.Hint',
+      name: 'IRONSWORN.SETTINGS.LogChanges.Name',
+      hint: 'IRONSWORN.SETTINGS.LogChanges.Hint',
       scope: 'world',
       config: true,
       type: Boolean,

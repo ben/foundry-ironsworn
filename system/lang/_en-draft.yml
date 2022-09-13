@@ -1,34 +1,42 @@
+---
 IRONSWORN:
   ASSET:
-    Description: <term>Assets</term> represent your background, skills, traits, companions, and resources. They have <term>abilities</term> that give you additional options and bonuses when making a move—or sometimes act as their own self-contained moves.
     ABILITY:
       CLEAR:
         Alert: Cleared ability \#{number}
+      Label: Ability
       MARK:
         Alert: Marked ability \#{number}
       Title: Abilities
-    Ability: ability
+    Description: <term>Assets</term> represent your background, skills, traits, companions, and resources. They have <term>abilities</term> that give you additional options and bonuses when making a move—or sometimes act as their own self-contained moves.
     Options: Options
     Title: Assets
   BOND:
-    Label: Bonds track
-    Title: Bonds
+    ADD:
+      Alert: Added a bond
+    DELETE:
+      Alert: Lost a bond
+    Label: Bond
+    TRACK:
+      Label: Bonds track
+      Title: Bonds
   CLOCK:
-    ALERT:
-      ADVANCE:
-        AdvanceManySegments: Clock advanced by {change} segments to {newValue}⁄{maxValue}
-        AdvanceOneSegment: Clock advanced to {newValue}⁄{maxValue}
-        AdvanceTwoSegments: Clock advanced by {change} segments to {newValue}⁄{maxValue}
-      COMPLETE:
-        CompleteWithManySegments: Clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!
-        CompleteWithOneSegment: Clock advanced to {newValue}⁄{maxValue}—clock completed!
-        CompleteWithTwoSegments: Clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!
-      SET:
-        Alert: Clock set to {newValue}⁄{maxValue}
+    ADVANCE:
+      ALERT:
+        '1': Clock advanced to {newValue}⁄{maxValue}
+        '2': Clock advanced by {change} segments to {newValue}⁄{maxValue}
+        Many: Clock advanced by {change} segments to {newValue}⁄{maxValue}
+    COMPLETE:
+      ALERT:
+        '1': Clock advanced to {newValue}⁄{maxValue}—clock completed!
+        '2': Clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!
+        Many: Clock advanced by {change} segments to {newValue}⁄{maxValue}—clock completed!
     Campaign: Campaign clock
     SEGMENT:
       Label: segment
       Title: Segments
+    SET:
+      Alert: Clock set to {newValue}⁄{maxValue}
     Tension: Tension clock
     Title: Clocks
   COMBAT:
@@ -104,6 +112,8 @@ IRONSWORN:
       Description: <term>Wounded</term> may be marked when you are at 0 health and fail to <move>Endure Harm</move>. You are severely injured and need treatment to recover. You cannot increase your health track until you <move>Heal</move> or <move>Sojourn</move> to clear this debility
       Label: Wounded
   DELVE_SITE:
+    Denizen: Denizen
+    Denizens: Denizens
     Danger: Danger
     DangersTitle: Dangers
     Domain: Domain
@@ -186,38 +196,39 @@ IRONSWORN:
     Starforged: Starforged
   GENERIC:
     ADD:
-      Alert: Added <i>{entity}</i>
+      Alert: Added {name}
       Label: Add
     AdvancedOptions: Advanced options
     CLEAR:
-      Alert: Cleared <i>{entity}</i>
+      Alert: Cleared {name}
       Label: Clear
     COLLAPSE:
       Label: Collapse
     Chat: Chat
     DELETE:
-      Alert: Deleted <i>{entity}</i>
+      Alert: Deleted {name}
       Confirm: Are you sure? This cannot be undone.
       Label: Delete
     DESCRIPTION:
       Label: Description
     EDIT:
-      Alert: <i>{entity}</i> set to {value}
+      Alert: '{name} set to {value}'
       Label: Edit
     ENABLE:
       Label: Enable
-    Field: Field
-    Fields: Fields
+    FIELD:
+      Label: Field
+      Title: Fields
     LABEL:
       Label: Label
     MARK:
-      Alert: Marked <i>{entity}</i>
+      Alert: Marked {name}
       Label: Mark
     OPEN:
       Label: Open
     QuestStarter: Quest starter
     RENAME:
-      Alert: <i>{oldName}</i> renamed to <i>{newName}</i>
+      Alert: '{oldName} renamed to {newName}'
       Label: Rename
     SAVE:
       Label: Save
@@ -290,6 +301,7 @@ IRONSWORN:
     RequiresType: This oracle requires a location type to be selected.
     RollForDetails: Roll location details
     Type: Location type
+    RandomName: Random name
   MOMENTUM:
     ACTION_DIE_CANCEL:
       Description: Your action die was cancelled because the number on the action die matched your negative momentum value. You can’t take a bonus from an asset ability triggered by that die. If an asset forces a penalty for a specific action die value, that outcome still applies.
@@ -305,16 +317,18 @@ IRONSWORN:
       Description: If you have one marked impact, your momentum reset is +1 (instead of +2). If you have more than one marked impact, your momentum reset is 0 (instead of +2).
       Label: Reset
   MOVE:
-    Description: <term>Moves</term> are self-contained systems to resolve an action, scene, or question. There are moves to cover most uncertain or risky situations you encounter. Moves are centered on the players and protagonists. Other characters do not make moves.
     Custom: Custom moves
     Delete: Delete move
+    Description: <term>Moves</term> are self-contained systems to resolve an action, scene, or question. There are moves to cover most uncertain or risky situations you encounter. Moves are centered on the players and protagonists. Other characters do not make moves.
     FullText: Full text
     SEARCH:
       Description: Start typing to filter moves by their names and categories.
-    Title: Moves
     TRIGGER:
-      Label: Trigger
       Description: This is the move’s trigger. <term>Triggers</term> are phrased as “when you [blank].” When you do that thing, or encounter that situation, make the move.
+      Label: Trigger
+    Title: Moves
+  NonPlayerCharacter:
+    Description: <term>NPCs</term> (non-player characters and creatures) are the other characters who inhabit your universe. They can have a single mechanical attribute, their <term>rank</term>, to help set their relative scale and abilities. But you do not roll dice for them. When you attempt to influence them, oppose them, or aid them, take action from your character’s perspective.
   ORACLE:
     Custom: Custom oracles
     Roll: Roll oracle
@@ -357,12 +371,14 @@ IRONSWORN:
       Alert: Cleared {amount} of progress (now {currentScore}/10)
       Label: Clear {amount} of progress
     COMPLETE:
+      Title: Completed
+      Complete: Complete
+      Incomplete: Incomplete
       CLEAR:
         Alert: Marked as incomplete
       MARK:
         Alert: Marked as complete
-        Label: Completed
-    Incomplete: Incomplete
+
     MARK:
       Alert: Marked {amount} of progress (now {currentScore}/10)
       Label: Mark {amount} of progress
@@ -549,15 +565,24 @@ IRONSWORN:
       Hint: Which set of moves and oracles will appear when opening a character sheet.
       Name: Character tools
       Sheet: Match sheet
-  SETTING_TRUTHS:
+  TRUTH:
     Custom: Custom Truth
-    Save: Save Your Truths
-    TITLE:
-      Classic: 'Your World: Truths'
-      Starforged: Setting Truths
+    SAVE:
+      Label: Save your Truths
+    JOURNAL:
+      CLASSIC:
+        Title: 'Your World: Truths'
+      STARFORGED:
+        Title: Your Truths
+    CLASSIC:
+      Title:
+    STARFORGED:
+      Title:
   SETTLEMENT:
     RandomType: Random settlement location
     Type: Settlement location
+  SOJOURN:
+    Focus: Focus
   STAR:
     RandomType: Random stellar object
     Type: Type of stellar object
@@ -580,6 +605,7 @@ IRONSWORN:
       Description: Sneakiness, deceptiveness, and cunning.
       Label: Shadow
     Title: Stats
+    Label: Stat
     WITS:
       Attr: wits
       Description: Expertise, knowledge, and observation.
@@ -605,5 +631,3 @@ IRONSWORN:
       Ironsworn: Clear all but one filled progress, and raise the quest’s rank by one (if not already epic).
       Starforged: Roll both challenge dice, take the lowest value, and clear that number of progress boxes. Then, raise the vow’s rank by one (if not already epic).
     Title: Vows
-  NonPlayerCharacter:
-    Description: <term>NPCs</term> (non-player characters and creatures) are the other characters who inhabit your universe. They can have a single mechanical attribute, their <term>rank</term>, to help set their relative scale and abilities. But you do not roll dice for them. When you attempt to influence them, oppose them, or aid them, take action from your character’s perspective.

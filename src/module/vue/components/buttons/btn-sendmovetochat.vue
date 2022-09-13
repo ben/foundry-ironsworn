@@ -6,7 +6,7 @@
     @click="sendToChat"
     :disabled="disabled"
   >
-    <slot name="default"><!-- {{$t('IRONSWORN.Chat')}} --></slot>
+    <slot name="default"><!-- {{$t('IRONSWORN.GENERIC.Chat')}} --></slot>
   </btn-faicon>
 </template>
 

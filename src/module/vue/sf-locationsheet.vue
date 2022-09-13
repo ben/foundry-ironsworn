@@ -19,7 +19,7 @@
 
       <!-- Subtype -->
       <label class="flexrow" style="flex-basis: 200px; gap: 10px">
-        {{ $t('IRONSWORN.LocationType') }}
+        {{ $t('IRONSWORN.LOCATION.Type') }}
         <select v-model="actor.data.subtype" @change="subtypeChanged">
           <option value="planet">{{ $t('IRONSWORN.DOCUMENT.Planet') }}</option>
           <option value="settlement">
@@ -94,7 +94,7 @@
               height: 48px;
               border-radius: 0 3px 3px 0;
             "
-            :tooltip="$t('IRONSWORN.RandomName')"
+            :tooltip="$t('IRONSWORN.LOCATION.RandomName')"
             @click="randomizeName"
           />
         </div>
@@ -127,7 +127,7 @@
           }"
           :tooltip="
             oracle.requiresKlass && klassIsNotValid
-              ? $t('IRONSWORN.RequiresLocationType')
+              ? $t('IRONSWORN.LOCATION.RequiresType')
               : undefined
           "
           :key="oracle.dfId"

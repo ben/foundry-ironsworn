@@ -7,7 +7,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      title: game.i18n.localize('IRONSWORN.YourWorldTruths'),
+      title: game.i18n.localize('IRONSWORN.TRUTHS.TITLE.Classic'),
       template: 'systems/foundry-ironsworn/templates/truths.hbs',
       id: 'world-truths-dialog',
       resizable: true,
@@ -81,7 +81,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
     }
 
     const journal = await JournalEntry.create({
-      name: game.i18n.localize('IRONSWORN.YourWorldTruths'),
+      name: game.i18n.localize('IRONSWORN.TRUTHS.TITLE.Classic'),
       content: sections.join('\n'),
     })
     journal?.sheet?.render(true)

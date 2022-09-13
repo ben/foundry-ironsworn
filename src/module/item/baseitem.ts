@@ -127,7 +127,7 @@ export abstract class BaseItem {
     Dialog.confirm({
       title: game.i18n.localize(titleKey),
       content: `<p><strong>${game.i18n.localize(
-        'IRONSWORN.ConfirmDelete'
+        'IRONSWORN.GENERIC.DELETE.Confirm'
       )}</strong></p>`,
       yes: () => item?.delete(),
       defaultYes: false,

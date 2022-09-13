@@ -215,7 +215,7 @@ IRONSWORN:
       Ironsworn: Ironsworn clásico
       Name: Tema
       Starforged: Starforged (experimental)
-  SETTING_TRUTHS:
+  TRUTHS:
     Custom: Otra verdad
     QuestStarter: 'Inicio de Aventura:'
     Save: Guardar tus Verdades

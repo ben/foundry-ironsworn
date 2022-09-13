@@ -252,7 +252,7 @@ IRONSWORN:
       Ironsworn: Ironsworn Classic
       Name: Thème visuel
       Starforged: Starforged (experimental)
-  SETTING_TRUTH:
+  TRUTH:
     CreateCustom: Créer un vérité personalisée
     QuestStarter: Accroche de Quête
     Save: Enregistrer vos Vérités

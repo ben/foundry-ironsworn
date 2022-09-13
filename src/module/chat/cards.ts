@@ -254,7 +254,9 @@ export class IronswornChatCard {
     const move = await moveDataByName('Sojourn')
     if (!move) return
 
-    move.Name = `${move.Name} – ${game.i18n.localize('IRONSWORN.Focus')}`
+    move.Name = `${move.Name} – ${game.i18n.localize(
+      'IRONSWORN.SOJOURN.Focus'
+    )}`
     move.Description = move.ExtraDescription || ''
     move.Strong = move.ExtraStrong || ''
     move.Weak = move.ExtraWeak || ''

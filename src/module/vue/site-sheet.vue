@@ -56,7 +56,7 @@
     </div>
 
     <!-- MOVES -->
-    <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
+    <h4 class="flexrow nogrow">{{ $t('IRONSWORN.MOVE.Title') }}</h4>
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
         <site-movebox movename="Delve the Depths" />
@@ -68,7 +68,7 @@
           @click="randomFeature"
         >
           <h4>
-            {{ $t('IRONSWORN.Feature') }}
+            {{ $t('IRONSWORN.DELVE_SITE.Feature') }}
           </h4>
         </button>
 
@@ -85,6 +85,7 @@
           @click="locateObjective"
         >
           <h4>
+            <!-- TODO: pull from the move data instead -->
             {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
           </h4>
         </button>
@@ -94,7 +95,7 @@
 
     <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
-      <span>{{ $t('IRONSWORN.Denizens') }}</span>
+      <span>{{ $t('IRONSWORN.DELVE_SITE.Denizens') }}</span>
       <btn-isicon
         icon="d10-tilt"
         class="flexrow nogrow text"

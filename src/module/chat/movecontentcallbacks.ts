@@ -30,7 +30,8 @@ export const MoveContentCallbacks: { [key: string]: Callback } = {
   Sojourn: ({ hitType }: CallbackInput) =>
     hitType === RollOutcome.Miss
       ? undefined
-      : `
+      : // TODO: point this to the text of the move object instead
+        `
         <hr>
         <p>${game.i18n.localize(
           'IRONSWORN.MoveContents.Sojourn.extradescription'
