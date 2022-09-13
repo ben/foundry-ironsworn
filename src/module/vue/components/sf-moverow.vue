@@ -76,12 +76,6 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import {
-  computed,
-  defineComponent,
-  inject,
-  nextTick,
-  reactive,
 import { computed, inject, nextTick, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
