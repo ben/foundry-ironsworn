@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.11
+
 - Improvements to oracles ([#463](https://github.com/ben/foundry-ironsworn/pull/463)):
   - Right-clicking on a move-result chat card will now display shortcuts for rolling oracles if any are mentioned
   - The move sheet now uses the standard oracle control for in-move oracles, which makes them more compact, and saves a click and some chat space if you just want to roll the oracle
