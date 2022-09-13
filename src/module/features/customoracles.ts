@@ -90,7 +90,7 @@ async function walkOracleCategory(
   return node
 }
 
-async function walkOracle(oracle: IOracle): Promise<IOracleTreeNode> {
+export async function walkOracle(oracle: IOracle): Promise<IOracleTreeNode> {
   const table = await getFoundryTableByDfId(oracle.$id)
 
   const node: IOracleTreeNode = {
@@ -166,7 +166,7 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
   walkFolder(node, rootFolder)
 }
 
-function walkAndFreezeTables(node: IOracleTreeNode) {
+export function walkAndFreezeTables(node: IOracleTreeNode) {
   ;(node.tables as any) = Object.freeze(node.tables)
   for (const child of node.children) {
     walkAndFreezeTables(child)

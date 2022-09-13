@@ -29,7 +29,14 @@
             {{ $t('IRONSWORN.Chat') }}
           </btn-sendmovetochat>
         </div>
-        <div v-html="$enrichMarkdown(fulltext)" />
+        <div v-html="fulltext" />
+
+        <oracle-tree-node
+          class="item-row"
+          v-for="node of data.oracles"
+          :key="node.displayName"
+          :node="node"
+        />
       </with-rolllisteners>
     </transition>
   </div>
@@ -69,25 +76,30 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import {
-  computed,
-  defineComponent,
-  inject,
-  nextTick,
-  reactive,
-  ref,
-  watch,
-} from 'vue'
+import { computed, inject, nextTick, reactive, ref } from 'vue'
+import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
+import {
+  IOracleTreeNode,
+  walkAndFreezeTables,
+  walkOracle,
+} from '../../features/customoracles'
+import { IronswornHandlebarsHelpers } from '../../helpers/handlebars'
 import { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
 import { $EmitterKey } from '../provisions'
+import { enrichMarkdown } from '../vue-plugin'
 import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
 import WithRolllisteners from './with-rolllisteners.vue'
+import OracleTreeNode from './oracle-tree-node.vue'
 
 const props = defineProps<{ move: Move }>()
-const data = reactive({ expanded: false, highlighted: false })
+const data = reactive({
+  expanded: false,
+  highlighted: false,
+  oracles: [] as IOracleTreeNode[],
+})
 
 const tooltip = computed(() => {
   const { Title, Page } = props.move.dataforgedMove?.Source ?? {}
@@ -95,11 +107,24 @@ const tooltip = computed(() => {
   return `${Title} p${Page}`
 })
 const fulltext = computed(() => {
-  return props.move.moveItem?.data?.data?.Text
+  return IronswornHandlebarsHelpers.stripTables(
+    enrichMarkdown(props.move.moveItem?.data?.data?.Text)
+  )
 })
 const canRoll = computed(() => {
   return moveHasRollableOptions(props.move.moveItem)
 })
+
+if (props.move.dataforgedMove) {
+  const oracleIds = props.move.dataforgedMove.Oracles ?? []
+  Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
+    const nodes = await Promise.all(dfOracles.map(walkOracle))
+    for (const n of nodes) {
+      walkAndFreezeTables(n)
+    }
+    data.oracles.push(...nodes)
+  })
+}
 
 const $el = ref<HTMLElement>()
 const $emitter = inject($EmitterKey)

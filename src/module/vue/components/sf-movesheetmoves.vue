@@ -61,7 +61,7 @@ h2 {
 
 <script setup lang="ts">
 import { flatten } from 'lodash'
-import { computed, inject, nextTick, reactive, ref, Ref } from 'vue'
+import { computed, inject, provide, reactive, ref, Ref } from 'vue'
 import {
   createIronswornMoveTree,
   createStarforgedMoveTree,
@@ -70,6 +70,7 @@ import { $EmitterKey } from '../provisions'
 import sfMoverow from './sf-moverow.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
+provide('toolset', props.toolset)
 
 const actor = inject('actor') as Ref
 
