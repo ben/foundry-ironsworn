@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- The return of oracles in the Ironsworn move sheet ([#465](https://github.com/ben/foundry-ironsworn/pull/465))
+
 ## 1.17.11
 
 - Improvements to oracles ([#463](https://github.com/ben/foundry-ironsworn/pull/463)):
