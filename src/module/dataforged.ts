@@ -1,13 +1,12 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
-import { cloneDeep, get, isArray, isObject, max, set } from 'lodash'
+import { get, isArray, isObject, max, set } from 'lodash'
 import {
   starforged,
   ironsworn,
   IMove,
   IOracle,
   IOracleCategory,
-  IInputClock,
   Starforged,
   Ironsworn,
 } from 'dataforged'
@@ -231,6 +230,7 @@ const PACKS = [
   'foundry-ironsworn.starforgedmoves',
   'foundry-ironsworn.starforgedoracles',
   'foundry-ironsworn.foeactorssf',
+  'foundry-ironsworn.ironswornoracles',
 ]
 
 /**
