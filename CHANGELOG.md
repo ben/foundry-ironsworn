@@ -3,7 +3,7 @@
 ## Next Release
 
 - The return of oracles in the Ironsworn move sheet ([#465](https://github.com/ben/foundry-ironsworn/pull/465))
-- Normalize some labels in the SF location sheet
+- Normalize some labels in the SF location sheet ([#464](https://github.com/ben/foundry-ironsworn/pull/464))
 
 ## 1.17.11
 
