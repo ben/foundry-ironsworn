@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.12
+
 - The return of oracles in the Ironsworn move sheet ([#465](https://github.com/ben/foundry-ironsworn/pull/465))
 - Normalize some labels in the SF location sheet ([#464](https://github.com/ben/foundry-ironsworn/pull/464))
 - Periodically refresh document caches to prevent the garbage collector from purging them and breaking oracle rolls
