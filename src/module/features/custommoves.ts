@@ -1,4 +1,11 @@
-import { IMove, IMoveCategory, starforged, ironsworn } from 'dataforged'
+import {
+  starforged,
+  ironsworn,
+  IMove,
+  IMoveCategory,
+  Ironsworn,
+  Starforged,
+} from 'dataforged'
 import { IronswornItem } from '../item/item'
 import { MoveDataSource } from '../item/itemtypes'
 import { cachedDocumentsForPack } from './pack-cache'
@@ -16,8 +23,12 @@ export interface Move {
 }
 
 // For some reason, rollupJs mangles this
-const SFMoveCategories = starforged.default['Move Categories']
-const ISMoveCategories = ironsworn.default['Move Categories']
+const SFMoveCategories = ((starforged as any).default as Starforged)[
+  'Move Categories'
+]
+const ISMoveCategories = ((ironsworn as any).default as Ironsworn)[
+  'Move Categories'
+]
 
 async function createMoveTree(
   compendiumName: string,
