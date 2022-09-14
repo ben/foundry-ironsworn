@@ -184,9 +184,9 @@ const COMPENDIUM_KEY_MAP = {
   'Starforged/Oracles': 'starforgedoracles',
   'Starforged/Encounters': 'starforgedencounters',
 }
-const MARKDOWN_LINK_RE = /\\[(.*?)\\]\\((.*?)\\)/g
-const DESCRIPTOR_FOCUS_RE = /\\[Descriptor \\+ Focus\\]\\(.*?\\)/
-const ACTION_THEME_RE = /\\[Action \\+ Theme\\]\\(.*?\\)/
+const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
+const DESCRIPTOR_FOCUS_RE = /\[Descriptor \+ Focus\]\(.*?\)/
+const ACTION_THEME_RE = /\[Action \+ Theme\]\(.*?\)/
 
 function idIsOracleLink(dfid: string): boolean {
   return /^(Starforged|Ironsworn)\/Oracle/.test(dfid)
