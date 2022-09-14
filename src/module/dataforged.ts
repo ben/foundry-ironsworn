@@ -158,25 +158,6 @@ export function findOracleWithIntermediateNodes(
   return ret
 }
 
-function generateIdMap(data: typeof starforged): { [key: string]: string } {
-  const ret = {}
-
-  const nodeStack = cloneDeep(Object.values(data))
-  while (nodeStack.length) {
-    const node = nodeStack.pop()
-    if (node?.$id) {
-      ret[node.$id] = hash(node.$id)
-    }
-    if (isArray(node)) {
-      nodeStack.push(...node.reverse())
-    } else if (node instanceof Object) {
-      nodeStack.push(...Object.values(node).reverse())
-    }
-  }
-
-  return ret
-}
-
 const COMPENDIUM_KEY_MAP = {
   'Ironsworn/Moves': 'ironswornmoves',
   'Ironsworn/Oracles': 'ironswornoracles',
@@ -272,12 +253,10 @@ export async function importFromDataforged() {
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
-  const idMap = generateIdMap(starforged)
-
-  await processSFMoves(idMap)
-  await processSFAssets(idMap)
+  await processSFMoves()
+  await processSFAssets()
   await processSFOracles()
-  await processSFEncounters(idMap)
+  await processSFEncounters()
   await processSFFoes()
 
   await processISOracles()
@@ -288,7 +267,7 @@ export async function importFromDataforged() {
   }
 }
 
-async function processSFMoves(idMap: { [key: string]: string }) {
+async function processSFMoves() {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
   for (const category of SFMoveCategories) {
@@ -296,7 +275,7 @@ async function processSFMoves(idMap: { [key: string]: string }) {
       renderLinksInMove(move)
       const cleanMove = cleanDollars(move)
       movesToCreate.push({
-        _id: idMap[cleanMove['dfid']],
+        _id: hashLookup(cleanMove['dfid']),
         type: 'sfmove',
         name: cleanMove['Name'],
         img: 'icons/dice/d10black.svg',
@@ -310,14 +289,14 @@ async function processSFMoves(idMap: { [key: string]: string }) {
   })
 }
 
-async function processSFAssets(idMap: { [key: string]: string }) {
+async function processSFAssets() {
   const assetsToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
   for (const assetType of SFAssetTypes) {
     for (const asset of assetType.Assets) {
       assetsToCreate.push({
         type: 'asset',
-        _id: idMap[asset.$id],
+        _id: hashLookup(asset.$id),
         name: `${assetType.Name} / ${asset.Name}`,
         data: {
           description: renderMarkdown(assetType.Description),
@@ -437,7 +416,7 @@ async function processISOracles() {
   })
 }
 
-async function processSFEncounters(idMap: { [key: string]: string }) {
+async function processSFEncounters() {
   const encountersToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
   for (const encounter of starforged.Encounters) {
@@ -452,7 +431,7 @@ async function processSFEncounters(idMap: { [key: string]: string }) {
     )
 
     encountersToCreate.push({
-      _id: idMap[encounter['$id']],
+      _id: hashLookup(encounter['$id']),
       type: 'progress',
       name: encounter['Name'],
       data: {
@@ -473,7 +452,7 @@ async function processSFEncounters(idMap: { [key: string]: string }) {
       )
 
       encountersToCreate.push({
-        _id: idMap[variant['$id']],
+        _id: hashLookup(variant['$id']),
         type: 'progress',
         name: variant['Name'],
         data: {
