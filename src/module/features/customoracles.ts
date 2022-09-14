@@ -1,4 +1,11 @@
-import { starforged, ironsworn, IOracle, IOracleCategory } from 'dataforged'
+import {
+  starforged,
+  ironsworn,
+  IOracle,
+  IOracleCategory,
+  Starforged,
+  Ironsworn,
+} from 'dataforged'
 import { compact } from 'lodash'
 import { getFoundryTableByDfId } from '../dataforged'
 import { cachedDocumentsForPack } from './pack-cache'
@@ -13,8 +20,12 @@ export interface IOracleTreeNode {
 }
 
 // For some reason, rollupJs mangles this
-const SFOracleCategories = starforged.default['Oracle Categories']
-const ISOracleCategories = ironsworn.default['Oracle Categories']
+const SFOracleCategories = ((starforged as any).default as Starforged)[
+  'Oracle Categories'
+]
+const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
+  'Oracle Categories'
+]
 
 const emptyNode = () =>
   ({

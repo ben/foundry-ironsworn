@@ -1,13 +1,14 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
-import { cloneDeep, get, isArray, isObject, max, set } from 'lodash'
+import { get, isArray, isObject, max, set } from 'lodash'
 import {
   starforged,
+  ironsworn,
   IMove,
   IOracle,
   IOracleCategory,
-  IInputClock,
   Starforged,
+  Ironsworn,
 } from 'dataforged'
 import { marked } from 'marked'
 import { IronswornItem } from './item/item'
@@ -17,9 +18,16 @@ import { RollTableDataConstructorData } from '@league-of-foundry-developers/foun
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
 
 // For some reason, rollupJs mangles this
-const MoveCategories = (starforged.default as Starforged)['Move Categories']
-const OracleCategories = (starforged.default as Starforged)['Oracle Categories']
-const AssetTypes = (starforged.default as Starforged)['Asset Types']
+const SFMoveCategories = ((starforged as any).default as Starforged)[
+  'Move Categories'
+]
+const SFOracleCategories = ((starforged as any).default as Starforged)[
+  'Oracle Categories'
+]
+const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
+  'Oracle Categories'
+]
+const SFAssetTypes = ((starforged as any).default as Starforged)['Asset Types']
 
 function getLegacyRank(numericRank) {
   switch (numericRank) {
@@ -96,7 +104,7 @@ export async function getFoundryMoveByDfId(
 export async function getDFMoveByDfId(
   dfid: string
 ): Promise<IMove | undefined> {
-  for (const category of MoveCategories) {
+  for (const category of SFMoveCategories) {
     for (const move of category.Moves) {
       if (move.$id === dfid) return move
     }
@@ -143,28 +151,9 @@ export function findOracleWithIntermediateNodes(
     return false
   }
 
-  for (const cat of OracleCategories) {
+  for (const cat of [...SFOracleCategories, ...ISOracleCategories]) {
     walkCategory(cat)
   }
-  return ret
-}
-
-function generateIdMap(data: typeof starforged): { [key: string]: string } {
-  const ret = {}
-
-  const nodeStack = cloneDeep(Object.values(data)) as any[]
-  while (nodeStack.length) {
-    const node = nodeStack.pop()
-    if (node?.$id) {
-      ret[node.$id] = hash(node.$id)
-    }
-    if (isArray(node)) {
-      nodeStack.push(...node.reverse())
-    } else if (node instanceof Object) {
-      nodeStack.push(...Object.values(node).reverse())
-    }
-  }
-
   return ret
 }
 
@@ -175,9 +164,9 @@ const COMPENDIUM_KEY_MAP = {
   'Starforged/Oracles': 'starforgedoracles',
   'Starforged/Encounters': 'starforgedencounters',
 }
-const MARKDOWN_LINK_RE = new RegExp('\\[(.*?)\\]\\((.*?)\\)', 'g')
-const DESCRIPTOR_FOCUS_RE = new RegExp('\\[Descriptor \\+ Focus\\]\\(.*?\\)')
-const ACTION_THEME_RE = new RegExp('\\[Action \\+ Theme\\]\\(.*?\\)')
+const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
+const DESCRIPTOR_FOCUS_RE = /\[Descriptor \+ Focus\]\(.*?\)/
+const ACTION_THEME_RE = /\[Action \+ Theme\]\(.*?\)/
 
 function idIsOracleLink(dfid: string): boolean {
   return /^(Starforged|Ironsworn)\/Oracle/.test(dfid)
@@ -241,6 +230,7 @@ const PACKS = [
   'foundry-ironsworn.starforgedmoves',
   'foundry-ironsworn.starforgedoracles',
   'foundry-ironsworn.foeactorssf',
+  'foundry-ironsworn.ironswornoracles',
 ]
 
 /**
@@ -254,29 +244,38 @@ export async function importFromDataforged() {
   for (const key of PACKS) {
     const pack = game.packs.get(key)
     if (!pack) continue
+
+    // Unlock all the packs
+    await pack.configure({ locked: false })
+
     // @ts-ignore IdQuery type is a little bogus
     const idsToDelete = pack.index.map((x) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
-  const idMap = generateIdMap(starforged)
+  await processSFMoves()
+  await processSFAssets()
+  await processSFOracles()
+  await processSFEncounters()
+  await processSFFoes()
 
-  await processMoves(idMap)
-  await processAssets(idMap)
-  await processOracles(idMap)
-  await processEncounters(idMap)
-  await processFoes()
+  await processISOracles()
+
+  // Lock the packs again
+  for (const key of PACKS) {
+    await game.packs.get(key)?.configure({ locked: true })
+  }
 }
 
-async function processMoves(idMap: { [key: string]: string }) {
+async function processSFMoves() {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  for (const category of MoveCategories) {
+  for (const category of SFMoveCategories) {
     for (const move of category.Moves) {
       renderLinksInMove(move)
       const cleanMove = cleanDollars(move)
       movesToCreate.push({
-        _id: idMap[cleanMove['dfid']],
+        _id: hashLookup(cleanMove['dfid']),
         type: 'sfmove',
         name: cleanMove['Name'],
         img: 'icons/dice/d10black.svg',
@@ -290,14 +289,14 @@ async function processMoves(idMap: { [key: string]: string }) {
   })
 }
 
-async function processAssets(idMap: { [key: string]: string }) {
+async function processSFAssets() {
   const assetsToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  for (const assetType of AssetTypes) {
+  for (const assetType of SFAssetTypes) {
     for (const asset of assetType.Assets) {
       assetsToCreate.push({
         type: 'asset',
-        _id: idMap[asset.$id],
+        _id: hashLookup(asset.$id),
         name: `${assetType.Name} / ${asset.Name}`,
         data: {
           description: renderMarkdown(assetType.Description),
@@ -314,7 +313,7 @@ async function processAssets(idMap: { [key: string]: string }) {
 
             for (const input of ability.Inputs ?? []) {
               if (input['Input Type'] === 'Clock') {
-                const ic = input as IInputClock
+                const ic = input
                 ret.hasClock = true
                 ret.clockMax = ic.Segments
                 ret.clockTicks = ic.Filled
@@ -341,52 +340,63 @@ async function processAssets(idMap: { [key: string]: string }) {
   })
 }
 
-async function processOracles(idMap: { [key: string]: string }) {
-  const oraclesToCreate: RollTableDataConstructorData[] = []
+/**
+ * ORACLES
+ */
+async function processOracle(
+  oracle: IOracle,
+  output: RollTableDataConstructorData[]
+) {
   // Oracles JSON is a tree we wish to iterate through depth first adding
   // parents prior to their children, and children in order
-  async function processOracle(oracle: IOracle) {
-    if (oracle.Table) {
-      const description = marked.parseInline(
-        renderLinksInStr(oracle.Description ?? '')
-      )
-      const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
-      oraclesToCreate.push({
-        _id: idMap[oracle.$id],
-        flags: {
-          dfId: oracle.$id,
-          category: oracle.Category,
-        },
-        name: oracle.Name,
-        img: 'icons/dice/d10black.svg',
-        description,
-        formula: `d${maxRoll}`,
-        replacement: true,
-        displayRoll: true,
-        /* folder: // would require using an additional module */
-        results: oracle.Table?.map((tableRow) => {
-          let text: string
-          if (tableRow.Result && tableRow.Summary) {
-            text = `${tableRow.Result} (${tableRow.Summary})`
-          } else text = tableRow.Result ?? ''
-          return {
-            _id: idMap[tableRow.$id ?? ''],
-            range: [tableRow.Floor, tableRow.Ceiling],
-            text: tableRow.Result && renderLinksInStr(text),
-          } as TableResultDataConstructorData
-        }).filter((x) => x.range[0] !== null),
-      })
-    }
-
-    for (const child of oracle.Oracles ?? []) await processOracle(child)
-  }
-  async function processCategory(cat: IOracleCategory) {
-    for (const oracle of cat.Oracles ?? []) await processOracle(oracle)
-    for (const child of cat.Categories ?? []) await processCategory(child)
+  if (oracle.Table) {
+    const description = marked.parseInline(
+      renderLinksInStr(oracle.Description ?? '')
+    )
+    const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) //oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
+    output.push({
+      _id: hashLookup(oracle.$id),
+      flags: {
+        dfId: oracle.$id,
+        category: oracle.Category,
+      },
+      name: oracle.Name,
+      img: 'icons/dice/d10black.svg',
+      description,
+      formula: `d${maxRoll}`,
+      replacement: true,
+      displayRoll: true,
+      /* folder: // would require using an additional module */
+      results: oracle.Table?.map((tableRow) => {
+        let text: string
+        if (tableRow.Result && tableRow.Summary) {
+          text = `${tableRow.Result} (${tableRow.Summary})`
+        } else text = tableRow.Result ?? ''
+        return {
+          _id: hashLookup(tableRow.$id ?? ''),
+          range: [tableRow.Floor, tableRow.Ceiling],
+          text: tableRow.Result && renderLinksInStr(text),
+        } as TableResultDataConstructorData
+      }).filter((x) => x.range[0] !== null),
+    })
   }
 
-  for (const category of OracleCategories) {
-    await processCategory(category)
+  for (const child of oracle.Oracles ?? []) await processOracle(child, output)
+}
+async function processOracleCategory(
+  cat: IOracleCategory,
+  output: RollTableDataConstructorData[]
+) {
+  for (const oracle of cat.Oracles ?? []) await processOracle(oracle, output)
+  for (const child of cat.Categories ?? [])
+    await processOracleCategory(child, output)
+}
+
+async function processSFOracles() {
+  const oraclesToCreate: RollTableDataConstructorData[] = []
+
+  for (const category of SFOracleCategories) {
+    await processOracleCategory(category, oraclesToCreate)
   }
   await RollTable.createDocuments(oraclesToCreate, {
     pack: 'foundry-ironsworn.starforgedoracles',
@@ -394,7 +404,19 @@ async function processOracles(idMap: { [key: string]: string }) {
   })
 }
 
-async function processEncounters(idMap: { [key: string]: string }) {
+async function processISOracles() {
+  const oraclesToCreate: RollTableDataConstructorData[] = []
+
+  for (const category of ISOracleCategories) {
+    await processOracleCategory(category, oraclesToCreate)
+  }
+  await RollTable.createDocuments(oraclesToCreate, {
+    pack: 'foundry-ironsworn.ironswornoracles',
+    keepId: true,
+  })
+}
+
+async function processSFEncounters() {
   const encountersToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
   for (const encounter of starforged.Encounters) {
@@ -409,7 +431,7 @@ async function processEncounters(idMap: { [key: string]: string }) {
     )
 
     encountersToCreate.push({
-      _id: idMap[encounter['$id']],
+      _id: hashLookup(encounter['$id']),
       type: 'progress',
       name: encounter['Name'],
       data: {
@@ -430,7 +452,7 @@ async function processEncounters(idMap: { [key: string]: string }) {
       )
 
       encountersToCreate.push({
-        _id: idMap[variant['$id']],
+        _id: hashLookup(variant['$id']),
         type: 'progress',
         name: variant['Name'],
         data: {
@@ -448,7 +470,7 @@ async function processEncounters(idMap: { [key: string]: string }) {
   })
 }
 
-async function processFoes() {
+async function processSFFoes() {
   const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
   const foeItems =
     (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
