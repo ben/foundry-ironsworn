@@ -322,7 +322,7 @@ const oracles = computed((): OracleSpec[][] => {
             requiresKlass: true,
           },
           {
-            title: 'From Space',
+            title: 'Observed from space',
             qty: '1-2',
             dfId: `Starforged/Oracles/Planets/${kc}/Observed_From_Space`,
             fl: true,
@@ -342,7 +342,7 @@ const oracles = computed((): OracleSpec[][] => {
             requiresKlass: true,
           },
           {
-            title: 'Planetside Feature',
+            title: 'Planetside feature',
             qty: '1-2',
             dfId: `Starforged/Oracles/Planets/${kc}/Feature`,
             requiresKlass: true,
@@ -354,7 +354,7 @@ const oracles = computed((): OracleSpec[][] => {
             dfId: `Starforged/Oracles/Planets/Peril/Lifebearing`,
           },
           {
-            title: 'Peril (no life)',
+            title: 'Peril (lifeless)',
             dfId: `Starforged/Oracles/Planets/Peril/Lifeless`,
           },
           {
@@ -362,7 +362,7 @@ const oracles = computed((): OracleSpec[][] => {
             dfId: `Starforged/Oracles/Planets/Opportunity/Lifebearing`,
           },
           {
-            title: 'Opportunity (no life)',
+            title: 'Opportunity (lifeless)',
             dfId: `Starforged/Oracles/Planets/Opportunity/Lifeless`,
           },
         ],
@@ -377,7 +377,7 @@ const oracles = computed((): OracleSpec[][] => {
             fl: true,
           },
           {
-            title: 'First Look',
+            title: 'First look',
             dfId: 'Starforged/Oracles/Settlements/First_Look',
             qty: '1-2',
             fl: true,
@@ -385,7 +385,7 @@ const oracles = computed((): OracleSpec[][] => {
         ],
         [
           {
-            title: 'Initial Contact',
+            title: 'Initial contact',
             dfId: 'Starforged/Oracles/Settlements/Initial_Contact',
           },
           {
@@ -395,11 +395,11 @@ const oracles = computed((): OracleSpec[][] => {
         ],
         [
           {
-            title: 'Projects',
+            title: 'Settlement projects',
             dfId: 'Starforged/Oracles/Settlements/Projects',
           },
           {
-            title: 'Trouble',
+            title: 'Settlement trouble',
             dfId: 'Starforged/Oracles/Settlements/Trouble',
           },
         ],
@@ -462,44 +462,44 @@ const oracles = computed((): OracleSpec[][] => {
             fl: true,
           },
           {
-            title: 'Outer First Look',
+            title: 'Outer first look',
             dfId: `Starforged/Oracles/Vaults/Outer_First_Look`,
             fl: true,
           },
         ],
         [
           {
-            title: 'Interior First Look',
+            title: 'Interior first look',
             dfId: `Starforged/Oracles/Vaults/Interior/First_Look`,
           },
           {
-            title: 'Interior Feature',
+            title: 'Interior feature',
             dfId: `Starforged/Oracles/Vaults/Interior/Feature`,
           },
           {
-            title: 'Interior Peril',
+            title: 'Interior peril',
             dfId: `Starforged/Oracles/Vaults/Interior/Peril`,
           },
           {
-            title: 'Interior Opportunity',
+            title: 'Interior opportunity',
             dfId: `Starforged/Oracles/Vaults/Interior/Opportunity`,
           },
         ],
         [
           {
-            title: 'Sanctum Purpose',
+            title: 'Sanctum purpose',
             dfId: `Starforged/Oracles/Vaults/Sanctum/Purpose`,
           },
           {
-            title: 'Sanctum Feature',
+            title: 'Sanctum feature',
             dfId: `Starforged/Oracles/Vaults/Sanctum/Feature`,
           },
           {
-            title: 'Sanctum Peril',
+            title: 'Sanctum peril',
             dfId: `Starforged/Oracles/Vaults/Sanctum/Peril`,
           },
           {
-            title: 'Sanctum Opportunity',
+            title: 'Sanctum opportunity',
             dfId: `Starforged/Oracles/Vaults/Sanctum/Opportunity`,
           },
         ],
