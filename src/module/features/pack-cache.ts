@@ -2,6 +2,8 @@ import { BaseAdventure } from '@league-of-foundry-developers/foundry-vtt-types/s
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 
+const ONE_MINUTE_IN_MS = 60 * 1000
+
 type PackContents = StoredDocument<
   | Scene
   | IronswornActor
@@ -15,11 +17,15 @@ type PackContents = StoredDocument<
 >[]
 const PACK_CACHE: { [key: string]: PackContents | undefined } = {}
 
+async function populateCacheForPack(packName: name) {
+  console.log(`Loading documents for pack ${packName}`)
+  const pack = game.packs.get(packName)
+  PACK_CACHE[packName] = await pack?.getDocuments()
+}
+
 export async function cachedDocumentsForPack(packName: string) {
   if (!PACK_CACHE[packName]) {
-    console.log(`Loading documents for pack ${packName}`)
-    const pack = game.packs.get(packName)
-    PACK_CACHE[packName] = await pack?.getDocuments()
+    await populateCacheForPack(packName)
   }
   return PACK_CACHE[packName]
 }
@@ -33,4 +39,12 @@ export async function primeCommonPackCaches() {
     'foundry-ironsworn.ironswornitems',
   ]
   await Promise.all(commonPackNames.map(cachedDocumentsForPack))
+
+  // Keep the cache from being garbage collected by refreshing it every so often
+  let i = 0
+  while (true) {
+    await new Promise((r) => setTimeout(r, ONE_MINUTE_IN_MS))
+    await populateCacheForPack(commonPackNames[i % commonPackNames.length])
+    i++
+  }
 }
