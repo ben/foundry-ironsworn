@@ -3,7 +3,7 @@
     <nav role="tablist" :aria-orientation="ariaOrientation ?? 'horizontal'">
       <BtnIcon
         v-for="tabProp in tabsProps"
-        class="block text"
+        class="block"
         :class="tabProp.icon"
         role="tab"
         type="button"
@@ -59,7 +59,6 @@ defineExpose({ selectIndex })
   [role='tab'], // so it doesn't catch things that only start with 'tab'
   [role^='tab '],
   [role*=' tab'] {
-    justify-content: center;
     border: 0;
     flex: 1 1 0;
     text-align: center;
@@ -67,6 +66,7 @@ defineExpose({ selectIndex })
     overflow-y: auto;
     padding: 5px;
     gap: 0.25em;
+    justify-content: center;
     &:before {
       font-size: 140%;
     }
