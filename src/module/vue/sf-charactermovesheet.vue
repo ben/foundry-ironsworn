@@ -1,11 +1,11 @@
 <template>
   <tabs ref="tabs">
-    <tab :title="$t('IRONSWORN.Moves')">
+    <tab icon="isicon-d10-tilt" :title="$t('IRONSWORN.Moves')">
       <Suspense>
         <sf-movesheetmoves ref="movesTab" :toolset="toolset" />
       </Suspense>
     </tab>
-    <tab :title="$t('IRONSWORN.Oracles')">
+    <tab icon="isicon-oracle" :title="$t('IRONSWORN.Oracles')">
       <Suspense>
         <sf-movesheetoracles ref="oraclesTab" :toolset="toolset" />
       </Suspense>
