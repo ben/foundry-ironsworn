@@ -20,15 +20,10 @@ import BtnIsicon from './btn-isicon.vue'
 const props = defineProps<{ item: any; tooltip?: string; disabled?: boolean }>()
 
 const $actor = inject($ActorKey, undefined)
+const $item = inject($ItemKey, undefined)
 
 const progressScore = computed(() => {
-  let item: IronswornItem | undefined
-  if ($actor) {
-    item = $actor.items.find((x) => x.id === props.item._id)
-  } else {
-    item = game.items?.get(props.item.id)
-  }
-  return Math.floor(item?.data.data.current / 4)
+  return Math.floor($item?.data.data.current / 4)
 })
 
 function rollProgress() {
