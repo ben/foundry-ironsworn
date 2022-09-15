@@ -34,6 +34,7 @@
             {{ $t('IRONSWORN.Chat') }}
           </btn-sendmovetochat>
         </div>
+        <!-- TODO: wrap fulltext div in an <article> and add a <footer> with e.g. "Ironsworn Rulebook, p. XX". -->
         <div v-html="fulltext" />
 
         <oracle-tree-node
