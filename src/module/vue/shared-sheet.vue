@@ -6,7 +6,11 @@
     </header>
 
     <section class="sheet-area nogrow">
-      <btn-rollstat class="text" attr="supply">
+      <btn-rollstat
+        class="text"
+        attr="supply"
+        :statLabel="$t('IRONSWORN.Supply')"
+      >
         {{ $t('IRONSWORN.Supply') }}
       </btn-rollstat>
 

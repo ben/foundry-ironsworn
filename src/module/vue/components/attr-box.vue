@@ -1,5 +1,9 @@
 <template>
-  <div :class="classes" @click="click">
+  <div
+    :class="classes"
+    @click="click"
+    :data-tooltip="$t('IRONSWORN.Roll +x', { stat: $t(i18nKey) })"
+  >
     <h4>{{ $t(i18nKey) }}</h4>
     <div class="flexrow">
       <div class="clickable text" v-if="editMode" @click="decrement">

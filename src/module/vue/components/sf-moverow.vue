@@ -3,8 +3,9 @@
     class="movesheet-row"
     :class="{ highlighted: data.highlighted }"
     ref="$el"
+    data-tooltip-direction="LEFT"
   >
-    <h4 class="flexrow" :title="tooltip">
+    <h4 class="flexrow">
       <btn-rollmove
         :disabled="!canRoll"
         class="juicy text nogrow"
@@ -25,7 +26,11 @@
           <btn-rollmove class="block" v-if="canRoll" :move="move">
             {{ $t('IRONSWORN.Roll') }}
           </btn-rollmove>
-          <btn-sendmovetochat class="block" :move="move">
+          <btn-sendmovetochat
+            class="block"
+            :move="move"
+            :data-tooltip-direction="canRoll ? 'RIGHT' : 'LEFT'"
+          >
             {{ $t('IRONSWORN.Chat') }}
           </btn-sendmovetochat>
         </div>
@@ -101,11 +106,6 @@ const data = reactive({
   oracles: [] as IOracleTreeNode[],
 })
 
-const tooltip = computed(() => {
-  const { Title, Page } = props.move.dataforgedMove?.Source ?? {}
-  if (!Title) return undefined
-  return `${Title} p${Page}`
-})
 const fulltext = computed(() => {
   return IronswornHandlebarsHelpers.stripTables(
     enrichMarkdown(props.move.moveItem?.data?.data?.Text)
