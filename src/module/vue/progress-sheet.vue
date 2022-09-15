@@ -129,7 +129,7 @@
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
-import { RANKS, RANK_INCREMENTS } from "../constants";
+import { RANKS, RANK_INCREMENTS } from '../constants'
 import { $ItemKey } from './provisions'
 import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
@@ -152,9 +152,7 @@ const editMode = computed(
   () => props.item.flags['foundry-ironsworn']?.['edit-mode']
 )
 
-const rankText = computed(() =>
-  game.i18n.localize(RANKS[props.item.data.rank])
-)
+const rankText = computed(() => game.i18n.localize(RANKS[props.item.data.rank]))
 
 function setRank(rank) {
   $item?.update({ data: { rank } })
