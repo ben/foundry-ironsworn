@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix clicking links embedded in notes tabs
+
 ## 1.17.13
 
 - Re-import Dataforged under v9 to make sure the `data` field is present
