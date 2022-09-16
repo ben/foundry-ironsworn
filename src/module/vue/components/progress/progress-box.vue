@@ -11,7 +11,7 @@
         />
         <div class="flexcol">
           <div class="flexrow">
-            <rank-hexes :current="item.data.rank" @click="rankClick" />
+            <RankPips :current="item.data.rank" @click="rankClick" />
             <btn-faicon
               class="block nogrow"
               v-if="editMode"
@@ -100,7 +100,7 @@ import Clock from '../clock.vue'
 import ProgressTrack from './progress-track.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
-import RankHexes from '../rank-hexes/rank-hexes.vue'
+import RankPips from '../rank-pips/rank-pips.vue'
 import DocumentImg from '../document-img.vue'
 
 const props = defineProps<{

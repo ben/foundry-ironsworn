@@ -1,21 +1,21 @@
 <template>
   <div class="flexcol">
     <header class="sheet-header flexrow nogrow" style="gap: 5px">
-      <document-img :document="actor" />
-      <document-name :document="actor" />
+      <DocumentImg :document="actor" />
+      <DocumentName :document="actor" />
     </header>
 
     <div v-if="foe">
       <div class="flexrow nogrow">
-        <rank-hexes
+        <RankPips
           :current="foe.data.rank"
           @click="setRank"
           class="nogrow"
           style="margin-right: 1em"
         />
         <h4>{{ rankText }}</h4>
-        <btn-faicon class="block nogrow" icon="trash" @click="clearProgress" />
-        <btn-faicon
+        <BtnFaicon class="block nogrow" icon="trash" @click="clearProgress" />
+        <BtnFaicon
           class="block nogrow"
           icon="caret-right"
           @click="markProgress"
@@ -24,13 +24,13 @@
 
       <!-- PROGRESS -->
       <div class="flexrow track nogrow" style="margin-bottom: 1em">
-        <progress-track :ticks="foe.data.current" />
+        <ProgressTrack :ticks="foe.data.current" />
       </div>
 
       <hr class="nogrow" />
 
       <!-- DESCRIPTION -->
-      <mce-editor
+      <MceEditor
         v-model="foe.data.description"
         @save="saveDescription"
         @change="throttledSaveDescription"
@@ -44,14 +44,14 @@
       data-drop-type="progress"
       style="text-align: center; justify-items: space-around"
     >
-      <btn-faicon @click="addEmpty" class="block" icon="file">
-        {{ $t('IRONSWORN.Progress') }}</btn-faicon
+      <BtnFaicon @click="addEmpty" class="block" icon="file">
+        {{ $t('IRONSWORN.Progress') }}</BtnFaicon
       >
-      <btn-compendium class="block" compendium="ironswornfoes"
-        >{{ $t('IRONSWORN.Foes') }} (Ironsworn)</btn-compendium
+      <BtnCompendium class="block" compendium="ironswornfoes"
+        >{{ $t('IRONSWORN.Foes') }} (Ironsworn)</BtnCompendium
       >
-      <btn-compendium class="block" compendium="starforgedencounters"
-        >{{ $t('IRONSWORN.Foes') }} (Starforged)</btn-compendium
+      <BtnCompendium class="block" compendium="starforgedencounters"
+        >{{ $t('IRONSWORN.Foes') }} (Starforged)</BtnCompendium
       >
     </div>
   </div>
@@ -71,7 +71,7 @@ import { $ActorKey } from '../provisions'
 import { throttle } from 'lodash'
 import DocumentImg from './document-img.vue'
 import DocumentName from './document-name.vue'
-import RankHexes from './rank-hexes/rank-hexes.vue'
+import RankPips from './rank-pips/rank-pips.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import ProgressTrack from './progress/progress-track.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'

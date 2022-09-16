@@ -2,26 +2,26 @@
   <div class="flexcol">
     <!-- HEADER -->
     <header class="sheet-header" style="gap: 5px">
-      <document-img :document="actor" />
-      <document-name :document="actor" />
+      <DocumentImg :document="actor" />
+      <DocumentName :document="actor" />
     </header>
 
     <!-- RANK -->
     <div class="flexrow nogrow">
-      <rank-hexes
+      <RankPips
         :current="actor.data.rank"
         @click="setRank"
         class="nogrow"
         style="margin-right: 1em"
       />
       <h4>{{ rankText }}</h4>
-      <btn-faicon
+      <BtnFaicon
         class="block nogrow"
         v-if="editMode"
         icon="trash"
         @click="clearProgress"
       />
-      <btn-faicon
+      <BtnFaicon
         class="block nogrow"
         icon="caret-right"
         @click="markProgress"
@@ -29,7 +29,7 @@
     </div>
 
     <!-- PROGRESS -->
-    <progress-track
+    <ProgressTrack
       class="nogrow"
       style="margin-bottom: 1em"
       :ticks="actor.data.current"
@@ -38,14 +38,14 @@
     <!-- THEME/DOMAIN -->
     <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow nogrow">
-        <site-droparea
+        <SiteDroparea
           class="box"
           :item="theme"
           item-type="delve-theme"
           compendium-key="ironsworndelvethemes"
           title-key="IRONSWORN.Theme"
         />
-        <site-droparea
+        <SiteDroparea
           class="box"
           :item="domain"
           item-type="delve-domain"
@@ -59,7 +59,7 @@
     <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
     <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
-        <site-movebox movename="Delve the Depths" />
+        <SiteMovebox movename="Delve the Depths" />
         <!-- TODO: double check styling here -->
         <button
           type="button"
@@ -72,13 +72,13 @@
           </h4>
         </button>
 
-        <site-movebox
+        <SiteMovebox
           movename="Reveal a Danger"
           :disabled="!hasThemeAndDomain"
         />
       </div>
       <div class="flexrow boxrow">
-        <site-movebox movename="Find an Opportunity" />
+        <SiteMovebox movename="Find an Opportunity" />
         <button
           type="button"
           class="box flexrow clickable block"
@@ -88,39 +88,39 @@
             {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
           </h4>
         </button>
-        <site-movebox movename="Escape the Depths" />
+        <SiteMovebox movename="Escape the Depths" />
       </div>
     </div>
 
     <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
-      <btn-isicon
+      <BtnIsicon
         icon="d10-tilt"
         class="flexrow nogrow text"
         style="padding: 2px"
         @click="randomDenizen"
       />
-      <btn-compendium compendium="ironswornfoes" class="nogrow" />
+      <BtnCompendium compendium="ironswornfoes" class="nogrow" />
     </h4>
     <div class="boxgroup nogrow" style="margin-bottom: 1em">
       <div class="flexrow boxrow">
-        <site-denizenbox :idx="0" :ref="(e) => (denizenRefs[0] = e)" />
-        <site-denizenbox :idx="1" :ref="(e) => (denizenRefs[1] = e)" />
-        <site-denizenbox :idx="2" :ref="(e) => (denizenRefs[2] = e)" />
-        <site-denizenbox :idx="3" :ref="(e) => (denizenRefs[3] = e)" />
+        <SiteDenizenbox :idx="0" :ref="(e) => (denizenRefs[0] = e)" />
+        <SiteDenizenbox :idx="1" :ref="(e) => (denizenRefs[1] = e)" />
+        <SiteDenizenbox :idx="2" :ref="(e) => (denizenRefs[2] = e)" />
+        <SiteDenizenbox :idx="3" :ref="(e) => (denizenRefs[3] = e)" />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox :idx="4" :ref="(e) => (denizenRefs[4] = e)" />
-        <site-denizenbox :idx="5" :ref="(e) => (denizenRefs[5] = e)" />
-        <site-denizenbox :idx="6" :ref="(e) => (denizenRefs[6] = e)" />
-        <site-denizenbox :idx="7" :ref="(e) => (denizenRefs[7] = e)" />
+        <SiteDenizenbox :idx="4" :ref="(e) => (denizenRefs[4] = e)" />
+        <SiteDenizenbox :idx="5" :ref="(e) => (denizenRefs[5] = e)" />
+        <SiteDenizenbox :idx="6" :ref="(e) => (denizenRefs[6] = e)" />
+        <SiteDenizenbox :idx="7" :ref="(e) => (denizenRefs[7] = e)" />
       </div>
       <div class="flexrow boxrow">
-        <site-denizenbox :idx="8" :ref="(e) => (denizenRefs[8] = e)" />
-        <site-denizenbox :idx="9" :ref="(e) => (denizenRefs[9] = e)" />
-        <site-denizenbox :idx="10" :ref="(e) => (denizenRefs[10] = e)" />
-        <site-denizenbox :idx="11" :ref="(e) => (denizenRefs[11] = e)" />
+        <SiteDenizenbox :idx="8" :ref="(e) => (denizenRefs[8] = e)" />
+        <SiteDenizenbox :idx="9" :ref="(e) => (denizenRefs[9] = e)" />
+        <SiteDenizenbox :idx="10" :ref="(e) => (denizenRefs[10] = e)" />
+        <SiteDenizenbox :idx="11" :ref="(e) => (denizenRefs[11] = e)" />
       </div>
     </div>
 
@@ -161,7 +161,7 @@ import { $ActorKey } from './provisions'
 import { throttle } from 'lodash'
 import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
-import RankHexes from './components/rank-hexes/rank-hexes.vue'
+import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnCompendium from './components/buttons/btn-compendium.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import ProgressTrack from './components/progress/progress-track.vue'
