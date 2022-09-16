@@ -46,7 +46,6 @@ td {
 </style>
 
 <script setup lang="ts">
-// TODO: localize the "Roll", "Result" labels
 import { computed } from '@vue/reactivity'
 import { sortBy } from 'lodash'
 import { enrichMarkdown } from '../../vue-plugin.js'
