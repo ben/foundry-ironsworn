@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.15
+
 - Fix name randomizer for settlements
 
 ## 1.17.14
