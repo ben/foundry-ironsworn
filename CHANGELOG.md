@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.14
+
 - Fix clicking links embedded in notes tabs
 
 ## 1.17.13
