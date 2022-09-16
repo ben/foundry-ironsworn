@@ -607,7 +607,7 @@ async function randomizeName() {
       await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
         'Starforged/Oracles/Settlements/Name'
       )
-    name = drawAndReturnResult(table)
+    name = await drawAndReturnResult(table)
   }
 
   if (name) {
