@@ -50,12 +50,6 @@
 </template>
 
 <style lang="less" scoped>
-.move-roll {
-  // &[aria-disabled='true'],
-  // &:disabled {
-  //   visibility: hidden;
-  // }
-}
 .move-summary {
   border-left: 2px solid;
   margin-left: 5px;
