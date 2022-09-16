@@ -27,12 +27,6 @@ const progressScore = computed(() => {
 })
 
 function rollProgress() {
-  let item: IronswornItem | undefined
-  if ($actor) {
-    item = $actor.items.find((x) => x.id === props.item._id)
-  } else {
-    item = game.items?.get(props.item.id)
-  }
-  item?.fulfill()
+  $item?.fulfill()
 }
 </script>
