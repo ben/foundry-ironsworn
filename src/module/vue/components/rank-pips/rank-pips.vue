@@ -5,37 +5,28 @@
     :aria-valuetext="current"
   >
     <button
-      v-for="r in ranks"
-      :key="r.rank"
-      @click="$emit('click', r.rank)"
-      :title="!versionHasTooltips ? $t(`IRONSWORN.${$capitalize(r.rank)}`) : ''"
-      :data-tooltip="$t(`IRONSWORN.${$capitalize(r.rank)}`)"
+      v-for="rankData in ranks"
+      :key="rankData.rank"
+      @click="$emit('click', rankData.rank)"
+      :title="
+        !versionHasTooltips ? $t(`IRONSWORN.${$capitalize(rankData.rank)}`) : ''
+      "
+      :data-tooltip="$t(`IRONSWORN.${$capitalize(rankData.rank)}`)"
       data-tooltip-direction="UP"
       type="button"
       class="rank-pip nogrow"
-      :aria-selected="r.selected"
+      :aria-selected="rankData.rank === current"
     >
       <PipSvgCircle
         v-if="pipStyle === 'circle'"
         role="presentational"
         class="svg clickable"
-        fill="currentColor"
-        fill-opacity="0"
-        stroke="currentColor"
-        stroke-width="1"
-        vector-effect="non-scaling-stroke"
         height="20px"
       />
       <PipSvgHex
         v-if="pipStyle === 'hex'"
         role="presentational"
         class="svg clickable"
-        fill="currentColor"
-        fill-opacity="0"
-        stroke="currentColor"
-        stroke-width="1"
-        vector-effect="non-scaling-stroke"
-        :hex-height="20"
         :height="20 + 'px'"
         width="auto"
       />
@@ -47,19 +38,33 @@
 .rank-pips {
   display: flex;
   flex-flow: row nowrap;
-}
-button.rank-pip {
-  padding: 0;
-  height: max-content;
-  width: max-content;
-  line-height: 0;
-  display: flex;
-  &[aria-selected='true'] {
-    ~ svg {
+  fill: currentColor;
+  fill-opacity: 1;
+  stroke: currentColor;
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+  &:hover {
+    fill-opacity: 0.25;
+  }
+  &:not(:hover) {
+    .rank-pip {
+      &[aria-selected='true'] {
+        ~ .rank-pip {
+          fill-opacity: 0;
+        }
+      }
     }
   }
-  &:hover {
-    ~ svg {
+  .rank-pip {
+    padding: 0;
+    height: max-content;
+    width: max-content;
+    line-height: 0;
+    display: flex;
+    &:hover {
+      ~ .rank-pip {
+        fill-opacity: 0;
+      }
     }
   }
 }
@@ -71,20 +76,23 @@ import { RANKS } from '../../../constants'
 import PipSvgHex from './pip-svg-hex.vue'
 import PipSvgCircle from './pip-svg-circle.vue'
 
-const props = defineProps<{
-  current: keyof typeof RANKS
-  pipStyle: 'hex' | 'circle'
-}>()
+const props = withDefaults(
+  defineProps<{
+    current: keyof typeof RANKS
+    pipStyle: 'hex' | 'circle'
+  }>(),
+  {
+    pipStyle: 'hex',
+  }
+)
 
 const ranks = computed(() => {
   const keys = Object.keys(RANKS)
   const position = keys.indexOf(props.current)
   return keys.map((r) => {
     const rankIndex = keys.indexOf(r)
-    const selected = rankIndex <= position
     return {
       rank: r,
-      selected,
     }
   })
 })

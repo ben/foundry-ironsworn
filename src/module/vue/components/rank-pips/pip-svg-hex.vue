@@ -22,21 +22,20 @@ import { computed } from '@vue/reactivity'
 import { times } from 'lodash'
 
 const sides = 6
-const props = defineProps<{ hexHeight: number }>()
+const hexHeight = 10
 
-const longRadius = computed(() => props.hexHeight / 2)
+const longRadius = computed(() => hexHeight / 2)
 const shortRadius = computed(() => longRadius.value * (Math.sqrt(3) / 2))
-const hexWidth = computed(() => props.hexHeight * (Math.sqrt(3) / 2))
+const hexWidth = computed(() => hexHeight * (Math.sqrt(3) / 2))
 
-const center = { x: -hexWidth.value / 2, y: -props.hexHeight / 2 }
+const center = { x: -hexWidth.value / 2, y: -hexHeight / 2 }
 
 const viewBox = computed(
-  () =>
-    `-${props.hexHeight} -${hexWidth.value} ${props.hexHeight} ${hexWidth.value}`
+  () => `-${hexHeight} -${hexWidth.value} ${hexHeight} ${hexWidth.value}`
 )
 
 defineExpose({
-  ...props,
+  hexHeight,
   longRadius: longRadius.value,
   shortRadius: shortRadius.value,
   hexWidth: hexWidth.value,

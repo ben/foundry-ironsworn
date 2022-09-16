@@ -4,7 +4,6 @@
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 10 10"
-    style="aspect-ratio: 1"
   >
     <circle cx="5" cy="5" cr="5" />
   </svg>
@@ -13,6 +12,7 @@
 <style lang="less">
 .svg-circle {
   overflow: visible;
+  aspect-ratio: 1;
 }
 </style>
 
