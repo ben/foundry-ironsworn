@@ -13,8 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { capitalize } from 'lodash'
-import { computed, inject, ref, useSlots } from 'vue'
+import { computed, inject, useSlots } from 'vue'
 import { RollDialog } from '../../../helpers/rolldialog'
 import { IronswornItem } from '../../../item/item.js'
 import { IronswornPrerollDialog } from '../../../rolls'
@@ -22,7 +21,10 @@ import { $ActorKey } from '../../provisions'
 import btnIsicon from './btn-isicon.vue'
 
 const props = defineProps<{
-  item?: IronswornItem // the asset. only needed if this is an asset condition meter
+  /**
+   * The asset. Only needed if this is an asset condition meter.
+   */
+  item?: IronswornItem
   /**
    * This string will be inserted in into the tooltip text "Roll +{x}". It should already be localized.
    */
