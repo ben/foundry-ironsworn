@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix name randomizer for settlements
+
 ## 1.17.14
 
 - Fix clicking links embedded in notes tabs
