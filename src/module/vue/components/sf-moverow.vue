@@ -36,7 +36,6 @@
         </div>
         <!-- TODO: wrap fulltext div in an <article> and add a <footer> with e.g. "Ironsworn Rulebook, p. XX". -->
         <div v-html="fulltext" />
-
         <oracle-tree-node
           class="item-row"
           v-for="node of data.oracles"
@@ -49,12 +48,6 @@
 </template>
 
 <style lang="less" scoped>
-.move-roll {
-  // &[aria-disabled='true'],
-  // &:disabled {
-  //   visibility: hidden;
-  // }
-}
 .move-summary {
   border-left: 2px solid;
   margin-left: 5px;

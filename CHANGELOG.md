@@ -2,6 +2,18 @@
 
 ## Next Release
 
+## 1.17.15
+
+- Fix name randomizer for settlements
+
+## 1.17.14
+
+- Fix clicking links embedded in notes tabs
+
+## 1.17.13
+
+- Re-import Dataforged under v9 to make sure the `data` field is present
+
 ## 1.17.12
 
 - The return of oracles in the Ironsworn move sheet ([#465](https://github.com/ben/foundry-ironsworn/pull/465))

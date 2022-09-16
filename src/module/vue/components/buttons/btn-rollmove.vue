@@ -28,13 +28,6 @@ const tooltip = computed(() => {
   let str = game.i18n.format('IRONSWORN.RollMove', {
     title: props.move?.displayName,
   })
-  // const { Title, Page } = props.move?.dataforgedMove?.Source ?? {}
-  // if (Title && Page) {
-  //   str += ` (${game.i18n.format('IRONSWORN.PageReference', {
-  //     title: Title,
-  //     page: Page,
-  //   })})`
-  // }
   return str
 })
 
