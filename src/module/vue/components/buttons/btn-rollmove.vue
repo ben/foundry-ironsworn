@@ -1,7 +1,11 @@
 <template>
   <btn-isicon
     @click="rollMove"
-    :tooltip="tooltip"
+    :tooltip="
+      $t('IRONSWORN.RollMove', {
+        title: props.move?.displayName,
+      })
+    "
     class="action-roll move-roll"
     icon="d10-tilt"
     aria-haspopup="dialog"
@@ -12,7 +16,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity'
 import { inject } from 'vue'
 import { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
@@ -23,20 +26,6 @@ const props = defineProps<{
   move?: Move
   disabled?: boolean
 }>()
-
-const tooltip = computed(() => {
-  let str = game.i18n.format('IRONSWORN.RollMove', {
-    title: props.move?.displayName,
-  })
-  // const { Title, Page } = props.move?.dataforgedMove?.Source ?? {}
-  // if (Title && Page) {
-  //   str += ` (${game.i18n.format('IRONSWORN.PageReference', {
-  //     title: Title,
-  //     page: Page,
-  //   })})`
-  // }
-  return str
-})
 
 const $actor = inject($ActorKey)
 

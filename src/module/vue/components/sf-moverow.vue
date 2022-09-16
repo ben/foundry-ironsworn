@@ -6,7 +6,7 @@
     data-tooltip-direction="LEFT"
   >
     <h4 class="flexrow">
-      <btn-rollmove
+      <BtnRollmove
         :disabled="!canRoll"
         class="juicy text nogrow"
         :move="move"
@@ -15,36 +15,37 @@
         {{ move?.displayName }}
       </span>
     </h4>
-    <transition name="slide">
-      <with-rolllisteners
-        element="div"
-        class="move-summary"
+    <Transition name="slide">
+      <RulesTextMove
         v-if="data.expanded"
         @moveclick="moveClick"
+        :move="move"
+        class="move-summary"
       >
-        <div class="move-summary-buttons flexrow">
-          <btn-rollmove class="block" v-if="canRoll" :move="move">
-            {{ $t('IRONSWORN.Roll') }}
-          </btn-rollmove>
-          <btn-sendmovetochat
-            class="block"
-            :move="move"
-            :data-tooltip-direction="canRoll ? 'RIGHT' : 'LEFT'"
-          >
-            {{ $t('IRONSWORN.Chat') }}
-          </btn-sendmovetochat>
-        </div>
-        <!-- TODO: wrap fulltext div in an <article> and add a <footer> with e.g. "Ironsworn Rulebook, p. XX". -->
-        <div v-html="fulltext" />
-
-        <oracle-tree-node
-          class="item-row"
-          v-for="node of data.oracles"
-          :key="node.displayName"
-          :node="node"
-        />
-      </with-rolllisteners>
-    </transition>
+        <template #before-main>
+          <section class="move-summary-buttons flexrow">
+            <BtnRollmove class="block" v-if="canRoll" :move="move">
+              {{ $t('IRONSWORN.Roll') }}
+            </BtnRollmove>
+            <BtnSendmovetochat
+              class="block"
+              :move="move"
+              :data-tooltip-direction="canRoll ? 'RIGHT' : 'LEFT'"
+            >
+              {{ $t('IRONSWORN.Chat') }}
+            </BtnSendmovetochat>
+          </section>
+        </template>
+        <template #after-footer>
+          <OracleTreeNode
+            class="item-row"
+            v-for="node of data.oracles"
+            :key="node.displayName"
+            :node="node"
+          />
+        </template>
+      </RulesTextMove>
+    </Transition>
   </div>
 </template>
 
@@ -97,8 +98,8 @@ import { $EmitterKey } from '../provisions'
 import { enrichMarkdown } from '../vue-plugin'
 import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
-import WithRolllisteners from './with-rolllisteners.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
+import RulesTextMove from './rules-text/rules-text-move.vue'
 
 const props = defineProps<{ move: Move }>()
 const data = reactive({

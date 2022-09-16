@@ -9,42 +9,39 @@
     <!-- Leaf node -->
     <div v-if="isLeaf">
       <h4 class="flexrow">
-        <btn-oracle class="juicy text" :node="node">
+        <BtnOracle class="juicy text" :node="node">
           {{ node?.displayName }}
-        </btn-oracle>
-        <btn-faicon
+        </BtnOracle>
+        <BtnFaicon
           class="block nogrow show-oracle-info"
           icon="eye"
           @click="toggleDescription()"
         />
       </h4>
-
-      <transition name="slide">
-        <with-rolllisteners
+      <Transition name="slide">
+        <RulesTextOracle
           v-if="state.descriptionExpanded"
-          element="div"
           @moveclick="moveclick"
           @oracleclick="oracleclick"
-          class="flexcol"
-          v-html="tablePreview"
-        >
-        </with-rolllisteners>
-      </transition>
+          :oracle-table="node.tables[0]"
+          :source="node.dataforgedNode?.Source"
+        />
+      </Transition>
     </div>
 
     <!-- Branch node -->
     <div v-else>
       <h4 class="flexrow">
-        <btn-faicon
+        <BtnFaicon
           class="juicy text"
           :icon="state.manuallyExpanded ? 'caret-down' : 'caret-right'"
           @click="toggleManually()"
         >
           {{ node?.displayName }}
-        </btn-faicon>
+        </BtnFaicon>
       </h4>
 
-      <transition name="slide">
+      <Transition name="slide">
         <div
           v-if="state.manuallyExpanded"
           class="flexcol"
@@ -58,7 +55,7 @@
             ref="children"
           />
         </div>
-      </transition>
+      </Transition>
     </div>
   </div>
 </template>
@@ -101,6 +98,7 @@ import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { $ActorKey, $EmitterKey, $EnrichMarkdownKey } from '../provisions'
 import { IronswornItem } from '../../item/item'
+import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 
