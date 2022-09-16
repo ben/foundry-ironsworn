@@ -7,10 +7,14 @@
       height="20px"
       width="18px"
       class="rank-pip clickable svg"
-      :class="{ filled: selected }"
       @click="$emit('click', rank)"
     >
       <path
+        class="svg clickable"
+        :aria-selected="selected"
+        fill="currentColor"
+        fill-opacity="0"
+        stroke="currentColor"
         stroke-width="1"
         d="M 8.66 0 L 17.32 5 L 17.32 15 L 8.66 20 L 0 15 L 0 5 Z"
       ></path>
@@ -19,6 +23,16 @@
 </template>
 
 <style lang="less" scoped>
+.rank-pip {
+  flex: 0 1 auto;
+  stroke-width: 10;
+  margin: 1px !important;
+}
+.rank-pip {
+  path {
+    stroke-width: 1.5;
+  }
+}
 div {
   width: 14px;
   height: 20px;

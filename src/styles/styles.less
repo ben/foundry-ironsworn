@@ -254,12 +254,6 @@
     }
   }
 
-  .rank-pip {
-    flex: 0 1 auto;
-    stroke-width: 10;
-    margin: 1px !important;
-  }
-
   // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
   .interactive {
     transition: 0.5s ease;
@@ -297,6 +291,20 @@
     .interactive();
     &.text {
       justify-content: flex-start;
+    }
+    svg,
+    &.svg {
+      &.selected,
+      &[aria-selected='true'] {
+        fill-opacity: 1;
+      }
+      &.hover,
+      &:hover {
+        fill-opacity: 0.25;
+      }
+      &:active {
+        fill-opacity: 0.5;
+      }
     }
   }
 

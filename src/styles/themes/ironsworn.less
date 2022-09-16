@@ -98,19 +98,6 @@ body.theme-ironsworn {
     stroke: black;
   }
 
-  .rank-pip {
-    fill: transparent;
-    stroke: black;
-
-    &.filled {
-      fill: darkgray;
-    }
-
-    path {
-      stroke-width: 1.5;
-    }
-  }
-
   .clickable {
     &.disabled,
     &:disabled,
@@ -120,9 +107,11 @@ body.theme-ironsworn {
 
     &.selected,
     &[aria-selected='true'] {
-      color: white;
-      background-color: black;
-      border-color: black;
+      &:not(svg):not(.svg) {
+        color: white;
+        background-color: black;
+        border-color: black;
+      }
     }
 
     &.hover,
@@ -133,10 +122,6 @@ body.theme-ironsworn {
       &.text:not(.block) {
         color: @light-color;
       }
-      svg,
-      &.svg {
-        fill: @light-color;
-      }
     }
     &:active {
       &.block {
@@ -144,24 +129,6 @@ body.theme-ironsworn {
       }
       &.text:not(.block) {
         color: @medium-color;
-      }
-      svg,
-      &.svg {
-        fill: @medium-color;
-      }
-    }
-
-    &.selected,
-    &[aria-selected='true'] {
-      &.block,
-      &.text {
-        color: white;
-        border-color: black;
-        background: black;
-      }
-      svg,
-      &.svg {
-        fill: black;
       }
     }
   }

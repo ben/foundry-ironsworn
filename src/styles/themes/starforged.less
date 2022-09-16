@@ -122,19 +122,7 @@ body.theme-starforged {
     stroke: @text-medium-color;
   }
 
-  .rank-pip {
-    fill: @medium-color;
-
-    &.filled {
-      fill: @text-medium-color !important;
-    }
-
-    path {
-      stroke-width: 0;
-    }
-  }
-
-  .clickable {
+  .clickable:not(svg):not(.svg) {
     color: @text-dark-color;
     &.hover,
     &:hover,
@@ -142,10 +130,6 @@ body.theme-starforged {
       &.block,
       &.text {
         color: @text-light-color;
-      }
-      svg,
-      &.svg {
-        fill: @medium-color;
       }
     }
 
@@ -156,14 +140,6 @@ body.theme-starforged {
         color: @text-light-color;
         background-color: @medium-color;
       }
-      svg,
-      &.svg {
-        fill: @text-light-color;
-      }
-    }
-    svg,
-    &.svg {
-      fill: @dark-color;
     }
   }
 

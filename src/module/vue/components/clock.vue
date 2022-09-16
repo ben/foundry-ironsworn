@@ -10,11 +10,16 @@
       v-for="(wedge, i) in computedWedges"
       :key="wedge.path"
       :d="wedge.path"
-      fill="white"
-      stroke="black"
+      fill="currentColor"
+      fill-opacity="0"
+      stroke="currentColor"
       stroke-width="2"
       class="clickable svg"
-      :class="wedgeClasses(i)"
+      :aria-selected="props.ticked === i"
+      :class="{
+        hover: data.hovered >= i,
+        selected: props.ticked > i,
+      }"
       @mouseover="data.hovered = i"
       @mouseleave="data.hovered = -1"
       @click="click(i)"
@@ -62,13 +67,6 @@ const computedWedges = computed(() => {
   }
   return ret
 })
-
-function wedgeClasses(i) {
-  return {
-    hover: data.hovered >= i,
-    selected: props.ticked > i,
-  }
-}
 
 const $emit = defineEmits(['click'])
 function click(i: number) {
