@@ -45,7 +45,6 @@
             <RankPips
               :current="item.data.rank"
               @click="setRank"
-              class="nogrow"
               style="margin-right: 1em"
             />
             <h4>{{ rankText }}</h4>

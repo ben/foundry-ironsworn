@@ -11,7 +11,6 @@
 
 <style lang="less" scoped>
 .svg-hex {
-  overflow: visible;
   aspect-ratio: (sqrt(3) / 2) / 1;
 }
 </style>

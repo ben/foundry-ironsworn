@@ -5,46 +5,67 @@
     :aria-valuetext="current"
   >
     <button
-      v-for="rankData in ranks"
-      :key="rankData.rank"
-      @click="$emit('click', rankData.rank)"
-      :title="
-        !versionHasTooltips ? $t(`IRONSWORN.${$capitalize(rankData.rank)}`) : ''
-      "
-      :data-tooltip="$t(`IRONSWORN.${$capitalize(rankData.rank)}`)"
+      v-for="rank in ranks"
+      :key="rank"
+      @click="$emit('click', rank)"
+      :title="!versionHasTooltips ? $t(`IRONSWORN.${$capitalize(rank)}`) : ''"
+      :data-tooltip="$t(`IRONSWORN.${$capitalize(rank)}`)"
       data-tooltip-direction="UP"
       type="button"
       class="rank-pip nogrow"
-      :aria-selected="rankData.rank === current"
+      :aria-selected="rank === current"
     >
       <PipSvgCircle
         v-if="pipStyle === 'circle'"
         role="presentational"
-        class="svg clickable"
-        height="20px"
+        class="svg clickable pip-shape"
       />
       <PipSvgHex
         v-if="pipStyle === 'hex'"
         role="presentational"
-        class="svg clickable"
-        :height="20 + 'px'"
-        width="auto"
+        class="svg clickable pip-shape"
       />
     </button>
   </article>
 </template>
 
+<style lang="less">
+.rank-pips {
+  .rank-pip {
+    .pip-shape > * {
+      vector-effect: non-scaling-stroke;
+      stroke-width: var(--widget-stroke-width);
+    }
+  }
+}
+</style>
 <style lang="less" scoped>
 .rank-pips {
+  height: 1.2em;
   display: flex;
+  gap: 2px;
   flex-flow: row nowrap;
-  fill: currentColor;
-  fill-opacity: 1;
   stroke: currentColor;
-  stroke-width: 1;
-  vector-effect: non-scaling-stroke;
+  fill: currentColor;
+  fill-opacity: var(--widget-fill-opacity-static);
   &:hover {
-    fill-opacity: 0.25;
+    fill-opacity: var(--widget-fill-opacity-preview);
+  }
+  .rank-pip {
+    padding: 0;
+    line-height: 0;
+    display: flex;
+    height: inherit;
+    width: auto;
+    & > svg {
+      height: inherit;
+      overflow: visible;
+    }
+    &:hover {
+      ~ .rank-pip {
+        fill-opacity: 0;
+      }
+    }
   }
   &:not(:hover) {
     .rank-pip {
@@ -52,18 +73,6 @@
         ~ .rank-pip {
           fill-opacity: 0;
         }
-      }
-    }
-  }
-  .rank-pip {
-    padding: 0;
-    height: max-content;
-    width: max-content;
-    line-height: 0;
-    display: flex;
-    &:hover {
-      ~ .rank-pip {
-        fill-opacity: 0;
       }
     }
   }
@@ -75,27 +84,17 @@ import { computed } from '@vue/runtime-core'
 import { RANKS } from '../../../constants'
 import PipSvgHex from './pip-svg-hex.vue'
 import PipSvgCircle from './pip-svg-circle.vue'
+import { IronswornSettings } from '../../../helpers/settings.js'
 
-const props = withDefaults(
-  defineProps<{
-    current: keyof typeof RANKS
-    pipStyle: 'hex' | 'circle'
-  }>(),
-  {
-    pipStyle: 'hex',
-  }
+const props = defineProps<{
+  current: keyof typeof RANKS
+}>()
+
+const pipStyle = computed(() =>
+  IronswornSettings.theme === 'starforged' ? 'hex' : 'circle'
 )
 
-const ranks = computed(() => {
-  const keys = Object.keys(RANKS)
-  const position = keys.indexOf(props.current)
-  return keys.map((r) => {
-    const rankIndex = keys.indexOf(r)
-    return {
-      rank: r,
-    }
-  })
-})
+const ranks = Object.keys(RANKS)
 
 /**
  * Tests whether the client's version includes a tooltip API.
