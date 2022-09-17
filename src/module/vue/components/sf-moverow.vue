@@ -92,6 +92,7 @@ import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
 import WithRolllisteners from './with-rolllisteners.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
+import { SFMoveDataProperties } from '../../item/itemtypes'
 
 const props = defineProps<{ move: Move }>()
 const data = reactive({
@@ -101,8 +102,11 @@ const data = reactive({
 })
 
 const fulltext = computed(() => {
+  const foundryMoveData = props.move.moveItem?.data as
+    | SFMoveDataProperties
+    | undefined
   return IronswornHandlebarsHelpers.stripTables(
-    enrichMarkdown(props.move.moveItem?.data?.data?.Text)
+    enrichMarkdown(foundryMoveData?.data.Text ?? '')
   )
 })
 const canRoll = computed(() => {

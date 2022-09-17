@@ -61,6 +61,7 @@ interface CharacterDataSource {
 ////////////////////////////////////////
 
 interface SharedDataSourceData {
+  biography: string
   supply: number
 }
 type SharedDataPropertiesData = SharedDataSourceData
@@ -141,6 +142,7 @@ export interface StarshipDataProperties {
 interface LocationDataSourceData {
   subtype: string
   klass: string
+  description: string
 }
 type LocationDataPropertiesData = LocationDataSourceData
 

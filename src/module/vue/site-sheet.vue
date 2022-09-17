@@ -155,7 +155,7 @@ textarea {
 </style>
 
 <script setup lang="ts">
-import { provide, computed, inject, nextTick, ref } from 'vue'
+import { provide, computed, inject, nextTick, ref, Component } from 'vue'
 import { IronswornActor } from '../actor/actor'
 import { $ActorKey } from './provisions'
 import { throttle } from 'lodash'
@@ -183,10 +183,12 @@ import {
   FeatureOrDanger,
 } from '../item/itemtypes'
 import { OracleRollMessage, TableRow } from '../rolls'
+import { SiteDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
+const actor = props.actor as SiteDataProperties
 
 provide(
   'actor',
@@ -196,7 +198,7 @@ provide(
 const $actor = inject($ActorKey)
 
 const editMode = computed(() => {
-  return props.actor.flags['foundry-ironsworn']?.['edit-mode']
+  return (props.actor.flags['foundry-ironsworn'] as any)?.['edit-mode']
 })
 
 const theme = computed(() => {
@@ -218,7 +220,7 @@ const hasThemeAndDomain = computed(() => {
 })
 
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[props.actor.data.rank])
+  return game.i18n.localize(RANKS[actor.data.rank])
 })
 
 function setRank(rank) {
@@ -230,8 +232,8 @@ function clearProgress() {
 }
 
 function markProgress() {
-  const increment = RANK_INCREMENTS[props.actor.data.rank]
-  const newValue = Math.min(props.actor.data.current + increment, 40)
+  const increment = RANK_INCREMENTS[actor.data.rank]
+  const newValue = Math.min(actor.data.current + increment, 40)
   $actor?.update({ 'data.current': newValue })
 }
 
@@ -261,7 +263,7 @@ async function randomFeature() {
 
 async function locateObjective() {
   const move = await moveDataByName('Locate Your Objective')
-  const progress = Math.floor(props.actor.data.current / 4)
+  const progress = Math.floor(actor.data.current / 4)
   const roll = new Roll(`{${progress}, d10, d10}`)
   createIronswornChatRoll({
     isProgress: true,
@@ -271,31 +273,31 @@ async function locateObjective() {
   })
 }
 
-const denizenRefs = ref<{ [k: number]: HTMLElement }>({})
+const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
   const roll = await new Roll('1d100').evaluate({ async: true })
   const result = roll.total
-  const denizen = $actor?.data.data.denizens.find(
+  const denizen = actor.data.denizens.find(
     (x) => x.low <= result && x.high >= result
   )
-  const idx = $actor?.data.data.denizens.indexOf(denizen)
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
+  const idx = actor.data.denizens.indexOf(denizen)
   await createIronswornDenizenChat({
     roll,
     denizen,
-    site: $actor,
+    site: $actor!,
   })
 
   // Denizen slot is empty; set focus and add a class
   if (!denizen?.description) {
     await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
     await nextTick()
-    denizenRefs.value[idx]?.focus()
+    denizenRefs.value[idx]?.focus?.()
   }
 }
 
 function saveDescription() {
-  $actor?.update({ 'data.description': props.actor.data.description })
+  $actor?.update({ 'data.description': actor.data.description })
 }
 const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>

@@ -79,7 +79,7 @@ const mceConfig: RawEditorSettings = {
       { passive: false }
     )
     window.addEventListener('drop', (ev) =>
-      TextEditor._onDropEditorData(ev, editor)
+      (TextEditor as any)._onDropEditorData(ev, editor)
     )
   },
 }

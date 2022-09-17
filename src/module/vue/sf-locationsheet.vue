@@ -175,10 +175,12 @@ import DocumentName from './components/document-name.vue'
 import BtnIcon from './components/buttons/btn-icon.vue'
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
+import { LocationDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
+const actor = props.actor as LocationDataProperties
 
 provide(
   'actor',
@@ -195,7 +197,7 @@ const data = reactive({
   firstLookHighlight: false,
 })
 
-function randomImage(subtype, klass) {
+function randomImage(subtype, klass): string | void {
   if (subtype === 'planet') {
     const name = capitalize(klass)
     const i = Math.floor(Math.random() * 2) + 1
@@ -222,7 +224,7 @@ function randomImage(subtype, klass) {
 }
 
 const klassOptions = computed((): { value: string; label: string }[] => {
-  switch (props.actor.data.subtype) {
+  switch (actor.data.subtype) {
     case 'planet':
       return [
         { value: 'desert', label: 'Desert World' },
@@ -305,7 +307,7 @@ interface OracleSpec {
   requiresKlass?: boolean
 }
 const oracles = computed((): OracleSpec[][] => {
-  const { subtype, klass } = props.actor.data
+  const { subtype, klass } = actor.data
   const kc = klass
     .split(' ')
     .map((x) => capitalize(x))
@@ -510,7 +512,7 @@ const oracles = computed((): OracleSpec[][] => {
   }
 })
 const canRandomizeName = computed(() => {
-  const { subtype, klass } = props.actor.data
+  const { subtype, klass } = actor.data
 
   if (subtype === 'planet') {
     const kc = capitalize(klass)
@@ -525,23 +527,23 @@ const canRandomizeName = computed(() => {
 })
 
 const randomKlassTooltip = computed(() => {
-  const { subtype } = props.actor.data
+  const { subtype } = actor.data
   return game.i18n.localize(`IRONSWORN.Random${capitalize(subtype)}Type`)
 })
 
 const subtypeSelectText = computed(() => {
-  const { subtype } = props.actor.data
+  const { subtype } = actor.data
   return game.i18n.localize(`IRONSWORN.${capitalize(subtype)}Type`)
 })
 
 const klassIsNotValid = computed(() => {
-  const { klass } = props.actor.data
+  const { klass } = actor.data
   const selectedOption = klassOptions.value.find((x) => x.value === klass)
   return selectedOption === undefined
 })
 
 function saveDescription() {
-  $actor?.update({ 'data.description': props.actor.data.description })
+  $actor?.update({ 'data.description': actor.data.description })
 }
 const throttledSaveDescription = throttle(saveDescription, 1000)
 
@@ -559,7 +561,7 @@ function klassChanged(evt) {
 }
 
 async function saveSubtype(subtype) {
-  const img = randomImage(subtype, props.actor.data.klass)
+  const img = randomImage(subtype, actor.data.klass)
   await $actor?.update({ data: { subtype } })
 
   const scale = {
@@ -572,10 +574,10 @@ async function saveSubtype(subtype) {
   await updateAllTokens({ img, scale })
 }
 async function saveKlass(klass) {
-  const { subtype } = props.actor.data
+  const { subtype } = actor.data
   const img = randomImage(subtype, klass)
 
-  await $actor?.update({ img, data: { klass } })
+  await $actor?.update({ img: img || undefined, data: { klass } })
   await updateAllTokens({ img })
 }
 
@@ -594,7 +596,7 @@ async function drawAndReturnResult(
 }
 
 async function randomizeName() {
-  const { subtype, klass } = props.actor.data
+  const { subtype, klass } = actor.data
   let name
   if (subtype === 'planet') {
     const kc = capitalize(klass)
@@ -618,15 +620,15 @@ async function randomizeName() {
 
 async function randomizeKlass() {
   let tableKey
-  if (props.actor.data.subtype === 'planet') {
+  if (actor.data.subtype === 'planet') {
     tableKey = 'Starforged/Oracles/Planets/Class'
-  } else if (props.actor.data.subtype === 'settlement') {
+  } else if (actor.data.subtype === 'settlement') {
     tableKey = 'Starforged/Oracles/Settlements/Location'
-  } else if (props.actor.data.subtype === 'star') {
+  } else if (actor.data.subtype === 'star') {
     tableKey = 'Starforged/Oracles/Space/Stellar_Object'
-  } else if (props.actor.data.subtype === 'derelict') {
+  } else if (actor.data.subtype === 'derelict') {
     tableKey = 'Starforged/Oracles/Derelicts/Location'
-  } else if (props.actor.data.subtype === 'vault') {
+  } else if (actor.data.subtype === 'vault') {
     tableKey = 'Starforged/Oracles/Vaults/Location'
   }
 
@@ -661,8 +663,9 @@ async function rollOracle(oracle) {
   if (!drawText) return
 
   // Append to description
+  const actor = props.actor as LocationDataProperties
   const parts = [
-    props.actor.data.description,
+    actor.data.description,
     '<p><strong>',
     oracle.title,
     ':</strong> ',

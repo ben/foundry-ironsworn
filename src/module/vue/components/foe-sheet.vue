@@ -77,6 +77,8 @@ import ProgressTrack from './progress/progress-track.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 import MceEditor from './mce-editor.vue'
 import { RANKS, RANK_INCREMENTS } from '../../constants'
+import { ProgressDataProperties } from '../../item/itemtypes'
+import { FoeDataProperties } from '../../actor/actortypes'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
@@ -85,17 +87,16 @@ provide(
   'actor',
   computed(() => props.actor)
 )
+const actorData = props.actor as FoeDataProperties
+const foe = props.actor.items.find(
+  (x) => x.type === 'progress'
+) as ProgressDataProperties
 
 const $actor = inject($ActorKey)
+const foundryFoe = $actor?.items.get((foe as any)?._id)
 
-const foe = computed(() => {
-  return props.actor.items.find((x) => x.type === 'progress')
-})
-const foundryFoe = computed(() => {
-  return $actor?.items.get(foe.value._id)
-})
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[props.actor.data.rank])
+  return game.i18n.localize(RANKS[foe?.data.rank])
 })
 
 // async foe(newFoe) {
@@ -117,25 +118,25 @@ function openCompendium(name) {
 }
 
 function setRank(rank) {
-  foundryFoe.value?.update({ data: { rank } })
-  foe.value.data.rank = rank
+  foundryFoe?.update({ data: { rank } })
+  foe!.data.rank = rank
 }
 
 function clearProgress() {
-  foundryFoe.value?.update({ 'data.current': 0 })
-  foe.value.data.current = 0
+  foundryFoe?.update({ 'data.current': 0 })
+  foe.data.current = 0
 }
 
 function markProgress() {
-  const increment = RANK_INCREMENTS[foe.value?.data.rank]
-  const newValue = Math.min(foe.value?.data.current + increment, 40)
-  foundryFoe.value.update({ 'data.current': newValue })
-  foe.value.data.current = newValue
+  const increment = RANK_INCREMENTS[foe?.data.rank]
+  const newValue = Math.min(foe?.data.current + increment, 40)
+  foundryFoe?.update({ 'data.current': newValue })
+  foe.data.current = newValue
 }
 
 function saveDescription() {
-  foundryFoe.value?.update({
-    data: { description: foe.value?.data.description },
+  foundryFoe?.update({
+    data: { description: foe?.data.description },
   })
 }
 const throttledSaveDescription = throttle(saveDescription, 1000)
