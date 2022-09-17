@@ -17,7 +17,7 @@
               stat="momentum"
               :top="10"
               :bottom="-6"
-              :softMax="actorData.data.momentumMax"
+              :softMax="actor.data.momentumMax"
             ></stack>
             <hr class="nogrow" />
             <div>
@@ -25,9 +25,9 @@
                 {{ $t('IRONSWORN.Burn') }}
               </btn-momentumburn>
 
-              {{ $t('IRONSWORN.Reset') }}: {{ actorData.data.momentumReset }}
+              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
               {{ $t('IRONSWORN.Max') }}:
-              {{ actorData.data.momentumMax }}
+              {{ actor.data.momentumMax }}
             </div>
           </div>
 
@@ -165,9 +165,8 @@ import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import { CharacterDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  actor: any
 }>()
-const actorData = props.actor as CharacterDataProperties
 
 provide(
   'actor',
