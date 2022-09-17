@@ -31,5 +31,6 @@ jobs:
         with:
           node-version: 14.x
 
+      - run: npm ci
       - run: ./node_modules/.bin/tsc --noEmit
       - run: ./node_modules/.bin/vue-tsc --noEmit
