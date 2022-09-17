@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Add an "oracle" icon and lots of v10 tooltips ([#466](https://github.com/ben/foundry-ironsworn/pull/466))
+
 ## 1.17.15
 
 - Fix name randomizer for settlements
