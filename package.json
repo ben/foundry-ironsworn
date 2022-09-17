@@ -16,6 +16,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@babel/types": "^7.19.0",
     "@league-of-foundry-developers/foundry-vtt-types": "^9.269.0",
     "@tinymce/tinymce-vue": "^4.0.7",
     "@types/lodash": "^4.14.170",
