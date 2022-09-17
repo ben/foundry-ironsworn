@@ -53,7 +53,7 @@ export class IronswornChatCard {
       `.message-content`,
       tables.map((t) => ({
         name: t.name || '',
-        icon: '<i class="isicon-d10-tilt"></i>',
+        icon: '<i class="isicon-oracle"></i>',
         callback: async () => {
           const msg = await OracleRollMessage.fromTableId(t.id, t.pack)
           msg.createOrUpdate()

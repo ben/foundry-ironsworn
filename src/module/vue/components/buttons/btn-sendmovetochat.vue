@@ -2,7 +2,7 @@
   <btn-faicon
     class="move-chat"
     icon="comment"
-    :tooltip="tooltip"
+    :tooltip="$t('IRONSWORN.SendToChat')"
     @click="sendToChat"
     :disabled="disabled"
   >
@@ -19,7 +19,6 @@ import btnFaicon from './btn-faicon.vue'
 
 const props = defineProps<{
   move: Move
-  tooltip?: string
   disabled?: boolean
 }>()
 

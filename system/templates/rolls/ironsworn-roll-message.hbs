@@ -1,4 +1,7 @@
-<article class='ironsworn-roll flexcol' data-ironswornroll='{{json ironswornroll}}'>
+<article
+  class='ironsworn-roll flexcol'
+  data-ironswornroll='{{json ironswornroll}}'
+>
   <h3 class='ironsworn-roll-title'>
     {{title}}
   </h3>
@@ -10,9 +13,9 @@
   <section class='roll-outcome {{outcomeClass}}'>
     <h4 class='outcome-label' title='{{outcome.source}}'>
       {{#if outcomeReplacementReason}}
-      <span class='outcome-replacement-reason'>
-        {{outcomeReplacementReason}}:&nbsp;<wbr />
-      </span>
+        <span class='outcome-replacement-reason'>
+          {{outcomeReplacementReason}}:&nbsp;<wbr />
+        </span>
       {{/if}}
       <span class='outcome-text'>
         {{outcomeText}}
@@ -20,39 +23,50 @@
     </h4>
 
     {{#if moveOutcome}}
-    <section class='move-outcome'>
-      {{{enrichMarkdown moveOutcome}}}
-    </section>
+      <section class='move-outcome'>
+        {{{enrichMarkdown moveOutcome}}}
+      </section>
     {{/if}}
   </section>
 
   <section class='outcome-shortcuts'>
     {{#if unresolved}}
-    <section class="resolve">
-      <button class='icon-button isicon-d10-tilt ironsworn-roll-resolve' type='button'>
-        <span class='button-text'>
-          {{localize 'IRONSWORN.ResolveChallenge'}}
-        </span>
-      </button>
-    </section>
+      <section class='resolve'>
+        <button
+          class='icon-button isicon-d10-tilt ironsworn-roll-resolve'
+          type='button'
+        >
+          <span class='button-text'>
+            {{localize 'IRONSWORN.ResolveChallenge'}}
+          </span>
+        </button>
+      </section>
     {{/if}}
     {{#if possibleMomentumBurn}}
-    <section class='momentum-burn'>
-      <button class='icon-button fas fa-fire ironsworn-roll-burn-momentum' type='button'>
-        <span class='button-text'>
-          {{{localize 'IRONSWORN.BurnForUpgrade' type=possibleMomentumBurn}}}
-        </span>
-      </button>
-    </section>
+      <section class='momentum-burn'>
+        <button
+          class='icon-button fas fa-fire ironsworn-roll-burn-momentum'
+          type='button'
+        >
+          <span class='button-text'>
+            {{{localize 'IRONSWORN.BurnForUpgrade' type=possibleMomentumBurn}}}
+          </span>
+        </button>
+      </section>
     {{/if}}
     {{#if nextOracles}}
-    <section class='move-oracle-buttons'>
-      {{#each nextOracles}}
-      <button class='starforged__oracle__roll icon-button isicon-d10-tilt' type='button' data-tableid='{{id}}'>
-        <span class='button-text'>{{name}}</span>
-      </button>
-      {{/each}}
-    </section>
+      <section class='move-oracle-buttons'>
+        {{#each nextOracles}}
+          <button
+            class='starforged__oracle__roll icon-button clickable isicon-oracle'
+            data-tooltip='{{{localize "IRONSWORN.RollOracleTable" title=name}}}'
+            data-tableid='{{id}}'
+            type='button'
+          >
+            <span class='button-text'>{{name}}</span>
+          </button>
+        {{/each}}
+      </section>
     {{/if}}
   </section>
 </article>

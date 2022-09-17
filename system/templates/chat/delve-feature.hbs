@@ -2,14 +2,20 @@
 {Name: "Face Danger", Source: {…}, Stats: Array(5), Text: "When …", …}
 }}
 
-<div class='dice-roll theme-ironsworn flexcol'>
+<article
+  class='ironsworn-message dice-roll {{themeClass}} flexcol'
+  data-tooltip-direction='LEFT'
+>
   <div class='ironsworn-roll'>
 
     <p class='flexrow' style='align-items: center;'>
       <span>{{localize 'IRONSWORN.Feature'}}:
         {{theme.name}}
         {{domain.name}}</span>
-      <span class='roll die d10 isiconbg-d10-blank' style='flex: 0 0 25px;'>{{roll.total}}</span>
+      <span
+        class='roll die d10 isiconbg-d10-blank'
+        style='flex: 0 0 25px;'
+      >{{roll.total}}</span>
     </p>
 
     <h4>
@@ -18,4 +24,4 @@
     </h4>
 
   </div>
-</div>
+</article>

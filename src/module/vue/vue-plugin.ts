@@ -5,7 +5,11 @@ import { $EnrichHtmlKey, $EnrichMarkdownKey } from './provisions'
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
-    $t: (string) => string
+    /**
+     * Without a `data` parameter: shortcut for {@link game.i18n.localize}.
+     * With a `data` parameter: shortcut for {@link game.i18n.format}.
+     */
+    $t: (stringId: string, data?: Record<string, unknown>) => string
     $capitalize: (string) => string
     $concat: (...args: any[]) => string
     $enrichMarkdown: (string) => string
@@ -33,7 +37,11 @@ export function enrichMarkdown(md: string): string {
 
 export const IronswornVuePlugin: Plugin = {
   install(app, ..._options) {
-    app.config.globalProperties.$t = (k) => game.i18n.localize(k)
+    app.config.globalProperties.$t = (
+      stringId: string,
+      data?: Record<string, unknown>
+    ) =>
+      data ? game.i18n.format(stringId, data) : game.i18n.localize(stringId)
     app.config.globalProperties.$concat = (...args) => args.join('')
     app.config.globalProperties.$capitalize = function (txt) {
       const [first, ...rest] = txt

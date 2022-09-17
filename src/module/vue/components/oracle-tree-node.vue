@@ -3,6 +3,7 @@
     class="flexcol nogrow movesheet-row"
     :class="{ hidden: node?.forceHidden, highlighted: state.highlighted }"
     ref="$el"
+    data-tooltip-direction="LEFT"
   >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->

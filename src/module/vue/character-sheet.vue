@@ -33,7 +33,7 @@
       <!-- Center area -->
       <div class="flexcol">
         <!-- Attributes -->
-        <div class="flexrow stats">
+        <div class="flexrow stats" data-tooltip-direction="UP">
           <attr-box attr="edge"></attr-box>
           <attr-box attr="heart"></attr-box>
           <attr-box attr="iron"></attr-box>
@@ -53,10 +53,14 @@
       </div>
 
       <!-- Stats on right -->
-      <div class="flexcol margin-right">
+      <div class="flexcol margin-right" data-tooltip-direction="UP">
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="nogrow vertical text" attr="health">
+          <btn-rollstat
+            class="nogrow vertical text"
+            attr="health"
+            :statLabel="$t('IRONSWORN.Health')"
+          >
             {{ $t('IRONSWORN.Health') }}
           </btn-rollstat>
           <div class="flexcol stack health">
@@ -68,7 +72,11 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="nogrow vertical text" attr="spirit">
+          <btn-rollstat
+            class="nogrow vertical text"
+            attr="spirit"
+            :statLabel="$t('IRONSWORN.Spirit')"
+          >
             {{ $t('IRONSWORN.Spirit') }}
           </btn-rollstat>
           <div class="flexcol stack spirit">
@@ -80,7 +88,11 @@
 
         <div class="flexrow nogrow" style="flex-wrap: nowrap">
           <!-- TODO: restyle as h4-like -->
-          <btn-rollstat class="nogrow vertical text" attr="supply">
+          <btn-rollstat
+            class="nogrow vertical text"
+            attr="supply"
+            :statLabel="$t('IRONSWORN.Supply')"
+          >
             {{ $t('IRONSWORN.Supply') }}
           </btn-rollstat>
           <div class="flexcol stack supply">
