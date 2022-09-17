@@ -10,6 +10,7 @@
     <div class="flexrow nogrow">
       <RankPips
         :current="actor.data.rank"
+        class="nogrow"
         @click="setRank"
         style="margin-right: 1em"
       />
