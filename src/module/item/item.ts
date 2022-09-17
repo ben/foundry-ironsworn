@@ -27,14 +27,14 @@ export class IronswornItem extends Item {
   }
 
   fulfill() {
-    if (this.data.type === 'vow') return this.fulfillVow()
     if (this.data.type !== 'progress') return
 
     const progress = Math.floor(this.data.data.current / 4)
     return IronswornPrerollDialog.showForProgress(
       this.name || '(progress)',
       progress,
-      this.actor || undefined
+      this.actor || undefined,
+      this.data.data.subtype === 'vow'
     )
   }
 

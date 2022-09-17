@@ -216,10 +216,10 @@ export class IronswornRollMessage {
 
     const { progress, stat } = this.roll.preRollOptions
     if (progress) {
+      const prefix = move?.name || game.i18n.localize('IRONSWORN.ProgressRoll')
+      console.log(move, prefix)
       return {
-        title: `${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${
-          progress.source
-        }`,
+        title: `${prefix}: ${progress.source}`,
       }
     }
 

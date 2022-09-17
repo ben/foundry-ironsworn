@@ -303,8 +303,9 @@ export class IronswornRoll {
     // Second term: the stat for an action roll
     if (this.preRollOptions.stat) {
       terms.push(this.preRollOptions.stat.value)
-    } else if (this.moveItem) {
-      // This is a move, but the action input isn't set, which means we haven't rolled yet
+    } else if (this.moveItem && !this.preRollOptions.progress) {
+      // This is a move roll (not Fulfill Your Vow), but the action input
+      // isn't set, which means we haven't rolled yet
       terms.push(undefined)
     }
 
