@@ -5,7 +5,7 @@
     xmlns="http://www.w3.org/2000/svg"
     :viewBox="viewBox"
   >
-    <polygon :points="pointyHexPath(center, hexHeight)" />
+    <polygon :points="pointyHexPolygon(center, hexHeight)" />
   </svg>
 </template>
 
@@ -16,15 +16,12 @@
 </style>
 
 <script setup lang="ts">
-// TODO: make this without bothering to specify specific height/width? idfk
 import { computed } from '@vue/reactivity'
 import { times } from 'lodash'
 
 const sides = 6
 const hexHeight = 10
 
-const longRadius = computed(() => hexHeight / 2)
-const shortRadius = computed(() => longRadius.value * (Math.sqrt(3) / 2))
 const hexWidth = computed(() => hexHeight * (Math.sqrt(3) / 2))
 
 const center = { x: -hexWidth.value / 2, y: -hexHeight / 2 }
@@ -32,13 +29,6 @@ const center = { x: -hexWidth.value / 2, y: -hexHeight / 2 }
 const viewBox = computed(
   () => `-${hexHeight} -${hexWidth.value} ${hexHeight} ${hexWidth.value}`
 )
-
-defineExpose({
-  hexHeight,
-  longRadius: longRadius.value,
-  shortRadius: shortRadius.value,
-  hexWidth: hexWidth.value,
-})
 
 // cribbed from https://www.redblobgames.com/grids/hexagons/
 function pointyHexCorner(center: Point, radius: number, index: number): Point {
@@ -50,7 +40,7 @@ function pointyHexCorner(center: Point, radius: number, index: number): Point {
   }
 }
 
-function pointyHexPath(center: Point, height: number) {
+function pointyHexPolygon(center: Point, height: number) {
   const radius = height / 2
   let points = times(sides, (i) => pointyHexCorner(center, radius, i))
   let pointsString = points.map((point) => `${point.x},${point.y}`).join(' ')
