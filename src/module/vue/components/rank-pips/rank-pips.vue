@@ -41,26 +41,32 @@
 </style>
 <style lang="less" scoped>
 .rank-pips {
-  height: 1.2em;
+  // so that hover effects only happen when a pip is hovered
+  pointer-events: none;
   display: flex;
-  gap: 2px;
   flex-flow: row nowrap;
   stroke: currentColor;
   fill: currentColor;
   fill-opacity: var(--widget-fill-opacity-static);
+  align-content: center;
+  gap: 2px;
   &:hover {
     fill-opacity: var(--widget-fill-opacity-preview);
   }
   .rank-pip {
+    pointer-events: all;
+    display: flex;
+    height: auto;
     padding: 0;
     line-height: 0;
     display: flex;
-    height: inherit;
-    width: auto;
-    & > svg {
+    justify-items: center;
+    .pip-shape {
       height: inherit;
       overflow: visible;
+      width: 1em;
     }
+
     &:hover {
       ~ .rank-pip {
         fill-opacity: 0;
