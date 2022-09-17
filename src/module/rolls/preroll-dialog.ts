@@ -210,8 +210,11 @@ export class IronswornPrerollDialog extends Dialog<
     let moveDfId: string | undefined
     let move: IronswornItem | undefined
     if (isVow && actor) {
-      // TODO: Determine the right "Fulfill Your Vow" move to use
-      moveDfId = 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+      const toolset = actor?.toolset ?? 'starforged'
+      moveDfId =
+        toolset === 'starforged'
+          ? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+          : 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
       move = await getFoundryMoveByDfId(moveDfId)
       if (move?.name) {
         title = `${move.name}: ${name}`

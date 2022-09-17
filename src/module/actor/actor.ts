@@ -26,6 +26,16 @@ export class IronswornActor extends Actor {
       })
     }
   }
+
+  get toolset(): 'ironsworn' | 'starforged' {
+    if (this.type === 'character') {
+      return this.sheet?.constructor.name === 'StarforgedCharacterSheet'
+        ? 'starforged'
+        : 'ironsworn'
+    }
+
+    return 'ironsworn'
+  }
 }
 
 declare global {
