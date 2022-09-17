@@ -1,25 +1,7 @@
 <style>
-  .first-start .box label {
-    padding: 1rem;
-  }
-
-  .first-start h1 {
-    border: none;
-  }
-
-  .first-start h2 {
-    border: none;
-    margin-top: 1rem;
-  }
-
-  .first-start label.flexcol {
-    align-items: center;
-  }
-
-  .first-start img {
-    border: none;
-    width: 170px;
-  }
+  .first-start .box label { padding: 1rem; } .first-start h1 { border: none; }
+  .first-start h2 { border: none; margin-top: 1rem; } .first-start label.flexcol
+  { align-items: center; } .first-start img { border: none; width: 170px; }
 
 </style>
 
@@ -33,18 +15,32 @@
     <div class='flexrow boxrow'>
       <div class='box flexrow'>
         <label class='flexcol'>
-          <img src='systems/foundry-ironsworn/assets/welcome/ironsworn-sheet.jpg' alt='Ironsworn sheet' />
+          <img
+            src='systems/foundry-ironsworn/assets/welcome/ironsworn-sheet.jpg'
+            alt='Ironsworn sheet'
+          />
           <p>
-            <input type='radio' name='sheet' value='ironsworn.IronswornCharacterSheetV2' />
+            <input
+              type='radio'
+              name='sheet'
+              value='ironsworn.IronswornCharacterSheetV2'
+            />
             Ironsworn
           </p>
         </label>
       </div>
       <div class='box flexrow'>
         <label class='flexcol'>
-          <img src='systems/foundry-ironsworn/assets/welcome/starforged-sheet.jpg' alt='Starforged sheet' />
+          <img
+            src='systems/foundry-ironsworn/assets/welcome/starforged-sheet.jpg'
+            alt='Starforged sheet'
+          />
           <p>
-            <input type='radio' name='sheet' value='ironsworn.StarforgedCharacterSheet' />
+            <input
+              type='radio'
+              name='sheet'
+              value='ironsworn.StarforgedCharacterSheet'
+            />
             Starforged
           </p>
         </label>
@@ -102,8 +98,8 @@
     </div>
   </div>
 
-  <div class="boxgroup" style='margin-top: 1rem'>
-    <div class="boxrow flexrow">
+  <div class='boxgroup' style='margin-top: 1rem'>
+    <div class='boxrow flexrow'>
       <button class='clickable block ironsworn__save'>
         <i class='fas fa-check'></i>
         {{localize 'IRONSWORN.First Start.Save'}}
