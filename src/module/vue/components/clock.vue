@@ -22,7 +22,7 @@
 
 <style lang="less" scoped>
 svg.clock {
-  // to avoid hover effects when in a corner of the svg's box but utside the l
+  // so that only *segment* hovers appear
   pointer-events: none;
   fill: currentColor;
   fill-opacity: var(--widget-fill-opacity-static);
