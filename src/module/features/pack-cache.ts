@@ -36,7 +36,6 @@ export async function primeCommonPackCaches() {
     'foundry-ironsworn.starforgedmoves',
     'foundry-ironsworn.ironsworntables',
     'foundry-ironsworn.ironswornoracles',
-    'foundry-ironsworn.ironswornitems',
   ]
   await Promise.all(commonPackNames.map(cachedDocumentsForPack))
 
