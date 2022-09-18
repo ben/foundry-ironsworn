@@ -186,9 +186,8 @@ import { OracleRollMessage, TableRow } from '../rolls'
 import { SiteDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  actor: any
 }>()
-const actor = props.actor as SiteDataProperties
 
 provide(
   'actor',
@@ -220,7 +219,7 @@ const hasThemeAndDomain = computed(() => {
 })
 
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[actor.data.rank])
+  return game.i18n.localize(RANKS[props.actor.data.rank])
 })
 
 function setRank(rank) {
@@ -232,8 +231,8 @@ function clearProgress() {
 }
 
 function markProgress() {
-  const increment = RANK_INCREMENTS[actor.data.rank]
-  const newValue = Math.min(actor.data.current + increment, 40)
+  const increment = RANK_INCREMENTS[props.actor.data.rank]
+  const newValue = Math.min(props.actor.data.current + increment, 40)
   $actor?.update({ 'data.current': newValue })
 }
 
@@ -263,7 +262,7 @@ async function randomFeature() {
 
 async function locateObjective() {
   const move = await moveDataByName('Locate Your Objective')
-  const progress = Math.floor(actor.data.current / 4)
+  const progress = Math.floor(props.actor.data.current / 4)
   const roll = new Roll(`{${progress}, d10, d10}`)
   createIronswornChatRoll({
     isProgress: true,
@@ -277,11 +276,11 @@ const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
   const roll = await new Roll('1d100').evaluate({ async: true })
   const result = roll.total
-  const denizen = actor.data.denizens.find(
+  const denizen = props.actor.data.denizens.find(
     (x) => x.low <= result && x.high >= result
   )
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
-  const idx = actor.data.denizens.indexOf(denizen)
+  const idx = props.actor.data.denizens.indexOf(denizen)
   await createIronswornDenizenChat({
     roll,
     denizen,
@@ -297,7 +296,7 @@ async function randomDenizen() {
 }
 
 function saveDescription() {
-  $actor?.update({ 'data.description': actor.data.description })
+  $actor?.update({ 'data.description': props.actor.data.description })
 }
 const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>
