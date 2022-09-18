@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix the zero-clock bug and add tooltips to clock wedges ([#473](https://github.com/ben/foundry-ironsworn/pull/473))
+
 ## 1.17.16
 
 - Ensure all character stats are numbers (fixes [#460](https://github.com/ben/foundry-ironsworn/pull/460))
