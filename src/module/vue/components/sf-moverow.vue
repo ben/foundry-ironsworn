@@ -3,8 +3,9 @@
     class="movesheet-row"
     :class="{ highlighted: data.highlighted }"
     ref="$el"
+    data-tooltip-direction="LEFT"
   >
-    <h4 class="flexrow" :title="tooltip">
+    <h4 class="flexrow">
       <btn-rollmove
         :disabled="!canRoll"
         class="juicy text nogrow"
@@ -25,12 +26,16 @@
           <btn-rollmove class="block" v-if="canRoll" :move="move">
             {{ $t('IRONSWORN.Roll') }}
           </btn-rollmove>
-          <btn-sendmovetochat class="block" :move="move">
+          <btn-sendmovetochat
+            class="block"
+            :move="move"
+            :data-tooltip-direction="canRoll ? 'RIGHT' : 'LEFT'"
+          >
             {{ $t('IRONSWORN.Chat') }}
           </btn-sendmovetochat>
         </div>
+        <!-- TODO: wrap fulltext div in an <article> and add a <footer> with e.g. "Ironsworn Rulebook, p. XX". -->
         <div v-html="fulltext" />
-
         <oracle-tree-node
           class="item-row"
           v-for="node of data.oracles"
@@ -43,12 +48,6 @@
 </template>
 
 <style lang="less" scoped>
-.move-roll {
-  // &[aria-disabled='true'],
-  // &:disabled {
-  //   visibility: hidden;
-  // }
-}
 .move-summary {
   border-left: 2px solid;
   margin-left: 5px;
@@ -93,6 +92,7 @@ import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
 import WithRolllisteners from './with-rolllisteners.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
+import { SFMoveDataProperties } from '../../item/itemtypes'
 
 const props = defineProps<{ move: Move }>()
 const data = reactive({
@@ -101,14 +101,12 @@ const data = reactive({
   oracles: [] as IOracleTreeNode[],
 })
 
-const tooltip = computed(() => {
-  const { Title, Page } = props.move.dataforgedMove?.Source ?? {}
-  if (!Title) return undefined
-  return `${Title} p${Page}`
-})
 const fulltext = computed(() => {
+  const foundryMoveData = props.move.moveItem?.data as
+    | SFMoveDataProperties
+    | undefined
   return IronswornHandlebarsHelpers.stripTables(
-    enrichMarkdown(props.move.moveItem?.data?.data?.Text)
+    enrichMarkdown(foundryMoveData?.data.Text ?? '')
   )
 })
 const canRoll = computed(() => {

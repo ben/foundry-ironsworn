@@ -113,6 +113,8 @@ import ProgressControls from './progress-controls.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import { IronswornSettings } from '../../helpers/settings'
 import { compact } from 'lodash'
+import { IronswornItem } from '../../item/item'
+import { ProgressDataProperties } from '../../item/itemtypes'
 
 const props = defineProps<{ exclude?: string }>()
 
@@ -163,9 +165,14 @@ const foeCompendium = computed(() => {
 })
 
 async function applySort(oldI, newI, sortBefore, filterFn) {
-  const foundryItems = $actor?.items
+  const foundryItems = ($actor?.items ?? [])
     .filter((x) => x.type === 'progress')
-    .filter((x) => !excludedSubtypes.includes(x.data.data.subtype))
+    .filter(
+      (x) =>
+        !excludedSubtypes.includes(
+          (x.data as ProgressDataProperties).data.subtype
+        )
+    )
     .filter(filterFn)
     .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {

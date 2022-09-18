@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 import { inject } from 'vue'
 
-const props = defineProps<{ title: string }>()
+const props = defineProps<{ title: string; icon?: string }>()
 
 const selectedTitle = inject('selectedTitle')
 </script>

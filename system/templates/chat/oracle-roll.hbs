@@ -7,7 +7,8 @@ roll: Roll {data: {…}, options: {…}, terms: Array(1), _dice: Array(0), _form
 table: RollTable {parent: null, pack: 'foundry-ironsworn.starforgedoracles', data: RollTableData, …}
 --}}
 
-<div class="table-draw {{themeClass}}" data-table-id="{{table.id}}"
+<article class="ironsworn-message table-draw {{themeClass}}" data-table-id="{{table.id}}"
+  data-tooltip-direction="LEFT"
   {{#if packName}}
   data-pack-name="{{packName}}"
   {{/if}}
@@ -37,4 +38,4 @@ table: RollTable {parent: null, pack: 'foundry-ironsworn.starforgedoracles', dat
     <i class="fas fa-undo-alt"></i>
     {{localize 'IRONSWORN.Reroll'}}
   </button>
-</div>
+</article>

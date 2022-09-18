@@ -1,13 +1,15 @@
 <template>
-  <btn-isicon
-    icon="d10-tilt"
+  <BtnIsicon
+    icon="oracle"
     class="oracle-roll"
     @click="rollOracle"
-    :tooltip="tooltip"
+    :tooltip="
+      $t('IRONSWORN.RollOracleTable', { title: props.node.displayName })
+    "
     :disabled="disabled"
   >
     <slot name="default"></slot>
-  </btn-isicon>
+  </BtnIsicon>
 </template>
 
 <style lang="less"></style>
@@ -17,10 +19,9 @@ import { sample } from 'lodash'
 import { inject } from 'vue'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
 import { OracleRollMessage } from '../../../rolls'
-import btnIsicon from './btn-isicon.vue'
+import BtnIsicon from './btn-isicon.vue'
 
 const props = defineProps<{
-  tooltip?: string
   node: IOracleTreeNode
   disabled?: boolean
 }>()

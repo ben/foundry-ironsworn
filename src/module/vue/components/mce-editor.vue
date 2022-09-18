@@ -4,12 +4,14 @@
   </div>
   <div v-else class="editor flexcol">
     <with-rolllisteners
+      v-if="interceptClicks"
       element="div"
       @moveclick="moveClick"
       @oracleclick="oracleClick"
       class="editor-content"
       v-html="$enrichHtml(modelValue)"
     />
+    <div v-else class="editor-content" v-html="$enrichHtml(modelValue)"></div>
     <a class="editor-edit">
       <i class="fas fa-edit" @click="data.editing = true"></i>
     </a>
@@ -24,7 +26,7 @@ import { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import WithRolllisteners from './with-rolllisteners.vue'
 
-defineProps<{ modelValue: string }>()
+defineProps<{ modelValue: string; interceptClicks?: boolean }>()
 
 const data = reactive({ editing: false })
 
@@ -77,7 +79,7 @@ const mceConfig: RawEditorSettings = {
       { passive: false }
     )
     window.addEventListener('drop', (ev) =>
-      TextEditor._onDropEditorData(ev, editor)
+      (TextEditor as any)._onDropEditorData(ev, editor)
     )
   },
 }

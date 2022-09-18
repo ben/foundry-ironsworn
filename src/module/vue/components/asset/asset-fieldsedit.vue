@@ -66,7 +66,7 @@ function enterEditMode() {
 }
 function addField() {
   enterEditMode()
-  const fields = Object.values(item.value.data.fields)
+  const fields = Object.values(item.value.data.fields) as any[]
   fields.push({ name: ' ', value: ' ' })
   $item?.update({ data: { fields } })
 }

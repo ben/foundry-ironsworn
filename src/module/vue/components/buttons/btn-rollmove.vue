@@ -12,25 +12,36 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from '@vue/reactivity'
 import { inject } from 'vue'
+import { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
 import btnIsicon from './btn-isicon.vue'
 
 const props = defineProps<{
-  move?: any
-  tooltip?: string
+  move?: Move
   disabled?: boolean
 }>()
+
+const tooltip = computed(() => {
+  let str = game.i18n.format('IRONSWORN.RollMove', {
+    title: props.move?.displayName,
+  })
+  return str
+})
 
 const $actor = inject($ActorKey)
 
 async function rollMove() {
-  if (props.move.dataforgedMove)
+  if (props.move?.dataforgedMove)
     return IronswornPrerollDialog.showForOfficialMove(
-      props.move.dataforgedMove.$id,
+      props.move?.dataforgedMove.$id,
       $actor
     )
-  IronswornPrerollDialog.showForMove(props.move.moveItem, $actor)
+  IronswornPrerollDialog.showForMove(
+    props.move?.moveItem as Move['moveItem'],
+    $actor
+  )
 }
 </script>

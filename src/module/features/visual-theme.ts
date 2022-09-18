@@ -10,7 +10,7 @@ export function themeSetup() {
   $(document.body).addClass(`theme-${currentTheme}`)
 
   if (currentTheme === 'starforged') {
-    CONFIG.TinyMCE.content_css?.push(
+    ;(<string[]>CONFIG.TinyMCE.content_css)?.push(
       '/systems/foundry-ironsworn/styles/starforged-tinymce.css'
     )
   }

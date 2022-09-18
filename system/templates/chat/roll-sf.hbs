@@ -15,7 +15,10 @@ title: "Face Danger (Shadow)"
 usedStat: "shadow"
 }}
 
-<div class='flexcol'>
+<article
+  class='ironsworn-message {{themeClass}} flexcol'
+  data-tooltip-direction='LEFT'
+>
   <h3>{{title}}</h3>
 
   <div
@@ -60,12 +63,14 @@ usedStat: "shadow"
     <hr />
     {{#each nextOracles}}
       <button
-        class='starforged__oracle__roll icon-button clickable isicon-d10-tilt'
+        class='starforged__oracle__roll icon-button clickable isicon-oracle'
+        data-tooltip='{{{localize "IRONSWORN.RollOracleTable" title=name}}}'
         data-tableid='{{id}}'
+        type='button'
       >
-        {{name}}
+        <span class='button-text'>{{name}}</span>
       </button>
     {{/each}}
   {{/if}}
 
-</div>
+</article>

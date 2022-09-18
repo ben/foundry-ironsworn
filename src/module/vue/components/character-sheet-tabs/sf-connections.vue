@@ -38,6 +38,7 @@ import { $ActorKey } from '../../provisions'
 import OrderButtons from '../order-buttons.vue'
 import ProgressBox from '../progress/progress-box.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
+import { ProgressDataProperties } from '../../../item/itemtypes'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
@@ -66,9 +67,9 @@ async function newConnection() {
 }
 
 async function applySort(oldI, newI, sortBefore) {
-  const foundryItems = $actor?.items
+  const foundryItems = ($actor?.items ?? [])
     .filter((x) => x.type === 'progress')
-    .filter((x) => x.data.data.subtype === 'bond')
+    .filter((x) => (x.data as ProgressDataProperties).data.subtype === 'bond')
     .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
     target: (foundryItems ?? [])[newI],

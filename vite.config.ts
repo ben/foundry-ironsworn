@@ -43,7 +43,7 @@ const config: UserConfig = {
       output: {
         assetFileNames(chunkInfo) {
           if (chunkInfo.name === 'style.css') return 'ironsworn.css'
-          return chunkInfo.name
+          return chunkInfo.name || '(name)'
         },
       },
     },

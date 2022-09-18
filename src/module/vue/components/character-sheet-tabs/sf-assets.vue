@@ -52,7 +52,7 @@ async function applySort(oldI, newI, sortBefore) {
     siblings: foundryItems,
     sortBefore,
   })
-  await Promise.all(updates.map(({ target, update }) => target.update(update)))
+  await Promise.all(updates.map(({ target, update }) => target?.update(update)))
 }
 function sortUp(i) {
   applySort(i, i - 1, true)

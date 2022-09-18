@@ -26,7 +26,9 @@
     "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
 
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */,
-    "jsx": "preserve"
+    "jsx": "preserve",
+
+    "skipLibCheck": true
   },
-  "exclude": ["node_modules", "webpack.config.js", "gulpfile.js"]
+  "exclude": ["node_modules"]
 }

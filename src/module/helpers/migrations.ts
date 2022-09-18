@@ -70,11 +70,33 @@ async function everythingIsAProgress() {
   })
 }
 
+async function statsAreAlwaysNumbers() {
+  await everyActor(async (actor) => {
+    if (actor.type !== 'character') return
+    const statKeys = [
+      'edge',
+      'heart',
+      'iron',
+      'shadow',
+      'wits',
+      'health',
+      'spirit',
+      'supply',
+    ]
+    const update = {}
+    for (const k of statKeys) {
+      update[k] = parseInt(actor.data.data[k] || '0', 10)
+    }
+    await actor.update({ data: update })
+  })
+}
+
 // index 1 is the function to run when upgrading from 1 to 2, and so on
 const MIGRATIONS: Array<() => Promise<any>> = [
   noop,
   fixFormidableSpelling,
   everythingIsAProgress,
+  statsAreAlwaysNumbers,
 ]
 const NEWEST_VERSION = MIGRATIONS.length
 
