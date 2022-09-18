@@ -79,9 +79,10 @@ import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
 import BtnRollstat from './components/buttons/btn-rollstat.vue'
 import ActiveCompletedProgresses from './components/active-completed-progresses.vue'
+import { BondsetDataProperties } from '../item/itemtypes'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  actor: any
 }>()
 provide(
   'actor',
@@ -90,7 +91,9 @@ provide(
 const $actor = inject($ActorKey)
 
 const hasBonds = computed(() => {
-  const bonds = props.actor.items.find((x) => x.type === 'bondset')
+  const bonds = props.actor.items.find((x) => x.type === 'bondset') as
+    | BondsetDataProperties
+    | undefined
   const markedBonds = bonds?.data?.bonds?.length
   return markedBonds && markedBonds > 0
 })

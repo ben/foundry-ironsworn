@@ -2,6 +2,7 @@ import { IMove } from 'dataforged'
 import { RANKS } from '../constants'
 
 interface ProgressBase {
+  description: string
   rank: keyof typeof RANKS
   current: number
   completed: boolean

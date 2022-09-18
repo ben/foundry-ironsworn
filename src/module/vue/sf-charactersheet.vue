@@ -164,7 +164,7 @@ import SfConnections1 from './components/character-sheet-tabs/sf-connections.vue
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  actor: any
 }>()
 
 provide(

@@ -175,9 +175,10 @@ import DocumentName from './components/document-name.vue'
 import BtnIcon from './components/buttons/btn-icon.vue'
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
+import { LocationDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  actor: any
 }>()
 
 provide(
@@ -195,7 +196,7 @@ const data = reactive({
   firstLookHighlight: false,
 })
 
-function randomImage(subtype, klass) {
+function randomImage(subtype, klass): string | void {
   if (subtype === 'planet') {
     const name = capitalize(klass)
     const i = Math.floor(Math.random() * 2) + 1
@@ -575,7 +576,7 @@ async function saveKlass(klass) {
   const { subtype } = props.actor.data
   const img = randomImage(subtype, klass)
 
-  await $actor?.update({ img, data: { klass } })
+  await $actor?.update({ img: img || undefined, data: { klass } })
   await updateAllTokens({ img })
 }
 
@@ -661,6 +662,7 @@ async function rollOracle(oracle) {
   if (!drawText) return
 
   // Append to description
+  const actor = props.actor as LocationDataProperties
   const parts = [
     props.actor.data.description,
     '<p><strong>',

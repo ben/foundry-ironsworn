@@ -72,7 +72,10 @@ import sfMoverow from './sf-moverow.vue'
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)
 
-const actor = inject('actor') as Ref
+const data = reactive({
+  searchQuery: '',
+  categories: [] as any[],
+})
 
 const tempCategories =
   props.toolset === 'ironsworn'
@@ -80,14 +83,10 @@ const tempCategories =
     : await createStarforgedMoveTree()
 for (const category of tempCategories) {
   for (const move of category.moves) {
-    move.highlighted = false
+    ;(move as any).highlighted = false
   }
 }
-
-const data = reactive({
-  searchQuery: '',
-  categories: tempCategories,
-})
+data.categories = tempCategories
 
 const checkedSearchQuery = computed(() => {
   try {

@@ -5,6 +5,7 @@ import {
   IMoveCategory,
   IOracle,
   IOracleCategory,
+  Ironsworn,
   ironsworn,
   IRow,
 } from 'dataforged'
@@ -281,7 +282,9 @@ export async function importFromDatasworn() {
 async function processDataforgedMoves() {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  const MoveCategories = ironsworn.default['Move Categories'] as IMoveCategory[]
+  const MoveCategories = ((ironsworn as any).default as Ironsworn)[
+    'Move Categories'
+  ]
   for (const category of MoveCategories) {
     for (const move of category.Moves) {
       renderLinksInMove(move)

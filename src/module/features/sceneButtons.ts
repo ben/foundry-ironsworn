@@ -192,8 +192,10 @@ export function activateSceneButtonListeners() {
 // In v9 we can inherit directly from CanvasLayer and it's fine
 // In v10 we have to use InteractionLayer
 
-let baseKlass = CanvasLayer
+let baseKlass: any = CanvasLayer
+// @ts-ignore
 if (typeof InteractionLayer !== 'undefined') {
+  // @ts-ignore
   baseKlass = InteractionLayer
 }
 

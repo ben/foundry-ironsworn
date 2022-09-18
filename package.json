@@ -16,6 +16,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@babel/types": "^7.19.0",
     "@league-of-foundry-developers/foundry-vtt-types": "^9.269.0",
     "@tinymce/tinymce-vue": "^4.0.7",
     "@types/lodash": "^4.14.170",
@@ -40,7 +41,8 @@
     "typescript": "^4.7.3",
     "vite": "^2.9.14",
     "vue": "^3.2.37",
-    "vue-template-compiler": "^2.6.14"
+    "vue-template-compiler": "^2.6.14",
+    "vue-tsc": "^0.40.13"
   },
   "browserslist": [
     "defaults",

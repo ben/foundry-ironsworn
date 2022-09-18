@@ -144,13 +144,16 @@ provide(
 )
 const $item = inject($ItemKey)
 
-const state = reactive({
+const state = reactive<{
+  currentProperty: string
+  currentActionPropKey?: string
+  currentContent: string
+  currentRollType?: string
+  currentMethod?: string
+  currentStatText?: string
+}>({
   currentProperty: 'Text',
-  currentActionPropKey: undefined,
   currentContent: props.item.data.Text,
-  currentRollType: undefined,
-  currentMethod: undefined,
-  currentStatText: undefined,
 })
 
 const triggerOptions = computed(() => {
@@ -168,7 +171,7 @@ const triggerOptions = computed(() => {
   })
 })
 
-function switchContent(prop, actionPropKey = undefined) {
+function switchContent(prop, actionPropKey?: string) {
   state.currentProperty = prop
   state.currentContent = get(props.item.data, prop)
   state.currentActionPropKey = actionPropKey
@@ -179,7 +182,8 @@ function switchContent(prop, actionPropKey = undefined) {
   //   Using: ['Iron'],
   //   dfid: 'Starforged/Moves/Recover/Heal/Trigger/Options/1',
   // }
-  const ap = actionPropKey && get(props.item.data, actionPropKey)
+  const ap =
+    actionPropKey && (get(props.item.data, actionPropKey) as any | undefined)
   state.currentRollType = ap?.['Roll type']
   state.currentMethod = ap?.Method
   state.currentStatText = ap?.Using?.join?.(',') ?? ''
@@ -199,7 +203,7 @@ function addTrigger() {
 
 function removeTrigger(option) {
   console.log(option)
-  const idx = state.triggerOptions.findIndex((x) => x.key === option.key)
+  const idx = triggerOptions.value.findIndex((x) => x.key === option.key)
   let { Options } = props.item.data.Trigger
   Options ||= []
   Options.splice(idx, 1)
@@ -208,6 +212,14 @@ function removeTrigger(option) {
 }
 
 function saveActionProps() {
+  if (
+    !state.currentActionPropKey ||
+    !state.currentStatText ||
+    !state.currentActionPropKey ||
+    !state.currentStatText
+  )
+    return
+
   const opt = get(props.item.data, state.currentActionPropKey)
   opt.Method = state.currentMethod
   opt['Roll type'] = state.currentRollType
