@@ -2,10 +2,12 @@
 
 ## Next Release
 
-- Add an "oracle" icon and lots of v10 tooltips ([#466](https://github.com/ben/foundry-ironsworn/pull/466))
 - Ensure all character stats are numbers (fixes [#460](https://github.com/ben/foundry-ironsworn/pull/460))
-- Use the _Fulfill Your Vow_ move when doing a progress roll on a vow ([#470](https://github.com/ben/foundry-ironsworn/pull/470), which also includes some internal cleanup)
+- Add an "oracle" icon and lots of v10 tooltips ([#466](https://github.com/ben/foundry-ironsworn/pull/466))
+- Use the _Fulfill Your Vow_ move when doing a progress roll on a vow ([#470](https://github.com/ben/foundry-ironsworn/pull/470))
 - Update the rank pips and clock components ([#469](https://github.com/ben/foundry-ironsworn/pull/469))
+- Standardize tables and rules-text displays ([#468](https://github.com/ben/foundry-ironsworn/pull/468))
+- Internal cleanups and tightening of types
 
 ## 1.17.15
 
