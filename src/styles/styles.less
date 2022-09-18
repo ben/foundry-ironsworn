@@ -14,6 +14,10 @@
 :root {
   scrollbar-width: thin;
   scrollbar-color: #444 rgba(0, 0, 0, 0.1);
+  --std-animation: all 0.5s ease;
+  --widget-fill-opacity-static: 1;
+  --widget-fill-opacity-preview: 0.5;
+  --widget-stroke-width: 1px;
   --ironsworn-color-danger: hsl(0, 80%, 40%);
   --ironsworn-color-danger-faded: hsl(0, 80%, 40%);
   --ironsworn-color-warning: hsl(55, 100%, 50%);
@@ -153,7 +157,7 @@
   }
 
   .asset-summary {
-    transition: all 0.5s ease;
+    transition: var(--std-animation);
     overflow: hidden;
 
     &.collapsed {
@@ -254,15 +258,9 @@
     }
   }
 
-  .rank-pip {
-    flex: 0 1 auto;
-    stroke-width: 10;
-    margin: 1px !important;
-  }
-
   // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
   .interactive {
-    transition: 0.5s ease;
+    transition: var(--std-animation);
     cursor: pointer;
     &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
@@ -297,6 +295,20 @@
     .interactive();
     &.text {
       justify-content: flex-start;
+    }
+    svg,
+    &.svg {
+      &.selected,
+      &[aria-selected='true'] {
+        fill-opacity: 1;
+      }
+      &.hover,
+      &:hover {
+        fill-opacity: 0.35;
+      }
+      &:active {
+        fill-opacity: 0.5;
+      }
     }
   }
 
@@ -337,7 +349,7 @@
       justify-items: center;
       align-items: center;
       border: 1px solid;
-      transition: 0.5s ease;
+      transition: var(--std-animation);
     }
   }
 

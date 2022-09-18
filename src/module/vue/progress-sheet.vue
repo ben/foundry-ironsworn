@@ -2,8 +2,8 @@
   <div class="flexcol">
     <!-- HEADER -->
     <header class="sheet-header flexrow nogrow" style="gap: 5px">
-      <document-img :document="item" />
-      <document-name :document="item" />
+      <DocumentImg :document="item" />
+      <DocumentName :document="item" />
     </header>
 
     <select
@@ -38,24 +38,23 @@
         {{ $t('IRONSWORN.Track') }}
       </label>
 
-      <transition name="slide">
+      <Transition name="slide">
         <div class="nogrow" v-if="item.data.hasTrack">
           <!-- RANK -->
           <div class="flexrow nogrow">
-            <rank-hexes
+            <RankPips
               :current="item.data.rank"
               @click="setRank"
-              class="nogrow"
               style="margin-right: 1em"
             />
             <h4>{{ rankText }}</h4>
-            <btn-faicon
+            <BtnFaicon
               class="block nogrow"
               v-if="editMode"
               icon="trash"
               @click="clearProgress"
             />
-            <btn-faicon
+            <BtnFaicon
               class="block nogrow"
               icon="caret-right"
               @click="markProgress"
@@ -63,10 +62,10 @@
           </div>
           <!-- PROGRESS -->
           <div class="flexrow track nogrow" style="margin-bottom: 1em">
-            <progress-track :ticks="item.data.current" />
+            <ProgressTrack :ticks="item.data.current" />
           </div>
         </div>
-      </transition>
+      </Transition>
     </div>
 
     <hr class="nogrow" />
@@ -81,10 +80,10 @@
         {{ $t('IRONSWORN.Clock') }}
       </label>
 
-      <transition name="slide">
+      <Transition name="slide">
         <div class="flexrow nogrow" v-if="item.data.hasClock">
           <div class="nogrow" style="margin: 0 1rem">
-            <clock
+            <Clock
               :wedges="item.data.clockMax"
               :ticked="item.data.clockTicks"
               @click="setClock"
@@ -106,13 +105,13 @@
             </select>
           </div>
         </div>
-      </transition>
+      </Transition>
     </div>
 
     <hr class="nogrow" />
 
     <!-- DESCRIPTION -->
-    <mce-editor
+    <MceEditor
       v-model="item.data.description"
       @save="saveDescription"
       @change="throttledSaveDescription"
@@ -133,7 +132,7 @@ import { RANKS, RANK_INCREMENTS } from '../constants'
 import { $ItemKey } from './provisions'
 import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
-import RankHexes from './components/rank-hexes/rank-hexes.vue'
+import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import ProgressTrack from './components/progress/progress-track.vue'
 import Clock from './components/clock.vue'
