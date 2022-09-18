@@ -18,12 +18,12 @@
       <PipSvgCircle
         v-if="pipStyle === 'circle'"
         role="presentational"
-        class="svg clickable pip-shape"
+        class="svg pip-shape"
       />
       <PipSvgHex
         v-if="pipStyle === 'hex'"
         role="presentational"
-        class="svg clickable pip-shape"
+        class="svg pip-shape"
       />
     </button>
   </article>
@@ -50,6 +50,7 @@
   fill-opacity: var(--widget-fill-opacity-static);
   align-content: center;
   gap: 2px;
+  transition: var(--std-animation);
   &:hover {
     fill-opacity: var(--widget-fill-opacity-preview);
   }
@@ -61,6 +62,7 @@
     line-height: 0;
     display: flex;
     justify-items: center;
+    transition: var(--std-animation);
     .pip-shape {
       height: inherit;
       overflow: visible;
