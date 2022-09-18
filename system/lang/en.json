@@ -41,6 +41,12 @@
     "Extreme": "Extreme",
     "Epic": "Epic",
     "Stat": "Stat",
+    "OracleTable": {
+      "ColumnLabel": {
+        "Roll": "Roll",
+        "Result": "Result"
+      }
+    },
     "roll +x": "roll +{stat}",
     "Roll +x": "Roll +{stat}",
     "roll method": {
@@ -185,7 +191,7 @@
     "RequiresLocationType": "This oracle requires a location type to be selected.",
     "RollOracleTable": "Roll oracle: <i>{title}</i>",
     "RollMove": "Roll move: <i>{title}</i>",
-    "PageReference": "<i>{title}</i>, p. {page}",
+    "PageReference": "p. {page}",
     "PlanetType": "Type of planet",
     "RandomPlanetType": "Random planet type",
     "SettlementType": "Type of settlement",
