@@ -92,16 +92,8 @@
       "private": false
     },
     {
-      "name": "ironswornitems",
-      "label": "Ironsworn Moves",
-      "system": "foundry-ironsworn",
-      "path": "packs/items.db",
-      "entity": "Item",
-      "private": false
-    },
-    {
       "name": "ironswornmoves",
-      "label": "Ironsworn Moves v2",
+      "label": "Ironsworn Moves",
       "system": "foundry-ironsworn",
       "path": "packs/ironsworn-moves.db",
       "entity": "Item"

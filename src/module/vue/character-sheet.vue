@@ -13,7 +13,7 @@
               stat="momentum"
               :top="10"
               :bottom="-6"
-              :softMax="actor.data.momentumMax"
+              :softMax="actorData.data.momentumMax"
             ></stack>
             <hr class="nogrow" />
             <div>
@@ -21,9 +21,9 @@
                 {{ $t('IRONSWORN.Burn') }}
               </btn-momentumburn>
 
-              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
+              {{ $t('IRONSWORN.Reset') }}: {{ actorData.data.momentumReset }}
               {{ $t('IRONSWORN.Max') }}:
-              {{ actor.data.momentumMax }}
+              {{ actorData.data.momentumMax }}
             </div>
           </div>
           <h4 class="vertical">{{ $t('IRONSWORN.Momentum') }}</h4>
@@ -129,10 +129,12 @@ import Tabs from './components/tabs/tabs.vue'
 import Tab from './components/tabs/tab.vue'
 import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
+import { CharacterDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
+const actorData = props.actor as CharacterDataProperties
 
 provide(
   'actor',

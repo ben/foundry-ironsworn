@@ -68,7 +68,7 @@ const xpBoxCount = computed(() => {
   }
 })
 const xpArray = computed(() => {
-  const ret = []
+  const ret = [] as number[]
   for (let i = 1; i <= xpBoxCount.value; i++) {
     ret.push(i)
   }

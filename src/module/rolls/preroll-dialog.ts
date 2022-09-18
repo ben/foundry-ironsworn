@@ -201,10 +201,25 @@ export class IronswornPrerollDialog extends Dialog<
   static async showForProgress(
     name: string,
     value: number,
-    actor?: IronswornActor
+    actor?: IronswornActor,
+    isVow?: boolean
   ) {
     const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')
-    const title = `${rollText}: ${name}`
+    let title = `${rollText}: ${name}`
+
+    let moveDfId: string | undefined
+    let move: IronswornItem | undefined
+    if (isVow && actor) {
+      const toolset = actor?.toolset ?? 'starforged'
+      moveDfId =
+        toolset === 'starforged'
+          ? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+          : 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+      move = await getFoundryMoveByDfId(moveDfId)
+      if (move?.name) {
+        title = `${move.name}: ${name}`
+      }
+    }
 
     const prerollOptions: PreRollOptions = {
       progress: {
@@ -213,9 +228,10 @@ export class IronswornPrerollDialog extends Dialog<
       },
 
       actorId: actor?.id || undefined,
+      moveDfId,
     }
 
-    const content = await this.renderContent({ prerollOptions })
+    const content = await this.renderContent({ prerollOptions, move })
     const buttons = {
       [name]: {
         label: `<span class=button-text>${game.i18n.localize(

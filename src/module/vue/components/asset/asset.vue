@@ -110,7 +110,7 @@ const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
 const foundryItem = $actor
   ? $actor?.items.find((x) => x.id === props.asset._id)
-  : game.items?.get(props.item._id)
+  : game.items?.get(props.asset._id)
 provide($ItemKey, foundryItem)
 
 const expanded = computed(() => {

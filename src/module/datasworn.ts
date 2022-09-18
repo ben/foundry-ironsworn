@@ -5,6 +5,7 @@ import {
   IMoveCategory,
   IOracle,
   IOracleCategory,
+  Ironsworn,
   ironsworn,
   IRow,
 } from 'dataforged'
@@ -110,7 +111,6 @@ const FOE_IMAGES = {
 }
 
 const PACKS = [
-  'foundry-ironsworn.ironswornitems',
   'foundry-ironsworn.ironswornmoves',
   'foundry-ironsworn.ironswornassets',
   'foundry-ironsworn.ironsworndelvethemes',
@@ -130,30 +130,6 @@ export async function importFromDatasworn() {
   }
 
   // Moves
-  const movesJson = await fetch(
-    'systems/foundry-ironsworn/assets/moves.json'
-  ).then((x) => x.json())
-  const movesToCreate = [] as (ItemDataConstructorData &
-    Record<string, unknown>)[]
-  for (const category of movesJson.Categories) {
-    for (const move of category.Moves) {
-      movesToCreate.push({
-        type: 'move',
-        name: move.Name,
-        img: 'icons/dice/d10black.svg',
-        data: {
-          description: move.Description,
-          strong: move.Strong,
-          weak: move.Weak,
-          miss: move.Miss,
-          stats: move.Stats || [],
-        },
-      })
-    }
-  }
-  await Item.createDocuments(movesToCreate, {
-    pack: 'foundry-ironsworn.ironswornitems',
-  })
   await processDataforgedMoves()
 
   // Assets
@@ -306,7 +282,9 @@ export async function importFromDatasworn() {
 async function processDataforgedMoves() {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  const MoveCategories = ironsworn.default['Move Categories'] as IMoveCategory[]
+  const MoveCategories = ((ironsworn as any).default as Ironsworn)[
+    'Move Categories'
+  ]
   for (const category of MoveCategories) {
     for (const move of category.Moves) {
       renderLinksInMove(move)

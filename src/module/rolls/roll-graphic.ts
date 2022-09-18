@@ -43,6 +43,7 @@ export async function renderRollGraphic(opts: RollGraphicRenderOpts) {
   }
   opts.roll ||= new IronswornRoll(opts.preRollOptions)
   const renderData: RenderData = {
+    preRollOptions: {},
     ...opts,
     adds: [],
     challengeDice: [{}, {}],

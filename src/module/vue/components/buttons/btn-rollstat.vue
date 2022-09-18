@@ -36,8 +36,8 @@ const props = defineProps<{
 const $actor = inject($ActorKey)
 const $item = computed(() => {
   return (
-    $actor?.items.find((x) => x.id === props.item?._id) ??
-    game.items?.get(props.item?._id)
+    $actor?.items.find((x) => x.id === (props.item as any)?._id) ??
+    game.items?.get((props.item as any)?._id)
   )
 })
 

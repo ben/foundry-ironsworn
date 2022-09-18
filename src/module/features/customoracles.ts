@@ -12,7 +12,7 @@ import { cachedDocumentsForPack } from './pack-cache'
 
 export interface IOracleTreeNode {
   dataforgedNode?: IOracle | IOracleCategory
-  tables: RollTable[]
+  tables: RollTable[] | any[]
   displayName: string
   children: IOracleTreeNode[]
   forceExpanded?: boolean
@@ -101,7 +101,11 @@ async function walkOracleCategory(
   return node
 }
 
-export async function walkOracle(oracle: IOracle): Promise<IOracleTreeNode> {
+export async function walkOracle(
+  oracle?: IOracle | IOracleCategory
+): Promise<IOracleTreeNode> {
+  if (!oracle) return emptyNode()
+
   const table = await getFoundryTableByDfId(oracle.$id)
 
   const node: IOracleTreeNode = {

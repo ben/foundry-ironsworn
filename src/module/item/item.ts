@@ -27,32 +27,15 @@ export class IronswornItem extends Item {
   }
 
   fulfill() {
-    if (this.data.type === 'vow') return this.fulfillVow()
     if (this.data.type !== 'progress') return
 
     const progress = Math.floor(this.data.data.current / 4)
     return IronswornPrerollDialog.showForProgress(
       this.name || '(progress)',
       progress,
-      this.actor || undefined
+      this.actor || undefined,
+      this.data.data.subtype === 'vow'
     )
-  }
-
-  async fulfillVow() {
-    if (this.data.type !== 'vow') return
-
-    const move = await moveDataByName('Fulfill Your Vow')
-    if (!move) throw new Error('Problem loading fulvill-vow move')
-
-    const progress = Math.floor(this.data.data.current / 4)
-    const r = new Roll(`{${progress},d10,d10}`)
-    createIronswornChatRoll({
-      isProgress: true,
-      move,
-      roll: r,
-      actor: this.actor || undefined,
-      subtitle: this.name || undefined,
-    })
   }
 
   /**

@@ -17,7 +17,7 @@ type PackContents = StoredDocument<
 >[]
 const PACK_CACHE: { [key: string]: PackContents | undefined } = {}
 
-async function populateCacheForPack(packName: name) {
+async function populateCacheForPack(packName: string) {
   console.log(`Loading documents for pack ${packName}`)
   const pack = game.packs.get(packName)
   PACK_CACHE[packName] = await pack?.getDocuments()
@@ -36,7 +36,6 @@ export async function primeCommonPackCaches() {
     'foundry-ironsworn.starforgedmoves',
     'foundry-ironsworn.ironsworntables',
     'foundry-ironsworn.ironswornoracles',
-    'foundry-ironsworn.ironswornitems',
   ]
   await Promise.all(commonPackNames.map(cachedDocumentsForPack))
 

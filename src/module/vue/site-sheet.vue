@@ -155,7 +155,7 @@ textarea {
 </style>
 
 <script setup lang="ts">
-import { provide, computed, inject, nextTick, ref } from 'vue'
+import { provide, computed, inject, nextTick, ref, Component } from 'vue'
 import { IronswornActor } from '../actor/actor'
 import { $ActorKey } from './provisions'
 import { throttle } from 'lodash'
@@ -183,9 +183,10 @@ import {
   FeatureOrDanger,
 } from '../item/itemtypes'
 import { OracleRollMessage, TableRow } from '../rolls'
+import { SiteDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  actor: any
 }>()
 
 provide(
@@ -196,7 +197,7 @@ provide(
 const $actor = inject($ActorKey)
 
 const editMode = computed(() => {
-  return props.actor.flags['foundry-ironsworn']?.['edit-mode']
+  return (props.actor.flags['foundry-ironsworn'] as any)?.['edit-mode']
 })
 
 const theme = computed(() => {
@@ -271,26 +272,26 @@ async function locateObjective() {
   })
 }
 
-const denizenRefs = ref<{ [k: number]: HTMLElement }>({})
+const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
   const roll = await new Roll('1d100').evaluate({ async: true })
   const result = roll.total
-  const denizen = $actor?.data.data.denizens.find(
+  const denizen = props.actor.data.denizens.find(
     (x) => x.low <= result && x.high >= result
   )
-  const idx = $actor?.data.data.denizens.indexOf(denizen)
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
+  const idx = props.actor.data.denizens.indexOf(denizen)
   await createIronswornDenizenChat({
     roll,
     denizen,
-    site: $actor,
+    site: $actor!,
   })
 
   // Denizen slot is empty; set focus and add a class
   if (!denizen?.description) {
     await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
     await nextTick()
-    denizenRefs.value[idx]?.focus()
+    denizenRefs.value[idx]?.focus?.()
   }
 }
 

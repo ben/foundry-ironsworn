@@ -14,6 +14,7 @@
 import { computed } from '@vue/reactivity'
 import { inject } from '@vue/runtime-core'
 import { IronswornItem } from '../../../item/item'
+import { ProgressDataProperties } from '../../../item/itemtypes'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import BtnIsicon from './btn-isicon.vue'
 
@@ -23,16 +24,12 @@ const $actor = inject($ActorKey, undefined)
 const $item = inject($ItemKey, undefined)
 
 const progressScore = computed(() => {
-  return Math.floor($item?.data.data.current / 4)
+  if (!$item) return 0
+  const itemData = $item.data as ProgressDataProperties
+  return Math.floor(itemData.data.current / 4)
 })
 
 function rollProgress() {
-  let item: IronswornItem | undefined
-  if ($actor) {
-    item = $actor.items.find((x) => x.id === props.item._id)
-  } else {
-    item = game.items?.get(props.item.id)
-  }
-  item?.fulfill()
+  $item?.fulfill()
 }
 </script>

@@ -1,5 +1,5 @@
 import { VueApplication } from '../vue/vueapp'
-import { starforged } from 'dataforged'
+import { Starforged, starforged } from 'dataforged'
 import sfTruthsVue from '../vue/sf-truths.vue'
 import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
 
@@ -21,7 +21,7 @@ export class SFSettingTruthsDialogVue extends VueApplication {
       components: { 'sf-truths': sfTruthsVue },
       vueData: async () => ({
         // Avoid rollupjs's over-aggressive tree shaking
-        truths: starforged.default['Setting Truths'],
+        truths: ((starforged as any).default as Starforged)['Setting Truths'],
       }),
     }
   }
