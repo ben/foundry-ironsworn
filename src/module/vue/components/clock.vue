@@ -28,7 +28,11 @@ svg.clock {
   fill-opacity: var(--widget-fill-opacity);
   stroke: currentColor;
   stroke-width: var(--widget-stroke-width);
-  // vector-effect: non-scaling-stroke;
+  &[aria-valuenow='0'] {
+    .clock-segment {
+      fill-opacity: 0;
+    }
+  }
   .clock-segment {
     pointer-events: fill;
     cursor: pointer;
