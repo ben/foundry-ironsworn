@@ -2,7 +2,7 @@
   <RulesText
     class="rules-text-move"
     :source="move.dataforgedMove?.Source"
-    :content="props.move.moveItem?.data?.data?.Text"
+    :content="(props.move.moveItem.data as SFMoveDataProperties).data.Text"
     type="markdown"
   >
     <template #before-main>
@@ -19,6 +19,7 @@
 
 <script setup lang="ts">
 import { Move } from '../../../features/custommoves.js'
+import { SFMoveDataProperties } from '../../../item/itemtypes.js'
 
 import RulesText from './rules-text.vue'
 
