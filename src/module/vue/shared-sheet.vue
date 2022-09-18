@@ -18,7 +18,7 @@
         style="line-height: 25px"
         :min="0"
         :max="5"
-        :current="actorData.data.supply"
+        :current="actor.data.supply"
         @click="setSupply"
       />
     </section>
@@ -32,7 +32,7 @@
     <section class="sheet-area">
       <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
       <mce-editor
-        v-model="actorData.data.biography"
+        v-model="actor.data.biography"
         @save="saveNotes"
         @change="throttledSaveNotes"
       />
@@ -79,17 +79,15 @@ import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
 import BtnRollstat from './components/buttons/btn-rollstat.vue'
 import ActiveCompletedProgresses from './components/active-completed-progresses.vue'
-import { SharedDataProperties } from '../actor/actortypes'
 import { BondsetDataProperties } from '../item/itemtypes'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  actor: any
 }>()
 provide(
   'actor',
   computed(() => props.actor)
 )
-const actorData = props.actor as SharedDataProperties
 const $actor = inject($ActorKey)
 
 const hasBonds = computed(() => {
@@ -111,7 +109,7 @@ function rollSupply() {
 }
 
 function saveNotes() {
-  $actor?.update({ 'data.biography': actorData.data.biography })
+  $actor?.update({ 'data.biography': props.actor.data.biography })
 }
 const throttledSaveNotes = throttle(saveNotes, 1000)
 </script>

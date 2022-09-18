@@ -162,7 +162,6 @@ import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
 import SfConnections1 from './components/character-sheet-tabs/sf-connections.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
-import { CharacterDataProperties } from '../actor/actortypes'
 
 const props = defineProps<{
   actor: any
