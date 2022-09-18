@@ -16,6 +16,8 @@
       class="clock-segment svg"
       :aria-selected="props.ticked === i + 1"
       @click="click(i)"
+      :data-tooltip="`${i + 1}⁄${wedges}`"
+      :data-tooltip-direction="tooltipDirection(i + 1, wedges)"
     ></path>
   </svg>
 </template>
@@ -25,16 +27,21 @@ svg.clock {
   // so that only *segment* hovers appear
   pointer-events: none;
   fill: currentColor;
-  fill-opacity: var(--widget-fill-opacity-static);
+  fill-opacity: var(--widget-fill-opacity);
   stroke: currentColor;
   stroke-width: var(--widget-stroke-width);
-  // vector-effect: non-scaling-stroke;
+  &[aria-valuenow='0']:not(:hover) {
+    .clock-segment {
+      fill-opacity: 0;
+    }
+  }
   .clock-segment {
     pointer-events: fill;
+    cursor: pointer;
     vector-effect: non-scaling-stroke;
     transition: var(--std-animation);
     &:active {
-      fill-opacity: var(--widget-fill-opacity-static);
+      fill-opacity: var(--widget-fill-opacity);
     }
   }
   &:hover {
@@ -60,6 +67,7 @@ svg.clock {
 </style>
 
 <script setup lang="ts">
+import { inRange, mean } from 'lodash'
 import { computed } from 'vue'
 const R = 50
 
@@ -72,6 +80,37 @@ function pathString(wedgeIdx: number, numWedges: number) {
   const y2 = R * Math.sin(startAngle + wedgeAngle)
 
   return `M0,0 L${x1},${y1} A${R},${R} 0 0,1 ${x2},${y2} z`
+}
+
+// TODO: make this handle a bit more sensibly
+/**
+ * Picks a sensible tooltip position for a given wedge in a clock.
+ */
+function tooltipDirection(currentWedge: number, maxWedge: number) {
+  let increment = 1 / maxWedge
+  let start = currentWedge / maxWedge
+  let end = start + increment
+  let mid = mean([start, end])
+  let breakPoints = [0.125, 0.375, 0.625, 0.875]
+  switch (true) {
+    case inRange(mid, 0, breakPoints[0]): {
+      return 'UP'
+    }
+    case inRange(mid, breakPoints[0], breakPoints[1]): {
+      return 'RIGHT'
+    }
+    case inRange(mid, breakPoints[1], breakPoints[2]): {
+      return 'DOWN'
+    }
+    case inRange(mid, breakPoints[2], breakPoints[3]): {
+      return 'LEFT'
+    }
+    case inRange(mid, breakPoints[3], 1): {
+      return 'UP'
+    }
+    default:
+      return 'UP'
+  }
 }
 
 const props = defineProps<{

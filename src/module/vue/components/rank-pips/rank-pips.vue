@@ -12,7 +12,7 @@
       :data-tooltip="$t(`IRONSWORN.${$capitalize(rank)}`)"
       data-tooltip-direction="UP"
       type="button"
-      class="rank-pip nogrow"
+      class="rank-pip nogrow theme-pip"
       :aria-selected="rank === current"
     >
       <PipSvgCircle
@@ -33,7 +33,6 @@
 .rank-pips {
   .rank-pip {
     .pip-shape > * {
-      vector-effect: non-scaling-stroke;
       stroke-width: var(--widget-stroke-width);
     }
   }
@@ -47,14 +46,15 @@
   flex-flow: row nowrap;
   stroke: currentColor;
   fill: currentColor;
-  fill-opacity: var(--widget-fill-opacity-static);
+  fill-opacity: var(--widget-fill-opacity);
   align-content: center;
   gap: 2px;
   transition: var(--std-animation);
   &:hover {
     fill-opacity: var(--widget-fill-opacity-preview);
   }
-  .rank-pip {
+  button.rank-pip {
+    background-color: unset;
     pointer-events: all;
     display: flex;
     height: auto;
@@ -62,23 +62,25 @@
     line-height: 0;
     display: flex;
     justify-items: center;
-    transition: var(--std-animation);
+    align-items: center;
+    transition-duration: 0s;
     .pip-shape {
       height: inherit;
       overflow: visible;
       width: 1em;
     }
-
     &:hover {
+      box-shadow: unset;
+      color: currentColor;
       ~ .rank-pip {
         fill-opacity: 0;
       }
     }
   }
   &:not(:hover) {
-    .rank-pip {
+    button.rank-pip {
       &[aria-selected='true'] {
-        ~ .rank-pip {
+        ~ button.rank-pip {
           fill-opacity: 0;
         }
       }
