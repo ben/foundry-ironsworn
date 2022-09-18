@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.17
+
 - Fix the zero-clock bug and add tooltips to clock wedges ([#473](https://github.com/ben/foundry-ironsworn/pull/473))
 
 ## 1.17.16
