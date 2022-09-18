@@ -9,42 +9,39 @@
     <!-- Leaf node -->
     <div v-if="isLeaf">
       <h4 class="flexrow">
-        <btn-oracle class="juicy text" :node="node">
+        <BtnOracle class="juicy text" :node="node">
           {{ node?.displayName }}
-        </btn-oracle>
-        <btn-faicon
+        </BtnOracle>
+        <BtnFaicon
           class="block nogrow show-oracle-info"
           icon="eye"
           @click="toggleDescription()"
         />
       </h4>
-
-      <transition name="slide">
-        <with-rolllisteners
+      <Transition name="slide">
+        <RulesTextOracle
           v-if="state.descriptionExpanded"
-          element="div"
           @moveclick="moveclick"
           @oracleclick="oracleclick"
-          class="flexcol"
-          v-html="tablePreview"
-        >
-        </with-rolllisteners>
-      </transition>
+          :oracle-table="node.tables[0]"
+          :source="node.dataforgedNode?.Source"
+        />
+      </Transition>
     </div>
 
     <!-- Branch node -->
     <div v-else>
       <h4 class="flexrow">
-        <btn-faicon
+        <BtnFaicon
           class="juicy text"
           :icon="state.manuallyExpanded ? 'caret-down' : 'caret-right'"
           @click="toggleManually()"
         >
           {{ node?.displayName }}
-        </btn-faicon>
+        </BtnFaicon>
       </h4>
 
-      <transition name="slide">
+      <Transition name="slide">
         <div
           v-if="state.manuallyExpanded"
           class="flexcol"
@@ -58,7 +55,7 @@
             ref="children"
           />
         </div>
-      </transition>
+      </Transition>
     </div>
   </div>
 </template>
@@ -93,18 +90,15 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import { sample, sortBy } from 'lodash'
-import { Component, computed, inject, reactive, ref } from 'vue'
+import { computed, inject, reactive, ref } from 'vue'
 import { IOracleTreeNode } from '../../features/customoracles'
-import WithRolllisteners from './with-rolllisteners.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
-import { $ActorKey, $EmitterKey, $EnrichMarkdownKey } from '../provisions'
+import { $EmitterKey } from '../provisions'
 import { IronswornItem } from '../../item/item'
+import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
-
-const $actor = inject($ActorKey)
 
 const state = reactive({
   manuallyExpanded: props.node.forceExpanded ?? false,
@@ -122,32 +116,6 @@ function toggleDescription() {
 function toggleManually() {
   state.manuallyExpanded = !state.manuallyExpanded
 }
-
-const $enrichMarkdown = inject($EnrichMarkdownKey)
-const tablePreview = computed(() => {
-  const texts = props.node.tables.map((table) => {
-    const description = table.data.description || ''
-    const tableRows = sortBy(
-      table.data.results.contents.map((x) => ({
-        low: x.data.range[0],
-        high: x.data.range[1],
-        text: x.data.text,
-        selected: false,
-      })),
-      'low'
-    )
-    const markdownTable = [
-      '| Roll | Result |',
-      '| --- | --- |',
-      ...tableRows.map((x) => {
-        const firstCol = x.low === x.high ? x.low : `${x.low}-${x.high}`
-        return `| ${firstCol} | ${x.text} |`
-      }),
-    ].join('\n')
-    return description + '\n\n' + markdownTable
-  })
-  return $enrichMarkdown?.(texts.join('\n\n'))
-})
 
 // Click on a move link: broadcast event
 const $emitter = inject($EmitterKey)
