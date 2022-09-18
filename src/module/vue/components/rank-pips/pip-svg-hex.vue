@@ -5,7 +5,10 @@
     xmlns="http://www.w3.org/2000/svg"
     :viewBox="viewBox"
   >
-    <polygon :points="pointyHexPolygon(center, hexHeight)" />
+    <polygon
+      vector-effect="non-scaling-stroke"
+      :points="pointyHexPolygon(center, hexHeight)"
+    />
   </svg>
 </template>
 
@@ -27,16 +30,23 @@ const hexWidth = computed(() => hexHeight * (Math.sqrt(3) / 2))
 const center = { x: -hexWidth.value / 2, y: -hexHeight / 2 }
 
 const viewBox = computed(
-  () => `-${hexHeight} -${hexWidth.value} ${hexHeight} ${hexWidth.value}`
+  () =>
+    `-${toSigDigits(hexHeight)} -${toSigDigits(hexWidth.value)} ${toSigDigits(
+      hexHeight
+    )} ${toSigDigits(hexWidth.value)}`
 )
+
+function toSigDigits(value: number) {
+  return Number(value.toFixed(2))
+}
 
 // cribbed from https://www.redblobgames.com/grids/hexagons/
 function pointyHexCorner(center: Point, radius: number, index: number): Point {
   let angleDegrees = 60 * index - 30
   let angleRadius = (Math.PI / 180) * angleDegrees
   return {
-    x: center.x + radius * Math.cos(angleRadius),
-    y: center.y + radius * Math.sin(angleRadius),
+    x: toSigDigits(center.x + radius * Math.cos(angleRadius)),
+    y: toSigDigits(center.y + radius * Math.sin(angleRadius)),
   }
 }
 

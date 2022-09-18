@@ -25,16 +25,17 @@ svg.clock {
   // so that only *segment* hovers appear
   pointer-events: none;
   fill: currentColor;
-  fill-opacity: var(--widget-fill-opacity-static);
+  fill-opacity: var(--widget-fill-opacity);
   stroke: currentColor;
   stroke-width: var(--widget-stroke-width);
   // vector-effect: non-scaling-stroke;
   .clock-segment {
     pointer-events: fill;
+    cursor: pointer;
     vector-effect: non-scaling-stroke;
     transition: var(--std-animation);
     &:active {
-      fill-opacity: var(--widget-fill-opacity-static);
+      fill-opacity: var(--widget-fill-opacity);
     }
   }
   &:hover {
