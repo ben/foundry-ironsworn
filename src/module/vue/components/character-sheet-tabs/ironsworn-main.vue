@@ -30,7 +30,7 @@
         </div>
       </section>
     </div>
-    <ActiveCompletedProgresses :progress-stars="false" />
+    <ActiveCompletedProgresses />
   </div>
 </template>
 

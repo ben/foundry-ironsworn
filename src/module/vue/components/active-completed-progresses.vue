@@ -116,12 +116,7 @@ import { compact } from 'lodash'
 import { IronswornItem } from '../../item/item'
 import { ProgressDataProperties } from '../../item/itemtypes'
 
-const props = withDefaults(
-  defineProps<{ exclude?: string; progressStars?: boolean }>(),
-  {
-    progressStars: true,
-  }
-)
+const props = defineProps<{ exclude?: string; progressStars?: boolean }>()
 
 const data = reactive({
   expandCompleted: false,
