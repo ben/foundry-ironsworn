@@ -27,7 +27,7 @@
       <bonds />
     </section>
 
-    <active-completed-progresses />
+    <active-completed-progresses :progress-stars="false" />
 
     <section class="sheet-area">
       <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
