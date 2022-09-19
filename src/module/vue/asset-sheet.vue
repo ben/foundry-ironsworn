@@ -1,8 +1,8 @@
 <template>
   <div>
-    <header class="sheet-header">
+    <SheetHeader>
       <document-name :document="item" />
-    </header>
+    </SheetHeader>
 
     <p>
       <input
@@ -51,6 +51,7 @@ h3 {
 </style>
 
 <script setup lang="ts">
+import SheetHeader from './sheet-header.vue'
 import { computed, inject, provide, Ref } from 'vue'
 import DocumentName from './components/document-name.vue'
 import AssetFieldsedit from './components/asset/asset-fieldsedit.vue'

@@ -59,7 +59,7 @@
       />
     </label>
 
-    <header
+    <SheetHeader
       class="sheet-header flexrow nogrow"
       style="position: relative; gap: 5px"
     >
@@ -91,7 +91,7 @@
           />
         </div>
       </div>
-    </header>
+    </SheetHeader>
 
     <section
       class="boxgroup flexcol nogrow"
@@ -165,6 +165,7 @@ label {
 </style>
 
 <script setup lang="ts">
+import SheetHeader from '../sheet-header.vue'
 import { capitalize, flatten, throttle } from 'lodash'
 import { provide, computed, reactive, inject } from 'vue'
 import { IronswornActor } from '../actor/actor'

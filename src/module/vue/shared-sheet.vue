@@ -1,9 +1,9 @@
 <template>
   <div class="flexcol">
-    <header class="sheet-header flexrow nogrow" style="gap: 5px">
+    <SheetHeader class="flexrow nogrow" style="gap: 5px">
       <document-img :document="actor" />
       <document-name :document="actor" />
-    </header>
+    </SheetHeader>
 
     <section class="sheet-area nogrow">
       <btn-rollstat
@@ -66,6 +66,7 @@ textarea.notes {
 </style>
 
 <script setup lang="ts">
+import SheetHeader from './sheet-header.vue'
 import { provide, computed, inject } from 'vue'
 import { IronswornActor } from '../actor/actor'
 import { RollDialog } from '../helpers/rolldialog'

@@ -1,5 +1,5 @@
 <template>
-  <header class="sheet-header" style="gap: 5px">
+  <SheetHeader style="gap: 5px">
     <document-img :document="actor" />
     <document-name :document="actor" />
     <div class="flexrow xp" style="gap: 5px">
@@ -15,10 +15,11 @@
         />
       </div>
     </div>
-  </header>
+  </SheetHeader>
 </template>
 
 <script setup lang="ts">
+import SheetHeader from '../sheet-header.vue'
 import { Ref, inject } from 'vue'
 import { $ActorKey } from '../provisions'
 import XpBox from './xp-box.vue'

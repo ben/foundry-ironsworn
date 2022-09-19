@@ -1,5 +1,5 @@
 <template>
-  <header class="sheet-header flexrow">
+  <SheetHeader class="flexrow">
     <document-img :document="actor" size="75px" />
 
     <div class="flexcol" style="flex-basis: 100px; margin-left: 6px">
@@ -36,7 +36,7 @@
       :placeholder="$t('IRONSWORN.Characteristics')"
       @keyup="save"
     />
-  </header>
+  </SheetHeader>
 </template>
 
 <style lang="less" scoped>
@@ -50,6 +50,7 @@ textarea {
 </style>
 
 <script lang="ts" setup>
+import SheetHeader from '../sheet-header.vue'
 import { debounce } from 'lodash'
 import { inject, ref, Ref } from 'vue'
 import { $ActorKey } from '../provisions'

@@ -1,10 +1,10 @@
 <template>
   <div class="flexcol">
     <!-- HEADER -->
-    <header class="sheet-header flexrow nogrow" style="gap: 5px">
+    <SheetHeader class="flexrow nogrow" style="gap: 5px">
       <DocumentImg :document="item" />
       <DocumentName :document="item" />
-    </header>
+    </SheetHeader>
 
     <select
       class="nogrow"
@@ -127,6 +127,7 @@
 </style>
 
 <script setup lang="ts">
+import SheetHeader from './sheet-header.vue'
 import { computed, inject, provide } from 'vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
 import { $ItemKey } from './provisions'

@@ -1,9 +1,9 @@
 <template>
   <div class="flexcol">
-    <header class="sheet-header nogrow" style="gap: 5px">
+    <SheetHeader class="nogrow" style="gap: 5px">
       <document-img :document="actor" />
       <document-name :document="actor" />
-    </header>
+    </SheetHeader>
 
     <Tabs>
       <Tab :title="$t('IRONSWORN.Assets')">
@@ -40,6 +40,7 @@
 </style>
 
 <script setup lang="ts">
+import SheetHeader from './sheet-header.vue'
 import { provide, computed } from 'vue'
 import { IronswornActor } from '../actor/actor'
 import Tabs from './components/tabs/tabs.vue'

@@ -1,9 +1,9 @@
 <template>
   <div class="flexcol">
-    <header class="sheet-header flexrow nogrow" style="gap: 5px">
+    <SheetHeader class="flexrow nogrow" style="gap: 5px">
       <DocumentImg :document="actor" />
       <DocumentName :document="actor" />
-    </header>
+    </SheetHeader>
 
     <div v-if="foe">
       <div class="flexrow nogrow">
@@ -64,6 +64,7 @@
 </style>
 
 <script setup lang="ts">
+import SheetHeader from '../sheet-header.vue'
 import { computed, inject, provide } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { $ActorKey } from '../provisions'
