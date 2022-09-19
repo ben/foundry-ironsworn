@@ -165,7 +165,7 @@ label {
 </style>
 
 <script setup lang="ts">
-import SheetHeader from '../sheet-header.vue'
+import SheetHeader from './sheet-header.vue'
 import { capitalize, flatten, throttle } from 'lodash'
 import { provide, computed, reactive, inject } from 'vue'
 import { IronswornActor } from '../actor/actor'
