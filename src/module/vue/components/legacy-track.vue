@@ -20,17 +20,21 @@
 
     <progress-track :ticks="displayTicks" />
 
-    <xp-track :max="xpBoxCount" :marked="xpSpent" @click="setXp" />
+    <LegacyXpTrack :max="xpBoxCount" :marked="xpSpent" @click="setXp" />
   </div>
 </template>
-
+<style lang="less">
+.legacy-xp-track {
+  max-height: 40px;
+  flex-basis: 130px;
+  flex-grow: 0;
+}
+</style>
 <style lang="less" scoped>
 h4 {
   margin: 0.5rem 0;
 }
-.xp {
-  max-height: 40px;
-}
+
 .legacy-track-header {
   align-items: center;
 }
@@ -41,7 +45,7 @@ import { computed, defineComponent, inject, Ref } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { $ActorKey } from '../provisions'
 import BtnFaicon from './buttons/btn-faicon.vue'
-import XpTrack from './xp-track.vue'
+import LegacyXpTrack from './legacy-xp-track.vue'
 import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{ propKey: string; title: string }>()

@@ -1,18 +1,20 @@
 <template>
-  <div @click="$emit('click')" :class="classes" data-resource="xp">
+  <div
+    class="classic-xp-box clickable block"
+    @click="$emit('click')"
+    :class="classes"
+    data-resource="xp"
+  >
     <slot />
   </div>
 </template>
-
+<style lang="less"></style>
 <script setup lang="ts">
 import { computed } from '@vue/runtime-core'
 const props = defineProps<{ value: number; current: number }>()
 
 const classes = computed(() => {
   return {
-    clickable: true,
-    block: true,
-    xp: true,
     selected: selected.value,
   }
 })

@@ -5,8 +5,10 @@
     <div class="flexrow xp" style="gap: 5px">
       <h4 class="nogrow" style="margin: 0">{{ $t('IRONSWORN.XP') }}</h4>
       <div class="flexrow">
-        <xp-box :key="0" :current="-1" :value="0" @click="setXp(0)"> × </xp-box>
-        <xp-box
+        <ClassicXpBox :key="0" :current="-1" :value="0" @click="setXp(0)">
+          ×
+        </ClassicXpBox>
+        <ClassicXpBox
           v-for="n in xpArray"
           :key="n"
           :value="n"
@@ -22,9 +24,9 @@
 import SheetHeader from '../sheet-header.vue'
 import { Ref, inject } from 'vue'
 import { $ActorKey } from '../provisions'
-import XpBox from './xp-box.vue'
 import DocumentImg from './document-img.vue'
 import DocumentName from './document-name.vue'
+import ClassicXpBox from './classic-xp-box.vue'
 
 const actor = inject('actor') as Ref
 const xpArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]

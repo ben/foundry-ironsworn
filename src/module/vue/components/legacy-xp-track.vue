@@ -1,7 +1,7 @@
 <template>
-  <div class="flexrow xp nogrow">
+  <div class="flexrow legacy-xp-track nogrow">
     <div
-      class="clickable block xp"
+      class="clickable block legacy-xp-box"
       v-for="(box, i) in computedBoxes"
       :key="box.key"
       :class="box.classes"
@@ -11,6 +11,22 @@
     />
   </div>
 </template>
+<style lang="less">
+.legacy-xp-track {
+  flex-direction: row;
+  align-items: center;
+  flex-grow: 0;
+  flex-basis: 130px;
+  .legacy-xp-box {
+    height: 15px;
+    flex-basis: 15px;
+    border: 1px solid;
+    margin: 3px;
+    line-height: 13px;
+    text-align: center;
+  }
+}
+</style>
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
