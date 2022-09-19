@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Only show the "star" control on progresses on the Starforged sheet ([#475](https://github.com/ben/foundry-ironsworn/pull/475))
+
 ## 1.17.17
 
 - Fix the zero-clock bug and add tooltips to clock wedges ([#473](https://github.com/ben/foundry-ironsworn/pull/473))
