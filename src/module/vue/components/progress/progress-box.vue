@@ -67,7 +67,11 @@
         </div>
       </div>
       <div class="flexrow" style="justify-content: center">
-        <progress-track :ticks="item.data.current" v-if="item.data.hasTrack" />
+        <progress-track
+          :rank="item.data.rank"
+          :ticks="item.data.current"
+          v-if="item.data.hasTrack"
+        />
         <clock
           v-if="item.data.hasClock"
           class="nogrow"

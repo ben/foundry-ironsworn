@@ -16,6 +16,7 @@ import shajs from 'sha.js'
 import { cachedDocumentsForPack } from './features/pack-cache'
 import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
+import { RANKS } from './constants.js'
 
 // For some reason, rollupJs mangles this
 const SFMoveCategories = ((starforged as any).default as Starforged)[
@@ -43,6 +44,20 @@ function getLegacyRank(numericRank) {
       return 'epic'
   }
   return 'epic'
+}
+export function getNumericRank(legacyRank: keyof typeof RANKS) {
+  switch (legacyRank) {
+    case 'troublesome':
+      return 1
+    case 'dangerous':
+      return 2
+    case 'formidable':
+      return 3
+    case 'extreme':
+      return 4
+    case 'epic':
+      return 5
+  }
 }
 
 export function cleanDollars(obj): any {

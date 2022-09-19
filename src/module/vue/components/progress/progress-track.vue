@@ -1,35 +1,58 @@
 <template>
-  <div class="flexrow track">
+  <article class="track" :data-rank="numericRank">
     <div class="flexcol track-box" v-for="(box, i) in boxes" :key="'box' + i">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 100 100"
-        v-html="box"
-      ></svg>
+      <ProgressMark :ticks="box"></ProgressMark>
     </div>
-  </div>
+  </article>
 </template>
+
+<style lang="less">
+.track {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 4px;
+  justify-items: center;
+  align-self: center;
+  .track-box {
+    max-height: 50px;
+    max-width: 50px;
+    border: 1px solid;
+    align-items: center;
+    justify-items: center;
+    aspect-ratio: 1;
+    border-radius: 3px;
+    object-fit: contain;
+    box-shadow: 2px 2px 0 currentColor;
+    .track-box-marks {
+      margin: 5px;
+    }
+  }
+}
+</style>
 
 <script setup lang="ts">
 import { computed } from '@vue/runtime-core'
-function ticksSvg(ticks: number) {
-  let ret = ''
-  if (ticks > 0) ret += '<line x1="23" y1="23" x2="77" y2="77" />'
-  if (ticks > 1) ret += '<line x1="77" y1="23" x2="23" y2="77" />'
-  if (ticks > 2) ret += '<line x1="15" y1="50" x2="85" y2="50" />'
-  if (ticks > 3) ret += '<line x1="50" y1="15" x2="50" y2="85" />'
-  return ret + ''
-}
+import { times } from 'lodash'
+import { RANKS } from '../../../constants.js'
+import { getNumericRank } from '../../../dataforged.js'
+import ProgressMark from './progress-mark.vue'
 
-const props = defineProps<{ ticks: number }>()
+const props = withDefaults(
+  defineProps<{ ticks: number; rank: keyof typeof RANKS }>(),
+  {
+    rank: 'epic',
+  }
+)
+
+const numericRank = computed(() => getNumericRank(props.rank))
 
 const boxes = computed(() => {
-  const ret = [] as string[]
-  let remainingTicks = props.ticks
-  for (let i = 0; i < 10; i++) {
-    ret.push(ticksSvg(remainingTicks))
-    remainingTicks -= 4
-  }
-  return ret
+  const maxBoxes = 10
+  const ticksPerBox = 4
+  const filledBoxes = Math.floor(props.ticks / ticksPerBox)
+  const ticksRemainder = props.ticks % 4
+  let boxTicks = [...times(filledBoxes, () => 4), ticksRemainder]
+  boxTicks = [...boxTicks, ...times(maxBoxes - (filledBoxes + 1), () => 0)]
+  return boxTicks.slice(0, 10)
 })
 </script>

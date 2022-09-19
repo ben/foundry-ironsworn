@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { computed, inject, Ref } from 'vue'
-import legacyTrack from '../legacy-track.vue'
+import legacyTrack from '../xp/legacy-track.vue'
 import progressBox from '../progress/progress-box.vue'
 
 const actor = inject('actor') as Ref

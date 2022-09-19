@@ -1,52 +1,76 @@
 <template>
-  <div class="flexcol legacy-track">
-    <div class="legacy-track-header flexrow">
-      <h4>{{ title }}</h4>
-      <p
+  <article
+    class="legacy-track flexcol"
+    :class="{ 'legacy-overflow': overflow }"
+  >
+    <h4 class="legacy-track-title">{{ title }}</h4>
+
+    <section class="legacy-track-controls flexrow">
+      <span
         v-if="overflow"
         class="nogrow"
         style="padding: 1px; margin-right: 10px"
       >
         {{ overflow }}
-      </p>
-      <btn-faicon
+      </span>
+      <BtnFaicon
         class="block nogrow"
         v-if="editMode"
         icon="caret-left"
         @click="decrease"
       />
-      <btn-faicon class="block nogrow" icon="caret-right" @click="increase" />
-    </div>
+      <BtnFaicon class="block nogrow" icon="caret-right" @click="increase" />
+    </section>
 
-    <progress-track :ticks="displayTicks" />
+    <ProgressTrack class="legacy-track-progress" :ticks="displayTicks" />
 
-    <LegacyXpTrack :max="xpBoxCount" :marked="xpSpent" @click="setXp" />
-  </div>
+    <XpTrackLegacy
+      class="nogrow"
+      :max="xpBoxCount"
+      :marked="xpSpent"
+      @click="setXp"
+    />
+  </article>
 </template>
 <style lang="less">
-.legacy-xp-track {
-  max-height: 40px;
-  flex-basis: 130px;
-  flex-grow: 0;
+.legacy-track {
+  display: grid;
+  grid-template-rows: max-content max-content 0.5em 0.5em;
+  .legacy-track-title {
+    grid-row: 1;
+    grid-column: 1;
+  }
+  .legacy-track-controls {
+    grid-row: 1;
+    grid-column: 2;
+    align-items: center;
+    justify-content: end;
+  }
+  .legacy-track-progress {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+  }
+  .xp-track-legacy {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 2;
+  }
+  .track-box {
+    padding-bottom: 0.45em;
+  }
 }
 </style>
 <style lang="less" scoped>
 h4 {
   margin: 0.5rem 0;
 }
-
-.legacy-track-header {
-  align-items: center;
-}
 </style>
 
 <script setup lang="ts">
-import { computed, defineComponent, inject, Ref } from 'vue'
-import { IronswornActor } from '../../actor/actor'
-import { $ActorKey } from '../provisions'
-import BtnFaicon from './buttons/btn-faicon.vue'
-import LegacyXpTrack from './legacy-xp-track.vue'
-import ProgressTrack from './progress/progress-track.vue'
+import { computed, inject, Ref } from 'vue'
+import { $ActorKey } from '../../provisions'
+import XpTrackLegacy from './xp-track-legacy.vue'
+import ProgressTrack from '../progress/progress-track.vue'
+import BtnFaicon from '../buttons/btn-faicon.vue'
 
 const props = defineProps<{ propKey: string; title: string }>()
 

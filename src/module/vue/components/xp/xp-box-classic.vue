@@ -1,6 +1,6 @@
 <template>
   <div
-    class="classic-xp-box clickable block"
+    class="xp-box-classic clickable block"
     @click="$emit('click')"
     :class="classes"
     data-resource="xp"
