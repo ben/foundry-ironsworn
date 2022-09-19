@@ -16,7 +16,7 @@
           />
           <progress-box
             :item="item"
-            :showStar="true"
+            :showStar="progressStars"
             @completed="progressCompleted"
           />
         </div>
@@ -56,7 +56,7 @@
                 @sortUp="completedSortUp"
                 @sortDown="completedSortDown"
               />
-              <progress-box :item="item" :showStar="true" />
+              <progress-box :item="item" :showStar="progressStars" />
             </div>
           </transition-group>
         </div>
@@ -116,7 +116,12 @@ import { compact } from 'lodash'
 import { IronswornItem } from '../../item/item'
 import { ProgressDataProperties } from '../../item/itemtypes'
 
-const props = defineProps<{ exclude?: string }>()
+const props = withDefaults(
+  defineProps<{ exclude?: string; progressStars?: boolean }>(),
+  {
+    progressStars: true,
+  }
+)
 
 const data = reactive({
   expandCompleted: false,
