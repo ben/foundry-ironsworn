@@ -1,5 +1,6 @@
 <template>
   <img
+    class="document-img"
     :src="document.img"
     :title="document.name"
     :style="style"
@@ -8,6 +9,16 @@
     @click="click"
   />
 </template>
+
+<style lang="less">
+.document-img {
+  cursor: pointer;
+  .theme-ironsworn & {
+    // tint so that the default fill of included vector icons (white) is at least nominally visible on a white ground.
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+</style>
 
 <script setup lang="ts">
 import { computed, inject } from '@vue/runtime-core'
