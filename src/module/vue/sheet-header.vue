@@ -11,13 +11,8 @@
 <style lang="less">
 // not scoped, so it also applies to handlebars templates with the appropriate class
 .sheet-header {
-  // overflow: hidden;
   display: flex;
   flex-direction: row;
-  // flex-wrap: wrap;
-  // justify-content: flex-start;
-  // margin-bottom: 10px;
-  // flex: 0 0 auto;
   gap: 6px;
 
   .profile-img {
