@@ -21,8 +21,6 @@ import SheetHeaderBasic from '../sheet-header-basic.vue'
 import { Ref, inject } from 'vue'
 import { $ActorKey } from '../provisions'
 import XpBox from './xp-box.vue'
-import DocumentImg from './document-img.vue'
-import DocumentName from './document-name.vue'
 
 const actor = inject('actor') as Ref
 const xpArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]

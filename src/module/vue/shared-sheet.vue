@@ -1,7 +1,5 @@
 <template>
-  <div class="flexcol">
-    <SheetHeaderBasic class="nogrow" :document="actor" />
-
+  <SheetBasic :document="actor">
     <section class="sheet-area nogrow">
       <btn-rollstat
         class="text"
@@ -34,7 +32,7 @@
         @change="throttledSaveNotes"
       />
     </section>
-  </div>
+  </SheetBasic>
 </template>
 
 <style lang="less" scoped>
@@ -63,14 +61,10 @@ textarea.notes {
 </style>
 
 <script setup lang="ts">
-import SheetHeaderBasic from './sheet-header-basic.vue'
 import { provide, computed, inject } from 'vue'
-import { IronswornActor } from '../actor/actor'
 import { RollDialog } from '../helpers/rolldialog'
 import { IronswornSettings } from '../helpers/settings'
 import { $ActorKey } from './provisions'
-import DocumentImg from './components/document-img.vue'
-import DocumentName from './components/document-name.vue'
 import Boxrow from './components/boxrow/boxrow.vue'
 import Bonds from './components/bonds.vue'
 import MceEditor from './components/mce-editor.vue'
@@ -78,6 +72,7 @@ import { throttle } from 'lodash'
 import BtnRollstat from './components/buttons/btn-rollstat.vue'
 import ActiveCompletedProgresses from './components/active-completed-progresses.vue'
 import { BondsetDataProperties } from '../item/itemtypes'
+import SheetBasic from './sheet-basic.vue'
 
 const props = defineProps<{
   actor: any

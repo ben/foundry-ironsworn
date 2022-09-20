@@ -1,83 +1,87 @@
 <template>
-  <div class="flexcol" style="gap: 5px">
-    <div class="flexrow nogrow" style="gap: 5px">
-      <!-- Region -->
-      <label class="flexrow" style="flex-basis: 150px; gap: 10px">
-        <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
-        <select v-model="region" @change="regionChanged">
-          <option value="terminus">
-            {{ $t('IRONSWORN.Terminus') }}
-          </option>
-          <option value="outlands">
-            {{ $t('IRONSWORN.Outlands') }}
-          </option>
-          <option value="expanse">
-            {{ $t('IRONSWORN.Expanse') }}
+  <SheetBasic :document="actor">
+    <template #before-header>
+      <div class="flexrow nogrow" style="gap: 5px">
+        <!-- Region -->
+        <label class="flexrow" style="flex-basis: 150px; gap: 10px">
+          <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
+          <select v-model="region" @change="regionChanged">
+            <option value="terminus">
+              {{ $t('IRONSWORN.Terminus') }}
+            </option>
+            <option value="outlands">
+              {{ $t('IRONSWORN.Outlands') }}
+            </option>
+            <option value="expanse">
+              {{ $t('IRONSWORN.Expanse') }}
+            </option>
+          </select>
+        </label>
+
+        <!-- Subtype -->
+        <label class="flexrow" style="flex-basis: 200px; gap: 10px">
+          {{ $t('IRONSWORN.LocationType') }}
+          <select v-model="actor.data.subtype" @change="subtypeChanged">
+            <option value="planet">Planet</option>
+            <option value="settlement">Settlement</option>
+            <option value="star">Stellar Object</option>
+            <option value="derelict">Derelict</option>
+            <option value="vault">Precursor Vault</option>
+          </select>
+        </label>
+      </div>
+
+      <!-- Klass -->
+      <label class="flexrow nogrow" style="position: relative; gap: 10px">
+        <!-- TODO: i18n and subtype text -->
+        <span class="select-label">{{ subtypeSelectText }}:</span>
+        <select
+          v-model="actor.data.klass"
+          @change="klassChanged"
+          :class="{ highlighted: data.firstLookHighlight }"
+        >
+          <option
+            v-for="opt in klassOptions"
+            :key="opt.value"
+            :value="opt.value"
+          >
+            {{ opt.label }}
           </option>
         </select>
+        <btn-isicon
+          icon="d10-tilt juicy"
+          class="block nogrow"
+          style="
+            padding: 0px 5px;
+            position: absolute;
+            right: 15px;
+            height: 25px;
+            line-height: 30px;
+            top: 1px;
+          "
+          @click="randomizeKlass"
+          :tooltip="randomKlassTooltip"
+        />
       </label>
-
-      <!-- Subtype -->
-      <label class="flexrow" style="flex-basis: 200px; gap: 10px">
-        {{ $t('IRONSWORN.LocationType') }}
-        <select v-model="actor.data.subtype" @change="subtypeChanged">
-          <option value="planet">Planet</option>
-          <option value="settlement">Settlement</option>
-          <option value="star">Stellar Object</option>
-          <option value="derelict">Derelict</option>
-          <option value="vault">Precursor Vault</option>
-        </select>
-      </label>
-    </div>
-
-    <!-- Klass -->
-    <label class="flexrow nogrow" style="position: relative; gap: 10px">
-      <!-- TODO: i18n and subtype text -->
-      <span class="select-label">{{ subtypeSelectText }}:</span>
-      <select
-        v-model="actor.data.klass"
-        @change="klassChanged"
-        :class="{ highlighted: data.firstLookHighlight }"
+    </template>
+    <template #header>
+      <SheetHeaderBasic
+        :document="actor"
+        class="sf-location-header nogrow"
+        :nameClass="{
+          highlighted: data.firstLookHighlight && canRandomizeName,
+        }"
       >
-        <option v-for="opt in klassOptions" :key="opt.value" :value="opt.value">
-          {{ opt.label }}
-        </option>
-      </select>
-      <btn-isicon
-        icon="d10-tilt juicy"
-        class="block nogrow"
-        style="
-          padding: 0px 5px;
-          position: absolute;
-          right: 15px;
-          height: 25px;
-          line-height: 30px;
-          top: 1px;
-        "
-        @click="randomizeKlass"
-        :tooltip="randomKlassTooltip"
-      />
-    </label>
-    <SheetHeaderBasic
-      :document="actor"
-      class="sf-location-header nogrow"
-      :nameClass="{
-        highlighted: data.firstLookHighlight && canRandomizeName,
-      }"
-    >
-      <btn-isicon
-        v-if="canRandomizeName"
-        icon="d10-tilt"
-        class="btn-randomize-name juicy block nogrow"
-        :tooltip="$t('IRONSWORN.RandomName')"
-        @click="randomizeName"
-      />
-    </SheetHeaderBasic>
-    <section
-      class="boxgroup flexcol nogrow"
-      style="margin-bottom: 1rem"
-      v-if="oracles.length > 0"
-    >
+        <btn-isicon
+          v-if="canRandomizeName"
+          icon="d10-tilt"
+          class="btn-randomize-name juicy block nogrow"
+          :tooltip="$t('IRONSWORN.RandomName')"
+          @click="randomizeName"
+        />
+      </SheetHeaderBasic>
+    </template>
+    <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
       <div class="flexrow boxrow">
         <btn-isicon
           icon="d10-tilt"
@@ -112,7 +116,6 @@
         </btn-icon>
       </div>
     </section>
-
     <section class="flexcol">
       <MceEditor
         v-model="actor.data.description"
@@ -120,7 +123,7 @@
         @change="throttledSaveDescription"
       />
     </section>
-  </div>
+  </SheetBasic>
 </template>
 
 <style lang="less">
@@ -176,6 +179,7 @@ import BtnIcon from './components/buttons/btn-icon.vue'
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
 import { LocationDataProperties } from '../actor/actortypes'
+import SheetBasic from './sheet-basic.vue'
 
 const props = defineProps<{
   actor: any

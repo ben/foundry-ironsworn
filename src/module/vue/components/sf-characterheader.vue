@@ -1,6 +1,6 @@
 <template>
   <SheetHeader class="sf-character-header">
-    <document-img :document="actor" size="75px" />
+    <DocumentImg :document="actor" size="75px" />
     <section class="header-pc-vitals flexcol">
       <input
         type="text"
@@ -62,7 +62,7 @@ import SheetHeader from '../sheet-header.vue'
 import { debounce } from 'lodash'
 import { inject, ref, Ref } from 'vue'
 import { $ActorKey } from '../provisions'
-import documentImg from './document-img.vue'
+import DocumentImg from './document-img.vue'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
