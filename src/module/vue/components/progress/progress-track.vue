@@ -34,7 +34,7 @@
 import { computed } from '@vue/runtime-core'
 import { times } from 'lodash'
 import { RANKS } from '../../../constants.js'
-import { getNumericRank } from '../../../dataforged.js'
+import { NumericRank } from '../../../dataforged.js'
 import ProgressMark from './progress-mark.vue'
 
 const props = withDefaults(
@@ -44,7 +44,7 @@ const props = withDefaults(
   }
 )
 
-const numericRank = computed(() => getNumericRank(props.rank))
+const numericRank = computed(() => NumericRank[props.rank])
 
 const boxes = computed(() => {
   const maxBoxes = 10

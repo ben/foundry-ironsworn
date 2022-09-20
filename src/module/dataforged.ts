@@ -16,7 +16,6 @@ import shajs from 'sha.js'
 import { cachedDocumentsForPack } from './features/pack-cache'
 import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
-import { RANKS } from './constants.js'
 
 // For some reason, rollupJs mangles this
 const SFMoveCategories = ((starforged as any).default as Starforged)[
@@ -30,34 +29,12 @@ const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
 ]
 const SFAssetTypes = ((starforged as any).default as Starforged)['Asset Types']
 
-function getLegacyRank(numericRank) {
-  switch (numericRank) {
-    case 1:
-      return 'troublesome'
-    case 2:
-      return 'dangerous'
-    case 3:
-      return 'formidable'
-    case 4:
-      return 'extreme'
-    case 5:
-      return 'epic'
-  }
-  return 'epic'
-}
-export function getNumericRank(legacyRank: keyof typeof RANKS) {
-  switch (legacyRank) {
-    case 'troublesome':
-      return 1
-    case 'dangerous':
-      return 2
-    case 'formidable':
-      return 3
-    case 'extreme':
-      return 4
-    case 'epic':
-      return 5
-  }
+export enum NumericRank {
+  'troublesome' = 1,
+  'dangerous' = 2,
+  'formidable' = 3,
+  'extreme' = 4,
+  'epic' = 5,
 }
 
 export function cleanDollars(obj): any {
@@ -451,7 +428,7 @@ async function processSFEncounters() {
       name: encounter['Name'],
       data: {
         description,
-        rank: getLegacyRank(encounter['Rank']),
+        rank: NumericRank[encounter['Rank']] as keyof typeof NumericRank,
       },
     })
 
@@ -472,9 +449,9 @@ async function processSFEncounters() {
         name: variant['Name'],
         data: {
           description: variantDescription,
-          rank: getLegacyRank(
+          rank: NumericRank[
             'Rank' in variant ? variant['Rank'] : encounter['Rank']
-          ),
+          ] as keyof typeof NumericRank,
         },
       })
     }
