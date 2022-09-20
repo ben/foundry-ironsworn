@@ -5,23 +5,26 @@
     :style="style"
     :height="size"
     :width="size"
-    class="nogrow"
     @click="click"
   />
 </template>
 
+<style lang="less" scoped></style>
+
 <script setup lang="ts">
 import { computed, inject } from '@vue/runtime-core'
 import { $ActorKey, $ItemKey } from '../provisions'
-const props = defineProps<{
-  document: any
-  size?: string
-}>()
+const props = withDefaults(
+  defineProps<{
+    document: any
+    size: string
+  }>(),
+  { size: '50px' }
+)
 
 const style = computed(() => ({
-  width: props.size ?? '50px',
-  height: props.size ?? '50px',
-  'flex-basis': 0,
+  width: props.size,
+  height: props.size,
 }))
 
 const $actor = inject($ActorKey, undefined)

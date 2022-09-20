@@ -1,10 +1,6 @@
 <template>
   <div class="flexcol">
-    <SheetHeader class="nogrow" style="gap: 5px">
-      <document-img :document="actor" />
-      <document-name :document="actor" />
-    </SheetHeader>
-
+    <SheetHeaderBasic :document="actor" />
     <Tabs>
       <Tab :title="$t('IRONSWORN.Assets')">
         <SfAssets />
@@ -50,6 +46,7 @@ import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import documentImg from './components/document-img.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
 import DocumentName from './components/document-name.vue'
+import SheetHeaderBasic from './sheet-header-basic.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>

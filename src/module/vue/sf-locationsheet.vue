@@ -58,41 +58,21 @@
         :tooltip="randomKlassTooltip"
       />
     </label>
-
-    <SheetHeader
-      class="sheet-header flexrow nogrow"
-      style="position: relative; gap: 5px"
+    <SheetHeaderBasic
+      :document="actor"
+      class="sf-location-header nogrow"
+      :nameClass="{
+        highlighted: data.firstLookHighlight && canRandomizeName,
+      }"
     >
-      <document-img :document="actor" size="50px" />
-      <div class="flexcol">
-        <div class="flexrow nogrow">
-          <document-name
-            :document="actor"
-            :class="{
-              highlighted: data.firstLookHighlight && canRandomizeName,
-            }"
-          />
-
-          <btn-isicon
-            v-if="canRandomizeName"
-            icon="d10-tilt juicy"
-            class="block nogrow"
-            style="
-              position: absolute;
-              padding: 0px 10px;
-              line-height: 53px;
-              right: 1px;
-              top: 6px;
-              height: 48px;
-              border-radius: 0 3px 3px 0;
-            "
-            :tooltip="$t('IRONSWORN.RandomName')"
-            @click="randomizeName"
-          />
-        </div>
-      </div>
-    </SheetHeader>
-
+      <btn-isicon
+        v-if="canRandomizeName"
+        icon="d10-tilt"
+        class="btn-randomize-name juicy block nogrow"
+        :tooltip="$t('IRONSWORN.RandomName')"
+        @click="randomizeName"
+      />
+    </SheetHeaderBasic>
     <section
       class="boxgroup flexcol nogrow"
       style="margin-bottom: 1rem"
@@ -143,6 +123,25 @@
   </div>
 </template>
 
+<style lang="less">
+.sf-location-header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: max-content 1fr max-content;
+  > * {
+    grid-row: 1;
+  }
+  .charname {
+    grid-column: 2 / span 2;
+  }
+  .btn-randomize-name {
+    grid-column: 3;
+    height: 50px;
+    aspect-ratio: 1;
+    border-radius: 0 3px 3px 0;
+  }
+}
+</style>
 <style lang="less" scoped>
 label {
   line-height: 27px;
@@ -165,7 +164,7 @@ label {
 </style>
 
 <script setup lang="ts">
-import SheetHeader from './sheet-header.vue'
+import SheetHeaderBasic from './sheet-header-basic.vue'
 import { capitalize, flatten, throttle } from 'lodash'
 import { provide, computed, reactive, inject } from 'vue'
 import { IronswornActor } from '../actor/actor'

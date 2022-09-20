@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <article class="flexcol character-sheet-classic">
     <!-- Header row -->
     <character-header />
 
@@ -101,10 +101,13 @@
         </div>
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <style lang="less" scoped>
+.character-sheet-classic {
+  gap: 10px;
+}
 .stat-roll {
   text-transform: uppercase;
 }

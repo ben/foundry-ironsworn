@@ -1,11 +1,9 @@
 <template>
-  <SheetHeader class="flexrow">
+  <SheetHeader class="sf-character-header">
     <document-img :document="actor" size="75px" />
-
-    <div class="flexcol" style="flex-basis: 100px; margin-left: 6px">
+    <section class="header-pc-vitals flexcol">
       <input
         type="text"
-        style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Name')"
         v-model="actor.name"
         ref="name"
@@ -13,7 +11,6 @@
       />
       <input
         type="text"
-        style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Pronouns')"
         :value="actor.data.pronouns"
         ref="pronouns"
@@ -26,13 +23,11 @@
         ref="callsign"
         @keyup="save"
       />
-    </div>
+    </section>
 
     <textarea
-      rows="4"
       :value="actor.data.biography"
       ref="characteristics"
-      style="flex-basis: 300px; margin-left: 6px"
       :placeholder="$t('IRONSWORN.Characteristics')"
       @keyup="save"
     />
@@ -46,6 +41,19 @@ textarea {
   border-radius: 1px;
   font-family: var(--font-primary);
   resize: none;
+  font-size: inherit;
+}
+textarea {
+  flex-basis: 300px;
+  margin: 0;
+  flex-grow: 2;
+}
+.header-pc-vitals {
+  flex-basis: 100px;
+  min-width: 20ch;
+  max-width: 30ch;
+  gap: 5px;
+  flex-grow: 1;
 }
 </style>
 
