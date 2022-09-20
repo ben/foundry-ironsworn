@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SheetHeader>
+    <SheetHeader class="nogrow">
       <document-name :document="item" />
     </SheetHeader>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="move-sheet flexcol">
-    <SheetHeader>
+    <SheetHeader class="nogrow">
       <document-name :document="item" />
     </SheetHeader>
 

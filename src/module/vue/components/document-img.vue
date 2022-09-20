@@ -1,27 +1,40 @@
 <template>
   <img
+    class="document-img"
     :src="document.img"
     :title="document.name"
     :style="style"
     :height="size"
     :width="size"
-    class="nogrow"
     @click="click"
   />
 </template>
 
+<style lang="less">
+.document-img {
+  cursor: pointer;
+}
+
+.theme-ironsworn .document-img[src$='.svg'] {
+  // tint so that the default fill of included vector icons (white) is at least nominally visible on a white ground.
+  background-color: rgba(0, 0, 0, 0.2);
+}
+</style>
+
 <script setup lang="ts">
 import { computed, inject } from '@vue/runtime-core'
 import { $ActorKey, $ItemKey } from '../provisions'
-const props = defineProps<{
-  document: any
-  size?: string
-}>()
+const props = withDefaults(
+  defineProps<{
+    document: any
+    size: string
+  }>(),
+  { size: '50px' }
+)
 
 const style = computed(() => ({
-  width: props.size ?? '50px',
-  height: props.size ?? '50px',
-  'flex-basis': 0,
+  width: props.size,
+  height: props.size,
 }))
 
 const $actor = inject($ActorKey, undefined)

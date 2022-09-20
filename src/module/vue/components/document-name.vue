@@ -13,7 +13,10 @@
 import { IronswornItem } from '../../item/item'
 import { inject } from 'vue'
 import { $ActorKey, $ItemKey } from '../provisions'
-const props = defineProps<{ document: any; tag?: string }>()
+const props = defineProps<{
+  document: any
+  tag?: string
+}>()
 
 const $item = inject($ItemKey, undefined)
 const $actor = inject($ActorKey, undefined)

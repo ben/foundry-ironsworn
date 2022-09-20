@@ -1,103 +1,87 @@
 <template>
-  <div class="flexcol" style="gap: 5px">
-    <div class="flexrow nogrow" style="gap: 5px">
-      <!-- Region -->
-      <label class="flexrow" style="flex-basis: 150px; gap: 10px">
-        <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
-        <select v-model="region" @change="regionChanged">
-          <option value="terminus">
-            {{ $t('IRONSWORN.Terminus') }}
-          </option>
-          <option value="outlands">
-            {{ $t('IRONSWORN.Outlands') }}
-          </option>
-          <option value="expanse">
-            {{ $t('IRONSWORN.Expanse') }}
-          </option>
-        </select>
-      </label>
+  <SheetBasic :document="actor">
+    <template #before-header>
+      <div class="flexrow nogrow" style="gap: 5px">
+        <!-- Region -->
+        <label class="flexrow" style="flex-basis: 150px; gap: 10px">
+          <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
+          <select v-model="region" @change="regionChanged">
+            <option value="terminus">
+              {{ $t('IRONSWORN.Terminus') }}
+            </option>
+            <option value="outlands">
+              {{ $t('IRONSWORN.Outlands') }}
+            </option>
+            <option value="expanse">
+              {{ $t('IRONSWORN.Expanse') }}
+            </option>
+          </select>
+        </label>
 
-      <!-- Subtype -->
-      <label class="flexrow" style="flex-basis: 200px; gap: 10px">
-        {{ $t('IRONSWORN.LocationType') }}
-        <select v-model="actor.data.subtype" @change="subtypeChanged">
-          <option value="planet">Planet</option>
-          <option value="settlement">Settlement</option>
-          <option value="star">Stellar Object</option>
-          <option value="derelict">Derelict</option>
-          <option value="vault">Precursor Vault</option>
-        </select>
-      </label>
-    </div>
-
-    <!-- Klass -->
-    <label class="flexrow nogrow" style="position: relative; gap: 10px">
-      <!-- TODO: i18n and subtype text -->
-      <span class="select-label">{{ subtypeSelectText }}:</span>
-      <select
-        v-model="actor.data.klass"
-        @change="klassChanged"
-        :class="{ highlighted: data.firstLookHighlight }"
-      >
-        <option v-for="opt in klassOptions" :key="opt.value" :value="opt.value">
-          {{ opt.label }}
-        </option>
-      </select>
-      <btn-isicon
-        icon="d10-tilt juicy"
-        class="block nogrow"
-        style="
-          padding: 0px 5px;
-          position: absolute;
-          right: 15px;
-          height: 25px;
-          line-height: 30px;
-          top: 1px;
-        "
-        @click="randomizeKlass"
-        :tooltip="randomKlassTooltip"
-      />
-    </label>
-
-    <SheetHeader
-      class="sheet-header flexrow nogrow"
-      style="position: relative; gap: 5px"
-    >
-      <document-img :document="actor" size="50px" />
-      <div class="flexcol">
-        <div class="flexrow nogrow">
-          <document-name
-            :document="actor"
-            :class="{
-              highlighted: data.firstLookHighlight && canRandomizeName,
-            }"
-          />
-
-          <btn-isicon
-            v-if="canRandomizeName"
-            icon="d10-tilt juicy"
-            class="block nogrow"
-            style="
-              position: absolute;
-              padding: 0px 10px;
-              line-height: 53px;
-              right: 1px;
-              top: 6px;
-              height: 48px;
-              border-radius: 0 3px 3px 0;
-            "
-            :tooltip="$t('IRONSWORN.RandomName')"
-            @click="randomizeName"
-          />
-        </div>
+        <!-- Subtype -->
+        <label class="flexrow" style="flex-basis: 200px; gap: 10px">
+          {{ $t('IRONSWORN.LocationType') }}
+          <select v-model="actor.data.subtype" @change="subtypeChanged">
+            <option value="planet">Planet</option>
+            <option value="settlement">Settlement</option>
+            <option value="star">Stellar Object</option>
+            <option value="derelict">Derelict</option>
+            <option value="vault">Precursor Vault</option>
+          </select>
+        </label>
       </div>
-    </SheetHeader>
 
-    <section
-      class="boxgroup flexcol nogrow"
-      style="margin-bottom: 1rem"
-      v-if="oracles.length > 0"
-    >
+      <!-- Klass -->
+      <label class="flexrow nogrow" style="position: relative; gap: 10px">
+        <!-- TODO: i18n and subtype text -->
+        <span class="select-label">{{ subtypeSelectText }}:</span>
+        <select
+          v-model="actor.data.klass"
+          @change="klassChanged"
+          :class="{ highlighted: data.firstLookHighlight }"
+        >
+          <option
+            v-for="opt in klassOptions"
+            :key="opt.value"
+            :value="opt.value"
+          >
+            {{ opt.label }}
+          </option>
+        </select>
+        <btn-isicon
+          icon="d10-tilt juicy"
+          class="block nogrow"
+          style="
+            padding: 0px 5px;
+            position: absolute;
+            right: 15px;
+            height: 25px;
+            line-height: 30px;
+            top: 1px;
+          "
+          @click="randomizeKlass"
+          :tooltip="randomKlassTooltip"
+        />
+      </label>
+    </template>
+    <template #header>
+      <SheetHeaderBasic
+        :document="actor"
+        class="sf-location-header nogrow"
+        :nameClass="{
+          highlighted: data.firstLookHighlight && canRandomizeName,
+        }"
+      >
+        <btn-isicon
+          v-if="canRandomizeName"
+          icon="d10-tilt"
+          class="btn-randomize-name juicy block nogrow"
+          :tooltip="$t('IRONSWORN.RandomName')"
+          @click="randomizeName"
+        />
+      </SheetHeaderBasic>
+    </template>
+    <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
       <div class="flexrow boxrow">
         <btn-isicon
           icon="d10-tilt"
@@ -132,7 +116,6 @@
         </btn-icon>
       </div>
     </section>
-
     <section class="flexcol">
       <MceEditor
         v-model="actor.data.description"
@@ -140,9 +123,28 @@
         @change="throttledSaveDescription"
       />
     </section>
-  </div>
+  </SheetBasic>
 </template>
 
+<style lang="less">
+.sf-location-header {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: max-content 1fr max-content;
+  > * {
+    grid-row: 1;
+  }
+  .charname {
+    grid-column: 2 / span 2;
+  }
+  .btn-randomize-name {
+    grid-column: 3;
+    height: 50px;
+    aspect-ratio: 1;
+    border-radius: 0 3px 3px 0;
+  }
+}
+</style>
 <style lang="less" scoped>
 label {
   line-height: 27px;
@@ -165,7 +167,7 @@ label {
 </style>
 
 <script setup lang="ts">
-import SheetHeader from './sheet-header.vue'
+import SheetHeaderBasic from './sheet-header-basic.vue'
 import { capitalize, flatten, throttle } from 'lodash'
 import { provide, computed, reactive, inject } from 'vue'
 import { IronswornActor } from '../actor/actor'
@@ -177,6 +179,7 @@ import BtnIcon from './components/buttons/btn-icon.vue'
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
 import { LocationDataProperties } from '../actor/actortypes'
+import SheetBasic from './sheet-basic.vue'
 
 const props = defineProps<{
   actor: any

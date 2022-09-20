@@ -1,10 +1,6 @@
 <template>
   <div class="flexcol">
-    <SheetHeader class="flexrow nogrow" style="gap: 5px">
-      <DocumentImg :document="actor" />
-      <DocumentName :document="actor" />
-    </SheetHeader>
-
+    <SheetHeaderBasic :document="actor" class="nogrow" />
     <div v-if="foe">
       <div class="flexrow nogrow">
         <RankPips
@@ -64,7 +60,7 @@
 </style>
 
 <script setup lang="ts">
-import SheetHeader from '../sheet-header.vue'
+import SheetHeaderBasic from '../sheet-header-basic.vue'
 import { computed, inject, provide } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { $ActorKey } from '../provisions'
