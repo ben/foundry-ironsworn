@@ -1,10 +1,7 @@
 <template>
   <div class="flexcol">
     <!-- HEADER -->
-    <header class="sheet-header" style="gap: 5px">
-      <DocumentImg :document="actor" />
-      <DocumentName :document="actor" />
-    </header>
+    <SheetHeaderBasic class="nogrow" :document="actor" />
 
     <!-- RANK -->
     <div class="flexrow nogrow">
@@ -155,6 +152,7 @@ textarea {
 </style>
 
 <script setup lang="ts">
+import SheetHeaderBasic from './sheet-header-basic.vue'
 import { provide, computed, inject, nextTick, ref, Component } from 'vue'
 import { IronswornActor } from '../actor/actor'
 import { $ActorKey } from './provisions'

@@ -1,10 +1,7 @@
 <template>
   <div class="flexcol">
     <!-- HEADER -->
-    <header class="sheet-header flexrow nogrow" style="gap: 5px">
-      <DocumentImg :document="item" />
-      <DocumentName :document="item" />
-    </header>
+    <SheetHeaderBasic class="nogrow" :document="item" />
 
     <select
       class="nogrow"
@@ -127,6 +124,7 @@
 </style>
 
 <script setup lang="ts">
+import SheetHeader from './sheet-header.vue'
 import { computed, inject, provide } from 'vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
 import { $ItemKey } from './provisions'
@@ -138,6 +136,7 @@ import ProgressTrack from './components/progress/progress-track.vue'
 import Clock from './components/clock.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
+import SheetHeaderBasic from './sheet-header-basic.vue'
 
 const $item = inject($ItemKey)
 

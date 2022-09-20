@@ -1,11 +1,9 @@
 <template>
-  <header class="sheet-header flexrow">
-    <document-img :document="actor" size="75px" />
-
-    <div class="flexcol" style="flex-basis: 100px; margin-left: 6px">
+  <SheetHeader class="sf-character-header">
+    <DocumentImg :document="actor" size="75px" />
+    <section class="header-pc-vitals flexcol">
       <input
         type="text"
-        style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Name')"
         v-model="actor.name"
         ref="name"
@@ -13,7 +11,6 @@
       />
       <input
         type="text"
-        style="margin-bottom: 7px"
         :placeholder="$t('IRONSWORN.Pronouns')"
         :value="actor.data.pronouns"
         ref="pronouns"
@@ -26,17 +23,15 @@
         ref="callsign"
         @keyup="save"
       />
-    </div>
+    </section>
 
     <textarea
-      rows="4"
       :value="actor.data.biography"
       ref="characteristics"
-      style="flex-basis: 300px; margin-left: 6px"
       :placeholder="$t('IRONSWORN.Characteristics')"
       @keyup="save"
     />
-  </header>
+  </SheetHeader>
 </template>
 
 <style lang="less" scoped>
@@ -46,14 +41,28 @@ textarea {
   border-radius: 1px;
   font-family: var(--font-primary);
   resize: none;
+  font-size: inherit;
+}
+textarea {
+  flex-basis: 300px;
+  margin: 0;
+  flex-grow: 2;
+}
+.header-pc-vitals {
+  flex-basis: 100px;
+  min-width: 20ch;
+  max-width: 30ch;
+  gap: 5px;
+  flex-grow: 1;
 }
 </style>
 
 <script lang="ts" setup>
+import SheetHeader from '../sheet-header.vue'
 import { debounce } from 'lodash'
 import { inject, ref, Ref } from 'vue'
 import { $ActorKey } from '../provisions'
-import documentImg from './document-img.vue'
+import DocumentImg from './document-img.vue'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)

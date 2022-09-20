@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol sf-character-sheet">
+  <article class="flexcol sf-character-sheet">
     <!-- TODO: rm inline styles added to maintain consistent styling (required largely because of other inline styles) -->
     <!-- Header row -->
     <sf-characterheader />
@@ -117,11 +117,12 @@
     <!-- Impacts -->
     <hr class="nogrow" />
     <sf-impacts class="nogrow" />
-  </div>
+  </article>
 </template>
 
 <style lang="less">
 .sf-character-sheet {
+  gap: 7px;
   .stat-roll {
     text-transform: uppercase;
   }

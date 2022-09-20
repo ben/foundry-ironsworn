@@ -1,8 +1,8 @@
 <template>
   <div class="move-sheet flexcol">
-    <header class="sheet-header">
+    <SheetHeader class="nogrow">
       <document-name :document="item" />
-    </header>
+    </SheetHeader>
 
     <div class="flexrow">
       <!-- Tab selection on left -->
@@ -128,6 +128,7 @@
 </style>
 
 <script setup lang="ts">
+import SheetHeader from './sheet-header.vue'
 import { provide, computed, reactive, inject } from 'vue'
 import { get, set } from 'lodash'
 import { $ItemKey } from './provisions'

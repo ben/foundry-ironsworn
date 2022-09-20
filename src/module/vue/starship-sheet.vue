@@ -1,10 +1,5 @@
 <template>
-  <div class="flexcol">
-    <header class="sheet-header nogrow" style="gap: 5px">
-      <document-img :document="actor" />
-      <document-name :document="actor" />
-    </header>
-
+  <SheetBasic :document="actor">
     <Tabs>
       <Tab :title="$t('IRONSWORN.Assets')">
         <SfAssets />
@@ -24,7 +19,7 @@
         <condition-checkbox class="nogrow" name="cursed" :global="true" />
       </div>
     </section>
-  </div>
+  </SheetBasic>
 </template>
 
 <style lang="less" scoped>
@@ -46,9 +41,8 @@ import Tabs from './components/tabs/tabs.vue'
 import Tab from './components/tabs/tab.vue'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
-import documentImg from './components/document-img.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
-import DocumentName from './components/document-name.vue'
+import SheetBasic from './sheet-basic.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
