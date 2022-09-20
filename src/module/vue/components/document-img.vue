@@ -13,10 +13,11 @@
 <style lang="less">
 .document-img {
   cursor: pointer;
-  .theme-ironsworn & {
-    // tint so that the default fill of included vector icons (white) is at least nominally visible on a white ground.
-    background-color: rgba(0, 0, 0, 0.2);
-  }
+}
+
+.theme-ironsworn .document-img[src$='.svg'] {
+  // tint so that the default fill of included vector icons (white) is at least nominally visible on a white ground.
+  background-color: rgba(0, 0, 0, 0.2);
 }
 </style>
 
