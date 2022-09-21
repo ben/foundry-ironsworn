@@ -24,7 +24,11 @@
       :current="item.data.rank"
       @click="rankClick"
     />
-    <section class="progress-controls" data-tooltip-direction="UP">
+    <section
+      v-if="showTrackButtons"
+      class="progress-controls"
+      data-tooltip-direction="UP"
+    >
       <BtnFaicon
         class="block"
         v-if="editMode"
@@ -81,6 +85,8 @@
 <style lang="less" scoped>
 @progress_widget_spacing: 6px;
 .progress-list-item {
+  padding: (@progress_widget_spacing / 2) (@progress_widget_spacing / 2)
+    @progress_widget_spacing;
   display: grid;
   grid-template-columns: max-content max-content 1fr max-content;
   grid-template-rows: max-content max-content 1fr;
@@ -133,39 +139,38 @@
     }
   }
 }
-
-article.item-row {
-  padding: (@progress_widget_spacing / 2) (@progress_widget_spacing / 2)
-    @progress_widget_spacing;
-}
 </style>
 
 <script lang="ts" setup>
-import { capitalize, computed, inject, provide, Ref } from 'vue'
-import { $ActorKey, $ItemKey } from '../../provisions'
+import { capitalize, computed, inject, provide } from 'vue'
+import { $ActorKey } from '../../provisions'
 import Clock from '../clock.vue'
 import Track from './track.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import RankPips from '../rank-pips/rank-pips.vue'
 import DocumentImg from '../document-img.vue'
+import { RANKS } from '../../../constants.js'
 
 const props = defineProps<{
   item: any
   actor: any
   showStar?: boolean
 }>()
+
+const $actor = inject($ActorKey)
 provide(
   'actor',
   computed(() => props.actor)
 )
-provide(
-  'item',
-  computed(() => props.item)
-)
 
-const $actor = inject($ActorKey)
-const $item = inject($ItemKey)
+// ProgressListItem is embedded in a sheet but the sheet usually doesn't provide it -- in other words, this
+// So, get the id of the nonreactive item
+const progressId = computed<string>(() => props.item.id ?? props.item._id)
+// Then use it in a getter, $item
+const $item = computed(() => $actor?.items.get(progressId.value))
+// and finally, provide the item getter's value for this component's children
+provide('item', $item.value)
 
 const editMode = computed(() => {
   return props.actor.flags['foundry-ironsworn']?.['edit-mode']
@@ -187,40 +192,41 @@ const completedTooltip = computed(() => {
 })
 
 function edit() {
-  $item?.sheet?.render(true)
+  $item?.value?.sheet?.render(true)
 }
 function destroy() {
-  const titleKey = `IRONSWORN.Delete${capitalize($item?.type || '')}`
+  const titleKey = `IRONSWORN.Delete${capitalize($item?.value?.type || '')}`
 
   Dialog.confirm({
     title: game.i18n.localize(titleKey),
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
     )}</strong></p>`,
-    yes: () => $item?.delete(),
+    yes: () => $item?.value?.delete(),
     defaultYes: false,
   })
 }
-function rankClick(rank) {
-  $item?.update({ data: { rank } })
+function rankClick(rank: keyof typeof RANKS) {
+  $item?.value?.update({ data: { rank } })
 }
 function advance() {
-  $item?.markProgress(1)
+  $item?.value?.markProgress(1)
 }
 function retreat() {
-  $item?.markProgress(-1)
+  $item?.value?.markProgress(-1)
 }
 
 const $emit = defineEmits(['completed'])
+
 function toggleComplete() {
   const completed = !props.item.data.completed
   if (completed) $emit('completed')
-  $item?.update({ data: { completed } })
+  $item?.value?.update({ data: { completed } })
 }
 function toggleStar() {
-  $item?.update({ data: { starred: !props.item.data.starred } })
+  $item?.value?.update({ data: { starred: !props.item.data.starred } })
 }
-function setClock(num) {
-  $item?.update({ data: { clockTicks: num } })
+function setClock(clockTicks: number) {
+  $item?.value?.update({ data: { clockTicks } })
 }
 </script>
