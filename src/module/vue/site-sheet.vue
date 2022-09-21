@@ -30,6 +30,7 @@
       class="nogrow"
       style="margin-bottom: 1em"
       :ticks="actor.data.current"
+      :rank="actor.data.rank"
     />
 
     <!-- THEME/DOMAIN -->

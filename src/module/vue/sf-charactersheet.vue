@@ -53,7 +53,9 @@
         </div>
 
         <tabs class="character-sheet-tabs" name="character-sheet-tabs">
-          <tab :title="$t('IRONSWORN.Legacies')"> <sf-legacies /> </tab>
+          <tab :title="$t('IRONSWORN.Legacies')">
+            <sf-legacies :actor="actor" />
+          </tab>
           <tab :title="$t('IRONSWORN.Assets')"> <sf-assets /> </tab>
           <tab :title="$t('IRONSWORN.Progress')"> <sf-progresses /> </tab>
           <tab :title="$t('IRONSWORN.Connections')"> <sf-connections /> </tab>
@@ -163,11 +165,13 @@ import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
 import SfConnections1 from './components/character-sheet-tabs/sf-connections.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
+import { $ActorKey } from './provisions.js'
 
 const props = defineProps<{
   actor: any
 }>()
 
+const $actor = inject($ActorKey)
 provide(
   'actor',
   computed(() => props.actor)

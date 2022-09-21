@@ -1,28 +1,43 @@
 <template>
-  <div>
-    <legacy-track propKey="quests" :title="$t('IRONSWORN.Quests')" />
-    <legacy-track propKey="bonds" :title="$t('IRONSWORN.Bonds')" />
-    <legacy-track propKey="discoveries" :title="$t('IRONSWORN.Discoveries')" />
-
-    <hr class="nogrow" v-if="starredProgresses.length > 0" />
-    <progress-list-item
-      v-for="item in starredProgresses"
-      :key="item._id"
-      :item="item"
+  <article class="sf-legacies">
+    <LegacyTrack
+      v-for="legacy in ['quests', 'bonds', 'discoveries']"
+      :key="legacy"
+      :actor="actor"
+      :legacy="(legacy as any)"
     />
-  </div>
+    <hr class="nogrow" v-if="starredProgresses.length" />
+    <ProgressListItem
+      v-for="(progressItem, i) in starredProgresses"
+      :key="`progress-item-${i}`"
+      :item="progressItem"
+      :actor="actor"
+    />
+  </article>
 </template>
 
 <script lang="ts" setup>
-import { computed, inject, Ref } from 'vue'
-import legacyTrack from '../xp/legacy-track.vue'
+import { computed, inject, provide, Ref } from 'vue'
+import LegacyTrack from '../xp/legacy-track.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
+import { $ActorKey } from '../../provisions.js'
+import { IronswornActor } from '../../../actor/actor.js'
+import { IronswornItem } from '../../../item/item.js'
+const props = defineProps<{ actor: IronswornActor }>()
 
-const actor = inject('actor') as Ref
+const $actor = inject($ActorKey) as any
+
+provide(
+  'actor',
+  computed(() => props.actor)
+)
 
 const starredProgresses = computed(() => {
-  return actor.value.items
-    .filter((x) => x.type === 'progress')
-    .filter((x) => x.data.starred)
+  console.log('$actor?.items', $actor?.items)
+  const result = $actor?.items
+    .filter((progressItem: IronswornItem) => progressItem.type === 'progress')
+    .filter((progressItem: IronswornItem) => progressItem.data?.starred)
+  console.log('$actor?.items filtered', result)
+  return result
 })
 </script>

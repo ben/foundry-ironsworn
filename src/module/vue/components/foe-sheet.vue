@@ -42,7 +42,7 @@
 import SheetHeaderBasic from '../sheet-header-basic.vue'
 import { computed, inject, provide } from 'vue'
 import { IronswornActor } from '../../actor/actor'
-import { $ActorKey } from '../provisions'
+import { $ActorKey, $ItemKey } from '../provisions'
 import { throttle } from 'lodash'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
@@ -62,8 +62,8 @@ const progressItemData = props.actor?.items.find(
 const progressItem = computed(() =>
   $actor?.items.get((progressItemData as any)?.id)
 )
-provide('actor', computed(() => props.actor).value)
-provide('item', computed(() => progressItemData).value)
+provide($ActorKey, props.actor)
+provide($ItemKey, progressItemData)
 
 // async foe(newFoe) {
 //   const data = { name: newFoe?.name, img: newFoe?.img }

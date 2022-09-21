@@ -152,23 +152,26 @@ import DocumentImg from '../document-img.vue'
 
 const props = defineProps<{
   item: any
+  actor: any
   showStar?: boolean
 }>()
+provide(
+  'actor',
+  computed(() => props.actor)
+)
+provide(
+  'item',
+  computed(() => props.item)
+)
 
-const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
-
-const $item = $actor?.items.get(props.item._id)
-provide($ItemKey, $item)
+const $item = inject($ItemKey)
 
 const editMode = computed(() => {
-  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
+  return props.actor.flags['foundry-ironsworn']?.['edit-mode']
 })
 const showTrackButtons = computed(() => {
   return props.item.data.hasTrack
-})
-const foundryItem = computed(() => {
-  return $actor?.items.get(props.item._id)
 })
 const subtitle = computed(() => {
   let subtype = capitalize(props.item.data.subtype)

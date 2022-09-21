@@ -1,17 +1,16 @@
 <template>
   <article
     class="legacy-track flexcol"
-    :class="{ 'legacy-overflow': overflow }"
+    :data-legacy="legacy"
+    :class="{ 'legacy-overflow': overflowLabel }"
   >
-    <h4 class="legacy-track-title">{{ title }}</h4>
+    <h4 class="legacy-track-title">
+      {{ $t(`IRONSWORN.${capitalize(legacy)}`) }}
+    </h4>
 
     <section class="legacy-track-controls flexrow">
-      <span
-        v-if="overflow"
-        class="nogrow"
-        style="padding: 1px; margin-right: 10px"
-      >
-        {{ overflow }}
+      <span v-if="overflowLabel" class="nogrow">
+        {{ overflowLabel }}
       </span>
       <BtnFaicon
         class="block nogrow"
@@ -22,17 +21,21 @@
       <BtnFaicon class="block nogrow" icon="caret-right" @click="increase" />
     </section>
 
-    <Track class="legacy-track-progress" :ticks="displayTicks" />
+    <Track class="legacy-track-progress" :ticks="displayedTicks" rank="epic" />
 
-    <XpTrackLegacy
-      class="nogrow"
-      :max="xpBoxCount"
-      :marked="xpSpent"
-      @click="setXp"
-    />
+    <LegacyXpCounters class="legacy-track-xp" :legacy="legacy" :actor="actor" />
   </article>
 </template>
 <style lang="less">
+[data-legacy='discoveries'] {
+  --ironsworn-thematic-color: var(--ironsworn-color-legacy-discoveries);
+}
+[data-legacy='bonds'] {
+  --ironsworn-thematic-color: var(--ironsworn-color-legacy-bonds);
+}
+[data-legacy='quests'] {
+  --ironsworn-thematic-color: var(--ironsworn-color-legacy-quests);
+}
 .legacy-track {
   display: grid;
   grid-template-rows: max-content max-content 0.5em 0.5em;
@@ -50,7 +53,7 @@
     grid-column: 1 / span 2;
     grid-row: 2 / span 2;
   }
-  .xp-track-legacy {
+  .legacy-track-xp {
     grid-column: 1 / span 2;
     grid-row: 3 / span 2;
   }
@@ -66,46 +69,37 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import { computed, inject, Ref } from 'vue'
+import { computed, inject, provide, Ref } from 'vue'
 import { $ActorKey } from '../../provisions'
-import XpTrackLegacy from './xp-track-legacy.vue'
+import LegacyXpCounters from './legacy-xp-counters.vue'
 import Track from '../progress/track.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
+import { capitalize } from 'lodash'
+import { IronswornActor } from '../../../actor/actor.js'
 
-const props = defineProps<{ propKey: string; title: string }>()
+const props = defineProps<{
+  actor: IronswornActor
+  /**
+   * The legacy track type.
+   */
+  legacy: 'quests' | 'bonds' | 'discoveries'
+}>()
 
-const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
+provide(
+  'actor',
+  computed(() => props.actor)
+)
 
-const editMode = computed(() => {
-  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
-})
-
+const editMode = computed(
+  () => props.actor.flags?.['foundry-ironsworn']?.['edit-mode']
+)
 const ticks = computed(() => {
-  return actor.value.data.legacies[props.propKey] ?? 0
+  return props.actor.data.legacies?.[props.legacy] ?? 0
 })
-const displayTicks = computed(() => ticks.value % 40)
+const displayedTicks = computed(() => ticks.value % 40)
 
-const xpBoxCount = computed(() => {
-  // 2 for each box up until 10, then 1 for each box afterwards
-  const fullBoxes = Math.floor(ticks.value / 4)
-  if (fullBoxes <= 10) {
-    return fullBoxes * 2
-  } else {
-    return fullBoxes + 10
-  }
-})
-const xpArray = computed(() => {
-  const ret = [] as number[]
-  for (let i = 1; i <= xpBoxCount.value; i++) {
-    ret.push(i)
-  }
-  return ret
-})
-const xpSpent = computed(() => {
-  return actor.value.data.legacies[`${props.propKey}XpSpent`] ?? 0
-})
-const overflow = computed(() => {
+const overflowLabel = computed(() => {
   const n = Math.floor(ticks.value / 40) * 10
   if (n > 0) {
     return `(+${n})`
@@ -114,9 +108,9 @@ const overflow = computed(() => {
 })
 
 function adjust(inc) {
-  const current = actor.value.data?.legacies[props.propKey] ?? 0
+  const current = props.actor.data?.legacies[props.legacy] ?? 0
   $actor?.update({
-    [`data.legacies.${props.propKey}`]: current + inc,
+    [`data.legacies.${props.legacy}`]: current + inc,
   })
 }
 function increase() {
@@ -124,11 +118,5 @@ function increase() {
 }
 function decrease() {
   adjust(-1)
-}
-
-function setXp(n) {
-  $actor?.update({
-    data: { legacies: { [`${props.propKey}XpSpent`]: n } },
-  })
 }
 </script>

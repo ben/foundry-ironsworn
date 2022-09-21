@@ -8,7 +8,11 @@
     :aria-valuetext="`${score} progress (${ticks} ticks)`"
     :data-tooltip="`${score} progress (${ticks} ticks)`"
   >
-    <ProgressListItem v-for="(box, i) in boxes" :key="'box' + i" :ticks="box" />
+    <ProgressListItem
+      v-for="(boxTicks, i) in boxes"
+      :key="`box-${i + 1}`"
+      :ticks="boxTicks ?? 0"
+    />
     <slot></slot>
   </article>
 </template>
@@ -34,18 +38,12 @@ import { RANKS } from '../../../constants.js'
 import { NumericRank } from '../../../dataforged.js'
 import ProgressListItem from './track-box.vue'
 
-const props = withDefaults(
-  defineProps<{ ticks: number; rank: keyof typeof RANKS }>(),
-  {
-    rank: 'epic',
-  }
-)
+const props = defineProps<{ ticks: number; rank: keyof typeof RANKS }>()
 
 const minBoxes = 0
 const maxBoxes = 10
 const ticksPerBox = 4
 const maxTicks = maxBoxes * ticksPerBox
-const emptyBox = 0
 
 const score = computed(() =>
   clamp(Math.floor(props.ticks / ticksPerBox), minBoxes, maxBoxes)
@@ -58,19 +56,14 @@ const visibleTicks = computed(() =>
 )
 
 const boxes = computed(() => {
+  const boxTicks = Array<number>(maxBoxes)
   const filledBoxes = Math.floor(visibleTicks.value / ticksPerBox)
   const ticksRemainder = visibleTicks.value % ticksPerBox
 
-  let boxTicks = Array<number>(maxBoxes)
   fill(boxTicks, ticksPerBox, 0, filledBoxes)
   if (ticksRemainder > 0) {
     boxTicks[filledBoxes] = ticksRemainder
   }
-  if (compact(boxTicks).length > 10) {
-    fill(boxTicks, emptyBox, filledBoxes + 1)
-  }
-  console.log('boxTicks', boxTicks)
-  console.log('visibleTicks', visibleTicks.value)
   return boxTicks
 })
 </script>

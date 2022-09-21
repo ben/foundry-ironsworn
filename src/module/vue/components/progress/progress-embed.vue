@@ -15,7 +15,11 @@
         @click="markProgress"
       />
     </section>
-    <Track class="progress-track" :ticks="item.data.current" />
+    <Track
+      class="progress-track"
+      :ticks="item.data.current"
+      :rank="item.data.rank"
+    />
   </article>
 </template>
 

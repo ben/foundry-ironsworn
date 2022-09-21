@@ -13,7 +13,7 @@
           @sortUp="sortUp"
           @sortDown="sortDown"
         />
-        <progress-list-item :item="item" :show-star="true" />
+        <progress-list-item :actor="actor" :item="item" :show-star="true" />
       </div>
     </transition-group>
 
@@ -33,7 +33,7 @@
 </style>
 
 <script setup lang="ts">
-import { computed, inject, Ref } from 'vue'
+import { computed, inject, provide, Ref } from 'vue'
 import { $ActorKey } from '../../provisions'
 import OrderButtons from '../order-buttons.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
@@ -42,6 +42,7 @@ import { ProgressDataProperties } from '../../../item/itemtypes'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
+provide($ActorKey, $actor)
 
 const connections = computed(() => {
   return actor.value.items

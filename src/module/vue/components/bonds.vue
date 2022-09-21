@@ -5,7 +5,7 @@
       <btn-faicon class="block nogrow" icon="edit" @click="editBonds" />
       <btn-faicon class="block nogrow" icon="dice-d6" @click="rollBonds" />
     </div>
-    <Track :ticks="bondcount" />
+    <Track :ticks="bondcount" rank="epic" />
   </div>
 </template>
 
