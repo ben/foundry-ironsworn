@@ -1,6 +1,7 @@
 <template>
   <div
     class="flexcol track-box"
+    :class="{ 'track-overflow': true }"
     :aria-valuenow="ticks"
     :aria-valuetext="`${ticks} ticks`"
   >
@@ -10,17 +11,29 @@
       viewBox="0 0 100 100"
       role="presentational"
     >
-      <TransitionGroup name="draw-tick">
+      <g class="ghost-ticks" v-if="ghostMark && ticks < 4">
         <line
           v-bind="tickProps"
           v-for="(tick, i) in tickRange"
-          :key="`tick-${tick}`"
-          v-show="props.ticks > i"
+          :key="`ghost-tick-${tick}`"
           :transform="tickTransforms[i]"
-          :class="`tick-${tick}`"
+          :class="`ghost-tick`"
           :data-tick="tick"
         />
-      </TransitionGroup>
+      </g>
+      <g>
+        <TransitionGroup name="draw-tick">
+          <line
+            v-bind="tickProps"
+            v-for="(tick, i) in tickRange"
+            :key="`tick-${tick}`"
+            v-show="props.ticks > i"
+            :transform="tickTransforms[i]"
+            :class="`tick-${tick}`"
+            :data-tick="tick"
+          />
+        </TransitionGroup>
+      </g>
     </svg>
   </div>
 </template>
@@ -33,6 +46,9 @@
   border-radius: 3px;
   object-fit: contain;
   box-shadow: 2px 2px 0 currentColor;
+  &.track-overflow .ghost-ticks {
+    opacity: 0.2;
+  }
   .track-box-marks {
     margin: 5px;
   }
@@ -142,7 +158,13 @@ import { range } from 'lodash'
 import { computed } from 'vue'
 
 const tickRange = range(1, 5)
-const props = defineProps<{ ticks: number }>()
+const props = defineProps<{
+  ticks: number
+  /**
+   * Whether to render a second set of 4 ticks with low opacity. Used to indicate legacy tracks that have previously been filled to 10.
+   */
+  ghostMark?: boolean
+}>()
 
 function siblingDelayFactor(tickNumber: number) {
   return Math.max(1 + (tickNumber - props.ticks), 0)

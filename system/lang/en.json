@@ -26,6 +26,20 @@
     "Opportunity": "Opportunity!",
     "Complication": "Complication!",
     "MarkProgress": "Mark Progress",
+    "PROGRESS": {
+      "BOX": {
+        "1": "1 box",
+        "2": "2 boxes",
+        "3": "3 boxes"
+      },
+      "TICK": {
+        "1": "1 tick",
+        "2": "2 ticks",
+        "3": "3 ticks",
+        "4": "4 ticks"
+      }
+    },
+    "MarkLegacy": "Mark {amount} on your {legacy} legacy track",
     "UnmarkProgress": "Unmark Progress",
     "ClearProgress": "Clear Progress",
     "FulfillVow": "Fulfill Vow",

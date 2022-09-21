@@ -1,14 +1,10 @@
 <template>
-  <article
-    class="legacy-track flexcol"
-    :data-legacy="legacy"
-    :class="{ 'legacy-overflow': overflowLabel }"
-  >
+  <article class="legacy-track flexcol" :data-legacy="legacy">
     <h4 class="legacy-track-title">
       {{ $t(`IRONSWORN.${capitalize(legacy)}`) }}
     </h4>
 
-    <section class="legacy-track-controls flexrow">
+    <section class="legacy-track-controls flexrow" data-tooltip-direction="UP">
       <span v-if="overflowLabel" class="nogrow">
         {{ overflowLabel }}
       </span>
@@ -18,10 +14,21 @@
         icon="caret-left"
         @click="decrease"
       />
-      <BtnFaicon class="block nogrow" icon="caret-right" @click="increase" />
+      <BtnFaicon
+        class="block nogrow"
+        icon="caret-right"
+        @click="increase"
+        :data-tooltip="markTooltip"
+      />
     </section>
 
-    <Track class="legacy-track-progress" :ticks="displayedTicks" rank="epic" />
+    <Track
+      class="legacy-track-progress"
+      :ticks="displayedTicks"
+      rank="epic"
+      :legacyOverflow="ticks >= 40"
+      data-tooltip-direction="UP"
+    />
 
     <LegacyXpCounters class="legacy-track-xp" :legacy="legacy" :actor="actor" />
   </article>
@@ -76,6 +83,7 @@ import Track from '../progress/track.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { capitalize } from 'lodash'
 import { IronswornActor } from '../../../actor/actor.js'
+import { RANKS } from '../../../constants.js'
 
 const props = defineProps<{
   actor: IronswornActor
@@ -91,6 +99,12 @@ provide(
   computed(() => props.actor)
 )
 
+const markTooltip = computed(() => {
+  let legacy = game.i18n.localize(`IRONSWORN.${capitalize(props.legacy)}`)
+  let amount = game.i18n.localize(`IRONSWORN.PROGRESS.TICK.1`)
+  return game.i18n.format(`IRONSWORN.MarkLegacy`, { amount, legacy })
+})
+
 const editMode = computed(
   () => props.actor.flags?.['foundry-ironsworn']?.['edit-mode']
 )
@@ -98,6 +112,10 @@ const ticks = computed(() => {
   return props.actor.data.legacies?.[props.legacy] ?? 0
 })
 const displayedTicks = computed(() => ticks.value % 40)
+
+const effectiveProgressScore = computed(() =>
+  ticks.value > 40 ? 10 : Math.floor(ticks.value / 40)
+)
 
 const overflowLabel = computed(() => {
   const n = Math.floor(ticks.value / 40) * 10

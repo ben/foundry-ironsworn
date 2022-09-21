@@ -22,7 +22,7 @@
 </template>
 <style lang="less">
 @pill_radius: 2px;
-@pill_empty_color: transparent;
+@pill_empty_color: var(--ironsworn-color-bg);
 
 .legacy-xp-counters {
   display: grid;
@@ -35,7 +35,6 @@
     position: relative;
     overflow: hidden;
     background-color: var(--ironsworn-thematic-color);
-
     &.overflow {
       grid-column: span 2;
       border-radius: @pill_radius;

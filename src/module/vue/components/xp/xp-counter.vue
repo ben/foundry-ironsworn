@@ -26,8 +26,8 @@ console.log('xpCounter init', props.legacy, props.xpValue)
   transition: var(--std-animation);
   &:disabled,
   &[aria-disabled='true'] {
-    opacity: 0.1;
     pointer-events: none;
+    opacity: 1;
   }
 }
 </style>

@@ -8,10 +8,11 @@
     :aria-valuetext="`${score} progress (${ticks} ticks)`"
     :data-tooltip="`${score} progress (${ticks} ticks)`"
   >
-    <ProgressListItem
+    <TrackBox
       v-for="(boxTicks, i) in boxes"
       :key="`box-${i + 1}`"
       :ticks="boxTicks ?? 0"
+      :ghostMark="legacyOverflow"
     />
     <slot></slot>
   </article>
@@ -36,9 +37,13 @@ import { computed } from '@vue/runtime-core'
 import { fill, clamp, compact } from 'lodash'
 import { RANKS } from '../../../constants.js'
 import { NumericRank } from '../../../dataforged.js'
-import ProgressListItem from './track-box.vue'
+import TrackBox from './track-box.vue'
 
-const props = defineProps<{ ticks: number; rank: keyof typeof RANKS }>()
+const props = defineProps<{
+  ticks: number
+  rank: keyof typeof RANKS
+  legacyOverflow?: boolean
+}>()
 
 const minBoxes = 0
 const maxBoxes = 10
