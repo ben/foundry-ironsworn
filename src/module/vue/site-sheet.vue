@@ -26,7 +26,7 @@
     </div>
 
     <!-- PROGRESS -->
-    <ProgressTrack
+    <Track
       class="nogrow"
       style="margin-bottom: 1em"
       :ticks="actor.data.current"
@@ -162,7 +162,7 @@ import DocumentName from './components/document-name.vue'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnCompendium from './components/buttons/btn-compendium.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
-import ProgressTrack from './components/progress/progress-track.vue'
+import Track from './components/progress/track.vue'
 import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'
 import SiteMovebox from './components/site/site-movebox.vue'

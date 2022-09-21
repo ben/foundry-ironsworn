@@ -22,7 +22,7 @@
       <BtnFaicon class="block nogrow" icon="caret-right" @click="increase" />
     </section>
 
-    <ProgressTrack class="legacy-track-progress" :ticks="displayTicks" />
+    <Track class="legacy-track-progress" :ticks="displayTicks" />
 
     <XpTrackLegacy
       class="nogrow"
@@ -69,7 +69,7 @@ h4 {
 import { computed, inject, Ref } from 'vue'
 import { $ActorKey } from '../../provisions'
 import XpTrackLegacy from './xp-track-legacy.vue'
-import ProgressTrack from '../progress/progress-track.vue'
+import Track from '../progress/track.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 
 const props = defineProps<{ propKey: string; title: string }>()

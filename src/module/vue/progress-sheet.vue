@@ -59,7 +59,7 @@
           </div>
           <!-- PROGRESS -->
           <div class="flexrow track nogrow" style="margin-bottom: 1em">
-            <ProgressTrack :ticks="item.data.current" />
+            <Track :ticks="item.data.current" />
           </div>
         </div>
       </Transition>
@@ -132,7 +132,7 @@ import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
-import ProgressTrack from './components/progress/progress-track.vue'
+import Track from './components/progress/track.vue'
 import Clock from './components/clock.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'

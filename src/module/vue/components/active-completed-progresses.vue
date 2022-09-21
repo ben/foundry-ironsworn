@@ -14,7 +14,7 @@
             @sortUp="sortUp"
             @sortDown="sortDown"
           />
-          <progress-box
+          <progress-list-item
             :item="item"
             :showStar="progressStars"
             @completed="progressCompleted"
@@ -56,7 +56,7 @@
                 @sortUp="completedSortUp"
                 @sortDown="completedSortDown"
               />
-              <progress-box :item="item" :showStar="progressStars" />
+              <progress-list-item :item="item" :showStar="progressStars" />
             </div>
           </transition-group>
         </div>
@@ -108,7 +108,7 @@ h3 {
 import { computed, inject, reactive, Ref } from 'vue'
 import { $ActorKey } from '../provisions'
 import OrderButtons from './order-buttons.vue'
-import ProgressBox from './progress/progress-box.vue'
+import ProgressListItem from './progress/progress-list-item.vue'
 import ProgressControls from './progress-controls.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import { IronswornSettings } from '../../helpers/settings'

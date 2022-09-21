@@ -19,7 +19,7 @@
 
       <!-- PROGRESS -->
       <div class="flexrow track nogrow" style="margin-bottom: 1em">
-        <ProgressTrack :ticks="foe.data.current" />
+        <Track :ticks="foe.data.current" />
       </div>
 
       <hr class="nogrow" />
@@ -69,7 +69,7 @@ import DocumentImg from './document-img.vue'
 import DocumentName from './document-name.vue'
 import RankPips from './rank-pips/rank-pips.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
-import ProgressTrack from './progress/progress-track.vue'
+import Track from './progress/track.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 import MceEditor from './mce-editor.vue'
 import { RANKS, RANK_INCREMENTS } from '../../constants'
