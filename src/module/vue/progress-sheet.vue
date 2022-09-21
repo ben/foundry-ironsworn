@@ -124,12 +124,9 @@
 </style>
 
 <script setup lang="ts">
-import SheetHeader from './sheet-header.vue'
 import { computed, inject, provide } from 'vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
 import { $ItemKey } from './provisions'
-import DocumentImg from './components/document-img.vue'
-import DocumentName from './components/document-name.vue'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import Track from './components/progress/track.vue'

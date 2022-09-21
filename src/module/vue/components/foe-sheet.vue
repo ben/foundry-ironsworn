@@ -1,32 +1,11 @@
 <template>
-  <div class="flexcol">
-    <SheetHeaderBasic :document="actor" class="nogrow" />
-    <div v-if="foe">
-      <div class="flexrow nogrow">
-        <RankPips
-          :current="foe.data.rank"
-          @click="setRank"
-          style="margin-right: 1em"
-        />
-        <h4>{{ rankText }}</h4>
-        <BtnFaicon class="block nogrow" icon="trash" @click="clearProgress" />
-        <BtnFaicon
-          class="block nogrow"
-          icon="caret-right"
-          @click="markProgress"
-        />
-      </div>
-
-      <!-- PROGRESS -->
-      <div class="flexrow track nogrow" style="margin-bottom: 1em">
-        <Track :ticks="foe.data.current" />
-      </div>
-
+  <div class="foe-sheet flexcol">
+    <SheetHeaderBasic :document="progressItemData ?? actor" class="nogrow" />
+    <div v-if="progressItemData">
+      <ProgressEmbed :item="progressItemData" />
       <hr class="nogrow" />
-
-      <!-- DESCRIPTION -->
       <MceEditor
-        v-model="foe.data.description"
+        v-model="progressItemData.data.description"
         @save="saveDescription"
         @change="throttledSaveDescription"
       />
@@ -65,35 +44,26 @@ import { computed, inject, provide } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { $ActorKey } from '../provisions'
 import { throttle } from 'lodash'
-import DocumentImg from './document-img.vue'
-import DocumentName from './document-name.vue'
-import RankPips from './rank-pips/rank-pips.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
-import Track from './progress/track.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 import MceEditor from './mce-editor.vue'
-import { RANKS, RANK_INCREMENTS } from '../../constants'
-import { ProgressDataProperties } from '../../item/itemtypes'
-import { FoeDataProperties } from '../../actor/actortypes'
+import ProgressEmbed from './progress/progress-embed.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
-provide(
-  'actor',
-  computed(() => props.actor)
-)
-const actorData = props.actor as FoeDataProperties
-const foe = props.actor.items.find(
-  (x) => x.type === 'progress'
-) as ProgressDataProperties
 
 const $actor = inject($ActorKey)
-const foundryFoe = $actor?.items.get((foe as any)?._id)
 
-const rankText = computed(() => {
-  return game.i18n.localize(RANKS[foe?.data.rank])
-})
+const progressItemData = props.actor?.items.find(
+  (x) => x.type === 'progress'
+) as any
+
+const progressItem = computed(() =>
+  $actor?.items.get((progressItemData as any)?.id)
+)
+provide('actor', computed(() => props.actor).value)
+provide('item', computed(() => progressItemData).value)
 
 // async foe(newFoe) {
 //   const data = { name: newFoe?.name, img: newFoe?.img }
@@ -108,31 +78,9 @@ function addEmpty() {
   )
 }
 
-function openCompendium(name) {
-  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-  pack?.render(true)
-}
-
-function setRank(rank) {
-  foundryFoe?.update({ data: { rank } })
-  foe!.data.rank = rank
-}
-
-function clearProgress() {
-  foundryFoe?.update({ 'data.current': 0 })
-  foe.data.current = 0
-}
-
-function markProgress() {
-  const increment = RANK_INCREMENTS[foe?.data.rank]
-  const newValue = Math.min(foe?.data.current + increment, 40)
-  foundryFoe?.update({ 'data.current': newValue })
-  foe.data.current = newValue
-}
-
 function saveDescription() {
-  foundryFoe?.update({
-    data: { description: foe?.data.description },
+  progressItem?.update({
+    data: { description: progressItemData?.data.description },
   })
 }
 const throttledSaveDescription = throttle(saveDescription, 1000)
