@@ -59,11 +59,17 @@ const progressItemData = props.actor?.items.find(
   (x) => x.type === 'progress'
 ) as any
 
+console.log('progressItemData', progressItemData)
+
 const progressItem = computed(() =>
-  $actor?.items.get((progressItemData as any)?.id)
+  $actor?.items.get(
+    (progressItemData as any)?.id ?? (progressItemData as any)?._id
+  )
 )
-provide($ActorKey, props.actor)
-provide($ItemKey, progressItemData)
+
+console.log('progressItem', progressItem.value)
+provide('actor', props.actor)
+provide('item', progressItemData.value)
 
 // async foe(newFoe) {
 //   const data = { name: newFoe?.name, img: newFoe?.img }
@@ -79,7 +85,7 @@ function addEmpty() {
 }
 
 function saveDescription() {
-  progressItem?.update({
+  progressItem.value?.update({
     data: { description: progressItemData?.data.description },
   })
 }
