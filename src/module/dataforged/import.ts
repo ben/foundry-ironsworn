@@ -2,14 +2,10 @@ import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-v
 import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { IOracle, IOracleCategory, starforged } from 'dataforged'
-import { max } from 'lodash'
+import { isArray, isObject, max } from 'lodash'
 import { marked } from 'marked'
-import {
-  renderLinksInMove,
-  cleanDollars,
-  hashLookup,
-  renderLinksInStr,
-} from '.'
+import shajs from 'sha.js'
+import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 import {
@@ -19,6 +15,37 @@ import {
   SFOracleCategories,
 } from './data'
 import { renderMarkdown } from './rendering'
+
+export function cleanDollars(obj): any {
+  if (isArray(obj)) {
+    const ret = [] as any[]
+    for (const item of obj) {
+      ret.push(cleanDollars(item))
+    }
+    return ret
+  } else if (isObject(obj)) {
+    const ret = {} as any
+    for (const k of Object.keys(obj)) {
+      let newK = k
+      if (newK.startsWith('$')) {
+        newK = 'df' + k.substring(1)
+      }
+      ret[newK] = cleanDollars(obj[k])
+    }
+    return ret
+  }
+  return obj
+}
+
+const HASH_CACHE = {} as { [k: string]: string }
+export function hashLookup(str: string): string {
+  HASH_CACHE[str] ||= hash(str)
+  return HASH_CACHE[str]
+}
+
+export function hash(str: string): string {
+  return shajs('sha256').update(str).digest('hex').substring(48)
+}
 
 const PACKS = [
   'foundry-ironsworn.starforgedassets',

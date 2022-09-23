@@ -1,62 +1,15 @@
-import { isArray, isObject } from 'lodash'
-import {
-  starforged,
-  ironsworn,
-  IMove,
-  IOracle,
-  IOracleCategory,
-  Starforged,
-  Ironsworn,
-} from 'dataforged'
+import { IMove, IOracle, IOracleCategory } from 'dataforged'
 import { IronswornItem } from '../item/item'
-import shajs from 'sha.js'
 import { cachedDocumentsForPack } from '../features/pack-cache'
+import {
+  SFMoveCategories,
+  SFOracleCategories,
+  ISOracleCategories,
+} from './data'
+import { hashLookup } from './import'
 
 export * from './import'
 export * from './rendering'
-
-// For some reason, rollupJs mangles this
-const SFMoveCategories = ((starforged as any).default as Starforged)[
-  'Move Categories'
-]
-const SFOracleCategories = ((starforged as any).default as Starforged)[
-  'Oracle Categories'
-]
-const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
-  'Oracle Categories'
-]
-const SFAssetTypes = ((starforged as any).default as Starforged)['Asset Types']
-
-export function cleanDollars(obj): any {
-  if (isArray(obj)) {
-    const ret = [] as any[]
-    for (const item of obj) {
-      ret.push(cleanDollars(item))
-    }
-    return ret
-  } else if (isObject(obj)) {
-    const ret = {} as any
-    for (const k of Object.keys(obj)) {
-      let newK = k
-      if (newK.startsWith('$')) {
-        newK = 'df' + k.substring(1)
-      }
-      ret[newK] = cleanDollars(obj[k])
-    }
-    return ret
-  }
-  return obj
-}
-
-const HASH_CACHE = {} as { [k: string]: string }
-export function hashLookup(str: string): string {
-  HASH_CACHE[str] ||= hash(str)
-  return HASH_CACHE[str]
-}
-
-export function hash(str: string): string {
-  return shajs('sha256').update(str).digest('hex').substring(48)
-}
 
 export async function getFoundryTableByDfId(
   dfid: string
