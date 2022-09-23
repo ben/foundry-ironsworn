@@ -1,5 +1,5 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
-import { IronswornActor } from './actor/actor'
+import { IronswornActor } from '../actor/actor'
 import { get, isArray, isObject, max, set } from 'lodash'
 import {
   starforged,
@@ -11,9 +11,9 @@ import {
   Ironsworn,
 } from 'dataforged'
 import { marked } from 'marked'
-import { IronswornItem } from './item/item'
+import { IronswornItem } from '../item/item'
 import shajs from 'sha.js'
-import { cachedDocumentsForPack } from './features/pack-cache'
+import { cachedDocumentsForPack } from '../features/pack-cache'
 import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
 
