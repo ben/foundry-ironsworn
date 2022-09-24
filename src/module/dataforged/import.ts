@@ -107,11 +107,10 @@ function movesForCategories(
     for (const move of category.Moves) {
       renderLinksInMove(move)
       const cleanMove = cleanDollars(move)
-      console.log(move.Name, move.$id)
       movesToCreate.push({
-        _id: hashLookup(cleanMove['dfid']),
+        _id: hashLookup(cleanMove.dfid),
         type: 'sfmove',
-        name: move.Name,
+        name: move.Title.Short,
         img: 'icons/dice/d10black.svg',
         data: cleanMove,
       })
@@ -143,12 +142,12 @@ async function processSFAssets() {
       assetsToCreate.push({
         type: 'asset',
         _id: hashLookup(asset.$id),
-        name: `${assetType.Name} / ${asset.Name}`,
+        name: `${assetType.Title.Short} / ${asset.Title.Short}`,
         data: {
           description: renderMarkdown(assetType.Description),
           fields:
             asset.Inputs?.map((input) => ({
-              name: input.Name,
+              name: input.Label,
               value: '',
             })) || [],
           abilities: (asset.Abilities ?? []).map((ability) => {
@@ -171,7 +170,7 @@ async function processSFAssets() {
           }),
           track: {
             enabled: !!asset['Condition Meter'],
-            name: asset['Condition Meter']?.Name,
+            name: asset['Condition Meter']?.Label,
             current: asset['Condition Meter']?.Value,
             max: asset['Condition Meter']?.Max,
           },
@@ -206,7 +205,7 @@ async function processOracle(
         dfId: oracle.$id,
         category: oracle.Category,
       },
-      name: oracle.Name,
+      name: oracle.Title.Standard,
       img: 'icons/dice/d10black.svg',
       description,
       formula: `d${maxRoll}`,
@@ -219,7 +218,7 @@ async function processOracle(
           text = `${tableRow.Result} (${tableRow.Summary})`
         } else text = tableRow.Result ?? ''
         return {
-          _id: hashLookup(tableRow.$id ?? ''),
+          _id: hashLookup((tableRow as any).$id ?? ''),
           range: [tableRow.Floor, tableRow.Ceiling],
           text: tableRow.Result && renderLinksInStr(text),
         } as TableResultDataConstructorData
@@ -287,7 +286,7 @@ async function processSFEncounters() {
       {
         ...encounter,
         variantLinks: encounter.Variants.map((x) =>
-          renderLinksInStr(`[${x.Name}](${x.$id})`)
+          renderLinksInStr(`[${x.Title.Short}](${x.$id})`)
         ),
       }
     )
@@ -295,34 +294,34 @@ async function processSFEncounters() {
     encountersToCreate.push({
       _id: hashLookup(encounter.$id),
       type: 'progress',
-      name: encounter['Name'],
+      name: encounter.Title.Standard,
       img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
       data: {
         description,
-        rank: getLegacyRank(encounter['Rank']),
+        rank: getLegacyRank(encounter.Rank),
       },
     })
 
-    for (const variant of encounter['Variants']) {
+    for (const variant of encounter.Variants) {
       const variantDescription = await renderTemplate(
         'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
         {
           ...encounter,
           ...variant,
-          Category: variant['Nature'] || encounter['Nature'],
-          CategoryDescription: variant['Summary'] || encounter['Summary'],
+          Category: variant.Nature || encounter.Nature,
+          CategoryDescription: variant.Description || encounter.Summary,
         }
       )
 
       encountersToCreate.push({
-        _id: hashLookup(variant['$id']),
+        _id: hashLookup(variant.$id),
         type: 'progress',
-        name: variant['Name'],
+        name: variant.Title.Standard,
         img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
         data: {
           description: variantDescription,
           rank: getLegacyRank(
-            'Rank' in variant ? variant['Rank'] : encounter['Rank']
+            'Rank' in variant ? variant.Rank : encounter.Rank
           ),
         },
       })

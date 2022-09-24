@@ -20,6 +20,7 @@ export interface Move {
   displayName: string
   moveItem: IronswornItem
   dataforgedMove?: IMove
+  highlighted: boolean
 }
 
 // For some reason, rollupJs mangles this
@@ -73,7 +74,7 @@ function walkCategory(
   compendiumMoves: IronswornItem[]
 ): MoveCategory {
   const newCategory = {
-    displayName: game.i18n.localize(`IRONSWORN.${category.Name}`),
+    displayName: game.i18n.localize(`IRONSWORN.${category.Title.Short}`),
     dataforgedCategory: category,
     moves: [] as Move[],
   }
@@ -85,8 +86,9 @@ function walkCategory(
     if (moveItem) {
       newCategory.moves.push({
         dataforgedMove: move,
-        displayName: moveItem.name || move.Display.Title,
+        displayName: moveItem.name || move.Title.Short,
         moveItem,
+        highlighted: false,
       })
     } else {
       console.warn(`Couldn't find item for move ${move.$id}`)

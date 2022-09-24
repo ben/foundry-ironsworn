@@ -1,4 +1,4 @@
-import { IMove, IOracle, IOracleCategory } from 'dataforged'
+import { IMove, IOracle, IOracleBase, IOracleCategory } from 'dataforged'
 import { IronswornItem } from '../item/item'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 import {
@@ -44,16 +44,14 @@ export async function getDFMoveByDfId(
   return undefined
 }
 
-export function getDFOracleByDfId(
-  dfid: string
-): IOracle | IOracleCategory | undefined {
+export function getDFOracleByDfId(dfid: string): IOracleBase | undefined {
   const nodes = findOracleWithIntermediateNodes(dfid)
   return nodes[nodes.length - 1]
 }
 
 export function findOracleWithIntermediateNodes(
   dfid: string
-): Array<IOracle | IOracleCategory> {
+): Array<IOracleBase> {
   const ret: Array<IOracle | IOracleCategory> = []
 
   function walkCategory(cat: IOracleCategory): boolean {

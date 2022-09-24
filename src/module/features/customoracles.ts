@@ -5,6 +5,7 @@ import {
   IOracleCategory,
   Starforged,
   Ironsworn,
+  IOracleBase,
 } from 'dataforged'
 import { compact } from 'lodash'
 import { getFoundryTableByDfId } from '../dataforged'
@@ -80,7 +81,9 @@ async function walkOracleCategory(
   const node: IOracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: cat,
-    displayName: game.i18n.localize(`IRONSWORN.OracleCategories.${cat.Name}`),
+    displayName: game.i18n.localize(
+      `IRONSWORN.OracleCategories.${cat.Title.Short}`
+    ),
   }
 
   for (const childCat of cat.Categories ?? []) {
@@ -102,7 +105,7 @@ async function walkOracleCategory(
 }
 
 export async function walkOracle(
-  oracle?: IOracle | IOracleCategory
+  oracle?: IOracleBase
 ): Promise<IOracleTreeNode> {
   if (!oracle) return emptyNode()
 
@@ -114,7 +117,7 @@ export async function walkOracle(
     tables: compact([table]),
     displayName:
       table?.name ||
-      game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`),
+      game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Title.Short}`),
   }
 
   // Child oracles
