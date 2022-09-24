@@ -93,7 +93,6 @@ const FOE_IMAGES = {
 }
 
 const PACKS = [
-  'foundry-ironsworn.ironswornmoves',
   'foundry-ironsworn.ironswornassets',
   'foundry-ironsworn.ironsworndelvethemes',
   'foundry-ironsworn.ironsworndelvedomains',
