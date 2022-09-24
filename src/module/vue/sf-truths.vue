@@ -1,12 +1,12 @@
 <template>
   <div class="flexcol">
-    <div v-for="category in truths" :key="category.Name">
-      <h2 style="margin-top: 1em">{{ category.Name }}</h2>
+    <div v-for="category in truths" :key="category.Title.Standard">
+      <h2 style="margin-top: 1em">{{ category.Title.Standard }}</h2>
 
       <SfTruth
         v-for="option in category.Table"
         :key="option.$id"
-        :radiogroup="category.Name"
+        :radiogroup="category.Title.Standard"
         :truth="option"
         @change="radioselect"
       />
@@ -34,14 +34,14 @@ const props = defineProps<{ truths: ISettingTruth[] }>()
 
 const output = {}
 for (const category of props.truths ?? []) {
-  output[category.Name] = null
+  output[category.Title.Standard] = null
 }
 
 const data = reactive({ output })
 
 const composedOutput = computed(() =>
   props.truths
-    .map((category) => category.Name)
+    .map((category) => category.Title.Standard)
     .map((name) =>
       data.output[name]
         ? `<h2>${name}</h2>\n${data.output[name]}\n\n`

@@ -5,6 +5,7 @@ import {
   IOracleCategory,
   Starforged,
   Ironsworn,
+  IOracleBase,
 } from 'dataforged'
 import { compact } from 'lodash'
 import { getFoundryTableByDfId } from '../dataforged'
@@ -103,7 +104,9 @@ async function walkOracleCategory(
   return node
 }
 
-export async function walkOracle(oracle?: IOracle): Promise<IOracleTreeNode> {
+export async function walkOracle(
+  oracle?: IOracleBase
+): Promise<IOracleTreeNode> {
   if (!oracle) return emptyNode()
 
   const table = await getFoundryTableByDfId(oracle.$id)
