@@ -108,7 +108,7 @@ function movesForCategories(
       renderLinksInMove(move)
       const cleanMove = cleanDollars(move)
       movesToCreate.push({
-        _id: hashLookup(cleanMove['dfid']),
+        _id: hashLookup(cleanMove.dfid),
         type: 'sfmove',
         name: move.Title.Short,
         img: 'icons/dice/d10black.svg',
@@ -294,34 +294,34 @@ async function processSFEncounters() {
     encountersToCreate.push({
       _id: hashLookup(encounter.$id),
       type: 'progress',
-      name: encounter['Name'],
+      name: encounter.Title.Standard,
       img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
       data: {
         description,
-        rank: getLegacyRank(encounter['Rank']),
+        rank: getLegacyRank(encounter.Rank),
       },
     })
 
-    for (const variant of encounter['Variants']) {
+    for (const variant of encounter.Variants) {
       const variantDescription = await renderTemplate(
         'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
         {
           ...encounter,
           ...variant,
-          Category: variant['Nature'] || encounter['Nature'],
-          CategoryDescription: variant['Summary'] || encounter['Summary'],
+          Category: variant.Nature || encounter.Nature,
+          CategoryDescription: variant.Description || encounter.Summary,
         }
       )
 
       encountersToCreate.push({
-        _id: hashLookup(variant['$id']),
+        _id: hashLookup(variant.$id),
         type: 'progress',
-        name: variant['Name'],
+        name: variant.Title.Standard,
         img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
         data: {
           description: variantDescription,
           rank: getLegacyRank(
-            'Rank' in variant ? variant['Rank'] : encounter['Rank']
+            'Rank' in variant ? variant.Rank : encounter.Rank
           ),
         },
       })
