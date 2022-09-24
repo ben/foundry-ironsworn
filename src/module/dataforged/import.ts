@@ -1,7 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import { IOracle, IOracleCategory, starforged } from 'dataforged'
+import { IMoveCategory, IOracle, IOracleCategory, starforged } from 'dataforged'
 import { isArray, isObject, max } from 'lodash'
 import { marked } from 'marked'
 import shajs from 'sha.js'
@@ -9,6 +9,7 @@ import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 import {
+  ISMoveCategories,
   ISOracleCategories,
   SFAssetTypes,
   SFMoveCategories,
@@ -54,6 +55,7 @@ const PACKS = [
   'foundry-ironsworn.starforgedoracles',
   'foundry-ironsworn.foeactorssf',
   'foundry-ironsworn.ironswornoracles',
+  'foundry-ironsworn.ironswornmoves',
 ]
 
 /**
@@ -71,7 +73,7 @@ export async function importFromDataforged() {
     // Unlock all the packs
     await pack.configure({ locked: false })
 
-    // @ts-ignore IdQuery type is a little bogus
+    // Delete all the contents
     const idsToDelete = pack.index.map((x) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
@@ -82,6 +84,7 @@ export async function importFromDataforged() {
   await processSFEncounters()
   await processSFFoes()
 
+  await processISMoves()
   await processISOracles()
 
   // Lock the packs again
@@ -90,22 +93,41 @@ export async function importFromDataforged() {
   }
 }
 
-async function processSFMoves() {
+/**
+ * MOVES
+ */
+
+function movesForCategories(
+  categories: IMoveCategory[]
+): (ItemDataConstructorData & Record<string, unknown>)[] {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  for (const category of SFMoveCategories) {
+  for (const category of categories) {
     for (const move of category.Moves) {
       renderLinksInMove(move)
       const cleanMove = cleanDollars(move)
+      console.log(move.Name, move.$id)
       movesToCreate.push({
         _id: hashLookup(cleanMove['dfid']),
         type: 'sfmove',
-        name: cleanMove['Name'],
+        name: move.Name,
         img: 'icons/dice/d10black.svg',
         data: cleanMove,
       })
     }
   }
+  return movesToCreate
+}
+
+async function processISMoves() {
+  const movesToCreate = movesForCategories(ISMoveCategories)
+  await Item.createDocuments(movesToCreate, {
+    pack: 'foundry-ironsworn.ironswornmoves',
+    keepId: true,
+  })
+}
+async function processSFMoves() {
+  const movesToCreate = movesForCategories(SFMoveCategories)
   await Item.createDocuments(movesToCreate, {
     pack: 'foundry-ironsworn.starforgedmoves',
     keepId: true,

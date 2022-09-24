@@ -1,23 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
-import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
-import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
-import {
-  IMoveCategory,
-  IOracle,
-  IOracleCategory,
-  Ironsworn,
-  ironsworn,
-  IRow,
-} from 'dataforged'
-import { max } from 'lodash'
-import { marked } from 'marked'
+import { Ironsworn, ironsworn } from 'dataforged'
 import { IronswornActor } from './actor/actor'
-import {
-  cleanDollars,
-  hash,
-  renderLinksInMove,
-  renderLinksInStr,
-} from './dataforged'
+import { cleanDollars, hash, renderLinksInMove } from './dataforged'
 import { IronswornItem } from './item/item.js'
 
 const THEME_IMAGES = {
@@ -128,9 +112,6 @@ export async function importFromDatasworn() {
     const idsToDelete = pack.index.map((x: any) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
-
-  // Moves
-  await processDataforgedMoves()
 
   // Assets
   const assetsJson = await fetch(
@@ -277,29 +258,4 @@ export async function importFromDatasworn() {
       foeItem.data as unknown as Record<string, unknown>,
     ])
   }
-}
-
-async function processDataforgedMoves() {
-  const movesToCreate = [] as (ItemDataConstructorData &
-    Record<string, unknown>)[]
-  const MoveCategories = ((ironsworn as any).default as Ironsworn)[
-    'Move Categories'
-  ]
-  for (const category of MoveCategories) {
-    for (const move of category.Moves) {
-      renderLinksInMove(move)
-      const cleanMove = cleanDollars(move)
-      movesToCreate.push({
-        _id: hash(move.$id),
-        type: 'sfmove',
-        name: move['Name'],
-        img: 'icons/dice/d10black.svg',
-        data: cleanMove,
-      })
-    }
-  }
-  await Item.createDocuments(movesToCreate, {
-    pack: 'foundry-ironsworn.ironswornmoves',
-    keepId: true,
-  })
 }
