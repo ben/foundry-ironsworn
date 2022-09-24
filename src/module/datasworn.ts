@@ -1,7 +1,5 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
-import { Ironsworn, ironsworn } from 'dataforged'
 import { IronswornActor } from './actor/actor'
-import { cleanDollars, hash, renderLinksInMove } from './dataforged'
 import { IronswornItem } from './item/item.js'
 
 const THEME_IMAGES = {
