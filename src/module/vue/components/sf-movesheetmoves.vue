@@ -65,6 +65,7 @@ import { computed, inject, provide, reactive, ref, Ref } from 'vue'
 import {
   createIronswornMoveTree,
   createStarforgedMoveTree,
+  MoveCategory,
 } from '../../features/custommoves'
 import { $EmitterKey } from '../provisions'
 import sfMoverow from './sf-moverow.vue'
@@ -74,7 +75,7 @@ provide('toolset', props.toolset)
 
 const data = reactive({
   searchQuery: '',
-  categories: [] as any[],
+  categories: [] as MoveCategory[],
 })
 
 const tempCategories =
@@ -83,7 +84,7 @@ const tempCategories =
     : await createStarforgedMoveTree()
 for (const category of tempCategories) {
   for (const move of category.moves) {
-    ;(move as any).highlighted = false
+    move.highlighted = false
   }
 }
 data.categories = tempCategories
