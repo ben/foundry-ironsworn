@@ -15,6 +15,7 @@ import {
   SFMoveCategories,
   SFOracleCategories,
 } from './data'
+import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
 
 export function cleanDollars(obj): any {
@@ -292,9 +293,10 @@ async function processSFEncounters() {
     )
 
     encountersToCreate.push({
-      _id: hashLookup(encounter['$id']),
+      _id: hashLookup(encounter.$id),
       type: 'progress',
       name: encounter['Name'],
+      img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
       data: {
         description,
         rank: getLegacyRank(encounter['Rank']),
@@ -316,6 +318,7 @@ async function processSFEncounters() {
         _id: hashLookup(variant['$id']),
         type: 'progress',
         name: variant['Name'],
+        img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
         data: {
           description: variantDescription,
           rank: getLegacyRank(
