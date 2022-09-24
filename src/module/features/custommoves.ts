@@ -73,7 +73,7 @@ function walkCategory(
   compendiumMoves: IronswornItem[]
 ): MoveCategory {
   const newCategory = {
-    displayName: game.i18n.localize(`IRONSWORN.${category.Name}`),
+    displayName: game.i18n.localize(`IRONSWORN.${category.Title.Standard}`),
     dataforgedCategory: category,
     moves: [] as Move[],
   }
@@ -85,7 +85,7 @@ function walkCategory(
     if (moveItem) {
       newCategory.moves.push({
         dataforgedMove: move,
-        displayName: moveItem.name || move.Display.Title,
+        displayName: moveItem.name || move.Title.Short,
         moveItem,
       })
     } else {
