@@ -1,49 +1,22 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
-import { IronswornActor } from './actor/actor'
-import { get, isArray, isObject, max, set } from 'lodash'
-import {
-  starforged,
-  ironsworn,
-  IMove,
-  IOracle,
-  IOracleCategory,
-  Starforged,
-  Ironsworn,
-} from 'dataforged'
+import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
+import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import { IMoveCategory, IOracle, IOracleCategory, starforged } from 'dataforged'
+import { isArray, isObject, max } from 'lodash'
 import { marked } from 'marked'
-import { IronswornItem } from './item/item'
 import shajs from 'sha.js'
-import { cachedDocumentsForPack } from './features/pack-cache'
-import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData.js'
-import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData.js'
-
-// For some reason, rollupJs mangles this
-const SFMoveCategories = ((starforged as any).default as Starforged)[
-  'Move Categories'
-]
-const SFOracleCategories = ((starforged as any).default as Starforged)[
-  'Oracle Categories'
-]
-const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
-  'Oracle Categories'
-]
-const SFAssetTypes = ((starforged as any).default as Starforged)['Asset Types']
-
-function getLegacyRank(numericRank) {
-  switch (numericRank) {
-    case 1:
-      return 'troublesome'
-    case 2:
-      return 'dangerous'
-    case 3:
-      return 'formidable'
-    case 4:
-      return 'extreme'
-    case 5:
-      return 'epic'
-  }
-  return 'epic'
-}
+import { renderLinksInMove, renderLinksInStr } from '.'
+import { IronswornActor } from '../actor/actor'
+import { IronswornItem } from '../item/item'
+import {
+  ISMoveCategories,
+  ISOracleCategories,
+  SFAssetTypes,
+  SFMoveCategories,
+  SFOracleCategories,
+} from './data'
+import { DATAFORGED_ICON_MAP } from './images'
+import { renderMarkdown } from './rendering'
 
 export function cleanDollars(obj): any {
   if (isArray(obj)) {
@@ -76,154 +49,6 @@ export function hash(str: string): string {
   return shajs('sha256').update(str).digest('hex').substring(48)
 }
 
-export async function getFoundryTableByDfId(
-  dfid: string
-): Promise<StoredDocument<RollTable> | undefined> {
-  const isd = await cachedDocumentsForPack('foundry-ironsworn.ironswornoracles')
-  const sfd = await cachedDocumentsForPack(
-    'foundry-ironsworn.starforgedoracles'
-  )
-  const matcher = (x) => x.id === hashLookup(dfid)
-  return (isd?.find(matcher) ?? sfd?.find(matcher)) as
-    | StoredDocument<RollTable>
-    | undefined
-}
-
-export async function getFoundryMoveByDfId(
-  dfid: string
-): Promise<IronswornItem | undefined> {
-  const sfDocuments =
-    (await cachedDocumentsForPack('foundry-ironsworn.starforgedmoves')) ?? []
-  const isDocuments =
-    (await cachedDocumentsForPack('foundry-ironsworn.ironswornmoves')) ?? []
-  return [...sfDocuments, ...isDocuments]?.find(
-    (x) => x.id === hashLookup(dfid)
-  ) as IronswornItem | undefined
-}
-
-export async function getDFMoveByDfId(
-  dfid: string
-): Promise<IMove | undefined> {
-  for (const category of SFMoveCategories) {
-    for (const move of category.Moves) {
-      if (move.$id === dfid) return move
-    }
-  }
-  return undefined
-}
-
-export function getDFOracleByDfId(
-  dfid: string
-): IOracle | IOracleCategory | undefined {
-  const nodes = findOracleWithIntermediateNodes(dfid)
-  return nodes[nodes.length - 1]
-}
-
-export function findOracleWithIntermediateNodes(
-  dfid: string
-): Array<IOracle | IOracleCategory> {
-  const ret: Array<IOracle | IOracleCategory> = []
-
-  function walkCategory(cat: IOracleCategory): boolean {
-    ret.push(cat)
-
-    if (cat.$id === dfid) return true
-    for (const oracle of cat.Oracles ?? []) {
-      if (walkOracle(oracle)) return true
-    }
-    for (const childCat of cat.Categories ?? []) {
-      if (walkCategory(childCat)) return true
-    }
-
-    ret.pop()
-    return false
-  }
-
-  function walkOracle(oracle: IOracle): boolean {
-    ret.push(oracle)
-
-    if (oracle.$id === dfid) return true
-    for (const childOracle of oracle.Oracles ?? []) {
-      if (walkOracle(childOracle)) return true
-    }
-
-    ret.pop()
-    return false
-  }
-
-  for (const cat of [...SFOracleCategories, ...ISOracleCategories]) {
-    walkCategory(cat)
-  }
-  return ret
-}
-
-const COMPENDIUM_KEY_MAP = {
-  'Ironsworn/Moves': 'ironswornmoves',
-  'Ironsworn/Oracles': 'ironswornoracles',
-  'Starforged/Moves': 'starforgedmoves',
-  'Starforged/Oracles': 'starforgedoracles',
-  'Starforged/Encounters': 'starforgedencounters',
-}
-const MARKDOWN_LINK_RE = /\[(.*?)\]\((.*?)\)/g
-const DESCRIPTOR_FOCUS_RE = /\[Descriptor \+ Focus\]\(.*?\)/
-const ACTION_THEME_RE = /\[Action \+ Theme\]\(.*?\)/
-
-function idIsOracleLink(dfid: string): boolean {
-  return /^(Starforged|Ironsworn)\/Oracle/.test(dfid)
-}
-
-export function renderLinksInStr(text: string): string {
-  // Strip "Black Medium Right-Pointing Triangle" characters
-  text = text.replace('\u23f5', '')
-
-  // Strip brackets from e.g. factions/name template
-  text = text.replace(/\[(\[.*?\))\]/g, '$1')
-
-  // Catch "Descriptor+Focus" or "Action+Theme" and replace with two links
-  text = text.replace(
-    DESCRIPTOR_FOCUS_RE,
-    '[Descriptor](Starforged/Oracles/Core/Descriptor) + [Focus](Starforged/Oracles/Core/Focus)'
-  )
-  text = text.replace(
-    ACTION_THEME_RE,
-    '[Action](Starforged/Oracles/Core/Action) + [Theme](Starforged/Oracles/Core/Theme)'
-  )
-
-  return text.replace(MARKDOWN_LINK_RE, (match, text, url) => {
-    const parts = url.split('/')
-    const kind = `${parts[0]}/${parts[1]}`
-    const compendiumKey = COMPENDIUM_KEY_MAP[kind]
-    if (!compendiumKey) return match
-    if (idIsOracleLink(url)) {
-      return `<a class="entity-link oracle-category-link" data-dfid="${url}"><i class="fa fa-caret-right"></i> ${text}</a>`
-    }
-    return `@Compendium[foundry-ironsworn.${compendiumKey}.${hash(
-      url
-    )}]{${text}}`
-  })
-}
-
-function renderMarkdown(md: string, markedFn = marked.parse) {
-  return markedFn(renderLinksInStr(md))
-}
-
-export function renderLinksInMove(move: IMove) {
-  const textProperties = [
-    'Text',
-    'Trigger.Text',
-    'Outcomes.Strong Hit.Text',
-    'Outcomes.Strong Hit.With a Match.Text',
-    'Outcomes.Weak Hit.Text',
-    'Outcomes.Miss.Text',
-    'Outcomes.Miss.With a Match.Text',
-  ]
-  for (const prop of textProperties) {
-    const text = get(move, prop)
-    if (!text) continue
-    set(move, prop, renderLinksInStr(text))
-  }
-}
-
 const PACKS = [
   'foundry-ironsworn.starforgedassets',
   'foundry-ironsworn.starforgedencounters',
@@ -231,6 +56,7 @@ const PACKS = [
   'foundry-ironsworn.starforgedoracles',
   'foundry-ironsworn.foeactorssf',
   'foundry-ironsworn.ironswornoracles',
+  'foundry-ironsworn.ironswornmoves',
 ]
 
 /**
@@ -248,7 +74,7 @@ export async function importFromDataforged() {
     // Unlock all the packs
     await pack.configure({ locked: false })
 
-    // @ts-ignore IdQuery type is a little bogus
+    // Delete all the contents
     const idsToDelete = pack.index.map((x) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
@@ -259,6 +85,7 @@ export async function importFromDataforged() {
   await processSFEncounters()
   await processSFFoes()
 
+  await processISMoves()
   await processISOracles()
 
   // Lock the packs again
@@ -267,22 +94,41 @@ export async function importFromDataforged() {
   }
 }
 
-async function processSFMoves() {
+/**
+ * MOVES
+ */
+
+function movesForCategories(
+  categories: IMoveCategory[]
+): (ItemDataConstructorData & Record<string, unknown>)[] {
   const movesToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  for (const category of SFMoveCategories) {
+  for (const category of categories) {
     for (const move of category.Moves) {
       renderLinksInMove(move)
       const cleanMove = cleanDollars(move)
+      console.log(move.Name, move.$id)
       movesToCreate.push({
         _id: hashLookup(cleanMove['dfid']),
         type: 'sfmove',
-        name: cleanMove['Name'],
+        name: move.Name,
         img: 'icons/dice/d10black.svg',
         data: cleanMove,
       })
     }
   }
+  return movesToCreate
+}
+
+async function processISMoves() {
+  const movesToCreate = movesForCategories(ISMoveCategories)
+  await Item.createDocuments(movesToCreate, {
+    pack: 'foundry-ironsworn.ironswornmoves',
+    keepId: true,
+  })
+}
+async function processSFMoves() {
+  const movesToCreate = movesForCategories(SFMoveCategories)
   await Item.createDocuments(movesToCreate, {
     pack: 'foundry-ironsworn.starforgedmoves',
     keepId: true,
@@ -416,6 +262,22 @@ async function processISOracles() {
   })
 }
 
+function getLegacyRank(numericRank) {
+  switch (numericRank) {
+    case 1:
+      return 'troublesome'
+    case 2:
+      return 'dangerous'
+    case 3:
+      return 'formidable'
+    case 4:
+      return 'extreme'
+    case 5:
+      return 'epic'
+  }
+  return 'epic'
+}
+
 async function processSFEncounters() {
   const encountersToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
@@ -431,9 +293,10 @@ async function processSFEncounters() {
     )
 
     encountersToCreate.push({
-      _id: hashLookup(encounter['$id']),
+      _id: hashLookup(encounter.$id),
       type: 'progress',
       name: encounter['Name'],
+      img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
       data: {
         description,
         rank: getLegacyRank(encounter['Rank']),
@@ -455,6 +318,7 @@ async function processSFEncounters() {
         _id: hashLookup(variant['$id']),
         type: 'progress',
         name: variant['Name'],
+        img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
         data: {
           description: variantDescription,
           rank: getLegacyRank(
