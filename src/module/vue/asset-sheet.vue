@@ -8,6 +8,16 @@
       <input
         v-if="editMode"
         type="text"
+        v-model="item.data.category"
+        @blur="setCategory"
+      />
+      <h3 v-else>{{item.data.category}}</h3>
+    </p>
+
+    <p>
+      <input
+        v-if="editMode"
+        type="text"
         v-model="item.data.description"
         @blur="setDescription"
       />
@@ -82,5 +92,8 @@ const hasFields = computed(() => {
 
 function setDescription() {
   $item?.update({ data: { description: props.item.data.description } })
+}
+function setCategory() {
+  $item?.update({ data: { category: props.item.data.category } })
 }
 </script>
