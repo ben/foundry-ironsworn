@@ -1,5 +1,6 @@
 <template>
-  <div class="item-row flexcol ironsworn__asset" :style="backgroundImageStyle">
+  <div class="item-row flexcol ironsworn__asset">
+    <img class="graphic-underlay" :src="backgroundImagePath" />
     <div class="asset-entry nogrow">
       <div class="flexrow">
         <h4 @click="toggle" style="margin: 0; line-height: 20px">
@@ -89,6 +90,22 @@
 .condition-meter .icon-button .button-text {
   text-align: left;
 }
+
+.ironsworn__asset {
+  position: relative;
+  overflow: hidden;
+  * {
+    backdrop-filter: opacity(100%);
+  }
+}
+.graphic-underlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 50%;
+  transform: scale(-1, 1);
+}
 </style>
 
 <script setup lang="ts">
@@ -113,16 +130,12 @@ const foundryItem = $actor
   : game.items?.get(props.asset._id)
 provide($ItemKey, foundryItem)
 
-const backgroundImageStyle = computed(() => {
+const backgroundImagePath = computed(() => {
   const category = props.asset?.data?.category as string | undefined
   if (!category) return undefined
 
   const fragment = category.toLocaleLowerCase().replace(/\s+/, '-')
-  return {
-    'background-image': `url('systems/foundry-ironsworn/assets/asset-backgrounds/hex-asset-bg-${fragment}.svg')`,
-    'background-size': '100%',
-    'background-opacity': '0.5',
-  }
+  return `systems/foundry-ironsworn/assets/asset-backgrounds/hex-asset-bg-${fragment}.svg`
 })
 
 const expanded = computed(() => {
