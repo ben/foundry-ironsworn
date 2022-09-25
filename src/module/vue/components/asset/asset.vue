@@ -100,6 +100,7 @@
 }
 .graphic-underlay {
   position: absolute;
+  border: none;
   left: 0;
   top: 0;
   width: 100%;
