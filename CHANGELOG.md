@@ -4,6 +4,7 @@
 
 - Add icons to Starforged encounter items ([#478](https://github.com/ben/foundry-ironsworn/pull/478))
 - Behind the scenes: record asset categories on the imported items ([#481](https://github.com/ben/foundry-ironsworn/pull/481))
+- Add a bit of graphic flair to SF assets ([#482](https://github.com/ben/foundry-ironsworn/pull/482))
 
 ## 1.17.18
 
