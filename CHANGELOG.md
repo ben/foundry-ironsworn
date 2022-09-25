@@ -2,7 +2,12 @@
 
 ## Next Release
 
+- Add icons to Starforged encounter items ([#478](https://github.com/ben/foundry-ironsworn/pull/478))
+
+## 1.17.18
+
 - Only show the "star" control on progresses on the Starforged sheet ([#475](https://github.com/ben/foundry-ironsworn/pull/475))
+- Better choice of "Fulfill Your Vow" when rolling a vow on a shared sheet
 
 ## 1.17.17
 
