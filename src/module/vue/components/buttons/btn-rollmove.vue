@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+import { propsToAttrMap } from '@vue/shared'
 import { inject } from 'vue'
 import { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
@@ -35,9 +36,7 @@ async function rollMove() {
       props.move?.dataforgedMove.$id,
       $actor
     )
-  IronswornPrerollDialog.showForMove(
-    props.move?.moveItem as Move['moveItem'],
-    $actor
-  )
+  if (props.move)
+    IronswornPrerollDialog.showForMove(props.move.moveItem(), $actor)
 }
 </script>

@@ -78,16 +78,11 @@ const data = reactive({
   categories: [] as MoveCategory[],
 })
 
-const tempCategories =
+const categoriesPromise =
   props.toolset === 'ironsworn'
-    ? await createIronswornMoveTree()
-    : await createStarforgedMoveTree()
-for (const category of tempCategories) {
-  for (const move of category.moves) {
-    move.highlighted = false
-  }
-}
-data.categories = tempCategories
+    ? createIronswornMoveTree()
+    : createStarforgedMoveTree()
+categoriesPromise.then((x) => (data.categories = x))
 
 const checkedSearchQuery = computed(() => {
   try {

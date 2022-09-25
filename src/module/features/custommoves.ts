@@ -18,7 +18,7 @@ export interface MoveCategory {
 
 export interface Move {
   displayName: string
-  moveItem: IronswornItem
+  moveItem: () => IronswornItem
   dataforgedMove?: IMove
   highlighted: boolean
 }
@@ -51,13 +51,6 @@ async function createMoveTree(
   // Fire the hook and allow extensions to modify the list
   await Hooks.call('ironswornMoves', ret)
 
-  // Prevent Vue from adding reactivity to Foundry objects
-  for (const cat of ret) {
-    for (const move of cat.moves) {
-      ;(move.moveItem as any) = Object.freeze(move.moveItem)
-    }
-  }
-
   return ret
 }
 
@@ -87,7 +80,7 @@ function walkCategory(
       newCategory.moves.push({
         dataforgedMove: move,
         displayName: moveItem.name || move.Title.Short,
-        moveItem,
+        moveItem: () => moveItem,
         highlighted: false,
       })
     } else {
@@ -109,7 +102,7 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
     displayName: name,
     moves: folder.contents.map((moveItem) => ({
       displayName: moveItem.name,
-      moveItem,
+      moveItem: () => moveItem,
     })) as Move[],
   })
 }

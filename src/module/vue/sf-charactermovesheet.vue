@@ -1,9 +1,7 @@
 <template>
   <tabs ref="tabs">
     <tab icon="isicon-d10-tilt" :title="$t('IRONSWORN.Moves')">
-      <Suspense>
-        <sf-movesheetmoves ref="movesTab" :toolset="toolset" />
-      </Suspense>
+      <sf-movesheetmoves ref="movesTab" :toolset="toolset" />
     </tab>
     <tab icon="isicon-oracle" :title="$t('IRONSWORN.Oracles')">
       <Suspense>
