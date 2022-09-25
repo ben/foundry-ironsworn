@@ -193,6 +193,7 @@
     "asset": {
       "templates": [],
       "description": "",
+      "category": "",
       "fields": [
         {
           "name": "",
