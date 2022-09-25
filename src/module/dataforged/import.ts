@@ -146,6 +146,7 @@ async function processSFAssets() {
         name: `${assetType.Name} / ${asset.Name}`,
         data: {
           description: renderMarkdown(assetType.Description),
+          category: assetType.Name,
           fields:
             asset.Inputs?.map((input) => ({
               name: input.Name,
