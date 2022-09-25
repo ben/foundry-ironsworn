@@ -1,5 +1,5 @@
 <template>
-  <div class="item-row flexcol ironsworn__asset">
+  <div class="item-row flexcol ironsworn__asset" :style="backgroundImageStyle">
     <div class="asset-entry nogrow">
       <div class="flexrow">
         <h4 @click="toggle" style="margin: 0; line-height: 20px">
@@ -112,6 +112,18 @@ const foundryItem = $actor
   ? $actor?.items.find((x) => x.id === props.asset._id)
   : game.items?.get(props.asset._id)
 provide($ItemKey, foundryItem)
+
+const backgroundImageStyle = computed(() => {
+  const category = props.asset?.data?.category as string | undefined
+  if (!category) return undefined
+
+  const fragment = category.toLocaleLowerCase().replace(/\s+/, '-')
+  return {
+    'background-image': `url('systems/foundry-ironsworn/assets/asset-backgrounds/hex-asset-bg-${fragment}.svg')`,
+    'background-size': '100%',
+    'background-opacity': '0.5',
+  }
+})
 
 const expanded = computed(() => {
   return props.asset?.flags['foundry-ironsworn']?.expanded || false
