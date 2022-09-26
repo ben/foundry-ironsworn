@@ -1,13 +1,13 @@
 <template>
   <article
     class="item-row flexcol ironsworn__asset"
-    :style="{
-      '--ironsworn-thematic-color':
-        ThemeColors[props.asset?.data?.category] ?? 'black',
-    }"
+    :aria-expanded="expanded"
+    :style="`--ironsworn-thematic-color: ${
+      ThemeColors[props.asset?.data?.category] ?? 'black'
+    };`"
   >
-    <header class="asset-entry nogrow flexrow">
-      <h4 @click="toggle" style="margin: 0; line-height: 20px">
+    <header class="asset-header nogrow flexrow">
+      <h4 @click="toggle" style="" class="asset-title" :aria-controls="bodyId">
         {{ asset.name }}
       </h4>
       <btn-faicon
@@ -18,23 +18,36 @@
       />
       <btn-faicon class="block nogrow" icon="edit" @click="edit" />
     </header>
-    <transition name="slide">
-      <div class="flexcol asset-summary" v-if="expanded">
-        <p v-for="(field, i) in asset.data.fields" :key="'field' + i">
-          <strong>{{ field.name }}:</strong> {{ field.value }}
-        </p>
 
-        <ul>
+    <transition name="slide">
+      <section
+        v-if="expanded"
+        class="flexcol asset-body"
+        :aria-expanded="expanded"
+        :id="bodyId"
+      >
+        <dl class="asset-fields" v-if="asset.data.fields?.length">
+          <div
+            class="asset-field"
+            v-for="(field, i) in asset.data.fields"
+            :key="'field' + i"
+          >
+            <dt class="asset-field-label">{{ field.name }}</dt>
+            <dd class="asset-field-value">{{ field.value }}</dd>
+          </div>
+        </dl>
+        <ul class="asset-abilities flexcol">
           <with-rolllisteners
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
             element="li"
-            class="flexrow"
+            class="asset-ability theme-bullet"
             @moveclick="moveclick"
           >
-            <!-- TODO: redo as list style -->
-            <i class="fas fa-circle nogrow" style="margin: 1rem 0.5rem 0 0"></i>
-            <div v-html="$enrichHtml(ability.description)"></div>
+            <section
+              class="asset-ability-text flexcol"
+              v-html="$enrichHtml(ability.description)"
+            ></section>
             <clock
               v-if="ability.hasClock"
               class="nogrow"
@@ -46,7 +59,10 @@
           </with-rolllisteners>
         </ul>
 
-        <div class="flexcol condition-meter" v-if="asset.data.track.enabled">
+        <article
+          class="flexcol condition-meter"
+          v-if="asset.data.track.enabled"
+        >
           <btn-rollstat
             class="juicy text flexrow"
             :item="asset"
@@ -56,9 +72,9 @@
             {{ asset.data.track.name }}
           </btn-rollstat>
           <asset-track :item="asset" />
-        </div>
+        </article>
 
-        <div
+        <section
           class="flexcol stack nogrow"
           style="margin-top: 5px"
           v-if="asset.data.exclusiveOptions.length > 0"
@@ -69,8 +85,8 @@
             :opt="opt"
             @click="exclusiveOptionClick(i)"
           />
-        </div>
-      </div>
+        </section>
+      </section>
     </transition>
   </article>
 </template>
@@ -90,28 +106,140 @@
 </style>
 
 <style lang="less">
-.condition-meter .icon-button .button-text {
-  text-align: left;
+.theme-bullet {
+  &:before {
+    content: '';
+    display: block;
+    mask-repeat: no-repeat;
+    background-repeat: no-repeat;
+    mask-position: center;
+    background-position: center;
+    background-color: currentColor;
+  }
 }
-
+.theme-starforged .theme-bullet {
+  &:before {
+    aspect-ratio: (sqrt(3) / 2);
+    background-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-unchecked.svg');
+    mask-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-checked.svg');
+    height: 1.25em;
+  }
+}
+.theme-ironsworn .theme-bullet {
+  &:before {
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border-width: 2px;
+    height: 1em;
+    margin-top: 0.15em;
+  }
+}
 .ironsworn__asset {
+  @asset_spacer: 0.5em;
+  @background_height: 100px;
   position: relative;
   overflow: hidden;
+  transition: var(--std-animation);
   & > * {
     z-index: 2;
   }
   &:before {
     display: block;
+    pointer-events: none;
     content: '';
     mask-image: url(systems/foundry-ironsworn/assets/asset-backgrounds/hex-asset-background.svg);
     background: var(--ironsworn-thematic-color);
     position: absolute;
     right: 0;
     top: 0;
-    width: 100px;
+    height: @background_height;
     aspect-ratio: 32.172588/29.659111;
     z-index: 1;
     mask-repeat: no-repeat;
+    transition: var(--std-animation);
+  }
+  &[aria-expanded='false']:before {
+    height: (@background_height*0.63);
+    right: -(@background_height*0.15);
+  }
+  .asset-header {
+    .asset-title {
+      display: flex;
+      margin: 0;
+      font-size: var(--font-size-14);
+      line-height: 1;
+      align-items: center;
+    }
+  }
+  .asset-body {
+    transition: var(--std-animation);
+    overflow: hidden;
+    padding: 0.25em;
+    gap: @asset_spacer;
+    &[aria-expanded='false'] {
+      height: 0px;
+    }
+    .asset-fields {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      .asset-field-label,
+      .asset-field-value {
+        padding: 0;
+        margin: 0;
+      }
+      .asset-field {
+        display: flex;
+        flex-direction: row;
+        gap: 0.25em;
+        margin-right: 100px;
+      }
+      .asset-field {
+        flex-grow: 0;
+      }
+      .asset-field-value {
+        flex-grow: 1;
+        padding: 0 0.25em;
+        border-bottom: 1px solid currentColor;
+      }
+    }
+    .asset-abilities {
+      padding-left: @asset_spacer;
+      // padding-right: (@asset_spacer*2);
+      gap: @asset_spacer;
+      li {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        gap: @asset_spacer;
+        // &::before {
+        //   content: '';
+        //   display: block;
+        //   aspect-ratio: (sqrt(3) / 2);
+        //   background-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-unchecked.svg');
+        //   background-color: var(--ironsworn-color-thematic);
+        //   mask-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-checked.svg');
+        //   height: 1.25em;
+        //   mask-repeat: no-repeat;
+        //   background-repeat: no-repeat;
+        //   mask-position: center;
+        //   background-position: center;
+        // }
+      }
+    }
+    .asset-ability-text {
+      gap: 0.25em;
+      p {
+        margin: 0;
+      }
+    }
+    ul,
+    ol {
+      margin: 0;
+    }
+  }
+  .condition-meter .icon-button .button-text {
+    text-align: left;
   }
 }
 </style>
@@ -146,6 +274,12 @@ const foundryItem = $actor
   ? $actor?.items.find((x) => x.id === props.asset._id)
   : game.items?.get(props.asset._id)
 provide($ItemKey, foundryItem)
+
+const bodyId = computed(() => `asset-body-${props.asset?._id}`)
+
+const currentTheme = computed(() =>
+  game.settings.get('foundry-ironsworn', 'starforged')
+)
 
 const expanded = computed(() => {
   return props.asset?.flags['foundry-ironsworn']?.expanded || false
