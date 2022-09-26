@@ -1,20 +1,23 @@
 <template>
-  <div class="item-row flexcol ironsworn__asset">
-    <img class="graphic-underlay" :src="backgroundImagePath" />
-    <div class="asset-entry nogrow">
-      <div class="flexrow">
-        <h4 @click="toggle" style="margin: 0; line-height: 20px">
-          {{ asset.name }}
-        </h4>
-        <btn-faicon
-          class="block nogrow"
-          v-if="editMode"
-          icon="trash"
-          @click="destroy"
-        />
-        <btn-faicon class="block nogrow" icon="edit" @click="edit" />
-      </div>
-    </div>
+  <article
+    class="item-row flexcol ironsworn__asset"
+    :style="{
+      '--ironsworn-thematic-color':
+        ThemeColors[props.asset?.data?.category] ?? 'black',
+    }"
+  >
+    <header class="asset-entry nogrow flexrow">
+      <h4 @click="toggle" style="margin: 0; line-height: 20px">
+        {{ asset.name }}
+      </h4>
+      <btn-faicon
+        class="block nogrow"
+        v-if="editMode"
+        icon="trash"
+        @click="destroy"
+      />
+      <btn-faicon class="block nogrow" icon="edit" @click="edit" />
+    </header>
     <transition name="slide">
       <div class="flexcol asset-summary" v-if="expanded">
         <p v-for="(field, i) in asset.data.fields" :key="'field' + i">
@@ -69,7 +72,7 @@
         </div>
       </div>
     </transition>
-  </div>
+  </article>
 </template>
 
 <style lang="less" scoped>
@@ -94,18 +97,22 @@
 .ironsworn__asset {
   position: relative;
   overflow: hidden;
-  * {
-    backdrop-filter: opacity(100%);
+  & > * {
+    z-index: 2;
   }
-}
-.graphic-underlay {
-  position: absolute;
-  border: none;
-  left: 0;
-  top: 0;
-  width: 100%;
-  opacity: 50%;
-  transform: scale(-1, 1);
+  &:before {
+    display: block;
+    content: '';
+    mask-image: url(systems/foundry-ironsworn/assets/asset-backgrounds/hex-asset-background.svg);
+    background: var(--ironsworn-thematic-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+    aspect-ratio: 32.172588/29.659111;
+    z-index: 1;
+    mask-repeat: no-repeat;
+  }
 }
 </style>
 
@@ -122,6 +129,15 @@ import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
 
+enum ThemeColors {
+  'Command Vehicle' = '#9aa3ad',
+  Module = '#7f5a90',
+  'Support Vehicle' = '#495790',
+  Path = '#3f7faa',
+  Companion = '#3d8b8a',
+  Deed = '#40834f',
+}
+
 const props = defineProps<{ asset: any }>()
 const actor = inject('actor') as Ref
 
@@ -130,14 +146,6 @@ const foundryItem = $actor
   ? $actor?.items.find((x) => x.id === props.asset._id)
   : game.items?.get(props.asset._id)
 provide($ItemKey, foundryItem)
-
-const backgroundImagePath = computed(() => {
-  const category = props.asset?.data?.category as string | undefined
-  if (!category) return undefined
-
-  const fragment = category.toLocaleLowerCase().replace(/\s+/, '-')
-  return `systems/foundry-ironsworn/assets/asset-backgrounds/hex-asset-bg-${fragment}.svg`
-})
 
 const expanded = computed(() => {
   return props.asset?.flags['foundry-ironsworn']?.expanded || false
