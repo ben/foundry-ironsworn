@@ -25,11 +25,6 @@
           {{ asset.data.category }}
         </span>
       </button>
-      <!-- <DocumentImg
-        :document="foundryItem"
-        size="50px"
-        class="asset-icon nogrow"
-      /> -->
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
           class="block nogrow"
@@ -72,8 +67,7 @@
             ></div>
             <clock
               v-if="ability.hasClock"
-              class="nogrow"
-              style="flex-basis: 100px"
+              class="asset-ability-clock"
               :wedges="ability.clockMax"
               :ticked="ability.clockTicks"
               @click="setAbilityClock(i, $event)"
@@ -95,10 +89,8 @@
           </btn-rollstat>
           <asset-track :item="asset" />
         </article>
-
         <section
           class="flexcol stack nogrow"
-          style="margin-top: 5px"
           v-if="asset.data.exclusiveOptions.length > 0"
         >
           <asset-exclusiveoption
@@ -129,9 +121,6 @@
 
 <style lang="less">
 @asset_spacer: 0.5em;
-// @hex_bg_aspect_ratio: (32.172588 / 29.659111);
-// @bg_height: 100px;
-// @bg_width: (100px * @hex_bg_aspect_ratio);
 @hexagon_aspect_ratio: (sqrt(3) / 2);
 @hex_deco_aspect_ratio: 24 / 28;
 @hex_deco_expanded_height: 50px;
@@ -178,7 +167,7 @@
     display: block;
     pointer-events: none;
     content: '';
-    mask-image: url(systems/foundry-ironsworn/assets/misc/hex-deco.svg);
+    mask-image: url(./systems/foundry-ironsworn/assets/misc/hex-deco.svg);
     background: var(--ironsworn-color-thematic);
     position: absolute;
     aspect-ratio: @hex_deco_aspect_ratio;
@@ -190,23 +179,15 @@
     height: @hex_deco_collapsed_height;
     top: -($height * 0.09);
     right: ($height * 0.03);
-    // left: calc(100% - @bg_width);
   }
   .asset-header {
     padding-right: (@hex_deco_collapsed_height * @hex_deco_aspect_ratio);
   }
-  // &[aria-expanded='true'] {
-  //   &:before {
-  //     height: @hex_deco_expanded_height;
-  //     top: -($height * 0.09);
-  //     right: ($height * 0.03);
-  //   }
-  // }
   .asset-ability {
     &:before {
       aspect-ratio: @hexagon_aspect_ratio;
-      background-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-unchecked.svg');
-      mask-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-checked.svg');
+      background-image: url('./systems/foundry-ironsworn/assets/misc/hex-checkbox-unchecked.svg');
+      mask-image: url('./systems/foundry-ironsworn/assets/misc/hex-checkbox-checked.svg');
       height: 1em;
       margin-top: 0.15em;
     }
@@ -286,11 +267,13 @@
       padding-left: @asset_spacer;
       // padding-right: (@asset_spacer*2);
       gap: @asset_spacer;
-      > li {
+      .asset-ability {
         list-style: none;
         display: flex;
         flex-direction: row;
         gap: @asset_spacer;
+      }
+      .asset-ability-clock {
       }
     }
     .asset-ability-text {
@@ -322,7 +305,6 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
-import DocumentImg from '../document-img.vue'
 
 enum ThemeColors {
   'Command Vehicle' = '#9aa3ad',
