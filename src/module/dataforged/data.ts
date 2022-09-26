@@ -16,3 +16,6 @@ export const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
 export const SFAssetTypes = ((starforged as any).default as Starforged)[
   'Asset Types'
 ]
+export const ISAssetTypes = ((ironsworn as any).default as Ironsworn)[
+  'Asset Types'
+]

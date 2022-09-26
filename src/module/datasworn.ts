@@ -93,7 +93,6 @@ const FOE_IMAGES = {
 }
 
 const PACKS = [
-  'foundry-ironsworn.ironswornassets',
   'foundry-ironsworn.ironsworndelvethemes',
   'foundry-ironsworn.ironsworndelvedomains',
   'foundry-ironsworn.ironswornfoes',
@@ -109,18 +108,6 @@ export async function importFromDatasworn() {
     const idsToDelete = pack.index.map((x: any) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
-
-  // Assets
-  const assetsJson = await fetch(
-    'systems/foundry-ironsworn/assets/assets.json'
-  ).then((x) => x.json())
-  const assetsToCreate = assetsJson.map((raw) => ({
-    type: 'asset',
-    ...raw,
-  }))
-  await Item.createDocuments(assetsToCreate, {
-    pack: 'foundry-ironsworn.ironswornassets',
-  })
 
   // Themes
   const themesJson = await fetch(
