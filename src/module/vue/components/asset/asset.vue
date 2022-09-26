@@ -25,6 +25,11 @@
           {{ asset.data.category }}
         </span>
       </button>
+      <!-- <DocumentImg
+        :document="foundryItem"
+        size="50px"
+        class="asset-icon nogrow"
+      /> -->
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
           class="block nogrow"
@@ -124,9 +129,13 @@
 
 <style lang="less">
 @asset_spacer: 0.5em;
-@hex_bg_aspect_ratio: (32.172588 / 29.659111);
-@bg_height: 100px;
-@bg_width: (100px * @hex_bg_aspect_ratio);
+// @hex_bg_aspect_ratio: (32.172588 / 29.659111);
+// @bg_height: 100px;
+// @bg_width: (100px * @hex_bg_aspect_ratio);
+@hexagon_aspect_ratio: (sqrt(3) / 2);
+@hex_deco_aspect_ratio: 24 / 28;
+@hex_deco_expanded_height: 50px;
+@hex_deco_collapsed_height: 32px;
 
 .asset-ironsworn,
 .asset-starforged {
@@ -153,7 +162,14 @@
     }
   }
 }
+
 .asset-starforged {
+  .asset-icon {
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    aspect-ratio: @hexagon_aspect_ratio;
+    border: 0;
+    padding: 3px;
+  }
   position: relative;
   & > * {
     z-index: 2;
@@ -162,36 +178,37 @@
     display: block;
     pointer-events: none;
     content: '';
-    mask-image: url(systems/foundry-ironsworn/assets/asset-backgrounds/hex-asset-background.svg);
+    mask-image: url(systems/foundry-ironsworn/assets/misc/hex-deco.svg);
     background: var(--ironsworn-color-thematic);
     position: absolute;
-    aspect-ratio: @hex_bg_aspect_ratio;
+    aspect-ratio: @hex_deco_aspect_ratio;
     z-index: 1;
     mask-repeat: no-repeat;
-    top: 0;
-    height: @bg_height;
     transition: var(--std-animation);
-    left: calc(100% - @bg_width);
-  }
+    transform: scaleX(-1);
 
-  &[aria-expanded='false'] {
-    .asset-header {
-      .expand-toggle {
-        padding-left: 2.25em;
-      }
-    }
-    &:before {
-      height: (@bg_height*0.63);
-      left: 0.2em;
-      // right: -(@background_height*0.375);
-    }
+    height: @hex_deco_collapsed_height;
+    top: -($height * 0.09);
+    right: ($height * 0.03);
+    // left: calc(100% - @bg_width);
   }
+  .asset-header {
+    padding-right: (@hex_deco_collapsed_height * @hex_deco_aspect_ratio);
+  }
+  // &[aria-expanded='true'] {
+  //   &:before {
+  //     height: @hex_deco_expanded_height;
+  //     top: -($height * 0.09);
+  //     right: ($height * 0.03);
+  //   }
+  // }
   .asset-ability {
     &:before {
-      aspect-ratio: (sqrt(3) / 2);
+      aspect-ratio: @hexagon_aspect_ratio;
       background-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-unchecked.svg');
       mask-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-checked.svg');
-      height: 1.1em;
+      height: 1em;
+      margin-top: 0.15em;
     }
   }
 }
@@ -210,6 +227,9 @@
       .asset-title {
         margin: 0;
         font-size: var(--font-size-14);
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        word-spacing: 0.02em;
         line-height: 1;
       }
       &:not(:hover) .asset-type {
@@ -251,7 +271,7 @@
         display: flex;
         flex-direction: row;
         gap: (@asset_spacer / 2);
-        margin-right: 120px;
+        // margin-right: 120px;
       }
       .asset-field {
         flex-grow: 0;
@@ -259,7 +279,7 @@
       .asset-field-value {
         flex-grow: 1;
         padding: 0 (@asset_spacer / 2);
-        border-bottom: 1px solid currentColor;
+        // border-bottom: 1px solid currentColor;
       }
     }
     .asset-abilities {
@@ -302,6 +322,7 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
+import DocumentImg from '../document-img.vue'
 
 enum ThemeColors {
   'Command Vehicle' = '#9aa3ad',
