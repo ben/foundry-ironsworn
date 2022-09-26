@@ -1,22 +1,39 @@
 <template>
   <article
     class="item-row flexcol ironsworn__asset"
+    :class="{ [`asset-${$actor?.toolset}`]: true }"
     :aria-expanded="expanded"
-    :style="`--ironsworn-thematic-color: ${
-      ThemeColors[props.asset?.data?.category] ?? 'black'
-    };`"
+    :style="
+      ThemeColors[props.asset?.data?.category]
+        ? `--ironsworn-color-thematic: ${
+            ThemeColors[props.asset?.data?.category]
+          }`
+        : ''
+    "
   >
     <header class="asset-header nogrow flexrow">
-      <h4 @click="toggle" style="" class="asset-title" :aria-controls="bodyId">
-        {{ asset.name }}
-      </h4>
-      <btn-faicon
-        class="block nogrow"
-        v-if="editMode"
-        icon="trash"
-        @click="destroy"
-      />
-      <btn-faicon class="block nogrow" icon="edit" @click="edit" />
+      <button
+        type="button"
+        @click="toggle"
+        :aria-controls="bodyId"
+        class="clickable text expand-toggle"
+      >
+        <h4 class="asset-title">
+          {{ asset.name }}
+        </h4>
+        <span class="asset-type" aria-label="asset type">
+          {{ asset.data.category }}
+        </span>
+      </button>
+      <div class="asset-controls flexrow nogrow">
+        <btn-faicon
+          class="block nogrow"
+          v-if="editMode"
+          icon="trash"
+          @click="destroy"
+        />
+        <btn-faicon class="block nogrow" icon="edit" @click="edit" />
+      </div>
     </header>
 
     <transition name="slide">
@@ -41,13 +58,13 @@
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
             element="li"
-            class="asset-ability theme-bullet"
+            :class="`asset-ability bullet-${$actor?.toolset}`"
             @moveclick="moveclick"
           >
-            <section
+            <div
               class="asset-ability-text flexcol"
               v-html="$enrichHtml(ability.description)"
-            ></section>
+            ></div>
             <clock
               v-if="ability.hasClock"
               class="nogrow"
@@ -106,40 +123,38 @@
 </style>
 
 <style lang="less">
-.theme-bullet {
-  &:before {
-    content: '';
-    display: block;
-    mask-repeat: no-repeat;
-    background-repeat: no-repeat;
-    mask-position: center;
-    background-position: center;
-    background-color: currentColor;
+@asset_spacer: 0.5em;
+@hex_bg_aspect_ratio: (32.172588 / 29.659111);
+@bg_height: 100px;
+@bg_width: (100px * @hex_bg_aspect_ratio);
+
+.asset-ironsworn,
+.asset-starforged {
+  .asset-ability {
+    &:before {
+      content: '';
+      display: block;
+      mask-repeat: no-repeat;
+      background-repeat: no-repeat;
+      mask-position: center;
+      background-position: center;
+      background-color: currentColor;
+    }
   }
 }
-.theme-starforged .theme-bullet {
-  &:before {
-    aspect-ratio: (sqrt(3) / 2);
-    background-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-unchecked.svg');
-    mask-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-checked.svg');
-    height: 1.25em;
+.asset-ironsworn {
+  .asset-ability {
+    &:before {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border-width: 2px;
+      height: 1em;
+      margin-top: 0.15em;
+    }
   }
 }
-.theme-ironsworn .theme-bullet {
-  &:before {
-    aspect-ratio: 1;
-    border-radius: 50%;
-    border-width: 2px;
-    height: 1em;
-    margin-top: 0.15em;
-  }
-}
-.ironsworn__asset {
-  @asset_spacer: 0.5em;
-  @background_height: 100px;
+.asset-starforged {
   position: relative;
-  overflow: hidden;
-  transition: var(--std-animation);
   & > * {
     z-index: 2;
   }
@@ -148,33 +163,77 @@
     pointer-events: none;
     content: '';
     mask-image: url(systems/foundry-ironsworn/assets/asset-backgrounds/hex-asset-background.svg);
-    background: var(--ironsworn-thematic-color);
+    background: var(--ironsworn-color-thematic);
     position: absolute;
-    right: 0;
-    top: 0;
-    height: @background_height;
-    aspect-ratio: 32.172588/29.659111;
+    aspect-ratio: @hex_bg_aspect_ratio;
     z-index: 1;
     mask-repeat: no-repeat;
+    top: 0;
+    height: @bg_height;
     transition: var(--std-animation);
+    left: calc(100% - @bg_width);
   }
-  &[aria-expanded='false']:before {
-    height: (@background_height*0.63);
-    right: -(@background_height*0.15);
-  }
-  .asset-header {
-    .asset-title {
-      display: flex;
-      margin: 0;
-      font-size: var(--font-size-14);
-      line-height: 1;
-      align-items: center;
+
+  &[aria-expanded='false'] {
+    .asset-header {
+      .expand-toggle {
+        padding-left: 2.25em;
+      }
+    }
+    &:before {
+      height: (@bg_height*0.63);
+      left: 0.2em;
+      // right: -(@background_height*0.375);
     }
   }
+  .asset-ability {
+    &:before {
+      aspect-ratio: (sqrt(3) / 2);
+      background-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-unchecked.svg');
+      mask-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-checked.svg');
+      height: 1.1em;
+    }
+  }
+}
+.ironsworn__asset {
+  overflow: hidden;
+  transition: var(--std-animation);
+  .asset-header {
+    transition: var(--std-animation);
+    gap: @asset_spacer;
+    align-items: center;
+    .expand-toggle {
+      display: flex;
+      gap: @asset_spacer;
+      background: none;
+      box-shadow: none !important;
+      .asset-title {
+        margin: 0;
+        font-size: var(--font-size-14);
+        line-height: 1;
+      }
+      &:not(:hover) .asset-type {
+        color: var(--ironsworn-color-thematic);
+      }
+      .asset-type {
+        flex-grow: 0;
+        line-height: 1;
+        font-style: italic;
+        transition: var(--std-animation);
+      }
+    }
+    .asset-controls {
+      justify-items: flex-end;
+      display: flex;
+      flex-grow: 0;
+      flex-wrap: nowrap;
+    }
+  }
+
   .asset-body {
     transition: var(--std-animation);
     overflow: hidden;
-    padding: 0.25em;
+    padding: (@asset_spacer / 2);
     gap: @asset_spacer;
     &[aria-expanded='false'] {
       height: 0px;
@@ -191,15 +250,15 @@
       .asset-field {
         display: flex;
         flex-direction: row;
-        gap: 0.25em;
-        margin-right: 100px;
+        gap: (@asset_spacer / 2);
+        margin-right: 120px;
       }
       .asset-field {
         flex-grow: 0;
       }
       .asset-field-value {
         flex-grow: 1;
-        padding: 0 0.25em;
+        padding: 0 (@asset_spacer / 2);
         border-bottom: 1px solid currentColor;
       }
     }
@@ -207,28 +266,15 @@
       padding-left: @asset_spacer;
       // padding-right: (@asset_spacer*2);
       gap: @asset_spacer;
-      li {
+      > li {
         list-style: none;
         display: flex;
         flex-direction: row;
         gap: @asset_spacer;
-        // &::before {
-        //   content: '';
-        //   display: block;
-        //   aspect-ratio: (sqrt(3) / 2);
-        //   background-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-unchecked.svg');
-        //   background-color: var(--ironsworn-color-thematic);
-        //   mask-image: url('systems/foundry-ironsworn/assets/misc/hex-checkbox-checked.svg');
-        //   height: 1.25em;
-        //   mask-repeat: no-repeat;
-        //   background-repeat: no-repeat;
-        //   mask-position: center;
-        //   background-position: center;
-        // }
       }
     }
     .asset-ability-text {
-      gap: 0.25em;
+      gap: (@asset_spacer / 2);
       p {
         margin: 0;
       }
@@ -276,10 +322,6 @@ const foundryItem = $actor
 provide($ItemKey, foundryItem)
 
 const bodyId = computed(() => `asset-body-${props.asset?._id}`)
-
-const currentTheme = computed(() =>
-  game.settings.get('foundry-ironsworn', 'starforged')
-)
 
 const expanded = computed(() => {
   return props.asset?.flags['foundry-ironsworn']?.expanded || false
