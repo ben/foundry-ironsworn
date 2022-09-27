@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.19
+
 - Ironsworn assets are now sourced from Dataforged, fixing a number of data issues ([#483](https://github.com/ben/foundry-ironsworn/pull/483))
 - Add icons to Starforged encounter items ([#478](https://github.com/ben/foundry-ironsworn/pull/478))
 - Behind the scenes: record asset categories ([#481](https://github.com/ben/foundry-ironsworn/pull/481)) and colors ([#484](https://github.com/ben/foundry-ironsworn/pull/484)) to compendium items
