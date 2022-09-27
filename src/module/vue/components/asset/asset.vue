@@ -21,9 +21,10 @@
         <h4 class="asset-title">
           {{ asset.name }}
         </h4>
-        <span class="asset-type" aria-label="asset type">
+        <!-- FIXME: uncomment once asset type names are trimmed from their display names -->
+        <!-- <span class="asset-type" aria-label="asset type">
           {{ asset.data.category }}
-        </span>
+        </span> -->
       </button>
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
@@ -39,7 +40,7 @@
     <transition name="slide">
       <section
         v-if="expanded"
-        class="flexcol asset-body"
+        class="asset-body flexcol"
         :aria-expanded="expanded"
         :id="bodyId"
       >
@@ -252,20 +253,19 @@
         display: flex;
         flex-direction: row;
         gap: (@asset_spacer / 2);
-        // margin-right: 120px;
       }
       .asset-field {
         flex-grow: 0;
+        border-bottom: 1px solid;
+        border-bottom-color: var(--ironsworn-color-thematic);
       }
       .asset-field-value {
         flex-grow: 1;
         padding: 0 (@asset_spacer / 2);
-        // border-bottom: 1px solid currentColor;
       }
     }
     .asset-abilities {
       padding-left: @asset_spacer;
-      // padding-right: (@asset_spacer*2);
       gap: @asset_spacer;
       .asset-ability {
         list-style: none;
