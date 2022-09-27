@@ -16,7 +16,7 @@
         type="button"
         @click="toggle"
         :aria-controls="bodyId"
-        class="clickable text expand-toggle"
+        class="clickable text asset-expand-toggle"
       >
         <h4 class="asset-title">
           {{ asset.name }}
@@ -122,78 +122,7 @@
 
 <style lang="less">
 @asset_spacer: 0.5em;
-@hexagon_aspect_ratio: (sqrt(3) / 2);
-@hex_deco_aspect_ratio: 24 / 28;
-@hex_deco_expanded_height: 50px;
-@hex_deco_collapsed_height: 32px;
 
-.asset-ironsworn,
-.asset-starforged {
-  .asset-ability {
-    &:before {
-      content: '';
-      display: block;
-      mask-repeat: no-repeat;
-      background-repeat: no-repeat;
-      mask-position: center;
-      background-position: center;
-      background-color: currentColor;
-    }
-  }
-}
-.asset-ironsworn {
-  .asset-ability {
-    &:before {
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border-width: 2px;
-      height: 1em;
-      margin-top: 0.15em;
-    }
-  }
-}
-
-.asset-starforged {
-  .asset-icon {
-    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-    aspect-ratio: @hexagon_aspect_ratio;
-    border: 0;
-    padding: 3px;
-  }
-  position: relative;
-  & > * {
-    z-index: 2;
-  }
-  &:before {
-    display: block;
-    pointer-events: none;
-    content: '';
-    mask-image: url(assets/misc/hex-deco.svg);
-    background: var(--ironsworn-color-thematic);
-    position: absolute;
-    aspect-ratio: @hex_deco_aspect_ratio;
-    z-index: 1;
-    mask-repeat: no-repeat;
-    transition: var(--std-animation);
-    transform: scaleX(-1);
-
-    height: @hex_deco_collapsed_height;
-    top: -($height * 0.09);
-    right: ($height * 0.03);
-  }
-  .asset-header {
-    padding-right: (@hex_deco_collapsed_height * @hex_deco_aspect_ratio);
-  }
-  .asset-ability {
-    &:before {
-      aspect-ratio: @hexagon_aspect_ratio;
-      background-image: url('assets/misc/hex-checkbox-unchecked.svg');
-      mask-image: url('assets/misc/hex-checkbox-checked.svg');
-      height: 1em;
-      margin-top: 0.15em;
-    }
-  }
-}
 .ironsworn__asset {
   overflow: hidden;
   transition: var(--std-animation);
@@ -201,7 +130,7 @@
     transition: var(--std-animation);
     gap: @asset_spacer;
     align-items: center;
-    .expand-toggle {
+    .asset-expand-toggle {
       display: flex;
       gap: @asset_spacer;
       background: none;
@@ -244,24 +173,22 @@
       margin: 0;
       display: flex;
       flex-direction: column;
-      .asset-field-label,
-      .asset-field-value {
-        padding: 0;
-        margin: 0;
-      }
       .asset-field {
         display: flex;
         flex-direction: row;
         gap: (@asset_spacer / 2);
-      }
-      .asset-field {
         flex-grow: 0;
         border-bottom: 1px solid;
         border-bottom-color: var(--ironsworn-color-thematic);
-      }
-      .asset-field-value {
-        flex-grow: 1;
-        padding: 0 (@asset_spacer / 2);
+        .asset-field-label {
+          padding: 0;
+          margin: 0;
+        }
+        .asset-field-value {
+          margin: 0;
+          flex-grow: 1;
+          padding: 0 (@asset_spacer / 2);
+        }
       }
     }
     .asset-abilities {
@@ -291,11 +218,82 @@
     text-align: left;
   }
 }
+
+@hexagon_aspect_ratio: (sqrt(3) / 2);
+@hex_deco_aspect_ratio: 24 / 28;
+@hex_deco_expanded_height: 50px;
+@hex_deco_collapsed_height: 32px;
+.asset-ironsworn,
+.asset-starforged {
+  .asset-ability {
+    &:before {
+      content: '';
+      display: block;
+      mask-repeat: no-repeat;
+      background-repeat: no-repeat;
+      mask-position: center;
+      background-position: center;
+      background-color: currentColor;
+    }
+  }
+}
+.asset-ironsworn {
+  .asset-ability {
+    &:before {
+      aspect-ratio: 1;
+      border-radius: 50%;
+      border-width: 2px;
+      height: 1em;
+      margin-top: 0.15em;
+    }
+  }
+}
+.asset-starforged {
+  position: relative;
+  & > * {
+    z-index: 2;
+  }
+  &:before {
+    display: block;
+    pointer-events: none;
+    content: '';
+    mask-image: url(assets/misc/hex-deco.svg);
+    background: var(--ironsworn-color-thematic);
+    position: absolute;
+    aspect-ratio: @hex_deco_aspect_ratio;
+    z-index: 1;
+    mask-repeat: no-repeat;
+    transition: var(--std-animation);
+    transform: scaleX(-1);
+    height: @hex_deco_collapsed_height;
+    top: -($height * 0.09);
+    right: ($height * 0.03);
+  }
+  .asset-header {
+    padding-right: (@hex_deco_collapsed_height * @hex_deco_aspect_ratio);
+    // .asset-icon {
+    //   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    //   aspect-ratio: @hexagon_aspect_ratio;
+    //   border: 0;
+    //   padding: 3px;
+    // }
+  }
+  .asset-abilities {
+    .asset-ability {
+      &:before {
+        aspect-ratio: @hexagon_aspect_ratio;
+        background-image: url('assets/misc/hex-checkbox-unchecked.svg');
+        mask-image: url('assets/misc/hex-checkbox-checked.svg');
+        height: 1em;
+        margin-top: 0.15em;
+      }
+    }
+  }
+}
 </style>
 
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
-import { RollDialog } from '../../../helpers/rolldialog'
 import { AssetAbility, AssetDataPropertiesData } from '../../../item/itemtypes'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
