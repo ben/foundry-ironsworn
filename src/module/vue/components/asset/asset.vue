@@ -106,24 +106,14 @@
   </article>
 </template>
 
-<style lang="less" scoped>
-.asset-condition-meter {
-  gap: 3px;
-}
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 350px;
-}
-.stat-roll {
-  text-transform: uppercase;
-  line-height: 1;
-}
-</style>
-
 <style lang="less">
 @asset_spacer: 0.5em;
 
 .ironsworn__asset {
+  .slide-enter-active,
+  .slide-leave-active {
+    max-height: 350px;
+  }
   overflow: hidden;
   transition: var(--std-animation);
   .asset-header {
@@ -213,8 +203,11 @@
       margin: 0;
     }
   }
-  .asset-condition-meter .icon-button .button-text {
-    text-align: left;
+  .asset-condition-meter {
+    gap: 3px;
+    .icon-button .button-text {
+      text-align: left;
+    }
   }
 }
 
