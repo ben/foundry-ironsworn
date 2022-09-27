@@ -171,6 +171,7 @@ function assetsForTypes(types: IAssetType[]) {
       const data = {
         description: renderMarkdown(assetType.Description),
         category: assetType.Name,
+        color: assetType.Display.Color ?? '',
         fields,
         abilities: (asset.Abilities ?? []).map((ability) => {
           const ret = {
