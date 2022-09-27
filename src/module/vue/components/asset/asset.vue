@@ -160,7 +160,6 @@
       flex-wrap: nowrap;
     }
   }
-
   .asset-body {
     transition: var(--std-animation);
     overflow: hidden;
@@ -225,6 +224,7 @@
 @hex_deco_collapsed_height: 32px;
 .asset-ironsworn,
 .asset-starforged {
+  // common properties for asset ability bullet/checkbox
   .asset-ability {
     &:before {
       content: '';
@@ -271,6 +271,7 @@
   }
   .asset-header {
     padding-right: (@hex_deco_collapsed_height * @hex_deco_aspect_ratio);
+    // hex frame style for later use if asset icons added
     // .asset-icon {
     //   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     //   aspect-ratio: @hexagon_aspect_ratio;
