@@ -26,7 +26,7 @@ const config: UserConfig = {
   css: {
     preprocessorOptions: {
       less: {
-        rewriteUrls: 'off',
+        rewriteUrls: 'local',
       },
     },
     postcss: {

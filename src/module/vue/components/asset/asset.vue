@@ -250,7 +250,7 @@
     display: block;
     pointer-events: none;
     content: '';
-    mask-image: url(assets/misc/hex-deco.svg);
+    mask-image: url(/assets/misc/hex-deco.svg);
     background: var(--ironsworn-color-thematic);
     position: absolute;
     aspect-ratio: @hex_deco_aspect_ratio;
@@ -276,8 +276,8 @@
     .asset-ability {
       &:before {
         aspect-ratio: @hexagon_aspect_ratio;
-        background-image: url('assets/misc/hex-checkbox-unchecked.svg');
-        mask-image: url('assets/misc/hex-checkbox-checked.svg');
+        background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+        mask-image: url('/assets/misc/hex-checkbox-checked.svg');
         height: 1em;
         margin-top: 0.15em;
       }
