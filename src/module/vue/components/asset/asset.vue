@@ -4,11 +4,9 @@
     :class="{ [`asset-${$actor?.toolset}`]: true }"
     :aria-expanded="expanded"
     :style="
-      ThemeColors[props.asset?.data?.category]
-        ? `--ironsworn-color-thematic: ${
-            ThemeColors[props.asset?.data?.category]
-          }`
-        : ''
+      props.asset?.data?.color
+        ? `--ironsworn-color-thematic: ${props.asset?.data?.color}`
+        : undefined
     "
   >
     <header class="asset-header nogrow flexrow">
@@ -297,15 +295,6 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
-
-enum ThemeColors {
-  'Command Vehicle' = '#9aa3ad',
-  Module = '#7f5a90',
-  'Support Vehicle' = '#495790',
-  Path = '#3f7faa',
-  Companion = '#3d8b8a',
-  Deed = '#40834f',
-}
 
 const props = defineProps<{ asset: any }>()
 const actor = inject('actor') as Ref
