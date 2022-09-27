@@ -77,7 +77,7 @@
         </ul>
 
         <article
-          class="flexcol condition-meter"
+          class="asset-condition-meter flexcol"
           v-if="asset.data.track.enabled"
         >
           <btn-rollstat
@@ -107,7 +107,7 @@
 </template>
 
 <style lang="less" scoped>
-.condition-meter {
+.asset-condition-meter {
   gap: 3px;
 }
 .slide-enter-active,
@@ -287,7 +287,7 @@
       margin: 0;
     }
   }
-  .condition-meter .icon-button .button-text {
+  .asset-condition-meter .icon-button .button-text {
     text-align: left;
   }
 }
@@ -361,13 +361,6 @@ function destroy() {
     )}</strong></p>`,
     yes: () => foundryItem?.delete(),
     defaultYes: false,
-  })
-}
-function rollTrack() {
-  RollDialog.show({
-    actor: $actor,
-    asset: foundryItem,
-    stat: 'track',
   })
 }
 function exclusiveOptionClick(selectedIdx) {
