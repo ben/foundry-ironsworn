@@ -16,7 +16,7 @@ const config: UserConfig = {
   server: {
     port: 8080,
     proxy: {
-      '^(?!systems/foundry-ironsworn)': `http://localhost:${PORT}/`,
+      '^(?!/systems/foundry-ironsworn)': `http://localhost:${PORT}/`,
       '/socket.io': {
         target: `ws://localhost:${PORT}`,
         ws: true,
