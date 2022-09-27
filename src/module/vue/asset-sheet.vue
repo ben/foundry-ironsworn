@@ -4,15 +4,22 @@
       <document-name :document="item" />
     </SheetHeader>
 
-    <p>
+    <section class="flexrow" style="gap: 5px">
       <input
         v-if="editMode"
         type="text"
         v-model="item.data.category"
         @blur="setCategory"
       />
-      <h3 v-else>{{item.data.category}}</h3>
-    </p>
+      <h3 v-else>{{ item.data.category }}</h3>
+
+      <input
+        type="color"
+        v-if="editMode"
+        v-model="item.data.color"
+        @change="setColor"
+      />
+    </section>
 
     <p>
       <input
@@ -95,5 +102,8 @@ function setDescription() {
 }
 function setCategory() {
   $item?.update({ data: { category: props.item.data.category } })
+}
+function setColor() {
+  $item?.update({ data: { color: props.item.data.color } })
 }
 </script>
