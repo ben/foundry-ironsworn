@@ -4,7 +4,7 @@ import AssetCompendiumBrowserVue from '../vue/asset-compendium-browser.vue'
 
 export class AssetCompendiumBrowser extends VueApplication {
   constructor(
-    protected compendium: string,
+    protected toolset: 'starforged' | 'ironsworn',
     options?: Partial<ApplicationOptions>
   ) {
     super(options)
@@ -22,7 +22,7 @@ export class AssetCompendiumBrowser extends VueApplication {
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
       components: { 'asset-compendium-browser': AssetCompendiumBrowserVue },
-      vueData: async () => ({ compendium: this.compendium }),
+      vueData: async () => ({ toolset: this.toolset }),
     }
   }
 }

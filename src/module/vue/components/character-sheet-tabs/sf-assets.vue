@@ -67,9 +67,7 @@ function sortDown(i) {
 let theAssetBrowser: AssetCompendiumBrowser | undefined
 function assetBrowser() {
   if (!theAssetBrowser) {
-    theAssetBrowser = new AssetCompendiumBrowser(
-      'foundry-ironsworn.starforgedassets'
-    )
+    theAssetBrowser = new AssetCompendiumBrowser('starforged')
   }
   theAssetBrowser.render(true)
 }
