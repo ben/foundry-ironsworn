@@ -1,0 +1,28 @@
+import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
+import { VueApplication } from '../vue/vueapp'
+import AssetCompendiumBrowserVue from '../vue/asset-compendium-browser.vue'
+
+export class AssetCompendiumBrowser extends VueApplication {
+  constructor(
+    protected compendium: string,
+    options?: Partial<ApplicationOptions>
+  ) {
+    super(options)
+  }
+
+  static get defaultOptions(): ApplicationOptions {
+    return mergeObject(super.defaultOptions, {
+      width: 400,
+      height: 600,
+      template:
+        'systems/foundry-ironsworn/templates/asset-compendium-browser.hbs',
+    })
+  }
+
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'asset-compendium-browser': AssetCompendiumBrowserVue },
+      vueData: async () => ({ compendium: this.compendium }),
+    }
+  }
+}
