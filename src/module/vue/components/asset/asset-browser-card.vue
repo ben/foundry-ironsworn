@@ -10,6 +10,13 @@
     "
   >
     <header class="asset-header nogrow flexrow">
+      <i
+        class="fa-solid fa-grip nogrow block draggable"
+        draggable="true"
+        :data-pack="foundryItem.pack"
+        :data-id="foundryItem.id"
+      ></i>
+
       <button
         type="button"
         @click="state.expanded = !state.expanded"
