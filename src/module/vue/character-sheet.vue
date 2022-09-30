@@ -138,6 +138,7 @@ import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
 import { CharacterDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
+
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
@@ -146,13 +147,16 @@ provide(
   'actor',
   computed(() => props.actor)
 )
+
 const $actor = inject($ActorKey)
 function burnMomentum() {
   $actor?.burnMomentum()
 }
+
 function rollStat(stat) {
   RollDialog.show({ actor: $actor, stat })
 }
+
 function openCompendium(name) {
   const pack = game.packs?.get(`foundry-ironsworn.${name}`)
   pack?.render(true)
