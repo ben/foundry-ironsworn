@@ -48,7 +48,7 @@
 
 <script setup lang="ts">
 import { IAsset, IAssetType } from 'dataforged'
-import { provide, reactive } from 'vue'
+import { capitalize, provide, reactive } from 'vue'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
 import { IronswornItem } from '../item/item'
@@ -86,13 +86,20 @@ async function resolveAssets() {
   const assetTypes =
     props.toolset === 'starforged' ? SFAssetTypes : ISAssetTypes
 
+  const i18n = (categoryName: string, extension: string) => {
+    const capCat = capitalize(categoryName)
+    const capToolset = capitalize(props.toolset)
+    return game.i18n.localize(
+      `IRONSWORN.Asset Categories.${capToolset}.${capCat}.${extension}`
+    )
+  }
+
   const categories = [] as DisplayCategory[]
   for (const dfAssetType of assetTypes) {
-    const i18nKeyBase = `IRONSWORN.Asset Categories.${dfAssetType.Name}.`
-    const i18nDescription = game.i18n.localize(i18nKeyBase + 'Description')
+    const i18nDescription = i18n(dfAssetType.Name, 'Description')
     const cat: DisplayCategory = {
       df: dfAssetType,
-      title: game.i18n.localize(i18nKeyBase + 'Title'),
+      title: i18n(dfAssetType.Name, 'Title'),
       description: renderLinksInStr(i18nDescription),
       expanded: false,
       maxHeight: 200 + dfAssetType.Assets.length * 25,
