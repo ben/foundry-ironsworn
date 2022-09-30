@@ -143,20 +143,20 @@ const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
 const actorData = props.actor as CharacterDataProperties
+
 provide(
   'actor',
   computed(() => props.actor)
 )
 
 const $actor = inject($ActorKey)
+
 function burnMomentum() {
   $actor?.burnMomentum()
 }
-
 function rollStat(stat) {
   RollDialog.show({ actor: $actor, stat })
 }
-
 function openCompendium(name) {
   const pack = game.packs?.get(`foundry-ironsworn.${name}`)
   pack?.render(true)
