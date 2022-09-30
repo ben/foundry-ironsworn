@@ -3,7 +3,7 @@
     <div class="flexcol">
       <section class="sheet-area flexcol">
         <!-- Bonds -->
-        <Bonds />
+        <Bonds :compactProgress="true" />
 
         <hr class="nogrow" />
         <!-- Assets -->
@@ -30,7 +30,7 @@
         </div>
       </section>
     </div>
-    <ActiveCompletedProgresses />
+    <ActiveCompletedProgresses :compactProgress="true" />
   </div>
 </template>
 

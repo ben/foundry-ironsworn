@@ -3,11 +3,12 @@
     <h4 class="progress-title">{{ item.name }}</h4>
     <h5 class="progress-subtitle vertical">{{ subtitle }}</h5>
     <section class="progress-widgets flexrow">
-      <Track
+      <ProgressTrack
         v-if="item.data.hasTrack"
         class="progress-track"
         :rank="item.data.rank"
         :ticks="item.data.current"
+        :compact-progress="compactProgress"
       />
       <Clock
         v-if="item.data.hasClock"
@@ -93,7 +94,7 @@
   gap: @progress_widget_spacing;
   .progress-img {
     grid-column: 2;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
     margin: 0;
   }
   .progress-rank-pips {
@@ -120,7 +121,7 @@
   .progress-widgets {
     grid-column: 2 / span 3;
     grid-row: 3;
-    gap: inherit;
+    gap: 2px;
     .progress-clock {
       flex-basis: 50px;
     }
@@ -151,11 +152,16 @@ import BtnFaicon from '../buttons/btn-faicon.vue'
 import RankPips from '../rank-pips/rank-pips.vue'
 import DocumentImg from '../document-img.vue'
 import { RANKS } from '../../../constants.js'
+import ProgressTrack from './progress-track.vue'
 
 const props = defineProps<{
   item: any
   actor: any
   showStar?: boolean
+  /**
+   * When true, renders the progress bar for more compact display.
+   */
+  compactProgress?: boolean
 }>()
 
 const $actor = inject($ActorKey)

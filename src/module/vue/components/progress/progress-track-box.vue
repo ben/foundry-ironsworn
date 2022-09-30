@@ -1,23 +1,23 @@
 <template>
   <div
-    class="flexcol track-box"
-    :class="{ 'track-overflow': true }"
+    class="flexcol progress-track-box"
+    :class="{ 'track-overflow': isOverflowBox }"
     :aria-valuenow="ticks"
     :aria-valuetext="`${ticks} ticks`"
   >
     <svg
-      class="track-box-marks"
+      class="progress-track-box-marks"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
       role="presentational"
     >
-      <g class="ghost-ticks" v-if="ghostMark && ticks < 4">
+      <g class="ghost-ticks" v-if="isOverflowBox">
         <line
           v-bind="tickProps"
           v-for="(tick, i) in tickRange"
           :key="`ghost-tick-${tick}`"
           :transform="tickTransforms[i]"
-          :class="`ghost-tick`"
+          class="ghost-tick"
           :data-tick="tick"
         />
       </g>
@@ -38,33 +38,32 @@
   </div>
 </template>
 <style lang="less">
-.track-box {
+.progress-track-box {
   border: 1px solid;
   align-items: center;
   justify-content: center;
   aspect-ratio: 1;
-  border-radius: 3px;
   object-fit: contain;
-  box-shadow: 2px 2px 0 currentColor;
+  border-radius: 3px;
   &.track-overflow .ghost-ticks {
     opacity: 0.2;
   }
-  .track-box-marks {
-    margin: 5px;
+  .progress-track-box-marks {
+    margin: 10%;
   }
 }
-.track-box-marks {
+.progress-track-box-marks {
   aspect-ratio: 1;
   stroke: currentColor;
   overflow: visible;
-  stroke-width: 2px;
 }
 
 .progress-tick {
-  vector-effect: non-scaling-stroke;
+  // vector-effect: non-scaling-stroke;
+  stroke-width: 8;
   stroke-linecap: round;
   stroke-dashoffset: 0;
-  stroke-dasharray: 50%;
+  stroke-dasharray: 100%;
 }
 
 // Progress tick draw animation
@@ -76,7 +75,7 @@
 }
 
 .draw-tick-enter-from {
-  stroke-dashoffset: -50%;
+  stroke-dashoffset: -100%;
 }
 
 .draw-tick-leave-from {
@@ -102,34 +101,75 @@
     .animateTick(@value,@tickDuration,@baseDelay+ @tickDelay);
   });
 }
-.track {
+.progress-track {
   &[data-rank='1'] {
     // see the Track component
     // Challenge rank troublesome: marks 3 boxes (12 ticks)
     @box1: 1s;
     @box2: 1s;
     @box3: 1s;
-    .track-box:nth-child(3n + 1) {
+    .progress-track-box:nth-child(3n + 1) {
       .animateBox(@box1);
     }
-    .track-box:nth-child(3n + 2) {
+    .progress-track-box:nth-child(3n + 2) {
       .animateBox(@box2, @box1);
     }
-    .track-box:nth-child(3n) {
+    .progress-track-box:nth-child(3n) {
       @d1: (@box1+ @box2);
       .animateBox(@box3,@d1);
     }
-    // handles edge cases when
+    // offsets the draw delay when the score has a value not divisible by 3, which is rare but technically possible
+    &[data-score='1'],
+    &[data-score='4'],
+    &[data-score='7'] {
+      .progress-track-box:nth-child(3n + 2) {
+        .animateBox(@box1);
+      }
+      .progress-track-box:nth-child(3n) {
+        .animateBox(@box2, @box1);
+      }
+      .progress-track-box:nth-child(3n + 1) {
+        @d1: (@box1+ @box2);
+        .animateBox(@box3,@d1);
+      }
+    }
+    &[data-score='2'],
+    &[data-score='5'],
+    &[data-score='8'] {
+      .progress-track-box:nth-child(3n) {
+        .animateBox(@box1);
+      }
+      .progress-track-box:nth-child(3n + 1) {
+        .animateBox(@box2, @box1);
+      }
+      .progress-track-box:nth-child(3n + 2) {
+        @d1: (@box1+ @box2);
+        .animateBox(@box3,@d1);
+      }
+    }
   }
   &[data-rank='2'] {
     // Challenge rank dangerous: marks 2 boxes (8 ticks)
     @box1: 1s;
     @box2: 0.75s;
-    .track-box:nth-child(2n + 1) {
+    .progress-track-box:nth-child(2n + 1) {
       .animateBox(@box1);
     }
-    .track-box:nth-child(2n) {
+    .progress-track-box:nth-child(2n) {
       .animateBox(@box2, @box1);
+    }
+    &[data-score='1'],
+    &[data-score='3'],
+    &[data-score='5'],
+    &[data-score='7'],
+    &[data-score='9'] {
+      // inverts the draw delay when the score has an odd value, which is rare but technically possible
+      .progress-track-box:nth-child(2n) {
+        .animateBox(@box1);
+      }
+      .progress-track-box:nth-child(2n + 1) {
+        .animateBox(@box2, @box1);
+      }
     }
   }
   &[data-rank='3'] {
@@ -161,14 +201,10 @@ const tickRange = range(1, 5)
 const props = defineProps<{
   ticks: number
   /**
-   * Whether to render a second set of 4 ticks with low opacity. Used to indicate legacy tracks that have previously been filled to 10.
+   * Whether to indicate this as an "overflow" progress box by rendering a second set of 4 ticks with low opacity. Used by legacy tracks that have previously been filled to 10.
    */
-  ghostMark?: boolean
+  isOverflowBox?: Boolean
 }>()
-
-function siblingDelayFactor(tickNumber: number) {
-  return Math.max(1 + (tickNumber - props.ticks), 0)
-}
 
 const tickTransforms = [
   'rotate(-45, 50, 50)',

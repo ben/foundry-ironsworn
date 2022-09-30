@@ -19,6 +19,7 @@
             :actor="actor"
             :showStar="progressStars"
             @completed="progressCompleted"
+            :compact-progress="compactProgress"
           />
         </div>
       </transition-group>
@@ -61,6 +62,7 @@
                 :actor="actor"
                 :item="item"
                 :showStar="progressStars"
+                :compact-progress="compactProgress"
               />
             </div>
           </transition-group>
@@ -121,7 +123,14 @@ import { compact } from 'lodash'
 import { IronswornItem } from '../../item/item'
 import { ProgressDataProperties } from '../../item/itemtypes'
 
-const props = defineProps<{ exclude?: string; progressStars?: boolean }>()
+const props = defineProps<{
+  exclude?: string
+  progressStars?: boolean
+  /**
+   * When true, renders the progress bars for more compact display.
+   */
+  compactProgress?: boolean
+}>()
 
 const data = reactive({
   expandCompleted: false,

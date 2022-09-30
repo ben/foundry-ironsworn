@@ -1,6 +1,7 @@
 <template>
   <article
-    class="track"
+    class="progress-track"
+    :class="{ compactProgress }"
     :data-rank="numericRank"
     :data-ticks="ticks"
     :data-score="score"
@@ -8,26 +9,48 @@
     :aria-valuetext="`${score} progress (${ticks} ticks)`"
     :data-tooltip="`${score} progress (${ticks} ticks)`"
   >
-    <TrackBox
+    <ProgressTrackBox
       v-for="(boxTicks, i) in boxes"
-      :key="`box-${i + 1}`"
+      :key="`progress-box-${i + 1}`"
       :ticks="boxTicks ?? 0"
-      :ghostMark="legacyOverflow"
+      :isOverflowBox="legacyOverflow"
     />
     <slot></slot>
   </article>
 </template>
 
 <style lang="less">
-.track {
+.progress-track {
+  @box_shadow_offset: 2px;
+  @box_shadow: @box_shadow_offset @box_shadow_offset 0 currentColor;
   display: grid;
   grid-auto-flow: column;
   gap: 4px;
   justify-content: center;
   align-self: center;
-  .track-box {
+  margin-bottom: @box_shadow_offset;
+  margin-right: @box_shadow_offset;
+  .progress-track-box {
+    box-shadow: @box_shadow;
     max-height: 50px;
     max-width: 50px;
+  }
+  &.compact {
+    @box_border_width: 1px;
+    gap: 0;
+    box-shadow: @box_shadow;
+    border: @box_border_width solid currentColor;
+    border-radius: 3px;
+    .progress-track-box {
+      box-sizing: content-box;
+      box-shadow: none;
+      border: none;
+      border-radius: 0;
+      margin: 0;
+      &:not(:first-child) {
+        border-left: @box_border_width solid currentColor;
+      }
+    }
   }
 }
 </style>
@@ -37,12 +60,22 @@ import { computed } from '@vue/runtime-core'
 import { fill, clamp } from 'lodash'
 import { RANKS } from '../../../constants.js'
 import { NumericRank } from '../../../dataforged/import.js'
-import TrackBox from './track-box.vue'
+import ProgressTrackBox from './progress-track-box.vue'
 
 const props = defineProps<{
+  /**
+   * The number of ticks marked on this track.
+   */
   ticks: number
+  /**
+   * Use 'null' if it's an unranked track, such as a Legacy or classic Bonds.
+   */
   rank: keyof typeof RANKS | null
   legacyOverflow?: boolean
+  /**
+   * When true, renders the progress bar for more compact display.
+   */
+  compactProgress?: boolean
 }>()
 
 const minBoxes = 0

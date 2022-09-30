@@ -1,5 +1,5 @@
 <template>
-  <article class="legacy-track flexcol" :data-legacy="legacy">
+  <article class="legacy-track flexcol" ref="legacyTrack" :data-legacy="legacy">
     <h4 class="legacy-track-title">
       {{ $t(`IRONSWORN.${capitalize(legacy)}`) }}
     </h4>
@@ -22,14 +22,13 @@
       />
     </section>
 
-    <Track
+    <ProgressTrack
       class="legacy-track-progress"
       :ticks="ticksDisplayed"
-      rank="epic"
+      :rank="null"
       :legacyOverflow="ticks >= maxTicks"
       data-tooltip-direction="UP"
     />
-
     <XpTrack
       @click="setXp"
       :max="xpEarned"
@@ -40,70 +39,110 @@
 </template>
 <style lang="less">
 [data-legacy='discoveries'] {
-  --ironsworn-thematic-color: var(--ironsworn-color-legacy-discoveries);
+  --ironsworn-color-thematic: var(--ironsworn-color-legacy-discoveries);
 }
 [data-legacy='bonds'] {
-  --ironsworn-thematic-color: var(--ironsworn-color-legacy-bonds);
+  --ironsworn-color-thematic: var(--ironsworn-color-legacy-bonds);
 }
 [data-legacy='quests'] {
-  --ironsworn-thematic-color: var(--ironsworn-color-legacy-quests);
+  --ironsworn-color-thematic: var(--ironsworn-color-legacy-quests);
 }
+
 .legacy-track {
   display: grid;
-  grid-template-rows: max-content max-content 0.5em 0.5em;
+  grid-template-rows: max-content max-content 0.5em max-content;
+  grid-template-columns: max-content 1fr;
   .legacy-track-title {
     grid-row: 1;
     grid-column: 1;
+    margin: 0;
+    line-height: 2;
   }
   .legacy-track-controls {
     grid-row: 1;
     grid-column: 2;
     align-items: center;
     justify-content: end;
+    .icon-button {
+      aspect-ratio: 1;
+      height: 100%;
+    }
   }
   .legacy-track-progress {
     grid-column: 1 / span 2;
     grid-row: 2 / span 2;
   }
-  .legacy-track-xp {
+  @max_progress_box_width: 50px;
+  @max_xp_box_width: 15px;
+  @progress_box_gap: 4px;
+  @max_track_width: (@max_progress_box_width*10 + @progress_box_gap*9);
+  .progress-track {
+    margin: 0;
+    // offsets the progress box shadow; intentionally placed as a margin so it doesn't disturb the xp box alignment.
+    margin-right: 2px;
+  }
+  .progress-track-box {
+    padding-bottom: (@max_xp_box_width * 0.4);
+    max-height: unset;
+    max-width: @max_progress_box_width;
+    gap: @progress_box_gap;
+  }
+  .xp-track.legacy-track-xp {
+    @xp_border_width: 1px;
     grid-column: 1 / span 2;
     grid-row: 3 / span 2;
-  }
-  .track-box {
-    padding-bottom: 0.45em;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    max-width: @max_track_width;
+    width: 100%;
+    gap: @progress_box_gap;
+    justify-self: center;
+    & > .xp-box {
+      background: var(--ironsworn-color-bg);
+      margin: 0;
+      aspect-ratio: 1;
+      border-radius: 3px;
+      border-width: @xp_border_width;
+      width: 100%;
+      max-width: @max_xp_box_width;
+      &:not(:nth-child(n + 21)) {
+        &:nth-child(2n) {
+          justify-self: left;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          margin-left: -((@progress_box_gap+ @xp_border_width)/2);
+        }
+        &:nth-child(2n + 1) {
+          justify-self: right;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          margin-right: -((@progress_box_gap+ @xp_border_width)/2);
+        }
+      }
+      &:nth-child(n + 21) {
+        grid-column: span 2;
+        justify-self: center;
+      }
+    }
   }
 }
 </style>
-<style lang="less" scoped>
-h4 {
-  margin: 0.5rem 0;
-}
-</style>
-
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import { $ActorKey } from '../provisions'
-import Track from './progress/track.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import { capitalize } from 'lodash'
 import { IronswornActor } from '../../actor/actor.js'
 import XpTrack from './xp-track.vue'
 import _ from 'lodash'
 
-const props = defineProps<{
-  actor: IronswornActor
-  /**
-   * The legacy track type.
-   */
-  legacy: 'quests' | 'bonds' | 'discoveries'
-}>()
+import { ref } from 'vue'
+import ProgressTrack from './progress/progress-track.vue'
 
-const $actor = inject($ActorKey)
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+// TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
+type LegacyType = 'quests' | 'bonds' | 'discoveries'
 
+// TODO: switch to Dataforged consts when available thru DF2
 const maxBoxes = 10
 const maxScore = maxBoxes
 const ticksPerBox = 4
@@ -111,6 +150,20 @@ const maxTicks = maxBoxes * ticksPerBox
 const minTicks = 0
 const xpEarnedPerBox = 2
 const xpEarnedPerOverflowBox = 1
+
+const props = defineProps<{
+  actor: IronswornActor
+  /**
+   * The legacy track type.
+   */
+  legacy: LegacyType
+}>()
+
+const $actor = inject($ActorKey)
+provide(
+  'actor',
+  computed(() => props.actor)
+)
 
 const ticks = computed(
   () => props.actor.data.legacies?.[props.legacy] ?? minTicks
@@ -132,7 +185,9 @@ const xpEarned = computed(() => {
   return fullRateXp
 })
 
-const xpSpent = props.actor.data?.legacies[`${props.legacy}XpSpent`] ?? 0
+const xpSpent = computed(
+  () => props.actor.data?.legacies[`${props.legacy}XpSpent`] ?? 0
+)
 
 const markTooltip = computed(() => {
   let legacy = game.i18n.localize(`IRONSWORN.${capitalize(props.legacy)}`)

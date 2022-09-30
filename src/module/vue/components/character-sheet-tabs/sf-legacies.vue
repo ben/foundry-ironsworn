@@ -1,5 +1,5 @@
 <template>
-  <article class="sf-legacies">
+  <article class="sf-legacies flexcol nogrow">
     <LegacyTrack
       v-for="legacy in ['quests', 'bonds', 'discoveries']"
       :key="legacy"
@@ -15,6 +15,11 @@
     />
   </article>
 </template>
+<style lang="less">
+.sf-legacies {
+  gap: 4px;
+}
+</style>
 
 <script lang="ts" setup>
 import { computed, inject, provide, Ref } from 'vue'
@@ -33,7 +38,7 @@ provide(
 )
 
 const starredProgresses = computed(() => {
-  console.log('$actor?.items', $actor?.items)
+  // console.log('$actor?.items', $actor?.items)
   const result = $actor?.items
     .filter((progressItem: IronswornItem) => progressItem.type === 'progress')
     .filter(

@@ -12,7 +12,7 @@ const classes = computed(() => {
   return {
     clickable: true,
     block: true,
-    xp: true,
+    'xp-box': true,
     selected: selected.value,
   }
 })

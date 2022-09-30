@@ -19,7 +19,11 @@
 
       <!-- PROGRESS -->
       <div class="flexrow track nogrow" style="margin-bottom: 1em">
-        <ProgressTrack :ticks="foe.data.current" />
+        <ProgressTrack
+          :rank="foe?.data.rank"
+          :ticks="foe.data.current"
+          data-tooltip-direction="RIGHT"
+        />
       </div>
 
       <hr class="nogrow" />
@@ -67,12 +71,13 @@ import { $ActorKey } from '../provisions'
 import { throttle } from 'lodash'
 import RankPips from './rank-pips/rank-pips.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
-import ProgressTrack from './progress/old/progress-track.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 import MceEditor from './mce-editor.vue'
 import { RANKS, RANK_INCREMENTS } from '../../constants'
 import { ProgressDataProperties } from '../../item/itemtypes'
 import { FoeDataProperties } from '../../actor/actortypes'
+import Track from './progress/track.vue'
+import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>

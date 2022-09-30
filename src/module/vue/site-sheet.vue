@@ -26,7 +26,7 @@
     </div>
 
     <!-- PROGRESS -->
-    <Track
+    <ProgressTrack
       class="nogrow"
       style="margin-bottom: 1em"
       :ticks="actor.data.current"
@@ -183,6 +183,7 @@ import {
 } from '../item/itemtypes'
 import { OracleRollMessage, TableRow } from '../rolls'
 import { SiteDataProperties } from '../actor/actortypes'
+import ProgressTrack from './components/progress/progress-track.vue'
 
 const props = defineProps<{
   actor: any

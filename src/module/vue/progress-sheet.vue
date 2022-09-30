@@ -59,7 +59,7 @@
           </div>
           <!-- PROGRESS -->
           <div class="flexrow track nogrow" style="margin-bottom: 1em">
-            <Track :ticks="item.data.current" :rank="item.data.rank" />
+            <ProgressTrack :ticks="item.data.current" :rank="item.data.rank" />
           </div>
         </div>
       </Transition>
@@ -134,6 +134,7 @@ import Clock from './components/clock.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
 import SheetHeaderBasic from './sheet-header-basic.vue'
+import ProgressTrack from './components/progress/progress-track.vue'
 
 const props = defineProps<{ item: any }>()
 const $item = inject($ItemKey)
