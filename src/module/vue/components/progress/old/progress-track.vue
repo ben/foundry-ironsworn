@@ -21,7 +21,9 @@ function ticksSvg(ticks: number) {
   if (ticks > 3) ret += '<line x1="50" y1="15" x2="50" y2="85" />'
   return ret + ''
 }
+
 const props = defineProps<{ ticks: number }>()
+
 const boxes = computed(() => {
   const ret = [] as string[]
   let remainingTicks = props.ticks
