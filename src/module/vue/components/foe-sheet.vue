@@ -73,6 +73,7 @@ import MceEditor from './mce-editor.vue'
 import { RANKS, RANK_INCREMENTS } from '../../constants'
 import { ProgressDataProperties } from '../../item/itemtypes'
 import { FoeDataProperties } from '../../actor/actortypes'
+
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
@@ -84,11 +85,14 @@ const actorData = props.actor as FoeDataProperties
 const foe = props.actor.items.find(
   (x) => x.type === 'progress'
 ) as ProgressDataProperties
+
 const $actor = inject($ActorKey)
 const foundryFoe = $actor?.items.get((foe as any)?._id)
+
 const rankText = computed(() => {
   return game.i18n.localize(RANKS[foe?.data.rank])
 })
+
 // async foe(newFoe) {
 //   const data = { name: newFoe?.name, img: newFoe?.img }
 //   await $actor?.update(data)
@@ -100,10 +104,12 @@ function addEmpty() {
     { parent: $actor }
   )
 }
+
 function openCompendium(name) {
   const pack = game.packs?.get(`foundry-ironsworn.${name}`)
   pack?.render(true)
 }
+
 function setRank(rank) {
   foundryFoe?.update({ data: { rank } })
   foe!.data.rank = rank
@@ -112,16 +118,19 @@ function clearProgress() {
   foundryFoe?.update({ 'data.current': 0 })
   foe.data.current = 0
 }
+
 function markProgress() {
   const increment = RANK_INCREMENTS[foe?.data.rank]
   const newValue = Math.min(foe?.data.current + increment, 40)
   foundryFoe?.update({ 'data.current': newValue })
   foe.data.current = newValue
 }
+
 function saveDescription() {
   foundryFoe?.update({
     data: { description: foe?.data.description },
   })
 }
+
 const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>
