@@ -88,6 +88,7 @@ import { inject, reactive } from 'vue'
 import { IronswornItem } from '../../../item/item'
 import { AssetDataProperties } from '../../../item/itemtypes'
 import AssetTrack from './asset-track.vue'
+import Clock from '../clock.vue'
 
 const props = defineProps<{
   df: IAsset
