@@ -98,6 +98,7 @@ const rankText = computed(() => {
 //   await $actor?.update(data)
 //   await $actor?.data.token.update(data)
 // },
+
 function addEmpty() {
   Item.create(
     { name: 'NPC', type: 'progress', data: { subtype: 'foe' } },
@@ -114,6 +115,7 @@ function setRank(rank) {
   foundryFoe?.update({ data: { rank } })
   foe!.data.rank = rank
 }
+
 function clearProgress() {
   foundryFoe?.update({ 'data.current': 0 })
   foe.data.current = 0
@@ -131,6 +133,5 @@ function saveDescription() {
     data: { description: foe?.data.description },
   })
 }
-
 const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>
