@@ -1,3 +1,4 @@
+<!-- incomplete component, for use in places where a progress item isn't available -->
 <template>
   <article class="progress-embed">
     <RankPips
