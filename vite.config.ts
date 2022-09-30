@@ -24,6 +24,11 @@ const config: UserConfig = {
     },
   },
   css: {
+    preprocessorOptions: {
+      less: {
+        rewriteUrls: 'local',
+      },
+    },
     postcss: {
       plugins: [autoprefixer()],
     },

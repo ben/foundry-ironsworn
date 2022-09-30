@@ -1,7 +1,13 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
 import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import { IMoveCategory, IOracle, IOracleCategory, starforged } from 'dataforged'
+import {
+  IAssetType,
+  IMoveCategory,
+  IOracle,
+  IOracleCategory,
+  starforged,
+} from 'dataforged'
 import { isArray, isObject, max } from 'lodash'
 import { marked } from 'marked'
 import shajs from 'sha.js'
@@ -9,6 +15,7 @@ import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
 import {
+  ISAssetTypes,
   ISMoveCategories,
   ISOracleCategories,
   SFAssetTypes,
@@ -63,6 +70,7 @@ const PACKS = [
   'foundry-ironsworn.starforgedmoves',
   'foundry-ironsworn.starforgedoracles',
   'foundry-ironsworn.foeactorssf',
+  'foundry-ironsworn.ironswornassets',
   'foundry-ironsworn.ironswornoracles',
   'foundry-ironsworn.ironswornmoves',
 ]
@@ -89,6 +97,7 @@ export async function importFromDataforged() {
 
   await processSFMoves()
   await processSFAssets()
+  await processISAssets()
   await processSFOracles()
   await processSFEncounters()
   await processSFFoes()
@@ -143,53 +152,83 @@ async function processSFMoves() {
   })
 }
 
-async function processSFAssets() {
+/**
+ * ASSSETS
+ */
+
+function assetsForTypes(types: IAssetType[]) {
   const assetsToCreate = [] as (ItemDataConstructorData &
     Record<string, unknown>)[]
-  for (const assetType of SFAssetTypes) {
+  for (const assetType of types) {
     for (const asset of assetType.Assets) {
+      // Inputs map to fields and exclusive options
+      const fields = [] as { name: string; value: string }[]
+      const exclusiveOptions = [] as { name: string; selected: boolean }[]
+      // TODO: "Number"
+      for (const input of asset.Inputs ?? []) {
+        if (input['Input Type'] === 'Text') {
+          fields.push({ name: input.Name, value: '' })
+        }
+        if (input['Input Type'] === 'Select') {
+          for (const option of input.Options) {
+            exclusiveOptions.push({ name: option.Name, selected: false })
+          }
+        }
+      }
+
+      const data = {
+        description: renderMarkdown(assetType.Description),
+        category: assetType.Name,
+        color: assetType.Display.Color ?? '',
+        fields,
+        abilities: (asset.Abilities ?? []).map((ability) => {
+          const ret = {
+            enabled: ability.Enabled || false,
+            description: renderMarkdown(ability.Text),
+          } as any
+
+          for (const input of ability.Inputs ?? []) {
+            if (input['Input Type'] === 'Clock') {
+              const ic = input
+              ret.hasClock = true
+              ret.clockMax = ic.Segments
+              ret.clockTicks = ic.Filled
+            }
+          }
+
+          return ret
+        }),
+        track: {
+          enabled: !!asset['Condition Meter'],
+          name: asset['Condition Meter']?.Name,
+          current: asset['Condition Meter']?.Value,
+          max: asset['Condition Meter']?.Max,
+        },
+        exclusiveOptions,
+      }
       assetsToCreate.push({
         type: 'asset',
         _id: hashLookup(asset.$id),
         name: `${assetType.Name} / ${asset.Name}`,
-        data: {
-          description: renderMarkdown(assetType.Description),
-          fields:
-            asset.Inputs?.map((input) => ({
-              name: input.Name,
-              value: '',
-            })) || [],
-          abilities: (asset.Abilities ?? []).map((ability) => {
-            const ret = {
-              enabled: ability.Enabled || false,
-              description: renderMarkdown(ability.Text),
-            } as any
-
-            for (const input of ability.Inputs ?? []) {
-              if (input['Input Type'] === 'Clock') {
-                const ic = input
-                ret.hasClock = true
-                ret.clockMax = ic.Segments
-                ret.clockTicks = ic.Filled
-              }
-              // TODO: other input types
-            }
-
-            return ret
-          }),
-          track: {
-            enabled: !!asset['Condition Meter'],
-            name: asset['Condition Meter']?.Name,
-            current: asset['Condition Meter']?.Value,
-            max: asset['Condition Meter']?.Max,
-          },
-          exclusiveOptions: [], // TODO:
-        },
+        data: data,
       })
     }
   }
+  return assetsToCreate
+}
+
+async function processSFAssets() {
+  const assetsToCreate = assetsForTypes(SFAssetTypes)
   await Item.createDocuments(assetsToCreate, {
     pack: 'foundry-ironsworn.starforgedassets',
+    keepId: true,
+  })
+}
+
+async function processISAssets() {
+  const assetsToCreate = assetsForTypes(ISAssetTypes)
+  await Item.createDocuments(assetsToCreate, {
+    pack: 'foundry-ironsworn.ironswornassets',
     keepId: true,
   })
 }
