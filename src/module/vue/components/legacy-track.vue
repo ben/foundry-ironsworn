@@ -24,13 +24,18 @@
 
     <Track
       class="legacy-track-progress"
-      :ticks="displayedTicks"
+      :ticks="ticksDisplayed"
       rank="epic"
-      :legacyOverflow="ticks >= 40"
+      :legacyOverflow="ticks >= maxTicks"
       data-tooltip-direction="UP"
     />
 
-    <LegacyXpCounters class="legacy-track-xp" :legacy="legacy" :actor="actor" />
+    <XpTrack
+      @click="setXp"
+      :max="xpEarned"
+      :marked="xpSpent"
+      class="legacy-track-xp"
+    />
   </article>
 </template>
 <style lang="less">
@@ -76,14 +81,14 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import { computed, inject, provide, Ref } from 'vue'
-import { $ActorKey } from '../../provisions'
-import LegacyXpCounters from './legacy-xp-counters.vue'
-import Track from '../progress/track.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import { computed, inject, provide } from 'vue'
+import { $ActorKey } from '../provisions'
+import Track from './progress/track.vue'
+import BtnFaicon from './buttons/btn-faicon.vue'
 import { capitalize } from 'lodash'
-import { IronswornActor } from '../../../actor/actor.js'
-import { RANKS } from '../../../constants.js'
+import { IronswornActor } from '../../actor/actor.js'
+import XpTrack from './xp-track.vue'
+import _ from 'lodash'
 
 const props = defineProps<{
   actor: IronswornActor
@@ -99,6 +104,36 @@ provide(
   computed(() => props.actor)
 )
 
+const maxBoxes = 10
+const maxScore = maxBoxes
+const ticksPerBox = 4
+const maxTicks = maxBoxes * ticksPerBox
+const minTicks = 0
+const xpEarnedPerBox = 2
+const xpEarnedPerOverflowBox = 1
+
+const ticks = computed(
+  () => props.actor.data.legacies?.[props.legacy] ?? minTicks
+)
+const ticksDisplayed = computed(() => ticks.value % maxTicks)
+
+const score = computed(() =>
+  _.clamp(Math.floor(ticks.value / ticksPerBox), 0, maxScore)
+)
+
+const xpEarned = computed(() => {
+  const fullRateXp = score.value * xpEarnedPerBox
+  if (ticks.value > maxTicks) {
+    const overflowTicks = ticks.value - maxTicks
+    const overflowBoxes = Math.floor(overflowTicks / ticksPerBox)
+    const overflowXp = overflowBoxes * xpEarnedPerOverflowBox
+    return fullRateXp + overflowXp
+  }
+  return fullRateXp
+})
+
+const xpSpent = props.actor.data?.legacies[`${props.legacy}XpSpent`] ?? 0
+
 const markTooltip = computed(() => {
   let legacy = game.i18n.localize(`IRONSWORN.${capitalize(props.legacy)}`)
   let amount = game.i18n.localize(`IRONSWORN.PROGRESS.TICK.1`)
@@ -108,33 +143,31 @@ const markTooltip = computed(() => {
 const editMode = computed(
   () => props.actor.flags?.['foundry-ironsworn']?.['edit-mode']
 )
-const ticks = computed(() => {
-  return props.actor.data.legacies?.[props.legacy] ?? 0
-})
-const displayedTicks = computed(() => ticks.value % 40)
-
-const effectiveProgressScore = computed(() =>
-  ticks.value > 40 ? 10 : Math.floor(ticks.value / 40)
-)
 
 const overflowLabel = computed(() => {
-  const n = Math.floor(ticks.value / 40) * 10
+  const n = Math.floor(ticks.value / maxTicks) * 10
   if (n > 0) {
     return `(+${n})`
   }
   return undefined
 })
 
-function adjust(inc) {
+function setXp(newValue: number) {
+  $actor?.update({
+    [`data.legacies.${props.legacy}XpSpent`]: newValue,
+  })
+}
+
+function adjustTrack(inc) {
   const current = props.actor.data?.legacies[props.legacy] ?? 0
   $actor?.update({
     [`data.legacies.${props.legacy}`]: current + inc,
   })
 }
 function increase() {
-  adjust(1)
+  adjustTrack(1)
 }
 function decrease() {
-  adjust(-1)
+  adjustTrack(-1)
 }
 </script>

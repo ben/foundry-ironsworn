@@ -18,7 +18,7 @@
 
 <script lang="ts" setup>
 import { computed, inject, provide, Ref } from 'vue'
-import LegacyTrack from '../xp/legacy-track.vue'
+import LegacyTrack from '../legacy-track.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
 import { $ActorKey } from '../../provisions.js'
 import { IronswornActor } from '../../../actor/actor.js'
@@ -36,8 +36,12 @@ const starredProgresses = computed(() => {
   console.log('$actor?.items', $actor?.items)
   const result = $actor?.items
     .filter((progressItem: IronswornItem) => progressItem.type === 'progress')
-    .filter((progressItem: IronswornItem) => progressItem.data?.starred)
-  console.log('$actor?.items filtered', result)
+    .filter(
+      (
+        progressItem: IronswornItem & { data: { starred: boolean | undefined } }
+      ) => progressItem.data?.starred
+    )
+  // console.log('$actor?.items filtered', result)
   return result
 })
 </script>

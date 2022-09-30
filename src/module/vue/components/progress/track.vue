@@ -34,14 +34,14 @@
 
 <script setup lang="ts">
 import { computed } from '@vue/runtime-core'
-import { fill, clamp, compact } from 'lodash'
+import { fill, clamp } from 'lodash'
 import { RANKS } from '../../../constants.js'
-import { NumericRank } from '../../../dataforged.js'
+import { NumericRank } from '../../../dataforged/import.js'
 import TrackBox from './track-box.vue'
 
 const props = defineProps<{
   ticks: number
-  rank: keyof typeof RANKS
+  rank: keyof typeof RANKS | null
   legacyOverflow?: boolean
 }>()
 
@@ -54,7 +54,9 @@ const score = computed(() =>
   clamp(Math.floor(props.ticks / ticksPerBox), minBoxes, maxBoxes)
 )
 
-const numericRank = computed(() => NumericRank[props.rank])
+const numericRank = computed(() =>
+  props.rank != null ? NumericRank[props.rank] : null
+)
 
 const visibleTicks = computed(() =>
   props.ticks > maxTicks ? props.ticks % maxTicks : props.ticks
