@@ -4,6 +4,7 @@
     <WithRolllisteners
       element="p"
       v-html="$enrichMarkdown(category.description)"
+      @moveclick="moveClick"
     />
 
     <AssetBrowserCard
@@ -18,7 +19,7 @@
 
 <script setup lang="ts">
 import { IAsset, IAssetType } from 'dataforged'
-import { reactive } from 'vue'
+import { provide, reactive } from 'vue'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
 import { IronswornItem } from '../item/item'
@@ -43,8 +44,10 @@ const data = reactive({
   categories: [] as DisplayCategory[],
 })
 
+provide('toolset', props.toolset)
+
 // Kick into async without requiring a <Suspense>
-Promise.resolve().then(async () => {
+async function resolveAssets() {
   const pack = game.packs.get(`foundry-ironsworn.${props.toolset}assets`)
   if (!pack)
     throw new Error(`can't load pack foundry-ironsworn.${props.toolset}assets`)
@@ -78,5 +81,10 @@ Promise.resolve().then(async () => {
   }
 
   data.categories = categories
-})
+}
+resolveAssets()
+
+function moveClick() {
+  // TODO:
+}
 </script>
