@@ -1,21 +1,50 @@
 <template>
-  <section v-for="category in data.categories" :key="category.df.$id">
-    <h2>{{ category.title }}</h2>
-    <WithRolllisteners
-      element="p"
-      v-html="$enrichMarkdown(category.description)"
-      @moveclick="moveClick"
-    />
+  <section
+    class="nogrow"
+    v-for="category in data.categories"
+    :key="category.df.$id"
+    :style="`--transition-max-height: ${category.maxHeight}px`"
+  >
+    <header class="nogrow flexrow">
+      <button
+        type="button"
+        @click="category.expanded = !category.expanded"
+        :aria-controls="category.df.$id"
+        class="clickable text asset-expand-toggle"
+      >
+        <h2>{{ category.title }}</h2>
+      </button>
+    </header>
 
-    <AssetBrowserCard
-      :df="asset.df"
-      :foundry-item="asset.foundryItem"
-      v-for="asset in category.assets"
-      :key="asset.df.$id"
-      class="flexcol nogrow movesheet-row"
-    />
+    <Transition name="slide">
+      <section
+        v-if="category.expanded"
+        :aria-expanded="category.expanded"
+        :id="category.df.$id"
+      >
+        <WithRolllisteners
+          element="p"
+          v-html="$enrichMarkdown(category.description)"
+          @moveclick="moveClick"
+        />
+        <AssetBrowserCard
+          :df="asset.df"
+          :foundry-item="asset.foundryItem"
+          v-for="asset in category.assets"
+          :key="asset.df.$id"
+          class="flexcol nogrow movesheet-row"
+        />
+      </section>
+    </Transition>
   </section>
 </template>
+
+<style lang="less" scoped>
+.slide-enter-active,
+.slide-leave-active {
+  max-height: var(--transition-max-height);
+}
+</style>
 
 <script setup lang="ts">
 import { IAsset, IAssetType } from 'dataforged'
@@ -23,7 +52,6 @@ import { provide, reactive } from 'vue'
 import { hashLookup, renderLinksInStr } from '../dataforged'
 import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
 import { IronswornItem } from '../item/item'
-import { AssetDataProperties } from '../item/itemtypes'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
 
@@ -38,6 +66,7 @@ interface DisplayCategory {
   title: string
   description: string
   expanded: boolean
+  maxHeight: number
   assets: DisplayAsset[]
 }
 const data = reactive({
@@ -46,9 +75,11 @@ const data = reactive({
 
 provide('toolset', props.toolset)
 
+const packName = `foundry-ironsworn.${props.toolset}assets`
+
 // Kick into async without requiring a <Suspense>
 async function resolveAssets() {
-  const pack = game.packs.get(`foundry-ironsworn.${props.toolset}assets`)
+  const pack = game.packs.get(packName)
   if (!pack)
     throw new Error(`can't load pack foundry-ironsworn.${props.toolset}assets`)
 
@@ -64,6 +95,7 @@ async function resolveAssets() {
       title: game.i18n.localize(i18nKeyBase + 'Title'),
       description: renderLinksInStr(i18nDescription),
       expanded: false,
+      maxHeight: 200 + dfAssetType.Assets.length * 25,
       assets: [],
     }
 
