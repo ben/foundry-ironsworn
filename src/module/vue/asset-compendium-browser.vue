@@ -29,6 +29,7 @@
             v-html="$enrichMarkdown(category.description)"
             @moveclick="moveClick"
           />
+
           <AssetBrowserCard
             :df="asset.df"
             :foundry-item="(asset.foundryItem as any)"

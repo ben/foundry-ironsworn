@@ -1,7 +1,7 @@
 
 <template>
   <article
-    class="item-row flexcol document item ironsworn__asset"
+    class="item-row item flexcol document ironsworn__asset"
     draggable="true"
     :data-pack="foundryItem.pack"
     :data-id="foundryItem.id"
@@ -12,6 +12,7 @@
         ? `--ironsworn-color-thematic: ${data.data.color}`
         : undefined
     "
+    @dragstart="dragStart"
   >
     <header class="asset-header nogrow flexrow">
       <i class="fa-solid fa-grip nogrow block draggable item"></i>
@@ -109,5 +110,17 @@ const toolset = inject('toolset')
 
 function moveClick() {
   // TODO:
+}
+
+function dragStart(ev) {
+  ev.dataTransfer.setData(
+    'text/plain',
+    JSON.stringify({
+      type: 'Item',
+      pack: props.foundryItem.pack,
+      id: props.foundryItem.id,
+      uuid: props.foundryItem.uuid,
+    })
+  )
 }
 </script>
