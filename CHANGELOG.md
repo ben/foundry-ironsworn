@@ -2,6 +2,10 @@
 
 ## Next Release
 
+## 1.17.20
+
+- Remove the window transparency in the SF theme
+
 ## 1.17.19
 
 - Ironsworn assets are now sourced from Dataforged, fixing a number of data issues ([#483](https://github.com/ben/foundry-ironsworn/pull/483))
