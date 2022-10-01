@@ -47,7 +47,7 @@
           </div>
         </dl>
         <ul class="asset-abilities flexcol">
-          <with-rolllisteners
+          <WithRolllisteners
             v-for="(ability, i) in data.data.abilities"
             :key="'ability' + i"
             element="li"
@@ -64,7 +64,7 @@
               :wedges="ability.clockMax"
               :ticked="ability.clockTicks"
             />
-          </with-rolllisteners>
+          </WithRolllisteners>
         </ul>
 
         <article
@@ -89,6 +89,7 @@ import { IronswornItem } from '../../../item/item'
 import { AssetDataProperties } from '../../../item/itemtypes'
 import AssetTrack from './asset-track.vue'
 import Clock from '../clock.vue'
+import WithRolllisteners from '../with-rolllisteners.vue'
 
 const props = defineProps<{
   df: IAsset

@@ -26,9 +26,6 @@
             <BtnCompendium class="block" compendium="ironswornassets">
               {{ $t('IRONSWORN.Assets') }}
             </BtnCompendium>
-            <btn-faicon icon="atlas" @click="assetBrowser">
-              Browser
-            </btn-faicon>
           </div>
         </div>
       </section>
@@ -71,7 +68,6 @@ import ProgressControls from '../progress-controls.vue'
 import { throttle } from 'lodash'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
-import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
@@ -149,13 +145,5 @@ function completedSortUp(i) {
 }
 function completedSortDown(i) {
   applySort(i, i + 1, false, (x) => x.data.data.completed)
-}
-
-let theAssetBrowser: AssetCompendiumBrowser | undefined
-function assetBrowser() {
-  if (!theAssetBrowser) {
-    theAssetBrowser = new AssetCompendiumBrowser('ironsworn')
-  }
-  theAssetBrowser.render(true)
 }
 </script>

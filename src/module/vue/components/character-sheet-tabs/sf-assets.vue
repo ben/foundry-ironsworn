@@ -16,7 +16,6 @@
       <btn-compendium class="block" compendium="starforgedassets">{{
         $t('IRONSWORN.Assets')
       }}</btn-compendium>
-      <btn-faicon icon="atlas" @click="assetBrowser"> Browser </btn-faicon>
     </div>
   </div>
 </template>
@@ -29,7 +28,6 @@ import Asset from '../asset/asset.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 import { $ActorKey } from '../../provisions'
 import BtnFaicon from '../buttons/btn-faicon.vue'
-import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
@@ -62,13 +60,5 @@ function sortUp(i) {
 }
 function sortDown(i) {
   applySort(i, i + 1, false)
-}
-
-let theAssetBrowser: AssetCompendiumBrowser | undefined
-function assetBrowser() {
-  if (!theAssetBrowser) {
-    theAssetBrowser = new AssetCompendiumBrowser('starforged')
-  }
-  theAssetBrowser.render(true)
 }
 </script>
