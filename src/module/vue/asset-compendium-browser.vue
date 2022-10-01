@@ -1,6 +1,6 @@
 <template>
   <section
-    class="nogrow"
+    class="nogrow asset-category"
     v-for="category in data.categories"
     :key="category.df.$id"
     :style="`--transition-max-height: ${category.maxHeight}px`"
@@ -19,7 +19,7 @@
     <Transition name="slide">
       <div v-if="category.expanded">
         <section
-          class="asset-category"
+          class="asset-category-contents"
           :aria-expanded="category.expanded"
           :id="category.df.$id"
         >
@@ -61,9 +61,14 @@ h2 {
 }
 
 .asset-category {
-  border-left: 2px solid;
-  margin-left: 10px;
-  padding-left: 10px;
+  margin-bottom: 1em;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.asset-category-contents {
+  margin: 5px 10px;
 }
 
 .category-description {
