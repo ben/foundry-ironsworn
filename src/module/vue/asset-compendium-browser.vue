@@ -31,7 +31,7 @@
         />
         <AssetBrowserCard
           :df="asset.df"
-          :foundry-item="asset.foundryItem"
+          :foundry-item="(asset.foundryItem as any)"
           v-for="asset in category.assets"
           :key="asset.df.$id"
           class="flexcol nogrow movesheet-row"
