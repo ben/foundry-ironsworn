@@ -27,7 +27,6 @@ import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 import { $ActorKey } from '../../provisions'
-import BtnFaicon from '../buttons/btn-faicon.vue'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
