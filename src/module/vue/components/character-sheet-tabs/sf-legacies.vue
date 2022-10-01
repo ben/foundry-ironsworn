@@ -6,18 +6,27 @@
       :actor="actor"
       :legacy="(legacy as any)"
     />
-    <hr class="nogrow" v-if="starredProgresses.length" />
-    <ProgressListItem
-      v-for="(progressItem, i) in starredProgresses"
-      :key="`progress-item-${i}`"
-      :item="progressItem"
-      :actor="actor"
-    />
+    <section
+      class="starred-progress-tracks nogrow"
+      v-if="starredProgresses.length"
+    >
+      <ProgressListItem
+        v-for="(progressItem, i) in starredProgresses"
+        :key="`progress-item-${i}`"
+        :item="progressItem"
+        :actor="actor"
+      />
+    </section>
   </article>
 </template>
 <style lang="less">
+@gap: 0.5em;
 .sf-legacies {
-  gap: 4px;
+  gap: @gap;
+  .starred-progress-tracks {
+    border-top: 1px solid;
+    padding: @gap 0;
+  }
 }
 </style>
 
@@ -38,15 +47,9 @@ provide(
 )
 
 const starredProgresses = computed(() => {
-  // console.log('$actor?.items', $actor?.items)
-  const result = $actor?.items
-    .filter((progressItem: IronswornItem) => progressItem.type === 'progress')
-    .filter(
-      (
-        progressItem: IronswornItem & { data: { starred: boolean | undefined } }
-      ) => progressItem.data?.starred
-    )
-  // console.log('$actor?.items filtered', result)
+  const result = props.actor.items.filter(
+    (item: IronswornItem) => item.type === 'progress' && item.data?.starred
+  )
   return result
 })
 </script>
