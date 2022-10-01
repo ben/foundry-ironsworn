@@ -1,7 +1,7 @@
 <template>
   <article
     class="progress-track"
-    :class="{ compactProgress }"
+    :class="{ compact: compactProgress }"
     :data-rank="numericRank"
     :data-ticks="ticks"
     :data-score="score"
@@ -20,25 +20,23 @@
 </template>
 
 <style lang="less">
+@box_border_radius: 3px;
+@box_border_width: 1px;
+@box_gap: 4px;
 .progress-track {
-  @box_shadow_offset: 2px;
-  @box_shadow: @box_shadow_offset @box_shadow_offset 0 currentColor;
   display: grid;
   grid-auto-flow: column;
-  gap: 4px;
+  grid-template-columns: repeat(10 1fr);
   justify-content: center;
-  align-self: center;
-  margin-bottom: @box_shadow_offset;
-  margin-right: @box_shadow_offset;
+  align-items: center;
+  gap: @box_gap;
   .progress-track-box {
-    box-shadow: @box_shadow;
     max-height: 50px;
     max-width: 50px;
+    border-radius: @box_border_radius;
   }
   &.compact {
-    @box_border_width: 1px;
     gap: 0;
-    box-shadow: @box_shadow;
     border: @box_border_width solid currentColor;
     border-radius: 3px;
     .progress-track-box {

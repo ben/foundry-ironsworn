@@ -187,25 +187,28 @@
         flex-direction: row;
         gap: @asset_spacer;
       }
-      .asset-ability-clock {
-      }
     }
-    .asset-ability-text {
-      gap: (@asset_spacer / 2);
-      p {
-        margin: 0;
-      }
-    }
-    ul,
-    ol {
+  }
+
+  .asset-ability-clock {
+    min-width: 40px;
+  }
+  .asset-ability-text {
+    // flex-grow: 2;
+    // gap: (@asset_spacer / 2);
+    p {
       margin: 0;
     }
   }
-  .asset-condition-meter {
-    gap: 3px;
-    .icon-button .button-text {
-      text-align: left;
-    }
+  ul,
+  ol {
+    margin: 0;
+  }
+}
+.asset-condition-meter {
+  gap: 3px;
+  .icon-button .button-text {
+    text-align: left;
   }
 }
 

@@ -45,7 +45,7 @@
   display: flex;
   flex-flow: row nowrap;
   stroke: currentColor;
-  fill: currentColor;
+  fill: var(--ironsworn-color-thematic);
   fill-opacity: var(--widget-fill-opacity);
   align-content: center;
   gap: 2px;

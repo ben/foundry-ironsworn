@@ -60,7 +60,7 @@
 
 .progress-tick {
   // vector-effect: non-scaling-stroke;
-  stroke-width: 8;
+  stroke-width: 5;
   stroke-linecap: round;
   stroke-dashoffset: 0;
   stroke-dasharray: 100%;

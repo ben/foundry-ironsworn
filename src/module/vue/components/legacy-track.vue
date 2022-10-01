@@ -80,10 +80,10 @@
   @max_track_width: (@max_progress_box_width*10 + @progress_box_gap*9);
   .progress-track {
     margin: 0;
-    // offsets the progress box shadow; intentionally placed as a margin so it doesn't disturb the xp box alignment.
-    margin-right: 2px;
+    gap: @progress_box_gap;
   }
   .progress-track-box {
+    // extra padding to allow comfy overlap with xp pips
     padding-bottom: (@max_xp_box_width * 0.4);
     max-height: unset;
     max-width: @max_progress_box_width;
