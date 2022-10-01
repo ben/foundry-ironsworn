@@ -26,7 +26,7 @@
 .progress-track {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: repeat(10 1fr);
+  grid-template-columns: repeat(10, 1fr);
   justify-content: center;
   align-items: center;
   gap: @box_gap;
@@ -37,16 +37,23 @@
   }
   &.compact {
     gap: 0;
-    border: @box_border_width solid currentColor;
-    border-radius: 3px;
+    display: flex;
+    flex-flow: row nowrap;
     .progress-track-box {
-      box-sizing: content-box;
-      box-shadow: none;
-      border: none;
+      border: @box_border_width solid currentColor;
       border-radius: 0;
       margin: 0;
+      &:first-child {
+        border-radius: @box_border_radius 0 0 @box_border_radius;
+      }
       &:not(:first-child) {
-        border-left: @box_border_width solid currentColor;
+        margin-left: -(@box_border_width / 2);
+      }
+      &:last-child {
+        border-radius: 0 @box_border_radius @box_border_radius 0;
+      }
+      &:not(:last-child) {
+        margin-right: -(@box_border_width / 2);
       }
     }
   }
