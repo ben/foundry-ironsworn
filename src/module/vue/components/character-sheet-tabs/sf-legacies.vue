@@ -1,11 +1,13 @@
 <template>
   <article class="sf-legacies flexcol nogrow">
-    <LegacyTrack
-      v-for="legacy in ['quests', 'bonds', 'discoveries']"
-      :key="legacy"
-      :actor="actor"
-      :legacy="(legacy as any)"
-    />
+    <section class="legacy-tracks">
+      <LegacyTrack
+        v-for="legacy in ['quests', 'bonds', 'discoveries']"
+        :key="legacy"
+        :actor="actor"
+        :legacy="(legacy as any)"
+      />
+    </section>
     <section
       class="starred-progress-tracks nogrow"
       v-if="starredProgresses.length"
@@ -23,8 +25,10 @@
 @gap: 0.5em;
 .sf-legacies {
   gap: @gap;
-  .starred-progress-tracks {
+  > *:not(:first-child) {
     border-top: 1px solid;
+  }
+  .starred-progress-tracks {
     padding: @gap 0;
   }
 }
