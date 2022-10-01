@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.17.20
+
 - Remove the window transparency in the SF theme
 
 ## 1.17.19
