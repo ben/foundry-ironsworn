@@ -27,6 +27,7 @@
     "Complication": "Complication!",
     "MarkProgress": "Mark Progress",
     "PROGRESS": {
+      "Track": "progress track",
       "BOX": {
         "1": "1 box",
         "2": "2 boxes",

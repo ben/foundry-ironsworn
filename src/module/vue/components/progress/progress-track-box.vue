@@ -4,6 +4,8 @@
     :class="{ 'track-overflow': isOverflowBox }"
     :aria-valuenow="ticks"
     :aria-valuetext="`${ticks} ticks`"
+    @transitionstart="onTransitionStart"
+    @transitionend="onTransitionEnd"
   >
     <svg
       class="progress-track-box-marks"
@@ -105,9 +107,9 @@
   &[data-rank='1'] {
     // see the Track component
     // Challenge rank troublesome: marks 3 boxes (12 ticks)
-    @box1: 1s;
-    @box2: 1s;
-    @box3: 1s;
+    @box1: 0.75s;
+    @box2: 0.75s;
+    @box3: 0.75s;
     .progress-track-box:nth-child(3n + 1) {
       .animateBox(@box1);
     }
@@ -220,4 +222,11 @@ const tickProps = computed(() => ({
   y2: '0',
   class: 'progress-tick',
 }))
+
+function onTransitionStart(event) {
+  console.log('transitionStart', event)
+}
+function onTransitionEnd(event) {
+  console.log('transitionEnd', event)
+}
 </script>

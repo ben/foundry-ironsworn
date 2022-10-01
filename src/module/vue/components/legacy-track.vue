@@ -26,6 +26,7 @@
       class="legacy-track-progress"
       :ticks="ticksDisplayed"
       :rank="null"
+      :aria-valuemax="undefined"
       :legacyOverflow="ticks >= maxTicks"
       data-tooltip-direction="UP"
     />

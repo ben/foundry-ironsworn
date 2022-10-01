@@ -1,21 +1,28 @@
 <template>
   <article
+    :tabindex="0"
     class="progress-track"
     :class="{ compact: compactProgress }"
+    role="slider"
+    :aria-label="$t('IRONSWORN.PROGRESS.Track')"
+    aria-orientation="horizontal"
     :data-rank="numericRank"
     :data-ticks="ticks"
     :data-score="score"
     :aria-valuenow="ticks"
+    :aria-valuemin="0"
+    :aria-valuemax="40"
     :aria-valuetext="`${score} progress (${ticks} ticks)`"
     :data-tooltip="`${score} progress (${ticks} ticks)`"
   >
     <ProgressTrackBox
       v-for="(boxTicks, i) in boxes"
+      tabindex="-1"
+      role="presentational"
       :key="`progress-box-${i + 1}`"
       :ticks="boxTicks ?? 0"
       :isOverflowBox="legacyOverflow"
     />
-    <slot></slot>
   </article>
 </template>
 
@@ -24,6 +31,9 @@
 @box_border_width: 1px;
 @box_gap: 4px;
 .progress-track {
+  &:focus {
+    box-shadow: 0 0 5px var(--color-shadow-primary);
+  }
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(10, 1fr);
