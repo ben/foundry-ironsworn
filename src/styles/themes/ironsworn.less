@@ -1,155 +1,163 @@
 body.theme-ironsworn {
   @background-color: white;
-  @dark-color: #888;
-  @medium-color: darkgray;
   @light-color: #ccc;
+  @medium-color: darkgray;
+  @dark-color: #888;
   @text-color: black;
   --ironsworn-color-bg: @background-color;
+  --ironsworn-color-shade-1: @light-color;
+  --ironsworn-color-shade-2: @medium-color;
+  --ironsworn-color-shade-3: @dark-color;
+  --ironsworn-color-fg: @text-color;
+  --ironsworn-color-border: @text-color;
   --ironsworn-color-thematic: @text-color;
+  --ironsworn-color-highlight: palegoldenrod;
 
   input::placeholder {
-    color: @medium-color;
+    color: var(--ironsworn-color-shade-2);
   }
 
   input.highlight:focus {
-    background-color: black;
-    color: white;
+    background-color: var(--ironsworn-color-fg);
+    color: var(--ironsworn-color-bg);
   }
 
   .window-content,
   .journal-entry .journal-entry-content {
-    background: @background-color;
+    background: var(--ironsworn-color-bg);
   }
 
   .sheet-area {
-    border-color: @medium-color;
+    border-color: var(--ironsworn-color-shade-2);
   }
 
   .margin-left,
   .margin-right {
-    border-color: black;
+    border-color: var(--ironsworn-color-border);
     h1 {
-      border-color: black;
+      border-color: var(--ironsworn-color-border);
     }
   }
 
   .stack-row {
-    border-color: black;
+    border-color: var(--ironsworn-color-border);
   }
 
   .edit {
-    border-color: black;
+    border-color: var(--ironsworn-color-border);
 
     &.editing {
-      background: @medium-color;
+      background: var(--ironsworn-color-shade-2);
     }
   }
 
   .inset {
-    border-color: @medium-color;
+    border-color: var(--ironsworn-color-shade-2);
   }
 
   .item-row {
-    border-color: black;
-    background-color: white;
+    border-color: var(--ironsworn-color-border);
+    background-color: var(--ironsworn-color-bg);
 
     &.highlighted {
-      background-color: palegoldenrod;
+      background-color: var(--ironsworn-color-highlight);
     }
   }
 
   .movesheet-row.highlighted {
-    background-color: palegoldenrod;
+    background-color: var(--ironsworn-color-highlight);
   }
 
   .progresses .item {
-    border-color: @medium-color;
+    border-color: var(--ironsworn-color-shade-2);
   }
 
   [role^='tablist'],
   [role*=' tablist'] {
-    border-color: @medium-color;
+    border-color: var(--ironsworn-color-shade-2);
   }
 
   .item-list {
     ol > h2 {
-      border-color: white;
-      background-color: @dark-color;
-      color: white;
+      border-color: var(--ironsworn-color-bg);
+      background-color: var(--ironsworn-color-shade-3);
+      color: var(--ironsworn-color-bg);
     }
 
     .item {
-      border-color: @medium-color;
+      border-color: var(--ironsworn-color-shade-2);
     }
   }
 
   .progress {
-    border-color: black;
+    border-color: var(--ironsworn-color-border);
   }
 
   .move-title {
-    background-color: @background-color;
-    border-color: @dark-color;
+    background-color: var(--ironsworn-color-bg);
+    border-color: var(--ironsworn-color-shade-3);
   }
 
   .clickable {
+    // renders the stroke behind the fill of the glyph
     paint-order: stroke fill;
     -webkit-text-stroke: 0px transparent;
+    &.selected,
+    &[aria-selected='true'] {
+      &:not(svg):not(.svg) {
+        color: var(--ironsworn-color-bg);
+        background-color: var(--ironsworn-color-thematic);
+        border-color: var(--ironsworn-color-border);
+        // half the stroke's width is rendered behind the glyph, so 2px means we get an apparent width of 1px;
+        -webkit-text-stroke: 2px $border-color;
+      }
+    }
 
     &.disabled,
     &:disabled,
     &[aria-disabled='true'] {
-      color: @dark-color;
+      color: var(--ironsworn-color-shade-3);
     }
 
-    &.selected,
-    &[aria-selected='true'] {
-      &:not(svg):not(.svg) {
-        color: white;
-        background-color: var(--ironsworn-color-thematic);
-        border-color: black;
-        -webkit-text-stroke: 2px $border-color;
-      }
-    }
     &.hover,
     &:hover {
       &.block {
-        background: @light-color;
+        background: var(--ironsworn-color-shade-1);
       }
       &.text:not(.block) {
-        color: @light-color;
+        color: var(--ironsworn-color-shade-1);
       }
     }
     &:active {
       &.block {
-        background: @medium-color;
+        background: var(--ironsworn-color-shade-2);
       }
       &.text:not(.block) {
-        color: @medium-color;
+        color: var(--ironsworn-color-shade-2);
       }
     }
   }
 
   .drag-highlight {
-    background: @medium-color;
+    background: var(--ironsworn-color-shade-2);
   }
 
   .stats {
     .stat {
-      border-color: black;
+      border-color: var(--ironsworn-color-border);
     }
   }
 
   .compact {
     .bordergroup {
-      border-color: black;
+      border-color: var(--ironsworn-color-border);
     }
   }
 
   .ironsworn-roll {
     .dice-formula,
     .dice-total {
-      background-color: @background-color;
+      background-color: var(--ironsworn-color-bg);
     }
   }
 
@@ -157,11 +165,11 @@ body.theme-ironsworn {
     &.selected,
     &[aria-selected='true'] {
       background-color: @text-color;
-      color: @light-color;
+      color: var(--ironsworn-color-shade-1);
 
       .entity-link,
       .content-link {
-        color: white;
+        color: var(--ironsworn-color-bg);
         padding: none;
         border: none;
         background: transparent;
