@@ -1,73 +1,85 @@
 @import './starforged-font.css'; // HACK to avoid import error
 
 body.theme-starforged {
-  @theme-font: 'Carrois Gothic SC', sans-serif;
+  --ironsworn-font: 'Carrois Gothic SC', sans-serif;
 
-  @dark-overlay: #000000cc;
-  @dark-color: #33999933;
-  @muted-color: #11777799;
-  @medium-color: #33999999;
-  @light-color: #55bbbb99;
+  --ironsworn-color-thematic: #399;
+  //   @text-light-color: #6ff;
+  --ironsworn-color-accent: orange;
+  --ironsworn-color-fg: #3dd;
+  --ironsworn-color-fg-faded: #399;
+  --ironsworn-color-mid: #266;
+  --ironsworn-color-bg-faded: #022;
+  --ironsworn-color-bg: black;
 
-  @text-dark-color: #399;
-  @text-medium-color: #3dd;
-  @text-light-color: #6ff;
+  --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
+
+  --ironsworn-color-border: var(--ironsworn-color-fg-faded);
+  --ironsworn-color-border-faded: var(--ironsworn-color-mid);
+
+  --ironsworn-color-fg-highlight: #6ff;
+  --ironsworn-color-bg-highlight: var(--ironsworn-color-bg-faded);
+
+  --ironsworn-color-widget-fill: var(--ironsworn-color-bg-faded);
+  --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-text: var(--ironsworn-color-fg);
+
+  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-mid);
+  --ironsworn-color-widget-text-selected: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg-highlight);
 
   .hover-fx(@spread_box:5px,@spread_text:10px) {
     &:hover {
-      box-shadow: 0 0 @spread_box @light-color;
-      color: @text-light-color;
-      text-shadow: 0 0 @spread_text @light-color;
+      box-shadow: 0 0 @spread_box var(--ironsworn-color-fg-faded);
+      color: var(---ironsworn-color-fg-highlight);
+      text-shadow: 0 0 @spread_text var(--ironsworn-color-fg-faded);
     }
   }
 
-  --ironsworn-color-thematic: #399;
-
-  --ironsworn-color-bg: black;
   --ironsworn-color-danger: hsl(0, 80%, 50%);
   --ironsworn-color-success: hsl(290, 80%, 50%);
   --ironsworn-color-success-faded: hsl(290, 80%, 60%);
 
-  --ironsworn-dice-background: darken(@text-dark-color, 20);
+  --ironsworn-dice-background: var(--ironsworn-color-bg-faded);
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
   body {
-    font-family: @theme-font;
+    font-family: var(--ironsworn-font);
   }
 
   .app {
-    color: @text-medium-color;
+    color: var(--ironsworn-color-fg);
   }
 
   input::placeholder {
-    color: @medium-color;
+    color: var(--ironsworn-color-mid);
   }
 
   input.highlight:focus {
-    box-shadow: 0 0 5px orange;
-    background-color: @medium-color;
-    color: @text-light-color;
+    box-shadow: 0 0 5px var(--ironsworn-color-accent);
+    background-color: var(--ironsworn-color-bg-highlight);
+    color: var(---ironsworn-color-fg-highlight);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: @dark-color;
-    border-color: @medium-color;
+    background: var(--ironsworn-color-bg-faded);
+    border-color: var(--ironsworn-color-border-faded);
   }
 
   .window-app,
   .journal-entry .journal-entry-content {
     background: initial;
     background-color: var(--ironsworn-color-bg);
-    border: 1px solid @text-dark-color;
+    border: 1px solid var(--ironsworn-color-border);
   }
 
   .editor {
-    color: @text-medium-color;
+    color: var(--ironsworn-color-fg);
     background-color: var(--ironsworn-color-bg);
   }
 
   .ProseMirror {
-    background-color: @dark-color;
+    background-color: var(--ironsworn-color-bg-faded);
     padding: 0.5rem;
   }
 
@@ -77,64 +89,64 @@ body.theme-starforged {
     background-color: var(--ironsworn-color-bg);
   }
 
-  font-family: @theme-font;
-  color: @text-medium-color;
+  font-family: var(--ironsworn-font);
+  color: var(--ironsworn-color-fg);
   .dialog-buttons {
     .dialog-button {
       color: currentColor;
     }
   }
   select {
-    border-color: @dark-color;
-    color: @text-medium-color;
+    border-color: var(--ironsworn-color-border-faded);
+    color: var(--ironsworn-color-fg);
   }
 
   h2,
   h3 {
-    color: @text-medium-color;
-    border-bottom-color: @light-color;
+    color: var(--ironsworn-color-fg);
+    border-bottom-color: var(--ironsworn-color-border);
   }
 
   .inline-roll {
-    background: @dark-color;
-    border-color: @light-color;
+    background: var(--ironsworn-color-bg-faded);
+    border-color: var(--ironsworn-color-border);
 
     &:hover {
-      text-shadow: 0 0 8px @text-medium-color;
+      text-shadow: 0 0 8px var(--ironsworn-color-fg);
     }
   }
 
   .window-content {
     background: var(--ironsworn-color-bg);
     background-image: none;
-    color: @text-medium-color;
+    color: var(--ironsworn-color-fg);
   }
 
   input,
   textarea,
   textarea#chat-message {
-    background: @dark-color;
+    background: var(--ironsworn-color-bg-faded);
     border: 0;
-    color: @text-medium-color;
+    color: var(--ironsworn-color-fg);
 
     &:focus {
-      box-shadow: 0 0 10px @light-color;
+      box-shadow: 0 0 10px var(--ironsworn-color-fg-faded);
       cursor: pointer;
     }
   }
 
   .sheet-area {
-    border-color: @light-color;
+    border-color: var(--ironsworn-color-border);
   }
 
   .clickable:not(svg):not(.svg) {
-    color: @text-dark-color;
+    color: var(--ironsworn-color-fg-faded);
     &.hover,
     &:hover,
     &:focus {
       &.block,
       &.text {
-        color: @text-light-color;
+        color: var(---ironsworn-color-fg-highlight);
       }
     }
 
@@ -142,42 +154,42 @@ body.theme-starforged {
     &[aria-selected='true'] {
       &.block,
       &.text {
-        color: @text-light-color;
+        color: var(---ironsworn-color-fg-highlight);
       }
     }
   }
 
   .drag-highlight {
-    background: @medium-color;
+    background: var(--ironsworn-color-bg-highlight);
   }
 
   .stats {
     .stat {
-      border-color: @text-medium-color;
+      border-color: var(--ironsworn-color-fg);
     }
   }
 
   hr {
-    border-color: @light-color;
+    border-color: var(--ironsworn-color-border);
   }
 
   .entity-link,
   .content-link {
-    background-color: @dark-color;
-    border-color: @medium-color;
-    color: @text-medium-color;
+    background-color: var(--ironsworn-color-bg-faded);
+    border-color: var(--ironsworn-color-border-faded);
+    color: var(--ironsworn-color-fg);
     i {
-      color: @text-light-color;
+      color: var(--ironsworn-color-fg-highlight);
     }
   }
 
   .movesheet-row.highlighted {
-    background-color: @muted-color;
+    background-color: var(--ironsworn-color-bg-highlight);
   }
 
   .compact {
     .bordergroup {
-      border-color: @light-color;
+      border-color: var(--ironsworn-color-border);
     }
   }
 
@@ -193,41 +205,41 @@ body.theme-starforged {
   }
   .prosemirror button,
   .tox .tox-tbtn--bespoke {
-    background-color: @dark-color;
-    color: @text-medium-color;
-    border-color: @muted-color;
+    background-color: var(--ironsworn-color-bg-faded);
+    color: var(--ironsworn-color-fg);
+    border-color: var(--ironsworn-color-border-faded);
     .hover-fx();
   }
 
   select {
-    background-color: @dark-color;
+    background-color: var(--ironsworn-color-bg-faded);
   }
 
   input[type='checkbox'] {
-    background-color: @dark-color;
+    background-color: var(--ironsworn-color-bg-faded);
   }
 
   table {
-    border-color: @muted-color;
+    border-color: var(--ironsworn-color-border);
   }
 
   .chat-message {
-    background: @dark-overlay;
-    border-color: @muted-color;
-    color: @text-medium-color;
+    background: var(--ironsworn-color-bg);
+    border-color: var(--ironsworn-color-border);
+    color: var(--ironsworn-color-fg);
 
     .message-header {
-      color: @text-dark-color;
+      color: var(--ironsworn-color-fg-faded);
     }
 
     .message-content {
-      border: 1px solid @text-dark-color;
+      border: 1px solid var(--ironsworn-color-border);
     }
 
     .dice-formula,
     .dice-total {
-      background: @dark-overlay;
-      // color: @text-light-color;
+      background: var(--ironsworn-color-bg);
+      // color:var(---ironsworn-color-fg-highlight);
       border-width: 0px;
       padding: 5px 0px 5px 0px;
       .die {
@@ -239,10 +251,10 @@ body.theme-starforged {
         }
 
         &.min {
-          color: @text-medium-color;
+          color: var(--ironsworn-color-fg);
         }
         &.max {
-          color: @text-medium-color;
+          color: var(--ironsworn-color-fg);
         }
       }
     }
@@ -250,41 +262,41 @@ body.theme-starforged {
     table tr {
       &.selected,
       &[aria-selected='true'] {
-        background-color: @medium-color;
-        color: @text-light-color;
+        background-color: var(--ironsworn-color-mid);
+        color: var(---ironsworn-color-fg-highlight);
 
         .entity-link,
         .content-link {
-          color: @text-light-color;
+          color: var(---ironsworn-color-fg-highlight);
         }
       }
     }
   }
 
   #sidebar-tabs {
-    border-color: @medium-color;
-    box-shadow: 0 0 10px @light-color;
+    border-color: var(--ironsworn-color-border-faded);
+    box-shadow: 0 0 10px var(--ironsworn-color-fg-faded);
 
     .item {
-      color: @text-dark-color;
+      color: var(--ironsworn-color-fg-faded);
       &.active {
-        color: @text-light-color;
-        border-color: @medium-color;
-        box-shadow: 0 0 6px inset @light-color;
-        text-shadow: 0 0 10px @light-color;
+        color: var(---ironsworn-color-fg-highlight);
+        border-color: var(--ironsworn-color-border-faded);
+        box-shadow: 0 0 6px inset var(--ironsworn-color-fg-faded);
+        text-shadow: 0 0 10px var(--ironsworn-color-fg-faded);
       }
     }
   }
 
   #chat-controls {
     .roll-type-select {
-      background-color: @dark-color;
+      background-color: var(--ironsworn-color-bg-faded);
     }
   }
 
   .directory {
     .directory-header .header-search input {
-      background-color: @dark-color;
+      background-color: var(--ironsworn-color-bg-faded);
     }
   }
 }

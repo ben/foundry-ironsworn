@@ -11,7 +11,7 @@ body.theme-ironsworn {
   --ironsworn-color-fg: @text-color;
   --ironsworn-color-border: @text-color;
   --ironsworn-color-thematic: @text-color;
-  --ironsworn-color-highlight: palegoldenrod;
+  --ironsworn-color-bg-highlight: palegoldenrod;
 
   input::placeholder {
     color: var(--ironsworn-color-shade-2);
@@ -60,12 +60,12 @@ body.theme-ironsworn {
     background-color: var(--ironsworn-color-bg);
 
     &.highlighted {
-      background-color: var(--ironsworn-color-highlight);
+      background-color: var(--ironsworn-color-bg-highlight);
     }
   }
 
   .movesheet-row.highlighted {
-    background-color: var(--ironsworn-color-highlight);
+    background-color: var(--ironsworn-color-bg-highlight);
   }
 
   .progresses .item {

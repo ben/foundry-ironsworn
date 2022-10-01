@@ -18,11 +18,40 @@
   --widget-fill-opacity: 1;
   --widget-fill-opacity-preview: 0.5;
   --widget-stroke-width: 1px;
+  --ironsworn-color-fg-highlight: 0;
+  --ironsworn-color-bg-highlight: palegoldenrod;
+
+  --ironworn-color-fg: black;
+  // lightness between 'mid' and fg'
+  --ironsworn-color-fg-faded: 0;
+  // lightness roughly halfway between 'fg' and 'bg'
+  --ironsworn-color-mid: 0;
+  // lightness between 'mid' and 'bg'
+  --ironsworn-color-bg-faded: 0;
   --ironsworn-color-bg: white;
+
+  --ironsworn-color-border: var(--ironworn-color-fg);
+  --ironsworn-color-border-faded: var(--ironsworn-color-fg-faded);
+
+  // widget w/o any states like hover or selected
+  --ironsworn-color-widget-text: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-fill: var(--ironsworn-color-bg);
+  --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
+  // inverts FG/BG colours when selected
+  --ironsworn-color-widget-text-selected: var(--ironsworn-color-bg);
+  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg);
+  // hover can be thought of as a "preview" of select, so this shows the 'ghost' version of the fill
+  --ironsworn-color-widget-text-hover: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-fill-hover: var(--ironsworn-color-bg-faded);
+  --ironsworn-color-widget-stroke-hover: var(--ironsworn-color-bg-faded);
+
+  --ironsworn-color-widget-text-active: var(--ironsworn-color-widget-text);
+  --ironsworn-color-widget-fill-active: var(--ironsworn-color-widget-fill);
+  --ironsworn-color-widget-stroke-active: var(--ironsworn-color-widget-stroke);
 
   --ironsworn-color-red-1: #ff4f5e;
   // original sample from PDF: #c9181a
-  // previously: #ec230e
   --ironsworn-color-red-2: #e33722;
   --ironsworn-color-red-3: #8e0006;
   --ironsworn-color-purple-1: #e056e4;
@@ -229,14 +258,17 @@
     &.svg {
       &.selected,
       &[aria-selected='true'] {
-        fill-opacity: 1;
+        fill: var(--ironsworn-color-widget-fill-selected);
+        stroke: var(--ironsworn-color-widget-stroke-selected);
       }
       &.hover,
       &:hover {
-        fill-opacity: 0.35;
+        fill: var(--ironsworn-color-widget-fill-hover);
+        stroke: var(--ironsworn-color-widget-stroke-hover);
       }
       &:active {
-        fill-opacity: 0.5;
+        fill: var(--ironsworn-color-widget-fill-active);
+        stroke: var(--ironsworn-color-widget-stroke-active);
       }
     }
   }
