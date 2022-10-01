@@ -1,7 +1,11 @@
 
 <template>
   <article
-    class="item-row flexcol ironsworn__asset"
+    class="item-row flexcol document item ironsworn__asset"
+    draggable="true"
+    :data-pack="foundryItem.pack"
+    :data-id="foundryItem.id"
+    :data-document-id="foundryItem.id"
     :class="{ [`asset-${toolset}`]: true }"
     :style="
       data.data.color
@@ -10,12 +14,7 @@
     "
   >
     <header class="asset-header nogrow flexrow">
-      <i
-        class="fa-solid fa-grip nogrow block draggable"
-        draggable="true"
-        :data-pack="foundryItem.pack"
-        :data-id="foundryItem.id"
-      ></i>
+      <i class="fa-solid fa-grip nogrow block draggable item"></i>
 
       <button
         type="button"
