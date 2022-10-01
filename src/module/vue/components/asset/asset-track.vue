@@ -14,7 +14,7 @@ import Boxrow from '../boxrow/boxrow.vue'
 
 const props = defineProps<{ item: any }>()
 
-const $item = inject($ItemKey)
+const $item = inject($ItemKey, undefined)
 
 function click(value) {
   $item?.update({
