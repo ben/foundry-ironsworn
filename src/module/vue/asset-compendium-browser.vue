@@ -5,25 +5,27 @@
     :key="category.df.$id"
     :style="`--transition-max-height: ${category.maxHeight}px`"
   >
-    <header class="nogrow flexrow">
-      <button
-        type="button"
-        @click="category.expanded = !category.expanded"
+    <h2 class="flexrow">
+      <BtnFaicon
+        :icon="category.expanded ? 'caret-down' : 'caret-right'"
         :aria-controls="category.df.$id"
-        class="clickable text asset-expand-toggle"
+        class="juicy text"
+        @click="category.expanded = !category.expanded"
       >
-        <h2>{{ category.title }}</h2>
-      </button>
-    </header>
+        {{ category.title }}
+      </BtnFaicon>
+    </h2>
 
     <Transition name="slide">
       <section
         v-if="category.expanded"
+        class="asset-category"
         :aria-expanded="category.expanded"
         :id="category.df.$id"
       >
         <WithRolllisteners
-          element="p"
+          element="div"
+          class="category-description"
           v-html="$enrichMarkdown(category.description)"
           @moveclick="moveClick"
         />
@@ -44,6 +46,28 @@
 .slide-leave-active {
   max-height: var(--transition-max-height);
 }
+
+h2 {
+  margin: 0;
+  line-height: 1.5;
+  border: none;
+  height: min-content;
+  button {
+    line-height: 1.5;
+    height: min-content;
+    text-transform: uppercase;
+  }
+}
+
+.asset-category {
+  border-left: 2px solid;
+  margin-left: 10px;
+  padding-left: 10px;
+}
+
+.category-description {
+  margin: 10px 0;
+}
 </style>
 
 <script setup lang="ts">
@@ -54,6 +78,7 @@ import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
 import { IronswornItem } from '../item/item'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
+import BtnFaicon from './components/buttons/btn-faicon.vue'
 
 const props = defineProps<{ toolset: 'starforged' | 'ironsworn' }>()
 
