@@ -17,26 +17,27 @@
     </h2>
 
     <Transition name="slide">
-      <section
-        v-if="category.expanded"
-        class="asset-category"
-        :aria-expanded="category.expanded"
-        :id="category.df.$id"
-      >
-        <WithRolllisteners
-          element="div"
-          class="category-description"
-          v-html="$enrichMarkdown(category.description)"
-          @moveclick="moveClick"
-        />
-        <AssetBrowserCard
-          :df="asset.df"
-          :foundry-item="(asset.foundryItem as any)"
-          v-for="asset in category.assets"
-          :key="asset.df.$id"
-          class="flexcol nogrow movesheet-row"
-        />
-      </section>
+      <div v-if="category.expanded">
+        <section
+          class="asset-category"
+          :aria-expanded="category.expanded"
+          :id="category.df.$id"
+        >
+          <WithRolllisteners
+            element="div"
+            class="category-description"
+            v-html="$enrichMarkdown(category.description)"
+            @moveclick="moveClick"
+          />
+          <AssetBrowserCard
+            :df="asset.df"
+            :foundry-item="(asset.foundryItem as any)"
+            v-for="asset in category.assets"
+            :key="asset.df.$id"
+            class="flexcol nogrow movesheet-row"
+          />
+        </section>
+      </div>
     </Transition>
   </section>
 </template>
@@ -127,7 +128,7 @@ async function resolveAssets() {
       title: i18n(dfAssetType.Name, 'Title'),
       description: renderLinksInStr(i18nDescription),
       expanded: false,
-      maxHeight: 200 + dfAssetType.Assets.length * 25,
+      maxHeight: 200 + dfAssetType.Assets.length * 30,
       assets: [],
     }
 
