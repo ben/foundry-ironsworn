@@ -14,7 +14,7 @@ export class AssetCompendiumBrowser extends VueApplication {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.Assets'),
       width: 400,
-      height: 800,
+      height: 600,
       resizable: true,
       template:
         'systems/foundry-ironsworn/templates/asset-compendium-browser.hbs',
