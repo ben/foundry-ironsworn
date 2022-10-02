@@ -26,9 +26,8 @@ import { computed, inject, reactive } from 'vue'
 import SfTruth from './components/sf-truth.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import { ISettingTruth } from 'dataforged'
-import { $EmitterKey } from './provisions'
 
-const emitter = inject($EmitterKey)
+const emitter = CONFIG.IRONSWORN.emitter
 
 const props = defineProps<{ truths: ISettingTruth[] }>()
 

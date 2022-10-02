@@ -1,5 +1,3 @@
-import * as lodash from 'lodash'
-import { marked } from 'marked'
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import * as dataforgedHelpers from './module/dataforged'

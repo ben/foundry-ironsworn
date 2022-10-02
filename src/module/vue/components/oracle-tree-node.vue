@@ -94,7 +94,6 @@ import { computed, inject, reactive, ref } from 'vue'
 import { IOracleTreeNode } from '../../features/customoracles'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
-import { $EmitterKey } from '../provisions'
 import { IronswornItem } from '../../item/item'
 import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 
@@ -118,13 +117,12 @@ function toggleManually() {
 }
 
 // Click on a move link: broadcast event
-const $emitter = inject($EmitterKey)
 function moveclick(item: IronswornItem) {
-  $emitter?.emit('highlightMove', item.id ?? '')
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id ?? '')
 }
 
 function oracleclick(dfid) {
-  $emitter?.emit('highlightOracle', dfid)
+  CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
 }
 
 const children = ref([] as any[])
@@ -141,7 +139,7 @@ function expand() {
 }
 
 const $el = ref<HTMLElement>()
-$emitter?.on('highlightOracle', (dfid) => {
+CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
   if (props.node.dataforgedNode?.$id === dfid) {
     state.highlighted = true
     $el.value?.scrollIntoView({
