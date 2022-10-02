@@ -14,17 +14,9 @@
   .dice-formula,
   .dice-total {
     background: var(--ironsworn-color-bg);
-    // color:var(---ironsworn-color-fg-highlight);
     border-width: 0px;
     padding: 5px 0px 5px 0px;
     .die {
-      &.d6 {
-        // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
-      }
-      &.d10 {
-        // background-image: url('systems/foundry-ironsworn/assets/icons/d10-blank.svg');
-      }
-
       &.min {
         color: var(--ironsworn-color-fg);
       }
@@ -37,7 +29,7 @@
   table tr {
     &.selected,
     &[aria-selected='true'] {
-      background-color: var(--ironsworn-color-midtone);
+      background-color: var(--ironsworn-color-bg-highlight);
       color: var(---ironsworn-color-fg-highlight);
     }
   }
