@@ -169,7 +169,7 @@ label {
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { capitalize, flatten, throttle } from 'lodash'
+import { capitalize, flatten, sample, throttle } from 'lodash'
 import { provide, computed, reactive, inject } from 'vue'
 import { IronswornActor } from '../actor/actor'
 import { $ActorKey } from './provisions'
@@ -607,7 +607,7 @@ async function randomizeName() {
     const json = await CONFIG.IRONSWORN.dataforgedHelpers.getDFOracleByDfId(
       `Starforged/Oracles/Planets/${kc}`
     )
-    name = CONFIG.IRONSWORN._.sample(json?.['Sample Names'] ?? [])
+    name = sample(json?.['Sample Names'] ?? [])
   } else if (subtype === 'settlement') {
     const table =
       await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(

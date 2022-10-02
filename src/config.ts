@@ -11,6 +11,7 @@ import {
   IronswornRollMessage,
   OracleRollMessage,
 } from './module/rolls'
+import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 
 export interface IronswornConfig {
   actorClass: typeof IronswornActor
@@ -27,8 +28,7 @@ export interface IronswornConfig {
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
 
-  _: typeof lodash
-  marked: typeof marked
+  beta: { [k: string]: any }
 }
 
 export const IRONSWORN: IronswornConfig = {
@@ -48,6 +48,7 @@ export const IRONSWORN: IronswornConfig = {
   Dataforged: starforged,
   dataforgedHelpers,
 
-  _: lodash,
-  marked,
+  beta: {
+    AssetCompendiumBrowser,
+  },
 }
