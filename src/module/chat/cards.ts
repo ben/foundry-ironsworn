@@ -130,16 +130,7 @@ export class IronswornChatCard {
       return (TextEditor as any)._onClickContentLink(ev)
     }
 
-    for (const actor of game.actors?.contents || []) {
-      if (
-        (actor.moveSheet as any)?._state >= 0 &&
-        actor.moveSheet?.highlightMove
-      ) {
-        return actor.moveSheet.highlightMove(item)
-      }
-    }
-
-    // Found the item, but no move sheet open. Do nothing.
+    CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id ?? '')
   }
 
   async _oracleNavigate(ev: JQuery.ClickEvent) {
