@@ -2,20 +2,22 @@
 
 // TODO: mixin that contains all relevant "buttonlike" classes
 
-a.entity-link,
-a.content-link {
-  .clickable-common();
-  .clickable-block();
-  .clickable-hover();
+.btnColor() {
   .clickable-text();
-  // background-color: var(--ironsworn-color-bg-faded);
-  // border-color: var(--ironsworn-color-border-faded);
-  color: var(--ironsworn-color-fg);
-  i {
-    color: var(--ironsworn-color-fg);
-  }
+  .clickable-hover();
+  .clickable-common();
+  color: var(--ironsworn-color-btn-fg);
+  background-color: var(--ironsworn-color-btn-bg);
+  border-color: var(--ironsworn-color-btn-border);
 }
 
+a.entity-link,
+a.content-link {
+  .btnColor();
+  .clickable-block();
+}
+
+form button,
 button,
 .dialog .dialog-buttons button {
   width: unset;
@@ -23,18 +25,14 @@ button,
   background: unset;
   border: unset;
   border-radius: unset;
-  // font-size: unset;
-  // line-height: unset;
   font-family: inherit;
   cursor: pointer;
-  border-color: var(--ironsworn-color-widget-stroke-enabled);
   &:hover,
   &:focus {
-    // background: unset;
-    // border: unset;
     outline: none;
     box-shadow: unset;
   }
+  .btnColor();
 }
 
 .inline-roll {
