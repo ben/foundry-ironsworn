@@ -48,7 +48,9 @@ export abstract class VueActorSheet extends ActorSheet {
       const pack = game.packs.get((data as any).pack)
       const document = await pack?.getDocument((data as any).id)
       if (document) {
-        this.actor.createEmbeddedDocuments('Item', [document.toObject() as any])
+        this.actor.createEmbeddedDocuments('Item', [
+          (document as any).toObject(),
+        ])
       }
     }
 
