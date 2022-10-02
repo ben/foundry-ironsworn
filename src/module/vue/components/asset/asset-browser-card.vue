@@ -116,7 +116,7 @@ function dragStart(ev) {
   ev.dataTransfer.setData(
     'text/plain',
     JSON.stringify({
-      type: 'Item',
+      type: 'AssetBrowserData',
       pack: props.foundryItem.pack,
       id: props.foundryItem.id,
       uuid: props.foundryItem.uuid,
