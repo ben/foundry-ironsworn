@@ -1,0 +1,43 @@
+// this should really, but that may not be practical until the compact sheet is replaced with a Vue one.
+// i've left it as its own file to keep it corraled until then
+
+.stats {
+  flex: 0;
+  justify-content: space-around;
+  .stat {
+    flex: 0 0 75px;
+    border-width: var(--ironsworn-border-width);
+    border-style: var(--ironsworn-border-style);
+    border-radius: var(--ironsworn-border-radius-xl);
+    text-align: center;
+    padding: 0.5rem 0;
+
+    h3 {
+      margin: 0;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 22px;
+    }
+
+    h4 {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    input {
+      width: 50%;
+      margin-bottom: 5px;
+      font-weight: bold;
+      font-size: 18px;
+      text-align: center;
+    }
+  }
+
+  .edit {
+    flex: 0 0 30px;
+    justify-items: center;
+    align-items: center;
+    border-width: var(--ironsworn-border-width);
+    transition: var(--transition-general);
+  }
+}

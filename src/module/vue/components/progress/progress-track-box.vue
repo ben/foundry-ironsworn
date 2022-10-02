@@ -41,14 +41,15 @@
 </template>
 <style lang="less">
 .progress-track-box {
-  border: 1px solid;
+  border: var(--ironsworn-border);
+  border-radius: var(--ironsworn-border-radius-md);
+  background-color: var(--ironsworn-color-widget-fill-enabled);
   align-items: center;
   justify-content: center;
   aspect-ratio: 1;
   object-fit: contain;
-  border-radius: 3px;
   &.track-overflow .ghost-ticks {
-    opacity: 0.2;
+    stroke: var(--ironsworn-color-midtone);
   }
   .progress-track-box-marks {
     margin: 10%;
@@ -56,7 +57,7 @@
 }
 .progress-track-box-marks {
   aspect-ratio: 1;
-  stroke: currentColor;
+  stroke: var(--ironsworn-color-widget-stroke-enabled);
   overflow: visible;
 }
 

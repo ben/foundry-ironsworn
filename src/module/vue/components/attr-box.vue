@@ -25,9 +25,8 @@
   }
   &:before {
     // styles dice background on hover
-    color: currentColor;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: var(--transition-general);
     z-index: 0;
     padding: 0.25em;
   }

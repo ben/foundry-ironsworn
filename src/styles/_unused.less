@@ -1,0 +1,65 @@
+.ironsworn {
+  .progresses {
+    .item {
+      border-width: 1px;
+      border-radius: 3px;
+      padding: 5px;
+      margin: 5px;
+    }
+  }
+  .resource {
+    width: 50%;
+    height: 40px;
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+
+    input {
+      width: 100px;
+      height: 28px;
+    }
+  }
+  .move-title {
+    text-align: center;
+    border-width: 1px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    line-height: 30px;
+    font-variant: all-small-caps;
+  }
+  .sheet.moves {
+    .tab {
+      display: none;
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  .progress-button {
+    i {
+      padding: 3px;
+      width: 22px;
+      text-align: center;
+    }
+  }
+  .progress {
+    flex: 1;
+    border-width: 1px;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+  }
+  .progress {
+    border-color: var(--ironsworn-color-border);
+  }
+  .move-li {
+    height: 1.5rem;
+  }
+
+  .remove-option {
+    flex-grow: 0;
+    line-height: 26px;
+  }
+}

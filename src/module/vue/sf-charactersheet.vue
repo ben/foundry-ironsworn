@@ -7,7 +7,7 @@
     <!-- Main body row -->
     <div class="flexrow">
       <!-- Momentum on left -->
-      <div class="flexcol margin-left nogrow" style="width: min-content">
+      <div class="flexcol left-margin nogrow" style="width: min-content">
         <div
           class="flexrow nogrow"
           style="flex-wrap: nowrap; width: min-content"
@@ -65,7 +65,7 @@
 
       <!-- Stats on right -->
       <div
-        class="flexcol margin-right condition-meters"
+        class="flexcol right-margin condition-meters"
         data-tooltip-direction="UP"
       >
         <div class="flexrow nogrow" style="flex-wrap: nowrap">

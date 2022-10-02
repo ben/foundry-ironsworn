@@ -1,0 +1,45 @@
+@import 'mixin-utils.less';
+
+a.entity-link,
+a.content-link {
+  .clickable-common();
+  .clickable-block();
+  .clickable-hover();
+  .clickable-text();
+  // background-color: var(--ironsworn-color-bg-faded);
+  // border-color: var(--ironsworn-color-border-faded);
+  color: var(--ironsworn-color-fg);
+  i {
+    color: var(--ironsworn-color-fg-highlight);
+  }
+}
+
+button,
+.dialog .dialog-buttons button {
+  width: unset;
+  margin: unset;
+  background: unset;
+  border: unset;
+  border-radius: unset;
+  // font-size: unset;
+  // line-height: unset;
+  font-family: inherit;
+  cursor: pointer;
+  border-color: var(--ironsworn-color-widget-stroke-enabled);
+  &:hover,
+  &:focus {
+    // background: unset;
+    // border: unset;
+    outline: none;
+    box-shadow: unset;
+  }
+}
+
+.inline-roll {
+  background: var(--ironsworn-color-bg-faded);
+  border-color: var(--ironsworn-color-border);
+
+  &:hover {
+    text-shadow: 0 0 8px var(--ironsworn-color-fg);
+  }
+}

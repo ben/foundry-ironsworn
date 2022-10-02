@@ -1,0 +1,179 @@
+.clickable-block {
+  background-color: var(--ironsworn-color-widget-fill-enabled);
+  border-color: var(--ironsworn-color-border);
+  border-width: var(--ironsworn-border-width);
+  &.selected,
+  &[aria-selected='true'] {
+    color: var(---ironsworn-color-widget-text-selected);
+    border-color: var(--ironsworn-color-widget-stroke-selected);
+    background-color: var(--ironsworn-color-widget-fill-selected);
+  }
+  &.hover,
+  &:hover {
+    background-color: var(--ironsworn-color-widget-fill-hover);
+  }
+}
+
+.clickable-common {
+  color: var(--ironsworn-color-widget-text-enabled);
+  transition: var(--transition-general);
+  cursor: pointer;
+  border-color: var(--ironsworn-color-widget-stroke-enabled);
+  z-index: 10;
+  &.hover,
+  &:hover,
+  &.selected,
+  &[aria-selected='true'] {
+    z-index: 100;
+  }
+  &.disabled, // FIXME: ditch this class, its redundant with more semantic options
+    &:disabled,
+    &[aria-disabled="true"] {
+    color: var(--ironsworn-color-widget-text-enabled);
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+.clickable-text {
+  justify-content: flex-start;
+  &.selected,
+  &[aria-selected='true'] {
+    color: var(---ironsworn-color-widget-text-selected);
+    border-color: var(--ironsworn-color-widget-stroke-selected);
+    background-color: var(--ironsworn-color-widget-fill-selected);
+  }
+}
+
+// margin/border mixins
+
+.clickable-hover {
+  position: relative;
+  &.hover,
+  &:hover {
+    color: var(---ironsworn-color-widget-text-hover);
+    border-color: var(--ironsworn-color-widget-stroke-hover);
+  }
+}
+
+button {
+}
+
+.dialog .dialog-buttons button,
+.clickable {
+  .clickable-common();
+}
+
+.dialog .dialog-buttons button,
+.clickable.block {
+  .clickable-block();
+  .clickable-hover();
+}
+
+.dialog .dialog-buttons button,
+.clickable.text {
+  .clickable-text();
+  .clickable-hover();
+}
+
+.dialog .dialog-buttons button.default {
+  border-width: var(--ironsworn-border-width);
+  background-color: var(--ironsworn-color-widget-fill-enabled);
+  border-color: var(--ironsworn-color-border-highlight);
+}
+
+details {
+  > summary {
+    .clickable-common();
+    .clickable-text();
+    .clickable-hover();
+  }
+}
+
+.ironsworn .dialog-content {
+  border-color: var(--ironsworn-color-border);
+}
+
+.dialog .dialog-buttons button {
+  // TODO: integrate with icon button styling selectors
+  // probably as a mixin or something, call it flex-icon-button?
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 0.25em;
+}
+
+// typography mixins
+
+.initial-caps {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+// layout mixins
+
+.grid {
+  display: grid;
+}
+
+.nogrow {
+  flex-grow: 0;
+}
+
+.vertical {
+  writing-mode: vertical-lr;
+  border: none;
+  width: 1.5rem;
+
+  i {
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+}
+
+.left-margin {
+  flex: 0;
+  border-right-style: var(--ironsworn-border-style);
+  border-right-color: var(--ironsworn-color-border);
+  border-right-width: var(--ironsworn-border-width);
+  margin-right: 5px;
+  position: relative;
+}
+
+.right-margin {
+  flex: 0;
+  border-left-style: var(--ironsworn-border-style);
+  border-left-color: var(--ironsworn-color-border);
+  border-left-width: var(--ironsworn-border-width);
+  margin-left: 5px;
+  position: relative;
+}
+
+.inset {
+  border-color: var(--ironsworn-color-border-faded);
+  margin: 5px;
+  padding: 5px;
+  border-width: var(--ironsworn-border-width);
+  border-radius: var(--ironsworn-border-radius-md);
+}
+
+.boxgroup {
+  border-width: var(--ironsworn-border-width);
+  border-radius: var(--ironsworn-border-radius-xl);
+
+  .boxrow {
+    &.small {
+      flex-basis: 25px;
+      line-height: 25px;
+      flex-grow: 0;
+    }
+  }
+  .box {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+}

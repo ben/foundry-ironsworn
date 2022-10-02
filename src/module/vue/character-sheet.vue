@@ -11,7 +11,7 @@
 
     <!-- Main body row -->
     <!-- Momentum on left -->
-    <div class="flexcol margin-left">
+    <div class="flexcol left-margin">
       <div class="flexrow" style="flex-wrap: nowrap">
         <div class="flexcol stack momentum">
           <stack
@@ -58,7 +58,7 @@
     </div>
 
     <!-- Stats on right -->
-    <div class="flexcol margin-right" data-tooltip-direction="UP">
+    <div class="flexcol right-margin" data-tooltip-direction="UP">
       <div class="flexrow nogrow" style="flex-wrap: nowrap">
         <!-- TODO: restyle as h4-like -->
         <btn-rollstat

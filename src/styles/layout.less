@@ -1,0 +1,28 @@
+.ironsworn {
+  .sheet-body {
+    height: 100%;
+    overflow: hidden;
+
+    .tab {
+      height: 100%;
+      overflow-y: auto;
+    }
+  }
+
+  .sheet-area {
+    border-color: var(--ironsworn-color-border);
+    border-top: var(--ironsworn-border-width-thick)
+      var(--ironsworn-border-style);
+    &:first-child {
+      border-top: none;
+    }
+    margin: 5px;
+    padding-top: 7px;
+
+    h1,
+    h2,
+    h3 {
+      border: none;
+    }
+  }
+}

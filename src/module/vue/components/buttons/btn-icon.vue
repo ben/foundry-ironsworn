@@ -28,15 +28,19 @@ const hasDefaultSlot = computed(() => {
 
 <style lang="less">
 .icon-button {
+  border: 0;
   display: flex;
-  align-items: center;
   flex-flow: row nowrap;
+  align-items: center;
   align-content: center;
-  text-align: center;
-  justify-content: center;
   padding: 0.2em;
   &:not(:empty) {
     gap: 0.2em;
+  }
+  &:empty,
+  &.block {
+    text-align: center;
+    justify-content: center;
   }
   &:empty {
     // restricts width + removes border if there's no text
@@ -50,6 +54,7 @@ const hasDefaultSlot = computed(() => {
     line-height: 1;
     height: 1em;
     width: 1em;
+    aspect-ratio: 1;
   }
 }
 

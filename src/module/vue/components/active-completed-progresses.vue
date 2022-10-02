@@ -83,9 +83,6 @@
   h3 {
     display: flex;
   }
-  .highlighted {
-    background-color: lightyellow;
-  }
 }
 </style>
 
@@ -96,10 +93,6 @@ h3 {
   i {
     width: 15px;
     text-align: center;
-  }
-
-  &.highlighted {
-    background-color: lightyellow;
   }
 }
 .slide-enter-active,

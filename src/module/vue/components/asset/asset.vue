@@ -26,12 +26,12 @@
       </button>
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
-          class="block nogrow"
+          class="nogrow"
           v-if="editMode"
           icon="trash"
           @click="destroy"
         />
-        <btn-faicon class="block nogrow" icon="edit" @click="edit" />
+        <btn-faicon class="nogrow" icon="edit" @click="edit" />
       </div>
     </header>
 
@@ -113,9 +113,9 @@
     max-height: 350px;
   }
   overflow: hidden;
-  transition: var(--std-animation);
+  transition: var(--transition-general);
   .asset-header {
-    transition: var(--std-animation);
+    transition: var(--transition-general);
     gap: @asset_spacer;
     align-items: center;
     .asset-expand-toggle {
@@ -123,6 +123,7 @@
       gap: @asset_spacer;
       background: none;
       box-shadow: none !important;
+      border: 0;
       .asset-title {
         margin: 0;
         font-size: var(--font-size-14);
@@ -138,7 +139,7 @@
         flex-grow: 0;
         line-height: 1;
         font-style: italic;
-        transition: var(--std-animation);
+        transition: var(--transition-general);
       }
     }
     .asset-controls {
@@ -149,7 +150,7 @@
     }
   }
   .asset-body {
-    transition: var(--std-animation);
+    transition: var(--transition-general);
     overflow: hidden;
     padding: (@asset_spacer / 2);
     gap: @asset_spacer;
@@ -165,9 +166,11 @@
         flex-direction: row;
         gap: (@asset_spacer / 2);
         flex-grow: 0;
-        border-bottom: 1px solid;
+        border-bottom-style: var(--ironsworn-border-style);
+        border-bottom-width: var(--ironsworn-border-width);
         border-bottom-color: var(--ironsworn-color-thematic);
         .asset-field-label {
+          color: var(--ironsworn-color-fg-faded);
           padding: 0;
           margin: 0;
         }
@@ -206,9 +209,24 @@
   }
 }
 .asset-condition-meter {
-  gap: 3px;
   .icon-button .button-text {
     text-align: left;
+  }
+  .boxrow {
+    border: 0;
+  }
+  .box {
+    border-color: var(--ironsworn-color-border);
+    border-style: var(--ironsworn-border-style);
+    border-width: var(--ironsworn-border-width);
+    &:last-child {
+      border-end-end-radius: var(--ironsworn-border-radius-md);
+      border-start-end-radius: var(--ironsworn-border-radius-md);
+    }
+    &:first-child {
+      border-start-start-radius: var(--ironsworn-border-radius-md);
+      border-end-start-radius: var(--ironsworn-border-radius-md);
+    }
   }
 }
 
@@ -236,7 +254,7 @@
     &:before {
       aspect-ratio: 1;
       border-radius: 50%;
-      border-width: 2px;
+      border-width: var(--ironsworn-border-width-thick);
       height: 1em;
       margin-top: 0.15em;
     }
@@ -257,7 +275,7 @@
     aspect-ratio: @hex_deco_aspect_ratio;
     z-index: 1;
     mask-repeat: no-repeat;
-    transition: var(--std-animation);
+    transition: var(--transition-general);
     transform: scaleX(-1);
     height: @hex_deco_collapsed_height;
     top: -($height * 0.09);

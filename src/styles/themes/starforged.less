@@ -1,302 +1,73 @@
 @import './starforged-font.css'; // HACK to avoid import error
 
-body.theme-starforged {
-  --ironsworn-font: 'Carrois Gothic SC', sans-serif;
-
-  --ironsworn-color-thematic: #399;
-  //   @text-light-color: #6ff;
-  --ironsworn-color-accent: orange;
-  --ironsworn-color-fg: #3dd;
-  --ironsworn-color-fg-faded: #399;
-  --ironsworn-color-mid: #266;
-  --ironsworn-color-bg-faded: #022;
-  --ironsworn-color-bg: black;
-
-  --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
-
-  --ironsworn-color-border: var(--ironsworn-color-fg-faded);
-  --ironsworn-color-border-faded: var(--ironsworn-color-mid);
+.theme-starforged {
+  --font-primary: 'Carrois Gothic SC', sans-serif;
 
   --ironsworn-color-fg-highlight: #6ff;
-  --ironsworn-color-bg-highlight: var(--ironsworn-color-bg-faded);
+  --ironsworn-color-fg: #3dd;
+  --ironsworn-color-fg-faded: #399;
+  --ironsworn-color-midtone: #266;
+  --ironsworn-color-bg-faded: #001a1a;
+  --ironsworn-color-bg: black;
 
-  --ironsworn-color-widget-fill: var(--ironsworn-color-bg-faded);
-  --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
-  --ironsworn-color-widget-text: var(--ironsworn-color-fg);
+  --ironsworn-color-accent: orange;
+  --ironsworn-color-thematic: #399;
 
-  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-mid);
-  --ironsworn-color-widget-text-selected: var(--ironsworn-color-fg-highlight);
-  --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-border: var(--ironsworn-color-fg-faded);
+  --ironsworn-color-border-faded: var(--ironsworn-color-midtone);
 
-  .hover-fx(@spread_box:5px,@spread_text:10px) {
-    &:hover {
-      box-shadow: 0 0 @spread_box var(--ironsworn-color-fg-faded);
-      color: var(---ironsworn-color-fg-highlight);
-      text-shadow: 0 0 @spread_text var(--ironsworn-color-fg-faded);
-    }
-  }
+  --ironsworn-color-bg-highlight: var(--ironsworn-color-midtone);
+
+  --ironsworn-color-widget-fill-enabled: var(--ironsworn-color-bg-faded);
+  --ironsworn-color-widget-stroke-enabled: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-text-enabled: var(--ironsworn-color-border);
+
+  --ironsworn-color-widget-fill-hover: var(--ironsworn-color-bg-highlight);
+  --ironsworn-color-widget-text-hover: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-widget-stroke-hover: var(--ironsworn-color-fg-highlight);
+
+  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-bg-highlight);
+  --ironsworn-color-widget-text-selected: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg);
 
   --ironsworn-color-danger: hsl(0, 80%, 50%);
   --ironsworn-color-success: hsl(290, 80%, 50%);
   --ironsworn-color-success-faded: hsl(290, 80%, 60%);
 
   --ironsworn-dice-background: var(--ironsworn-color-bg-faded);
-  --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
-  body {
-    font-family: var(--ironsworn-font);
-  }
+  // hexagon, pointy side down
+  --ironsworn-theme-pip: polygon(
+    0 25%,
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%
+  );
 
-  .app {
-    color: var(--ironsworn-color-fg);
-  }
-
-  input::placeholder {
-    color: var(--ironsworn-color-mid);
-  }
-
-  input.highlight:focus {
-    box-shadow: 0 0 5px var(--ironsworn-color-accent);
-    background-color: var(--ironsworn-color-bg-highlight);
-    color: var(---ironsworn-color-fg-highlight);
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: var(--ironsworn-color-bg-faded);
-    border-color: var(--ironsworn-color-border-faded);
-  }
-
-  .window-app,
-  .journal-entry .journal-entry-content {
-    background: initial;
-    background-color: var(--ironsworn-color-bg);
-    border: 1px solid var(--ironsworn-color-border);
-  }
-
-  .editor {
-    color: var(--ironsworn-color-fg);
-    background-color: var(--ironsworn-color-bg);
-  }
-
-  .ProseMirror {
-    background-color: var(--ironsworn-color-bg-faded);
-    padding: 0.5rem;
-  }
-
-  .tox .tox-editor-header,
-  .tox .tox-toolbar-overlord,
-  .tox .tox-toolbar__primary {
-    background-color: var(--ironsworn-color-bg);
-  }
-
-  font-family: var(--ironsworn-font);
-  color: var(--ironsworn-color-fg);
-  .dialog-buttons {
-    .dialog-button {
-      color: currentColor;
-    }
-  }
-  select {
-    border-color: var(--ironsworn-color-border-faded);
-    color: var(--ironsworn-color-fg);
-  }
-
-  h2,
-  h3 {
-    color: var(--ironsworn-color-fg);
-    border-bottom-color: var(--ironsworn-color-border);
-  }
-
-  .inline-roll {
-    background: var(--ironsworn-color-bg-faded);
-    border-color: var(--ironsworn-color-border);
-
-    &:hover {
-      text-shadow: 0 0 8px var(--ironsworn-color-fg);
-    }
-  }
-
-  .window-content {
-    background: var(--ironsworn-color-bg);
-    background-image: none;
-    color: var(--ironsworn-color-fg);
-  }
-
-  input,
-  textarea,
-  textarea#chat-message {
-    background: var(--ironsworn-color-bg-faded);
-    border: 0;
-    color: var(--ironsworn-color-fg);
-
-    &:focus {
-      box-shadow: 0 0 10px var(--ironsworn-color-fg-faded);
-      cursor: pointer;
-    }
-  }
-
-  .sheet-area {
-    border-color: var(--ironsworn-color-border);
-  }
-
-  .clickable:not(svg):not(.svg) {
-    color: var(--ironsworn-color-fg-faded);
-    &.hover,
-    &:hover,
-    &:focus {
-      &.block,
-      &.text {
-        color: var(---ironsworn-color-fg-highlight);
-      }
-    }
-
+  .clickable-fx(@spread_box:5px,@spread_text:10px,@spread_drop:5px) {
+    transition: var(--transition-general);
     &.selected,
     &[aria-selected='true'] {
-      &.block,
-      &.text {
-        color: var(---ironsworn-color-fg-highlight);
+      color: var(---ironsworn-color-fg-highlight);
+    }
+    &:hover {
+      color: var(---ironsworn-color-fg-highlight);
+      text-shadow: 0 0 @spread_text var(--ironsworn-color-fg-faded);
+      &.block {
+        box-shadow: 0 0 @spread_box var(--ironsworn-color-fg-faded);
+      }
+      &:not(.block) {
+        filter: drop-shadow(0 0 @spread_drop var(--ironsworn-color-fg-faded));
+        fill: var(--ironsworn-color-widget-fill-hover);
+        color: var(--ironsworn-color-widget-text-hover);
       }
     }
   }
-
-  .drag-highlight {
-    background: var(--ironsworn-color-bg-highlight);
-  }
-
-  .stats {
-    .stat {
-      border-color: var(--ironsworn-color-fg);
-    }
-  }
-
-  hr {
-    border-color: var(--ironsworn-color-border);
-  }
-
-  .entity-link,
-  .content-link {
-    background-color: var(--ironsworn-color-bg-faded);
-    border-color: var(--ironsworn-color-border-faded);
-    color: var(--ironsworn-color-fg);
-    i {
-      color: var(--ironsworn-color-fg-highlight);
-    }
-  }
-
-  .movesheet-row.highlighted {
-    background-color: var(--ironsworn-color-bg-highlight);
-  }
-
-  .compact {
-    .bordergroup {
-      border-color: var(--ironsworn-color-border);
-    }
-  }
-
-  .ironsworn-roll {
-    .roll {
-      // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
-    }
-  }
-
-  // button,
-  button {
-    .hover-fx();
-  }
-  .prosemirror button,
-  .tox .tox-tbtn--bespoke {
-    background-color: var(--ironsworn-color-bg-faded);
-    color: var(--ironsworn-color-fg);
-    border-color: var(--ironsworn-color-border-faded);
-    .hover-fx();
-  }
-
-  select {
-    background-color: var(--ironsworn-color-bg-faded);
-  }
-
-  input[type='checkbox'] {
-    background-color: var(--ironsworn-color-bg-faded);
-  }
-
-  table {
-    border-color: var(--ironsworn-color-border);
-  }
-
-  .chat-message {
-    background: var(--ironsworn-color-bg);
-    border-color: var(--ironsworn-color-border);
-    color: var(--ironsworn-color-fg);
-
-    .message-header {
-      color: var(--ironsworn-color-fg-faded);
-    }
-
-    .message-content {
-      border: 1px solid var(--ironsworn-color-border);
-    }
-
-    .dice-formula,
-    .dice-total {
-      background: var(--ironsworn-color-bg);
-      // color:var(---ironsworn-color-fg-highlight);
-      border-width: 0px;
-      padding: 5px 0px 5px 0px;
-      .die {
-        &.d6 {
-          // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
-        }
-        &.d10 {
-          // background-image: url('systems/foundry-ironsworn/assets/icons/d10-blank.svg');
-        }
-
-        &.min {
-          color: var(--ironsworn-color-fg);
-        }
-        &.max {
-          color: var(--ironsworn-color-fg);
-        }
-      }
-    }
-
-    table tr {
-      &.selected,
-      &[aria-selected='true'] {
-        background-color: var(--ironsworn-color-mid);
-        color: var(---ironsworn-color-fg-highlight);
-
-        .entity-link,
-        .content-link {
-          color: var(---ironsworn-color-fg-highlight);
-        }
-      }
-    }
-  }
-
-  #sidebar-tabs {
-    border-color: var(--ironsworn-color-border-faded);
-    box-shadow: 0 0 10px var(--ironsworn-color-fg-faded);
-
-    .item {
-      color: var(--ironsworn-color-fg-faded);
-      &.active {
-        color: var(---ironsworn-color-fg-highlight);
-        border-color: var(--ironsworn-color-border-faded);
-        box-shadow: 0 0 6px inset var(--ironsworn-color-fg-faded);
-        text-shadow: 0 0 10px var(--ironsworn-color-fg-faded);
-      }
-    }
-  }
-
-  #chat-controls {
-    .roll-type-select {
-      background-color: var(--ironsworn-color-bg-faded);
-    }
-  }
-
-  .directory {
-    .directory-header .header-search input {
-      background-color: var(--ironsworn-color-bg-faded);
-    }
+  button,
+  .clickable {
+    .clickable-fx();
   }
 }

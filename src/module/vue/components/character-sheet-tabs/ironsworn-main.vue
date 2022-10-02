@@ -42,10 +42,6 @@ h3 {
     width: 15px;
     text-align: center;
   }
-
-  &.highlighted {
-    background-color: lightyellow;
-  }
 }
 .slide-enter-active,
 .slide-leave-active {

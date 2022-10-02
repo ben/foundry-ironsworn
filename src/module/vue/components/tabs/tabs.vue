@@ -85,11 +85,11 @@ defineExpose({ selectIndex })
     height: max-content;
 
     &[aria-orientation='horizontal'] {
-      border-block-end: 1px solid;
+      border-block-end-width: var(--ironsworn-border-width);
     }
     &[aria-orientation='vertical'] {
-      border-inline-start: 1px solid;
-      border-inline-end: 1px solid;
+      border-inline-start-width: var(--ironsworn-border-width);
+      border-inline-end-width: var(--ironsworn-border-width);
     }
   }
   [role^='tabpanel'],

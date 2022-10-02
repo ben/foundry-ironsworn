@@ -1,6 +1,6 @@
 <template>
   <svg
-    class="clock"
+    class="clock continuous-fill-parent"
     version="1.1"
     xmlns="http://www.w3.org/2000/svg"
     :height="size ?? '100px'"
@@ -13,7 +13,7 @@
       v-for="(wedge, i) in segmentPaths"
       :key="wedge"
       :d="wedge"
-      class="clock-segment svg"
+      class="clock-segment continuous-fill-segment"
       :aria-selected="props.ticked === i + 1"
       @click="click(i)"
       :data-tooltip="`${i + 1}⁄${wedges}`"
@@ -24,45 +24,11 @@
 
 <style lang="less" scoped>
 svg.clock {
-  // so that only *segment* hovers appear
-  pointer-events: none;
-  fill: var(--ironsworn-color-thematic);
-  fill-opacity: var(--widget-fill-opacity);
-  stroke: currentColor;
   stroke-width: var(--widget-stroke-width);
   aspect-ratio: 1;
-  &[aria-valuenow='0']:not(:hover) {
-    .clock-segment {
-      fill-opacity: 0;
-    }
-  }
   .clock-segment {
-    pointer-events: fill;
     cursor: pointer;
     vector-effect: non-scaling-stroke;
-    transition: var(--std-animation);
-    &:active {
-      fill-opacity: var(--widget-fill-opacity);
-    }
-  }
-  &:hover {
-    fill-opacity: var(--widget-fill-opacity-preview);
-    .clock-segment {
-      &:hover {
-        ~ .clock-segment {
-          fill-opacity: 0;
-        }
-      }
-    }
-  }
-  &:not(:hover) {
-    .clock-segment {
-      &[aria-selected='true'] {
-        ~ .clock-segment {
-          fill-opacity: 0;
-        }
-      }
-    }
   }
 }
 </style>

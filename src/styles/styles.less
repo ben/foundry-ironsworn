@@ -1,55 +1,43 @@
-@import './ironsworn-icons.less';
-@import 'mixins.less';
+@import 'mixin-utils.less';
+@import 'attr-box.less';
+@import 'button.less';
+@import 'chat-messages.less';
+@import 'compact-sheet.less';
+@import 'dialogs.less';
+@import 'editor.less';
+@import 'forms.less';
+@import 'icons.less';
+@import 'item-list.less';
+@import 'layout.less';
+@import 'rolls.less';
+@import 'sidebar.less';
+@import 'tables.less';
+@import 'transitions.less';
+@import 'typography.less';
+@import 'widgets.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
-  border-radius: 4px;
+  border-radius: var(--ironsworn-border-radius-lg);
 }
 ::-webkit-scrollbar-thumb {
   outline: none;
-  border-radius: 3px;
+  border-radius: var(--ironsworn-border-radius-md);
   background: #444;
-  border: 1px solid #222;
-}
-:root {
+  border: var(--ironsworn-border);
   scrollbar-width: thin;
   scrollbar-color: #444 rgba(0, 0, 0, 0.1);
-  --std-animation: all 0.5s ease;
-  --widget-fill-opacity: 1;
-  --widget-fill-opacity-preview: 0.5;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ironsworn-color-widget-fill);
+  border-color: var(--ironsworn-color-widget-border);
+}
+
+:root {
+  --transition-general: all 0.5s ease;
   --widget-stroke-width: 1px;
-  --ironsworn-color-fg-highlight: 0;
-  --ironsworn-color-bg-highlight: palegoldenrod;
 
-  --ironworn-color-fg: black;
-  // lightness between 'mid' and fg'
-  --ironsworn-color-fg-faded: 0;
-  // lightness roughly halfway between 'fg' and 'bg'
-  --ironsworn-color-mid: 0;
-  // lightness between 'mid' and 'bg'
-  --ironsworn-color-bg-faded: 0;
-  --ironsworn-color-bg: white;
-
-  --ironsworn-color-border: var(--ironworn-color-fg);
-  --ironsworn-color-border-faded: var(--ironsworn-color-fg-faded);
-
-  // widget w/o any states like hover or selected
-  --ironsworn-color-widget-text: var(--ironsworn-color-fg);
-  --ironsworn-color-widget-fill: var(--ironsworn-color-bg);
-  --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
-  // inverts FG/BG colours when selected
-  --ironsworn-color-widget-text-selected: var(--ironsworn-color-bg);
-  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-fg);
-  --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg);
-  // hover can be thought of as a "preview" of select, so this shows the 'ghost' version of the fill
-  --ironsworn-color-widget-text-hover: var(--ironsworn-color-fg);
-  --ironsworn-color-widget-fill-hover: var(--ironsworn-color-bg-faded);
-  --ironsworn-color-widget-stroke-hover: var(--ironsworn-color-bg-faded);
-
-  --ironsworn-color-widget-text-active: var(--ironsworn-color-widget-text);
-  --ironsworn-color-widget-fill-active: var(--ironsworn-color-widget-fill);
-  --ironsworn-color-widget-stroke-active: var(--ironsworn-color-widget-stroke);
-
+  // VARS BY ATTRIBUTE: IRONSWORN COLOURS
   --ironsworn-color-red-1: #ff4f5e;
   // original sample from PDF: #c9181a
   --ironsworn-color-red-2: #e33722;
@@ -62,6 +50,56 @@
   // original sample from PDF: #35a9e0
   --ironsworn-color-blue-2: #00a2ef;
   --ironsworn-color-blue-3: #0062e3;
+  --ironsworn-background-image: none;
+
+  // VARS BY TARGET: BASIC
+  --ironworn-color-fg: black;
+  // lightness between 'mid' and fg'
+  --ironsworn-color-fg-faded: #888;
+  // lightness roughly halfway between 'fg' and 'bg'
+  --ironsworn-color-midtone: darkgray;
+  // lightness between 'mid' and 'bg'
+  --ironsworn-color-bg-faded: #ccc;
+  --ironsworn-color-bg: white;
+  --ironsworn-color-bg-highlight: palegoldenrod;
+
+  // VARS BY TARGET: BORDERS
+  --ironsworn-color-border: var(--ironworn-color-fg);
+  --ironsworn-color-border-faded: var(--ironsworn-color-midtone);
+  --ironsworn-border-style: solid;
+  --ironsworn-border-width: 1px;
+  --ironsworn-border-width-thick: 2px;
+  --ironsworn-border: var(--ironsworn-border-width)
+    var(--ironsworn-border-style) var(--ironsworn-color-border);
+
+  --ironsworn-border-radius-sm: 2px;
+  --ironsworn-border-radius-md: 3px;
+  --ironsworn-border-radius-lg: 4px;
+  --ironsworn-border-radius-xl: 5px;
+
+  // VARS BY TARGET: WIDGETS
+  // widget w/o any states like hover or selected
+  --ironsworn-color-widget-text-enabled: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-fill-enabled: var(--ironsworn-color-bg);
+  --ironsworn-color-widget-stroke-enabled: var(--ironsworn-color-fg);
+  // inverts FG/BG colours when selected
+  --ironsworn-color-widget-text-selected: var(--ironsworn-color-bg);
+  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg);
+  // hover can be thought of as a "preview" of select, so this shows the 'ghost' version of the fill
+  --ironsworn-color-widget-text-hover: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-fill-hover: var(--ironsworn-color-bg-faded);
+  --ironsworn-color-widget-stroke-hover: var(--ironsworn-color-bg-faded);
+
+  --ironsworn-color-widget-text-active: var(
+    --ironsworn-color-widget-text-enabled
+  );
+  --ironsworn-color-widget-fill-active: var(
+    --ironsworn-color-widget-fill-enabled
+  );
+  --ironsworn-color-widget-stroke-active: var(
+    --ironsworn-color-widget-stroke-enabled
+  );
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-2);
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-2);
@@ -76,733 +114,139 @@
   --ironsworn-dice-background: #afafaf;
 }
 
-.grid {
-  display: grid;
-}
-
 .ironsworn {
   font-family: var(--font-primary);
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-transform: uppercase;
-  }
-  *::placeholder {
-    font-family: inherit;
+  color: var(--ironsworn-color-fg);
+  border-color: var(--ironsworn-color-border);
+
+  .window-content {
+    background: var(--ironsworn-color-bg);
+    background-image: none;
+    color: var(--ironsworn-color-fg);
   }
 
-  button
-  // &.dialog .dialog-buttons button,
-  // &.dialog .dialog-buttons button.default
-  {
-    width: unset;
-    margin: unset;
-    background: unset;
-    border: unset;
-    border-radius: unset;
-    // font-size: unset;
-    // line-height: unset;
-    font-family: inherit;
-    cursor: pointer;
-    &:hover,
-    &:focus {
-      // background: unset;
-      // border: unset;
-      outline: none;
-      box-shadow: unset;
-    }
+  .app {
+    color: var(--ironsworn-color-fg);
   }
+
+  .window-app,
+  .journal-entry .journal-entry-content {
+    background: initial;
+    background-color: var(--ironsworn-color-bg);
+    border: var(--ironsworn-border);
+  }
+
   .window-content {
     height: 100%;
     padding: 5px;
     scrollbar-width: thin;
   }
-
-  .sheet-area {
-    border-top: 2px solid;
-    &:first-child {
-      border-top: none;
-    }
-    margin: 5px;
-    padding-top: 7px;
-
-    h1,
-    h2,
-    h3 {
-      border: none;
-    }
-  }
-
-  .margin-left {
-    flex: 0;
-    border-right: 1px solid;
-    margin-right: 5px;
-    position: relative;
-  }
-
-  .margin-right {
-    flex: 0;
-    border-left: 1px solid;
-    margin-left: 5px;
-    position: relative;
-  }
-  .item-list {
-    flex: 1 0 100px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-
-    .move {
-      overflow-x: hidden;
-    }
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      & > h2 {
-        text-align: center;
-        border-width: 1px 0;
-      }
-    }
-  }
-
-  .vertical {
-    writing-mode: vertical-lr;
-    border: none;
-    width: 1.5rem;
-
-    i {
-      display: inline-block;
-      transform: rotate(90deg);
-    }
-  }
-
-  .stack {
-    flex-grow: 0;
-
-    .stack-row {
-      // FIXME refactor as component and encapsulate the relevant css there
-      flex: 0 0 auto;
-      min-width: 50px;
-      border: 1px solid;
-      border-top: none;
-      text-align: center;
-      line-height: 28px;
-      position: relative;
-      z-index: 1;
-      padding: 0;
-      &:hover,
-      &.selected,
-      &[aria-selected='true'] {
-        z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
-      }
-      &:first-child {
-        border-top: 1px solid;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-      }
-      &:last-child {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-      }
-
-      input[type='radio'] {
-        appearance: none;
-      }
-    }
-  }
-
-  // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
-  .interactive {
-    transition: var(--std-animation);
-    cursor: pointer;
-    &.disabled, // FIXME: ditch this class, its redundant with more semantic options
-    &:disabled,
-    &[aria-disabled="true"] {
-      cursor: not-allowed;
-      pointer-events: none;
-      opacity: 0.5;
-    }
-  }
-
-  &.dialog .dialog-buttons button {
-    // .interactive();
-    // TODO: reimplement the above when updating roll dialog
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .button-text {
-      .clickable();
-      .nogrow();
-      .initial-caps();
-      width: max-content;
-      height: max-content;
-    }
-
-    i {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  .clickable {
-    .interactive();
-    &.text {
-      justify-content: flex-start;
-    }
-    svg,
-    &.svg {
-      &.selected,
-      &[aria-selected='true'] {
-        fill: var(--ironsworn-color-widget-fill-selected);
-        stroke: var(--ironsworn-color-widget-stroke-selected);
-      }
-      &.hover,
-      &:hover {
-        fill: var(--ironsworn-color-widget-fill-hover);
-        stroke: var(--ironsworn-color-widget-stroke-hover);
-      }
-      &:active {
-        fill: var(--ironsworn-color-widget-fill-active);
-        stroke: var(--ironsworn-color-widget-stroke-active);
-      }
-    }
-  }
-
-  .stats {
-    flex: 0;
-    justify-content: space-around;
-
-    .stat {
-      flex: 0 0 75px;
-      border: 1px solid;
-      border-radius: 5px;
-      text-align: center;
-      padding: 0.5rem 0;
-
-      h3 {
-        margin: 0;
-        margin-bottom: 5px;
-        font-weight: bold;
-        font-size: 22px;
-      }
-
-      h4 {
-        margin: 0;
-        font-weight: bold;
-      }
-
-      input {
-        width: 50%;
-        margin-bottom: 5px;
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-      }
-    }
-
-    .edit {
-      flex: 0 0 30px;
-      justify-items: center;
-      align-items: center;
-      border: 1px solid;
-      transition: var(--std-animation);
-    }
-  }
-
-  .compact {
-    h2,
-    h3,
-    h4,
-    h5 {
-      margin: 3px 0;
-      border: none;
-    }
-  }
-
-  .boxgroup {
-    border: 1px solid;
-    border-radius: 5px;
-
-    .boxrow {
-      border-top: 1px solid;
-      &:first-child {
-        border-top: none;
-      }
-
-      &.small {
-        flex-basis: 25px;
-        line-height: 25px;
-        flex-grow: 0;
-      }
-    }
-
-    .box {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      border-left: 1px solid;
-      &:first-child {
-        border-left: none;
-      }
-    }
-  }
-
-  .inset {
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid;
-    border-radius: 3px;
-  }
-
-  .remove-option {
-    flex-grow: 0;
-    line-height: 26px;
-  }
-
-  .item-row {
-    border: 1px solid;
-    border-radius: 2px;
-    padding: 3px;
-    margin: 3px 0;
-
-    .item-row-control {
-      flex-grow: 0;
-      padding: 5px;
-    }
-  }
-
-  .progresses {
-    .item {
-      border: 1px solid;
-      border-radius: 3px;
-      padding: 5px;
-      margin: 5px;
-    }
-  }
-
-  .progress-button {
-    i {
-      padding: 3px;
-      width: 22px;
-      text-align: center;
-    }
-  }
-
-  .resource {
-    width: 50%;
-    height: 40px;
-    margin-top: 10px;
-    float: left;
-    text-align: center;
-
-    input {
-      width: 100px;
-      height: 28px;
-    }
-  }
-
-  .sheet-body {
-    height: 100%;
-    overflow: hidden;
-
-    .tab {
-      height: 100%;
-      overflow-y: auto;
-    }
-  }
-
-  .editor,
-  .editor-content {
-    height: 100%;
-    min-height: 100px;
-  }
-
-  .move-li {
-    height: 1.5rem;
-  }
-
-  /* Items List */
-  .item-list {
-    list-style: none;
-    margin: 7px 0;
-    padding: 0;
-    // overflow-y: auto;
-
-    .item {
-      height: 30px;
-      line-height: 24px;
-      padding: 3px 0;
-      border-bottom: 1px solid;
-
-      img {
-        flex: 0 0 24px;
-        margin-right: 5px;
-      }
-    }
-
-    .item-name {
-      margin: 0;
-    }
-
-    .item-controls {
-      flex: 0 0 36px;
-    }
-  }
-
-  .progress {
-    flex: 1;
-    border: 1px solid;
-    padding: 5px;
-    margin: 2px;
-    text-align: center;
-  }
-
-  .nogrow {
-    flex-grow: 0;
-  }
-
-  input[type='number'] {
-    -moz-appearance: auto;
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: button !important;
-      opacity: 1 !important;
-    }
-  }
 }
 
 hr {
   width: 100%;
+  border-color: var(--ironsworn-color-border);
+  border-width: 1px 0 0;
 }
-
-.strikethru * {
-  text-decoration: line-through;
-}
-
 .ironsworn.sheet.actor {
   min-width: 630px;
 }
-
-.ironsworn.sheet.item {
-  min-width: 460px;
-  min-height: 400px;
+.drag-highlight,
+.highlighted {
+  background-color: var(--ironsworn-color-bg-highlight) !important;
 }
 
-.move-title {
-  text-align: center;
-  border: 1px solid;
-  margin-bottom: 5px;
-  font-weight: bold;
-  line-height: 30px;
-  font-variant: all-small-caps;
+.window-content,
+.journal-entry .journal-entry-content {
+  background: var(--ironsworn-color-bg);
 }
 
-.sheet.moves {
-  .tab {
-    display: none;
+// generate color variable mixins for widgets
+@states: enabled, hover, selected, active;
 
-    &.active {
-      display: flex;
+.colorState(@state) {
+  .colors-@{state}-fill,
+  .colors-@{state}-bg {
+    stroke: var(--ironsworn-color-widget-stroke- @state);
+    border-color: $stroke;
+    color: var(--ironsworn-color-widget-text- @state);
+  }
+  .colors-@{state}-fill {
+    fill: var(--ironsworn-color-widget-fill- @state);
+  }
+  .colors-@{state}-bg {
+    background-color: var(--ironsworn-color-widget-fill- @state);
+  }
+}
+
+@fillTypes: fill, background-color;
+// applies a filled appearance to *previous* siblings of the selected element -- creating a continuous bar, wedge, etc.
+// use continuous-fill-* when the 'fill' property is needed, like on svgs
+// use continuous-background-color-* when the 'background-color' property is needed.
+
+each(@fillTypes, {
+.continuous-@{value}-parent {
+  pointer-events: none;
+  position: relative; // so that the z-index below works
+  .continuous-@{value}-segment {
+    pointer-events: all;
+    transition: var(--transition-general);
+    stroke: var(--ironsworn-color-widget-stroke-selected);
+    border-color: $stroke;
+    @{value}: var(--ironsworn-color-widget-fill-selected);
+    color: var(--ironsworn-color-widget-text-selected);
+
+  }
+  .continuous-@{value}-segment {
+    z-index: 1;
+    &:hover, &[aria-selected=true], &.selected {
+      z-index: 100;
+    }
+  }
+
+
+  &:not(:hover) {
+    .continuous-@{value}-segment {
+      &[aria-selected='true'] {
+        ~ .continuous-@{value}-segment {
+          // 👆 this is what does the work:  ~ , the subsequent sibling selector. there s no previous sibling selector, hence the fill being subtractive.
+          @{value}: var(--ironsworn-color-widget-fill-enabled);
+          stroke: var(--ironsworn-color-widget-stroke-enabled);
+          border-color: $stroke;
+          color: var(--ironsworn-color-widget-text-enabled);
+        }
+      }
+    }
+  }
+  &[aria-valuenow='0'] {
+    // ensures the correct fill when there s no selected segment
+    &:not(:hover) {
+      .continuous-@{value}-segment {
+        @{value}: var(--ironsworn-color-widget-fill-enabled);
+        stroke: var(--ironsworn-color-widget-stroke-enabled);
+        border-color: $stroke;
+        color: var(--ironsworn-color-widget-text-enabled);
+      }
+    }
+  }
+  &:hover {
+    .continuous-@{value}-segment {
+      // same principle as without a hover: everything gets the hover style, and it s removed from everything after the selected item
+      stroke: var(--ironsworn-color-widget-stroke-hover);
+      border-color: $stroke;
+      @{value}: var(--ironsworn-color-widget-fill-hover);
+      color: var(--ironsworn-color-widget-text-hover);
+      &:hover {
+        // so that a highlighted border isn t hidden when segment borders overlap
+        ~ .continuous-@{value}-segment {
+          @{value}: var(--ironsworn-color-widget-fill-enabled);
+          color: var(--ironsworn-color-widget-text-enabled);
+          stroke: var(--ironsworn-color-widget-stroke-enabled);
+          border-color: $stroke;
+        }
+      }
     }
   }
 }
 
-.ironsworn-roll {
-  h3,
-  button {
-    .initial-caps();
-  }
-  .hit-type {
-    font-weight: bold;
-    font-variant: all-small-caps;
-  }
-
-  [class*=' isiconbg-'],
-  [class^='isiconbg-'] {
-    &:before {
-      background-color: var(--ironsworn-dice-background);
-    }
-  }
-
-  @dice-glow-offset: 0px 0px 5px;
-
-  .roll {
-    width: 24px;
-    line-height: 24px;
-    display: inline-block;
-    margin-right: 1px;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    font-weight: bold;
-    text-align: center;
-
-    &.d4 {
-      background-image: url('../../icons/svg/d4-grey.svg');
-    }
-
-    &.d6 {
-      background-color: var(--ironsworn-dice-background);
-      mask-image: url('/assets/icons/d6-blank.svg');
-      content: '';
-    }
-
-    &.d8 {
-      background-image: url('../../icons/svg/d8-grey.svg');
-    }
-
-    &.d10 {
-      background-color: var(--ironsworn-dice-background);
-      mask-image: url('/assets/icons/d10-blank.svg');
-      content: '';
-    }
-
-    &.d12 {
-      background-image: url('../../icons/svg/d12-grey.svg');
-    }
-
-    &.d20 {
-      background-image: url('../../icons/svg/d20-grey.svg');
-    }
-
-    &.min:not(.challenge),
-    &.challenge.max {
-      color: var(--ironsworn-color-danger) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-danger-faded)
-      );
-    }
-
-    &.max:not(.challenge),
-    &.challenge.min {
-      color: var(--ironsworn-color-success) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-success-faded)
-      );
-    }
-
-    &.canceled {
-      color: var(--ironsworn-color-warning) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-warning-faded)
-      ) !important;
-    }
-  }
-
-  del .roll {
-    text-decoration: line-through;
-    color: var(--ironsworn-color-warning) !important;
-    filter: drop-shadow(
-      @dice-glow-offset var(--ironsworn-color-warning-faded)
-    ) !important;
-  }
-}
-
-.bonus-content .dice-formula {
-  word-break: normal;
-}
-
-// roll-graphic.hbs
-
-.ironsworn-roll-title {
-  margin: 0;
-}
-
-@graphic-gap: 0.25rem;
-
-.ironsworn-roll {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.roll-graphic.dice-formula {
-  display: flex;
-  flex-flow: row nowrap;
-  flex: auto;
-  gap: @graphic-gap;
-  justify-content: center;
-  margin: 0;
-  padding: @graphic-gap;
-  * {
-    margin: 0;
-  }
-
-  .die {
-    flex-grow: 0;
-  }
-  .indeterminate-value {
-    opacity: 0.5;
-  }
-  .action-score-capped {
-    text-decoration: dotted underline;
-  }
-  .score {
-    font-weight: bold;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    height: 24px;
-    width: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .challenge-dice {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 0;
-    gap: (@graphic-gap / 2);
-    .challenge-die {
-    }
-  }
-}
-
-.outcome-shortcuts {
-  display: contents;
-}
-.roll-outcome {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  gap: 0.25rem;
-  margin-bottom: 0.25rem;
-  * {
-    margin: 0;
-  }
-
-  .outcome-label {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: larger;
-    span {
-      display: inline;
-      white-space: nowrap;
-    }
-    .outcome-text {
-      font-weight: bold;
-    }
-  }
-}
-// preroll-dialog.hbs
-.preroll-dialog {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  button {
-    .initial-caps();
-  }
-
-  .roll-trigger-text {
-  }
-
-  .trigger-options {
-  }
-
-  .form-group {
-    padding: 0;
-    border: none;
-  }
-
-  .advanced-roll-options {
-    padding: 5px;
-    margin: 5px 0;
-    border: 1px solid;
-  }
-  .advanced-roll-options-toggle {
-  }
-}
-
-table td:first-child {
-  white-space: nowrap;
-  padding-right: 0.5rem;
-}
-
-.table-draw {
-  h2 {
-    border: none;
-  }
-  table {
-    td:first-child,
-    td:last-child {
-      width: 0;
-    }
-  }
-}
-
-.hover-controls-anchor {
-  position: relative;
-
-  .hover-controls {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    opacity: 0;
-    transition: all 0.2s ease;
-  }
-
-  &:hover .hover-controls {
-    opacity: 1;
-  }
-}
-
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.4s ease;
-  overflow: hidden;
-  max-height: 500px; // NOTE: fill this in where you know the right number
-  opacity: 1;
-}
-.slide-enter-from,
-.slide-leave-to {
-  max-height: 0 !important;
-  opacity: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-}
-// workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
-.fa,
-.fab,
-.fad,
-.fal,
-.far,
-.fas {
-  -moz-osx-font-smoothing: inherit;
-  speak: inherit;
-  font-style: inherit;
-  font-variant: inherit;
-  text-rendering: inherit;
-  line-height: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  font-family: inherit;
-  &:before {
-    speak: never;
-    -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-  }
-}
-
-.fa,
-.far,
-.fas {
-  &:before {
-    font-family: 'Font Awesome 5 Free';
-  }
-}
-
-.fa,
-.fas {
-  &:before {
-    font-weight: 900;
-  }
-}
+});

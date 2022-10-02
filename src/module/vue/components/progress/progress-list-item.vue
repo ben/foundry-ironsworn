@@ -31,34 +31,25 @@
       data-tooltip-direction="UP"
     >
       <BtnFaicon
-        class="block"
         v-if="editMode"
         icon="trash"
         @click="destroy"
         :tooltip="$t('IRONSWORN.DeleteItem')"
       />
+      <BtnFaicon icon="edit" @click="edit" :tooltip="$t('IRONSWORN.Edit')" />
       <BtnFaicon
-        class="block"
-        icon="edit"
-        @click="edit"
-        :tooltip="$t('IRONSWORN.Edit')"
-      />
-      <BtnFaicon
-        class="block"
         v-if="editMode"
         :icon="completedIcon"
         @click="toggleComplete"
         :tooltip="completedTooltip"
       />
       <BtnFaicon
-        class="block"
         v-if="editMode && item.data.hasTrack"
         icon="caret-left"
         @click="retreat"
         :tooltip="$t('IRONSWORN.UnmarkProgress')"
       />
       <BtnFaicon
-        class="block"
         v-if="item.data.hasTrack"
         icon="caret-right"
         @click="advance"
@@ -68,11 +59,10 @@
         v-if="item.data.hasTrack"
         :item="item"
         :tooltip="$t('IRONSWORN.ProgressRoll')"
-        class="block"
       />
       <BtnFaicon
         v-if="showStar"
-        class="star-progress block"
+        class="star-progress"
         icon="star"
         :solid="item.data.starred"
         :tooltip="$t('IRONSWORN.StarProgress')"

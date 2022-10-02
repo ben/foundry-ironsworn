@@ -51,11 +51,11 @@
 
 <style lang="less" scoped>
 .move-summary {
-  border-left: 2px solid;
+  border-left-width: var(--ironsworn-border-width-thick);
   margin-left: 5px;
   padding-left: 1rem;
   button.icon-button {
-    border: 1px solid;
+    border-width: var(--ironsworn-border-width);
   }
 }
 h4 {

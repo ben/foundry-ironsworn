@@ -1,0 +1,44 @@
+.ironsworn {
+  .stack {
+    flex-grow: 0;
+    .stack-row {
+      // FIXME refactor as component and encapsulate the relevant css there
+
+      flex: 0 0 auto;
+      min-width: 50px;
+      border-width: var(--ironsworn-border-width);
+      border-style: var(--ironsworn-border-style);
+      text-align: center;
+      line-height: 28px;
+      position: relative;
+      z-index: 1;
+      padding: 0;
+      &:hover,
+      &[aria-selected='true'],
+      &.selected {
+        z-index: 100;
+      }
+      &:first-child {
+        border-top-left-radius: var(--ironsworn-border-radius-xl);
+        border-top-right-radius: var(--ironsworn-border-radius-xl);
+      }
+      &:not(:first-child) {
+        margin-block-start: calc(var(--ironsworn-border-width) * -1);
+      }
+      &:last-child {
+        border-bottom-left-radius: var(--ironsworn-border-radius-xl);
+        border-bottom-right-radius: var(--ironsworn-border-radius-xl);
+      }
+
+      input[type='radio'] {
+        appearance: none;
+      }
+    }
+  }
+
+  // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
+}
+
+.movesheet-row.highlighted {
+  background-color: var(--ironsworn-color-bg-highlight);
+}
