@@ -27,8 +27,6 @@ import SfTruth from './components/sf-truth.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import { ISettingTruth } from 'dataforged'
 
-const emitter = CONFIG.IRONSWORN.emitter
-
 const props = defineProps<{ truths: ISettingTruth[] }>()
 
 const output = {}
@@ -59,6 +57,6 @@ async function saveTruths() {
     content: composedOutput.value,
   })
   journal?.sheet?.render(true)
-  emitter?.emit('closeApp')
+  CONFIG.IRONSWORN.emitter.emit('closeApp')
 }
 </script>
