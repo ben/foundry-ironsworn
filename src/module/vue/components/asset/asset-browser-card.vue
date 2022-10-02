@@ -46,12 +46,17 @@
             <dd class="asset-field-value">{{ field.value }}</dd>
           </div>
         </dl>
+
         <ul class="asset-abilities flexcol">
           <WithRolllisteners
             v-for="(ability, i) in data.data.abilities"
             :key="'ability' + i"
             element="li"
-            :class="`asset-ability bullet-${toolset}`"
+            :class="{
+              'asset-ability': true,
+              [`bullet-${toolset}`]: true,
+              marked: ability.enabled,
+            }"
             @moveclick="moveClick"
           >
             <div

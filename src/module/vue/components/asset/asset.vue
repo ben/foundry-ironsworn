@@ -57,7 +57,7 @@
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
             element="li"
-            :class="`asset-ability bullet-${$actor?.toolset}`"
+            :class="`asset-ability marked bullet-${$actor?.toolset}`"
             @moveclick="moveclick"
           >
             <div
@@ -224,6 +224,9 @@
       background-repeat: no-repeat;
       mask-position: center;
       background-position: center;
+    }
+
+    &.marked:before {
       background-color: currentColor;
     }
   }
@@ -234,7 +237,7 @@
       aspect-ratio: 1;
       border-radius: 50%;
       border-width: 2px;
-      height: 1em;
+      height: 0.75em;
       margin-top: 0.15em;
     }
   }
@@ -275,9 +278,12 @@
       &:before {
         aspect-ratio: @hexagon_aspect_ratio;
         background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-        mask-image: url('/assets/misc/hex-checkbox-checked.svg');
+        mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
         height: 1em;
         margin-top: 0.15em;
+      }
+      &.marked:before {
+        mask-image: url('/assets/misc/hex-checkbox-checked.svg');
       }
     }
   }
