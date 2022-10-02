@@ -136,14 +136,7 @@ export class IronswornChatCard {
   async _oracleNavigate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     const { dfid } = ev.target.dataset
-    for (const actor of game.actors?.contents || []) {
-      if (
-        (actor.moveSheet as any)?._state >= 0 &&
-        actor.moveSheet?.highlightMove
-      ) {
-        return actor.moveSheet.highlightOracle(dfid)
-      }
-    }
+    CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
   }
 
   async _burnMomentum(ev: JQuery.ClickEvent) {
