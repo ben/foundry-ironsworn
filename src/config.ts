@@ -36,6 +36,8 @@ export interface IronswornConfig {
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
 
+  emitter: IronswornEmitter
+
   beta: { [k: string]: any }
 }
 
@@ -55,6 +57,8 @@ export const IRONSWORN: IronswornConfig = {
 
   Dataforged: starforged,
   dataforgedHelpers,
+
+  emitter: Mitt<EmitterEvents>(),
 
   beta: {
     AssetCompendiumBrowser,
