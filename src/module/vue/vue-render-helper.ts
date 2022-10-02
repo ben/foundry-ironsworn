@@ -2,7 +2,8 @@ import { App, Component, ComponentPublicInstance, createApp } from 'vue'
 import mitt from 'mitt'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornVuePlugin } from './vue-plugin'
-import { $EmitterKey, EmitterEvents, IronswornEmitter } from './provisions'
+import { $EmitterKey } from './provisions'
+import { EmitterEvents, IronswornEmitter } from '../../config'
 
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
