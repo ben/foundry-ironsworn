@@ -90,7 +90,7 @@
     max-width: @max_progress_box_width;
     gap: @progress_box_gap;
   }
-  .xp-track.legacy-track-xp {
+  .legacy-track-xp {
     @xp_border_width: 1px;
     grid-column: 1 / span 2;
     grid-row: 3 / span 2;
@@ -100,14 +100,19 @@
     width: 100%;
     gap: @progress_box_gap;
     justify-self: center;
-    & > .xp-box {
-      background: var(--ironsworn-color-bg);
+    .xp-box {
+      background-color: var(--ironsworn-color-bg);
       margin: 0;
       aspect-ratio: 1;
       border-radius: 3px;
       border-width: @xp_border_width;
       width: 100%;
       max-width: @max_xp_box_width;
+      &.hover,
+      &.selected {
+        background-color: var(--ironsworn-color-thematic);
+      }
+
       &:not(:nth-child(n + 21)) {
         &:nth-child(2n) {
           justify-self: left;
