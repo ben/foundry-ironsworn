@@ -3,6 +3,7 @@
 ## Next Release
 
 - Updated Spanish content from the official translation ([#489](https://github.com/ben/foundry-ironsworn/pull/489))
+- Added some new location icons by ErRains and KirinCorleone ([#485](https://github.com/ben/foundry-ironsworn/pull/485))
 
 ## 1.17.20
 
