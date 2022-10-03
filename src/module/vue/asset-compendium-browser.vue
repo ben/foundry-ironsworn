@@ -16,7 +16,7 @@
       </BtnFaicon>
     </h2>
 
-    <Transition name="slide">
+    <CollapseTransition>
       <div v-if="category.expanded">
         <section
           class="asset-category-contents"
@@ -39,16 +39,11 @@
           />
         </section>
       </div>
-    </Transition>
+    </CollapseTransition>
   </section>
 </template>
 
 <style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: var(--transition-max-height);
-}
-
 h2 {
   margin: 0;
   line-height: 1.5;
@@ -86,6 +81,7 @@ import { IronswornItem } from '../item/item'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
+import CollapseTransition from './components/transition/collapse-transition.vue'
 
 const props = defineProps<{ toolset: 'starforged' | 'ironsworn' }>()
 
