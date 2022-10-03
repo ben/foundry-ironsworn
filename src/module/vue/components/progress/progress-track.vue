@@ -2,7 +2,7 @@
   <article
     :tabindex="0"
     class="progress-track"
-    :class="{ compact: compactProgress }"
+    :class="{ ['compact-progress']: compactProgress }"
     role="slider"
     :aria-label="$t('IRONSWORN.PROGRESS.Track')"
     aria-orientation="horizontal"
@@ -45,12 +45,17 @@
     max-width: 50px;
     border-radius: @box_border_radius;
   }
-  &.compact {
+  &.compact-progress {
     gap: 0;
     display: flex;
     flex-flow: row nowrap;
     .progress-track-box {
       border: @box_border_width solid currentColor;
+      .progress-tick {
+        // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
+        vector-effect: non-scaling-stroke;
+        stroke-width: 1px;
+      }
       border-radius: 0;
       margin: 0;
       &:first-child {

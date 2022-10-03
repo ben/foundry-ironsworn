@@ -31,7 +31,6 @@
             :key="`tick-${tick}`"
             v-show="props.ticks > i"
             :transform="tickTransforms[i]"
-            :class="`tick-${tick}`"
             :data-tick="tick"
           />
         </TransitionGroup>
@@ -47,6 +46,9 @@
   aspect-ratio: 1;
   object-fit: contain;
   border-radius: 3px;
+  stroke: currentColor;
+  stroke-width: 5;
+
   &.track-overflow .ghost-ticks {
     opacity: 0.2;
   }
@@ -56,16 +58,13 @@
 }
 .progress-track-box-marks {
   aspect-ratio: 1;
-  stroke: currentColor;
   overflow: visible;
 }
 
 .progress-tick {
-  // vector-effect: non-scaling-stroke;
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-dashoffset: 0;
   stroke-dasharray: 100%;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
 }
 
 // Progress tick draw animation
