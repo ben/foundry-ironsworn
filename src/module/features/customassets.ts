@@ -42,8 +42,10 @@ async function createAssetTree(
   const ret = await compendiumMoves(compendiumName, i18nkeyslug, assetTypes)
 
   // Add custom omves from well-known folder
+  await augmentWithFolderContents(ret)
 
   // fire the hook and allow extensions to modify the list
+  await Hooks.call('ironswornAssets', ret)
 
   return ret
 }
@@ -89,4 +91,25 @@ async function compendiumMoves(
   }
 
   return categories
+}
+
+async function augmentWithFolderContents(categories: DisplayCategory[]) {
+  const name = game.i18n.localize('IRONSWORN.Custom Assets')
+  const folder = (game.items?.directory as any)?.folders.find(
+    (x) => x.name === name
+  ) as Folder | undefined
+  if (!folder || folder.contents.length == 0) return
+
+  const customAssets = [] as DisplayAsset[]
+  for (const item of folder.contents) {
+    if (item.documentName !== 'Item' || item.type !== 'asset') continue
+    customAssets.push({ foundryItem: Object.freeze(item) })
+  }
+
+  categories.push({
+    title: name,
+    expanded: false,
+    maxHeight: 200 + customAssets.length * 30,
+    assets: customAssets,
+  })
 }
