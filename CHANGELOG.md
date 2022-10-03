@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Updated Spanish content from the official translation ([#489](https://github.com/ben/foundry-ironsworn/pull/489))
+
 ## 1.17.20
 
 - Remove the window transparency in the SF theme

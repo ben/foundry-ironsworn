@@ -41,4 +41,19 @@ export abstract class VueActorSheet extends ActorSheet {
     this.renderHelper?.close()
     return super.close(options)
   }
+
+  protected async _onDrop(event: DragEvent) {
+    const data = (TextEditor as any).getDragEventData(event)
+    if ((data as any).type === 'AssetBrowserData') {
+      const pack = game.packs.get((data as any).pack)
+      const document = await pack?.getDocument((data as any).id)
+      if (document) {
+        this.actor.createEmbeddedDocuments('Item', [
+          (document as any).toObject(),
+        ])
+      }
+    }
+
+    return super._onDrop(event)
+  }
 }

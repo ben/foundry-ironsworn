@@ -53,17 +53,4 @@ export class SFCharacterMoveSheet extends VueApplication {
   get title() {
     return `${game.i18n.localize('IRONSWORN.Moves')} — ${this.actor.name}`
   }
-
-  async highlightMove(move: IronswornItem) {
-    this.highlightMoveById(move.id ?? '')
-  }
-  highlightMoveById(moveId: string) {
-    this.maximize()
-    this.renderHelper?.emitter.emit('highlightMove', moveId)
-  }
-
-  async highlightOracle(oracleId: string) {
-    this.maximize()
-    this.renderHelper?.emitter.emit('highlightOracle', oracleId)
-  }
 }

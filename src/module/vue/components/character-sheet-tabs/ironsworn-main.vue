@@ -22,8 +22,8 @@
               <Asset :asset="asset" />
             </div>
           </transition-group>
-          <div class="flexcol nogrow" style="text-align: center">
-            <BtnCompendium class="block nogrow" compendium="ironswornassets">
+          <div class="flexrow nogrow" style="text-align: center">
+            <BtnCompendium class="block" compendium="ironswornassets">
               {{ $t('IRONSWORN.Assets') }}
             </BtnCompendium>
           </div>

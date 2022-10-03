@@ -4,7 +4,7 @@ import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 import { IronswornPrerollDialog } from '../rolls'
 
 /**
- * Extend the base Iteem entity
+ * Extend the base Item entity
  * @extends {Item}
  */
 export class IronswornItem extends Item {
