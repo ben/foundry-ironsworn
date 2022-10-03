@@ -147,6 +147,7 @@ import _ from 'lodash'
 import ProgressTrack from './progress/progress-track.vue'
 import { CharacterDataProperties } from '../../actor/actortypes.js'
 import { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs.js'
+import { DocumentData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs.js'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
 type LegacyType = 'quests' | 'bonds' | 'discoveries'
@@ -166,10 +167,7 @@ const props = defineProps<{
    * The legacy track type.
    */
   legacy: LegacyType
-}>() as Readonly<{
-  actor: IronswornActor & CharacterDataProperties & ActorData
-  legacy: LegacyType
-}>
+}>()
 
 const $actor = inject($ActorKey)
 provide(
@@ -178,7 +176,10 @@ provide(
 )
 
 const ticks = computed(
-  () => props.actor.data.legacies?.[props.legacy] ?? minTicks
+  () =>
+    (props.actor as IronswornActor & CharacterDataProperties).data.legacies?.[
+      props.legacy
+    ] ?? minTicks
 )
 const ticksDisplayed = computed(() => ticks.value % maxTicks)
 
@@ -198,7 +199,10 @@ const xpEarned = computed(() => {
 })
 
 const xpSpent = computed(
-  () => props.actor.data?.legacies[`${props.legacy}XpSpent`] ?? 0
+  () =>
+    (props.actor as IronswornActor & CharacterDataProperties).data?.legacies[
+      `${props.legacy}XpSpent`
+    ] ?? 0
 )
 
 const markTooltip = computed(() => {
@@ -209,10 +213,9 @@ const markTooltip = computed(() => {
 
 const editMode = computed(
   () =>
-    // FIXME 🤢
-    (props.actor.flags as Record<string, any>)?.['foundry-ironsworn']?.[
-      'edit-mode'
-    ]
+    (props.actor as IronswornActor & { flags: Record<string, any> }).flags?.[
+      'foundry-ironsworn'
+    ]?.['edit-mode']
 )
 
 const overflowLabel = computed(() => {
@@ -230,7 +233,10 @@ function setXp(newValue: number) {
 }
 
 function adjustTrack(inc) {
-  const current = props.actor.data?.legacies[props.legacy] ?? 0
+  const current =
+    (props.actor as IronswornActor & CharacterDataProperties).data?.legacies[
+      props.legacy
+    ] ?? 0
   $actor?.update({
     [`data.legacies.${props.legacy}`]: current + inc,
   })
