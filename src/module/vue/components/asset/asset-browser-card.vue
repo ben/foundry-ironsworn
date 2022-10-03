@@ -36,6 +36,8 @@
         :aria-expanded="state.expanded"
         :id="bodyId"
       >
+        <div v-html="$enrichHtml(data.data.requirement ?? '')"></div>
+
         <dl class="asset-fields" v-if="data.data.fields?.length">
           <div
             class="asset-field"
