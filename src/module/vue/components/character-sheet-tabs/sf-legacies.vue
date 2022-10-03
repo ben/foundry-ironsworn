@@ -35,12 +35,13 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, provide, Ref } from 'vue'
+import { computed, inject, provide } from 'vue'
 import LegacyTrack from '../legacy-track.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
 import { $ActorKey } from '../../provisions.js'
 import { IronswornActor } from '../../../actor/actor.js'
-import { IronswornItem } from '../../../item/item.js'
+import { ProgressDataPropertiesData } from '../../../item/itemtypes.js'
+
 const props = defineProps<{ actor: IronswornActor }>()
 
 const $actor = inject($ActorKey) as any
@@ -50,10 +51,11 @@ provide(
   computed(() => props.actor)
 )
 
-const starredProgresses = computed(() => {
-  const result = props.actor.items.filter(
-    (item: IronswornItem) => item.type === 'progress' && item.data?.starred
+const starredProgresses = computed(() =>
+  props.actor.items.filter(
+    (item) =>
+      item.type === 'progress' &&
+      (item.data as unknown as ProgressDataPropertiesData)?.starred
   )
-  return result
-})
+)
 </script>
