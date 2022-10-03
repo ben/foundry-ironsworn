@@ -103,17 +103,12 @@ body.theme-ironsworn {
   }
 
   .clickable {
-    // renders the stroke behind the fill of the glyph
-    paint-order: stroke fill;
-    -webkit-text-stroke: 0px transparent;
     &.selected,
     &[aria-selected='true'] {
       &:not(svg):not(.svg) {
         color: var(--ironsworn-color-bg);
         background-color: var(--ironsworn-color-thematic);
         border-color: var(--ironsworn-color-border);
-        // half the stroke's width is rendered behind the glyph, so 2px means we get an apparent width of 1px;
-        -webkit-text-stroke: 2px $border-color;
       }
     }
 
