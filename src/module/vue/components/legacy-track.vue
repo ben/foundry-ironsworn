@@ -102,6 +102,7 @@
     width: 100%;
     gap: @progress_box_gap;
     justify-self: center;
+    position: relative;
     .xp-box {
       background-color: var(--ironsworn-color-bg);
       margin: 0;
@@ -110,9 +111,11 @@
       border-width: @xp_border_width;
       width: 100%;
       max-width: @max_xp_box_width;
+      z-index: 1;
       &.hover,
       &.selected {
         background-color: var(--ironsworn-color-thematic);
+        z-index: 100;
       }
 
       &:not(:nth-child(n + 21)) {
