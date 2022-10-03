@@ -169,7 +169,7 @@ function assetsForTypes(types: IAssetType[]) {
       }
 
       const data = {
-        description: renderMarkdown(asset.Requirement ?? ''),
+        requirement: renderMarkdown(asset.Requirement ?? ''),
         category: assetType.Name,
         color: assetType.Display.Color ?? '',
         fields,
