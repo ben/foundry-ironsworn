@@ -101,7 +101,7 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 
 const props = defineProps<{
-  df: IAsset
+  df?: IAsset
   foundryItem: Readonly<IronswornItem>
 }>()
 const data = props.foundryItem.data as AssetDataProperties

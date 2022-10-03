@@ -36,7 +36,7 @@
             :df="asset.df"
             :foundry-item="(asset.foundryItem as any)"
             v-for="asset in category.assets"
-            :key="asset.foundryItem.id"
+            :key="asset.foundryItem.id ?? ''"
             class="flexcol nogrow movesheet-row"
           />
         </section>
