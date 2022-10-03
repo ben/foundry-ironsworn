@@ -24,7 +24,7 @@
         />
       </g>
       <g>
-        <TransitionGroup name="draw-tick">
+        <TransitionGroup :name="transitionName">
           <line
             v-bind="tickProps"
             v-for="(tick, i) in tickRange"
@@ -39,6 +39,21 @@
   </div>
 </template>
 <style lang="less">
+// helper mixin functions
+.animateTick(@value,@duration,@delay:0s) {
+  .draw-progress-tick-enter-active[data-tick='@{value}'] {
+    transition-duration: @duration;
+    transition-delay: @delay;
+  }
+}
+.animateBox(@totalDuration:1s; @baseDelay:0s) {
+  @tickDuration: (@totalDuration / 4);
+  each(1,2,3,4; {
+    @tickDelay: (@tickDuration*(@value - 1));
+    .animateTick(@value,@tickDuration,@baseDelay+ @tickDelay);
+  });
+}
+
 .progress-track-box {
   border: 1px solid;
   align-items: center;
@@ -68,40 +83,25 @@
 }
 
 // Progress tick draw animation
-.draw-tick-enter-active {
+.draw-progress-tick-enter-active {
   transition: 0.8s stroke-dashoffset, stroke-dasharray;
 }
-.draw-tick-leave-active {
+.draw-progress-tick-leave-active {
   transition: 0.8s;
 }
-
-.draw-tick-enter-from {
+.draw-progress-tick-enter-from {
   stroke-dashoffset: -100%;
 }
-
-.draw-tick-leave-from {
+.draw-progress-tick-leave-from {
   opacity: 1;
 }
-.draw-tick-leave-to {
+.draw-progress-tick-leave-to {
   opacity: 0;
 }
-.draw-tick-enter-to {
+.draw-progress-tick-enter-to {
   stroke-dashoffset: 0;
 }
-// helper mixin functions
-.animateTick(@value,@duration,@delay:0s) {
-  .draw-tick-enter-active[data-tick='@{value}'] {
-    transition-duration: @duration;
-    transition-delay: @delay;
-  }
-}
-.animateBox(@totalDuration:1s; @baseDelay:0s) {
-  @tickDuration: (@totalDuration / 4);
-  each(1,2,3,4; {
-    @tickDelay: (@tickDuration*(@value - 1));
-    .animateTick(@value,@tickDuration,@baseDelay+ @tickDelay);
-  });
-}
+
 .progress-track {
   &[data-rank='1'] {
     // see the Track component
@@ -188,7 +188,7 @@
   }
   &[data-rank='5'] {
     // Challenge rank epic: marks 1 tick.
-    .draw-tick-enter-active {
+    .draw-progress-tick-enter-active {
       transition-duration: 0.5s;
     }
   }
@@ -198,14 +198,21 @@
 import { range } from 'lodash'
 import { computed } from 'vue'
 
-const tickRange = range(1, 5)
 const props = defineProps<{
   ticks: number
   /**
    * Whether to indicate this as an "overflow" progress box by rendering a second set of 4 ticks with low opacity. Used by legacy tracks that have previously been filled to 10.
    */
-  isOverflowBox?: Boolean
+  isOverflowBox?: boolean
 }>()
+
+const transitionName = computed(() =>
+  game.settings.get('foundry-ironsworn', 'progress-mark-animation')
+    ? 'draw-progress-tick'
+    : undefined
+)
+
+const tickRange = range(1, 5)
 
 const tickTransforms = [
   'rotate(-45, 50, 50)',
@@ -223,9 +230,9 @@ const tickProps = computed(() => ({
 }))
 
 function onTransitionStart(event) {
-  console.log('transitionStart', event)
+  // console.log('transitionStart', event)
 }
 function onTransitionEnd(event) {
-  console.log('transitionEnd', event)
+  // console.log('transitionEnd', event)
 }
 </script>

@@ -2,7 +2,9 @@
   <article
     :tabindex="0"
     class="progress-track"
-    :class="{ ['compact-progress']: compactProgress }"
+    :class="{
+      ['compact-progress']: compactProgress,
+    }"
     role="slider"
     :aria-label="$t('IRONSWORN.PROGRESS.Track')"
     aria-orientation="horizontal"
