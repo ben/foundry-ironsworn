@@ -21,7 +21,6 @@
 <script setup lang="ts">
 import { RawEditorSettings } from 'tinymce'
 import { inject, reactive } from 'vue'
-import { $EmitterKey } from '../provisions'
 import { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import WithRolllisteners from './with-rolllisteners.vue'
@@ -31,12 +30,11 @@ defineProps<{ modelValue: string; interceptClicks?: boolean }>()
 const data = reactive({ editing: false })
 
 // Outbound link clicks: broadcast events
-const $emitter = inject($EmitterKey)
 function moveClick(move: IronswornItem) {
-  $emitter?.emit('highlightMove', move.id ?? '')
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
 }
 function oracleClick(dfId: string) {
-  $emitter?.emit('highlightOracle', dfId)
+  CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfId)
 }
 
 const $emit = defineEmits<{ (e: 'save') }>()

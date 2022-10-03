@@ -113,8 +113,8 @@ const state = reactive({
 const bodyId = `asset-body-${props.foundryItem.id}`
 const toolset = inject('toolset')
 
-function moveClick() {
-  // TODO:
+function moveClick(item) {
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
 
 function dragStart(ev) {

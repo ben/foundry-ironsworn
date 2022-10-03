@@ -358,12 +358,7 @@ function exclusiveOptionClick(selectedIdx) {
   foundryItem?.update({ data: { exclusiveOptions: options } })
 }
 function moveclick(item) {
-  let actorWithMoves = $actor
-  if ($actor?.type !== 'character') {
-    actorWithMoves = defaultActor()
-  }
-  actorWithMoves?.moveSheet?.render(true)
-  actorWithMoves?.moveSheet?.highlightMove(item)
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(props.asset.data.abilities) as AssetAbility[]

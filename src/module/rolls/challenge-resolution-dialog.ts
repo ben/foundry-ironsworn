@@ -19,7 +19,7 @@ export class ChallengeResolutionDialog extends VueApplication {
     }
 
     const el = $(`.chat-message[data-message-id="${messageId}"`)
-    if (!el) return
+    if (el.length < 1) return
 
     this.openDialogs[messageId] = new ChallengeResolutionDialog(messageId, {
       left: window.innerWidth - 620,

@@ -66,7 +66,6 @@ import {
   createIronswornMoveTree,
   createStarforgedMoveTree,
 } from '../../features/custommoves'
-import { $EmitterKey } from '../provisions'
 import sfMoverow from './sf-moverow.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
@@ -119,8 +118,7 @@ function collapseAll() {
   }
 }
 
-const $emitter = inject($EmitterKey)
-$emitter?.on('highlightMove', (_item) => {
+CONFIG.IRONSWORN.emitter.on('highlightMove', (_item) => {
   data.searchQuery = ''
 })
 </script>

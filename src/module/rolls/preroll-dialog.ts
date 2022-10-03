@@ -361,6 +361,7 @@ export class IronswornPrerollDialog extends Dialog<
     const r = new IronswornRoll(realOpts)
     const msg = new IronswornRollMessage(r)
     await msg.createOrUpdate()
+    await new Promise((r) => setTimeout(r, 50))
 
     // Show resolution dialog if needed
     if (r.preRollOptions.extraChallengeDice) {
