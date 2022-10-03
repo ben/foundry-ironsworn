@@ -144,8 +144,8 @@ import { IronswornActor } from '../../actor/actor.js'
 import XpTrack from './xp-track.vue'
 import _ from 'lodash'
 
-import { ref } from 'vue'
 import ProgressTrack from './progress/progress-track.vue'
+import { CharacterDataProperties } from '../../actor/actortypes.js'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
 type LegacyType = 'quests' | 'bonds' | 'discoveries'
@@ -165,7 +165,10 @@ const props = defineProps<{
    * The legacy track type.
    */
   legacy: LegacyType
-}>()
+}>() as Readonly<{
+  actor: IronswornActor & CharacterDataProperties
+  legacy: LegacyType
+}>
 
 const $actor = inject($ActorKey)
 provide(
