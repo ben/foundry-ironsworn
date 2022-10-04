@@ -154,9 +154,11 @@ import { RANKS } from '../../../constants.js'
 import ProgressTrack from './progress-track.vue'
 import { IronswornActor } from '../../../actor/actor.js'
 import { IronswornItem } from '../../../item/item.js'
+import { CharacterDataSource } from '../../../actor/actortypes.js'
+import { ProgressDataSource } from '../../../item/itemtypes.js'
 
 const props = defineProps<{
-  item: IronswornItem
+  item: any
   showStar?: boolean
   /**
    * When true, renders the progress bar for more compact display.
@@ -164,9 +166,12 @@ const props = defineProps<{
   compactProgress?: boolean
 }>()
 
+const item = props.item as ReturnType<typeof IronswornItem.prototype.toObject> &
+  ProgressDataSource
+
 const $actor = inject($ActorKey)
 const actor = inject('actor') as Ref<
-  ReturnType<typeof IronswornActor.prototype.toObject>
+  ReturnType<typeof IronswornActor.prototype.toObject> & CharacterDataSource
 >
 
 // ProgressListItem is embedded in a sheet but the sheet usually doesn't provide it -- in other words, this
@@ -178,7 +183,7 @@ const progressTrackData = $actor?.items.get(progressId.value)
 provide('item', progressTrackData)
 
 const editMode = computed(() => {
-  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
+  return (actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 })
 const showTrackButtons = computed(() => {
   return props.item.data.hasTrack
