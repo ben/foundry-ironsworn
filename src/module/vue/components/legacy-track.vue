@@ -149,6 +149,14 @@ import { IronswornActor } from '../../actor/actor.js'
 import XpTrack from './xp-track.vue'
 import _ from 'lodash'
 import ProgressTrack from './progress/progress-track.vue'
+import {
+  CharacterDataProperties,
+  CharacterDataSource,
+} from '../../actor/actortypes.js'
+import {
+  ActorData,
+  ActorDataBaseProperties,
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
 type LegacyType = 'quests' | 'bonds' | 'discoveries'
@@ -171,7 +179,9 @@ const props = defineProps<{
 
 const $actor = inject($ActorKey)
 const actor = inject('actor') as Ref<
-  ReturnType<typeof IronswornActor.prototype.toObject>
+  ReturnType<typeof IronswornActor.prototype.toObject> &
+    CharacterDataSource &
+    ActorData
 >
 
 const ticks = computed(
@@ -205,7 +215,10 @@ const markTooltip = computed(() => {
 })
 
 const editMode = computed(
-  () => actor.value.flags?.['foundry-ironsworn']?.['edit-mode']
+  () =>
+    (actor.value.flags as Record<string, any>)['foundry-ironsworn']?.[
+      'edit-mode'
+    ]
 )
 
 const overflowLabel = computed(() => {
