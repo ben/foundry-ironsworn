@@ -19,10 +19,9 @@
         <h4 class="asset-title">
           {{ asset.name }}
         </h4>
-        <!-- FIXME: uncomment once asset type names are trimmed from their display names -->
-        <!-- <span class="asset-type" aria-label="asset type">
+        <span class="asset-type" aria-label="asset type">
           {{ asset.data.category }}
-        </span> -->
+        </span>
       </button>
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
