@@ -141,18 +141,14 @@
 }
 </style>
 <script setup lang="ts">
-import { computed, inject, provide } from 'vue'
+import { computed, inject, Ref } from 'vue'
 import { $ActorKey } from '../provisions'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import { capitalize } from 'lodash'
 import { IronswornActor } from '../../actor/actor.js'
 import XpTrack from './xp-track.vue'
 import _ from 'lodash'
-
 import ProgressTrack from './progress/progress-track.vue'
-import { CharacterDataProperties } from '../../actor/actortypes.js'
-import { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs.js'
-import { DocumentData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs.js'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
 type LegacyType = 'quests' | 'bonds' | 'discoveries'
@@ -167,7 +163,6 @@ const xpEarnedPerBox = 2
 const xpEarnedPerOverflowBox = 1
 
 const props = defineProps<{
-  actor: IronswornActor
   /**
    * The legacy track type.
    */
@@ -175,16 +170,12 @@ const props = defineProps<{
 }>()
 
 const $actor = inject($ActorKey)
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+const actor = inject('actor') as Ref<
+  ReturnType<typeof IronswornActor.prototype.toObject>
+>
 
 const ticks = computed(
-  () =>
-    (props.actor as IronswornActor & CharacterDataProperties).data.legacies?.[
-      props.legacy
-    ] ?? minTicks
+  () => actor.value.data.legacies?.[props.legacy] ?? minTicks
 )
 const ticksDisplayed = computed(() => ticks.value % maxTicks)
 
@@ -204,10 +195,7 @@ const xpEarned = computed(() => {
 })
 
 const xpSpent = computed(
-  () =>
-    (props.actor as IronswornActor & CharacterDataProperties).data?.legacies[
-      `${props.legacy}XpSpent`
-    ] ?? 0
+  () => actor.value.data?.legacies[`${props.legacy}XpSpent`] ?? 0
 )
 
 const markTooltip = computed(() => {
@@ -217,10 +205,7 @@ const markTooltip = computed(() => {
 })
 
 const editMode = computed(
-  () =>
-    (props.actor as IronswornActor & { flags: Record<string, any> }).flags?.[
-      'foundry-ironsworn'
-    ]?.['edit-mode']
+  () => actor.value.flags?.['foundry-ironsworn']?.['edit-mode']
 )
 
 const overflowLabel = computed(() => {
@@ -238,10 +223,7 @@ function setXp(newValue: number) {
 }
 
 function adjustTrack(inc) {
-  const current =
-    (props.actor as IronswornActor & CharacterDataProperties).data?.legacies[
-      props.legacy
-    ] ?? 0
+  const current = actor.value.data?.legacies[props.legacy] ?? 0
   $actor?.update({
     [`data.legacies.${props.legacy}`]: current + inc,
   })
