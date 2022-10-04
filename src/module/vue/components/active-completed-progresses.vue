@@ -16,7 +16,6 @@
           />
           <progress-list-item
             :item="item"
-            :actor="actor"
             :showStar="progressStars"
             @completed="progressCompleted"
             :compact-progress="compactProgress"
@@ -59,7 +58,6 @@
                 @sortDown="completedSortDown"
               />
               <progress-list-item
-                :actor="actor"
                 :item="item"
                 :showStar="progressStars"
                 :compact-progress="compactProgress"

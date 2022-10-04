@@ -16,7 +16,6 @@
         v-for="(progressItem, i) in starredProgresses"
         :key="`progress-item-${i}`"
         :item="progressItem"
-        :actor="actor"
       />
     </section>
   </article>
