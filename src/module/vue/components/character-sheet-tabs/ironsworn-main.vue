@@ -63,10 +63,6 @@ import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
-import ProgressListItem from '../progress/progress-list-item.vue'
-import ProgressControls from '../progress-controls.vue'
-import { throttle } from 'lodash'
-import BtnFaicon from '../buttons/btn-faicon.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
 
 const actor = inject('actor') as Ref
@@ -76,12 +72,6 @@ const progressItems = computed(() => {
   return actor.value?.items
     .filter((x) => x.type === 'progress')
     .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-})
-const activeItems = computed(() => {
-  return progressItems.value.filter((x) => !x.data.completed)
-})
-const completedItems = computed(() => {
-  return progressItems.value.filter((x) => x.data.completed)
 })
 const assets = computed(() => {
   return actor.value?.items
@@ -98,20 +88,6 @@ const data = reactive({
 })
 
 let highlightCompletedTimer: NodeJS.Timer | undefined
-function progressCompleted() {
-  data.highlightCompleted = true
-  clearTimeout(highlightCompletedTimer)
-  highlightCompletedTimer = setTimeout(() => {
-    data.highlightCompleted = false
-  }, 2000)
-}
-
-const completedCaret = computed(() => {
-  return data.expandCompleted ? 'caret-down' : 'caret-right'
-})
-const completedClass = computed(() => {
-  return data.highlightCompleted ? 'highlighted' : undefined
-})
 
 async function applySort(oldI, newI, sortBefore, collection) {
   const sorted = collection.sort(
@@ -131,19 +107,5 @@ function assetSortUp(i) {
 function assetSortDown(i) {
   const items = $actor?.items.filter((x) => x.type === 'asset')
   applySort(i, i + 1, false, items)
-}
-function progressSortUp(i) {
-  const items = $actor?.items.filter((x) => x.type === 'progress')
-  applySort(i, i - 1, true, items)
-}
-function progressSortDown(i) {
-  const items = $actor?.items.filter((x) => x.type === 'progress')
-  applySort(i, i + 1, false, items)
-}
-function completedSortUp(i) {
-  applySort(i, i - 1, true, (x) => x.data.data.completed)
-}
-function completedSortDown(i) {
-  applySort(i, i + 1, false, (x) => x.data.data.completed)
 }
 </script>

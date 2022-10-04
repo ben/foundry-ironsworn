@@ -35,16 +35,13 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, provide } from 'vue'
+import { computed, provide } from 'vue'
 import LegacyTrack from '../legacy-track.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
-import { $ActorKey } from '../../provisions.js'
 import { IronswornActor } from '../../../actor/actor.js'
 import { ProgressDataPropertiesData } from '../../../item/itemtypes.js'
 
 const props = defineProps<{ actor: IronswornActor }>()
-
-const $actor = inject($ActorKey) as any
 
 provide(
   'actor',
