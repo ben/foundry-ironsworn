@@ -25,10 +25,10 @@
       <input
         v-if="editMode"
         type="text"
-        v-model="item.data.description"
-        @blur="setDescription"
+        v-model="item.data.requirement"
+        @blur="setRequirement"
       />
-      <span v-else v-html="$enrichHtml(item.data.description)"></span>
+      <span v-else v-html="$enrichHtml(item.data.requirement)"></span>
     </p>
 
     <!-- FIELDS -->
@@ -97,8 +97,8 @@ const hasFields = computed(() => {
   return Object.values(props.item.data.fields || []).length > 0
 })
 
-function setDescription() {
-  $item?.update({ data: { description: props.item.data.description } })
+function setRequirement() {
+  $item?.update({ data: { requirement: props.item.data.requirement } })
 }
 function setCategory() {
   $item?.update({ data: { category: props.item.data.category } })

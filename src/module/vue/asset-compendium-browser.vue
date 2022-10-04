@@ -2,13 +2,13 @@
   <section
     class="nogrow asset-category"
     v-for="category in data.categories"
-    :key="category.df.$id"
+    :key="category.title"
     :style="`--transition-max-height: ${category.maxHeight}px`"
   >
     <h2 class="flexrow">
       <BtnFaicon
         :icon="category.expanded ? 'caret-down' : 'caret-right'"
-        :aria-controls="category.df.$id"
+        :aria-controls="category.title"
         class="juicy text"
         @click="category.expanded = !category.expanded"
       >
@@ -21,12 +21,14 @@
         <section
           class="asset-category-contents"
           :aria-expanded="category.expanded"
-          :id="category.df.$id"
+          :id="category.title"
         >
           <WithRolllisteners
             element="div"
             class="category-description"
-            v-html="$enrichMarkdown(category.description)"
+            v-html="
+              category.description && $enrichMarkdown(category.description)
+            "
             @moveclick="moveClick"
           />
 
@@ -34,7 +36,7 @@
             :df="asset.df"
             :foundry-item="(asset.foundryItem as any)"
             v-for="asset in category.assets"
-            :key="asset.df.$id"
+            :key="asset.foundryItem.id ?? ''"
             class="flexcol nogrow movesheet-row"
           />
         </section>
@@ -78,84 +80,34 @@ h2 {
 </style>
 
 <script setup lang="ts">
-import { IAsset, IAssetType } from 'dataforged'
-import { capitalize, provide, reactive } from 'vue'
-import { hashLookup, renderLinksInStr } from '../dataforged'
-import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
-import { IronswornItem } from '../item/item'
+import { provide, reactive } from 'vue'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
+import {
+  createIronswornAssetTree,
+  createStarforgedAssetTree,
+  DisplayCategory,
+} from '../features/customassets'
 
 const props = defineProps<{ toolset: 'starforged' | 'ironsworn' }>()
 
-interface DisplayAsset {
-  df: IAsset
-  foundryItem: Readonly<IronswornItem>
-}
-interface DisplayCategory {
-  df: IAssetType
-  title: string
-  description: string
-  expanded: boolean
-  maxHeight: number
-  assets: DisplayAsset[]
-}
 const data = reactive({
   categories: [] as DisplayCategory[],
 })
 
 provide('toolset', props.toolset)
 
-const packName = `foundry-ironsworn.${props.toolset}assets`
-
 // Kick into async without requiring a <Suspense>
-async function resolveAssets() {
-  const pack = game.packs.get(packName)
-  if (!pack)
-    throw new Error(`can't load pack foundry-ironsworn.${props.toolset}assets`)
-
-  const assetTypes =
-    props.toolset === 'starforged' ? SFAssetTypes : ISAssetTypes
-
-  const i18n = (categoryName: string, extension: string) => {
-    const capCat = capitalize(categoryName)
-    const capToolset = capitalize(props.toolset)
-    return game.i18n.localize(
-      `IRONSWORN.Asset Categories.${capToolset}.${capCat}.${extension}`
-    )
-  }
-
-  const categories = [] as DisplayCategory[]
-  for (const dfAssetType of assetTypes) {
-    const i18nDescription = i18n(dfAssetType.Name, 'Description')
-    const cat: DisplayCategory = {
-      df: dfAssetType,
-      title: i18n(dfAssetType.Name, 'Title'),
-      description: renderLinksInStr(i18nDescription),
-      expanded: false,
-      maxHeight: 200 + dfAssetType.Assets.length * 30,
-      assets: [],
-    }
-
-    for (const dfAsset of dfAssetType.Assets) {
-      const item = (await pack.getDocument(
-        hashLookup(dfAsset.$id)
-      )) as IronswornItem
-      cat.assets.push({
-        df: dfAsset,
-        foundryItem: Object.freeze(item),
-      })
-    }
-
-    categories.push(cat)
-  }
-
+const promise =
+  props.toolset === 'ironsworn'
+    ? createIronswornAssetTree()
+    : createStarforgedAssetTree()
+promise.then((categories) => {
   data.categories = categories
-}
-resolveAssets()
+})
 
-function moveClick() {
-  // TODO:
+function moveClick(item) {
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
 </script>
