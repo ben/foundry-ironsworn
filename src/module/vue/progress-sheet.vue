@@ -95,7 +95,7 @@
               style="margin: 0.5rem 0"
             >
               <option
-                v-for="clockSize in Object.values(ClockSegments)"
+                v-for="clockSize in [4, 6, 8, 10, 12]"
                 :key="clockSize"
                 :value="clockSize"
               >
@@ -136,7 +136,6 @@ import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import ProgressTrack from './components/progress/progress-track.vue'
-import { ClockSegments } from 'dataforged'
 
 const props = defineProps<{ item: any }>()
 const $item = inject($ItemKey)
