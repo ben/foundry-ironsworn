@@ -201,7 +201,7 @@ function assetsForTypes(types: IAssetType[]) {
       assetsToCreate.push({
         type: 'asset',
         _id: hashLookup(asset.$id),
-        name: `${assetType.Name} / ${asset.Name}`,
+        name: asset.Name,
         data: data,
       })
     }
