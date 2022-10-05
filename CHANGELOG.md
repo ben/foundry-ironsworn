@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.18.1
+
 - Reinstate visibility of the description field for custom assets ([#499](https://github.com/ben/foundry-ironsworn/pull/499))
 
 ## 1.18.0
