@@ -18,7 +18,7 @@
           @click="toggleDescription()"
         />
       </h4>
-      <Transition name="slide">
+      <CollapseTransition>
         <RulesTextOracle
           v-if="state.descriptionExpanded"
           @moveclick="moveclick"
@@ -26,7 +26,7 @@
           :oracle-table="node.tables[0]"
           :source="node.dataforgedNode?.Source"
         />
-      </Transition>
+      </CollapseTransition>
     </div>
 
     <!-- Branch node -->
@@ -41,7 +41,7 @@
         </BtnFaicon>
       </h4>
 
-      <Transition name="slide">
+      <CollapseTransition>
         <div
           v-if="state.manuallyExpanded"
           class="flexcol"
@@ -55,7 +55,7 @@
             ref="children"
           />
         </div>
-      </Transition>
+      </CollapseTransition>
     </div>
   </div>
 </template>
@@ -83,10 +83,6 @@ h4 {
 .hidden {
   display: none;
 }
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 1000px;
-}
 </style>
 
 <script setup lang="ts">
@@ -96,6 +92,7 @@ import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { IronswornItem } from '../../item/item'
 import RulesTextOracle from './rules-text/rules-text-oracle.vue'
+import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 

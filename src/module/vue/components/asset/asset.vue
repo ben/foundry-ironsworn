@@ -1,6 +1,6 @@
 <template>
   <article
-    class="item-row flexcol ironsworn__asset"
+    class="item-row ironsworn__asset"
     :class="{ [`asset-${$actor?.toolset}`]: true }"
     :aria-expanded="expanded"
     :style="
@@ -34,7 +34,7 @@
       </div>
     </header>
 
-    <transition name="slide">
+    <CollapseTransition>
       <section
         v-if="expanded"
         class="asset-body flexcol"
@@ -105,7 +105,7 @@
           />
         </section>
       </section>
-    </transition>
+    </CollapseTransition>
   </article>
 </template>
 
@@ -113,10 +113,6 @@
 @asset_spacer: 0.5em;
 
 .ironsworn__asset {
-  .slide-enter-active,
-  .slide-leave-active {
-    max-height: 350px;
-  }
   overflow: hidden;
   transition: var(--std-animation);
   .asset-header {
@@ -158,9 +154,6 @@
     overflow: hidden;
     padding: (@asset_spacer / 2);
     gap: @asset_spacer;
-    &[aria-expanded='false'] {
-      height: 0px;
-    }
     .asset-fields {
       margin: 0;
       display: flex;
@@ -265,7 +258,7 @@
     aspect-ratio: @hex_deco_aspect_ratio;
     z-index: 1;
     mask-repeat: no-repeat;
-    transition: var(--std-animation);
+    // transition: var(--std-animation);
     transform: scaleX(-1);
     height: @hex_deco_collapsed_height;
     top: -($height * 0.09);
@@ -309,6 +302,7 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
+import CollapseTransition from '../transition/collapse-transition.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref

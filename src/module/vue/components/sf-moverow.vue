@@ -15,7 +15,7 @@
         {{ move?.displayName }}
       </span>
     </h4>
-    <Transition name="slide">
+    <CollapseTransition>
       <RulesTextMove
         v-if="data.expanded"
         @moveclick="moveClick"
@@ -45,7 +45,7 @@
           />
         </template>
       </RulesTextMove>
-    </Transition>
+    </CollapseTransition>
   </div>
 </template>
 
@@ -69,11 +69,6 @@ h4 {
 .movesheet-row {
   transition: all 0.4s ease;
 }
-
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 1000px;
-}
 </style>
 
 <script setup lang="ts">
@@ -94,6 +89,7 @@ import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 import RulesTextMove from './rules-text/rules-text-move.vue'
 import { SFMoveDataProperties } from '../../item/itemtypes'
+import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{ move: Move }>()
 const data = reactive({

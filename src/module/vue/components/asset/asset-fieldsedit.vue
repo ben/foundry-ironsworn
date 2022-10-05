@@ -1,6 +1,6 @@
 <template>
   <div class="boxgroup">
-    <transition-group name="slide" tag="div" class="nogrow">
+    <CollapseTransition group tag="div" class="nogrow">
       <div
         class="flexrow boxrow nogrow fieldrow"
         v-for="(field, i) in item.data.fields"
@@ -22,7 +22,7 @@
           <btn-faicon icon="trash" @click="deleteField(i)" />
         </div>
       </div>
-    </transition-group>
+    </CollapseTransition>
     <div class="flexrow boxrow nogrow" v-if="editMode">
       <btn-faicon
         icon="plus"
@@ -42,17 +42,13 @@
     text-align: left;
   }
 }
-
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 30px;
-}
 </style>
 
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import BtnFaicon from '../buttons/btn-faicon.vue'
+import CollapseTransition from '../transition/collapse-transition.vue'
 
 const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)

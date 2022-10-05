@@ -1,7 +1,6 @@
-
 <template>
   <article
-    class="item-row flexcol document ironsworn__asset"
+    class="item-row document ironsworn__asset"
     draggable="true"
     :data-pack="foundryItem.pack"
     :data-id="foundryItem.id"
@@ -29,7 +28,7 @@
       </button>
     </header>
 
-    <transition name="slide">
+    <CollapseTransition>
       <section
         v-if="state.expanded"
         class="asset-body flexcol"
@@ -86,12 +85,16 @@
           <asset-track :item="foundryItem.toObject(true)" />
         </article>
       </section>
-    </transition>
+    </CollapseTransition>
   </article>
 </template>
 
 <style lang="less" scoped>
 .ironsworn .ironsworn__asset {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   margin: 10px 0;
   padding: 5px;
 }
@@ -105,6 +108,7 @@ import { AssetDataProperties } from '../../../item/itemtypes'
 import AssetTrack from './asset-track.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
+import CollapseTransition from '../transition/collapse-transition.vue'
 
 const props = defineProps<{
   df?: IAsset
