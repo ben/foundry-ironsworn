@@ -36,7 +36,7 @@
             :foundry-item="(asset.foundryItem as any)"
             v-for="asset in category.assets"
             :key="asset.foundryItem.id ?? ''"
-            class="flexcol nogrow movesheet-row"
+            class="nogrow movesheet-row"
           />
         </section>
       </div>

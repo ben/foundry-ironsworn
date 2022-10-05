@@ -1,6 +1,6 @@
 <template>
   <article
-    class="item-row flexcol document ironsworn__asset"
+    class="item-row document ironsworn__asset"
     draggable="true"
     :data-pack="foundryItem.pack"
     :data-id="foundryItem.id"
@@ -87,6 +87,10 @@
 
 <style lang="less" scoped>
 .ironsworn .ironsworn__asset {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   margin: 10px 0;
   padding: 5px;
 }
