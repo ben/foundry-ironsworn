@@ -11,10 +11,10 @@
 <script setup lang="ts">
 import { debounce } from 'lodash'
 import { inject, Ref } from 'vue'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, ActorKey } from '../../provisions'
 import MceEditor from '../mce-editor.vue'
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const immediateSave = () => {

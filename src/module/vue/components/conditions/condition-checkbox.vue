@@ -12,9 +12,9 @@
 <script lang="ts" setup>
 import { inject, nextTick, Ref } from 'vue'
 import { IronswornSettings } from '../../../helpers/settings'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, ActorKey } from '../../provisions'
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const props = defineProps<{

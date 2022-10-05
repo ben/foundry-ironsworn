@@ -28,11 +28,11 @@ input[type='text'] {
 <script lang="ts" setup>
 import { throttle } from 'lodash'
 import { computed, inject, nextTick, Ref } from 'vue'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, ActorKey } from '../../provisions'
 
 const props = defineProps<{ debilitykey: string }>()
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const nameKey = computed(() => `${props.debilitykey}name`)

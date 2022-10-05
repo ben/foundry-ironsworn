@@ -162,13 +162,11 @@ import sfImpacts from './components/sf-impacts.vue'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
+import { ActorKey } from './provisions.js'
 
 const props = defineProps<{
   actor: any
 }>()
 
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+provide(ActorKey, computed(() => props.actor) as any)
 </script>
