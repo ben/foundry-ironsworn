@@ -24,9 +24,6 @@
     </div>
   </div>
 </template>
-
-<style lang="less" scoped></style>
-
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'

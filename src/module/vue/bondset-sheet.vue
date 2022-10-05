@@ -17,9 +17,6 @@
     <BtnFaicon class="block nogrow" icon="plus" @click="addBond" />
   </div>
 </template>
-
-<style lang="less" scoped></style>
-
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import { $ItemKey, ItemKey } from './provisions'

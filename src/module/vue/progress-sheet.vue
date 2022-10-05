@@ -118,8 +118,6 @@
   </div>
 </template>
 
-<style lang="less" scoped></style>
-
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'

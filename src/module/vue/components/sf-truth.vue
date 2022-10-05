@@ -51,8 +51,6 @@
   </div>
 </template>
 
-<style lang="less" scoped></style>
-
 <script setup lang="ts">
 import { computed, defineComponent, PropType, reactive } from 'vue'
 import { ISettingTruthOption } from 'dataforged'
