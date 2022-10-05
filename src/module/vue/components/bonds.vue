@@ -8,24 +8,24 @@
     <ProgressTrack
       :ticks="bondcount"
       :rank="null"
-      :compact-progress="compactProgress"
+      :compact-progress="props.compactProgress"
     />
   </div>
 </template>
 
 <script setup lang="ts">
 import { inject, computed, Ref } from 'vue'
-import { $ActorKey } from '../provisions'
+import { $ActorKey, ActorKey } from '../provisions'
 import btnFaicon from './buttons/btn-faicon.vue'
 import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{ compactProgress?: boolean }>()
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey)
 const $actor = inject($ActorKey)
 
 const bonds = computed(() => {
-  return actor.value?.items.find((x) => x.type === 'bondset')
+  return actor?.value?.items.find((x) => x.type === 'bondset')
 })
 const bondcount = computed(() => {
   if (!bonds.value?.data?.bonds) return 0

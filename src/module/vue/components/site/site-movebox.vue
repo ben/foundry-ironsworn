@@ -21,7 +21,6 @@ const props = defineProps<{
   disabled?: boolean
 }>()
 
-const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
 
 const i18nKey = computed(() => `IRONSWORN.MoveContents.${props.movename}.title`)

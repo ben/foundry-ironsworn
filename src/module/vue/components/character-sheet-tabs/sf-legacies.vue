@@ -34,21 +34,16 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, provide } from 'vue'
+import { computed, inject, Ref } from 'vue'
 import LegacyTrack from '../legacy-track.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
-import { IronswornActor } from '../../../actor/actor.js'
 import { ProgressDataPropertiesData } from '../../../item/itemtypes.js'
+import { ActorKey } from '../../provisions.js'
 
-const props = defineProps<{ actor: IronswornActor }>()
-
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+const actor = inject(ActorKey) as Ref
 
 const starredProgresses = computed(() =>
-  props.actor.items.filter(
+  actor?.value.items.filter(
     (item) =>
       item.type === 'progress' &&
       (item.data as unknown as ProgressDataPropertiesData)?.starred

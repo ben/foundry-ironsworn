@@ -43,11 +43,11 @@
 import { inject, computed, capitalize, Ref } from 'vue'
 import { IronswornActor } from '../../actor/actor'
 import { IronswornPrerollDialog } from '../../rolls'
-import { $ActorKey } from '../provisions'
+import { $ActorKey, ActorKey } from '../provisions'
 
 const props = defineProps<{ attr: string }>()
 const $actor = inject($ActorKey)
-const actor = inject('actor') as Ref<
+const actor = inject(ActorKey) as Ref<
   ReturnType<typeof IronswornActor.prototype.toObject>
 >
 

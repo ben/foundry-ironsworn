@@ -29,10 +29,10 @@
 
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
-import { $ItemKey } from '../../provisions'
+import { $ItemKey, ItemKey } from '../../provisions'
 import AssetTrack from './asset-track.vue'
 
-const item = inject('item') as Ref
+const item = inject(ItemKey) as Ref
 const editMode = computed(() => {
   return item.value.flags['foundry-ironsworn']?.['edit-mode']
 })

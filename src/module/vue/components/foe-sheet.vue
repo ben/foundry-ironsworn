@@ -67,7 +67,7 @@
 import SheetHeaderBasic from '../sheet-header-basic.vue'
 import { computed, inject, provide } from 'vue'
 import { IronswornActor } from '../../actor/actor'
-import { $ActorKey } from '../provisions'
+import { $ActorKey, ActorKey } from '../provisions'
 import { throttle } from 'lodash'
 import RankPips from './rank-pips/rank-pips.vue'
 import BtnFaicon from './buttons/btn-faicon.vue'
@@ -80,13 +80,10 @@ import Track from './progress/track.vue'
 import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  actor: ReturnType<typeof IronswornActor.prototype.toObject> &
+    FoeDataProperties
 }>()
-provide(
-  'actor',
-  computed(() => props.actor)
-)
-const actorData = props.actor as FoeDataProperties
+provide(ActorKey, computed(() => props.actor) as any)
 const foe = props.actor.items.find(
   (x) => x.type === 'progress'
 ) as ProgressDataProperties
