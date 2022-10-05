@@ -41,10 +41,6 @@
     margin: 2px 5px;
   }
 }
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 30px;
-}
 </style>
 
 <script setup lang="ts">

@@ -69,11 +69,6 @@ h4 {
 .movesheet-row {
   transition: all 0.4s ease;
 }
-
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 1000px;
-}
 </style>
 
 <script setup lang="ts">

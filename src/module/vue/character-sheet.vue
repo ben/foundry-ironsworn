@@ -115,10 +115,6 @@
 .stat-roll {
   text-transform: uppercase;
 }
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 83px;
-}
 </style>
 
 <script setup lang="ts">

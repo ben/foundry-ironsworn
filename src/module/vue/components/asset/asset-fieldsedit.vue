@@ -42,11 +42,6 @@
     text-align: left;
   }
 }
-
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 30px;
-}
 </style>
 
 <script setup lang="ts">

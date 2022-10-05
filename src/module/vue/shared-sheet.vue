@@ -40,11 +40,6 @@
   text-transform: uppercase;
 }
 
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 83px;
-}
-
 h3 {
   margin: 5px 0;
   transition: background-color 0.2s ease;

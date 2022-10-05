@@ -118,12 +118,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 93px;
-}
-</style>
+<style lang="less" scoped></style>
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'

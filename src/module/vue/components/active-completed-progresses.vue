@@ -99,13 +99,6 @@ h3 {
     background-color: lightyellow;
   }
 }
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 106px;
-  &.completed {
-    max-height: 400px;
-  }
-}
 </style>
 
 <script setup lang="ts">

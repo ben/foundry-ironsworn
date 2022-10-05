@@ -51,12 +51,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 225px;
-}
-</style>
+<style lang="less" scoped></style>
 
 <script setup lang="ts">
 import { computed, defineComponent, PropType, reactive } from 'vue'

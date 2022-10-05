@@ -109,10 +109,6 @@
 @asset_spacer: 0.5em;
 
 .ironsworn__asset {
-  .slide-enter-active,
-  .slide-leave-active {
-    max-height: 350px;
-  }
   overflow: hidden;
   transition: var(--std-animation);
   .asset-header {
