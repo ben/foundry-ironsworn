@@ -21,15 +21,29 @@
       />
     </section>
 
-    <p>
-      <input
-        v-if="editMode"
-        type="text"
-        v-model="item.data.requirement"
-        @blur="setRequirement"
-      />
+    <section style="margin-top: 1em" v-if="item.data.description">
+      <div v-if="editMode">
+        <label>{{ $t('IRONSWORN.Description') }}</label>
+        <input
+          type="text"
+          v-model="item.data.description"
+          @blur="setDescription"
+        />
+      </div>
+      <span v-else v-html="$enrichHtml(item.data.description)"></span>
+    </section>
+
+    <section style="margin-top: 1em">
+      <div v-if="editMode">
+        <label>Requirement</label>
+        <input
+          type="text"
+          v-model="item.data.requirement"
+          @blur="setRequirement"
+        />
+      </div>
       <span v-else v-html="$enrichHtml(item.data.requirement)"></span>
-    </p>
+    </section>
 
     <!-- FIELDS -->
     <div v-if="hasFields || editMode">
@@ -96,6 +110,9 @@ const hasFields = computed(() => {
 
 function setRequirement() {
   $item?.update({ data: { requirement: props.item.data.requirement } })
+}
+function setDescription() {
+  $item?.update({ data: { description: props.item.data.description } })
 }
 function setCategory() {
   $item?.update({ data: { category: props.item.data.category } })
