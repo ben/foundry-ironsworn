@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <transition-group name="slide" tag="div" class="nogrow">
+    <CollapseTransition tag="div" class="nogrow" group>
       <div
         class="flexrow nogrow"
         v-for="(item, i) in connections"
@@ -15,7 +15,7 @@
         />
         <progress-list-item :item="item" :show-star="true" />
       </div>
-    </transition-group>
+    </CollapseTransition>
 
     <div class="flexrow nogrow" style="text-align: center">
       <btn-faicon icon="plus" class="block" @click="newConnection">
@@ -25,12 +25,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 83px;
-}
-</style>
+<style lang="less" scoped></style>
 
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
@@ -39,6 +34,7 @@ import OrderButtons from '../order-buttons.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { ProgressDataProperties } from '../../../item/itemtypes'
+import CollapseTransition from '../transition/collapse-transition.vue'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)

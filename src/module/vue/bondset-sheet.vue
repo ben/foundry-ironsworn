@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol">
-    <transition-group name="slide" tag="div" class="nogrow">
-      <div
+    <CollapseTransition group>
+      <article
         class="item-row nogrow flexrow"
         v-for="(bond, i) in item.data.bonds"
         style="gap: 5px"
@@ -12,25 +12,20 @@
           <textarea v-model="bond.notes" @blur="save" />
         </div>
         <BtnFaicon class="block nogrow" icon="trash" @click="deleteBond(i)" />
-      </div>
-    </transition-group>
-
+      </article>
+    </CollapseTransition>
     <BtnFaicon class="block nogrow" icon="plus" @click="addBond" />
   </div>
 </template>
 
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 93px;
-}
-</style>
+<style lang="less" scoped></style>
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import { $ItemKey } from './provisions'
 import BtnFaicon from '../vue/components/buttons/btn-faicon.vue'
 import { BondsetDataPropertiesData } from '../item/itemtypes'
+import CollapseTransition from './components/transition/collapse-transition.vue'
 
 const props = defineProps<{ item: any }>()
 provide(

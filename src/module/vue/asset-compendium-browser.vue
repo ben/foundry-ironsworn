@@ -3,7 +3,6 @@
     class="nogrow asset-category"
     v-for="category in data.categories"
     :key="category.title"
-    :style="`--transition-max-height: ${category.maxHeight}px`"
   >
     <h2 class="flexrow">
       <BtnFaicon

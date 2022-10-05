@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
-    <transition-group name="slide" tag="div" class="nogrow">
+    <CollapseTransition tag="div" class="nogrow" group>
       <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
         <order-buttons
           v-if="editMode"
@@ -11,7 +11,7 @@
         />
         <asset :asset="asset" />
       </div>
-    </transition-group>
+    </CollapseTransition>
     <div class="flexrow nogrow" style="text-align: center">
       <BtnFaicon icon="atlas" @click="assetBrowser" class="clickable block">
         {{ $t('IRONSWORN.Assets') }}
@@ -28,6 +28,7 @@ import Asset from '../asset/asset.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { $ActorKey } from '../../provisions'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
+import CollapseTransition from '../transition/collapse-transition.vue'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)

@@ -10,7 +10,7 @@
         <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
           <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
-          <transition-group name="slide" tag="div" class="nogrow">
+          <CollapseTransition tag="div" class="nogrow" group>
             <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
               <OrderButtons
                 v-if="editMode"
@@ -21,7 +21,7 @@
               />
               <Asset :asset="asset" />
             </div>
-          </transition-group>
+          </CollapseTransition>
           <div class="flexrow nogrow" style="text-align: center">
             <BtnFaicon
               icon="atlas"
@@ -51,13 +51,6 @@ h3 {
     background-color: lightyellow;
   }
 }
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 106px;
-  &.completed {
-    max-height: 400px;
-  }
-}
 </style>
 
 <script lang="ts" setup>
@@ -73,6 +66,7 @@ import { throttle } from 'lodash'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
+import CollapseTransition from '../transition/collapse-transition.vue'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)

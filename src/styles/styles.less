@@ -716,25 +716,7 @@ table td:first-child {
     opacity: 1;
   }
 }
-// FIXME: remove once transition groups have been migrated
-.slide-enter-active,
-.slide-leave-active {
-  transition: all 0.4s ease;
-  overflow: hidden;
-  max-height: 500px; // NOTE: fill this in where you know the right number
-  opacity: 1;
-}
-.slide-enter-from,
-.slide-leave-to {
-  max-height: 0 !important;
-  opacity: 0 !important;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-  padding-top: 0 !important;
-  padding-bottom: 0 !important;
-  border-top: 0 !important;
-  border-bottom: 0 !important;
-}
+
 // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
 .fa,
 .fab,

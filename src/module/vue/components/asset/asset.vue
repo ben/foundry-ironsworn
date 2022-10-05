@@ -1,6 +1,6 @@
 <template>
   <article
-    class="item-row flexcol ironsworn__asset"
+    class="item-row ironsworn__asset"
     :class="{ [`asset-${$actor?.toolset}`]: true }"
     :aria-expanded="expanded"
     :style="
@@ -110,9 +110,9 @@
 
 .ironsworn__asset {
   overflow: hidden;
-  transition: var(--std-animation);
+  // transition: var(--std-animation);
   .asset-header {
-    transition: var(--std-animation);
+    // transition: var(--std-animation);
     gap: @asset_spacer;
     align-items: center;
     .asset-expand-toggle {
@@ -135,7 +135,7 @@
         flex-grow: 0;
         line-height: 1;
         font-style: italic;
-        transition: var(--std-animation);
+        // transition: var(--std-animation);
       }
     }
     .asset-controls {
@@ -147,12 +147,9 @@
   }
   .asset-body {
     transition: var(--std-animation);
-    overflow: hidden;
+    // overflow: hidden;
     padding: (@asset_spacer / 2);
     gap: @asset_spacer;
-    &[aria-expanded='false'] {
-      height: 0px;
-    }
     .asset-fields {
       margin: 0;
       display: flex;
@@ -257,7 +254,7 @@
     aspect-ratio: @hex_deco_aspect_ratio;
     z-index: 1;
     mask-repeat: no-repeat;
-    transition: var(--std-animation);
+    // transition: var(--std-animation);
     transform: scaleX(-1);
     height: @hex_deco_collapsed_height;
     top: -($height * 0.09);

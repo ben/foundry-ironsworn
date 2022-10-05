@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol">
     <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
-      <transition-group name="slide" tag="div" class="nogrow">
+      <CollapseTransition group tag="div" class="nogrow">
         <div
           class="flexrow nogrow"
           v-for="(item, i) in activeItems"
@@ -21,7 +21,7 @@
             :compact-progress="compactProgress"
           />
         </div>
-      </transition-group>
+      </CollapseTransition>
       <progress-controls :foeCompendium="foeCompendium" />
     </div>
 
@@ -43,7 +43,7 @@
         style="margin: 0; padding: 0"
       >
         <div v-if="data.expandCompleted">
-          <transition-group name="slide" tag="div" class="nogrow">
+          <CollapseTransition tag="div" class="nogrow">
             <div
               class="flexrow"
               v-for="(item, i) in completedItems"
@@ -62,7 +62,7 @@
                 :compact-progress="compactProgress"
               />
             </div>
-          </transition-group>
+          </CollapseTransition>
         </div>
       </CollapseTransition>
     </div>
