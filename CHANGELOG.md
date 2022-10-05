@@ -2,6 +2,12 @@
 
 ## Next Release
 
+## 1.18.1
+
+- Reinstate visibility of the description field for custom assets ([#499](https://github.com/ben/foundry-ironsworn/pull/499))
+
+## 1.18.0
+
 - Updated asset-selection UI, with a better browsing experience ([#488](https://github.com/ben/foundry-ironsworn/pull/488))
 - Upgraded progress widgets and legacies tab ([#486](https://github.com/ben/foundry-ironsworn/pull/486))
 - Updated Spanish content from the official translation ([#489](https://github.com/ben/foundry-ironsworn/pull/489))

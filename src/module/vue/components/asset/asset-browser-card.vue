@@ -35,6 +35,10 @@
         :aria-expanded="state.expanded"
         :id="bodyId"
       >
+        <div
+          v-html="$enrichHtml(data.data.description ?? '')"
+          v-if="data.data.description"
+        ></div>
         <div v-html="$enrichHtml(data.data.requirement ?? '')"></div>
 
         <dl class="asset-fields" v-if="data.data.fields?.length">
@@ -128,7 +132,7 @@ function dragStart(ev) {
     'text/plain',
     JSON.stringify({
       type: 'AssetBrowserData',
-      pack: props.foundryItem.pack,
+      pack: props.foundryItem.pack || undefined,
       id: props.foundryItem.id,
       uuid: props.foundryItem.uuid,
     })
