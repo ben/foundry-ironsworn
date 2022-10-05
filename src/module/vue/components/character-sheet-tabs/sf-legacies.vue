@@ -16,7 +16,6 @@
         v-for="(progressItem, i) in starredProgresses"
         :key="`progress-item-${i}`"
         :item="progressItem"
-        :actor="actor"
       />
     </section>
   </article>
@@ -35,25 +34,24 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, provide, Ref } from 'vue'
+import { computed, provide } from 'vue'
 import LegacyTrack from '../legacy-track.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
-import { $ActorKey } from '../../provisions.js'
 import { IronswornActor } from '../../../actor/actor.js'
-import { IronswornItem } from '../../../item/item.js'
-const props = defineProps<{ actor: IronswornActor }>()
+import { ProgressDataPropertiesData } from '../../../item/itemtypes.js'
 
-const $actor = inject($ActorKey) as any
+const props = defineProps<{ actor: IronswornActor }>()
 
 provide(
   'actor',
   computed(() => props.actor)
 )
 
-const starredProgresses = computed(() => {
-  const result = props.actor.items.filter(
-    (item: IronswornItem) => item.type === 'progress' && item.data?.starred
+const starredProgresses = computed(() =>
+  props.actor.items.filter(
+    (item) =>
+      item.type === 'progress' &&
+      (item.data as unknown as ProgressDataPropertiesData)?.starred
   )
-  return result
-})
+)
 </script>

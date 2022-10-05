@@ -24,14 +24,13 @@
         />
       </g>
       <g>
-        <TransitionGroup name="draw-tick">
+        <TransitionGroup :name="transitionName">
           <line
             v-bind="tickProps"
             v-for="(tick, i) in tickRange"
             :key="`tick-${tick}`"
             v-show="props.ticks > i"
             :transform="tickTransforms[i]"
-            :class="`tick-${tick}`"
             :data-tick="tick"
           />
         </TransitionGroup>
@@ -40,59 +39,9 @@
   </div>
 </template>
 <style lang="less">
-.progress-track-box {
-  border: var(--ironsworn-border);
-  border-radius: var(--ironsworn-border-radius-md);
-  background-color: var(--ironsworn-color-widget-fill-enabled);
-  align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
-  object-fit: contain;
-  &.track-overflow .ghost-ticks {
-    stroke: var(--ironsworn-color-midtone);
-  }
-  .progress-track-box-marks {
-    margin: 10%;
-  }
-}
-.progress-track-box-marks {
-  aspect-ratio: 1;
-  stroke: var(--ironsworn-color-widget-stroke-enabled);
-  overflow: visible;
-}
-
-.progress-tick {
-  // vector-effect: non-scaling-stroke;
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-dashoffset: 0;
-  stroke-dasharray: 100%;
-}
-
-// Progress tick draw animation
-.draw-tick-enter-active {
-  transition: 0.8s stroke-dashoffset, stroke-dasharray;
-}
-.draw-tick-leave-active {
-  transition: 0.8s;
-}
-
-.draw-tick-enter-from {
-  stroke-dashoffset: -100%;
-}
-
-.draw-tick-leave-from {
-  opacity: 1;
-}
-.draw-tick-leave-to {
-  opacity: 0;
-}
-.draw-tick-enter-to {
-  stroke-dashoffset: 0;
-}
 // helper mixin functions
 .animateTick(@value,@duration,@delay:0s) {
-  .draw-tick-enter-active[data-tick='@{value}'] {
+  .draw-progress-tick-enter-active[data-tick='@{value}'] {
     transition-duration: @duration;
     transition-delay: @delay;
   }
@@ -104,6 +53,55 @@
     .animateTick(@value,@tickDuration,@baseDelay+ @tickDelay);
   });
 }
+
+.progress-track-box {
+  border: 1px solid;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border-radius: 3px;
+  stroke: currentColor;
+  stroke-width: 5;
+
+  &.track-overflow .ghost-ticks {
+    opacity: 0.2;
+  }
+  .progress-track-box-marks {
+    margin: 10%;
+  }
+}
+.progress-track-box-marks {
+  aspect-ratio: 1;
+  overflow: visible;
+}
+
+.progress-tick {
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+}
+
+// Progress tick draw animation
+.draw-progress-tick-enter-active {
+  transition: 0.8s stroke-dashoffset, stroke-dasharray;
+}
+.draw-progress-tick-leave-active {
+  transition: 0.8s;
+}
+.draw-progress-tick-enter-from {
+  stroke-dashoffset: -100%;
+}
+.draw-progress-tick-leave-from {
+  opacity: 1;
+}
+.draw-progress-tick-leave-to {
+  opacity: 0;
+}
+.draw-progress-tick-enter-to {
+  stroke-dashoffset: 0;
+}
+
 .progress-track {
   &[data-rank='1'] {
     // see the Track component
@@ -190,7 +188,7 @@
   }
   &[data-rank='5'] {
     // Challenge rank epic: marks 1 tick.
-    .draw-tick-enter-active {
+    .draw-progress-tick-enter-active {
       transition-duration: 0.5s;
     }
   }
@@ -200,14 +198,21 @@
 import { range } from 'lodash'
 import { computed } from 'vue'
 
-const tickRange = range(1, 5)
 const props = defineProps<{
   ticks: number
   /**
    * Whether to indicate this as an "overflow" progress box by rendering a second set of 4 ticks with low opacity. Used by legacy tracks that have previously been filled to 10.
    */
-  isOverflowBox?: Boolean
+  isOverflowBox?: boolean
 }>()
+
+const transitionName = computed(() =>
+  game.settings.get('foundry-ironsworn', 'progress-mark-animation')
+    ? 'draw-progress-tick'
+    : undefined
+)
+
+const tickRange = range(1, 5)
 
 const tickTransforms = [
   'rotate(-45, 50, 50)',
@@ -225,9 +230,9 @@ const tickProps = computed(() => ({
 }))
 
 function onTransitionStart(event) {
-  console.log('transitionStart', event)
+  // console.log('transitionStart', event)
 }
 function onTransitionEnd(event) {
-  console.log('transitionEnd', event)
+  // console.log('transitionEnd', event)
 }
 </script>

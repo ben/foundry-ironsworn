@@ -94,11 +94,13 @@
               @change="clockMaxChange"
               style="margin: 0.5rem 0"
             >
-              <option value="4">4</option>
-              <option value="6">6</option>
-              <option value="8">8</option>
-              <option value="10">10</option>
-              <option value="12">12</option>
+              <option
+                v-for="clockSize in [4, 6, 8, 10, 12]"
+                :key="clockSize"
+                :value="clockSize"
+              >
+                {{ clockSize }}
+              </option>
             </select>
           </div>
         </div>
@@ -129,7 +131,6 @@ import { RANKS, RANK_INCREMENTS } from '../constants'
 import { $ItemKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
-import Track from './components/progress/track.vue'
 import Clock from './components/clock.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
@@ -166,7 +167,7 @@ function subtypeChange() {
 }
 
 function clockMaxChange() {
-  $item?.update({ data: { clockMax: props.item.data.clockMax } })
+  $item?.update({ data: { clockMax: parseInt(props.item.data.clockMax) } })
 }
 
 function saveChecks() {

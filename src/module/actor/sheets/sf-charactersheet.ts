@@ -18,14 +18,6 @@ export class StarforgedCharacterSheet extends VueActorSheet {
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
       components: { 'sf-charactersheet': SfCharacterSheet },
-      helperHook: (helper) => {
-        helper.emitter.on('highlightMove', (moveId) =>
-          this.actor.moveSheet?.highlightMoveById(moveId)
-        )
-        helper.emitter.on('highlightOracle', (oracleId) =>
-          this.actor.moveSheet?.highlightOracle(oracleId)
-        )
-      },
     }
   }
 

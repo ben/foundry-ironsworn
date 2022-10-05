@@ -78,6 +78,8 @@
   .legacy-track-progress {
     grid-column: 1 / span 2;
     grid-row: 2 / span 2;
+    // FIXME this is a bit of a kluge to ensure that the xp pips match up with the boxes, but should be relatively stable with the size of the. ultimately, tho, it'd be better to have this be laid out automatically, probably with display:contents to destructure the track elements
+    max-width: @max_track_width;
   }
   --max_xp_box_width: 15px;
   --progress_box_gap: 4px;
@@ -98,7 +100,8 @@
     gap: var(--progress_box_gap);
     border-color: var(--ironsworn-color-border-faded);
   }
-  .xp-track.legacy-track-xp {
+  .legacy-track-xp {
+    @xp_border_width: 1px;
     grid-column: 1 / span 2;
     grid-row: 3 / span 2;
     display: grid;
@@ -107,13 +110,22 @@
     width: 100%;
     gap: var(--progress_box_gap);
     justify-self: center;
-    & > .xp-box {
+    position: relative;
+    .xp-box {
+      background-color: var(--ironsworn-color-bg);
       margin: 0;
       aspect-ratio: 1;
       border-radius: var(--ironsworn-border-radius-md);
       border-width: var(--ironsworn-border-width);
       width: 100%;
       max-width: var(--max_xp_box_width);
+      z-index: 1;
+      &.hover,
+      &.selected {
+        background-color: var(--ironsworn-color-thematic);
+        z-index: 100;
+      }
+
       &:not(:nth-child(n + 21)) {
         &:nth-child(2n) {
           justify-self: left;
@@ -141,16 +153,22 @@
 }
 </style>
 <script setup lang="ts">
-import { computed, inject, provide } from 'vue'
+import { computed, inject, Ref } from 'vue'
 import { $ActorKey } from '../provisions'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import { capitalize } from 'lodash'
 import { IronswornActor } from '../../actor/actor.js'
 import XpTrack from './xp-track.vue'
 import _ from 'lodash'
-
-import { ref } from 'vue'
 import ProgressTrack from './progress/progress-track.vue'
+import {
+  CharacterDataProperties,
+  CharacterDataSource,
+} from '../../actor/actortypes.js'
+import {
+  ActorData,
+  ActorDataBaseProperties,
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
 type LegacyType = 'quests' | 'bonds' | 'discoveries'
@@ -165,7 +183,6 @@ const xpEarnedPerBox = 2
 const xpEarnedPerOverflowBox = 1
 
 const props = defineProps<{
-  actor: IronswornActor
   /**
    * The legacy track type.
    */
@@ -173,13 +190,14 @@ const props = defineProps<{
 }>()
 
 const $actor = inject($ActorKey)
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+const actor = inject('actor') as Ref<
+  ReturnType<typeof IronswornActor.prototype.toObject> &
+    CharacterDataSource &
+    ActorData
+>
 
 const ticks = computed(
-  () => props.actor.data.legacies?.[props.legacy] ?? minTicks
+  () => actor.value.data.legacies?.[props.legacy] ?? minTicks
 )
 const ticksDisplayed = computed(() => ticks.value % maxTicks)
 
@@ -199,7 +217,7 @@ const xpEarned = computed(() => {
 })
 
 const xpSpent = computed(
-  () => props.actor.data?.legacies[`${props.legacy}XpSpent`] ?? 0
+  () => actor.value.data?.legacies[`${props.legacy}XpSpent`] ?? 0
 )
 
 const markTooltip = computed(() => {
@@ -209,7 +227,10 @@ const markTooltip = computed(() => {
 })
 
 const editMode = computed(
-  () => props.actor.flags?.['foundry-ironsworn']?.['edit-mode']
+  () =>
+    (actor.value.flags as Record<string, any>)['foundry-ironsworn']?.[
+      'edit-mode'
+    ]
 )
 
 const overflowLabel = computed(() => {
@@ -227,7 +248,7 @@ function setXp(newValue: number) {
 }
 
 function adjustTrack(inc) {
-  const current = props.actor.data?.legacies[props.legacy] ?? 0
+  const current = actor.value.data?.legacies[props.legacy] ?? 0
   $actor?.update({
     [`data.legacies.${props.legacy}`]: current + inc,
   })

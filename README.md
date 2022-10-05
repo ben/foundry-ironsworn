@@ -31,6 +31,7 @@ Some things to remember:
   cp -R system/* ~/Library/Application\ Support/FoundryVTT/Data/systems/foundry-ironsworn/
   ```
 - If you make a change to `system.json` or any of the I18n files, you'll have to return to setup, use the command above, and start the world up again.
+- [Vue Inspector](https://github.com/webfansplz/vite-plugin-vue-inspector) is configured, so tap alt+shift (cmd+shift on Mac) and click on a Vue element to open the relevant file in VS Code.
 
 # Credits
 
@@ -39,3 +40,5 @@ This work is based on Ironsworn (found at https://www.ironswornrpg.com), created
 Hand-drawn map scene courtesy of [McSekcer](https://www.reddit.com/user/McSekcer/).
 
 Starforged scenes courtesy of [Unsplash](https://unsplash.com), and used under their [license](https://unsplash.com/license).
+
+Extra location icons courtesy of [Eric Rains and Kirin](https://github.com/ben/foundry-ironsworn/pull/485).

@@ -88,7 +88,6 @@ import {
 import { IronswornHandlebarsHelpers } from '../../helpers/handlebars'
 import { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
-import { $EmitterKey } from '../provisions'
 import { enrichMarkdown } from '../vue-plugin'
 import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
@@ -127,10 +126,9 @@ if (props.move.dataforgedMove) {
 }
 
 const $el = ref<HTMLElement>()
-const $emitter = inject($EmitterKey)
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
-$emitter?.on('highlightMove', async (moveId) => {
+CONFIG.IRONSWORN.emitter.on('highlightMove', async (moveId) => {
   if (moveId === props.move.moveItem.id) {
     data.expanded = true
     data.highlighted = true
@@ -148,10 +146,10 @@ $emitter?.on('highlightMove', async (moveId) => {
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
-  $emitter?.emit('highlightMove', move.id ?? '')
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
 }
 function oracleClick(dfId: string) {
-  $emitter?.emit('highlightOracle', dfId)
+  CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfId)
 }
 
 defineExpose({

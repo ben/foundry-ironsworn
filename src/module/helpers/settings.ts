@@ -79,6 +79,20 @@ export class IronswornSettings {
       default: true,
     })
 
+    game.settings.register<
+      'foundry-ironsworn',
+      'progress-mark-animation',
+      boolean
+    >('foundry-ironsworn', 'progress-mark-animation', {
+      name: 'IRONSWORN.Settings.ProgressMarkAnimation.Name',
+      hint: 'IRONSWORN.Settings.ProgressMarkAnimation.Hint',
+      scope: 'client',
+      type: Boolean,
+      default: true,
+      config: true,
+      onChange: reload,
+    })
+
     game.settings.register('foundry-ironsworn', 'data-version', {
       scope: 'world',
       config: false,

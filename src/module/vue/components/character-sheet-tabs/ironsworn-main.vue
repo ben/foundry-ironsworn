@@ -23,9 +23,13 @@
             </div>
           </transition-group>
           <div class="flexrow nogrow" style="text-align: center">
-            <BtnCompendium class="block" compendium="ironswornassets">
+            <BtnFaicon
+              icon="atlas"
+              @click="assetBrowser"
+              class="clickable block"
+            >
               {{ $t('IRONSWORN.Assets') }}
-            </BtnCompendium>
+            </BtnFaicon>
           </div>
         </div>
       </section>
@@ -59,11 +63,12 @@ import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
-import ProgressListItem from '../progress/progress-list-item.vue'
+import ProgressBox from '../progress/progress-box.vue'
 import ProgressControls from '../progress-controls.vue'
 import { throttle } from 'lodash'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
+import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
@@ -72,12 +77,6 @@ const progressItems = computed(() => {
   return actor.value?.items
     .filter((x) => x.type === 'progress')
     .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-})
-const activeItems = computed(() => {
-  return progressItems.value.filter((x) => !x.data.completed)
-})
-const completedItems = computed(() => {
-  return progressItems.value.filter((x) => x.data.completed)
 })
 const assets = computed(() => {
   return actor.value?.items
@@ -94,20 +93,6 @@ const data = reactive({
 })
 
 let highlightCompletedTimer: NodeJS.Timer | undefined
-function progressCompleted() {
-  data.highlightCompleted = true
-  clearTimeout(highlightCompletedTimer)
-  highlightCompletedTimer = setTimeout(() => {
-    data.highlightCompleted = false
-  }, 2000)
-}
-
-const completedCaret = computed(() => {
-  return data.expandCompleted ? 'caret-down' : 'caret-right'
-})
-const completedClass = computed(() => {
-  return data.highlightCompleted ? 'highlighted' : undefined
-})
 
 async function applySort(oldI, newI, sortBefore, collection) {
   const sorted = collection.sort(
@@ -141,5 +126,15 @@ function completedSortUp(i) {
 }
 function completedSortDown(i) {
   applySort(i, i + 1, false, (x) => x.data.data.completed)
+}
+
+let theAssetBrowser: AssetCompendiumBrowser | undefined
+function assetBrowser() {
+  if (!theAssetBrowser) {
+    theAssetBrowser = new AssetCompendiumBrowser(
+      $actor?.toolset ?? 'starforged'
+    )
+  }
+  theAssetBrowser.render(true)
 }
 </script>

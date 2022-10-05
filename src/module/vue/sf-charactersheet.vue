@@ -148,7 +148,7 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, provide } from 'vue'
+import { computed, provide } from 'vue'
 import AttrBox from './components/attr-box.vue'
 import BtnMomentumburn from './components/buttons/btn-momentumburn.vue'
 import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
@@ -158,27 +158,17 @@ import Stack from './components/stack/stack.vue'
 import Tabs from './components/tabs/tabs.vue'
 import Tab from './components/tabs/tab.vue'
 import btnRollstat from './components/buttons/btn-rollstat.vue'
-import btnIsicon from './components/buttons/btn-isicon.vue'
 import sfImpacts from './components/sf-impacts.vue'
-import { IronswornActor } from '../actor/actor'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
-import SfConnections1 from './components/character-sheet-tabs/sf-connections.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
-import { $ActorKey } from './provisions.js'
 
 const props = defineProps<{
   actor: any
 }>()
 
-const $actor = inject($ActorKey)
 provide(
   'actor',
   computed(() => props.actor)
 )
-
-function openCompendium(name) {
-  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-  pack?.render(true)
-}
 </script>

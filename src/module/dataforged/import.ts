@@ -177,7 +177,7 @@ function assetsForTypes(types: IAssetType[]) {
       }
 
       const data = {
-        description: renderMarkdown(assetType.Description),
+        requirement: renderMarkdown(asset.Requirement ?? ''),
         category: assetType.Name,
         color: assetType.Display.Color ?? '',
         fields,
@@ -209,7 +209,7 @@ function assetsForTypes(types: IAssetType[]) {
       assetsToCreate.push({
         type: 'asset',
         _id: hashLookup(asset.$id),
-        name: `${assetType.Name} / ${asset.Name}`,
+        name: asset.Name,
         data: data,
       })
     }

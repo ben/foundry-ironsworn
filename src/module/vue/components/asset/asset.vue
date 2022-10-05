@@ -19,10 +19,9 @@
         <h4 class="asset-title">
           {{ asset.name }}
         </h4>
-        <!-- FIXME: uncomment once asset type names are trimmed from their display names -->
-        <!-- <span class="asset-type" aria-label="asset type">
+        <span class="asset-type" aria-label="asset type">
           {{ asset.data.category }}
-        </span> -->
+        </span>
       </button>
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
@@ -42,6 +41,8 @@
         :aria-expanded="expanded"
         :id="bodyId"
       >
+        <div v-html="$enrichHtml(asset.data.requirement ?? '')"></div>
+
         <dl class="asset-fields" v-if="asset.data.fields?.length">
           <div
             class="asset-field"
@@ -381,12 +382,7 @@ function exclusiveOptionClick(selectedIdx) {
   foundryItem?.update({ data: { exclusiveOptions: options } })
 }
 function moveclick(item) {
-  let actorWithMoves = $actor
-  if ($actor?.type !== 'character') {
-    actorWithMoves = defaultActor()
-  }
-  actorWithMoves?.moveSheet?.render(true)
-  actorWithMoves?.moveSheet?.highlightMove(item)
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(props.asset.data.abilities) as AssetAbility[]

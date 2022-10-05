@@ -36,6 +36,8 @@
         :aria-expanded="state.expanded"
         :id="bodyId"
       >
+        <div v-html="$enrichHtml(data.data.requirement ?? '')"></div>
+
         <dl class="asset-fields" v-if="data.data.fields?.length">
           <div
             class="asset-field"
@@ -101,7 +103,7 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 
 const props = defineProps<{
-  df: IAsset
+  df?: IAsset
   foundryItem: Readonly<IronswornItem>
 }>()
 const data = props.foundryItem.data as AssetDataProperties
@@ -113,8 +115,8 @@ const state = reactive({
 const bodyId = `asset-body-${props.foundryItem.id}`
 const toolset = inject('toolset')
 
-function moveClick() {
-  // TODO:
+function moveClick(item) {
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
 
 function dragStart(ev) {

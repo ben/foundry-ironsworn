@@ -31,6 +31,7 @@ interface AssetExclusiveOption {
 
 interface AssetDataSourceData {
   category: string
+  requirement: string
   color: string
   fields: AssetField[]
   abilities: AssetAbility[]
@@ -65,7 +66,7 @@ interface ProgressDataSourceData extends ProgressBase {
   clockTicks: number
   clockMax: number
 }
-interface ProgressDataPropertiesData extends ProgressDataSourceData {}
+export interface ProgressDataPropertiesData extends ProgressDataSourceData {}
 
 export interface ProgressDataSource {
   type: 'progress'

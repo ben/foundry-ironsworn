@@ -53,7 +53,7 @@ export interface CharacterDataProperties {
   data: CharacterDataPropertiesData
 }
 
-interface CharacterDataSource {
+export interface CharacterDataSource {
   type: 'character'
   data: CharacterDataSourceData
 }
