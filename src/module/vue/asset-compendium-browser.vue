@@ -79,6 +79,7 @@ import { provide, reactive } from 'vue'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
+import CollapseTransition from './components/transition/collapse-transition.vue'
 import {
   createIronswornAssetTree,
   createStarforgedAssetTree,
