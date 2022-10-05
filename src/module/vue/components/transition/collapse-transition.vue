@@ -1,6 +1,6 @@
 <template>
-  <TransitionGroup
-    v-if="group"
+  <component
+    :is="group ? TransitionGroup : Transition"
     :name="name"
     @before-appear="beforeAppear"
     @appear="appear"
@@ -16,25 +16,7 @@
     @leave-cancelled="leaveCancelled"
   >
     <slot></slot>
-  </TransitionGroup>
-  <Transition
-    v-else
-    :name="name"
-    @before-appear="beforeAppear"
-    @appear="appear"
-    @after-appear="afterAppear"
-    @appear-cancelled="appearCancelled"
-    @before-enter="beforeEnter"
-    @enter="enter"
-    @after-enter="afterEnter"
-    @enter-cancelled="enterCancelled"
-    @before-leave="beforeLeave"
-    @leave="leave"
-    @after-leave="afterLeave"
-    @leave-cancelled="leaveCancelled"
-  >
-    <slot></slot>
-  </Transition>
+  </component>
 </template>
 
 <script setup lang="ts">
