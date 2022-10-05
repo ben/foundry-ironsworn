@@ -43,7 +43,7 @@
         style="margin: 0; padding: 0"
       >
         <div v-if="data.expandCompleted">
-          <CollapseTransition tag="div" class="nogrow">
+          <CollapseTransition tag="div" class="nogrow" group>
             <div
               class="flexrow"
               v-for="(item, i) in completedItems"
