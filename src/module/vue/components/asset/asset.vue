@@ -34,7 +34,7 @@
       </div>
     </header>
 
-    <transition name="slide">
+    <CollapseTransition>
       <section
         v-if="expanded"
         class="asset-body flexcol"
@@ -101,7 +101,7 @@
           />
         </section>
       </section>
-    </transition>
+    </CollapseTransition>
   </article>
 </template>
 
@@ -305,6 +305,7 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
+import CollapseTransition from '../transition/collapse-transition.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject('actor') as Ref

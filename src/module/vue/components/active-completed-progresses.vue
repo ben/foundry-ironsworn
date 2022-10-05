@@ -37,8 +37,7 @@
           >{{ $t('IRONSWORN.Completed') }}</btn-faicon
         >
       </h3>
-      <transition
-        name="slide"
+      <CollapseTransition
         tag="div"
         class="nogrow completed"
         style="margin: 0; padding: 0"
@@ -65,7 +64,7 @@
             </div>
           </transition-group>
         </div>
-      </transition>
+      </CollapseTransition>
     </div>
   </div>
 </template>
@@ -120,6 +119,7 @@ import { IronswornSettings } from '../../helpers/settings'
 import { compact } from 'lodash'
 import { IronswornItem } from '../../item/item'
 import { ProgressDataProperties } from '../../item/itemtypes'
+import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{
   exclude?: string

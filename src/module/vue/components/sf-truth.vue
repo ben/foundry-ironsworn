@@ -16,7 +16,7 @@
         </p>
         <p>{{ truth?.Description }}</p>
 
-        <transition name="slide" v-if="truth?.Subtable">
+        <CollapseTransition v-if="truth?.Subtable">
           <div v-show="data.selected">
             <div
               class="flexrow"
@@ -38,7 +38,7 @@
               </label>
             </div>
           </div>
-        </transition>
+        </CollapseTransition>
 
         <p>
           <em>
@@ -61,6 +61,7 @@
 <script setup lang="ts">
 import { computed, defineComponent, PropType, reactive } from 'vue'
 import { ISettingTruthOption } from 'dataforged'
+import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{
   radiogroup: string
