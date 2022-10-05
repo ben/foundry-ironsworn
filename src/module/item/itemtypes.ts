@@ -31,6 +31,7 @@ interface AssetExclusiveOption {
 
 interface AssetDataSourceData {
   category: string
+  description?: string
   requirement: string
   color: string
   fields: AssetField[]

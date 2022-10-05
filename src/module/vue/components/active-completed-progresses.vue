@@ -104,7 +104,7 @@ h3 {
 
 <script setup lang="ts">
 import { computed, inject, reactive, Ref } from 'vue'
-import { $ActorKey } from '../provisions'
+import { $ActorKey, ActorKey } from '../provisions'
 import OrderButtons from './order-buttons.vue'
 import ProgressListItem from './progress/progress-list-item.vue'
 import ProgressControls from './progress-controls.vue'
@@ -128,7 +128,7 @@ const data = reactive({
   highlightCompleted: false,
 })
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const excludedSubtypes = compact([props.exclude])

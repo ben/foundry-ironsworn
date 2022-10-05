@@ -1,4 +1,5 @@
 import { App } from 'vue'
+import { IronswornItem } from '../item/item'
 import { $ActorKey } from './provisions'
 import {
   VueSheetRenderHelper,
@@ -44,9 +45,16 @@ export abstract class VueActorSheet extends ActorSheet {
 
   protected async _onDrop(event: DragEvent) {
     const data = (TextEditor as any).getDragEventData(event)
+
     if ((data as any).type === 'AssetBrowserData') {
-      const pack = game.packs.get((data as any).pack)
-      const document = await pack?.getDocument((data as any).id)
+      let document: StoredDocument<IronswornItem> | null | undefined
+      if (data.pack) {
+        const pack = game.packs.get((data as any).pack)
+        document = (await pack?.getDocument((data as any).id)) as any
+      } else {
+        document = game.items?.get(data.id)
+      }
+
       if (document) {
         this.actor.createEmbeddedDocuments('Item', [
           (document as any).toObject(),

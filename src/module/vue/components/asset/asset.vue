@@ -41,6 +41,10 @@
         :aria-expanded="expanded"
         :id="bodyId"
       >
+        <div
+          v-html="$enrichHtml(asset.data.description ?? '')"
+          v-if="asset.data.description"
+        ></div>
         <div v-html="$enrichHtml(asset.data.requirement ?? '')"></div>
 
         <dl class="asset-fields" v-if="asset.data.fields?.length">
@@ -323,11 +327,11 @@ import AssetTrack from './asset-track.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
-import { $ActorKey, $ItemKey } from '../../provisions'
+import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
 
 const props = defineProps<{ asset: any }>()
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 
 const $actor = inject($ActorKey)
 const foundryItem = $actor

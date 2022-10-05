@@ -53,10 +53,10 @@ textarea {
 import SheetHeader from '../sheet-header.vue'
 import { debounce } from 'lodash'
 import { inject, ref, Ref } from 'vue'
-import { $ActorKey } from '../provisions'
+import { $ActorKey, ActorKey } from '../provisions'
 import DocumentImg from './document-img.vue'
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const name = ref<HTMLInputElement | null>(null)

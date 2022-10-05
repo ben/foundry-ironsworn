@@ -134,7 +134,7 @@
 
 <script lang="ts" setup>
 import { capitalize, computed, inject, provide, Ref } from 'vue'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
@@ -142,10 +142,6 @@ import RankPips from '../rank-pips/rank-pips.vue'
 import DocumentImg from '../document-img.vue'
 import { RANKS } from '../../../constants.js'
 import ProgressTrack from './progress-track.vue'
-import { IronswornActor } from '../../../actor/actor.js'
-import { IronswornItem } from '../../../item/item.js'
-import { CharacterDataSource } from '../../../actor/actortypes.js'
-import { ProgressDataSource } from '../../../item/itemtypes.js'
 
 const props = defineProps<{
   item: any
@@ -156,24 +152,16 @@ const props = defineProps<{
   compactProgress?: boolean
 }>()
 
-const item = props.item as ReturnType<typeof IronswornItem.prototype.toObject> &
-  ProgressDataSource
-
+const actor = inject(ActorKey)
 const $actor = inject($ActorKey)
-const actor = inject('actor') as Ref<
-  ReturnType<typeof IronswornActor.prototype.toObject> & CharacterDataSource
->
 
-// ProgressListItem is embedded in a sheet but the sheet usually doesn't provide it -- in other words, this
-// So, get the id of the nonreactive item
-const progressId = computed<string>(() => props.item.id ?? props.item._id)
-// Then use it in a getter, $item
-const progressTrackData = $actor?.items.get(progressId.value)
-// and finally, provide the item getter's value for this component's children
-provide('item', progressTrackData)
+const foundryItem = $actor?.items.get(props.item.id ?? props.item._id)
+
+provide(ItemKey, computed(() => foundryItem?.toObject()) as any)
+provide($ItemKey, foundryItem)
 
 const editMode = computed(() => {
-  return (actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
+  return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 })
 const showTrackButtons = computed(() => {
   return props.item.data.hasTrack
@@ -192,30 +180,28 @@ const completedTooltip = computed(() => {
 })
 
 function edit() {
-  progressTrackData?.sheet?.render(true)
+  foundryItem?.sheet?.render(true)
 }
 function destroy() {
-  const titleKey = `IRONSWORN.Delete${capitalize(
-    progressTrackData?.type || ''
-  )}`
+  const titleKey = `IRONSWORN.Delete${capitalize(foundryItem?.type || '')}`
 
   Dialog.confirm({
     title: game.i18n.localize(titleKey),
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
     )}</strong></p>`,
-    yes: () => progressTrackData?.delete(),
+    yes: () => foundryItem?.delete(),
     defaultYes: false,
   })
 }
 function rankClick(rank: keyof typeof RANKS) {
-  progressTrackData?.update({ data: { rank } })
+  foundryItem?.update({ data: { rank } })
 }
 function advance() {
-  progressTrackData?.markProgress(1)
+  foundryItem?.markProgress(1)
 }
 function retreat() {
-  progressTrackData?.markProgress(-1)
+  foundryItem?.markProgress(-1)
 }
 
 const $emit = defineEmits(['completed'])
@@ -223,14 +209,14 @@ const $emit = defineEmits(['completed'])
 function toggleComplete() {
   const completed = !props.item.data.completed
   if (completed) $emit('completed')
-  progressTrackData?.update({ data: { completed } })
+  foundryItem?.update({ data: { completed } })
 }
 function toggleStar() {
-  progressTrackData?.update({
+  foundryItem?.update({
     data: { starred: !props.item.data.starred },
   })
 }
 function setClock(clockTicks: number) {
-  progressTrackData?.update({ data: { clockTicks } })
+  foundryItem?.update({ data: { clockTicks } })
 }
 </script>

@@ -24,6 +24,7 @@
           :id="category.title"
         >
           <WithRolllisteners
+            v-if="category.description"
             element="div"
             class="category-description"
             v-html="

@@ -31,13 +31,11 @@ import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
 import SheetBasic from './sheet-basic.vue'
+import { ActorKey } from './provisions.js'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
 
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+provide(ActorKey, computed(() => props.actor) as any)
 </script>

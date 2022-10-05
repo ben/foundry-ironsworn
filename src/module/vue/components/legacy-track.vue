@@ -154,7 +154,7 @@
 </style>
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
-import { $ActorKey } from '../provisions'
+import { $ActorKey, ActorKey } from '../provisions'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import { capitalize } from 'lodash'
 import { IronswornActor } from '../../actor/actor.js'
@@ -190,7 +190,7 @@ const props = defineProps<{
 }>()
 
 const $actor = inject($ActorKey)
-const actor = inject('actor') as Ref<
+const actor = inject(ActorKey) as Ref<
   ReturnType<typeof IronswornActor.prototype.toObject> &
     CharacterDataSource &
     ActorData

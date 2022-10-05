@@ -26,10 +26,10 @@ import { computed, inject, Ref } from 'vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, ActorKey } from '../../provisions'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const editMode = computed(() => {
