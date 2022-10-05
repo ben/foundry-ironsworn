@@ -171,7 +171,7 @@ import SheetHeaderBasic from './sheet-header-basic.vue'
 import { capitalize, flatten, sample, throttle } from 'lodash'
 import { provide, computed, reactive, inject } from 'vue'
 import { IronswornActor } from '../actor/actor'
-import { $ActorKey } from './provisions'
+import { $ActorKey, ActorKey } from './provisions'
 import BtnIsicon from './components/buttons/btn-isicon.vue'
 import DocumentImg from './components/document-img.vue'
 import DocumentName from './components/document-name.vue'
@@ -185,10 +185,7 @@ const props = defineProps<{
   actor: any
 }>()
 
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+provide(ActorKey, computed(() => props.actor) as any)
 const $actor = inject($ActorKey)
 
 const sceneId = game.user?.viewedScene

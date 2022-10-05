@@ -59,7 +59,7 @@ textarea.notes {
 import { provide, computed, inject } from 'vue'
 import { RollDialog } from '../helpers/rolldialog'
 import { IronswornSettings } from '../helpers/settings'
-import { $ActorKey } from './provisions'
+import { $ActorKey, ActorKey } from './provisions'
 import Boxrow from './components/boxrow/boxrow.vue'
 import Bonds from './components/bonds.vue'
 import MceEditor from './components/mce-editor.vue'
@@ -72,10 +72,7 @@ import SheetBasic from './sheet-basic.vue'
 const props = defineProps<{
   actor: any
 }>()
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+provide(ActorKey, computed(() => props.actor) as any)
 const $actor = inject($ActorKey)
 
 const hasBonds = computed(() => {

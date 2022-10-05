@@ -131,7 +131,7 @@
 import SheetHeader from './sheet-header.vue'
 import { provide, computed, reactive, inject } from 'vue'
 import { get, set } from 'lodash'
-import { $ItemKey } from './provisions'
+import { $ItemKey, ItemKey } from './provisions'
 import DocumentName from './components/document-name.vue'
 import SfmoveTab from './components/sfmove-tab.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
@@ -139,10 +139,8 @@ import BtnFaicon from './components/buttons/btn-faicon.vue'
 const props = defineProps<{
   item: any
 }>()
-provide(
-  'item',
-  computed(() => props.item)
-)
+provide(ItemKey, computed(() => props.item) as any)
+
 const $item = inject($ItemKey)
 
 const state = reactive<{

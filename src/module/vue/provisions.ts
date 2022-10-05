@@ -1,4 +1,4 @@
-import { InjectionKey } from 'vue'
+import { InjectionKey, Ref } from 'vue'
 import { enrichHtml, enrichMarkdown } from './vue-plugin'
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
@@ -14,7 +14,10 @@ export const $EnrichMarkdownKey = Symbol('$enrichMarkdown') as InjectionKey<
 // Sheets have to provide these
 export const $ActorKey = Symbol('$actor') as InjectionKey<IronswornActor>
 export const ActorKey = Symbol('actor') as InjectionKey<
-  ReturnType<typeof IronswornActor.prototype.toObject>
+  Ref<ReturnType<typeof IronswornActor.prototype.toObject>>
 >
 
 export const $ItemKey = Symbol('$item') as InjectionKey<IronswornItem>
+export const ItemKey = Symbol('actor') as InjectionKey<
+  Ref<ReturnType<typeof IronswornItem.prototype.toObject>>
+>

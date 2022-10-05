@@ -22,16 +22,13 @@
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
-import { $ItemKey } from './provisions'
+import { $ItemKey, ItemKey } from './provisions'
 import BtnFaicon from '../vue/components/buttons/btn-faicon.vue'
 import { BondsetDataPropertiesData } from '../item/itemtypes'
 import CollapseTransition from './components/transition/collapse-transition.vue'
 
 const props = defineProps<{ item: any }>()
-provide(
-  'item',
-  computed(() => props.item)
-)
+provide(ItemKey, computed(() => props.item) as any)
 
 const $item = inject($ItemKey)
 

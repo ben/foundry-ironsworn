@@ -46,11 +46,11 @@
 
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
-import { $ItemKey } from '../../provisions'
+import { $ItemKey, ItemKey } from '../../provisions'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 
-const item = inject('item') as Ref
+const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)
 
 const editMode = computed(() => {

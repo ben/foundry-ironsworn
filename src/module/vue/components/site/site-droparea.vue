@@ -40,8 +40,8 @@
 </template>
 
 <script setup lang="ts">
-import { inject } from '@vue/runtime-core'
-import { $ActorKey } from '../../provisions'
+import { inject, Ref } from '@vue/runtime-core'
+import { $ActorKey, ActorKey } from '../../provisions'
 import { computed } from 'vue'
 import DocumentImg from '../document-img.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
@@ -56,7 +56,7 @@ const props = defineProps<{
 
 const $actor = inject($ActorKey)
 
-const actor = inject('actor') as any
+const actor = inject(ActorKey) as Ref
 const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })

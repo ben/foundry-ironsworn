@@ -28,17 +28,16 @@
 <style lang="less" scoped></style>
 
 <script setup lang="ts">
-import { computed, inject, provide, Ref } from 'vue'
-import { $ActorKey } from '../../provisions'
+import { computed, inject, Ref } from 'vue'
+import { $ActorKey, ActorKey } from '../../provisions'
 import OrderButtons from '../order-buttons.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { ProgressDataProperties } from '../../../item/itemtypes'
 import CollapseTransition from '../transition/collapse-transition.vue'
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
-provide($ActorKey, $actor)
 
 const connections = computed(() => {
   return actor.value.items

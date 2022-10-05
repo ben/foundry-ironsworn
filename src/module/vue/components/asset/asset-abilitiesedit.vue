@@ -58,10 +58,10 @@
 <script setup lang="ts">
 import { computed, Ref, inject } from 'vue'
 import { AssetDataPropertiesData } from '../../../item/itemtypes'
-import { $ItemKey } from '../../provisions'
+import { $ItemKey, ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 
-const item = inject('item') as Ref
+const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)
 
 const editMode = computed(

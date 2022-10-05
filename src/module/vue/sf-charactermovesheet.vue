@@ -20,16 +20,14 @@ import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
 import { computed, provide, ref } from 'vue'
 import { CharacterDataProperties } from '../actor/actortypes'
+import { ActorKey } from './provisions.js'
 
 const props = defineProps<{
   actor: CharacterDataProperties
   toolset: 'ironsworn' | 'starforged'
 }>()
 
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+provide(ActorKey, computed(() => props.actor) as any)
 
 const tabs = ref<InstanceType<typeof Tabs>>()
 const movesTab = ref<InstanceType<typeof SfMovesheetmoves>>()

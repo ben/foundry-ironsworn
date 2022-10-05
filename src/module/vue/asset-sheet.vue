@@ -75,15 +75,12 @@ import AssetFieldsedit from './components/asset/asset-fieldsedit.vue'
 import AssetAbilitiesedit from './components/asset/asset-abilitiesedit.vue'
 import AssetOptionsedit from './components/asset/asset-optionsedit.vue'
 import AssetTrackedit from './components/asset/asset-trackedit.vue'
-import { $ItemKey } from './provisions'
+import { $ItemKey, ItemKey } from './provisions'
 
 const $item = inject($ItemKey)
 
 const props = defineProps<{ item: any }>()
-provide(
-  'item',
-  computed(() => props.item)
-)
+provide(ItemKey, computed(() => props.item) as any)
 
 const editMode = computed(() => {
   return props.item.flags['foundry-ironsworn']?.['edit-mode']

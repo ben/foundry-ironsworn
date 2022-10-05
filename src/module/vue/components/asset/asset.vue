@@ -296,12 +296,12 @@ import AssetTrack from './asset-track.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
-import { $ActorKey, $ItemKey } from '../../provisions'
+import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
 import CollapseTransition from '../transition/collapse-transition.vue'
 
 const props = defineProps<{ asset: any }>()
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 
 const $actor = inject($ActorKey)
 const foundryItem = $actor

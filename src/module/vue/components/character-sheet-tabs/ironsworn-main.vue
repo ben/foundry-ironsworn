@@ -55,7 +55,7 @@ h3 {
 
 <script lang="ts" setup>
 import { computed, inject, reactive, Ref } from 'vue'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, ActorKey } from '../../provisions'
 import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
@@ -68,7 +68,7 @@ import ActiveCompletedProgresses from '../active-completed-progresses.vue'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import CollapseTransition from '../transition/collapse-transition.vue'
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const progressItems = computed(() => {

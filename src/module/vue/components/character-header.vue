@@ -43,10 +43,10 @@
 <script setup lang="ts">
 import SheetHeaderBasic from '../sheet-header-basic.vue'
 import { Ref, inject } from 'vue'
-import { $ActorKey } from '../provisions'
+import { $ActorKey, ActorKey } from '../provisions'
 import XpBox from './xp-box.vue'
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey) as Ref
 const xpArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const $actor = inject($ActorKey)

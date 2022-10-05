@@ -118,7 +118,7 @@
 </style>
 
 <script setup lang="ts">
-import { $ActorKey } from './provisions'
+import { $ActorKey, ActorKey } from './provisions'
 import AttrBox from './components/attr-box.vue'
 import BtnMomentumburn from './components/buttons/btn-momentumburn.vue'
 import Stack from './components/stack/stack.vue'
@@ -140,10 +140,7 @@ const props = defineProps<{
 }>()
 const actorData = props.actor as CharacterDataProperties
 
-provide(
-  'actor',
-  computed(() => props.actor)
-)
+provide(ActorKey, computed(() => props.actor) as any)
 
 const $actor = inject($ActorKey)
 
