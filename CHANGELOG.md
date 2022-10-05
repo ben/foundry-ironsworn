@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Reinstate visibility of the description field for custom assets ([#499](https://github.com/ben/foundry-ironsworn/pull/499))
+
 ## 1.18.0
 
 - Updated asset-selection UI, with a better browsing experience ([#488](https://github.com/ben/foundry-ironsworn/pull/488))
