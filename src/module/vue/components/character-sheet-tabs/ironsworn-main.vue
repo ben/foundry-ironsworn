@@ -3,7 +3,7 @@
     <div class="flexcol">
       <section class="sheet-area flexcol">
         <!-- Bonds -->
-        <Bonds />
+        <Bonds :compactProgress="true" />
 
         <hr class="nogrow" />
         <!-- Assets -->
@@ -34,7 +34,7 @@
         </div>
       </section>
     </div>
-    <ActiveCompletedProgresses />
+    <ActiveCompletedProgresses :compactProgress="true" />
   </div>
 </template>
 
@@ -66,6 +66,7 @@ import { $ActorKey } from '../../provisions'
 import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
+import BtnCompendium from '../buttons/btn-compendium.vue'
 import ProgressBox from '../progress/progress-box.vue'
 import ProgressControls from '../progress-controls.vue'
 import { throttle } from 'lodash'
@@ -80,12 +81,6 @@ const progressItems = computed(() => {
   return actor.value?.items
     .filter((x) => x.type === 'progress')
     .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-})
-const activeItems = computed(() => {
-  return progressItems.value.filter((x) => !x.data.completed)
-})
-const completedItems = computed(() => {
-  return progressItems.value.filter((x) => x.data.completed)
 })
 const assets = computed(() => {
   return actor.value?.items
@@ -102,20 +97,6 @@ const data = reactive({
 })
 
 let highlightCompletedTimer: NodeJS.Timer | undefined
-function progressCompleted() {
-  data.highlightCompleted = true
-  clearTimeout(highlightCompletedTimer)
-  highlightCompletedTimer = setTimeout(() => {
-    data.highlightCompleted = false
-  }, 2000)
-}
-
-const completedCaret = computed(() => {
-  return data.expandCompleted ? 'caret-down' : 'caret-right'
-})
-const completedClass = computed(() => {
-  return data.highlightCompleted ? 'highlighted' : undefined
-})
 
 async function applySort(oldI, newI, sortBefore, collection) {
   const sorted = collection.sort(

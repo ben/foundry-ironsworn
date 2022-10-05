@@ -25,6 +25,14 @@ import {
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
 
+export enum NumericRank {
+  'troublesome' = 1,
+  'dangerous' = 2,
+  'formidable' = 3,
+  'extreme' = 4,
+  'epic' = 5,
+}
+
 export function cleanDollars(obj): any {
   if (isArray(obj)) {
     const ret = [] as any[]
@@ -338,7 +346,7 @@ async function processSFEncounters() {
       img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
       data: {
         description,
-        rank: getLegacyRank(encounter['Rank']),
+        rank: NumericRank[encounter['Rank']] as keyof typeof NumericRank,
       },
     })
 
@@ -360,9 +368,9 @@ async function processSFEncounters() {
         img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
         data: {
           description: variantDescription,
-          rank: getLegacyRank(
+          rank: NumericRank[
             'Rank' in variant ? variant['Rank'] : encounter['Rank']
-          ),
+          ] as keyof typeof NumericRank,
         },
       })
     }

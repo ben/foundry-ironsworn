@@ -26,10 +26,11 @@
 svg.clock {
   // so that only *segment* hovers appear
   pointer-events: none;
-  fill: currentColor;
+  fill: var(--ironsworn-color-thematic);
   fill-opacity: var(--widget-fill-opacity);
   stroke: currentColor;
   stroke-width: var(--widget-stroke-width);
+  aspect-ratio: 1;
   &[aria-valuenow='0']:not(:hover) {
     .clock-segment {
       fill-opacity: 0;
