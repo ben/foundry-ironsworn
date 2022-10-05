@@ -8,11 +8,26 @@ body.theme-starforged {
   @muted-color: #11777799;
   @medium-color: #33999999;
   @light-color: #55bbbb99;
-  @background-gradient: #000a08;
 
   @text-dark-color: #399;
   @text-medium-color: #3dd;
   @text-light-color: #6ff;
+
+  .hover-fx(@spread_box:5px,@spread_text:10px) {
+    &:hover {
+      box-shadow: 0 0 @spread_box @light-color;
+      color: @text-light-color;
+      text-shadow: 0 0 @spread_text @light-color;
+    }
+  }
+
+  --ironsworn-color-thematic: #399;
+
+  --ironsworn-color-bg: black;
+
+  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-3);
+  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-3);
+  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-3);
 
   --ironsworn-color-danger: hsl(0, 80%, 50%);
   --ironsworn-color-success: hsl(290, 80%, 50%);
@@ -47,13 +62,13 @@ body.theme-starforged {
   .window-app,
   .journal-entry .journal-entry-content {
     background: initial;
-    background-color: @background-gradient;
+    background-color: var(--ironsworn-color-bg);
     border: 1px solid @text-dark-color;
   }
 
   .editor {
     color: @text-medium-color;
-    background-color: @background-gradient;
+    background-color: var(--ironsworn-color-bg);
   }
 
   .ProseMirror {
@@ -64,7 +79,7 @@ body.theme-starforged {
   .tox .tox-editor-header,
   .tox .tox-toolbar-overlord,
   .tox .tox-toolbar__primary {
-    background-color: @background-gradient;
+    background-color: var(--ironsworn-color-bg);
   }
 
   font-family: @theme-font;
@@ -95,9 +110,7 @@ body.theme-starforged {
   }
 
   .window-content {
-    // background-color: rgba(0, 0, 0, 0.4);
-    background: rgb(0, 0, 0);
-    background: @background-gradient;
+    background: var(--ironsworn-color-bg);
     background-image: none;
     color: @text-medium-color;
   }
@@ -119,14 +132,6 @@ body.theme-starforged {
     border-color: @light-color;
   }
 
-  .track-box {
-    stroke: @text-medium-color;
-  }
-
-  .boxgroup {
-    background-color: @dark-overlay;
-  }
-
   .clickable:not(svg):not(.svg) {
     color: @text-dark-color;
     &.hover,
@@ -143,7 +148,6 @@ body.theme-starforged {
       &.block,
       &.text {
         color: @text-light-color;
-        background-color: @medium-color;
       }
     }
   }
@@ -182,23 +186,30 @@ body.theme-starforged {
     }
   }
 
+  .asset-ironsworn .asset-ability:before {
+    border: 1px solid @text-medium-color;
+  }
+  .asset-starforged .asset-ability:before {
+    background-color: @text-medium-color;
+    border: 1px solid @text-medium-color;
+  }
+
   .ironsworn-roll {
     .roll {
       // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
     }
   }
 
-  button,
+  // button,
+  button {
+    .hover-fx();
+  }
   .prosemirror button,
   .tox .tox-tbtn--bespoke {
     background-color: @dark-color;
     color: @text-medium-color;
     border-color: @muted-color;
-
-    &:hover {
-      box-shadow: 0 0 5px @light-color;
-      color: @text-light-color;
-    }
+    .hover-fx();
   }
 
   select {

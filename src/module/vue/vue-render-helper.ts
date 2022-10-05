@@ -1,8 +1,6 @@
 import { App, Component, ComponentPublicInstance, createApp } from 'vue'
-import mitt from 'mitt'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornVuePlugin } from './vue-plugin'
-import { $EmitterKey, EmitterEvents, IronswornEmitter } from './provisions'
 
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
@@ -13,7 +11,6 @@ export interface VueSheetRenderHelperOptions {
 export class VueSheetRenderHelper {
   vueApp: App<Element> | undefined
   vueRoot: ComponentPublicInstance | undefined
-  emitter: IronswornEmitter
   options: VueSheetRenderHelperOptions
   vueListenersActive = false
 
@@ -27,8 +24,7 @@ export class VueSheetRenderHelper {
       components: {},
       ...options,
     }
-    this.emitter = mitt<EmitterEvents>()
-    this.emitter.on('closeApp', () => this.app.close())
+    CONFIG.IRONSWORN.emitter.on('closeApp', () => this.app.close())
 
     this.options.helperHook?.(this)
   }
@@ -64,7 +60,6 @@ export class VueSheetRenderHelper {
       })
       this.vueApp.config.unwrapInjectedRef = true
       this.vueApp.use(IronswornVuePlugin)
-      this.vueApp.provide($EmitterKey, this.emitter)
       this.appHook?.(this.vueApp)
     } else {
       ;(this.vueRoot as any).updateData(data)

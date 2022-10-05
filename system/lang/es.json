@@ -1,30 +1,38 @@
 {
   "IRONSWORN": {
+    "Ironsworn": "Ironsworn",
+    "Starforged": "Starforged",
     "CreateActor": "Crear Actor",
     "YourWorldTruths": "Tu mundo: Las verdades",
     "TruthQuestStarter": "Ejemplo de búsqueda:",
     "SaveYourTruths": "Guardar tus Verdades",
     "CustomTruth": "Otra verdad",
     "Roll": "Tirar",
+    "Chat": "Chat",
+    "SendToChat": "Mostrar las reglas en el chat",
     "Rolling": "Lanzando dados",
     "Bonus": "Bonificación",
+    "Adds": "Adds",
     "Versus": "vs.",
+    "CappedAt10": "La puntuación total de la acción está limitada a 10",
     "Strong_hit": "Éxito total",
-    "Strong_hit_with_a_match": "¡Éxito total con un partido!",
+    "Strong_hit_with_a_match": "¡Éxito total con un empate!",
     "On_a_strong_hit": "Con un éxito total",
     "Weak_hit": "Éxito parcial",
     "On_a_weak_hit": "Con un éxito parcial",
     "Miss": "Fallo",
-    "Miss_with_a_match": "¡Fallo con un partido!",
+    "Miss_with_a_match": "¡Fallo con un empate!",
     "On_a_miss": "Con un fallo",
     "Opportunity": "¡Oportunidad!",
     "Complication": "¡Complicación!",
     "MarkProgress": "Registra el progreso",
+    "UnmarkProgress": "Desmarcar el progreso",
     "ClearProgress": "Borrar progreso",
     "FulfillVow": "Cumplir tu juramento",
     "ProgressRoll": "Tirada de progreso",
+    "MakeAProgressRoll": "Hacer una tirada con {score} de progreso",
     "StarProgress": "Cuando se activa, este elemento también aparecerá en la pestaña 'Legados'.",
-    "Mark": "Marca",
+    "Mark": "Registrar",
     "Fulfill": "Completar",
     "Clear": "Borrar",
     "Troublesome": "Problemático",
@@ -33,16 +41,27 @@
     "Extreme": "Extremo",
     "Epic": "Épico",
     "Stat": "Característica",
+    "OracleTable": {
+      "ColumnLabel": {
+        "Roll": "Tirada",
+        "Result": "Resultado"
+      }
+    },
     "roll +x": "tira +{stat}",
+    "Roll +x": "Tira +{stat}",
     "roll method": {
+      "All": "tira todas de {statList}",
       "Any": {
-        "2": "tira +{stat1} o +{stat2}"
+        "2": "tira +{stat1} o +{stat2}",
+        "fallback": "tira una de {statList}"
       },
       "Highest": {
-        "2": "tira +{stat1} o +{stat2}, la que sea más alta"
+        "2": "tira +{stat1} o +{stat2}, la que sea más alta",
+        "fallback": "tira la más alta de {statList}"
       },
       "Lowest": {
-        "2": "tira +{stat1} o +{stat2}, la que sea menor"
+        "2": "tira +{stat1} o +{stat2}, la que sea más baja",
+        "fallback": "tira la más baja de {statList}"
       }
     },
     "Momentum": "impulso",
@@ -64,7 +83,7 @@
     "Scenes": "Escenas",
     "Quests": "Búsquedas",
     "Notes": "Notas",
-    "Discoveries": "Discoveries",
+    "Discoveries": "Descubrimientos",
     "Debilities": "Debilidades",
     "Conditions": "Condiciones",
     "Banes": "Desgracias",
@@ -88,7 +107,16 @@
     "Vow": "Juramento",
     "Vows": "Juramentos",
     "Progress": "Progreso",
+    "Reroll": "Volver a tirar",
     "Moves": "Movimientos",
+    "Session": "Sesión",
+    "Connections": "Conexiones",
+    "Connection": "Conexión",
+    "Exploration": "Exploration",
+    "Recover": "Recover",
+    "Threshold": "Threshold",
+    "Legacy": "Legado",
+    "Scene Challenge": "Escenas de desafío",
     "Adventure": "Aventura",
     "Relationship": "Relación",
     "Combat": "Combate",
@@ -98,29 +126,38 @@
     "Delve": "Delve",
     "Optional Delve": "Optional Delve",
     "Custom Moves": "Movimientos personalizados",
-    "CustomMoves": "Movimientos personalizados",
+    "": "Movimientos personalizados",
     "Oracles": "Oráculos",
+    "Custom Oracles": "Oráculos personalizados",
     "Search": "Buscar",
     "Plot": "Trama",
     "Location": "Localización",
+    "LocationType": "Tipo de localización",
     "Character": "Personaje",
     "Starship": "Starship",
     "SharedSheet": "Ficha compartida",
     "DelveSite": "Delve Site",
     "Names": "Nombres",
-    "Burn": "Quemar",
-    "Focus": "Recuperación",
+    "RollForDetails": "Tirar los detalles de la localización",
+    "RandomName": "Nombre aleatorio",
+    "Burn": "Aprovechar",
+    "Focus": "Concentrarte",
+    "ResolveChallenge": "Resolver el desafío",
+    "ResolveChallengeDisabled": "Choose your final two challenge dice",
     "BurnForUpgrade": "Aprovechar impulso: <strong>{type}</strong>",
-    "MomentumBurnt": "Impulso restablecido",
+    "BurnMomentumAndResetTo": "Aprovecha {value} de impulso y restablecerlo a {resetValue}",
+    "MomentumBurnt": "Impulso aprovechado",
     "NegativeMomentumCancel": "Dado de acción cancelado por el impulso negativo",
-    "Reset": "Inicial",
+    "Reset": "Restablecer",
     "Max": "Máx",
     "Name": "Nombre",
-    "Pronouns": "Pronouns",
+    "Pronouns": "Pronombres",
     "Callsign": "Callsign",
     "Characteristics": "Characteristics",
     "Summary": "Resumen",
     "Description": "Descripción",
+    "Trigger": "Disparador",
+    "FullText": "Texto completo",
     "Fields": "Campos",
     "Label": "Etiqueta",
     "Value": "Valor",
@@ -129,24 +166,42 @@
     "Track": "Registro",
     "Enabled": "Activado",
     "Rank": "Nivel",
+    "ChallengeRank": "Nivel de desafío",
+    "Completed": "Completado",
+    "NotCompleted": "Sin completar",
     "Features": "Impresiones",
     "Feature": "Impresión",
     "Dangers": "Peligros",
     "Foes": "Oponentes",
     "Foe": "Oponente",
+    "NPC": "PNJ",
     "Edit": "Editar",
     "Domain": "Domain",
     "Theme": "Tema",
     "Denizen": "Denizen",
     "Denizens": "Denizens",
     "OpenCompendium": "Abrir compendio",
-    "DeleteItem": "Eliminar",
+    "DeleteItem": "Eliminar objeto",
     "DeleteMove": "Eliminar movimiento",
     "DeleteVow": "Eliminar juramento",
     "DeleteProgress": "Eliminar progreso",
     "DeleteAsset": "Eliminar recurso",
     "ConfirmDelete": "¿Estás seguro? Esta acción no puede deshacerse.",
     "StatBonusTooltip": "Bonificación para la siguiente tirada de característica",
+    "RequiresLocationType": "This oracle requires a location type to be selected.",
+    "RollOracleTable": "Tirar Oráculo: <i>{title}</i>",
+    "RollMove": "Tirar movimiento: <i>{title}</i>",
+    "PageReference": "p. {page}",
+    "PlanetType": "Type of planet",
+    "RandomPlanetType": "Random planet type",
+    "SettlementType": "Type of settlement",
+    "RandomSettlementType": "Random settlement type",
+    "StarType": "Type of star",
+    "RandomStarType": "Random star type",
+    "DerelictType": "Type of derelict",
+    "RandomDerelictType": "Random derelict type",
+    "VaultType": "Type of vault",
+    "RandomVaultType": "Random vault type",
     "First": "primera",
     "Second": "segunda",
     "Third": "tercera",
@@ -166,6 +221,12 @@
     "Expanse": "Expanse",
     "RotateCCW": "Rotate counter-clockwise",
     "RotateCW": "Rotate clockwise",
+    "RollDialog": {
+      "AdvancedRollOptions": "Opciones avanzadas",
+      "PresetActionDie": "Dado de acción predefinido",
+      "PredeterminedOutcome": "Resultado predeterminado",
+      "ExtraChallengeDice": "Dados de desafío adicionales"
+    },
     "ChatAlert": {
       "Renamed": "Renombrado a {name}",
       "renamed": "renombrado a {name}",
@@ -174,8 +235,8 @@
       "MarkedXP": "Marcó {amt} PE",
       "UnmarkedXP": "Desmarcó {amt} PE",
       "AdjustedStat": "{amt} {stat} (ahora {val})",
-      "SetCondition": "Estableció la condición {condition}",
-      "ClearedCondition": "Aplicó la condición {condition}",
+      "SetCondition": "Aplicó la condición {condition}",
+      "ClearedCondition": "Eliminó la condición {condition}",
       "RankChanged": "Cambió el nivel de {old} a {new}",
       "rankChanged": "cambió el nivel de {old} a {new}",
       "ProgressAdvanced": "Aumentó su progreso",
@@ -187,7 +248,16 @@
       "MarkedOption": "marcó {name}",
       "SetField": "{name} se estableció en {val}",
       "AddBond": "Añadió un vínculo",
-      "LostBond": "Perdió un vínculo"
+      "LostBond": "Perdió un vínculo",
+      "completedMarked": "marcado completado",
+      "completedUnmarked": "desmarcado completado",
+      "clockAdvancedOneSegment": "el reloj avanzó a {new}⁄{max}",
+      "clockAdvancedTwoSegments": "el reloj avanzó {change} segmentos a {new}⁄{max}",
+      "clockAdvancedManySegments": "el reloj avanzó {change} segmentos a {new}⁄{max}",
+      "clockCompletedOneSegment": "el reloj avanzó a {new}⁄{max}—¡reloj completado!",
+      "clockCompletedTwoSegments": "el reloj avanzó {change} segmentos a {new}⁄{max}—¡reloj completado!",
+      "clockCompletedManySegments": "el reloj avanzó {change} segmentos a {new}⁄{max}—¡reloj completado!",
+      "clockSet": "reloj establecido a {new}⁄{max}"
     },
     "Settings": {
       "Theme": {
@@ -196,22 +266,41 @@
         "Ironsworn": "Ironsworn clásico",
         "Starforged": "Starforged (experimental)"
       },
+      "Tools": {
+        "Name": "Herramientas del personaje",
+        "Hint": "Qué conjunto de movimientos y oráculos aparecerán al abrir la hoja de personaje.",
+        "Sheet": "La misma que la hoja"
+      },
       "SharedSupply": {
         "Name": "Suministros compartidos",
-        "Hint": "Si está activo, cambiar los suministros en cualquier personaje también cambiará los suministros en todos los demás actores."
+        "Hint": "Si está activo, cambiar los suministros en cualquier personaje/compartido también cambiará los suministros en los demás actores."
       },
       "LogChanges": {
         "Name": "Registrar los cambios de los personajes",
         "Hint": "Si está activado, los cambios en las características del personaje se mostrarán en el chat."
       },
       "PromptTruths": {
-        "Name": "Elegir tus verdades",
-        "Hint": "Si no se ha hecho ya, el sistema te preguntará si quieres elegir las verdades de tu mundo mediante una ventana emergente."
+        "Name": "Ventana emergente de Ironsworn/Starforged al inicio",
+        "Hint": "Muestra la ventana mencionada al iniciar el mundo."
+      },
+      "ConfigurationDialog": {
+        "Label": "Ventana emergente de configuración de Ironsworn/Starforged",
+        "Name": "Ventana emergente de configuración",
+        "Hint": "Elige entre los elementos de la interfaz de usuario de Ironsworn o Starforged."
       },
       "SFBeta": {
         "Name": "Mostrar contenido beta de Starforged",
         "Hint": "Activa las características de Starforged en desarrollo."
+      },
+      "DataforgedIronswornMoves": {
+        "Name": "(Beta) Nueva interfaz de la hoja de movimientos de Ironsworn",
+        "Hint": "Si está activada, utiliza la interfaz del estilo Starforged para la hoja de movimientos/oráculo de Ironsworn, y permite entradas y ganchos personalizados para la personalización."
       }
+    },
+    "First Start": {
+      "Welcome": "Bienvenidos",
+      "Save": "Guardar",
+      "Intro": "¡Bienvenido a Ironsworn! Sólo hay que elegir algunas opciones antes de empezar."
     },
     "MoveContents": {
       "Face Danger": {
@@ -261,21 +350,21 @@
         "description": "<p>Cuando <strong>viajas por tierras desconocidas o peligrosas</strong>, primero determina el nivel de desafío de tu viaje.</p>\n<ul>\n<li>Un viaje problemático: 3 casillas (12 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje peligroso: 2 casillas (8 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje formidable: 1 casilla (4 marcas) por cada lugar de paso en el viaje.</li>\n<li>Un viaje extremo: 2 marcas por cada lugar de paso en el viaje.</li>\n<li>Un viaje épico: 1 marca por cada lugar de paso en el viaje.</li>\n</ul>\n<p>Después, para cada tramo del viaje, tira +mente. Si partes de una comunidad con la que tienes un vínculo, suma +1 a la tirada inicial.</p>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, llegas a un lugar de paso en tu viaje. Si no conoces el lugar, imagina cómo es —<em>Pregunta al oráculo</em>, en caso de duda—. A continuación, elige una:</p>\n<ul>\n<li>Haces buen uso de tus recursos: Registra el progreso.</li>\n<li>Forzar la marcha: Registras el progreso y ganas +1 de impulso, pero pierdes -1 de suministros.</li>\n</ul>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, alcanzas un lugar de paso en tu viaje. Registra el progreso, pero pierdes -1 de suministros.</p>\n",
-        "miss": "<p>Con un <strong>fallo</strong>, tu viaje se ve interrumpido por un acontecimiento comprometido. <em>Paga el precio</em>.</p>\n"
+        "miss": "<p>Con un <strong>fallo</strong>, tu viaje se ve interrumpido por un acontecimiento que te pone en riesgo. <em>Paga el precio</em>.</p>\n"
       },
       "Reach Your Destination": {
         "title": "Alcanzar tu destino",
         "description": "<p>Cuando <strong>tu viaje llega a su fin</strong>, tira los dados de desafío y compáralos con tu progreso. No tengas en cuenta el impulso en esta tirada.</p>\n",
-        "strong": "<p>Con un <strong>éxito total</strong>, la situación al llegar te es propicia. Elige una:</p>\n<ul>\n<li>Haz otro movimiento inmediatamente —que no sea de progreso— y suma +1 al hacerlo.</li>\n<li>Ganas +1 de impulso.</li>\n</ul>\n",
+        "strong": "<p>Con un <strong>éxito total</strong>, la situación al llegar te es propicia. Elige una:</p>\n<ul>\n<li>Haz otro movimiento ahora mismo —que no sea de progreso— y suma +1 al hacerlo.</li>\n<li>Ganas +1 de impulso.</li>\n</ul>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, llegas a tu destino, pero te enfrentas a imprevistos en forma de peligros o complicaciones. Concreta en qué consisten (<em>Pregunta al oráculo</em> en caso de duda).</p>\n",
-        "miss": "<p>Con un <strong>fallo</strong>, o bien te has perdido sin remedio; o bien una vez allí se revela que no ha servido de nada llegar, o tu información sobre el destino no era correcta. Si el viaje continúa, elimina todo el progreso salvo una casilla (4 marcas) y aumenta el nivel de desafío del viaje en uno (excepto si ya era épico).</p>\n"
+        "miss": "<p>Con un <strong>fallo</strong>, o bien te has perdido sin remedio; o bien una vez allí se revela que no ha servido de nada llegar o tu información sobre el destino no era correcta. Si el viaje continúa, elimina todo el progreso salvo una casilla (4 marcas) y aumenta el nivel de desafío del viaje en uno (excepto si ya era épico).</p>\n"
       },
       "Compel": {
         "title": "Persuadir",
-        "description": "<p>Cuando <strong>intentas persuadir a alguien de que haga algo</strong>, imagina cómo podrías lograrlo y tira. Si...</p>\n<ul>\n<li>Recurres a tu carisma, ofreces algo a cambio, convences o tranquilizas a la otra parte: Tira +corazón (suma +1 si compartís un vínculo).</li>\n<li>Empleas amenazas o provocaciones: Tira +hierro.</li>\n<li>Empleas mentiras o engaños: Tira +sombra.</li>\n</ul>\n",
+        "description": "<p>Cuando <strong>intentas persuadir a alguien de que haga (o no haga) algo</strong>, imagina cómo podrías lograrlo y tira. Si...</p>\n<ul>\n<li>Recurres a tu carisma, ofreces algo a cambio, convences o tranquilizas a la otra parte: Tira +corazón (suma +1 si compartís un vínculo).</li>\n<li>Empleas amenazas o provocaciones: Tira +hierro.</li>\n<li>Empleas mentiras o engaños: Tira +sombra.</li>\n</ul>\n",
         "strong": "<p>Con un <strong>éxito total</strong>, hace lo que quieres o comparte lo que sabe. Ganas +1 de impulso. Si aprovechas la coyuntura para <em>Reunir Información</em>, haz ese movimiento ahora y suma +1.</p>\n",
         "weak": "<p>Con un <strong>éxito parcial</strong>, como arriba, pero te pide algo a cambio. Concreta qué es lo que quiere (<em>Pregunta al oráculo</em> en caso de duda).</p>\n",
-        "miss": "<p>Con un <strong>fallo</strong>, no cede o te exige algo muy costoso a cambio. <em>Paga el precio</em>.</p>\n"
+        "miss": "<p>Con un <strong>fallo</strong>, no cede o te exige a cambio algo muy costoso. <em>Paga el precio</em>.</p>\n"
       },
       "Sojourn": {
         "title": "Pasar tiempo en una comunidad",
@@ -417,7 +506,7 @@
       },
       "Face a Setback": {
         "title": "Afrontar un contratiempo",
-        "description": "<p>Cuando <strong>tu impulso está en su valor mínimo (-6) y sufres una pérdida de impulso adicional</strong>, elige una.</p>\n<ul>\n<li>Absorbe la pérdida de impulso con una combinación equivalente de salud, entereza o suministros según sea apropiado a las circunstancias.</li>\n<li>Determina un suceso o descubrimiento (<em>Pregunta al oráculo</em> en caso de duda) que obstaculice tu progreso en una búsqueda, viaje o lucha actuales. Después, por cada punto de impulso perdido, borra una unidad de progreso en ese contador de acuerdo a su nivel de desafío (problemático=borra 3 casillas completas; peligroso=borra 2 casillas completas; formidable=borra 1 casilla completa; extremo=borra 2 marcas; épico=borra 1 marca).</li>\n</ul>\n"
+        "description": "<p>Cuando <strong>tu impulso está en su valor mínimo (-6) y sufres una pérdida de impulso adicional</strong>, elige una.</p>\n<ul>\n<li>Absorbe la pérdida de impulso con una combinación equivalente de salud, entereza o suministros según sea apropiado a las circunstancias.</li>\n<li>Determina un suceso o descubrimiento (<em>Pregunta al oráculo</em> en caso de duda) que obstaculice tu progreso en una búsqueda, viaje o lucha actuales. Después, por cada punto de impulso perdido, borra una unidad de progreso en ese contador de acuerdo a su nivel de desafío (problemático=borra 3 casillas completas; peligroso=borra 2 casillas completas; formidable=borra 1 casilla completa; extremo=borra 2 marcas; épico=borra 1 marca).</li>\n</ul>\n"
       },
       "Swear an Iron Vow": {
         "title": "Jurar por el Hierro",
@@ -1436,6 +1525,80 @@
           "Quest": "Rumors persist of a fleet of ghost ships, bound for settled domains. Who is said to lead this corrupted armada? Why do they seek revenge against the living?"
         }
       }
+    },
+    "OracleCategories": {
+      "Access": "Access",
+      "Action and Theme": "Acción y Tema",
+      "Ask the Oracle": "Pregunta al Oráculo",
+      "Basic Form": "Basic Form",
+      "Challenge Rank": "Nivel de desafío",
+      "Chaotic": "Chaotic",
+      "Character Creation": "Creación de personaje",
+      "Character Name": "Nombre del personaje",
+      "Character": "Personaje",
+      "Characters": "Personajes",
+      "Combat Event": "Evento de combate",
+      "Community": "Comunidad",
+      "Core": "Core",
+      "Creatures": "Criaturas",
+      "Delve the Depths": "Delve the Depths",
+      "Derelicts": "Derelicts",
+      "Desert": "Desert",
+      "Engineering": "Engineering",
+      "Factions": "Factions",
+      "Feature": "Rasgo",
+      "Fortified": "Fortified",
+      "Furnace": "Furnace",
+      "Grave": "Grave",
+      "Haunted": "Haunted",
+      "Ice": "Ice",
+      "Infested": "Infested",
+      "Inhabited": "Inhabited",
+      "Interior": "Interior",
+      "Ironlander": "Pueblo del Hierro",
+      "Jovian": "Jovian",
+      "Jungle": "Jungle",
+      "Living": "Living",
+      "Location Themes": "Location Themes",
+      "Mechanical": "Mechanical",
+      "Medical": "Medical",
+      "Misc": "Misc",
+      "Mission": "Mission",
+      "Monstrosity": "Monstruosidad",
+      "Moves": "Movimientos",
+      "Name": "Nombre",
+      "Ocean": "Ocean",
+      "Operations": "Operations",
+      "Opportunity": "Opportunity",
+      "Other": "Otro",
+      "Peril": "Peril",
+      "Place": "Sitios",
+      "Planets": "Planets",
+      "Population": "Population",
+      "Production": "Production",
+      "Quick Name": "Nombre rápido",
+      "Research": "Research",
+      "Rocky": "Rocky",
+      "Ruined": "Ruined",
+      "Sacred": "Sacred",
+      "Sanctum": "Sanctum",
+      "Sector Name": "Sector Name",
+      "Settlement": "Asentamiento",
+      "Settlements": "Asentamientos",
+      "Shattered": "Shattered",
+      "Sighting": "Sighting",
+      "Site Name": "Nombre del emplazamiento",
+      "Site Nature": "Naturaleza del emplazamiento",
+      "Space": "Space",
+      "Starships": "Starships",
+      "Tainted": "Tainted",
+      "Threat": "Amenaza",
+      "Trap": "Trampa",
+      "Turning Point": "Punto de inflexión",
+      "Type": "Tipo",
+      "Vaults": "Vaults",
+      "Vital": "Vital",
+      "Zones": "Zones"
     }
   }
 }

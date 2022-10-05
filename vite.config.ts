@@ -1,11 +1,12 @@
 import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import autoprefixer from 'autoprefixer'
+import Inspector from 'vite-plugin-vue-inspector'
 
 const PORT = 30000
 
 const config: UserConfig = {
-  plugins: [vue()],
+  plugins: [vue(), Inspector({ appendTo: 'src/index.ts' })],
   resolve: {
     alias: {
       vue: 'vue/dist/vue.esm-bundler.js',

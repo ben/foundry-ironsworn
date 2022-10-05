@@ -1,7 +1,8 @@
 <template>
-  <div class="flexrow xp nogrow">
-    <div
-      class="clickable block xp"
+  <article class="flexrow xp-track nogrow">
+    <button
+      class="clickable block xp-box"
+      type="button"
       v-for="(box, i) in computedBoxes"
       :key="box.key"
       :class="box.classes"
@@ -9,9 +10,17 @@
       @mouseleave="hovered = -1"
       @click="click(i)"
     />
-  </div>
+  </article>
 </template>
-
+<style lang="less">
+.xp-track {
+  .xp-box {
+    border: 1px solid;
+    aspect-ratio: 1;
+    max-width: 20px;
+  }
+}
+</style>
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
 

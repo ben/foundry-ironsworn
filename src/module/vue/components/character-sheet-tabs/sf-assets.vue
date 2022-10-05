@@ -13,9 +13,9 @@
       </div>
     </transition-group>
     <div class="flexrow nogrow" style="text-align: center">
-      <btn-compendium class="block" compendium="starforgedassets">{{
-        $t('IRONSWORN.Assets')
-      }}</btn-compendium>
+      <BtnFaicon icon="atlas" @click="assetBrowser" class="clickable block">
+        {{ $t('IRONSWORN.Assets') }}
+      </BtnFaicon>
     </div>
   </div>
 </template>
@@ -25,8 +25,9 @@ import { sortBy } from 'lodash'
 import { computed, inject, Ref } from 'vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
-import BtnCompendium from '../buttons/btn-compendium.vue'
+import BtnFaicon from '../buttons/btn-faicon.vue'
 import { $ActorKey } from '../../provisions'
+import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)
@@ -59,5 +60,15 @@ function sortUp(i) {
 }
 function sortDown(i) {
   applySort(i, i + 1, false)
+}
+
+let theAssetBrowser: AssetCompendiumBrowser | undefined
+function assetBrowser() {
+  if (!theAssetBrowser) {
+    theAssetBrowser = new AssetCompendiumBrowser(
+      $actor?.toolset ?? 'starforged'
+    )
+  }
+  theAssetBrowser.render(true)
 }
 </script>

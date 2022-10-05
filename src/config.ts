@@ -1,5 +1,3 @@
-import * as lodash from 'lodash'
-import { marked } from 'marked'
 import { IronswornActor } from './module/actor/actor'
 import { CreateActorDialog } from './module/applications/createActorDialog'
 import * as dataforgedHelpers from './module/dataforged'
@@ -12,6 +10,14 @@ import {
   OracleRollMessage,
 } from './module/rolls'
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
+import Mitt, { Emitter } from 'mitt'
+
+export type EmitterEvents = {
+  closeApp: void
+  highlightMove: string // Foundry ID
+  highlightOracle: string // DF ID
+}
+export type IronswornEmitter = Emitter<EmitterEvents>
 
 export interface IronswornConfig {
   actorClass: typeof IronswornActor
@@ -27,6 +33,8 @@ export interface IronswornConfig {
 
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
+
+  emitter: IronswornEmitter
 
   beta: { [k: string]: any }
 }
@@ -47,6 +55,8 @@ export const IRONSWORN: IronswornConfig = {
 
   Dataforged: starforged,
   dataforgedHelpers,
+
+  emitter: Mitt<EmitterEvents>(),
 
   beta: {
     AssetCompendiumBrowser,

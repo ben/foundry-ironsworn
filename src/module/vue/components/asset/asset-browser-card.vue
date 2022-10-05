@@ -1,7 +1,7 @@
 
 <template>
   <article
-    class="item-row item flexcol document ironsworn__asset"
+    class="item-row flexcol document ironsworn__asset"
     draggable="true"
     :data-pack="foundryItem.pack"
     :data-id="foundryItem.id"
@@ -36,6 +36,8 @@
         :aria-expanded="state.expanded"
         :id="bodyId"
       >
+        <div v-html="$enrichHtml(data.data.requirement ?? '')"></div>
+
         <dl class="asset-fields" v-if="data.data.fields?.length">
           <div
             class="asset-field"
@@ -46,12 +48,17 @@
             <dd class="asset-field-value">{{ field.value }}</dd>
           </div>
         </dl>
+
         <ul class="asset-abilities flexcol">
           <WithRolllisteners
             v-for="(ability, i) in data.data.abilities"
             :key="'ability' + i"
             element="li"
-            :class="`asset-ability bullet-${toolset}`"
+            :class="{
+              'asset-ability': true,
+              [`bullet-${toolset}`]: true,
+              marked: ability.enabled,
+            }"
             @moveclick="moveClick"
           >
             <div
@@ -80,7 +87,7 @@
 </template>
 
 <style lang="less" scoped>
-.ironsworn__asset {
+.ironsworn .ironsworn__asset {
   margin: 10px 0;
   padding: 5px;
 }
@@ -96,7 +103,7 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 
 const props = defineProps<{
-  df: IAsset
+  df?: IAsset
   foundryItem: Readonly<IronswornItem>
 }>()
 const data = props.foundryItem.data as AssetDataProperties
@@ -108,15 +115,15 @@ const state = reactive({
 const bodyId = `asset-body-${props.foundryItem.id}`
 const toolset = inject('toolset')
 
-function moveClick() {
-  // TODO:
+function moveClick(item) {
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
 
 function dragStart(ev) {
   ev.dataTransfer.setData(
     'text/plain',
     JSON.stringify({
-      type: 'Item',
+      type: 'AssetBrowserData',
       pack: props.foundryItem.pack,
       id: props.foundryItem.id,
       uuid: props.foundryItem.uuid,

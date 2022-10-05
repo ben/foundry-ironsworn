@@ -44,7 +44,6 @@ import {
   createStarforgedOracleTree,
   IOracleTreeNode,
 } from '../../features/customoracles'
-import { $EmitterKey } from '../provisions'
 import OracleTreeNode from './oracle-tree-node.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
@@ -116,8 +115,7 @@ function collapseAll() {
   }
 }
 
-const $emitter = inject($EmitterKey)
-$emitter?.on('highlightOracle', async (dfid) => {
+CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
   clearSearch()
 
   // Find the path in the data tree

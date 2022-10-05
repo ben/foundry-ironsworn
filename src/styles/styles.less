@@ -18,6 +18,26 @@
   --widget-fill-opacity: 1;
   --widget-fill-opacity-preview: 0.5;
   --widget-stroke-width: 1px;
+  --ironsworn-color-bg: white;
+
+  --ironsworn-color-red-1: #ff4f5e;
+  // original sample from PDF: #c9181a
+  // previously: #ec230e
+  --ironsworn-color-red-2: #e33722;
+  --ironsworn-color-red-3: #8e0006;
+  --ironsworn-color-purple-1: #e056e4;
+  // original sample from PDF: #8c1d81
+  --ironsworn-color-purple-2: #b32fb5;
+  --ironsworn-color-purple-3: #6d0075;
+  --ironsworn-color-blue-1: #00d1ff;
+  // original sample from PDF: #35a9e0
+  --ironsworn-color-blue-2: #00a2ef;
+  --ironsworn-color-blue-3: #0062e3;
+
+  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-2);
+  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-2);
+  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-2);
+
   --ironsworn-color-danger: hsl(0, 80%, 40%);
   --ironsworn-color-danger-faded: hsl(0, 80%, 40%);
   --ironsworn-color-warning: hsl(55, 100%, 50%);
@@ -87,22 +107,6 @@
     }
   }
 
-  .xp {
-    flex-grow: 0;
-    flex-direction: row;
-    flex-basis: 130px;
-    align-items: center;
-
-    .xp {
-      height: 15px;
-      flex-basis: 15px;
-      border: 1px solid;
-      margin: 3px;
-      line-height: 13px;
-      text-align: center;
-    }
-  }
-
   .margin-left {
     flex: 0;
     border-right: 1px solid;
@@ -163,6 +167,7 @@
       z-index: 1;
       padding: 0;
       &:hover,
+      &.hover,
       &.selected,
       &[aria-selected='true'] {
         z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
@@ -179,27 +184,6 @@
 
       input[type='radio'] {
         appearance: none;
-      }
-    }
-  }
-
-  .track {
-    flex-wrap: nowrap;
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-
-    .track-box {
-      flex: 1 0 20px;
-      border: 1px solid;
-      margin-right: -1px;
-      stroke-width: 5;
-      text-align: center;
-      align-items: center;
-      justify-items: center;
-
-      svg {
-        max-height: 30px;
       }
     }
   }

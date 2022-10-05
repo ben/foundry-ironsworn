@@ -5,15 +5,21 @@
       <btn-faicon class="block nogrow" icon="edit" @click="editBonds" />
       <btn-faicon class="block nogrow" icon="dice-d6" @click="rollBonds" />
     </div>
-    <progress-track :ticks="bondcount" />
+    <ProgressTrack
+      :ticks="bondcount"
+      :rank="null"
+      :compact-progress="compactProgress"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { inject, computed, Ref } from 'vue'
 import { $ActorKey } from '../provisions'
-import ProgressTrack from './progress/progress-track.vue'
 import btnFaicon from './buttons/btn-faicon.vue'
+import ProgressTrack from './progress/progress-track.vue'
+
+const props = defineProps<{ compactProgress?: boolean }>()
 
 const actor = inject('actor') as Ref
 const $actor = inject($ActorKey)

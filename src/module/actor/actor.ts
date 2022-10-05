@@ -28,17 +28,18 @@ export class IronswornActor extends Actor {
   }
 
   get toolset(): 'ironsworn' | 'starforged' {
-    if (this.type === 'character') {
-      return this.sheet?.constructor.name === 'StarforgedCharacterSheet'
-        ? 'starforged'
-        : 'ironsworn'
-    }
-
     // We can't use IronswornSettings helpers here, it breaks the import orders
     // First check if the toolbox is set to one or the other
     const toolbox = game.settings.get('foundry-ironsworn', 'toolbox') as string
     if (toolbox === 'ironsworn') return 'ironsworn'
     if (toolbox === 'starforged') return 'starforged'
+
+    // Set to "match sheet", so check for a specific setting on this actor
+    if (this.type === 'character') {
+      return this.sheet?.constructor.name === 'StarforgedCharacterSheet'
+        ? 'starforged'
+        : 'ironsworn'
+    }
 
     // Nope, now check the default character sheet class
     const sheetClasses = game.settings.get('core', 'sheetClasses') as any

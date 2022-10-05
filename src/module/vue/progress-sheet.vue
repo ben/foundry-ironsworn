@@ -59,7 +59,7 @@
           </div>
           <!-- PROGRESS -->
           <div class="flexrow track nogrow" style="margin-bottom: 1em">
-            <ProgressTrack :ticks="item.data.current" />
+            <ProgressTrack :ticks="item.data.current" :rank="item.data.rank" />
           </div>
         </div>
       </Transition>
@@ -94,11 +94,13 @@
               @change="clockMaxChange"
               style="margin: 0.5rem 0"
             >
-              <option value="4">4</option>
-              <option value="6">6</option>
-              <option value="8">8</option>
-              <option value="10">10</option>
-              <option value="12">12</option>
+              <option
+                v-for="clockSize in [4, 6, 8, 10, 12]"
+                :key="clockSize"
+                :value="clockSize"
+              >
+                {{ clockSize }}
+              </option>
             </select>
           </div>
         </div>
@@ -124,27 +126,21 @@
 </style>
 
 <script setup lang="ts">
-import SheetHeader from './sheet-header.vue'
 import { computed, inject, provide } from 'vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
 import { $ItemKey } from './provisions'
-import DocumentImg from './components/document-img.vue'
-import DocumentName from './components/document-name.vue'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
-import ProgressTrack from './components/progress/progress-track.vue'
 import Clock from './components/clock.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
 import SheetHeaderBasic from './sheet-header-basic.vue'
-
-const $item = inject($ItemKey)
+import ProgressTrack from './components/progress/progress-track.vue'
 
 const props = defineProps<{ item: any }>()
-provide(
-  'item',
-  computed(() => props.item)
-)
+const $item = inject($ItemKey)
+
+provide($ItemKey, props.item)
 
 const editMode = computed(
   () => props.item.flags['foundry-ironsworn']?.['edit-mode']
@@ -171,7 +167,7 @@ function subtypeChange() {
 }
 
 function clockMaxChange() {
-  $item?.update({ data: { clockMax: props.item.data.clockMax } })
+  $item?.update({ data: { clockMax: parseInt(props.item.data.clockMax) } })
 }
 
 function saveChecks() {

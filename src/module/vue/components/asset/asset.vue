@@ -19,10 +19,9 @@
         <h4 class="asset-title">
           {{ asset.name }}
         </h4>
-        <!-- FIXME: uncomment once asset type names are trimmed from their display names -->
-        <!-- <span class="asset-type" aria-label="asset type">
+        <span class="asset-type" aria-label="asset type">
           {{ asset.data.category }}
-        </span> -->
+        </span>
       </button>
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
@@ -42,6 +41,8 @@
         :aria-expanded="expanded"
         :id="bodyId"
       >
+        <div v-html="$enrichHtml(asset.data.requirement ?? '')"></div>
+
         <dl class="asset-fields" v-if="asset.data.fields?.length">
           <div
             class="asset-field"
@@ -57,7 +58,7 @@
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
             element="li"
-            :class="`asset-ability bullet-${$actor?.toolset}`"
+            :class="`asset-ability marked bullet-${$actor?.toolset}`"
             @moveclick="moveclick"
           >
             <div
@@ -187,25 +188,28 @@
         flex-direction: row;
         gap: @asset_spacer;
       }
-      .asset-ability-clock {
-      }
     }
-    .asset-ability-text {
-      gap: (@asset_spacer / 2);
-      p {
-        margin: 0;
-      }
-    }
-    ul,
-    ol {
+  }
+
+  .asset-ability-clock {
+    min-width: 40px;
+  }
+  .asset-ability-text {
+    // flex-grow: 2;
+    // gap: (@asset_spacer / 2);
+    p {
       margin: 0;
     }
   }
-  .asset-condition-meter {
-    gap: 3px;
-    .icon-button .button-text {
-      text-align: left;
-    }
+  ul,
+  ol {
+    margin: 0;
+  }
+}
+.asset-condition-meter {
+  gap: 3px;
+  .icon-button .button-text {
+    text-align: left;
   }
 }
 
@@ -224,6 +228,9 @@
       background-repeat: no-repeat;
       mask-position: center;
       background-position: center;
+    }
+
+    &.marked:before {
       background-color: currentColor;
     }
   }
@@ -234,7 +241,7 @@
       aspect-ratio: 1;
       border-radius: 50%;
       border-width: 2px;
-      height: 1em;
+      height: 0.75em;
       margin-top: 0.15em;
     }
   }
@@ -275,9 +282,12 @@
       &:before {
         aspect-ratio: @hexagon_aspect_ratio;
         background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-        mask-image: url('/assets/misc/hex-checkbox-checked.svg');
+        mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
         height: 1em;
         margin-top: 0.15em;
+      }
+      &.marked:before {
+        mask-image: url('/assets/misc/hex-checkbox-checked.svg');
       }
     }
   }
@@ -352,12 +362,7 @@ function exclusiveOptionClick(selectedIdx) {
   foundryItem?.update({ data: { exclusiveOptions: options } })
 }
 function moveclick(item) {
-  let actorWithMoves = $actor
-  if ($actor?.type !== 'character') {
-    actorWithMoves = defaultActor()
-  }
-  actorWithMoves?.moveSheet?.render(true)
-  actorWithMoves?.moveSheet?.highlightMove(item)
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(props.asset.data.abilities) as AssetAbility[]
