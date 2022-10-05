@@ -110,9 +110,9 @@
 
 .ironsworn__asset {
   overflow: hidden;
-  // transition: var(--std-animation);
+  transition: var(--std-animation);
   .asset-header {
-    // transition: var(--std-animation);
+    transition: var(--std-animation);
     gap: @asset_spacer;
     align-items: center;
     .asset-expand-toggle {
@@ -135,7 +135,7 @@
         flex-grow: 0;
         line-height: 1;
         font-style: italic;
-        // transition: var(--std-animation);
+        transition: var(--std-animation);
       }
     }
     .asset-controls {
@@ -147,7 +147,7 @@
   }
   .asset-body {
     transition: var(--std-animation);
-    // overflow: hidden;
+    overflow: hidden;
     padding: (@asset_spacer / 2);
     gap: @asset_spacer;
     .asset-fields {
