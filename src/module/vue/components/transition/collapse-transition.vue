@@ -1,5 +1,24 @@
 <template>
+  <TransitionGroup
+    v-if="group"
+    :name="name"
+    @before-appear="beforeAppear"
+    @appear="appear"
+    @after-appear="afterAppear"
+    @appear-cancelled="appearCancelled"
+    @before-enter="beforeEnter"
+    @enter="enter"
+    @after-enter="afterEnter"
+    @enter-cancelled="enterCancelled"
+    @before-leave="beforeLeave"
+    @leave="leave"
+    @after-leave="afterLeave"
+    @leave-cancelled="leaveCancelled"
+  >
+    <slot></slot>
+  </TransitionGroup>
   <Transition
+    v-else
     :name="name"
     @before-appear="beforeAppear"
     @appear="appear"
@@ -23,13 +42,17 @@
 
 import { computed, reactive } from '@vue/reactivity'
 import { isEmpty, kebabCase } from 'lodash'
-import { CSSProperties, Transition, watch } from 'vue'
+import { CSSProperties, Transition, TransitionGroup, watch } from 'vue'
 import type { PropertiesHyphen } from 'csstype'
 
 type Dimension = 'height' | 'width'
 
 const props = withDefaults(
   defineProps<{
+    /**
+     * When `true`, the component is a `TransitionGroup` instead of a `Transition`.
+     */
+    group?: boolean
     /**
      * The name of the transition.
      * @default 'collapse'
@@ -55,6 +78,7 @@ const props = withDefaults(
     dimension: 'height',
     duration: 300,
     easing: 'ease-in-out',
+    group: false,
   }
 )
 
@@ -74,18 +98,6 @@ const transition = computed(() => {
 })
 
 const $emit = defineEmits<{
-  (e: 'before-appear', el: HTMLElement): void
-  (e: 'appear', el: HTMLElement): void
-  (e: 'after-appear', el: HTMLElement): void
-  (e: 'appear-cancelled', el: HTMLElement): void
-  (e: 'before-enter', el: HTMLElement): void
-  (e: 'enter', el: HTMLElement, callback: () => void): void
-  (e: 'after-enter', el: HTMLElement): void
-  (e: 'enter-cancelled', el: HTMLElement): void
-  (e: 'before-leave', el: HTMLElement): void
-  (e: 'leave', el: HTMLElement, callback: () => void): void
-  (e: 'after-leave', el: HTMLElement): void
-  (e: 'leave-cancelled', el: HTMLElement): void
   (e: 'before-appear', el: HTMLElement): void
   (e: 'appear', el: HTMLElement): void
   (e: 'after-appear', el: HTMLElement): void
@@ -172,6 +184,12 @@ function beforeLeave(el: HTMLElement) {
   $emit('before-leave', el)
 }
 
+function setAbsolutePosition(el) {
+  if (props.group) {
+    el.style.position = 'absolute'
+  }
+}
+
 function leave(el: HTMLElement, callback: () => void) {
   // For some reason, @leave triggered when starting
   // from open state on page load. So for safety,
@@ -188,6 +206,7 @@ function leave(el: HTMLElement, callback: () => void) {
   forceRepaint(el)
   setTransition(el)
   setClosedDimensions(el)
+  setAbsolutePosition(el)
 
   // Emit the event to the parent
   $emit('leave', el, callback)
