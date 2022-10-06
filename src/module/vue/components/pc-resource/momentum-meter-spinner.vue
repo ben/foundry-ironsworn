@@ -13,7 +13,7 @@
     }"
   >
     <template #label>
-      <BtnMomentumBurn
+      <BtnMomentumburn
         class="text"
         :class="{ 'vertical-v2': spinnerStyle === 'vertical' }"
         :tooltip="
@@ -23,16 +23,14 @@
         "
       >
         {{ $t('IRONSWORN.Momentum') }}
-      </BtnMomentumBurn>
+      </BtnMomentumburn>
     </template>
     <template #default>
-      <!-- <hr class="nogrow" /> -->
-      <!-- replace HR above with line divider -->
       <section class="momentum-status flexcol">
-        <span>
+        <span class="momentum-status-reset">
           {{ $t('IRONSWORN.Reset') }}: {{ actor?.data.momentumReset }}
         </span>
-        <span>
+        <span class="momentum-status-max">
           {{ $t('IRONSWORN.Max') }}:
           {{ actor?.data.momentumMax }}
         </span>
@@ -65,8 +63,9 @@
 import { inject, Ref } from 'vue'
 import { IronswornActor } from '../../../actor/actor.js'
 import { CharacterDataProperties } from '../../../actor/actortypes.js'
-import { $ActorKey, ActorKey } from '../../provisions.js'
-import BtnMomentumBurn from '../buttons/btn-momentum-burn.vue'
+import { ActorKey } from '../../provisions.js'
+import BtnMomentumburn from '../buttons/btn-momentumburn.vue'
+
 import AttrSpinner from './attr-spinner.vue'
 
 const props = withDefaults(
