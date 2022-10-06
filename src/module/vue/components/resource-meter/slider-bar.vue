@@ -12,26 +12,26 @@
     :aria-valuemax="currentMax"
     :aria-valuenow="currentValue"
     :aria-orientation="orientation"
-    @keydown.arrow-up.prevent="setCurrent(currentValue + 1)"
-    @keydown.+.prevent="setCurrent(currentValue + 1)"
-    @keydown.arrow-left.prevent="setCurrent(currentValue + 1)"
-    @keydown.page-up.prevent="setCurrent(2)"
-    @keydown.-.prevent="setCurrent(currentValue - 1)"
-    @keydown.arrow-down.prevent="setCurrent(currentValue - 1)"
-    @keydown.arrow-right.prevent="setCurrent(currentValue - 1)"
-    @keydown.page-down.prevent="setCurrent(-2)"
-    @keydown.home.prevent="setCurrent(min)"
-    @keydown.end.prevent="setCurrent(currentMax)"
-    @keydown.0.prevent="setCurrent(0)"
-    @keydown.1.prevent="setCurrent(1)"
-    @keydown.2.prevent="setCurrent(2)"
-    @keydown.3.prevent="setCurrent(3)"
-    @keydown.4.prevent="setCurrent(4)"
-    @keydown.5.prevent="setCurrent(5)"
-    @keydown.6.prevent="setCurrent(6)"
-    @keydown.7.prevent="setCurrent(7)"
-    @keydown.8.prevent="setCurrent(8)"
-    @keydown.9.prevent="setCurrent(9)"
+    @keydown.arrow-up.prevent="setSliderValue(currentValue + 1)"
+    @keydown.+.prevent="setSliderValue(currentValue + 1)"
+    @keydown.arrow-left.prevent="setSliderValue(currentValue + 1)"
+    @keydown.page-up.prevent="setSliderValue(2)"
+    @keydown.-.prevent="setSliderValue(currentValue - 1)"
+    @keydown.arrow-down.prevent="setSliderValue(currentValue - 1)"
+    @keydown.arrow-right.prevent="setSliderValue(currentValue - 1)"
+    @keydown.page-down.prevent="setSliderValue(-2)"
+    @keydown.home.prevent="setSliderValue(min)"
+    @keydown.end.prevent="setSliderValue(currentMax)"
+    @keydown.0.prevent="setSliderValue(0)"
+    @keydown.1.prevent="setSliderValue(1)"
+    @keydown.2.prevent="setSliderValue(2)"
+    @keydown.3.prevent="setSliderValue(3)"
+    @keydown.4.prevent="setSliderValue(4)"
+    @keydown.5.prevent="setSliderValue(5)"
+    @keydown.6.prevent="setSliderValue(6)"
+    @keydown.7.prevent="setSliderValue(7)"
+    @keydown.8.prevent="setSliderValue(8)"
+    @keydown.9.prevent="setSliderValue(9)"
   >
     <button
       v-for="segment in sliderSegments"
@@ -42,7 +42,7 @@
       tabindex="-1"
       :aria-selected="segment === currentValue"
       :aria-disabled="!inRange(segment, props.min, currentMax + 1)"
-      @click.capture="setCurrent(segment)"
+      @click.capture="setSliderValue(segment)"
       @focus.prevent
     >
       <span tabindex="-1" class="slider-segment-text">
@@ -170,7 +170,7 @@ const currentMax = computed(() =>
   Math.min(props.softMax ?? props.max, props.max)
 )
 
-function setCurrent(newValue: number) {
+function setSliderValue(newValue: number) {
   $emit('change', clamp(newValue, props.min, currentMax.value))
 }
 
