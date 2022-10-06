@@ -78,22 +78,4 @@ const props = withDefaults(
 const actor = inject(ActorKey) as Ref<
   ReturnType<typeof IronswornActor.prototype.toObject> & CharacterDataProperties
 >
-
-// const tooltip = `<dl>
-// <dt><kbd>Enter</kbd></dt>
-// <dd>Burn your momentum and reset it to ${props.min}.</dd>
-// <dt><kbd>UpArrow</kbd></dt>
-// <dt><kbd>+</kbd></dt>
-// <dd>Increase by 1.</dd>
-// <dt><kbd>DownArrow</kbd></dt>
-// <dt><kbd>-</kbd></dt>
-// <dd>Decrease by 1.</dd>
-// <dt><kbd>Home</kbd></dt>
-// <dd>Set to maximum (${currentMax.value}).</dd>
-// <dt><kbd>End</kbd></dt>
-// <dd>Set to minimum (${props.min}).</dd>
-// <dt><kbd>0-9</kbd></dt>
-// <dd>Set to a specific value.</dd>
-// </dl>
-// `
 </script>

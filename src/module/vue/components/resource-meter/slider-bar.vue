@@ -7,6 +7,7 @@
       flexcol: orientation == 'vertical',
       flexrow: orientation == 'horizontal',
     }"
+    :tooltip="keybindInfo"
     :aria-readonly="readonly"
     :aria-valuemin="props.min"
     :aria-valuemax="currentMax"
@@ -190,4 +191,26 @@ function segmentLabel(value: number) {
   }
   return value.toString()
 }
+
+const keybindInfo = computed(
+  () => `<dl>
+<dt><kbd>Enter</kbd></dt>
+<dd>Burn your momentum and reset it to ${props.min}.</dd>
+<dt><kbd>+</kbd></dt>
+<dt><kbd>UpArrow</kbd></dt>
+<dt><kbd>RightArrow</kbd></dt>
+<dd>Increase by 1.</dd>
+<dt><kbd>-</kbd></dt>
+<dt><kbd>DownArrow</kbd></dt>
+<dt><kbd>LeftArrow</kbd></dt>
+<dd>Decrease by 1.</dd>
+<dt><kbd>Home</kbd></dt>
+<dd>Set to maximum (${currentMax.value}).</dd>
+<dt><kbd>End</kbd></dt>
+<dd>Set to minimum (${props.min}).</dd>
+<dt><kbd>0-9</kbd></dt>
+<dd>Set to a specific value.</dd>
+</dl>
+`
+)
 </script>

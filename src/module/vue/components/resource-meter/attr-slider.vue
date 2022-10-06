@@ -3,7 +3,6 @@
     class="attr-slider"
     :class="{ [`label-${labelPosition}`]: true }"
     :aria-labelledby="`${baseId}-label`"
-    ref="$wrapper"
     :aria-orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
   >
     <section
@@ -19,7 +18,6 @@
     <slot name="default"></slot>
     <SliderBar
       class="attr-slider-bar"
-      ref="$slider"
       :orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
       :max="props.max"
       :min="props.min ?? 0"
@@ -94,7 +92,7 @@
  * A slider that controls the value of an attribute.
  */
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument.js'
 import SliderBar from './slider-bar.vue'
 
@@ -125,9 +123,6 @@ const props = withDefaults(
 )
 
 const { $document, document } = pickInjectedDocument(props.documentType)
-
-const $wrapper = ref<HTMLElement>()
-const $slider = ref<HTMLElement>()
 
 const baseId = computed(
   () => `${document?.value._id}-attr-slider-${props.attr}`
