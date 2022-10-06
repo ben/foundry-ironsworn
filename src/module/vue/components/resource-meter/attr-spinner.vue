@@ -12,7 +12,6 @@
       class="attr-spinner-label nogrow"
       :id="`${baseId}-label`"
     >
-      <!-- TODO: should this be a heading tag? -->
       <slot name="label">
         <!-- button or static label goes here -->
         <!-- the tabindex for this item should be -1 -->
@@ -26,7 +25,7 @@
       :max="props.max"
       :min="props.min ?? 0"
       :softMax="props.softMax"
-      :initial-value="props.initialValue"
+      :current-value="props.initialValue"
       :segmentClass="segmentClass"
       @change="onChange"
     >

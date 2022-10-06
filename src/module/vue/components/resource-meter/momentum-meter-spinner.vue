@@ -3,6 +3,7 @@
     class="momentum-meter-spinner"
     attr="momentum"
     documentType="Actor"
+    :labelPosition="labelPosition"
     :spinnerStyle="props.spinnerStyle"
     :initial-value="actor?.data.momentum ?? 2"
     :min="-6"
@@ -15,10 +16,11 @@
     <template #label>
       <BtnMomentumburn
         class="text"
-        :class="{ 'vertical-v2': spinnerStyle === 'vertical' }"
+        :class="{ vertical: spinnerStyle === 'vertical' }"
         :tooltip="
-          $t('IRONSWORN.BurnMomentumAndResetToX', {
-            value: actor?.data.momentumReset,
+          $t('IRONSWORN.BurnMomentumAndResetTo', {
+            value: actor?.data.momentum,
+            resetValue: actor?.data.momentumReset,
           })
         "
       >
@@ -70,9 +72,10 @@ import AttrSpinner from './attr-spinner.vue'
 
 const props = withDefaults(
   defineProps<{
-    spinnerStyle: 'horizontal' | 'vertical'
+    spinnerStyle?: 'horizontal' | 'vertical'
+    labelPosition?: 'right' | 'left'
   }>(),
-  { spinnerStyle: 'vertical' }
+  { spinnerStyle: 'vertical', labelPosition: 'left' }
 )
 
 const actor = inject(ActorKey) as Ref<

@@ -1,20 +1,19 @@
 <template>
   <boxrow
     :min="0"
-    :max="item.data.track.max"
-    :current="item.data.track.current"
+    :max="item?.data.track.max"
+    :current="item?.data.track.current"
     @click="click"
   />
 </template>
 
 <script setup lang="ts">
 import { inject } from 'vue'
-import { $ItemKey } from '../../provisions'
+import { $ItemKey, ItemKey } from '../../provisions'
 import Boxrow from '../boxrow/boxrow.vue'
 
-const props = defineProps<{ item: any }>()
-
-const $item = inject($ItemKey, undefined)
+const $item = inject($ItemKey)
+const item = inject(ItemKey)
 
 function click(value) {
   $item?.update({

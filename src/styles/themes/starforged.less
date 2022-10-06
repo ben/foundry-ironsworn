@@ -13,6 +13,14 @@ body.theme-starforged {
   @text-medium-color: #3dd;
   @text-light-color: #6ff;
 
+  @fake-stroke: var(--ironsworn-color-bg) 1px 0px 0px,
+    var(--ironsworn-color-bg) 0.540302px 0.841471px 0px,
+    var(--ironsworn-color-bg) -0.416147px 0.909297px 0px,
+    var(--ironsworn-color-bg) -0.989993px 0.14112px 0px,
+    var(--ironsworn-color-bg) -0.653644px -0.756803px 0px,
+    var(--ironsworn-color-bg) 0.283662px -0.958924px 0px,
+    var(--ironsworn-color-bg) 0.96017px -0.279416px 0px;
+
   .hover-fx(@spread_box:5px,@spread_text:10px) {
     &:hover {
       box-shadow: 0 0 @spread_box @light-color;
@@ -21,7 +29,7 @@ body.theme-starforged {
     }
   }
 
-  --ironsworn-color-thematic: #399;
+  --ironsworn-color-thematic: #117777;
 
   --ironsworn-color-bg: black;
 
@@ -141,13 +149,22 @@ body.theme-starforged {
       &.text {
         color: @text-light-color;
       }
+      &.block:not(.text) {
+        background-color: var(--ironsworn-color-thematic);
+      }
+      &.text:not(.block) {
+        box-shadow: none;
+        // filter: drop-shadow(0 0 4px @text-light-color);
+      }
+      text-shadow: @fake-stroke;
     }
-
     &.selected,
     &[aria-selected='true'] {
       &.block,
       &.text {
         color: @text-light-color;
+        background-color: var(--ironsworn-color-thematic);
+        text-shadow: @fake-stroke;
       }
     }
   }

@@ -8,33 +8,10 @@
     <div class="flexrow">
       <!-- Momentum on left -->
       <div class="flexcol margin-left nogrow" style="width: min-content">
-        <div
-          class="flexrow nogrow"
-          style="flex-wrap: nowrap; width: min-content"
-        >
-          <div class="flexcol stack momentum">
-            <stack
-              stat="momentum"
-              :top="10"
-              :bottom="-6"
-              :softMax="actor.data.momentumMax"
-            ></stack>
-            <hr class="nogrow" />
-            <div>
-              <btn-momentumburn class="nogrow block stack-row">
-                {{ $t('IRONSWORN.Burn') }}
-              </btn-momentumburn>
-
-              {{ $t('IRONSWORN.Reset') }}: {{ actor.data.momentumReset }}
-              {{ $t('IRONSWORN.Max') }}:
-              {{ actor.data.momentumMax }}
-            </div>
-          </div>
-
-          <h4 class="vertical nogrow">
-            {{ $t('IRONSWORN.Momentum') }}
-          </h4>
-        </div>
+        <MomentumMeterSpinner
+          labelPosition="right"
+          data-tooltip-direction="UP"
+        />
       </div>
 
       <!-- Center area -->
@@ -64,56 +41,11 @@
       </div>
 
       <!-- Stats on right -->
-      <div
-        class="flexcol margin-right condition-meters"
+      <PcConditionMeters
+        class="flexcol margin-right"
         data-tooltip-direction="UP"
-      >
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <!-- TODO: restyle as h4-like -->
-          <btn-rollstat
-            class="vertical nogrow text"
-            attr="health"
-            :statLabel="$t('IRONSWORN.Health')"
-          >
-            {{ $t('IRONSWORN.Health') }}
-          </btn-rollstat>
-          <div class="flexcol stack health">
-            <stack stat="health" :top="5" :bottom="0"></stack>
-          </div>
-        </div>
-
-        <hr class="nogrow" />
-
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <!-- TODO: restyle as h4-like -->
-          <btn-rollstat
-            class="vertical nogrow text"
-            attr="spirit"
-            :statLabel="$t('IRONSWORN.Spirit')"
-          >
-            {{ $t('IRONSWORN.Spirit') }}
-          </btn-rollstat>
-          <div class="flexcol stack spirit">
-            <stack stat="spirit" :top="5" :bottom="0"></stack>
-          </div>
-        </div>
-
-        <hr class="nogrow" />
-
-        <div class="flexrow nogrow" style="flex-wrap: nowrap">
-          <!-- TODO: restyle as h4-like -->
-          <btn-rollstat
-            class="vertical nogrow text"
-            attr="supply"
-            :statLabel="$t('IRONSWORN.Supply')"
-          >
-            {{ $t('IRONSWORN.Supply') }}
-          </btn-rollstat>
-          <div class="flexcol stack supply">
-            <stack stat="supply" :top="5" :bottom="0"></stack>
-          </div>
-        </div>
-      </div>
+        labelPosition="left"
+      />
     </div>
 
     <!-- Impacts -->
@@ -150,19 +82,18 @@
 <script lang="ts" setup>
 import { computed, provide } from 'vue'
 import AttrBox from './components/attr-box.vue'
-import BtnMomentumburn from './components/buttons/btn-momentumburn.vue'
 import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
 import SfConnections from './components/character-sheet-tabs/sf-connections.vue'
 import SfCharacterheader from './components/sf-characterheader.vue'
-import Stack from './components/stack/stack.vue'
 import Tabs from './components/tabs/tabs.vue'
 import Tab from './components/tabs/tab.vue'
-import btnRollstat from './components/buttons/btn-rollstat.vue'
-import sfImpacts from './components/sf-impacts.vue'
+import SfImpacts from './components/sf-impacts.vue'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import { ActorKey } from './provisions.js'
+import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
+import MomentumMeterSpinner from './components/resource-meter/momentum-meter-spinner.vue'
 
 const props = defineProps<{
   actor: any

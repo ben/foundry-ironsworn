@@ -15,7 +15,7 @@
         tabindex="0"
         :documentType="documentType"
         class="text"
-        :class="{ 'vertical-v2': spinnerStyle === 'vertical' }"
+        :class="{ vertical: spinnerStyle === 'vertical' }"
         :attr="attr"
         :statLabel="statLabel"
       >
@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-import AttrSpinner from '../resource-meters/attr-spinner.vue'
+import AttrSpinner from './attr-spinner.vue'
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
 
@@ -54,7 +54,7 @@ const props = withDefaults(
   }>(),
   {
     spinnerStyle: 'vertical',
-    labelPosition: 'right',
+    labelPosition: 'left',
   }
 )
 </script>

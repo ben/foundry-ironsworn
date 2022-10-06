@@ -1,5 +1,5 @@
 <template>
-  <div class="pc-condition-meters flexcol">
+  <div class="condition-meters flexcol">
     <ConditionMeterSpinner
       v-for="resource in ['Health', 'Spirit', 'Supply']"
       orientation="vertical"
@@ -11,7 +11,6 @@
       :min="0"
       :statLabel="$t(`IRONSWORN.${resource}`)"
       :labelPosition="props.labelPosition"
-      :softMax="props.softMax"
     />
   </div>
 </template>
@@ -19,7 +18,7 @@
 <style lang="less">
 @meter_spacing: 6px;
 
-.pc-condition-meters {
+.condition-meters {
   gap: @meter_spacing;
   .condition-meter-spinner {
     &:not(:first-child) {
@@ -33,12 +32,11 @@
 }
 </style>
 <script lang="ts" setup>
-import { inject, Ref } from 'vue'
+import { inject } from 'vue'
 import { ActorKey } from '../../provisions.js'
 import ConditionMeterSpinner from './condition-meter-spinner.vue'
 
 const props = defineProps<{
-  softMax?: number
   labelPosition: 'left' | 'right'
 }>()
 
