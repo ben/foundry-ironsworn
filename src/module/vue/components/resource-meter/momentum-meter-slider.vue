@@ -43,9 +43,11 @@
 
 <style lang="less">
 .momentum-meter-slider {
+  gap: 5px 0;
   .momentum-status {
     grid-row: 3;
     grid-column: 1;
+    gap: 4px;
   }
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {

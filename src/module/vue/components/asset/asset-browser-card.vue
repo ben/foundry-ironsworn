@@ -80,10 +80,14 @@
           v-if="data.data.track.enabled"
           attr="track"
           documentType="Item"
+          sliderStyle="horizontal"
           :max="data.data.track.max"
           :currentValue="data.data.track.current"
+          :readonly="true"
         >
-          <h4>{{ data.data.track.name }}</h4>
+          <template #label>
+            <label>{{ data.data.track.name }}</label>
+          </template>
         </AttrSlider>
       </section>
     </CollapseTransition>
@@ -103,26 +107,33 @@
 
 <script setup lang="ts">
 import { IAsset } from 'dataforged'
-import { inject, reactive } from 'vue'
+import { computed, inject, provide, reactive } from 'vue'
 import { IronswornItem } from '../../../item/item'
 import { AssetDataProperties } from '../../../item/itemtypes'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
+import { $ItemKey, ItemKey } from '../../provisions.js'
 
 const props = defineProps<{
   df?: IAsset
   foundryItem: Readonly<IronswornItem>
 }>()
+
+const toolset = inject('toolset')
 const data = props.foundryItem.data as AssetDataProperties
+provide($ItemKey, props.foundryItem)
+provide(
+  ItemKey,
+  computed(() => props.foundryItem.toObject() as any)
+)
 
 const state = reactive({
   expanded: false,
 })
 
 const bodyId = `asset-body-${props.foundryItem.id}`
-const toolset = inject('toolset')
 
 function moveClick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)

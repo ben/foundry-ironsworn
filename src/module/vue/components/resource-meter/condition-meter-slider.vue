@@ -8,6 +8,7 @@
     :min="0"
     :max="max"
     :softMax="softMax"
+    :readonly="readonly"
   >
     <template #label>
       <BtnRollstat
@@ -51,10 +52,12 @@ const props = withDefaults(
      * This string will be inserted in into the tooltip text "Roll +{x}" on the roll button. It should already be localized.
      */
     statLabel: string
+    readonly?: boolean
   }>(),
   {
     sliderStyle: 'vertical',
     labelPosition: 'left',
+    readonly: false,
   }
 )
 </script>

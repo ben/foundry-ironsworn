@@ -29,6 +29,7 @@
       documentType="Item"
       :max="item.data.track.max"
       :currentValue="item.data.track.current"
+      sliderStyle="horizontal"
     />
   </div>
 </template>

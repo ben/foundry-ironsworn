@@ -3,11 +3,6 @@
     tabindex="0"
     role="slider"
     class="slider-bar"
-    :class="{
-      flexcol: orientation == 'vertical',
-      flexrow: orientation == 'horizontal',
-    }"
-    :tooltip="keybindInfo"
     :aria-readonly="readonly"
     :aria-valuemin="props.min"
     :aria-valuemax="currentMax"
@@ -38,7 +33,7 @@
       v-for="segment in sliderSegments"
       :key="segment"
       type="button"
-      class="clickable block slider-segment"
+      class="slider-segment clickable block"
       :class="props.segmentClass?.[segment]"
       tabindex="-1"
       :aria-selected="segment === currentValue"
@@ -53,13 +48,14 @@
   </article>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 @segment_border_width: 1px;
 @segment_border_radius: 5px;
 @segment_line_height: 28px;
 @segment_vertical_width: 50px;
 
 .slider-bar {
+  display: flex;
   flex-wrap: none;
   border-radius: @segment_border_radius; // so the focus effect aligns properly
   grid-row: 1;
@@ -69,7 +65,7 @@
     outline: 0;
     box-shadow: 0 0 6px var(--color-shadow-primary);
   }
-  .slider-bar-segment {
+  .slider-segment {
     box-sizing: border-box;
     border: @segment_border_width solid currentColor;
     text-align: center;
@@ -85,7 +81,8 @@
   }
   &[aria-orientation='vertical'] {
     flex-grow: 0;
-    .slider-bar-segment {
+    flex-direction: column;
+    .slider-segment {
       flex: 0 0 auto;
       width: @segment_vertical_width;
       &:not(:first-child) {
@@ -102,9 +99,11 @@
     }
   }
   &[aria-orientation='horizontal'] {
+    flex-direction: row;
     flex: 1;
     flex-wrap: nowrap;
-    .slider-bar-segment {
+    .slider-segment {
+      flex-grow: 1;
       &:not(:first-child) {
         margin-inline-start: -@segment_border_width;
       }
@@ -118,9 +117,11 @@
       }
     }
   }
-  &[aria-readonly],
-  &[aria-readonly] * {
+  &[aria-readonly='true'] {
     pointer-events: none !important;
+    .slider-segment {
+      pointer-events: none !important;
+    }
   }
 }
 </style>
@@ -157,6 +158,7 @@ const props = withDefaults(
     segmentClass?: Record<number, any>
   }>(),
   {
+    readonly: false,
     orientation: 'vertical',
     min: 0,
   }
@@ -192,6 +194,7 @@ function segmentLabel(value: number) {
   return value.toString()
 }
 
+// TODO: wire this up with a tooltip configuration that isn't annoying to mouse users
 const keybindInfo = computed(
   () => `<dl>
 <dt><kbd>Enter</kbd></dt>

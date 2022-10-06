@@ -25,6 +25,7 @@
       :current-value="props.currentValue"
       :segmentClass="segmentClass"
       @change="onChange"
+      :readonly="readonly"
     >
     </SliderBar>
   </article>
@@ -80,6 +81,7 @@
     text-transform: uppercase;
     line-height: 1;
     display: flex;
+    align-items: center;
     > * {
       text-transform: inherit;
     }
@@ -118,15 +120,23 @@ const props = withDefaults(
      * @see {@link sliderBar} props for more info
      */
     segmentClass?: Record<number, any>
+    readonly?: boolean
   }>(),
-  { sliderStyle: 'vertical', labelPosition: 'left' }
+  {
+    readonly: false,
+    sliderStyle: 'vertical',
+    labelPosition: 'left',
+  }
 )
 
 const { $document, document } = pickInjectedDocument(props.documentType)
 
-const baseId = computed(
-  () => `${document?.value._id}-attr-slider-${props.attr}`
-)
+const baseId = computed(() => {
+  console.log('attr-slider doc', document?.value)
+  return `${document?.value._id ?? (document?.value as any)?.id}-attr-slider-${
+    props.attr
+  }`
+})
 
 function onChange(newValue: number) {
   $document?.update({
