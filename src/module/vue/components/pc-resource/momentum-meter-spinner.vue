@@ -4,12 +4,12 @@
     attr="momentum"
     documentType="Actor"
     :spinnerStyle="props.spinnerStyle"
-    :initial-value="actor?.data.momentum"
+    :initial-value="actor?.data.momentum ?? 2"
     :min="-6"
     :max="10"
     :softMax="actor?.data.momentumMax"
     :segmentClass="{
-      [actor?.data.momentumReset]: 'segment-momentum-reset',
+      [actor.data.momentumReset]: 'segment-momentum-reset',
     }"
   >
     <template #label>
@@ -62,7 +62,9 @@
 </style>
 
 <script lang="ts" setup>
-import { inject } from 'vue'
+import { inject, Ref } from 'vue'
+import { IronswornActor } from '../../../actor/actor.js'
+import { CharacterDataProperties } from '../../../actor/actortypes.js'
 import { $ActorKey, ActorKey } from '../../provisions.js'
 import BtnMomentumBurn from '../buttons/btn-momentum-burn.vue'
 import AttrSpinner from './attr-spinner.vue'
@@ -74,8 +76,9 @@ const props = withDefaults(
   { spinnerStyle: 'vertical' }
 )
 
-const actor = inject(ActorKey)
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey) as Ref<
+  ReturnType<typeof IronswornActor.prototype.toObject> & CharacterDataProperties
+>
 
 // const tooltip = `<dl>
 // <dt><kbd>Enter</kbd></dt>
