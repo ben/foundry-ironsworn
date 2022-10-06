@@ -14,7 +14,6 @@ export interface DisplayCategory {
   title: string
   description?: string
   expanded: boolean
-  maxHeight: number
   assets: DisplayAsset[]
 }
 
@@ -73,7 +72,6 @@ async function compendiumMoves(
       title: i18n(dfAssetType.Name, 'Title'),
       description: renderLinksInStr(i18nDescription),
       expanded: false,
-      maxHeight: 200 + dfAssetType.Assets.length * 30,
       assets: [],
     }
 
@@ -109,7 +107,6 @@ async function augmentWithFolderContents(categories: DisplayCategory[]) {
   categories.push({
     title: name,
     expanded: false,
-    maxHeight: 200 + customAssets.length * 30,
     assets: customAssets,
   })
 }
