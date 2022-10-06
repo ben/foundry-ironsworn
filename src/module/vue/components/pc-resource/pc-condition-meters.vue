@@ -9,7 +9,7 @@
       :initial-value="actor?.data[resource.toLowerCase()]"
       :max="5"
       :min="0"
-      :buttonLabel="$t(`IRONSWORN.${resource}`)"
+      :statLabel="$t(`IRONSWORN.${resource}`)"
       :labelPosition="props.labelPosition"
       :softMax="props.softMax"
     />
@@ -34,15 +34,13 @@
 </style>
 <script lang="ts" setup>
 import { inject, Ref } from 'vue'
-import { $ActorKey } from '../../provisions.js'
+import { ActorKey } from '../../provisions.js'
 import ConditionMeterSpinner from './condition-meter-spinner.vue'
-import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 
 const props = defineProps<{
   softMax?: number
   labelPosition: 'left' | 'right'
 }>()
 
-const actor = inject('actor') as Ref
-const $actor = inject($ActorKey)
+const actor = inject(ActorKey)
 </script>

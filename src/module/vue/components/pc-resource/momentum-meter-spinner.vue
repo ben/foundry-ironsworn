@@ -62,9 +62,8 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, Ref } from '@vue/reactivity'
 import { inject } from 'vue'
-import { $ActorKey } from '../../provisions.js'
+import { $ActorKey, ActorKey } from '../../provisions.js'
 import BtnMomentumBurn from '../buttons/btn-momentum-burn.vue'
 import AttrSpinner from './attr-spinner.vue'
 
@@ -75,7 +74,7 @@ const props = withDefaults(
   { spinnerStyle: 'vertical' }
 )
 
-const actor = inject('actor') as Ref
+const actor = inject(ActorKey)
 const $actor = inject($ActorKey)
 
 // const tooltip = `<dl>

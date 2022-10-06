@@ -1,5 +1,5 @@
 <template>
-  <div
+  <article
     tabindex="0"
     class="spinner-bar nowrap"
     :class="{
@@ -48,7 +48,7 @@
         {{ segmentLabel(x) }}
       </span>
     </button>
-  </div>
+  </article>
 </template>
 
 <style lang="less">
@@ -122,7 +122,7 @@
  * A bar that functions as a number spinner.
  */
 import { clamp, inRange, min, rangeRight } from 'lodash'
-import { computed, CSSProperties, reactive } from 'vue'
+import { computed, reactive } from 'vue'
 
 const props = withDefaults(
   defineProps<{
@@ -145,7 +145,7 @@ const props = withDefaults(
      * Classes to assign to segments, keyed by the segment's value.
      * @example
      * ```typescript
-     * // Assign the 'momentum-reset' class to the segment with the value of 'reset'
+     * // Assign the 'momentum-reset' class to the segment with the value of the variable 'reset'
      * {[reset]: 'momentum-reset'}
      * ```
      */

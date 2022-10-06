@@ -12,7 +12,7 @@
       class="attr-spinner-label nogrow"
       :id="`${baseId}-label`"
     >
-      <!-- TODO: should this be an heading tag? -->
+      <!-- TODO: should this be a heading tag? -->
       <slot name="label">
         <!-- button or static label goes here -->
         <!-- the tabindex for this item should be -1 -->
@@ -126,14 +126,13 @@ const props = withDefaults(
   { spinnerStyle: 'vertical', labelPosition: 'left' }
 )
 
-const { $document } = pickInjectedDocument(props.documentType)
+const { $document, document } = pickInjectedDocument(props.documentType)
 
 const $wrapper = ref<HTMLElement>()
 const $spinner = ref<HTMLElement>()
 
-//  TODO: this isn't generating properly
 const baseId = computed(
-  () => `${$document?._id ?? $document?.id}-attr-spinner-${props.attr}`
+  () => `${document?.value._id}-attr-spinner-${props.attr}`
 )
 
 function onChange(newValue: number) {
@@ -141,10 +140,4 @@ function onChange(newValue: number) {
     data: { [props.attr]: newValue },
   })
 }
-
-// watch(state, ({ current }) => {
-//   $document?.update({
-//     data: { [props.attr]: clampedValue(current) },
-//   })
-// })
 </script>

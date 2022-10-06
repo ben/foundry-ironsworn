@@ -2,7 +2,7 @@
   <AttrSpinner
     class="condition-meter-spinner"
     :documentType="documentType"
-    :attr="attr"
+    :attr="props.attr"
     :spinnerStyle="spinnerStyle"
     :initial-value="initialValue"
     :min="0"
@@ -10,26 +10,25 @@
     :softMax="softMax"
   >
     <template #label>
-      <BtnRollStat
+      <BtnRollstat
         v-if="labelPosition != 'none'"
         tabindex="0"
         :documentType="documentType"
         class="text"
         :class="{ 'vertical-v2': spinnerStyle === 'vertical' }"
         :attr="attr"
+        :statLabel="statLabel"
       >
-        {{ buttonLabel }}
-      </BtnRollStat>
+        {{ statLabel }}
+      </BtnRollstat>
     </template>
   </AttrSpinner>
 </template>
 
-<style lang="less"></style>
-
 <script setup lang="ts">
-import BtnRollStat from '../buttons/btn-roll-stat.vue'
 import AttrSpinner from '../resource-meters/attr-spinner.vue'
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
+import BtnRollstat from '../buttons/btn-rollstat.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -48,7 +47,10 @@ const props = withDefaults(
     initialValue: number
     spinnerStyle?: 'vertical' | 'horizontal'
     labelPosition?: 'right' | 'left' | 'none'
-    buttonLabel?: string | undefined
+    /**
+     * This string will be inserted in into the tooltip text "Roll +{x}" on the roll button. It should already be localized.
+     */
+    statLabel: string
   }>(),
   {
     spinnerStyle: 'vertical',
