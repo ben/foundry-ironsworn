@@ -12,13 +12,13 @@
     :aria-valuemax="currentMax"
     :aria-valuenow="currentValue"
     :aria-orientation="orientation"
-    @keydown.arrow-up.prevent="setCurrent(currentValue + step)"
-    @keydown.+.prevent="setCurrent(currentValue + step)"
-    @keydown.arrow-right.prevent="setCurrent(currentValue + step)"
+    @keydown.arrow-up.prevent="setCurrent(currentValue + 1)"
+    @keydown.+.prevent="setCurrent(currentValue + 1)"
+    @keydown.arrow-left.prevent="setCurrent(currentValue + 1)"
     @keydown.page-up.prevent="setCurrent(2)"
-    @keydown.-.prevent="setCurrent(currentValue - step)"
-    @keydown.arrow-down.prevent="setCurrent(currentValue - step)"
-    @keydown.arrow-left.prevent="setCurrent(currentValue - step)"
+    @keydown.-.prevent="setCurrent(currentValue - 1)"
+    @keydown.arrow-down.prevent="setCurrent(currentValue - 1)"
+    @keydown.arrow-right.prevent="setCurrent(currentValue - 1)"
     @keydown.page-down.prevent="setCurrent(-2)"
     @keydown.home.prevent="setCurrent(min)"
     @keydown.end.prevent="setCurrent(currentMax)"
@@ -83,18 +83,17 @@
   }
   &[aria-orientation='vertical'] {
     flex-grow: 0;
-    flex-direction: column-reverse;
     .spinner-bar-segment {
       flex: 0 0 auto;
       width: 50px;
-      &:not(:last-child) {
+      &:not(:first-child) {
         margin-block-start: -@segment_border_width;
       }
-      &:last-child {
+      &:first-child {
         border-start-start-radius: @segment_border_radius;
         border-start-end-radius: @segment_border_radius;
       }
-      &:first-child {
+      &:last-child {
         border-end-start-radius: @segment_border_radius;
         border-end-end-radius: @segment_border_radius;
       }
@@ -124,7 +123,7 @@
 /**
  * A bar that functions as a number spinner.
  */
-import { clamp, inRange, min, range } from 'lodash'
+import { clamp, inRange, min, range, rangeRight } from 'lodash'
 import { computed, ref } from 'vue'
 
 const props = withDefaults(
@@ -135,10 +134,6 @@ const props = withDefaults(
      */
     min?: number | undefined
     max: number
-    /**
-     * @default 1
-     */
-    step?: number | undefined
     softMax?: number | undefined
     /**
      * @default "vertical"
@@ -156,7 +151,6 @@ const props = withDefaults(
   }>(),
   {
     orientation: 'vertical',
-    step: 1,
     min: 0,
   }
 )
@@ -168,7 +162,7 @@ const $emit = defineEmits<{
 
 const spinnerBarWrapper = ref()
 
-const spinnerValues = computed(() => range(props.min, props.max + 1))
+const spinnerValues = computed(() => rangeRight(props.min, props.max + 1))
 
 const currentMax = computed(() =>
   Math.min(props.softMax ?? props.max, props.max)
