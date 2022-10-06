@@ -121,7 +121,7 @@
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
-import { $ItemKey } from './provisions'
+import { $ItemKey, ItemKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import Clock from './components/clock.vue'
@@ -134,7 +134,10 @@ import CollapseTransition from './components/transition/collapse-transition.vue'
 const props = defineProps<{ item: any }>()
 const $item = inject($ItemKey)
 
-provide($ItemKey, props.item)
+provide(
+  ItemKey,
+  computed(() => props.item)
+)
 
 const editMode = computed(
   () => props.item.flags['foundry-ironsworn']?.['edit-mode']
