@@ -1,9 +1,9 @@
 <template>
-  <AttrSpinner
-    class="condition-meter-spinner"
+  <AttrSlider
+    class="condition-meter-slider"
     :documentType="documentType"
     :attr="props.attr"
-    :spinnerStyle="spinnerStyle"
+    :sliderStyle="sliderStyle"
     :initial-value="initialValue"
     :min="0"
     :max="max"
@@ -15,25 +15,25 @@
         tabindex="0"
         :documentType="documentType"
         class="text"
-        :class="{ vertical: spinnerStyle === 'vertical' }"
+        :class="{ vertical: sliderStyle === 'vertical' }"
         :attr="attr"
         :statLabel="statLabel"
       >
         {{ statLabel }}
       </BtnRollstat>
     </template>
-  </AttrSpinner>
+  </AttrSlider>
 </template>
 
 <script setup lang="ts">
-import AttrSpinner from './attr-spinner.vue'
+import AttrSlider from './attr-slider.vue'
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
 
 const props = withDefaults(
   defineProps<{
     /**
-     * The key of the attribute controlled by the spinner. This is the property of the injected document that will be controlled.
+     * The key of the attribute controlled by the slider. This is the property of the injected document that will be controlled.
      */
     attr: string
     /**
@@ -45,7 +45,7 @@ const props = withDefaults(
     max: number
     softMax?: number
     initialValue: number
-    spinnerStyle?: 'vertical' | 'horizontal'
+    sliderStyle?: 'vertical' | 'horizontal'
     labelPosition?: 'right' | 'left' | 'none'
     /**
      * This string will be inserted in into the tooltip text "Roll +{x}" on the roll button. It should already be localized.
@@ -53,7 +53,7 @@ const props = withDefaults(
     statLabel: string
   }>(),
   {
-    spinnerStyle: 'vertical',
+    sliderStyle: 'vertical',
     labelPosition: 'left',
   }
 )

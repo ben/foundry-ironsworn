@@ -1,6 +1,6 @@
 <template>
   <div class="condition-meters flexcol">
-    <ConditionMeterSpinner
+    <ConditionMeterSlider
       v-for="resource in ['Health', 'Spirit', 'Supply']"
       orientation="vertical"
       class="nogrow"
@@ -20,7 +20,7 @@
 
 .condition-meters {
   gap: @meter_spacing;
-  .condition-meter-spinner {
+  .condition-meter-slider {
     &:not(:first-child) {
       border-top: 1px solid currentColor;
       padding-top: @meter_spacing;
@@ -34,7 +34,7 @@
 <script lang="ts" setup>
 import { inject } from 'vue'
 import { ActorKey } from '../../provisions.js'
-import ConditionMeterSpinner from './condition-meter-spinner.vue'
+import ConditionMeterSlider from './condition-meter-slider.vue'
 
 const props = defineProps<{
   labelPosition: 'left' | 'right'

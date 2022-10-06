@@ -1,13 +1,13 @@
 <template>
   <article
     tabindex="0"
-    class="spinner-bar nowrap"
-    :ref="spinnerBarWrapper"
+    class="slider-bar nowrap"
+    :ref="sliderBarWrapper"
     :class="{
       flexcol: orientation == 'vertical',
       flexrow: orientation == 'horizontal',
     }"
-    role="spinbutton"
+    role="slider"
     :aria-valuemin="props.min"
     :aria-valuemax="currentMax"
     :aria-valuenow="currentValue"
@@ -34,19 +34,19 @@
     @keydown.9.prevent="setCurrent(9)"
   >
     <button
-      v-for="x in spinnerValues"
+      v-for="x in sliderValues"
       :key="x"
       type="button"
-      class="clickable block spinner-bar-segment"
+      class="clickable block slider-bar-segment"
       :class="props.segmentClass?.[x]"
       tabindex="-1"
-      :ref="`spinnerBarSegment_${x}`"
+      :ref="`sliderBarSegment_${x}`"
       :aria-selected="x === currentValue"
       :aria-disabled="!inRange(x, props.min, currentMax + 1)"
       @click.capture="setCurrent(x)"
       @focus.prevent
     >
-      <span tabindex="-1" class="spinner-bar-segment-text">
+      <span tabindex="-1" class="slider-bar-segment-text">
         {{ segmentLabel(x) }}
       </span>
     </button>
@@ -58,7 +58,7 @@
 @segment_border_radius: 5px;
 @segment_line_height: 28px;
 
-.spinner-bar {
+.slider-bar {
   border-radius: @segment_border_radius; // so the focus effect aligns properly
   grid-row: 1;
   border: 0;
@@ -67,7 +67,7 @@
     outline: 0;
     box-shadow: 0 0 6px var(--color-shadow-primary);
   }
-  .spinner-bar-segment {
+  .slider-bar-segment {
     box-sizing: border-box;
     border: @segment_border_width solid currentColor;
     text-align: center;
@@ -83,7 +83,7 @@
   }
   &[aria-orientation='vertical'] {
     flex-grow: 0;
-    .spinner-bar-segment {
+    .slider-bar-segment {
       flex: 0 0 auto;
       width: 50px;
       &:not(:first-child) {
@@ -102,7 +102,7 @@
   &[aria-orientation='horizontal'] {
     flex: 1;
     flex-wrap: nowrap;
-    .spinner-bar-segment {
+    .slider-bar-segment {
       &:not(:first-child) {
         margin-inline-start: -@segment_border_width;
       }
@@ -121,7 +121,7 @@
 
 <script lang="ts" setup>
 /**
- * A bar that functions as a number spinner.
+ * A bar that functions as a number slider.
  */
 import { clamp, inRange, min, range, rangeRight } from 'lodash'
 import { computed, ref } from 'vue'
@@ -160,9 +160,9 @@ const $emit = defineEmits<{
   (e: 'change', value: number): void
 }>()
 
-const spinnerBarWrapper = ref()
+const sliderBarWrapper = ref()
 
-const spinnerValues = computed(() => rangeRight(props.min, props.max + 1))
+const sliderValues = computed(() => rangeRight(props.min, props.max + 1))
 
 const currentMax = computed(() =>
   Math.min(props.softMax ?? props.max, props.max)
@@ -173,8 +173,8 @@ function setCurrent(newValue: number) {
 }
 
 /**
- * Generates a label string for a spinner segment.
- * If the spinner's range includes both positive and negative values, positive values are prefixed with a '+'.
+ * Generates a label string for a slider segment.
+ * If the slider's range includes both positive and negative values, positive values are prefixed with a '+'.
  * @param value The value to generate a label for.
  */
 function segmentLabel(value: number) {

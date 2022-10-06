@@ -1,15 +1,14 @@
 <template>
   <article
-    class="attr-spinner"
+    class="attr-slider"
     :class="{ [`label-${labelPosition}`]: true }"
     :aria-labelledby="`${baseId}-label`"
     ref="$wrapper"
-    :aria-orientation="spinnerStyle !== 'compact' ? spinnerStyle : undefined"
+    :aria-orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
   >
-    <!-- spinbutton role: "A form of range that expects the user to select from among discrete choices." -->
     <section
       v-if="labelPosition != 'none'"
-      class="attr-spinner-label nogrow"
+      class="attr-slider-label nogrow"
       :id="`${baseId}-label`"
     >
       <slot name="label">
@@ -18,10 +17,10 @@
       </slot>
     </section>
     <slot name="default"></slot>
-    <SpinnerBar
-      class="attr-spinner-bar"
-      ref="$spinner"
-      :orientation="spinnerStyle !== 'compact' ? spinnerStyle : undefined"
+    <SliderBar
+      class="attr-slider-bar"
+      ref="$slider"
+      :orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
       :max="props.max"
       :min="props.min ?? 0"
       :softMax="props.softMax"
@@ -29,7 +28,7 @@
       :segmentClass="segmentClass"
       @change="onChange"
     >
-    </SpinnerBar>
+    </SliderBar>
   </article>
 </template>
 
@@ -37,30 +36,30 @@
 @segment_border_width: 1px;
 @segment_border_radius: 5px;
 
-.attr-spinner {
+.attr-slider {
   &[aria-orientation='vertical'] {
     display: grid;
     grid-auto-flow: column;
     place-items: start;
     grid-template-columns: max-content max-content;
     grid-template-rows: max-content max-content max-content;
-    .attr-spinner-label {
+    .attr-slider-label {
       grid-row: 1;
       max-height: 50%;
     }
-    .attr-spinner-bar {
+    .attr-slider-bar {
       grid-row: 1;
     }
     &.label-none {
       display: flex;
     }
     &.label-left {
-      .attr-spinner-label {
+      .attr-slider-label {
         grid-column: 1;
       }
     }
     &.label-right {
-      .attr-spinner-label {
+      .attr-slider-label {
         grid-column: 2;
       }
     }
@@ -69,7 +68,7 @@
     display: flex;
     flex-flow: row wrap;
     justify-items: space-between;
-    .attr-spinner-label {
+    .attr-slider-label {
       > * {
         padding-inline-end: @segment_border_radius;
       }
@@ -79,7 +78,7 @@
     outline: none;
     // background: #0001;
   }
-  .attr-spinner-label {
+  .attr-slider-label {
     text-transform: uppercase;
     line-height: 1;
     display: flex;
@@ -92,17 +91,17 @@
 
 <script lang="ts" setup>
 /**
- * A spinner that controls the value of an attribute.
+ * A slider that controls the value of an attribute.
  */
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { computed, ref } from 'vue'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument.js'
-import SpinnerBar from './spinner-bar.vue'
+import SliderBar from './slider-bar.vue'
 
 const props = withDefaults(
   defineProps<{
     /**
-     * The key of the attribute controlled by the spinner. This is the property of the injected document that will be controlled.
+     * The key of the attribute controlled by the slider. This is the property of the injected document that will be controlled.
      */
     attr: string
     /**
@@ -115,23 +114,23 @@ const props = withDefaults(
     min?: number
     softMax?: number
     initialValue: number
-    spinnerStyle?: 'vertical' | 'horizontal' | 'compact'
+    sliderStyle?: 'vertical' | 'horizontal' | 'compact'
     labelPosition?: 'right' | 'left' | 'none'
     /**
-     * @see {@link SpinnerBar} props for more info
+     * @see {@link sliderBar} props for more info
      */
     segmentClass?: Record<number, any>
   }>(),
-  { spinnerStyle: 'vertical', labelPosition: 'left' }
+  { sliderStyle: 'vertical', labelPosition: 'left' }
 )
 
 const { $document, document } = pickInjectedDocument(props.documentType)
 
 const $wrapper = ref<HTMLElement>()
-const $spinner = ref<HTMLElement>()
+const $slider = ref<HTMLElement>()
 
 const baseId = computed(
-  () => `${document?.value._id}-attr-spinner-${props.attr}`
+  () => `${document?.value._id}-attr-slider-${props.attr}`
 )
 
 function onChange(newValue: number) {

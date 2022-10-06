@@ -1,10 +1,10 @@
 <template>
-  <AttrSpinner
-    class="momentum-meter-spinner"
+  <AttrSlider
+    class="momentum-meter-slider"
     attr="momentum"
     documentType="Actor"
     :labelPosition="labelPosition"
-    :spinnerStyle="props.spinnerStyle"
+    :sliderStyle="props.sliderStyle"
     :initial-value="actor?.data.momentum ?? 2"
     :min="-6"
     :max="10"
@@ -16,7 +16,7 @@
     <template #label>
       <BtnMomentumburn
         class="text"
-        :class="{ vertical: spinnerStyle === 'vertical' }"
+        :class="{ vertical: sliderStyle === 'vertical' }"
         :tooltip="
           $t('IRONSWORN.BurnMomentumAndResetTo', {
             value: actor?.data.momentum,
@@ -38,16 +38,16 @@
         </span>
       </section>
     </template>
-  </AttrSpinner>
+  </AttrSlider>
 </template>
 
 <style lang="less">
-.momentum-meter-spinner {
+.momentum-meter-slider {
   .momentum-status {
     grid-row: 3;
     grid-column: 1;
   }
-  .attr-spinner-label:hover ~ .spinner-bar {
+  .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
       border: 1px solid var(--color-border-highlight-alt);
       border-bottom: 1px solid var(--color-border-highlight);
@@ -68,14 +68,14 @@ import { CharacterDataProperties } from '../../../actor/actortypes.js'
 import { ActorKey } from '../../provisions.js'
 import BtnMomentumburn from '../buttons/btn-momentumburn.vue'
 
-import AttrSpinner from './attr-spinner.vue'
+import AttrSlider from './attr-slider.vue'
 
 const props = withDefaults(
   defineProps<{
-    spinnerStyle?: 'horizontal' | 'vertical'
+    sliderStyle?: 'horizontal' | 'vertical'
     labelPosition?: 'right' | 'left'
   }>(),
-  { spinnerStyle: 'vertical', labelPosition: 'left' }
+  { sliderStyle: 'vertical', labelPosition: 'left' }
 )
 
 const actor = inject(ActorKey) as Ref<

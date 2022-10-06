@@ -78,9 +78,9 @@
             />
           </with-rolllisteners>
         </ul>
-        <ConditionMeterSpinner
+        <ConditionMeterSlider
           v-if="asset.data.track.enabled"
-          spinnerStyle="horizontal"
+          sliderStyle="horizontal"
           class="asset-condition-meter nogrow"
           documentType="Item"
           attr="track.current"
@@ -298,7 +298,7 @@ import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
 import CollapseTransition from '../transition/collapse-transition.vue'
-import ConditionMeterSpinner from '../resource-meter/condition-meter-spinner.vue'
+import ConditionMeterSlider from '../resource-meter/condition-meter-slider.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref
