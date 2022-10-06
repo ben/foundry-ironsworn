@@ -4,7 +4,7 @@
     :documentType="documentType"
     :attr="props.attr"
     :sliderStyle="sliderStyle"
-    :initial-value="initialValue"
+    :current-value="initialValue"
     :min="0"
     :max="max"
     :softMax="softMax"

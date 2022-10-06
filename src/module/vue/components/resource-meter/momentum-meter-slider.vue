@@ -5,7 +5,7 @@
     documentType="Actor"
     :labelPosition="labelPosition"
     :sliderStyle="props.sliderStyle"
-    :initial-value="actor?.data.momentum ?? 2"
+    :current-value="actor?.data.momentum ?? 2"
     :min="-6"
     :max="10"
     :softMax="actor?.data.momentumMax"
@@ -52,10 +52,7 @@
       border: 1px solid var(--color-border-highlight-alt);
       border-bottom: 1px solid var(--color-border-highlight);
       box-shadow: 0 0 10px var(--color-shadow-highlight);
-
-      // color: var(--color-text-light-highlight);
-      // background: #00000055;
-      z-index: 10;
+      z-index: 20;
     }
   }
 }

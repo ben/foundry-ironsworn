@@ -76,14 +76,15 @@
             />
           </WithRolllisteners>
         </ul>
-
-        <article
-          class="asset-condition-meter flexcol"
+        <AttrSlider
           v-if="data.data.track.enabled"
+          attr="track"
+          documentType="Item"
+          :max="data.data.track.max"
+          :currentValue="data.data.track.current"
         >
           <h4>{{ data.data.track.name }}</h4>
-          <asset-track :item="foundryItem.toObject(true)" />
-        </article>
+        </AttrSlider>
       </section>
     </CollapseTransition>
   </article>
@@ -105,10 +106,10 @@ import { IAsset } from 'dataforged'
 import { inject, reactive } from 'vue'
 import { IronswornItem } from '../../../item/item'
 import { AssetDataProperties } from '../../../item/itemtypes'
-import AssetTrack from './asset-track.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
+import AttrSlider from '../resource-meter/attr-slider.vue'
 
 const props = defineProps<{
   df?: IAsset

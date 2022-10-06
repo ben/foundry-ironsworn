@@ -24,7 +24,7 @@
       :max="props.max"
       :min="props.min ?? 0"
       :softMax="props.softMax"
-      :current-value="props.initialValue"
+      :current-value="props.currentValue"
       :segmentClass="segmentClass"
       @change="onChange"
     >
@@ -105,7 +105,7 @@ const props = withDefaults(
      */
     attr: string
     /**
-     * The type of injectable document to use. Currently only "Actor" and "Item" work - they'll target `$ActorKey` or `$ItemKey` as appropriate.
+     * The type of injectable document to use. Currently only "Actor" and "Item" work - they'll target `ActorKey`/`$ActorKey` or `ItemKey`/`$ItemKey` as appropriate.
      * @see {$ActorKey}
      * @see {$ItemKey}
      */
@@ -113,7 +113,7 @@ const props = withDefaults(
     max: number
     min?: number
     softMax?: number
-    initialValue: number
+    currentValue: number
     sliderStyle?: 'vertical' | 'horizontal' | 'compact'
     labelPosition?: 'right' | 'left' | 'none'
     /**

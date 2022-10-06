@@ -1,13 +1,13 @@
 <template>
   <article
     tabindex="0"
-    class="slider-bar nowrap"
-    :ref="sliderBarWrapper"
+    role="slider"
+    class="slider-bar"
     :class="{
       flexcol: orientation == 'vertical',
       flexrow: orientation == 'horizontal',
     }"
-    role="slider"
+    :aria-readonly="readonly"
     :aria-valuemin="props.min"
     :aria-valuemax="currentMax"
     :aria-valuenow="currentValue"
@@ -34,20 +34,19 @@
     @keydown.9.prevent="setCurrent(9)"
   >
     <button
-      v-for="x in sliderValues"
-      :key="x"
+      v-for="segment in sliderSegments"
+      :key="segment"
       type="button"
-      class="clickable block slider-bar-segment"
-      :class="props.segmentClass?.[x]"
+      class="clickable block slider-segment"
+      :class="props.segmentClass?.[segment]"
       tabindex="-1"
-      :ref="`sliderBarSegment_${x}`"
-      :aria-selected="x === currentValue"
-      :aria-disabled="!inRange(x, props.min, currentMax + 1)"
-      @click.capture="setCurrent(x)"
+      :aria-selected="segment === currentValue"
+      :aria-disabled="!inRange(segment, props.min, currentMax + 1)"
+      @click.capture="setCurrent(segment)"
       @focus.prevent
     >
-      <span tabindex="-1" class="slider-bar-segment-text">
-        {{ segmentLabel(x) }}
+      <span tabindex="-1" class="slider-segment-text">
+        {{ segmentLabel(segment) }}
       </span>
     </button>
   </article>
@@ -57,8 +56,10 @@
 @segment_border_width: 1px;
 @segment_border_radius: 5px;
 @segment_line_height: 28px;
+@segment_vertical_width: 50px;
 
 .slider-bar {
+  flex-wrap: none;
   border-radius: @segment_border_radius; // so the focus effect aligns properly
   grid-row: 1;
   border: 0;
@@ -85,7 +86,7 @@
     flex-grow: 0;
     .slider-bar-segment {
       flex: 0 0 auto;
-      width: 50px;
+      width: @segment_vertical_width;
       &:not(:first-child) {
         margin-block-start: -@segment_border_width;
       }
@@ -116,6 +117,9 @@
       }
     }
   }
+  &[aria-readonly] {
+    pointer-events: none !important;
+  }
 }
 </style>
 
@@ -124,10 +128,11 @@
  * A bar that functions as a number slider.
  */
 import { clamp, inRange, min, range, rangeRight } from 'lodash'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
 const props = withDefaults(
   defineProps<{
+    readonly?: boolean
     currentValue: number
     /**
      * @default 0
@@ -156,13 +161,10 @@ const props = withDefaults(
 )
 
 const $emit = defineEmits<{
-  (e: 'input', value: number): void
   (e: 'change', value: number): void
 }>()
 
-const sliderBarWrapper = ref()
-
-const sliderValues = computed(() => rangeRight(props.min, props.max + 1))
+const sliderSegments = computed(() => rangeRight(props.min, props.max + 1))
 
 const currentMax = computed(() =>
   Math.min(props.softMax ?? props.max, props.max)
