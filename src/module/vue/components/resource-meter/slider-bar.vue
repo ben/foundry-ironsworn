@@ -117,7 +117,8 @@
       }
     }
   }
-  &[aria-readonly] {
+  &[aria-readonly],
+  &[aria-readonly] * {
     pointer-events: none !important;
   }
 }
