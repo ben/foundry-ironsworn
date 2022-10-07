@@ -42,9 +42,7 @@ const props = defineProps<{
   labelPosition: 'left' | 'right'
 }>()
 
-const globalSupply = computed(
-  () => game.settings.get('foundry-ironsworn', 'shared-supply') as boolean
-)
+const globalSupply = game.settings.get('foundry-ironsworn', 'shared-supply') as boolean
 
 const actor = inject(ActorKey)
 </script>
