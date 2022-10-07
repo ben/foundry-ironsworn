@@ -20,7 +20,6 @@
         :class="{ vertical: sliderStyle === 'vertical' }"
         :attr="attr"
         :statLabel="statLabel"
-        :asset="documentType === 'Item' ? item : undefined"
       >
         {{ statLabel }}
       </BtnRollstat>
