@@ -89,7 +89,7 @@
           :min="0"
           :statLabel="asset.data.track.name"
           labelPosition="left"
-          :readonly="false"
+          :read-only="false"
         />
         <section
           class="flexcol stack nogrow"

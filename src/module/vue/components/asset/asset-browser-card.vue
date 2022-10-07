@@ -83,7 +83,7 @@
           sliderStyle="horizontal"
           :max="data.data.track.max"
           :currentValue="data.data.track.current"
-          :readonly="true"
+          :read-only="true"
         >
           <template #label>
             <label>{{ data.data.track.name }}</label>

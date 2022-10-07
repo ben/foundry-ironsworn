@@ -25,7 +25,7 @@
       :current-value="props.currentValue"
       :segmentClass="segmentClass"
       @change="onChange"
-      :readonly="readonly"
+      :read-only="readOnly"
     >
     </SliderBar>
   </article>
@@ -95,6 +95,7 @@
  */
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { computed } from 'vue'
+import { IronswornSettings } from '../../../helpers/settings.js'
 import { pickInjectedDocument } from '../../composable/pickInjectedDocument.js'
 import SliderBar from './slider-bar.vue'
 
@@ -110,6 +111,10 @@ const props = withDefaults(
      * @see {$ItemKey}
      */
     documentType: DocumentType
+    /**
+     * When 'true' and documentType is set to "Actor", updates *all* actors of the 'shared' and 'character' types.
+     */
+    global?: boolean
     max: number
     min?: number
     softMax?: number
@@ -120,27 +125,31 @@ const props = withDefaults(
      * @see {@link sliderBar} props for more info
      */
     segmentClass?: Record<number, any>
-    readonly?: boolean
+    readOnly?: boolean
   }>(),
   {
-    readonly: false,
+    global: false,
+    readOnly: false,
     sliderStyle: 'vertical',
     labelPosition: 'left',
   }
 )
 
-const { $document, document } = pickInjectedDocument(props.documentType)
+const { $document } = pickInjectedDocument(props.documentType)
 
 const baseId = computed(() => {
-  console.log('attr-slider doc', document?.value)
-  return `${document?.value._id ?? (document?.value as any)?.id}-attr-slider-${
-    props.attr
-  }`
+  return `${$document?.id}-attr-slider-${props.attr}`
 })
 
-function onChange(newValue: number) {
-  $document?.update({
-    data: { [props.attr]: newValue },
-  })
+async function onChange(newValue: number) {
+  console.log('change', newValue)
+  if (props.global) {
+    console.log(`${props.attr} in global scope`)
+    await IronswornSettings.maybeSetGlobalResource(props.attr, newValue)
+  } else {
+    $document?.update({
+      data: { [props.attr]: newValue },
+    })
+  }
 }
 </script>

@@ -2,9 +2,10 @@
   <div class="condition-meters flexcol">
     <ConditionMeterSlider
       v-for="resource in ['Health', 'Spirit', 'Supply']"
-      orientation="vertical"
+      sliderStyle="vertical"
       class="nogrow"
       documentType="Actor"
+      :global="resource === 'Supply'"
       :attr="resource.toLowerCase()"
       :current-value="actor?.data[resource.toLowerCase()]"
       :max="5"

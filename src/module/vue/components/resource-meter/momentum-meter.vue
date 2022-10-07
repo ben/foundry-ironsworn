@@ -27,28 +27,12 @@
         {{ $t('IRONSWORN.Momentum') }}
       </BtnMomentumburn>
     </template>
-    <template #default>
-      <section class="momentum-status flexcol">
-        <span class="momentum-status-reset">
-          {{ $t('IRONSWORN.Reset') }}: {{ actor?.data.momentumReset }}
-        </span>
-        <span class="momentum-status-max">
-          {{ $t('IRONSWORN.Max') }}:
-          {{ actor?.data.momentumMax }}
-        </span>
-      </section>
-    </template>
   </AttrSlider>
 </template>
 
 <style lang="less">
 .momentum-meter {
   gap: 5px 0;
-  .momentum-status {
-    grid-row: 3;
-    grid-column: 1;
-    gap: 4px;
-  }
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
       border: 1px solid var(--color-border-highlight-alt);

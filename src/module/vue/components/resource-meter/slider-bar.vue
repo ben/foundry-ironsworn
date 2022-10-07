@@ -3,7 +3,7 @@
     tabindex="0"
     role="slider"
     class="slider-bar"
-    :aria-readonly="readonly"
+    :aria-readonly="props.readOnly"
     :aria-valuemin="props.min"
     :aria-valuemax="currentMax"
     :aria-valuenow="currentValue"
@@ -135,7 +135,7 @@ import { computed } from 'vue'
 
 const props = withDefaults(
   defineProps<{
-    readonly?: boolean
+    readOnly?: boolean
     currentValue: number
     /**
      * @default 0
@@ -158,7 +158,7 @@ const props = withDefaults(
     segmentClass?: Record<number, any>
   }>(),
   {
-    readonly: false,
+    readOnly: false,
     orientation: 'vertical',
     min: 0,
   }
@@ -175,7 +175,7 @@ const currentMax = computed(() =>
 )
 
 function setSliderValue(newValue: number, event: Event) {
-  if (props.readonly) {
+  if (props.readOnly) {
     return
   }
   event.preventDefault()

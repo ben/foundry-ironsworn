@@ -138,6 +138,20 @@ export class IronswornSettings {
     }
   }
 
+  static async maybeSetGlobalResource(attr: string, value: number) {
+    if (!game.settings.get('foundry-ironsworn', `shared-${attr}`)) return
+
+    const actorsToUpdate =
+      game.actors?.contents.filter((x) =>
+        ['character', 'shared'].includes(x.data.type)
+      ) || []
+    for (const actor of actorsToUpdate) {
+      await actor.update({ data: { [attr]: value } }, {
+        suppressLog: true,
+      } as any)
+    }
+  }
+
   static async maybeSetGlobalCondition(name: string, value: boolean) {
     const actorsToUpdate =
       game.actors?.contents.filter((x) =>

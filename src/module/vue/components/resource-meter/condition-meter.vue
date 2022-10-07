@@ -8,7 +8,8 @@
     :min="0"
     :max="max"
     :softMax="softMax"
-    :readonly="readonly"
+    :read-only="readOnly"
+    :global="global"
   >
     <template #label>
       <BtnRollstat
@@ -39,10 +40,15 @@ const props = withDefaults(
     attr: string
     /**
      * The type of injectable document to use. Currently only "Actor" and "Item" work - they'll target `$ActorKey` or `$ItemKey` as appropriate.
+     *
      * @see {$ActorKey}
      * @see {$ItemKey}
      */
     documentType: DocumentType
+    /**
+     * When 'true' and documentType is set to "Actor", updates *all* actors of the 'shared' and 'character' types.
+     */
+    global?: boolean
     max: number
     softMax?: number
     currentValue: number
@@ -52,12 +58,13 @@ const props = withDefaults(
      * This string will be inserted in into the tooltip text "Roll +{x}" on the roll button. It should already be localized.
      */
     statLabel: string
-    readonly?: boolean
+    readOnly?: boolean
   }>(),
   {
     sliderStyle: 'vertical',
     labelPosition: 'left',
-    readonly: false,
+    readOnly: false,
+    global: false,
   }
 )
 </script>
