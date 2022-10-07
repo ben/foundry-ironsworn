@@ -1,3 +1,4 @@
+import { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 
 function reload() {
@@ -124,28 +125,24 @@ export class IronswornSettings {
     return !!game.settings.get('foundry-ironsworn', 'log-changes')
   }
 
-  static async maybeSetGlobalSupply(value: number) {
-    if (!game.settings.get('foundry-ironsworn', 'shared-supply')) return
-
-    const actorsToUpdate =
-      game.actors?.contents.filter((x) =>
-        ['character', 'shared'].includes(x.data.type)
-      ) || []
-    for (const actor of actorsToUpdate) {
-      await actor.update({ data: { supply: value } }, {
-        suppressLog: true,
-      } as any)
-    }
+  static get globalSupply(): boolean {
+    return game.settings.get('foundry-ironsworn', 'shared-supply') as boolean
   }
-
-  static async maybeSetGlobalCondition(name: string, value: boolean) {
+  /**
+   * Upddate all actors of the provided types with a single data object.
+   * @param data The data to pass to each actor's `update()` method.
+   * @param actorTypes The subtypes of actor to apply the change to.
+   */
+  static async updateGlobalAttribute(
+    data: Record<string, unknown>,
+    actorTypes: IronswornActor['type'][] = ['character', 'shared']
+  ) {
     const actorsToUpdate =
-      game.actors?.contents.filter((x) =>
-        ['character', 'starship'].includes(x.data.type)
-      ) || []
-    console.log(actorsToUpdate)
+      game.actors?.contents.filter((x) => actorTypes.includes(x.data.type)) ||
+      []
+    // FIXME: Document.updateDocuments might make more sense here?
     for (const actor of actorsToUpdate) {
-      await actor.update({ data: { debility: { [name]: value } } }, {
+      await actor.update(data, {
         suppressLog: true,
       } as any)
     }

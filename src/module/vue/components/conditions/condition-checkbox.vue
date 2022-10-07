@@ -22,15 +22,17 @@ const props = defineProps<{
   global?: boolean
 }>()
 
-async function input(ev) {
-  const value = ev.currentTarget.checked
-  await $actor?.update({
+async function input(ev: Event) {
+  const impactKey = 'debility'
+  const value = (ev.currentTarget as HTMLInputElement)?.checked
+  const data = {
     data: {
-      debility: {
+      [impactKey]: {
         [props.name]: value,
       },
     },
-  })
+  }
+  await $actor?.update(data)
   await nextTick()
   const numDebilitiesMarked = Object.values(actor.value.data.debility).filter(
     (x) => x === true
@@ -43,7 +45,10 @@ async function input(ev) {
   })
 
   if (props.global) {
-    await IronswornSettings.maybeSetGlobalCondition(props.name, value)
+    await IronswornSettings.updateGlobalAttribute(data, [
+      'character',
+      'starship',
+    ])
   }
 }
 </script>

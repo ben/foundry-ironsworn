@@ -201,7 +201,6 @@ function addTrigger() {
 }
 
 function removeTrigger(option) {
-  console.log(option)
   const idx = triggerOptions.value.findIndex((x) => x.key === option.key)
   let { Options } = props.item.data.Trigger
   Options ||= []

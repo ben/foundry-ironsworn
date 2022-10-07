@@ -1,20 +1,15 @@
 <template>
-  <SheetBasic :document="actor">
+  <SheetBasic :document="actor" class="shared-sheet">
     <section class="sheet-area nogrow">
-      <btn-rollstat
-        class="text"
+      <ConditionMeter
+        sliderStyle="horizontal"
         attr="supply"
         :statLabel="$t('IRONSWORN.Supply')"
-      >
-        {{ $t('IRONSWORN.Supply') }}
-      </btn-rollstat>
-
-      <boxrow
-        style="line-height: 25px"
-        :min="0"
         :max="5"
-        :current="actor.data.supply"
-        @click="setSupply"
+        :min="0"
+        :currentValue="actor.data.supply"
+        documentType="Actor"
+        :global="IronswornSettings.globalSupply"
       />
     </section>
 
@@ -57,17 +52,15 @@ textarea.notes {
 
 <script setup lang="ts">
 import { provide, computed, inject } from 'vue'
-import { RollDialog } from '../helpers/rolldialog'
-import { IronswornSettings } from '../helpers/settings'
 import { $ActorKey, ActorKey } from './provisions'
-import Boxrow from './components/boxrow/boxrow.vue'
 import Bonds from './components/bonds.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
-import BtnRollstat from './components/buttons/btn-rollstat.vue'
 import ActiveCompletedProgresses from './components/active-completed-progresses.vue'
 import { BondsetDataProperties } from '../item/itemtypes'
 import SheetBasic from './sheet-basic.vue'
+import ConditionMeter from './components/resource-meter/condition-meter.vue'
+import { IronswornSettings } from '../helpers/settings.js'
 
 const props = defineProps<{
   actor: any
@@ -82,16 +75,6 @@ const hasBonds = computed(() => {
   const markedBonds = bonds?.data?.bonds?.length
   return markedBonds && markedBonds > 0
 })
-function setSupply(value) {
-  $actor?.update({ data: { supply: value } })
-  IronswornSettings.maybeSetGlobalSupply(value)
-}
-function rollSupply() {
-  RollDialog.show({
-    actor: $actor,
-    stat: 'supply',
-  })
-}
 
 function saveNotes() {
   $actor?.update({ 'data.biography': props.actor.data.biography })

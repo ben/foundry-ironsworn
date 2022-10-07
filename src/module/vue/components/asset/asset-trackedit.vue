@@ -23,21 +23,29 @@
         v-model.number="item.data.track.max"
       />
     </div>
-    <asset-track style="margin-top: 5px" :item="item" />
+    <AttrSlider
+      style="margin-top: 5px"
+      attr="track"
+      documentType="Item"
+      :max="item.data.track.max"
+      :currentValue="item.data.track.current"
+      sliderStyle="horizontal"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
-import AssetTrack from './asset-track.vue'
+import AttrSlider from '../resource-meter/attr-slider.vue'
 
 const item = inject(ItemKey) as Ref
+const $item = inject($ItemKey)
+
 const editMode = computed(() => {
   return item.value.flags['foundry-ironsworn']?.['edit-mode']
 })
 
-const $item = inject($ItemKey)
 function enableClick(ev) {
   $item?.update({ 'data.track.enabled': ev.target.checked })
 }
