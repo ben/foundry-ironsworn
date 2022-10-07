@@ -17,13 +17,13 @@
   "private": true,
   "dependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^9.269.0",
-    "@tinymce/tinymce-vue": "^4.0.7",
+    "@tinymce/tinymce-vue": "^5.0.0",
     "@types/lodash": "^4.14.170",
     "@types/marked": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
     "@typescript-eslint/parser": "^5.28.0",
     "@typescript/analyze-trace": "^0.9.0",
-    "@vitejs/plugin-vue": "^2.3.3",
+    "@vitejs/plugin-vue": "^3.1.2",
     "autoprefixer": "^10.4.8",
     "buffer": "^6.0.3",
     "dataforged": "^1.0",
@@ -38,11 +38,11 @@
     "prettier": "^2.7.1",
     "sha.js": "^2.4.11",
     "typescript": "^4.7.3",
-    "vite": "^2.9.14",
+    "vite": "^3.1.6",
     "vite-plugin-vue-inspector": "^1.1.3",
     "vue": "^3.2.37",
     "vue-template-compiler": "^2.6.14",
-    "vue-tsc": "^0.40.13"
+    "vue-tsc": "^1.0.0"
   },
   "browserslist": [
     "defaults",

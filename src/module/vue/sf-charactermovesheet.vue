@@ -1,5 +1,5 @@
 <template>
-  <tabs ref="tabs">
+  <Tabs ref="tabs">
     <tab icon="isicon-d10-tilt" :title="$t('IRONSWORN.Moves')">
       <Suspense>
         <sf-movesheetmoves ref="movesTab" :toolset="toolset" />
@@ -10,7 +10,7 @@
         <sf-movesheetoracles ref="oraclesTab" :toolset="toolset" />
       </Suspense>
     </tab>
-  </tabs>
+  </Tabs>
 </template>
 
 <script lang="ts" setup>
