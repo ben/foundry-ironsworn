@@ -4,12 +4,12 @@
       <ConditionMeter
         sliderStyle="horizontal"
         attr="supply"
+        :statLabel="$t('IRONSWORN.Supply')"
         :max="5"
         :min="0"
-        :statLabel="$t('IRONSWORN.Supply')"
-        documentType="Actor"
         :currentValue="actor.data.supply"
-        :global="true"
+        documentType="Actor"
+        :global="IronswornSettings.globalSupply"
       />
     </section>
 
@@ -60,6 +60,7 @@ import ActiveCompletedProgresses from './components/active-completed-progresses.
 import { BondsetDataProperties } from '../item/itemtypes'
 import SheetBasic from './sheet-basic.vue'
 import ConditionMeter from './components/resource-meter/condition-meter.vue'
+import { IronswornSettings } from '../helpers/settings.js'
 
 const props = defineProps<{
   actor: any
