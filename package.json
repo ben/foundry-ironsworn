@@ -17,7 +17,7 @@
   "private": true,
   "dependencies": {
     "@league-of-foundry-developers/foundry-vtt-types": "^9.269.0",
-    "@tinymce/tinymce-vue": "^4.0.7",
+    "@tinymce/tinymce-vue": "^5.0.0",
     "@types/lodash": "^4.14.170",
     "@types/marked": "^4.0.3",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
