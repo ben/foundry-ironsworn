@@ -244,12 +244,6 @@ function clearCachedDimensions() {
 function detectRelevantDimensions(el: HTMLElement): CSSProperties {
   // These properties will be transitioned
   if (state.dimension === 'height') {
-    console.log({
-      height: el.offsetHeight + 'px',
-      paddingTop: el.style.paddingTop || getCssValue(el, 'padding-top'),
-      paddingBottom:
-        el.style.paddingBottom || getCssValue(el, 'padding-bottom'),
-    })
     return {
       height: el.offsetHeight + 'px',
       paddingTop: el.style.paddingTop || getCssValue(el, 'padding-top'),
