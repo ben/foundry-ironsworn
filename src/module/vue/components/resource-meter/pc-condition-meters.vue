@@ -6,7 +6,7 @@
       sliderStyle="vertical"
       class="nogrow"
       documentType="Actor"
-      :global="resource === 'Supply' && IronswornSettings.globalSupply"
+      :global="resource === 'Supply' && IronswornSettings.get('shared-supply')"
       :attr="resource.toLowerCase()"
       :current-value="actor?.data[resource.toLowerCase()]"
       :max="5"

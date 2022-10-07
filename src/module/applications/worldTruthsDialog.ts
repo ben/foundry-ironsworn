@@ -15,7 +15,7 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
         'ironsworn',
         'sheet',
         'world-truths',
-        `theme-${IronswornSettings.theme}`,
+        `theme-${IronswornSettings.get('theme')}`,
       ],
       width: 600,
       height: 700,

@@ -22,7 +22,7 @@ export function registerChatAlertHooks() {
   Hooks.on(
     'preUpdateActor',
     async (actor: IronswornActor, data: any, options, _userId: number) => {
-      if (!IronswornSettings.logCharacterChanges) return
+      if (!IronswornSettings.get('log-changes')) return
       if (options.suppressLog) return
 
       let content: string | undefined
@@ -42,7 +42,7 @@ export function registerChatAlertHooks() {
   Hooks.on(
     'preUpdateItem',
     async (item: IronswornItem, data: any, _options, _userId: number) => {
-      if (!IronswornSettings.logCharacterChanges) return
+      if (!IronswornSettings.get('log-changes')) return
       if (!item.parent) return // No logging for unowned items, they don't matter
 
       let content: string | undefined
@@ -63,7 +63,7 @@ export function registerChatAlertHooks() {
   Hooks.on(
     'preCreateItem',
     async (item: IronswornItem, options, _userId: number) => {
-      if (!IronswornSettings.logCharacterChanges) return
+      if (!IronswornSettings.get('log-changes')) return
       if (!item.parent) return // No logging for unowned items, they don't matter
       if (options.suppressLog) return
       if (item.type === 'bondset') return // No need to log this
@@ -78,7 +78,7 @@ export function registerChatAlertHooks() {
   Hooks.on(
     'preDeleteItem',
     async (item: IronswornItem, options, _userId: number) => {
-      if (!IronswornSettings.logCharacterChanges) return
+      if (!IronswornSettings.get('log-changes')) return
       if (!item.parent) return // No logging for unowned items, they don't matter
       if (options.suppressLog) return
 

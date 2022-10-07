@@ -1,5 +1,6 @@
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
+import { IronswornSettings } from './settings.js'
 
 // Utilities
 async function everyActor(fn: (a: IronswornActor) => any) {
@@ -105,10 +106,7 @@ export async function runDataMigrations() {
   if (!game.user?.isGM) return
 
   // Bail if we're already at the newest version
-  let currentVersion = game.settings.get(
-    'foundry-ironsworn',
-    'data-version'
-  ) as number
+  let currentVersion = IronswornSettings.get('data-version')
   if (currentVersion >= NEWEST_VERSION) return
 
   const showWarnings = currentVersion >= 1 // Don't show these for a brand-new world

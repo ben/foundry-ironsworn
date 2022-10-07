@@ -259,7 +259,7 @@ export async function createIronswornChatRoll(params: RollMessageParams) {
   )
 
   const renderData = {
-    themeClass: `theme-${IronswornSettings.theme}`,
+    themeClass: `theme-${IronswornSettings.get('theme')}`,
     action,
     actionCapped,
     hitType: computeOutcomeText(hitType, match),
@@ -331,7 +331,7 @@ export async function createStarforgedMoveRollChat(
   }
 
   const renderData = {
-    themeClass: `theme-${IronswornSettings.theme}`,
+    themeClass: `theme-${IronswornSettings.get('theme')}`,
     action,
     actionCapped,
     hitType: computeOutcomeText(hitType, match),
@@ -443,7 +443,7 @@ export async function rollAndDisplayOracleResult(
 
   // Render the chat message content
   const renderData = {
-    themeClass: `theme-${IronswornSettings.theme}`,
+    themeClass: `theme-${IronswornSettings.get('theme')}`,
     table,
     packName,
     oraclePath: pathNames.join(' / '),

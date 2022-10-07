@@ -15,7 +15,7 @@ export class SFSettingTruthsDialog extends FormApplication<FormApplicationOption
         'ironsworn',
         'sheet',
         'setting-truths',
-        `theme-${IronswornSettings.theme}`,
+        `theme-${IronswornSettings.get('theme')}`,
       ],
       width: 600,
       height: 700,
