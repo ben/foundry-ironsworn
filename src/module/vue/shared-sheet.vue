@@ -8,7 +8,7 @@
         :min="0"
         :statLabel="$t('IRONSWORN.Supply')"
         documentType="Actor"
-        :initialValue="actor.data.supply"
+        :currentValue="actor.data.supply"
       />
     </section>
 

@@ -4,7 +4,7 @@
     :documentType="documentType"
     :attr="props.attr"
     :sliderStyle="sliderStyle"
-    :current-value="initialValue"
+    :current-value="currentValue"
     :min="0"
     :max="max"
     :softMax="softMax"
@@ -45,7 +45,7 @@ const props = withDefaults(
     documentType: DocumentType
     max: number
     softMax?: number
-    initialValue: number
+    currentValue: number
     sliderStyle?: 'vertical' | 'horizontal'
     labelPosition?: 'right' | 'left' | 'none'
     /**

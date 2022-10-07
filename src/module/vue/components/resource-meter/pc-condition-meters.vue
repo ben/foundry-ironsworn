@@ -6,7 +6,7 @@
       class="nogrow"
       documentType="Actor"
       :attr="resource.toLowerCase()"
-      :initial-value="actor?.data[resource.toLowerCase()]"
+      :current-value="actor?.data[resource.toLowerCase()]"
       :max="5"
       :min="0"
       :statLabel="$t(`IRONSWORN.${resource}`)"
