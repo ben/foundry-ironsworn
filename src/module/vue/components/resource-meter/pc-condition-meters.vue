@@ -20,7 +20,7 @@
 
 .condition-meters {
   gap: @meter_spacing;
-  .condition-meter-slider {
+  .condition-meter {
     &:not(:first-child) {
       border-top: 1px solid currentColor;
       padding-top: @meter_spacing;
@@ -34,7 +34,7 @@
 <script lang="ts" setup>
 import { inject } from 'vue'
 import { ActorKey } from '../../provisions.js'
-import ConditionMeterSlider from './condition-meter-slider.vue'
+import ConditionMeterSlider from './condition-meter.vue'
 
 const props = defineProps<{
   labelPosition: 'left' | 'right'

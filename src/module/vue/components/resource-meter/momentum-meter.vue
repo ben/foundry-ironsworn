@@ -1,6 +1,6 @@
 <template>
   <AttrSlider
-    class="momentum-meter-slider"
+    class="momentum-meter"
     attr="momentum"
     documentType="Actor"
     :labelPosition="labelPosition"
@@ -42,7 +42,7 @@
 </template>
 
 <style lang="less">
-.momentum-meter-slider {
+.momentum-meter {
   gap: 5px 0;
   .momentum-status {
     grid-row: 3;

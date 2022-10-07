@@ -1,6 +1,6 @@
 <template>
   <AttrSlider
-    class="condition-meter-slider"
+    class="condition-meter"
     :documentType="documentType"
     :attr="props.attr"
     :sliderStyle="sliderStyle"

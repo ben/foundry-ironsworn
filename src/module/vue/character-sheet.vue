@@ -71,7 +71,7 @@ import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vu
 import { CharacterDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
-import MomentumMeterSlider from './components/resource-meter/momentum-meter-slider.vue'
+import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>

@@ -299,7 +299,7 @@ import WithRolllisteners from '../with-rolllisteners.vue'
 import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
 import CollapseTransition from '../transition/collapse-transition.vue'
-import ConditionMeterSlider from '../resource-meter/condition-meter-slider.vue'
+import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref

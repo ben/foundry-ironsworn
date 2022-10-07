@@ -1,20 +1,14 @@
 <template>
-  <SheetBasic :document="actor">
+  <SheetBasic :document="actor" class="shared-sheet">
     <section class="sheet-area nogrow">
-      <btn-rollstat
-        class="text"
+      <ConditionMeter
+        sliderStyle="horizontal"
         attr="supply"
-        :statLabel="$t('IRONSWORN.Supply')"
-      >
-        {{ $t('IRONSWORN.Supply') }}
-      </btn-rollstat>
-
-      <boxrow
-        style="line-height: 25px"
-        :min="0"
         :max="5"
-        :current="actor.data.supply"
-        @click="setSupply"
+        :min="0"
+        :statLabel="$t('IRONSWORN.Supply')"
+        documentType="Actor"
+        :initialValue="actor.data.supply"
       />
     </section>
 
@@ -68,6 +62,7 @@ import BtnRollstat from './components/buttons/btn-rollstat.vue'
 import ActiveCompletedProgresses from './components/active-completed-progresses.vue'
 import { BondsetDataProperties } from '../item/itemtypes'
 import SheetBasic from './sheet-basic.vue'
+import ConditionMeter from './components/resource-meter/condition-meter.vue'
 
 const props = defineProps<{
   actor: any
