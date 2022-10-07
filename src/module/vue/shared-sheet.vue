@@ -9,6 +9,7 @@
         :statLabel="$t('IRONSWORN.Supply')"
         documentType="Actor"
         :currentValue="actor.data.supply"
+        :global="true"
       />
     </section>
 
