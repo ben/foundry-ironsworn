@@ -125,6 +125,10 @@ export class IronswornSettings {
   static get logCharacterChanges(): boolean {
     return !!game.settings.get('foundry-ironsworn', 'log-changes')
   }
+  
+  static get globalSupply(): boolean {
+    return game.settings.get('foundry-ironsworn', 'shared-supply') as boolean
+  }
   /**
    * Upddate all actors of the provided types with a single data object.
    * @param data The data to pass to each actor's `update()` method.
