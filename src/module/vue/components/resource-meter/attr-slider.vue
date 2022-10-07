@@ -93,6 +93,7 @@
 /**
  * A slider that controls the value of an attribute.
  */
+import { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs.js'
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { computed } from 'vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
@@ -142,14 +143,13 @@ const baseId = computed(() => {
 })
 
 async function onChange(newValue: number) {
-  console.log('change', newValue)
+  const data = {
+    data: { [props.attr]: newValue },
+  }
+  // redundant with the below if it's global, but fires anyway so that a single message appears in the chatlog.
+  $document?.update(data)
   if (props.global) {
-    console.log(`${props.attr} in global scope`)
-    await IronswornSettings.maybeSetGlobalResource(props.attr, newValue)
-  } else {
-    $document?.update({
-      data: { [props.attr]: newValue },
-    })
+    await IronswornSettings.updateGlobalAttribute(data)
   }
 }
 </script>

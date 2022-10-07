@@ -84,8 +84,13 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     value += amt
     if (value >= min && value <= max) {
       this.actor.update({ data: { [stat]: value } })
-      if (stat === 'supply') {
-        IronswornSettings.maybeSetGlobalSupply(value)
+      if (
+        stat === 'supply' &&
+        game.settings.get('foundry-ironsworn', `shared-supply`)
+      ) {
+        IronswornSettings.updateGlobalAttribute({
+          data: { supply: value },
+        })
       }
     }
   }

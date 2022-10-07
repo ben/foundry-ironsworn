@@ -5,7 +5,7 @@
       sliderStyle="vertical"
       class="nogrow"
       documentType="Actor"
-      :global="resource === 'Supply'"
+      :global="resource === 'Supply' && globalSupply"
       :attr="resource.toLowerCase()"
       :current-value="actor?.data[resource.toLowerCase()]"
       :max="5"
@@ -33,13 +33,17 @@
 }
 </style>
 <script lang="ts" setup>
-import { inject } from 'vue'
+import { computed, inject } from 'vue'
 import { ActorKey } from '../../provisions.js'
 import ConditionMeterSlider from './condition-meter.vue'
 
 const props = defineProps<{
   labelPosition: 'left' | 'right'
 }>()
+
+const globalSupply = computed(
+  () => game.settings.get('foundry-ironsworn', 'shared-supply') as boolean
+)
 
 const actor = inject(ActorKey)
 </script>

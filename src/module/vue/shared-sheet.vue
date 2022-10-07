@@ -51,14 +51,10 @@ textarea.notes {
 
 <script setup lang="ts">
 import { provide, computed, inject } from 'vue'
-import { RollDialog } from '../helpers/rolldialog'
-import { IronswornSettings } from '../helpers/settings'
 import { $ActorKey, ActorKey } from './provisions'
-import Boxrow from './components/boxrow/boxrow.vue'
 import Bonds from './components/bonds.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
-import BtnRollstat from './components/buttons/btn-rollstat.vue'
 import ActiveCompletedProgresses from './components/active-completed-progresses.vue'
 import { BondsetDataProperties } from '../item/itemtypes'
 import SheetBasic from './sheet-basic.vue'
@@ -77,16 +73,6 @@ const hasBonds = computed(() => {
   const markedBonds = bonds?.data?.bonds?.length
   return markedBonds && markedBonds > 0
 })
-function setSupply(value) {
-  $actor?.update({ data: { supply: value } })
-  IronswornSettings.maybeSetGlobalSupply(value)
-}
-function rollSupply() {
-  RollDialog.show({
-    actor: $actor,
-    stat: 'supply',
-  })
-}
 
 function saveNotes() {
   $actor?.update({ 'data.biography': props.actor.data.biography })
