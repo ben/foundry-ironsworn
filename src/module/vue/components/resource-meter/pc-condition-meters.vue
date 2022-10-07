@@ -2,6 +2,7 @@
   <div class="condition-meters flexcol">
     <ConditionMeterSlider
       v-for="resource in ['Health', 'Spirit', 'Supply']"
+      :key="resource"
       sliderStyle="vertical"
       class="nogrow"
       documentType="Actor"
