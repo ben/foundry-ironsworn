@@ -20,6 +20,7 @@
         :class="{ vertical: sliderStyle === 'vertical' }"
         :attr="attr"
         :statLabel="statLabel"
+        :asset="documentType === 'Item' ? item : undefined"
       >
         {{ statLabel }}
       </BtnRollstat>
@@ -31,6 +32,8 @@
 import AttrSlider from './attr-slider.vue'
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
+import { inject } from 'vue'
+import { ItemKey } from '../../provisions.js'
 
 const props = withDefaults(
   defineProps<{
@@ -67,4 +70,6 @@ const props = withDefaults(
     global: false,
   }
 )
+
+const item = inject(ItemKey)
 </script>
