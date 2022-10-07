@@ -1,4 +1,3 @@
-import { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs.js'
 import { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 
@@ -125,7 +124,7 @@ export class IronswornSettings {
   static get logCharacterChanges(): boolean {
     return !!game.settings.get('foundry-ironsworn', 'log-changes')
   }
-  
+
   static get globalSupply(): boolean {
     return game.settings.get('foundry-ironsworn', 'shared-supply') as boolean
   }
