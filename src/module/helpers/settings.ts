@@ -77,6 +77,7 @@ export class IronswornSettings {
       config: true,
       type: Boolean,
       default: true,
+      onChange: reload,
     })
 
     game.settings.register('foundry-ironsworn', 'log-changes', {
