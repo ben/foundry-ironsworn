@@ -110,6 +110,7 @@ export class VueSheetRenderHelper {
     this.vueApp?.unmount()
     this.vueApp = undefined
     this.vueRoot = undefined
+    return super.close()
   }
 
   /**

@@ -1,4 +1,8 @@
-export class JournalProgressPageSheet extends JournalPageSheet {
+import progressPageVue from '../vue/components/progress-page.vue'
+import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
+import { VueJournalPageSheet } from '../vue/vuejournalpagesheet'
+
+export class JournalProgressPageSheet extends VueJournalPageSheet {
   static get defaultOptions() {
     const options = super.defaultOptions
     options.classes.push('progress')
@@ -9,8 +13,9 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     return 'systems/foundry-ironsworn/templates/journal/progress.hbs'
   }
 
-  async _renderInner(...args) {
-    console.log(args)
-    return super._renderInner(...args)
+  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+    return {
+      components: { 'progress-page': progressPageVue },
+    }
   }
 }
