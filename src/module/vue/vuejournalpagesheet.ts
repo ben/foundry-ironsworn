@@ -9,6 +9,14 @@ declare global {
   }
 }
 
+export class VueJournalSheet extends JournalSheet {
+  async _render(...renderArgs) {
+    const ret = await super._render(...renderArgs)
+    console.log(renderArgs, ret)
+    return ret
+  }
+}
+
 export abstract class VueJournalPageSheet extends JournalPageSheet {
   vueApp: App<Element> | undefined
   vueRoot: ComponentPublicInstance | undefined
@@ -61,16 +69,6 @@ export abstract class VueJournalPageSheet extends JournalPageSheet {
     let html: typeof jQuery
     try {
       html = await super._renderInner(input)
-
-      const events = []
-      const rawEl = html[0]
-      for (const key in rawEl) {
-        if (key.indexOf('on') === 0) {
-          events.push(key.slice(2))
-        }
-      }
-      console.log(events)
-      html.on(events.join(' '), console.log)
 
       const selector = '.vueroot'
       let $appEl = html.find(selector)
