@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Updated meters and controls, with keyboard controls ([#501](https://github.com/ben/foundry-ironsworn/pull/501))
+
 ## 1.18.1
 
 - Reinstate visibility of the description field for custom assets ([#499](https://github.com/ben/foundry-ironsworn/pull/499))
