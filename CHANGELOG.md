@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.18.3
+
 ## 1.18.2
 
 - Updated meters and controls, with keyboard controls ([#501](https://github.com/ben/foundry-ironsworn/pull/501))
