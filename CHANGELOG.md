@@ -2,7 +2,11 @@
 
 ## Next Release
 
+- Progress-roll button now has the correct number of filled boxes in its tooltip
+
 ## 1.18.3
+
+- Fix system loading issue
 
 ## 1.18.2
 
