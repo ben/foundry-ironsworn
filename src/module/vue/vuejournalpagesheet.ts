@@ -1,7 +1,13 @@
 import { App, Component, ComponentPublicInstance, createApp } from 'vue'
-import { $PageKey, $PageKey } from './provisions'
+import { $PageKey } from './provisions'
 import { VueSheetRenderHelperOptions } from './vue-render-helper'
 import { IronswornVuePlugin } from './vue-plugin'
+
+declare global {
+  class JournalPageSheet extends DocumentSheet {
+    static get defaultOptions(): DocumentSheetOptions
+  }
+}
 
 export abstract class VueJournalPageSheet extends JournalPageSheet {
   vueApp: App<Element> | undefined
@@ -52,20 +58,30 @@ export abstract class VueJournalPageSheet extends JournalPageSheet {
       this.vueRoot.updateData(input)
     }
 
-    let html
+    let html: typeof jQuery
     try {
       html = await super._renderInner(input)
+
+      const events = []
+      const rawEl = html[0]
+      for (const key in rawEl) {
+        if (key.indexOf('on') === 0) {
+          events.push(key.slice(2))
+        }
+      }
+      console.log(events)
+      html.on(events.join(' '), console.log)
+
       const selector = '.vueroot'
       let $appEl = html.find(selector)
       if ($appEl.length > 0) {
         this.vueRoot = this.vueApp.mount($appEl[0])
       }
     } catch (err: any) {
-      this.app['_state'] = Application.RENDER_STATES.ERROR
       Hooks.onError('Application#render', err, {
         msg: `An error occurred while rendering ${this.constructor.name}`,
         log: 'error',
-        ...renderArgs,
+        input,
       })
       console.error(
         `An error occurred while rendering ${this.constructor.name}: ${err.message}`,
