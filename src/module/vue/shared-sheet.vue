@@ -9,7 +9,7 @@
         :min="0"
         :currentValue="actor.data.supply"
         documentType="Actor"
-        :global="IronswornSettings.globalSupply"
+        :global="IronswornSettings.get('shared-supply')"
       />
     </section>
 

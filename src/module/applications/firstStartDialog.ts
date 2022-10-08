@@ -17,7 +17,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
         'ironsworn',
         'sheet',
         'first-start',
-        `theme-${IronswornSettings.theme}`,
+        `theme-${IronswornSettings.get('theme')}`,
       ],
       width: 600,
       height: 700,
@@ -39,12 +39,16 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
     const setValues = this.element.find('form').serializeArray()
     for (const { name, value } of setValues) {
       if (name === 'sheet') {
-        const setting = game.settings.get('core', 'sheetClasses') as any
+        const setting = game.settings.get('core', 'sheetClasses')
         foundry.utils.mergeObject(setting, { 'Actor.character': value })
         await game.settings.set('core', 'sheetClasses', setting)
       }
       if (name === 'moves') {
-        await game.settings.set('foundry-ironsworn', 'toolbox', value)
+        await game.settings.set(
+          'foundry-ironsworn',
+          'toolbox',
+          value as ClientSettings.Values['foundry-ironsworn.toolbox']
+        )
       }
       if (name === 'truths') {
         if (value === 'ironsworn') {
@@ -62,7 +66,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
   }
 
   static async maybeShow() {
-    if (!game.settings.get('foundry-ironsworn', 'prompt-world-truths')) {
+    if (!IronswornSettings.get('prompt-world-truths')) {
       return
     }
 

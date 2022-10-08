@@ -57,7 +57,9 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
     if (!this.actor.moveSheet) {
       this.actor.moveSheet ||= new SFCharacterMoveSheet(
         this.actor,
-        IronswornSettings.toolbox === 'starforged' ? 'starforged' : 'ironsworn',
+        IronswornSettings.get('toolbox') === 'starforged'
+          ? 'starforged'
+          : 'ironsworn',
         { left: 755 }
       )
     }

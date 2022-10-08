@@ -12,7 +12,7 @@ export class IronswornItemSheet extends ItemSheet {
         'ironsworn',
         'sheet',
         'item',
-        `theme-${IronswornSettings.theme}`,
+        `theme-${IronswornSettings.get('theme')}`,
       ],
       width: 520,
       height: 480,

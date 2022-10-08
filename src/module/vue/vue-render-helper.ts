@@ -45,7 +45,7 @@ export class VueSheetRenderHelper {
         provide: {
           context: {
             options: this.app.options,
-            themeClass: `theme-${IronswornSettings.theme}`,
+            themeClass: `theme-${IronswornSettings.get('theme')}`,
             config: CONFIG.IRONSWORN,
           },
         },

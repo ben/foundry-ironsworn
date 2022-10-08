@@ -24,7 +24,11 @@ interface RollDialogOptions {
 export class RollDialog extends Dialog {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ['ironsworn', 'dialog', `theme-${IronswornSettings.theme}`],
+      classes: [
+        'ironsworn',
+        'dialog',
+        `theme-${IronswornSettings.get('theme')}`,
+      ],
       width: 500,
     })
   }
