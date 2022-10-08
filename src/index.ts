@@ -37,6 +37,7 @@ import { MoveSheet } from './module/item/move/movesheet'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheet } from './module/item/progress/progresssheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
+import { JournalProgressPageSheet } from './module/journal/progress-page'
 
 declare global {
   interface LenientGlobalVariableTypes {
@@ -155,6 +156,17 @@ Hooks.once('init', async () => {
     types: ['vow', 'progress'],
     label: 'Progress Sheet',
   })
+
+  DocumentSheetConfig.registerSheet(
+    JournalEntryPage,
+    'ironsworn',
+    JournalProgressPageSheet,
+    {
+      types: ['progress'],
+      makeDefault: true,
+      label: 'Progress',
+    }
+  )
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
