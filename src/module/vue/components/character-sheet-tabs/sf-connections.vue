@@ -32,6 +32,7 @@ import ProgressListItem from '../progress/progress-list-item.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { ProgressDataProperties } from '../../../item/itemtypes'
 import CollapseTransition from '../transition/collapse-transition.vue'
+import { IronswornItem } from '../../../item/item.js'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
@@ -60,10 +61,13 @@ async function newConnection() {
 }
 
 async function applySort(oldI, newI, sortBefore) {
-  const foundryItems = ($actor?.items ?? [])
-    .filter((x) => x.type === 'progress')
-    .filter((x) => (x.data as ProgressDataProperties).data.subtype === 'bond')
-    .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+  let foundryItems: IronswornItem[] = []
+  if ($actor?.items) {
+    foundryItems = $actor?.items
+      .filter((x) => x.type === 'progress')
+      .filter((x) => (x.data as ProgressDataProperties).data.subtype === 'bond')
+      .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+  }
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
     target: (foundryItems ?? [])[newI],
     siblings: foundryItems,

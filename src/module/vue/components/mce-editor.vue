@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { RawEditorSettings } from 'tinymce'
+import { RawEditorOptions } from 'tinymce'
 import { inject, reactive } from 'vue'
 import { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
@@ -39,7 +39,7 @@ function oracleClick(dfId: string) {
 
 const $emit = defineEmits<{ (e: 'save') }>()
 
-const mceConfig: RawEditorSettings = {
+const mceConfig: RawEditorOptions = {
   ...CONFIG.TinyMCE,
 
   // TODO: this never gets called?

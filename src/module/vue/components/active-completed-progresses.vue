@@ -170,16 +170,19 @@ const foeCompendium = computed(() => {
 })
 
 async function applySort(oldI, newI, sortBefore, filterFn) {
-  const foundryItems = ($actor?.items ?? [])
-    .filter((x) => x.type === 'progress')
-    .filter(
-      (x) =>
-        !excludedSubtypes.includes(
-          (x.data as ProgressDataProperties).data.subtype
-        )
-    )
-    .filter(filterFn)
-    .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+  let foundryItems: IronswornItem[] = []
+  if ($actor?.items) {
+    foundryItems = $actor?.items
+      .filter((x) => x.type === 'progress')
+      .filter(
+        (x) =>
+          !excludedSubtypes.includes(
+            (x.data as ProgressDataProperties).data.subtype
+          )
+      )
+      .filter(filterFn)
+      .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+  }
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
     target: (foundryItems ?? [])[newI],
     siblings: foundryItems,

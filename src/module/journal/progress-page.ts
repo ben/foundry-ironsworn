@@ -1,7 +1,3 @@
-declare global {
-  class JournalPageSheet extends DocumentSheet {}
-}
-
 export class JournalProgressPageSheet extends JournalPageSheet {
   static get defaultOptions() {
     const options = super.defaultOptions
