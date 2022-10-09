@@ -22,4 +22,5 @@ export const ItemKey = Symbol('item') as InjectionKey<
   Ref<ReturnType<typeof IronswornItem.prototype.toObject>>
 >
 
+// @ts-ignore
 export const $PageKey = Symbol('$page') as InjectionKey<JournallEntryPage>

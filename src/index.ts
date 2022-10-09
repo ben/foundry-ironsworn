@@ -142,6 +142,7 @@ Hooks.once('init', async () => {
   })
 
   DocumentSheetConfig.registerSheet(
+    // @ts-ignore
     JournalEntryPage,
     'ironsworn',
     JournalProgressPageSheet,
