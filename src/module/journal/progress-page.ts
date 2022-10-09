@@ -15,3 +15,10 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     }.hbs`
   }
 }
+
+Hooks.on('renderJournalProgressPageSheet', (...args) =>
+  console.log('render', ...args)
+)
+Hooks.on('closeJournalProgressPageSheet', (...args) =>
+  console.log('close', ...args)
+)
