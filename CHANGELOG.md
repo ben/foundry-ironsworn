@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.18.4
+
 - Progress-roll button now has the correct number of filled boxes in its tooltip
 - Fix bug with setting the track value in the asset-edit sheet
 
