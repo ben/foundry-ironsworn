@@ -1,6 +1,6 @@
-import progressPageVue from '../vue/components/progress-page.vue'
-import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
-import { VueJournalPageSheet } from '../vue/vuejournalpagesheet'
+declare global {
+  class JournalPageSheet extends DocumentSheet {}
+}
 
 export class JournalProgressPageSheet extends JournalPageSheet {
   static get defaultOptions() {
@@ -10,12 +10,8 @@ export class JournalProgressPageSheet extends JournalPageSheet {
   }
 
   get template() {
-    return 'systems/foundry-ironsworn/templates/journal/progress.hbs'
-  }
-
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
-      components: { 'progress-page': progressPageVue },
-    }
+    return `systems/foundry-ironsworn/templates/journal/progress-page-${
+      this.isEditable ? 'edit' : 'view'
+    }.hbs`
   }
 }
