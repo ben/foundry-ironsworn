@@ -1,10 +1,6 @@
 import { fill, range } from 'lodash'
 import { NumericRank } from '../dataforged'
 
-declare global {
-  class JournalPageSheet extends DocumentSheet {}
-}
-
 export class JournalProgressPageSheet extends JournalPageSheet {
   static get defaultOptions() {
     const options = super.defaultOptions

@@ -2,6 +2,7 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
+import { merge } from 'lodash'
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
@@ -56,6 +57,17 @@ Hooks.once('init', async () => {
   // Define custom Entity classes
   CONFIG.Actor.documentClass = IronswornActor
   CONFIG.Item.documentClass = IronswornItem
+  CONFIG.JournalEntryPage = merge(CONFIG.JournalEntryPage, {
+    typeLabels: {
+      progress: 'IRONSWORN.PROGRESS.Track',
+      clock: 'IRONSWORN.Clock',
+    },
+    typeIcons: {
+      // TODO: a new icon: 4 ticks of progress (forming an 8-pointed asterisk)
+      progress: 'fas fa-asterisk',
+      clock: 'fas fa-clock',
+    },
+  })
 
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
@@ -142,14 +154,13 @@ Hooks.once('init', async () => {
   })
 
   DocumentSheetConfig.registerSheet(
-    // @ts-ignore
     JournalEntryPage,
     'ironsworn',
     JournalProgressPageSheet,
     {
       types: ['progress'],
       makeDefault: true,
-      label: 'Progress',
+      label: 'IRONSWORN.PROGRESS.Track',
     }
   )
 

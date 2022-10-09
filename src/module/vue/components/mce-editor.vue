@@ -24,8 +24,8 @@
 </template>
 
 <script setup lang="ts">
-import { RawEditorSettings } from 'tinymce'
-import { onUnmounted, reactive } from 'vue'
+import { RawEditorOptions } from 'tinymce'
+import { inject, onUnmounted, reactive } from 'vue'
 import { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import WithRolllisteners from './with-rolllisteners.vue'
@@ -50,7 +50,7 @@ const $emit = defineEmits<{ (e: 'save') }>()
 
 onUnmounted(() => $emit('save'))
 
-const mceConfig: RawEditorSettings = {
+const mceConfig: RawEditorOptions = {
   ...CONFIG.TinyMCE,
 
   // TODO: this never gets called?
