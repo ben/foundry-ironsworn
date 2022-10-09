@@ -35,7 +35,6 @@ import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 import { JournalProgressPageSheet } from './module/journal/progress-page'
-import { VueJournalSheet } from './module/vue/vuejournalpagesheet'
 
 declare global {
   interface LenientGlobalVariableTypes {
@@ -141,15 +140,6 @@ Hooks.once('init', async () => {
     label: 'Progress sheet v2',
     makeDefault: true,
   })
-
-  DocumentSheetConfig.registerSheet(
-    JournalEntry,
-    'ironsworn',
-    VueJournalSheet,
-    {
-      makeDefault: true,
-    }
-  )
 
   DocumentSheetConfig.registerSheet(
     JournalEntryPage,
