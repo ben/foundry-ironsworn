@@ -25,7 +25,7 @@
     </div>
     <AttrSlider
       style="margin-top: 5px"
-      attr="track"
+      attr="track.current"
       documentType="Item"
       :max="item.data.track.max"
       :currentValue="item.data.track.current"
