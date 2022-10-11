@@ -12,11 +12,19 @@ import { cachedDocumentsForPack } from './pack-cache'
 
 export interface IOracleTreeNode {
   dataforgedNode?: IOracle | IOracleCategory
-  tables: RollTable[] | any[]
+  tables: RollTable[]
   displayName: string
   children: IOracleTreeNode[]
   forceExpanded?: boolean
   forceHidden?: boolean
+}
+
+export type IOracleTreeNodeVue = Omit<
+  IOracleTreeNode,
+  'tables' | 'children'
+> & {
+  tables: (() => RollTable)[]
+  children: IOracleTreeNodeVue[]
 }
 
 // For some reason, rollupJs mangles this
@@ -37,7 +45,7 @@ const emptyNode = () =>
 async function createOracleTree(
   compendium: string,
   categories: IOracleCategory[]
-): Promise<IOracleTreeNode> {
+): Promise<IOracleTreeNodeVue> {
   const rootNode = emptyNode()
 
   // Make sure the compendium is loaded
@@ -55,19 +63,17 @@ async function createOracleTree(
   await Hooks.call('ironswornOracles', rootNode)
 
   // Prevent Vue from adding reactivity to Foundry objects
-  walkAndFreezeTables(rootNode)
-
-  return rootNode
+  return convertToVueTree(rootNode)
 }
 
-export async function createIronswornOracleTree(): Promise<IOracleTreeNode> {
+export async function createIronswornOracleTree(): Promise<IOracleTreeNodeVue> {
   return createOracleTree(
     'foundry-ironsworn.ironswornoracles',
     ISOracleCategories
   )
 }
 
-export async function createStarforgedOracleTree(): Promise<IOracleTreeNode> {
+export async function createStarforgedOracleTree(): Promise<IOracleTreeNodeVue> {
   return createOracleTree(
     'foundry-ironsworn.starforgedoracles',
     SFOracleCategories
@@ -181,21 +187,22 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
   walkFolder(node, rootFolder)
 }
 
-export function walkAndFreezeTables(node: IOracleTreeNode) {
-  ;(node.tables as any) = Object.freeze(node.tables)
-  for (const child of node.children) {
-    walkAndFreezeTables(child)
+export function convertToVueTree(node: IOracleTreeNode): IOracleTreeNodeVue {
+  return {
+    ...node,
+    tables: node.tables.map((t) => () => t),
+    children: node.children.map(convertToVueTree),
   }
 }
 
 export function findPathToNodeByTableId(
-  rootNode: IOracleTreeNode,
+  rootNode: IOracleTreeNodeVue,
   tableId: string
-): IOracleTreeNode[] {
-  const ret: IOracleTreeNode[] = []
-  function walk(node: IOracleTreeNode) {
+): IOracleTreeNodeVue[] {
+  const ret: IOracleTreeNodeVue[] = []
+  function walk(node: IOracleTreeNodeVue) {
     ret.push(node)
-    const foundTable = node.tables.find((x) => x.id === tableId)
+    const foundTable = node.tables.find((x) => x().id === tableId)
     if (foundTable) return true
     for (const child of node.children) {
       if (walk(child)) return true
@@ -208,9 +215,12 @@ export function findPathToNodeByTableId(
   return ret
 }
 
-export function findPathToNodeByDfId(rootNode: IOracleTreeNode, dfId: string) {
-  const ret: IOracleTreeNode[] = []
-  function walk(node: IOracleTreeNode) {
+export function findPathToNodeByDfId(
+  rootNode: IOracleTreeNodeVue,
+  dfId: string
+) {
+  const ret: IOracleTreeNodeVue[] = []
+  function walk(node: IOracleTreeNodeVue) {
     ret.push(node)
     if (node.dataforgedNode?.$id === dfId) return true
     for (const child of node.children) {

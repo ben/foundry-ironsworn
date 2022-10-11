@@ -76,8 +76,8 @@ import { computed, inject, nextTick, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import {
-  IOracleTreeNode,
-  walkAndFreezeTables,
+  convertToVueTree,
+  IOracleTreeNodeVue,
   walkOracle,
 } from '../../features/customoracles'
 import { IronswornHandlebarsHelpers } from '../../helpers/handlebars'
@@ -95,7 +95,7 @@ const props = defineProps<{ move: Move }>()
 const data = reactive({
   expanded: false,
   highlighted: false,
-  oracles: [] as IOracleTreeNode[],
+  oracles: [] as IOracleTreeNodeVue[],
 })
 
 const fulltext = computed(() => {
@@ -114,10 +114,7 @@ if (props.move.dataforgedMove) {
   const oracleIds = props.move.dataforgedMove.Oracles ?? []
   Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
     const nodes = await Promise.all(dfOracles.map(walkOracle))
-    for (const n of nodes) {
-      walkAndFreezeTables(n)
-    }
-    data.oracles.push(...nodes)
+    data.oracles.push(...nodes.map(convertToVueTree))
   })
 }
 

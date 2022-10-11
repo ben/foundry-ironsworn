@@ -1,8 +1,8 @@
 <template>
   <table class="oracle-table">
     <caption
-      v-if="!noCaption && oracleTable.data.description"
-      v-html="enrichMarkdown(oracleTable.data.description)"
+      v-if="!noCaption && oracleTable().data.description"
+      v-html="enrichMarkdown(oracleTable().data.description ?? '')"
     />
     <thead>
       <tr>
@@ -50,7 +50,10 @@ import { computed } from '@vue/reactivity'
 import { sortBy } from 'lodash'
 import { enrichMarkdown } from '../../vue-plugin.js'
 
-const props = defineProps<{ oracleTable: RollTable; noCaption?: boolean }>()
+const props = defineProps<{
+  oracleTable: () => RollTable
+  noCaption?: boolean
+}>()
 
 type TableRowData = {
   low: number
@@ -67,7 +70,7 @@ function rangeString({ low, high }: TableRowData) {
 }
 const tableRows = computed(() =>
   sortBy(
-    props.oracleTable.data.results.contents.map(
+    props.oracleTable().data.results.contents.map(
       (row) =>
         ({
           low: row.data.range[0],
