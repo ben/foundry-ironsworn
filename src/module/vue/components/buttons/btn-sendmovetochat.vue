@@ -23,6 +23,6 @@ const props = defineProps<{
 }>()
 
 function sendToChat(e) {
-  createSfMoveChatMessage(props.move.moveItem)
+  createSfMoveChatMessage(props.move.moveItem())
 }
 </script>

@@ -34,9 +34,9 @@
 
           <AssetBrowserCard
             :df="asset.df"
-            :foundry-item="(asset.foundryItem as any)"
+            :foundry-item="asset.foundryItem"
             v-for="asset in category.assets"
-            :key="asset.foundryItem.id ?? ''"
+            :key="asset.foundryItem()?.id ?? ''"
             class="nogrow movesheet-row"
           />
         </section>
@@ -51,6 +51,7 @@ h2 {
   line-height: 1.5;
   border: none;
   height: min-content;
+
   button {
     line-height: 1.5;
     height: min-content;

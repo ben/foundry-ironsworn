@@ -30,14 +30,12 @@ const props = defineProps<{
 const $actor = inject($ActorKey)
 
 async function rollMove() {
-  if (props.move?.dataforgedMove)
+  if (!props.move) throw new Error('No move?')
+  if (props.move.dataforgedMove)
     return IronswornPrerollDialog.showForOfficialMove(
       props.move?.dataforgedMove.$id,
       $actor
     )
-  IronswornPrerollDialog.showForMove(
-    props.move?.moveItem as Move['moveItem'],
-    $actor
-  )
+  IronswornPrerollDialog.showForMove(props.move.moveItem(), $actor)
 }
 </script>

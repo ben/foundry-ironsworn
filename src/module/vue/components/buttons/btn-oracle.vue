@@ -35,7 +35,10 @@ async function rollOracle() {
     starforged: 'foundry-ironsworn.starforgedoracles',
   }[toolset ?? '']
 
-  const orm = await OracleRollMessage.fromTableId(randomTable?.id ?? '', pack)
+  const orm = await OracleRollMessage.fromTableId(
+    randomTable?.()?.id ?? '',
+    pack
+  )
   orm.createOrUpdate()
 }
 </script>

@@ -12,7 +12,7 @@ import { cachedDocumentsForPack } from './pack-cache'
 
 export interface IOracleTreeNode {
   dataforgedNode?: IOracle | IOracleCategory
-  tables: RollTable[] | any[]
+  tables: (() => RollTable)[]
   displayName: string
   children: IOracleTreeNode[]
   forceExpanded?: boolean
@@ -53,9 +53,6 @@ async function createOracleTree(
 
   // Fire the hook and allow extensions to modify the tree
   await Hooks.call('ironswornOracles', rootNode)
-
-  // Prevent Vue from adding reactivity to Foundry objects
-  walkAndFreezeTables(rootNode)
 
   return rootNode
 }
@@ -111,7 +108,7 @@ export async function walkOracle(
   const node: IOracleTreeNode = {
     ...emptyNode(),
     dataforgedNode: oracle,
-    tables: compact([table]),
+    tables: compact([table ? () => table : undefined]),
     displayName:
       table?.name ||
       game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`),
@@ -131,7 +128,7 @@ export async function walkOracle(
         node.children.push({
           ...emptyNode(),
           displayName: name,
-          tables: [subtable],
+          tables: [() => subtable],
         })
       }
     }
@@ -172,20 +169,13 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
     for (const table of folder.contents) {
       newNode.children.push({
         ...emptyNode(),
-        tables: [table as RollTable],
+        tables: [() => table as RollTable],
         displayName: table.name ?? '(table)',
       })
     }
   }
 
   walkFolder(node, rootFolder)
-}
-
-export function walkAndFreezeTables(node: IOracleTreeNode) {
-  ;(node.tables as any) = Object.freeze(node.tables)
-  for (const child of node.children) {
-    walkAndFreezeTables(child)
-  }
 }
 
 export function findPathToNodeByTableId(
@@ -195,7 +185,7 @@ export function findPathToNodeByTableId(
   const ret: IOracleTreeNode[] = []
   function walk(node: IOracleTreeNode) {
     ret.push(node)
-    const foundTable = node.tables.find((x) => x.id === tableId)
+    const foundTable = node.tables.find((x) => x().id === tableId)
     if (foundTable) return true
     for (const child of node.children) {
       if (walk(child)) return true

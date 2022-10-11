@@ -2,9 +2,9 @@
   <article
     class="item-row document ironsworn__asset"
     draggable="true"
-    :data-pack="foundryItem.pack"
-    :data-id="foundryItem.id"
-    :data-document-id="foundryItem.id"
+    :data-pack="foundryItem().pack"
+    :data-id="foundryItem().id"
+    :data-document-id="foundryItem().id"
     :class="{ [`asset-${toolset}`]: true }"
     :style="
       data.data.color
@@ -23,7 +23,7 @@
         class="clickable text asset-expand-toggle"
       >
         <h4 class="asset-title">
-          {{ foundryItem.name }}
+          {{ foundryItem().name }}
         </h4>
       </button>
     </header>
@@ -118,22 +118,22 @@ import { $ItemKey, ItemKey } from '../../provisions.js'
 
 const props = defineProps<{
   df?: IAsset
-  foundryItem: Readonly<IronswornItem>
+  foundryItem: () => IronswornItem
 }>()
 
 const toolset = inject('toolset')
-const data = props.foundryItem.data as AssetDataProperties
-provide($ItemKey, props.foundryItem)
+const data = props.foundryItem().data as AssetDataProperties
+provide($ItemKey, props.foundryItem())
 provide(
   ItemKey,
-  computed(() => props.foundryItem.toObject() as any)
+  computed(() => props.foundryItem().toObject() as any)
 )
 
 const state = reactive({
   expanded: false,
 })
 
-const bodyId = `asset-body-${props.foundryItem.id}`
+const bodyId = `asset-body-${props.foundryItem().id}`
 
 function moveClick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
@@ -144,9 +144,9 @@ function dragStart(ev) {
     'text/plain',
     JSON.stringify({
       type: 'AssetBrowserData',
-      pack: props.foundryItem.pack || undefined,
-      id: props.foundryItem.id,
-      uuid: props.foundryItem.uuid,
+      pack: props.foundryItem().pack || undefined,
+      id: props.foundryItem().id,
+      uuid: props.foundryItem().uuid,
     })
   )
 }

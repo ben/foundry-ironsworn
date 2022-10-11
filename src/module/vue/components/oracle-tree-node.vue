@@ -86,7 +86,7 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import { computed, inject, reactive, ref } from 'vue'
+import { computed, reactive, ref } from 'vue'
 import { IOracleTreeNode } from '../../features/customoracles'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnOracle from './buttons/btn-oracle.vue'

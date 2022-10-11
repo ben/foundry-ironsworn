@@ -72,14 +72,10 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import { computed, inject, nextTick, reactive, ref } from 'vue'
+import { computed, nextTick, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
-import {
-  IOracleTreeNode,
-  walkAndFreezeTables,
-  walkOracle,
-} from '../../features/customoracles'
+import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
 import { IronswornHandlebarsHelpers } from '../../helpers/handlebars'
 import { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
@@ -99,7 +95,7 @@ const data = reactive({
 })
 
 const fulltext = computed(() => {
-  const foundryMoveData = props.move.moveItem?.data as
+  const foundryMoveData = props.move.moveItem()?.data as
     | SFMoveDataProperties
     | undefined
   return IronswornHandlebarsHelpers.stripTables(
@@ -107,16 +103,13 @@ const fulltext = computed(() => {
   )
 })
 const canRoll = computed(() => {
-  return moveHasRollableOptions(props.move.moveItem)
+  return moveHasRollableOptions(props.move.moveItem())
 })
 
 if (props.move.dataforgedMove) {
   const oracleIds = props.move.dataforgedMove.Oracles ?? []
   Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
     const nodes = await Promise.all(dfOracles.map(walkOracle))
-    for (const n of nodes) {
-      walkAndFreezeTables(n)
-    }
     data.oracles.push(...nodes)
   })
 }
@@ -125,7 +118,7 @@ const $el = ref<HTMLElement>()
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (moveId) => {
-  if (moveId === props.move.moveItem.id) {
+  if (moveId === props.move.moveItem()?.id) {
     data.expanded = true
     data.highlighted = true
     await nextTick()
