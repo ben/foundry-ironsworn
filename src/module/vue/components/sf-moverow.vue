@@ -99,7 +99,7 @@ const data = reactive({
 })
 
 const fulltext = computed(() => {
-  const foundryMoveData = props.move.moveItem?.data as
+  const foundryMoveData = props.move.moveItem()?.data as
     | SFMoveDataProperties
     | undefined
   return IronswornHandlebarsHelpers.stripTables(
@@ -107,7 +107,7 @@ const fulltext = computed(() => {
   )
 })
 const canRoll = computed(() => {
-  return moveHasRollableOptions(props.move.moveItem)
+  return moveHasRollableOptions(props.move.moveItem())
 })
 
 if (props.move.dataforgedMove) {
@@ -125,7 +125,7 @@ const $el = ref<HTMLElement>()
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (moveId) => {
-  if (moveId === props.move.moveItem.id) {
+  if (moveId === props.move.moveItem()?.id) {
     data.expanded = true
     data.highlighted = true
     await nextTick()
