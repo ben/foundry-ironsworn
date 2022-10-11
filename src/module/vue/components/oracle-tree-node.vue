@@ -87,14 +87,14 @@ h4 {
 
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
-import { IOracleTreeNodeVue } from '../../features/customoracles'
+import { IOracleTreeNode } from '../../features/customoracles'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { IronswornItem } from '../../item/item'
 import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 import CollapseTransition from './transition/collapse-transition.vue'
 
-const props = defineProps<{ node: IOracleTreeNodeVue }>()
+const props = defineProps<{ node: IOracleTreeNode }>()
 
 const state = reactive({
   manuallyExpanded: props.node.forceExpanded ?? false,

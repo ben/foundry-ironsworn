@@ -72,14 +72,10 @@ h4 {
 </style>
 
 <script setup lang="ts">
-import { computed, inject, nextTick, reactive, ref } from 'vue'
+import { computed, nextTick, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
-import {
-  convertToVueTree,
-  IOracleTreeNodeVue,
-  walkOracle,
-} from '../../features/customoracles'
+import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
 import { IronswornHandlebarsHelpers } from '../../helpers/handlebars'
 import { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
@@ -95,7 +91,7 @@ const props = defineProps<{ move: Move }>()
 const data = reactive({
   expanded: false,
   highlighted: false,
-  oracles: [] as IOracleTreeNodeVue[],
+  oracles: [] as IOracleTreeNode[],
 })
 
 const fulltext = computed(() => {
@@ -114,7 +110,7 @@ if (props.move.dataforgedMove) {
   const oracleIds = props.move.dataforgedMove.Oracles ?? []
   Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
     const nodes = await Promise.all(dfOracles.map(walkOracle))
-    data.oracles.push(...nodes.map(convertToVueTree))
+    data.oracles.push(...nodes)
   })
 }
 

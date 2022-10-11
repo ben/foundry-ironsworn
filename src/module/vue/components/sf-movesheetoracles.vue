@@ -42,7 +42,7 @@ import { findOracleWithIntermediateNodes } from '../../dataforged'
 import {
   createIronswornOracleTree,
   createStarforgedOracleTree,
-  IOracleTreeNodeVue,
+  IOracleTreeNode,
 } from '../../features/customoracles'
 import OracleTreeNode from './oracle-tree-node.vue'
 
@@ -54,7 +54,7 @@ const tempTreeRoot =
     ? await createIronswornOracleTree()
     : await createStarforgedOracleTree()
 
-const treeRoot = reactive<IOracleTreeNodeVue>(tempTreeRoot)
+const treeRoot = reactive<IOracleTreeNode>(tempTreeRoot)
 type ReactiveNode = typeof treeRoot
 
 const search = reactive({ q: '' })

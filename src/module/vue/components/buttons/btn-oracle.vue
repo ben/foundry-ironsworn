@@ -17,12 +17,12 @@
 <script setup lang="ts">
 import { sample } from 'lodash'
 import { inject } from 'vue'
-import { IOracleTreeNodeVue } from '../../../features/customoracles.js'
+import { IOracleTreeNode } from '../../../features/customoracles.js'
 import { OracleRollMessage } from '../../../rolls'
 import BtnIsicon from './btn-isicon.vue'
 
 const props = defineProps<{
-  node: IOracleTreeNodeVue
+  node: IOracleTreeNode
   disabled?: boolean
 }>()
 
