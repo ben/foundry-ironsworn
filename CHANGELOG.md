@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.18.5
+
 - Rework code that was freezing Foundry objects, causing issues with asset sheets ([#510](https://github.com/ben/foundry-ironsworn/pull/510))
   - **NOTE:** this change may break your custom move/oracle/asset hooks, check [the guide](https://github.com/ben/foundry-ironsworn/wiki/Extensibility#using-hooks) for the new format
 
