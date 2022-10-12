@@ -84,15 +84,17 @@ const props = defineProps<{
     FoeDataProperties
 }>()
 provide(ActorKey, computed(() => props.actor) as any)
-const foe = props.actor.items.find(
-  (x) => x.type === 'progress'
-) as ProgressDataProperties
+const foe = computed(() => {
+  return props.actor.items.find(
+    (x) => x.type === 'progress'
+  ) as ProgressDataProperties
+})
 
 const $actor = inject($ActorKey)
-const foundryFoe = $actor?.items.get((foe as any)?._id)
+const foundryFoe = $actor?.items.get((foe.value as any)?._id)
 
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[foe?.data.rank])
+  return game.i18n.localize(RANKS[foe.value?.data.rank])
 })
 
 // async foe(newFoe) {
@@ -115,24 +117,21 @@ function openCompendium(name) {
 
 function setRank(rank) {
   foundryFoe?.update({ data: { rank } })
-  foe!.data.rank = rank
 }
 
 function clearProgress() {
   foundryFoe?.update({ 'data.current': 0 })
-  foe.data.current = 0
 }
 
 function markProgress() {
-  const increment = RANK_INCREMENTS[foe?.data.rank]
-  const newValue = Math.min(foe?.data.current + increment, 40)
+  const increment = RANK_INCREMENTS[foe.value?.data.rank]
+  const newValue = Math.min(foe.value?.data.current + increment, 40)
   foundryFoe?.update({ 'data.current': newValue })
-  foe.data.current = newValue
 }
 
 function saveDescription() {
   foundryFoe?.update({
-    data: { description: foe?.data.description },
+    data: { description: foe.value?.data.description },
   })
 }
 const throttledSaveDescription = throttle(saveDescription, 1000)

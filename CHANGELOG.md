@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix the "liveness" of the Foe sheet
+
 ## 1.18.6
 
 - Fix a visual layout bug, where editors were only showing two lines of text
