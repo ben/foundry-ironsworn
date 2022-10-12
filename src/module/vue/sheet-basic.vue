@@ -4,7 +4,7 @@
     <slot name="header">
       <SheetHeaderBasic class="nogrow" :document="props.document" />
     </slot>
-    <section class="ironsworn-sheet-body nogrow" :class="bodyClass">
+    <section class="ironsworn-sheet-body" :class="bodyClass">
       <slot name="default"></slot>
     </section>
   </article>
