@@ -76,7 +76,6 @@ import MceEditor from './mce-editor.vue'
 import { RANKS, RANK_INCREMENTS } from '../../constants'
 import { ProgressDataProperties } from '../../item/itemtypes'
 import { FoeDataProperties } from '../../actor/actortypes'
-import Track from './progress/track.vue'
 import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{
@@ -91,7 +90,7 @@ const foe = computed(() => {
 })
 
 const $actor = inject($ActorKey)
-const foundryFoe = $actor?.items.get((foe.value as any)?._id)
+const foundryFoe = () => $actor?.items.get((foe.value as any)?._id)
 
 const rankText = computed(() => {
   return game.i18n.localize(RANKS[foe.value?.data.rank])
@@ -116,21 +115,21 @@ function openCompendium(name) {
 }
 
 function setRank(rank) {
-  foundryFoe?.update({ data: { rank } })
+  foundryFoe()?.update({ data: { rank } })
 }
 
 function clearProgress() {
-  foundryFoe?.update({ 'data.current': 0 })
+  foundryFoe()?.update({ 'data.current': 0 })
 }
 
 function markProgress() {
   const increment = RANK_INCREMENTS[foe.value?.data.rank]
   const newValue = Math.min(foe.value?.data.current + increment, 40)
-  foundryFoe?.update({ 'data.current': newValue })
+  foundryFoe()?.update({ 'data.current': newValue })
 }
 
 function saveDescription() {
-  foundryFoe?.update({
+  foundryFoe()?.update({
     data: { description: foe.value?.data.description },
   })
 }
