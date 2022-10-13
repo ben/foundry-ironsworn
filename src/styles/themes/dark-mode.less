@@ -1,4 +1,181 @@
 body.theme-darkmode {
+  @background-color: black;
+  @light-color: #ccc;
+  @medium-color: darkgray;
+  @dark-color: #888;
+  @text-color: #999;
+  --ironsworn-color-bg: @background-color;
+  --ironsworn-color-shade-1: @dark-color;
+  --ironsworn-color-shade-2: @medium-color;
+  --ironsworn-color-shade-3: @light-color;
+  --ironsworn-color-fg: @text-color;
+  --ironsworn-color-border: @text-color;
+  --ironsworn-color-thematic: @text-color;
+  --ironsworn-color-highlight: palegoldenrod;
+
+  input::placeholder {
+    color: var(--ironsworn-color-shade-2);
+  }
+
+  input.highlight:focus {
+    background-color: var(--ironsworn-color-fg);
+    color: var(--ironsworn-color-bg);
+  }
+
+  .window-content,
+  .journal-entry .journal-entry-content {
+    background: var(--ironsworn-color-bg);
+  }
+
+  .sheet-area {
+    border-color: var(--ironsworn-color-shade-2);
+  }
+
+  .margin-left,
+  .margin-right {
+    border-color: var(--ironsworn-color-border);
+    h1 {
+      border-color: var(--ironsworn-color-border);
+    }
+  }
+
+  .stack-row {
+    border-color: var(--ironsworn-color-border);
+  }
+
+  .edit {
+    border-color: var(--ironsworn-color-border);
+
+    &.editing {
+      background: var(--ironsworn-color-shade-2);
+    }
+  }
+
+  .inset {
+    border-color: var(--ironsworn-color-shade-2);
+  }
+
+  .item-row {
+    border-color: var(--ironsworn-color-border);
+    background-color: var(--ironsworn-color-bg);
+
+    &.highlighted {
+      background-color: var(--ironsworn-color-highlight);
+    }
+  }
+
+  .movesheet-row.highlighted {
+    background-color: var(--ironsworn-color-highlight);
+  }
+
+  .progresses .item {
+    border-color: var(--ironsworn-color-shade-2);
+  }
+
+  .asset-ironsworn .asset-ability:before {
+    border: 1px solid @text-color;
+  }
+
+  [role^='tablist'],
+  [role*=' tablist'] {
+    border-color: var(--ironsworn-color-shade-2);
+  }
+
+  .item-list {
+    ol > h2 {
+      border-color: var(--ironsworn-color-bg);
+      background-color: var(--ironsworn-color-shade-3);
+      color: var(--ironsworn-color-bg);
+    }
+
+    .item {
+      border-color: var(--ironsworn-color-shade-2);
+    }
+  }
+
+  .progress {
+    border-color: var(--ironsworn-color-border);
+  }
+
+  .move-title {
+    background-color: var(--ironsworn-color-bg);
+    border-color: var(--ironsworn-color-shade-3);
+  }
+
+  .clickable {
+    &.selected,
+    &[aria-selected='true'] {
+      &:not(svg):not(.svg) {
+        color: var(--ironsworn-color-bg);
+        background-color: var(--ironsworn-color-thematic);
+        border-color: var(--ironsworn-color-border);
+      }
+    }
+
+    &.disabled,
+    &:disabled,
+    &[aria-disabled='true'] {
+      color: var(--ironsworn-color-shade-3);
+    }
+
+    &.hover,
+    &:hover {
+      &.block {
+        background: var(--ironsworn-color-shade-1);
+      }
+      &.text:not(.block) {
+        color: var(--ironsworn-color-shade-1);
+      }
+    }
+    &:active {
+      &.block {
+        background: var(--ironsworn-color-shade-2);
+      }
+      &.text:not(.block) {
+        color: var(--ironsworn-color-shade-2);
+      }
+    }
+  }
+
+  .drag-highlight {
+    background: var(--ironsworn-color-shade-2);
+  }
+
+  .stats {
+    .stat {
+      border-color: var(--ironsworn-color-border);
+    }
+  }
+
+  .compact {
+    .bordergroup {
+      border-color: var(--ironsworn-color-border);
+    }
+  }
+
+  .ironsworn-roll {
+    .dice-formula,
+    .dice-total {
+      background-color: var(--ironsworn-color-bg);
+    }
+  }
+
+  table tr {
+    &.selected,
+    &[aria-selected='true'] {
+      background-color: @text-color;
+      color: var(--ironsworn-color-shade-1);
+
+      .entity-link,
+      .content-link {
+        color: var(--ironsworn-color-bg);
+        padding: none;
+        border: none;
+        background: transparent;
+      }
+    }
+  }
+
   a {
     color: #d9d9d9 !important;
   }
@@ -21,8 +198,8 @@ body.theme-darkmode {
     border-color: #ffffff10;
     box-shadow: rgb(87 87 87) 0px 0px 0px inset;
   }
-  body.theme-ironsworn table tr.selected,
-  body.theme-ironsworn table tr[aria-selected='true'] {
+  table tr.selected,
+  table tr[aria-selected='true'] {
     background-color: #4c4c4c;
   }
   #module-management input[type='checkbox']:checked::after {
@@ -44,8 +221,5 @@ body.theme-darkmode {
     color: #d9d9d9 !important;
     border: 0px;
     background: #00000095;
-  }
-  body.theme-ironsworn {
-    --ironsworn-color-thematic: #4c4c4c;
   }
 }
