@@ -1,5 +1,15 @@
-<form class="{{cssClass}} flexcol" autocomplete="off">
+<form class="{{cssClass}} flexcol progress-list-item" autocomplete="off">
   {{> journalEntryPageHeader}}
 
-  <pre><code>{{json this}}</code></pre>
+  <section class="flexcol" style="margin: 1em;">
+    <div class="flexrow">
+      {{> rankPips}}
+      {{> progressButtons edit=true}}
+    </div>
+    {{> progressBoxes}}
+  </section>
+
+  <details>
+    <pre><code>{{json this}}</code></pre>
+  </details>
 </form>

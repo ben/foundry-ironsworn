@@ -5,6 +5,7 @@ export class JournalProgressPageSheet extends JournalPageSheet {
   static get defaultOptions() {
     const options = super.defaultOptions
     options.classes.push('progress')
+    console.log({ options })
     return options
   }
 
@@ -12,6 +13,18 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     return `systems/foundry-ironsworn/templates/journal/progress-page-${
       this.isEditable ? 'edit' : 'view'
     }.hbs`
+  }
+
+  protected async _renderInner(...args) {
+    await loadTemplates({
+      progressButtons:
+        'systems/foundry-ironsworn/templates/journal/progress-buttons.hbs',
+      progressBoxes:
+        'systems/foundry-ironsworn/templates/journal/progress-boxes.hbs',
+      rankPips:
+        'systems/foundry-ironsworn/templates/journal/progress-rank-pips.hbs',
+    })
+    return super._renderInner(...args)
   }
 
   getData(options?: Partial<DocumentSheetOptions> | undefined): any {
@@ -31,7 +44,6 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 
     fill(boxes, { ticks: 4, lineTransforms: [] }, 0, data.filledBoxes)
     boxes[data.filledBoxes] = { ticks: ticksRemainder, lineTransforms: [] }
-    console.log(boxes)
 
     // List of line transforms
     const transforms = [
@@ -55,10 +67,3 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     return data
   }
 }
-
-Hooks.on('renderJournalProgressPageSheet', (...args) =>
-  console.log('render', ...args)
-)
-Hooks.on('closeJournalProgressPageSheet', (...args) =>
-  console.log('close', ...args)
-)
