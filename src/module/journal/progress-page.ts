@@ -15,8 +15,8 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     }.hbs`
   }
 
-  protected async _renderInner(...args) {
-    await loadTemplates({
+  protected async _renderInner(data) {
+    await (loadTemplates as any)({
       progressButtons:
         'systems/foundry-ironsworn/templates/journal/progress-buttons.hbs',
       progressBoxes:
@@ -24,7 +24,7 @@ export class JournalProgressPageSheet extends JournalPageSheet {
       rankPips:
         'systems/foundry-ironsworn/templates/journal/progress-rank-pips.hbs',
     })
-    return super._renderInner(...args)
+    return super._renderInner(data)
   }
 
   getData(options?: Partial<DocumentSheetOptions> | undefined): any {
