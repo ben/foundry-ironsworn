@@ -11,7 +11,7 @@ declare global {
     interface Values {
       // Settings added here will be automatically typed throughout the game system.
       'foundry-ironsworn.prompt-world-truths': boolean
-      'foundry-ironsworn.theme': 'ironsworn' | 'starforged'
+      'foundry-ironsworn.theme': 'ironsworn' | 'starforged' | 'darkmode'
       'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
       'foundry-ironsworn.shared-supply': boolean
       'foundry-ironsworn.log-changes': boolean
@@ -50,6 +50,7 @@ export class IronswornSettings {
       choices: {
         ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
         starforged: 'IRONSWORN.Settings.Theme.Starforged',
+        darkmode: 'IRONSWORN.Settings.Theme.DarkMode',
       },
       default: 'ironsworn',
       onChange: reload,

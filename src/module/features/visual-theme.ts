@@ -3,6 +3,7 @@ import { IronswornSettings } from '../helpers/settings'
 import '../../styles/styles.less'
 import '../../styles/themes/ironsworn.less'
 import '../../styles/themes/starforged.less'
+import '../../styles/themes/dark-mode.less'
 
 export function themeSetup() {
   const currentTheme = IronswornSettings.get('theme')

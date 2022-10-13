@@ -279,7 +279,8 @@
         "Name": "Visual Theme",
         "Hint": "Select the visual look for this game. Requires a reload.",
         "Ironsworn": "Ironsworn Classic",
-        "Starforged": "Starforged (experimental)"
+        "Starforged": "Starforged (experimental)",
+        "DarkMode": "Dark Mode"
       },
       "Tools": {
         "Name": "Character Tools",
