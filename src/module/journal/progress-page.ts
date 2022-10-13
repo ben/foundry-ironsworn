@@ -66,4 +66,16 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     console.log(data)
     return data
   }
+
+  activateListeners(html: JQuery<HTMLElement>): void {
+    html.find('.ironsworn__progress__mark').on('click', () => {
+      console.log('mark', this)
+    })
+    html.find('.ironsworn__progress__unmark').on('click', () => {
+      console.log('unmark', this)
+    })
+    html.find('.ironsworn__progress__roll').on('click', () => {
+      console.log('roll', this)
+    })
+  }
 }
