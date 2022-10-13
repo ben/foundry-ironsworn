@@ -1,10 +1,11 @@
 import { fill, range } from 'lodash'
 import { NumericRank } from '../dataforged'
+import { IronswornPrerollDialog } from '../rolls'
 
 export class JournalProgressPageSheet extends JournalPageSheet {
   static get defaultOptions() {
     const options = super.defaultOptions
-    options.classes.push('progress')
+    options.classes.push('progress', 'ironsworn')
     console.log({ options })
     return options
   }
@@ -68,14 +69,18 @@ export class JournalProgressPageSheet extends JournalPageSheet {
   }
 
   activateListeners(html: JQuery<HTMLElement>): void {
-    html.find('.ironsworn__progress__mark').on('click', () => {
+    html.find('.ironsworn__progress__mark').on('click', async () => {
       console.log('mark', this)
     })
-    html.find('.ironsworn__progress__unmark').on('click', () => {
+    html.find('.ironsworn__progress__unmark').on('click', async () => {
       console.log('unmark', this)
     })
-    html.find('.ironsworn__progress__roll').on('click', () => {
-      console.log('roll', this)
+    html.find('.ironsworn__progress__roll').on('click', async () => {
+      const { filledBoxes } = await this.getData()
+      IronswornPrerollDialog.showForProgress(
+        this.object.name ?? '(progress)',
+        filledBoxes
+      )
     })
   }
 }

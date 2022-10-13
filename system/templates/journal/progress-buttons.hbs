@@ -1,4 +1,8 @@
-<section class='progress-controls' data-tooltip-direction='UP'>
+<section
+  class='flexrow progress-controls nogrow'
+  data-tooltip-direction='UP'
+  style='flex-flow: nowrap;'
+>
   <button
     class='icon-button clickable fas fa-caret-left block ironsworn__progress__unmark'
     type='button'
@@ -15,7 +19,6 @@
     data-tooltip='{{localize "IRONSWORN.MarkProgress"}}'
     aria-disabled='false'
   ></button>
-  {{log this}}
   <button
     class='icon-button clickable isicon-d10-tilt progress-roll block ironsworn__progress__roll'
     type='button'

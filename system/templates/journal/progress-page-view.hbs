@@ -6,9 +6,11 @@
 
 
 <section class='journal-page-content progress-list-item'>
+  <div class="flexrow nogrow">
+    {{> rankPips}}
+    {{> progressButtons}}
+  </div>
   {{> progressBoxes}}
-  {{> rankPips}}
-  {{> progressButtons}}
 
   <details>
     <pre><code>{{json this}}</code></pre>
