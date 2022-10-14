@@ -6,7 +6,10 @@ import Inspector from 'vite-plugin-vue-inspector'
 const PORT = 30000
 
 const config: UserConfig = {
-  plugins: [vue(), Inspector({ appendTo: 'src/index.ts' })],
+  plugins: [
+    vue(),
+    Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
+  ],
   resolve: {
     alias: {
       vue: 'vue/dist/vue.esm-bundler.js',

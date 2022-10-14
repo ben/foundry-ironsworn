@@ -2,7 +2,7 @@
   <RulesText
     class="rules-text-move"
     :source="move.dataforgedMove?.Source"
-    :content="(props.move.moveItem.data as SFMoveDataProperties).data.Text"
+    :content="(props.move.moveItem().data as SFMoveDataProperties).data.Text"
     type="markdown"
   >
     <template #before-main>

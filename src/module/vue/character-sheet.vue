@@ -12,27 +12,7 @@
     <!-- Main body row -->
     <!-- Momentum on left -->
     <div class="flexcol left-margin">
-      <div class="flexrow" style="flex-wrap: nowrap">
-        <div class="flexcol stack momentum">
-          <stack
-            stat="momentum"
-            :top="10"
-            :bottom="-6"
-            :softMax="actorData.data.momentumMax"
-          ></stack>
-          <hr class="nogrow" />
-          <div>
-            <btn-momentumburn class="nogrow block stack-row">
-              {{ $t('IRONSWORN.Burn') }}
-            </btn-momentumburn>
-
-            {{ $t('IRONSWORN.Reset') }}: {{ actorData.data.momentumReset }}
-            {{ $t('IRONSWORN.Max') }}:
-            {{ actorData.data.momentumMax }}
-          </div>
-        </div>
-        <h4 class="vertical">{{ $t('IRONSWORN.Momentum') }}</h4>
-      </div>
+      <MomentumMeterSlider labelPosition="right" data-tooltip-direction="UP" />
     </div>
 
     <!-- Center area -->
@@ -58,6 +38,7 @@
     </div>
 
     <!-- Stats on right -->
+    <<<<<<< HEAD
     <div class="flexcol right-margin" data-tooltip-direction="UP">
       <div class="flexrow nogrow" style="flex-wrap: nowrap">
         <!-- TODO: restyle as h4-like -->
@@ -105,6 +86,13 @@
         </div>
       </div>
     </div>
+    =======
+    <PcConditionMeters
+      class="flexcol margin-right"
+      data-tooltip-direction="UP"
+      labelPosition="left"
+    />
+    >>>>>>> main
   </SheetBasic>
 </template>
 
@@ -115,21 +103,15 @@
 .stat-roll {
   text-transform: uppercase;
 }
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 83px;
-}
 </style>
 
 <script setup lang="ts">
-import { $ActorKey, ActorKey } from './provisions'
+import { ActorKey } from './provisions'
 import AttrBox from './components/attr-box.vue'
 import BtnMomentumburn from './components/buttons/btn-momentumburn.vue'
 import Stack from './components/stack/stack.vue'
-import btnRollstat from './components/buttons/btn-rollstat.vue'
 import { IronswornActor } from '../actor/actor'
-import { provide, computed, inject } from 'vue'
-import { RollDialog } from '../helpers/rolldialog'
+import { provide, computed } from 'vue'
 import CharacterHeader from './components/character-header.vue'
 import Conditions from './components/conditions/conditions.vue'
 import Tabs from './components/tabs/tabs.vue'
@@ -138,24 +120,16 @@ import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
 import { CharacterDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
+import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
+import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
 }>()
 const actorData = props.actor as CharacterDataProperties
 
-provide(ActorKey, computed(() => props.actor) as any)
-
-const $actor = inject($ActorKey)
-
-function burnMomentum() {
-  $actor?.burnMomentum()
-}
-function rollStat(stat) {
-  RollDialog.show({ actor: $actor, stat })
-}
-function openCompendium(name) {
-  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-  pack?.render(true)
-}
+provide(
+  ActorKey,
+  computed(() => props.actor)
+)
 </script>

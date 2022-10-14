@@ -78,7 +78,7 @@ const props = defineProps<{
 }>()
 
 const pipStyle = computed(() =>
-  IronswornSettings.theme === 'starforged' ? 'hex' : 'circle'
+  IronswornSettings.get('theme') === 'starforged' ? 'hex' : 'circle'
 )
 
 const ranks = Object.keys(RANKS)

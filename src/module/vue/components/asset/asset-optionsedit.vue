@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol stack">
     <div v-if="editMode">
-      <transition-group name="slide" tag="div">
+      <CollapseTransition group tag="div">
         <div
           class="stack-row flexrow"
           v-for="(option, i) in item.data.exclusiveOptions"
@@ -14,7 +14,7 @@
           />
           <btn-faicon icon="trash" @click="deleteOption(i)" />
         </div>
-      </transition-group>
+      </CollapseTransition>
       <btn-faicon
         icon="plus"
         class="stack-row block"
@@ -41,10 +41,6 @@
     margin: 2px 5px;
   }
 }
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 30px;
-}
 </style>
 
 <script setup lang="ts">
@@ -52,6 +48,7 @@ import { computed, inject, nextTick, Ref } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
+import CollapseTransition from '../transition/collapse-transition.vue'
 
 const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)

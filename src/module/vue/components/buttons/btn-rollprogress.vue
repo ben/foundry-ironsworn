@@ -22,12 +22,10 @@ const props = defineProps<{ item: any; tooltip?: string; disabled?: boolean }>()
 const $item = inject($ItemKey, undefined)
 
 const progressScore = computed(() => {
-  if (!$item) return 0
-  const itemData = $item.data as ProgressDataProperties
-  return Math.floor(itemData.data.current / 4)
+  return Math.floor(props.item.data.current / 4)
 })
 
-function rollProgress() {
+function rollProgress () {
   $item?.fulfill()
 }
 </script>

@@ -35,7 +35,7 @@
         {{ $t('IRONSWORN.Track') }}
       </label>
 
-      <Transition name="slide">
+      <CollapseTransition>
         <div class="nogrow" v-if="item.data.hasTrack">
           <!-- RANK -->
           <div class="flexrow nogrow">
@@ -62,7 +62,7 @@
             <ProgressTrack :ticks="item.data.current" :rank="item.data.rank" />
           </div>
         </div>
-      </Transition>
+      </CollapseTransition>
     </div>
 
     <hr class="nogrow" />
@@ -77,7 +77,7 @@
         {{ $t('IRONSWORN.Clock') }}
       </label>
 
-      <Transition name="slide">
+      <CollapseTransition>
         <div class="flexrow nogrow" v-if="item.data.hasClock">
           <div class="nogrow" style="margin: 0 1rem">
             <Clock
@@ -104,7 +104,7 @@
             </select>
           </div>
         </div>
-      </Transition>
+      </CollapseTransition>
     </div>
 
     <hr class="nogrow" />
@@ -118,17 +118,10 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 93px;
-}
-</style>
-
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
-import { $ItemKey } from './provisions'
+import { $ItemKey, ItemKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
 import Clock from './components/clock.vue'
@@ -136,11 +129,15 @@ import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash'
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import ProgressTrack from './components/progress/progress-track.vue'
+import CollapseTransition from './components/transition/collapse-transition.vue'
 
 const props = defineProps<{ item: any }>()
 const $item = inject($ItemKey)
 
-provide($ItemKey, props.item)
+provide(
+  ItemKey,
+  computed(() => props.item)
+)
 
 const editMode = computed(
   () => props.item.flags['foundry-ironsworn']?.['edit-mode']

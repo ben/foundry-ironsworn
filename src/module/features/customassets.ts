@@ -6,7 +6,7 @@ import { IronswornItem } from '../item/item'
 
 export interface DisplayAsset {
   df?: IAsset
-  foundryItem: Readonly<IronswornItem>
+  foundryItem: () => IronswornItem
 }
 
 export interface DisplayCategory {
@@ -14,7 +14,6 @@ export interface DisplayCategory {
   title: string
   description?: string
   expanded: boolean
-  maxHeight: number
   assets: DisplayAsset[]
 }
 
@@ -73,7 +72,6 @@ async function compendiumMoves(
       title: i18n(dfAssetType.Name, 'Title'),
       description: renderLinksInStr(i18nDescription),
       expanded: false,
-      maxHeight: 200 + dfAssetType.Assets.length * 30,
       assets: [],
     }
 
@@ -83,7 +81,7 @@ async function compendiumMoves(
       )) as IronswornItem
       cat.assets.push({
         df: dfAsset,
-        foundryItem: Object.freeze(item),
+        foundryItem: () => item,
       })
     }
 
@@ -103,13 +101,12 @@ async function augmentWithFolderContents(categories: DisplayCategory[]) {
   const customAssets = [] as DisplayAsset[]
   for (const item of folder.contents) {
     if (item.documentName !== 'Item' || item.type !== 'asset') continue
-    customAssets.push({ foundryItem: Object.freeze(item) })
+    customAssets.push({ foundryItem: () => item })
   }
 
   categories.push({
     title: name,
     expanded: false,
-    maxHeight: 200 + customAssets.length * 30,
     assets: customAssets,
   })
 }

@@ -53,13 +53,9 @@ const tempTreeRoot =
   props.toolset === 'ironsworn'
     ? await createIronswornOracleTree()
     : await createStarforgedOracleTree()
-// Add the flags we'll use for UI stuff later
-function walk(node: IOracleTreeNode) {
-  node.forceExpanded = node.forceHidden = false
-  node.children.forEach(walk)
-}
-walk(tempTreeRoot)
+
 const treeRoot = reactive<IOracleTreeNode>(tempTreeRoot)
+type ReactiveNode = typeof treeRoot
 
 const search = reactive({ q: '' })
 watch(search, ({ q }) => {
@@ -72,7 +68,7 @@ watch(search, ({ q }) => {
   if (q && re) {
     // Walk the tree and test each name.
     // Force expanded on all parent nodes leading to a match
-    const walk = (node: IOracleTreeNode, parentMatch: boolean): boolean => {
+    const searchWalk = (node: ReactiveNode, parentMatch: boolean): boolean => {
       // Match against current name (i18n) but also aliases in Dataforged
       let thisMatch = re.test(node.displayName)
       for (const alias of node.dataforgedNode?.Aliases ?? []) {
@@ -82,7 +78,7 @@ watch(search, ({ q }) => {
       // Check for descendant matches
       let childMatch = false
       for (const child of node.children) {
-        childMatch ||= walk(child, thisMatch || parentMatch)
+        childMatch ||= searchWalk(child, thisMatch || parentMatch)
       }
 
       // Expanded if part of a tree with a match
@@ -93,7 +89,7 @@ watch(search, ({ q }) => {
       // Pass match up to ancestors
       return thisMatch || childMatch
     }
-    walk(treeRoot, false)
+    searchWalk(treeRoot, false)
   } else {
     // Walk the tree setting all force flags to false
     function resetflags(node) {

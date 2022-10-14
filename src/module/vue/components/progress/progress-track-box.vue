@@ -197,6 +197,7 @@
 <script setup lang="ts">
 import { range } from 'lodash'
 import { computed } from 'vue'
+import { IronswornSettings } from '../../../helpers/settings.js'
 
 const props = defineProps<{
   ticks: number
@@ -207,7 +208,7 @@ const props = defineProps<{
 }>()
 
 const transitionName = computed(() =>
-  game.settings.get('foundry-ironsworn', 'progress-mark-animation')
+  IronswornSettings.get('progress-mark-animation')
     ? 'draw-progress-tick'
     : undefined
 )

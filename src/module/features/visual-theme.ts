@@ -5,7 +5,7 @@ import '../../styles/themes/ironsworn.less'
 import '../../styles/themes/starforged.less'
 
 export function themeSetup() {
-  const currentTheme = IronswornSettings.theme
+  const currentTheme = IronswornSettings.get('theme')
 
   $(document.body).addClass(`theme-${currentTheme}`)
 

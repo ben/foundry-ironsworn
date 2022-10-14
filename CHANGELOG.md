@@ -2,6 +2,24 @@
 
 ## Next Release
 
+## 1.18.5
+
+- Rework code that was freezing Foundry objects, causing issues with asset sheets ([#510](https://github.com/ben/foundry-ironsworn/pull/510))
+  - **NOTE:** this change may break your custom move/oracle/asset hooks, check [the guide](https://github.com/ben/foundry-ironsworn/wiki/Extensibility#using-hooks) for the new format
+
+## 1.18.4
+
+- Progress-roll button now has the correct number of filled boxes in its tooltip
+- Fix bug with setting the track value in the asset-edit sheet
+
+## 1.18.3
+
+- Fix system loading issue
+
+## 1.18.2
+
+- Updated meters and controls, with keyboard controls ([#501](https://github.com/ben/foundry-ironsworn/pull/501))
+
 ## 1.18.1
 
 - Reinstate visibility of the description field for custom assets ([#499](https://github.com/ben/foundry-ironsworn/pull/499))

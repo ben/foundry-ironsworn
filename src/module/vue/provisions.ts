@@ -18,6 +18,6 @@ export const ActorKey = Symbol('actor') as InjectionKey<
 >
 
 export const $ItemKey = Symbol('$item') as InjectionKey<IronswornItem>
-export const ItemKey = Symbol('actor') as InjectionKey<
+export const ItemKey = Symbol('item') as InjectionKey<
   Ref<ReturnType<typeof IronswornItem.prototype.toObject>>
 >

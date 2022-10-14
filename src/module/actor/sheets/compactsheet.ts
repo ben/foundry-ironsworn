@@ -9,7 +9,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
         'ironsworn',
         'sheet',
         'actor',
-        `theme-${IronswornSettings.theme}`,
+        `theme-${IronswornSettings.get('theme')}`,
       ],
       width: 560,
       height: 210,
@@ -50,7 +50,9 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     if (!this.actor.moveSheet) {
       this.actor.moveSheet ||= new SFCharacterMoveSheet(
         this.actor,
-        IronswornSettings.toolbox === 'starforged' ? 'starforged' : 'ironsworn',
+        IronswornSettings.get('toolbox') === 'starforged'
+          ? 'starforged'
+          : 'ironsworn',
         { left: 755 }
       )
     }
@@ -84,8 +86,10 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     value += amt
     if (value >= min && value <= max) {
       this.actor.update({ data: { [stat]: value } })
-      if (stat === 'supply') {
-        IronswornSettings.maybeSetGlobalSupply(value)
+      if (stat === 'supply' && IronswornSettings.get('shared-supply')) {
+        IronswornSettings.updateGlobalAttribute({
+          data: { supply: value },
+        })
       }
     }
   }

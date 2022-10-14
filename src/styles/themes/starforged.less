@@ -13,6 +13,27 @@
   --ironsworn-color-accent: orange;
   --ironsworn-color-thematic: #399;
 
+  // until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
+  // yes, i am bitter, because even safari has supported it for ~4 years at this point :)
+  // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
+  // if you wanted this + a soft shadow, just append the other shadow with a separator.
+  // generated with owumaro.github.io/text-stroke-generator/
+  @fake-stroke: var(--ironsworn-color-bg) 1px 0px 0px,
+    var(--ironsworn-color-bg) 0.540302px 0.841471px 0px,
+    var(--ironsworn-color-bg) -0.416147px 0.909297px 0px,
+    var(--ironsworn-color-bg) -0.989993px 0.14112px 0px,
+    var(--ironsworn-color-bg) -0.653644px -0.756803px 0px,
+    var(--ironsworn-color-bg) 0.283662px -0.958924px 0px,
+    var(--ironsworn-color-bg) 0.96017px -0.279416px 0px;
+
+  .hover-fx(@spread_box:5px,@spread_text:10px) {
+    &:hover {
+      box-shadow: 0 0 @spread_box @light-color;
+      color: @text-light-color;
+      text-shadow: 0 0 @spread_text @light-color;
+    }
+  }
+
   --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
   --ironsworn-color-border: var(--ironsworn-color-fg-faded);
   --ironsworn-color-border-faded: var(--ironsworn-color-midtone);

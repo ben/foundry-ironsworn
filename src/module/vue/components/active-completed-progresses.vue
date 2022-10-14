@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol">
     <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
-      <transition-group name="slide" tag="div" class="nogrow">
+      <CollapseTransition group tag="div" class="nogrow">
         <div
           class="flexrow nogrow"
           v-for="(item, i) in activeItems"
@@ -21,7 +21,7 @@
             :compact-progress="compactProgress"
           />
         </div>
-      </transition-group>
+      </CollapseTransition>
       <progress-controls :foeCompendium="foeCompendium" />
     </div>
 
@@ -37,14 +37,13 @@
           >{{ $t('IRONSWORN.Completed') }}</btn-faicon
         >
       </h3>
-      <transition
-        name="slide"
+      <CollapseTransition
         tag="div"
         class="nogrow completed"
         style="margin: 0; padding: 0"
       >
         <div v-if="data.expandCompleted">
-          <transition-group name="slide" tag="div" class="nogrow">
+          <CollapseTransition tag="div" class="nogrow" group>
             <div
               class="flexrow"
               v-for="(item, i) in completedItems"
@@ -63,9 +62,9 @@
                 :compact-progress="compactProgress"
               />
             </div>
-          </transition-group>
+          </CollapseTransition>
         </div>
-      </transition>
+      </CollapseTransition>
     </div>
   </div>
 </template>
@@ -93,13 +92,6 @@ h3 {
     text-align: center;
   }
 }
-.slide-enter-active,
-.slide-leave-active {
-  max-height: 106px;
-  &.completed {
-    max-height: 400px;
-  }
-}
 </style>
 
 <script setup lang="ts">
@@ -113,6 +105,7 @@ import { IronswornSettings } from '../../helpers/settings'
 import { compact } from 'lodash'
 import { IronswornItem } from '../../item/item'
 import { ProgressDataProperties } from '../../item/itemtypes'
+import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{
   exclude?: string

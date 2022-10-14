@@ -3,7 +3,6 @@
     class="nogrow asset-category"
     v-for="category in data.categories"
     :key="category.title"
-    :style="`--transition-max-height: ${category.maxHeight}px`"
   >
     <h2 class="flexrow">
       <BtnFaicon
@@ -16,7 +15,7 @@
       </BtnFaicon>
     </h2>
 
-    <Transition name="slide">
+    <CollapseTransition>
       <div v-if="category.expanded">
         <section
           class="asset-category-contents"
@@ -35,28 +34,24 @@
 
           <AssetBrowserCard
             :df="asset.df"
-            :foundry-item="(asset.foundryItem as any)"
+            :foundry-item="asset.foundryItem"
             v-for="asset in category.assets"
-            :key="asset.foundryItem.id ?? ''"
-            class="flexcol nogrow movesheet-row"
+            :key="asset.foundryItem()?.id ?? ''"
+            class="nogrow movesheet-row"
           />
         </section>
       </div>
-    </Transition>
+    </CollapseTransition>
   </section>
 </template>
 
 <style lang="less" scoped>
-.slide-enter-active,
-.slide-leave-active {
-  max-height: var(--transition-max-height);
-}
-
 h2 {
   margin: 0;
   line-height: 1.5;
   border: none;
   height: min-content;
+
   button {
     line-height: 1.5;
     height: min-content;
@@ -85,6 +80,7 @@ import { provide, reactive } from 'vue'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
+import CollapseTransition from './components/transition/collapse-transition.vue'
 import {
   createIronswornAssetTree,
   createStarforgedAssetTree,

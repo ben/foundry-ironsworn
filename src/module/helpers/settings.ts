@@ -1,7 +1,24 @@
+import { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 
 function reload() {
   window.location.reload()
+}
+
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace ClientSettings {
+    interface Values {
+      // Settings added here will be automatically typed throughout the game system.
+      'foundry-ironsworn.prompt-world-truths': boolean
+      'foundry-ironsworn.theme': 'ironsworn' | 'starforged'
+      'foundry-ironsworn.toolbox': 'ironsworn' | 'starforged' | 'sheet'
+      'foundry-ironsworn.shared-supply': boolean
+      'foundry-ironsworn.log-changes': boolean
+      'foundry-ironsworn.progress-mark-animation': boolean
+      'foundry-ironsworn.data-version': number
+    }
+  }
 }
 
 export class IronswornSettings {
@@ -24,42 +41,34 @@ export class IronswornSettings {
       default: true,
     })
 
-    game.settings.register<'foundry-ironsworn', 'theme', string>(
-      'foundry-ironsworn',
-      'theme',
-      {
-        name: 'IRONSWORN.Settings.Theme.Name',
-        hint: 'IRONSWORN.Settings.Theme.Hint',
-        scope: 'world',
-        config: true,
-        type: String,
-        choices: {
-          ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
-          starforged: 'IRONSWORN.Settings.Theme.Starforged',
-        },
-        default: 'ironsworn',
-        onChange: reload,
-      }
-    )
+    game.settings.register('foundry-ironsworn', 'theme', {
+      name: 'IRONSWORN.Settings.Theme.Name',
+      hint: 'IRONSWORN.Settings.Theme.Hint',
+      scope: 'world',
+      config: true,
+      type: String,
+      choices: {
+        ironsworn: 'IRONSWORN.Settings.Theme.Ironsworn',
+        starforged: 'IRONSWORN.Settings.Theme.Starforged',
+      },
+      default: 'ironsworn',
+      onChange: reload,
+    })
 
-    game.settings.register<'foundry-ironsworn', 'toolbox', string>(
-      'foundry-ironsworn',
-      'toolbox',
-      {
-        name: 'IRONSWORN.Settings.Tools.Name',
-        hint: 'IRONSWORN.Settings.Tools.Hint',
-        scope: 'world',
-        config: true,
-        type: String,
-        choices: {
-          sheet: 'IRONSWORN.Settings.Tools.Sheet',
-          ironsworn: 'IRONSWORN.Ironsworn',
-          starforged: 'IRONSWORN.Starforged',
-        },
-        default: 'sheet',
-        onChange: reload,
-      }
-    )
+    game.settings.register('foundry-ironsworn', 'toolbox', {
+      name: 'IRONSWORN.Settings.Tools.Name',
+      hint: 'IRONSWORN.Settings.Tools.Hint',
+      scope: 'world',
+      config: true,
+      type: String,
+      choices: {
+        sheet: 'IRONSWORN.Settings.Tools.Sheet',
+        ironsworn: 'IRONSWORN.Ironsworn',
+        starforged: 'IRONSWORN.Starforged',
+      },
+      default: 'sheet',
+      onChange: reload,
+    })
 
     game.settings.register('foundry-ironsworn', 'shared-supply', {
       name: 'IRONSWORN.Settings.SharedSupply.Name',
@@ -68,6 +77,7 @@ export class IronswornSettings {
       config: true,
       type: Boolean,
       default: true,
+      onChange: reload,
     })
 
     game.settings.register('foundry-ironsworn', 'log-changes', {
@@ -79,11 +89,7 @@ export class IronswornSettings {
       default: true,
     })
 
-    game.settings.register<
-      'foundry-ironsworn',
-      'progress-mark-animation',
-      boolean
-    >('foundry-ironsworn', 'progress-mark-animation', {
+    game.settings.register('foundry-ironsworn', 'progress-mark-animation', {
       name: 'IRONSWORN.Settings.ProgressMarkAnimation.Name',
       hint: 'IRONSWORN.Settings.ProgressMarkAnimation.Hint',
       scope: 'client',
@@ -100,18 +106,19 @@ export class IronswornSettings {
       default: 1,
     })
   }
-
-  static get theme(): string {
-    return game.settings.get('foundry-ironsworn', 'theme') as string
-  }
-
-  static get toolbox(): string {
-    return game.settings.get('foundry-ironsworn', 'toolbox') as string
+  /**
+   * Wraps {@link game.settings.get} (within the `foundry-ironsworn` scope) to ensure that Vue always gets the updated value.
+   * @param key The key of the setting within the `foundry-ironsworn` scope.
+   */
+  static get<K extends string>(
+    key: K
+  ): ClientSettings.Values[`foundry-ironsworn.${K}`] {
+    return game.settings.get('foundry-ironsworn', key)
   }
 
   static get starforgedToolsEnabled(): boolean {
-    if (this.toolbox === 'ironsworn') return false
-    if (this.toolbox === 'starforged') return true
+    if (this.get('toolbox') === 'ironsworn') return false
+    if (this.get('toolbox') === 'starforged') return true
 
     // Set to "match sheet, so check the sheet"
     const sheetClasses = game.settings.get('core', 'sheetClasses') as any
@@ -120,32 +127,21 @@ export class IronswornSettings {
     )
   }
 
-  static get logCharacterChanges(): boolean {
-    return !!game.settings.get('foundry-ironsworn', 'log-changes')
-  }
-
-  static async maybeSetGlobalSupply(value: number) {
-    if (!game.settings.get('foundry-ironsworn', 'shared-supply')) return
-
+  /**
+   * Upddate all actors of the provided types with a single data object.
+   * @param data The data to pass to each actor's `update()` method.
+   * @param actorTypes The subtypes of actor to apply the change to.
+   */
+  static async updateGlobalAttribute(
+    data: Record<string, unknown>,
+    actorTypes: IronswornActor['type'][] = ['character', 'shared']
+  ) {
     const actorsToUpdate =
-      game.actors?.contents.filter((x) =>
-        ['character', 'shared'].includes(x.data.type)
-      ) || []
+      game.actors?.contents.filter((x) => actorTypes.includes(x.data.type)) ||
+      []
+    // FIXME: Document.updateDocuments might make more sense here?
     for (const actor of actorsToUpdate) {
-      await actor.update({ data: { supply: value } }, {
-        suppressLog: true,
-      } as any)
-    }
-  }
-
-  static async maybeSetGlobalCondition(name: string, value: boolean) {
-    const actorsToUpdate =
-      game.actors?.contents.filter((x) =>
-        ['character', 'starship'].includes(x.data.type)
-      ) || []
-    console.log(actorsToUpdate)
-    for (const actor of actorsToUpdate) {
-      await actor.update({ data: { debility: { [name]: value } } }, {
+      await actor.update(data, {
         suppressLog: true,
       } as any)
     }
