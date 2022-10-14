@@ -4,8 +4,6 @@
 
 ## 1.18.8
 
-## 1.18.7
-
 - Fix the "liveness" of the Foe sheet
 
 ## 1.18.6

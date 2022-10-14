@@ -6,11 +6,6 @@
     :data-id="foundryItem().id"
     :data-document-id="foundryItem().id"
     :class="{ [`asset-${toolset}`]: true }"
-    :style="
-      data.data.color
-        ? `--ironsworn-color-thematic: ${data.data.color}`
-        : undefined
-    "
     @dragstart="dragStart"
   >
     <header class="asset-header nogrow flexrow">
@@ -102,6 +97,7 @@
   justify-content: flex-start;
   margin: 10px 0;
   padding: 5px;
+  --ironsworn-color-thematic: v-bind('data.data.color');
 }
 </style>
 
