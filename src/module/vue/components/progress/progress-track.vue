@@ -49,9 +49,10 @@
     display: flex;
     flex-flow: row nowrap;
     .progress-track-box {
+      border-style: solid;
+      border-color: currentColor;
       border-width: var(--ironsworn-border-width);
       flex-basis: 10%;
-      border: @box_border_width solid currentColor;
       .progress-tick {
         // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
         vector-effect: non-scaling-stroke;
