@@ -79,7 +79,7 @@
     grid-column: 1 / span 2;
     grid-row: 2 / span 2;
     // FIXME this is a bit of a kluge to ensure that the xp pips match up with the boxes, but should be relatively stable with the size of the. ultimately, tho, it'd be better to have this be laid out automatically, probably with display:contents to destructure the track elements
-    max-width: @max_track_width;
+    // max-width: @max_track_width;
   }
   --max_xp_box_width: 15px;
   --progress_box_gap: 4px;
