@@ -1,14 +1,22 @@
+.textInputForeground {
+  font-family: var(--font-primary);
+  font-size: inherit;
+  color: var(--ironsworn-color-fg);
+}
+.textInputBackground {
+  background: var(--ironsworn-color-bg-faded);
+  border-color: var(--ironsworn-color-border-faded);
+  border-radius: var(--ironsworn-border-radius-sm);
+  border-width: var(--ironsworn-border-width);
+  border-style: var(--ironsworn-border-style);
+}
+
 .ironsworn {
   select,
   input,
   textarea {
-    font-family: var(--font-primary);
-    font-size: inherit;
-    background: var(--ironsworn-color-bg-faded);
-    color: var(--ironsworn-color-fg);
-    border-color: var(--ironsworn-color-border-faded);
-    border-radius: var(--ironsworn-border-radius-sm);
-    border-width: var(--ironsworn-border-width);
+    .textInputForeground();
+    .textInputBackground();
   }
 
   input,

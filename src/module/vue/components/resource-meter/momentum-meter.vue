@@ -15,7 +15,7 @@
   >
     <template #label>
       <BtnMomentumburn
-        class="text"
+        class="click-text"
         :class="{ vertical: sliderStyle === 'vertical' }"
         :tooltip="
           $t('IRONSWORN.BurnMomentumAndResetTo', {
@@ -61,8 +61,8 @@ const props = withDefaults(
   defineProps<{
     sliderStyle?: 'horizontal' | 'vertical'
     labelPosition?: 'right' | 'left'
-    fillColorHover: string
-    fillColorSelected: string
+    fillColorHover?: string
+    fillColorSelected?: string
   }>(),
   { sliderStyle: 'vertical', labelPosition: 'left' }
 )

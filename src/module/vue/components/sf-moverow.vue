@@ -8,10 +8,10 @@
     <h4 class="flexrow">
       <BtnRollmove
         :disabled="!canRoll"
-        class="juicy click-text nogrow"
+        class="juicy nogrow click-text"
         :move="move"
       />
-      <span class="" @click="data.expanded = !data.expanded">
+      <span class="click-text" @click="data.expanded = !data.expanded">
         {{ move?.displayName }}
       </span>
     </h4>
@@ -65,6 +65,10 @@ h4 {
 }
 .move-summary-buttons {
   gap: 0.5rem;
+  > * {
+    border-width: var(--ironsworn-border-width);
+    border-style: var(--ironsworn-border-style);
+  }
 }
 .movesheet-row {
   transition: all 0.4s ease;

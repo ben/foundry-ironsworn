@@ -20,12 +20,12 @@
       </button>
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
-          class="nogrow"
+          class="nogrow click-text"
           v-if="editMode"
           icon="trash"
           @click="destroy"
         />
-        <btn-faicon class="nogrow" icon="edit" @click="edit" />
+        <btn-faicon class="nogrow click-text" icon="edit" @click="edit" />
       </div>
     </header>
 

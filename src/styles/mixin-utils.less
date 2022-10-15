@@ -9,73 +9,6 @@
     @color -0.653644px -0.756803px 0px, @color 0.283662px -0.958924px 0px,
     @color 0.96017px -0.279416px 0px;
 }
-.btn-block {
-  background-color: var(--ironsworn-color-btn-bg-enabled);
-  color: var(--ironsworn-color-btn-fg-enabled);
-  border-width: var(--ironsworn-border-width);
-  position: relative;
-  transition: var(--transition-general);
-  &.selected,
-  &[aria-selected='true'] {
-    color: var(--ironsworn-color-btn-fg-selected);
-    border-color: var(--ironsworn-color-btn-border-selected);
-    background-color: var(--ironsworn-color-btn-bg-selected);
-  }
-  &.hover,
-  &:hover {
-    color: var(--ironsworn-color-btn-fg-hover);
-    background-color: var(--ironsworn-color-btn-bg-hover);
-    border-color: var(--ironsworn-color-btn-border-hover);
-  }
-}
-
-.clickable-common {
-  color: var(--ironsworn-color-btn-fg-enabled);
-  cursor: pointer;
-  border-color: var(--ironsworn-color-btn-border-enabled);
-  z-index: 1;
-  &.hover,
-  &:hover,
-  &.selected,
-  &[aria-selected='true'] {
-    z-index: 2;
-  }
-  &.disabled, // FIXME: ditch this class, its redundant with more semantic options
-    &:disabled,
-    &[aria-disabled="true"] {
-    // color: var(--ironsworn-color-widget-text-enabled);
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.5;
-  }
-}
-.click-text {
-  justify-content: flex-start;
-  cursor: pointer;
-  &.selected,
-  &[aria-selected='true'] {
-    color: var(--ironsworn-color-btn-fg-selected);
-    border-color: var(--ironsworn-color-btn-border-selected);
-    background-color: var(--ironsworn-color-btn-bg-selected);
-  }
-}
-
-.dialog .dialog-buttons button {
-  .btn-block();
-}
-
-.dialog .dialog-buttons button.default {
-  border-width: var(--ironsworn-border-width);
-  background-color: var(--ironsworn-color-widget-fill-enabled);
-  border-color: var(--ironsworn-color-border-highlight);
-}
-
-details {
-  > summary {
-    // .clickable-common();
-    .click-text();
-  }
-}
 
 .ironsworn .dialog-content {
   border-color: var(--ironsworn-color-border);
@@ -98,6 +31,10 @@ details {
   &::first-letter {
     text-transform: uppercase;
   }
+}
+
+.button-text {
+  .initial-caps();
 }
 
 // layout mixins

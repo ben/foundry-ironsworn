@@ -4,7 +4,6 @@
 @import 'chat-messages.less';
 @import 'compact-sheet.less';
 @import 'dialogs.less';
-@import 'editor.less';
 @import 'forms.less';
 @import 'icons.less';
 @import 'item-list.less';
@@ -142,22 +141,20 @@
   --ironsworn-dice-background: #afafaf;
 }
 
-.ironsworn {
+.ironsworn.window-app {
   font-family: var(--font-primary);
-  color: var(--ironsworn-color-fg);
-  border-color: var(--ironsworn-color-border);
 
   .window-content {
     background: var(--ironsworn-color-bg);
     background-image: none;
     color: var(--ironsworn-color-fg);
+    border-color: var(--ironsworn-color-border);
   }
 
   .app {
     color: var(--ironsworn-color-fg);
   }
 
-  .window-app,
   .journal-entry .journal-entry-content {
     background: initial;
     background-color: var(--ironsworn-color-bg);

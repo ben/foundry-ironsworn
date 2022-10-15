@@ -13,7 +13,7 @@
           {{ node?.displayName }}
         </BtnOracle>
         <BtnFaicon
-          class="btn-block nogrow show-oracle-info"
+          class="click-text nogrow show-oracle-info"
           icon="eye"
           @click="toggleDescription()"
         />

@@ -28,7 +28,7 @@
   .advanced-roll-options-toggle {
   }
 
-  &.dialog .dialog-buttons button {
+  &.dialog .dialog-buttons button.dialog-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -37,6 +37,9 @@
       .initial-caps();
       width: max-content;
       height: max-content;
+      &::first-letter {
+        text-transform: uppercase;
+      }
     }
 
     i {

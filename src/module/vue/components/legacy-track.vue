@@ -12,13 +12,13 @@
           {{ overflowLabel }}
         </span>
         <BtnFaicon
-          class="nogrow"
+          class="nogrow click-text"
           v-if="editMode"
           icon="caret-left"
           @click="decrease"
         />
         <BtnFaicon
-          class="nogrow"
+          class="nogrow click-text"
           icon="caret-right"
           @click="increase"
           :data-tooltip="markTooltip"

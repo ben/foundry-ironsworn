@@ -18,7 +18,7 @@
         v-if="labelPosition != 'none'"
         tabindex="0"
         :documentType="documentType"
-        class="text"
+        class="click-text"
         :class="{ vertical: sliderStyle === 'vertical' }"
         :attr="attr"
         :statLabel="statLabel"

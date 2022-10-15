@@ -10,12 +10,12 @@
         />
         <h4>{{ rankText }}</h4>
         <BtnFaicon
-          class="btn-block nogrow"
+          class="click-text nogrow"
           icon="trash"
           @click="clearProgress"
         />
         <BtnFaicon
-          class="btn-block nogrow"
+          class="click-text nogrow"
           icon="caret-right"
           @click="markProgress"
         />
