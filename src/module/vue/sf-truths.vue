@@ -15,7 +15,7 @@
     </div>
 
     <hr />
-    <BtnFaicon class="block" icon="feather" @click="saveTruths">
+    <BtnFaicon class="btn-block" icon="feather" @click="saveTruths">
       {{ $t('IRONSWORN.SaveYourTruths') }}
     </BtnFaicon>
   </div>

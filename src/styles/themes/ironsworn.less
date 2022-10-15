@@ -1,2 +1,19 @@
-body.theme-ironsworn {
+.theme-ironsworn {
+  // VARS BY TARGET: BUTTONS
+  --ironsworn-color-btn-fg-enabled: var(--ironsworn-color-fg);
+  --ironsworn-color-btn-bg-enabled: var(--ironsworn-color-bg);
+  --ironsworn-color-btn-border-enabled: var(--ironsworn-color-fg);
+  // inverts FG/BG colours when selected
+  --ironsworn-color-btn-fg-selected: white;
+  --ironsworn-color-btn-bg-selected: black;
+  --ironsworn-color-btn-border-selected: black;
+  --ironsworn-color-btn-fg-hover: white;
+  --ironsworn-color-btn-bg-hover: #999;
+  --ironsworn-color-btn-border-hover: black;
+
+  --ironsworn-color-btn-fg-active: var(--ironsworn-color-widget-text-enabled);
+  --ironsworn-color-btn-bg-active: var(--ironsworn-color-widget-fill-enabled);
+  --ironsworn-color-btn-border-active: var(
+    --ironsworn-color-widget-stroke-enabled
+  );
 }

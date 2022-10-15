@@ -26,7 +26,7 @@
     <div class="flexrow boxrow nogrow" v-if="editMode">
       <btn-faicon
         icon="plus"
-        class="box block"
+        class="box btn-block"
         @click="addField"
         style="min-height: 1.5rem; align-items: center"
       />

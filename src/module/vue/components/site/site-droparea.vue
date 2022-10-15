@@ -19,8 +19,8 @@
           v-if="editMode"
           style="position: absolute; right: 5px; top: 5px"
         >
-          <btn-faicon class="block" icon="trash" @click="destroy" />
-          <btn-faicon class="block" icon="edit" @click="edit" />
+          <btn-faicon class="btn-block" icon="trash" @click="destroy" />
+          <btn-faicon class="btn-block" icon="edit" @click="edit" />
         </div>
       </div>
     </div>
@@ -31,7 +31,7 @@
         <btn-compendium
           :compendium="compendiumKey"
           style="padding: 0 2em"
-          class="inset block"
+          class="inset btn-block"
           >{{ $t('IRONSWORN.OpenCompendium') }}</btn-compendium
         >
       </div>

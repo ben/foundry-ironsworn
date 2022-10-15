@@ -46,13 +46,13 @@
             />
             <h4>{{ rankText }}</h4>
             <BtnFaicon
-              class="block nogrow"
+              class="btn-block nogrow"
               v-if="editMode"
               icon="trash"
               @click="clearProgress"
             />
             <BtnFaicon
-              class="block nogrow"
+              class="btn-block nogrow"
               icon="caret-right"
               @click="markProgress"
             />

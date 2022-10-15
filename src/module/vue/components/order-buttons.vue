@@ -3,13 +3,13 @@
     <!-- TODO: replace with better disabled attr? either aria-disabled or disabled attr -->
     <BtnFaicon
       icon="caret-up"
-      class="block nogrow"
+      class="btn-block nogrow"
       :class="{ disabled: i == 0 }"
       @click="$emit('sortUp', i)"
     ></BtnFaicon>
     <BtnFaicon
       icon="caret-down"
-      class="block nogrow"
+      class="btn-block nogrow"
       :class="{ disabled: i == length - 1 }"
       @click="$emit('sortDown', i)"
     ></BtnFaicon>

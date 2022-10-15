@@ -6,19 +6,16 @@
   >
     <h4>{{ $t(i18nKey) }}</h4>
     <div class="flexrow">
-      <div class="clickable text" v-if="editMode" @click="decrement">
-        &minus;
-      </div>
+      <div class="click-text" v-if="editMode" @click="decrement">&minus;</div>
       <h4>{{ actor.data[attr] }}</h4>
-      <div class="clickable text" v-if="editMode" @click="increment">
-        &plus;
-      </div>
+      <div class="click-text" v-if="editMode" @click="increment">&plus;</div>
     </div>
   </div>
 </template>
 
 <style lang="less" scoped>
 .stat {
+  cursor: pointer;
   & > * {
     position: relative; // must be set to manipulate z-index
     z-index: 1;
@@ -51,9 +48,9 @@ const actor = inject(ActorKey) as Ref<
 >
 
 const classes = computed(() => ({
+  'attr-box': true,
   stat: true,
-  block: true,
-  clickable: !editMode.value,
+  'btn-block': true,
   'isiconbg-d10-tilt': !editMode.value,
 }))
 const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)

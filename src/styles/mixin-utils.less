@@ -1,79 +1,67 @@
-.clickable-block {
-  background-color: var(--ironsworn-color-widget-fill-enabled);
-  border-color: var(--ironsworn-color-border);
+// until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
+// yes, i am bitter, because even safari has supported it for ~4 years at this point :)
+// in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
+// if you wanted this + a soft shadow, just append the other shadow(s) separated by a space.
+// generated with owumaro.github.io/text-stroke-generator/
+.fakeStroke(@color: var(--ironsworn-color-bg)) {
+  text-shadow: @color 1px 0px 0px, @color 0.540302px 0.841471px 0px,
+    @color -0.416147px 0.909297px 0px, @color -0.989993px 0.14112px 0px,
+    @color -0.653644px -0.756803px 0px, @color 0.283662px -0.958924px 0px,
+    @color 0.96017px -0.279416px 0px;
+}
+.btn-block {
+  background-color: var(--ironsworn-color-btn-bg-enabled);
+  color: var(--ironsworn-color-btn-fg-enabled);
   border-width: var(--ironsworn-border-width);
+  position: relative;
+  transition: var(--transition-general);
   &.selected,
   &[aria-selected='true'] {
-    color: var(---ironsworn-color-widget-text-selected);
-    border-color: var(--ironsworn-color-widget-stroke-selected);
-    background-color: var(--ironsworn-color-widget-fill-selected);
+    color: var(--ironsworn-color-btn-fg-selected);
+    border-color: var(--ironsworn-color-btn-border-selected);
+    background-color: var(--ironsworn-color-btn-bg-selected);
   }
   &.hover,
   &:hover {
-    background-color: var(--ironsworn-color-widget-fill-hover);
+    color: var(--ironsworn-color-btn-fg-hover);
+    background-color: var(--ironsworn-color-btn-bg-hover);
+    border-color: var(--ironsworn-color-btn-border-hover);
   }
 }
 
 .clickable-common {
-  color: var(--ironsworn-color-widget-text-enabled);
-  transition: var(--transition-general);
+  color: var(--ironsworn-color-btn-fg-enabled);
   cursor: pointer;
-  border-color: var(--ironsworn-color-widget-stroke-enabled);
-  z-index: 10;
+  border-color: var(--ironsworn-color-btn-border-enabled);
+  z-index: 1;
   &.hover,
   &:hover,
   &.selected,
   &[aria-selected='true'] {
-    z-index: 100;
+    z-index: 2;
   }
   &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
     &[aria-disabled="true"] {
-    color: var(--ironsworn-color-widget-text-enabled);
+    // color: var(--ironsworn-color-widget-text-enabled);
     cursor: not-allowed;
     pointer-events: none;
     opacity: 0.5;
   }
 }
-.clickable-text {
+.click-text {
   justify-content: flex-start;
+  cursor: pointer;
   &.selected,
   &[aria-selected='true'] {
-    color: var(---ironsworn-color-widget-text-selected);
-    border-color: var(--ironsworn-color-widget-stroke-selected);
-    background-color: var(--ironsworn-color-widget-fill-selected);
+    color: var(--ironsworn-color-btn-fg-selected);
+    border-color: var(--ironsworn-color-btn-border-selected);
+    background-color: var(--ironsworn-color-btn-bg-selected);
   }
 }
 
-// margin/border mixins
-
-.clickable-hover {
-  position: relative;
-  &.hover,
-  &:hover {
-    color: var(---ironsworn-color-widget-text-hover);
-    border-color: var(--ironsworn-color-widget-stroke-hover);
-  }
-}
-
-button {
-}
-
-.dialog .dialog-buttons button,
-.clickable {
-  .clickable-common();
-}
-
-.dialog .dialog-buttons button,
-.clickable.block {
-  .clickable-block();
-  .clickable-hover();
-}
-
-.dialog .dialog-buttons button,
-.clickable.text {
-  .clickable-text();
-  .clickable-hover();
+.dialog .dialog-buttons button {
+  .btn-block();
 }
 
 .dialog .dialog-buttons button.default {
@@ -84,9 +72,8 @@ button {
 
 details {
   > summary {
-    .clickable-common();
-    .clickable-text();
-    .clickable-hover();
+    // .clickable-common();
+    .click-text();
   }
 }
 

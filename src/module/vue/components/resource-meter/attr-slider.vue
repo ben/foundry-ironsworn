@@ -26,6 +26,8 @@
       :segmentClass="segmentClass"
       @change="onChange"
       :read-only="readOnly"
+      :fillColorHover="fillColorHover"
+      :fillColorSelected="fillColorSelected"
     >
     </SliderBar>
   </article>
@@ -93,7 +95,6 @@
 /**
  * A slider that controls the value of an attribute.
  */
-import { Document } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/module.mjs.js'
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { computed } from 'vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
@@ -127,6 +128,9 @@ const props = withDefaults(
      */
     segmentClass?: Record<number, any>
     readOnly?: boolean
+
+    fillColorHover?: string
+    fillColorSelected?: string
   }>(),
   {
     global: false,

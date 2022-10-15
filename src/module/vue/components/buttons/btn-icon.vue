@@ -2,7 +2,7 @@
 <!-- the default value for a button element's type is "submit", which refreshes the page; "type=button" obviates the need for preventing the submit action with JS. -->
 <template>
   <button
-    class="icon-button clickable"
+    class="icon-button"
     type="button"
     :tooltip="tooltip"
     :aria-label="tooltip"
@@ -19,7 +19,10 @@
 <script setup lang="ts">
 import { computed, useSlots } from '@vue/runtime-core'
 
-defineProps<{ tooltip?: string; disabled?: boolean }>()
+defineProps<{
+  tooltip?: string
+  disabled?: boolean
+}>()
 // so the span can be omitted if there's no slot content
 const hasDefaultSlot = computed(() => {
   return !!useSlots().default?.()[0].children?.length
@@ -34,11 +37,16 @@ const hasDefaultSlot = computed(() => {
   align-items: center;
   align-content: center;
   padding: 0.2em;
+  &[disabled='true'],
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
   &:not(:empty) {
     gap: 0.2em;
   }
   &:empty,
-  &.block {
+  &.btn-block {
     text-align: center;
     justify-content: center;
   }

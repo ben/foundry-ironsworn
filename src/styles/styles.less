@@ -53,18 +53,18 @@
   --ironsworn-background-image: none;
 
   // VARS BY TARGET: BASIC
-  --ironworn-color-fg: black;
+  --ironsworn-color-fg: black;
   // lightness between 'mid' and fg'
   --ironsworn-color-fg-faded: #888;
   // lightness roughly halfway between 'fg' and 'bg'
   --ironsworn-color-midtone: darkgray;
   // lightness between 'mid' and 'bg'
-  --ironsworn-color-bg-faded: #ccc;
+  --ironsworn-color-bg-faded: #eee;
   --ironsworn-color-bg: white;
   --ironsworn-color-bg-highlight: palegoldenrod;
 
   // VARS BY TARGET: BORDERS
-  --ironsworn-color-border: var(--ironworn-color-fg);
+  --ironsworn-color-border: var(--ironsworn-color-fg);
   --ironsworn-color-border-faded: var(--ironsworn-color-midtone);
   --ironsworn-border-style: solid;
   --ironsworn-border-width: 1px;
@@ -88,8 +88,8 @@
   --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg);
   // hover can be thought of as a "preview" of select, so this shows the 'ghost' version of the fill
   --ironsworn-color-widget-text-hover: var(--ironsworn-color-fg);
-  --ironsworn-color-widget-fill-hover: var(--ironsworn-color-bg-faded);
-  --ironsworn-color-widget-stroke-hover: var(--ironsworn-color-bg-faded);
+  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-bg-faded);
+  --ironsworn-color-widget-stroke-hover: var(--ironsworn-color-fg);
 
   --ironsworn-color-widget-text-active: var(
     --ironsworn-color-widget-text-enabled
@@ -228,13 +228,17 @@ each(@fillTypes, {
   .continuous-@{value}-segment {
     z-index: 1;
     &:hover, &[aria-selected=true], &.selected {
-      z-index: 100;
+      z-index: 2;
     }
   }
 
 
   &:not(:hover) {
     .continuous-@{value}-segment {
+      stroke: var(--ironsworn-color-widget-stroke-selected);
+      border-color: $stroke;
+      @{value}: var(--ironsworn-color-widget-fill-selected);
+      color: var(--ironsworn-color-widget-text-selected);
       &[aria-selected='true'] {
         ~ .continuous-@{value}-segment {
           // 👆 this is what does the work:  ~ , the subsequent sibling selector. there s no previous sibling selector, hence the fill being subtractive.
@@ -245,10 +249,8 @@ each(@fillTypes, {
         }
       }
     }
-  }
   &[aria-valuenow='0'] {
     // ensures the correct fill when there s no selected segment
-    &:not(:hover) {
       .continuous-@{value}-segment {
         @{value}: var(--ironsworn-color-widget-fill-enabled);
         stroke: var(--ironsworn-color-widget-stroke-enabled);
@@ -257,6 +259,7 @@ each(@fillTypes, {
       }
     }
   }
+
   &:hover {
     .continuous-@{value}-segment {
       // same principle as without a hover: everything gets the hover style, and it s removed from everything after the selected item
@@ -278,3 +281,7 @@ each(@fillTypes, {
 }
 
 });
+
+.window-resizable-handle {
+  z-index: 3;
+}

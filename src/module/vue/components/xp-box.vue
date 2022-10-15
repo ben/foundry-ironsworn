@@ -10,8 +10,6 @@ const props = defineProps<{ value: number; current: number }>()
 
 const classes = computed(() => {
   return {
-    clickable: true,
-    block: true,
     'xp-box': true,
     selected: selected.value,
   }

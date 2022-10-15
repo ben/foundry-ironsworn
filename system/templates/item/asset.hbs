@@ -27,12 +27,12 @@
           <input class="attribute-value ironsworn__field__value" data-idx="{{@index}}" type="text" value="{{value}}" />
         </div>
       </div>
-      <div class="block clickable item-row-control ironsworn__field__delete" data-idx="{{@index}}">
+      <div class="btn-block item-row-control ironsworn__field__delete" data-idx="{{@index}}">
         <i class="fas fa-trash"></i>
       </div>
     </div>
     {{/each}}
-    <div class="block clickable ironsworn__field__add" style="padding: 5px; text-align: center;">
+    <div class="btn-block ironsworn__field__add" style="padding: 5px; text-align: center;">
       <i class="fas fa-plus"></i>
     </div>
   </div>
@@ -62,12 +62,12 @@
     <input type="checkbox" class="ironsworn__option__enable" data-idx="{{@index}}" {{checked selected}}
       style="flex-grow: 0;" />
     <input class="attribute-value ironsworn__option__name" data-idx="{{@index}}" type="text" value="{{name}}" />
-    <div class="block nogrow clickable item-row-control ironsworn__option__delete" data-idx="{{@index}}">
+    <div class="block nogrow item-row-control ironsworn__option__delete" data-idx="{{@index}}">
       <i style="padding: 5px;" class="fas fa-trash"></i>
     </div>
   </div>
   {{/each}}
-  <div class="block clickable ironsworn__option__add" style="padding: 5px; text-align: center;">
+  <div class="btn-block ironsworn__option__add" style="padding: 5px; text-align: center;">
     <i class="fas fa-plus"></i>
   </div>
 
@@ -84,7 +84,7 @@
   </div>
   <div class="flexrow track" style="margin-top: 5px;">
     {{#rangeEach from=0 to=data.data.track.max current=data.data.track.current}}
-    <div class="track-box clickable block track-target
+    <div class="track-box btn-block track-target
             {{#if isCurrent}} selected {{/if}}
         " data-value={{value}}>
       {{value}}

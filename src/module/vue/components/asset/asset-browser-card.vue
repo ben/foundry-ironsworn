@@ -14,13 +14,12 @@
     @dragstart="dragStart"
   >
     <header class="asset-header nogrow flexrow">
-      <i class="fa-solid fa-grip nogrow block draggable item"></i>
-
+      <i class="fa-solid fa-grip nogrow btn-block draggable item"></i>
       <button
         type="button"
         @click="state.expanded = !state.expanded"
         :aria-controls="bodyId"
-        class="clickable text asset-expand-toggle"
+        class="click-text asset-expand-toggle"
       >
         <h4 class="asset-title">
           {{ foundryItem().name }}
@@ -84,6 +83,8 @@
           :max="data.data.track.max"
           :currentValue="data.data.track.current"
           :read-only="true"
+          :fillColorHover="data.data.color"
+          :fillColorSelected="data.data.color"
         >
           <template #label>
             <label>{{ data.data.track.name }}</label>

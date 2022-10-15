@@ -2,19 +2,12 @@
 
 // TODO: mixin that contains all relevant "buttonlike" classes
 
-.btnColor() {
-  .clickable-text();
-  .clickable-hover();
-  .clickable-common();
-  color: var(--ironsworn-color-btn-fg);
-  background-color: var(--ironsworn-color-btn-bg);
-  border-color: var(--ironsworn-color-btn-border);
+.btn-icon {
 }
 
 a.entity-link,
 a.content-link {
-  .btnColor();
-  .clickable-block();
+  .btn-block();
 }
 
 form button,
@@ -27,12 +20,12 @@ button,
   border-radius: unset;
   font-family: inherit;
   cursor: pointer;
+
   &:hover,
   &:focus {
     outline: none;
     box-shadow: unset;
   }
-  .btnColor();
 }
 
 .inline-roll {

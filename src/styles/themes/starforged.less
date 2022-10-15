@@ -1,4 +1,25 @@
 @import './starforged-font.css'; // HACK to avoid import error
+@import '../mixin-utils.less';
+
+.clickableFx(@spread_box:5px,@spread_text:10px,@spread_drop:5px) {
+  transition: var(--transition-general);
+  &.selected,
+  &[aria-selected='true'] {
+    // color: var(---ironsworn-color-fg-highlight);
+  }
+  &:hover {
+    // color: var(---ironsworn-color-fg-highlight);
+    text-shadow: 0 0 @spread_text var(--ironsworn-color-fg-faded);
+    &.btn-block {
+      box-shadow: 0 0 @spread_box var(--ironsworn-color-fg-faded);
+    }
+    &:not(.btn-block) {
+      filter: drop-shadow(0 0 @spread_drop var(--ironsworn-color-fg-faded));
+      // fill: var(--ironsworn-color-widget-fill-hover);
+      // color: var(--ironsworn-color-widget-text-hover);
+    }
+  }
+}
 
 .theme-starforged {
   --font-primary: 'Carrois Gothic SC', sans-serif;
@@ -11,28 +32,6 @@
   --ironsworn-color-bg: black;
 
   --ironsworn-color-accent: orange;
-  --ironsworn-color-thematic: #399;
-
-  // until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
-  // yes, i am bitter, because even safari has supported it for ~4 years at this point :)
-  // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
-  // if you wanted this + a soft shadow, just append the other shadow with a separator.
-  // generated with owumaro.github.io/text-stroke-generator/
-  @fake-stroke: var(--ironsworn-color-bg) 1px 0px 0px,
-    var(--ironsworn-color-bg) 0.540302px 0.841471px 0px,
-    var(--ironsworn-color-bg) -0.416147px 0.909297px 0px,
-    var(--ironsworn-color-bg) -0.989993px 0.14112px 0px,
-    var(--ironsworn-color-bg) -0.653644px -0.756803px 0px,
-    var(--ironsworn-color-bg) 0.283662px -0.958924px 0px,
-    var(--ironsworn-color-bg) 0.96017px -0.279416px 0px;
-
-  .hover-fx(@spread_box:5px,@spread_text:10px) {
-    &:hover {
-      box-shadow: 0 0 @spread_box @light-color;
-      color: @text-light-color;
-      text-shadow: 0 0 @spread_text @light-color;
-    }
-  }
 
   --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
   --ironsworn-color-border: var(--ironsworn-color-fg-faded);
@@ -41,14 +40,16 @@
   --ironsworn-color-bg-highlight: var(--ironsworn-color-midtone);
 
   --ironsworn-color-widget-fill-enabled: var(--ironsworn-color-bg-faded);
-  --ironsworn-color-widget-stroke-enabled: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-stroke-enabled: var(--ironsworn-color-border);
   --ironsworn-color-widget-text-enabled: var(--ironsworn-color-border);
 
   --ironsworn-color-widget-fill-hover: var(--ironsworn-color-bg-highlight);
+
   --ironsworn-color-widget-text-hover: var(--ironsworn-color-fg-highlight);
   --ironsworn-color-widget-stroke-hover: var(--ironsworn-color-fg-highlight);
 
   --ironsworn-color-widget-fill-selected: var(--ironsworn-color-bg-highlight);
+
   --ironsworn-color-widget-text-selected: var(--ironsworn-color-fg);
   --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg);
   --ironsworn-color-bg: black;
@@ -72,28 +73,4 @@
     50% 100%,
     0 75%
   );
-
-  .clickable-fx(@spread_box:5px,@spread_text:10px,@spread_drop:5px) {
-    transition: var(--transition-general);
-    &.selected,
-    &[aria-selected='true'] {
-      color: var(---ironsworn-color-fg-highlight);
-    }
-    &:hover {
-      color: var(---ironsworn-color-fg-highlight);
-      text-shadow: 0 0 @spread_text var(--ironsworn-color-fg-faded);
-      &.block {
-        box-shadow: 0 0 @spread_box var(--ironsworn-color-fg-faded);
-      }
-      &:not(.block) {
-        filter: drop-shadow(0 0 @spread_drop var(--ironsworn-color-fg-faded));
-        fill: var(--ironsworn-color-widget-fill-hover);
-        color: var(--ironsworn-color-widget-text-hover);
-      }
-    }
-  }
-  button,
-  .clickable {
-    .clickable-fx();
-  }
 }

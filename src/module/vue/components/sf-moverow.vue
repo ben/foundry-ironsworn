@@ -8,10 +8,10 @@
     <h4 class="flexrow">
       <BtnRollmove
         :disabled="!canRoll"
-        class="juicy text nogrow"
+        class="juicy click-text nogrow"
         :move="move"
       />
-      <span class="clickable text" @click="data.expanded = !data.expanded">
+      <span class="" @click="data.expanded = !data.expanded">
         {{ move?.displayName }}
       </span>
     </h4>
@@ -24,11 +24,11 @@
       >
         <template #before-main>
           <section class="move-summary-buttons flexrow">
-            <BtnRollmove class="block" v-if="canRoll" :move="move">
+            <BtnRollmove class="btn-block" v-if="canRoll" :move="move">
               {{ $t('IRONSWORN.Roll') }}
             </BtnRollmove>
             <BtnSendmovetochat
-              class="block"
+              class="btn-block"
               :move="move"
               :data-tooltip-direction="canRoll ? 'RIGHT' : 'LEFT'"
             >

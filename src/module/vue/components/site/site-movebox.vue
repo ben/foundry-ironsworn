@@ -1,7 +1,7 @@
 <template>
   <button
     type="button"
-    class="box flexrow clickable block"
+    class="box flexrow btn-block"
     :class="{ disabled }"
     @click="click"
   >

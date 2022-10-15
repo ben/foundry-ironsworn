@@ -50,7 +50,7 @@
         </select>
         <btn-isicon
           icon="d10-tilt juicy"
-          class="block nogrow"
+          class="btn-block nogrow"
           style="
             padding: 0px 5px;
             position: absolute;
@@ -75,7 +75,7 @@
         <btn-isicon
           v-if="canRandomizeName"
           icon="d10-tilt"
-          class="btn-randomize-name juicy block nogrow"
+          class="btn-randomize-name juicy btn-block nogrow"
           :tooltip="$t('IRONSWORN.RandomName')"
           @click="randomizeName"
         />
@@ -85,7 +85,7 @@
       <div class="flexrow boxrow">
         <btn-isicon
           icon="d10-tilt"
-          class="block box"
+          class="btn-block box"
           @mouseenter="data.firstLookHighlight = true"
           @mouseleave="data.firstLookHighlight = false"
           @click="rollFirstLook"
@@ -96,7 +96,7 @@
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
         <btn-icon
           v-for="oracle of row"
-          class="block box"
+          class="btn-block box"
           :class="{
             highlighted: oracle.fl && data.firstLookHighlight,
             disabled: oracle.requiresKlass && klassIsNotValid,
@@ -157,13 +157,6 @@ label {
 }
 .box {
   padding: 7px;
-}
-.theme-starforged .highlighted {
-  background: #055;
-}
-
-.theme-ironsworn .highlighted {
-  background: #ccc;
 }
 </style>
 

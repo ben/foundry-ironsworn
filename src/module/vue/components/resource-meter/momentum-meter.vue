@@ -23,6 +23,8 @@
             resetValue: actor?.data.momentumReset,
           })
         "
+        :fillColorHover="fillColorHover"
+        :fillColorSelected="fillColorSelected"
       >
         {{ $t('IRONSWORN.Momentum') }}
       </BtnMomentumburn>
@@ -38,7 +40,9 @@
       border: 1px solid var(--color-border-highlight-alt);
       border-bottom: 1px solid var(--color-border-highlight);
       box-shadow: 0 0 10px var(--color-shadow-highlight);
-      z-index: 20;
+      z-index: 3;
+      background-color: var(--ironsworn-color-btn-bg-hover);
+      color: var(--ironsworn-color-btn-fg-hover);
     }
   }
 }
@@ -57,6 +61,8 @@ const props = withDefaults(
   defineProps<{
     sliderStyle?: 'horizontal' | 'vertical'
     labelPosition?: 'right' | 'left'
+    fillColorHover: string
+    fillColorSelected: string
   }>(),
   { sliderStyle: 'vertical', labelPosition: 'left' }
 )

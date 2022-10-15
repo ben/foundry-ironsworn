@@ -30,7 +30,7 @@
       <h3>
         <btn-faicon
           :disabled="completedItems.length === 0"
-          class="text collapse-control"
+          class="click-text collapse-control"
           :class="completedClass"
           :icon="completedCaret"
           @click="data.expandCompleted = !data.expandCompleted"

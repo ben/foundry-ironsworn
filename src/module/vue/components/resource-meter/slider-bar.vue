@@ -33,7 +33,7 @@
       v-for="segment in sliderSegments"
       :key="segment"
       type="button"
-      class="slider-segment clickable block"
+      class="slider-segment btn-block"
       :class="props.segmentClass?.[segment]"
       tabindex="-1"
       :aria-selected="segment === currentValue"
@@ -55,6 +55,10 @@
 @segment_vertical_width: 50px;
 
 .slider-bar {
+  --bg-hover: v-bind(fillColorHover ?? 'var(--ironsworn-color-btn-bg-hover)');
+  --bg-selected: v-bind(
+    fillColorSelected ?? 'var(--ironsworn-color-btn-bg-selected)'
+  );
   display: flex;
   flex-wrap: none;
   border-radius: @segment_border_radius; // so the focus effect aligns properly
@@ -66,17 +70,24 @@
     box-shadow: 0 0 6px var(--color-shadow-primary);
   }
   .slider-segment {
+    border-width: @segment_border_width;
+    border-style: var(--ironsworn-border-style);
     box-sizing: border-box;
-    border: @segment_border_width solid currentColor;
     text-align: center;
     min-width: max-content;
     line-height: @segment_line_height;
     position: relative;
     z-index: 1;
     padding: 0;
+    &[aria-selected='true'] {
+      background-color: var(--bg-selected);
+    }
+    &:hover {
+      background-color: var(--bg-hover);
+    }
     &:hover,
     &[aria-selected='true'] {
-      z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
+      z-index: 2; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
     }
   }
   &[aria-orientation='vertical'] {
@@ -156,6 +167,9 @@ const props = withDefaults(
      * ```
      */
     segmentClass?: Record<number, any>
+
+    fillColorHover?: string
+    fillColorSelected?: string
   }>(),
   {
     readOnly: false,

@@ -3,18 +3,13 @@
     class="item-row ironsworn__asset"
     :class="{ [`asset-${$actor?.toolset}`]: true }"
     :aria-expanded="expanded"
-    :style="
-      props.asset?.data?.color
-        ? `--ironsworn-color-thematic: ${props.asset?.data?.color}`
-        : undefined
-    "
   >
     <header class="asset-header nogrow flexrow">
       <button
         type="button"
         @click="toggle"
         :aria-controls="bodyId"
-        class="clickable text asset-expand-toggle"
+        class="click-text asset-expand-toggle"
       >
         <h4 class="asset-title">
           {{ asset.name }}
@@ -90,6 +85,8 @@
           :statLabel="asset.data.track.name"
           labelPosition="left"
           :read-only="false"
+          :fillColorHover="asset.data.color"
+          :fillColorSelected="asset.data.color"
         />
         <section
           class="flexcol stack nogrow"
@@ -132,7 +129,7 @@
         line-height: 1;
       }
       &:not(:hover) .asset-type {
-        color: var(--ironsworn-color-thematic);
+        color: v-bind(assetColor);
       }
       .asset-type {
         flex-grow: 0;
@@ -164,8 +161,9 @@
         flex-grow: 0;
         border-bottom-style: var(--ironsworn-border-style);
         border-bottom-width: var(--ironsworn-border-width);
-        border-bottom-color: var(--ironsworn-color-thematic);
+        border-bottom-color: v-bind(assetColor);
         .asset-field-label {
+          font-weight: normal;
           color: var(--ironsworn-color-fg-faded);
           padding: 0;
           margin: 0;
@@ -271,7 +269,7 @@
     pointer-events: none;
     content: '';
     mask-image: url(/assets/misc/hex-deco.svg);
-    background: var(--ironsworn-color-thematic);
+    background: v-bind(assetColor);
     position: absolute;
     aspect-ratio: @hex_deco_aspect_ratio;
     z-index: 1;
@@ -331,6 +329,8 @@ const foundryItem = $actor
 provide($ItemKey, foundryItem)
 
 const bodyId = computed(() => `asset-body-${props.asset?._id}`)
+
+const assetColor = computed(() => props.asset.data.color)
 
 const expanded = computed(() => {
   return props.asset?.flags['foundry-ironsworn']?.expanded || false
