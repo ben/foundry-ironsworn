@@ -52,12 +52,8 @@
       "caption": "Ironsworn & Starforged"
     }
   ],
-  "esmodules": [
-    "ironsworn.js"
-  ],
-  "styles": [
-    "ironsworn.css"
-  ],
+  "esmodules": ["ironsworn.js"],
+  "styles": ["ironsworn.css"],
   "dependencies": [],
   "relationships": {
     "requires": []
@@ -68,7 +64,7 @@
       "label": "Ironsworn Foe Actors",
       "system": "foundry-ironsworn",
       "path": "packs/foe-actors-is.db",
-      "entity": "Actor",
+      "type": "Actor",
       "private": false
     },
     {
@@ -76,7 +72,7 @@
       "label": "Starforged Foe Actors",
       "system": "foundry-ironsworn",
       "path": "packs/foe-actors-sf.db",
-      "entity": "Actor",
+      "type": "Actor",
       "private": false
     },
     {
@@ -84,7 +80,7 @@
       "label": "Ironsworn Tables",
       "system": "foundry-ironsworn",
       "path": "packs/tables.db",
-      "entity": "RollTable",
+      "type": "RollTable",
       "private": false
     },
     {
@@ -92,7 +88,7 @@
       "label": "Ironsworn Oracles",
       "system": "foundry-ironsworn",
       "path": "packs/ironsworn-oracles.db",
-      "entity": "RollTable",
+      "type": "RollTable",
       "private": false
     },
     {
@@ -100,14 +96,14 @@
       "label": "Ironsworn Moves",
       "system": "foundry-ironsworn",
       "path": "packs/ironsworn-moves.db",
-      "entity": "Item"
+      "type": "Item"
     },
     {
       "name": "ironswornassets",
       "label": "Ironsworn Assets",
       "system": "foundry-ironsworn",
       "path": "packs/assets.db",
-      "entity": "Item",
+      "type": "Item",
       "private": false
     },
     {
@@ -115,7 +111,7 @@
       "label": "Ironsworn Delve Themes",
       "system": "foundry-ironsworn",
       "path": "packs/delve-themes.db",
-      "entity": "Item",
+      "type": "Item",
       "private": false
     },
     {
@@ -123,7 +119,7 @@
       "label": "Ironsworn Delve Domains",
       "system": "foundry-ironsworn",
       "path": "packs/delve-domains.db",
-      "entity": "Item",
+      "type": "Item",
       "private": false
     },
     {
@@ -131,7 +127,7 @@
       "label": "Ironsworn Foes",
       "system": "foundry-ironsworn",
       "path": "packs/foes.db",
-      "entity": "Item",
+      "type": "Item",
       "private": false
     },
     {
@@ -139,7 +135,7 @@
       "label": "Ironsworn Maps",
       "system": "foundry-ironsworn",
       "path": "packs/scenes.db",
-      "entity": "Scene",
+      "type": "Scene",
       "private": false
     },
     {
@@ -147,7 +143,7 @@
       "label": "Starforged Scenes",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-sectors.db",
-      "entity": "Scene",
+      "type": "Scene",
       "private": false
     },
     {
@@ -155,7 +151,7 @@
       "label": "Starforged Assets",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-assets.db",
-      "entity": "Item",
+      "type": "Item",
       "private": false
     },
     {
@@ -163,7 +159,7 @@
       "label": "Starforged Encounters",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-encounters.db",
-      "entity": "Item",
+      "type": "Item",
       "private": false
     },
     {
@@ -171,7 +167,7 @@
       "label": "Starforged Moves",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-moves.db",
-      "entity": "Item",
+      "type": "Item",
       "private": false
     },
     {
@@ -179,7 +175,7 @@
       "label": "Starforged Oracles",
       "system": "foundry-ironsworn",
       "path": "packs/starforged-oracles.db",
-      "entity": "RollTable",
+      "type": "RollTable",
       "private": false
     }
   ],
