@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Add human-readable labels to the dialog when creating a new item, including a nudge away from using the old `'move'` item type ([#513](https://github.com/ben/foundry-ironsworn/pull/513))
+
 ## 1.18.8
 
 - Fix the "liveness" of the Foe sheet
