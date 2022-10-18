@@ -1669,7 +1669,7 @@
   "ITEM": {
     "TypeAsset": "Asset",
     "TypeProgress": "Progress track",
-    "TypeVow": "Vow progress track",
+    "TypeVow": "(Deprecated vow type)",
     "TypeBondset": "Bondset",
     "TypeMove": "(Deprecated move type)",
     "TypeSfmove": "Move",
