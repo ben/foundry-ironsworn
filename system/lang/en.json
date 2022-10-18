@@ -1668,12 +1668,12 @@
   },
   "ITEM": {
     "TypeAsset": "Asset",
-    "TypeProgress": "Progress",
-    "TypeVow": "Vow",
+    "TypeProgress": "Progress track",
+    "TypeVow": "Vow progress track",
     "TypeBondset": "Bondset",
     "TypeMove": "(Deprecated move type)",
     "TypeSfmove": "Move",
-    "TypeDelve-theme": "Delve Theme",
-    "TypeDelve-domain": "Delve Domain"
+    "TypeDelve-theme": "Delve site theme",
+    "TypeDelve-domain": "Delve site domain"
   }
 }
