@@ -28,27 +28,37 @@
   "media": [
     {
       "type": "screenshot",
-      "url": "https://user-images.githubusercontent.com/39902/167316572-eebc577b-c8e5-425e-87ce-e03381d4b110.png",
+      "url": "https://user-images.githubusercontent.com/39902/196736998-be31c65c-808e-48af-8952-7e4f35c1cafd.jpg",
       "caption": "Ironsworn character sheet"
     },
     {
       "type": "screenshot",
-      "url": "https://user-images.githubusercontent.com/39902/167316576-9f893b96-a6f3-4e4e-9293-62e354c46768.png",
+      "url": "https://user-images.githubusercontent.com/39902/196737008-e2c3156f-5279-4bce-ba33-94feeb6a6f2d.jpg",
+      "caption": "Ironsworn gameplay"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://user-images.githubusercontent.com/39902/196737021-a49b4d3e-eb47-40c8-b56e-b4bcdd96bf03.jpg",
       "caption": "Delve site and shared sheets"
     },
     {
       "type": "screenshot",
-      "url": "https://user-images.githubusercontent.com/39902/167316584-0a3046a3-a468-4e10-9e92-7186006e6400.png",
-      "caption": "Starforged character sheet"
+      "url": "https://user-images.githubusercontent.com/39902/196737029-da568b95-cb6a-491e-99f4-eb93eb977f4b.jpg",
+      "caption": "Starforged gameplay"
     },
     {
       "type": "screenshot",
-      "url": "https://user-images.githubusercontent.com/39902/167316581-50abab85-15eb-48c7-b6b5-c3cd8e8eb53c.png",
+      "url": "https://user-images.githubusercontent.com/39902/196737036-155657a7-2e4a-4b0a-beec-f4be2b2465e2.jpg",
+      "caption": "Starforged assets and oracles"
+    },
+    {
+      "type": "screenshot",
+      "url": "https://user-images.githubusercontent.com/39902/196737041-eb274d52-ac65-4f5e-a6d5-01dac1040d5e.jpg",
       "caption": "Starforged locations"
     },
     {
       "type": "cover",
-      "url": "https://user-images.githubusercontent.com/39902/126923081-2c5e70eb-62db-44ff-9933-7b42f45a7d91.jpg",
+      "url": "https://user-images.githubusercontent.com/39902/196740415-92c25bb7-d116-4afc-a599-fc1920e143a5.jpg",
       "caption": "Ironsworn & Starforged"
     }
   ],
