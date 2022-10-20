@@ -2,7 +2,7 @@
   "name": "foundry-ironsworn",
   "id": "foundry-ironsworn",
   "title": "Ironsworn & Starforged",
-  "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkins.",
+  "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkin.",
   "license": "LICENSE.txt",
   "version": "1.18.8",
   "url": "https://github.com/ben/foundry-ironsworn",
@@ -62,8 +62,12 @@
       "caption": "Ironsworn & Starforged"
     }
   ],
-  "esmodules": ["ironsworn.js"],
-  "styles": ["ironsworn.css"],
+  "esmodules": [
+    "ironsworn.js"
+  ],
+  "styles": [
+    "ironsworn.css"
+  ],
   "dependencies": [],
   "relationships": {
     "requires": []

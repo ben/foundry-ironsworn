@@ -1665,5 +1665,15 @@
         }
       }
     }
+  },
+  "ITEM": {
+    "TypeAsset": "Asset",
+    "TypeProgress": "Progress track",
+    "TypeVow": "(Deprecated vow type)",
+    "TypeBondset": "Bondset",
+    "TypeMove": "(Deprecated move type)",
+    "TypeSfmove": "Move",
+    "TypeDelve-theme": "Delve site theme",
+    "TypeDelve-domain": "Delve site domain"
   }
 }
