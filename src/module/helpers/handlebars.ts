@@ -212,7 +212,7 @@ export class IronswornHandlebarsHelpers {
               viewbox="0 0 17.32050807568877 20"
               class="rank-pip ${
                 isFilled ? 'filled' : ''
-              }s svg ironsworn__progress__rank"
+              } svg ironsworn__progress__rank"
               data-rank="${testRank}"
               data-item="${id}"
             >
