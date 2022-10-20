@@ -1,7 +1,7 @@
 <template>
   <!-- TODO: as radio set -->
   <div
-    class="clickable block stack-row"
+    class="btn-block stack-row"
     :class="selectedClass"
     @click="$emit('click')"
   >

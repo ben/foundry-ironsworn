@@ -1,0 +1,103 @@
+// until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
+// yes, i am bitter, because even safari has supported it for ~4 years at this point :)
+// in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
+// if you wanted this + a soft shadow, just append the other shadow(s) separated by a space.
+// generated with owumaro.github.io/text-stroke-generator/
+.fakeStroke(@color: var(--ironsworn-color-bg)) {
+  text-shadow: @color 1px 0px 0px, @color 0.540302px 0.841471px 0px,
+    @color -0.416147px 0.909297px 0px, @color -0.989993px 0.14112px 0px,
+    @color -0.653644px -0.756803px 0px, @color 0.283662px -0.958924px 0px,
+    @color 0.96017px -0.279416px 0px;
+}
+
+.ironsworn .dialog-content {
+  border-color: var(--ironsworn-color-border);
+}
+
+.dialog .dialog-buttons button {
+  // TODO: integrate with icon button styling selectors
+  // probably as a mixin or something, call it flex-icon-button?
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  gap: 0.25em;
+}
+
+// typography mixins
+
+.initial-caps {
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.button-text {
+  .initial-caps();
+}
+
+// layout mixins
+
+.grid {
+  display: grid;
+}
+
+.nogrow {
+  flex-grow: 0;
+}
+
+.vertical {
+  writing-mode: vertical-lr;
+  border: none;
+  width: 1.5rem;
+
+  i {
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+}
+
+.left-margin {
+  flex: 0;
+  border-right-style: var(--ironsworn-border-style);
+  border-right-color: var(--ironsworn-color-border);
+  border-right-width: var(--ironsworn-border-width);
+  margin-right: 5px;
+  position: relative;
+}
+
+.right-margin {
+  flex: 0;
+  border-left-style: var(--ironsworn-border-style);
+  border-left-color: var(--ironsworn-color-border);
+  border-left-width: var(--ironsworn-border-width);
+  margin-left: 5px;
+  position: relative;
+}
+
+.inset {
+  border-color: var(--ironsworn-color-border-faded);
+  margin: 5px;
+  padding: 5px;
+  border-width: var(--ironsworn-border-width);
+  border-radius: var(--ironsworn-border-radius-md);
+}
+
+.boxgroup {
+  border-width: var(--ironsworn-border-width);
+  border-radius: var(--ironsworn-border-radius-xl);
+
+  .boxrow {
+    &.small {
+      flex-basis: 25px;
+      line-height: 25px;
+      flex-grow: 0;
+    }
+  }
+  .box {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+}

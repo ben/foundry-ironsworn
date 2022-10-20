@@ -10,13 +10,15 @@
     :softMax="softMax"
     :read-only="readOnly"
     :global="global"
+    :fillColorHover="fillColorHover"
+    :fillColorSelected="fillColorSelected"
   >
     <template #label>
       <BtnRollstat
         v-if="labelPosition != 'none'"
         tabindex="0"
         :documentType="documentType"
-        class="text"
+        class="click-text"
         :class="{ vertical: sliderStyle === 'vertical' }"
         :attr="attr"
         :statLabel="statLabel"
@@ -61,6 +63,9 @@ const props = withDefaults(
      */
     statLabel: string
     readOnly?: boolean
+
+    fillColorHover?: string
+    fillColorSelected?: string
   }>(),
   {
     sliderStyle: 'vertical',

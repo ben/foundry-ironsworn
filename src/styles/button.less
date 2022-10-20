@@ -1,0 +1,104 @@
+.ironsworn {
+  // TODO: mixin that contains all relevant "buttonlike" classes
+  .btn-block {
+    transition: var(--transition-general);
+    background-color: var(--ironsworn-color-btn-bg-enabled);
+    color: var(--ironsworn-color-btn-fg-enabled);
+    // border-width: var(--ironsworn-border-width);
+    // position: relative;
+    &.selected,
+    &[aria-selected='true'] {
+      color: var(--ironsworn-color-btn-fg-selected);
+      border-color: var(--ironsworn-color-btn-border-selected);
+      background-color: var(--ironsworn-color-btn-bg-selected);
+    }
+    &.hover,
+    &:hover {
+      color: var(--ironsworn-color-btn-fg-hover);
+      background-color: var(--ironsworn-color-btn-bg-hover);
+      border-color: var(--ironsworn-color-btn-border-hover);
+    }
+  }
+
+  .clickable-common {
+    color: var(--ironsworn-color-btn-fg-enabled);
+    cursor: pointer;
+    border-color: var(--ironsworn-color-btn-border-enabled);
+    z-index: 1;
+    &.hover,
+    &:hover,
+    &.selected,
+    &[aria-selected='true'] {
+      z-index: 2;
+    }
+    &.disabled, // FIXME: ditch this class, its redundant with more semantic options
+      &:disabled,
+      &[aria-disabled="true"] {
+      // color: var(--ironsworn-color-widget-text-enabled);
+      cursor: not-allowed;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+  .click-text {
+    transition: var(--transition-general);
+    cursor: pointer;
+    &.hover,
+    &:hover {
+      color: var(--ironsworn-color-fg-highlight);
+    }
+  }
+
+  a.entity-link,
+  a.content-link {
+    .btn-block();
+  }
+
+  form button,
+  button,
+  .dialog .dialog-buttons button {
+    width: unset;
+    margin: unset;
+    background: unset;
+    border: unset;
+    border-radius: unset;
+    font-family: inherit;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      box-shadow: unset;
+    }
+  }
+
+  .inline-roll {
+    background: var(--ironsworn-color-bg-faded);
+    border-color: var(--ironsworn-color-border);
+
+    &:hover {
+      text-shadow: 0 0 8px var(--ironsworn-color-fg);
+    }
+  }
+
+  .dialog .dialog-buttons button {
+    .btn-block();
+  }
+
+  .dialog .dialog-buttons button {
+    &.dialog-button,
+    &.dialog-button.default {
+      border-width: var(--ironsworn-border-width);
+      border-style: var(--ironsworn-border-style);
+      background-color: var(--ironsworn-color-btn-bg-enabled);
+      border-color: var(--ironsworn-color-border-highlight);
+    }
+  }
+
+  details {
+    > summary {
+      // .clickable-common();
+      .click-text();
+    }
+  }
+}

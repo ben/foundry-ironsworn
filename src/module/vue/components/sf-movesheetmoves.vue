@@ -8,12 +8,12 @@
         @keydown.enter.prevent
       />
       <i
-        class="fa fa-times-circle nogrow clickable text"
+        class="fa fa-times-circle nogrow click-text"
         @click="data.searchQuery = ''"
         style="padding: 6px"
       />
       <i
-        class="fa fa-compress-alt nogrow clickable text"
+        class="fa fa-compress-alt nogrow click-text"
         @click="collapseAll"
         style="padding: 6px"
       />

@@ -1,0 +1,29 @@
+table {
+  border-color: var(--ironsworn-color-border);
+}
+table td:first-child {
+  white-space: nowrap;
+  padding-right: 0.5rem;
+}
+
+.table-draw {
+  h2 {
+    border: none;
+  }
+  table {
+    td:first-child,
+    td:last-child {
+      width: 0;
+    }
+  }
+}
+
+// from ironsworn
+
+table tr {
+  &.selected,
+  &[aria-selected='true'] {
+    background-color: var(--ironsworn-color-fg);
+    color: var(--ironsworn-color-shade-1);
+  }
+}

@@ -25,7 +25,7 @@
         <hr class="nogrow" />
         <h4 class="flexrow nogrow">
           <span class="flexrow">Actions</span>
-          <btn-faicon icon="plus" class="block" @click="addTrigger" />
+          <btn-faicon icon="plus" class="btn-block" @click="addTrigger" />
         </h4>
         <sfmove-tab
           v-for="option in triggerOptions"

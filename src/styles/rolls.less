@@ -1,0 +1,183 @@
+@graphic-gap: 0.25rem;
+
+.ironsworn-roll-title {
+  margin: 0;
+}
+.ironsworn-roll {
+  h3,
+  button {
+    .initial-caps();
+  }
+  .hit-type {
+    font-weight: bold;
+    font-variant: all-small-caps;
+  }
+
+  [class*=' isiconbg-'],
+  [class^='isiconbg-'] {
+    &:before {
+      background-color: var(--ironsworn-dice-background);
+    }
+  }
+
+  @dice-glow-offset: 0px 0px 5px;
+
+  .roll {
+    width: 24px;
+    aspect-ratio: 1;
+    line-height: 24px;
+    display: inline-block;
+    margin-right: 1px;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
+    font-weight: bold;
+    text-align: center;
+
+    &.d4 {
+      background-image: url('../../icons/svg/d4-grey.svg');
+    }
+
+    &.d6 {
+      background-color: var(--ironsworn-dice-background);
+      mask-image: url('/assets/icons/d6-blank.svg');
+      content: '';
+    }
+
+    &.d8 {
+      background-image: url('../../icons/svg/d8-grey.svg');
+    }
+
+    &.d10 {
+      background-color: var(--ironsworn-dice-background);
+      mask-image: url('/assets/icons/d10-blank.svg');
+      content: '';
+    }
+
+    &.d12 {
+      background-image: url('../../icons/svg/d12-grey.svg');
+    }
+
+    &.d20 {
+      background-image: url('../../icons/svg/d20-grey.svg');
+    }
+
+    &.min:not(.challenge),
+    &.challenge.max {
+      color: var(--ironsworn-color-danger) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-danger-faded)
+      );
+    }
+
+    &.max:not(.challenge),
+    &.challenge.min {
+      color: var(--ironsworn-color-success) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-success-faded)
+      );
+    }
+
+    &.canceled {
+      color: var(--ironsworn-color-warning) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-warning-faded)
+      ) !important;
+    }
+  }
+
+  del .roll {
+    text-decoration: line-through;
+    color: var(--ironsworn-color-warning) !important;
+    filter: drop-shadow(
+      @dice-glow-offset var(--ironsworn-color-warning-faded)
+    ) !important;
+  }
+}
+
+.bonus-content .dice-formula {
+  word-break: normal;
+}
+.ironsworn-roll {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+// from ironsworn.less
+.ironsworn-roll {
+  .dice-formula,
+  .dice-total {
+    background-color: var(--ironsworn-color-bg);
+  }
+}
+
+// roll-graphic.hbs
+
+.roll-graphic.dice-formula {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: auto;
+  gap: @graphic-gap;
+  justify-content: center;
+  margin: 0;
+  padding: @graphic-gap;
+  * {
+    margin: 0;
+  }
+
+  .die {
+    flex-grow: 0;
+  }
+  .indeterminate-value {
+    opacity: 0.5;
+  }
+  .action-score-capped {
+    text-decoration: dotted underline;
+  }
+  .score {
+    font-weight: bold;
+    border: var(--ironsworn-border-width-thick) var(--ironsworn-border-style)
+      var(--ironsworn-color-border);
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .challenge-dice {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    gap: (@graphic-gap / 2);
+    .challenge-die {
+    }
+  }
+}
+
+.outcome-shortcuts {
+  display: contents;
+}
+.roll-outcome {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+  * {
+    margin: 0;
+  }
+
+  .outcome-label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: larger;
+    span {
+      display: inline;
+      white-space: nowrap;
+    }
+    .outcome-text {
+      font-weight: bold;
+    }
+  }
+}

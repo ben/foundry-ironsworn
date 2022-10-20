@@ -1,8 +1,13 @@
 <template>
-  <div v-if="data.editing" class="editor flexcol">
-    <Editor v-bind="$attrs" :modelValue="modelValue" :init="mceConfig" />
-  </div>
-  <div v-else class="editor flexcol">
+  <article v-if="data.editing" class="editor mce-editor flexcol">
+    <Editor
+      v-bind="$attrs"
+      :modelValue="modelValue"
+      :init="mceConfig"
+      tagName="article"
+    />
+  </article>
+  <article v-else class="editor mce-editor flexcol">
     <with-rolllisteners
       v-if="interceptClicks"
       element="div"
@@ -12,11 +17,90 @@
       v-html="$enrichHtml(modelValue)"
     />
     <div v-else class="editor-content" v-html="$enrichHtml(modelValue)"></div>
-    <a class="editor-edit">
-      <i class="fas fa-edit" @click="data.editing = true"></i>
-    </a>
-  </div>
+    <BtnFaicon
+      class="editor-edit btn-block"
+      icon="fas fa-edit"
+      @click="data.editing = true"
+    />
+  </article>
 </template>
+
+<style lang="less">
+@import '../../../styles/forms.less';
+@import '../../../styles/button.less';
+.mce-editor {
+  height: 100%;
+  min-height: 100px;
+  color: var(--ironsworn-color-fg);
+  background-color: initial;
+
+  .editor-content {
+    height: inherit;
+    min-height: inherit;
+  }
+  .editor-edit {
+    background-color: var(--ironsworn-color-btn-bg-enabled);
+    border-width: 0;
+    box-shadow: none;
+  }
+  .tox {
+    &:not(.tox-tinymce-inline) {
+      .tox-editor-header {
+        box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2),
+          0 8px 8px -4px rgba(0, 0, 0, 0.1);
+      }
+    }
+    &.tox-tinymce {
+      border-radius: 0;
+    }
+
+    .tox-editor-header,
+    .tox-toolbar-overlord,
+    .tox-toolbar__primary {
+      background-color: var(--ironsworn-color-bg);
+    }
+    .tox-edit-area {
+      .textInputBackground();
+      border-radius: 0 0 var(--ironsworn-border-radius-lg)
+        var(--ironsworn-border-radius-lg);
+      border-width: 0 var(--ironsworn-border-width)
+        var(--ironsworn-border-width);
+      padding: 3px;
+    }
+    .tox-toolbar__group {
+      flex-grow: 1;
+    }
+    .tox-tbtn {
+      cursor: pointer;
+
+      color: var(--ironsworn-color-btn-fg-enabled);
+      background: var(--ironsworn-color-btn-bg-enabled);
+      svg {
+        fill: var(--ironsworn-color-btn-fg-enabled);
+      }
+      &:hover {
+        color: var(--ironsworn-color-btn-fg-hover);
+        background: var(--ironsworn-color-btn-bg-hover);
+        svg {
+          fill: var(--ironsworn-color-btn-fg-hover);
+        }
+      }
+    }
+  }
+}
+
+.ProseMirror {
+  background-color: var(--ironsworn-color-bg-faded);
+  padding: 0.5rem;
+}
+.prosemirror button,
+.tox .tox-tbtn--bespoke {
+  background-color: var(--ironsworn-color-bg-faded);
+  color: var(--ironsworn-color-fg);
+  fill: var(--ironsworn-color-fg);
+  border-color: var(--ironsworn-color-border-faded);
+}
+</style>
 
 <script setup lang="ts">
 import { RawEditorSettings } from 'tinymce'
@@ -24,6 +108,7 @@ import { inject, reactive } from 'vue'
 import { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import WithRolllisteners from './with-rolllisteners.vue'
+import BtnFaicon from './buttons/btn-faicon.vue'
 
 defineProps<{ modelValue: string; interceptClicks?: boolean }>()
 

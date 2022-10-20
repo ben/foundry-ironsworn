@@ -8,10 +8,10 @@
     <h4 class="flexrow">
       <BtnRollmove
         :disabled="!canRoll"
-        class="juicy text nogrow"
+        class="juicy nogrow click-text"
         :move="move"
       />
-      <span class="clickable text" @click="data.expanded = !data.expanded">
+      <span class="click-text" @click="data.expanded = !data.expanded">
         {{ move?.displayName }}
       </span>
     </h4>
@@ -24,11 +24,11 @@
       >
         <template #before-main>
           <section class="move-summary-buttons flexrow">
-            <BtnRollmove class="block" v-if="canRoll" :move="move">
+            <BtnRollmove class="btn-block" v-if="canRoll" :move="move">
               {{ $t('IRONSWORN.Roll') }}
             </BtnRollmove>
             <BtnSendmovetochat
-              class="block"
+              class="btn-block"
               :move="move"
               :data-tooltip-direction="canRoll ? 'RIGHT' : 'LEFT'"
             >
@@ -51,11 +51,11 @@
 
 <style lang="less" scoped>
 .move-summary {
-  border-left: 2px solid;
+  border-left-width: var(--ironsworn-border-width-thick);
   margin-left: 5px;
   padding-left: 1rem;
   button.icon-button {
-    border: 1px solid;
+    border-width: var(--ironsworn-border-width);
   }
 }
 h4 {
@@ -65,6 +65,10 @@ h4 {
 }
 .move-summary-buttons {
   gap: 0.5rem;
+  > * {
+    border-width: var(--ironsworn-border-width);
+    border-style: var(--ironsworn-border-style);
+  }
 }
 .movesheet-row {
   transition: all 0.4s ease;

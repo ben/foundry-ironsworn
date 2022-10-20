@@ -2,8 +2,8 @@
   <div class="flexcol nogrow">
     <div class="flexrow">
       <h4>{{ $t('IRONSWORN.Bonds') }}</h4>
-      <btn-faicon class="block nogrow" icon="edit" @click="editBonds" />
-      <btn-faicon class="block nogrow" icon="dice-d6" @click="rollBonds" />
+      <btn-faicon class="btn-block nogrow" icon="edit" @click="editBonds" />
+      <btn-faicon class="btn-block nogrow" icon="dice-d6" @click="rollBonds" />
     </div>
     <ProgressTrack
       :ticks="bondcount"

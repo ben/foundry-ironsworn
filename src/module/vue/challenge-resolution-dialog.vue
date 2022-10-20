@@ -39,7 +39,7 @@
       <div class="boxrow flexrow">
         <button
           type="button"
-          class="clickable block save"
+          class="btn-block save"
           :class="{ disabled: saveDisabled }"
           @click="save"
         >

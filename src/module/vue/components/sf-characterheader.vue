@@ -35,14 +35,6 @@
 </template>
 
 <style lang="less" scoped>
-input,
-textarea {
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
-  font-family: var(--font-primary);
-  resize: none;
-  font-size: inherit;
-}
 textarea {
   flex-basis: 300px;
   margin: 0;

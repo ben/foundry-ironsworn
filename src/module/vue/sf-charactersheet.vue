@@ -7,7 +7,7 @@
     <!-- Main body row -->
     <div class="flexrow">
       <!-- Momentum on left -->
-      <div class="flexcol margin-left nogrow" style="width: min-content">
+      <div class="flexcol left-margin nogrow" style="width: min-content">
         <MomentumMeterSlider
           labelPosition="right"
           data-tooltip-direction="UP"
@@ -42,7 +42,7 @@
 
       <!-- Stats on right -->
       <PcConditionMeters
-        class="flexcol margin-right"
+        class="flexcol right-margin"
         data-tooltip-direction="UP"
         labelPosition="left"
       />

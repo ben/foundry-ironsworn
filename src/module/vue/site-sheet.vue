@@ -13,13 +13,13 @@
       />
       <h4>{{ rankText }}</h4>
       <BtnFaicon
-        class="block nogrow"
+        class="click-text nogrow"
         v-if="editMode"
         icon="trash"
         @click="clearProgress"
       />
       <BtnFaicon
-        class="block nogrow"
+        class="click-text nogrow"
         icon="caret-right"
         @click="markProgress"
       />
@@ -61,7 +61,7 @@
         <!-- TODO: double check styling here -->
         <button
           type="button"
-          class="box flexrow clickable block"
+          class="box flexrow btn-block"
           :class="{ disabled: !hasThemeAndDomain }"
           @click="randomFeature"
         >
@@ -79,7 +79,7 @@
         <SiteMovebox movename="Find an Opportunity" />
         <button
           type="button"
-          class="box flexrow clickable block"
+          class="box flexrow btn-block"
           @click="locateObjective"
         >
           <h4>
@@ -95,7 +95,7 @@
       <span>{{ $t('IRONSWORN.Denizens') }}</span>
       <BtnIsicon
         icon="d10-tilt"
-        class="flexrow nogrow text"
+        class="flexrow nogrow click-text"
         style="padding: 2px"
         @click="randomDenizen"
       />
@@ -145,10 +145,8 @@
 }
 
 textarea {
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
+  border-radius: var(--ironsworn-border-radius-sm);
   resize: none;
-  font-family: var(--font-primary);
 }
 </style>
 

@@ -1,13 +1,17 @@
 <template>
   <div class="flexrow nogrow" style="text-align: center">
-    <btn-faicon class="block" icon="plus" @click="addProgressItem('vow')">
+    <btn-faicon class="btn-block" icon="plus" @click="addProgressItem('vow')">
       {{ $t('IRONSWORN.Vow') }}</btn-faicon
     >
-    <btn-faicon class="block" icon="plus" @click="addProgressItem('progress')">
+    <btn-faicon
+      class="btn-block"
+      icon="plus"
+      @click="addProgressItem('progress')"
+    >
       {{ $t('IRONSWORN.Progress') }}</btn-faicon
     >
     <btn-compendium
-      class="block"
+      class="btn-block"
       :compendium="props.foeCompendium ?? 'ironswornfoes'"
     >
       {{ $t('IRONSWORN.Foes') }}

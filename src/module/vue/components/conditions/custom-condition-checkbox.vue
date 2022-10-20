@@ -21,7 +21,7 @@ label {
 input[type='text'] {
   border: 0;
   outline: 0;
-  border-bottom: 1px solid;
+  border-bottom-width: var(--ironsworn-border-width);
 }
 </style>
 

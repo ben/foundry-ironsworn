@@ -17,7 +17,7 @@
       </CollapseTransition>
       <btn-faicon
         icon="plus"
-        class="stack-row block"
+        class="stack-row btn-block"
         @click="addOption"
         style="min-height: 1.5rem; align-items: center"
       />

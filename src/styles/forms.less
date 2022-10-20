@@ -1,0 +1,60 @@
+.textInputForeground {
+  font-family: var(--font-primary);
+  font-size: inherit;
+  color: var(--ironsworn-color-fg);
+}
+.textInputBackground {
+  background: var(--ironsworn-color-bg-faded);
+  border-color: var(--ironsworn-color-border-faded);
+  border-radius: var(--ironsworn-border-radius-sm);
+  border-width: var(--ironsworn-border-width);
+  border-style: var(--ironsworn-border-style);
+}
+
+.ironsworn {
+  select,
+  input,
+  textarea {
+    .textInputForeground();
+    .textInputBackground();
+  }
+
+  input,
+  textarea,
+  textarea#chat-message {
+    resize: none;
+
+    &:focus {
+      box-shadow: 0 0 10px var(--ironsworn-color-fg-highlight);
+      border-color: var(--ironsworn-color-border-highlight);
+    }
+    // from SF:
+    // input.highlight:focus {
+    //   box-shadow: 0 0 5px var(--ironsworn-color-accent);
+    //   background-color: var(--ironsworn-color-bg-highlight);
+    //   color: var(---ironsworn-color-fg-highlight);
+    // }
+  }
+
+  *::placeholder {
+    font-family: inherit;
+    color: inherit;
+    opacity: 0.5;
+  }
+  input.highlight:focus {
+    background-color: var(--ironsworn-color-fg);
+    color: var(--ironsworn-color-bg);
+  }
+
+  input[type='checkbox'] {
+    background-color: var(--ironsworn-color-bg-faded);
+  }
+  input[type='number'] {
+    -moz-appearance: auto;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: button !important;
+      opacity: 1 !important;
+    }
+  }
+}

@@ -1,27 +1,30 @@
 <template>
   <article class="legacy-track flexcol" ref="legacyTrack" :data-legacy="legacy">
-    <h4 class="legacy-track-title">
-      {{ $t(`IRONSWORN.${capitalize(legacy)}`) }}
-    </h4>
-
-    <section class="legacy-track-controls flexrow" data-tooltip-direction="UP">
-      <span v-if="overflowLabel" class="nogrow">
-        {{ overflowLabel }}
-      </span>
-      <BtnFaicon
-        class="block nogrow"
-        v-if="editMode"
-        icon="caret-left"
-        @click="decrease"
-      />
-      <BtnFaicon
-        class="block nogrow"
-        icon="caret-right"
-        @click="increase"
-        :data-tooltip="markTooltip"
-      />
-    </section>
-
+    <header class="legacy-track-header">
+      <h4 class="legacy-track-title">
+        {{ $t(`IRONSWORN.${capitalize(legacy)}`) }}
+      </h4>
+      <section
+        class="legacy-track-controls flexrow"
+        data-tooltip-direction="UP"
+      >
+        <span class="overflow-label nogrow" v-if="overflowLabel">
+          {{ overflowLabel }}
+        </span>
+        <BtnFaicon
+          class="nogrow click-text"
+          v-if="editMode"
+          icon="caret-left"
+          @click="decrease"
+        />
+        <BtnFaicon
+          class="nogrow click-text"
+          icon="caret-right"
+          @click="increase"
+          :data-tooltip="markTooltip"
+        />
+      </section>
+    </header>
     <ProgressTrack
       class="legacy-track-progress"
       :ticks="ticksDisplayed"
@@ -31,35 +34,52 @@
       data-tooltip-direction="UP"
     />
     <XpTrack
+      class="legacy-track-xp"
       @click="setXp"
       :max="xpEarned"
       :marked="xpSpent"
-      class="legacy-track-xp"
+      :fillColorHover="`var(--ironsworn-color-legacy-${legacy})`"
+      :fillColorSelected="`var(--ironsworn-color-legacy-${legacy})`"
     />
   </article>
 </template>
 <style lang="less">
 [data-legacy='discoveries'] {
-  --ironsworn-color-thematic: var(--ironsworn-color-legacy-discoveries);
+  --ironsworn-color-widget-fill-hover: var(
+    --ironsworn-color-legacy-discoveries
+  );
+  --ironsworn-color-widget-fill-selected: var(
+    --ironsworn-color-legacy-discoveries
+  );
 }
 [data-legacy='bonds'] {
-  --ironsworn-color-thematic: var(--ironsworn-color-legacy-bonds);
+  --ironsworn-color-widget-fill-hover: var(--ironsworn-color-legacy-bonds);
+  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-legacy-bonds);
 }
 [data-legacy='quests'] {
-  --ironsworn-color-thematic: var(--ironsworn-color-legacy-quests);
+  --ironsworn-color-widget-fill-hover: var(--ironsworn-color-legacy-quests);
+  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-legacy-quests);
 }
 
 .legacy-track {
+  --maxCol: 20; /* The maximum number of columns */
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;
-  grid-template-columns: max-content 1fr;
+  grid-template-columns: repeat(20, max(0, 5%));
+  .legacy-track-header {
+    grid-column: span 20;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: baseline;
+  }
   .legacy-track-title {
     font-weight: bold;
     letter-spacing: 0.02em;
-    grid-row: 1;
-    grid-column: 1;
     margin: 0;
-    line-height: 2;
+  }
+  .overflow-label {
+    color: var(--ironsworn-color-fg-faded);
   }
   .legacy-track-controls {
     grid-row: 1;
@@ -69,67 +89,66 @@
     .icon-button {
       aspect-ratio: 1;
       height: 100%;
+      font-size: 150%;
     }
   }
   .legacy-track-progress {
-    grid-column: 1 / span 2;
-    grid-row: 2 / span 2;
-    // FIXME this is a bit of a kluge to ensure that the xp pips match up with the boxes, but should be relatively stable with the size of the. ultimately, tho, it'd be better to have this be laid out automatically, probably with display:contents to destructure the track elements
-    max-width: @max_track_width;
+    display: contents;
   }
-  @max_progress_box_width: 50px;
-  @max_xp_box_width: 15px;
-  @progress_box_gap: 4px;
-  @max_track_width: (@max_progress_box_width*10 + @progress_box_gap*9);
+  --max_xp_box_width: 15px;
+  --progress_box_gap: 4px;
   .progress-track {
     margin: 0;
-    gap: @progress_box_gap;
   }
   .progress-track-box {
     // extra padding to allow comfy overlap with xp pips
-    padding-bottom: (@max_xp_box_width * 0.4);
+    padding-bottom: calc(var(--max_xp_box_width) * 0.4);
     max-height: unset;
-    max-width: @max_progress_box_width;
-    gap: @progress_box_gap;
+    border-color: var(--ironsworn-color-border-faded);
+    grid-column: span 2;
+    grid-row: 2 / span 2;
+    justify-self: center;
+    margin: 0 calc(var(--progress_box_gap) / 2);
+
+    each(range(1,10); {
+      &:nth-child(@{value}) {
+        grid-column: ((@value*2)-1) / span 2;
+      };
+    });
   }
   .legacy-track-xp {
-    @xp_border_width: 1px;
-    grid-column: 1 / span 2;
-    grid-row: 3 / span 2;
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    max-width: @max_track_width;
+    display: contents;
     width: 100%;
-    gap: @progress_box_gap;
+
     justify-self: center;
     position: relative;
     .xp-box {
-      background-color: var(--ironsworn-color-bg);
       margin: 0;
       aspect-ratio: 1;
-      border-radius: 3px;
-      border-width: @xp_border_width;
+      border-radius: var(--ironsworn-border-radius-md);
+      border-width: var(--ironsworn-border-width);
       width: 100%;
-      max-width: @max_xp_box_width;
+      max-width: var(--max_xp_box_width);
       z-index: 1;
-      &.hover,
-      &.selected {
-        background-color: var(--ironsworn-color-thematic);
-        z-index: 100;
-      }
 
       &:not(:nth-child(n + 21)) {
+        each(range(1,20); {
+          &:nth-child(@{value}) {
+            grid-column: @value;
+          };
+        });
+        grid-row: 3 / span 2;
         &:nth-child(2n) {
           justify-self: left;
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
-          margin-left: -((@progress_box_gap+ @xp_border_width)/2);
+          margin-left: calc((var(--ironsworn-border-width)) / -2);
         }
         &:nth-child(2n + 1) {
           justify-self: right;
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
-          margin-right: -((@progress_box_gap+ @xp_border_width)/2);
+          margin-right: calc((var(--ironsworn-border-width)) / -2);
         }
       }
       &:nth-child(n + 21) {

@@ -1,41 +1,57 @@
 @import './starforged-font.css'; // HACK to avoid import error
+@import '../mixin-utils.less';
 
-body.theme-starforged {
-  @theme-font: 'Carrois Gothic SC', sans-serif;
-
-  @dark-overlay: #000000cc;
-  @dark-color: #33999933;
-  @muted-color: #11777799;
-  @medium-color: #33999999;
-  @light-color: #55bbbb99;
-
-  @text-dark-color: #399;
-  @text-medium-color: #3dd;
-  @text-light-color: #6ff;
-
-  // until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
-  // yes, i am bitter, because even safari has supported it for ~4 years at this point :)
-  // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
-  // if you wanted this + a soft shadow, just append the other shadow with a separator.
-  // generated with owumaro.github.io/text-stroke-generator/
-  @fake-stroke: var(--ironsworn-color-bg) 1px 0px 0px,
-    var(--ironsworn-color-bg) 0.540302px 0.841471px 0px,
-    var(--ironsworn-color-bg) -0.416147px 0.909297px 0px,
-    var(--ironsworn-color-bg) -0.989993px 0.14112px 0px,
-    var(--ironsworn-color-bg) -0.653644px -0.756803px 0px,
-    var(--ironsworn-color-bg) 0.283662px -0.958924px 0px,
-    var(--ironsworn-color-bg) 0.96017px -0.279416px 0px;
-
-  .hover-fx(@spread_box:5px,@spread_text:10px) {
-    &:hover {
-      box-shadow: 0 0 @spread_box @light-color;
-      color: @text-light-color;
-      text-shadow: 0 0 @spread_text @light-color;
+.clickableFx(@spread_box:5px,@spread_text:10px,@spread_drop:5px) {
+  transition: var(--transition-general);
+  &.selected,
+  &[aria-selected='true'] {
+    // color: var(---ironsworn-color-fg-highlight);
+  }
+  &:hover {
+    // color: var(---ironsworn-color-fg-highlight);
+    text-shadow: 0 0 @spread_text var(--ironsworn-color-fg-faded);
+    &.btn-block {
+      box-shadow: 0 0 @spread_box var(--ironsworn-color-fg-faded);
+    }
+    &:not(.btn-block) {
+      filter: drop-shadow(0 0 @spread_drop var(--ironsworn-color-fg-faded));
+      // fill: var(--ironsworn-color-widget-fill-hover);
+      // color: var(--ironsworn-color-widget-text-hover);
     }
   }
+}
 
-  --ironsworn-color-thematic: #117777;
+.theme-starforged {
+  --font-primary: 'Carrois Gothic SC', sans-serif;
 
+  --ironsworn-color-fg-highlight: #6ff;
+  --ironsworn-color-fg: #3dd;
+  --ironsworn-color-fg-faded: #399;
+  --ironsworn-color-midtone: #266;
+  --ironsworn-color-bg-faded: #001a1a;
+  --ironsworn-color-bg: black;
+
+  --ironsworn-color-accent: orange;
+
+  --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-border: var(--ironsworn-color-fg-faded);
+  --ironsworn-color-border-faded: var(--ironsworn-color-midtone);
+
+  --ironsworn-color-bg-highlight: var(--ironsworn-color-midtone);
+
+  --ironsworn-color-widget-fill-enabled: var(--ironsworn-color-bg-faded);
+  --ironsworn-color-widget-stroke-enabled: var(--ironsworn-color-border);
+  --ironsworn-color-widget-text-enabled: var(--ironsworn-color-border);
+
+  --ironsworn-color-widget-fill-hover: var(--ironsworn-color-bg-highlight);
+
+  --ironsworn-color-widget-text-hover: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-widget-stroke-hover: var(--ironsworn-color-fg-highlight);
+
+  --ironsworn-color-widget-fill-selected: var(--ironsworn-color-bg-highlight);
+
+  --ironsworn-color-widget-text-selected: var(--ironsworn-color-fg);
+  --ironsworn-color-widget-stroke-selected: var(--ironsworn-color-fg);
   --ironsworn-color-bg: black;
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-3);
@@ -46,282 +62,15 @@ body.theme-starforged {
   --ironsworn-color-success: hsl(290, 80%, 50%);
   --ironsworn-color-success-faded: hsl(290, 80%, 60%);
 
-  --ironsworn-dice-background: darken(@text-dark-color, 20);
-  --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  --ironsworn-dice-background: var(--ironsworn-color-bg-faded);
 
-  body {
-    font-family: @theme-font;
-  }
-
-  .app {
-    color: @text-medium-color;
-  }
-
-  input::placeholder {
-    color: @medium-color;
-  }
-
-  input.highlight:focus {
-    box-shadow: 0 0 5px orange;
-    background-color: @medium-color;
-    color: @text-light-color;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background: @dark-color;
-    border-color: @medium-color;
-  }
-
-  .window-app,
-  .journal-entry .journal-entry-content {
-    background: initial;
-    background-color: var(--ironsworn-color-bg);
-    border: 1px solid @text-dark-color;
-  }
-
-  .editor {
-    color: @text-medium-color;
-    background-color: var(--ironsworn-color-bg);
-  }
-
-  .ProseMirror {
-    background-color: @dark-color;
-    padding: 0.5rem;
-  }
-
-  .tox .tox-editor-header,
-  .tox .tox-toolbar-overlord,
-  .tox .tox-toolbar__primary {
-    background-color: var(--ironsworn-color-bg);
-  }
-
-  font-family: @theme-font;
-  color: @text-medium-color;
-  .dialog-buttons {
-    .dialog-button {
-      color: currentColor;
-    }
-  }
-  select {
-    border-color: @dark-color;
-    color: @text-medium-color;
-  }
-
-  h2,
-  h3 {
-    color: @text-medium-color;
-    border-bottom-color: @light-color;
-  }
-
-  .inline-roll {
-    background: @dark-color;
-    border-color: @light-color;
-
-    &:hover {
-      text-shadow: 0 0 8px @text-medium-color;
-    }
-  }
-
-  .window-content {
-    background: var(--ironsworn-color-bg);
-    background-image: none;
-    color: @text-medium-color;
-  }
-
-  input,
-  textarea,
-  textarea#chat-message {
-    background: @dark-color;
-    border: 0;
-    color: @text-medium-color;
-
-    &:focus {
-      box-shadow: 0 0 10px @light-color;
-      cursor: pointer;
-    }
-  }
-
-  .sheet-area {
-    border-color: @light-color;
-  }
-  svg {
-    color: @text-medium-color;
-  }
-  .clickable:not(svg):not(.svg) {
-    color: @text-dark-color;
-    &.hover,
-    &:hover,
-    &:focus {
-      &.block,
-      &.text {
-        color: @text-light-color;
-      }
-      &.block:not(.text) {
-        background-color: var(--ironsworn-color-thematic);
-      }
-      &.text:not(.block) {
-        box-shadow: none;
-        // filter: drop-shadow(0 0 4px @text-light-color);
-      }
-      text-shadow: @fake-stroke;
-    }
-    &.selected,
-    &[aria-selected='true'] {
-      &.block,
-      &.text {
-        color: @text-light-color;
-        background-color: var(--ironsworn-color-thematic);
-        text-shadow: @fake-stroke;
-      }
-    }
-  }
-
-  .drag-highlight {
-    background: @medium-color;
-  }
-
-  .stats {
-    .stat {
-      border-color: @text-medium-color;
-    }
-  }
-
-  hr {
-    border-color: @light-color;
-  }
-
-  .entity-link,
-  .content-link {
-    background-color: @dark-color;
-    border-color: @medium-color;
-    color: @text-medium-color;
-    i {
-      color: @text-light-color;
-    }
-  }
-
-  .movesheet-row.highlighted {
-    background-color: @muted-color;
-  }
-
-  .compact {
-    .bordergroup {
-      border-color: @light-color;
-    }
-  }
-
-  .asset-ironsworn .asset-ability:before {
-    border: 1px solid @text-medium-color;
-  }
-  .asset-starforged .asset-ability:before {
-    background-color: @text-medium-color;
-    border: 1px solid @text-medium-color;
-  }
-
-  .ironsworn-roll {
-    .roll {
-      // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
-    }
-  }
-
-  // button,
-  button {
-    .hover-fx();
-  }
-  .prosemirror button,
-  .tox .tox-tbtn--bespoke {
-    background-color: @dark-color;
-    color: @text-medium-color;
-    border-color: @muted-color;
-    .hover-fx();
-  }
-
-  select {
-    background-color: @dark-color;
-  }
-
-  input[type='checkbox'] {
-    background-color: @dark-color;
-  }
-
-  table {
-    border-color: @muted-color;
-  }
-
-  .chat-message {
-    background: @dark-overlay;
-    border-color: @muted-color;
-    color: @text-medium-color;
-
-    .message-header {
-      color: @text-dark-color;
-    }
-
-    .message-content {
-      border: 1px solid @text-dark-color;
-    }
-
-    .dice-formula,
-    .dice-total {
-      background: @dark-overlay;
-      // color: @text-light-color;
-      border-width: 0px;
-      padding: 5px 0px 5px 0px;
-      .die {
-        &.d6 {
-          // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
-        }
-        &.d10 {
-          // background-image: url('systems/foundry-ironsworn/assets/icons/d10-blank.svg');
-        }
-
-        &.min {
-          color: @text-medium-color;
-        }
-        &.max {
-          color: @text-medium-color;
-        }
-      }
-    }
-
-    table tr {
-      &.selected,
-      &[aria-selected='true'] {
-        background-color: @medium-color;
-        color: @text-light-color;
-
-        .entity-link,
-        .content-link {
-          color: @text-light-color;
-        }
-      }
-    }
-  }
-
-  #sidebar-tabs {
-    border-color: @medium-color;
-    box-shadow: 0 0 10px @light-color;
-
-    .item {
-      color: @text-dark-color;
-      &.active {
-        color: @text-light-color;
-        border-color: @medium-color;
-        box-shadow: 0 0 6px inset @light-color;
-        text-shadow: 0 0 10px @light-color;
-      }
-    }
-  }
-
-  #chat-controls {
-    .roll-type-select {
-      background-color: @dark-color;
-    }
-  }
-
-  .directory {
-    .directory-header .header-search input {
-      background-color: @dark-color;
-    }
-  }
+  // hexagon, pointy side down
+  --ironsworn-theme-pip: polygon(
+    0 25%,
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%
+  );
 }

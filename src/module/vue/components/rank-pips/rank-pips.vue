@@ -1,6 +1,6 @@
 <template>
   <article
-    class="rank-pips"
+    class="rank-pips continuous-fill-parent"
     :aria-label="$t('IRONSWORN.ChallengeRank')"
     :aria-valuetext="current"
   >
@@ -12,18 +12,18 @@
       :data-tooltip="$t(`IRONSWORN.${$capitalize(rank)}`)"
       data-tooltip-direction="UP"
       type="button"
-      class="rank-pip nogrow theme-pip"
+      class="rank-pip nogrow theme-pip continuous-fill-segment"
       :aria-selected="rank === current"
     >
       <PipSvgCircle
         v-if="pipStyle === 'circle'"
         role="presentational"
-        class="svg pip-shape"
+        class="svg pip-shape pip-circle"
       />
       <PipSvgHex
         v-if="pipStyle === 'hex'"
         role="presentational"
-        class="svg pip-shape"
+        class="svg pip-shape pip-hexagon"
       />
     </button>
   </article>
@@ -41,25 +41,18 @@
 <style lang="less" scoped>
 .rank-pips {
   // so that hover effects only happen when a pip is hovered
-  pointer-events: none;
   display: flex;
   flex-flow: row nowrap;
   stroke: currentColor;
-  fill: var(--ironsworn-color-thematic);
-  fill-opacity: var(--widget-fill-opacity);
   align-content: center;
   gap: 2px;
-  transition: var(--std-animation);
-  &:hover {
-    fill-opacity: var(--widget-fill-opacity-preview);
-  }
   button.rank-pip {
-    background-color: unset;
-    pointer-events: all;
     display: flex;
     height: auto;
     padding: 0;
     line-height: 0;
+    border: 0;
+    outline: 0;
     display: flex;
     justify-items: center;
     align-items: center;
@@ -68,22 +61,6 @@
       height: inherit;
       overflow: visible;
       width: 1em;
-    }
-    &:hover {
-      box-shadow: unset;
-      color: currentColor;
-      ~ .rank-pip {
-        fill-opacity: 0;
-      }
-    }
-  }
-  &:not(:hover) {
-    button.rank-pip {
-      &[aria-selected='true'] {
-        ~ button.rank-pip {
-          fill-opacity: 0;
-        }
-      }
     }
   }
 }

@@ -11,10 +11,10 @@
           <input type="text" v-model="bond.name" @blur="save" />
           <textarea v-model="bond.notes" @blur="save" />
         </div>
-        <BtnFaicon class="block nogrow" icon="trash" @click="deleteBond(i)" />
+        <BtnFaicon class="btn-block nogrow" icon="trash" @click="deleteBond(i)" />
       </article>
     </CollapseTransition>
-    <BtnFaicon class="block nogrow" icon="plus" @click="addBond" />
+    <BtnFaicon class="btn-block nogrow" icon="plus" @click="addBond" />
   </div>
 </template>
 <script setup lang="ts">

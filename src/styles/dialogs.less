@@ -1,0 +1,50 @@
+@import 'mixin-utils.less';
+
+// preroll-dialog.hbs
+.preroll-dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  button {
+    .initial-caps();
+  }
+
+  .roll-trigger-text {
+  }
+
+  .trigger-options {
+  }
+
+  .form-group {
+    padding: 0;
+    border: none;
+  }
+
+  .advanced-roll-options {
+    padding: 5px;
+    margin: 5px 0;
+    border-width: var(--ironsworn-border-width);
+  }
+  .advanced-roll-options-toggle {
+  }
+
+  &.dialog .dialog-buttons button.dialog-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button-text {
+      .nogrow();
+      .initial-caps();
+      width: max-content;
+      height: max-content;
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
+
+    i {
+      height: 18px;
+      width: 18px;
+    }
+  }
+}

@@ -1,9 +1,9 @@
-<form class="{{cssClass}} flexcol compact" autocomplete="off">
+<form class="{{cssClass}} flexcol compact-sheet" autocomplete="off">
   {{!-- Stats --}}
   <div class="flexcol boxgroup" style="margin: 5px;">
     <div class="flexrow boxrow">
       {{#*inline "stat"}}
-      <div class="box flexcol clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+      <div class="box flexcol btn-block ironsworn__stat__roll" data-stat="{{stat}}">
         <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
         <h2>{{lookup data.data stat}}</h2>
       </div>
@@ -22,19 +22,19 @@
     <div class="flexrow boxrow">
       {{#*inline "resource"}}
       <div class="box flexcol">
-        <div class="flexcol boxrow {{#unless burn}}clickable block ironsworn__stat__roll{{/unless}}"
+        <div class="flexcol boxrow {{#unless burn}}btn-block ironsworn__stat__roll{{/unless}}"
           data-stat="{{stat}}">
           <h5>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h5>
           <h4>{{lookup data.data stat}}</h4>
         </div>
         <div class="flexrow boxrow small">
-          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
+          <div class="box btn-block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
             data-min="{{min}}">&minus;</div>
           {{#if burn}}
-          <div class="box clickable block ironsworn__momentum__burn" style="padding: 0 5px;">{{localize
+          <div class="box btn-block ironsworn__momentum__burn" style="padding: 0 5px;">{{localize
             'IRONSWORN.Burn'}}</div>
           {{/if}}
-          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1"
+          <div class="box btn-block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1"
             data-max="{{max}}">&plus;</div>
         </div>
       </div>

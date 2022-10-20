@@ -25,7 +25,7 @@
 .sf-legacies {
   gap: @gap;
   > *:not(:first-child) {
-    border-top: 1px solid;
+    border-top-width: var(--ironsworn-border-width);
   }
   .starred-progress-tracks {
     padding: @gap 0;

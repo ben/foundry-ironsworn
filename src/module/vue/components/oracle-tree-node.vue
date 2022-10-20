@@ -9,11 +9,11 @@
     <!-- Leaf node -->
     <div v-if="isLeaf">
       <h4 class="flexrow">
-        <BtnOracle class="juicy text" :node="node">
+        <BtnOracle class="juicy click-text" :node="node">
           {{ node?.displayName }}
         </BtnOracle>
         <BtnFaicon
-          class="block nogrow show-oracle-info"
+          class="click-text nogrow show-oracle-info"
           icon="eye"
           @click="toggleDescription()"
         />
@@ -33,7 +33,7 @@
     <div v-else>
       <h4 class="flexrow">
         <BtnFaicon
-          class="juicy text"
+          class="juicy click-text"
           :icon="state.manuallyExpanded ? 'caret-down' : 'caret-right'"
           @click="toggleManually()"
         >

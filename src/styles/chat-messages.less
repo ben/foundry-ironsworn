@@ -1,0 +1,55 @@
+.chat-message {
+  background: var(--ironsworn-color-bg);
+  border-color: var(--ironsworn-color-border);
+  color: var(--ironsworn-color-fg);
+
+  .message-header {
+    color: var(--ironsworn-color-fg-faded);
+  }
+
+  .message-content {
+    border: none;
+    // border-color: var(--ironsworn-color-border-faded);
+    // border-width: var(--ironsworn-border-width);
+    // border-style: var(--ironsworn-border-style);
+  }
+
+  .dice-formula,
+  .dice-total {
+    background: var(--ironsworn-color-bg);
+    border-width: 0px;
+    padding: 5px 0px 5px 0px;
+    .die {
+      &.min {
+        color: var(--ironsworn-color-fg);
+      }
+      &.max {
+        color: var(--ironsworn-color-fg);
+      }
+    }
+  }
+
+  table tr {
+    &.selected,
+    &[aria-selected='true'] {
+      background-color: var(--ironsworn-color-bg-highlight);
+      color: var(---ironsworn-color-fg-highlight);
+    }
+  }
+}
+
+.hover-controls-anchor {
+  position: relative;
+
+  .hover-controls {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: all 0.2s ease;
+  }
+
+  &:hover .hover-controls {
+    opacity: 1;
+  }
+}

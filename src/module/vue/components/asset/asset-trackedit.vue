@@ -30,6 +30,8 @@
       :max="item.data.track.max"
       :currentValue="item.data.track.current"
       sliderStyle="horizontal"
+      :fillColorHover="item.data.color"
+      :fillColorSelected="item.data.color"
     />
   </div>
 </template>

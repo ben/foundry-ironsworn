@@ -1,0 +1,80 @@
+/* Items List */
+
+.item-list {
+  flex: 1 0 100px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+
+  .move {
+    overflow-x: hidden;
+  }
+
+  ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & > h2 {
+      text-align: center;
+      border-width: var(--ironsworn-border-width) 0;
+    }
+  }
+}
+.item-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  // overflow-y: auto;
+
+  .item {
+    height: 30px;
+    line-height: 24px;
+    padding: 3px 0;
+    border-bottom-width: var(--ironsworn-border-width);
+
+    img {
+      flex: 0 0 24px;
+      margin-right: 5px;
+    }
+  }
+
+  .item-name {
+    margin: 0;
+  }
+
+  .item-controls {
+    flex: 0 0 36px;
+  }
+}
+// from ironsworn.less
+.item-list {
+  ol > h2 {
+    border-color: var(--ironsworn-color-bg);
+    background-color: var(--ironsworn-color-shade-3);
+    color: var(--ironsworn-color-bg);
+  }
+
+  .item {
+    border-width: var(--ironsworn-border-width);
+    border-style: var(--ironsworn-border-style);
+    border-color: var(--ironsworn-color-border-faded);
+  }
+}
+
+.ironsworn.sheet.item {
+  min-width: 460px;
+  min-height: 400px;
+}
+
+.item-row {
+  border: var(--ironsworn-border);
+  border-color: var(--ironsworn-color-border);
+  border-radius: var(--ironsworn-border-radius-sm);
+  background-color: var(--ironsworn-color-bg);
+  padding: 3px;
+  margin: 3px 0;
+  .item-row-control {
+    flex-grow: 0;
+    padding: 5px;
+  }
+}

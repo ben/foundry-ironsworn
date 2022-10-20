@@ -9,9 +9,13 @@
           style="margin-right: 1em"
         />
         <h4>{{ rankText }}</h4>
-        <BtnFaicon class="block nogrow" icon="trash" @click="clearProgress" />
         <BtnFaicon
-          class="block nogrow"
+          class="click-text nogrow"
+          icon="trash"
+          @click="clearProgress"
+        />
+        <BtnFaicon
+          class="click-text nogrow"
           icon="caret-right"
           @click="markProgress"
         />
@@ -43,13 +47,13 @@
       data-drop-type="progress"
       style="text-align: center; justify-items: space-around"
     >
-      <BtnFaicon @click="addEmpty" class="block" icon="file">
+      <BtnFaicon @click="addEmpty" class="btn-block" icon="file">
         {{ $t('IRONSWORN.Progress') }}</BtnFaicon
       >
-      <BtnCompendium class="block" compendium="ironswornfoes"
+      <BtnCompendium class="btn-block" compendium="ironswornfoes"
         >{{ $t('IRONSWORN.Foes') }} (Ironsworn)</BtnCompendium
       >
-      <BtnCompendium class="block" compendium="starforgedencounters"
+      <BtnCompendium class="btn-block" compendium="starforgedencounters"
         >{{ $t('IRONSWORN.Foes') }} (Starforged)</BtnCompendium
       >
     </div>

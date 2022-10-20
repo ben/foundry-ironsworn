@@ -1,6 +1,6 @@
 <template>
   <div
-    class="box clickable block"
+    class="box btn-block"
     :class="{ selected }"
     @click="$emit('click', value)"
   >

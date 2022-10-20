@@ -3,18 +3,13 @@
     class="item-row ironsworn__asset"
     :class="{ [`asset-${$actor?.toolset}`]: true }"
     :aria-expanded="expanded"
-    :style="
-      props.asset?.data?.color
-        ? `--ironsworn-color-thematic: ${props.asset?.data?.color}`
-        : undefined
-    "
   >
     <header class="asset-header nogrow flexrow">
       <button
         type="button"
         @click="toggle"
         :aria-controls="bodyId"
-        class="clickable text asset-expand-toggle"
+        class="click-text asset-expand-toggle"
       >
         <h4 class="asset-title">
           {{ asset.name }}
@@ -25,12 +20,12 @@
       </button>
       <div class="asset-controls flexrow nogrow">
         <btn-faicon
-          class="block nogrow"
+          class="nogrow click-text"
           v-if="editMode"
           icon="trash"
           @click="destroy"
         />
-        <btn-faicon class="block nogrow" icon="edit" @click="edit" />
+        <btn-faicon class="nogrow click-text" icon="edit" @click="edit" />
       </div>
     </header>
 
@@ -90,6 +85,8 @@
           :statLabel="asset.data.track.name"
           labelPosition="left"
           :read-only="false"
+          :fillColorHover="asset.data.color"
+          :fillColorSelected="asset.data.color"
         />
         <section
           class="flexcol stack nogrow"
@@ -112,9 +109,9 @@
 
 .ironsworn__asset {
   overflow: hidden;
-  transition: var(--std-animation);
+  transition: var(--transition-general);
   .asset-header {
-    transition: var(--std-animation);
+    transition: var(--transition-general);
     gap: @asset_spacer;
     align-items: center;
     .asset-expand-toggle {
@@ -122,6 +119,7 @@
       gap: @asset_spacer;
       background: none;
       box-shadow: none !important;
+      border: 0;
       .asset-title {
         margin: 0;
         font-size: var(--font-size-14);
@@ -131,13 +129,13 @@
         line-height: 1;
       }
       &:not(:hover) .asset-type {
-        color: var(--ironsworn-color-thematic);
+        color: v-bind(assetColor);
       }
       .asset-type {
         flex-grow: 0;
         line-height: 1;
         font-style: italic;
-        transition: var(--std-animation);
+        transition: var(--transition-general);
       }
     }
     .asset-controls {
@@ -148,7 +146,7 @@
     }
   }
   .asset-body {
-    transition: var(--std-animation);
+    transition: var(--transition-general);
     overflow: hidden;
     padding: (@asset_spacer / 2);
     gap: @asset_spacer;
@@ -161,9 +159,12 @@
         flex-direction: row;
         gap: (@asset_spacer / 2);
         flex-grow: 0;
-        border-bottom: 1px solid;
-        border-bottom-color: var(--ironsworn-color-thematic);
+        border-bottom-style: var(--ironsworn-border-style);
+        border-bottom-width: var(--ironsworn-border-width);
+        border-bottom-color: v-bind(assetColor);
         .asset-field-label {
+          font-weight: normal;
+          color: var(--ironsworn-color-fg-faded);
           padding: 0;
           margin: 0;
         }
@@ -202,9 +203,24 @@
   }
 }
 .asset-condition-meter {
-  gap: 3px;
   .icon-button .button-text {
     text-align: left;
+  }
+  .boxrow {
+    border: 0;
+  }
+  .box {
+    border-color: var(--ironsworn-color-border);
+    border-style: var(--ironsworn-border-style);
+    border-width: var(--ironsworn-border-width);
+    &:last-child {
+      border-end-end-radius: var(--ironsworn-border-radius-md);
+      border-start-end-radius: var(--ironsworn-border-radius-md);
+    }
+    &:first-child {
+      border-start-start-radius: var(--ironsworn-border-radius-md);
+      border-end-start-radius: var(--ironsworn-border-radius-md);
+    }
   }
 }
 
@@ -217,6 +233,8 @@
   // common properties for asset ability bullet/checkbox
   .asset-ability {
     &:before {
+      border-width: var(--ironsworn-border-width);
+      border-style: solid;
       content: '';
       display: block;
       mask-repeat: no-repeat;
@@ -235,7 +253,7 @@
     &:before {
       aspect-ratio: 1;
       border-radius: 50%;
-      border-width: 2px;
+      border-width: var(--ironsworn-border-width-thick);
       height: 0.75em;
       margin-top: 0.15em;
     }
@@ -251,12 +269,12 @@
     pointer-events: none;
     content: '';
     mask-image: url(/assets/misc/hex-deco.svg);
-    background: var(--ironsworn-color-thematic);
+    background: v-bind(assetColor);
     position: absolute;
     aspect-ratio: @hex_deco_aspect_ratio;
     z-index: 1;
     mask-repeat: no-repeat;
-    // transition: var(--std-animation);
+    // transition: var(--transition-general);
     transform: scaleX(-1);
     height: @hex_deco_collapsed_height;
     top: -($height * 0.09);
@@ -311,6 +329,8 @@ const foundryItem = $actor
 provide($ItemKey, foundryItem)
 
 const bodyId = computed(() => `asset-body-${props.asset?._id}`)
+
+const assetColor = computed(() => props.asset.data.color)
 
 const expanded = computed(() => {
   return props.asset?.flags['foundry-ironsworn']?.expanded || false

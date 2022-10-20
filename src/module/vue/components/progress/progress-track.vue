@@ -2,9 +2,7 @@
   <article
     :tabindex="0"
     class="progress-track"
-    :class="{
-      ['compact-progress']: compactProgress,
-    }"
+    :class="{ ['compact-progress']: compactProgress }"
     role="slider"
     :aria-label="$t('IRONSWORN.PROGRESS.Track')"
     aria-orientation="horizontal"
@@ -29,10 +27,9 @@
 </template>
 
 <style lang="less">
-@box_border_radius: 3px;
-@box_border_width: 1px;
-@box_gap: 4px;
 .progress-track {
+  --progress_box_gap: 4px;
+  gap: var(--progress_box_gap);
   &:focus {
     box-shadow: 0 0 5px var(--color-shadow-primary);
   }
@@ -41,37 +38,41 @@
   grid-template-columns: repeat(10, 1fr);
   justify-content: center;
   align-items: center;
-  gap: @box_gap;
   .progress-track-box {
     max-height: 50px;
     max-width: 50px;
-    border-radius: @box_border_radius;
+    border-color: var(--ironsworn-color-border);
+    border-radius: var(--ironsworn-border-radius-md);
   }
   &.compact-progress {
     gap: 0;
     display: flex;
     flex-flow: row nowrap;
     .progress-track-box {
+      border-style: solid;
+      border-color: currentColor;
+      border-width: var(--ironsworn-border-width);
       flex-basis: 10%;
-      border: @box_border_width solid currentColor;
       .progress-tick {
         // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
         vector-effect: non-scaling-stroke;
-        stroke-width: 1px;
+        stroke-width: var(--ironsworn-border-width);
       }
       border-radius: 0;
       margin: 0;
       &:first-child {
-        border-radius: @box_border_radius 0 0 @box_border_radius;
+        border-radius: var(--ironsworn-border-radius-md) 0 0
+          var(--ironsworn-border-radius-md);
       }
       &:not(:first-child) {
-        margin-left: -(@box_border_width / 2);
+        margin-left: calc(var(--ironsworn-border-width) / -2);
       }
       &:last-child {
-        border-radius: 0 @box_border_radius @box_border_radius 0;
+        border-radius: 0 var(--ironsworn-border-radius-md)
+          var(--ironsworn-border-radius-md) 0;
       }
       &:not(:last-child) {
-        margin-right: -(@box_border_width / 2);
+        margin-right: calc(var(--ironsworn-border-width) / -2);
       }
     }
   }

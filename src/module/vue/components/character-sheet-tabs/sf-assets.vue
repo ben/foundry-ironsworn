@@ -13,7 +13,7 @@
       </div>
     </CollapseTransition>
     <div class="flexrow nogrow" style="text-align: center">
-      <BtnFaicon icon="atlas" @click="assetBrowser" class="clickable block">
+      <BtnFaicon icon="atlas" @click="assetBrowser" class="clickable btn-block">
         {{ $t('IRONSWORN.Assets') }}
       </BtnFaicon>
     </div>

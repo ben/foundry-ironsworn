@@ -3,7 +3,7 @@
     <nav role="tablist" :aria-orientation="ariaOrientation ?? 'horizontal'">
       <BtnIcon
         v-for="tabProp in tabsProps"
-        class="block"
+        class="btn-block"
         :class="tabProp.icon"
         role="tab"
         type="button"
@@ -84,12 +84,17 @@ defineExpose({ selectIndex })
     flex-grow: 0;
     height: max-content;
 
+    border-color: var(--ironsworn-color-border);
+    border-style: var(--ironsworn-border-style);
     &[aria-orientation='horizontal'] {
-      border-block-end: 1px solid;
+      border-top-width: 0;
+      border-bottom-width: var(--ironsworn-border-width);
+      border-inline-end-width: 0;
+      border-inline-start-width: 0;
     }
     &[aria-orientation='vertical'] {
-      border-inline-start: 1px solid;
-      border-inline-end: 1px solid;
+      border-inline-end-width: var(--ironsworn-border-width);
+      border-inline-start-width: var(--ironsworn-border-width);
     }
   }
   [role^='tabpanel'],

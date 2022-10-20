@@ -22,18 +22,6 @@
   </SheetBasic>
 </template>
 
-<style lang="less" scoped>
-.tablist {
-  border-bottom: 1px solid grey;
-}
-.tab {
-  padding: 5px;
-  &.active {
-    background-color: darkgray;
-  }
-}
-</style>
-
 <script setup lang="ts">
 import { provide, computed } from 'vue'
 import { IronswornActor } from '../actor/actor'
