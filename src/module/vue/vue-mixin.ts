@@ -70,7 +70,7 @@ export function VueMixin<
     _dragHandler(html: JQuery) {
       const dragHandler = (event: DragEvent) => this._onDragStart(event)
       html.find('.item[data-draggable="true"]').each((i, li) => {
-        li.setAttribute('draggable', true)
+        li.setAttribute('draggable', 'true') // this apparently requires a string, rather than a boolean
         li.addEventListener('dragstart', dragHandler, false)
       })
     }
