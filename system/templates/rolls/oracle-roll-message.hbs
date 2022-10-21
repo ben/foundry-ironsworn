@@ -7,8 +7,15 @@
   <table>
     <tbody>
       {{#each displayRows}}
-      <tr class="{{#if selected}}selected{{/if}}">
-        <td>{{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}</td>
+      <tr class="oracle-result-row {{#if selected}}selected{{/if}}">
+        <td>
+          {{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}
+          <div class="row-controls">
+            <button type="button" class="copy-result" data-result="{{{text}}}">
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+        </td>
         <td>{{{text}}}</td>
         <td style="padding: 0 5px; white-space: nowrap;">
           {{#if selected}}
