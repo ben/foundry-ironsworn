@@ -110,6 +110,9 @@ export class IronswornChatCard {
     html
       .find('.starforged__oracle__reroll')
       .on('click', (ev) => this._sfOracleReroll.call(this, ev))
+    html
+      .find('.copy-result')
+      .on('click', (ev) => this._oracleResultCopy.call(this, ev))
   }
 
   async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -362,6 +365,15 @@ export class IronswornChatCard {
       table.pack || undefined
     )
     msg.createOrUpdate()
+  }
+
+  async _oracleResultCopy(ev: JQuery.ClickEvent) {
+    const { result } = ev.currentTarget.dataset
+    await navigator.clipboard.writeText(result)
+    const icon = $(ev.currentTarget).find('i.fas')
+    icon.removeClass('fa-copy').addClass('fa-check')
+    await new Promise((r) => setTimeout(r, 2000))
+    icon.removeClass('fa-check').addClass('fa-copy')
   }
 
   async replaceSelectorWith(
