@@ -1,4 +1,3 @@
-import { Component, ComputedOptions, MethodOptions, render } from 'vue'
 import { IronswornSettings } from '../../helpers/settings'
 import SfCharacterSheet from '../../vue/sf-charactersheet.vue'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'

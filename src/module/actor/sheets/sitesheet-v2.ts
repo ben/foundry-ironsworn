@@ -1,4 +1,3 @@
-import { IronswornSettings } from '../../helpers/settings'
 import { SiteDataSource } from '../actortypes'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'

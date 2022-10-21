@@ -1,7 +1,6 @@
 import editSectorVue from '../../vue/edit-sector.vue'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueAppMixin } from '../../vue/vueapp.js'
-import { App } from 'vue'
 
 export class EditSectorDialog extends VueAppMixin(Application) {
   constructor(protected sceneId: string) {
