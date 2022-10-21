@@ -5,8 +5,9 @@ import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
 } from './vue-render-helper'
+import { VueMixin } from './vue-mixin.js'
 
-export abstract class VueActorSheet extends ActorSheet {
+export abstract class VueActorSheet extends VueMixin(ActorSheet) {
   renderHelper: VueSheetRenderHelper | undefined
 
   static get defaultOptions(): ActorSheet.Options {

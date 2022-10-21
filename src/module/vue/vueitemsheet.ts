@@ -1,11 +1,12 @@
 import { App } from 'vue'
 import { $ItemKey } from './provisions'
+import { VueMixin } from './vue-mixin.js'
 import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
 } from './vue-render-helper'
 
-export abstract class VueItemSheet extends ItemSheet {
+export abstract class VueItemSheet extends VueMixin(ItemSheet) {
   renderHelper: VueSheetRenderHelper | undefined
 
   static get defaultOptions() {
