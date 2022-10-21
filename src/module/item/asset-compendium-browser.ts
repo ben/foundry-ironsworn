@@ -1,8 +1,8 @@
 import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
-import { VueApplication } from '../vue/vueapp'
 import AssetCompendiumBrowserVue from '../vue/asset-compendium-browser.vue'
+import { VueAppMixin } from '../vue/vueapp.js'
 
-export class AssetCompendiumBrowser extends VueApplication {
+export class AssetCompendiumBrowser extends VueAppMixin(Application) {
   constructor(
     protected toolset: 'starforged' | 'ironsworn',
     options?: Partial<ApplicationOptions>

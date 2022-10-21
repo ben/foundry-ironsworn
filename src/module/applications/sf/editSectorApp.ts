@@ -1,8 +1,9 @@
-import { VueApplication } from '../../vue/vueapp'
 import editSectorVue from '../../vue/edit-sector.vue'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
+import { VueAppMixin } from '../../vue/vueapp.js'
+import { App } from 'vue'
 
-export class EditSectorDialog extends VueApplication {
+export class EditSectorDialog extends VueAppMixin(Application) {
   constructor(protected sceneId: string) {
     super()
   }
@@ -22,7 +23,6 @@ export class EditSectorDialog extends VueApplication {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      ...super.renderHelperOptions,
       components: { 'edit-sector': editSectorVue },
       vueData: async () => ({ sceneId: this.sceneId }),
     }
