@@ -11,7 +11,12 @@
         <td>
           {{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}
           <div class="row-controls">
-            <button type="button" class="copy-result" data-result="{{{text}}}">
+            <button
+              type="button"
+              class="copy-result"
+              data-result="{{{text}}}"
+              data-tooltip="{{localize 'IRONSWORN.Copy'}}"
+            >
               <i class="fas fa-copy"></i>
             </button>
           </div>
