@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.18.9
+
 - Add human-readable labels to the dialog when creating a new item, including a nudge away from using the old `'move'` item type ([#513](https://github.com/ben/foundry-ironsworn/pull/513))
 - Show edit-mode buttons for progress items with only a clock
 
