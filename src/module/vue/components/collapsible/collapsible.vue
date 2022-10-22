@@ -14,6 +14,7 @@
           :aria-controls="contentId"
           :icon="state.expanded ? toggleIconExpanded : toggleIconCollapsed"
           @click="toggle"
+          class="text"
           :class="{ [$style.toggle]: true, [toggleClass]: true }"
         >
           <slot name="toggle-content"></slot>

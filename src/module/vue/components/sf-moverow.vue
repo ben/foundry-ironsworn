@@ -20,18 +20,18 @@
         data-tooltip-direction="UP"
       >
         <BtnOracle
-          class="juicy"
+          class="juicy text"
           :node="data.oracles[0] ?? {}"
           :disabled="data.oracles.length !== 1"
         />
         <BtnRollmove
           :disabled="!canRoll"
-          class="juicy"
+          class="juicy text"
           :move="move"
           data-tooltip="IRONSWORN.Roll"
         />
 
-        <BtnSendmovetochat class="juicy" :move="move" />
+        <BtnSendmovetochat class="juicy text" :move="move" />
       </section>
     </template>
 
