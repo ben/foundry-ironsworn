@@ -1,73 +1,82 @@
 <template>
-  <div
+  <Collapsible
     class="movesheet-row"
-    :class="{ highlighted: data.highlighted }"
-    ref="$el"
+    :class="$style['movesheet-row']"
     data-tooltip-direction="LEFT"
+    :baseId="`move_row_${move.moveItem().id}`"
+    ref="$el"
+    :headingLevel="4"
+    headerClass="flexrow"
+    :headingClass="$style.heading"
+    :toggleClass="$style.toggle"
   >
-    <h4 class="flexrow">
-      <BtnRollmove
-        :disabled="!canRoll"
-        class="juicy text nogrow"
-        :move="move"
-      />
-      <span class="clickable text" @click="data.expanded = !data.expanded">
-        {{ move?.displayName }}
-      </span>
-    </h4>
-    <CollapseTransition>
-      <RulesTextMove
-        v-if="data.expanded"
-        @moveclick="moveClick"
-        :move="move"
-        class="move-summary"
+    <template #toggle-content>
+      {{ move?.displayName }}
+    </template>
+    <template #after-toggle>
+      <section
+        :class="$style['move-controls']"
+        class="nogrow"
+        data-tooltip-direction="UP"
       >
-        <template #before-main>
-          <section class="move-summary-buttons flexrow">
-            <BtnRollmove class="block" v-if="canRoll" :move="move">
-              {{ $t('IRONSWORN.Roll') }}
-            </BtnRollmove>
-            <BtnSendmovetochat
-              class="block"
-              :move="move"
-              :data-tooltip-direction="canRoll ? 'RIGHT' : 'LEFT'"
-            >
-              {{ $t('IRONSWORN.Chat') }}
-            </BtnSendmovetochat>
-          </section>
-        </template>
-        <template #after-footer>
-          <OracleTreeNode
-            class="item-row"
-            v-for="node of data.oracles"
-            :key="node.displayName"
-            :node="node"
-          />
-        </template>
-      </RulesTextMove>
-    </CollapseTransition>
-  </div>
+        <BtnOracle
+          class="juicy"
+          :node="data.oracles[0] ?? {}"
+          :disabled="data.oracles.length !== 1"
+        />
+        <BtnRollmove
+          :disabled="!canRoll"
+          class="juicy"
+          :move="move"
+          data-tooltip="IRONSWORN.Roll"
+        />
+
+        <BtnSendmovetochat class="juicy" :move="move" />
+      </section>
+    </template>
+
+    <RulesTextMove
+      @moveclick="moveClick"
+      :move="move"
+      :class="$style['move-summary']"
+    >
+      <template #after-footer>
+        <OracleTreeNode
+          class="item-row"
+          v-for="node of data.oracles"
+          :key="node.displayName"
+          :node="node"
+        />
+      </template>
+    </RulesTextMove>
+  </Collapsible>
 </template>
 
-<style lang="less" scoped>
-.move-summary {
-  border-left: 2px solid;
-  margin-left: 5px;
-  padding-left: 1rem;
-  button.icon-button {
-    border: 1px solid;
+<style lang="less" module>
+@icon_size: 1.2em;
+@border_left_width: 2px;
+.toggle {
+  padding: 0;
+  &::before {
+    font-size: @icon_size;
   }
 }
-h4 {
+.heading {
   margin: 0;
-  line-height: 1.4em;
-  gap: 0.2em;
-}
-.move-summary-buttons {
-  gap: 0.5rem;
+  display: flex;
 }
 .movesheet-row {
+  // TODO: fix highlighting
   transition: all 0.4s ease;
+}
+.move-summary {
+  border-left: @border_left_width solid;
+  margin-left: calc((@icon_size - @border_left_width) / 2);
+  padding-left: 1rem;
+}
+.move-controls {
+  display: flex;
+  flex-flow: row;
 }
 </style>
 
@@ -85,7 +94,8 @@ import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 import RulesTextMove from './rules-text/rules-text-move.vue'
 import { SFMoveDataProperties } from '../../item/itemtypes'
-import CollapseTransition from './transition/collapse-transition.vue'
+import Collapsible from './collapsible/collapsible.vue'
+import BtnOracle from './buttons/btn-oracle.vue'
 
 const props = defineProps<{ move: Move }>()
 const data = reactive({
@@ -93,6 +103,8 @@ const data = reactive({
   highlighted: false,
   oracles: [] as IOracleTreeNode[],
 })
+
+const $el = ref<typeof Collapsible>()
 
 const fulltext = computed(() => {
   const foundryMoveData = props.move.moveItem()?.data as
@@ -113,8 +125,6 @@ if (props.move.dataforgedMove) {
     data.oracles.push(...nodes)
   })
 }
-
-const $el = ref<HTMLElement>()
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (moveId) => {
@@ -142,6 +152,8 @@ function oracleClick(dfId: string) {
 }
 
 defineExpose({
-  collapse: () => (data.expanded = false),
+  collapse: $el.value?.collapse,
+  toggle: $el.value?.toggle,
+  expand: $el.value?.expand,
 })
 </script>

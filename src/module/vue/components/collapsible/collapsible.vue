@@ -1,29 +1,28 @@
 <template>
-  <Component
+  <component
     :id="wrapperId"
     :is="wrapperIs"
-    class="collapsible"
-    role=""
+    :class="$style.collapsible"
     :aria-expanded="state.expanded"
     :tabindex="0"
   >
-    <header>
-      <slot name="heading-start"></slot>
-      <Component :is="`h${headingLevel}`">
+    <header :class="headerClass">
+      <slot name="before-toggle"></slot>
+      <component :class="headingClass" :is="`h${headingLevel}`">
         <BtnFaicon
-          class="collapsible-toggle"
           :id="controlId"
           :aria-controls="contentId"
           :icon="state.expanded ? toggleIconExpanded : toggleIconCollapsed"
           @click="toggle"
+          :class="{ [$style.toggle]: true, [toggleClass]: true }"
         >
-          <slot name="button-content"></slot>
+          <slot name="toggle-content"></slot>
         </BtnFaicon>
-      </Component>
-      <slot name="heading-end"></slot>
+      </component>
+      <slot name="after-toggle"></slot>
     </header>
     <CollapseTransition>
-      <Component
+      <component
         v-if="state.expanded"
         :is="contentWrapperIs"
         role="region"
@@ -32,19 +31,33 @@
         class="collapsible-content"
         :class="contentWrapperClass"
       >
-        <slot name="default"></slot>
-      </Component>
+        <slot></slot>
+      </component>
     </CollapseTransition>
-  </Component>
+  </component>
 </template>
 
-<style lang="less">
+<style lang="less" module>
+// TODO: horizontal and vertical versions
 .collapsible {
+}
+
+.heading {
+  margin: 0;
+  display: flex;
+  font-weight: bold;
+}
+
+.toggle {
+  flex-grow: 1;
+
+  text-transform: uppercase;
+  justify-content: left;
 }
 </style>
 
 <script setup lang="ts">
-import { Component, reactive } from 'vue'
+import { reactive, useSlots } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed } from '@vue/reactivity'
@@ -62,7 +75,9 @@ const props = withDefaults(
     toggleClass?: any
     wrapperIs?: string
     disabled?: boolean
+    headerClass?: any
     headingLevel?: 1 | 2 | 3 | 4 | 5 | 6
+    headingClass?: any
   }>(),
   {
     toggleIconCollapsed: 'caret-right',
@@ -83,4 +98,17 @@ const contentId = computed(() => `${props.baseId}_content`)
 function toggle() {
   state.expanded = !state.expanded
 }
+
+function expand() {
+  state.expanded = true
+}
+function collapse() {
+  state.expanded = false
+}
+
+defineExpose({
+  toggle,
+  collapse,
+  expand,
+})
 </script>
