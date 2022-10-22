@@ -4,23 +4,34 @@
     :is="wrapperIs"
     :class="`${$style.collapsible} ${state.highlighted ? 'highlighted' : ''}`"
     :aria-expanded="state.expanded"
-    :tabindex="0"
+    :tabindex="-1"
     ref="$wrapper"
   >
-    <header :class="headerClass">
+    <header :class="{ [$style.header]: true, [headerClass]: true }">
       <slot name="before-toggle"></slot>
-      <component :class="headingClass" :is="`h${headingLevel}`">
-        <BtnFaicon
+      <component
+        :class="{ [headingClass]: true, [$style.heading]: true }"
+        :is="`h${headingLevel}`"
+      >
+        <component
+          :is="noIcon ? 'button' : BtnFaicon"
           :id="controlId"
+          type="button"
           :aria-controls="contentId"
-          :icon="state.expanded ? toggleIconExpanded : toggleIconCollapsed"
+          :icon="
+            noIcon
+              ? undefined
+              : state.expanded
+              ? toggleIconExpanded
+              : toggleIconCollapsed
+          "
           @click="toggle"
-          class="text"
+          class="text clickable"
           :class="{ [$style.toggle]: true, [toggleClass]: true }"
           :data-tooltip="toggleTooltip"
         >
           <slot name="toggle-content"></slot>
-        </BtnFaicon>
+        </component>
       </component>
       <slot name="after-toggle"></slot>
     </header>
@@ -32,7 +43,7 @@
         :aria-labelledby="controlId"
         :id="contentId"
         class="collapsible-content"
-        :class="contentWrapperClass"
+        :class="{ [contentWrapperClass]: true, [$style.contentWrapper]: true }"
       >
         <slot></slot>
       </component>
@@ -45,16 +56,21 @@
 .collapsible {
 }
 
+.contentWrapper {
+  padding: 0.25em 0.5rem 0.5rem;
+}
+
 .heading {
-  margin: 0;
-  display: flex;
-  font-weight: bold;
+  display: contents !important;
 }
 
 .toggle {
+  margin: 0;
+  height: inherit;
   flex-grow: 1;
   text-transform: uppercase;
   justify-content: left;
+  font-size: inherit;
 }
 </style>
 
@@ -70,6 +86,7 @@ const props = withDefaults(
      * The ID to be assigned to the wrapper element, from which the IDs of other elements within this component are generated. Required in order to generate the correct ARIA annotations.
      */
     baseId: string
+    noIcon?: boolean
     toggleIconCollapsed?: string
     toggleIconExpanded?: string
     contentWrapperIs?: string
@@ -78,7 +95,7 @@ const props = withDefaults(
     wrapperIs?: string
     disabled?: boolean
     headerClass?: any
-    headingLevel?: 1 | 2 | 3 | 4 | 5 | 6
+    headingLevel?: number
     headingClass?: any
     toggleTooltip?: string
     forceExpand?: boolean

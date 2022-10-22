@@ -5,8 +5,9 @@
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
-    :headingLevel="4"
+    :headingLevel="headingLevel"
     headerClass="flexrow"
+    :noIcon="true"
     :headingClass="$style.heading"
     :toggleClass="$style.toggle"
     :toggleTooltip="toggleTooltip"
@@ -24,10 +25,20 @@
           class="juicy text"
           :node="data.oracles[0] ?? {}"
           :disabled="data.oracles.length !== 1"
+          :class="$style['move-button']"
         />
-        <BtnRollmove :disabled="!canRoll" class="juicy text" :move="move" />
+        <BtnRollmove
+          :disabled="!canRoll"
+          class="juicy text"
+          :move="move"
+          :class="$style['move-button']"
+        />
 
-        <BtnSendmovetochat class="juicy text" :move="move" />
+        <BtnSendmovetochat
+          class="juicy text"
+          :move="move"
+          :class="$style['move-button']"
+        />
       </section>
     </template>
 
@@ -53,25 +64,33 @@
 @border_left_width: 2px;
 .toggle {
   padding: 0;
-  &::before {
-    font-size: @icon_size;
-  }
+  padding-left: 0.25rem;
+  text-align: left;
 }
-.heading {
-  margin: 0;
-  display: flex;
-}
+
 .movesheet-row {
   transition: all 0.4s ease;
 }
 .move-summary {
-  border-left: @border_left_width solid;
-  margin-left: calc((@icon_size - @border_left_width) / 2);
-  padding-left: 1rem;
+  // padding: 0.5rem;
+  // border-left: @border_left_width solid;
+  // margin-left: calc((@icon_size - @border_left_width) / 2);
+  // padding-left: 1rem;
 }
 .move-controls {
   display: flex;
   flex-flow: row;
+}
+
+.move-button {
+  font-size: 1.15em;
+  aspect-ratio: 1 !important;
+  height: inherit !important;
+}
+
+.heading {
+  font-weight: bold;
+  line-height: 1.5;
 }
 </style>
 
@@ -91,7 +110,10 @@ import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
 
-const props = defineProps<{ move: Move }>()
+const props = withDefaults(
+  defineProps<{ move: Move; headingLevel?: number }>(),
+  { headingLevel: 4 }
+)
 
 const $item = computed(() => props.move.moveItem() as IronswornItem)
 
@@ -134,8 +156,6 @@ function moveClick(move: IronswornItem) {
 }
 
 defineExpose({
-  collapse: $collapsible.value?.collapse,
-  toggle: $collapsible.value?.toggle,
-  expand: $collapsible.value?.expand,
+  collapsible: $collapsible,
 })
 </script>

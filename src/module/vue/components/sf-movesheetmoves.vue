@@ -1,63 +1,70 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow" style="margin-top: 0.5rem">
+  <article class="flexcol" :class="$style.wrapper">
+    <nav class="flexrow nogrow" :class="$style['nav-search']">
       <input
-        type="text"
+        type="search"
         :placeholder="$t('IRONSWORN.Search')"
         v-model="state.searchQuery"
         @keydown.enter.prevent
       />
-      <i
-        class="fa fa-times-circle nogrow clickable text"
-        @click="state.searchQuery = ''"
-        style="padding: 6px"
+      <BtnFaicon
+        icon="times-circle"
+        class="nogrow clickable text"
+        @click="clearSearch()"
+        :class="$style['search-btn']"
       />
-      <i
-        class="fa fa-compress-alt nogrow clickable text"
-        @click="collapseAll"
-        style="padding: 6px"
+      <BtnFaicon
+        icon="compress-alt"
+        class="nogrow clickable text"
+        @click="collapseAll()"
+        :class="$style['search-btn']"
       />
-    </div>
+    </nav>
 
-    <div class="flexcol item-list">
+    <ul
+      v-if="state.searchQuery"
+      class="flexcol item-list"
+      :class="$style['item-list']"
+    >
       <!-- Flat search results -->
-      <div class="nogrow" v-if="state.searchQuery">
-        <sf-moverow v-for="(move, i) of searchResults" :key="i" :move="move" />
-      </div>
-
-      <!-- Categorized moves if not searching -->
-      <div
+      <li
+        v-for="(move, resultIndex) of searchResults"
+        :key="resultIndex"
         class="nogrow"
-        v-else
-        v-for="category of state.categories"
-        :key="category.displayName"
       >
-        <h2
-          :style="`--ironsworn-color-thematic:${
-            category.dataforgedCategory?.Display.Color ?? 'currentcolor'
-          };`"
-        >
-          {{ category.displayName }}
-        </h2>
-        <sf-moverow
-          v-for="(move, i) of category.moves"
-          :key="i"
-          :move="move"
-          ref="allmoves"
-        />
-      </div>
-    </div>
-  </div>
+        <SfMoverow :move="move" ref="allMoves" />
+      </li>
+    </ul>
+
+    <ul v-else class="flexcol item-list" :class="$style['item-list']">
+      <!-- Categorized moves if not searching -->
+      <li
+        v-for="(category, catIndex) in state.categories"
+        :key="catIndex"
+        class="nogrow"
+      >
+        <SfMoveCategoryRows :category="category" ref="allCategories" />
+      </li>
+    </ul>
+  </article>
 </template>
 
-<style lang="less" scoped>
-h2 {
-  margin: 0.5rem 0 0.3rem;
-  border-bottom-width: 2px;
-  border-color: var(--ironsworn-color-thematic);
+<style lang="less" module>
+.nav-search {
+  margin-top: 0.5rem;
+}
+.search-btn {
+  padding: 6px;
+}
+.wrapper {
+  gap: 0.5rem;
 }
 .item-list {
-  padding: 0 0.5rem;
+  scrollbar-width: thin;
+  margin: 0 -7px 0 0 !important;
+  padding-right: 7px !important;
+  scrollbar-gutter: stable both-edges;
+  gap: 0.5rem;
 }
 </style>
 
@@ -69,7 +76,9 @@ import {
   createStarforgedMoveTree,
   MoveCategory,
 } from '../../features/custommoves'
-import sfMoverow from './sf-moverow.vue'
+import SfMoveCategoryRows from './sf-move-category-rows.vue'
+import SfMoverow from './sf-moverow.vue'
+import BtnFaicon from './buttons/btn-faicon.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)
@@ -78,6 +87,9 @@ const state = reactive({
   searchQuery: '',
   categories: [] as MoveCategory[],
 })
+
+let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
+let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
 
 const tempCategories =
   props.toolset === 'ironsworn'
@@ -114,10 +126,13 @@ function clearSearch() {
   state.searchQuery = ''
 }
 
-const allmoves = ref<InstanceType<typeof sfMoverow>[]>([])
 function collapseAll() {
-  for (const row of allmoves.value ?? []) {
-    row.collapse()
+  for (const cat of allCategories.value ?? []) {
+    cat.collapseChildren()
+  }
+
+  for (const mv of allMoves.value ?? []) {
+    mv.collapsible?.collapse()
   }
 }
 
