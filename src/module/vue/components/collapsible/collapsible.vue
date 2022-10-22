@@ -2,9 +2,10 @@
   <component
     :id="wrapperId"
     :is="wrapperIs"
-    :class="$style.collapsible"
+    :class="`${$style.collapsible} ${state.highlighted ? 'highlighted' : ''}`"
     :aria-expanded="state.expanded"
     :tabindex="0"
+    ref="$wrapper"
   >
     <header :class="headerClass">
       <slot name="before-toggle"></slot>
@@ -52,17 +53,16 @@
 
 .toggle {
   flex-grow: 1;
-
   text-transform: uppercase;
   justify-content: left;
 }
 </style>
 
 <script setup lang="ts">
-import { reactive, useSlots } from 'vue'
+import { nextTick, reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
-import { computed } from '@vue/reactivity'
+import { computed, ref } from '@vue/reactivity'
 
 const props = withDefaults(
   defineProps<{
@@ -81,6 +81,7 @@ const props = withDefaults(
     headingLevel?: 1 | 2 | 3 | 4 | 5 | 6
     headingClass?: any
     toggleTooltip?: string
+    forceExpand?: boolean
   }>(),
   {
     toggleIconCollapsed: 'caret-right',
@@ -92,7 +93,16 @@ const props = withDefaults(
   }
 )
 
-const state = reactive<{ expanded: boolean }>({ expanded: false })
+const $wrapper = ref<HTMLElement>()
+const state = reactive<{
+  forceExpand: boolean
+  expanded: boolean
+  highlighted: boolean
+}>({
+  forceExpand: props.forceExpand ?? false,
+  expanded: false,
+  highlighted: false,
+})
 
 const wrapperId = computed(() => props.baseId)
 const controlId = computed(() => `${props.baseId}_control`)
@@ -109,7 +119,38 @@ function collapse() {
   state.expanded = false
 }
 
+function highlight() {
+  state.highlighted = true
+}
+
+function unhighlight() {
+  state.highlighted = false
+}
+
+/**
+ * Scroll to the collapsible, apply the highlight class, and expand it.
+ * @param ms The duration of the highlight effect, in milliseconds
+ */
+async function scrollToAndExpand(ms: number = 2000) {
+  expand()
+  highlight()
+
+  await nextTick()
+
+  $wrapper.value?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  })
+
+  await nextTick()
+
+  setTimeout(unhighlight, ms)
+}
+
 defineExpose({
+  scrollToAndExpand,
+  unhighlight,
+  highlight,
   toggle,
   collapse,
   expand,

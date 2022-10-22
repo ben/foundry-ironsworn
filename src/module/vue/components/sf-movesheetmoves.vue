@@ -4,12 +4,12 @@
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
-        v-model="data.searchQuery"
+        v-model="state.searchQuery"
         @keydown.enter.prevent
       />
       <i
         class="fa fa-times-circle nogrow clickable text"
-        @click="data.searchQuery = ''"
+        @click="state.searchQuery = ''"
         style="padding: 6px"
       />
       <i
@@ -21,27 +21,27 @@
 
     <div class="flexcol item-list">
       <!-- Flat search results -->
-      <div class="nogrow" v-if="data.searchQuery">
-        <sf-moverow
-          v-for="move of searchResults"
-          :key="move.displayName"
-          :move="move"
-        />
+      <div class="nogrow" v-if="state.searchQuery">
+        <sf-moverow v-for="(move, i) of searchResults" :key="i" :move="move" />
       </div>
 
       <!-- Categorized moves if not searching -->
       <div
         class="nogrow"
         v-else
-        v-for="category of data.categories"
+        v-for="category of state.categories"
         :key="category.displayName"
       >
-        <h2>
+        <h2
+          :style="`--ironsworn-color-thematic:${
+            category.dataforgedCategory?.Display.Color ?? 'currentcolor'
+          };`"
+        >
           {{ category.displayName }}
         </h2>
         <sf-moverow
-          v-for="move of category.moves"
-          :key="move.displayName"
+          v-for="(move, i) of category.moves"
+          :key="i"
           :move="move"
           ref="allmoves"
         />
@@ -53,6 +53,8 @@
 <style lang="less" scoped>
 h2 {
   margin: 0.5rem 0 0.3rem;
+  border-bottom-width: 2px;
+  border-color: var(--ironsworn-color-thematic);
 }
 .item-list {
   padding: 0 0.5rem;
@@ -65,15 +67,16 @@ import { computed, inject, provide, reactive, ref, Ref } from 'vue'
 import {
   createIronswornMoveTree,
   createStarforgedMoveTree,
+  MoveCategory,
 } from '../../features/custommoves'
 import sfMoverow from './sf-moverow.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)
 
-const data = reactive({
+const state = reactive({
   searchQuery: '',
-  categories: [] as any[],
+  categories: [] as MoveCategory[],
 })
 
 const tempCategories =
@@ -85,19 +88,19 @@ for (const category of tempCategories) {
     ;(move as any).highlighted = false
   }
 }
-data.categories = tempCategories
+state.categories = tempCategories
 
 const checkedSearchQuery = computed(() => {
   try {
-    new RegExp(data.searchQuery)
-    return data.searchQuery
+    new RegExp(state.searchQuery)
+    return state.searchQuery
   } catch (error) {
     return ''
   }
 })
 
 const flatMoves = computed(() => {
-  return flatten(data.categories.map((x) => x.moves))
+  return flatten(state.categories.map((x) => x.moves))
 })
 
 const searchResults = computed(() => {
@@ -108,7 +111,7 @@ const searchResults = computed(() => {
 })
 
 function clearSearch() {
-  data.searchQuery = ''
+  state.searchQuery = ''
 }
 
 const allmoves = ref<InstanceType<typeof sfMoverow>[]>([])
@@ -119,6 +122,6 @@ function collapseAll() {
 }
 
 CONFIG.IRONSWORN.emitter.on('highlightMove', (_item) => {
-  data.searchQuery = ''
+  state.searchQuery = ''
 })
 </script>

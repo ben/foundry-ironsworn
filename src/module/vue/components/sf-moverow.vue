@@ -4,7 +4,7 @@
     :class="$style['movesheet-row']"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
-    ref="$el"
+    ref="$collapsible"
     :headingLevel="4"
     headerClass="flexrow"
     :headingClass="$style.heading"
@@ -62,7 +62,6 @@
   display: flex;
 }
 .movesheet-row {
-  // TODO: fix highlighting
   transition: all 0.4s ease;
 }
 .move-summary {
@@ -90,6 +89,7 @@ import RulesTextMove from './rules-text/rules-text-move.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
+import { enrichMarkdown } from '../vue-plugin.js'
 
 const props = defineProps<{ move: Move }>()
 
@@ -99,20 +99,19 @@ provide(ItemKey, computed(() => $item.value.toObject()) as any)
 provide($ItemKey, $item.value)
 
 const data = reactive({
-  expanded: false,
-  highlighted: false,
   oracles: [] as IOracleTreeNode[],
 })
 
-console.log('item.data', $item.value.data)
-const $el = ref<typeof Collapsible>()
+const $collapsible = ref<typeof Collapsible>()
 
 const canRoll = computed(() => {
   return moveHasRollableOptions($item.value)
 })
 
-// @ts-ignore
-const toggleTooltip = computed(() => $item.value.data.data.Trigger?.Text)
+const toggleTooltip = computed(() =>
+  // @ts-ignore
+  enrichMarkdown($item.value.data.data.Trigger?.Text)
+)
 
 if (props.move.dataforgedMove) {
   const oracleIds = props.move.dataforgedMove.Oracles ?? []
@@ -123,19 +122,9 @@ if (props.move.dataforgedMove) {
 }
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
-CONFIG.IRONSWORN.emitter.on('highlightMove', async (moveId) => {
-  if (moveId === props.move.moveItem().id) {
-    data.expanded = true
-    data.highlighted = true
-    await nextTick()
-    $el.value?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'start',
-    })
-    await nextTick()
-    setTimeout(() => {
-      data.highlighted = false
-    }, 2000)
+CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
+  if (targetMoveId === props.move.moveItem().id) {
+    $collapsible.value?.scrollToAndExpand()
   }
 })
 
@@ -145,8 +134,8 @@ function moveClick(move: IronswornItem) {
 }
 
 defineExpose({
-  collapse: $el.value?.collapse,
-  toggle: $el.value?.toggle,
-  expand: $el.value?.expand,
+  collapse: $collapsible.value?.collapse,
+  toggle: $collapsible.value?.toggle,
+  expand: $collapsible.value?.expand,
 })
 </script>

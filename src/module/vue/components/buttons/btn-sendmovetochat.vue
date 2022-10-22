@@ -2,7 +2,7 @@
   <btn-faicon
     class="move-chat"
     icon="comment"
-    :tooltip="$t('IRONSWORN.SendToChat')"
+    :tooltip="$t('IRONSWORN.SendToChat', { move: move.displayName })"
     @click="sendToChat"
     :disabled="disabled"
   >

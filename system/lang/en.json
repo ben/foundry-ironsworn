@@ -9,7 +9,7 @@
     "CustomTruth": "Custom Truth",
     "Roll": "Roll",
     "Chat": "Chat",
-    "SendToChat": "Send rules text to chat",
+    "SendToChat": "Send text to chat: <i>{move}</i>",
     "Rolling": "Rolling",
     "Bonus": "Bonus",
     "Adds": "Adds",
