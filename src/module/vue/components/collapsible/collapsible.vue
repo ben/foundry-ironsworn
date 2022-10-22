@@ -16,6 +16,7 @@
           @click="toggle"
           class="text"
           :class="{ [$style.toggle]: true, [toggleClass]: true }"
+          :data-tooltip="toggleTooltip"
         >
           <slot name="toggle-content"></slot>
         </BtnFaicon>
@@ -79,6 +80,7 @@ const props = withDefaults(
     headerClass?: any
     headingLevel?: 1 | 2 | 3 | 4 | 5 | 6
     headingClass?: any
+    toggleTooltip?: string
   }>(),
   {
     toggleIconCollapsed: 'caret-right',

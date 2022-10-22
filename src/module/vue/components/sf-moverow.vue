@@ -9,6 +9,7 @@
     headerClass="flexrow"
     :headingClass="$style.heading"
     :toggleClass="$style.toggle"
+    :toggleTooltip="toggleTooltip"
   >
     <template #toggle-content>
       {{ move?.displayName }}
@@ -24,12 +25,7 @@
           :node="data.oracles[0] ?? {}"
           :disabled="data.oracles.length !== 1"
         />
-        <BtnRollmove
-          :disabled="!canRoll"
-          class="juicy text"
-          :move="move"
-          data-tooltip="IRONSWORN.Roll"
-        />
+        <BtnRollmove :disabled="!canRoll" class="juicy text" :move="move" />
 
         <BtnSendmovetochat class="juicy text" :move="move" />
       </section>
@@ -81,42 +77,42 @@
 </style>
 
 <script setup lang="ts">
-import { computed, nextTick, reactive, ref } from 'vue'
+import { computed, nextTick, provide, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
-import { IronswornHandlebarsHelpers } from '../../helpers/handlebars'
 import { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
-import { enrichMarkdown } from '../vue-plugin'
 import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 import RulesTextMove from './rules-text/rules-text-move.vue'
-import { SFMoveDataProperties } from '../../item/itemtypes'
 import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
+import { ItemKey, $ItemKey } from '../provisions.js'
 
 const props = defineProps<{ move: Move }>()
+
+const $item = computed(() => props.move.moveItem() as IronswornItem)
+
+provide(ItemKey, computed(() => $item.value.toObject()) as any)
+provide($ItemKey, $item.value)
+
 const data = reactive({
   expanded: false,
   highlighted: false,
   oracles: [] as IOracleTreeNode[],
 })
 
+console.log('item.data', $item.value.data)
 const $el = ref<typeof Collapsible>()
 
-const fulltext = computed(() => {
-  const foundryMoveData = props.move.moveItem()?.data as
-    | SFMoveDataProperties
-    | undefined
-  return IronswornHandlebarsHelpers.stripTables(
-    enrichMarkdown(foundryMoveData?.data.Text ?? '')
-  )
-})
 const canRoll = computed(() => {
-  return moveHasRollableOptions(props.move.moveItem())
+  return moveHasRollableOptions($item.value)
 })
+
+// @ts-ignore
+const toggleTooltip = computed(() => $item.value.data.data.Trigger?.Text)
 
 if (props.move.dataforgedMove) {
   const oracleIds = props.move.dataforgedMove.Oracles ?? []
@@ -128,7 +124,7 @@ if (props.move.dataforgedMove) {
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (moveId) => {
-  if (moveId === props.move.moveItem()?.id) {
+  if (moveId === props.move.moveItem().id) {
     data.expanded = true
     data.highlighted = true
     await nextTick()
@@ -146,9 +142,6 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (moveId) => {
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
-}
-function oracleClick(dfId: string) {
-  CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfId)
 }
 
 defineExpose({

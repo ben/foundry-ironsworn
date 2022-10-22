@@ -6,15 +6,18 @@
     @click="sendToChat"
     :disabled="disabled"
   >
-    <slot name="default"><!-- {{$t('IRONSWORN.Chat')}} --></slot>
+    <slot name="default"></slot>
   </btn-faicon>
 </template>
 
 <style lang="less"></style>
 
 <script setup lang="ts">
+import { inject } from 'vue'
 import { createSfMoveChatMessage } from '../../../chat/sf-move-chat-message'
 import { Move } from '../../../features/custommoves'
+import { IronswornItem } from '../../../item/item.js'
+import { $ItemKey } from '../../provisions.js'
 import btnFaicon from './btn-faicon.vue'
 
 const props = defineProps<{
@@ -22,7 +25,9 @@ const props = defineProps<{
   disabled?: boolean
 }>()
 
+const $item = inject($ItemKey)
+
 function sendToChat(e) {
-  createSfMoveChatMessage(props.move.moveItem())
+  createSfMoveChatMessage($item as IronswornItem)
 }
 </script>
