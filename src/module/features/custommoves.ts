@@ -5,6 +5,7 @@ import { MoveDataSource } from '../item/itemtypes'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface MoveCategory {
+  color: string | null
   displayName: string
   moves: Move[]
   dataforgedCategory?: IMoveCategory
@@ -54,6 +55,7 @@ function walkCategory(
   compendiumMoves: IronswornItem[]
 ): MoveCategory {
   const newCategory = {
+    color: category.Display.Color ?? null,
     displayName: game.i18n.localize(`IRONSWORN.${category.Name}`),
     dataforgedCategory: category,
     moves: [] as Move[],
@@ -84,6 +86,11 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
   ) as Folder | undefined
   if (!folder || folder.contents.length == 0) return
 
+  console.log('folder', folder)
+
+  // @ts-ignore Exists only in FVTT v10 API
+  const color = (folder.color ?? null) as string | null
+
   const customMoves = [] as Move[]
   for (const moveItem of folder.contents) {
     if (moveItem.documentName !== 'Item' || moveItem.type !== 'sfmove') continue
@@ -95,6 +102,7 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
 
   if (customMoves.length > 0) {
     categories.push({
+      color,
       displayName: name,
       moves: customMoves,
     })

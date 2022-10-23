@@ -69,6 +69,4 @@ const props = withDefaults(
     global: false,
   }
 )
-
-const item = inject(ItemKey)
 </script>

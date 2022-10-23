@@ -195,9 +195,10 @@
     &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
     &[aria-disabled="true"] {
+      color: inherit;
       cursor: not-allowed;
       pointer-events: none;
-      opacity: 0.5;
+      opacity: 0.35;
     }
   }
 

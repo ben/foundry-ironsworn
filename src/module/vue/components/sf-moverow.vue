@@ -1,15 +1,14 @@
 <template>
   <Collapsible
     class="movesheet-row"
-    :class="$style['movesheet-row']"
+    :class="$style['wrapper']"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
-    :headingLevel="headingLevel"
-    headerClass="flexrow"
+    :toggleWrapperIs="`h${headingLevel}`"
+    :toggleSectionClass="['flexrow', $style.toggleSection, toggleSectionClass]"
     :noIcon="true"
-    :headingClass="$style.heading"
-    :toggleClass="$style.toggle"
+    :toggleButtonClass="[$style.toggleButton, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
   >
     <template #toggle-content>
@@ -41,34 +40,35 @@
         />
       </section>
     </template>
-
-    <RulesTextMove
-      @moveclick="moveClick"
-      :move="move"
-      :class="$style['move-summary']"
-    >
-      <template #after-footer>
-        <OracleTreeNode
-          class="item-row"
-          v-for="node of data.oracles"
-          :key="node.displayName"
-          :node="node"
-        />
-      </template>
-    </RulesTextMove>
+    <template #default>
+      <RulesTextMove
+        @moveclick="moveClick"
+        :move="move"
+        :class="$style['move-summary']"
+      >
+        <template #after-footer>
+          <OracleTreeNode
+            class="item-row"
+            v-for="node of data.oracles"
+            :key="node.displayName"
+            :node="node"
+          />
+        </template>
+      </RulesTextMove>
+    </template>
   </Collapsible>
 </template>
 
 <style lang="less" module>
 @icon_size: 1.2em;
 @border_left_width: 2px;
-.toggle {
+.toggleButton {
   padding: 0;
   padding-left: 0.25rem;
   text-align: left;
 }
 
-.movesheet-row {
+.wrapper {
   transition: all 0.4s ease;
 }
 .move-summary {
@@ -76,6 +76,7 @@
   // border-left: @border_left_width solid;
   // margin-left: calc((@icon_size - @border_left_width) / 2);
   // padding-left: 1rem;
+  padding: 0.25em 0.5rem 0.5rem;
 }
 .move-controls {
   display: flex;
@@ -86,11 +87,19 @@
   font-size: 1.15em;
   aspect-ratio: 1 !important;
   height: inherit !important;
+  color: inherit;
 }
 
-.heading {
-  font-weight: bold;
-  line-height: 1.5;
+.toggleButton {
+  color: inherit;
+}
+
+.toggleSection {
+  transition: 0.5s ease;
+  .wrapper[aria-expanded='false'] & {
+    background-color: var(--ironsworn-color-thematic);
+    color: white;
+  }
 }
 </style>
 
@@ -111,8 +120,13 @@ import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
 
 const props = withDefaults(
-  defineProps<{ move: Move; headingLevel?: number }>(),
-  { headingLevel: 4 }
+  defineProps<{
+    move: Move
+    headingLevel?: number
+    toggleSectionClass: any
+    toggleButtonClass: any
+  }>(),
+  { headingLevel: 4, toggleSectionClass: '', toggleButtonClass: '' }
 )
 
 const $item = computed(() => props.move.moveItem() as IronswornItem)

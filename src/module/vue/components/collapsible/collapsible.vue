@@ -5,13 +5,17 @@
     :class="`${$style.collapsible} ${state.highlighted ? 'highlighted' : ''}`"
     :aria-expanded="state.expanded"
     :tabindex="-1"
+    :aria-orientation="orientation"
     ref="$wrapper"
   >
-    <header :class="{ [$style.header]: true, [headerClass]: true }">
+    <component
+      :is="toggleSectionIs"
+      :class="[toggleSectionClass, $style.toggleSection]"
+    >
       <slot name="before-toggle"></slot>
       <component
-        :class="{ [headingClass]: true, [$style.heading]: true }"
-        :is="`h${headingLevel}`"
+        :class="[toggleWrapperClass, $style.toggleWrapper]"
+        :is="toggleWrapperIs"
       >
         <component
           :is="noIcon ? 'button' : BtnFaicon"
@@ -27,15 +31,16 @@
           "
           @click="toggle"
           class="text clickable"
-          :class="{ [$style.toggle]: true, [toggleClass]: true }"
+          :class="[$style.toggle, toggleButtonClass]"
           :data-tooltip="toggleTooltip"
+          data-tooltip-direction="LEFT"
         >
           <slot name="toggle-content"></slot>
         </component>
       </component>
       <slot name="after-toggle"></slot>
-    </header>
-    <CollapseTransition>
+    </component>
+    <CollapseTransition :dimension="dimension">
       <component
         v-if="state.expanded"
         :is="contentWrapperIs"
@@ -43,9 +48,9 @@
         :aria-labelledby="controlId"
         :id="contentId"
         class="collapsible-content"
-        :class="{ [contentWrapperClass]: true, [$style.contentWrapper]: true }"
+        :class="[contentWrapperClass, $style.contentWrapper]"
       >
-        <slot></slot>
+        <slot name="default"></slot>
       </component>
     </CollapseTransition>
   </component>
@@ -57,11 +62,14 @@
 }
 
 .contentWrapper {
-  padding: 0.25em 0.5rem 0.5rem;
 }
 
-.heading {
+.toggleWrapper {
   display: contents !important;
+}
+
+.toggleSection {
+  display: flex;
 }
 
 .toggle {
@@ -75,7 +83,7 @@
 </style>
 
 <script setup lang="ts">
-import { nextTick, reactive } from 'vue'
+import { nextTick, reactive, useSlots } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed, ref } from '@vue/reactivity'
@@ -86,27 +94,51 @@ const props = withDefaults(
      * The ID to be assigned to the wrapper element, from which the IDs of other elements within this component are generated. Required in order to generate the correct ARIA annotations.
      */
     baseId: string
+    /**
+     * @defaultValue `'horizontal'`
+     */
+    orientation?: 'horizontal' | 'vertical'
     noIcon?: boolean
+
+    toggleTooltip?: string
+    disabled?: boolean
+    /**
+     * @defaultValue `'article'`
+     */
+    wrapperIs?: string
+    /**
+     * @defaultValue `'header'`
+     */
+    toggleSectionIs?: string
+    toggleSectionClass?: any
+    /**
+     * @defaultValue `'h3'`
+     */
+    toggleWrapperIs?: string
+    toggleWrapperClass?: any
+    toggleButtonClass?: any
     toggleIconCollapsed?: string
     toggleIconExpanded?: string
+    /**
+     * @defaultValue `'section'`
+     */
     contentWrapperIs?: string
     contentWrapperClass?: any
-    toggleClass?: any
-    wrapperIs?: string
-    disabled?: boolean
-    headerClass?: any
-    headingLevel?: number
-    headingClass?: any
-    toggleTooltip?: string
     forceExpand?: boolean
   }>(),
   {
+    orientation: 'vertical',
     toggleIconCollapsed: 'caret-right',
     toggleIconExpanded: 'caret-down',
     wrapperIs: 'article',
     contentWrapperIs: 'section',
+    toggleWrapperIs: 'h3',
+    toggleSectionIs: 'header',
     disabled: false,
-    headingLevel: 3,
+    contentWrapperClass: '',
+    toggleButtonClass: '',
+    toggleWrapperClass: '',
+    headingClass: '',
   }
 )
 
@@ -124,6 +156,10 @@ const state = reactive<{
 const wrapperId = computed(() => props.baseId)
 const controlId = computed(() => `${props.baseId}_control`)
 const contentId = computed(() => `${props.baseId}_content`)
+
+const dimension = computed(() =>
+  props.orientation === 'horizontal' ? 'width' : 'height'
+)
 
 function toggle() {
   state.expanded = !state.expanded

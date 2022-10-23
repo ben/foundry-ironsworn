@@ -43,7 +43,11 @@
         :key="catIndex"
         class="nogrow"
       >
-        <SfMoveCategoryRows :category="category" ref="allCategories" />
+        <SfMoveCategoryRows
+          class="nogrow"
+          :category="category"
+          ref="allCategories"
+        />
       </li>
     </ul>
   </article>
