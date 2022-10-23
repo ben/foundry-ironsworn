@@ -9,7 +9,7 @@
       {{#each displayRows}}
       <tr class="oracle-result-row" {{#if selected}}aria-selected="true"{{/if}}>
         <td class="oracle-table-column-roll-range">
-          <span class="oracle-table-content">
+          <span class="oracle-row-content">
           {{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}
           </span>
           <button
@@ -25,7 +25,7 @@
         <td class="oracle-table-column-result-text">{{{text}}}</td>
         <td class="oracle-table-column-roll-result">
           {{#if selected}}
-          <span class="oracle-table-content">
+          <span class="oracle-row-content">
             <i class="icon isicon-d10-tilt" role="presentational"></i>
             {{../oracleRoll.roll.total}}
           </span>
