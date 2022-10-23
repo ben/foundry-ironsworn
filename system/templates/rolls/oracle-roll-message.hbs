@@ -1,4 +1,4 @@
-<article class="table-draw hover-controls-anchor oracle-roll flexcol" data-oracleroll="{{json oracleRoll}}">
+<article class="ironsworn table-draw hover-controls-anchor oracle-roll flexcol" data-oracleroll="{{json oracleRoll}}">
   {{#if subtitle}}
   <small>{{subtitle}}</small>
   {{/if}}
@@ -8,13 +8,13 @@
     <tbody>
       {{#each displayRows}}
       <tr class="oracle-result-row {{#if selected}}selected{{/if}}">
-        <td>
+        <td class="first-column">
           {{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}
           <div class="row-controls">
             <button
               type="button"
-              class="copy-result"
-              data-result="{{{text}}}"
+              class="copy-result icon-button clickable block"
+              data-result="{{text}}"
               data-tooltip="{{localize 'IRONSWORN.Copy'}}"
             >
               <i class="fas fa-copy"></i>
