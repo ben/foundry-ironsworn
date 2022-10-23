@@ -28,6 +28,6 @@ const props = defineProps<{
 const $item = inject($ItemKey)
 
 function sendToChat(e) {
-  createSfMoveChatMessage($item as IronswornItem)
+  if ($item) createSfMoveChatMessage($item)
 }
 </script>
