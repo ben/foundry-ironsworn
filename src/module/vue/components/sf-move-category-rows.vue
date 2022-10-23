@@ -23,6 +23,7 @@
             :move="move"
             ref="allmoves"
             :headingLevel="headingLevel + 1"
+            :thematicColor="category.color"
           />
         </li>
       </ul>
@@ -31,15 +32,17 @@
 </template>
 
 <style lang="less" module>
+@import '../../../styles/mixins.less';
+
 .color {
   --ironsworn-color-thematic: v-bind('category?.color');
 }
 
 .wrapper {
-  border-width: 2px;
-  border-style: solid;
+  // border-width: 2px;
+  // border-style: solid;
   border-radius: 5px;
-  border-color: var(--ironsworn-color-thematic);
+  background-color: var(--ironsworn-color-thematic);
 }
 
 .list {
@@ -58,12 +61,14 @@
 
 .toggleButton {
   color: inherit;
+  .fake-stroke();
 }
 
 .toggleSection {
   transition: 0.5s ease;
   background-color: var(--ironsworn-color-thematic);
   color: white;
+  border-radius: 5px;
 }
 </style>
 <script setup lang="ts">

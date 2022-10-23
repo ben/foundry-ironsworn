@@ -1,7 +1,7 @@
 <template>
   <Collapsible
     class="movesheet-row"
-    :class="$style['wrapper']"
+    :class="[$style['wrapper'], thematicColor ? $style['color'] : '']"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
@@ -10,33 +10,33 @@
     :noIcon="true"
     :toggleButtonClass="[$style.toggleButton, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
+    :toggleWrapperClass="$style.toggleWrapper"
   >
     <template #toggle-content>
       {{ move?.displayName }}
     </template>
     <template #after-toggle>
       <section
-        :class="$style['move-controls']"
+        :class="$style.moveControls"
         class="nogrow"
         data-tooltip-direction="UP"
       >
-        <BtnOracle
-          class="juicy text"
-          :node="data.oracles[0] ?? {}"
-          :disabled="data.oracles.length !== 1"
-          :class="$style['move-button']"
-        />
         <BtnRollmove
           :disabled="!canRoll"
           class="juicy text"
           :move="move"
-          :class="$style['move-button']"
+          :class="$style.moveButton"
         />
-
+        <BtnOracle
+          class="juicy text"
+          :node="data.oracles[0] ?? {}"
+          :disabled="data.oracles.length !== 1"
+          :class="$style.moveButton"
+        />
         <BtnSendmovetochat
           class="juicy text"
           :move="move"
-          :class="$style['move-button']"
+          :class="$style.moveButton"
         />
       </section>
     </template>
@@ -44,7 +44,7 @@
       <RulesTextMove
         @moveclick="moveClick"
         :move="move"
-        :class="$style['move-summary']"
+        :class="$style.moveSummary"
       >
         <template #after-footer>
           <OracleTreeNode
@@ -60,30 +60,41 @@
 </template>
 
 <style lang="less" module>
+@import '../../../styles/mixins.less';
+
 @icon_size: 1.2em;
-@border_left_width: 2px;
+@border_width: 2px;
+
+.color {
+  --ironsworn-color-thematic: v-bind('thematicColor');
+}
+
+.toggleWrapper {
+}
 .toggleButton {
   padding: 0;
   padding-left: 0.25rem;
   text-align: left;
+  line-height: 24px;
 }
 
 .wrapper {
   transition: all 0.4s ease;
+  background-color: var(--ironsworn-color-bg);
+  border-radius: 5px;
+  border-color: var(--ironsworn-color-thematic);
+  border-width: 2px;
+  border-style: solid;
 }
-.move-summary {
-  // padding: 0.5rem;
-  // border-left: @border_left_width solid;
-  // margin-left: calc((@icon_size - @border_left_width) / 2);
-  // padding-left: 1rem;
-  padding: 0.25em 0.5rem 0.5rem;
+.moveSummary {
+  padding: 0.25em 0.5rem 0.25rem;
 }
-.move-controls {
+.moveControls {
   display: flex;
   flex-flow: row;
 }
 
-.move-button {
+.moveButton {
   font-size: 1.15em;
   aspect-ratio: 1 !important;
   height: inherit !important;
@@ -92,10 +103,14 @@
 
 .toggleButton {
   color: inherit;
+  .wrapper[aria-expanded='false'] & {
+    .fake-stroke();
+  }
 }
 
 .toggleSection {
   transition: 0.5s ease;
+
   .wrapper[aria-expanded='false'] & {
     background-color: var(--ironsworn-color-thematic);
     color: white;
@@ -123,6 +138,7 @@ const props = withDefaults(
   defineProps<{
     move: Move
     headingLevel?: number
+    thematicColor?: string | null
     toggleSectionClass: any
     toggleButtonClass: any
   }>(),
