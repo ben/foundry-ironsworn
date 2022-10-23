@@ -703,6 +703,16 @@ table td:first-child {
 
 .oracle-table-partial {
   margin: 2px 0;
+  transition: none;
+  .oracle-result-row {
+    // transition: none;
+    td {
+      // transition: none;
+      > * {
+        transition: 0.5 ease all;
+      }
+    }
+  }
   .icon {
     display: flex;
     aspect-ratio: 1;
