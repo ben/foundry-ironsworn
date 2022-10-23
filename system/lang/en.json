@@ -9,7 +9,7 @@
     "CustomTruth": "Custom Truth",
     "Roll": "Roll",
     "Chat": "Chat",
-    "CopyText": "CopyText",
+    "CopyTextToClipboard": "Copy text to clipboard",
     "SendToChat": "Send rules text to chat",
     "Rolling": "Rolling",
     "Bonus": "Bonus",
