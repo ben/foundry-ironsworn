@@ -16,19 +16,4 @@ export class FoeSheet extends VueActorSheet {
       components: { 'foe-sheet': foeSheetVue },
     }
   }
-
-  _getHeaderButtons() {
-    return [
-      {
-        class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
-        icon: 'fas fa-edit',
-        onclick: () => {
-          const item = this.actor.items.find((x) => x.type === 'progress')
-          item?.sheet?.render(true)
-        },
-      },
-      ...super._getHeaderButtons(),
-    ]
-  }
 }

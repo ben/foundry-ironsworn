@@ -1,11 +1,12 @@
 import { App } from 'vue'
 import { $ItemKey } from './provisions'
+import { VueAppMixin } from './vueapp.js'
 import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
 } from './vue-render-helper'
 
-export abstract class VueItemSheet extends ItemSheet {
+export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
   renderHelper: VueSheetRenderHelper | undefined
 
   static get defaultOptions() {
@@ -39,8 +40,19 @@ export abstract class VueItemSheet extends ItemSheet {
     return this
   }
 
-  close(options?: FormApplication.CloseOptions | undefined): Promise<void> {
-    this.renderHelper?.close()
-    return super.close(options)
+  _getHeaderButtons() {
+    return [
+      {
+        class: 'ironsworn-toggle-edit-mode',
+        label: 'Edit',
+        icon: 'fas fa-edit',
+        onclick: (e) => this._toggleEditMode(e),
+      },
+      ...super._getHeaderButtons(),
+    ]
+  }
+  _toggleEditMode(_e: JQuery.ClickEvent) {
+    const currentValue = this.item.getFlag('foundry-ironsworn', 'edit-mode')
+    this.item.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 }
