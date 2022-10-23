@@ -701,28 +701,77 @@ table td:first-child {
   }
 }
 
-.oracle-result-row {
-  .first-column {
-    position: relative;
+.oracle-table-partial {
+  margin: 2px 0;
+  .icon {
+    display: flex;
+    aspect-ratio: 1;
+    height: max-content;
+    margin: 0;
   }
-
-  .row-controls {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    opacity: 0;
-
-    button {
-      height: 100%;
-      width: 100%;
-      background-color: var(--ironsworn-color-bg);
+  .oracle-result-row {
+    .oracle-table-column-roll-result {
+      padding: 0;
+      white-space: nowrap;
+    }
+    > td {
+      position: relative;
+      &:last-child {
+        > .oracle-table-content {
+          padding-right: 2px;
+        }
+      }
     }
   }
-
-  &:hover .row-controls {
+  .oracle-table-content {
     opacity: 1;
+    visibility: visible;
+    height: 100%;
+    display: flex;
+    gap: 2px;
+    align-items: center;
+  }
+  .oracle-result-control {
+    color: inherit;
+    background: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    gap: 2px;
+    padding: 2px;
+    &.clickable.text {
+      justify-content: center;
+      align-items: center;
+      &:hover {
+        color: inherit !important;
+      }
+    }
+    &:hover {
+      background: none;
+      filter: drop-shadow(0 0 3px var(--color-shadow-primary))
+        drop-shadow(0 0 1px var(--color-shadow-highlight));
+    }
+  }
+  &:hover {
+    .oracle-table-content {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .oracle-result-control {
+      opacity: 1;
+      visibility: visible;
+      background: none;
+      color: inherit;
+    }
   }
 }
 

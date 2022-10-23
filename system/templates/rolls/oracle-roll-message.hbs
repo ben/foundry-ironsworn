@@ -1,32 +1,42 @@
 <article class="ironsworn table-draw hover-controls-anchor oracle-roll flexcol" data-oracleroll="{{json oracleRoll}}">
+
   {{#if subtitle}}
   <small class="subtitle">{{subtitle}}</small>
   {{/if}}
   <h2 class="ironsworn-roll-title">{{title}}</h2>
-
   <table class="oracle-table oracle-table-partial">
     <tbody>
       {{#each displayRows}}
-      <tr class="oracle-result-row {{#if selected}}selected{{/if}}">
-        <td class="oracle-table-column-roll">
+      <tr class="oracle-result-row" {{#if selected}}aria-selected="true"{{/if}}>
+        <td class="oracle-table-column-roll-range">
+          <span class="oracle-table-content">
           {{#if (eq low high)}}{{low}}{{else}}{{low}}-{{high}}{{/if}}
-          <div class="row-controls">
-            <button
-              type="button"
-              class="copy-result icon-button clickable block"
-              data-result="{{text}}"
-              data-tooltip="{{localize 'IRONSWORN.CopyTextToClipboard'}}"
-              data-tooltip-direction="LEFT"
-            >
-              <i class="fas fa-copy"></i>
-            </button>
-          </div>
+          </span>
+          <button
+            type="button"
+            class="oracle-result-control copy-result clickable text"
+            data-result="{{text}}"
+            data-tooltip="{{localize 'IRONSWORN.CopyTextToClipboard'}}"
+            data-tooltip-direction="LEFT"
+          >
+            <i class="icon fas fa-copy" role="presentational"></i>
+          </button>
         </td>
-        <td class="oracle-table-column-result">{{{text}}}</td>
-        <td style="padding: 0 5px; white-space: nowrap;">
+        <td class="oracle-table-column-result-text">{{{text}}}</td>
+        <td class="oracle-table-column-roll-result">
           {{#if selected}}
-          <i class="isicon-d10-tilt"></i>
-          {{../oracleRoll.roll.total}}
+          <span class="oracle-table-content">
+            <i class="icon isicon-d10-tilt" role="presentational"></i>
+            {{../oracleRoll.roll.total}}
+          </span>
+          <button type='button'
+            class="oracle-result-control oracle-reroll clickable text"
+            title="{{localize 'IRONSWORN.Reroll'}}"
+            data-tooltip="{{localize 'IRONSWORN.Reroll'}}"
+            aria-label="{{{localize 'IRONSWORN.OracleTable.ColumnLabel.DiceRollResult' dice='d100'}}}"
+            >
+            <i class="icon fas fa-undo-alt" role="presentational"></i>
+          </button>
           {{/if}}
         </td>
       </tr>
@@ -34,10 +44,4 @@
     </tbody>
   </table>
 
-  <div class="hover-controls">
-    <button class="oracle-reroll" title="{{localize 'IRONSWORN.Reroll'}}"
-      data-tooltip="{{localize 'IRONSWORN.Reroll'}}">
-      <i class="fas fa-undo-alt"></i>
-    </button>
-  </div>
 </article>

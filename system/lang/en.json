@@ -60,6 +60,8 @@
     "OracleTable": {
       "ColumnLabel": {
         "Roll": "Roll",
+        "RollRange": "Roll range",
+        "DiceRollResult": "{dice} roll result",
         "Result": "Result"
       }
     },
