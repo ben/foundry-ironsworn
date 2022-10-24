@@ -2,7 +2,7 @@
 
 ## Next Release
 
-- Add a button to oracle-result chat cards, which copies the result to the clipboard ([#516](https://github.com/ben/foundry-ironsworn/pull/516))
+- Update the oracle-roll-chat-card UI with hover controls for rerolling and copying results to the clipboard ([#516](https://github.com/ben/foundry-ironsworn/pull/516))
 
 ## 1.18.9
 
