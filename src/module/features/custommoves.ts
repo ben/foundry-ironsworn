@@ -50,12 +50,29 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
   return createMoveTree('foundry-ironsworn.starforgedmoves', SFMoveCategories)
 }
 
+// TODO dataforged has a key for move colours...., but they appear to have changed significantly since the last time i updated them! they'll be fixed for 2.0, but until then, here's a workaround.
+enum MoveCategoryColor {
+  Session = '#3F8C8A',
+  Adventure = '#206087',
+  Quest = '#805A90',
+  Connection = '#4A5791',
+  Exploration = '#427FAA',
+  Combat = '#818992',
+  Suffer = '#883529',
+  Recover = '#488B44',
+  Threshold = '#1D1D1B',
+  Legacy = '#4F5A69',
+  Fate = '#8F477B',
+  'Scene Challenge' = '#206087',
+}
+
 function walkCategory(
   category: IMoveCategory,
   compendiumMoves: IronswornItem[]
 ): MoveCategory {
-  const newCategory = {
-    color: category.Display.Color ?? null,
+  const newCategory: MoveCategory = {
+    color: MoveCategoryColor[category.Name] ?? null,
+    // color: category.Display.Color ?? null,
     displayName: game.i18n.localize(`IRONSWORN.${category.Name}`),
     dataforgedCategory: category,
     moves: [] as Move[],
