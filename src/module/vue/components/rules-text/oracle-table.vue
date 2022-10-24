@@ -6,19 +6,19 @@
     />
     <thead>
       <tr>
-        <th scope="col" class="oracle-table-column-roll">
+        <th scope="col" class="oracle-table-column-roll-range">
           {{ $t('IRONSWORN.OracleTable.ColumnLabel.Roll') }}
         </th>
-        <th scope="col" class="oracle-table-column-result">
+        <th scope="col" class="oracle-table-column-result-text">
           {{ $t('IRONSWORN.OracleTable.ColumnLabel.Result') }}
         </th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="row in tableRows">
-        <td class="oracle-table-column-roll">{{ rangeString(row) }}</td>
+        <td class="oracle-table-column-roll-range">{{ rangeString(row) }}</td>
         <td
-          class="oracle-table-column-result"
+          class="oracle-table-column-result-text"
           v-html="$enrichHtml(row.text)"
         ></td>
       </tr>

@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Add a button to oracle-result chat cards, which copies the result to the clipboard ([#516](https://github.com/ben/foundry-ironsworn/pull/516))
+
 ## 1.18.9
 
 - Add human-readable labels to the dialog when creating a new item, including a nudge away from using the old `'move'` item type ([#513](https://github.com/ben/foundry-ironsworn/pull/513))

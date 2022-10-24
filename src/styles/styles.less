@@ -689,34 +689,6 @@ table td:first-child {
   padding-right: 0.5rem;
 }
 
-.table-draw {
-  h2 {
-    border: none;
-  }
-  table {
-    td:first-child,
-    td:last-child {
-      width: 0;
-    }
-  }
-}
-
-.hover-controls-anchor {
-  position: relative;
-
-  .hover-controls {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    opacity: 0;
-    transition: all 0.2s ease;
-  }
-
-  &:hover .hover-controls {
-    opacity: 1;
-  }
-}
-
 // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
 .fa,
 .fab,
@@ -757,3 +729,5 @@ table td:first-child {
     font-weight: 900;
   }
 }
+
+@import 'chat-message.less';
