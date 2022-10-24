@@ -2,7 +2,7 @@
   <component
     :id="wrapperId"
     :is="wrapperIs"
-    :class="`${$style.collapsible} ${state.highlighted ? 'highlighted' : ''}`"
+    :class="`${$style.wrapper} ${state.highlighted ? 'highlighted' : ''}`"
     :aria-expanded="state.expanded"
     :tabindex="-1"
     :aria-orientation="orientation"
@@ -31,11 +31,15 @@
           "
           @click="toggle"
           class="text clickable"
-          :class="[$style.toggle, toggleButtonClass]"
+          :class="[
+            $style.toggle,
+            toggleButtonClass,
+            $style.toggleButtonTransition,
+          ]"
           :data-tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"
         >
-          <slot name="toggle-content"></slot>
+          {{ toggleLabel }}
         </component>
       </component>
       <slot name="after-toggle"></slot>
@@ -58,10 +62,17 @@
 
 <style lang="less" module>
 // TODO: horizontal and vertical versions
-.collapsible {
+.wrapper {
 }
 
 .contentWrapper {
+}
+
+.toggleButtonTransition:before {
+  transition: transform 0.4s;
+  .wrapper[aria-expanded='true'] & {
+    transform: rotate(90deg);
+  }
 }
 
 .toggleWrapper {
@@ -91,6 +102,10 @@ import { computed, ref } from '@vue/reactivity'
 const props = withDefaults(
   defineProps<{
     /**
+     * The text displayed on the button element that controls the expand/collapse toggle.
+     */
+    toggleLabel: string
+    /**
      * The ID to be assigned to the wrapper element, from which the IDs of other elements within this component are generated. Required in order to generate the correct ARIA annotations.
      */
     baseId: string
@@ -119,6 +134,7 @@ const props = withDefaults(
     toggleButtonClass?: any
     toggleIconCollapsed?: string
     toggleIconExpanded?: string
+    toggleTextClass?: any
     /**
      * @defaultValue `'section'`
      */
@@ -128,8 +144,8 @@ const props = withDefaults(
   }>(),
   {
     orientation: 'vertical',
-    toggleIconCollapsed: 'caret-right',
-    toggleIconExpanded: 'caret-down',
+    toggleIconCollapsed: 'chevron-right',
+    toggleIconExpanded: 'chevron-right',
     wrapperIs: 'article',
     contentWrapperIs: 'section',
     toggleWrapperIs: 'h3',
@@ -139,6 +155,7 @@ const props = withDefaults(
     toggleButtonClass: '',
     toggleWrapperClass: '',
     headingClass: '',
+    toggleTextClass: '',
   }
 )
 
