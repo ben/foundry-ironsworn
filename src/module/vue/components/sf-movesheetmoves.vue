@@ -24,7 +24,7 @@
     <ul
       v-if="state.searchQuery"
       class="flexcol item-list"
-      :class="$style['item-list']"
+      :class="$style.itemList"
     >
       <!-- Flat search results -->
       <li
@@ -36,7 +36,7 @@
       </li>
     </ul>
 
-    <ul v-else class="flexcol item-list" :class="$style['item-list']">
+    <ul v-else class="flexcol item-list" :class="$style['itemList']">
       <!-- Categorized moves if not searching -->
       <li
         v-for="(category, catIndex) in state.categories"
@@ -63,12 +63,12 @@
 .wrapper {
   gap: 0.5rem;
 }
-.item-list {
+.itemList {
   scrollbar-width: thin;
   margin: 0 -7px 0 0 !important;
   padding-right: 7px !important;
   scrollbar-gutter: stable both-edges;
-  gap: 0.5rem;
+  gap: 4px;
 }
 </style>
 

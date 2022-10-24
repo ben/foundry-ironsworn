@@ -7,10 +7,9 @@
     :toggleWrapperClass="[$style.toggleWrapper]"
     :toggleSectionClass="[$style.toggleSection]"
     :baseId="`move_category_${snakeCase(category.displayName)}`"
+    :toggleLabel="category.displayName"
+    :toggleTextClass="$style.toggleText"
   >
-    <template #toggle-content>
-      {{ category.displayName }}
-    </template>
     <template #default>
       <ul class="flexcol" :class="$style.list">
         <li
@@ -59,16 +58,18 @@
   border-width: 1px 0 0;
 }
 
-.toggleButton {
-  color: inherit;
-  .fake-stroke();
-}
-
 .toggleSection {
   transition: 0.5s ease;
   background-color: var(--ironsworn-color-thematic);
-  color: white;
+  color: var(--ironsworn-color-bg);
   border-radius: 5px;
+}
+.toggleButton {
+  color: inherit;
+  > * {
+    // so it skips outlining the caret, which is a pseudo-element
+    .fake-stroke();
+  }
 }
 </style>
 <script setup lang="ts">

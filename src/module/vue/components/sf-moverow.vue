@@ -14,10 +14,8 @@
     :toggleButtonClass="[$style.toggleButton, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
+    :toggleLabel="move?.displayName"
   >
-    <template #toggle-content>
-      {{ move?.displayName }}
-    </template>
     <template #after-toggle>
       <section
         :class="$style.moveControls"
@@ -68,11 +66,16 @@
 @icon_size: 1.2em;
 @border_width: 2px;
 @border_radius: 5px;
+@wrapper_spacing: 4px;
 
-.themeColors {
+.thematicColors {
   color: var(--ironsworn-color-bg);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
+}
+.invertColors {
+  color: var(--ironsworn-color-bg);
+  background-color: var(--ironsworn-color-fg);
 }
 .cardColors {
   color: var(--ironsworn-color-fg);
@@ -85,15 +88,20 @@
 }
 
 .wrapper {
-  .themeColors();
+  .thematicColors();
   transition: all 0.4s ease;
   border-radius: @border_radius;
-  border-width: 2px;
-  border-style: solid;
+  padding-left: @wrapper_spacing;
+  padding-right: @wrapper_spacing;
+  &[aria-expanded='true'] {
+    padding-top: @wrapper_spacing;
+    padding-bottom: @wrapper_spacing;
+  }
 }
 .moveSummary {
   .cardColors();
-  padding: 0.25em 0.5rem 0.25rem;
+  border: 1px solid var(--ironsworn-color-border);
+  padding: 0.25rem 0.5rem 0.3rem;
   border-radius: 0 @border_radius @border_radius @border_radius;
 }
 
@@ -105,24 +113,24 @@
 }
 
 .toggleButton {
+  height: 28px;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
-  padding: 0;
-  padding-left: 0.25rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.3rem;
   text-align: left;
-  line-height: 28px;
+  line-height: 1;
   font-size: var(--font-size-16);
   transition: 0.5s ease;
+  .thematicColors();
 
-  .themeColors();
-
+  align-items: center;
   .wrapper[aria-expanded='false'] & {
     .fake-stroke(var(--ironsworn-color-fg));
   }
 
   .wrapper[aria-expanded='true'] & {
-    .cardColors();
+    // .cardColors();
+    .invertColors();
     border-top-left-radius: @border_radius;
     border-top-right-radius: @border_radius;
   }
@@ -137,6 +145,7 @@
 }
 
 .toggleSection {
+  gap: @wrapper_spacing;
 }
 </style>
 
