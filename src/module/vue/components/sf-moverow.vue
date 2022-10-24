@@ -1,7 +1,10 @@
 <template>
   <Collapsible
     class="movesheet-row"
-    :class="[$style['wrapper'], thematicColor ? $style['color'] : '']"
+    :class="[
+      $style['wrapper'],
+      thematicColor ? $style['setThematicColor'] : '',
+    ]"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
@@ -64,57 +67,76 @@
 
 @icon_size: 1.2em;
 @border_width: 2px;
+@border_radius: 5px;
 
-.color {
+.themeColors {
+  color: var(--ironsworn-color-bg);
+  border-color: var(--ironsworn-color-thematic);
+  background-color: var(--ironsworn-color-thematic);
+}
+.cardColors {
+  color: var(--ironsworn-color-fg);
+  border-color: var(--ironsworn-color-thematic);
+  background-color: var(--ironsworn-color-bg);
+}
+
+.setThematicColor {
   --ironsworn-color-thematic: v-bind('thematicColor');
 }
 
-.toggleWrapper {
-}
-.toggleButton {
-  padding: 0;
-  padding-left: 0.25rem;
-  text-align: left;
-  line-height: 24px;
-}
-
 .wrapper {
+  .themeColors();
   transition: all 0.4s ease;
-  background-color: var(--ironsworn-color-bg);
-  border-radius: 5px;
-  border-color: var(--ironsworn-color-thematic);
+  border-radius: @border_radius;
   border-width: 2px;
   border-style: solid;
 }
 .moveSummary {
+  .cardColors();
   padding: 0.25em 0.5rem 0.25rem;
-}
-.moveControls {
-  display: flex;
-  flex-flow: row;
+  border-radius: 0 @border_radius @border_radius @border_radius;
 }
 
 .moveButton {
   font-size: 1.15em;
   aspect-ratio: 1 !important;
   height: inherit !important;
-  color: inherit;
+  color: var(--ironsworn-color-bg);
 }
 
 .toggleButton {
-  color: inherit;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 0;
+  padding-left: 0.25rem;
+  text-align: left;
+  line-height: 28px;
+  font-size: var(--font-size-16);
+  transition: 0.5s ease;
+
+  .themeColors();
+
   .wrapper[aria-expanded='false'] & {
-    .fake-stroke();
+    .fake-stroke(var(--ironsworn-color-fg));
   }
+
+  .wrapper[aria-expanded='true'] & {
+    .cardColors();
+    border-top-left-radius: @border_radius;
+    border-top-right-radius: @border_radius;
+  }
+
+  // color: var(--ironsworn-color-thematic);
+}
+
+.moveControls {
+  display: flex;
+  flex-flow: row;
+  background: none;
 }
 
 .toggleSection {
-  transition: 0.5s ease;
-
-  .wrapper[aria-expanded='false'] & {
-    background-color: var(--ironsworn-color-thematic);
-    color: white;
-  }
 }
 </style>
 
