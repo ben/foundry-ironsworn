@@ -55,18 +55,24 @@ enum MoveCategoryColor {
   Adventure = '#206087',
   Combat = '#818992',
   Connection = '#4A5791',
-  // non-canonical (for ironsworn); shares with 'Exploration'
+  // non-canonical (ironsworn); uses color from 'Exploration'
   Delve = '#427FAA',
   Exploration = '#427FAA',
+  // non-canonical (ironsworn); uses color from 'Legacy'.
+  Failure = '#4F5A69',
   Fate = '#8F477B',
   Legacy = '#4F5A69',
   Quest = '#805A90',
+  // non-canonical (ironsworn); uses color from 'Recover'
+  Rarity = '#488B44',
   Recover = '#488B44',
-  // non-canonical (for ironsworn); shares with 'Connection'
+  // non-canonical (ironsworn); uses color from 'Connection'
   Relationship = '#4A5791',
   'Scene Challenge' = '#206087',
   Session = '#3F8C8A',
   Suffer = '#883529',
+  // non-canonical (ironsworn); uses color from 'Session'
+  Threat = '#3F8C8A',
   Threshold = '#1D1D1B',
 }
 
@@ -77,7 +83,7 @@ function walkCategory(
   const newCategory: MoveCategory = {
     color: MoveCategoryColor[category.Name] ?? null,
     // color: category.Display.Color ?? null,
-    displayName: game.i18n.localize(`IRONSWORN.${category.Name}`),
+    displayName: game.i18n.localize(`IRONSWORN.MOVES.${category.Name}`),
     dataforgedCategory: category,
     moves: [] as Move[],
   }
@@ -89,7 +95,11 @@ function walkCategory(
     if (moveItem) {
       newCategory.moves.push({
         dataforgedMove: move,
-        displayName: moveItem.name || move.Display.Title,
+        displayName:
+          // TODO: ideally, alternate versions wouldn't have the same move at all! they'd be selectable within the. maybe a radio select, or expandable into its own tree? or displayed as a second text?
+          // 'alternate version' gets too long for a single line in many cases, so it gets trimmed
+          move.Display.Title.replace(/alternate version/i, 'alt') ??
+          moveItem.name,
         moveItem: () => moveItem,
       })
     } else {
@@ -106,8 +116,6 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
     (x) => x.name === name
   ) as Folder | undefined
   if (!folder || folder.contents.length == 0) return
-
-  console.log('folder', folder)
 
   // @ts-ignore Exists only in FVTT v10 API
   const color = (folder.color ?? null) as string | null
