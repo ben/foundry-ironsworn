@@ -52,18 +52,22 @@ export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
 
 // TODO dataforged has a key for move colours...., but they appear to have changed significantly since the last time i updated them! they'll be fixed for 2.0, but until then, here's a workaround.
 enum MoveCategoryColor {
-  Session = '#3F8C8A',
   Adventure = '#206087',
-  Quest = '#805A90',
-  Connection = '#4A5791',
-  Exploration = '#427FAA',
   Combat = '#818992',
-  Suffer = '#883529',
-  Recover = '#488B44',
-  Threshold = '#1D1D1B',
-  Legacy = '#4F5A69',
+  Connection = '#4A5791',
+  // non-canonical (for ironsworn); shares with 'Exploration'
+  Delve = '#427FAA',
+  Exploration = '#427FAA',
   Fate = '#8F477B',
+  Legacy = '#4F5A69',
+  Quest = '#805A90',
+  Recover = '#488B44',
+  // non-canonical (for ironsworn); shares with 'Connection'
+  Relationship = '#4A5791',
   'Scene Challenge' = '#206087',
+  Session = '#3F8C8A',
+  Suffer = '#883529',
+  Threshold = '#1D1D1B',
 }
 
 function walkCategory(
@@ -97,7 +101,7 @@ function walkCategory(
 }
 
 async function augmentWithFolderContents(categories: MoveCategory[]) {
-  const name = game.i18n.localize('IRONSWORN.Custom Moves')
+  const name = game.i18n.localize('IRONSWORN.MOVES.Custom')
   const folder = (game.items?.directory as any)?.folders.find(
     (x) => x.name === name
   ) as Folder | undefined
