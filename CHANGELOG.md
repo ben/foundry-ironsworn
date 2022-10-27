@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.18.10
+
 - Update the oracle-roll-chat-card UI with hover controls for rerolling and copying results to the clipboard ([#516](https://github.com/ben/foundry-ironsworn/pull/516))
 - Updated French translations ([#519](https://github.com/ben/foundry-ironsworn/pull/519), thanks to @aldarion-jdr)
 - Fix a bug with an open text editor moving the cursor around
