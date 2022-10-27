@@ -96,7 +96,7 @@ function walkCategory(
       newCategory.moves.push({
         dataforgedMove: move,
         displayName:
-          // TODO: ideally, alternate versions wouldn't have the same move at all! they'd be selectable within the. maybe a radio select, or expandable into its own tree? or displayed as a second text?
+          // TODO: ideally, alternate versions wouldn't have the same move at all! they'd be selectable within the move display. maybe a radio select, or expandable into its own tree? or displayed as a second text?
           // 'alternate version' gets too long for a single line in many cases, so it gets trimmed
           move.Display.Title.replace(/alternate version/i, 'alt') ??
           moveItem.name,
