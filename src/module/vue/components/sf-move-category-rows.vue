@@ -1,6 +1,6 @@
 <template>
   <Collapsible
-    :class="`${$style.wrapper} ${category.color ? $style.color : ''}`"
+    :class="[$style.wrapper, category.color ? $style.color : '']"
     :toggleButtonClass="[$style.toggleButton]"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
@@ -9,6 +9,7 @@
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
     :toggleTextClass="$style.toggleText"
+    ref="$collapsible"
   >
     <template #default>
       <ul class="flexcol" :class="$style.list">
@@ -20,7 +21,7 @@
         >
           <SfMoverow
             :move="move"
-            ref="allmoves"
+            ref="children"
             :headingLevel="headingLevel + 1"
             :thematicColor="category.color"
           />
@@ -73,7 +74,7 @@
 }
 </style>
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
@@ -87,15 +88,38 @@ const props = withDefaults(
   { headingLevel: 3 }
 )
 
-let allmoves = ref<InstanceType<typeof SfMoverow>[]>([])
+let children = ref<InstanceType<typeof SfMoverow>[]>([])
+
+const moves = computed(
+  () =>
+    new Map(
+      props.category.moves.map((move) => [move.moveItem().id ?? '', move])
+    )
+)
+
+const $collapsible = ref<typeof Collapsible>()
 
 function collapseChildren() {
-  for (const row of allmoves.value ?? []) {
-    row.collapsible?.collapse()
+  for (const move of children.value ?? []) {
+    move.collapsible?.collapse()
+  }
+}
+
+async function scrollToAndExpandChild(targetMoveId: string) {
+  if (moves.value.has(targetMoveId)) {
+    await $collapsible.value?.expand()
+    const targetChild = children.value.find(
+      (child) => child.moveId === targetMoveId
+    )
+    await targetChild?.collapsible?.scrollToAndExpand()
   }
 }
 
 defineExpose({
   collapseChildren,
+  moves,
+  children,
+  collapsible: $collapsible,
+  scrollToAndExpandChild,
 })
 </script>

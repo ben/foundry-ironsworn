@@ -9,7 +9,7 @@
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
     :toggleWrapperIs="`h${headingLevel}`"
-    :toggleSectionClass="['flexrow', $style.toggleSection, toggleSectionClass]"
+    :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
     :noIcon="true"
     :toggleButtonClass="[$style.toggleButton, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
@@ -113,12 +113,12 @@
 }
 
 .toggleButton {
-  height: 28px;
+  // height: 28px;
   display: flex;
   flex-direction: row;
   padding: 0.2rem 0.2rem 0.2rem 0.3rem;
   text-align: left;
-  line-height: 1;
+  line-height: 1.25;
   font-size: var(--font-size-16);
   transition: 0.5s ease;
   .thematicColors();
@@ -146,6 +146,8 @@
 
 .toggleSection {
   gap: @wrapper_spacing;
+  display: flex;
+  flex-flow: row nowrap;
 }
 </style>
 
@@ -170,8 +172,8 @@ const props = withDefaults(
     move: Move
     headingLevel?: number
     thematicColor?: string | null
-    toggleSectionClass: any
-    toggleButtonClass: any
+    toggleSectionClass?: any
+    toggleButtonClass?: any
   }>(),
   { headingLevel: 4, toggleSectionClass: '', toggleButtonClass: '' }
 )
@@ -196,6 +198,8 @@ const toggleTooltip = computed(() =>
   enrichMarkdown($item.value.data.data.Trigger?.Text)
 )
 
+const moveId = computed(() => props.move.moveItem().id)
+
 if (props.move.dataforgedMove) {
   const oracleIds = props.move.dataforgedMove.Oracles ?? []
   Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
@@ -206,7 +210,7 @@ if (props.move.dataforgedMove) {
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
-  if (targetMoveId === props.move.moveItem().id) {
+  if (targetMoveId === moveId.value) {
     $collapsible.value?.scrollToAndExpand()
   }
 })
@@ -217,6 +221,7 @@ function moveClick(move: IronswornItem) {
 }
 
 defineExpose({
+  moveId,
   collapsible: $collapsible,
 })
 </script>

@@ -22,13 +22,7 @@
           :id="controlId"
           type="button"
           :aria-controls="contentId"
-          :icon="
-            noIcon
-              ? undefined
-              : state.expanded
-              ? toggleIconExpanded
-              : toggleIconCollapsed
-          "
+          :icon="noIcon ? undefined : 'chevron-right'"
           @click="toggle"
           class="text clickable"
           :class="[
@@ -38,6 +32,7 @@
           ]"
           :data-tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"
+          ref="$toggle"
         >
           {{ toggleLabel }}
         </component>
@@ -52,6 +47,7 @@
         :aria-labelledby="controlId"
         :id="contentId"
         :class="[contentWrapperClass, $style.contentWrapper]"
+        ref="$contentWrapper"
       >
         <slot name="default"></slot>
       </component>
@@ -100,7 +96,7 @@
 </style>
 
 <script setup lang="ts">
-import { nextTick, reactive, useSlots } from 'vue'
+import { nextTick, reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed, ref } from '@vue/reactivity'
@@ -116,7 +112,7 @@ const props = withDefaults(
      */
     baseId: string
     /**
-     * @defaultValue `'horizontal'`
+     * @defaultValue `'vertical'`
      */
     orientation?: 'horizontal' | 'vertical'
     noIcon?: boolean
@@ -138,20 +134,17 @@ const props = withDefaults(
     toggleWrapperIs?: string
     toggleWrapperClass?: any
     toggleButtonClass?: any
-    toggleIconCollapsed?: string
-    toggleIconExpanded?: string
     toggleTextClass?: any
     /**
      * @defaultValue `'section'`
      */
     contentWrapperIs?: string
     contentWrapperClass?: any
+    // FIXME NYI
     forceExpand?: boolean
   }>(),
   {
     orientation: 'vertical',
-    toggleIconCollapsed: 'chevron-right',
-    toggleIconExpanded: 'chevron-right',
     wrapperIs: 'article',
     contentWrapperIs: 'section',
     toggleWrapperIs: 'h3',
@@ -166,6 +159,8 @@ const props = withDefaults(
 )
 
 const $wrapper = ref<HTMLElement>()
+const $toggle = ref<HTMLElement>()
+const $contentWrapper = ref<HTMLElement>()
 const state = reactive<{
   forceExpand: boolean
   expanded: boolean
@@ -217,6 +212,7 @@ async function scrollToAndExpand(ms: number = 2000) {
     behavior: 'smooth',
     block: 'start',
   })
+  $wrapper.value?.focus()
 
   await nextTick()
 

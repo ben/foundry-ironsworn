@@ -16,7 +16,7 @@
       <BtnFaicon
         icon="compress-alt"
         class="nogrow clickable text"
-        @click="collapseAll()"
+        @click="collapseMoveCategories()"
         :class="$style['search-btn']"
       />
     </nav>
@@ -32,7 +32,7 @@
         :key="resultIndex"
         class="nogrow"
       >
-        <SfMoverow :move="move" ref="allMoves" />
+        <SfMoverow :move="move" ref="allMoves" :thematicColor="move.color" />
       </li>
     </ul>
 
@@ -73,8 +73,7 @@
 </style>
 
 <script setup lang="ts">
-import { flatten } from 'lodash'
-import { computed, inject, provide, reactive, ref, Ref } from 'vue'
+import { computed, nextTick, provide, reactive, ref } from 'vue'
 import {
   createIronswornMoveTree,
   createStarforgedMoveTree,
@@ -115,9 +114,9 @@ const checkedSearchQuery = computed(() => {
   }
 })
 
-const flatMoves = computed(() => {
-  return flatten(state.categories.map((x) => x.moves))
-})
+const flatMoves = computed(() =>
+  state.categories.flatMap((category) => category.moves)
+)
 
 const searchResults = computed(() => {
   if (!checkedSearchQuery.value) return null
@@ -130,17 +129,23 @@ function clearSearch() {
   state.searchQuery = ''
 }
 
-function collapseAll() {
+function collapseMoves() {
   for (const cat of allCategories.value ?? []) {
     cat.collapseChildren()
   }
+}
 
-  for (const mv of allMoves.value ?? []) {
-    mv.collapsible?.collapse()
+function collapseMoveCategories() {
+  for (const cat of allCategories.value ?? []) {
+    cat.collapsible?.collapse()
   }
 }
 
-CONFIG.IRONSWORN.emitter.on('highlightMove', (_item) => {
-  state.searchQuery = ''
+CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
+  clearSearch()
+  await nextTick()
+  for (const cat of allCategories.value ?? []) {
+    cat.scrollToAndExpandChild(targetMoveId)
+  }
 })
 </script>
