@@ -6,7 +6,13 @@
     type="markdown"
   >
     <template #before-main>
-      <slot name="before-main"></slot>
+      <slot name="before-main">
+        <i
+          :class="$style.progressMoveLabel"
+          v-if="move.moveItem().isProgressMove()"
+          >{{ $t('IRONSWORN.ProgressMove') }}</i
+        >
+      </slot>
     </template>
     <template #after-main>
       <slot name="after-main"></slot>
@@ -16,6 +22,12 @@
     </template>
   </RulesText>
 </template>
+
+<style lang="less" module>
+.progressMoveLabel {
+  opacity: 0.5;
+}
+</style>
 
 <script setup lang="ts">
 import { Move } from '../../../features/custommoves.js'

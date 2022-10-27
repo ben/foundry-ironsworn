@@ -26,6 +26,7 @@
     "Opportunity": "Opportunity!",
     "Complication": "Complication!",
     "MarkProgress": "Mark Progress",
+    "ProgressMove": "Progress Move",
     "PROGRESS": {
       "Track": "progress track",
       "BOX": {
