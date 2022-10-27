@@ -61,6 +61,12 @@ export class IronswornItem extends Item {
   /**
    * Move methods
    */
+  isProgressMove(): boolean | undefined {
+    if (this.data.type !== 'sfmove') return
+    return this.data.data.Trigger.Options?.some(
+      (option) => option['Roll type'] === 'Progress roll'
+    )
+  }
   getMoveData(): EnhancedDataswornMove {
     if (this.data.type !== 'move')
       throw new Error(`tried to get move data from a ${this.type}`)
