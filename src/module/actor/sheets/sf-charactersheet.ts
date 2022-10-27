@@ -1,4 +1,3 @@
-import { Component, ComputedOptions, MethodOptions, render } from 'vue'
 import { IronswornSettings } from '../../helpers/settings'
 import SfCharacterSheet from '../../vue/sf-charactersheet.vue'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
@@ -27,19 +26,8 @@ export class StarforgedCharacterSheet extends VueActorSheet {
     return this
   }
 
-  close(...args) {
-    this.actor.moveSheet?.close(...args)
-    return super.close(...args)
-  }
-
   _getHeaderButtons() {
     return [
-      {
-        class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
-        icon: 'fas fa-edit',
-        onclick: (e) => this._toggleEditMode(e),
-      },
       {
         class: 'ironsworn-open-move-sheet',
         label: 'Moves',
@@ -49,12 +37,6 @@ export class StarforgedCharacterSheet extends VueActorSheet {
       ...super._getHeaderButtons(),
     ]
   }
-
-  _toggleEditMode(_e: JQuery.ClickEvent) {
-    const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
-    this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
-  }
-
   _openMoveSheet(_e?: JQuery.ClickEvent) {
     this.actor.moveSheet ||= new SFCharacterMoveSheet(
       this.actor,

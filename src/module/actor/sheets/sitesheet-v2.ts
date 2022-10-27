@@ -1,4 +1,3 @@
-import { IronswornSettings } from '../../helpers/settings'
 import { SiteDataSource } from '../actortypes'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
@@ -48,22 +47,5 @@ export class IronswornSiteSheetV2 extends VueActorSheet {
     denizens[idx].description = description
     this.actor.update({ data: { denizens } }, { render: true })
     return true
-  }
-
-  _getHeaderButtons() {
-    return [
-      {
-        class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
-        icon: 'fas fa-edit',
-        onclick: (e) => this._toggleEditMode(e),
-      },
-      ...super._getHeaderButtons(),
-    ]
-  }
-
-  _toggleEditMode(_e: JQuery.ClickEvent) {
-    const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
-    this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 }

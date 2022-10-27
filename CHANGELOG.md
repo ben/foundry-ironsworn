@@ -2,6 +2,19 @@
 
 ## Next Release
 
+## 1.18.9
+
+- Add human-readable labels to the dialog when creating a new item, including a nudge away from using the old `'move'` item type ([#513](https://github.com/ben/foundry-ironsworn/pull/513))
+- Show edit-mode buttons for progress items with only a clock
+
+## 1.18.8
+
+- Fix the "liveness" of the Foe sheet
+
+## 1.18.6
+
+- Fix a visual layout bug, where editors were only showing two lines of text
+
 ## 1.18.5
 
 - Rework code that was freezing Foundry objects, causing issues with asset sheets ([#510](https://github.com/ben/foundry-ironsworn/pull/510))

@@ -16,21 +16,4 @@ export class IronswornSharedSheetV2 extends VueActorSheet {
       components: { 'shared-sheet': sharedSheetVue },
     }
   }
-
-  _getHeaderButtons() {
-    return [
-      {
-        class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
-        icon: 'fas fa-edit',
-        onclick: (e) => this._toggleEditMode(e),
-      },
-      ...super._getHeaderButtons(),
-    ]
-  }
-
-  _toggleEditMode(_e: JQuery.ClickEvent) {
-    const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
-    this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
-  }
 }

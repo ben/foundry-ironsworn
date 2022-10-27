@@ -25,19 +25,8 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
     return super.render(...args)
   }
 
-  close(...args) {
-    this.actor.moveSheet?.close(...args)
-    return super.close(...args)
-  }
-
   _getHeaderButtons() {
     return [
-      {
-        class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
-        icon: 'fas fa-edit',
-        onclick: (e) => this._toggleEditMode(e),
-      },
       {
         class: 'ironsworn-open-move-sheet',
         label: 'Moves',
@@ -46,11 +35,6 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
       },
       ...super._getHeaderButtons(),
     ]
-  }
-
-  _toggleEditMode(_e: JQuery.ClickEvent) {
-    const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
-    this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
   _openMoveSheet(_e?: JQuery.ClickEvent) {

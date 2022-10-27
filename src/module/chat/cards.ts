@@ -19,7 +19,6 @@ import { getFoundryTableByDfId } from '../dataforged'
 
 export class IronswornChatCard {
   id?: string | null
-  roll?: Roll | null
 
   constructor(message: ChatMessage, html: JQuery) {
     this.updateBinding(message, html)
@@ -68,7 +67,6 @@ export class IronswornChatCard {
   updateBinding(message: ChatMessage, html: JQuery) {
     // Do not store html here
     this.id = message.id
-    this.roll = message.isRoll ? message.roll : undefined
 
     this.attachMoveOracleContextMenu(html)
 

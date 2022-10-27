@@ -25,11 +25,7 @@
       :current="item.data.rank"
       @click="rankClick"
     />
-    <section
-      v-if="showTrackButtons"
-      class="progress-controls"
-      data-tooltip-direction="UP"
-    >
+    <section class="progress-controls" data-tooltip-direction="UP">
       <BtnFaicon
         class="block"
         v-if="editMode"
@@ -172,9 +168,6 @@ provide($ItemKey, foundryItem)
 
 const editMode = computed(() => {
   return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
-})
-const showTrackButtons = computed(() => {
-  return props.item.data.hasTrack
 })
 const subtitle = computed(() => {
   let subtype = capitalize(props.item.data.subtype)

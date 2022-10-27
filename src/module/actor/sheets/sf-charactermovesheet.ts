@@ -1,13 +1,11 @@
-import { IronswornItem } from '../../item/item'
-import { VueApplication } from '../../vue/vueapp'
-
 import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
 import { IronswornActor } from '../actor'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { App } from 'vue'
 import { $ActorKey } from '../../vue/provisions'
+import { VueAppMixin } from '../../vue/vueapp.js'
 
-export class SFCharacterMoveSheet extends VueApplication {
+export class SFCharacterMoveSheet extends VueAppMixin(Application) {
   constructor(
     protected actor: IronswornActor,
     protected toolset: 'ironsworn' | 'starforged' = 'starforged',
@@ -27,7 +25,6 @@ export class SFCharacterMoveSheet extends VueApplication {
   }
 
   setupVueApp(app: App<any>): void {
-    super.setupVueApp(app)
     app.provide($ActorKey, this.actor)
   }
 

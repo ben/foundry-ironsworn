@@ -5,8 +5,9 @@ import {
   VueSheetRenderHelper,
   VueSheetRenderHelperOptions,
 } from './vue-render-helper'
+import { VueAppMixin } from './vueapp.js'
 
-export abstract class VueActorSheet extends ActorSheet {
+export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
   renderHelper: VueSheetRenderHelper | undefined
 
   static get defaultOptions(): ActorSheet.Options {
@@ -19,6 +20,11 @@ export abstract class VueActorSheet extends ActorSheet {
 
   setupVueApp(app: App) {
     app.provide($ActorKey, this.actor)
+  }
+
+  close(...args) {
+    this.actor.moveSheet?.close(...args)
+    return super.close(...args)
   }
 
   render(
@@ -37,10 +43,23 @@ export abstract class VueActorSheet extends ActorSheet {
     this.renderHelper.render(force, options)
     return this
   }
+  _getHeaderButtons() {
+    return [
+      {
+        class: 'ironsworn-toggle-edit-mode',
+        label: 'Edit',
+        icon: 'fas fa-edit',
+        onclick: (e) => this._toggleEditMode(e),
+      },
+      ...super._getHeaderButtons(),
+    ]
+  }
 
-  close(options?: FormApplication.CloseOptions | undefined): Promise<void> {
-    this.renderHelper?.close()
-    return super.close(options)
+  _toggleEditMode(e: JQuery.ClickEvent) {
+    e.preventDefault()
+
+    const currentValue = this.actor.getFlag('foundry-ironsworn', 'edit-mode')
+    this.actor.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
   protected async _onDrop(event: DragEvent) {
