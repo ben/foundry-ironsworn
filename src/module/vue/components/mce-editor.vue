@@ -20,7 +20,7 @@
 
 <script setup lang="ts">
 import { RawEditorSettings } from 'tinymce'
-import { inject, reactive } from 'vue'
+import { onUnmounted, reactive } from 'vue'
 import { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import WithRolllisteners from './with-rolllisteners.vue'
@@ -38,6 +38,8 @@ function oracleClick(dfId: string) {
 }
 
 const $emit = defineEmits<{ (e: 'save') }>()
+
+onUnmounted(() => $emit('save'))
 
 const mceConfig: RawEditorSettings = {
   ...CONFIG.TinyMCE,
