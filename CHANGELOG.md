@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.18.11
+
 - Minor updates to layout of the progress sheet ([#520](https://github.com/ben/foundry-ironsworn/pull/520))
 - Fix all the cursor-jumping issues in text editors
 
