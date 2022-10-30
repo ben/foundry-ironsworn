@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Minor updates to layout of the progress sheet ([#520](https://github.com/ben/foundry-ironsworn/pull/520))
+
 ## 1.18.10
 
 - Update the oracle-roll-chat-card UI with hover controls for rerolling and copying results to the clipboard ([#516](https://github.com/ben/foundry-ironsworn/pull/516))
