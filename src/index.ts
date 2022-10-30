@@ -163,6 +163,14 @@ Hooks.once('init', async () => {
   registerCompendiumCategoryHook()
   registerTokenHUDButtons()
   activateSceneButtonListeners()
+
+  // Disable warnings in a prod build
+  if (import.meta.env.PROD) {
+    CONFIG.compatibility.excludePatterns.push(
+      /IronswornItem#data/,
+      /IronswornActor#data/
+    )
+  }
 })
 
 Hooks.once('ready', async () => {
