@@ -3,26 +3,30 @@
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="item" />
 
-    <select
-      class="nogrow"
-      v-model="item.data.subtype"
-      @change="subtypeChange"
-      style="margin: 0.5rem 0"
-    >
+    <div class="flexrow nogrow" style="margin: 0.5rem 0">
+      <RankPips
+        class="nogrow"
+        :current="item.data.rank"
+        @click="setRank"
+        style="margin-right: 1em"
+      />
+      <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
+      <label class="checkbox nogrow">
+        <input
+          type="checkbox"
+          v-model="item.data.completed"
+          @change="saveChecks"
+        />
+        {{ $t('IRONSWORN.Completed') }}
+      </label>
+    </div>
+
+    <select class="nogrow" v-model="item.data.subtype" @change="subtypeChange">
       <option value="vow">{{ $t('IRONSWORN.Vow') }}</option>
       <option value="progress">{{ $t('IRONSWORN.Progress') }}</option>
       <option value="bond">{{ $t('IRONSWORN.Connection') }}</option>
     </select>
 
-    <hr class="nogrow" />
-    <label class="checkbox nogrow">
-      <input
-        type="checkbox"
-        v-model="item.data.completed"
-        @change="saveChecks"
-      />
-      {{ $t('IRONSWORN.Completed') }}
-    </label>
     <hr class="nogrow" />
 
     <div class="nogrow">
@@ -37,24 +41,23 @@
 
       <CollapseTransition>
         <div class="nogrow" v-if="item.data.hasTrack">
-          <!-- RANK -->
-          <div class="flexrow nogrow">
-            <RankPips
-              :current="item.data.rank"
-              @click="setRank"
-              style="margin-right: 1em"
-            />
-            <h4>{{ rankText }}</h4>
+          <div
+            class="flexrow nogrow"
+            style="justify-content: flex-end; margin-bottom: 0.25rem"
+          >
             <BtnFaicon
-              class="block nogrow"
-              v-if="editMode"
-              icon="trash"
-              @click="clearProgress"
+              class="block"
+              v-if="item.data.hasTrack"
+              icon="caret-left"
+              @click="retreat"
+              :tooltip="$t('IRONSWORN.UnmarkProgress')"
             />
             <BtnFaicon
-              class="block nogrow"
+              class="block"
+              v-if="item.data.hasTrack"
               icon="caret-right"
-              @click="markProgress"
+              @click="advance"
+              :tooltip="$t('IRONSWORN.MarkProgress')"
             />
           </div>
           <!-- PROGRESS -->
@@ -120,7 +123,7 @@
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
-import { RANKS, RANK_INCREMENTS } from '../constants'
+import { RANKS } from '../constants'
 import { $ItemKey, ItemKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
@@ -139,24 +142,17 @@ provide(
   computed(() => props.item)
 )
 
-const editMode = computed(
-  () => props.item.flags['foundry-ironsworn']?.['edit-mode']
-)
-
 const rankText = computed(() => game.i18n.localize(RANKS[props.item.data.rank]))
 
 function setRank(rank) {
   $item?.update({ data: { rank } })
 }
 
-function clearProgress() {
-  $item?.update({ 'data.current': 0 })
+function advance() {
+  $item?.markProgress(1)
 }
-
-function markProgress() {
-  const increment = RANK_INCREMENTS[props.item.data.rank]
-  const newValue = Math.min(props.item.data.current + increment, 40)
-  $item?.update({ 'data.current': newValue })
+function retreat() {
+  $item?.markProgress(-1)
 }
 
 function subtypeChange() {
