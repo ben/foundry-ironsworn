@@ -40,16 +40,22 @@ export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
     return this
   }
 
+  get hasEditMode() {
+    return true
+  }
   _getHeaderButtons() {
-    return [
-      {
-        class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
-        icon: 'fas fa-edit',
-        onclick: (e) => this._toggleEditMode(e),
-      },
-      ...super._getHeaderButtons(),
-    ]
+    if (this.hasEditMode) {
+      return [
+        {
+          class: 'ironsworn-toggle-edit-mode',
+          label: 'Edit',
+          icon: 'fas fa-edit',
+          onclick: (e) => this._toggleEditMode(e),
+        },
+        ...super._getHeaderButtons(),
+      ]
+    }
+    return super._getHeaderButtons()
   }
   _toggleEditMode(_e: JQuery.ClickEvent) {
     const currentValue = this.item.getFlag('foundry-ironsworn', 'edit-mode')

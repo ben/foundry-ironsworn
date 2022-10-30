@@ -15,4 +15,8 @@ export class ProgressSheetV2 extends VueItemSheet {
       components: { 'progress-sheet': progressSheetVue },
     }
   }
+
+  get hasEditMode(): boolean {
+    return false
+  }
 }
