@@ -114,8 +114,33 @@
 
     <!-- DESCRIPTION -->
     <MceEditor v-model="item.data.description" @save="saveDescription" />
+
+    <button
+      class="button nogrow"
+      :class="$style.danger"
+      type="button"
+      @click="destroy"
+    >
+      {{ $t('IRONSWORN.DeleteItem') }}
+    </button>
   </div>
 </template>
+
+<style lang="less" module>
+button.danger {
+  color: var(--ironsworn-color-danger);
+  border: 1px solid;
+  border-radius: 5px;
+  border-color: var(--ironsworn-color-danger);
+  transition: all ease 0.2s;
+
+  &:hover {
+    background-color: var(--ironsworn-color-danger);
+    color: var(--ironsworn-color-danger-inverted);
+    border-color: var(--ironsworn-color-danger-inverted);
+  }
+}
+</style>
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
@@ -175,5 +200,16 @@ function setClock(num) {
 
 function saveDescription() {
   $item?.update({ data: { description: props.item.data.description } })
+}
+
+function destroy() {
+  Dialog.confirm({
+    title: game.i18n.localize('IRONSWORN.DeleteAsset'),
+    content: `<p><strong>${game.i18n.localize(
+      'IRONSWORN.ConfirmDelete'
+    )}</strong></p>`,
+    yes: () => $item?.delete(),
+    defaultYes: false,
+  })
 }
 </script>
