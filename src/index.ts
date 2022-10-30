@@ -165,8 +165,8 @@ Hooks.once('init', async () => {
   activateSceneButtonListeners()
 
   // Disable warnings in a prod build
-  if (import.meta.env.PROD) {
-    CONFIG.compatibility.excludePatterns.push(
+  if ((import.meta as any).env?.PROD && (CONFIG as any).compatibility) {
+    ;(CONFIG as any).compatibility.excludePatterns.push(
       /IronswornItem#data/,
       /IronswornActor#data/
     )
