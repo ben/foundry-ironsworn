@@ -124,11 +124,7 @@
 
     <!-- NOTES -->
     <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
-    <MceEditor
-      v-model="actor.data.description"
-      @save="saveDescription"
-      @change="throttledSaveDescription"
-    />
+    <MceEditor v-model="actor.data.description" @save="saveDescription" />
   </div>
 </template>
 
@@ -295,5 +291,4 @@ async function randomDenizen() {
 function saveDescription() {
   $actor?.update({ 'data.description': props.actor.data.description })
 }
-const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>

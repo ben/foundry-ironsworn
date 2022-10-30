@@ -117,11 +117,7 @@
       </div>
     </section>
     <section class="flexcol">
-      <MceEditor
-        v-model="actor.data.description"
-        @save="saveDescription"
-        @change="throttledSaveDescription"
-      />
+      <MceEditor v-model="actor.data.description" @save="saveDescription" />
     </section>
   </SheetBasic>
 </template>
@@ -545,7 +541,6 @@ const klassIsNotValid = computed(() => {
 function saveDescription() {
   $actor?.update({ 'data.description': props.actor.data.description })
 }
-const throttledSaveDescription = throttle(saveDescription, 1000)
 
 function regionChanged(evt) {
   const sceneId = game.user?.viewedScene

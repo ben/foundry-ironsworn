@@ -29,11 +29,7 @@
       <hr class="nogrow" />
 
       <!-- DESCRIPTION -->
-      <MceEditor
-        v-model="foe.data.description"
-        @save="saveDescription"
-        @change="throttledSaveDescription"
-      />
+      <MceEditor v-model="foe.data.description" @save="saveDescription" />
       <!-- <div v-html="foe.data.description" /> -->
     </div>
 
@@ -133,5 +129,4 @@ function saveDescription() {
     data: { description: foe.value?.data.description },
   })
 }
-const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>

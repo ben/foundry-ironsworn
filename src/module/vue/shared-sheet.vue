@@ -21,11 +21,7 @@
 
     <section class="sheet-area">
       <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
-      <mce-editor
-        v-model="actor.data.biography"
-        @save="saveNotes"
-        @change="throttledSaveNotes"
-      />
+      <mce-editor v-model="actor.data.biography" @save="saveNotes" />
     </section>
   </SheetBasic>
 </template>
@@ -79,5 +75,4 @@ const hasBonds = computed(() => {
 function saveNotes() {
   $actor?.update({ 'data.biography': props.actor.data.biography })
 }
-const throttledSaveNotes = throttle(saveNotes, 1000)
 </script>
