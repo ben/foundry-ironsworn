@@ -113,11 +113,7 @@
     <hr class="nogrow" />
 
     <!-- DESCRIPTION -->
-    <MceEditor
-      v-model="item.data.description"
-      @save="saveDescription"
-      @change="throttledSaveDescription"
-    />
+    <MceEditor v-model="item.data.description" @save="saveDescription" />
   </div>
 </template>
 
@@ -180,5 +176,4 @@ function setClock(num) {
 function saveDescription() {
   $item?.update({ data: { description: props.item.data.description } })
 }
-const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>
