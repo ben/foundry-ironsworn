@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix a visual bug with sliding transition groups, e.g. marking a vow as complete ([#521](https://github.com/ben/foundry-ironsworn/pull/521))
+
 ## 1.18.11
 
 - Minor updates to layout of the progress sheet ([#520](https://github.com/ben/foundry-ironsworn/pull/520))
