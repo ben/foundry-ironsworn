@@ -90,7 +90,7 @@
             />
           </div>
           <div class="flexcol">
-            Segments:
+            {{ $t('IRONSWORN.Segments') }}:
             <select
               class="nogrow"
               v-model="item.data.clockMax"

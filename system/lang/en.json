@@ -28,6 +28,8 @@
     "Complication": "Complication!",
     "MarkProgress": "Mark Progress",
     "PROGRESS": {
+      "Current": "{score} progress ({ticks} ticks)",
+      "Ticks": "{ticks} ticks",
       "Track": "progress track",
       "BOX": {
         "1": "1 box",
@@ -98,6 +100,7 @@
     "Bond": "Bond",
     "Legacies": "Legacies",
     "Clock": "Clock",
+    "Segments": "Segments",
     "Scenes": "Scenes",
     "Quests": "Quests",
     "Notes": "Notes",
