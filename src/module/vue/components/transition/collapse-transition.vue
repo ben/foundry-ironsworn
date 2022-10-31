@@ -166,12 +166,6 @@ function beforeLeave(el: HTMLElement) {
   $emit('before-leave', el)
 }
 
-function setAbsolutePosition(el) {
-  if (props.group) {
-    el.style.position = 'absolute'
-  }
-}
-
 function leave(el: HTMLElement, callback: () => void) {
   // For some reason, @leave triggered when starting
   // from open state on page load. So for safety,
@@ -188,7 +182,6 @@ function leave(el: HTMLElement, callback: () => void) {
   forceRepaint(el)
   setTransition(el)
   setClosedDimensions(el)
-  setAbsolutePosition(el)
 
   // Emit the event to the parent
   $emit('leave', el, callback)
