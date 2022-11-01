@@ -325,7 +325,16 @@
     "First Start": {
       "Welcome": "Welcome",
       "Save": "Save",
-      "Intro": "Welcome to Ironsworn! There are just a few choices to make before starting."
+      "Intro": "Welcome to Ironsworn! There are just a few choices to make before starting.",
+      "CharacterSheet": "Character Sheet",
+      "DefaultSheet": "Which character sheet would you like to use as the default?",
+      "MovesOracles": "Moves & Oracles",
+      "DefaultMovesOracles": "Which set of moves and oracles would you like to use?",
+      "MatchSheet": "Match sheet",
+      "SettingTruths": "Setting Truths",
+      "GenerateTruths": "Would you like to generate your setting's truths?",
+      "YesFor": "Yes, for",
+      "NeverAsk": "Never ask again"
     },
     "MoveContents": {
       "Face Danger": {
