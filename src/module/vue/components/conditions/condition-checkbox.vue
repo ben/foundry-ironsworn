@@ -20,6 +20,7 @@ const $actor = inject($ActorKey)
 const props = defineProps<{
   name: string
   global?: boolean
+  globalHint?: boolean
 }>()
 
 async function input(ev: Event) {
@@ -50,5 +51,23 @@ async function input(ev: Event) {
       'starship',
     ])
   }
+
+  if (props.globalHint) {
+    CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
+      name: props.name,
+      enabled: value,
+    })
+  }
 }
+
+CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name, enabled }) => {
+  if (name === props.name) {
+    refreshGlobalHint()
+  }
+})
+
+function refreshGlobalHint() {
+  // TODO: update local state to indicate if any other actors/assets have this flag set
+}
+refreshGlobalHint()
 </script>
