@@ -7,7 +7,7 @@
     <condition-checkbox name="wounded" />
     <condition-checkbox name="shaken" />
     <condition-checkbox name="maimed" />
-    <condition-checkbox name="cursed" />
+    <condition-checkbox name="cursed" :global-hint="true" />
 
     <condition-checkbox name="unprepared" />
     <condition-checkbox name="encumbered" />
