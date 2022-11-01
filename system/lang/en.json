@@ -107,6 +107,8 @@
     "Discoveries": "Discoveries",
     "Debilities": "Debilities",
     "Conditions": "Conditions",
+    "ConditionSetOnOne": "{condition} is set on {name}",
+    "ConditionSetOnMany": "{condition} is set on:",
     "Banes": "Banes",
     "Burdens": "Burdens",
     "Misfortunes": "Misfortunes",
