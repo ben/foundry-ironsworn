@@ -1,5 +1,9 @@
 <template>
-  <label class="checkbox" :data-tooltip="state.hintText">
+  <label
+    class="checkbox"
+    :data-tooltip="state.hintText"
+    :class="{ 'condition-hint': !!state.hintText }"
+  >
     <input
       type="checkbox"
       @change="input"
@@ -9,8 +13,13 @@
   </label>
 </template>
 
+<style lang="less" scoped>
+.condition-hint {
+  text-shadow: 0 0 3px var(--ironsworn-color-danger);
+}
+</style>
+
 <script lang="ts" setup>
-import { assertTSLiteralType } from '@babel/types'
 import { capitalize, inject, nextTick, reactive, Ref } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'
@@ -100,5 +109,5 @@ function refreshGlobalHint() {
     `.trim()
   }
 }
-refreshGlobalHint()
+if (props.globalHint) refreshGlobalHint()
 </script>
