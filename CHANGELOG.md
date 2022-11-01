@@ -3,6 +3,7 @@
 ## Next Release
 
 - Fix a visual bug with sliding transition groups, e.g. marking a vow as complete ([#521](https://github.com/ben/foundry-ironsworn/pull/521))
+- "Battered" and "Cursed" no longer cascade across actor sheets, but those sheets will get highlights suggesting other actors that have them set ([#523](https://github.com/ben/foundry-ironsworn/pull/523))
 
 ## 1.18.11
 
