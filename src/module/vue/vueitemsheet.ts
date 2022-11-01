@@ -48,7 +48,7 @@ export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
       return [
         {
           class: 'ironsworn-toggle-edit-mode',
-          label: 'Edit',
+          label: game.i18n.localize('IRONSWORN.Edit'),
           icon: 'fas fa-edit',
           onclick: (e) => this._toggleEditMode(e),
         },

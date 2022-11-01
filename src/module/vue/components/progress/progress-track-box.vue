@@ -3,7 +3,7 @@
     class="flexcol progress-track-box"
     :class="{ 'track-overflow': isOverflowBox }"
     :aria-valuenow="ticks"
-    :aria-valuetext="`${ticks} ticks`"
+    :aria-valuetext="$t('IRONSWORN.PROGRESS.Ticks', {ticks})"
     @transitionstart="onTransitionStart"
     @transitionend="onTransitionEnd"
   >

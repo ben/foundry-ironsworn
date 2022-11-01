@@ -14,8 +14,8 @@
     :aria-valuenow="ticks"
     :aria-valuemin="0"
     :aria-valuemax="40"
-    :aria-valuetext="`${score} progress (${ticks} ticks)`"
-    :data-tooltip="`${score} progress (${ticks} ticks)`"
+    :aria-valuetext="$t('IRONSWORN.PROGRESS.Current', {score, ticks})"
+    :data-tooltip="$t('IRONSWORN.PROGRESS.Current', {score, ticks})"
   >
     <ProgressTrackBox
       v-for="(boxTicks, i) in boxes"

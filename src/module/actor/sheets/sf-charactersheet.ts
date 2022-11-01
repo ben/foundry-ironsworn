@@ -30,7 +30,7 @@ export class StarforgedCharacterSheet extends VueActorSheet {
     return [
       {
         class: 'ironsworn-open-move-sheet',
-        label: 'Moves',
+        label: game.i18n.localize('IRONSWORN.Moves'),
         icon: 'fas fa-directions',
         onclick: (e) => this._openMoveSheet(e),
       },

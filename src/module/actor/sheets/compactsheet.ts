@@ -36,7 +36,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     return [
       {
         class: 'ironsworn-open-move-sheet',
-        label: 'Moves',
+        label: game.i18n.localize('IRONSWORN.Moves'),
         icon: 'fas fa-directions',
         onclick: (e) => this._openMoveSheet(e),
       },
