@@ -15,7 +15,7 @@
 
 <style lang="less" scoped>
 .condition-hint {
-  text-shadow: 0 0 3px var(--ironsworn-color-danger);
+  text-shadow: 0 0 5px var(--ironsworn-color-warning);
 }
 </style>
 
