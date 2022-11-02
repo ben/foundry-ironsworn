@@ -71,6 +71,7 @@
         :nameClass="{
           highlighted: data.firstLookHighlight && canRandomizeName,
         }"
+        @change="nameChange"
       >
         <btn-isicon
           v-if="canRandomizeName"
@@ -164,13 +165,10 @@ label {
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { capitalize, flatten, sample, throttle } from 'lodash'
-import { provide, computed, reactive, inject } from 'vue'
-import { IronswornActor } from '../actor/actor'
+import { capitalize, flatten, sample } from 'lodash'
+import { provide, computed, reactive, inject, watch } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 import BtnIsicon from './components/buttons/btn-isicon.vue'
-import DocumentImg from './components/document-img.vue'
-import DocumentName from './components/document-name.vue'
 import BtnIcon from './components/buttons/btn-icon.vue'
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
@@ -668,6 +666,10 @@ async function rollOracle(oracle) {
     '</p>',
   ]
   await $actor?.update({ data: { description: parts.join('') } })
+}
+
+function nameChange() {
+  updateAllTokens({ name: props.actor.name })
 }
 
 async function updateAllTokens(data) {
