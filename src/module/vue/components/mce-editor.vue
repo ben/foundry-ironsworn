@@ -25,9 +25,13 @@ import { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import WithRolllisteners from './with-rolllisteners.vue'
 
-defineProps<{ modelValue: string; interceptClicks?: boolean }>()
+const props = defineProps<{
+  modelValue: string
+  interceptClicks?: boolean
+  editing?: boolean
+}>()
 
-const data = reactive({ editing: false })
+const data = reactive({ editing: props.editing ?? false })
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {

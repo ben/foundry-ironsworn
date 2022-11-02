@@ -179,6 +179,8 @@
     "Characteristics": "Characteristics",
     "Summary": "Summary",
     "Description": "Description",
+    "Category": "Category",
+    "Color": "Color",
     "Trigger": "Trigger",
     "FullText": "Full text",
     "Fields": "Fields",

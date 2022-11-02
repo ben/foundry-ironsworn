@@ -4,6 +4,64 @@
       <document-name :document="item" />
     </SheetHeader>
 
+    <Tabs v-if="editMode">
+      <Tab :title="$t('IRONSWORN.Description')">
+        <!-- TEXT INPUTS -->
+        <div class="form-group">
+          <label style="grid-column: 1; grid-row: 1">
+            {{ $t('IRONSWORN.Category') }}
+          </label>
+          <input
+            style="grid-row: 1; grid-column: 2"
+            type="text"
+            v-model="item.data.category"
+            @blur="setCategory"
+          />
+        </div>
+
+        <div class="form-group">
+          <label>{{ $t('IRONSWORN.Color') }}</label>
+          <input type="color" v-model="item.data.color" @change="setColor" />
+        </div>
+
+        <MceEditor
+          v-model="item.data.description"
+          @save="setDescription"
+          :editing="true"
+        />
+      </Tab>
+
+      <Tab :title="$t('IRONSWORN.Fields')">
+        <asset-fieldsedit />
+      </Tab>
+
+      <Tab :title="$t('IRONSWORN.Abilities')">
+        <asset-abilitiesedit />
+      </Tab>
+
+      <Tab :title="$t('IRONSWORN.Options')">
+        <asset-optionsedit />
+      </Tab>
+
+      <Tab :title="$t('IRONSWORN.Track')">
+        <asset-trackedit />
+      </Tab>
+    </Tabs>
+
+    <article v-else>
+      <!--
+        Semi-edit view:
+        * Text entry for field VALUES (not names)
+        * Checkboxes for visible abilities
+        * Selection for exclusive options
+        * Track: name and value only
+        * Conditions: checkboxes only
+       -->
+      <h3 v-if="item.data.category">{{ item.data.category }}</h3>
+    </article>
+
+    <hr />
+
     <section class="flexrow" style="gap: 5px">
       <input
         v-if="editMode"
@@ -67,6 +125,13 @@
   </div>
 </template>
 
+<style lang="less" module>
+.entrygrid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+</style>
+
 <style lang="less" scoped>
 .fieldrow {
   p,
@@ -82,8 +147,11 @@ h3 {
 </style>
 
 <script setup lang="ts">
-import SheetHeader from './sheet-header.vue'
 import { computed, inject, provide, Ref } from 'vue'
+import SheetHeader from './sheet-header.vue'
+import Tabs from './components/tabs/tabs.vue'
+import Tab from './components/tabs/tab.vue'
+import MceEditor from './components/mce-editor.vue'
 import DocumentName from './components/document-name.vue'
 import AssetFieldsedit from './components/asset/asset-fieldsedit.vue'
 import AssetAbilitiesedit from './components/asset/asset-abilitiesedit.vue'
