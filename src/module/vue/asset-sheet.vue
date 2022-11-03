@@ -6,23 +6,23 @@
 
     <Tabs v-if="editMode">
       <Tab :title="$t('IRONSWORN.Description')">
-        <AssetDescriptionEdit />
+        <AssetEditDescription />
       </Tab>
 
       <Tab :title="$t('IRONSWORN.Fields')">
-        <AssetFieldsedit />
+        <AssetEditFields />
       </Tab>
 
       <Tab :title="$t('IRONSWORN.Abilities')">
-        <AssetAbilitiesedit />
+        <AssetEditAbilities />
       </Tab>
 
       <Tab :title="$t('IRONSWORN.Options')">
-        <AssetOptionsedit />
+        <AssetEditOptions />
       </Tab>
 
       <Tab :title="$t('IRONSWORN.Track')">
-        <AssetTrackedit />
+        <AssetEditTrack />
       </Tab>
     </Tabs>
 
@@ -56,11 +56,12 @@ import { computed, inject, provide, Ref } from 'vue'
 import SheetHeader from './sheet-header.vue'
 import Tabs from './components/tabs/tabs.vue'
 import Tab from './components/tabs/tab.vue'
-import AssetDescriptionEdit from './components/asset/asset-description-edit.vue'
-import AssetFieldsedit from './components/asset/asset-fieldsedit.vue'
-import AssetAbilitiesedit from './components/asset/asset-abilitiesedit.vue'
-import AssetOptionsedit from './components/asset/asset-optionsedit.vue'
+import AssetEditDescription from './components/asset/asset-edit-description.vue'
+import AssetEditFields from './components/asset/asset-edit-fields.vue'
+import AssetEditAbilities from './components/asset/asset-edit-abilities.vue'
+import AssetEditOptions from './components/asset/asset-edit-options.vue'
 import AssetOverview from './components/asset/asset-overview.vue'
+import AssetEditTrack from './components/asset/asset-edit-track.vue'
 import { $ItemKey, ItemKey } from './provisions'
 
 const $item = inject($ItemKey)

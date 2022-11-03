@@ -14,9 +14,9 @@
 </template>
 
 <script lang="ts" setup>
-import { inject } from 'vue'
+import { ComputedRef, inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 
 const $item = inject($ItemKey)
-const item = inject(ItemKey)
+const item = inject(ItemKey) as ComputedRef
 </script>
