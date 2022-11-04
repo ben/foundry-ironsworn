@@ -122,23 +122,23 @@
       gap: @asset_spacer;
       background: none;
       box-shadow: none !important;
-      .asset-title {
-        margin: 0;
-        font-size: var(--font-size-14);
-        font-weight: bold;
-        letter-spacing: 0.02em;
-        word-spacing: 0.02em;
-        line-height: 1;
-      }
-      &:not(:hover) .asset-type {
-        color: var(--ironsworn-color-thematic);
-      }
-      .asset-type {
-        flex-grow: 0;
-        line-height: 1;
-        font-style: italic;
-        transition: var(--std-animation);
-      }
+    }
+    .asset-title {
+      margin: 0;
+      font-size: var(--font-size-14);
+      font-weight: bold;
+      letter-spacing: 0.02em;
+      word-spacing: 0.02em;
+      line-height: 1;
+    }
+    &:not(:hover) .asset-type {
+      color: var(--ironsworn-color-thematic);
+    }
+    .asset-type {
+      flex-grow: 0;
+      line-height: 1;
+      font-style: italic;
+      transition: var(--std-animation);
     }
     .asset-controls {
       justify-items: flex-end;
