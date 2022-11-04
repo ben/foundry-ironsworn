@@ -9,7 +9,7 @@
         * Conditions: checkboxes only
        -->
 
-    <header class="asset-header nogrow flexrow">
+    <header class="asset-header nogrow">
       <span class="asset-type" aria-label="asset type">
         {{ item.data.category }}
       </span>
@@ -56,14 +56,38 @@
         >
           <div
             class="asset-ability-text flexcol"
-            v-html="ability.description"
+            v-html="$enrichHtml(ability.description)"
           ></div>
         </WithRollListeners>
       </ul>
 
       <!-- OPTIONS -->
+      <section
+        class="flexcol stack nogrow"
+        v-if="item.data.exclusiveOptions.length > 0"
+      >
+        <AssetExclusiveoption
+          v-for="(opt, i) in item.data.exclusiveOptions"
+          :key="'option' + i"
+          :opt="opt"
+          @click="exclusiveOptionClick(i)"
+        />
+      </section>
 
       <!-- TRACK -->
+      <ConditionMeterSlider
+        v-if="item.data.track.enabled"
+        sliderStyle="horizontal"
+        class="asset-condition-meter nogrow"
+        documentType="Item"
+        attr="track.current"
+        :current-value="item.data.track.current"
+        :max="item.data.track.max"
+        :min="0"
+        :statLabel="item.data.track.name"
+        labelPosition="left"
+        :read-only="false"
+      />
 
       <!-- CONDITIONS -->
     </section>
@@ -74,7 +98,7 @@
 .ironsworn__asset {
   margin: 10px 0;
   padding: 5px;
-  --ironsworn-color-thematic: v-bind('item.data.color');
+  --ironsworn-color-thematic: v-bind(item.data.color || '#000');
 }
 
 input[type='text'] {
@@ -87,6 +111,8 @@ input[type='text'] {
 import { computed, ComputedRef, inject, useCssModule } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import WithRollListeners from '../with-rolllisteners.vue'
+import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
+import AssetExclusiveoption from './asset-exclusiveoption.vue'
 
 const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
@@ -114,6 +140,14 @@ function toggleAbility(i: number) {
   const { abilities } = item.value.data
   abilities[i].enabled = !abilities[i].enabled
   $item?.update({ data: { abilities } })
+}
+
+function exclusiveOptionClick(selectedIdx: number) {
+  const { exclusiveOptions } = item.value.data
+  for (let i = 0; i < exclusiveOptions.length; i++) {
+    exclusiveOptions[i].selected = i === selectedIdx
+  }
+  $item?.update({ data: { exclusiveOptions } })
 }
 
 function moveClick(item) {
