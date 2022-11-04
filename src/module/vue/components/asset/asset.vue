@@ -223,6 +223,7 @@
       background-repeat: no-repeat;
       mask-position: center;
       background-position: center;
+      transition: var(--std-animation);
     }
 
     &.marked:before {
