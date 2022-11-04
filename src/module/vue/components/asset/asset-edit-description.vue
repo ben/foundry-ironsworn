@@ -1,19 +1,17 @@
 <template>
   <div class="form-group nogrow">
-    <label style="grid-column: 1; grid-row: 1">
-      {{ $t('IRONSWORN.Category') }}
-    </label>
-    <input
-      style="grid-row: 1; grid-column: 2"
-      type="text"
-      v-model="item.data.category"
-      @blur="setCategory"
-    />
+    <label>{{ $t('IRONSWORN.Category') }}</label>
+    <input type="text" v-model="item.data.category" @blur="setCategory" />
   </div>
 
   <div class="form-group nogrow">
     <label>{{ $t('IRONSWORN.Color') }}</label>
     <input type="color" v-model="item.data.color" @change="setColor" />
+  </div>
+
+  <div class="form-group nogrow">
+    <label>{{ $t('IRONSWORN.Requirement') }}</label>
+    <input type="text" v-model="item.data.requirement" @blur="setRequirement" />
   </div>
 
   <hr class="nogrow" />
@@ -43,6 +41,10 @@ function setDescription() {
 function setCategory() {
   if (!item.value) return
   $item?.update({ data: { category: item.value.data.category } })
+}
+function setRequirement() {
+  if (!item.value) return
+  $item?.update({ data: { requirement: item.value.data.requirement } })
 }
 function setColor() {
   if (!item.value) return
