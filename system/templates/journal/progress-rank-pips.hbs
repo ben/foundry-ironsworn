@@ -1,101 +1,27 @@
 <article
-  class='rank-pips progress-rank-pips flexrow'
+  class='rank-pips progress-rank-pips flexrow nogrow'
   aria-label='Challenge rank'
-  aria-valuetext='extreme'
+  aria-valuetext='{{i18nRank}}'
 >
-  <button
-    title=''
-    data-tooltip='Troublesome'
-    data-tooltip-direction='UP'
-    type='button'
-    class='rank-pip nogrow theme-pip'
-    aria-selected='false'
-  >
-    <svg
-      class='svg-circle svg pip-shape'
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 10 10'
-      role='presentational'
+  {{#each rankButtons}}
+    <button
+      type='button'
+      class='rank-pip nogrow theme-pip'
+      data-rank='{{rank}}'
+      data-tooltip='{{i18nRank}}'
+      data-tooltip-direction='UP'
+      aria-selected='{{selected}}'
     >
-      <circle cx='5' cy='5' r='5' vector-effect='non-scaling-stroke'>
-      </circle>
-    </svg>
-  </button>
-  <button
-    title=''
-    data-tooltip='Dangerous'
-    data-tooltip-direction='UP'
-    type='button'
-    class='rank-pip nogrow theme-pip'
-    aria-selected='false'
-  >
-    <svg
-      class='svg-circle svg pip-shape'
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 10 10'
-      role='presentational'
-    >
-      <circle cx='5' cy='5' r='5' vector-effect='non-scaling-stroke'>
-      </circle>
-    </svg>
-  </button>
-  <button
-    title=''
-    data-tooltip='Formidable'
-    data-tooltip-direction='UP'
-    type='button'
-    class='rank-pip nogrow theme-pip'
-    aria-selected='false'
-  >
-    <svg
-      class='svg-circle svg pip-shape'
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 10 10'
-      role='presentational'
-    >
-      <circle cx='5' cy='5' r='5' vector-effect='non-scaling-stroke'>
-      </circle>
-    </svg>
-  </button>
-  <button
-    title=''
-    data-tooltip='Extreme'
-    data-tooltip-direction='UP'
-    type='button'
-    class='rank-pip nogrow theme-pip'
-    aria-selected='true'
-  >
-    <svg
-      class='svg-circle svg pip-shape'
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 10 10'
-      role='presentational'
-    >
-      <circle cx='5' cy='5' r='5' vector-effect='non-scaling-stroke'>
-      </circle>
-    </svg>
-  </button>
-  <button
-    title=''
-    data-tooltip='Epic'
-    data-tooltip-direction='UP'
-    type='button'
-    class='rank-pip nogrow theme-pip'
-    aria-selected='false'
-  >
-    <svg
-      class='svg-circle svg pip-shape'
-      version='1.1'
-      xmlns='http://www.w3.org/2000/svg'
-      viewBox='0 0 10 10'
-      role='presentational'
-    >
-      <circle cx='5' cy='5' r='5' vector-effect='non-scaling-stroke'>
-      </circle>
-    </svg>
-  </button>
+      <svg
+        class='svg-circle svg pip-shape'
+        version='1.1'
+        xmlns='http://www.w3.org/2000/svg'
+        viewBox='0 0 10 10'
+        role='presentational'
+      >
+        <circle cx='5' cy='5' r='5' vector-effect='non-scaling-stroke'>
+        </circle>
+      </svg>
+    </button>
+  {{/each}}
 </article>

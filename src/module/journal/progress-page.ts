@@ -35,6 +35,15 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     data.data.system.ticks ??= 0
     data.data.system.rank ??= NumericRank.troublesome
 
+    data.currentRank = game.i18n.localize(
+      NumericRankI18nKeys[data.data.system.rank]
+    )
+    data.rankButtons = range(1, 6).map((numericRank) => ({
+      rank: numericRank,
+      i18nRank: game.i18n.localize(NumericRankI18nKeys[numericRank]),
+      selected: data.data.system.rank === numericRank,
+    }))
+
     // Compute some basic information
     const boxes = range(10).map((_) => ({
       ticks: 0,
@@ -69,6 +78,12 @@ export class JournalProgressPageSheet extends JournalPageSheet {
   }
 
   activateListeners(html: JQuery<HTMLElement>): void {
+    html.find('.rank-pip').on('click', async (ev) => {
+      await this.object.update({
+        system: { rank: parseInt(ev.currentTarget.dataset.rank) },
+      })
+      this.render()
+    })
     html.find('.ironsworn__progress__mark').on('click', async () => {
       console.log('mark', this)
     })

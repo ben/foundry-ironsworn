@@ -1,9 +1,10 @@
-<form class="{{cssClass}} flexcol progress-list-item" autocomplete="off">
+<form class="{{cssClass}} ironsworn flexcol progress-list-item" autocomplete="off">
   {{> journalEntryPageHeader}}
 
-  <section class="flexcol" style="margin: 1em;">
-    <div class="flexrow nogrow">
+  <section class="flexcol" style="margin: 1em; gap: 5px">
+    <div class="flexrow nogrow" style="gap: 1em">
       {{> rankPips}}
+      <h4 style='margin: 2px'>{{currentRank}}</h4>
       {{> progressButtons edit=true}}
     </div>
     {{> progressBoxes}}
