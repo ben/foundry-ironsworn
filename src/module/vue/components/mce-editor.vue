@@ -1,6 +1,11 @@
 <template>
   <div v-if="data.editing" class="editor flexcol">
-    <Editor v-bind="$attrs" :modelValue="modelValue" :init="mceConfig" />
+    <Editor
+      v-bind="$attrs"
+      :modelValue="modelValue"
+      :init="mceConfig"
+      @blur="$emit('save')"
+    />
   </div>
   <div v-else class="editor flexcol">
     <with-rolllisteners

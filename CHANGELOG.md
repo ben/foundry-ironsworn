@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Text edits on progress items are no longer lost when changing the rank.
+
 ## 1.18.13
 
 - Update the asset pop-out sheet to present half-edit (which more closely matches the cards) and full-edit experiences ([#524](https://github.com/ben/foundry-ironsworn/pull/524))
