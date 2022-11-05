@@ -14,12 +14,12 @@
         ></textarea>
         <div class="flexrow">
           <div class="form-group">
-            <input
-              type="checkbox"
-              :checked="ability.hasClock"
-              @change="enableClock(i)"
-            />
-            <label>
+            <label class="flexrow">
+              <input
+                type="checkbox"
+                :checked="ability.hasClock"
+                @change="enableClock(i)"
+              />
               {{ $t('IRONSWORN.Clock') }}
             </label>
             <select
@@ -119,6 +119,4 @@ function save() {
   const { abilities } = item.value?.data
   $item?.update({ data: { abilities } })
 }
-
-onUnmounted(save)
 </script>
