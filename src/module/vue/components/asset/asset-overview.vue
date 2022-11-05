@@ -99,11 +99,11 @@
         />
 
         <!-- CONDITIONS -->
-        <div :class="$style.conditions" v-if="item.data.conditions?.length > 0">
+        <div class="asset-conditions" v-if="item.data.conditions?.length > 0">
           <label
             v-for="(condition, i) in item.data.conditions"
             :key="condition.name"
-            :class="$style.condition"
+            class="condition"
           >
             <input
               type="checkbox"
@@ -118,23 +118,8 @@
   </article>
 </template>
 
-<style lang="less" module>
-.ironsworn__asset {
-  margin: 10px 0;
-  padding: 5px;
-  --ironsworn-color-thematic: v-bind(item.data.color || '#000');
-}
-
-.asset-ability-clock {
-  min-width: 40px;
-}
-
-input[type='text'] {
-  border: 0;
-  outline: 0;
-}
-
-.conditions {
+<style lang="less">
+.asset-conditions {
   display: flex;
   flex-grow: 0;
   flex-direction: column;
@@ -147,6 +132,7 @@ input[type='text'] {
     white-space: nowrap;
     line-height: 12px;
     flex-basis: 12px;
+    margin: 1px 0;
 
     input[type='checkbox'] {
       width: 12px;
@@ -156,6 +142,18 @@ input[type='text'] {
       vertical-align: bottom;
     }
   }
+}
+</style>
+
+<style lang="less" module>
+.ironsworn__asset {
+  margin: 10px 0;
+  padding: 5px;
+  --ironsworn-color-thematic: v-bind(item.data.color || '#000');
+}
+
+.asset-ability-clock {
+  min-width: 40px;
 }
 </style>
 
