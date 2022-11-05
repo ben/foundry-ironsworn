@@ -42,23 +42,31 @@
 
       <!-- ABILITIES -->
       <ul class="asset-abilities flexcol nogrow">
-        <WithRollListeners
+        <li
           v-for="(ability, i) in item.data.abilities"
           :key="`ability${i}`"
-          element="li"
           :class="{
             'asset-ability': true,
             marked: ability.enabled,
             [`bullet-${toolset ?? 'ironsworn'}`]: true,
           }"
-          @click="toggleAbility(i)"
-          @moveclick="moveClick"
         >
-          <div
+          <WithRollListeners
+            element="div"
+            @click="toggleAbility(i)"
+            @moveclick="moveClick"
             class="asset-ability-text flexcol"
             v-html="$enrichHtml(ability.description)"
-          ></div>
-        </WithRollListeners>
+          >
+          </WithRollListeners>
+          <Clock
+            v-if="ability.hasClock"
+            class="asset-ability-clock"
+            :wedges="ability.clockMax"
+            :ticked="ability.clockTicks"
+            @click="setAbilityClock(i, $event)"
+          />
+        </li>
       </ul>
 
       <!-- OPTIONS -->
@@ -101,6 +109,10 @@
   --ironsworn-color-thematic: v-bind(item.data.color || '#000');
 }
 
+.asset-ability-clock {
+  min-width: 40px;
+}
+
 input[type='text'] {
   border: 0;
   outline: 0;
@@ -110,7 +122,9 @@ input[type='text'] {
 <script lang="ts" setup>
 import { computed, ComputedRef, inject, useCssModule } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
+import { AssetAbility } from '../../../item/itemtypes'
 import WithRollListeners from '../with-rolllisteners.vue'
+import Clock from '../clock.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 
@@ -139,6 +153,12 @@ function saveFields() {
 function toggleAbility(i: number) {
   const { abilities } = item.value.data
   abilities[i].enabled = !abilities[i].enabled
+  $item?.update({ data: { abilities } })
+}
+
+function setAbilityClock(abilityIdx: number, clockTicks: number) {
+  const abilities = Object.values(item.value.data.abilities) as AssetAbility[]
+  abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
   $item?.update({ data: { abilities } })
 }
 
