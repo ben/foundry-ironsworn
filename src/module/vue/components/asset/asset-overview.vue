@@ -99,51 +99,11 @@
         />
 
         <!-- CONDITIONS -->
-        <div class="asset-conditions" v-if="item.data.conditions?.length > 0">
-          <label
-            v-for="(condition, i) in item.data.conditions"
-            :key="condition.name"
-            class="condition"
-          >
-            <input
-              type="checkbox"
-              :checked="condition.ticked"
-              @change="toggleCondition(i)"
-            />
-            {{ condition.name }}
-          </label>
-        </div>
+        <AssetConditions :asset="item" />
       </div>
     </section>
   </article>
 </template>
-
-<style lang="less">
-.asset-conditions {
-  display: flex;
-  flex-grow: 0;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 5px;
-  height: 100%;
-
-  .condition {
-    font-size: x-small;
-    white-space: nowrap;
-    line-height: 12px;
-    flex-basis: 12px;
-    margin: 1px 0;
-
-    input[type='checkbox'] {
-      width: 12px;
-      height: 12px;
-      flex: 0 0 12px;
-      margin: 0 3px;
-      vertical-align: bottom;
-    }
-  }
-}
-</style>
 
 <style lang="less" module>
 .ironsworn__asset {
@@ -165,6 +125,7 @@ import WithRollListeners from '../with-rolllisteners.vue'
 import Clock from '../clock.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
+import AssetConditions from './asset-conditions.vue'
 
 const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
