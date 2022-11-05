@@ -1,5 +1,11 @@
 import { fill, range } from 'lodash'
-import { NumericRank, NumericRankI18nKeys, RANKS } from '../constants'
+import {
+  NumericRank,
+  NumericRankI18nKeys,
+  NumericRankIncrements,
+  RANKS,
+  RANK_INCREMENTS,
+} from '../constants'
 import { IronswornPrerollDialog } from '../rolls'
 
 export class JournalProgressPageSheet extends JournalPageSheet {
@@ -85,10 +91,12 @@ export class JournalProgressPageSheet extends JournalPageSheet {
       this.render()
     })
     html.find('.ironsworn__progress__mark').on('click', async () => {
-      console.log('mark', this)
+      await increment(this.object, 1)
+      this.render()
     })
     html.find('.ironsworn__progress__unmark').on('click', async () => {
-      console.log('unmark', this)
+      await increment(this.object, -1)
+      this.render()
     })
     html.find('.ironsworn__progress__roll').on('click', async () => {
       const { filledBoxes } = await this.getData()
@@ -98,4 +106,14 @@ export class JournalProgressPageSheet extends JournalPageSheet {
       )
     })
   }
+}
+
+function increment(object: any, direction: 1 | -1) {
+  const rank = object.system.rank ?? NumericRank.troublesome
+  const increment = NumericRankIncrements[rank]
+  const currentValue = object.system.ticks
+  const newValue = currentValue + increment * direction
+  return object.update({
+    system: { ticks: Math.min(Math.max(newValue, 0), 40) },
+  })
 }

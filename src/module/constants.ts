@@ -29,3 +29,11 @@ export const NumericRankI18nKeys: { [k: NumericRank]: string } = {
   [NumericRank.extreme]: 'IRONSWORN.Extreme',
   [NumericRank.epic]: 'IRONSWORN.Epic',
 }
+
+export const NumericRankIncrements: { [k: NumericRank]: number } = {
+  [NumericRank.troublesome]: 12,
+  [NumericRank.dangerous]: 8,
+  [NumericRank.formidable]: 4,
+  [NumericRank.extreme]: 2,
+  [NumericRank.epic]: 1,
+}
