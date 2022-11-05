@@ -82,22 +82,38 @@
         />
       </section>
 
-      <!-- TRACK -->
-      <ConditionMeterSlider
-        v-if="item.data.track.enabled"
-        sliderStyle="horizontal"
-        class="asset-condition-meter nogrow"
-        documentType="Item"
-        attr="track.current"
-        :current-value="item.data.track.current"
-        :max="item.data.track.max"
-        :min="0"
-        :statLabel="item.data.track.name"
-        labelPosition="left"
-        :read-only="false"
-      />
+      <div class="flexrow nogrow">
+        <!-- TRACK -->
+        <ConditionMeterSlider
+          v-if="item.data.track.enabled"
+          sliderStyle="horizontal"
+          class="asset-condition-meter"
+          documentType="Item"
+          attr="track.current"
+          :current-value="item.data.track.current"
+          :max="item.data.track.max"
+          :min="0"
+          :statLabel="item.data.track.name"
+          labelPosition="left"
+          :read-only="false"
+        />
 
-      <!-- CONDITIONS -->
+        <!-- CONDITIONS -->
+        <div :class="$style.conditions" v-if="item.data.conditions?.length > 0">
+          <label
+            v-for="(condition, i) in item.data.conditions"
+            :key="condition.name"
+            :class="$style.condition"
+          >
+            <input
+              type="checkbox"
+              :checked="condition.ticked"
+              @change="toggleCondition(i)"
+            />
+            {{ condition.name }}
+          </label>
+        </div>
+      </div>
     </section>
   </article>
 </template>
@@ -116,6 +132,30 @@
 input[type='text'] {
   border: 0;
   outline: 0;
+}
+
+.conditions {
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 5px;
+  height: 100%;
+
+  .condition {
+    font-size: x-small;
+    white-space: nowrap;
+    line-height: 12px;
+    flex-basis: 12px;
+
+    input[type='checkbox'] {
+      width: 12px;
+      height: 12px;
+      flex: 0 0 12px;
+      margin: 0 3px;
+      vertical-align: bottom;
+    }
+  }
 }
 </style>
 
@@ -172,5 +212,11 @@ function exclusiveOptionClick(selectedIdx: number) {
 
 function moveClick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
+}
+
+function toggleCondition(idx: number) {
+  const { conditions } = item.value.data
+  conditions[idx].ticked = !conditions[idx].ticked
+  $item?.update({ data: { conditions } })
 }
 </script>

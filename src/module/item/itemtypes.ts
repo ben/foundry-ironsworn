@@ -31,7 +31,7 @@ interface AssetExclusiveOption {
 
 interface AssetCondition {
   name: string
-  ticket: boolean
+  ticked: boolean
 }
 
 interface AssetDataSourceData {
