@@ -1,5 +1,6 @@
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
+import { AssetDataProperties } from '../item/itemtypes'
 
 interface ActorsAndAssets {
   actors: IronswornActor[]
@@ -18,7 +19,14 @@ export function actorsOrAssetsWithConditionEnabled(
     }
 
     for (const item of actor.items.filter((x) => x.type === 'asset')) {
-      // TODO: check asset conditions when they start to exist
+      const assetData = item.data as AssetDataProperties
+      if (
+        assetData.data.conditions.find(
+          (c) => c.name.toLowerCase() === condition.toLowerCase() && c.ticked
+        )
+      ) {
+        ret.assets.push(item)
+      }
     }
   }
 

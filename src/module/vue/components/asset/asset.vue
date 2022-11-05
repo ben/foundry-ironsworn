@@ -93,23 +93,7 @@
             labelPosition="left"
             :read-only="false"
           />
-          <div
-            class="asset-conditions"
-            v-if="asset.data.conditions?.length > 0"
-          >
-            <label
-              v-for="(condition, i) in asset.data.conditions"
-              :key="condition.name"
-              class="condition"
-            >
-              <input
-                type="checkbox"
-                :checked="condition.ticked"
-                @change="toggleCondition(i)"
-              />
-              {{ condition.name }}
-            </label>
-          </div>
+          <AssetConditions :asset="asset" />
         </div>
 
         <section
@@ -322,6 +306,7 @@ import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 import { defaultActor } from '../../../helpers/actors'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
+import AssetConditions from './asset-conditions.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref

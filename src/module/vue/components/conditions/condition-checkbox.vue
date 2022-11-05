@@ -23,6 +23,7 @@
 import { capitalize, inject, nextTick, reactive, Ref } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'
+import { AssetDataProperties } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 const actor = inject(ActorKey) as Ref
@@ -75,7 +76,7 @@ async function input(ev: Event) {
 
 // We can't watch this directly, we just have to trust that a broadcast will happen
 // when it changes
-CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name, enabled }) => {
+CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name }) => {
   if (name === props.name) {
     refreshGlobalHint()
   }
@@ -84,9 +85,20 @@ CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name, enabled }) => {
 const i18nCondition = game.i18n.localize(`IRONSWORN.${capitalize(props.name)}`)
 function refreshGlobalHint() {
   const { actors, assets } = actorsOrAssetsWithConditionEnabled(props.name)
+  console.log({ actors, assets })
   const names = [
     ...actors.map((x) => x.name),
-    ...assets.map((x) => x.name), // TODO: get name field if it exists
+    ...assets.map((x) => {
+      const assetData = x.data as AssetDataProperties
+      const nameField = assetData.data.fields.find((x) => {
+        const downcase = x.name.toLowerCase()
+        if (downcase === game.i18n.localize('IRONSWORN.Name').toLowerCase())
+          return true
+        if (downcase === 'name') return true
+        return false
+      })
+      return nameField?.value || x.name
+    }),
   ].filter((x) => x !== actor.value.name)
 
   if (names.length == 0) {
