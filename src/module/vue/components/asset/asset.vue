@@ -78,19 +78,40 @@
             />
           </with-rolllisteners>
         </ul>
-        <ConditionMeterSlider
-          v-if="asset.data.track.enabled"
-          sliderStyle="horizontal"
-          class="asset-condition-meter nogrow"
-          documentType="Item"
-          attr="track.current"
-          :current-value="asset.data.track.current"
-          :max="asset.data.track.max"
-          :min="0"
-          :statLabel="asset.data.track.name"
-          labelPosition="left"
-          :read-only="false"
-        />
+
+        <div class="flexrow nogrow">
+          <ConditionMeterSlider
+            v-if="asset.data.track.enabled"
+            sliderStyle="horizontal"
+            class="asset-condition-meter"
+            documentType="Item"
+            attr="track.current"
+            :current-value="asset.data.track.current"
+            :max="asset.data.track.max"
+            :min="0"
+            :statLabel="asset.data.track.name"
+            labelPosition="left"
+            :read-only="false"
+          />
+          <div
+            class="asset-conditions"
+            v-if="asset.data.conditions?.length > 0"
+          >
+            <label
+              v-for="(condition, i) in asset.data.conditions"
+              :key="condition.name"
+              class="condition"
+            >
+              <input
+                type="checkbox"
+                :checked="condition.ticked"
+                @change="toggleCondition(i)"
+              />
+              {{ condition.name }}
+            </label>
+          </div>
+        </div>
+
         <section
           class="flexcol stack nogrow"
           v-if="asset.data.exclusiveOptions.length > 0"
@@ -364,5 +385,11 @@ function setAbilityClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(props.asset.data.abilities) as AssetAbility[]
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
   foundryItem?.update({ data: { abilities } })
+}
+
+function toggleCondition(idx: number) {
+  const { conditions } = props.asset.data
+  conditions[idx].ticked = !conditions[idx].ticked
+  foundryItem?.update({ data: { conditions } })
 }
 </script>
