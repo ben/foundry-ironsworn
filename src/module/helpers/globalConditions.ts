@@ -22,7 +22,7 @@ export function actorsOrAssetsWithConditionEnabled(
       const assetData = item.data as AssetDataProperties
       if (
         assetData.data.conditions.find(
-          (c) => c.name.toLowerCase() === condition && c.ticked
+          (c) => c.name.toLowerCase() === condition.toLowerCase() && c.ticked
         )
       ) {
         ret.assets.push(item)

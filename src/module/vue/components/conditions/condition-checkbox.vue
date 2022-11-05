@@ -90,9 +90,13 @@ function refreshGlobalHint() {
     ...actors.map((x) => x.name),
     ...assets.map((x) => {
       const assetData = x.data as AssetDataProperties
-      const nameField = assetData.data.fields.find(
-        (x) => x.name.toLowerCase() === 'name'
-      )
+      const nameField = assetData.data.fields.find((x) => {
+        const downcase = x.name.toLowerCase()
+        if (downcase === game.i18n.localize('IRONSWORN.Name').toLowerCase())
+          return true
+        if (downcase === 'name') return true
+        return false
+      })
       return nameField?.value || x.name
     }),
   ].filter((x) => x !== actor.value.name)
