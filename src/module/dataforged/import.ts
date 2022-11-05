@@ -205,6 +205,9 @@ function assetsForTypes(types: IAssetType[]) {
           max: asset['Condition Meter']?.Max,
         },
         exclusiveOptions,
+        conditions: (asset['Condition Meter']?.Conditions ?? []).map(
+          (name) => ({ name, selected: false })
+        ),
       }
       assetsToCreate.push({
         type: 'asset',

@@ -2,6 +2,9 @@
 
 ## Next Release
 
+- Update the asset pop-out sheet to present half-edit (which more closely matches the cards) and full-edit experiences ([#524](https://github.com/ben/foundry-ironsworn/pull/524))
+- Add conditions to assets (also [#524](https://github.com/ben/foundry-ironsworn/pull/524))
+
 ## 1.18.12
 
 - Fix a visual bug with sliding transition groups, e.g. marking a vow as complete ([#521](https://github.com/ben/foundry-ironsworn/pull/521))

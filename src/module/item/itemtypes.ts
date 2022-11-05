@@ -29,6 +29,11 @@ interface AssetExclusiveOption {
   selected: boolean
 }
 
+interface AssetCondition {
+  name: string
+  ticked: boolean
+}
+
 interface AssetDataSourceData {
   category: string
   description?: string
@@ -43,6 +48,7 @@ interface AssetDataSourceData {
     max: number
   }
   exclusiveOptions: AssetExclusiveOption[]
+  conditions: AssetCondition[]
 }
 
 export interface AssetDataPropertiesData extends AssetDataSourceData {}

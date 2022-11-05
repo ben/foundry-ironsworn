@@ -234,7 +234,8 @@
           "name": "Option B",
           "selected": false
         }
-      ]
+      ],
+      "conditions": []
     },
     "move": {
       "description": "When you <strong>do a thing</strong>...",

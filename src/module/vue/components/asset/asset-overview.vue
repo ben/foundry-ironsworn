@@ -1,0 +1,220 @@
+<template>
+  <article class="flexcol ironsworn__asset" :class="articleClasses">
+    <!--
+        Semi-edit view:
+        * Text entry for field VALUES (not names)
+        * Checkboxes for abilities, settable clocks
+        * Selection for exclusive options
+        * Track: name and value only
+        * Conditions: checkboxes only
+       -->
+
+    <header class="asset-header nogrow">
+      <span class="asset-type" aria-label="asset type">
+        {{ item.data.category }}
+      </span>
+    </header>
+
+    <section class="asset-body flexcol">
+      <!-- DESCRIPTION -->
+      <div
+        class="nogrow"
+        v-if="item.data.description"
+        v-html="$enrichHtml(item.data.description)"
+      ></div>
+
+      <!-- FIELDS -->
+      <div
+        class="form-group nogrow"
+        v-for="(field, i) in item.data.fields"
+        :key="`field${i}`"
+      >
+        <label>{{ field.name }}</label>
+        <input type="text" v-model="field.value" @blur="saveFields" />
+      </div>
+
+      <!-- REQUIREMENT -->
+      <p
+        class="nogrow"
+        v-if="item.data.requirement"
+        v-html="$enrichMarkdown(item.data.requirement)"
+      ></p>
+
+      <!-- ABILITIES -->
+      <ul class="asset-abilities flexcol nogrow">
+        <li
+          v-for="(ability, i) in item.data.abilities"
+          :key="`ability${i}`"
+          :class="{
+            'asset-ability': true,
+            marked: ability.enabled,
+            [`bullet-${toolset ?? 'ironsworn'}`]: true,
+          }"
+        >
+          <WithRollListeners
+            element="div"
+            @click="toggleAbility(i)"
+            @moveclick="moveClick"
+            class="asset-ability-text flexcol"
+            v-html="$enrichHtml(ability.description)"
+          >
+          </WithRollListeners>
+          <Clock
+            v-if="ability.hasClock"
+            class="asset-ability-clock"
+            :wedges="ability.clockMax"
+            :ticked="ability.clockTicks"
+            @click="setAbilityClock(i, $event)"
+          />
+        </li>
+      </ul>
+
+      <!-- OPTIONS -->
+      <section
+        class="flexcol stack nogrow"
+        v-if="item.data.exclusiveOptions.length > 0"
+      >
+        <AssetExclusiveoption
+          v-for="(opt, i) in item.data.exclusiveOptions"
+          :key="'option' + i"
+          :opt="opt"
+          @click="exclusiveOptionClick(i)"
+        />
+      </section>
+
+      <div class="flexrow nogrow">
+        <!-- TRACK -->
+        <ConditionMeterSlider
+          v-if="item.data.track.enabled"
+          sliderStyle="horizontal"
+          class="asset-condition-meter"
+          documentType="Item"
+          attr="track.current"
+          :current-value="item.data.track.current"
+          :max="item.data.track.max"
+          :min="0"
+          :statLabel="item.data.track.name"
+          labelPosition="left"
+          :read-only="false"
+        />
+
+        <!-- CONDITIONS -->
+        <div class="asset-conditions" v-if="item.data.conditions?.length > 0">
+          <label
+            v-for="(condition, i) in item.data.conditions"
+            :key="condition.name"
+            class="condition"
+          >
+            <input
+              type="checkbox"
+              :checked="condition.ticked"
+              @change="toggleCondition(i)"
+            />
+            {{ condition.name }}
+          </label>
+        </div>
+      </div>
+    </section>
+  </article>
+</template>
+
+<style lang="less">
+.asset-conditions {
+  display: flex;
+  flex-grow: 0;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 5px;
+  height: 100%;
+
+  .condition {
+    font-size: x-small;
+    white-space: nowrap;
+    line-height: 12px;
+    flex-basis: 12px;
+    margin: 1px 0;
+
+    input[type='checkbox'] {
+      width: 12px;
+      height: 12px;
+      flex: 0 0 12px;
+      margin: 0 3px;
+      vertical-align: bottom;
+    }
+  }
+}
+</style>
+
+<style lang="less" module>
+.ironsworn__asset {
+  margin: 10px 0;
+  padding: 5px;
+  --ironsworn-color-thematic: v-bind(item.data.color || '#000');
+}
+
+.asset-ability-clock {
+  min-width: 40px;
+}
+</style>
+
+<script lang="ts" setup>
+import { computed, ComputedRef, inject, useCssModule } from 'vue'
+import { $ItemKey, ItemKey } from '../../provisions'
+import { AssetAbility } from '../../../item/itemtypes'
+import WithRollListeners from '../with-rolllisteners.vue'
+import Clock from '../clock.vue'
+import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
+import AssetExclusiveoption from './asset-exclusiveoption.vue'
+
+const $item = inject($ItemKey)
+const item = inject(ItemKey) as ComputedRef
+
+const toolset = computed<'ironsworn' | 'starforged' | undefined>(
+  () => $item?.actor?.toolset
+)
+
+const cssModule = useCssModule()
+const articleClasses = computed(() => {
+  const cls = {
+    [cssModule.ironsworn__asset]: true,
+    [`asset-${toolset.value ?? 'ironsworn'}`]: true,
+  }
+  if (toolset.value) cls[`asset-${toolset.value}`] = true
+  return cls
+})
+
+function saveFields() {
+  const fields = item.value?.data.fields
+  $item?.update({ data: { fields } })
+}
+
+function toggleAbility(i: number) {
+  const { abilities } = item.value.data
+  abilities[i].enabled = !abilities[i].enabled
+  $item?.update({ data: { abilities } })
+}
+
+function setAbilityClock(abilityIdx: number, clockTicks: number) {
+  const abilities = Object.values(item.value.data.abilities) as AssetAbility[]
+  abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
+  $item?.update({ data: { abilities } })
+}
+
+function exclusiveOptionClick(selectedIdx: number) {
+  const { exclusiveOptions } = item.value.data
+  for (let i = 0; i < exclusiveOptions.length; i++) {
+    exclusiveOptions[i].selected = i === selectedIdx
+  }
+  $item?.update({ data: { exclusiveOptions } })
+}
+
+function moveClick(item) {
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
+}
+
+function toggleCondition(idx: number) {
+  const { conditions } = item.value.data
+  conditions[idx].ticked = !conditions[idx].ticked
+  $item?.update({ data: { conditions } })
+}
+</script>
