@@ -1,65 +1,66 @@
 <template>
-  <div style="margin-top: 1em">
-    <div
-      class="flexcol"
-      v-for="(ability, i) in item.data.abilities"
-      :key="'ability' + i"
-    >
-      <div class="flexrow">
-        <input
-          type="checkbox"
-          :checked="ability.enabled"
-          @change="markAbility(i)"
-        />
-        <input
-          v-if="editMode"
-          type="text"
+  <div class="flexcol nogrow" style="margin-top: 1em">
+    <CollapseTransition group tag="div" class="nogrow">
+      <div
+        class="flexcol nogrow"
+        v-for="(ability, i) in item.data.abilities"
+        :key="`ability${i}`"
+      >
+        <textarea
+          rows="5"
+          style="min-height: 90px"
           v-model="ability.description"
           @blur="save"
-        />
-        <div v-else v-html="$enrichHtml(ability.description)" />
+        ></textarea>
+        <div class="flexrow">
+          <div class="form-group">
+            <input
+              type="checkbox"
+              :checked="ability.hasClock"
+              @change="enableClock(i)"
+            />
+            <label>
+              {{ $t('IRONSWORN.Clock') }}
+            </label>
+            <select
+              class="nogrow"
+              v-model="ability.clockMax"
+              @change="clockMaxChange(i)"
+              style="margin: 0.5rem 0"
+            >
+              <option value="4">4 segments</option>
+              <option value="6">6 segments</option>
+              <option value="8">8 segments</option>
+              <option value="10">10 segments</option>
+              <option value="12">12 segments</option>
+            </select>
+          </div>
+          <div class="form-group" style="justify-content: right">
+            <BtnFaicon
+              icon="trash"
+              class="button block nogrow"
+              :class="{ disabled: item.data.abilities.length < 2 }"
+              @click="deleteAbility(i)"
+            />
+          </div>
+        </div>
 
-        <clock
-          v-if="!editMode && ability.hasClock"
-          class="nogrow"
-          style="flex-basis: 100px"
-          :wedges="ability.clockMax"
-          :ticked="ability.clockTicks"
-          @click="setClock(i, $event)"
-        />
+        <hr />
       </div>
-      <div class="flexrow" v-if="editMode">
-        <label>
-          <input
-            type="checkbox"
-            :checked="ability.hasClock"
-            @change="enableClock(i)"
-          />
-          {{ $t('IRONSWORN.Clock') }}
-        </label>
-        <select
-          class="nogrow"
-          v-model="ability.clockMax"
-          @change="clockMaxChange(i)"
-          style="margin: 0.5rem 0"
-        >
-          <option value="4">4 segments</option>
-          <option value="6">6 segments</option>
-          <option value="8">8 segments</option>
-          <option value="10">10 segments</option>
-          <option value="12">12 segments</option>
-        </select>
-      </div>
-      <hr />
-    </div>
+    </CollapseTransition>
+    <BtnFaicon icon="plus" class="button block" @click="addAbility">
+      {{ $t('IRONSWORN.Ability') }}
+    </BtnFaicon>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, Ref, inject } from 'vue'
+import { computed, Ref, inject, onUnmounted } from 'vue'
 import { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions'
+import CollapseTransition from '../transition/collapse-transition.vue'
 import Clock from '../clock.vue'
+import BtnFaicon from '../buttons/btn-faicon.vue'
 
 const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)
@@ -67,6 +68,26 @@ const $item = inject($ItemKey)
 const editMode = computed(
   () => item.value?.flags['foundry-ironsworn']?.['edit-mode']
 )
+
+function deleteAbility(idx: number) {
+  const data = item.value?.data as AssetDataPropertiesData
+  const abilities = Object.values(data.abilities)
+  abilities.splice(idx, 1)
+  $item?.update({ data: { abilities } })
+}
+
+function addAbility() {
+  const data = item.value?.data as AssetDataPropertiesData
+  const abilities = Object.values(data.abilities)
+  abilities.push({
+    description: '',
+    enabled: false,
+    hasClock: false,
+    clockMax: 4,
+    clockTicks: 0,
+  })
+  $item?.update({ data: { abilities } })
+}
 
 function markAbility(idx) {
   const data = item.value?.data as AssetDataPropertiesData
@@ -98,4 +119,6 @@ function save() {
   const { abilities } = item.value?.data
   $item?.update({ data: { abilities } })
 }
+
+onUnmounted(save)
 </script>
