@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin-top: 1em">
     <div
       class="flexcol"
       v-for="(ability, i) in item.data.abilities"
