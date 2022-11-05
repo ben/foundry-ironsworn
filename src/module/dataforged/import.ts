@@ -13,6 +13,7 @@ import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
+import { NumericRank } from '../constants'
 import { IronswornItem } from '../item/item'
 import {
   ISAssetTypes,
@@ -24,14 +25,6 @@ import {
 } from './data'
 import { DATAFORGED_ICON_MAP } from './images'
 import { renderMarkdown } from './rendering'
-
-export enum NumericRank {
-  'troublesome' = 1,
-  'dangerous' = 2,
-  'formidable' = 3,
-  'extreme' = 4,
-  'epic' = 5,
-}
 
 export function cleanDollars(obj): any {
   if (isArray(obj)) {

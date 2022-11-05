@@ -1,5 +1,5 @@
 import { fill, range } from 'lodash'
-import { NumericRank } from '../dataforged'
+import { NumericRank, NumericRankI18nKeys, RANKS } from '../constants'
 import { IronswornPrerollDialog } from '../rolls'
 
 export class JournalProgressPageSheet extends JournalPageSheet {

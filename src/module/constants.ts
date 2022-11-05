@@ -13,3 +13,19 @@ export const RANK_INCREMENTS = {
   extreme: 2,
   epic: 1,
 }
+
+export enum NumericRank {
+  'troublesome' = 1,
+  'dangerous' = 2,
+  'formidable' = 3,
+  'extreme' = 4,
+  'epic' = 5,
+}
+
+export const NumericRankI18nKeys: { [k: NumericRank]: string } = {
+  [NumericRank.troublesome]: 'IRONSWORN.Troublesome',
+  [NumericRank.dangerous]: 'IRONSWORN.Dangerous',
+  [NumericRank.formidable]: 'IRONSWORN.Formidable',
+  [NumericRank.extreme]: 'IRONSWORN.Extreme',
+  [NumericRank.epic]: 'IRONSWORN.Epic',
+}
