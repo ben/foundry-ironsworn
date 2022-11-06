@@ -1,5 +1,4 @@
 {
-  "name": "foundry-ironsworn",
   "id": "foundry-ironsworn",
   "title": "Ironsworn & Starforged",
   "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkin.",
@@ -8,10 +7,8 @@
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
   "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.18.14/ironsworn.zip",
-  "minimumCoreVersion": "9",
-  "compatibleCoreVersion": "10",
   "compatibility": {
-    "minimum": 9,
+    "minimum": 10,
     "verified": 10
   },
   "authors": [
@@ -62,12 +59,8 @@
       "caption": "Ironsworn & Starforged"
     }
   ],
-  "esmodules": [
-    "ironsworn.js"
-  ],
-  "styles": [
-    "ironsworn.css"
-  ],
+  "esmodules": ["ironsworn.js"],
+  "styles": ["ironsworn.css"],
   "dependencies": [],
   "relationships": {
     "requires": []

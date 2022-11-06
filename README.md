@@ -17,7 +17,7 @@ For information on how to play a game, check out [the wiki](https://github.com/b
 
 Here's what you'll need to make changes to this system:
 
-1. Install Foundry 9 or later, and start it up.
+1. Install Foundry 10 or later, and start it up.
 2. Install the main `foundry-ironsworn` system, and create a world that uses it.
 3. Clone this repo somewhere you can find it, and run `npm install`.
 4. Run `npm start` from this repository.
