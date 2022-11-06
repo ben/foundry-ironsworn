@@ -85,7 +85,6 @@ CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name }) => {
 const i18nCondition = game.i18n.localize(`IRONSWORN.${capitalize(props.name)}`)
 function refreshGlobalHint() {
   const { actors, assets } = actorsOrAssetsWithConditionEnabled(props.name)
-  console.log({ actors, assets })
   const names = [
     ...actors.map((x) => x.name),
     ...assets.map((x) => {
