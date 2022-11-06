@@ -59,7 +59,7 @@ Hooks.once('init', async () => {
   CONFIG.Item.documentClass = IronswornItem
   CONFIG.JournalEntryPage = merge(CONFIG.JournalEntryPage, {
     typeLabels: {
-      progress: 'IRONSWORN.PROGRESS.Track',
+      progress: 'ITEM.TypeProgress',
       clock: 'IRONSWORN.Clock',
     },
     typeIcons: {
@@ -160,7 +160,7 @@ Hooks.once('init', async () => {
     {
       types: ['progress'],
       makeDefault: true,
-      label: 'IRONSWORN.PROGRESS.Track',
+      label: 'ITEM.TypeProgress',
     }
   )
 

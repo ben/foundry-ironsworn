@@ -11,6 +11,7 @@ import { IronswornPrerollDialog } from '../rolls'
 export class JournalProgressPageSheet extends JournalPageSheet {
   static get defaultOptions() {
     const options = super.defaultOptions
+    options.height = 300
     options.classes.push('progress', 'ironsworn')
     console.log({ options })
     return options
