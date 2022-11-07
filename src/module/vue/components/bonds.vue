@@ -32,8 +32,8 @@ const bonds = computed(() => {
   ) as unknown as ActorDataBaseSource & BondsetDataSource
 })
 const bondcount = computed(() => {
-  if (!bonds.value?.data?.bonds) return 0
-  return Object.values(bonds.value.data.bonds).length
+  if (!bonds.value?.system?.bonds) return 0
+  return Object.values(bonds.value.system.bonds).length
 })
 
 function editBonds() {

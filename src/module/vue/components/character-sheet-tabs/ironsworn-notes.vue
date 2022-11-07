@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <MceEditor v-model="actor.data.biography" @save="immediateSave" />
+    <MceEditor v-model="actor.system.biography" @save="immediateSave" />
   </div>
 </template>
 
@@ -13,6 +13,6 @@ const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const immediateSave = () => {
-  $actor?.update({ 'data.biography': actor.value.data.biography })
+  $actor?.update({ 'data.biography': actor.value.system.biography })
 }
 </script>

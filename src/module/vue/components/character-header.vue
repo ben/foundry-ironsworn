@@ -8,7 +8,7 @@
           v-for="n in xpArray"
           :key="n"
           :value="n"
-          :current="actor.data.xp"
+          :current="actor.system.xp"
           @click="setXp(n)"
         />
       </div>
