@@ -5,7 +5,10 @@ import { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
-import { SFMoveDataProperties } from '../item/itemtypes'
+import {
+  SFMoveDataProperties,
+  SFMoveDataPropertiesData,
+} from '../item/itemtypes'
 import {
   IronswornRoll,
   PreRollOptions,
@@ -13,7 +16,10 @@ import {
   SourcedValue,
 } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
-import { CharacterDataProperties } from '../actor/actortypes'
+import {
+  CharacterDataProperties,
+  CharacterDataPropertiesData,
+} from '../actor/actortypes'
 import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
 import { ChallengeResolutionDialog } from './challenge-resolution-dialog'
@@ -48,8 +54,8 @@ function rollableOptions(trigger: IMoveTrigger) {
 
 export function moveHasRollableOptions(move: IronswornItem) {
   if (move.type !== 'sfmove') return false
-  const data = move.data as SFMoveDataProperties
-  const options = rollableOptions(data.data.Trigger)
+  const data = move.system as SFMoveDataPropertiesData
+  const options = rollableOptions(data.Trigger)
   return options.length > 0
 }
 
@@ -64,7 +70,7 @@ function chooseStatToRoll(
   if (mode === 'Highest' || mode === 'Lowest') {
     const statMap = {}
     for (const x of normalizedStats) {
-      statMap[x] = actor.data.data[x]
+      statMap[x] = actor.system[x]
     }
     const fn = mode === 'Highest' ? maxBy : minBy
     stat = fn(Object.keys(statMap), (x) => statMap[x]) ?? stats[0]
@@ -74,7 +80,7 @@ function chooseStatToRoll(
   }
 
   const source = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
-  return { source, value: actor.data.data[stat] }
+  return { source, value: actor.system[stat] }
 }
 
 /**
@@ -279,8 +285,8 @@ export class IronswornPrerollDialog extends Dialog<
   ) {
     prerollOptions.actorId = actor?.id || undefined
 
-    const data = move.data as SFMoveDataProperties
-    const options = rollableOptions(data.data.Trigger)
+    const data = move.system as SFMoveDataPropertiesData
+    const options = rollableOptions(data.Trigger)
     if (!options.length) {
       throw new Error(
         `Move '${move.name}' (${JSON.stringify(
@@ -334,8 +340,8 @@ export class IronswornPrerollDialog extends Dialog<
           }
 
           // Set up for the roll
-          const actorData = rollingActor.data as CharacterDataProperties
-          prerollOptions.momentum = actorData.data.momentum
+          const actorData = rollingActor.system as CharacterDataPropertiesData
+          prerollOptions.momentum = actorData.momentum
           prerollOptions.stat = chooseStatToRoll(mode, stats, rollingActor)
 
           IronswornPrerollDialog.submitRoll(el, prerollOptions)
