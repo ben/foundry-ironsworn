@@ -11,7 +11,7 @@
 
         <div class="flexcol">
           <h4 style="margin: 0">{{ item.name }}</h4>
-          <p>{{ item.data.summary }}</p>
+          <p>{{ item.system.summary }}</p>
         </div>
 
         <div

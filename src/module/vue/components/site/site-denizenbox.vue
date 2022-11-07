@@ -40,7 +40,7 @@ input {
 import { reactive, Ref } from '@vue/reactivity'
 import { inject } from '@vue/runtime-core'
 import { computed, ref } from 'vue'
-import { SiteDataProperties } from '../../../actor/actortypes'
+import { SiteDataPropertiesData } from '../../../actor/actortypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 const props = defineProps<{ idx: number }>()
@@ -54,14 +54,14 @@ const editMode = computed(() => {
 })
 
 const denizen = computed(() => {
-  return actor.value?.data.denizens[props.idx]
+  return actor.value?.system.denizens[props.idx]
 })
 
 function input(ev) {
   const val = ev.currentTarget.value || ''
-  const data = $actor?.data as SiteDataProperties | undefined
+  const data = $actor?.system as SiteDataPropertiesData | undefined
   if (!data) return
-  const denizens = Object.values(data.data.denizens)
+  const denizens = Object.values(data.denizens)
   denizens[props.idx].description = val
   $actor?.update({ data: { denizens } })
 }
