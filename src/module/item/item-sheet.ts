@@ -23,7 +23,7 @@ export class IronswornItemSheet extends ItemSheet {
   /** @override */
   get template() {
     const path = 'systems/foundry-ironsworn/templates/item'
-    return `${path}/${this.item.data.type}.hbs`
+    return `${path}/${this.item.type}.hbs`
   }
 
   /* -------------------------------------------- */
@@ -65,19 +65,19 @@ export class IronswornItemSheet extends ItemSheet {
     // Bonds
     html.find('.add-bond').click((ev) => {
       ev.preventDefault()
-      if (this.item.data.type === 'bondset') {
-        const bonds = Object.values(this.item.data.data.bonds)
+      if (this.item.type === 'bondset') {
+        const bonds = Object.values(this.item.system.bonds)
         bonds.push({ name: '', notes: '' })
-        this.item.update({ 'data.bonds': bonds })
+        this.item.update({ 'system.bonds': bonds })
       }
     })
     html.find('.delete-bond').click(async (ev) => {
       ev.preventDefault()
-      if (this.item.data.type === 'bondset') {
+      if (this.item.type === 'bondset') {
         const idx = parseInt($(ev.target).parents('.item-row').data('idx'))
-        const bonds = Object.values(this.item.data.data.bonds)
+        const bonds = Object.values(this.item.system.bonds)
         bonds.splice(idx, 1)
-        this.item.update({ data: { bonds } })
+        this.item.update({ system: { bonds } })
       }
     })
   }
