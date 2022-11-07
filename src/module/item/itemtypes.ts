@@ -191,13 +191,13 @@ export interface MoveDataProperties {
 
 ///////////////////////////////
 
-interface SFMoveDataPropertiesData extends IMove {
+export interface SFMoveDataPropertiesData extends IMove {
   dfid: string
 }
 
 export interface SFMoveDataSource {
   type: 'sfmove'
-  data: IMove
+  data: SFMoveDataPropertiesData
 }
 export interface SFMoveDataProperties {
   type: 'sfmove'
