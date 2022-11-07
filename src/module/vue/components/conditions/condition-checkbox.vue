@@ -7,7 +7,7 @@
     <input
       type="checkbox"
       @change="input"
-      :checked="actor.data.debility[name]"
+      :checked="actor.system.debility[name]"
     />
     {{ $t(`IRONSWORN.${$capitalize(name)}`) }}
   </label>
@@ -23,7 +23,7 @@
 import { capitalize, inject, nextTick, reactive, Ref } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'
-import { AssetDataProperties } from '../../../item/itemtypes'
+import { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 const actor = inject(ActorKey) as Ref
@@ -41,7 +41,7 @@ async function input(ev: Event) {
   const impactKey = 'debility'
   const value = (ev.currentTarget as HTMLInputElement)?.checked
   const data = {
-    data: {
+    system: {
       [impactKey]: {
         [props.name]: value,
       },
@@ -49,7 +49,7 @@ async function input(ev: Event) {
   }
   await $actor?.update(data)
   await nextTick()
-  const numDebilitiesMarked = Object.values(actor.value.data.debility).filter(
+  const numDebilitiesMarked = Object.values(actor.value.system.debility).filter(
     (x) => x === true
   ).length
   await $actor?.update({
@@ -88,8 +88,8 @@ function refreshGlobalHint() {
   const names = [
     ...actors.map((x) => x.name),
     ...assets.map((x) => {
-      const assetData = x.data as AssetDataProperties
-      const nameField = assetData.data.fields.find((x) => {
+      const assetData = x.system as AssetDataPropertiesData
+      const nameField = assetData.fields.find((x) => {
         const downcase = x.name.toLowerCase()
         if (downcase === game.i18n.localize('IRONSWORN.Name').toLowerCase())
           return true
