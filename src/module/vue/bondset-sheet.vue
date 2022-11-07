@@ -3,7 +3,7 @@
     <CollapseTransition group>
       <article
         class="item-row nogrow flexrow"
-        v-for="(bond, i) in item.data.bonds"
+        v-for="(bond, i) in item.system.bonds"
         style="gap: 5px"
         :key="'bond' + i"
       >
@@ -30,22 +30,22 @@ provide(ItemKey, computed(() => props.item) as any)
 const $item = inject($ItemKey)
 
 function deleteBond(i) {
-  const data = props.item.data as BondsetDataPropertiesData
+  const data = props.item.system as BondsetDataPropertiesData
   const bonds = Object.values(data.bonds)
   bonds.splice(i, 1)
-  $item?.update({ data: { bonds } })
+  $item?.update({ system: { bonds } })
 }
 
 function addBond() {
-  const data = props.item.data as BondsetDataPropertiesData
+  const data = props.item.system as BondsetDataPropertiesData
   const bonds = Object.values(data.bonds)
   bonds.push({ name: '', notes: '' })
-  $item?.update({ data: { bonds } })
+  $item?.update({ system: { bonds } })
 }
 
 function save() {
-  const data = props.item.data as BondsetDataPropertiesData
+  const data = props.item.system as BondsetDataPropertiesData
   const bonds = Object.values(data.bonds)
-  $item?.update({ data: { bonds } })
+  $item?.update({ system: { bonds } })
 }
 </script>
