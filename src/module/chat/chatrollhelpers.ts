@@ -13,7 +13,7 @@ import { DsRollOutcome, EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
-import { FeatureOrDanger, SFMoveDataProperties } from '../item/itemtypes'
+import { FeatureOrDanger, SFMoveDataPropertiesData } from '../item/itemtypes'
 import {
   computeRollOutcome,
   computeOutcomeText,
@@ -120,10 +120,10 @@ function calculateCardTitle(params: RollMessageParams) {
 
   // TODO: i18n for assets
   if (params.asset) {
-    let title = params.asset.data.name
+    let title = params.asset.name
     if (params.stat) {
-      if (params.stat === 'track' && params.asset?.data.type === 'asset') {
-        title += ` +${params.asset.data.data.track.name}`
+      if (params.stat === 'track' && params.asset?.type === 'asset') {
+        title += ` +${params.asset.system.track.name}`
       } else {
         const statText = game.i18n.localize(
           `IRONSWORN.${capitalize(params.stat)}`
@@ -168,9 +168,9 @@ function calculateSFMoveResultText(
   match: boolean,
   move: IronswornItem
 ) {
-  const data = move.data as SFMoveDataProperties
+  const data = move.system as SFMoveDataPropertiesData
   const dsOutcomeKey = DfRollOutcome[type]
-  const outcome = data.data.Outcomes?.[dsOutcomeKey]
+  const outcome = data.Outcomes?.[dsOutcomeKey]
 
   if (match) {
     return outcome['With a Match']?.Text ?? outcome.Text
@@ -187,7 +187,7 @@ function calculateMomentumProps(
   roll: Roll,
   actor?: IronswornActor
 ): MomentumProps {
-  if (!actor || actor.data.type !== 'character') return {}
+  if (!actor || actor.type !== 'character') return {}
   const {
     actionScore: actionScore,
     rawActionScore: rawActionDie,
@@ -196,7 +196,7 @@ function calculateMomentumProps(
     match,
   } = calculateDieTotals(roll)
 
-  const momentum = actor.data.data.momentum
+  const momentum = actor.system.momentum
   if (momentum < 0 && -momentum === rawActionDie)
     return {
       negativeMomentumCancel: true,
@@ -223,7 +223,7 @@ function calculateMomentumProps(
 }
 
 export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
-  const { dfid } = (move.data as SFMoveDataProperties).data
+  const { dfid } = move.system as SFMoveDataPropertiesData
   const dfMove = await getDFMoveByDfId(dfid)
   const dfIds = dfMove?.Oracles || []
   return compact(await Promise.all(dfIds.map(getFoundryTableByDfId)))
@@ -413,10 +413,10 @@ export async function rollAndDisplayOracleResult(
 
   // Parse the table rows
   const tableRows = sortBy(
-    table.data.results.contents.map((x) => ({
-      low: x.data.range[0],
-      high: x.data.range[1],
-      text: marked.parseInline(x.data.text),
+    table.results.contents.map((x) => ({
+      low: x.range[0],
+      high: x.range[1],
+      text: marked.parseInline(x.text),
       selected: false,
     })),
     'low'
