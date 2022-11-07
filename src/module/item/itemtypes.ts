@@ -137,7 +137,8 @@ interface DelveThemeDataSourceData {
   features: FeatureOrDanger[]
   dangers: FeatureOrDanger[]
 }
-interface DelveThemeDataPropertiesData extends DelveThemeDataSourceData {}
+export interface DelveThemeDataPropertiesData
+  extends DelveThemeDataSourceData {}
 
 export interface DelveThemeDataSource {
   type: 'delve-theme'
@@ -155,7 +156,8 @@ interface DelveDomainDataSourceData {
   features: FeatureOrDanger[]
   dangers: FeatureOrDanger[]
 }
-interface DelveDomainDataPropertiesData extends DelveDomainDataSourceData {}
+export interface DelveDomainDataPropertiesData
+  extends DelveDomainDataSourceData {}
 
 export interface DelveDomainDataSource {
   type: 'delve-domain'

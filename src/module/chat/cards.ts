@@ -3,8 +3,11 @@ import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
 import { MoveContentCallbacks } from './movecontentcallbacks'
 import {
   DelveDomainDataProperties,
+  DelveDomainDataPropertiesData,
   DelveThemeDataProperties,
+  DelveThemeDataPropertiesData,
   SFMoveDataProperties,
+  SFMoveDataPropertiesData,
 } from '../item/itemtypes'
 import { IronswornActor } from '../actor/actor'
 import { maybeShowDice, RollDialog } from '../helpers/rolldialog'
@@ -39,8 +42,8 @@ export class IronswornChatCard {
       const fItem = fPack?.get(id) as IronswornItem
       if (fItem?.type !== 'sfmove') return []
 
-      const data = fItem.data as SFMoveDataProperties
-      const oracleIds = data.data.Oracles ?? []
+      const system = fItem.system as SFMoveDataPropertiesData
+      const oracleIds = system.Oracles ?? []
       return Promise.all(oracleIds.map(getFoundryTableByDfId))
     })
     const tables = compact(flatten(await Promise.all(maybeTablePromises)))
@@ -192,8 +195,8 @@ export class IronswornChatCard {
 
     // Get the new result
     const k = DfRollOutcome[hittype]
-    const moveData = theMove.data as SFMoveDataProperties
-    const newOutcome = moveData.data.Outcomes?.[k]?.Text
+    const moveData = theMove.system as SFMoveDataPropertiesData
+    const newOutcome = moveData.Outcomes?.[k]?.Text
 
     // Burn the momentum
     theActor?.burnMomentum()
@@ -430,8 +433,8 @@ function dangerFromSite(
   if (rollTotal > 45 || !site) return result
 
   const theme = site.items.find((x) => x.type === 'delve-theme')
-  const themeData = theme?.data as DelveThemeDataProperties | undefined
-  let theResult = themeData?.data.dangers.find(
+  const themeData = theme?.system as DelveThemeDataPropertiesData | undefined
+  let theResult = themeData?.dangers.find(
     (x) => x.low <= rollTotal && x.high >= rollTotal
   )
   if (theResult) {
@@ -440,8 +443,8 @@ function dangerFromSite(
   }
 
   const domain = site.items.find((x) => x.type === 'delve-domain')
-  const domainData = domain?.data as DelveDomainDataProperties | undefined
-  theResult = domainData?.data.dangers.find(
+  const domainData = domain?.system as DelveDomainDataPropertiesData | undefined
+  theResult = domainData?.dangers.find(
     (x) => x.low <= rollTotal && x.high >= rollTotal
   )
   if (theResult)
