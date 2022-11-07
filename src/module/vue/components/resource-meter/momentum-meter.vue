@@ -5,12 +5,12 @@
     documentType="Actor"
     :labelPosition="labelPosition"
     :sliderStyle="props.sliderStyle"
-    :current-value="actor?.data.momentum ?? 2"
+    :current-value="actor?.system.momentum ?? 2"
     :min="-6"
     :max="10"
-    :softMax="actor?.data.momentumMax"
+    :softMax="actor?.system.momentumMax"
     :segmentClass="{
-      [actor.data.momentumReset]: 'segment-momentum-reset',
+      [actor.system.momentumReset]: 'segment-momentum-reset',
     }"
   >
     <template #label>
@@ -19,8 +19,8 @@
         :class="{ vertical: sliderStyle === 'vertical' }"
         :tooltip="
           $t('IRONSWORN.BurnMomentumAndResetTo', {
-            value: actor?.data.momentum,
-            resetValue: actor?.data.momentumReset,
+            value: actor?.system.momentum,
+            resetValue: actor?.system.momentumReset,
           })
         "
       >

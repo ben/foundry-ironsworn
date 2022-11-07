@@ -111,7 +111,10 @@ import BtnFaicon from './buttons/btn-faicon.vue'
 import { IronswornSettings } from '../../helpers/settings'
 import { compact } from 'lodash'
 import { IronswornItem } from '../../item/item'
-import { ProgressDataProperties } from '../../item/itemtypes'
+import {
+  ProgressDataProperties,
+  ProgressDataPropertiesData,
+} from '../../item/itemtypes'
 import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{
@@ -135,14 +138,14 @@ const excludedSubtypes = compact([props.exclude])
 const progressItems = computed(() => {
   return actor.value.items
     .filter((x) => x.type === 'progress')
-    .filter((x) => !excludedSubtypes.includes(x.data.subtype))
+    .filter((x) => !excludedSubtypes.includes(x.system.subtype))
     .sort((a, b) => (a.sort || 0) - (b.sort || 0))
 })
 const activeItems = computed(() => {
-  return progressItems.value.filter((x) => !x.data.completed)
+  return progressItems.value.filter((x) => !x.system.completed)
 })
 const completedItems = computed(() => {
-  return progressItems.value.filter((x) => x.data.completed)
+  return progressItems.value.filter((x) => x.system.completed)
 })
 const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
@@ -175,11 +178,11 @@ async function applySort(oldI, newI, sortBefore, filterFn) {
     .filter(
       (x) =>
         !excludedSubtypes.includes(
-          (x.data as ProgressDataProperties).data.subtype
+          (x.system as ProgressDataPropertiesData).subtype
         )
     )
     .filter(filterFn)
-    .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+    .sort((a, b) => (a.sort || 0) - (b.sort || 0))
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
     target: (foundryItems ?? [])[newI],
     siblings: foundryItems,
@@ -188,15 +191,15 @@ async function applySort(oldI, newI, sortBefore, filterFn) {
   await Promise.all(updates.map(({ target, update }) => target.update(update)))
 }
 function sortUp(i) {
-  applySort(i, i - 1, true, (x) => !x.data.data.completed)
+  applySort(i, i - 1, true, (x) => !x.system.completed)
 }
 function sortDown(i) {
-  applySort(i, i + 1, false, (x) => !x.data.data.completed)
+  applySort(i, i + 1, false, (x) => !x.system.completed)
 }
 function completedSortUp(i) {
-  applySort(i, i - 1, true, (x) => x.data.data.completed)
+  applySort(i, i - 1, true, (x) => x.system.completed)
 }
 function completedSortDown(i) {
-  applySort(i, i + 1, false, (x) => x.data.data.completed)
+  applySort(i, i + 1, false, (x) => x.system.completed)
 }
 </script>

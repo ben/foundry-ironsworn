@@ -30,7 +30,7 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import OrderButtons from '../order-buttons.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
-import { ProgressDataProperties } from '../../../item/itemtypes'
+import { ProgressDataPropertiesData } from '../../../item/itemtypes'
 import CollapseTransition from '../transition/collapse-transition.vue'
 
 const actor = inject(ActorKey) as Ref
@@ -39,7 +39,7 @@ const $actor = inject($ActorKey)
 const connections = computed(() => {
   return actor.value.items
     .filter((x) => x.type === 'progress')
-    .filter((x) => x.data.subtype === 'bond') // legacy name
+    .filter((x) => x.system.subtype === 'bond') // legacy name
     .sort((a, b) => (a.sort || 0) - (b.sort || 0))
 })
 const editMode = computed(() => {
@@ -51,7 +51,7 @@ async function newConnection() {
     {
       name: game.i18n.localize('IRONSWORN.Connection'),
       type: 'progress',
-      data: { subtype: 'bond' },
+      system: { subtype: 'bond' },
       sort: 9000000,
     },
     { parent: $actor }
@@ -60,10 +60,11 @@ async function newConnection() {
 }
 
 async function applySort(oldI, newI, sortBefore) {
+  console.log(actor?.items)
   const foundryItems = ($actor?.items ?? [])
     .filter((x) => x.type === 'progress')
-    .filter((x) => (x.data as ProgressDataProperties).data.subtype === 'bond')
-    .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+    .filter((x) => (x.system as ProgressDataPropertiesData).subtype === 'bond')
+    .sort((a, b) => (a.sort || 0) - (b.sort || 0))
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
     target: (foundryItems ?? [])[newI],
     siblings: foundryItems,

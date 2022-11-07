@@ -180,7 +180,7 @@ interface MoveDataSourceData {
   sourceId: string
   dfid: string
 }
-interface MoveDataPropertiesData extends MoveDataSourceData {}
+export interface MoveDataPropertiesData extends MoveDataSourceData {}
 
 export interface MoveDataSource {
   type: 'move'

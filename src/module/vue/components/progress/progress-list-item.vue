@@ -4,25 +4,25 @@
     <h5 class="progress-subtitle vertical">{{ subtitle }}</h5>
     <section class="progress-widgets flexrow">
       <ProgressTrack
-        v-if="item.data.hasTrack"
+        v-if="item.system.hasTrack"
         class="progress-track"
-        :rank="item.data.rank"
-        :ticks="item.data.current"
+        :rank="item.system.rank"
+        :ticks="item.system.current"
         :compact-progress="compactProgress"
       />
       <Clock
-        v-if="item.data.hasClock"
+        v-if="item.system.hasClock"
         class="progress-clock nogrow"
         size="50px"
-        :wedges="item.data.clockMax"
-        :ticked="item.data.clockTicks"
+        :wedges="item.system.clockMax"
+        :ticked="item.system.clockTicks"
         @click="setClock"
       />
     </section>
     <DocumentImg class="progress-img" :document="item" size="40px" />
     <RankPips
       class="progress-rank-pips"
-      :current="item.data.rank"
+      :current="item.system.rank"
       @click="rankClick"
     />
     <section class="progress-controls" data-tooltip-direction="UP">
@@ -48,20 +48,20 @@
       />
       <BtnFaicon
         class="block"
-        v-if="editMode && item.data.hasTrack"
+        v-if="editMode && item.system.hasTrack"
         icon="caret-left"
         @click="retreat"
         :tooltip="$t('IRONSWORN.UnmarkProgress')"
       />
       <BtnFaicon
         class="block"
-        v-if="item.data.hasTrack"
+        v-if="item.system.hasTrack"
         icon="caret-right"
         @click="advance"
         :tooltip="$t('IRONSWORN.MarkProgress')"
       />
       <BtnRollprogress
-        v-if="item.data.hasTrack"
+        v-if="item.system.hasTrack"
         :item="item"
         :tooltip="$t('IRONSWORN.ProgressRoll')"
         class="block"
@@ -70,7 +70,7 @@
         v-if="showStar"
         class="star-progress block"
         icon="star"
-        :solid="item.data.starred"
+        :solid="item.system.starred"
         :tooltip="$t('IRONSWORN.StarProgress')"
         data-tooltip-direction="RIGHT"
         @click="toggleStar"
@@ -170,15 +170,15 @@ const editMode = computed(() => {
   return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 })
 const subtitle = computed(() => {
-  let subtype = capitalize(props.item.data.subtype)
+  let subtype = capitalize(props.item.system.subtype)
   if (subtype === 'Bond') subtype = 'Connection' // translate name
   return game.i18n.localize(`IRONSWORN.${subtype}`)
 })
 const completedIcon = computed(() => {
-  return props.item.data.completed ? 'check-circle' : 'circle-notch'
+  return props.item.system.completed ? 'check-circle' : 'circle-notch'
 })
 const completedTooltip = computed(() => {
-  const suffix = props.item.data.completed ? 'Completed' : 'NotCompleted'
+  const suffix = props.item.system.completed ? 'Completed' : 'NotCompleted'
   return game.i18n.localize('IRONSWORN.' + suffix)
 })
 
@@ -198,7 +198,7 @@ function destroy() {
   })
 }
 function rankClick(rank: keyof typeof RANKS) {
-  foundryItem?.update({ data: { rank } })
+  foundryItem?.update({ system: { rank } })
 }
 function advance() {
   foundryItem?.markProgress(1)
@@ -210,16 +210,16 @@ function retreat() {
 const $emit = defineEmits(['completed'])
 
 function toggleComplete() {
-  const completed = !props.item.data.completed
+  const completed = !props.item.system.completed
   if (completed) $emit('completed')
-  foundryItem?.update({ data: { completed } })
+  foundryItem?.update({ system: { completed } })
 }
 function toggleStar() {
   foundryItem?.update({
-    data: { starred: !props.item.data.starred },
+    system: { starred: !props.item.system.starred },
   })
 }
 function setClock(clockTicks: number) {
-  foundryItem?.update({ data: { clockTicks } })
+  foundryItem?.update({ system: { clockTicks } })
 }
 </script>
