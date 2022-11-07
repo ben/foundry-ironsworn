@@ -1,5 +1,5 @@
 <template>
-  <btn-isicon
+  <BtnIsicon
     @click="rollStat"
     :data-tooltip="$t('IRONSWORN.Roll +x', { stat: statLabel })"
     class="action-roll stat-roll"
@@ -9,17 +9,17 @@
     :disabled="disabled"
   >
     <slot ref="content" name="default"></slot>
-  </btn-isicon>
+  </BtnIsicon>
 </template>
 
 <script lang="ts" setup>
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import { computed, inject, useSlots } from 'vue'
+import { inject, useSlots } from 'vue'
 import { RollDialog } from '../../../helpers/rolldialog'
 import { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
-import btnIsicon from './btn-isicon.vue'
+import BtnIsicon from './btn-isicon.vue'
 
 const props = defineProps<{
   documentType: DocumentType
@@ -32,9 +32,7 @@ const props = defineProps<{
 }>()
 
 const $actor = inject($ActorKey)
-const actor = inject(ActorKey)
-const $item = inject($ItemKey)
-const item = inject(ItemKey)
+const $item = inject($ItemKey, undefined)
 
 const slots = useSlots()
 
