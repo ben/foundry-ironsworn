@@ -17,8 +17,8 @@ export class IronswornActor extends Actor {
   }
 
   async burnMomentum() {
-    if (this.data.type != 'character') return
-    const { momentum, momentumReset } = this.data.data
+    if (this.type != 'character') return
+    const { momentum, momentumReset } = this.system
     console.log({ momentum, momentumReset })
     if (momentum > momentumReset) {
       this.update({
