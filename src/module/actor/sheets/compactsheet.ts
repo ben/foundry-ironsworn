@@ -67,7 +67,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     if (stat) {
       IronswornPrerollDialog.showForStat(
         stat,
-        this.actor.data.data[stat],
+        this.actor.system[stat],
         this.actor
       )
       this.render(true)
@@ -81,7 +81,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     const min = parseInt(ev.currentTarget.dataset.min || '-100')
     const max = parseInt(ev.currentTarget.dataset.max || '100')
     const { stat } = ev.currentTarget.dataset
-    const actorData = this.actor.data.data
+    const actorData = this.actor.system
     let value = actorData[stat]
     value += amt
     if (value >= min && value <= max) {
@@ -97,7 +97,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
   _momentumBurn(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    if (this.actor.data.type === 'character') {
+    if (this.actor.type === 'character') {
       this.actor.burnMomentum()
     }
   }
