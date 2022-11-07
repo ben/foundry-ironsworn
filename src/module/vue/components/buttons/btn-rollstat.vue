@@ -31,7 +31,7 @@ const props = defineProps<{
   disabled?: boolean
 }>()
 
-const $actor = inject($ActorKey)
+const $actor = inject($ActorKey, undefined)
 const $item = inject($ItemKey, undefined)
 
 const slots = useSlots()

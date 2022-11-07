@@ -11,7 +11,7 @@
 
     <header class="asset-header nogrow">
       <span class="asset-type" aria-label="asset type">
-        {{ item.data.category }}
+        {{ item.system.category }}
       </span>
     </header>
 
@@ -19,14 +19,14 @@
       <!-- DESCRIPTION -->
       <div
         class="nogrow"
-        v-if="item.data.description"
-        v-html="$enrichHtml(item.data.description)"
+        v-if="item.system.description"
+        v-html="$enrichHtml(item.system.description)"
       ></div>
 
       <!-- FIELDS -->
       <div
         class="form-group nogrow"
-        v-for="(field, i) in item.data.fields"
+        v-for="(field, i) in item.system.fields"
         :key="`field${i}`"
       >
         <label>{{ field.name }}</label>
@@ -36,14 +36,14 @@
       <!-- REQUIREMENT -->
       <p
         class="nogrow"
-        v-if="item.data.requirement"
-        v-html="$enrichMarkdown(item.data.requirement)"
+        v-if="item.system.requirement"
+        v-html="$enrichMarkdown(item.system.requirement)"
       ></p>
 
       <!-- ABILITIES -->
       <div class="asset-abilities flexcol nogrow">
         <div
-          v-for="(ability, i) in item.data.abilities"
+          v-for="(ability, i) in item.system.abilities"
           :key="`ability${i}`"
           :class="{
             flexrow: true,
@@ -82,10 +82,10 @@
       <!-- OPTIONS -->
       <section
         class="flexcol stack nogrow"
-        v-if="item.data.exclusiveOptions.length > 0"
+        v-if="item.system.exclusiveOptions.length > 0"
       >
         <AssetExclusiveoption
-          v-for="(opt, i) in item.data.exclusiveOptions"
+          v-for="(opt, i) in item.system.exclusiveOptions"
           :key="'option' + i"
           :opt="opt"
           @click="exclusiveOptionClick(i)"
@@ -95,15 +95,15 @@
       <div class="flexrow nogrow">
         <!-- TRACK -->
         <ConditionMeterSlider
-          v-if="item.data.track.enabled"
+          v-if="item.system.track.enabled"
           sliderStyle="horizontal"
           class="asset-condition-meter"
           documentType="Item"
           attr="track.current"
-          :current-value="item.data.track.current"
-          :max="item.data.track.max"
+          :current-value="item.system.track.current"
+          :max="item.system.track.max"
           :min="0"
-          :statLabel="item.data.track.name"
+          :statLabel="item.system.track.name"
           labelPosition="left"
           :read-only="false"
         />
@@ -138,7 +138,7 @@
 .ironsworn__asset {
   margin: 10px 0;
   padding: 5px;
-  --ironsworn-color-thematic: v-bind(item.data.color || '#000');
+  --ironsworn-color-thematic: v-bind(item.system.color || '#000');
 }
 
 .asset-ability-clock {
@@ -171,28 +171,28 @@ const articleClasses = computed(() => ({
 }))
 
 function saveFields() {
-  const fields = item.value?.data.fields
-  $item?.update({ data: { fields } })
+  const fields = item.value?.system.fields
+  $item?.update({ system: { fields } })
 }
 
 function toggleAbility(i: number) {
-  const { abilities } = item.value.data
+  const { abilities } = item.value.system
   abilities[i].enabled = !abilities[i].enabled
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
-  const abilities = Object.values(item.value.data.abilities) as AssetAbility[]
+  const abilities = Object.values(item.value.system.abilities) as AssetAbility[]
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 
 function exclusiveOptionClick(selectedIdx: number) {
-  const { exclusiveOptions } = item.value.data
+  const { exclusiveOptions } = item.value.system
   for (let i = 0; i < exclusiveOptions.length; i++) {
     exclusiveOptions[i].selected = i === selectedIdx
   }
-  $item?.update({ data: { exclusiveOptions } })
+  $item?.update({ system: { exclusiveOptions } })
 }
 
 function moveClick(item) {
@@ -200,8 +200,8 @@ function moveClick(item) {
 }
 
 function toggleCondition(idx: number) {
-  const { conditions } = item.value.data
+  const { conditions } = item.value.system
   conditions[idx].ticked = !conditions[idx].ticked
-  $item?.update({ data: { conditions } })
+  $item?.update({ system: { conditions } })
 }
 </script>

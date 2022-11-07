@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol">
     <SheetHeader class="nogrow">
-      <document-name :document="item" />
+      <DocumentName :document="item" />
     </SheetHeader>
 
     <Tabs v-if="editMode">
@@ -54,6 +54,7 @@ h3 {
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
 import SheetHeader from './sheet-header.vue'
+import DocumentName from './components/document-name.vue'
 import Tabs from './components/tabs/tabs.vue'
 import Tab from './components/tabs/tab.vue'
 import AssetEditDescription from './components/asset/asset-edit-description.vue'
