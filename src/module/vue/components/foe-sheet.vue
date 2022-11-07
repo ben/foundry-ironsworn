@@ -4,7 +4,7 @@
     <div v-if="foe">
       <div class="flexrow nogrow">
         <RankPips
-          :current="foe.data.rank"
+          :current="foe.system.rank"
           @click="setRank"
           style="margin-right: 1em"
         />
@@ -20,8 +20,8 @@
       <!-- PROGRESS -->
       <div class="flexrow track nogrow" style="margin-bottom: 1em">
         <ProgressTrack
-          :rank="foe?.data.rank"
-          :ticks="foe.data.current"
+          :rank="foe?.system.rank"
+          :ticks="foe.system.current"
           data-tooltip-direction="RIGHT"
         />
       </div>
@@ -29,8 +29,8 @@
       <hr class="nogrow" />
 
       <!-- DESCRIPTION -->
-      <MceEditor v-model="foe.data.description" @save="saveDescription" />
-      <!-- <div v-html="foe.data.description" /> -->
+      <MceEditor v-model="foe.system.description" @save="saveDescription" />
+      <!-- <div v-html="foe.system.description" /> -->
     </div>
 
     <div
@@ -89,13 +89,13 @@ const $actor = inject($ActorKey)
 const foundryFoe = () => $actor?.items.get((foe.value as any)?._id)
 
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[foe.value?.data.rank])
+  return game.i18n.localize(RANKS[foe.value?.system.rank])
 })
 
 // async foe(newFoe) {
 //   const data = { name: newFoe?.name, img: newFoe?.img }
 //   await $actor?.update(data)
-//   await $actor?.data.token.update(data)
+//   await $actor?.token.update(data)
 // },
 
 function addEmpty() {
@@ -119,14 +119,14 @@ function clearProgress() {
 }
 
 function markProgress() {
-  const increment = RANK_INCREMENTS[foe.value?.data.rank]
-  const newValue = Math.min(foe.value?.data.current + increment, 40)
+  const increment = RANK_INCREMENTS[foe.value?.system.rank]
+  const newValue = Math.min(foe.value?.system.current + increment, 40)
   foundryFoe()?.update({ 'data.current': newValue })
 }
 
 function saveDescription() {
   foundryFoe()?.update({
-    data: { description: foe.value?.data.description },
+    data: { description: foe.value?.system.description },
   })
 }
 </script>

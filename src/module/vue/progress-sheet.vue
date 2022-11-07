@@ -6,7 +6,7 @@
     <div class="flexrow nogrow" style="margin: 0.5rem 0">
       <RankPips
         class="nogrow"
-        :current="item.data.rank"
+        :current="item.system.rank"
         @click="setRank"
         style="margin-right: 1em"
       />
@@ -14,14 +14,18 @@
       <label class="checkbox nogrow">
         <input
           type="checkbox"
-          v-model="item.data.completed"
+          v-model="item.system.completed"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Completed') }}
       </label>
     </div>
 
-    <select class="nogrow" v-model="item.data.subtype" @change="subtypeChange">
+    <select
+      class="nogrow"
+      v-model="item.system.subtype"
+      @change="subtypeChange"
+    >
       <option value="vow">{{ $t('IRONSWORN.Vow') }}</option>
       <option value="progress">{{ $t('IRONSWORN.Progress') }}</option>
       <option value="bond">{{ $t('IRONSWORN.Connection') }}</option>
@@ -33,28 +37,28 @@
       <label class="checkbox">
         <input
           type="checkbox"
-          v-model="item.data.hasTrack"
+          v-model="item.system.hasTrack"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Track') }}
       </label>
 
       <CollapseTransition>
-        <div class="nogrow" v-if="item.data.hasTrack">
+        <div class="nogrow" v-if="item.system.hasTrack">
           <div
             class="flexrow nogrow"
             style="justify-content: flex-end; margin-bottom: 0.25rem"
           >
             <BtnFaicon
               class="block"
-              v-if="item.data.hasTrack"
+              v-if="item.system.hasTrack"
               icon="caret-left"
               @click="retreat"
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
             />
             <BtnFaicon
               class="block"
-              v-if="item.data.hasTrack"
+              v-if="item.system.hasTrack"
               icon="caret-right"
               @click="advance"
               :tooltip="$t('IRONSWORN.MarkProgress')"
@@ -62,7 +66,10 @@
           </div>
           <!-- PROGRESS -->
           <div class="flexrow track nogrow" style="margin-bottom: 1em">
-            <ProgressTrack :ticks="item.data.current" :rank="item.data.rank" />
+            <ProgressTrack
+              :ticks="item.system.current"
+              :rank="item.system.rank"
+            />
           </div>
         </div>
       </CollapseTransition>
@@ -74,18 +81,18 @@
       <label class="checkbox">
         <input
           type="checkbox"
-          v-model="item.data.hasClock"
+          v-model="item.system.hasClock"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Clock') }}
       </label>
 
       <CollapseTransition>
-        <div class="flexrow nogrow" v-if="item.data.hasClock">
+        <div class="flexrow nogrow" v-if="item.system.hasClock">
           <div class="nogrow" style="margin: 0 1rem">
             <Clock
-              :wedges="item.data.clockMax"
-              :ticked="item.data.clockTicks"
+              :wedges="item.system.clockMax"
+              :ticked="item.system.clockTicks"
               @click="setClock"
             />
           </div>
@@ -93,7 +100,7 @@
             {{ $t('IRONSWORN.Segments') }}:
             <select
               class="nogrow"
-              v-model="item.data.clockMax"
+              v-model="item.system.clockMax"
               @change="clockMaxChange"
               style="margin: 0.5rem 0"
             >
@@ -113,7 +120,7 @@
     <hr class="nogrow" />
 
     <!-- DESCRIPTION -->
-    <MceEditor v-model="item.data.description" @save="saveDescription" />
+    <MceEditor v-model="item.system.description" @save="saveDescription" />
 
     <button
       class="button nogrow"
@@ -162,7 +169,9 @@ provide(
   computed(() => props.item)
 )
 
-const rankText = computed(() => game.i18n.localize(RANKS[props.item.data.rank]))
+const rankText = computed(() =>
+  game.i18n.localize(RANKS[props.item.system.rank])
+)
 
 function setRank(rank) {
   $item?.update({ data: { rank } })
@@ -176,19 +185,19 @@ function retreat() {
 }
 
 function subtypeChange() {
-  $item?.update({ data: { subtype: props.item.data.subtype } })
+  $item?.update({ data: { subtype: props.item.system.subtype } })
 }
 
 function clockMaxChange() {
-  $item?.update({ data: { clockMax: parseInt(props.item.data.clockMax) } })
+  $item?.update({ data: { clockMax: parseInt(props.item.system.clockMax) } })
 }
 
 function saveChecks() {
   $item?.update({
     data: {
-      completed: props.item.data.completed,
-      hasTrack: props.item.data.hasTrack,
-      hasClock: props.item.data.hasClock,
+      completed: props.item.system.completed,
+      hasTrack: props.item.system.hasTrack,
+      hasClock: props.item.system.hasClock,
     },
   })
 }
@@ -198,7 +207,7 @@ function setClock(num) {
 }
 
 function saveDescription() {
-  $item?.update({ data: { description: props.item.data.description } })
+  $item?.update({ data: { description: props.item.system.description } })
 }
 
 function destroy() {
