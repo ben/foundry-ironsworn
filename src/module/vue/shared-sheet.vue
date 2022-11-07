@@ -1,5 +1,5 @@
 <template>
-  <SheetBasic :document="actor" class="shared-sheet">
+  <SheetBasic :document="actor" class="shared-sheet" body-class="flexcol">
     <section class="sheet-area nogrow">
       <ConditionMeter
         sliderStyle="horizontal"
@@ -7,7 +7,7 @@
         :statLabel="$t('IRONSWORN.Supply')"
         :max="5"
         :min="0"
-        :currentValue="actor.data.supply"
+        :currentValue="actor.system.supply"
         documentType="Actor"
         :global="IronswornSettings.get('shared-supply')"
       />
@@ -21,7 +21,7 @@
 
     <section class="sheet-area">
       <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
-      <mce-editor v-model="actor.data.biography" @save="saveNotes" />
+      <mce-editor v-model="actor.system.biography" @save="saveNotes" />
     </section>
   </SheetBasic>
 </template>
@@ -68,11 +68,11 @@ const hasBonds = computed(() => {
   const bonds = props.actor.items.find((x) => x.type === 'bondset') as
     | BondsetDataProperties
     | undefined
-  const markedBonds = bonds?.data?.bonds?.length
+  const markedBonds = bonds?.system?.bonds?.length
   return markedBonds && markedBonds > 0
 })
 
 function saveNotes() {
-  $actor?.update({ 'data.biography': props.actor.data.biography })
+  $actor?.update({ 'data.biography': props.actor.system.biography })
 }
 </script>
