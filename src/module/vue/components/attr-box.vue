@@ -73,10 +73,10 @@ function click() {
 
 function increment() {
   const value = parseInt(actor.value.system[props.attr]) + 1
-  $actor?.update({ data: { [props.attr]: value } })
+  $actor?.update({ system: { [props.attr]: value } })
 }
 function decrement() {
   const value = parseInt(actor.value.system[props.attr]) - 1
-  $actor?.update({ data: { [props.attr]: value } })
+  $actor?.update({ system: { [props.attr]: value } })
 }
 </script>

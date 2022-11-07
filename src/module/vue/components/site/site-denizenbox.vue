@@ -63,7 +63,7 @@ function input(ev) {
   if (!data) return
   const denizens = Object.values(data.denizens)
   denizens[props.idx].description = val
-  $actor?.update({ data: { denizens } })
+  $actor?.update({ system: { denizens } })
 }
 
 const description = ref<HTMLElement>()

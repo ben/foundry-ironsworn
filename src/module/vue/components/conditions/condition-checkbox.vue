@@ -53,7 +53,7 @@ async function input(ev: Event) {
     (x) => x === true
   ).length
   await $actor?.update({
-    data: {
+    system: {
       momentumMax: 10 - numDebilitiesMarked,
       momentumReset: Math.max(0, 2 - numDebilitiesMarked),
     },

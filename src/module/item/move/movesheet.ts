@@ -29,7 +29,7 @@ export class MoveSheet extends IronswornItemSheet {
     } else {
       stats = stats.filter((x) => x !== stat)
     }
-    this.item.update({ data: { stats } })
+    this.item.update({ system: { stats } })
   }
 
   _setChecks(html: JQuery) {

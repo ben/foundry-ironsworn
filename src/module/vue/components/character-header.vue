@@ -51,6 +51,6 @@ const xpArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
 const $actor = inject($ActorKey)
 function setXp(n) {
-  $actor?.update({ data: { xp: n } })
+  $actor?.update({ system: { xp: n } })
 }
 </script>

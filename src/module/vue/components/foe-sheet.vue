@@ -111,22 +111,22 @@ function openCompendium(name) {
 }
 
 function setRank(rank) {
-  foundryFoe()?.update({ data: { rank } })
+  foundryFoe()?.update({ system: { rank } })
 }
 
 function clearProgress() {
-  foundryFoe()?.update({ 'data.current': 0 })
+  foundryFoe()?.update({ 'system.current': 0 })
 }
 
 function markProgress() {
   const increment = RANK_INCREMENTS[foe.value?.system.rank]
   const newValue = Math.min(foe.value?.system.current + increment, 40)
-  foundryFoe()?.update({ 'data.current': newValue })
+  foundryFoe()?.update({ 'system.current': newValue })
 }
 
 function saveDescription() {
   foundryFoe()?.update({
-    data: { description: foe.value?.system.description },
+    system: { description: foe.value?.system.description },
   })
 }
 </script>

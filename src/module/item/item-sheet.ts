@@ -59,7 +59,7 @@ export class IronswornItemSheet extends ItemSheet {
 
     html.find('.track-target').click(async (ev) => {
       const newValue = parseInt(ev.currentTarget.dataset.value)
-      await this.item.update({ 'data.track.current': newValue })
+      await this.item.update({ 'system.track.current': newValue })
     })
 
     // Bonds

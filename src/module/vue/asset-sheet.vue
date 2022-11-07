@@ -83,6 +83,6 @@ const hasFields = computed(() => {
 })
 
 function setRequirement() {
-  $item?.update({ data: { requirement: props.item.data.requirement } })
+  $item?.update({ system: { requirement: props.item.data.requirement } })
 }
 </script>

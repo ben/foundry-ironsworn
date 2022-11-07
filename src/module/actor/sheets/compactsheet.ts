@@ -86,7 +86,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     let value = actorData[stat] as number
     value += amt
     if (value >= min && value <= max) {
-      this.actor.update({ data: { [stat]: value } })
+      this.actor.update({ system: { [stat]: value } })
       if (stat === 'supply' && IronswornSettings.get('shared-supply')) {
         IronswornSettings.updateGlobalAttribute({
           system: { supply: value },

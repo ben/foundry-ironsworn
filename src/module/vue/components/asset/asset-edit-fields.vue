@@ -40,15 +40,15 @@ const $item = inject($ItemKey)
 function addField() {
   const fields = Object.values(item.value.data.fields) as any[]
   fields.push({ name: '', value: '' })
-  $item?.update({ data: { fields } })
+  $item?.update({ system: { fields } })
 }
 function deleteField(idx) {
   const fields = Object.values(item.value.data.fields) as any[]
   fields.splice(idx, 1)
-  $item?.update({ data: { fields } })
+  $item?.update({ system: { fields } })
 }
 function save() {
   const fields = Object.values(item.value.data.fields) as any[]
-  $item?.update({ data: { fields } })
+  $item?.update({ system: { fields } })
 }
 </script>

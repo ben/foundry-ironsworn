@@ -13,6 +13,6 @@ const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const immediateSave = () => {
-  $actor?.update({ 'data.biography': actor.value.system.biography })
+  $actor?.update({ 'system.biography': actor.value.system.biography })
 }
 </script>

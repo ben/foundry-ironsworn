@@ -180,7 +180,7 @@ function exclusiveOptionClick(selectedIdx) {
   for (let i = 0; i < options.length; i++) {
     options[i].selected = i === selectedIdx
   }
-  foundryItem?.update({ data: { exclusiveOptions: options } })
+  foundryItem?.update({ system: { exclusiveOptions: options } })
 }
 function moveclick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
@@ -190,12 +190,12 @@ function setAbilityClock(abilityIdx: number, clockTicks: number) {
     props.asset.system.abilities
   ) as AssetAbility[]
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-  foundryItem?.update({ data: { abilities } })
+  foundryItem?.update({ system: { abilities } })
 }
 
 function toggleCondition(idx: number) {
   const { conditions } = props.asset.system
   conditions[idx].ticked = !conditions[idx].ticked
-  foundryItem?.update({ data: { conditions } })
+  foundryItem?.update({ system: { conditions } })
 }
 </script>

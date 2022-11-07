@@ -33,7 +33,7 @@ const $item = inject($ItemKey)
 
 function save() {
   const { exclusiveOptions } = item.value?.data
-  $item?.update({ data: { exclusiveOptions } })
+  $item?.update({ system: { exclusiveOptions } })
 }
 
 function deleteOption(idx) {
@@ -45,7 +45,7 @@ function deleteOption(idx) {
   if (needNewSelection && exclusiveOptions[0]) {
     exclusiveOptions[0].selected = true
   }
-  $item?.update({ data: { exclusiveOptions } })
+  $item?.update({ system: { exclusiveOptions } })
 }
 
 async function addOption() {
@@ -56,6 +56,6 @@ async function addOption() {
     name: '',
     selected: exclusiveOptions.every((x) => !x.selected),
   })
-  $item?.update({ data: { exclusiveOptions } })
+  $item?.update({ system: { exclusiveOptions } })
 }
 </script>

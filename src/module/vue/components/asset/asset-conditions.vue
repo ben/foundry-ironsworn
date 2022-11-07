@@ -55,7 +55,7 @@ const $item = inject($ItemKey)
 async function toggleCondition(idx: number) {
   const { conditions } = props.asset.system
   conditions[idx].ticked = !conditions[idx].ticked
-  await $item?.update({ data: { conditions } })
+  await $item?.update({ system: { conditions } })
 
   CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
     name: conditions[idx].name.toLowerCase(),

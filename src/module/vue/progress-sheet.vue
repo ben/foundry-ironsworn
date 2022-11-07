@@ -174,7 +174,7 @@ const rankText = computed(() =>
 )
 
 function setRank(rank) {
-  $item?.update({ data: { rank } })
+  $item?.update({ system: { rank } })
 }
 
 function advance() {
@@ -185,16 +185,16 @@ function retreat() {
 }
 
 function subtypeChange() {
-  $item?.update({ data: { subtype: props.item.system.subtype } })
+  $item?.update({ system: { subtype: props.item.system.subtype } })
 }
 
 function clockMaxChange() {
-  $item?.update({ data: { clockMax: parseInt(props.item.system.clockMax) } })
+  $item?.update({ system: { clockMax: parseInt(props.item.system.clockMax) } })
 }
 
 function saveChecks() {
   $item?.update({
-    data: {
+    system: {
       completed: props.item.system.completed,
       hasTrack: props.item.system.hasTrack,
       hasClock: props.item.system.hasClock,
@@ -203,11 +203,11 @@ function saveChecks() {
 }
 
 function setClock(num) {
-  $item?.update({ data: { clockTicks: num } })
+  $item?.update({ system: { clockTicks: num } })
 }
 
 function saveDescription() {
-  $item?.update({ data: { description: props.item.system.description } })
+  $item?.update({ system: { description: props.item.system.description } })
 }
 
 function destroy() {

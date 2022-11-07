@@ -18,12 +18,12 @@ export class IronswornItem extends Item {
     let newValue = this.system.current + increment
     newValue = Math.min(newValue, 40)
     newValue = Math.max(newValue, 0)
-    return this.update({ 'data.current': newValue })
+    return this.update({ 'system.current': newValue })
   }
 
   clearProgress() {
     if (this.data.type !== 'vow' && this.data.type !== 'progress') return
-    return this.update({ 'data.current': 0 })
+    return this.update({ 'system.current': 0 })
   }
 
   fulfill() {

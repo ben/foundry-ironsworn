@@ -73,6 +73,6 @@ const hasBonds = computed(() => {
 })
 
 function saveNotes() {
-  $actor?.update({ 'data.biography': props.actor.system.biography })
+  $actor?.update({ 'system.biography': props.actor.system.biography })
 }
 </script>

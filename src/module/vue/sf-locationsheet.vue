@@ -537,7 +537,7 @@ const klassIsNotValid = computed(() => {
 })
 
 function saveDescription() {
-  $actor?.update({ 'data.description': props.actor.data.description })
+  $actor?.update({ 'system.description': props.actor.data.description })
 }
 
 function regionChanged(evt) {
@@ -555,7 +555,7 @@ function klassChanged(evt) {
 
 async function saveSubtype(subtype) {
   const img = randomImage(subtype, props.actor.data.klass)
-  await $actor?.update({ data: { subtype } })
+  await $actor?.update({ system: { subtype } })
 
   const scale = {
     planet: 1,
@@ -570,7 +570,7 @@ async function saveKlass(klass) {
   const { subtype } = props.actor.data
   const img = randomImage(subtype, klass)
 
-  await $actor?.update({ img: img || undefined, data: { klass } })
+  await $actor?.update({ img: img || undefined, system: { klass } })
   await updateAllTokens({ img })
 }
 
@@ -665,7 +665,7 @@ async function rollOracle(oracle) {
     drawText,
     '</p>',
   ]
-  await $actor?.update({ data: { description: parts.join('') } })
+  await $actor?.update({ system: { description: parts.join('') } })
 }
 
 function nameChange() {

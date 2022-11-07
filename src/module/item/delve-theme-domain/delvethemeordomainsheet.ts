@@ -28,7 +28,7 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
     const idx = parseInt(ev.target.dataset.idx)
     const { features } = this.themeData
     features[idx].description = val
-    this.item.update({ data: { features } }, { render: false })
+    this.item.update({ system: { features } }, { render: false })
   }
 
   _dangerDescription(ev: JQuery.BlurEvent) {
@@ -36,6 +36,6 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
     const idx = parseInt(ev.target.dataset.idx)
     const { dangers } = this.themeData
     dangers[idx].description = val
-    this.item.update({ data: { dangers } }, { render: false })
+    this.item.update({ system: { dangers } }, { render: false })
   }
 }

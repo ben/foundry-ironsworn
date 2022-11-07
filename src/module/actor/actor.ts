@@ -22,7 +22,7 @@ export class IronswornActor extends Actor {
     console.log({ momentum, momentumReset })
     if (momentum > momentumReset) {
       this.update({
-        data: { momentum: momentumReset },
+        system: { momentum: momentumReset },
       })
     }
   }
