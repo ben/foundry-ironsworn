@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.18.15
+
 ## 1.18.14
 
 - Text edits on progress items are no longer lost when changing the rank.
