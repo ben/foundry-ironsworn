@@ -278,6 +278,14 @@ export class IronswornPrerollDialog extends Dialog<
     return this.showForMoveItem(move, { moveId: move.id || undefined }, actor)
   }
 
+  static async showForProgressMove(move: IronswornItem, progress: number) {
+    if (move.type !== 'sfmove') {
+      throw new Error('this only works with SF moves')
+    }
+
+    return this.showForMoveItem(move, { moveId: move.id, progress })
+  }
+
   private static async showForMoveItem(
     move: IronswornItem,
     prerollOptions: PreRollOptions,

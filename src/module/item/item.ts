@@ -1,5 +1,6 @@
 import { createIronswornChatRoll } from '../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../constants'
+import { getFoundryMoveByDfId } from '../dataforged'
 import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 import { IronswornPrerollDialog } from '../rolls'
 import {
@@ -56,17 +57,13 @@ export class IronswornItem extends Item {
     if (this.type !== 'bondset') return
     const system = this.system as BondsetDataPropertiesData
 
-    const move = await moveDataByName('Write Your Epilogue')
+    const move = await getFoundryMoveByDfId(
+      'Ironsworn/Moves/Relationship/Write_Your_Epilogue'
+    )
     if (!move) throw new Error('Problem loading write-epilogue move')
 
     const progress = Math.floor(Object.values(system.bonds).length / 4)
-    const r = new Roll(`{${progress},d10,d10}`)
-    createIronswornChatRoll({
-      isProgress: true,
-      move,
-      roll: r,
-      actor: this.actor || undefined,
-    })
+    IronswornPrerollDialog.showForProgressMove(move, progress)
   }
 }
 
