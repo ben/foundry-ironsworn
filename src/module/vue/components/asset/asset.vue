@@ -41,10 +41,12 @@
         :aria-expanded="expanded"
         :id="bodyId"
       >
-        <div
+        <with-rolllisteners
+          element="div"
           v-html="$enrichHtml(asset.data.description ?? '')"
           v-if="asset.data.description"
-        ></div>
+          @moveclick="moveclick"
+        />
         <div v-html="$enrichHtml(asset.data.requirement ?? '')"></div>
 
         <dl class="asset-fields" v-if="asset.data.fields?.length">
