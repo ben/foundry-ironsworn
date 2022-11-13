@@ -1,3 +1,4 @@
+import { CharacterDataPropertiesData } from './actortypes'
 import { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 /**
@@ -5,6 +6,9 @@ import { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
  * @extends {Actor}
  */
 export class IronswornActor extends Actor {
+  // Type hack for v10 compatibility updates
+  declare system: typeof this.data.data
+
   moveSheet?: SFCharacterMoveSheet
 
   static async createDialog(data, _options = {}) {
@@ -18,7 +22,8 @@ export class IronswornActor extends Actor {
 
   async burnMomentum() {
     if (this.type != 'character') return
-    const { momentum, momentumReset } = this.system
+    const { momentum, momentumReset } = this
+      .system as CharacterDataPropertiesData
     console.log({ momentum, momentumReset })
     if (momentum > momentumReset) {
       this.update({
