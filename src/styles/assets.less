@@ -102,36 +102,63 @@
 @hex_deco_aspect_ratio: 24 / 28;
 @hex_deco_expanded_height: 50px;
 @hex_deco_collapsed_height: 32px;
+
+// Here we encode the bullet styles as classes, and pull them into the
+// ul>li bullet class from there. These will also be available for block
+// elements
+.asset-ability-bullet {
+  display: block;
+  mask-repeat: no-repeat;
+  background-repeat: no-repeat;
+  mask-position: center;
+  background-position: center;
+  transition: var(--std-animation);
+}
+.asset-ability-bullet-marked {
+  background-color: currentColor;
+}
+
+.asset-ability-bullet-ironsworn {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border-width: 2px;
+  height: 0.75em;
+  margin-top: 0.15em;
+}
+
+.asset-ability-bullet-starforged {
+  aspect-ratio: @hexagon_aspect_ratio;
+  background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+  mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+  height: 1em;
+  margin-top: 0.15em;
+}
+.asset-ability-bullet-starforged-marked {
+  mask-image: url('/assets/misc/hex-checkbox-checked.svg');
+}
+
 .asset-ironsworn,
 .asset-starforged {
   // common properties for asset ability bullet/checkbox
   .asset-ability {
     &:before {
       content: '';
-      display: block;
-      mask-repeat: no-repeat;
-      background-repeat: no-repeat;
-      mask-position: center;
-      background-position: center;
-      transition: var(--std-animation);
+      .asset-ability-bullet;
     }
 
     &.marked:before {
-      background-color: currentColor;
+      .asset-ability-bullet-marked;
     }
   }
 }
 .asset-ironsworn {
   .asset-ability {
     &:before {
-      aspect-ratio: 1;
-      border-radius: 50%;
-      border-width: 2px;
-      height: 0.75em;
-      margin-top: 0.15em;
+      .asset-ability-bullet-ironsworn;
     }
   }
 }
+
 .asset-starforged {
   position: relative;
   & > * {
@@ -166,14 +193,10 @@
   .asset-abilities {
     .asset-ability {
       &:before {
-        aspect-ratio: @hexagon_aspect_ratio;
-        background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-        mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-        height: 1em;
-        margin-top: 0.15em;
+        .asset-ability-bullet-starforged;
       }
       &.marked:before {
-        mask-image: url('/assets/misc/hex-checkbox-checked.svg');
+        .asset-ability-bullet-starforged-marked;
       }
     }
   }
