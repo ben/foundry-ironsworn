@@ -16,4 +16,10 @@ export class FoeSheet extends VueActorSheet {
       components: { 'foe-sheet': foeSheetVue },
     }
   }
+
+  // Override
+  _toggleEditMode(e: JQuery.ClickEvent<any, any, any, any>): void {
+    const item = this.actor?.items?.find((x) => x.type === 'progress')
+    item?.sheet?.render(true)
+  }
 }

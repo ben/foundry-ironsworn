@@ -2,7 +2,13 @@
 
 ## Next Release
 
+## 1.18.16
+
+- Foe sheets are editable again
+
 ## 1.18.15
+
+- Fixes the French translation
 
 ## 1.18.14
 
