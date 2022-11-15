@@ -41,19 +41,27 @@
       ></p>
 
       <!-- ABILITIES -->
-      <ul class="asset-abilities flexcol nogrow">
-        <li
+      <div class="asset-abilities flexcol nogrow">
+        <div
           v-for="(ability, i) in item.data.abilities"
           :key="`ability${i}`"
           :class="{
-            'asset-ability': true,
+            flexrow: true,
             marked: ability.enabled,
-            [`bullet-${toolset ?? 'ironsworn'}`]: true,
           }"
+          @click="toggleAbility(i)"
         >
+          <div
+            class="asset-ability-bullet nogrow"
+            style="flex-basis: 30px; align-content: flex-start"
+            :class="{
+              'asset-ability-bullet-marked': ability.enabled,
+              [`asset-ability-bullet-${toolset}`]: true,
+              [`asset-ability-bullet-${toolset}-marked`]: ability.enabled,
+            }"
+          />
           <WithRollListeners
             element="div"
-            @click="toggleAbility(i)"
             @moveclick="moveClick"
             class="asset-ability-text flexcol"
             v-html="$enrichHtml(ability.description)"
@@ -66,8 +74,8 @@
             :ticked="ability.clockTicks"
             @click="setAbilityClock(i, $event)"
           />
-        </li>
-      </ul>
+        </div>
+      </div>
 
       <!-- OPTIONS -->
       <section
