@@ -41,19 +41,29 @@
       ></p>
 
       <!-- ABILITIES -->
-      <ul class="asset-abilities flexcol nogrow">
-        <li
+      <div class="asset-abilities flexcol nogrow">
+        <div
           v-for="(ability, i) in item.data.abilities"
           :key="`ability${i}`"
           :class="{
-            'asset-ability': true,
+            flexrow: true,
             marked: ability.enabled,
-            [`bullet-${toolset ?? 'ironsworn'}`]: true,
           }"
+          @click="toggleAbility(i)"
         >
+          <div class="flexrow nogrow bullet-wrapper">
+            <div
+              :class="{
+                nogrow: true,
+                'asset-ability-bullet': true,
+                'asset-ability-bullet-marked': ability.enabled,
+                [`asset-ability-bullet-${toolset}`]: true,
+                [`asset-ability-bullet-${toolset}-marked`]: ability.enabled,
+              }"
+            />
+          </div>
           <WithRollListeners
             element="div"
-            @click="toggleAbility(i)"
             @moveclick="moveClick"
             class="asset-ability-text flexcol"
             v-html="$enrichHtml(ability.description)"
@@ -66,8 +76,8 @@
             :ticked="ability.clockTicks"
             @click="setAbilityClock(i, $event)"
           />
-        </li>
-      </ul>
+        </div>
+      </div>
 
       <!-- OPTIONS -->
       <section
@@ -105,6 +115,25 @@
   </article>
 </template>
 
+<style lang="less" scoped>
+.bullet-wrapper {
+  flex-basis: 1.5em;
+  align-content: flex-start;
+  padding-top: 0.05em;
+}
+
+.asset-ability-bullet-ironsworn {
+  height: 15px;
+  border: 1px solid var(--ironsworn-color-border);
+}
+
+.asset-ability-bullet-starforged {
+  height: 1em;
+  background-color: var(--ironsworn-color-border);
+  border: 1px solid var(--ironsworn-color-border);
+}
+</style>
+
 <style lang="less" module>
 .ironsworn__asset {
   margin: 10px 0;
@@ -131,18 +160,15 @@ const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
 
 const toolset = computed<'ironsworn' | 'starforged' | undefined>(
-  () => $item?.actor?.toolset
+  () => $item?.actor?.toolset ?? 'ironsworn'
 )
 
 const cssModule = useCssModule()
-const articleClasses = computed(() => {
-  const cls = {
-    [cssModule.ironsworn__asset]: true,
-    [`asset-${toolset.value ?? 'ironsworn'}`]: true,
-  }
-  if (toolset.value) cls[`asset-${toolset.value}`] = true
-  return cls
-})
+const articleClasses = computed(() => ({
+  [cssModule.ironsworn__asset]: true,
+  [`asset-${toolset.value ?? 'ironsworn'}`]: true,
+  [`asset-${toolset.value}`]: true,
+}))
 
 function saveFields() {
   const fields = item.value?.data.fields
