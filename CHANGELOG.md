@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.19.0
+
 - Ironsworn & Starforged now requires Foundry v10
 - Asset sheets: abilities can be toggled by clicking their bullets ([#532](https://github.com/ben/foundry-ironsworn/pull/532))
 
