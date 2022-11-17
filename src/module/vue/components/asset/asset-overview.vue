@@ -52,14 +52,23 @@
           @click="toggleAbility(i)"
         >
           <div
-            class="asset-ability-bullet nogrow"
-            style="flex-basis: 30px; align-content: flex-start"
-            :class="{
-              'asset-ability-bullet-marked': ability.enabled,
-              [`asset-ability-bullet-${toolset}`]: true,
-              [`asset-ability-bullet-${toolset}-marked`]: ability.enabled,
-            }"
-          />
+            class="flexrow nogrow"
+            style="
+              flex-basis: 30px;
+              align-content: flex-start;
+              padding-top: 0.05em;
+            "
+          >
+            <div
+              :class="{
+                nogrow: true,
+                'asset-ability-bullet': true,
+                'asset-ability-bullet-marked': ability.enabled,
+                [`asset-ability-bullet-${toolset}`]: true,
+                [`asset-ability-bullet-${toolset}-marked`]: ability.enabled,
+              }"
+            />
+          </div>
           <WithRollListeners
             element="div"
             @moveclick="moveClick"
@@ -112,6 +121,17 @@
     </section>
   </article>
 </template>
+
+<style lang="less" scoped>
+.asset-ability-bullet-ironsworn {
+  height: 15px;
+  border: 1px solid var(--ironsworn-color-border);
+}
+
+.asset-ability-bullet-starforged {
+  height: 1em;
+}
+</style>
 
 <style lang="less" module>
 .ironsworn__asset {
