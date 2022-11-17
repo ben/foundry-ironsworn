@@ -51,14 +51,7 @@
           }"
           @click="toggleAbility(i)"
         >
-          <div
-            class="flexrow nogrow"
-            style="
-              flex-basis: 30px;
-              align-content: flex-start;
-              padding-top: 0.05em;
-            "
-          >
+          <div class="flexrow nogrow bullet-wrapper">
             <div
               :class="{
                 nogrow: true,
@@ -123,6 +116,12 @@
 </template>
 
 <style lang="less" scoped>
+.bullet-wrapper {
+  flex-basis: 1.5em;
+  align-content: flex-start;
+  padding-top: 0.05em;
+}
+
 .asset-ability-bullet-ironsworn {
   height: 15px;
   border: 1px solid var(--ironsworn-color-border);
@@ -130,6 +129,8 @@
 
 .asset-ability-bullet-starforged {
   height: 1em;
+  background-color: var(--ironsworn-color-border);
+  border: 1px solid var(--ironsworn-color-border);
 }
 </style>
 
