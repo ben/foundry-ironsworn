@@ -159,18 +159,15 @@ const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
 
 const toolset = computed<'ironsworn' | 'starforged' | undefined>(
-  () => $item?.actor?.toolset
+  () => $item?.actor?.toolset ?? 'ironsworn'
 )
 
 const cssModule = useCssModule()
-const articleClasses = computed(() => {
-  const cls = {
-    [cssModule.ironsworn__asset]: true,
-    [`asset-${toolset.value ?? 'ironsworn'}`]: true,
-  }
-  if (toolset.value) cls[`asset-${toolset.value}`] = true
-  return cls
-})
+const articleClasses = computed(() => ({
+  [cssModule.ironsworn__asset]: true,
+  [`asset-${toolset.value ?? 'ironsworn'}`]: true,
+  [`asset-${toolset.value}`]: true,
+}))
 
 function saveFields() {
   const fields = item.value?.data.fields
