@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Asset sheets: abilities can be toggled by clicking their bullets ([#532](https://github.com/ben/foundry-ironsworn/pull/532))
+
 ## 1.18.16
 
 - Foe sheets are editable again
