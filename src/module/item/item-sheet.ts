@@ -1,5 +1,6 @@
 import { RANKS } from '../constants'
 import { IronswornSettings } from '../helpers/settings'
+import { BondsetDataPropertiesData } from './itemtypes'
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
@@ -66,7 +67,9 @@ export class IronswornItemSheet extends ItemSheet {
     html.find('.add-bond').click((ev) => {
       ev.preventDefault()
       if (this.item.type === 'bondset') {
-        const bonds = Object.values(this.item.system.bonds)
+        const bonds = Object.values(
+          (this.item.system as BondsetDataPropertiesData).bonds
+        )
         bonds.push({ name: '', notes: '' })
         this.item.update({ 'system.bonds': bonds })
       }
@@ -75,7 +78,8 @@ export class IronswornItemSheet extends ItemSheet {
       ev.preventDefault()
       if (this.item.type === 'bondset') {
         const idx = parseInt($(ev.target).parents('.item-row').data('idx'))
-        const bonds = Object.values(this.item.system.bonds)
+        const system = this.item.system as BondsetDataPropertiesData
+        const bonds = Object.values(system.bonds)
         bonds.splice(idx, 1)
         this.item.update({ system: { bonds } })
       }

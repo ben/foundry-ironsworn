@@ -120,7 +120,7 @@ export class OracleRollMessage {
     if (!localRows) {
       const table = await this.getRollTable()
       if (table) {
-        localRows = table.results.contents.map((x) => ({
+        localRows = table.results.contents.map((x: any) => ({
           low: x.range[0],
           high: x.range[1],
           text: marked.parseInline(x.text),

@@ -229,7 +229,7 @@ export class IronswornHandlebarsHelpers {
   }
 
   static enrichHtml(text: string) {
-    const rendered = TextEditor.enrichHTML(text, { async: false })
+    const rendered = TextEditor.enrichHTML(text, { async: false } as any)
     return rendered.replace(
       /\(\(rollplus (.*?)\)\)/g,
       (_, stat) => `

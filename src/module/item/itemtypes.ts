@@ -131,7 +131,7 @@ export interface FeatureOrDanger {
   description: string
 }
 
-interface DelveThemeDataSourceData {
+export interface DelveThemeDataSourceData {
   summary: string
   description: string
   features: FeatureOrDanger[]

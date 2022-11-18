@@ -9,7 +9,7 @@
       <div class="clickable text" v-if="editMode" @click="decrement">
         &minus;
       </div>
-      <h4>{{ actor.system[attr] }}</h4>
+      <h4>{{ actorSys[attr] }}</h4>
       <div class="clickable text" v-if="editMode" @click="increment">
         &plus;
       </div>
@@ -42,6 +42,7 @@
 <script lang="ts" setup>
 import { inject, computed, capitalize, Ref } from 'vue'
 import { IronswornActor } from '../../actor/actor'
+import { CharacterDataPropertiesData } from '../../actor/actortypes'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 
@@ -50,6 +51,9 @@ const $actor = inject($ActorKey)
 const actor = inject(ActorKey) as Ref<
   ReturnType<typeof IronswornActor.prototype.toObject>
 >
+const actorSys = computed(
+  () => (actor.value as any)?.system as CharacterDataPropertiesData
+)
 
 const classes = computed(() => ({
   stat: true,
@@ -72,11 +76,11 @@ function click() {
 }
 
 function increment() {
-  const value = parseInt(actor.value.system[props.attr]) + 1
+  const value = parseInt(actorSys.value?.[props.attr]) + 1
   $actor?.update({ system: { [props.attr]: value } })
 }
 function decrement() {
-  const value = parseInt(actor.value.system[props.attr]) - 1
+  const value = parseInt(actorSys.value?.[props.attr]) - 1
   $actor?.update({ system: { [props.attr]: value } })
 }
 </script>

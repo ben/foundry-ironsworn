@@ -3,7 +3,7 @@ import { Evaluated } from '@league-of-foundry-developers/foundry-vtt-types/src/f
 import { compact, sortBy } from 'lodash'
 import { marked } from 'marked'
 import { IronswornActor } from '../actor/actor'
-import { DenizenSlot } from '../actor/actortypes'
+import { CharacterDataPropertiesData, DenizenSlot } from '../actor/actortypes'
 import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
 import {
   createStarforgedOracleTree,
@@ -13,7 +13,11 @@ import { DsRollOutcome, EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
-import { FeatureOrDanger, SFMoveDataPropertiesData } from '../item/itemtypes'
+import {
+  AssetDataPropertiesData,
+  FeatureOrDanger,
+  SFMoveDataPropertiesData,
+} from '../item/itemtypes'
 import {
   computeRollOutcome,
   computeOutcomeText,
@@ -123,7 +127,8 @@ function calculateCardTitle(params: RollMessageParams) {
     let title = params.asset.name
     if (params.stat) {
       if (params.stat === 'track' && params.asset?.type === 'asset') {
-        title += ` +${params.asset.system.track.name}`
+        const assetSys = params.asset.system as AssetDataPropertiesData
+        title += ` +${assetSys.track.name}`
       } else {
         const statText = game.i18n.localize(
           `IRONSWORN.${capitalize(params.stat)}`
@@ -196,7 +201,8 @@ function calculateMomentumProps(
     match,
   } = calculateDieTotals(roll)
 
-  const momentum = actor.system.momentum
+  const actorSys = actor.system as CharacterDataPropertiesData
+  const momentum = actorSys.momentum
   if (momentum < 0 && -momentum === rawActionDie)
     return {
       negativeMomentumCancel: true,
@@ -413,7 +419,7 @@ export async function rollAndDisplayOracleResult(
 
   // Parse the table rows
   const tableRows = sortBy(
-    table.results.contents.map((x) => ({
+    table.results.contents.map((x: any) => ({
       low: x.range[0],
       high: x.range[1],
       text: marked.parseInline(x.text),

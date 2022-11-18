@@ -5,12 +5,12 @@
     documentType="Actor"
     :labelPosition="labelPosition"
     :sliderStyle="props.sliderStyle"
-    :current-value="actor?.system.momentum ?? 2"
+    :current-value="actorSys.momentum ?? 2"
     :min="-6"
     :max="10"
-    :softMax="actor?.system.momentumMax"
+    :softMax="actorSys.momentumMax"
     :segmentClass="{
-      [actor.system.momentumReset]: 'segment-momentum-reset',
+      [actorSys.momentumReset]: 'segment-momentum-reset',
     }"
   >
     <template #label>
@@ -19,8 +19,8 @@
         :class="{ vertical: sliderStyle === 'vertical' }"
         :tooltip="
           $t('IRONSWORN.BurnMomentumAndResetTo', {
-            value: actor?.system.momentum,
-            resetValue: actor?.system.momentumReset,
+            value: actorSys.momentum,
+            resetValue: actorSys.momentumReset,
           })
         "
       >
@@ -45,9 +45,12 @@
 </style>
 
 <script lang="ts" setup>
-import { inject, Ref } from 'vue'
+import { computed, inject, Ref } from 'vue'
 import { IronswornActor } from '../../../actor/actor.js'
-import { CharacterDataProperties } from '../../../actor/actortypes.js'
+import {
+  CharacterDataProperties,
+  CharacterDataPropertiesData,
+} from '../../../actor/actortypes.js'
 import { ActorKey } from '../../provisions.js'
 import BtnMomentumburn from '../buttons/btn-momentumburn.vue'
 
@@ -64,4 +67,7 @@ const props = withDefaults(
 const actor = inject(ActorKey) as Ref<
   ReturnType<typeof IronswornActor.prototype.toObject> & CharacterDataProperties
 >
+const actorSys = computed(
+  () => (actor.value as any)?.system as CharacterDataPropertiesData
+)
 </script>

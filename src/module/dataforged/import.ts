@@ -392,7 +392,7 @@ async function processSFFoes() {
     const actor = await IronswornActor.create(
       {
         name: foeItem.name ?? 'wups',
-        img: foeItem.system.img,
+        img: foeItem.img,
         type: 'foe',
       },
       { pack: 'foundry-ironsworn.foeactorssf' }

@@ -60,7 +60,6 @@ async function newConnection() {
 }
 
 async function applySort(oldI, newI, sortBefore) {
-  console.log(actor?.items)
   const foundryItems = ($actor?.items ?? [])
     .filter((x) => x.type === 'progress')
     .filter((x) => (x.system as ProgressDataPropertiesData).subtype === 'bond')

@@ -2,15 +2,19 @@ import { createIronswornChatRoll } from '../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../constants'
 import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 import { IronswornPrerollDialog } from '../rolls'
-import { ProgressDataPropertiesData } from './itemtypes'
+import {
+  BondsetDataPropertiesData,
+  ProgressDataPropertiesData,
+} from './itemtypes'
 
 /**
  * Extend the base Item entity
  * @extends {Item}
  */
 export class IronswornItem extends Item {
-  // Type hack for v10 compatibility updates
+  // Type hacks for v10 compatibility updates
   declare system: typeof this.data.data
+  declare sort: typeof this.data.sort
 
   /**
    * Progress methods
@@ -50,7 +54,7 @@ export class IronswornItem extends Item {
 
   async writeEpilogue() {
     if (this.type !== 'bondset') return
-    const system = this.system
+    const system = this.system as BondsetDataPropertiesData
 
     const move = await moveDataByName('Write Your Epilogue')
     if (!move) throw new Error('Problem loading write-epilogue move')

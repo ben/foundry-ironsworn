@@ -172,11 +172,7 @@ const props = defineProps<{
 }>()
 
 const $actor = inject($ActorKey)
-const actor = inject(ActorKey) as Ref<
-  ReturnType<typeof IronswornActor.prototype.toObject> &
-    CharacterDataSource &
-    ActorData
->
+const actor = inject(ActorKey) as Ref
 
 const ticks = computed(
   () => actor.value.system.legacies?.[props.legacy] ?? minTicks

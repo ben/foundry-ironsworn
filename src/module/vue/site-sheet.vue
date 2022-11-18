@@ -175,6 +175,7 @@ import { moveDataByName } from '../helpers/data'
 import {
   DelveDomainDataSource,
   DelveThemeDataSource,
+  DelveThemeDataSourceData,
   FeatureOrDanger,
 } from '../item/itemtypes'
 import { OracleRollMessage, TableRow } from '../rolls'
@@ -232,8 +233,8 @@ function markProgress() {
 async function randomFeature() {
   if (!hasThemeAndDomain.value) return
 
-  const themeData = ironswornTheme.value?.system as DelveThemeDataSource
-  const domainData = ironswornDomain.value?.system as DelveDomainDataSource
+  const themeData = ironswornTheme.value?.system as DelveThemeDataSourceData
+  const domainData = ironswornDomain.value?.system as DelveThemeDataSourceData
   const convertToRow = (f: FeatureOrDanger): TableRow => {
     const { low, high, description } = f
     return {
@@ -243,9 +244,10 @@ async function randomFeature() {
       selected: false,
     }
   }
+  const themeSys = themeData
   const rows = [
-    ...themeData.system.features.map(convertToRow),
-    ...domainData.system.features.map(convertToRow),
+    ...themeData.features.map(convertToRow),
+    ...domainData.features.map(convertToRow),
   ]
   const title = game.i18n.localize('IRONSWORN.Feature')
   const subtitle = `${$actor?.name} – ${ironswornTheme.value?.name} ${ironswornDomain.value?.name}`
