@@ -212,19 +212,13 @@ export class IronswornPrerollDialog extends Dialog<
     name: string,
     value: number,
     actor?: IronswornActor,
-    isVow?: boolean
+    moveDfId?: string
   ) {
     const rollText = game.i18n.localize('IRONSWORN.ProgressRoll')
     let title = `${rollText}: ${name}`
 
-    let moveDfId: string | undefined
     let move: IronswornItem | undefined
-    if (isVow && actor) {
-      const toolset = actor?.toolset ?? 'starforged'
-      moveDfId =
-        toolset === 'starforged'
-          ? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
-          : 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+    if (moveDfId) {
       move = await getFoundryMoveByDfId(moveDfId)
       if (move?.name) {
         title = `${move.name}: ${name}`
@@ -276,14 +270,6 @@ export class IronswornPrerollDialog extends Dialog<
     }
 
     return this.showForMoveItem(move, { moveId: move.id || undefined }, actor)
-  }
-
-  static async showForProgressMove(move: IronswornItem, progress: number) {
-    if (move.type !== 'sfmove') {
-      throw new Error('this only works with SF moves')
-    }
-
-    return this.showForMoveItem(move, { moveId: move.id, progress })
   }
 
   private static async showForMoveItem(
