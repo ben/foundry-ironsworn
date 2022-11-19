@@ -3,7 +3,7 @@
     <div class="flexrow">
       <h4>{{ $t('IRONSWORN.Bonds') }}</h4>
       <btn-faicon class="block nogrow" icon="edit" @click="editBonds" />
-      <btn-faicon class="block nogrow" icon="dice-d6" @click="rollBonds" />
+      <BtnIsicon class="block nogrow" icon="d10-tilt" @click="rollBonds" />
     </div>
     <ProgressTrack
       :ticks="bondcount"
@@ -22,6 +22,7 @@ import {
 } from '../../item/itemtypes.js'
 import { $ActorKey, ActorKey } from '../provisions'
 import btnFaicon from './buttons/btn-faicon.vue'
+import BtnIsicon from './buttons/btn-isicon.vue'
 import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{ compactProgress?: boolean }>()

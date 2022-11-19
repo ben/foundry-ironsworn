@@ -1,5 +1,6 @@
 import { createIronswornChatRoll } from '../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../constants'
+import { getFoundryMoveByDfId } from '../dataforged'
 import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 import { IronswornPrerollDialog } from '../rolls'
 import {
@@ -39,12 +40,21 @@ export class IronswornItem extends Item {
     if (this.data.type !== 'progress') return
     const system = this.system as ProgressDataPropertiesData
 
+    let moveDfId: string | undefined
+    if (system.subtype === 'vow') {
+      const toolset = this.actor?.toolset ?? 'starforged'
+      moveDfId =
+        toolset === 'starforged'
+          ? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+          : 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+    }
+
     const progress = Math.floor(system.current / 4)
     return IronswornPrerollDialog.showForProgress(
       this.name || '(progress)',
       progress,
       this.actor || undefined,
-      system.subtype === 'vow'
+      moveDfId
     )
   }
 
@@ -56,17 +66,18 @@ export class IronswornItem extends Item {
     if (this.type !== 'bondset') return
     const system = this.system as BondsetDataPropertiesData
 
-    const move = await moveDataByName('Write Your Epilogue')
+    const move = await getFoundryMoveByDfId(
+      'Ironsworn/Moves/Relationship/Write_Your_Epilogue'
+    )
     if (!move) throw new Error('Problem loading write-epilogue move')
 
     const progress = Math.floor(Object.values(system.bonds).length / 4)
-    const r = new Roll(`{${progress},d10,d10}`)
-    createIronswornChatRoll({
-      isProgress: true,
-      move,
-      roll: r,
-      actor: this.actor || undefined,
-    })
+    IronswornPrerollDialog.showForProgress(
+      game.i18n.localize('IRONSWORN.Bonds'),
+      progress,
+      this.actor || undefined,
+      'Ironsworn/Moves/Relationship/Write_Your_Epilogue'
+    )
   }
 }
 
