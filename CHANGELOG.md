@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Under the hood: correct console warnings about using `thing.data`, instead using `thing.system` and other v10-friendly methods.
+
 ## 1.19.0
 
 - Ironsworn & Starforged now requires Foundry v10
