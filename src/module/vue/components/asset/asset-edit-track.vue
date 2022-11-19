@@ -70,30 +70,30 @@ const editMode = computed(() => {
 })
 
 function enableClick(ev) {
-  $item?.update({ 'data.track.enabled': ev.target.checked })
+  $item?.update({ 'system.track.enabled': ev.target.checked })
 }
 
 function updateName() {
-  $item?.update({ 'data.track.name': item.value.data.track.name })
+  $item?.update({ 'system.track.name': item.value.data.track.name })
 }
 
 function updateMax() {
-  $item?.update({ 'data.track.max': item.value.data.track.max })
+  $item?.update({ 'system.track.max': item.value.data.track.max })
 }
 
 function saveConditions() {
-  $item?.update({ 'data.conditions': item.value.data.conditions })
+  $item?.update({ 'system.conditions': item.value.data.conditions })
 }
 
 function deleteCondition(idx: number) {
   const { conditions } = item.value.data
   conditions.splice(idx, 1)
-  $item?.update({ data: { conditions } })
+  $item?.update({ system: { conditions } })
 }
 
 function addCondition() {
   const { conditions } = item.value.data
   conditions.push({ name: '', ticked: false })
-  $item?.update({ data: { conditions } })
+  $item?.update({ system: { conditions } })
 }
 </script>

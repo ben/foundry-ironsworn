@@ -9,10 +9,16 @@ import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../provisions.js'
 export function pickInjectedDocument<T extends DocumentType>(documentType: T) {
   switch (documentType) {
     case 'Actor': {
-      return { document: inject(ActorKey), $document: inject($ActorKey) }
+      return {
+        document: inject(ActorKey, undefined),
+        $document: inject($ActorKey, undefined),
+      }
     }
     case 'Item': {
-      return { document: inject(ItemKey), $document: inject($ItemKey) }
+      return {
+        document: inject(ItemKey, undefined),
+        $document: inject($ItemKey, undefined),
+      }
     }
     default:
       throw new Error('Only Actor and Item documents are supported.')

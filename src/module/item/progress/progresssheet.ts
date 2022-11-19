@@ -27,7 +27,7 @@ export class ProgressSheet extends IronswornItemSheet {
 
   _handleRankSet(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    this.item.update({ 'data.rank': ev.currentTarget.dataset.rank })
+    this.item.update({ 'system.rank': ev.currentTarget.dataset.rank })
   }
 
   _handleDelete(ev: JQuery.ClickEvent) {

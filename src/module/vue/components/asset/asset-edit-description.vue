@@ -36,18 +36,18 @@ const item = inject(ItemKey) as ComputedRef<any>
 
 function setDescription() {
   if (!item.value) return
-  $item?.update({ data: { description: item.value.data.description } })
+  $item?.update({ system: { description: item.value.data.description } })
 }
 function setCategory() {
   if (!item.value) return
-  $item?.update({ data: { category: item.value.data.category } })
+  $item?.update({ system: { category: item.value.data.category } })
 }
 function setRequirement() {
   if (!item.value) return
-  $item?.update({ data: { requirement: item.value.data.requirement } })
+  $item?.update({ system: { requirement: item.value.data.requirement } })
 }
 function setColor() {
   if (!item.value) return
-  $item?.update({ data: { color: item.value.data.color } })
+  $item?.update({ system: { color: item.value.data.color } })
 }
 </script>

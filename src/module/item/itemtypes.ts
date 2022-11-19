@@ -131,13 +131,14 @@ export interface FeatureOrDanger {
   description: string
 }
 
-interface DelveThemeDataSourceData {
+export interface DelveThemeDataSourceData {
   summary: string
   description: string
   features: FeatureOrDanger[]
   dangers: FeatureOrDanger[]
 }
-interface DelveThemeDataPropertiesData extends DelveThemeDataSourceData {}
+export interface DelveThemeDataPropertiesData
+  extends DelveThemeDataSourceData {}
 
 export interface DelveThemeDataSource {
   type: 'delve-theme'
@@ -155,7 +156,8 @@ interface DelveDomainDataSourceData {
   features: FeatureOrDanger[]
   dangers: FeatureOrDanger[]
 }
-interface DelveDomainDataPropertiesData extends DelveDomainDataSourceData {}
+export interface DelveDomainDataPropertiesData
+  extends DelveDomainDataSourceData {}
 
 export interface DelveDomainDataSource {
   type: 'delve-domain'
@@ -178,7 +180,7 @@ interface MoveDataSourceData {
   sourceId: string
   dfid: string
 }
-interface MoveDataPropertiesData extends MoveDataSourceData {}
+export interface MoveDataPropertiesData extends MoveDataSourceData {}
 
 export interface MoveDataSource {
   type: 'move'
@@ -191,13 +193,13 @@ export interface MoveDataProperties {
 
 ///////////////////////////////
 
-interface SFMoveDataPropertiesData extends IMove {
+export interface SFMoveDataPropertiesData extends IMove {
   dfid: string
 }
 
 export interface SFMoveDataSource {
   type: 'sfmove'
-  data: IMove
+  data: SFMoveDataPropertiesData
 }
 export interface SFMoveDataProperties {
   type: 'sfmove'

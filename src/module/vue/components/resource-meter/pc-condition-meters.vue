@@ -8,7 +8,7 @@
       documentType="Actor"
       :global="resource === 'Supply' && IronswornSettings.get('shared-supply')"
       :attr="resource.toLowerCase()"
-      :current-value="actor?.data[resource.toLowerCase()]"
+      :current-value="actorSys[resource.toLowerCase()]"
       :max="5"
       :min="0"
       :statLabel="$t(`IRONSWORN.${resource}`)"
@@ -38,10 +38,14 @@ import { computed, inject } from 'vue'
 import { ActorKey } from '../../provisions.js'
 import ConditionMeterSlider from './condition-meter.vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
+import { CharacterDataPropertiesData } from '../../../actor/actortypes.js'
 
 const props = defineProps<{
   labelPosition: 'left' | 'right'
 }>()
 
 const actor = inject(ActorKey)
+const actorSys = computed(
+  () => (actor?.value as any)?.system as CharacterDataPropertiesData
+)
 </script>

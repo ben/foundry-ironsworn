@@ -4,7 +4,7 @@ export function patchZIndex() {
     const ret = original.call(this, ...args)
     if (
       this.actor?.type === 'location' &&
-      this.actor?.data.data.subtype === 'planet'
+      this.actor?.system.subtype === 'planet'
     ) {
       this.zIndex -= 100
     }

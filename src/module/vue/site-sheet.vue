@@ -6,7 +6,7 @@
     <!-- RANK -->
     <div class="flexrow nogrow">
       <RankPips
-        :current="actor.data.rank"
+        :current="actor.system.rank"
         class="nogrow"
         @click="setRank"
         style="margin-right: 1em"
@@ -29,8 +29,8 @@
     <ProgressTrack
       class="nogrow"
       style="margin-bottom: 1em"
-      :ticks="actor.data.current"
-      :rank="actor.data.rank"
+      :ticks="actor.system.current"
+      :rank="actor.system.rank"
     />
 
     <!-- THEME/DOMAIN -->
@@ -124,7 +124,7 @@
 
     <!-- NOTES -->
     <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
-    <MceEditor v-model="actor.data.description" @save="saveDescription" />
+    <MceEditor v-model="actor.system.description" @save="saveDescription" />
   </div>
 </template>
 
@@ -175,6 +175,7 @@ import { moveDataByName } from '../helpers/data'
 import {
   DelveDomainDataSource,
   DelveThemeDataSource,
+  DelveThemeDataSourceData,
   FeatureOrDanger,
 } from '../item/itemtypes'
 import { OracleRollMessage, TableRow } from '../rolls'
@@ -212,28 +213,28 @@ const hasThemeAndDomain = computed(() => {
 })
 
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[props.actor.data.rank])
+  return game.i18n.localize(RANKS[props.actor.system.rank])
 })
 
 function setRank(rank) {
-  $actor?.update({ data: { rank } })
+  $actor?.update({ system: { rank } })
 }
 
 function clearProgress() {
-  $actor?.update({ 'data.current': 0 })
+  $actor?.update({ 'system.current': 0 })
 }
 
 function markProgress() {
-  const increment = RANK_INCREMENTS[props.actor.data.rank]
-  const newValue = Math.min(props.actor.data.current + increment, 40)
-  $actor?.update({ 'data.current': newValue })
+  const increment = RANK_INCREMENTS[props.actor.system.rank]
+  const newValue = Math.min(props.actor.system.current + increment, 40)
+  $actor?.update({ 'system.current': newValue })
 }
 
 async function randomFeature() {
   if (!hasThemeAndDomain.value) return
 
-  const themeData = ironswornTheme.value?.data as DelveThemeDataSource
-  const domainData = ironswornDomain.value?.data as DelveDomainDataSource
+  const themeData = ironswornTheme.value?.system as DelveThemeDataSourceData
+  const domainData = ironswornDomain.value?.system as DelveThemeDataSourceData
   const convertToRow = (f: FeatureOrDanger): TableRow => {
     const { low, high, description } = f
     return {
@@ -243,9 +244,10 @@ async function randomFeature() {
       selected: false,
     }
   }
+  const themeSys = themeData
   const rows = [
-    ...themeData.data.features.map(convertToRow),
-    ...domainData.data.features.map(convertToRow),
+    ...themeData.features.map(convertToRow),
+    ...domainData.features.map(convertToRow),
   ]
   const title = game.i18n.localize('IRONSWORN.Feature')
   const subtitle = `${$actor?.name} – ${ironswornTheme.value?.name} ${ironswornDomain.value?.name}`
@@ -255,7 +257,7 @@ async function randomFeature() {
 
 async function locateObjective() {
   const move = await moveDataByName('Locate Your Objective')
-  const progress = Math.floor(props.actor.data.current / 4)
+  const progress = Math.floor(props.actor.system.current / 4)
   const roll = new Roll(`{${progress}, d10, d10}`)
   createIronswornChatRoll({
     isProgress: true,
@@ -269,11 +271,11 @@ const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
   const roll = await new Roll('1d100').evaluate({ async: true })
   const result = roll.total
-  const denizen = props.actor.data.denizens.find(
+  const denizen = props.actor.system.denizens.find(
     (x) => x.low <= result && x.high >= result
   )
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
-  const idx = props.actor.data.denizens.indexOf(denizen)
+  const idx = props.actor.system.denizens.indexOf(denizen)
   await createIronswornDenizenChat({
     roll,
     denizen,
@@ -289,6 +291,6 @@ async function randomDenizen() {
 }
 
 function saveDescription() {
-  $actor?.update({ 'data.description': props.actor.data.description })
+  $actor?.update({ 'system.description': props.actor.system.description })
 }
 </script>

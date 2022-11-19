@@ -1,5 +1,5 @@
 import { IronswornItemSheet } from '../item-sheet'
-import { DelveDomainDataSource } from '../itemtypes'
+import { DelveDomainDataPropertiesData } from '../itemtypes'
 
 export class DelveThemeOrDomainSheet extends IronswornItemSheet {
   static get defaultOptions() {
@@ -8,8 +8,8 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
     })
   }
 
-  get themeData(): DelveDomainDataSource {
-    return this.item.data as DelveDomainDataSource
+  get themeData(): DelveDomainDataPropertiesData {
+    return this.item.system as DelveDomainDataPropertiesData
   }
 
   activateListeners(html: JQuery) {
@@ -26,16 +26,16 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
   _featureDescription(ev: JQuery.BlurEvent) {
     const val = $(ev.currentTarget).val()?.toString() || ''
     const idx = parseInt(ev.target.dataset.idx)
-    const { features } = this.themeData.data
+    const { features } = this.themeData
     features[idx].description = val
-    this.item.update({ data: { features } }, { render: false })
+    this.item.update({ system: { features } }, { render: false })
   }
 
   _dangerDescription(ev: JQuery.BlurEvent) {
     const val = $(ev.currentTarget).val()?.toString() || ''
     const idx = parseInt(ev.target.dataset.idx)
-    const { dangers } = this.themeData.data
+    const { dangers } = this.themeData
     dangers[idx].description = val
-    this.item.update({ data: { dangers } }, { render: false })
+    this.item.update({ system: { dangers } }, { render: false })
   }
 }

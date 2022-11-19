@@ -73,7 +73,7 @@ function deleteAbility(idx: number) {
   const data = item.value?.data as AssetDataPropertiesData
   const abilities = Object.values(data.abilities)
   abilities.splice(idx, 1)
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 
 function addAbility() {
@@ -86,37 +86,37 @@ function addAbility() {
     clockMax: 4,
     clockTicks: 0,
   })
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 
 function markAbility(idx) {
   const data = item.value?.data as AssetDataPropertiesData
   const abilities = Object.values(data.abilities)
   abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 
 function enableClock(idx) {
   const data = item.value?.data as AssetDataPropertiesData
   const abilities = Object.values(data.abilities)
   abilities[idx] = { ...abilities[idx], hasClock: !abilities[idx].hasClock }
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 
 function clockMaxChange(idx: number) {
   const abilities = Object.values(item.value?.data.abilities) as any[]
   abilities[idx].clockMax = parseInt(abilities[idx].clockMax)
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 
 function setClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(item.value?.data.abilities) as any[]
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 
 function save() {
   const { abilities } = item.value?.data
-  $item?.update({ data: { abilities } })
+  $item?.update({ system: { abilities } })
 }
 </script>

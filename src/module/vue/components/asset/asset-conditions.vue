@@ -1,7 +1,10 @@
 <template>
-  <div :class="$style.assetconditions" v-if="asset.data.conditions?.length > 0">
+  <div
+    :class="$style.assetconditions"
+    v-if="asset.system.conditions?.length > 0"
+  >
     <label
-      v-for="(condition, i) in asset.data.conditions"
+      v-for="(condition, i) in asset.system.conditions"
       :key="condition.name"
       :class="$style.condition"
     >
@@ -50,9 +53,9 @@ const props = defineProps<{ asset: any }>()
 const $item = inject($ItemKey)
 
 async function toggleCondition(idx: number) {
-  const { conditions } = props.asset.data
+  const { conditions } = props.asset.system
   conditions[idx].ticked = !conditions[idx].ticked
-  await $item?.update({ data: { conditions } })
+  await $item?.update({ system: { conditions } })
 
   CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
     name: conditions[idx].name.toLowerCase(),

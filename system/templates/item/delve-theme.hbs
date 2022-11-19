@@ -1,5 +1,5 @@
 {{#*inline "fieldrows"}}
-{{#each (lookup data.data field)}}
+{{#each (lookup data.system field)}}
 <tr>
   <td>
     {{#if (eq low high)}}{{low}}{{else}}{{low}} - {{high}}{{/if}}
@@ -20,9 +20,9 @@
   </header>
 
   <section class="flexcol">
-    <input name="data.summary" type="text" value="{{data.data.summary}}"
+    <input name="data.summary" type="text" value="{{data.system.summary}}"
       placeholder="{{localize 'IRONSWORN.Summary'}}" />
-    {{editor content=data.data.description target="data.description" owner=owner}}
+    {{editor data.system.description target="system.description" owner=owner}}
   </section>
 
   <h3>{{localize 'IRONSWORN.Features'}}</h3>

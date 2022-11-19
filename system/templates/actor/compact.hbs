@@ -5,7 +5,7 @@
       {{#*inline "stat"}}
       <div class="box flexcol clickable block ironsworn__stat__roll" data-stat="{{stat}}">
         <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
-        <h2>{{lookup data.data stat}}</h2>
+        <h2>{{lookup data.system stat}}</h2>
       </div>
       {{/inline}}
 
@@ -25,7 +25,7 @@
         <div class="flexcol boxrow {{#unless burn}}clickable block ironsworn__stat__roll{{/unless}}"
           data-stat="{{stat}}">
           <h5>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h5>
-          <h4>{{lookup data.data stat}}</h4>
+          <h4>{{lookup data.system stat}}</h4>
         </div>
         <div class="flexrow boxrow small">
           <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
@@ -40,7 +40,7 @@
       </div>
       {{/inline}}
 
-      {{>resource stat="momentum" min=-6 max=actor.data.data.momentumMax burn=true}}
+      {{>resource stat="momentum" min=-6 max=actor.system.momentumMax burn=true}}
       {{>resource stat="health" min=0 max=5}}
       {{>resource stat="spirit" min=0 max=5}}
       {{>resource stat="supply" min=0 max=5}}
@@ -51,7 +51,7 @@
   <div class="flexcol">
     {{#*inline "debility"}}
     <label class="checkbox">
-      <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.data.debility name)}}>
+      <input type="checkbox" name="data.debility.{{name}}" {{checked (lookup data.system.debility name)}}>
       {{capitalize name}}
     </label>
     {{/inline}}

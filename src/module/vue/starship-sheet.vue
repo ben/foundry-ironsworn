@@ -1,5 +1,5 @@
 <template>
-  <SheetBasic :document="actor">
+  <SheetBasic :document="actor" body-class="flexcol">
     <Tabs>
       <Tab :title="$t('IRONSWORN.Assets')">
         <SfAssets />

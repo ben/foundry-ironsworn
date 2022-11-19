@@ -149,14 +149,8 @@ import { IronswornActor } from '../../actor/actor.js'
 import XpTrack from './xp-track.vue'
 import _ from 'lodash'
 import ProgressTrack from './progress/progress-track.vue'
-import {
-  CharacterDataProperties,
-  CharacterDataSource,
-} from '../../actor/actortypes.js'
-import {
-  ActorData,
-  ActorDataBaseProperties,
-} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
+import { CharacterDataSource } from '../../actor/actortypes.js'
+import { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
 type LegacyType = 'quests' | 'bonds' | 'discoveries'
@@ -178,14 +172,10 @@ const props = defineProps<{
 }>()
 
 const $actor = inject($ActorKey)
-const actor = inject(ActorKey) as Ref<
-  ReturnType<typeof IronswornActor.prototype.toObject> &
-    CharacterDataSource &
-    ActorData
->
+const actor = inject(ActorKey) as Ref
 
 const ticks = computed(
-  () => actor.value.data.legacies?.[props.legacy] ?? minTicks
+  () => actor.value.system.legacies?.[props.legacy] ?? minTicks
 )
 const ticksDisplayed = computed(() => ticks.value % maxTicks)
 
@@ -205,7 +195,7 @@ const xpEarned = computed(() => {
 })
 
 const xpSpent = computed(
-  () => actor.value.data?.legacies[`${props.legacy}XpSpent`] ?? 0
+  () => actor.value.system?.legacies[`${props.legacy}XpSpent`] ?? 0
 )
 
 const markTooltip = computed(() => {
@@ -231,14 +221,14 @@ const overflowLabel = computed(() => {
 
 function setXp(newValue: number) {
   $actor?.update({
-    [`data.legacies.${props.legacy}XpSpent`]: newValue,
+    [`system.legacies.${props.legacy}XpSpent`]: newValue,
   })
 }
 
 function adjustTrack(inc) {
-  const current = actor.value.data?.legacies[props.legacy] ?? 0
+  const current = actor.value.system?.legacies[props.legacy] ?? 0
   $actor?.update({
-    [`data.legacies.${props.legacy}`]: current + inc,
+    [`system.legacies.${props.legacy}`]: current + inc,
   })
 }
 function increase() {

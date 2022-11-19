@@ -4,8 +4,8 @@
     :class="{ [`asset-${$actor?.toolset}`]: true }"
     :aria-expanded="expanded"
     :style="
-      props.asset?.data?.color
-        ? `--ironsworn-color-thematic: ${props.asset?.data?.color}`
+      props.asset?.system?.color
+        ? `--ironsworn-color-thematic: ${props.asset?.system?.color}`
         : undefined
     "
   >
@@ -20,7 +20,7 @@
           {{ asset.name }}
         </h4>
         <span class="asset-type" aria-label="asset type">
-          {{ asset.data.category }}
+          {{ asset.system.category }}
         </span>
       </button>
       <div class="asset-controls flexrow nogrow">
@@ -43,16 +43,16 @@
       >
         <with-rolllisteners
           element="div"
-          v-html="$enrichHtml(asset.data.description ?? '')"
-          v-if="asset.data.description"
+          v-html="$enrichHtml(asset.system.description ?? '')"
+          v-if="asset.system.description"
           @moveclick="moveclick"
         />
-        <div v-html="$enrichHtml(asset.data.requirement ?? '')"></div>
+        <div v-html="$enrichHtml(asset.system.requirement ?? '')"></div>
 
-        <dl class="asset-fields" v-if="asset.data.fields?.length">
+        <dl class="asset-fields" v-if="asset.system.fields?.length">
           <div
             class="asset-field"
-            v-for="(field, i) in asset.data.fields"
+            v-for="(field, i) in asset.system.fields"
             :key="'field' + i"
           >
             <dt class="asset-field-label">{{ field.name }}</dt>
@@ -83,15 +83,15 @@
 
         <div class="flexrow nogrow">
           <ConditionMeterSlider
-            v-if="asset.data.track.enabled"
+            v-if="asset.system.track.enabled"
             sliderStyle="horizontal"
             class="asset-condition-meter"
             documentType="Item"
             attr="track.current"
-            :current-value="asset.data.track.current"
-            :max="asset.data.track.max"
+            :current-value="asset.system.track.current"
+            :max="asset.system.track.max"
             :min="0"
-            :statLabel="asset.data.track.name"
+            :statLabel="asset.system.track.name"
             labelPosition="left"
             :read-only="false"
           />
@@ -100,10 +100,10 @@
 
         <section
           class="flexcol stack nogrow"
-          v-if="asset.data.exclusiveOptions.length > 0"
+          v-if="asset.system.exclusiveOptions.length > 0"
         >
           <asset-exclusiveoption
-            v-for="(opt, i) in asset.data.exclusiveOptions"
+            v-for="(opt, i) in asset.system.exclusiveOptions"
             :key="'option' + i"
             :opt="opt"
             @click="exclusiveOptionClick(i)"
@@ -145,7 +145,7 @@ const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })
 const enabledAbilities = computed(() => {
-  const data = props.asset.data as AssetDataPropertiesData
+  const data = props.asset.system as AssetDataPropertiesData
   const abilities = Object.values(data.abilities)
   return abilities.filter((x) => x.enabled)
 })
@@ -176,24 +176,26 @@ function destroy() {
   })
 }
 function exclusiveOptionClick(selectedIdx) {
-  const options = props.asset.data.exclusiveOptions
+  const options = props.asset.system.exclusiveOptions
   for (let i = 0; i < options.length; i++) {
     options[i].selected = i === selectedIdx
   }
-  foundryItem?.update({ data: { exclusiveOptions: options } })
+  foundryItem?.update({ system: { exclusiveOptions: options } })
 }
 function moveclick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
-  const abilities = Object.values(props.asset.data.abilities) as AssetAbility[]
+  const abilities = Object.values(
+    props.asset.system.abilities
+  ) as AssetAbility[]
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
-  foundryItem?.update({ data: { abilities } })
+  foundryItem?.update({ system: { abilities } })
 }
 
 function toggleCondition(idx: number) {
-  const { conditions } = props.asset.data
+  const { conditions } = props.asset.system
   conditions[idx].ticked = !conditions[idx].ticked
-  foundryItem?.update({ data: { conditions } })
+  foundryItem?.update({ system: { conditions } })
 }
 </script>

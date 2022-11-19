@@ -1,5 +1,6 @@
 import { IronswornSettings } from '../../helpers/settings'
 import { IronswornPrerollDialog } from '../../rolls'
+import { CharacterDataPropertiesData } from '../actortypes'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
 export class IronswornCompactCharacterSheet extends ActorSheet {
@@ -67,7 +68,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     if (stat) {
       IronswornPrerollDialog.showForStat(
         stat,
-        this.actor.data.data[stat],
+        this.actor.system[stat],
         this.actor
       )
       this.render(true)
@@ -81,14 +82,14 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     const min = parseInt(ev.currentTarget.dataset.min || '-100')
     const max = parseInt(ev.currentTarget.dataset.max || '100')
     const { stat } = ev.currentTarget.dataset
-    const actorData = this.actor.data.data
-    let value = actorData[stat]
+    const actorData = this.actor.system as CharacterDataPropertiesData
+    let value = actorData[stat] as number
     value += amt
     if (value >= min && value <= max) {
-      this.actor.update({ data: { [stat]: value } })
+      this.actor.update({ system: { [stat]: value } })
       if (stat === 'supply' && IronswornSettings.get('shared-supply')) {
         IronswornSettings.updateGlobalAttribute({
-          data: { supply: value },
+          system: { supply: value },
         })
       }
     }
@@ -97,7 +98,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
   _momentumBurn(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    if (this.actor.data.type === 'character') {
+    if (this.actor.type === 'character') {
       this.actor.burnMomentum()
     }
   }

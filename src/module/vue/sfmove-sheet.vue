@@ -152,11 +152,11 @@ const state = reactive<{
   currentStatText?: string
 }>({
   currentProperty: 'Text',
-  currentContent: props.item.data.Text,
+  currentContent: props.item.system.Text,
 })
 
 const triggerOptions = computed(() => {
-  const itemTriggerOptions = props.item.data.Trigger?.Options || []
+  const itemTriggerOptions = props.item.system.Trigger?.Options || []
   return itemTriggerOptions.map((x, i) => {
     const title = x['Action roll']
       ? `Roll +${x['Action roll'].Stat}`
@@ -172,7 +172,7 @@ const triggerOptions = computed(() => {
 
 function switchContent(prop, actionPropKey?: string) {
   state.currentProperty = prop
-  state.currentContent = get(props.item.data, prop)
+  state.currentContent = get(props.item.system, prop)
   state.currentActionPropKey = actionPropKey
   // {
   //   Method: 'Any',
@@ -182,14 +182,14 @@ function switchContent(prop, actionPropKey?: string) {
   //   dfid: 'Starforged/Moves/Recover/Heal/Trigger/Options/1',
   // }
   const ap =
-    actionPropKey && (get(props.item.data, actionPropKey) as any | undefined)
+    actionPropKey && (get(props.item.system, actionPropKey) as any | undefined)
   state.currentRollType = ap?.['Roll type']
   state.currentMethod = ap?.Method
   state.currentStatText = ap?.Using?.join?.(',') ?? ''
 }
 
 function addTrigger() {
-  let { Options } = props.item.data.Trigger
+  let { Options } = props.item.system.Trigger
   Options ||= []
   Options.push({
     Text: '',
@@ -197,15 +197,15 @@ function addTrigger() {
     'Roll type': 'Action roll',
     Using: 'Iron',
   })
-  $item?.update({ data: { Trigger: { Options } } })
+  $item?.update({ system: { Trigger: { Options } } })
 }
 
 function removeTrigger(option) {
   const idx = triggerOptions.value.findIndex((x) => x.key === option.key)
-  let { Options } = props.item.data.Trigger
+  let { Options } = props.item.system.Trigger
   Options ||= []
   Options.splice(idx, 1)
-  $item?.update({ data: { Trigger: { Options } } })
+  $item?.update({ system: { Trigger: { Options } } })
   switchContent('Text')
 }
 
@@ -218,22 +218,22 @@ function saveActionProps() {
   )
     return
 
-  const opt = get(props.item.data, state.currentActionPropKey)
+  const opt = get(props.item.system, state.currentActionPropKey)
   opt.Method = state.currentMethod
   opt['Roll type'] = state.currentRollType
   opt.Using = state.currentStatText.split(',').map((x) => x.trim())
-  set(props.item.data, state.currentActionPropKey, opt)
-  $item?.update({ data: props.item.data })
+  set(props.item.system, state.currentActionPropKey, opt)
+  $item?.update({ system: props.item.system })
 }
 
 function saveText() {
   if (state.currentProperty.includes('Options')) {
-    set(props.item.data, state.currentProperty, state.currentContent)
-    const { Options } = props.item.data.Trigger
-    $item?.update({ data: { Trigger: { Options } } })
+    set(props.item.system, state.currentProperty, state.currentContent)
+    const { Options } = props.item.system.Trigger
+    $item?.update({ system: { Trigger: { Options } } })
   } else {
     $item?.update({
-      data: { [state.currentProperty]: state.currentContent },
+      system: { [state.currentProperty]: state.currentContent },
     })
   }
 }
