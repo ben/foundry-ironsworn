@@ -1,11 +1,11 @@
 <form class='preroll-dialog{{#if action}} action-roll-dialog{{else}} progress-roll-dialog{{/if}}'>
   {{#if move}}
   <section class='roll-trigger-text'>
-    {{{enrichMarkdown move.data.data.Trigger.Text}}}
+    {{{enrichMarkdown move.system.Trigger.Text}}}
   </section>
-  {{#if move.data.data.Trigger.Options}}
+  {{#if move.system.Trigger.Options}}
   <ul class='trigger-options'>
-    {{#each move.data.data.Trigger.Options}}
+    {{#each move.system.Trigger.Options}}
     {{#if Text}}
     <li class='trigger-option'>
       {{Text}}:
