@@ -118,36 +118,17 @@ textarea {
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import { provide, computed, inject, nextTick, ref, Component } from 'vue'
-import { IronswornActor } from '../actor/actor'
 import { $ActorKey, ActorKey } from './provisions'
-import { throttle } from 'lodash'
-import DocumentImg from './components/document-img.vue'
-import DocumentName from './components/document-name.vue'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnCompendium from './components/buttons/btn-compendium.vue'
 import BtnFaicon from './components/buttons/btn-faicon.vue'
-import Track from './components/progress/track.vue'
 import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'
 import MceEditor from './components/mce-editor.vue'
 import BtnIsicon from './components/buttons/btn-isicon.vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
-import {
-  createIronswornChatRoll,
-  createIronswornDenizenChat,
-} from '../chat/chatrollhelpers'
-import { rollSiteFeature } from '../helpers/rolldialog'
-import { moveDataByName } from '../helpers/data'
-import {
-  DelveDomainDataSource,
-  DelveThemeDataSource,
-  DelveThemeDataSourceData,
-  FeatureOrDanger,
-} from '../item/itemtypes'
-import { OracleRollMessage, TableRow } from '../rolls'
-import { SiteDataProperties } from '../actor/actortypes'
+import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
-import BtnRollmove from './components/buttons/btn-rollmove.vue'
 import SiteMoves from './components/site/site-moves.vue'
 
 const props = defineProps<{
