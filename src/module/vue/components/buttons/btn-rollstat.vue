@@ -55,9 +55,5 @@ function rollStat(): any {
       $actor
     )
   }
-  RollDialog.show({
-    actor: $actor,
-    stat: props.attr,
-  })
 }
 </script>
