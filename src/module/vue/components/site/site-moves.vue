@@ -43,17 +43,18 @@ import {
   FeatureOrDanger,
 } from '../../../item/itemtypes'
 import { TableRow, OracleRollMessage } from '../../../rolls'
-import { $ActorKey } from '../../provisions'
+import { $ActorKey, ActorKey } from '../../provisions'
 
 import SiteMovebox from './site-movebox.vue'
 
-const site = inject($ActorKey)
+const site = inject(ActorKey)
+const $site = inject($ActorKey)
 
 const theme = computed(() => {
-  return site?.items.find((x) => x.type === 'delve-theme')
+  return site?.value?.items.find((x) => x.type === 'delve-theme')
 })
 const domain = computed(() => {
-  return site?.items.find((x) => x.type === 'delve-domain')
+  return site?.value?.items.find((x) => x.type === 'delve-domain')
 })
 
 const hasThemeAndDomain = computed(() => {
@@ -79,22 +80,22 @@ async function randomFeature() {
     ...domainData.features.map(convertToRow),
   ]
   const title = game.i18n.localize('IRONSWORN.Feature')
-  const subtitle = `${site?.name} – ${theme.value?.name} ${domain.value?.name}`
+  const subtitle = `${$site?.name} – ${theme.value?.name} ${domain.value?.name}`
   const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
   orm.createOrUpdate()
 }
 
 async function locateObjective() {
-  if (!site) return
+  if (!$site) return
   const move = await moveDataByName('Locate Your Objective')
-  const siteSys = site.system as SiteDataPropertiesData
+  const siteSys = $site.system as SiteDataPropertiesData
   const progress = Math.floor(siteSys.current / 4)
   const roll = new Roll(`{${progress}, d10, d10}`)
   createIronswornChatRoll({
     isProgress: true,
     move,
     roll,
-    subtitle: site.name || undefined,
+    subtitle: $site.name || undefined,
   })
 }
 </script>
