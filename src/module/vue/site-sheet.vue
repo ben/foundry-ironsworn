@@ -55,40 +55,7 @@
 
     <!-- MOVES -->
     <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
-    <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
-      <div class="flexrow boxrow">
-        <SiteMovebox movename="Delve the Depths" />
-        <!-- TODO: double check styling here -->
-        <button
-          type="button"
-          class="box flexrow clickable block"
-          :class="{ disabled: !hasThemeAndDomain }"
-          @click="randomFeature"
-        >
-          <h4>
-            {{ $t('IRONSWORN.Feature') }}
-          </h4>
-        </button>
-
-        <SiteMovebox
-          movename="Reveal a Danger"
-          :disabled="!hasThemeAndDomain"
-        />
-      </div>
-      <div class="flexrow boxrow">
-        <SiteMovebox movename="Find an Opportunity" />
-        <button
-          type="button"
-          class="box flexrow clickable block"
-          @click="locateObjective"
-        >
-          <h4>
-            {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
-          </h4>
-        </button>
-        <SiteMovebox movename="Escape the Depths" />
-      </div>
-    </div>
+    <SiteMoves />
 
     <!-- DENIZENS -->
     <h4 class="flexrow nogrow">
@@ -162,7 +129,6 @@ import BtnFaicon from './components/buttons/btn-faicon.vue'
 import Track from './components/progress/track.vue'
 import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'
-import SiteMovebox from './components/site/site-movebox.vue'
 import MceEditor from './components/mce-editor.vue'
 import BtnIsicon from './components/buttons/btn-isicon.vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
@@ -181,6 +147,8 @@ import {
 import { OracleRollMessage, TableRow } from '../rolls'
 import { SiteDataProperties } from '../actor/actortypes'
 import ProgressTrack from './components/progress/progress-track.vue'
+import BtnRollmove from './components/buttons/btn-rollmove.vue'
+import SiteMoves from './components/site/site-moves.vue'
 
 const props = defineProps<{
   actor: any
@@ -197,19 +165,9 @@ const editMode = computed(() => {
 const theme = computed(() => {
   return props.actor.items.find((x) => x.type === 'delve-theme')
 })
-const ironswornTheme = computed(() => {
-  return $actor?.items.find((x) => x.id === theme.value?._id)
-})
 
 const domain = computed(() => {
   return props.actor.items.find((x) => x.type === 'delve-domain')
-})
-const ironswornDomain = computed(() => {
-  return $actor?.items.find((x) => x.id === domain.value?._id)
-})
-
-const hasThemeAndDomain = computed(() => {
-  return theme.value && domain.value
 })
 
 const rankText = computed(() => {
@@ -228,43 +186,6 @@ function markProgress() {
   const increment = RANK_INCREMENTS[props.actor.system.rank]
   const newValue = Math.min(props.actor.system.current + increment, 40)
   $actor?.update({ 'system.current': newValue })
-}
-
-async function randomFeature() {
-  if (!hasThemeAndDomain.value) return
-
-  const themeData = ironswornTheme.value?.system as DelveThemeDataSourceData
-  const domainData = ironswornDomain.value?.system as DelveThemeDataSourceData
-  const convertToRow = (f: FeatureOrDanger): TableRow => {
-    const { low, high, description } = f
-    return {
-      low,
-      high,
-      text: description,
-      selected: false,
-    }
-  }
-  const themeSys = themeData
-  const rows = [
-    ...themeData.features.map(convertToRow),
-    ...domainData.features.map(convertToRow),
-  ]
-  const title = game.i18n.localize('IRONSWORN.Feature')
-  const subtitle = `${$actor?.name} – ${ironswornTheme.value?.name} ${ironswornDomain.value?.name}`
-  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
-  orm.createOrUpdate()
-}
-
-async function locateObjective() {
-  const move = await moveDataByName('Locate Your Objective')
-  const progress = Math.floor(props.actor.system.current / 4)
-  const roll = new Roll(`{${progress}, d10, d10}`)
-  createIronswornChatRoll({
-    isProgress: true,
-    move,
-    roll,
-    subtitle: props.actor.name || undefined,
-  })
 }
 
 const denizenRefs = ref<{ [k: number]: any }>({})
