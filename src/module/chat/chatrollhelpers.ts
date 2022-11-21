@@ -229,9 +229,9 @@ function calculateMomentumProps(
 }
 
 export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
-  const { dfid } = move.system as SFMoveDataPropertiesData
+  const { dfid, Oracles } = move.system as SFMoveDataPropertiesData
   const dfMove = await getDFMoveByDfId(dfid)
-  const dfIds = dfMove?.Oracles || []
+  const dfIds = Oracles || dfMove?.Oracles || []
   return compact(await Promise.all(dfIds.map(getFoundryTableByDfId)))
 }
 
