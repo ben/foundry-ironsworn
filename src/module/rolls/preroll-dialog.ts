@@ -17,6 +17,7 @@ import { CharacterDataPropertiesData } from '../actor/actortypes'
 import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
 import { ChallengeResolutionDialog } from './challenge-resolution-dialog'
+import { createSfMoveChatMessage } from '../chat/sf-move-chat-message'
 
 export function localeCapitalize(str: string) {
   const locale = game.i18n.lang
@@ -276,11 +277,8 @@ export class IronswornPrerollDialog extends Dialog<
     const data = move.system as SFMoveDataPropertiesData
     const options = rollableOptions(data.Trigger)
     if (!options.length) {
-      throw new Error(
-        `Move '${move.name}' (${JSON.stringify(
-          prerollOptions
-        )}) is not rollable`
-      )
+      // Just dump the move to chat
+      return createSfMoveChatMessage(move)
     }
 
     const title = move.name || 'MOVE'
