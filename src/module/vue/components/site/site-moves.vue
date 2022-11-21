@@ -1,9 +1,7 @@
 <template>
   <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
     <div class="flexrow boxrow" style="justify-items: stretch">
-      <BtnRollmove :move="moves.delveTheDepths" class="box juicy text block">
-        {{ moves.delveTheDepths?.displayName }}
-      </BtnRollmove>
+      <BtnSiteMove :move="moves.delveTheDepths" />
 
       <BtnIsicon
         icon="d10-tilt"
@@ -14,19 +12,11 @@
         {{ $t('IRONSWORN.Feature') }}
       </BtnIsicon>
 
-      <BtnRollmove
-        :move="moves.revealADanger"
-        class="box juicy text block"
-        :disabled="!hasThemeAndDomain"
-      >
-        {{ moves.revealADanger?.displayName }}
-      </BtnRollmove>
+      <BtnSiteMove :move="moves.revealADanger" :disabled="!hasThemeAndDomain" />
     </div>
     <div class="flexrow boxrow">
       <!-- This one is really just an oracle roll with some description -->
-      <BtnRollmove :move="moves.findAnOpportunity" class="box juicy text block">
-        {{ moves.findAnOpportunity?.displayName }}
-      </BtnRollmove>
+      <BtnSiteMove :move="moves.findAnOpportunity" />
 
       <BtnIsicon
         icon="d10-tilt"
@@ -36,9 +26,7 @@
         {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
       </BtnIsicon>
 
-      <BtnRollmove :move="moves.escapeTheDepths" class="box juicy text block">
-        {{ moves.escapeTheDepths?.displayName }}
-      </BtnRollmove>
+      <BtnSiteMove :move="moves.escapeTheDepths" />
     </div>
   </div>
 </template>
@@ -58,6 +46,7 @@ import { $ActorKey, ActorKey } from '../../provisions'
 
 import BtnRollmove from '../buttons/btn-rollmove.vue'
 import BtnIsicon from '../buttons/btn-isicon.vue'
+import BtnSiteMove from './btn-site-move.vue'
 
 const site = inject(ActorKey)
 const $site = inject($ActorKey)
