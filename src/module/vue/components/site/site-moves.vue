@@ -5,7 +5,7 @@
 
       <BtnIsicon
         icon="d10-tilt"
-        class="box juicy text block"
+        class="box text block"
         :class="{ disabled: !hasThemeAndDomain }"
         @click="randomFeature"
       >
@@ -20,7 +20,7 @@
 
       <BtnIsicon
         icon="d10-tilt"
-        class="box juicy text block"
+        class="box text block"
         @click="locateObjective"
       >
         {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
