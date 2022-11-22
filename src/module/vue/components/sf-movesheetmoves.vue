@@ -1,6 +1,6 @@
 <template>
   <article class="flexcol" :class="$style.wrapper">
-    <nav class="flexrow nogrow" :class="$style['nav-search']">
+    <nav class="flexrow nogrow" :class="$style.navSearch">
       <input
         type="search"
         :placeholder="$t('IRONSWORN.Search')"
@@ -11,13 +11,13 @@
         icon="times-circle"
         class="nogrow clickable text"
         @click="clearSearch()"
-        :class="$style['search-btn']"
+        :class="$style.searchBtn"
       />
       <BtnFaicon
         icon="compress-alt"
         class="nogrow clickable text"
         @click="collapseMoveCategories()"
-        :class="$style['search-btn']"
+        :class="$style.searchBtn"
       />
     </nav>
 
@@ -54,10 +54,10 @@
 </template>
 
 <style lang="less" module>
-.nav-search {
+.navSearch {
   margin-top: 0.5rem;
 }
-.search-btn {
+.searchBtn {
   padding: 6px;
 }
 .wrapper {
@@ -115,7 +115,9 @@ const checkedSearchQuery = computed(() => {
 })
 
 const flatMoves = computed(() =>
-  state.categories.flatMap((category) => category.moves)
+  state.categories.flatMap((category) =>
+    category.moves.map((mv) => ({ ...mv, color: category.color }))
+  )
 )
 
 const searchResults = computed(() => {
