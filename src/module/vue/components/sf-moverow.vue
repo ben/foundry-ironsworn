@@ -125,17 +125,14 @@
 
   align-items: center;
   .wrapper[aria-expanded='false'] & {
-    .fake-stroke(var(--ironsworn-color-fg));
+    .fake-stroke();
   }
 
   .wrapper[aria-expanded='true'] & {
-    // .cardColors();
     .invertColors();
     border-top-left-radius: @border_radius;
     border-top-right-radius: @border_radius;
   }
-
-  // color: var(--ironsworn-color-thematic);
 }
 
 .moveControls {

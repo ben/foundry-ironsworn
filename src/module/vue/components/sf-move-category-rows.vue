@@ -39,8 +39,6 @@
 }
 
 .wrapper {
-  // border-width: 2px;
-  // border-style: solid;
   border-radius: 5px;
   background-color: var(--ironsworn-color-thematic);
 }

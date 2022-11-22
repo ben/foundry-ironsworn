@@ -82,8 +82,8 @@ function walkCategory(
   compendiumMoves: IronswornItem[]
 ): MoveCategory {
   const newCategory: MoveCategory = {
+    // FIXME: revert to pulling directly from DF when it's fixed in 2.0
     color: MoveCategoryColor[category.Name] ?? null,
-    // color: category.Display.Color ?? null,
     displayName: game.i18n.localize(`IRONSWORN.MOVES.${category.Name}`),
     dataforgedCategory: category,
     moves: [] as Move[],
