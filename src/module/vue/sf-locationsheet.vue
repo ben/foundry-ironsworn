@@ -71,6 +71,7 @@
         :nameClass="{
           highlighted: data.firstLookHighlight && canRandomizeName,
         }"
+        @change="nameChange"
       >
         <btn-isicon
           v-if="canRandomizeName"
@@ -117,11 +118,7 @@
       </div>
     </section>
     <section class="flexcol">
-      <MceEditor
-        v-model="actor.data.description"
-        @save="saveDescription"
-        @change="throttledSaveDescription"
-      />
+      <MceEditor v-model="actor.data.description" @save="saveDescription" />
     </section>
   </SheetBasic>
 </template>
@@ -168,13 +165,10 @@ label {
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { capitalize, flatten, sample, throttle } from 'lodash'
-import { provide, computed, reactive, inject } from 'vue'
-import { IronswornActor } from '../actor/actor'
+import { capitalize, flatten, sample } from 'lodash'
+import { provide, computed, reactive, inject, watch } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 import BtnIsicon from './components/buttons/btn-isicon.vue'
-import DocumentImg from './components/document-img.vue'
-import DocumentName from './components/document-name.vue'
 import BtnIcon from './components/buttons/btn-icon.vue'
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
@@ -543,9 +537,8 @@ const klassIsNotValid = computed(() => {
 })
 
 function saveDescription() {
-  $actor?.update({ 'data.description': props.actor.data.description })
+  $actor?.update({ 'system.description': props.actor.data.description })
 }
-const throttledSaveDescription = throttle(saveDescription, 1000)
 
 function regionChanged(evt) {
   const sceneId = game.user?.viewedScene
@@ -562,7 +555,7 @@ function klassChanged(evt) {
 
 async function saveSubtype(subtype) {
   const img = randomImage(subtype, props.actor.data.klass)
-  await $actor?.update({ data: { subtype } })
+  await $actor?.update({ system: { subtype } })
 
   const scale = {
     planet: 1,
@@ -577,7 +570,7 @@ async function saveKlass(klass) {
   const { subtype } = props.actor.data
   const img = randomImage(subtype, klass)
 
-  await $actor?.update({ img: img || undefined, data: { klass } })
+  await $actor?.update({ img: img || undefined, system: { klass } })
   await updateAllTokens({ img })
 }
 
@@ -672,7 +665,11 @@ async function rollOracle(oracle) {
     drawText,
     '</p>',
   ]
-  await $actor?.update({ data: { description: parts.join('') } })
+  await $actor?.update({ system: { description: parts.join('') } })
+}
+
+function nameChange() {
+  updateAllTokens({ name: props.actor.name })
 }
 
 async function updateAllTokens(data) {

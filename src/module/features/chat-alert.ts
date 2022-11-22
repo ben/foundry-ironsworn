@@ -2,18 +2,18 @@ import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/fo
 import { capitalize, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import {
-  CharacterDataProperties,
-  SharedDataProperties,
-  SiteDataProperties,
-  StarshipDataProperties,
+  CharacterDataPropertiesData,
+  SharedDataPropertiesData,
+  SiteDataPropertiesData,
+  StarshipDataPropertiesData,
 } from '../actor/actortypes'
 import { RANKS } from '../constants'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
 import {
-  AssetDataProperties,
-  BondsetDataProperties,
-  ProgressDataProperties,
+  AssetDataPropertiesData,
+  BondsetDataPropertiesData,
+  ProgressDataPropertiesData,
 } from '../item/itemtypes'
 
 type ActorTypeHandler = (IronswornActor, any) => string | undefined
@@ -92,12 +92,12 @@ export function registerChatAlertHooks() {
 
 const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
   character: (actor: IronswornActor, data) => {
-    const characterData = actor.data as CharacterDataProperties
+    const characterData = actor.system as CharacterDataPropertiesData
 
     // Ironsworn XP
-    if (data.data?.xp !== undefined) {
-      const oldXp = characterData.data.xp
-      const newXp = data.data.xp as number
+    if (data.system?.xp !== undefined) {
+      const oldXp = characterData.xp
+      const newXp = data.system.xp as number
       if (newXp > oldXp) {
         return game.i18n.format('IRONSWORN.ChatAlert.MarkedXP', {
           amt: newXp - oldXp,
@@ -111,8 +111,8 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
 
     // Starforged legacy XP
     for (const kind of ['quests', 'bonds', 'discoveries']) {
-      const oldXp = characterData.data.legacies[`${kind}XpSpent`]
-      const newXp = get(data.data, `legacies.${kind}XpSpent`)
+      const oldXp = characterData.legacies[`${kind}XpSpent`]
+      const newXp = get(data.system, `legacies.${kind}XpSpent`)
       if (newXp !== undefined) {
         if (newXp > oldXp) {
           return game.i18n.format('IRONSWORN.ChatAlert.MarkedXP', {
@@ -127,9 +127,9 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
     }
 
     for (const stat of ['momentum', 'health', 'spirit', 'supply']) {
-      const newValue = get(data.data, stat)
+      const newValue = get(data.system, stat)
       if (newValue !== undefined) {
-        const oldValue = get(characterData.data, stat)
+        const oldValue = get(characterData, stat)
         const signPrefix = newValue > oldValue ? '+' : ''
         const i18nStat = game.i18n.localize(`IRONSWORN.${capitalize(stat)}`)
         return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
@@ -158,12 +158,12 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
       'custom2',
     ]
     for (const debility of debilities) {
-      const newValue = get(data.data?.debility, debility)
+      const newValue = get(data.system?.debility, debility)
       if (newValue !== undefined) {
-        const oldValue = characterData.data.debility[debility]
+        const oldValue = characterData.debility[debility]
         if (oldValue === newValue) continue
         const i18nDebility = debility.startsWith('custom')
-          ? get(characterData.data.debility, `${debility}name`)
+          ? get(characterData.debility, `${debility}name`)
           : game.i18n.localize(`IRONSWORN.${capitalize(debility)}`)
         const params = { condition: i18nDebility }
         // TODO: use "impact" if this is an SF character
@@ -177,11 +177,11 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
   },
 
   shared: (actor: IronswornActor, data) => {
-    const sharedData = actor.data as SharedDataProperties
+    const sharedData = actor.system as SharedDataPropertiesData
 
-    if (data.data?.supply !== undefined) {
-      const newValue = data.data.supply
-      const oldValue = sharedData.data.supply
+    if (data.system?.supply !== undefined) {
+      const newValue = data.system.supply
+      const oldValue = sharedData.supply
       const signPrefix = newValue > oldValue ? '+' : ''
       const i18nStat = game.i18n.localize('IRONSWORN.Supply')
       return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
@@ -195,12 +195,12 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
   },
 
   starship: (actor: IronswornActor, data) => {
-    const starshipData = actor.data as StarshipDataProperties
+    const starshipData = actor.system as StarshipDataPropertiesData
     const debilities = ['cursed', 'battered']
     for (const debility of debilities) {
-      const newValue = get(data.data?.debility, debility)
+      const newValue = get(data.system?.debility, debility)
       if (newValue !== undefined) {
-        const oldValue = starshipData.data.debility[debility]
+        const oldValue = starshipData.debility[debility]
         if (oldValue === newValue) continue
         const i18nDebility = game.i18n.localize(
           `IRONSWORN.${capitalize(debility)}`
@@ -217,18 +217,18 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
   },
 
   site: (actor: IronswornActor, data) => {
-    const siteData = actor.data as SiteDataProperties
+    const siteData = actor.system as SiteDataPropertiesData
 
-    if (data.data?.rank) {
-      const oldRank = game.i18n.localize(RANKS[siteData.data.rank])
-      const newRank = game.i18n.localize(RANKS[data.data.rank])
+    if (data.system?.rank) {
+      const oldRank = game.i18n.localize(RANKS[siteData.rank])
+      const newRank = game.i18n.localize(RANKS[data.system.rank])
       return game.i18n.format('IRONSWORN.ChatAlert.RankChanged', {
         old: oldRank,
         new: newRank,
       })
     }
-    if (data.data?.current !== undefined) {
-      const advanced = data.data.current > siteData.data.current
+    if (data.system?.current !== undefined) {
+      const advanced = data.system.current > siteData.current
       return game.i18n.localize(
         `IRONSWORN.ChatAlert.Progress${advanced ? 'Advanced' : 'Reduced'}`
       )
@@ -240,25 +240,25 @@ const ACTOR_TYPE_HANDLERS: { [key: string]: ActorTypeHandler } = {
 type ItemTypeHandler = (IronswornItem, any) => string | undefined
 const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
   progress: (item: IronswornItem, data) => {
-    const progressData = item.data as ProgressDataProperties
-    if (data.data?.rank) {
-      const oldRank = game.i18n.localize(RANKS[progressData.data.rank])
-      const newRank = game.i18n.localize(RANKS[data.data.rank])
+    const progressData = item.system as ProgressDataPropertiesData
+    if (data.system?.rank) {
+      const oldRank = game.i18n.localize(RANKS[progressData.rank])
+      const newRank = game.i18n.localize(RANKS[data.system.rank])
       return game.i18n.format('IRONSWORN.ChatAlert.rankChanged', {
         old: oldRank,
         new: newRank,
       })
     }
-    if (data.data?.current !== undefined) {
-      const advanced = data.data.current > progressData.data.current
+    if (data.system?.current !== undefined) {
+      const advanced = data.system.current > progressData.current
       return game.i18n.localize(
         `IRONSWORN.ChatAlert.progress${advanced ? 'Advanced' : 'Reduced'}`
       )
     }
-    if (data.data?.clockTicks !== undefined) {
-      const change = data.data.clockTicks - progressData.data.clockTicks
-      const advanced = data.data.clockTicks > progressData.data.clockTicks
-      const completed = data.data.clockTicks >= progressData.data.clockMax
+    if (data.system?.clockTicks !== undefined) {
+      const change = data.system.clockTicks - progressData.clockTicks
+      const advanced = data.system.clockTicks > progressData.clockTicks
+      const completed = data.system.clockTicks >= progressData.clockMax
       let i18nKey = 'IRONSWORN.ChatAlert.clock'
       switch (true) {
         case completed: {
@@ -283,15 +283,15 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       }
       return game.i18n.format(i18nKey, {
         change,
-        max: progressData.data.clockMax,
-        old: progressData.data.clockTicks,
-        new: data.data.clockTicks,
+        max: progressData.clockMax,
+        old: progressData.clockTicks,
+        new: data.system.clockTicks,
       })
     }
-    if (data.data?.completed !== undefined) {
+    if (data.system?.completed !== undefined) {
       return game.i18n.localize(
         `IRONSWORN.ChatAlert.completed${
-          data.data?.completed ? 'Marked' : 'Unmarked'
+          data.system?.completed ? 'Marked' : 'Unmarked'
         }`
       )
     }
@@ -300,10 +300,10 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
   vow: (item, data) => ITEM_TYPE_HANDLERS.progress(item, data),
 
   asset: (item: IronswornItem, data) => {
-    const assetData = item.data as AssetDataProperties
-    if (data.data?.abilities !== undefined) {
-      const oldEnables = assetData.data.abilities.map((x) => x.enabled)
-      const newEnables = data.data.abilities.map((x) => x.enabled)
+    const assetData = item.system as AssetDataPropertiesData
+    if (data.system?.abilities !== undefined) {
+      const oldEnables = assetData.abilities.map((x) => x.enabled)
+      const newEnables = data.system.abilities.map((x) => x.enabled)
       for (let i = 0; i < oldEnables.length; i++) {
         if (oldEnables[i] !== newEnables[i]) {
           const descriptors = ['First', 'Second', 'Third', 'Fourth', 'Fifth']
@@ -319,28 +319,30 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
       }
     }
 
-    if (data.data?.track?.current !== undefined) {
-      const newValue = data.data.track.current
-      const oldValue = assetData.data.track.current
+    if (data.system?.track?.current !== undefined) {
+      const newValue = data.system.track.current
+      const oldValue = assetData.track.current
       const signPrefix = newValue > oldValue ? '+' : ''
       return game.i18n.format('IRONSWORN.ChatAlert.AdjustedStat', {
         amt: `${signPrefix}${newValue - oldValue}`,
-        stat: assetData.data.track.name,
+        stat: assetData.track.name,
         val: newValue,
       })
     }
 
-    if (data.data?.exclusiveOptions !== undefined) {
-      const selectedOption = data.data.exclusiveOptions.find((x) => x.selected)
+    if (data.system?.exclusiveOptions !== undefined) {
+      const selectedOption = data.system.exclusiveOptions.find(
+        (x) => x.selected
+      )
       return game.i18n.format('IRONSWORN.ChatAlert.MarkedOption', {
         name: selectedOption.name,
       })
     }
 
-    if (data.data?.fields !== undefined) {
-      for (let i = 0; i < data.data.fields.length; i++) {
-        const newField = data.data.fields[i]
-        const oldField = assetData.data.fields[i]
+    if (data.system?.fields !== undefined) {
+      for (let i = 0; i < data.system.fields.length; i++) {
+        const newField = data.system.fields[i]
+        const oldField = assetData.fields[i]
         if (oldField && oldField?.value !== newField.value) {
           return game.i18n.format('IRONSWORN.ChatAlert.SetField', {
             name: newField.name,
@@ -349,14 +351,17 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
         }
       }
     }
+
+    // TODO: conditions
+
     return undefined
   },
 
   bondset: (item: IronswornItem, data) => {
-    const bondsetData = item.data as BondsetDataProperties
-    if (data.data?.bonds !== undefined) {
-      const oldLen = Object.values(bondsetData.data.bonds).length
-      const newLen = Object.values(data.data.bonds).length
+    const bondsetData = item.system as BondsetDataPropertiesData
+    if (data.system?.bonds !== undefined) {
+      const oldLen = Object.values(bondsetData.bonds).length
+      const newLen = Object.values(data.system.bonds).length
       if (oldLen < newLen) {
         return game.i18n.localize('IRONSWORN.ChatAlert.AddBond')
       } else if (newLen < oldLen) {

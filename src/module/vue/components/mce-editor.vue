@@ -1,6 +1,11 @@
 <template>
   <div v-if="data.editing" class="editor flexcol">
-    <Editor v-bind="$attrs" :modelValue="modelValue" :init="mceConfig" />
+    <Editor
+      v-bind="$attrs"
+      :modelValue="modelValue"
+      :init="mceConfig"
+      @blur="$emit('save')"
+    />
   </div>
   <div v-else class="editor flexcol">
     <with-rolllisteners
@@ -20,14 +25,18 @@
 
 <script setup lang="ts">
 import { RawEditorSettings } from 'tinymce'
-import { inject, reactive } from 'vue'
+import { onUnmounted, reactive } from 'vue'
 import { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import WithRolllisteners from './with-rolllisteners.vue'
 
-defineProps<{ modelValue: string; interceptClicks?: boolean }>()
+const props = defineProps<{
+  modelValue: string
+  interceptClicks?: boolean
+  editing?: boolean
+}>()
 
-const data = reactive({ editing: false })
+const data = reactive({ editing: props.editing ?? false })
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
@@ -38,6 +47,8 @@ function oracleClick(dfId: string) {
 }
 
 const $emit = defineEmits<{ (e: 'save') }>()
+
+onUnmounted(() => $emit('save'))
 
 const mceConfig: RawEditorSettings = {
   ...CONFIG.TinyMCE,

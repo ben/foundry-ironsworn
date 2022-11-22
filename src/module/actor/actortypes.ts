@@ -43,7 +43,7 @@ interface CharacterDataSourceData {
   xp: number
 }
 
-interface CharacterDataPropertiesData extends CharacterDataSourceData {
+export interface CharacterDataPropertiesData extends CharacterDataSourceData {
   momentumMax: number
   momentumReset: number
 }
@@ -64,7 +64,7 @@ interface SharedDataSourceData {
   biography: string
   supply: number
 }
-type SharedDataPropertiesData = SharedDataSourceData
+export type SharedDataPropertiesData = SharedDataSourceData
 
 interface SharedDataSource {
   type: 'shared'
@@ -106,7 +106,7 @@ interface SiteDataSourceData {
   current: number
   denizens: DenizenSlot[]
 }
-type SiteDataPropertiesData = SiteDataSourceData
+export type SiteDataPropertiesData = SiteDataSourceData
 
 export interface SiteDataSource {
   type: 'site'
@@ -126,7 +126,7 @@ interface StarshipDataSourceData {
     cursed: boolean
   }
 }
-type StarshipDataPropertiesData = StarshipDataSourceData
+export type StarshipDataPropertiesData = StarshipDataSourceData
 
 export interface StarshipDataSource {
   type: 'starship'

@@ -4,7 +4,7 @@
     <div v-if="foe">
       <div class="flexrow nogrow">
         <RankPips
-          :current="foe.data.rank"
+          :current="foeSystem.rank"
           @click="setRank"
           style="margin-right: 1em"
         />
@@ -20,8 +20,8 @@
       <!-- PROGRESS -->
       <div class="flexrow track nogrow" style="margin-bottom: 1em">
         <ProgressTrack
-          :rank="foe?.data.rank"
-          :ticks="foe.data.current"
+          :rank="foeSystem.rank"
+          :ticks="foeSystem.current"
           data-tooltip-direction="RIGHT"
         />
       </div>
@@ -29,12 +29,8 @@
       <hr class="nogrow" />
 
       <!-- DESCRIPTION -->
-      <MceEditor
-        v-model="foe.data.description"
-        @save="saveDescription"
-        @change="throttledSaveDescription"
-      />
-      <!-- <div v-html="foe.data.description" /> -->
+      <MceEditor v-model="foeSystem.description" @save="saveDescription" />
+      <!-- <div v-html="foeSystem.description" /> -->
     </div>
 
     <div
@@ -74,7 +70,7 @@ import BtnFaicon from './buttons/btn-faicon.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 import MceEditor from './mce-editor.vue'
 import { RANKS, RANK_INCREMENTS } from '../../constants'
-import { ProgressDataProperties } from '../../item/itemtypes'
+import { ProgressDataPropertiesData } from '../../item/itemtypes'
 import { FoeDataProperties } from '../../actor/actortypes'
 import ProgressTrack from './progress/progress-track.vue'
 
@@ -84,22 +80,23 @@ const props = defineProps<{
 }>()
 provide(ActorKey, computed(() => props.actor) as any)
 const foe = computed(() => {
-  return props.actor.items.find(
-    (x) => x.type === 'progress'
-  ) as ProgressDataProperties
+  return props.actor.items.find((x) => x.type === 'progress')
 })
+const foeSystem = computed(
+  () => (foe.value as any)?.system as ProgressDataPropertiesData
+)
 
 const $actor = inject($ActorKey)
 const foundryFoe = () => $actor?.items.get((foe.value as any)?._id)
 
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[foe.value?.data.rank])
+  return game.i18n.localize(RANKS[foeSystem.value?.rank])
 })
 
 // async foe(newFoe) {
 //   const data = { name: newFoe?.name, img: newFoe?.img }
 //   await $actor?.update(data)
-//   await $actor?.data.token.update(data)
+//   await $actor?.token.update(data)
 // },
 
 function addEmpty() {
@@ -115,23 +112,22 @@ function openCompendium(name) {
 }
 
 function setRank(rank) {
-  foundryFoe()?.update({ data: { rank } })
+  foundryFoe()?.update({ system: { rank } })
 }
 
 function clearProgress() {
-  foundryFoe()?.update({ 'data.current': 0 })
+  foundryFoe()?.update({ 'system.current': 0 })
 }
 
 function markProgress() {
-  const increment = RANK_INCREMENTS[foe.value?.data.rank]
-  const newValue = Math.min(foe.value?.data.current + increment, 40)
-  foundryFoe()?.update({ 'data.current': newValue })
+  const increment = RANK_INCREMENTS[foeSystem.value?.rank]
+  const newValue = Math.min(foeSystem.value?.current + increment, 40)
+  foundryFoe()?.update({ 'system.current': newValue })
 }
 
 function saveDescription() {
   foundryFoe()?.update({
-    data: { description: foe.value?.data.description },
+    system: { description: foeSystem.value?.description },
   })
 }
-const throttledSaveDescription = throttle(saveDescription, 1000)
 </script>

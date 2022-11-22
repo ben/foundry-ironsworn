@@ -55,7 +55,7 @@ export class AssetSheet extends IronswornItemSheet {
     if (this.options.editable) {
       ret.unshift({
         class: 'ironsworn-toggle-edit-mode',
-        label: 'Edit',
+        label: game.i18n.localize('IRONSWORN.Edit'),
         icon: 'fas fa-edit',
         onclick: (e) => this._toggleEditMode(e),
       })
@@ -76,7 +76,7 @@ export class AssetSheet extends IronswornItemSheet {
     const { idx } = ev.currentTarget.dataset
     const abilities = Object.values(this.assetData.data.abilities)
     abilities[idx] = { ...abilities[idx], enabled: !abilities[idx].enabled }
-    this.item.update({ data: { abilities } })
+    this.item.update({ system: { abilities } })
   }
 
   _optionToggle(ev: JQuery.ClickEvent) {
@@ -88,7 +88,7 @@ export class AssetSheet extends IronswornItemSheet {
       exclusiveOptions[i] = { ...exclusiveOptions[i], selected: false }
     }
     exclusiveOptions[idx].selected = true
-    this.item.update({ data: { exclusiveOptions } })
+    this.item.update({ system: { exclusiveOptions } })
   }
 
   _updateOptionName(ev: JQuery.BlurEvent) {
@@ -96,7 +96,7 @@ export class AssetSheet extends IronswornItemSheet {
     const { idx } = ev.currentTarget.dataset
     const val = $(ev.currentTarget).val()?.toString() || ''
     exclusiveOptions[idx].name = val
-    this.item.update({ data: { exclusiveOptions } })
+    this.item.update({ system: { exclusiveOptions } })
   }
 
   _optionAdd(ev: JQuery.ClickEvent) {
@@ -106,7 +106,7 @@ export class AssetSheet extends IronswornItemSheet {
       this.assetData.data.exclusiveOptions || []
     )
     exclusiveOptions.push({ name: '', selected: false })
-    this.item.update({ data: { exclusiveOptions } })
+    this.item.update({ system: { exclusiveOptions } })
   }
 
   _optionDelete(ev: JQuery.ClickEvent) {
@@ -117,7 +117,7 @@ export class AssetSheet extends IronswornItemSheet {
       this.assetData.data.exclusiveOptions || []
     )
     exclusiveOptions.splice(idx, 1)
-    this.item.update({ data: { exclusiveOptions } })
+    this.item.update({ system: { exclusiveOptions } })
   }
 
   _addField(ev: JQuery.ClickEvent) {
@@ -125,7 +125,7 @@ export class AssetSheet extends IronswornItemSheet {
 
     const fields = Object.values(this.assetData.data.fields || [])
     fields.push({ name: '', value: '' })
-    this.item.update({ data: { fields } })
+    this.item.update({ system: { fields } })
   }
 
   _deleteField(ev: JQuery.ClickEvent) {
@@ -134,7 +134,7 @@ export class AssetSheet extends IronswornItemSheet {
     const { idx } = ev.currentTarget.dataset
     const fields = Object.values(this.assetData.data.fields || [])
     fields.splice(idx, 1)
-    this.item.update({ data: { fields } })
+    this.item.update({ system: { fields } })
   }
 
   _updateFieldLabel(ev: JQuery.BlurEvent) {
@@ -142,7 +142,7 @@ export class AssetSheet extends IronswornItemSheet {
     const { idx } = ev.currentTarget.dataset
     const val = $(ev.currentTarget).val()?.toString() || ''
     fields[idx].name = val
-    this.item.update({ data: { fields } })
+    this.item.update({ system: { fields } })
   }
 
   _updateFieldValue(ev: JQuery.BlurEvent) {
@@ -150,7 +150,7 @@ export class AssetSheet extends IronswornItemSheet {
     const { idx } = ev.currentTarget.dataset
     const val = $(ev.currentTarget).val()?.toString() || ''
     fields[idx] = { ...fields[idx], value: val }
-    this.item.update({ data: { fields } })
+    this.item.update({ system: { fields } })
   }
 
   assetDelete(ev: JQuery.ClickEvent) {

@@ -205,6 +205,9 @@ function assetsForTypes(types: IAssetType[]) {
           max: asset['Condition Meter']?.Max,
         },
         exclusiveOptions,
+        conditions: (asset['Condition Meter']?.Conditions ?? []).map(
+          (name) => ({ name, selected: false })
+        ),
       }
       assetsToCreate.push({
         type: 'asset',
@@ -389,13 +392,13 @@ async function processSFFoes() {
     const actor = await IronswornActor.create(
       {
         name: foeItem.name ?? 'wups',
-        img: foeItem.data.img,
+        img: foeItem.img,
         type: 'foe',
       },
       { pack: 'foundry-ironsworn.foeactorssf' }
     )
     await actor?.createEmbeddedDocuments('Item', [
-      foeItem.data as unknown as Record<string, unknown>,
+      foeItem.system as unknown as Record<string, unknown>,
     ])
   }
 }

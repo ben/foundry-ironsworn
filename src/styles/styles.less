@@ -1,5 +1,6 @@
-@import './ironsworn-icons.less';
+@import 'ironsworn-icons.less';
 @import 'mixins.less';
+@import 'assets.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
@@ -39,7 +40,7 @@
   --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-2);
 
   --ironsworn-color-danger: hsl(0, 80%, 40%);
-  --ironsworn-color-danger-faded: hsl(0, 80%, 40%);
+  --ironsworn-color-danger-inverted: white;
   --ironsworn-color-warning: hsl(55, 100%, 50%);
   --ironsworn-color-warning-faded: hsl(55, 100%, 50%);
   --ironsworn-color-success: hsl(200, 80%, 40%);
@@ -690,34 +691,6 @@ table td:first-child {
   padding-right: 0.5rem;
 }
 
-.table-draw {
-  h2 {
-    border: none;
-  }
-  table {
-    td:first-child,
-    td:last-child {
-      width: 0;
-    }
-  }
-}
-
-.hover-controls-anchor {
-  position: relative;
-
-  .hover-controls {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    opacity: 0;
-    transition: all 0.2s ease;
-  }
-
-  &:hover .hover-controls {
-    opacity: 1;
-  }
-}
-
 // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
 .fa,
 .fab,
@@ -758,3 +731,5 @@ table td:first-child {
     font-weight: 900;
   }
 }
+
+@import 'chat-message.less';

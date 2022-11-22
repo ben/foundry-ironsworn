@@ -18,7 +18,7 @@ declare module '@vue/runtime-core' {
 }
 
 export function enrichHtml(text) {
-  const rendered = TextEditor.enrichHTML(text)
+  const rendered = TextEditor.enrichHTML(text, { async: false } as any)
   return rendered.replace(
     /\(\(rollplus (.*?)\)\)/g,
     (_, stat) => `

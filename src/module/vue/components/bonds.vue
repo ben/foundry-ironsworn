@@ -3,7 +3,7 @@
     <div class="flexrow">
       <h4>{{ $t('IRONSWORN.Bonds') }}</h4>
       <btn-faicon class="block nogrow" icon="edit" @click="editBonds" />
-      <btn-faicon class="block nogrow" icon="dice-d6" @click="rollBonds" />
+      <BtnIsicon class="block nogrow" icon="d10-tilt" @click="rollBonds" />
     </div>
     <ProgressTrack
       :ticks="bondcount"
@@ -16,9 +16,13 @@
 <script setup lang="ts">
 import { ActorDataBaseSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
 import { inject, computed, Ref } from 'vue'
-import { BondsetDataSource } from '../../item/itemtypes.js'
+import {
+  BondsetDataPropertiesData,
+  BondsetDataSource,
+} from '../../item/itemtypes.js'
 import { $ActorKey, ActorKey } from '../provisions'
 import btnFaicon from './buttons/btn-faicon.vue'
+import BtnIsicon from './buttons/btn-isicon.vue'
 import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{ compactProgress?: boolean }>()
@@ -32,8 +36,11 @@ const bonds = computed(() => {
   ) as unknown as ActorDataBaseSource & BondsetDataSource
 })
 const bondcount = computed(() => {
-  if (!bonds.value?.data?.bonds) return 0
-  return Object.values(bonds.value.data.bonds).length
+  const sys = (bonds.value as any)?.system as
+    | BondsetDataPropertiesData
+    | undefined
+  if (!sys?.bonds) return 0
+  return Object.values(sys.bonds).length
 })
 
 function editBonds() {

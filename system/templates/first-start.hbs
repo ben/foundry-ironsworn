@@ -9,8 +9,8 @@
   <h1>{{localize 'IRONSWORN.First Start.Welcome'}}</h1>
   <p>{{localize 'IRONSWORN.First Start.Intro'}}</p>
 
-  <h2>Character sheet</h2>
-  <p>Which character sheet would you like to use as the default?</p>
+  <h2>{{localize 'IRONSWORN.First Start.CharacterSheet'}}</h2>
+  <p>{{localize 'IRONSWORN.First Start.DefaultSheet'}}</p>
   <div class='boxgroup'>
     <div class='flexrow boxrow'>
       <div class='box flexrow'>
@@ -25,7 +25,7 @@
               name='sheet'
               value='ironsworn.IronswornCharacterSheetV2'
             />
-            Ironsworn
+            {{localize 'IRONSWORN.Ironsworn'}}
           </p>
         </label>
       </div>
@@ -41,58 +41,58 @@
               name='sheet'
               value='ironsworn.StarforgedCharacterSheet'
             />
-            Starforged
+            {{localize 'IRONSWORN.Starforged'}}
           </p>
         </label>
       </div>
     </div>
   </div>
 
-  <h2>Moves &amp; Oracles</h2>
-  <p>Which set of moves and oracles would you like to use?</p>
+  <h2>{{localize 'IRONSWORN.First Start.MovesOracles'}}</h2>
+  <p>{{localize 'IRONSWORN.First Start.DefaultMovesOracles'}}</p>
   <div class='boxgroup'>
     <div class='flexrow boxrow'>
       <div class='box flexrow'>
         <label>
           <input type='radio' name='moves' value='ironsworn' />
-          Ironsworn
+          {{localize 'IRONSWORN.Ironsworn'}}
         </label>
       </div>
       <div class='box flexrow'>
         <label>
           <input type='radio' name='moves' value='starforged' />
-          Starforged
+          {{localize 'IRONSWORN.Starforged'}}
         </label>
       </div>
       <div class='box flexrow'>
         <label>
           <input type='radio' name='moves' value='sheet' checked='checked' />
-          Match sheet
+          {{localize 'IRONSWORN.First Start.MatchSheet'}}
         </label>
       </div>
     </div>
   </div>
 
-  <h2>Setting truths</h2>
-  <p>Would you like to generate your setting's truths?</p>
+  <h2>{{localize 'IRONSWORN.First Start.SettingTruths'}}</h2>
+  <p>{{localize 'IRONSWORN.First Start.GenerateTruths'}}</p>
   <div class='boxgroup'>
     <div class='flexrow boxrow'>
       <div class='box flexcol'>
         <label>
           <input type='radio' name='truths' value='ironsworn' />
-          Yes, for Ironsworn
+          {{localize 'IRONSWORN.First Start.YesFor'}} {{localize 'IRONSWORN.Ironsworn'}}
         </label>
       </div>
       <div class='box flexcol'>
         <label>
           <input type='radio' name='truths' value='starforged' />
-          Yes, for Starforged
+          {{localize 'IRONSWORN.First Start.YesFor'}} {{localize 'IRONSWORN.Starforged'}}
         </label>
       </div>
       <div class='box flexcol'>
         <label>
           <input type='radio' name='truths' value='never' />
-          Never ask again
+          {{localize 'IRONSWORN.First Start.NeverAsk'}}
         </label>
       </div>
     </div>

@@ -1,40 +1,60 @@
 import { createIronswornChatRoll } from '../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../constants'
+import { getFoundryMoveByDfId } from '../dataforged'
 import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 import { IronswornPrerollDialog } from '../rolls'
+import {
+  BondsetDataPropertiesData,
+  ProgressDataPropertiesData,
+} from './itemtypes'
 
 /**
  * Extend the base Item entity
  * @extends {Item}
  */
 export class IronswornItem extends Item {
+  // Type hacks for v10 compatibility updates
+  declare system: typeof this.data.data
+  declare sort: typeof this.data.sort
+
   /**
    * Progress methods
    */
   markProgress(numMarks = 1) {
-    if (this.data.type !== 'vow' && this.data.type !== 'progress') return
+    if (this.type !== 'vow' && this.type !== 'progress') return
+    const system = this.system as ProgressDataPropertiesData
 
-    const increment = RANK_INCREMENTS[this.data.data.rank] * numMarks
-    let newValue = this.data.data.current + increment
+    const increment = RANK_INCREMENTS[system.rank] * numMarks
+    let newValue = system.current + increment
     newValue = Math.min(newValue, 40)
     newValue = Math.max(newValue, 0)
-    return this.update({ 'data.current': newValue })
+    return this.update({ 'system.current': newValue })
   }
 
   clearProgress() {
     if (this.data.type !== 'vow' && this.data.type !== 'progress') return
-    return this.update({ 'data.current': 0 })
+    return this.update({ 'system.current': 0 })
   }
 
   fulfill() {
     if (this.data.type !== 'progress') return
+    const system = this.system as ProgressDataPropertiesData
 
-    const progress = Math.floor(this.data.data.current / 4)
+    let moveDfId: string | undefined
+    if (system.subtype === 'vow') {
+      const toolset = this.actor?.toolset ?? 'starforged'
+      moveDfId =
+        toolset === 'starforged'
+          ? 'Starforged/Moves/Quest/Fulfill_Your_Vow'
+          : 'Ironsworn/Moves/Quest/Fulfill_Your_Vow'
+    }
+
+    const progress = Math.floor(system.current / 4)
     return IronswornPrerollDialog.showForProgress(
       this.name || '(progress)',
       progress,
       this.actor || undefined,
-      this.data.data.subtype === 'vow'
+      moveDfId
     )
   }
 
@@ -43,19 +63,21 @@ export class IronswornItem extends Item {
    */
 
   async writeEpilogue() {
-    if (this.data.type !== 'bondset') return
+    if (this.type !== 'bondset') return
+    const system = this.system as BondsetDataPropertiesData
 
-    const move = await moveDataByName('Write Your Epilogue')
+    const move = await getFoundryMoveByDfId(
+      'Ironsworn/Moves/Relationship/Write_Your_Epilogue'
+    )
     if (!move) throw new Error('Problem loading write-epilogue move')
 
-    const progress = Math.floor(Object.values(this.data.data.bonds).length / 4)
-    const r = new Roll(`{${progress},d10,d10}`)
-    createIronswornChatRoll({
-      isProgress: true,
-      move,
-      roll: r,
-      actor: this.actor || undefined,
-    })
+    const progress = Math.floor(Object.values(system.bonds).length / 4)
+    IronswornPrerollDialog.showForProgress(
+      game.i18n.localize('IRONSWORN.Bonds'),
+      progress,
+      this.actor || undefined,
+      'Ironsworn/Moves/Relationship/Write_Your_Epilogue'
+    )
   }
 
   /**
@@ -66,63 +88,6 @@ export class IronswornItem extends Item {
     return this.data.data.Trigger.Options?.some(
       (option) => option['Roll type'] === 'Progress roll'
     )
-  }
-  getMoveData(): EnhancedDataswornMove {
-    if (this.data.type !== 'move')
-      throw new Error(`tried to get move data from a ${this.type}`)
-    return {
-      Name: this.name || '',
-      Source: {
-        Name: 'Custom',
-        Page: '',
-      },
-      Stats: this.data.data.stats,
-      Text: '',
-      Description: this.data.data.description,
-      Strong: this.data.data.strong,
-      Weak: this.data.data.weak,
-      Miss: this.data.data.miss,
-    }
-  }
-
-  /**
-   * Asset methods
-   */
-  createField() {
-    if (this.data.type !== 'asset') return
-    const fields = this.data.data.fields
-    fields.push({ name: '', value: '' })
-    return this.update({ 'data.fields': fields })
-  }
-  deleteField(name) {
-    if (this.data.type !== 'asset') return
-    const fields = this.data.data.fields
-    return this.update({ 'data.fields': fields.filter((x) => x.name !== name) })
-  }
-  createAbility() {
-    if (this.data.type !== 'asset') return
-    const abilities = this.data.data.abilities
-    abilities.push({
-      enabled: false,
-      description: '',
-      hasClock: false,
-      clockMax: 4,
-      clockTicks: 0,
-    })
-    return this.update({ 'data.abilities': abilities })
-  }
-  deleteAbility(name) {
-    if (this.data.type !== 'asset') return
-    const abilities = this.data.data.abilities
-    return this.update({
-      'data.abilities': abilities.filter((x) => x.name !== name),
-    })
-  }
-
-  // Bondset methods
-  get count() {
-    if (this.data.type !== 'bondset') return
-    return Object.values(this.data.data.bonds).length
   }
 }
 

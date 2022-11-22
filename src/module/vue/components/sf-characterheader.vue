@@ -12,21 +12,21 @@
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Pronouns')"
-        :value="actor.data.pronouns"
+        :value="actor.system.pronouns"
         ref="pronouns"
         @keyup="save"
       />
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Callsign')"
-        :value="actor.data.callsign"
+        :value="actor.system.callsign"
         ref="callsign"
         @keyup="save"
       />
     </section>
 
     <textarea
-      :value="actor.data.biography"
+      :value="actor.system.biography"
       ref="characteristics"
       :placeholder="$t('IRONSWORN.Characteristics')"
       @keyup="save"
@@ -75,7 +75,7 @@ const characteristics = ref<HTMLInputElement | null>(null)
 const save = debounce(() => {
   $actor?.update({
     name: name.value?.value,
-    data: {
+    system: {
       callsign: callsign.value?.value,
       pronouns: pronouns.value?.value,
       biography: characteristics.value?.value,

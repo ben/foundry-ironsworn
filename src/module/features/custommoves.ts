@@ -1,7 +1,7 @@
 import { IMove, IMoveCategory } from 'dataforged'
 import { ISMoveCategories, SFMoveCategories } from '../dataforged/data'
 import { IronswornItem } from '../item/item'
-import { MoveDataSource } from '../item/itemtypes'
+import { MoveDataPropertiesData } from '../item/itemtypes'
 import { cachedDocumentsForPack } from './pack-cache'
 
 export interface MoveCategory {
@@ -91,7 +91,7 @@ function walkCategory(
 
   for (const move of category.Moves) {
     const moveItem = compendiumMoves?.find(
-      (x) => (x.data as MoveDataSource).data.dfid === move.$id
+      (x) => (x.system as MoveDataPropertiesData).dfid === move.$id
     )
     if (moveItem) {
       newCategory.moves.push({

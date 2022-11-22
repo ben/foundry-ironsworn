@@ -53,7 +53,7 @@ async function fixFormidableSpelling() {
   await everyItem(async (x) => {
     if ((x?.data?.data as any).rank === 'formidible') {
       console.log(`Upgrading ${x.type} / ${x.name}`)
-      await x.update({ data: { rank: 'formidable' } })
+      await x.update({ system: { rank: 'formidable' } })
     }
   })
 }
@@ -65,7 +65,7 @@ async function everythingIsAProgress() {
       console.log(`Upgrading ${x.type} ${x.name}`)
       await x.update({
         type: 'progress',
-        data: { subtype: x.type },
+        system: { subtype: x.type },
       })
     }
   })
@@ -88,7 +88,7 @@ async function statsAreAlwaysNumbers() {
     for (const k of statKeys) {
       update[k] = parseInt(actor.data.data[k] || '0', 10)
     }
-    await actor.update({ data: update })
+    await actor.update({ system: update })
   })
 }
 

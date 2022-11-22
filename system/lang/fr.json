@@ -1,25 +1,53 @@
 {
   "IRONSWORN": {
+    "Ironsworn": "Ironsworn",
+    "Starforged": "Starforged",
     "CreateActor": "Créer un acteur",
     "YourWorldTruths": "Votre Monde: Vérités",
     "TruthQuestStarter": "Quête d’introduction :",
     "SaveYourTruths": "Enregistrer vos Vérités",
     "CustomTruth": "Vérité personalisée",
     "Roll": "Lancer les dés",
+    "Chat": "Chat",
+    "CopyTextToClipboard": "Copier le texte dans le presse-papier",
+    "SendToChat": "Envoyer le texte des règles dans le chat",
     "Rolling": "Lancement des dés",
     "Bonus": "Bonus",
+    "Adds": "Ajoute",
     "Versus": "vs.",
+    "CappedAt10": "Le scorce de l'action est limité à 10",
     "Strong_hit": "Coup fort",
     "Strong_hit_with_a_match": "Coup fort avec une égalité!",
+    "On_a_strong_hit": "Sur un coup fort",
     "Weak_hit": "Coup faible",
+    "On_a_weak_hit": "Sur un coup faible",
     "Miss": "Échec",
-    "Miss_with_a_match": "Échec avec une égalité!",
+    "Miss_match": "Échec avec une égalité!",
+    "On_a_miss": "Sur un échec",
     "Opportunity": "Opportunité!",
     "Complication": "Complication!",
     "MarkProgress": "Marquer la progression",
+    "PROGRESS": {
+      "Track": "Jauge de progrès",
+      "BOX": {
+        "1": "1 case",
+        "2": "2 cases",
+        "3": "3 cases"
+      },
+      "TICK": {
+        "1": "1 coche",
+        "2": "2 coches",
+        "3": "3 coches",
+        "4": "4 coches"
+      }
+    },
+    "MarkLegacy": "Marquez {amount} sur votre {legacy} progrès d'héritage",
+    "UnmarkProgress": "Progrès non marqué",
     "ClearProgress": "Effacer la progression",
     "FulfillVow": "Réaliser un vœu",
     "ProgressRoll": "Jet de progrès",
+    "MakeAProgressRoll": "Faire un jet de progression avec {score} de progrès",
+    "StarProgress": "Lorsqu'activé, cet objet sera aussi affiché dans l'onglet 'Héritage'.",
     "Mark": "Marquer",
     "Fulfill": "Réaliser",
     "Clear": "Effacer",
@@ -29,16 +57,29 @@
     "Extreme": "Extrême",
     "Epic": "Épique",
     "Stat": "Caractéristique",
+    "OracleTable": {
+      "ColumnLabel": {
+        "Roll": "Jet de dés",
+        "RollRange": "Porté du jet de dés",
+        "DiceRollResult": "{dice} résultat du jet",
+        "Result": "Résultat"
+      }
+    },
     "roll +x": "faites un jet +{stat}",
+    "Roll +x": "Faites un jet +{stat}",
     "roll method": {
+      "All": "lancez tous les dés de {statList}",
       "Any": {
-        "2": "faites un jet +{stat1} ou +{stat2}"
+        "2": "faites un jet +{stat1} ou +{stat2}",
+        "fallback": "lancez n'importe quel dé de {statList}"
       },
       "Highest": {
-        "2": "faites un jet +{stat1} ou +{stat2}, selon lequel est le plus élevé"
+        "2": "faites un jet +{stat1} ou +{stat2}, selon lequel est le plus élevé",
+        "fallback": "lancez le score le plus haut de {statList}"
       },
       "Lowest": {
-        "2": "faites un jet +{stat1} ou +{stat2}, en utilisant la caractéristique la plus faible"
+        "2": "faites un jet +{stat1} ou +{stat2}, en utilisant la caractéristique la plus faible",
+        "fallback": "lancez le score le plus bas de {statList}"
       }
     },
     "Momentum": "élan",
@@ -54,10 +95,20 @@
     "Asset": "Atout",
     "Assets": "Atouts",
     "Bonds": "Liens",
+    "Bond": "Lien",
+    "Legacies": "Héritages",
+    "Clock": "Horloge",
+    "Scenes": "Scènes",
+    "Quests": "Quêtes",
+    "Notes": "Notes",
+    "Discoveries": "Découvertes",
     "Debilities": "Handicaps",
     "Conditions": "États",
     "Banes": "Fléaux",
     "Burdens": "Fardeaux",
+    "Misfortunes": "Malheurs",
+    "LastingEffects": "Effets persistants",
+    "Vehicle": "Véhicule",
     "Wounded": "Blessé",
     "Unprepared": "Mal préparé",
     "Shaken": "Secoué",
@@ -66,12 +117,27 @@
     "Corrupted": "Corrompu",
     "Cursed": "Maudit",
     "Tormented": "Tourmenté",
+    "Permanentlyharmed": "Lésions permanentes",
+    "Traumatized": "Traumatisé",
+    "Doomed": "Maudit",
+    "Indebted": "Endetté",
+    "Battered": "Battu",
     "Vow": "Vœu",
     "Vows": "Vœux",
     "Progress": "Progrès",
-    "Suffer": "Souffrez",
-    "Scene Challenge": "Défis de scène",
+    "Reroll": "Relancez les dés",
     "Moves": "Actions",
+    "Session": "Session",
+    "Connections": "Connexions",
+    "Connection": "Connexion",
+    "Exploration": "Exploration",
+    "Recover": "Récupérer",
+    "Threshold": "Seuil",
+    "Legacy": "Héritage",
+    "Scene Challenge": "Défi de la scène",
+    "Adventure": "Aventures",
+    "Relationship": "Relation",
+    "Suffer": "Souffrez",
     "MOVES": {
       "Adventure": "Actions d’aventure",
       "Combat": "Actions de combat",
@@ -85,24 +151,40 @@
     "Combat": "Combat",
     "Quest": "Quête",
     "Delve": "Fouiller",
+    "Optional Delve": "Fouille optionnelle",
+    "Custom Assets": "Ressources personnalisées",
+    "Custom Moves": "Actions personnalisées",
     "Oracles": "Oracles",
+    "Custom Oracles": "Oracles personnalisés",
     "Search": "Chercher",
     "Plot": "Complot",
     "Location": "Lieux",
+    "LocationType": "Type de lieu",
     "Character": "Personnage",
+    "Starship": "Vaisseau spatial",
     "SharedSheet": "Feuille partagée",
     "DelveSite": "Site de fouilles",
     "Names": "Noms",
+    "RollForDetails": "Jet de type de lieu",
+    "Names": "Noms",
     "Burn": "Brûler",
     "Focus": "Se Concentrer",
+    "ResolveChallenge": "Résoudre le défi",
+    "ResolveChallengeDisabled": "Choisissez vos deux derniers dés de défi",
     "BurnForUpgrade": "Brûler de l'Élan: <strong>{type}</strong>",
+    "BurnMomentumAndResetTo": "Brûlez {value} Élan et réinitialisé à {resetValue}",
     "MomentumBurnt": "Élan brûlé",
     "NegativeMomentumCancel": "l'Élan négatif annule le dé d'action",
     "Reset": "Réinitialiser",
     "Max": "Max",
     "Name": "Nom",
+    "Pronouns": "Pronoms",
+    "Callsign": "Indicatif",
+    "Characteristics": "Caractéristiques",
     "Summary": "Résumé",
     "Description": "Description",
+    "Trigger": "Déclencheur",
+    "FullText": "Texte complet",
     "Fields": "Champs",
     "Label": "Étiquette",
     "Value": "Valeur",
@@ -111,10 +193,15 @@
     "Track": "Jauge",
     "Enabled": "Débloqué",
     "Rank": "Rang",
+    "ChallengeRank": "Rang du défi",
+    "Completed": "Achevé",
+    "NotCompleted": "Non achevé",
     "Features": "Caractéristiques",
     "Feature": "Caractéristique",
     "Dangers": "Dangers",
-    "Foes": "Ennemies",
+    "Foes": "Ennemis",
+    "Foe": "Ennemi",
+    "NPC": "PNJ",
     "Edit": "Modifier",
     "Domain": "Domaine",
     "Theme": "Thème",
@@ -128,11 +215,45 @@
     "DeleteAsset": "Supprimer l'Atout",
     "ConfirmDelete": "Êtes-vous sûr? Cette action est irréversible.",
     "StatBonusTooltip": "Bonus le prochain jet de caractéristique",
+    "RequiresLocationType": "Cet oracle nécessite la sélection d'un type de lieu.",
+    "RollOracleTable": "Jet d'oracle: <i>{title}</i>",
+    "RollMove": "Jet d'Action: <i>{title}</i>",
+    "PageReference": "p.{page}",
+    "PlanetType": "Type de planète",
+    "RandomPlanetType": "Type de planète aléatoire",
+    "SettlementType": "Type de colonie",
+    "RandomSettlementType": "Type de colonie aléatoire",
+    "StarType": "Type d'étoile",
+    "RandomStarType": "Type d'étoile aléatoire",
+    "DerelictType": "Type d'épave",
+    "RandomDerelictType": "Type d'épave aléatoire",
+    "VaultType": "Type de chambre forte",
+    "RandomVaultType": "Type de chambre forte aléatoire",
     "First": "premier",
     "Second": "second",
     "Third": "troisième",
     "Fourth": "quatrième",
     "Fifth": "cinquième",
+    "StarforgedTools": "Outils Starforged",
+    "NewSector": "Nouveau Secteur",
+    "NewStar": "Nouvelle Étoile",
+    "NewPlanet": "Nouvelle Planète",
+    "NewSettlement": "Nouvelle Colonie",
+    "NewDerelict": "Nouvelle Épave",
+    "NewVault": "Nouvelle chambre forte de précurseurs",
+    "Sector": "Secteur",
+    "Region": "Région",
+    "Terminus": "Terminus",
+    "Outlands": "Contrées lointaines",
+    "Expanse": "Étendue",
+    "RotateCCW": "Tourner dans le sens inverse des aiguilles d'une montre",
+    "RotateCW": "Tourner dans le sens des aiguilles d'une montre",
+    "RollDialog": {
+      "AdvancedRollOptions": "Options avancées",
+      "PresetActionDie": "Dé d'action prédéfinie",
+      "PredeterminedOutcome": "Résultat prédéterminé",
+      "ExtraChallengeDice": "Dés de défi supplémentaires"
+    },
     "ChatAlert": {
       "Renamed": "Renommé {name}",
       "renamed": "renommé {name}",
@@ -154,7 +275,16 @@
       "MarkedOption": "{name} marqué",
       "SetField": "{name} défini à {val}",
       "AddBond": "Lien ajouté",
-      "LostBond": "Lien perdu"
+      "LostBond": "Lien perdu",
+      "completedMarked": "marqué terminé",
+      "completedUnmarked": "dé-marqué terminé ",
+      "clockAdvancedOneSegment": "horloge avancée à {new}⁄{max}",
+      "clockAdvancedTwoSegments": "horloge avancée par {change} segments à {new}⁄{max}",
+      "clockAdvancedManySegments": "horloge avancée par {change} segments à {new}⁄{max}",
+      "clockCompletedOneSegment": "horloge avancée à {new}⁄{max}—horloge achevée!",
+      "clockCompletedTwoSegments": "horloge avancée par {change} segments à {new}⁄{max}—clock completed!",
+      "clockCompletedManySegments": "horloge avancée par {change} segments à {new}⁄{max}—clock completed!",
+      "clockSet": "horloge réglée sur {new}⁄{max}"
     },
     "Settings": {
       "Theme": {
@@ -162,6 +292,11 @@
         "Hint": "Sélection du thème pour cette partie. Nécessite de recharger le monde.",
         "Ironsworn": "Ironsworn Classic",
         "Starforged": "Starforged (experimental)"
+      },
+      "Tools": {
+        "Name": "Outils pour les personnages",
+        "Hint": "Quel ensemble d'actions et d'oracles apparaîtrons en ouvrant une fiche de personnage.",
+        "Sheet": "Faire correspondre les fiches"
       },
       "SharedSupply": {
         "Name": "Jauge de provisions partagée",
@@ -174,7 +309,29 @@
       "PromptTruths": {
         "Name": "Proposition pour les Vérités du Monde",
         "Hint": "Propose au démarrage de générer les Vérités de votre Monde avec l'assitant, si ce n'a pas été déjà fait."
+      },
+      "ConfigurationDialog": {
+        "Label": "Ironsworn/Starforged Boîte de dialogue de configuration",
+        "Name": "Boîte de dialogue de configuration",
+        "Hint": "Choisissez entre les éléments d'interface utilisateur Ironsworn et Starforged.."
+      },
+      "SFBeta": {
+        "Name": "Montrer le contenu de la bêta de Starforged",
+        "Hint": "Active les fonctionnalités Starforged en cours de développement."
+      },
+      "DataforgedIronswornMoves": {
+        "Name": "(Beta) Nouvelle interface pour la feuille d'actions d'Ironsworn",
+        "Hint": "Si activé, utilise l'interface utilisateur de style Starforged pour la feuille d'action/oracle Ironsworn, et permet des entrées et des accroches définies par l'utilisateur pour la personnalisation."
+      },
+      "ProgressMarkAnimation": {
+        "Name": "Activer l'animation de la marque de progression",
+        "Hint": "Activez l'animation de la marque de progression. Notez que l'animation ne verrouille pas le bouton de la marque, ce changement est donc purement cosmétique."
       }
+    },
+    "First Start": {
+      "Welcome": "Bienvenue",
+      "Save": "Enregistrer",
+      "Intro": "Bienvenue dans Ironsworn ! Il y a juste quelques choix à faire avant de commencer."
     },
     "MoveContents": {
       "Face Danger": {
@@ -1121,5 +1278,15 @@
         "quest3": "Un groupe de colons a fondé un village dans un territoire maudit par une horreur virulente. Quel mal ravage ces terres ? Pourquoi est-ce que les colons sont déterminés à s’installer ici ? Allez-vous les aider ou au contraire, allez vous tenter de les forcer à abandonner cette folie ?"
       }
     }
+  },
+  "ITEM": {
+    "TypeAsset": "Actif",
+    "TypeProgress": "Jauge de progrès",
+    "TypeVow": "(Type de vœu déprécié)",
+    "TypeBondset": "Forger un lien",
+    "TypeMove": "(Type d'action déprécié)",
+    "TypeSfmove": "Action",
+    "TypeDelve-theme": "Delve site theme",
+    "TypeDelve-domain": "Delve site domain"
   }
 }

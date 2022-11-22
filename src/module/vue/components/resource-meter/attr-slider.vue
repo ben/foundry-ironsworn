@@ -144,10 +144,10 @@ const baseId = computed(() => {
 
 async function onChange(newValue: number) {
   const data = {
-    data: { [props.attr]: newValue },
+    system: { [props.attr]: newValue },
   }
   // redundant with the below if it's global, but fires anyway so that a single message appears in the chatlog.
-  $document?.update(data)
+  await $document?.update(data)
   if (props.global) {
     await IronswornSettings.updateGlobalAttribute(data)
   }

@@ -46,7 +46,7 @@ const starredProgresses = computed(() =>
   actor?.value.items.filter(
     (item) =>
       item.type === 'progress' &&
-      (item.data as unknown as ProgressDataPropertiesData)?.starred
+      (item.system as unknown as ProgressDataPropertiesData)?.starred
   )
 )
 </script>

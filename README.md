@@ -1,7 +1,7 @@
 # Ironsworn and Starforged for Foundry VTT
 
-![Download count of latest release](https://img.shields.io/github/downloads/ben/foundry-ironsworn/latest/total)
-![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ffoundry-ironsworn)
+![Download count of latest release](https://img.shields.io/github/downloads/ben/foundry-ironsworn/latest/total?style=for-the-badge)
+[![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ffoundry-ironsworn&style=for-the-badge)](https://forge-vtt.com/bazaar/package/foundry-ironsworn)
 
 This is a Foundry VTT implementation of the [**Ironsworn**](https://www.ironswornrpg.com/products-ironsworn), [**Ironsworn: Delve**](https://www.ironswornrpg.com/product-ironsworn-delve), and [**Ironsworn: Starforged**](https://getstarforged.com) games by Shawn Tomkin.
 
@@ -17,7 +17,7 @@ For information on how to play a game, check out [the wiki](https://github.com/b
 
 Here's what you'll need to make changes to this system:
 
-1. Install Foundry 9 or later, and start it up.
+1. Install Foundry 10 or later, and start it up.
 2. Install the main `foundry-ironsworn` system, and create a world that uses it.
 3. Clone this repo somewhere you can find it, and run `npm install`.
 4. Run `npm start` from this repository.

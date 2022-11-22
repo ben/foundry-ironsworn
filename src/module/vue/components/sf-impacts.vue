@@ -8,12 +8,12 @@
     <condition-checkbox class="nogrow" name="wounded" />
     <condition-checkbox class="nogrow" name="permanentlyharmed" />
     <condition-checkbox class="nogrow" name="doomed" />
-    <condition-checkbox class="nogrow" name="battered" :global="true" />
+    <condition-checkbox class="nogrow" name="battered" :global-hint="true" />
 
     <condition-checkbox class="nogrow" name="shaken" />
     <condition-checkbox class="nogrow" name="traumatized" />
     <condition-checkbox class="nogrow" name="tormented" />
-    <condition-checkbox class="nogrow" name="cursed" :global="true" />
+    <condition-checkbox class="nogrow" name="cursed" :global-hint="true" />
 
     <condition-checkbox class="nogrow" name="unprepared" />
     <condition-checkbox

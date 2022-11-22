@@ -2,12 +2,12 @@
   <label class="checkbox flexrow">
     <input
       type="checkbox"
-      :checked="actor.data.debility[debilitykey]"
+      :checked="actor.system.debility[debilitykey]"
       @input="toggled"
     />
     <input
       type="text"
-      v-model="actor.data.debility[nameKey]"
+      v-model="actor.system.debility[nameKey]"
       @input="nameUpdate"
     />
   </label>
@@ -40,18 +40,18 @@ const nameKey = computed(() => `${props.debilitykey}name`)
 async function toggled(ev) {
   const value = ev.target.checked
   await $actor?.update({
-    data: {
+    system: {
       debility: {
         [props.debilitykey]: value,
       },
     },
   })
   await nextTick()
-  const numDebilitiesMarked = Object.values(actor.value.data.debility).filter(
+  const numDebilitiesMarked = Object.values(actor.value.system.debility).filter(
     (x) => x === true
   ).length
   await $actor?.update({
-    data: {
+    system: {
       momentumMax: 10 - numDebilitiesMarked,
       momentumReset: Math.max(0, 2 - numDebilitiesMarked),
     },
@@ -61,7 +61,7 @@ async function toggled(ev) {
 async function immediateNameUpdate() {
   const nk = nameKey.value
   await $actor?.update({
-    [`data.debility.${nk}`]: actor.value.data.debility[nk],
+    [`system.debility.${nk}`]: actor.value.system.debility[nk],
   })
 }
 const nameUpdate = throttle(immediateNameUpdate, 1000)

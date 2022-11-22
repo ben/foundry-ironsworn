@@ -2,6 +2,49 @@
 
 ## Next Release
 
+- Clicking the "roll" icon on an Ironsworn character's bonds track now uses the new rolling dialog ([#530](https://github.com/ben/foundry-ironsworn/pull/530))
+- Under the hood: correct console warnings about using `thing.data`, instead using `thing.system` and other v10-friendly methods.
+
+## 1.19.0
+
+- Ironsworn & Starforged now requires Foundry v10
+- Asset sheets: abilities can be toggled by clicking their bullets ([#532](https://github.com/ben/foundry-ironsworn/pull/532))
+
+## 1.18.16
+
+- Foe sheets are editable again
+
+## 1.18.15
+
+- Fixes the French translation
+
+## 1.18.14
+
+- Text edits on progress items are no longer lost when changing the rank.
+
+## 1.18.13
+
+- Update the asset pop-out sheet to present half-edit (which more closely matches the cards) and full-edit experiences ([#524](https://github.com/ben/foundry-ironsworn/pull/524))
+- Add conditions to assets (also [#524](https://github.com/ben/foundry-ironsworn/pull/524))
+- Include asset conditions in the PC-condition tooltips ([#525](https://github.com/ben/foundry-ironsworn/pull/525))
+
+## 1.18.12
+
+- Fix a visual bug with sliding transition groups, e.g. marking a vow as complete ([#521](https://github.com/ben/foundry-ironsworn/pull/521))
+- "Battered" and "Cursed" no longer cascade across actor sheets, but those sheets will get highlights suggesting other actors that have them set ([#523](https://github.com/ben/foundry-ironsworn/pull/523))
+- Location sheet name change triggers token names to change (again)
+
+## 1.18.11
+
+- Minor updates to layout of the progress sheet ([#520](https://github.com/ben/foundry-ironsworn/pull/520))
+- Fix all the cursor-jumping issues in text editors
+
+## 1.18.10
+
+- Update the oracle-roll-chat-card UI with hover controls for rerolling and copying results to the clipboard ([#516](https://github.com/ben/foundry-ironsworn/pull/516))
+- Updated French translations ([#519](https://github.com/ben/foundry-ironsworn/pull/519), thanks to @aldarion-jdr)
+- Fix a bug with an open text editor moving the cursor around
+
 ## 1.18.9
 
 - Add human-readable labels to the dialog when creating a new item, including a nudge away from using the old `'move'` item type ([#513](https://github.com/ben/foundry-ironsworn/pull/513))
