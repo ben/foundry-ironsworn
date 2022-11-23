@@ -30,21 +30,16 @@ const $actor = inject($ActorKey)
 
 const props = defineProps<{ move?: Move; disabled?: boolean }>()
 
-const componentClass = computed(() => {
+const isRollable = computed(() => {
   const item = props.move?.moveItem?.()
-  if (item && moveHasRollableOptions(item)) {
-    return BtnIsicon
-  }
-  return BtnFaIcon
+  return item && moveHasRollableOptions(item)
 })
 
-const buttonIcon = computed(() => {
-  const item = props.move?.moveItem?.()
-  if (item && moveHasRollableOptions(item)) {
-    return 'd10-tilt'
-  }
-  return 'comment'
-})
+const componentClass = computed(() =>
+  isRollable.value ? BtnIsicon : BtnFaIcon
+)
+
+const buttonIcon = computed(() => (isRollable.value ? 'd10-tilt' : 'comment'))
 
 async function click() {
   if (!props.move) throw new Error('No move?')
