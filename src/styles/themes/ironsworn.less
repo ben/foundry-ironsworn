@@ -5,6 +5,7 @@ body.theme-ironsworn {
   @dark-color: #888;
   @text-color: black;
   --ironsworn-color-bg: @background-color;
+
   --ironsworn-color-shade-1: @light-color;
   --ironsworn-color-shade-2: @medium-color;
   --ironsworn-color-shade-3: @dark-color;
@@ -12,7 +13,25 @@ body.theme-ironsworn {
   --ironsworn-color-text-outline: @text-color;
   --ironsworn-color-border: @text-color;
   --ironsworn-color-thematic: @text-color;
+  --ironsworn-color-thematic-contrast: @background-color;
   --ironsworn-color-highlight: palegoldenrod;
+
+  // see clickable.less for usage
+  --ironsworn-color-clickable-text: $--ironsworn-color-fg;
+  --ironsworn-color-clickable-block-fg: $--ironsworn-color-fg;
+  --ironsworn-color-clickable-block-bg: unset;
+
+  --ironsworn-color-clickable-text-selected: @medium-color;
+  --ironsworn-color-clickable-block-bg-selected: var(
+    --ironsworn-color-thematic
+  );
+  --ironsworn-color-clickable-block-fg-selected: var(
+    --ironsworn-color-thematic-contrast
+  );
+
+  --ironsworn-color-clickable-text-hover: @light-color;
+  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-thematic);
+  // --ironsworn-color-clickable-block-fg-hover: var();
 
   input::placeholder {
     color: var(--ironsworn-color-shade-2);
@@ -101,35 +120,6 @@ body.theme-ironsworn {
   .move-title {
     background-color: var(--ironsworn-color-bg);
     border-color: var(--ironsworn-color-shade-3);
-  }
-
-  .clickable {
-    &.selected,
-    &[aria-selected='true'] {
-      &:not(svg):not(.svg) {
-        color: var(--ironsworn-color-bg);
-        background-color: var(--ironsworn-color-thematic);
-        border-color: var(--ironsworn-color-border);
-      }
-    }
-
-    &.hover,
-    &:hover {
-      &.block {
-        background: var(--ironsworn-color-shade-1);
-      }
-      &.text:not(.block) {
-        color: var(--ironsworn-color-shade-1);
-      }
-    }
-    &:active {
-      &.block {
-        background: var(--ironsworn-color-shade-2);
-      }
-      &.text:not(.block) {
-        color: var(--ironsworn-color-shade-2);
-      }
-    }
   }
 
   .drag-highlight {

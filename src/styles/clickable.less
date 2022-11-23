@@ -1,0 +1,62 @@
+.interactive {
+  transition: var(--std-animation);
+  cursor: pointer;
+  &.disabled, // FIXME: ditch this class, its redundant with more semantic options
+    &:disabled,
+    &[aria-disabled="true"] {
+    color: inherit;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.35;
+  }
+}
+
+.clickable {
+  .interactive();
+  &.text {
+    justify-content: flex-start;
+  }
+  &:not(svg):not(.svg) {
+    &.block {
+      color: var(--ironsworn-color-clickable-block-fg);
+      background-color: var(--ironsworn-color-clickable-block-bg);
+    }
+    &:not(.block) {
+      color: var(--ironsworn-color-clickable-text);
+    }
+    &.selected,
+    &[aria-selected='true'] {
+      &.block {
+        color: var(--ironsworn-color-clickable-block-fg-selected);
+        background-color: var(--ironsworn-color-clickable-block-bg-selected);
+      }
+      &:not(.block) {
+        color: var(--ironsworn-color-clickable-text-selected);
+      }
+    }
+    &.hover,
+    &:hover {
+      &.block {
+        color: var(--ironsworn-color-clickable-block-fg-hover);
+        background-color: var(--ironsworn-color-clickable-block-bg-hover);
+      }
+      &:not(.block) {
+        color: var(--ironsworn-color-clickable-text-hover);
+      }
+    }
+  }
+  svg,
+  &.svg {
+    &.selected,
+    &[aria-selected='true'] {
+      fill-opacity: 1;
+    }
+    &.hover,
+    &:hover {
+      fill-opacity: 0.35;
+    }
+    &:active {
+      fill-opacity: 0.5;
+    }
+  }
+}

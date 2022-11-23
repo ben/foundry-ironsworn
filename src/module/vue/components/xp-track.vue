@@ -1,7 +1,7 @@
 <template>
   <article class="flexrow xp-track nogrow">
     <button
-      class="clickable block xp-box"
+      class="clickable xp-box"
       type="button"
       v-for="(box, i) in computedBoxes"
       :key="box.key"

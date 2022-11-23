@@ -3,7 +3,7 @@
     class="movesheet-row"
     :class="[
       $style['wrapper'],
-      thematicColor ? $style['setThematicColor'] : '',
+      thematicColor ? $style['thematicC.thematicColorMixin'] : '',
     ]"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
@@ -11,10 +11,11 @@
     :toggleWrapperIs="`h${headingLevel}`"
     :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
     :noIcon="true"
-    :toggleButtonClass="[$style.toggleButton, toggleButtonClass]"
+    :toggleButtonClass="['bordered', $style.toggleButton, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
     :toggleLabel="move?.displayName"
+    :noClickable="true"
   >
     <template #after-toggle>
       <section
@@ -68,28 +69,28 @@
 @border_radius: 5px;
 @wrapper_spacing: 4px;
 
-.thematicColors {
-  color: var(--ironsworn-color-bg);
+.thematicColorMixin {
+  color: var(--ironsworn-color-thematic-contrast);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
 }
-.invertColors {
-  color: var(--ironsworn-color-bg);
-  background-color: var(--ironsworn-color-fg);
+.colorsSelectedMixin {
+  color: var(--ironsworn-color-clickable-block-fg-selected);
+  background-color: var(--ironsworn-color-clickable-block-bg-selected);
+  border-color: var(--ironsworn-color-clickable-block-border-selected);
 }
-.cardColors {
+.cardColorsMixin {
   color: var(--ironsworn-color-fg);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-bg);
 }
 
-.setThematicColor {
+.thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
 }
 
 .wrapper {
-  .thematicColors();
-  transition: all 0.4s ease;
+  .thematicColorMixin();
   border-radius: @border_radius;
   padding-left: @wrapper_spacing;
   padding-right: @wrapper_spacing;
@@ -99,9 +100,9 @@
   }
 }
 .moveSummary {
-  .cardColors();
-  border: 1px solid var(--ironsworn-color-border);
-  padding: 0.25rem 0.5rem 0.3rem;
+  .cardColorsMixin();
+  border: 1px solid var(--ironsworn-color-clickable-block-border-selected);
+  padding: 0.5rem 0.5rem 0.3rem;
   border-radius: 0 @border_radius @border_radius @border_radius;
 }
 
@@ -109,27 +110,31 @@
   font-size: 1.15em;
   aspect-ratio: 1 !important;
   height: inherit !important;
-  color: var(--ironsworn-color-bg);
 }
 
 .toggleButton {
-  // height: 28px;
   display: flex;
   flex-direction: row;
   padding: 0.2rem 0.2rem 0.2rem 0.3rem;
   text-align: left;
   line-height: 1.25;
   font-size: var(--font-size-16);
-  transition: 0.5s ease;
-  .thematicColors();
+  .thematicColorMixin();
+  border-color: transparent;
+  border-width: 1px 1px 0 1px;
+  border-style: solid;
 
   align-items: center;
-  .wrapper[aria-expanded='false'] & {
-    .fake-stroke();
+  &:hover {
+    box-shadow: none;
   }
 
+  .fake-stroke();
+  // .wrapper[aria-expanded='false'] & {
+  // }
+
   .wrapper[aria-expanded='true'] & {
-    .invertColors();
+    .colorsSelectedMixin();
     border-top-left-radius: @border_radius;
     border-top-right-radius: @border_radius;
   }
@@ -139,6 +144,7 @@
   display: flex;
   flex-flow: row;
   background: none;
+  --ironsworn-color-clickable-text: var(--ironsworn-color-thematic-contrast);
 }
 
 .toggleSection {

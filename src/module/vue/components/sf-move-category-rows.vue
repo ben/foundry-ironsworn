@@ -9,6 +9,7 @@
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
     :toggleTextClass="$style.toggleText"
+    :noClickable="true"
     ref="$collapsible"
   >
     <template #default>
@@ -60,15 +61,13 @@
 .toggleSection {
   transition: 0.5s ease;
   background-color: var(--ironsworn-color-thematic);
-  color: var(--ironsworn-color-bg);
+  color: var(--ironsworn-color-thematic-contrast) !important;
   border-radius: 5px;
 }
 .toggleButton {
   color: inherit;
-  > * {
-    // so it skips outlining the caret, which is a pseudo-element
-    .fake-stroke();
-  }
+
+  .fake-stroke();
 }
 </style>
 <script setup lang="ts">

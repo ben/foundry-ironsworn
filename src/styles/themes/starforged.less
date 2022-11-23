@@ -15,17 +15,39 @@ body.theme-starforged {
   @text-light-color: #6ff;
 
   --ironsworn-color-thematic: #117777;
+  --ironsworn-color-thematic-contrast: @text-medium-color;
+
+  // see clickable.less for usage
+  --ironsworn-color-clickable-text: @text-dark-color;
+  --ironsworn-color-clickable-block-bg: transparent;
+  --ironsworn-color-clickable-block-fg: @text-dark-color;
+
+  --ironsworn-color-clickable-text-selected: @text-light-color;
+  --ironsworn-color-clickable-block-bg-selected: var(
+    --ironsworn-color-thematic
+  );
+  --ironsworn-color-clickable-block-fg-selected: @text-light-color;
+  --ironsworn-color-clickable-block-border-selected: @text-light-color;
+
+  --ironsworn-color-clickable-text-hover: @text-light-color;
+  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-thematic);
+  --ironsworn-color-clickable-block-fg-hover: @text-light-color;
+  --ironsworn-color-clickable-block-border-hover: @text-light-color;
 
   --ironsworn-color-fg: @text-medium-color;
   --ironsworn-color-bg: black;
-  --ironsworn-color-border: #399;
+  --ironsworn-color-border: @text-dark-color;
   --ironsworn-color-text-outline: $--ironsworn-color-bg;
 
   .hover-fx(@spread_box:5px,@spread_text:10px) {
     &:hover {
-      box-shadow: 0 0 @spread_box @light-color;
+      &.block {
+        box-shadow: 0 0 @spread_box @light-color;
+      }
+      &.text {
+        text-shadow: 0 0 @spread_text @light-color;
+      }
       color: @text-light-color;
-      text-shadow: 0 0 @spread_text @light-color;
     }
   }
 
@@ -144,17 +166,9 @@ body.theme-starforged {
     color: @text-medium-color;
   }
   .clickable:not(svg):not(.svg) {
-    color: @text-dark-color;
     &.hover,
     &:hover,
     &:focus {
-      &.block,
-      &.text {
-        color: @text-light-color;
-      }
-      &.block:not(.text) {
-        background-color: var(--ironsworn-color-thematic);
-      }
       &.text:not(.block) {
         box-shadow: none;
         // filter: drop-shadow(0 0 4px @text-light-color);
@@ -165,8 +179,6 @@ body.theme-starforged {
     &[aria-selected='true'] {
       &.block,
       &.text {
-        color: @text-light-color;
-        background-color: var(--ironsworn-color-thematic);
         .fake-stroke();
       }
     }

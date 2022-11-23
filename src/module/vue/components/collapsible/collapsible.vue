@@ -2,7 +2,7 @@
   <component
     :id="wrapperId"
     :is="wrapperIs"
-    :class="`${$style.wrapper} ${state.highlighted ? 'highlighted' : ''}`"
+    :class="[$style.wrapper, state.highlighted ? 'highlighted' : '']"
     :aria-expanded="state.expanded"
     :tabindex="-1"
     :aria-orientation="orientation"
@@ -24,12 +24,12 @@
           :aria-controls="contentId"
           :icon="noIcon ? undefined : 'chevron-right'"
           @click="toggle"
-          class="text clickable"
           :class="[
             $style.toggle,
             toggleButtonClass,
             $style.toggleButtonTransition,
           ]"
+          :noClickable="props.noClickable ?? undefined"
           :data-tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"
           ref="$toggle"
@@ -142,6 +142,7 @@ const props = withDefaults(
     contentWrapperClass?: any
     // FIXME NYI
     forceExpand?: boolean
+    noClickable?: boolean
   }>(),
   {
     orientation: 'vertical',
@@ -151,10 +152,10 @@ const props = withDefaults(
     toggleSectionIs: 'header',
     disabled: false,
     contentWrapperClass: '',
-    toggleButtonClass: '',
     toggleWrapperClass: '',
     headingClass: '',
     toggleTextClass: '',
+    noClickable: false,
   }
 )
 
