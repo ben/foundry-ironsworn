@@ -65,9 +65,9 @@
 }
 .itemList {
   scrollbar-width: thin;
-  margin: 0 -7px 0 0 !important;
-  padding-right: 7px !important;
-  scrollbar-gutter: stable both-edges;
+  margin: 0 -3px 0 0 !important;
+  padding-right: 3px !important;
+  scrollbar-gutter: stable;
   gap: 4px;
 }
 </style>

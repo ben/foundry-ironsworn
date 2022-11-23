@@ -18,7 +18,7 @@
           v-for="(move, i) of category.moves"
           :key="i"
           class="nogrow"
-          :class="$style['list-item']"
+          :class="$style.listItem"
         >
           <SfMoverow
             :move="move"
@@ -52,7 +52,7 @@
   padding: 0;
 }
 
-.list-item {
+.listItem {
   border-color: var(--ironsworn-color-thematic);
   border-style: groove;
   border-width: 1px 0 0;

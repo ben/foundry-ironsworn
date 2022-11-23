@@ -108,8 +108,9 @@
 
 .moveButton {
   font-size: 1.15em;
+  height: 28px;
   aspect-ratio: 1 !important;
-  height: inherit !important;
+  align-self: center;
 }
 
 .toggleButton {
@@ -123,7 +124,6 @@
   border-color: transparent;
   border-width: 1px 1px 0 1px;
   border-style: solid;
-
   align-items: center;
   &:hover {
     box-shadow: none;
