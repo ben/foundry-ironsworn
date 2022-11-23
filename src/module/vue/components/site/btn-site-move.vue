@@ -2,7 +2,7 @@
   <component
     :is="componentClass"
     :icon="buttonIcon"
-    @click="rollMove"
+    @click="click"
     :tooltip="
       $t('IRONSWORN.RollMove', {
         title: move?.displayName,
@@ -46,7 +46,7 @@ const buttonIcon = computed(() => {
   return 'comment'
 })
 
-async function rollMove() {
+async function click() {
   if (!props.move) throw new Error('No move?')
 
   if (!moveHasRollableOptions(props.move.moveItem())) {
