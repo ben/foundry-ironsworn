@@ -1,6 +1,6 @@
 # Ironsworn and Starforged for Foundry VTT
 
-![Download count of latest release](https://img.shields.io/github/downloads/ben/foundry-ironsworn/latest/total?style=for-the-badge)
+![Download count of latest release](https://img.shields.io/github/downloads/ben/foundry-ironsworn/latest/ironsworn.zip?style=for-the-badge)
 [![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Ffoundry-ironsworn&style=for-the-badge)](https://forge-vtt.com/bazaar/package/foundry-ironsworn)
 
 This is a Foundry VTT implementation of the [**Ironsworn**](https://www.ironswornrpg.com/products-ironsworn), [**Ironsworn: Delve**](https://www.ironswornrpg.com/product-ironsworn-delve), and [**Ironsworn: Starforged**](https://getstarforged.com) games by Shawn Tomkin.
