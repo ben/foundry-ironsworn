@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.19.1
+
 - Clicking the "roll" icon on an Ironsworn character's bonds track now uses the new rolling dialog ([#530](https://github.com/ben/foundry-ironsworn/pull/530))
 - Under the hood: correct console warnings about using `thing.data`, instead using `thing.system` and other v10-friendly methods.
 
