@@ -145,6 +145,7 @@ const props = defineProps<{
 }>()
 
 provide(ActorKey, computed(() => props.actor) as any)
+provide('toolset', 'ironsworn')
 
 const $actor = inject($ActorKey)
 
