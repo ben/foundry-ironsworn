@@ -2,7 +2,8 @@
 <!-- the default value for a button element's type is "submit", which refreshes the page; "type=button" obviates the need for preventing the submit action with JS. -->
 <template>
   <button
-    class="icon-button clickable"
+    class="icon-button"
+    :class="{ clickable: !props.noClickable }"
     type="button"
     :tooltip="tooltip"
     :aria-label="tooltip"
@@ -19,7 +20,17 @@
 <script setup lang="ts">
 import { computed, useSlots } from '@vue/runtime-core'
 
-defineProps<{ tooltip?: string; disabled?: boolean }>()
+const props = withDefaults(
+  defineProps<{
+    tooltip?: string
+    disabled?: boolean
+    /**
+     * This component includes the `.clickable` CSS class by default, but there's a handful of edge cases where you might want to omit it.
+     */
+    noClickable?: boolean
+  }>(),
+  { noClickable: false }
+)
 // so the span can be omitted if there's no slot content
 const hasDefaultSlot = computed(() => {
   return !!useSlots().default?.()[0].children?.length

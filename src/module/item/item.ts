@@ -1,11 +1,10 @@
-import { createIronswornChatRoll } from '../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../constants'
 import { getFoundryMoveByDfId } from '../dataforged'
-import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 import { IronswornPrerollDialog } from '../rolls'
 import {
   BondsetDataPropertiesData,
   ProgressDataPropertiesData,
+  SFMoveDataPropertiesData,
 } from './itemtypes'
 
 /**
@@ -77,6 +76,18 @@ export class IronswornItem extends Item {
       progress,
       this.actor || undefined,
       'Ironsworn/Moves/Relationship/Write_Your_Epilogue'
+    )
+  }
+
+  /**
+   * Move methods
+   */
+  isProgressMove(): boolean | undefined {
+    if (this.data.type !== 'sfmove') return
+
+    const sfMoveSystem = this.system as SFMoveDataPropertiesData
+    return sfMoveSystem.Trigger.Options?.some(
+      (option) => option['Roll type'] === 'Progress roll'
     )
   }
 }

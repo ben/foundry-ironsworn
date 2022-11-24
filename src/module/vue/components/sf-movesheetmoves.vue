@@ -1,80 +1,99 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow" style="margin-top: 0.5rem">
+  <article class="flexcol" :class="$style.wrapper">
+    <nav class="flexrow nogrow" :class="$style.navSearch">
       <input
-        type="text"
+        type="search"
         :placeholder="$t('IRONSWORN.Search')"
-        v-model="data.searchQuery"
+        v-model="state.searchQuery"
         @keydown.enter.prevent
       />
-      <i
-        class="fa fa-times-circle nogrow clickable text"
-        @click="data.searchQuery = ''"
-        style="padding: 6px"
+      <BtnFaicon
+        icon="times-circle"
+        class="nogrow clickable text"
+        @click="clearSearch()"
+        :class="$style.searchBtn"
       />
-      <i
-        class="fa fa-compress-alt nogrow clickable text"
-        @click="collapseAll"
-        style="padding: 6px"
+      <BtnFaicon
+        icon="compress-alt"
+        class="nogrow clickable text"
+        @click="collapseMoveCategories()"
+        :class="$style.searchBtn"
       />
-    </div>
+    </nav>
 
-    <div class="flexcol item-list">
+    <ul
+      v-if="state.searchQuery"
+      class="flexcol item-list"
+      :class="$style.itemList"
+    >
       <!-- Flat search results -->
-      <div class="nogrow" v-if="data.searchQuery">
-        <sf-moverow
-          v-for="move of searchResults"
-          :key="move.displayName"
-          :move="move"
-        />
-      </div>
-
-      <!-- Categorized moves if not searching -->
-      <div
+      <li
+        v-for="(move, resultIndex) of searchResults"
+        :key="resultIndex"
         class="nogrow"
-        v-else
-        v-for="category of data.categories"
-        :key="category.displayName"
       >
-        <h2>
-          {{ category.displayName }}
-        </h2>
-        <sf-moverow
-          v-for="move of category.moves"
-          :key="move.displayName"
-          :move="move"
-          ref="allmoves"
+        <SfMoverow :move="move" ref="allMoves" :thematicColor="move.color" />
+      </li>
+    </ul>
+
+    <ul v-else class="flexcol item-list" :class="$style.itemList">
+      <!-- Categorized moves if not searching -->
+      <li
+        v-for="(category, catIndex) in state.categories"
+        :key="catIndex"
+        class="nogrow"
+      >
+        <SfMoveCategoryRows
+          class="nogrow"
+          :category="category"
+          ref="allCategories"
         />
-      </div>
-    </div>
-  </div>
+      </li>
+    </ul>
+  </article>
 </template>
 
-<style lang="less" scoped>
-h2 {
-  margin: 0.5rem 0 0.3rem;
+<style lang="less" module>
+.navSearch {
+  margin-top: 0.5rem;
 }
-.item-list {
-  padding: 0 0.5rem;
+.searchBtn {
+  padding: 6px;
+}
+.wrapper {
+  gap: 0.5rem;
+}
+.itemList {
+  scrollbar-width: thin;
+  // unfortunately scrollbar properties don't behave predictably across browsers and OSs; this eases some cramping on FF
+  margin: 0 -3px 0 0 !important;
+  padding-right: 3px !important;
+  scrollbar-gutter: stable;
+  gap: 4px;
 }
 </style>
 
 <script setup lang="ts">
-import { flatten } from 'lodash'
-import { computed, inject, provide, reactive, ref, Ref } from 'vue'
+import { computed, nextTick, provide, reactive, ref } from 'vue'
 import {
   createIronswornMoveTree,
   createStarforgedMoveTree,
+  MoveCategory,
 } from '../../features/custommoves'
-import sfMoverow from './sf-moverow.vue'
+import SfMoveCategoryRows from './sf-move-category-rows.vue'
+import SfMoverow from './sf-moverow.vue'
+import BtnFaicon from './buttons/btn-faicon.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)
 
-const data = reactive({
+const state = reactive({
   searchQuery: '',
-  categories: [] as any[],
+  categories: [] as MoveCategory[],
 })
+
+let allCategories = ref<InstanceType<typeof SfMoveCategoryRows>[]>([])
+let allMoves = ref<InstanceType<typeof SfMoverow>[]>([])
 
 const tempCategories =
   props.toolset === 'ironsworn'
@@ -85,20 +104,22 @@ for (const category of tempCategories) {
     ;(move as any).highlighted = false
   }
 }
-data.categories = tempCategories
+state.categories = tempCategories
 
 const checkedSearchQuery = computed(() => {
   try {
-    new RegExp(data.searchQuery)
-    return data.searchQuery
+    new RegExp(state.searchQuery)
+    return state.searchQuery
   } catch (error) {
     return ''
   }
 })
 
-const flatMoves = computed(() => {
-  return flatten(data.categories.map((x) => x.moves))
-})
+const flatMoves = computed(() =>
+  state.categories.flatMap((category) =>
+    category.moves.map((mv) => ({ ...mv, color: category.color }))
+  )
+)
 
 const searchResults = computed(() => {
   if (!checkedSearchQuery.value) return null
@@ -108,17 +129,26 @@ const searchResults = computed(() => {
 })
 
 function clearSearch() {
-  data.searchQuery = ''
+  state.searchQuery = ''
 }
 
-const allmoves = ref<InstanceType<typeof sfMoverow>[]>([])
-function collapseAll() {
-  for (const row of allmoves.value ?? []) {
-    row.collapse()
+function collapseMoves() {
+  for (const cat of allCategories.value ?? []) {
+    cat.collapseChildren()
   }
 }
 
-CONFIG.IRONSWORN.emitter.on('highlightMove', (_item) => {
-  data.searchQuery = ''
+function collapseMoveCategories() {
+  for (const cat of allCategories.value ?? []) {
+    cat.collapsible?.collapse()
+  }
+}
+
+CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
+  clearSearch()
+  await nextTick()
+  for (const cat of allCategories.value ?? []) {
+    cat.scrollToAndExpandChild(targetMoveId)
+  }
 })
 </script>

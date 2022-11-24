@@ -108,6 +108,7 @@
       margin: 0;
       aspect-ratio: 1;
       border-radius: 3px;
+      border-style: solid;
       border-width: @xp_border_width;
       width: 100%;
       max-width: @max_xp_box_width;

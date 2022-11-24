@@ -1,6 +1,7 @@
 @import 'ironsworn-icons.less';
 @import 'mixins.less';
 @import 'assets.less';
+@import 'clickable.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px #999 inset;
@@ -70,11 +71,15 @@
   // &.dialog .dialog-buttons button,
   // &.dialog .dialog-buttons button.default
   {
+    &:not(.bordered) {
+      border: unset;
+    }
+
+    transition: var(--std-animation);
+    border-radius: unset;
     width: unset;
     margin: unset;
     background: unset;
-    border: unset;
-    border-radius: unset;
     // font-size: unset;
     // line-height: unset;
     font-family: inherit;
@@ -190,17 +195,6 @@
   }
 
   // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
-  .interactive {
-    transition: var(--std-animation);
-    cursor: pointer;
-    &.disabled, // FIXME: ditch this class, its redundant with more semantic options
-    &:disabled,
-    &[aria-disabled="true"] {
-      cursor: not-allowed;
-      pointer-events: none;
-      opacity: 0.5;
-    }
-  }
 
   &.dialog .dialog-buttons button {
     // .interactive();
@@ -219,27 +213,6 @@
     i {
       height: 18px;
       width: 18px;
-    }
-  }
-
-  .clickable {
-    .interactive();
-    &.text {
-      justify-content: flex-start;
-    }
-    svg,
-    &.svg {
-      &.selected,
-      &[aria-selected='true'] {
-        fill-opacity: 1;
-      }
-      &.hover,
-      &:hover {
-        fill-opacity: 0.35;
-      }
-      &:active {
-        fill-opacity: 0.5;
-      }
     }
   }
 
@@ -720,7 +693,7 @@ table td:first-child {
 .far,
 .fas {
   &:before {
-    font-family: 'Font Awesome 5 Free';
+    font-family: 'Font Awesome 6 Pro', 'Font Awesome 5 Free';
   }
 }
 
