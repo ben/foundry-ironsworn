@@ -57,6 +57,7 @@ svg.clock {
   }
   &:not(:hover) {
     .clock-segment {
+      fill-opacity: var(--widget-fill-opacity);
       &[aria-selected='true'] {
         ~ .clock-segment {
           fill-opacity: 0;
