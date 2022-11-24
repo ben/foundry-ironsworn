@@ -1,7 +1,7 @@
 <template>
   <article class="flexrow xp-track nogrow">
     <button
-      class="clickable xp-box"
+      class="clickable block xp-box"
       type="button"
       v-for="(box, i) in computedBoxes"
       :key="box.key"
@@ -15,7 +15,6 @@
 <style lang="less">
 .xp-track {
   .xp-box {
-    border: 1px solid;
     aspect-ratio: 1;
     max-width: 20px;
   }
