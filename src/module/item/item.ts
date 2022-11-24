@@ -85,7 +85,9 @@ export class IronswornItem extends Item {
    */
   isProgressMove(): boolean | undefined {
     if (this.data.type !== 'sfmove') return
-    return this.data.data.Trigger.Options?.some(
+
+    const sfMoveSystem = this.system as SFMoveDataPropertiesData
+    return sfMoveSystem.Trigger.Options?.some(
       (option) => option['Roll type'] === 'Progress roll'
     )
   }
