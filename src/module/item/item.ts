@@ -1,11 +1,10 @@
-import { createIronswornChatRoll } from '../chat/chatrollhelpers'
 import { RANK_INCREMENTS } from '../constants'
 import { getFoundryMoveByDfId } from '../dataforged'
-import { EnhancedDataswornMove, moveDataByName } from '../helpers/data'
 import { IronswornPrerollDialog } from '../rolls'
 import {
   BondsetDataPropertiesData,
   ProgressDataPropertiesData,
+  SFMoveDataPropertiesData,
 } from './itemtypes'
 
 /**
