@@ -2,96 +2,104 @@
   <div class="flexcol">
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="actor" />
-
-    <!-- RANK -->
-    <div class="flexrow nogrow">
-      <RankPips
-        :current="actor.system.rank"
-        class="nogrow"
-        @click="setRank"
-        style="margin-right: 1em"
-      />
-      <h4>{{ rankText }}</h4>
-      <BtnFaicon
-        class="block nogrow"
-        v-if="editMode"
-        icon="trash"
-        @click="clearProgress"
-      />
-      <BtnFaicon
-        class="block nogrow"
-        icon="caret-right"
-        @click="markProgress"
-      />
-    </div>
-
-    <!-- PROGRESS -->
-    <ProgressTrack
-      class="nogrow"
-      style="margin-bottom: 1em"
-      :ticks="actor.system.current"
-      :rank="actor.system.rank"
-    />
-
-    <!-- THEME/DOMAIN -->
-    <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em">
-      <div class="flexrow boxrow nogrow">
-        <SiteDroparea
-          class="box"
-          :item="theme"
-          item-type="delve-theme"
-          compendium-key="ironsworndelvethemes"
-          title-key="IRONSWORN.Theme"
+    <div class="flexrow nogrow" style="gap: 10px">
+      <div class="flexcol" style="flex-basis: 20em">
+        <!-- RANK -->
+        <div class="flexrow nogrow">
+          <RankPips
+            :current="actor.system.rank"
+            class="nogrow"
+            @click="setRank"
+            style="margin-right: 1em"
+          />
+          <h4>{{ rankText }}</h4>
+          <BtnFaicon
+            class="block nogrow"
+            v-if="editMode"
+            icon="trash"
+            @click="clearProgress"
+          />
+          <BtnFaicon
+            class="block nogrow"
+            icon="caret-right"
+            @click="markProgress"
+          />
+        </div>
+        <!-- PROGRESS -->
+        <ProgressTrack
+          class="nogrow"
+          style="margin-bottom: 1em"
+          :ticks="actor.system.current"
+          :rank="actor.system.rank"
         />
-        <SiteDroparea
-          class="box"
-          :item="domain"
-          item-type="delve-domain"
-          compendium-key="ironsworndelvedomains"
-          title-key="IRONSWORN.Domain"
-        />
+        <!-- THEME/DOMAIN -->
+        <div class="boxgroup flexcol nogrow" style="margin-bottom: 1em">
+          <div class="flexrow boxrow nogrow">
+            <SiteDroparea
+              class="box"
+              :item="theme"
+              item-type="delve-theme"
+              compendium-key="ironsworndelvethemes"
+              title-key="IRONSWORN.Theme"
+            />
+            <SiteDroparea
+              class="box"
+              :item="domain"
+              item-type="delve-domain"
+              compendium-key="ironsworndelvedomains"
+              title-key="IRONSWORN.Domain"
+            />
+          </div>
+        </div>
+        <!-- DENIZENS -->
+        <h4 class="flexrow nogrow">
+          <span>{{ $t('IRONSWORN.Denizens') }}</span>
+          <BtnIsicon
+            icon="d10-tilt"
+            class="flexrow nogrow text"
+            style="padding: 2px"
+            @click="randomDenizen"
+          />
+          <BtnCompendium compendium="ironswornfoes" class="nogrow" />
+        </h4>
+        <div class="boxgroup nogrow" style="margin-bottom: 1em">
+          <div class="flexrow boxrow">
+            <SiteDenizenbox :idx="0" :ref="(e) => (denizenRefs[0] = e)" />
+            <SiteDenizenbox :idx="1" :ref="(e) => (denizenRefs[1] = e)" />
+          </div>
+          <div class="flexrow boxrow">
+            <SiteDenizenbox :idx="2" :ref="(e) => (denizenRefs[2] = e)" />
+            <SiteDenizenbox :idx="3" :ref="(e) => (denizenRefs[3] = e)" />
+          </div>
+          <div class="flexrow boxrow">
+            <SiteDenizenbox :idx="4" :ref="(e) => (denizenRefs[4] = e)" />
+            <SiteDenizenbox :idx="5" :ref="(e) => (denizenRefs[5] = e)" />
+          </div>
+          <div class="flexrow boxrow">
+            <SiteDenizenbox :idx="6" :ref="(e) => (denizenRefs[6] = e)" />
+            <SiteDenizenbox :idx="7" :ref="(e) => (denizenRefs[7] = e)" />
+          </div>
+          <div class="flexrow boxrow">
+            <SiteDenizenbox :idx="8" :ref="(e) => (denizenRefs[8] = e)" />
+            <SiteDenizenbox :idx="9" :ref="(e) => (denizenRefs[9] = e)" />
+          </div>
+          <div class="flexrow boxrow">
+            <SiteDenizenbox :idx="10" :ref="(e) => (denizenRefs[10] = e)" />
+            <SiteDenizenbox :idx="11" :ref="(e) => (denizenRefs[11] = e)" />
+          </div>
+        </div>
+      </div>
+      <div class="flexcol" style="flex-basis: 10em">
+        <!-- MOVES -->
+        <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
+        <!-- <SiteMoves />  -->
       </div>
     </div>
-
-    <!-- MOVES -->
-    <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
-    <SiteMoves />
-
-    <!-- DENIZENS -->
-    <h4 class="flexrow nogrow">
-      <span>{{ $t('IRONSWORN.Denizens') }}</span>
-      <BtnIsicon
-        icon="d10-tilt"
-        class="flexrow nogrow text"
-        style="padding: 2px"
-        @click="randomDenizen"
-      />
-      <BtnCompendium compendium="ironswornfoes" class="nogrow" />
-    </h4>
-    <div class="boxgroup nogrow" style="margin-bottom: 1em">
-      <div class="flexrow boxrow">
-        <SiteDenizenbox :idx="0" :ref="(e) => (denizenRefs[0] = e)" />
-        <SiteDenizenbox :idx="1" :ref="(e) => (denizenRefs[1] = e)" />
-        <SiteDenizenbox :idx="2" :ref="(e) => (denizenRefs[2] = e)" />
-        <SiteDenizenbox :idx="3" :ref="(e) => (denizenRefs[3] = e)" />
-      </div>
-      <div class="flexrow boxrow">
-        <SiteDenizenbox :idx="4" :ref="(e) => (denizenRefs[4] = e)" />
-        <SiteDenizenbox :idx="5" :ref="(e) => (denizenRefs[5] = e)" />
-        <SiteDenizenbox :idx="6" :ref="(e) => (denizenRefs[6] = e)" />
-        <SiteDenizenbox :idx="7" :ref="(e) => (denizenRefs[7] = e)" />
-      </div>
-      <div class="flexrow boxrow">
-        <SiteDenizenbox :idx="8" :ref="(e) => (denizenRefs[8] = e)" />
-        <SiteDenizenbox :idx="9" :ref="(e) => (denizenRefs[9] = e)" />
-        <SiteDenizenbox :idx="10" :ref="(e) => (denizenRefs[10] = e)" />
-        <SiteDenizenbox :idx="11" :ref="(e) => (denizenRefs[11] = e)" />
-      </div>
+    <div class="flexcol">
+      <!-- NOTES -->
+      <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
+      <MceEditor v-model="actor.system.description" @save="saveDescription" />
     </div>
-
-    <!-- NOTES -->
-    <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
-    <MceEditor v-model="actor.system.description" @save="saveDescription" />
   </div>
 </template>
 
