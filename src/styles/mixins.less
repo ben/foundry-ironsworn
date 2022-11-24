@@ -11,19 +11,22 @@
 // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
 // if you wanted this + a soft shadow, just append the other shadow with a separator.
 // generated with owumaro.github.io/text-stroke-generator/
-.fake-stroke(@color: var(--ironsworn-color-text-outline)) {
-  text-shadow: 1px 0px 0px @color, 0.540302px 0.841471px 0px @color,
-    -0.416147px 0.909297px 0px @color, -0.989993px 0.14112px 0px @color,
-    -0.653644px -0.756803px 0px @color, 0.283662px -0.958924px 0px @color,
-    0.96017px -0.279416px 0px @color;
+.fake-stroke {
+  text-shadow: 1px 0px 0px var(--ironsworn-color-text-outline),
+    0.540302px 0.841471px 0px var(--ironsworn-color-text-outline),
+    -0.416147px 0.909297px 0px var(--ironsworn-color-text-outline),
+    -0.989993px 0.14112px 0px var(--ironsworn-color-text-outline),
+    -0.653644px -0.756803px 0px var(--ironsworn-color-text-outline),
+    0.283662px -0.958924px 0px var(--ironsworn-color-text-outline),
+    0.96017px -0.279416px 0px var(--ironsworn-color-text-outline);
 }
 
-.fake-stroke-filter(@color: var(--ironsworn-color-text-outline)) {
-  filter: drop-shadow(1px 0px 0px @color),
-    drop-shadow(0.540302px 0.841471px 0px @color),
-    drop-shadow(-0.416147px 0.909297px 0px @color),
-    drop-shadow(-0.989993px 0.14112px 0px @color),
-    drop-shadow(-0.653644px -0.756803px 0px @color),
-    drop-shadow(0.283662px -0.958924px 0px @color),
-    drop-shadow(0.96017px -0.279416px 0px @color);
+.fake-stroke-filter {
+  filter: drop-shadow(1px 0px 0px var(--ironsworn-color-text-outline)),
+    drop-shadow(0.540302px 0.841471px 0px var(--ironsworn-color-text-outline)),
+    drop-shadow(-0.416147px 0.909297px 0px var(--ironsworn-color-text-outline)),
+    drop-shadow(-0.989993px 0.14112px 0px var(--ironsworn-color-text-outline)),
+    drop-shadow(-0.653644px -0.756803px 0px var(--ironsworn-color-text-outline)),
+    drop-shadow(0.283662px -0.958924px 0px var(--ironsworn-color-text-outline)),
+    drop-shadow(0.96017px -0.279416px 0px var(--ironsworn-color-text-outline));
 }

@@ -37,6 +37,7 @@
 
 .color {
   --ironsworn-color-thematic: v-bind('category?.color');
+  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 
 .wrapper {
@@ -61,11 +62,16 @@
 .toggleSection {
   transition: 0.5s ease;
   background-color: var(--ironsworn-color-thematic);
-  color: var(--ironsworn-color-thematic-contrast) !important;
   border-radius: 5px;
+  button {
+    color: var(--ironsworn-color-light);
+    &:hover {
+      color: var(--ironsworn-color-clickable-text-hover);
+    }
+  }
 }
 .toggleButton {
-  color: inherit;
+  // color: inherit;
 
   .fake-stroke();
 }

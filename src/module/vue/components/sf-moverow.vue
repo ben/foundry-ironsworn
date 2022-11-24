@@ -70,7 +70,8 @@
 @wrapper_spacing: 4px;
 
 .thematicColorMixin {
-  color: var(--ironsworn-color-thematic-contrast);
+  --ironsworn-color-thematic: v-bind('thematicColor');
+  color: var(--ironsworn-color-light);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
 }
@@ -83,10 +84,6 @@
   color: var(--ironsworn-color-fg);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-bg);
-}
-
-.thematicColorMixin {
-  --ironsworn-color-thematic: v-bind('thematicColor');
 }
 
 .wrapper {
@@ -127,6 +124,7 @@
   align-items: center;
   &:hover {
     box-shadow: none;
+    color: var(--ironsworn-color-clickable-text-hover);
   }
 
   .fake-stroke();
@@ -137,6 +135,9 @@
     .colorsSelectedMixin();
     border-top-left-radius: @border_radius;
     border-top-right-radius: @border_radius;
+    &:hover {
+      color: var(--ironsworn-color-clickable-text-hover);
+    }
   }
 }
 
@@ -156,6 +157,7 @@
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
+
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
