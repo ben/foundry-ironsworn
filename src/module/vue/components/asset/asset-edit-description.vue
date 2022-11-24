@@ -26,7 +26,6 @@
 <script lang="ts" setup>
 import MceEditor from '../mce-editor.vue'
 import DocumentName from '../document-name.vue'
-
 import { computed, ComputedRef, inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import { AssetDataPropertiesData } from '../../../item/itemtypes'

@@ -37,6 +37,12 @@
 
 .color {
   --ironsworn-color-thematic: v-bind('category?.color');
+  --ironsworn-color-thematic-HS: v-bind(
+    'chroma(category?.color ?? "#000").hsl().slice(0,2).join(", ")'
+  );
+  --ironsworn-color-thematic-HSL: v-bind(
+    'chroma(category?.color ?? "#000").hsl().join(", ")'
+  );
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 
@@ -82,6 +88,7 @@ import { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash'
+import chroma from 'chroma-js'
 
 const props = withDefaults(
   defineProps<{

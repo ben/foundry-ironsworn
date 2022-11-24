@@ -71,6 +71,14 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
+  --ironsworn-color-thematic-HS: v-bind(
+    'chroma(thematicColor ?? "#000").hsl().slice(0,2).join(", ")'
+  );
+  --ironsworn-color-thematic-HSL: v-bind(
+    'chroma(thematicColor ?? "#000").hsl().join(", ")'
+  );
+  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+
   color: var(--ironsworn-color-light);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
@@ -157,7 +165,7 @@
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
-
+import chroma from 'chroma-js'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'

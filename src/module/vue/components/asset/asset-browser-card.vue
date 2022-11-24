@@ -98,6 +98,13 @@
   margin: 10px 0;
   padding: 5px;
   --ironsworn-color-thematic: v-bind('data.data.color');
+  --ironsworn-color-thematic-HS: v-bind(
+    'chroma(data.data.color ?? "#000").hsl().slice(0,2).join(", ")'
+  );
+  --ironsworn-color-thematic-HSL: v-bind(
+    'chroma(data.data.color ?? "#000").hsl().join(", ")'
+  );
+  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 </style>
 
@@ -111,6 +118,7 @@ import WithRolllisteners from '../with-rolllisteners.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
 import { $ItemKey, ItemKey } from '../../provisions.js'
+import chroma from 'chroma-js'
 
 const props = defineProps<{
   df?: IAsset

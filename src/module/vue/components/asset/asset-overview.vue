@@ -138,7 +138,15 @@
 .ironsworn__asset {
   margin: 10px 0;
   padding: 5px;
-  --ironsworn-color-thematic: v-bind(item.system.color || '#000');
+  --ironsworn-color-thematic: v-bind('item.system.color ?? "#000"');
+  --ironsworn-color-thematic: v-bind('item.system.color ?? "#000"');
+  --ironsworn-color-thematic-HS: v-bind(
+    'chroma(item.system.color ?? "#000" ).hsl().slice(0,2).join(", ")'
+  );
+  --ironsworn-color-thematic-HSL: v-bind(
+    'chroma(item.system.color ?? "#000" ).hsl().join(", ")'
+  );
+  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 
 .asset-ability-clock {
@@ -155,6 +163,7 @@ import Clock from '../clock.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import AssetConditions from './asset-conditions.vue'
+import chroma from 'chroma-js'
 
 const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
