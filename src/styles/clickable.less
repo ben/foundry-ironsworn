@@ -29,7 +29,10 @@
     &[aria-selected='true'] {
       &.block {
         color: var(--ironsworn-color-clickable-block-fg-selected);
-        background-color: var(--ironsworn-color-clickable-block-bg-selected);
+        background-color: var(
+          --ironsworn-color-thematic,
+          var(--ironsworn-color-clickable-block-bg-selected)
+        );
         border-color: var(--ironsworn-color-clickable-block-border-selected);
       }
       &:not(.block) {
