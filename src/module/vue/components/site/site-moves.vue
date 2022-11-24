@@ -1,33 +1,44 @@
 <template>
-  <div class="boxgroup moves nogrow" style="margin-bottom: 1em">
-    <div class="flexrow boxrow" style="justify-items: stretch">
-      <BtnSiteMove :move="moves.delveTheDepths" />
-
-      <BtnIsicon
-        icon="d10-tilt"
-        class="box text block"
-        :class="{ disabled: !hasThemeAndDomain }"
-        @click="randomFeature"
-      >
-        {{ $t('IRONSWORN.Feature') }}
-      </BtnIsicon>
-
-      <BtnSiteMove :move="moves.revealADanger" :disabled="!hasThemeAndDomain" />
-    </div>
-    <div class="flexrow boxrow">
-      <!-- This one is really just an oracle roll with some description -->
-      <BtnSiteMove :move="moves.findAnOpportunity" />
-
-      <BtnIsicon
-        icon="d10-tilt"
-        class="box text block"
-        @click="locateObjective"
-      >
-        {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
-      </BtnIsicon>
-
-      <BtnSiteMove :move="moves.escapeTheDepths" />
-    </div>
+  <div class="flexcol">
+    <SfMoverow
+      :move="moves.delveTheDepths"
+      v-if="moves.delveTheDepths"
+      thematic-color="#333"
+      class="nogrow"
+    />
+    <SfMoverow
+      :move="moves.revealADanger"
+      v-if="moves.revealADanger"
+      thematic-color="#333"
+      class="nogrow"
+    />
+    <SfMoverow
+      :move="moves.findAnOpportunity"
+      v-if="moves.findAnOpportunity"
+      thematic-color="#333"
+      class="nogrow"
+    />
+    <SfMoverow
+      :move="moves.escapeTheDepths"
+      v-if="moves.escapeTheDepths"
+      thematic-color="#333"
+      class="nogrow"
+    />
+    <BtnIsicon
+      icon="d10-tilt"
+      class="box text block nogrow"
+      :class="{ disabled: !hasThemeAndDomain }"
+      @click="randomFeature"
+    >
+      {{ $t('IRONSWORN.Feature') }}
+    </BtnIsicon>
+    <BtnIsicon
+      icon="d10-tilt"
+      class="box text block nogrow"
+      @click="locateObjective"
+    >
+      {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
+    </BtnIsicon>
   </div>
 </template>
 
@@ -44,9 +55,8 @@ import {
 import { TableRow, OracleRollMessage } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
-import BtnRollmove from '../buttons/btn-rollmove.vue'
 import BtnIsicon from '../buttons/btn-isicon.vue'
-import BtnSiteMove from './btn-site-move.vue'
+import SfMoverow from '../sf-moverow.vue'
 
 const site = inject(ActorKey)
 const $site = inject($ActorKey)

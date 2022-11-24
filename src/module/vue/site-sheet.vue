@@ -12,7 +12,7 @@
             @click="setRank"
             style="margin-right: 1em"
           />
-          <h4>{{ rankText }}</h4>
+          <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
           <BtnFaicon
             class="block nogrow"
             v-if="editMode"
@@ -42,6 +42,8 @@
               compendium-key="ironsworndelvethemes"
               title-key="IRONSWORN.Theme"
             />
+          </div>
+          <div class="flexrow boxrow nogrow">
             <SiteDroparea
               class="box"
               :item="domain"
@@ -89,10 +91,9 @@
           </div>
         </div>
       </div>
-      <div class="flexcol" style="flex-basis: 10em">
+      <div class="flexcol" style="flex-basis: 10em; margin: 10px 0">
         <!-- MOVES -->
-        <h4 class="flexrow nogrow">{{ $t('IRONSWORN.Moves') }}</h4>
-        <!-- <SiteMoves />  -->
+        <SiteMoves />
       </div>
     </div>
     <div class="flexcol">
