@@ -169,6 +169,8 @@ import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
+import { SFMoveDataPropertiesData } from '../../item/itemtypes'
+import { uniq } from 'lodash'
 
 const props = withDefaults(
   defineProps<{
@@ -182,6 +184,9 @@ const props = withDefaults(
 )
 
 const $item = computed(() => props.move.moveItem() as IronswornItem)
+const $itemSystem = computed(
+  () => $item.value?.system as SFMoveDataPropertiesData
+)
 
 provide(ItemKey, computed(() => $item.value.toObject()) as any)
 provide($ItemKey, $item.value)
@@ -203,13 +208,14 @@ const toggleTooltip = computed(() =>
 
 const moveId = computed(() => props.move.moveItem().id)
 
-if (props.move.dataforgedMove) {
-  const oracleIds = props.move.dataforgedMove.Oracles ?? []
-  Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
-    const nodes = await Promise.all(dfOracles.map(walkOracle))
-    data.oracles.push(...nodes)
-  })
-}
+const oracleIds = uniq([
+  ...($itemSystem.value?.Oracles ?? []),
+  ...(props.move.dataforgedMove?.Oracles ?? []),
+])
+Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
+  const nodes = await Promise.all(dfOracles.map(walkOracle))
+  data.oracles.push(...nodes)
+})
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
