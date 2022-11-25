@@ -4,20 +4,23 @@
 body.theme-starforged {
   @theme-font: 'Carrois Gothic SC', sans-serif;
 
-  @dark-overlay: #000000cc;
-  @dark-color: #33999933;
-  @muted-color: #11777799;
-  @medium-color: #33999999;
-  @light-color: #55bbbb99;
+  @dark-overlay: hsla(0, 0%, 0%, 0.8);
+  @dark-color: hsla(180, 50%, 40%, 0.2);
+  @muted-color: hsla(180, 75%, 27%, 0.6);
+  @medium-color: hsla(180, 50%, 40%, 0.6);
+  @light-color: hsla(180, 43%, 53%, 0.6);
 
-  @text-dark-color: #399;
-  @text-medium-color: #3dd;
-  @text-light-color: #6ff;
+  @text-dark-color: hsl(180, 50%, 40%);
+  @text-medium-color: hsl(180, 71%, 53%);
+  @text-light-color: hsl(180, 100%, 70%);
 
   --ironsworn-color-light: @text-medium-color;
-  --ironsworn-color-dark: black;
+  --ironsworn-color-dark: hsl(0, 0%, 0%);
 
-  --ironsworn-color-thematic: #117777;
+  --ironsworn-color-thematic: hsl(180, 75%, 27%);
+  // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables. see "--ironsworn-color-thematic-faded" in styles.less for an example.
+  --ironsworn-color-thematic-HSL: 180, 75%, 27%;
+  --ironsworn-color-thematic-HS: 180, 75%;
 
   // see clickable.less for usage
   --ironsworn-color-clickable-text: @text-dark-color;
@@ -32,7 +35,9 @@ body.theme-starforged {
   --ironsworn-color-clickable-block-border-selected: @text-light-color;
 
   --ironsworn-color-clickable-text-hover: @text-light-color;
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-thematic);
+  --ironsworn-color-clickable-block-bg-hover: var(
+    --ironsworn-color-thematic-faded
+  );
   --ironsworn-color-clickable-block-fg-hover: @text-light-color;
   --ironsworn-color-clickable-block-border-hover: @text-light-color;
 
@@ -53,9 +58,9 @@ body.theme-starforged {
     }
   }
 
-  --ironsworn-color-thematic: #117777;
+  --ironsworn-color-thematic: hsl(180, 75%, 27%);
 
-  --ironsworn-color-bg: black;
+  --ironsworn-color-bg: hsl(0, 0%, 0%);
   --ironsworn-color-border: @text-medium-color;
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-3);

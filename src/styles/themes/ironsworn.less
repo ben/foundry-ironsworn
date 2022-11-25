@@ -1,14 +1,14 @@
 @import '../mixins.less';
 
 body.theme-ironsworn {
-  @background-color: white;
-  @light-color: #ccc;
-  @medium-color: darkgray;
-  @dark-color: #888;
-  @text-color: black;
+  @background-color: hsl(0, 0%, 100%);
+  @light-color: hsl(0, 0%, 80%);
+  @medium-color: hsl(0, 0%, 66%);
+  @dark-color: hsl(0, 0%, 53%);
+  @text-color: hsl(0, 0%, 0%);
 
-  --ironsworn-color-light: white;
-  --ironsworn-color-dark: black;
+  --ironsworn-color-light: hsl(0, 0%, 100%);
+  --ironsworn-color-dark: hsl(0, 0%, 0%);
   --ironsworn-color-bg: @background-color;
 
   --ironsworn-color-shade-1: @light-color;
@@ -17,7 +17,7 @@ body.theme-ironsworn {
   --ironsworn-color-fg: @text-color;
   --ironsworn-color-text-outline: @text-color;
   --ironsworn-color-border: @text-color;
-  --ironsworn-color-highlight: palegoldenrod;
+  --ironsworn-color-highlight: hsl(55, 67%, 80%);
 
   // see clickable.less for usage
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg);

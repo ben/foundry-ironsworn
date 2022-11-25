@@ -4,49 +4,54 @@
 @import 'clickable.less';
 
 ::-webkit-scrollbar-track {
-  box-shadow: 0 0 1px #999 inset;
+  box-shadow: 0 0 1px hsl(0, 0%, 60%) inset;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb {
   outline: none;
   border-radius: 3px;
-  background: #444;
-  border: 1px solid #222;
+  background: hsl(0, 0%, 27%);
+  border: 1px solid hsl(0, 0%, 13%);
 }
 :root {
   scrollbar-width: thin;
-  scrollbar-color: #444 rgba(0, 0, 0, 0.1);
+  scrollbar-color: hsl(0, 0%, 27%) hsla(0, 0%, 0%, 0.1);
   --std-animation: all 0.5s ease;
   --widget-fill-opacity: 1;
   --widget-fill-opacity-preview: 0.5;
   --widget-stroke-width: 1px;
-  --ironsworn-color-bg: white;
+  --ironsworn-color-bg: hsl(0, 0%, 100%);
 
-  --ironsworn-color-red-1: #ff4f5e;
+  --ironsworn-color-thematic-faded: hsla(
+    var(--ironsworn-color-thematic-HSL),
+    50%
+  );
+
+  --ironsworn-color-red-1: hsl(355, 100%, 65%);
   // original sample from PDF: #c9181a
   // previously: #ec230e
-  --ironsworn-color-red-2: #e33722;
-  --ironsworn-color-red-3: #8e0006;
-  --ironsworn-color-purple-1: #e056e4;
+  --ironsworn-color-red-2: hsl(7, 78%, 51%);
+  --ironsworn-color-red-3: hsl(357, 100%, 28%);
+  --ironsworn-color-purple-1: hsl(298, 72%, 62%);
   // original sample from PDF: #8c1d81
-  --ironsworn-color-purple-2: #b32fb5;
-  --ironsworn-color-purple-3: #6d0075;
-  --ironsworn-color-blue-1: #00d1ff;
+  --ironsworn-color-purple-2: hsl(299, 59%, 45%);
+  --ironsworn-color-purple-3: hsl(296, 100%, 23%);
+  --ironsworn-color-blue-1: hsl(191, 100%, 50%);
   // original sample from PDF: #35a9e0
-  --ironsworn-color-blue-2: #00a2ef;
-  --ironsworn-color-blue-3: #0062e3;
+  --ironsworn-color-blue-2: hsl(199, 100%, 47%);
+  --ironsworn-color-blue-3: hsl(214, 100%, 45%);
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-2);
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-2);
   --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-2);
 
   --ironsworn-color-danger: hsl(0, 80%, 40%);
-  --ironsworn-color-danger-inverted: white;
+  --ironsworn-color-danger-inverted: hsl(0, 0%, 100%);
   --ironsworn-color-warning: hsl(55, 100%, 50%);
   --ironsworn-color-warning-faded: hsl(55, 100%, 50%);
   --ironsworn-color-success: hsl(200, 80%, 40%);
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
-  --ironsworn-dice-background: #afafaf;
+  --ironsworn-dice-background: hsl(0, 0%, 69%);
 }
 
 .grid {
