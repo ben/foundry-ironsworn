@@ -98,6 +98,7 @@
   margin: 10px 0;
   padding: 5px;
   --ironsworn-color-thematic: v-bind('data.data.color');
+  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 </style>
@@ -148,4 +149,10 @@ function dragStart(ev) {
     })
   )
 }
+
+const colorThematicFaded = computed(() =>
+  chroma(data.data.color as string)
+    .alpha(0.5)
+    .css()
+)
 </script>

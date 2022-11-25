@@ -1,10 +1,7 @@
 <template>
   <Collapsible
     class="movesheet-row"
-    :class="[
-      $style['wrapper'],
-      thematicColor ? $style['thematicC.thematicColorMixin'] : '',
-    ]"
+    :class="$style.wrapper"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
@@ -71,6 +68,7 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
+  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 
   color: var(--ironsworn-color-light);
@@ -226,6 +224,12 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
 function moveClick(move: IronswornItem) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
 }
+
+const colorThematicFaded = computed(() =>
+  chroma(props.thematicColor as string)
+    .alpha(0.5)
+    .css()
+)
 
 defineExpose({
   moveId,

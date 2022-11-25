@@ -115,6 +115,7 @@
 <style lang="less" module>
 .themeColor {
   --ironsworn-color-thematic: v-bind('asset?.system?.color');
+  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 </style>
@@ -198,6 +199,12 @@ function setAbilityClock(abilityIdx: number, clockTicks: number) {
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
   foundryItem?.update({ system: { abilities } })
 }
+
+const colorThematicFaded = computed(() =>
+  chroma(props.asset?.system?.color as string)
+    .alpha(0.5)
+    .css()
+)
 
 function toggleCondition(idx: number) {
   const { conditions } = props.asset.system

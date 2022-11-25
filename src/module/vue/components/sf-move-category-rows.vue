@@ -1,11 +1,11 @@
 <template>
   <Collapsible
-    :class="[$style.wrapper, category.color ? $style.themeColor : '']"
-    :toggleButtonClass="[$style.toggleButton]"
+    :class="$style.wrapper"
+    :toggleButtonClass="$style.toggleButton"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
-    :toggleWrapperClass="[$style.toggleWrapper]"
-    :toggleSectionClass="[$style.toggleSection]"
+    :toggleWrapperClass="$style.toggleWrapper"
+    :toggleSectionClass="$style.toggleSection"
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
     :toggleTextClass="$style.toggleText"
@@ -35,12 +35,14 @@
 <style lang="less" module>
 @import '../../../styles/mixins.less';
 
-.themeColor {
+.thematicColorMixin {
   --ironsworn-color-thematic: v-bind('category?.color');
+  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 
 .wrapper {
+  .thematicColorMixin();
   border-radius: 5px;
   background-color: var(--ironsworn-color-thematic);
 }
@@ -71,8 +73,6 @@
   }
 }
 .toggleButton {
-  // color: inherit;
-
   .fake-stroke();
 }
 </style>
@@ -118,6 +118,12 @@ async function scrollToAndExpandChild(targetMoveId: string) {
     await targetChild?.collapsible?.scrollToAndExpand()
   }
 }
+
+const colorThematicFaded = computed(() =>
+  chroma(props.category?.color as string)
+    .alpha(0.5)
+    .css()
+)
 
 defineExpose({
   collapseChildren,
