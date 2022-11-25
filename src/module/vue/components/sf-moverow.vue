@@ -77,6 +77,10 @@
   --ironsworn-color-thematic-HSL: v-bind(
     'chroma(thematicColor ?? "#000").hsl().join(", ")'
   );
+  --ironsworn-color-thematic-faded: hsla(
+    var(--ironsworn-color-thematic-HSL),
+    50%
+  );
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 
   color: var(--ironsworn-color-light);

@@ -1,13 +1,11 @@
 <template>
   <article
     class="item-row ironsworn__asset"
-    :class="{ [`asset-${$actor?.toolset}`]: true }"
+    :class="{
+      [`asset-${$actor?.toolset}`]: true,
+      [$style.themeColor]: props.asset?.system?.color,
+    }"
     :aria-expanded="expanded"
-    :style="
-      props.asset?.system?.color
-        ? `--ironsworn-color-thematic: ${props.asset?.system?.color}`
-        : undefined
-    "
   >
     <header class="asset-header nogrow flexrow">
       <button
@@ -114,6 +112,23 @@
   </article>
 </template>
 
+<style lang="less" module>
+.themeColor {
+  --ironsworn-color-thematic: v-bind('asset?.system?.color');
+  --ironsworn-color-thematic-HS: v-bind(
+    'chroma(asset?.system?.color ?? "#000").hsl().slice(0,2).join(", ")'
+  );
+  --ironsworn-color-thematic-HSL: v-bind(
+    'chroma(asset?.system?.color ?? "#000").hsl().join(", ")'
+  );
+  --ironsworn-color-thematic-faded: hsla(
+    var(--ironsworn-color-thematic-HSL),
+    50%
+  );
+  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+}
+</style>
+
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
 import { AssetAbility, AssetDataPropertiesData } from '../../../item/itemtypes'
@@ -126,6 +141,7 @@ import { defaultActor } from '../../../helpers/actors'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetConditions from './asset-conditions.vue'
+import chroma from 'chroma-js'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref

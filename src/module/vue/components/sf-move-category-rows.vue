@@ -1,6 +1,6 @@
 <template>
   <Collapsible
-    :class="[$style.wrapper, category.color ? $style.color : '']"
+    :class="[$style.wrapper, category.color ? $style.themeColor : '']"
     :toggleButtonClass="[$style.toggleButton]"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
@@ -35,13 +35,17 @@
 <style lang="less" module>
 @import '../../../styles/mixins.less';
 
-.color {
+.themeColor {
   --ironsworn-color-thematic: v-bind('category?.color');
   --ironsworn-color-thematic-HS: v-bind(
     'chroma(category?.color ?? "#000").hsl().slice(0,2).join(", ")'
   );
   --ironsworn-color-thematic-HSL: v-bind(
     'chroma(category?.color ?? "#000").hsl().join(", ")'
+  );
+  --ironsworn-color-thematic-faded: hsla(
+    var(--ironsworn-color-thematic-HSL),
+    50%
   );
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
