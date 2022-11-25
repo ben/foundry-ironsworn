@@ -1,0 +1,108 @@
+@import 'mixins.less';
+@import 'clickable.less';
+
+.inputFieldColors {
+  color: var(--ironsworn-color-fg);
+  background: var(--ironsworn-color-input-bg);
+  border-color: var(--ironsworn-color-clickable-block-border);
+  transition: var(--std-animation);
+  &::placeholder {
+    color: var(--ironsworn-color-fg);
+    opacity: 0.5;
+  }
+  &:hover {
+    color: var(--ironsworn-color-clickable-block-fg-hover);
+
+    border-color: var(--ironsworn-color-clickable-block-border-hover);
+  }
+  &:focus,
+  &:focus-within {
+    @shadowSpread: 7px;
+    color: var(--ironsworn-color-fg-highlight);
+    border: 1px solid var(--ironsworn-color-accent-alt);
+    border-bottom: 1px solid var(--ironsworn-color-accent);
+    box-shadow: 0 0 @shadowSpread var(--ironsworn-color-accent),
+      0 0 @shadowSpread var(--ironsworn-color-accent);
+  }
+}
+
+textarea#chat-message {
+  .inputFieldColors();
+}
+
+.ironsworn {
+  input:not([type='checkbox']):not([type='radio']),
+  textarea,
+  select {
+    .inputFieldColors();
+  }
+  // EDITORS
+  .tox {
+    :not(svg):not(rect) {
+      color: var(--ironsworn-color-fg);
+    }
+    .tox-toolbar-overlord,
+    .tox-toolbar__primary,
+    &:not(.tox-tinymce-inline) .tox-editor-header {
+      color: var(--ironsworn-color-fg);
+      background-color: var(--ironsworn-color-bg);
+    }
+    .tox-tbtn {
+      transition: var(--std-animation);
+      background-color: var(--ironsworn-color-clickable-block-bg);
+      svg {
+        fill: var(--ironsworn-color-clickable-block-fg);
+      }
+      &:hover {
+        background-color: var(--ironsworn-color-clickable-block-bg-hover);
+        svg {
+          fill: var(--ironsworn-color-clickable-block-fg-hover);
+        }
+      }
+      &[aria-pressed='true'] {
+        background-color: var(--ironsworn-color-clickable-block-bg-selected);
+        svg {
+          fill: var(--ironsworn-color-clickable-block-fg-selected);
+        }
+      }
+    }
+  }
+  .editor {
+    border: 1px solid;
+    border-radius: 5px;
+  }
+  .editor-content {
+    .inputFieldColors();
+  }
+
+  .ProseMirror {
+    .inputFieldColors();
+    padding: 0.5rem;
+  }
+
+  .editor,
+  .editor-content {
+    height: 100%;
+    min-height: 100px;
+  }
+
+  input {
+    &[type='checkbox'],
+    &[type='radio'] {
+      accent-color: var(--ironsworn-color-fg);
+      cursor: pointer;
+    }
+  }
+  label.checkbox {
+    cursor: pointer;
+  }
+
+  input[type='number'] {
+    -moz-appearance: auto;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: button !important;
+      opacity: 1 !important;
+    }
+  }
+}

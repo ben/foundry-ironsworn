@@ -6,7 +6,7 @@ body.theme-ironsworn {
   --ironsworn-color-shade-2: hsl(0, 0%, 66%);
   --ironsworn-color-shade-3: hsl(0, 0%, 53%);
   --ironsworn-color-dark: hsl(0, 0%, 0%);
-  --ironsworn-color-highlight: hsl(55, 67%, 80%);
+  --ironsworn-color-bg-highlight: hsl(55, 67%, 80%);
 
   --ironsworn-color-fg: var(--ironsworn-color-dark);
   --ironsworn-color-bg: var(--ironsworn-color-light);
@@ -35,10 +35,6 @@ body.theme-ironsworn {
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-shade-2);
   --ironsworn-color-clickable-text-selected: var(--ironsworn-color-shade-3);
 
-  input::placeholder {
-    color: var(--ironsworn-color-shade-2);
-  }
-
   input.highlight:focus {
     background-color: var(--ironsworn-color-fg);
     color: var(--ironsworn-color-bg);
@@ -53,21 +49,7 @@ body.theme-ironsworn {
     border-color: var(--ironsworn-color-shade-2);
   }
 
-  .margin-left,
-  .margin-right {
-    border-color: var(--ironsworn-color-border);
-    h1 {
-      border-color: var(--ironsworn-color-border);
-    }
-  }
-
-  .stack-row {
-    border-color: var(--ironsworn-color-border);
-  }
-
   .edit {
-    border-color: var(--ironsworn-color-border);
-
     &.editing {
       background: var(--ironsworn-color-shade-2);
     }
@@ -78,16 +60,15 @@ body.theme-ironsworn {
   }
 
   .item-row {
-    border-color: var(--ironsworn-color-border);
     background-color: var(--ironsworn-color-bg);
 
     &.highlighted {
-      background-color: var(--ironsworn-color-highlight);
+      background-color: var(--ironsworn-color-bg-highlight);
     }
   }
 
   .movesheet-row.highlighted {
-    background-color: var(--ironsworn-color-highlight);
+    background-color: var(--ironsworn-color-bg-highlight);
   }
 
   .progresses .item {
@@ -115,10 +96,6 @@ body.theme-ironsworn {
     }
   }
 
-  .progress {
-    border-color: var(--ironsworn-color-border);
-  }
-
   .move-title {
     background-color: var(--ironsworn-color-bg);
     border-color: var(--ironsworn-color-shade-3);
@@ -126,18 +103,6 @@ body.theme-ironsworn {
 
   .drag-highlight {
     background: var(--ironsworn-color-shade-2);
-  }
-
-  .stats {
-    .stat {
-      border-color: var(--ironsworn-color-border);
-    }
-  }
-
-  .compact {
-    .bordergroup {
-      border-color: var(--ironsworn-color-border);
-    }
   }
 
   .ironsworn-roll {

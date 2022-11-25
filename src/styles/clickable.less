@@ -11,44 +11,79 @@
   }
 }
 
-.clickable {
-  .interactive();
-  &.text {
-    justify-content: flex-start;
+.clickableTextColors {
+  color: var(--ironsworn-color-clickable-text);
+  &[aria-selected='true'],
+  &.selected {
+    color: var(--ironsworn-color-clickable-text-selected);
   }
-  &:not(svg):not(.svg) {
-    &.block {
-      color: var(--ironsworn-color-clickable-block-fg);
-      background-color: var(--ironsworn-color-clickable-block-bg);
-      border-color: var(--ironsworn-color-clickable-block-border);
-    }
-    &:not(.block) {
+  &:hover,
+  &.hover {
+    color: var(--ironsworn-color-clickable-text-hover);
+  }
+}
+.clickableBlockColors {
+  color: var(--ironsworn-color-clickable-block-fg);
+  background-color: var(--ironsworn-color-clickable-block-bg);
+  border-color: var(--ironsworn-color-clickable-block-border);
+  &:hover,
+  &.hover {
+    color: var(--ironsworn-color-clickable-block-fg-hover);
+    background-color: var(
+      --ironsworn-color-thematic-faded,
+      var(--ironsworn-color-clickable-block-bg-hover)
+    );
+    border-color: var(--ironsworn-color-clickable-block-border-hover);
+  }
+  &[aria-selected='true'],
+  &.selected {
+    color: var(--ironsworn-color-clickable-block-fg-selected);
+    background-color: var(
+      --ironsworn-color-thematic,
+      var(--ironsworn-color-clickable-block-bg-selected)
+    );
+    border-color: var(--ironsworn-color-clickable-block-border-selected);
+  }
+}
+.prosemirror button,
+.tox .tox-tbtn--bespoke {
+  .clickableBlockColors();
+}
+
+.ironsworn {
+  .entity-link,
+  .content-link {
+    transition: var(--std-animation);
+    background-color: var(--ironsworn-color-clickable-block-bg);
+    border-color: var(--ironsworn-color-clickable-block-border);
+    .clickableTextColors();
+
+    i {
+      transition: var(--std-animation);
       color: var(--ironsworn-color-clickable-text);
     }
-    &.selected,
-    &[aria-selected='true'] {
-      &.block {
-        color: var(--ironsworn-color-clickable-block-fg-selected);
-        background-color: var(
-          --ironsworn-color-thematic,
-          var(--ironsworn-color-clickable-block-bg-selected)
-        );
-        border-color: var(--ironsworn-color-clickable-block-border-selected);
-      }
-      &:not(.block) {
-        color: var(--ironsworn-color-clickable-text-selected);
+    &:hover {
+      text-shadow: none;
+      background-color: var(--ironsworn-color-clickable-block-bg-hover);
+      border-color: var(--ironsworn-color-clickable-block-border-hover);
+      i {
+        color: var(--ironsworn-color-clickable-text-hover);
+        text-shadow: none;
       }
     }
-    &.hover,
-    &:hover {
-      &.block {
-        color: var(--ironsworn-color-clickable-block-fg-hover);
-        background-color: var(--ironsworn-color-clickable-block-bg-hover);
-        border-color: var(--ironsworn-color-clickable-block-border-hover);
-      }
-      &:not(.block) {
-        color: var(--ironsworn-color-clickable-text-hover);
-      }
+  }
+}
+
+.clickable {
+  .interactive();
+
+  &:not(svg):not(.svg) {
+    &.text {
+      justify-content: flex-start;
+      .clickableTextColors();
+    }
+    &.block {
+      .clickableBlockColors();
     }
   }
   svg,

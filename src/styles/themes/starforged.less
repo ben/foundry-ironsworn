@@ -3,67 +3,112 @@
 
 body.theme-starforged {
   @theme-font: 'Carrois Gothic SC', sans-serif;
+  @themeLightHue: 185;
+  @themeLightSaturation: 70%;
+  @themeLightLightness: 55%;
+  @themeDarkHue: @themeLightHue;
+  @themeDarkSaturation: 0%;
+  @themeDarkLightness: 0%;
 
-  @bg-dark-color: hsla(180, 50%, 40%, 0.2);
-  @bg-muted-color: hsla(180, 75%, 27%, 0.6);
-  @bg-medium-color: hsla(180, 50%, 40%, 0.6);
-  @bg-light-color: hsla(180, 43%, 53%, 0.6);
+  // muted fg + alt bg should meet WCAG contrast
 
-  @fg-dark-color: hsl(180, 50%, 40%);
-  @fg-medium-color: hsl(180, 71%, 53%);
-  @fg-light-color: hsl(180, 100%, 70%);
+  --ironsworn-color-light: hsl(
+    @themeLightHue,
+    @themeLightSaturation,
+    @themeLightLightness
+  );
+  --ironsworn-color-dark: hsl(
+    @themeDarkHue,
+    @themeDarkSaturation,
+    @themeDarkLightness
+  );
+  --ironsworn-color-accent: hsl((@themeLightHue+10), 100%, 50%);
+  --ironsworn-color-accent-alt: hsl((@themeLightHue+35), 100%, 50%);
 
-  --ironsworn-dark-overlay: hsla(0, 0%, 0%, 0.8);
+  --ironsworn-color-light-muted: mix(
+    $--ironsworn-color-light,
+    $--ironsworn-color-dark,
+    70%
+  );
+  --ironsworn-color-light-vivid: lighten(
+    saturate($--ironsworn-color-light, 20%, relative),
+    50%,
+    relative
+  );
 
-  --ironsworn-color-light: @fg-medium-color;
-  --ironsworn-color-dark: hsl(0, 0%, 0%);
+  --ironsworn-color-dark-alt: mix(
+    $--ironsworn-color-light-muted,
+    $--ironsworn-color-dark,
+    40%
+  );
+  --ironsworn-color-dark-vivid: mix(
+    $--ironsworn-color-light,
+    $--ironsworn-color-dark,
+    60%
+  );
 
   --ironsworn-color-fg: var(--ironsworn-color-light);
-  --ironsworn-color-bg: black;
+  --ironsworn-color-fg-muted: var(--ironsworn-color-light-muted);
+  --ironsworn-color-fg-highlight: var(--ironsworn-color-light-vivid);
 
-  --ironsworn-color-thematic: hsl(180, 75%, 27%);
+  --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-border: var(--ironsworn-color-fg-muted);
+  --ironsworn-color-border-muted: var(--ironsworn-color-dark-alt);
+
+  --ironsworn-color-bg: var(--ironsworn-color-dark);
+  --ironsworn-color-bg-alt: var(--ironsworn-color-dark-alt);
+  --ironsworn-color-bg-highlight: var(--ironsworn-color-dark-vivid);
+
+  --ironsworn-dark-overlay: fade($--ironsworn-color-dark, 15%);
+  --ironsworn-light-overlay: fade($--ironsworn-color-light, 15%);
+
+  --ironsworn-color-input-bg: var(--ironsworn-light-overlay);
+
+  --ironsworn-color-thematic: hsl(@themeLightHue, 75%, 27%);
   // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables. see "--ironsworn-color-thematic-faded" in styles.less for an example.
-  --ironsworn-color-thematic-HSL: 180, 75%, 27%;
-  --ironsworn-color-thematic-HS: 180, 75%;
+  --ironsworn-color-thematic-HSL: @themeLightHue, 75%, 27%;
+  --ironsworn-color-thematic-HS: @themeLightHue, 75%;
+
+  --ironsworn-color-text-outline: $--ironsworn-color-dark;
+
+  // --ironsworn-color-input-bg: ;
 
   // see clickable.less for usage
-  --ironsworn-color-clickable-text: @fg-dark-color;
+  --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-clickable-text-selected: var(
+    --ironsworn-color-fg-highlight
+  );
+
+  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg-muted);
   --ironsworn-color-clickable-block-bg: var(--ironsworn-color-bg);
-  --ironsworn-color-clickable-block-fg: @fg-dark-color;
+  --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
 
-  --ironsworn-color-clickable-text-selected: @fg-light-color;
+  --ironsworn-color-clickable-block-fg-selected: var(
+    --ironsworn-color-fg-highlight
+  );
   --ironsworn-color-clickable-block-bg-selected: var(
-    --ironsworn-color-thematic
+    --ironsworn-color-bg-highlight
   );
-  --ironsworn-color-clickable-block-fg-selected: @fg-light-color;
-  --ironsworn-color-clickable-block-border-selected: @fg-light-color;
-
-  --ironsworn-color-clickable-text-hover: @fg-light-color;
-  --ironsworn-color-clickable-block-bg-hover: var(
-    --ironsworn-color-thematic-faded
+  --ironsworn-color-clickable-block-border-selected: var(
+    --ironsworn-color-fg-highlight
   );
-  --ironsworn-color-clickable-block-fg-hover: @fg-light-color;
-  --ironsworn-color-clickable-block-border-hover: @fg-light-color;
 
-  --ironsworn-color-border: @fg-dark-color;
-  --ironsworn-color-text-outline: $--ironsworn-color-bg;
+  --ironsworn-color-clickable-block-fg-hover: var(
+    --ironsworn-color-fg-highlight
+  );
 
-  .hover-fx(@spread_box:5px,@spread_text:10px) {
-    &:hover {
-      &.block {
-        box-shadow: 0 0 @spread_box @bg-light-color;
-      }
-      &.text {
-        text-shadow: 0 0 @spread_text @bg-light-color;
-      }
-      color: @fg-light-color;
-    }
+  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-bg-alt);
+  --ironsworn-color-clickable-block-border-hover: var(
+    --ironsworn-color-fg-highlight
+  );
+
+  .hoverFxBlock(@spread_block:10px) {
+    box-shadow: 0 0 @spread_box var(--ironsworn-color-bg-highlight) inset;
   }
-
-  --ironsworn-color-thematic: hsl(180, 75%, 27%);
-
-  --ironsworn-color-bg: hsl(0, 0%, 0%);
-  --ironsworn-color-border: @fg-medium-color;
+  .hoverFxText(@spread_text:10px) {
+    text-shadow: 0 0 @spread_text var(--ironsworn-color-bg-highlight);
+  }
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-3);
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-3);
@@ -73,7 +118,11 @@ body.theme-starforged {
   --ironsworn-color-success: hsl(290, 80%, 50%);
   --ironsworn-color-success-faded: hsl(290, 80%, 60%);
 
-  --ironsworn-dice-background: darken(@fg-dark-color, 20);
+  --ironsworn-dice-background: mix(
+    $--ironsworn-color-light-vivid,
+    $--ironsworn-color-dark,
+    20%
+  );
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
   body {
@@ -81,98 +130,55 @@ body.theme-starforged {
   }
 
   .app {
-    color: @fg-medium-color;
-  }
-
-  input::placeholder {
-    color: @bg-medium-color;
-  }
-
-  input.highlight:focus {
-    box-shadow: 0 0 5px orange;
-    background-color: @bg-medium-color;
-    color: @fg-light-color;
+    color: var(--ironsworn-color-fg);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: @bg-dark-color;
-    border-color: @bg-medium-color;
+    background: var(--ironsworn-color-bg-alt);
+    border-color: var(--ironsworn-color-border-muted);
   }
 
   .window-app,
   .journal-entry .journal-entry-content {
     background: initial;
     background-color: var(--ironsworn-color-bg);
-    border: 1px solid @fg-dark-color;
-  }
-
-  .editor {
-    color: @fg-medium-color;
-    background-color: var(--ironsworn-color-bg);
-  }
-
-  .ProseMirror {
-    background-color: @bg-dark-color;
-    padding: 0.5rem;
-  }
-
-  .tox .tox-editor-header,
-  .tox .tox-toolbar-overlord,
-  .tox .tox-toolbar__primary {
-    background-color: var(--ironsworn-color-bg);
+    border-width: 1px;
+    border-style: solid;
   }
 
   font-family: @theme-font;
-  color: @fg-medium-color;
+  color: var(--ironsworn-color-fg);
   .dialog-buttons {
     .dialog-button {
       color: currentColor;
     }
   }
-  select {
-    border-color: @bg-dark-color;
-    color: @fg-medium-color;
-  }
 
   h2,
   h3 {
-    color: @fg-medium-color;
-    border-bottom-color: @bg-light-color;
+    color: var(--ironsworn-color-fg);
   }
 
   .inline-roll {
-    background: @bg-dark-color;
-    border-color: @bg-light-color;
+    background: var(--ironsworn-color-bg-alt);
+    border-color: var(--ironsworn-color-border-muted);
 
     &:hover {
-      text-shadow: 0 0 8px @fg-medium-color;
+      text-shadow: 0 0 8px var(--ironsworn-color-fg-highlight);
     }
   }
 
   .window-content {
     background: var(--ironsworn-color-bg);
     background-image: none;
-    color: @fg-medium-color;
-  }
-
-  input,
-  textarea,
-  textarea#chat-message {
-    background: @bg-dark-color;
-    border: 0;
-    color: @fg-medium-color;
-
-    &:focus {
-      box-shadow: 0 0 10px @bg-light-color;
-      cursor: pointer;
-    }
+    color: var(--ironsworn-color-fg);
   }
 
   .sheet-area {
-    border-color: @bg-light-color;
+    border-color: var(--ironsworn-color-border-muted);
   }
   svg {
-    color: @fg-medium-color;
+    color: var(--ironsworn-color-fg);
   }
   .clickable:not(svg):not(.svg) {
     &.hover,
@@ -183,7 +189,6 @@ body.theme-starforged {
       }
       &.text:not(.block) {
         box-shadow: none;
-        // filter: drop-shadow(0 0 4px @text-light-color);
       }
     }
     &.selected,
@@ -191,95 +196,41 @@ body.theme-starforged {
       &.block {
         .fake-stroke();
       }
-      &.block,
-      &.text {
-      }
     }
   }
 
   .drag-highlight {
-    background: @bg-medium-color;
-  }
-
-  .stats {
-    .stat {
-      border-color: @fg-medium-color;
-    }
-  }
-
-  hr {
-    border-color: @bg-light-color;
-  }
-
-  .entity-link,
-  .content-link {
-    background-color: @bg-dark-color;
-    border-color: @bg-medium-color;
-    color: @fg-medium-color;
-    i {
-      color: @fg-light-color;
-    }
+    background: var(--ironsworn-color-bg-highlight);
   }
 
   .movesheet-row.highlighted {
-    background-color: @bg-muted-color;
-  }
-
-  .compact {
-    .bordergroup {
-      border-color: @bg-light-color;
-    }
+    background-color: var(--ironsworn-color-bg-highlight);
   }
 
   .asset-ironsworn .asset-ability:before {
-    border: 1px solid @fg-medium-color;
+    border-width: 1px;
+    border-style: solid;
   }
   .asset-starforged .asset-ability:before {
-    background-color: @fg-medium-color;
-    border: 1px solid @fg-medium-color;
-  }
-
-  .ironsworn-roll {
-    .roll {
-      // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
-    }
-  }
-
-  // button,
-  button {
-    .hover-fx();
-  }
-  .prosemirror button,
-  .tox .tox-tbtn--bespoke {
-    background-color: @bg-dark-color;
-    color: @fg-medium-color;
-    border-color: @bg-muted-color;
-    .hover-fx();
-  }
-
-  select {
-    background-color: @bg-dark-color;
-  }
-
-  input[type='checkbox'] {
-    background-color: @bg-dark-color;
+    background-color: var(--ironsworn-color-fg);
+    border-width: 1px;
+    border-style: solid;
   }
 
   table {
-    border-color: @bg-muted-color;
+    border-color: var(--ironsworn-color-border-muted);
   }
 
   .chat-message {
     background: var(--ironsworn-dark-overlay);
-    border-color: @bg-muted-color;
-    color: @fg-medium-color;
+    color: var(--ironsworn-color-fg);
 
     .message-header {
-      color: @fg-dark-color;
+      color: var(--ironsworn-color-fg-muted);
     }
 
     .message-content {
-      border: 1px solid @fg-dark-color;
+      border: 1px solid var(--ironsworn-color-border-muted);
     }
 
     .dice-formula,
@@ -297,10 +248,10 @@ body.theme-starforged {
         }
 
         &.min {
-          color: @fg-medium-color;
+          color: var(--ironsworn-color-fg);
         }
         &.max {
-          color: @fg-medium-color;
+          color: var(--ironsworn-color-fg);
         }
       }
     }
@@ -308,41 +259,41 @@ body.theme-starforged {
     table tr {
       &.selected,
       &[aria-selected='true'] {
-        background-color: @bg-medium-color;
-        color: @fg-light-color;
+        background-color: var(--ironsworn-color-bg-highlight);
+        color: var(--ironsworn-color-fg-highlight);
 
         .entity-link,
         .content-link {
-          color: @fg-light-color;
+          color: var(--ironsworn-color-fg-highlight);
         }
       }
     }
   }
 
   #sidebar-tabs {
-    border-color: @bg-medium-color;
-    box-shadow: 0 0 10px @bg-light-color;
+    border-color: var(--ironsworn-color-border-muted);
+    box-shadow: 0 0 10px var(--ironsworn-color-bg-highlight);
 
     .item {
-      color: @fg-dark-color;
+      color: var(--ironsworn-color-fg-muted);
       &.active {
-        color: @fg-light-color;
-        border-color: @bg-medium-color;
-        box-shadow: 0 0 6px inset @bg-light-color;
-        text-shadow: 0 0 10px @bg-light-color;
+        color: var(--ironsworn-color-fg-highlight);
+        border-color: var(--ironsworn-color-border-muted);
+        box-shadow: 0 0 6px inset var(--ironsworn-color-bg-highlight);
+        text-shadow: 0 0 10px var(--ironsworn-color-bg-highlight);
       }
     }
   }
 
   #chat-controls {
     .roll-type-select {
-      background-color: @bg-dark-color;
+      background-color: var(--ironsworn-color-light-overlay);
     }
   }
 
   .directory {
     .directory-header .header-search input {
-      background-color: @bg-dark-color;
+      background-color: var(--ironsworn-color-light-overlay);
     }
   }
 }
