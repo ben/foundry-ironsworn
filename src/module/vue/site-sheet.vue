@@ -2,7 +2,7 @@
   <div class="flexcol">
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="actor" />
-    <div class="flexrow nogrow" style="gap: 10px">
+    <div class="flexrow nogrow" style="gap: 10px; margin: 0.5em 0">
       <div class="flexcol" style="flex-basis: 20em">
         <!-- RANK -->
         <div class="flexrow nogrow">
@@ -91,7 +91,10 @@
           </div>
         </div>
       </div>
-      <div class="flexcol" style="flex-basis: 10em; margin: 10px 0">
+      <div
+        class="flexcol"
+        style="flex-basis: 10em; max-height: 430px; overflow: scroll"
+      >
         <!-- MOVES -->
         <SiteMoves />
       </div>

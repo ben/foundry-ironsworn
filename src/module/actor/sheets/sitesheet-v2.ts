@@ -9,7 +9,6 @@ export class IronswornSiteSheetV2 extends VueActorSheet {
       template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
       width: 700,
       height: 650,
-      resizable: false,
     })
   }
 
