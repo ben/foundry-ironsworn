@@ -4,18 +4,22 @@
 body.theme-starforged {
   @theme-font: 'Carrois Gothic SC', sans-serif;
 
-  @dark-overlay: hsla(0, 0%, 0%, 0.8);
-  @dark-color: hsla(180, 50%, 40%, 0.2);
-  @muted-color: hsla(180, 75%, 27%, 0.6);
-  @medium-color: hsla(180, 50%, 40%, 0.6);
-  @light-color: hsla(180, 43%, 53%, 0.6);
+  @bg-dark-color: hsla(180, 50%, 40%, 0.2);
+  @bg-muted-color: hsla(180, 75%, 27%, 0.6);
+  @bg-medium-color: hsla(180, 50%, 40%, 0.6);
+  @bg-light-color: hsla(180, 43%, 53%, 0.6);
 
-  @text-dark-color: hsl(180, 50%, 40%);
-  @text-medium-color: hsl(180, 71%, 53%);
-  @text-light-color: hsl(180, 100%, 70%);
+  @fg-dark-color: hsl(180, 50%, 40%);
+  @fg-medium-color: hsl(180, 71%, 53%);
+  @fg-light-color: hsl(180, 100%, 70%);
 
-  --ironsworn-color-light: @text-medium-color;
+  --ironsworn-dark-overlay: hsla(0, 0%, 0%, 0.8);
+
+  --ironsworn-color-light: @fg-medium-color;
   --ironsworn-color-dark: hsl(0, 0%, 0%);
+
+  --ironsworn-color-fg: var(--ironsworn-color-light);
+  --ironsworn-color-bg: black;
 
   --ironsworn-color-thematic: hsl(180, 75%, 27%);
   // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables. see "--ironsworn-color-thematic-faded" in styles.less for an example.
@@ -23,45 +27,43 @@ body.theme-starforged {
   --ironsworn-color-thematic-HS: 180, 75%;
 
   // see clickable.less for usage
-  --ironsworn-color-clickable-text: @text-dark-color;
+  --ironsworn-color-clickable-text: @fg-dark-color;
   --ironsworn-color-clickable-block-bg: var(--ironsworn-color-bg);
-  --ironsworn-color-clickable-block-fg: @text-dark-color;
+  --ironsworn-color-clickable-block-fg: @fg-dark-color;
 
-  --ironsworn-color-clickable-text-selected: @text-light-color;
+  --ironsworn-color-clickable-text-selected: @fg-light-color;
   --ironsworn-color-clickable-block-bg-selected: var(
     --ironsworn-color-thematic
   );
-  --ironsworn-color-clickable-block-fg-selected: @text-light-color;
-  --ironsworn-color-clickable-block-border-selected: @text-light-color;
+  --ironsworn-color-clickable-block-fg-selected: @fg-light-color;
+  --ironsworn-color-clickable-block-border-selected: @fg-light-color;
 
-  --ironsworn-color-clickable-text-hover: @text-light-color;
+  --ironsworn-color-clickable-text-hover: @fg-light-color;
   --ironsworn-color-clickable-block-bg-hover: var(
     --ironsworn-color-thematic-faded
   );
-  --ironsworn-color-clickable-block-fg-hover: @text-light-color;
-  --ironsworn-color-clickable-block-border-hover: @text-light-color;
+  --ironsworn-color-clickable-block-fg-hover: @fg-light-color;
+  --ironsworn-color-clickable-block-border-hover: @fg-light-color;
 
-  --ironsworn-color-fg: @text-medium-color;
-  --ironsworn-color-bg: black;
-  --ironsworn-color-border: @text-dark-color;
+  --ironsworn-color-border: @fg-dark-color;
   --ironsworn-color-text-outline: $--ironsworn-color-bg;
 
   .hover-fx(@spread_box:5px,@spread_text:10px) {
     &:hover {
       &.block {
-        box-shadow: 0 0 @spread_box @light-color;
+        box-shadow: 0 0 @spread_box @bg-light-color;
       }
       &.text {
-        text-shadow: 0 0 @spread_text @light-color;
+        text-shadow: 0 0 @spread_text @bg-light-color;
       }
-      color: @text-light-color;
+      color: @fg-light-color;
     }
   }
 
   --ironsworn-color-thematic: hsl(180, 75%, 27%);
 
   --ironsworn-color-bg: hsl(0, 0%, 0%);
-  --ironsworn-color-border: @text-medium-color;
+  --ironsworn-color-border: @fg-medium-color;
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-3);
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-3);
@@ -71,7 +73,7 @@ body.theme-starforged {
   --ironsworn-color-success: hsl(290, 80%, 50%);
   --ironsworn-color-success-faded: hsl(290, 80%, 60%);
 
-  --ironsworn-dice-background: darken(@text-dark-color, 20);
+  --ironsworn-dice-background: darken(@fg-dark-color, 20);
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
   body {
@@ -79,38 +81,38 @@ body.theme-starforged {
   }
 
   .app {
-    color: @text-medium-color;
+    color: @fg-medium-color;
   }
 
   input::placeholder {
-    color: @medium-color;
+    color: @bg-medium-color;
   }
 
   input.highlight:focus {
     box-shadow: 0 0 5px orange;
-    background-color: @medium-color;
-    color: @text-light-color;
+    background-color: @bg-medium-color;
+    color: @fg-light-color;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: @dark-color;
-    border-color: @medium-color;
+    background: @bg-dark-color;
+    border-color: @bg-medium-color;
   }
 
   .window-app,
   .journal-entry .journal-entry-content {
     background: initial;
     background-color: var(--ironsworn-color-bg);
-    border: 1px solid @text-dark-color;
+    border: 1px solid @fg-dark-color;
   }
 
   .editor {
-    color: @text-medium-color;
+    color: @fg-medium-color;
     background-color: var(--ironsworn-color-bg);
   }
 
   .ProseMirror {
-    background-color: @dark-color;
+    background-color: @bg-dark-color;
     padding: 0.5rem;
   }
 
@@ -121,56 +123,56 @@ body.theme-starforged {
   }
 
   font-family: @theme-font;
-  color: @text-medium-color;
+  color: @fg-medium-color;
   .dialog-buttons {
     .dialog-button {
       color: currentColor;
     }
   }
   select {
-    border-color: @dark-color;
-    color: @text-medium-color;
+    border-color: @bg-dark-color;
+    color: @fg-medium-color;
   }
 
   h2,
   h3 {
-    color: @text-medium-color;
-    border-bottom-color: @light-color;
+    color: @fg-medium-color;
+    border-bottom-color: @bg-light-color;
   }
 
   .inline-roll {
-    background: @dark-color;
-    border-color: @light-color;
+    background: @bg-dark-color;
+    border-color: @bg-light-color;
 
     &:hover {
-      text-shadow: 0 0 8px @text-medium-color;
+      text-shadow: 0 0 8px @fg-medium-color;
     }
   }
 
   .window-content {
     background: var(--ironsworn-color-bg);
     background-image: none;
-    color: @text-medium-color;
+    color: @fg-medium-color;
   }
 
   input,
   textarea,
   textarea#chat-message {
-    background: @dark-color;
+    background: @bg-dark-color;
     border: 0;
-    color: @text-medium-color;
+    color: @fg-medium-color;
 
     &:focus {
-      box-shadow: 0 0 10px @light-color;
+      box-shadow: 0 0 10px @bg-light-color;
       cursor: pointer;
     }
   }
 
   .sheet-area {
-    border-color: @light-color;
+    border-color: @bg-light-color;
   }
   svg {
-    color: @text-medium-color;
+    color: @fg-medium-color;
   }
   .clickable:not(svg):not(.svg) {
     &.hover,
@@ -196,45 +198,45 @@ body.theme-starforged {
   }
 
   .drag-highlight {
-    background: @medium-color;
+    background: @bg-medium-color;
   }
 
   .stats {
     .stat {
-      border-color: @text-medium-color;
+      border-color: @fg-medium-color;
     }
   }
 
   hr {
-    border-color: @light-color;
+    border-color: @bg-light-color;
   }
 
   .entity-link,
   .content-link {
-    background-color: @dark-color;
-    border-color: @medium-color;
-    color: @text-medium-color;
+    background-color: @bg-dark-color;
+    border-color: @bg-medium-color;
+    color: @fg-medium-color;
     i {
-      color: @text-light-color;
+      color: @fg-light-color;
     }
   }
 
   .movesheet-row.highlighted {
-    background-color: @muted-color;
+    background-color: @bg-muted-color;
   }
 
   .compact {
     .bordergroup {
-      border-color: @light-color;
+      border-color: @bg-light-color;
     }
   }
 
   .asset-ironsworn .asset-ability:before {
-    border: 1px solid @text-medium-color;
+    border: 1px solid @fg-medium-color;
   }
   .asset-starforged .asset-ability:before {
-    background-color: @text-medium-color;
-    border: 1px solid @text-medium-color;
+    background-color: @fg-medium-color;
+    border: 1px solid @fg-medium-color;
   }
 
   .ironsworn-roll {
@@ -249,40 +251,40 @@ body.theme-starforged {
   }
   .prosemirror button,
   .tox .tox-tbtn--bespoke {
-    background-color: @dark-color;
-    color: @text-medium-color;
-    border-color: @muted-color;
+    background-color: @bg-dark-color;
+    color: @fg-medium-color;
+    border-color: @bg-muted-color;
     .hover-fx();
   }
 
   select {
-    background-color: @dark-color;
+    background-color: @bg-dark-color;
   }
 
   input[type='checkbox'] {
-    background-color: @dark-color;
+    background-color: @bg-dark-color;
   }
 
   table {
-    border-color: @muted-color;
+    border-color: @bg-muted-color;
   }
 
   .chat-message {
-    background: @dark-overlay;
-    border-color: @muted-color;
-    color: @text-medium-color;
+    background: var(--ironsworn-dark-overlay);
+    border-color: @bg-muted-color;
+    color: @fg-medium-color;
 
     .message-header {
-      color: @text-dark-color;
+      color: @fg-dark-color;
     }
 
     .message-content {
-      border: 1px solid @text-dark-color;
+      border: 1px solid @fg-dark-color;
     }
 
     .dice-formula,
     .dice-total {
-      background: @dark-overlay;
+      background: var(--ironsworn-dark-overlay);
       // color: @text-light-color;
       border-width: 0px;
       padding: 5px 0px 5px 0px;
@@ -295,10 +297,10 @@ body.theme-starforged {
         }
 
         &.min {
-          color: @text-medium-color;
+          color: @fg-medium-color;
         }
         &.max {
-          color: @text-medium-color;
+          color: @fg-medium-color;
         }
       }
     }
@@ -306,41 +308,41 @@ body.theme-starforged {
     table tr {
       &.selected,
       &[aria-selected='true'] {
-        background-color: @medium-color;
-        color: @text-light-color;
+        background-color: @bg-medium-color;
+        color: @fg-light-color;
 
         .entity-link,
         .content-link {
-          color: @text-light-color;
+          color: @fg-light-color;
         }
       }
     }
   }
 
   #sidebar-tabs {
-    border-color: @medium-color;
-    box-shadow: 0 0 10px @light-color;
+    border-color: @bg-medium-color;
+    box-shadow: 0 0 10px @bg-light-color;
 
     .item {
-      color: @text-dark-color;
+      color: @fg-dark-color;
       &.active {
-        color: @text-light-color;
-        border-color: @medium-color;
-        box-shadow: 0 0 6px inset @light-color;
-        text-shadow: 0 0 10px @light-color;
+        color: @fg-light-color;
+        border-color: @bg-medium-color;
+        box-shadow: 0 0 6px inset @bg-light-color;
+        text-shadow: 0 0 10px @bg-light-color;
       }
     }
   }
 
   #chat-controls {
     .roll-type-select {
-      background-color: @dark-color;
+      background-color: @bg-dark-color;
     }
   }
 
   .directory {
     .directory-header .header-search input {
-      background-color: @dark-color;
+      background-color: @bg-dark-color;
     }
   }
 }

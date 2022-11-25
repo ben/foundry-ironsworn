@@ -1,23 +1,18 @@
 @import '../mixins.less';
 
 body.theme-ironsworn {
-  @background-color: hsl(0, 0%, 100%);
-  @light-color: hsl(0, 0%, 80%);
-  @medium-color: hsl(0, 0%, 66%);
-  @dark-color: hsl(0, 0%, 53%);
-  @text-color: hsl(0, 0%, 0%);
-
   --ironsworn-color-light: hsl(0, 0%, 100%);
+  --ironsworn-color-shade-1: hsl(0, 0%, 80%);
+  --ironsworn-color-shade-2: hsl(0, 0%, 66%);
+  --ironsworn-color-shade-3: hsl(0, 0%, 53%);
   --ironsworn-color-dark: hsl(0, 0%, 0%);
-  --ironsworn-color-bg: @background-color;
-
-  --ironsworn-color-shade-1: @light-color;
-  --ironsworn-color-shade-2: @medium-color;
-  --ironsworn-color-shade-3: @dark-color;
-  --ironsworn-color-fg: @text-color;
-  --ironsworn-color-text-outline: @text-color;
-  --ironsworn-color-border: @text-color;
   --ironsworn-color-highlight: hsl(55, 67%, 80%);
+
+  --ironsworn-color-fg: var(--ironsworn-color-dark);
+  --ironsworn-color-bg: var(--ironsworn-color-light);
+
+  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+  --ironsworn-color-border: var(--ironsworn-color-dark);
 
   // see clickable.less for usage
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg);
@@ -30,14 +25,8 @@ body.theme-ironsworn {
   --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-shade-2);
   --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-border);
 
-  --ironsworn-color-clickable-block-fg-selected: var(
-    --ironsworn-color-thematic-contrast,
-    var(--ironsworn-color-bg)
-  );
-  --ironsworn-color-clickable-block-bg-selected: var(
-    --ironsworn-color-thematic,
-    var(--ironsworn-color-fg)
-  );
+  --ironsworn-color-clickable-block-fg-selected: var(--ironsworn-color-bg);
+  --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-block-border-selected: var(
     --ironsworn-color-border
   );
@@ -106,7 +95,7 @@ body.theme-ironsworn {
   }
 
   .asset-ironsworn .asset-ability:before {
-    border: 1px solid @text-color;
+    border: 1px solid var(--ironsworn-color-dark);
   }
 
   [role^='tablist'],
@@ -161,7 +150,7 @@ body.theme-ironsworn {
   table tr {
     &.selected,
     &[aria-selected='true'] {
-      background-color: @text-color;
+      background-color: var(--ironsworn-color-dark);
       color: var(--ironsworn-color-shade-1);
 
       .entity-link,
