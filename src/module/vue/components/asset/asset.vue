@@ -115,16 +115,6 @@
 <style lang="less" module>
 .themeColor {
   --ironsworn-color-thematic: v-bind('asset?.system?.color');
-  --ironsworn-color-thematic-HS: v-bind(
-    'chroma(asset?.system?.color ?? "#000").hsl().slice(0,2).join(", ")'
-  );
-  --ironsworn-color-thematic-HSL: v-bind(
-    'chroma(asset?.system?.color ?? "#000").hsl().join(", ")'
-  );
-  --ironsworn-color-thematic-faded: hsla(
-    var(--ironsworn-color-thematic-HSL),
-    50%
-  );
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 </style>

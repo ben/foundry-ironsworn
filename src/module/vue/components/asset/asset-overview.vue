@@ -139,17 +139,6 @@
   margin: 10px 0;
   padding: 5px;
   --ironsworn-color-thematic: v-bind('item.system.color ?? "#000"');
-  --ironsworn-color-thematic: v-bind('item.system.color ?? "#000"');
-  --ironsworn-color-thematic-HS: v-bind(
-    'chroma(item.system.color ?? "#000" ).hsl().slice(0,2).join(", ")'
-  );
-  --ironsworn-color-thematic-HSL: v-bind(
-    'chroma(item.system.color ?? "#000" ).hsl().join(", ")'
-  );
-  --ironsworn-color-thematic-faded: hsla(
-    var(--ironsworn-color-thematic-HSL),
-    50%
-  );
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 

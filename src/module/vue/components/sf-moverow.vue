@@ -71,16 +71,6 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
-  --ironsworn-color-thematic-HS: v-bind(
-    'chroma(thematicColor ?? "#000").hsl().slice(0,2).join(", ")'
-  );
-  --ironsworn-color-thematic-HSL: v-bind(
-    'chroma(thematicColor ?? "#000").hsl().join(", ")'
-  );
-  --ironsworn-color-thematic-faded: hsla(
-    var(--ironsworn-color-thematic-HSL),
-    50%
-  );
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 
   color: var(--ironsworn-color-light);
