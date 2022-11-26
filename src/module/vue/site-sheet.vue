@@ -151,6 +151,7 @@ import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import { OracleRollMessage, TableRow } from '../rolls'
+import { DelveThemeDataSourceData } from '../item/itemtypes'
 
 const props = defineProps<{
   actor: any
