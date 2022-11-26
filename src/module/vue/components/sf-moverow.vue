@@ -28,11 +28,13 @@
           class="juicy text"
           :move="move"
           :class="$style.moveButton"
+          :override-click="onRollClick !== undefined"
+          @click="$emit('rollClick')"
         />
         <BtnOracle
           class="juicy text"
           :node="data.oracles[0] ?? {}"
-          :disabled="data.oracles.length !== 1"
+          :disabled="canOracle"
           :class="$style.moveButton"
         />
         <BtnSendmovetochat
@@ -155,7 +157,7 @@
 </style>
 
 <script setup lang="ts">
-import { computed, nextTick, provide, reactive, ref } from 'vue'
+import { computed, nextTick, provide, reactive, ref, useAttrs } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
@@ -179,6 +181,13 @@ const props = withDefaults(
     thematicColor?: string | null
     toggleSectionClass?: any
     toggleButtonClass?: any
+    oracleDisabled?: boolean
+
+    // Hack: if we declare `click` in the emits, there's no $attrs['onClick']
+    // This allows us to check for presence and still use $emit('click')
+    // https://github.com/vuejs/core/issues/4736#issuecomment-934156497
+    onRollClick?: Function
+    onOracleClick?: Function
   }>(),
   { headingLevel: 4, toggleSectionClass: '', toggleButtonClass: '' }
 )
@@ -197,8 +206,15 @@ const data = reactive({
 
 const $collapsible = ref<typeof Collapsible>()
 
+const $emit = defineEmits(['rollClick', 'oracleClick'])
+
 const canRoll = computed(() => {
+  if (props.onRollClick) return true
   return moveHasRollableOptions($item.value)
+})
+const canOracle = computed(() => {
+  if (props.oracleDisabled !== undefined) return props.oracleDisabled
+  return data.oracles.length !== 1
 })
 
 const toggleTooltip = computed(() =>

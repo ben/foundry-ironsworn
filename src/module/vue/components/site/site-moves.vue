@@ -18,7 +18,7 @@
       :thematic-color="thematicColor"
       class="nogrow"
       @oracleClick="revealADanger"
-      :oracleDisabled="!hasThemeAndDomain"
+      :oracle-disabled="!hasThemeAndDomain"
     />
     <SfMoverow
       :move="moves.locateObjective"
@@ -109,16 +109,6 @@ Promise.resolve().then(async () => {
 })
 
 async function revealADanger() {}
-
-async function randomFeature() {
-  if (!hasThemeAndDomain.value) return
-
-  const rows = featureRows.value
-  const title = game.i18n.localize('IRONSWORN.Feature')
-  const subtitle = `${$site?.name} – ${theme.value?.name} ${domain.value?.name}`
-  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
-  orm.createOrUpdate()
-}
 
 async function locateObjective() {
   if (!$site) return
