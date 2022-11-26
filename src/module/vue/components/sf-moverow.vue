@@ -60,6 +60,7 @@
 
 <style lang="less" module>
 @import '../../../styles/mixins.less';
+@import '../../../styles/clickable.less';
 
 @icon_size: 1.2em;
 @border_width: 2px;
@@ -68,17 +69,11 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
-  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
+  --ironsworn-color-thematic-muted: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
-
   color: var(--ironsworn-color-light);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
-}
-.colorsSelectedMixin {
-  color: var(--ironsworn-color-clickable-block-fg-selected);
-  background-color: var(--ironsworn-color-clickable-block-bg-selected);
-  border-color: var(--ironsworn-color-clickable-block-border-selected);
 }
 .cardColorsMixin {
   color: var(--ironsworn-color-fg);
@@ -111,33 +106,25 @@
 }
 
 .toggleButton {
+  .clickableTextMixin();
+  .thematicColorMixin();
+  .fake-stroke();
   display: flex;
   flex-direction: row;
   padding: 0.2rem 0.2rem 0.2rem 0.3rem;
   text-align: left;
   line-height: 1.25;
   font-size: var(--font-size-16);
-  .thematicColorMixin();
   border-color: transparent;
-  border-width: 1px 1px 0 1px;
   border-style: solid;
+  border-width: 1px;
+  border-bottom-width: 0px;
+  border-radius: @border_radius @border_radius 0 0;
   align-items: center;
-  &:hover {
-    box-shadow: none;
-    color: var(--ironsworn-color-clickable-text-hover);
-  }
-
-  .fake-stroke();
-  // .wrapper[aria-expanded='false'] & {
-  // }
-
   .wrapper[aria-expanded='true'] & {
-    .colorsSelectedMixin();
-    border-top-left-radius: @border_radius;
-    border-top-right-radius: @border_radius;
-    &:hover {
-      color: var(--ironsworn-color-clickable-text-hover);
-    }
+    border-color: var(--ironsworn-color-border-highlight);
+    color: var(--ironsworn-color-clickable-text-selected);
+    background-color: var(--ironsworn-color-dark-overlay);
   }
 }
 

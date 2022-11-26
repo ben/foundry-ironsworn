@@ -1,0 +1,21 @@
+@import 'clickable.less';
+
+#sidebar {
+  button {
+    .clickableBlockMixin();
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 4px;
+  }
+  #sidebar-tabs {
+    box-shadow: none;
+    .item {
+      .clickableTextMixin();
+    }
+  }
+}
+// .directory {
+//   .directory-header .header-search input {
+//     background-color: var(--ironsworn-color-light-overlay);
+//   }
+// }

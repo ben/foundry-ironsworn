@@ -13,8 +13,12 @@
   </article>
 </template>
 <style lang="less">
+@import '../../../styles/clickable.less';
 .xp-track {
   .xp-box {
+    .clickableBlockMixin();
+    position: relative;
+    z-index: 1;
     aspect-ratio: 1;
     max-width: 20px;
   }
@@ -26,6 +30,7 @@ import { computed, ref } from 'vue'
 const props = defineProps<{
   max: number
   marked: number
+  themeColor: string
 }>()
 
 const hovered = ref(-1)

@@ -1,8 +1,9 @@
 @import './starforged-font.css'; // HACK to avoid import error
 @import '../mixins.less';
 
-body.theme-starforged {
-  @theme-font: 'Carrois Gothic SC', sans-serif;
+.system-foundry-ironsworn.theme-starforged {
+  --font-primary: 'Carrois Gothic SC', sans-serif;
+
   @themeLightHue: 185;
   @themeLightSaturation: 70%;
   @themeLightLightness: 55%;
@@ -22,8 +23,8 @@ body.theme-starforged {
     @themeDarkSaturation,
     @themeDarkLightness
   );
-  --ironsworn-color-accent: hsl((@themeLightHue+10), 100%, 50%);
-  --ironsworn-color-accent-alt: hsl((@themeLightHue+35), 100%, 50%);
+  --ironsworn-color-accent: hsl((@themeLightHue+35), 100%, 50%);
+  --ironsworn-color-accent-alt: hsl((@themeLightHue+10), 100%, 50%);
 
   --ironsworn-color-light-muted: mix(
     $--ironsworn-color-light,
@@ -59,13 +60,13 @@ body.theme-starforged {
   --ironsworn-color-bg-alt: var(--ironsworn-color-dark-alt);
   --ironsworn-color-bg-highlight: var(--ironsworn-color-dark-vivid);
 
-  --ironsworn-dark-overlay: fade($--ironsworn-color-dark, 15%);
-  --ironsworn-light-overlay: fade($--ironsworn-color-light, 15%);
+  --ironsworn-color-dark-overlay: fade($--ironsworn-color-dark, 15%);
+  --ironsworn-color-light-overlay: fade($--ironsworn-color-light, 15%);
 
-  --ironsworn-color-input-bg: var(--ironsworn-light-overlay);
+  --ironsworn-color-input-bg: var(--ironsworn-color-light-overlay);
 
   --ironsworn-color-thematic: hsl(@themeLightHue, 75%, 27%);
-  // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables. see "--ironsworn-color-thematic-faded" in styles.less for an example.
+  // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables. see "--ironsworn-color-thematic-muted" in styles.less for an example.
   --ironsworn-color-thematic-HSL: @themeLightHue, 75%, 27%;
   --ironsworn-color-thematic-HS: @themeLightHue, 75%;
 
@@ -110,24 +111,28 @@ body.theme-starforged {
     text-shadow: 0 0 @spread_text var(--ironsworn-color-bg-highlight);
   }
 
-  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-3);
-  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-3);
-  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-3);
+  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-dark);
+  --ironsworn-color-legacy-quests-muted: var(--ironsworn-color-red-dark-muted);
+  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-dark);
+  --ironsworn-color-legacy-bonds-muted: var(
+    --ironsworn-color-purple-dark-muted
+  );
+  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-dark);
+  --ironsworn-color-legacy-discoveries-muted: var(
+    --ironsworn-color-blue-dark-muted
+  );
 
   --ironsworn-color-danger: hsl(0, 80%, 50%);
   --ironsworn-color-success: hsl(290, 80%, 50%);
   --ironsworn-color-success-faded: hsl(290, 80%, 60%);
 
   --ironsworn-dice-background: mix(
-    $--ironsworn-color-light-vivid,
+    $--ironsworn-color-light,
     $--ironsworn-color-dark,
     20%
   );
-  --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
-  body {
-    font-family: @theme-font;
-  }
+  --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
   .app {
     color: var(--ironsworn-color-fg);
@@ -144,19 +149,6 @@ body.theme-starforged {
     background-color: var(--ironsworn-color-bg);
     border-width: 1px;
     border-style: solid;
-  }
-
-  font-family: @theme-font;
-  color: var(--ironsworn-color-fg);
-  .dialog-buttons {
-    .dialog-button {
-      color: currentColor;
-    }
-  }
-
-  h2,
-  h3 {
-    color: var(--ironsworn-color-fg);
   }
 
   .inline-roll {
@@ -221,78 +213,8 @@ body.theme-starforged {
     border-color: var(--ironsworn-color-border-muted);
   }
 
-  .chat-message {
-    background: var(--ironsworn-dark-overlay);
-    color: var(--ironsworn-color-fg);
-
-    .message-header {
-      color: var(--ironsworn-color-fg-muted);
-    }
-
-    .message-content {
-      border: 1px solid var(--ironsworn-color-border-muted);
-    }
-
-    .dice-formula,
-    .dice-total {
-      background: var(--ironsworn-dark-overlay);
-      // color: @text-light-color;
-      border-width: 0px;
-      padding: 5px 0px 5px 0px;
-      .die {
-        &.d6 {
-          // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
-        }
-        &.d10 {
-          // background-image: url('systems/foundry-ironsworn/assets/icons/d10-blank.svg');
-        }
-
-        &.min {
-          color: var(--ironsworn-color-fg);
-        }
-        &.max {
-          color: var(--ironsworn-color-fg);
-        }
-      }
-    }
-
-    table tr {
-      &.selected,
-      &[aria-selected='true'] {
-        background-color: var(--ironsworn-color-bg-highlight);
-        color: var(--ironsworn-color-fg-highlight);
-
-        .entity-link,
-        .content-link {
-          color: var(--ironsworn-color-fg-highlight);
-        }
-      }
-    }
-  }
-
-  #sidebar-tabs {
-    border-color: var(--ironsworn-color-border-muted);
-    box-shadow: 0 0 10px var(--ironsworn-color-bg-highlight);
-
-    .item {
-      color: var(--ironsworn-color-fg-muted);
-      &.active {
-        color: var(--ironsworn-color-fg-highlight);
-        border-color: var(--ironsworn-color-border-muted);
-        box-shadow: 0 0 6px inset var(--ironsworn-color-bg-highlight);
-        text-shadow: 0 0 10px var(--ironsworn-color-bg-highlight);
-      }
-    }
-  }
-
   #chat-controls {
     .roll-type-select {
-      background-color: var(--ironsworn-color-light-overlay);
-    }
-  }
-
-  .directory {
-    .directory-header .header-search input {
       background-color: var(--ironsworn-color-light-overlay);
     }
   }

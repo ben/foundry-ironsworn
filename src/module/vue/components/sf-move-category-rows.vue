@@ -37,7 +37,7 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('category?.color');
-  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
+  --ironsworn-color-thematic-muted: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 

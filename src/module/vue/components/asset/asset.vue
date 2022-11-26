@@ -115,7 +115,7 @@
 <style lang="less" module>
 .themeColor {
   --ironsworn-color-thematic: v-bind('asset?.system?.color');
-  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
+  --ironsworn-color-thematic-muted: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 </style>

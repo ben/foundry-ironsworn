@@ -67,13 +67,15 @@
   }
   .slider-segment {
     box-sizing: border-box;
-    border: @segment_border_width solid currentColor;
+    border-width: @segment_border_width;
+    border-style: solid;
     text-align: center;
     min-width: max-content;
     line-height: @segment_line_height;
     position: relative;
     z-index: 1;
     padding: 0;
+    margin: 0;
     &:hover,
     &[aria-selected='true'] {
       z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items

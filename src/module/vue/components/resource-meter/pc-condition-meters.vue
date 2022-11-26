@@ -24,7 +24,7 @@
   gap: @meter_spacing;
   .condition-meter {
     &:not(:first-child) {
-      border-top: 1px solid currentColor;
+      border-top: 1px solid var(--ironsworn-color-border);
       padding-top: @meter_spacing;
     }
   }

@@ -64,6 +64,8 @@
     justify-items: center;
     align-items: center;
     transition-duration: 0s;
+    width: max-content;
+    margin: 0;
     .pip-shape {
       height: inherit;
       overflow: visible;

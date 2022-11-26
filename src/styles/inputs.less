@@ -1,18 +1,18 @@
 @import 'mixins.less';
 @import 'clickable.less';
 
-.inputFieldColors {
+.inputFieldMixin {
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
   border-color: var(--ironsworn-color-clickable-block-border);
   transition: var(--std-animation);
+  border-radius: 3px;
   &::placeholder {
     color: var(--ironsworn-color-fg);
     opacity: 0.5;
   }
   &:hover {
     color: var(--ironsworn-color-clickable-block-fg-hover);
-
     border-color: var(--ironsworn-color-clickable-block-border-hover);
   }
   &:focus,
@@ -26,83 +26,86 @@
   }
 }
 
-textarea#chat-message {
-  .inputFieldColors();
+input:not([type='checkbox']):not([type='radio']):not([type='range']),
+textarea,
+select {
+  .inputFieldMixin();
 }
 
-.ironsworn {
-  input:not([type='checkbox']):not([type='radio']),
-  textarea,
-  select {
-    .inputFieldColors();
+textarea,
+input {
+  caret-color: var(--ironsworn-color-fg-highlight);
+}
+// EDITORS
+.tox {
+  :not(svg):not(rect) {
+    color: var(--ironsworn-color-fg);
   }
-  // EDITORS
-  .tox {
-    :not(svg):not(rect) {
-      color: var(--ironsworn-color-fg);
+  .tox-toolbar-overlord,
+  .tox-toolbar__primary,
+  &:not(.tox-tinymce-inline) .tox-editor-header {
+    color: var(--ironsworn-color-fg);
+    background-color: var(--ironsworn-color-bg);
+  }
+  .tox-tbtn {
+    &--select {
+      background: var(--ironsworn-color-input-bg);
     }
-    .tox-toolbar-overlord,
-    .tox-toolbar__primary,
-    &:not(.tox-tinymce-inline) .tox-editor-header {
-      color: var(--ironsworn-color-fg);
-      background-color: var(--ironsworn-color-bg);
-    }
-    .tox-tbtn {
+    transition: var(--std-animation);
+    background-color: var(--ironsworn-color-clickable-block-bg);
+    svg {
+      fill: var(--ironsworn-color-clickable-block-fg);
       transition: var(--std-animation);
-      background-color: var(--ironsworn-color-clickable-block-bg);
+    }
+    &:hover {
+      background-color: var(--ironsworn-color-clickable-block-bg-hover);
       svg {
-        fill: var(--ironsworn-color-clickable-block-fg);
+        fill: var(--ironsworn-color-clickable-block-fg-hover);
       }
-      &:hover {
-        background-color: var(--ironsworn-color-clickable-block-bg-hover);
-        svg {
-          fill: var(--ironsworn-color-clickable-block-fg-hover);
-        }
-      }
-      &[aria-pressed='true'] {
-        background-color: var(--ironsworn-color-clickable-block-bg-selected);
-        svg {
-          fill: var(--ironsworn-color-clickable-block-fg-selected);
-        }
+    }
+    &[aria-pressed='true'] {
+      background-color: var(--ironsworn-color-clickable-block-bg-selected);
+      svg {
+        fill: var(--ironsworn-color-clickable-block-fg-selected);
       }
     }
   }
-  .editor {
-    border: 1px solid;
-    border-radius: 5px;
-  }
-  .editor-content {
-    .inputFieldColors();
-  }
+}
+.editor {
+  border: 1px solid;
+  border-radius: 5px;
+}
+.editor-content {
+  .inputFieldMixin();
+}
 
-  .ProseMirror {
-    .inputFieldColors();
-    padding: 0.5rem;
-  }
+.ProseMirror {
+  .inputFieldMixin();
+  padding: 0.5rem;
+}
 
-  .editor,
-  .editor-content {
-    height: 100%;
-    min-height: 100px;
-  }
+.editor,
+.editor-content {
+  height: 100%;
+  min-height: 100px;
+}
 
-  input {
-    &[type='checkbox'],
-    &[type='radio'] {
-      accent-color: var(--ironsworn-color-fg);
-      cursor: pointer;
-    }
-  }
-  label.checkbox {
+input {
+  &[type='checkbox'],
+  &[type='radio'] {
+    accent-color: var(--ironsworn-color-fg);
     cursor: pointer;
   }
+}
+label.checkbox {
+  cursor: pointer;
+}
 
-  input[type='number'] {
-    -moz-appearance: auto;
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: button !important;
-      opacity: 1 !important;
-    }
+input[type='number'] {
+  -moz-appearance: auto;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: button !important;
+    opacity: 1 !important;
   }
 }
