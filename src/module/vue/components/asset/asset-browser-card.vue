@@ -147,10 +147,4 @@ function dragStart(ev) {
     })
   )
 }
-
-const colorThematicFaded = computed(() =>
-  chroma(data.data.color as string)
-    .alpha(0.5)
-    .css()
-)
 </script>
