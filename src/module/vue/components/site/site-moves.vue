@@ -40,6 +40,7 @@
 import { computed, inject, reactive } from 'vue'
 import { SiteDataPropertiesData } from '../../../actor/actortypes'
 import { createIronswornChatRoll } from '../../../chat/chatrollhelpers'
+import { getFoundryTableByDfId } from '../../../dataforged'
 import { createIronswornMoveTree, Move } from '../../../features/custommoves'
 import { moveDataByName } from '../../../helpers/data'
 import {
@@ -69,21 +70,6 @@ const hasThemeAndDomain = computed(() => {
   return !!(theme.value && domain.value)
 })
 
-const dangerRows = computed((): TableRow[] => {
-  if (!hasThemeAndDomain.value) return []
-
-  const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
-  const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  return [...themeData.dangers, ...domainData.dangers].map(
-    ({ low, high, description }) => ({
-      low,
-      high,
-      text: description,
-      selected: false,
-    })
-  )
-})
-
 // Construct some moves to use with the new pipeline
 const moves = reactive<{ [k: string]: Move }>({})
 Promise.resolve().then(async () => {
@@ -108,7 +94,40 @@ Promise.resolve().then(async () => {
   }
 })
 
-async function revealADanger() {}
+async function revealADanger() {
+  if (!hasThemeAndDomain.value) return
+
+  const oracle = await getFoundryTableByDfId(
+    'Ironsworn/Oracles/Moves/Reveal_a_Danger'
+  )
+  if (!oracle) return
+  const oracleRows = oracle.results.map((x: any) => ({
+    low: x.range[0],
+    high: x.range[1],
+    text: x.text,
+    selected: false,
+  }))
+  // Remove the first two rows
+  oracleRows.shift()
+  oracleRows.shift()
+
+  const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
+  const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
+  const tdRows = [...themeData.dangers, ...domainData.dangers].map(
+    ({ low, high, description }) => ({
+      low,
+      high,
+      text: description,
+      selected: false,
+    })
+  )
+  const rows = [...tdRows, ...oracleRows]
+
+  const title = moves.revealADanger.moveItem().name ?? 'Reveal a Danger'
+  const subtitle = `${$site?.name} – ${theme.value?.name} ${domain.value?.name}`
+  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
+  orm.createOrUpdate()
+}
 
 async function locateObjective() {
   if (!$site) return
