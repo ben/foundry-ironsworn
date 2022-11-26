@@ -18,6 +18,10 @@ import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
 import { ChallengeResolutionDialog } from './challenge-resolution-dialog'
 
+type showForMoveOpts = {
+  actor?: IronswornActor
+}
+
 export function localeCapitalize(str: string) {
   const locale = game.i18n.lang
   return str[0].toLocaleUpperCase(locale) + str.slice(1)
@@ -249,29 +253,29 @@ export class IronswornPrerollDialog extends Dialog<
     }).render(true)
   }
 
-  static async showForOfficialMove(moveDfId: string, actor?: IronswornActor) {
+  static async showForOfficialMove(moveDfId: string, opts?: showForMoveOpts) {
     const moveItem = await getFoundryMoveByDfId(moveDfId)
     if (!moveItem) {
       throw new Error(`Couldn't find item for move '${moveDfId}'`)
     }
 
-    return this.showForMoveItem(moveItem, { moveDfId }, actor)
+    return this.showForMoveItem(moveItem, { moveDfId }, opts)
   }
 
-  static async showForMove(move: IronswornItem, actor?: IronswornActor) {
+  static async showForMove(move: IronswornItem, opts?: showForMoveOpts) {
     if (move.type !== 'sfmove') {
       throw new Error('this only works with SF moves')
     }
 
-    return this.showForMoveItem(move, { moveId: move.id || undefined }, actor)
+    return this.showForMoveItem(move, { moveId: move.id || undefined }, opts)
   }
 
   private static async showForMoveItem(
     move: IronswornItem,
     prerollOptions: PreRollOptions,
-    actor?: IronswornActor
+    opts?: showForMoveOpts
   ) {
-    prerollOptions.actorId = actor?.id || undefined
+    prerollOptions.actorId = opts?.actor?.id || undefined
 
     const data = move.system as SFMoveDataPropertiesData
     const options = rollableOptions(data.Trigger)
@@ -285,8 +289,8 @@ export class IronswornPrerollDialog extends Dialog<
 
     const title = move.name || 'MOVE'
     const allActors = [] as IronswornActor[]
-    if (actor?.type === 'character') {
-      allActors.push(actor)
+    if (opts?.actor?.type === 'character') {
+      allActors.push(opts.actor)
     } else {
       allActors.push(
         ...sortBy(
@@ -300,7 +304,7 @@ export class IronswornPrerollDialog extends Dialog<
     const content = await this.renderContent({
       prerollOptions,
       move,
-      actor,
+      actor: opts?.actor,
       allActors,
       showActorSelect,
       action: true,

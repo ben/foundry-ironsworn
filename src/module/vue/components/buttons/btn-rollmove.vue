@@ -42,8 +42,8 @@ async function rollMove() {
   if (props.move.dataforgedMove)
     return IronswornPrerollDialog.showForOfficialMove(
       props.move?.dataforgedMove.$id,
-      $actor
+      { actor: $actor }
     )
-  IronswornPrerollDialog.showForMove(props.move.moveItem(), $actor)
+  IronswornPrerollDialog.showForMove(props.move.moveItem(), { actor: $actor })
 }
 </script>
