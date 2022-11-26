@@ -36,6 +36,8 @@
           :node="data.oracles[0] ?? {}"
           :disabled="canOracle"
           :class="$style.moveButton"
+          :override-click="onOracleClick !== undefined"
+          @click="$emit('oracleClick')"
         />
         <BtnSendmovetochat
           class="juicy text"
