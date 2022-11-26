@@ -18,8 +18,11 @@
 </template>
 
 <style lang="less" scoped>
+@import '../../../styles/clickable.less';
+@import '../../../styles/mixins.less';
 .stat {
   @statBoxSize: 75px;
+  .clickableBlockMixin(@statBoxSize);
   border-style: solid;
   border-width: 1px;
   flex: 0 0 @statBoxSize;
@@ -29,13 +32,6 @@
   & > * {
     position: relative; // must be set to manipulate z-index
     z-index: 1;
-  }
-
-  h3 {
-    margin: 0;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 22px;
   }
 
   h4 {
@@ -52,13 +48,14 @@
   }
   &:before {
     // styles dice background on hover
-    color: var(--ironsworn-color-fg-overlay-strong);
+    color: var(--ironsworn-color-clickable-block-bg-selected);
     opacity: 0;
     transition: var(--std-animation);
     z-index: 0;
     padding: 0.25em;
   }
   &:hover {
+    .textStrokeMixin();
     &:before {
       opacity: 1;
     }
@@ -84,7 +81,6 @@ const actorSys = computed(
 
 const classes = computed(() => ({
   stat: true,
-  block: true,
   clickable: !editMode.value,
   'isiconbg-d10-tilt': !editMode.value,
 }))
