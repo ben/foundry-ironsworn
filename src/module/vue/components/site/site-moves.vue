@@ -43,10 +43,7 @@ import { createIronswornChatRoll } from '../../../chat/chatrollhelpers'
 import { getFoundryTableByDfId } from '../../../dataforged'
 import { createIronswornMoveTree, Move } from '../../../features/custommoves'
 import { moveDataByName } from '../../../helpers/data'
-import {
-  DelveThemeDataSourceData,
-  FeatureOrDanger,
-} from '../../../item/itemtypes'
+import { DelveThemeDataSourceData } from '../../../item/itemtypes'
 import { TableRow, OracleRollMessage } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
@@ -64,7 +61,7 @@ const domain = computed(() => {
   return site?.value?.items.find((x) => x.type === 'delve-domain')
 })
 
-const thematicColor = '#aaa'
+const thematicColor = 'var(--ironsworn-color-shade-2)'
 
 const hasThemeAndDomain = computed(() => {
   return !!(theme.value && domain.value)
