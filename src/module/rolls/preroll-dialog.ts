@@ -5,10 +5,7 @@ import { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornItem } from '../item/item'
-import {
-  SFMoveDataProperties,
-  SFMoveDataPropertiesData,
-} from '../item/itemtypes'
+import { SFMoveDataPropertiesData } from '../item/itemtypes'
 import {
   IronswornRoll,
   PreRollOptions,
@@ -16,10 +13,7 @@ import {
   SourcedValue,
 } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
-import {
-  CharacterDataProperties,
-  CharacterDataPropertiesData,
-} from '../actor/actortypes'
+import { CharacterDataPropertiesData } from '../actor/actortypes'
 import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
 import { ChallengeResolutionDialog } from './challenge-resolution-dialog'

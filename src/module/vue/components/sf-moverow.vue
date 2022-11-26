@@ -28,12 +28,16 @@
           class="juicy text"
           :move="move"
           :class="$style.moveButton"
+          :override-click="onRollClick !== undefined"
+          @click="$emit('rollClick')"
         />
         <BtnOracle
           class="juicy text"
           :node="data.oracles[0] ?? {}"
-          :disabled="data.oracles.length !== 1"
+          :disabled="canOracle"
           :class="$style.moveButton"
+          :override-click="onOracleClick !== undefined"
+          @click="$emit('oracleClick')"
         />
         <BtnSendmovetochat
           class="juicy text"
@@ -155,7 +159,7 @@
 </style>
 
 <script setup lang="ts">
-import { computed, nextTick, provide, reactive, ref } from 'vue'
+import { computed, nextTick, provide, reactive, ref, useAttrs } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
@@ -169,6 +173,8 @@ import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
+import { SFMoveDataPropertiesData } from '../../item/itemtypes'
+import { uniq } from 'lodash'
 
 const props = withDefaults(
   defineProps<{
@@ -177,11 +183,21 @@ const props = withDefaults(
     thematicColor?: string | null
     toggleSectionClass?: any
     toggleButtonClass?: any
+    oracleDisabled?: boolean
+
+    // Hack: if we declare `click` in the emits, there's no $attrs['onClick']
+    // This allows us to check for presence and still use $emit('click')
+    // https://github.com/vuejs/core/issues/4736#issuecomment-934156497
+    onRollClick?: Function
+    onOracleClick?: Function
   }>(),
   { headingLevel: 4, toggleSectionClass: '', toggleButtonClass: '' }
 )
 
 const $item = computed(() => props.move.moveItem() as IronswornItem)
+const $itemSystem = computed(
+  () => $item.value?.system as SFMoveDataPropertiesData
+)
 
 provide(ItemKey, computed(() => $item.value.toObject()) as any)
 provide($ItemKey, $item.value)
@@ -192,8 +208,15 @@ const data = reactive({
 
 const $collapsible = ref<typeof Collapsible>()
 
+const $emit = defineEmits(['rollClick', 'oracleClick'])
+
 const canRoll = computed(() => {
+  if (props.onRollClick) return true
   return moveHasRollableOptions($item.value)
+})
+const canOracle = computed(() => {
+  if (props.oracleDisabled !== undefined) return props.oracleDisabled
+  return data.oracles.length !== 1
 })
 
 const toggleTooltip = computed(() =>
@@ -203,13 +226,14 @@ const toggleTooltip = computed(() =>
 
 const moveId = computed(() => props.move.moveItem().id)
 
-if (props.move.dataforgedMove) {
-  const oracleIds = props.move.dataforgedMove.Oracles ?? []
-  Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
-    const nodes = await Promise.all(dfOracles.map(walkOracle))
-    data.oracles.push(...nodes)
-  })
-}
+const oracleIds = uniq([
+  ...($itemSystem.value?.Oracles ?? []),
+  ...(props.move.dataforgedMove?.Oracles ?? []),
+])
+Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
+  const nodes = await Promise.all(dfOracles.map(walkOracle))
+  data.oracles.push(...nodes)
+})
 
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {

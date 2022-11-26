@@ -3,6 +3,7 @@
 ## Next Release
 
 - A new look and layout for the move sheet ([#518](https://github.com/ben/foundry-ironsworn/pull/518))
+- A new layout for the site sheet, which uses the new rolling pipeline ([#533](https://github.com/ben/foundry-ironsworn/pull/533))
 
 ## 1.19.1
 
