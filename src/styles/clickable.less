@@ -31,25 +31,25 @@
   }
 }
 
-.tabTopMixin(@borderRadius:5px) {
+.tabTopMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
   .tabBaseMixin();
   border-top-right-radius: @borderRadius;
   border-top-left-radius: @borderRadius;
   border-bottom-width: 0px;
 }
-.tabBottomMixin(@borderRadius:5px) {
+.tabBottomMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
   .tabBaseMixin();
   border-bottom-right-radius: @borderRadius;
   border-bottom-left-radius: @borderRadius;
   border-top-width: 0px;
 }
-.tabLeftMixin(@borderRadius:5px) {
+.tabLeftMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
   .tabBaseMixin();
   border-top-left-radius: @borderRadius;
   border-bottom-left-radius: @borderRadius;
   border-right-width: 0px;
 }
-.tabRightMixin(@borderRadius:5px) {
+.tabRightMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
   .tabBaseMixin();
   border-top-right-radius: @borderRadius;
   border-bottom-right-radius: @borderRadius;
@@ -57,14 +57,11 @@
 }
 
 button {
-  // border: 1px solid transparent;
   border: none;
   box-sizing: border-box;
   background: none;
   outline: none;
   box-shadow: none;
-  // border-radius: 0;
-
   .interactiveMixin();
 }
 
@@ -227,7 +224,7 @@ form,
       .clickableTextMixin();
     }
     &.block {
-      .clickableBlockMixin();
+      .clickableBlockMixin(50px);
     }
   }
   svg,

@@ -19,21 +19,48 @@
 
 <style lang="less" scoped>
 .stat {
+  @statBoxSize: 75px;
+  border-style: solid;
+  border-width: 1px;
+  flex: 0 0 @statBoxSize;
+  border-radius: var(--ironsworn-border-radius-lg);
+  text-align: center;
+  padding: 0.5rem 0;
   & > * {
     position: relative; // must be set to manipulate z-index
     z-index: 1;
   }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 22px;
+  }
+
+  h4 {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  input {
+    width: 50%;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+  }
   &:before {
     // styles dice background on hover
-    color: currentColor;
+    color: var(--ironsworn-color-fg-overlay-strong);
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: var(--std-animation);
     z-index: 0;
     padding: 0.25em;
   }
   &:hover {
     &:before {
-      opacity: 0.2;
+      opacity: 1;
     }
   }
 }

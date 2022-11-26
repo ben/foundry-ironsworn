@@ -224,12 +224,12 @@ button {
       }
       &:first-child {
         border-top: 1px solid;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        border-top-left-radius: var(--ironsworn-border-radius-lg);
+        border-top-right-radius: var(--ironsworn-border-radius-lg);
       }
       &:last-child {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: var(--ironsworn-border-radius-lg);
+        border-bottom-right-radius: var(--ironsworn-border-radius-lg);
       }
 
       input[type='radio'] {
@@ -238,40 +238,9 @@ button {
     }
   }
 
-  // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
-
   .stats {
     flex: 0;
     justify-content: space-around;
-
-    .stat {
-      flex: 0 0 75px;
-      border: 1px solid;
-      border-radius: var(--ironsworn-border-radius-lg);
-      text-align: center;
-      padding: 0.5rem 0;
-
-      h3 {
-        margin: 0;
-        margin-bottom: 5px;
-        font-weight: bold;
-        font-size: 22px;
-      }
-
-      h4 {
-        margin: 0;
-        font-weight: bold;
-      }
-
-      input {
-        width: 50%;
-        margin-bottom: 5px;
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-      }
-    }
-
     .edit {
       flex: 0 0 30px;
       justify-items: center;
@@ -474,7 +443,7 @@ button {
     [class*=' isiconbg-'],
     [class^='isiconbg-'] {
       &:before {
-        background-color: var(--ironsworn-dice-background);
+        color: var(--ironsworn-dice-background);
       }
     }
 
