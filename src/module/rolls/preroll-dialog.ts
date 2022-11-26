@@ -20,6 +20,7 @@ import { ChallengeResolutionDialog } from './challenge-resolution-dialog'
 
 type showForMoveOpts = {
   actor?: IronswornActor
+  progress?: SourcedValue
 }
 
 export function localeCapitalize(str: string) {
