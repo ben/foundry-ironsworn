@@ -7,6 +7,12 @@
       class="nogrow"
     />
     <SfMoverow
+      :move="moves.findAnOpportunity"
+      v-if="moves.findAnOpportunity"
+      :thematic-color="thematicColor"
+      class="nogrow"
+    />
+    <SfMoverow
       :move="moves.revealADanger"
       v-if="moves.revealADanger"
       :thematic-color="thematicColor"
@@ -15,10 +21,11 @@
       :oracleDisabled="!hasThemeAndDomain"
     />
     <SfMoverow
-      :move="moves.findAnOpportunity"
-      v-if="moves.findAnOpportunity"
+      :move="moves.locateObjective"
+      v-if="moves.locateObjective"
       :thematic-color="thematicColor"
       class="nogrow"
+      @rollClick="locateObjective"
     />
     <SfMoverow
       :move="moves.escapeTheDepths"
@@ -26,21 +33,6 @@
       :thematic-color="thematicColor"
       class="nogrow"
     />
-    <SfMoverow
-      :move="moves.locateObjective"
-      v-if="moves.locateObjective"
-      :thematic-color="thematicColor"
-      class="nogrow"
-      @rollClick="locateObjective"
-    />
-    <BtnIsicon
-      icon="d10-tilt"
-      class="box text block nogrow"
-      :class="{ disabled: !hasThemeAndDomain }"
-      @click="randomFeature"
-    >
-      {{ $t('IRONSWORN.Feature') }}
-    </BtnIsicon>
   </div>
 </template>
 
@@ -77,20 +69,6 @@ const hasThemeAndDomain = computed(() => {
   return !!(theme.value && domain.value)
 })
 
-const featureRows = computed((): TableRow[] => {
-  if (!hasThemeAndDomain.value) return []
-
-  const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
-  const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  return [...themeData.features, ...domainData.features].map(
-    ({ low, high, description }) => ({
-      low,
-      high,
-      text: description,
-      selected: false,
-    })
-  )
-})
 const dangerRows = computed((): TableRow[] => {
   if (!hasThemeAndDomain.value) return []
 

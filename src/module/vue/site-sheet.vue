@@ -99,8 +99,17 @@
       </div>
     </div>
     <div class="flexcol">
-      <!-- NOTES -->
-      <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
+      <div class="flexrow nogrow">
+        <h4>{{ $t('IRONSWORN.Notes') }}</h4>
+        <BtnIsicon
+          icon="d10-tilt"
+          class="box text block nogrow"
+          :class="{ disabled: !hasThemeAndDomain }"
+          @click="randomFeature"
+        >
+          {{ $t('IRONSWORN.Feature') }}
+        </BtnIsicon>
+      </div>
       <MceEditor v-model="actor.system.description" @save="saveDescription" />
     </div>
   </div>
@@ -141,6 +150,7 @@ import { RANKS, RANK_INCREMENTS } from '../constants'
 import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
+import { OracleRollMessage, TableRow } from '../rolls'
 
 const props = defineProps<{
   actor: any
@@ -202,6 +212,30 @@ async function randomDenizen() {
     await nextTick()
     denizenRefs.value[idx]?.focus?.()
   }
+}
+
+const hasThemeAndDomain = computed(() => {
+  return !!(theme.value && domain.value)
+})
+
+async function randomFeature() {
+  if (!hasThemeAndDomain.value) return
+
+  const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
+  const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
+  const rows: TableRow[] = [...themeData.features, ...domainData.features].map(
+    ({ low, high, description }) => ({
+      low,
+      high,
+      text: description,
+      selected: false,
+    })
+  )
+
+  const title = game.i18n.localize('IRONSWORN.Feature')
+  const subtitle = `${$actor?.name} – ${theme.value?.name} ${domain.value?.name}`
+  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
+  orm.createOrUpdate()
 }
 
 function saveDescription() {
