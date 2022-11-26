@@ -1,3 +1,5 @@
+@import 'mixins.less';
+
 #chat {
   #chat-log {
   }
@@ -43,9 +45,10 @@
         padding: 5px 0px 5px 0px;
         border: none;
         background-color: var(--ironsworn-color-bg-alt);
-        --ironsworn-dice-background: var(--ironsworn-color-bg);
+        --ironsworn-dice-background: var(--ironsworn-color-bg-highlight);
         box-shadow: none;
         .die {
+          .textStrokeMixin();
           &.min,
           &.max {
             color: var(--ironsworn-color-fg);
