@@ -41,17 +41,12 @@
 <style lang="less">
 [data-legacy='discoveries'] {
   --ironsworn-color-thematic: var(--ironsworn-color-legacy-discoveries);
-  --ironsworn-color-thematic-muted: var(
-    --ironsworn-color-legacy-discoveries-muted
-  );
 }
 [data-legacy='bonds'] {
   --ironsworn-color-thematic: var(--ironsworn-color-legacy-bonds);
-  --ironsworn-color-thematic-muted: var(--ironsworn-color-legacy-bonds-muted);
 }
 [data-legacy='quests'] {
   --ironsworn-color-thematic: var(--ironsworn-color-legacy-quests);
-  --ironsworn-color-thematic-muted: var(--ironsworn-color-legacy-quests-muted);
 }
 
 .legacy-track {

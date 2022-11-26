@@ -1,28 +1,29 @@
 @import 'mixins.less';
 @import 'clickable.less';
 
-.inputFieldMixin {
+.inputFieldMixin(@spread:4px) {
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
-  border-color: var(--ironsworn-color-clickable-block-border);
+  border-style: inset;
   transition: var(--std-animation);
+  border-width: 1px;
   border-radius: 3px;
+  border-color: var(--ironsworn-color-border-muted);
   &::placeholder {
     color: var(--ironsworn-color-fg);
     opacity: 0.5;
   }
   &:hover {
     color: var(--ironsworn-color-clickable-block-fg-hover);
-    border-color: var(--ironsworn-color-clickable-block-border-hover);
+    border-color: var(--ironsworn-color-clickable-block-border);
+    .borderGlowInteriorMixin(@spread,0,var(--color-shadow-primary));
   }
   &:focus,
   &:focus-within {
-    @shadowSpread: 7px;
+    @spread: 7px;
     color: var(--ironsworn-color-fg-highlight);
-    border: 1px solid var(--ironsworn-color-accent-alt);
-    border-bottom: 1px solid var(--ironsworn-color-accent);
-    box-shadow: 0 0 @shadowSpread var(--ironsworn-color-accent),
-      0 0 @shadowSpread var(--ironsworn-color-accent);
+    .borderGlowExteriorMixin(@spread);
+    border-style: solid;
   }
 }
 

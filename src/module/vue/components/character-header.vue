@@ -16,13 +16,13 @@
   </SheetHeaderBasic>
 </template>
 <style lang="less">
+@import '../../../styles/clickable.less';
 .xp-track-classic {
   flex-grow: 0;
   flex-direction: row;
   flex-basis: 130px;
   align-items: center;
   .xp-box {
-    border: 1px solid currentColor;
     aspect-ratio: 1;
     height: 15px;
     flex-basis: 15px;
@@ -34,9 +34,6 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    &.selected {
-      background-color: currentColor;
-    }
   }
 }
 </style>

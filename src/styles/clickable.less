@@ -1,16 +1,96 @@
+@import 'mixins.less';
+
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
   .clickableBlockMixin();
 }
 
+.window-app .window-header a {
+  .clickableTextMixin();
+}
+
+#controls ol.control-tools > li {
+  .clickableBlockMixin();
+  .borderFloatingMixin();
+  .active,
+  &:hover {
+    .borderGlowExteriorMixin();
+  }
+}
+
+.tabBaseMixin(@glowSpread: 5px, @glowBlur: 1px,@borderWidth: 1px) {
+  border-width: @borderWidth;
+  &:hover {
+    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
+    border-color: var(--ironsworn-color-fg-muted);
+  }
+  &[aria-selected='true'],
+  &.active {
+    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--color-shadow-primary));
+    border-color: var(--color-border-highlight-alt);
+  }
+}
+
+.tabTopMixin(@borderRadius:5px) {
+  .tabBaseMixin();
+  border-top-right-radius: @borderRadius;
+  border-top-left-radius: @borderRadius;
+  border-bottom-width: 0px;
+}
+.tabBottomMixin(@borderRadius:5px) {
+  .tabBaseMixin();
+  border-bottom-right-radius: @borderRadius;
+  border-bottom-left-radius: @borderRadius;
+  border-top-width: 0px;
+}
+.tabLeftMixin(@borderRadius:5px) {
+  .tabBaseMixin();
+  border-top-left-radius: @borderRadius;
+  border-bottom-left-radius: @borderRadius;
+  border-right-width: 0px;
+}
+.tabRightMixin(@borderRadius:5px) {
+  .tabBaseMixin();
+  border-top-right-radius: @borderRadius;
+  border-bottom-right-radius: @borderRadius;
+  border-left-width: 0px;
+}
+
 button {
+  // border: 1px solid transparent;
   border: none;
+  box-sizing: border-box;
   background: none;
   outline: none;
   box-shadow: none;
   // border-radius: 0;
 
-  .interactive();
+  .interactiveMixin();
+}
+
+.borderMixin(@color:var(--ironsworn-color-border),@width:1px) {
+  color: @color;
+  border-style: solid;
+  border-width: @width;
+}
+
+.dialog .dialog-buttons button {
+  .clickableBlockMixin();
+  border-width: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .button-text {
+    flex-grow: 0;
+    .initial-caps();
+    width: max-content;
+    height: max-content;
+  }
+
+  i {
+    height: 18px;
+    width: 18px;
+  }
 }
 form,
 #permissions-config {
@@ -21,7 +101,11 @@ form,
 }
 .app:not(.ironsworn) button {
   .clickableBlockMixin();
-  border: 1px solid var(--ironsworn-color-clickable-block-border);
+  border-color: var(--ironsworn-color-clickable-block-border);
+  border-radius: 3px;
+}
+.ironsworn button {
+  margin: 0;
 }
 
 .entity-link,
@@ -48,7 +132,7 @@ form,
 
 // CLICKABLE MIXINS
 
-.interactive {
+.interactiveMixin {
   transition: var(--std-animation);
   cursor: pointer;
   &.disabled, // FIXME: ditch this class, its redundant with more semantic options
@@ -62,66 +146,83 @@ form,
 }
 
 .clickableTextMixin {
-  .interactive();
-  background: none;
-  border: none;
-  outline: none;
+  .interactiveMixin();
+  background: transparent;
   color: var(--ironsworn-color-clickable-text);
   &[aria-selected='true'],
   &.selected,
   &.active {
-    color: var(--ironsworn-color-clickable-text-selected);
+    .textActiveMixin();
   }
   &:hover,
   &.hover {
-    color: var(--ironsworn-color-clickable-text-hover);
+    .textHoverMixin();
   }
-
   &:focus,
   &:focus-within {
+    .textFocusMixin();
   }
 }
-.clickableBlockMixin {
-  .interactive();
-  // border-style: none;
-  // border-style: solid;
+
+.textHoverMixin {
+  color: var(--ironsworn-color-clickable-text-hover);
+}
+.textFocusMixin {
+  background-color: var(--ironsworn-color-fg-overlay-weak);
+}
+
+.textActiveMixin {
+  color: var(--ironsworn-color-clickable-text-selected);
+  // background-color: var(--ironsworn-color-fg-overlay-strong);
+}
+
+.blockHoverMixin(@glowSpread:10px, @glowBlur:0) {
+  outline: none;
+  color: var(--ironsworn-color-clickable-block-fg-hover);
+  background-color: var(--ironsworn-color-bg);
+  border-color: var(--ironsworn-color-clickable-block-border-hover);
+  .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
+}
+
+.blockFocusMixin {
+  outline: none;
+  .borderGlowExteriorMixin();
+}
+
+.blockActiveMixin {
+  box-shadow: none;
+  outline: none;
+  color: var(--ironsworn-color-clickable-block-fg-selected);
+  background-color: var(
+    --ironsworn-color-thematic,
+    var(--ironsworn-color-clickable-block-bg-selected)
+  );
+  border-color: var(--ironsworn-color-clickable-block-border-selected);
+}
+
+.clickableBlockMixin(@glowSpread:25px,@glowBlur:0) {
+  .interactiveMixin();
   border-color: var(--ironsworn-color-clickable-block-border);
-  // border-width: 1px;
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg);
   background-color: var(--ironsworn-color-clickable-block-bg);
   &:hover,
   &.hover {
-    outline: none;
-    box-shadow: none;
-    color: var(--ironsworn-color-clickable-block-fg-hover);
-    background-color: var(
-      --ironsworn-color-thematic-muted,
-      var(--ironsworn-color-clickable-block-bg-hover)
-    );
-    border-color: var(--ironsworn-color-clickable-block-border-hover);
+    .blockHoverMixin(@glowSpread,@glowBlur);
   }
   &:focus,
   &:focus-within {
-    outline: none;
-    box-shadow: none;
+    .blockFocusMixin();
   }
   &[aria-selected='true'],
   &.selected,
   &.active {
-    box-shadow: none;
-    outline: none;
-    color: var(--ironsworn-color-clickable-block-fg-selected);
-    background-color: var(
-      --ironsworn-color-thematic,
-      var(--ironsworn-color-clickable-block-bg-selected)
-    );
-    border-color: var(--ironsworn-color-clickable-block-border-selected);
+    .blockActiveMixin();
   }
 }
 
 .clickable {
-  .interactive();
+  .interactiveMixin();
 
   &:not(svg):not(.svg) {
     &.text {

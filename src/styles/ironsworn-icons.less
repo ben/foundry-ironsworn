@@ -71,8 +71,19 @@
   i {
     &[class^='isicon-'],
     &[class*=' isicon-'] {
+      display: flex;
       height: 100%;
       width: 100%;
+      align-items: center;
+      justify-content: center;
+      &:before {
+        @padIcon: 2px;
+        display: flex;
+        height: calc(100% - (@padIcon*2));
+        width: calc(100% - (@padIcon*2));
+
+        // padding: 2px;
+      }
     }
   }
 }

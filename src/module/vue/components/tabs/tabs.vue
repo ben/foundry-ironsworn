@@ -59,7 +59,7 @@ defineExpose({ selectIndex })
   [role='tab'], // so it doesn't catch things that only start with 'tab'
   [role^='tab '],
   [role*=' tab'] {
-    border: 0;
+    border: none;
     flex: 1 1 0;
     text-align: center;
     height: 100%;
@@ -85,11 +85,11 @@ defineExpose({ selectIndex })
     height: max-content;
 
     &[aria-orientation='horizontal'] {
-      border-block-end: 1px solid;
+      border-block-end: 1px solid var(--ironsworn-color-border);
     }
     &[aria-orientation='vertical'] {
-      border-inline-start: 1px solid;
-      border-inline-end: 1px solid;
+      border-inline-start: 1px solid var(--ironsworn-color-border);
+      border-inline-end: 1px solid var(--ironsworn-color-border);
     }
   }
   [role^='tabpanel'],

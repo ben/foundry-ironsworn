@@ -9,13 +9,11 @@
   background: hsl(0, 0%, 27%);
   border: 1px solid hsl(0, 0%, 13%);
 }
+
 :root {
   scrollbar-width: thin;
   scrollbar-color: hsl(0, 0%, 27%) hsla(0, 0%, 0%, 0.1);
   --std-animation: all 0.5s ease;
-  --widget-fill-opacity: 1;
-  --widget-fill-opacity-preview: 0.5;
-  --widget-stroke-width: 1px;
   --ironsworn-color-bg: hsl(0, 0%, 100%);
   @legacyColorDarken: 25%;
   @legacyColorLighten: 50%;
@@ -82,10 +80,6 @@
   --ironsworn-color-success: hsl(200, 80%, 40%);
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
   --ironsworn-dice-background: hsl(0, 0%, 69%);
-
-  border-color: var(--ironsworn-color-border);
-  border-style: solid;
-  font-family: var(--font-primary);
 }
 
 button {
@@ -97,7 +91,6 @@ button {
 }
 
 .system-foundry-ironsworn {
-  @import 'var-overrides.less';
   @import 'ironsworn-icons.less';
   @import 'mixins.less';
   @import 'assets.less';
@@ -105,8 +98,14 @@ button {
   @import 'inputs.less';
   @import 'chat-message.less';
   @import 'sidebar.less';
+
+  border-color: var(--ironsworn-color-border);
+  border-style: solid;
+
   .app {
     background: var(--ironsworn-color-bg);
+    color: var(--ironsworn-color-fg);
+    .borderFloatingMixin();
   }
   .grid {
     display: grid;
@@ -157,6 +156,7 @@ button {
     position: relative;
     border-@{direction}-width: 1px;
     margin-@{direction}: @spacer;
+    border-color: var(--ironsworn-color-border);
   }
 
   .margin-left {
@@ -235,26 +235,6 @@ button {
   }
 
   // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
-
-  &.dialog .dialog-buttons button {
-    // .interactive();
-    // TODO: reimplement the above when updating roll dialog
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .button-text {
-      .clickable();
-      .nogrow();
-      .initial-caps();
-      width: max-content;
-      height: max-content;
-    }
-
-    i {
-      height: 18px;
-      width: 18px;
-    }
-  }
 
   .stats {
     flex: 0;

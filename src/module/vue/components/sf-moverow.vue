@@ -69,7 +69,6 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
-  --ironsworn-color-thematic-muted: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
   color: var(--ironsworn-color-light);
   border-color: var(--ironsworn-color-thematic);
@@ -108,23 +107,20 @@
 .toggleButton {
   .clickableTextMixin();
   .thematicColorMixin();
-  .fake-stroke();
+  .textStrokeMixin();
   display: flex;
   flex-direction: row;
   padding: 0.2rem 0.2rem 0.2rem 0.3rem;
   text-align: left;
   line-height: 1.25;
   font-size: var(--font-size-16);
-  border-color: transparent;
-  border-style: solid;
-  border-width: 1px;
   border-bottom-width: 0px;
   border-radius: @border_radius @border_radius 0 0;
   align-items: center;
   .wrapper[aria-expanded='true'] & {
     border-color: var(--ironsworn-color-border-highlight);
     color: var(--ironsworn-color-clickable-text-selected);
-    background-color: var(--ironsworn-color-dark-overlay);
+    background-color: var(--ironsworn-color-dark-overlay-strong);
   }
 }
 
@@ -144,7 +140,6 @@
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
-import chroma from 'chroma-js'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
@@ -211,12 +206,6 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
 function moveClick(move: IronswornItem) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
 }
-
-const colorThematicFaded = computed(() =>
-  chroma(props.thematicColor as string)
-    .alpha(0.5)
-    .css()
-)
 
 defineExpose({
   moveId,

@@ -31,6 +31,7 @@
 </template>
 
 <style lang="less">
+@import '../../../../styles/mixins.less';
 .momentum-meter {
   gap: 5px 0;
   .attr-slider-label:hover ~ .slider-bar {
@@ -39,6 +40,9 @@
       border-bottom: 1px solid var(--color-border-highlight);
       box-shadow: 0 0 10px var(--color-shadow-highlight);
       z-index: 20;
+      background-color: var(--ironsworn-color-clickable-block-bg-hover);
+      color: var(--ironsworn-color-clickable-block-fg-hover);
+      .textStrokeMixin();
     }
   }
 }

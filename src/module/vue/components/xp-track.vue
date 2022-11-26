@@ -1,7 +1,7 @@
 <template>
   <article class="flexrow xp-track nogrow">
     <button
-      class="clickable block xp-box"
+      class="xp-box"
       type="button"
       v-for="(box, i) in computedBoxes"
       :key="box.key"
@@ -14,13 +14,18 @@
 </template>
 <style lang="less">
 @import '../../../styles/clickable.less';
+@import '../../../styles/mixins.less';
 .xp-track {
   .xp-box {
-    .clickableBlockMixin();
     position: relative;
     z-index: 1;
     aspect-ratio: 1;
     max-width: 20px;
+    .clickableBlockMixin(10px,0px);
+    &.hover {
+      // --ironsworn-color-bg: var(--ironsworn-color-thematic);
+      --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-bg);
+    }
   }
 }
 </style>
@@ -30,7 +35,6 @@ import { computed, ref } from 'vue'
 const props = defineProps<{
   max: number
   marked: number
-  themeColor: string
 }>()
 
 const hovered = ref(-1)

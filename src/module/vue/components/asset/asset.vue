@@ -115,7 +115,6 @@
 <style lang="less" module>
 .themeColor {
   --ironsworn-color-thematic: v-bind('asset?.system?.color');
-  --ironsworn-color-thematic-muted: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 </style>
@@ -132,7 +131,6 @@ import { defaultActor } from '../../../helpers/actors'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetConditions from './asset-conditions.vue'
-import chroma from 'chroma-js'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref
@@ -199,12 +197,6 @@ function setAbilityClock(abilityIdx: number, clockTicks: number) {
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
   foundryItem?.update({ system: { abilities } })
 }
-
-const colorThematicFaded = computed(() =>
-  chroma(props.asset?.system?.color as string)
-    .alpha(0.5)
-    .css()
-)
 
 function toggleCondition(idx: number) {
   const { conditions } = props.asset.system

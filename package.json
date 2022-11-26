@@ -28,7 +28,6 @@
     "@vitejs/plugin-vue": "^2.3.4",
     "autoprefixer": "^10.4.8",
     "buffer": "^6.0.3",
-    "chroma-js": "^2.4.2",
     "dataforged": "^1.0",
     "eslint": "^8.17.0",
     "eslint-config-prettier": "^8.5.0",

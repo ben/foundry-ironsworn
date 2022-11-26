@@ -1,5 +1,6 @@
 @import './starforged-font.css'; // HACK to avoid import error
 @import '../mixins.less';
+@import '../override-vars.less';
 
 .system-foundry-ironsworn.theme-starforged {
   --font-primary: 'Carrois Gothic SC', sans-serif;
@@ -23,12 +24,12 @@
     @themeDarkSaturation,
     @themeDarkLightness
   );
-  --ironsworn-color-accent: hsl((@themeLightHue+35), 100%, 50%);
-  --ironsworn-color-accent-alt: hsl((@themeLightHue+10), 100%, 50%);
+  --ironsworn-color-accent: hsl(230, 100%, 65%);
+  --ironsworn-color-accent-alt: hsl(200, 100%, 50%);
 
-  --ironsworn-color-light-muted: mix(
+  --ironsworn-color-light-muted: fade(
     $--ironsworn-color-light,
-    $--ironsworn-color-dark,
+    // $--ironsworn-color-dark,
     70%
   );
   --ironsworn-color-light-vivid: lighten(
@@ -48,9 +49,17 @@
     60%
   );
 
+  --ironsworn-color-dark-overlay-weak: fade($--ironsworn-color-dark, 15%);
+  --ironsworn-color-dark-overlay-strong: fade($--ironsworn-color-dark, 50%);
+  --ironsworn-color-light-overlay-weak: fade($--ironsworn-color-light, 15%);
+  --ironsworn-color-light-overlay-strong: fade($--ironsworn-color-light, 50%);
+
   --ironsworn-color-fg: var(--ironsworn-color-light);
   --ironsworn-color-fg-muted: var(--ironsworn-color-light-muted);
   --ironsworn-color-fg-highlight: var(--ironsworn-color-light-vivid);
+  --ironsworn-color-fg-overlay-strong: var(
+    --ironsworn-color-light-overlay-strong
+  );
 
   --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
   --ironsworn-color-border: var(--ironsworn-color-fg-muted);
@@ -60,10 +69,17 @@
   --ironsworn-color-bg-alt: var(--ironsworn-color-dark-alt);
   --ironsworn-color-bg-highlight: var(--ironsworn-color-dark-vivid);
 
-  --ironsworn-color-dark-overlay: fade($--ironsworn-color-dark, 15%);
-  --ironsworn-color-light-overlay: fade($--ironsworn-color-light, 15%);
+  --ironsworn-color-bg-overlay-weak: var(--ironsworn-color-dark-overlay-weak);
+  --ironsworn-color-bg-overlay-strong: var(
+    --ironsworn-color-dark-overlay-strong
+  );
 
-  --ironsworn-color-input-bg: var(--ironsworn-color-light-overlay);
+  --ironsworn-widget-fill-opacity: 1;
+  --ironsworn-widget-fill-opacity-preview: 0.5;
+  --ironsworn-color-widget-stroke-width: 1;
+  --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
+
+  --ironsworn-color-input-bg: var(--ironsworn-color-light-overlay-weak);
 
   --ironsworn-color-thematic: hsl(@themeLightHue, 75%, 27%);
   // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables. see "--ironsworn-color-thematic-muted" in styles.less for an example.
@@ -104,13 +120,6 @@
     --ironsworn-color-fg-highlight
   );
 
-  .hoverFxBlock(@spread_block:10px) {
-    box-shadow: 0 0 @spread_box var(--ironsworn-color-bg-highlight) inset;
-  }
-  .hoverFxText(@spread_text:10px) {
-    text-shadow: 0 0 @spread_text var(--ironsworn-color-bg-highlight);
-  }
-
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-dark);
   --ironsworn-color-legacy-quests-muted: var(--ironsworn-color-red-dark-muted);
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-dark);
@@ -134,9 +143,7 @@
 
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
-  .app {
-    color: var(--ironsworn-color-fg);
-  }
+  .overrideVars();
 
   ::-webkit-scrollbar-thumb {
     background: var(--ironsworn-color-bg-alt);
@@ -177,7 +184,7 @@
     &:hover,
     &:focus {
       &.block {
-        .fake-stroke();
+        .textStrokeMixin();
       }
       &.text:not(.block) {
         box-shadow: none;
@@ -186,7 +193,7 @@
     &.selected,
     &[aria-selected='true'] {
       &.block {
-        .fake-stroke();
+        .textStrokeMixin();
       }
     }
   }

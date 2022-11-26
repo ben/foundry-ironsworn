@@ -33,7 +33,7 @@
 .rank-pips {
   .rank-pip {
     .pip-shape > * {
-      stroke-width: var(--widget-stroke-width);
+      stroke-width: var(--ironsworn-color-widget-stroke-width);
     }
   }
 }
@@ -44,14 +44,14 @@
   pointer-events: none;
   display: flex;
   flex-flow: row nowrap;
-  stroke: currentColor;
+  stroke: var(--ironsworn-color-widget-stroke);
   fill: var(--ironsworn-color-thematic);
-  fill-opacity: var(--widget-fill-opacity);
+  fill-opacity: var(--ironsworn-widget-fill-opacity);
   align-content: center;
   gap: 2px;
   transition: var(--std-animation);
   &:hover {
-    fill-opacity: var(--widget-fill-opacity-preview);
+    fill-opacity: var(--ironsworn-widget-fill-opacity-preview);
   }
   button.rank-pip {
     background-color: unset;

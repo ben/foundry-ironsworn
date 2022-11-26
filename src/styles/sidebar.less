@@ -1,4 +1,5 @@
 @import 'clickable.less';
+@import 'mixins.less';
 
 #sidebar {
   button {
@@ -7,15 +8,27 @@
     border-style: solid;
     border-radius: 4px;
   }
+
   #sidebar-tabs {
-    box-shadow: none;
     .item {
       .clickableTextMixin();
+      margin: 0;
+      .tabTopMixin();
+      color: var(--ironsworn-color-clickable-block-fg);
+      border-color: transparent;
+    }
+    .collapse {
+      .clickableBlockMixin();
+    }
+  }
+  .directory {
+    .directory-item {
+      .document-name {
+        cursor: pointer;
+        .clickableBlockMixin();
+        margin: 0;
+        padding-left: 8px;
+      }
     }
   }
 }
-// .directory {
-//   .directory-header .header-search input {
-//     background-color: var(--ironsworn-color-light-overlay);
-//   }
-// }
