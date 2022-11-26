@@ -93,9 +93,8 @@
       </div>
       <div
         class="flexcol"
-        style="flex-basis: 10em; max-height: 430px; overflow: scroll"
+        style="flex-basis: 12em; max-height: 430px; overflow: scroll"
       >
-        <!-- MOVES -->
         <SiteMoves />
       </div>
     </div>

@@ -7,7 +7,7 @@ export class IronswornSiteSheetV2 extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
-      width: 700,
+      width: 750,
       height: 650,
     })
   }

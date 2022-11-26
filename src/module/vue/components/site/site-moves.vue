@@ -1,28 +1,37 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol" v-bind:style="`background-color: ${thematicColor}`">
     <SfMoverow
       :move="moves.delveTheDepths"
       v-if="moves.delveTheDepths"
-      thematic-color="#333"
+      :thematic-color="thematicColor"
       class="nogrow"
     />
     <SfMoverow
       :move="moves.revealADanger"
       v-if="moves.revealADanger"
-      thematic-color="#333"
+      :thematic-color="thematicColor"
       class="nogrow"
+      @oracleClick="revealADanger"
+      :oracleDisabled="!hasThemeAndDomain"
     />
     <SfMoverow
       :move="moves.findAnOpportunity"
       v-if="moves.findAnOpportunity"
-      thematic-color="#333"
+      :thematic-color="thematicColor"
       class="nogrow"
     />
     <SfMoverow
       :move="moves.escapeTheDepths"
       v-if="moves.escapeTheDepths"
-      thematic-color="#333"
+      :thematic-color="thematicColor"
       class="nogrow"
+    />
+    <SfMoverow
+      :move="moves.locateObjective"
+      v-if="moves.locateObjective"
+      :thematic-color="thematicColor"
+      class="nogrow"
+      @rollClick="locateObjective"
     />
     <BtnIsicon
       icon="d10-tilt"
@@ -31,13 +40,6 @@
       @click="randomFeature"
     >
       {{ $t('IRONSWORN.Feature') }}
-    </BtnIsicon>
-    <BtnIsicon
-      icon="d10-tilt"
-      class="box text block nogrow"
-      @click="locateObjective"
-    >
-      {{ $t('IRONSWORN.MoveContents.Locate Your Objective.title') }}
     </BtnIsicon>
   </div>
 </template>
@@ -57,6 +59,7 @@ import { $ActorKey, ActorKey } from '../../provisions'
 
 import BtnIsicon from '../buttons/btn-isicon.vue'
 import SfMoverow from '../sf-moverow.vue'
+import SiteMoverowFeature from './site-moverow-feature.vue'
 
 const site = inject(ActorKey)
 const $site = inject($ActorKey)
@@ -68,8 +71,39 @@ const domain = computed(() => {
   return site?.value?.items.find((x) => x.type === 'delve-domain')
 })
 
+const thematicColor = '#aaa'
+
 const hasThemeAndDomain = computed(() => {
   return !!(theme.value && domain.value)
+})
+
+const featureRows = computed((): TableRow[] => {
+  if (!hasThemeAndDomain.value) return []
+
+  const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
+  const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
+  return [...themeData.features, ...domainData.features].map(
+    ({ low, high, description }) => ({
+      low,
+      high,
+      text: description,
+      selected: false,
+    })
+  )
+})
+const dangerRows = computed((): TableRow[] => {
+  if (!hasThemeAndDomain.value) return []
+
+  const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
+  const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
+  return [...themeData.dangers, ...domainData.dangers].map(
+    ({ low, high, description }) => ({
+      low,
+      high,
+      text: description,
+      selected: false,
+    })
+  )
 })
 
 // Construct some moves to use with the new pipeline
@@ -86,6 +120,7 @@ Promise.resolve().then(async () => {
     revealADanger: 'Ironsworn/Moves/Delve/Reveal_a_Danger',
     findAnOpportunity: 'Ironsworn/Moves/Delve/Find_an_Opportunity',
     escapeTheDepths: 'Ironsworn/Moves/Delve/Escape_the_Depths',
+    locateObjective: 'Ironsworn/Moves/Delve/Locate_Your_Objective',
   }
 
   for (const k of Object.keys(movesToFetch)) {
@@ -95,24 +130,12 @@ Promise.resolve().then(async () => {
   }
 })
 
+async function revealADanger() {}
+
 async function randomFeature() {
   if (!hasThemeAndDomain.value) return
 
-  const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
-  const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  const convertToRow = (f: FeatureOrDanger): TableRow => {
-    const { low, high, description } = f
-    return {
-      low,
-      high,
-      text: description,
-      selected: false,
-    }
-  }
-  const rows = [
-    ...themeData.features.map(convertToRow),
-    ...domainData.features.map(convertToRow),
-  ]
+  const rows = featureRows.value
   const title = game.i18n.localize('IRONSWORN.Feature')
   const subtitle = `${$site?.name} – ${theme.value?.name} ${domain.value?.name}`
   const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
