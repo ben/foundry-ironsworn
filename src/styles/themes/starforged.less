@@ -12,7 +12,7 @@
   @themeDarkSaturation: 0%;
   @themeDarkLightness: 0%;
 
-  // muted fg + alt bg should meet WCAG contrast
+  // FIXME: muted fg + alt bg should meet WCAG contrast
 
   --ironsworn-color-light: hsl(
     @themeLightHue,
@@ -74,17 +74,11 @@
     --ironsworn-color-dark-overlay-strong
   );
 
-  --ironsworn-widget-fill-opacity: 1;
-  --ironsworn-widget-fill-opacity-preview: 0.5;
+  --ironsworn-widget-fill-opacity-hover: 0.5;
   --ironsworn-color-widget-stroke-width: 1;
   --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
 
   --ironsworn-color-input-bg: var(--ironsworn-color-light-overlay-weak);
-
-  --ironsworn-color-thematic: hsl(@themeLightHue, 75%, 27%);
-  // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables. see "--ironsworn-color-thematic-muted" in styles.less for an example.
-  --ironsworn-color-thematic-HSL: @themeLightHue, 75%, 27%;
-  --ironsworn-color-thematic-HS: @themeLightHue, 75%;
 
   --ironsworn-color-text-outline: $--ironsworn-color-dark;
 
@@ -105,7 +99,8 @@
     --ironsworn-color-fg-highlight
   );
   --ironsworn-color-clickable-block-bg-selected: var(
-    --ironsworn-color-bg-highlight
+    --ironsworn-color-thematic,
+    var(--ironsworn-color-bg-highlight)
   );
   --ironsworn-color-clickable-block-border-selected: var(
     --ironsworn-color-fg-highlight

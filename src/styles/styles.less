@@ -1,11 +1,11 @@
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px hsl(0, 0%, 60%) inset;
-  border-radius: 4px;
+  border-radius: var(--ironsworn-border-radius-md);
 }
 
 ::-webkit-scrollbar-thumb {
   outline: none;
-  border-radius: 3px;
+  border-radius: var(--ironsworn-border-radius-md);
   background: hsl(0, 0%, 27%);
   border: 1px solid hsl(0, 0%, 13%);
 }
@@ -80,6 +80,10 @@
   --ironsworn-color-success: hsl(200, 80%, 40%);
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
   --ironsworn-dice-background: hsl(0, 0%, 69%);
+
+  --ironsworn-border-radius-sm: 2px;
+  --ironsworn-border-radius-md: 3px;
+  --ironsworn-border-radius-lg: 5px;
 }
 
 button {
@@ -243,7 +247,7 @@ button {
     .stat {
       flex: 0 0 75px;
       border: 1px solid;
-      border-radius: 5px;
+      border-radius: var(--ironsworn-border-radius-lg);
       text-align: center;
       padding: 0.5rem 0;
 
@@ -289,7 +293,7 @@ button {
 
   .boxgroup {
     border: 1px solid;
-    border-radius: 5px;
+    border-radius: var(--ironsworn-border-radius-lg);
 
     .boxrow {
       border-top: 1px solid;
@@ -319,7 +323,7 @@ button {
     margin: 5px;
     padding: 5px;
     border: 1px solid;
-    border-radius: 3px;
+    border-radius: var(--ironsworn-border-radius-md);
   }
 
   .remove-option {
@@ -331,7 +335,7 @@ button {
     border-width: 1px;
     border-style: solid;
     border-color: var(--ironsworn-color-border);
-    border-radius: 2px;
+    border-radius: var(--ironsworn-border-radius-md);
     padding: 3px;
     margin: 3px 0;
 
@@ -344,7 +348,7 @@ button {
   .progresses {
     .item {
       border: 1px solid;
-      border-radius: 3px;
+      border-radius: var(--ironsworn-border-radius-md);
       padding: 5px;
       margin: 5px;
     }

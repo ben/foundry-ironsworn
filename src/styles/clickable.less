@@ -102,7 +102,7 @@ form,
 .app:not(.ironsworn) button {
   .clickableBlockMixin();
   border-color: var(--ironsworn-color-clickable-block-border);
-  border-radius: 3px;
+  border-radius: var(--ironsworn-border-radius-md);
 }
 .ironsworn button {
   margin: 0;
@@ -176,12 +176,12 @@ form,
   // background-color: var(--ironsworn-color-fg-overlay-strong);
 }
 
-.blockHoverMixin(@glowSpread:10px, @glowBlur:0) {
+.blockHoverMixin(@blockSize:20px) {
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-hover);
   background-color: var(--ironsworn-color-bg);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
-  .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
+  .overlayGlowMixin(@blockSize);
 }
 
 .blockFocusMixin {
@@ -193,14 +193,11 @@ form,
   box-shadow: none;
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-selected);
-  background-color: var(
-    --ironsworn-color-thematic,
-    var(--ironsworn-color-clickable-block-bg-selected)
-  );
+  background-color: var(--ironsworn-color-clickable-block-bg-selected);
   border-color: var(--ironsworn-color-clickable-block-border-selected);
 }
 
-.clickableBlockMixin(@glowSpread:25px,@glowBlur:0) {
+.clickableBlockMixin(@blockSize:20px) {
   .interactiveMixin();
   border-color: var(--ironsworn-color-clickable-block-border);
   outline: none;
@@ -208,7 +205,7 @@ form,
   background-color: var(--ironsworn-color-clickable-block-bg);
   &:hover,
   &.hover {
-    .blockHoverMixin(@glowSpread,@glowBlur);
+    .blockHoverMixin(@blockSize);
   }
   &:focus,
   &:focus-within {

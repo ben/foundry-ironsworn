@@ -60,7 +60,7 @@
   justify-content: center;
   aspect-ratio: 1;
   object-fit: contain;
-  border-radius: 3px;
+  border-radius: var(--ironsworn-border-radius-md);
   stroke: var(--ironsworn-color-widget-stroke);
   stroke-width: 5;
 

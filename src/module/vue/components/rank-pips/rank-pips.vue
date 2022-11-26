@@ -39,19 +39,17 @@
 }
 </style>
 <style lang="less" scoped>
+@import '../../../../styles/mixins.less';
 .rank-pips {
   // so that hover effects only happen when a pip is hovered
+  .svgWidgetMixin();
   pointer-events: none;
   display: flex;
   flex-flow: row nowrap;
-  stroke: var(--ironsworn-color-widget-stroke);
-  fill: var(--ironsworn-color-thematic);
-  fill-opacity: var(--ironsworn-widget-fill-opacity);
   align-content: center;
   gap: 2px;
-  transition: var(--std-animation);
   &:hover {
-    fill-opacity: var(--ironsworn-widget-fill-opacity-preview);
+    fill-opacity: var(--ironsworn-widget-fill-opacity-hover);
   }
   button.rank-pip {
     background-color: unset;

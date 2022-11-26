@@ -23,12 +23,12 @@
 </template>
 
 <style lang="less" scoped>
+@import '../../../styles/mixins.less';
 svg.clock {
+  .svgWidgetMixin();
+  .thematicHoverMixin();
   // so that only *segment* hovers appear
   pointer-events: none;
-  fill: var(--ironsworn-color-thematic);
-  fill-opacity: var(--ironsworn-widget-fill-opacity);
-  stroke: var(--ironsworn-color-widget-stroke);
   stroke-width: var(--ironsworn-color-widget-stroke-width);
   aspect-ratio: 1;
   &[aria-valuenow='0']:not(:hover) {
@@ -42,11 +42,11 @@ svg.clock {
     vector-effect: non-scaling-stroke;
     transition: var(--std-animation);
     &:active {
-      fill-opacity: var(--ironsworn-widget-fill-opacity);
+      fill-opacity: 1;
     }
   }
   &:hover {
-    fill-opacity: var(--ironsworn-widget-fill-opacity-preview);
+    fill-opacity: var(--ironsworn-widget-fill-opacity-hover);
     .clock-segment {
       &:hover {
         ~ .clock-segment {
@@ -57,7 +57,7 @@ svg.clock {
   }
   &:not(:hover) {
     .clock-segment {
-      fill-opacity: var(--ironsworn-widget-fill-opacity);
+      fill-opacity: 1;
       &[aria-selected='true'] {
         ~ .clock-segment {
           fill-opacity: 0;

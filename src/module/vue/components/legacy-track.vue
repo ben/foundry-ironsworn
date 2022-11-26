@@ -107,7 +107,7 @@
       background-color: var(--ironsworn-color-bg);
       margin: 0;
       aspect-ratio: 1;
-      border-radius: 3px;
+      border-radius: var(--ironsworn-border-radius-md);
       border-style: solid;
       border-width: @xp_border_width;
       width: 100%;

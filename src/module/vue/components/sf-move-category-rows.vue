@@ -35,15 +35,9 @@
 <style lang="less" module>
 @import '../../../styles/mixins.less';
 
-.thematicColorMixin {
-  --ironsworn-color-thematic: v-bind('category?.color');
-  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
-}
-
 .wrapper {
-  .thematicColorMixin();
-  border-radius: 5px;
-  background-color: var(--ironsworn-color-thematic);
+  .thematicBgMixin(v-bind('category?.color'));
+  border-radius: var(--ironsworn-border-radius-lg);
 }
 
 .list {
@@ -55,15 +49,13 @@
 }
 
 .listItem {
-  border-color: var(--ironsworn-color-thematic);
+  border-color: v-bind('category?.color');
   border-style: groove;
   border-width: 1px 0 0;
 }
 
 .toggleSection {
-  transition: 0.5s ease;
-  background-color: var(--ironsworn-color-thematic);
-  border-radius: 5px;
+  border-radius: var(--ironsworn-border-radius-lg);
   button {
     color: var(--ironsworn-color-light);
     &:hover {

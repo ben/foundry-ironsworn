@@ -142,7 +142,7 @@
 
 textarea {
   border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
+  border-radius: var(--ironsworn-border-radius-sm);
   resize: none;
   font-family: var(--font-primary);
 }

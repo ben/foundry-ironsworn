@@ -21,11 +21,8 @@
     z-index: 1;
     aspect-ratio: 1;
     max-width: 20px;
-    .clickableBlockMixin(10px,0px);
-    &.hover {
-      // --ironsworn-color-bg: var(--ironsworn-color-thematic);
-      --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-bg);
-    }
+    .thematicHoverMixin();
+    .clickableBlockMixin($max-width);
   }
 }
 </style>

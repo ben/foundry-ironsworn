@@ -137,7 +137,7 @@
 button.danger {
   color: var(--ironsworn-color-danger);
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: var(--ironsworn-border-radius-lg);
   border-color: var(--ironsworn-color-danger);
   transition: all ease 0.2s;
 
