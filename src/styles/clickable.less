@@ -56,13 +56,27 @@
   border-left-width: 0px;
 }
 
-button {
-  border: none;
-  box-sizing: border-box;
-  background: none;
-  outline: none;
-  box-shadow: none;
-  .interactiveMixin();
+.app:not(.ironsworn) button,
+.dialog .dialog-buttons button {
+  .clickableBlockMixin();
+  border-radius: var(--ironsworn-border-radius-md);
+  border-width: 1px;
+  border-style: solid;
+}
+
+.dialog .dialog-buttons {
+  height: max-content;
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .button-text {
+      flex-grow: 0;
+      .initial-caps();
+      width: max-content;
+      height: max-content;
+    }
+  }
 }
 
 .borderMixin(@color:var(--ironsworn-color-border),@width:1px) {
@@ -71,35 +85,12 @@ button {
   border-width: @width;
 }
 
-.dialog .dialog-buttons button {
-  .clickableBlockMixin();
-  border-width: 1px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  .button-text {
-    flex-grow: 0;
-    .initial-caps();
-    width: max-content;
-    height: max-content;
-  }
-
-  i {
-    height: 18px;
-    width: 18px;
-  }
-}
 form,
 #permissions-config {
   .notes,
   .hint {
     color: var(--ironsworn-color-fg-muted);
   }
-}
-.app:not(.ironsworn) button {
-  .clickableBlockMixin();
-  border-color: var(--ironsworn-color-clickable-block-border);
-  border-radius: var(--ironsworn-border-radius-md);
 }
 .ironsworn button {
   margin: 0;
@@ -178,12 +169,16 @@ form,
   color: var(--ironsworn-color-clickable-block-fg-hover);
   background-color: var(--ironsworn-color-bg);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
+  .textStrokeMixin();
   .overlayGlowMixin(@blockSize);
+  z-index: var(--ironsworn-z-index-high);
 }
 
 .blockFocusMixin {
   outline: none;
+  .textStrokeMixin();
   .borderGlowExteriorMixin();
+  z-index: var(--ironsworn-z-index-high);
 }
 
 .blockActiveMixin {
@@ -192,14 +187,24 @@ form,
   color: var(--ironsworn-color-clickable-block-fg-selected);
   background-color: var(--ironsworn-color-clickable-block-bg-selected);
   border-color: var(--ironsworn-color-clickable-block-border-selected);
+  z-index: var(--ironsworn-z-index-high);
 }
-
-.clickableBlockMixin(@blockSize:20px) {
+// For the block's 'default' state.
+.blockMixin(@borderWidth:0px,@blockSize:20px,@borderRadius:0px) {
   .interactiveMixin();
-  border-color: var(--ironsworn-color-clickable-block-border);
   outline: none;
+  box-shadow: none;
+  overflow-y: visible;
+  border-width: @borderWidth;
+  border-color: var(--ironsworn-color-clickable-block-border);
+  border-style: solid;
+  border-radius: @borderRadius;
   color: var(--ironsworn-color-clickable-block-fg);
   background-color: var(--ironsworn-color-clickable-block-bg);
+}
+
+.clickableBlockMixin(@borderWidth:0px,@blockSize:20px,@borderRadius:0px) {
+  .blockMixin(@borderWidth,@blockSize,@borderRadius);
   &:hover,
   &.hover {
     .blockHoverMixin(@blockSize);
@@ -216,6 +221,12 @@ form,
 }
 
 .clickable {
+  border: none;
+  box-sizing: border-box;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  .interactiveMixin();
   .interactiveMixin();
 
   &:not(svg):not(.svg) {
@@ -224,7 +235,7 @@ form,
       .clickableTextMixin();
     }
     &.block {
-      .clickableBlockMixin(50px);
+      .clickableBlockMixin(1px, var(--ironsworn-vertical-slider-width));
     }
   }
   svg,
