@@ -10,6 +10,7 @@
 
 // used to mark focused fields. a few FVTT buttons/tabs use it as a hover effect, too.
 .borderGlowExteriorMixin(@spread:10px) {
+  outline: none;
   border-color: var(--color-border-highlight-alt);
   border-bottom-color: var(--color-border-highlight);
   box-shadow: 0 0 @spread var(--color-shadow-highlight);
@@ -31,7 +32,7 @@
 
 // used for e.g. hover effects. resembles a transparent overlay (with a subtle gradient) without having to do any interpolation or set additional variables.
 .overlayGlowMixin(@blockSize:20px, @color:var(--ironsworn-color-clickable-block-bg-selected)) {
-  .borderGlowInteriorMixin((@blockSize / 2),0,@color);
+  .borderGlowInteriorMixin(calc(@blockSize / 2),0,@color);
 }
 
 // applies thematic colours to some hover/selection effects.
