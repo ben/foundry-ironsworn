@@ -44,7 +44,11 @@ import { getFoundryTableByDfId } from '../../../dataforged'
 import { createIronswornMoveTree, Move } from '../../../features/custommoves'
 import { moveDataByName } from '../../../helpers/data'
 import { DelveThemeDataSourceData } from '../../../item/itemtypes'
-import { TableRow, OracleRollMessage } from '../../../rolls'
+import {
+  TableRow,
+  OracleRollMessage,
+  IronswornPrerollDialog,
+} from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 import BtnIsicon from '../buttons/btn-isicon.vue'
@@ -131,12 +135,16 @@ async function locateObjective() {
   const move = await moveDataByName('Locate Your Objective')
   const siteSys = $site.system as SiteDataPropertiesData
   const progress = Math.floor(siteSys.current / 4)
-  const roll = new Roll(`{${progress}, d10, d10}`)
-  createIronswornChatRoll({
-    isProgress: true,
-    move,
-    roll,
-    subtitle: $site.name || undefined,
-  })
+
+  IronswornPrerollDialog.showForOfficialMove(
+    'Ironsworn/Moves/Delve/Locate_Your_Objective',
+    {
+      actor: $site,
+      progress: {
+        source: $site.name ?? '',
+        value: progress,
+      },
+    }
+  )
 }
 </script>

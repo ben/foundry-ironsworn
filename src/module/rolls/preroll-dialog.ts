@@ -1,5 +1,5 @@
-import { IMoveTrigger } from 'dataforged'
-import type { RollMethod } from 'dataforged'
+import { IMoveTrigger, ProgressTypeIronsworn } from 'dataforged'
+import type { RollMethod, RollType } from 'dataforged'
 import { capitalize, cloneDeep, maxBy, minBy, sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
@@ -17,6 +17,11 @@ import { CharacterDataPropertiesData } from '../actor/actortypes'
 import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
 import { ChallengeResolutionDialog } from './challenge-resolution-dialog'
+
+type showForMoveOpts = {
+  actor?: IronswornActor
+  progress?: SourcedValue
+}
 
 export function localeCapitalize(str: string) {
   const locale = game.i18n.lang
@@ -57,9 +62,12 @@ function chooseStatToRoll(
   mode: RollMethod,
   stats: string[],
   actor: IronswornActor
-): SourcedValue {
+): SourcedValue | undefined {
   const normalizedStats = stats.map((x) => x.toLowerCase())
   let stat = normalizedStats[0]
+
+  // Progress roll -> no stat
+  if (stat === 'progress') return undefined
 
   if (mode === 'Highest' || mode === 'Lowest') {
     const statMap = {}
@@ -249,44 +257,65 @@ export class IronswornPrerollDialog extends Dialog<
     }).render(true)
   }
 
-  static async showForOfficialMove(moveDfId: string, actor?: IronswornActor) {
+  static async showForOfficialMove(moveDfId: string, opts?: showForMoveOpts) {
     const moveItem = await getFoundryMoveByDfId(moveDfId)
     if (!moveItem) {
       throw new Error(`Couldn't find item for move '${moveDfId}'`)
     }
 
-    return this.showForMoveItem(moveItem, { moveDfId }, actor)
+    return this.showForMoveItem(
+      moveItem,
+      { moveDfId, progress: opts?.progress },
+      opts
+    )
   }
 
-  static async showForMove(move: IronswornItem, actor?: IronswornActor) {
+  static async showForMove(move: IronswornItem, opts?: showForMoveOpts) {
     if (move.type !== 'sfmove') {
       throw new Error('this only works with SF moves')
     }
 
-    return this.showForMoveItem(move, { moveId: move.id || undefined }, actor)
+    return this.showForMoveItem(
+      move,
+      {
+        moveId: move.id || undefined,
+        progress: opts?.progress,
+      },
+      opts
+    )
   }
 
   private static async showForMoveItem(
     move: IronswornItem,
     prerollOptions: PreRollOptions,
-    actor?: IronswornActor
+    opts?: showForMoveOpts
   ) {
-    prerollOptions.actorId = actor?.id || undefined
+    prerollOptions.actorId = opts?.actor?.id || undefined
 
     const data = move.system as SFMoveDataPropertiesData
     const options = rollableOptions(data.Trigger)
     if (!options.length) {
-      throw new Error(
-        `Move '${move.name}' (${JSON.stringify(
-          prerollOptions
-        )}) is not rollable`
-      )
+      if (!prerollOptions.progress)
+        throw new Error(
+          `Move '${move.name}' (${JSON.stringify(
+            prerollOptions
+          )}) is not rollable`
+        )
+
+      // Add this so it generates a button, but it won't be passed to
+      // the IronswornRoll object as a stat
+      options.push({
+        $id: 'xyz',
+        'Roll type': 'Progress roll' as RollType,
+        Method: 'Any' as RollMethod,
+        Using: ['Progress' as ProgressTypeIronsworn],
+      })
     }
 
     const title = move.name || 'MOVE'
     const allActors = [] as IronswornActor[]
-    if (actor?.type === 'character') {
-      allActors.push(actor)
+    if (opts?.actor?.type === 'character') {
+      allActors.push(opts.actor)
     } else {
       allActors.push(
         ...sortBy(
@@ -300,7 +329,7 @@ export class IronswornPrerollDialog extends Dialog<
     const content = await this.renderContent({
       prerollOptions,
       move,
-      actor,
+      actor: opts?.actor,
       allActors,
       showActorSelect,
       action: true,
