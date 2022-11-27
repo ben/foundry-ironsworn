@@ -2,13 +2,6 @@
 @import 'mixins.less';
 
 #sidebar {
-  button {
-    .clickableBlockMixin();
-    border-width: 1px;
-    border-style: solid;
-    border-radius: var(--ironsworn-border-radius-md);
-  }
-
   #sidebar-tabs {
     .item {
       .clickableTextMixin();
@@ -24,8 +17,11 @@
   .directory {
     .directory-item {
       .document-name {
+        --boxGlowSize: calc(
+          (var(--sidebar-item-height) + var(--sidebar-width)) / 4
+        );
         cursor: pointer;
-        .clickableBlockMixin();
+        .clickableBlockMixin(0px,var(--boxGlowSize));
         margin: 0;
         padding-left: 8px;
       }
