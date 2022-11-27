@@ -1,6 +1,12 @@
 @import 'mixins.less';
 @import 'clickable.less';
 
+.inputFieldFocusMixin(@spread: 7px) {
+  color: var(--ironsworn-color-fg-highlight);
+  .borderGlowExteriorMixin(@spread);
+  border-style: solid;
+}
+
 .inputFieldMixin(@spread:4px) {
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
@@ -20,10 +26,7 @@
   }
   &:focus,
   &:focus-within {
-    @spread: 7px;
-    color: var(--ironsworn-color-fg-highlight);
-    .borderGlowExteriorMixin(@spread);
-    border-style: solid;
+    .inputFieldFocusMixin();
   }
 }
 
@@ -73,7 +76,8 @@ input {
   }
 }
 .editor {
-  border: 1px solid;
+  border-width: 1px;
+  border-style: solid;
   border-radius: var(--ironsworn-border-radius-lg);
 }
 .editor-content {
