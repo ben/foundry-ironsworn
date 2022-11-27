@@ -19,10 +19,6 @@
 <style lang="less" scoped>
 .order-buttons {
   padding-right: 3px;
-
-  .icon-button {
-    padding: 2px;
-  }
 }
 </style>
 

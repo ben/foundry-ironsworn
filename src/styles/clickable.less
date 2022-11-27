@@ -60,7 +60,7 @@
 .dialog .dialog-buttons button {
   .clickableBlockMixin();
   border-radius: var(--ironsworn-border-radius-md);
-  border-width: 1px;
+  border-width: var(--ironsworn-border-radius-md);
   border-style: solid;
 }
 
@@ -161,7 +161,6 @@ form,
 
 .textActiveMixin {
   color: var(--ironsworn-color-clickable-text-selected);
-  // background-color: var(--ironsworn-color-fg-overlay-strong);
 }
 
 .blockHoverMixin(@blockSize:20px) {
@@ -203,6 +202,54 @@ form,
   background-color: var(--ironsworn-color-clickable-block-bg);
 }
 
+.iconButtonBaseMixin {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  padding: var(--ironsworn-spacer-xs);
+  &:not(:empty) {
+    gap: var(--ironsworn-spacer-xs);
+  }
+  &:empty {
+    // restricts width + removes border if there's no text
+    border: none !important;
+    flex-grow: 0;
+    line-height: 1;
+    height: max-content;
+    width: max-content;
+  }
+  &:before {
+    line-height: 1;
+    height: 1em;
+    width: 1em;
+  }
+  // override to compensate for chrome user agent stylesheet bug: https://bugs.chromium.org/p/chromium/issues/detail?id=681917
+  .button-text {
+    // makes this seamless with existing buttons that don't need this styling
+    display: inline;
+    strong {
+      white-space: nowrap;
+    }
+  }
+  &.vertical {
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+    flex-direction: column;
+    .button-text {
+      line-height: inherit;
+      display: inherit;
+      // writing-mode: vertical-lr !important;
+      writing-mode: inherit;
+    }
+  }
+}
+
+.icon-button {
+  .iconButtonBaseMixin();
+}
+
 .clickableBlockMixin(@borderWidth:0px,@blockSize:20px,@borderRadius:0px) {
   .blockMixin(@borderWidth,@blockSize,@borderRadius);
   &:hover,
@@ -227,7 +274,6 @@ form,
   outline: none;
   box-shadow: none;
   .interactiveMixin();
-  .interactiveMixin();
 
   &:not(svg):not(.svg) {
     &.text {
@@ -235,7 +281,7 @@ form,
       .clickableTextMixin();
     }
     &.block {
-      .clickableBlockMixin(1px, var(--ironsworn-vertical-slider-width));
+      .clickableBlockMixin(var(--ironsworn-border-width-md), var(--ironsworn-vertical-slider-width));
     }
   }
   svg,

@@ -60,14 +60,14 @@
   .stat-roll {
     text-transform: uppercase;
   }
-  .condition-meters {
-    .icon-button {
-      flex-direction: column;
-      .button-text {
-        writing-mode: vertical-lr;
-      }
-    }
-  }
+  // .condition-meters {
+  //   .icon-button {
+  //     flex-direction: column;
+  //     .button-text {
+  //       writing-mode: vertical-lr;
+  //     }
+  //   }
+  // }
   .tabbed-panels.character-sheet-tabs {
     [role^='tablist'],
     [role*=' tablist'] {
