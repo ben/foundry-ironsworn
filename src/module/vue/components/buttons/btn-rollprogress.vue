@@ -4,7 +4,7 @@
     :tooltip="$t('IRONSWORN.MakeAProgressRoll', { score: progressScore })"
     class="progress-roll"
     icon="d10-tilt"
-    :disabled="props.disabled"
+    v-bind="props"
   >
     <slot name="default"></slot>
   </btn-isicon>
@@ -17,7 +17,18 @@ import { ProgressDataProperties } from '../../../item/itemtypes'
 import { $ItemKey } from '../../provisions'
 import BtnIsicon from './btn-isicon.vue'
 
-const props = defineProps<{ item: any; tooltip?: string; disabled?: boolean }>()
+const props = defineProps<{
+  item: any
+  // FIXME: shared props, inherit them once Vue adds support in 3.3
+  disabled?: boolean
+  buttonStyle?:
+    | 'iconOnly'
+    | 'iconHoverBlock'
+    | 'blockBorder'
+    | 'blockBorderless'
+    | 'text'
+  hoverBg?: boolean
+}>()
 
 const $item = inject($ItemKey, undefined)
 

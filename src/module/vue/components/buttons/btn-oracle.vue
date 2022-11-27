@@ -6,7 +6,7 @@
     :tooltip="
       $t('IRONSWORN.RollOracleTable', { title: props.node.displayName })
     "
-    :disabled="disabled"
+    v-bind="props"
   >
     <slot name="default"></slot>
   </BtnIsicon>
@@ -23,7 +23,15 @@ import BtnIsicon from './btn-isicon.vue'
 
 const props = defineProps<{
   node: IOracleTreeNode
+  // FIXME: shared props, inherit them once Vue adds support in 3.3
   disabled?: boolean
+  buttonStyle?:
+    | 'iconOnly'
+    | 'iconHoverBlock'
+    | 'blockBorder'
+    | 'blockBorderless'
+    | 'text'
+  hoverBg?: boolean
 }>()
 
 const toolset = inject<'ironsworn' | 'starforged'>('toolset')

@@ -7,6 +7,7 @@
     icon="d10-tilt"
     aria-haspopup="dialog"
     :disabled="disabled"
+    v-bind="props"
   >
     <slot ref="content" name="default"></slot>
   </BtnIsicon>
@@ -28,7 +29,15 @@ const props = defineProps<{
    */
   statLabel: string
   attr: string
+  // FIXME: shared props, inherit them once Vue adds support in 3.3
   disabled?: boolean
+  buttonStyle?:
+    | 'iconOnly'
+    | 'iconHoverBlock'
+    | 'blockBorder'
+    | 'blockBorderless'
+    | 'text'
+  hoverBg?: boolean
 }>()
 
 const $actor = inject($ActorKey, undefined)

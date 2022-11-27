@@ -3,8 +3,8 @@
     icon="fire"
     class="burn-momentum"
     @click="burnMomentum"
-    :disabled="disabled"
     :tooltip="tooltip"
+    v-bind="props"
   >
     <slot name="default"></slot>
   </btn-faicon>
@@ -17,7 +17,18 @@ import { CharacterDataPropertiesData } from '../../../actor/actortypes'
 import { $ActorKey } from '../../provisions'
 import btnFaicon from './btn-faicon.vue'
 
-defineProps<{ disabled?: boolean }>()
+const props = defineProps<{
+  // FIXME: shared props, inherit them once Vue adds support in 3.3
+  disabled?: boolean
+  buttonStyle?:
+    | 'iconOnly'
+    | 'iconHoverBlock'
+    | 'blockBorder'
+    | 'blockBorderless'
+    | 'text'
+  hoverBg?: boolean
+}>()
+
 const $actor = inject($ActorKey)
 
 const tooltip = computed(() => {

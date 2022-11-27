@@ -4,7 +4,7 @@
     icon="comment"
     :tooltip="$t('IRONSWORN.SendToChat', { move: move.displayName })"
     @click="sendToChat"
-    :disabled="disabled"
+    v-bind="props"
   >
     <slot name="default"></slot>
   </btn-faicon>
@@ -22,7 +22,15 @@ import btnFaicon from './btn-faicon.vue'
 
 const props = defineProps<{
   move: Move
+  // FIXME: shared props, inherit them once Vue adds support in 3.3
   disabled?: boolean
+  buttonStyle?:
+    | 'iconOnly'
+    | 'iconHoverBlock'
+    | 'blockBorder'
+    | 'blockBorderless'
+    | 'text'
+  hoverBg?: boolean
 }>()
 
 const $item = inject($ItemKey)

@@ -1,8 +1,7 @@
 <template>
   <btn-icon
-    :class="classes"
-    :tooltip="tooltip"
-    :disabled="disabled"
+    :class="{ [`isicon-${props.icon}`]: true }"
+    v-bind="props"
     @click="$emit('click')"
   >
     <slot name="default"></slot>
@@ -10,22 +9,21 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import btnIcon from './btn-icon.vue'
 
 defineEmits(['click'])
 
 const props = defineProps<{
   icon: string
+  // FIXME: shared props, inherit them once Vue adds support in 3.3
   tooltip?: string
-  hoverBg?: boolean
   disabled?: boolean
+  buttonStyle?:
+    | 'iconOnly'
+    | 'iconHoverBlock'
+    | 'blockBorder'
+    | 'blockBorderless'
+    | 'text'
+  hoverBg?: boolean
 }>()
-
-const classes = computed(() => {
-  return {
-    [`isicon-${props.icon}`]: true,
-    ['icon-bg-hover']: props.hoverBg,
-  }
-})
 </script>

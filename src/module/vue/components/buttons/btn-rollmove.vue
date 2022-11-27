@@ -9,7 +9,7 @@
     class="action-roll move-roll"
     icon="d10-tilt"
     aria-haspopup="dialog"
-    :disabled="disabled"
+    v-bind="props"
   >
     <slot name="default"></slot>
   </btn-isicon>
@@ -24,7 +24,15 @@ import btnIsicon from './btn-isicon.vue'
 
 const props = defineProps<{
   move?: Move
+  // FIXME: shared props, inherit them once Vue adds support in 3.3
   disabled?: boolean
+  buttonStyle?:
+    | 'iconOnly'
+    | 'iconHoverBlock'
+    | 'blockBorder'
+    | 'blockBorderless'
+    | 'text'
+  hoverBg?: boolean
 }>()
 
 const $actor = inject($ActorKey)
