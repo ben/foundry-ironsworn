@@ -1,5 +1,25 @@
 @import 'mixins.less';
-
+.dice-roll {
+  border: none;
+  .dice-formula,
+  .dice-total {
+    padding: 5px 0px 5px 0px;
+    // border: none;
+    border-color: var(--ironsworn-color-border);
+    border-style: groove;
+    border-width: 1px;
+    // background-color: var(--ironsworn-color-bg-alt);
+    --ironsworn-dice-background: var(--ironsworn-color-bg-highlight);
+    box-shadow: none;
+    .die {
+      .textStrokeMixin();
+      &.min,
+      &.max {
+        color: var(--ironsworn-color-fg);
+      }
+    }
+  }
+}
 #chat {
   #chat-log {
   }
@@ -34,25 +54,6 @@
         .entity-link,
         .content-link {
           color: var(--ironsworn-color-fg-highlight);
-        }
-      }
-    }
-
-    .dice-roll {
-      border: none;
-      .dice-formula,
-      .dice-total {
-        padding: 5px 0px 5px 0px;
-        border: none;
-        background-color: var(--ironsworn-color-bg-alt);
-        --ironsworn-dice-background: var(--ironsworn-color-bg-highlight);
-        box-shadow: none;
-        .die {
-          .textStrokeMixin();
-          &.min,
-          &.max {
-            color: var(--ironsworn-color-fg);
-          }
         }
       }
     }
