@@ -56,7 +56,7 @@
 
 <style lang="less">
 .sf-character-sheet {
-  gap: 7px;
+  gap: var(--ironsworn-spacer-lg);
   .stat-roll {
     text-transform: uppercase;
   }

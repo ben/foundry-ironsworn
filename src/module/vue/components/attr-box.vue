@@ -22,16 +22,14 @@
 @import '../../../styles/mixins.less';
 .stat {
   @statBoxSize: 75px;
-  .clickableBlockMixin(@statBoxSize);
+  .clickableBlockMixin(var(--ironsworn-border-width-md), @statBoxSize);
   border-style: solid;
-  border-width: 1px;
   flex: 0 0 @statBoxSize;
   border-radius: var(--ironsworn-border-radius-lg);
   text-align: center;
   padding: 0.5rem 0;
   & > * {
     position: relative; // must be set to manipulate z-index
-    z-index: 1;
   }
 
   h4 {
@@ -81,7 +79,6 @@ const actorSys = computed(
 
 const classes = computed(() => ({
   stat: true,
-  clickable: !editMode.value,
   'isiconbg-d10-tilt': !editMode.value,
 }))
 const i18nKey = computed(() => `IRONSWORN.${capitalize(props.attr)}`)

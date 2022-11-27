@@ -32,17 +32,17 @@
 
 <style lang="less">
 @import '../../../../styles/mixins.less';
+@import '../../../../styles/clickable.less';
 .momentum-meter {
-  gap: 5px 0;
+  gap: var(--ironsworn-spacer-md) 0;
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
-      border: 1px solid var(--color-border-highlight-alt);
-      border-bottom: 1px solid var(--color-border-highlight);
-      box-shadow: 0 0 10px var(--color-shadow-highlight);
-      z-index: 20;
-      background-color: var(--ironsworn-color-clickable-block-bg-hover);
-      color: var(--ironsworn-color-clickable-block-fg-hover);
-      .textStrokeMixin();
+      border-width: var(--ironsworn-border-width-md);
+      .blockHoverMixin(var(--ironsworn-vertical-slider-width));
+      .borderGlowExteriorMixin();
+      box-shadow: .blockHoverMixin(var(--ironsworn-vertical-slider-width))
+          [box-shadow],
+        .borderGlowExteriorMixin() [box-shadow];
     }
   }
 }

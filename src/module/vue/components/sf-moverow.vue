@@ -99,7 +99,7 @@
 
 .moveButton {
   font-size: 1.15em;
-  height: 28px;
+  height: var(--ironsworn-clickable-line-height);
   aspect-ratio: 1 !important;
   align-self: center;
 }

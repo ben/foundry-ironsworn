@@ -63,8 +63,8 @@ defineExpose({ selectIndex })
     flex: 1 1 0;
     text-align: center;
     height: 100%;
-    overflow-y: auto;
-    padding: 5px;
+    overflow-y: visible;
+    padding: var(--ironsworn-spacer-md);
     gap: 0.25em;
     justify-content: center;
     &:before {
@@ -85,11 +85,14 @@ defineExpose({ selectIndex })
     height: max-content;
 
     &[aria-orientation='horizontal'] {
-      border-block-end: 1px solid var(--ironsworn-color-border);
+      border-block-end: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-color-border);
     }
     &[aria-orientation='vertical'] {
-      border-inline-start: 1px solid var(--ironsworn-color-border);
-      border-inline-end: 1px solid var(--ironsworn-color-border);
+      border-inline-start: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-color-border);
+      border-inline-end: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-color-border);
     }
   }
   [role^='tabpanel'],
