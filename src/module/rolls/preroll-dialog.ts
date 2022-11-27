@@ -1,5 +1,5 @@
-import { IMoveTrigger } from 'dataforged'
-import type { RollMethod } from 'dataforged'
+import { IMoveTrigger, ProgressTypeIronsworn } from 'dataforged'
+import type { RollMethod, RollType } from 'dataforged'
 import { capitalize, cloneDeep, maxBy, minBy, sortBy } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
@@ -62,9 +62,12 @@ function chooseStatToRoll(
   mode: RollMethod,
   stats: string[],
   actor: IronswornActor
-): SourcedValue {
+): SourcedValue | undefined {
   const normalizedStats = stats.map((x) => x.toLowerCase())
   let stat = normalizedStats[0]
+
+  // Progress roll -> no stat
+  if (stat === 'progress') return undefined
 
   if (mode === 'Highest' || mode === 'Lowest') {
     const statMap = {}
@@ -260,7 +263,11 @@ export class IronswornPrerollDialog extends Dialog<
       throw new Error(`Couldn't find item for move '${moveDfId}'`)
     }
 
-    return this.showForMoveItem(moveItem, { moveDfId }, opts)
+    return this.showForMoveItem(
+      moveItem,
+      { moveDfId, progress: opts?.progress },
+      opts
+    )
   }
 
   static async showForMove(move: IronswornItem, opts?: showForMoveOpts) {
@@ -268,7 +275,14 @@ export class IronswornPrerollDialog extends Dialog<
       throw new Error('this only works with SF moves')
     }
 
-    return this.showForMoveItem(move, { moveId: move.id || undefined }, opts)
+    return this.showForMoveItem(
+      move,
+      {
+        moveId: move.id || undefined,
+        progress: opts?.progress,
+      },
+      opts
+    )
   }
 
   private static async showForMoveItem(
@@ -281,11 +295,18 @@ export class IronswornPrerollDialog extends Dialog<
     const data = move.system as SFMoveDataPropertiesData
     const options = rollableOptions(data.Trigger)
     if (!options.length) {
-      throw new Error(
-        `Move '${move.name}' (${JSON.stringify(
-          prerollOptions
-        )}) is not rollable`
-      )
+      if (!prerollOptions.progress)
+        throw new Error(
+          `Move '${move.name}' (${JSON.stringify(
+            prerollOptions
+          )}) is not rollable`
+        )
+      options.push({
+        $id: 'xyz',
+        'Roll type': 'Progress roll' as RollType,
+        Method: 'Any' as RollMethod,
+        Using: ['Progress' as ProgressTypeIronsworn],
+      })
     }
 
     const title = move.name || 'MOVE'
