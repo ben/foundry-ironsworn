@@ -146,13 +146,5 @@ async function locateObjective() {
       },
     }
   )
-
-  // const roll = new Roll(`{${progress}, d10, d10}`)
-  // createIronswornChatRoll({
-  //   isProgress: true,
-  //   move,
-  //   roll,
-  //   subtitle: $site.name || undefined,
-  // })
 }
 </script>

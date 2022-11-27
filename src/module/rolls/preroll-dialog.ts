@@ -301,6 +301,9 @@ export class IronswornPrerollDialog extends Dialog<
             prerollOptions
           )}) is not rollable`
         )
+
+      // Add this so it generates a button, but it won't be passed to
+      // the IronswornRoll object as a stat
       options.push({
         $id: 'xyz',
         'Roll type': 'Progress roll' as RollType,
