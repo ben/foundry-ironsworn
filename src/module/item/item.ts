@@ -71,11 +71,15 @@ export class IronswornItem extends Item {
     if (!move) throw new Error('Problem loading write-epilogue move')
 
     const progress = Math.floor(Object.values(system.bonds).length / 4)
-    IronswornPrerollDialog.showForProgress(
-      game.i18n.localize('IRONSWORN.Bonds'),
-      progress,
-      this.actor || undefined,
-      'Ironsworn/Moves/Relationship/Write_Your_Epilogue'
+    IronswornPrerollDialog.showForOfficialMove(
+      'Ironsworn/Moves/Relationship/Write_Your_Epilogue',
+      {
+        actor: this.actor || undefined,
+        progress: {
+          source: game.i18n.localize('IRONSWORN.Bonds'),
+          value: progress,
+        },
+      }
     )
   }
 
