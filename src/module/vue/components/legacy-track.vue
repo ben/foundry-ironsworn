@@ -1,10 +1,19 @@
 <template>
-  <article class="legacy-track flexcol" ref="legacyTrack" :data-legacy="legacy">
-    <h4 class="legacy-track-title">
+  <article
+    class="flexcol"
+    :class="$style.legacyTrack"
+    ref="legacyTrack"
+    :data-legacy="legacy"
+  >
+    <h4 :class="$style.title">
       {{ $t(`IRONSWORN.${capitalize(legacy)}`) }}
     </h4>
 
-    <section class="legacy-track-controls flexrow" data-tooltip-direction="UP">
+    <section
+      class="flexrow"
+      :class="$style.trackControls"
+      data-tooltip-direction="UP"
+    >
       <span v-if="overflowLabel" class="nogrow">
         {{ overflowLabel }}
       </span>
@@ -23,7 +32,7 @@
     </section>
 
     <ProgressTrack
-      class="legacy-track-progress"
+      :class="$style.progressTrack"
       :ticks="ticksDisplayed"
       :rank="null"
       :aria-valuemax="undefined"
@@ -34,124 +43,85 @@
       @click="setXp"
       :max="xpEarned"
       :marked="xpSpent"
-      class="legacy-track-xp"
+      class="flexrow nogrow"
+      :class="$style.legacyTrackXp"
+      :boxClass="$style.xpBox"
     />
   </article>
 </template>
-<style lang="less">
-[data-legacy='discoveries'] {
-  --ironsworn-color-thematic: var(--ironsworn-color-legacy-discoveries);
-}
-[data-legacy='bonds'] {
-  --ironsworn-color-thematic: var(--ironsworn-color-legacy-bonds);
-}
-[data-legacy='quests'] {
-  --ironsworn-color-thematic: var(--ironsworn-color-legacy-quests);
-}
+<style lang="less" module>
+@import '../../../styles/clickable.less';
+@import '../../../styles/mixins.less';
+@xp_border_width: var(--ironsworn-border-width-md);
 
-.legacy-track {
+@max_progress_box_width: 50px;
+@progress_box_gap: var(--ironsworn-spacer-md);
+@max_track_width: calc(@max_progress_box_width*10 + @progress_box_gap*9);
+
+.legacyTrack {
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;
   grid-template-columns: max-content 1fr;
-  .legacy-track-title {
-    font-weight: bold;
-    letter-spacing: 0.02em;
-    grid-row: 1;
-    grid-column: 1;
-    margin: 0;
-    line-height: 2;
-  }
-  .legacy-track-controls {
-    grid-row: 1;
-    grid-column: 2;
-    align-items: center;
-    justify-content: end;
-    .icon-button {
-      aspect-ratio: 1;
-      height: 100%;
-    }
-  }
-  .legacy-track-progress {
-    grid-column: 1 / span 2;
-    grid-row: 2 / span 2;
-    // FIXME this is a bit of a kluge to ensure that the xp pips match up with the boxes, but should be relatively stable with the size of the. ultimately, tho, it'd be better to have this be laid out automatically, probably with display:contents to destructure the track elements
-    max-width: @max_track_width;
-  }
-  @max_progress_box_width: 50px;
-  @max_xp_box_width: 15px;
-  @progress_box_gap: 4px;
-  @max_track_width: (@max_progress_box_width*10 + @progress_box_gap*9);
-  .progress-track {
-    margin: 0;
-    gap: @progress_box_gap;
-  }
-  .progress-track-box {
+  .thematicHoverMixin(v-bind('getThematicColor'));
+}
+
+.title {
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  grid-row: 1;
+  grid-column: 1;
+  margin: 0;
+  line-height: 2;
+}
+
+.trackControls {
+  grid-row: 1;
+  grid-column: 2;
+  align-items: center;
+  justify-content: end;
+  // .icon-button {
+  //   aspect-ratio: 1;
+  //   height: 100%;
+  // }
+}
+
+.progressTrack {
+  grid-column: 1 / span 2;
+  grid-row: 2 / span 2;
+  margin: 0;
+  gap: @progress_box_gap;
+  // FIXME this is a bit of a kluge to ensure that the xp pips match up with the boxes, but should be relatively stable with the size of the. ultimately, tho, it'd be better to have this be laid out automatically, probably with display:contents to destructure the track elements
+  max-width: @max_track_width;
+
+  & > * {
+    // progress track boxes
     // extra padding to allow comfy overlap with xp pips
-    padding-bottom: (@max_xp_box_width * 0.4);
     max-height: unset;
     max-width: @max_progress_box_width;
+    padding-bottom: var(--ironsworn-spacer-sm);
     gap: @progress_box_gap;
-  }
-  .legacy-track-xp {
-    @xp_border_width: 1px;
-    grid-column: 1 / span 2;
-    grid-row: 3 / span 2;
-    display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    max-width: @max_track_width;
-    width: 100%;
-    gap: @progress_box_gap;
-    justify-self: center;
-    position: relative;
-    .xp-box {
-      background-color: var(--ironsworn-color-bg);
-      margin: 0;
-      aspect-ratio: 1;
-      border-radius: var(--ironsworn-border-radius-md);
-      border-style: solid;
-      border-width: @xp_border_width;
-      width: 100%;
-      max-width: @max_xp_box_width;
-      z-index: 1;
-      &.hover,
-      &.selected {
-        background-color: var(--ironsworn-color-thematic);
-        z-index: 100;
-      }
-
-      &:not(:nth-child(n + 21)) {
-        &:nth-child(2n) {
-          justify-self: left;
-          border-top-left-radius: 0;
-          border-bottom-left-radius: 0;
-          margin-left: -((@progress_box_gap+ @xp_border_width)/2);
-        }
-        &:nth-child(2n + 1) {
-          justify-self: right;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          margin-right: -((@progress_box_gap+ @xp_border_width)/2);
-        }
-      }
-      &:nth-child(n + 21) {
-        grid-column: span 2;
-        justify-self: center;
-      }
-    }
   }
 }
+
+.legacyTrackXp {
+  margin-top: var(--ironsworn-spacer-sm);
+  grid-column: 1 / span 2;
+  grid-row: 3 / span 2;
+  justify-self: center;
+  max-width: @max_track_width;
+  width: 100%;
+  gap: @progress_box_gap;
+}
 </style>
+
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import BtnFaicon from './buttons/btn-faicon.vue'
 import { capitalize } from 'lodash'
-import { IronswornActor } from '../../actor/actor.js'
 import XpTrack from './xp-track.vue'
 import _ from 'lodash'
 import ProgressTrack from './progress/progress-track.vue'
-import { CharacterDataSource } from '../../actor/actortypes.js'
-import { ActorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
 type LegacyType = 'quests' | 'bonds' | 'discoveries'
@@ -170,7 +140,15 @@ const props = defineProps<{
    * The legacy track type.
    */
   legacy: LegacyType
+  /**
+   * The thematic accent color to use when rendering this track. Defaults to the one associated with the legacy type, so you probably don't need to set it unless you're doing something weird.
+   */
+  thematicColor?: string
 }>()
+
+const getThematicColor = computed(
+  () => props.thematicColor ?? `var(--ironsworn-color-legacy-${props.legacy})`
+)
 
 const $actor = inject($ActorKey)
 const actor = inject(ActorKey) as Ref
