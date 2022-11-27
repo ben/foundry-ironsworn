@@ -39,21 +39,13 @@
 <script lang="ts" setup>
 import { computed, inject, reactive } from 'vue'
 import { SiteDataPropertiesData } from '../../../actor/actortypes'
-import { createIronswornChatRoll } from '../../../chat/chatrollhelpers'
 import { getFoundryTableByDfId } from '../../../dataforged'
 import { createIronswornMoveTree, Move } from '../../../features/custommoves'
-import { moveDataByName } from '../../../helpers/data'
 import { DelveThemeDataSourceData } from '../../../item/itemtypes'
-import {
-  TableRow,
-  OracleRollMessage,
-  IronswornPrerollDialog,
-} from '../../../rolls'
+import { OracleRollMessage, IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
-import BtnIsicon from '../buttons/btn-isicon.vue'
 import SfMoverow from '../sf-moverow.vue'
-import SiteMoverowFeature from './site-moverow-feature.vue'
 
 const site = inject(ActorKey)
 const $site = inject($ActorKey)
@@ -132,7 +124,6 @@ async function revealADanger() {
 
 async function locateObjective() {
   if (!$site) return
-  const move = await moveDataByName('Locate Your Objective')
   const siteSys = $site.system as SiteDataPropertiesData
   const progress = Math.floor(siteSys.current / 4)
 
