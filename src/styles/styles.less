@@ -7,7 +7,7 @@
   outline: none;
   border-radius: var(--ironsworn-border-radius-md);
   background: hsl(0, 0%, 27%);
-  border: 1px solid hsl(0, 0%, 13%);
+  border: var(--ironsworn-border-width-md) solid hsl(0, 0%, 13%);
 }
 
 :root {
@@ -81,20 +81,32 @@
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
   --ironsworn-dice-background: hsl(0, 0%, 69%);
 
+  // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
   --ironsworn-border-radius-sm: 2px;
   --ironsworn-border-radius-md: 3px;
   --ironsworn-border-radius-lg: 5px;
-}
 
-button {
-  border-radius: unset;
-  border-style: solid;
-  border-width: 0px;
-  outline: none;
-  box-shadow: none;
+  --ironsworn-border-width-md: 1px;
+  --ironsworn-border-width-lg: 2px;
+
+  --ironsworn-spacer-xs: 2px;
+  --ironsworn-spacer-sm: 3px;
+  --ironsworn-spacer-md: 5px;
+  --ironsworn-spacer-lg: 7px;
+
+  --ironsworn-vertical-slider-width: 50px;
+  --ironsworn-clickable-line-height: 28px;
+
+  --ironsworn-z-index-highest: 100;
+  --ironsworn-z-index-higher: 75;
+  --ironsworn-z-index-high: 25;
+  --ironsworn-z-index-low: -1;
+  --ironsworn-z-index-lower: -2;
+  --ironsworn-z-index-lowest: -3;
 }
 
 .system-foundry-ironsworn {
+  // importing within this selector to give everything an additional layer of specificity
   @import 'ironsworn-icons.less';
   @import 'mixins.less';
   @import 'assets.less';
@@ -117,7 +129,7 @@ button {
   hr {
     width: 100%;
     border: none;
-    border-width: 0 0 1px;
+    border-width: 0 0 var(--ironsworn-border-width-md);
     border-style: solid;
     border-color: var(--ironsworn-color-border);
   }
@@ -140,12 +152,12 @@ button {
 
   .window-content {
     height: 100%;
-    padding: 5px;
+    padding: var(--ironsworn-spacer-md);
     scrollbar-width: thin;
   }
 
   .sheet-area {
-    border-top-width: 2px;
+    border-top-width: var(--ironsworn-border-width-lg);
     &:first-child {
       border-top-width: 0;
     }
@@ -154,12 +166,11 @@ button {
   }
 
   .marginMixin(@direction) {
-    @spacer: 5px;
     flex: 0;
     border-@{direction}-style: solid;
     position: relative;
-    border-@{direction}-width: 1px;
-    margin-@{direction}: @spacer;
+    border-@{direction}-width: var(--ironsworn-border-width-md);
+    margin-@{direction}: var(--ironsworn-spacer-md);
     border-color: var(--ironsworn-color-border);
   }
 
@@ -186,7 +197,7 @@ button {
 
       & > h2 {
         text-align: center;
-        border-width: 1px 0;
+        border-width: var(--ironsworn-border-width-md) 0;
       }
     }
   }
@@ -208,22 +219,25 @@ button {
     .stack-row {
       // FIXME refactor as component and encapsulate the relevant css there
       flex: 0 0 auto;
-      min-width: 50px;
-      border: 1px solid;
+      min-width: var(--ironsworn-vertical-slider-width);
+      border-width: var(--ironsworn-border-width-md);
+      border-style: solid;
       border-top: none;
       text-align: center;
-      line-height: 28px;
+      line-height: var(--ironsworn-clickable-line-height);
       position: relative;
-      z-index: 1;
+      z-index: auto;
       padding: 0;
       &:hover,
       &.hover,
       &.selected,
       &[aria-selected='true'] {
-        z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
+        z-index: var(
+          --ironsworn-z-index-high
+        ); // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
       }
       &:first-child {
-        border-top: 1px solid;
+        border-top: var(--ironsworn-border-width-md) solid;
         border-top-left-radius: var(--ironsworn-border-radius-lg);
         border-top-right-radius: var(--ironsworn-border-radius-lg);
       }
@@ -245,7 +259,8 @@ button {
       flex: 0 0 30px;
       justify-items: center;
       align-items: center;
-      border: 1px solid;
+      border-width: var(--ironsworn-border-width-md);
+      border-style: solid;
       transition: var(--std-animation);
     }
   }
@@ -255,17 +270,18 @@ button {
     h3,
     h4,
     h5 {
-      margin: 3px 0;
+      margin: var(--ironsworn-spacer-sm) 0;
       border: none;
     }
   }
 
   .boxgroup {
-    border: 1px solid;
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
     border-radius: var(--ironsworn-border-radius-lg);
 
     .boxrow {
-      border-top: 1px solid;
+      border-top: var(--ironsworn-border-width-md) solid;
       &:first-child {
         border-top: none;
       }
@@ -281,7 +297,7 @@ button {
       display: flex;
       text-align: center;
       justify-content: center;
-      border-left: 1px solid;
+      border-left: var(--ironsworn-border-width-md) solid;
       &:first-child {
         border-left: none;
       }
@@ -290,8 +306,9 @@ button {
 
   .inset {
     margin: 5px;
-    padding: 5px;
-    border: 1px solid;
+    padding: var(--ironsworn-spacer-md);
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
     border-radius: var(--ironsworn-border-radius-md);
   }
 
@@ -301,31 +318,32 @@ button {
   }
 
   .item-row {
-    border-width: 1px;
+    border-width: var(--ironsworn-border-width-md);
     border-style: solid;
     border-color: var(--ironsworn-color-border);
     border-radius: var(--ironsworn-border-radius-md);
-    padding: 3px;
-    margin: 3px 0;
+    padding: var(--ironsworn-spacer-sm);
+    margin: var(--ironsworn-spacer-sm) 0;
 
     .item-row-control {
       flex-grow: 0;
-      padding: 5px;
+      padding: var(--ironsworn-spacer-md);
     }
   }
 
   .progresses {
     .item {
-      border: 1px solid;
+      border-width: var(--ironsworn-border-width-md);
+      border-style: solid;
       border-radius: var(--ironsworn-border-radius-md);
-      padding: 5px;
+      padding: var(--ironsworn-spacer-md);
       margin: 5px;
     }
   }
 
   .progress-button {
     i {
-      padding: 3px;
+      padding: var(--ironsworn-spacer-sm);
       width: 22px;
       text-align: center;
     }
@@ -377,8 +395,8 @@ button {
     .item {
       height: 30px;
       line-height: 24px;
-      padding: 3px 0;
-      border-bottom: 1px solid;
+      padding: var(--ironsworn-spacer-sm) 0;
+      border-bottom: var(--ironsworn-border-width-md) solid;
 
       img {
         flex: 0 0 24px;
@@ -397,9 +415,10 @@ button {
 
   .progress {
     flex: 1;
-    border: 1px solid;
-    padding: 5px;
-    margin: 2px;
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
+    padding: var(--ironsworn-spacer-md);
+    margin: var(--ironsworn-spacer-md);
     text-align: center;
   }
 
@@ -413,7 +432,8 @@ button {
 
   .move-title {
     text-align: center;
-    border: 1px solid;
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
     margin-bottom: 5px;
     font-weight: bold;
     line-height: 30px;
@@ -453,7 +473,7 @@ button {
       width: 24px;
       line-height: 24px;
       display: inline-block;
-      margin-right: 1px;
+      margin-right: var(--ironsworn-border-width-md);
       background-repeat: no-repeat;
       background-size: 24px 24px;
       font-weight: bold;
@@ -553,15 +573,17 @@ button {
       flex-grow: 0;
     }
     .indeterminate-value {
-      opacity: 0.5;
+      color: var(--ironsworn-color-fg-muted);
     }
     .action-score-capped {
       text-decoration: dotted underline;
     }
     .score {
       font-weight: bold;
-      border: 2px solid var(--ironsworn-color-border-highlight);
+      border: var(--ironsworn-border-width-lg) solid
+        var(--ironsworn-color-border-highlight);
       border-radius: 50%;
+      aspect-ratio: 1;
       height: 24px;
       width: 24px;
       display: flex;
@@ -619,9 +641,9 @@ button {
     }
 
     .advanced-roll-options {
-      padding: 5px;
+      padding: var(--ironsworn-spacer-md);
       margin: 5px 0;
-      border-width: 1px;
+      border-width: var(--ironsworn-border-width-md);
     }
     .advanced-roll-options-toggle {
     }

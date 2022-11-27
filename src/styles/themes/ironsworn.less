@@ -21,8 +21,6 @@
 
   --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-bg);
 
-  // FIXME: ideally, this would be a transparent version of --ironsworn-color-thematic, but that's difficult to interpolate unless we migrate to HSL colours.
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-shade-2);
   --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-border);
 
   --ironsworn-color-clickable-block-fg-selected: var(--ironsworn-color-bg);
@@ -76,7 +74,7 @@
   }
 
   .asset-ironsworn .asset-ability:before {
-    border: 1px solid var(--ironsworn-color-dark);
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-dark);
   }
 
   [role^='tablist'],
