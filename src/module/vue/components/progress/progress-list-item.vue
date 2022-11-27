@@ -94,7 +94,7 @@
     margin: 0;
   }
   .progress-rank-pips {
-    grid-column: 3 / span 2;
+    grid-column: 3 / span 1;
     grid-row: 1;
   }
   .progress-title {
@@ -139,7 +139,7 @@
 </style>
 
 <script lang="ts" setup>
-import { capitalize, computed, inject, provide, Ref } from 'vue'
+import { capitalize, computed, inject, provide } from 'vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
