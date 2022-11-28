@@ -1,0 +1,84 @@
+// layout utility classes
+// TODO: some of these might be better as mixins imported to individual components
+
+.nogrow {
+  flex-grow: 0;
+}
+.compact {
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: var(--ironsworn-spacer-sm) 0;
+    border: none;
+  }
+}
+
+.boxgroup {
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-lg);
+
+  .boxrow {
+    border-top: var(--ironsworn-border-width-md) solid;
+    &:first-child {
+      border-top: none;
+    }
+
+    &.small {
+      flex-basis: 25px;
+      line-height: 25px;
+      flex-grow: 0;
+    }
+  }
+
+  .box {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-left: var(--ironsworn-border-width-md) solid;
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+.marginMixin(@direction) {
+  flex: 0;
+  border-@{direction}-style: solid;
+  position: relative;
+  border-@{direction}-width: var(--ironsworn-border-width-md);
+  margin-@{direction}: var(--ironsworn-spacer-md);
+  border-color: var(--ironsworn-color-border);
+}
+
+.inset {
+  margin: var(--ironsworn-spacer-md);
+  padding: var(--ironsworn-spacer-md);
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-md);
+}
+
+.margin-left {
+  .marginMixin(right);
+}
+
+.margin-right {
+  .marginMixin(left);
+}
+
+.vertical {
+  writing-mode: vertical-lr;
+  border: none;
+  width: 1.5rem;
+
+  i {
+    display: inline-block;
+    transform: rotate(90deg);
+  }
+}

@@ -1,12 +1,9 @@
 @import 'mixins.less';
+@import 'mixins-text.less';
 
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
   .clickableBlockMixin();
-}
-
-.window-app .window-header a {
-  .clickableTextMixin();
 }
 
 #controls ol.control-tools > li {
@@ -18,7 +15,7 @@
   }
 }
 
-.tabBaseMixin(@glowSpread: 5px, @glowBlur: 1px,@borderWidth: 1px) {
+.tabBaseMixin(@glowSpread: 5px, @glowBlur: 1px,@borderWidth: var(--ironsworn-border-width-md)) {
   border-width: @borderWidth;
   &:hover {
     .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
@@ -72,14 +69,14 @@
     justify-content: center;
     .button-text {
       flex-grow: 0;
-      .initial-caps();
+      .initialCapsMixin();
       width: max-content;
       height: max-content;
     }
   }
 }
 
-.borderMixin(@color:var(--ironsworn-color-border),@width:1px) {
+.borderMixin(@color:var(--ironsworn-color-border),@width:var(--ironsworn-border-width-md)) {
   color: @color;
   border-style: solid;
   border-width: @width;

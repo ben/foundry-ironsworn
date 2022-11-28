@@ -1,15 +1,14 @@
 @import 'mixins.less';
+@import 'mixins-text.less';
+
 .dice-roll {
   border: none;
   .dice-formula,
   .dice-total {
-    padding: 5px 0px 5px 0px;
-    // border: none;
+    padding: var(--ironsworn-spacer-md) 0px var(--ironsworn-spacer-md) 0px;
     border-color: var(--ironsworn-color-border);
     border-style: groove;
-    border-width: 1px;
-    // background-color: var(--ironsworn-color-bg-alt);
-    --ironsworn-dice-background: var(--ironsworn-color-bg-highlight);
+    border-width: var(--ironsworn-border-width-md);
     box-shadow: none;
     .die {
       .textStrokeMixin();
@@ -31,14 +30,12 @@
   .chat-message {
     background: var(--ironsworn-color-bg);
     color: var(--ironsworn-color-fg);
-    border-width: 1px;
+    border-width: var(--ironsworn-border-width-md);
     border-color: var(--ironsworn-color-border);
     .message-header {
       color: var(--ironsworn-color-fg-muted);
     }
     .message-content {
-      // border: 1px solid var(--ironsworn-color-border-muted);
-
       h3 {
         border: none;
       }
@@ -73,12 +70,12 @@
   }
 
   .oracle-table-partial {
-    margin: 2px 0;
+    margin: var(--ironsworn-spacer-xs) 0;
     transition: none;
     .oracle-result-row {
       td {
         > * {
-          transition: 0.5 ease all;
+          transition: var(--std-animation);
         }
       }
     }
@@ -97,7 +94,7 @@
         position: relative;
         &:last-child {
           > .oracle-row-content {
-            padding-right: 2px;
+            padding-right: var(--ironsworn-spacer-xs);
           }
         }
       }
@@ -107,7 +104,7 @@
       visibility: visible;
       height: 100%;
       display: flex;
-      gap: 2px;
+      gap: var(--ironsworn-spacer-xs);
       align-items: center;
     }
     .oracle-result-control {
@@ -125,8 +122,8 @@
       right: 0;
       left: 0;
       display: flex;
-      gap: 2px;
-      padding: 2px;
+      gap: var(--ironsworn-spacer-xs);
+      padding: var(--ironsworn-spacer-xs);
       &.clickable.text {
         justify-content: center;
         align-items: center;
@@ -157,5 +154,11 @@
   // styling so that old messages don't have their overall layout disrupted. can probably be removed in a few versions
   .hover-controls {
     display: none;
+  }
+}
+
+#chat-controls {
+  .roll-type-select {
+    background-color: var(--ironsworn-color-light-overlay);
   }
 }

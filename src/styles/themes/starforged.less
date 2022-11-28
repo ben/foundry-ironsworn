@@ -54,33 +54,35 @@
   --ironsworn-color-light-overlay-weak: fade($--ironsworn-color-light, 15%);
   --ironsworn-color-light-overlay-strong: fade($--ironsworn-color-light, 50%);
 
+  // COLORS: FOREGROUND
   --ironsworn-color-fg: var(--ironsworn-color-light);
   --ironsworn-color-fg-muted: var(--ironsworn-color-light-muted);
   --ironsworn-color-fg-highlight: var(--ironsworn-color-light-vivid);
   --ironsworn-color-fg-overlay-strong: var(
     --ironsworn-color-light-overlay-strong
   );
+  // contrast stroke for text
+  --ironsworn-color-text-outline: $--ironsworn-color-dark;
 
-  --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
-  --ironsworn-color-border: var(--ironsworn-color-fg-muted);
-  --ironsworn-color-border-muted: var(--ironsworn-color-dark-alt);
-
+  // COLORS: BACKGROUND
   --ironsworn-color-bg: var(--ironsworn-color-dark);
   --ironsworn-color-bg-alt: var(--ironsworn-color-dark-alt);
   --ironsworn-color-bg-highlight: var(--ironsworn-color-dark-vivid);
-
+  // COLORS: BORDER
+  --ironsworn-color-border: var(--ironsworn-color-fg-muted);
+  --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
+  --ironsworn-color-border-muted: var(--ironsworn-color-dark-alt);
   --ironsworn-color-bg-overlay-weak: var(--ironsworn-color-dark-overlay-weak);
   --ironsworn-color-bg-overlay-strong: var(
     --ironsworn-color-dark-overlay-strong
   );
-
+  // COLORS: SVG WIDGET
   --ironsworn-widget-fill-opacity-hover: 0.5;
   --ironsworn-color-widget-stroke-width: 1;
   --ironsworn-color-widget-stroke: var(--ironsworn-color-fg);
 
+  // COLORS: INPUT FIELD
   --ironsworn-color-input-bg: var(--ironsworn-color-light-overlay-weak);
-
-  --ironsworn-color-text-outline: $--ironsworn-color-dark;
 
   // --ironsworn-color-input-bg: ;
 
@@ -129,12 +131,6 @@
   --ironsworn-color-success: hsl(290, 80%, 50%);
   --ironsworn-color-success-faded: hsl(290, 80%, 60%);
 
-  --ironsworn-dice-background: mix(
-    $--ironsworn-color-light,
-    $--ironsworn-color-dark,
-    20%
-  );
-
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
   .overrideVars();
@@ -144,14 +140,6 @@
     border-color: var(--ironsworn-color-border-muted);
   }
 
-  .window-app,
-  .journal-entry .journal-entry-content {
-    background: initial;
-    background-color: var(--ironsworn-color-bg);
-    border-width: 1px;
-    border-style: solid;
-  }
-
   .inline-roll {
     background: var(--ironsworn-color-bg-alt);
     border-color: var(--ironsworn-color-border-muted);
@@ -159,12 +147,6 @@
     &:hover {
       text-shadow: 0 0 8px var(--ironsworn-color-fg-highlight);
     }
-  }
-
-  .window-content {
-    background: var(--ironsworn-color-bg);
-    background-image: none;
-    color: var(--ironsworn-color-fg);
   }
 
   .sheet-area {
@@ -201,22 +183,16 @@
   }
 
   .asset-ironsworn .asset-ability:before {
-    border-width: 1px;
+    border-width: var(--ironsworn-border-width-md);
     border-style: solid;
   }
   .asset-starforged .asset-ability:before {
     background-color: var(--ironsworn-color-fg);
-    border-width: 1px;
+    border-width: var(--ironsworn-border-width-md);
     border-style: solid;
   }
 
   table {
     border-color: var(--ironsworn-color-border-muted);
-  }
-
-  #chat-controls {
-    .roll-type-select {
-      background-color: var(--ironsworn-color-light-overlay);
-    }
   }
 }

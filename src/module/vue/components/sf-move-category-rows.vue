@@ -34,6 +34,7 @@
 
 <style lang="less" module>
 @import '../../../styles/mixins.less';
+@import '../../../styles/mixins-text.less';
 
 .wrapper {
   .thematicBgMixin(v-bind('category?.color'));

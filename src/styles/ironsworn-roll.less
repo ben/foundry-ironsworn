@@ -1,0 +1,179 @@
+.ironsworn-roll {
+  h3,
+  button {
+    .initialCapsMixin();
+  }
+  .hit-type {
+    font-weight: bold;
+    font-variant: all-small-caps;
+  }
+
+  [class*=' isiconbg-'],
+  [class^='isiconbg-'] {
+    &:before {
+      background-color: var(--ironsworn-color-bg-highlight);
+    }
+  }
+
+  @dice-glow-offset: 0px 0px 5px;
+
+  .roll {
+    @rollSize: 24px;
+    width: @rollSize;
+    line-height: @rollSize;
+    display: inline-block;
+    margin-right: var(--ironsworn-border-width-md);
+    background-repeat: no-repeat;
+    background-size: @rollSize @rollSize;
+    font-weight: bold;
+    text-align: center;
+    @diceBg: var(--ironsworn-dice-background);
+
+    &.d4 {
+      background-image: url('../../icons/svg/d4-grey.svg');
+    }
+
+    &.d6 {
+      background-color: @diceBg;
+      mask-image: url('/assets/icons/d6-blank.svg');
+      content: '';
+    }
+
+    &.d8 {
+      background-image: url('../../icons/svg/d8-grey.svg');
+    }
+
+    &.d10 {
+      background-color: @diceBg;
+      mask-image: url('/assets/icons/d10-blank.svg');
+      content: '';
+    }
+
+    &.d12 {
+      background-image: url('../../icons/svg/d12-grey.svg');
+    }
+
+    &.d20 {
+      background-image: url('../../icons/svg/d20-grey.svg');
+    }
+
+    &.min:not(.challenge),
+    &.challenge.max {
+      color: var(--ironsworn-color-danger) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-danger-faded)
+      );
+    }
+
+    &.max:not(.challenge),
+    &.challenge.min {
+      color: var(--ironsworn-color-success) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-success-faded)
+      );
+    }
+
+    &.canceled {
+      color: var(--ironsworn-color-warning) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-warning-faded)
+      ) !important;
+    }
+  }
+
+  del .roll {
+    text-decoration: line-through;
+    color: var(--ironsworn-color-warning) !important;
+    filter: drop-shadow(
+      @dice-glow-offset var(--ironsworn-color-warning-faded)
+    ) !important;
+  }
+}
+
+.bonus-content .dice-formula {
+  word-break: normal;
+}
+
+// roll-graphic.hbs
+
+.ironsworn-roll-title {
+  margin: 0;
+}
+
+@graphic-gap: 0.25rem;
+
+.ironsworn-roll {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.roll-graphic.dice-formula {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: auto;
+  gap: @graphic-gap;
+  justify-content: center;
+  margin: 0;
+  padding: @graphic-gap;
+  * {
+    margin: 0;
+  }
+
+  .die {
+    flex-grow: 0;
+  }
+  .indeterminate-value {
+    color: var(--ironsworn-color-fg-muted);
+  }
+  .action-score-capped {
+    text-decoration: dotted underline;
+  }
+  .score {
+    font-weight: bold;
+    border: var(--ironsworn-border-width-lg) solid
+      var(--ironsworn-color-border-highlight);
+    border-radius: 50%;
+    aspect-ratio: 1;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .challenge-dice {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 0;
+    gap: (@graphic-gap / 2);
+    .challenge-die {
+    }
+  }
+}
+
+.outcome-shortcuts {
+  display: contents;
+}
+.roll-outcome {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+  * {
+    margin: 0;
+  }
+
+  .outcome-label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: larger;
+    span {
+      display: inline;
+      white-space: nowrap;
+    }
+    .outcome-text {
+      font-weight: bold;
+    }
+  }
+}

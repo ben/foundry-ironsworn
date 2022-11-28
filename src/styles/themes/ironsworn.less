@@ -12,15 +12,18 @@
   --ironsworn-color-bg: var(--ironsworn-color-light);
 
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
-  --ironsworn-color-border: var(--ironsworn-color-dark);
+
+  // COLORS: BORDER
+  --ironsworn-color-border: var(--ironsworn-color-fg);
 
   // see clickable.less for usage
+
+  // COLORS: CLICKABLE BLOCK
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-block-bg: var(--ironsworn-color-bg);
   --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
 
   --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-bg);
-
   --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-border);
 
   --ironsworn-color-clickable-block-fg-selected: var(--ironsworn-color-bg);
@@ -36,11 +39,6 @@
   input.highlight:focus {
     background-color: var(--ironsworn-color-fg);
     color: var(--ironsworn-color-bg);
-  }
-
-  .window-content,
-  .journal-entry .journal-entry-content {
-    background: var(--ironsworn-color-bg);
   }
 
   .sheet-area {
@@ -74,7 +72,7 @@
   }
 
   .asset-ironsworn .asset-ability:before {
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-dark);
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-border-color);
   }
 
   [role^='tablist'],

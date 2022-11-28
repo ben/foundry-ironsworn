@@ -79,7 +79,6 @@
   --ironsworn-color-warning-faded: hsl(55, 100%, 50%);
   --ironsworn-color-success: hsl(200, 80%, 40%);
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
-  --ironsworn-dice-background: hsl(0, 0%, 69%);
 
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
   --ironsworn-border-radius-sm: 2px;
@@ -108,26 +107,23 @@
 @import 'unscoped-overrides.less';
 
 .system-foundry-ironsworn {
+  border-color: var(--ironsworn-color-border);
+  border-style: solid;
   // importing within this selector to give everything an additional layer of specificity
-  @import 'ironsworn-icons.less';
+  @import 'icons.less';
   @import 'mixins.less';
   @import 'assets.less';
   @import 'clickable.less';
   @import 'inputs.less';
   @import 'chat-message.less';
   @import 'sidebar.less';
+  @import 'preroll-dialog.less';
+  @import 'app.less';
+  @import 'progress.less';
+  @import 'item-list.less';
+  @import 'ironsworn-roll.less';
+  @import 'table.less';
 
-  border-color: var(--ironsworn-color-border);
-  border-style: solid;
-
-  .app {
-    background: var(--ironsworn-color-bg);
-    color: var(--ironsworn-color-fg);
-    .borderFloatingMixin();
-  }
-  .grid {
-    display: grid;
-  }
   hr {
     width: 100%;
     border: none;
@@ -152,67 +148,13 @@
     font-family: inherit;
   }
 
-  .window-content {
-    height: 100%;
-    padding: var(--ironsworn-spacer-md);
-    scrollbar-width: thin;
-  }
-
   .sheet-area {
     border-top-width: var(--ironsworn-border-width-lg);
     &:first-child {
       border-top-width: 0;
     }
-    margin: 5px;
-    padding-top: 7px;
-  }
-
-  .marginMixin(@direction) {
-    flex: 0;
-    border-@{direction}-style: solid;
-    position: relative;
-    border-@{direction}-width: var(--ironsworn-border-width-md);
-    margin-@{direction}: var(--ironsworn-spacer-md);
-    border-color: var(--ironsworn-color-border);
-  }
-
-  .margin-left {
-    .marginMixin(right);
-  }
-
-  .margin-right {
-    .marginMixin(left);
-  }
-  .item-list {
-    flex: 1 0 100px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-
-    .move {
-      overflow-x: hidden;
-    }
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      & > h2 {
-        text-align: center;
-        border-width: var(--ironsworn-border-width-md) 0;
-      }
-    }
-  }
-
-  .vertical {
-    writing-mode: vertical-lr;
-    border: none;
-    width: 1.5rem;
-
-    i {
-      display: inline-block;
-      transform: rotate(90deg);
-    }
+    margin: var(--ironsworn-spacer-md);
+    padding-top: var(--ironsworn-spacer-lg);
   }
 
   .stack {
@@ -267,94 +209,15 @@
     }
   }
 
-  .compact {
-    h2,
-    h3,
-    h4,
-    h5 {
-      margin: var(--ironsworn-spacer-sm) 0;
-      border: none;
-    }
-  }
-
-  .boxgroup {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    border-radius: var(--ironsworn-border-radius-lg);
-
-    .boxrow {
-      border-top: var(--ironsworn-border-width-md) solid;
-      &:first-child {
-        border-top: none;
-      }
-
-      &.small {
-        flex-basis: 25px;
-        line-height: 25px;
-        flex-grow: 0;
-      }
-    }
-
-    .box {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      border-left: var(--ironsworn-border-width-md) solid;
-      &:first-child {
-        border-left: none;
-      }
-    }
-  }
-
-  .inset {
-    margin: 5px;
-    padding: var(--ironsworn-spacer-md);
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    border-radius: var(--ironsworn-border-radius-md);
-  }
-
   .remove-option {
     flex-grow: 0;
     line-height: 26px;
   }
 
-  .item-row {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    border-color: var(--ironsworn-color-border);
-    border-radius: var(--ironsworn-border-radius-md);
-    padding: var(--ironsworn-spacer-sm);
-    margin: var(--ironsworn-spacer-sm) 0;
-
-    .item-row-control {
-      flex-grow: 0;
-      padding: var(--ironsworn-spacer-md);
-    }
-  }
-
-  .progresses {
-    .item {
-      border-width: var(--ironsworn-border-width-md);
-      border-style: solid;
-      border-radius: var(--ironsworn-border-radius-md);
-      padding: var(--ironsworn-spacer-md);
-      margin: 5px;
-    }
-  }
-
-  .progress-button {
-    i {
-      padding: var(--ironsworn-spacer-sm);
-      width: 22px;
-      text-align: center;
-    }
-  }
-
   .resource {
     width: 50%;
     height: 40px;
-    margin-top: 10px;
+    margin-top: calc(var(--ironsworn-spacer-md) * 2);
     float: left;
     text-align: center;
 
@@ -387,34 +250,6 @@
     height: 1.5rem;
   }
 
-  /* Items List */
-  .item-list {
-    list-style: none;
-    margin: 7px 0;
-    padding: 0;
-    // overflow-y: auto;
-
-    .item {
-      height: 30px;
-      line-height: 24px;
-      padding: var(--ironsworn-spacer-sm) 0;
-      border-bottom: var(--ironsworn-border-width-md) solid;
-
-      img {
-        flex: 0 0 24px;
-        margin-right: 5px;
-      }
-    }
-
-    .item-name {
-      margin: 0;
-    }
-
-    .item-controls {
-      flex: 0 0 36px;
-    }
-  }
-
   .progress {
     flex: 1;
     border-width: var(--ironsworn-border-width-md);
@@ -422,10 +257,6 @@
     padding: var(--ironsworn-spacer-md);
     margin: var(--ironsworn-spacer-md);
     text-align: center;
-  }
-
-  .nogrow {
-    flex-grow: 0;
   }
 
   .strikethru * {
@@ -436,7 +267,7 @@
     text-align: center;
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
-    margin-bottom: 5px;
+    margin-bottom: var(--ironsworn-spacer-md);
     font-weight: bold;
     line-height: 30px;
     font-variant: all-small-caps;
@@ -449,251 +280,6 @@
       &.active {
         display: flex;
       }
-    }
-  }
-
-  .ironsworn-roll {
-    h3,
-    button {
-      .initial-caps();
-    }
-    .hit-type {
-      font-weight: bold;
-      font-variant: all-small-caps;
-    }
-
-    [class*=' isiconbg-'],
-    [class^='isiconbg-'] {
-      &:before {
-        color: var(--ironsworn-dice-background);
-      }
-    }
-
-    @dice-glow-offset: 0px 0px 5px;
-
-    .roll {
-      width: 24px;
-      line-height: 24px;
-      display: inline-block;
-      margin-right: var(--ironsworn-border-width-md);
-      background-repeat: no-repeat;
-      background-size: 24px 24px;
-      font-weight: bold;
-      text-align: center;
-
-      &.d4 {
-        background-image: url('../../icons/svg/d4-grey.svg');
-      }
-
-      &.d6 {
-        background-color: var(--ironsworn-dice-background);
-        mask-image: url('/assets/icons/d6-blank.svg');
-        content: '';
-      }
-
-      &.d8 {
-        background-image: url('../../icons/svg/d8-grey.svg');
-      }
-
-      &.d10 {
-        background-color: var(--ironsworn-dice-background);
-        mask-image: url('/assets/icons/d10-blank.svg');
-        content: '';
-      }
-
-      &.d12 {
-        background-image: url('../../icons/svg/d12-grey.svg');
-      }
-
-      &.d20 {
-        background-image: url('../../icons/svg/d20-grey.svg');
-      }
-
-      &.min:not(.challenge),
-      &.challenge.max {
-        color: var(--ironsworn-color-danger) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-danger-faded)
-        );
-      }
-
-      &.max:not(.challenge),
-      &.challenge.min {
-        color: var(--ironsworn-color-success) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-success-faded)
-        );
-      }
-
-      &.canceled {
-        color: var(--ironsworn-color-warning) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-warning-faded)
-        ) !important;
-      }
-    }
-
-    del .roll {
-      text-decoration: line-through;
-      color: var(--ironsworn-color-warning) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-warning-faded)
-      ) !important;
-    }
-  }
-
-  .bonus-content .dice-formula {
-    word-break: normal;
-  }
-
-  // roll-graphic.hbs
-
-  .ironsworn-roll-title {
-    margin: 0;
-  }
-
-  @graphic-gap: 0.25rem;
-
-  .ironsworn-roll {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .roll-graphic.dice-formula {
-    display: flex;
-    flex-flow: row nowrap;
-    flex: auto;
-    gap: @graphic-gap;
-    justify-content: center;
-    margin: 0;
-    padding: @graphic-gap;
-    * {
-      margin: 0;
-    }
-
-    .die {
-      flex-grow: 0;
-    }
-    .indeterminate-value {
-      color: var(--ironsworn-color-fg-muted);
-    }
-    .action-score-capped {
-      text-decoration: dotted underline;
-    }
-    .score {
-      font-weight: bold;
-      border: var(--ironsworn-border-width-lg) solid
-        var(--ironsworn-color-border-highlight);
-      border-radius: 50%;
-      aspect-ratio: 1;
-      height: 24px;
-      width: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .challenge-dice {
-      display: flex;
-      flex-direction: row;
-      flex-grow: 0;
-      gap: (@graphic-gap / 2);
-      .challenge-die {
-      }
-    }
-  }
-
-  .outcome-shortcuts {
-    display: contents;
-  }
-  .roll-outcome {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    gap: 0.25rem;
-    margin-bottom: 0.25rem;
-    * {
-      margin: 0;
-    }
-
-    .outcome-label {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: larger;
-      span {
-        display: inline;
-        white-space: nowrap;
-      }
-      .outcome-text {
-        font-weight: bold;
-      }
-    }
-  }
-  // preroll-dialog.hbs
-  .preroll-dialog {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    button {
-      .initial-caps();
-    }
-
-    .form-group {
-      padding: 0;
-      border: none;
-    }
-
-    .advanced-roll-options {
-      padding: var(--ironsworn-spacer-md);
-      margin: 5px 0;
-      border-width: var(--ironsworn-border-width-md);
-    }
-    .advanced-roll-options-toggle {
-    }
-  }
-
-  table td:first-child {
-    white-space: nowrap;
-    padding-right: 0.5rem;
-  }
-
-  // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
-  .fa,
-  .fab,
-  .fad,
-  .fal,
-  .far,
-  .fas {
-    -moz-osx-font-smoothing: inherit;
-    speak: inherit;
-    font-style: inherit;
-    font-variant: inherit;
-    text-rendering: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    &:before {
-      speak: never;
-      -moz-osx-font-smoothing: grayscale;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      line-height: 1;
-    }
-  }
-
-  .fa,
-  .far,
-  .fas {
-    &:before {
-      font-family: 'Font Awesome 6 Pro', 'Font Awesome 5 Free';
-    }
-  }
-
-  .fa,
-  .fas {
-    &:before {
-      font-weight: 900;
     }
   }
 }

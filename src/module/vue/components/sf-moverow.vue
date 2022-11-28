@@ -61,6 +61,7 @@
 <style lang="less" module>
 @import '../../../styles/mixins.less';
 @import '../../../styles/clickable.less';
+@import '../../../styles/mixins-text.less';
 
 @icon_size: 1.2em;
 @border_width: 2px;
