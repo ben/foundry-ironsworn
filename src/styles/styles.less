@@ -1,59 +1,20 @@
 :root {
   --std-animation: all 0.5s ease;
-  --ironsworn-color-bg: hsl(0, 0%, 100%);
-  @legacyColorDarken: 25%;
-  @legacyColorLighten: 50%;
+
   // original sample from PDF: #c9181a
   --ironsworn-color-red-light: hsl(355, 100%, 65%);
-  --ironsworn-color-red-light-muted: lighten(
-    $--ironsworn-color-red-light,
-    @legacyColorLighten,
-    relative
-  );
   --ironsworn-color-red: hsl(7, 78%, 51%);
-  --ironsworn-color-red-muted: fade($--ironsworn-color-red, 50%, relative);
   --ironsworn-color-red-dark: hsl(357, 100%, 28%);
-  --ironsworn-color-red-dark-muted: darken(
-    $--ironsworn-color-red-dark,
-    @legacyColorDarken,
-    relative
-  );
 
   // original sample from PDF: #8c1d81
   --ironsworn-color-purple-light: hsl(298, 72%, 62%);
-  --ironsworn-color-purple-light-muted: lighten(
-    $--ironsworn-color-purple-light,
-    @legacyColorLighten,
-    relative
-  );
   --ironsworn-color-purple: hsl(299, 59%, 45%);
-  --ironsworn-color-purple-muted: fade(
-    $--ironsworn-color-purple,
-    @legacyColorLighten,
-    relative
-  );
   --ironsworn-color-purple-dark: hsl(296, 100%, 23%);
-  --ironsworn-color-purple-dark-muted: darken(
-    $--ironsworn-color-purple-dark,
-    @legacyColorDarken,
-    relative
-  );
 
   // original sample from PDF: #35a9e0
-  --ironsworn-color-blue-light: hsl(191, 100%, 50%, relative);
-  --ironsworn-color-blue-light-muted: lighten(
-    $--ironsworn-color-blue-light,
-    50%,
-    relative
-  );
+  --ironsworn-color-blue-light: hsl(191, 100%, 50%);
   --ironsworn-color-blue: hsl(199, 100%, 47%);
-  --ironsworn-color-blue-muted: fade($--ironsworn-color-blue, 50%, relative);
   --ironsworn-color-blue-dark: hsl(214, 100%, 45%);
-  --ironsworn-color-blue-dark-muted: darken(
-    $--ironsworn-color-blue-dark,
-    @legacyColorDarken,
-    relative
-  );
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red);
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
