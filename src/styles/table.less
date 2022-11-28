@@ -1,5 +1,23 @@
 // styles for tables
-table td:first-child {
-  white-space: nowrap;
-  padding-right: 0.5rem;
+
+table {
+  border-color: var(--ironsworn-color-border-muted);
+  td:first-child {
+    white-space: nowrap;
+    padding-right: 0.5rem;
+  }
+  tr {
+    &.selected,
+    &[aria-selected='true'] {
+      background-color: var(--ironsworn-color-bg-highlight);
+      color: var(--ironsworn-color-fg-highlight);
+      .entity-link,
+      .content-link {
+        color: var(--ironsworn-color-bg);
+        padding: none;
+        border: none;
+        background: transparent;
+      }
+    }
+  }
 }

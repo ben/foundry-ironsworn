@@ -1,4 +1,11 @@
 .ironsworn-roll {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  .dice-formula,
+  .dice-total {
+    background-color: var(--ironsworn-color-bg);
+  }
   h3,
   button {
     .initialCapsMixin();
@@ -88,10 +95,4 @@
       @dice-glow-offset var(--ironsworn-color-warning-faded)
     ) !important;
   }
-}
-
-.ironsworn-roll {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
 }

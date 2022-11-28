@@ -1,6 +1,4 @@
 :root {
-  scrollbar-width: thin;
-  scrollbar-color: hsl(0, 0%, 27%) hsla(0, 0%, 0%, 0.1);
   --std-animation: all 0.5s ease;
   --ironsworn-color-bg: hsl(0, 0%, 100%);
   @legacyColorDarken: 25%;
@@ -116,6 +114,9 @@
   @import 'stats.less';
   @import 'table.less';
   @import 'utils.less';
+
+  scrollbar-width: thin;
+  scrollbar-color: hsl(0, 0%, 27%) hsla(0, 0%, 0%, 0.1);
 
   .window-app.ironsworn .window-content {
     background: var(--ironsworn-color-bg);

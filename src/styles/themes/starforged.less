@@ -139,11 +139,6 @@
 
   .overrideVars();
 
-  ::-webkit-scrollbar-thumb {
-    background: var(--ironsworn-color-bg-alt);
-    border-color: var(--ironsworn-color-border-muted);
-  }
-
   .inline-roll {
     background: var(--ironsworn-color-bg-alt);
     border-color: var(--ironsworn-color-border-muted);
@@ -153,9 +148,6 @@
     }
   }
 
-  svg {
-    color: var(--ironsworn-color-fg);
-  }
   .clickable:not(svg):not(.svg) {
     &.hover,
     &:hover,
@@ -173,27 +165,5 @@
         .textStrokeMixin();
       }
     }
-  }
-
-  .drag-highlight {
-    background: var(--ironsworn-color-bg-highlight);
-  }
-
-  .movesheet-row.highlighted {
-    background-color: var(--ironsworn-color-bg-highlight);
-  }
-
-  .asset-ironsworn .asset-ability:before {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-  }
-  .asset-starforged .asset-ability:before {
-    background-color: var(--ironsworn-color-fg);
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-  }
-
-  table {
-    border-color: var(--ironsworn-color-border-muted);
   }
 }
