@@ -34,7 +34,7 @@
         <BtnOracle
           class="juicy text"
           :node="data.oracles[0] ?? {}"
-          :disabled="canOracle"
+          :disabled="preventOracle"
           :class="$style.moveButton"
           :override-click="onOracleClick !== undefined"
           @click="$emit('oracleClick')"
@@ -159,7 +159,7 @@
 </style>
 
 <script setup lang="ts">
-import { computed, nextTick, provide, reactive, ref, useAttrs } from 'vue'
+import { computed, provide, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
@@ -183,7 +183,7 @@ const props = withDefaults(
     thematicColor?: string | null
     toggleSectionClass?: any
     toggleButtonClass?: any
-    oracleDisabled?: boolean
+    oracleDisabled?: true | false | null
 
     // Hack: if we declare `click` in the emits, there's no $attrs['onClick']
     // This allows us to check for presence and still use $emit('click')
@@ -191,7 +191,12 @@ const props = withDefaults(
     onRollClick?: Function
     onOracleClick?: Function
   }>(),
-  { headingLevel: 4, toggleSectionClass: '', toggleButtonClass: '' }
+  {
+    headingLevel: 4,
+    toggleSectionClass: '',
+    toggleButtonClass: '',
+    oracleDisabled: null,
+  }
 )
 
 const $item = computed(() => props.move.moveItem() as IronswornItem)
@@ -214,8 +219,8 @@ const canRoll = computed(() => {
   if (props.onRollClick) return true
   return moveHasRollableOptions($item.value)
 })
-const canOracle = computed(() => {
-  if (props.oracleDisabled !== undefined) return props.oracleDisabled
+const preventOracle = computed(() => {
+  if (props.oracleDisabled !== null) return props.oracleDisabled
   return data.oracles.length !== 1
 })
 
