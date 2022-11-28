@@ -1,0 +1,29 @@
+.sheet-body {
+  height: 100%;
+  overflow: hidden;
+
+  .tab {
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+.sheet-area {
+  border-top-width: var(--ironsworn-border-width-lg);
+  &:first-child {
+    border-top-width: 0;
+  }
+  margin: var(--ironsworn-spacer-md);
+  padding-top: var(--ironsworn-spacer-lg);
+  // from sf theme
+  border-color: var(--ironsworn-color-border-muted);
+}
+
+.sheet.moves {
+  .tab {
+    display: none;
+
+    &.active {
+      display: flex;
+    }
+  }
+}

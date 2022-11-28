@@ -1,18 +1,12 @@
 // styles for FVTT's sidebar
 
-@import 'clickable.less';
 @import 'mixins.less';
-@import 'inputs.less';
-#chat {
-  #chat-log {
-  }
-}
 #sidebar {
   #sidebar-tabs {
     .item {
       .clickableTextMixin();
-      margin: 0;
       .tabTopMixin();
+      margin: 0;
       color: var(--ironsworn-color-clickable-block-fg);
       border-color: transparent;
     }
@@ -33,14 +27,18 @@
       }
     }
   }
-}
-
-#chat-controls {
-  .roll-type-select {
-    background-color: var(--ironsworn-color-light-overlay);
+  // CHAT TAB
+  #chat {
+    #chat-log {
+      // for chat *messages*, see chat-messages.less
+    }
+    #chat-controls {
+      .roll-type-select {
+        background-color: var(--ironsworn-color-light-overlay);
+      }
+    }
+    textarea#chat-message {
+      .inputFieldMixin();
+    }
   }
-}
-
-textarea#chat-message {
-  .inputFieldMixin();
 }

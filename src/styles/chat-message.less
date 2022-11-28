@@ -1,8 +1,40 @@
 // styles for chat messages. for the chat tab itself, see sidebar.less.
 
 @import 'mixins.less';
-@import 'clickable.less';
 
+// FIXME - determine if this class is still in use after code cleanup
+.bonus-content .dice-formula {
+  word-break: normal;
+}
+.roll-outcome {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 0.25rem;
+  * {
+    margin: 0;
+  }
+
+  .outcome-label {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: larger;
+    span {
+      display: inline;
+      white-space: nowrap;
+    }
+    .outcome-text {
+      font-weight: bold;
+    }
+  }
+}
+.outcome-shortcuts {
+  display: contents;
+}
+.ironsworn-roll-title {
+  margin: 0;
+}
 .dice-roll {
   border: none;
   .dice-formula,

@@ -1,12 +1,12 @@
 @import './starforged-font.css'; // HACK to avoid import error
 @import '../mixins.less';
-@import '../override-vars.less';
+@import '../fvtt/override-vars.less';
 
 .system-foundry-ironsworn.theme-starforged {
   // SF theme restyles more aggressively than IS theme does
-  @import '../app.less';
-  @import '../sidebar.less';
-  @import '../clickables-fvtt.less';
+  @import '../fvtt/app.less';
+  @import '../fvtt/sidebar.less';
+  @import '../fvtt/clickables.less';
 
   --font-primary: 'Carrois Gothic SC', sans-serif;
 
@@ -153,9 +153,6 @@
     }
   }
 
-  .sheet-area {
-    border-color: var(--ironsworn-color-border-muted);
-  }
   svg {
     color: var(--ironsworn-color-fg);
   }

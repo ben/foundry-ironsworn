@@ -1,0 +1,48 @@
+//styles for roll-graphic.hbs
+
+@graphic-gap: 0.25rem;
+
+.roll-graphic {
+  &.dice-formula {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: auto;
+    gap: @graphic-gap;
+    justify-content: center;
+    margin: 0;
+    padding: @graphic-gap;
+    * {
+      margin: 0;
+    }
+
+    .die {
+      flex-grow: 0;
+    }
+    .indeterminate-value {
+      color: var(--ironsworn-color-fg-muted);
+    }
+    .action-score-capped {
+      text-decoration: dotted underline;
+    }
+    .score {
+      font-weight: bold;
+      border: var(--ironsworn-border-width-lg) solid
+        var(--ironsworn-color-border-highlight);
+      border-radius: 50%;
+      aspect-ratio: 1;
+      height: 24px;
+      width: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .challenge-dice {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 0;
+      gap: (@graphic-gap / 2);
+      .challenge-die {
+      }
+    }
+  }
+}

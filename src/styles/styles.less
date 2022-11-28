@@ -110,15 +110,20 @@
   // see https://fontawesome.com/docs/web/style/style-cheatsheet
   --fa-inverse: var(--ironsworn-color-bg);
   // importing within this selector to give everything an additional layer of specificity
+  // note that files that restyle FVTT's UI are omitted -- import them in the theme if you want to restyle those.
   @import 'assets.less';
   @import 'chat-message.less';
   @import 'clickable.less';
   @import 'icons.less';
-  @import 'inputs.less';
+  @import 'editor.less';
   @import 'ironsworn-roll.less';
   @import 'item-list.less';
+  @import 'moves.less';
   @import 'preroll-dialog.less';
   @import 'progress.less';
+  @import 'sheet.less';
+  @import 'stack.less';
+  @import 'stats.less';
   @import 'table.less';
   @import 'utils.less';
 
@@ -150,67 +155,6 @@
     font-family: inherit;
   }
 
-  .sheet-area {
-    border-top-width: var(--ironsworn-border-width-lg);
-    &:first-child {
-      border-top-width: 0;
-    }
-    margin: var(--ironsworn-spacer-md);
-    padding-top: var(--ironsworn-spacer-lg);
-  }
-
-  .stack {
-    flex-grow: 0;
-
-    .stack-row {
-      // FIXME refactor as component and encapsulate the relevant css there
-      flex: 0 0 auto;
-      min-width: var(--ironsworn-vertical-slider-width);
-      border-width: var(--ironsworn-border-width-md);
-      border-style: solid;
-      border-top: none;
-      text-align: center;
-      line-height: var(--ironsworn-clickable-line-height);
-      position: relative;
-      z-index: auto;
-      padding: 0;
-      &:hover,
-      &.hover,
-      &.selected,
-      &[aria-selected='true'] {
-        z-index: var(
-          --ironsworn-z-index-high
-        ); // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
-      }
-      &:first-child {
-        border-top: var(--ironsworn-border-width-md) solid;
-        border-top-left-radius: var(--ironsworn-border-radius-lg);
-        border-top-right-radius: var(--ironsworn-border-radius-lg);
-      }
-      &:last-child {
-        border-bottom-left-radius: var(--ironsworn-border-radius-lg);
-        border-bottom-right-radius: var(--ironsworn-border-radius-lg);
-      }
-
-      input[type='radio'] {
-        appearance: none;
-      }
-    }
-  }
-
-  .stats {
-    flex: 0;
-    justify-content: space-around;
-    .edit {
-      flex: 0 0 30px;
-      justify-items: center;
-      align-items: center;
-      border-width: var(--ironsworn-border-width-md);
-      border-style: solid;
-      transition: var(--std-animation);
-    }
-  }
-
   .remove-option {
     flex-grow: 0;
     line-height: 26px;
@@ -228,6 +172,8 @@
       height: 28px;
     }
   }
+
+  // FIXME: ideally this would live in sheet.less, but i'm not sure how that would interact with LESS '&'
   &.sheet {
     &.actor {
       min-width: 630px;
@@ -238,50 +184,7 @@
     }
   }
 
-  .sheet-body {
-    height: 100%;
-    overflow: hidden;
-
-    .tab {
-      height: 100%;
-      overflow-y: auto;
-    }
-  }
-
-  .move-li {
-    height: 1.5rem;
-  }
-
-  .progress {
-    flex: 1;
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    padding: var(--ironsworn-spacer-md);
-    margin: var(--ironsworn-spacer-md);
-    text-align: center;
-  }
-
   .strikethru * {
     text-decoration: line-through;
-  }
-
-  .move-title {
-    text-align: center;
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    margin-bottom: var(--ironsworn-spacer-md);
-    font-weight: bold;
-    line-height: 30px;
-    font-variant: all-small-caps;
-  }
-
-  .sheet.moves {
-    .tab {
-      display: none;
-
-      &.active {
-        display: flex;
-      }
-    }
   }
 }

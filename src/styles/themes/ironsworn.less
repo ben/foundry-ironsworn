@@ -6,17 +6,21 @@
   --ironsworn-color-shade-2: hsl(0, 0%, 66%);
   --ironsworn-color-shade-3: hsl(0, 0%, 53%);
   --ironsworn-color-dark: hsl(0, 0%, 0%);
-  --ironsworn-color-bg-highlight: hsl(55, 67%, 80%);
 
   --ironsworn-color-fg: var(--ironsworn-color-dark);
+  --ironsworn-color-fg-highlight:
   --ironsworn-color-fg-muted: var(--ironsworn-color-shade-3);
+
+  // COLORS: BACKGROUND
   --ironsworn-color-bg: var(--ironsworn-color-light);
+  --ironsworn-color-bg-alt: var(--ironsworn-color-shade-1);
+  --ironsworn-color-bg-highlight: hsl(55, 67%, 80%);
 
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 
   // COLORS: BORDER
   --ironsworn-color-border: var(--ironsworn-color-fg);
-  --ironsworn-color-border-muted: var(--ironsworn-color-shade-3);
+  --ironsworn-color-border-muted: var(--ironsworn-color-shade-2);
 
   // see clickable.less for usage
 
@@ -44,17 +48,17 @@
   }
 
   .sheet-area {
-    border-color: var(--ironsworn-color-shade-2);
+    border-color: var(--ironsworn-color-border-muted);
   }
 
   .edit {
     &.editing {
-      background: var(--ironsworn-color-shade-2);
+      background: var(--ironsworn-color-bg-alt);
     }
   }
 
   .inset {
-    border-color: var(--ironsworn-color-shade-2);
+    border-color: var(--ironsworn-color-border-muted);
   }
 
   .item-row {
@@ -70,7 +74,7 @@
   }
 
   .progresses .item {
-    border-color: var(--ironsworn-color-shade-2);
+    border-color: var(--ironsworn-color-border-muted);
   }
 
   .asset-ironsworn .asset-ability:before {
@@ -79,7 +83,7 @@
 
   [role^='tablist'],
   [role*=' tablist'] {
-    border-color: var(--ironsworn-color-shade-2);
+    border-color: var(--ironsworn-color-border-muted);
   }
 
   .item-list {
@@ -90,7 +94,7 @@
     }
 
     .item {
-      border-color: var(--ironsworn-color-shade-2);
+      border-color: var(--ironsworn-color-border-muted);
     }
   }
 
@@ -100,7 +104,7 @@
   }
 
   .drag-highlight {
-    background: var(--ironsworn-color-shade-2);
+    background: var(--ironsworn-color-bg-highlight);
   }
 
   .ironsworn-roll {
