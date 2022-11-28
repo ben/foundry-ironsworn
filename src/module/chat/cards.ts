@@ -1,18 +1,7 @@
 import { compact, flatten } from 'lodash'
-import { moveDataByName, MoveOracle, MoveOracleEntry } from '../helpers/data'
-import { MoveContentCallbacks } from './movecontentcallbacks'
-import {
-  DelveDomainDataPropertiesData,
-  DelveThemeDataPropertiesData,
-  SFMoveDataPropertiesData,
-} from '../item/itemtypes'
-import { IronswornActor } from '../actor/actor'
-import { maybeShowDice, RollDialog } from '../helpers/rolldialog'
-import { defaultActor } from '../helpers/actors'
+import { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { IronswornItem } from '../item/item'
-import { IronswornHandlebarsHelpers } from '../helpers/handlebars'
 import { cachedDocumentsForPack } from '../features/pack-cache'
-import { DfRollOutcome, RollOutcome } from '../rolls/ironsworn-roll'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { getFoundryTableByDfId } from '../dataforged'
