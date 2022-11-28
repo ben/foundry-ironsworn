@@ -71,7 +71,7 @@ export class IronswornChatCard {
       .on('click', (ev) => this._burnMomentum.call(this, ev))
     html
       .find('.burn-momentum-sf')
-      .on('click', (ev) => this._sfBurnMomentum.call(this, ev))
+      .on('click', (ev) => this._burnMomentum.call(this, ev))
     html
       .find('.ironsworn-roll-burn-momentum')
       .on('click', (ev) => this._burnMomentum.call(this, ev))
@@ -145,27 +145,6 @@ export class IronswornChatCard {
     const isPack = game.packs.get('foundry-ironsworn.ironswornoracles')
     const table = ((await sfPack?.getDocument(tableid)) ??
       (await isPack?.getDocument(tableid))) as RollTable | undefined
-    if (!table?.id) return
-
-    const msg = await OracleRollMessage.fromTableId(
-      table.id,
-      table.pack || undefined
-    )
-    msg.createOrUpdate()
-  }
-
-  async _oracleReroll(ev: JQuery.ClickEvent) {
-    ev.preventDefault()
-
-    const parent = $(ev.target).parent('.table-draw')
-
-    const packName =
-      parent.data('pack-name') || 'foundry-ironsworn.starforgedoracles'
-    const pack = game.packs.get(packName)
-    await cachedDocumentsForPack(packName) // Pre-load from server
-
-    const tableId = parent.data('table-id')
-    const table = await pack?.getDocument(tableId)
     if (!table?.id) return
 
     const msg = await OracleRollMessage.fromTableId(

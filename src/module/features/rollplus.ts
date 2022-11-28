@@ -16,7 +16,7 @@ export function attachInlineRollListeners(
 
     const el = ev.currentTarget
     const stat = el.dataset.param
-    const statValue = realOpts.actor.system[stat]
+    const statValue = realOpts.actor.system[stat ?? '']
     if (!stat || !statValue) return
     ev.preventDefault()
 

@@ -9,15 +9,10 @@ import {
   createStarforgedOracleTree,
   findPathToNodeByTableId,
 } from '../features/customoracles'
-import { DsRollOutcome, EnhancedDataswornMove } from '../helpers/data'
 import { IronswornSettings } from '../helpers/settings'
 import { capitalize } from '../helpers/util'
 import { IronswornItem } from '../item/item'
-import {
-  AssetDataPropertiesData,
-  FeatureOrDanger,
-  SFMoveDataPropertiesData,
-} from '../item/itemtypes'
+import { FeatureOrDanger, SFMoveDataPropertiesData } from '../item/itemtypes'
 import {
   computeRollOutcome,
   computeOutcomeText,
@@ -29,18 +24,7 @@ import {
   RollOutcome,
   SCORE_MAX,
 } from '../rolls/ironsworn-roll'
-import { MoveContentCallbacks } from './movecontentcallbacks'
 
-interface RollMessageParams {
-  roll: Roll
-  actor?: IronswornActor
-  asset?: IronswornItem
-  move?: EnhancedDataswornMove
-  stat?: string
-  bonus?: number
-  isProgress?: boolean
-  subtitle?: string
-}
 interface SFRollMessageParams {
   roll: Roll
   actor: IronswornActor
@@ -105,67 +89,10 @@ function calculateDieTotals(roll: Roll): DieTotals {
   }
 }
 
-function calculateCardTitle(params: RollMessageParams) {
-  if (params.move) {
-    let title = game.i18n.localize(
-      `IRONSWORN.MoveContents.${params.move.Name}.title`
-    )
-    if (title.startsWith('IRONSWORN.')) {
-      title = params.move.Name
-    }
-
-    if (params.stat) {
-      title += ` +${game.i18n.localize('IRONSWORN.' + capitalize(params.stat))}`
-    } else if (params.subtitle) {
-      title += `: ${params.subtitle}`
-    }
-    return title
-  }
-
-  // TODO: i18n for assets
-  if (params.asset) {
-    let title = params.asset.name
-    if (params.stat) {
-      if (params.stat === 'track' && params.asset?.type === 'asset') {
-        const assetSys = params.asset.system as AssetDataPropertiesData
-        title += ` +${assetSys.track.name}`
-      } else {
-        const statText = game.i18n.localize(
-          `IRONSWORN.${capitalize(params.stat)}`
-        )
-        title += ` +${statText}`
-      }
-    }
-    return title
-  }
-
-  if (params.subtitle) {
-    return `${game.i18n.localize('IRONSWORN.ProgressRoll')}: ${params.subtitle}`
-  }
-
-  const rollText = game.i18n.localize('IRONSWORN.Roll')
-  if (params.stat) {
-    const statText = game.i18n.localize(`IRONSWORN.${capitalize(params.stat)}`)
-    return `${rollText} +${statText}`
-  }
-
-  return rollText
-}
-
 function calculateSFCardTitle(params: SFRollMessageParams) {
   return `${params.move.name} (${game.i18n.localize(
     'IRONSWORN.' + capitalize(params.usedStat)
   )})`
-}
-
-function calculateMoveResultText(
-  outcome: RollOutcome,
-  move?: EnhancedDataswornMove
-): string | undefined {
-  if (!move) return undefined
-
-  const dfOutcomeKey = DsRollOutcome[outcome]
-  return move[dfOutcomeKey]
 }
 
 function calculateSFMoveResultText(
@@ -233,83 +160,6 @@ export async function sfNextOracles(move: IronswornItem): Promise<RollTable[]> {
   const dfMove = await getDFMoveByDfId(dfid)
   const dfIds = Oracles || dfMove?.Oracles || []
   return compact(await Promise.all(dfIds.map(getFoundryTableByDfId)))
-}
-
-export async function createIronswornChatRoll(params: RollMessageParams) {
-  await params.roll.evaluate({ async: true })
-  const {
-    actionScore: action,
-    actionScoreCapped: actionCapped,
-    canceledActionDie: canceledAction,
-    challengeDie1,
-    challengeDie2,
-    match,
-  } = calculateDieTotals(params.roll)
-
-  // Momentum: if this is not a progress roll, it might be possible to upgrade
-  let hitType = computeRollOutcome(action, challengeDie1, challengeDie2)
-  let momentumProps: MomentumProps = {}
-  if (!params.isProgress) {
-    momentumProps = calculateMomentumProps(params.roll, params.actor)
-    if (momentumProps.negativeMomentumCancel) {
-      hitType = computeRollOutcome(canceledAction, challengeDie1, challengeDie2)
-    }
-  }
-
-  const bonusContent = MoveContentCallbacks[params.move?.Name || '']?.call(
-    this,
-    {
-      hitType,
-      stat: params.stat,
-    }
-  )
-
-  const renderData = {
-    themeClass: `theme-${IronswornSettings.get('theme')}`,
-    action,
-    actionCapped,
-    hitType: computeOutcomeText(hitType, match),
-    title: calculateCardTitle(params),
-    resultText: calculateMoveResultText(hitType, params.move),
-    bonusContent,
-    ...momentumProps,
-    ...params,
-  }
-  const content = await renderTemplate(
-    'systems/foundry-ironsworn/templates/chat/roll.hbs',
-    renderData
-  )
-
-  const messageData = {
-    speaker: ChatMessage.getSpeaker(),
-    content,
-    type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-    roll: params.roll,
-  }
-
-  const cls = CONFIG.ChatMessage.documentClass
-  return cls.create(messageData as any, {})
-}
-
-export async function createIronswornMoveChat(opts: {
-  move?: EnhancedDataswornMove
-  site?: IronswornActor
-}) {
-  const bonusContent = MoveContentCallbacks[opts.move?.Name || '']?.call(
-    this,
-    opts
-  )
-  const content = await renderTemplate(
-    'systems/foundry-ironsworn/templates/chat/move.hbs',
-    {
-      ...opts,
-      bonusContent,
-    }
-  )
-  ChatMessage.create({
-    speaker: ChatMessage.getSpeaker(),
-    content,
-  })
 }
 
 export async function createStarforgedMoveRollChat(
