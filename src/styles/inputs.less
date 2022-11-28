@@ -4,23 +4,21 @@
 .inputFieldFocusMixin(@spread: 7px) {
   color: var(--ironsworn-color-fg-highlight);
   .borderGlowExteriorMixin(@spread);
-  border-style: solid;
 }
 
 .inputFieldMixin(@spread:4px) {
+  border: var(--ironsworn-border-width-md) inset
+    var(--ironsworn-color-border-muted);
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
-  border-style: inset;
   transition: var(--std-animation);
-  border-width: var(--ironsworn-border-width-md);
+
   border-radius: var(--ironsworn-border-radius-md);
-  border-color: var(--ironsworn-color-border-muted);
   &::placeholder {
     color: var(--ironsworn-color-fg);
     opacity: 0.5;
   }
   &:hover {
-    color: var(--ironsworn-color-clickable-block-fg-hover);
     border-color: var(--ironsworn-color-clickable-block-border);
     .borderGlowInteriorMixin(@spread,0,var(--color-shadow-primary));
   }
@@ -30,26 +28,39 @@
   }
 }
 
-input:not([type='checkbox']):not([type='radio']):not([type='range']),
-textarea,
+// NATIVE INPUTS
+
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='date'],
+input[type='time'],
+input[type='search'],
+textarea {
+  .inputFieldMixin();
+  caret-color: var(--ironsworn-color-fg-highlight);
+}
+
 select {
   .inputFieldMixin();
 }
 
-textarea,
-input {
-  caret-color: var(--ironsworn-color-fg-highlight);
-}
 // EDITORS
 .tox {
   :not(svg):not(rect) {
     color: var(--ironsworn-color-fg);
+  }
+  .tox-tinymce {
+    border-radius: 0;
   }
   .tox-toolbar-overlord,
   .tox-toolbar__primary,
   &:not(.tox-tinymce-inline) .tox-editor-header {
     color: var(--ironsworn-color-fg);
     background-color: var(--ironsworn-color-bg);
+  }
+  .tox-edit-area {
+    .inputFieldMixin();
   }
   .tox-tbtn {
     &--select {
@@ -76,23 +87,21 @@ input {
   }
 }
 .editor {
-  border-width: var(--ironsworn-border-width-md);
-  border-style: solid;
-  border-radius: var(--ironsworn-border-radius-lg);
-}
-.editor-content {
-  .inputFieldMixin();
+  border-width: 0;
+  height: 100%;
+  min-height: 100px;
+  .editor-content {
+    height: inherit;
+    min-height: inherit;
+  }
+  .editor-edit {
+    .clickableBlockMixin(var(--ironsworn-border-width-md));
+  }
 }
 
 .ProseMirror {
   .inputFieldMixin();
   padding: 0.5rem;
-}
-
-.editor,
-.editor-content {
-  height: 100%;
-  min-height: 100px;
 }
 
 input {

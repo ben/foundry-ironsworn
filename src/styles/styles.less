@@ -107,23 +107,25 @@
 @import 'unscoped-overrides.less';
 
 .system-foundry-ironsworn {
-  border-color: var(--ironsworn-color-border);
-  border-style: solid;
+  // see https://fontawesome.com/docs/web/style/style-cheatsheet
+  --fa-inverse: var(--ironsworn-color-bg);
   // importing within this selector to give everything an additional layer of specificity
-  @import 'icons.less';
-  @import 'mixins.less';
   @import 'assets.less';
-  @import 'clickable.less';
-  @import 'inputs.less';
   @import 'chat-message.less';
-  @import 'sidebar.less';
-  @import 'preroll-dialog.less';
-  @import 'app.less';
-  @import 'progress.less';
-  @import 'item-list.less';
+  @import 'clickable.less';
+  @import 'icons.less';
+  @import 'inputs.less';
   @import 'ironsworn-roll.less';
+  @import 'item-list.less';
+  @import 'preroll-dialog.less';
+  @import 'progress.less';
   @import 'table.less';
+  @import 'utils.less';
 
+  .window-app.ironsworn .window-content {
+    background: var(--ironsworn-color-bg);
+    color: var(--ironsworn-color-fg);
+  }
   hr {
     width: 100%;
     border: none;

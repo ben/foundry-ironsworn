@@ -2,7 +2,11 @@
 
 @import 'clickable.less';
 @import 'mixins.less';
-
+@import 'inputs.less';
+#chat {
+  #chat-log {
+  }
+}
 #sidebar {
   #sidebar-tabs {
     .item {
@@ -29,4 +33,14 @@
       }
     }
   }
+}
+
+#chat-controls {
+  .roll-type-select {
+    background-color: var(--ironsworn-color-light-overlay);
+  }
+}
+
+textarea#chat-message {
+  .inputFieldMixin();
 }

@@ -1,41 +1,86 @@
+// sets some
+
+.icon {
+  &:before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
 // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
 .fa,
+.fa-brands,
+.fa-classic,
+.fa-duotone,
+.fa-light,
+.fa-regular,
+.fa-sharp,
+.fa-sharp-solid,
+.fa-solid,
+.fa-thin,
 .fab,
 .fad,
 .fal,
 .far,
-.fas {
-  -moz-osx-font-smoothing: inherit;
-  speak: inherit;
-  font-style: inherit;
-  font-variant: inherit;
-  text-rendering: inherit;
-  line-height: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  font-family: inherit;
-  &:before {
-    speak: never;
-    -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
+.fas,
+.fass,
+.fat {
+  &:not(i) {
+    -moz-osx-font-smoothing: inherit;
+    speak: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    text-rendering: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    &:before {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: var(--fa-display, inline-block);
+      font-style: normal;
+      font-variant: normal;
+      line-height: 1;
+      text-rendering: auto;
+    }
   }
 }
 
-.fa,
-.far,
-.fas {
-  &:before {
-    font-family: 'Font Awesome 6 Pro', 'Font Awesome 5 Free';
+.fa-thin,
+.fat {
+  &:not(i) {
+    font-weight: unset;
+    &:before {
+      font-weight: 100;
+    }
   }
 }
-
-.fa,
+.fa-light,
+.fal {
+  &:not(i) {
+    font-weight: unset;
+    &:before {
+      font-weight: 300;
+    }
+  }
+}
+.fa-regular,
+.far {
+  &:not(i) {
+    font-weight: unset;
+    &:before {
+      font-weight: 400;
+    }
+  }
+}
+.fa-solid,
 .fas {
-  &:before {
-    font-weight: 900;
+  &:not(i) {
+    font-weight: unset;
+    &:before {
+      font-weight: 900;
+    }
   }
 }
 
@@ -48,10 +93,11 @@
 .far,
 .fas,
 .fat {
-  &:before {
-    font-family: 'Font Awesome 6 Pro';
+  &:not(i) {
+    &:before {
+      font-family: 'Font Awesome 6 Pro';
+    }
   }
-  font-family: inherit;
 }
 
 [class^='isicon-']:before,

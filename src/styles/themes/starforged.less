@@ -3,6 +3,11 @@
 @import '../override-vars.less';
 
 .system-foundry-ironsworn.theme-starforged {
+  // SF theme restyles more aggressively than IS theme does
+  @import '../app.less';
+  @import '../sidebar.less';
+  @import '../clickables-fvtt.less';
+
   --font-primary: 'Carrois Gothic SC', sans-serif;
 
   @themeLightHue: 185;
@@ -101,8 +106,7 @@
     --ironsworn-color-fg-highlight
   );
   --ironsworn-color-clickable-block-bg-selected: var(
-    --ironsworn-color-thematic,
-    var(--ironsworn-color-bg-highlight)
+    --ironsworn-color-bg-highlight
   );
   --ironsworn-color-clickable-block-border-selected: var(
     --ironsworn-color-fg-highlight

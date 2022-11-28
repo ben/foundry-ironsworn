@@ -1,18 +1,7 @@
 @import 'mixins.less';
-@import 'mixins-text.less';
 
-.prosemirror button,
-.tox .tox-tbtn--bespoke {
-  .clickableBlockMixin();
-}
-
-#controls ol.control-tools > li {
-  .clickableBlockMixin();
-  .borderFloatingMixin();
-  .active,
-  &:hover {
-    .borderGlowExteriorMixin();
-  }
+.icon-button {
+  .iconButtonBaseMixin();
 }
 
 .tabBaseMixin(@glowSpread: 5px, @glowBlur: 1px,@borderWidth: var(--ironsworn-border-width-md)) {
@@ -53,7 +42,6 @@
   border-left-width: 0px;
 }
 
-.app:not(.ironsworn) button,
 .dialog .dialog-buttons button {
   .clickableBlockMixin();
   border-radius: var(--ironsworn-border-radius-md);
@@ -82,13 +70,6 @@
   border-width: @width;
 }
 
-form,
-#permissions-config {
-  .notes,
-  .hint {
-    color: var(--ironsworn-color-fg-muted);
-  }
-}
 .ironsworn button {
   margin: 0;
 }
@@ -130,6 +111,23 @@ form,
   }
 }
 
+.textHoverMixin {
+  color: var(--ironsworn-color-clickable-text-hover);
+  .textStrokeMixin();
+  text-shadow: .textStrokeMixin() [text-shadow],
+    0 0 2px 0 var(--color-shadow-highlight);
+}
+.textFocusMixin {
+  .textStrokeMixin();
+  color: var(--ironsworn-color-clickable-text-focus);
+}
+
+.textActiveMixin {
+  .textStrokeMixin();
+  color: var(--ironsworn-color-clickable-text-selected);
+  background-color: var(--ironsworn-color-fg-overlay-weak);
+}
+
 .clickableTextMixin {
   .interactiveMixin();
   background: transparent;
@@ -149,23 +147,12 @@ form,
   }
 }
 
-.textHoverMixin {
-  color: var(--ironsworn-color-clickable-text-hover);
-}
-.textFocusMixin {
-  background-color: var(--ironsworn-color-fg-overlay-weak);
-}
-
-.textActiveMixin {
-  color: var(--ironsworn-color-clickable-text-selected);
-}
-
 .blockHoverMixin(@blockSize:20px) {
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-hover);
-  background-color: var(--ironsworn-color-bg);
+  background-color: var(--ironsworn-color-clickable-block-bg);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
-  .textStrokeMixin();
+  // .textStrokeMixin();
   .overlayGlowMixin(@blockSize);
   z-index: var(--ironsworn-z-index-high);
 }
@@ -178,7 +165,7 @@ form,
 }
 
 .blockActiveMixin {
-  box-shadow: none;
+  .textStrokeMixin();
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-selected);
   background-color: var(--ironsworn-color-clickable-block-bg-selected);
@@ -243,10 +230,6 @@ form,
   }
 }
 
-.icon-button {
-  .iconButtonBaseMixin();
-}
-
 .clickableBlockMixin(@borderWidth:0px,@blockSize:20px,@borderRadius:0px) {
   .blockMixin(@borderWidth,@blockSize,@borderRadius);
   &:hover,
@@ -278,7 +261,7 @@ form,
       .clickableTextMixin();
     }
     &.block {
-      .clickableBlockMixin(var(--ironsworn-border-width-md), var(--ironsworn-vertical-slider-width));
+      .clickableBlockMixin(0px, var(--ironsworn-vertical-slider-width));
     }
   }
   svg,
