@@ -1,0 +1,105 @@
+// WIP dissection of FVTT palette variables. not currently used in anything.
+.palette {
+  // palette variables are my own inveferences
+  --palette-accent: #ff6400;
+  --palette-accent-secondary: #ff0000;
+  --palette-lightest: #fff; // Relative luminance: 1
+  --palette-darkest: #000; // Relative luminance: 0
+  --palette-light-primary: #b5b3a4; // 0.4474429225
+  --palette-light-secondary: #c9c7b8; // 0.5672504669
+  --palette-light-highlight: #f0f0e0; // 0.8622725971
+  --palette-dark-primary: #191813; // 0.0090695825
+  // ^ pretty close to black - good candidate for collapse?
+  --palette-dark-highlight: #23221d; // 0.0159008816
+  --palette-dark-secondary: #4b4a44; // 0.0681076955
+  --palette-dark-tertiary: #7a7971; //  0.1900457387
+
+  // last sourced from FVTT on Nov 28
+  // vars of vars introduced
+  --color-text-light-highlight: var(--palette-light-highlight);
+  --color-text-light-heading: var(--palette-light-secondary);
+  --color-text-light-primary: var(--palette-light-primary);
+  --color-text-dark-primary: var(--palette-dark-primary);
+  --color-text-dark-secondary: var(--palette-dark-secondary);
+  --color-text-dark-header: var(--palette-dark-highlight);
+  --color-text-dark-inactive: var(--palette-dark-tertiary);
+  --color-text-hyperlink: var(--palette-accent-primary);
+  --color-text-light-0: var(--palette-lightest);
+  // oof. that's a lot of values that are barely distinguishable in context. they do all appear to be used throughout the CSS, too.
+  --color-text-light-1: #eee;
+  --color-text-light-2: #ddd;
+  --color-text-light-3: #ccc;
+  --color-text-light-4: #bbb;
+  --color-text-light-5: #aaa;
+  --color-text-light-6: #999;
+  --color-text-light-7: #888;
+  --color-text-dark-1: #111;
+  --color-text-dark-2: #222;
+  --color-text-dark-3: #444;
+  --color-text-dark-4: #555;
+  --color-text-dark-5: #666;
+  --color-text-dark-6: #777;
+  --color-border-light-1: var(--color-text-light-2);
+  --color-border-light-2: var(--color-text-light-6);
+  --color-border-dark-1: var(--color-text-dark-1);
+  --color-border-dark-2: var(--color-text-dark-2);
+  --color-border-dark-3: #333;
+  --color-border-dark-4: var(--color-text-dark-3);
+  --color-border-dark-5: var(--color-text-dark-5);
+  --color-shadow-primary: var(--palette-accent-primary);
+  --color-shadow-highlight: var(--palette-accent-primary);
+  --color-shadow-dark: var(--palette-darkest);
+  --color-underline-inactive: var(--palette-dark-tertiary);
+  --color-underline-active: #44191a;
+  --color-underline-header: #782e22;
+  --color-border-light-highlight: var(--color-text-light-highlight);
+  --color-border-light-primary: var(--palette-light-primary);
+  --color-border-light-secondary: var(--palette-light-secondary);
+  --color-border-light-tertiary: var(--palette-dark-tertiary);
+  --color-border-dark: var(--palette-darkest);
+  --color-border-dark-primary: var(--palette-dark-primary);
+  --color-border-dark-secondary: var(--palette-dark-highlight);
+  --color-border-dark-tertiary: var(--palette-dark-secondary);
+  --color-border-highlight: var(--palette-accent-primary);
+  --color-border-highlight-alt: var(--palette-accent-primary);
+  --color-bg-btn-minor-inactive: var(--palette-light-secondary);
+  --color-bg-btn-minor-active: var(--palette-light-primary);
+  --color-bg-option: #dad8cc;
+  --color-ownership-none: #5500ff;
+  --color-ownership-observer: var(--palette-dark-tertiary);
+  --color-ownership-owner: var(--palette-light-primary);
+  // --z-index-canvas: 0;
+  // --z-index-app: 30;
+  // --z-index-ui: 60;
+  // --z-index-window: 100;
+  // --z-index-tooltip: 9999;
+  // --sidebar-width: 300px;
+  // --sidebar-header-height: 32px;
+  // --sidebar-item-height: 48px;
+  // --hotbar-height: 52px;
+  // --hotbar-width: 578px;
+  // --macro-size: 50px;
+  // --players-width: 200px;
+  // --form-field-height: 26px;
+  // --font-primary: "Signika", sans-serif;
+  // --font-mono: monospace;
+  // --font-awesome: "Font Awesome 6 Pro";
+  // --font-size-11: 0.6875rem;
+  // --font-size-12: 0.75rem;
+  // --font-size-13: 0.8125rem;
+  // --font-size-14: 0.875rem;
+  // --font-size-16: 1rem;
+  // --font-size-18: 1.125rem;
+  // --font-size-20: 1.25rem;
+  // --font-size-24: 1.5rem;
+  // --font-size-28: 1.75rem;
+  // --font-size-32: 2rem;
+  // --font-size-48: 3rem;
+  // --line-height-12: 0.75rem;
+  // --line-height-16: 1rem;
+  // --line-height-20: 1.25rem;
+  // --line-height-30: 1.875rem;
+  --color-level-info: #5c87b9;
+  --color-level-warning: #b18404;
+  --color-level-error: #750003;
+}
