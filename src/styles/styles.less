@@ -120,7 +120,7 @@
 
     .sheet-area {
       border-color: var(--ironsworn-color-border-muted);
-      border-top-width: 2px;
+      border-top-width: var(--ironsworn-border-width-lg);
       &:first-child {
         border-top-width: 0;
       }
@@ -129,9 +129,8 @@
     }
     hr {
       width: 100%;
-      border: none;
-      border-width: 0 0 1px;
-      border-style: solid;
+      border: 0 solid var(--ironsworn-border-color);
+      border-width: 0 0 var(--ironsworn-border-width-md);
     }
     h1,
     h2,
