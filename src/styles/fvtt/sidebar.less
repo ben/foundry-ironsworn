@@ -2,6 +2,13 @@
 
 @import '../mixins.less';
 #sidebar {
+  .combat-sidebar {
+    .combat-tracker-header {
+      a.combat-button {
+        .clickableTextMixin();
+      }
+    }
+  }
   #sidebar-tabs {
     .item {
       .clickableTextMixin();
@@ -12,6 +19,7 @@
     }
     .collapse {
       .clickableBlockMixin();
+      background-color: transparent;
       border: 0;
     }
   }

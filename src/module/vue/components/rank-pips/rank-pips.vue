@@ -31,6 +31,7 @@
 
 <style lang="less">
 .rank-pips {
+  width: max-content;
   .rank-pip {
     .pip-shape > * {
       stroke-width: var(--widget-stroke-width);

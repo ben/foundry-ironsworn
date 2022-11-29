@@ -118,6 +118,9 @@
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
   .overrideVars();
 
+  scrollbar-color: var(--ironsworn-color-border-muted)
+    var(--ironsworn-color-bg-alt);
+
   .app {
     color: var(--ironsworn-color-fg);
   }
@@ -210,8 +213,8 @@
   }
 
   .chat-message {
-    background: var(--ironsworn-dark-overlay);
     color: var(--ironsworn-color-fg);
+    background: var(--ironsworn-color-bg);
     button {
       border: none;
     }

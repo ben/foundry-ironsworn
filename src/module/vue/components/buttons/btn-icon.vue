@@ -67,6 +67,9 @@ const hasDefaultSlot = computed(() => {
     align-content: center;
     align-items: center;
   }
+  &.text:not(.block) {
+    justify-content: left;
+  }
 }
 
 // override to compensate for chrome user agent stylesheet bug: https://bugs.chromium.org/p/chromium/issues/detail?id=681917
