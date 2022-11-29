@@ -1,12 +1,13 @@
 @import 'mixins.less';
-@import 'clickable.less';
 
 .inputFieldMixin {
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
   border-color: var(--ironsworn-color-clickable-block-border);
+  border-radius: var(--ironsworn-border-radius-sm);
 
   transition: var(--std-animation);
+  border-style: var(--ironsworn-input-border-style);
   border-width: 1px;
   &::placeholder {
     color: var(--ironsworn-color-fg);
