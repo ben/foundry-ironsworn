@@ -3,7 +3,7 @@
     class="flexcol progress-track-box"
     :class="{ 'track-overflow': isOverflowBox }"
     :aria-valuenow="ticks"
-    :aria-valuetext="$t('IRONSWORN.PROGRESS.Ticks', {ticks})"
+    :aria-valuetext="$t('IRONSWORN.PROGRESS.Ticks', { ticks })"
     @transitionstart="onTransitionStart"
     @transitionend="onTransitionEnd"
   >
@@ -55,13 +55,13 @@
 }
 
 .progress-track-box {
-  border: 1px solid;
+  border: 1px solid var(--ironsworn-color-border);
   align-items: center;
   justify-content: center;
   aspect-ratio: 1;
   object-fit: contain;
   border-radius: 3px;
-  stroke: currentColor;
+  stroke: var(--ironsworn-color-fg);
   stroke-width: 5;
 
   &.track-overflow .ghost-ticks {
