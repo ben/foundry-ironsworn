@@ -179,85 +179,20 @@
     }
 
     // oracle table results.
-    table {
-      &.oracle-table-partial {
+    .table-draw {
+      border: none;
+      h2 {
+        border: none;
+      }
+      table {
+        td:first-child,
+        td:last-child {
+          width: 0;
+        }
+      }
+      .oracle-table-partial {
         margin: 2px 0;
         transition: none;
-        tr {
-          &.selected,
-          &[aria-selected='true'] {
-            background-color: var(--ironsworn-color-bg-highlight);
-            color: var(--ironsworn-color-fg-highlight);
-            box-shadow: 0 0 40px -10px var(--ironsworn-color-accent) inset;
-            border-left: 2px solid var(--ironsworn-color-accent-alt);
-          }
-        }
-        .oracle-result-row {
-          td {
-            > * {
-              transition: var(--std-animation);
-            }
-          }
-        }
-        .icon {
-          display: flex;
-          aspect-ratio: 1;
-          margin: 0;
-        }
-        .oracle-result-row {
-          .oracle-table-column-roll-result {
-            padding: 0;
-            white-space: nowrap;
-          }
-          > td {
-            position: relative;
-            &:last-child {
-              > .oracle-row-content {
-                padding-right: 2px;
-              }
-            }
-          }
-        }
-        .oracle-row-content {
-          opacity: 1;
-          visibility: visible;
-          height: 100%;
-          display: flex;
-          gap: 2px;
-          align-items: center;
-        }
-        .oracle-result-control {
-          color: inherit;
-          background: none;
-          opacity: 0;
-          visibility: hidden;
-          height: 100%;
-          width: 100%;
-          padding: 0;
-          margin: 0;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          right: 0;
-          left: 0;
-          display: flex;
-          gap: 2px;
-          padding: 2px;
-          &.clickable.text {
-            justify-content: center;
-            align-items: center;
-            &:hover {
-              color: inherit !important;
-            }
-          }
-          &:hover {
-            background: none;
-          }
-
-          background: none !important;
-          border: none !important;
-          .clickableTextMixin();
-        }
         &:hover {
           .oracle-row-content {
             opacity: 0;
@@ -269,24 +204,86 @@
             color: inherit;
           }
         }
+        .oracle-result-row {
+          &.selected,
+          &[aria-selected='true'] {
+            background-color: var(--ironsworn-color-bg-highlight);
+            color: var(--ironsworn-color-fg-highlight);
+            box-shadow: 0 0 40px -10px var(--ironsworn-color-accent) inset;
+            border-left: var(--ironsworn-border-width-lg) solid
+              var(--ironsworn-color-accent-alt);
+          }
+          > td {
+            position: relative;
+            > * {
+              transition: var(--std-animation);
+            }
+            &:last-child {
+              > .oracle-row-content {
+                padding-right: 2px;
+              }
+            }
+          }
+
+          .oracle-table-column-roll-range {
+          }
+          .oracle-table-column-result-text {
+          }
+          .oracle-table-column-roll-result {
+            padding: 0;
+            white-space: nowrap;
+          }
+          .oracle-row-content {
+            opacity: 1;
+            visibility: visible;
+            height: 100%;
+            display: flex;
+            gap: 2px;
+            align-items: center;
+          }
+          .oracle-result-control {
+            color: inherit;
+            background: none;
+            opacity: 0;
+            visibility: hidden;
+            height: 100%;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            display: flex;
+            gap: 2px;
+            padding: 2px;
+            &.clickable.text {
+              justify-content: center;
+              align-items: center;
+              &:hover {
+                color: inherit !important;
+              }
+            }
+            &:hover {
+              background: none;
+            }
+
+            background: none !important;
+            border: none !important;
+            .clickableTextMixin();
+          }
+        }
+        .icon {
+          display: flex;
+          aspect-ratio: 1;
+          margin: 0;
+        }
       }
     }
   }
   button {
     border: none;
-  }
-
-  .table-draw {
-    border: none;
-    h2 {
-      border: none;
-    }
-    table {
-      td:first-child,
-      td:last-child {
-        width: 0;
-      }
-    }
   }
 
   // styling so that old messages don't have their overall layout disrupted. can probably be removed in a few versions
