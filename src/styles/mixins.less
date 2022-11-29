@@ -31,10 +31,6 @@
   box-shadow: inset 0 0 @spread @blur @color;
 }
 
-.borderGlowInteriorMixinStrong(@spread:10px,@blur:0,@color:var(--color-shadow-primary)) {
-  box-shadow: inset 0 0 @spread @blur @color, inset 0 0 @spread @blur @color;
-}
-
 .borderAccentColorMixin() {
   border-color: var(--ironsworn-color-accent);
   border-bottom-color: var(--ironsworn-color-accent-alt);
@@ -115,7 +111,6 @@
 .textHoverMixin {
   color: var(--ironsworn-color-clickable-text-hover);
   filter: drop-shadow(0 0 2px var(--ironsworn-color-accent));
-  // text-shadow: 0 0 8px var(--ironsworn-color-accent);
 }
 .textFocusMixin {
   .focusOutlineMixin();
@@ -123,13 +118,18 @@
 
 .textActiveMixin {
   color: var(--ironsworn-color-clickable-text-selected);
+  filter: drop-shadow(0 0 2px var(--ironsworn-color-accent));
 }
 
 .clickableTextMixin {
   .interactiveMixin();
   background: transparent;
   color: var(--ironsworn-color-clickable-text);
-  box-shadow: none !important;
+  &:not(a.item) {
+    box-shadow: none !important;
+    // so that foundry's tabs don't get their box shadows omitted.
+    // TODO: write a mixin for foundry-style transparent tabs
+  }
   &[aria-selected='true'],
   &.selected,
   &.active {
@@ -262,8 +262,9 @@
   cursor: initial;
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
-  border: var(--ironsworn-border-width-md) var(--ironsworn-input-border-style)
-    var(--ironsworn-color-border-muted);
+  border-width: var(--ironsworn-border-width-md);
+  border-style: var(--ironsworn-input-border-style);
+  border-color: var(--ironsworn-color-border-muted);
   border-radius: var(--ironsworn-border-radius-md);
   &::placeholder {
     color: var(--ironsworn-color-fg);
