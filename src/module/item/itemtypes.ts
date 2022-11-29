@@ -86,24 +86,6 @@ export interface ProgressDataProperties {
 
 ///////////////////////////////
 
-interface VowDataSourceData extends ProgressBase {
-  description: string
-  threat: string
-  menace: number
-}
-interface VowDataPropertiesData extends VowDataSourceData {}
-
-export interface VowDataSource {
-  type: 'vow'
-  data: VowDataSourceData
-}
-export interface VowDataProperties {
-  type: 'vow'
-  data: VowDataPropertiesData
-}
-
-///////////////////////////////
-
 interface Bond {
   name: string
   notes: string
@@ -188,7 +170,6 @@ export interface SFMoveDataProperties {
 export type ItemDataSource =
   | AssetDataSource
   | ProgressDataSource
-  | VowDataSource
   | BondsetDataSource
   | SFMoveDataSource
   | DelveThemeDataSource
@@ -196,7 +177,6 @@ export type ItemDataSource =
 export type ItemDataProperties =
   | AssetDataProperties
   | ProgressDataProperties
-  | VowDataProperties
   | BondsetDataProperties
   | SFMoveDataProperties
   | DelveThemeDataProperties
