@@ -1,6 +1,12 @@
 <template>
   <div class="flexcol" v-bind:style="`background-color: ${thematicColor}`">
     <SfMoverow
+      :move="moves.discoverASite"
+      v-if="moves.discoverASite"
+      :thematic-color="thematicColor"
+      class="nogrow"
+    />
+    <SfMoverow
       :move="moves.delveTheDepths"
       v-if="moves.delveTheDepths"
       :thematic-color="thematicColor"
@@ -21,6 +27,12 @@
       :oracle-disabled="!hasThemeAndDomain"
     />
     <SfMoverow
+      :move="moves.checkYourGear"
+      v-if="moves.checkYourGear"
+      :thematic-color="thematicColor"
+      class="nogrow"
+    />
+    <SfMoverow
       :move="moves.locateObjective"
       v-if="moves.locateObjective"
       :thematic-color="thematicColor"
@@ -30,6 +42,12 @@
     <SfMoverow
       :move="moves.escapeTheDepths"
       v-if="moves.escapeTheDepths"
+      :thematic-color="thematicColor"
+      class="nogrow"
+    />
+    <SfMoverow
+      :move="moves.revealADangerAlt"
+      v-if="moves.revealADangerAlt"
       :thematic-color="thematicColor"
       class="nogrow"
     />
@@ -73,11 +91,14 @@ Promise.resolve().then(async () => {
   if (!delveMoves) return
 
   const movesToFetch = {
+    discoverASite: 'Ironsworn/Moves/Delve/Discover_a_Site',
     delveTheDepths: 'Ironsworn/Moves/Delve/Delve_the_Depths',
-    revealADanger: 'Ironsworn/Moves/Delve/Reveal_a_Danger',
     findAnOpportunity: 'Ironsworn/Moves/Delve/Find_an_Opportunity',
+    revealADanger: 'Ironsworn/Moves/Delve/Reveal_a_Danger',
+    checkYourGear: 'Ironsworn/Moves/Delve/Check_Your_Gear',
     escapeTheDepths: 'Ironsworn/Moves/Delve/Escape_the_Depths',
     locateObjective: 'Ironsworn/Moves/Delve/Locate_Your_Objective',
+    revealADangerAlt: 'Ironsworn/Moves/Delve/Reveal_a_Danger_alt',
   }
 
   for (const k of Object.keys(movesToFetch)) {
