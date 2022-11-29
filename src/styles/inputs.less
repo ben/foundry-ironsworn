@@ -1,41 +1,47 @@
 @import 'mixins.less';
 @import 'clickable.less';
 
-.inputFieldColors {
+.inputFieldMixin {
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
   border-color: var(--ironsworn-color-clickable-block-border);
+
   transition: var(--std-animation);
+  border-width: 1px;
   &::placeholder {
     color: var(--ironsworn-color-fg);
     opacity: 0.5;
   }
   &:hover {
-    color: var(--ironsworn-color-clickable-block-fg-hover);
-
     border-color: var(--ironsworn-color-clickable-block-border-hover);
   }
   &:focus,
   &:focus-within {
     @shadowSpread: 7px;
     color: var(--ironsworn-color-fg-highlight);
-    border: 1px solid var(--ironsworn-color-accent-alt);
-    border-bottom: 1px solid var(--ironsworn-color-accent);
+    border-color: var(--ironsworn-color-accent-alt);
+    border-bottom-color: var(--ironsworn-color-accent);
     box-shadow: 0 0 @shadowSpread var(--ironsworn-color-accent),
       0 0 @shadowSpread var(--ironsworn-color-accent);
   }
 }
 
-textarea#chat-message {
-  .inputFieldColors();
-}
-
 .ironsworn {
-  input:not([type='checkbox']):not([type='radio']),
-  textarea,
-  select {
-    .inputFieldColors();
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='date'],
+  input[type='time'],
+  input[type='search'] {
+    .inputFieldMixin();
   }
+  textarea {
+    .inputFieldMixin();
+  }
+  select {
+    .inputFieldMixin();
+  }
+
   // EDITORS
   .tox {
     :not(svg):not(rect) {
@@ -72,11 +78,11 @@ textarea#chat-message {
     border-radius: 5px;
   }
   .editor-content {
-    .inputFieldColors();
+    .inputFieldMixin();
   }
 
   .ProseMirror {
-    .inputFieldColors();
+    .inputFieldMixin();
     padding: 0.5rem;
   }
 

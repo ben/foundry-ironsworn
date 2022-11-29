@@ -1,100 +1,114 @@
 // oracle table results
 
-.table-draw {
-  h2 {
+.chat-message {
+  .ironsworn-roll-title {
+    margin: 0;
     border: none;
   }
-  table {
-    td:first-child,
-    td:last-child {
-      width: 0;
-    }
-  }
-}
 
-.oracle-table-partial {
-  margin: 2px 0;
-  transition: none;
-  .oracle-result-row {
-    td {
-      > * {
-        transition: 0.5 ease all;
+  .message-header {
+    color: var(--ironsworn-color-fg-muted);
+  }
+  .message-content {
+    border: none;
+  }
+  .table-draw {
+    border: none;
+    h2 {
+      border: none;
+    }
+    table {
+      td:first-child,
+      td:last-child {
+        width: 0;
       }
     }
   }
-  .icon {
-    display: flex;
-    aspect-ratio: 1;
-    height: max-content;
-    margin: 0;
-  }
-  .oracle-result-row {
-    .oracle-table-column-roll-result {
-      padding: 0;
-      white-space: nowrap;
-    }
-    > td {
-      position: relative;
-      &:last-child {
-        > .oracle-row-content {
-          padding-right: 2px;
+
+  .oracle-table-partial {
+    margin: 2px 0;
+    transition: none;
+    .oracle-result-row {
+      td {
+        > * {
+          transition: 0.5 ease all;
         }
       }
     }
-  }
-  .oracle-row-content {
-    opacity: 1;
-    visibility: visible;
-    height: 100%;
-    display: flex;
-    gap: 2px;
-    align-items: center;
-  }
-  .oracle-result-control {
-    color: inherit;
-    background: none;
-    opacity: 0;
-    visibility: hidden;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    gap: 2px;
-    padding: 2px;
-    &.clickable.text {
-      justify-content: center;
+    .icon {
+      display: flex;
+      aspect-ratio: 1;
+      height: max-content;
+      margin: 0;
+    }
+    .oracle-result-row {
+      .oracle-table-column-roll-result {
+        padding: 0;
+        white-space: nowrap;
+      }
+      > td {
+        position: relative;
+        &:last-child {
+          > .oracle-row-content {
+            padding-right: 2px;
+          }
+        }
+      }
+    }
+    .oracle-row-content {
+      opacity: 1;
+      visibility: visible;
+      height: 100%;
+      display: flex;
+      gap: 2px;
       align-items: center;
+    }
+    .oracle-result-control {
+      color: inherit;
+      background: none;
+      opacity: 0;
+      visibility: hidden;
+      height: 100%;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      gap: 2px;
+      padding: 2px;
+      &.clickable.text {
+        justify-content: center;
+        align-items: center;
+        &:hover {
+          color: inherit !important;
+        }
+      }
       &:hover {
-        color: inherit !important;
+        background: none;
+        filter: drop-shadow(0 0 3px var(--color-shadow-primary))
+          drop-shadow(0 0 1px var(--color-shadow-highlight));
       }
     }
     &:hover {
-      background: none;
-      filter: drop-shadow(0 0 3px var(--color-shadow-primary))
-        drop-shadow(0 0 1px var(--color-shadow-highlight));
+      .oracle-row-content {
+        opacity: 0;
+        visibility: hidden;
+      }
+      .oracle-result-control {
+        opacity: 1;
+        visibility: visible;
+        background: none;
+        color: inherit;
+      }
     }
   }
-  &:hover {
-    .oracle-row-content {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .oracle-result-control {
-      opacity: 1;
-      visibility: visible;
-      background: none;
-      color: inherit;
-    }
-  }
-}
 
-// styling so that old messages don't have their overall layout disrupted. can probably be removed in a few versions
-.hover-controls {
-  display: none;
+  // styling so that old messages don't have their overall layout disrupted. can probably be removed in a few versions
+  .hover-controls {
+    display: none;
+  }
 }

@@ -1,8 +1,5 @@
 @import 'ironsworn-icons.less';
 @import 'mixins.less';
-@import 'assets.less';
-@import 'clickable.less';
-@import 'inputs.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px hsl(0, 0%, 60%) inset;
@@ -21,7 +18,6 @@
   --widget-fill-opacity: 1;
   --widget-fill-opacity-preview: 0.5;
   --widget-stroke-width: 1px;
-  --ironsworn-color-bg: hsl(0, 0%, 100%);
 
   --ironsworn-color-red-1: hsl(355, 100%, 65%);
   // original sample from PDF: #c9181a
@@ -56,7 +52,6 @@
 
 .ironsworn {
   border-color: var(--ironsworn-color-border);
-  border-style: solid;
   font-family: var(--font-primary);
 
   hr {
@@ -544,10 +539,6 @@
 
 // roll-graphic.hbs
 
-.ironsworn-roll-title {
-  margin: 0;
-}
-
 @graphic-gap: 0.25rem;
 
 .ironsworn-roll {
@@ -645,11 +636,6 @@
   }
 }
 
-table td:first-child {
-  white-space: nowrap;
-  padding-right: 0.5rem;
-}
-
 // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
 .fa,
 .fab,
@@ -691,4 +677,8 @@ table td:first-child {
   }
 }
 
+@import 'assets.less';
+@import 'clickable.less';
+@import 'inputs.less';
+@import 'tables.less';
 @import 'chat-message.less';

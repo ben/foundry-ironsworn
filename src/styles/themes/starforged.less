@@ -2,7 +2,7 @@
 @import '../mixins.less';
 
 body.theme-starforged {
-  @theme-font: 'Carrois Gothic SC', sans-serif;
+  --font-primary: 'Carrois Gothic SC', sans-serif;
   @themeLightHue: 185;
   @themeLightSaturation: 70%;
   @themeLightLightness: 55%;
@@ -65,7 +65,7 @@ body.theme-starforged {
   --ironsworn-color-input-bg: var(--ironsworn-light-overlay);
 
   --ironsworn-color-thematic: hsl(@themeLightHue, 75%, 27%);
-  // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables. see "--ironsworn-color-thematic-faded" in styles.less for an example.
+  // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables.
   --ironsworn-color-thematic-HSL: @themeLightHue, 75%, 27%;
   --ironsworn-color-thematic-HS: @themeLightHue, 75%;
 
@@ -125,10 +125,6 @@ body.theme-starforged {
   );
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
-  body {
-    font-family: @theme-font;
-  }
-
   .app {
     color: var(--ironsworn-color-fg);
   }
@@ -146,7 +142,6 @@ body.theme-starforged {
     border-style: solid;
   }
 
-  font-family: @theme-font;
   color: var(--ironsworn-color-fg);
   .dialog-buttons {
     .dialog-button {
@@ -224,14 +219,6 @@ body.theme-starforged {
   .chat-message {
     background: var(--ironsworn-dark-overlay);
     color: var(--ironsworn-color-fg);
-
-    .message-header {
-      color: var(--ironsworn-color-fg-muted);
-    }
-
-    .message-content {
-      border: 1px solid var(--ironsworn-color-border-muted);
-    }
 
     .dice-formula,
     .dice-total {

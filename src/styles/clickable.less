@@ -30,7 +30,7 @@
   &.hover {
     color: var(--ironsworn-color-clickable-block-fg-hover);
     background-color: var(
-      --ironsworn-color-thematic-faded,
+      --ironsworn-color-thematic,
       var(--ironsworn-color-clickable-block-bg-hover)
     );
     border-color: var(--ironsworn-color-clickable-block-border-hover);
@@ -56,20 +56,14 @@
     transition: var(--std-animation);
     background-color: var(--ironsworn-color-clickable-block-bg);
     border-color: var(--ironsworn-color-clickable-block-border);
-    .clickableTextColors();
-
+    .clickableBlockColors();
+    // forces fg colour so that it is the same colour as the text.
+    color: inherit;
     i {
-      transition: var(--std-animation);
-      color: var(--ironsworn-color-clickable-text);
+      color: inherit;
     }
     &:hover {
       text-shadow: none;
-      background-color: var(--ironsworn-color-clickable-block-bg-hover);
-      border-color: var(--ironsworn-color-clickable-block-border-hover);
-      i {
-        color: var(--ironsworn-color-clickable-text-hover);
-        text-shadow: none;
-      }
     }
   }
 }

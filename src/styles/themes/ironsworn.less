@@ -5,14 +5,22 @@ body.theme-ironsworn {
   --ironsworn-color-shade-1: hsl(0, 0%, 80%);
   --ironsworn-color-shade-2: hsl(0, 0%, 66%);
   --ironsworn-color-shade-3: hsl(0, 0%, 53%);
+  --ironsworn-color-shade-4: hsl(0, 0%, 35%);
   --ironsworn-color-dark: hsl(0, 0%, 0%);
   --ironsworn-color-bg-highlight: hsl(55, 67%, 80%);
 
+  --ironsworn-dark-overlay: fade($--ironsworn-color-dark, 5%);
+  --ironsworn-light-overlay: fade($--ironsworn-color-light, 15%);
+
+  --ironsworn-color-input-bg: var(--ironsworn-dark-overlay);
+
   --ironsworn-color-fg: var(--ironsworn-color-dark);
+  --ironsworn-color-fg-muted: var(--ironsworn-color-shade-4);
   --ironsworn-color-bg: var(--ironsworn-color-light);
 
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
   --ironsworn-color-border: var(--ironsworn-color-dark);
+  --ironsworn-color-border-muted: var(--ironsworn-color-shade-4);
 
   // see clickable.less for usage
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg);
@@ -117,6 +125,9 @@ body.theme-ironsworn {
     &[aria-selected='true'] {
       background-color: var(--ironsworn-color-dark);
       color: var(--ironsworn-color-shade-1);
+      .oracle-result-control {
+        color: var(--ironsworn-color-bg);
+      }
 
       .entity-link,
       .content-link {
