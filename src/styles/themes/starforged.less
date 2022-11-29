@@ -2,7 +2,7 @@
 @import '../mixins.less';
 @import '../fvtt/vars.less';
 
-body.theme-starforged {
+.system-foundry-ironsworn.theme-starforged {
   @import '../fvtt/app.less';
   @import '../fvtt/clickable.less';
   @import '../fvtt/sidebar.less';
@@ -104,6 +104,8 @@ body.theme-starforged {
     --ironsworn-color-fg-highlight
   );
 
+  --ironsworn-input-border-style: inset;
+
   .hoverFxBlock(@spread_block:10px) {
     box-shadow: 0 0 @spread_box var(--ironsworn-color-bg-highlight) inset;
   }
@@ -111,9 +113,9 @@ body.theme-starforged {
     text-shadow: 0 0 @spread_text var(--ironsworn-color-bg-highlight);
   }
 
-  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-3);
-  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-3);
-  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-3);
+  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-dark);
+  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-dark);
+  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-dark);
 
   --ironsworn-color-danger: hsl(0, 80%, 50%);
   --ironsworn-color-success: hsl(290, 80%, 50%);

@@ -1,6 +1,6 @@
 @import '../mixins.less';
 
-body.theme-ironsworn {
+.system-foundry-ironsworn.theme-ironsworn {
   --ironsworn-color-light: hsl(0, 0%, 100%);
   --ironsworn-color-shade-1: hsl(0, 0%, 80%);
   --ironsworn-color-shade-2: hsl(0, 0%, 66%);
@@ -41,6 +41,8 @@ body.theme-ironsworn {
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-shade-2);
   --ironsworn-color-clickable-text-selected: var(--ironsworn-color-shade-3);
+
+  --ironsworn-input-border-style: solid;
 
   input.highlight:focus {
     background-color: var(--ironsworn-color-fg);
