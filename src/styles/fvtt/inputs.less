@@ -1,0 +1,15 @@
+@import '../mixins.less';
+
+input[type='text'],
+input[type='number'],
+input[type='password'],
+input[type='date'],
+input[type='time'],
+input[type='search'] {
+  .inputFieldMixin();
+}
+
+select {
+  .inputFieldMixin();
+  border-style: outset;
+}

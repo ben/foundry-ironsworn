@@ -1,0 +1,13 @@
+// style reset for some of the more annoying properties in FVTT's default CSS; intentionally not scoped to .system-foundry-ironsworn so that they can be overridden more easily.
+form button {
+  border-width: 0px;
+  border-style: solid;
+  border-color: transparent;
+  &.vertical {
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+    flex-direction: column;
+    & > * {
+      writing-mode: vertical-lr !important;
+    }
+  }
+}

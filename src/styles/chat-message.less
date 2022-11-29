@@ -1,6 +1,7 @@
 // oracle table results
 
 .chat-message {
+  border: 1px solid var(--ironsworn-color-border);
   .ironsworn-roll-title {
     margin: 0;
     border: none;
@@ -93,6 +94,11 @@
           drop-shadow(0 0 1px var(--color-shadow-highlight));
       }
     }
+    .oracle-result-control {
+      background: none !important;
+      border: none !important;
+      .clickableTextMixin();
+    }
     &:hover {
       .oracle-row-content {
         opacity: 0;
@@ -101,7 +107,6 @@
       .oracle-result-control {
         opacity: 1;
         visibility: visible;
-        background: none;
         color: inherit;
       }
     }

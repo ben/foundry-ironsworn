@@ -26,7 +26,10 @@
 svg.clock {
   // so that only *segment* hovers appear
   pointer-events: none;
-  fill: var(--ironsworn-color-thematic);
+  fill: var(
+    --ironsworn-color-thematic,
+    var(--ironsworn-color-clickable-block-bg-selected)
+  );
   fill-opacity: var(--widget-fill-opacity);
   stroke: currentColor;
   stroke-width: var(--widget-stroke-width);

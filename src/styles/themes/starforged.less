@@ -1,7 +1,13 @@
 @import './starforged-font.css'; // HACK to avoid import error
 @import '../mixins.less';
+@import '../fvtt/vars.less';
 
 body.theme-starforged {
+  @import '../fvtt/app.less';
+  @import '../fvtt/clickable.less';
+  @import '../fvtt/sidebar.less';
+  @import '../fvtt/inputs.less';
+
   --font-primary: 'Carrois Gothic SC', sans-serif;
   @themeLightHue: 185;
   @themeLightSaturation: 70%;
@@ -119,6 +125,8 @@ body.theme-starforged {
     20%
   );
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
+  .overrideVars();
 
   .app {
     color: var(--ironsworn-color-fg);
@@ -214,7 +222,9 @@ body.theme-starforged {
   .chat-message {
     background: var(--ironsworn-dark-overlay);
     color: var(--ironsworn-color-fg);
-
+    button {
+      border: none;
+    }
     .dice-formula,
     .dice-total {
       background: var(--ironsworn-dark-overlay);
@@ -249,33 +259,6 @@ body.theme-starforged {
           color: var(--ironsworn-color-fg-highlight);
         }
       }
-    }
-  }
-
-  #sidebar-tabs {
-    border-color: var(--ironsworn-color-border-muted);
-    box-shadow: 0 0 10px var(--ironsworn-color-bg-highlight);
-
-    .item {
-      color: var(--ironsworn-color-fg-muted);
-      &.active {
-        color: var(--ironsworn-color-fg-highlight);
-        border-color: var(--ironsworn-color-border-muted);
-        box-shadow: 0 0 6px inset var(--ironsworn-color-bg-highlight);
-        text-shadow: 0 0 10px var(--ironsworn-color-bg-highlight);
-      }
-    }
-  }
-
-  #chat-controls {
-    .roll-type-select {
-      background-color: var(--ironsworn-color-light-overlay);
-    }
-  }
-
-  .directory {
-    .directory-header .header-search input {
-      background-color: var(--ironsworn-color-light-overlay);
     }
   }
 }

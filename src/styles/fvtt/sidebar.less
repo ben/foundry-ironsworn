@@ -1,6 +1,6 @@
 // styles for FVTT's sidebar
 
-@import 'mixins.less';
+@import '../mixins.less';
 #sidebar {
   #sidebar-tabs {
     .item {
@@ -15,6 +15,9 @@
     }
   }
   .directory {
+    .directory-header .header-search input {
+      .inputFieldMixin();
+    }
     .directory-item {
       .document-name {
         --boxGlowSize: calc(
@@ -22,6 +25,7 @@
         );
         cursor: pointer;
         .clickableBlockMixin(0px,var(--boxGlowSize));
+        background-color: transparent;
         margin: 0;
         padding-left: 8px;
       }
@@ -35,6 +39,7 @@
     #chat-controls {
       .roll-type-select {
         background-color: var(--ironsworn-color-light-overlay);
+        color: var(--ironsworn-color-fg);
       }
     }
     textarea#chat-message {
