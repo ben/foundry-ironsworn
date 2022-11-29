@@ -227,7 +227,7 @@ const preventOracle = computed(() => {
 
 const toggleTooltip = computed(() =>
   // @ts-ignore
-  enrichMarkdown($item.value.data.data.Trigger?.Text)
+  enrichMarkdown($item.value.system.Trigger?.Text)
 )
 
 const moveId = computed(() => props.move.moveItem().id)
@@ -252,12 +252,6 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
 function moveClick(move: IronswornItem) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
 }
-
-const colorThematicFaded = computed(() =>
-  chroma(props.thematicColor as string)
-    .alpha(0.5)
-    .css()
-)
 
 defineExpose({
   moveId,
