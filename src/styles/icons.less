@@ -1,3 +1,105 @@
+// styles for icons
+
+.icon {
+  &:before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+// workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
+.fa,
+.fa-brands,
+.fa-classic,
+.fa-duotone,
+.fa-light,
+.fa-regular,
+.fa-sharp,
+.fa-sharp-solid,
+.fa-solid,
+.fa-thin,
+.fab,
+.fad,
+.fal,
+.far,
+.fas,
+.fass,
+.fat {
+  &:not(i) {
+    -moz-osx-font-smoothing: inherit;
+    speak: inherit;
+    font-style: inherit;
+    font-variant: inherit;
+    text-rendering: inherit;
+    line-height: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    &:before {
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      display: var(--fa-display, inline-block);
+      font-style: normal;
+      font-variant: normal;
+      line-height: 1;
+      text-rendering: auto;
+    }
+  }
+}
+
+.fa-thin,
+.fat {
+  &:not(i) {
+    font-weight: unset;
+    &:before {
+      font-weight: 100;
+    }
+  }
+}
+.fa-light,
+.fal {
+  &:not(i) {
+    font-weight: unset;
+    &:before {
+      font-weight: 300;
+    }
+  }
+}
+.fa-regular,
+.far {
+  &:not(i) {
+    font-weight: unset;
+    &:before {
+      font-weight: 400;
+    }
+  }
+}
+.fa-solid,
+.fas {
+  &:not(i) {
+    font-weight: unset;
+    &:before {
+      font-weight: 900;
+    }
+  }
+}
+
+.fa-classic,
+.fa-light,
+.fa-regular,
+.fa-solid,
+.fa-thin,
+.fal,
+.far,
+.fas,
+.fat {
+  &:not(i) {
+    &:before {
+      font-family: 'Font Awesome 6 Pro';
+    }
+  }
+}
+
 [class^='isicon-']:before,
 [class*=' isicon-']:before {
   content: '';
@@ -28,7 +130,7 @@
 [class^='isiconbg-'],
 [class*=' isiconbg-'] {
   position: relative; // required for the pseudo-element's position to function
-  z-index: 1;
+  z-index: auto;
   &:before {
     // don't forget to set the background for this pseudo-element, too. typically this is a flat colour, but it'll work with any valid background (gradients, images, etc).
     // this defaults to currentColor, so that it's clear that it's actually working when it's used
@@ -42,7 +144,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: var(--ironsworn-z-index-low);
     position: absolute;
     box-sizing: border-box;
     mask-origin: content-box; // this + above make this sensitive to padding on the :before pseudo-element.
@@ -66,13 +168,21 @@
     }
   }
 }
-.control-tool,
-.scene-control {
-  i {
-    &[class^='isicon-'],
-    &[class*=' isicon-'] {
-      height: 100%;
-      width: 100%;
+
+i {
+  &[class^='isicon-'],
+  &[class*=' isicon-'] {
+    display: flex;
+    height: 1.5em;
+    font-size: inherit;
+    aspect-ratio: 1;
+    align-items: center;
+    justify-content: center;
+    &:before {
+      @padIcon: 2px;
+      display: flex;
+      height: calc(100% - (@padIcon*2));
+      width: calc(100% - (@padIcon*2));
     }
   }
 }

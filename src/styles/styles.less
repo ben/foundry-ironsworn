@@ -41,6 +41,10 @@
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
 
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
+  --widget-stroke-width: 1;
+
+  --widget-fill-opacity-preview: 0.5;
+
   --ironsworn-border-radius-sm: 2px;
   --ironsworn-border-radius-md: 3px;
   --ironsworn-border-radius-lg: 5px;
@@ -653,50 +657,12 @@
     }
   }
 
-  // workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
-  .fa,
-  .fab,
-  .fad,
-  .fal,
-  .far,
-  .fas {
-    -moz-osx-font-smoothing: inherit;
-    speak: inherit;
-    font-style: inherit;
-    font-variant: inherit;
-    text-rendering: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    &:before {
-      speak: never;
-      -moz-osx-font-smoothing: grayscale;
-      font-style: normal;
-      font-variant: normal;
-      text-rendering: auto;
-      line-height: 1;
-    }
-  }
-
-  .fa,
-  .far,
-  .fas {
-    &:before {
-      font-family: 'Font Awesome 6 Pro', 'Font Awesome 5 Free';
-    }
-  }
-
-  .fa,
-  .fas {
-    &:before {
-      font-weight: 900;
-    }
-  }
+  // importing within this selector to ensure higher specificity
   @import 'assets.less';
   @import 'chat-message.less';
   @import 'clickable.less';
   @import 'inputs.less';
   @import 'ironsworn-icons.less';
   @import 'tables.less';
+  @import 'icons.less';
 }
