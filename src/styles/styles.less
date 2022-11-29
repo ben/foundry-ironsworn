@@ -8,7 +8,8 @@
   outline: none;
   border-radius: var(--ironsworn-border-radius-md);
   background: hsl(0, 0%, 27%);
-  border: 1px solid hsl(0, 0%, 13%);
+  border: var(--ironsworn-border-width-md) solid
+    var(--ironsworn-color-border-muted);
 }
 :root {
   --ironsworn-transition-duration: 0.5s;
@@ -102,7 +103,7 @@
       background: var(--ironsworn-color-bg);
       color: var(--ironsworn-color-fg);
       height: 100%;
-      padding: 5px;
+      padding: var(--ironsworn-spacer-md);
       scrollbar-width: thin;
     }
     button {
@@ -120,8 +121,8 @@
       &:first-child {
         border-top-width: 0;
       }
-      margin: 5px;
-      padding-top: 7px;
+      margin: var(--ironsworn-spacer-md);
+      padding-top: var(--ironsworn-spacer-xl);
     }
     hr {
       width: 100%;
@@ -172,10 +173,13 @@
       list-style: none;
       margin: 0;
       padding: 0;
+      li {
+        border-color: var(--ironsworn-color-border);
+      }
 
       & > h2 {
         text-align: center;
-        border-width: 1px 0;
+        border-width: var(--ironsworn-border-md) 0;
       }
     }
   }
@@ -203,28 +207,30 @@
     .stack-row {
       // FIXME refactor as component and encapsulate the relevant css there
       flex: 0 0 auto;
-      min-width: 50px;
-      border: 1px solid;
+      min-width: var(--ironsworn-vertical-slider-width);
+      border: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-border-color);
       border-top: none;
       text-align: center;
-      line-height: 28px;
+      line-height: var(--ironsworn-clickable-line-height);
       position: relative;
-      z-index: 1;
+      z-index: auto;
       padding: 0;
       &:hover,
       &.hover,
       &.selected,
       &[aria-selected='true'] {
-        z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
+        z-index: var(
+          --ironsworn-z-index-high
+        ); // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
       }
       &:first-child {
-        border-top: 1px solid;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        border-top-left-radius: var(--ironsworn-border-radius-lg);
+        border-top-right-radius: var(--ironsworn-border-radius-lg);
       }
       &:last-child {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: var(--ironsworn-border-radius-lg);
+        border-bottom-right-radius: var(--ironsworn-border-radius-lg);
       }
 
       input[type='radio'] {
@@ -246,7 +252,7 @@
 
       h3 {
         margin: 0;
-        margin-bottom: 5px;
+        margin-bottom: var(--ironsworn-spacer-md);
         font-weight: bold;
         font-size: 22px;
       }
@@ -258,7 +264,7 @@
 
       input {
         width: 50%;
-        margin-bottom: 5px;
+        margin-bottom: var(--ironsworn-spacer-md);
         font-weight: bold;
         font-size: 18px;
         text-align: center;
@@ -269,7 +275,8 @@
       flex: 0 0 30px;
       justify-items: center;
       align-items: center;
-      border: 1px solid;
+      border: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-border-color);
       transition: var(--std-animation);
     }
   }
@@ -279,17 +286,18 @@
     h3,
     h4,
     h5 {
-      margin: 3px 0;
+      margin: var(--ironsworn-spacer-sm) 0;
       border: none;
     }
   }
 
   .boxgroup {
-    border: 1px solid;
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-border-color);
     border-radius: var(--ironsworn-border-radius-lg);
 
     .boxrow {
-      border-top: 1px solid;
+      border-top: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-border-color);
       &:first-child {
         border-top: none;
       }
@@ -305,7 +313,8 @@
       display: flex;
       text-align: center;
       justify-content: center;
-      border-left: 1px solid;
+      border-left: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-border-color);
       &:first-child {
         border-left: none;
       }
@@ -313,9 +322,9 @@
   }
 
   .inset {
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid;
+    margin: var(--ironsworn-spacer-md);
+    padding: var(--ironsworn-spacer-md);
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-border-color);
     border-radius: var(--ironsworn-border-radius-md);
   }
 
@@ -325,29 +334,30 @@
   }
 
   .item-row {
-    border: 1px solid;
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-border-color);
     border-radius: var(--ironsworn-border-radius-sm);
-    padding: 3px;
-    margin: 3px 0;
+    padding: var(--ironsworn-spacer-sm);
+    margin: var(--ironsworn-spacer-sm) 0;
 
     .item-row-control {
       flex-grow: 0;
-      padding: 5px;
+      padding: var(--ironsworn-spacer-md);
     }
   }
 
   .progresses {
     .item {
-      border: 1px solid;
+      border: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-color-border);
       border-radius: var(--ironsworn-border-radius-md);
-      padding: 5px;
-      margin: 5px;
+      padding: var(--ironsworn-spacer-md);
+      margin: var(--ironsworn-spacer-md);
     }
   }
 
   .progress-button {
     i {
-      padding: 3px;
+      padding: var(--ironsworn-spacer-sm);
       width: 22px;
       text-align: center;
     }
@@ -362,7 +372,7 @@
 
     input {
       width: 100px;
-      height: 28px;
+      height: var(--ironsworn-clickable-line-height);
     }
   }
   &.sheet {
@@ -392,19 +402,19 @@
   /* Items List */
   .item-list {
     list-style: none;
-    margin: 7px 0;
+    margin: var(--ironsworn-spacer-xl) 0;
     padding: 0;
-    // overflow-y: auto;
 
     .item {
       height: 30px;
       line-height: 24px;
-      padding: 3px 0;
-      border-bottom: 1px solid;
+      padding: var(--ironsworn-spacer-sm) 0;
+      border-bottom: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-border-color);
 
       img {
         flex: 0 0 24px;
-        margin-right: 5px;
+        margin-right: var(--ironsworn-spacer-md);
       }
     }
 
@@ -419,9 +429,9 @@
 
   .progress {
     flex: 1;
-    border: 1px solid;
-    padding: 5px;
-    margin: 2px;
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-border-color);
+    padding: var(--ironsworn-spacer-md);
+    margin: var(--ironsworn-spacer-xs);
     text-align: center;
   }
 
@@ -435,8 +445,8 @@
 
   .move-title {
     text-align: center;
-    border: 1px solid;
-    margin-bottom: 5px;
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-border-color);
+    margin-bottom: var(--ironsworn-spacer-md);
     font-weight: bold;
     line-height: 30px;
     font-variant: all-small-caps;
