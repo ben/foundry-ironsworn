@@ -1,5 +1,3 @@
-// oracle table results
-
 .chat-message {
   border: var(--ironsworn-border-md) solid var(--ironsworn-color-border);
   color: var(--ironsworn-color-fg);
@@ -180,6 +178,7 @@
       }
     }
 
+    // oracle table results.
     table {
       &.oracle-table-partial {
         margin: 2px 0;
@@ -189,6 +188,8 @@
           &[aria-selected='true'] {
             background-color: var(--ironsworn-color-bg-highlight);
             color: var(--ironsworn-color-fg-highlight);
+            box-shadow: 0 0 40px -10px var(--ironsworn-color-accent) inset;
+            border-left: 2px solid var(--ironsworn-color-accent-alt);
           }
         }
         .oracle-result-row {
