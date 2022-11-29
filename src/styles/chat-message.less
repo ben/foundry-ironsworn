@@ -1,5 +1,5 @@
 .chat-message {
-  border: var(--ironsworn-border-md) solid var(--ironsworn-color-border);
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-bg);
 
@@ -19,13 +19,6 @@
       font-variant: all-small-caps;
     }
 
-    [class*=' isiconbg-'],
-    [class^='isiconbg-'] {
-      &:before {
-        background-color: var(--ironsworn-color-bg-alt);
-      }
-    }
-
     @dice-glow-offset: 0px 0px 5px;
 
     .roll {
@@ -37,13 +30,14 @@
       background-size: 24px 24px;
       font-weight: bold;
       text-align: center;
+      --dice-background-color: var(--ironsworn-color-bg-highlight);
 
       &.d4 {
         background-image: url('../../icons/svg/d4-grey.svg');
       }
 
       &.d6:before {
-        background-color: var(--ironsworn-color-bg-alt);
+        background-color: var(--dice-background-color);
         mask-image: url('/assets/icons/d6-blank.svg');
         content: '';
       }
@@ -53,7 +47,7 @@
       }
 
       &.d10:before {
-        background-color: var(--ironsworn-color-bg-alt);
+        background-color: var(--dice-background-color);
         mask-image: url('/assets/icons/d10-blank.svg');
         content: '';
       }
@@ -165,7 +159,6 @@
     .dice-formula,
     .dice-total {
       background: var(--ironsworn-dark-overlay);
-      // color: @text-light-color;
       border-width: 0px;
       padding: 5px 0px 5px 0px;
       .die {

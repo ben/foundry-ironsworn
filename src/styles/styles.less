@@ -125,7 +125,7 @@
         border-top-width: 0;
       }
       margin: var(--ironsworn-spacer-md);
-      padding-top: var(--ironsworn-spacer-xl);
+      padding-top: var(--ironsworn-spacer-lg);
     }
     hr {
       width: 100%;
@@ -168,7 +168,7 @@
   }
   .item-list {
     list-style: none;
-    margin: var(--ironsworn-spacer-xl) 0;
+    margin: var(--ironsworn-spacer-lg) 0;
     padding: 0;
     flex: 1 0 100px;
     overflow-y: scroll;
@@ -207,7 +207,7 @@
 
       & > h2 {
         text-align: center;
-        border-width: var(--ironsworn-border-md) 0;
+        border-width: var(--ironsworn-border-width-md) 0;
       }
     }
   }
@@ -364,6 +364,18 @@
 
   .movesheet-row.highlighted {
     background-color: var(--ironsworn-color-bg-highlight);
+  }
+
+  .dice-roll {
+    .dice-formula,
+    .dice-total {
+      background: var(--ironsworn-color-bg-alt);
+      border-width: var(--ironsworn-border-width-md);
+      border-style: solid;
+      border-color: var(--ironsworn-color-border);
+      border-radius: var(--ironsworn-border-radius-md);
+      box-shadow: 0 0 2px var(--ironsworn-color-accent) inset;
+    }
   }
 
   // importing within this selector to ensure higher specificity
