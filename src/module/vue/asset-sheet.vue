@@ -55,7 +55,6 @@ h3 {
 import { computed, inject, provide, Ref } from 'vue'
 import SheetHeader from './sheet-header.vue'
 import DocumentName from './components/document-name.vue'
-
 import Tabs from './components/tabs/tabs.vue'
 import Tab from './components/tabs/tab.vue'
 import AssetEditDescription from './components/asset/asset-edit-description.vue'
