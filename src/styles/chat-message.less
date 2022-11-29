@@ -1,9 +1,16 @@
 // oracle table results
 
 .chat-message {
-  border: 1px solid var(--ironsworn-color-border);
+  border: var(--ironsworn-border-md) solid var(--ironsworn-color-border);
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-bg);
+
+  .ironsworn-roll {
+    .dice-formula,
+    .dice-total {
+      background-color: var(--ironsworn-color-bg);
+    }
+  }
   .ironsworn-roll {
     h3,
     button {
