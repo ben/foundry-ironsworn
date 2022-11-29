@@ -1,0 +1,44 @@
+.roll-graphic {
+  @graphic-gap: 0.25rem;
+  &.dice-formula {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: auto;
+    gap: @graphic-gap;
+    justify-content: center;
+    margin: 0;
+    padding: @graphic-gap;
+    * {
+      margin: 0;
+    }
+    .die {
+      flex-grow: 0;
+      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+      .textStrokeMixin();
+    }
+    .indeterminate-value {
+      color: var(--ironsworn-color-fg-muted);
+    }
+    .action-score-capped {
+      text-decoration: dotted underline;
+    }
+    .score {
+      font-weight: bold;
+      border: 2px solid var(--ironsworn-color-border);
+      border-radius: 50%;
+      height: 24px;
+      width: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .challenge-dice {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 0;
+      gap: (@graphic-gap / 2);
+      .challenge-die {
+      }
+    }
+  }
+}

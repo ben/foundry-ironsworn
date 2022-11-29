@@ -3,10 +3,12 @@
 @import '../fvtt/vars.less';
 
 .system-foundry-ironsworn.theme-starforged {
+  // restyle FVTT's UI
   @import '../fvtt/app.less';
   @import '../fvtt/clickable.less';
   @import '../fvtt/sidebar.less';
   @import '../fvtt/inputs.less';
+  // TODO: finish slider.less
 
   --font-primary: 'Carrois Gothic SC', sans-serif;
   @themeLightHue: 185;
@@ -15,8 +17,6 @@
   @themeDarkHue: @themeLightHue;
   @themeDarkSaturation: 0%;
   @themeDarkLightness: 0%;
-
-  // muted fg + alt bg should meet WCAG contrast
 
   --ironsworn-color-light: hsl(
     @themeLightHue,
@@ -115,88 +115,19 @@
   --ironsworn-color-success-faded: hsl(290, 80%, 60%);
 
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
-  // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
 
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
 
+  // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
   .overrideVars();
 
   scrollbar-color: var(--ironsworn-color-border-muted)
     var(--ironsworn-color-bg-alt);
 
-  .app {
-    color: var(--ironsworn-color-fg);
-  }
-
   ::-webkit-scrollbar-thumb {
     background: var(--ironsworn-color-bg-alt);
     border-color: var(--ironsworn-color-border-muted);
-  }
-
-  .window-app,
-  .journal-entry .journal-entry-content {
-    background: initial;
-    background-color: var(--ironsworn-color-bg);
-    border-width: 1px;
-    border-style: solid;
-  }
-
-  color: var(--ironsworn-color-fg);
-  .dialog-buttons {
-    .dialog-button {
-      color: currentColor;
-    }
-  }
-
-  h2,
-  h3 {
-    color: var(--ironsworn-color-fg);
-  }
-
-  .inline-roll {
-    background: var(--ironsworn-color-bg-alt);
-    border-color: var(--ironsworn-color-border-muted);
-
-    &:hover {
-      text-shadow: 0 0 8px var(--ironsworn-color-fg-highlight);
-    }
-  }
-
-  .sheet-area {
-    border-color: var(--ironsworn-color-border-muted);
-  }
-  svg {
-    color: var(--ironsworn-color-fg);
-  }
-  .clickable:not(svg):not(.svg) {
-    &.hover,
-    &:hover,
-    &:focus {
-      &.block {
-        .textStrokeMixin();
-      }
-      &.text:not(.block) {
-        box-shadow: none;
-        &:hover {
-          box-shadow: none;
-        }
-      }
-    }
-    &.selected,
-    &[aria-selected='true'] {
-      &.block {
-        .textStrokeMixin();
-      }
-    }
-  }
-
-  .drag-highlight {
-    background: var(--ironsworn-color-bg-highlight);
-  }
-
-  .movesheet-row.highlighted {
-    background-color: var(--ironsworn-color-bg-highlight);
   }
 
   .asset-ironsworn .asset-ability:before {
@@ -207,45 +138,5 @@
     background-color: var(--ironsworn-color-fg);
     border-width: 1px;
     border-style: solid;
-  }
-
-  table {
-    border-color: var(--ironsworn-color-border-muted);
-  }
-
-  .chat-message {
-    color: var(--ironsworn-color-fg);
-    background: var(--ironsworn-color-bg);
-    button {
-      border: none;
-    }
-    .dice-formula,
-    .dice-total {
-      background: var(--ironsworn-dark-overlay);
-      // color: @text-light-color;
-      border-width: 0px;
-      padding: 5px 0px 5px 0px;
-      .die {
-        &.min {
-          color: var(--ironsworn-color-fg);
-        }
-        &.max {
-          color: var(--ironsworn-color-fg);
-        }
-      }
-    }
-
-    table tr {
-      &.selected,
-      &[aria-selected='true'] {
-        background-color: var(--ironsworn-color-bg-highlight);
-        color: var(--ironsworn-color-fg-highlight);
-
-        .entity-link,
-        .content-link {
-          color: var(--ironsworn-color-fg-highlight);
-        }
-      }
-    }
   }
 }

@@ -94,6 +94,10 @@
 
 .system-foundry-ironsworn {
   .ironsworn {
+    .drag-highlight {
+      background: var(--ironsworn-color-bg-highlight);
+    }
+
     .window-content {
       background: var(--ironsworn-color-bg);
       color: var(--ironsworn-color-fg);
@@ -111,6 +115,7 @@
     }
 
     .sheet-area {
+      border-color: var(--ironsworn-color-border-muted);
       border-top-width: 2px;
       &:first-child {
         border-top-width: 0;
@@ -174,7 +179,14 @@
       }
     }
   }
+  .inline-roll {
+    background: var(--ironsworn-color-bg-alt);
+    border-color: var(--ironsworn-color-border-muted);
 
+    &:hover {
+      text-shadow: 0 0 8px var(--ironsworn-color-fg-highlight);
+    }
+  }
   .vertical {
     writing-mode: vertical-lr;
     border: none;
@@ -440,195 +452,10 @@
     }
   }
 
-  .ironsworn-roll {
-    h3,
-    button {
-      .initial-caps();
-    }
-    .hit-type {
-      font-weight: bold;
-      font-variant: all-small-caps;
-    }
-
-    [class*=' isiconbg-'],
-    [class^='isiconbg-'] {
-      &:before {
-        background-color: var(--ironsworn-color-bg-alt);
-      }
-    }
-
-    @dice-glow-offset: 0px 0px 5px;
-
-    .roll {
-      width: 24px;
-      line-height: 24px;
-      display: inline-block;
-      margin-right: 1px;
-      background-repeat: no-repeat;
-      background-size: 24px 24px;
-      font-weight: bold;
-      text-align: center;
-
-      &.d4 {
-        background-image: url('../../icons/svg/d4-grey.svg');
-      }
-
-      &.d6:before {
-        background-color: var(--ironsworn-color-bg-alt);
-        mask-image: url('/assets/icons/d6-blank.svg');
-        content: '';
-      }
-
-      &.d8 {
-        background-image: url('../../icons/svg/d8-grey.svg');
-      }
-
-      &.d10:before {
-        background-color: var(--ironsworn-color-bg-alt);
-        mask-image: url('/assets/icons/d10-blank.svg');
-        content: '';
-      }
-
-      &.d12 {
-        background-image: url('../../icons/svg/d12-grey.svg');
-      }
-
-      &.d20 {
-        background-image: url('../../icons/svg/d20-grey.svg');
-      }
-
-      &.min:not(.challenge),
-      &.challenge.max {
-        color: var(--ironsworn-color-danger) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-danger-faded)
-        );
-      }
-
-      &.max:not(.challenge),
-      &.challenge.min {
-        color: var(--ironsworn-color-success) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-success-faded)
-        );
-      }
-
-      &.canceled {
-        color: var(--ironsworn-color-warning) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-warning-faded)
-        ) !important;
-      }
-    }
-
-    del .roll {
-      text-decoration: line-through;
-      color: var(--ironsworn-color-warning) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-warning-faded)
-      ) !important;
-    }
+  .movesheet-row.highlighted {
+    background-color: var(--ironsworn-color-bg-highlight);
   }
 
-  .bonus-content .dice-formula {
-    word-break: normal;
-  }
-
-  // roll-graphic.hbs
-
-  @graphic-gap: 0.25rem;
-
-  .ironsworn-roll {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .roll-graphic.dice-formula {
-    display: flex;
-    flex-flow: row nowrap;
-    flex: auto;
-    gap: @graphic-gap;
-    justify-content: center;
-    margin: 0;
-    padding: @graphic-gap;
-    * {
-      margin: 0;
-    }
-
-    .die {
-      flex-grow: 0;
-      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-      .textStrokeMixin();
-    }
-    .indeterminate-value {
-      color: var(--ironsworn-color-fg-muted);
-    }
-    .action-score-capped {
-      text-decoration: dotted underline;
-    }
-    .score {
-      font-weight: bold;
-      border: 2px solid var(--ironsworn-color-border);
-      border-radius: 50%;
-      height: 24px;
-      width: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .challenge-dice {
-      display: flex;
-      flex-direction: row;
-      flex-grow: 0;
-      gap: (@graphic-gap / 2);
-      .challenge-die {
-      }
-    }
-  }
-
-  .outcome-shortcuts {
-    display: contents;
-  }
-  .roll-outcome {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    gap: 0.25rem;
-    margin-bottom: 0.25rem;
-    * {
-      margin: 0;
-    }
-
-    .outcome-label {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: larger;
-      span {
-        display: inline;
-        white-space: nowrap;
-      }
-      .outcome-text {
-        font-weight: bold;
-      }
-    }
-
-    .preroll-dialog {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      .form-group {
-        padding: 0;
-        border: none;
-      }
-      .advanced-roll-options {
-        padding: var(--ironsworn-spacer-md);
-        margin: var(--ironsworn-spacer-md) 0;
-        border-width: var(--ironsworn-border-width-md);
-      }
-      .advanced-roll-options-toggle {
-      }
-    }
-  }
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
   @import 'chat-message.less';
@@ -644,7 +471,6 @@
   button {
     &.icon-button {
       &:empty {
-        // text-shadow: none !important;
         &:focus {
           box-shadow: none !important;
         }
@@ -654,7 +480,6 @@
     &:not(.block) {
       box-shadow: none !important;
       &.text {
-        // text-shadow: none !important;
       }
     }
   }
