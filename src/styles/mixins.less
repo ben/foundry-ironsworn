@@ -153,10 +153,11 @@
 .blockHoverMixin(@blockSize:20px) {
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-hover);
-  background-color: var(--ironsworn-color-clickable-block-bg);
+  background-color: var(--ironsworn-color-clickable-block-bg-hover);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
+
   // .textStrokeMixin();
-  .overlayGlowMixin(@blockSize);
+  // .overlayGlowMixin(@blockSize);
   z-index: var(--ironsworn-z-index-high);
 }
 
@@ -176,12 +177,11 @@
   z-index: var(--ironsworn-z-index-high);
 }
 // For the block's 'default' state.
-.blockMixin(@borderWidth:0px,@blockSize:20px,@borderRadius:0px) {
+.blockMixin(@blockSize:20px,@borderRadius:0px) {
   .interactiveMixin();
   outline: none;
   box-shadow: none;
   overflow-y: visible;
-  border-width: @borderWidth;
   border-color: var(--ironsworn-color-clickable-block-border);
   border-style: solid;
   border-radius: @borderRadius;
@@ -233,8 +233,8 @@
   }
 }
 
-.clickableBlockMixin(@borderWidth:0px,@blockSize:20px,@borderRadius:0px) {
-  .blockMixin(@borderWidth,@blockSize,@borderRadius);
+.clickableBlockMixin(@blockSize:20px,@borderRadius:0px) {
+  .blockMixin(@blockSize,@borderRadius);
   &:hover,
   &.hover {
     .blockHoverMixin(@blockSize);
