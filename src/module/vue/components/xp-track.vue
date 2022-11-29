@@ -1,7 +1,7 @@
 <template>
   <article class="flexrow xp-track nogrow">
     <button
-      class="clickable block xp-box"
+      class="xp-box"
       type="button"
       v-for="(box, i) in computedBoxes"
       :key="box.key"
@@ -12,11 +12,14 @@
     />
   </article>
 </template>
-<style lang="less">
+<style lang="less" scoped>
+@import '../../../styles/mixins.less';
 .xp-track {
   .xp-box {
     aspect-ratio: 1;
     max-width: 20px;
+    .clickableBlockMixin();
+    border-radius: 3px;
   }
 }
 </style>
