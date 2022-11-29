@@ -64,11 +64,6 @@ body.theme-starforged {
 
   --ironsworn-color-input-bg: var(--ironsworn-light-overlay);
 
-  --ironsworn-color-thematic: hsl(@themeLightHue, 75%, 27%);
-  // decomposed HSL color components, for use in interpolating colors from vanilla CSS variables.
-  --ironsworn-color-thematic-HSL: @themeLightHue, 75%, 27%;
-  --ironsworn-color-thematic-HS: @themeLightHue, 75%;
-
   --ironsworn-color-text-outline: $--ironsworn-color-dark;
 
   // --ironsworn-color-input-bg: ;
@@ -180,7 +175,7 @@ body.theme-starforged {
     &:hover,
     &:focus {
       &.block {
-        .fake-stroke();
+        .textStrokeMixin();
       }
       &.text:not(.block) {
         box-shadow: none;
@@ -189,7 +184,7 @@ body.theme-starforged {
     &.selected,
     &[aria-selected='true'] {
       &.block {
-        .fake-stroke();
+        .textStrokeMixin();
       }
     }
   }

@@ -130,7 +130,7 @@
     color: var(--ironsworn-color-clickable-text-hover);
   }
 
-  .fake-stroke();
+  .textStrokeMixin();
   // .wrapper[aria-expanded='false'] & {
   // }
 

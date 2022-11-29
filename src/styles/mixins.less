@@ -1,32 +1,280 @@
 // typography mixins
-
+// until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
+// yes, i am bitter, because even safari has supported it for ~4 years at this point :)
+// in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
+// if you wanted this + a soft shadow, see textHoverMixin for an example of how to mix the two.
+// generated with owumaro.github.io/text-stroke-generator/
+.textStrokeMixin(@color: var(--ironsworn-color-text-outline)) {
+  text-shadow: 1px 0px 0px @color, 0.540302px 0.841471px 0px @color,
+    -0.416147px 0.909297px 0px @color, -0.989993px 0.14112px 0px @color,
+    -0.653644px -0.756803px 0px @color, 0.283662px -0.958924px 0px @color,
+    0.96017px -0.279416px 0px @color;
+}
 .initial-caps {
   &::first-letter {
     text-transform: uppercase;
   }
 }
 
-// until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
-// yes, i am bitter, because even safari has supported it for ~4 years at this point :)
-// in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
-// if you wanted this + a soft shadow, just append the other shadow with a separator.
-// generated with owumaro.github.io/text-stroke-generator/
-.fake-stroke {
-  text-shadow: 1px 0px 0px var(--ironsworn-color-text-outline),
-    0.540302px 0.841471px 0px var(--ironsworn-color-text-outline),
-    -0.416147px 0.909297px 0px var(--ironsworn-color-text-outline),
-    -0.989993px 0.14112px 0px var(--ironsworn-color-text-outline),
-    -0.653644px -0.756803px 0px var(--ironsworn-color-text-outline),
-    0.283662px -0.958924px 0px var(--ironsworn-color-text-outline),
-    0.96017px -0.279416px 0px var(--ironsworn-color-text-outline);
+// special effects
+
+// used to mark focused fields. a few FVTT buttons/tabs use it as a hover effect, too.
+.borderGlowExteriorMixin(@spread:10px) {
+  outline: none;
+  border-color: var(--color-border-highlight-alt);
+  border-bottom-color: var(--color-border-highlight);
+  box-shadow: 0 0 @spread var(--color-shadow-highlight);
+  // FIXME: adjust these specific transition properties to make gaining focus feel a bit snappier
 }
 
-.fake-stroke-filter {
-  filter: drop-shadow(1px 0px 0px var(--ironsworn-color-text-outline)),
-    drop-shadow(0.540302px 0.841471px 0px var(--ironsworn-color-text-outline)),
-    drop-shadow(-0.416147px 0.909297px 0px var(--ironsworn-color-text-outline)),
-    drop-shadow(-0.989993px 0.14112px 0px var(--ironsworn-color-text-outline)),
-    drop-shadow(-0.653644px -0.756803px 0px var(--ironsworn-color-text-outline)),
-    drop-shadow(0.283662px -0.958924px 0px var(--ironsworn-color-text-outline)),
-    drop-shadow(0.96017px -0.279416px 0px var(--ironsworn-color-text-outline));
+// used inside block/tab like elements. it's inset so that both the focus effect and the hover effect can be visible at once.
+.borderGlowInteriorMixin(@spread:5px,@blur:0,@color:var(--color-shadow-primary)) {
+  box-shadow: inset 0 0 @spread @blur @color;
+}
+
+.borderGlowInteriorMixinStrong(@spread:10px,@blur:0,@color:var(--color-shadow-primary)) {
+  box-shadow: inset 0 0 @spread @blur @color, inset 0 0 @spread @blur @color;
+}
+
+.textGlowMixin(@color:var(--ironsworn-color-fg-highlight),@spread:10px) {
+  text-shadow: 0 0 @spread @color;
+}
+
+// used for e.g. hover effects. resembles a transparent overlay (with a subtle gradient) without having to do any interpolation or set additional variables.
+.overlayGlowMixin(@blockSize:20px, @color:var(--ironsworn-color-clickable-block-bg-selected)) {
+  .borderGlowInteriorMixin(calc(@blockSize / 2),0,@color);
+}
+
+.svgWidgetMixin() {
+  stroke: var(--ironsworn-color-border);
+  fill: var(--ironsworn-color-clickable-block-bg-selected);
+}
+
+.borderFloatingMixin {
+  border-style: outset;
+  border-color: var(--ironsworn-color-border);
+}
+
+.tabBaseMixin(@glowSpread: 5px, @glowBlur: 1px,@borderWidth: var(--ironsworn-border-width-md)) {
+  border-width: @borderWidth;
+  &:hover {
+    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
+    border-color: var(--ironsworn-color-fg-muted);
+  }
+  &[aria-selected='true'],
+  &.active {
+    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--color-shadow-primary));
+    border-color: var(--color-border-highlight-alt);
+  }
+}
+
+.tabTopMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
+  .tabBaseMixin();
+  border-top-right-radius: @borderRadius;
+  border-top-left-radius: @borderRadius;
+  border-bottom-width: 0px;
+}
+.tabBottomMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
+  .tabBaseMixin();
+  border-bottom-right-radius: @borderRadius;
+  border-bottom-left-radius: @borderRadius;
+  border-top-width: 0px;
+}
+.tabLeftMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
+  .tabBaseMixin();
+  border-top-left-radius: @borderRadius;
+  border-bottom-left-radius: @borderRadius;
+  border-right-width: 0px;
+}
+.tabRightMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
+  .tabBaseMixin();
+  border-top-right-radius: @borderRadius;
+  border-bottom-right-radius: @borderRadius;
+  border-left-width: 0px;
+}
+
+.borderMixin(@color:var(--ironsworn-color-border),@width:var(--ironsworn-border-width-md)) {
+  color: @color;
+  border-style: solid;
+  border-width: @width;
+}
+
+// CLICKABLE MIXINS
+
+.interactiveMixin {
+  transition: var(--std-animation);
+  cursor: pointer;
+  &.disabled, // FIXME: ditch this class, its redundant with more semantic options
+    &:disabled,
+    &[aria-disabled="true"] {
+    color: inherit;
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.35;
+  }
+}
+
+.textHoverMixin {
+  color: var(--ironsworn-color-clickable-text-hover);
+  .textStrokeMixin();
+  text-shadow: .textStrokeMixin() [text-shadow],
+    0 0 2px 0 var(--color-shadow-highlight);
+}
+.textFocusMixin {
+  .textStrokeMixin();
+  color: var(--ironsworn-color-clickable-text-focus);
+}
+
+.textActiveMixin {
+  .textStrokeMixin();
+  color: var(--ironsworn-color-clickable-text-selected);
+  background-color: var(--ironsworn-color-fg-overlay-weak);
+}
+
+.clickableTextMixin {
+  .interactiveMixin();
+  background: transparent;
+  color: var(--ironsworn-color-clickable-text);
+  &[aria-selected='true'],
+  &.selected,
+  &.active {
+    .textActiveMixin();
+  }
+  &:hover,
+  &.hover {
+    .textHoverMixin();
+  }
+  &:focus,
+  &:focus-within {
+    .textFocusMixin();
+  }
+}
+
+.blockHoverMixin(@blockSize:20px) {
+  outline: none;
+  color: var(--ironsworn-color-clickable-block-fg-hover);
+  background-color: var(--ironsworn-color-clickable-block-bg);
+  border-color: var(--ironsworn-color-clickable-block-border-hover);
+  // .textStrokeMixin();
+  .overlayGlowMixin(@blockSize);
+  z-index: var(--ironsworn-z-index-high);
+}
+
+.blockFocusMixin {
+  outline: none;
+  .textStrokeMixin();
+  .borderGlowExteriorMixin();
+  z-index: var(--ironsworn-z-index-high);
+}
+
+.blockActiveMixin {
+  .textStrokeMixin();
+  outline: none;
+  color: var(--ironsworn-color-clickable-block-fg-selected);
+  background-color: var(--ironsworn-color-clickable-block-bg-selected);
+  border-color: var(--ironsworn-color-clickable-block-border-selected);
+  z-index: var(--ironsworn-z-index-high);
+}
+// For the block's 'default' state.
+.blockMixin(@borderWidth:0px,@blockSize:20px,@borderRadius:0px) {
+  .interactiveMixin();
+  outline: none;
+  box-shadow: none;
+  overflow-y: visible;
+  border-width: @borderWidth;
+  border-color: var(--ironsworn-color-clickable-block-border);
+  border-style: solid;
+  border-radius: @borderRadius;
+  color: var(--ironsworn-color-clickable-block-fg);
+  background-color: var(--ironsworn-color-clickable-block-bg);
+}
+
+.iconButtonBaseMixin {
+  display: flex;
+  align-items: center;
+  flex-flow: row nowrap;
+  align-content: center;
+  text-align: center;
+  justify-content: center;
+  padding: var(--ironsworn-spacer-xs);
+  &:not(:empty) {
+    gap: var(--ironsworn-spacer-xs);
+  }
+  &:empty {
+    // restricts width + removes border if there's no text
+    border: none !important;
+    flex-grow: 0;
+    line-height: 1;
+    height: max-content;
+    width: max-content;
+  }
+  &:before {
+    line-height: 1;
+    height: 1em;
+    width: 1em;
+  }
+  // override to compensate for chrome user agent stylesheet bug: https://bugs.chromium.org/p/chromium/issues/detail?id=681917
+  .button-text {
+    // makes this seamless with existing buttons that don't need this styling
+    display: inline;
+    strong {
+      white-space: nowrap;
+    }
+  }
+  &.vertical {
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+    flex-direction: column;
+    .button-text {
+      line-height: inherit;
+      display: inherit;
+      // writing-mode: vertical-lr !important;
+      writing-mode: inherit;
+    }
+  }
+}
+
+.clickableBlockMixin(@borderWidth:0px,@blockSize:20px,@borderRadius:0px) {
+  .blockMixin(@borderWidth,@blockSize,@borderRadius);
+  &:hover,
+  &.hover {
+    .blockHoverMixin(@blockSize);
+  }
+  &:focus,
+  &:focus-within {
+    .blockFocusMixin();
+  }
+  &[aria-selected='true'],
+  &.selected,
+  &.active {
+    .blockActiveMixin();
+  }
+}
+
+// input mixins
+
+.inputFieldFocusMixin(@spread: 7px) {
+  color: var(--ironsworn-color-fg-highlight);
+  .borderGlowExteriorMixin(@spread);
+}
+
+.inputFieldMixin(@spread:4px) {
+  border: var(--ironsworn-border-width-md) inset
+    var(--ironsworn-color-border-muted);
+  color: var(--ironsworn-color-fg);
+  background: var(--ironsworn-color-input-bg);
+  transition: var(--std-animation);
+
+  border-radius: var(--ironsworn-border-radius-md);
+  &::placeholder {
+    color: var(--ironsworn-color-fg);
+    opacity: 0.5;
+  }
+  &:hover {
+    border-color: var(--ironsworn-color-clickable-block-border);
+    .borderGlowInteriorMixin(@spread,0,var(--color-shadow-primary));
+  }
+  &:focus,
+  &:focus-within {
+    .inputFieldFocusMixin();
+  }
 }

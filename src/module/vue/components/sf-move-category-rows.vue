@@ -72,7 +72,7 @@
   }
 }
 .toggleButton {
-  .fake-stroke();
+  .textStrokeMixin();
 }
 </style>
 <script setup lang="ts">

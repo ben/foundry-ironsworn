@@ -1,0 +1,30 @@
+@import 'mixins.less';
+
+.prosemirror button,
+.tox .tox-tbtn--bespoke {
+  .clickableBlockMixin();
+}
+
+#controls ol.control-tools > li {
+  .clickableBlockMixin();
+  .borderFloatingMixin();
+  .active,
+  &:hover {
+    .borderGlowExteriorMixin();
+  }
+}
+
+.app:not(.ironsworn) button {
+  .clickableBlockMixin();
+  border-radius: var(--ironsworn-border-radius-md);
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+}
+
+form,
+#permissions-config {
+  .notes,
+  .hint {
+    color: var(--ironsworn-color-fg-muted);
+  }
+}

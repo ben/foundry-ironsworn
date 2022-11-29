@@ -1,0 +1,44 @@
+// styles for FVTT's sidebar
+
+@import 'mixins.less';
+#sidebar {
+  #sidebar-tabs {
+    .item {
+      .clickableTextMixin();
+      .tabTopMixin();
+      margin: 0;
+      color: var(--ironsworn-color-clickable-block-fg);
+      border-color: transparent;
+    }
+    .collapse {
+      .clickableBlockMixin();
+    }
+  }
+  .directory {
+    .directory-item {
+      .document-name {
+        --boxGlowSize: calc(
+          (var(--sidebar-item-height) + var(--sidebar-width)) / 4
+        );
+        cursor: pointer;
+        .clickableBlockMixin(0px,var(--boxGlowSize));
+        margin: 0;
+        padding-left: 8px;
+      }
+    }
+  }
+  // CHAT TAB
+  #chat {
+    #chat-log {
+      // for chat *messages*, see chat-messages.less
+    }
+    #chat-controls {
+      .roll-type-select {
+        background-color: var(--ironsworn-color-light-overlay);
+      }
+    }
+    textarea#chat-message {
+      .inputFieldMixin();
+    }
+  }
+}
