@@ -73,6 +73,7 @@ const hasDefaultSlot = computed(() => {
 .icon-button {
   .button-text {
     // makes this seamless with existing buttons that don't need this styling
+    border-width: 0px;
     display: inline;
     strong {
       white-space: nowrap;
