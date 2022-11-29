@@ -7,7 +7,7 @@
 }
 ::-webkit-scrollbar-thumb {
   outline: none;
-  border-radius: 3px;
+  border-radius: var(--ironsworn-border-radius-md);
   background: hsl(0, 0%, 27%);
   border: 1px solid hsl(0, 0%, 13%);
 }
@@ -101,14 +101,7 @@
     font-family: inherit;
   }
 
-  button
-  // &.dialog .dialog-buttons button,
-  // &.dialog .dialog-buttons button.default
-  {
-    &:not(.bordered) {
-      border: unset;
-    }
-
+  button {
     transition: var(--std-animation);
     border-radius: unset;
     width: unset;
@@ -253,8 +246,8 @@
 
     .stat {
       flex: 0 0 75px;
-      border: 1px solid;
-      border-radius: 5px;
+      border-width: var(--ironsworn-border-width-md);
+      border-radius: var(--ironsworn-border-radius-lg);
       text-align: center;
       padding: 0.5rem 0;
 
@@ -300,7 +293,7 @@
 
   .boxgroup {
     border: 1px solid;
-    border-radius: 5px;
+    border-radius: var(--ironsworn-border-radius-lg);
 
     .boxrow {
       border-top: 1px solid;
@@ -330,7 +323,7 @@
     margin: 5px;
     padding: 5px;
     border: 1px solid;
-    border-radius: 3px;
+    border-radius: var(--ironsworn-border-radius-md);
   }
 
   .remove-option {
@@ -340,7 +333,7 @@
 
   .item-row {
     border: 1px solid;
-    border-radius: 2px;
+    border-radius: var(--ironsworn-border-radius-sm);
     padding: 3px;
     margin: 3px 0;
 
@@ -353,7 +346,7 @@
   .progresses {
     .item {
       border: 1px solid;
-      border-radius: 3px;
+      border-radius: var(--ironsworn-border-radius-md);
       padding: 5px;
       margin: 5px;
     }
