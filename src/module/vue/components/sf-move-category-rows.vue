@@ -1,6 +1,7 @@
 <template>
   <Collapsible
     :class="$style.wrapper"
+    toggleButtonStyle="noBg"
     :toggleButtonClass="$style.toggleButton"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
@@ -34,10 +35,9 @@
 
 <style lang="less" module>
 @import '../../../styles/mixins.less';
-@import '../../../styles/mixins-text.less';
 
 .wrapper {
-  .thematicBgMixin(v-bind('category?.color'));
+  background-color: v-bind('category?.color');
   border-radius: var(--ironsworn-border-radius-lg);
 }
 
@@ -59,13 +59,14 @@
   border-radius: var(--ironsworn-border-radius-lg);
   button {
     color: var(--ironsworn-color-light);
+    .textStrokeMixin();
     &:hover {
       color: var(--ironsworn-color-clickable-text-hover);
+      .textStrokeMixin();
     }
   }
 }
 .toggleButton {
-  .textStrokeMixin();
 }
 </style>
 <script setup lang="ts">

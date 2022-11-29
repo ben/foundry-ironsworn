@@ -114,8 +114,8 @@
 
 <style lang="less" module>
 .themeColor {
-  --ironsworn-color-thematic: v-bind('asset?.system?.color');
-  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+  --ironsworn-color-clickable-block-bg-selected: v-bind('asset?.system?.color');
+  --ironsworn-color-bg-highlight: v-bind('asset?.system?.color');
 }
 </style>
 

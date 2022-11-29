@@ -31,12 +31,7 @@ const props = defineProps<{
   attr: string
   // FIXME: shared props, inherit them once Vue adds support in 3.3
   disabled?: boolean
-  buttonStyle?:
-    | 'iconOnly'
-    | 'iconHoverBlock'
-    | 'blockBorder'
-    | 'blockBorderless'
-    | 'text'
+  buttonStyle?: 'noBg' | 'block' | 'blockBorder'
   hoverBg?: boolean
 }>()
 

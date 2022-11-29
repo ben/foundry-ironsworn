@@ -18,9 +18,7 @@
 </template>
 
 <style lang="less" scoped>
-@import '../../../styles/clickable.less';
 @import '../../../styles/mixins.less';
-@import '../../../styles/mixins-text.less';
 .stat {
   @statBoxSize: 75px;
   .clickableBlockMixin(var(--ironsworn-border-width-md), @statBoxSize);

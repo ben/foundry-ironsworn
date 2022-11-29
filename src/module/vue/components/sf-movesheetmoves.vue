@@ -9,13 +9,15 @@
       />
       <BtnFaicon
         icon="times-circle"
-        class="nogrow clickable text"
+        buttonStyle="noBg"
+        class="nogrow"
         @click="clearSearch()"
         :class="$style.searchBtn"
       />
       <BtnFaicon
         icon="compress-alt"
-        class="nogrow clickable text"
+        buttonStyle="noBg"
+        class="nogrow"
         @click="collapseMoveCategories()"
         :class="$style.searchBtn"
       />
@@ -64,7 +66,6 @@
   gap: 0.5rem;
 }
 .itemList {
-  scrollbar-width: thin;
   // unfortunately scrollbar properties don't behave predictably across browsers and OSs; this eases some cramping on FF
   margin: 0 -3px 0 0 !important;
   padding-right: 3px !important;

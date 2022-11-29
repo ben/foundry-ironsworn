@@ -1,6 +1,7 @@
 <template>
   <Collapsible
     class="movesheet-row"
+    toggleButtonStyle="noBg"
     :class="$style.wrapper"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
@@ -8,7 +9,7 @@
     :toggleWrapperIs="`h${headingLevel}`"
     :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
     :noIcon="true"
-    :toggleButtonClass="['bordered', $style.toggleButton, toggleButtonClass]"
+    :toggleButtonClass="[$style.toggleButton, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
     :toggleLabel="move?.displayName"
@@ -22,18 +23,21 @@
       >
         <BtnRollmove
           :disabled="!canRoll"
-          class="juicy text"
+          class="juicy"
+          buttonStyle="noBg"
           :move="move"
           :class="$style.moveButton"
         />
         <BtnOracle
-          class="juicy text"
+          class="juicy"
+          buttonStyle="noBg"
           :node="data.oracles[0] ?? {}"
           :disabled="data.oracles.length !== 1"
           :class="$style.moveButton"
         />
         <BtnSendmovetochat
-          class="juicy text"
+          class="juicy"
+          buttonStyle="noBg"
           :move="move"
           :class="$style.moveButton"
         />
@@ -60,21 +64,12 @@
 
 <style lang="less" module>
 @import '../../../styles/mixins.less';
-@import '../../../styles/clickable.less';
-@import '../../../styles/mixins-text.less';
 
 @icon_size: 1.2em;
 @border_width: 2px;
 @border_radius: 5px;
 @wrapper_spacing: 4px;
 
-.thematicColorMixin {
-  --ironsworn-color-thematic: v-bind('thematicColor');
-  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
-  color: var(--ironsworn-color-light);
-  border-color: var(--ironsworn-color-thematic);
-  background-color: var(--ironsworn-color-thematic);
-}
 .cardColorsMixin {
   color: var(--ironsworn-color-fg);
   border-color: var(--ironsworn-color-thematic);
@@ -82,7 +77,10 @@
 }
 
 .wrapper {
-  .thematicColorMixin();
+  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+  color: var(--ironsworn-color-light);
+  border-color: v-bind('thematicColor');
+  background-color: v-bind('thematicColor');
   border-radius: @border_radius;
   padding-left: @wrapper_spacing;
   padding-right: @wrapper_spacing;
@@ -107,7 +105,6 @@
 
 .toggleButton {
   .clickableTextMixin();
-  .thematicColorMixin();
   .textStrokeMixin();
   display: flex;
   flex-direction: row;
@@ -118,6 +115,13 @@
   border-bottom-width: 0px;
   border-radius: @border_radius @border_radius 0 0;
   align-items: center;
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    box-shadow: none;
+
+    .textStrokeMixin();
+  }
   .wrapper[aria-expanded='true'] & {
     border-color: var(--ironsworn-color-border-highlight);
     color: var(--ironsworn-color-clickable-text-selected);

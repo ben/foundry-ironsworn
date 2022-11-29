@@ -8,7 +8,8 @@
       <BtnFaicon
         :icon="category.expanded ? 'caret-down' : 'caret-right'"
         :aria-controls="category.title"
-        class="juicy text"
+        buttonStyle="noBg"
+        class="juicy"
         @click="category.expanded = !category.expanded"
       >
         {{ category.title }}

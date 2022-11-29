@@ -16,7 +16,6 @@
   </article>
 </template>
 <style lang="less" module>
-@import '../../../styles/clickable.less';
 @import '../../../styles/mixins.less';
 
 @progress_box_gap: var(--ironsworn-spacer-md);

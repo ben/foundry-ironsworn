@@ -50,14 +50,12 @@
             style="justify-content: flex-end; margin-bottom: 0.25rem"
           >
             <BtnFaicon
-              class="block"
               v-if="item.system.hasTrack"
               icon="caret-left"
               @click="retreat"
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
             />
             <BtnFaicon
-              class="block"
               v-if="item.system.hasTrack"
               icon="caret-right"
               @click="advance"
@@ -136,7 +134,8 @@
 <style lang="less" module>
 button.danger {
   color: var(--ironsworn-color-danger);
-  border: 1px solid;
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
   border-radius: var(--ironsworn-border-radius-lg);
   border-color: var(--ironsworn-color-danger);
   transition: all ease 0.2s;

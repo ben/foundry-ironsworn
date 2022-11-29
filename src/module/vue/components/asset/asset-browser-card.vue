@@ -97,8 +97,8 @@
   justify-content: flex-start;
   margin: 10px 0;
   padding: 5px;
-  --ironsworn-color-thematic: v-bind('data.data.color');
-  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+  --ironsworn-color-clickable-block-bg-selected: v-bind('data.data.color');
+  --ironsworn-color-bg-highlight: v-bind('data.data.color');
 }
 </style>
 

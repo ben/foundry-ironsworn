@@ -20,12 +20,7 @@ import btnFaicon from './btn-faicon.vue'
 const props = defineProps<{
   // FIXME: shared props, inherit them once Vue adds support in 3.3
   disabled?: boolean
-  buttonStyle?:
-    | 'iconOnly'
-    | 'iconHoverBlock'
-    | 'blockBorder'
-    | 'blockBorderless'
-    | 'text'
+  buttonStyle?: 'noBg' | 'block' | 'blockBorder'
   hoverBg?: boolean
 }>()
 

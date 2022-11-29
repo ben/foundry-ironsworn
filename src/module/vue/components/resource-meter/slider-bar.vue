@@ -50,7 +50,6 @@
 
 <style lang="less" scoped>
 @import '../../../../styles/mixins.less';
-@import '../../../../styles/clickable.less';
 
 @segment_border_width: var(--ironsworn-border-width-md);
 @segment_border_radius: var(--ironsworn-border-radius-lg);

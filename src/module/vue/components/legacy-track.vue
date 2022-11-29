@@ -50,7 +50,6 @@
   </article>
 </template>
 <style lang="less" module>
-@import '../../../styles/clickable.less';
 @import '../../../styles/mixins.less';
 @xp_border_width: var(--ironsworn-border-width-md);
 
@@ -62,7 +61,7 @@
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;
   grid-template-columns: max-content 1fr;
-  .thematicHoverMixin(v-bind('getThematicColor'));
+  --ironsworn-color-clickable-block-bg-selected: v-bind(getThematicColor);
 }
 
 .title {
@@ -79,10 +78,6 @@
   grid-column: 2;
   align-items: center;
   justify-content: end;
-  // .icon-button {
-  //   aspect-ratio: 1;
-  //   height: 100%;
-  // }
 }
 
 .progressTrack {

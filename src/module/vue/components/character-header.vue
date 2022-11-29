@@ -16,7 +16,7 @@
   </SheetHeaderBasic>
 </template>
 <style lang="less">
-@import '../../../styles/clickable.less';
+@import '../../../styles/mixins.less';
 .xp-track-classic {
   flex-grow: 0;
   flex-direction: row;

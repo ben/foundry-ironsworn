@@ -26,12 +26,7 @@ const props = withDefaults(
     // FIXME: vue 3.3 will allow non-type-literal types. once that's possible, we can make this DRYer
     tooltip?: string
     disabled?: boolean
-    buttonStyle?:
-      | 'iconOnly'
-      | 'iconHoverBlock'
-      | 'blockBorder'
-      | 'blockBorderless'
-      | 'text'
+    buttonStyle?: 'noBg' | 'block' | 'blockBorder'
     hoverBg?: boolean
   }>(),
   { solid: true }
@@ -40,6 +35,7 @@ const props = withDefaults(
 defineEmits(['click'])
 
 const classes = computed(() => ({
+  fa: true,
   [`fa-rotate-${props.rotate}`]: !!props.rotate,
   ['fa-solid']: props.solid,
   ['fa-classic']: !props.solid,
@@ -49,21 +45,4 @@ const classes = computed(() => ({
 }))
 </script>
 
-<style lang="less">
-.icon-button {
-  &.fa,
-  &.fas,
-  &.far {
-    &:not(:before) {
-      -moz-osx-font-smoothing: inherit;
-      -webkit-font-smoothing: inherit;
-      display: inherit;
-      font-style: inherit;
-      font-variant: inherit;
-      text-rendering: inherit;
-      line-height: inherit;
-      font-family: inherit;
-    }
-  }
-}
-</style>
+<style lang="less"></style>

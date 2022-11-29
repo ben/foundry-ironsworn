@@ -32,7 +32,6 @@
 
 <style lang="less">
 @import '../../../../styles/mixins.less';
-@import '../../../../styles/clickable.less';
 .momentum-meter {
   gap: var(--ironsworn-spacer-md) 0;
   .attr-slider-label:hover ~ .slider-bar {

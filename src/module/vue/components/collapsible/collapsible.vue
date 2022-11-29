@@ -19,6 +19,7 @@
       >
         <component
           :is="noIcon ? 'button' : BtnFaicon"
+          :buttonStyle="toggleButtonStyle"
           :id="controlId"
           type="button"
           :aria-controls="contentId"
@@ -65,13 +66,14 @@
 
 .toggleButtonTransition:before {
   transition: transform 0.4s;
-  font-size: 75%;
-  height: 100%;
+  font-size: 0.75em;
   aspect-ratio: 1;
-  width: auto;
   align-items: center;
   display: flex;
   justify-content: center;
+  height: 1em;
+  width: 1em;
+
   .wrapper[aria-expanded='true'] & {
     transform: rotate(90deg);
   }
@@ -132,6 +134,7 @@ const props = withDefaults(
      * @defaultValue `'h3'`
      */
     toggleWrapperIs?: string
+    toggleButtonStyle?: 'noBg' | 'block' | 'blockBorder'
     toggleWrapperClass?: any
     toggleButtonClass?: any
     toggleTextClass?: any

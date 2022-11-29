@@ -2,7 +2,7 @@
 <!-- the default value for a button element's type is "submit", which refreshes the page; "type=button" obviates the need for preventing the submit action with JS. -->
 <template>
   <button
-    :class="{ [$style[props.buttonStyle]]: true }"
+    :class="{ [$style[props.buttonStyle + 'Btn']]: true }"
     type="button"
     :title="!versionHasTooltips ? tooltip : ''"
     :aria-label="tooltip"
@@ -23,15 +23,10 @@ const props = withDefaults(
   defineProps<{
     tooltip?: string
     disabled?: boolean
-    buttonStyle?:
-      | 'iconOnly'
-      | 'iconHoverBlock'
-      | 'blockBorder'
-      | 'blockBorderless'
-      | 'text'
+    buttonStyle?: 'noBg' | 'block' | 'blockBorder'
     hoverBg?: boolean
   }>(),
-  { buttonStyle: 'blockBorderless' }
+  { buttonStyle: 'block' }
 )
 // so the span can be omitted if there's no slot content
 const hasDefaultSlot = computed(() => {
@@ -47,32 +42,48 @@ const versionHasTooltips = computed(
 </script>
 
 <style lang="less" module>
-@import '../../../../styles/clickable.less';
 @import '../../../../styles/mixins.less';
 
-.iconHoverBlock() {
-  .iconButtonBaseMixin();
-  .clickableBlockMixin(0px);
-  background: none;
+.btnIconMixin {
+  display: flex;
+  flex-direction: row;
+  padding: var(--ironsworn-spacer-sm);
+  gap: var(--ironsworn-spacer-sm);
+  align-items: center;
+  justify-content: center;
+  &:empty {
+    // icon-only buttons
+    // padding: 0;
+    padding: 1px;
+    aspect-ratio: 1;
+    height: 1.5em;
+    // box-shadow: none;
+  }
+  &:before {
+    text-shadow: none !important;
+  }
 }
-.iconOnly {
-  .iconButtonBaseMixin();
+
+.noBgBtn {
   .clickableTextMixin();
-  background: none !important;
-  border: none;
-  padding: 0;
+  .btnIconMixin();
+  background-color: transparent;
+  &:not(:empty) {
+    text-align: left;
+    justify-content: left;
+  }
 }
-.blockBorder {
-  .iconButtonBaseMixin();
-  .clickableBlockMixin(1px);
+
+.blockBtnMixin {
+  justify-content: center;
+  .btnIconMixin();
 }
-.blockBorderless {
-  .iconButtonBaseMixin();
-  .clickableBlockMixin(0px);
-  border: none;
+.blockBtn {
+  .clickableBlockMixin(0px,5em);
+  .blockBtnMixin();
 }
-.text {
-  .clickableTextMixin();
-  text-align: left;
+.blockBorderBtn {
+  .clickableBlockMixin(var(--ironsworn-border-width-md),5em);
+  .blockBtnMixin();
 }
 </style>

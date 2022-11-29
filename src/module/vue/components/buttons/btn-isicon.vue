@@ -18,12 +18,7 @@ const props = defineProps<{
   // FIXME: shared props, inherit them once Vue adds support in 3.3
   tooltip?: string
   disabled?: boolean
-  buttonStyle?:
-    | 'iconOnly'
-    | 'iconHoverBlock'
-    | 'blockBorder'
-    | 'blockBorderless'
-    | 'text'
+  buttonStyle?: 'noBg' | 'block' | 'blockBorder'
   hoverBg?: boolean
 }>()
 </script>

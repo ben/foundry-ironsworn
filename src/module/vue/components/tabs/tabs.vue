@@ -3,10 +3,10 @@
     <nav role="tablist" :aria-orientation="ariaOrientation ?? 'horizontal'">
       <BtnIcon
         v-for="tabProp in tabsProps"
-        class="block"
         :class="tabProp.icon"
         role="tab"
         type="button"
+        buttonStyle="block"
         :id="tabId(tabProp.title)"
         :aria-controls="tabPanelId(tabProp.title)"
         :aria-selected="selectedTitle === tabProp.title"
@@ -50,6 +50,7 @@ defineExpose({ selectIndex })
 </script>
 
 <style lang="less" scoped>
+@import '../../../../styles/mixins.less';
 .tabbed-panels {
   display: flex;
   flex-direction: column;
@@ -59,14 +60,9 @@ defineExpose({ selectIndex })
   [role='tab'], // so it doesn't catch things that only start with 'tab'
   [role^='tab '],
   [role*=' tab'] {
-    border: none;
-    flex: 1 1 0;
-    text-align: center;
     height: 100%;
     overflow-y: visible;
     padding: var(--ironsworn-spacer-md);
-    gap: 0.25em;
-    justify-content: center;
     &:before {
       font-size: 140%;
     }

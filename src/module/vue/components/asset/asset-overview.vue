@@ -138,8 +138,8 @@
 .ironsworn__asset {
   margin: 10px 0;
   padding: 5px;
-  --ironsworn-color-thematic: v-bind('item.system.color');
-  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+  --ironsworn-color-clickable-block-bg-selected: v-bind('item.system.color');
+  --ironsworn-color-bg-highlight: v-bind('item.system.color');
 }
 
 .asset-ability-clock {

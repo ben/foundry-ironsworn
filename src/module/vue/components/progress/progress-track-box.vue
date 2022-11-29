@@ -61,7 +61,7 @@
   aspect-ratio: 1;
   object-fit: contain;
   border-radius: var(--ironsworn-border-radius-md);
-  stroke: var(--ironsworn-color-widget-stroke);
+  stroke: var(--ironsworn-color-border);
   stroke-width: 5;
 
   &.track-overflow .ghost-ticks {
