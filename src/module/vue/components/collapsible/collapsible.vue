@@ -66,12 +66,7 @@
 .toggleButtonTransition:before {
   transition: transform 0.4s;
   font-size: 75%;
-  height: 100%;
-  aspect-ratio: 1;
-  width: auto;
-  align-items: center;
   display: flex;
-  justify-content: center;
   .wrapper[aria-expanded='true'] & {
     transform: rotate(90deg);
   }

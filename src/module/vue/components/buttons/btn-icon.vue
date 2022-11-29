@@ -56,11 +56,16 @@ const hasDefaultSlot = computed(() => {
     line-height: 1;
     height: max-content;
     width: max-content;
+    aspect-ratio: 1;
   }
   &:before {
     line-height: 1;
     height: 1em;
     width: 1em;
+    display: flex-item;
+    align-self: center;
+    align-content: center;
+    align-items: center;
   }
 }
 
