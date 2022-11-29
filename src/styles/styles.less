@@ -7,11 +7,14 @@
 ::-webkit-scrollbar-thumb {
   outline: none;
   border-radius: var(--ironsworn-border-radius-md);
-  background: hsl(0, 0%, 27%);
+  background: var(--ironsworn-color-bg-alt);
   border: var(--ironsworn-border-width-md) solid
     var(--ironsworn-color-border-muted);
 }
 :root {
+  scrollbar-color: var(--ironsworn-color-border-muted)
+    var(--ironsworn-color-bg-alt);
+
   --ironsworn-transition-duration: 0.5s;
   --ironsworn-transition-timing-function: ease;
 
