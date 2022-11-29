@@ -2,7 +2,6 @@
   <div
     class="box flexrow ironsworn__denizen__drop ironsworn__drop__target"
     data-drop-type="progress"
-    style="padding: 3px"
     :data-idx="idx"
   >
     <label

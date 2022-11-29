@@ -1,10 +1,10 @@
 <template>
   <div class="flexcol box ironsworn__drop__target" :data-drop-type="itemType">
-    <div v-if="item" style="padding: 1em; position: relative">
+    <div v-if="item" style="padding: 10px; position: relative">
       <div class="flexrow">
         <document-img
           :document="item"
-          size="38px"
+          size="40px"
           class="nogrow"
           style="margin-right: 5px"
         />

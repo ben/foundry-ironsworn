@@ -3,13 +3,12 @@ import { VueActorSheet } from '../../vue/vueactorsheet'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import siteSheetVue from '../../vue/site-sheet.vue'
 
-export class IronswornSiteSheetV2 extends VueActorSheet {
+export class IronswornSiteSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
-      width: 700,
-      height: 650,
-      resizable: false,
+      width: 750,
+      height: 700,
     })
   }
 
