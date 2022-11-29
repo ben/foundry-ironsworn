@@ -72,7 +72,6 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
-  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
 
   color: var(--ironsworn-color-light);
   border-color: var(--ironsworn-color-thematic);

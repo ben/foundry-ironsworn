@@ -20,8 +20,8 @@
 
 // used to mark focused fields. a few FVTT buttons/tabs use it as a hover effect, too.
 .borderGlowExteriorMixin(@spread:6px) {
-  border-color: var(--color-border-highlight-alt);
-  border-bottom-color: var(--color-border-highlight);
+  // border-color: var(--color-border-highlight-alt);
+  // border-bottom-color: var(--color-border-highlight);
   box-shadow: 0 0 @spread var(--color-shadow-highlight);
   // FIXME: adjust these specific transition properties to make gaining focus feel a bit snappier
 }
@@ -294,7 +294,7 @@
 }
 
 .focusOutlineMixin() {
-  // a rare case in which i use !important for something that's actually *important*, rather than a brute-force override of FVTT's CSS.
-  outline: 2px solid var(--ironsworn-color-accent-alt) !important;
+  // disabled for now
+  // outline: 2px solid var(--ironsworn-color-accent-alt) !important;
   z-index: var(--ironsworn-z-index-highest);
 }

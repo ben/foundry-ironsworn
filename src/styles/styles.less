@@ -93,10 +93,14 @@
 }
 
 .system-foundry-ironsworn {
-  font-family: var(--font-primary);
-  outline-color: var(--ironsworn-color-accent-alt);
-
   .ironsworn {
+    .window-content {
+      background: var(--ironsworn-color-bg);
+      color: var(--ironsworn-color-fg);
+      height: 100%;
+      padding: 5px;
+      scrollbar-width: thin;
+    }
     button {
       border-width: 0px;
       border-style: solid;
@@ -113,11 +117,6 @@
       }
       margin: 5px;
       padding-top: 7px;
-    }
-    .window-content {
-      height: 100%;
-      padding: 5px;
-      scrollbar-width: thin;
     }
     hr {
       width: 100%;
@@ -474,7 +473,7 @@
         background-image: url('../../icons/svg/d4-grey.svg');
       }
 
-      &.d6 {
+      &.d6:before {
         background-color: var(--ironsworn-color-bg-alt);
         mask-image: url('/assets/icons/d6-blank.svg');
         content: '';
@@ -484,7 +483,7 @@
         background-image: url('../../icons/svg/d8-grey.svg');
       }
 
-      &.d10 {
+      &.d10:before {
         background-color: var(--ironsworn-color-bg-alt);
         mask-image: url('/assets/icons/d10-blank.svg');
         content: '';

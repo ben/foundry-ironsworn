@@ -37,7 +37,6 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('category?.color');
-  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
 }
 
 .wrapper {
@@ -72,6 +71,7 @@
 }
 .toggleButton {
   .textStrokeMixin();
+  background: none;
 }
 </style>
 <script setup lang="ts">

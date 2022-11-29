@@ -27,12 +27,16 @@
 
   // see clickable.less for usage
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg);
-  --ironsworn-color-clickable-block-bg: var(--ironsworn-color-bg);
+  --ironsworn-color-clickable-block-bg: transparent;
   --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
 
   --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-bg);
 
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-shade-2);
+  // --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-shade-2);
+  --ironsworn-color-clickable-block-bg-hover: fade(
+    $--ironsworn-color-dark,
+    25%
+  );
   --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-border);
 
   --ironsworn-color-clickable-block-fg-selected: var(--ironsworn-color-bg);
@@ -54,11 +58,6 @@
   input.highlight:focus {
     background-color: var(--ironsworn-color-fg);
     color: var(--ironsworn-color-bg);
-  }
-
-  .window-content,
-  .journal-entry .journal-entry-content {
-    background: var(--ironsworn-color-bg);
   }
 
   .sheet-area {

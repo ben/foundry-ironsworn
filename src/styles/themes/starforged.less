@@ -82,7 +82,7 @@
   );
 
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg-muted);
-  --ironsworn-color-clickable-block-bg: var(--ironsworn-color-bg);
+  --ironsworn-color-clickable-block-bg: transparent;
   --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
 
   --ironsworn-color-clickable-block-fg-selected: var(
@@ -163,12 +163,6 @@
     }
   }
 
-  .window-content {
-    background: var(--ironsworn-color-bg);
-    background-image: none;
-    color: var(--ironsworn-color-fg);
-  }
-
   .sheet-area {
     border-color: var(--ironsworn-color-border-muted);
   }
@@ -232,13 +226,6 @@
       border-width: 0px;
       padding: 5px 0px 5px 0px;
       .die {
-        &.d6 {
-          // background-image: url('systems/foundry-ironsworn/assets/icons/d6-blank.svg');
-        }
-        &.d10 {
-          // background-image: url('systems/foundry-ironsworn/assets/icons/d10-blank.svg');
-        }
-
         &.min {
           color: var(--ironsworn-color-fg);
         }
