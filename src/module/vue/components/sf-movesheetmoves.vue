@@ -29,7 +29,7 @@
       <!-- Flat search results -->
       <li
         v-for="(move, resultIndex) of searchResults"
-        :key="move.moveItem().id"
+        :key="move.moveItem().id ?? `move${resultIndex}`"
         class="nogrow"
       >
         <SfMoverow :move="move" ref="allMoves" :thematicColor="move.color" />

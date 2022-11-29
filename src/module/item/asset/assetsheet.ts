@@ -1,4 +1,4 @@
-import { attachInlineRollListeners } from '../../helpers/rolldialog'
+import { attachInlineRollListeners } from '../../features/rollplus'
 import { IronswornItemSheet } from '../item-sheet'
 import { AssetDataSource } from '../itemtypes'
 

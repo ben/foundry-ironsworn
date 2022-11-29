@@ -1,6 +1,12 @@
 <template>
   <div class="flexcol" v-bind:style="`background-color: ${thematicColor}`">
     <SfMoverow
+      :move="moves.discoverASite"
+      v-if="moves.discoverASite"
+      :thematic-color="thematicColor"
+      class="nogrow"
+    />
+    <SfMoverow
       :move="moves.delveTheDepths"
       v-if="moves.delveTheDepths"
       :thematic-color="thematicColor"
@@ -21,6 +27,12 @@
       :oracle-disabled="!hasThemeAndDomain"
     />
     <SfMoverow
+      :move="moves.checkYourGear"
+      v-if="moves.checkYourGear"
+      :thematic-color="thematicColor"
+      class="nogrow"
+    />
+    <SfMoverow
       :move="moves.locateObjective"
       v-if="moves.locateObjective"
       :thematic-color="thematicColor"
@@ -33,27 +45,25 @@
       :thematic-color="thematicColor"
       class="nogrow"
     />
+    <SfMoverow
+      :move="moves.revealADangerAlt"
+      v-if="moves.revealADangerAlt"
+      :thematic-color="thematicColor"
+      class="nogrow"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import { computed, inject, reactive } from 'vue'
 import { SiteDataPropertiesData } from '../../../actor/actortypes'
-import { createIronswornChatRoll } from '../../../chat/chatrollhelpers'
 import { getFoundryTableByDfId } from '../../../dataforged'
 import { createIronswornMoveTree, Move } from '../../../features/custommoves'
-import { moveDataByName } from '../../../helpers/data'
 import { DelveThemeDataSourceData } from '../../../item/itemtypes'
-import {
-  TableRow,
-  OracleRollMessage,
-  IronswornPrerollDialog,
-} from '../../../rolls'
+import { OracleRollMessage, IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
-import BtnIsicon from '../buttons/btn-isicon.vue'
 import SfMoverow from '../sf-moverow.vue'
-import SiteMoverowFeature from './site-moverow-feature.vue'
 
 const site = inject(ActorKey)
 const $site = inject($ActorKey)
@@ -81,11 +91,14 @@ Promise.resolve().then(async () => {
   if (!delveMoves) return
 
   const movesToFetch = {
+    discoverASite: 'Ironsworn/Moves/Delve/Discover_a_Site',
     delveTheDepths: 'Ironsworn/Moves/Delve/Delve_the_Depths',
-    revealADanger: 'Ironsworn/Moves/Delve/Reveal_a_Danger',
     findAnOpportunity: 'Ironsworn/Moves/Delve/Find_an_Opportunity',
+    revealADanger: 'Ironsworn/Moves/Delve/Reveal_a_Danger',
+    checkYourGear: 'Ironsworn/Moves/Delve/Check_Your_Gear',
     escapeTheDepths: 'Ironsworn/Moves/Delve/Escape_the_Depths',
     locateObjective: 'Ironsworn/Moves/Delve/Locate_Your_Objective',
+    revealADangerAlt: 'Ironsworn/Moves/Delve/Reveal_a_Danger_alt',
   }
 
   for (const k of Object.keys(movesToFetch)) {
@@ -132,7 +145,6 @@ async function revealADanger() {
 
 async function locateObjective() {
   if (!$site) return
-  const move = await moveDataByName('Locate Your Objective')
   const siteSys = $site.system as SiteDataPropertiesData
   const progress = Math.floor(siteSys.current / 4)
 

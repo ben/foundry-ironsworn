@@ -15,7 +15,6 @@
 <script lang="ts" setup>
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import { inject, useSlots } from 'vue'
-import { RollDialog } from '../../../helpers/rolldialog'
 import { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'

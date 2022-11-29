@@ -86,24 +86,6 @@ export interface ProgressDataProperties {
 
 ///////////////////////////////
 
-interface VowDataSourceData extends ProgressBase {
-  description: string
-  threat: string
-  menace: number
-}
-interface VowDataPropertiesData extends VowDataSourceData {}
-
-export interface VowDataSource {
-  type: 'vow'
-  data: VowDataSourceData
-}
-export interface VowDataProperties {
-  type: 'vow'
-  data: VowDataPropertiesData
-}
-
-///////////////////////////////
-
 interface Bond {
   name: string
   notes: string
@@ -170,29 +152,6 @@ export interface DelveDomainDataProperties {
 
 ///////////////////////////////
 
-interface MoveDataSourceData {
-  description: string
-  fulltext: string
-  strong: string
-  weak: string
-  miss: string
-  stats: string[]
-  sourceId: string
-  dfid: string
-}
-export interface MoveDataPropertiesData extends MoveDataSourceData {}
-
-export interface MoveDataSource {
-  type: 'move'
-  data: MoveDataSourceData
-}
-export interface MoveDataProperties {
-  type: 'move'
-  data: MoveDataPropertiesData
-}
-
-///////////////////////////////
-
 export interface SFMoveDataPropertiesData extends IMove {
   dfid: string
 }
@@ -211,18 +170,14 @@ export interface SFMoveDataProperties {
 export type ItemDataSource =
   | AssetDataSource
   | ProgressDataSource
-  | VowDataSource
   | BondsetDataSource
-  | MoveDataSource
   | SFMoveDataSource
   | DelveThemeDataSource
   | DelveDomainDataSource
 export type ItemDataProperties =
   | AssetDataProperties
   | ProgressDataProperties
-  | VowDataProperties
   | BondsetDataProperties
-  | MoveDataProperties
   | SFMoveDataProperties
   | DelveThemeDataProperties
   | DelveDomainDataProperties
