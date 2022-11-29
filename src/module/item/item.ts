@@ -20,7 +20,7 @@ export class IronswornItem extends Item {
    * Progress methods
    */
   markProgress(numMarks = 1) {
-    if (this.type !== 'vow' && this.type !== 'progress') return
+    if (this.type !== 'progress') return
     const system = this.system as ProgressDataPropertiesData
 
     const increment = RANK_INCREMENTS[system.rank] * numMarks
@@ -31,7 +31,7 @@ export class IronswornItem extends Item {
   }
 
   clearProgress() {
-    if (this.data.type !== 'vow' && this.data.type !== 'progress') return
+    if (this.data.type !== 'progress') return
     return this.update({ 'system.current': 0 })
   }
 
