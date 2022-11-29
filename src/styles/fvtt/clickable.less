@@ -1,12 +1,8 @@
 @import '../mixins.less';
 
-.prosemirror button,
-.tox .tox-tbtn--bespoke {
-  .clickableBlockMixin();
-}
-
 #controls ol.control-tools > li {
-  .clickableBlockMixin(var(--ironsworn-border-width-md));
+  .clickableBlockMixin();
+  border-width: var(--ironsworn-border-width-md);
   border-radius: var(--ironsworn-border-radius-lg);
   .borderFloatingMixin();
   .active,
