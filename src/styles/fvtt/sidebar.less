@@ -12,6 +12,7 @@
     }
     .collapse {
       .clickableBlockMixin();
+      border: 0;
     }
   }
   .directory {
@@ -24,7 +25,8 @@
           (var(--sidebar-item-height) + var(--sidebar-width)) / 4
         );
         cursor: pointer;
-        .clickableBlockMixin(0px,var(--boxGlowSize));
+        .clickableBlockMixin(var(--boxGlowSize));
+        border: 0;
         background-color: transparent;
         margin: 0;
         padding-left: 8px;
