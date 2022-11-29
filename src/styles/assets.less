@@ -92,7 +92,7 @@
   }
 }
 .asset-condition-meter {
-  gap: 3px;
+  gap: var(--ironsworn-spacer-sm);
   .icon-button .button-text {
     text-align: left;
   }
@@ -121,7 +121,7 @@
 .asset-ability-bullet-ironsworn {
   aspect-ratio: 1;
   border-radius: 50%;
-  border-width: 1px;
+  border-width: var(--ironsworn-border-width-md);
   height: 0.75em;
   margin-top: 0.15em;
 }
@@ -172,9 +172,8 @@
     background: var(--ironsworn-color-thematic);
     position: absolute;
     aspect-ratio: @hex_deco_aspect_ratio;
-    z-index: 1;
+    z-index: var(--ironsworn-z-index-low);
     mask-repeat: no-repeat;
-    // transition: var(--std-animation);
     transform: scaleX(-1);
     height: @hex_deco_collapsed_height;
     top: -($height * 0.09);
