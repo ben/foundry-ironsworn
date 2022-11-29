@@ -73,10 +73,6 @@
       }
     }
   }
-  &:focus {
-    outline: none;
-    // background: #0001;
-  }
   .attr-slider-label {
     text-transform: uppercase;
     line-height: 1;

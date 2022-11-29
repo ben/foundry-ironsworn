@@ -2,7 +2,7 @@
 
 .system-foundry-ironsworn.theme-ironsworn {
   --ironsworn-color-light: hsl(0, 0%, 100%);
-  --ironsworn-color-shade-1: hsl(0, 0%, 80%);
+  --ironsworn-color-shade-1: hsl(0, 0%, 87%);
   --ironsworn-color-shade-2: hsl(0, 0%, 66%);
   --ironsworn-color-shade-3: hsl(0, 0%, 53%);
   --ironsworn-color-shade-4: hsl(0, 0%, 35%);
@@ -21,7 +21,7 @@
 
   --ironsworn-color-bg-alt: var(--ironsworn-color-shade-1);
 
-  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
   --ironsworn-color-border: var(--ironsworn-color-dark);
   --ironsworn-color-border-muted: var(--ironsworn-color-shade-4);
 
@@ -45,6 +45,10 @@
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-shade-2);
   --ironsworn-color-clickable-text-selected: var(--ironsworn-color-shade-3);
 
+  --ironsworn-color-accent: var(--color-border-highlight);
+  --ironsworn-color-accent-alt: var(--color-border-highlight-alt);
+
+  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
 
   input.highlight:focus {
@@ -121,25 +125,6 @@
     .dice-formula,
     .dice-total {
       background-color: var(--ironsworn-color-bg);
-    }
-  }
-
-  table tr {
-    &.selected,
-    &[aria-selected='true'] {
-      background-color: var(--ironsworn-color-dark);
-      color: var(--ironsworn-color-shade-1);
-      .oracle-result-control {
-        color: var(--ironsworn-color-bg) !important;
-      }
-
-      .entity-link,
-      .content-link {
-        color: var(--ironsworn-color-bg);
-        padding: none;
-        border: none;
-        background: transparent;
-      }
     }
   }
 }

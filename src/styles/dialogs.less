@@ -1,0 +1,39 @@
+.ironsworn.dialog {
+  .window-header {
+  }
+  .window-content {
+    .dialog-content {
+      fieldset {
+        background-color: var(--ironsworn-color-bg-alt);
+        border-radius: var(--ironsworn-border-radius-md);
+        border: none;
+      }
+      details {
+        // margin: var(--ironsworn-spacer-md) 0;
+      }
+    }
+    .dialog-buttons {
+      height: max-content;
+      align-items: end;
+      button.default,
+      button {
+        .clickableBlockMixin();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: max-content;
+        border-width: 1px;
+        .button-text {
+          .nogrow();
+          .initial-caps();
+          width: max-content;
+          height: max-content;
+        }
+        i {
+          height: 18px;
+          width: 18px;
+        }
+      }
+    }
+  }
+}

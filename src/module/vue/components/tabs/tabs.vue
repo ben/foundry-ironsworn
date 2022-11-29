@@ -73,7 +73,6 @@ defineExpose({ selectIndex })
     }
     &.active,
     &[aria-selected='true'] {
-      text-shadow: none;
     }
   }
   .tabs,

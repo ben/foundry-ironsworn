@@ -1,7 +1,25 @@
 table {
-  border-width: 1px;
+  border-width: var(--ironsworn-border-width-md);
   td:first-child {
     white-space: nowrap;
     padding-right: 0.5rem;
+  }
+  tr {
+    &.selected,
+    &[aria-selected='true'] {
+      background-color: var(--ironsworn-color-bg-highlight);
+      color: var(--ironsworn-color-fg-highlight);
+      .oracle-result-control {
+        color: var(--ironsworn-color-bg) !important;
+      }
+
+      .entity-link,
+      .content-link {
+        color: var(--ironsworn-color-bg);
+        padding: none;
+        border: none;
+        background: transparent;
+      }
+    }
   }
 }

@@ -70,7 +70,7 @@
 
   --ironsworn-color-input-bg: var(--ironsworn-light-overlay);
 
-  --ironsworn-color-text-outline: $--ironsworn-color-dark;
+  --ironsworn-color-text-stroke: $--ironsworn-color-dark;
 
   // --ironsworn-color-input-bg: ;
 
@@ -104,7 +104,7 @@
     --ironsworn-color-fg-highlight
   );
 
-  --ironsworn-input-border-style: inset;
+  --ironsworn-input-border-style: solid;
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-dark);
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-dark);
@@ -116,6 +116,10 @@
 
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
+
+  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
+  --ironsworn-input-border-style: solid;
+
   .overrideVars();
 
   scrollbar-color: var(--ironsworn-color-border-muted)

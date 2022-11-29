@@ -1,5 +1,4 @@
 @import 'mixins.less';
-@import 'unscoped-overrides.less';
 
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px hsl(0, 0%, 60%) inset;
@@ -18,7 +17,7 @@
   // for later use as a mixin to scope transitions to colors effects only.
   --ironsworn-transition-property-color: background-color, border-color,
     box-shadow, caret-color, color, column-rule-color, filter, opacity,
-    outline-color, text-decoration-color;
+    outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
 
   --std-animation-timing: var(--ironsworn-transition-duration)
     var(--ironsworn-transition-timing-function);
@@ -31,7 +30,9 @@
     column-rule-color var(--std-animation-timing),
     filter var(--std-animation-timing), opacity var(--std-animation-timing),
     outline-color var(--std-animation-timing),
-    text-decoration-color var(--std-animation-timing);
+    text-decoration-color var(--std-animation-timing),
+    fill-opacity var(--std-animation-timing),
+    fill-color var(--std-animation-timing), stroke var(--std-animation-timing);
 
   --fa-display: inline-block;
   --fa-invert: var(--ironsworn-color-bg);
@@ -92,76 +93,59 @@
 }
 
 .system-foundry-ironsworn {
+  font-family: var(--font-primary);
+  outline-color: var(--ironsworn-color-accent-alt);
+
+  .ironsworn {
+    button {
+      border-width: 0px;
+      border-style: solid;
+    }
+    form button {
+      border-width: 0px;
+      border-style: solid;
+    }
+
+    .sheet-area {
+      border-top-width: 2px;
+      &:first-child {
+        border-top-width: 0;
+      }
+      margin: 5px;
+      padding-top: 7px;
+    }
+    .window-content {
+      height: 100%;
+      padding: 5px;
+      scrollbar-width: thin;
+    }
+    hr {
+      width: 100%;
+      border: none;
+      border-width: 0 0 1px;
+      border-style: solid;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      text-transform: uppercase;
+    }
+    h1,
+    h2,
+    h3 {
+      border: none;
+    }
+  }
+
   .grid {
     display: grid;
   }
 
-  border-color: var(--ironsworn-color-border);
-  font-family: var(--font-primary);
-
-  hr {
-    width: 100%;
-    border: none;
-    border-width: 0 0 1px;
-    border-style: solid;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-transform: uppercase;
-  }
-  h1,
-  h2,
-  h3 {
-    border: none;
-  }
   *::placeholder {
     font-family: inherit;
-  }
-
-  // button {
-  //   transition: var(--std-animation);
-  //   border-radius: unset;
-  //   width: unset;
-  //   margin: unset;
-  //   background: unset;
-  //   // font-size: unset;
-  //   // line-height: unset;
-  //   font-family: inherit;
-  //   cursor: pointer;
-  //   &:hover,
-  //   &:focus {
-  //     // background: unset;
-  //     // border: unset;
-  //     outline: none;
-  //     box-shadow: unset;
-  //   }
-  // }
-  .window-content {
-    height: 100%;
-    padding: 5px;
-    scrollbar-width: thin;
-  }
-
-  .sheet-area {
-    border-top-width: 2px;
-    &:first-child {
-      border-top-width: 0;
-    }
-    margin: 5px;
-    padding-top: 7px;
-  }
-
-  .marginMixin(@direction) {
-    @spacer: 5px;
-    flex: 0;
-    border-@{direction}-style: solid;
-    position: relative;
-    border-@{direction}-width: 1px;
-    margin-@{direction}: @spacer;
   }
 
   .margin-left {
@@ -205,7 +189,6 @@
 
   .stack {
     flex-grow: 0;
-
     .stack-row {
       // FIXME refactor as component and encapsulate the relevant css there
       flex: 0 0 auto;
@@ -236,28 +219,6 @@
       input[type='radio'] {
         appearance: none;
       }
-    }
-  }
-
-  // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
-
-  &.dialog .dialog-buttons button {
-    // .interactive();
-    // TODO: reimplement the above when updating roll dialog
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .button-text {
-      .clickable();
-      .nogrow();
-      .initial-caps();
-      width: max-content;
-      height: max-content;
-    }
-
-    i {
-      height: 18px;
-      width: 18px;
     }
   }
 
@@ -597,16 +558,18 @@
 
     .die {
       flex-grow: 0;
+      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+      .textStrokeMixin();
     }
     .indeterminate-value {
-      opacity: 0.5;
+      color: var(--ironsworn-color-fg-muted);
     }
     .action-score-capped {
       text-decoration: dotted underline;
     }
     .score {
       font-weight: bold;
-      border: 2px solid var(--ironsworn-color-border-highlight);
+      border: 2px solid var(--ironsworn-color-border);
       border-radius: 50%;
       height: 24px;
       width: 24px;
@@ -675,13 +638,14 @@
   @import 'icons.less';
   @import 'tables.less';
   @import 'icons.less';
+  @import 'dialogs.less';
 }
 
 .ironsworn {
   button {
     &.icon-button {
       &:empty {
-        text-shadow: none !important;
+        // text-shadow: none !important;
         &:focus {
           box-shadow: none !important;
         }
@@ -691,26 +655,7 @@
     &:not(.block) {
       box-shadow: none !important;
       &.text {
-        text-shadow: none !important;
-      }
-    }
-  }
-  .dialog {
-    fieldset {
-      border: none;
-    }
-    .dialog-buttons {
-      height: max-content;
-      align-items: end;
-      button.default,
-      button {
-        .initial-caps();
-        .clickableBlockMixin();
-        display: flex;
-        border-width: 1px;
-        height: max-content;
-        align-items: center;
-        justify-content: center;
+        // text-shadow: none !important;
       }
     }
   }

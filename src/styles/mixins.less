@@ -4,7 +4,7 @@
 // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
 // if you wanted this + a soft shadow, see textHoverMixin for an example of how to mix the two.
 // generated with owumaro.github.io/text-stroke-generator/
-.textStrokeMixin(@color: var(--ironsworn-color-text-outline)) {
+.textStrokeMixin(@color: var(--ironsworn-color-text-stroke)) {
   text-shadow: 1px 0px 0px @color, 0.540302px 0.841471px 0px @color,
     -0.416147px 0.909297px 0px @color, -0.989993px 0.14112px 0px @color,
     -0.653644px -0.756803px 0px @color, 0.283662px -0.958924px 0px @color,
@@ -19,8 +19,7 @@
 // special effects
 
 // used to mark focused fields. a few FVTT buttons/tabs use it as a hover effect, too.
-.borderGlowExteriorMixin(@spread:10px) {
-  outline: none;
+.borderGlowExteriorMixin(@spread:6px) {
   border-color: var(--color-border-highlight-alt);
   border-bottom-color: var(--color-border-highlight);
   box-shadow: 0 0 @spread var(--color-shadow-highlight);
@@ -36,13 +35,18 @@
   box-shadow: inset 0 0 @spread @blur @color, inset 0 0 @spread @blur @color;
 }
 
+.borderAccentColorMixin() {
+  border-color: var(--ironsworn-color-accent);
+  border-bottom-color: var(--ironsworn-color-accent-alt);
+}
+
 .textGlowMixin(@color:var(--ironsworn-color-fg-highlight),@spread:10px) {
   text-shadow: 0 0 @spread @color;
 }
 
 // used for e.g. hover effects. resembles a transparent overlay (with a subtle gradient) without having to do any interpolation or set additional variables.
-.overlayGlowMixin(@blockSize:20px, @color:var(--ironsworn-color-clickable-block-bg-selected)) {
-  .borderGlowInteriorMixin(calc(@blockSize / 2),0,@color);
+.overlayGlowMixin(@blockSize:50px) {
+  .borderGlowInteriorMixin(calc(@blockSize / 2),0,var(--ironsworn-color-thematic,var(--ironsworn-color-clickable-block-bg-hover)));
 }
 
 .svgWidgetMixin() {
@@ -103,7 +107,6 @@
 
 .interactiveMixin {
   transition: var(--std-animation);
-  cursor: pointer;
   &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
     &[aria-disabled="true"] {
@@ -115,16 +118,16 @@
 }
 
 .textHoverMixin {
-  color: var(--ironsworn-color-clickable-text-hover);
-  text-shadow: 0 0 2px 0 var(--color-shadow-highlight);
+  // color: var(--ironsworn-color-clickable-text-hover);
+  filter: drop-shadow(0 0 2px var(--ironsworn-color-accent));
+  // text-shadow: 0 0 8px var(--ironsworn-color-accent);
 }
 .textFocusMixin {
-  color: var(--ironsworn-color-clickable-text-focus);
+  .focusOutlineMixin();
 }
 
 .textActiveMixin {
   color: var(--ironsworn-color-clickable-text-selected);
-  background-color: var(--ironsworn-color-fg-overlay-weak);
 }
 
 .clickableTextMixin {
@@ -147,9 +150,8 @@
   }
 }
 
-.blockHoverMixin(@blockSize:20px) {
+.blockHoverMixin(@blockSize:50px) {
   .textStrokeMixin();
-  outline: none;
   color: var(--ironsworn-color-clickable-block-fg-hover);
   background-color: var(--ironsworn-color-clickable-block-bg-hover);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
@@ -157,10 +159,8 @@
 }
 
 .blockFocusMixin {
-  .textStrokeMixin();
-  .borderGlowExteriorMixin();
-  outline: none;
   z-index: var(--ironsworn-z-index-high);
+  .focusOutlineMixin();
 }
 
 .blockActiveMixin {
@@ -175,9 +175,8 @@
   z-index: var(--ironsworn-z-index-high);
 }
 // For the block's 'default' state.
-.blockMixin(@blockSize:20px,@borderRadius:0px) {
+.blockMixin(@blockSize:50px,@borderRadius:0px) {
   .interactiveMixin();
-  outline: none;
   box-shadow: none;
   overflow-y: visible;
   border-color: var(--ironsworn-color-clickable-block-border);
@@ -185,6 +184,14 @@
   border-radius: @borderRadius;
   color: var(--ironsworn-color-clickable-block-fg);
   background-color: var(--ironsworn-color-clickable-block-bg);
+
+  &.vertical {
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+    flex-direction: column;
+    & > * {
+      writing-mode: vertical-lr !important;
+    }
+  }
 }
 
 .iconButtonBaseMixin {
@@ -231,7 +238,7 @@
   }
 }
 
-.clickableBlockMixin(@blockSize:20px,@borderRadius:0px) {
+.clickableBlockMixin(@blockSize:50px,@borderRadius:0px) {
   .blockMixin(@blockSize,@borderRadius);
   &:hover,
   &.hover {
@@ -250,29 +257,44 @@
 
 // input mixins
 
-.inputFieldFocusMixin(@spread: 7px) {
-  color: var(--ironsworn-color-fg-highlight);
+.inputFieldFocusMixin(@spread: 6px) {
+  box-shadow: 0 0 6px var(--color-shadow-primary);
   .borderGlowExteriorMixin(@spread);
 }
 
-.inputFieldMixin(@spread:4px) {
-  border: var(--ironsworn-border-width-md) inset
-    var(--ironsworn-color-border-muted);
+.inputFieldMixin(@spread:6px) {
+  .interactiveMixin();
+  cursor: initial;
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
-  transition: var(--std-animation);
-
+  border: var(--ironsworn-border-width-md) var(--ironsworn-input-border-style)
+    var(--ironsworn-color-border-muted);
   border-radius: var(--ironsworn-border-radius-md);
   &::placeholder {
     color: var(--ironsworn-color-fg);
     opacity: 0.5;
   }
   &:hover {
-    border-color: var(--ironsworn-color-clickable-block-border);
+    border-color: var(--ironsworn-color-clickable-block-border-hover);
     .borderGlowInteriorMixin(@spread,0,var(--color-shadow-primary));
   }
   &:focus,
   &:focus-within {
     .inputFieldFocusMixin();
   }
+}
+
+.marginMixin(@direction) {
+  @spacer: 5px;
+  flex: 0;
+  border-@{direction}-style: solid;
+  position: relative;
+  border-@{direction}-width: 1px;
+  margin-@{direction}: @spacer;
+}
+
+.focusOutlineMixin() {
+  // a rare case in which i use !important for something that's actually *important*, rather than a brute-force override of FVTT's CSS.
+  outline: 2px solid var(--ironsworn-color-accent-alt) !important;
+  z-index: var(--ironsworn-z-index-highest);
 }

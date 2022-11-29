@@ -1,32 +1,5 @@
 @import 'mixins.less';
 
-.inputFieldMixin {
-  color: var(--ironsworn-color-fg);
-  background: var(--ironsworn-color-input-bg);
-  border-color: var(--ironsworn-color-clickable-block-border);
-  border-radius: var(--ironsworn-border-radius-sm);
-
-  transition: var(--std-animation);
-  border-style: var(--ironsworn-input-border-style);
-  border-width: 1px;
-  &::placeholder {
-    color: var(--ironsworn-color-fg);
-    opacity: 0.5;
-  }
-  &:hover {
-    border-color: var(--ironsworn-color-clickable-block-border-hover);
-  }
-  &:focus,
-  &:focus-within {
-    @shadowSpread: 7px;
-    color: var(--ironsworn-color-fg-highlight);
-    border-color: var(--ironsworn-color-accent-alt);
-    border-bottom-color: var(--ironsworn-color-accent);
-    box-shadow: 0 0 @shadowSpread var(--ironsworn-color-accent),
-      0 0 @shadowSpread var(--ironsworn-color-accent);
-  }
-}
-
 .ironsworn {
   input[type='text'],
   input[type='number'],

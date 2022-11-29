@@ -37,7 +37,7 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('category?.color');
-  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
 }
 
 .wrapper {

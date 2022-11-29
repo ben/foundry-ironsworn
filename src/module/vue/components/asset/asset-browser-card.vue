@@ -98,7 +98,7 @@
   margin: 10px 0;
   padding: 5px;
   --ironsworn-color-thematic: v-bind('data.data.color');
-  --ironsworn-color-text-outline: var(--ironsworn-color-dark);
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
 }
 </style>
 

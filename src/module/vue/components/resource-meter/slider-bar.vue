@@ -49,6 +49,7 @@
 </template>
 
 <style lang="less" scoped>
+@import '../../../../styles/mixins.less';
 @segment_border_width: 1px;
 @segment_border_radius: 5px;
 @segment_line_height: 28px;
@@ -62,8 +63,7 @@
   border: 0;
   padding: 0;
   &:focus {
-    outline: 0;
-    box-shadow: 0 0 6px var(--color-shadow-primary);
+    .focusOutlineMixin();
   }
   .slider-segment {
     box-sizing: border-box;
