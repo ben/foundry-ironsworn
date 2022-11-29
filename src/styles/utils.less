@@ -1,5 +1,17 @@
 // for classes that apply styling, but have no particular semantics attached to them
+@import 'mixins.less';
 
+.grid {
+  display: grid;
+}
+
+.margin-left {
+  .marginMixin(right);
+}
+
+.margin-right {
+  .marginMixin(left);
+}
 .vertical {
   writing-mode: vertical-lr;
   border: none;
