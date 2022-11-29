@@ -11,49 +11,17 @@
   }
 }
 
-.clickableTextColors {
-  color: var(--ironsworn-color-clickable-text);
-  &[aria-selected='true'],
-  &.selected {
-    color: var(--ironsworn-color-clickable-text-selected);
-  }
-  &:hover,
-  &.hover {
-    color: var(--ironsworn-color-clickable-text-hover);
-  }
-}
-.clickableBlockColors {
-  color: var(--ironsworn-color-clickable-block-fg);
-  background-color: var(--ironsworn-color-clickable-block-bg);
-  border-color: var(--ironsworn-color-clickable-block-border);
-  &:hover,
-  &.hover {
-    color: var(--ironsworn-color-clickable-block-fg-hover);
-    background-color: var(--ironsworn-color-clickable-block-bg-hover);
-    border-color: var(--ironsworn-color-clickable-block-border-hover);
-  }
-  &[aria-selected='true'],
-  &.selected {
-    color: var(--ironsworn-color-clickable-block-fg-selected);
-    background-color: var(
-      --ironsworn-color-thematic,
-      var(--ironsworn-color-clickable-block-bg-selected)
-    );
-    border-color: var(--ironsworn-color-clickable-block-border-selected);
-  }
-}
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
-  .clickableBlockColors();
+  .clickableBlockMixin();
+  border-radius: var(--ironsworn-border-radius-md);
 }
 
 .ironsworn {
   .entity-link,
   .content-link {
-    transition: var(--std-animation);
-    background-color: var(--ironsworn-color-clickable-block-bg);
-    border-color: var(--ironsworn-color-clickable-block-border);
-    .clickableBlockColors();
+    .clickableBlockMixin();
+    border-radius: var(--ironsworn-border-radius-sm);
     // forces fg colour so that it is the same colour as the text.
     color: inherit;
     i {
@@ -67,14 +35,16 @@
 
 .clickable {
   .interactive();
-
   &:not(svg):not(.svg) {
-    &.text {
-      justify-content: flex-start;
-      .clickableTextColors();
+    &.text:not(.block) {
+      .clickableTextMixin();
+      &:not(:before) {
+        text-align: left;
+        justify-content: left;
+      }
     }
     &.block {
-      .clickableBlockColors();
+      .clickableBlockMixin();
     }
   }
   svg,
