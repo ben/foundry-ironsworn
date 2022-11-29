@@ -25,7 +25,6 @@
   flex-direction: column;
   justify-content: space-around;
   margin: 5px;
-  height: 100%;
 }
 .condition {
   font-size: x-small;
