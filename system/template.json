@@ -150,9 +150,7 @@
     "types": [
       "asset",
       "progress",
-      "vow",
       "bondset",
-      "move",
       "sfmove",
       "delve-theme",
       "delve-domain"
@@ -173,12 +171,6 @@
       "hasClock": false,
       "clockTicks": 0,
       "clockMax": 6
-    },
-    "vow": {
-      "templates": ["progress"],
-      "description": "",
-      "threat": "",
-      "menace": 0
     },
     "bondset": {
       "bonds": []
@@ -236,15 +228,6 @@
         }
       ],
       "conditions": []
-    },
-    "move": {
-      "description": "When you <strong>do a thing</strong>...",
-      "fulltext": "",
-      "strong": "",
-      "weak": "",
-      "miss": "",
-      "stats": [],
-      "sourceId": ""
     },
     "sfmove": {
       "dfid": "",
