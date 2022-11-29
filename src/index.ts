@@ -141,12 +141,12 @@ Hooks.once('init', async () => {
   })
 
   Items.registerSheet('ironsworn', ProgressSheetV2, {
-    types: ['vow', 'progress'],
+    types: ['progress'],
     label: 'Progress sheet v2',
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', ProgressSheet, {
-    types: ['vow', 'progress'],
+    types: ['progress'],
     label: 'Progress Sheet',
   })
 
