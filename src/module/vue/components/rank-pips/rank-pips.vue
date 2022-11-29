@@ -45,7 +45,10 @@
   display: flex;
   flex-flow: row nowrap;
   stroke: currentColor;
-  fill: var(--ironsworn-color-thematic);
+  fill: var(
+    --ironsworn-color-thematic,
+    var(--ironsworn-color-clickable-block-bg-selected)
+  );
   fill-opacity: var(--widget-fill-opacity);
   align-content: center;
   gap: 2px;
