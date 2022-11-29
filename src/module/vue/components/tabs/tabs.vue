@@ -55,6 +55,7 @@ defineExpose({ selectIndex })
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  .tab,
   .item,
   [role='tab'], // so it doesn't catch things that only start with 'tab'
   [role^='tab '],

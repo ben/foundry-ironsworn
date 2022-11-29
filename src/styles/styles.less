@@ -12,8 +12,29 @@
   border: 1px solid hsl(0, 0%, 13%);
 }
 :root {
-  --std-animation: all 0.5s ease;
+  --ironsworn-transition-duration: 0.5s;
+  --ironsworn-transition-timing-function: ease;
+
+  // for later use as a mixin to scope transitions to colors effects only.
+  --ironsworn-transition-property-color: background-color, border-color,
+    box-shadow, caret-color, color, column-rule-color, filter, opacity,
+    outline-color, text-decoration-color;
+
+  --std-animation-timing: var(--ironsworn-transition-duration)
+    var(--ironsworn-transition-timing-function);
+
+  // transitions colours only
+  --std-animation: background-color var(--std-animation-timing),
+    border-color var(--std-animation-timing),
+    box-shadow var(--std-animation-timing),
+    caret-color var(--std-animation-timing), color var(--std-animation-timing),
+    column-rule-color var(--std-animation-timing),
+    filter var(--std-animation-timing), opacity var(--std-animation-timing),
+    outline-color var(--std-animation-timing),
+    text-decoration-color var(--std-animation-timing);
+
   --fa-display: inline-block;
+  --fa-invert: var(--ironsworn-color-bg);
 
   // original sample from PDF: #c9181a
   --ironsworn-color-red-light: hsl(355, 100%, 65%);
@@ -628,30 +649,24 @@
         font-weight: bold;
       }
     }
-  }
-  // preroll-dialog.hbs
-  .preroll-dialog {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    button {
-      .initial-caps();
-    }
 
-    .form-group {
-      padding: 0;
-      border: none;
-    }
-
-    .advanced-roll-options {
-      padding: 5px;
-      margin: 5px 0;
-      border-width: 1px;
-    }
-    .advanced-roll-options-toggle {
+    .preroll-dialog {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .form-group {
+        padding: 0;
+        border: none;
+      }
+      .advanced-roll-options {
+        padding: var(--ironsworn-spacer-md);
+        margin: var(--ironsworn-spacer-md) 0;
+        border-width: var(--ironsworn-border-width-md);
+      }
+      .advanced-roll-options-toggle {
+      }
     }
   }
-
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
   @import 'chat-message.less';
@@ -660,4 +675,43 @@
   @import 'icons.less';
   @import 'tables.less';
   @import 'icons.less';
+}
+
+.ironsworn {
+  button {
+    &.icon-button {
+      &:empty {
+        text-shadow: none !important;
+        &:focus {
+          box-shadow: none !important;
+        }
+      }
+    }
+    transition: var(--std-animation);
+    &:not(.block) {
+      box-shadow: none !important;
+      &.text {
+        text-shadow: none !important;
+      }
+    }
+  }
+  .dialog {
+    fieldset {
+      border: none;
+    }
+    .dialog-buttons {
+      height: max-content;
+      align-items: end;
+      button.default,
+      button {
+        .initial-caps();
+        .clickableBlockMixin();
+        display: flex;
+        border-width: 1px;
+        height: max-content;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
 }

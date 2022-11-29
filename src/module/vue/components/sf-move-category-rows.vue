@@ -61,7 +61,6 @@
 }
 
 .toggleSection {
-  transition: 0.5s ease;
   background-color: var(--ironsworn-color-thematic);
   border-radius: 5px;
   button {

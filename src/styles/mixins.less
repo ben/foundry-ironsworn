@@ -116,17 +116,13 @@
 
 .textHoverMixin {
   color: var(--ironsworn-color-clickable-text-hover);
-  .textStrokeMixin();
-  text-shadow: .textStrokeMixin() [text-shadow],
-    0 0 2px 0 var(--color-shadow-highlight);
+  text-shadow: 0 0 2px 0 var(--color-shadow-highlight);
 }
 .textFocusMixin {
-  .textStrokeMixin();
   color: var(--ironsworn-color-clickable-text-focus);
 }
 
 .textActiveMixin {
-  .textStrokeMixin();
   color: var(--ironsworn-color-clickable-text-selected);
   background-color: var(--ironsworn-color-fg-overlay-weak);
 }
@@ -135,6 +131,7 @@
   .interactiveMixin();
   background: transparent;
   color: var(--ironsworn-color-clickable-text);
+  box-shadow: none !important;
   &[aria-selected='true'],
   &.selected,
   &.active {
@@ -151,20 +148,18 @@
 }
 
 .blockHoverMixin(@blockSize:20px) {
+  .textStrokeMixin();
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-hover);
   background-color: var(--ironsworn-color-clickable-block-bg-hover);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
-
-  // .textStrokeMixin();
-  // .overlayGlowMixin(@blockSize);
   z-index: var(--ironsworn-z-index-high);
 }
 
 .blockFocusMixin {
-  outline: none;
   .textStrokeMixin();
   .borderGlowExteriorMixin();
+  outline: none;
   z-index: var(--ironsworn-z-index-high);
 }
 
@@ -172,7 +167,10 @@
   .textStrokeMixin();
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-selected);
-  background-color: var(--ironsworn-color-clickable-block-bg-selected);
+  background-color: var(
+    --ironsworn-color-thematic,
+    var(--ironsworn-color-clickable-block-bg-selected)
+  );
   border-color: var(--ironsworn-color-clickable-block-border-selected);
   z-index: var(--ironsworn-z-index-high);
 }
