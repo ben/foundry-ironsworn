@@ -139,7 +139,6 @@
   margin: 10px 0;
   padding: 5px;
   --ironsworn-color-thematic: v-bind('item.system.color');
-  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 
@@ -157,7 +156,6 @@ import Clock from '../clock.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import AssetConditions from './asset-conditions.vue'
-import chroma from 'chroma-js'
 
 const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
@@ -207,10 +205,4 @@ function toggleCondition(idx: number) {
   conditions[idx].ticked = !conditions[idx].ticked
   $item?.update({ system: { conditions } })
 }
-
-const colorThematicFaded = computed(() =>
-  chroma(item.value.system.color as string)
-    .alpha(0.5)
-    .css()
-)
 </script>

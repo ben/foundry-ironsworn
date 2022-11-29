@@ -37,7 +37,6 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('category?.color');
-  --ironsworn-color-thematic-faded: v-bind('colorThematicFaded');
   --ironsworn-color-text-outline: var(--ironsworn-color-dark);
 }
 
@@ -82,7 +81,6 @@ import { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash'
-import chroma from 'chroma-js'
 
 const props = withDefaults(
   defineProps<{
@@ -118,12 +116,6 @@ async function scrollToAndExpandChild(targetMoveId: string) {
     await targetChild?.collapsible?.scrollToAndExpand()
   }
 }
-
-const colorThematicFaded = computed(() =>
-  chroma(props.category?.color as string)
-    .alpha(0.5)
-    .css()
-)
 
 defineExpose({
   collapseChildren,
