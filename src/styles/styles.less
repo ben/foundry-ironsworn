@@ -152,6 +152,20 @@
   }
 
   /* Items List */
+
+  .item-row {
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
+    border-color: var(--ironsworn-border-color);
+    border-radius: var(--ironsworn-border-radius-sm);
+    padding: var(--ironsworn-spacer-sm);
+    margin: var(--ironsworn-spacer-sm) 0;
+
+    .item-row-control {
+      flex-grow: 0;
+      padding: var(--ironsworn-spacer-md);
+    }
+  }
   .item-list {
     list-style: none;
     margin: var(--ironsworn-spacer-xl) 0;
@@ -177,18 +191,6 @@
       img {
         flex: 0 0 24px;
         margin-right: var(--ironsworn-spacer-md);
-      }
-    }
-    .item-row {
-      border: var(--ironsworn-border-width-md) solid
-        var(--ironsworn-border-color);
-      border-radius: var(--ironsworn-border-radius-sm);
-      padding: var(--ironsworn-spacer-sm);
-      margin: var(--ironsworn-spacer-sm) 0;
-
-      .item-row-control {
-        flex-grow: 0;
-        padding: var(--ironsworn-spacer-md);
       }
     }
     .move {
