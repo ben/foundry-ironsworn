@@ -28,9 +28,6 @@
   --ironsworn-z-index-lower: -2;
   --ironsworn-z-index-lowest: -3;
 
-  scrollbar-color: var(--ironsworn-color-border-muted)
-    var(--ironsworn-color-bg-alt);
-
   --ironsworn-transition-duration: 0.5s;
   --ironsworn-transition-timing-function: ease;
 
@@ -139,7 +136,6 @@
     color: var(--ironsworn-color-fg);
     height: 100%;
     padding: var(--ironsworn-spacer-md);
-    scrollbar-width: thin;
   }
 
   /* Items List */
@@ -163,7 +159,6 @@
     padding: 0;
     flex: 1 0 100px;
     overflow-y: scroll;
-    scrollbar-width: thin;
 
     .item-name {
       margin: 0;
@@ -366,6 +361,7 @@
   @import 'roll-graphic.less';
   @import 'tables.less';
   @import 'utils.less';
+  @import 'scrollbar.less';
 
   .ironsworn {
     // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.
@@ -374,16 +370,4 @@
       .dialog();
     }
   }
-}
-
-::-webkit-scrollbar-track {
-  box-shadow: 0 0 1px hsl(0, 0%, 60%) inset;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb {
-  outline: none;
-  border-radius: var(--ironsworn-border-radius-md);
-  background: var(--ironsworn-color-bg-alt);
-  border: var(--ironsworn-border-width-md) solid
-    var(--ironsworn-color-border-muted);
 }

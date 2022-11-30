@@ -1,0 +1,22 @@
+@scrollbarThumbColor: var(--ironsworn-color-fg-muted);
+@scrollbarTrackColor: var(--ironsworn-color-fg-50);
+@scrollbarWidth: 6px;
+
+::-webkit-scrollbar {
+  width: @scrollbarWidth;
+  height: @scrollbarWidth;
+}
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 1px var(--ironsworn-color-fg-50) inset;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  outline: none;
+  border-radius: (@scrollbarWidth / 2);
+  background: @scrollbarThumbColor;
+  border: 1px solid var(--color-border-highlight);
+}
+:root {
+  scrollbar-width: thin;
+  scrollbar-color: @scrollbarThumbColor @scrollbarTrackColor;
+}
