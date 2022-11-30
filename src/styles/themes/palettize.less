@@ -1,0 +1,94 @@
+/**
+ * LESS Function that generates CSS variables for a palette of colours.
+ * Currently it doesn't do checking for contrast, but it probably should.
+ * @prefix - the prefix to use for the generated CSS variables.
+ * @fgColor - The foreground color.
+ * @bgColor - The background color.
+ * @accentColor - A saturated color, used both as-is and in mixtures with the other colours.
+ * @accentColorAlt - A second saturated color, used both as-is and in mixtures with the other colours.
+ */
+.palettize(@prefix:palette, @fgColor:black,@bgColor:white,@accentColor:#ff6600,@accentColorAlt:#ff0000) {
+  @lightColor: if((luma(@fgColor) > luma(@bgColor)), @fgColor, @bgColor);
+  @darkColor: if((luma(@fgColor) < luma(@bgColor)), @fgColor, @bgColor);
+  --@{prefix}-light: @lightColor;
+  --@{prefix}-dark: @darkColor;
+  --@{prefix}-fg: @fgColor;
+  --@{prefix}-bg: @bgColor;
+  --@{prefix}-accent: @accentColor;
+  --@{prefix}-accent-alt: @accentColorAlt;
+  // generate overlays
+  @overlays: 10, 25, 50, 75, 90;
+  // these *could* be done in a single function, but it makes it harder to read
+  each(@overlays, {
+    --@{prefix}-fg-@{value}: fade(@fgColor, @value);
+  });
+  each(@overlays, {
+    --@{prefix}-bg-@{value}: fade(@bgColor, @value);
+  });
+  each(@overlays, {
+    --@{prefix}-light-@{value}: fade(@lightColor, @value);
+  });
+  each(@overlays, {
+    --@{prefix}-dark-@{value}: fade(@darkColor, @value);
+  });
+
+  each(@overlays, {
+    --@{prefix}-accent-@{value}: fade(@accentColor, @value);
+  });
+  each(@overlays, {
+    --@{prefix}-accent-alt-@{value}: fade(@accentColorAlt, @value);
+  });
+
+  // generate mixtures
+  @tints: 10, 25, 50, 75, 90;
+  each(@tints, {
+    --@{prefix}-tone-@{value}: mix(@fgColor, @bgColor, @value);
+  });
+
+  @lightHighlight: mix(@lightColor, @accentColor, 50%);
+  @lightHighlightAlt: mix(@lightColor, @accentColorAlt, 50%);
+  @lightMuted: mix(@lightColor, @darkColor, 65%);
+  @darkHighlight: mix(@darkColor, @accentColor, 50%);
+  @darkHighlightAlt: mix(@darkColor, @accentColorAlt, 50%);
+  @darkMuted: mix(@darkColor, @lightColor, 65%);
+
+  --@{prefix}-light-highlight: @lightHighlight;
+  --@{prefix}-light-highlight-alt: @lightHighlightAlt;
+  --@{prefix}-light-muted: @lightMuted;
+
+  --@{prefix}-dark-highlight: @darkHighlight;
+  --@{prefix}-dark-highlight-alt: @darkHighlightAlt;
+  --@{prefix}-dark-muted: @darkMuted;
+
+  --@{prefix}-fg-highlight: if(
+    (luma(@bgColor) > luma(@fgColor)),
+    @darkHighlight,
+    @lightHighlight
+  );
+  --@{prefix}-fg-highlight-alt: if(
+    (luma(@bgColor) > luma(@fgColor)),
+    @darkHighlightAlt,
+    @lightHighlightAlt
+  );
+  --@{prefix}-fg-muted: if(
+    (luma(@bgColor) > luma(@fgColor)),
+    @darkMuted,
+    @lightMuted
+  );
+
+  --@{prefix}-bg-highlight: if(
+    (luma(@bgColor) > luma(@fgColor)),
+    @lightHighlight,
+    @darkHighlight
+  );
+  --@{prefix}-bg-highlight-alt: if(
+    (luma(@bgColor) > luma(@fgColor)),
+    @lightHighlightAlt,
+    @darkHighlightAlt
+  );
+  --@{prefix}-bg-alt: if(
+    (luma(@bgColor) > luma(@fgColor)),
+    @lightMuted,
+    @darkMuted
+  );
+}
