@@ -17,6 +17,7 @@
   }
 
   // EDITORS
+
   .tox {
     :not(svg):not(rect) {
       color: var(--ironsworn-color-fg);
@@ -44,6 +45,15 @@
         svg {
           fill: var(--ironsworn-color-clickable-block-fg-selected);
         }
+      }
+    }
+    .tox-tbtn--select {
+      .inputFieldMixin();
+      text-shadow: none;
+    }
+    .tox-collection--list {
+      .tox-collection__item--active {
+        background-color: red;
       }
     }
   }

@@ -1,7 +1,15 @@
 .chat-message {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   color: var(--ironsworn-color-fg);
-  background: var(--ironsworn-color-bg);
+
+  a {
+    .clickableTextMixin();
+  }
+  button {
+    .initial-caps();
+    .clickableBlockMixin();
+    border-width: var(--ironsworn-border-width-md);
+  }
 
   .ironsworn-roll {
     .dice-formula,
@@ -11,9 +19,6 @@
   }
   .ironsworn-roll {
     h3,
-    button {
-      .initial-caps();
-    }
     .hit-type {
       font-weight: bold;
       font-variant: all-small-caps;
@@ -147,6 +152,9 @@
   }
   .message-header {
     color: var(--ironsworn-color-fg-muted);
+    a:not(:hover):not(:focus) {
+      color: inherit;
+    }
   }
   .message-content {
     border: none;
@@ -158,7 +166,7 @@
 
     .dice-formula,
     .dice-total {
-      background: var(--ironsworn-dark-overlay);
+      background: var(--ironsworn-dark-50);
       border-width: 0px;
       padding: 5px 0px 5px 0px;
       .die {
@@ -200,11 +208,14 @@
         .oracle-result-row {
           &.selected,
           &[aria-selected='true'] {
-            background-color: var(--ironsworn-color-bg-highlight);
-            color: var(--ironsworn-color-fg-highlight);
-            box-shadow: 0 0 40px -10px var(--ironsworn-color-accent) inset;
+            background-image: linear-gradient(
+              to bottom,
+              var(--ironsworn-color-accent-25),
+              var(--ironsworn-color-accent-alt-25)
+            );
+            border: 1px outset var(--ironsworn-color-accent-25);
             border-left: var(--ironsworn-border-width-lg) solid
-              var(--ironsworn-color-accent-alt);
+              var(--ironsworn-color-accent-alt-75);
           }
           > td {
             position: relative;

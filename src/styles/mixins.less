@@ -20,9 +20,9 @@
 
 // used to mark focused fields. a few FVTT buttons/tabs use it as a hover effect, too.
 .borderGlowExteriorMixin(@spread:6px) {
-  // border-color: var(--color-border-highlight-alt);
-  // border-bottom-color: var(--color-border-highlight);
-  box-shadow: 0 0 @spread var(--color-shadow-highlight);
+  // border-color: var(--ironsworn-color-accent-alt);
+  // border-bottom-color: var(--ironsworn-color-accent);
+  box-shadow: 0 0 @spread var(--ironsworn-color-accent-alt);
   // FIXME: adjust these specific transition properties to make gaining focus feel a bit snappier
 }
 
@@ -58,8 +58,8 @@
   }
   &[aria-selected='true'],
   &.active {
-    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--color-shadow-primary));
-    border-color: var(--color-border-highlight-alt);
+    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-accent-alt));
+    border-color: var(--ironsworn-color-accent-alt);
   }
 }
 
@@ -285,7 +285,7 @@
   flex: 0;
   border-@{direction}-style: solid;
   position: relative;
-  border-@{direction}-width: 1px;
+  border-@{direction}-width: var(--ironsworn-border-width-md);
   margin-@{direction}: @spacer;
 }
 

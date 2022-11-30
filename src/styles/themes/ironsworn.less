@@ -1,64 +1,40 @@
 @import '../mixins.less';
+@import 'palettize.less';
 
 .system-foundry-ironsworn.theme-ironsworn {
-  --ironsworn-color-shade-1: hsl(0, 0%, 87%);
-  --ironsworn-color-shade-2: hsl(0, 0%, 66%);
-  --ironsworn-color-shade-3: hsl(0, 0%, 53%);
-  --ironsworn-color-shade-4: hsl(0, 0%, 35%);
+  .palettize(ironsworn-color,black, white, #ff6600, #ff0000);
+  // #ff6600 corresponds to FVTT vars --color-border-highlight,--color-shadow-highlight
+  // #ff0000 corresponds to FVTT vars --color-border-highlight-alt, --color-shadow-primary
 
-  --ironsworn-color-light: hsl(0, 0%, 100%);
-  --ironsworn-color-light-vivid: hsl(55, 67%, 80%);
-  --ironsworn-color-dark: hsl(0, 0%, 0%);
-  --ironsworn-color-dark-vivid: #8b0000;
+  --ironsworn-color-input-bg: var(--ironsworn-color-fg-10);
+  --ironsworn-color-text-stroke: var(--ironsworn-color-fg);
+  --ironsworn-color-border: var(--ironsworn-color-fg);
+  --ironsworn-color-border-muted: var(--ironsworn-color-fg-muted);
 
-  --ironsworn-color-fg-highlight: var(--ironsworn-color-dark-vivid);
-  --ironsworn-color-bg-highlight: var(--ironsworn-color-light-vivid);
-
-  --ironsworn-dark-overlay: fade($--ironsworn-color-dark, 5%);
-  --ironsworn-light-overlay: fade($--ironsworn-color-light, 15%);
-
-  --ironsworn-color-input-bg: var(--ironsworn-dark-overlay);
-
-  --ironsworn-color-fg: var(--ironsworn-color-dark);
-  --ironsworn-color-fg-muted: var(--ironsworn-color-shade-4);
-
-  --ironsworn-color-bg: var(--ironsworn-color-light);
-
-  --ironsworn-color-bg-alt: var(--ironsworn-color-shade-1);
-
-  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-  --ironsworn-color-border: var(--ironsworn-color-dark);
-  --ironsworn-color-border-muted: var(--ironsworn-color-shade-4);
-
-  // see clickable.less for usage
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-block-bg: transparent;
   --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
 
   --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-bg);
-
-  --ironsworn-color-clickable-block-bg-hover: fade(
-    $--ironsworn-color-dark,
-    25%
-  );
+  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-dark-25);
   --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-border);
 
-  --ironsworn-color-clickable-block-fg-selected: var(--ironsworn-color-bg);
-  --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-fg);
+  --ironsworn-color-clickable-block-fg-selected: var(--ironsworn-color-light);
+  --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-dark);
   --ironsworn-color-clickable-block-border-selected: var(
-    --ironsworn-color-border
+    --ironsworn-color-dark
   );
 
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-highlight);
-  --ironsworn-color-clickable-text-selected: var(--ironsworn-color-shade-3);
-
-  --ironsworn-color-accent: var(--color-border-highlight);
-  --ironsworn-color-accent-alt: var(--color-border-highlight-alt);
+  --ironsworn-color-clickable-text-selected: var(
+    --ironsworn-color-fg-highlight
+  );
 
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
 
+  // i'm not 100% clear on what this is for
   input.highlight:focus {
     background-color: var(--ironsworn-color-fg);
     color: var(--ironsworn-color-bg);

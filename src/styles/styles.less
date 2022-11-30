@@ -98,17 +98,7 @@
 
 .system-foundry-ironsworn {
   .ironsworn {
-    .drag-highlight {
-      background: var(--ironsworn-color-bg-highlight);
-    }
-
-    .window-content {
-      background: var(--ironsworn-color-bg);
-      color: var(--ironsworn-color-fg);
-      height: 100%;
-      padding: var(--ironsworn-spacer-md);
-      scrollbar-width: thin;
-    }
+    // standard HTML elements
     button {
       border-width: 0px;
       border-style: solid;
@@ -116,16 +106,6 @@
     form button {
       border-width: 0px;
       border-style: solid;
-    }
-
-    .sheet-area {
-      border-color: var(--ironsworn-color-border-muted);
-      border-top-width: var(--ironsworn-border-width-lg);
-      &:first-child {
-        border-top-width: 0;
-      }
-      margin: var(--ironsworn-spacer-md);
-      padding-top: var(--ironsworn-spacer-lg);
     }
     hr {
       width: 100%;
@@ -149,6 +129,28 @@
 
   *::placeholder {
     font-family: inherit;
+  }
+
+  .sheet-area {
+    border-color: var(--ironsworn-color-border-muted);
+    border-top-width: var(--ironsworn-border-width-lg);
+    &:first-child {
+      border-top-width: 0;
+    }
+    margin: var(--ironsworn-spacer-md);
+    padding-top: var(--ironsworn-spacer-lg);
+  }
+
+  .drag-highlight {
+    background: var(--ironsworn-color-bg-highlight);
+  }
+
+  .window-content {
+    background: var(--ironsworn-color-bg);
+    color: var(--ironsworn-color-fg);
+    height: 100%;
+    padding: var(--ironsworn-spacer-md);
+    scrollbar-width: thin;
   }
 
   /* Items List */
