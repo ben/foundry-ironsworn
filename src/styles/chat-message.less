@@ -213,9 +213,13 @@
               var(--ironsworn-color-accent-25),
               var(--ironsworn-color-accent-alt-25)
             );
-            border: 1px outset var(--ironsworn-color-accent-25);
+            border: var(--ironsworn-border-width-md) outset
+              var(--ironsworn-color-accent-25);
             border-left: var(--ironsworn-border-width-lg) solid
               var(--ironsworn-color-accent-alt-75);
+          }
+          &:not(.selected):not([aria-selected='true']) {
+            color: var(--ironsworn-color-fg-muted);
           }
           > td {
             position: relative;
