@@ -35,13 +35,13 @@
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
 
-  // i'm not 100% clear on what this is for
+  //  can this be removed?
   input.highlight:focus {
     background-color: var(--ironsworn-color-fg);
     color: var(--ironsworn-color-bg);
   }
 
   .asset-ironsworn .asset-ability:before {
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-dark);
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
   }
 }
