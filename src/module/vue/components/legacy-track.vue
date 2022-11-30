@@ -104,6 +104,7 @@
     justify-self: center;
     position: relative;
     .xp-box {
+      // so that the progress box beneath is hidden
       background-color: var(--ironsworn-color-bg);
       margin: 0;
       aspect-ratio: 1;
