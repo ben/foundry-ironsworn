@@ -1,7 +1,7 @@
 /**
  * LESS Function that generates CSS variables for a palette of colours.
  * Currently it doesn't do checking for contrast, but it probably should.
-* NOTE: 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' might be thought of a marker of importantance/activity (warmer = more active/dramatic).
+* NOTE: 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' are more about a UX element's importance/activity (warmer = more active/dramatic).
  * @prefix - the prefix to use for the generated CSS variables.
  * @fgColor - The foreground color.
  * @bgColor - The background color.
@@ -9,12 +9,13 @@
  * @coolAccentColor - A second saturated color, used both as-is and in mixtures with the other colours.
  */
 .palettize(@prefix:palette, @fgColor:hsl(0, 0%, 0%),@bgColor:hsl(0, 0%, 100%),@warmAccentColor:hsl(24, 100%, 50%), @coolAccentColor:hsl(0, 100%, 50%)) {
+  // TODO: This could probably be improved significantly by writing palettize in JS to take advantage of chroma.js, then importing it as a LESS plugin. The various scale functions are particularly attractive!
   @lightColor: if((luma(@fgColor) > luma(@bgColor)), @fgColor, @bgColor);
   @darkColor: if((luma(@fgColor) < luma(@bgColor)), @fgColor, @bgColor);
   --@{prefix}-light: @lightColor;
   --@{prefix}-dark: @darkColor;
-  --@{prefix}-accent-warm: @warmAccentColor;
-  --@{prefix}-accent-cool: @coolAccentColor;
+  --@{prefix}-warm: @warmAccentColor;
+  --@{prefix}-cool: @coolAccentColor;
   --@{prefix}-fg: @fgColor;
   --@{prefix}-bg: @bgColor;
   // generate overlays
@@ -34,10 +35,10 @@
   });
 
   each(@overlays, {
-    --@{prefix}-accent-warm-@{value}: fade(@warmAccentColor, @value);
+    --@{prefix}-warm-@{value}: fade(@warmAccentColor, @value);
   });
   each(@overlays, {
-    --@{prefix}-accent-cool-@{value}: fade(@coolAccentColor, @value);
+    --@{prefix}-cool-@{value}: fade(@coolAccentColor, @value);
   });
 
   // generate mixtures
@@ -46,16 +47,17 @@
     --@{prefix}-tone-@{value}: mix(@fgColor, @bgColor, @value);
   });
 
-  @lightHueWarm: mix(@lightColor, @warmAccentColor, 75%);
-  @lightHueCool: mix(@lightColor, @coolAccentColor, 75%);
-  @darkHueWarm: mix(@darkColor, @warmAccentColor, 75%);
-  @darkHueCool: mix(@darkColor, @coolAccentColor, 75%);
+  @lightHueWarm: mix(@warmAccentColor, @lightColor, 25%);
+  @lightHueCool: mix(@coolAccentColor, @lightColor, 25%);
+  @darkHueWarm: mix(@warmAccentColor, @darkColor, 25%);
+  @darkHueCool: mix(@coolAccentColor, @darkColor, 25%);
 
   @lightWarm: hsl(hue(@lightHueWarm), 100%, 75%);
   @lightCool: hsl(hue(@lightHueCool), 100%, 75%);
-  @lightMuted: desaturate(mix(@lightColor, @darkColor, 65%), 20%);
   @darkWarm: mix(@darkColor, @warmAccentColor, 50%);
   @darkCool: mix(@darkColor, @coolAccentColor, 50%);
+
+  @lightMuted: desaturate(mix(@lightColor, @darkColor, 65%), 20%);
   @darkMuted: desaturate(mix(@darkColor, @lightColor, 65%), 20%);
 
   --@{prefix}-light-warm: @lightWarm;

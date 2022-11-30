@@ -1,59 +1,68 @@
 .dice-roll {
   .dice-formula,
   .dice-total {
+    padding: 5px 0px 5px 0px;
     background: var(--ironsworn-color-warm-10);
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
     border-color: var(--ironsworn-color-border);
     border-radius: var(--ironsworn-border-radius-md);
     box-shadow: 0 0 2px var(--ironsworn-color-cool) inset;
-  }
-}
-
-.roll-graphic {
-  @graphic-gap: 0.25rem;
-  &.dice-formula {
-    display: flex;
-    flex-flow: row nowrap;
-    flex: auto;
-    gap: @graphic-gap;
-    justify-content: center;
-    margin: 0;
-    padding: @graphic-gap;
-    * {
-      margin: 0;
-    }
     .die {
-      width: 1.5em;
-      height: 100%;
-      flex-grow: 0;
-      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-      .textStrokeMixin();
+      &.min {
+        color: var(--ironsworn-color-fg);
+      }
+      &.max {
+        color: var(--ironsworn-color-fg);
+      }
     }
-    .indeterminate-value {
-      color: var(--ironsworn-color-fg-muted);
-    }
-    .action-score-capped {
-      text-decoration: dotted underline;
-    }
-    .score {
-      font-weight: bold;
-      border: var(--ironsworn-border-width-lg) solid
-        var(--ironsworn-color-border);
-      border-radius: 50%;
-      height: 24px;
-      width: 24px;
+  }
+
+  .roll-graphic {
+    @graphic-gap: 0.25rem;
+    &.dice-formula {
       display: flex;
-      align-items: center;
+      flex-flow: row nowrap;
+      flex: auto;
+      gap: @graphic-gap;
       justify-content: center;
-      background-color: var(--ironsworn-color-bg);
-    }
-    .challenge-dice {
-      display: flex;
-      flex-direction: row;
-      flex-grow: 0;
-      gap: (@graphic-gap / 2);
-      .challenge-die {
+      margin: 0;
+      padding: @graphic-gap;
+      * {
+        margin: 0;
+      }
+      .die {
+        width: 1.5em;
+        height: 100%;
+        flex-grow: 0;
+        --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+        .textStrokeMixin();
+      }
+      .indeterminate-value {
+        color: var(--ironsworn-color-fg-muted);
+      }
+      .action-score-capped {
+        text-decoration: dotted underline;
+      }
+      .score {
+        font-weight: bold;
+        border: var(--ironsworn-border-width-lg) solid
+          var(--ironsworn-color-border);
+        border-radius: 50%;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--ironsworn-color-bg);
+      }
+      .challenge-dice {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        gap: (@graphic-gap / 2);
+        .challenge-die {
+        }
       }
     }
   }

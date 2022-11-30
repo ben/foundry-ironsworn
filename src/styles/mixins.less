@@ -20,9 +20,9 @@
 
 // used to mark focused fields. a few FVTT buttons/tabs use it as a hover effect, too.
 .borderGlowExteriorMixin(@spread:6px) {
-  // border-color: var(--ironsworn-color-accent-cool);
-  // border-bottom-color: var(--ironsworn-color-accent-warm);
-  box-shadow: 0 0 @spread var(--ironsworn-color-accent-cool);
+  // border-color: var(--ironsworn-color-cool);
+  // border-bottom-color: var(--ironsworn-color-warm);
+  box-shadow: 0 0 @spread var(--ironsworn-color-cool);
   // FIXME: adjust these specific transition properties to make gaining focus feel a bit snappier
 }
 
@@ -32,8 +32,8 @@
 }
 
 .borderAccentColorMixin() {
-  border-color: var(--ironsworn-color-accent-warm);
-  border-bottom-color: var(--ironsworn-color-accent-cool);
+  border-color: var(--ironsworn-color-warm);
+  border-bottom-color: var(--ironsworn-color-cool);
 }
 
 .textGlowMixin(@color:var(--ironsworn-color-fg-highlight),@spread:10px) {
@@ -58,8 +58,8 @@
   }
   &[aria-selected='true'],
   &.active {
-    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-accent-cool));
-    border-color: var(--ironsworn-color-accent-cool);
+    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-cool));
+    border-color: var(--ironsworn-color-cool);
   }
 }
 
@@ -110,7 +110,7 @@
 
 .textHoverMixin {
   color: var(--ironsworn-color-clickable-text-hover);
-  filter: drop-shadow(0 0 2px var(--ironsworn-color-accent-cool));
+  filter: drop-shadow(0 0 3px var(--ironsworn-color-cool));
 }
 .textFocusMixin {
   .focusOutlineMixin();
@@ -118,7 +118,7 @@
 
 .textActiveMixin {
   color: var(--ironsworn-color-clickable-text-selected);
-  filter: drop-shadow(0 0 2px var(--ironsworn-color-accent-cool));
+  filter: drop-shadow(0 0 3px var(--ironsworn-color-cool));
 }
 
 .clickableTextMixin {
@@ -277,7 +277,7 @@
   &:focus,
   &:focus-within {
     .inputFieldFocusMixin();
-    outline: 1px solid var(--ironsworn-color-accent-warm);
+    outline: 1px solid var(--ironsworn-color-warm);
   }
 }
 
@@ -293,6 +293,6 @@
 
 .focusOutlineMixin() {
   // outline disabled for now
-  // outline: 1px solid var(--ironsworn-color-accent-cool) !important;
+  // outline: 1px solid var(--ironsworn-color-cool) !important;
   z-index: var(--ironsworn-z-index-highest);
 }

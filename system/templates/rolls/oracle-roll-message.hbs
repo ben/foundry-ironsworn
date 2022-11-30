@@ -1,10 +1,11 @@
 <article class="ironsworn table-draw oracle-roll flexcol" data-oracleroll="{{json oracleRoll}}">
-
-  {{#if subtitle}}
-  <small class="subtitle">{{subtitle}}</small>
-  {{/if}}
-  <h2 class="ironsworn-roll-title">{{title}}</h2>
   <table class="oracle-table oracle-table-partial">
+    <caption>
+      {{#if subtitle}}
+      <small class="subtitle">{{subtitle}}</small>
+      {{/if}}
+      <span class="ironsworn-roll-title">{{title}}</span>
+    </caption>
     <tbody>
       {{#each displayRows}}
       <tr class="oracle-result-row" {{#if selected}}aria-selected="true"{{/if}}>
