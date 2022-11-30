@@ -1,9 +1,10 @@
 // styles for FVTT application windows.
 @import '../mixins.less';
 
-// .app {
-//   .borderFloatingMixin();
-// }
+.app {
+  border-color: var(--ironsworn-color-border-highlight);
+  background-color: rgba(0, 0, 0, 50%);
+}
 
 .journal-entry .journal-entry-content {
   background: var(--ironsworn-color-bg);
@@ -14,19 +15,29 @@
   padding: var(--ironsworn-spacer-md);
   background: var(--ironsworn-color-bg);
   color: var(--ironsworn-color-fg);
+  // so the background doesn't spill over the parent element's border
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
 }
 
 .window-app,
 .journal-entry .journal-entry-content {
-  background: var(--ironsworn-color-bg);
   border-width: var(--ironsworn-border-width-md);
   border-style: solid;
 }
+a {
+  .clickableTextMixin();
+  text-shadow: none !important;
+  // we do with with filter instead, so this is omitted
+}
+.window-app {
+  .window-header {
+    color: var(--ironsworn-color-fg);
+    border-bottom-color: var(--ironsworn-color-border-muted);
+  }
+}
 
-// .window-app {
-//   .window-header {
-//     a {
-//       .clickableTextMixin();
-//     }
-//   }
-// }
+// TODO: might make more sense as its own file, or in a file grouping similar elements
+img {
+  border: 1px solid var(--ironsworn-color-border-muted);
+}

@@ -47,23 +47,34 @@
       }
     }
   }
-  .editor {
-    border: 1px solid;
-    border-radius: 5px;
-  }
+  .editor,
   .editor-content {
-    .inputFieldMixin();
+    // height: 100%;
+    min-height: 100px;
+  }
+  .editor {
+    border: 1px solid var(--ironsworn-color-border);
+    background: var(--ironsworn-color-input-bg);
+    border-radius: var(--ironsworn-border-radius-lg);
+    caret-color: var(--ironsworn-color-fg-highlight);
+  }
+  .tab .editor {
+    margin-top: var(--ironsworn-spacer-sm);
+  }
+  .editor-edit {
+    .clickableBlockMixin();
+    border-radius: var(--ironsworn-border-radius-md);
+  }
+
+  .tox-editor-container {
+  }
+  .tox:not(.tox-tinymce-inline) .tox-editor-header {
+    border-bottom: 1px solid var(--ironsworn-color-border-muted);
   }
 
   .ProseMirror {
     .inputFieldMixin();
     padding: 0.5rem;
-  }
-
-  .editor,
-  .editor-content {
-    height: 100%;
-    min-height: 100px;
   }
 
   input {
