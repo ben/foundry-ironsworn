@@ -18,6 +18,7 @@
 </template>
 
 <style lang="less" scoped>
+@import '../../../styles/mixins.less';
 .stat {
   &:before {
     --ironsworn-color-bg-highlight: var(--ironsworn-color-bg-50);

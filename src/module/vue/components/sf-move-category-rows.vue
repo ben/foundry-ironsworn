@@ -36,6 +36,7 @@
 @import '../../../styles/mixins.less';
 
 .thematicColorMixin {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
   --ironsworn-color-thematic: v-bind('category?.color');
 }
 
