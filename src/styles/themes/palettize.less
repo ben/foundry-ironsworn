@@ -17,7 +17,7 @@
   --@{prefix}-accent: @accentColor;
   --@{prefix}-accent-alt: @accentColorAlt;
   // generate overlays
-  @overlays: 10, 25, 50, 75, 90;
+  @overlays: range(10, 90, 10);
   // these *could* be done in a single function, but it makes it harder to read
   each(@overlays, {
     --@{prefix}-fg-@{value}: fade(@fgColor, @value);
@@ -45,12 +45,17 @@
     --@{prefix}-tone-@{value}: mix(@fgColor, @bgColor, @value);
   });
 
-  @lightHighlight: mix(@lightColor, @accentColor, 50%);
-  @lightHighlightAlt: mix(@lightColor, @accentColorAlt, 50%);
-  @lightMuted: mix(@lightColor, @darkColor, 65%);
+  @lightHue: mix(@lightColor, @accentColor, 75%);
+  @lightHueAlt: mix(@lightColor, @accentColorAlt, 75%);
+  @darkHue: mix(@darkColor, @accentColor, 75%);
+  @darkHueAlt: mix(@darkColor, @accentColorAlt, 75%);
+
+  @lightHighlight: hsl(hue(@lightHue), 100%, 75%);
+  @lightHighlightAlt: hsl(hue(@lightHueAlt), 100%, 75%);
+  @lightMuted: desaturate(mix(@lightColor, @darkColor, 65%), 20%);
   @darkHighlight: mix(@darkColor, @accentColor, 50%);
   @darkHighlightAlt: mix(@darkColor, @accentColorAlt, 50%);
-  @darkMuted: mix(@darkColor, @lightColor, 65%);
+  @darkMuted: desaturate(mix(@darkColor, @lightColor, 65%), 20%);
 
   --@{prefix}-light-highlight: @lightHighlight;
   --@{prefix}-light-highlight-alt: @lightHighlightAlt;
@@ -81,11 +86,13 @@
     @lightHighlight,
     @darkHighlight
   );
+
   --@{prefix}-bg-highlight-alt: if(
     (luma(@bgColor) > luma(@fgColor)),
     @lightHighlightAlt,
     @darkHighlightAlt
   );
+
   --@{prefix}-bg-alt: if(
     (luma(@bgColor) > luma(@fgColor)),
     @lightMuted,

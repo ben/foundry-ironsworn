@@ -2,7 +2,7 @@
 // until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
 // yes, i am bitter, because even safari has supported it for ~4 years at this point :)
 // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
-// if you wanted this + a soft shadow, see textHoverMixin for an example of how to mix the two.
+// if you want this + a soft shadow, LESS can combine them with square bracket notation to access the text-shadow property.
 // generated with owumaro.github.io/text-stroke-generator/
 .textStrokeMixin(@color: var(--ironsworn-color-text-stroke)) {
   text-shadow: 1px 0px 0px @color, 0.540302px 0.841471px 0px @color,
@@ -277,6 +277,7 @@
   &:focus,
   &:focus-within {
     .inputFieldFocusMixin();
+    outline: 1px solid var(--ironsworn-color-accent);
   }
 }
 
@@ -287,6 +288,7 @@
   position: relative;
   border-@{direction}-width: var(--ironsworn-border-width-md);
   margin-@{direction}: @spacer;
+  border-@{direction}-color: var(--ironsworn-color-border);
 }
 
 .focusOutlineMixin() {

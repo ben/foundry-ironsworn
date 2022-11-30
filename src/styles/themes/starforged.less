@@ -1,6 +1,11 @@
 @import './starforged-font.css'; // HACK to avoid import error
 @import '../mixins.less';
 @import '../fvtt/vars.less';
+@import './palettize.less';
+
+:root {
+  .palettize(ironsworn-color,hsl(185,70%,55%), hsl(185,20%,0%), hsl(195,100%,50%), hsl(210,100%,50%));
+}
 
 .system-foundry-ironsworn.theme-starforged {
   // restyle FVTT's UI
@@ -8,20 +13,17 @@
   @import '../fvtt/clickable.less';
   @import '../fvtt/sidebar.less';
   @import '../fvtt/inputs.less';
-  @import './palettize.less';
   // TODO: finish slider.less
 
   --font-primary: 'Carrois Gothic SC', sans-serif;
 
-  .palettize(ironsworn-color,hsl(185,70%,55%), hsl(185,20%,0%), hsl(195,100%,50%), hsl(210,100%,50%));
-
   --ironsworn-color-border-highlight: var(--ironsworn-color-fg-highlight);
   --ironsworn-color-border: var(--ironsworn-color-fg-muted);
-  --ironsworn-color-border-muted: var(--ironsworn-color-fg-muted-alt);
+  --ironsworn-color-border-muted: var(--ironsworn-color-fg-20);
 
-  --ironsworn-color-input-bg: var(--ironsworn-color-fg-25);
+  --ironsworn-color-input-bg: var(--ironsworn-color-fg-10);
 
-  --ironsworn-color-text-stroke: var(--ironsworn-color-fg);
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
 
   // see clickable.less for usage
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
@@ -30,26 +32,26 @@
     --ironsworn-color-fg-highlight
   );
 
+  // block default state
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg-muted);
   --ironsworn-color-clickable-block-bg: transparent;
   --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
 
-  --ironsworn-color-clickable-block-fg-selected: var(
-    --ironsworn-color-fg-highlight
-  );
-  --ironsworn-color-clickable-block-bg-selected: var(
-    --ironsworn-color-bg-highlight
-  );
-  --ironsworn-color-clickable-block-border-selected: var(
-    --ironsworn-color-fg-highlight
-  );
-
+  // block hover state
   --ironsworn-color-clickable-block-fg-hover: var(
     --ironsworn-color-fg-highlight
   );
-
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-bg-alt);
+  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-fg-20);
   --ironsworn-color-clickable-block-border-hover: var(
+    --ironsworn-color-fg-highlight
+  );
+
+  // block selected state
+  --ironsworn-color-clickable-block-fg-selected: var(
+    --ironsworn-color-fg-highlight
+  );
+  --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-fg-50);
+  --ironsworn-color-clickable-block-border-selected: var(
     --ironsworn-color-fg-highlight
   );
 

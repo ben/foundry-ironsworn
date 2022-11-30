@@ -1,17 +1,33 @@
 @import 'mixins.less';
 
-::-webkit-scrollbar-track {
-  box-shadow: 0 0 1px hsl(0, 0%, 60%) inset;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb {
-  outline: none;
-  border-radius: var(--ironsworn-border-radius-md);
-  background: var(--ironsworn-color-bg-alt);
-  border: var(--ironsworn-border-width-md) solid
-    var(--ironsworn-color-border-muted);
-}
 :root {
+  // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
+  --widget-stroke-width: 1;
+
+  --widget-fill-opacity-preview: 0.5;
+
+  --ironsworn-border-radius-sm: 2px;
+  --ironsworn-border-radius-md: 3px;
+  --ironsworn-border-radius-lg: 5px;
+
+  --ironsworn-border-width-md: 1px;
+  --ironsworn-border-width-lg: 2px;
+
+  --ironsworn-spacer-xs: 2px;
+  --ironsworn-spacer-sm: 3px;
+  --ironsworn-spacer-md: 5px;
+  --ironsworn-spacer-lg: 7px;
+
+  --ironsworn-vertical-slider-width: 50px;
+  --ironsworn-clickable-line-height: 28px;
+
+  --ironsworn-z-index-highest: 100;
+  --ironsworn-z-index-higher: 75;
+  --ironsworn-z-index-high: 25;
+  --ironsworn-z-index-low: -1;
+  --ironsworn-z-index-lower: -2;
+  --ironsworn-z-index-lowest: -3;
+
   scrollbar-color: var(--ironsworn-color-border-muted)
     var(--ironsworn-color-bg-alt);
 
@@ -67,33 +83,6 @@
   --ironsworn-color-warning-faded: hsl(55, 100%, 50%);
   --ironsworn-color-success: hsl(200, 80%, 40%);
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
-
-  // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
-  --widget-stroke-width: 1;
-
-  --widget-fill-opacity-preview: 0.5;
-
-  --ironsworn-border-radius-sm: 2px;
-  --ironsworn-border-radius-md: 3px;
-  --ironsworn-border-radius-lg: 5px;
-
-  --ironsworn-border-width-md: 1px;
-  --ironsworn-border-width-lg: 2px;
-
-  --ironsworn-spacer-xs: 2px;
-  --ironsworn-spacer-sm: 3px;
-  --ironsworn-spacer-md: 5px;
-  --ironsworn-spacer-lg: 7px;
-
-  --ironsworn-vertical-slider-width: 50px;
-  --ironsworn-clickable-line-height: 28px;
-
-  --ironsworn-z-index-highest: 100;
-  --ironsworn-z-index-higher: 75;
-  --ironsworn-z-index-high: 25;
-  --ironsworn-z-index-low: -1;
-  --ironsworn-z-index-lower: -2;
-  --ironsworn-z-index-lowest: -3;
 }
 
 .system-foundry-ironsworn {
@@ -368,18 +357,6 @@
     background-color: var(--ironsworn-color-bg-highlight);
   }
 
-  .dice-roll {
-    .dice-formula,
-    .dice-total {
-      background: var(--ironsworn-color-bg-alt);
-      border-width: var(--ironsworn-border-width-md);
-      border-style: solid;
-      border-color: var(--ironsworn-color-border);
-      border-radius: var(--ironsworn-border-radius-md);
-      box-shadow: 0 0 2px var(--ironsworn-color-accent) inset;
-    }
-  }
-
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
   @import 'chat-message.less';
@@ -391,6 +368,22 @@
   @import 'utils.less';
 
   .ironsworn {
+    // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.
     @import './fvtt/dialogs.less';
+    &.dialog {
+      .dialog();
+    }
   }
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 0 0 1px hsl(0, 0%, 60%) inset;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  outline: none;
+  border-radius: var(--ironsworn-border-radius-md);
+  background: var(--ironsworn-color-bg-alt);
+  border: var(--ironsworn-border-width-md) solid
+    var(--ironsworn-color-border-muted);
 }

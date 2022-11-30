@@ -78,6 +78,7 @@
 
   .asset-ability-clock {
     min-width: 40px;
+    max-width: 75px;
   }
   .asset-ability-text {
     // flex-grow: 2;
@@ -95,6 +96,10 @@
   gap: var(--ironsworn-spacer-sm);
   .icon-button .button-text {
     text-align: left;
+  }
+  .slider-segment {
+    --ironsworn-text-stroke-color: var(--ironsworn-dark-color);
+    .textStrokeMixin();
   }
 }
 

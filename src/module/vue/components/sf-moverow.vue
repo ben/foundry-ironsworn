@@ -5,6 +5,7 @@
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
+    :contentWrapperClass="$style.contentWrapper"
     :toggleWrapperIs="`h${headingLevel}`"
     :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
     :noIcon="true"
@@ -94,10 +95,7 @@
   }
 }
 .moveSummary {
-  .cardColorsMixin();
-  border: 1px solid var(--ironsworn-color-clickable-block-border-selected);
   padding: 0.5rem 0.5rem 0.3rem;
-  border-radius: 0 @border_radius @border_radius @border_radius;
 }
 
 .moveButton {
@@ -137,6 +135,12 @@
   }
 }
 
+.contentWrapper {
+  color: var(--ironworn-color-fg);
+  background-color: var(--ironsworn-color-bg-80);
+  border: 1px solid var(--ironsworn-color-clickable-block-border-selected);
+  border-radius: 0 @border_radius @border_radius @border_radius;
+}
 .moveControls {
   display: flex;
   flex-flow: row;
@@ -151,13 +155,15 @@
 
 .toggleWrapper {
   transition: var(--std-animation);
+  border: 1px solid transparent;
+  border-bottom-width: 0;
   border-top-left-radius: @border_radius;
   border-top-right-radius: @border_radius;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   header:not(:last-child) & {
-    color: var(--ironsworn-color-clickable-block-fg-selected);
-    background-color: var(--ironsworn-color-clickable-block-bg-selected);
+    color: var(--ironsworn-color-light);
+    background-color: var(--ironsworn-color-dark);
     border-color: var(--ironsworn-color-clickable-block-border-selected);
   }
 }

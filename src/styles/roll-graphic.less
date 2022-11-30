@@ -1,3 +1,15 @@
+.dice-roll {
+  .dice-formula,
+  .dice-total {
+    background: var(--ironsworn-color-fg-10);
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
+    border-color: var(--ironsworn-color-border);
+    border-radius: var(--ironsworn-border-radius-md);
+    box-shadow: 0 0 2px var(--ironsworn-color-accent) inset;
+  }
+}
+
 .roll-graphic {
   @graphic-gap: 0.25rem;
   &.dice-formula {
@@ -26,7 +38,8 @@
     }
     .score {
       font-weight: bold;
-      border: 2px solid var(--ironsworn-color-border);
+      border: var(--ironsworn-border-width-lg) solid
+        var(--ironsworn-color-border);
       border-radius: 50%;
       height: 24px;
       width: 24px;

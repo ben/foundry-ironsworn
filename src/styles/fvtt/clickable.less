@@ -1,13 +1,19 @@
 @import '../mixins.less';
 
 #controls ol.control-tools > li {
-  .clickableBlockMixin();
   border-width: var(--ironsworn-border-width-md);
   border-radius: var(--ironsworn-border-radius-lg);
-  .borderFloatingMixin();
+  background: var(--ironsworn-color-dark-50);
+  color: var(--color-text-light-heading);
+  border: 1px solid var(--color-border-dark);
+  border-radius: var(--ironsworn-border-radius-lg);
+  transition: var(--std-animation);
   .active,
   &:hover {
-    .borderGlowExteriorMixin();
+    color: var(--ironsworn-color-fg-highlight);
+    border: 1px solid var(--color-border-highlight-alt);
+    border-bottom: 1px solid var(--color-border-highlight);
+    box-shadow: 0 0 10px var(--color-shadow-highlight);
   }
 }
 

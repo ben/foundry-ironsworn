@@ -20,7 +20,7 @@
 <style lang="less" scoped>
 .stat {
   &:before {
-    --ironsworn-color-bg-highlight: var(--ironsworn-color-dark);
+    --ironsworn-color-bg-highlight: var(--ironsworn-color-bg-50);
   }
   & > * {
     position: relative; // must be set to manipulate z-index
@@ -34,7 +34,7 @@
   }
   &:hover {
     &:before {
-      opacity: 0.3;
+      opacity: 1;
     }
   }
 }

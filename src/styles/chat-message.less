@@ -14,7 +14,7 @@
   .ironsworn-roll {
     .dice-formula,
     .dice-total {
-      background-color: var(--ironsworn-color-bg);
+      background-color: var(--ironsworn-color-fg-10);
     }
   }
   .ironsworn-roll {
@@ -132,23 +132,6 @@
         font-weight: bold;
       }
     }
-
-    .preroll-dialog {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      .form-group {
-        padding: 0;
-        border: none;
-      }
-      .advanced-roll-options {
-        padding: var(--ironsworn-spacer-md);
-        margin: var(--ironsworn-spacer-md) 0;
-        border-width: var(--ironsworn-border-width-md);
-      }
-      .advanced-roll-options-toggle {
-      }
-    }
   }
   .message-header {
     color: var(--ironsworn-color-fg-muted);
@@ -192,7 +175,7 @@
         }
       }
       .oracle-table-partial {
-        margin: 2px 0;
+        margin: var(--ironsworn-spacer-xs) 0;
         transition: none;
         &:hover {
           .oracle-row-content {
@@ -210,13 +193,13 @@
           &[aria-selected='true'] {
             background-image: linear-gradient(
               to bottom,
-              var(--ironsworn-color-accent-25),
-              var(--ironsworn-color-accent-alt-25)
+              var(--ironsworn-color-accent-20),
+              var(--ironsworn-color-accent-alt-20)
             );
             border: var(--ironsworn-border-width-md) outset
-              var(--ironsworn-color-accent-25);
+              var(--ironsworn-color-accent-20);
             border-left: var(--ironsworn-border-width-lg) solid
-              var(--ironsworn-color-accent-alt-75);
+              var(--ironsworn-color-accent-alt-70);
           }
           &:not(.selected):not([aria-selected='true']) {
             color: var(--ironsworn-color-fg-muted);
