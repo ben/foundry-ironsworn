@@ -58,20 +58,20 @@
   @darkHighlightCool: mix(@darkColor, @coolAccentColor, 50%);
   @darkMuted: desaturate(mix(@darkColor, @lightColor, 65%), 20%);
 
-  --@{prefix}-light-highlight: @lightHighlight;
-  --@{prefix}-light-highlight-cool: @lightHighlightAlt;
+  --@{prefix}-light-warm: @lightHighlight;
+  --@{prefix}-light-cool: @lightHighlightAlt;
   --@{prefix}-light-muted: @lightMuted;
 
-  --@{prefix}-dark-highlight: @darkHighlightWarm;
-  --@{prefix}-dark-highlight-cool: @darkHighlightCool;
+  --@{prefix}-dark-warm: @darkHighlightWarm;
+  --@{prefix}-dark-cool: @darkHighlightCool;
   --@{prefix}-dark-muted: @darkMuted;
 
-  --@{prefix}-fg-highlight: if(
+  --@{prefix}-fg-warm: if(
     (luma(@bgColor) > luma(@fgColor)),
     @darkHighlightWarm,
     @lightHighlight
   );
-  --@{prefix}-fg-highlight-cool: if(
+  --@{prefix}-fg-cool: if(
     (luma(@bgColor) > luma(@fgColor)),
     @darkHighlightCool,
     @lightHighlightAlt
@@ -82,13 +82,13 @@
     @lightMuted
   );
 
-  --@{prefix}-bg-highlight: if(
+  --@{prefix}-bg-warm: if(
     (luma(@bgColor) > luma(@fgColor)),
     @lightHighlight,
     @darkHighlightWarm
   );
 
-  --@{prefix}-bg-highlight-cool: if(
+  --@{prefix}-bg-cool: if(
     (luma(@bgColor) > luma(@fgColor)),
     @lightHighlightAlt,
     @darkHighlightCool

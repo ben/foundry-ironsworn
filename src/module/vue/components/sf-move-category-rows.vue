@@ -65,9 +65,7 @@
   border-radius: 5px;
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
-    --ironsworn-color-clickable-text-hover: var(
-      --ironsworn-color-light-highlight
-    );
+    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
     .clickableTextMixin();
   }
 }

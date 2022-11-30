@@ -35,7 +35,7 @@
       background-size: 24px 24px;
       font-weight: bold;
       text-align: center;
-      --dice-background-color: var(--ironsworn-color-bg-highlight);
+      --dice-background-color: var(--ironsworn-color-bg-warm);
 
       &.d4 {
         background-image: url('../../icons/svg/d4-grey.svg');
@@ -149,7 +149,7 @@
 
     .dice-formula,
     .dice-total {
-      background: var(--ironsworn-dark-50);
+      background: var(--ironsworn-color-fg-10);
       border-width: 0px;
       padding: 5px 0px 5px 0px;
       .die {
@@ -175,6 +175,7 @@
         }
       }
       .oracle-table-partial {
+        background-color: var(--ironsworn-color-bg-20);
         margin: var(--ironsworn-spacer-xs) 0;
         transition: none;
         &:hover {
@@ -202,7 +203,7 @@
               var(--ironsworn-color-accent-cool-70);
           }
           &:not(.selected):not([aria-selected='true']) {
-            color: var(--ironsworn-color-fg-muted);
+            color: var(--ironsworn-color-fg-80);
           }
           > td {
             position: relative;

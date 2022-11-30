@@ -100,9 +100,7 @@
 
 .moveButton {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-text-hover: var(
-    --ironsworn-color-light-highlight
-  );
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   .clickableTextMixin();
   font-size: 1.15em;
   height: 28px;
@@ -112,9 +110,7 @@
 
 .toggleButton {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-text-hover: var(
-    --ironsworn-color-light-highlight
-  );
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   .clickableTextMixin();
   .textStrokeMixin();
   .thematicColorMixin();
