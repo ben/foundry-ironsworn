@@ -14,7 +14,7 @@
     >
       <slot name="before-toggle"></slot>
       <component
-        :class="[toggleWrapperClass, $style.toggleWrapper]"
+        :class="[toggleWrapperClass, $style.toggleWrapper, 'toggle-wrapper']"
         :is="toggleWrapperIs"
       >
         <component
@@ -73,7 +73,9 @@
 }
 
 .toggleWrapper {
-  display: contents !important;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
 }
 
 .toggleSection {

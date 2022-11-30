@@ -63,10 +63,9 @@
   background-color: var(--ironsworn-color-thematic);
   border-radius: 5px;
   button {
-    color: var(--ironsworn-color-light);
-    &:hover {
-      color: var(--ironsworn-color-clickable-text-hover);
-    }
+    --ironsworn-color-clickable-text: var(--ironsworn-color-light);
+    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-vivid);
+    .clickableTextMixin();
   }
 }
 .toggleButton {

@@ -77,11 +77,6 @@
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
 }
-.colorsSelectedMixin {
-  color: var(--ironsworn-color-clickable-block-fg-selected);
-  background-color: var(--ironsworn-color-clickable-block-bg-selected);
-  border-color: var(--ironsworn-color-clickable-block-border-selected);
-}
 .cardColorsMixin {
   color: var(--ironsworn-color-fg);
   border-color: var(--ironsworn-color-thematic);
@@ -106,6 +101,9 @@
 }
 
 .moveButton {
+  --ironsworn-color-clickable-text: var(--ironsworn-color-light);
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-vivid);
+  .clickableTextMixin();
   font-size: 1.15em;
   height: 28px;
   aspect-ratio: 1 !important;
@@ -113,33 +111,25 @@
 }
 
 .toggleButton {
+  --ironsworn-color-clickable-text: var(--ironsworn-color-light);
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-vivid);
+  .clickableTextMixin();
+  .textStrokeMixin();
+  .thematicColorMixin();
+  border: none;
+  background: none;
   display: flex;
   flex-direction: row;
   padding: 0.2rem 0.2rem 0.2rem 0.3rem;
   text-align: left;
   line-height: 1.25;
   font-size: var(--font-size-16);
-  .thematicColorMixin();
   border-color: transparent;
   border-width: 1px 1px 0 1px;
   border-style: solid;
   align-items: center;
   &:hover {
     box-shadow: none;
-    color: var(--ironsworn-color-clickable-text-hover);
-  }
-
-  .textStrokeMixin();
-  // .wrapper[aria-expanded='false'] & {
-  // }
-
-  .wrapper[aria-expanded='true'] & {
-    .colorsSelectedMixin();
-    border-top-left-radius: @border_radius;
-    border-top-right-radius: @border_radius;
-    &:hover {
-      color: var(--ironsworn-color-clickable-text-hover);
-    }
   }
 }
 
@@ -147,13 +137,25 @@
   display: flex;
   flex-flow: row;
   background: none;
-  --ironsworn-color-clickable-text: var(--ironsworn-color-thematic-contrast);
 }
 
 .toggleSection {
   gap: @wrapper_spacing;
   display: flex;
   flex-flow: row nowrap;
+}
+
+.toggleWrapper {
+  transition: var(--std-animation);
+  border-top-left-radius: @border_radius;
+  border-top-right-radius: @border_radius;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  header:not(:last-child) & {
+    color: var(--ironsworn-color-clickable-block-fg-selected);
+    background-color: var(--ironsworn-color-clickable-block-bg-selected);
+    border-color: var(--ironsworn-color-clickable-block-border-selected);
+  }
 }
 </style>
 
