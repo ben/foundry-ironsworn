@@ -28,14 +28,15 @@
 
     .roll {
       width: 24px;
-      line-height: 24px;
+      line-height: $width;
       display: inline-block;
       margin-right: 1px;
       background-repeat: no-repeat;
-      background-size: 24px 24px;
+      background-size: $width $width;
       font-weight: bold;
       text-align: center;
-      --dice-background-color: var(--ironsworn-color-bg-warm);
+      --dice-background-color: var(--ironsworn-color-fg-20);
+      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
       &.d4 {
         background-image: url('../../icons/svg/d4-grey.svg');
