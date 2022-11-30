@@ -8,15 +8,15 @@
  * @warmAccentColor - A saturated color, used both as-is and in mixtures with the other colours.
  * @coolAccentColor - A second saturated color, used both as-is and in mixtures with the other colours.
  */
-.palettize(@prefix:palette, @fgColor:black,@bgColor:white,@warmAccentColor:#ff6600,@coolAccentColor:#ff0000) {
+.palettize(@prefix:palette, @fgColor:hsl(0, 0%, 0%),@bgColor:hsl(0, 0%, 100%),@warmAccentColor:hsl(24, 100%, 50%), @coolAccentColor:hsl(0, 100%, 50%)) {
   @lightColor: if((luma(@fgColor) > luma(@bgColor)), @fgColor, @bgColor);
   @darkColor: if((luma(@fgColor) < luma(@bgColor)), @fgColor, @bgColor);
   --@{prefix}-light: @lightColor;
   --@{prefix}-dark: @darkColor;
-  --@{prefix}-fg: @fgColor;
-  --@{prefix}-bg: @bgColor;
   --@{prefix}-accent-warm: @warmAccentColor;
   --@{prefix}-accent-cool: @coolAccentColor;
+  --@{prefix}-fg: @fgColor;
+  --@{prefix}-bg: @bgColor;
   // generate overlays
   @overlays: range(10, 90, 10);
   // these *could* be done in a single function, but it makes it harder to read
@@ -46,35 +46,35 @@
     --@{prefix}-tone-@{value}: mix(@fgColor, @bgColor, @value);
   });
 
-  @lightHue: mix(@lightColor, @warmAccentColor, 75%);
-  @lightHueAlt: mix(@lightColor, @coolAccentColor, 75%);
-  @darkHue: mix(@darkColor, @warmAccentColor, 75%);
-  @darkHueAlt: mix(@darkColor, @coolAccentColor, 75%);
+  @lightHueWarm: mix(@lightColor, @warmAccentColor, 75%);
+  @lightHueCool: mix(@lightColor, @coolAccentColor, 75%);
+  @darkHueWarm: mix(@darkColor, @warmAccentColor, 75%);
+  @darkHueCool: mix(@darkColor, @coolAccentColor, 75%);
 
-  @lightHighlight: hsl(hue(@lightHue), 100%, 75%);
-  @lightHighlightAlt: hsl(hue(@lightHueAlt), 100%, 75%);
+  @lightWarm: hsl(hue(@lightHueWarm), 100%, 75%);
+  @lightCool: hsl(hue(@lightHueCool), 100%, 75%);
   @lightMuted: desaturate(mix(@lightColor, @darkColor, 65%), 20%);
-  @darkHighlightWarm: mix(@darkColor, @warmAccentColor, 50%);
-  @darkHighlightCool: mix(@darkColor, @coolAccentColor, 50%);
+  @darkWarm: mix(@darkColor, @warmAccentColor, 50%);
+  @darkCool: mix(@darkColor, @coolAccentColor, 50%);
   @darkMuted: desaturate(mix(@darkColor, @lightColor, 65%), 20%);
 
-  --@{prefix}-light-warm: @lightHighlight;
-  --@{prefix}-light-cool: @lightHighlightAlt;
+  --@{prefix}-light-warm: @lightWarm;
+  --@{prefix}-light-cool: @lightCool;
   --@{prefix}-light-muted: @lightMuted;
 
-  --@{prefix}-dark-warm: @darkHighlightWarm;
-  --@{prefix}-dark-cool: @darkHighlightCool;
+  --@{prefix}-dark-warm: @darkWarm;
+  --@{prefix}-dark-cool: @darkCool;
   --@{prefix}-dark-muted: @darkMuted;
 
   --@{prefix}-fg-warm: if(
     (luma(@bgColor) > luma(@fgColor)),
-    @darkHighlightWarm,
-    @lightHighlight
+    @darkWarm,
+    @lightWarm
   );
   --@{prefix}-fg-cool: if(
     (luma(@bgColor) > luma(@fgColor)),
-    @darkHighlightCool,
-    @lightHighlightAlt
+    @darkCool,
+    @lightCool
   );
   --@{prefix}-fg-muted: if(
     (luma(@bgColor) > luma(@fgColor)),
@@ -84,14 +84,14 @@
 
   --@{prefix}-bg-warm: if(
     (luma(@bgColor) > luma(@fgColor)),
-    @lightHighlight,
-    @darkHighlightWarm
+    @lightWarm,
+    @darkWarm
   );
 
   --@{prefix}-bg-cool: if(
     (luma(@bgColor) > luma(@fgColor)),
-    @lightHighlightAlt,
-    @darkHighlightCool
+    @lightCool,
+    @darkCool
   );
 
   --@{prefix}-bg-alt: if(
