@@ -85,11 +85,14 @@ defineExpose({ selectIndex })
     height: max-content;
 
     &[aria-orientation='horizontal'] {
-      border-block-end: 1px solid;
+      border-block-end: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-color-border);
     }
     &[aria-orientation='vertical'] {
-      border-inline-start: 1px solid;
-      border-inline-end: 1px solid;
+      border-inline-start: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-color-border);
+      border-inline-end: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-color-border);
     }
   }
   [role^='tabpanel'],
