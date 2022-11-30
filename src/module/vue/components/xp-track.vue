@@ -19,6 +19,7 @@
     aspect-ratio: 1;
     max-width: 20px;
     .clickableBlockMixin();
+    border-color: var(--ironsworn-border-color);
     border-radius: 3px;
   }
 }
