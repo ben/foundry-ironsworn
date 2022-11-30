@@ -37,9 +37,9 @@
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
       .blockHoverMixin();
-      box-shadow: 0 0 5px var(--ironsworn-color-accent-warm) inset,
-        0 0 5px var(--ironsworn-color-accent-warm),
-        0 0 10px var(--ironsworn-color-accent-cool);
+      box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
+        0 0 5px var(--ironsworn-color-warm),
+        0 0 10px var(--ironsworn-color-cool);
     }
   }
 }
