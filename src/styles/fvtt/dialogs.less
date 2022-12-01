@@ -1,3 +1,4 @@
+@import '../mixins.less';
 .dialog {
   .window-header {
   }
@@ -11,6 +12,10 @@
       details {
         summary {
           cursor: pointer;
+          border-radius: var(--ironsworn-border-radius-md);
+          &:focus {
+            .inputFieldFocusMixin();
+          }
         }
       }
     }
