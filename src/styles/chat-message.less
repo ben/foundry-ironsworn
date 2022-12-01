@@ -4,7 +4,7 @@
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   color: var(--ironsworn-color-fg);
   .message-header {
-    // FVTT's default message header. Some modules restyle this, so don't go *too* wild with the layout, here.
+    // FVTT's default message header. Some modules restyle this, so be careful with any layout changes.
     color: var(--ironsworn-color-fg-muted);
     a:not(:hover):not(:focus) {
       color: inherit;
@@ -93,7 +93,7 @@
           }
           &:last-child {
             > .oracle-row-content {
-              padding-right: 2px;
+              padding-right: var(--ironsworn-spacer-xs);
             }
           }
         }
