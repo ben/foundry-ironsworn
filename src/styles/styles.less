@@ -64,6 +64,7 @@
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
   --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
 
+  // TODO: Figure out which of these are still needed
   --ironsworn-color-danger: hsl(0, 80%, 40%);
   --ironsworn-color-danger-faded: hsl(0, 80%, 40%);
   --ironsworn-color-danger-inverted: hsl(0, 0%, 100%);
@@ -105,76 +106,7 @@
     background: var(--ironsworn-color-warm-50);
   }
 
-  /* Items List */
-  // TODO - good candidate for being split to its own file
-
-  .item-row {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    border-color: var(--ironsworn-color-border);
-    border-radius: var(--ironsworn-border-radius-sm);
-    padding: var(--ironsworn-spacer-sm);
-    margin: var(--ironsworn-spacer-sm) 0;
-
-    .item-row-control {
-      flex-grow: 0;
-      padding: var(--ironsworn-spacer-md);
-    }
-  }
-  .item-list {
-    list-style: none;
-    margin: var(--ironsworn-spacer-lg) 0;
-    padding: 0;
-    flex: 1 0 100px;
-    overflow-y: scroll;
-
-    .item-name {
-      margin: 0;
-    }
-
-    .item-controls {
-      flex: 0 0 36px;
-    }
-    .item {
-      height: 30px;
-      line-height: 24px;
-      padding: var(--ironsworn-spacer-sm) 0;
-      border-bottom: var(--ironsworn-border-width-md) solid
-        var(--ironsworn-color-border);
-
-      img {
-        flex: 0 0 24px;
-        margin-right: var(--ironsworn-spacer-md);
-      }
-    }
-    .move {
-      overflow-x: hidden;
-    }
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      li {
-        border-color: var(--ironsworn-color-border);
-      }
-
-      & > h2 {
-        text-align: center;
-        border-width: var(--ironsworn-border-width-md) 0;
-      }
-    }
-  }
-  .progresses {
-    .item {
-      border: var(--ironsworn-border-width-md) solid
-        var(--ironsworn-color-border-muted);
-      border-radius: var(--ironsworn-border-radius-md);
-      padding: var(--ironsworn-spacer-md);
-      margin: var(--ironsworn-spacer-md);
-    }
-  }
-
+  // FIXME: still in use?
   .progress {
     flex: 1;
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
@@ -306,10 +238,7 @@
     }
   }
 
-  .move-li {
-    height: 1.5rem;
-  }
-
+  // FIXME: is this still in use?
   .move-title {
     text-align: center;
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
@@ -325,6 +254,12 @@
 
   .ironsworn {
     // stuff scoped to .ironsworn app windows only
+    .window-content {
+      background: var(--ironsworn-color-bg);
+      color: var(--ironsworn-color-fg);
+      height: 100%;
+      padding: var(--ironsworn-spacer-md);
+    }
     button {
       border-width: 0px;
       border-style: solid;
@@ -343,12 +278,6 @@
     h3 {
       border: none;
     }
-    .window-content {
-      background: var(--ironsworn-color-bg);
-      color: var(--ironsworn-color-fg);
-      height: 100%;
-      padding: var(--ironsworn-spacer-md);
-    }
   }
 
   // importing within this selector to ensure higher specificity
@@ -362,6 +291,7 @@
   @import 'tables.less';
   @import 'utils.less';
   @import 'scrollbar.less';
+  @import 'list.less';
 
   .ironsworn {
     // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.
