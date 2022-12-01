@@ -108,54 +108,6 @@
   }
 
   // TODO: move to its own file, or have it live in the relevant component
-  .stats {
-    flex: 0;
-    justify-content: space-around;
-
-    .stat {
-      text-transform: uppercase;
-      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-      .textStrokeMixin();
-      flex: 0 0 75px;
-      border-width: var(--ironsworn-border-width-md);
-      border-radius: var(--ironsworn-border-radius-lg) !important;
-      text-align: center;
-      padding: 0.5rem 0;
-
-      h3 {
-        margin: 0;
-        margin-bottom: var(--ironsworn-spacer-md);
-        font-weight: bold;
-        font-size: 22px;
-      }
-
-      h4 {
-        margin: 0;
-        font-weight: bold;
-      }
-
-      input {
-        width: 50%;
-        margin-bottom: var(--ironsworn-spacer-md);
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-      }
-    }
-
-    .edit {
-      flex: 0 0 30px;
-      justify-items: center;
-      align-items: center;
-      border: var(--ironsworn-border-width-md) solid
-        var(--ironsworn-color-border);
-      transition: var(--std-animation);
-
-      &.editing {
-        background: var(--ironsworn-color-bg-muted);
-      }
-    }
-  }
 
   .compact {
     h2,
@@ -234,6 +186,7 @@
 
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
+  @import 'attr-box.less';
   @import 'chat-message.less';
   @import 'clickable.less';
   @import 'dialog.less';
