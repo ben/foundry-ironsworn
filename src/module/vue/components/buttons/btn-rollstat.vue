@@ -50,7 +50,7 @@ function rollStat(): any {
 
     return IronswornPrerollDialog.showForStat(
       name,
-      $actor?.data.data[props.attr],
+      $actor?.system[props.attr],
       $actor
     )
   }

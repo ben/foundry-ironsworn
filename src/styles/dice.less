@@ -1,0 +1,140 @@
+.dice-roll {
+  .dice-formula,
+  .dice-total {
+    padding: 5px 0px 5px 0px;
+    background: var(--ironsworn-color-fg-10);
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
+    border-color: var(--ironsworn-color-border-muted);
+    border-radius: var(--ironsworn-border-radius-md);
+    box-shadow: 0 0 2px var(--ironsworn-color-bg) inset;
+    .die {
+      &.min {
+        color: var(--ironsworn-color-fg);
+      }
+      &.max {
+        color: var(--ironsworn-color-fg);
+      }
+    }
+  }
+
+  .roll-graphic {
+    @graphic-gap: 0.25rem;
+    &.dice-formula {
+      display: flex;
+      flex-flow: row nowrap;
+      flex: auto;
+      gap: @graphic-gap;
+      justify-content: center;
+      margin: 0;
+      padding: @graphic-gap;
+      * {
+        margin: 0;
+      }
+      .die {
+        width: 1.5em;
+        height: 100%;
+        flex-grow: 0;
+        --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+        .textStrokeMixin();
+      }
+      .indeterminate-value {
+        color: var(--ironsworn-color-midtone-60);
+      }
+      .action-score-capped {
+        text-decoration: dotted underline;
+      }
+      .score {
+        font-weight: bold;
+        border: var(--ironsworn-border-width-lg) solid
+          var(--ironsworn-color-border);
+        border-radius: 50%;
+        height: 24px;
+        width: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .challenge-dice {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 0;
+        gap: (@graphic-gap / 2);
+        .challenge-die {
+        }
+      }
+    }
+  }
+}
+.ironsworn-roll {
+  h3,
+  .hit-type {
+    font-weight: bold;
+  }
+
+  .diceGlowMixin(@color, @diceDropShadowSize: 0px 0px 2px) {
+    color: @color !important;
+    filter: drop-shadow(@diceDropShadowSize @color)
+      drop-shadow(@diceDropShadowSize @color);
+    background-blend-mode: screen;
+  }
+
+  .roll {
+    width: 24px;
+    line-height: $width;
+    display: inline-block;
+    margin-right: 1px;
+    background-repeat: no-repeat;
+    background-size: $width $width;
+    font-weight: bold;
+    text-align: center;
+    --dice-background-color: var(--ironsworn-color-fg-30);
+    --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+
+    &.d4 {
+      background-image: url('../../icons/svg/d4-grey.svg');
+    }
+
+    &.d6:before {
+      background-color: var(--dice-background-color);
+      mask-image: url('/assets/icons/d6-blank.svg');
+      content: '';
+    }
+
+    &.d8 {
+      background-image: url('../../icons/svg/d8-grey.svg');
+    }
+
+    &.d10:before {
+      background-color: var(--dice-background-color);
+      mask-image: url('/assets/icons/d10-blank.svg');
+      content: '';
+    }
+
+    &.d12 {
+      background-image: url('../../icons/svg/d12-grey.svg');
+    }
+
+    &.d20 {
+      background-image: url('../../icons/svg/d20-grey.svg');
+    }
+
+    &.min:not(.challenge),
+    &.challenge.max {
+      .diceGlowMixin(var(--ironsworn-color-danger));
+    }
+
+    &.max:not(.challenge),
+    &.challenge.min {
+      .diceGlowMixin(var(--ironsworn-color-success));
+    }
+
+    &.canceled {
+      .diceGlowMixin(var(--ironsworn-color-warning));
+    }
+  }
+  del .roll {
+    text-decoration: line-through;
+    .diceGlowMixin(var(--ironsworn-color-warning));
+  }
+}

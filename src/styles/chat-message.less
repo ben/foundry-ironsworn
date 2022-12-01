@@ -1,100 +1,198 @@
-// oracle table results
+@import 'mixins.less';
 
-.table-draw {
-  h2 {
-    border: none;
-  }
-  table {
-    td:first-child,
-    td:last-child {
-      width: 0;
+.chat-message {
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  color: var(--ironsworn-color-fg);
+  .message-header {
+    // FVTT's default message header. Modules to restyle this aren't unheard of, so don't go *too* wild with the layout, here.
+    color: var(--ironsworn-color-fg-muted);
+    a:not(:hover):not(:focus) {
+      color: inherit;
     }
   }
-}
+  .ironsworn-roll {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .roll-outcome {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      gap: 0.25rem;
+      margin-bottom: 0.25rem;
+      p {
+        margin: 0;
+      }
 
-.oracle-table-partial {
-  margin: 2px 0;
-  transition: none;
-  .oracle-result-row {
-    td {
-      > * {
-        transition: 0.5 ease all;
+      .outcome-label {
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: larger;
+        span {
+          display: inline;
+          white-space: nowrap;
+        }
+        .outcome-text {
+          font-weight: bold;
+        }
       }
     }
-  }
-  .icon {
-    display: flex;
-    aspect-ratio: 1;
-    height: max-content;
-    margin: 0;
-  }
-  .oracle-result-row {
-    .oracle-table-column-roll-result {
-      padding: 0;
-      white-space: nowrap;
+
+    .outcome-shortcuts {
+      display: contents;
     }
-    > td {
-      position: relative;
-      &:last-child {
-        > .oracle-row-content {
-          padding-right: 2px;
+  }
+  .message-content {
+    // wrapper for the stuff that's added by this system
+    border: none;
+    .ironsworn-roll-title,
+    h3,
+    h2 {
+      font-size: var(--font-size-16);
+      font-weight: bold;
+      margin: 0;
+      // border: none;
+      .initial-caps();
+    }
+
+    .table-draw {
+      border: none;
+      h2 {
+        border: none;
+      }
+      table {
+        caption {
+          font-size: large;
+          > * {
+            display: block;
+            text-align: left;
+          }
+          small {
+            font-size: 0.75em;
+          }
+        }
+        td:first-child,
+        td:last-child {
+          width: 0;
+        }
+      }
+      .oracle-table-partial {
+        background-color: var(--ironsworn-color-bg-20);
+        margin: var(--ironsworn-spacer-xs) 0;
+        transition: none;
+
+        .oracle-result-row {
+          &.selected,
+          &[aria-selected='true'] {
+            // since gradients are *images*, they're overlaid on top of background-colour. great for a lazy tint on a highlighted element.
+            // we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
+            // only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
+            background-image: linear-gradient(
+                to right,
+                var(--ironsworn-color-cool-50) 1px,
+                var(--ironsworn-color-warm-50) 2px,
+                transparent 3px
+              ),
+              linear-gradient(
+                to bottom,
+                var(--ironsworn-color-warm-20),
+                var(--ironsworn-color-cool-20)
+              );
+            background-blend-mode: screen;
+          }
+          &:not(.selected):not([aria-selected='true']) {
+            color: var(--ironsworn-color-fg-80);
+          }
+          > td {
+            position: relative;
+            > * {
+              transition: var(--std-animation);
+            }
+            &:last-child {
+              > .oracle-row-content {
+                padding-right: 2px;
+              }
+            }
+          }
+        }
+        .oracle-table-column-roll-result {
+          padding: 0;
+          white-space: nowrap;
+        }
+        .oracle-row-content {
+          opacity: 1;
+          visibility: visible;
+          height: 100%;
+          display: flex;
+          gap: 2px;
+          align-items: center;
+        }
+        .oracle-result-control {
+          color: inherit;
+          background: none;
+          opacity: 0;
+          visibility: hidden;
+          // height: 100%;
+          // width: 100%;
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          display: flex;
+          gap: 2px;
+          padding: 2px;
+          &.clickable.text {
+            justify-content: center;
+            align-items: center;
+            &:hover {
+              color: inherit !important;
+            }
+          }
+          &:hover {
+            background: none;
+          }
+
+          background: none !important;
+          border: none !important;
+          .clickableTextMixin();
+        }
+        &:hover {
+          .oracle-row-content {
+            opacity: 0;
+            visibility: hidden;
+          }
+          .oracle-result-control {
+            opacity: 1;
+            visibility: visible;
+            color: inherit;
+          }
+        }
+        .icon {
+          display: flex;
+          aspect-ratio: 1;
+          margin: 0;
         }
       }
     }
   }
-  .oracle-row-content {
-    opacity: 1;
-    visibility: visible;
-    height: 100%;
-    display: flex;
-    gap: 2px;
-    align-items: center;
-  }
-  .oracle-result-control {
-    color: inherit;
-    background: none;
-    opacity: 0;
-    visibility: hidden;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    display: flex;
-    gap: 2px;
-    padding: 2px;
-    &.clickable.text {
-      justify-content: center;
-      align-items: center;
-      &:hover {
-        color: inherit !important;
-      }
-    }
-    &:hover {
-      background: none;
-      filter: drop-shadow(0 0 3px var(--color-shadow-primary))
-        drop-shadow(0 0 1px var(--color-shadow-highlight));
-    }
-  }
-  &:hover {
-    .oracle-row-content {
-      opacity: 0;
-      visibility: hidden;
-    }
-    .oracle-result-control {
-      opacity: 1;
-      visibility: visible;
-      background: none;
-      color: inherit;
-    }
-  }
-}
 
-// styling so that old messages don't have their overall layout disrupted. can probably be removed in a few versions
-.hover-controls {
-  display: none;
+  button {
+    .initial-caps();
+    .clickableBlockMixin();
+    border-width: var(--ironsworn-border-width-md);
+    background-color: var(--ironsworn-color-bg-20);
+  }
+
+  .bonus-content .dice-formula {
+    word-break: normal;
+  }
+
+  // styling so that old messages don't have their overall layout disrupted. can probably be removed in a few versions
+  .hover-controls {
+    display: none;
+  }
 }

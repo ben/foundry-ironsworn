@@ -1,235 +1,147 @@
-@import 'ironsworn-icons.less';
 @import 'mixins.less';
-@import 'assets.less';
-@import 'clickable.less';
 
-::-webkit-scrollbar-track {
-  box-shadow: 0 0 1px #999 inset;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb {
-  outline: none;
-  border-radius: 3px;
-  background: #444;
-  border: 1px solid #222;
-}
 :root {
-  scrollbar-width: thin;
-  scrollbar-color: #444 rgba(0, 0, 0, 0.1);
-  --std-animation: all 0.5s ease;
-  --widget-fill-opacity: 1;
+  // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
+  --widget-stroke-width: 1;
+
   --widget-fill-opacity-preview: 0.5;
-  --widget-stroke-width: 1px;
-  --ironsworn-color-bg: white;
 
-  --ironsworn-color-red-1: #ff4f5e;
+  --ironsworn-border-radius-sm: 2px;
+  --ironsworn-border-radius-md: 3px;
+  --ironsworn-border-radius-lg: 5px;
+
+  --ironsworn-border-width-md: 1px;
+  --ironsworn-border-width-lg: 2px;
+
+  --ironsworn-spacer-xs: 2px;
+  --ironsworn-spacer-sm: 3px;
+  --ironsworn-spacer-md: 5px;
+  --ironsworn-spacer-lg: 7px;
+
+  --ironsworn-vertical-slider-width: 50px;
+  --ironsworn-clickable-line-height: 28px;
+
+  --ironsworn-z-index-highest: 100;
+  --ironsworn-z-index-higher: 75;
+  --ironsworn-z-index-high: 25;
+  --ironsworn-z-index-low: -1;
+  --ironsworn-z-index-lower: -2;
+  --ironsworn-z-index-lowest: -3;
+
+  --ironsworn-transition-duration: 0.5s;
+  --ironsworn-transition-timing-function: ease;
+
+  // for later use as a mixin to scope transitions to colors effects only.
+  --ironsworn-transition-property-color: background-color, border-color,
+    box-shadow, caret-color, color, column-rule-color, filter, opacity,
+    outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
+
+  --std-animation-timing: var(--ironsworn-transition-duration)
+    var(--ironsworn-transition-timing-function);
+
+  // transitions colours only
+  --std-animation: all 0.5s ease;
+
+  --fa-display: inline-block;
+  --fa-invert: var(--ironsworn-color-bg);
+
   // original sample from PDF: #c9181a
-  // previously: #ec230e
-  --ironsworn-color-red-2: #e33722;
-  --ironsworn-color-red-3: #8e0006;
-  --ironsworn-color-purple-1: #e056e4;
+  --ironsworn-color-red-light: hsl(355, 100%, 65%);
+  --ironsworn-color-red: hsl(7, 78%, 51%);
+  --ironsworn-color-red-dark: hsl(357, 100%, 28%);
+
   // original sample from PDF: #8c1d81
-  --ironsworn-color-purple-2: #b32fb5;
-  --ironsworn-color-purple-3: #6d0075;
-  --ironsworn-color-blue-1: #00d1ff;
+  --ironsworn-color-purple-light: hsl(298, 72%, 62%);
+  --ironsworn-color-purple: hsl(299, 59%, 45%);
+  --ironsworn-color-purple-dark: hsl(296, 100%, 23%);
+
   // original sample from PDF: #35a9e0
-  --ironsworn-color-blue-2: #00a2ef;
-  --ironsworn-color-blue-3: #0062e3;
+  --ironsworn-color-blue-light: hsl(191, 100%, 50%);
+  --ironsworn-color-blue: hsl(199, 100%, 47%);
+  --ironsworn-color-blue-dark: hsl(214, 100%, 45%);
 
-  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-2);
-  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-2);
-  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-2);
+  --ironsworn-color-legacy-quests: var(--ironsworn-color-red);
+  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
+  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
 
+  // TODO: Figure out which of these are still needed
   --ironsworn-color-danger: hsl(0, 80%, 40%);
-  --ironsworn-color-danger-inverted: white;
+  --ironsworn-color-danger-faded: hsl(0, 80%, 40%);
+  --ironsworn-color-danger-inverted: hsl(0, 0%, 100%);
   --ironsworn-color-warning: hsl(55, 100%, 50%);
   --ironsworn-color-warning-faded: hsl(55, 100%, 50%);
   --ironsworn-color-success: hsl(200, 80%, 40%);
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
-  --ironsworn-dice-background: #afafaf;
 }
 
-.grid {
-  display: grid;
-}
-
-.ironsworn {
-  font-family: var(--font-primary);
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    text-transform: uppercase;
+.system-foundry-ironsworn {
+  // transitions for interactive elements
+  a,
+  button,
+  select,
+  input,
+  textarea,
+  .scene-control,
+  .macro {
+    transition: var(--std-animation);
+    &.active {
+      color: var(--ironsworn-color-clickable-text-selected);
+    }
   }
   *::placeholder {
     font-family: inherit;
   }
 
-  button
-  // &.dialog .dialog-buttons button,
-  // &.dialog .dialog-buttons button.default
-  {
-    &:not(.bordered) {
-      border: unset;
-    }
-
-    transition: var(--std-animation);
-    border-radius: unset;
-    width: unset;
-    margin: unset;
-    background: unset;
-    // font-size: unset;
-    // line-height: unset;
-    font-family: inherit;
-    cursor: pointer;
-    &:hover,
-    &:focus {
-      // background: unset;
-      // border: unset;
-      outline: none;
-      box-shadow: unset;
-    }
-  }
-  .window-content {
-    height: 100%;
-    padding: 5px;
-    scrollbar-width: thin;
-  }
-
   .sheet-area {
-    border-top: 2px solid;
+    border-color: var(--ironsworn-color-border-muted);
+    border-top-width: var(--ironsworn-border-width-lg);
     &:first-child {
-      border-top: none;
+      border-top-width: 0;
     }
-    margin: 5px;
-    padding-top: 7px;
+    margin: var(--ironsworn-spacer-md);
+    padding-top: var(--ironsworn-spacer-lg);
+  }
 
-    h1,
-    h2,
-    h3 {
-      border: none;
+  .drag-highlight {
+    background: var(--ironsworn-color-warm-50);
+  }
+
+  // FIXME: still in use?
+  .progress {
+    flex: 1;
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+    padding: var(--ironsworn-spacer-md);
+    margin: var(--ironsworn-spacer-xs);
+    text-align: center;
+  }
+  // FIXME: figure out if this actually gets pulled in any more
+  .inline-roll {
+    background: var(--ironsworn-color-fg-20);
+    border-color: var(--ironsworn-color-border-muted);
+
+    &:hover {
+      text-shadow: 0 0 8px var(--ironsworn-color-fg-highlight);
     }
   }
 
-  .margin-left {
-    flex: 0;
-    border-right: 1px solid;
-    margin-right: 5px;
-    position: relative;
-  }
-
-  .margin-right {
-    flex: 0;
-    border-left: 1px solid;
-    margin-left: 5px;
-    position: relative;
-  }
-  .item-list {
-    flex: 1 0 100px;
-    overflow-y: scroll;
-    scrollbar-width: thin;
-
-    .move {
-      overflow-x: hidden;
-    }
-
-    ol {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      & > h2 {
-        text-align: center;
-        border-width: 1px 0;
-      }
-    }
-  }
-
-  .vertical {
-    writing-mode: vertical-lr;
-    border: none;
-    width: 1.5rem;
-
-    i {
-      display: inline-block;
-      transform: rotate(90deg);
-    }
-  }
-
-  .stack {
-    flex-grow: 0;
-
-    .stack-row {
-      // FIXME refactor as component and encapsulate the relevant css there
-      flex: 0 0 auto;
-      min-width: 50px;
-      border: 1px solid;
-      border-top: none;
-      text-align: center;
-      line-height: 28px;
-      position: relative;
-      z-index: 1;
-      padding: 0;
-      &:hover,
-      &.hover,
-      &.selected,
-      &[aria-selected='true'] {
-        z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
-      }
-      &:first-child {
-        border-top: 1px solid;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-      }
-      &:last-child {
-        border-bottom-left-radius: 5px;
-        border-bottom-right-radius: 5px;
-      }
-
-      input[type='radio'] {
-        appearance: none;
-      }
-    }
-  }
-
-  // TODO: restructure this styling so that it also applies to dialog-buttons. probably with mixins?
-
-  &.dialog .dialog-buttons button {
-    // .interactive();
-    // TODO: reimplement the above when updating roll dialog
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .button-text {
-      .clickable();
-      .nogrow();
-      .initial-caps();
-      width: max-content;
-      height: max-content;
-    }
-
-    i {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
+  // TODO: move to its own file, or have it live in the relevant component
   .stats {
     flex: 0;
     justify-content: space-around;
 
     .stat {
+      text-transform: uppercase;
+      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+      .textStrokeMixin();
       flex: 0 0 75px;
-      border: 1px solid;
-      border-radius: 5px;
+      border-width: var(--ironsworn-border-width-md);
+      border-radius: var(--ironsworn-border-radius-lg) !important;
       text-align: center;
       padding: 0.5rem 0;
 
       h3 {
         margin: 0;
-        margin-bottom: 5px;
+        margin-bottom: var(--ironsworn-spacer-md);
         font-weight: bold;
         font-size: 22px;
       }
@@ -241,7 +153,7 @@
 
       input {
         width: 50%;
-        margin-bottom: 5px;
+        margin-bottom: var(--ironsworn-spacer-md);
         font-weight: bold;
         font-size: 18px;
         text-align: center;
@@ -252,8 +164,13 @@
       flex: 0 0 30px;
       justify-items: center;
       align-items: center;
-      border: 1px solid;
+      border: var(--ironsworn-border-width-md) solid
+        var(--ironsworn-color-border);
       transition: var(--std-animation);
+
+      &.editing {
+        background: var(--ironsworn-color-bg-muted);
+      }
     }
   }
 
@@ -262,80 +179,25 @@
     h3,
     h4,
     h5 {
-      margin: 3px 0;
+      margin: var(--ironsworn-spacer-sm) 0;
       border: none;
     }
   }
 
-  .boxgroup {
-    border: 1px solid;
-    border-radius: 5px;
-
-    .boxrow {
-      border-top: 1px solid;
-      &:first-child {
-        border-top: none;
-      }
-
-      &.small {
-        flex-basis: 25px;
-        line-height: 25px;
-        flex-grow: 0;
-      }
-    }
-
-    .box {
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      border-left: 1px solid;
-      &:first-child {
-        border-left: none;
-      }
-    }
-  }
-
-  .inset {
-    margin: 5px;
-    padding: 5px;
-    border: 1px solid;
-    border-radius: 3px;
-  }
-
+  // FIXME: is this still in use?
   .remove-option {
     flex-grow: 0;
     line-height: 26px;
   }
-
-  .item-row {
-    border: 1px solid;
-    border-radius: 2px;
-    padding: 3px;
-    margin: 3px 0;
-
-    .item-row-control {
-      flex-grow: 0;
-      padding: 5px;
-    }
-  }
-
-  .progresses {
-    .item {
-      border: 1px solid;
-      border-radius: 3px;
-      padding: 5px;
-      margin: 5px;
-    }
-  }
-
+  // FIXME: is this still in use?
   .progress-button {
     i {
-      padding: 3px;
+      padding: var(--ironsworn-spacer-sm);
       width: 22px;
       text-align: center;
     }
   }
-
+  // FIXME: is this still in use?
   .resource {
     width: 50%;
     height: 40px;
@@ -345,363 +207,97 @@
 
     input {
       width: 100px;
-      height: 28px;
+      height: var(--ironsworn-clickable-line-height);
     }
   }
-
+  // TODO: this and other sheet classes are good candidates for extraction
+  &.sheet {
+    &.actor {
+      min-width: 630px;
+    }
+    &.item {
+      min-width: 460px;
+      min-height: 400px;
+    }
+    &.moves {
+      .tab {
+        display: none;
+        &.active {
+          display: flex;
+        }
+      }
+    }
+  }
   .sheet-body {
     height: 100%;
     overflow: hidden;
-
+    // FIXME: .tab-likes should probably be their own file
     .tab {
       height: 100%;
       overflow-y: auto;
     }
   }
 
-  .editor,
-  .editor-content {
-    height: 100%;
-    min-height: 100px;
-  }
-
-  .move-li {
-    height: 1.5rem;
-  }
-
-  /* Items List */
-  .item-list {
-    list-style: none;
-    margin: 7px 0;
-    padding: 0;
-    // overflow-y: auto;
-
-    .item {
-      height: 30px;
-      line-height: 24px;
-      padding: 3px 0;
-      border-bottom: 1px solid;
-
-      img {
-        flex: 0 0 24px;
-        margin-right: 5px;
-      }
-    }
-
-    .item-name {
-      margin: 0;
-    }
-
-    .item-controls {
-      flex: 0 0 36px;
-    }
-  }
-
-  .progress {
-    flex: 1;
-    border: 1px solid;
-    padding: 5px;
-    margin: 2px;
+  // FIXME: is this still in use?
+  .move-title {
     text-align: center;
-  }
-
-  .nogrow {
-    flex-grow: 0;
-  }
-
-  input[type='number'] {
-    -moz-appearance: auto;
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: button !important;
-      opacity: 1 !important;
-    }
-  }
-}
-
-hr {
-  width: 100%;
-}
-
-.strikethru * {
-  text-decoration: line-through;
-}
-
-.ironsworn.sheet.actor {
-  min-width: 630px;
-}
-
-.ironsworn.sheet.item {
-  min-width: 460px;
-  min-height: 400px;
-}
-
-.move-title {
-  text-align: center;
-  border: 1px solid;
-  margin-bottom: 5px;
-  font-weight: bold;
-  line-height: 30px;
-  font-variant: all-small-caps;
-}
-
-.sheet.moves {
-  .tab {
-    display: none;
-
-    &.active {
-      display: flex;
-    }
-  }
-}
-
-.ironsworn-roll {
-  h3,
-  button {
-    .initial-caps();
-  }
-  .hit-type {
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+    margin-bottom: var(--ironsworn-spacer-md);
     font-weight: bold;
-    font-variant: all-small-caps;
+    line-height: 30px;
+    // text-transform: uppercase;
   }
 
-  [class*=' isiconbg-'],
-  [class^='isiconbg-'] {
-    &:before {
-      background-color: var(--ironsworn-dice-background);
-    }
+  .highlighted {
+    background-color: var(--ironsworn-color-warm-50) !important;
   }
 
-  @dice-glow-offset: 0px 0px 5px;
-
-  .roll {
-    width: 24px;
-    line-height: 24px;
-    display: inline-block;
-    margin-right: 1px;
-    background-repeat: no-repeat;
-    background-size: 24px 24px;
-    font-weight: bold;
-    text-align: center;
-
-    &.d4 {
-      background-image: url('../../icons/svg/d4-grey.svg');
+  .ironsworn {
+    // stuff scoped to .ironsworn app windows only
+    .window-content {
+      background: var(--ironsworn-color-bg);
+      color: var(--ironsworn-color-fg);
+      height: 100%;
+      padding: var(--ironsworn-spacer-md);
     }
-
-    &.d6 {
-      background-color: var(--ironsworn-dice-background);
-      mask-image: url('/assets/icons/d6-blank.svg');
-      content: '';
+    button {
+      border-width: 0px;
+      border-style: solid;
     }
-
-    &.d8 {
-      background-image: url('../../icons/svg/d8-grey.svg');
+    form button {
+      border-width: 0px;
+      border-style: solid;
     }
-
-    &.d10 {
-      background-color: var(--ironsworn-dice-background);
-      mask-image: url('/assets/icons/d10-blank.svg');
-      content: '';
+    hr {
+      width: 100%;
+      border: 0 solid var(--ironsworn-color-border);
+      border-width: 0 0 var(--ironsworn-border-width-md);
     }
-
-    &.d12 {
-      background-image: url('../../icons/svg/d12-grey.svg');
-    }
-
-    &.d20 {
-      background-image: url('../../icons/svg/d20-grey.svg');
-    }
-
-    &.min:not(.challenge),
-    &.challenge.max {
-      color: var(--ironsworn-color-danger) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-danger-faded)
-      );
-    }
-
-    &.max:not(.challenge),
-    &.challenge.min {
-      color: var(--ironsworn-color-success) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-success-faded)
-      );
-    }
-
-    &.canceled {
-      color: var(--ironsworn-color-warning) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-warning-faded)
-      ) !important;
+    h1,
+    h2,
+    h3 {
+      border: none;
     }
   }
 
-  del .roll {
-    text-decoration: line-through;
-    color: var(--ironsworn-color-warning) !important;
-    filter: drop-shadow(
-      @dice-glow-offset var(--ironsworn-color-warning-faded)
-    ) !important;
-  }
-}
+  // importing within this selector to ensure higher specificity
+  @import 'assets.less';
+  @import 'dialog.less';
+  @import 'chat-message.less';
+  @import 'clickable.less';
+  @import 'icons.less';
+  @import 'inputs.less';
+  @import 'dice.less';
+  @import 'tables.less';
+  @import 'utils.less';
+  @import 'scrollbar.less';
+  @import 'list.less';
 
-.bonus-content .dice-formula {
-  word-break: normal;
-}
-
-// roll-graphic.hbs
-
-.ironsworn-roll-title {
-  margin: 0;
-}
-
-@graphic-gap: 0.25rem;
-
-.ironsworn-roll {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.roll-graphic.dice-formula {
-  display: flex;
-  flex-flow: row nowrap;
-  flex: auto;
-  gap: @graphic-gap;
-  justify-content: center;
-  margin: 0;
-  padding: @graphic-gap;
-  * {
-    margin: 0;
-  }
-
-  .die {
-    flex-grow: 0;
-  }
-  .indeterminate-value {
-    opacity: 0.5;
-  }
-  .action-score-capped {
-    text-decoration: dotted underline;
-  }
-  .score {
-    font-weight: bold;
-    border: 2px solid currentColor;
-    border-radius: 50%;
-    height: 24px;
-    width: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .challenge-dice {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 0;
-    gap: (@graphic-gap / 2);
-    .challenge-die {
+  .ironsworn {
+    // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.
+    @import './fvtt/dialog.less';
+    &.dialog {
+      .dialog();
     }
   }
 }
-
-.outcome-shortcuts {
-  display: contents;
-}
-.roll-outcome {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  gap: 0.25rem;
-  margin-bottom: 0.25rem;
-  * {
-    margin: 0;
-  }
-
-  .outcome-label {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: larger;
-    span {
-      display: inline;
-      white-space: nowrap;
-    }
-    .outcome-text {
-      font-weight: bold;
-    }
-  }
-}
-// preroll-dialog.hbs
-.preroll-dialog {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  button {
-    .initial-caps();
-  }
-
-  .roll-trigger-text {
-  }
-
-  .trigger-options {
-  }
-
-  .form-group {
-    padding: 0;
-    border: none;
-  }
-
-  .advanced-roll-options {
-    padding: 5px;
-    margin: 5px 0;
-    border: 1px solid;
-  }
-  .advanced-roll-options-toggle {
-  }
-}
-
-table td:first-child {
-  white-space: nowrap;
-  padding-right: 0.5rem;
-}
-
-// workaround to make FA easier to use as button decorations without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
-.fa,
-.fab,
-.fad,
-.fal,
-.far,
-.fas {
-  -moz-osx-font-smoothing: inherit;
-  speak: inherit;
-  font-style: inherit;
-  font-variant: inherit;
-  text-rendering: inherit;
-  line-height: inherit;
-  font-family: inherit;
-  font-weight: inherit;
-  font-family: inherit;
-  &:before {
-    speak: never;
-    -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
-  }
-}
-
-.fa,
-.far,
-.fas {
-  &:before {
-    font-family: 'Font Awesome 6 Pro', 'Font Awesome 5 Free';
-  }
-}
-
-.fa,
-.fas {
-  &:before {
-    font-weight: 900;
-  }
-}
-
-@import 'chat-message.less';

@@ -1,0 +1,45 @@
+// styles for any FVTT dialog. You can import them globally, or scoped to e.g. the .ironsworn class.
+@import '../mixins.less';
+.dialog {
+  .window-content {
+    .dialog-content {
+      fieldset {
+        background-color: var(--ironsworn-color-fg-10);
+        border-radius: var(--ironsworn-border-radius-md);
+        border: none;
+      }
+      details {
+        summary {
+          cursor: pointer;
+          border-radius: var(--ironsworn-border-radius-md);
+          &:focus {
+            .inputFieldFocusMixin();
+          }
+        }
+      }
+    }
+    .dialog-buttons {
+      height: max-content;
+      align-items: end;
+      button.default,
+      button {
+        .clickableBlockMixin();
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: max-content;
+        border-width: 1px;
+        .button-text {
+          .nogrow();
+          .initial-caps();
+          width: auto;
+          height: max-content;
+        }
+        i {
+          height: 18px;
+          width: 18px;
+        }
+      }
+    }
+  }
+}

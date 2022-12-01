@@ -1,13 +1,11 @@
 <template>
   <Collapsible
     class="movesheet-row"
-    :class="[
-      $style['wrapper'],
-      thematicColor ? $style['thematicC.thematicColorMixin'] : '',
-    ]"
+    :class="$style.wrapper"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
+    :contentWrapperClass="$style.contentWrapper"
     :toggleWrapperIs="`h${headingLevel}`"
     :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
     :noIcon="true"
@@ -74,23 +72,16 @@
 @wrapper_spacing: 4px;
 
 .thematicColorMixin {
-  color: var(--ironsworn-color-thematic-contrast);
+  --ironsworn-color-thematic: v-bind('thematicColor');
+
+  color: var(--ironsworn-color-light);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
-}
-.colorsSelectedMixin {
-  color: var(--ironsworn-color-clickable-block-fg-selected);
-  background-color: var(--ironsworn-color-clickable-block-bg-selected);
-  border-color: var(--ironsworn-color-clickable-block-border-selected);
 }
 .cardColorsMixin {
   color: var(--ironsworn-color-fg);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-bg);
-}
-
-.thematicColorMixin {
-  --ironsworn-color-thematic: v-bind('thematicColor');
 }
 
 .wrapper {
@@ -104,13 +95,13 @@
   }
 }
 .moveSummary {
-  .cardColorsMixin();
-  border: 1px solid var(--ironsworn-color-clickable-block-border-selected);
   padding: 0.5rem 0.5rem 0.3rem;
-  border-radius: 0 @border_radius @border_radius @border_radius;
 }
 
 .moveButton {
+  --ironsworn-color-clickable-text: var(--ironsworn-color-light);
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+  .clickableTextMixin();
   font-size: 1.15em;
   height: 28px;
   aspect-ratio: 1 !important;
@@ -118,13 +109,20 @@
 }
 
 .toggleButton {
+  --ironsworn-color-clickable-text: var(--ironsworn-color-light);
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+
+  .clickableTextMixin();
+  .textStrokeMixin( var(--ironsworn-color-dark));
+  .thematicColorMixin();
+  border: none;
+  background: none;
   display: flex;
   flex-direction: row;
   padding: 0.2rem 0.2rem 0.2rem 0.3rem;
   text-align: left;
   line-height: 1.25;
   font-size: var(--font-size-16);
-  .thematicColorMixin();
   border-color: transparent;
   border-width: 1px 1px 0 1px;
   border-style: solid;
@@ -132,29 +130,39 @@
   &:hover {
     box-shadow: none;
   }
-
-  .fake-stroke();
-  // .wrapper[aria-expanded='false'] & {
-  // }
-
-  .wrapper[aria-expanded='true'] & {
-    .colorsSelectedMixin();
-    border-top-left-radius: @border_radius;
-    border-top-right-radius: @border_radius;
-  }
 }
 
+.contentWrapper {
+  color: var(--ironsworn-color-fg);
+  background-color: var(--ironsworn-color-bg-80);
+  border: 1px solid var(--ironsworn-color-light);
+  border-radius: 0 @border_radius @border_radius @border_radius;
+}
 .moveControls {
   display: flex;
   flex-flow: row;
   background: none;
-  --ironsworn-color-clickable-text: var(--ironsworn-color-thematic-contrast);
 }
 
 .toggleSection {
   gap: @wrapper_spacing;
   display: flex;
   flex-flow: row nowrap;
+}
+
+.toggleWrapper {
+  transition: var(--std-animation);
+  border: 1px solid transparent;
+  border-bottom-width: 0;
+  border-top-left-radius: @border_radius;
+  border-top-right-radius: @border_radius;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  header:not(:last-child) & {
+    color: var(--ironsworn-color-light);
+    background-color: var(--ironsworn-color-dark);
+    border-color: var(--ironsworn-color-clickable-block-border-selected);
+  }
 }
 </style>
 
@@ -226,7 +234,7 @@ const preventOracle = computed(() => {
 
 const toggleTooltip = computed(() =>
   // @ts-ignore
-  enrichMarkdown($item.value.data.data.Trigger?.Text)
+  enrichMarkdown($item.value.system.Trigger?.Text)
 )
 
 const moveId = computed(() => props.move.moveItem().id)

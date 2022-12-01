@@ -105,6 +105,7 @@
     height: max-content;
   }
   .progress-subtitle {
+    text-transform: uppercase;
     grid-column: 1;
     grid-row: 1 / span 3;
     padding: 0;

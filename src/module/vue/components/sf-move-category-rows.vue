@@ -1,11 +1,11 @@
 <template>
   <Collapsible
-    :class="[$style.wrapper, category.color ? $style.color : '']"
-    :toggleButtonClass="[$style.toggleButton]"
+    :class="$style.wrapper"
+    :toggleButtonClass="$style.toggleButton"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
-    :toggleWrapperClass="[$style.toggleWrapper]"
-    :toggleSectionClass="[$style.toggleSection]"
+    :toggleWrapperClass="$style.toggleWrapper"
+    :toggleSectionClass="$style.toggleSection"
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
     :toggleTextClass="$style.toggleText"
@@ -35,11 +35,13 @@
 <style lang="less" module>
 @import '../../../styles/mixins.less';
 
-.color {
+.thematicColorMixin {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
   --ironsworn-color-thematic: v-bind('category?.color');
 }
 
 .wrapper {
+  .thematicColorMixin();
   border-radius: 5px;
   background-color: var(--ironsworn-color-thematic);
 }
@@ -59,15 +61,17 @@
 }
 
 .toggleSection {
-  transition: 0.5s ease;
   background-color: var(--ironsworn-color-thematic);
-  color: var(--ironsworn-color-thematic-contrast) !important;
   border-radius: 5px;
+  button {
+    --ironsworn-color-clickable-text: var(--ironsworn-color-light);
+    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+    .clickableTextMixin();
+  }
 }
 .toggleButton {
-  color: inherit;
-
-  .fake-stroke();
+  .textStrokeMixin( var(--ironsworn-color-dark));
+  background: none;
 }
 </style>
 <script setup lang="ts">

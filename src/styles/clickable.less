@@ -1,50 +1,55 @@
-.interactive {
-  transition: var(--std-animation);
-  cursor: pointer;
-  &.disabled, // FIXME: ditch this class, its redundant with more semantic options
-    &:disabled,
-    &[aria-disabled="true"] {
+.prosemirror button,
+.tox .tox-tbtn--bespoke {
+  .clickableBlockMixin();
+  border-radius: var(--ironsworn-border-radius-md);
+}
+
+.ironsworn {
+  button {
+    margin: 0;
+  }
+}
+
+.entity-link,
+.content-link,
+a[data-pack][data-uuid] {
+  .clickableBlockMixin();
+  filter: none;
+  border-radius: var(--ironsworn-border-radius-sm);
+  border-width: var(--ironsworn-border-width-md);
+  word-break: nowrap;
+  white-space: nowrap;
+  // forces fg colour so that it is the same colour as the text.
+  color: inherit;
+  padding: 0 var(--ironsworn-spacer-xs);
+  background-color: var(--ironsworn-color-bg-20);
+  border-color: var(--ironsworn-color-fg-30);
+  &:hover {
+    background-color: var(--ironsworn-color-bg-50);
+    color: var(--ironsworn-color-fg-warm);
+  }
+  i,
+  &:before {
     color: inherit;
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: 0.35;
+    margin-right: var(--ironsworn-spacer-xs);
   }
 }
 
 .clickable {
-  .interactive();
-  &.text {
-    justify-content: flex-start;
-  }
-  &:not(svg):not(.svg) {
-    &.block {
-      color: var(--ironsworn-color-clickable-block-fg);
-      background-color: var(--ironsworn-color-clickable-block-bg);
-    }
-    &:not(.block) {
-      color: var(--ironsworn-color-clickable-text);
-    }
-    &.selected,
-    &[aria-selected='true'] {
-      &.block {
-        color: var(--ironsworn-color-clickable-block-fg-selected);
-        background-color: var(--ironsworn-color-clickable-block-bg-selected);
-      }
-      &:not(.block) {
-        color: var(--ironsworn-color-clickable-text-selected);
-      }
-    }
-    &.hover,
-    &:hover {
-      &.block {
-        color: var(--ironsworn-color-clickable-block-fg-hover);
-        background-color: var(--ironsworn-color-clickable-block-bg-hover);
-      }
-      &:not(.block) {
-        color: var(--ironsworn-color-clickable-text-hover);
-      }
+  .interactiveMixin();
+  cursor: pointer;
+  // &:not(svg):not(.svg) {
+  &.text:not(.block) {
+    .clickableTextMixin();
+    &:not(:before) {
+      text-align: left;
+      justify-content: left;
     }
   }
+  &.block {
+    .clickableBlockMixin();
+  }
+  // }
   svg,
   &.svg {
     &.selected,

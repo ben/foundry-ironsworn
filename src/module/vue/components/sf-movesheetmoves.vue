@@ -64,12 +64,7 @@
   gap: 0.5rem;
 }
 .itemList {
-  scrollbar-width: thin;
-  // unfortunately scrollbar properties don't behave predictably across browsers and OSs; this eases some cramping on FF
-  margin: 0 -3px 0 0 !important;
-  padding-right: 3px !important;
-  scrollbar-gutter: stable;
-  gap: 4px;
+  gap: var(--ironsworn-spacer-md);
 }
 </style>
 

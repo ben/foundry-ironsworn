@@ -31,6 +31,8 @@
 
 <style lang="less">
 .rank-pips {
+  width: max-content;
+  flex-grow: 0;
   .rank-pip {
     .pip-shape > * {
       stroke-width: var(--widget-stroke-width);
@@ -44,9 +46,12 @@
   pointer-events: none;
   display: flex;
   flex-flow: row nowrap;
-  stroke: currentColor;
-  fill: var(--ironsworn-color-thematic);
-  fill-opacity: var(--widget-fill-opacity);
+  stroke: var(--ironsworn-color-fg);
+  fill: var(
+    --ironsworn-color-thematic,
+    var(--ironsworn-color-clickable-block-bg-selected)
+  );
+  fill-opacity: 1;
   align-content: center;
   gap: 2px;
   transition: var(--std-animation);

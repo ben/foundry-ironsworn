@@ -14,8 +14,8 @@
     :aria-valuenow="ticks"
     :aria-valuemin="0"
     :aria-valuemax="40"
-    :aria-valuetext="$t('IRONSWORN.PROGRESS.Current', {score, ticks})"
-    :data-tooltip="$t('IRONSWORN.PROGRESS.Current', {score, ticks})"
+    :aria-valuetext="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
+    :data-tooltip="$t('IRONSWORN.PROGRESS.Current', { score, ticks })"
   >
     <ProgressTrackBox
       v-for="(boxTicks, i) in boxes"
@@ -29,12 +29,13 @@
 </template>
 
 <style lang="less">
+@import '../../../../styles/mixins.less';
 @box_border_radius: 3px;
 @box_border_width: 1px;
 @box_gap: 4px;
 .progress-track {
   &:focus {
-    box-shadow: 0 0 5px var(--color-shadow-primary);
+    .focusOutlineMixin();
   }
   display: grid;
   grid-auto-flow: column;

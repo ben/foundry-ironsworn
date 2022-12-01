@@ -18,14 +18,16 @@
 </template>
 
 <style lang="less" scoped>
+@import '../../../styles/mixins.less';
 .stat {
+  &:before {
+    --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
+  }
   & > * {
     position: relative; // must be set to manipulate z-index
     z-index: 1;
   }
   &:before {
-    // styles dice background on hover
-    color: currentColor;
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 0;
@@ -33,7 +35,7 @@
   }
   &:hover {
     &:before {
-      opacity: 0.2;
+      opacity: 1;
     }
   }
 }

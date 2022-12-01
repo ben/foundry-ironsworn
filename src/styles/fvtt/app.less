@@ -1,0 +1,98 @@
+// styles for FVTT application windows.
+@import '../mixins.less';
+
+.app {
+  border-color: var(--ironsworn-color-midtone-80);
+  background: var(--ironsworn-color-bg-80);
+}
+
+#client-settings {
+  .window-content {
+    .sidebar {
+      background: var(--ironsworn-color-cool-10);
+    }
+    .categories {
+      .scrollable {
+      }
+      footer {
+        background: var(--ironsworn-color-warm-20);
+      }
+    }
+  }
+}
+
+.package-configuration {
+  aside.sidebar {
+    nav.tabs {
+      .category-tab {
+        &:hover {
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--ironsworn-color-cool-20)
+          );
+        }
+        &.active {
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--ironsworn-color-warm-30)
+          );
+        }
+      }
+    }
+  }
+}
+
+.journal-entry .journal-entry-content {
+  background: var(--ironsworn-color-bg);
+}
+
+.window-content {
+  height: 100%;
+  padding: var(--ironsworn-spacer-md);
+  background: var(--ironsworn-color-bg);
+  color: var(--ironsworn-color-fg);
+  // so the background doesn't spill over the parent element's border
+  border-bottom-left-radius: inherit;
+  border-bottom-right-radius: inherit;
+}
+
+.window-app,
+.journal-entry .journal-entry-content {
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+}
+
+.window-app {
+  .window-header {
+    color: var(--ironsworn-color-fg);
+    border-bottom-color: var(--ironsworn-color-border-muted);
+  }
+}
+
+a,
+.scene-control {
+  &:hover {
+    color: var(--ironsworn-color-clickable-text-hover);
+  }
+}
+
+#keybindings {
+  .binding {
+    .key {
+      background: var(--ironsworn-color-light-20);
+    }
+    .binding-controls {
+      .control {
+        &.uneditable {
+          color: var(--ironsworn-color-midtone-50);
+        }
+      }
+    }
+  }
+}
+
+.notification {
+  color: #eee;
+}

@@ -138,7 +138,7 @@
 .ironsworn__asset {
   margin: 10px 0;
   padding: 5px;
-  --ironsworn-color-thematic: v-bind(item.system.color || '#000');
+  --ironsworn-color-thematic: v-bind('item.system.color');
 }
 
 .asset-ability-clock {

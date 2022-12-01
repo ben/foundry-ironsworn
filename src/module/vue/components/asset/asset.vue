@@ -1,13 +1,11 @@
 <template>
   <article
     class="item-row ironsworn__asset"
-    :class="{ [`asset-${$actor?.toolset}`]: true }"
+    :class="{
+      [`asset-${$actor?.toolset}`]: true,
+      [$style.themeColor]: props.asset?.system?.color,
+    }"
     :aria-expanded="expanded"
-    :style="
-      props.asset?.system?.color
-        ? `--ironsworn-color-thematic: ${props.asset?.system?.color}`
-        : undefined
-    "
   >
     <header class="asset-header nogrow flexrow">
       <button
@@ -113,6 +111,12 @@
     </CollapseTransition>
   </article>
 </template>
+
+<style lang="less" module>
+.themeColor {
+  --ironsworn-color-thematic: v-bind('asset?.system?.color');
+}
+</style>
 
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
