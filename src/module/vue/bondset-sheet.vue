@@ -25,12 +25,7 @@
     <div class="flexcol" style="flex-basis: 25em">
       <div class="flexcol" v-if="selectedBondIndex >= 0">
         <h1 class="nogrow">
-          <input
-            name="name"
-            v-model="data.currentBondName"
-            type="text"
-            @blur="save"
-          />
+          <input v-model="data.currentBondName" type="text" @blur="save" />
         </h1>
         <MceEditor v-model="data.currentBondNotes" :editing="true" />
       </div>
