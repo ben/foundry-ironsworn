@@ -28,6 +28,7 @@
   box-shadow: inset 0 0 @spread @blur @color;
 }
 
+// sets border colours, modelled after the hover effect on FVTT's canvas buttons.
 .borderAccentColorMixin(@warm:var(--ironsworn-color-warm),@cool:var(--ironsworn-color-cool)) {
   border-color: @warm;
   border-bottom-color: @cool;
@@ -161,7 +162,6 @@
 }
 
 .blockActiveMixin {
-  // .textStrokeMixin();
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-selected);
   background-color: var(
@@ -301,4 +301,17 @@
   // outline disabled for now
   // outline: 1px solid var(--ironsworn-color-cool) !important;
   z-index: var(--ironsworn-z-index-highest);
+}
+
+// used on draggables, highlighted table rows in chat. set opacity in increments of 10 (because otherwise the variable won't exist
+// since gradients are *images*, they're overlaid on top of background-colour. great for a lazy tint on a highlighted element.
+// we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
+// only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
+.staticHighlightMixin(@opacity:20,@direction:'to bottom') {
+  background-image: linear-gradient(
+    @direction,
+    var(e(%('--ironsworn-color-warm-%s') @opacity)),
+    var(e(%('--ironsworn-color-cool-%s') @opacity))
+  );
+  background-blend-mode: screen;
 }

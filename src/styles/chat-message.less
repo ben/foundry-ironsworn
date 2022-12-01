@@ -85,21 +85,7 @@
         .oracle-result-row {
           &.selected,
           &[aria-selected='true'] {
-            // since gradients are *images*, they're overlaid on top of background-colour. great for a lazy tint on a highlighted element.
-            // we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
-            // only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
-            background-image: linear-gradient(
-                to right,
-                var(--ironsworn-color-cool-50) 1px,
-                var(--ironsworn-color-warm-50) 2px,
-                transparent 3px
-              ),
-              linear-gradient(
-                to bottom,
-                var(--ironsworn-color-warm-20),
-                var(--ironsworn-color-cool-20)
-              );
-            background-blend-mode: screen;
+            .staticHighlightMixin();
           }
           &:not(.selected):not([aria-selected='true']) {
             color: var(--ironsworn-color-fg-80);
