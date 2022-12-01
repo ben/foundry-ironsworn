@@ -1,175 +1,39 @@
 .chat-message {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   color: var(--ironsworn-color-fg);
-
-  a {
-    .clickableTextMixin();
-  }
-  button {
-    .initial-caps();
-    .clickableBlockMixin();
-    border-width: var(--ironsworn-border-width-md);
-  }
-
-  .ironsworn-roll {
-    .dice-formula,
-    .dice-total {
-      background-color: var(--ironsworn-color-fg-10);
-    }
-  }
-  .ironsworn-roll {
-    h3,
-    .hit-type {
-      font-weight: bold;
-      font-variant: all-small-caps;
-    }
-
-    @dice-glow-offset: 0px 0px 5px;
-
-    .roll {
-      width: 24px;
-      line-height: $width;
-      display: inline-block;
-      margin-right: 1px;
-      background-repeat: no-repeat;
-      background-size: $width $width;
-      font-weight: bold;
-      text-align: center;
-      --dice-background-color: var(--ironsworn-color-fg-20);
-      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-
-      &.d4 {
-        background-image: url('../../icons/svg/d4-grey.svg');
-      }
-
-      &.d6:before {
-        background-color: var(--dice-background-color);
-        mask-image: url('/assets/icons/d6-blank.svg');
-        content: '';
-      }
-
-      &.d8 {
-        background-image: url('../../icons/svg/d8-grey.svg');
-      }
-
-      &.d10:before {
-        background-color: var(--dice-background-color);
-        mask-image: url('/assets/icons/d10-blank.svg');
-        content: '';
-      }
-
-      &.d12 {
-        background-image: url('../../icons/svg/d12-grey.svg');
-      }
-
-      &.d20 {
-        background-image: url('../../icons/svg/d20-grey.svg');
-      }
-
-      &.min:not(.challenge),
-      &.challenge.max {
-        color: var(--ironsworn-color-danger) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-danger-faded)
-        );
-      }
-
-      &.max:not(.challenge),
-      &.challenge.min {
-        color: var(--ironsworn-color-success) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-success-faded)
-        );
-      }
-
-      &.canceled {
-        color: var(--ironsworn-color-warning) !important;
-        filter: drop-shadow(
-          @dice-glow-offset var(--ironsworn-color-warning-faded)
-        ) !important;
-      }
-    }
-
-    del .roll {
-      text-decoration: line-through;
-      color: var(--ironsworn-color-warning) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-warning-faded)
-      ) !important;
-    }
-  }
-  .bonus-content .dice-formula {
-    word-break: normal;
-  }
-
-  .ironsworn-roll {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-  .outcome-shortcuts {
-    display: contents;
-  }
-
-  .roll-outcome {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    gap: 0.25rem;
-    margin-bottom: 0.25rem;
-    * {
-      margin: 0;
-    }
-
-    .outcome-label {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: larger;
-      span {
-        display: inline;
-        white-space: nowrap;
-      }
-      .outcome-text {
-        font-weight: bold;
-      }
-    }
-  }
   .message-header {
+    // FVTT's default message header. Modules to restyle this aren't unheard of, so don't go *too* wild with the layout, here.
     color: var(--ironsworn-color-fg-muted);
     a:not(:hover):not(:focus) {
       color: inherit;
     }
   }
   .message-content {
+    // wrapper for the stuff that's added by this system
     border: none;
-
     .ironsworn-roll-title {
+      font-weight: bold;
       margin: 0;
       border: none;
+      text-transform: uppercase;
     }
 
-    .dice-formula,
-    .dice-total {
-      background: var(--ironsworn-color-fg-10);
-      border-width: 0px;
-      padding: 5px 0px 5px 0px;
-      .die {
-        &.min {
-          color: var(--ironsworn-color-fg);
-        }
-        &.max {
-          color: var(--ironsworn-color-fg);
-        }
-      }
-    }
-
-    // oracle table results.
     .table-draw {
       border: none;
       h2 {
         border: none;
       }
       table {
+        caption {
+          font-size: large;
+          > * {
+            display: block;
+            text-align: left;
+          }
+          small {
+            font-size: 0.75em;
+          }
+        }
         td:first-child,
         td:last-child {
           width: 0;
@@ -179,29 +43,19 @@
         background-color: var(--ironsworn-color-bg-20);
         margin: var(--ironsworn-spacer-xs) 0;
         transition: none;
-        &:hover {
-          .oracle-row-content {
-            opacity: 0;
-            visibility: hidden;
-          }
-          .oracle-result-control {
-            opacity: 1;
-            visibility: visible;
-            color: inherit;
-          }
-        }
+
         .oracle-result-row {
           &.selected,
           &[aria-selected='true'] {
             background-image: linear-gradient(
               to bottom,
-              var(--ironsworn-color-accent-warm-20),
-              var(--ironsworn-color-accent-cool-20)
+              var(--ironsworn-color-warm-20),
+              var(--ironsworn-color-cool-20)
             );
             border: var(--ironsworn-border-width-md) outset
-              var(--ironsworn-color-accent-warm-20);
+              var(--ironsworn-color-warm-20);
             border-left: var(--ironsworn-border-width-lg) solid
-              var(--ironsworn-color-accent-cool-70);
+              var(--ironsworn-color-cool-70);
           }
           &:not(.selected):not([aria-selected='true']) {
             color: var(--ironsworn-color-fg-80);
@@ -217,54 +71,60 @@
               }
             }
           }
-
-          .oracle-table-column-roll-range {
-          }
-          .oracle-table-column-result-text {
-          }
-          .oracle-table-column-roll-result {
-            padding: 0;
-            white-space: nowrap;
-          }
-          .oracle-row-content {
-            opacity: 1;
-            visibility: visible;
-            height: 100%;
-            display: flex;
-            gap: 2px;
+        }
+        .oracle-table-column-roll-result {
+          padding: 0;
+          white-space: nowrap;
+        }
+        .oracle-row-content {
+          opacity: 1;
+          visibility: visible;
+          height: 100%;
+          display: flex;
+          gap: 2px;
+          align-items: center;
+        }
+        .oracle-result-control {
+          color: inherit;
+          background: none;
+          opacity: 0;
+          visibility: hidden;
+          // height: 100%;
+          // width: 100%;
+          padding: 0;
+          margin: 0;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          display: flex;
+          gap: 2px;
+          padding: 2px;
+          &.clickable.text {
+            justify-content: center;
             align-items: center;
+            &:hover {
+              color: inherit !important;
+            }
           }
-          .oracle-result-control {
-            color: inherit;
+          &:hover {
             background: none;
+          }
+
+          background: none !important;
+          border: none !important;
+          .clickableTextMixin();
+        }
+        &:hover {
+          .oracle-row-content {
             opacity: 0;
             visibility: hidden;
-            height: 100%;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            display: flex;
-            gap: 2px;
-            padding: 2px;
-            &.clickable.text {
-              justify-content: center;
-              align-items: center;
-              &:hover {
-                color: inherit !important;
-              }
-            }
-            &:hover {
-              background: none;
-            }
-
-            background: none !important;
-            border: none !important;
-            .clickableTextMixin();
+          }
+          .oracle-result-control {
+            opacity: 1;
+            visibility: visible;
+            color: inherit;
           }
         }
         .icon {
@@ -275,6 +135,21 @@
       }
     }
   }
+
+  a {
+    .clickableTextMixin();
+    text-shadow: none !important; // so that it doesn't double up with foundry's
+  }
+  button {
+    .initial-caps();
+    .clickableBlockMixin();
+    border-width: var(--ironsworn-border-width-md);
+  }
+
+  .bonus-content .dice-formula {
+    word-break: normal;
+  }
+
   button {
     border: none;
   }

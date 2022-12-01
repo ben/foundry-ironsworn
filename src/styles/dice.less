@@ -67,3 +67,116 @@
     }
   }
 }
+.ironsworn-roll {
+  h3,
+  .hit-type {
+    font-weight: bold;
+    font-variant: all-small-caps;
+  }
+
+  @dice-glow-offset: 0px 0px 5px;
+
+  .roll {
+    width: 24px;
+    line-height: $width;
+    display: inline-block;
+    margin-right: 1px;
+    background-repeat: no-repeat;
+    background-size: $width $width;
+    font-weight: bold;
+    text-align: center;
+    --dice-background-color: var(--ironsworn-color-fg-20);
+    --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+
+    &.d4 {
+      background-image: url('../../icons/svg/d4-grey.svg');
+    }
+
+    &.d6:before {
+      background-color: var(--dice-background-color);
+      mask-image: url('/assets/icons/d6-blank.svg');
+      content: '';
+    }
+
+    &.d8 {
+      background-image: url('../../icons/svg/d8-grey.svg');
+    }
+
+    &.d10:before {
+      background-color: var(--dice-background-color);
+      mask-image: url('/assets/icons/d10-blank.svg');
+      content: '';
+    }
+
+    &.d12 {
+      background-image: url('../../icons/svg/d12-grey.svg');
+    }
+
+    &.d20 {
+      background-image: url('../../icons/svg/d20-grey.svg');
+    }
+
+    &.min:not(.challenge),
+    &.challenge.max {
+      color: var(--ironsworn-color-danger) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-danger-faded)
+      );
+    }
+
+    &.max:not(.challenge),
+    &.challenge.min {
+      color: var(--ironsworn-color-success) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-success-faded)
+      );
+    }
+
+    &.canceled {
+      color: var(--ironsworn-color-warning) !important;
+      filter: drop-shadow(
+        @dice-glow-offset var(--ironsworn-color-warning-faded)
+      ) !important;
+    }
+  }
+
+  del .roll {
+    text-decoration: line-through;
+    color: var(--ironsworn-color-warning) !important;
+    filter: drop-shadow(
+      @dice-glow-offset var(--ironsworn-color-warning-faded)
+    ) !important;
+  }
+}
+.ironsworn-roll {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  .roll-outcome {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+    * {
+      margin: 0;
+    }
+
+    .outcome-label {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: larger;
+      span {
+        display: inline;
+        white-space: nowrap;
+      }
+      .outcome-text {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .outcome-shortcuts {
+    display: contents;
+  }
+}
