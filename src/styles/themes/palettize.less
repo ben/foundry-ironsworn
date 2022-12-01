@@ -149,7 +149,14 @@
   // sensible defaults for semantically-oriented colors
 
   --@{prefix}-fg-muted: var(e(%('--%s-midtone-60', @prefix)));
+  --@{prefix}-fg-highlight: var(e(%('--%s-fg-warm', @prefix)));
+
+  // INPUT
   --@{prefix}-input-bg: var(e(%('--%s-fg-10', @prefix)));
   --@{prefix}-input-border: var(e(%('--%s-fg-10', @prefix)));
-  --@{prefix}-fg-highlight: var(e(%('--%s-fg-warm', @prefix)));
+
+  // CLICKABLE TEXT
+  --@{prefix}-clickable-text: inherit;
+  --@{prefix}-clickable-text-hover: var(e(%('--%s-fg-warm', @prefix)));
+  --@{prefix}-clickable-text-selected: var(e(%('--%s-fg-warm', @prefix)));
 }

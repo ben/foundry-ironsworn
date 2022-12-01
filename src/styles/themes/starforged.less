@@ -17,28 +17,27 @@
 
   --font-primary: 'Carrois Gothic SC', sans-serif;
 
+  // TEXT
+  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+
+  // BORDERS
   --ironsworn-color-border-highlight: var(--ironsworn-color-light-warm);
   --ironsworn-color-border: var(--ironsworn-color-fg-muted);
   --ironsworn-color-border-muted: var(--ironsworn-color-fg-30);
 
-  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+  // CLICKABLE TEXT: HOVER EFFECT
+  --ironsworn-filter-highlight: drop-shadow(0 0 3px var(--ironsworn-color-cool))
+    drop-shadow(0 0 3px var(--ironsworn-color-cool));
 
-  // see clickable.less for usage
-  --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-  --ironsworn-color-clickable-text-selected: var(--ironsworn-color-light-warm);
-
-  // block default state
+  // CLICKABLE BLOCK: DEFAULT
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-midtone-80);
   --ironsworn-color-clickable-block-bg: transparent;
   --ironsworn-color-clickable-block-border: var(--ironsworn-color-midtone-80);
-
-  // block hover state
+  // CLICKABLE BLOCK: HOVER
   --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
   --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-warm-20);
   --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-light);
-
-  // block selected state
+  // CLICKABLE BLOCK: ACTIVE/SELECTED
   --ironsworn-color-clickable-block-fg-selected: var(
     --ironsworn-color-light-warm
   );
@@ -47,6 +46,8 @@
     --ironsworn-color-light-warm
   );
 
+  // INPUT
+  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
 
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red-dark);
@@ -64,10 +65,7 @@
 
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
-  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
-  --ironsworn-filter-highlight: drop-shadow(0 0 1px var(--ironsworn-color-warm))
-    drop-shadow(0 0 2px var(--ironsworn-color-cool));
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
   // --ironsworn-color-text-stroke: black;
 
