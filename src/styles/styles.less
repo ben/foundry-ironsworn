@@ -40,16 +40,7 @@
     var(--ironsworn-transition-timing-function);
 
   // transitions colours only
-  --std-animation: background-color var(--std-animation-timing),
-    border-color var(--std-animation-timing),
-    box-shadow var(--std-animation-timing),
-    caret-color var(--std-animation-timing), color var(--std-animation-timing),
-    column-rule-color var(--std-animation-timing),
-    filter var(--std-animation-timing), opacity var(--std-animation-timing),
-    outline-color var(--std-animation-timing),
-    text-decoration-color var(--std-animation-timing),
-    fill-opacity var(--std-animation-timing),
-    fill-color var(--std-animation-timing), stroke var(--std-animation-timing);
+  --std-animation: all 0.5s ease;
 
   --fa-display: inline-block;
   --fa-invert: var(--ironsworn-color-bg);
@@ -82,16 +73,23 @@
   --ironsworn-color-success-faded: hsl(200, 80%, 40%);
 }
 
-.fontSizes {
-  // rem = 16px
-  
-}
-
 .system-foundry-ironsworn {
+  // transitions for interactive elements
+  a,
+  button,
+  select,
+  input,
+  textarea,
+  .scene-control,
+  .macro {
+    transition: var(--std-animation);
+    &.active {
+      color: var(--ironsworn-color-clickable-text-selected);
+    }
+  }
+
   .ironsworn {
-
-
-
+    // stuff scoped to ironsworn windows only
     // standard HTML elements
     button {
       border-width: 0px;
@@ -112,12 +110,19 @@
     h4,
     h5,
     h6 {
-      text-transform: uppercase;
+      // text-transform: uppercase;
     }
     h1,
     h2,
     h3 {
       border: none;
+    }
+
+    .window-content {
+      background: var(--ironsworn-color-bg);
+      color: var(--ironsworn-color-fg);
+      height: 100%;
+      padding: var(--ironsworn-spacer-md);
     }
   }
 
@@ -137,13 +142,6 @@
 
   .drag-highlight {
     background: var(--ironsworn-color-bg-warm);
-  }
-
-  .window-content {
-    background: var(--ironsworn-color-bg);
-    color: var(--ironsworn-color-fg);
-    height: 100%;
-    padding: var(--ironsworn-spacer-md);
   }
 
   /* Items List */
@@ -229,6 +227,9 @@
     justify-content: space-around;
 
     .stat {
+      text-transform: uppercase;
+      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+      .textStrokeMixin();
       flex: 0 0 75px;
       border-width: var(--ironsworn-border-width-md);
       border-radius: var(--ironsworn-border-radius-lg) !important;
@@ -343,7 +344,7 @@
     margin-bottom: var(--ironsworn-spacer-md);
     font-weight: bold;
     line-height: 30px;
-    font-variant: all-small-caps;
+    // text-transform: uppercase;
   }
 
   .sheet.moves {
@@ -356,12 +357,13 @@
     }
   }
 
-  .movesheet-row.highlighted {
-    background-color: var(--ironsworn-color-bg-warm);
+  .highlighted {
+    background-color: var(--ironsworn-color-warm-50) !important;
   }
 
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
+  @import 'dialog.less';
   @import 'chat-message.less';
   @import 'clickable.less';
   @import 'icons.less';
@@ -373,7 +375,7 @@
 
   .ironsworn {
     // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.
-    @import './fvtt/dialogs.less';
+    @import './fvtt/dialog.less';
     &.dialog {
       .dialog();
     }

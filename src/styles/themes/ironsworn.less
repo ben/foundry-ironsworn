@@ -6,8 +6,6 @@
   // #ff6600 corresponds to FVTT vars --color-border-highlight,--color-shadow-highlight
   // #ff0000 corresponds to FVTT vars --color-border-highlight-cool, --color-shadow-primary
 
-  --ironsworn-color-input-bg: var(--ironsworn-color-fg-10);
-
   --ironsworn-color-text-stroke: transparent;
   --ironsworn-color-border: var(--ironsworn-color-fg);
   --ironsworn-color-border-muted: var(--ironsworn-color-fg-muted);
@@ -27,9 +25,11 @@
   );
 
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-highlight);
-  --ironsworn-color-clickable-text-selected: var(
-    --ironsworn-color-fg-highlight
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-dark-warm);
+  --ironsworn-color-clickable-text-selected: var(--ironsworn-color-dark-warm);
+
+  --ironsworn-filter-highlight: drop-shadow(
+    0 0 3px var(--ironsworn-color-cool)
   );
 
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.

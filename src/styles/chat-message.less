@@ -1,3 +1,5 @@
+@import 'mixins.less';
+
 .chat-message {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   color: var(--ironsworn-color-fg);
@@ -8,14 +10,50 @@
       color: inherit;
     }
   }
+  .ironsworn-roll {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    .roll-outcome {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      gap: 0.25rem;
+      margin-bottom: 0.25rem;
+      p {
+        margin: 0;
+      }
+
+      .outcome-label {
+        margin: 0;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: larger;
+        span {
+          display: inline;
+          white-space: nowrap;
+        }
+        .outcome-text {
+          font-weight: bold;
+        }
+      }
+    }
+
+    .outcome-shortcuts {
+      display: contents;
+    }
+  }
   .message-content {
     // wrapper for the stuff that's added by this system
     border: none;
-    .ironsworn-roll-title {
+    .ironsworn-roll-title,
+    h3,
+    h2 {
+      font-size: var(--font-size-16);
       font-weight: bold;
       margin: 0;
-      border: none;
-      text-transform: uppercase;
+      // border: none;
+      .initial-caps();
     }
 
     .table-draw {
@@ -48,14 +86,17 @@
           &.selected,
           &[aria-selected='true'] {
             background-image: linear-gradient(
-              to bottom,
-              var(--ironsworn-color-warm-20),
-              var(--ironsworn-color-cool-20)
-            );
-            border: var(--ironsworn-border-width-md) outset
-              var(--ironsworn-color-warm-20);
-            border-left: var(--ironsworn-border-width-lg) solid
-              var(--ironsworn-color-cool-70);
+                to right,
+                var(--ironsworn-color-cool-50) 1px,
+                var(--ironsworn-color-warm-50) 2px,
+                transparent 3px
+              ),
+              linear-gradient(
+                to bottom,
+                var(--ironsworn-color-warm-20),
+                var(--ironsworn-color-cool-20)
+              );
+            background-blend-mode: screen;
           }
           &:not(.selected):not([aria-selected='true']) {
             color: var(--ironsworn-color-fg-80);
@@ -136,22 +177,15 @@
     }
   }
 
-  a {
-    .clickableTextMixin();
-    text-shadow: none !important; // so that it doesn't double up with foundry's
-  }
   button {
     .initial-caps();
     .clickableBlockMixin();
     border-width: var(--ironsworn-border-width-md);
+    background-color: var(--ironsworn-color-bg-20);
   }
 
   .bonus-content .dice-formula {
     word-break: normal;
-  }
-
-  button {
-    border: none;
   }
 
   // styling so that old messages don't have their overall layout disrupted. can probably be removed in a few versions

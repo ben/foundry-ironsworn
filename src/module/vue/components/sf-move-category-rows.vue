@@ -70,7 +70,7 @@
   }
 }
 .toggleButton {
-  .textStrokeMixin();
+  .textStrokeMixin( var(--ironsworn-color-dark));
   background: none;
 }
 </style>

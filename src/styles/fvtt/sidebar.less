@@ -22,11 +22,12 @@
   }
   #sidebar-tabs {
     .item {
-      .clickableTextMixin();
-      .tabTopMixin();
-      margin: 0;
-      color: var(--ironsworn-color-clickable-block-fg);
-      border-color: transparent;
+      // .clickableTextMixin();
+      // .tabTopMixin();
+      // filter: none !important;
+      // margin: 0;
+      // color: var(--ironsworn-color-clickable-block-fg);
+      // border-color: transparent;
     }
     .collapse {
       .clickableBlockMixin();
@@ -34,24 +35,7 @@
       border: 0;
     }
   }
-  .directory {
-    .directory-header .header-search input {
-      .inputFieldMixin();
-    }
-    .directory-item {
-      .document-name {
-        --boxGlowSize: calc(
-          (var(--sidebar-item-height) + var(--sidebar-width)) / 4
-        );
-        cursor: pointer;
-        .clickableBlockMixin(var(--boxGlowSize));
-        border: 0;
-        background-color: transparent;
-        margin: 0;
-        padding-left: 8px;
-      }
-    }
-  }
+
   // CHAT TAB
   #chat {
     #chat-log {
@@ -65,6 +49,16 @@
     }
     textarea#chat-message {
       .inputFieldMixin();
+    }
+  }
+}
+
+.directory {
+  .directory-header {
+    .header-search {
+      input {
+        .inputFieldMixin();
+      }
     }
   }
 }

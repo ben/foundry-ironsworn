@@ -1,6 +1,7 @@
 @import 'mixins.less';
 
-@scrollbarThumbColor: var(--ironsworn-color-midtone-50);
+@scrollbarThumbBgColor: var(--ironsworn-color-fg-50);
+@scrollbarThumbBorderColor: var(--ironsworn-color-warm-50);
 @scrollbarTrackColor: var(--ironsworn-color-fg-50);
 @scrollbarWidth: 6px;
 
@@ -30,12 +31,13 @@
 ::-webkit-scrollbar-thumb {
   outline: none;
   border-radius: (@scrollbarWidth / 2);
-  background: @scrollbarThumbColor;
-  border: 1px solid var(--ironsworn-color-warm-50);
+  background: @scrollbarThumbBgColor;
+  border: 1px solid @scrollbarThumbBorderColor;
 }
 :root {
   scrollbar-width: thin;
-  scrollbar-color: @scrollbarThumbColor @scrollbarTrackColor;
+  scrollbar-color: @scrollbarThumbBgColor @scrollbarTrackColor;
+  scrollbar-gutter: auto;
 }
 
 /* Range Input */

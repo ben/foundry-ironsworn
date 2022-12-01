@@ -1,17 +1,18 @@
 // overrides for some of FVTT's default variables, mainly useful for retheming them with e.g. a dark theme.
 
 .overrideVars {
-  --color-shadow-primary: var(--ironsworn-color-warm);
-  --color-border-highlight-cool: var(--ironsworn-color-warm);
+  --color-text-hyperlink: var(--ironsworn-color-warm);
 
-  --color-text-hyperlink: var(--ironsworn-color-cool);
-  --color-shadow-highlight: var(--ironsworn-color-cool);
-  --color-border-highlight: var(--ironsworn-color-cool);
+  --color-shadow-primary: var(--ironsworn-color-cool);
+  --color-shadow-highlight: var(--ironsworn-color-warm);
+  --color-border-highlight: var(--ironsworn-color-warm);
+  --color-border-highlight-alt: var(--ironsworn-color-cool);
 
   --color-shadow-dark: var(--ironsworn-color-dark);
   --color-border-dark: var(--ironsworn-color-dark);
 
-  --color-underline-header: var(--ironsworn-color-fg-highlight);
+  --color-underline-header: var(--ironsworn-color-fg-cool);
+  --color-underline-active: var(--ironsworn-color-fg-warm);
 
   --color-underline-active: var(--ironsworn-color-warm);
 
@@ -22,27 +23,43 @@
   --color-text-light-highlight: var(--ironsworn-color-light);
 
   --color-text-light-heading: var(--ironsworn-color-light);
-  --color-text-light-primary: var(--ironsworn-color-midtone-90);
+  --color-text-light-primary: var(--ironsworn-color-scale-90);
 
-  --color-text-dark-primary: var(--ironsworn-color-midtone-10);
-  --color-text-dark-secondary: var(--ironsworn-color-midtone-30);
-  --color-text-dark-header: var(--ironsworn-color-midtone-20);
-  --color-text-dark-inactive: #7a7971;
+  --color-text-dark-primary: var(--ironsworn-color-scale-10);
+  --color-text-dark-secondary: var(--ironsworn-color-scale-30);
+  --color-text-dark-header: var(--ironsworn-color-scale-20);
 
-  --color-border-light-highlight: var(--ironsworn-color-light);
-  --color-border-light-1: var(--ironsworn-color-midtone-90);
-  --color-border-light-secondary: #c9c7b8;
+  --color-text-dark-inactive: var(--ironsworn-color-scale-50);
+  --color-border-light-tertiary: var(--color-text-dark-inactive);
+  --color-underline-inactive: var(--color-text-dark-inactive);
+
   --color-border-light-primary: var(--ironsworn-color-light);
-  --color-border-light-2: #999;
-  --color-border-light-tertiary: #7a7971;
-  --color-border-dark-1: var(--ironsworn-color-midtone-10);
-  --color-border-dark-2: var(--ironsworn-color-midtone-20);
-  --color-border-dark-3: var(--ironsworn-color-midtone-30);
-  --color-border-dark-4: var(--ironsworn-color-midtone-40);
-  --color-border-dark-5: var(--ironsworn-color-midtone-50);
-
+  --color-border-light-highlight: var(--ironsworn-color-light);
+  --color-border-light-secondary: var(--ironsworn-color-scale-90);
+  --color-border-light-1: var(--ironsworn-color-scale-80);
+  --color-border-light-2: var(--ironsworn-color-scale-60);
   --color-border-dark: #000;
-  --color-border-dark-primary: #191813;
-  --color-border-dark-secondary: #23221d;
-  --color-border-dark-tertiary: #4b4a44;
+  --color-border-dark-primary: var(--color-text-dark-primary);
+  --color-border-dark-secondary: var(--color-text-dark-header);
+  --color-border-dark-tertiary: var(--color-text-dark-inactive);
+  --color-border-dark-1: var(--ironsworn-color-scale-10);
+  --color-border-dark-2: var(--ironsworn-color-scale-10);
+  --color-border-dark-3: var(--ironsworn-color-scale-20);
+  --color-border-dark-4: var(--ironsworn-color-scale-30);
+  --color-border-dark-5: var(--ironsworn-color-scale-40);
+
+  // --color-text-light-0: var(--ironsworn-color-light);
+  // --color-text-light-1: var(--ironsworn-color-scale-90);
+  // --color-text-light-2: var(--ironsworn-color-scale-80);
+  // --color-text-light-3: var(--ironsworn-color-scale-70);
+  // --color-text-light-4: var(--ironsworn-color-scale-70);
+  // --color-text-light-5: var(--ironsworn-color-scale-60);
+  // --color-text-light-6: var(--ironsworn-color-scale-60);
+  // --color-text-light-7: var(--ironsworn-color-scale-50);
+  // --color-text-dark-6: var(--ironsworn-color-scale-40);
+  // --color-text-dark-5: var(--ironsworn-color-scale-30);
+  // --color-text-dark-4: var(--ironsworn-color-scale-20);
+  // --color-text-dark-3: var(--ironsworn-color-scale-20);
+  // --color-text-dark-2: var(--ironsworn-color-scale-10);
+  // --color-text-dark-1: var(--ironsworn-color-scale-10);
 }

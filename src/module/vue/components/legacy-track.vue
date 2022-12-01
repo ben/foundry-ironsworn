@@ -54,6 +54,7 @@
   grid-template-rows: max-content max-content 0.5em max-content;
   grid-template-columns: max-content 1fr;
   .legacy-track-title {
+    text-transform: uppercase;
     font-weight: bold;
     letter-spacing: 0.02em;
     grid-row: 1;

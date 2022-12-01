@@ -111,8 +111,9 @@
 .toggleButton {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+
   .clickableTextMixin();
-  .textStrokeMixin();
+  .textStrokeMixin( var(--ironsworn-color-dark));
   .thematicColorMixin();
   border: none;
   background: none;

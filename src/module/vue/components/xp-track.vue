@@ -16,10 +16,12 @@
 @import '../../../styles/mixins.less';
 .xp-track {
   .xp-box {
+    --ironsworn-color-block-border-selected: var(--ironsworn-color-fg);
+    --ironsworn-color-block-border-hover: var(--ironsworn-color-fg-highlight);
     aspect-ratio: 1;
     max-width: 20px;
     .clickableBlockMixin();
-    border-color: var(--ironsworn-border-color);
+
     border-radius: 3px;
   }
 }

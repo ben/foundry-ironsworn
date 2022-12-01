@@ -18,12 +18,9 @@
 
 // special effects
 
-// used to mark focused fields. a few FVTT buttons/tabs use it as a hover effect, too.
+// used to mark focused fields
 .borderGlowExteriorMixin(@spread:6px) {
-  // border-color: var(--ironsworn-color-cool);
-  // border-bottom-color: var(--ironsworn-color-warm);
   box-shadow: 0 0 @spread var(--ironsworn-color-cool);
-  // FIXME: adjust these specific transition properties to make gaining focus feel a bit snappier
 }
 
 // used inside block/tab like elements. it's inset so that both the focus effect and the hover effect can be visible at once.
@@ -31,9 +28,9 @@
   box-shadow: inset 0 0 @spread @blur @color;
 }
 
-.borderAccentColorMixin() {
-  border-color: var(--ironsworn-color-warm);
-  border-bottom-color: var(--ironsworn-color-cool);
+.borderAccentColorMixin(@warm:var(--ironsworn-color-warm),@cool:var(--ironsworn-color-cool)) {
+  border-color: @warm;
+  border-bottom-color: @cool;
 }
 
 .textGlowMixin(@color:var(--ironsworn-color-fg-highlight),@spread:10px) {
@@ -59,7 +56,7 @@
   &[aria-selected='true'],
   &.active {
     .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-cool));
-    border-color: var(--ironsworn-color-cool);
+    border-color: var(--ironsworn-color-warm);
   }
 }
 
@@ -122,25 +119,30 @@
 }
 
 .clickableTextMixin {
+  --ironsworn-color-text-stroke: transparent;
   .interactiveMixin();
+  // .textStrokeMixin();
   background: transparent;
   color: var(--ironsworn-color-clickable-text);
-  &:not(a.item) {
-    box-shadow: none !important;
-    // so that foundry's tabs don't get their box shadows omitted.
-    // TODO: write a mixin for foundry-style transparent tabs
-  }
+  box-shadow: none !important;
+  transition-property: color, filter, text-shadow, text-stroke;
+  transition-duration: var(--ironsworn-transition-duration);
+  transition-timing-function: var(--ironsworn-transition-timing-function);
+  // we can't do much about the paint order here, but that's fine -- the overlap of a transparent color creates a nice effect here.
   &[aria-selected='true'],
   &.selected,
   &.active {
+    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
     .textActiveMixin();
   }
   &:hover,
   &.hover {
+    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
     .textHoverMixin();
   }
   &:focus,
   &:focus-within {
+    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
     .textFocusMixin();
   }
 }
@@ -254,6 +256,7 @@
 
 .inputFieldFocusMixin(@spread: 6px) {
   .borderGlowExteriorMixin(@spread);
+  .borderAccentColorMixin(var(--ironsworn-color-warm-50), var(--ironsworn-color-cool-50));
   outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-warm);
 }
 
@@ -262,7 +265,7 @@
   background: var(--ironsworn-color-input-bg);
   border-width: var(--ironsworn-border-width-md);
   border-style: var(--ironsworn-input-border-style);
-  border-color: var(--ironsworn-color-border-muted);
+  border-color: var(--ironsworn-color-input-border);
   border-radius: var(--ironsworn-border-radius-md);
 }
 
@@ -275,12 +278,12 @@
     opacity: 0.5;
   }
   &:hover {
-    border-color: var(--ironsworn-color-clickable-block-border-hover);
     .borderGlowInteriorMixin(@spread,0,var(--ironsworn-color-cool));
   }
   &:focus,
   &:focus-within {
     .inputFieldFocusMixin();
+    .borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
   }
 }
 

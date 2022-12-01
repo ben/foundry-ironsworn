@@ -12,6 +12,41 @@
   // TODO: This could probably be improved significantly by writing palettize in JS to take advantage of chroma.js, then importing it as a LESS plugin. The various scale functions are particularly attractive!
   @lightColor: if((luma(@fgColor) > luma(@bgColor)), @fgColor, @bgColor);
   @darkColor: if((luma(@fgColor) < luma(@bgColor)), @fgColor, @bgColor);
+
+  @palette: {
+    @warm: {
+      hue: hue(@warmAccentColor);
+      saturation: saturation(@warmAccentColor);
+      luma: luma(@warmAccentColor);
+    };
+    @cool: {
+      hue: hue(@coolAccentColor);
+      saturation: saturation(@coolAccentColor);
+      luma: luma(@coolAccentColor);
+    };
+    @light: {
+      // LESS rewrites things like hsl(180,20%,0%) to hsl(0,0%,0%)
+      // so we can't reliaby extract a hue from it.
+      // instead we interpolate a value from the accent colours.
+      hue: if(
+        saturation(@lightColor) = 0,
+        hue(mix(@warmAccentColor, @coolAccentColor)),
+        hue(@lightColor)
+      );
+      saturation: saturation(@lightColor);
+      luma: luma(@lightColor);
+    };
+    @dark: {
+      hue: if(
+        saturation(@darkColor) = 0,
+        hue(mix(@warmAccentColor, @coolAccentColor)),
+        hue(@darkColor)
+      );
+      saturation: saturation(@darkColor);
+      luma: luma(@darkColor);
+    };
+  };
+
   --@{prefix}-light: @lightColor;
   --@{prefix}-dark: @darkColor;
   --@{prefix}-warm: @warmAccentColor;
@@ -44,61 +79,77 @@
   // generate mixtures
   @mixtures: range(10, 90, 10);
   each(@mixtures, {
-    --@{prefix}-tone-@{value}: mix(@fgColor, @bgColor, @value);
+    --@{prefix}-midtone-@{value}: mix(@fgColor, @bgColor, @value);
+  });
+  each(@mixtures, {
+    --@{prefix}-scale-@{value}: mix(@lightColor, @darkColor, @value);
   });
 
-  @lightHueWarm: mix(@warmAccentColor, @lightColor, 25%);
-  @lightHueCool: mix(@coolAccentColor, @lightColor, 25%);
-  @darkHueWarm: mix(@warmAccentColor, @darkColor, 25%);
-  @darkHueCool: mix(@coolAccentColor, @darkColor, 25%);
+  @lightWarmBase: mix(@warmAccentColor, @lightColor, 75%);
+  @lightCoolBase: mix(@coolAccentColor, @lightColor, 75%);
+  @darkWarmBase: mix(@warmAccentColor, @darkColor, 75%);
+  @darkCoolBase: mix(@coolAccentColor, @darkColor, 75%);
 
-  @lightWarm: hsl(hue(@lightHueWarm), 100%, 75%);
-  @lightCool: hsl(hue(@lightHueCool), 100%, 75%);
-  @darkWarm: mix(@darkColor, @warmAccentColor, 50%);
-  @darkCool: mix(@darkColor, @coolAccentColor, 50%);
+  @lightnessCeiling: 75%;
+  @lightnessFloor: 20%;
 
-  @lightMuted: desaturate(mix(@lightColor, @darkColor, 65%), 20%);
-  @darkMuted: desaturate(mix(@darkColor, @lightColor, 65%), 20%);
+  @lightWarm: hsl(
+    hue(@lightWarmBase),
+    100%,
+    //saturation(@lightWarmBase),
+    @lightnessCeiling
+  );
+  @lightCool: hsl(
+    hue(@lightCoolBase),
+    100%,
+    //saturation(@lightCoolBase),
+    @lightnessCeiling
+  );
+  @darkWarm: hsl(
+    hue(@darkWarmBase),
+    100%,
+    //saturation(@darkWarmBase),
+    @lightnessFloor
+  );
+  @darkCool: hsl(
+    hue(@darkCoolBase),
+    100%,
+    //saturation(@darkCoolBase),
+    @lightnessFloor
+  );
 
   --@{prefix}-light-warm: @lightWarm;
-  --@{prefix}-light-cool: @lightCool;
-  --@{prefix}-light-muted: @lightMuted;
-
   --@{prefix}-dark-warm: @darkWarm;
+  --@{prefix}-light-cool: @lightCool;
   --@{prefix}-dark-cool: @darkCool;
-  --@{prefix}-dark-muted: @darkMuted;
 
+  --@{prefix}-fg: @fgColor;
+  --@{prefix}-bg: @bgColor;
   --@{prefix}-fg-warm: if(
-    (luma(@bgColor) > luma(@fgColor)),
-    @darkWarm,
-    @lightWarm
-  );
-  --@{prefix}-fg-cool: if(
-    (luma(@bgColor) > luma(@fgColor)),
-    @darkCool,
-    @lightCool
-  );
-  --@{prefix}-fg-muted: if(
-    (luma(@bgColor) > luma(@fgColor)),
-    @darkMuted,
-    @lightMuted
-  );
-
-  --@{prefix}-bg-warm: if(
-    (luma(@bgColor) > luma(@fgColor)),
+    (luma(@fgColor) > luma(@bgColor)),
     @lightWarm,
     @darkWarm
   );
-
+  --@{prefix}-fg-cool: if(
+    (luma(@fgColor) > luma(@bgColor)),
+    @lightCool,
+    @darkCool
+  );
+  --@{prefix}-bg-warm: if(
+    (luma(@fgColor) < luma(@bgColor)),
+    @lightWarm,
+    @darkWarm
+  );
   --@{prefix}-bg-cool: if(
-    (luma(@bgColor) > luma(@fgColor)),
+    (luma(@fgColor) < luma(@bgColor)),
     @lightCool,
     @darkCool
   );
 
-  --@{prefix}-bg-alt: if(
-    (luma(@bgColor) > luma(@fgColor)),
-    @lightMuted,
-    @darkMuted
-  );
+  // sensible defaults for semantically-oriented colors
+
+  --@{prefix}-fg-muted: var(e(%('--%s-midtone-60', @prefix)));
+  --@{prefix}-input-bg: var(e(%('--%s-fg-10', @prefix)));
+  --@{prefix}-input-border: var(e(%('--%s-fg-10', @prefix)));
+  --@{prefix}-fg-highlight: var(e(%('--%s-fg-warm', @prefix)));
 }

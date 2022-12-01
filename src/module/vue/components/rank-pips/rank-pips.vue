@@ -32,6 +32,7 @@
 <style lang="less">
 .rank-pips {
   width: max-content;
+  flex-grow: 0;
   .rank-pip {
     .pip-shape > * {
       stroke-width: var(--widget-stroke-width);

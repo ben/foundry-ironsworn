@@ -8,34 +8,48 @@
   button {
     margin: 0;
   }
-  .entity-link,
-  .content-link {
-    .clickableBlockMixin();
-    filter: none;
-    border-radius: var(--ironsworn-border-radius-sm);
-    // forces fg colour so that it is the same colour as the text.
+}
+
+.entity-link,
+.content-link,
+a[data-pack][data-uuid] {
+  .clickableBlockMixin();
+  filter: none;
+  border-radius: var(--ironsworn-border-radius-sm);
+  border-width: var(--ironsworn-border-width-md);
+  word-break: nowrap;
+  white-space: nowrap;
+  // forces fg colour so that it is the same colour as the text.
+  color: inherit;
+  padding: 0 var(--ironsworn-spacer-xs);
+  background-color: var(--ironsworn-color-bg-20);
+  border-color: var(--ironsworn-color-fg-30);
+  &:hover {
+    background-color: var(--ironsworn-color-bg-50);
+    color: var(--ironsworn-color-fg-warm);
+  }
+  i,
+  &:before {
     color: inherit;
-    i {
-      color: inherit;
-    }
+    margin-right: var(--ironsworn-spacer-xs);
   }
 }
 
 .clickable {
   .interactiveMixin();
   cursor: pointer;
-  &:not(svg):not(.svg) {
-    &.text:not(.block) {
-      .clickableTextMixin();
-      &:not(:before) {
-        text-align: left;
-        justify-content: left;
-      }
-    }
-    &.block {
-      .clickableBlockMixin();
+  // &:not(svg):not(.svg) {
+  &.text:not(.block) {
+    .clickableTextMixin();
+    &:not(:before) {
+      text-align: left;
+      justify-content: left;
     }
   }
+  &.block {
+    .clickableBlockMixin();
+  }
+  // }
   svg,
   &.svg {
     &.selected,

@@ -15,7 +15,30 @@
       .scrollable {
       }
       footer {
-        background: var(--ironsworn-color-cool-10);
+        background: var(--ironsworn-color-warm-20);
+      }
+    }
+  }
+}
+
+.package-configuration {
+  aside.sidebar {
+    nav.tabs {
+      .category-tab {
+        &:hover {
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--ironsworn-color-cool-20)
+          );
+        }
+        &.active {
+          background: linear-gradient(
+            to right,
+            transparent,
+            var(--ironsworn-color-warm-30)
+          );
+        }
       }
     }
   }
@@ -40,11 +63,7 @@
   border-width: var(--ironsworn-border-width-md);
   border-style: solid;
 }
-a {
-  .clickableTextMixin();
-  text-shadow: none !important;
-  // we do with with filter instead, so this is omitted
-}
+
 .window-app {
   .window-header {
     color: var(--ironsworn-color-fg);
@@ -52,7 +71,28 @@ a {
   }
 }
 
-// TODO: might make more sense as its own file, or in a file grouping similar elements
-img {
-  border: 1px solid var(--ironsworn-color-border-muted);
+a,
+.scene-control {
+  &:hover {
+    color: var(--ironsworn-color-clickable-text-hover);
+  }
+}
+
+#keybindings {
+  .binding {
+    .key {
+      background: var(--ironsworn-color-light-20);
+    }
+    .binding-controls {
+      .control {
+        &.uneditable {
+          color: var(--ironsworn-color-midtone-50);
+        }
+      }
+    }
+  }
+}
+
+.notification {
+  color: #eee;
 }

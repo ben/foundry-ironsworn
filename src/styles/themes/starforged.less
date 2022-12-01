@@ -4,7 +4,7 @@
 @import './palettize.less';
 
 :root {
-  .palettize(ironsworn-color,hsl(180, 70%, 50%), hsl(180,20%,0%), hsl(195,100%,50%), hsl(210,100%,50%));
+  .palettize(ironsworn-color,hsl(180, 70%, 60%), hsl(180,20%,0%), hsl(185,100%,50%), hsl(210,100%,50%));
 }
 
 .system-foundry-ironsworn.theme-starforged {
@@ -17,15 +17,11 @@
 
   --font-primary: 'Carrois Gothic SC', sans-serif;
 
-  --ironsworn-color-fg-muted: var(--ironsworn-color-tone-60);
-
   --ironsworn-color-border-highlight: var(--ironsworn-color-light-warm);
-  --ironsworn-color-border: var(--ironsworn-color-fg-50);
+  --ironsworn-color-border: var(--ironsworn-color-fg-muted);
   --ironsworn-color-border-muted: var(--ironsworn-color-fg-30);
 
-  --ironsworn-color-input-bg: var(--ironsworn-color-fg-10);
-
-  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
+  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
   // see clickable.less for usage
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
@@ -33,24 +29,20 @@
   --ironsworn-color-clickable-text-selected: var(--ironsworn-color-light-warm);
 
   // block default state
-  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-midtone-60);
+  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-midtone-80);
   --ironsworn-color-clickable-block-bg: transparent;
-  --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
+  --ironsworn-color-clickable-block-border: var(--ironsworn-color-midtone-80);
 
   // block hover state
-  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light-warm);
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-midtone-20);
-  --ironsworn-color-clickable-block-border-hover: var(
-    --ironsworn-color-light-warm
-  );
+  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
+  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-warm-20);
+  --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-light);
 
   // block selected state
   --ironsworn-color-clickable-block-fg-selected: var(
     --ironsworn-color-light-warm
   );
-  --ironsworn-color-clickable-block-bg-selected: var(
-    --ironsworn-color-midtone-40
-  );
+  --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-warm-40);
   --ironsworn-color-clickable-block-border-selected: var(
     --ironsworn-color-light-warm
   );

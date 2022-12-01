@@ -2,12 +2,12 @@
   .dice-formula,
   .dice-total {
     padding: 5px 0px 5px 0px;
-    background: var(--ironsworn-color-warm-10);
+    background: var(--ironsworn-color-fg-10);
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
-    border-color: var(--ironsworn-color-border);
+    border-color: var(--ironsworn-color-border-muted);
     border-radius: var(--ironsworn-border-radius-md);
-    box-shadow: 0 0 2px var(--ironsworn-color-cool) inset;
+    box-shadow: 0 0 2px var(--ironsworn-color-bg) inset;
     .die {
       &.min {
         color: var(--ironsworn-color-fg);
@@ -39,7 +39,7 @@
         .textStrokeMixin();
       }
       .indeterminate-value {
-        color: var(--ironsworn-color-fg-muted);
+        color: var(--ironsworn-color-midtone-60);
       }
       .action-score-capped {
         text-decoration: dotted underline;
@@ -54,7 +54,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: var(--ironsworn-color-bg);
       }
       .challenge-dice {
         display: flex;
@@ -71,10 +70,14 @@
   h3,
   .hit-type {
     font-weight: bold;
-    font-variant: all-small-caps;
   }
 
-  @dice-glow-offset: 0px 0px 5px;
+  .diceGlowMixin(@color, @diceDropShadowSize: 0px 0px 2px) {
+    color: @color !important;
+    filter: drop-shadow(@diceDropShadowSize @color)
+      drop-shadow(@diceDropShadowSize @color);
+    background-blend-mode: screen;
+  }
 
   .roll {
     width: 24px;
@@ -85,7 +88,7 @@
     background-size: $width $width;
     font-weight: bold;
     text-align: center;
-    --dice-background-color: var(--ironsworn-color-fg-20);
+    --dice-background-color: var(--ironsworn-color-fg-30);
     --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
     &.d4 {
@@ -118,65 +121,20 @@
 
     &.min:not(.challenge),
     &.challenge.max {
-      color: var(--ironsworn-color-danger) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-danger-faded)
-      );
+      .diceGlowMixin(var(--ironsworn-color-danger));
     }
 
     &.max:not(.challenge),
     &.challenge.min {
-      color: var(--ironsworn-color-success) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-success-faded)
-      );
+      .diceGlowMixin(var(--ironsworn-color-success));
     }
 
     &.canceled {
-      color: var(--ironsworn-color-warning) !important;
-      filter: drop-shadow(
-        @dice-glow-offset var(--ironsworn-color-warning-faded)
-      ) !important;
+      .diceGlowMixin(var(--ironsworn-color-warning));
     }
   }
-
   del .roll {
     text-decoration: line-through;
-    color: var(--ironsworn-color-warning) !important;
-    filter: drop-shadow(
-      @dice-glow-offset var(--ironsworn-color-warning-faded)
-    ) !important;
-  }
-}
-.ironsworn-roll {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  .roll-outcome {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    gap: 0.25rem;
-    margin-bottom: 0.25rem;
-    * {
-      margin: 0;
-    }
-
-    .outcome-label {
-      text-align: center;
-      text-transform: uppercase;
-      font-size: larger;
-      span {
-        display: inline;
-        white-space: nowrap;
-      }
-      .outcome-text {
-        font-weight: bold;
-      }
-    }
-  }
-
-  .outcome-shortcuts {
-    display: contents;
+    .diceGlowMixin(var(--ironsworn-color-warning));
   }
 }

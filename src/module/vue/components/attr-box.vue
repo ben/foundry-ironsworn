@@ -21,7 +21,7 @@
 @import '../../../styles/mixins.less';
 .stat {
   &:before {
-    --ironsworn-color-bg-highlight: var(--ironsworn-color-bg-50);
+    --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
   }
   & > * {
     position: relative; // must be set to manipulate z-index
