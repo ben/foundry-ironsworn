@@ -1,8 +1,5 @@
 #tooltip {
-  position: absolute;
-  width: max-content;
-  max-width: 320px;
-  padding: 6px 8px;
+  // TODO: currently this isn't really changing much, but i'd like to revisit it for the dark theme.
   background: var(--ironsworn-color-dark-90);
   font-family: var(--font-primary);
   font-size: var(--font-size-16);
@@ -11,10 +8,5 @@
   border: 1px solid var(--color-border-dark-secondary);
   border-radius: 3px;
   box-shadow: 0 0 4px #000;
-  z-index: var(--z-index-tooltip);
   pointer-events: none;
-  overflow-wrap: break-word;
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 500ms, opacity 500ms;
 }
