@@ -1,4 +1,5 @@
 // typography mixins
+
 // until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
 // yes, i am bitter, because even safari has supported it for ~4 years at this point :)
 // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
@@ -149,7 +150,6 @@
 }
 
 .blockHoverMixin(@blockSize:50px) {
-  // .textStrokeMixin();
   color: var(--ironsworn-color-clickable-block-fg-hover);
   background-color: var(--ironsworn-color-clickable-block-bg-hover);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
@@ -171,6 +171,7 @@
   border-color: var(--ironsworn-color-clickable-block-border-selected);
   z-index: var(--ironsworn-z-index-high);
 }
+
 // For the block's 'default' state.
 .blockMixin(@blockSize:50px,@borderRadius:0px) {
   .interactiveMixin();
@@ -181,7 +182,6 @@
   border-radius: @borderRadius;
   color: var(--ironsworn-color-clickable-block-fg);
   background-color: var(--ironsworn-color-clickable-block-bg);
-
   &.vertical {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
@@ -229,7 +229,6 @@
     .button-text {
       line-height: inherit;
       display: inherit;
-      // writing-mode: vertical-lr !important;
       writing-mode: inherit;
     }
   }
@@ -303,7 +302,7 @@
   z-index: var(--ironsworn-z-index-highest);
 }
 
-// used on draggables, highlighted table rows in chat. set opacity in increments of 10 (because otherwise the variable won't exist
+// used on draggables, highlighted table rows in chat. set opacity in increments of 10 (because otherwise the CSS variable won't exist).
 // since gradients are *images*, they're overlaid on top of background-colour. great for a lazy tint on a highlighted element.
 // we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
 // only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
