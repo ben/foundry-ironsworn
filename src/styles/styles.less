@@ -88,9 +88,6 @@
       color: var(--ironsworn-color-clickable-text-selected);
     }
   }
-  *::placeholder {
-    font-family: inherit;
-  }
 
   // FIXME: still in use?
   .progress {
@@ -247,6 +244,8 @@
   @import 'utils.less';
   @import 'scrollbar.less';
   @import 'list.less';
+  @import 'editor.less';
+  @import 'sheet.less';
 
   .ironsworn {
     // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.

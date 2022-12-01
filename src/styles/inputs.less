@@ -1,4 +1,9 @@
+// styles for form input elements. for ProseMirror and TinyMCE styles, see editors.less.
 @import 'mixins.less';
+
+*::placeholder {
+  font-family: inherit;
+}
 
 .ironsworn {
   input[type='text'],
@@ -15,95 +20,28 @@
   select {
     .inputFieldMixin();
   }
-
-  // EDITORS
-
-  .tox {
-    :not(svg):not(rect) {
-      color: var(--ironsworn-color-fg);
-    }
-    .tox-toolbar-overlord,
-    .tox-toolbar__primary,
-    &:not(.tox-tinymce-inline) .tox-editor-header {
-      color: var(--ironsworn-color-fg);
-      background-color: var(--ironsworn-color-bg);
-    }
-    .tox-tbtn {
-      transition: var(--std-animation);
-      background-color: var(--ironsworn-color-clickable-block-bg);
-      svg {
-        fill: var(--ironsworn-color-clickable-block-fg);
-      }
-      &:hover {
-        background-color: var(--ironsworn-color-clickable-block-bg-hover);
-        svg {
-          fill: var(--ironsworn-color-clickable-block-fg-hover);
-        }
-      }
-      &[aria-pressed='true'] {
-        background-color: var(--ironsworn-color-clickable-block-bg-selected);
-        svg {
-          fill: var(--ironsworn-color-clickable-block-fg-selected);
-        }
-      }
-    }
-    .tox-tbtn--select {
-      .inputFieldMixin();
-      text-shadow: none;
-    }
-    .tox-collection--list {
-      .tox-collection__item--active {
-      }
-    }
-  }
-  .editor,
-  .editor-content {
-    // height: 100%;
-    min-height: 100px;
-  }
-  .editor {
-    border: 1px solid var(--ironsworn-color-input-border);
-    background: var(--ironsworn-color-input-bg);
-    border-radius: var(--ironsworn-border-radius-lg);
-    caret-color: var(--ironsworn-color-fg-highlight);
-  }
-  .tab .editor {
-    margin-top: var(--ironsworn-spacer-sm);
-  }
-  .editor-edit {
-    .clickableBlockMixin();
-    background-color: var(--ironsworn-color-bg);
-    border-radius: var(--ironsworn-border-radius-md);
-  }
-
-  .tox-editor-container {
-  }
-  .tox:not(.tox-tinymce-inline) .tox-editor-header {
-    border-bottom: 1px solid var(--ironsworn-color-border-muted);
-  }
-
-  .ProseMirror {
-    .inputFieldMixin();
-    padding: 0.5rem;
-  }
-
   input {
-    &[type='checkbox'],
-    &[type='radio'] {
-      accent-color: var(--ironsworn-color-fg);
-      cursor: pointer;
+    &[type='number'] {
+      -moz-appearance: auto;
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        -webkit-appearance: button !important;
+        opacity: 1 !important;
+      }
     }
+  }
+
+  // CHECKBOXES
+  input[type='checkbox'] {
+    accent-color: var(--ironsworn-color-fg);
+    cursor: pointer;
   }
   label.checkbox {
     cursor: pointer;
   }
-
-  input[type='number'] {
-    -moz-appearance: auto;
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: button !important;
-      opacity: 1 !important;
-    }
+  // RADIO BUTTONS
+  input[type='radio'] {
+    accent-color: var(--ironsworn-color-fg);
+    cursor: pointer;
   }
 }
