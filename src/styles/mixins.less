@@ -27,7 +27,7 @@
 }
 
 // used inside block/tab like elements. it's inset so that both the focus effect and the hover effect can be visible at once.
-.borderGlowInteriorMixin(@spread:5px,@blur:0,@color:var(--color-shadow-primary)) {
+.borderGlowInteriorMixin(@spread:5px,@blur:0,@color:var(--ironsworn-color-cool)) {
   box-shadow: inset 0 0 @spread @blur @color;
 }
 
@@ -110,7 +110,7 @@
 
 .textHoverMixin {
   color: var(--ironsworn-color-clickable-text-hover);
-  filter: drop-shadow(0 0 3px var(--ironsworn-color-cool));
+  filter: var(--ironsworn-filter-highlight);
 }
 .textFocusMixin {
   .focusOutlineMixin();
@@ -118,7 +118,7 @@
 
 .textActiveMixin {
   color: var(--ironsworn-color-clickable-text-selected);
-  filter: drop-shadow(0 0 3px var(--ironsworn-color-cool));
+  filter: var(--ironsworn-filter-highlight);
 }
 
 .clickableTextMixin {
@@ -253,31 +253,34 @@
 // input mixins
 
 .inputFieldFocusMixin(@spread: 6px) {
-  box-shadow: 0 0 6px var(--color-shadow-primary);
   .borderGlowExteriorMixin(@spread);
+  outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-warm);
 }
 
-.inputFieldMixin(@spread:6px) {
-  .interactiveMixin();
-  cursor: initial;
+.inputFieldStaticMixin() {
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
   border-width: var(--ironsworn-border-width-md);
   border-style: var(--ironsworn-input-border-style);
   border-color: var(--ironsworn-color-border-muted);
   border-radius: var(--ironsworn-border-radius-md);
+}
+
+.inputFieldMixin(@spread:6px) {
+  .interactiveMixin();
+  .inputFieldStaticMixin();
+  cursor: initial;
   &::placeholder {
     color: var(--ironsworn-color-fg);
     opacity: 0.5;
   }
   &:hover {
     border-color: var(--ironsworn-color-clickable-block-border-hover);
-    .borderGlowInteriorMixin(@spread,0,var(--color-shadow-primary));
+    .borderGlowInteriorMixin(@spread,0,var(--ironsworn-color-cool));
   }
   &:focus,
   &:focus-within {
     .inputFieldFocusMixin();
-    outline: 1px solid var(--ironsworn-color-warm);
   }
 }
 
