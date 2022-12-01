@@ -234,18 +234,17 @@
 
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
-  @import 'dialog.less';
   @import 'chat-message.less';
   @import 'clickable.less';
-  @import 'icons.less';
-  @import 'inputs.less';
+  @import 'dialog.less';
   @import 'dice.less';
+  @import 'editor.less';
+  @import 'icons.less';
+  @import 'list.less';
+  @import 'scrollbar.less';
+  @import 'sheet.less';
   @import 'tables.less';
   @import 'utils.less';
-  @import 'scrollbar.less';
-  @import 'list.less';
-  @import 'editor.less';
-  @import 'sheet.less';
 
   .ironsworn {
     // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.
@@ -253,5 +252,6 @@
     &.dialog {
       .dialog();
     }
+    @import 'inputs.less';
   }
 }

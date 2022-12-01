@@ -1,8 +1,18 @@
 // styles for form input elements. for ProseMirror and TinyMCE styles, see editors.less.
+// the main style sheet scopes these to .ironsworn, so import them again globally if you want to retheme the form inputs on the UX elements that belong to FVTT.
 @import 'mixins.less';
 
 *::placeholder {
   font-family: inherit;
+}
+
+select {
+  .inputFieldMixin();
+  border-style: outset;
+}
+
+textarea {
+  .inputFieldMixin();
 }
 
 input[type='text'],
@@ -12,22 +22,6 @@ input[type='date'],
 input[type='time'],
 input[type='search'] {
   .inputFieldMixin();
-}
-textarea {
-  .inputFieldMixin();
-}
-select {
-  .inputFieldMixin();
-}
-input {
-  &[type='number'] {
-    -moz-appearance: auto;
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      -webkit-appearance: button !important;
-      opacity: 1 !important;
-    }
-  }
 }
 
 // CHECKBOXES
@@ -42,6 +36,15 @@ label.checkbox {
 input[type='radio'] {
   accent-color: var(--ironsworn-color-fg);
   cursor: pointer;
+}
+// NUMBER SPINNERS
+input[type='number'] {
+  -moz-appearance: auto;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: button !important;
+    opacity: 1 !important;
+  }
 }
 
 // RANGE SLIDERS
