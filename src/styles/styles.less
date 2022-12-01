@@ -106,6 +106,7 @@
   }
 
   /* Items List */
+  // TODO - good candidate for being split to its own file
 
   .item-row {
     border-width: var(--ironsworn-border-width-md);
@@ -174,6 +175,14 @@
     }
   }
 
+  .progress {
+    flex: 1;
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+    padding: var(--ironsworn-spacer-md);
+    margin: var(--ironsworn-spacer-xs);
+    text-align: center;
+  }
+  // FIXME: figure out if this actually gets pulled in any more
   .inline-roll {
     background: var(--ironsworn-color-fg-20);
     border-color: var(--ironsworn-color-border-muted);
@@ -183,6 +192,7 @@
     }
   }
 
+  // TODO: move to its own file, or have it live in the relevant component
   .stats {
     flex: 0;
     justify-content: space-around;
@@ -242,11 +252,12 @@
     }
   }
 
+  // FIXME: is this still in use?
   .remove-option {
     flex-grow: 0;
     line-height: 26px;
   }
-
+  // FIXME: is this still in use?
   .progress-button {
     i {
       padding: var(--ironsworn-spacer-sm);
@@ -254,7 +265,7 @@
       text-align: center;
     }
   }
-
+  // FIXME: is this still in use?
   .resource {
     width: 50%;
     height: 40px;
@@ -267,6 +278,7 @@
       height: var(--ironsworn-clickable-line-height);
     }
   }
+  // TODO: this and other sheet classes are good candidates for extraction
   &.sheet {
     &.actor {
       min-width: 630px;
@@ -275,12 +287,19 @@
       min-width: 460px;
       min-height: 400px;
     }
+    &.moves {
+      .tab {
+        display: none;
+        &.active {
+          display: flex;
+        }
+      }
+    }
   }
-
   .sheet-body {
     height: 100%;
     overflow: hidden;
-
+    // FIXME: .tab-likes should probably be their own file
     .tab {
       height: 100%;
       overflow-y: auto;
@@ -291,14 +310,6 @@
     height: 1.5rem;
   }
 
-  .progress {
-    flex: 1;
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-    padding: var(--ironsworn-spacer-md);
-    margin: var(--ironsworn-spacer-xs);
-    text-align: center;
-  }
-
   .move-title {
     text-align: center;
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
@@ -306,16 +317,6 @@
     font-weight: bold;
     line-height: 30px;
     // text-transform: uppercase;
-  }
-
-  .sheet.moves {
-    .tab {
-      display: none;
-
-      &.active {
-        display: flex;
-      }
-    }
   }
 
   .highlighted {
