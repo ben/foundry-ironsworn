@@ -92,20 +92,6 @@
     font-family: inherit;
   }
 
-  .sheet-area {
-    border-color: var(--ironsworn-color-border-muted);
-    border-top-width: var(--ironsworn-border-width-lg);
-    &:first-child {
-      border-top-width: 0;
-    }
-    margin: var(--ironsworn-spacer-md);
-    padding-top: var(--ironsworn-spacer-lg);
-  }
-
-  .drag-highlight {
-    background: var(--ironsworn-color-warm-50);
-  }
-
   // FIXME: still in use?
   .progress {
     flex: 1;
@@ -208,33 +194,6 @@
     input {
       width: 100px;
       height: var(--ironsworn-clickable-line-height);
-    }
-  }
-  // TODO: this and other sheet classes are good candidates for extraction
-  &.sheet {
-    &.actor {
-      min-width: 630px;
-    }
-    &.item {
-      min-width: 460px;
-      min-height: 400px;
-    }
-    &.moves {
-      .tab {
-        display: none;
-        &.active {
-          display: flex;
-        }
-      }
-    }
-  }
-  .sheet-body {
-    height: 100%;
-    overflow: hidden;
-    // FIXME: .tab-likes should probably be their own file
-    .tab {
-      height: 100%;
-      overflow-y: auto;
     }
   }
 

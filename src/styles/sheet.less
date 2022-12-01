@@ -1,0 +1,37 @@
+.sheet {
+  &.actor {
+    min-width: 630px;
+  }
+  &.item {
+    min-width: 460px;
+    min-height: 400px;
+  }
+  &.moves {
+    .tab {
+      display: none;
+      &.active {
+        display: flex;
+      }
+    }
+  }
+}
+
+.sheet-body {
+  height: 100%;
+  overflow: hidden;
+  // FIXME: .tab-likes should probably be their own file
+  .tab {
+    height: 100%;
+    overflow-y: auto;
+  }
+}
+
+.sheet-area {
+  border-color: var(--ironsworn-color-border-muted);
+  border-top-width: var(--ironsworn-border-width-lg);
+  &:first-child {
+    border-top-width: 0;
+  }
+  margin: var(--ironsworn-spacer-md);
+  padding-top: var(--ironsworn-spacer-lg);
+}
