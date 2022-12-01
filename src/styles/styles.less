@@ -87,45 +87,6 @@
       color: var(--ironsworn-color-clickable-text-selected);
     }
   }
-
-  .ironsworn {
-    // stuff scoped to ironsworn windows only
-    // standard HTML elements
-    button {
-      border-width: 0px;
-      border-style: solid;
-    }
-    form button {
-      border-width: 0px;
-      border-style: solid;
-    }
-    hr {
-      width: 100%;
-      border: 0 solid var(--ironsworn-color-border);
-      border-width: 0 0 var(--ironsworn-border-width-md);
-    }
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      // text-transform: uppercase;
-    }
-    h1,
-    h2,
-    h3 {
-      border: none;
-    }
-
-    .window-content {
-      background: var(--ironsworn-color-bg);
-      color: var(--ironsworn-color-fg);
-      height: 100%;
-      padding: var(--ironsworn-spacer-md);
-    }
-  }
-
   *::placeholder {
     font-family: inherit;
   }
@@ -359,6 +320,34 @@
 
   .highlighted {
     background-color: var(--ironsworn-color-warm-50) !important;
+  }
+
+  .ironsworn {
+    // stuff scoped to .ironsworn app windows only
+    button {
+      border-width: 0px;
+      border-style: solid;
+    }
+    form button {
+      border-width: 0px;
+      border-style: solid;
+    }
+    hr {
+      width: 100%;
+      border: 0 solid var(--ironsworn-color-border);
+      border-width: 0 0 var(--ironsworn-border-width-md);
+    }
+    h1,
+    h2,
+    h3 {
+      border: none;
+    }
+    .window-content {
+      background: var(--ironsworn-color-bg);
+      color: var(--ironsworn-color-fg);
+      height: 100%;
+      padding: var(--ironsworn-spacer-md);
+    }
   }
 
   // importing within this selector to ensure higher specificity
