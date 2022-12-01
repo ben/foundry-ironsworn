@@ -134,7 +134,7 @@
 .contentWrapper {
   color: var(--ironsworn-color-fg);
   background-color: var(--ironsworn-color-bg-80);
-  border: 1px solid var(--ironsworn-color-clickable-block-border-selected);
+  border: 1px solid var(--ironsworn-color-light);
   border-radius: 0 @border_radius @border_radius @border_radius;
 }
 .moveControls {
