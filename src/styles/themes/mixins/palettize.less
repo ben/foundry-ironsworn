@@ -84,8 +84,12 @@
   --@{prefix}-clickable-text: inherit;
   --@{prefix}-clickable-text-hover: var(e(%('--%s-fg-warm', @prefix)));
   --@{prefix}-clickable-text-selected: var(e(%('--%s-fg-warm', @prefix)));
+
+  // WIDGETS
+  --@{prefix}-widget-fill: var(e(%('--%s-midtone-60', @prefix)));
 }
 
+// HELPER MIXINS
 .mixOverlays(@prefix,@infix,@baseColor) {
   @overlays: range(10, 90, 10);
   each(@overlays, {
