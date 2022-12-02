@@ -307,10 +307,13 @@
 // we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
 // only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
 .staticHighlightMixin(@opacity:20,@direction:'to bottom') {
-  background-image: linear-gradient(
-    @direction,
-    var(e(%('--ironsworn-color-warm-%s') @opacity)),
-    var(e(%('--ironsworn-color-cool-%s') @opacity))
+  background-image: e(
+    %(
+      'linear-gradient(%s, var(--ironsworn-color-warm-%s), var(--ironsworn-color-cool-%s))',
+      @direction,
+      @opacity,
+      @opacity
+    )
   );
   background-blend-mode: screen;
 }
