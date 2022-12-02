@@ -14,6 +14,12 @@
   .staticHighlightMixin(50);
 }
 
+.scrollable {
+  // property intentionally duplicated to provide fallback
+  overflow-y: scroll;
+  overflow-y: overlay;
+}
+
 .margin-right {
   .marginMixin(left);
 }
