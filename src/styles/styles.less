@@ -93,6 +93,13 @@
   }
 
   .ironsworn {
+    // import these to the theme apply it to FVTT's own dialogs and inputs as well.
+    @import (reference) './fvtt/dialog.less';
+    &.dialog {
+      .dialog();
+    }
+    @import 'inputs.less';
+
     // stuff scoped to .ironsworn app windows only
     .window-content {
       background: var(--ironsworn-color-bg);
@@ -120,7 +127,6 @@
       border: none;
     }
   }
-
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
   @import 'attr-box.less';
@@ -135,13 +141,4 @@
   @import 'sheet.less';
   @import 'tables.less';
   @import 'utils.less';
-
-  .ironsworn {
-    // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.
-    @import './fvtt/dialog.less';
-    &.dialog {
-      .dialog();
-    }
-    @import 'inputs.less';
-  }
 }
