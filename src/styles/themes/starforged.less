@@ -6,8 +6,9 @@
 @import (reference) './mixins/palettize.less';
 @import (reference) './mixins/fvtt-var-overrides.less';
 
-// set CSS variables
-:root {
+.system-foundry-ironsworn.theme-starforged {
+  // set CSS variables
+
   .palettize(ironsworn-color,hsl(180, 70%, 60%), hsl(180,20%,0%), hsl(185,100%,50%), hsl(210,100%,50%));
   .ironswornDarkThemeMixin(ironsworn-color);
   .softBorderMixin(ironsworn-color);
@@ -28,9 +29,6 @@
 
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
   .fvttVarOverridesMixin();
-}
-
-.system-foundry-ironsworn.theme-starforged {
   // restyle FVTT's UI
   @import '../fvtt/app.less';
   @import '../fvtt/dialog.less';

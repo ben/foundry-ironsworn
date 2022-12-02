@@ -1,6 +1,6 @@
 // Light theme for Ironsworn, with minimal restyling of FVTT's stock UI.
 
-:root {
+.system-foundry-ironsworn.theme-ironsworn {
   @import (reference) './mixins/colors.less';
   @import (reference) './mixins/palettize.less';
   // #ff6600 and #ff0000 chosen because they're what FVTT uses for similar accents.
@@ -15,9 +15,7 @@
   --ironsworn-filter-highlight: drop-shadow(
     0 0 3px var(--ironsworn-color-cool)
   );
-}
 
-.system-foundry-ironsworn.theme-ironsworn {
   @import (reference) './mixins/decorations.less';
   .ironswornDecorationMixin();
 }
