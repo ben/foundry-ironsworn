@@ -1,3 +1,5 @@
+@import (reference) './themes/mixins/decorations.less';
+
 @asset_spacer: 0.5em;
 
 .ironsworn__asset {
@@ -166,35 +168,7 @@
 }
 
 .asset-starforged {
-  position: relative;
-  & > * {
-    z-index: 2;
-  }
-  &:before {
-    display: block;
-    pointer-events: none;
-    content: '';
-    mask-image: url(/assets/misc/hex-deco.svg);
-    background: var(--ironsworn-color-thematic);
-    position: absolute;
-    aspect-ratio: @hex_deco_aspect_ratio;
-    z-index: auto;
-    mask-repeat: no-repeat;
-    transform: scaleX(-1);
-    height: @hex_deco_collapsed_height;
-    top: -($height * 0.09);
-    right: ($height * 0.03);
-  }
-  .asset-header {
-    padding-right: (@hex_deco_collapsed_height * @hex_deco_aspect_ratio);
-    // hex frame style for later use if asset icons added
-    // .asset-icon {
-    //   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-    //   aspect-ratio: @hexagon_aspect_ratio;
-    //   border: 0;
-    //   padding: 3px;
-    // }
-  }
+  .starforgedAssetDecoMixin(50px,32px);
   .asset-abilities {
     .asset-ability {
       &:before {
