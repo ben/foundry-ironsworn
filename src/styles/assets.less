@@ -6,10 +6,10 @@
   overflow: hidden;
   transition: var(--std-animation);
   .asset-header {
-    transition: var(--std-animation);
     gap: @asset_spacer;
     align-items: center;
     .asset-expand-toggle {
+      transition: var(--std-animation);
       display: flex;
       gap: @asset_spacer;
       background: none;
@@ -23,15 +23,14 @@
       word-spacing: 0.02em;
       line-height: 1;
       text-transform: uppercase;
-    }
-    &:not(:hover) .asset-type {
-      color: var(--ironsworn-color-thematic);
+      transition: inherit;
     }
     .asset-type {
+      color: var(--ironsworn-color-thematic);
       flex-grow: 0;
       line-height: 1;
       font-style: italic;
-      transition: var(--std-animation);
+      transition: inherit;
     }
     .asset-controls {
       justify-items: flex-end;
