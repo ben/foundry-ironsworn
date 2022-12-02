@@ -31,6 +31,9 @@
   --ironsworn-transition-duration: 0.5s;
   --ironsworn-transition-timing-function: ease;
 
+  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
+  --ironsworn-input-border-style: solid;
+
   // for later use as a mixin to scope transitions to colors effects only.
   --ironsworn-transition-property-color: background-color, border-color,
     box-shadow, caret-color, color, column-rule-color, filter, opacity,
