@@ -1,7 +1,16 @@
 <template>
-  <div class="flexcol item-list ironsworn__drop__target" data-drop-type="asset">
-    <CollapseTransition tag="div" class="nogrow" group>
-      <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
+  <article
+    class="sf-assets ironsworn__drop__target flexcol"
+    data-drop-type="asset"
+    :class="$style.wrapper"
+  >
+    <CollapseTransition
+      tag="ol"
+      class="item-list"
+      :class="$style.assetList"
+      group
+    >
+      <li class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
         <order-buttons
           v-if="editMode"
           :i="i"
@@ -10,15 +19,24 @@
           @sortDown="sortDown"
         />
         <asset :asset="asset" class="item-row" />
-      </div>
+      </li>
     </CollapseTransition>
-    <div class="flexrow nogrow" style="text-align: center">
+    <section class="list-controls flexrow nogrow" style="text-align: center">
       <BtnFaicon icon="atlas" @click="assetBrowser" class="clickable block">
         {{ $t('IRONSWORN.Assets') }}
       </BtnFaicon>
-    </div>
-  </div>
+    </section>
+  </article>
 </template>
+
+<style lang="less" module>
+.wrapper {
+  gap: var(--ironsworn-spacer-md);
+}
+.assetList {
+  gap: var(--ironsworn-spacer-md);
+}
+</style>
 
 <script lang="ts" setup>
 import { sortBy } from 'lodash'
