@@ -13,41 +13,6 @@
   @lightColor: if((luma(@fgColor) > luma(@bgColor)), @fgColor, @bgColor);
   @darkColor: if((luma(@fgColor) < luma(@bgColor)), @fgColor, @bgColor);
 
-  // TODO: actually put this thing to use!
-  @palette: {
-    @warm: {
-      hue: hue(@warmColor);
-      saturation: saturation(@warmColor);
-      luma: luma(@warmColor);
-    };
-    @cool: {
-      hue: hue(@coolColor);
-      saturation: saturation(@coolColor);
-      luma: luma(@coolColor);
-    };
-    @light: {
-      // LESS rewrites things like hsl(180,20%,0%) to hsl(0,0%,0%)
-      // so we can't reliaby extract a hue from it.
-      // instead we interpolate a value from the accent colours.
-      hue: if(
-        saturation(@lightColor) = 0,
-        hue(mix(@warmColor, @coolColor)),
-        hue(@lightColor)
-      );
-      saturation: saturation(@lightColor);
-      luma: luma(@lightColor);
-    };
-    @dark: {
-      hue: if(
-        saturation(@darkColor) = 0,
-        hue(mix(@warmColor, @coolColor)),
-        hue(@darkColor)
-      );
-      saturation: saturation(@darkColor);
-      luma: luma(@darkColor);
-    };
-  };
-
   @lightWarmBase: mix(@warmColor, @lightColor, 75%);
   @lightCoolBase: mix(@coolColor, @lightColor, 75%);
   @darkWarmBase: mix(@warmColor, @darkColor, 75%);
