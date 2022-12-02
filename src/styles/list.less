@@ -1,19 +1,22 @@
+.item-row {
+  border-width: var(--ironsworn-border-width-md);
+  border-color: var(--ironsworn-color-border);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-sm);
+  padding: var(--ironsworn-spacer-sm);
+  .item-row-control {
+    flex-grow: 0;
+    padding: var(--ironsworn-spacer-md);
+  }
+}
+
 .item-list {
   list-style: none;
   flex: 1 0 100px;
   display: flex;
   flex-direction: column;
   padding-left: 0;
-  .item-row {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    border-radius: var(--ironsworn-border-radius-sm);
-    padding: var(--ironsworn-spacer-sm);
-    .item-row-control {
-      flex-grow: 0;
-      padding: var(--ironsworn-spacer-md);
-    }
-  }
+
   .item-name {
     margin: 0;
   }
