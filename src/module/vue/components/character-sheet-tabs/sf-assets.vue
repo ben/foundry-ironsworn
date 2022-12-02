@@ -5,7 +5,7 @@
     :class="$style.wrapper"
   >
     <CollapseTransition
-      tag="ol"
+      tag="ul"
       class="item-list"
       :class="$style.assetList"
       group
