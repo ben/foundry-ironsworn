@@ -19,7 +19,7 @@
       />
     </div>
 
-    <div class="flexcol item-list">
+    <div class="item-list scrollable flexcol">
       <OracleTreeNode
         v-for="node in treeRoot.children"
         :key="node.displayName"
