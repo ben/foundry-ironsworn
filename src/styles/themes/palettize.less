@@ -160,3 +160,28 @@
   --@{prefix}-clickable-text-hover: var(e(%('--%s-fg-warm', @prefix)));
   --@{prefix}-clickable-text-selected: var(e(%('--%s-fg-warm', @prefix)));
 }
+
+// generates color variables to style an interactive element with an invert effect when it's active
+.palettizeInvertEffect(@prefix) {
+  --@{prefix}-fg: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-bg: transparent;
+  --@{prefix}-border: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-fg-hover: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-bg-hover: var(e(%('--%s-fg-20', @prefix)));
+  --@{prefix}-border-hover: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-fg-selected: var(e(%('--%s-bg', @prefix)));
+  --@{prefix}-bg-selected: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-border-selected: var(e(%('--%s-fg', @prefix)));
+}
+// generates color variables to style an interactive element with slightly dulled colours when it's active, and a tint effect when it's active.
+.palettizeTintEffect(@prefix) {
+  --@{prefix}-fg: var(e(%('--%s-midtone-80', @prefix)));
+  --@{prefix}-bg: transparent;
+  --@{prefix}-border: var(e(%('--%s-midtone-80', @prefix)));
+  --@{prefix}-fg-hover: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-bg-hover: var(e(%('--%s-warm-20', @prefix)));
+  --@{prefix}-border-hover: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-fg-selected: var(e(%('--%s-fg-warm', @prefix)));
+  --@{prefix}-bg-selected: var(e(%('--%s-warm-40', @prefix)));
+  --@{prefix}-border-selected: var(e(%('--%s-fg-warm', @prefix)));
+}

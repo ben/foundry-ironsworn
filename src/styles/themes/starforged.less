@@ -29,22 +29,7 @@
   --ironsworn-filter-highlight: drop-shadow(0 0 3px var(--ironsworn-color-cool))
     drop-shadow(0 0 3px var(--ironsworn-color-cool));
 
-  // CLICKABLE BLOCK: DEFAULT
-  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-midtone-80);
-  --ironsworn-color-clickable-block-bg: transparent;
-  --ironsworn-color-clickable-block-border: var(--ironsworn-color-midtone-80);
-  // CLICKABLE BLOCK: HOVER
-  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-warm-20);
-  --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-light);
-  // CLICKABLE BLOCK: ACTIVE/SELECTED
-  --ironsworn-color-clickable-block-fg-selected: var(
-    --ironsworn-color-light-warm
-  );
-  --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-warm-40);
-  --ironsworn-color-clickable-block-border-selected: var(
-    --ironsworn-color-light-warm
-  );
+  .palettizeTintEffect(ironsworn-color-clickable-block);
 
   // INPUT
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
