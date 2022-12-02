@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
+  <div class="flexcol item-list ironsworn__drop__target" data-drop-type="asset">
     <CollapseTransition tag="div" class="nogrow" group>
       <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
         <order-buttons
@@ -9,7 +9,7 @@
           @sortUp="sortUp"
           @sortDown="sortDown"
         />
-        <asset :asset="asset" />
+        <asset :asset="asset" class="item-row" />
       </div>
     </CollapseTransition>
     <div class="flexrow nogrow" style="text-align: center">
