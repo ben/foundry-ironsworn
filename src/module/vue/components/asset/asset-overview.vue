@@ -140,10 +140,6 @@
   padding: 5px;
   --ironsworn-color-thematic: v-bind('item.system.color');
 }
-
-.asset-ability-clock {
-  min-width: 40px;
-}
 </style>
 
 <script lang="ts" setup>
