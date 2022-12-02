@@ -63,7 +63,6 @@ const $actor = inject($ActorKey)
 
 function isValidProgressItem(item: any) {
   if (item.type === 'progress') {
-    console.log('evaluating progress item', item)
     switch (props.showCompleted) {
       case 'completed-only': {
         if (!item.system.completed) {
