@@ -1,48 +1,25 @@
 @import './starforged-font.css'; // HACK to avoid import error
-@import '../mixins.less';
-@import '../fvtt/vars.less';
-@import './palettize.less';
+@import (reference) '../mixins.less';
+@import (reference) './mixins/theme-colors.less';
+@import (reference) './mixins/palettize.less';
+@import (reference) './mixins/fvtt-var-overrides.less';
 
+// set CSS variables
 :root {
   .palettize(ironsworn-color,hsl(180, 70%, 60%), hsl(180,20%,0%), hsl(185,100%,50%), hsl(210,100%,50%));
-}
-
-.system-foundry-ironsworn.theme-starforged {
-  // restyle FVTT's UI
-  @import '../fvtt/app.less';
-  @import '../fvtt/clickable.less';
-  @import '../fvtt/sidebar.less';
-  @import '../fvtt/inputs.less';
-  @import '../fvtt/tooltip.less';
-
+  .ironswornDarkThemeMixin(ironsworn-color);
+  .softBorderMixin(ironsworn-color);
+  .interactiveTintMixin(ironsworn-color-clickable-block);
   --font-primary: 'Carrois Gothic SC', sans-serif;
 
-  // TEXT
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-
-  // BORDERS
-  --ironsworn-color-border-highlight: var(--ironsworn-color-light-warm);
-  --ironsworn-color-border: var(--ironsworn-color-fg-muted);
-  --ironsworn-color-border-muted: var(--ironsworn-color-fg-30);
 
   // CLICKABLE TEXT: HOVER EFFECT
   --ironsworn-filter-highlight: drop-shadow(0 0 3px var(--ironsworn-color-cool))
     drop-shadow(0 0 3px var(--ironsworn-color-cool));
 
-  .palettizeTintEffect(ironsworn-color-clickable-block);
-
-  // INPUT
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
-
-  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-dark);
-  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-dark);
-  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-dark);
-
-  hr {
-    border-width: 0 0 var(--ironsworn-border-width-md);
-    border-color: var(--ironsworn-color-border);
-  }
 
   --ironsworn-color-danger: hsl(0, 80%, 50%);
   --ironsworn-color-success: hsl(290, 80%, 50%);
@@ -51,10 +28,19 @@
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
   --ironsworn-input-border-style: solid;
-  // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
-  // --ironsworn-color-text-stroke: black;
 
-  .overrideVars();
+  // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
+  .fvttVarOverridesMixin();
+}
+
+.system-foundry-ironsworn.theme-starforged {
+  // restyle FVTT's UI
+  @import '../fvtt/app.less';
+  @import '../fvtt/dialog.less';
+  @import '../fvtt/clickable.less';
+  @import '../fvtt/sidebar.less';
+  @import '../fvtt/tooltip.less';
+  @import './inputs.less';
 
   .asset-ironsworn .asset-ability:before {
     border-width: 1px;

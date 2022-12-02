@@ -1,0 +1,47 @@
+.ironswornLightThemeMixin(@prefix) {
+  --@{prefix}-legacy-quests: var(--ironsworn-color-red);
+  --@{prefix}-legacy-bonds: var(--ironsworn-color-purple);
+  --@{prefix}-legacy-discoveries: var(--ironsworn-color-blue);
+}
+.ironswornDarkThemeMixin(@prefix) {
+  --@{prefix}-legacy-quests: var(--ironsworn-color-red-dark);
+  --@{prefix}-legacy-bonds: var(--ironsworn-color-purple-dark);
+  --@{prefix}-legacy-discoveries: var(--ironsworn-color-blue-dark);
+}
+
+// generates color variables to style an interactive element with an invert effect when it's active
+.interactiveInvertMixin(@prefix) {
+  --@{prefix}-fg: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-bg: transparent;
+  --@{prefix}-border: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-fg-hover: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-bg-hover: var(e(%('--%s-fg-20', @prefix)));
+  --@{prefix}-border-hover: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-fg-selected: var(e(%('--%s-bg', @prefix)));
+  --@{prefix}-bg-selected: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-border-selected: var(e(%('--%s-fg', @prefix)));
+}
+// generates color variables to style an interactive element with slightly dulled colours when it's active, and a tint effect when it's active.
+.interactiveTintMixin(@prefix) {
+  --@{prefix}-fg: var(e(%('--%s-midtone-80', @prefix)));
+  --@{prefix}-bg: transparent;
+  --@{prefix}-border: var(e(%('--%s-midtone-80', @prefix)));
+  --@{prefix}-fg-hover: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-bg-hover: var(e(%('--%s-warm-20', @prefix)));
+  --@{prefix}-border-hover: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-fg-selected: var(e(%('--%s-fg-warm', @prefix)));
+  --@{prefix}-bg-selected: var(e(%('--%s-warm-40', @prefix)));
+  --@{prefix}-border-selected: var(e(%('--%s-fg-warm', @prefix)));
+}
+
+.softBorderMixin(@prefix) {
+  --@{prefix}-border-highlight: var(e(%('--%s-fg-warm', @prefix)));
+  --@{prefix}-border: var(e(%('--%s-fg-80', @prefix)));
+  --@{prefix}-border-muted: var(e(%('--%s-fg-30', @prefix)));
+}
+
+.sharpBorderMixin(@prefix) {
+  --@{prefix}-border-highlight: var(e(%('--%s-fg-warm', @prefix)));
+  --@{prefix}-border: var(e(%('--%s-fg', @prefix)));
+  --@{prefix}-border-muted: var(e(%('--%s-fg-80', @prefix)));
+}

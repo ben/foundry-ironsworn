@@ -1,6 +1,5 @@
-// overrides for some of FVTT's default variables, mainly useful for retheming them with e.g. a dark theme.
-
-.overrideVars {
+// overrides for most of FVTT's default color variables, mainly useful for retheming them with e.g. a dark theme.
+.fvttVarOverridesMixin {
   --color-text-hyperlink: var(--ironsworn-color-warm);
 
   --color-shadow-primary: var(--ironsworn-color-cool);
@@ -48,5 +47,7 @@
   --color-border-dark-4: var(--ironsworn-color-scale-30);
   --color-border-dark-5: var(--ironsworn-color-scale-40);
 
-  // --color-text-*-* are purposely omitted for the time being, as I suspect they're pure grey on purpose.
+  // --color-text-*-* are purposely omitted for the time being; I suspect they're pure grey on purpose.
+
+  // TODO: danger, warning (etc) colours
 }

@@ -1,30 +1,26 @@
-@import '../mixins.less';
-@import 'palettize.less';
+// Light theme for Ironsworn, with minimal restyling of FVTT's stock UI.
 
-.system-foundry-ironsworn.theme-ironsworn {
-  // #ff6600 corresponds to FVTT vars --color-border-highlight,--color-shadow-highlight
-  // #ff0000 corresponds to FVTT vars --color-border-highlight-cool, --color-shadow-primary
+:root {
+  @import './mixins/theme-colors.less';
+  @import './mixins/palettize.less';
+  // #ff6600 and #ff0000 chosen because they're what FVTT uses for similar accents.
   .palettize(ironsworn-color,black, white, #ff6600, #ff0000);
+  .ironswornLightThemeMixin(ironsworn-color);
+  .sharpBorderMixin(ironsworn-color);
+  .interactiveInvertMixin(ironsworn-color-clickable-block);
 
-  // TEXT
   --ironsworn-color-text-stroke: transparent;
 
-  // BORDERS
-  --ironsworn-color-border-highlight: var(--ironsworn-color-light-warm);
-  --ironsworn-color-border: var(--ironsworn-color-fg);
-  --ironsworn-color-border-muted: var(--ironsworn-color-fg-muted);
-
-  // CLICKABLE BLOCK: DEFAULT
-  .palettizeInvertEffect(ironsworn-color-clickable-block);
-
-  // CLICKABLE TEXT: HOVER EFFECT
+  // CLICKABLE TEXT: HOVER FILTER EFFECT
   --ironsworn-filter-highlight: drop-shadow(
     0 0 3px var(--ironsworn-color-cool)
   );
 
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
+}
 
+.system-foundry-ironsworn.theme-ironsworn {
   .asset-ironsworn .asset-ability:before {
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
   }
