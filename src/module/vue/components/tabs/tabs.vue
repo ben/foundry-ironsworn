@@ -56,10 +56,10 @@ defineExpose({ selectIndex })
   flex-wrap: nowrap;
   justify-content: flex-start;
   .tab,
-  .item,
   [role='tab'], // so it doesn't catch things that only start with 'tab'
   [role^='tab '],
   [role*=' tab'] {
+    border-radius: 0;
     border: 0;
     flex: 1 1 0;
     text-align: center;
@@ -70,9 +70,6 @@ defineExpose({ selectIndex })
     justify-content: center;
     &:before {
       font-size: 140%;
-    }
-    &.active,
-    &[aria-selected='true'] {
     }
   }
   .tabs,

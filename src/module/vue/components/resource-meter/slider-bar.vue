@@ -74,6 +74,7 @@
     position: relative;
     z-index: 1;
     padding: 0;
+    border-radius: 0;
     &:hover,
     &[aria-selected='true'] {
       z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
