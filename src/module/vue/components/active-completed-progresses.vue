@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol item-list">
     <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
       <CollapseTransition group tag="div" class="nogrow">
         <div

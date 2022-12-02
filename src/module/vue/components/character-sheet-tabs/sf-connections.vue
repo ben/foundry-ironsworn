@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol item-list">
     <CollapseTransition tag="div" class="nogrow" group>
       <div
         class="flexrow nogrow"
