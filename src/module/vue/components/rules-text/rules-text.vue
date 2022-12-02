@@ -25,6 +25,14 @@
   & > * {
     margin: 0;
   }
+  p {
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-of-type:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
 }
 .rules-text-footer {
   text-align: right;
