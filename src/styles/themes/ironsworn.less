@@ -18,7 +18,6 @@
 }
 
 .system-foundry-ironsworn.theme-ironsworn {
-  .asset-ironsworn .asset-ability:before {
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
-  }
+  @import (reference) './mixins/decorations.less';
+  .ironswornDecorationMixin();
 }

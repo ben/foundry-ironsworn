@@ -38,16 +38,10 @@
   @import '../fvtt/sidebar.less';
   @import '../fvtt/tooltip.less';
   @import './inputs.less';
+  @import (reference) './mixins/decorations.less';
 
-  .asset-ironsworn .asset-ability:before {
-    border-width: 1px;
-    border-style: solid;
-  }
-  .asset-starforged .asset-ability:before {
-    background-color: var(--ironsworn-color-fg);
-    border-width: 1px;
-    border-style: solid;
-  }
+  .starforgedDecorationMixin();
+
   .chat-message {
     background: var(--ironsworn-color-bg);
   }
