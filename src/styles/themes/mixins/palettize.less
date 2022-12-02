@@ -62,11 +62,7 @@
   @darkCool: hsl(hue(@darkCoolBase), 100%, @lightnessFloor);
 
   @fgWarm: if((luma(@fgColor) > luma(@bgColor)), @lightWarm, @darkWarm);
-  @fgcool:if (
-    (luma(@fgColor) > luma(@bgColor)),
-    @lightCool,
-    @darkCool
-  );
+  @fgCool: if((luma(@fgColor) > luma(@bgColor)), @lightCool, @darkCool);
   @bgWarm: if((luma(@fgColor) < luma(@bgColor)), @lightWarm, @darkWarm);
   @bgCool: if((luma(@fgColor) < luma(@bgColor)), @lightCool, @darkCool);
 
