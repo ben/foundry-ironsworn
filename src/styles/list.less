@@ -1,10 +1,3 @@
-/* Items List */
-// TODO - good candidate for being split to its own file
-
-.move-li {
-  height: 1.5rem;
-}
-
 .item-list {
   list-style: none;
   flex: 1 0 100px;
@@ -58,7 +51,8 @@
   }
 }
 
-.accordion-list {
+// WIP: genericizes appearance of the move tree browser
+.list-block {
   @border_width: var(--ironsworn-border-width-md);
   @border_radius: var(--ironsworn-border-radius-lg);
   @wrapper_spacing: 4px;
@@ -69,7 +63,7 @@
   flex-flow: column nowrap;
   list-style: none;
   padding: 0;
-  .accordion-list-item {
+  .list-block-item {
     margin: 0;
     border-style: groove;
     border-width: 1px 0 0;
