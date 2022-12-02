@@ -153,11 +153,11 @@
   color: var(--ironsworn-color-clickable-block-fg-hover);
   background-color: var(--ironsworn-color-clickable-block-bg-hover);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
-  z-index: var(--ironsworn-z-index-high);
+  z-index: var(--ironsworn-z-index-higher);
 }
 
 .blockFocusMixin {
-  z-index: var(--ironsworn-z-index-high);
+  z-index: var(--ironsworn-z-index-highest);
   .focusOutlineMixin();
 }
 
@@ -173,13 +173,12 @@
 }
 
 // For the block's 'default' state.
-.blockMixin(@blockSize:50px,@borderRadius:0px) {
+.blockMixin(@blockSize:50px) {
   .interactiveMixin();
   box-shadow: none;
   overflow-y: visible;
   border-color: var(--ironsworn-color-clickable-block-border);
   border-style: solid;
-  border-radius: @borderRadius;
   color: var(--ironsworn-color-clickable-block-fg);
   background-color: var(--ironsworn-color-clickable-block-bg);
   &.vertical {
@@ -234,8 +233,8 @@
   }
 }
 
-.clickableBlockMixin(@blockSize:50px,@borderRadius:0px) {
-  .blockMixin(@blockSize,@borderRadius);
+.clickableBlockMixin(@blockSize:50px,) {
+  .blockMixin(@blockSize);
   &:hover,
   &.hover {
     .blockHoverMixin(@blockSize);
