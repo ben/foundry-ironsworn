@@ -1,5 +1,11 @@
 <template>
   <article class="flexcol">
+    <ProgressList
+      :showCompleted="'all'"
+      :excludedSubtypes="['vow', 'progress']"
+      :showStar="true"
+      ref="$connectionList"
+    />
     <section
       class="progress-controls flexrow nogrow"
       style="text-align: center"
@@ -8,12 +14,6 @@
         {{ $t('IRONSWORN.Connection') }}
       </BtnFaicon>
     </section>
-    <ProgressList
-      :showCompleted="'all'"
-      :excludedSubtypes="['vow', 'progress']"
-      :showStar="true"
-      ref="$connectionList"
-    />
   </article>
 </template>
 <script setup lang="ts">
