@@ -5,14 +5,16 @@
     <div class="flexrow nogrow" style="gap: 10px; margin: 0.5em 0">
       <div class="flexcol" style="flex-basis: 20em">
         <!-- RANK -->
-        <div class="flexrow nogrow">
+        <div class="flexrow nogrow" :class="$style.rankRow">
           <RankPips
             :current="actor.system.rank"
             class="nogrow"
             @click="setRank"
-            style="margin-right: 1em"
+            :id="`${actor._id}_rank`"
           />
-          <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
+          <label :for="`${actor._id}_rank`" :class="$style.rankLabel">{{
+            rankText
+          }}</label>
           <BtnFaicon
             class="block nogrow"
             v-if="editMode"
@@ -54,16 +56,16 @@
           </div>
         </div>
         <!-- DENIZENS -->
-        <h4 class="flexrow nogrow">
+        <h2 class="flexrow nogrow" :class="$style.heading">
           <span>{{ $t('IRONSWORN.Denizens') }}</span>
           <BtnIsicon
             icon="d10-tilt"
-            class="flexrow nogrow text"
+            class="text nogrow"
             style="padding: 2px"
             @click="randomDenizen"
           />
-          <BtnCompendium compendium="ironswornfoes" class="nogrow" />
-        </h4>
+          <BtnCompendium compendium="ironswornfoes" class="text nogrow" />
+        </h2>
         <div class="boxgroup nogrow" style="margin-bottom: 1em">
           <div class="flexrow boxrow">
             <SiteDenizenbox :idx="0" :ref="(e) => (denizenRefs[0] = e)" />
@@ -91,20 +93,15 @@
           </div>
         </div>
       </div>
-      <div
-        class="flexcol"
-        style="flex-basis: 12em; max-height: 430px; overflow: scroll"
-      >
-        <SiteMoves />
-      </div>
+      <SiteMoves class="scrollable flexcol" :class="$style.siteMovesWrapper" />
     </div>
     <div class="flexcol">
       <div class="flexrow nogrow">
-        <h4>{{ $t('IRONSWORN.Notes') }}</h4>
+        <h2 :class="$style.heading">{{ $t('IRONSWORN.Notes') }}</h2>
         <BtnIsicon
           icon="d10-tilt"
           class="box text block nogrow"
-          :class="{ disabled: !hasThemeAndDomain }"
+          :class="{ disabled: !hasThemeAndDomain, [$style.featureBtn]: true }"
           @click="randomFeature"
         >
           {{ $t('IRONSWORN.Feature') }}
@@ -115,18 +112,38 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.moves {
-  .box {
-    justify-content: center;
-    padding: 5px;
-  }
-  h4 {
-    margin: 0;
-    white-space: nowrap;
-  }
+<style lang="less" module>
+.rankRow {
+  gap: var(--ironsworn-spacer-lg);
 }
+.rankLabel {
+  margin: 0;
+  line-height: 22px;
+  font-size: var(--font-size-14);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+}
+.siteMovesWrapper {
+  flex-basis: 12em;
+  max-height: 430px;
+}
+.heading {
+  font-size: var(--font-size-14);
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+}
+.featureBtn {
+  text-transform: uppercase;
+}
+</style>
 
+<style lang="less" scoped>
 textarea {
   border-color: rgba(0, 0, 0, 0.1);
   border-radius: 1px;
