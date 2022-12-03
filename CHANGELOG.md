@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Bring back progress-item stars in the SF character sheet
+
 ## 1.20.0
 
 - A new look and layout for the move sheet ([#518](https://github.com/ben/foundry-ironsworn/pull/518))

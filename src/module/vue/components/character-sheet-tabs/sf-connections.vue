@@ -3,7 +3,7 @@
     <ProgressList
       :showCompleted="'all'"
       :excludedSubtypes="['vow', 'progress']"
-      :showStar="true"
+      :progress-stars="true"
       ref="$connectionList"
     />
     <section

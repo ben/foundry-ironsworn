@@ -4,7 +4,7 @@
       class="ironsworn__drop__target"
       data-drop-type="progress"
       :excludedSubtypes="['bond']"
-      :showStar="progressStars"
+      :progress-stars="progressStars"
       :showCompleted="'no-completed'"
       ref="activeProgressList"
     />
@@ -22,7 +22,7 @@
       <ProgressList
         :showCompleted="'completed-only'"
         :excludedSubtypes="['bond']"
-        :showStar="props.progressStars"
+        :progress-stars="progressStars"
         :progressListItemClass="$style.completedProgressListItem"
         :class="`${$style.progressList} ${$style.completedProgressList}`"
         ref="completeProgressList"
