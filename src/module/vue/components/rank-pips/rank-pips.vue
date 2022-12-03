@@ -34,6 +34,7 @@
   width: max-content;
   flex-grow: 0;
   .rank-pip {
+    border: none;
     .pip-shape > * {
       stroke-width: var(--widget-stroke-width);
     }
