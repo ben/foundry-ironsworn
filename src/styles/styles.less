@@ -118,6 +118,20 @@
       border: none;
     }
   }
+  #tooltip {
+    // disables additional margin on paragraph elements in tooltips (FVTT doesn't use them, but we do)
+    & > {
+      p {
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
   @import 'attr-box.less';
