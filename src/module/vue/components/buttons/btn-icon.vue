@@ -70,7 +70,7 @@ const hasDefaultSlot = computed(() => {
     align-content: center;
     align-items: center;
   }
-  &.text:not(.block) {
+  &.text:not(.block):not(:empty) {
     justify-content: left;
   }
 }
