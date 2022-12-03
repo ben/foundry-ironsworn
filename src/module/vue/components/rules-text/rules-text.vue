@@ -13,10 +13,12 @@
   </WithRolllisteners>
 </template>
 <style lang="less">
+@import (reference) '../../../../styles/mixins.less';
 .rules-text {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  .textCompactMixin();
 }
 .rules-text-main {
   display: flex;

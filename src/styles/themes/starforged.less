@@ -1,5 +1,7 @@
 // Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
+@import '@fontsource/encode-sans-condensed/latin';
+@import '@fontsource/encode-sans/latin';
 @import './starforged-font.css'; // HACK to avoid import error
 @import (reference) '../mixins.less';
 @import (reference) './mixins/colors.less';
@@ -13,7 +15,9 @@
   .ironswornDarkThemeMixin(ironsworn-color);
   .softBorderMixin(ironsworn-color);
   .interactiveTintMixin(ironsworn-color-clickable-block,ironsworn-color);
-  --font-primary: 'Carrois Gothic SC', sans-serif;
+  // --font-primary: 'Carrois Gothic SC', sans-serif;
+  --font-primary: 'Encode Sans', sans-serif;
+  --font-compact: 'Encode Sans Condensed', sans-serif;
 
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
