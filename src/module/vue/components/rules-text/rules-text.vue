@@ -68,13 +68,18 @@ const props = defineProps<{
    * Dataforged source data to be included in the footer.
    */
   source?: ISource
+  /**
+   * Whether or not to strip tables from the display. Many times they are redundant,
+   * but sometimes they are essential.
+   */
+  stripTables?: boolean
 }>()
 
 const enrichedText = computed(() => {
   if (props.type === 'markdown') {
-    return IronswornHandlebarsHelpers.stripTables(
-      enrichMarkdown(props.content as string)
-    )
+    const html = enrichMarkdown(props.content as string)
+    if (props.stripTables) return IronswornHandlebarsHelpers.stripTables(html)
+    return html
   }
   if (props.type === 'html') {
     return IronswornHandlebarsHelpers.stripTables(enrichHtml(props.content))

@@ -1,5 +1,5 @@
 <template>
-  <SheetHeader class="sf-character-header">
+  <SheetHeader class="sf-character-header nogrow">
     <DocumentImg :document="actor" size="75px" />
     <section class="header-pc-vitals flexcol">
       <input

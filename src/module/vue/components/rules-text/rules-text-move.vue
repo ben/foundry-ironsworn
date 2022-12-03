@@ -3,6 +3,7 @@
     class="rules-text-move"
     :source="move.dataforgedMove?.Source"
     :content="content"
+    :strip-tables="move.dataforgedMove?.Oracles?.length > 0"
     type="markdown"
   >
     <template #before-main>
