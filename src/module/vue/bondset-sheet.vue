@@ -49,6 +49,21 @@
   </CollapseTransition>
   <BtnFaicon class="block nogrow" icon="plus" @click="addBond" />
 </div> -->
+
+<style lang="less" scoped>
+.clickable.block {
+  border-style: none;
+  line-height: 25px;
+  padding: 5px;
+  .selected & {
+    color: var(--ironsworn-color-clickable-block-fg-selected);
+    &:hover {
+      color: var(--ironsworn-color-midtone-50);
+    }
+  }
+}
+</style>
+
 <script setup lang="ts">
 import { computed, inject, provide, reactive, watch, ref } from 'vue'
 import { $ItemKey, ItemKey } from './provisions'
