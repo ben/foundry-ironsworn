@@ -1,12 +1,14 @@
 <template>
-  <article class="flexcol ironsworn__drop__target" data-drop-type="progress">
-    <ProgressControls class="nogrow" :foeCompendium="foeCompendium" />
+  <article class="flexcol">
     <ProgressList
+      class="ironsworn__drop__target"
+      data-drop-type="progress"
       :excludedSubtypes="['bond']"
       :showStar="progressStars"
       :showCompleted="'no-completed'"
       ref="activeProgressList"
     />
+    <ProgressControls class="nogrow" :foeCompendium="foeCompendium" />
     <Collapsible
       :toggleLabel="$t('IRONSWORN.Completed')"
       :disabled="!activeProgressList?.actorHasCompletedItems"
