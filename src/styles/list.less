@@ -53,21 +53,42 @@
 
 // WIP: genericizes appearance of the move tree browser
 .list-block {
-  @border_width: var(--ironsworn-border-width-md);
-  @border_radius: var(--ironsworn-border-radius-lg);
-  @wrapper_spacing: 4px;
-  border-radius: @border_radius;
-  padding-left: @wrapper_spacing;
-  padding-right: @wrapper_spacing;
+  --list-block-border-style: outset;
+  --list-block-border-width: var(--ironsworn-border-width-md);
+  --list-block-border-highlight: var(--ironsworn-color-light-10);
+  --list-block-border-shadow: var(--ironsworn-color-dark-10);
   display: flex;
   flex-flow: column nowrap;
   list-style: none;
   padding: 0;
   .list-block-item {
     margin: 0;
-    border-style: groove;
-    border-width: 1px 0 0;
-    &:first-of-type {
+    height: max-content;
+    border-style: var(--list-block-border-style);
+    border-width: 0;
+    &:not(:first-of-type) {
+      border-top-width: var(--list-block-border-width);
+      border-top-color: var(--list-block-border-highlight);
+    }
+    &:not(:last-of-type) {
+      border-bottom-width: var(--list-block-border-width);
+      border-bottom-color: var(--list-block-border-shadow);
+    }
+  }
+  .list-block-header {
+    &:not(:last-child) {
+      // applies bottom border only if there's subsequent content
+      border-width: 0;
+      border-style: var(--list-block-border-style);
+      border-bottom-width: var(--list-block-border-width);
+      border-bottom-color: var(--list-block-border-shadow);
+      & ~ * {
+        // applies top border to first sibling after list-block-header
+        border-width: 0;
+        border-style: var(--list-block-border-style);
+        border-top-width: var(--list-block-border-width);
+        border-top-color: var(--list-block-border-highlight);
+      }
     }
   }
 }

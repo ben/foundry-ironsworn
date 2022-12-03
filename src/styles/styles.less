@@ -107,15 +107,6 @@
       height: 100%;
       padding: var(--ironsworn-spacer-md);
     }
-    // overrides some of foundry's more annoying button styles
-    button {
-      border-width: 0px;
-      border-style: solid;
-    }
-    form button {
-      border-width: 0px;
-      border-style: solid;
-    }
     hr {
       width: 100%;
       border: 0 solid var(--ironsworn-color-border);
@@ -127,6 +118,20 @@
       border: none;
     }
   }
+  #tooltip {
+    // disables additional margin on paragraph elements in tooltips (FVTT doesn't use them, but we do)
+    & > {
+      p {
+        &:first-child {
+          margin-top: 0;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
   @import 'attr-box.less';

@@ -3,7 +3,7 @@
   <section class='roll-trigger-text'>
     {{{enrichMarkdown move.system.Trigger.Text}}}
   </section>
-  {{#if move.system.Trigger.Options}}
+  {{#if (gt move.system.Trigger.Options.length 1)}}
   <ul class='trigger-options'>
     {{#each move.system.Trigger.Options}}
     {{#if Text}}

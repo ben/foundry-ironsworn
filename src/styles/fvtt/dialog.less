@@ -22,7 +22,11 @@
     }
     .dialog-buttons {
       height: max-content;
-      align-items: end;
+      align-items: flex-end;
+      display: flex;
+      flex-flow: row wrap;
+      flex-grow: 0;
+      gap: var(--ironsworn-spacer-sm);
       button.default,
       button {
         .clickableBlockMixin();
@@ -31,6 +35,7 @@
         justify-content: center;
         height: max-content;
         border-width: 1px;
+        border-radius: 0;
         .button-text {
           .nogrow();
           .initial-caps();
@@ -38,8 +43,7 @@
           height: max-content;
         }
         i {
-          height: 18px;
-          width: 18px;
+          margin: 0;
         }
       }
     }

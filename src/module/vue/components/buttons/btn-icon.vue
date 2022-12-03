@@ -46,6 +46,8 @@ const hasDefaultSlot = computed(() => {
   text-align: center;
   justify-content: center;
   border-radius: 0;
+  color: inherit;
+  border-width: 0;
   padding: 0.2em;
   &:not(:empty) {
     gap: 0.2em;
@@ -68,7 +70,7 @@ const hasDefaultSlot = computed(() => {
     align-content: center;
     align-items: center;
   }
-  &.text:not(.block) {
+  &.text:not(.block):not(:empty) {
     justify-content: left;
   }
 }
