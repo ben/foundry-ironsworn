@@ -1,6 +1,6 @@
 <template>
-  <div class="flexcol">
-    <div class="flexrow nogrow" style="margin-top: 0.5rem">
+  <div class="flexcol" :class="$style.wrapper">
+    <div class="flexrow nogrow" :class="$style.navSearch">
       <input
         type="text"
         :placeholder="$t('IRONSWORN.Search')"
@@ -19,7 +19,7 @@
       />
     </div>
 
-    <div class="item-list scrollable flexcol">
+    <div class="item-list scrollable flexcol" :class="$style.itemList">
       <OracleTreeNode
         v-for="node in treeRoot.children"
         :key="node.displayName"
@@ -30,9 +30,15 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.item-list {
-  padding: 0 0.5rem;
+<style lang="less" module>
+.wrapper {
+  gap: var(--ironsworn-spacer-lg);
+}
+.navSearch {
+  margin-top: var(--ironsworn-spacer-lg);
+}
+.itemList {
+  padding: 0 var(--ironsworn-spacer-lg);
 }
 </style>
 

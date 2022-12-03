@@ -55,16 +55,25 @@
 
 <style lang="less" module>
 .navSearch {
-  margin-top: 0.5rem;
+  margin-top: var(--ironsworn-spacer-lg);
 }
 .searchBtn {
-  padding: 6px;
+  // padding: 6px;
+  &:empty {
+    // to override default icon-button styling
+    height: var(--form-field-height);
+    width: var(--form-field-height);
+    padding: var(--ironsworn-spacer-md);
+  }
+  aspect-ratio: 1;
+  flex: 0;
 }
 .wrapper {
-  gap: 0.5rem;
+  gap: var(--ironsworn-spacer-lg);
 }
 .itemList {
   gap: var(--ironsworn-spacer-md);
+  margin: 0;
 }
 </style>
 
