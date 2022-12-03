@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.0
+
 - A new look and layout for the move sheet ([#518](https://github.com/ben/foundry-ironsworn/pull/518))
 - A new layout for the site sheet, which uses the new rolling pipeline ([#533](https://github.com/ben/foundry-ironsworn/pull/533) and [#540](https://github.com/ben/foundry-ironsworn/pull/540))
 - The buttons for rolling _Write Your Epilogue_ and _Locate Your Objective_ now use the new rolling pipeline, which has been augmented to support progress moves ([#536](https://github.com/ben/foundry-ironsworn/pull/536))
