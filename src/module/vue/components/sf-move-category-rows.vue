@@ -1,11 +1,12 @@
 <template>
   <Collapsible
+    class="list-block"
     :class="$style.wrapper"
     :toggleButtonClass="$style.toggleButton"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
     :toggleWrapperClass="$style.toggleWrapper"
-    :toggleSectionClass="$style.toggleSection"
+    :toggleSectionClass="`${$style.toggleSection} list-block-header`"
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
     :toggleTextClass="$style.toggleText"
@@ -17,13 +18,14 @@
         <li
           v-for="(move, i) of category.moves"
           :key="i"
-          class="nogrow"
+          class="list-block-item nogrow"
           :class="$style.listItem"
         >
           <SfMoverow
             :move="move"
             ref="children"
             :headingLevel="headingLevel + 1"
+            :class="$style.moveRow"
             :thematicColor="category.color"
           />
         </li>
@@ -42,7 +44,7 @@
 
 .wrapper {
   .thematicColorMixin();
-  border-radius: 5px;
+  border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-thematic);
 }
 
@@ -54,15 +56,9 @@
   padding: 0;
 }
 
-.listItem {
-  border-color: var(--ironsworn-color-thematic);
-  border-style: groove;
-  border-width: 1px 0 0;
-}
-
 .toggleSection {
   background-color: var(--ironsworn-color-thematic);
-  border-radius: 5px;
+  border-radius: var(--ironsworn-border-radius-lg);
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
     --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
@@ -72,6 +68,10 @@
 .toggleButton {
   .textStrokeMixin( var(--ironsworn-color-dark));
   background: none;
+}
+
+.moveRow {
+  border-radius: var(--ironsworn-border-radius-lg);
 }
 </style>
 <script setup lang="ts">

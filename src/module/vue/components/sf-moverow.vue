@@ -67,8 +67,8 @@
 @import '../../../styles/mixins.less';
 
 @icon_size: 1.2em;
-@border_width: 2px;
-@border_radius: 5px;
+@border_width: var(--ironsworn-border-width-lg);
+@border_radius: var(--ironsworn-border-radius-lg);
 @wrapper_spacing: 4px;
 
 .thematicColorMixin {
@@ -86,7 +86,6 @@
 
 .wrapper {
   .thematicColorMixin();
-  border-radius: @border_radius;
   padding-left: @wrapper_spacing;
   padding-right: @wrapper_spacing;
   &[aria-expanded='true'] {
@@ -124,7 +123,8 @@
   line-height: 1.25;
   font-size: var(--font-size-16);
   border-color: transparent;
-  border-width: 1px 1px 0 1px;
+  border-width: var(--ironsworn-border-width-md)
+    var(--ironsworn-border-width-md) 0 var(--ironsworn-border-width-md);
   border-style: solid;
   align-items: center;
   &:hover {

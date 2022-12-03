@@ -1,58 +1,81 @@
 <template>
-  <div class="flexcol scrollable">
-    <SfMoverow
-      :move="moves.discoverASite"
-      v-if="moves.discoverASite"
-      :thematic-color="thematicColor"
-      class="nogrow"
-    />
-    <SfMoverow
-      :move="moves.delveTheDepths"
-      v-if="moves.delveTheDepths"
-      :thematic-color="thematicColor"
-      class="nogrow"
-    />
-    <SfMoverow
-      :move="moves.findAnOpportunity"
-      v-if="moves.findAnOpportunity"
-      :thematic-color="thematicColor"
-      class="nogrow"
-    />
-    <SfMoverow
-      :move="moves.revealADanger"
-      v-if="moves.revealADanger"
-      :thematic-color="thematicColor"
-      class="nogrow"
-      @oracleClick="revealADanger"
-      :oracle-disabled="!hasThemeAndDomain"
-    />
-    <SfMoverow
-      :move="moves.checkYourGear"
-      v-if="moves.checkYourGear"
-      :thematic-color="thematicColor"
-      class="nogrow"
-    />
-    <SfMoverow
-      :move="moves.locateObjective"
-      v-if="moves.locateObjective"
-      :thematic-color="thematicColor"
-      class="nogrow"
-      @rollClick="locateObjective"
-    />
-    <SfMoverow
-      :move="moves.escapeTheDepths"
-      v-if="moves.escapeTheDepths"
-      :thematic-color="thematicColor"
-      class="nogrow"
-    />
-    <SfMoverow
-      :move="moves.revealADangerAlt"
-      v-if="moves.revealADangerAlt"
-      :thematic-color="thematicColor"
-      class="nogrow"
-    />
-  </div>
+  <ul class="list-block flexcol" :class="$style.wrapper">
+    <li class="list-block-item" :class="$style.moveRowWrapper">
+      <SfMoverow
+        :move="moves.discoverASite"
+        v-if="moves.discoverASite"
+        class="nogrow"
+      />
+    </li>
+    <li class="list-block-item" :class="$style.moveRowWrapper">
+      <SfMoverow
+        :move="moves.delveTheDepths"
+        v-if="moves.delveTheDepths"
+        class="nogrow"
+      />
+    </li>
+    <li class="list-block-item" :class="$style.moveRowWrapper">
+      <SfMoverow
+        :move="moves.findAnOpportunity"
+        v-if="moves.findAnOpportunity"
+        class="nogrow"
+      />
+    </li>
+    <li class="list-block-item" :class="$style.moveRowWrapper">
+      <SfMoverow
+        :move="moves.revealADanger"
+        v-if="moves.revealADanger"
+        class="nogrow"
+        @oracleClick="revealADanger"
+        :oracle-disabled="!hasThemeAndDomain"
+      />
+    </li>
+    <li class="list-block-item" :class="$style.moveRowWrapper">
+      <SfMoverow
+        :move="moves.checkYourGear"
+        v-if="moves.checkYourGear"
+        class="nogrow"
+      />
+    </li>
+    <li class="list-block-item" :class="$style.moveRowWrapper">
+      <SfMoverow
+        :move="moves.locateObjective"
+        v-if="moves.locateObjective"
+        class="nogrow"
+        @rollClick="locateObjective"
+      />
+    </li>
+    <li class="list-block-item" :class="$style.moveRowWrapper">
+      <SfMoverow
+        :move="moves.escapeTheDepths"
+        v-if="moves.escapeTheDepths"
+        class="nogrow"
+      />
+    </li>
+    <li class="list-block-item" :class="$style.moveRowWrapper">
+      <SfMoverow
+        :move="moves.revealADangerAlt"
+        v-if="moves.revealADangerAlt"
+        class="nogrow"
+      />
+    </li>
+  </ul>
 </template>
+
+<style lang="less" module>
+.wrapper {
+  border-radius: var(--ironsworn-border-radius-lg);
+  background-color: var(--ironsworn-color-midtone-30);
+  height: max-content;
+  margin: 0;
+}
+
+.moveRowWrapper {
+  flex-grow: 0;
+  height: max-content;
+  border-color: var(--ironsworn-color-midtone-30);
+}
+</style>
 
 <script lang="ts" setup>
 import { computed, inject, reactive } from 'vue'
@@ -74,8 +97,6 @@ const theme = computed(() => {
 const domain = computed(() => {
   return site?.value?.items.find((x) => x.type === 'delve-domain')
 })
-
-const thematicColor = 'var(--ironsworn-color-fg-30)'
 
 const hasThemeAndDomain = computed(() => {
   return !!(theme.value && domain.value)
