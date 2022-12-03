@@ -3,6 +3,7 @@
 ## Next Release
 
 - Bring back progress-item stars in the SF character sheet
+- Fix a visual glitch with super-wide legacy tracks
 
 ## 1.20.0
 
