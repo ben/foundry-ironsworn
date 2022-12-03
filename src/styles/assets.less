@@ -1,17 +1,20 @@
+@import (reference) './themes/mixins/decorations.less';
+
 @asset_spacer: 0.5em;
 
 .ironsworn__asset {
   overflow: hidden;
   transition: var(--std-animation);
   .asset-header {
-    transition: var(--std-animation);
     gap: @asset_spacer;
     align-items: center;
     .asset-expand-toggle {
+      transition: var(--std-animation);
       display: flex;
       gap: @asset_spacer;
       background: none;
       box-shadow: none !important;
+      flex-flow: row wrap;
     }
     .asset-title {
       margin: 0;
@@ -21,15 +24,14 @@
       word-spacing: 0.02em;
       line-height: 1;
       text-transform: uppercase;
-    }
-    &:not(:hover) .asset-type {
-      color: var(--ironsworn-color-thematic);
+      transition: inherit;
     }
     .asset-type {
+      color: var(--ironsworn-color-thematic);
       flex-grow: 0;
       line-height: 1;
       font-style: italic;
-      transition: var(--std-animation);
+      transition: inherit;
     }
     .asset-controls {
       justify-items: flex-end;
@@ -80,6 +82,8 @@
   .asset-ability-clock {
     min-width: 40px;
     max-width: 75px;
+    min-height: 40px;
+    max-height: 75px;
   }
   .asset-ability-text {
     // flex-grow: 2;
@@ -166,35 +170,7 @@
 }
 
 .asset-starforged {
-  position: relative;
-  & > * {
-    z-index: 2;
-  }
-  &:before {
-    display: block;
-    pointer-events: none;
-    content: '';
-    mask-image: url(/assets/misc/hex-deco.svg);
-    background: var(--ironsworn-color-thematic);
-    position: absolute;
-    aspect-ratio: @hex_deco_aspect_ratio;
-    z-index: auto;
-    mask-repeat: no-repeat;
-    transform: scaleX(-1);
-    height: @hex_deco_collapsed_height;
-    top: -($height * 0.09);
-    right: ($height * 0.03);
-  }
-  .asset-header {
-    padding-right: (@hex_deco_collapsed_height * @hex_deco_aspect_ratio);
-    // hex frame style for later use if asset icons added
-    // .asset-icon {
-    //   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
-    //   aspect-ratio: @hexagon_aspect_ratio;
-    //   border: 0;
-    //   padding: 3px;
-    // }
-  }
+  .starforgedAssetDecoMixin(50px,32px);
   .asset-abilities {
     .asset-ability {
       &:before {

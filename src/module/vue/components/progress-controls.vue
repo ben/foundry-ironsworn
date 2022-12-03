@@ -35,9 +35,4 @@ async function addProgressItem(subtype) {
   const item = await Item.create(itemData as any, { parent: $actor })
   item?.sheet?.render(true)
 }
-
-function openCompendium(name) {
-  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-  pack?.render(true)
-}
 </script>

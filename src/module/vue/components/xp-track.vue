@@ -16,13 +16,41 @@
 @import '../../../styles/mixins.less';
 .xp-track {
   .xp-box {
-    --ironsworn-color-block-border-selected: var(--ironsworn-color-fg);
-    --ironsworn-color-block-border-hover: var(--ironsworn-color-fg-highlight);
-    aspect-ratio: 1;
-    max-width: 20px;
-    .clickableBlockMixin();
+    // for sizing/layout concerns, see legacy-track.vue
+    --ironsworn-color-clickable-block-bg: var(--ironsworn-color-bg);
+    --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
 
-    border-radius: 3px;
+    --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-bg);
+
+    --ironsworn-color-clickable-block-bg-selected: var(
+      --ironsworn-color-thematic
+    );
+
+    .clickableBlockMixin(var(--legacy-xp-box-size));
+    aspect-ratio: 1;
+    border-radius: var(--ironsworn-border-radius-md);
+    border-style: solid;
+
+    &:hover,
+    &.hover {
+      // legacy-xp-box-size is set in legacy-track.vue
+      box-shadow: inset 0 0 var(--legacy-xp-box-size, 15px)
+        var(--ironsworn-color-thematic) !important;
+      border-color: var(
+        --ironsworn-color-clickable-block-border-hover
+      ) !important;
+      &[aria-selected='true'],
+      &.selected,
+      &.active {
+        .blockHoverMixin(var(--legacy-xp-box-size));
+        &:first-child {
+          .blockMixin();
+        }
+      }
+      & ~ .xp-box {
+        .blockMixin();
+      }
+    }
   }
 }
 </style>

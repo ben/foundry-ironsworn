@@ -1,33 +1,25 @@
-/* Items List */
-// TODO - good candidate for being split to its own file
-
-.move-li {
-  height: 1.5rem;
+.item-row {
+  border-width: var(--ironsworn-border-width-md);
+  border-color: var(--ironsworn-color-border);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-sm);
+  padding: var(--ironsworn-spacer-sm);
+  .item-row-control {
+    flex-grow: 0;
+    padding: var(--ironsworn-spacer-md);
+  }
 }
 
 .item-list {
   list-style: none;
-  margin: var(--ironsworn-spacer-lg) 0;
-  padding: 0;
   flex: 1 0 100px;
-  overflow-y: scroll;
-  .item-row {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    border-color: var(--ironsworn-color-border);
-    border-radius: var(--ironsworn-border-radius-sm);
-    padding: var(--ironsworn-spacer-sm);
-    margin: var(--ironsworn-spacer-sm) 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
 
-    .item-row-control {
-      flex-grow: 0;
-      padding: var(--ironsworn-spacer-md);
-    }
-  }
   .item-name {
     margin: 0;
   }
-
   .item-controls {
     flex: 0 0 36px;
   }
@@ -44,9 +36,6 @@
       margin-right: var(--ironsworn-spacer-md);
     }
   }
-  .move {
-    overflow-x: hidden;
-  }
   ol {
     list-style: none;
     margin: 0;
@@ -62,13 +51,23 @@
   }
 }
 
-// FIXME: still in use?
-.progresses {
-  .item {
-    border: var(--ironsworn-border-width-md) solid
-      var(--ironsworn-color-border-muted);
-    border-radius: var(--ironsworn-border-radius-md);
-    padding: var(--ironsworn-spacer-md);
-    margin: var(--ironsworn-spacer-md);
+// WIP: genericizes appearance of the move tree browser
+.list-block {
+  @border_width: var(--ironsworn-border-width-md);
+  @border_radius: var(--ironsworn-border-radius-lg);
+  @wrapper_spacing: 4px;
+  border-radius: @border_radius;
+  padding-left: @wrapper_spacing;
+  padding-right: @wrapper_spacing;
+  display: flex;
+  flex-flow: column nowrap;
+  list-style: none;
+  padding: 0;
+  .list-block-item {
+    margin: 0;
+    border-style: groove;
+    border-width: 1px 0 0;
+    &:first-of-type {
+    }
   }
 }

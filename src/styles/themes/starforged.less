@@ -1,62 +1,25 @@
-@import './starforged-font.css'; // HACK to avoid import error
-@import '../mixins.less';
-@import '../fvtt/vars.less';
-@import './palettize.less';
+// Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
-:root {
-  .palettize(ironsworn-color,hsl(180, 70%, 60%), hsl(180,20%,0%), hsl(185,100%,50%), hsl(210,100%,50%));
-}
+@import './starforged-font.css'; // HACK to avoid import error
+@import (reference) '../mixins.less';
+@import (reference) './mixins/colors.less';
+@import (reference) './mixins/palettize.less';
+@import (reference) './mixins/fvtt-var-overrides.less';
 
 .system-foundry-ironsworn.theme-starforged {
-  // restyle FVTT's UI
-  @import '../fvtt/app.less';
-  @import '../fvtt/clickable.less';
-  @import '../fvtt/sidebar.less';
-  @import '../fvtt/inputs.less';
-  @import '../fvtt/tooltip.less';
+  // set CSS variables
 
+  .palettize(ironsworn-color,hsl(180, 70%, 60%), hsl(180,20%,0%), hsl(185,100%,50%), hsl(210,100%,50%));
+  .ironswornDarkThemeMixin(ironsworn-color);
+  .softBorderMixin(ironsworn-color);
+  .interactiveTintMixin(ironsworn-color-clickable-block,ironsworn-color);
   --font-primary: 'Carrois Gothic SC', sans-serif;
-
-  --ironsworn-color-border-highlight: var(--ironsworn-color-light-warm);
-  --ironsworn-color-border: var(--ironsworn-color-fg-muted);
-  --ironsworn-color-border-muted: var(--ironsworn-color-fg-30);
 
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
-  // see clickable.less for usage
-  --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-  --ironsworn-color-clickable-text-selected: var(--ironsworn-color-light-warm);
-
-  // block default state
-  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-midtone-80);
-  --ironsworn-color-clickable-block-bg: transparent;
-  --ironsworn-color-clickable-block-border: var(--ironsworn-color-midtone-80);
-
-  // block hover state
-  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-warm-20);
-  --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-light);
-
-  // block selected state
-  --ironsworn-color-clickable-block-fg-selected: var(
-    --ironsworn-color-light-warm
-  );
-  --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-warm-40);
-  --ironsworn-color-clickable-block-border-selected: var(
-    --ironsworn-color-light-warm
-  );
-
-  --ironsworn-input-border-style: solid;
-
-  --ironsworn-color-legacy-quests: var(--ironsworn-color-red-dark);
-  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple-dark);
-  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue-dark);
-
-  hr {
-    border-width: 0 0 var(--ironsworn-border-width-md);
-    border-color: var(--ironsworn-color-border);
-  }
+  // CLICKABLE TEXT: HOVER EFFECT
+  --ironsworn-filter-highlight: drop-shadow(0 0 3px var(--ironsworn-color-cool))
+    drop-shadow(0 0 3px var(--ironsworn-color-cool));
 
   --ironsworn-color-danger: hsl(0, 80%, 50%);
   --ironsworn-color-success: hsl(290, 80%, 50%);
@@ -64,24 +27,19 @@
 
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
-  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
-  --ironsworn-input-border-style: solid;
-  --ironsworn-filter-highlight: drop-shadow(0 0 1px var(--ironsworn-color-warm))
-    drop-shadow(0 0 2px var(--ironsworn-color-cool));
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
-  // --ironsworn-color-text-stroke: black;
+  .fvttVarOverridesMixin();
+  // restyle FVTT's UI
+  @import '../fvtt/app.less';
+  @import '../fvtt/dialog.less';
+  @import '../fvtt/clickable.less';
+  @import '../fvtt/sidebar.less';
+  @import '../fvtt/tooltip.less';
+  @import '../inputs.less';
+  @import (reference) './mixins/decorations.less';
 
-  .overrideVars();
+  .starforgedDecorationMixin();
 
-  .asset-ironsworn .asset-ability:before {
-    border-width: 1px;
-    border-style: solid;
-  }
-  .asset-starforged .asset-ability:before {
-    background-color: var(--ironsworn-color-fg);
-    border-width: 1px;
-    border-style: solid;
-  }
   .chat-message {
     background: var(--ironsworn-color-bg);
   }

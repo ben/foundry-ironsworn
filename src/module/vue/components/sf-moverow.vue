@@ -52,7 +52,7 @@
       >
         <template #after-footer>
           <OracleTreeNode
-            class="item-row"
+            :class="$style.moveOracle"
             v-for="node of data.oracles"
             :key="node.displayName"
             :node="node"
@@ -152,7 +152,7 @@
 
 .toggleWrapper {
   transition: var(--std-animation);
-  border: 1px solid transparent;
+  border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
   border-top-left-radius: @border_radius;
   border-top-right-radius: @border_radius;
@@ -162,6 +162,23 @@
     color: var(--ironsworn-color-light);
     background-color: var(--ironsworn-color-dark);
     border-color: var(--ironsworn-color-clickable-block-border-selected);
+  }
+}
+
+.moveOracle {
+  border-width: var(--ironsworn-border-width-md);
+  border-color: var(--ironsworn-color-border);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-sm);
+  padding: 0;
+  h4 {
+    line-height: var(--ironsworn-clickable-line-height);
+    height: var(--ironsworn-clickable-line-height);
+    font-size: var(--font-size-16);
+
+    button.icon-button {
+      height: inherit;
+    }
   }
 }
 </style>

@@ -105,13 +105,13 @@
     height: max-content;
   }
   .progress-subtitle {
+    color: var(--ironsworn-color-fg-muted);
     text-transform: uppercase;
     grid-column: 1;
     grid-row: 1 / span 3;
     padding: 0;
     line-height: 1;
     width: max-content;
-    padding: 0;
     margin: 0;
     font-weight: normal;
   }

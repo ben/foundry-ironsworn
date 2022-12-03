@@ -47,16 +47,13 @@
   display: flex;
   flex-flow: row nowrap;
   stroke: var(--ironsworn-color-fg);
-  fill: var(
-    --ironsworn-color-thematic,
-    var(--ironsworn-color-clickable-block-bg-selected)
-  );
+  fill: var(--ironsworn-color-fg-80);
   fill-opacity: 1;
   align-content: center;
   gap: 2px;
   transition: var(--std-animation);
   &:hover {
-    fill-opacity: var(--widget-fill-opacity-preview);
+    fill: var(--ironsworn-color-fg-40);
   }
   button.rank-pip {
     background-color: unset;
@@ -65,7 +62,6 @@
     height: auto;
     padding: 0;
     line-height: 0;
-    display: flex;
     justify-items: center;
     align-items: center;
     transition-duration: 0s;

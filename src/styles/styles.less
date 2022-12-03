@@ -4,7 +4,7 @@
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
   --widget-stroke-width: 1;
 
-  --widget-fill-opacity-preview: 0.5;
+  --clock-fill-opacity-hover: 0.6;
 
   --ironsworn-border-radius-sm: 2px;
   --ironsworn-border-radius-md: 3px;
@@ -30,6 +30,9 @@
 
   --ironsworn-transition-duration: 0.5s;
   --ironsworn-transition-timing-function: ease;
+
+  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
+  --ironsworn-input-border-style: solid;
 
   // for later use as a mixin to scope transitions to colors effects only.
   --ironsworn-transition-property-color: background-color, border-color,
@@ -88,171 +91,15 @@
       color: var(--ironsworn-color-clickable-text-selected);
     }
   }
-  *::placeholder {
-    font-family: inherit;
-  }
-
-  .sheet-area {
-    border-color: var(--ironsworn-color-border-muted);
-    border-top-width: var(--ironsworn-border-width-lg);
-    &:first-child {
-      border-top-width: 0;
-    }
-    margin: var(--ironsworn-spacer-md);
-    padding-top: var(--ironsworn-spacer-lg);
-  }
-
-  .drag-highlight {
-    background: var(--ironsworn-color-warm-50);
-  }
-
-  // FIXME: still in use?
-  .progress {
-    flex: 1;
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-    padding: var(--ironsworn-spacer-md);
-    margin: var(--ironsworn-spacer-xs);
-    text-align: center;
-  }
-  // FIXME: figure out if this actually gets pulled in any more
-  .inline-roll {
-    background: var(--ironsworn-color-fg-20);
-    border-color: var(--ironsworn-color-border-muted);
-
-    &:hover {
-      text-shadow: 0 0 8px var(--ironsworn-color-fg-highlight);
-    }
-  }
-
-  // TODO: move to its own file, or have it live in the relevant component
-  .stats {
-    flex: 0;
-    justify-content: space-around;
-
-    .stat {
-      text-transform: uppercase;
-      --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-      .textStrokeMixin();
-      flex: 0 0 75px;
-      border-width: var(--ironsworn-border-width-md);
-      border-radius: var(--ironsworn-border-radius-lg) !important;
-      text-align: center;
-      padding: 0.5rem 0;
-
-      h3 {
-        margin: 0;
-        margin-bottom: var(--ironsworn-spacer-md);
-        font-weight: bold;
-        font-size: 22px;
-      }
-
-      h4 {
-        margin: 0;
-        font-weight: bold;
-      }
-
-      input {
-        width: 50%;
-        margin-bottom: var(--ironsworn-spacer-md);
-        font-weight: bold;
-        font-size: 18px;
-        text-align: center;
-      }
-    }
-
-    .edit {
-      flex: 0 0 30px;
-      justify-items: center;
-      align-items: center;
-      border: var(--ironsworn-border-width-md) solid
-        var(--ironsworn-color-border);
-      transition: var(--std-animation);
-
-      &.editing {
-        background: var(--ironsworn-color-bg-muted);
-      }
-    }
-  }
-
-  .compact {
-    h2,
-    h3,
-    h4,
-    h5 {
-      margin: var(--ironsworn-spacer-sm) 0;
-      border: none;
-    }
-  }
-
-  // FIXME: is this still in use?
-  .remove-option {
-    flex-grow: 0;
-    line-height: 26px;
-  }
-  // FIXME: is this still in use?
-  .progress-button {
-    i {
-      padding: var(--ironsworn-spacer-sm);
-      width: 22px;
-      text-align: center;
-    }
-  }
-  // FIXME: is this still in use?
-  .resource {
-    width: 50%;
-    height: 40px;
-    margin-top: 10px;
-    float: left;
-    text-align: center;
-
-    input {
-      width: 100px;
-      height: var(--ironsworn-clickable-line-height);
-    }
-  }
-  // TODO: this and other sheet classes are good candidates for extraction
-  &.sheet {
-    &.actor {
-      min-width: 630px;
-    }
-    &.item {
-      min-width: 460px;
-      min-height: 400px;
-    }
-    &.moves {
-      .tab {
-        display: none;
-        &.active {
-          display: flex;
-        }
-      }
-    }
-  }
-  .sheet-body {
-    height: 100%;
-    overflow: hidden;
-    // FIXME: .tab-likes should probably be their own file
-    .tab {
-      height: 100%;
-      overflow-y: auto;
-    }
-  }
-
-  // FIXME: is this still in use?
-  .move-title {
-    text-align: center;
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-    margin-bottom: var(--ironsworn-spacer-md);
-    font-weight: bold;
-    line-height: 30px;
-    // text-transform: uppercase;
-  }
-
-  .highlighted {
-    background-color: var(--ironsworn-color-warm-50) !important;
-  }
 
   .ironsworn {
+    // import these to the theme apply it to FVTT's own dialogs and inputs as well.
+    @import (reference) './fvtt/dialog.less';
+    &.dialog {
+      .dialog();
+    }
+    @import 'inputs.less';
+
     // stuff scoped to .ironsworn app windows only
     .window-content {
       background: var(--ironsworn-color-bg);
@@ -260,6 +107,7 @@
       height: 100%;
       padding: var(--ironsworn-spacer-md);
     }
+    // overrides some of foundry's more annoying button styles
     button {
       border-width: 0px;
       border-style: solid;
@@ -279,25 +127,18 @@
       border: none;
     }
   }
-
   // importing within this selector to ensure higher specificity
   @import 'assets.less';
-  @import 'dialog.less';
+  @import 'attr-box.less';
   @import 'chat-message.less';
   @import 'clickable.less';
-  @import 'icons.less';
-  @import 'inputs.less';
+  @import 'dialog.less';
   @import 'dice.less';
+  @import 'editor.less';
+  @import 'icons.less';
+  @import 'list.less';
+  @import 'scrollbar.less';
+  @import 'sheet.less';
   @import 'tables.less';
   @import 'utils.less';
-  @import 'scrollbar.less';
-  @import 'list.less';
-
-  .ironsworn {
-    // dialogs restyle scoped to ironsworn by default; import it in a theme if you want to apply it to FVTT's own dialogs as well.
-    @import './fvtt/dialog.less';
-    &.dialog {
-      .dialog();
-    }
-  }
 }

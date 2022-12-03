@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol" v-bind:style="`background-color: ${thematicColor}`">
+  <div class="flexcol scrollable">
     <SfMoverow
       :move="moves.discoverASite"
       v-if="moves.discoverASite"
@@ -75,7 +75,7 @@ const domain = computed(() => {
   return site?.value?.items.find((x) => x.type === 'delve-domain')
 })
 
-const thematicColor = 'var(--ironsworn-color-shade-2)'
+const thematicColor = 'var(--ironsworn-color-fg-30)'
 
 const hasThemeAndDomain = computed(() => {
   return !!(theme.value && domain.value)

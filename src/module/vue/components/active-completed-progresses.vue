@@ -1,121 +1,61 @@
 <template>
-  <div class="flexcol">
-    <div class="flexcol ironsworn__drop__target" data-drop-type="progress">
-      <CollapseTransition group tag="div" class="nogrow">
-        <div
-          class="flexrow nogrow"
-          v-for="(item, i) in activeItems"
-          :key="item._id"
-        >
-          <order-buttons
-            v-if="editMode"
-            :i="i"
-            :length="activeItems.length"
-            @sortUp="sortUp"
-            @sortDown="sortDown"
-          />
-          <progress-list-item
-            :item="item"
-            :showStar="progressStars"
-            @completed="progressCompleted"
-            :compact-progress="compactProgress"
-          />
-        </div>
-      </CollapseTransition>
-      <progress-controls :foeCompendium="foeCompendium" />
-    </div>
-
-    <div class="item-row nogrow progress-completed" style="margin-top: 1rem">
-      <!-- TODO: refactor this as a component in PR for collapsible/progressive disclosure element -->
-      <h3>
-        <btn-faicon
-          :disabled="completedItems.length === 0"
-          class="text collapse-control"
-          :class="completedClass"
-          :icon="completedCaret"
-          @click="data.expandCompleted = !data.expandCompleted"
-          >{{ $t('IRONSWORN.Completed') }}</btn-faicon
-        >
-      </h3>
-      <CollapseTransition
-        tag="div"
-        class="nogrow completed"
-        style="margin: 0; padding: 0"
-      >
-        <div v-if="data.expandCompleted">
-          <CollapseTransition tag="div" class="nogrow" group>
-            <div
-              class="flexrow"
-              v-for="(item, i) in completedItems"
-              :key="item._id"
-            >
-              <order-buttons
-                v-if="editMode"
-                :i="i"
-                :length="completedItems.length"
-                @sortUp="completedSortUp"
-                @sortDown="completedSortDown"
-              />
-              <progress-list-item
-                :item="item"
-                :showStar="progressStars"
-                :compact-progress="compactProgress"
-              />
-            </div>
-          </CollapseTransition>
-        </div>
-      </CollapseTransition>
-    </div>
-  </div>
+  <article class="flexcol">
+    <ProgressList
+      class="ironsworn__drop__target"
+      data-drop-type="progress"
+      :excludedSubtypes="['bond']"
+      :showStar="progressStars"
+      :showCompleted="'no-completed'"
+      ref="activeProgressList"
+    />
+    <ProgressControls class="nogrow" :foeCompendium="foeCompendium" />
+    <Collapsible
+      :toggleLabel="$t('IRONSWORN.Completed')"
+      :disabled="!activeProgressList?.actorHasCompletedItems"
+      class="progress-completed nogrow"
+      style=""
+      :class="$style.completedProgressWrapper"
+      toggleButtonClass="clickable text"
+      :baseId="`${actor._id}_progress-completed`"
+      toggleWrapperIs="h3"
+    >
+      <ProgressList
+        :showCompleted="'completed-only'"
+        :excludedSubtypes="['bond']"
+        :showStar="props.progressStars"
+        :progressListItemClass="$style.completedProgressListItem"
+        :class="`${$style.progressList} ${$style.completedProgressList}`"
+        ref="completeProgressList"
+      />
+    </Collapsible>
+  </article>
 </template>
 
-<style lang="less">
-.progress-completed {
-  .collapse-control {
-    text-transform: uppercase;
-    height: inherit;
-    width: inherit;
-    flex-grow: 1;
-  }
-  h3 {
-    display: flex;
-  }
-  .highlighted {
-    background-color: lightyellow;
-  }
+<style lang="less" module>
+.completedProgressWrapper {
+  margin-top: var(--ironsworn-spacer-lg);
+  border-radius: var(--ironsworn-border-radius-lg);
+  border-width: var(--ironsworn-border-width-md);
+  border-color: var(--ironsworn-color-fg-10);
+  background-color: var(--ironsworn-color-fg-10);
+  border-style: solid;
 }
-</style>
-
-<style lang="less" scoped>
-h3 {
-  margin: 5px 0;
-  transition: background-color 0.2s ease;
-  i {
-    width: 15px;
-    text-align: center;
-  }
-
-  &.highlighted {
-    background-color: lightyellow;
-  }
+.completedProgressList {
+  margin: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
+}
+.completedProgressListItem {
+  background-color: var(--ironsworn-color-bg-50);
+  border-color: var(--ironsworn-color-bg-50);
 }
 </style>
 
 <script setup lang="ts">
-import { computed, inject, reactive, Ref } from 'vue'
-import { $ActorKey, ActorKey } from '../provisions'
-import OrderButtons from './order-buttons.vue'
-import ProgressListItem from './progress/progress-list-item.vue'
+import { computed, inject, ref, Ref } from 'vue'
+import { ActorKey } from '../provisions'
 import ProgressControls from './progress-controls.vue'
-import BtnFaicon from './buttons/btn-faicon.vue'
 import { IronswornSettings } from '../../helpers/settings'
-import { compact } from 'lodash'
-import { IronswornItem } from '../../item/item'
-import {
-  ProgressDataProperties,
-  ProgressDataPropertiesData,
-} from '../../item/itemtypes'
-import CollapseTransition from './transition/collapse-transition.vue'
+import Collapsible from './collapsible/collapsible.vue'
+import ProgressList from './progress-list.vue'
 
 const props = defineProps<{
   exclude?: string
@@ -126,80 +66,15 @@ const props = defineProps<{
   compactProgress?: boolean
 }>()
 
-const data = reactive({
-  expandCompleted: false,
-  highlightCompleted: false,
-})
+let completeProgressList = ref<InstanceType<typeof ProgressList>>()
+// completeProgressList doesn't always exist, so we use the always-on component to check if there's completed items of the correct subtype
+let activeProgressList = ref<InstanceType<typeof ProgressList>>()
 
 const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
-
-const excludedSubtypes = compact([props.exclude])
-const progressItems = computed(() => {
-  return actor.value.items
-    .filter((x) => x.type === 'progress')
-    .filter((x) => !excludedSubtypes.includes(x.system.subtype))
-    .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-})
-const activeItems = computed(() => {
-  return progressItems.value.filter((x) => !x.system.completed)
-})
-const completedItems = computed(() => {
-  return progressItems.value.filter((x) => x.system.completed)
-})
-const editMode = computed(() => {
-  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
-})
-const completedCaret = computed(() => {
-  return data.expandCompleted ? 'caret-down' : 'caret-right'
-})
-const completedClass = computed(() => {
-  return data.highlightCompleted ? 'highlighted' : undefined
-})
-
-let highlightCompletedTimer: NodeJS.Timer | undefined
-function progressCompleted() {
-  data.highlightCompleted = true
-  clearTimeout(highlightCompletedTimer)
-  highlightCompletedTimer = setTimeout(() => {
-    data.highlightCompleted = false
-  }, 2000)
-}
 
 const foeCompendium = computed(() => {
   return IronswornSettings.starforgedToolsEnabled
     ? 'starforgedencounters'
     : 'ironswornfoes'
 })
-
-async function applySort(oldI, newI, sortBefore, filterFn) {
-  const foundryItems = ($actor?.items ?? [])
-    .filter((x) => x.type === 'progress')
-    .filter(
-      (x) =>
-        !excludedSubtypes.includes(
-          (x.system as ProgressDataPropertiesData).subtype
-        )
-    )
-    .filter(filterFn)
-    .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-  const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {
-    target: (foundryItems ?? [])[newI],
-    siblings: foundryItems,
-    sortBefore,
-  })
-  await Promise.all(updates.map(({ target, update }) => target.update(update)))
-}
-function sortUp(i) {
-  applySort(i, i - 1, true, (x) => !x.system.completed)
-}
-function sortDown(i) {
-  applySort(i, i + 1, false, (x) => !x.system.completed)
-}
-function completedSortUp(i) {
-  applySort(i, i - 1, true, (x) => x.system.completed)
-}
-function completedSortDown(i) {
-  applySort(i, i + 1, false, (x) => x.system.completed)
-}
 </script>

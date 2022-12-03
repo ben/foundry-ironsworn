@@ -1,9 +1,3 @@
-.prosemirror button,
-.tox .tox-tbtn--bespoke {
-  .clickableBlockMixin();
-  border-radius: var(--ironsworn-border-radius-md);
-}
-
 .ironsworn {
   button {
     margin: 0;
@@ -12,6 +6,8 @@
 
 .entity-link,
 .content-link,
+// the following selector is a proxy for compendium links which don't have a class attached to them.
+// ideally, all of them would share an identifying data attribute that could be selected for -- something like 'data-action', maybe?
 a[data-pack][data-uuid] {
   .clickableBlockMixin();
   filter: none;
@@ -27,6 +23,7 @@ a[data-pack][data-uuid] {
   &:hover {
     background-color: var(--ironsworn-color-bg-50);
     color: var(--ironsworn-color-fg-warm);
+    text-shadow: none;
   }
   i,
   &:before {

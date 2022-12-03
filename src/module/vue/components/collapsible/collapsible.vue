@@ -6,6 +6,7 @@
     :aria-expanded="state.expanded"
     :tabindex="-1"
     :aria-orientation="orientation"
+    :aria-disabled="disabled"
     ref="$wrapper"
   >
     <component
@@ -24,6 +25,7 @@
           :aria-controls="contentId"
           :icon="noIcon ? undefined : 'chevron-right'"
           @click="toggle"
+          :disabled="disabled"
           :class="[
             $style.toggle,
             toggleButtonClass,

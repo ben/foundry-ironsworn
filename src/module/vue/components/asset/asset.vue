@@ -1,6 +1,6 @@
 <template>
   <article
-    class="item-row ironsworn__asset"
+    class="ironsworn__asset"
     :class="{
       [`asset-${$actor?.toolset}`]: true,
       [$style.themeColor]: props.asset?.system?.color,

@@ -1,47 +1,21 @@
-@import '../mixins.less';
-@import 'palettize.less';
+// Light theme for Ironsworn, with minimal restyling of FVTT's stock UI.
 
 .system-foundry-ironsworn.theme-ironsworn {
-  .palettize(ironsworn-color,black, white, #ff6600, #ff0000);
-  // #ff6600 corresponds to FVTT vars --color-border-highlight,--color-shadow-highlight
-  // #ff0000 corresponds to FVTT vars --color-border-highlight-cool, --color-shadow-primary
+  @import (reference) './mixins/colors.less';
+  @import (reference) './mixins/palettize.less';
+  // #ff6600 and #ff0000 chosen because they're what FVTT uses for similar accents.
+  .palettize(ironsworn-color, #000000, #ffffff, #ff6600, #ff0000);
+  .ironswornLightThemeMixin(ironsworn-color);
+  .sharpBorderMixin(ironsworn-color);
+  .interactiveInvertMixin(ironsworn-color-clickable-block,ironsworn-color);
 
   --ironsworn-color-text-stroke: transparent;
-  --ironsworn-color-border: var(--ironsworn-color-fg);
-  --ironsworn-color-border-muted: var(--ironsworn-color-fg-muted);
 
-  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-fg);
-  --ironsworn-color-clickable-block-bg: transparent;
-  --ironsworn-color-clickable-block-border: var(--ironsworn-color-border);
-
-  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-dark);
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-dark-20);
-  --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-border);
-
-  --ironsworn-color-clickable-block-fg-selected: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-block-bg-selected: var(--ironsworn-color-dark);
-  --ironsworn-color-clickable-block-border-selected: var(
-    --ironsworn-color-dark
-  );
-
-  --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-dark-warm);
-  --ironsworn-color-clickable-text-selected: var(--ironsworn-color-dark-warm);
-
+  // CLICKABLE TEXT: HOVER FILTER EFFECT
   --ironsworn-filter-highlight: drop-shadow(
     0 0 3px var(--ironsworn-color-cool)
   );
 
-  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
-  --ironsworn-input-border-style: solid;
-
-  //  can this be removed?
-  input.highlight:focus {
-    background-color: var(--ironsworn-color-fg);
-    color: var(--ironsworn-color-bg);
-  }
-
-  .asset-ironsworn .asset-ability:before {
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
-  }
+  @import (reference) './mixins/decorations.less';
+  .ironswornDecorationMixin();
 }

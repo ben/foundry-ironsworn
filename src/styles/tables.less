@@ -1,17 +1,23 @@
 @import 'mixins.less';
 
-.oracle-table {
-  border-top: 1px solid var(--ironsworn-color-border);
-  border-bottom: 1px solid var(--ironsworn-color-border);
+// general table styles
+table {
+  border-top: var(--ironsworn-border-width-md) solid
+    var(--ironsworn-color-border);
+  border-bottom: var(--ironsworn-border-width-md) solid
+    var(--ironsworn-color-border);
   border-width: var(--ironsworn-border-width-md);
   background: var(--ironsworn-color-fg-10);
   thead {
     border-color: var(--ironsworn-color-border-muted);
   }
-
   tr:nth-child(even) {
     background-color: var(--ironsworn-color-fg-10);
   }
+}
+
+// oracle table specific styles
+.oracle-table {
   .oracle-table-column-result-text {
     a.entity-link {
       .clickableTextMixin();
@@ -19,7 +25,6 @@
       background: none !important;
     }
   }
-
   td,
   th {
     // hack that forces the roll range column to its minimum size
@@ -28,6 +33,12 @@
       width: 1%;
       white-space: nowrap;
       padding-right: calc(var(--ironsworn-spacer-md) * 2);
+    }
+  }
+  .oracle-result-row {
+    &.selected,
+    &[aria-selected='true'] {
+      .staticHighlightMixin(20);
     }
   }
 }

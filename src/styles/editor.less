@@ -1,0 +1,80 @@
+// styles for TinyMCE and ProseMirror editors
+
+// Editors: shared styles
+.editor,
+.editor-content {
+  min-height: 100px;
+}
+.editor {
+  border: var(--ironsworn-border-width-md) solid
+    var(--ironsworn-color-input-border);
+  background: var(--ironsworn-color-input-bg);
+  border-radius: var(--ironsworn-border-radius-lg);
+  caret-color: var(--ironsworn-color-fg-highlight);
+  .tab & {
+    margin-top: var(--ironsworn-spacer-sm);
+  }
+}
+.editor-edit {
+  .clickableBlockMixin();
+  background-color: var(--ironsworn-color-bg);
+  border-radius: var(--ironsworn-border-radius-md);
+}
+
+// Editor custom select elements
+.prosemirror button,
+.tox .tox-tbtn--bespoke {
+  .clickableBlockMixin();
+  border-radius: var(--ironsworn-border-radius-md);
+}
+
+// Editors: ProseMirror
+
+.ProseMirror {
+  .inputFieldMixin();
+  padding: 0.5rem;
+}
+
+// Editors: TinyMCE
+.tox {
+  :not(svg):not(rect) {
+    color: var(--ironsworn-color-fg);
+  }
+  &:not(.tox-tinymce-inline) .tox-editor-header {
+    border-bottom: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border-muted);
+  }
+  .tox-toolbar-overlord,
+  .tox-toolbar__primary,
+  &:not(.tox-tinymce-inline) .tox-editor-header {
+    color: var(--ironsworn-color-fg);
+    background-color: var(--ironsworn-color-bg);
+  }
+  .tox-tbtn {
+    transition: var(--std-animation);
+    background-color: var(--ironsworn-color-clickable-block-bg);
+    svg {
+      fill: var(--ironsworn-color-clickable-block-fg);
+    }
+    &:hover {
+      background-color: var(--ironsworn-color-clickable-block-bg-hover);
+      svg {
+        fill: var(--ironsworn-color-clickable-block-fg-hover);
+      }
+    }
+    &[aria-pressed='true'] {
+      background-color: var(--ironsworn-color-clickable-block-bg-selected);
+      svg {
+        fill: var(--ironsworn-color-clickable-block-fg-selected);
+      }
+    }
+  }
+  .tox-tbtn--select {
+    .inputFieldMixin();
+    text-shadow: none;
+  }
+  .tox-collection--list {
+    .tox-collection__item--active {
+    }
+  }
+}

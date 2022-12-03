@@ -34,17 +34,26 @@ const classes = computed(() => ({
 <style lang="less">
 .icon-button {
   &.fa,
+  &.fa-brands,
+  &.fa-classic,
+  &.fa-duotone,
+  &.fa-light,
+  &.fa-regular,
+  &.fa-sharp,
+  &.fa-sharp-solid,
+  &.fa-solid,
+  &.fa-thin,
+  &.fab,
+  &.fad,
+  &.fal,
+  &.far,
   &.fas,
-  &.far {
-    &:not(:before) {
-      -moz-osx-font-smoothing: inherit;
-      -webkit-font-smoothing: inherit;
-      display: inherit;
-      font-style: inherit;
-      font-variant: inherit;
-      text-rendering: inherit;
-      line-height: inherit;
-      font-family: inherit;
+  &.fass,
+  &.fat {
+    &:empty {
+      &:before {
+        padding: 0;
+      }
     }
   }
 }

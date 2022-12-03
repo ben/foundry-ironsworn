@@ -21,6 +21,7 @@
       <CollapseTransition>
         <RulesTextOracle
           v-if="state.descriptionExpanded"
+          :class="$style.oracleContent"
           @moveclick="moveclick"
           @oracleclick="oracleclick"
           :oracle-table="node.tables[0]"
@@ -60,12 +61,15 @@
   </div>
 </template>
 
+<style lang="less" module>
+.oracleContent {
+  margin: var(--ironsworn-spacer-sm);
+}
+</style>
+
 <style lang="less" scoped>
 .show-oracle-info {
-  &:before {
-    padding-left: 0;
-    padding-right: 0;
-  }
+  padding: 4px;
 }
 .movesheet-row {
   transition: all 0.4s ease;

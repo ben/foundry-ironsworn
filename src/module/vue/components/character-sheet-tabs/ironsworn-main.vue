@@ -7,7 +7,10 @@
 
         <hr class="nogrow" />
         <!-- Assets -->
-        <div class="flexcol ironsworn__drop__target" data-drop-type="asset">
+        <div
+          class="flexcol ironsworn__drop__target item-list"
+          data-drop-type="asset"
+        >
           <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
           <CollapseTransition tag="div" class="nogrow" group>
@@ -19,7 +22,7 @@
                 @sortUp="assetSortUp"
                 @sortDown="assetSortDown"
               />
-              <Asset :asset="asset" />
+              <Asset :asset="asset" class="item-row" />
             </div>
           </CollapseTransition>
           <div class="flexrow nogrow" style="text-align: center">
