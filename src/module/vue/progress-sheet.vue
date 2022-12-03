@@ -122,30 +122,32 @@
     <!-- DESCRIPTION -->
     <MceEditor v-model="item.system.description" @save="saveDescription" />
 
-    <button
-      class="button nogrow"
+    <BtnFaicon
+      class="nogrow block"
       :class="$style.danger"
-      type="button"
+      icon="trash"
       @click="destroy"
     >
       {{ $t('IRONSWORN.DeleteItem') }}
-    </button>
+    </BtnFaicon>
   </div>
 </template>
 
 <style lang="less" module>
-button.danger {
-  color: var(--ironsworn-color-danger);
-  border: 1px solid;
-  border-radius: 5px;
-  border-color: var(--ironsworn-color-danger);
-  transition: all ease 0.2s;
+.danger {
+  --ironsworn-color-clickable-block-border: var(--ironsworn-color-danger);
+  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-danger);
+  --ironsworn-color-clickable-block-bg: transparent;
 
-  &:hover {
-    background-color: var(--ironsworn-color-danger);
-    color: var(--ironsworn-color-danger-inverted);
-    border-color: var(--ironsworn-color-danger-inverted);
-  }
+  --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-danger);
+  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
+  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-danger);
+
+  margin: var(--ironsworn-spacer-md) 0 0;
+  color: var(--ironsworn-color-danger);
+  border-width: var(--ironsworn-border-width-lg);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-lg);
 }
 </style>
 

@@ -123,6 +123,7 @@
 .clickableTextMixin {
   --ironsworn-color-text-stroke: transparent;
   .interactiveMixin();
+  margin: 0;
   // .textStrokeMixin();
   background: transparent;
   color: var(--ironsworn-color-clickable-text);
@@ -235,6 +236,7 @@
 }
 
 .clickableBlockMixin(@blockSize:50px,) {
+  margin: 0;
   .blockMixin(@blockSize);
   &:hover,
   &.hover {
