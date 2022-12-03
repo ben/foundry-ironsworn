@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.1
+
 - Bring back progress-item stars in the SF character sheet
 - Fix a visual glitch with super-wide legacy tracks
 - Further polish to CSS and the site sheet ([#543](https://github.com/ben/foundry-ironsworn/pull/543))
