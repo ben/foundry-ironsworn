@@ -9,7 +9,7 @@
       />
     </section>
     <section
-      class="starred-progress-tracks nogrow"
+      class="starred-progress-tracks flexcol nogrow"
       v-if="starredProgresses.length"
     >
       <ProgressListItem
@@ -22,14 +22,14 @@
   </article>
 </template>
 <style lang="less">
-@gap: 0.5em;
 .sf-legacies {
-  gap: @gap;
+  gap: var(--ironsworn-spacer-md);
   > *:not(:first-child) {
     border-top: 1px solid;
   }
   .starred-progress-tracks {
-    padding: @gap 0;
+    padding: var(--ironsworn-spacer-md) 0;
+    gap: var(--ironsworn-spacer-md);
   }
 }
 </style>
