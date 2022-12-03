@@ -5,11 +5,11 @@
       :excludedSubtypes="['bond']"
       :showStar="progressStars"
       :showCompleted="'no-completed'"
-      ref="$progressList"
+      ref="activeProgressList"
     />
     <Collapsible
       :toggleLabel="$t('IRONSWORN.Completed')"
-      :disabled="$completedProgressList?.progressItems?.length === 0"
+      :disabled="!activeProgressList?.actorHasCompletedItems"
       class="progress-completed nogrow"
       style=""
       :class="$style.completedProgressWrapper"
@@ -23,7 +23,7 @@
         :showStar="props.progressStars"
         :progressListItemClass="$style.completedProgressListItem"
         :class="`${$style.progressList} ${$style.completedProgressList}`"
-        ref="$completedProgressList"
+        ref="completeProgressList"
       />
     </Collapsible>
   </article>
@@ -64,10 +64,9 @@ const props = defineProps<{
   compactProgress?: boolean
 }>()
 
-const $completedProgressList = ref<InstanceType<typeof ProgressList> | null>(
-  null
-)
-const $progressList = ref<InstanceType<typeof ProgressList> | null>(null)
+let completeProgressList = ref<InstanceType<typeof ProgressList>>()
+// completeProgressList doesn't always exist, so we use the always-on component to check if there's completed items of the correct subtype
+let activeProgressList = ref<InstanceType<typeof ProgressList>>()
 
 const actor = inject(ActorKey) as Ref
 

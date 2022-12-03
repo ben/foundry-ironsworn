@@ -61,9 +61,13 @@ const data = reactive({
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
-function isValidProgressItem(item: any) {
+function isValidProgressItem(
+  item: any,
+  showCompleted: typeof props.showCompleted = props.showCompleted,
+  excludedSubtypes: typeof props.excludedSubtypes = props.excludedSubtypes
+) {
   if (item.type === 'progress') {
-    switch (props.showCompleted) {
+    switch (showCompleted) {
       case 'completed-only': {
         if (!item.system.completed) {
           return false
@@ -79,7 +83,7 @@ function isValidProgressItem(item: any) {
       default:
         break
     }
-    if ((props.excludedSubtypes ?? []).includes(item.system.subtype)) {
+    if ((excludedSubtypes ?? []).includes(item.system.subtype)) {
       return false
     }
     return true
@@ -87,10 +91,23 @@ function isValidProgressItem(item: any) {
   return false
 }
 
+/**
+ * Whether the injected actor has progress items (of the allows subtype) that are marked complete.
+ */
+const actorHasCompletedItems = computed(() => {
+  const hasThem = actor.value.items.some((item) =>
+    isValidProgressItem(item, 'completed-only')
+  )
+  console.log('hasThem', hasThem)
+  return hasThem
+})
+
 const progressItems = computed(() => {
-  return actor.value.items
+  const items = actor.value.items
     .filter((item) => isValidProgressItem(item))
     .sort((a, b) => (a.sort || 0) - (b.sort || 0)) as any[]
+  console.log('ProgressList.progressItems (parent)', items)
+  return items ?? []
 })
 
 const editMode = computed(() => {
@@ -130,5 +147,6 @@ defineExpose({
   sortUp,
   sortDown,
   progressItems,
+  actorHasCompletedItems,
 })
 </script>
