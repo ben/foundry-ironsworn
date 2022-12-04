@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Updated aesthetics for drop targets ([#547](https://github.com/ben/foundry-ironsworn/pull/547))
+
 ## 1.20.1
 
 - Bring back progress-item stars in the SF character sheet
