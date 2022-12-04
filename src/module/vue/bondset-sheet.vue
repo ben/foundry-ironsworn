@@ -34,7 +34,9 @@
         />
       </div>
 
-      <div v-else>(no bond selected)</div>
+      <div v-else class="flexcol">
+        <h1 class="flexrow no-bonds">No bonds</h1>
+      </div>
     </div>
   </div>
 </template>
@@ -50,6 +52,13 @@
       color: var(--ironsworn-color-midtone-50);
     }
   }
+}
+
+.no-bonds {
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+  background-color: var(--ironsworn-color-input-bg);
 }
 </style>
 
