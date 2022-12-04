@@ -1,51 +1,129 @@
 <template>
-  <div class="flexcol">
-    <CollapseTransition group>
-      <article
-        class="item-row nogrow flexrow"
-        v-for="(bond, i) in item.system.bonds"
-        style="gap: 5px"
-        :key="'bond' + i"
+  <div class="flexrow" style="gap: 10px">
+    <!-- TABS -->
+    <div class="flexcol" style="flex-basis: 10em">
+      <div
+        v-for="(bond, i) in bonds"
+        :key="`bond${i}`"
+        class="clickable block nogrow tab flexrow"
+        :class="{ selected: data.selectedBondIndex == i }"
+        @click="selectBondIndex(i)"
       >
-        <div class="flexcol" style="gap: 5px">
-          <input type="text" v-model="bond.name" @blur="save" />
-          <textarea v-model="bond.notes" @blur="save" />
-        </div>
-        <BtnFaicon class="block nogrow" icon="trash" @click="deleteBond(i)" />
-      </article>
-    </CollapseTransition>
-    <BtnFaicon class="block nogrow" icon="plus" @click="addBond" />
+        <span>{{ i + 1 }}. {{ bond.name }}</span>
+        <BtnFaicon class="nogrow block" icon="trash" @click="deleteBond(i)" />
+      </div>
+
+      <BtnFaicon
+        class="block nogrow"
+        icon="plus"
+        style="flex: 0; width: 100%"
+        @click="addBond"
+      />
+    </div>
+
+    <!-- EDITORS -->
+    <div class="flexcol" style="flex-basis: 25em">
+      <div class="flexcol" v-if="data.selectedBondIndex >= 0">
+        <h1 class="nogrow">
+          <input v-model="data.currentBondName" type="text" @blur="save" />
+        </h1>
+        <MceEditor
+          v-model="data.currentBondNotes"
+          :editing="true"
+          @save="save"
+        />
+      </div>
+
+      <div v-else class="flexcol">
+        <h1 class="flexrow no-bonds">{{ $t('IRONSWORN.NoBonds') }}</h1>
+      </div>
+    </div>
   </div>
 </template>
+
+<style lang="less" scoped>
+.clickable.block {
+  border-style: none;
+  line-height: 25px;
+  padding: 5px;
+  .selected & {
+    color: var(--ironsworn-color-clickable-block-fg-selected);
+    &:hover {
+      color: var(--ironsworn-color-midtone-50);
+    }
+  }
+}
+
+.no-bonds {
+  flex: 1;
+  justify-content: center;
+  align-content: center;
+  background-color: var(--ironsworn-color-input-bg);
+}
+</style>
+
 <script setup lang="ts">
-import { computed, inject, provide } from 'vue'
+import { computed, inject, provide, reactive, watch, ref } from 'vue'
 import { $ItemKey, ItemKey } from './provisions'
-import BtnFaicon from '../vue/components/buttons/btn-faicon.vue'
 import { BondsetDataPropertiesData } from '../item/itemtypes'
-import CollapseTransition from './components/transition/collapse-transition.vue'
+import BtnFaicon from '../vue/components/buttons/btn-faicon.vue'
+import MceEditor from './components/mce-editor.vue'
 
 const props = defineProps<{ item: any }>()
 provide(ItemKey, computed(() => props.item) as any)
 
 const $item = inject($ItemKey)
 
-function deleteBond(i) {
-  const data = props.item.system as BondsetDataPropertiesData
-  const bonds = Object.values(data.bonds)
-  bonds.splice(i, 1)
-  $item?.update({ system: { bonds } })
+const bonds = computed(
+  () => (props.item.system as BondsetDataPropertiesData).bonds
+)
+
+const data = reactive({
+  selectedBondIndex: -1,
+  currentBondName: '',
+  currentBondNotes: '',
+})
+if (bonds.value?.length > 0) {
+  console.log('setting to 0')
+  data.selectedBondIndex = 0
+}
+watch(data, (...args) => {
+  console.log(args)
+})
+
+function selectBondIndex(i: number) {
+  console.log(`Selecting bond index ${i}`)
+  data.selectedBondIndex = i
+  if (i >= 0) {
+    data.currentBondName = bonds.value?.[i]?.name
+    data.currentBondNotes = bonds.value?.[i]?.notes
+  }
 }
 
-function addBond() {
-  const data = props.item.system as BondsetDataPropertiesData
-  const bonds = Object.values(data.bonds)
+async function deleteBond(i) {
+  const system = props.item.system as BondsetDataPropertiesData
+  const bonds = Object.values(system.bonds)
+  bonds.splice(i, 1)
+  await $item?.update({ system: { bonds } })
+
+  if (data.selectedBondIndex == i) selectBondIndex(i - 1)
+}
+
+async function addBond() {
+  const system = props.item.system as BondsetDataPropertiesData
+  const bonds = Object.values(system.bonds)
   bonds.push({ name: '', notes: '' })
-  $item?.update({ system: { bonds } })
+  await $item?.update({ system: { bonds } })
+  selectBondIndex(bonds.length - 1)
 }
 
 function save() {
-  const data = props.item.system as BondsetDataPropertiesData
-  const bonds = Object.values(data.bonds)
-  $item?.update({ system: { bonds } })
+  const localBonds = bonds.value
+  const currentBond = localBonds[data.selectedBondIndex]
+  if (currentBond) {
+    currentBond.name = data.currentBondName
+    currentBond.notes = data.currentBondNotes
+  }
+  $item?.update({ system: { bonds: localBonds } })
 }
 </script>

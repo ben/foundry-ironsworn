@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Updated bondset editor ([#546](https://github.com/ben/foundry-ironsworn/pull/546))
 - Updated aesthetics for drop targets ([#547](https://github.com/ben/foundry-ironsworn/pull/547))
 
 ## 1.20.1

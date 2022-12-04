@@ -98,6 +98,7 @@
     "Asset": "Asset",
     "Assets": "Assets",
     "Bonds": "Bonds",
+    "NoBonds": "No Bonds",
     "Bond": "Bond",
     "Legacies": "Legacies",
     "Clock": "Clock",
