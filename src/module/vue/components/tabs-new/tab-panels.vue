@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 /**
- * Container for {@link TabPanel} components. Should be descended from a {@link Tabs} component, and sibling to a {@link TabList} component.
+ * Container for {@link TabPanel} components. Should be descended from a {@link TabSet} component, and sibling to a {@link TabList} component.
  */
 defineProps()
 </script>

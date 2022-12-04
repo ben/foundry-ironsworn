@@ -13,6 +13,22 @@
   // TODO:
   // * styling for horizontal and vertical use
   // * fun slidey animation by applying some kind of border stroke or background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-grow: 0;
+  height: max-content;
+
+  &[aria-orientation='horizontal'] {
+    border-block-end: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
+  }
+  &[aria-orientation='vertical'] {
+    border-inline-start: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
+    border-inline-end: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
+  }
 }
 </style>
 
@@ -29,7 +45,7 @@ import {
 } from './tab-helpers.js'
 
 /**
- * The container for individual {@link Tab} elements. Should be descended from a {@link Tabs} element (which should itself have a {@link TabPanels} descendant).
+ * The container for individual {@link Tab} elements. Should be descended from a {@link TabSet} element (which should itself have a {@link TabPanels} descendant).
  */
 defineProps()
 

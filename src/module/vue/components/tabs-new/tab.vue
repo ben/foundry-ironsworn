@@ -3,6 +3,7 @@
     ref="$el"
     role="tab"
     type="button"
+    :class="$style.tab"
     :aria-disabled="disabled"
     :aria-selected="isActive"
     :aria-controls="`tabs--${tabState?._id}--panel--${index}`"
@@ -14,6 +15,22 @@
     <slot></slot>
   </button>
 </template>
+<style lang="less" module>
+.tab {
+  border-radius: 0;
+  border: 0;
+  flex: 1 1 0;
+  text-align: center;
+  height: 100%;
+  overflow-y: auto;
+  padding: 5px;
+  gap: 0.25em;
+  justify-content: center;
+  &:before {
+    font-size: 140%;
+  }
+}
+</style>
 
 <script lang="ts" setup>
 // TODO: figure out the nicest way to implement adding an icon.
@@ -38,7 +55,7 @@ import {
 const props = withDefaults(
   defineProps<{
     /**
-     * The tab's index must match the index of a `TabPanel`.
+     * The tab's index must match the index of a {@link TabPanel}.
      */
     index: number
     disabled?: boolean

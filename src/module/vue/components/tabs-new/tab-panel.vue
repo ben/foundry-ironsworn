@@ -14,6 +14,8 @@
 
 <style lang="less" module>
 .tabPanel {
+  margin: 0.5rem;
+  flex: 1;
 }
 </style>
 
@@ -31,7 +33,7 @@ import {
  */
 const props = defineProps<{
   /**
-   * The index must match that of a {@link Tab} with the same parent {@link Tabs} element.
+   * The index must match that of a {@link Tab} with the same parent {@link TabSet} element.
    */
   index: number
 }>()

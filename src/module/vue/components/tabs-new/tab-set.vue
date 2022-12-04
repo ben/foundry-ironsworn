@@ -1,11 +1,12 @@
 <template>
-  <div :class="$style.tabs">
+  <div :class="$style.tabSet">
     <slot></slot>
   </div>
 </template>
 
 <style lang="less" module>
-.tabs {
+.tabSet {
+  // FIXME: consider renaming as something less ambiguous e.g. TabSet ?
 }
 </style>
 
