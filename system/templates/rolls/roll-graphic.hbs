@@ -8,7 +8,7 @@
     {{/if}}
     <span
       class="action-die die action roll d6 isiconbg-d6-blank {{actionMinMax}} {{#unless computedActionDie.value}}indeterminate-value{{/unless}}"
-      title="{{computedActionDie.source}}">
+      data-tooltip="{{computedActionDie.source}}">
       {{#if computedActionDie.value}}
       {{computedActionDie.value}}
       {{else}}
@@ -21,19 +21,19 @@
 
   {{#each adds}}
   <span class="math-symbol">&plus;</span>
-  <span title="{{source}}" class="action-roll-add">{{value}}</span>
+  <span data-tooltip="{{source}}" class="action-roll-add">{{value}}</span>
   {{/each}}
 
   {{#unless adds.[1]}}
   <span class="math-symbol">&plus;</span>
-  <span title="{{source}}" class="action-roll-add">0</span>
+  <span data-tooltip="{{source}}" class="action-roll-add">0</span>
   {{/unless}}
   <span class="math-symbol">&equals;</span>
   {{/unless}}
 
   <span
     class="score {{#if actionScoreCapped}}action-score-capped{{/if}} {{#unless score}}indeterminate-value{{/unless}}"
-    title="{{#if actionScoreCapped}}{{localize 'IRONSWORN.CappedAt10'}}{{/if}}">
+    data-tooltip="{{#if actionScoreCapped}}{{localize 'IRONSWORN.CappedAt10'}}{{/if}}">
     {{#if score}}
     {{score}}
     {{else}}
@@ -49,7 +49,7 @@
     {{#each challengeDice}}
     <span
       class="roll die isiconbg-d10-blank d10 challenge challenge-die {{minmax}} {{#unless value}}indeterminate-value{{/unless}}"
-      title="{{source}}">
+      data-tooltip="{{source}}">
       {{#if value}}
       {{value}}
       {{else}}
