@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Updated bondset editor ([#546](https://github.com/ben/foundry-ironsworn/pull/546))
+
 ## 1.20.1
 
 - Bring back progress-item stars in the SF character sheet
