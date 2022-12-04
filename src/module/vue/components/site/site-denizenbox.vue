@@ -1,7 +1,7 @@
 <template>
   <DropTarget
     dropType="progress"
-    is="dif"
+    is="div"
     class="box flexrow ironsworn__denizen__drop"
     :data-idx="idx"
   >
