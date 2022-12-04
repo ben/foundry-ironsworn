@@ -9,4 +9,9 @@
 }
 </style>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+/**
+ * Container for {@link TabPanel} components. Should be descended from a {@link Tabs} component, and sibling to a {@link TabList} component.
+ */
+defineProps()
+</script>

@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { clamp } from 'lodash'
-import { provide, reactive, useSlots } from 'vue'
+import { provide, reactive } from 'vue'
 import {
   FocusActivePanelKey,
   NextTabKey,
@@ -26,8 +26,9 @@ import {
   TabStateKey,
 } from './tab-helpers.js'
 
-const $slots = useSlots()
-
+/**
+ * The wrapper for tabbed displays, which controls tab focus and selection. Put a {@link TabList} (filled with {@link Tab}s) and a {@link TabPanels} (filled with {@link TabPanel}s) in it.
+ */
 const props = withDefaults(
   defineProps<{
     id: string

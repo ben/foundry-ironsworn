@@ -16,6 +16,8 @@
 </template>
 
 <script lang="ts" setup>
+// TODO: figure out the nicest way to implement adding an icon.
+
 import { computed, inject, ref, watch } from 'vue'
 import {
   FocusActivePanel,
@@ -30,6 +32,20 @@ import {
   TabStateKey,
 } from './tab-helpers.js'
 
+/**
+ * The index tab of a {@link TabPanel}. Should be descended from a {@link TabList}.
+ */
+const props = withDefaults(
+  defineProps<{
+    /**
+     * The tab's index must match the index of a `TabPanel`.
+     */
+    index: number
+    disabled?: boolean
+  }>(),
+  { disabled: false }
+)
+
 const tabState = inject(TabStateKey)
 const tabOrientation = inject(TabOrientationKey)
 const tabCount = inject(TabCountKey) as number
@@ -37,14 +53,6 @@ const setActiveTab = inject(SetActiveTabKey) as SetActiveTab
 const focusActivePanel = inject(FocusActivePanelKey) as FocusActivePanel
 const nextTab = inject(NextTabKey) as TabIndexIncrementer
 const previousTab = inject(PreviousTabKey) as TabIndexIncrementer
-
-const props = withDefaults(
-  defineProps<{
-    index: number
-    disabled?: boolean
-  }>(),
-  { disabled: false }
-)
 
 const isActive = computed(() => tabState?.activeTab === props.index)
 const isFocused = computed(() => tabState?.focusedTab === props.index)

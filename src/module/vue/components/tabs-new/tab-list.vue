@@ -10,6 +10,9 @@
 
 <style lang="less" module>
 .tabList {
+  // TODO:
+  // * styling for horizontal and vertical use
+  // * fun slidey animation by applying some kind of border stroke or background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.
 }
 </style>
 
@@ -24,6 +27,11 @@ import {
   TabState,
   TabStateKey,
 } from './tab-helpers.js'
+
+/**
+ * The container for individual {@link Tab} elements. Should be descended from a {@link Tabs} element (which should itself have a {@link TabPanels} descendant).
+ */
+defineProps()
 
 const tabState = inject(TabStateKey) as TabState
 const tabOrientation = inject(TabOrientationKey)
