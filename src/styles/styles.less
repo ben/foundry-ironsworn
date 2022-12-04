@@ -94,11 +94,11 @@
 
   .ironsworn {
     // import these to the theme apply it to FVTT's own dialogs and inputs as well.
+    @import 'inputs.less';
     @import (reference) './fvtt/dialog.less';
     &.dialog {
       .dialog();
     }
-    @import 'inputs.less';
 
     // stuff scoped to .ironsworn app windows only
     .window-content {
@@ -139,6 +139,7 @@
   @import 'clickable.less';
   @import 'dialog.less';
   @import 'dice.less';
+  @import 'drag-and-drop.less';
   @import 'editor.less';
   @import 'icons.less';
   @import 'list.less';
