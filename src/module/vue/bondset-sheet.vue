@@ -35,7 +35,7 @@
       </div>
 
       <div v-else class="flexcol">
-        <h1 class="flexrow no-bonds">No bonds</h1>
+        <h1 class="flexrow no-bonds">{{ $t('IRONSWORN.NoBonds') }}</h1>
       </div>
     </div>
   </div>
