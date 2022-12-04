@@ -11,14 +11,13 @@
 
 <script lang="ts" setup>
 import { clamp } from 'lodash'
-import { computed, provide, reactive, useSlots } from 'vue'
+import { provide, reactive, useSlots } from 'vue'
 import {
   FocusActivePanelKey,
   NextTabKey,
   Orientation,
   PreviousTabKey,
   SetActivePanelRefKey,
-  SetActiveTab,
   SetActiveTabKey,
   TabActivationMode,
   TabActivationModeKey,
@@ -49,8 +48,6 @@ const tabState = reactive<TabState>({
   focusedTab: null,
   _id: props.id,
 })
-
-const isManual = computed(() => props.tabActivationMode === 'manual')
 
 function setActivePanelRef(ref: HTMLElement) {
   tabState.activePanelRef = ref
