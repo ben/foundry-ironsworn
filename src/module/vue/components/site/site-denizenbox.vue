@@ -1,7 +1,8 @@
 <template>
-  <div
-    class="box flexrow ironsworn__denizen__drop ironsworn__drop__target"
-    data-drop-type="progress"
+  <DropTarget
+    dropType="progress"
+    is="div"
+    class="box flexrow ironsworn__denizen__drop"
     :data-idx="idx"
   >
     <label
@@ -26,7 +27,7 @@
       style="line-height: 26px"
       v-html="$enrichHtml(denizen.description)"
     />
-  </div>
+  </DropTarget>
 </template>
 
 <style lang="less" scoped>
@@ -40,6 +41,7 @@ import { reactive, Ref } from '@vue/reactivity'
 import { inject } from '@vue/runtime-core'
 import { computed, ref } from 'vue'
 import { SiteDataPropertiesData } from '../../../actor/actortypes'
+import DropTarget from '../../drop-target.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 const props = defineProps<{ idx: number }>()
