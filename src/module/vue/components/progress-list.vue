@@ -98,13 +98,12 @@ const actorHasCompletedItems = computed(() =>
   actor.value.items.some((item) => isValidProgressItem(item, 'completed-only'))
 )
 
-const progressItems = computed(() => {
-  const items = actor.value.items
-    .filter((item) => isValidProgressItem(item))
-    .sort((a, b) => (a.sort || 0) - (b.sort || 0)) as any[]
-  console.log('ProgressList.progressItems (parent)', items)
-  return items ?? []
-})
+const progressItems = computed(
+  () =>
+    (actor.value.items
+      .filter((item) => isValidProgressItem(item))
+      .sort((a, b) => (a.sort || 0) - (b.sort || 0)) as any[]) ?? []
+)
 
 const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
