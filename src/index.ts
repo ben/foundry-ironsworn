@@ -33,7 +33,6 @@ import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
 import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvethemeordomainsheet'
 import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
-import { ProgressSheet } from './module/item/progress/progresssheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 
 declare global {
@@ -139,10 +138,6 @@ Hooks.once('init', async () => {
     types: ['progress'],
     label: 'Progress sheet v2',
     makeDefault: true,
-  })
-  Items.registerSheet('ironsworn', ProgressSheet, {
-    types: ['progress'],
-    label: 'Progress Sheet',
   })
 
   // Register Handlebars helpers

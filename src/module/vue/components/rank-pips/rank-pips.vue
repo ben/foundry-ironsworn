@@ -8,7 +8,6 @@
       v-for="rank in ranks"
       :key="rank"
       @click="$emit('click', rank)"
-      :title="!versionHasTooltips ? $t(`IRONSWORN.${$capitalize(rank)}`) : ''"
       :data-tooltip="$t(`IRONSWORN.${$capitalize(rank)}`)"
       data-tooltip-direction="UP"
       type="button"
@@ -108,13 +107,6 @@ const pipStyle = computed(() =>
 )
 
 const ranks = Object.keys(RANKS)
-
-/**
- * Tests whether the client's version includes a tooltip API.
- */
-const versionHasTooltips = computed(
-  () => !!(game as { tooltip?: unknown }).tooltip
-)
 
 defineEmits(['click'])
 </script>
