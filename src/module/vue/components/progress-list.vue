@@ -94,13 +94,9 @@ function isValidProgressItem(
 /**
  * Whether the injected actor has progress items (of the allows subtype) that are marked complete.
  */
-const actorHasCompletedItems = computed(() => {
-  const hasThem = actor.value.items.some((item) =>
-    isValidProgressItem(item, 'completed-only')
-  )
-  console.log('hasThem', hasThem)
-  return hasThem
-})
+const actorHasCompletedItems = computed(() =>
+  actor.value.items.some((item) => isValidProgressItem(item, 'completed-only'))
+)
 
 const progressItems = computed(() => {
   const items = actor.value.items
