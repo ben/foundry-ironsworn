@@ -12,15 +12,13 @@ export function registerDragAndDropHooks() {
       .on(
         'dragstart',
         (ev: JQuery.DragStartEvent<unknown, unknown, unknown, HTMLElement>) => {
-          // Add a class to the potential targets
+          // Set data attribute on potential targets
           const indexEntry = getIndexEntry(ev.target) as ReturnType<
             typeof getIndexEntry
           > & { type: string }
           $(document)
-            .find(
-              `.ironsworn__drop__target[data-drop-type="${indexEntry?.type}"]`
-            )
-            .addClass('drag-highlight')
+            .find(`[data-ironsworn-drop-type="${indexEntry?.type}"]`)
+            .attr('data-ironsworn-drop-active', 'true')
         }
       )
       .on(
@@ -29,11 +27,10 @@ export function registerDragAndDropHooks() {
           const indexEntry = getIndexEntry(ev.target) as ReturnType<
             typeof getIndexEntry
           > & { type: string }
+
           $(document)
-            .find(
-              `.ironsworn__drop__target[data-drop-type="${indexEntry?.type}"]`
-            )
-            .removeClass('drag-highlight')
+            .find(`[data-ironsworn-drop-type="${indexEntry?.type}"]`)
+            .attr('data-ironsworn-drop-active', 'false')
         }
       )
   })

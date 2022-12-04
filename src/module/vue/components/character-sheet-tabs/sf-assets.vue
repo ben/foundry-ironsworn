@@ -1,7 +1,8 @@
 <template>
-  <article
-    class="sf-assets ironsworn__drop__target flexcol"
-    data-drop-type="asset"
+  <DropTarget
+    dropType="asset"
+    is="article"
+    class="sf-assets flexcol"
     :class="$style.wrapper"
   >
     <CollapseTransition
@@ -26,7 +27,7 @@
         {{ $t('IRONSWORN.Assets') }}
       </BtnFaicon>
     </section>
-  </article>
+  </DropTarget>
 </template>
 
 <style lang="less" module>
@@ -47,6 +48,7 @@ import BtnFaicon from '../buttons/btn-faicon.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import CollapseTransition from '../transition/collapse-transition.vue'
+import DropTarget from '../../drop-target.vue'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)

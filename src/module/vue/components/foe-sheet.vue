@@ -33,11 +33,12 @@
       <!-- <div v-html="foeSystem.description" /> -->
     </div>
 
-    <div
+    <DropTarget
       v-else
-      class="flexcol ironsworn__drop__target"
-      data-drop-type="progress"
-      style="text-align: center; justify-items: space-around"
+      is="div"
+      dropType="progress"
+      class="flexcol"
+      :class="$style.dropTarget"
     >
       <BtnFaicon @click="addEmpty" class="block" icon="file">
         {{ $t('IRONSWORN.Progress') }}</BtnFaicon
@@ -48,14 +49,18 @@
       <BtnCompendium class="block" compendium="starforgedencounters"
         >{{ $t('IRONSWORN.Foes') }} (Starforged)</BtnCompendium
       >
-    </div>
+    </DropTarget>
   </div>
 </template>
 
-<style lang="less" scoped>
-.ironsworn__drop__target .clickable.block {
-  padding: 1rem;
-  flex-grow: 0;
+<style lang="less" module>
+.dropTarget {
+  text-align: center;
+  justify-items: space-around;
+  .clickable.block {
+    padding: 1rem;
+    flex-grow: 0;
+  }
 }
 </style>
 
@@ -73,6 +78,7 @@ import { RANKS, RANK_INCREMENTS } from '../../constants'
 import { ProgressDataPropertiesData } from '../../item/itemtypes'
 import { FoeDataProperties } from '../../actor/actortypes'
 import ProgressTrack from './progress/progress-track.vue'
+import DropTarget from '../drop-target.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject> &
