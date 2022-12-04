@@ -1,8 +1,8 @@
 <template>
   <article class="flexcol">
-    <ProgressList
-      class="ironsworn__drop__target"
-      data-drop-type="progress"
+    <DropTarget
+      :is="ProgressList"
+      dropType="progress"
       :excludedSubtypes="['bond']"
       :progress-stars="progressStars"
       :showCompleted="'no-completed'"
@@ -56,6 +56,7 @@ import ProgressControls from './progress-controls.vue'
 import { IronswornSettings } from '../../helpers/settings'
 import Collapsible from './collapsible/collapsible.vue'
 import ProgressList from './progress-list.vue'
+import DropTarget from '../drop-target.vue'
 
 const props = defineProps<{
   exclude?: string

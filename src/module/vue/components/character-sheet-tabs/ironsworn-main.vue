@@ -7,10 +7,7 @@
 
         <hr class="nogrow" />
         <!-- Assets -->
-        <div
-          class="flexcol ironsworn__drop__target item-list"
-          data-drop-type="asset"
-        >
+        <DropTarget is="div" dropType="asset" class="flexcol item-list">
           <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
           <CollapseTransition tag="div" class="nogrow" group>
@@ -34,7 +31,7 @@
               {{ $t('IRONSWORN.Assets') }}
             </BtnFaicon>
           </div>
-        </div>
+        </DropTarget>
       </section>
     </div>
     <ActiveCompletedProgresses :compactProgress="true" />
@@ -70,6 +67,7 @@ import BtnFaicon from '../buttons/btn-faicon.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import CollapseTransition from '../transition/collapse-transition.vue'
+import DropTarget from '../../drop-target.vue'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
