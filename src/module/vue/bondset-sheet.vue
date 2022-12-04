@@ -84,15 +84,10 @@ const data = reactive({
   currentBondNotes: '',
 })
 if (bonds.value?.length > 0) {
-  console.log('setting to 0')
-  data.selectedBondIndex = 0
+  selectBondIndex(0)
 }
-watch(data, (...args) => {
-  console.log(args)
-})
 
 function selectBondIndex(i: number) {
-  console.log(`Selecting bond index ${i}`)
   data.selectedBondIndex = i
   if (i >= 0) {
     data.currentBondName = bonds.value?.[i]?.name
@@ -106,7 +101,11 @@ async function deleteBond(i) {
   bonds.splice(i, 1)
   await $item?.update({ system: { bonds } })
 
-  if (data.selectedBondIndex == i) selectBondIndex(i - 1)
+  if (data.selectedBondIndex == i) {
+    i--
+    if (bonds.length > 0 && i < 0) i = 0
+    selectBondIndex(i)
+  }
 }
 
 async function addBond() {
