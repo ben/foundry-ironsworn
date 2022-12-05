@@ -1,5 +1,6 @@
 <template>
-  <button
+  <component
+    :is="is"
     ref="$el"
     role="tab"
     type="button"
@@ -13,7 +14,7 @@
     @keydown="handleKeydown"
   >
     <slot></slot>
-  </button>
+  </component>
 </template>
 <style lang="less" module>
 .tab {
@@ -59,8 +60,9 @@ const props = withDefaults(
      */
     index: number
     disabled?: boolean
+    is?: any
   }>(),
-  { disabled: false }
+  { disabled: false, is: 'button' }
 )
 
 const tabState = inject(TabStateKey)
