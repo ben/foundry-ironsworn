@@ -42,7 +42,7 @@ import TabList from './tab-list.vue'
 /**
  * The container for individual {@link Tab} elements. Should be descended from a {@link TabSet} element (which should itself have a {@link TabPanels} descendant).
  *
- * It automatically counts all children of its default slot as tabs.
+ * Theoretically the {@link Tab}s don't need to be *direct* children. However the number of direct children in this component's default slot should still be 1:1 with the number of tabs. In other words, its direct children should only be {@link Tab}s or other elements that wrap exactly one {@link Tab} descendant.
  */
 withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 const tabState = inject(TabStateKey) as TabState
@@ -56,16 +56,16 @@ function tabChildren(slot?: Slot) {
   if (!slot) {
     return []
   } else {
+    // TODO: figure out a more sophisticated way of doing this?
     return slot() ?? []
   }
 }
 
 const tabCount = computed(() => tabChildren($slots?.default).length)
+provide(TabCountKey, tabCount.value)
 
 const tabSetId = computed(() => tabState?._id)
 defineExpose({
   tabSetId: tabSetId.value,
 })
-
-provide(TabCountKey, tabCount.value)
 </script>
