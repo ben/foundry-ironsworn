@@ -29,15 +29,22 @@
           <attr-box attr="wits" />
         </div>
 
-        <tabs class="character-sheet-tabs" name="character-sheet-tabs">
-          <tab :title="$t('IRONSWORN.Legacies')">
-            <sf-legacies :actor="actor" />
-          </tab>
-          <tab :title="$t('IRONSWORN.Assets')"> <sf-assets /> </tab>
-          <tab :title="$t('IRONSWORN.Progress')"> <sf-progresses /> </tab>
-          <tab :title="$t('IRONSWORN.Connections')"> <sf-connections /> </tab>
-          <tab :title="$t('IRONSWORN.Notes')"> <sf-notes /> </tab>
-        </tabs>
+        <TabSet :id="`${actor._id}_sf-character-sheet`">
+          <TabList>
+            <Tab :index="0">{{ $t('IRONSWORN.Legacies') }}</Tab>
+            <Tab :index="1">{{ $t('IRONSWORN.Assets') }}</Tab>
+            <Tab :index="2">{{ $t('IRONSWORN.Progress') }}</Tab>
+            <Tab :index="3">{{ $t('IRONSWORN.Connections') }}</Tab>
+            <Tab :index="4">{{ $t('IRONSWORN.Notes') }}</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel :index="0"><SfLegacies /></TabPanel>
+            <TabPanel :index="1"><SfAssets /></TabPanel>
+            <TabPanel :index="2"><SfProgresses /></TabPanel>
+            <TabPanel :index="3"><SfConnections /></TabPanel>
+            <TabPanel :index="4"><SfNotes /></TabPanel>
+          </TabPanels>
+        </TabSet>
       </div>
 
       <!-- Stats on right -->
@@ -68,14 +75,6 @@
       }
     }
   }
-  .tabbed-panels.character-sheet-tabs {
-    [role^='tablist'],
-    [role*=' tablist'] {
-      &[aria-orientation='horizontal'] {
-        border-block-start: 0;
-      }
-    }
-  }
 }
 </style>
 
@@ -85,8 +84,6 @@ import AttrBox from './components/attr-box.vue'
 import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
 import SfConnections from './components/character-sheet-tabs/sf-connections.vue'
 import SfCharacterheader from './components/sf-characterheader.vue'
-import Tabs from './components/tabs/tabs.vue'
-import Tab from './components/tabs/tab.vue'
 import SfImpacts from './components/sf-impacts.vue'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
@@ -94,6 +91,11 @@ import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import { ActorKey } from './provisions.js'
 import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
 import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
+import TabSet from './components/tabs-new/tab-set.vue'
+import TabList from './components/tabs-new/tab-list.vue'
+import Tab from './components/tabs-new/tab.vue'
+import TabPanel from './components/tabs-new/tab-panel.vue'
+import TabPanels from './components/tabs-new/tab-panels.vue'
 
 const props = defineProps<{
   actor: any
