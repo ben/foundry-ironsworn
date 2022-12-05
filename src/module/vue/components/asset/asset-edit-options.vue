@@ -4,7 +4,7 @@
       <div
         class="form-group nogrow"
         style="gap: 5px"
-        v-for="(option, i) in item.data.exclusiveOptions"
+        v-for="(option, i) in item.system.exclusiveOptions"
         :key="`item${i}`"
       >
         <input

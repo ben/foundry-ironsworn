@@ -1,22 +1,26 @@
 <template>
   <div class="form-group nogrow">
     <label>{{ $t('IRONSWORN.Category') }}</label>
-    <input type="text" v-model="item.data.category" @blur="setCategory" />
+    <input type="text" v-model="item.system.category" @blur="setCategory" />
   </div>
 
   <div class="form-group nogrow">
     <label>{{ $t('IRONSWORN.Color') }}</label>
-    <input type="color" v-model="item.data.color" @change="setColor" />
+    <input type="color" v-model="item.system.color" @change="setColor" />
   </div>
 
   <div class="form-group nogrow">
     <label>{{ $t('IRONSWORN.Requirement') }}</label>
-    <input type="text" v-model="item.data.requirement" @blur="setRequirement" />
+    <input
+      type="text"
+      v-model="item.system.requirement"
+      @blur="setRequirement"
+    />
   </div>
 
   <hr class="nogrow" />
   <MceEditor
-    v-model="item.data.description"
+    v-model="item.system.description"
     @save="setDescription"
     :editing="true"
     style="flex: 1; height: 100%"

@@ -4,7 +4,7 @@
       <div
         class="form-group nogrow"
         style="gap: 5px"
-        v-for="(field, i) in item.data.fields"
+        v-for="(field, i) in item.system.fields"
         :key="`field${i}`"
       >
         <input
