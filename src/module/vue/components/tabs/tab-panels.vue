@@ -14,16 +14,16 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import { TabStateKey } from './tab-helpers'
+import { TabState, TabStateKey } from './tab-helpers'
 
 /**
- * Container for {@link TabPanel} components. Should be descended from a {@link TabSet} component, and sibling to a {@link TabList} component.
+ * Container for {@link TabPanel} components. Should be descended from a {@link TabSet} component.
  */
 withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 
-const tabState = inject(TabStateKey)
+const tabState = inject(TabStateKey) as TabState
 
-const tabSetId = computed(() => tabState?._id)
+const tabSetId = computed(() => tabState._id)
 defineExpose({
   tabSetId: tabSetId.value,
 })

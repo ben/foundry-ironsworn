@@ -38,17 +38,14 @@ const props = withDefaults(
   }>(),
   { is: 'div' }
 )
-const tabState = inject(TabStateKey) as TabState
-const setActivePanelRef = inject(SetActivePanelRefKey) as SetActivePanelRef
-
-const isActive = computed(() => tabState.activeTab === props.index)
 
 const $el = ref<HTMLElement>() as Ref<HTMLElement>
+const setActivePanelRef = inject(SetActivePanelRefKey) as SetActivePanelRef
 
-const tabSetId = computed(() => tabState?._id)
-defineExpose({
-  tabSetId: tabSetId.value,
-})
-
+const tabState = inject(TabStateKey) as TabState
+const isActive = computed(() => tabState.activeTab === props.index)
 watch(isActive, () => isActive.value && setActivePanelRef($el.value))
+
+const tabSetId = computed(() => tabState._id)
+defineExpose({ tabSetId: tabSetId.value })
 </script>
