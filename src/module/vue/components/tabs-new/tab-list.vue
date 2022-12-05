@@ -33,7 +33,7 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, provide, Slot, useSlots } from 'vue'
+import { computed, inject, provide, useSlots } from 'vue'
 import {
   cleanChildren,
   IsOnFirstTabKey,
@@ -43,7 +43,6 @@ import {
   TabState,
   TabStateKey,
 } from './tab-helpers.js'
-
 /**
  * The container for individual {@link Tab} elements. Should be descended from a {@link TabSet} element (which should itself have a {@link TabPanels} descendant).
  */
@@ -53,8 +52,10 @@ const tabState = inject(TabStateKey) as TabState
 const tabOrientation = inject(TabOrientationKey)
 const $slots = useSlots()
 
+type NonUndefined<T> = T extends undefined ? never : T
+
 const tabCount = computed(() => {
-  const slot = ($slots?.default as Slot)()
+  const slot = ($slots?.default as NonUndefined<typeof $slots.default>)()
   console.log(slot)
   const tabs = cleanChildren(slot)
   return tabs.length

@@ -14,8 +14,6 @@
 
 <style lang="less" module>
 .tabPanel {
-  margin: 0.5rem;
-  flex: 1;
 }
 </style>
 

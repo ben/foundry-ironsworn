@@ -17,14 +17,17 @@
   </component>
 </template>
 <style lang="less" module>
+@import (reference) '../../../../styles/mixins.less';
 .tab {
+  .clickableBlockMixin();
   border-radius: 0;
+  margin: 0;
   border: 0;
   flex: 1 1 0;
   text-align: center;
   height: 100%;
   overflow-y: auto;
-  padding: 5px;
+  padding: var(--ironsworn-spacer-md);
   gap: 0.25em;
   justify-content: center;
   &:before {
@@ -60,6 +63,10 @@ const props = withDefaults(
      */
     index: number
     disabled?: boolean
+    /**
+     * The component. This should be some kind of {@link HTMLButtonElement}, whether it's a plain `<button>` element or a button-based component.
+     * @defaultValue 'button'
+     */
     is?: any
   }>(),
   { disabled: false, is: 'button' }
