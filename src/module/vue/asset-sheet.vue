@@ -3,29 +3,50 @@
     <SheetHeader class="nogrow">
       <DocumentName :document="item" />
     </SheetHeader>
+    <TabSet
+      v-if="editMode"
+      :id="`${item._id}-asset-sheet`"
+      :class="$style.tabSet"
+    >
+      <TabList :class="$style.tabList">
+        <Tab :index="0" :class="$style.tab">
+          {{ $t('IRONSWORN.Description') }}
+        </Tab>
 
-    <Tabs v-if="editMode">
-      <Tab :title="$t('IRONSWORN.Description')">
-        <AssetEditDescription />
-      </Tab>
+        <Tab :index="1" :class="$style.tab">
+          {{ $t('IRONSWORN.Fields') }}
+        </Tab>
 
-      <Tab :title="$t('IRONSWORN.Fields')">
-        <AssetEditFields />
-      </Tab>
+        <Tab :index="2" :class="$style.tab">
+          {{ $t('IRONSWORN.Abilities') }}
+        </Tab>
 
-      <Tab :title="$t('IRONSWORN.Abilities')">
-        <AssetEditAbilities />
-      </Tab>
+        <Tab :index="3" :class="$style.tab">
+          {{ $t('IRONSWORN.Options') }}
+        </Tab>
 
-      <Tab :title="$t('IRONSWORN.Options')">
-        <AssetEditOptions />
-      </Tab>
-
-      <Tab :title="$t('IRONSWORN.Track')">
-        <AssetEditTrack />
-      </Tab>
-    </Tabs>
-
+        <Tab :index="4" :class="$style.tab">
+          {{ $t('IRONSWORN.Track') }}
+        </Tab>
+      </TabList>
+      <TabPanels :class="$style.tabPanels">
+        <TabPanel :index="0" :class="$style.TabPanel">
+          <AssetEditDescription
+        /></TabPanel>
+        <TabPanel :index="1" :class="$style.TabPanel">
+          <AssetEditFields
+        /></TabPanel>
+        <TabPanel :index="2" :class="$style.TabPanel">
+          <AssetEditAbilities
+        /></TabPanel>
+        <TabPanel :index="3" :class="$style.TabPanel">
+          <AssetEditOptions
+        /></TabPanel>
+        <TabPanel :index="4" :class="$style.TabPanel">
+          <AssetEditTrack
+        /></TabPanel>
+      </TabPanels>
+    </TabSet>
     <AssetOverview v-else />
   </div>
 </template>
@@ -52,11 +73,9 @@ h3 {
 </style>
 
 <script setup lang="ts">
-import { computed, inject, provide, Ref } from 'vue'
+import { computed, inject, provide } from 'vue'
 import SheetHeader from './sheet-header.vue'
 import DocumentName from './components/document-name.vue'
-import Tabs from './components/tabs/tabs.vue'
-import Tab from './components/tabs/tab.vue'
 import AssetEditDescription from './components/asset/asset-edit-description.vue'
 import AssetEditFields from './components/asset/asset-edit-fields.vue'
 import AssetEditAbilities from './components/asset/asset-edit-abilities.vue'
@@ -64,6 +83,11 @@ import AssetEditOptions from './components/asset/asset-edit-options.vue'
 import AssetOverview from './components/asset/asset-overview.vue'
 import AssetEditTrack from './components/asset/asset-edit-track.vue'
 import { $ItemKey, ItemKey } from './provisions'
+import TabSet from './components/tabs-new/tab-set.vue'
+import TabList from './components/tabs-new/tab-list.vue'
+import TabPanels from './components/tabs-new/tab-panels.vue'
+import TabPanel from './components/tabs-new/tab-panel.vue'
+import Tab from './components/tabs-new/tab.vue'
 
 const $item = inject($ItemKey)
 
@@ -75,14 +99,14 @@ const editMode = computed(() => {
 })
 
 const hasOptions = computed(() => {
-  return Object.values(props.item.data.exclusiveOptions || []).length > 0
+  return Object.values(props.item.system.exclusiveOptions || []).length > 0
 })
 
 const hasFields = computed(() => {
-  return Object.values(props.item.data.fields || []).length > 0
+  return Object.values(props.item.system.fields || []).length > 0
 })
 
 function setRequirement() {
-  $item?.update({ system: { requirement: props.item.data.requirement } })
+  $item?.update({ system: { requirement: props.item.system.requirement } })
 }
 </script>
