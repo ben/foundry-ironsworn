@@ -15,8 +15,11 @@
 
 <style lang="less" module>
 .tabPanel {
-  width: inherit;
-  height: inherit;
+  display: flex;
+  flex-flow: inherit;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
 }
 </style>
 
@@ -25,6 +28,7 @@ import { computed, inject, Ref, ref, watch } from 'vue'
 import {
   SetActivePanelRef,
   SetActivePanelRefKey,
+  TabOrientationKey,
   TabState,
   TabStateKey,
 } from './tab-helpers.js'
@@ -40,6 +44,7 @@ const props = defineProps<{
 }>()
 const tabState = inject(TabStateKey) as TabState
 const setActivePanelRef = inject(SetActivePanelRefKey) as SetActivePanelRef
+const orientation = inject(TabOrientationKey)
 
 const isActive = computed(() => tabState.activeTab === props.index)
 
