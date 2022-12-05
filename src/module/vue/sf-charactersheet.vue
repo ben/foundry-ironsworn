@@ -103,11 +103,11 @@ import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import { ActorKey } from './provisions.js'
 import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
 import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
-import TabSet from './components/tabs-new/tab-set.vue'
-import TabList from './components/tabs-new/tab-list.vue'
-import Tab from './components/tabs-new/tab.vue'
-import TabPanel from './components/tabs-new/tab-panel.vue'
-import TabPanels from './components/tabs-new/tab-panels.vue'
+import TabSet from './components/tabs/tab-set.vue'
+import TabList from './components/tabs/tab-list.vue'
+import Tab from './components/tabs/tab.vue'
+import TabPanel from './components/tabs/tab-panel.vue'
+import TabPanels from './components/tabs/tab-panels.vue'
 
 const props = defineProps<{
   actor: any

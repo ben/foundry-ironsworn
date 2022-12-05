@@ -1,6 +1,5 @@
 // adapted from https://github.com/jakedohm/vue-accessible-tabs
 // more about the recommendations for this design pattern, for later reference: https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-manual.html
-// TODO: figure out if i implemented focus management properly! https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_selection_follows_focus
 
 import { InjectionKey } from 'vue'
 

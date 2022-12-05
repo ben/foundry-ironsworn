@@ -38,11 +38,11 @@ import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
 import SheetBasic from './sheet-basic.vue'
 import { ActorKey } from './provisions.js'
-import TabSet from './components/tabs-new/tab-set.vue'
-import TabList from './components/tabs-new/tab-list.vue'
-import Tab from './components/tabs-new/tab.vue'
-import TabPanels from './components/tabs-new/tab-panels.vue'
-import TabPanel from './components/tabs-new/tab-panel.vue'
+import TabSet from './components/tabs/tab-set.vue'
+import TabList from './components/tabs/tab-list.vue'
+import Tab from './components/tabs/tab.vue'
+import TabPanels from './components/tabs/tab-panels.vue'
+import TabPanel from './components/tabs/tab-panel.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>

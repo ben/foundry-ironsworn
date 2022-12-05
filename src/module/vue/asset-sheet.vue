@@ -83,11 +83,11 @@ import AssetEditOptions from './components/asset/asset-edit-options.vue'
 import AssetOverview from './components/asset/asset-overview.vue'
 import AssetEditTrack from './components/asset/asset-edit-track.vue'
 import { $ItemKey, ItemKey } from './provisions'
-import TabSet from './components/tabs-new/tab-set.vue'
-import TabList from './components/tabs-new/tab-list.vue'
-import TabPanels from './components/tabs-new/tab-panels.vue'
-import TabPanel from './components/tabs-new/tab-panel.vue'
-import Tab from './components/tabs-new/tab.vue'
+import TabSet from './components/tabs/tab-set.vue'
+import TabList from './components/tabs/tab-list.vue'
+import TabPanels from './components/tabs/tab-panels.vue'
+import TabPanel from './components/tabs/tab-panel.vue'
+import Tab from './components/tabs/tab.vue'
 
 const $item = inject($ItemKey)
 

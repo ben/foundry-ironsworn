@@ -36,7 +36,7 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, provide, useSlots } from 'vue'
+import { computed, inject, provide, ref, useSlots } from 'vue'
 import {
   IsOnFirstTabKey,
   IsOnLastTabKey,
@@ -55,11 +55,15 @@ withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 const tabState = inject(TabStateKey) as TabState
 const tabOrientation = inject(TabOrientationKey)
 const $slots = useSlots()
+const $el = ref<HTMLElement>()
 
 type NonUndefined<T> = T extends undefined ? never : T
 type Slot = NonUndefined<typeof $slots.default>
 
+function tabChilden() {}
+
 function cleanChildren(slot?: Slot) {
+  console.log('$el.value.slot', $el.value.slot)
   if (!slot) {
     return []
   } else {
