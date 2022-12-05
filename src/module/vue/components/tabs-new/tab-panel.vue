@@ -17,7 +17,9 @@
 <style lang="less" module>
 .tabPanel {
   display: flex;
-  flex-flow: inherit;
+  flex-flow: v-bind(
+    'orientation === "vertical" ? "row nowrap" : "column nowrap"'
+  );
   flex-grow: 1;
   width: 100%;
   height: 100%;

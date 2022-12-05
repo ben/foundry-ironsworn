@@ -38,7 +38,7 @@
             <IronswornMain />
           </TabPanel>
           <TabPanel :index="1">
-            <IronswornNotes />
+            <IronswornNotes :class="$style.tabContent" />
           </TabPanel>
         </TabPanels>
       </TabSet>
@@ -59,6 +59,9 @@
 </template>
 
 <style lang="less" module>
+.tabContent {
+  height: inherit;
+}
 .tabSet {
   margin-top: 0.5rem;
 }
