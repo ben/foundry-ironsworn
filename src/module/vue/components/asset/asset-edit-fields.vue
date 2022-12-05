@@ -38,17 +38,17 @@ const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)
 
 function addField() {
-  const fields = Object.values(item.value.data.fields) as any[]
+  const fields = Object.values(item.value.system.fields) as any[]
   fields.push({ name: '', value: '' })
   $item?.update({ system: { fields } })
 }
 function deleteField(idx) {
-  const fields = Object.values(item.value.data.fields) as any[]
+  const fields = Object.values(item.value.system.fields) as any[]
   fields.splice(idx, 1)
   $item?.update({ system: { fields } })
 }
 function save() {
-  const fields = Object.values(item.value.data.fields) as any[]
+  const fields = Object.values(item.value.system.fields) as any[]
   $item?.update({ system: { fields } })
 }
 </script>
