@@ -1,11 +1,12 @@
 <template>
-  <div
+  <component
+    :is="is"
     :class="$style.tabList"
     role="tablist"
     :aria-orientation="tabOrientation"
   >
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <style lang="less" module>
@@ -17,13 +18,15 @@
   flex-direction: row;
   justify-content: flex-start;
   flex-grow: 0;
-  height: max-content;
-
   &[aria-orientation='horizontal'] {
+    flex-flow: row nowrap;
+    height: max-content;
     border-bottom: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
   }
   &[aria-orientation='vertical'] {
+    flex-flow: column nowrap;
+    width: max-content;
     border-left: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
     border-right: var(--ironsworn-border-width-md) solid
@@ -46,8 +49,7 @@ import Tab from './tab.vue'
 /**
  * The container for individual {@link Tab} elements. Should be descended from a {@link TabSet} element (which should itself have a {@link TabPanels} descendant).
  */
-defineProps()
-
+withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 const tabState = inject(TabStateKey) as TabState
 const tabOrientation = inject(TabOrientationKey)
 const $slots = useSlots()

@@ -7,6 +7,10 @@
 <style lang="less" module>
 .tabSet {
   // FIXME: consider renaming as something less ambiguous e.g. TabSet ?
+  display: flex;
+  flex-flow: v-bind(
+    'orientation === "vertical" ? "row nowrap" : "column nowrap"'
+  );
 }
 </style>
 

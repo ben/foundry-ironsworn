@@ -7,6 +7,7 @@
     :id="`tabs--${tabState._id}--panel--${index}`"
     tabindex="-1"
     :hidden="!isActive"
+    v-show="isActive"
   >
     <slot></slot>
   </div>
@@ -14,6 +15,8 @@
 
 <style lang="less" module>
 .tabPanel {
+  width: inherit;
+  height: inherit;
 }
 </style>
 
