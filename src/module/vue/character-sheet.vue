@@ -37,7 +37,6 @@
           <TabPanel :index="0">
             <IronswornMain />
           </TabPanel>
-
           <TabPanel :index="1">
             <IronswornNotes />
           </TabPanel>
