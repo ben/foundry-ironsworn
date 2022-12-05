@@ -1,9 +1,5 @@
 <template>
-  <TabSet
-    :id="`${(actor as any)._id}_move-sheet`"
-    ref="$tabSet"
-    :class="$style.moveSheetTabSet"
-  >
+  <TabSet :id="`${(actor as any)._id}_move-sheet`" ref="$tabSet">
     <TabList>
       <Tab :is="BtnIsicon" icon="d10-tilt" :index="0">{{
         $t('IRONSWORN.Moves')
@@ -12,8 +8,8 @@
         $t('IRONSWORN.Oracles')
       }}</Tab>
     </TabList>
-    <TabPanels :class="$style.moveSheetPanels">
-      <TabPanel :index="0" :class="$style.moveSheetPanel">
+    <TabPanels>
+      <TabPanel :index="0">
         <Suspense>
           <sf-movesheetmoves
             :class="$style.panelContent"
@@ -21,7 +17,7 @@
             :toolset="toolset"
           /> </Suspense
       ></TabPanel>
-      <TabPanel :index="1" :class="$style.moveSheetPanel">
+      <TabPanel :index="1">
         <Suspense>
           <sf-movesheetoracles
             :class="$style.panelContent"
@@ -34,28 +30,12 @@
 </template>
 
 <style lang="less" module>
-.moveSheetTabSet {
-  display: flex;
-  flex-flow: column nowrap;
-}
-.moveSheetPanels {
-  flex-grow: 1;
-  display: inherit;
-  flex-flow: inherit;
-  height: 100%;
-}
-.moveSheetPanel {
-  flex-flow: inherit;
-  height: inherit;
-}
 .panelContent {
   height: inherit;
 }
 </style>
 
 <script lang="ts" setup>
-// import Tab from './components/tabs/tab.vue'
-// import Tabs from './components/tabs/tabs.vue'
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
 import { computed, provide, ref } from 'vue'
