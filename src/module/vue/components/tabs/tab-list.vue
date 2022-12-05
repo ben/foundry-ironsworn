@@ -47,7 +47,7 @@ import TabList from './tab-list.vue'
 withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 const tabState = inject(TabStateKey) as TabState
 const $slots = useSlots()
-const $el = ref<InstanceType<typeof TabList>>(null)
+const $el = ref<InstanceType<typeof TabList>>()
 
 type NonUndefined<T> = T extends undefined ? never : T
 type Slot = NonUndefined<typeof $slots.default>
