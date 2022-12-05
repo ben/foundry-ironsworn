@@ -26,7 +26,7 @@
   flex: 1 1 0;
   text-align: center;
   height: 100%;
-  overflow-y: auto;
+  overflow-x: visible;
   padding: var(--ironsworn-spacer-md);
   gap: 0.25em;
   justify-content: center;

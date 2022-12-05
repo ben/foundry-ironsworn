@@ -1,20 +1,26 @@
 <template>
-  <div :class="$style.tabSet">
+  <div
+    :class="{
+      [$style.tabSet]: true,
+      flexcol: orientation === 'horizontal',
+      flexrow: orientation === 'vertical',
+    }"
+  >
     <slot></slot>
   </div>
 </template>
 
 <style lang="less" module>
 .tabSet {
-  // FIXME: consider renaming as something less ambiguous e.g. TabSet ?
-  display: flex;
-  flex-flow: v-bind(
-    'orientation === "vertical" ? "row nowrap" : "column nowrap"'
-  );
 }
 </style>
 
 <script lang="ts" setup>
+// FIXME: consider renaming as something less ambiguous e.g. TabSet ?
+// display: flex;
+// flex-flow: v-bind(
+//   'orientation === "vertical" ? "row nowrap" : "column nowrap"'
+// );
 import { provide, reactive } from 'vue'
 import {
   FocusActivePanelKey,

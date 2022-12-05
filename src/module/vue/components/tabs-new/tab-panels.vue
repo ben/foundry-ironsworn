@@ -1,18 +1,17 @@
 <template>
-  <div :class="$style.tabPanels">
+  <div
+    :class="{
+      [$style.tabPanels]: true,
+      flexcol: orientation === 'vertical',
+      flexrow: orientation === 'horizontal',
+    }"
+  >
     <slot></slot>
   </div>
 </template>
 
 <style lang="less" module>
 .tabPanels {
-  display: flex;
-  flex-flow: v-bind(
-    'orientation === "vertical" ? "row nowrap" : "column nowrap"'
-  );
-  flex-grow: 1;
-  width: v-bind('orientation === "horizontal" ? "100%" : "auto"');
-  height: v-bind('orientation === "vertical" ? "100%" : "auto"');
 }
 </style>
 

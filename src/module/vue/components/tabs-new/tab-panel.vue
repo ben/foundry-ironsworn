@@ -1,7 +1,11 @@
 <template>
   <component
     :is="is"
-    :class="$style.tabPanel"
+    :class="{
+      [$style.tabPanel]: true,
+      flexcol: orientation === 'horizontal',
+      flexrow: orientation === 'vertical',
+    }"
     ref="$el"
     role="tabpanel"
     :aria-labelledby="`tabs--${tabState._id}--tab--${index}`"
@@ -16,13 +20,6 @@
 
 <style lang="less" module>
 .tabPanel {
-  display: flex;
-  flex-flow: v-bind(
-    'orientation === "vertical" ? "row nowrap" : "column nowrap"'
-  );
-  flex-grow: 1;
-  width: 100%;
-  height: 100%;
 }
 </style>
 
