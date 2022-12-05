@@ -1,5 +1,6 @@
 <template>
-  <div
+  <component
+    :is="is"
     :class="$style.tabPanel"
     ref="$el"
     role="tabpanel"
@@ -10,7 +11,7 @@
     v-show="isActive"
   >
     <slot></slot>
-  </div>
+  </component>
 </template>
 
 <style lang="less" module>
@@ -36,12 +37,19 @@ import {
 /**
  * The container for the content associated with a {@link Tab}. Should be descended from a {@link TabPanels} component.
  */
-const props = defineProps<{
-  /**
-   * The index must match that of a {@link Tab} with the same parent {@link TabSet} element.
-   */
-  index: number
-}>()
+const props = withDefaults(
+  defineProps<{
+    /**
+     * The index must match that of a {@link Tab} with the same parent {@link TabSet} element.
+     */
+    index: number
+    /**
+     * @defaultValue 'div'
+     */
+    is?: any
+  }>(),
+  { is: 'div' }
+)
 const tabState = inject(TabStateKey) as TabState
 const setActivePanelRef = inject(SetActivePanelRefKey) as SetActivePanelRef
 const orientation = inject(TabOrientationKey)
