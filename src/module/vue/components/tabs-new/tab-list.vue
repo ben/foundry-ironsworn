@@ -20,13 +20,13 @@
   height: max-content;
 
   &[aria-orientation='horizontal'] {
-    border-block-end: var(--ironsworn-border-width-md) solid
+    border-bottom: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
   }
   &[aria-orientation='vertical'] {
-    border-inline-start: var(--ironsworn-border-width-md) solid
+    border-left: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
-    border-inline-end: var(--ironsworn-border-width-md) solid
+    border-right: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
   }
 }
