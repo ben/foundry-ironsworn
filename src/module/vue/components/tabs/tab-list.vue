@@ -17,7 +17,6 @@
 <style lang="less" module>
 .tabList {
   // TODO:
-  // * styling for horizontal and vertical use
   // * fun slidey animation by applying some kind of border stroke or background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.
   flex-grow: 0;
   &[aria-orientation='horizontal'] {
@@ -46,6 +45,7 @@ import {
   TabStateKey,
 } from './tab-helpers.js'
 import Tab from './tab.vue'
+import TabList from './tab-list.vue'
 /**
  * The container for individual {@link Tab} elements. Should be descended from a {@link TabSet} element (which should itself have a {@link TabPanels} descendant).
  *
@@ -55,29 +55,23 @@ withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 const tabState = inject(TabStateKey) as TabState
 const tabOrientation = inject(TabOrientationKey)
 const $slots = useSlots()
-const $el = ref<HTMLElement>()
+const $el = ref<InstanceType<typeof TabList>>(null)
 
 type NonUndefined<T> = T extends undefined ? never : T
 type Slot = NonUndefined<typeof $slots.default>
 
-function tabChilden() {}
-
-function cleanChildren(slot?: Slot) {
-  console.log('$el.value.slot', $el.value.slot)
+function tabChildren(slot?: Slot) {
   if (!slot) {
     return []
   } else {
     const vnodes = slot()
-    if (!vnodes) return []
-    // FIXME: is there a good way to filter for only the rendered children?
-    return vnodes
-    // .filter((vnode: any) => vnode)
+    return vnodes ?? []
   }
 }
 
 const tabCount = computed(() => {
   console.log('TabList.$slots', $slots)
-  const tabs = cleanChildren($slots?.default)
+  const tabs = tabChildren($slots?.default)
   return tabs.length
 })
 const isOnLastTab = computed(() => tabState.activeTab === tabCount.value)
