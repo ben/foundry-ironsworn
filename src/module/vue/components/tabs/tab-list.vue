@@ -17,7 +17,7 @@
 <style lang="less" module>
 .tabList {
   // TODO:
-  // * fun slidey animation by applying some kind of border stroke or background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.
+  // * fun slidey animation by applying some kind of border stroke or gradient background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.
   flex-grow: 0;
   &[aria-orientation='horizontal'] {
     flex-flow: row nowrap;
