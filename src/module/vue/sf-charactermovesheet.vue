@@ -1,5 +1,9 @@
 <template>
-  <TabSet :id="`${(actor as any)._id}_move-sheet`" ref="$tabSet">
+  <TabSet
+    :id="`${(actor as any)._id}_move-sheet`"
+    ref="$tabSet"
+    :class="$style.tabSet"
+  >
     <TabList>
       <Tab :is="BtnIsicon" icon="d10-tilt" :index="0">{{
         $t('IRONSWORN.Moves')
@@ -11,7 +15,7 @@
     <TabPanels>
       <TabPanel :index="0">
         <Suspense>
-          <sf-movesheetmoves
+          <SfMovesheetmoves
             :class="$style.panelContent"
             ref="movesTab"
             :toolset="toolset"
@@ -19,7 +23,7 @@
       ></TabPanel>
       <TabPanel :index="1">
         <Suspense>
-          <sf-movesheetoracles
+          <SfMovesheetoracles
             :class="$style.panelContent"
             ref="oraclesTab"
             :toolset="toolset"
@@ -30,8 +34,11 @@
 </template>
 
 <style lang="less" module>
+.tabSet {
+}
 .panelContent {
-  height: inherit;
+  flex-grow: 1;
+  // overflow-y: hidden;
 }
 </style>
 
