@@ -35,7 +35,6 @@
 <script lang="ts" setup>
 import { computed, inject, provide, useSlots } from 'vue'
 import {
-  cleanChildren,
   IsOnFirstTabKey,
   IsOnLastTabKey,
   TabCountKey,
@@ -43,6 +42,7 @@ import {
   TabState,
   TabStateKey,
 } from './tab-helpers.js'
+import Tab from './tab.vue'
 /**
  * The container for individual {@link Tab} elements. Should be descended from a {@link TabSet} element (which should itself have a {@link TabPanels} descendant).
  */
@@ -53,15 +53,32 @@ const tabOrientation = inject(TabOrientationKey)
 const $slots = useSlots()
 
 type NonUndefined<T> = T extends undefined ? never : T
+type Slot = NonUndefined<typeof $slots.default>
+
+function cleanChildren(slot?: Slot) {
+  if (!slot) {
+    return []
+  } else {
+    const vnodes = slot()
+    if (!vnodes) return []
+    // FIXME: is there a good way to filter for only the rendered children?
+    return vnodes
+    // .filter((vnode: any) => vnode)
+  }
+}
 
 const tabCount = computed(() => {
-  const slot = ($slots?.default as NonUndefined<typeof $slots.default>)()
-  console.log(slot)
-  const tabs = cleanChildren(slot)
+  console.log('TabList.$slots', $slots)
+  const tabs = cleanChildren($slots?.default)
   return tabs.length
 })
 const isOnLastTab = computed(() => tabState.activeTab === tabCount.value)
 const isOnFirstTab = computed(() => tabState.activeTab === 0)
+
+const tabSetId = computed(() => tabState?._id)
+defineExpose({
+  tabSetId: tabSetId.value,
+})
 
 provide(TabCountKey, tabCount.value)
 provide(IsOnFirstTabKey, isOnFirstTab.value)

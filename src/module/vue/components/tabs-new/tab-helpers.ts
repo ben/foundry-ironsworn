@@ -2,7 +2,7 @@
 // more about the recommendations for this design pattern, for later reference: https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-manual.html
 // TODO: figure out if i implemented focus management properly! https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/#kbd_selection_follows_focus
 
-import { InjectionKey, VNode } from 'vue'
+import { InjectionKey } from 'vue'
 
 export type TabActivationMode = 'auto' | 'manual'
 export type Orientation = 'horizontal' | 'vertical'
@@ -37,13 +37,7 @@ export const TabOrientationKey = Symbol(
 export const TabActivationModeKey = Symbol(
   'tabActivationMode'
 ) as InjectionKey<TabActivationMode>
-
 export const PreviousTabKey = Symbol(
   'previousTab'
 ) as InjectionKey<TabIndexIncrementer>
 export const NextTabKey = Symbol('nextTab') as InjectionKey<TabIndexIncrementer>
-
-export function cleanChildren(vnodes?: VNode[]) {
-  if (!vnodes) return []
-  return vnodes.filter((vnode) => vnode.el)
-}

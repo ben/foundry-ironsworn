@@ -42,5 +42,10 @@ const isActive = computed(() => tabState.activeTab === props.index)
 
 const $el = ref<HTMLElement>() as Ref<HTMLElement>
 
+const tabSetId = computed(() => tabState?._id)
+defineExpose({
+  tabSetId: tabSetId.value,
+})
+
 watch(isActive, () => isActive.value && setActivePanelRef($el.value))
 </script>

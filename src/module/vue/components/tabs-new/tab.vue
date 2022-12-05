@@ -39,16 +39,14 @@
 <script lang="ts" setup>
 // TODO: figure out the nicest way to implement adding an icon.
 
+import { clamp } from 'lodash'
 import { computed, inject, ref, watch } from 'vue'
 import {
   FocusActivePanel,
   FocusActivePanelKey,
-  NextTabKey,
-  PreviousTabKey,
   SetActiveTab,
   SetActiveTabKey,
   TabCountKey,
-  TabIndexIncrementer,
   TabOrientationKey,
   TabStateKey,
 } from './tab-helpers.js'
@@ -77,13 +75,18 @@ const tabOrientation = inject(TabOrientationKey)
 const tabCount = inject(TabCountKey) as number
 const setActiveTab = inject(SetActiveTabKey) as SetActiveTab
 const focusActivePanel = inject(FocusActivePanelKey) as FocusActivePanel
-const nextTab = inject(NextTabKey) as TabIndexIncrementer
-const previousTab = inject(PreviousTabKey) as TabIndexIncrementer
 
 const isActive = computed(() => tabState?.activeTab === props.index)
 const isFocused = computed(() => tabState?.focusedTab === props.index)
 const activeTab = computed(() => tabState?.activeTab as number)
 const $el = ref<HTMLButtonElement>()
+const firstTabIndex = 0
+const lastTabIndex = computed(() => tabCount - 1)
+
+const tabSetId = computed(() => tabState?._id)
+defineExpose({
+  tabSetId: tabSetId.value,
+})
 
 watch(isFocused, () => $el.value?.focus())
 
@@ -91,31 +94,52 @@ function handleKeydown(event: KeyboardEvent) {
   const vertical = tabOrientation === 'vertical'
   const horizontal = tabOrientation === 'horizontal'
 
+  console.log(
+    vertical ? 'vertical' : 'horizontal',
+    event.key,
+    `tab: ${activeTab.value}`,
+    `tabCount: ${tabCount}`
+  )
+
   if (
     (horizontal && event.key === 'ArrowRight') ||
     (vertical && event.key === 'ArrowDown')
   ) {
     event.preventDefault()
-    nextTab(activeTab.value)
+    const nextTabIndex = clamp(
+      activeTab.value + 1,
+      firstTabIndex,
+      lastTabIndex.value
+    )
+    console.log('focus on next tab', nextTabIndex)
+    setActiveTab(nextTabIndex)
   }
   if (
     (horizontal && event.key === 'ArrowLeft') ||
     (vertical && event.key === 'ArrowUp')
   ) {
     event.preventDefault()
-    previousTab(activeTab.value)
+    const previousTabIndex = clamp(
+      activeTab.value - 1,
+      firstTabIndex,
+      lastTabIndex.value
+    )
+    console.log('focus on previous tab', previousTabIndex)
+    setActiveTab(previousTabIndex)
   }
   // If in horizontal mode, focus the active panel on ArrowDown, for screenreaders
   if (horizontal && event.key === 'ArrowDown') {
+    console.log('focus on active panel')
     event.preventDefault()
     focusActivePanel()
   }
-
   if (event.key === 'Home') {
+    console.log('focus on first tab')
     event.preventDefault()
     setActiveTab(0)
   }
   if (event.key === 'End') {
+    console.log('focus on last tab')
     event.preventDefault()
     setActiveTab(tabCount - 1)
   }

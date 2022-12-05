@@ -11,13 +11,10 @@
 </style>
 
 <script lang="ts" setup>
-import { clamp } from 'lodash'
 import { provide, reactive } from 'vue'
 import {
   FocusActivePanelKey,
-  NextTabKey,
   Orientation,
-  PreviousTabKey,
   SetActivePanelRefKey,
   SetActiveTabKey,
   TabActivationMode,
@@ -61,19 +58,8 @@ function focusActivePanel() {
 }
 
 // FIXME: this doesn't appear referenced, what did i miss?
-function focusTab(tabIndex: number) {
-  tabState.focusedTab = tabIndex
-}
 function setActiveTab(tabIndex: number) {
   tabState.activeTab = tabIndex
-}
-function nextTab(tabCount: number) {
-  const maxTabIndex = tabCount - 1
-  tabState.activeTab = clamp(tabState.activeTab + 1, 0, maxTabIndex)
-}
-function previousTab(tabCount: number) {
-  const maxTabIndex = tabCount - 1
-  tabState.activeTab = clamp(tabState.activeTab - 1, 0, maxTabIndex)
 }
 
 provide(TabStateKey, tabState)
@@ -82,8 +68,6 @@ provide(SetActivePanelRefKey, setActivePanelRef)
 provide(FocusActivePanelKey, focusActivePanel)
 provide(TabOrientationKey, props.orientation)
 provide(TabActivationModeKey, props.tabActivationMode)
-provide(NextTabKey, nextTab)
-provide(PreviousTabKey, previousTab)
 
 defineExpose({
   setActiveTab,
