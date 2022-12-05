@@ -1,9 +1,6 @@
 <template>
   <component
     :is="is"
-    :class="{
-      [$style.tabPanel]: true,
-    }"
     ref="$el"
     role="tabpanel"
     :aria-labelledby="`tabs--${tabState._id}--tab--${index}`"
@@ -16,17 +13,11 @@
   </component>
 </template>
 
-<style lang="less" module>
-.tabPanel {
-}
-</style>
-
 <script lang="ts" setup>
 import { computed, inject, Ref, ref, watch } from 'vue'
 import {
   SetActivePanelRef,
   SetActivePanelRefKey,
-  TabOrientationKey,
   TabState,
   TabStateKey,
 } from './tab-helpers.js'
@@ -49,7 +40,6 @@ const props = withDefaults(
 )
 const tabState = inject(TabStateKey) as TabState
 const setActivePanelRef = inject(SetActivePanelRefKey) as SetActivePanelRef
-const orientation = inject(TabOrientationKey)
 
 const isActive = computed(() => tabState.activeTab === props.index)
 

@@ -24,12 +24,13 @@
   margin: 0;
   border: 0;
   flex: 1 1 0;
-  text-align: center;
-  height: 100%;
   overflow-x: visible;
   padding: var(--ironsworn-spacer-md);
-  gap: 0.25em;
-  justify-content: center;
+  gap: var(--ironsworn-spacer-md);
+  justify-content: v-bind(
+    'tabOrientation === "horizontal" ? "center" : "left"'
+  );
+  text-align: v-bind('tabOrientation === "horizontal" ? "center" : "left"');
   &:before {
     font-size: 140%;
   }
@@ -47,7 +48,6 @@ import {
   SetActiveTab,
   SetActiveTabKey,
   TabCountKey,
-  TabOrientationKey,
   TabStateKey,
 } from './tab-helpers.js'
 
@@ -62,7 +62,7 @@ const props = withDefaults(
     index: number
     disabled?: boolean
     /**
-     * The component. This should be some kind of {@link HTMLButtonElement}, whether it's a plain `<button>` element or a button-based component.
+     * The component to use. Use {@link BtnFaicon} or {@link BtnIsicon} if you want an icon.
      * @defaultValue 'button'
      */
     is?: any
@@ -71,7 +71,7 @@ const props = withDefaults(
 )
 
 const tabState = inject(TabStateKey)
-const tabOrientation = inject(TabOrientationKey)
+const tabOrientation = computed(() => tabState?.orientation)
 const tabCount = inject(TabCountKey) as number
 const setActiveTab = inject(SetActiveTabKey) as SetActiveTab
 const focusActivePanel = inject(FocusActivePanelKey) as FocusActivePanel
@@ -91,15 +91,8 @@ defineExpose({
 watch(isFocused, () => $el.value?.focus())
 
 function handleKeydown(event: KeyboardEvent) {
-  const vertical = tabOrientation === 'vertical'
-  const horizontal = tabOrientation === 'horizontal'
-
-  console.log(
-    vertical ? 'vertical' : 'horizontal',
-    event.key,
-    `tab: ${activeTab.value}`,
-    `tabCount: ${tabCount}`
-  )
+  const vertical = tabOrientation.value === 'vertical'
+  const horizontal = tabOrientation.value === 'horizontal'
 
   if (
     (horizontal && event.key === 'ArrowRight') ||
@@ -111,7 +104,6 @@ function handleKeydown(event: KeyboardEvent) {
       firstTabIndex,
       lastTabIndex.value
     )
-    console.log('focus on next tab', nextTabIndex)
     setActiveTab(nextTabIndex)
   }
   if (
@@ -124,22 +116,18 @@ function handleKeydown(event: KeyboardEvent) {
       firstTabIndex,
       lastTabIndex.value
     )
-    console.log('focus on previous tab', previousTabIndex)
     setActiveTab(previousTabIndex)
   }
   // If in horizontal mode, focus the active panel on ArrowDown, for screenreaders
   if (horizontal && event.key === 'ArrowDown') {
-    console.log('focus on active panel')
     event.preventDefault()
     focusActivePanel()
   }
   if (event.key === 'Home') {
-    console.log('focus on first tab')
     event.preventDefault()
     setActiveTab(0)
   }
   if (event.key === 'End') {
-    console.log('focus on last tab')
     event.preventDefault()
     setActiveTab(tabCount - 1)
   }

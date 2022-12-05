@@ -3,11 +3,11 @@
     :is="is"
     :class="{
       [$style.tabList]: true,
-      flexcol: tabOrientation === 'vertical',
-      flexrow: tabOrientation === 'horizontal',
+      flexcol: tabState.orientation === 'vertical',
+      flexrow: tabState.orientation === 'horizontal',
     }"
     role="tablist"
-    :aria-orientation="tabOrientation"
+    :aria-orientation="tabState.orientation"
     ref="$el"
   >
     <slot name="default"></slot>
@@ -36,14 +36,7 @@
 
 <script lang="ts" setup>
 import { computed, inject, provide, ref, useSlots } from 'vue'
-import {
-  IsOnFirstTabKey,
-  IsOnLastTabKey,
-  TabCountKey,
-  TabOrientationKey,
-  TabState,
-  TabStateKey,
-} from './tab-helpers.js'
+import { TabCountKey, TabState, TabStateKey } from './tab-helpers.js'
 import Tab from './tab.vue'
 import TabList from './tab-list.vue'
 /**
@@ -53,7 +46,6 @@ import TabList from './tab-list.vue'
  */
 withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 const tabState = inject(TabStateKey) as TabState
-const tabOrientation = inject(TabOrientationKey)
 const $slots = useSlots()
 const $el = ref<InstanceType<typeof TabList>>(null)
 
@@ -64,18 +56,11 @@ function tabChildren(slot?: Slot) {
   if (!slot) {
     return []
   } else {
-    const vnodes = slot()
-    return vnodes ?? []
+    return slot() ?? []
   }
 }
 
-const tabCount = computed(() => {
-  console.log('TabList.$slots', $slots)
-  const tabs = tabChildren($slots?.default)
-  return tabs.length
-})
-const isOnLastTab = computed(() => tabState.activeTab === tabCount.value)
-const isOnFirstTab = computed(() => tabState.activeTab === 0)
+const tabCount = computed(() => tabChildren($slots?.default).length)
 
 const tabSetId = computed(() => tabState?._id)
 defineExpose({
@@ -83,6 +68,4 @@ defineExpose({
 })
 
 provide(TabCountKey, tabCount.value)
-provide(IsOnFirstTabKey, isOnFirstTab.value)
-provide(IsOnLastTabKey, isOnLastTab.value)
 </script>

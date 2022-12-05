@@ -1,7 +1,6 @@
 <template>
   <div
     :class="{
-      [$style.tabSet]: true,
       flexcol: orientation === 'horizontal',
       flexrow: orientation === 'vertical',
     }"
@@ -9,11 +8,6 @@
     <slot></slot>
   </div>
 </template>
-
-<style lang="less" module>
-.tabSet {
-}
-</style>
 
 <script lang="ts" setup>
 import { provide, reactive } from 'vue'
@@ -23,8 +17,6 @@ import {
   SetActivePanelRefKey,
   SetActiveTabKey,
   TabActivationMode,
-  TabActivationModeKey,
-  TabOrientationKey,
   TabState,
   TabStateKey,
 } from './tab-helpers.js'
@@ -50,6 +42,8 @@ const tabState = reactive<TabState>({
   activeTab: props.defaultIndex,
   activePanelRef: null,
   focusedTab: null,
+  orientation: props.orientation,
+  mode: props.tabActivationMode,
   _id: props.id,
 })
 
@@ -71,8 +65,6 @@ provide(TabStateKey, tabState)
 provide(SetActiveTabKey, setActiveTab)
 provide(SetActivePanelRefKey, setActivePanelRef)
 provide(FocusActivePanelKey, focusActivePanel)
-provide(TabOrientationKey, props.orientation)
-provide(TabActivationModeKey, props.tabActivationMode)
 
 defineExpose({
   setActiveTab,

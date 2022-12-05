@@ -14,12 +14,11 @@ export interface TabState {
   activeTab: number
   activePanelRef: HTMLElement | null
   focusedTab: number | null
+  orientation: Orientation
+  mode: TabActivationMode
   _id: string
 }
 
-export const IsOnLastTabKey = Symbol('isOnLastTab') as InjectionKey<boolean>
-export const IsOnFirstTabKey = Symbol('isOnFirstTab') as InjectionKey<boolean>
-export const TabCountKey = Symbol('tabCount') as InjectionKey<number>
 export const TabStateKey = Symbol('tabState') as InjectionKey<TabState>
 export const SetActiveTabKey = Symbol(
   'setActiveTab'
@@ -30,13 +29,5 @@ export const SetActivePanelRefKey = Symbol(
 export const FocusActivePanelKey = Symbol(
   'focusActivePanel'
 ) as InjectionKey<FocusActivePanel>
-export const TabOrientationKey = Symbol(
-  'tabOrientation'
-) as InjectionKey<Orientation>
-export const TabActivationModeKey = Symbol(
-  'tabActivationMode'
-) as InjectionKey<TabActivationMode>
-export const PreviousTabKey = Symbol(
-  'previousTab'
-) as InjectionKey<TabIndexIncrementer>
-export const NextTabKey = Symbol('nextTab') as InjectionKey<TabIndexIncrementer>
+
+export const TabCountKey = Symbol('tabCount') as InjectionKey<number>

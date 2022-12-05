@@ -2,8 +2,8 @@
   <component
     :is="is"
     :class="{
-      flexcol: orientation === 'vertical',
-      flexrow: orientation === 'horizontal',
+      flexcol: tabState.orientation === 'vertical',
+      flexrow: tabState.orientation === 'horizontal',
     }"
   >
     <slot name="before"></slot>
@@ -14,16 +14,12 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import { TabOrientationKey, TabStateKey } from './tab-helpers'
+import { TabStateKey } from './tab-helpers'
 
 /**
  * Container for {@link TabPanel} components. Should be descended from a {@link TabSet} component, and sibling to a {@link TabList} component.
- *
- * The default slot is for tab panels. content shared between all panels can be placed in its other slots.
  */
 withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
-
-const orientation = inject(TabOrientationKey)
 
 const tabState = inject(TabStateKey)
 
