@@ -34,10 +34,10 @@
           ><Tab :index="1">{{ $t('IRONSWORN.Notes') }}</Tab></TabList
         >
         <TabPanels>
-          <TabPanel :index="0">
+          <TabPanel :index="0" class="flexcol">
             <IronswornMain />
           </TabPanel>
-          <TabPanel :index="1">
+          <TabPanel :index="1" class="flexcol">
             <IronswornNotes :class="$style.tabContent" />
           </TabPanel>
         </TabPanels>

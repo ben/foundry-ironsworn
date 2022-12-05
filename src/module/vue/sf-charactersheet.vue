@@ -38,17 +38,17 @@
             <Tab :index="4">{{ $t('IRONSWORN.Notes') }}</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel :index="0"><SfLegacies /></TabPanel>
-            <TabPanel :index="1"
+            <TabPanel :index="0" class="flexcol"><SfLegacies /></TabPanel>
+            <TabPanel :index="1" class="flexcol"
               ><SfAssets :class="$style.topPadding"
             /></TabPanel>
-            <TabPanel :index="2"
+            <TabPanel :index="2" class="flexcol"
               ><SfProgresses :class="$style.topPadding"
             /></TabPanel>
-            <TabPanel :index="3"
+            <TabPanel :index="3" class="flexcol"
               ><SfConnections :class="$style.topPadding"
             /></TabPanel>
-            <TabPanel :index="4"><SfNotes /></TabPanel>
+            <TabPanel :index="4" class="flexcol"><SfNotes /></TabPanel>
           </TabPanels>
         </TabSet>
       </div>

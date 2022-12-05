@@ -6,8 +6,8 @@
         <Tab :index="1">{{ $t('IRONSWORN.Notes') }}</Tab>
       </TabList>
       <TabPanels>
-        <TabPanel :index="0"><SfAssets /></TabPanel>
-        <TabPanel :index="1"><SfNotes /></TabPanel>
+        <TabPanel class="flexcol" :index="0"><SfAssets /></TabPanel>
+        <TabPanel class="flexcol" :index="1"><SfNotes /></TabPanel>
       </TabPanels>
     </TabSet>
 

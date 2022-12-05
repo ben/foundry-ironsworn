@@ -13,7 +13,7 @@
       }}</Tab>
     </TabList>
     <TabPanels>
-      <TabPanel :index="0">
+      <TabPanel :index="0" class="flexcol">
         <Suspense>
           <SfMovesheetmoves
             :class="$style.panelContent"
@@ -21,7 +21,7 @@
             :toolset="toolset"
           /> </Suspense
       ></TabPanel>
-      <TabPanel :index="1">
+      <TabPanel :index="1" class="flexcol">
         <Suspense>
           <SfMovesheetoracles
             :class="$style.panelContent"

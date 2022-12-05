@@ -3,8 +3,6 @@
     :is="is"
     :class="{
       [$style.tabPanel]: true,
-      flexcol: orientation === 'horizontal',
-      flexrow: orientation === 'vertical',
     }"
     ref="$el"
     role="tabpanel"

@@ -1,11 +1,16 @@
 <template>
   <component
     :is="is"
-    :class="$style.tabList"
+    :class="{
+      [$style.tabList]: true,
+      flexcol: tabOrientation === 'vertical',
+      flexrow: tabOrientation === 'horizontal',
+    }"
     role="tablist"
     :aria-orientation="tabOrientation"
+    ref="$el"
   >
-    <slot></slot>
+    <slot name="default"></slot>
   </component>
 </template>
 
@@ -14,9 +19,6 @@
   // TODO:
   // * styling for horizontal and vertical use
   // * fun slidey animation by applying some kind of border stroke or background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
   flex-grow: 0;
   &[aria-orientation='horizontal'] {
     flex-flow: row nowrap;
@@ -25,8 +27,6 @@
       var(--ironsworn-color-border);
   }
   &[aria-orientation='vertical'] {
-    flex-flow: column nowrap;
-    width: max-content;
     border-left: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
     border-right: var(--ironsworn-border-width-md) solid
@@ -48,6 +48,8 @@ import {
 import Tab from './tab.vue'
 /**
  * The container for individual {@link Tab} elements. Should be descended from a {@link TabSet} element (which should itself have a {@link TabPanels} descendant).
+ *
+ * It automatically counts all children of its default slot as tabs.
  */
 withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 const tabState = inject(TabStateKey) as TabState

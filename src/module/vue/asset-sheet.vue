@@ -30,19 +30,19 @@
         </Tab>
       </TabList>
       <TabPanels :class="$style.tabPanels">
-        <TabPanel :index="0" :class="$style.TabPanel">
+        <TabPanel :index="0" class="flexcol" :class="$style.TabPanel">
           <AssetEditDescription
         /></TabPanel>
-        <TabPanel :index="1" :class="$style.TabPanel">
+        <TabPanel :index="1" class="flexcol" :class="$style.TabPanel">
           <AssetEditFields
         /></TabPanel>
-        <TabPanel :index="2" :class="$style.TabPanel">
+        <TabPanel :index="2" class="flexcol" :class="$style.TabPanel">
           <AssetEditAbilities
         /></TabPanel>
-        <TabPanel :index="3" :class="$style.TabPanel">
+        <TabPanel :index="3" class="flexcol" :class="$style.TabPanel">
           <AssetEditOptions
         /></TabPanel>
-        <TabPanel :index="4" :class="$style.TabPanel">
+        <TabPanel :index="4" class="flexcol" :class="$style.TabPanel">
           <AssetEditTrack
         /></TabPanel>
       </TabPanels>
