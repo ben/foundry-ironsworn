@@ -84,4 +84,8 @@ provide(TabOrientationKey, props.orientation)
 provide(TabActivationModeKey, props.tabActivationMode)
 provide(NextTabKey, nextTab)
 provide(PreviousTabKey, previousTab)
+
+defineExpose({
+  setActiveTab,
+})
 </script>
