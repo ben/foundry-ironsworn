@@ -38,7 +38,9 @@
 }
 .panelContent {
   flex-grow: 1;
-  // overflow-y: hidden;
+  // HACK: offsets the padding on window.content with a negative margin, then pads it out. this way, the scrollbar appears in the empty space left by the padding instead of overlapping the content.
+  margin: 0 calc(var(--ironsworn-spacer-md) * -1);
+  padding: 0 var(--ironsworn-spacer-md);
 }
 </style>
 
