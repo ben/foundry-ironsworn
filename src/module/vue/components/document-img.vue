@@ -2,7 +2,6 @@
   <img
     class="document-img"
     :src="document.img"
-    :title="document.name"
     :style="style"
     :height="size"
     :width="size"
