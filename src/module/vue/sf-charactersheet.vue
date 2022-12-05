@@ -39,9 +39,15 @@
           </TabList>
           <TabPanels>
             <TabPanel :index="0"><SfLegacies /></TabPanel>
-            <TabPanel :index="1"><SfAssets /></TabPanel>
-            <TabPanel :index="2"><SfProgresses /></TabPanel>
-            <TabPanel :index="3"><SfConnections /></TabPanel>
+            <TabPanel :index="1"
+              ><SfAssets :class="$style.topPadding"
+            /></TabPanel>
+            <TabPanel :index="2"
+              ><SfProgresses :class="$style.topPadding"
+            /></TabPanel>
+            <TabPanel :index="3"
+              ><SfConnections :class="$style.topPadding"
+            /></TabPanel>
             <TabPanel :index="4"><SfNotes /></TabPanel>
           </TabPanels>
         </TabSet>
@@ -60,6 +66,12 @@
     <sf-impacts class="nogrow" />
   </article>
 </template>
+
+<style lang="less" module>
+.topPadding {
+  padding-top: var(--ironsworn-spacer-lg);
+}
+</style>
 
 <style lang="less">
 .sf-character-sheet {

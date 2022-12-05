@@ -1,15 +1,18 @@
 <template>
-  <article class="sf-legacies flexcol nogrow">
-    <section class="legacy-tracks">
+  <article :class="$style.sfLegacies" class="sf-legacies flexcol">
+    <section class="legacy-tracks flexcol" :class="$style.legacyTracks">
       <LegacyTrack
         v-for="legacy in ['quests', 'bonds', 'discoveries']"
         :key="legacy"
         :actor="actor"
         :legacy="(legacy as any)"
+        class="nogrow"
+        :class="$style.legacyTrack"
       />
     </section>
     <section
-      class="starred-progress-tracks flexcol nogrow"
+      :class="$style.starredProgressTracks"
+      class="starred-progress-tracks flexcol"
       v-if="starredProgresses.length"
     >
       <ProgressListItem
@@ -21,16 +24,26 @@
     </section>
   </article>
 </template>
-<style lang="less">
-.sf-legacies {
+<style lang="less" module>
+.sfLegacies {
   gap: var(--ironsworn-spacer-md);
   > *:not(:first-child) {
-    border-top: 1px solid;
+    border-top: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
   }
-  .starred-progress-tracks {
-    padding: var(--ironsworn-spacer-md) 0;
-    gap: var(--ironsworn-spacer-md);
-  }
+}
+
+.starredProgressTracks {
+  padding: var(--ironsworn-spacer-md) 0;
+  gap: var(--ironsworn-spacer-md);
+}
+.legacyTracks {
+  align-items: center;
+  gap: var(--ironsworn-spacer-md);
+}
+.legacyTrack {
+  width: 100%;
+  height: max-content;
 }
 </style>
 
