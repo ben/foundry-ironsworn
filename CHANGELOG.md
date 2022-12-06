@@ -5,6 +5,7 @@
 - Updated bondset editor ([#546](https://github.com/ben/foundry-ironsworn/pull/546))
 - Updated aesthetics for drop targets ([#547](https://github.com/ben/foundry-ironsworn/pull/547))
 - Replace all native tooltips with Foundry enhanced ones ([#549](https://github.com/ben/foundry-ironsworn/pull/549))
+- Better logic for links embedded in descriptions; clicking a move in an asset description navigates to the move, but clicking an actor link opens the actor's sheet, for instance. ([#552](https://github.com/ben/foundry-ironsworn/pull/552))
 
 ## 1.20.1
 
