@@ -44,7 +44,7 @@ async function click(ev: JQuery.ClickEvent) {
     }
 
     // @ts-ignore
-    return gameItem._onClickDocumentLink(ev)
+    return gameItem?._onClickDocumentLink?.(ev)
   }
 
   if (dfid) {
