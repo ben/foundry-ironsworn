@@ -28,9 +28,11 @@
   padding: var(--ironsworn-spacer-md);
   gap: var(--ironsworn-spacer-md);
   justify-content: v-bind(
-    'tabOrientation === "horizontal" ? "center" : "left"'
+    'tabState.orientation === "horizontal" ? "center" : "left"'
   );
-  text-align: v-bind('tabOrientation === "horizontal" ? "center" : "left"');
+  text-align: v-bind(
+    'tabState.orientation === "horizontal" ? "center" : "left"'
+  );
   &:before {
     font-size: 140%;
   }
@@ -38,7 +40,7 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, ref, watch } from 'vue'
+import { computed, inject, onMounted, ref, watch } from 'vue'
 import {
   FocusActivePanel,
   FocusActivePanelKey,
@@ -70,7 +72,19 @@ const props = withDefaults(
 )
 
 const tabState = inject(TabStateKey) as TabState<typeof props.tabKey>
-const tabOrientation = computed(() => tabState.orientation)
+
+onMounted(() => {
+  if (!Object.values(tabState.tabKeys).includes(props.tabKey)) {
+    throw new Error(
+      `Tab's tabKey prop is ${JSON.stringify(
+        props.tabKey
+      )}, but TabSet doesn't include it in its tabKeys prop: ${JSON.stringify(
+        tabState.tabKeys
+      )}`
+    )
+  }
+})
+
 const setActiveTab = inject(SetActiveTabKey) as SetActiveTab<
   typeof props.tabKey
 >
@@ -89,8 +103,8 @@ defineExpose({
 })
 
 function handleKeydown(event: KeyboardEvent) {
-  const vertical = tabOrientation.value === 'vertical'
-  const horizontal = tabOrientation.value === 'horizontal'
+  const vertical = tabState.orientation === 'vertical'
+  const horizontal = tabState.orientation === 'horizontal'
   const currentTabIndex = tabState.tabKeys.indexOf(props.tabKey)
   const lastTabIndex = tabState.tabKeys.length - 1
   switch (true) {
