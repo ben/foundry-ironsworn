@@ -24,6 +24,7 @@
 
 each(Left Right Up Down; {
   .slide@{value}-enter-active, .slide@{value}-leave-active {
+    // prevents the incoming and outgoing elements from fighting for space
   position: absolute;
   top: 0;
   bottom: 0;
