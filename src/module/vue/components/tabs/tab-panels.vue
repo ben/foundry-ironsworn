@@ -7,9 +7,7 @@
       flexrow: tabState.orientation === 'horizontal',
     }"
   >
-    <slot name="before"></slot>
-    <slot name="default"></slot>
-    <slot name="after"></slot>
+    <slot></slot>
   </component>
 </template>
 
