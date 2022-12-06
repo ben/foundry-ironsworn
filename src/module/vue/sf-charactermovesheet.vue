@@ -70,11 +70,11 @@ provide(ActorKey, computed(() => props.actor) as any)
 const $tabSet = ref<InstanceType<typeof TabSet>>()
 const movesTab = ref<InstanceType<typeof SfMovesheetmoves>>()
 CONFIG.IRONSWORN.emitter.on('highlightMove', () =>
-  $tabSet.value?.setActiveTab(0)
+  $tabSet.value?.setActiveTab('moves')
 )
 
 const oraclesTab = ref<InstanceType<typeof SfMovesheetoracles>>()
 CONFIG.IRONSWORN.emitter.on('highlightOracle', () =>
-  $tabSet.value?.setActiveTab(1)
+  $tabSet.value?.setActiveTab('oracles')
 )
 </script>
