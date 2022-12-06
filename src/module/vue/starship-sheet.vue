@@ -1,13 +1,17 @@
 <template>
   <SheetBasic :document="actor" body-class="flexcol">
-    <TabSet :id="`${actor._id}-starship-sheet`">
+    <TabSet :id="`${actor._id}-starship-sheet`" :tabKeys="['assets', 'notes']">
       <TabList>
-        <Tab :index="0">{{ $t('IRONSWORN.Assets') }}</Tab>
-        <Tab :index="1">{{ $t('IRONSWORN.Notes') }}</Tab>
+        <Tab tab-key="assets">{{ $t('IRONSWORN.Assets') }}</Tab>
+        <Tab tab-key="notes">{{ $t('IRONSWORN.Notes') }}</Tab>
       </TabList>
       <TabPanels>
-        <TabPanel class="flexcol" :index="0"><SfAssets /></TabPanel>
-        <TabPanel class="flexcol" :index="1"><SfNotes /></TabPanel>
+        <TabPanel tab-key="assets" class="flexcol">
+          <SfAssets />
+        </TabPanel>
+        <TabPanel tab-key="notes" class="flexcol">
+          <SfNotes />
+        </TabPanel>
       </TabPanels>
     </TabSet>
 

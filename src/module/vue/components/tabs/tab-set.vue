@@ -17,6 +17,7 @@ import {
   SetActivePanelRefKey,
   SetActiveTabKey,
   TabActivationMode,
+  TabKey,
   TabState,
   TabStateKey,
 } from './tab-helpers.js'
@@ -27,24 +28,34 @@ import {
 const props = withDefaults(
   defineProps<{
     id: string
-    defaultIndex?: number
+    tabKeys: TabKey[]
+    /**
+     * @default ```$props.tabKeys[0]```
+     */
+    defaultKey?: TabKey
+    /**
+     * @default ```'horizontal'```
+     */
     orientation?: Orientation
+    /**
+     * @default ```'auto'```
+     */
     tabActivationMode?: TabActivationMode
   }>(),
   {
-    defaultIndex: 0,
     orientation: 'horizontal',
     tabActivationMode: 'auto',
   }
 )
 
 const tabState = reactive<TabState>({
-  activeTab: props.defaultIndex,
+  activeTab: props.defaultKey ?? props.tabKeys[0],
   activePanelRef: null,
   focusedTab: null,
   orientation: props.orientation,
   mode: props.tabActivationMode,
-  _id: props.id,
+  tabKeys: props.tabKeys,
+  tabSetId: props.id,
 })
 
 function setActivePanelRef(ref: HTMLElement) {
@@ -55,10 +66,12 @@ function focusActivePanel() {
     tabState.activePanelRef.focus()
   }
 }
+type ItemIn<T extends any[]> = T extends (infer U)[] ? U : never
 
-// FIXME: this doesn't appear referenced, what did i miss?
-function setActiveTab(tabIndex: number) {
-  tabState.activeTab = tabIndex
+function setActiveTab<T extends ItemIn<typeof props.tabKeys>>(tabKey: T) {
+  if (tabState.activeTab !== tabKey) {
+    tabState.activeTab = tabKey
+  }
 }
 
 provide(TabStateKey, tabState)

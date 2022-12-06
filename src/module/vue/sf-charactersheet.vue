@@ -28,27 +28,33 @@
           <attr-box attr="shadow" />
           <attr-box attr="wits" />
         </div>
-
-        <TabSet :id="`${actor._id}_sf-character-sheet`">
+        <TabSet
+          :tabKeys="['legacies', 'assets', 'progress', 'connections', 'notes']"
+          :id="`${actor._id}_sf-character-sheet`"
+        >
           <TabList>
-            <Tab :index="0">{{ $t('IRONSWORN.Legacies') }}</Tab>
-            <Tab :index="1">{{ $t('IRONSWORN.Assets') }}</Tab>
-            <Tab :index="2">{{ $t('IRONSWORN.Progress') }}</Tab>
-            <Tab :index="3">{{ $t('IRONSWORN.Connections') }}</Tab>
-            <Tab :index="4">{{ $t('IRONSWORN.Notes') }}</Tab>
+            <Tab tab-key="legacies">{{ $t('IRONSWORN.Legacies') }}</Tab>
+            <Tab tab-key="assets">{{ $t('IRONSWORN.Assets') }}</Tab>
+            <Tab tab-key="progress">{{ $t('IRONSWORN.Progress') }}</Tab>
+            <Tab tab-key="connections">{{ $t('IRONSWORN.Connections') }}</Tab>
+            <Tab tab-key="notes">{{ $t('IRONSWORN.Notes') }}</Tab>
           </TabList>
           <TabPanels>
-            <TabPanel :index="0" class="flexcol"><SfLegacies /></TabPanel>
-            <TabPanel :index="1" class="flexcol"
-              ><SfAssets :class="$style.topPadding"
-            /></TabPanel>
-            <TabPanel :index="2" class="flexcol"
-              ><SfProgresses :class="$style.topPadding"
-            /></TabPanel>
-            <TabPanel :index="3" class="flexcol"
-              ><SfConnections :class="$style.topPadding"
-            /></TabPanel>
-            <TabPanel :index="4" class="flexcol"><SfNotes /></TabPanel>
+            <TabPanel tab-key="legacies" class="flexcol">
+              <SfLegacies />
+            </TabPanel>
+            <TabPanel tab-key="assets" class="flexcol">
+              <SfAssets :class="$style.topPadding" />
+            </TabPanel>
+            <TabPanel tab-key="progress" class="flexcol">
+              <SfProgresses :class="$style.topPadding" />
+            </TabPanel>
+            <TabPanel tab-key="connections" class="flexcol">
+              <SfConnections :class="$style.topPadding" />
+            </TabPanel>
+            <TabPanel tab-key="notes" class="flexcol">
+              <SfNotes />
+            </TabPanel>
           </TabPanels>
         </TabSet>
       </div>

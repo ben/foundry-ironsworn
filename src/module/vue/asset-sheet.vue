@@ -5,46 +5,47 @@
     </SheetHeader>
     <TabSet
       v-if="editMode"
+      :tabKeys="['description', 'fields', 'abilities', 'options', 'track']"
       :id="`${item._id}-asset-sheet`"
       :class="$style.tabSet"
     >
       <TabList :class="$style.tabList">
-        <Tab :index="0" :class="$style.tab">
+        <Tab tab-key="description" :class="$style.tab">
           {{ $t('IRONSWORN.Description') }}
         </Tab>
-
-        <Tab :index="1" :class="$style.tab">
+        <Tab tab-key="fields" :class="$style.tab">
           {{ $t('IRONSWORN.Fields') }}
         </Tab>
-
-        <Tab :index="2" :class="$style.tab">
+        <Tab tab-key="abilities" :class="$style.tab">
           {{ $t('IRONSWORN.Abilities') }}
         </Tab>
-
-        <Tab :index="3" :class="$style.tab">
+        <Tab tab-key="options" :class="$style.tab">
           {{ $t('IRONSWORN.Options') }}
         </Tab>
-
-        <Tab :index="4" :class="$style.tab">
+        <Tab tab-key="track" :class="$style.tab">
           {{ $t('IRONSWORN.Track') }}
         </Tab>
       </TabList>
       <TabPanels :class="$style.tabPanels">
-        <TabPanel :index="0" class="flexcol" :class="$style.TabPanel">
-          <AssetEditDescription
-        /></TabPanel>
-        <TabPanel :index="1" class="flexcol" :class="$style.TabPanel">
-          <AssetEditFields
-        /></TabPanel>
-        <TabPanel :index="2" class="flexcol" :class="$style.TabPanel">
-          <AssetEditAbilities
-        /></TabPanel>
-        <TabPanel :index="3" class="flexcol" :class="$style.TabPanel">
-          <AssetEditOptions
-        /></TabPanel>
-        <TabPanel :index="4" class="flexcol" :class="$style.TabPanel">
-          <AssetEditTrack
-        /></TabPanel>
+        <TabPanel
+          tab-key="description"
+          class="flexcol"
+          :class="$style.TabPanel"
+        >
+          <AssetEditDescription />
+        </TabPanel>
+        <TabPanel tab-key="fields" class="flexcol" :class="$style.TabPanel">
+          <AssetEditFields />
+        </TabPanel>
+        <TabPanel tab-key="abilities" class="flexcol" :class="$style.TabPanel">
+          <AssetEditAbilities />
+        </TabPanel>
+        <TabPanel tab-key="options" class="flexcol" :class="$style.TabPanel">
+          <AssetEditOptions />
+        </TabPanel>
+        <TabPanel tab-key="track" class="flexcol" :class="$style.TabPanel">
+          <AssetEditTrack />
+        </TabPanel>
       </TabPanels>
     </TabSet>
     <AssetOverview v-else />

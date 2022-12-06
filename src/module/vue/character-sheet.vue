@@ -26,18 +26,19 @@
         <attr-box attr="wits"></attr-box>
       </div>
       <TabSet
+        :tabKeys="['character', 'notes']"
         :id="`${actor._id}-character-sheet-classic`"
         :class="$style.tabSet"
       >
-        <TabList
-          ><Tab :index="0">{{ $t('IRONSWORN.Character') }}</Tab
-          ><Tab :index="1">{{ $t('IRONSWORN.Notes') }}</Tab></TabList
-        >
+        <TabList>
+          <Tab tab-key="character">{{ $t('IRONSWORN.Character') }}</Tab>
+          <Tab tab-key="notes">{{ $t('IRONSWORN.Notes') }}</Tab>
+        </TabList>
         <TabPanels>
-          <TabPanel :index="0" class="flexcol">
+          <TabPanel tab-key="character" class="flexcol">
             <IronswornMain />
           </TabPanel>
-          <TabPanel :index="1" class="flexcol">
+          <TabPanel tab-key="notes" class="flexcol">
             <IronswornNotes :class="$style.tabContent" />
           </TabPanel>
         </TabPanels>

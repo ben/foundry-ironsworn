@@ -3,32 +3,35 @@
     :id="`${(actor as any)._id}_move-sheet`"
     ref="$tabSet"
     :class="$style.tabSet"
+    :tabKeys="['moves', 'oracles']"
   >
     <TabList>
-      <Tab :is="BtnIsicon" icon="d10-tilt" :index="0">{{
+      <Tab :is="BtnIsicon" icon="d10-tilt" tab-key="moves">{{
         $t('IRONSWORN.Moves')
       }}</Tab>
-      <Tab :is="BtnIsicon" icon="oracle" :index="1">{{
+      <Tab :is="BtnIsicon" icon="oracle" tab-key="oracles">{{
         $t('IRONSWORN.Oracles')
       }}</Tab>
     </TabList>
     <TabPanels>
-      <TabPanel :index="0" class="flexcol">
+      <TabPanel tab-key="moves" class="flexcol">
         <Suspense>
           <SfMovesheetmoves
             :class="$style.panelContent"
             ref="movesTab"
             :toolset="toolset"
-          /> </Suspense
-      ></TabPanel>
-      <TabPanel :index="1" class="flexcol">
+          />
+        </Suspense>
+      </TabPanel>
+      <TabPanel tab-key="oracles" class="flexcol">
         <Suspense>
           <SfMovesheetoracles
             :class="$style.panelContent"
             ref="oraclesTab"
             :toolset="toolset"
-          /> </Suspense
-      ></TabPanel>
+          />
+        </Suspense>
+      </TabPanel>
     </TabPanels>
   </TabSet>
 </template>

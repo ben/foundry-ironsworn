@@ -23,7 +23,7 @@ withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
 
 const tabState = inject(TabStateKey) as TabState
 
-const tabSetId = computed(() => tabState._id)
+const tabSetId = computed(() => tabState.tabSetId)
 defineExpose({
   tabSetId: tabSetId.value,
 })

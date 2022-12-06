@@ -3,8 +3,8 @@
     :is="is"
     ref="$el"
     role="tabpanel"
-    :aria-labelledby="`tabs--${tabState._id}--tab--${index}`"
-    :id="`tabs--${tabState._id}--panel--${index}`"
+    :aria-labelledby="`tabs--${tabState.tabSetId}--tab--${tabKey}`"
+    :id="`tabs--${tabState.tabSetId}--panel--${tabKey}`"
     tabindex="-1"
     :hidden="!isActive"
     v-show="isActive"
@@ -18,6 +18,7 @@ import { computed, inject, Ref, ref, watch } from 'vue'
 import {
   SetActivePanelRef,
   SetActivePanelRefKey,
+  TabKey,
   TabState,
   TabStateKey,
 } from './tab-helpers.js'
@@ -28,9 +29,9 @@ import {
 const props = withDefaults(
   defineProps<{
     /**
-     * The index must match that of a {@link Tab} with the same parent {@link TabSet} element.
+     * The key must match that of a {@link Tab} with the same parent {@link TabSet} element.
      */
-    index: number
+    tabKey: TabKey
     /**
      * @defaultValue 'div'
      */
@@ -39,13 +40,13 @@ const props = withDefaults(
   { is: 'div' }
 )
 
+const tabState = inject(TabStateKey) as TabState<typeof props.tabKey>
 const $el = ref<HTMLElement>() as Ref<HTMLElement>
+const isActive = computed(() => tabState.activeTab === props.tabKey)
 const setActivePanelRef = inject(SetActivePanelRefKey) as SetActivePanelRef
 
-const tabState = inject(TabStateKey) as TabState
-const isActive = computed(() => tabState.activeTab === props.index)
 watch(isActive, () => isActive.value && setActivePanelRef($el.value))
 
-const tabSetId = computed(() => tabState._id)
+const tabSetId = computed(() => tabState.tabSetId)
 defineExpose({ tabSetId: tabSetId.value })
 </script>
