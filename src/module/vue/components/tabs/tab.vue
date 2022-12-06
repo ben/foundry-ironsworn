@@ -62,7 +62,7 @@ const props = withDefaults(
     /**
      * The component to use. Use {@link BtnFaicon} or {@link BtnIsicon} if you want an icon.
      * @defaultValue `'button'`
-     * @remarks The component automatically applies the `type="button"` attribute when this is set to `'button'` (in other words, a standard `<button>` element, to prevent any weirdness with form submission.
+     * @remarks The component automatically applies the `type="button"` attribute to prevent any weirdness with `<button>` form submission.
      */
     is?: any
   }>(),
