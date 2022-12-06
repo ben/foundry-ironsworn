@@ -32,7 +32,12 @@
         :key="move.moveItem().id ?? `move${resultIndex}`"
         class="nogrow"
       >
-        <SfMoverow :move="move" ref="allMoves" :thematicColor="move.color" />
+        <SfMoverow
+          :move="move"
+          ref="allMoves"
+          :thematicColor="move.color"
+          :class="$style.moveRow"
+        />
       </li>
     </ul>
 
@@ -74,6 +79,10 @@
 .itemList {
   gap: var(--ironsworn-spacer-md);
   margin: 0;
+}
+
+.moveRow {
+  border-radius: var(--ironsworn-border-radius-lg);
 }
 </style>
 
