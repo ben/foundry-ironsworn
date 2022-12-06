@@ -12,9 +12,12 @@
 </template>
 
 <script lang="ts" setup>
+import { forEach } from 'lodash'
 import { onMounted, provide, reactive, ref } from 'vue'
 import {
   FocusActivePanelKey,
+  getTabId,
+  getTabPanelId,
   Orientation,
   SetActivePanelRefKey,
   SetActiveTabKey,
@@ -87,48 +90,41 @@ defineExpose({
 
 const $el = ref<HTMLElement>()
 
-type Role = 'tabpanel' | 'tab'
-
-function queryRoles(tabSet: HTMLElement, ...roles: Role[]) {
-  const selector = roles
-    .map((role) => `[data-tab-set="${tabState.tabSetId}"][role=${role}]`)
-    .join(', ')
-  return tabSet.querySelectorAll(selector)
-}
-
+/**
+ * Validates child elements by comparing them to provided tabKeys.
+ */
 onMounted(() => {
-  const element = $el.value as HTMLElement
-  const roles: Set<Role> = new Set(['tabpanel', 'tab'])
-  const tabElements = queryRoles(element, ...roles)
-  if (!tabElements ?? tabElements?.length === 0) {
-    throw Error(
-      `TabList for ${tabState.tabSetId} contains no valid tab set members.`
-    )
+  const elements = {
+    TabPanel: new Set(
+      props.tabKeys.map(
+        (key) =>
+          document.getElementById(getTabPanelId(props.id, key))?.dataset?.tabKey
+      )
+    ),
+    Tab: new Set(
+      props.tabKeys.map(
+        (key) =>
+          document.getElementById(getTabId(props.id, key))?.dataset?.tabKey
+      )
+    ),
   }
-  const componentKeys = new Set(tabState.tabKeys.map((key) => key.toString()))
-  const elementKeys = new Map(
-    Array.from(roles).map((role) => [role, new Set<string>()])
-  )
-
-  tabElements.forEach((el) => {
-    const tabElement = el as HTMLElement
-    const tabElementKey = tabElement.dataset.tabKey
-    const tabElementRole = tabElement.getAttribute('role') as Role
-    if (!tabElementKey) {
-      throw Error(
-        `${tabElement.id} is missing tabKey attribute. Check its component props.`
-      )
-    }
-    elementKeys.get(tabElementRole)?.add(tabElementKey)
-  })
-
-  elementKeys.forEach((role, roleName) => {
-    if (role.intersection(componentKeys).size !== role.size) {
-      throw Error(
-        `${roleName} HTML element tabKeys don't match with TabSet tabKeys.`
-      )
+  const componentKeys = new Set(tabState.tabKeys.map((key) => key))
+  forEach(elements, (role, label) => {
+    switch (true) {
+      case role.equals(componentKeys):
+        // Tabs OK!
+        break
+      case role.size === 0:
+        throw Error(`No ${label} IDs found.`)
+      case role.has(undefined):
+        throw Error(`At least one ${label} has an undefined tabKey.`)
+      case componentKeys.isSubset(role as Set<string>):
+        throw Error(`${label}s are missing one or more tabKeys.`)
+      default:
+        throw Error(
+          `TabSet prop tabKeys doesn't match the tabKey props of its descendent ${label}s.`
+        )
     }
   })
-  // console.log('tabs validated', elementKeys)
 })
 </script>
