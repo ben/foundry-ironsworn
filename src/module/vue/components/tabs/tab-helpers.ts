@@ -38,11 +38,10 @@ export const FocusActivePanelKey = Symbol(
  * @param element The element of the mounted component.
  */
 export function validateTabSetRole(
+  tabState: TabState,
   element: HTMLElement,
   role: 'TabPanel' | 'Tab'
 ) {
-  const tabState = inject(TabStateKey) as TabState
-
   const tabElements = element.querySelectorAll(
     `[data-tab-set="${tabState.tabSetId}"][role=${role.toLowerCase()}]`
   )
