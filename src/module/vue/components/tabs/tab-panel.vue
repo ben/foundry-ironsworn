@@ -44,7 +44,7 @@ const props = withDefaults(
   { is: 'div' }
 )
 
-const tabState = inject(TabStateKey) as TabState<typeof props.tabKey>
+const tabState = inject(TabStateKey) as TabState
 
 const $el = ref<HTMLElement>() as Ref<HTMLElement>
 const isActive = computed(() => tabState.activeTab === props.tabKey)

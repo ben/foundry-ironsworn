@@ -75,7 +75,7 @@ const props = withDefaults(
   { disabled: false, is: 'button' }
 )
 
-const tabState = inject(TabStateKey) as TabState<typeof props.tabKey>
+const tabState = inject(TabStateKey) as TabState
 
 const setActiveTab = inject(SetActiveTabKey) as SetActiveTab<
   typeof props.tabKey
