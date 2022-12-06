@@ -5,13 +5,14 @@
       flexcol: orientation === 'horizontal',
       flexrow: orientation === 'vertical',
     }"
+    ref="$el"
   >
     <slot></slot>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { provide, reactive } from 'vue'
+import { onMounted, provide, reactive, ref } from 'vue'
 import {
   FocusActivePanelKey,
   Orientation,
@@ -82,5 +83,52 @@ provide(FocusActivePanelKey, focusActivePanel)
 
 defineExpose({
   setActiveTab,
+})
+
+const $el = ref<HTMLElement>()
+
+type Role = 'tabpanel' | 'tab'
+
+function queryRoles(tabSet: HTMLElement, ...roles: Role[]) {
+  const selector = roles
+    .map((role) => `[data-tab-set="${tabState.tabSetId}"][role=${role}]`)
+    .join(', ')
+  return tabSet.querySelectorAll(selector)
+}
+
+onMounted(() => {
+  const element = $el.value as HTMLElement
+  const roles: Set<Role> = new Set(['tabpanel', 'tab'])
+  const tabElements = queryRoles(element, ...roles)
+  if (!tabElements ?? tabElements?.length === 0) {
+    throw Error(
+      `TabList for ${tabState.tabSetId} contains no valid tab set members.`
+    )
+  }
+  const componentKeys = new Set(tabState.tabKeys.map((key) => key.toString()))
+  const elementKeys = new Map(
+    Array.from(roles).map((role) => [role, new Set<string>()])
+  )
+
+  tabElements.forEach((el) => {
+    const tabElement = el as HTMLElement
+    const tabElementKey = tabElement.dataset.tabKey
+    const tabElementRole = tabElement.getAttribute('role') as Role
+    if (!tabElementKey) {
+      throw Error(
+        `${tabElement.id} is missing tabKey attribute. Check its component props.`
+      )
+    }
+    elementKeys.get(tabElementRole)?.add(tabElementKey)
+  })
+
+  elementKeys.forEach((role, roleName) => {
+    if (role.intersection(componentKeys).size !== role.size) {
+      throw Error(
+        `${roleName} HTML element tabKeys don't match with TabSet tabKeys.`
+      )
+    }
+  })
+  // console.log('tabs validated', elementKeys)
 })
 </script>
