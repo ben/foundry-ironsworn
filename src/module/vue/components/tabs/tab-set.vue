@@ -114,12 +114,6 @@ onMounted(() => {
       case role.equals(componentKeys):
         // Tabs OK!
         break
-      case role.size === 0:
-        throw Error(`No ${label} IDs found.`)
-      case role.has(undefined):
-        throw Error(`At least one ${label} has an undefined tabKey.`)
-      case componentKeys.isSubset(role as Set<string>):
-        throw Error(`${label}s are missing one or more tabKeys.`)
       default:
         throw Error(
           `TabSet prop tabKeys doesn't match the tabKey props of its descendent ${label}s.`
