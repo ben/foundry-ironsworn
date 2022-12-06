@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed, inject, onMounted, Ref, ref, watch } from 'vue'
+import { computed, inject, Ref, ref, watch } from 'vue'
 import {
   getTabId,
   getTabPanelId,
@@ -45,18 +45,6 @@ const props = withDefaults(
 )
 
 const tabState = inject(TabStateKey) as TabState<typeof props.tabKey>
-
-onMounted(() => {
-  if (!Object.values(tabState.tabKeys).includes(props.tabKey)) {
-    throw new Error(
-      `TabPanel's tabKey prop is ${JSON.stringify(
-        props.tabKey
-      )}, but TabSet doesn't include it in its tabKeys prop: ${JSON.stringify(
-        tabState.tabKeys
-      )}`
-    )
-  }
-})
 
 const $el = ref<HTMLElement>() as Ref<HTMLElement>
 const isActive = computed(() => tabState.activeTab === props.tabKey)

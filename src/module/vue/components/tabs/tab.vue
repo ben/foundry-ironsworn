@@ -42,7 +42,7 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, onMounted, ref, watch } from 'vue'
+import { computed, inject, ref, watch } from 'vue'
 import {
   FocusActivePanel,
   FocusActivePanelKey,
@@ -76,18 +76,6 @@ const props = withDefaults(
 )
 
 const tabState = inject(TabStateKey) as TabState<typeof props.tabKey>
-
-onMounted(() => {
-  if (!Object.values(tabState.tabKeys).includes(props.tabKey)) {
-    throw new Error(
-      `Tab's tabKey prop is ${JSON.stringify(
-        props.tabKey
-      )}, but TabSet doesn't include it in its tabKeys prop: ${JSON.stringify(
-        tabState.tabKeys
-      )}`
-    )
-  }
-})
 
 const setActiveTab = inject(SetActiveTabKey) as SetActiveTab<
   typeof props.tabKey
