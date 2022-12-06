@@ -4,6 +4,8 @@
     ref="$el"
     role="tab"
     type="button"
+    :data-tab-set="tabState.tabSetId"
+    :data-tab-key="tabKey"
     :class="$style.tab"
     :aria-disabled="disabled"
     :aria-selected="isActive"

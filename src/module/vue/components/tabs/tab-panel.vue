@@ -8,6 +8,8 @@
     tabindex="-1"
     :hidden="!isActive"
     v-show="isActive"
+    :data-tab-set="tabState.tabSetId"
+    :data-tab-key="tabKey"
   >
     <slot></slot>
   </component>
