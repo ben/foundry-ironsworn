@@ -3,6 +3,7 @@
 
 import { InjectionKey } from 'vue'
 
+// not strictly necessary, but helps clarify what the string values reperesent
 export type TabKey = string
 export type TabActivationMode = 'auto' | 'manual'
 export type Orientation = 'horizontal' | 'vertical'
@@ -18,13 +19,13 @@ export function getTabPanelId(tabSetId: string, tabKey: TabKey) {
   return `tabs--${tabSetId}--panel--${tabKey}`
 }
 
-export interface TabState<TabKeyType = TabKey> {
-  activeTab: TabKeyType
+export interface TabState {
+  activeTab: TabKey
   activePanelRef: HTMLElement | null
-  focusedTab: TabKeyType | null
+  focusedTab: TabKey | null
   orientation: Orientation
   mode: TabActivationMode
-  tabKeys: TabKeyType[]
+  tabKeys: TabKey[]
   tabSetId: string
 }
 

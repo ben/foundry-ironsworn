@@ -70,9 +70,8 @@ function focusActivePanel() {
     tabState.activePanelRef.focus()
   }
 }
-type ItemIn<T extends any[]> = T extends (infer U)[] ? U : never
 
-function setActiveTab<T extends ItemIn<typeof props.tabKeys>>(tabKey: T) {
+function setActiveTab(tabKey: TabKey) {
   if (tabState.activeTab !== tabKey) {
     tabState.activeTab = tabKey
   }
