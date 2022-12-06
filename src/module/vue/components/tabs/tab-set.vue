@@ -1,5 +1,6 @@
 <template>
   <div
+    :data-tab-set="tabState.tabSetId"
     :class="{
       flexcol: orientation === 'horizontal',
       flexrow: orientation === 'vertical',

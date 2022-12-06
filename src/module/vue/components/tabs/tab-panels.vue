@@ -1,6 +1,7 @@
 <template>
   <component
     :is="is"
+    :data-tab-set="tabState.tabSetId"
     :class="{
       flexcol: tabState.orientation === 'vertical',
       flexrow: tabState.orientation === 'horizontal',

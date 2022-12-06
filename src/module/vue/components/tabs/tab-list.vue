@@ -8,6 +8,7 @@
     }"
     role="tablist"
     :aria-orientation="tabState.orientation"
+    :data-tab-set="tabState.tabSetId"
   >
     <slot></slot>
   </component>
