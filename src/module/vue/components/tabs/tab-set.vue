@@ -5,7 +5,6 @@
       flexcol: orientation === 'horizontal',
       flexrow: orientation === 'vertical',
     }"
-    ref="$el"
   >
     <slot></slot>
   </div>
@@ -87,8 +86,6 @@ provide(FocusActivePanelKey, focusActivePanel)
 defineExpose({
   setActiveTab,
 })
-
-const $el = ref<HTMLElement>()
 
 /**
  * Validates child elements by comparing them to provided tabKeys.
