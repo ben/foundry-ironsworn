@@ -42,7 +42,7 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, ref, watch } from 'vue'
+import { computed, inject, nextTick, ref, watch } from 'vue'
 import {
   FocusActivePanel,
   FocusActivePanelKey,
@@ -87,7 +87,12 @@ const $el = ref<HTMLButtonElement>()
 const isActive = computed(() => tabState.activeTab === props.tabKey)
 
 const isFocused = computed(() => tabState.focusedTab === props.tabKey)
-watch(isFocused, () => $el.value?.focus())
+watch(isFocused, () => {
+  if (isFocused.value === true) {
+    console.log('tabKey', props.tabKey, 'focused')
+    nextTick(() => $el.value?.focus())
+  }
+})
 
 const tabSetId = computed(() => tabState.tabSetId)
 defineExpose({

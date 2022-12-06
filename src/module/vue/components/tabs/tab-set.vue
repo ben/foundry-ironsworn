@@ -60,6 +60,7 @@ const tabState = reactive<TabState>({
   mode: props.tabActivationMode,
   tabKeys: props.tabKeys,
   tabSetId: props.id,
+  previousTab: props.defaultKey ?? props.tabKeys[0],
 })
 
 function setActivePanelRef(ref: HTMLElement) {
@@ -73,7 +74,9 @@ function focusActivePanel() {
 
 function setActiveTab(tabKey: TabKey) {
   if (tabState.activeTab !== tabKey) {
+    tabState.previousTab = tabState.activeTab
     tabState.activeTab = tabKey
+    tabState.focusedTab = tabKey
   }
 }
 
@@ -91,12 +94,12 @@ defineExpose({
  */
 onMounted(() => {
   const elements = {
-    TabPanel: new Set(
-      props.tabKeys.map(
-        (key) =>
-          document.getElementById(getTabPanelId(props.id, key))?.dataset?.tabKey
-      )
-    ),
+    // TabPanel: new Set(
+    //   props.tabKeys.map(
+    //     (key) =>
+    //       document.getElementById(getTabPanelId(props.id, key))?.dataset?.tabKey
+    //   )
+    // ),
     Tab: new Set(
       props.tabKeys.map(
         (key) =>

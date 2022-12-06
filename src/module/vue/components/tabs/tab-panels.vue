@@ -5,11 +5,27 @@
     :class="{
       flexcol: tabState.orientation === 'vertical',
       flexrow: tabState.orientation === 'horizontal',
+      [$style.tabPanels]: true,
+      [$style.tabPanelsHorizontal]: tabState.orientation === 'horizontal',
+      [$style.tabPanelsVertical]: tabState.orientation === 'vertical',
     }"
   >
     <slot></slot>
   </component>
 </template>
+
+<style lang="less" module>
+.tabPanels {
+  // ensures that the TabPanels have a recent ancestor for their absolute positioning.
+  position: relative;
+}
+.tabPanelsHorizontal {
+  overflow-x: clip;
+}
+.tabPanelsVertical {
+  overflow-x: clip;
+}
+</style>
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'

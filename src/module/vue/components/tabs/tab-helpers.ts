@@ -27,6 +27,7 @@ export interface TabState {
   mode: TabActivationMode
   tabKeys: TabKey[]
   tabSetId: string
+  previousTab: TabKey
 }
 
 export const TabStateKey = Symbol('tabState') as InjectionKey<TabState>
