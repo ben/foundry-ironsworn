@@ -32,15 +32,15 @@ const props = withDefaults(
     id: string
     tabKeys: TabKey[]
     /**
-     * @default ```$props.tabKeys[0]```
+     * @default `$props.tabKeys[0]`
      */
     defaultKey?: TabKey
     /**
-     * @default ```'horizontal'```
+     * @default `'horizontal'`
      */
     orientation?: Orientation
     /**
-     * @default ```'auto'```
+     * @default `'auto'`
      */
     tabActivationMode?: TabActivationMode
   }>(),
