@@ -20,9 +20,11 @@
   position: relative;
 }
 .tabPanelsHorizontal {
+  // so the animation doesn't encroach on adjacent elements
   overflow-x: clip;
 }
 .tabPanelsVertical {
+  // so the animation doesn't encroach on adjacent elements
   overflow-x: clip;
 }
 </style>
