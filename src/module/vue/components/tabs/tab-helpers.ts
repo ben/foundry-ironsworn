@@ -3,13 +3,20 @@
 
 import { InjectionKey } from 'vue'
 
-export type TabKey = string | number
+export type TabKey = string
 export type TabActivationMode = 'auto' | 'manual'
 export type Orientation = 'horizontal' | 'vertical'
 export type FocusActivePanel = () => void
 export type SetActivePanelRef = (ref: HTMLElement) => void
 export type SetActiveTab<TabKeyType = TabKey> = (tabKey: TabKeyType) => void
 export type TabIndexIncrementer = (tabCount: number) => void
+
+export function getTabId(tabSetId: string, tabKey: TabKey) {
+  return `tabs--${tabSetId}--tab--${tabKey}`
+}
+export function getTabPanelId(tabSetId: string, tabKey: TabKey) {
+  return `tabs--${tabSetId}--panel--${tabKey}`
+}
 
 export interface TabState<TabKeyType = TabKey> {
   activeTab: TabKeyType

@@ -9,8 +9,8 @@
     :class="$style.tab"
     :aria-disabled="disabled"
     :aria-selected="isActive"
-    :aria-controls="`tabs--${tabState.tabSetId}--panel--${tabKey}`"
-    :id="`tabs--${tabState.tabSetId}--tab--${tabKey}`"
+    :aria-controls="getTabPanelId(tabState.tabSetId, tabKey)"
+    :id="getTabId(tabState.tabSetId, tabKey)"
     :tabindex="isActive ? undefined : -1"
     @click="setActiveTab(tabKey)"
     @keydown="handleKeydown"
@@ -46,6 +46,8 @@ import { computed, inject, onMounted, ref, watch } from 'vue'
 import {
   FocusActivePanel,
   FocusActivePanelKey,
+  getTabId,
+  getTabPanelId,
   SetActiveTab,
   SetActiveTabKey,
   TabKey,

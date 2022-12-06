@@ -3,8 +3,8 @@
     :is="is"
     ref="$el"
     role="tabpanel"
-    :aria-labelledby="`tabs--${tabState.tabSetId}--tab--${tabKey}`"
-    :id="`tabs--${tabState.tabSetId}--panel--${tabKey}`"
+    :aria-labelledby="getTabId(tabState.tabSetId, tabKey)"
+    :id="getTabPanelId(tabState.tabSetId, tabKey)"
     tabindex="-1"
     :hidden="!isActive"
     v-show="isActive"
@@ -18,6 +18,8 @@
 <script lang="ts" setup>
 import { computed, inject, onMounted, Ref, ref, watch } from 'vue'
 import {
+  getTabId,
+  getTabPanelId,
   SetActivePanelRef,
   SetActivePanelRefKey,
   TabKey,
