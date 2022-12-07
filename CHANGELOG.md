@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.2
+
 - Updated bondset editor ([#546](https://github.com/ben/foundry-ironsworn/pull/546))
 - Updated aesthetics for drop targets ([#547](https://github.com/ben/foundry-ironsworn/pull/547))
 - Replace all native tooltips with Foundry enhanced ones ([#549](https://github.com/ben/foundry-ironsworn/pull/549))
