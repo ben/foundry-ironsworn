@@ -1,5 +1,8 @@
 <template>
-  <active-completed-progresses exclude="bond" :progress-stars="true" />
+  <active-completed-progresses
+    :excluded-subtypes="['bond']"
+    :progress-stars="true"
+  />
 </template>
 
 <script setup lang="ts">

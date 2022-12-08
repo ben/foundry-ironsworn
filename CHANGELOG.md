@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Include connections in the progress lists on the shared and Ironsworn sheets
+
 ## 1.20.3
 
 - Shared sheet notes now grow to fill their space
