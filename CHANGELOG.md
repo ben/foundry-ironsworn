@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.3
+
 - Shared sheet notes now grow to fill their space
 - Fixed some spacing and layout issues on the NPC sheet
 
