@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Shared sheet notes now grow to fill their space
+
 ## 1.20.2
 
 - Updated bondset editor ([#546](https://github.com/ben/foundry-ironsworn/pull/546))
