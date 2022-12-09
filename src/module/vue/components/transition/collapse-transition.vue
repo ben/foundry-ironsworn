@@ -24,7 +24,13 @@
 
 import { computed, reactive } from '@vue/reactivity'
 import { isEmpty, kebabCase } from 'lodash'
-import { CSSProperties, Transition, TransitionGroup, watch } from 'vue'
+import {
+  CSSProperties,
+  ExtractPropTypes,
+  Transition,
+  TransitionGroup,
+  watch,
+} from 'vue'
 import type { PropertiesHyphen } from 'csstype'
 
 type Dimension = 'height' | 'width'

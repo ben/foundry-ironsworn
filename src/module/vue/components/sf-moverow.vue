@@ -268,7 +268,7 @@ Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
   if (targetMoveId === moveId.value) {
-    $collapsible.value?.scrollToAndExpand()
+    $collapsible.value?.scrollToAndExpand(0)
   }
 })
 

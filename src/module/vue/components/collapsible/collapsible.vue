@@ -40,7 +40,13 @@
       </component>
       <slot name="after-toggle"></slot>
     </component>
-    <CollapseTransition :dimension="dimension">
+    <CollapseTransition
+      :v-bind="{
+        ...props.collapseTransition,
+        orientation: dimension,
+        duration: state.duration,
+      }"
+    >
       <component
         v-if="state.expanded"
         :is="contentWrapperIs"
@@ -94,13 +100,14 @@
 </style>
 
 <script setup lang="ts">
-import { nextTick, reactive } from 'vue'
+import { ExtractPropTypes, nextTick, reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed, ref } from '@vue/reactivity'
 
 const props = withDefaults(
   defineProps<{
+    duration?: ExtractPropTypes<typeof CollapseTransition>['duration']
     /**
      * The text displayed on the button element that controls the expand/collapse toggle.
      */
@@ -142,9 +149,15 @@ const props = withDefaults(
      * @default false
      */
     expanded?: boolean
+    /**
+     * @inheritdoc
+     */
+    collapseTransition?: Omit<
+      ExtractPropTypes<typeof CollapseTransition>,
+      'dimension' | 'duration'
+    >
   }>(),
   {
-    orientation: 'vertical',
     wrapperIs: 'article',
     contentWrapperIs: 'section',
     toggleWrapperIs: 'h3',
@@ -156,6 +169,7 @@ const props = withDefaults(
     toggleTextClass: '',
     noClickable: false,
     expanded: false,
+    duration: 300,
   }
 )
 
@@ -165,9 +179,11 @@ const $contentWrapper = ref<HTMLElement>()
 const state = reactive<{
   expanded: boolean
   highlighted: boolean
+  duration: number
 }>({
   expanded: props.expanded,
   highlighted: false,
+  duration: props.duration,
 })
 
 const wrapperId = computed(() => props.baseId)
@@ -178,15 +194,39 @@ const dimension = computed(() =>
   props.orientation === 'horizontal' ? 'width' : 'height'
 )
 
-function toggle() {
-  state.expanded = !state.expanded
+function setExpandState(
+  expanded: typeof state.expanded,
+  /**
+   * The desired duration for the collapse transition, if it's different than what the component's state maintains.
+   */
+  overrideDuration?: typeof state.duration
+) {
+  let oldDuration
+  if (overrideDuration) {
+    console.log('overrideDurationn', overrideDuration)
+    oldDuration = state.duration.valueOf()
+    state.duration = overrideDuration
+  }
+  state.expanded = expanded
+
+  if (overrideDuration && oldDuration) {
+    console.log('setting timeout', overrideDuration, overrideDuration)
+    setTimeout(() => {
+      state.duration = oldDuration
+    }, overrideDuration)
+  }
 }
 
-function expand() {
-  state.expanded = true
+function toggle(overrideDuration?: number) {
+  setExpandState(!state.expanded, overrideDuration)
 }
-function collapse() {
-  state.expanded = false
+
+function expand(overrideDuration?: number) {
+  setExpandState(true, overrideDuration)
+}
+
+function collapse(overrideDuration?: number) {
+  setExpandState(false, overrideDuration)
 }
 
 function highlight() {
@@ -202,7 +242,7 @@ function unhighlight() {
  * @param ms The duration of the highlight effect, in milliseconds
  */
 async function scrollToAndExpand(ms: number = 2000) {
-  expand()
+  expand(0)
   highlight()
 
   await nextTick()
@@ -229,5 +269,9 @@ defineExpose({
    * Whether the collapsible is expanded.
    */
   expanded: state.expanded,
+  /**
+   * The current duration of the animation, in ms.
+   */
+  duration: state.duration,
 })
 </script>

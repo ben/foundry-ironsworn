@@ -10,7 +10,6 @@
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
     :toggleTextClass="$style.toggleText"
-    :noClickable="true"
     ref="$collapsible"
   >
     <template #default>
@@ -75,7 +74,7 @@
 }
 </style>
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ExtractPropTypes, ref } from 'vue'
 import { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
@@ -85,6 +84,17 @@ const props = withDefaults(
   defineProps<{
     category: MoveCategory
     headingLevel?: number
+    collapsible?: Omit<
+      ExtractPropTypes<typeof Collapsible>,
+      | 'toggleButtonClass'
+      | 'toggleTooltip'
+      | 'toggleWrapperIs'
+      | 'toggleWrapperClass'
+      | 'toggleSectionClass'
+      | 'baseId'
+      | 'toggleLabel'
+      | 'toggleTextClass'
+    >
   }>(),
   { headingLevel: 3 }
 )
@@ -108,7 +118,7 @@ function collapseChildren() {
 
 async function scrollToAndExpandChild(targetMoveId: string) {
   if (moves.value.has(targetMoveId)) {
-    await $collapsible.value?.expand()
+    await $collapsible.value?.expand(0)
     const targetChild = children.value.find(
       (child) => child.moveId === targetMoveId
     )
