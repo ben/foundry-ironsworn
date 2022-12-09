@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Allow viewing of completed progress items
+
 ## 1.20.4
 
 - Include connections in the progress lists on the shared and Ironsworn sheets

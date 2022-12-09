@@ -11,7 +11,6 @@
     <ProgressControls class="nogrow" :foeCompendium="foeCompendium" />
     <Collapsible
       :toggleLabel="$t('IRONSWORN.Completed')"
-      :disabled="!activeProgressList?.actorHasCompletedItems"
       class="progress-completed nogrow"
       style=""
       :class="$style.completedProgressWrapper"
