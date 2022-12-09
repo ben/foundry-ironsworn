@@ -150,6 +150,7 @@ const props = withDefaults(
      */
     expanded?: boolean
     /**
+     * Props for the {@link CollapseTransition}.
      * @inheritdoc
      */
     collapseTransition?: Omit<
