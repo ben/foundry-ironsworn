@@ -24,7 +24,7 @@
           type="button"
           :aria-controls="contentId"
           :icon="noIcon ? undefined : 'chevron-right'"
-          @click="toggle"
+          @click="toggle()"
           :disabled="disabled"
           :class="[
             $style.toggle,
@@ -203,7 +203,7 @@ function setExpandState(
 ) {
   let oldDuration
   if (overrideDuration) {
-    console.log('overrideDurationn', overrideDuration)
+    console.log('overrideDuration', overrideDuration)
     oldDuration = state.duration.valueOf()
     state.duration = overrideDuration
   }
