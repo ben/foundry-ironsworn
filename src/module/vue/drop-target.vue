@@ -1,5 +1,6 @@
 <template>
   <component
+    v-bind="($attrs, $props)"
     :is="is"
     :data-ironsworn-drop-type="dropType"
     :data-ironsworn-drop-active="false"
