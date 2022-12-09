@@ -153,7 +153,7 @@ export class IronswornRollMessage {
   }
 
   async burnMomentum() {
-    if (this.actor?.data.type !== 'character') return
+    if (this.actor?.type !== 'character') return
     const { momentum } = this.actor.data.data
 
     const [c1, c2] = this.roll.finalChallengeDice ?? []
@@ -251,7 +251,7 @@ export class IronswornRollMessage {
         this.roll.postRollOptions.replacedOutcome?.source,
     }
     const move = await this.roll.moveItem
-    if (move?.data.type !== 'sfmove') return ret
+    if (move?.type !== 'sfmove') return ret
 
     const key = DfRollOutcome[theOutcome]
     let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
@@ -275,7 +275,7 @@ export class IronswornRollMessage {
   }
 
   private momentumData() {
-    if (this.actor?.data.type !== 'character') return {}
+    if (this.actor?.type !== 'character') return {}
 
     // Can't burn momentum on progress rolls
     if (this.roll.preRollOptions.progress) return {}
