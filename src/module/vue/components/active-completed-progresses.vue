@@ -9,54 +9,23 @@
       ref="activeProgressList"
     />
     <ProgressControls class="nogrow" :foeCompendium="foeCompendium" />
-    <Collapsible
-      :toggleLabel="$t('IRONSWORN.Completed')"
-      :disabled="!activeProgressList?.actorHasCompletedItems"
-      class="progress-completed nogrow"
-      style=""
-      :class="$style.completedProgressWrapper"
-      toggleButtonClass="clickable text"
-      :baseId="`${actor._id}_progress-completed`"
-      toggleWrapperIs="h3"
-    >
-      <ProgressList
-        :showCompleted="'completed-only'"
-        :excludedSubtypes="['bond']"
-        :progress-stars="progressStars"
-        :progressListItemClass="$style.completedProgressListItem"
-        :class="`${$style.progressList} ${$style.completedProgressList}`"
-        ref="completeProgressList"
-      />
-    </Collapsible>
+    <CompletedProgressList
+      class="nogrow"
+      :collapsibleProps="{ toggleWrapperIs: 'h3' }"
+    />
   </article>
 </template>
 
-<style lang="less" module>
-.completedProgressWrapper {
-  margin-top: var(--ironsworn-spacer-lg);
-  border-radius: var(--ironsworn-border-radius-lg);
-  border-width: var(--ironsworn-border-width-md);
-  border-color: var(--ironsworn-color-fg-10);
-  background-color: var(--ironsworn-color-fg-10);
-  border-style: solid;
-}
-.completedProgressList {
-  margin: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
-}
-.completedProgressListItem {
-  background-color: var(--ironsworn-color-bg-50);
-  border-color: var(--ironsworn-color-bg-50);
-}
-</style>
+<style lang="less" module></style>
 
 <script setup lang="ts">
 import { computed, inject, ref, Ref } from 'vue'
 import { ActorKey } from '../provisions'
 import ProgressControls from './progress-controls.vue'
 import { IronswornSettings } from '../../helpers/settings'
-import Collapsible from './collapsible/collapsible.vue'
 import ProgressList from './progress-list.vue'
 import DropTarget from '../drop-target.vue'
+import CompletedProgressList from './completed-progress-list.vue'
 
 const props = defineProps<{
   exclude?: string
