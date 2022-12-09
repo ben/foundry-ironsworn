@@ -3,7 +3,7 @@
     <DropTarget
       :is="ProgressList"
       dropType="progress"
-      :excludedSubtypes="props.excludedSubtypes"
+      :excludedSubtypes="excludedSubtypes"
       :progress-stars="progressStars"
       :showCompleted="'no-completed'"
     />
@@ -25,7 +25,7 @@ import ProgressList from './progress-list.vue'
 import DropTarget from '../drop-target.vue'
 import CompletedProgressList from './completed-progress-list.vue'
 
-const props = withDefaults(
+withDefaults(
   defineProps<{
     /**
      * List of progress subtypes to exclude from the list. To leave out
