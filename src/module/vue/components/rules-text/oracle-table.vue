@@ -1,8 +1,8 @@
 <template>
   <table class="oracle-table">
     <caption
-      v-if="!noCaption && (oracleTable().system as any).description"
-      v-html="enrichMarkdown(oracleTable().system.description ?? '')"
+      v-if="!noCaption && oracleTable().description"
+      v-html="enrichMarkdown(oracleTable().description ?? '')"
     />
     <thead>
       <tr>
@@ -75,6 +75,8 @@ function rangeString({ low, high }: TableRowData) {
   }
   return `${low}-${high}`
 }
+
+console.log(props.oracleTable())
 
 const tableRows = computed(() =>
   sortBy(
