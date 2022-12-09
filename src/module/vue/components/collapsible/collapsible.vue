@@ -203,15 +203,20 @@ function setExpandState(
   overrideDuration?: typeof state.duration
 ) {
   let oldDuration
-  if (overrideDuration) {
+  if (typeof overrideDuration === 'number') {
     console.log('overrideDuration', overrideDuration)
     oldDuration = state.duration.valueOf()
     state.duration = overrideDuration
   }
   state.expanded = expanded
 
-  if (overrideDuration && oldDuration) {
-    console.log('setting timeout', overrideDuration, overrideDuration)
+  if (typeof overrideDuration === 'number' && typeof oldDuration === 'number') {
+    console.log(
+      'resetting timeout from',
+      overrideDuration,
+      'back to',
+      oldDuration
+    )
     setTimeout(() => {
       state.duration = oldDuration
     }, overrideDuration)
