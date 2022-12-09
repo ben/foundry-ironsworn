@@ -57,21 +57,18 @@ import Collapsible from './collapsible/collapsible.vue'
 import ProgressList from './progress-list.vue'
 import DropTarget from '../drop-target.vue'
 
-const props = withDefaults(
-  defineProps<{
-    /**
-     * List of progress subtypes to exclude from the list. To leave out
-     * connections, pass `['bond']` here.
-     */
-    excludedSubtypes?: string[]
-    progressStars?: boolean
-    /**
-     * When true, renders the progress bars for more compact display.
-     */
-    compactProgress?: boolean
-  }>(),
-  { excludedSubtypes: [] }
-)
+const props = defineProps<{
+  /**
+   * List of progress subtypes to exclude from the list. To leave out
+   * connections, pass `['bond']` here.
+   */
+  excludedSubtypes?: string[]
+  progressStars?: boolean
+  /**
+   * When true, renders the progress bars for more compact display.
+   */
+  compactProgress?: boolean
+}>()
 
 let completeProgressList = ref<InstanceType<typeof ProgressList>>()
 // completeProgressList doesn't always exist, so we use the always-on component to check if there's completed items of the correct subtype
