@@ -31,12 +31,12 @@ export class IronswornItem extends Item {
   }
 
   clearProgress() {
-    if (this.data.type !== 'progress') return
+    if (this.type !== 'progress') return
     return this.update({ 'system.current': 0 })
   }
 
   fulfill() {
-    if (this.data.type !== 'progress') return
+    if (this.type !== 'progress') return
     const system = this.system as ProgressDataPropertiesData
 
     let moveDfId: string | undefined
@@ -87,7 +87,8 @@ export class IronswornItem extends Item {
    * Move methods
    */
   isProgressMove(): boolean | undefined {
-    if (this.data.type !== 'sfmove') return
+    console.log(this)
+    if (this.type !== 'sfmove') return
 
     const sfMoveSystem = this.system as SFMoveDataPropertiesData
     return sfMoveSystem.Trigger.Options?.some(
