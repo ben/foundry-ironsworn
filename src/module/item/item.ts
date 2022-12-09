@@ -86,8 +86,11 @@ export class IronswornItem extends Item {
   /**
    * Move methods
    */
+
+  /**
+   * Returns `true` if the move is a progress move, `false` if not, or `undefined` if it's not a move at all.
+   */
   isProgressMove(): boolean | undefined {
-    console.log(this)
     if (this.type !== 'sfmove') return
 
     const sfMoveSystem = this.system as SFMoveDataPropertiesData
