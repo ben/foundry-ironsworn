@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Under the hood: updated NPM packages and Vite bundler ([#554](https://github.com/ben/foundry-ironsworn/pull/554) and [#555](https://github.com/ben/foundry-ironsworn/pull/555))
+
 ## 1.20.5
 
 - Allow viewing of completed progress items
