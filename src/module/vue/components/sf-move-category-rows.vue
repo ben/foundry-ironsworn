@@ -127,6 +127,7 @@ async function scrollToAndExpandChild(targetMoveId: string) {
     (child) => child.moveId === targetMoveId
   )
   await targetChild?.collapsible?.scrollToAndExpand()
+  targetChild?.collapsible?.focus()
 }
 
 defineExpose({
