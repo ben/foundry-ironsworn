@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.5
+
 - Allow viewing of completed progress items
 
 ## 1.20.4
