@@ -2,8 +2,12 @@ import { IOutcomeInfo, RollMethod } from 'dataforged'
 import { capitalize, compact, fromPairs, isUndefined, kebabCase } from 'lodash'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
+import { CharacterDataPropertiesData } from '../actor/actortypes'
 import { getFoundryTableByDfId } from '../dataforged'
-import { SFMoveDataProperties } from '../item/itemtypes'
+import {
+  SFMoveDataProperties,
+  SFMoveDataPropertiesData,
+} from '../item/itemtypes'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
 
@@ -154,7 +158,7 @@ export class IronswornRollMessage {
 
   async burnMomentum() {
     if (this.actor?.type !== 'character') return
-    const { momentum } = this.actor.data.data
+    const { momentum } = this.actor.system as CharacterDataPropertiesData
 
     const [c1, c2] = this.roll.finalChallengeDice ?? []
     if (c1 === undefined || c2 === undefined) return
@@ -254,7 +258,9 @@ export class IronswornRollMessage {
     if (move?.type !== 'sfmove') return ret
 
     const key = DfRollOutcome[theOutcome]
-    let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
+    let dfOutcome = (move.system as SFMoveDataPropertiesData).Outcomes?.[
+      key
+    ] as IOutcomeInfo
     if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
       dfOutcome = dfOutcome['With a Match']
     if (dfOutcome) {
@@ -286,7 +292,8 @@ export class IronswornRollMessage {
     const [c1, c2] = this.roll.finalChallengeDice ?? []
     if (c1 === undefined || c2 === undefined) return {}
 
-    const momentum = this.actor.data.data.momentum
+    const actorSystem = this.actor?.system as CharacterDataPropertiesData
+    const momentum = actorSystem.momentum
     const rawOutcome = this.roll.rawOutcome?.value
     const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
 
