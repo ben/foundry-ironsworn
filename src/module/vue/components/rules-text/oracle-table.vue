@@ -76,8 +76,6 @@ function rangeString({ low, high }: TableRowData) {
   return `${low}-${high}`
 }
 
-console.log(props.oracleTable())
-
 const tableRows = computed(() =>
   sortBy(
     (props.oracleTable() as any).results.contents.map(
