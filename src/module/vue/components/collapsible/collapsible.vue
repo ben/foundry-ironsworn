@@ -138,8 +138,10 @@ const props = withDefaults(
      */
     contentWrapperIs?: string
     contentWrapperClass?: any
-    // FIXME NYI
-    forceExpand?: boolean
+    /**
+     * @default false
+     */
+    expanded?: boolean
   }>(),
   {
     orientation: 'vertical',
@@ -153,6 +155,7 @@ const props = withDefaults(
     headingClass: '',
     toggleTextClass: '',
     noClickable: false,
+    expanded: false,
   }
 )
 
@@ -160,12 +163,10 @@ const $wrapper = ref<HTMLElement>()
 const $toggle = ref<HTMLElement>()
 const $contentWrapper = ref<HTMLElement>()
 const state = reactive<{
-  forceExpand: boolean
   expanded: boolean
   highlighted: boolean
 }>({
-  forceExpand: props.forceExpand ?? false,
-  expanded: false,
+  expanded: props.expanded,
   highlighted: false,
 })
 
@@ -224,5 +225,9 @@ defineExpose({
   toggle,
   collapse,
   expand,
+  /**
+   * Whether the collapsible is expanded.
+   */
+  expanded: state.expanded,
 })
 </script>
