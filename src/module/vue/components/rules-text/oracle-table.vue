@@ -46,12 +46,19 @@ td {
 </style>
 
 <script setup lang="ts">
+import {
+  RollTableData,
+  TableResultData,
+} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
 import { computed } from '@vue/reactivity'
 import { sortBy } from 'lodash'
 import { enrichMarkdown } from '../../vue-plugin.js'
 
+type TableResultV10 = TableResult & TableResultData
+type RollTableV10 = RollTable & RollTableData
+
 const props = defineProps<{
-  oracleTable: () => RollTable
+  oracleTable: () => RollTableV10
   noCaption?: boolean
 }>()
 
@@ -68,14 +75,15 @@ function rangeString({ low, high }: TableRowData) {
   }
   return `${low}-${high}`
 }
+
 const tableRows = computed(() =>
   sortBy(
-    props.oracleTable().data.results.contents.map(
+    (props.oracleTable() as any).results.contents.map(
       (row) =>
         ({
-          low: row.data.range[0],
-          high: row.data.range[1],
-          text: row.data.text,
+          low: (row as TableResultV10).range[0],
+          high: (row as TableResultV10).range[1],
+          text: (row as TableResultV10).text,
           selected: false,
         } as TableRowData)
     ),
