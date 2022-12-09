@@ -72,6 +72,9 @@
   gap: var(--ironsworn-spacer-lg);
 }
 .itemList {
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+  scroll-snap-align: start;
   gap: var(--ironsworn-spacer-md);
   margin: 0;
 }
@@ -103,11 +106,7 @@ const tempCategories =
   props.toolset === 'ironsworn'
     ? await createIronswornMoveTree()
     : await createStarforgedMoveTree()
-for (const category of tempCategories) {
-  for (const move of category.moves) {
-    ;(move as any).highlighted = false
-  }
-}
+
 state.categories = tempCategories
 
 const checkedSearchQuery = computed(() => {
@@ -151,8 +150,11 @@ function collapseMoveCategories() {
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
   clearSearch()
   await nextTick()
-  allCategories.value
-    .find((cat) => cat.moves.has(targetMoveId))
-    ?.scrollToAndExpandChild(targetMoveId)
+  const categoryWithMove = allCategories.value.find((cat) =>
+    cat.moves.has(targetMoveId)
+  )
+  if (categoryWithMove) {
+    categoryWithMove.expandAndFocusChild(targetMoveId)
+  }
 })
 </script>

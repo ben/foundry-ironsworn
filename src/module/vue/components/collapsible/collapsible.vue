@@ -2,12 +2,12 @@
   <component
     :id="wrapperId"
     :is="wrapperIs"
-    :class="[$style.wrapper, state.highlighted ? 'highlighted' : '']"
+    :class="$style.wrapper"
     :aria-expanded="state.expanded"
     :tabindex="-1"
     :aria-orientation="orientation"
     :aria-disabled="disabled"
-    ref="$wrapper"
+    ref="wrapper"
   >
     <component
       :is="toggleSectionIs"
@@ -174,16 +174,14 @@ const props = withDefaults(
   }
 )
 
-const $wrapper = ref<HTMLElement>()
+const wrapper = ref<HTMLElement>()
 const $toggle = ref<HTMLElement>()
 const $contentWrapper = ref<HTMLElement>()
 const state = reactive<{
   expanded: boolean
-  highlighted: boolean
   duration: number
 }>({
   expanded: props.expanded,
-  highlighted: false,
   duration: props.duration,
 })
 
@@ -235,39 +233,8 @@ function collapse(overrideDuration?: number) {
   setExpandState(false, overrideDuration)
 }
 
-function highlight() {
-  state.highlighted = true
-}
-
-function unhighlight() {
-  state.highlighted = false
-}
-
-/**
- * Scroll to the collapsible, apply the highlight class, and expand it.
- * @param ms The duration of the highlight effect, in milliseconds
- */
-async function scrollToAndExpand(ms: number = 2000) {
-  expand()
-  highlight()
-  $wrapper.value?.focus()
-
-  await nextTick()
-
-  $wrapper.value?.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-  })
-
-  await nextTick()
-
-  setTimeout(unhighlight, ms)
-}
-
 defineExpose({
-  scrollToAndExpand,
-  unhighlight,
-  highlight,
+  wrapper,
   toggle,
   collapse,
   expand,

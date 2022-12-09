@@ -119,15 +119,18 @@ function collapseChildren() {
   }
 }
 
-async function scrollToAndExpandChild(targetMoveId: string) {
+async function expandAndFocusChild(targetMoveId: string) {
   if ($collapsible.value?.expanded === false) {
-    await $collapsible.value?.expand()
+    await $collapsible.value?.expand(0)
   }
   const targetChild = children.value.find(
     (child) => child.moveId === targetMoveId
   )
-  await targetChild?.collapsible?.scrollToAndExpand()
-  targetChild?.collapsible?.focus()
+  console.log('targetChild.expand')
+  await targetChild?.collapsible?.expand(0)
+
+  console.log('targetChild.focus')
+  await targetChild?.collapsible?.wrapper.focus()
 }
 
 defineExpose({
@@ -135,6 +138,6 @@ defineExpose({
   moves,
   children,
   collapsible: $collapsible,
-  scrollToAndExpandChild,
+  expandAndFocusChild,
 })
 </script>
