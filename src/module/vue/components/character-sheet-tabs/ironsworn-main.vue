@@ -46,10 +46,6 @@ h3 {
     width: 15px;
     text-align: center;
   }
-
-  &.highlighted {
-    background-color: lightyellow;
-  }
 }
 </style>
 
