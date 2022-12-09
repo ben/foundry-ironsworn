@@ -248,8 +248,9 @@ function unhighlight() {
  * @param ms The duration of the highlight effect, in milliseconds
  */
 async function scrollToAndExpand(ms: number = 2000) {
-  expand(0)
+  expand()
   highlight()
+  $wrapper.value?.focus()
 
   await nextTick()
 
@@ -257,7 +258,6 @@ async function scrollToAndExpand(ms: number = 2000) {
     behavior: 'smooth',
     block: 'start',
   })
-  $wrapper.value?.focus()
 
   await nextTick()
 

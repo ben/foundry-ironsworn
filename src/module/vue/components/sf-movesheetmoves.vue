@@ -151,8 +151,8 @@ function collapseMoveCategories() {
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
   clearSearch()
   await nextTick()
-  for (const cat of allCategories.value ?? []) {
-    cat.scrollToAndExpandChild(targetMoveId)
-  }
+  allCategories.value
+    .find((cat) => cat.moves.has(targetMoveId))
+    ?.scrollToAndExpandChild(targetMoveId)
 })
 </script>

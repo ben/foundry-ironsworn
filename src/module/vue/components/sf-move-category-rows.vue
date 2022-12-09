@@ -101,6 +101,9 @@ const props = withDefaults(
 
 let children = ref<InstanceType<typeof SfMoverow>[]>([])
 
+/**
+ * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
+ */
 const moves = computed(
   () =>
     new Map(
@@ -117,13 +120,13 @@ function collapseChildren() {
 }
 
 async function scrollToAndExpandChild(targetMoveId: string) {
-  if (moves.value.has(targetMoveId)) {
-    await $collapsible.value?.expand(0)
-    const targetChild = children.value.find(
-      (child) => child.moveId === targetMoveId
-    )
-    await targetChild?.collapsible?.scrollToAndExpand()
+  if ($collapsible.value?.expanded === false) {
+    await $collapsible.value?.expand()
   }
+  const targetChild = children.value.find(
+    (child) => child.moveId === targetMoveId
+  )
+  await targetChild?.collapsible?.scrollToAndExpand()
 }
 
 defineExpose({
