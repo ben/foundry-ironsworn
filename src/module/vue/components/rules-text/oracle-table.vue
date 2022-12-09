@@ -79,11 +79,11 @@ function rangeString({ low, high }: TableRowData) {
 const tableRows = computed(() =>
   sortBy(
     (props.oracleTable() as any).results.contents.map(
-      (row) =>
+      (row: TableResultV10) =>
         ({
-          low: (row as TableResultV10).range[0],
-          high: (row as TableResultV10).range[1],
-          text: (row as TableResultV10).text,
+          low: row.range[0],
+          high: row.range[1],
+          text: row.text,
           selected: false,
         } as TableRowData)
     ),
