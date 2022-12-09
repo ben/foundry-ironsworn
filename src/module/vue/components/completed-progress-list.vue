@@ -37,7 +37,7 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, ExtractPropTypes, inject, ref, Ref } from 'vue'
+import { computed, ExtractPropTypes, inject, ref, Ref, watch } from 'vue'
 import { ActorKey } from '../provisions'
 import Collapsible from './collapsible/collapsible.vue'
 import { CompletedProgressType, getProgressItems } from './progress-common'
@@ -68,6 +68,19 @@ const items = computed(() =>
     props.listProps?.excludedSubtypes
   )
 )
+
+const editMode = computed(
+  () => !!(actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']
+)
+
+/**
+ * If edit mode ends with 0 items, collapse automatically to avoid an open + disabled state.
+ */
+watch(editMode, () => {
+  if (editMode.value === false && items?.value.length === 0) {
+    collapsible.value?.collapse()
+  }
+})
 
 defineExpose({
   items: items.value,
