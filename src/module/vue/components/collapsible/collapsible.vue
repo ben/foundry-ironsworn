@@ -31,7 +31,6 @@
             toggleButtonClass,
             $style.toggleButtonTransition,
           ]"
-          :noClickable="props.noClickable ?? undefined"
           :data-tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"
           ref="$toggle"
@@ -141,7 +140,6 @@ const props = withDefaults(
     contentWrapperClass?: any
     // FIXME NYI
     forceExpand?: boolean
-    noClickable?: boolean
   }>(),
   {
     orientation: 'vertical',
