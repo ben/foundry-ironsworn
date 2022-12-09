@@ -1,5 +1,6 @@
 <template>
   <Collapsible
+    v-bind="$props.collapsible"
     class="movesheet-row"
     :class="$style.wrapper"
     data-tooltip-direction="LEFT"
@@ -13,7 +14,6 @@
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
     :toggleLabel="move?.displayName"
-    :noClickable="true"
   >
     <template #after-toggle>
       <section
@@ -184,7 +184,7 @@
 </style>
 
 <script setup lang="ts">
-import { computed, provide, reactive, ref } from 'vue'
+import { computed, ExtractPropTypes, provide, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
@@ -215,6 +215,20 @@ const props = withDefaults(
     // https://github.com/vuejs/core/issues/4736#issuecomment-934156497
     onRollClick?: Function
     onOracleClick?: Function
+    /**
+     * Props to be passed to the Collapsible component.
+     */
+    collapsible?: Omit<
+      ExtractPropTypes<typeof Collapsible>,
+      | 'contentWrapperClass'
+      | 'toggleWrapperIs'
+      | 'toggleSectionClass'
+      | 'noIcon'
+      | 'toggleButtonClass'
+      | 'toggleTooltip'
+      | 'toggleWrapperClass'
+      | 'toggleLabel'
+    >
   }>(),
   {
     headingLevel: 4,
@@ -268,7 +282,7 @@ Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
 // Inbound move clicks: if this is the intended move, expand/highlight/scroll
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
   if (targetMoveId === moveId.value) {
-    $collapsible.value?.scrollToAndExpand(0)
+    $collapsible.value?.scrollToAndExpand()
   }
 })
 
