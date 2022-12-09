@@ -1,14 +1,14 @@
 <template>
   <div class="flexcol">
     <SheetHeaderBasic :document="actor" class="nogrow" />
-    <div v-if="foe">
-      <div class="flexrow nogrow">
+    <div v-if="foe" class="flexcol">
+      <div class="flexrow nogrow" style="margin: 0.5rem 0">
         <RankPips
           :current="foeSystem.rank"
           @click="setRank"
           style="margin-right: 1em"
         />
-        <h4>{{ rankText }}</h4>
+        <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
         <BtnFaicon class="block nogrow" icon="trash" @click="clearProgress" />
         <BtnFaicon
           class="block nogrow"
@@ -26,11 +26,8 @@
         />
       </div>
 
-      <hr class="nogrow" />
-
       <!-- DESCRIPTION -->
       <MceEditor v-model="foeSystem.description" @save="saveDescription" />
-      <!-- <div v-html="foeSystem.description" /> -->
     </div>
 
     <DropTarget

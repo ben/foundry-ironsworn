@@ -2,6 +2,19 @@
 
 ## Next Release
 
+## 1.20.5
+
+- Allow viewing of completed progress items
+
+## 1.20.4
+
+- Include connections in the progress lists on the shared and Ironsworn sheets
+
+## 1.20.3
+
+- Shared sheet notes now grow to fill their space
+- Fixed some spacing and layout issues on the NPC sheet
+
 ## 1.20.2
 
 - Updated bondset editor ([#546](https://github.com/ben/foundry-ironsworn/pull/546))
