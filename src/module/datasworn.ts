@@ -118,7 +118,7 @@ export async function importFromDatasworn() {
       type: 'delve-theme',
       name: rawTheme.Name,
       img: THEME_IMAGES[rawTheme.Name],
-      data: {
+      system: {
         summary: rawTheme.Summary,
         description: rawTheme.Description,
         features: [] as any[],
@@ -128,7 +128,7 @@ export async function importFromDatasworn() {
 
     let low = 1
     for (const feature of rawTheme.Features) {
-      themeData.data.features.push({
+      themeData.system.features.push({
         low,
         high: feature.Chance,
         description: feature.Description,
@@ -137,7 +137,7 @@ export async function importFromDatasworn() {
     }
     low = 1
     for (const danger of rawTheme.Dangers) {
-      themeData.data.dangers.push({
+      themeData.system.dangers.push({
         low,
         high: danger.Chance,
         description: danger.Description,
@@ -160,7 +160,7 @@ export async function importFromDatasworn() {
       type: 'delve-domain',
       name: rawDomain.Name,
       img: DOMAIN_IMAGES[rawDomain.Name],
-      data: {
+      system: {
         summary: rawDomain.Summary,
         description: rawDomain.Description,
         features: [] as any[],
@@ -170,7 +170,7 @@ export async function importFromDatasworn() {
 
     let low = 21
     for (const feature of rawDomain.Features) {
-      domainData.data.features.push({
+      domainData.system.features.push({
         low,
         high: feature.Chance,
         description: feature.Description,
@@ -179,7 +179,7 @@ export async function importFromDatasworn() {
     }
     low = 31
     for (const danger of rawDomain.Dangers) {
-      domainData.data.dangers.push({
+      domainData.system.dangers.push({
         low,
         high: danger.Chance,
         description: danger.Description,
@@ -214,7 +214,7 @@ export async function importFromDatasworn() {
         type: 'progress',
         name: foe.Name,
         img: FOE_IMAGES[foe.Name] || undefined,
-        data: {
+        system: {
           description,
           rank: foe.Rank.toLowerCase(),
         },

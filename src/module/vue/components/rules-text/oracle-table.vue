@@ -1,8 +1,8 @@
 <template>
   <table class="oracle-table">
     <caption
-      v-if="!noCaption && oracleTable().data.description"
-      v-html="enrichMarkdown(oracleTable().data.description ?? '')"
+      v-if="!noCaption && (oracleTable().system as any).description"
+      v-html="enrichMarkdown(oracleTable().system.description ?? '')"
     />
     <thead>
       <tr>
@@ -55,7 +55,7 @@ import { sortBy } from 'lodash'
 import { enrichMarkdown } from '../../vue-plugin.js'
 
 type TableResultV10 = TableResult & TableResultData
-type RollTableV10 = RollTable & RollTableData
+type RollTableV10 = any // excessive type recursion makes typing this futile, unfortunately
 
 const props = defineProps<{
   oracleTable: () => RollTableV10

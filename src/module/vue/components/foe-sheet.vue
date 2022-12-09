@@ -104,7 +104,7 @@ const rankText = computed(() => {
 
 function addEmpty() {
   Item.create(
-    { name: 'NPC', type: 'progress', data: { subtype: 'foe' } },
+    { name: 'NPC', type: 'progress', system: { subtype: 'foe' } },
     { parent: $actor }
   )
 }
