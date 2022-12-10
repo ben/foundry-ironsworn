@@ -21,7 +21,7 @@
           :class="$style.listItem"
         >
           <SfMoverow
-            @afterEnter="handleAfterEnter($event)"
+            @afterEnter="afterExpand($event)"
             :move="move"
             ref="$children"
             :headingLevel="headingLevel + 1"
@@ -80,7 +80,6 @@ import { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash'
-import { once } from 'events'
 
 const props = withDefaults(
   defineProps<{
@@ -131,11 +130,11 @@ async function expandChild(targetMoveId: string) {
   if (move?.$collapsible?.isExpanded() === false) {
     await move?.$collapsible?.expand()
   } else {
-    await move?.$collapsible?.$element.focus()
+    move?.$collapsible?.$element.focus()
   }
 }
 
-function handleAfterEnter(element: HTMLElement) {
+function afterExpand(element: HTMLElement) {
   const scrollTarget = element.closest(`[data-move-id]`) as HTMLElement
   scrollTarget?.focus()
 }
