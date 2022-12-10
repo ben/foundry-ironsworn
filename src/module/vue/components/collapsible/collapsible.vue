@@ -42,7 +42,7 @@
     </component>
     <CollapseTransition
       :v-bind="props.collapseTransition"
-      :duration="state.duration"
+      :duration="currentDuration"
       :orientation="dimension"
       ref="$collapseTransition"
       @after-enter="$emit('after-enter', $event)"
@@ -100,7 +100,7 @@
 </style>
 
 <script setup lang="ts">
-import { ExtractPropTypes, nextTick, reactive, watch } from 'vue'
+import { ExtractPropTypes, reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed, ref } from '@vue/reactivity'
@@ -157,6 +157,10 @@ const props = withDefaults(
       ExtractPropTypes<typeof CollapseTransition>,
       'dimension' | 'duration'
     >
+    /**
+     * Prevents transition from animating.
+     */
+    disableTransition?: boolean
   }>(),
   {
     wrapperIs: 'article',
@@ -171,6 +175,7 @@ const props = withDefaults(
     noClickable: false,
     expanded: false,
     duration: 300,
+    disableTransition: false,
   }
 )
 
@@ -178,6 +183,7 @@ let $element = ref<HTMLElement>()
 let $toggle = ref<HTMLElement>()
 let $collapseTransition = ref<typeof CollapseTransition>()
 let $contentWrapper = ref<HTMLElement>()
+
 const state = reactive<{
   expanded: boolean
   duration: number
@@ -194,6 +200,10 @@ const dimension = computed(() =>
   props.orientation === 'horizontal' ? 'width' : 'height'
 )
 
+const currentDuration = computed(() =>
+  props.disableTransition === true ? 0 : state.duration
+)
+
 const $emit = defineEmits<{
   (
     e: 'expand',
@@ -202,15 +212,6 @@ const $emit = defineEmits<{
   ): void
   (e: 'collapse', toggleElement?: HTMLElement): void
 }>()
-
-watch(state, () => {
-  if (state.expanded === true) {
-    $emit('expand', $contentWrapper.value, $toggle.value)
-  }
-  if (state.expanded === false) {
-    $emit('collapse', $toggle.value)
-  }
-})
 
 function toggle() {
   state.expanded = !state.expanded
