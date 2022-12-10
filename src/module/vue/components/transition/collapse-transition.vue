@@ -249,7 +249,6 @@ function detectRelevantDimensions(el: HTMLElement): CSSProperties {
       paddingBottom:
         el.style.paddingBottom || getCssValue(el, 'padding-bottom'),
     }
-    console.log('detectRelevantDimensions', properties)
     return properties
   }
 
