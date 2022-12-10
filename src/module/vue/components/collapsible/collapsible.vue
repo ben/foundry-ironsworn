@@ -212,56 +212,17 @@ watch(state, () => {
   }
 })
 
-function setExpandState(
-  expanded: typeof state.expanded
-  /**
-   * The desired duration for the collapse transition, if it's different than what the component's state maintains.
-   */
-  // overrideDuration?: typeof state.duration
-) {
-  // let oldDuration
-  // if (typeof overrideDuration === 'number') {
-  //   console.log('overrideDuration', overrideDuration)
-  //   oldDuration = state.duration.valueOf()
-  //   state.duration = overrideDuration
-  // }
-  state.expanded = expanded
 
-  // if (typeof overrideDuration === 'number' && typeof oldDuration === 'number') {
-  //   console.log(
-  //     'resetting timeout from',
-  //     overrideDuration,
-  //     'back to',
-  //     oldDuration
-  //   )
-  //   setTimeout(() => {
-  //     state.duration = oldDuration
-  //   }, overrideDuration)
-  // }
-}
 
 function toggle() {
-  // overrideDuration?: number
-  setExpandState(
-    !state.expanded
-    //  overrideDuration
-  )
-}
+  state.expanded = !state.expanded
 
 function expand() {
-  // overrideDuration?: number
-  setExpandState(
-    true
-    //  overrideDuration
-  )
+  state.expanded = true
 }
 
 function collapse() {
-  // overrideDuration?: number
-  setExpandState(
-    false
-    //  overrideDuration
-  )
+  state.expanded = false
 }
 
 defineExpose({
