@@ -24,13 +24,7 @@
 
 import { computed, reactive } from '@vue/reactivity'
 import { isEmpty, kebabCase } from 'lodash'
-import {
-  CSSProperties,
-  ExtractPropTypes,
-  Transition,
-  TransitionGroup,
-  watch,
-} from 'vue'
+import { CSSProperties, Transition, TransitionGroup, watch } from 'vue'
 import type { PropertiesHyphen } from 'csstype'
 
 type Dimension = 'height' | 'width'
@@ -243,13 +237,12 @@ function clearCachedDimensions() {
 function detectRelevantDimensions(el: HTMLElement): CSSProperties {
   // These properties will be transitioned
   if (state.dimension === 'height') {
-    const properties = {
+    return {
       height: el.offsetHeight + 'px',
       paddingTop: el.style.paddingTop || getCssValue(el, 'padding-top'),
       paddingBottom:
         el.style.paddingBottom || getCssValue(el, 'padding-bottom'),
     }
-    return properties
   }
 
   if (state.dimension === 'width') {
