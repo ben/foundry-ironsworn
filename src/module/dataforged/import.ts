@@ -136,7 +136,7 @@ function movesForCategories(
         type: 'sfmove',
         name: move.Name,
         img: 'icons/dice/d10black.svg',
-        system: cleanMove,
+        data: cleanMove,
       })
     }
   }
@@ -219,7 +219,7 @@ function assetsForTypes(types: IAssetType[]) {
         type: 'asset',
         _id: hashLookup(asset.$id),
         name: asset.Name,
-        system: data,
+        data: data,
       })
     }
   }
@@ -353,7 +353,7 @@ async function processSFEncounters() {
       type: 'progress',
       name: encounter['Name'],
       img: DATAFORGED_ICON_MAP.starforged.foe[encounter.$id],
-      system: {
+      data: {
         description,
         rank: NumericRank[encounter['Rank']] as keyof typeof NumericRank,
       },
@@ -375,7 +375,7 @@ async function processSFEncounters() {
         type: 'progress',
         name: variant['Name'],
         img: DATAFORGED_ICON_MAP.starforged.foe[variant.$id],
-        system: {
+        data: {
           description: variantDescription,
           rank: NumericRank[
             'Rank' in variant ? variant['Rank'] : encounter['Rank']

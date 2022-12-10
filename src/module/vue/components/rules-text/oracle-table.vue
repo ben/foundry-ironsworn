@@ -1,8 +1,8 @@
 <template>
   <table class="oracle-table">
     <caption
-      v-if="!noCaption && oracleTable().description"
-      v-html="enrichMarkdown(oracleTable().description ?? '')"
+      v-if="!noCaption && oracleTable().data.description"
+      v-html="enrichMarkdown(oracleTable().data.description ?? '')"
     />
     <thead>
       <tr>
@@ -46,19 +46,12 @@ td {
 </style>
 
 <script setup lang="ts">
-import {
-  RollTableData,
-  TableResultData,
-} from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/module.mjs'
 import { computed } from '@vue/reactivity'
 import { sortBy } from 'lodash'
 import { enrichMarkdown } from '../../vue-plugin.js'
 
-type TableResultV10 = TableResult & TableResultData
-type RollTableV10 = any // excessive type recursion makes typing this futile, unfortunately
-
 const props = defineProps<{
-  oracleTable: () => RollTableV10
+  oracleTable: () => RollTable
   noCaption?: boolean
 }>()
 
@@ -75,15 +68,14 @@ function rangeString({ low, high }: TableRowData) {
   }
   return `${low}-${high}`
 }
-
 const tableRows = computed(() =>
   sortBy(
-    (props.oracleTable() as any).results.contents.map(
-      (row: TableResultV10) =>
+    props.oracleTable().data.results.contents.map(
+      (row) =>
         ({
-          low: row.range[0],
-          high: row.range[1],
-          text: row.text,
+          low: row.data.range[0],
+          high: row.data.range[1],
+          text: row.data.text,
           selected: false,
         } as TableRowData)
     ),
