@@ -14,6 +14,7 @@
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
     :toggleLabel="move?.displayName"
+    :data-move-id="move.moveItem().id"
   >
     <template #after-toggle>
       <section

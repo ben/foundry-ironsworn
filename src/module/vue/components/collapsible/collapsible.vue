@@ -41,11 +41,11 @@
       <slot name="after-toggle"></slot>
     </component>
     <CollapseTransition
-      :v-bind="{
-        ...props.collapseTransition,
-        orientation: dimension,
-        duration: state.duration,
-      }"
+      :v-bind="props.collapseTransition"
+      :duration="state.duration"
+      :orientation="dimension"
+      ref="collapseTransition"
+      @after-enter="$emit('after-enter', $event)"
     >
       <component
         v-if="state.expanded"
@@ -100,7 +100,7 @@
 </style>
 
 <script setup lang="ts">
-import { ExtractPropTypes, nextTick, reactive } from 'vue'
+import { ExtractPropTypes, nextTick, reactive, watch } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed, ref } from '@vue/reactivity'
@@ -176,6 +176,7 @@ const props = withDefaults(
 
 const wrapper = ref<HTMLElement>()
 const $toggle = ref<HTMLElement>()
+const collapseTransition = ref<typeof CollapseTransition>()
 const $contentWrapper = ref<HTMLElement>()
 const state = reactive<{
   expanded: boolean
@@ -193,50 +194,81 @@ const dimension = computed(() =>
   props.orientation === 'horizontal' ? 'width' : 'height'
 )
 
+const $emit = defineEmits<{
+  (
+    e: 'expand',
+    expandedElement?: HTMLElement,
+    toggleElement?: HTMLElement
+  ): void
+  (e: 'collapse', toggleElement?: HTMLElement): void
+}>()
+
+watch(state, () => {
+  if (state.expanded === true) {
+    $emit('expand', $contentWrapper.value, $toggle.value)
+  }
+  if (state.expanded === false) {
+    $emit('collapse', $toggle.value)
+  }
+})
+
 function setExpandState(
-  expanded: typeof state.expanded,
+  expanded: typeof state.expanded
   /**
    * The desired duration for the collapse transition, if it's different than what the component's state maintains.
    */
-  overrideDuration?: typeof state.duration
+  // overrideDuration?: typeof state.duration
 ) {
-  let oldDuration
-  if (typeof overrideDuration === 'number') {
-    console.log('overrideDuration', overrideDuration)
-    oldDuration = state.duration.valueOf()
-    state.duration = overrideDuration
-  }
+  // let oldDuration
+  // if (typeof overrideDuration === 'number') {
+  //   console.log('overrideDuration', overrideDuration)
+  //   oldDuration = state.duration.valueOf()
+  //   state.duration = overrideDuration
+  // }
   state.expanded = expanded
 
-  if (typeof overrideDuration === 'number' && typeof oldDuration === 'number') {
-    console.log(
-      'resetting timeout from',
-      overrideDuration,
-      'back to',
-      oldDuration
-    )
-    setTimeout(() => {
-      state.duration = oldDuration
-    }, overrideDuration)
-  }
+  // if (typeof overrideDuration === 'number' && typeof oldDuration === 'number') {
+  //   console.log(
+  //     'resetting timeout from',
+  //     overrideDuration,
+  //     'back to',
+  //     oldDuration
+  //   )
+  //   setTimeout(() => {
+  //     state.duration = oldDuration
+  //   }, overrideDuration)
+  // }
 }
 
-function toggle(overrideDuration?: number) {
-  setExpandState(!state.expanded, overrideDuration)
+function toggle() {
+  // overrideDuration?: number
+  setExpandState(
+    !state.expanded
+    //  overrideDuration
+  )
 }
 
-function expand(overrideDuration?: number) {
-  setExpandState(true, overrideDuration)
+function expand() {
+  // overrideDuration?: number
+  setExpandState(
+    true
+    //  overrideDuration
+  )
 }
 
-function collapse(overrideDuration?: number) {
-  setExpandState(false, overrideDuration)
+function collapse() {
+  // overrideDuration?: number
+  setExpandState(
+    false
+    //  overrideDuration
+  )
 }
 
 defineExpose({
   wrapper,
   toggle,
   collapse,
+  collapseTransition,
   expand,
   /**
    * Whether the collapsible is expanded.

@@ -21,6 +21,7 @@
           :class="$style.listItem"
         >
           <SfMoverow
+            @afterEnter="handleAfterEnter($event)"
             :move="move"
             ref="children"
             :headingLevel="headingLevel + 1"
@@ -74,11 +75,12 @@
 }
 </style>
 <script setup lang="ts">
-import { computed, ExtractPropTypes, ref } from 'vue'
+import { computed, ExtractPropTypes, nextTick, ref } from 'vue'
 import { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash'
+import { once } from 'events'
 
 const props = withDefaults(
   defineProps<{
@@ -119,18 +121,21 @@ function collapseChildren() {
   }
 }
 
-async function expandAndFocusChild(targetMoveId: string) {
-  if ($collapsible.value?.expanded === false) {
-    await $collapsible.value?.expand(0)
-  }
+async function expandChild(targetMoveId: string) {
+  await $collapsible.value?.expand()
+  nextTick()
   const targetChild = children.value.find(
     (child) => child.moveId === targetMoveId
   )
-  console.log('targetChild.expand')
-  await targetChild?.collapsible?.expand(0)
+  await targetChild?.collapsible?.expand()
+}
 
-  console.log('targetChild.focus')
-  await targetChild?.collapsible?.wrapper.focus()
+function handleAfterEnter(element: HTMLElement) {
+  // console.log('handleAfterEnter', element)
+
+  const scrollTarget = element.closest(`[data-move-id]`) as HTMLElement
+
+  scrollTarget?.focus()
 }
 
 defineExpose({
@@ -138,6 +143,6 @@ defineExpose({
   moves,
   children,
   collapsible: $collapsible,
-  expandAndFocusChild,
+  expandChild,
 })
 </script>

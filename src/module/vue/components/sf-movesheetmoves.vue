@@ -78,6 +78,11 @@
   gap: var(--ironsworn-spacer-md);
   margin: 0;
 }
+.itemRow {
+  scroll-behavior: inherit;
+  scroll-snap-type: inherit;
+  scroll-snap-align: inherit;
+}
 </style>
 
 <script setup lang="ts">
@@ -154,7 +159,7 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
     cat.moves.has(targetMoveId)
   )
   if (categoryWithMove) {
-    categoryWithMove.expandAndFocusChild(targetMoveId)
+    categoryWithMove.expandChild(targetMoveId)
   }
 })
 </script>
