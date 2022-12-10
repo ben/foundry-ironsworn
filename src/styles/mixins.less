@@ -319,3 +319,14 @@
   );
   background-blend-mode: screen;
 }
+
+.overlayMixin() {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: var(--ironsworn-z-index-highest);
+}
