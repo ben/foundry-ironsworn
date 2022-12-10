@@ -55,10 +55,6 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
-import BtnCompendium from '../buttons/btn-compendium.vue'
-import ProgressBox from '../progress/progress-box.vue'
-import ProgressControls from '../progress-controls.vue'
-import { throttle } from 'lodash'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
@@ -68,11 +64,6 @@ import DropTarget from '../../drop-target.vue'
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
-const progressItems = computed(() => {
-  return actor.value?.items
-    .filter((x) => x.type === 'progress')
-    .sort((a, b) => (a.sort || 0) - (b.sort || 0))
-})
 const assets = computed(() => {
   return actor.value?.items
     .filter((x) => x.type === 'asset')
@@ -81,13 +72,6 @@ const assets = computed(() => {
 const editMode = computed(() => {
   return actor.value?.flags['foundry-ironsworn']?.['edit-mode']
 })
-
-const data = reactive({
-  expandCompleted: false,
-  highlightCompleted: false,
-})
-
-let highlightCompletedTimer: NodeJS.Timer | undefined
 
 async function applySort(oldI, newI, sortBefore, collection) {
   const sorted = collection.sort(
@@ -107,20 +91,6 @@ function assetSortUp(i) {
 function assetSortDown(i) {
   const items = $actor?.items.filter((x) => x.type === 'asset')
   applySort(i, i + 1, false, items)
-}
-function progressSortUp(i) {
-  const items = $actor?.items.filter((x) => x.type === 'progress')
-  applySort(i, i - 1, true, items)
-}
-function progressSortDown(i) {
-  const items = $actor?.items.filter((x) => x.type === 'progress')
-  applySort(i, i + 1, false, items)
-}
-function completedSortUp(i) {
-  applySort(i, i - 1, true, (x) => x.data.data.completed)
-}
-function completedSortDown(i) {
-  applySort(i, i + 1, false, (x) => x.data.data.completed)
 }
 
 let theAssetBrowser: AssetCompendiumBrowser | undefined
