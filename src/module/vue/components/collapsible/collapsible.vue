@@ -212,10 +212,9 @@ watch(state, () => {
   }
 })
 
-
-
 function toggle() {
   state.expanded = !state.expanded
+}
 
 function expand() {
   state.expanded = true
