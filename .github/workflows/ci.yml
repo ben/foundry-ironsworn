@@ -1,7 +1,6 @@
 name: CI Build
 
-on:
-  pull_request:
+on: push
 
 jobs:
   test:
