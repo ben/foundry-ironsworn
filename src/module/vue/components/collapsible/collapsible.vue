@@ -7,7 +7,7 @@
     :tabindex="-1"
     :aria-orientation="orientation"
     :aria-disabled="disabled"
-    ref="wrapper"
+    ref="$element"
   >
     <component
       :is="toggleSectionIs"
@@ -44,7 +44,7 @@
       :v-bind="props.collapseTransition"
       :duration="state.duration"
       :orientation="dimension"
-      ref="collapseTransition"
+      ref="$collapseTransition"
       @after-enter="$emit('after-enter', $event)"
     >
       <component
@@ -174,10 +174,10 @@ const props = withDefaults(
   }
 )
 
-const wrapper = ref<HTMLElement>()
-const $toggle = ref<HTMLElement>()
-const collapseTransition = ref<typeof CollapseTransition>()
-const $contentWrapper = ref<HTMLElement>()
+let $element = ref<HTMLElement>()
+let $toggle = ref<HTMLElement>()
+let $collapseTransition = ref<typeof CollapseTransition>()
+let $contentWrapper = ref<HTMLElement>()
 const state = reactive<{
   expanded: boolean
   duration: number
@@ -225,18 +225,18 @@ function collapse() {
 }
 
 defineExpose({
-  wrapper,
+  $element: $element,
   toggle,
   collapse,
-  collapseTransition,
+  $collapseTransition: $collapseTransition.value,
   expand,
   /**
    * Whether the collapsible is expanded.
    */
-  expanded: state.expanded,
+  isExpanded: () => state.expanded,
   /**
    * The current duration of the animation, in ms.
    */
-  duration: state.duration,
+  duration: () => state.duration,
 })
 </script>

@@ -147,18 +147,19 @@ function collapseMoves() {
 }
 
 function collapseMoveCategories() {
-  for (const cat of allCategories.value ?? []) {
-    cat.collapsible?.collapse()
+  for (const moveCategory of allCategories.value ?? []) {
+    moveCategory.$collapsible?.collapse()
   }
 }
 
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
   clearSearch()
   await nextTick()
-  const categoryWithMove = allCategories.value.find((cat) =>
-    cat.moves.has(targetMoveId)
+  const categoryWithMove = allCategories.value.find((moveCategory) =>
+    moveCategory.$moves.has(targetMoveId)
   )
   if (categoryWithMove) {
+    console.log('category has move id', targetMoveId)
     categoryWithMove.expandChild(targetMoveId)
   }
 })

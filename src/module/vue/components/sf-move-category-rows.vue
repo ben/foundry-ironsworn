@@ -23,7 +23,7 @@
           <SfMoverow
             @afterEnter="handleAfterEnter($event)"
             :move="move"
-            ref="children"
+            ref="$children"
             :headingLevel="headingLevel + 1"
             :class="$style.moveRow"
             :thematicColor="category.color"
@@ -101,7 +101,7 @@ const props = withDefaults(
   { headingLevel: 3 }
 )
 
-let children = ref<InstanceType<typeof SfMoverow>[]>([])
+let $children = ref<InstanceType<typeof SfMoverow>[]>([])
 
 /**
  * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
@@ -113,36 +113,38 @@ const moves = computed(
     )
 )
 
-const $collapsible = ref<typeof Collapsible>()
+let $collapsible = ref<typeof Collapsible>()
 
 function collapseChildren() {
-  for (const move of children.value ?? []) {
-    move.collapsible?.collapse()
+  for (const move of $children.value ?? []) {
+    move.$collapsible?.collapse()
   }
 }
 
 async function expandChild(targetMoveId: string) {
-  await $collapsible.value?.expand()
-  nextTick()
-  const targetChild = children.value.find(
-    (child) => child.moveId === targetMoveId
-  )
-  await targetChild?.collapsible?.expand()
+  if ($collapsible.value?.isExpanded() === false) {
+    $collapsible.value.expand()
+    await nextTick()
+  }
+  const move = $children.value.find((child) => child.moveId === targetMoveId)
+
+  if (move?.$collapsible?.isExpanded() === false) {
+    await move?.$collapsible?.expand()
+  } else {
+    await move?.$collapsible?.$element.focus()
+  }
 }
 
 function handleAfterEnter(element: HTMLElement) {
-  // console.log('handleAfterEnter', element)
-
   const scrollTarget = element.closest(`[data-move-id]`) as HTMLElement
-
   scrollTarget?.focus()
 }
 
 defineExpose({
-  collapseChildren,
-  moves,
-  children,
-  collapsible: $collapsible,
   expandChild,
+  collapseChildren,
+  $moves: moves.value,
+  $children: $children.value,
+  $collapsible: $collapsible.value,
 })
 </script>

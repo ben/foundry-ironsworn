@@ -286,7 +286,7 @@ function moveClick(move: IronswornItem) {
 }
 
 defineExpose({
-  moveId,
-  collapsible: $collapsible,
+  moveId: moveId.value,
+  $collapsible: $collapsible,
 })
 </script>
