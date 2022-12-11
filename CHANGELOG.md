@@ -2,9 +2,28 @@
 
 ## Next Release
 
+- Under the hood: updated NPM packages and Vite bundler ([#554](https://github.com/ben/foundry-ironsworn/pull/554) and [#555](https://github.com/ben/foundry-ironsworn/pull/555))
+
+## 1.20.5
+
+- Allow viewing of completed progress items
+
+## 1.20.4
+
+- Include connections in the progress lists on the shared and Ironsworn sheets
+
+## 1.20.3
+
+- Shared sheet notes now grow to fill their space
+- Fixed some spacing and layout issues on the NPC sheet
+
+## 1.20.2
+
 - Updated bondset editor ([#546](https://github.com/ben/foundry-ironsworn/pull/546))
 - Updated aesthetics for drop targets ([#547](https://github.com/ben/foundry-ironsworn/pull/547))
 - Replace all native tooltips with Foundry enhanced ones ([#549](https://github.com/ben/foundry-ironsworn/pull/549))
+- Better logic for links embedded in descriptions; clicking a move in an asset description navigates to the move, but clicking an actor link opens the actor's sheet, for instance. ([#552](https://github.com/ben/foundry-ironsworn/pull/552))
+- Fix the module management dialog in the Starforged theme
 
 ## 1.20.1
 

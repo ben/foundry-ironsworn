@@ -1,19 +1,22 @@
 import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import autoprefixer from 'autoprefixer'
-import Inspector from 'vite-plugin-vue-inspector'
+// import Inspector from 'vite-plugin-vue-inspector'
 
 const PORT = 30000
 
 const config: UserConfig = {
   plugins: [
     vue(),
-    Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
+    // Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
   ],
   resolve: {
     alias: {
       vue: 'vue/dist/vue.esm-bundler.js',
     },
+  },
+  define: {
+    'process.env': process.env,
   },
   publicDir: 'system',
   base: '/systems/foundry-ironsworn/',

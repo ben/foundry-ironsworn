@@ -1,7 +1,6 @@
 name: CI Build
 
-on:
-  pull_request:
+on: push
 
 jobs:
   test:
@@ -14,10 +13,10 @@ jobs:
           git config --global url."https://github.com/".insteadOf
           ssh://git@github.com/
 
-      - name: Use Node.js 14
+      - name: Use Node.js 16
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       - run: npm ci
       - run: npm run build
@@ -26,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js 14
+      - name: Use Node.js 16
         uses: actions/setup-node@v1
         with:
-          node-version: 14.x
+          node-version: 16.x
 
       - run: npm install
       - run: ./node_modules/.bin/tsc --noEmit

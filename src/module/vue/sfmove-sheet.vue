@@ -119,8 +119,6 @@
 
 <style lang="less">
 .movesheet-row {
-  transition: all 0.4s ease;
-
   h4 {
     align-items: center;
   }

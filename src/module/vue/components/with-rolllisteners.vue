@@ -25,7 +25,7 @@ onMounted(() => {
     actor: $actor,
   })
 
-  $(el.value).find('.content-link').on('click', click)
+  $(el.value).on('click', '.content-link', click)
 })
 
 const $emit = defineEmits(['moveclick', 'oracleclick'])
@@ -35,24 +35,16 @@ async function click(ev: JQuery.ClickEvent) {
   ev.preventDefault()
   ev.stopPropagation()
 
-  const { pack, id, dfid } = ev.currentTarget.dataset
-  if (id) {
-    // TODO: better fallback logic here, allow for custom moves
-    // Might be a move navigation click
-    if (!pack) {
-      const item = game.items?.get(id)
-      return item?.sheet?.render(true)
-    }
-
-    const gamePack = game.packs.get(pack)
-    const gameItem = (await gamePack?.getDocument(id)) as
-      | IronswornItem
-      | IronswornActor
-    if (gameItem && ['move', 'sfmove'].includes(gameItem.type)) {
+  const { uuid, dfid } = ev.currentTarget.dataset
+  if (uuid) {
+    const gameItem = (await fromUuid(uuid)) as IronswornItem | IronswornActor
+    if (gameItem?.type === 'sfmove') {
       $emit('moveclick', gameItem)
+      return !!$attrs['onMoveclick']
     }
 
-    return !!$attrs['onMoveclick']
+    // @ts-ignore
+    return gameItem?._onClickDocumentLink?.(ev)
   }
 
   if (dfid) {

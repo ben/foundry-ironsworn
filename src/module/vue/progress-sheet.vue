@@ -3,13 +3,8 @@
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="item" />
 
-    <div class="flexrow nogrow" style="margin: 0.5rem 0">
-      <RankPips
-        class="nogrow"
-        :current="item.system.rank"
-        @click="setRank"
-        style="margin-right: 1em"
-      />
+    <div class="flexrow nogrow" style="margin: 0.5rem 0; gap: 1em">
+      <RankPips class="nogrow" :current="item.system.rank" @click="setRank" />
       <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
       <label class="checkbox nogrow">
         <input
