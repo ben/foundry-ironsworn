@@ -271,6 +271,10 @@
 }
 
 .inputFieldMixin(@spread:6px) {
+  // specify invisible outline to stop jitter from border width transition
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: transparent;
   .interactiveMixin();
   .inputFieldStaticMixin();
   cursor: initial;
@@ -279,12 +283,18 @@
     opacity: 0.5;
   }
   &:hover {
-    .borderGlowInteriorMixin(@spread,0,var(--ironsworn-color-cool));
+    border-color: var(--ironsworn-color-clickable-block-border-hover);
+    .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool));
   }
   &:focus,
   &:focus-within {
     .inputFieldFocusMixin();
     .borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
+    &:hover {
+      box-shadow: .inputFieldFocusMixin() [box-shadow],
+        .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool))
+          [box-shadow];
+    }
   }
 }
 
