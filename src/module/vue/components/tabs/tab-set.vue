@@ -12,11 +12,10 @@
 
 <script lang="ts" setup>
 import { forEach } from 'lodash'
-import { onMounted, provide, reactive, ref } from 'vue'
+import { onMounted, provide, reactive } from 'vue'
 import {
   FocusActivePanelKey,
   getTabId,
-  getTabPanelId,
   Orientation,
   SetActivePanelRefKey,
   SetActiveTabKey,
