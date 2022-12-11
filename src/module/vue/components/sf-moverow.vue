@@ -93,7 +93,7 @@
     padding-top: @wrapper_spacing;
     padding-bottom: @wrapper_spacing;
 
-    &:before {
+    &:after {
       .overlayMixin();
       .staticHighlightMixin(90);
       opacity: 0;
@@ -102,7 +102,7 @@
       border: 0;
       outline: 1px solid var(--ironsworn-color-cool);
       box-shadow: var(--ironsworn-box-shadow-highlight) !important;
-      &:before {
+      &:after {
         animation: overlay-fadeout 2s ease-in-out;
       }
     }
