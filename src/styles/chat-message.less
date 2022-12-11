@@ -1,4 +1,4 @@
-@import 'mixins.less';
+@import (reference) 'mixins.less';
 
 .chat-message {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
@@ -9,6 +9,7 @@
   }
   // General message content styling
   .message-content {
+    .textCompactMixin();
     border: none;
     .ironsworn-roll-title,
     h3,
@@ -18,9 +19,20 @@
       margin: 0;
       .initial-caps();
     }
+    .oracle-shortcuts {
+      gap: var(--ironsworn-spacer-xs);
+      button {
+        margin: 0;
+      }
+    }
     button {
+      margin: 0;
+      .button-text {
+        white-space: nowrap;
+      }
       .initial-caps();
       .clickableBlockMixin();
+      border-radius: var(--ironsworn-border-radius-md);
       border-width: var(--ironsworn-border-width-md);
       background-color: var(--ironsworn-color-bg-20);
     }

@@ -236,7 +236,6 @@
 }
 
 .clickableBlockMixin(@blockSize:50px,) {
-  margin: 0;
   .blockMixin(@blockSize);
   &:hover,
   &.hover {
@@ -339,4 +338,29 @@
   right: 0;
   pointer-events: none;
   z-index: var(--ironsworn-z-index-highest);
+}
+
+.textCompactMixin() {
+  ol,
+  ul {
+    padding: 0 0 0 1em;
+    li {
+      margin: 0.2em 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  ul {
+    list-style-type: disc;
+    ul {
+      list-style-type: circle;
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
 }
