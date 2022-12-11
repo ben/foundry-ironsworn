@@ -5,7 +5,7 @@
         <input
           type="checkbox"
           class="nogrow"
-          :checked="item.system.track.enabled"
+          :checked="item.data.track.enabled"
           @change="enableClick"
         />
         <span>{{ $t('IRONSWORN.Enabled') }}</span>
@@ -14,7 +14,7 @@
 
     <div class="form-group">
       <label>{{ $t('IRONSWORN.Name') }}</label>
-      <input type="text" @blur="updateName" v-model="item.system.track.name" />
+      <input type="text" @blur="updateName" v-model="item.data.track.name" />
     </div>
 
     <div class="form-group">
@@ -22,7 +22,7 @@
       <input
         type="number"
         @blur="updateMax"
-        v-model.number="item.system.track.max"
+        v-model.number="item.data.track.max"
       />
     </div>
 
@@ -30,8 +30,8 @@
       style="margin-top: 5px"
       attr="track.current"
       documentType="Item"
-      :max="item.system.track.max"
-      :currentValue="item.system.track.current"
+      :max="item.data.track.max"
+      :currentValue="item.data.track.current"
       sliderStyle="horizontal"
     />
 
@@ -41,7 +41,7 @@
     <CollapseTransition group tag="div" class="nogrow">
       <div
         class="form-group nogrow"
-        v-for="(condition, i) in item.system.conditions"
+        v-for="(condition, i) in item.data.conditions"
         :key="`condition${i}`"
       >
         <label>{{ $t('IRONSWORN.Name') }}</label>
@@ -74,25 +74,25 @@ function enableClick(ev) {
 }
 
 function updateName() {
-  $item?.update({ 'system.track.name': item.value.system.track.name })
+  $item?.update({ 'system.track.name': item.value.data.track.name })
 }
 
 function updateMax() {
-  $item?.update({ 'system.track.max': item.value.system.track.max })
+  $item?.update({ 'system.track.max': item.value.data.track.max })
 }
 
 function saveConditions() {
-  $item?.update({ 'system.conditions': item.value.system.conditions })
+  $item?.update({ 'system.conditions': item.value.data.conditions })
 }
 
 function deleteCondition(idx: number) {
-  const { conditions } = item.value.system
+  const { conditions } = item.value.data
   conditions.splice(idx, 1)
   $item?.update({ system: { conditions } })
 }
 
 function addCondition() {
-  const { conditions } = item.value.system
+  const { conditions } = item.value.data
   conditions.push({ name: '', ticked: false })
   $item?.update({ system: { conditions } })
 }
