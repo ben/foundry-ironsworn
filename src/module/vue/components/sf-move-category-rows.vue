@@ -176,7 +176,6 @@ function afterMoveExpand(
   triggerElement?: HTMLElement,
   collapsibleElement?: HTMLElement
 ) {
-  console.log('afterMoveExpand', ...arguments)
   collapsibleElement?.focus()
 }
 
