@@ -31,15 +31,15 @@
         :id="bodyId"
       >
         <div
-          v-html="$enrichHtml(system.description ?? '')"
-          v-if="system.description"
+          v-html="$enrichHtml(data.data.description ?? '')"
+          v-if="data.data.description"
         ></div>
-        <div v-html="$enrichHtml(system.requirement ?? '')"></div>
+        <div v-html="$enrichHtml(data.data.requirement ?? '')"></div>
 
-        <dl class="asset-fields" v-if="system.fields?.length">
+        <dl class="asset-fields" v-if="data.data.fields?.length">
           <div
             class="asset-field"
-            v-for="(field, i) in system.fields"
+            v-for="(field, i) in data.data.fields"
             :key="'field' + i"
           >
             <dt class="asset-field-label">{{ field.name }}</dt>
@@ -49,7 +49,7 @@
 
         <ul class="asset-abilities flexcol">
           <WithRolllisteners
-            v-for="(ability, i) in system.abilities"
+            v-for="(ability, i) in data.data.abilities"
             :key="'ability' + i"
             element="li"
             :class="{
@@ -72,16 +72,16 @@
           </WithRolllisteners>
         </ul>
         <AttrSlider
-          v-if="system.track.enabled"
+          v-if="data.data.track.enabled"
           attr="track"
           documentType="Item"
           sliderStyle="horizontal"
-          :max="system.track.max"
-          :currentValue="system.track.current"
+          :max="data.data.track.max"
+          :currentValue="data.data.track.current"
           :read-only="true"
         >
           <template #label>
-            <label>{{ system.track.name }}</label>
+            <label>{{ data.data.track.name }}</label>
           </template>
         </AttrSlider>
       </section>
@@ -97,7 +97,7 @@
   justify-content: flex-start;
   margin: 10px 0;
   padding: 5px;
-  --ironsworn-color-thematic: v-bind('system.color');
+  --ironsworn-color-thematic: v-bind('data.data.color');
 }
 </style>
 
@@ -105,7 +105,7 @@
 import { IAsset } from 'dataforged'
 import { computed, inject, provide, reactive } from 'vue'
 import { IronswornItem } from '../../../item/item'
-import { AssetDataPropertiesData } from '../../../item/itemtypes'
+import { AssetDataProperties } from '../../../item/itemtypes'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
@@ -118,7 +118,7 @@ const props = defineProps<{
 }>()
 
 const toolset = inject('toolset')
-const system = (props.foundryItem() as any).system as AssetDataPropertiesData
+const data = props.foundryItem().data as AssetDataProperties
 provide($ItemKey, props.foundryItem())
 provide(
   ItemKey,
