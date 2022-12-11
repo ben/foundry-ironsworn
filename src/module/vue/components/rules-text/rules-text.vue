@@ -13,18 +13,16 @@
   </WithRolllisteners>
 </template>
 <style lang="less">
+@import (reference) '../../../../styles/mixins.less';
+
 .rules-text {
+  --ironsworn-rules-text-spacer: 0.5em;
   display: flex;
   flex-direction: column;
-  gap: 0.5em;
+  gap: var(--ironsworn-rules-text-spacer);
 }
 .rules-text-main {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-  & > * {
-    margin: 0;
-  }
+  .textCompactMixin();
   p {
     &:first-of-type {
       margin-top: 0;
@@ -32,6 +30,12 @@
     &:last-of-type:not(:last-child) {
       margin-bottom: 0;
     }
+  }
+  display: flex;
+  flex-direction: column;
+  gap: var(--ironsworn-rules-text-spacer);
+  & > * {
+    margin: 0;
   }
 }
 .rules-text-footer {

@@ -18,17 +18,18 @@
   </div>
 
   {{#if nextOracles}}
-    <hr />
-    {{#each nextOracles}}
-      <button
-        class='starforged__oracle__roll icon-button clickable isicon-oracle'
-        data-tooltip='{{{localize "IRONSWORN.RollOracleTable" title=name}}}'
-        data-tableid='{{id}}'
-        type='button'
-      >
-        <span class='button-text'>{{name}}</span>
-      </button>
-    {{/each}}
+    <section class='move-oracle-buttons flexrow'>
+      {{#each nextOracles}}
+        <button
+          class='starforged__oracle__roll icon-button clickable isicon-oracle'
+          data-tooltip='{{{localize "IRONSWORN.RollOracleTable" title=name}}}'
+          data-tableid='{{id}}'
+          type='button'
+        >
+          <span class='button-text'>{{name}}</span>
+        </button>
+      {{/each}}
+    </section>
   {{/if}}
 
 </article>

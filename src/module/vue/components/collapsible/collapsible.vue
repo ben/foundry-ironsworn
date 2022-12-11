@@ -94,6 +94,7 @@
   padding: 0;
   margin: 0;
   flex-grow: 1;
+  display: flex;
 }
 
 .toggleSection {
