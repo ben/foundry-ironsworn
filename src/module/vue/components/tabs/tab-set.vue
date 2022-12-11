@@ -89,16 +89,10 @@ defineExpose({
 })
 
 /**
- * Validates child elements by comparing them to provided tabKeys.
+ * Validates descendant tabs by comparing them to provided tabKeys.
  */
 onMounted(() => {
   const elements = {
-    // TabPanel: new Set(
-    //   props.tabKeys.map(
-    //     (key) =>
-    //       document.getElementById(getTabPanelId(props.id, key))?.dataset?.tabKey
-    //   )
-    // ),
     Tab: new Set(
       props.tabKeys.map(
         (key) =>
