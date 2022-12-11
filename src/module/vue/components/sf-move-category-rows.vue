@@ -69,9 +69,9 @@
   .textStrokeMixin( var(--ironsworn-color-dark));
   background: none;
 }
-
+.listItem {
+}
 .moveRow {
-  border-radius: var(--ironsworn-border-radius-lg);
 }
 </style>
 <script setup lang="ts">
@@ -105,7 +105,7 @@ let $children = ref<InstanceType<typeof SfMoverow>[]>([])
 /**
  * Index the moves in this category by their Item's `id`, so their data is exposed even when this component is collapsed.
  */
-const moves = computed(
+const moveItems = computed(
   () =>
     new Map(
       props.category.moves.map((move) => [move.moveItem().id ?? '', move])
@@ -121,13 +121,13 @@ function collapseChildren() {
 }
 
 async function expandChild(targetMoveId: string) {
-  if ($collapsible.value?.isExpanded() === false) {
+  if ($collapsible.value?.isExpanded === false) {
     $collapsible.value.expand()
     await nextTick()
   }
   const move = $children.value.find((child) => child.moveId === targetMoveId)
 
-  if (move?.$collapsible?.isExpanded() === false) {
+  if (move?.$collapsible?.isExpanded === false) {
     await move?.$collapsible?.expand()
   } else {
     move?.$collapsible?.$element.focus()
@@ -142,8 +142,8 @@ function afterExpand(element: HTMLElement) {
 defineExpose({
   expandChild,
   collapseChildren,
-  $moves: moves.value,
-  $children: $children.value,
-  $collapsible: $collapsible.value,
+  moveItems: moveItems.value,
+  $children,
+  $collapsible,
 })
 </script>

@@ -2,7 +2,7 @@
   <Collapsible
     v-bind="$props.collapsible"
     class="movesheet-row"
-    :class="$style.wrapper"
+    :class="$style.sfMoveRow"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
@@ -65,7 +65,7 @@
 </template>
 
 <style lang="less" module>
-@import '../../../styles/mixins.less';
+@import (reference) '../../../styles/mixins.less';
 
 @icon_size: 1.2em;
 @border_width: var(--ironsworn-border-width-lg);
@@ -85,15 +85,38 @@
   background-color: var(--ironsworn-color-bg);
 }
 
-.wrapper {
+.sfMoveRow {
   .thematicColorMixin();
-  padding-left: @wrapper_spacing;
-  padding-right: @wrapper_spacing;
+  padding: 0 @wrapper_spacing;
+  position: relative;
   &[aria-expanded='true'] {
     padding-top: @wrapper_spacing;
     padding-bottom: @wrapper_spacing;
+
+    &:before {
+      .overlayMixin();
+      .staticHighlightMixin(90);
+      opacity: 0;
+    }
+    &:focus {
+      border: 0;
+      outline: 1px solid var(--ironsworn-color-cool);
+      box-shadow: var(--ironsworn-box-shadow-highlight) !important;
+      &:before {
+        animation: overlay-fadeout 2s ease-in-out;
+      }
+    }
   }
 }
+@keyframes overlay-fadeout {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .moveSummary {
   padding: 0.5rem 0.5rem 0.3rem;
 }
@@ -287,6 +310,6 @@ function moveClick(move: IronswornItem) {
 
 defineExpose({
   moveId: moveId.value,
-  $collapsible: $collapsible,
+  $collapsible,
 })
 </script>

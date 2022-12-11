@@ -6,14 +6,14 @@
     toggleButtonClass="clickable text"
     :baseId="`${actor._id}_progress-completed`"
     v-bind="$props.collapsibleProps"
-    ref="collapsible"
+    ref="$collapsible"
   >
     <ProgressList
       v-bind="$props.listProps"
       :showCompleted="showCompleted"
       :progressListItemClass="$style.completedProgressListItem"
       :class="$style.completedProgressList"
-      ref="progressList"
+      ref="$progressList"
     />
   </Collapsible>
 </template>
@@ -57,8 +57,8 @@ const showCompleted: CompletedProgressType = 'completed-only'
 
 const actor = inject(ActorKey) as Ref
 
-let progressList = ref<InstanceType<typeof ProgressList>>()
-let collapsible = ref<InstanceType<typeof Collapsible>>()
+let $progressList = ref<InstanceType<typeof ProgressList>>()
+let $collapsible = ref<InstanceType<typeof Collapsible>>()
 
 // collapsible inserts/removes components from DOM, so the list's exposed stuff don't always exist.
 const items = computed(() =>
@@ -78,13 +78,13 @@ const editMode = computed(
  */
 watch(editMode, () => {
   if (editMode.value === false && items?.value.length === 0) {
-    collapsible.value?.collapse()
+    $collapsible.value?.collapse()
   }
 })
 
 defineExpose({
   items: items.value,
-  collapsible,
-  progressList,
+  $collapsible,
+  $progressList,
 })
 </script>

@@ -45,6 +45,7 @@
       >
         <SfMoveCategoryRows
           class="nogrow"
+          :class="$style.categoryList"
           :category="category"
           ref="allCategories"
         />
@@ -78,10 +79,10 @@
   gap: var(--ironsworn-spacer-md);
   margin: 0;
 }
-.itemRow {
-  scroll-behavior: inherit;
-  scroll-snap-type: inherit;
-  scroll-snap-align: inherit;
+.categoryList {
+  overflow-x: clip;
+  overflow-clip-margin: 5px; // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
+  // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
 }
 </style>
 
@@ -156,7 +157,7 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
   clearSearch()
   await nextTick()
   const categoryWithMove = allCategories.value.find((moveCategory) =>
-    moveCategory.$moves.has(targetMoveId)
+    moveCategory.moveItems.has(targetMoveId)
   )
   if (categoryWithMove) {
     console.log('category has move id', targetMoveId)

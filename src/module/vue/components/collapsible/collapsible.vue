@@ -226,18 +226,22 @@ function collapse() {
 }
 
 defineExpose({
-  $element: $element,
+  $element,
+  $collapseTransition,
   toggle,
   collapse,
-  $collapseTransition: $collapseTransition.value,
   expand,
   /**
    * Whether the collapsible is expanded.
    */
-  isExpanded: () => state.expanded,
+  get isExpanded() {
+    return state.expanded
+  },
   /**
    * The current duration of the animation, in ms.
    */
-  duration: () => state.duration,
+  get duration() {
+    return state.duration
+  },
 })
 </script>
