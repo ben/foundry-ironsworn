@@ -89,7 +89,7 @@ const isActive = computed(() => tabState.activeTab === props.tabKey)
 const isFocused = computed(() => tabState.focusedTab === props.tabKey)
 watch(isFocused, () => {
   if (isFocused.value === true) {
-    console.log('tabKey', props.tabKey, 'focused')
+    // console.log('tabKey', props.tabKey, 'focused')
     nextTick(() => $el.value?.focus())
   }
 })
