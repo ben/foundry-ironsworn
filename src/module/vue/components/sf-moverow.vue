@@ -92,28 +92,6 @@
   &[aria-expanded='true'] {
     padding-top: @wrapper_spacing;
     padding-bottom: @wrapper_spacing;
-
-    &:after {
-      .overlayMixin();
-      .staticHighlightMixin(90);
-      opacity: 0;
-    }
-    &:focus {
-      border: 0;
-      outline: 1px solid var(--ironsworn-color-cool);
-      box-shadow: var(--ironsworn-box-shadow-highlight) !important;
-      &:after {
-        animation: overlay-fadeout 2s ease-in-out;
-      }
-    }
-  }
-}
-@keyframes overlay-fadeout {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0;
   }
 }
 
@@ -276,7 +254,14 @@ const data = reactive({
 
 const $collapsible = ref<typeof Collapsible>()
 
-const $emit = defineEmits(['rollClick', 'oracleClick'])
+type CollapsibleEmits = typeof Collapsible['$emit']
+
+interface MoveRowEmits extends CollapsibleEmits {
+  rollClick(): void
+  oracleClick(): void
+}
+
+const $emit = defineEmits<MoveRowEmits>()
 
 const canRoll = computed(() => {
   if (props.onRollClick) return true

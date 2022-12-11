@@ -69,24 +69,33 @@
   .textStrokeMixin( var(--ironsworn-color-dark));
   background: none;
 }
-.moveFocus {
-  &:after {
-    .overlayMixin();
-    .staticHighlightMixin(90);
-    opacity: 0;
-  }
+
+.listItem {
+}
+.moveRow {
   &:focus {
     border: 0;
     outline: 1px solid var(--ironsworn-color-cool);
     box-shadow: var(--ironsworn-box-shadow-highlight) !important;
-    &:after {
-      animation: overlay-fadeout 2s ease-in-out;
-    }
+  }
+  &[data-highlighted='true']:after {
+    .overlayMixin();
+    .staticHighlightMixin(50);
+    opacity: 0;
+    animation: overlay-fadeout v-bind('$props.highlightDuration +"ms"')
+      ease-in-out;
   }
 }
-.listItem {
-}
-.moveRow {
+@keyframes overlay-fadeout {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 </style>
 <script setup lang="ts">
@@ -134,25 +143,32 @@ const moveItems = computed(
 
 let $collapsible = ref<typeof Collapsible>()
 
-function collapseChildren() {
+function collapseMoves() {
   for (const move of $children.value ?? []) {
     move.$collapsible?.collapse()
   }
 }
 
-async function expandAndFocusChild(targetMoveId: string) {
+async function expandAndHighlightMove(targetMoveId: string) {
   if ($collapsible.value?.isExpanded === false) {
     $collapsible.value.expand()
     await nextTick()
   }
   const move = $children.value.find((child) => child.moveId === targetMoveId)
-
+  highlightMove(move?.$collapsible?.$element as HTMLElement)
   if (move?.$collapsible?.isExpanded === false) {
     await move?.$collapsible?.expand()
     // when the expand animation finishes, afterMoveExpand will focus the element
   } else {
     move?.$collapsible?.$element.focus()
   }
+}
+
+function highlightMove(element: HTMLElement) {
+  element.dataset.highlighted = 'true'
+  setTimeout(() => {
+    element.dataset.highlighted = 'false'
+  }, props.highlightDuration)
 }
 
 function afterMoveExpand(
@@ -165,8 +181,8 @@ function afterMoveExpand(
 }
 
 defineExpose({
-  expandAndFocusChild,
-  collapseChildren,
+  expandAndHighlightMove,
+  collapseMoves,
   moveItems: moveItems.value,
   $children,
   $collapsible,

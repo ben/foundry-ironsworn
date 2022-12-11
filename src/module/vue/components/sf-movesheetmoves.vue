@@ -80,6 +80,7 @@
   margin: 0;
 }
 .categoryList {
+  // FIXME: for some reason, no matter where i set overflow, the focus outline on the list items is clipped. ideally, they shouldn't be!
   overflow-x: clip;
   overflow-clip-margin: 5px; // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
   // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
@@ -143,7 +144,7 @@ function clearSearch() {
 
 function collapseMoves() {
   for (const cat of allCategories.value ?? []) {
-    cat.collapseChildren()
+    cat.collapseMoves()
   }
 }
 
@@ -160,7 +161,7 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
     moveCategory.moveItems.has(targetMoveId)
   )
   if (categoryWithMove) {
-    categoryWithMove.expandAndFocusChild(targetMoveId)
+    categoryWithMove.expandAndHighlightMove(targetMoveId)
   }
 })
 </script>
