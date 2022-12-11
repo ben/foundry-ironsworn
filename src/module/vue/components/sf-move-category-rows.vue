@@ -21,7 +21,7 @@
           :class="$style.listItem"
         >
           <SfMoverow
-            @afterEnter="afterExpand($event)"
+            @afterExpand="afterMoveExpand"
             :move="move"
             ref="$children"
             :headingLevel="headingLevel + 1"
@@ -35,7 +35,7 @@
 </template>
 
 <style lang="less" module>
-@import '../../../styles/mixins.less';
+@import (reference) '../../../styles/mixins.less';
 
 .thematicColorMixin {
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
@@ -69,6 +69,21 @@
   .textStrokeMixin( var(--ironsworn-color-dark));
   background: none;
 }
+.moveFocus {
+  &:after {
+    .overlayMixin();
+    .staticHighlightMixin(90);
+    opacity: 0;
+  }
+  &:focus {
+    border: 0;
+    outline: 1px solid var(--ironsworn-color-cool);
+    box-shadow: var(--ironsworn-box-shadow-highlight) !important;
+    &:after {
+      animation: overlay-fadeout 2s ease-in-out;
+    }
+  }
+}
 .listItem {
 }
 .moveRow {
@@ -84,6 +99,11 @@ import { snakeCase } from 'lodash'
 const props = withDefaults(
   defineProps<{
     category: MoveCategory
+    /**
+     * Duration of the move highlight effect, in milliseconds.
+     * @default 2000
+     */
+    highlightDuration?: number
     headingLevel?: number
     collapsible?: Omit<
       ExtractPropTypes<typeof Collapsible>,
@@ -97,7 +117,7 @@ const props = withDefaults(
       | 'toggleTextClass'
     >
   }>(),
-  { headingLevel: 3 }
+  { headingLevel: 3, highlightDuration: 2000 }
 )
 
 let $children = ref<InstanceType<typeof SfMoverow>[]>([])
@@ -120,7 +140,7 @@ function collapseChildren() {
   }
 }
 
-async function expandChild(targetMoveId: string) {
+async function expandAndFocusChild(targetMoveId: string) {
   if ($collapsible.value?.isExpanded === false) {
     $collapsible.value.expand()
     await nextTick()
@@ -129,18 +149,23 @@ async function expandChild(targetMoveId: string) {
 
   if (move?.$collapsible?.isExpanded === false) {
     await move?.$collapsible?.expand()
+    // when the expand animation finishes, afterMoveExpand will focus the element
   } else {
     move?.$collapsible?.$element.focus()
   }
 }
 
-function afterExpand(element: HTMLElement) {
-  const scrollTarget = element.closest(`[data-move-id]`) as HTMLElement
-  scrollTarget?.focus()
+function afterMoveExpand(
+  expandedElement?: HTMLElement,
+  triggerElement?: HTMLElement,
+  collapsibleElement?: HTMLElement
+) {
+  console.log('afterMoveExpand', ...arguments)
+  collapsibleElement?.focus()
 }
 
 defineExpose({
-  expandChild,
+  expandAndFocusChild,
   collapseChildren,
   moveItems: moveItems.value,
   $children,

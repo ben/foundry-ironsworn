@@ -160,8 +160,7 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
     moveCategory.moveItems.has(targetMoveId)
   )
   if (categoryWithMove) {
-    console.log('category has move id', targetMoveId)
-    categoryWithMove.expandChild(targetMoveId)
+    categoryWithMove.expandAndFocusChild(targetMoveId)
   }
 })
 </script>

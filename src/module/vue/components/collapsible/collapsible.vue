@@ -45,7 +45,18 @@
       :duration="currentDuration"
       :orientation="dimension"
       ref="$collapseTransition"
-      @after-enter="$emit('after-enter', $event)"
+      @before-enter="
+        $emit('before-expand', $event, $collapseTransition, $element)
+      "
+      @after-enter="
+        $emit('after-expand', $event, $collapseTransition, $element)
+      "
+      @before-leave="
+        $emit('before-collapse', $event, $collapseTransition, $element)
+      "
+      @after-leave="
+        $emit('after-collapse', $event, $collapseTransition, $element)
+      "
     >
       <component
         v-if="state.expanded"
@@ -104,6 +115,7 @@ import { ExtractPropTypes, reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed, ref } from '@vue/reactivity'
+import { ExpandEvent, CollapseEvent } from './collapsible-helpers'
 
 const props = withDefaults(
   defineProps<{
@@ -205,12 +217,10 @@ const currentDuration = computed(() =>
 )
 
 const $emit = defineEmits<{
-  (
-    e: 'expand',
-    expandedElement?: HTMLElement,
-    toggleElement?: HTMLElement
-  ): void
-  (e: 'collapse', toggleElement?: HTMLElement): void
+  beforeExpand: ExpandEvent
+  afterExpand: ExpandEvent
+  beforeCollapse: CollapseEvent
+  afterCollapse: CollapseEvent
 }>()
 
 function toggle() {
