@@ -1,7 +1,8 @@
 <template>
   <Collapsible
+    v-bind="$props.collapsible"
     class="movesheet-row"
-    :class="$style.wrapper"
+    :class="$style.sfMoveRow"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
@@ -13,7 +14,7 @@
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
     :toggleLabel="move?.displayName"
-    :noClickable="true"
+    :data-move-id="move.moveItem().id"
   >
     <template #after-toggle>
       <section
@@ -64,7 +65,7 @@
 </template>
 
 <style lang="less" module>
-@import '../../../styles/mixins.less';
+@import (reference) '../../../styles/mixins.less';
 
 @icon_size: 1.2em;
 @border_width: var(--ironsworn-border-width-lg);
@@ -84,15 +85,16 @@
   background-color: var(--ironsworn-color-bg);
 }
 
-.wrapper {
+.sfMoveRow {
   .thematicColorMixin();
-  padding-left: @wrapper_spacing;
-  padding-right: @wrapper_spacing;
+  padding: 0 @wrapper_spacing;
+  position: relative;
   &[aria-expanded='true'] {
     padding-top: @wrapper_spacing;
     padding-bottom: @wrapper_spacing;
   }
 }
+
 .moveSummary {
   padding: 0.5rem 0.5rem 0.3rem;
 }
@@ -184,7 +186,7 @@
 </style>
 
 <script setup lang="ts">
-import { computed, provide, reactive, ref } from 'vue'
+import { computed, ExtractPropTypes, provide, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import { Move } from '../../features/custommoves'
 import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
@@ -215,6 +217,20 @@ const props = withDefaults(
     // https://github.com/vuejs/core/issues/4736#issuecomment-934156497
     onRollClick?: Function
     onOracleClick?: Function
+    /**
+     * Props to be passed to the Collapsible component.
+     */
+    collapsible?: Omit<
+      ExtractPropTypes<typeof Collapsible>,
+      | 'contentWrapperClass'
+      | 'toggleWrapperIs'
+      | 'toggleSectionClass'
+      | 'noIcon'
+      | 'toggleButtonClass'
+      | 'toggleTooltip'
+      | 'toggleWrapperClass'
+      | 'toggleLabel'
+    >
   }>(),
   {
     headingLevel: 4,
@@ -238,7 +254,14 @@ const data = reactive({
 
 const $collapsible = ref<typeof Collapsible>()
 
-const $emit = defineEmits(['rollClick', 'oracleClick'])
+type CollapsibleEmits = typeof Collapsible['$emit']
+
+interface MoveRowEmits extends CollapsibleEmits {
+  rollClick(): void
+  oracleClick(): void
+}
+
+const $emit = defineEmits<MoveRowEmits>()
 
 const canRoll = computed(() => {
   if (props.onRollClick) return true
@@ -265,20 +288,13 @@ Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
   data.oracles.push(...nodes)
 })
 
-// Inbound move clicks: if this is the intended move, expand/highlight/scroll
-CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
-  if (targetMoveId === moveId.value) {
-    $collapsible.value?.scrollToAndExpand()
-  }
-})
-
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
 }
 
 defineExpose({
-  moveId,
-  collapsible: $collapsible,
+  moveId: moveId.value,
+  $collapsible,
 })
 </script>

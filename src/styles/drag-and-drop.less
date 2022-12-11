@@ -1,3 +1,5 @@
+@import (reference) 'mixins.less';
+
 [data-ironsworn-drop-type] {
   --ironsworn-drop-zone-outline-width: 3px;
   --ironsworn-drop-zone-outline-style: dotted;
@@ -5,19 +7,12 @@
   outline: 0 var(--ironsworn-drop-zone-outline-style) transparent;
   transition: all 0.2s ease;
   &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    pointer-events: none;
-    transition: all 0.2s ease;
+    .overlayMixin();
     opacity: 0;
     visibility: hidden;
+    transition: all 0.2s ease;
     border-radius: inherit;
     .staticHighlightMixin(20);
-    z-index: var(--ironsworn-z-index-highest);
   }
   &[data-ironsworn-drop-active='true'] {
     outline-width: var(--ironsworn-drop-zone-outline-width);

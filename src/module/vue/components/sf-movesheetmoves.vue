@@ -45,6 +45,7 @@
       >
         <SfMoveCategoryRows
           class="nogrow"
+          :class="$style.categoryList"
           :category="category"
           ref="allCategories"
         />
@@ -72,8 +73,17 @@
   gap: var(--ironsworn-spacer-lg);
 }
 .itemList {
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+  scroll-snap-align: start;
   gap: var(--ironsworn-spacer-md);
   margin: 0;
+}
+.categoryList {
+  // FIXME: for some reason, no matter where i set overflow, the focus outline on the list items is clipped. ideally, they shouldn't be!
+  overflow-x: clip;
+  overflow-clip-margin: 5px; // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
+  // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
 }
 </style>
 
@@ -103,11 +113,7 @@ const tempCategories =
   props.toolset === 'ironsworn'
     ? await createIronswornMoveTree()
     : await createStarforgedMoveTree()
-for (const category of tempCategories) {
-  for (const move of category.moves) {
-    ;(move as any).highlighted = false
-  }
-}
+
 state.categories = tempCategories
 
 const checkedSearchQuery = computed(() => {
@@ -138,21 +144,24 @@ function clearSearch() {
 
 function collapseMoves() {
   for (const cat of allCategories.value ?? []) {
-    cat.collapseChildren()
+    cat.collapseMoves()
   }
 }
 
 function collapseMoveCategories() {
-  for (const cat of allCategories.value ?? []) {
-    cat.collapsible?.collapse()
+  for (const moveCategory of allCategories.value ?? []) {
+    moveCategory.$collapsible?.collapse()
   }
 }
 
 CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
   clearSearch()
   await nextTick()
-  for (const cat of allCategories.value ?? []) {
-    cat.scrollToAndExpandChild(targetMoveId)
+  const categoryWithMove = allCategories.value.find((moveCategory) =>
+    moveCategory.moveItems.has(targetMoveId)
+  )
+  if (categoryWithMove) {
+    categoryWithMove.expandAndHighlightMove(targetMoveId)
   }
 })
 </script>

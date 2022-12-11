@@ -5,15 +5,11 @@
     class="progress-list item-list"
     :class="$style.progressList"
   >
-    <li
-      class="flexrow nogrow"
-      v-for="(item, i) in progressItems"
-      :key="item._id"
-    >
+    <li class="flexrow nogrow" v-for="(item, i) in items" :key="item._id">
       <OrderButtons
         v-if="editMode"
         :i="i"
-        :length="progressItems.length"
+        :length="items.length"
         @sortUp="sortUp"
         @sortDown="sortDown"
       />
@@ -41,6 +37,7 @@ import OrderButtons from './order-buttons.vue'
 import ProgressListItem from './progress/progress-list-item.vue'
 import { ProgressDataPropertiesData } from '../../item/itemtypes'
 import CollapseTransition from './transition/collapse-transition.vue'
+import { getProgressItems, isValidProgressItem } from './progress-common'
 
 const props = defineProps<{
   excludedSubtypes?: ProgressDataPropertiesData['subtype'][]
@@ -61,54 +58,9 @@ const data = reactive({
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
-function isValidProgressItem(
-  item: any,
-  showCompleted: typeof props.showCompleted = props.showCompleted,
-  excludedSubtypes: typeof props.excludedSubtypes = props.excludedSubtypes
-) {
-  if (item.type === 'progress') {
-    switch (showCompleted) {
-      case 'completed-only': {
-        if (!item.system.completed) {
-          return false
-        }
-        break
-      }
-      case 'no-completed': {
-        if (item.system.completed) {
-          return false
-        }
-        break
-      }
-      default:
-        break
-    }
-    if ((excludedSubtypes ?? []).includes(item.system.subtype)) {
-      return false
-    }
-    return true
-  }
-  return false
-}
-
-/**
- * Whether the injected actor has progress items (of the allows subtype) that are marked complete.
- */
-const actorHasCompletedItems = computed(() => {
-  const hasThem = actor.value.items.some((item) =>
-    isValidProgressItem(item, 'completed-only')
-  )
-  console.log('hasThem', hasThem)
-  return hasThem
-})
-
-const progressItems = computed(() => {
-  const items = actor.value.items
-    .filter((item) => isValidProgressItem(item))
-    .sort((a, b) => (a.sort || 0) - (b.sort || 0)) as any[]
-  console.log('ProgressList.progressItems (parent)', items)
-  return items ?? []
-})
+const items = computed(() =>
+  getProgressItems(actor.value, props.showCompleted, props.excludedSubtypes)
+)
 
 const editMode = computed(() => {
   return actor.value.flags['foundry-ironsworn']?.['edit-mode']
@@ -136,17 +88,20 @@ async function applySort(oldI, newI, sortBefore, filterFn) {
   await Promise.all(updates.map(({ target, update }) => target.update(update)))
 }
 function sortUp(i) {
-  applySort(i, i - 1, true, (item) => isValidProgressItem(item))
+  applySort(i, i - 1, true, (item) =>
+    isValidProgressItem(item, props.showCompleted, props.excludedSubtypes)
+  )
 }
 function sortDown(i) {
-  applySort(i, i + 1, false, (item) => isValidProgressItem(item))
+  applySort(i, i + 1, false, (item) =>
+    isValidProgressItem(item, props.showCompleted, props.excludedSubtypes)
+  )
 }
 
 defineExpose({
   applySort,
   sortUp,
   sortDown,
-  progressItems,
-  actorHasCompletedItems,
+  items,
 })
 </script>
