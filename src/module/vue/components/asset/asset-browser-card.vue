@@ -7,6 +7,7 @@
     :data-document-id="foundryItem().id"
     :class="{ [`asset-${toolset}`]: true }"
     @dragstart="dragStart"
+    @dragend="dragEnd"
   >
     <header class="asset-header nogrow flexrow">
       <i class="fa-solid fa-grip nogrow block draggable item"></i>
@@ -86,6 +87,7 @@
     </CollapseTransition>
   </article>
 </template>
+
 <style lang="less" scoped>
 .ironsworn .ironsworn__asset {
   display: flex;
@@ -97,34 +99,43 @@
   --ironsworn-color-thematic: v-bind('system.color');
 }
 </style>
+
 <script setup lang="ts">
 import { IAsset } from 'dataforged'
 import { computed, inject, provide, reactive } from 'vue'
 import { IronswornItem } from '../../../item/item'
 import { AssetDataPropertiesData } from '../../../item/itemtypes'
+import { $ItemKey, ItemKey } from '../../provisions.js'
+
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
-import { $ItemKey, ItemKey } from '../../provisions.js'
+
 const props = defineProps<{
   df?: IAsset
   foundryItem: () => IronswornItem
 }>()
+
 const toolset = inject('toolset')
 const system = (props.foundryItem() as any).system as AssetDataPropertiesData
+
 provide($ItemKey, props.foundryItem())
 provide(
   ItemKey,
   computed(() => props.foundryItem().toObject() as any)
 )
+
 const state = reactive({
   expanded: false,
 })
+
 const bodyId = `asset-body-${props.foundryItem().id}`
+
 function moveClick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
+
 function dragStart(ev) {
   ev.dataTransfer.setData(
     'text/plain',
@@ -135,5 +146,15 @@ function dragStart(ev) {
       uuid: props.foundryItem().uuid,
     })
   )
+
+  $(document)
+    .find(`[data-ironsworn-drop-type="${props.foundryItem()?.type}"]`)
+    .attr('data-ironsworn-drop-active', 'true')
+}
+
+function dragEnd(ev) {
+  $(document)
+    .find(`[data-ironsworn-drop-type="${props.foundryItem()?.type}"]`)
+    .attr('data-ironsworn-drop-active', 'false')
 }
 </script>
