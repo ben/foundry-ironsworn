@@ -147,14 +147,10 @@ function dragStart(ev) {
     })
   )
 
-  $(document)
-    .find(`[data-ironsworn-drop-type="${props.foundryItem()?.type}"]`)
-    .attr('data-ironsworn-drop-active', 'true')
+  CONFIG.IRONSWORN.emitter.emit('dragStart', props.foundryItem().type)
 }
 
-function dragEnd(ev) {
-  $(document)
-    .find(`[data-ironsworn-drop-type="${props.foundryItem()?.type}"]`)
-    .attr('data-ironsworn-drop-active', 'false')
+function dragEnd() {
+  CONFIG.IRONSWORN.emitter.emit('dragEnd', props.foundryItem().type)
 }
 </script>
