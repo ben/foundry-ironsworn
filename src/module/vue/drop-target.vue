@@ -3,12 +3,36 @@
     v-bind="($attrs, $props)"
     :is="is"
     :data-ironsworn-drop-type="dropType"
-    :data-ironsworn-drop-active="false"
+    :data-ironsworn-drop-active="state.active"
   >
     <slot />
   </component>
 </template>
 
 <script setup lang="ts">
-defineProps<{ is: any; dropType: string }>()
+import { onMounted, onUnmounted, reactive } from 'vue'
+
+const props = defineProps<{ is: any; dropType: string }>()
+
+const state = reactive({
+  active: false,
+})
+
+function dragStart(type: string) {
+  if (type === props.dropType) state.active = true
+}
+
+function dragEnd(type: string) {
+  if (type === props.dropType) state.active = false
+}
+
+onMounted(() => {
+  CONFIG.IRONSWORN.emitter.on('dragStart', dragStart)
+  CONFIG.IRONSWORN.emitter.on('dragEnd', dragEnd)
+})
+
+onUnmounted(() => {
+  CONFIG.IRONSWORN.emitter.off('dragStart', dragStart)
+  CONFIG.IRONSWORN.emitter.off('dragEnd', dragEnd)
+})
 </script>

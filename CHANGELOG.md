@@ -4,6 +4,7 @@
 
 - Under the hood: updated NPM packages and Vite bundler ([#554](https://github.com/ben/foundry-ironsworn/pull/554) and [#555](https://github.com/ben/foundry-ironsworn/pull/555))
 - Updates to the Starforged theme, now covers the MCE editor drop-down menus ([#557](https://github.com/ben/foundry-ironsworn/pull/557))
+- Dragging from the asset browser now triggers the drop-zone animation ([#561](https://github.com/ben/foundry-ironsworn/pull/561))
 
 ## 1.20.5
 
