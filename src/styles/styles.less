@@ -70,6 +70,8 @@
   --ironsworn-color-danger-inverted: hsl(0, 0%, 100%);
   --ironsworn-color-success: var(--ironsworn-color-blue);
   --ironsworn-color-warning: hsl(55, 100%, 50%);
+
+  --ironsworn-tab-transition: fade;
 }
 
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
@@ -82,6 +84,8 @@
     border: 0 solid var(--ironsworn-color-border);
   }
 }
+
+@import 'transitions.less';
 
 .system-foundry-ironsworn {
   // transitions for interactive elements
@@ -107,6 +111,9 @@
     }
 
     // stuff scoped to .ironsworn app windows only
+    .window-title {
+      .initial-caps();
+    }
     .window-content {
       background: var(--ironsworn-color-bg);
       color: var(--ironsworn-color-fg);
