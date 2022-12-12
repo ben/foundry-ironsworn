@@ -87,7 +87,7 @@ export class IronswornItem extends Item {
    * Move methods
    */
   isProgressMove(): boolean | undefined {
-    if (this.data.type !== 'sfmove') return
+    if (this.type !== 'sfmove') return
 
     const sfMoveSystem = this.system as SFMoveDataPropertiesData
     return sfMoveSystem.Trigger.Options?.some(

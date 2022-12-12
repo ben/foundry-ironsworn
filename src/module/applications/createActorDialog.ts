@@ -184,6 +184,6 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
     const first = await firstTable.draw({ displayChat: false })
     const last = await lastTable.draw({ displayChat: false })
-    return `${first?.results[0]?.data.text} ${last?.results[0]?.data.text}`
+    return `${first?.results[0]?.text} ${last?.results[0]?.text}`
   }
 }

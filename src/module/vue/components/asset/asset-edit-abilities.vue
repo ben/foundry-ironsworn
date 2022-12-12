@@ -3,7 +3,7 @@
     <CollapseTransition group tag="div" class="nogrow">
       <div
         class="flexcol nogrow"
-        v-for="(ability, i) in item.data.abilities"
+        v-for="(ability, i) in item.system.abilities"
         :key="`ability${i}`"
       >
         <textarea
@@ -39,7 +39,7 @@
             <BtnFaicon
               icon="trash"
               class="button block nogrow"
-              :class="{ disabled: item.data.abilities.length < 2 }"
+              :class="{ disabled: item.system.abilities.length < 2 }"
               @click="deleteAbility(i)"
             />
           </div>
