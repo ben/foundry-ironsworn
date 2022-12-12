@@ -7,7 +7,7 @@
       :aria-labelledby="getTabId(tabState.tabSetId, tabKey)"
       :id="getTabPanelId(tabState.tabSetId, tabKey)"
       tabindex="-1"
-      v-if="isActive"
+      v-show="isActive"
       :data-tab-set="tabState.tabSetId"
       :data-tab-key="tabKey"
       :class="$style.tabPanel"
