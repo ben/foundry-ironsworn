@@ -1,13 +1,19 @@
 <template>
   <SheetBasic :document="actor" body-class="flexcol">
-    <Tabs>
-      <Tab :title="$t('IRONSWORN.Assets')">
-        <SfAssets />
-      </Tab>
-      <Tab :title="$t('IRONSWORN.Notes')">
-        <SfNotes />
-      </Tab>
-    </Tabs>
+    <TabSet :id="`${actor._id}-starship-sheet`" :tabKeys="['assets', 'notes']">
+      <TabList>
+        <Tab tab-key="assets">{{ $t('IRONSWORN.Assets') }}</Tab>
+        <Tab tab-key="notes">{{ $t('IRONSWORN.Notes') }}</Tab>
+      </TabList>
+      <TabPanels>
+        <TabPanel tab-key="assets" class="flexcol">
+          <SfAssets />
+        </TabPanel>
+        <TabPanel tab-key="notes" class="flexcol">
+          <SfNotes />
+        </TabPanel>
+      </TabPanels>
+    </TabSet>
 
     <hr class="nogrow" />
 
@@ -26,28 +32,21 @@
   </SheetBasic>
 </template>
 
-<style lang="less" scoped>
-.tablist {
-  border-bottom: 1px solid grey;
-}
-.tab {
-  padding: 5px;
-  &.active {
-    background-color: darkgray;
-  }
-}
-</style>
+<style lang="less" scoped></style>
 
 <script setup lang="ts">
 import { provide, computed } from 'vue'
 import { IronswornActor } from '../actor/actor'
-import Tabs from './components/tabs/tabs.vue'
-import Tab from './components/tabs/tab.vue'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
 import SheetBasic from './sheet-basic.vue'
 import { ActorKey } from './provisions.js'
+import TabSet from './components/tabs/tab-set.vue'
+import TabList from './components/tabs/tab-list.vue'
+import Tab from './components/tabs/tab.vue'
+import TabPanels from './components/tabs/tab-panels.vue'
+import TabPanel from './components/tabs/tab-panel.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>
