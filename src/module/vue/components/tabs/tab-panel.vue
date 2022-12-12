@@ -18,20 +18,14 @@
 </template>
 
 <style lang="less" scoped>
-@animationDuration: var(--ironsworn-transition-duration, 0.5s);
-@import 'node_modules/vue2-animate/src/less/make-transitions.less';
-@import 'node_modules/vue2-animate/src/less/animations/sliding/all.less';
-
-each(Left Right Up Down; {
-  .slide@{value}-enter-active, .slide@{value}-leave-active {
-    // prevents the incoming and outgoing elements from fighting for space
+[class*='-leave-active'] {
+  // prevents outgoing panels from fighting incoming panels for space
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
 }
-});
 </style>
 
 <style lang="less" module>
@@ -44,6 +38,7 @@ each(Left Right Up Down; {
 <script lang="ts" setup>
 import { computed, inject, Ref, ref, watch } from 'vue'
 import {
+  getSlideTransitionName,
   getTabId,
   getTabPanelId,
   SetActivePanelRef,
@@ -81,32 +76,28 @@ watch(isActive, () => isActive.value && setActivePanelRef($el.value))
 const tabSetId = computed(() => tabState.tabSetId)
 defineExpose({ tabSetId: tabSetId.value })
 
+/**
+ * Extracts the `--ironsworn-tab-transition` CSS variable to set the tab panel transition. If the variable is set to 'slide', it computes an appropriate direction for the slide.
+ */
 const transitionName = computed(() => {
-  const thisIndex = tabState.tabKeys.indexOf(props.tabKey)
-  const oldIndex = tabState.tabKeys.indexOf(tabState.previousTab)
-  const newIndex = tabState.tabKeys.indexOf(tabState.activeTab)
-  // for a horizontal tab set: lower = positioned to the left, higher = positioned to the right
-  const horizontal = tabState.orientation === 'horizontal'
-  // for a vertical tab set: lower = positioned above, higher = positioned below
-  const vertical = tabState.orientation === 'vertical'
-
-  switch (true) {
-    case horizontal && oldIndex < newIndex && thisIndex === oldIndex:
-    case horizontal && oldIndex > newIndex && thisIndex === newIndex:
-      console.log('slideLeft')
-      return 'slideLeft'
-    case horizontal && oldIndex < newIndex && thisIndex === newIndex:
-    case horizontal && oldIndex > newIndex && thisIndex === oldIndex:
-      console.log('slideLeft')
-      return 'slideRight'
-    case vertical && oldIndex < newIndex && thisIndex === oldIndex:
-    case vertical && oldIndex > newIndex && thisIndex === newIndex:
-      return 'slideUp'
-    case vertical && oldIndex < newIndex && thisIndex === newIndex:
-    case vertical && oldIndex > newIndex && thisIndex === oldIndex:
-      return 'slideDown'
-    default:
-      return ''
+  const varHaver =
+    document.querySelector<HTMLElement>('.system-foundry-ironsworn') ??
+    document.documentElement
+  const themeTransition = getComputedStyle(varHaver)
+    .getPropertyValue('--ironsworn-tab-transition')
+    .trim()
+  if (themeTransition === 'slide') {
+    const thisIndex = tabState.tabKeys.indexOf(props.tabKey)
+    const oldIndex = tabState.tabKeys.indexOf(tabState.previousTab)
+    const newIndex = tabState.tabKeys.indexOf(tabState.activeTab)
+    const slideTransitionName = getSlideTransitionName(
+      thisIndex,
+      oldIndex,
+      newIndex,
+      tabState.orientation
+    )
+    return slideTransitionName
   }
+  return themeTransition
 })
 </script>

@@ -40,3 +40,34 @@ export const SetActivePanelRefKey = Symbol(
 export const FocusActivePanelKey = Symbol(
   'focusActivePanel'
 ) as InjectionKey<FocusActivePanel>
+
+export function getSlideTransitionName(
+  thisIndex: number,
+  oldIndex: number,
+  newIndex: number,
+  orientation: 'horizontal' | 'vertical'
+) {
+  // for a horizontal tab set: lower = positioned to the left, higher = positioned to the right
+  const horizontal = orientation === 'horizontal'
+  // for a vertical tab set: lower = positioned above, higher = positioned below
+  const vertical = orientation === 'vertical'
+
+  switch (true) {
+    case horizontal && oldIndex < newIndex && thisIndex === oldIndex:
+    case horizontal && oldIndex > newIndex && thisIndex === newIndex:
+      console.log('slideLeft')
+      return 'slideLeft'
+    case horizontal && oldIndex < newIndex && thisIndex === newIndex:
+    case horizontal && oldIndex > newIndex && thisIndex === oldIndex:
+      console.log('slideRight')
+      return 'slideRight'
+    case vertical && oldIndex < newIndex && thisIndex === oldIndex:
+    case vertical && oldIndex > newIndex && thisIndex === newIndex:
+      return 'slideUp'
+    case vertical && oldIndex < newIndex && thisIndex === newIndex:
+    case vertical && oldIndex > newIndex && thisIndex === oldIndex:
+      return 'slideDown'
+    default:
+      return ''
+  }
+}
