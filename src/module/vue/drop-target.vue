@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, reactive } from 'vue'
+import { onMounted, onUnmounted, reactive } from 'vue'
 
 const props = defineProps<{ is: any; dropType: string }>()
 
@@ -29,5 +29,10 @@ function dragEnd(type: string) {
 onMounted(() => {
   CONFIG.IRONSWORN.emitter.on('dragStart', dragStart)
   CONFIG.IRONSWORN.emitter.on('dragEnd', dragEnd)
+})
+
+onUnmounted(() => {
+  CONFIG.IRONSWORN.emitter.off('dragStart', dragStart)
+  CONFIG.IRONSWORN.emitter.off('dragEnd', dragEnd)
 })
 </script>
