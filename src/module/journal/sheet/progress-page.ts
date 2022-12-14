@@ -38,10 +38,6 @@ export class JournalProgressPageSheet extends JournalPageSheet {
   getData(options?: Partial<DocumentSheetOptions> | undefined): any {
     const data = super.getData(options) as any
 
-    // Foundry doesn't use the template data here, we have to supply our own
-    data.data.system.ticks ??= 0
-    data.data.system.rank ??= NumericRank.troublesome
-
     data.currentRank = game.i18n.localize(
       NumericRankI18nKeys[data.data.system.rank]
     )
