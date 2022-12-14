@@ -35,6 +35,7 @@ import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvet
 import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
+import { IronswornJournalPage } from './module/journal/journal-entry-page'
 import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
 
 declare global {
@@ -57,16 +58,18 @@ Hooks.once('init', async () => {
   // Define custom Entity classes
   CONFIG.Actor.documentClass = IronswornActor
   CONFIG.Item.documentClass = IronswornItem
-  CONFIG.JournalEntryPage = merge(CONFIG.JournalEntryPage, {
-    typeLabels: {
+  CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
+  CONFIG.JournalEntryPage.typeLabels = merge(
+    CONFIG.JournalEntryPage.typeLabels,
+    {
       progress: 'ITEM.TypeProgress',
       clock: 'IRONSWORN.Clock',
-    },
-    typeIcons: {
-      // TODO: a new icon: 4 ticks of progress (forming an 8-pointed asterisk)
-      progress: 'fas fa-asterisk',
-      clock: 'fas fa-clock',
-    },
+    }
+  )
+  CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
+    // TODO: a new icon: 4 ticks of progress (forming an 8-pointed asterisk)
+    progress: 'fas fa-asterisk',
+    clock: 'fas fa-clock',
   })
 
   // CONFIG.RollTable.resultTemplate =
