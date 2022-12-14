@@ -17,7 +17,7 @@ export class IronswornJournalPage<
     options: DocumentModificationOptions,
     user: BaseUser
   ): Promise<void> {
-    // FIXME: JEPs don't get initialized with proper defaults, so until this is fixed we have to DIY it.
+    // FIXME: JEPs aren't initialized with proper defaults, so we DIY it.
     // https://github.com/foundryvtt/foundryvtt/issues/8628
     const defaults = game.system.template.JournalEntryPage?.[
       // @ts-ignore
