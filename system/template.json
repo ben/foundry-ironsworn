@@ -447,7 +447,6 @@
     "types": ["progress"],
     "progress": {
       "rank": 1,
-      "name": "",
       "current": 0
     }
   }
