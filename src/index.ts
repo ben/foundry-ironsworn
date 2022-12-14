@@ -35,7 +35,7 @@ import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvet
 import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
-import { JournalProgressPageSheet } from './module/journal/progress-page'
+import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
 
 declare global {
   interface LenientGlobalVariableTypes {

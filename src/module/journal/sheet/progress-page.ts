@@ -5,8 +5,8 @@ import {
   NumericRankIncrements,
   RANKS,
   RANK_INCREMENTS,
-} from '../constants'
-import { IronswornPrerollDialog } from '../rolls'
+} from '../../constants'
+import { IronswornPrerollDialog } from '../../rolls'
 
 export class JournalProgressPageSheet extends JournalPageSheet {
   static get defaultOptions() {
