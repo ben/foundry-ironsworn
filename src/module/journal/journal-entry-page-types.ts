@@ -1,4 +1,4 @@
-import { NumericRank } from '../dataforged/import.js'
+import { NumericRank } from '../constants'
 
 interface CounterBase {
   max: number
