@@ -11,7 +11,7 @@
   </section>
 
   <section class='roll-outcome {{outcomeClass}}'>
-    <h4 class='outcome-label' title='{{outcome.source}}'>
+    <h4 class='outcome-label' data-tooltip='{{outcome.source}}'>
       {{#if outcomeReplacementReason}}
         <span class='outcome-replacement-reason'>
           {{outcomeReplacementReason}}:&nbsp;<wbr />
@@ -55,7 +55,7 @@
       </section>
     {{/if}}
     {{#if nextOracles}}
-      <section class='move-oracle-buttons'>
+      <section class='move-oracle-buttons flexrow'>
         {{#each nextOracles}}
           <button
             class='starforged__oracle__roll icon-button clickable isicon-oracle'

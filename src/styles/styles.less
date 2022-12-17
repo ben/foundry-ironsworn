@@ -42,7 +42,6 @@
   --std-animation-timing: var(--ironsworn-transition-duration)
     var(--ironsworn-transition-timing-function);
 
-  // transitions colours only
   --std-animation: all 0.5s ease;
 
   --fa-display: inline-block;
@@ -67,15 +66,26 @@
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
   --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
 
-  // TODO: Figure out which of these are still needed
-  --ironsworn-color-danger: hsl(0, 80%, 40%);
-  --ironsworn-color-danger-faded: hsl(0, 80%, 40%);
+  --ironsworn-color-danger: var(--ironsworn-color-red);
   --ironsworn-color-danger-inverted: hsl(0, 0%, 100%);
+  --ironsworn-color-success: var(--ironsworn-color-blue);
   --ironsworn-color-warning: hsl(55, 100%, 50%);
-  --ironsworn-color-warning-faded: hsl(55, 100%, 50%);
-  --ironsworn-color-success: hsl(200, 80%, 40%);
-  --ironsworn-color-success-faded: hsl(200, 80%, 40%);
+
+  --ironsworn-tab-transition: fade;
 }
+
+// :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
+// https://developer.mozilla.org/en-US/docs/Web/CSS/:where
+:where(.ironsworn) {
+  form button,
+  button {
+    margin: 0;
+    width: auto;
+    border: 0 solid var(--ironsworn-color-border);
+  }
+}
+
+@import 'transitions.less';
 
 .system-foundry-ironsworn {
   // transitions for interactive elements
@@ -94,13 +104,16 @@
 
   .ironsworn {
     // import these to the theme apply it to FVTT's own dialogs and inputs as well.
+    @import 'inputs.less';
     @import (reference) './fvtt/dialog.less';
     &.dialog {
       .dialog();
     }
-    @import 'inputs.less';
 
     // stuff scoped to .ironsworn app windows only
+    .window-title {
+      .initial-caps();
+    }
     .window-content {
       background: var(--ironsworn-color-bg);
       color: var(--ironsworn-color-fg);
@@ -139,6 +152,7 @@
   @import 'clickable.less';
   @import 'dialog.less';
   @import 'dice.less';
+  @import 'drag-and-drop.less';
   @import 'editor.less';
   @import 'icons.less';
   @import 'list.less';

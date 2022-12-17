@@ -183,7 +183,7 @@
   border-style: solid;
   color: var(--ironsworn-color-clickable-block-fg);
   background-color: var(--ironsworn-color-clickable-block-bg);
-  &.vertical {
+  &.vertical-text {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     & > * {
@@ -224,7 +224,7 @@
       white-space: nowrap;
     }
   }
-  &.vertical {
+  &.vertical-text {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     .button-text {
@@ -236,7 +236,6 @@
 }
 
 .clickableBlockMixin(@blockSize:50px,) {
-  margin: 0;
   .blockMixin(@blockSize);
   &:hover,
   &.hover {
@@ -271,6 +270,10 @@
 }
 
 .inputFieldMixin(@spread:6px) {
+  // specify invisible outline to stop jitter from border width transition
+  outline-width: 1px;
+  outline-style: solid;
+  outline-color: transparent;
   .interactiveMixin();
   .inputFieldStaticMixin();
   cursor: initial;
@@ -279,12 +282,18 @@
     opacity: 0.5;
   }
   &:hover {
-    .borderGlowInteriorMixin(@spread,0,var(--ironsworn-color-cool));
+    border-color: var(--ironsworn-color-clickable-block-border-hover);
+    .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool));
   }
   &:focus,
   &:focus-within {
     .inputFieldFocusMixin();
     .borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
+    &:hover {
+      box-shadow: .inputFieldFocusMixin() [box-shadow],
+        .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool))
+          [box-shadow];
+    }
   }
 }
 
@@ -317,7 +326,43 @@
       @opacity
     )
   );
-  background-blend-mode: screen;
+  background-blend-mode: overlay;
+}
+
+.overlayMixin() {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: var(--ironsworn-z-index-highest);
+}
+
+.textCompactMixin() {
+  ol,
+  ul {
+    padding: 0 0 0 1em;
+    li {
+      margin: 0.2em 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  ul {
+    list-style-type: disc;
+    ul {
+      list-style-type: circle;
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
 }
 
 .textCompactMixin {

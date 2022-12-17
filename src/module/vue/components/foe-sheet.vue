@@ -1,14 +1,14 @@
 <template>
   <div class="flexcol">
     <SheetHeaderBasic :document="actor" class="nogrow" />
-    <div v-if="foe">
-      <div class="flexrow nogrow">
+    <div v-if="foe" class="flexcol">
+      <div class="flexrow nogrow" style="margin: 0.5rem 0">
         <RankPips
           :current="foeSystem.rank"
           @click="setRank"
           style="margin-right: 1em"
         />
-        <h4>{{ rankText }}</h4>
+        <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
         <BtnFaicon class="block nogrow" icon="trash" @click="clearProgress" />
         <BtnFaicon
           class="block nogrow"
@@ -26,18 +26,16 @@
         />
       </div>
 
-      <hr class="nogrow" />
-
       <!-- DESCRIPTION -->
       <MceEditor v-model="foeSystem.description" @save="saveDescription" />
-      <!-- <div v-html="foeSystem.description" /> -->
     </div>
 
-    <div
+    <DropTarget
       v-else
-      class="flexcol ironsworn__drop__target"
-      data-drop-type="progress"
-      style="text-align: center; justify-items: space-around"
+      is="div"
+      dropType="progress"
+      class="flexcol"
+      :class="$style.dropTarget"
     >
       <BtnFaicon @click="addEmpty" class="block" icon="file">
         {{ $t('IRONSWORN.Progress') }}</BtnFaicon
@@ -48,14 +46,18 @@
       <BtnCompendium class="block" compendium="starforgedencounters"
         >{{ $t('IRONSWORN.Foes') }} (Starforged)</BtnCompendium
       >
-    </div>
+    </DropTarget>
   </div>
 </template>
 
-<style lang="less" scoped>
-.ironsworn__drop__target .clickable.block {
-  padding: 1rem;
-  flex-grow: 0;
+<style lang="less" module>
+.dropTarget {
+  text-align: center;
+  justify-items: space-around;
+  .clickable.block {
+    padding: 1rem;
+    flex-grow: 0;
+  }
 }
 </style>
 
@@ -73,6 +75,7 @@ import { RANKS, RANK_INCREMENTS } from '../../constants'
 import { ProgressDataPropertiesData } from '../../item/itemtypes'
 import { FoeDataProperties } from '../../actor/actortypes'
 import ProgressTrack from './progress/progress-track.vue'
+import DropTarget from '../drop-target.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject> &

@@ -1,7 +1,5 @@
 <template>
-  <div class="flexcol">
-    <MceEditor v-model="actor.system.biography" @save="immediateSave" />
-  </div>
+  <MceEditor v-model="actor.system.biography" @save="immediateSave" />
 </template>
 
 <script setup lang="ts">

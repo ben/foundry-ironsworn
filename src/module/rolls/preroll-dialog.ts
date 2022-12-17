@@ -417,7 +417,7 @@ export class IronswornPrerollDialog extends Dialog<
 
     // Resize when expanding the "advanced" section
     html.find('details').on('toggle', (ev) => {
-      const delta = (ev.currentTarget.open ? 1 : -1) * 90
+      const delta = (ev.currentTarget.open ? 1 : -1) * 120
       const app = html.parents('.app')
       app.height((app.height() ?? 0) + delta)
     })

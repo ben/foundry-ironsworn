@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol box ironsworn__drop__target" :data-drop-type="itemType">
+  <DropTarget is="div" class="flexcol box" :dropType="itemType">
     <div v-if="item" style="padding: 10px; position: relative">
       <div class="flexrow">
         <document-img
@@ -36,7 +36,7 @@
         >
       </div>
     </div>
-  </div>
+  </DropTarget>
 </template>
 
 <script setup lang="ts">
@@ -46,6 +46,7 @@ import { computed } from 'vue'
 import DocumentImg from '../document-img.vue'
 import BtnFaicon from '../buttons/btn-faicon.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
+import DropTarget from '../../drop-target.vue'
 
 const props = defineProps<{
   item: any

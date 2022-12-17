@@ -38,6 +38,7 @@
     />
   </article>
 </template>
+
 <style lang="less">
 [data-legacy='discoveries'] {
   --ironsworn-color-thematic: var(--ironsworn-color-legacy-discoveries);
@@ -58,6 +59,7 @@
 );
 
 .legacy-track {
+  max-width: @max_progress_track_width;
   --legacy-xp-box-size: @max_xp_box_size;
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;

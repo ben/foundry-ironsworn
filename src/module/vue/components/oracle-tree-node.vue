@@ -44,7 +44,7 @@
 
       <CollapseTransition>
         <div
-          v-if="state.manuallyExpanded"
+          v-show="state.manuallyExpanded"
           class="flexcol"
           style="margin-left: 1rem"
         >
@@ -139,7 +139,7 @@ function expand() {
   state.manuallyExpanded = true
 }
 
-const $el = ref<HTMLElement>()
+let $el = ref<HTMLElement>()
 CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
   if (props.node.dataforgedNode?.$id === dfid) {
     state.highlighted = true

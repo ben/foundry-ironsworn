@@ -29,12 +29,10 @@ import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetSheet } from './module/item/asset/assetsheet'
 import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
-import { BondsetSheet } from './module/item/bondset/bondsetsheet'
 import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
 import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvethemeordomainsheet'
 import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
-import { ProgressSheet } from './module/item/progress/progresssheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 
 declare global {
@@ -125,10 +123,6 @@ Hooks.once('init', async () => {
     label: 'Bondset sheet v2',
     makeDefault: true,
   })
-  Items.registerSheet('ironsworn', BondsetSheet, {
-    types: ['bondset'],
-    label: 'Bondset sheet',
-  })
 
   Items.registerSheet('ironsworn', SFMoveSheet, {
     types: ['sfmove'],
@@ -144,10 +138,6 @@ Hooks.once('init', async () => {
     types: ['progress'],
     label: 'Progress sheet v2',
     makeDefault: true,
-  })
-  Items.registerSheet('ironsworn', ProgressSheet, {
-    types: ['progress'],
-    label: 'Progress Sheet',
   })
 
   // Register Handlebars helpers

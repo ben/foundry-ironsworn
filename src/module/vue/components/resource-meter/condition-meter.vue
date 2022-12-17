@@ -17,7 +17,7 @@
         tabindex="0"
         :documentType="documentType"
         class="text"
-        :class="{ vertical: sliderStyle === 'vertical' }"
+        :class="{ 'vertical-text': sliderStyle === 'vertical' }"
         :attr="attr"
         :statLabel="statLabel"
       >

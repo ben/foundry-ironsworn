@@ -28,16 +28,35 @@
           <attr-box attr="shadow" />
           <attr-box attr="wits" />
         </div>
-
-        <tabs class="character-sheet-tabs" name="character-sheet-tabs">
-          <tab :title="$t('IRONSWORN.Legacies')">
-            <sf-legacies :actor="actor" />
-          </tab>
-          <tab :title="$t('IRONSWORN.Assets')"> <sf-assets /> </tab>
-          <tab :title="$t('IRONSWORN.Progress')"> <sf-progresses /> </tab>
-          <tab :title="$t('IRONSWORN.Connections')"> <sf-connections /> </tab>
-          <tab :title="$t('IRONSWORN.Notes')"> <sf-notes /> </tab>
-        </tabs>
+        <TabSet
+          :tabKeys="['legacies', 'assets', 'progress', 'connections', 'notes']"
+          :id="`${actor._id}_sf-character-sheet`"
+        >
+          <TabList>
+            <Tab tab-key="legacies">{{ $t('IRONSWORN.Legacies') }}</Tab>
+            <Tab tab-key="assets">{{ $t('IRONSWORN.Assets') }}</Tab>
+            <Tab tab-key="progress">{{ $t('IRONSWORN.Progress') }}</Tab>
+            <Tab tab-key="connections">{{ $t('IRONSWORN.Connections') }}</Tab>
+            <Tab tab-key="notes">{{ $t('IRONSWORN.Notes') }}</Tab>
+          </TabList>
+          <TabPanels>
+            <TabPanel tab-key="legacies" class="flexcol">
+              <SfLegacies />
+            </TabPanel>
+            <TabPanel tab-key="assets" class="flexcol">
+              <SfAssets :class="$style.topPadding" />
+            </TabPanel>
+            <TabPanel tab-key="progress" class="flexcol">
+              <SfProgresses :class="$style.topPadding" />
+            </TabPanel>
+            <TabPanel tab-key="connections" class="flexcol">
+              <SfConnections :class="$style.topPadding" />
+            </TabPanel>
+            <TabPanel tab-key="notes" class="flexcol">
+              <SfNotes />
+            </TabPanel>
+          </TabPanels>
+        </TabSet>
       </div>
 
       <!-- Stats on right -->
@@ -54,6 +73,12 @@
   </article>
 </template>
 
+<style lang="less" module>
+.topPadding {
+  padding-top: var(--ironsworn-spacer-lg);
+}
+</style>
+
 <style lang="less">
 .sf-character-sheet {
   gap: 7px;
@@ -68,14 +93,6 @@
       }
     }
   }
-  .tabbed-panels.character-sheet-tabs {
-    [role^='tablist'],
-    [role*=' tablist'] {
-      &[aria-orientation='horizontal'] {
-        border-block-start: 0;
-      }
-    }
-  }
 }
 </style>
 
@@ -85,8 +102,6 @@ import AttrBox from './components/attr-box.vue'
 import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
 import SfConnections from './components/character-sheet-tabs/sf-connections.vue'
 import SfCharacterheader from './components/sf-characterheader.vue'
-import Tabs from './components/tabs/tabs.vue'
-import Tab from './components/tabs/tab.vue'
 import SfImpacts from './components/sf-impacts.vue'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
@@ -94,6 +109,11 @@ import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import { ActorKey } from './provisions.js'
 import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
 import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
+import TabSet from './components/tabs/tab-set.vue'
+import TabList from './components/tabs/tab-list.vue'
+import Tab from './components/tabs/tab.vue'
+import TabPanel from './components/tabs/tab-panel.vue'
+import TabPanels from './components/tabs/tab-panels.vue'
 
 const props = defineProps<{
   actor: any

@@ -3,6 +3,7 @@
     class="rules-text-move"
     :source="move.dataforgedMove?.Source"
     :content="content"
+    :strip-tables="hasOracles"
     type="markdown"
   >
     <template #before-main>
@@ -42,4 +43,8 @@ const content = computed(() => {
   const sys = moveItem.system as SFMoveDataPropertiesData
   return sys.Text
 })
+
+const hasOracles = computed(
+  () => (props.move?.dataforgedMove?.Oracles?.length ?? 0) > 0
+)
 </script>

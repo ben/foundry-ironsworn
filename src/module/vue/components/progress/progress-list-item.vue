@@ -1,7 +1,7 @@
 <template>
   <article class="progress-list-item flexrow item-row">
     <h4 class="progress-title">{{ item.name }}</h4>
-    <h5 class="progress-subtitle vertical">{{ subtitle }}</h5>
+    <h5 class="progress-subtitle vertical-text">{{ subtitle }}</h5>
     <section class="progress-widgets flexrow">
       <ProgressTrack
         v-if="item.system.hasTrack"

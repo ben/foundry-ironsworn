@@ -17,6 +17,8 @@ export type EmitterEvents = {
   highlightMove: string // Foundry ID
   highlightOracle: string // DF ID
   globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
+  dragStart: string // type of item
+  dragEnd: string // type of item
 }
 export type IronswornEmitter = Emitter<EmitterEvents>
 

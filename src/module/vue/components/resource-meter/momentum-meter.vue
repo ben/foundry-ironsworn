@@ -16,7 +16,7 @@
     <template #label>
       <BtnMomentumburn
         class="text"
-        :class="{ vertical: sliderStyle === 'vertical' }"
+        :class="{ 'vertical-text': sliderStyle === 'vertical' }"
         :tooltip="
           $t('IRONSWORN.BurnMomentumAndResetTo', {
             value: actorSys.momentum,

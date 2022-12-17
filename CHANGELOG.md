@@ -2,10 +2,45 @@
 
 ## Next Release
 
+- Under the hood: updated NPM packages and Vite bundler ([#554](https://github.com/ben/foundry-ironsworn/pull/554) and [#555](https://github.com/ben/foundry-ironsworn/pull/555))
+- Updates to the Starforged theme, now covers the MCE editor drop-down menus ([#557](https://github.com/ben/foundry-ironsworn/pull/557))
+- Dragging from the asset browser now triggers the drop-zone animation ([#561](https://github.com/ben/foundry-ironsworn/pull/561))
+
+## 1.20.5
+
+- Allow viewing of completed progress items
+
+## 1.20.4
+
+- Include connections in the progress lists on the shared and Ironsworn sheets
+
+## 1.20.3
+
+- Shared sheet notes now grow to fill their space
+- Fixed some spacing and layout issues on the NPC sheet
+
+## 1.20.2
+
+- Updated bondset editor ([#546](https://github.com/ben/foundry-ironsworn/pull/546))
+- Updated aesthetics for drop targets ([#547](https://github.com/ben/foundry-ironsworn/pull/547))
+- Replace all native tooltips with Foundry enhanced ones ([#549](https://github.com/ben/foundry-ironsworn/pull/549))
+- Better logic for links embedded in descriptions; clicking a move in an asset description navigates to the move, but clicking an actor link opens the actor's sheet, for instance. ([#552](https://github.com/ben/foundry-ironsworn/pull/552))
+- Fix the module management dialog in the Starforged theme
+
+## 1.20.1
+
+- Bring back progress-item stars in the SF character sheet
+- Fix a visual glitch with super-wide legacy tracks
+- Further polish to CSS and the site sheet ([#543](https://github.com/ben/foundry-ironsworn/pull/543))
+- Fix a style clash with Monk's Enhanced Journal ([#545](https://github.com/ben/foundry-ironsworn/pull/545))
+
+## 1.20.0
+
 - A new look and layout for the move sheet ([#518](https://github.com/ben/foundry-ironsworn/pull/518))
 - A new layout for the site sheet, which uses the new rolling pipeline ([#533](https://github.com/ben/foundry-ironsworn/pull/533) and [#540](https://github.com/ben/foundry-ironsworn/pull/540))
 - The buttons for rolling _Write Your Epilogue_ and _Locate Your Objective_ now use the new rolling pipeline, which has been augmented to support progress moves ([#536](https://github.com/ben/foundry-ironsworn/pull/536))
 - Removed the old/unused "vow" and "move" item types ([#539](https://github.com/ben/foundry-ironsworn/pull/539))
+- The SF _Repair_ move now displays its table
 
 ## 1.19.1
 
