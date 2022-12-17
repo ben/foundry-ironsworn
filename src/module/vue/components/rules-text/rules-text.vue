@@ -14,7 +14,6 @@
 </template>
 <style lang="less">
 @import (reference) '../../../../styles/mixins.less';
-
 .rules-text {
   --ironsworn-rules-text-spacer: 0.5em;
   display: flex;

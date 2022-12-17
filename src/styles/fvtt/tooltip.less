@@ -1,3 +1,5 @@
+@import (reference) '../mixins.less';
+
 #tooltip {
   // TODO: currently this isn't really changing much, but i'd like to revisit it for the dark theme.
   background: var(--ironsworn-color-dark-90);
@@ -9,4 +11,5 @@
   border-radius: 3px;
   box-shadow: 0 0 4px #000;
   pointer-events: none;
+  .textCompactMixin();
 }
