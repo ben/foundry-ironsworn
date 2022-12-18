@@ -3,7 +3,7 @@
     class="move-chat"
     :tooltip="$t('IRONSWORN.SendToChat', { move: move.displayName })"
     @click="sendToChat"
-    :disabled="disabled"
+    v-bind="$props"
   >
     <template #icon>
       <FontIcon name="comment" />
@@ -15,17 +15,18 @@
 <style lang="less"></style>
 
 <script setup lang="ts">
-import { inject } from 'vue'
+import { ExtractPropTypes, inject } from 'vue'
 import { createSfMoveChatMessage } from '../../../chat/sf-move-chat-message'
 import { Move } from '../../../features/custommoves'
 import { $ItemKey } from '../../provisions.js'
 import FontIcon from '../icon/font-icon.vue'
 import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
   move: Move
-  disabled?: boolean
-}>()
+}
+
+defineProps<Props>()
 
 const $item = inject($ItemKey)
 

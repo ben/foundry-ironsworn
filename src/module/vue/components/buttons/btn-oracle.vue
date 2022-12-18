@@ -5,7 +5,7 @@
     :tooltip="
       $t('IRONSWORN.RollOracleTable', { title: props.node.displayName })
     "
-    :disabled="disabled"
+    v-bind="$props"
   >
     <template #icon>
       <IronIcon name="oracle" />
@@ -18,17 +18,17 @@
 
 <script setup lang="ts">
 import { sample } from 'lodash'
-import { inject } from 'vue'
+import { ExtractPropTypes, inject } from 'vue'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
 import { OracleRollMessage } from '../../../rolls'
 import IronIcon from '../icon/iron-icon.vue'
 import IronBtn from './iron-btn.vue'
 
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {}
+
 const props = defineProps<{
   node: IOracleTreeNode
-  disabled?: boolean
   overrideClick?: boolean
-
   // Hack: if we declare `click` in the emits, there's no $attrs['onClick']
   // This allows us to check for presence and still use $emit('click')
   // https://github.com/vuejs/core/issues/4736#issuecomment-934156497

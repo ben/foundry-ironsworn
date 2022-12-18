@@ -3,7 +3,7 @@
     @click="rollProgress()"
     :tooltip="$t('IRONSWORN.MakeAProgressRoll', { score: progressScore })"
     class="progress-roll"
-    :disabled="props.disabled"
+    v-bind="$props"
   >
     <template #icon>
       <IronIcon name="d10-tilt" />
@@ -13,13 +13,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity'
-import { inject } from '@vue/runtime-core'
+import { ExtractPropTypes, computed, inject } from 'vue'
 import { $ItemKey } from '../../provisions'
 import IronIcon from '../icon/iron-icon.vue'
 import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{ item: any; tooltip?: string; disabled?: boolean }>()
+interface Props extends ExtractPropTypes<typeof IronBtn> {
+  item: any
+}
+
+const props = defineProps<Props>()
 
 const $item = inject($ItemKey, undefined)
 

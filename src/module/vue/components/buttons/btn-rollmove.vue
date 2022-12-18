@@ -6,9 +6,9 @@
         title: props.move?.displayName,
       })
     "
+    v-bind="$props"
     class="action-roll move-roll"
     aria-haspopup="dialog"
-    :disabled="disabled"
   >
     <template #icon>
       <IronIcon name="d10-tilt" />
@@ -18,23 +18,24 @@
 </template>
 
 <script setup lang="ts">
-import { inject } from 'vue'
+import { ExtractPropTypes, inject } from 'vue'
 import { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
 import IronIcon from '../icon/iron-icon.vue'
 import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
   move?: Move
-  disabled?: boolean
   overrideClick?: boolean
 
   // Hack: if we declare `click` in the emits, there's no $attrs['onClick']
   // This allows us to check for presence and still use $emit('click')
   // https://github.com/vuejs/core/issues/4736#issuecomment-934156497
   onClick?: Function
-}>()
+}
+
+const props = defineProps<Props>()
 
 const $actor = inject($ActorKey)
 const $emit = defineEmits(['click'])

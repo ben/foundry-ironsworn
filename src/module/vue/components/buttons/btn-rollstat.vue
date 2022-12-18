@@ -6,6 +6,7 @@
     :class="attr"
     aria-haspopup="dialog"
     :disabled="disabled"
+    v-bind="$props"
   >
     <template #icon>
       <IronIcon name="d10-tilt" />
@@ -16,22 +17,23 @@
 
 <script lang="ts" setup>
 import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import { inject, useSlots } from 'vue'
+import { ExtractPropTypes, inject, useSlots } from 'vue'
 import { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import IronIcon from '../icon/iron-icon.vue'
 import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
   documentType: DocumentType
   /**
    * This string will be inserted in into the tooltip text "Roll +{x}". It should already be localized.
    */
   statLabel: string
   attr: string
-  disabled?: boolean
-}>()
+}
+
+const props = defineProps<Props>()
 
 const $actor = inject($ActorKey, undefined)
 const $item = inject($ItemKey, undefined)

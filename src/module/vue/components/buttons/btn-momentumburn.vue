@@ -2,8 +2,8 @@
   <IronBtn
     class="burn-momentum"
     @click="burnMomentum"
-    :disabled="disabled"
     :tooltip="tooltip"
+    v-bind="$props"
   >
     <template #icon>
       <FontIcon name="fire" />
@@ -14,13 +14,17 @@
 
 <script lang="ts" setup>
 import { computed } from '@vue/reactivity'
-import { inject } from 'vue'
+import { ExtractPropTypes, inject } from 'vue'
 import { CharacterDataPropertiesData } from '../../../actor/actortypes'
 import { $ActorKey } from '../../provisions'
 import FontIcon from '../icon/font-icon.vue'
 import IronBtn from './iron-btn.vue'
 
-defineProps<{ disabled?: boolean }>()
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
+  compendium: string
+}
+
+defineProps<Props>()
 const $actor = inject($ActorKey)
 
 const tooltip = computed(() => {

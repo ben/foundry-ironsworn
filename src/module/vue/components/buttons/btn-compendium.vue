@@ -3,7 +3,7 @@
     class="btn-compendium"
     @click="openCompendium"
     aria-haspopup="dialog"
-    :disabled="disabled"
+    v-bind="$props"
   >
     <template #icon>
       <FontIcon name="book-atlas" />
@@ -13,10 +13,15 @@
 </template>
 
 <script lang="ts" setup>
+import { ExtractPropTypes } from 'vue'
 import FontIcon from '../icon/font-icon.vue'
 import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{ compendium: string; disabled?: boolean }>()
+interface Props extends ExtractPropTypes<typeof IronBtn> {
+  compendium: string
+}
+
+const props = defineProps<Props>()
 
 async function openCompendium() {
   const pack = game.packs?.get(`foundry-ironsworn.${props.compendium}`)
