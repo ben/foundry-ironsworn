@@ -47,6 +47,7 @@ import TabList from './components/tabs/tab-list.vue'
 import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
+import IronButton from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>

@@ -1,5 +1,5 @@
 <template>
-  <btn-isicon
+  <IronBtn
     @click="rollMove"
     :tooltip="
       $t('IRONSWORN.RollMove', {
@@ -7,20 +7,23 @@
       })
     "
     class="action-roll move-roll"
-    icon="d10-tilt"
     aria-haspopup="dialog"
     :disabled="disabled"
   >
+    <template #icon>
+      <IronIcon name="d10-tilt" />
+    </template>
     <slot name="default"></slot>
-  </btn-isicon>
+  </IronBtn>
 </template>
 
 <script setup lang="ts">
-import { inject, useAttrs } from 'vue'
+import { inject } from 'vue'
 import { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
-import btnIsicon from './btn-isicon.vue'
+import IronIcon from '../icon/iron-icon.vue'
+import IronBtn from './iron-btn.vue'
 
 const props = defineProps<{
   move?: Move

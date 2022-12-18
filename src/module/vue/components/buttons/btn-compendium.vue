@@ -1,17 +1,20 @@
 <template>
-  <btn-faicon
+  <IronBtn
     class="btn-compendium"
-    icon="atlas"
     @click="openCompendium"
     aria-haspopup="dialog"
     :disabled="disabled"
   >
+    <template #icon>
+      <FontIcon name="book-atlas" />
+    </template>
     <slot name="default"></slot>
-  </btn-faicon>
+  </IronBtn>
 </template>
 
 <script lang="ts" setup>
-import BtnFaicon from './btn-faicon.vue'
+import FontIcon from '../icon/font-icon.vue'
+import IronBtn from './iron-btn.vue'
 
 const props = defineProps<{ compendium: string; disabled?: boolean }>()
 

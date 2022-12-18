@@ -1,21 +1,23 @@
 <template>
-  <btn-isicon
+  <IronBtn
     @click="rollProgress()"
     :tooltip="$t('IRONSWORN.MakeAProgressRoll', { score: progressScore })"
     class="progress-roll"
-    icon="d10-tilt"
     :disabled="props.disabled"
   >
+    <template #icon>
+      <IronIcon name="d10-tilt" />
+    </template>
     <slot name="default"></slot>
-  </btn-isicon>
+  </IronBtn>
 </template>
 
 <script setup lang="ts">
 import { computed } from '@vue/reactivity'
 import { inject } from '@vue/runtime-core'
-import { ProgressDataProperties } from '../../../item/itemtypes'
 import { $ItemKey } from '../../provisions'
-import BtnIsicon from './btn-isicon.vue'
+import IronIcon from '../icon/iron-icon.vue'
+import IronBtn from './iron-btn.vue'
 
 const props = defineProps<{ item: any; tooltip?: string; disabled?: boolean }>()
 

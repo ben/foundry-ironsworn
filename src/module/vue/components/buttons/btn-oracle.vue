@@ -1,6 +1,5 @@
 <template>
-  <BtnIsicon
-    icon="oracle"
+  <IronBtn
     class="oracle-roll"
     @click="rollOracle"
     :tooltip="
@@ -8,8 +7,11 @@
     "
     :disabled="disabled"
   >
+    <template #icon>
+      <IronIcon name="oracle" />
+    </template>
     <slot name="default"></slot>
-  </BtnIsicon>
+  </IronBtn>
 </template>
 
 <style lang="less"></style>
@@ -19,7 +21,8 @@ import { sample } from 'lodash'
 import { inject } from 'vue'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
 import { OracleRollMessage } from '../../../rolls'
-import BtnIsicon from './btn-isicon.vue'
+import IronIcon from '../icon/iron-icon.vue'
+import IronBtn from './iron-btn.vue'
 
 const props = defineProps<{
   node: IOracleTreeNode

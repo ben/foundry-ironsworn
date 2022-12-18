@@ -1,15 +1,17 @@
 <template>
-  <BtnIsicon
+  <IronBtn
     @click="rollStat"
     :data-tooltip="$t('IRONSWORN.Roll +x', { stat: statLabel })"
     class="action-roll stat-roll"
     :class="attr"
-    icon="d10-tilt"
     aria-haspopup="dialog"
     :disabled="disabled"
   >
+    <template #icon>
+      <IronIcon name="d10-tilt" />
+    </template>
     <slot ref="content" name="default"></slot>
-  </BtnIsicon>
+  </IronBtn>
 </template>
 
 <script lang="ts" setup>
@@ -17,8 +19,9 @@ import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/sr
 import { inject, useSlots } from 'vue'
 import { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'
-import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
-import BtnIsicon from './btn-isicon.vue'
+import { $ActorKey, $ItemKey } from '../../provisions'
+import IronIcon from '../icon/iron-icon.vue'
+import IronBtn from './iron-btn.vue'
 
 const props = defineProps<{
   documentType: DocumentType
