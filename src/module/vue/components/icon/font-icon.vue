@@ -1,7 +1,12 @@
 <template>
   <component
     :is="el"
-    :class="{ [$style.fontIcon]: true, ...classes }"
+    :class="{
+      [$style.fontIcon]: true,
+      [$style.fontIconBorder]: border && !!$style.fontIconBorder,
+      [$style.fontIconAnimation]: animation && !!$style.fontIconAnimation,
+      ...classes,
+    }"
     :aria-label="label"
     :role="label ? 'img' : 'presentational'"
     :aria-hidden="label ? false : true"
@@ -14,6 +19,12 @@
   width: 1em;
   line-height: 1 !important;
 }
+.fontIconBorder {
+  v-bind('borderOptions')
+}
+.fontIconAnimation {
+  v-bind('animationOptions')
+}
 </style>
 
 <script lang="ts" setup>
@@ -25,17 +36,23 @@ interface FontAwesomeIconProps {
   el?: any
   name: Icon.Name
   family?: Icon.Family
+  /**
+   * @remarks FVTT doesn't actually provide the FA6 sharp icons, so this shouldn't be used yet.
+   */
   style?: Icon.Style
   /**
    * Unlabelled content is inaccessible, and will be rendered indicating as such so that screen readers don't try to read icon font glyphs.
    *
-   * This can be skipped if a tooltip or other label is provided for a parent component, like with most buttons.
+   * This can also be omitted if a tooltip or other label is provided for a parent component, like with most buttons.
    */
   label?: string
   /**
    * @see
    */
   border?: boolean
+  /**
+   * NYI
+   */
   borderOptions?: Icon.Border.Options
   /**
    * Rether to render the item at a fixed width.
@@ -56,10 +73,19 @@ interface FontAwesomeIconProps {
   size?: Icon.Size
   pull?: Icon.Pull
   animation?: Icon.Animation[]
+  /**
+   * NYI
+   */
   animationOptions?: Icon.Animation.Options
+  /**
+   * Used with {@link FontIconStack}.
+   */
   stack?: 'stack-1x' | 'stack-2x'
 }
 
+/**
+ * A FontAwesome 6 icon.
+ */
 const props = withDefaults(defineProps<FontAwesomeIconProps>(), {
   family: Icon.Family.Solid,
   style: Icon.Style.Classic,

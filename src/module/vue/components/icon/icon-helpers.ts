@@ -152,71 +152,71 @@ export namespace Icon {
        * Set an initial delay for animation
        * Any valid CSS animation-delay value
        */
-      'fa-animation-delay': StandardLonghandPropertiesHyphen['animation-delay']
+      '--fa-animation-delay': StandardLonghandPropertiesHyphen['animation-delay']
       /**
        * Set direction for animation
        * Any valid CSS animation-direction value
        */
-      'fa-animation-direction': StandardLonghandPropertiesHyphen['animation-direction']
+      '--fa-animation-direction': StandardLonghandPropertiesHyphen['animation-direction']
       /**
        * Set duration for animation
        * Any valid CSS animation-duration value
        */
-      'fa-animation-duration': StandardLonghandPropertiesHyphen['animation-duration']
+      '--fa-animation-duration': StandardLonghandPropertiesHyphen['animation-duration']
       /**
        * Set number of iterations for animation
        */
-      'fa-animation-iteration-count': StandardLonghandPropertiesHyphen['animation-iteration-count']
+      '--fa-animation-iteration-count': StandardLonghandPropertiesHyphen['animation-iteration-count']
       /**
        * Set how the animation progresses through frames
        */
-      'fa-animation-timing': StandardLonghandPropertiesHyphen['animation-timing-function']
+      '--fa-animation-timing': StandardLonghandPropertiesHyphen['animation-timing-function']
 
       /**
        * Set the max value an fa-beat icon will scale
        * Any valid CSS number value
        */
-      'fa-beat-scale': ScaleProperty
+      '--fa-beat-scale': ScaleProperty
       /**
        * Set lowest opacity value an fa-fade icon will fade to
        * @min 0
        * @max 1.0
        */
-      'fa-fade-opacity': OpacityProperty
+      '--fa-fade-opacity': OpacityProperty
       /**
        * Set lowest opacity value an fa-beat-fade icon will fade to and from
        * @min 0
        * @max 1.0
        */
-      'fa-beat-fade-opacity': OpacityProperty
+      '--fa-beat-fade-opacity': OpacityProperty
       /**
        * Set max value that an icon will scale
        * Set the max value an fa-beat-fade icon will scale
        */
-      'fa-beat-fade-scale': ScaleProperty
+      '--fa-beat-fade-scale': ScaleProperty
       /**
        * Set an fa-flip icon's x-coordinate of the vector denoting the axis of rotation
        * @min 0
        * @max 1
        */
-      'fa-flip-x': number
+      '--fa-flip-x': number
       /**
        * Set an fa-flip icon'sy-coordinate of the vector denoting the axis of rotation
        * @min 0
        * @max 1
        */
-      'fa-flip-y': number
+      '--fa-flip-y': number
       /**
        * Set an fa-flip icon's z-coordinate of the vector denoting the axis of rotation
        * @min 0
        * @max 1
        */
-      'fa-flip-z': number
+      '--fa-flip-z': number
       /**
        * Set an fa-flip icon's rotation angle. A positive angle denotes a clockwise rotation, a negative angle a counter-clockwise one.
        * Any valid CSS angle value
        */
-      'fa-flip-angle': RotateProperty
+      '--fa-flip-angle': RotateProperty
     }
   }
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -225,27 +225,27 @@ export namespace Icon {
       /**
        * Set border color
        */
-      'fa-border-color': BorderColorProperty
+      '--fa-border-color': BorderColorProperty
 
       /**
        * Set padding around icon
        */
-      'fa-border-padding': PaddingProperty<any>
+      '--fa-border-padding': PaddingProperty<any>
 
       /**
        * Set border radius
        */
-      'fa-border-radius': BorderRadiusProperty<any>
+      '--fa-border-radius': BorderRadiusProperty<any>
 
       /**
        * Set border style
        */
-      'fa-border-style': BorderStyleProperty
+      '--fa-border-style': BorderStyleProperty
 
       /**
        * Set border width
        */
-      'fa-border-width': BorderWidthProperty<any>
+      '--fa-border-width': BorderWidthProperty<any>
     }
   }
   export enum Size {
