@@ -207,11 +207,6 @@
       "path": "lang/es.json"
     },
     {
-      "lang": "rus",
-      "name": "Pусский",
-      "path": "lang/rus.json"
-    },
-    {
       "lang": "pl",
       "name": "Polski",
       "path": "lang/pl.json"
