@@ -179,7 +179,7 @@ import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
 import { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
-import IronBtn from './components/buttons/IronBtn.vue'
+import IronBtn from './components/buttons/iron-btn.vue'
 import IronIcon from './components/icon/iron-icon.vue'
 
 const props = defineProps<{

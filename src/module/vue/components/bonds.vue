@@ -25,7 +25,7 @@ import {
   BondsetDataSource,
 } from '../../item/itemtypes.js'
 import { $ActorKey, ActorKey } from '../provisions'
-import IronBtn from './buttons/IronBtn.vue'
+import IronBtn from './buttons/iron-btn.vue'
 import FontIcon from './icon/font-icon.vue'
 import IronIcon from './icon/iron-icon.vue'
 import ProgressTrack from './progress/progress-track.vue'

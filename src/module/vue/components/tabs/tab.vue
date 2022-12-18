@@ -1,13 +1,11 @@
 <template>
-  <component
-    :is="is"
+  <IronBtn
+    v-bind="($attrs, $props)"
     ref="$el"
     role="tab"
-    type="button"
     :data-tab-set="tabState.tabSetId"
     :data-tab-key="tabKey"
     :class="$style.tab"
-    :aria-disabled="disabled"
     :aria-selected="isActive"
     :aria-controls="getTabPanelId(tabState.tabSetId, tabKey)"
     :id="getTabId(tabState.tabSetId, tabKey)"
@@ -15,8 +13,9 @@
     @click="setActiveTab(tabKey)"
     @keydown="handleKeydown"
   >
-    <slot></slot>
-  </component>
+    <slot name="icon"></slot>
+    <slot name="default"></slot>
+  </IronBtn>
 </template>
 <style lang="less" module>
 @import (reference) '../../../../styles/mixins.less';
@@ -42,7 +41,8 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, nextTick, ref, watch } from 'vue'
+import { computed, ExtractPropTypes, inject, nextTick, ref, watch } from 'vue'
+import IronBtn from '../buttons/iron-btn.vue'
 import {
   FocusActivePanel,
   FocusActivePanelKey,
@@ -55,25 +55,18 @@ import {
   TabStateKey,
 } from './tab-helpers.js'
 
+interface Props extends ExtractPropTypes<typeof IronBtn> {
+  /**
+   * The tab's key must match the key of a {@link TabPanel}.
+   */
+  tabKey: TabKey
+}
+
 /**
  * The index tab of a {@link TabPanel}, which serves as its title/label. Should be descended from a {@link TabList}.
+ * @extends {@link IronBtn}
  */
-const props = withDefaults(
-  defineProps<{
-    /**
-     * The tab's key must match the key of a {@link TabPanel}.
-     */
-    tabKey: TabKey
-    disabled?: boolean
-    /**
-     * The component to use. Use {@link BtnFaicon} or {@link BtnIsicon} if you want an icon.
-     * @defaultValue `'button'`
-     * @remarks The component automatically applies the `type="button"` attribute to prevent any weirdness with `<button>` form submission.
-     */
-    is?: any
-  }>(),
-  { disabled: false, is: 'button' }
-)
+const props = withDefaults(defineProps<Props>(), { block: true })
 
 const tabState = inject(TabStateKey) as TabState
 

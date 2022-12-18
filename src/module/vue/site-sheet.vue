@@ -103,14 +103,17 @@
     <div class="flexcol">
       <div class="flexrow nogrow">
         <h2 :class="$style.heading">{{ $t('IRONSWORN.Notes') }}</h2>
-        <BtnIsicon
-          icon="d10-tilt"
-          class="box text block nogrow"
-          :class="{ disabled: !hasThemeAndDomain, [$style.featureBtn]: true }"
+        <IronBtn
+          block
+          class="nogrow box text"
+          :disabled="!hasThemeAndDomain"
+          :class="{ [$style.featureBtn]: true }"
           @click="randomFeature"
         >
+          <template #icon><IronIcon name="d10-tilt" /></template>
+
           {{ $t('IRONSWORN.Feature') }}
-        </BtnIsicon>
+        </IronBtn>
       </div>
       <MceEditor v-model="actor.system.description" @save="saveDescription" />
     </div>
@@ -191,6 +194,8 @@ import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import { OracleRollMessage, TableRow } from '../rolls'
 import { DelveThemeDataSourceData } from '../item/itemtypes'
+import IronBtn from './components/buttons/iron-btn.vue'
+import IronIcon from './components/icon/iron-icon.vue'
 
 const props = defineProps<{
   actor: any

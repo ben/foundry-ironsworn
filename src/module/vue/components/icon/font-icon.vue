@@ -20,10 +20,14 @@
   line-height: 1 !important;
 }
 .fontIconBorder {
-  v-bind('borderOptions')
+  each(v-bind('borderOptions'), {
+    @{key}: @value
+  });
 }
 .fontIconAnimation {
-  v-bind('animationOptions')
+  each(v-bind('animationOptions'), {
+    @{key}: @value;
+  });
 }
 </style>
 
