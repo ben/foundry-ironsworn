@@ -1,5 +1,3 @@
-<!-- generic button used to build other icon buttons that use an icon font or SVGs -->
-<!-- the default value for a button element's type is "submit", which refreshes the page; "type=button" obviates the need for preventing the submit action with JS. -->
 <template>
   <button
     class="icon-button"
@@ -19,7 +17,11 @@
 
 <script setup lang="ts">
 import { computed, useSlots } from '@vue/runtime-core'
-
+/**
+ * Generic button used to build other icon buttons that use an icon font or SVGs
+ *
+ * @remarks The default value for a button element's type is "submit", which refreshes the page; "type=button" obviates the need for preventing the submit action with JS.
+ */
 const props = withDefaults(
   defineProps<{
     tooltip?: string
