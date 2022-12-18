@@ -48,9 +48,9 @@
             {{ opt.label }}
           </option>
         </select>
-        <btn-isicon
-          icon="d10-tilt juicy"
-          class="block nogrow"
+        <IronBtn
+          block
+          class="nogrow"
           style="
             padding: 0px 5px;
             position: absolute;
@@ -61,7 +61,9 @@
           "
           @click="randomizeKlass"
           :tooltip="randomKlassTooltip"
-        />
+        >
+          <template #icon><IronIcon name="d10-tilt" class="juicy" /></template>
+        </IronBtn>
       </label>
     </template>
     <template #header>
@@ -73,26 +75,29 @@
         }"
         @change="nameChange"
       >
-        <btn-isicon
+        <IronBtn
           v-if="canRandomizeName"
-          icon="d10-tilt"
-          class="btn-randomize-name juicy block nogrow"
+          class="btn-randomize-name nogrow"
+          block
           :tooltip="$t('IRONSWORN.RandomName')"
           @click="randomizeName"
-        />
+        >
+          <template #icon><IronIcon name="d10-tilt" class="juicy" /></template>
+        </IronBtn>
       </SheetHeaderBasic>
     </template>
     <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
       <div class="flexrow boxrow">
-        <btn-isicon
-          icon="d10-tilt"
-          class="block box"
+        <IronBtn
+          class="btn-randomize-name nogrow box"
+          block
+          @click="rollFirstLook"
           @mouseenter="data.firstLookHighlight = true"
           @mouseleave="data.firstLookHighlight = false"
-          @click="rollFirstLook"
         >
-          {{ $t('IRONSWORN.RollForDetails') }}
-        </btn-isicon>
+          <template #icon><IronIcon name="d10-tilt" class="juicy" /></template>
+          <template #default>{{ $t('IRONSWORN.RollForDetails') }}</template>
+        </IronBtn>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
         <btn-icon
@@ -174,6 +179,8 @@ import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
 import { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
+import IronBtn from './components/buttons/IronBtn.vue'
+import IronIcon from './components/icon/iron-icon.vue'
 
 const props = defineProps<{
   actor: any
