@@ -1,6 +1,12 @@
 import { App, Component, ComponentPublicInstance, createApp } from 'vue'
 import { IronswornSettings } from '../helpers/settings'
 import { IronswornVuePlugin } from './vue-plugin'
+import Mitt from 'mitt'
+import {
+  $LocalEmitterKey,
+  LocalEmitter,
+  LocalEmitterEvents,
+} from './provisions'
 
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
@@ -13,6 +19,7 @@ export class VueSheetRenderHelper {
   vueRoot: ComponentPublicInstance | undefined
   options: VueSheetRenderHelperOptions
   vueListenersActive = false
+  localEmitter: LocalEmitter
 
   constructor(
     protected app: Application,
@@ -24,7 +31,8 @@ export class VueSheetRenderHelper {
       components: {},
       ...options,
     }
-    CONFIG.IRONSWORN.emitter.on('closeApp', () => this.app.close())
+    this.localEmitter = Mitt<LocalEmitterEvents>()
+    this.localEmitter.on('closeApp', () => this.app.close())
 
     this.options.helperHook?.(this)
   }
@@ -48,6 +56,7 @@ export class VueSheetRenderHelper {
             themeClass: `theme-${IronswornSettings.get('theme')}`,
             config: CONFIG.IRONSWORN,
           },
+          [$LocalEmitterKey as symbol]: this.localEmitter,
         },
 
         methods: {

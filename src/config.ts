@@ -13,7 +13,6 @@ import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import Mitt, { Emitter } from 'mitt'
 
 export type EmitterEvents = {
-  closeApp: void
   highlightMove: string // Foundry ID
   highlightOracle: string // DF ID
   globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
