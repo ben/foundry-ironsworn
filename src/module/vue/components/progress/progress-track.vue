@@ -66,13 +66,13 @@
         border-radius: @box_border_radius 0 0 @box_border_radius;
       }
       &:not(:first-child) {
-        margin-left: -(@box_border_width / 2);
+        margin-left: calc(@box_border_width / -2);
       }
       &:last-child {
         border-radius: 0 @box_border_radius @box_border_radius 0;
       }
       &:not(:last-child) {
-        margin-right: -(@box_border_width / 2);
+        margin-right: calc(@box_border_width / -2);
       }
     }
   }
