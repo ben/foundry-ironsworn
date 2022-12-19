@@ -79,7 +79,9 @@
             <FontIcon
               name="star"
               :family="
-                item.system.starred ? Icon.Family.Solid : Icon.Family.Regular
+                item.system.starred
+                  ? FontAwesome.Family.Solid
+                  : FontAwesome.Family.Regular
               "
             />
           </Transition>
@@ -160,7 +162,7 @@ import DocumentImg from '../document-img.vue'
 import { RANKS } from '../../../constants.js'
 import ProgressTrack from './progress-track.vue'
 import FontIcon from '../icon/font-icon.vue'
-import { Icon } from '../icon/icon-common'
+import { FontAwesome } from '../icon/icon-common'
 
 const props = defineProps<{
   item: any

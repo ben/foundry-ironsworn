@@ -10,7 +10,12 @@
         <DropTarget is="div" dropType="asset" class="flexcol item-list">
           <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
-          <CollapseTransition tag="div" class="nogrow" group>
+          <CollapseTransition
+            tag="div"
+            class="nogrow flexcol"
+            group
+            :class="$style.items"
+          >
             <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
               <OrderButtons
                 v-if="editMode"
@@ -33,11 +38,24 @@
         </DropTarget>
       </section>
     </div>
-    <ActiveCompletedProgresses :compactProgress="true" />
+    <ActiveCompletedProgresses
+      :compactProgress="true"
+      :class="$style.progress"
+    />
   </div>
 </template>
-
+<style lang="less" module>
+.items {
+  gap: var(--ironsworn-spacer-md);
+}
+.progress {
+  margin-top: var(--ironsworn-spacer-md);
+}
+</style>
 <style lang="less" scoped>
+h4 {
+  text-transform: uppercase;
+}
 h3 {
   margin: 5px 0;
   transition: background-color 0.2s ease;

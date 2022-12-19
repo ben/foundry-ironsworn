@@ -13,6 +13,12 @@
   </div>
 </template>
 
+<style lang="less" scoped>
+h4 {
+  text-transform: uppercase;
+}
+</style>
+
 <script setup lang="ts">
 import { ActorDataBaseSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
 import { inject, computed, Ref } from 'vue'

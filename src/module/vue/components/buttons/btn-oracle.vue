@@ -5,9 +5,13 @@
     :tooltip="
       $t('IRONSWORN.RollOracleTable', { title: props.node.displayName })
     "
-    v-bind="$props"
     icon="ironsworn:oracle"
-  />
+    v-bind="($props, $attrs)"
+  >
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
+  </IronBtn>
 </template>
 
 <style lang="less"></style>

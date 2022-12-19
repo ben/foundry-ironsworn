@@ -35,7 +35,7 @@
                 v-if="icon"
                 :name="icon"
                 :class="$style.toggleButtonTransition"
-                :size="Icon.Size['sm']"
+                :size="FontAwesome.Size['sm']"
               />
             </slot>
           </template>
@@ -119,7 +119,7 @@ import CollapseTransition from '../transition/collapse-transition.vue'
 import { computed, ref } from '@vue/reactivity'
 import { ExpandEvent, CollapseEvent } from './collapsible-helpers'
 import IronBtn from '../buttons/iron-btn.vue'
-import { Icon } from '../icon/icon-common'
+import { FontAwesome } from '../icon/icon-common'
 import { TransformProperty } from 'csstype'
 import FontIcon from '../icon/font-icon.vue'
 
@@ -138,7 +138,7 @@ const props = withDefaults(
      * @defaultValue `'vertical'`
      */
     orientation?: 'horizontal' | 'vertical'
-    icon?: Icon.Name | null
+    icon?: FontAwesome.Name | null
 
     toggleTooltip?: string
     disabled?: boolean

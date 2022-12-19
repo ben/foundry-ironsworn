@@ -4,8 +4,12 @@
     @click="burnMomentum"
     :tooltip="tooltip"
     icon="fa:fire"
-    v-bind="$props"
-  />
+    v-bind="($props, $attrs)"
+  >
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
+  </IronBtn>
 </template>
 
 <script lang="ts" setup>

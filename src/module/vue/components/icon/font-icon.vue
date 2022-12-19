@@ -42,19 +42,19 @@
 <script lang="ts" setup>
 import { forEach } from 'lodash'
 import { computed } from 'vue'
-import { Icon, IconPropsCommon } from './icon-common'
+import { FontAwesome, IconPropsCommon } from './icon-common'
 
 interface FontAwesomeIconProps extends IconPropsCommon {
   /**
    * @default `span`
    */
   el?: any
-  name: Icon.Name
-  family?: Icon.Family
+  name: FontAwesome.Name
+  family?: FontAwesome.Family
   /**
    * @remarks FVTT doesn't actually provide the FA6 sharp icons, so this shouldn't be used yet.
    */
-  style?: Icon.Style
+  style?: FontAwesome.Style
   /**
    * Unlabelled content is inaccessible, and will be rendered indicating as such so that screen readers don't try to read icon font glyphs.
    *
@@ -68,7 +68,7 @@ interface FontAwesomeIconProps extends IconPropsCommon {
   /**
    * NYI
    */
-  borderOptions?: Icon.Border.Options
+  borderOptions?: FontAwesome.Border.Options
   /**
    * Rether to render the item at a fixed width.
    * @default true
@@ -84,14 +84,14 @@ interface FontAwesomeIconProps extends IconPropsCommon {
    */
   li?: boolean
   inverse?: boolean
-  rotate?: Icon.Rotate
-  size?: Icon.Size
-  pull?: Icon.Pull
-  animation?: Icon.Animation[]
+  rotate?: FontAwesome.Rotate
+  size?: FontAwesome.Size
+  pull?: FontAwesome.Pull
+  animation?: FontAwesome.Animation[]
   /**
    * NYI
    */
-  animationOptions?: Icon.Animation.Options
+  animationOptions?: FontAwesome.Animation.Options
   /**
    * Used with {@link FontIconStack}.
    */
@@ -103,8 +103,8 @@ interface FontAwesomeIconProps extends IconPropsCommon {
  * A FontAwesome 6 icon.
  */
 const props = withDefaults(defineProps<FontAwesomeIconProps>(), {
-  family: Icon.Family.Solid,
-  style: Icon.Style.Classic,
+  family: FontAwesome.Family.Solid,
+  style: FontAwesome.Style.Classic,
   fw: true,
   el: 'span',
 })

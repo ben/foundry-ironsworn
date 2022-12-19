@@ -77,16 +77,18 @@
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
+  @import 'utils.less';
+  @import 'inputs.less';
+  @import (reference) './fvtt/dialog.less';
+  &.dialog {
+    .dialog();
+  }
   form button,
   button {
     margin: 0;
     width: auto;
     border: 0 solid var(--ironsworn-color-border);
   }
-
-  @import 'utils.less';
-  @import 'inputs.less';
-  @import './fvtt/dialog.less';
 }
 
 @import 'transitions.less';

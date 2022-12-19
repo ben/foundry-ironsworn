@@ -24,7 +24,7 @@
       />
       <FontIcon
         v-if="iconOptions?.set === 'fa'"
-        :name="(iconOptions.name as Icon.Name)"
+        :name="(iconOptions.name as FontAwesome.Name)"
       />
     </slot>
     <!-- @slot Primary button text, wrapped to scope it's styling and to enable direction workaround required for vertical button text. -->
@@ -127,7 +127,7 @@
 import { capitalize } from 'lodash'
 import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
 import FontIcon from '../icon/font-icon.vue'
-import { Icon, IconName } from '../icon/icon-common'
+import { FontAwesome, IconName } from '../icon/icon-common'
 import IronIcon from '../icon/iron-icon.vue'
 
 /**

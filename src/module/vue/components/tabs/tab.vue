@@ -10,17 +10,18 @@
     :id="getTabId(tabState.tabSetId, tabKey)"
     :tabindex="isActive ? undefined : -1"
     @click="setActiveTab(tabKey)"
+    :block="block"
     @keydown="handleKeydown"
-    v-bind="buttonProps"
+    v-bind="(buttonProps, $attrs)"
   >
-    <slot name="icon"></slot>
-    <slot name="default"></slot>
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
   </IronBtn>
 </template>
 <style lang="less" module>
 @import (reference) '../../../../styles/mixins.less';
 .tab {
-  .clickableBlockMixin();
   border-radius: 0;
   margin: 0;
   border: 0;
@@ -28,8 +29,6 @@
   overflow-x: visible;
   padding: var(--ironsworn-spacer-md);
   gap: var(--ironsworn-spacer-sm);
-  justify-content: v-bind(alignment);
-  text-align: v-bind(alignment);
 }
 </style>
 
@@ -68,8 +67,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const buttonProps = computed(() => omit(props, 'tabKey'))
-
-console.log(buttonProps.value)
 
 const tabState = inject(TabStateKey) as TabState
 

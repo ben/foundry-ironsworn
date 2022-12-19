@@ -6,11 +6,15 @@
         title: props.move?.displayName,
       })
     "
-    v-bind="$props"
     class="action-roll move-roll"
     aria-haspopup="dialog"
     icon="ironsworn:d10-tilt"
-  />
+    v-bind="($props, $attrs)"
+  >
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
+  </IronBtn>
 </template>
 
 <script setup lang="ts">

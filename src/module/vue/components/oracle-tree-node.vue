@@ -39,7 +39,7 @@
               juicy
               name="caret-right"
               :rotate="
-                state.manuallyExpanded ? Icon.Rotate['90deg'] : undefined
+                state.manuallyExpanded ? FontAwesome.Rotate['90deg'] : undefined
               "
             />
           </template>
@@ -96,7 +96,7 @@ h4 {
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
 import { IOracleTreeNode } from '../../features/customoracles'
-import { Icon } from './icon/icon-common'
+import { FontAwesome } from './icon/icon-common'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { IronswornItem } from '../../item/item'
 import RulesTextOracle from './rules-text/rules-text-oracle.vue'

@@ -17,7 +17,7 @@ import {
 
 export type IconName = IronswornIconName | FontAwesomeIcon
 type IronswornIconName = `ironsworn:${string}`
-type FontAwesomeIcon = `fa:${Icon.Name}`
+type FontAwesomeIcon = `fa:${FontAwesome.Name}`
 
 export interface IconPropsCommon {
   /**
@@ -47,7 +47,7 @@ export interface IconPropsCommon {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
-export namespace Icon {
+export namespace FontAwesome {
   export enum Style {
     Classic = '',
     Sharp = 'fa-sharp',
@@ -336,7 +336,7 @@ export namespace Icon {
      */
     'sm' = 'fa-sm',
     /**
-     * Changes an icon's font-size to 1.25em (~120px) and also vertically aligns icon
+     * Changes an icon's font-size to 1.25em (~20px) and also vertically aligns icon
      */
     'lg' = 'fa-lg',
     /**

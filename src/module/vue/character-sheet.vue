@@ -29,6 +29,7 @@
         :tabKeys="['character', 'notes']"
         :id="`${actor._id}-character-sheet-classic`"
         :class="$style.tabSet"
+        :v-slot:icon="{ size: 'sm' }"
       >
         <TabList>
           <Tab tab-key="character" :text="$t('IRONSWORN.Character')" />
