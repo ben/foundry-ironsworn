@@ -3,7 +3,16 @@
 <p>{{entry.Description}}</p>
 
 {{#if entry.Subtable}}
-  (subtable)
+  <table>
+    <tbody>
+      {{#each entry.Subtable}}
+        <tr>
+          <td>{{Floor}}—{{Ceiling}}</td>
+          <td>{{Result}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
 {{/if}}
 
 <blockquote>{{entry.Quest}}</blockquote>
