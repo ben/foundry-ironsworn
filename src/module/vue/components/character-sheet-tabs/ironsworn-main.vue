@@ -44,7 +44,7 @@
     />
   </div>
 </template>
-<style lang="less" module>
+<style lang="scss" module>
 .items {
   gap: var(--ironsworn-spacer-md);
 }
@@ -52,7 +52,7 @@
   margin-top: var(--ironsworn-spacer-md);
 }
 </style>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 h4 {
   text-transform: uppercase;
 }

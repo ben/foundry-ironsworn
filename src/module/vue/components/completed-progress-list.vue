@@ -18,7 +18,7 @@
   </Collapsible>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .completedProgressWrapper {
   margin-top: var(--ironsworn-spacer-lg);
   border-radius: var(--ironsworn-border-radius-lg);

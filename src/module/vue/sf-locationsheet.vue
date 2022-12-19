@@ -140,7 +140,7 @@
   </SheetBasic>
 </template>
 
-<style lang="less">
+<style lang="scss">
 .sf-location-header {
   display: grid;
   grid-auto-flow: column;
@@ -160,7 +160,7 @@
   }
 }
 </style>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 label {
   line-height: 27px;
 

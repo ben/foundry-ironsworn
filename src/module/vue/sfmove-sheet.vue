@@ -117,7 +117,7 @@
   </div>
 </template>
 
-<style lang="less">
+<style lang="scss">
 .movesheet-row {
   h4 {
     align-items: center;

@@ -10,7 +10,7 @@
   </article>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .ironsworn-sheet {
   gap: var(--ironsworn-spacer-xl);
 }

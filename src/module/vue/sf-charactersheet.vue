@@ -73,13 +73,13 @@
   </article>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .topPadding {
   padding-top: var(--ironsworn-spacer-md);
 }
 </style>
 
-<style lang="less">
+<style lang="scss">
 .sf-character-sheet {
   gap: 7px;
   .stat-roll {

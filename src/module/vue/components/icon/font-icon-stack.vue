@@ -13,7 +13,7 @@
   </component>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .fontIconStack {
 }
 </style>

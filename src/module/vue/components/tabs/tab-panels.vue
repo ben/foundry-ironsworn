@@ -14,7 +14,7 @@
   </component>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tabPanels {
   // ensures that the TabPanels have a recent ancestor for their absolute positioning.
   position: relative;

@@ -122,7 +122,7 @@
   </div>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .siteSheet {
   gap: 0.5em;
 }
@@ -172,7 +172,7 @@
 }
 </style>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 textarea {
   border-radius: var(--ironsworn-border-radius-sm);
   resize: none;

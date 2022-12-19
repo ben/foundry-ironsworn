@@ -62,14 +62,14 @@
   </div>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .entrygrid {
   display: grid;
   grid-template-columns: 1fr 3fr;
 }
 </style>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .fieldrow {
   p,
   input {

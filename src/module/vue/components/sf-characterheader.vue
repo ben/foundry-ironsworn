@@ -34,7 +34,7 @@
   </SheetHeader>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 input,
 textarea {
   border-color: rgba(0, 0, 0, 0.1);

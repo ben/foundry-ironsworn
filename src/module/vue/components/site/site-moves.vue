@@ -62,7 +62,7 @@
   </ul>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-midtone-30);

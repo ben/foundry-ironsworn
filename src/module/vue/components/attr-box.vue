@@ -17,7 +17,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 @import '../../../styles/mixins.less';
 .stat {
   &:before {

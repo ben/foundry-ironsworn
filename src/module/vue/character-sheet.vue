@@ -60,7 +60,7 @@
   </SheetBasic>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tabContent {
   height: inherit;
 }
@@ -69,7 +69,7 @@
 }
 </style>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .character-sheet-classic {
   gap: var(--ironsworn-spacer-xl);
 }

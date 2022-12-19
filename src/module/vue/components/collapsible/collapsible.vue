@@ -76,7 +76,7 @@
   </component>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 // TODO: horizontal and vertical versions
 .wrapper {
 }

@@ -88,7 +88,7 @@
   </article>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .ironsworn .ironsworn__asset {
   display: flex;
   flex-direction: column;

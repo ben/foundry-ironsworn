@@ -25,7 +25,7 @@
     </section>
   </article>
 </template>
-<style lang="less" module>
+<style lang="scss" module>
 .sfLegacies {
   gap: var(--ironsworn-spacer-md);
   > *:not(:first-child) {

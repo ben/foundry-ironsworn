@@ -12,7 +12,7 @@
     <slot name="after-footer"></slot>
   </WithRolllisteners>
 </template>
-<style lang="less">
+<style lang="scss">
 @import (reference) '../../../../styles/mixins.less';
 
 .rules-text {

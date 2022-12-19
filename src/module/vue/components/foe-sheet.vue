@@ -53,7 +53,7 @@
   </div>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .dropTarget {
   text-align: center;
   justify-items: space-around;

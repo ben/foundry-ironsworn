@@ -26,7 +26,7 @@
   </table>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 caption,
 th {
   text-align: left;

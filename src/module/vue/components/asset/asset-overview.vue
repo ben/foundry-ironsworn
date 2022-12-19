@@ -115,7 +115,7 @@
   </article>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .bullet-wrapper {
   flex-basis: 1.5em;
   align-content: flex-start;
@@ -134,7 +134,7 @@
 }
 </style>
 
-<style lang="less" module>
+<style lang="scss" module>
 .ironsworn__asset {
   margin: var(--ironsworn-spacer-xl) 0;
   padding: var(--ironsworn-spacer-md);

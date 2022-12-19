@@ -128,7 +128,7 @@
   </div>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .danger {
   --ironsworn-color-clickable-block-border: var(--ironsworn-color-danger);
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-danger);

@@ -24,7 +24,7 @@
   </RulesText>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .progressMoveLabel {
   opacity: 0.5;
 }

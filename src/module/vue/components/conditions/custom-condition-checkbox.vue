@@ -13,7 +13,7 @@
   </label>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 label {
   margin-left: -2px;
   margin-right: var(--ironsworn-spacer-md);

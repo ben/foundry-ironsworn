@@ -18,7 +18,7 @@
   </div>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .assetconditions {
   display: flex;
   flex-grow: 0;

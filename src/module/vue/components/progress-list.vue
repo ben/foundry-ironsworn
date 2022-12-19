@@ -24,7 +24,7 @@
   </CollapseTransition>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .progressList {
   gap: var(--ironsworn-spacer-md);
 }

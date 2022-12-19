@@ -19,7 +19,7 @@
     </template>
   </IronBtn>
 </template>
-<style lang="less" module>
+<style lang="scss" module>
 .tab {
   border-radius: 0;
   margin: 0;

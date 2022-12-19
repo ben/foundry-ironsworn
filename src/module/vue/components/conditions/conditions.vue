@@ -25,7 +25,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .grid {
   grid-template-columns: repeat(4, 1fr);
 }

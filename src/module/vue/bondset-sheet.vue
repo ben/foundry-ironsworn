@@ -41,7 +41,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .clickable.block {
   border-style: none;
   line-height: 25px;

@@ -12,7 +12,7 @@
   </IronBtn>
 </template>
 
-<style lang="less"></style>
+<style lang="scss"></style>
 
 <script setup lang="ts">
 import { ExtractPropTypes, inject } from 'vue'

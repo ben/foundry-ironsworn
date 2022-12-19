@@ -19,7 +19,7 @@
     </section>
   </article>
 </template>
-<style lang="less" module>
+<style lang="scss" module>
 .listControls {
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }

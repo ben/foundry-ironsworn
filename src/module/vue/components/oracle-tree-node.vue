@@ -69,13 +69,13 @@
   </div>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .oracleContent {
   margin: var(--ironsworn-spacer-sm);
 }
 </style>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .show-oracle-info {
   // padding: 4px;
 }

@@ -34,7 +34,7 @@
   </div>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
   gap: var(--ironsworn-spacer-lg);
 }

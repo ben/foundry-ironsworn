@@ -43,7 +43,7 @@
   </section>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 h2 {
   margin: 0;
   line-height: 1.5;

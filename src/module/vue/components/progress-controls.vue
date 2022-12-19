@@ -22,7 +22,7 @@
     />
   </div>
 </template>
-<style lang="less" module>
+<style lang="scss" module>
 .progressControls {
 }
 .progressControlBtn {

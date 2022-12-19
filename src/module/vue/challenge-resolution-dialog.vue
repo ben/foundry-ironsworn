@@ -51,7 +51,7 @@
   </form>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 div.grid {
   margin: 1em;
   justify-items: center;

@@ -16,7 +16,7 @@
   </article>
 </template>
 
-<style lang="less" module></style>
+<style lang="scss" module></style>
 
 <script setup lang="ts">
 import { computed } from 'vue'

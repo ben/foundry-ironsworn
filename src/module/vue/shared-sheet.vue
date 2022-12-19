@@ -26,7 +26,7 @@
   </SheetBasic>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .stat-roll {
   text-transform: uppercase;
 }

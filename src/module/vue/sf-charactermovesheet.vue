@@ -40,7 +40,7 @@
   </TabSet>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tabSet {
 }
 .panelContent {

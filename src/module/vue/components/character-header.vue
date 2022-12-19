@@ -18,7 +18,7 @@
     </section>
   </SheetHeaderBasic>
 </template>
-<style lang="less">
+<style lang="scss">
 .xp-track-classic {
   flex-grow: 0;
   flex-direction: row;

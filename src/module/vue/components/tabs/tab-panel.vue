@@ -17,7 +17,7 @@
   </Transition>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 [class*='-leave-active'] {
   // prevents outgoing panels from fighting incoming panels for space
   position: absolute;
@@ -28,7 +28,7 @@
 }
 </style>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tabPanel {
   background-color: var(--ironsworn-color-bg);
   backface-visibility: hidden;

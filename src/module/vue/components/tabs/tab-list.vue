@@ -14,7 +14,7 @@
   </component>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tabList {
   // TODO:
   // * fun slidey animation by applying some kind of border stroke or gradient background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.

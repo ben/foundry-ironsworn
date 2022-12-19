@@ -13,7 +13,7 @@
   </label>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .condition-hint {
   text-shadow: 0 0 5px var(--ironsworn-color-warning);
 }

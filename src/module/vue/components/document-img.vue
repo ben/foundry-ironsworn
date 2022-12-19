@@ -9,7 +9,7 @@
   />
 </template>
 
-<style lang="less">
+<style lang="scss">
 .document-img {
   cursor: pointer;
   &[src$='.svg'] {

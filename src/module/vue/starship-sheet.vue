@@ -32,7 +32,7 @@
   </SheetBasic>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .assets {
   padding-top: var(--ironsworn-spacer-md);
 }
