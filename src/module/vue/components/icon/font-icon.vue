@@ -118,7 +118,6 @@ const classes = computed(() => {
     switch (true) {
       case key === 'title':
       case key === 'icon':
-      case key === 'size':
       case key === 'juicy':
         // skip, these don't get set as classes
         break

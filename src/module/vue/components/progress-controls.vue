@@ -1,5 +1,5 @@
 <template>
-  <div class="flexrow nogrow" style="text-align: center">
+  <div class="flexrow nogrow" :class="$style.progressControls">
     <IronBtn
       block
       icon="fa:plus"
@@ -19,6 +19,11 @@
     />
   </div>
 </template>
+<style lang="less" module>
+.progressControls {
+  --ironsworn-clickable-line-height: 22px;
+}
+</style>
 
 <script setup lang="ts">
 import { capitalize, inject } from 'vue'

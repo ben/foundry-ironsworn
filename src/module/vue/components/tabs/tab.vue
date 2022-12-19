@@ -27,7 +27,7 @@
   flex: 1 1 0;
   overflow-x: visible;
   padding: var(--ironsworn-spacer-md);
-  gap: var(--ironsworn-spacer-md);
+  gap: var(--ironsworn-spacer-sm);
   justify-content: v-bind(alignment);
   text-align: v-bind(alignment);
 }

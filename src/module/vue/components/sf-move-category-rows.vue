@@ -55,14 +55,19 @@
   margin: 0;
   padding: 0;
 }
-
+.toggleWrapper {
+  box-sizing: content-box;
+}
 .toggleSection {
+  box-sizing: content-box;
   background-color: var(--ironsworn-color-thematic);
   border-radius: var(--ironsworn-border-radius-lg);
+  height: var(--ironsworn-clickable-line-height);
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
     --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
     .clickableTextMixin();
+    height: inherit;
   }
 }
 .toggleButton {

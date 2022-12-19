@@ -15,6 +15,10 @@ import {
   StrokeProperty,
 } from 'csstype'
 
+export type IconName = IronswornIconName | FontAwesomeIcon
+type IronswornIconName = `ironsworn:${string}`
+type FontAwesomeIcon = `fa:${Icon.Name}`
+
 export interface IconPropsCommon {
   /**
    * The name of the icon to use.

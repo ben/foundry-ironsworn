@@ -6,8 +6,16 @@
     :tabKeys="['moves', 'oracles']"
   >
     <TabList>
-      <Tab tab-key="moves" icon="is-d10-tilt" :text="$t('IRONSWORN.Moves')" />
-      <Tab tab-key="oracles" icon="is-oracle" :text="$t('IRONSWORN.Oracles')" />
+      <Tab
+        tab-key="moves"
+        icon="ironsworn:d10-tilt"
+        :text="$t('IRONSWORN.Moves')"
+      />
+      <Tab
+        tab-key="oracles"
+        icon="ironsworn:oracle"
+        :text="$t('IRONSWORN.Oracles')"
+      />
     </TabList>
     <TabPanels>
       <TabPanel tab-key="moves" class="flexcol">

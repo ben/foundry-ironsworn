@@ -4,7 +4,11 @@
     :class="{
       [$style.ironBtn]: true,
       [$style.verticalButton]: vertical,
-      ...classes,
+      [$style.iconOnly]: !hasText,
+      [$style.clickableBlock]: block,
+      [$style.clickableText]: !block,
+      [$style[`flex${capitalize(justify)}`]]: true,
+      nogrow,
     }"
     type="button"
     :data-tooltip="tooltip"
@@ -109,7 +113,7 @@
 }
 .clickableText {
   .clickableTextMixin();
-  line-height: 1.25;
+  line-height: var(--ironsworn-clickable-line-height);
 }
 .clickableBlock {
   .clickableBlockMixin();
@@ -123,11 +127,8 @@
 import { capitalize } from 'lodash'
 import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
 import FontIcon from '../icon/font-icon.vue'
-import { Icon } from '../icon/icon-common'
+import { Icon, IconName } from '../icon/icon-common'
 import IronIcon from '../icon/iron-icon.vue'
-
-type IronIcon = `ironsworn:${string}`
-type FontAwesomeIcon = `fa:${Icon.Name}`
 
 /**
  * Generic button that applies styles and behaviour common to this system.
@@ -141,7 +142,7 @@ const props = withDefaults(
     /**
      * A simple way to specify an icon with default settings. For something weirder, you can override it with the "icon" slot.
      */
-    icon?: IronIcon | FontAwesomeIcon
+    icon?: IconName | null
     tooltip?: string
     hoverBg?: boolean
     disabled?: boolean

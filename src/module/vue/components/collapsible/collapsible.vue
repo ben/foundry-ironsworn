@@ -21,19 +21,25 @@
         <IronBtn
           :id="controlId"
           :aria-controls="contentId"
-          :icon="noIcon ? undefined : 'fa:chevron-right'"
           @click="toggle()"
           :disabled="disabled"
-          :class="[
-            $style.toggle,
-            toggleButtonClass,
-            $style.toggleButtonTransition,
-          ]"
+          :class="[$style.toggle, toggleButtonClass]"
           :tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"
           :text="toggleLabel"
           ref="$toggle"
-        />
+        >
+          <template #icon>
+            <slot name="toggleIcon">
+              <FontIcon
+                v-if="icon"
+                :name="icon"
+                :class="$style.toggleButtonTransition"
+                :size="Icon.Size['sm']"
+              />
+            </slot>
+          </template>
+        </IronBtn>
       </component>
       <slot name="after-toggle"></slot>
     </component>
@@ -78,12 +84,11 @@
 .contentWrapper {
 }
 
-.toggleButtonTransition:before {
+.toggleButtonTransition {
   transition: transform 0.4s;
-  font-size: 75%;
   display: flex;
   .wrapper[aria-expanded='true'] & {
-    transform: rotate(90deg);
+    transform: v-bind(transform);
   }
 }
 
@@ -114,6 +119,9 @@ import CollapseTransition from '../transition/collapse-transition.vue'
 import { computed, ref } from '@vue/reactivity'
 import { ExpandEvent, CollapseEvent } from './collapsible-helpers'
 import IronBtn from '../buttons/iron-btn.vue'
+import { Icon } from '../icon/icon-common'
+import { TransformProperty } from 'csstype'
+import FontIcon from '../icon/font-icon.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -130,7 +138,7 @@ const props = withDefaults(
      * @defaultValue `'vertical'`
      */
     orientation?: 'horizontal' | 'vertical'
-    noIcon?: boolean
+    icon?: Icon.Name | null
 
     toggleTooltip?: string
     disabled?: boolean
@@ -171,6 +179,7 @@ const props = withDefaults(
      * Prevents transition from animating.
      */
     disableTransition?: boolean
+    disableToggleAnimation?: boolean
   }>(),
   {
     wrapperIs: 'article',
@@ -184,6 +193,8 @@ const props = withDefaults(
     expanded: false,
     duration: 300,
     disableTransition: false,
+    icon: 'chevron-right',
+    disableToggleAnimation: false,
   }
 )
 
@@ -230,6 +241,13 @@ function expand() {
 function collapse() {
   state.expanded = false
 }
+
+const transform = computed<TransformProperty>(() => {
+  if (props.disableToggleAnimation || !props.icon) {
+    return 'none'
+  }
+  return 'rotate(90deg)'
+})
 
 defineExpose({
   $element,

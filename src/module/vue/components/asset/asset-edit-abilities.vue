@@ -38,7 +38,8 @@
           <div class="form-group" style="justify-content: right">
             <IronBtn
               icon="fa:trash"
-              class="button block nogrow"
+              block
+              nogrow
               :class="{ disabled: item.system.abilities.length < 2 }"
               @click="deleteAbility(i)"
             />

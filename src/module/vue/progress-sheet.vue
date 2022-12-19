@@ -47,6 +47,7 @@
             <IronBtn
               v-if="item.system.hasTrack"
               block
+              nogrow
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
               @click="retreat"
               icon="fa:caret-left"
@@ -54,6 +55,7 @@
             <IronBtn
               v-if="item.system.hasTrack"
               block
+              nogrow
               :tooltip="$t('IRONSWORN.MarkProgress')"
               @click="advance"
               icon="fa:caret-right"
@@ -121,6 +123,7 @@
       :class="$style.danger"
       @click="destroy"
       icon="fa:trash"
+      :text="$t('IRONSWORN.DeleteProgress')"
     />
   </div>
 </template>
