@@ -5,7 +5,7 @@
     :width="size ?? '1em'"
     role="img"
     aria-hidden="true"
-    :class="{ icon: true, juicy }"
+    :class="{ icon: true }"
   >
     <use :href="symbolId" />
   </svg>
@@ -29,7 +29,6 @@ interface Props extends IconPropsCommon {
    * @default 'ironsworn'
    */
   prefix?: string
-  juicy?: boolean
   size?: string
   disabled?: boolean
 }

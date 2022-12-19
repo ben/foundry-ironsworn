@@ -40,10 +40,6 @@ export interface IconPropsCommon {
   size?: string
   label?: string
   role?: string
-  /**
-   * A convenience property for rendering icons at 120% font size.
-   */
-  juicy?: boolean
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace

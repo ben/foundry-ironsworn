@@ -2,7 +2,6 @@
   <component
     :is="el"
     :class="{
-      juicy: juicy ?? undefined,
       [$style.fontIcon]: true,
       [$style.fontIconBorder]: border && !!$style.fontIconBorder,
       [$style.fontIconAnimation]: animation && !!$style.fontIconAnimation,
@@ -96,7 +95,6 @@ interface FontAwesomeIconProps extends IconPropsCommon {
    * Used with {@link FontIconStack}.
    */
   stack?: 'stack-1x' | 'stack-2x'
-  juicy?: boolean
 }
 
 /**
@@ -118,8 +116,6 @@ const classes = computed(() => {
     switch (true) {
       case key === 'title':
       case key === 'icon':
-      case key === 'juicy':
-        // skip, these don't get set as classes
         break
       case key === 'animation' && value:
         ;(value as FontAwesomeIconProps['animation'])?.forEach(

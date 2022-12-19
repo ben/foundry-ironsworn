@@ -36,7 +36,7 @@
         <IronBtn @click="toggleManually()" :text="node?.displayName">
           <template #icon>
             <FontIcon
-              juicy
+              :size="FontAwesome.Size['lg']"
               name="caret-right"
               :rotate="
                 state.manuallyExpanded ? FontAwesome.Rotate['90deg'] : undefined

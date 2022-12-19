@@ -24,25 +24,19 @@
       >
         <BtnRollmove
           :disabled="!canRoll"
-          class="juicy"
           :move="move"
           :class="$style.moveButton"
           :override-click="onRollClick !== undefined"
           @click="$emit('rollClick')"
         />
         <BtnOracle
-          class="juicy"
           :node="data.oracles[0] ?? {}"
           :disabled="preventOracle"
           :class="$style.moveButton"
           :override-click="onOracleClick !== undefined"
           @click="$emit('oracleClick')"
         />
-        <BtnSendmovetochat
-          class="juicy"
-          :move="move"
-          :class="$style.moveButton"
-        />
+        <BtnSendmovetochat :move="move" :class="$style.moveButton" />
       </section>
     </template>
     <template #default>
