@@ -59,12 +59,8 @@
       "caption": "Ironsworn & Starforged"
     }
   ],
-  "esmodules": [
-    "ironsworn.js"
-  ],
-  "styles": [
-    "ironsworn.css"
-  ],
+  "esmodules": ["ironsworn.js"],
+  "styles": ["ironsworn.css"],
   "dependencies": [],
   "relationships": {
     "requires": []
@@ -150,6 +146,14 @@
       "private": false
     },
     {
+      "name": "ironsworntruths",
+      "label": "Ironsworn Setting Truths",
+      "system": "foundry-ironsworn",
+      "path": "packs/ironsworn-truths.db",
+      "type": "JournalEntry",
+      "private": false
+    },
+    {
       "name": "starforged-sectors",
       "label": "Starforged Scenes",
       "system": "foundry-ironsworn",
@@ -187,6 +191,14 @@
       "system": "foundry-ironsworn",
       "path": "packs/starforged-oracles.db",
       "type": "RollTable",
+      "private": false
+    },
+    {
+      "name": "starforgedtruths",
+      "label": "Starforged Setting Truths",
+      "system": "foundry-ironsworn",
+      "path": "packs/starforged-truths.db",
+      "type": "JournalEntry",
       "private": false
     }
   ],
