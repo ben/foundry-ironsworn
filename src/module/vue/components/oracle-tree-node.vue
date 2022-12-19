@@ -9,9 +9,12 @@
     <!-- Leaf node -->
     <div v-if="isLeaf">
       <h4 class="flexrow">
-        <BtnOracle :node="node" :text="node?.displayName" />
+        <BtnOracle :node="node" :text="node?.displayName">
+          <template #icon>
+            <IronIcon name="oracle" size="1.25em" />
+          </template>
+        </BtnOracle>
         <IronBtn
-          block
           nogrow
           class="show-oracle-info"
           @click="toggleDescription()"
@@ -36,6 +39,7 @@
         <IronBtn @click="toggleManually()" :text="node?.displayName">
           <template #icon>
             <FontIcon
+              nogrow
               :size="FontAwesome.Size['lg']"
               name="caret-right"
               :rotate="
@@ -103,6 +107,7 @@ import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 import CollapseTransition from './transition/collapse-transition.vue'
 import IronBtn from './buttons/iron-btn.vue'
 import FontIcon from './icon/font-icon.vue'
+import IronIcon from './icon/iron-icon.vue'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 
