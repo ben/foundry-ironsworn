@@ -31,9 +31,9 @@
   </article>
 </template>
 
-<style lang="less">
-@segment_border_width: var(--ironsworn-border-width-md);
-@segment_border_radius: var(--ironsworn-border-radius-lg);
+<style lang="scss">
+$segment_border_width: var(--ironsworn-border-width-md);
+$segment_border_radius: var(--ironsworn-border-radius-lg);
 
 .attr-slider {
   &[aria-orientation='vertical'] {
@@ -69,7 +69,7 @@
     justify-items: space-between;
     .attr-slider-label {
       > * {
-        padding-inline-end: @segment_border_radius;
+        padding-inline-end: $segment_border_radius;
       }
     }
   }

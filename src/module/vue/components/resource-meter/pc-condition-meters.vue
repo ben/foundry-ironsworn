@@ -17,16 +17,16 @@
   </div>
 </template>
 
-<style lang="less">
-@meter_spacing: 6px;
+<style lang="scss">
+$meter_spacing: 6px;
 
 .condition-meters {
-  gap: @meter_spacing;
+  gap: $meter_spacing;
   .condition-meter {
     &:not(:first-child) {
       border-top: var(--ironsworn-border-width-md) solid
         var(--ironsworn-color-border);
-      padding-top: @meter_spacing;
+      padding-top: $meter_spacing;
     }
   }
   button {
