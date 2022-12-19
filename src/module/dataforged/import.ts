@@ -442,6 +442,7 @@ async function processTruths(
           i: i++,
         }
       )
+      //@ts-ignore
       JournalEntryPage.create(
         {
           id: hashLookup(entry.$id),
