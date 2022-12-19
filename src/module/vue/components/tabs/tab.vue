@@ -4,7 +4,7 @@
     role="tab"
     :data-tab-set="tabState.tabSetId"
     :data-tab-key="tabKey"
-    :class="$style.tab"
+    :class="{ [$style.tab]: true, [$style[tabState.orientation]]: true }"
     :aria-selected="isActive"
     :aria-controls="getTabPanelId(tabState.tabSetId, tabKey)"
     :id="getTabId(tabState.tabSetId, tabKey)"
@@ -20,7 +20,6 @@
   </IronBtn>
 </template>
 <style lang="less" module>
-@import (reference) '../../../../styles/mixins.less';
 .tab {
   border-radius: 0;
   margin: 0;
@@ -29,6 +28,11 @@
   overflow-x: visible;
   padding: var(--ironsworn-spacer-md);
   gap: var(--ironsworn-spacer-sm);
+}
+.vertical {
+}
+.horizontal {
+  line-height: var(--ironsworn-line-height-lg);
 }
 </style>
 
@@ -85,10 +89,6 @@ watch(tabState, async () => {
     $el.value?.element.focus()
   }
 })
-
-const alignment = computed(() =>
-  tabState.orientation === 'horizontal' ? 'center' : 'left'
-)
 
 const tabSetId = computed(() => tabState.tabSetId)
 defineExpose({

@@ -71,7 +71,7 @@
 
 <style lang="less" scoped>
 .character-sheet-classic {
-  gap: 10px;
+  gap: var(--ironsworn-spacer-xl);
 }
 .stat-roll {
   text-transform: uppercase;

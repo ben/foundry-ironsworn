@@ -55,12 +55,12 @@
 }
 
 .progress-track-box {
-  border: 1px solid var(--ironsworn-color-border);
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   align-items: center;
   justify-content: center;
   aspect-ratio: 1;
   object-fit: contain;
-  border-radius: 3px;
+  border-radius: var(--ironsworn-border-radius-md);
   stroke: var(--ironsworn-color-fg);
   stroke-width: 5;
 

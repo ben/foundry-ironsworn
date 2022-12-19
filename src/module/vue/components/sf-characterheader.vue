@@ -38,7 +38,7 @@
 input,
 textarea {
   border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
+  border-radius: var(--ironsworn-border-radius-sm);
   font-family: var(--font-primary);
   resize: none;
   font-size: inherit;
@@ -52,7 +52,7 @@ textarea {
   flex-basis: 100px;
   min-width: 20ch;
   max-width: 30ch;
-  gap: 5px;
+  gap: var(--ironsworn-spacer-md);
   flex-grow: 1;
 }
 </style>

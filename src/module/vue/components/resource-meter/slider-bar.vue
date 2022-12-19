@@ -50,10 +50,10 @@
 
 <style lang="less" scoped>
 @import '../../../../styles/mixins.less';
-@segment_border_width: 1px;
-@segment_border_radius: 5px;
-@segment_line_height: 28px;
-@segment_vertical_width: 50px;
+@segment_border_width: var(--ironsworn-border-width-md);
+@segment_border_radius: var(--ironsworn-border-radius-lg);
+@segment_line_height: var(--ironsworn-line-height-lg);
+@segment_vertical_width: var(--ironsworn-vertical-slider-width);
 
 .slider-bar {
   display: flex;
@@ -87,7 +87,7 @@
       flex: 0 0 auto;
       width: @segment_vertical_width;
       &:not(:first-child) {
-        margin-block-start: -@segment_border_width;
+        margin-block-start: calc(-1 * @segment_border_width);
       }
       &:first-child {
         border-start-start-radius: @segment_border_radius;
@@ -106,7 +106,7 @@
     .slider-segment {
       flex-grow: 1;
       &:not(:first-child) {
-        margin-inline-start: -@segment_border_width;
+        margin-inline-start: calc(-1 * @segment_border_width);
       }
       &:first-child {
         border-top-left-radius: @segment_border_radius;

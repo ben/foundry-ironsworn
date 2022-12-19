@@ -1,9 +1,12 @@
 <template>
   <SheetBasic :document="actor">
     <template #before-header>
-      <div class="flexrow nogrow" style="gap: 5px">
+      <div class="flexrow nogrow" style="gap: var(--ironsworn-spacer-md)">
         <!-- Region -->
-        <label class="flexrow" style="flex-basis: 150px; gap: 10px">
+        <label
+          class="flexrow"
+          style="flex-basis: 150px; gap: var(--ironsworn-spacer-xl)"
+        >
           <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
           <select v-model="region" @change="regionChanged">
             <option value="terminus">
@@ -19,7 +22,10 @@
         </label>
 
         <!-- Subtype -->
-        <label class="flexrow" style="flex-basis: 200px; gap: 10px">
+        <label
+          class="flexrow"
+          style="flex-basis: 200px; gap: var(--ironsworn-spacer-xl)"
+        >
           {{ $t('IRONSWORN.LocationType') }}
           <select v-model="actor.system.subtype" @change="subtypeChanged">
             <option value="planet">Planet</option>
@@ -32,7 +38,10 @@
       </div>
 
       <!-- Klass -->
-      <label class="flexrow nogrow" style="position: relative; gap: 10px">
+      <label
+        class="flexrow nogrow"
+        style="position: relative; gap: var(--ironsworn-spacer-xl)"
+      >
         <!-- TODO: i18n and subtype text -->
         <span class="select-label">{{ subtypeSelectText }}:</span>
         <select
@@ -53,7 +62,7 @@
           nogrow
           icon="ironsworn:d10-tilt"
           style="
-            padding: 0px 5px;
+            padding: 0px var(--ironsworn-spacer-md);
             position: absolute;
             right: 15px;
             height: 25px;
@@ -146,7 +155,8 @@
     grid-column: 3;
     height: 50px;
     aspect-ratio: 1;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 var(--ironsworn-border-radius-md)
+      var(--ironsworn-border-radius-md) 0;
   }
 }
 </style>

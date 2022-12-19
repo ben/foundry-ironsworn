@@ -54,7 +54,8 @@
         flex-direction: row;
         gap: (@asset_spacer / 2);
         flex-grow: 0;
-        border-bottom: 1px solid;
+        border-bottom-width: var(--ironsworn-border-width-md);
+        border-bottom-style: solid;
         border-bottom-color: var(--ironsworn-color-thematic);
         .asset-field-label {
           padding: 0;
@@ -86,8 +87,6 @@
     max-height: 75px;
   }
   .asset-ability-text {
-    // flex-grow: 2;
-    // gap: (@asset_spacer / 2);
     p {
       margin: 0;
     }

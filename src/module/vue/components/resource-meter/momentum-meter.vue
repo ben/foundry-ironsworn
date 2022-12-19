@@ -32,7 +32,7 @@
 <style lang="less">
 @import '../../../../styles/mixins.less';
 .momentum-meter {
-  gap: 5px 0;
+  gap: var(--ironsworn-spacer-md) 0;
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
       .blockHoverMixin();

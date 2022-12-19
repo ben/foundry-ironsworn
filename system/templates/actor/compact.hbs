@@ -1,6 +1,6 @@
 <form class="{{cssClass}} flexcol compact" autocomplete="off">
   {{!-- Stats --}}
-  <div class="flexcol boxgroup" style="margin: 5px;">
+  <div class="flexcol boxgroup" style="margin: var(--ironsworn-spacer-md);">
     <div class="flexrow boxrow">
       {{#*inline "stat"}}
       <div class="box flexcol clickable block ironsworn__stat__roll" data-stat="{{stat}}">
@@ -18,7 +18,7 @@
   </div>
 
   {{!-- Resources --}}
-  <div class="flexcol boxgroup" style="margin: 5px;">
+  <div class="flexcol boxgroup" style="margin: var(--ironsworn-spacer-md);">
     <div class="flexrow boxrow">
       {{#*inline "resource"}}
       <div class="box flexcol">
@@ -31,7 +31,7 @@
           <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
             data-min="{{min}}">&minus;</div>
           {{#if burn}}
-          <div class="box clickable block ironsworn__momentum__burn" style="padding: 0 5px;">{{localize
+          <div class="box clickable block ironsworn__momentum__burn" style="padding: 0 var(--ironsworn-spacer-md);">{{localize
             'IRONSWORN.Burn'}}</div>
           {{/if}}
           <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1"

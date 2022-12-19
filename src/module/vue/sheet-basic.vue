@@ -12,7 +12,7 @@
 
 <style lang="less" scoped>
 .ironsworn-sheet {
-  gap: 10px;
+  gap: var(--ironsworn-spacer-xl);
 }
 </style>
 

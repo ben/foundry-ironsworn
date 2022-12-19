@@ -271,7 +271,7 @@
 
 .inputFieldMixin(@spread:6px) {
   // specify invisible outline to stop jitter from border width transition
-  outline-width: 1px;
+  outline-width: var(--ironsworn-border-width-md);
   outline-style: solid;
   outline-color: transparent;
   .interactiveMixin();
@@ -298,7 +298,7 @@
 }
 
 .marginMixin(@direction) {
-  @spacer: 5px;
+  @spacer: var(--ironsworn-spacer-md);
   flex: 0;
   border-@{direction}-style: solid;
   position: relative;
