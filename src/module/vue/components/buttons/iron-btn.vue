@@ -116,7 +116,7 @@
 }
 .clickableBlock {
   .clickableBlockMixin();
-  &:hover {
+  &:hover:not(:focus) {
     box-shadow: none;
   }
 }
