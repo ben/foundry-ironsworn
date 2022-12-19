@@ -1,4 +1,4 @@
-@import 'mixins.less';
+@import 'mixins.scss';
 
 // general table styles
 table {
@@ -20,7 +20,7 @@ table {
 .oracle-table {
   .oracle-table-column-result-text {
     a.entity-link {
-      .clickableTextMixin();
+      @include clickableTextMixin();
       border: none;
       background: none !important;
     }
@@ -38,7 +38,7 @@ table {
   .oracle-result-row {
     &.selected,
     &[aria-selected='true'] {
-      .staticHighlightMixin(20);
+      @include staticHighlightMixin(20);
     }
   }
 }

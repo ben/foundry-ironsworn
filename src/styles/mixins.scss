@@ -5,11 +5,11 @@
 // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
 // if you want this + a soft shadow, LESS can combine them with square bracket notation to access the text-shadow property.
 // generated with owumaro.github.io/text-stroke-generator/
-.textStrokeMixin(@color: var(--ironsworn-color-text-stroke)) {
-  text-shadow: 1px 0px 0px @color, 0.540302px 0.841471px 0px @color,
-    -0.416147px 0.909297px 0px @color, -0.989993px 0.14112px 0px @color,
-    -0.653644px -0.756803px 0px @color, 0.283662px -0.958924px 0px @color,
-    0.96017px -0.279416px 0px @color;
+@mixin textStrokeMixin($color: var(--ironsworn-color-text-stroke)){
+  text-shadow: 1px 0px 0px $color, 0.540302px 0.841471px 0px $color,
+    -0.416147px 0.909297px 0px $color, -0.989993px 0.14112px 0px $color,
+    -0.653644px -0.756803px 0px $color, 0.283662px -0.958924px 0px $color,
+    0.96017px -0.279416px 0px $color;
 }
 .initial-caps {
   &::first-letter {
@@ -20,28 +20,28 @@
 // special effects
 
 // used to mark focused fields
-.borderGlowExteriorMixin(@spread:6px) {
-  box-shadow: 0 0 @spread var(--ironsworn-color-cool);
+@mixin borderGlowExteriorMixin($spread:6px){
+  box-shadow: 0 0 $spread var(--ironsworn-color-cool);
 }
 
 // used inside block/tab like elements. it's inset so that both the focus effect and the hover effect can be visible at once.
-.borderGlowInteriorMixin(@spread:5px,@blur:0,@color:var(--ironsworn-color-cool)) {
-  box-shadow: inset 0 0 @spread @blur @color;
+@mixin borderGlowInteriorMixin($spread:5px,$blur:0,$color:var(--ironsworn-color-cool)){
+  box-shadow: inset 0 0 $spread $blur $color;
 }
 
 // sets border colours, modelled after the hover effect on FVTT's canvas buttons.
-.borderAccentColorMixin(@warm:var(--ironsworn-color-warm),@cool:var(--ironsworn-color-cool)) {
-  border-color: @warm;
-  border-bottom-color: @cool;
+@mixin borderAccentColorMixin($warm:var(--ironsworn-color-warm),$cool:var(--ironsworn-color-cool)){
+  border-color: $warm;
+  border-bottom-color: $cool;
 }
 
-.textGlowMixin(@color:var(--ironsworn-color-fg-highlight),@spread:10px) {
-  text-shadow: 0 0 @spread @color;
+@mixin textGlowMixin($color:var(--ironsworn-color-fg-highlight),$spread:10px){
+  text-shadow: 0 0 $spread $color;
 }
 
 // used for e.g. hover effects. resembles a transparent overlay (with a subtle gradient) without having to do any interpolation or set additional variables.
-.overlayGlowMixin(@blockSize:50px) {
-  .borderGlowInteriorMixin(calc(@blockSize / 2),0,var(--ironsworn-color-thematic,var(--ironsworn-color-clickable-block-bg-hover)));
+@mixin overlayGlowMixin($blockSize:50px){
+  @include borderGlowInteriorMixin(calc($blockSize / 2),0,var(--ironsworn-color-thematic,var(--ironsworn-color-clickable-block-bg-hover)));
 }
 
 .borderFloatingMixin {
@@ -49,48 +49,48 @@
   border-color: var(--ironsworn-color-border);
 }
 
-.tabBaseMixin(@glowSpread: 5px, @glowBlur: 1px,@borderWidth: var(--ironsworn-border-width-md)) {
-  border-width: @borderWidth;
+@mixin tabBaseMixin($glowSpread: 5px, $glowBlur: 1px,$borderWidth: var(--ironsworn-border-width-md)){
+  border-width: $borderWidth;
   &:hover {
-    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
+    @include borderGlowInteriorMixin($glowSpread, $glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
     border-color: var(--ironsworn-color-fg-muted);
   }
   &[aria-selected='true'],
   &.active {
-    .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-cool));
+    @include borderGlowInteriorMixin($glowSpread, $glowBlur, var(--ironsworn-color-cool));
     border-color: var(--ironsworn-color-warm);
   }
 }
 
-.tabTopMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
-  .tabBaseMixin();
-  border-top-right-radius: @borderRadius;
-  border-top-left-radius: @borderRadius;
+@mixin tabTopMixin($borderRadius:var(--ironsworn-border-radius-lg)){
+  @include tabBaseMixin();
+  border-top-right-radius: $borderRadius;
+  border-top-left-radius: $borderRadius;
   border-bottom-width: 0px;
 }
-.tabBottomMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
-  .tabBaseMixin();
-  border-bottom-right-radius: @borderRadius;
-  border-bottom-left-radius: @borderRadius;
+@mixin tabBottomMixin($borderRadius:var(--ironsworn-border-radius-lg)){
+  @include tabBaseMixin();
+  border-bottom-right-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
   border-top-width: 0px;
 }
-.tabLeftMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
-  .tabBaseMixin();
-  border-top-left-radius: @borderRadius;
-  border-bottom-left-radius: @borderRadius;
+@mixin tabLeftMixin($borderRadius:var(--ironsworn-border-radius-lg)){
+  @include tabBaseMixin();
+  border-top-left-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
   border-right-width: 0px;
 }
-.tabRightMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
-  .tabBaseMixin();
-  border-top-right-radius: @borderRadius;
-  border-bottom-right-radius: @borderRadius;
+@mixin tabRightMixin($borderRadius:var(--ironsworn-border-radius-lg)){
+  @include tabBaseMixin();
+  border-top-right-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
   border-left-width: 0px;
 }
 
-.borderMixin(@color:var(--ironsworn-color-border),@width:var(--ironsworn-border-width-md)) {
-  color: @color;
+@mixin borderMixin($color:var(--ironsworn-color-border),$width:var(--ironsworn-border-width-md)){
+  color: $color;
   border-style: solid;
-  border-width: @width;
+  border-width: $width;
 }
 
 // CLICKABLE MIXINS
@@ -112,7 +112,7 @@
   filter: var(--ironsworn-filter-highlight);
 }
 .textFocusMixin {
-  .focusOutlineMixin();
+  @include focusOutlineMixin();
 }
 
 .textActiveMixin {
@@ -122,9 +122,9 @@
 
 .clickableTextMixin {
   --ironsworn-color-text-stroke: transparent;
-  .interactiveMixin();
+  @include interactiveMixin();
   margin: 0;
-  // .textStrokeMixin();
+  // @include textStrokeMixin();
   background: transparent;
   color: var(--ironsworn-color-clickable-text);
   border-width: 0;
@@ -137,21 +137,21 @@
   &.selected,
   &.active {
     --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    .textActiveMixin();
+    @include textActiveMixin();
   }
   &:hover,
   &.hover {
     --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    .textHoverMixin();
+    @include textHoverMixin();
   }
   &:focus,
   &:focus-within {
     --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    .textFocusMixin();
+    @include textFocusMixin();
   }
 }
 
-.blockHoverMixin(@blockSize:50px) {
+@mixin blockHoverMixin($blockSize:50px){
   color: var(--ironsworn-color-clickable-block-fg-hover);
   background-color: var(--ironsworn-color-clickable-block-bg-hover);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
@@ -160,7 +160,7 @@
 
 .blockFocusMixin {
   z-index: var(--ironsworn-z-index-highest);
-  .focusOutlineMixin();
+  @include focusOutlineMixin();
 }
 
 .blockActiveMixin {
@@ -175,8 +175,8 @@
 }
 
 // For the block's 'default' state.
-.blockMixin(@blockSize:50px) {
-  .interactiveMixin();
+@mixin blockMixin($blockSize:50px){
+  @include interactiveMixin();
   box-shadow: none;
   overflow-y: visible;
   border-color: var(--ironsworn-color-clickable-block-border);
@@ -235,32 +235,32 @@
   }
 }
 
-.clickableBlockMixin(@blockSize:50px,) {
-  .blockMixin(@blockSize);
+@mixin clickableBlockMixin($blockSize:50px,){
+  @include blockMixin($blockSize);
   &:hover,
   &.hover {
-    .blockHoverMixin(@blockSize);
+    @include blockHoverMixin($blockSize);
   }
   &:focus,
   &:focus-within {
-    .blockFocusMixin();
+    @include blockFocusMixin();
   }
   &[aria-selected='true'],
   &.selected,
   &.active {
-    .blockActiveMixin();
+    @include blockActiveMixin();
   }
 }
 
 // input mixins
 
-.inputFieldFocusMixin(@spread: 6px) {
-  .borderGlowExteriorMixin(@spread);
-  .borderAccentColorMixin(var(--ironsworn-color-warm-50), var(--ironsworn-color-cool-50));
+@mixin inputFieldFocusMixin($spread: 6px){
+  @include borderGlowExteriorMixin($spread);
+  @include borderAccentColorMixin(var(--ironsworn-color-warm-50), var(--ironsworn-color-cool-50));
   outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-warm);
 }
 
-.inputFieldStaticMixin() {
+@mixin inputFieldStaticMixin(){
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
   border-width: var(--ironsworn-border-width-md);
@@ -269,13 +269,13 @@
   border-radius: var(--ironsworn-border-radius-md);
 }
 
-.inputFieldMixin(@spread:6px) {
+@mixin inputFieldMixin($spread:6px){
   // specify invisible outline to stop jitter from border width transition
   outline-width: var(--ironsworn-border-width-md);
   outline-style: solid;
   outline-color: transparent;
-  .interactiveMixin();
-  .inputFieldStaticMixin();
+  @include interactiveMixin();
+  @include inputFieldStaticMixin();
   cursor: initial;
   &::placeholder {
     color: var(--ironsworn-color-fg);
@@ -283,31 +283,31 @@
   }
   &:hover {
     border-color: var(--ironsworn-color-clickable-block-border-hover);
-    .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool));
+    @include borderGlowInteriorMixin($spread, 0, var(--ironsworn-color-cool));
   }
   &:focus,
   &:focus-within {
-    .inputFieldFocusMixin();
-    .borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
+    @include inputFieldFocusMixin();
+    @include borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
     &:hover {
-      box-shadow: .inputFieldFocusMixin() [box-shadow],
-        .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool))
+      box-shadow: @include inputFieldFocusMixin(); [box-shadow],
+        @include borderGlowInteriorMixin($spread, 0, var(--ironsworn-color-cool));
           [box-shadow];
     }
   }
 }
 
-.marginMixin(@direction) {
-  @spacer: var(--ironsworn-spacer-md);
+@mixin marginMixin($direction){
+  $spacer: var(--ironsworn-spacer-md);
   flex: 0;
-  border-@{direction}-style: solid;
+  border-#{$direction}-style: solid;
   position: relative;
-  border-@{direction}-width: var(--ironsworn-border-width-md);
-  margin-@{direction}: @spacer;
-  border-@{direction}-color: var(--ironsworn-color-border);
+  border-#{$direction}-width: var(--ironsworn-border-width-md);
+  margin-#{$direction}: $spacer;
+  border-#{$direction}-color: var(--ironsworn-color-border);
 }
 
-.focusOutlineMixin() {
+@mixin focusOutlineMixin(){
   // outline disabled for now
   // outline: 1px solid var(--ironsworn-color-cool) !important;
   z-index: var(--ironsworn-z-index-highest);
@@ -317,19 +317,19 @@
 // since gradients are *images*, they're overlaid on top of background-colour. great for a lazy tint on a highlighted element.
 // we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
 // only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
-.staticHighlightMixin(@opacity:20,@direction:'to bottom') {
-  background-image: e(
+@mixin staticHighlightMixin($opacity:20,$direction:'to bottom'){
+  background-image: unquote(
     %(
       'linear-gradient(%s, var(--ironsworn-color-warm-%s), var(--ironsworn-color-cool-%s))',
-      @direction,
-      @opacity,
-      @opacity
+      $direction,
+      $opacity,
+      $opacity
     )
   );
   background-blend-mode: overlay;
 }
 
-.overlayMixin() {
+@mixin overlayMixin(){
   content: '';
   position: absolute;
   top: 0;
@@ -340,7 +340,7 @@
   z-index: var(--ironsworn-z-index-highest);
 }
 
-.textCompactMixin() {
+@mixin textCompactMixin(){
   ol,
   ul {
     padding: 0 0 0 1em;

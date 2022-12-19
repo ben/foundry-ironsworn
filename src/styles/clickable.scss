@@ -3,7 +3,7 @@
 // the following selector is a proxy for compendium links which don't have a class attached to them.
 // ideally, all of them would share an identifying data attribute that could be selected for -- something like 'data-action', maybe?
 a[data-pack][data-uuid] {
-  .clickableBlockMixin();
+  @include clickableBlockMixin();
   filter: none;
   border-radius: var(--ironsworn-border-radius-sm);
   border-width: var(--ironsworn-border-width-md);
@@ -27,18 +27,18 @@ a[data-pack][data-uuid] {
 }
 
 .clickable {
-  .interactiveMixin();
+  @include interactiveMixin();
   cursor: pointer;
   // &:not(svg):not(.svg) {
   &.text:not(.block) {
-    .clickableTextMixin();
+    @include clickableTextMixin();
     &:not(:before) {
       text-align: left;
       justify-content: left;
     }
   }
   &.block {
-    .clickableBlockMixin();
+    @include clickableBlockMixin();
   }
   // }
   svg,

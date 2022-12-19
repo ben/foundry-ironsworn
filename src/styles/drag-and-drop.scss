@@ -1,4 +1,4 @@
-@import (reference) 'mixins.less';
+@import (reference) 'mixins.scss';
 
 [data-ironsworn-drop-type] {
   --ironsworn-drop-zone-outline-width: 3px;
@@ -7,12 +7,12 @@
   outline: 0 var(--ironsworn-drop-zone-outline-style) transparent;
   transition: all 0.2s ease;
   &:after {
-    .overlayMixin();
+    @include overlayMixin();
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s ease;
     border-radius: inherit;
-    .staticHighlightMixin(20);
+    @include staticHighlightMixin(20);
   }
   &[data-ironsworn-drop-active='true'] {
     outline-width: var(--ironsworn-drop-zone-outline-width);

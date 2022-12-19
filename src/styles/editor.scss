@@ -17,7 +17,7 @@
     var(--ironsworn-border-radius-lg);
 }
 .editor-edit {
-  .clickableBlockMixin();
+  @include clickableBlockMixin();
   background: var(--ironsworn-color-bg);
   border-radius: var(--ironsworn-border-radius-md);
 }
@@ -25,14 +25,14 @@
 // Editor custom select elements
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
-  .clickableBlockMixin();
+  @include clickableBlockMixin();
   border-radius: var(--ironsworn-border-radius-md);
 }
 
 // Editors: ProseMirror
 
 .ProseMirror {
-  .inputFieldMixin();
+  @include inputFieldMixin();
   padding: 0.5rem;
 }
 
@@ -106,7 +106,7 @@
     }
   }
   .tox-tbtn--select {
-    .inputFieldMixin();
+    @include inputFieldMixin();
     text-shadow: none;
   }
   .tox-collection--list {
@@ -121,38 +121,38 @@
 // Menu
 //
 // Root variables
-// from https://github.com/tinymce/tinymce/blob/develop/modules/oxide/src/less/theme/globals/global-variables.less
+// from https://github.com/tinymce/tinymce/blob/develop/modules/oxide/src/scss/theme/globals/global-variables.scss
 // Begin customization by changing these variables as most other variables are derivatives of these.
-@background-color: var(--ironsworn-color-input-bg);
-@base-value: 16px;
-@color-black: #000;
-@color-tint: #006ce7;
-@color-white: var(--ironsworn-color-light);
-@color-error: #c00;
-@color-success: #78ab46;
-@font-stack: var(--font-primary);
+$background-color: var(--ironsworn-color-input-bg);
+$base-value: 16px;
+$color-black: #000;
+$color-tint: #006ce7;
+$color-white: var(--ironsworn-color-light);
+$color-error: #c00;
+$color-success: #78ab46;
+$font-stack: var(--font-primary);
 
 // Content;
 
-@content-ui-darkmode: false; // Change this to true to get white icons in the content such as bookmarks.
+$content-ui-darkmode: false; // Change this to true to get white icons in the content such as bookmarks.
 
 // Colors
-@border-color: transparent;
-@text-color: var(--ironsworn-color-fg);
-@text-color-muted: var(--ironsworn-color-fg-muted);
+$border-color: transparent;
+$text-color: var(--ironsworn-color-fg);
+$text-color-muted: var(--ironsworn-color-fg-muted);
 
 // Some useful generic variables
 
-@menu-background-color: var(--ironsworn-color-midtone-10);
-@menu-border-color: var(--ironsworn-color-input-border);
-@menu-box-shadow: 0 0 2px 0 fade(@color-black, 20%),
-  0 4px 8px 0 fade(@color-black, 15%);
+$menu-background-color: var(--ironsworn-color-midtone-10);
+$menu-border-color: var(--ironsworn-color-input-border);
+$menu-box-shadow: 0 0 2px 0 rgba($color-black, 20%/100.0%),
+  0 4px 8px 0 rgba($color-black, 15%/100.0%);
 
 .tox {
   .tox-menu {
-    background: @menu-background-color;
-    border: var(--ironsworn-border-width-md) solid @menu-border-color;
-    box-shadow: @menu-box-shadow;
+    background: $menu-background-color;
+    border: var(--ironsworn-border-width-md) solid $menu-border-color;
+    box-shadow: $menu-box-shadow;
   }
 }
 
@@ -162,60 +162,60 @@
 // A list of items that can be arranged as vertical list, horizontal toolbar or a grid.
 //
 
-@collection-item-separator-color: var(--ironsworn-color-border-muted);
+$collection-item-separator-color: var(--ironsworn-color-border-muted);
 
-@collection-item-label-text-color: var(--ironsworn-color-fg);
+$collection-item-label-text-color: var(--ironsworn-color-fg);
 
-@collection-item-label-disabled-text-color: var(--ironsworn-color-fg-50);
+$collection-item-label-disabled-text-color: var(--ironsworn-color-fg-50);
 
-@toolbar-button-hover-background-color: var(
+$toolbar-button-hover-background-color: var(
   --ironsworn-color-clickable-block-bg-hover
 );
 
-@collection-list-item-active-background-color: var(
+$collection-list-item-active-background-color: var(
   --ironsworn-color-clickable-block-bg-hover
 );
-@collection-list-item-label-active-text-color: var(
+$collection-list-item-label-active-text-color: var(
   --ironsworn-color-clickable-block-fg-hover
 );
-@collection-list-item-enabled-background-color: @menu-background-color;
-@collection-list-item-label-enabled-text-color: var(
+$collection-list-item-enabled-background-color: $menu-background-color;
+$collection-list-item-label-enabled-text-color: var(
   --ironsworn-color-clickable-block-fg
 );
 
-@collection-toolbar-item-active-background-color: var(
+$collection-toolbar-item-active-background-color: var(
   --ironsworn-color-clickable-block-bg-hover
 );
-@collection-toolbar-item-label-active-text-color: var(
+$collection-toolbar-item-label-active-text-color: var(
   --ironsworn-color-clickable-block-fg-selected
 );
 
-@toolbar-button-enabled-background-color: var(
+$toolbar-button-enabled-background-color: var(
   --ironsworn-color-clickable-block-bg
 );
-@collection-toolbar-item-enabled-background-color: @toolbar-button-enabled-background-color;
-@collection-toolbar-item-label-enabled-text-color: var(
+$collection-toolbar-item-enabled-background-color: $toolbar-button-enabled-background-color;
+$collection-toolbar-item-label-enabled-text-color: var(
   --ironsworn-color-clickable-block-fg
 );
 
-@collection-grid-item-active-background-color: var(
+$collection-grid-item-active-background-color: var(
   --ironsworn-color-clickable-block-bg-hover
 );
-@collection-grid-item-label-active-text-color: var(
+$collection-grid-item-label-active-text-color: var(
   --ironsworn-color-clickable-block-fg-hover
 );
-@collection-grid-item-enabled-background-color: @toolbar-button-enabled-background-color;
-@collection-grid-item-label-enabled-text-color: var(
+$collection-grid-item-enabled-background-color: $toolbar-button-enabled-background-color;
+$collection-grid-item-label-enabled-text-color: var(
   --ironsworn-color-clickable-block-fg
 );
 
-@collection-group-label-background-color: var(--ironsworn-color-bg-20);
-@collection-group-label-text-color: var(--ironsworn-color-fg-muted);
+$collection-group-label-background-color: var(--ironsworn-color-bg-20);
+$collection-group-label-text-color: var(--ironsworn-color-fg-muted);
 
 .tox {
   .tox-collection--list .tox-collection__group {
     border-bottom-width: 0;
-    border-color: @collection-item-separator-color;
+    border-color: $collection-item-separator-color;
     border-left-width: 0;
     border-right-width: 0;
     border-style: solid;
@@ -228,52 +228,52 @@
 
   // Group headings should only be used on collection lists.
   .tox-collection__group-heading {
-    background: @collection-group-label-background-color;
-    color: @collection-group-label-text-color;
+    background: $collection-group-label-background-color;
+    color: $collection-group-label-text-color;
   }
   .tox-collection__item {
-    color: @collection-item-label-text-color;
+    color: $collection-item-label-text-color;
     transition: var(--std-animation);
   }
 
   // Note: Ensure "enabled" is before "active", as active styles should have a higher precedence
   .tox-collection--list .tox-collection__item--enabled {
-    background: @collection-list-item-enabled-background-color;
-    color: @collection-list-item-label-enabled-text-color;
+    background: $collection-list-item-enabled-background-color;
+    color: $collection-list-item-label-enabled-text-color;
   }
 
   .tox-collection--list .tox-collection__item--active {
-    background: @collection-list-item-active-background-color;
+    background: $collection-list-item-active-background-color;
   }
 
   .tox-collection--toolbar .tox-collection__item--enabled {
-    background: @collection-toolbar-item-enabled-background-color;
-    color: @collection-toolbar-item-label-enabled-text-color;
+    background: $collection-toolbar-item-enabled-background-color;
+    color: $collection-toolbar-item-label-enabled-text-color;
   }
 
   .tox-collection--toolbar .tox-collection__item--active {
-    background: @collection-toolbar-item-active-background-color;
+    background: $collection-toolbar-item-active-background-color;
   }
 
   .tox-collection--grid .tox-collection__item--enabled {
-    background: @collection-grid-item-enabled-background-color;
-    color: @collection-grid-item-label-enabled-text-color;
+    background: $collection-grid-item-enabled-background-color;
+    color: $collection-grid-item-label-enabled-text-color;
   }
 
   .tox-collection--grid
     .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
-    background: @collection-grid-item-active-background-color;
-    color: @collection-grid-item-label-active-text-color;
+    background: $collection-grid-item-active-background-color;
+    color: $collection-grid-item-label-active-text-color;
   }
 
   .tox-collection--list
     .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
-    color: @collection-list-item-label-active-text-color;
+    color: $collection-list-item-label-active-text-color;
   }
 
   .tox-collection--toolbar
     .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
-    color: @collection-toolbar-item-label-active-text-color;
+    color: $collection-toolbar-item-label-active-text-color;
   }
 
   .tox-collection__item-icon,
@@ -288,7 +288,7 @@
   }
 
   .tox-collection__item-accessory {
-    color: @text-color-muted;
+    color: $text-color-muted;
   }
 
   .tox-collection__item-caret {
@@ -300,25 +300,25 @@
   // Disabled item
   .tox-collection__item--state-disabled {
     background: transparent !important;
-    color: @collection-item-label-disabled-text-color;
+    color: $collection-item-label-disabled-text-color;
     .tox-collection__item-caret svg {
       fill: currentColor;
     }
   }
 
   .tox-collection--horizontal {
-    background: @menu-background-color;
+    background: $menu-background-color;
     border: var(--ironsworn-border-width-md) solid
-      @collection-item-separator-color;
+      $collection-item-separator-color;
   }
 }
 
-@toolbar-group-separator-color: var(--ironsworn-color-border-muted);
+$toolbar-group-separator-color: var(--ironsworn-color-border-muted);
 
 .tox:not([dir='rtl']) {
   .tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
     border-right: var(--ironsworn-border-width-md) solid
-      @toolbar-group-separator-color;
+      $toolbar-group-separator-color;
   }
 }
 
@@ -326,6 +326,6 @@
 .tox[dir='rtl'] {
   .tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
     border-left: var(--ironsworn-border-width-md) solid
-      @toolbar-group-separator-color;
+      $toolbar-group-separator-color;
   }
 }

@@ -1,17 +1,17 @@
-@import (reference) './themes/mixins/decorations.less';
+@import (reference) './themes/mixins/decorations.scss';
 
-@asset_spacer: 0.5em;
+$asset_spacer: 0.5em;
 
 .ironsworn__asset {
   overflow: hidden;
   transition: var(--std-animation);
   .asset-header {
-    gap: @asset_spacer;
+    gap: $asset_spacer;
     align-items: center;
     .asset-expand-toggle {
       transition: var(--std-animation);
       display: flex;
-      gap: @asset_spacer;
+      gap: $asset_spacer;
       background: none;
       box-shadow: none !important;
       flex-flow: row wrap;
@@ -43,8 +43,8 @@
   .asset-body {
     transition: var(--std-animation);
     overflow: hidden;
-    padding: (@asset_spacer / 2);
-    gap: @asset_spacer;
+    padding: ($asset_spacer / 2);
+    gap: $asset_spacer;
     .asset-fields {
       margin: 0;
       display: flex;
@@ -52,7 +52,7 @@
       .asset-field {
         display: flex;
         flex-direction: row;
-        gap: (@asset_spacer / 2);
+        gap: ($asset_spacer / 2);
         flex-grow: 0;
         border-bottom-width: var(--ironsworn-border-width-md);
         border-bottom-style: solid;
@@ -64,18 +64,18 @@
         .asset-field-value {
           margin: 0;
           flex-grow: 1;
-          padding: 0 (@asset_spacer / 2);
+          padding: 0 ($asset_spacer / 2);
         }
       }
     }
     .asset-abilities {
-      padding-left: @asset_spacer;
-      gap: @asset_spacer;
+      padding-left: $asset_spacer;
+      gap: $asset_spacer;
       .asset-ability {
         list-style: none;
         display: flex;
         flex-direction: row;
-        gap: @asset_spacer;
+        gap: $asset_spacer;
       }
     }
   }
@@ -103,14 +103,14 @@
   }
   .slider-segment {
     --ironsworn-text-stroke-color: var(--ironsworn-dark-color);
-    .textStrokeMixin();
+    @include textStrokeMixin();
   }
 }
 
-@hexagon_aspect_ratio: (sqrt(3) / 2);
-@hex_deco_aspect_ratio: 24 / 28;
-@hex_deco_expanded_height: 50px;
-@hex_deco_collapsed_height: 32px;
+$hexagon_aspect_ratio: calc(sqrt(3) / 2);
+$hex_deco_aspect_ratio: 24 / 28;
+$hex_deco_expanded_height: 50px;
+$hex_deco_collapsed_height: 32px;
 
 // Here we encode the bullet styles as classes, and pull them into the
 // ul>li bullet class from there. These will also be available for block
@@ -136,7 +136,7 @@
 }
 
 .asset-ability-bullet-starforged {
-  aspect-ratio: @hexagon_aspect_ratio;
+  aspect-ratio: $hexagon_aspect_ratio;
   background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
   mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
   height: 1em;
@@ -152,31 +152,31 @@
   .asset-ability {
     &:before {
       content: '';
-      .asset-ability-bullet;
+      @include asset-ability-bullet;
     }
 
     &.marked:before {
-      .asset-ability-bullet-marked;
+      @include asset-ability-bullet-marked;
     }
   }
 }
 .asset-ironsworn {
   .asset-ability {
     &:before {
-      .asset-ability-bullet-ironsworn;
+      @include asset-ability-bullet-ironsworn;
     }
   }
 }
 
 .asset-starforged {
-  .starforgedAssetDecoMixin(50px,32px);
+  @include starforgedAssetDecoMixin(50px,32px);
   .asset-abilities {
     .asset-ability {
       &:before {
-        .asset-ability-bullet-starforged;
+        @include asset-ability-bullet-starforged;
       }
       &.marked:before {
-        .asset-ability-bullet-starforged-marked;
+        @include asset-ability-bullet-starforged-marked;
       }
     }
   }

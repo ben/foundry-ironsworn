@@ -1,16 +1,16 @@
 // for classes that apply a set of commonly used styles, but don't describe an element with a specific purpose
-@import 'mixins.less';
+@import 'mixins.scss';
 
 .grid {
   display: grid;
 }
 
 .margin-left {
-  .marginMixin(right);
+  @include marginMixin(right);
 }
 
 .highlighted {
-  .staticHighlightMixin(30);
+  @include staticHighlightMixin(30);
 }
 
 .scrollable {
@@ -20,7 +20,7 @@
 }
 
 .margin-right {
-  .marginMixin(left);
+  @include marginMixin(left);
 }
 .vertical-text {
   writing-mode: vertical-lr;

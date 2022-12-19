@@ -1,0 +1,47 @@
+@mixin ironswornLightThemeMixin($prefix){
+  --#{$prefix}-legacy-quests: var(--ironsworn-color-red);
+  --#{$prefix}-legacy-bonds: var(--ironsworn-color-purple);
+  --#{$prefix}-legacy-discoveries: var(--ironsworn-color-blue);
+}
+@mixin ironswornDarkThemeMixin($prefix){
+  --#{$prefix}-legacy-quests: var(--ironsworn-color-red-dark);
+  --#{$prefix}-legacy-bonds: var(--ironsworn-color-purple-dark);
+  --#{$prefix}-legacy-discoveries: var(--ironsworn-color-blue-dark);
+}
+
+// generates color variables to style an interactive element with an invert effect when it's active
+@mixin interactiveInvertMixin($elementPrefix, $sourcePrefix){
+  --#{$elementPrefix}-fg: var(e(undefined
+  --#{$elementPrefix}-bg: transparent;
+  --#{$elementPrefix}-border: var(e(undefined
+  --#{$elementPrefix}-fg-hover: var(e(undefined
+  --#{$elementPrefix}-bg-hover: var(e(undefined
+  --#{$elementPrefix}-border-hover: var(e(undefined
+  --#{$elementPrefix}-fg-selected: var(e(undefined
+  --#{$elementPrefix}-bg-selected: var(e(undefined
+  --#{$elementPrefix}-border-selected: var(e(undefined
+}
+// generates color variables to style an interactive element with slightly dulled colours in its default state, and a tint effect when it's active.
+@mixin interactiveTintMixin($elementPrefix, $sourcePrefix){
+  --#{$elementPrefix}-fg: var(e(undefined
+  --#{$elementPrefix}-bg: transparent;
+  --#{$elementPrefix}-border: var(e(undefined
+  --#{$elementPrefix}-fg-hover: var(e(undefined
+  --#{$elementPrefix}-bg-hover: var(e(undefined
+  --#{$elementPrefix}-border-hover: var(e(undefined
+  --#{$elementPrefix}-fg-selected: var(e(undefined
+  --#{$elementPrefix}-bg-selected: var(e(undefined
+  --#{$elementPrefix}-border-selected: var(e(undefined
+}
+
+@mixin softBorderMixin($prefix){
+  --#{$prefix}-border-highlight: var(e(undefined
+  --#{$prefix}-border: var(e(undefined
+  --#{$prefix}-border-muted: var(e(undefined
+}
+
+@mixin sharpBorderMixin($prefix){
+  --#{$prefix}-border-highlight: var(e(undefined
+  --#{$prefix}-border: var(e(undefined
+  --#{$prefix}-border-muted: var(e(undefined
+}

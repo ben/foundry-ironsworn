@@ -1,6 +1,6 @@
 // styles for any FVTT dialog. You can import them globally, or scoped to e.g. the .ironsworn class.
-@import (reference) '../mixins.less';
-@import (reference) '../utils.less';
+@import (reference) '../mixins.scss';
+@import (reference) '../utils.scss';
 
 .dialog {
   .window-content {
@@ -15,7 +15,7 @@
           cursor: pointer;
           border-radius: var(--ironsworn-border-radius-md);
           &:focus {
-            .inputFieldFocusMixin();
+            @include inputFieldFocusMixin();
           }
         }
       }
@@ -29,7 +29,7 @@
       gap: var(--ironsworn-spacer-sm);
       button.default,
       button {
-        .clickableBlockMixin();
+        @include clickableBlockMixin();
         display: flex;
         align-items: center;
         justify-content: center;
@@ -37,8 +37,8 @@
         border-width: var(--ironsworn-border-radius-md);
         border-radius: 0;
         .button-text {
-          .nogrow();
-          .initial-caps();
+          @include nogrow();
+          @include initial-caps();
           width: auto;
           height: max-content;
         }

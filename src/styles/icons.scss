@@ -110,7 +110,7 @@
   mask-size: contain;
   height: 1em; // height and width of the :before pseudo-element can be set as desired, these are just reasonable defaults that scale the current font size.
   width: 1em;
-  .vertical-text& {
+  .vertical-text & {
     transform: rotateZ(90deg);
   }
 }
@@ -121,7 +121,7 @@
 [class*=' isicon-'],
 [class^='fa-'],
 [class*=' fa-'] {
-  i.juicy&,
+  i.juicy &,
   &:not(i).juicy:before {
     font-size: 120%;
   }
@@ -155,7 +155,7 @@
 // if the icon needs to be clickable, IronBtn + FontIcon/IronIcon should be preferred instead
 [class^='isicon-'],
 [class*=' isicon-'] {
-  i& {
+  i & {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -179,10 +179,10 @@ i {
     align-items: center;
     justify-content: center;
     &:before {
-      @padIcon: 2px;
+      $padIcon: 2px;
       display: flex;
-      height: calc(100% - (@padIcon*2));
-      width: calc(100% - (@padIcon*2));
+      height: calc(100% - ($padIcon*2));
+      width: calc(100% - ($padIcon*2));
     }
   }
 }
@@ -191,7 +191,7 @@ i {
 // HOW TO ADD AN ICON FROM GAME-ICONS.NET
 // 1) use the game-icons studio, turn off the black background
 // 2) download the icon as an svg and place it in system/assets/icons
-// 3) add an entry to @icons hash object below
+// 3) add an entry to $icons hash object below
 
 // alternatively, you can remove the black background element manually by editing the SVG's source
 // generally it will be the first path element, and it'll look like one of the following, e.g.:
@@ -200,7 +200,7 @@ i {
 
 // icons require a key (the file name without the extension) and a value (a string describing the source information/credit).
 // the value isn't used by any LESS functions, it's just to make it harder to forget to include source/credit info.
-@icons: {
+$icons: {
   // game logos
   logo-delve-dk: 'original icon by Shawn Tomkin; minor adjustments for FVTT format by rsek';
   logo-ironsworn-dk: 'original icon by Shawn Tomkin; minor adjustments for FVTT format by rsek';
@@ -237,9 +237,9 @@ i {
   world: 'https://game-icons.net/1x1/lorc/ringed-planet.html';
 };
 
-each(@icons, {
-  .isicon-@{key}, .isiconbg-@{key} {
+each($icons, {
+  .isicon-#{$key}, .isiconbg-#{$key} {
     &:before {
-      mask-image: url('/assets/icons/@{key}.svg');
+      mask-image: url('/assets/icons/#{$key}.svg');
   }}
 });

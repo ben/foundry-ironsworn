@@ -1,4 +1,4 @@
-@import 'mixins.less';
+@import 'mixins.scss';
 
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
@@ -83,11 +83,11 @@
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
-  @import 'utils.less';
-  @import 'inputs.less';
-  @import (reference) './fvtt/dialog.less';
+  @import 'utils.scss';
+  @import 'inputs.scss';
+  @import (reference) './fvtt/dialog.scss';
   &.dialog {
-    .dialog();
+    @include dialog();
   }
   form button,
   button {
@@ -98,7 +98,7 @@
   }
 }
 
-@import 'transitions.less';
+@import 'transitions.scss';
 
 .system-foundry-ironsworn {
   // transitions for interactive elements
@@ -120,7 +120,7 @@
 
     // stuff scoped to .ironsworn app windows only
     .window-title {
-      .initial-caps();
+      @include initial-caps();
     }
     .window-content {
       background: var(--ironsworn-color-bg);
@@ -154,17 +154,17 @@
   }
 
   // importing within this selector to ensure higher specificity
-  @import 'assets.less';
-  @import 'attr-box.less';
-  @import 'chat-message.less';
-  @import 'clickable.less';
-  @import 'dialog.less';
-  @import 'dice.less';
-  @import 'drag-and-drop.less';
-  @import 'editor.less';
-  @import 'icons.less';
-  @import 'list.less';
-  @import 'scrollbar.less';
-  @import 'sheet.less';
-  @import 'tables.less';
+  @import 'assets.scss';
+  @import 'attr-box.scss';
+  @import 'chat-message.scss';
+  @import 'clickable.scss';
+  @import 'dialog.scss';
+  @import 'dice.scss';
+  @import 'drag-and-drop.scss';
+  @import 'editor.scss';
+  @import 'icons.scss';
+  @import 'list.scss';
+  @import 'scrollbar.scss';
+  @import 'sheet.scss';
+  @import 'tables.scss';
 }

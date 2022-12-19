@@ -19,15 +19,15 @@
   }
 
   .roll-graphic {
-    @graphic-gap: 0.25rem;
+    $graphic-gap: 0.25rem;
     &.dice-formula {
       display: flex;
       flex-flow: row nowrap;
       flex: auto;
-      gap: @graphic-gap;
+      gap: $graphic-gap;
       justify-content: center;
       margin: 0;
-      padding: @graphic-gap;
+      padding: $graphic-gap;
       * {
         margin: 0;
       }
@@ -36,7 +36,7 @@
         height: 100%;
         flex-grow: 0;
         --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-        .textStrokeMixin();
+        @include textStrokeMixin();
       }
       .indeterminate-value {
         color: var(--ironsworn-color-midtone-60);
@@ -59,7 +59,7 @@
         display: flex;
         flex-direction: row;
         flex-grow: 0;
-        gap: (@graphic-gap / 2);
+        gap: ($graphic-gap / 2);
         .challenge-die {
         }
       }
@@ -72,10 +72,10 @@
     font-weight: bold;
   }
 
-  .diceGlowMixin(@color, @diceDropShadowSize: 0px 0px 2px) {
-    color: @color !important;
-    filter: drop-shadow(@diceDropShadowSize @color)
-      drop-shadow(@diceDropShadowSize @color);
+  @mixin diceGlowMixin($color, $diceDropShadowSize: 0px 0px 2px){
+    color: $color !important;
+    filter: drop-shadow($diceDropShadowSize $color)
+      drop-shadow($diceDropShadowSize $color);
     background-blend-mode: screen;
   }
 
@@ -121,20 +121,20 @@
 
     &.min:not(.challenge),
     &.challenge.max {
-      .diceGlowMixin(var(--ironsworn-color-danger));
+      @include diceGlowMixin(var(--ironsworn-color-danger));
     }
 
     &.max:not(.challenge),
     &.challenge.min {
-      .diceGlowMixin(var(--ironsworn-color-success));
+      @include diceGlowMixin(var(--ironsworn-color-success));
     }
 
     &.canceled {
-      .diceGlowMixin(var(--ironsworn-color-warning));
+      @include diceGlowMixin(var(--ironsworn-color-warning));
     }
   }
   del .roll {
     text-decoration: line-through;
-    .diceGlowMixin(var(--ironsworn-color-warning));
+    @include diceGlowMixin(var(--ironsworn-color-warning));
   }
 }
