@@ -78,6 +78,7 @@ input {
 import { computed, inject, reactive } from 'vue'
 import { IronswornRollMessage } from '../rolls'
 import { renderRollGraphic } from '../rolls/roll-graphic'
+import { $LocalEmitterKey } from './provisions'
 
 const props = defineProps<{ messageId: string }>()
 const irm = await IronswornRollMessage.fromMessage(props.messageId)
@@ -141,6 +142,7 @@ const saveDisabled = computed(() => {
   return !(hasA && hasB)
 })
 
+const $localEmitter = inject($LocalEmitterKey)
 function save() {
   if (!irm) return
   const [die1, die2] = selectedDiceValues()
@@ -156,6 +158,6 @@ function save() {
   }
 
   irm.createOrUpdate()
-  CONFIG.IRONSWORN.emitter.emit('closeApp')
+  $localEmitter?.emit('closeApp')
 }
 </script>

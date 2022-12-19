@@ -29,6 +29,7 @@ import { computed, inject, reactive } from 'vue'
 import SfTruth from './components/sf-truth.vue'
 import { ISettingTruth } from 'dataforged'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { $LocalEmitterKey } from './provisions'
 
 const props = defineProps<{ truths: ISettingTruth[] }>()
 
@@ -54,12 +55,13 @@ function radioselect(category, value) {
   data.output[category] = value
 }
 
+const $localEmitter = inject($LocalEmitterKey)
 async function saveTruths() {
   const journal = await JournalEntry.create({
     name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
     content: composedOutput.value,
   })
   journal?.sheet?.render(true)
-  CONFIG.IRONSWORN.emitter.emit('closeApp')
+  $localEmitter?.emit('closeApp')
 }
 </script>
