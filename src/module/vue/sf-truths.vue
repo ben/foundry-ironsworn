@@ -15,17 +15,20 @@
     </div>
 
     <hr />
-    <BtnFaicon class="block" icon="feather" @click="saveTruths">
-      {{ $t('IRONSWORN.SaveYourTruths') }}
-    </BtnFaicon>
+    <IronBtn
+      block
+      @click="saveTruths"
+      :text="$t('IRONSWORN.SaveYourTruths')"
+      icon="fa:feather"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, inject, reactive } from 'vue'
 import SfTruth from './components/sf-truth.vue'
-import BtnFaicon from './components/buttons/btn-faicon.vue'
 import { ISettingTruth } from 'dataforged'
+import IronBtn from './components/buttons/iron-btn.vue'
 import { $LocalEmitterKey } from './provisions'
 
 const props = defineProps<{ truths: ISettingTruth[] }>()

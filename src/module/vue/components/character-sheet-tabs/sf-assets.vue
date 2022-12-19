@@ -22,15 +22,25 @@
         <asset :asset="asset" class="item-row" />
       </li>
     </CollapseTransition>
-    <section class="list-controls flexrow nogrow" style="text-align: center">
-      <BtnFaicon icon="atlas" @click="assetBrowser" class="clickable block">
-        {{ $t('IRONSWORN.Assets') }}
-      </BtnFaicon>
+    <section
+      :class="$style.listControls"
+      class="flexrow nogrow"
+      style="text-align: center"
+    >
+      <IronBtn
+        icon="fa:book-atlas"
+        @click="assetBrowser"
+        block
+        :text="$t('IRONSWORN.Assets')"
+      />
     </section>
   </DropTarget>
 </template>
 
 <style lang="less" module>
+.listControls {
+  --ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
 .wrapper {
   gap: var(--ironsworn-spacer-md);
 }
@@ -44,7 +54,7 @@ import { sortBy } from 'lodash'
 import { computed, inject, Ref } from 'vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import CollapseTransition from '../transition/collapse-transition.vue'
@@ -61,10 +71,6 @@ const assets = computed(() => {
   return sortBy(assets, (x) => x.sort)
 })
 
-function openCompendium() {
-  const pack = game.packs?.get('foundry-ironsworn.starforgedassets')
-  pack?.render(true)
-}
 async function applySort(oldI, newI, sortBefore) {
   const foundryItems = $actor?.items
     .filter((x) => x.type === 'asset')

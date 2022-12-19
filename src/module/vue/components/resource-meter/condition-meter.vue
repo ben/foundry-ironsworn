@@ -16,13 +16,11 @@
         v-if="labelPosition != 'none'"
         tabindex="0"
         :documentType="documentType"
-        class="text"
-        :class="{ 'vertical-text': sliderStyle === 'vertical' }"
+        :vertical="sliderStyle === 'vertical'"
         :attr="attr"
         :statLabel="statLabel"
-      >
-        {{ statLabel }}
-      </BtnRollstat>
+        :text="statLabel"
+      />
     </template>
   </AttrSlider>
 </template>

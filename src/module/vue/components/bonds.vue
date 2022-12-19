@@ -2,8 +2,8 @@
   <div class="flexcol nogrow">
     <div class="flexrow">
       <h4>{{ $t('IRONSWORN.Bonds') }}</h4>
-      <btn-faicon class="block nogrow" icon="edit" @click="editBonds" />
-      <BtnIsicon class="block nogrow" icon="d10-tilt" @click="rollBonds" />
+      <IronBtn block nogrow @click="editBonds" icon="fa:pen-to-square" />
+      <IronBtn block nogrow @click="rollBonds" icon="ironsworn:d10-tilt" />
     </div>
     <ProgressTrack
       :ticks="bondcount"
@@ -13,6 +13,12 @@
   </div>
 </template>
 
+<style lang="less" scoped>
+h4 {
+  text-transform: uppercase;
+}
+</style>
+
 <script setup lang="ts">
 import { ActorDataBaseSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
 import { inject, computed, Ref } from 'vue'
@@ -21,8 +27,7 @@ import {
   BondsetDataSource,
 } from '../../item/itemtypes.js'
 import { $ActorKey, ActorKey } from '../provisions'
-import btnFaicon from './buttons/btn-faicon.vue'
-import BtnIsicon from './buttons/btn-isicon.vue'
+import IronBtn from './buttons/iron-btn.vue'
 import ProgressTrack from './progress/progress-track.vue'
 
 const props = defineProps<{ compactProgress?: boolean }>()

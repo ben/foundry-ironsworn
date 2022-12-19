@@ -26,37 +26,37 @@
       @click="rankClick"
     />
     <section class="progress-controls" data-tooltip-direction="UP">
-      <BtnFaicon
-        class="block"
+      <IronBtn
         v-if="editMode"
-        icon="trash"
+        block
+        icon="fa:trash"
         @click="destroy"
         :tooltip="$t('IRONSWORN.DeleteItem')"
       />
-      <BtnFaicon
-        class="block"
-        icon="edit"
+      <IronBtn
+        block
+        icon="fa:pen-to-square"
         @click="edit"
         :tooltip="$t('IRONSWORN.Edit')"
       />
-      <BtnFaicon
-        class="block"
+      <IronBtn
+        block
         v-if="editMode"
         :icon="completedIcon"
         @click="toggleComplete"
         :tooltip="completedTooltip"
       />
-      <BtnFaicon
-        class="block"
+      <IronBtn
+        block
         v-if="editMode && item.system.hasTrack"
-        icon="caret-left"
+        icon="fa:caret-left"
         @click="retreat"
         :tooltip="$t('IRONSWORN.UnmarkProgress')"
       />
-      <BtnFaicon
-        class="block"
+      <IronBtn
+        block
         v-if="item.system.hasTrack"
-        icon="caret-right"
+        icon="fa:caret-right"
         @click="advance"
         :tooltip="$t('IRONSWORN.MarkProgress')"
       />
@@ -64,17 +64,29 @@
         v-if="item.system.hasTrack"
         :item="item"
         :tooltip="$t('IRONSWORN.ProgressRoll')"
-        class="block"
+        block
       />
-      <BtnFaicon
+      <IronBtn
         v-if="showStar"
-        class="star-progress block"
-        icon="star"
-        :solid="item.system.starred"
+        class="star-progress"
+        block
         :tooltip="$t('IRONSWORN.StarProgress')"
         data-tooltip-direction="RIGHT"
         @click="toggleStar"
-      />
+      >
+        <template #icon>
+          <Transition name="fade">
+            <FontIcon
+              name="star"
+              :family="
+                item.system.starred
+                  ? FontAwesome.Family.Solid
+                  : FontAwesome.Family.Regular
+              "
+            />
+          </Transition>
+        </template>
+      </IronBtn>
     </section>
   </article>
 </template>
@@ -144,11 +156,13 @@ import { capitalize, computed, inject, provide, Ref } from 'vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
 import Clock from '../clock.vue'
 import BtnRollprogress from '../buttons/btn-rollprogress.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 import RankPips from '../rank-pips/rank-pips.vue'
 import DocumentImg from '../document-img.vue'
 import { RANKS } from '../../../constants.js'
 import ProgressTrack from './progress-track.vue'
+import FontIcon from '../icon/font-icon.vue'
+import { FontAwesome } from '../icon/icon-common'
 
 const props = defineProps<{
   item: any
@@ -176,7 +190,7 @@ const subtitle = computed(() => {
   return game.i18n.localize(`IRONSWORN.${subtype}`)
 })
 const completedIcon = computed(() => {
-  return props.item.system.completed ? 'check-circle' : 'circle-notch'
+  return props.item.system.completed ? 'fa:circle-check' : 'fa:circle-notch'
 })
 const completedTooltip = computed(() => {
   const suffix = props.item.system.completed ? 'Completed' : 'NotCompleted'

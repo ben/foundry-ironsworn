@@ -19,7 +19,12 @@
   --ironsworn-spacer-lg: 7px;
 
   --ironsworn-vertical-slider-width: 50px;
-  --ironsworn-clickable-line-height: 28px;
+
+  --ironsworn-line-height-lg: 2;
+  --ironsworn-line-height-md: 1.5;
+  --ironsworn-line-height-sm: 1.25;
+  --ironsworn-line-height-xs: 1;
+  --ironsworn-line-height: var(--ironsworn-line-height-md);
 
   --ironsworn-z-index-highest: 100;
   --ironsworn-z-index-higher: 75;
@@ -77,11 +82,18 @@
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
+  @import 'utils.less';
+  @import 'inputs.less';
+  @import (reference) './fvtt/dialog.less';
+  &.dialog {
+    .dialog();
+  }
   form button,
   button {
     margin: 0;
     width: auto;
     border: 0 solid var(--ironsworn-color-border);
+    line-height: var(--ironsworn-line-height);
   }
 }
 
@@ -104,11 +116,6 @@
 
   .ironsworn {
     // import these to the theme apply it to FVTT's own dialogs and inputs as well.
-    @import 'inputs.less';
-    @import (reference) './fvtt/dialog.less';
-    &.dialog {
-      .dialog();
-    }
 
     // stuff scoped to .ironsworn app windows only
     .window-title {
@@ -159,5 +166,4 @@
   @import 'scrollbar.less';
   @import 'sheet.less';
   @import 'tables.less';
-  @import 'utils.less';
 }

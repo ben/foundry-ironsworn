@@ -9,12 +9,8 @@
           style="margin-right: 1em"
         />
         <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
-        <BtnFaicon class="block nogrow" icon="trash" @click="clearProgress" />
-        <BtnFaicon
-          class="block nogrow"
-          icon="caret-right"
-          @click="markProgress"
-        />
+        <IronBtn block nogrow icon="fa:trash" @click="clearProgress" />
+        <IronBtn block nogrow icon="fa:caret-right" @click="markProgress" />
       </div>
 
       <!-- PROGRESS -->
@@ -37,15 +33,22 @@
       class="flexcol"
       :class="$style.dropTarget"
     >
-      <BtnFaicon @click="addEmpty" class="block" icon="file">
-        {{ $t('IRONSWORN.Progress') }}</BtnFaicon
-      >
-      <BtnCompendium class="block" compendium="ironswornfoes"
-        >{{ $t('IRONSWORN.Foes') }} (Ironsworn)</BtnCompendium
-      >
-      <BtnCompendium class="block" compendium="starforgedencounters"
-        >{{ $t('IRONSWORN.Foes') }} (Starforged)</BtnCompendium
-      >
+      <IronBtn
+        @click="addEmpty"
+        block
+        icon="fa:file"
+        :text="$t('IRONSWORN.Progress')"
+      />
+      <BtnCompendium
+        block
+        compendium="ironswornfoes"
+        :text="`${$t('IRONSWORN.Foes')} (Ironsworn)`"
+      />
+      <BtnCompendium
+        block
+        compendium="starforgedencounters"
+        :text="`${$t('IRONSWORN.Foes')} (Starforged)`"
+      />
     </DropTarget>
   </div>
 </template>
@@ -68,7 +71,7 @@ import { IronswornActor } from '../../actor/actor'
 import { $ActorKey, ActorKey } from '../provisions'
 import { throttle } from 'lodash'
 import RankPips from './rank-pips/rank-pips.vue'
-import BtnFaicon from './buttons/btn-faicon.vue'
+import IronBtn from './buttons/iron-btn.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 import MceEditor from './mce-editor.vue'
 import { RANKS, RANK_INCREMENTS } from '../../constants'

@@ -16,16 +16,19 @@
             <label :for="`${actor._id}_rank`" :class="$style.rankLabel">{{
               rankText
             }}</label>
-            <BtnFaicon
-              class="block nogrow"
+            <IronBtn
               v-if="editMode"
-              icon="trash"
+              block
+              nogrow
               @click="clearProgress"
+              icon="fa:trash"
             />
-            <BtnFaicon
-              class="block nogrow"
-              icon="caret-right"
+            <IronBtn
+              v-if="editMode"
+              block
+              nogrow
               @click="markProgress"
+              icon="fa:caret-right"
             />
           </div>
           <!-- PROGRESS -->
@@ -60,13 +63,13 @@
         <article :class="$style.denizenMatrix">
           <h2 class="flexrow nogrow" :class="$style.heading">
             <span>{{ $t('IRONSWORN.Denizens') }}</span>
-            <BtnIsicon
-              icon="d10-tilt"
-              class="text nogrow"
+            <IronBtn
+              nogrow
               style="padding: 2px"
               @click="randomDenizen"
+              icon="ironsworn:d10-tilt"
             />
-            <BtnCompendium compendium="ironswornfoes" class="text nogrow" />
+            <BtnCompendium compendium="ironswornfoes" nogrow />
           </h2>
           <div class="boxgroup nogrow">
             <div class="flexrow boxrow">
@@ -103,14 +106,16 @@
     <div class="flexcol">
       <div class="flexrow nogrow">
         <h2 :class="$style.heading">{{ $t('IRONSWORN.Notes') }}</h2>
-        <BtnIsicon
-          icon="d10-tilt"
-          class="box text block nogrow"
-          :class="{ disabled: !hasThemeAndDomain, [$style.featureBtn]: true }"
+        <IronBtn
+          block
+          nogrow
+          class="box"
+          :disabled="!hasThemeAndDomain"
+          :class="{ [$style.featureBtn]: true }"
           @click="randomFeature"
-        >
-          {{ $t('IRONSWORN.Feature') }}
-        </BtnIsicon>
+          icon="ironsworn:d10-tilt"
+          :text="$t('IRONSWORN.Feature')"
+        />
       </div>
       <MceEditor v-model="actor.system.description" @save="saveDescription" />
     </div>
@@ -180,17 +185,16 @@ import { provide, computed, inject, nextTick, ref, Component } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnCompendium from './components/buttons/btn-compendium.vue'
-import BtnFaicon from './components/buttons/btn-faicon.vue'
 import SiteDroparea from './components/site/site-droparea.vue'
 import SiteDenizenbox from './components/site/site-denizenbox.vue'
 import MceEditor from './components/mce-editor.vue'
-import BtnIsicon from './components/buttons/btn-isicon.vue'
 import { RANKS, RANK_INCREMENTS } from '../constants'
 import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import { OracleRollMessage, TableRow } from '../rolls'
 import { DelveThemeDataSourceData } from '../item/itemtypes'
+import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
   actor: any

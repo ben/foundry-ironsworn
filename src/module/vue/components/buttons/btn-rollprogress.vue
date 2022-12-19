@@ -1,23 +1,27 @@
 <template>
-  <btn-isicon
+  <IronBtn
     @click="rollProgress()"
     :tooltip="$t('IRONSWORN.MakeAProgressRoll', { score: progressScore })"
     class="progress-roll"
-    icon="d10-tilt"
-    :disabled="props.disabled"
+    icon="ironsworn:d10-tilt"
+    v-bind="($props, $attrs)"
   >
-    <slot name="default"></slot>
-  </btn-isicon>
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
+  </IronBtn>
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity'
-import { inject } from '@vue/runtime-core'
-import { ProgressDataProperties } from '../../../item/itemtypes'
+import { ExtractPropTypes, computed, inject } from 'vue'
 import { $ItemKey } from '../../provisions'
-import BtnIsicon from './btn-isicon.vue'
+import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{ item: any; tooltip?: string; disabled?: boolean }>()
+interface Props extends ExtractPropTypes<typeof IronBtn> {
+  item: any
+}
+
+const props = defineProps<Props>()
 
 const $item = inject($ItemKey, undefined)
 

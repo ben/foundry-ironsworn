@@ -1,24 +1,39 @@
 <template>
-  <div class="flexrow nogrow" style="text-align: center">
-    <btn-faicon class="block" icon="plus" @click="addProgressItem('vow')">
-      {{ $t('IRONSWORN.Vow') }}</btn-faicon
-    >
-    <btn-faicon class="block" icon="plus" @click="addProgressItem('progress')">
-      {{ $t('IRONSWORN.Progress') }}</btn-faicon
-    >
+  <div class="flexrow nogrow" :class="$style.progressControls">
+    <IronBtn
+      :class="$style.progressControlBtn"
+      block
+      icon="fa:plus"
+      @click="addProgressItem('vow')"
+      :text="$t('IRONSWORN.Vow')"
+    />
+    <IronBtn
+      :class="$style.progressControlBtn"
+      block
+      icon="fa:plus"
+      @click="addProgressItem('progress')"
+      :text="$t('IRONSWORN.Progress')"
+    />
     <btn-compendium
-      class="block"
+      :class="$style.progressControlBtn"
+      block
       :compendium="props.foeCompendium ?? 'ironswornfoes'"
-    >
-      {{ $t('IRONSWORN.Foes') }}
-    </btn-compendium>
+      :text="$t('IRONSWORN.Foes')"
+    />
   </div>
 </template>
+<style lang="less" module>
+.progressControls {
+}
+.progressControlBtn {
+  --ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
+</style>
 
 <script setup lang="ts">
 import { capitalize, inject } from 'vue'
 import { $ActorKey } from '../provisions'
-import BtnFaicon from './buttons/btn-faicon.vue'
+import IronBtn from './buttons/iron-btn.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
 
 const props = defineProps<{ foeCompendium?: string }>()

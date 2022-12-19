@@ -19,19 +19,22 @@
           v-model="field.value"
           @blur="save"
         />
-        <BtnFaicon icon="trash" @click="deleteField(i)" />
+        <IronBtn icon="fa:trash" @click="deleteField(i)" />
       </div>
     </CollapseTransition>
-    <BtnFaicon icon="plus" class="button block" @click="addField">
-      {{ $t('IRONSWORN.Field') }}
-    </BtnFaicon>
+    <IronBtn
+      icon="fa:plus"
+      block
+      @click="addField"
+      :text="$t('IRONSWORN.Field')"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
 import { inject, Ref } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 
 const item = inject(ItemKey) as Ref

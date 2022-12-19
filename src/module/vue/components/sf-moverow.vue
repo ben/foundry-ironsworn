@@ -9,7 +9,7 @@
     :contentWrapperClass="$style.contentWrapper"
     :toggleWrapperIs="`h${headingLevel}`"
     :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
-    :noIcon="true"
+    :icon="null"
     :toggleButtonClass="['bordered', $style.toggleButton, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
@@ -24,25 +24,19 @@
       >
         <BtnRollmove
           :disabled="!canRoll"
-          class="juicy text"
           :move="move"
           :class="$style.moveButton"
           :override-click="onRollClick !== undefined"
           @click="$emit('rollClick')"
         />
         <BtnOracle
-          class="juicy text"
           :node="data.oracles[0] ?? {}"
           :disabled="preventOracle"
           :class="$style.moveButton"
           :override-click="onOracleClick !== undefined"
           @click="$emit('oracleClick')"
         />
-        <BtnSendmovetochat
-          class="juicy text"
-          :move="move"
-          :class="$style.moveButton"
-        />
+        <BtnSendmovetochat :move="move" :class="$style.moveButton" />
       </section>
     </template>
     <template #default>
@@ -86,6 +80,7 @@
 }
 
 .sfMoveRow {
+  --ironsworn-line-height: (--ironsworn-line-height-md);
   .thematicColorMixin();
   padding: 0 @wrapper_spacing;
   position: relative;
@@ -103,8 +98,7 @@
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   .clickableTextMixin();
-  font-size: 1.15em;
-  height: 28px;
+  font-size: var(--font-size-20);
   aspect-ratio: 1 !important;
   align-self: center;
 }
@@ -116,13 +110,12 @@
   .clickableTextMixin();
   .textStrokeMixin( var(--ironsworn-color-dark));
   .thematicColorMixin();
+  height: inherit;
   border: none;
   background: none;
   display: flex;
   flex-direction: row;
-  padding: 0.2rem 0.2rem 0.2rem 0.3rem;
   text-align: left;
-  line-height: 1.25;
   font-size: var(--font-size-16);
   border-color: transparent;
   border-width: var(--ironsworn-border-width-md)
@@ -154,6 +147,7 @@
 
 .toggleWrapper {
   transition: var(--std-animation);
+  height: var(--ironsworn-line-height-lg);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
   border-top-left-radius: @border_radius;
@@ -174,8 +168,6 @@
   border-radius: var(--ironsworn-border-radius-sm);
   padding: 0;
   h4 {
-    line-height: var(--ironsworn-clickable-line-height);
-    height: var(--ironsworn-clickable-line-height);
     font-size: var(--font-size-16);
 
     button.icon-button {

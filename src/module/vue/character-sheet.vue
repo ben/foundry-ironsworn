@@ -29,10 +29,11 @@
         :tabKeys="['character', 'notes']"
         :id="`${actor._id}-character-sheet-classic`"
         :class="$style.tabSet"
+        :v-slot:icon="{ size: 'sm' }"
       >
         <TabList>
-          <Tab tab-key="character">{{ $t('IRONSWORN.Character') }}</Tab>
-          <Tab tab-key="notes">{{ $t('IRONSWORN.Notes') }}</Tab>
+          <Tab tab-key="character" :text="$t('IRONSWORN.Character')" />
+          <Tab tab-key="notes" :text="$t('IRONSWORN.Notes')" />
         </TabList>
         <TabPanels>
           <TabPanel tab-key="character" class="flexcol">

@@ -1,19 +1,26 @@
 <template>
-  <btn-faicon
+  <IronBtn
     class="btn-compendium"
-    icon="atlas"
     @click="openCompendium"
     aria-haspopup="dialog"
-    :disabled="disabled"
+    icon="fa:book-atlas"
+    v-bind="($props, $attrs)"
   >
-    <slot name="default"></slot>
-  </btn-faicon>
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
+  </IronBtn>
 </template>
 
 <script lang="ts" setup>
-import BtnFaicon from './btn-faicon.vue'
+import { ExtractPropTypes } from 'vue'
+import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{ compendium: string; disabled?: boolean }>()
+interface Props extends ExtractPropTypes<typeof IronBtn> {
+  compendium: string
+}
+
+const props = defineProps<Props>()
 
 async function openCompendium() {
   const pack = game.packs?.get(`foundry-ironsworn.${props.compendium}`)

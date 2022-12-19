@@ -2,6 +2,8 @@ import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import autoprefixer from 'autoprefixer'
 import Inspector from 'vite-plugin-vue-inspector'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import path from 'path'
 
 const PORT = 30000
 
@@ -9,6 +11,10 @@ const config: UserConfig = {
   plugins: [
     vue(),
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), 'system/assets/icons')],
+      symbolId: 'ironsworn-[dir]-[name]',
+    }),
   ],
   resolve: {
     alias: {

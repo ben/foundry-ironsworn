@@ -7,14 +7,18 @@
         v-model="search.q"
         @keydown.enter.prevent
       />
-      <i
-        class="fa fa-times-circle nogrow clickable text"
+      <IronBtn
+        icon="fa:xmark-circle"
+        class="nogrow"
         @click="clearSearch"
+        :class="$style.searchBtn"
         style="padding: 6px"
       />
-      <i
-        class="fa fa-compress-alt nogrow clickable text"
+      <IronBtn
+        icon="fa:down-left-and-up-right-to-center"
+        class="nogrow"
         @click="collapseAll"
+        :class="$style.searchBtn"
         style="padding: 6px"
       />
     </div>
@@ -50,6 +54,7 @@ import {
   createStarforgedOracleTree,
   IOracleTreeNode,
 } from '../../features/customoracles'
+import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
