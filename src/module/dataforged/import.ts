@@ -434,14 +434,21 @@ async function processTruths(
     je!.setFlag('foundry-ironsworn', 'character', truth.Character)
 
     for (const entry of truth.Table) {
+      const rendered = await renderTemplate(
+        'systems/foundry-ironsworn/templates/journal/truth.hbs',
+        {
+          truth,
+          entry: { ...entry, Quest: entry['Quest Starter'] },
+          i: i++,
+        }
+      )
       JournalEntryPage.create(
         {
           id: hashLookup(entry.$id),
           name: `${entry.Floor}-${entry.Ceiling}: ${entry.Result}`,
           text: {
-            markdown:
-              `${entry.Description}\n\n> _${entry['Quest Starter']}_`.trim(),
-            format: 2, // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN,
+            content: rendered.trim(),
+            format: 1, // JOURNAL_ENTRY_PAGE_FORMATS.HTML
           },
         },
         { parent: je }
