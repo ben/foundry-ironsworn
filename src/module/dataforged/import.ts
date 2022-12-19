@@ -436,11 +436,7 @@ async function processTruths(
     for (const entry of truth.Table) {
       const rendered = await renderTemplate(
         'systems/foundry-ironsworn/templates/journal/truth.hbs',
-        {
-          truth,
-          entry: { ...entry, Quest: entry['Quest Starter'] },
-          i: i++,
-        }
+        { entry: { ...entry, Quest: entry['Quest Starter'] } }
       )
       //@ts-ignore
       JournalEntryPage.create(
