@@ -15,9 +15,14 @@ import {
   StrokeProperty,
 } from 'csstype'
 
-export type IconName = IronswornIconName | FontAwesomeIcon
-type IronswornIconName = `ironsworn:${string}`
-type FontAwesomeIcon = `fa:${FontAwesome.Name}`
+import type ironswornIconNames from 'virtual:svg-icons-names'
+
+export type IronswornIconName = typeof ironswornIconNames[number]
+
+type IronswornIconId = `ironsworn:${IronswornIconName}`
+type FontAwesomeIconId = `fa:${FontAwesome.Name}`
+
+export type IconId = IronswornIconId | FontAwesomeIconId
 
 export interface IconPropsCommon {
   /**

@@ -13,7 +13,7 @@ const config: UserConfig = {
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
     createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), 'system/assets/icons')],
-      symbolId: 'ironsworn-[name]',
+      symbolId: 'ironsworn-[dir]-[name]',
     }),
   ],
   resolve: {

@@ -14,11 +14,10 @@
 <script lang="ts" setup>
 import { computed } from '@vue/reactivity'
 import { FillProperty } from 'csstype'
-import ids from 'virtual:svg-icons-names'
-import { IconPropsCommon } from './icon-common'
+import { IconPropsCommon, IronswornIconName } from './icon-common'
 
 interface Props extends IconPropsCommon {
-  name: typeof ids
+  name: IronswornIconName
   /**
    * The color to use for the SVG fill property.
    * @default 'currentColor'

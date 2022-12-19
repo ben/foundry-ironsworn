@@ -16,7 +16,7 @@
     :aria-disabled="disabled"
     ref="$el"
   >
-    <!-- @slot The button icon. The button styling assumes that an icon has the icon class (which is automatically applied to IronIcon and FontIcon). -->
+    <!-- @slot The button icon. Provide an ID string for an icon with default settings, or use this slot to do something weird.  -->
     <slot name="icon">
       <IronIcon
         v-if="iconOptions?.set === 'ironsworn'"
@@ -74,9 +74,6 @@
     // prevents double hover effect on svg hover
     pointer-events: none;
   }
-  & > .icon {
-    line-height: 1;
-  }
 
   &.verticalButton {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
@@ -127,7 +124,7 @@
 import { capitalize } from 'lodash'
 import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
 import FontIcon from '../icon/font-icon.vue'
-import { FontAwesome, IconName } from '../icon/icon-common'
+import { FontAwesome, IconId } from '../icon/icon-common'
 import IronIcon from '../icon/iron-icon.vue'
 
 /**
@@ -142,7 +139,7 @@ const props = withDefaults(
     /**
      * A simple way to specify an icon with default settings. For something weirder, you can override it with the "icon" slot.
      */
-    icon?: IconName | null
+    icon?: IconId | null
     tooltip?: string
     hoverBg?: boolean
     disabled?: boolean
