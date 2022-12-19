@@ -91,7 +91,7 @@
   overflow-x: clip;
   overflow-clip-margin: 5px; // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
   // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
-  --ironsworn-clickable-line-height: 28px;
+  --ironsworn-line-height: var(--ironsworn-line-height-md);
 }
 .filteredMoveRow {
   border-radius: var(--ironsworn-border-radius-lg);

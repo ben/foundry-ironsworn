@@ -26,7 +26,7 @@
 .progressControls {
 }
 .progressControlBtn {
-  --ironsworn-clickable-line-height: var(--ironsworn-clickable-line-height-sm);
+  --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 </style>
 

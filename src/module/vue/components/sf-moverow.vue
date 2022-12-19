@@ -80,7 +80,7 @@
 }
 
 .sfMoveRow {
-  --ironsworn-clickable-line-height: 24px;
+  --ironsworn-line-height: (--ironsworn-line-height-md);
   .thematicColorMixin();
   padding: 0 @wrapper_spacing;
   position: relative;
@@ -147,7 +147,7 @@
 
 .toggleWrapper {
   transition: var(--std-animation);
-  height: var(--ironsworn-clickable-line-height);
+  height: var(--ironsworn-line-height-lg);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
   border-top-left-radius: @border_radius;

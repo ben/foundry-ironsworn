@@ -62,7 +62,7 @@
   box-sizing: content-box;
   background-color: var(--ironsworn-color-thematic);
   border-radius: var(--ironsworn-border-radius-lg);
-  height: var(--ironsworn-clickable-line-height);
+  height: var(--ironsworn-line-height);
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
     --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
@@ -80,8 +80,10 @@
 .moveRow {
   &:focus {
     border: 0;
-    outline: 1px solid var(--ironsworn-color-cool);
-    box-shadow: var(--ironsworn-box-shadow-highlight) !important;
+    // outline: 1px solid var(--ironsworn-color-cool);
+    // box-shadow: var(--ironsworn-box-shadow-highlight) !important;
+    // TODO: figure out a better way to convey focus here.
+    box-shadow: none;
   }
   &[data-highlighted='true']:after {
     .overlayMixin();

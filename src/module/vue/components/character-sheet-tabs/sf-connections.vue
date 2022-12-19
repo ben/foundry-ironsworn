@@ -21,7 +21,7 @@
 </template>
 <style lang="less" module>
 .listControls {
-  --ironsworn-clickable-line-height: var(--ironsworn-clickable-line-height-sm);
+  --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 </style>
 <script setup lang="ts">

@@ -112,7 +112,7 @@
 }
 .clickableText {
   .clickableTextMixin();
-  line-height: var(--ironsworn-clickable-line-height);
+  line-height: var(--ironsworn-line-height);
 }
 .clickableBlock {
   .clickableBlockMixin();
