@@ -48,17 +48,17 @@
   </article>
 </template>
 
-<style lang="less" scoped>
-@import '../../../../styles/mixins.less';
-@segment_border_width: var(--ironsworn-border-width-md);
-@segment_border_radius: var(--ironsworn-border-radius-lg);
-@segment_line_height: var(--ironsworn-line-height-lg);
-@segment_vertical_width: var(--ironsworn-vertical-slider-width);
+<style lang="scss" scoped>
+@import (reference) '../../../../styles/mixins.less';
+$segment_border_width: var(--ironsworn-border-width-md);
+$segment_border_radius: var(--ironsworn-border-radius-lg);
+$segment_line_height: var(--ironsworn-line-height-lg);
+$segment_vertical_width: var(--ironsworn-vertical-slider-width);
 
 .slider-bar {
   display: flex;
   flex-wrap: none;
-  border-radius: @segment_border_radius; // so the focus effect aligns properly
+  border-radius: $segment_border_radius; // so the focus effect aligns properly
   grid-row: 1;
   border: 0;
   padding: 0;
@@ -67,10 +67,10 @@
   }
   .slider-segment {
     box-sizing: border-box;
-    border: @segment_border_width solid currentColor;
+    border: $segment_border_width solid currentColor;
     text-align: center;
     min-width: max-content;
-    line-height: @segment_line_height;
+    line-height: $segment_line_height;
     position: relative;
     z-index: 1;
     padding: 0;
@@ -85,17 +85,17 @@
     flex-direction: column;
     .slider-segment {
       flex: 0 0 auto;
-      width: @segment_vertical_width;
+      width: $segment_vertical_width;
       &:not(:first-child) {
-        margin-block-start: calc(-1 * @segment_border_width);
+        margin-block-start: calc(-1 * $segment_border_width);
       }
       &:first-child {
-        border-start-start-radius: @segment_border_radius;
-        border-start-end-radius: @segment_border_radius;
+        border-start-start-radius: $segment_border_radius;
+        border-start-end-radius: $segment_border_radius;
       }
       &:last-child {
-        border-end-start-radius: @segment_border_radius;
-        border-end-end-radius: @segment_border_radius;
+        border-end-start-radius: $segment_border_radius;
+        border-end-end-radius: $segment_border_radius;
       }
     }
   }
@@ -106,15 +106,15 @@
     .slider-segment {
       flex-grow: 1;
       &:not(:first-child) {
-        margin-inline-start: calc(-1 * @segment_border_width);
+        margin-inline-start: calc(-1 * $segment_border_width);
       }
       &:first-child {
-        border-top-left-radius: @segment_border_radius;
-        border-bottom-left-radius: @segment_border_radius;
+        border-top-left-radius: $segment_border_radius;
+        border-bottom-left-radius: $segment_border_radius;
       }
       &:last-child {
-        border-top-right-radius: @segment_border_radius;
-        border-bottom-right-radius: @segment_border_radius;
+        border-top-right-radius: $segment_border_radius;
+        border-bottom-right-radius: $segment_border_radius;
       }
     }
   }

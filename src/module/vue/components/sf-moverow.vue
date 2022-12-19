@@ -58,22 +58,22 @@
   </Collapsible>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 @import (reference) '../../../styles/mixins.less';
 
-@icon_size: 1.2em;
-@border_width: var(--ironsworn-border-width-lg);
-@border_radius: var(--ironsworn-border-radius-lg);
-@wrapper_spacing: 4px;
+$icon_size: 1.2em;
+$border_width: var(--ironsworn-border-width-lg);
+$border_radius: var(--ironsworn-border-radius-lg);
+$wrapper_spacing: 4px;
 
-.thematicColorMixin {
+@mixin thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
 
   color: var(--ironsworn-color-light);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
 }
-.cardColorsMixin {
+@mixin cardColorsMixin {
   color: var(--ironsworn-color-fg);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-bg);
@@ -81,12 +81,12 @@
 
 .sfMoveRow {
   --ironsworn-line-height: (--ironsworn-line-height-md);
-  .thematicColorMixin();
-  padding: 0 @wrapper_spacing;
+  @include thematicColorMixin();
+  padding: 0 $wrapper_spacing;
   position: relative;
   &[aria-expanded='true'] {
-    padding-top: @wrapper_spacing;
-    padding-bottom: @wrapper_spacing;
+    padding-top: $wrapper_spacing;
+    padding-bottom: $wrapper_spacing;
   }
 }
 
@@ -97,7 +97,7 @@
 .moveButton {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-  .clickableTextMixin();
+  @include clickableTextMixin();
   font-size: var(--font-size-20);
   aspect-ratio: 1 !important;
   align-self: center;
@@ -107,9 +107,9 @@
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
 
-  .clickableTextMixin();
-  .textStrokeMixin( var(--ironsworn-color-dark));
-  .thematicColorMixin();
+  @include clickableTextMixin();
+  @include textStrokeMixin(var(--ironsworn-color-dark));
+  @include thematicColorMixin();
   height: inherit;
   border: none;
   background: none;
@@ -131,7 +131,7 @@
   color: var(--ironsworn-color-fg);
   background-color: var(--ironsworn-color-bg-80);
   border: 1px solid var(--ironsworn-color-light);
-  border-radius: 0 @border_radius @border_radius @border_radius;
+  border-radius: 0 $border_radius $border_radius $border_radius;
 }
 .moveControls {
   display: flex;
@@ -140,7 +140,7 @@
 }
 
 .toggleSection {
-  gap: @wrapper_spacing;
+  gap: $wrapper_spacing;
   display: flex;
   flex-flow: row nowrap;
 }
@@ -150,8 +150,8 @@
   height: var(--ironsworn-line-height-lg);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
-  border-top-left-radius: @border_radius;
-  border-top-right-radius: @border_radius;
+  border-top-left-radius: $border_radius;
+  border-top-right-radius: $border_radius;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   header:not(:last-child) & {

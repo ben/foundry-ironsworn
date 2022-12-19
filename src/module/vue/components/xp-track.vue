@@ -12,8 +12,8 @@
     />
   </article>
 </template>
-<style lang="less" scoped>
-@import '../../../styles/mixins.less';
+<style lang="scss" scoped>
+@import (reference) '../../../styles/mixins.less';
 .xp-track {
   .xp-box {
     // for sizing/layout concerns, see legacy-track.vue
@@ -26,7 +26,7 @@
       --ironsworn-color-thematic
     );
 
-    .clickableBlockMixin(var(--legacy-xp-box-size));
+    @include clickableBlockMixin(var(--legacy-xp-box-size));
     aspect-ratio: 1;
     border-radius: var(--ironsworn-border-radius-md);
     border-style: solid;
@@ -42,13 +42,13 @@
       &[aria-selected='true'],
       &.selected,
       &.active {
-        .blockHoverMixin(var(--legacy-xp-box-size));
+        @include blockHoverMixin(var(--legacy-xp-box-size));
         &:first-child {
-          .blockMixin();
+          @include blockMixin();
         }
       }
       & ~ .xp-box {
-        .blockMixin();
+        @include blockMixin();
       }
     }
   }
