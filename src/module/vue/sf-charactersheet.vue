@@ -75,7 +75,7 @@
 
 <style lang="less" module>
 .topPadding {
-  padding-top: var(--ironsworn-spacer-lg);
+  padding-top: var(--ironsworn-spacer-md);
 }
 </style>
 

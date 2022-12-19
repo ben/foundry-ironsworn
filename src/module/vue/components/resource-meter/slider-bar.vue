@@ -52,7 +52,7 @@
 @import '../../../../styles/mixins.less';
 @segment_border_width: var(--ironsworn-border-width-md);
 @segment_border_radius: var(--ironsworn-border-radius-lg);
-@segment_line_height: 28px;
+@segment_line_height: var(--ironsworn-line-height-lg);
 @segment_vertical_width: var(--ironsworn-vertical-slider-width);
 
 .slider-bar {

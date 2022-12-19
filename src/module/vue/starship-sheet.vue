@@ -7,7 +7,7 @@
       </TabList>
       <TabPanels>
         <TabPanel tab-key="assets" class="flexcol">
-          <SfAssets />
+          <SfAssets :class="$style.assets" />
         </TabPanel>
         <TabPanel tab-key="notes" class="flexcol">
           <SfNotes />
@@ -32,7 +32,11 @@
   </SheetBasic>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" module>
+.assets {
+  padding-top: var(--ironsworn-spacer-md);
+}
+</style>
 
 <script setup lang="ts">
 import { provide, computed } from 'vue'
