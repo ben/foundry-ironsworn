@@ -51,9 +51,9 @@
 <style lang="less" scoped>
 @import '../../../../styles/mixins.less';
 @segment_border_width: 1px;
-@segment_border_radius: 5px;
+@segment_border_radius: var(--ironsworn-border-radius-lg);
 @segment_line_height: 28px;
-@segment_vertical_width: 50px;
+@segment_vertical_width: var(--ironsworn-vertical-slider-width);
 
 .slider-bar {
   display: flex;

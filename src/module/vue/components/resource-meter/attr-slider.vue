@@ -32,7 +32,7 @@
 </template>
 
 <style lang="less">
-@segment_border_width: 1px;
+@segment_border_width: var(--ironsworn-border-width-md);
 @segment_border_radius: 5px;
 
 .attr-slider {

@@ -61,7 +61,7 @@ h2 {
   margin-bottom: 1em;
   padding: 5px;
   border: 1px solid;
-  border-radius: 5px;
+  border-radius: var(--ironsworn-border-radius-lg);
 }
 
 .asset-category-contents {

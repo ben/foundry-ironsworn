@@ -146,7 +146,8 @@
     grid-column: 3;
     height: 50px;
     aspect-ratio: 1;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 var(--ironsworn-border-radius-md)
+      var(--ironsworn-border-radius-md) 0;
   }
 }
 </style>

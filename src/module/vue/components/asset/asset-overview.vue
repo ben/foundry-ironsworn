@@ -124,13 +124,13 @@
 
 .asset-ability-bullet-ironsworn {
   height: 15px;
-  border: 1px solid var(--ironsworn-color-border);
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
 }
 
 .asset-ability-bullet-starforged {
   height: 1em;
   background-color: var(--ironsworn-color-border);
-  border: 1px solid var(--ironsworn-color-border);
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
 }
 </style>
 
