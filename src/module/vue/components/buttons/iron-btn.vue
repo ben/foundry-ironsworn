@@ -68,6 +68,8 @@
   border-width: 0;
   color: inherit;
   margin: 0;
+  height: v-bind(height);
+  width: v-bind(width);
   gap: var(--ironsworn-spacer-sm);
   padding: var(--ironsworn-spacer-xs);
   & > svg {
@@ -209,5 +211,9 @@ const iconOptions = computed(() => {
     set,
     name,
   }
+})
+
+defineExpose({
+  element: $el,
 })
 </script>

@@ -9,9 +9,9 @@
         {{ overflowLabel }}
       </span>
       <IronBtn
+        v-if="editMode"
         block
         nogrow
-        v-if="editMode"
         icon="fa:caret-left"
         @click="decrease"
       />
@@ -81,7 +81,6 @@
     align-items: center;
     justify-content: end;
     .icon-button {
-      aspect-ratio: 1;
       height: 100%;
     }
   }

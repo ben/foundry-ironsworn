@@ -7,8 +7,8 @@
       ref="$connectionList"
     />
     <section
+      :class="$style.listControls"
       class="progress-controls flexrow nogrow"
-      style="text-align: center"
     >
       <IronBtn
         icon="fa:plus"
@@ -19,6 +19,11 @@
     </section>
   </article>
 </template>
+<style lang="less" module>
+.listControls {
+  --ironsworn-clickable-line-height: var(--ironsworn-clickable-line-height-sm);
+}
+</style>
 <script setup lang="ts">
 import { inject } from 'vue'
 import { $ActorKey } from '../../provisions'

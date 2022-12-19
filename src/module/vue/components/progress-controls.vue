@@ -1,18 +1,21 @@
 <template>
   <div class="flexrow nogrow" :class="$style.progressControls">
     <IronBtn
+      :class="$style.progressControlBtn"
       block
       icon="fa:plus"
       @click="addProgressItem('vow')"
       :text="$t('IRONSWORN.Vow')"
     />
     <IronBtn
+      :class="$style.progressControlBtn"
       block
       icon="fa:plus"
       @click="addProgressItem('progress')"
       :text="$t('IRONSWORN.Progress')"
     />
     <btn-compendium
+      :class="$style.progressControlBtn"
       block
       :compendium="props.foeCompendium ?? 'ironswornfoes'"
       :text="$t('IRONSWORN.Foes')"
@@ -21,7 +24,9 @@
 </template>
 <style lang="less" module>
 .progressControls {
-  --ironsworn-clickable-line-height: 22px;
+}
+.progressControlBtn {
+  --ironsworn-clickable-line-height: var(--ironsworn-clickable-line-height-sm);
 }
 </style>
 

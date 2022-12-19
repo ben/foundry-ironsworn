@@ -22,7 +22,11 @@
         <asset :asset="asset" class="item-row" />
       </li>
     </CollapseTransition>
-    <section class="list-controls flexrow nogrow" style="text-align: center">
+    <section
+      :class="$style.listControls"
+      class="flexrow nogrow"
+      style="text-align: center"
+    >
       <IronBtn
         icon="fa:book-atlas"
         @click="assetBrowser"
@@ -34,6 +38,9 @@
 </template>
 
 <style lang="less" module>
+.listControls {
+  --ironsworn-clickable-line-height: var(--ironsworn-clickable-line-height-sm);
+}
 .wrapper {
   gap: var(--ironsworn-spacer-md);
 }

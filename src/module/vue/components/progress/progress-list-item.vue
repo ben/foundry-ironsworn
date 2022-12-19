@@ -27,8 +27,8 @@
     />
     <section class="progress-controls" data-tooltip-direction="UP">
       <IronBtn
-        block
         v-if="editMode"
+        block
         icon="fa:trash"
         @click="destroy"
         :tooltip="$t('IRONSWORN.DeleteItem')"
