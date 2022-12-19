@@ -22,13 +22,14 @@
         </span>
       </button>
       <div class="asset-controls flexrow nogrow">
-        <btn-faicon
-          class="block nogrow"
+        <IronBtn
           v-if="editMode"
-          icon="trash"
+          block
+          nogrow
+          icon="fa:trash"
           @click="destroy"
         />
-        <btn-faicon class="block nogrow" icon="edit" @click="edit" />
+        <IronBtn block nogrow icon="fa:pen-to-square" @click="edit" />
       </div>
     </header>
 
@@ -121,7 +122,6 @@
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
 import { AssetAbility, AssetDataPropertiesData } from '../../../item/itemtypes'
-import BtnFaicon from '../buttons/btn-faicon.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
@@ -130,6 +130,7 @@ import { defaultActor } from '../../../helpers/actors'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetConditions from './asset-conditions.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 
 const props = defineProps<{ asset: any }>()
 const actor = inject(ActorKey) as Ref

@@ -1,41 +1,46 @@
 <template>
   <svg
-    :class="{ [$style.ironIcon]: true, icon: true }"
     :fill="color"
-    :width="size"
-    :height="size"
+    :height="size ?? '1em'"
+    :width="size ?? '1em'"
     role="img"
     aria-hidden="true"
+    :class="{ icon: true, juicy }"
   >
     <use :href="symbolId" />
   </svg>
 </template>
 
-<style lang="less" module>
-// <!---->
-.ironIcon {
-}
-</style>
-
 <script lang="ts" setup>
 import { computed } from '@vue/reactivity'
+import { FillProperty } from 'csstype'
 import ids from 'virtual:svg-icons-names'
+import { IconPropsCommon } from './icon-common'
+
+interface Props extends IconPropsCommon {
+  name: typeof ids
+  /**
+   * The color to use for the SVG fill property.
+   * @default 'currentColor'
+   */
+  color?: FillProperty
+  /**
+   * The prefix of the sprite map. You probably don't need to change this.
+   * @default 'ironsworn'
+   */
+  prefix?: string
+  juicy?: boolean
+  size?: string
+  disabled?: boolean
+}
 
 /**
  * Displays a custom SVG icon from the sprite sheet. Anything in `system/assets/icons` is automatically included as a sprite.
  */
-const props = withDefaults(
-  defineProps<{
-    name: typeof ids
-    prefix?: string
-    size?: string
-    color?: string
-  }>(),
-  {
-    prefix: 'ironsworn',
-    size: '1em',
-    color: 'currentColor',
-  }
-)
+const props = withDefaults(defineProps<Props>(), {
+  prefix: 'ironsworn',
+  size: '1em',
+  color: 'currentColor',
+})
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 </script>

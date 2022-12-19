@@ -3,18 +3,13 @@
     class="btn-compendium"
     @click="openCompendium"
     aria-haspopup="dialog"
+    icon="fa:book-atlas"
     v-bind="$props"
-  >
-    <template #icon>
-      <FontIcon name="book-atlas" />
-    </template>
-    <slot name="default"></slot>
-  </IronBtn>
+  />
 </template>
 
 <script lang="ts" setup>
 import { ExtractPropTypes } from 'vue'
-import FontIcon from '../icon/font-icon.vue'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends ExtractPropTypes<typeof IronBtn> {

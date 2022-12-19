@@ -7,13 +7,13 @@
         v-model="state.searchQuery"
         @keydown.enter.prevent
       />
-      <BtnFaicon
+      <IronBtn
         icon="times-circle"
         class="nogrow clickable text"
         @click="clearSearch()"
         :class="$style.searchBtn"
       />
-      <BtnFaicon
+      <IronBtn
         icon="compress-alt"
         class="nogrow clickable text"
         @click="collapseMoveCategories()"
@@ -104,7 +104,7 @@ import {
 } from '../../features/custommoves'
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
-import BtnFaicon from './buttons/btn-faicon.vue'
+import IronBtn from './buttons/iron-btn.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)

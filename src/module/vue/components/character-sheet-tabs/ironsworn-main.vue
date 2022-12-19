@@ -23,13 +23,12 @@
             </div>
           </CollapseTransition>
           <div class="flexrow nogrow" style="text-align: center">
-            <BtnFaicon
-              icon="atlas"
+            <IronBtn
+              icon="fa:book-atlas"
               @click="assetBrowser"
-              class="clickable block"
-            >
-              {{ $t('IRONSWORN.Assets') }}
-            </BtnFaicon>
+              block
+              :text="$t('IRONSWORN.Assets')"
+            />
           </div>
         </DropTarget>
       </section>
@@ -55,7 +54,7 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import CollapseTransition from '../transition/collapse-transition.vue'

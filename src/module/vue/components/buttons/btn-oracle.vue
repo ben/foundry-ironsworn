@@ -6,12 +6,8 @@
       $t('IRONSWORN.RollOracleTable', { title: props.node.displayName })
     "
     v-bind="$props"
-  >
-    <template #icon>
-      <IronIcon name="oracle" />
-    </template>
-    <slot name="default"></slot>
-  </IronBtn>
+    icon="ironsworn:oracle"
+  />
 </template>
 
 <style lang="less"></style>
@@ -21,7 +17,6 @@ import { sample } from 'lodash'
 import { ExtractPropTypes, inject } from 'vue'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
 import { OracleRollMessage } from '../../../rolls'
-import IronIcon from '../icon/iron-icon.vue'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {}

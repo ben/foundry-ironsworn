@@ -9,12 +9,8 @@
     v-bind="$props"
     class="action-roll move-roll"
     aria-haspopup="dialog"
-  >
-    <template #icon>
-      <IronIcon name="d10-tilt" />
-    </template>
-    <slot name="default"></slot>
-  </IronBtn>
+    icon="ironsworn:d10-tilt"
+  />
 </template>
 
 <script setup lang="ts">
@@ -22,7 +18,6 @@ import { ExtractPropTypes, inject } from 'vue'
 import { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
-import IronIcon from '../icon/iron-icon.vue'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {

@@ -1,6 +1,5 @@
 <template>
   <IronBtn
-    v-bind="($attrs, $props)"
     ref="$el"
     role="tab"
     :data-tab-set="tabState.tabSetId"
@@ -12,6 +11,7 @@
     :tabindex="isActive ? undefined : -1"
     @click="setActiveTab(tabKey)"
     @keydown="handleKeydown"
+    v-bind="buttonProps"
   >
     <slot name="icon"></slot>
     <slot name="default"></slot>
@@ -28,19 +28,13 @@
   overflow-x: visible;
   padding: var(--ironsworn-spacer-md);
   gap: var(--ironsworn-spacer-md);
-  justify-content: v-bind(
-    'tabState.orientation === "horizontal" ? "center" : "left"'
-  );
-  text-align: v-bind(
-    'tabState.orientation === "horizontal" ? "center" : "left"'
-  );
-  &:before {
-    font-size: 140%;
-  }
+  justify-content: v-bind(alignment);
+  text-align: v-bind(alignment);
 }
 </style>
 
 <script lang="ts" setup>
+import { omit } from 'lodash'
 import { computed, ExtractPropTypes, inject, nextTick, ref, watch } from 'vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import {
@@ -60,13 +54,22 @@ interface Props extends ExtractPropTypes<typeof IronBtn> {
    * The tab's key must match the key of a {@link TabPanel}.
    */
   tabKey: TabKey
+  nogrow?: boolean
+  disabled?: boolean
+  block?: boolean
 }
 
 /**
  * The index tab of a {@link TabPanel}, which serves as its title/label. Should be descended from a {@link TabList}.
  * @extends {@link IronBtn}
  */
-const props = withDefaults(defineProps<Props>(), { block: true })
+const props = withDefaults(defineProps<Props>(), {
+  block: true,
+})
+
+const buttonProps = computed(() => omit(props, 'tabKey'))
+
+console.log(buttonProps.value)
 
 const tabState = inject(TabStateKey) as TabState
 
@@ -87,6 +90,10 @@ watch(isFocused, () => {
     })
   }
 })
+
+const alignment = computed(() =>
+  tabState.orientation === 'horizontal' ? 'center' : 'left'
+)
 
 const tabSetId = computed(() => tabState.tabSetId)
 defineExpose({

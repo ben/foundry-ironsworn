@@ -36,8 +36,8 @@
             </select>
           </div>
           <div class="form-group" style="justify-content: right">
-            <BtnFaicon
-              icon="trash"
+            <IronBtn
+              icon="fa:trash"
               class="button block nogrow"
               :class="{ disabled: item.system.abilities.length < 2 }"
               @click="deleteAbility(i)"
@@ -48,9 +48,12 @@
         <hr />
       </div>
     </CollapseTransition>
-    <BtnFaicon icon="plus" class="button block" @click="addAbility">
-      {{ $t('IRONSWORN.Ability') }}
-    </BtnFaicon>
+    <IronBtn
+      icon="fa:plus"
+      block
+      @click="addAbility"
+      :text="$t('IRONSWORN.Ability')"
+    />
   </div>
 </template>
 
@@ -60,7 +63,7 @@ import { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import Clock from '../clock.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 
 const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)

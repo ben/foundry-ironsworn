@@ -50,7 +50,8 @@
         </select>
         <IronBtn
           block
-          class="nogrow"
+          nogrow
+          icon="ironsworn:d10-tilt"
           style="
             padding: 0px 5px;
             position: absolute;
@@ -61,9 +62,7 @@
           "
           @click="randomizeKlass"
           :tooltip="randomKlassTooltip"
-        >
-          <template #icon><IronIcon name="d10-tilt" class="juicy" /></template>
-        </IronBtn>
+        />
       </label>
     </template>
     <template #header>
@@ -77,35 +76,36 @@
       >
         <IronBtn
           v-if="canRandomizeName"
-          class="btn-randomize-name nogrow"
+          class="btn-randomize-name"
           block
+          nogrow
           :tooltip="$t('IRONSWORN.RandomName')"
           @click="randomizeName"
-        >
-          <template #icon><IronIcon name="d10-tilt" class="juicy" /></template>
-        </IronBtn>
+          icon="ironsworn:d10-tilt"
+        />
       </SheetHeaderBasic>
     </template>
     <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
       <div class="flexrow boxrow">
         <IronBtn
-          class="btn-randomize-name nogrow box"
+          class="btn-randomize-name box"
           block
+          nogrow
           @click="rollFirstLook"
+          icon="ironsworn:d10-tilt"
           @mouseenter="data.firstLookHighlight = true"
           @mouseleave="data.firstLookHighlight = false"
-        >
-          <template #icon><IronIcon name="d10-tilt" class="juicy" /></template>
-          <template #default>{{ $t('IRONSWORN.RollForDetails') }}</template>
-        </IronBtn>
+          :text="$t('IRONSWORN.RollForDetails')"
+        />
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
-        <btn-icon
+        <IronBtn
+          class="box"
           v-for="oracle of row"
-          class="block box"
+          block
+          :disabled="oracle.requiresKlass && klassIsNotValid"
           :class="{
             highlighted: oracle.fl && data.firstLookHighlight,
-            disabled: oracle.requiresKlass && klassIsNotValid,
           }"
           :tooltip="
             oracle.requiresKlass && klassIsNotValid
@@ -114,12 +114,15 @@
           "
           :key="oracle.dfId"
           @click="rollOracle(oracle)"
+          icon="ironsworn:d10-tilt"
         >
-          {{ oracle.title }}
-          <span v-if="oracle.qty" class="oracle-quantity"
-            >({{ oracle.qty }})</span
-          >
-        </btn-icon>
+          <template #text>
+            {{ oracle.title }}
+            <span v-if="oracle.qty" class="oracle-quantity"
+              >({{ oracle.qty }})</span
+            >
+          </template>
+        </IronBtn>
       </div>
     </section>
     <section class="flexcol">
@@ -171,16 +174,14 @@ label {
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import { capitalize, flatten, sample } from 'lodash'
-import { provide, computed, reactive, inject, watch } from 'vue'
+import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
-import BtnIsicon from './components/buttons/btn-isicon.vue'
-import BtnIcon from './components/buttons/btn-icon.vue'
+
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
 import { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
-import IronIcon from './components/icon/iron-icon.vue'
 
 const props = defineProps<{
   actor: any

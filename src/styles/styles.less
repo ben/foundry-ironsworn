@@ -83,6 +83,10 @@
     width: auto;
     border: 0 solid var(--ironsworn-color-border);
   }
+
+  @import 'utils.less';
+  @import 'inputs.less';
+  @import './fvtt/dialog.less';
 }
 
 @import 'transitions.less';
@@ -104,11 +108,6 @@
 
   .ironsworn {
     // import these to the theme apply it to FVTT's own dialogs and inputs as well.
-    @import 'inputs.less';
-    @import (reference) './fvtt/dialog.less';
-    &.dialog {
-      .dialog();
-    }
 
     // stuff scoped to .ironsworn app windows only
     .window-title {
@@ -159,5 +158,4 @@
   @import 'scrollbar.less';
   @import 'sheet.less';
   @import 'tables.less';
-  @import 'utils.less';
 }

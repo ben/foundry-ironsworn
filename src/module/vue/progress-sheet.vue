@@ -44,19 +44,19 @@
             class="flexrow nogrow"
             style="justify-content: flex-end; margin-bottom: 0.25rem"
           >
-            <BtnFaicon
-              class="block"
+            <IronBtn
               v-if="item.system.hasTrack"
-              icon="caret-left"
-              @click="retreat"
+              block
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
+              @click="retreat"
+              icon="fa:caret-left"
             />
-            <BtnFaicon
-              class="block"
+            <IronBtn
               v-if="item.system.hasTrack"
-              icon="caret-right"
-              @click="advance"
+              block
               :tooltip="$t('IRONSWORN.MarkProgress')"
+              @click="advance"
+              icon="fa:caret-right"
             />
           </div>
           <!-- PROGRESS -->
@@ -113,18 +113,15 @@
     </div>
 
     <hr class="nogrow" />
-
     <!-- DESCRIPTION -->
     <MceEditor v-model="item.system.description" @save="saveDescription" />
-
-    <BtnFaicon
-      class="nogrow block"
+    <IronBtn
+      nogrow
+      block
       :class="$style.danger"
-      icon="trash"
       @click="destroy"
-    >
-      {{ $t('IRONSWORN.DeleteItem') }}
-    </BtnFaicon>
+      icon="fa:trash"
+    />
   </div>
 </template>
 
@@ -151,12 +148,12 @@ import { computed, inject, provide } from 'vue'
 import { RANKS } from '../constants'
 import { $ItemKey, ItemKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
-import BtnFaicon from './components/buttons/btn-faicon.vue'
 import Clock from './components/clock.vue'
 import MceEditor from './components/mce-editor.vue'
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import ProgressTrack from './components/progress/progress-track.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
+import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{ item: any }>()
 const $item = inject($ItemKey)

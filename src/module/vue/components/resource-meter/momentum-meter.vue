@@ -15,8 +15,8 @@
   >
     <template #label>
       <BtnMomentumburn
-        class="text"
-        :class="{ 'vertical-text': sliderStyle === 'vertical' }"
+        :vertical="sliderStyle === 'vertical'"
+        :text="$t('IRONSWORN.Momentum')"
         :tooltip="
           $t('IRONSWORN.BurnMomentumAndResetTo', {
             value: actorSys.momentum,
@@ -24,7 +24,6 @@
           })
         "
       >
-        {{ $t('IRONSWORN.Momentum') }}
       </BtnMomentumburn>
     </template>
   </AttrSlider>

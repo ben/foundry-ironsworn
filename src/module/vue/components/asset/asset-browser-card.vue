@@ -10,18 +10,18 @@
     @dragend="dragEnd"
   >
     <header class="asset-header nogrow flexrow">
-      <i class="fa-solid fa-grip nogrow block draggable item"></i>
-
-      <button
-        type="button"
+      <FontIcon name="grip" class="nogrow block draggable item" />
+      <IronBtn
         @click="state.expanded = !state.expanded"
         :aria-controls="bodyId"
-        class="clickable text asset-expand-toggle"
+        class="asset-expand-toggle"
       >
-        <h4 class="asset-title">
-          {{ foundryItem().name }}
-        </h4>
-      </button>
+        <template #text>
+          <h4 class="asset-title button-text">
+            {{ foundryItem().name }}
+          </h4>
+        </template>
+      </IronBtn>
     </header>
 
     <CollapseTransition>
@@ -111,6 +111,8 @@ import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
+import FontIcon from '../icon/font-icon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 
 const props = defineProps<{
   df?: IAsset

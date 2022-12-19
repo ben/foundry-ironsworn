@@ -19,8 +19,8 @@
           v-if="editMode"
           style="position: absolute; right: 5px; top: 5px"
         >
-          <btn-faicon class="block" icon="trash" @click="destroy" />
-          <btn-faicon class="block" icon="edit" @click="edit" />
+          <IronBtn block icon="fa:trash" @click="destroy" />
+          <IronBtn block icon="fa:pen-to-square" @click="edit" />
         </div>
       </div>
     </div>
@@ -31,9 +31,10 @@
         <btn-compendium
           :compendium="compendiumKey"
           style="padding: 0 2em"
-          class="inset block"
-          >{{ $t('IRONSWORN.OpenCompendium') }}</btn-compendium
-        >
+          class="inset"
+          block
+          :text="$t('IRONSWORN.OpenCompendium')"
+        />
       </div>
     </div>
   </DropTarget>
@@ -44,7 +45,7 @@ import { inject, Ref } from '@vue/runtime-core'
 import { $ActorKey, ActorKey } from '../../provisions'
 import { computed } from 'vue'
 import DocumentImg from '../document-img.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'
 import DropTarget from '../../drop-target.vue'
 

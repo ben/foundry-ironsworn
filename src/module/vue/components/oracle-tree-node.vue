@@ -9,13 +9,13 @@
     <!-- Leaf node -->
     <div v-if="isLeaf">
       <h4 class="flexrow">
-        <BtnOracle class="juicy text" :node="node">
-          {{ node?.displayName }}
-        </BtnOracle>
-        <BtnFaicon
-          class="block nogrow show-oracle-info"
-          icon="eye"
+        <BtnOracle :node="node" :text="node?.displayName" />
+        <IronBtn
+          block
+          nogrow
+          class="show-oracle-info"
           @click="toggleDescription()"
+          icon="fa:eye"
         />
       </h4>
       <CollapseTransition>
@@ -33,13 +33,17 @@
     <!-- Branch node -->
     <div v-else>
       <h4 class="flexrow">
-        <BtnFaicon
-          class="juicy text"
-          :icon="state.manuallyExpanded ? 'caret-down' : 'caret-right'"
-          @click="toggleManually()"
-        >
-          {{ node?.displayName }}
-        </BtnFaicon>
+        <IronBtn @click="toggleManually()" :text="node?.displayName">
+          <template #icon>
+            <FontIcon
+              juicy
+              name="caret-right"
+              :rotate="
+                state.manuallyExpanded ? Icon.Rotate['90deg'] : undefined
+              "
+            />
+          </template>
+        </IronBtn>
       </h4>
 
       <CollapseTransition>
@@ -69,7 +73,7 @@
 
 <style lang="less" scoped>
 .show-oracle-info {
-  padding: 4px;
+  // padding: 4px;
 }
 .movesheet-row {
   transition: all 0.4s ease;
@@ -92,11 +96,13 @@ h4 {
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
 import { IOracleTreeNode } from '../../features/customoracles'
-import BtnFaicon from './buttons/btn-faicon.vue'
+import { Icon } from './icon/icon-common'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { IronswornItem } from '../../item/item'
 import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 import CollapseTransition from './transition/collapse-transition.vue'
+import IronBtn from './buttons/iron-btn.vue'
+import FontIcon from './icon/font-icon.vue'
 
 const props = defineProps<{ node: IOracleTreeNode }>()
 

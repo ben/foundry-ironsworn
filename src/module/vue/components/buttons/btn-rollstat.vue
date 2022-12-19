@@ -3,16 +3,10 @@
     @click="rollStat"
     :data-tooltip="$t('IRONSWORN.Roll +x', { stat: statLabel })"
     class="action-roll stat-roll"
-    :class="attr"
     aria-haspopup="dialog"
-    :disabled="disabled"
+    icon="ironsworn:d10-tilt"
     v-bind="$props"
-  >
-    <template #icon>
-      <IronIcon name="d10-tilt" />
-    </template>
-    <slot ref="content" name="default"></slot>
-  </IronBtn>
+  />
 </template>
 
 <script lang="ts" setup>
@@ -21,7 +15,6 @@ import { ExtractPropTypes, inject, useSlots } from 'vue'
 import { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, $ItemKey } from '../../provisions'
-import IronIcon from '../icon/iron-icon.vue'
 import IronBtn from './iron-btn.vue'
 
 interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
@@ -37,8 +30,6 @@ const props = defineProps<Props>()
 
 const $actor = inject($ActorKey, undefined)
 const $item = inject($ItemKey, undefined)
-
-const slots = useSlots()
 
 function rollStat(): any {
   if (props.documentType === 'Item') {

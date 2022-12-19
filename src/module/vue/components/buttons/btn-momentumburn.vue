@@ -3,13 +3,9 @@
     class="burn-momentum"
     @click="burnMomentum"
     :tooltip="tooltip"
+    icon="fa:fire"
     v-bind="$props"
-  >
-    <template #icon>
-      <FontIcon name="fire" />
-    </template>
-    <slot name="default"></slot>
-  </IronBtn>
+  />
 </template>
 
 <script lang="ts" setup>
@@ -17,12 +13,9 @@ import { computed } from '@vue/reactivity'
 import { ExtractPropTypes, inject } from 'vue'
 import { CharacterDataPropertiesData } from '../../../actor/actortypes'
 import { $ActorKey } from '../../provisions'
-import FontIcon from '../icon/font-icon.vue'
 import IronBtn from './iron-btn.vue'
 
-interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
-  compendium: string
-}
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {}
 
 defineProps<Props>()
 const $actor = inject($ActorKey)

@@ -18,12 +18,10 @@
         :class="[toggleWrapperClass, $style.toggleWrapper, 'toggle-wrapper']"
         :is="toggleWrapperIs"
       >
-        <component
-          :is="noIcon ? 'button' : BtnFaicon"
+        <IronBtn
           :id="controlId"
-          type="button"
           :aria-controls="contentId"
-          :icon="noIcon ? undefined : 'chevron-right'"
+          :icon="noIcon ? undefined : 'fa:chevron-right'"
           @click="toggle()"
           :disabled="disabled"
           :class="[
@@ -31,12 +29,11 @@
             toggleButtonClass,
             $style.toggleButtonTransition,
           ]"
-          :data-tooltip="toggleTooltip"
+          :tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"
+          :text="toggleLabel"
           ref="$toggle"
-        >
-          {{ toggleLabel }}
-        </component>
+        />
       </component>
       <slot name="after-toggle"></slot>
     </component>
@@ -114,9 +111,9 @@
 <script setup lang="ts">
 import { ExtractPropTypes, reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed, ref } from '@vue/reactivity'
 import { ExpandEvent, CollapseEvent } from './collapsible-helpers'
+import IronBtn from '../buttons/iron-btn.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -184,8 +181,6 @@ const props = withDefaults(
     contentWrapperClass: '',
     toggleWrapperClass: '',
     headingClass: '',
-    toggleTextClass: '',
-    noClickable: false,
     expanded: false,
     duration: 300,
     disableTransition: false,

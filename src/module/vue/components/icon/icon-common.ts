@@ -4,13 +4,43 @@ import {
   BorderStyleProperty,
   BorderWidthProperty,
   Color,
+  ColorProperty,
   DisplayProperty,
+  FillProperty,
   OpacityProperty,
   PaddingProperty,
   RotateProperty,
   ScaleProperty,
   StandardLonghandPropertiesHyphen,
+  StrokeProperty,
 } from 'csstype'
+
+export interface IconPropsCommon {
+  /**
+   * The name of the icon to use.
+   */
+  name: string
+  /**
+   * The icon's color.
+   */
+  color?: FillProperty | ColorProperty
+  /**
+   * The icon's stroke color.
+   */
+  stroke?: StrokeProperty | ColorProperty
+  /**
+   * The height and width of the icon.
+   * @remarks For simplicity's sake, we render all icons with a 1:1 aspect ratio.
+   * @default 1em
+   */
+  size?: string
+  label?: string
+  role?: string
+  /**
+   * A convenience property for rendering icons at 120% font size.
+   */
+  juicy?: boolean
+}
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
 export namespace Icon {

@@ -103,8 +103,9 @@
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   .clickableTextMixin();
-  font-size: 1.15em;
-  height: 28px;
+  height: var(--ironsworn-clickable-line-height);
+  line-height: var(--ironsworn-clickable-line-height);
+  font-size: var(--font-size-20);
   aspect-ratio: 1 !important;
   align-self: center;
 }

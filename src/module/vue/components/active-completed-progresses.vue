@@ -3,6 +3,7 @@
     <DropTarget
       :is="ProgressList"
       dropType="progress"
+      :compact-progress="compactProgress"
       :excludedSubtypes="excludedSubtypes"
       :progress-stars="progressStars"
       :showCompleted="'no-completed'"

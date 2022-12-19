@@ -1,82 +1,219 @@
 <template>
   <button
     class="iron-btn"
-    :class="{ [$style.ironBtn]: true, ...classes }"
+    :class="{
+      [$style.ironBtn]: true,
+      [$style.verticalButton]: vertical,
+      ...classes,
+    }"
     type="button"
     :data-tooltip="tooltip"
     :disabled="disabled"
     :aria-disabled="disabled"
+    ref="$el"
   >
-    <slot name="icon"></slot>
-    <span v-if="hasDefaultSlot" class="button-text">
-      <slot name="default"></slot>
-    </span>
+    <!-- @slot The button icon. The button styling assumes that an icon has the icon class (which is automatically applied to IronIcon and FontIcon). -->
+    <slot name="icon">
+      <IronIcon
+        v-if="iconOptions?.set === 'ironsworn'"
+        :name="iconOptions.name"
+      />
+      <FontIcon
+        v-if="iconOptions?.set === 'fa'"
+        :name="(iconOptions.name as Icon.Name)"
+      />
+    </slot>
+    <!-- @slot Primary button text, wrapped to scope it's styling and to enable direction workaround required for vertical button text. -->
+    <slot name="text">
+      <span
+        v-if="text"
+        class="button-text"
+        :class="{ [$style.verticalText]: vertical, [$style.buttonText]: true }"
+        >{{ text }}</span
+      >
+    </slot>
   </button>
 </template>
 <style lang="less" module>
+@import (reference) '../../../../styles/utils.less';
+@import (reference) '../../../../styles/mixins.less';
+
+.flexStart {
+  align-items: center;
+  align-content: center;
+  justify-items: start;
+  justify-content: start;
+}
+.flexCenter {
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+}
+.flexEnd {
+  align-items: center;
+  align-content: center;
+  justify-items: end;
+  justify-content: end;
+}
+
 .ironBtn {
   display: flex;
-  align-items: center;
-  flex-flow: row nowrap;
-  align-content: center;
-  text-align: center;
-  justify-content: center;
+  flex-wrap: nowrap;
   border-radius: 0;
-  color: inherit;
   border-width: 0;
-  padding: 0.2em;
-  gap: 0.2em;
+  color: inherit;
+  margin: 0;
+  gap: var(--ironsworn-spacer-sm);
+  padding: var(--ironsworn-spacer-xs);
   & > svg {
-    // prevents extra hover effects from firing on icon hover
+    // prevents double hover effect on svg hover
     pointer-events: none;
   }
   & > .icon {
+    line-height: 1;
   }
-  &:not(.block) > .button-text {
-    justify-self: left;
+
+  &.verticalButton {
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+    flex-direction: column;
+    line-height: 1.25;
+    .verticalText.buttonText {
+      .vertical-text();
+      width: max-content;
+      line-height: inherit;
+      display: inherit;
+      writing-mode: vertical-lr !important;
+    }
   }
 }
+
+.buttonText {
+  display: inline;
+  border-width: 0px;
+  strong {
+    white-space: nowrap;
+  }
+}
+
 .iconOnly {
+  aspect-ratio: 1;
+  flex-direction: row;
+  box-sizing: content-box;
+  padding: 2px;
+  height: 1em;
+  width: 1em;
+  justify-content: center;
+  align-content: center;
+  line-height: 1;
+}
+.clickableText {
+  .clickableTextMixin();
+  line-height: 1.25;
+}
+.clickableBlock {
+  .clickableBlockMixin();
+  &:hover {
+    box-shadow: none;
+  }
 }
 </style>
 
 <script setup lang="ts">
-import { computed, useSlots } from 'vue'
+import { capitalize } from 'lodash'
+import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
+import FontIcon from '../icon/font-icon.vue'
+import { Icon } from '../icon/icon-common'
+import IronIcon from '../icon/iron-icon.vue'
+
+type IronIcon = `ironsworn:${string}`
+type FontAwesomeIcon = `fa:${Icon.Name}`
 
 /**
  * Generic button that applies styles and behaviour common to this system.
  */
 const props = withDefaults(
   defineProps<{
+    /**
+     *  The button text/label, which appears as the default content for the "text" slot.
+     */
+    text?: string
+    /**
+     * A simple way to specify an icon with default settings. For something weirder, you can override it with the "icon" slot.
+     */
+    icon?: IronIcon | FontAwesomeIcon
     tooltip?: string
     hoverBg?: boolean
-    /**
-     * Should the button be styled with a block background?
-     */
-    block?: boolean
     disabled?: boolean
     /**
      * Should the button grow in flex containers?
      */
     nogrow?: boolean
+    /**
+     * Should the button be styled with a block background?
+     */
+    block?: boolean
+    /**
+     * Should the button be styled as vertical?
+     */
+    vertical?: boolean
+    height?: string
+    width?: string
+    /**
+     * How to justify the button content. If it's a block or icon-only button, this is 'center'. Otherwise, it's 'start'.
+     */
+    justify?: 'start' | 'center' | 'end'
   }>(),
-  { disabled: false }
+  { disabled: false, vertical: false, width: 'auto', height: 'auto' }
 )
+
+const justify = computed(() => {
+  if (props.justify) {
+    return props.justify
+  }
+  switch (true) {
+    case !hasText.value:
+    case props.block:
+      return 'center'
+    default:
+      return 'start'
+  }
+})
+
+const $style = useCssModule()
 
 const classes = computed(() => {
   return {
-    ['icon-bg-hover']: props.hoverBg,
-    block: props.block,
+    [$style.ironBtn]: true,
+    [$style.verticalButton]: props.vertical,
+    [$style.iconOnly]: !hasText,
+    [$style.clickableBlock]: props.block,
+    [$style.clickableText]: !props.block,
+    [$style[`flex${capitalize(justify.value)}`]]: true,
     nogrow: props.nogrow,
-    clickable: true,
   }
 })
 // so the span can be omitted if there's no slot content
-const hasDefaultSlot = computed(() => {
-  return !!useSlots().default?.()[0]
+
+let $el = ref<HTMLElement>()
+
+const hasText = computed(() => {
+  if (props.text || useSlots().text?.()[0]) return true
+  return false
 })
 
-const hasIconSlot = computed(() => {
-  return !!useSlots().icon?.()[0]
+const iconOptions = computed(() => {
+  if (!props.icon) {
+    return null
+  }
+  const [set, name] = props.icon.split(/:/)
+  return {
+    set,
+    name,
+  }
+})
+
+onMounted(() => {
+  console.log(props, $el.value)
 })
 </script>

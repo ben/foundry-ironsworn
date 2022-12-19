@@ -2,6 +2,7 @@
   <component
     :is="el"
     :class="{
+      juicy: juicy ?? undefined,
       [$style.fontIcon]: true,
       [$style.fontIconBorder]: border && !!$style.fontIconBorder,
       [$style.fontIconAnimation]: animation && !!$style.fontIconAnimation,
@@ -18,6 +19,13 @@
   height: 1em;
   width: 1em;
   line-height: 1 !important;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  &:before {
+    flex-basis: 0;
+    display: flex-item;
+  }
 }
 .fontIconBorder {
   each(v-bind('borderOptions'), {
@@ -34,9 +42,12 @@
 <script lang="ts" setup>
 import { forEach } from 'lodash'
 import { computed } from 'vue'
-import { Icon } from './icon-helpers'
+import { Icon, IconPropsCommon } from './icon-common'
 
-interface FontAwesomeIconProps {
+interface FontAwesomeIconProps extends IconPropsCommon {
+  /**
+   * @default `span`
+   */
   el?: any
   name: Icon.Name
   family?: Icon.Family
@@ -85,6 +96,7 @@ interface FontAwesomeIconProps {
    * Used with {@link FontIconStack}.
    */
   stack?: 'stack-1x' | 'stack-2x'
+  juicy?: boolean
 }
 
 /**
@@ -107,6 +119,7 @@ const classes = computed(() => {
       case key === 'title':
       case key === 'icon':
       case key === 'size':
+      case key === 'juicy':
         // skip, these don't get set as classes
         break
       case key === 'animation' && value:
