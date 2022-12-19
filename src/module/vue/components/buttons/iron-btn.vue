@@ -16,7 +16,7 @@
     :aria-disabled="disabled"
     ref="$el"
   >
-    <!-- @slot The button icon. Provide an ID string for an icon with default settings, or use this slot to do something weird.  -->
+    <!-- @slot The button icon. Provide an ID string for an icon with default settings, or use this slot if you need to do something specific.  -->
     <slot name="icon">
       <IronIcon
         v-if="iconOptions?.set === 'ironsworn'"
@@ -27,7 +27,7 @@
         :name="(iconOptions.name as FontAwesome.Name)"
       />
     </slot>
-    <!-- @slot Primary button text, wrapped to scope it's styling and to enable direction workaround required for vertical button text. -->
+    <!-- @slot Primary button text, wrapped to scope its styling and to enable direction workaround required for vertical button text. -->
     <slot name="text">
       <span
         v-if="text"
