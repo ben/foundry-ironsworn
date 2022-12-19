@@ -75,16 +75,14 @@ const setActiveTab = inject(SetActiveTabKey) as SetActiveTab<
 >
 const focusActivePanel = inject(FocusActivePanelKey) as FocusActivePanel
 
-let $el = ref<HTMLButtonElement>()
+let $el = ref<typeof IronBtn>()
 
 const isActive = computed(() => tabState.activeTab === props.tabKey)
 
-const isFocused = computed(() => tabState.focusedTab === props.tabKey)
-watch(isFocused, () => {
-  if (isFocused.value === true) {
-    nextTick(() => {
-      $el.value?.focus()
-    })
+watch(tabState, async () => {
+  if (tabState.focusedTab === props.tabKey) {
+    await nextTick()
+    $el.value?.element.focus()
   }
 })
 
