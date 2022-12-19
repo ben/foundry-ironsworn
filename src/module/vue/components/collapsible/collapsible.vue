@@ -34,8 +34,8 @@
               <FontIcon
                 v-if="icon"
                 :name="icon"
-                :class="$style.toggleButtonTransition"
-                :size="FontAwesome.Size['sm']"
+                :class="$style.toggleButton"
+                :size="FontAwesome.Size['xs']"
               />
             </slot>
           </template>
@@ -84,8 +84,9 @@
 .contentWrapper {
 }
 
-.toggleButtonTransition {
+.toggleButton {
   transition: transform 0.4s;
+  margin-left: var(--ironsworn-spacer-xs);
   display: flex;
   .wrapper[aria-expanded='true'] & {
     transform: v-bind(transform);
