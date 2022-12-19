@@ -146,14 +146,6 @@
       "private": false
     },
     {
-      "name": "ironsworntruths",
-      "label": "Ironsworn Setting Truths",
-      "system": "foundry-ironsworn",
-      "path": "packs/ironsworn-truths.db",
-      "type": "JournalEntry",
-      "private": false
-    },
-    {
       "name": "starforged-sectors",
       "label": "Starforged Scenes",
       "system": "foundry-ironsworn",

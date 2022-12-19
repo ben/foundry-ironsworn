@@ -111,7 +111,7 @@ export async function importFromDataforged() {
   await processISMoves()
   await processISOracles()
 
-  await processISTruths()
+  // await processISTruths() // Re-enable when DF includes them
   await processSFTruths()
 
   // Lock the packs again
