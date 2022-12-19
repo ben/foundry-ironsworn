@@ -11,7 +11,7 @@
     -0.653644px -0.756803px 0px $color, 0.283662px -0.958924px 0px $color,
     0.96017px -0.279416px 0px $color;
 }
-.initial-caps {
+@mixin initial-caps() {
   &::first-letter {
     text-transform: uppercase;
   }
@@ -44,7 +44,7 @@
   @include borderGlowInteriorMixin(calc($blockSize / 2),0,var(--ironsworn-color-thematic,var(--ironsworn-color-clickable-block-bg-hover)));
 }
 
-.borderFloatingMixin {
+@mixin borderFloatingMixin() {
   border-style: outset;
   border-color: var(--ironsworn-color-border);
 }
@@ -95,7 +95,7 @@
 
 // CLICKABLE MIXINS
 
-.interactiveMixin {
+@mixin interactiveMixin() {
   transition: var(--std-animation);
   &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
@@ -107,20 +107,20 @@
   }
 }
 
-.textHoverMixin {
+@mixin textHoverMixin() {
   color: var(--ironsworn-color-clickable-text-hover);
   filter: var(--ironsworn-filter-highlight);
 }
-.textFocusMixin {
+@mixin textFocusMixin() {
   @include focusOutlineMixin();
 }
 
-.textActiveMixin {
+@mixin textActiveMixin() {
   color: var(--ironsworn-color-clickable-text-selected);
   filter: var(--ironsworn-filter-highlight);
 }
 
-.clickableTextMixin {
+@mixin clickableTextMixin() {
   --ironsworn-color-text-stroke: transparent;
   @include interactiveMixin();
   margin: 0;
@@ -158,12 +158,12 @@
   z-index: var(--ironsworn-z-index-higher);
 }
 
-.blockFocusMixin {
+@mixin blockFocusMixin() {
   z-index: var(--ironsworn-z-index-highest);
   @include focusOutlineMixin();
 }
 
-.blockActiveMixin {
+@mixin blockActiveMixin() {
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-selected);
   background-color: var(
@@ -192,7 +192,7 @@
   }
 }
 
-.iconButtonBaseMixin {
+@mixin iconButtonBaseMixin() {
   display: flex;
   align-items: center;
   flex-flow: row nowrap;

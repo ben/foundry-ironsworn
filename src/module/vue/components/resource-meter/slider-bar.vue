@@ -63,7 +63,7 @@ $segment_vertical_width: var(--ironsworn-vertical-slider-width);
   border: 0;
   padding: 0;
   &:focus {
-    .focusOutlineMixin();
+    @include focusOutlineMixin();
   }
   .slider-segment {
     box-sizing: border-box;
