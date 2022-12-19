@@ -1,12 +1,15 @@
 <template>
   <DropTarget is="div" class="flexcol box" :dropType="itemType">
-    <div v-if="item" style="padding: 10px; position: relative">
+    <div
+      v-if="item"
+      style="padding: var(--ironsworn-spacer-xl); position: relative"
+    >
       <div class="flexrow">
         <document-img
           :document="item"
           size="40px"
           class="nogrow"
-          style="margin-right: 5px"
+          style="margin-right: var(--ironsworn-spacer-md)"
         />
 
         <div class="flexcol">
@@ -17,7 +20,11 @@
         <div
           class="flexrow"
           v-if="editMode"
-          style="position: absolute; right: 5px; top: 5px"
+          style="
+            position: absolute;
+            right: var(--ironsworn-spacer-md);
+            top: var(--ironsworn-spacer-md);
+          "
         >
           <IronBtn block icon="fa:trash" @click="destroy" />
           <IronBtn block icon="fa:pen-to-square" @click="edit" />

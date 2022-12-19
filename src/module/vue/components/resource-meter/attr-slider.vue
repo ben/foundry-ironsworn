@@ -33,7 +33,7 @@
 
 <style lang="less">
 @segment_border_width: var(--ironsworn-border-width-md);
-@segment_border_radius: 5px;
+@segment_border_radius: var(--ironsworn-border-radius-lg);
 
 .attr-slider {
   &[aria-orientation='vertical'] {

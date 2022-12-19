@@ -32,7 +32,7 @@
 }
 
 h3 {
-  margin: 5px 0;
+  margin: var(--ironsworn-spacer-md) 0;
   transition: background-color 0.2s ease;
 }
 

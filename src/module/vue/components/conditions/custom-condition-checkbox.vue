@@ -16,7 +16,7 @@
 <style lang="less" scoped>
 label {
   margin-left: -2px;
-  margin-right: 5px;
+  margin-right: var(--ironsworn-spacer-md);
 }
 input[type='text'] {
   border: 0;

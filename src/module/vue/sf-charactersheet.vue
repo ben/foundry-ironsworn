@@ -19,7 +19,7 @@
         <!-- Attributes -->
         <div
           class="flexrow stats"
-          style="margin-bottom: 10px"
+          style="margin-bottom: var(--ironsworn-spacer-xl)"
           data-tooltip-direction="UP"
         >
           <attr-box attr="edge" />

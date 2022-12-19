@@ -3,7 +3,7 @@
     <CollapseTransition group tag="div">
       <div
         class="form-group nogrow"
-        style="gap: 5px"
+        style="gap: var(--ironsworn-spacer-md)"
         v-for="(option, i) in item.system.exclusiveOptions"
         :key="`item${i}`"
       >

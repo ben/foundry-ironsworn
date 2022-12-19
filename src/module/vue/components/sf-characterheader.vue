@@ -52,7 +52,7 @@ textarea {
   flex-basis: 100px;
   min-width: 20ch;
   max-width: 30ch;
-  gap: 5px;
+  gap: var(--ironsworn-spacer-md);
   flex-grow: 1;
 }
 </style>

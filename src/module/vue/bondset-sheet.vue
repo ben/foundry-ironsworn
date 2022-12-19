@@ -1,5 +1,5 @@
 <template>
-  <div class="flexrow" style="gap: 10px">
+  <div class="flexrow" style="gap: var(--ironsworn-spacer-xl)">
     <!-- TABS -->
     <div class="flexcol" style="flex-basis: 10em">
       <div
@@ -45,7 +45,7 @@
 .clickable.block {
   border-style: none;
   line-height: 25px;
-  padding: 5px;
+  padding: var(--ironsworn-spacer-md);
   .selected & {
     color: var(--ironsworn-color-clickable-block-fg-selected);
     &:hover {

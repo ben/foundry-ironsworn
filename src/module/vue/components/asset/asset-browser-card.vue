@@ -94,8 +94,8 @@
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  margin: 10px 0;
-  padding: 5px;
+  margin: var(--ironsworn-spacer-xl) 0;
+  padding: var(--ironsworn-spacer-md);
   --ironsworn-color-thematic: v-bind('system.color');
 }
 </style>

@@ -3,7 +3,7 @@
     <CollapseTransition group tag="div" class="nogrow">
       <div
         class="form-group nogrow"
-        style="gap: 5px"
+        style="gap: var(--ironsworn-spacer-md)"
         v-for="(field, i) in item.system.fields"
         :key="`field${i}`"
       >

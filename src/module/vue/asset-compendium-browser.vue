@@ -59,17 +59,17 @@ h2 {
 
 .asset-category {
   margin-bottom: 1em;
-  padding: 5px;
-  border: 1px solid;
+  padding: var(--ironsworn-spacer-md);
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   border-radius: var(--ironsworn-border-radius-lg);
 }
 
 .asset-category-contents {
-  margin: 5px 10px;
+  margin: var(--ironsworn-spacer-md) var(--ironsworn-spacer-xl);
 }
 
 .category-description {
-  padding-bottom: 10px;
+  padding-bottom: var(--ironsworn-spacer-xl);
 }
 </style>
 

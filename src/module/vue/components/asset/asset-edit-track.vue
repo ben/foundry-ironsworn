@@ -27,7 +27,7 @@
     </div>
 
     <AttrSlider
-      style="margin-top: 5px"
+      style="margin-top: var(--ironsworn-spacer-md)"
       attr="track.current"
       documentType="Item"
       :max="item.system.track.max"
