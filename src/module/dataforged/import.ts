@@ -6,6 +6,10 @@ import {
   IMoveCategory,
   IOracle,
   IOracleCategory,
+  ironsworn,
+  Ironsworn,
+  ISettingTruth,
+  Starforged,
   starforged,
 } from 'dataforged'
 import { isArray, isObject, max } from 'lodash'
@@ -69,10 +73,12 @@ const PACKS = [
   'foundry-ironsworn.starforgedencounters',
   'foundry-ironsworn.starforgedmoves',
   'foundry-ironsworn.starforgedoracles',
+  'foundry-ironsworn.starforgedtruths',
   'foundry-ironsworn.foeactorssf',
   'foundry-ironsworn.ironswornassets',
   'foundry-ironsworn.ironswornoracles',
   'foundry-ironsworn.ironswornmoves',
+  'foundry-ironsworn.ironsworntruths',
 ]
 
 /**
@@ -104,6 +110,9 @@ export async function importFromDataforged() {
 
   await processISMoves()
   await processISOracles()
+
+  await processISTruths()
+  await processSFTruths()
 
   // Lock the packs again
   for (const key of PACKS) {
@@ -407,4 +416,49 @@ async function processSFFoes() {
       foeItem.system as unknown as Record<string, unknown>,
     ])
   }
+}
+
+async function processTruths(
+  truths: ISettingTruth[],
+  outputCompendium: string
+) {
+  const pack = game.packs.get(outputCompendium)
+  if (!pack) throw new Error(`Couldn't find ${outputCompendium}`)
+
+  let i = 1
+  for (const truth of truths) {
+    const je = await JournalEntry.create(
+      { id: hashLookup(truth.$id), name: `${i++}. ${truth.Display.Title}` },
+      { keepId: true, pack: outputCompendium }
+    )
+    je!.setFlag('foundry-ironsworn', 'character', truth.Character)
+
+    for (const entry of truth.Table) {
+      JournalEntryPage.create(
+        {
+          id: hashLookup(entry.$id),
+          name: `${entry.Floor}-${entry.Ceiling}: ${entry.Result}`,
+          text: {
+            markdown:
+              `${entry.Description}\n\n> _${entry['Quest Starter']}_`.trim(),
+            format: 2, // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN,
+          },
+        },
+        { parent: je }
+      )
+    }
+  }
+}
+
+async function processISTruths() {
+  return processTruths(
+    ((starforged as any).default as Starforged)['Setting Truths'],
+    'foundry-ironsworn.starforgedtruths'
+  )
+}
+async function processSFTruths() {
+  return processTruths(
+    ((ironsworn as any).default as Ironsworn)['Setting Truths']!,
+    'foundry-ironsworn.starforgedtruths'
+  )
 }
