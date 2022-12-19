@@ -213,8 +213,4 @@ const iconOptions = computed(() => {
     name,
   }
 })
-
-onMounted(() => {
-  console.log(props, $el.value)
-})
 </script>
