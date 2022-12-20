@@ -1,0 +1,27 @@
+{{#if entry.title.show}}
+<header class="journal-page-header">
+    <h{{entry.title.level}}>{{entry.name}}</h{{entry.title.level}}>
+</header>
+{{/if}}
+<section class="journal-page-content">
+  <section class="truth-option-description">
+    {{{entry.system.Description}}}
+    {{#if entry.system.Subtable}}
+    <table>
+      <tbody>
+        {{#each entry.system.Subtable}}
+          <tr>
+            <td>{{Floor}}</td>
+            <td>{{Ceiling}}</td>
+            <td>{{Result}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+  </section>
+  <section class="truth-quest-starter">
+    <h{{sum entry.title.level 1}}>Quest Starter</h{{sum entry.title.level 1}}>
+    {{{entry.system.Quest}}}
+  </section>
+</section>

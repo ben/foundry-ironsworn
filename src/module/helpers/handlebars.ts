@@ -1,4 +1,4 @@
-import { compact, range } from 'lodash'
+import { range, sum } from 'lodash'
 import { RANKS } from '../constants'
 import { capitalize } from './util'
 import { marked } from 'marked'
@@ -57,6 +57,7 @@ export class IronswornHandlebarsHelpers {
   static registerHelpers() {
     Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''))
 
+    Handlebars.registerHelper('sum', (...args) => sum(args))
     Handlebars.registerHelper('capitalize', localeCapitalize)
     Handlebars.registerHelper('formatRollPlusStat', formatRollPlusStat)
     Handlebars.registerHelper('formatRollMethod', formatRollMethod)
