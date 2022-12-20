@@ -57,7 +57,7 @@ export class IronswornHandlebarsHelpers {
   static registerHelpers() {
     Handlebars.registerHelper('concat', (...args) => args.slice(0, -1).join(''))
 
-    Handlebars.registerHelper('sum', (...args) => sum(args))
+    Handlebars.registerHelper('sum', (a, b) => a + b)
     Handlebars.registerHelper('capitalize', localeCapitalize)
     Handlebars.registerHelper('formatRollPlusStat', formatRollPlusStat)
     Handlebars.registerHelper('formatRollMethod', formatRollMethod)
