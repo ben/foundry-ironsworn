@@ -22,21 +22,21 @@
   &::before {
     --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
 
-    opacity: 0;
     transition: opacity 0.4s ease;
+    opacity: 0;
     z-index: 0;
     padding: 0.25em;
-  }
-
-  & > * {
-    position: relative; // must be set to manipulate z-index
-    z-index: 1;
   }
 
   &:hover {
     &::before {
       opacity: 1;
     }
+  }
+
+  & > * {
+    position: relative; // must be set to manipulate z-index
+    z-index: 1;
   }
 }
 </style>

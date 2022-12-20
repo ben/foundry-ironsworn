@@ -1,24 +1,28 @@
 // Light theme for Ironsworn, with minimal restyling of FVTT's stock UI.
 
+@use 'mixins/colors';
+@use 'mixins/palettize';
+@use 'mixins/decorations';
+
 .system-foundry-ironsworn.theme-ironsworn {
-  @import (reference) './mixins/colors';
-  @import (reference) './mixins/palettize';
-
-  // #ff6600 and #ff0000 chosen because they're what FVTT uses for similar accents.
-  @include palettize(ironsworn-color, #000000, #ffffff, #ff6600, #ff0000);
-  @include ironsworn-light-theme(ironsworn-color);
-  @include sharp-border(ironsworn-color);
-  @include interactive-invert(ironsworn-color-clickable-block,ironsworn-color);
-
   --ironsworn-color-text-stroke: transparent;
 
   // CLICKABLE TEXT: HOVER FILTER EFFECT
-  --ironsworn-filter-highlight:
-    drop-shadow(
-      0 0 3px var(--ironsworn-color-cool)
-    );
+  --ironsworn-filter-highlight: drop-shadow(
+    0 0 3px var(--ironsworn-color-cool)
+  );
   --ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool);
 
-  @import (reference) './mixins/decorations';
+  // #ff6600 and #ff0000 chosen because they're what FVTT uses for similar accents.
+  @include palettize.palettize(
+    ironsworn-color,
+    #000000,
+    #ffffff,
+    #ff6600,
+    #ff0000
+  );
+  @include ironsworn-light-theme(ironsworn-color);
+  @include sharp-border(ironsworn-color);
+  @include interactive-invert(ironsworn-color-clickable-block, ironsworn-color);
   @include ironsworn-decoration;
 }

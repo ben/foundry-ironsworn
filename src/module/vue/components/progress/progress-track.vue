@@ -29,47 +29,40 @@
 </template>
 
 <style lang="scss">
-@import (reference) '../../../../styles/mixins.less';
+@use '@styles/mixins';
 
 $box-border-radius: var(--ironsworn-border-radius-md);
 $box-border-width: var(--ironsworn-border-width-md);
 $box-gap: 4px;
 
 .progress-track {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-flow: column;
+  gap: $box-gap;
+  align-items: center;
+  justify-content: center;
+
   &:focus {
     @include focus-outline;
   }
 
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(10, 1fr);
-  justify-content: center;
-  align-items: center;
-  gap: $box-gap;
-
   .progress-track-box {
-    max-height: var(--ironsworn-vertical-slider-width);
-    max-width: var(--ironsworn-vertical-slider-width);
     border-radius: $box-border-radius;
+    max-width: var(--ironsworn-vertical-slider-width);
+    max-height: var(--ironsworn-vertical-slider-width);
   }
 
   &.compact-progress {
-    gap: 0;
     display: flex;
     flex-flow: row nowrap;
+    gap: 0;
 
     .progress-track-box {
       flex-basis: 10%;
-      border: $box-border-width solid currentcolor;
-
-      .progress-tick {
-        // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
-        vector-effect: non-scaling-stroke;
-        stroke-width: 1px;
-      }
-
-      border-radius: 0;
       margin: 0;
+      border: $box-border-width solid currentcolor;
+      border-radius: 0;
 
       &:first-child {
         border-radius: $box-border-radius 0 0 $box-border-radius;
@@ -85,6 +78,12 @@ $box-gap: 4px;
 
       &:not(:last-child) {
         margin-right: calc($box-border-width / -2);
+      }
+
+      .progress-tick {
+        // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
+        vector-effect: non-scaling-stroke;
+        stroke-width: 1px;
       }
     }
   }

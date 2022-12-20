@@ -41,9 +41,11 @@
 .listControls {
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
+
 .wrapper {
   gap: var(--ironsworn-spacer-md);
 }
+
 .assetList {
   gap: var(--ironsworn-spacer-md);
 }

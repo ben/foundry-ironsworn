@@ -1,15 +1,4 @@
+/* stylelint-disable-next-line scss/dollar-variable-pattern */
 $animationDuration: var(--ironsworn-transition-duration, 0.5s);
 
-// Main mixin
-@import 'vue2-animate/src/scss/make-transitions';
-
-// vue2-animate animations
-// @import 'vue2-animate/src/scss/animations/bouncing/all.scss';
-@import 'vue2-animate/src/scss/animations/fading/all';
-
-// @import 'vue2-animate/src/scss/animations/rotating/all.scss';
-@import 'vue2-animate/src/scss/animations/sliding/all';
-
-// @import 'vue2-animate/src/scss/animations/zooming/all.scss';
-// @import 'vue2-animate/src/scss/animations/flipping/all.scss';
-// @import 'vue2-animate/src/scss/animations/lightspeeding/all.scss';
+@use 'vue2-animate/src/sass/vue2-animate';

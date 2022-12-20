@@ -31,16 +31,16 @@
 
   .form-group,
   fieldset.form-group {
-    padding: var(--ironsworn-spacer-md);
     border: none;
+    padding: var(--ironsworn-spacer-md);
   }
 
   .advanced-roll-options {
+    margin: var(--ironsworn-spacer-md) 0;
+    border-width: var(--ironsworn-border-width-md);
     border-radius: var(--ironsworn-border-radius-lg);
     background-color: var(--ironsworn-color-fg-10);
     padding: var(--ironsworn-spacer-md);
-    margin: var(--ironsworn-spacer-md) 0;
-    border-width: var(--ironsworn-border-width-md);
   }
 
   .advanced-roll-options-toggle {

@@ -1,3 +1,5 @@
+@use 'mixins';
+
 // styles for TinyMCE and ProseMirror editors
 
 // Editors: shared styles
@@ -7,8 +9,7 @@
 }
 
 .editor {
-  border:
-    var(--ironsworn-border-width-md) solid
+  border: var(--ironsworn-border-width-md) solid
     var(--ironsworn-color-input-border);
   background: var(--ironsworn-color-input-bg);
   caret-color: var(--ironsworn-color-fg-highlight);
@@ -16,22 +17,21 @@
 
 .tab .editor {
   border-top-width: 0;
-  border-radius:
-    0 0 var(--ironsworn-border-radius-lg)
+  border-radius: 0 0 var(--ironsworn-border-radius-lg)
     var(--ironsworn-border-radius-lg);
 }
 
 .editor-edit {
-  @include clickable-block;
+  @include mixins.clickable-block;
 
-  background: var(--ironsworn-color-bg);
   border-radius: var(--ironsworn-border-radius-md);
+  background: var(--ironsworn-color-bg);
 }
 
 // Editor custom select elements
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
-  @include clickable-block;
+  @include mixins.clickable-block;
 
   border-radius: var(--ironsworn-border-radius-md);
 }
@@ -39,7 +39,7 @@
 // Editors: ProseMirror
 
 .ProseMirror {
-  @include input-field;
+  @include mixins.input-field;
 
   padding: 0.5rem;
 }
@@ -53,15 +53,14 @@
 .tox {
   font-family: var(--font-primary);
 
-  :not(svg, rect) {
-    color: currentcolor;
+  &:not(.tox-tinymce-inline) .tox-editor-header {
+    justify-content: center;
+    border-bottom: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border-muted);
   }
 
-  &:not(.tox-tinymce-inline) .tox-editor-header {
-    border-bottom:
-      var(--ironsworn-border-width-md) solid
-      var(--ironsworn-color-border-muted);
-    justify-content: center;
+  :not(svg, rect) {
+    color: currentcolor;
   }
 
   .tox-toolbar__primary {
@@ -75,24 +74,24 @@
   .tox-tbtn .tox-toolbar-overlord,
   .tox-toolbar__primary,
   &:not(.tox-tinymce-inline) .tox-editor-header {
-    color: var(--ironsworn-color-fg);
     background: var(--ironsworn-color-bg);
+    color: var(--ironsworn-color-fg);
   }
 
   .tox-tbtn {
-    color: var(--ironsworn-color-clickable-block-fg);
+    transition: var(--std-animation);
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
     border-color: transparent;
     background: var(--ironsworn-color-clickable-block-bg);
-    border-style: solid;
-    border-width: var(--ironsworn-border-width-md);
-    transition: var(--std-animation);
+    color: var(--ironsworn-color-clickable-block-fg);
 
     // margin: 6px 1px var(--ironsworn-spacer-md) 0;
     &:focus {
-      color: var(--ironsworn-color-clickable-block-fg);
-      background: var(--ironsworn-color-clickable-block-bg);
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
+      background: var(--ironsworn-color-clickable-block-bg);
+      color: var(--ironsworn-color-clickable-block-fg);
 
       &:not(.tox-tbtn--disabled) {
         color: var(--ironsworn-color-clickable-block-fg);
@@ -103,25 +102,25 @@
       }
     }
 
-    svg {
-      fill: currentcolor;
-    }
-
     &:hover {
-      color: var(--ironsworn-color-clickable-block-fg-hover);
-      background: var(--ironsworn-color-clickable-block-bg-hover);
-      border-color: var(--ironsworn-color-clickable-block-border-hover);
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
+      border-color: var(--ironsworn-color-clickable-block-border-hover);
+      background: var(--ironsworn-color-clickable-block-bg-hover);
+      color: var(--ironsworn-color-clickable-block-fg-hover);
 
       svg {
         fill: currentcolor;
       }
     }
 
+    svg {
+      fill: currentcolor;
+    }
+
     &[aria-pressed='true'] {
-      color: var(--ironsworn-color-clickable-block-fg-selected);
       background: var(--ironsworn-color-clickable-block-bg-selected);
+      color: var(--ironsworn-color-clickable-block-fg-selected);
 
       svg {
         fill: currentcolor;
@@ -130,7 +129,7 @@
   }
 
   .tox-tbtn--select {
-    @include input-field;
+    @include mixins.input-field;
 
     text-shadow: none;
   }
@@ -143,9 +142,9 @@
 }
 
 // DROPDOWN MENU
-//
+
 // Menu
-//
+
 // Root variables
 // from https://github.com/tinymce/tinymce/blob/develop/modules/oxide/src/scss/theme/globals/global-variables.scss
 // Begin customization by changing these variables as most other variables are derivatives of these.
@@ -176,9 +175,9 @@ $menu-box-shadow: 0 0 2px 0 rgba($color-black, 20%/100%),
 
 .tox {
   .tox-menu {
-    background: $menu-background-color;
     border: var(--ironsworn-border-width-md) solid $menu-border-color;
     box-shadow: $menu-box-shadow;
+    background: $menu-background-color;
   }
 }
 
@@ -232,12 +231,12 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
 
 .tox {
   .tox-collection--list .tox-collection__group {
-    border-bottom-width: 0;
-    border-color: $collection-item-separator-color;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-style: solid;
     border-top-width: var(--ironsworn-border-width-md);
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: $collection-item-separator-color;
 
     &:first-child {
       border-top-width: 0;
@@ -251,8 +250,8 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
   }
 
   .tox-collection__item {
-    color: $collection-item-label-text-color;
     transition: var(--std-animation);
+    color: $collection-item-label-text-color;
   }
 
   // Note: Ensure "enabled" is before "active", as active styles should have a higher precedence
@@ -279,16 +278,19 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
     color: $collection-grid-item-label-enabled-text-color;
   }
 
-  .tox-collection--grid .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+  .tox-collection--grid
+    .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
     background: $collection-grid-item-active-background-color;
     color: $collection-grid-item-label-active-text-color;
   }
 
-  .tox-collection--list .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+  .tox-collection--list
+    .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
     color: $collection-list-item-label-active-text-color;
   }
 
-  .tox-collection--toolbar .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+  .tox-collection--toolbar
+    .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
     color: $collection-toolbar-item-label-active-text-color;
   }
 
@@ -324,10 +326,9 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
   }
 
   .tox-collection--horizontal {
-    background: $menu-background-color;
-    border:
-      var(--ironsworn-border-width-md) solid
+    border: var(--ironsworn-border-width-md) solid
       $collection-item-separator-color;
+    background: $menu-background-color;
   }
 }
 
@@ -335,8 +336,7 @@ $toolbar-group-separator-color: var(--ironsworn-color-border-muted);
 
 .tox:not([dir='rtl']) {
   .tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
-    border-right:
-      var(--ironsworn-border-width-md) solid
+    border-right: var(--ironsworn-border-width-md) solid
       $toolbar-group-separator-color;
   }
 }
@@ -344,8 +344,7 @@ $toolbar-group-separator-color: var(--ironsworn-color-border-muted);
 // RTL
 .tox[dir='rtl'] {
   .tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
-    border-left:
-      var(--ironsworn-border-width-md) solid
+    border-left: var(--ironsworn-border-width-md) solid
       $toolbar-group-separator-color;
   }
 }

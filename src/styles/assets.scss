@@ -1,93 +1,92 @@
-@import (reference) './themes/mixins/decorations';
-
-$asset-spacer: 0.5em;
+@use 'themes/mixins/decorations';
+@use 'mixins';
 
 .ironsworn__asset {
-  overflow: hidden;
   transition: var(--std-animation);
+  overflow: hidden;
 
   .asset-header {
-    gap: $asset-spacer;
+    gap: var(--ironsworn-spacer-lg);
     align-items: center;
 
     .asset-expand-toggle {
-      transition: var(--std-animation);
       display: flex;
-      gap: $asset-spacer;
-      background: none;
-      box-shadow: none !important;
       flex-flow: row wrap;
+      gap: var(--ironsworn-spacer-lg);
+      transition: var(--std-animation);
+      box-shadow: none !important;
+      background: none;
     }
 
     .asset-title {
+      transition: inherit;
       margin: 0;
+      text-transform: uppercase;
+      line-height: 1;
+      word-spacing: 0.02em;
+      letter-spacing: 0.02em;
       font-size: var(--font-size-14);
       font-weight: bold;
-      letter-spacing: 0.02em;
-      word-spacing: 0.02em;
-      line-height: 1;
-      text-transform: uppercase;
-      transition: inherit;
     }
 
     .asset-type {
-      color: var(--ironsworn-color-thematic);
       flex-grow: 0;
-      line-height: 1;
-      font-style: italic;
       transition: inherit;
+      line-height: 1;
+      color: var(--ironsworn-color-thematic);
+      font-style: italic;
     }
 
     .asset-controls {
-      justify-items: flex-end;
       display: flex;
       flex-grow: 0;
       flex-wrap: nowrap;
+      justify-items: flex-end;
     }
   }
 
   .asset-body {
+    gap: var(--ironsworn-spacer-lg);
     transition: var(--std-animation);
+    padding: var(--ironsworn-spacer-sm);
     overflow: hidden;
-    padding: ($asset-spacer / 2);
-    gap: $asset-spacer;
 
     .asset-fields {
-      margin: 0;
       display: flex;
       flex-direction: column;
+      margin: 0;
 
       .asset-field {
         display: flex;
         flex-direction: row;
-        gap: ($asset-spacer / 2);
         flex-grow: 0;
+        gap: var(--ironsworn-spacer-sm);
         border-bottom-width: var(--ironsworn-border-width-md);
         border-bottom-style: solid;
         border-bottom-color: var(--ironsworn-color-thematic);
 
         .asset-field-label {
-          padding: 0;
           margin: 0;
+          padding: 0;
         }
 
         .asset-field-value {
-          margin: 0;
           flex-grow: 1;
-          padding: 0 ($asset-spacer / 2);
+          margin: 0;
+          padding: 0 var(--ironsworn-spacer-sm);
         }
       }
     }
 
     .asset-abilities {
-      padding-left: $asset-spacer;
-      gap: $asset-spacer;
+      gap: var(--ironsworn-spacer-lg);
+      padding-left: var(--ironsworn-spacer-lg);
 
       .asset-ability {
-        list-style: none;
         display: flex;
         flex-direction: row;
-        gap: $asset-spacer;
+        gap: var(--ironsworn-spacer-lg);
+        list-style: none;
       }
     }
   }
@@ -121,49 +120,69 @@ $asset-spacer: 0.5em;
   .slider-segment {
     --ironsworn-text-stroke-color: var(--ironsworn-dark-color);
 
-    @include text-stroke;
+    @include mixins.text-stroke;
   }
 }
 
 $hexagon-aspect-ratio: calc(sqrt(3) / 2);
-$hex-deco-aspect-ratio: 24 / 28;
+$hex-deco-aspect-ratio: calc(24 / 28);
 $hex-deco-expanded-height: 50px;
 $hex-deco-collapsed-height: 32px;
 
 // Here we encode the bullet styles as classes, and pull them into the
 // ul>li bullet class from there. These will also be available for block
 // elements
-.asset-ability-bullet {
+@mixin asset-ability-bullet {
   display: block;
-  mask-repeat: no-repeat;
-  background-repeat: no-repeat;
-  mask-position: center;
-  background-position: center;
   transition: var(--std-animation);
+  background-position: center;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 
-.asset-ability-bullet-marked {
+.asset-ability-bullet {
+  @include asset-ability-bullet;
+}
+
+@mixin asset-ability-bullet-marked {
   background-color: currentcolor;
 }
 
-.asset-ability-bullet-ironsworn {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border-width: var(--ironsworn-border-width-md);
-  height: 0.75em;
+.asset-ability-bullet-marked {
+  @include asset-ability-bullet-marked;
+}
+
+@mixin asset-ability-bullet-ironsworn {
   margin-top: 0.15em;
+  border-width: var(--ironsworn-border-width-md);
+  border-radius: 50%;
+  height: 0.75em;
+  aspect-ratio: 1;
+}
+
+.asset-ability-bullet-ironsworn {
+  @include asset-ability-bullet-ironsworn;
+}
+
+@mixin asset-ability-bullet-starforged {
+  margin-top: 0.15em;
+  background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+  height: 1em;
+  aspect-ratio: $hexagon-aspect-ratio;
+  mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
 }
 
 .asset-ability-bullet-starforged {
-  aspect-ratio: $hexagon-aspect-ratio;
-  background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-  mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-  height: 1em;
-  margin-top: 0.15em;
+  @include asset-ability-bullet-starforged;
+}
+
+@mixin asset-ability-bullet-starforged-marked {
+  mask-image: url('/assets/misc/hex-checkbox-checked.svg');
 }
 
 .asset-ability-bullet-starforged-marked {
-  mask-image: url('/assets/misc/hex-checkbox-checked.svg');
+  @include asset-ability-bullet-starforged-marked;
 }
 
 .asset-ironsworn,
@@ -171,9 +190,9 @@ $hex-deco-collapsed-height: 32px;
   // common properties for asset ability bullet/checkbox
   .asset-ability {
     &::before {
-      content: '';
-
       @include asset-ability-bullet;
+
+      content: '';
     }
 
     &.marked::before {
@@ -191,7 +210,7 @@ $hex-deco-collapsed-height: 32px;
 }
 
 .asset-starforged {
-  @include starforged-asset-deco(50px,32px);
+  @include decorations.starforged-asset-deco(50px, 32px);
 
   .asset-abilities {
     .asset-ability {

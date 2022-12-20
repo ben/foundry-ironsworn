@@ -34,16 +34,17 @@
   </Collapsible>
 </template>
 
-<style lang="less" module>
-@import (reference) '../../../styles/mixins.less';
+<style lang="scss" module>
+@use '@styles/mixins';
 
-.thematicColorMixin {
+@mixin thematic-color() {
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
   --ironsworn-color-thematic: v-bind('category?.color');
 }
 
 .wrapper {
-  .thematicColorMixin();
+  @include mixins.thematic-color;
+
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-thematic);
 }
@@ -51,43 +52,53 @@
 .list {
   display: flex;
   flex-flow: column nowrap;
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
+
 .toggleWrapper {
   box-sizing: content-box;
 }
+
 .toggleSection {
   box-sizing: content-box;
-  background-color: var(--ironsworn-color-thematic);
   border-radius: var(--ironsworn-border-radius-lg);
+  background-color: var(--ironsworn-color-thematic);
   height: var(--ironsworn-line-height);
+
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
     --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-    .clickableTextMixin();
+    @include clickable-text;
+
     height: inherit;
   }
 }
+
 .toggleButton {
-  .textStrokeMixin( var(--ironsworn-color-dark));
+  @include mixins.text-stroke(var(--ironsworn-color-dark));
+
   background: none;
 }
 
 .listItem {
 }
+
 .moveRow {
   &:focus {
     border: 0;
+
     // outline: 1px solid var(--ironsworn-color-cool);
     // box-shadow: var(--ironsworn-box-shadow-highlight) !important;
     // TODO: figure out a better way to convey focus here.
     box-shadow: none;
   }
-  &[data-highlighted='true']:after {
-    .overlayMixin();
-    .staticHighlightMixin(50);
+
+  &[data-highlighted='true']::after {
+    @include mixins.overlay;
+    @include mixins.static-highlight(50);
+
     opacity: 0;
     animation: overlay-fadeout v-bind('$props.highlightDuration +"ms"')
       ease-in-out;
@@ -97,9 +108,11 @@
   0% {
     opacity: 0;
   }
+
   15% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }

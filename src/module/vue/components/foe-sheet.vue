@@ -55,11 +55,12 @@
 
 <style lang="scss" module>
 .dropTarget {
-  text-align: center;
   justify-items: space-around;
+  text-align: center;
+
   .clickable.block {
-    padding: 1rem;
     flex-grow: 0;
+    padding: 1rem;
   }
 }
 </style>

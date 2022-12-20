@@ -1,4 +1,21 @@
-@import 'mixins';
+@use 'mixins';
+@use 'dialog';
+@use 'fvtt/dialog' as fvtt-dialog;
+@use 'transitions';
+@use 'assets';
+@use 'attr-box';
+@use 'chat-message';
+@use 'clickable';
+
+// @use 'dialog';
+@use 'dice';
+@use 'drag-and-drop';
+@use 'editor';
+@use 'icons';
+@use 'list';
+@use 'scrollbar';
+@use 'sheet';
+@use 'tables';
 
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
@@ -33,22 +50,10 @@
   --ironsworn-input-border-style: solid;
 
   // for later use as a mixin to scope transitions to colors effects only.
-  --ironsworn-transition-property-color:
-    background-color,
-    border-color,
-    box-shadow,
-    caret-color,
-    color,
-    column-rule-color,
-    filter,
-    opacity,
-    outline-color,
-    text-decoration-color,
-    fill-opacity,
-    fill-color,
-    stroke;
-  --std-animation-timing:
-    var(--ironsworn-transition-duration)
+  --ironsworn-transition-property-color: background-color, border-color,
+    box-shadow, caret-color, color, column-rule-color, filter, opacity,
+    outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
+  --std-animation-timing: var(--ironsworn-transition-duration)
     var(--ironsworn-transition-timing-function);
   --std-animation: all 0.5s ease;
   --fa-display: inline-block;
@@ -81,26 +86,41 @@
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
-  @import 'utils';
-  @import 'inputs';
-  @import (reference) './fvtt/dialog';
+  // @include 'utils';
+  // @include 'inputs'; // figure out how to scope this sensibly
+  @extend %utils;
+  @extend %inputs;
+  @extend %assets;
 
-  &.dialog {
-    @include dialog;
+  .dialog {
+    @extend %dialog;
   }
 
   form button,
   button {
     margin: 0;
-    width: auto;
     border: 0 solid var(--ironsworn-color-border);
+    width: auto;
     line-height: var(--ironsworn-line-height);
   }
 }
 
-@import 'transitions';
-
 .system-foundry-ironsworn {
+  // importing within this selector to ensure higher specificity
+  // @use 'assets';
+  // @use 'attr-box';
+  // @use 'chat-message';
+  // @use 'clickable';
+  // @use 'dialog';
+  // @use 'dice';
+  // @use 'drag-and-drop';
+  // @use 'editor';
+  // @use 'icons';
+  // @use 'list';
+  // @use 'scrollbar';
+  // @use 'sheet';
+  // @use 'tables';
+
   // transitions for interactive elements
   a,
   button,
@@ -126,15 +146,15 @@
 
     .window-content {
       background: var(--ironsworn-color-bg);
-      color: var(--ironsworn-color-fg);
-      height: 100%;
       padding: var(--ironsworn-spacer-md);
+      height: 100%;
+      color: var(--ironsworn-color-fg);
     }
 
     hr {
-      width: 100%;
       border: 0 solid var(--ironsworn-color-border);
       border-width: 0 0 var(--ironsworn-border-width-md);
+      width: 100%;
     }
 
     h1,
@@ -158,19 +178,4 @@
       }
     }
   }
-
-  // importing within this selector to ensure higher specificity
-  @import 'assets';
-  @import 'attr-box';
-  @import 'chat-message';
-  @import 'clickable';
-  @import 'dialog';
-  @import 'dice';
-  @import 'drag-and-drop';
-  @import 'editor';
-  @import 'icons';
-  @import 'list';
-  @import 'scrollbar';
-  @import 'sheet';
-  @import 'tables';
 }

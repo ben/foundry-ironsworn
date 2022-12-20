@@ -123,22 +123,23 @@
 }
 
 .asset-ability-bullet-ironsworn {
-  height: 15px;
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  height: 15px;
 }
 
 .asset-ability-bullet-starforged {
-  height: 1em;
-  background-color: var(--ironsworn-color-border);
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  background-color: var(--ironsworn-color-border);
+  height: 1em;
 }
 </style>
 
 <style lang="scss" module>
 .ironsworn__asset {
+  --ironsworn-color-thematic: v-bind('item.system.color');
+
   margin: var(--ironsworn-spacer-xl) 0;
   padding: var(--ironsworn-spacer-md);
-  --ironsworn-color-thematic: v-bind('item.system.color');
 }
 </style>
 

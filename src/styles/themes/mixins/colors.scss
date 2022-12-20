@@ -1,47 +1,49 @@
-@mixin ironswornLightThemeMixin($prefix){
+@mixin ironsworn-light-theme($prefix) {
   --#{$prefix}-legacy-quests: var(--ironsworn-color-red);
   --#{$prefix}-legacy-bonds: var(--ironsworn-color-purple);
   --#{$prefix}-legacy-discoveries: var(--ironsworn-color-blue);
 }
-@mixin ironswornDarkThemeMixin($prefix){
+
+@mixin ironsworn-dark-theme($prefix) {
   --#{$prefix}-legacy-quests: var(--ironsworn-color-red-dark);
   --#{$prefix}-legacy-bonds: var(--ironsworn-color-purple-dark);
   --#{$prefix}-legacy-discoveries: var(--ironsworn-color-blue-dark);
 }
 
 // generates color variables to style an interactive element with an invert effect when it's active
-@mixin interactiveInvertMixin($elementPrefix, $sourcePrefix){
-  --#{$elementPrefix}-fg: var(e(undefined
-  --#{$elementPrefix}-bg: transparent;
-  --#{$elementPrefix}-border: var(e(undefined
-  --#{$elementPrefix}-fg-hover: var(e(undefined
-  --#{$elementPrefix}-bg-hover: var(e(undefined
-  --#{$elementPrefix}-border-hover: var(e(undefined
-  --#{$elementPrefix}-fg-selected: var(e(undefined
-  --#{$elementPrefix}-bg-selected: var(e(undefined
-  --#{$elementPrefix}-border-selected: var(e(undefined
+@mixin interactive-invert($element-prefix, $source-prefix) {
+  --#{$element-prefix}-fg: var(--#{$element-prefix}-fg);
+  --#{$element-prefix}-bg: transparent;
+  --#{$element-prefix}-border: var(--#{$element-prefix}-border);
+  --#{$element-prefix}-fg-hover: var(--#{$element-prefix}-fg);
+  --#{$element-prefix}-bg-hover: var(--#{$element-prefix}-fg-20);
+  --#{$element-prefix}-border-hover: var(--#{$element-prefix}-border);
+  --#{$element-prefix}-fg-selected: var(--#{$element-prefix}-bg);
+  --#{$element-prefix}-bg-selected: var(--#{$element-prefix}-fg);
+  --#{$element-prefix}-border-selected: var(--#{$element-prefix}-fg);
 }
+
 // generates color variables to style an interactive element with slightly dulled colours in its default state, and a tint effect when it's active.
-@mixin interactiveTintMixin($elementPrefix, $sourcePrefix){
-  --#{$elementPrefix}-fg: var(e(undefined
-  --#{$elementPrefix}-bg: transparent;
-  --#{$elementPrefix}-border: var(e(undefined
-  --#{$elementPrefix}-fg-hover: var(e(undefined
-  --#{$elementPrefix}-bg-hover: var(e(undefined
-  --#{$elementPrefix}-border-hover: var(e(undefined
-  --#{$elementPrefix}-fg-selected: var(e(undefined
-  --#{$elementPrefix}-bg-selected: var(e(undefined
-  --#{$elementPrefix}-border-selected: var(e(undefined
+@mixin interactive-tint($element-prefix, $source-prefix) {
+  --#{$element-prefix}-fg: var(--#{$source-prefix}-midtone-80);
+  --#{$element-prefix}-bg: transparent;
+  --#{$element-prefix}-border: var(--#{$source-prefix}-midtone-80);
+  --#{$element-prefix}-fg-hover: var(--#{$source-prefix}-fg-warm);
+  --#{$element-prefix}-bg-hover: var(--#{$source-prefix}-fg-30);
+  --#{$element-prefix}-border-hover: var(--#{$source-prefix}-fg);
+  --#{$element-prefix}-fg-selected: var(--#{$source-prefix}-fg-warm);
+  --#{$element-prefix}-bg-selected: var(--#{$source-prefix}-fg-50);
+  --#{$element-prefix}-border-selected: var(--#{$source-prefix}-fg-warm);
 }
 
-@mixin softBorderMixin($prefix){
-  --#{$prefix}-border-highlight: var(e(undefined
-  --#{$prefix}-border: var(e(undefined
-  --#{$prefix}-border-muted: var(e(undefined
+@mixin soft-border($prefix) {
+  --#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
+  --#{$prefix}-border: var(--#{$prefix}-fg-80);
+  --#{$prefix}-border-muted: var(--#{$prefix}-fg-30);
 }
 
-@mixin sharpBorderMixin($prefix){
-  --#{$prefix}-border-highlight: var(e(undefined
-  --#{$prefix}-border: var(e(undefined
-  --#{$prefix}-border-muted: var(e(undefined
+@mixin sharp-border($prefix) {
+  --#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
+  --#{$prefix}-border: var(--#{$prefix}-fg);
+  --#{$prefix}-border-muted: var(--#{$prefix}-fg-80);
 }

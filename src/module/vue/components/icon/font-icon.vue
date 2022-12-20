@@ -16,29 +16,33 @@
 
 <style lang="scss" module>
 .font-icon {
-  height: 1em;
-  width: 1em;
-  line-height: 1 !important;
-  position: relative;
   display: flex;
+  position: relative;
   justify-content: center;
+  width: 1em;
+  height: 1em;
+  line-height: 1 !important;
 
   &::before {
-    flex-basis: 0;
     display: flex-item;
+    flex-basis: 0;
   }
 }
 
-@mixin font-icon-border {
-  @each(v-bind('borderOptions'), {
-    @{key}: @value
-  });
+.font-icon-border {
+  // @each $value, $key in v-bind('borderOptions') {
+  //   @if $value {
+  //     #{$key}: $value;
+  //   }
+  // }
 }
 
-@mixin font-icon-animation {
-  @each(v-bind('animationOptions'), {
-    @{key}: @value;
-  });
+.font-icon-animation {
+  // @each $value, $key in v-bind('animationOptions') {
+  //   @if $value {
+  //     #{$key}: $value;
+  //   }
+  // }
 }
 </style>
 

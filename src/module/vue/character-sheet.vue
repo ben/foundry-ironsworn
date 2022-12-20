@@ -64,6 +64,7 @@
 .tabContent {
   height: inherit;
 }
+
 .tabSet {
   margin-top: 0.5rem;
 }
@@ -73,6 +74,7 @@
 .character-sheet-classic {
   gap: var(--ironsworn-spacer-xl);
 }
+
 .stat-roll {
   text-transform: uppercase;
 }

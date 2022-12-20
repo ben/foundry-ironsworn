@@ -82,12 +82,15 @@
 <style lang="scss">
 .sf-character-sheet {
   gap: 7px;
+
   .stat-roll {
     text-transform: uppercase;
   }
+
   .condition-meters {
     .icon-button {
       flex-direction: column;
+
       .button-text {
         writing-mode: vertical-lr;
       }

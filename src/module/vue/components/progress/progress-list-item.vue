@@ -93,57 +93,67 @@
 
 <style lang="scss" scoped>
 $progress-widget-spacing: 6px;
+
 .progress-list-item {
-  padding: ($progress-widget-spacing / 2) ($progress-widget-spacing / 2)
-    $progress-widget-spacing;
   display: grid;
-  grid-template-columns: max-content max-content 1fr max-content;
   grid-template-rows: max-content max-content 1fr;
+  grid-template-columns: max-content max-content 1fr max-content;
   gap: $progress-widget-spacing;
+  padding: calc($progress-widget-spacing / 2) calc($progress-widget-spacing / 2)
+    $progress-widget-spacing;
+
   .progress-img {
-    grid-column: 2;
     grid-row: 1 / span 2;
+    grid-column: 2;
     margin: 0;
   }
+
   .progress-rank-pips {
-    grid-column: 3 / span 2;
     grid-row: 1;
+    grid-column: 3 / span 2;
   }
+
   .progress-title {
-    grid-column: 3;
     grid-row: 2;
+    grid-column: 3;
     margin: 0;
-    line-height: 1;
     height: max-content;
-  }
-  .progress-subtitle {
-    color: var(--ironsworn-color-fg-muted);
-    text-transform: uppercase;
-    grid-column: 1;
-    grid-row: 1 / span 3;
-    padding: 0;
     line-height: 1;
-    width: max-content;
+  }
+
+  .progress-subtitle {
+    grid-row: 1 / span 3;
+    grid-column: 1;
     margin: 0;
+    padding: 0;
+    width: max-content;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--ironsworn-color-fg-muted);
     font-weight: normal;
   }
+
   .progress-widgets {
-    grid-column: 2 / span 3;
     grid-row: 3;
+    grid-column: 2 / span 3;
     gap: 2px;
+
     .progress-clock {
       flex-basis: 50px;
     }
   }
+
   .progress-controls {
     display: grid;
-    grid-column: 4;
     grid-row: 1 / span 2;
+    grid-column: 4;
     grid-auto-flow: column;
+
     > * {
       aspect-ratio: 1;
       grid-row: 1;
     }
+
     .star-progress {
       grid-row: 2;
     }

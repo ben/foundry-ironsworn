@@ -32,17 +32,6 @@ svg.clock {
   stroke-width: var(--widget-stroke-width);
   aspect-ratio: 1;
 
-  .clock-segment {
-    pointer-events: fill;
-    cursor: pointer;
-    vector-effect: non-scaling-stroke;
-    transition: var(--std-animation);
-
-    &:active {
-      fill-opacity: 1;
-    }
-  }
-
   &:hover {
     fill-opacity: var(--clock-fill-opacity-hover);
 
@@ -64,6 +53,17 @@ svg.clock {
           fill-opacity: 0;
         }
       }
+    }
+  }
+
+  .clock-segment {
+    transition: var(--std-animation);
+    cursor: pointer;
+    pointer-events: fill;
+    vector-effect: non-scaling-stroke;
+
+    &:active {
+      fill-opacity: 1;
     }
   }
 

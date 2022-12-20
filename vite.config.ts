@@ -4,11 +4,24 @@ import autoprefixer from 'autoprefixer'
 import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
+import sassSyntax from 'postcss-scss'
+import sassPlugin from '@csstools/postcss-sass'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import sass from 'sass'
+import chromatic from './src/module/plugin/chromatic-sass'
 
 const PORT = 30000
 
+const sassOptions: sass.Options<'sync'> = {
+  functions: chromatic,
+}
+
 const config: UserConfig = {
+  root: './',
   plugins: [
+    tsconfigPaths({
+      loose: true,
+    }),
     vue(),
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
     createSvgIconsPlugin({
@@ -37,13 +50,9 @@ const config: UserConfig = {
     },
   },
   css: {
-    preprocessorOptions: {
-      less: {
-        rewriteUrls: 'local',
-      },
-    },
     postcss: {
-      plugins: [autoprefixer()],
+      syntax: sassSyntax,
+      plugins: [sassPlugin(sassOptions), autoprefixer()],
     },
   },
   build: {

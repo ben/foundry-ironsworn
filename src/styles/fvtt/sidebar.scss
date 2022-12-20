@@ -1,6 +1,6 @@
 // styles for FVTT's sidebar
 
-@import '../mixins';
+@use '../mixins';
 
 #sidebar {
   li.folder > .folder-header {
@@ -11,8 +11,8 @@
   .compendium-sidebar {
     h2,
     h3 {
-      background-color: var(--ironsworn-color-light-10);
       border-color: var(--ironsworn-color-midtone-50);
+      background-color: var(--ironsworn-color-light-10);
     }
   }
 
@@ -28,8 +28,8 @@
     .collapse {
       @include clickable-block;
 
-      background-color: transparent;
       border: 0;
+      background-color: transparent;
     }
   }
 

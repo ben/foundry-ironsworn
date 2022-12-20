@@ -19,10 +19,12 @@
   // ensures that the TabPanels have a recent ancestor for their absolute positioning.
   position: relative;
 }
+
 .tabPanelsHorizontal {
   // so the animation doesn't encroach on adjacent elements
   overflow-x: clip;
 }
+
 .tabPanelsVertical {
   // so the animation doesn't encroach on adjacent elements
   overflow-x: clip;

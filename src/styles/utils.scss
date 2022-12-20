@@ -1,16 +1,16 @@
 // for classes that apply a set of commonly used styles, but don't describe an element with a specific purpose
-@import 'mixins';
+@use 'mixins';
 
 .grid {
   display: grid;
 }
 
 .margin-left {
-  @include margin(right);
+  @include mixins.margin(right);
 }
 
 .highlighted {
-  @include static-highlight(30);
+  @include mixins.static-highlight(30);
 }
 
 .scrollable {
@@ -20,7 +20,7 @@
 }
 
 .margin-right {
-  @include margin(left);
+  @include mixins.margin(left);
 }
 
 .vertical-text {
@@ -36,11 +36,10 @@
 
 .inset {
   margin: var(--ironsworn-spacer-md);
-  padding: var(--ironsworn-spacer-md);
-  border:
-    var(--ironsworn-border-width-md) solid
+  border: var(--ironsworn-border-width-md) solid
     var(--ironsworn-color-border-muted);
   border-radius: var(--ironsworn-border-radius-md);
+  padding: var(--ironsworn-spacer-md);
 }
 
 .boxgroup {
@@ -48,8 +47,7 @@
   border-radius: var(--ironsworn-border-radius-lg);
 
   .boxrow {
-    border-top:
-      var(--ironsworn-border-width-md) solid
+    border-top: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
 
     &:first-child {
@@ -58,19 +56,18 @@
 
     &.small {
       flex-basis: 25px;
-      line-height: 25px;
       flex-grow: 0;
+      line-height: 25px;
     }
   }
 
   .box {
-    border-width: var(--ironsworn-border-width-md);
     display: flex;
-    text-align: center;
     justify-content: center;
-    border-left:
-      var(--ironsworn-border-width-md) solid
+    border-left: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
+    border-width: var(--ironsworn-border-width-md);
+    text-align: center;
 
     &:first-child {
       border-left: none;
@@ -82,25 +79,25 @@
   flex-grow: 0;
 
   .stack-row {
+    position: relative;
+
     // FIXME refactor as component and encapsulate the relevant css there
     flex: 0 0 auto;
-    min-width: var(--ironsworn-vertical-slider-width);
+    z-index: auto;
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
     border-top: none;
+    padding: 0;
+    min-width: var(--ironsworn-vertical-slider-width);
     text-align: center;
     line-height: var(--ironsworn-line-height-lg);
-    position: relative;
-    z-index: auto;
-    padding: 0;
 
     &:hover,
     &.hover,
     &.selected,
     &[aria-selected='true'] {
-      z-index:
-        var(
-          --ironsworn-z-index-high
-        ); // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
+      z-index: var(
+        --ironsworn-z-index-high
+      ); // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
     }
 
     &:first-child {

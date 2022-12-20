@@ -1,5 +1,5 @@
 // styles for FVTT application windows.
-@import '../mixins';
+@use '../mixins';
 
 .app {
   border-color: var(--ironsworn-color-midtone-80);
@@ -54,14 +54,14 @@
 }
 
 .window-content {
-  height: 100%;
-  padding: var(--ironsworn-spacer-md);
-  background: var(--ironsworn-color-bg);
-  color: var(--ironsworn-color-fg);
 
   // so the background doesn't spill over the parent element's border
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
+  background: var(--ironsworn-color-bg);
+  padding: var(--ironsworn-spacer-md);
+  height: 100%;
+  color: var(--ironsworn-color-fg);
 }
 
 .window-app,
@@ -72,8 +72,8 @@
 
 .window-app {
   .window-header {
-    color: var(--ironsworn-color-fg);
     border-bottom-color: var(--ironsworn-color-border-muted);
+    color: var(--ironsworn-color-fg);
   }
 }
 

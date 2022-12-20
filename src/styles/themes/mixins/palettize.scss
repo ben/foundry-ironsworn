@@ -1,7 +1,8 @@
-@use 'sass:color', 'sass:math';
+@use 'sass:color';
+@use 'sass:math';
 
 /**
- * LESS mixin that interpolates CSS variables for a palette of colours.
+ * Mixin that interpolates CSS variables for a palette of colours.
  * Currently it doesn't check contrast, but it probably should.
 * NOTE: 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' are more about a UX element's importance/activity (warmer = more active/dramatic).
  * $prefix - the prefix to use for the generated CSS variables.
@@ -17,9 +18,9 @@
   $warm-color: hsl(24, 100%, 50%),
   $cool-color: hsl(0, 100%, 50%)
 ) {
-  // TODO: This could probably be improved significantly with chroma.js, or its SCSS plugin.
-  $fg-luma: color.luma($fg-color);
-  $bg-luma: color.luma($bg-color);
+  // TODO: With SCSS migration and the chromatic-sass plugin, this could be significantly improved.
+  $fg-luma: chromatic-color-luminance($fg-color);
+  $bg-luma: chromatic-color-luminance($bg-color);
 
   @if $fg-luma > $bg-luma {
     $light-color: $fg-color;
@@ -65,6 +66,22 @@
   --#{$prefix}-bg-warm: $bg-warm;
   --#{$prefix}-bg-cool: $bg-cool;
 
+  // Set sensible defaults for semantically-oriented colors
+  --#{$prefix}-fg-muted: var(--#{$prefix}-midtone-60);
+  --#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
+
+  // INPUT
+  --#{$prefix}-input-bg: var(--#{$prefix}-#{fg-type}-10);
+  --#{$prefix}-input-border: var(--#{$prefix}-#{fg-type}-10);
+
+  // CLICKABLE TEXT
+  --#{$prefix}-clickable-text: inherit;
+  --#{$prefix}-clickable-text-hover: var(--#{$prefix}-#{fg-type}-warm);
+  --#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{fg-type}-warm);
+
+  // WIDGETS
+  --#{$prefix}-widget-fill: var(--#{$prefix}-#{fg-type});
+
   // transparent overlays
   @include mix-overlays($prefix, warm, $warm-color);
   @include mix-overlays($prefix, cool, $cool-color);
@@ -86,35 +103,23 @@
 
   // *-scale-* variables describe a color scale from $light-color to $dark-color, where *-scale-90 is 90% $light-color, and *-scale-10 is 10% $light-color.
   @include mix-scale($prefix, scale, $dark-color, $light-color);
-
-  // Set sensible defaults for semantically-oriented colors
-  --#{$prefix}-fg-muted: var(--#{$prefix}-midtone-60);
-  --#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
-
-  // INPUT
-  --#{$prefix}-input-bg: var(--#{$prefix}-#{fg-type}-10);
-  --#{$prefix}-input-border: var(--#{$prefix}-#{fg-type}-10);
-
-  // CLICKABLE TEXT
-  --#{$prefix}-clickable-text: inherit;
-  --#{$prefix}-clickable-text-hover: var(--#{$prefix}-#{fg-type}-warm);
-  --#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{fg-type}-warm);
-
-  // WIDGETS
-  --#{$prefix}-widget-fill: var(--#{$prefix}-#{fg-type});
 }
 
 // HELPER MIXINS
-@mixin mix-overlays($prefix,$infix,$base-color) {
+@mixin mix-overlays($prefix, $infix, $base-color) {
   $overlays: range(10, 90, 10);
-  @each($overlays, {
-    --#{$prefix}-#{$infix}-#{$value}: rgba($base-color, $value);
-  });
+  @each $percent in $overlays {
+    --#{$prefix}-#{$infix}-#{$percent}: rgba($base-color, $percent);
+  }
 }
 
-@mixin mix-scale($prefix,$infix,$base-color,$added-color) {
+@mixin mix-scale($prefix, $infix, $base-color, $added-color) {
   $mixtures: range(10, 90, 10);
-  @each($mixtures, {
-    --#{$prefix}-#{$infix}-#{$value}: color.mix($added-color, $base-color, $value);
-  });
+  @each $percent in $mixtures {
+    --#{$prefix}-#{$infix}-#{$percent}: color.mix(
+      $added-color,
+      $base-color,
+      $percent
+    );
+  }
 }

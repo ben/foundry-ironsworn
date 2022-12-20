@@ -21,11 +21,11 @@
 <style lang="scss" module>
 .completed-progress-wrapper {
   margin-top: var(--ironsworn-spacer-lg);
-  border-radius: var(--ironsworn-border-radius-lg);
   border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-lg);
   border-color: var(--ironsworn-color-fg-10);
   background-color: var(--ironsworn-color-fg-10);
-  border-style: solid;
 }
 
 .completed-progress-list {
@@ -33,8 +33,8 @@
 }
 
 .completed-progress-list-item {
-  background-color: var(--ironsworn-color-bg-50);
   border-color: var(--ironsworn-color-bg-50);
+  background-color: var(--ironsworn-color-bg-50);
 }
 </style>
 

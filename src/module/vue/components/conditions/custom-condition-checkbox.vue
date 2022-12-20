@@ -15,12 +15,13 @@
 
 <style lang="scss" scoped>
 label {
-  margin-left: -2px;
   margin-right: var(--ironsworn-spacer-md);
+  margin-left: -2px;
 }
+
 input[type='text'] {
-  border: 0;
   outline: 0;
+  border: 0;
   border-bottom: var(--ironsworn-border-width-md) solid;
 }
 </style>

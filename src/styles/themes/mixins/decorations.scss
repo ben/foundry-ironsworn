@@ -11,37 +11,38 @@
   }
 
   .asset-starforged .asset-ability::before {
-    background-color: var(--ironsworn-color-fg);
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
+    background-color: var(--ironsworn-color-fg);
   }
 }
 
-.starforged-asset-deco {
-  $hex-deco-expanded-height: 50px;
-  $hex-deco-collapsed-height: 32px;
-  $hex-deco-aspect-ratio: 24 / 28;
+@mixin starforged-asset-deco(
+  $hex-deco-expanded-height: 50px,
+  $hex-deco-collapsed-height: 32px
+) {
+  $hex-deco-aspect-ratio: calc(24 / 28);
 
   position: relative;
 
-  & > * {
-    z-index: 2;
-  }
-
   &::before {
     display: block;
-    pointer-events: none;
-    content: '';
-    mask-image: url(/assets/misc/hex-deco.svg);
-    background: var(--ironsworn-color-thematic);
     position: absolute;
-    aspect-ratio: $hex-deco-aspect-ratio;
-    z-index: auto;
-    mask-repeat: no-repeat;
+    top: -($hex-deco-expanded-height * 0.09);
+    right: ($hex-deco-expanded-height * 0.03);
     transform: scaleX(-1);
+    z-index: auto;
+    background: var(--ironsworn-color-thematic);
     height: $hex-deco-collapsed-height;
-    top: -($height * 0.09);
-    right: ($height * 0.03);
+    content: '';
+    pointer-events: none;
+    mask-image: url('/assets/misc/hex-deco.svg');
+    aspect-ratio: $hex-deco-aspect-ratio;
+    mask-repeat: no-repeat;
+  }
+
+  & > * {
+    z-index: 2;
   }
 
   .asset-header {

@@ -1,6 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@styles/*": ["./styles/*"],
+      "@components/*": ["./module/vue/components/*"]
+    },
     "target": "es2018",
     "module": "esnext",
     "lib": ["es2015", "es2019", "dom"],

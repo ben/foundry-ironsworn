@@ -30,12 +30,15 @@
 </template>
 
 <style lang="scss">
-@import (reference) '../../../../styles/mixins.less';
+@use '@styles/mixins';
+
 .momentum-meter {
   gap: var(--ironsworn-spacer-md) 0;
+
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
-      @include block-hover();
+      @include block-hover;
+
       box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
         0 0 5px var(--ironsworn-color-warm),
         0 0 10px var(--ironsworn-color-cool);

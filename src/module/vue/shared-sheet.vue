@@ -32,17 +32,17 @@
 }
 
 h3 {
-  margin: var(--ironsworn-spacer-md) 0;
   transition: background-color 0.2s ease;
+  margin: var(--ironsworn-spacer-md) 0;
 }
 
 textarea.notes {
-  border-color: rgba(0, 0, 0, 0.1);
-  border-radius: var(--ironsworn-border-radius-sm);
-  font-family: var(--font-primary);
-  resize: none;
   flex: 1;
+  border-radius: var(--ironsworn-border-radius-sm);
+  border-color: rgb(0 0 0 / 10%);
   min-height: 150px;
+  resize: none;
+  font-family: var(--font-primary);
 }
 </style>
 

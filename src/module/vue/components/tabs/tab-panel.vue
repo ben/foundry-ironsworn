@@ -22,16 +22,16 @@
   // prevents outgoing panels from fighting incoming panels for space
   position: absolute;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
 }
 </style>
 
 <style lang="scss" module>
 .tabPanel {
-  background-color: var(--ironsworn-color-bg);
   backface-visibility: hidden;
+  background-color: var(--ironsworn-color-bg);
 }
 </style>
 

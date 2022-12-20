@@ -1,50 +1,50 @@
 // styles for any FVTT dialog. You can import them globally, or scoped to e.g. the .ironsworn class.
-@import (reference) '../mixins';
-@import (reference) '../utils';
+@use '../mixins';
+@use '../utils';
 
 .dialog {
   .window-content {
     .dialog-content {
       fieldset {
-        background-color: var(--ironsworn-color-fg-10);
-        border-radius: var(--ironsworn-border-radius-md);
         border: none;
+        border-radius: var(--ironsworn-border-radius-md);
+        background-color: var(--ironsworn-color-fg-10);
       }
 
       details {
         summary {
-          cursor: pointer;
           border-radius: var(--ironsworn-border-radius-md);
+          cursor: pointer;
 
           &:focus {
-            @include input-field-focus;
+            @include mixins.input-field-focus;
           }
         }
       }
     }
 
     .dialog-buttons {
-      height: max-content;
-      align-items: flex-end;
       display: flex;
       flex-flow: row wrap;
       flex-grow: 0;
       gap: var(--ironsworn-spacer-sm);
+      align-items: flex-end;
+      height: max-content;
 
       button.default,
       button {
-        @include clickable-block;
+        @include mixins.clickable-block;
 
         display: flex;
         align-items: center;
         justify-content: center;
-        height: max-content;
         border-width: var(--ironsworn-border-radius-md);
         border-radius: 0;
+        height: max-content;
 
         .button-text {
-          @include nogrow;
-          @include initial-caps;
+          @extend %nogrow;
+          @include mixins.initial-caps;
 
           width: auto;
           height: max-content;

@@ -2,7 +2,7 @@
   <DropTarget is="div" class="flexcol box" :dropType="itemType">
     <div
       v-if="item"
-      style="padding: var(--ironsworn-spacer-xl); position: relative"
+      style=" position: relative;padding: var(--ironsworn-spacer-xl)"
     >
       <div class="flexrow">
         <document-img
@@ -22,8 +22,8 @@
           v-if="editMode"
           style="
             position: absolute;
-            right: var(--ironsworn-spacer-md);
             top: var(--ironsworn-spacer-md);
+            right: var(--ironsworn-spacer-md);
           "
         >
           <IronBtn block icon="fa:trash" @click="destroy" />

@@ -85,19 +85,20 @@
 }
 
 .toggleButton {
+  display: flex;
   transition: transform 0.4s;
   margin-left: var(--ironsworn-spacer-xs);
-  display: flex;
+
   .wrapper[aria-expanded='true'] & {
     transform: v-bind(transform);
   }
 }
 
 .toggleWrapper {
-  padding: 0;
-  margin: 0;
-  flex-grow: 1;
   display: flex;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
 }
 
 .toggleSection {
@@ -105,11 +106,11 @@
 }
 
 .toggle {
+  flex-grow: 1;
+  justify-content: left;
   margin: 0;
   height: inherit;
-  flex-grow: 1;
   text-transform: uppercase;
-  justify-content: left;
   font-size: inherit;
 }
 </style>

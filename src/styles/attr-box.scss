@@ -1,29 +1,29 @@
 // styles attr-box (aka stat box) elements.
 // these could probably just live in their own component, but the compact sheet would need to be migrated to Vue, first.
+@use 'mixins';
 
 .stats {
   flex: 0;
   justify-content: space-around;
 
   .stat {
-    text-transform: uppercase;
-
     --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
-    @include text-stroke;
+    @include mixins.text-stroke;
 
     flex: 0 0 75px;
-    border-style: solid;
     border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
     border-radius: var(--ironsworn-border-radius-lg) !important;
-    text-align: center;
     padding: 0.5rem 0;
+    text-align: center;
+    text-transform: uppercase;
 
     h3 {
       margin: 0;
       margin-bottom: var(--ironsworn-spacer-md);
-      font-weight: bold;
       font-size: 22px;
+      font-weight: bold;
     }
 
     h4 {
@@ -32,20 +32,20 @@
     }
 
     input {
-      width: 50%;
       margin-bottom: var(--ironsworn-spacer-md);
-      font-weight: bold;
-      font-size: 18px;
+      width: 50%;
       text-align: center;
+      font-size: 18px;
+      font-weight: bold;
     }
   }
 
   .edit {
     flex: 0 0 30px;
-    justify-items: center;
     align-items: center;
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+    justify-items: center;
     transition: var(--std-animation);
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
 
     &.editing {
       background: var(--ironsworn-color-bg-muted);

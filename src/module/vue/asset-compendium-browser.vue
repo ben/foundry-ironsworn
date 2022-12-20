@@ -46,22 +46,22 @@
 <style lang="scss" scoped>
 h2 {
   margin: 0;
-  line-height: 1.5;
   border: none;
   height: min-content;
+  line-height: 1.5;
 
   button {
-    line-height: 1.5;
     height: min-content;
     text-transform: uppercase;
+    line-height: 1.5;
   }
 }
 
 .asset-category {
   margin-bottom: 1em;
-  padding: var(--ironsworn-spacer-md);
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   border-radius: var(--ironsworn-border-radius-lg);
+  padding: var(--ironsworn-spacer-md);
 }
 
 .asset-category-contents {

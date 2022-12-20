@@ -1,6 +1,6 @@
 // styles for form input elements. for ProseMirror and TinyMCE styles, see editors.scss.
 // the main style sheet scopes these to .ironsworn, so import them again globally if you want to retheme the form inputs on the UX elements that belong to FVTT.
-@import 'mixins';
+@use 'mixins';
 
 *::placeholder {
   font-family: inherit;
@@ -69,114 +69,114 @@ input[type='range'] {
   $slider-track-border-color-focus: var(--ironsworn-color-cool-50);
   $slider-box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
 
-  background: transparent;
   appearance: none;
-  height: 20px;
   margin: 0;
+  background: transparent;
   width: 100%;
+  height: 20px;
+
+  &::-webkit-slider-runnable-track {
+    border: 1px solid $slider-track-border-color;
+    border-radius: $slider-track-border-radius;
+    box-shadow: $slider-box-shadow;
+    background: $slider-track-bg-color;
+    cursor: pointer;
+    width: 100%;
+    height: $slider-track-height;
+  }
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    margin-top: -4px;
+    border: 1px solid $slider-thumb-border-color;
+    border-radius: 2px;
+    box-shadow: $slider-box-shadow;
+    background: $slider-thumb-bg-color;
+    cursor: pointer;
+    width: $slider-thumb-width;
+    height: $slider-thumb-height;
+  }
+
+  &::-moz-range-track {
+    border: 1px solid $slider-track-border-color;
+    border-radius: $slider-track-border-radius;
+    box-shadow: $slider-box-shadow;
+    background: $slider-track-bg-color;
+    cursor: pointer;
+    width: 100%;
+    height: $slider-track-height;
+  }
+
+  &::-moz-range-thumb {
+    border: 1px solid $slider-thumb-border-color;
+    border-radius: 2px;
+    box-shadow: $slider-box-shadow;
+    background: $slider-thumb-bg-color;
+    cursor: pointer;
+    width: $slider-thumb-width;
+    height: $slider-thumb-height;
+  }
+
+  &::-ms-track {
+    border-color: transparent;
+    background: transparent;
+    cursor: pointer;
+    width: 100%;
+    height: $slider-track-height;
+    color: transparent;
+  }
+
+  &::-ms-fill-lower {
+    border: 1px solid $slider-track-border-color;
+    border-radius: $slider-track-height;
+    box-shadow: $slider-box-shadow;
+    background: #8c8c8c;
+  }
+
+  &::-ms-fill-upper {
+    border: 1px solid $slider-track-border-color;
+    border-radius: $slider-track-height;
+    box-shadow: $slider-box-shadow;
+    background: $slider-track-bg-color;
+  }
+
+  &::-ms-thumb {
+    border: 1px solid $slider-thumb-border-color;
+    border-radius: 2px;
+    box-shadow: $slider-box-shadow;
+    background: $slider-thumb-bg-color;
+    cursor: pointer;
+    width: $slider-thumb-width;
+    height: $slider-thumb-height;
+  }
 
   &:focus {
     outline: none;
   }
 
-  &::-webkit-slider-runnable-track {
-    width: 100%;
-    height: $slider-track-height;
-    cursor: pointer;
-    box-shadow: $slider-box-shadow;
-    background: $slider-track-bg-color;
-    border-radius: $slider-track-border-radius;
-    border: 1px solid $slider-track-border-color;
-  }
-
-  &::-webkit-slider-thumb {
-    box-shadow: $slider-box-shadow;
-    border: 1px solid $slider-thumb-border-color;
-    height: $slider-thumb-height;
-    width: $slider-thumb-width;
-    border-radius: 2px;
-    background: $slider-thumb-bg-color;
-    cursor: pointer;
-    appearance: none;
-    margin-top: -4px;
-  }
-
   &:focus::-webkit-slider-runnable-track {
-    background: $slider-track-bg-color-focus;
     border-color: $slider-track-border-color-focus;
-  }
-
-  &::-moz-range-track {
-    width: 100%;
-    height: $slider-track-height;
-    cursor: pointer;
-    box-shadow: $slider-box-shadow;
-    background: $slider-track-bg-color;
-    border-radius: $slider-track-border-radius;
-    border: 1px solid $slider-track-border-color;
-  }
-
-  &::-moz-range-thumb {
-    box-shadow: $slider-box-shadow;
-    border: 1px solid $slider-thumb-border-color;
-    height: $slider-thumb-height;
-    width: $slider-thumb-width;
-    border-radius: 2px;
-    background: $slider-thumb-bg-color;
-    cursor: pointer;
-  }
-
-  &::-ms-track {
-    width: 100%;
-    height: $slider-track-height;
-    cursor: pointer;
-    background: transparent;
-    border-color: transparent;
-    color: transparent;
-  }
-
-  &::-ms-fill-lower {
-    background: #8c8c8c;
-    border: 1px solid $slider-track-border-color;
-    border-radius: $slider-track-height;
-    box-shadow: $slider-box-shadow;
+    background: $slider-track-bg-color-focus;
   }
 
   &:focus::-ms-fill-lower {
-    background: $slider-track-bg-color;
     border-color: $slider-track-border-color-focus;
-  }
-
-  &::-ms-fill-upper {
     background: $slider-track-bg-color;
-    border: 1px solid $slider-track-border-color;
-    border-radius: $slider-track-height;
-    box-shadow: $slider-box-shadow;
   }
 
   &:focus::-ms-fill-upper {
-    background: $slider-track-bg-color-focus;
     border-color: $slider-track-border-color-focus;
-  }
-
-  &::-ms-thumb {
-    box-shadow: $slider-box-shadow;
-    border: 1px solid $slider-thumb-border-color;
-    height: $slider-thumb-height;
-    width: $slider-thumb-width;
-    border-radius: 2px;
-    background: $slider-thumb-bg-color;
-    cursor: pointer;
+    background: $slider-track-bg-color-focus;
   }
 
   input[type='range'] + .range-value {
+    @include input-field-static;
+
     display: block;
     flex: 0 1 48px;
-    text-align: center;
+    margin-left: 10px;
     border: 1px solid var(--ironsworn-color-fg);
     padding: 2px;
-    margin-left: 10px;
-
-    @include input-field-static;
+    text-align: center;
   }
 }

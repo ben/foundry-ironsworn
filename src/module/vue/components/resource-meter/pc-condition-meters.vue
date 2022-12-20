@@ -22,6 +22,7 @@ $meter_spacing: 6px;
 
 .condition-meters {
   gap: $meter_spacing;
+
   .condition-meter {
     &:not(:first-child) {
       border-top: var(--ironsworn-border-width-md) solid
@@ -29,6 +30,7 @@ $meter_spacing: 6px;
       padding-top: $meter_spacing;
     }
   }
+
   button {
     height: max-content;
   }
