@@ -198,8 +198,8 @@ i {
       $pad-icon: 2px;
 
       display: flex;
-      width: calc(100% - ($pad-icon*2));
-      height: calc(100% - ($pad-icon*2));
+      width: calc(100% - ($pad-icon * 2));
+      height: calc(100% - ($pad-icon * 2));
     }
   }
 }
@@ -256,11 +256,13 @@ $icons: {
   stellar-object: 'https://game-icons.net/1x1/lorc/star-prominences.html';
   waypoint: 'https://game-icons.net/1x1/delapouite/position-marker.html';
   world: 'https://game-icons.net/1x1/lorc/ringed-planet.html';
-};
+}
 
-@each($icons, {
-  .isicon-#{$key}, .isiconbg-#{$key} {
-    &:before {
+@each $value, $key in $icons {
+  .isicon-#{$key},
+  .isiconbg-#{$key} {
+    &::before {
       mask-image: url('/assets/icons/#{$key}.svg');
-    }}
-  });
+    }
+  }
+}
