@@ -426,7 +426,6 @@ async function processTruths(
   if (!pack) throw new Error(`Couldn't find ${outputCompendium}`)
 
   for (const truth of truths) {
-    console.log('!!!', truth.$id)
     const je = await JournalEntry.create(
       { id: hashLookup(truth.$id), name: truth.Display.Title },
       { keepId: true, pack: outputCompendium }
@@ -451,6 +450,18 @@ async function processTruths(
         { parent: je }
       )
     }
+
+    JournalEntryPage.create(
+      {
+        id: hashLookup(`${truth.$id}/character`),
+        name: 'Character Inspiration',
+        text: {
+          markdown: truth.Character,
+          format: 2, // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN
+        },
+      },
+      { parent: je }
+    )
   }
 }
 
