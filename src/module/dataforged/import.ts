@@ -426,6 +426,7 @@ async function processTruths(
   if (!pack) throw new Error(`Couldn't find ${outputCompendium}`)
 
   for (const truth of truths) {
+    console.log('!!!', truth.$id)
     const je = await JournalEntry.create(
       { id: hashLookup(truth.$id), name: truth.Display.Title },
       { keepId: true, pack: outputCompendium }
@@ -453,13 +454,13 @@ async function processTruths(
   }
 }
 
-async function processISTruths() {
+async function processSFTruths() {
   return processTruths(
     ((starforged as any).default as Starforged)['Setting Truths'],
     'foundry-ironsworn.starforgedtruths'
   )
 }
-async function processSFTruths() {
+async function processISTruths() {
   return processTruths(
     ((ironsworn as any).default as Ironsworn)['Setting Truths']!,
     'foundry-ironsworn.starforgedtruths'
