@@ -39,8 +39,8 @@
   </button>
 </template>
 <style lang="less" module>
-@import (reference) '../../../../styles/utils.less';
-@import (reference) '../../../../styles/mixins.less';
+@import (reference) '../../../../styles/utils.scss';
+@import (reference) '../../../../styles/mixins.scss';
 
 .flexStart {
   align-items: center;
