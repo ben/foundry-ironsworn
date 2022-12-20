@@ -1,8 +1,8 @@
 import { IronswornSettings } from '../helpers/settings'
 
-import '../../styles/styles.less'
-import '../../styles/themes/ironsworn.less'
-import '../../styles/themes/starforged.less'
+import '../../styles/styles.scss'
+import '../../styles/themes/ironsworn.scss'
+import '../../styles/themes/starforged.scss'
 
 export function themeSetup() {
   const currentTheme = IronswornSettings.get('theme')
