@@ -427,10 +427,13 @@ async function processTruths(
 
   for (const truth of truths) {
     const je = await JournalEntry.create(
-      { id: hashLookup(truth.$id), name: truth.Display.Title },
+      {
+        id: hashLookup(truth.$id),
+        name: truth.Display.Title,
+        flags: { 'foundry-ironsworn': { dfid: truth.$id } },
+      },
       { keepId: true, pack: outputCompendium }
     )
-    je!.setFlag('foundry-ironsworn', 'character', truth.Character)
 
     for (const entry of truth.Table) {
       const rendered = await renderTemplate(
@@ -438,13 +441,19 @@ async function processTruths(
         { entry: { ...entry, Quest: entry['Quest Starter'] } }
       )
       //@ts-ignore
-      JournalEntryPage.create(
+      await JournalEntryPage.create(
         {
           id: hashLookup(entry.$id),
-          name: `${entry.Floor}-${entry.Ceiling}: ${entry.Result}`,
+          name: entry.Result,
           text: {
             content: rendered.trim(),
             format: 1, // JOURNAL_ENTRY_PAGE_FORMATS.HTML
+          },
+          flags: {
+            'foundry-ironsworn': {
+              floor: entry.Floor,
+              ceiling: entry.Ceiling,
+            },
           },
         },
         { parent: je }
