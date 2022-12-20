@@ -469,6 +469,11 @@ async function processTruths(
           markdown: truth.Character,
           format: 2, // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN
         },
+        flags: {
+          'foundry-ironsworn': {
+            assets: truth.Suggestions?.Assets ?? [],
+          },
+        },
       },
       { parent: je }
     )
