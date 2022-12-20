@@ -1,45 +1,45 @@
 // Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
 @import './starforged-font.css'; // HACK to avoid import error
-@import (reference) '../mixins.scss';
-@import (reference) './mixins/colors.scss';
-@import (reference) './mixins/palettize.scss';
-@import (reference) './mixins/fvtt-var-overrides.scss';
+@import (reference) '../mixins';
+@import (reference) './mixins/colors';
+@import (reference) './mixins/palettize';
+@import (reference) './mixins/fvtt-var-overrides';
 
 .system-foundry-ironsworn.theme-starforged {
   // set CSS variables
 
   @include palettize(ironsworn-color,hsl(180, 70%, 60%), hsl(180,20%,0%), hsl(185,100%,50%), hsl(210,100%,50%));
-  @include ironswornDarkThemeMixin(ironsworn-color);
-  @include softBorderMixin(ironsworn-color);
-  @include interactiveTintMixin(ironsworn-color-clickable-block,ironsworn-color);
-  --font-primary: 'Carrois Gothic SC', sans-serif;
+  @include ironsworn-dark-theme(ironsworn-color);
+  @include soft-border(ironsworn-color);
+  @include interactive-tint(ironsworn-color-clickable-block,ironsworn-color);
 
+  --font-primary: 'Carrois Gothic SC', sans-serif;
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
   // CLICKABLE TEXT: HOVER EFFECT
-  --ironsworn-filter-highlight: drop-shadow(0 0 3px var(--ironsworn-color-cool))
+  --ironsworn-filter-highlight:
+    drop-shadow(0 0 3px var(--ironsworn-color-cool))
     drop-shadow(0 0 3px var(--ironsworn-color-cool));
-  --ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool),
+  --ironsworn-box-shadow-highlight:
+    0 0 3px var(--ironsworn-color-cool),
     0 0 3px var(--ironsworn-color-cool);
-
   --ironsworn-tab-transition: slide;
-
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
-  @include fvttVarOverridesMixin();
-  // restyle FVTT's UI
-  @import '../fvtt/app.scss';
-  @import '../fvtt/dialog.scss';
-  @import '../fvtt/clickable.scss';
-  @import '../fvtt/settings.scss';
-  @import '../fvtt/sidebar.scss';
-  @import '../fvtt/tooltip.scss';
-  @import '../inputs.scss';
-  @import (reference) './mixins/decorations.scss';
+  @include fvtt-var-overrides;
 
-  @include starforgedDecorationMixin();
+  // restyle FVTT's UI
+  @import '../fvtt/app';
+  @import '../fvtt/dialog';
+  @import '../fvtt/clickable';
+  @import '../fvtt/settings';
+  @import '../fvtt/sidebar';
+  @import '../fvtt/tooltip';
+  @import '../inputs';
+  @import (reference) './mixins/decorations';
+  @include starforged-decoration;
 
   .chat-message {
     background: var(--ironsworn-color-bg);

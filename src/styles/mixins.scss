@@ -5,7 +5,7 @@
 // in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
 // if you want this + a soft shadow, LESS can combine them with square bracket notation to access the text-shadow property.
 // generated with owumaro.github.io/text-stroke-generator/
-@mixin textStrokeMixin($color: var(--ironsworn-color-text-stroke)){
+@mixin text-stroke($color: var(--ironsworn-color-text-stroke)){
   text-shadow: 1px 0px 0px $color, 0.540302px 0.841471px 0px $color,
     -0.416147px 0.909297px 0px $color, -0.989993px 0.14112px 0px $color,
     -0.653644px -0.756803px 0px $color, 0.283662px -0.958924px 0px $color,
@@ -20,74 +20,74 @@
 // special effects
 
 // used to mark focused fields
-@mixin borderGlowExteriorMixin($spread:6px){
+@mixin border-glow-exterior($spread:6px){
   box-shadow: 0 0 $spread var(--ironsworn-color-cool);
 }
 
 // used inside block/tab like elements. it's inset so that both the focus effect and the hover effect can be visible at once.
-@mixin borderGlowInteriorMixin($spread:5px,$blur:0,$color:var(--ironsworn-color-cool)){
+@mixin border-glow-interior($spread:5px,$blur:0,$color:var(--ironsworn-color-cool)){
   box-shadow: inset 0 0 $spread $blur $color;
 }
 
 // sets border colours, modelled after the hover effect on FVTT's canvas buttons.
-@mixin borderAccentColorMixin($warm:var(--ironsworn-color-warm),$cool:var(--ironsworn-color-cool)){
+@mixin border-accent-color($warm:var(--ironsworn-color-warm),$cool:var(--ironsworn-color-cool)){
   border-color: $warm;
   border-bottom-color: $cool;
 }
 
-@mixin textGlowMixin($color:var(--ironsworn-color-fg-highlight),$spread:10px){
+@mixin text-glow($color:var(--ironsworn-color-fg-highlight),$spread:10px){
   text-shadow: 0 0 $spread $color;
 }
 
 // used for e.g. hover effects. resembles a transparent overlay (with a subtle gradient) without having to do any interpolation or set additional variables.
-@mixin overlayGlowMixin($blockSize:50px){
-  @include borderGlowInteriorMixin(calc($blockSize / 2),0,var(--ironsworn-color-thematic,var(--ironsworn-color-clickable-block-bg-hover)));
+@mixin overlay-glow($blockSize:50px){
+  @include border-glow-interior(calc($blockSize / 2),0,var(--ironsworn-color-thematic,var(--ironsworn-color-clickable-block-bg-hover)));
 }
 
-@mixin borderFloatingMixin() {
+@mixin border-floating() {
   border-style: outset;
   border-color: var(--ironsworn-color-border);
 }
 
-@mixin tabBaseMixin($glowSpread: 5px, $glowBlur: 1px,$borderWidth: var(--ironsworn-border-width-md)){
+@mixin tab-base($glowSpread: 5px, $glowBlur: 1px,$borderWidth: var(--ironsworn-border-width-md)){
   border-width: $borderWidth;
   &:hover {
-    @include borderGlowInteriorMixin($glowSpread, $glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
+    @include border-glow-interior($glowSpread, $glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
     border-color: var(--ironsworn-color-fg-muted);
   }
   &[aria-selected='true'],
   &.active {
-    @include borderGlowInteriorMixin($glowSpread, $glowBlur, var(--ironsworn-color-cool));
+    @include border-glow-interior($glowSpread, $glowBlur, var(--ironsworn-color-cool));
     border-color: var(--ironsworn-color-warm);
   }
 }
 
-@mixin tabTopMixin($borderRadius:var(--ironsworn-border-radius-lg)){
-  @include tabBaseMixin();
+@mixin tab-top($borderRadius:var(--ironsworn-border-radius-lg)){
+  @include tab-base();
   border-top-right-radius: $borderRadius;
   border-top-left-radius: $borderRadius;
   border-bottom-width: 0px;
 }
-@mixin tabBottomMixin($borderRadius:var(--ironsworn-border-radius-lg)){
-  @include tabBaseMixin();
+@mixin tab-bottom($borderRadius:var(--ironsworn-border-radius-lg)){
+  @include tab-base();
   border-bottom-right-radius: $borderRadius;
   border-bottom-left-radius: $borderRadius;
   border-top-width: 0px;
 }
-@mixin tabLeftMixin($borderRadius:var(--ironsworn-border-radius-lg)){
-  @include tabBaseMixin();
+@mixin tab-left($borderRadius:var(--ironsworn-border-radius-lg)){
+  @include tab-base();
   border-top-left-radius: $borderRadius;
   border-bottom-left-radius: $borderRadius;
   border-right-width: 0px;
 }
-@mixin tabRightMixin($borderRadius:var(--ironsworn-border-radius-lg)){
-  @include tabBaseMixin();
+@mixin tab-right($borderRadius:var(--ironsworn-border-radius-lg)){
+  @include tab-base();
   border-top-right-radius: $borderRadius;
   border-bottom-right-radius: $borderRadius;
   border-left-width: 0px;
 }
 
-@mixin borderMixin($color:var(--ironsworn-color-border),$width:var(--ironsworn-border-width-md)){
+@mixin border($color:var(--ironsworn-color-border),$width:var(--ironsworn-border-width-md)){
   color: $color;
   border-style: solid;
   border-width: $width;
@@ -95,7 +95,7 @@
 
 // CLICKABLE MIXINS
 
-@mixin interactiveMixin() {
+@mixin interactive() {
   transition: var(--std-animation);
   &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
@@ -107,24 +107,24 @@
   }
 }
 
-@mixin textHoverMixin() {
+@mixin text-hover() {
   color: var(--ironsworn-color-clickable-text-hover);
   filter: var(--ironsworn-filter-highlight);
 }
-@mixin textFocusMixin() {
-  @include focusOutlineMixin();
+@mixin text-focus() {
+  @include focus-outline();
 }
 
-@mixin textActiveMixin() {
+@mixin text-active() {
   color: var(--ironsworn-color-clickable-text-selected);
   filter: var(--ironsworn-filter-highlight);
 }
 
-@mixin clickableTextMixin() {
+@mixin clickable-text() {
   --ironsworn-color-text-stroke: transparent;
-  @include interactiveMixin();
+  @include interactive();
   margin: 0;
-  // @include textStrokeMixin();
+  // @include text-stroke();
   background: transparent;
   color: var(--ironsworn-color-clickable-text);
   border-width: 0;
@@ -137,33 +137,33 @@
   &.selected,
   &.active {
     --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include textActiveMixin();
+    @include text-active();
   }
   &:hover,
   &.hover {
     --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include textHoverMixin();
+    @include text-hover();
   }
   &:focus,
   &:focus-within {
     --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include textFocusMixin();
+    @include text-focus();
   }
 }
 
-@mixin blockHoverMixin($blockSize:50px){
+@mixin block-hover($blockSize:50px){
   color: var(--ironsworn-color-clickable-block-fg-hover);
   background-color: var(--ironsworn-color-clickable-block-bg-hover);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
   z-index: var(--ironsworn-z-index-higher);
 }
 
-@mixin blockFocusMixin() {
+@mixin block-focus() {
   z-index: var(--ironsworn-z-index-highest);
-  @include focusOutlineMixin();
+  @include focus-outline();
 }
 
-@mixin blockActiveMixin() {
+@mixin block-active() {
   outline: none;
   color: var(--ironsworn-color-clickable-block-fg-selected);
   background-color: var(
@@ -175,8 +175,8 @@
 }
 
 // For the block's 'default' state.
-@mixin blockMixin($blockSize:50px){
-  @include interactiveMixin();
+@mixin block($blockSize:50px){
+  @include interactive();
   box-shadow: none;
   overflow-y: visible;
   border-color: var(--ironsworn-color-clickable-block-border);
@@ -192,7 +192,7 @@
   }
 }
 
-@mixin iconButtonBaseMixin() {
+@mixin icon-button-base() {
   display: flex;
   align-items: center;
   flex-flow: row nowrap;
@@ -235,32 +235,32 @@
   }
 }
 
-@mixin clickableBlockMixin($blockSize:50px,){
-  @include blockMixin($blockSize);
+@mixin clickable-block($blockSize:50px,){
+  @include block($blockSize);
   &:hover,
   &.hover {
-    @include blockHoverMixin($blockSize);
+    @include block-hover($blockSize);
   }
   &:focus,
   &:focus-within {
-    @include blockFocusMixin();
+    @include block-focus();
   }
   &[aria-selected='true'],
   &.selected,
   &.active {
-    @include blockActiveMixin();
+    @include block-active();
   }
 }
 
 // input mixins
 
-@mixin inputFieldFocusMixin($spread: 6px){
-  @include borderGlowExteriorMixin($spread);
-  @include borderAccentColorMixin(var(--ironsworn-color-warm-50), var(--ironsworn-color-cool-50));
+@mixin input-field-focus($spread: 6px){
+  @include border-glow-exterior($spread);
+  @include border-accent-color(var(--ironsworn-color-warm-50), var(--ironsworn-color-cool-50));
   outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-warm);
 }
 
-@mixin inputFieldStaticMixin(){
+@mixin input-field-static(){
   color: var(--ironsworn-color-fg);
   background: var(--ironsworn-color-input-bg);
   border-width: var(--ironsworn-border-width-md);
@@ -269,13 +269,13 @@
   border-radius: var(--ironsworn-border-radius-md);
 }
 
-@mixin inputFieldMixin($spread:6px){
+@mixin input-field($spread:6px){
   // specify invisible outline to stop jitter from border width transition
   outline-width: var(--ironsworn-border-width-md);
   outline-style: solid;
   outline-color: transparent;
-  @include interactiveMixin();
-  @include inputFieldStaticMixin();
+  @include interactive();
+  @include input-field-static();
   cursor: initial;
   &::placeholder {
     color: var(--ironsworn-color-fg);
@@ -283,21 +283,21 @@
   }
   &:hover {
     border-color: var(--ironsworn-color-clickable-block-border-hover);
-    @include borderGlowInteriorMixin($spread, 0, var(--ironsworn-color-cool));
+    @include border-glow-interior($spread, 0, var(--ironsworn-color-cool));
   }
   &:focus,
   &:focus-within {
-    @include inputFieldFocusMixin();
-    @include borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
+    @include input-field-focus();
+    @include border-accent-color(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
     &:hover {
-      box-shadow: @include inputFieldFocusMixin(); [box-shadow],
-        @include borderGlowInteriorMixin($spread, 0, var(--ironsworn-color-cool));
+      box-shadow: @include input-field-focus(); [box-shadow],
+        @include border-glow-interior($spread, 0, var(--ironsworn-color-cool));
           [box-shadow];
     }
   }
 }
 
-@mixin marginMixin($direction){
+@mixin margin($direction){
   $spacer: var(--ironsworn-spacer-md);
   flex: 0;
   border-#{$direction}-style: solid;
@@ -307,7 +307,7 @@
   border-#{$direction}-color: var(--ironsworn-color-border);
 }
 
-@mixin focusOutlineMixin(){
+@mixin focus-outline(){
   // outline disabled for now
   // outline: 1px solid var(--ironsworn-color-cool) !important;
   z-index: var(--ironsworn-z-index-highest);
@@ -317,7 +317,7 @@
 // since gradients are *images*, they're overlaid on top of background-colour. great for a lazy tint on a highlighted element.
 // we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
 // only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
-@mixin staticHighlightMixin($opacity:20,$direction:'to bottom'){
+@mixin static-highlight($opacity:20,$direction:'to bottom'){
   background-image: unquote(
     %(
       'linear-gradient(%s, var(--ironsworn-color-warm-%s), var(--ironsworn-color-cool-%s))',
@@ -329,7 +329,7 @@
   background-blend-mode: overlay;
 }
 
-@mixin overlayMixin(){
+@mixin overlay(){
   content: '';
   position: absolute;
   top: 0;
@@ -340,7 +340,7 @@
   z-index: var(--ironsworn-z-index-highest);
 }
 
-@mixin textCompactMixin(){
+@mixin text-compact(){
   ol,
   ul {
     padding: 0 0 0 1em;

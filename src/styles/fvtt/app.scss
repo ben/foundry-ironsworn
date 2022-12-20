@@ -1,5 +1,5 @@
 // styles for FVTT application windows.
-@import '../mixins.scss';
+@import '../mixins';
 
 .app {
   border-color: var(--ironsworn-color-midtone-80);
@@ -11,9 +11,11 @@
     .sidebar {
       background: var(--ironsworn-color-cool-10);
     }
+
     .categories {
       .scrollable {
       }
+
       footer {
         background: var(--ironsworn-color-warm-20);
       }
@@ -26,18 +28,21 @@
     nav.tabs {
       .category-tab {
         &:hover {
-          background: linear-gradient(
-            to right,
-            transparent,
-            var(--ironsworn-color-cool-20)
-          );
+          background:
+            linear-gradient(
+              to right,
+              transparent,
+              var(--ironsworn-color-cool-20)
+            );
         }
+
         &.active {
-          background: linear-gradient(
-            to right,
-            transparent,
-            var(--ironsworn-color-warm-30)
-          );
+          background:
+            linear-gradient(
+              to right,
+              transparent,
+              var(--ironsworn-color-warm-30)
+            );
         }
       }
     }
@@ -53,6 +58,7 @@
   padding: var(--ironsworn-spacer-md);
   background: var(--ironsworn-color-bg);
   color: var(--ironsworn-color-fg);
+
   // so the background doesn't spill over the parent element's border
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
@@ -83,6 +89,7 @@ a,
     .key {
       background: var(--ironsworn-color-light-20);
     }
+
     .binding-controls {
       .control {
         &.uneditable {

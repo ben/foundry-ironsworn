@@ -1,104 +1,120 @@
+@use 'sass:color', 'sass:math';
+
 /**
  * LESS mixin that interpolates CSS variables for a palette of colours.
  * Currently it doesn't check contrast, but it probably should.
 * NOTE: 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' are more about a UX element's importance/activity (warmer = more active/dramatic).
  * $prefix - the prefix to use for the generated CSS variables.
- * $fgColor - The foreground color.
- * $bgColor - The background color.
- * $warmColor - A saturated accent/highlight color, used both as-is and in mixtures with the other colours.
- * $coolColor - A second saturated accent/highlight color, used both as-is and in mixtures with the other colours.
+ * $fg-color - The foreground color.
+ * $bg-color - The background color.
+ * $warm-color - A saturated accent/highlight color, used both as-is and in mixtures with the other colours.
+ * $cool-color - A second saturated accent/highlight color, used both as-is and in mixtures with the other colours.
  */
-@mixin palettize($prefix:palette, $fgColor:hsl(0, 0%, 0%),$bgColor:hsl(0, 0%, 100%),$warmColor:hsl(24, 100%, 50%), $coolColor:hsl(0, 100%, 50%)){
-  // TODO: This could probably be improved significantly by writing palettize in JS to take advantage of chroma.js, then importing it as a LESS plugin. The various scale functions are particularly attractive!
-  $lightColor: if((luma($fgColor) > luma($bgColor)), $fgColor, $bgColor);
-  $darkColor: if((luma($fgColor) < luma($bgColor)), $fgColor, $bgColor);
+@mixin palettize(
+  $prefix: palette,
+  $fg-color: hsl(0, 0%, 0%),
+  $bg-color: hsl(0, 0%, 100%),
+  $warm-color: hsl(24, 100%, 50%),
+  $cool-color: hsl(0, 100%, 50%)
+) {
+  // TODO: This could probably be improved significantly with chroma.js, or its SCSS plugin.
+  $fg-luma: color.luma($fg-color);
+  $bg-luma: color.luma($bg-color);
 
-  $lightWarmBase: mix($warmColor, $lightColor, 75%);
-  $lightCoolBase: mix($coolColor, $lightColor, 75%);
-  $darkWarmBase: mix($warmColor, $darkColor, 75%);
-  $darkCoolBase: mix($coolColor, $darkColor, 75%);
+  @if $fg-luma > $bg-luma {
+    $light-color: $fg-color;
+    $dark-color: $bg-color;
+    $fg-type: light;
+    $bg-type: dark;
+  } @else {
+    $light-color: $bg-color;
+    $dark-color: $fg-color;
+    $fg-type: dark;
+    $bg-type: light;
+  }
 
-  $lightnessCeiling: 75%;
-  $lightnessFloor: 20%;
+  $light-warm-base: color.mix($warm-color, $light-color, 75%);
+  $light-cool-base: color.mix($cool-color, $light-color, 75%);
+  $dark-warm-base: color.mix($warm-color, $dark-color, 75%);
+  $dark-cool-base: color.mix($cool-color, $dark-color, 75%);
+  $lightness-ceiling: 75%;
+  $lightness-floor: 20%;
+  $light-warm: hsl(color.hue($light-warm-base), 100%, $lightness-ceiling);
+  $light-cool: hsl(color.hue($light-cool-base), 100%, $lightness-ceiling);
+  $dark-warm: hsl(color.hue($dark-warm-base), 100%, $lightness-floor);
+  $dark-cool: hsl(color.hue($dark-cool-base), 100%, $lightness-floor);
+  $fg-warm: var(--#{prefix}-#{$fg-type}-warm);
+  $fg-cool: var(--#{prefix}-#{$fg-type}-cool);
+  $bg-warm: var(--#{prefix}-#{$bg-type}-warm);
+  $bg-cool: var(--#{prefix}-#{$bg-type}-cool);
 
-  $lightWarm: hsl(hue($lightWarmBase), 100%, $lightnessCeiling);
-  $lightCool: hsl(hue($lightCoolBase), 100%, $lightnessCeiling);
-  $darkWarm: hsl(hue($darkWarmBase), 100%, $lightnessFloor);
-  $darkCool: hsl(hue($darkCoolBase), 100%, $lightnessFloor);
-
-  $fgWarm: if((luma($fgColor) > luma($bgColor)), $lightWarm, $darkWarm);
-  $fgCool: if((luma($fgColor) > luma($bgColor)), $lightCool, $darkCool);
-  $bgWarm: if((luma($fgColor) < luma($bgColor)), $lightWarm, $darkWarm);
-  $bgCool: if((luma($fgColor) < luma($bgColor)), $lightCool, $darkCool);
-
-  // Now that all the LESS variables are set, start writing the CSS variables.
-
-  --#{$prefix}-warm: $warmColor;
-  --#{$prefix}-cool: $coolColor;
-  --#{$prefix}-light: $lightColor;
-  --#{$prefix}-light-cool: $lightCool;
-  --#{$prefix}-light-warm: $lightWarm;
-  --#{$prefix}-dark: $darkColor;
-  --#{$prefix}-dark-cool: $darkCool;
-  --#{$prefix}-dark-warm: $darkWarm;
-
-  --#{$prefix}-fg: $fgColor;
-  --#{$prefix}-bg: $bgColor;
-  --#{$prefix}-fg-warm: $fgWarm;
-  --#{$prefix}-fg-cool: $fgCool;
-  --#{$prefix}-bg-warm: $bgWarm;
-  --#{$prefix}-bg-cool: $bgCool;
+  // Now that all the variables are set, start writing the CSS custom properties.
+  // see: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+  --#{$prefix}-warm: $warm-color;
+  --#{$prefix}-cool: $cool-color;
+  --#{$prefix}-light: $light-color;
+  --#{$prefix}-light-cool: $light-cool;
+  --#{$prefix}-light-warm: $light-warm;
+  --#{$prefix}-dark: $dark-color;
+  --#{$prefix}-dark-cool: $dark-cool;
+  --#{$prefix}-dark-warm: $dark-warm;
+  --#{$prefix}-fg: $fg-color;
+  --#{$prefix}-bg: $bg-color;
+  --#{$prefix}-fg-warm: $fg-warm;
+  --#{$prefix}-fg-cool: $fg-cool;
+  --#{$prefix}-bg-warm: $bg-warm;
+  --#{$prefix}-bg-cool: $bg-cool;
 
   // transparent overlays
-  @include mixOverlays($prefix, warm, $warmColor);
-  @include mixOverlays($prefix, cool, $coolColor);
-  @include mixOverlays($prefix, light, $lightColor);
-  @include mixOverlays($prefix, light-cool, $lightCool);
-  @include mixOverlays($prefix, light-warm, $lightWarm);
-  @include mixOverlays($prefix, dark, $darkColor);
-  @include mixOverlays($prefix, dark-cool, $darkCool);
-  @include mixOverlays($prefix, dark-warm, $darkWarm);
-  @include mixOverlays($prefix, fg, $fgColor);
-  @include mixOverlays($prefix, fg-cool, $fgCool);
-  @include mixOverlays($prefix, fg-warm, $fgWarm);
-  @include mixOverlays($prefix, bg, $bgColor);
-  @include mixOverlays($prefix, bg-cool, $bgCool);
-  @include mixOverlays($prefix, bg-warm, $bgWarm);
+  @include mix-overlays($prefix, warm, $warm-color);
+  @include mix-overlays($prefix, cool, $cool-color);
+  @include mix-overlays($prefix, light, $light-color);
+  @include mix-overlays($prefix, light-cool, $light-cool);
+  @include mix-overlays($prefix, light-warm, $light-warm);
+  @include mix-overlays($prefix, dark, $dark-color);
+  @include mix-overlays($prefix, dark-cool, $dark-cool);
+  @include mix-overlays($prefix, dark-warm, $dark-warm);
+  @include mix-overlays($prefix, fg, $fg-color);
+  @include mix-overlays($prefix, fg-cool, $fg-cool);
+  @include mix-overlays($prefix, fg-warm, $fg-warm);
+  @include mix-overlays($prefix, bg, $bg-color);
+  @include mix-overlays($prefix, bg-cool, $bg-cool);
+  @include mix-overlays($prefix, bg-warm, $bg-warm);
 
-  // *-midtone-* variables describe a color scale from $fgColor to $bgColor, where *-midtone-90 is 90% $fgColor, and *-midtone-10 is 10% $fgColor.
-  @include mixScale($prefix, midtone, $bgColor, $fgColor);
+  // *-midtone-* variables describe a color scale from $fg-color to $bg-color, where *-midtone-90 is 90% $fg-color, and *-midtone-10 is 10% $fg-color.
+  @include mix-scale($prefix, midtone, $bg-color, $fg-color);
 
-  // *-scale-* variables describe a color scale from $lightColor to $darkColor, where *-scale-90 is 90% $lightColor, and *-scale-10 is 10% $lightColor.
-  @include mixScale($prefix, scale, $darkColor, $lightColor);
+  // *-scale-* variables describe a color scale from $light-color to $dark-color, where *-scale-90 is 90% $light-color, and *-scale-10 is 10% $light-color.
+  @include mix-scale($prefix, scale, $dark-color, $light-color);
 
   // Set sensible defaults for semantically-oriented colors
-
-  --#{$prefix}-fg-muted: var(e(undefined
-  --#{$prefix}-fg-highlight: var(e(undefined
+  --#{$prefix}-fg-muted: var(--#{$prefix}-midtone-60);
+  --#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
 
   // INPUT
-  --#{$prefix}-input-bg: var(e(undefined
-  --#{$prefix}-input-border: var(e(undefined
+  --#{$prefix}-input-bg: var(--#{$prefix}-#{fg-type}-10);
+  --#{$prefix}-input-border: var(--#{$prefix}-#{fg-type}-10);
 
   // CLICKABLE TEXT
   --#{$prefix}-clickable-text: inherit;
-  --#{$prefix}-clickable-text-hover: var(e(undefined
-  --#{$prefix}-clickable-text-selected: var(e(undefined
+  --#{$prefix}-clickable-text-hover: var(--#{$prefix}-#{fg-type}-warm);
+  --#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{fg-type}-warm);
 
   // WIDGETS
-  --#{$prefix}-widget-fill: var(e(undefined
+  --#{$prefix}-widget-fill: var(--#{$prefix}-#{fg-type});
 }
 
 // HELPER MIXINS
-@mixin mixOverlays($prefix,$infix,$baseColor){
+@mixin mix-overlays($prefix,$infix,$base-color) {
   $overlays: range(10, 90, 10);
-  each($overlays, {
-    --#{$prefix}-#{$infix}-#{$value}: rgba($baseColor, $value);
+  @each($overlays, {
+    --#{$prefix}-#{$infix}-#{$value}: rgba($base-color, $value);
   });
 }
-@mixin mixScale($prefix,$infix,$baseColor,$addedColor){
+
+@mixin mix-scale($prefix,$infix,$base-color,$added-color) {
   $mixtures: range(10, 90, 10);
-  each($mixtures, {
-    --#{$prefix}-#{$infix}-#{$value}: mix($addedColor, $baseColor, $value);
+  @each($mixtures, {
+    --#{$prefix}-#{$infix}-#{$value}: color.mix($added-color, $base-color, $value);
   });
 }

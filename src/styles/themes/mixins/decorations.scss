@@ -1,44 +1,50 @@
-.ironswornDecorationMixin {
-  .asset-ironsworn .asset-ability:before {
+.ironsworn-decoration {
+  .asset-ironsworn .asset-ability::before {
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
   }
 }
 
-.starforgedDecorationMixin {
-  .asset-ironsworn .asset-ability:before {
+.starforged-decoration {
+  .asset-ironsworn .asset-ability::before {
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
   }
-  .asset-starforged .asset-ability:before {
+
+  .asset-starforged .asset-ability::before {
     background-color: var(--ironsworn-color-fg);
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
   }
 }
 
-.starforgedAssetDecoMixin($hex_deco_expanded_height: 50px,
-$hex_deco_collapsed_height: 32px) {
-  $hex_deco_aspect_ratio: 24 / 28;
+.starforged-asset-deco {
+  $hex-deco-expanded-height: 50px;
+  $hex-deco-collapsed-height: 32px;
+  $hex-deco-aspect-ratio: 24 / 28;
+
   position: relative;
+
   & > * {
     z-index: 2;
   }
-  &:before {
+
+  &::before {
     display: block;
     pointer-events: none;
     content: '';
     mask-image: url(/assets/misc/hex-deco.svg);
     background: var(--ironsworn-color-thematic);
     position: absolute;
-    aspect-ratio: $hex_deco_aspect_ratio;
+    aspect-ratio: $hex-deco-aspect-ratio;
     z-index: auto;
     mask-repeat: no-repeat;
     transform: scaleX(-1);
-    height: $hex_deco_collapsed_height;
+    height: $hex-deco-collapsed-height;
     top: -($height * 0.09);
     right: ($height * 0.03);
   }
+
   .asset-header {
-    padding-right: ($hex_deco_collapsed_height * $hex_deco_aspect_ratio);
+    padding-right: ($hex-deco-collapsed-height * $hex-deco-aspect-ratio);
   }
 }

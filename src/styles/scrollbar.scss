@@ -1,26 +1,29 @@
-@import 'mixins.scss';
+@import 'mixins';
 
-$scrollbarThumbBgColor: var(--ironsworn-color-fg-50);
-$scrollbarThumbBorderColor: var(--ironsworn-color-warm-50);
-$scrollbarTrackColor: var(--ironsworn-color-fg-50);
-$scrollbarWidth: 6px;
+$scrollbar-thumb-bg-color: var(--ironsworn-color-fg-50);
+$scrollbar-thumb-border-color: var(--ironsworn-color-warm-50);
+$scrollbar-track-color: var(--ironsworn-color-fg-50);
+$scrollbar-width: 6px;
 
 ::-webkit-scrollbar {
-  width: $scrollbarWidth;
-  height: $scrollbarWidth;
+  width: $scrollbar-width;
+  height: $scrollbar-width;
 }
+
 ::-webkit-scrollbar-track {
   box-shadow: 0 0 1px var(--ironsworn-color-cool-50) inset;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb {
   outline: none;
-  border-radius: ($scrollbarWidth / 2);
-  background: $scrollbarThumbBgColor;
-  border: 1px solid $scrollbarThumbBorderColor;
+  border-radius: ($scrollbar-width / 2);
+  background: $scrollbar-thumb-bg-color;
+  border: 1px solid $scrollbar-thumb-border-color;
 }
+
 :root {
   scrollbar-width: thin;
-  scrollbar-color: $scrollbarThumbBgColor $scrollbarTrackColor;
+  scrollbar-color: $scrollbar-thumb-bg-color $scrollbar-track-color;
   scrollbar-gutter: auto;
 }

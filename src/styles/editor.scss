@@ -5,19 +5,25 @@
 .editor-content {
   min-height: 100px;
 }
+
 .editor {
-  border: var(--ironsworn-border-width-md) solid
+  border:
+    var(--ironsworn-border-width-md) solid
     var(--ironsworn-color-input-border);
   background: var(--ironsworn-color-input-bg);
   caret-color: var(--ironsworn-color-fg-highlight);
 }
+
 .tab .editor {
   border-top-width: 0;
-  border-radius: 0 0 var(--ironsworn-border-radius-lg)
+  border-radius:
+    0 0 var(--ironsworn-border-radius-lg)
     var(--ironsworn-border-radius-lg);
 }
+
 .editor-edit {
-  @include clickableBlockMixin();
+  @include clickable-block;
+
   background: var(--ironsworn-color-bg);
   border-radius: var(--ironsworn-border-radius-md);
 }
@@ -25,14 +31,16 @@
 // Editor custom select elements
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
-  @include clickableBlockMixin();
+  @include clickable-block;
+
   border-radius: var(--ironsworn-border-radius-md);
 }
 
 // Editors: ProseMirror
 
 .ProseMirror {
-  @include inputFieldMixin();
+  @include input-field;
+
   padding: 0.5rem;
 }
 
@@ -41,18 +49,24 @@
   border: 0;
   border-radius: 0;
 }
+
 .tox {
   font-family: var(--font-primary);
-  :not(svg):not(rect) {
-    color: currentColor;
+
+  :not(svg, rect) {
+    color: currentcolor;
   }
+
   &:not(.tox-tinymce-inline) .tox-editor-header {
-    border-bottom: var(--ironsworn-border-width-md) solid
+    border-bottom:
+      var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border-muted);
     justify-content: center;
   }
+
   .tox-toolbar__primary {
     justify-content: center;
+
     & > .tox-toolbar__group {
       padding: 0 var(--ironsworn-spacer-md);
     }
@@ -64,6 +78,7 @@
     color: var(--ironsworn-color-fg);
     background: var(--ironsworn-color-bg);
   }
+
   .tox-tbtn {
     color: var(--ironsworn-color-clickable-block-fg);
     border-color: transparent;
@@ -71,44 +86,55 @@
     border-style: solid;
     border-width: var(--ironsworn-border-width-md);
     transition: var(--std-animation);
+
     // margin: 6px 1px var(--ironsworn-spacer-md) 0;
     &:focus {
       color: var(--ironsworn-color-clickable-block-fg);
       background: var(--ironsworn-color-clickable-block-bg);
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
+
       &:not(.tox-tbtn--disabled) {
         color: var(--ironsworn-color-clickable-block-fg);
+
         svg {
-          fill: currentColor;
+          fill: currentcolor;
         }
       }
     }
+
     svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
+
     &:hover {
       color: var(--ironsworn-color-clickable-block-fg-hover);
       background: var(--ironsworn-color-clickable-block-bg-hover);
       border-color: var(--ironsworn-color-clickable-block-border-hover);
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
+
       svg {
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
+
     &[aria-pressed='true'] {
       color: var(--ironsworn-color-clickable-block-fg-selected);
       background: var(--ironsworn-color-clickable-block-bg-selected);
+
       svg {
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
   }
+
   .tox-tbtn--select {
-    @include inputFieldMixin();
+    @include input-field;
+
     text-shadow: none;
   }
+
   .tox-collection--list {
     .tox-collection__item--active {
       background: var(--ironsworn-color-clickable-block-bg-hover);
@@ -145,8 +171,8 @@ $text-color-muted: var(--ironsworn-color-fg-muted);
 
 $menu-background-color: var(--ironsworn-color-midtone-10);
 $menu-border-color: var(--ironsworn-color-input-border);
-$menu-box-shadow: 0 0 2px 0 rgba($color-black, 20%/100.0%),
-  0 4px 8px 0 rgba($color-black, 15%/100.0%);
+$menu-box-shadow: 0 0 2px 0 rgba($color-black, 20%/100%),
+  0 4px 8px 0 rgba($color-black, 15%/100%);
 
 .tox {
   .tox-menu {
@@ -163,15 +189,11 @@ $menu-box-shadow: 0 0 2px 0 rgba($color-black, 20%/100.0%),
 //
 
 $collection-item-separator-color: var(--ironsworn-color-border-muted);
-
 $collection-item-label-text-color: var(--ironsworn-color-fg);
-
 $collection-item-label-disabled-text-color: var(--ironsworn-color-fg-50);
-
 $toolbar-button-hover-background-color: var(
   --ironsworn-color-clickable-block-bg-hover
 );
-
 $collection-list-item-active-background-color: var(
   --ironsworn-color-clickable-block-bg-hover
 );
@@ -182,14 +204,12 @@ $collection-list-item-enabled-background-color: $menu-background-color;
 $collection-list-item-label-enabled-text-color: var(
   --ironsworn-color-clickable-block-fg
 );
-
 $collection-toolbar-item-active-background-color: var(
   --ironsworn-color-clickable-block-bg-hover
 );
 $collection-toolbar-item-label-active-text-color: var(
   --ironsworn-color-clickable-block-fg-selected
 );
-
 $toolbar-button-enabled-background-color: var(
   --ironsworn-color-clickable-block-bg
 );
@@ -197,7 +217,6 @@ $collection-toolbar-item-enabled-background-color: $toolbar-button-enabled-backg
 $collection-toolbar-item-label-enabled-text-color: var(
   --ironsworn-color-clickable-block-fg
 );
-
 $collection-grid-item-active-background-color: var(
   --ironsworn-color-clickable-block-bg-hover
 );
@@ -208,7 +227,6 @@ $collection-grid-item-enabled-background-color: $toolbar-button-enabled-backgrou
 $collection-grid-item-label-enabled-text-color: var(
   --ironsworn-color-clickable-block-fg
 );
-
 $collection-group-label-background-color: var(--ironsworn-color-bg-20);
 $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
 
@@ -231,6 +249,7 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
     background: $collection-group-label-background-color;
     color: $collection-group-label-text-color;
   }
+
   .tox-collection__item {
     color: $collection-item-label-text-color;
     transition: var(--std-animation);
@@ -260,31 +279,28 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
     color: $collection-grid-item-label-enabled-text-color;
   }
 
-  .tox-collection--grid
-    .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+  .tox-collection--grid .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
     background: $collection-grid-item-active-background-color;
     color: $collection-grid-item-label-active-text-color;
   }
 
-  .tox-collection--list
-    .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+  .tox-collection--list .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
     color: $collection-list-item-label-active-text-color;
   }
 
-  .tox-collection--toolbar
-    .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
+  .tox-collection--toolbar .tox-collection__item--active:not(.tox-collection__item--state-disabled) {
     color: $collection-toolbar-item-label-active-text-color;
   }
 
   .tox-collection__item-icon,
   .tox-collection__item-checkmark {
     svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
   .tox-collection__item-label {
-    color: currentColor;
+    color: currentcolor;
   }
 
   .tox-collection__item-accessory {
@@ -293,7 +309,7 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
 
   .tox-collection__item-caret {
     svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
@@ -301,14 +317,16 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
   .tox-collection__item--state-disabled {
     background: transparent !important;
     color: $collection-item-label-disabled-text-color;
+
     .tox-collection__item-caret svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
   .tox-collection--horizontal {
     background: $menu-background-color;
-    border: var(--ironsworn-border-width-md) solid
+    border:
+      var(--ironsworn-border-width-md) solid
       $collection-item-separator-color;
   }
 }
@@ -317,7 +335,8 @@ $toolbar-group-separator-color: var(--ironsworn-color-border-muted);
 
 .tox:not([dir='rtl']) {
   .tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
-    border-right: var(--ironsworn-border-width-md) solid
+    border-right:
+      var(--ironsworn-border-width-md) solid
       $toolbar-group-separator-color;
   }
 }
@@ -325,7 +344,8 @@ $toolbar-group-separator-color: var(--ironsworn-color-border-muted);
 // RTL
 .tox[dir='rtl'] {
   .tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
-    border-left: var(--ironsworn-border-width-md) solid
+    border-left:
+      var(--ironsworn-border-width-md) solid
       $toolbar-group-separator-color;
   }
 }

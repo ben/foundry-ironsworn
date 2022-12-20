@@ -1,17 +1,19 @@
 .dice-roll {
   .dice-formula,
   .dice-total {
-    padding: var(--ironsworn-spacer-md) 0px var(--ironsworn-spacer-md) 0px;
+    padding: var(--ironsworn-spacer-md) 0 var(--ironsworn-spacer-md) 0;
     background: var(--ironsworn-color-fg-10);
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
     border-color: var(--ironsworn-color-border-muted);
     border-radius: var(--ironsworn-border-radius-md);
     box-shadow: 0 0 2px var(--ironsworn-color-bg) inset;
+
     .die {
       &.min {
         color: var(--ironsworn-color-fg);
       }
+
       &.max {
         color: var(--ironsworn-color-fg);
       }
@@ -20,6 +22,7 @@
 
   .roll-graphic {
     $graphic-gap: 0.25rem;
+
     &.dice-formula {
       display: flex;
       flex-flow: row nowrap;
@@ -28,25 +31,33 @@
       justify-content: center;
       margin: 0;
       padding: $graphic-gap;
+
       * {
         margin: 0;
       }
+
       .die {
         width: 1.5em;
         height: 100%;
         flex-grow: 0;
+
         --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-        @include textStrokeMixin();
+
+        @include text-stroke;
       }
+
       .indeterminate-value {
         color: var(--ironsworn-color-midtone-60);
       }
+
       .action-score-capped {
         text-decoration: dotted underline;
       }
+
       .score {
         font-weight: bold;
-        border: var(--ironsworn-border-width-lg) solid
+        border:
+          var(--ironsworn-border-width-lg) solid
           var(--ironsworn-color-border);
         border-radius: 50%;
         height: 24px;
@@ -55,26 +66,30 @@
         align-items: center;
         justify-content: center;
       }
+
       .challenge-dice {
         display: flex;
         flex-direction: row;
         flex-grow: 0;
         gap: ($graphic-gap / 2);
+
         .challenge-die {
         }
       }
     }
   }
 }
+
 .ironsworn-roll {
   h3,
   .hit-type {
     font-weight: bold;
   }
 
-  @mixin diceGlowMixin($color, $diceDropShadowSize: 0px 0px 2px){
+  @mixin dice-glow($color, $diceDropShadowSize: 0 0 2px) {
     color: $color !important;
-    filter: drop-shadow($diceDropShadowSize $color)
+    filter:
+      drop-shadow($diceDropShadowSize $color)
       drop-shadow($diceDropShadowSize $color);
     background-blend-mode: screen;
   }
@@ -88,6 +103,7 @@
     background-size: $width $width;
     font-weight: bold;
     text-align: center;
+
     --dice-background-color: var(--ironsworn-color-fg-30);
     --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
@@ -95,7 +111,7 @@
       background-image: url('../../icons/svg/d4-grey.svg');
     }
 
-    &.d6:before {
+    &.d6::before {
       background-color: var(--dice-background-color);
       mask-image: url('/assets/icons/d6-blank.svg');
       content: '';
@@ -105,7 +121,7 @@
       background-image: url('../../icons/svg/d8-grey.svg');
     }
 
-    &.d10:before {
+    &.d10::before {
       background-color: var(--dice-background-color);
       mask-image: url('/assets/icons/d10-blank.svg');
       content: '';
@@ -121,20 +137,22 @@
 
     &.min:not(.challenge),
     &.challenge.max {
-      @include diceGlowMixin(var(--ironsworn-color-danger));
+      @include dice-glow(var(--ironsworn-color-danger));
     }
 
     &.max:not(.challenge),
     &.challenge.min {
-      @include diceGlowMixin(var(--ironsworn-color-success));
+      @include dice-glow(var(--ironsworn-color-success));
     }
 
     &.canceled {
-      @include diceGlowMixin(var(--ironsworn-color-warning));
+      @include dice-glow(var(--ironsworn-color-warning));
     }
   }
+
   del .roll {
     text-decoration: line-through;
-    @include diceGlowMixin(var(--ironsworn-color-warning));
+
+    @include dice-glow(var(--ironsworn-color-warning));
   }
 }

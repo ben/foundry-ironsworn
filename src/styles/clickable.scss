@@ -3,43 +3,52 @@
 // the following selector is a proxy for compendium links which don't have a class attached to them.
 // ideally, all of them would share an identifying data attribute that could be selected for -- something like 'data-action', maybe?
 a[data-pack][data-uuid] {
-  @include clickableBlockMixin();
+  @include clickable-block;
+
   filter: none;
   border-radius: var(--ironsworn-border-radius-sm);
   border-width: var(--ironsworn-border-width-md);
   word-break: nowrap;
   white-space: nowrap;
+
   // forces fg colour so that it is the same colour as the text.
   color: inherit;
   padding: 0 var(--ironsworn-spacer-xs);
   background-color: var(--ironsworn-color-bg-20);
   border-color: var(--ironsworn-color-fg-30);
+
   &:hover {
     background-color: var(--ironsworn-color-bg-50);
     color: var(--ironsworn-color-fg-warm);
     text-shadow: none;
   }
+
   i,
-  &:before {
+  &::before {
     color: inherit;
     margin-right: var(--ironsworn-spacer-xs);
   }
 }
 
 .clickable {
-  @include interactiveMixin();
+  @include interactive;
+
   cursor: pointer;
+
   // &:not(svg):not(.svg) {
   &.text:not(.block) {
-    @include clickableTextMixin();
-    &:not(:before) {
+    @include clickable-text;
+
+    &:not(::before) {
       text-align: left;
       justify-content: left;
     }
   }
+
   &.block {
-    @include clickableBlockMixin();
+    @include clickable-block;
   }
+
   // }
   svg,
   &.svg {
@@ -47,10 +56,12 @@ a[data-pack][data-uuid] {
     &[aria-selected='true'] {
       fill-opacity: 1;
     }
+
     &.hover,
     &:hover {
       fill-opacity: 0.35;
     }
+
     &:active {
       fill-opacity: 0.5;
     }

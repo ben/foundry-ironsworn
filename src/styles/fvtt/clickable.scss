@@ -1,7 +1,8 @@
-@import '../mixins.scss';
+@import '../mixins';
 
 .app:not(.ironsworn) button {
-  @include clickableBlockMixin();
+  @include clickable-block;
+
   border-radius: var(--ironsworn-border-radius-md);
   border-width: var(--ironsworn-border-width-md);
   border-style: solid;
