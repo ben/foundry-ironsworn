@@ -436,25 +436,13 @@ async function processTruths(
     )
 
     for (const entry of truth.Table) {
-      const rendered = await renderTemplate(
-        'systems/foundry-ironsworn/templates/journal/truth.hbs',
-        { entry: { ...entry, Quest: entry['Quest Starter'] } }
-      )
       //@ts-ignore
       await JournalEntryPage.create(
         {
           id: hashLookup(entry.$id),
+          type: 'truth',
           name: entry.Result,
-          text: {
-            content: rendered.trim(),
-            format: 1, // JOURNAL_ENTRY_PAGE_FORMATS.HTML
-          },
-          flags: {
-            'foundry-ironsworn': {
-              floor: entry.Floor,
-              ceiling: entry.Ceiling,
-            },
-          },
+          system: cleanDollars({ ...entry, Quest: entry['Quest Starter'] }),
         },
         { parent: je }
       )
