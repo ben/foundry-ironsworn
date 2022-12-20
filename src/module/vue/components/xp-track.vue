@@ -26,7 +26,7 @@
       --ironsworn-color-thematic
     );
 
-    @include clickableBlockMixin(var(--legacy-xp-box-size));
+    @include clickable-block(var(--legacy-xp-box-size));
     aspect-ratio: 1;
     border-radius: var(--ironsworn-border-radius-md);
     border-style: solid;
@@ -42,13 +42,13 @@
       &[aria-selected='true'],
       &.selected,
       &.active {
-        @include blockHoverMixin(var(--legacy-xp-box-size));
+        @include block-hover(var(--legacy-xp-box-size));
         &:first-child {
-          @include blockMixin();
+          @include block();
         }
       }
       & ~ .xp-box {
-        @include blockMixin();
+        @include block();
       }
     }
   }

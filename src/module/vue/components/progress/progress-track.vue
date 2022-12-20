@@ -30,49 +30,61 @@
 
 <style lang="scss">
 @import (reference) '../../../../styles/mixins.less';
-$box_border_radius: var(--ironsworn-border-radius-md);
-$box_border_width: var(--ironsworn-border-width-md);
-$box_gap: 4px;
+
+$box-border-radius: var(--ironsworn-border-radius-md);
+$box-border-width: var(--ironsworn-border-width-md);
+$box-gap: 4px;
+
 .progress-track {
   &:focus {
-    @include focusOutlineMixin();
+    @include focus-outline;
   }
+
   display: grid;
   grid-auto-flow: column;
   grid-template-columns: repeat(10, 1fr);
   justify-content: center;
   align-items: center;
-  gap: $box_gap;
+  gap: $box-gap;
+
   .progress-track-box {
     max-height: var(--ironsworn-vertical-slider-width);
     max-width: var(--ironsworn-vertical-slider-width);
-    border-radius: $box_border_radius;
+    border-radius: $box-border-radius;
   }
+
   &.compact-progress {
     gap: 0;
     display: flex;
     flex-flow: row nowrap;
+
     .progress-track-box {
       flex-basis: 10%;
-      border: $box_border_width solid currentColor;
+      border: $box-border-width solid currentcolor;
+
       .progress-tick {
         // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
         vector-effect: non-scaling-stroke;
         stroke-width: 1px;
       }
+
       border-radius: 0;
       margin: 0;
+
       &:first-child {
-        border-radius: $box_border_radius 0 0 $box_border_radius;
+        border-radius: $box-border-radius 0 0 $box-border-radius;
       }
+
       &:not(:first-child) {
-        margin-left: calc($box_border_width / -2);
+        margin-left: calc($box-border-width / -2);
       }
+
       &:last-child {
-        border-radius: 0 $box_border_radius $box_border_radius 0;
+        border-radius: 0 $box-border-radius $box-border-radius 0;
       }
+
       &:not(:last-child) {
-        margin-right: calc($box_border_width / -2);
+        margin-right: calc($box-border-width / -2);
       }
     }
   }

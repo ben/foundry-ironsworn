@@ -39,21 +39,23 @@
   </div>
 </template>
 <style lang="scss">
+/* stylelint-disable no-descending-specificity */
+
 // helper mixin functions
-@mixin animateTick($value,$duration,$delay:0s) {
+@mixin animate-tick($value,$duration,$delay:0s) {
   .draw-progress-tick-enter-active[data-tick='#{value}'] {
     transition-duration: $duration;
     transition-delay: $delay;
   }
 }
-@mixin animateBox($totalDuration:1s; $baseDelay:0s) {
-  $tickDuration: ($totalDuration / 4);
-  each(1,2,3,4; {
-    $tickDelay: ($tickDuration*($value - 1));
-    @include animateTick($value,$tickDuration,$baseDelay+ $tickDelay);
+
+@mixin animate-box($total-duration:1s, $base-delay:0s) {
+  $tick-duration: ($total-duration / 4);
+  @each(1,2,3,4; {
+    $tick-delay: ($tick-duration * ($value - 1));
+    @include animate-tick($value, $tick-duration, $base-delay + $tick-delay);
   });
 }
-
 .progress-track-box {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   align-items: center;
@@ -63,23 +65,19 @@
   border-radius: var(--ironsworn-border-radius-md);
   stroke: var(--ironsworn-color-fg);
   stroke-width: 5;
-
   &.track-overflow .ghost-ticks {
     opacity: 0.2;
   }
   .progress-track-box-marks {
     margin: 10%;
+    aspect-ratio: 1;
+    overflow: visible;
   }
-}
-.progress-track-box-marks {
-  aspect-ratio: 1;
-  overflow: visible;
-}
-
-.progress-tick {
-  stroke-dasharray: 100%;
-  stroke-dashoffset: 0;
-  stroke-linecap: round;
+  .progress-tick {
+    stroke-dasharray: 100%;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+  }
 }
 
 // Progress tick draw animation
@@ -101,92 +99,96 @@
 .draw-progress-tick-enter-to {
   stroke-dashoffset: 0;
 }
-
 .progress-track {
-  &[data-rank='1'] {
+  &[data-rank="1"] {
     // see the Track component
     // Challenge rank troublesome: marks 3 boxes (12 ticks)
     $box1: 0.75s;
     $box2: 0.75s;
     $box3: 0.75s;
     .progress-track-box:nth-child(3n + 1) {
-      @include animateBox($box1);
+      @include animate-box($box1);
     }
     .progress-track-box:nth-child(3n + 2) {
-      @include animateBox($box2, $box1);
+      @include animate-box($box2, $box1);
     }
     .progress-track-box:nth-child(3n) {
-      $d1: ($box1+ $box2);
-      @include animateBox($box3,$d1);
+      $d1: ($box1 + $box2);
+
+      @include animate-box($box3,$d1);
     }
+
     // offsets the draw delay when the score has a value not divisible by 3, which is rare but technically possible
-    &[data-score='1'],
-    &[data-score='4'],
-    &[data-score='7'] {
+    &[data-score="1"],
+    &[data-score="4"],
+    &[data-score="7"] {
       .progress-track-box:nth-child(3n + 2) {
-        @include animateBox($box1);
+        @include animate-box($box1);
       }
       .progress-track-box:nth-child(3n) {
-        @include animateBox($box2, $box1);
+        @include animate-box($box2, $box1);
       }
       .progress-track-box:nth-child(3n + 1) {
-        $d1: ($box1+ $box2);
-        @include animateBox($box3,$d1);
+        $d1: ($box1 + $box2);
+
+        @include animate-box($box3,$d1);
       }
     }
-    &[data-score='2'],
-    &[data-score='5'],
-    &[data-score='8'] {
+    &[data-score="2"],
+    &[data-score="5"],
+    &[data-score="8"] {
       .progress-track-box:nth-child(3n) {
-        @include animateBox($box1);
+        @include animate-box($box1);
       }
       .progress-track-box:nth-child(3n + 1) {
-        @include animateBox($box2, $box1);
+        @include animate-box($box2, $box1);
       }
       .progress-track-box:nth-child(3n + 2) {
-        $d1: ($box1+ $box2);
-        @include animateBox($box3,$d1);
+        $d1: ($box1 + $box2);
+
+        @include animate-box($box3,$d1);
       }
     }
   }
-  &[data-rank='2'] {
+  &[data-rank="2"] {
     // Challenge rank dangerous: marks 2 boxes (8 ticks)
     $box1: 1s;
     $box2: 0.75s;
     .progress-track-box:nth-child(2n + 1) {
-      @include animateBox($box1);
+      @include animate-box($box1);
     }
     .progress-track-box:nth-child(2n) {
-      @include animateBox($box2, $box1);
+      @include animate-box($box2, $box1);
     }
-    &[data-score='1'],
-    &[data-score='3'],
-    &[data-score='5'],
-    &[data-score='7'],
-    &[data-score='9'] {
+    &[data-score="1"],
+    &[data-score="3"],
+    &[data-score="5"],
+    &[data-score="7"],
+    &[data-score="9"] {
       // inverts the draw delay when the score has an odd value, which is rare but technically possible
       .progress-track-box:nth-child(2n) {
-        @include animateBox($box1);
+        @include animate-box($box1);
       }
       .progress-track-box:nth-child(2n + 1) {
-        @include animateBox($box2, $box1);
+        @include animate-box($box2, $box1);
       }
     }
   }
-  &[data-rank='3'] {
+  &[data-rank="3"] {
     // Challenge rank formidable: marks 1 box (4 ticks).
-    @include animateBox(1s);
+    @include animate-box(1s);
   }
-  &[data-rank='4'] {
+  &[data-rank="4"] {
     // Challenge rank extreme: marks 2 ticks.
     $d1: 0.5s;
     $d2: 0.5s;
-    @include animateTick(1,$d1);
-    @include animateTick(2,$d2,$d1);
-    @include animateTick(3,$d1);
-    @include animateTick(4,$d2,$d1);
+
+    @include animate-tick(1,$d1);
+    @include animate-tick(2,$d2,$d1);
+    @include animate-tick(3,$d1);
+    @include animate-tick(4,$d2,$d1);
   }
-  &[data-rank='5'] {
+  &[data-rank="5"] {
     // Challenge rank epic: marks 1 tick.
     .draw-progress-tick-enter-active {
       transition-duration: 0.5s;

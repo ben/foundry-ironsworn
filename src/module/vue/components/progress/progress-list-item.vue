@@ -92,14 +92,14 @@
 </template>
 
 <style lang="scss" scoped>
-$progress_widget_spacing: 6px;
+$progress-widget-spacing: 6px;
 .progress-list-item {
-  padding: ($progress_widget_spacing / 2) ($progress_widget_spacing / 2)
-    $progress_widget_spacing;
+  padding: ($progress-widget-spacing / 2) ($progress-widget-spacing / 2)
+    $progress-widget-spacing;
   display: grid;
   grid-template-columns: max-content max-content 1fr max-content;
   grid-template-rows: max-content max-content 1fr;
-  gap: $progress_widget_spacing;
+  gap: $progress-widget-spacing;
   .progress-img {
     grid-column: 2;
     grid-row: 1 / span 2;

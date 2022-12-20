@@ -24,8 +24,9 @@
   flex-direction: row;
   flex-basis: 130px;
   align-items: center;
+
   .xp-box {
-    border: 1px solid currentColor;
+    border: 1px solid currentcolor;
     aspect-ratio: 1;
     height: 15px;
     flex-basis: 15px;
@@ -37,8 +38,9 @@
     align-items: center;
     display: flex;
     justify-content: center;
+
     &.selected {
-      background-color: currentColor;
+      background-color: currentcolor;
     }
   }
 }

@@ -2,12 +2,12 @@
   <button
     class="iron-btn"
     :class="{
-      [$style.ironBtn]: true,
-      [$style.verticalButton]: vertical,
-      [$style.iconOnly]: !hasText,
-      [$style.clickableBlock]: block,
-      [$style.clickableText]: !block,
-      [$style[`flex${capitalize(justify)}`]]: true,
+      [$style['iron-btn']]: true,
+      [$style['vertical-button']]: vertical,
+      [$style['icon-only']]: !hasText,
+      [$style['clickable-block']]: block,
+      [$style['clickable-text']]: !block,
+      [$style[`flex-${justify}`]]: true,
       nogrow,
     }"
     type="button"
@@ -38,30 +38,32 @@
     </slot>
   </button>
 </template>
-<style lang="less" module>
-@import (reference) '../../../../styles/utils.scss';
-@import (reference) '../../../../styles/mixins.scss';
+<style lang="scss" module>
+@import (reference) '../../../../styles/utils';
+@import (reference) '../../../../styles/mixins';
 
-.flexStart {
+.flex-start {
   align-items: center;
   align-content: center;
   justify-items: start;
   justify-content: start;
 }
-.flexCenter {
+
+.flex-center {
   align-items: center;
   align-content: center;
   justify-items: center;
   justify-content: center;
 }
-.flexEnd {
+
+.flex-end {
   align-items: center;
   align-content: center;
   justify-items: end;
   justify-content: end;
 }
 
-.ironBtn {
+.iron-btn {
   display: flex;
   flex-wrap: nowrap;
   border-radius: 0;
@@ -72,17 +74,20 @@
   width: v-bind(width);
   gap: var(--ironsworn-spacer-sm);
   padding: var(--ironsworn-spacer-xs);
+
   & > svg {
     // prevents double hover effect on svg hover
     pointer-events: none;
   }
 
-  &.verticalButton {
+  &.vertical-button {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     line-height: 1.25;
-    .verticalText.buttonText {
-      .vertical-text();
+
+    .vertical-text.button-text {
+      @include vertical-text;
+
       width: max-content;
       line-height: inherit;
       display: inherit;
@@ -91,15 +96,16 @@
   }
 }
 
-.buttonText {
+.button-text {
   display: inline;
-  border-width: 0px;
+  border-width: 0;
+
   strong {
     white-space: nowrap;
   }
 }
 
-.iconOnly {
+.icon-only {
   aspect-ratio: 1;
   flex-direction: row;
   box-sizing: content-box;
@@ -110,12 +116,16 @@
   align-content: center;
   line-height: 1;
 }
-.clickableText {
-  .clickableTextMixin();
+
+.clickable-text {
+  @include clickable-text;
+
   line-height: var(--ironsworn-line-height);
 }
-.clickableBlock {
-  .clickableBlockMixin();
+
+.clickable-block {
+  @include clickable-block;
+
   &:hover:not(:focus) {
     box-shadow: none;
   }
@@ -181,19 +191,6 @@ const justify = computed(() => {
 })
 
 const $style = useCssModule()
-
-const classes = computed(() => {
-  return {
-    [$style.ironBtn]: true,
-    [$style.verticalButton]: props.vertical,
-    [$style.iconOnly]: !hasText,
-    [$style.clickableBlock]: props.block,
-    [$style.clickableText]: !props.block,
-    [$style[`flex${capitalize(justify.value)}`]]: true,
-    nogrow: props.nogrow,
-  }
-})
-// so the span can be omitted if there's no slot content
 
 let $el = ref<HTMLElement>()
 

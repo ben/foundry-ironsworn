@@ -2,9 +2,10 @@
   <component
     :is="el"
     :class="{
-      [$style.fontIcon]: true,
-      [$style.fontIconBorder]: border && !!$style.fontIconBorder,
-      [$style.fontIconAnimation]: animation && !!$style.fontIconAnimation,
+      [$style['font-icon']]: true,
+      [$style['font-icon-border']]: border && !!$style['font-icon-border'],
+      [$style['font-icon-animation']]:
+        animation && !!$style['font-icon-animation'],
       ...classes,
     }"
     :aria-label="label"
@@ -13,26 +14,29 @@
   />
 </template>
 
-<style lang="less" module>
-.fontIcon {
+<style lang="scss" module>
+.font-icon {
   height: 1em;
   width: 1em;
   line-height: 1 !important;
   position: relative;
   display: flex;
   justify-content: center;
-  &:before {
+
+  &::before {
     flex-basis: 0;
     display: flex-item;
   }
 }
-.fontIconBorder {
-  each(v-bind('borderOptions'), {
+
+@mixin font-icon-border {
+  @each(v-bind('borderOptions'), {
     @{key}: @value
   });
 }
-.fontIconAnimation {
-  each(v-bind('animationOptions'), {
+
+@mixin font-icon-animation {
+  @each(v-bind('animationOptions'), {
     @{key}: @value;
   });
 }

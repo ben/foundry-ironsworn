@@ -31,22 +31,21 @@ svg.clock {
   stroke: var(--ironsworn-color-fg);
   stroke-width: var(--widget-stroke-width);
   aspect-ratio: 1;
-  &[aria-valuenow='0']:not(:hover) {
-    .clock-segment {
-      fill-opacity: 0;
-    }
-  }
+
   .clock-segment {
     pointer-events: fill;
     cursor: pointer;
     vector-effect: non-scaling-stroke;
     transition: var(--std-animation);
+
     &:active {
       fill-opacity: 1;
     }
   }
+
   &:hover {
     fill-opacity: var(--clock-fill-opacity-hover);
+
     .clock-segment {
       &:hover {
         ~ .clock-segment {
@@ -55,14 +54,22 @@ svg.clock {
       }
     }
   }
+
   &:not(:hover) {
     .clock-segment {
       fill-opacity: 1;
+
       &[aria-selected='true'] {
         ~ .clock-segment {
           fill-opacity: 0;
         }
       }
+    }
+  }
+
+  &[aria-valuenow='0']:not(:hover) {
+    .clock-segment {
+      fill-opacity: 0;
     }
   }
 }

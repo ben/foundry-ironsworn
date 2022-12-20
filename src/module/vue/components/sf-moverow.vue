@@ -81,7 +81,7 @@ $wrapper_spacing: 4px;
 
 .sfMoveRow {
   --ironsworn-line-height: (--ironsworn-line-height-md);
-  @include thematicColorMixin();
+  @include thematic-color();
   padding: 0 $wrapper_spacing;
   position: relative;
   &[aria-expanded='true'] {
@@ -97,7 +97,7 @@ $wrapper_spacing: 4px;
 .moveButton {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-  @include clickableTextMixin();
+  @include clickable-text();
   font-size: var(--font-size-20);
   aspect-ratio: 1 !important;
   align-self: center;
@@ -107,9 +107,9 @@ $wrapper_spacing: 4px;
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
 
-  @include clickableTextMixin();
-  @include textStrokeMixin(var(--ironsworn-color-dark));
-  @include thematicColorMixin();
+  @include clickable-text();
+  @include text-stroke(var(--ironsworn-color-dark));
+  @include thematic-color();
   height: inherit;
   border: none;
   background: none;

@@ -2,7 +2,7 @@
   <Collapsible
     :toggleLabel="$t('IRONSWORN.Completed')"
     :disabled="!items.length"
-    :class="$style.completedProgressWrapper"
+    :class="$style['completed-progress-wrapper']"
     toggleButtonClass="clickable text"
     :baseId="`${actor._id}_progress-completed`"
     v-bind="$props.collapsibleProps"
@@ -11,15 +11,15 @@
     <ProgressList
       v-bind="$props.listProps"
       :showCompleted="showCompleted"
-      :progressListItemClass="$style.completedProgressListItem"
-      :class="$style.completedProgressList"
+      :progressListItemClass="$style['completed-progress-list-item']"
+      :class="$style['completed-progress-list']"
       ref="$progressList"
     />
   </Collapsible>
 </template>
 
 <style lang="scss" module>
-.completedProgressWrapper {
+.completed-progress-wrapper {
   margin-top: var(--ironsworn-spacer-lg);
   border-radius: var(--ironsworn-border-radius-lg);
   border-width: var(--ironsworn-border-width-md);
@@ -27,10 +27,12 @@
   background-color: var(--ironsworn-color-fg-10);
   border-style: solid;
 }
-.completedProgressList {
+
+.completed-progress-list {
   margin: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
 }
-.completedProgressListItem {
+
+.completed-progress-list-item {
   background-color: var(--ironsworn-color-bg-50);
   border-color: var(--ironsworn-color-bg-50);
 }

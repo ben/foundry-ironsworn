@@ -19,21 +19,22 @@
 
 <style lang="scss" scoped>
 .stat {
-  &:before {
+  &::before {
     --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
-  }
-  & > * {
-    position: relative; // must be set to manipulate z-index
-    z-index: 1;
-  }
-  &:before {
+
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 0;
     padding: 0.25em;
   }
+
+  & > * {
+    position: relative; // must be set to manipulate z-index
+    z-index: 1;
+  }
+
   &:hover {
-    &:before {
+    &::before {
       opacity: 1;
     }
   }
