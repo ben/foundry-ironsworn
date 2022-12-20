@@ -460,6 +460,7 @@ async function processTruths(
       )
     }
 
+    //@ts-ignore
     JournalEntryPage.create(
       {
         id: hashLookup(`${truth.$id}/character`),
