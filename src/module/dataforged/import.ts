@@ -425,10 +425,9 @@ async function processTruths(
   const pack = game.packs.get(outputCompendium)
   if (!pack) throw new Error(`Couldn't find ${outputCompendium}`)
 
-  let i = 1
   for (const truth of truths) {
     const je = await JournalEntry.create(
-      { id: hashLookup(truth.$id), name: `${i++}. ${truth.Display.Title}` },
+      { id: hashLookup(truth.$id), name: truth.Display.Title },
       { keepId: true, pack: outputCompendium }
     )
     je!.setFlag('foundry-ironsworn', 'character', truth.Character)
