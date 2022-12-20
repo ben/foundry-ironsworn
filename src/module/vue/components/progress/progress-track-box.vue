@@ -38,19 +38,19 @@
     </svg>
   </div>
 </template>
-<style lang="less">
+<style lang="scss">
 // helper mixin functions
-.animateTick(@value,@duration,@delay:0s) {
-  .draw-progress-tick-enter-active[data-tick='@{value}'] {
-    transition-duration: @duration;
-    transition-delay: @delay;
+@mixin animateTick($value,$duration,$delay:0s) {
+  .draw-progress-tick-enter-active[data-tick='#{value}'] {
+    transition-duration: $duration;
+    transition-delay: $delay;
   }
 }
-.animateBox(@totalDuration:1s; @baseDelay:0s) {
-  @tickDuration: (@totalDuration / 4);
+@mixin animateBox($totalDuration:1s; $baseDelay:0s) {
+  $tickDuration: ($totalDuration / 4);
   each(1,2,3,4; {
-    @tickDelay: (@tickDuration*(@value - 1));
-    .animateTick(@value,@tickDuration,@baseDelay+ @tickDelay);
+    $tickDelay: ($tickDuration*($value - 1));
+    @include animateTick($value,$tickDuration,$baseDelay+ $tickDelay);
   });
 }
 
@@ -106,58 +106,58 @@
   &[data-rank='1'] {
     // see the Track component
     // Challenge rank troublesome: marks 3 boxes (12 ticks)
-    @box1: 0.75s;
-    @box2: 0.75s;
-    @box3: 0.75s;
+    $box1: 0.75s;
+    $box2: 0.75s;
+    $box3: 0.75s;
     .progress-track-box:nth-child(3n + 1) {
-      .animateBox(@box1);
+      @include animateBox($box1);
     }
     .progress-track-box:nth-child(3n + 2) {
-      .animateBox(@box2, @box1);
+      @include animateBox($box2, $box1);
     }
     .progress-track-box:nth-child(3n) {
-      @d1: (@box1+ @box2);
-      .animateBox(@box3,@d1);
+      $d1: ($box1+ $box2);
+      @include animateBox($box3,$d1);
     }
     // offsets the draw delay when the score has a value not divisible by 3, which is rare but technically possible
     &[data-score='1'],
     &[data-score='4'],
     &[data-score='7'] {
       .progress-track-box:nth-child(3n + 2) {
-        .animateBox(@box1);
+        @include animateBox($box1);
       }
       .progress-track-box:nth-child(3n) {
-        .animateBox(@box2, @box1);
+        @include animateBox($box2, $box1);
       }
       .progress-track-box:nth-child(3n + 1) {
-        @d1: (@box1+ @box2);
-        .animateBox(@box3,@d1);
+        $d1: ($box1+ $box2);
+        @include animateBox($box3,$d1);
       }
     }
     &[data-score='2'],
     &[data-score='5'],
     &[data-score='8'] {
       .progress-track-box:nth-child(3n) {
-        .animateBox(@box1);
+        @include animateBox($box1);
       }
       .progress-track-box:nth-child(3n + 1) {
-        .animateBox(@box2, @box1);
+        @include animateBox($box2, $box1);
       }
       .progress-track-box:nth-child(3n + 2) {
-        @d1: (@box1+ @box2);
-        .animateBox(@box3,@d1);
+        $d1: ($box1+ $box2);
+        @include animateBox($box3,$d1);
       }
     }
   }
   &[data-rank='2'] {
     // Challenge rank dangerous: marks 2 boxes (8 ticks)
-    @box1: 1s;
-    @box2: 0.75s;
+    $box1: 1s;
+    $box2: 0.75s;
     .progress-track-box:nth-child(2n + 1) {
-      .animateBox(@box1);
+      @include animateBox($box1);
     }
     .progress-track-box:nth-child(2n) {
-      .animateBox(@box2, @box1);
+      @include animateBox($box2, $box1);
     }
     &[data-score='1'],
     &[data-score='3'],
@@ -166,25 +166,25 @@
     &[data-score='9'] {
       // inverts the draw delay when the score has an odd value, which is rare but technically possible
       .progress-track-box:nth-child(2n) {
-        .animateBox(@box1);
+        @include animateBox($box1);
       }
       .progress-track-box:nth-child(2n + 1) {
-        .animateBox(@box2, @box1);
+        @include animateBox($box2, $box1);
       }
     }
   }
   &[data-rank='3'] {
     // Challenge rank formidable: marks 1 box (4 ticks).
-    .animateBox(1s);
+    @include animateBox(1s);
   }
   &[data-rank='4'] {
     // Challenge rank extreme: marks 2 ticks.
-    @d1: 0.5s;
-    @d2: 0.5s;
-    .animateTick(1,@d1);
-    .animateTick(2,@d2,@d1);
-    .animateTick(3,@d1);
-    .animateTick(4,@d2,@d1);
+    $d1: 0.5s;
+    $d2: 0.5s;
+    @include animateTick(1,$d1);
+    @include animateTick(2,$d2,$d1);
+    @include animateTick(3,$d1);
+    @include animateTick(4,$d2,$d1);
   }
   &[data-rank='5'] {
     // Challenge rank epic: marks 1 tick.
