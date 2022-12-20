@@ -14,8 +14,6 @@
   </IronBtn>
 </template>
 
-<style lang="scss"></style>
-
 <script setup lang="ts">
 import { sample } from 'lodash'
 import { ExtractPropTypes, inject } from 'vue'

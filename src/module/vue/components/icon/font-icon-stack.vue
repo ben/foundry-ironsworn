@@ -1,7 +1,7 @@
 <template>
   <component
     :is="el"
-    :class="{ [$style.fontIconStack]: true, 'fa-stack': true }"
+    :class="{ 'fa-stack': true }"
     :aria-label="label"
     :role="label ? 'img' : 'presentational'"
     :aria-hidden="label ? false : true"
@@ -12,11 +12,6 @@
     </slot>
   </component>
 </template>
-
-<style lang="scss" module>
-.fontIconStack {
-}
-</style>
 
 <script lang="ts" setup>
 import { ExtractPropTypes } from 'vue'

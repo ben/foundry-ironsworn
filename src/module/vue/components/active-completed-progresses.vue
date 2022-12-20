@@ -16,8 +16,6 @@
   </article>
 </template>
 
-<style lang="scss" module></style>
-
 <script setup lang="ts">
 import { computed } from 'vue'
 import ProgressControls from './progress-controls.vue'
