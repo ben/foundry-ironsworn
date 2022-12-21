@@ -34,6 +34,8 @@ import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvet
 import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
+import { TruthJournalPageSheet } from './module/journal/truth-page'
+import { merge } from 'lodash'
 
 import 'virtual:svg-icons-register'
 
@@ -140,6 +142,32 @@ Hooks.once('init', async () => {
     types: ['progress'],
     label: 'Progress sheet v2',
     makeDefault: true,
+  })
+
+  DocumentSheetConfig.registerSheet(
+    // @ts-ignore
+    JournalEntryPage,
+    'ironsworn',
+    // @ts-ignore
+    TruthJournalPageSheet,
+    {
+      types: ['truth'],
+      makeDefault: true,
+      label: 'IRONSWORN.First Start.SettingTruth',
+    }
+  )
+
+  // @ts-ignore
+  CONFIG.JournalEntryPage.typeLabels = merge(
+    // @ts-ignore
+    CONFIG.JournalEntryPage.typeLabels,
+    {
+      truth: 'IRONSWORN.First Start.SettingTruth',
+    }
+  )
+  // @ts-ignore
+  CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
+    truth: 'fa-solid fa-angles-up',
   })
 
   // Register Handlebars helpers

@@ -5,6 +5,7 @@
     "CreateActor": "Create Actor",
     "YourWorldTruths": "Your World: Truths",
     "TruthQuestStarter": "Quest Starter:",
+    "QuestStarter": "Quest Starter",
     "SaveYourTruths": "Save Your Truths",
     "CustomTruth": "Custom Truth",
     "Roll": "Roll",
@@ -356,6 +357,7 @@
       "DefaultMovesOracles": "Which set of moves and oracles would you like to use?",
       "MatchSheet": "Match sheet",
       "SettingTruths": "Setting Truths",
+      "SettingTruth": "Setting Truth",
       "GenerateTruths": "Would you like to generate your setting's truths?",
       "YesFor": "Yes, for",
       "NeverAsk": "Never ask again"
