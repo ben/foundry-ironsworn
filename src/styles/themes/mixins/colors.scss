@@ -1,26 +1,71 @@
-@mixin ironsworn-light-theme($prefix) {
-  --#{$prefix}-legacy-quests: var(--ironsworn-color-red);
-  --#{$prefix}-legacy-bonds: var(--ironsworn-color-purple);
-  --#{$prefix}-legacy-discoveries: var(--ironsworn-color-blue);
+@use 'sass:color';
+@use 'sass:math';
+@use 'sass:meta';
+@use 'sass:map';
+@use 'sass:string';
+
+@mixin palettize(
+  $fg-color,
+  $bg-color,
+  $warm-color,
+  $cool-color,
+  $prefix: palette
+) {
+  // generate a large set of colour values from the four anchor colours.
+
+  $palette: gamutize($fg-color, $bg-color, $warm-color, $cool-color, $prefix);
+  // @debug meta.inspect($palette);
+
+  // Start writing the CSS custom properties.
+  // see: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+  @each $css-property, $color in $palette {
+    --#{$css-property}: #{$color};
+  }
 }
 
-@mixin ironsworn-dark-theme($prefix) {
-  --#{$prefix}-legacy-quests: var(--ironsworn-color-red-dark);
-  --#{$prefix}-legacy-bonds: var(--ironsworn-color-purple-dark);
-  --#{$prefix}-legacy-discoveries: var(--ironsworn-color-blue-dark);
+@mixin light-theme($prefix) {
+  @include color-defaults('dark', 'light', 'ironsworn-color');
+  --#{$prefix}-legacy-quests: var(--#{$prefix}-red);
+  --#{$prefix}-legacy-bonds: var(--#{$prefix}-purple);
+  --#{$prefix}-legacy-discoveries: var(--#{$prefix}-blue);
+}
+
+@mixin dark-theme($prefix) {
+  @include color-defaults('light', 'dark', 'ironsworn-color');
+  --#{$prefix}-legacy-quests: var(--#{$prefix}-red-dark);
+  --#{$prefix}-legacy-bonds: var(--#{$prefix}-purple-dark);
+  --#{$prefix}-legacy-discoveries: var(--#{$prefix}-blue-dark);
+}
+
+// Set sensible defaults for semantically-oriented colors
+@mixin color-defaults($fg-type, $bg-type, $prefix) {
+  --#{$prefix}-fg-muted: var(--#{$prefix}-midtone-60);
+  --#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
+
+  // INPUT
+  --#{$prefix}-input-bg: var(--#{$prefix}-#{fg-type}-10);
+  --#{$prefix}-input-border: var(--#{$prefix}-#{fg-type}-10);
+
+  // CLICKABLE TEXT
+  --#{$prefix}-clickable-text: inherit;
+  --#{$prefix}-clickable-text-hover: var(--#{$prefix}-#{fg-type}-warm);
+  --#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{fg-type}-warm);
+
+  // WIDGETS
+  --#{$prefix}-widget-fill: var(--#{$prefix}-#{fg-type});
 }
 
 // generates color variables to style an interactive element with an invert effect when it's active
 @mixin interactive-invert($element-prefix, $source-prefix) {
-  --#{$element-prefix}-fg: var(--#{$element-prefix}-fg);
+  --#{$element-prefix}-fg: var(--#{$source-prefix}-fg);
   --#{$element-prefix}-bg: transparent;
-  --#{$element-prefix}-border: var(--#{$element-prefix}-border);
-  --#{$element-prefix}-fg-hover: var(--#{$element-prefix}-fg);
-  --#{$element-prefix}-bg-hover: var(--#{$element-prefix}-fg-20);
-  --#{$element-prefix}-border-hover: var(--#{$element-prefix}-border);
-  --#{$element-prefix}-fg-selected: var(--#{$element-prefix}-bg);
-  --#{$element-prefix}-bg-selected: var(--#{$element-prefix}-fg);
-  --#{$element-prefix}-border-selected: var(--#{$element-prefix}-fg);
+  --#{$element-prefix}-border: var(--#{$source-prefix}-border);
+  --#{$element-prefix}-fg-hover: var(--#{$source-prefix}-fg);
+  --#{$element-prefix}-bg-hover: var(--#{$source-prefix}-fg-20);
+  --#{$element-prefix}-border-hover: var(--#{$source-prefix}-border);
+  --#{$element-prefix}-fg-selected: var(--#{$source-prefix}-bg);
+  --#{$element-prefix}-bg-selected: var(--#{$source-prefix}-fg);
+  --#{$element-prefix}-border-selected: var(--#{$source-prefix}-fg);
 }
 
 // generates color variables to style an interactive element with slightly dulled colours in its default state, and a tint effect when it's active.
@@ -46,4 +91,16 @@
   --#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
   --#{$prefix}-border: var(--#{$prefix}-fg);
   --#{$prefix}-border-muted: var(--#{$prefix}-fg-80);
+}
+
+// HELPER FUNCTIONS
+
+// Infers whether this is a light or dark theme.
+
+@function theme-type($fg-color, $bg-color) {
+  @if luminance($bg-color) < luminance($fg-color) {
+    @return (bg: 'dark', fg: 'light');
+  } @else {
+    @return (bg: 'light', fg: 'dark');
+  }
 }

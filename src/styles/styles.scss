@@ -66,6 +66,11 @@
   --ironsworn-tab-transition: fade;
 }
 
+// THEMES
+// TODO: this could probably be set up to extract everything from the theme directory automatically.
+@include meta.load-css('themes/starforged');
+@include meta.load-css('themes/ironsworn');
+
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
@@ -118,11 +123,6 @@
     @include meta.load-css('editor');
     @include meta.load-css('scrollbar');
     @include meta.load-css('tables');
-
-    // THEMES
-    // TODO: this could probably be set up to extract everything from the theme directory automatically.
-    @include meta.load-css('themes/starforged');
-    @include meta.load-css('themes/ironsworn');
 
     // .window-title {
     //   @include initial-caps;

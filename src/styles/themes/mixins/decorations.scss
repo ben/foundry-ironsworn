@@ -1,10 +1,10 @@
-.ironsworn-decoration {
+@mixin ironsworn {
   .asset-ironsworn .asset-ability::before {
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
   }
 }
 
-.starforged-decoration {
+@mixin starforged {
   .asset-ironsworn .asset-ability::before {
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;

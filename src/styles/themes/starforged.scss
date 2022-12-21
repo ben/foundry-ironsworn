@@ -1,21 +1,27 @@
+/* stylelint-disable order/order */
 // Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
+@use 'sass:meta';
 @use 'starforged-font.css'; // HACK to avoid import error
 @use 'mixins/colors';
-@use 'mixins/palette';
 @use 'mixins/fvtt-var-overrides';
 @use 'mixins/decorations';
 
-// restyle FVTT's UI
-@use '../fvtt/app';
-@use '../fvtt/dialog';
-@use '../fvtt/clickable';
-@use '../fvtt/settings';
-@use '../fvtt/sidebar';
-@use '../fvtt/tooltip';
-@use '../inputs';
+.theme-starforged {
+  @include colors.palettize(
+    $fg-color: hsl(180, 70%, 60%),
+    $bg-color: hsl(180, 20%, 0%),
+    $warm-color: hsl(185, 100%, 50%),
+    $cool-color: hsl(210, 100%, 50%),
+    $prefix: ironsworn-color
+  );
+  @include colors.dark-theme(ironsworn-color);
+  @include colors.soft-border(ironsworn-color);
+  @include colors.interactive-tint(
+    ironsworn-color-clickable-block,
+    ironsworn-color
+  );
 
-.system-foundry-ironsworn.theme-starforged {
   // set CSS variables
   --font-primary: 'Carrois Gothic SC', sans-serif;
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
@@ -28,21 +34,20 @@
   --ironsworn-tab-transition: slide;
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
-  @include palette.palettize(
-    ironsworn-color,
-    hsl(180, 70%, 60%),
-    hsl(180, 20%, 0%),
-    hsl(185, 100%, 50%),
-    hsl(210, 100%, 50%)
-  );
-  @include ironsworn-dark-theme(ironsworn-color);
-  @include soft-border(ironsworn-color);
-  @include interactive-tint(ironsworn-color-clickable-block, ironsworn-color);
-
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
-  @include fvtt-var-overrides;
-  @include starforged-decoration;
+  @include fvtt-var-overrides.fvtt-var-overrides;
+  @include decorations.starforged;
 
+  // restyle FVTT's UI
+  @include meta.load-css('@styles/fvtt/app');
+  @include meta.load-css('@styles/fvtt/dialog');
+  @include meta.load-css('@styles/fvtt/clickable');
+  @include meta.load-css('@styles/fvtt/settings');
+  @include meta.load-css('@styles/fvtt/sidebar');
+  @include meta.load-css('@styles/fvtt/tooltip');
+  @include meta.load-css('@styles/inputs');
+
+  // specific configuration. avoid adding to this -- generalize where possible to keep the code neat and maintainable.
   .chat-message {
     background: var(--ironsworn-color-bg);
   }

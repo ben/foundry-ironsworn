@@ -6,19 +6,18 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import sassChroma from './src/module/plugin/chromatic-sass'
-import chroma from 'chroma-js'
+import * as sass from 'sass'
 
 const PORT = 30000
 
-const sassOptions = {
+const sassOptions: sass.LegacyStringOptions<'sync'> = {
   functions: sassChroma,
-  modules: { chroma },
+  // @ts-ignore
   additionalData: `
               @use "${path.resolve(
                 __dirname,
                 'src/styles/mixins.scss'
               )}" as mixins;
-              @use "@styles/utils" as utils;
             `,
 }
 
@@ -65,7 +64,6 @@ const config: UserConfig = {
     postcss: {
       plugins: [autoprefixer()],
     },
-    devSourcemap: true,
   },
   build: {
     outDir: 'dist',
