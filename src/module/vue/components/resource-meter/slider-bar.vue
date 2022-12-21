@@ -49,7 +49,7 @@
 </template>
 
 <style lang="scss" scoped>
-@use '@styles/mixins';
+@use 'mixins';
 
 $segment-border-width: var(--ironsworn-border-width-md);
 $segment-border-radius: var(--ironsworn-border-radius-lg);

@@ -35,7 +35,7 @@
 </template>
 
 <style lang="scss" module>
-@use '@styles/mixins';
+@use 'mixins';
 
 @mixin thematic-color() {
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);

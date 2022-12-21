@@ -7,13 +7,13 @@
 }
 
 select {
-  @include input-field;
+  @include mixins.input-field;
 
   border-style: outset;
 }
 
 textarea {
-  @include input-field;
+  @include mixins.input-field;
 }
 
 input[type='text'],
@@ -22,7 +22,7 @@ input[type='password'],
 input[type='date'],
 input[type='time'],
 input[type='search'] {
-  @include input-field;
+  @include mixins.input-field;
 }
 
 // CHECKBOXES
@@ -62,7 +62,7 @@ input[type='range'] {
   $slider-thumb-height: 12px;
   $slider-thumb-width: 12px;
   $slider-track-height: 6px;
-  $slider-track-border-radius: ($slider-track-height / 2);
+  $slider-track-border-radius: calc($slider-track-height / 2);
   $slider-track-bg-color: var(--ironsworn-color-fg-20);
   $slider-track-border-color: var(--ironsworn-color-fg-20);
   $slider-track-bg-color-focus: var(--ironsworn-color-warm-20);
@@ -170,7 +170,7 @@ input[type='range'] {
   }
 
   input[type='range'] + .range-value {
-    @include input-field-static;
+    @include mixins.input-field-static;
 
     display: block;
     flex: 0 1 48px;

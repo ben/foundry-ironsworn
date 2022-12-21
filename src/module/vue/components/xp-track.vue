@@ -13,7 +13,7 @@
   </article>
 </template>
 <style lang="scss" scoped>
-@use '@styles/mixins';
+@use 'mixins';
 
 .xp-track {
   .xp-box {

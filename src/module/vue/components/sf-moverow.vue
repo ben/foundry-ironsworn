@@ -59,7 +59,7 @@
 </template>
 
 <style lang="scss" module>
-@use '@styles/mixins';
+@use 'mixins';
 
 $icon-size: 1.2em;
 $border-width: var(--ironsworn-border-width-lg);

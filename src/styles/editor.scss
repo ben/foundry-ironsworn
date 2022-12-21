@@ -170,8 +170,8 @@ $text-color-muted: var(--ironsworn-color-fg-muted);
 
 $menu-background-color: var(--ironsworn-color-midtone-10);
 $menu-border-color: var(--ironsworn-color-input-border);
-$menu-box-shadow: 0 0 2px 0 rgba($color-black, 20%/100%),
-  0 4px 8px 0 rgba($color-black, 15%/100%);
+$menu-box-shadow: 0 0 2px 0 rgba($color-black, 20%),
+  0 4px 8px 0 rgba($color-black, 15%);
 
 .tox {
   .tox-menu {

@@ -14,6 +14,7 @@ const PORT = 30000
 
 const sassOptions: sass.Options<'sync'> = {
   functions: chromatic,
+  loadPaths: [path.resolve(process.cwd(), `src/styles`)],
 }
 
 const config: UserConfig = {

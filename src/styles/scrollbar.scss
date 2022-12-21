@@ -18,7 +18,7 @@ $scrollbar-width: 6px;
 ::-webkit-scrollbar-thumb {
   outline: none;
   border: 1px solid $scrollbar-thumb-border-color;
-  border-radius: ($scrollbar-width / 2);
+  border-radius: calc($scrollbar-width / 2);
   background: $scrollbar-thumb-bg-color;
 }
 

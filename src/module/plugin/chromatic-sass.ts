@@ -1,9 +1,9 @@
 // based on https://github.com/bugsnag/chromatic-sass
 
-import chroma, { contrast } from 'chroma-js'
+import Chroma, { contrast } from 'chroma-js'
 import { isUndefined } from 'lodash'
 import {
-  CustomFunction,
+  Options,
   SassColor,
   SassList,
   SassNumber,
@@ -11,7 +11,7 @@ import {
   Value,
 } from 'sass'
 
-const COLOR_MODES: chroma.InterpolationMode[] = [
+const COLOR_MODES: Chroma.InterpolationMode[] = [
   'rgb',
   'hsl',
   'hsv',
@@ -34,7 +34,7 @@ function assertColorMode(mode: Value) {
 function assertModeChannel(modeChannel: Value) {
   modeChannel.assertString()
   const [mode, channel] = modeChannel.toString().split('.') as [
-    chroma.InterpolationMode,
+    Chroma.InterpolationMode,
     string
   ]
   if (COLOR_MODES.includes(mode.toString() as any) && mode.includes(channel)) {
@@ -45,25 +45,25 @@ function assertModeChannel(modeChannel: Value) {
 }
 
 /**
- * Converts a {@link chroma.Color} to a {@link SassColor}.
+ * Converts a {@link Chroma.Color} to a {@link SassColor}.
  */
-function chroma2Sass(color: chroma.Color) {
+function chroma2Sass(color: Chroma.Color) {
   const [red, green, blue, alpha] = color.rgba()
   return new SassColor({ red, green, blue, alpha })
 }
 
 /**
- * Converts a {@link SassColor} to a  {@link chroma.Color}.
+ * Converts a {@link SassColor} to a  {@link Chroma.Color}.
  */
 function sass2Chroma(color: SassColor) {
   color.assertColor()
   const { red, green, blue, alpha } = color
-  return chroma.rgb(red, green, blue).alpha(alpha)
+  return Chroma.rgb(red, green, blue).alpha(alpha)
 }
 
-const sassFns: Record<string, CustomFunction<'sync'>> = {
+const chroma: Options<'sync'>['functions'] = {
   /**
-   * @see {@link chroma.Color.set}
+   * @see {@link Chroma.Color.set}
    */
   'set($color, $modechan, $v)': (
     color: SassColor,
@@ -77,7 +77,7 @@ const sassFns: Record<string, CustomFunction<'sync'>> = {
     return chroma2Sass(newColor)
   },
   /**
-   * @see {@link chroma.Color.get}
+   * @see {@link Chroma.Color.get}
    */
   'get($color, $modechan)': (color: SassColor, modechan: SassString) => {
     color.assertColor()
@@ -86,7 +86,7 @@ const sassFns: Record<string, CustomFunction<'sync'>> = {
     return new SassNumber(chromaColor.get(modechan.toString()))
   },
   /**
-   * @see {@link chroma.Color.luminance}
+   * @see {@link Chroma.Color.luminance}
    */
   "luminance($color, $luminance: '', $color-space: 'rgb')": (
     color: SassColor,
@@ -110,14 +110,14 @@ const sassFns: Record<string, CustomFunction<'sync'>> = {
     if (!isUndefined(luminance)) {
       const newColor = chromaColor.luminance(
         luminance.value,
-        mode?.toString() as chroma.InterpolationMode
+        mode?.toString() as Chroma.InterpolationMode
       )
       const [red, green, blue] = newColor.rgb()
       return new SassColor({ red, green, blue })
     } else return new SassNumber(chromaColor.luminance())
   },
   /**
-   * @see {@link chroma.Color.contrast}
+   * @see {@link Chroma.Color.contrast}
    */
   'contrast($color1, $color2)': (color1: SassColor, color2: SassColor) => {
     color1.assertColor()
@@ -140,21 +140,21 @@ const sassFns: Record<string, CustomFunction<'sync'>> = {
     const [chromaColor1, chromaColor2] = [color1, color2].map((c) =>
       sass2Chroma(c)
     )
-    const newColor = chroma.mix(
+    const newColor = Chroma.mix(
       chromaColor1,
       chromaColor2,
       f?.value,
-      colorSpace?.toString() as chroma.InterpolationMode
+      colorSpace?.toString() as Chroma.InterpolationMode
     )
     return chroma2Sass(newColor)
   },
 
   /**
-   * @see {@link chroma.Color.hcl}
+   * @see {@link Chroma.Color.hcl}
    */
   'hcl($h, $c, $l)': (h: SassNumber, c: SassNumber, l: SassNumber) => {
     ;[h, c, l].forEach((item) => item.assertNumber())
-    const chromaColor = chroma([h.value, c.value, l.value], 'hcl')
+    const chromaColor = Chroma([h.value, c.value, l.value], 'hcl')
     return chroma2Sass(chromaColor)
   },
 
@@ -165,19 +165,18 @@ const sassFns: Record<string, CustomFunction<'sync'>> = {
   ) => {
     steps.assertInt()
     assertModeChannel(modechan)
-    const chromaColors: chroma.Color[] = []
+    const chromaColors: Chroma.Color[] = []
     for (const color in colors) {
-      chromaColors.push(chroma(color))
+      chromaColors.push(Chroma(color))
     }
-    const scale = chroma
-      .scale(chromaColors)
+    const scale = Chroma.scale(chromaColors)
       .correctLightness(true)
       .out('hsl')
       .classes(steps.value)
-      .mode(modechan.toString() as chroma.InterpolationMode)
+      .mode(modechan.toString() as Chroma.InterpolationMode)
 
     return new SassList(
-      scale.colors(steps.value).map((c) => chroma2Sass(chroma(c))),
+      scale.colors(steps.value).map((c) => chroma2Sass(Chroma(c))),
 
       {
         separator: ',',
@@ -186,7 +185,7 @@ const sassFns: Record<string, CustomFunction<'sync'>> = {
   },
 }
 
-export default sassFns
+export default chroma
 
 /* Print JS stack traces for exceptions caught by sass:
  * Add to node_modules/sass/sass.dart.js: completeError$2(): console.error ('STACKTRACE:', st);

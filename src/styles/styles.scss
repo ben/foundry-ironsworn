@@ -17,6 +17,9 @@
 @use 'sheet';
 @use 'tables';
 
+@use 'utils';
+@use 'inputs';
+
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
   --widget-stroke-width: 1;
@@ -86,9 +89,7 @@
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
-  // @include 'utils';
-  // @include 'inputs'; // figure out how to scope this sensibly
-  @extend %utils;
+  @extend %utils.;
   @extend %inputs;
   @extend %assets;
 
@@ -141,7 +142,7 @@
 
     // stuff scoped to .ironsworn app windows only
     .window-title {
-      @include initial-caps;
+      @include mixins.initial-caps;
     }
 
     .window-content {

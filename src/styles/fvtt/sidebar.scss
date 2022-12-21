@@ -19,14 +19,14 @@
   .combat-sidebar {
     .combat-tracker-header {
       a.combat-button {
-        @include clickable-text;
+        @include mixins.clickable-text;
       }
     }
   }
 
   #sidebar-tabs {
     .collapse {
-      @include clickable-block;
+      @include mixins.clickable-block;
 
       border: 0;
       background-color: transparent;
@@ -41,14 +41,14 @@
 
     #chat-controls {
       .roll-type-select {
-        @include input-field;
+        @include mixins.input-field;
 
         border-style: outset;
       }
     }
 
     textarea#chat-message {
-      @include input-field;
+      @include mixins.input-field;
     }
   }
 }
@@ -57,7 +57,7 @@
   .directory-header {
     .header-search {
       input {
-        @include input-field;
+        @include mixins.input-field;
       }
     }
   }

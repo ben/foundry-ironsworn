@@ -39,8 +39,8 @@
   </button>
 </template>
 <style lang="scss" module>
-@use '@styles/utils';
-@use '@styles/mixins';
+@use 'utils';
+@use 'mixins';
 
 .flex-start {
   align-content: center;

@@ -19,8 +19,8 @@
   $cool-color: hsl(0, 100%, 50%)
 ) {
   // TODO: With SCSS migration and the chromatic-sass plugin, this could be significantly improved.
-  $fg-luma: chromatic-color-luminance($fg-color);
-  $bg-luma: chromatic-color-luminance($bg-color);
+  $fg-luma: luminance($fg-color);
+  $bg-luma: luminance($bg-color);
 
   @if $fg-luma > $bg-luma {
     $light-color: $fg-color;

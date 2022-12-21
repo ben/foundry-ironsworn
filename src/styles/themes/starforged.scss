@@ -3,7 +3,7 @@
 @use 'starforged-font.css'; // HACK to avoid import error
 @use '../mixins';
 @use 'mixins/colors';
-@use 'mixins/palettize';
+@use 'mixins/palette';
 @use 'mixins/fvtt-var-overrides';
 @use 'mixins/decorations';
 
@@ -29,7 +29,7 @@
   --ironsworn-tab-transition: slide;
   --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
 
-  @include palettize(
+  @include palette.palettize(
     ironsworn-color,
     hsl(180, 70%, 60%),
     hsl(180, 20%, 0%),

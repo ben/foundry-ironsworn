@@ -30,7 +30,7 @@
 </template>
 
 <style lang="scss">
-@use '@styles/mixins';
+@use 'mixins';
 
 .momentum-meter {
   gap: var(--ironsworn-spacer-md) 0;

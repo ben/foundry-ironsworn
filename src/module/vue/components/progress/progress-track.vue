@@ -29,7 +29,7 @@
 </template>
 
 <style lang="scss">
-@use '@styles/mixins';
+@use 'mixins';
 
 $box-border-radius: var(--ironsworn-border-radius-md);
 $box-border-width: var(--ironsworn-border-width-md);

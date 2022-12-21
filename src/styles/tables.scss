@@ -22,7 +22,7 @@ table {
 .oracle-table {
   .oracle-table-column-result-text {
     a.entity-link {
-      @include clickable-text;
+      @include mixins.clickable-text;
 
       border: none;
       background: none !important;
