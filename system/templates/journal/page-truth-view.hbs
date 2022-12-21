@@ -8,6 +8,10 @@
     {{{enrichMarkdown data.system.Description}}}
     {{#if data.system.Subtable}}
     <table>
+      <thead>
+        <th>{{localize 'IRONSWORN.OracleTable.ColumnLabel.Roll'}}</th>
+        <th>{{localize 'IRONSWORN.OracleTable.ColumnLabel.Result'}}</th>
+      </thead>
       <tbody>
         {{#each data.system.Subtable}}
           <tr>
@@ -20,7 +24,9 @@
   {{/if}}
   </section>
   <section class="truth-quest-starter">
-    <h{{sum data.title.level 1}}>Quest Starter</h{{sum data.title.level 1}}>
+    <h{{sum data.title.level 1}}>
+      {{localize 'IRONSWORN.QuestStarter'}}
+    </h{{sum data.title.level 1}}>
     {{{data.system.Quest}}}
   </section>
 </section>
