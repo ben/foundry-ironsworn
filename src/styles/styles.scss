@@ -1,24 +1,5 @@
+@use 'sass:meta';
 @use 'mixins';
-@use 'dialog';
-@use 'fvtt/dialog' as fvtt-dialog;
-@use 'transitions';
-@use 'assets';
-@use 'attr-box';
-@use 'chat-message';
-@use 'clickable';
-
-// @use 'dialog';
-@use 'dice';
-@use 'drag-and-drop';
-@use 'editor';
-@use 'icons';
-@use 'list';
-@use 'scrollbar';
-@use 'sheet';
-@use 'tables';
-
-@use 'utils';
-@use 'inputs';
 
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
@@ -89,13 +70,9 @@
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
-  @extend %utils.;
-  @extend %inputs;
-  @extend %assets;
-
-  .dialog {
-    @extend %dialog;
-  }
+  @include meta.load-css('utils');
+  @include meta.load-css('inputs');
+  @include meta.load-css('dialog');
 
   form button,
   button {
@@ -107,20 +84,17 @@
 }
 
 .system-foundry-ironsworn {
-  // importing within this selector to ensure higher specificity
-  // @use 'assets';
-  // @use 'attr-box';
-  // @use 'chat-message';
-  // @use 'clickable';
-  // @use 'dialog';
-  // @use 'dice';
-  // @use 'drag-and-drop';
-  // @use 'editor';
-  // @use 'icons';
-  // @use 'list';
-  // @use 'scrollbar';
-  // @use 'sheet';
-  // @use 'tables';
+  // load files within this selector to ensure higher specificity
+  @include meta.load-css('assets');
+  @include meta.load-css('attr-box');
+  @include meta.load-css('chat-message');
+  @include meta.load-css('clickable');
+  @include meta.load-css('dice');
+  @include meta.load-css('drag-and-drop');
+  @include meta.load-css('icons');
+  @include meta.load-css('list');
+  @include meta.load-css('sheet');
+  @include meta.load-css('transitions');
 
   // transitions for interactive elements
   a,
@@ -138,6 +112,12 @@
   }
 
   .ironsworn {
+    @include meta.load-css('fvtt/dialog');
+    @include meta.load-css('dialog');
+    @include meta.load-css('editor');
+    @include meta.load-css('scrollbar');
+    @include meta.load-css('tables');
+
     // import these to the theme apply it to FVTT's own dialogs and inputs as well.
 
     // stuff scoped to .ironsworn app windows only
