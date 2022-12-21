@@ -306,7 +306,7 @@ const chromaSass: Record<string, SassSyncFunction> = {
         // Mix a color scale of midtones from $fg-color to $bg-color, where *-midtone-90 is 90% $fg-color, and *-midtone-10 is 10% $fg-color.
         colorMap.set(
           `${cssPrefix}-midtone-${step}`,
-          mix(ground['fg'], ground['bg'], stepFactor, mode)
+          mix(ground['bg'], ground['fg'], stepFactor, mode)
         )
       })
 
