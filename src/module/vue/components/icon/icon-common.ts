@@ -12,7 +12,7 @@ import {
   RotateProperty,
   ScaleProperty,
   StandardLonghandPropertiesHyphen,
-  StrokeProperty,
+  StrokeWidthProperty,
 } from 'csstype'
 
 import type ironswornIconNames from 'virtual:svg-icons-names'
@@ -34,9 +34,12 @@ export interface IconPropsCommon {
    */
   color?: FillProperty | ColorProperty
   /**
-   * The icon's stroke color.
+   * The icon's stroke.
    */
-  stroke?: StrokeProperty | ColorProperty
+  stroke?: {
+    width: StrokeWidthProperty<any> | string
+    color: ColorProperty
+  }
   /**
    * The height and width of the icon.
    * @remarks For simplicity's sake, we render all icons with a 1:1 aspect ratio.

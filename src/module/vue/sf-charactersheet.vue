@@ -10,7 +10,7 @@
       <div
         class="flexcol nogrow"
         style="width: min-content"
-        :class="$style['margin-left']"
+        :class="$style['margin-right']"
       >
         <MomentumMeterSlider
           labelPosition="right"

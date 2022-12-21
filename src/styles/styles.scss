@@ -75,7 +75,6 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
   @include meta.load-css('utils');
-  @include meta.load-css('inputs');
   @include meta.load-css('dialog');
 
   form button,
@@ -123,6 +122,7 @@
     @include meta.load-css('editor');
     @include meta.load-css('scrollbar');
     @include meta.load-css('tables');
+    @include meta.load-css('inputs');
 
     // .window-title {
     //   @include initial-caps;

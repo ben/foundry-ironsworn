@@ -11,7 +11,7 @@
 
     <!-- Main body row -->
     <!-- Momentum on left -->
-    <div class="flexcol margin-left">
+    <div class="flexcol nogrow" :class="$style['margin-right']">
       <MomentumMeterSlider labelPosition="right" data-tooltip-direction="UP" />
     </div>
 
@@ -53,7 +53,8 @@
 
     <!-- Stats on right -->
     <PcConditionMeters
-      class="flexcol margin-right"
+      class="flexcol nogrow"
+      :class="$style['margin-left']"
       data-tooltip-direction="UP"
       labelPosition="left"
     />
@@ -61,6 +62,12 @@
 </template>
 
 <style lang="scss" module>
+.margin-left {
+  @include mixins.margin(left);
+}
+.margin-right {
+  @include mixins.margin(right);
+}
 .tabContent {
   height: inherit;
 }

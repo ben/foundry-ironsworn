@@ -10,11 +10,14 @@
 select {
   @include mixins.input-field;
 
-  border-style: outset;
+  border: var(--ironsworn-border-width-md) outset
+    var(--ironsworn-color-input-border);
 }
 
 textarea {
   @include mixins.input-field;
+  border-radius: var(--ironsworn-border-radius-md);
+  font-family: var(--font-primary);
 }
 
 input[type='text'],

@@ -43,16 +43,16 @@
   --#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
 
   // INPUT
-  --#{$prefix}-input-bg: var(--#{$prefix}-#{fg-type}-10);
-  --#{$prefix}-input-border: var(--#{$prefix}-#{fg-type}-10);
+  --#{$prefix}-input-bg: var(--#{$prefix}-#{$fg-type}-10);
+  --#{$prefix}-input-border: var(--#{$prefix}-#{$fg-type}-10);
 
   // CLICKABLE TEXT
   --#{$prefix}-clickable-text: inherit;
-  --#{$prefix}-clickable-text-hover: var(--#{$prefix}-#{fg-type}-warm);
-  --#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{fg-type}-warm);
+  --#{$prefix}-clickable-text-hover: var(--#{$prefix}-#{$fg-type}-warm);
+  --#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{$fg-type}-warm);
 
   // WIDGETS
-  --#{$prefix}-widget-fill: var(--#{$prefix}-#{fg-type});
+  --#{$prefix}-widget-fill: var(--#{$prefix}-#{$fg-type});
 }
 
 // generates color variables to style an interactive element with an invert effect when it's active

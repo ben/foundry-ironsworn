@@ -44,7 +44,7 @@
 
 // helper mixin functions
 @mixin animate-tick($value, $duration, $delay: 0s) {
-  .draw-progress-tick-enter-active[data-tick='#{value}'] {
+  .draw-progress-tick-enter-active[data-tick='#{$value}'] {
     transition-delay: $delay;
     transition-duration: $duration;
   }

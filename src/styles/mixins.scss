@@ -20,7 +20,7 @@
 
 @mixin thematic-color($color) {
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-  --ironsworn-color-thematic: $color;
+  --ironsworn-color-thematic: #{$color};
 }
 
 // special effects
