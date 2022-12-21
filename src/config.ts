@@ -11,6 +11,7 @@ import {
 } from './module/rolls'
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import Mitt, { Emitter } from 'mitt'
+import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTruthsDialog'
 
 export type EmitterEvents = {
   highlightMove: string // Foundry ID
@@ -38,6 +39,9 @@ export interface IronswornConfig {
 
   emitter: IronswornEmitter
 
+  // DELETEME
+  SFSettingTruthsDialogVue: typeof SFSettingTruthsDialogVue
+
   beta: { [k: string]: any }
 }
 
@@ -59,6 +63,8 @@ export const IRONSWORN: IronswornConfig = {
   dataforgedHelpers,
 
   emitter: Mitt<EmitterEvents>(),
+
+  SFSettingTruthsDialogVue,
 
   beta: {
     AssetCompendiumBrowser,
