@@ -1,4 +1,7 @@
 /* stylelint-disable-next-line scss/dollar-variable-pattern */
-$animationDuration: var(--ironsworn-transition-duration, 0.5s);
+$animationDuration: var(
+  --ironsworn-tab-transition-duration,
+  var(--ironsworn-transition-duration)
+);
 
 @use 'vue2-animate/src/sass/vue2-animate';

@@ -27,6 +27,7 @@
   --ironsworn-z-index-lower: -2;
   --ironsworn-z-index-lowest: -3;
   --ironsworn-transition-duration: 0.5s;
+  --ironsworn-tab-transition-duration: 0.3s;
   --ironsworn-transition-timing-function: ease;
 
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.

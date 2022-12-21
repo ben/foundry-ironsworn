@@ -52,7 +52,7 @@
   --#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{$fg-type}-warm);
 
   // WIDGETS
-  --#{$prefix}-widget-fill: var(--#{$prefix}-#{$fg-type});
+  --#{$prefix}-widget-fill: var(--#{$prefix}-#{$fg-type}-80);
 }
 
 // generates color variables to style an interactive element with an invert effect when it's active
