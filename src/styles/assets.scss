@@ -1,6 +1,42 @@
 @use 'themes/mixins/decorations';
 @use 'mixins';
 
+// Here we encode the bullet styles as classes, and pull them into the
+// ul>li bullet class from there. These will also be available for block
+// elements
+@mixin asset-ability-bullet {
+  display: block;
+  transition: var(--std-animation);
+  background-position: center;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+@mixin asset-ability-bullet-marked {
+  background-color: currentcolor;
+}
+
+@mixin asset-ability-bullet-ironsworn {
+  margin-top: 0.15em;
+  border-width: var(--ironsworn-border-width-md);
+  border-radius: 50%;
+  height: 0.75em;
+  aspect-ratio: 1;
+}
+
+@mixin asset-ability-bullet-starforged {
+  margin-top: 0.15em;
+  background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+  height: 1em;
+  aspect-ratio: $hexagon-aspect-ratio;
+  mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+}
+
+@mixin asset-ability-bullet-starforged-marked {
+  mask-image: url('/assets/misc/hex-checkbox-checked.svg');
+}
+
 .ironsworn__asset {
   transition: var(--std-animation);
   overflow: hidden;
@@ -124,61 +160,20 @@
   }
 }
 
-$hexagon-aspect-ratio: calc(sqrt(3) / 2);
-$hex-deco-aspect-ratio: calc(24 / 28);
-$hex-deco-expanded-height: 50px;
-$hex-deco-collapsed-height: 32px;
-
-// Here we encode the bullet styles as classes, and pull them into the
-// ul>li bullet class from there. These will also be available for block
-// elements
-@mixin asset-ability-bullet {
-  display: block;
-  transition: var(--std-animation);
-  background-position: center;
-  background-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  mask-position: center;
-}
-
 .asset-ability-bullet {
   @include asset-ability-bullet;
-}
-
-@mixin asset-ability-bullet-marked {
-  background-color: currentcolor;
 }
 
 .asset-ability-bullet-marked {
   @include asset-ability-bullet-marked;
 }
 
-@mixin asset-ability-bullet-ironsworn {
-  margin-top: 0.15em;
-  border-width: var(--ironsworn-border-width-md);
-  border-radius: 50%;
-  height: 0.75em;
-  aspect-ratio: 1;
-}
-
 .asset-ability-bullet-ironsworn {
   @include asset-ability-bullet-ironsworn;
 }
 
-@mixin asset-ability-bullet-starforged {
-  margin-top: 0.15em;
-  background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-  height: 1em;
-  aspect-ratio: $hexagon-aspect-ratio;
-  mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-}
-
 .asset-ability-bullet-starforged {
   @include asset-ability-bullet-starforged;
-}
-
-@mixin asset-ability-bullet-starforged-marked {
-  mask-image: url('/assets/misc/hex-checkbox-checked.svg');
 }
 
 .asset-ability-bullet-starforged-marked {
