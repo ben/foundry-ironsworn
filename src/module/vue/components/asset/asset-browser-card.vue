@@ -93,8 +93,7 @@
   --ironsworn-color-thematic: v-bind('system.color');
 
   display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  flex-flow: column nowrap;
   justify-content: flex-start;
   margin: var(--ironsworn-spacer-xl) 0;
   padding: var(--ironsworn-spacer-md);

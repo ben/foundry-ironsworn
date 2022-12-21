@@ -29,8 +29,6 @@
 </template>
 
 <style lang="scss">
-@use 'mixins';
-
 $box-border-radius: var(--ironsworn-border-radius-md);
 $box-border-width: var(--ironsworn-border-width-md);
 $box-gap: 4px;
@@ -44,7 +42,7 @@ $box-gap: 4px;
   justify-content: center;
 
   &:focus {
-    @include focus-outline;
+    @include mixins.focus-outline;
   }
 
   .progress-track-box {
@@ -81,9 +79,10 @@ $box-gap: 4px;
       }
 
       .progress-tick {
+        stroke-width: 1px;
+
         // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
         vector-effect: non-scaling-stroke;
-        stroke-width: 1px;
       }
     }
   }

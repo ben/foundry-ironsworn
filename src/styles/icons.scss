@@ -103,6 +103,7 @@
 .fat {
   &:not(i) {
     &::before {
+      /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
       font-family: 'Font Awesome 6 Pro';
     }
   }
@@ -119,8 +120,8 @@
   width: 1em;
   height: 1em;
   content: '';
-  mask-repeat: no-repeat;
   mask-position: center;
+  mask-repeat: no-repeat;
   mask-size: contain;
 
   .vertical-text & {
@@ -158,10 +159,10 @@
     width: 100%;
     height: 100%;
     content: '';
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain;
     mask-origin: content-box; // this + above make this sensitive to padding on the :before pseudo-element.
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
   }
 }
 

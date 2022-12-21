@@ -1,7 +1,6 @@
 // Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
 @use 'starforged-font.css'; // HACK to avoid import error
-@use '../mixins';
 @use 'mixins/colors';
 @use 'mixins/palette';
 @use 'mixins/fvtt-var-overrides';

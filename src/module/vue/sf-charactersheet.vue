@@ -7,7 +7,11 @@
     <!-- Main body row -->
     <div class="flexrow">
       <!-- Momentum on left -->
-      <div class="flexcol margin-left nogrow" style="width: min-content">
+      <div
+        class="flexcol nogrow"
+        style="width: min-content"
+        :class="$style['margin-left']"
+      >
         <MomentumMeterSlider
           labelPosition="right"
           data-tooltip-direction="UP"
@@ -44,13 +48,13 @@
               <SfLegacies />
             </TabPanel>
             <TabPanel tab-key="assets" class="flexcol">
-              <SfAssets :class="$style.topPadding" />
+              <SfAssets :class="$style['top-padding']" />
             </TabPanel>
             <TabPanel tab-key="progress" class="flexcol">
-              <SfProgresses :class="$style.topPadding" />
+              <SfProgresses :class="$style['top-padding']" />
             </TabPanel>
             <TabPanel tab-key="connections" class="flexcol">
-              <SfConnections :class="$style.topPadding" />
+              <SfConnections :class="$style['top-padding']" />
             </TabPanel>
             <TabPanel tab-key="notes" class="flexcol">
               <SfNotes />
@@ -61,7 +65,8 @@
 
       <!-- Stats on right -->
       <PcConditionMeters
-        class="flexcol margin-right"
+        class="flexcol"
+        :class="$style['margin-left']"
         data-tooltip-direction="UP"
         labelPosition="left"
       />
@@ -74,7 +79,15 @@
 </template>
 
 <style lang="scss" module>
-.topPadding {
+.margin-right {
+  @include mixins.margin(right);
+}
+
+.margin-left {
+  @include mixins.margin(left);
+}
+
+.top-padding {
   padding-top: var(--ironsworn-spacer-md);
 }
 </style>

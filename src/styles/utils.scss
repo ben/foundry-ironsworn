@@ -1,16 +1,7 @@
 // for classes that apply a set of commonly used styles, but don't describe an element with a specific purpose
-@use 'mixins';
 
 .grid {
   display: grid;
-}
-
-.margin-left {
-  @include mixins.margin(right);
-}
-
-.highlighted {
-  @include mixins.static-highlight(30);
 }
 
 .scrollable {
@@ -19,14 +10,10 @@
   overflow-y: overlay;
 }
 
-.margin-right {
-  @include mixins.margin(left);
-}
-
 .vertical-text {
-  writing-mode: vertical-lr;
   border: none;
   width: 1.5rem;
+  writing-mode: vertical-lr;
 
   i {
     display: inline-block;

@@ -1,5 +1,4 @@
 @use 'sass:meta';
-@use 'mixins';
 
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
@@ -112,18 +111,22 @@
   }
 
   .ironsworn {
+    // stuff scoped to .ironsworn app windows only
+    // include these in a theme it to FVTT's own dialogs and inputs as well.
     @include meta.load-css('fvtt/dialog');
     @include meta.load-css('dialog');
     @include meta.load-css('editor');
     @include meta.load-css('scrollbar');
     @include meta.load-css('tables');
 
-    // import these to the theme apply it to FVTT's own dialogs and inputs as well.
+    // THEMES
+    // TODO: this could probably be set up to extract everything from the theme directory automatically.
+    @include meta.load-css('themes/starforged');
+    @include meta.load-css('themes/ironsworn');
 
-    // stuff scoped to .ironsworn app windows only
-    .window-title {
-      @include mixins.initial-caps;
-    }
+    // .window-title {
+    //   @include initial-caps;
+    // }
 
     .window-content {
       background: var(--ironsworn-color-bg);

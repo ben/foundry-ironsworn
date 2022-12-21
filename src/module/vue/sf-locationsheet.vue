@@ -47,7 +47,7 @@
         <select
           v-model="actor.system.klass"
           @change="klassChanged"
-          :class="{ highlighted: data.firstLookHighlight }"
+          :data-highlighted="data.firstLookHighlight"
         >
           <option
             v-for="opt in klassOptions"
@@ -78,9 +78,7 @@
       <SheetHeaderBasic
         :document="actor"
         class="sf-location-header nogrow"
-        :nameClass="{
-          highlighted: data.firstLookHighlight && canRandomizeName,
-        }"
+        :highlightName="data.firstLookHighlight && canRandomizeName"
         @change="nameChange"
       >
         <IronBtn
@@ -113,9 +111,7 @@
           v-for="oracle of row"
           block
           :disabled="oracle.requiresKlass && klassIsNotValid"
-          :class="{
-            highlighted: oracle.fl && data.firstLookHighlight,
-          }"
+          :data-highlighted="oracle.fl && data.firstLookHighlight"
           :tooltip="
             oracle.requiresKlass && klassIsNotValid
               ? $t('IRONSWORN.RequiresLocationType')
@@ -177,12 +173,8 @@ label {
   padding: 7px;
 }
 
-.theme-starforged .highlighted {
-  background: #055;
-}
-
-.theme-ironsworn .highlighted {
-  background: #ccc;
+[data-highlighted='true'] {
+  @include mixins.static-highlight;
 }
 </style>
 

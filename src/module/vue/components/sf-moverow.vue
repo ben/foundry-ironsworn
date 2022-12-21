@@ -59,8 +59,6 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins';
-
 $icon-size: 1.2em;
 $border-width: var(--ironsworn-border-width-lg);
 $border-radius: var(--ironsworn-border-radius-lg);
@@ -68,7 +66,9 @@ $wrapper-spacing: 4px;
 
 .sfMoveRow {
   --ironsworn-line-height: (--ironsworn-line-height-md);
-  @include thematic-color;
+  @if v-bind('thematicColor') {
+    @include mixins.thematic-color(v-bind('thematicColor'));
+  }
 
   position: relative;
   padding: 0 $wrapper-spacing;
@@ -86,20 +86,22 @@ $wrapper-spacing: 4px;
 .moveButton {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-  @include clickable-text;
+  @include mixins.clickable-text;
 
   align-self: center;
-  font-size: var(--font-size-20);
   aspect-ratio: 1 !important;
+  font-size: var(--font-size-20);
 }
 
 .toggleButton {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
 
-  @include clickable-text;
+  @include mixins.clickable-text;
   @include mixins.text-stroke(var(--ironsworn-color-dark));
-  @include thematic-color;
+  @if v-bind('thematicColor') {
+    @include mixins.thematic-color(v-bind('thematicColor'));
+  }
 
   display: flex;
   flex-direction: row;

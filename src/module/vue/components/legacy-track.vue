@@ -42,14 +42,12 @@
 </template>
 
 <style lang="scss">
-
-
-$max_progress_box_width: 50px;
-$max_xp_box_size: 15px;
-$xp_box_border_width: var(--ironsworn-border-width-md);
-$progress_box_gap: calc(var(--ironsworn-spacer-xs) * 2);
-$max_progress_track_width: calc(
-  ($max_progress_box_width * 10 + ($progress_box_gap * 9))
+$max-progress-box-width: 50px;
+$max-xp-box-size: 15px;
+$xp-box-border-width: var(--ironsworn-border-width-md);
+$progress-box-gap: calc(var(--ironsworn-spacer-xs) * 2);
+$max-progress-track-width: calc(
+  ($max-progress-box-width * 10 + ($progress-box-gap * 9))
 );
 
 [data-legacy='discoveries'] {
@@ -65,12 +63,12 @@ $max_progress_track_width: calc(
 }
 
 .legacy-track {
-  --legacy-xp-box-size: $max_xp_box_size;
+  --legacy-xp-box-size: $max-xp-box-size;
 
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;
   grid-template-columns: max-content 1fr;
-  max-width: $max_progress_track_width;
+  max-width: $max-progress-track-width;
 
   .legacy-track-title {
     grid-row: 1;
@@ -96,19 +94,20 @@ $max_progress_track_width: calc(
   .legacy-track-progress {
     grid-row: 2 / span 2;
     grid-column: 1 / span 2;
-    max-width: $max_progress_track_width;
+    max-width: $max-progress-track-width;
   }
 
   .progress-track {
-    gap: $progress_box_gap;
+    gap: $progress-box-gap;
     margin: 0;
   }
 
   .progress-track-box {
-    gap: $progress_box_gap;
+    gap: $progress-box-gap;
+
     // extra padding to allow comfy overlap with xp pips (similar to legacy tracks on the SF character sheet and in the book's illustrations).
-    padding-bottom: calc($max_xp_box_size * 0.4);
-    max-width: $max_progress_box_width;
+    padding-bottom: calc($max-xp-box-size * 0.4);
+    max-width: $max-progress-box-width;
     max-height: unset;
   }
 
@@ -118,32 +117,31 @@ $max_progress_track_width: calc(
     grid-template-columns: repeat(20, 1fr);
     grid-row: 3 / span 2;
     grid-column: 1 / span 2;
-    gap: $progress_box_gap;
+    gap: $progress-box-gap;
     justify-self: center;
     width: 100%;
-    max-width: $max_progress_track_width;
+    max-width: $max-progress-track-width;
 
     .xp-box {
-
-      $xpBoxOffset: calc(($progress_box_gap + $xp_box_border_width) / -2);
+      $xp-box-offset: calc(($progress-box-gap + $xp-box-border-width) / -2);
 
       z-index: 1;
       margin: 0;
-      border-width: $xp_box_border_width;
+      border-width: $xp-box-border-width;
       width: 100%;
-      max-width: $max_xp_box_size;
+      max-width: $max-xp-box-size;
 
       &:not(:nth-child(n + 21)) {
         &:nth-child(2n) {
           justify-self: left;
-          margin-left: $xpBoxOffset;
+          margin-left: $xp-box-offset;
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
         }
 
         &:nth-child(2n + 1) {
           justify-self: right;
-          margin-right: $xpBoxOffset;
+          margin-right: $xp-box-offset;
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
         }

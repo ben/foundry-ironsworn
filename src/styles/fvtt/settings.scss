@@ -1,3 +1,7 @@
-#module-management .package-list .package-title {
-  color: var(--ironsworn-color-fg);
+#module-management {
+  .package-list {
+    .package-title {
+      color: var(--ironsworn-color-fg);
+    }
+  }
 }

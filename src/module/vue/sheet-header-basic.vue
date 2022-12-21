@@ -6,7 +6,10 @@
       :document="props.document"
       :size="props.imgSize"
     />
-    <DocumentName :document="props.document" :class="nameClass" />
+    <DocumentName
+      :document="props.document"
+      :data-highlighted="!!highlightName"
+    />
     <slot></slot>
   </SheetHeader>
 </template>
@@ -18,7 +21,7 @@ import SheetHeader from './sheet-header.vue'
 const props = defineProps<{
   document: any
   imgSize?: string
-  nameClass?: any
   imgClass?: any
+  highlightName?: boolean
 }>()
 </script>

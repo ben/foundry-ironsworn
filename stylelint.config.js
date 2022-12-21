@@ -18,10 +18,11 @@ const CONFIG = {
   ],
   overrides: [
     {
-      files: ['**/*.vue', '**/*.scss'],
+      files: ['./src/modules/vue/**/*.vue', './src/styles/**/*.scss'],
 
       rules: {
         'max-line-length': [120, { ignore: ['comments'] }],
+        // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,
         'string-quotes': ['single'],
         'selector-class-pattern': [

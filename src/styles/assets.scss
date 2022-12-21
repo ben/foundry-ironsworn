@@ -1,5 +1,8 @@
 @use 'themes/mixins/decorations';
+@use 'sass:math';
 @use 'mixins';
+
+$hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
 
 // Here we encode the bullet styles as classes, and pull them into the
 // ul>li bullet class from there. These will also be available for block
@@ -9,8 +12,8 @@
   transition: var(--std-animation);
   background-position: center;
   background-repeat: no-repeat;
-  mask-repeat: no-repeat;
   mask-position: center;
+  mask-repeat: no-repeat;
 }
 
 @mixin asset-ability-bullet-marked {

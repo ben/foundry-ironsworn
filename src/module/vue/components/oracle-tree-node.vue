@@ -1,8 +1,9 @@
 <template>
   <div
     class="flexcol nogrow movesheet-row"
-    :class="{ hidden: node?.forceHidden, highlighted: state.highlighted }"
+    :class="{ hidden: node?.forceHidden }"
     ref="$el"
+    :data-highlighted="state.highlighted"
     data-tooltip-direction="LEFT"
   >
     <!-- TODO: split this into two components, yo -->

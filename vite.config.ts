@@ -4,17 +4,22 @@ import autoprefixer from 'autoprefixer'
 import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
-import sassSyntax from 'postcss-scss'
-import sassPlugin from '@csstools/postcss-sass'
 import tsconfigPaths from 'vite-tsconfig-paths'
-import sass from 'sass'
-import chromatic from './src/module/plugin/chromatic-sass'
+import sassChroma from './src/module/plugin/chromatic-sass'
+import chroma from 'chroma-js'
 
 const PORT = 30000
 
-const sassOptions: sass.Options<'sync'> = {
-  functions: chromatic,
-  loadPaths: [path.resolve(process.cwd(), `src/styles`)],
+const sassOptions = {
+  functions: sassChroma,
+  modules: { chroma },
+  additionalData: `
+              @use "${path.resolve(
+                __dirname,
+                'src/styles/mixins.scss'
+              )}" as mixins;
+              @use "@styles/utils" as utils;
+            `,
 }
 
 const config: UserConfig = {
@@ -32,6 +37,8 @@ const config: UserConfig = {
   ],
   resolve: {
     alias: {
+      '@styles': path.resolve(__dirname, 'src/styles'),
+      '@components': path.resolve(__dirname, 'src/module/vue/components'),
       vue: 'vue/dist/vue.esm-bundler.js',
     },
   },
@@ -50,11 +57,15 @@ const config: UserConfig = {
       },
     },
   },
+
   css: {
-    postcss: {
-      syntax: sassSyntax,
-      plugins: [sassPlugin(sassOptions), autoprefixer()],
+    preprocessorOptions: {
+      scss: sassOptions,
     },
+    postcss: {
+      plugins: [autoprefixer()],
+    },
+    devSourcemap: true,
   },
   build: {
     outDir: 'dist',

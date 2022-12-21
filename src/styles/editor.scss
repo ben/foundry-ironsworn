@@ -1,3 +1,4 @@
+/* stylelint-disable no-duplicate-selectors */
 @use 'mixins';
 
 // styles for TinyMCE and ProseMirror editors
@@ -182,10 +183,8 @@ $menu-box-shadow: 0 0 2px 0 rgba($color-black, 20%),
 }
 
 // LIST
-//
 // Collection
 // A list of items that can be arranged as vertical list, horizontal toolbar or a grid.
-//
 
 $collection-item-separator-color: var(--ironsworn-color-border-muted);
 $collection-item-label-text-color: var(--ironsworn-color-fg);
@@ -231,10 +230,7 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
 
 .tox {
   .tox-collection--list .tox-collection__group {
-    border-top-width: var(--ironsworn-border-width-md);
-    border-right-width: 0;
-    border-bottom-width: 0;
-    border-left-width: 0;
+    border-width: var(--ironsworn-border-width-md) 0 0;
     border-style: solid;
     border-color: $collection-item-separator-color;
 

@@ -1,5 +1,6 @@
 // styles for form input elements. for ProseMirror and TinyMCE styles, see editors.scss.
 // the main style sheet scopes these to .ironsworn, so import them again globally if you want to retheme the form inputs on the UX elements that belong to FVTT.
+
 @use 'mixins';
 
 *::placeholder {

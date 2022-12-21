@@ -1,5 +1,6 @@
 // styles attr-box (aka stat box) elements.
-// these could probably just live in their own component, but the compact sheet would need to be migrated to Vue, first.
+// FIXME these could probably just live in their own component, but the compact sheet would need to be migrated to Vue, first.
+
 @use 'mixins';
 
 .stats {

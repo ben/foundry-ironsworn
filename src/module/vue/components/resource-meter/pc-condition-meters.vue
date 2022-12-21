@@ -18,16 +18,16 @@
 </template>
 
 <style lang="scss">
-$meter_spacing: 6px;
+$meter-spacing: 6px;
 
 .condition-meters {
-  gap: $meter_spacing;
+  gap: $meter-spacing;
 
   .condition-meter {
     &:not(:first-child) {
       border-top: var(--ironsworn-border-width-md) solid
         var(--ironsworn-color-border);
-      padding-top: $meter_spacing;
+      padding-top: $meter-spacing;
     }
   }
 

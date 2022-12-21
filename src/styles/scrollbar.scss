@@ -1,5 +1,3 @@
-@use 'mixins';
-
 $scrollbar-thumb-bg-color: var(--ironsworn-color-fg-50);
 $scrollbar-thumb-border-color: var(--ironsworn-color-warm-50);
 $scrollbar-track-color: var(--ironsworn-color-fg-50);
@@ -23,7 +21,7 @@ $scrollbar-width: 6px;
 }
 
 :root {
-  scrollbar-width: thin;
   scrollbar-color: $scrollbar-thumb-bg-color $scrollbar-track-color;
   scrollbar-gutter: auto;
+  scrollbar-width: thin;
 }

@@ -24,13 +24,14 @@
 
 <style lang="scss" scoped>
 svg.clock {
-  // so that only *segment* hovers appear
-  pointer-events: none;
+  aspect-ratio: 1;
   fill: var(--ironsworn-color-thematic, var(--ironsworn-color-widget-fill));
   fill-opacity: 1;
+
+  // so that only *segment* hovers appear
+  pointer-events: none;
   stroke: var(--ironsworn-color-fg);
   stroke-width: var(--widget-stroke-width);
-  aspect-ratio: 1;
 
   &:hover {
     fill-opacity: var(--clock-fill-opacity-hover);

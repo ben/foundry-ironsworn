@@ -11,10 +11,16 @@
     -0.653644px -0.756803px 0 $color, 0.283662px -0.958924px 0 $color,
     0.96017px -0.279416px 0 $color;
 }
+
 @mixin initial-caps() {
   &::first-letter {
     text-transform: uppercase;
   }
+}
+
+@mixin thematic-color($color) {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
+  --ironsworn-color-thematic: $color;
 }
 
 // special effects
@@ -230,8 +236,8 @@
   color: var(--ironsworn-color-clickable-block-fg);
 
   &.vertical-text {
-    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
 
     & > * {
       writing-mode: vertical-lr !important;
@@ -279,8 +285,8 @@
   }
 
   &.vertical-text {
-    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
 
     .button-text {
       display: inherit;

@@ -35,15 +35,8 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins';
-
-@mixin thematic-color() {
-  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-  --ironsworn-color-thematic: v-bind('category?.color');
-}
-
 .wrapper {
-  @include mixins.thematic-color;
+  @include mixins.thematic-color(v-bind('category?.color'));
 
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-thematic);
@@ -70,7 +63,7 @@
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
     --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-    @include clickable-text;
+    @include mixins.clickable-text;
 
     height: inherit;
   }

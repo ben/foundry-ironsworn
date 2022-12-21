@@ -3,7 +3,7 @@
 import Chroma, { contrast } from 'chroma-js'
 import { isUndefined } from 'lodash'
 import {
-  Options,
+  CustomFunction,
   SassColor,
   SassList,
   SassNumber,
@@ -61,7 +61,7 @@ function sass2Chroma(color: SassColor) {
   return Chroma.rgb(red, green, blue).alpha(alpha)
 }
 
-const chroma: Options<'sync'>['functions'] = {
+const chroma = {
   /**
    * @see {@link Chroma.Color.set}
    */
@@ -183,7 +183,7 @@ const chroma: Options<'sync'>['functions'] = {
       }
     )
   },
-}
+} as unknown as Record<string, CustomFunction<'sync'>>
 
 export default chroma
 

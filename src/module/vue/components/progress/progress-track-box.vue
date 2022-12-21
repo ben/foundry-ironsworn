@@ -74,8 +74,8 @@
   }
 
   .progress-track-box-marks {
-    margin: 10%;
     aspect-ratio: 1;
+    margin: 10%;
     overflow: visible;
   }
 

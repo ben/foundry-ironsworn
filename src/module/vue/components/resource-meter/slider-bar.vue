@@ -49,8 +49,6 @@
 </template>
 
 <style lang="scss" scoped>
-@use 'mixins';
-
 $segment-border-width: var(--ironsworn-border-width-md);
 $segment-border-radius: var(--ironsworn-border-radius-lg);
 $segment-line-height: var(--ironsworn-line-height-lg);
@@ -65,7 +63,7 @@ $segment-vertical-width: var(--ironsworn-vertical-slider-width);
   padding: 0;
 
   &:focus {
-    @include focus-outline;
+    @include mixins.focus-outline;
   }
 
   .slider-segment {
@@ -112,8 +110,7 @@ $segment-vertical-width: var(--ironsworn-vertical-slider-width);
 
   &[aria-orientation='horizontal'] {
     flex: 1;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    flex-flow: row nowrap;
 
     .slider-segment {
       flex-grow: 1;

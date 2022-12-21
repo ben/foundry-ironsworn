@@ -36,8 +36,8 @@
     height: $hex-deco-collapsed-height;
     content: '';
     pointer-events: none;
-    mask-image: url('/assets/misc/hex-deco.svg');
     aspect-ratio: $hex-deco-aspect-ratio;
+    mask-image: url('/assets/misc/hex-deco.svg');
     mask-repeat: no-repeat;
   }
 

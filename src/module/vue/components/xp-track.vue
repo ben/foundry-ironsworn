@@ -13,8 +13,6 @@
   </article>
 </template>
 <style lang="scss" scoped>
-@use 'mixins';
-
 .xp-track {
   .xp-box {
     // for sizing/layout concerns, see legacy-track.vue
@@ -25,7 +23,7 @@
       --ironsworn-color-thematic
     );
 
-    @include clickable-block(var(--legacy-xp-box-size));
+    @include mixins.clickable-block(var(--legacy-xp-box-size));
 
     border-style: solid;
     border-radius: var(--ironsworn-border-radius-md);
@@ -36,6 +34,7 @@
       border-color: var(
         --ironsworn-color-clickable-block-border-hover
       ) !important;
+
       // legacy-xp-box-size is set in legacy-track.vue
       box-shadow: inset 0 0 var(--legacy-xp-box-size, 15px)
         var(--ironsworn-color-thematic) !important;
@@ -43,15 +42,15 @@
       &[aria-selected='true'],
       &.selected,
       &.active {
-        @include block-hover(var(--legacy-xp-box-size));
+        @include mixins.block-hover(var(--legacy-xp-box-size));
 
         &:first-child {
-          @include block;
+          @include mixins.block;
         }
       }
 
       & ~ .xp-box {
-        @include block;
+        @include mixins.block;
       }
     }
   }

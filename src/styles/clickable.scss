@@ -2,7 +2,7 @@
 
 .entity-link,
 .content-link,
-// the following selector is a proxy for compendium links which don't have a class attached to them.
+// FIXME the following selector is a proxy for compendium links which don't have a class attached to them.
 // ideally, all of them would share an identifying data attribute that could be selected for -- something like 'data-action', maybe?
 a[data-pack][data-uuid] {
   @include mixins.clickable-block;

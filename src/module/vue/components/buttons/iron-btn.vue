@@ -39,9 +39,6 @@
   </button>
 </template>
 <style lang="scss" module>
-@use 'utils';
-@use 'mixins';
-
 .flex-start {
   align-content: center;
   align-items: center;
@@ -81,13 +78,11 @@
   }
 
   &.vertical-button {
-    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     line-height: 1.25;
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
 
     .vertical-text.button-text {
-      @include vertical-text;
-
       display: inherit;
       width: max-content;
       line-height: inherit;
@@ -118,13 +113,13 @@
 }
 
 .clickable-text {
-  @include clickable-text;
+  @include mixins.clickable-text;
 
   line-height: var(--ironsworn-line-height);
 }
 
 .clickable-block {
-  @include clickable-block;
+  @include mixins.clickable-block;
 
   &:hover:not(:focus) {
     box-shadow: none;

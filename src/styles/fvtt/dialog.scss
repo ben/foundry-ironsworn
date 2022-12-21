@@ -1,6 +1,6 @@
 // styles for any FVTT dialog. You can import them globally, or scoped to e.g. the .ironsworn class.
-@use '../mixins';
-@use '../utils';
+@use 'sass:meta';
+@use '@styles/mixins';
 
 .dialog {
   .window-content {
@@ -43,9 +43,9 @@
         height: max-content;
 
         .button-text {
-          @extend %nogrow;
           @include mixins.initial-caps;
 
+          flex-grow: 0;
           width: auto;
           height: max-content;
         }

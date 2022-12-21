@@ -1,5 +1,12 @@
 @use 'mixins';
 
+@mixin dice-glow($color, $diceDropShadowSize: 0 0 2px) {
+  background-blend-mode: screen;
+  color: $color !important;
+  filter: drop-shadow($diceDropShadowSize $color)
+    drop-shadow($diceDropShadowSize $color);
+}
+
 .dice-roll {
   .dice-formula,
   .dice-total {
@@ -73,22 +80,12 @@
         flex-direction: row;
         flex-grow: 0;
         gap: calc($graphic-gap / 2);
-
-        .challenge-die {
-        }
       }
     }
   }
 }
 
 .ironsworn-roll {
-  @mixin dice-glow($color, $diceDropShadowSize: 0 0 2px) {
-    background-blend-mode: screen;
-    color: $color !important;
-    filter: drop-shadow($diceDropShadowSize $color)
-      drop-shadow($diceDropShadowSize $color);
-  }
-
   h3,
   .hit-type {
     font-weight: bold;
@@ -113,8 +110,8 @@
 
     &.d6::before {
       background-color: var(--dice-background-color);
-      mask-image: url('/assets/icons/d6-blank.svg');
       content: '';
+      mask-image: url('/assets/icons/d6-blank.svg');
     }
 
     &.d8 {
@@ -123,8 +120,8 @@
 
     &.d10::before {
       background-color: var(--dice-background-color);
-      mask-image: url('/assets/icons/d10-blank.svg');
       content: '';
+      mask-image: url('/assets/icons/d10-blank.svg');
     }
 
     &.d12 {
