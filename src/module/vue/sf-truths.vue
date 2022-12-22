@@ -7,6 +7,13 @@
         :text="truth.je().name ?? '???'"
         @click="scrollToCategory(truth.df.$id)"
       />
+
+      <IronBtn
+        nogrow
+        :text="$t('IRONSWORN.SaveYourTruths')"
+        icon="fa:feather"
+        @click="saveTruths"
+      />
     </nav>
     <section class="flexcol">
       <TruthCategory
@@ -24,9 +31,15 @@
 nav {
   position: fixed;
   margin-top: 1em;
+  height: 100%;
 }
+
 section {
   margin-left: 15em;
+}
+
+.save-button {
+  justify-self: flex-end;
 }
 </style>
 
