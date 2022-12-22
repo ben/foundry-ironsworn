@@ -1,7 +1,7 @@
 // based on https://github.com/bugsnag/chromatic-sass
 
-import chroma, { contrast, mix } from 'chroma-js'
-import { forEach, mapKeys, maxBy, mean, minBy, range } from 'lodash'
+import chroma, { contrast } from 'chroma-js'
+import { maxBy, minBy } from 'lodash'
 
 import {
   types as Sass,
@@ -21,51 +21,12 @@ const COLOR_MODES: chroma.InterpolationMode[] = [
   'lrgb',
 ]
 
-const getMethods = (obj) => {
-  let properties = new Set()
-  let currentObj = obj
-  do {
-    Object.getOwnPropertyNames(currentObj).map((item) => properties.add(item))
-  } while ((currentObj = Object.getPrototypeOf(currentObj)))
-  return [...properties.keys()].filter(
-    (item) => typeof obj[item] === 'function'
-  )
-}
-
 function sassList2Array<T extends SassValue = SassValue>(list: Sass.List) {
   const array: T[] = []
   for (let i = 1; i < list.getLength(); i++) {
     array.push(list.getValue(i) as T)
   }
   return array
-}
-
-function array2SassList<T extends SassValue = SassValue>(array: T[]) {
-  const list = new Sass.List(array.length, true)
-  array.forEach((v, i) => list.setValue(i + 1, v))
-  return list
-}
-
-function assertColorMode(mode: SassValue) {
-  // mode.assertString()
-  if (COLOR_MODES.includes(mode.toString() as any)) {
-    return true
-  }
-  // TODO: more verbose error
-  throw Error()
-}
-
-function assertModeChannel(modeChannel: SassValue) {
-  // modeChannel.assertString()
-  const [mode, channel] = modeChannel.toString().split('.') as [
-    chroma.InterpolationMode,
-    string
-  ]
-  if (COLOR_MODES.includes(mode.toString() as any) && mode.includes(channel)) {
-    return true
-  }
-  // TODO: more verbose error
-  throw Error()
 }
 
 /**
