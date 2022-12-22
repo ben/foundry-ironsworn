@@ -6,7 +6,16 @@
         <strong>{{ page.name }}</strong>
       </p>
 
-      <p v-html="$enrichMarkdown(page.system.Description)" />
+      <div v-html="$enrichMarkdown(page.system.Description)" />
+
+      <section v-if="page.system.Subtable">
+        <label class="flexrow nogrow" v-for="entry in page.system.Subtable">
+          <input type="radio" class="nogrow" :name="page.system.dfid" />
+          <p v-html="entry.Result" />
+        </label>
+
+        <!-- TODO: custom input -->
+      </section>
     </div>
   </label>
 </template>
@@ -20,6 +29,8 @@ input[type='radio'] {
 </style>
 
 <script setup lang="ts">
+import IronBtn from '../buttons/iron-btn.vue'
+
 const props = defineProps<{
   //@ts-ignore
   page: JournalEntryPage
