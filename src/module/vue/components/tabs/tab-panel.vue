@@ -30,6 +30,9 @@
 
 <style lang="scss" module>
 .tabPanel {
+  --ironsworn-transition-duration: var(--ironsworn-tab-transition-duration);
+
+  // improves performance of transform transitions
   backface-visibility: hidden;
   background-color: var(--ironsworn-color-bg);
 }
