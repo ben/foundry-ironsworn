@@ -74,6 +74,10 @@
   width: v-bind(width);
   height: v-bind(height);
   color: inherit;
+  &:disabled,
+  &[aria-disabled='true'] {
+    color: inherit;
+  }
 
   & > svg {
     // prevents double hover effect on svg hover

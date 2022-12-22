@@ -132,6 +132,7 @@ $wrapper-spacing: 4px;
   display: flex;
   flex-flow: row;
   background: none;
+  color: var(--ironsworn-color-light);
 }
 
 .toggleSection {

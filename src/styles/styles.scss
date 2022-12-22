@@ -87,6 +87,11 @@
     border: 0 solid var(--ironsworn-color-border);
     width: auto;
     line-height: var(--ironsworn-line-height);
+    color: currentColor;
+    &:disabled,
+    &[aria-disabled='true'] {
+      color: currentColor;
+    }
   }
 }
 
