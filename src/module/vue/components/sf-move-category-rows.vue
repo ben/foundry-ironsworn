@@ -1,31 +1,31 @@
 <template>
   <Collapsible
     class="list-block"
-    :class="$style.wrapper"
-    :toggleButtonClass="$style.toggleButton"
+    :class="$style['wrapper']"
+    :toggleButtonClass="$style['toggle-button']"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
-    :toggleWrapperClass="$style.toggleWrapper"
-    :toggleSectionClass="`${$style.toggleSection} list-block-header`"
+    :toggleWrapperClass="$style['toggle-wrapper']"
+    :toggleSectionClass="`${$style['toggle-section']} list-block-header`"
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
-    :toggleTextClass="$style.toggleText"
+    :toggleTextClass="$style['toggleText']"
     ref="$collapsible"
   >
     <template #default>
-      <ul class="flexcol" :class="$style.list">
+      <ul class="flexcol" :class="$style['list']">
         <li
           v-for="(move, i) of category.moves"
           :key="i"
           class="list-block-item nogrow"
-          :class="$style.listItem"
+          :class="$style['list-item']"
         >
           <SfMoverow
             @afterExpand="afterMoveExpand"
             :move="move"
             ref="$children"
             :headingLevel="headingLevel + 1"
-            :class="$style.moveRow"
+            :class="$style['move-row']"
             :thematicColor="category.color"
           />
         </li>
@@ -50,11 +50,11 @@
   list-style: none;
 }
 
-.toggleWrapper {
+.toggle-wrapper {
   box-sizing: content-box;
 }
 
-.toggleSection {
+.toggle-section {
   box-sizing: content-box;
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-thematic);
@@ -69,16 +69,17 @@
   }
 }
 
-.toggleButton {
+.toggle-button {
   @include mixins.text-stroke(var(--ironsworn-color-dark));
-
+  line-height: 1;
+  padding: var(--ironsworn-spacer-md);
   background: none;
 }
 
-.listItem {
+.list-item {
 }
 
-.moveRow {
+.move-row {
   &:focus {
     border: 0;
 

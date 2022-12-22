@@ -87,8 +87,6 @@
 .toggleButton {
   display: flex;
   transition: transform 0.4s;
-  margin-left: var(--ironsworn-spacer-xs);
-
   .wrapper[aria-expanded='true'] & {
     transform: v-bind(transform);
   }
