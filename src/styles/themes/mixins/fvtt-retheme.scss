@@ -1,5 +1,5 @@
 // overrides for most of FVTT's default color variables, mainly useful for retheming them with e.g. a dark theme.
-@mixin fvtt-var-overrides {
+@mixin color-variables {
   --color-text-hyperlink: var(--ironsworn-color-warm);
   --color-shadow-primary: var(--ironsworn-color-cool);
   --color-shadow-highlight: var(--ironsworn-color-warm);

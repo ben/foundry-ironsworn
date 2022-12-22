@@ -14,7 +14,6 @@
   // generate a large set of colour values from the four anchor colours.
 
   $palette: gamutize($fg-color, $bg-color, $warm-color, $cool-color, $prefix);
-  // @debug meta.inspect($palette);
 
   // Start writing the CSS custom properties.
   // see: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
@@ -85,6 +84,73 @@
   --#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
   --#{$prefix}-border: var(--#{$prefix}-fg);
   --#{$prefix}-border-muted: var(--#{$prefix}-fg-80);
+}
+
+// Sets
+@mixin normalized-ironsworn-colors(
+  $bg-color: #fff,
+  $intensity: 0.65,
+  $contrast-ratio: 4.5
+) {
+  // contrast ratio is the desired ratio of background luminance to foreground luminance.
+  // broadly speaking: 3 is OK on big elements, 4.5 for body text.
+
+  // these colors were eyedroppered directly from the Starforged PDF, but we need to adjust them for web use
+  $pdf-colors: (
+    'red': #c9181a,
+    'purple': #8c1d81,
+    'blue': #35a9e0,
+  );
+
+  // These colours are interpolated in the OKLCH colourspace.
+  // Chroma in OKLCH is theoretically unbounded, but for web design purposes 0.4 is the practical maximum.
+  $chroma-max: 0.4;
+  $chroma: $chroma-max * $intensity;
+
+  $bg-luminance: luminance($bg-color);
+
+  @debug bg-luminance meta.inspect($bg-luminance);
+
+  $luminance-max: 1;
+  $luminance-min: 0;
+
+  @if $bg-luminance < 0.5 {
+    // dark theme
+    $luminance-min: $bg-luminance * $contrast-ratio;
+  } @else {
+    // light theme
+    $luminance-max: math.div($bg-luminance, $contrast-ratio);
+  }
+
+  @each $key, $color in $pdf-colors {
+    $luminance-old: luminance($color);
+    @debug luminance-min meta.inspect($luminance-min);
+    @debug luminance-old meta.inspect($luminance-old);
+    @debug luminance-max meta.inspect($luminance-max);
+
+    $luminance-new: math.clamp($luminance-min, $luminance-old, $luminance-max);
+
+    // set luminance first, colours can be a bit muddy otherwise
+    $normalize-lum: luminance($color, $luminance-new, 'oklch');
+    $new-color: set-channel($normalize-lum, 'oklch.c', $chroma);
+    // $new-color: $normalize-lum;
+
+    @debug new-color meta.inspect($new-color);
+    @debug adjusted L meta.inspect(get-channel($new-color, 'oklch.l'));
+    @debug adjusted C meta.inspect(get-channel($new-color, 'oklch.c'));
+    @debug adjusted H meta.inspect(get-channel($new-color, 'oklch.h'));
+    @debug adjusted luminance meta.inspect(luminance($new-color));
+
+    --ironsworn-color-#{$key}: #{$new-color};
+  }
+
+  // set dependent variables
+  --ironsworn-color-legacy-quests: var(--ironsworn-color-red);
+  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
+  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
+  --ironsworn-color-danger: var(--ironsworn-color-red);
+  --ironsworn-color-success: var(--ironsworn-color-blue);
+  --ironsworn-color-warning: hsl(55deg 100% 50%);
 }
 
 // HELPER FUNCTIONS

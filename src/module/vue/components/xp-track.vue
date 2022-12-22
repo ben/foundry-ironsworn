@@ -32,8 +32,8 @@
       @include mixins.overlay(var(--ironsworn-z-index-high));
       @include mixins.tint(var(--ironsworn-color-thematic), 0);
 
-      transition: var(--std-animation);
-      background-blend-mode: overlay;
+      transition: var(--ironsworn-transition);
+      background-blend-mode: normal;
     }
 
     &[data-segment-state='hovered'] {
@@ -42,7 +42,7 @@
       box-shadow: none;
 
       &::after {
-        opacity: 0.3;
+        opacity: 0.5;
       }
     }
 
@@ -52,7 +52,7 @@
       border-color: var(--ironsworn-color-clickable-block-border-selected);
 
       &::after {
-        opacity: 0.6;
+        opacity: 1;
       }
     }
   }

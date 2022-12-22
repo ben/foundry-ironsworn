@@ -141,7 +141,7 @@ $wrapper-spacing: 4px;
 }
 
 .toggleWrapper {
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
   border-top-left-radius: $border-radius;

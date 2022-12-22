@@ -139,7 +139,7 @@
 // CLICKABLE MIXINS
 
 @mixin interactive() {
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
 
   &.disabled,
   &:disabled,

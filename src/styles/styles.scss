@@ -1,69 +1,72 @@
 @use 'sass:meta';
+@use 'themes/mixins/colors';
 
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
   --widget-stroke-width: 1;
   --clock-fill-opacity-hover: 0.6;
+
+  // BORDERS
   --ironsworn-border-radius-sm: 2px;
   --ironsworn-border-radius-md: 3px;
   --ironsworn-border-radius-lg: 5px;
+  --ironsworn-border-radius-xl: 7px;
   --ironsworn-border-width-md: 1px;
   --ironsworn-border-width-lg: 2px;
+
+  // LAYOUT + SPACING + MARGINS
   --ironsworn-spacer-xs: 2px;
   --ironsworn-spacer-sm: 3px;
   --ironsworn-spacer-md: 5px;
   --ironsworn-spacer-lg: 7px;
   --ironsworn-spacer-xl: 10px;
   --ironsworn-vertical-slider-width: 50px;
+
+  // TYPOGRAPHY
   --ironsworn-line-height-lg: 2;
   --ironsworn-line-height-md: 1.5;
   --ironsworn-line-height-sm: 1.25;
   --ironsworn-line-height-xs: 1;
   --ironsworn-line-height: var(--ironsworn-line-height-md);
+
+  // Z-INDEX
   --ironsworn-z-index-highest: 100;
   --ironsworn-z-index-higher: 75;
   --ironsworn-z-index-high: 25;
   --ironsworn-z-index-low: -1;
   --ironsworn-z-index-lower: -2;
   --ironsworn-z-index-lowest: -3;
-  --ironsworn-transition-duration: 0.5s;
-  --ironsworn-tab-transition-duration: 0.3s;
-  --ironsworn-transition-timing-function: ease;
 
   // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
   --ironsworn-input-border-style: solid;
 
+  // TRANSITION AND ANIMATION
+  --ironsworn-transition-duration: 0.5s;
+  --ironsworn-transition-timing-function: ease;
+  --ironsworn-transition-properties: all;
+  --ironsworn-tab-transition-duration: 0.3s;
+
+  // visualize timing functions here: https://matthewlein.com/tools/ceaser
+  --ironsworn-tab-transition-timing-function: cubic-bezier(
+    0.455,
+    0.03,
+    0.515,
+    0.955
+  );
+
   // for later use as a mixin to scope transitions to colors effects only.
-  --ironsworn-transition-property-color: background-color, border-color,
-    box-shadow, caret-color, color, column-rule-color, filter, opacity,
-    outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
-  --std-animation-timing: var(--ironsworn-transition-duration)
-    var(--ironsworn-transition-timing-function);
-  --std-animation: all 0.5s ease;
+  --transition-property-color: background-color, border-color, box-shadow,
+    caret-color, color, column-rule-color, filter, opacity, outline-color,
+    text-decoration-color, fill-opacity, fill-color, stroke;
+
+  --ironsworn-transition: var(--ironsworn-transition-properties, all)
+    var(--ironsworn-transition-duration)
+    var(--ironsworn-transition-timing-function, ease);
+
+  // FontAwesome-specific variables.
   --fa-display: inline-block;
   --fa-invert: var(--ironsworn-color-bg);
 
-  // original sample from PDF: #c9181a
-  --ironsworn-color-red-light: hsl(355deg 100% 65%);
-  --ironsworn-color-red: hsl(7deg 78% 51%);
-  --ironsworn-color-red-dark: hsl(357deg 100% 28%);
-
-  // original sample from PDF: #8c1d81
-  --ironsworn-color-purple-light: hsl(298deg 72% 62%);
-  --ironsworn-color-purple: hsl(299deg 59% 45%);
-  --ironsworn-color-purple-dark: hsl(296deg 100% 23%);
-
-  // original sample from PDF: #35a9e0
-  --ironsworn-color-blue-light: hsl(191deg 100% 50%);
-  --ironsworn-color-blue: hsl(199deg 100% 47%);
-  --ironsworn-color-blue-dark: hsl(214deg 100% 45%);
-  --ironsworn-color-legacy-quests: var(--ironsworn-color-red);
-  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
-  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
-  --ironsworn-color-danger: var(--ironsworn-color-red);
-  --ironsworn-color-danger-inverted: hsl(0deg 0% 100%);
-  --ironsworn-color-success: var(--ironsworn-color-blue);
-  --ironsworn-color-warning: hsl(55deg 100% 50%);
   --ironsworn-tab-transition: fade;
 }
 
@@ -108,7 +111,7 @@
   textarea,
   .scene-control,
   .macro {
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
 
     &.active {
       color: var(--ironsworn-color-clickable-text-selected);

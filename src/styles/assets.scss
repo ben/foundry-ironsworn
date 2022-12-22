@@ -9,7 +9,7 @@ $hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
 // elements
 @mixin asset-ability-bullet {
   display: block;
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
   background-position: center;
   background-repeat: no-repeat;
   mask-position: center;
@@ -41,7 +41,7 @@ $hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
 }
 
 .ironsworn__asset {
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
   overflow: hidden;
 
   .asset-header {
@@ -52,7 +52,7 @@ $hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
       display: flex;
       flex-flow: row wrap;
       gap: var(--ironsworn-spacer-lg);
-      transition: var(--std-animation);
+      transition: var(--ironsworn-transition);
       box-shadow: none !important;
       background: none;
     }
@@ -86,7 +86,7 @@ $hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
 
   .asset-body {
     gap: var(--ironsworn-spacer-lg);
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
     padding: var(--ironsworn-spacer-sm);
     overflow: hidden;
 

@@ -58,7 +58,7 @@ svg.clock {
   }
 
   .clock-segment {
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
     cursor: pointer;
     pointer-events: fill;
     vector-effect: non-scaling-stroke;

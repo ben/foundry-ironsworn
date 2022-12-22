@@ -80,7 +80,7 @@
   }
 
   .tox-tbtn {
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
     border-color: transparent;
@@ -246,7 +246,7 @@ $collection-group-label-text-color: var(--ironsworn-color-fg-muted);
   }
 
   .tox-collection__item {
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
     color: $collection-item-label-text-color;
   }
 

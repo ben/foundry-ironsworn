@@ -5,7 +5,7 @@ import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import tsconfigPaths from 'vite-tsconfig-paths'
-import sassChroma from './src/module/plugin/chromatic-sass'
+import sassChroma from './src/module/plugin/sass-chroma-js'
 import * as sass from 'sass'
 
 const PORT = 30000

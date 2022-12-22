@@ -52,7 +52,7 @@
   fill-opacity: 1;
   align-content: center;
   gap: 2px;
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
   &:hover {
     fill: var(--ironsworn-color-fg-40);
   }

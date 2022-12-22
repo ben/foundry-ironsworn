@@ -5,19 +5,27 @@
 @use 'mixins/decorations';
 
 .theme-ironsworn {
-  // #ff6600 and #ff0000 chosen because they're what FVTT uses for similar accents.
+  // #ff6600 and #ff0000 chosen because they're what FVTT uses for its accents.
+  $fg-color: hsl(0deg 0% 0%);
+  $bg-color: rgb(255, 255, 255);
+  $warm-color: hsl(24deg 100% 50%);
+  $cool-color: hsl(0deg 100% 50%);
+
+  @include colors.normalized-ironsworn-colors($bg-color);
+
   @include colors.palettize(
-    $fg-color: hsl(0, 0%, 0%),
-    $bg-color: hsl(0, 0%, 100%),
-    $warm-color: hsl(24, 100%, 50%),
-    $cool-color: hsl(0, 100%, 50%),
-    $prefix: ironsworn-color
+    $fg-color: $fg-color,
+    $bg-color: $bg-color,
+    $warm-color: $warm-color,
+    $cool-color: $cool-color,
+    $prefix: 'ironsworn-color'
   );
-  @include colors.light-theme(ironsworn-color);
-  @include colors.sharp-border(ironsworn-color);
+
+  @include colors.light-theme('ironsworn-color');
+  @include colors.sharp-border('ironsworn-color');
   @include colors.interactive-invert(
-    ironsworn-color-clickable-block,
-    ironsworn-color
+    'ironsworn-color-clickable-block',
+    'ironsworn-color'
   );
   @include decorations.ironsworn;
 

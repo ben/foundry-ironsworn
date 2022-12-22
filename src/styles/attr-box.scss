@@ -45,7 +45,7 @@
     flex: 0 0 30px;
     align-items: center;
     justify-items: center;
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
 
     &.editing {
