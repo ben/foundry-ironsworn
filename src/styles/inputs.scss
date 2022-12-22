@@ -16,6 +16,7 @@ select {
 
 textarea {
   @include mixins.input-field;
+
   border-radius: var(--ironsworn-border-radius-md);
   font-family: var(--font-primary);
 }

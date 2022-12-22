@@ -58,15 +58,15 @@
   --transition-property-color: background-color, border-color, box-shadow,
     caret-color, color, column-rule-color, filter, opacity, outline-color,
     text-decoration-color, fill-opacity, fill-color, stroke;
-
   --ironsworn-transition: var(--ironsworn-transition-properties, all)
     var(--ironsworn-transition-duration)
     var(--ironsworn-transition-timing-function, ease);
 
   // FontAwesome-specific variables.
+  /* stylelint-disable-next-line custom-property-pattern */
   --fa-display: inline-block;
+  /* stylelint-disable-next-line custom-property-pattern */
   --fa-invert: var(--ironsworn-color-bg);
-
   --ironsworn-tab-transition: fade;
 }
 
@@ -87,10 +87,11 @@
     border: 0 solid var(--ironsworn-color-border);
     width: auto;
     line-height: var(--ironsworn-line-height);
-    color: currentColor;
+    color: currentcolor;
+
     &:disabled,
     &[aria-disabled='true'] {
-      color: currentColor;
+      color: currentcolor;
     }
   }
 }

@@ -71,9 +71,10 @@
 
 .toggle-button {
   @include mixins.text-stroke(var(--ironsworn-color-dark));
-  line-height: 1;
-  padding: var(--ironsworn-spacer-md);
+
   background: none;
+  padding: var(--ironsworn-spacer-md);
+  line-height: 1;
 }
 
 .list-item {

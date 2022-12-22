@@ -65,9 +65,11 @@
 .margin-left {
   @include mixins.margin(left);
 }
+
 .margin-right {
   @include mixins.margin(right);
 }
+
 .tabContent {
   height: inherit;
 }

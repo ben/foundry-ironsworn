@@ -101,7 +101,6 @@
   $old-luminance: luminance($color);
   $sum: $old-luminance + $luminance-target;
   $new-luminance: math.div($sum, 2);
-
   $normalize-lum: luminance($color, $new-luminance, 'oklch');
   $normalize-chroma: set-channel($normalize-lum, 'oklch.c', $chroma);
 

@@ -16,11 +16,25 @@ const CONFIG = {
      */
     'stylelint-config-prettier-scss',
   ],
+  plugins: [
+    /**
+     * @see https://github.com/Mavrin/stylelint-declaration-use-css-custom-properties
+     */
+    '@mavrin/stylelint-declaration-use-css-custom-properties',
+  ],
   overrides: [
     {
       files: ['./src/modules/vue/**/*.vue', './src/styles/**/*.scss'],
-
       rules: {
+        'mavrin/stylelint-declaration-use-css-custom-properties': {
+          /**
+           * @see https://csstree.github.io/docs/syntax/
+           */
+          cssDefinitions: ['color', 'length'],
+          ignoreProperties: ['/^\\$/'],
+          ignoreValues: ['/\\$/', 'transparent', '/current[Cc]olor/', '0'],
+        },
+        'custom-property-pattern': [/ironsworn-/],
         'max-line-length': [120, { ignore: ['comments'] }],
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,

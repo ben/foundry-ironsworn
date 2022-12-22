@@ -74,6 +74,7 @@
   width: v-bind(width);
   height: v-bind(height);
   color: inherit;
+
   &:disabled,
   &[aria-disabled='true'] {
     color: inherit;
@@ -94,6 +95,7 @@
 .button-text {
   display: inline;
   border-width: 0;
+
   &.vertical-text {
     display: inherit;
     width: max-content;
