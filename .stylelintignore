@@ -1,0 +1,8 @@
+.vscode
+dist
+patches
+system
+node_modules
+**/*.css
+**/*.ts
+**/*.js
