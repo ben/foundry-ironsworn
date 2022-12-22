@@ -24,17 +24,11 @@
 }
 
 @mixin light-theme($prefix) {
-  @include color-defaults('dark', 'light', 'ironsworn-color');
-  --#{$prefix}-legacy-quests: var(--#{$prefix}-red);
-  --#{$prefix}-legacy-bonds: var(--#{$prefix}-purple);
-  --#{$prefix}-legacy-discoveries: var(--#{$prefix}-blue);
+  @include color-defaults('dark', 'light', $prefix);
 }
 
 @mixin dark-theme($prefix) {
-  @include color-defaults('light', 'dark', 'ironsworn-color');
-  --#{$prefix}-legacy-quests: var(--#{$prefix}-red-dark);
-  --#{$prefix}-legacy-bonds: var(--#{$prefix}-purple-dark);
-  --#{$prefix}-legacy-discoveries: var(--#{$prefix}-blue-dark);
+  @include color-defaults('light', 'dark', $prefix);
 }
 
 // Set sensible defaults for semantically-oriented colors

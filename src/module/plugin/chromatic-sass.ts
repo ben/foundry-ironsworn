@@ -8,6 +8,7 @@ import {
   LegacyValue as SassValue,
   LegacySyncFunction as SassSyncFunction,
 } from 'sass'
+import { gamutize } from './gamutize'
 
 const COLOR_MODES: chroma.InterpolationMode[] = [
   'rgb',
@@ -239,7 +240,7 @@ const chromaSass: Record<string, SassSyncFunction> = {
    *
    * @remarks 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' are more about a UX element's importance/activity (warmer = more active/dramatic).
    */
-  'gamutize($fg-color, $bg-color, $warm-color, $cool-color, $prefix: palette)':
+  "gamutize($fg-color, $bg-color, $warm-color, $cool-color, $prefix: 'palette')":
     (
       fgColor: Sass.Color,
       bgColor: Sass.Color,
@@ -250,13 +251,11 @@ const chromaSass: Record<string, SassSyncFunction> = {
        */
       prefix: Sass.String
     ) => {
+      const cssPrefix = prefix.getValue()
       const ground = {
         fg: sass2Chroma(fgColor),
         bg: sass2Chroma(bgColor),
       }
-      const steps = range(10, 100, 10)
-      const cssPrefix = prefix.getValue()
-
       const lightness = {
         light: maxBy([ground.fg, ground.bg], (color) =>
           color?.luminance()
@@ -265,65 +264,36 @@ const chromaSass: Record<string, SassSyncFunction> = {
           color?.luminance()
         ) as chroma.Color,
       }
+      const isDarkTheme = ground.fg.luminance() > ground.bg.luminance()
+
+      const darkGround = isDarkTheme ? 'bg' : 'fg'
+      const lightGround = isDarkTheme ? 'fg' : 'bg'
+
       const temperature = {
         warm: sass2Chroma(warmColor),
         cool: sass2Chroma(coolColor),
       }
-      const colorMap = new Map<string, chroma.Color>()
-      const mode: chroma.InterpolationMode = 'hcl'
-
-      forEach(
-        {
-          ...lightness,
-          ...ground,
-          ...temperature,
-        },
-        (color, colorKey) => {
-          colorMap.set(`${cssPrefix}-${colorKey}`, color)
-          // mix overlays
-          steps.forEach((step) => {
-            const stepFactor = step / 100
-            colorMap.set(
-              `${cssPrefix}-${colorKey}-${step}`,
-              color.alpha(stepFactor)
-            )
-          })
-        }
+      const colorMap = gamutize(
+        lightness.light,
+        lightness.dark,
+        temperature.warm,
+        temperature.cool
       )
-      steps.forEach((step) => {
-        const stepFactor = step / 100
-        // mix scales
-        const scaleColor = chroma.mix(
-          lightness['light'],
-          lightness['dark'],
-          stepFactor,
-          mode
-        )
 
-        // Mix a colour scale from $light-color to $dark-color, where *-scale-90 is 90% $light-color, and *-scale-10 is 10% $light-color.
-        colorMap.set(`${cssPrefix}-scale-${step}`, scaleColor)
-
-        // Mix a color scale of midtones from $fg-color to $bg-color, where *-midtone-90 is 90% $fg-color, and *-midtone-10 is 10% $fg-color.
-        colorMap.set(
-          `${cssPrefix}-midtone-${step}`,
-          mix(ground['bg'], ground['fg'], stepFactor, mode)
-        )
-      })
-
-      // mix color variants
-      forEach({ ...lightness, ...ground }, (vBase, kBase) => {
-        forEach(temperature, (vTemp, kTemp) => {
-          colorMap.set(
-            `${cssPrefix}-${kBase}-${kTemp}`,
-            mix(vBase, vTemp, 0.5, mode)
-          )
-        })
+      // assign light and dark colours to foreground and background
+      colorMap.forEach((colorValue, colorKey) => {
+        if (colorKey.includes('light')) {
+          colorMap.set(colorKey.replace('light', lightGround), colorValue)
+        }
+        if (colorKey.includes('dark')) {
+          colorMap.set(colorKey.replace('dark', darkGround), colorValue)
+        }
       })
 
       const sassColorMap = new Sass.Map(colorMap.size)
       let index = 0
       colorMap.forEach((colorValue, colorKey) => {
-        sassColorMap.setKey(index, new Sass.String(colorKey))
+        sassColorMap.setKey(index, new Sass.String(`${cssPrefix}-${colorKey}`))
         sassColorMap.setValue(index, chroma2Sass(colorValue))
         index++
       })
