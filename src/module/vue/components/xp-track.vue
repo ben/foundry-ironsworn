@@ -48,6 +48,7 @@
 
     &[data-segment-state='selected'],
     &:hover[data-segment-state='hovered'] {
+      // selected boxes, plus the box currently being hovered when previewing.
       z-index: var(--ironsworn-z-index-high);
       border-color: var(--ironsworn-color-clickable-block-border-selected);
 
