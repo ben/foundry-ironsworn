@@ -34,7 +34,7 @@
 
 // Set sensible defaults for semantically-oriented colors
 @mixin defaults($fg-type, $bg-type, $prefix) {
-  --#{$prefix}-fg-muted: var(--#{$prefix}-midtone-60);
+  --#{$prefix}-fg-muted: var(--#{$prefix}-midtone-40);
   --#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
 
   // INPUT
