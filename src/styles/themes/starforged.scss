@@ -9,11 +9,10 @@
 
 .theme-starforged {
   $fg-color: hsl(180deg 70% 60%);
-  $bg-color: #000000;
+  $bg-color: hsl(180deg 20% 0%);
   $warm-color: hsl(185deg 100% 50%);
   $cool-color: hsl(210deg 100% 50%);
 
-  @include colors.normalized-ironsworn-colors($bg-color);
   @include colors.palettize(
     $fg-color: $fg-color,
     $bg-color: $bg-color,

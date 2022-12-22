@@ -11,8 +11,6 @@
   $warm-color: hsl(24deg 100% 50%);
   $cool-color: hsl(0deg 100% 50%);
 
-  @include colors.normalized-ironsworn-colors($bg-color);
-
   @include colors.palettize(
     $fg-color: $fg-color,
     $bg-color: $bg-color,

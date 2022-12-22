@@ -23,15 +23,17 @@
 }
 
 @mixin light-theme($prefix) {
-  @include color-defaults('dark', 'light', $prefix);
+  @include defaults('dark', 'light', $prefix);
+  @include normalize-ironsworn-colors($luminance-target: 0.2);
 }
 
 @mixin dark-theme($prefix) {
-  @include color-defaults('light', 'dark', $prefix);
+  @include defaults('light', 'dark', $prefix);
+  @include normalize-ironsworn-colors($luminance-target: 0, $intensity: 0.65);
 }
 
 // Set sensible defaults for semantically-oriented colors
-@mixin color-defaults($fg-type, $bg-type, $prefix) {
+@mixin defaults($fg-type, $bg-type, $prefix) {
   --#{$prefix}-fg-muted: var(--#{$prefix}-midtone-60);
   --#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
 
@@ -86,12 +88,28 @@
   --#{$prefix}-border-muted: var(--#{$prefix}-fg-80);
 }
 
+@function normalize($color, $luminance-target, $intensity: null) {
+  // These colours are interpolated in the OKLCH colourspace.
+  $chroma: get-channel($color, 'oklch.c');
+
+  @if $intensity {
+    // Chroma in OKLCH is theoretically unbounded, but for web design purposes 0.4 is the practical maximum.
+    $chroma-max: 0.4;
+    $chroma: $chroma-max * $intensity;
+  }
+
+  $old-luminance: luminance($color);
+  $sum: $old-luminance + $luminance-target;
+  $new-luminance: math.div($sum, 2);
+
+  $normalize-lum: luminance($color, $new-luminance, 'oklch');
+  $normalize-chroma: set-channel($normalize-lum, 'oklch.c', $chroma);
+
+  @return $normalize-chroma;
+}
+
 // Sets
-@mixin normalized-ironsworn-colors(
-  $bg-color: #fff,
-  $intensity: 0.65,
-  $contrast-ratio: 4.5
-) {
+@mixin normalize-ironsworn-colors($luminance-target, $intensity: null) {
   // contrast ratio is the desired ratio of background luminance to foreground luminance.
   // broadly speaking: 3 is OK on big elements, 4.5 for body text.
 
@@ -102,44 +120,8 @@
     'blue': #35a9e0,
   );
 
-  // These colours are interpolated in the OKLCH colourspace.
-  // Chroma in OKLCH is theoretically unbounded, but for web design purposes 0.4 is the practical maximum.
-  $chroma-max: 0.4;
-  $chroma: $chroma-max * $intensity;
-
-  $bg-luminance: luminance($bg-color);
-
-  @debug bg-luminance meta.inspect($bg-luminance);
-
-  $luminance-max: 1;
-  $luminance-min: 0;
-
-  @if $bg-luminance < 0.5 {
-    // dark theme
-    $luminance-min: $bg-luminance * $contrast-ratio;
-  } @else {
-    // light theme
-    $luminance-max: math.div($bg-luminance, $contrast-ratio);
-  }
-
   @each $key, $color in $pdf-colors {
-    $luminance-old: luminance($color);
-    @debug luminance-min meta.inspect($luminance-min);
-    @debug luminance-old meta.inspect($luminance-old);
-    @debug luminance-max meta.inspect($luminance-max);
-
-    $luminance-new: math.clamp($luminance-min, $luminance-old, $luminance-max);
-
-    // set luminance first, colours can be a bit muddy otherwise
-    $normalize-lum: luminance($color, $luminance-new, 'oklch');
-    $new-color: set-channel($normalize-lum, 'oklch.c', $chroma);
-    // $new-color: $normalize-lum;
-
-    @debug new-color meta.inspect($new-color);
-    @debug adjusted L meta.inspect(get-channel($new-color, 'oklch.l'));
-    @debug adjusted C meta.inspect(get-channel($new-color, 'oklch.c'));
-    @debug adjusted H meta.inspect(get-channel($new-color, 'oklch.h'));
-    @debug adjusted luminance meta.inspect(luminance($new-color));
+    $new-color: normalize($color, $luminance-target, $intensity);
 
     --ironsworn-color-#{$key}: #{$new-color};
   }
