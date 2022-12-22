@@ -404,15 +404,20 @@
   background-blend-mode: overlay;
 }
 
-@mixin overlay() {
+@mixin overlay($z-index: var(--ironsworn-z-index-highest)) {
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: var(--ironsworn-z-index-highest);
+  z-index: $z-index;
   content: '';
   pointer-events: none;
+}
+
+@mixin tint($background, $opacity: 0.5) {
+  opacity: $opacity;
+  background: $background;
 }
 
 @mixin text-compact() {
