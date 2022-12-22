@@ -1,6 +1,12 @@
 <template>
   <label class="nogrow flexrow">
-    <input class="nogrow" type="radio" :name="radioGroup" />
+    <input
+      type="radio"
+      class="nogrow"
+      @change="select"
+      :name="radioGroup"
+      ref="topRadio"
+    />
     <div class="flexcol">
       <p>
         <strong>{{ page.name }}</strong>
@@ -10,7 +16,12 @@
 
       <section v-if="page.system.Subtable">
         <label class="flexrow nogrow" v-for="entry in page.system.Subtable">
-          <input type="radio" class="nogrow" :name="page.system.dfid" />
+          <input
+            type="radio"
+            class="nogrow"
+            @change="subtableSelect(entry)"
+            :name="page.system.dfid"
+          />
           <p v-html="entry.Result" />
         </label>
 
@@ -29,6 +40,8 @@ input[type='radio'] {
 </style>
 
 <script setup lang="ts">
+import { ISettingTruthOptionSubtableRow } from 'dataforged'
+import { reactive, ref } from 'vue'
 import IronBtn from '../buttons/iron-btn.vue'
 
 const props = defineProps<{
@@ -36,4 +49,28 @@ const props = defineProps<{
   page: JournalEntryPage
   radioGroup: string
 }>()
+
+function select() {
+  emitValue()
+}
+
+const topRadio = ref<HTMLElement>()
+const state = reactive({ suboption: undefined as string | undefined })
+function subtableSelect(entry: ISettingTruthOptionSubtableRow) {
+  state.suboption = entry.Result
+  topRadio.value?.click()
+  emitValue()
+}
+
+const $emit = defineEmits<{
+  (e: 'select', categoryid: string, title: string, text: string)
+}>()
+function emitValue() {
+  $emit(
+    'select',
+    props.radioGroup,
+    props.page.name,
+    `${props.page.system.Description} ${state.suboption ?? ''}`
+  )
+}
 </script>

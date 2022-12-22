@@ -6,6 +6,7 @@
       v-for="page in truthPages"
       :page="page"
       :radio-group="df.$id"
+      @select="select"
     />
 
     <!-- TODO: custom entry -->
@@ -35,4 +36,8 @@ const nonTruthPages = (props.je()?.pages ?? []).filter(
 const $emit = defineEmits<{
   (e: 'select', df: ISettingTruth, title: string, value: string)
 }>()
+
+function select(categoryid: string, title: string, text: string) {
+  console.log({ categoryid, title, text })
+}
 </script>
