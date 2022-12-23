@@ -66,10 +66,11 @@ const $emit = defineEmits<{
   (e: 'select', title: string, text: string)
 }>()
 function emitValue() {
-  $emit(
-    'select',
-    props.page.name,
-    `${props.page.system.Description} ${state.suboption ?? ''}`.trim()
-  )
+  let text = `${props.page.system.Description} ${state.suboption ?? ''}`
+  const template = props.page.system['Roll template']
+  if (state.suboption && template?.Description) {
+    text = template.Description.replace(/\${{.*?}}/, state.suboption)
+  }
+  $emit('select', props.page.name, text.trim())
 }
 </script>
