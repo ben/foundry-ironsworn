@@ -70,7 +70,7 @@ async function saveTruths() {
     .map((x) => x.selectedValue())
     .filter((x) => x.valid)
 
-  const html = values
+  const content = values
     .map(
       ({ title, html }) => `
         <h2>${title}</h2>
@@ -81,7 +81,7 @@ async function saveTruths() {
 
   const journal = await JournalEntry.create({
     name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
-    content: html,
+    content,
   })
   journal?.sheet?.render(true)
   $localEmitter?.emit('closeApp')

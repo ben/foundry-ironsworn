@@ -22,6 +22,7 @@
 <script lang="ts" setup>
 import { ISettingTruth } from 'dataforged'
 import { reactive, ref } from 'vue'
+import { enrichMarkdown } from '../../vue-plugin'
 import TruthSelectable from './truth-selectable.vue'
 
 const props = defineProps<{
@@ -48,9 +49,9 @@ function select(title: string, text: string) {
 const selectedValue = () => ({
   title: props.je().name,
   html: `
-    <p><strong>${state.title}</strong></p>
-    <p>${state.text}</p>
-  `,
+    ${enrichMarkdown(`**${state.title}**`)}
+    ${enrichMarkdown(state.text)}
+  `.trim(),
   valid: !!state.title,
 })
 
