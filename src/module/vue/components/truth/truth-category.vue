@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol">
+  <div class="flexcol" ref="root">
     <h1>{{ je().name }}</h1>
 
     <TruthSelectable
@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import { ISettingTruth } from 'dataforged'
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import TruthSelectable from './truth-selectable.vue'
 
 const props = defineProps<{
@@ -45,8 +45,19 @@ function select(title: string, text: string) {
   state.text = text
 }
 
-defineExpose({ selectedValue })
-function selectedValue(): State {
-  return state
+const selectedValue = () => ({
+  title: props.je().name,
+  p1: state.title,
+  p2: state.text,
+})
+
+const root = ref<HTMLElement>()
+function scrollIntoView() {
+  root.value?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  })
 }
+
+defineExpose({ selectedValue, scrollIntoView })
 </script>

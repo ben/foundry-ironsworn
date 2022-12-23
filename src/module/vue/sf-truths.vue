@@ -2,10 +2,10 @@
   <div class="flexrow" style="position: relative">
     <nav class="flexcol">
       <IronBtn
-        v-for="truth in truths"
+        v-for="(truth, i) in truths"
         nogrow
         :text="truth.je().name ?? '???'"
-        @click="scrollToCategory(truth.df.$id)"
+        @click="scrollToCategory(i)"
       />
 
       <IronBtn
@@ -22,7 +22,6 @@
         :key="truth.df.$id"
         :df="truth.df"
         :je="truth.je"
-        @select="categorySelect"
       />
     </section>
   </div>
@@ -58,23 +57,34 @@ const props = defineProps<{
   }[]
 }>()
 
-function scrollToCategory(dfid: string) {
-  // TODO:
+const categoryComponents = ref<typeof TruthCategory[]>([])
+
+function scrollToCategory(i: number) {
+  categoryComponents.value[i]?.scrollIntoView()
 }
 
 const $localEmitter = inject($LocalEmitterKey)
-const categoryComponents = ref<TruthCategory[]>([])
 async function saveTruths() {
   // Fetch values from the category components
   const values = categoryComponents.value
     .map((x) => x.selectedValue())
-    .filter((x) => x.title)
-  console.log(values)
-  // const journal = await JournalEntry.create({
-  //   name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
-  //   content: composedOutput.value,
-  // })
-  // journal?.sheet?.render(true)
-  // $localEmitter?.emit('closeApp')
+    .filter((x) => x.p1)
+
+  const html = values
+    .map(
+      ({ title, p1, p2 }) => `
+        <h2>${title}</h2>
+        <p><strong>${p1}</strong></p>
+        <p>${p2}</p>
+      `
+    )
+    .join('\n\n')
+
+  const journal = await JournalEntry.create({
+    name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
+    content: html,
+  })
+  journal?.sheet?.render(true)
+  $localEmitter?.emit('closeApp')
 }
 </script>
