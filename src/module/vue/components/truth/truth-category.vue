@@ -21,6 +21,7 @@
 
 <script lang="ts" setup>
 import { ISettingTruth } from 'dataforged'
+import { reactive } from 'vue'
 import TruthSelectable from './truth-selectable.vue'
 
 const props = defineProps<{
@@ -33,11 +34,19 @@ const nonTruthPages = (props.je()?.pages ?? []).filter(
   (p) => p.type !== 'truth'
 )
 
-const $emit = defineEmits<{
-  (e: 'select', df: ISettingTruth, title: string, value: string)
-}>()
+type State = {
+  title?: string
+  text?: string
+}
 
-function select(categoryid: string, title: string, text: string) {
-  console.log({ categoryid, title, text })
+const state = reactive<State>({})
+function select(title: string, text: string) {
+  state.title = title
+  state.text = text
+}
+
+defineExpose({ selectedValue })
+function selectedValue(): State {
+  return state
 }
 </script>

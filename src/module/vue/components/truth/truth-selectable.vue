@@ -63,14 +63,13 @@ function subtableSelect(entry: ISettingTruthOptionSubtableRow) {
 }
 
 const $emit = defineEmits<{
-  (e: 'select', categoryid: string, title: string, text: string)
+  (e: 'select', title: string, text: string)
 }>()
 function emitValue() {
   $emit(
     'select',
-    props.radioGroup,
     props.page.name,
-    `${props.page.system.Description} ${state.suboption ?? ''}`
+    `${props.page.system.Description} ${state.suboption ?? ''}`.trim()
   )
 }
 </script>

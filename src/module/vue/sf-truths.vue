@@ -18,6 +18,7 @@
     <section class="flexcol">
       <TruthCategory
         v-for="truth in truths"
+        ref="categoryComponents"
         :key="truth.df.$id"
         :df="truth.df"
         :je="truth.je"
@@ -44,11 +45,10 @@ section {
 </style>
 
 <script setup lang="ts">
-import { computed, inject, reactive } from 'vue'
-import SfTruth from './components/sf-truth.vue'
+import { inject, ref } from 'vue'
 import { ISettingTruth } from 'dataforged'
-import IronBtn from './components/buttons/iron-btn.vue'
 import { $LocalEmitterKey } from './provisions'
+import IronBtn from './components/buttons/iron-btn.vue'
 import TruthCategory from './components/truth/truth-category.vue'
 
 const props = defineProps<{
@@ -58,43 +58,23 @@ const props = defineProps<{
   }[]
 }>()
 
-const output = {}
-for (const category of props.truths ?? []) {
-  output[category.Name] = null
-}
-
-const data = reactive({ output })
-
-const composedOutput = computed(() =>
-  props.truths
-    .map((category) => category.Name)
-    .map((name) =>
-      data.output[name]
-        ? `<h2>${name}</h2>\n${data.output[name]}\n\n`
-        : undefined
-    )
-    .filter((x) => x !== undefined)
-    .join('\n')
-)
-function radioselect(category, value) {
-  data.output[category] = value
-}
-
 function scrollToCategory(dfid: string) {
   // TODO:
 }
 
-function categorySelect(df: ISettingTruth, title: string, value: string) {
-  // TODO:
-}
-
 const $localEmitter = inject($LocalEmitterKey)
+const categoryComponents = ref<TruthCategory[]>([])
 async function saveTruths() {
-  const journal = await JournalEntry.create({
-    name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
-    content: composedOutput.value,
-  })
-  journal?.sheet?.render(true)
-  $localEmitter?.emit('closeApp')
+  // Fetch values from the category components
+  const values = categoryComponents.value
+    .map((x) => x.selectedValue())
+    .filter((x) => x.title)
+  console.log(values)
+  // const journal = await JournalEntry.create({
+  //   name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
+  //   content: composedOutput.value,
+  // })
+  // journal?.sheet?.render(true)
+  // $localEmitter?.emit('closeApp')
 }
 </script>
