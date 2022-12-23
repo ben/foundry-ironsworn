@@ -47,8 +47,11 @@ function select(title: string, text: string) {
 
 const selectedValue = () => ({
   title: props.je().name,
-  p1: state.title,
-  p2: state.text,
+  html: `
+    <p><strong>${state.title}</strong></p>
+    <p>${state.text}</p>
+  `,
+  valid: !!state.title,
 })
 
 const root = ref<HTMLElement>()

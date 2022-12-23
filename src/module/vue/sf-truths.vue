@@ -68,14 +68,13 @@ async function saveTruths() {
   // Fetch values from the category components
   const values = categoryComponents.value
     .map((x) => x.selectedValue())
-    .filter((x) => x.p1)
+    .filter((x) => x.valid)
 
   const html = values
     .map(
-      ({ title, p1, p2 }) => `
+      ({ title, html }) => `
         <h2>${title}</h2>
-        <p><strong>${p1}</strong></p>
-        <p>${p2}</p>
+        ${html}
       `
     )
     .join('\n\n')
