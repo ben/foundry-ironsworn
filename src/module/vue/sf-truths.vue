@@ -8,6 +8,13 @@
         @click="scrollToCategory(i)"
       />
 
+      <hr class="nogrow" />
+      <IronBtn
+        nogrow
+        icon="ironsworn:d10-tilt"
+        :text="$t('IRONSWORN.RandomizeAll')"
+        @click="randomizeAll"
+      />
       <IronBtn
         nogrow
         :text="$t('IRONSWORN.SaveYourTruths')"
@@ -85,5 +92,11 @@ async function saveTruths() {
   })
   journal?.sheet?.render(true)
   $localEmitter?.emit('closeApp')
+}
+
+async function randomizeAll() {
+  for (const cat of categoryComponents.value) {
+    await cat.randomize()
+  }
 }
 </script>
