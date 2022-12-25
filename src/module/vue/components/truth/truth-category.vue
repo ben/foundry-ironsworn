@@ -47,10 +47,9 @@ const props = defineProps<{
   je: () => JournalEntry
 }>()
 
-const truthPages = (props.je()?.pages ?? []).filter((p) => p.type === 'truth')
-const nonTruthPages = (props.je()?.pages ?? []).filter(
-  (p) => p.type !== 'truth'
-)
+const jePages = (props.je() as any | undefined)?.pages ?? []
+const truthPages = jePages.filter((p) => p.type === 'truth')
+const nonTruthPages = jePages.filter((p) => p.type !== 'truth')
 
 const state = reactive<{
   title?: string

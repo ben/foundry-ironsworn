@@ -21,7 +21,7 @@
             ref="suboptions"
             class="nogrow"
             :name="page.system.dfid"
-            @change="subtableSelect(entry)"
+            @change="subtableSelect(entry as any)"
           />
           <p v-html="entry.Result" />
         </label>
