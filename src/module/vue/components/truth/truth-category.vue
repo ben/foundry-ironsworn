@@ -58,14 +58,18 @@ function select(title: string, text: string) {
   state.text = text
 }
 
-const selectedValue = () => ({
-  title: props.je().name,
-  html: `
-    ${enrichMarkdown(`**${state.title}**`)}
-    ${enrichMarkdown(state.text)}
-  `.trim(),
-  valid: !!state.title,
-})
+function selectedValue() {
+  const nonTruthMarkdown = nonTruthPages.map((x) => x.text.content).join('\n\n')
+  return {
+    title: props.je().name,
+    html: `
+      ${enrichMarkdown(`**${state.title}**`)}
+      ${enrichMarkdown(state.text)}
+      ${enrichMarkdown(nonTruthMarkdown)}
+    `.trim(),
+    valid: !!state.title,
+  }
+}
 
 const root = ref<HTMLElement>()
 function scrollIntoView() {
