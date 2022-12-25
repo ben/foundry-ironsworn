@@ -11,6 +11,7 @@ import {
 } from './module/rolls'
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import Mitt, { Emitter } from 'mitt'
+import { OracleWindow } from './module/applications/oracle-window'
 
 export type EmitterEvents = {
   highlightMove: string // Foundry ID
@@ -38,6 +39,8 @@ export interface IronswornConfig {
 
   emitter: IronswornEmitter
 
+  OracleWindow: typeof OracleWindow
+
   beta: { [k: string]: any }
 }
 
@@ -59,6 +62,8 @@ export const IRONSWORN: IronswornConfig = {
   dataforgedHelpers,
 
   emitter: Mitt<EmitterEvents>(),
+
+  OracleWindow,
 
   beta: {
     AssetCompendiumBrowser,
