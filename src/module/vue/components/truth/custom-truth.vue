@@ -7,7 +7,12 @@
       @change="select"
       ref="radio"
     />
-    <MceEditor v-model="state.html" ref="editor" @save="emitHtml" />
+    <MceEditor
+      v-model="state.html"
+      ref="editor"
+      @save="emitHtml"
+      :style="{ height: state.height, 'min-height': state.height }"
+    />
   </label>
 </template>
 
@@ -30,10 +35,14 @@ const props = defineProps<{
 const radio = ref<HTMLElement>()
 const editor = ref<typeof MceEditor>()
 
-const state = reactive({ html: '' })
+const state = reactive({
+  html: '',
+  height: '35px',
+})
 
 function select() {
   editor.value?.enableEditor()
+  state.height = '300px'
 }
 
 const $emit = defineEmits<{
