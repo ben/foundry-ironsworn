@@ -65,7 +65,7 @@ function subtableSelect(entry: ISettingTruthOptionSubtableRow) {
 }
 
 const $emit = defineEmits<{
-  (e: 'select', title: string, text: string)
+  (e: 'change', title: string, text: string)
 }>()
 function emitValue() {
   let text = `${pageSystem.Description} ${state.suboption ?? ''}`
@@ -73,7 +73,7 @@ function emitValue() {
   if (state.suboption && template?.Description) {
     text = template.Description.replace(/\${{.*?}}/, state.suboption)
   }
-  $emit('select', props.page.name, text.trim())
+  $emit('change', props.page.name, text.trim())
 }
 
 const suboptions = ref<HTMLElement[]>([])

@@ -50,6 +50,11 @@ const $emit = defineEmits<{ (e: 'save') }>()
 
 onUnmounted(() => $emit('save'))
 
+function enableEditor() {
+  data.editing = true
+}
+defineExpose({ enableEditor })
+
 const mceConfig: RawEditorSettings = {
   ...CONFIG.TinyMCE,
 

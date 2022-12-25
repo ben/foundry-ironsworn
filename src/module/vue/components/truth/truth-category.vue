@@ -10,10 +10,14 @@
       ref="selectables"
       :page="page"
       :radio-group="df.$id"
-      @select="select"
+      @change="valueChange"
     />
 
-    <!-- TODO: custom entry -->
+    <CustomTruth
+      :radio-group="df.$id"
+      ref="customTruth"
+      @change="customValueChange"
+    />
 
     <div
       class="nogrow"
@@ -35,6 +39,7 @@ import { reactive, ref } from 'vue'
 import { OracleRollMessage, TableRow } from '../../../rolls'
 import { enrichMarkdown } from '../../vue-plugin'
 import IronBtn from '../buttons/iron-btn.vue'
+import CustomTruth from './custom-truth.vue'
 import TruthSelectable from './truth-selectable.vue'
 
 const props = defineProps<{
@@ -47,27 +52,36 @@ const nonTruthPages = (props.je()?.pages ?? []).filter(
   (p) => p.type !== 'truth'
 )
 
-type State = {
+const state = reactive<{
   title?: string
   text?: string
-}
-
-const state = reactive<State>({})
-function select(title: string, text: string) {
+  html?: string
+}>({})
+function valueChange(title: string, text: string) {
   state.title = title
   state.text = text
+  state.html = undefined
+}
+function customValueChange(html: string) {
+  state.title = undefined
+  state.text = undefined
+  state.html = html
 }
 
 function selectedValue() {
-  const nonTruthMarkdown = nonTruthPages.map((x) => x.text.content).join('\n\n')
-  return {
-    title: props.je().name,
-    html: `
+  let html = state.html
+  if (!html) {
+    html = `
       ${enrichMarkdown(`**${state.title}**`)}
       ${enrichMarkdown(state.text)}
-      ${enrichMarkdown(nonTruthMarkdown)}
-    `.trim(),
-    valid: !!state.title,
+    `
+  }
+  html += nonTruthPages.map((x) => x.text.content).join('\n\n')
+
+  return {
+    title: props.je().name,
+    html: html.trim(),
+    valid: !!(state.title || state.html),
   }
 }
 
@@ -80,6 +94,7 @@ function scrollIntoView() {
 }
 
 const selectables = ref<typeof TruthSelectable[]>([])
+const customTruth = ref<typeof CustomTruth>()
 
 async function randomize() {
   // Roll it like an oracle
