@@ -1,4 +1,5 @@
 import { IronswornActor } from '../actor/actor'
+import { OracleWindow } from '../applications/oracle-window'
 import { EditSectorDialog } from '../applications/sf/editSectorApp'
 import { IronswornSettings } from '../helpers/settings'
 
@@ -117,6 +118,12 @@ function newVault() {
   newLocation('vault', 'NewVault', 2)
 }
 
+let ORACLE_WINDOW: OracleWindow | undefined
+function theOracleWindow() {
+  if (!ORACLE_WINDOW) ORACLE_WINDOW = new OracleWindow()
+  return ORACLE_WINDOW
+}
+
 export function activateSceneButtonListeners() {
   CONFIG.Canvas.layers['ironsworn'] = {
     layerClass: IronswornCanvasLayer,
@@ -124,8 +131,17 @@ export function activateSceneButtonListeners() {
   }
 
   Hooks.on('getSceneControlButtons', (controls) => {
+    const oracleButton: SceneControlTool = {
+      name: 'Oracles',
+      title: game.i18n.localize('IRONSWORN.Oracles'),
+      icon: 'fa-solid fa-crystal-ball',
+      visible: true,
+      button: true,
+      onClick: () => theOracleWindow().render(true, { focus: true }),
+    }
+    controls[0].tools.push(oracleButton)
+
     if (!IronswornSettings.starforgedToolsEnabled) return
-    console.log({ controls })
     if (!game.user?.isGM) {
       return controls
     }
@@ -138,6 +154,7 @@ export function activateSceneButtonListeners() {
       visible: true,
       activeTool: 'select',
       tools: [
+        oracleButton,
         {
           name: 'edit',
           icon: 'isicon-region-sf',
