@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- There's now a button in the sidebar that opens the oracle browser as a standalone window ([#570](https://github.com/ben/foundry-ironsworn/pull/570))
 - Under the hood: updated NPM packages and Vite bundler ([#554](https://github.com/ben/foundry-ironsworn/pull/554) and [#555](https://github.com/ben/foundry-ironsworn/pull/555))
 - Under the hood: button components refactored and simplified ([#565](https://github.com/ben/foundry-ironsworn/pull/565))
 - Updates to the Starforged theme, now covers the MCE editor drop-down menus ([#557](https://github.com/ben/foundry-ironsworn/pull/557))
