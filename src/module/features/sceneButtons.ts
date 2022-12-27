@@ -1,4 +1,5 @@
 import { IronswornActor } from '../actor/actor'
+import { OracleWindow } from '../applications/oracle-window'
 import { EditSectorDialog } from '../applications/sf/editSectorApp'
 import { IronswornSettings } from '../helpers/settings'
 
@@ -117,6 +118,12 @@ function newVault() {
   newLocation('vault', 'NewVault', 2)
 }
 
+let ORACLE_WINDOW: OracleWindow | undefined
+function theOracleWindow() {
+  if (!ORACLE_WINDOW) ORACLE_WINDOW = new OracleWindow()
+  return ORACLE_WINDOW
+}
+
 export function activateSceneButtonListeners() {
   CONFIG.Canvas.layers['ironsworn'] = {
     layerClass: IronswornCanvasLayer,
@@ -124,67 +131,89 @@ export function activateSceneButtonListeners() {
   }
 
   Hooks.on('getSceneControlButtons', (controls) => {
-    if (!IronswornSettings.starforgedToolsEnabled) return
-    console.log({ controls })
-    if (!game.user?.isGM) {
-      return controls
-    }
-
-    const sfControl: SceneControl = {
-      name: 'Starforged',
-      title: game.i18n.localize('IRONSWORN.StarforgedTools'),
-      icon: 'isicon-logo-starforged-dk',
-      layer: 'ironsworn',
+    const oracleButton: SceneControlTool = {
+      name: 'Oracles',
+      title: game.i18n.localize('IRONSWORN.Oracles'),
+      icon: 'isicon-oracle',
       visible: true,
-      activeTool: 'select',
-      tools: [
-        {
-          name: 'edit',
-          icon: 'isicon-region-sf',
-          // TODO: more informative string - 'set region'?
-          title: game.i18n.localize('IRONSWORN.Edit'),
-          onClick: editSector,
-        },
-        {
-          name: 'sector',
-          icon: 'isicon-sector',
-          title: game.i18n.localize('IRONSWORN.NewSector'),
-          onClick: warn,
-        },
-        {
-          name: 'star',
-          icon: 'isicon-stellar-object',
-          title: game.i18n.localize('IRONSWORN.NewStar'),
-          onClick: newStar,
-        },
-        {
-          name: 'planet',
-          icon: 'isicon-world',
-          title: game.i18n.localize('IRONSWORN.NewPlanet'),
-          onClick: newPlanet,
-        },
-        {
-          name: 'settlement',
-          icon: 'isicon-settlement-sf',
-          title: game.i18n.localize('IRONSWORN.NewSettlement'),
-          onClick: newSettlement,
-        },
-        {
-          name: 'derelict',
-          icon: 'isicon-derelict',
-          title: game.i18n.localize('IRONSWORN.NewDerelict'),
-          onClick: newDerelict,
-        },
-        {
-          name: 'vault',
-          icon: 'isicon-precursor-vault',
-          title: game.i18n.localize('IRONSWORN.NewVault'),
-          onClick: newVault,
-        },
-      ],
+      button: true,
+      onClick: () => theOracleWindow().render(true, { focus: true }),
+    }
+    controls[0].tools.push(oracleButton)
+
+    if (IronswornSettings.starforgedToolsEnabled) {
+      const sfControl: SceneControl = {
+        name: 'Starforged',
+        title: game.i18n.localize('IRONSWORN.StarforgedTools'),
+        icon: 'isicon-logo-starforged-dk',
+        layer: 'ironsworn',
+        visible: true,
+        activeTool: 'select',
+        tools: [oracleButton],
+      }
+
+      if (game.user?.isGM) {
+        sfControl.tools.push(
+          {
+            name: 'edit',
+            icon: 'isicon-region-sf',
+            title: game.i18n.localize('IRONSWORN.EditSector'),
+            onClick: editSector,
+          },
+          // { // TODO: maybe reenable this when we have a good way of doing it
+          //   name: 'sector',
+          //   icon: 'isicon-sector',
+          //   title: game.i18n.localize('IRONSWORN.NewSector'),
+          //   onClick: warn,
+          // },
+          {
+            name: 'star',
+            icon: 'isicon-stellar-object',
+            title: game.i18n.localize('IRONSWORN.NewStar'),
+            onClick: newStar,
+          },
+          {
+            name: 'planet',
+            icon: 'isicon-world',
+            title: game.i18n.localize('IRONSWORN.NewPlanet'),
+            onClick: newPlanet,
+          },
+          {
+            name: 'settlement',
+            icon: 'isicon-settlement-sf',
+            title: game.i18n.localize('IRONSWORN.NewSettlement'),
+            onClick: newSettlement,
+          },
+          {
+            name: 'derelict',
+            icon: 'isicon-derelict',
+            title: game.i18n.localize('IRONSWORN.NewDerelict'),
+            onClick: newDerelict,
+          },
+          {
+            name: 'vault',
+            icon: 'isicon-precursor-vault',
+            title: game.i18n.localize('IRONSWORN.NewVault'),
+            onClick: newVault,
+          }
+        )
+      }
+
+      controls.push(sfControl)
+    } else {
+      const isControl: SceneControl = {
+        name: 'Ironsworn',
+        title: game.i18n.localize('IRONSWORN.IronswornTools'),
+        icon: 'isicon-logo-ironsworn-dk',
+        layer: 'ironsworn',
+        visible: true,
+        activeTool: 'select',
+        tools: [oracleButton],
+      }
+
+      controls.push(isControl)
     }
 
-    controls.push(sfControl)
     return controls
   })
 }
