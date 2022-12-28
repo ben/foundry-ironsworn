@@ -2,11 +2,13 @@
 
 ## Next Release
 
+- There's now a button in the sidebar that opens the oracle browser as a standalone window ([#570](https://github.com/ben/foundry-ironsworn/pull/570))
 - Under the hood: updated NPM packages and Vite bundler ([#554](https://github.com/ben/foundry-ironsworn/pull/554) and [#555](https://github.com/ben/foundry-ironsworn/pull/555))
 - Under the hood: button components refactored and simplified ([#565](https://github.com/ben/foundry-ironsworn/pull/565))
 - Updates to the Starforged theme, now covers the MCE editor drop-down menus ([#557](https://github.com/ben/foundry-ironsworn/pull/557))
 - Dragging from the asset browser now triggers the drop-zone animation ([#561](https://github.com/ben/foundry-ironsworn/pull/561))
 - Completing the challenge-resolution dialog or the world-truths dalog now only closes that single window, instead of all Vue windows.
+- Setting truths are now stored as compendia, making translation efforts easier/possible. ([#564](https://github.com/ben/foundry-ironsworn/pull/564) for the data, [#569](https://github.com/ben/foundry-ironsworn/pull/569) for the new UI)
 
 ## 1.20.5
 

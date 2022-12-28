@@ -81,18 +81,11 @@ export class OracleRollMessage {
     })
   }
 
-  static async fromTableId(
-    tableId: string,
-    tablePack?: string
-  ): Promise<OracleRollMessage> {
+  static fromTableId(tableId: string, tablePack?: string) {
     return new OracleRollMessage({ tableId, tablePack })
   }
 
-  static async fromRows(
-    tableRows: TableRow[],
-    title: string,
-    subtitle?: string
-  ) {
+  static fromRows(tableRows: TableRow[], title: string, subtitle?: string) {
     return new OracleRollMessage({ tableRows, title, subtitle })
   }
 

@@ -6,6 +6,10 @@ import {
   IMoveCategory,
   IOracle,
   IOracleCategory,
+  ironsworn,
+  Ironsworn,
+  ISettingTruth,
+  Starforged,
   starforged,
 } from 'dataforged'
 import { isArray, isObject, max } from 'lodash'
@@ -69,10 +73,12 @@ const PACKS = [
   'foundry-ironsworn.starforgedencounters',
   'foundry-ironsworn.starforgedmoves',
   'foundry-ironsworn.starforgedoracles',
+  'foundry-ironsworn.starforgedtruths',
   'foundry-ironsworn.foeactorssf',
   'foundry-ironsworn.ironswornassets',
   'foundry-ironsworn.ironswornoracles',
   'foundry-ironsworn.ironswornmoves',
+  'foundry-ironsworn.ironsworntruths',
 ]
 
 /**
@@ -104,6 +110,9 @@ export async function importFromDataforged() {
 
   await processISMoves()
   await processISOracles()
+
+  // await processISTruths() // Re-enable when DF includes them
+  await processSFTruths()
 
   // Lock the packs again
   for (const key of PACKS) {
@@ -407,4 +416,67 @@ async function processSFFoes() {
       foeItem.system as unknown as Record<string, unknown>,
     ])
   }
+}
+
+async function processTruths(
+  truths: ISettingTruth[],
+  outputCompendium: string
+) {
+  const pack = game.packs.get(outputCompendium)
+  if (!pack) throw new Error(`Couldn't find ${outputCompendium}`)
+
+  for (const truth of truths) {
+    const je = await JournalEntry.create(
+      {
+        id: hashLookup(truth.$id),
+        name: truth.Display.Title,
+        flags: { 'foundry-ironsworn': { dfid: truth.$id } },
+      },
+      { keepId: true, pack: outputCompendium }
+    )
+
+    for (const entry of truth.Table) {
+      //@ts-ignore
+      await JournalEntryPage.create(
+        {
+          id: hashLookup(entry.$id),
+          type: 'truth',
+          name: entry.Result,
+          system: cleanDollars({ ...entry, Quest: entry['Quest Starter'] }),
+        },
+        { parent: je }
+      )
+    }
+
+    //@ts-ignore
+    JournalEntryPage.create(
+      {
+        id: hashLookup(`${truth.$id}/character`),
+        name: 'Character Inspiration',
+        text: {
+          markdown: truth.Character,
+          format: 2, // JOURNAL_ENTRY_PAGE_FORMATS.MARKDOWN
+        },
+        flags: {
+          'foundry-ironsworn': {
+            assets: truth.Suggestions?.Assets ?? [],
+          },
+        },
+      },
+      { parent: je }
+    )
+  }
+}
+
+async function processSFTruths() {
+  return processTruths(
+    ((starforged as any).default as Starforged)['Setting Truths'],
+    'foundry-ironsworn.starforgedtruths'
+  )
+}
+async function processISTruths() {
+  return processTruths(
+    ((ironsworn as any).default as Ironsworn)['Setting Truths']!,
+    'foundry-ironsworn.starforgedtruths'
+  )
 }
