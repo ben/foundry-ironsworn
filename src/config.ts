@@ -13,6 +13,7 @@ import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTruthsDialog'
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
+import { OracleWindow } from './module/applications/oracle-window'
 
 export type EmitterEvents = {
   highlightMove: string // Foundry ID
@@ -33,6 +34,7 @@ export interface IronswornConfig {
     ISSettingTruthsDialog: typeof WorldTruthsDialog
     SFSettingTruthsDialog: typeof SFSettingTruthsDialogVue
     AssetCompendiumBrowser: typeof AssetCompendiumBrowser
+    OracleWindow: typeof OracleWindow
 
     // Rolling
     IronswornRoll: typeof IronswornRoll
@@ -55,6 +57,7 @@ export const IRONSWORN: IronswornConfig = {
     ISSettingTruthsDialog: WorldTruthsDialog,
     SFSettingTruthsDialog: SFSettingTruthsDialogVue,
     AssetCompendiumBrowser,
+    OracleWindow,
 
     IronswornRoll,
     IronswornPrerollDialog,
