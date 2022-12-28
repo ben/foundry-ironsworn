@@ -192,6 +192,14 @@
       "path": "packs/starforged-truths.db",
       "type": "JournalEntry",
       "private": false
+    },
+    {
+      "name": "macros",
+      "label": "Ironsworn Macros",
+      "system": "foundry-ironsworn",
+      "path": "packs/macros.db",
+      "type": "Macro",
+      "private": false
     }
   ],
   "languages": [
