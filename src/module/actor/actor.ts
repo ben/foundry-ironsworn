@@ -1,5 +1,8 @@
+import { CreateActorDialog } from '../applications/createActorDialog'
 import { CharacterDataPropertiesData } from './actortypes'
 import { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
+
+let CREATE_DIALOG: CreateActorDialog
 
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
@@ -12,11 +15,9 @@ export class IronswornActor extends Actor {
   moveSheet?: SFCharacterMoveSheet
 
   static async createDialog(data, _options = {}) {
-    if (CONFIG.IRONSWORN.applications.createActorDialog) {
-      CONFIG.IRONSWORN.applications.createActorDialog.options.folder =
-        data?.folder
-      CONFIG.IRONSWORN.applications.createActorDialog.render(true)
-    }
+    if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog({})
+    CREATE_DIALOG.options.folder = data?.folder
+    CREATE_DIALOG.render(true)
     return undefined
   }
 

@@ -1,5 +1,4 @@
 import { IronswornActor } from './module/actor/actor'
-import { CreateActorDialog } from './module/applications/createActorDialog'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { starforged } from 'dataforged'
@@ -24,9 +23,7 @@ export type IronswornEmitter = Emitter<EmitterEvents>
 export interface IronswornConfig {
   actorClass: typeof IronswornActor
   importFromDatasworn: typeof importFromDatasworn
-  applications: {
-    createActorDialog: CreateActorDialog | null
-  }
+  applications: {}
 
   IronswornRoll: typeof IronswornRoll
   IronswornPrerollDialog: typeof IronswornPrerollDialog
@@ -44,9 +41,7 @@ export interface IronswornConfig {
 export const IRONSWORN: IronswornConfig = {
   actorClass: IronswornActor,
 
-  applications: {
-    createActorDialog: null,
-  },
+  applications: {},
 
   IronswornRoll,
   IronswornPrerollDialog,
