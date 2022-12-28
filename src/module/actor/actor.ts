@@ -15,7 +15,7 @@ export class IronswornActor extends Actor {
   moveSheet?: SFCharacterMoveSheet
 
   static async createDialog(data, _options = {}) {
-    if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog({})
+    if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog()
     CREATE_DIALOG.options.folder = data?.folder
     CREATE_DIALOG.render(true)
     return undefined

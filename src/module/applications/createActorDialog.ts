@@ -8,6 +8,10 @@ interface CreateActorDialogOptions extends FormApplicationOptions {
 }
 
 export class CreateActorDialog extends FormApplication<CreateActorDialogOptions> {
+  constructor() {
+    super({})
+  }
+
   async _updateObject() {
     // No update necessary.
   }
