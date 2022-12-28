@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.6
+
 - There's now a button in the sidebar that opens the oracle browser as a standalone window ([#570](https://github.com/ben/foundry-ironsworn/pull/570))
 - The system now includes a macros compendium ([#571](https://github.com/ben/foundry-ironsworn/pull/571))
 - Setting truths are now stored as compendia, making translation efforts easier/possible. ([#564](https://github.com/ben/foundry-ironsworn/pull/564) for the data, [#569](https://github.com/ben/foundry-ironsworn/pull/569) for the new UI)
