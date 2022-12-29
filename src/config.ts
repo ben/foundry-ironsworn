@@ -1,8 +1,8 @@
 import { IronswornActor } from './module/actor/actor'
-import { CreateActorDialog } from './module/applications/createActorDialog'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { starforged } from 'dataforged'
+import Mitt, { Emitter } from 'mitt'
 import {
   IronswornRoll,
   IronswornPrerollDialog,
@@ -10,7 +10,10 @@ import {
   OracleRollMessage,
 } from './module/rolls'
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
-import Mitt, { Emitter } from 'mitt'
+import { FirstStartDialog } from './module/applications/firstStartDialog'
+import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTruthsDialog'
+import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
+import { OracleWindow } from './module/applications/oracle-window'
 
 export type EmitterEvents = {
   highlightMove: string // Foundry ID
@@ -24,34 +27,43 @@ export type IronswornEmitter = Emitter<EmitterEvents>
 export interface IronswornConfig {
   actorClass: typeof IronswornActor
   importFromDatasworn: typeof importFromDatasworn
-  applications: {
-    createActorDialog: CreateActorDialog | null
-  }
 
-  IronswornRoll: typeof IronswornRoll
-  IronswornPrerollDialog: typeof IronswornPrerollDialog
-  IronswornRollMessage: typeof IronswornRollMessage
-  OracleRollMessage: typeof OracleRollMessage
+  applications: {
+    // Dialogs
+    FirstStartDialog: typeof FirstStartDialog
+    ISSettingTruthsDialog: typeof WorldTruthsDialog
+    SFSettingTruthsDialog: typeof SFSettingTruthsDialogVue
+    AssetCompendiumBrowser: typeof AssetCompendiumBrowser
+    OracleWindow: typeof OracleWindow
+
+    // Rolling
+    IronswornRoll: typeof IronswornRoll
+    IronswornPrerollDialog: typeof IronswornPrerollDialog
+    IronswornRollMessage: typeof IronswornRollMessage
+    OracleRollMessage: typeof OracleRollMessage
+  }
 
   Dataforged: typeof starforged
   dataforgedHelpers: typeof dataforgedHelpers
 
   emitter: IronswornEmitter
-
-  beta: { [k: string]: any }
 }
 
 export const IRONSWORN: IronswornConfig = {
   actorClass: IronswornActor,
 
   applications: {
-    createActorDialog: null,
-  },
+    FirstStartDialog,
+    ISSettingTruthsDialog: WorldTruthsDialog,
+    SFSettingTruthsDialog: SFSettingTruthsDialogVue,
+    AssetCompendiumBrowser,
+    OracleWindow,
 
-  IronswornRoll,
-  IronswornPrerollDialog,
-  IronswornRollMessage,
-  OracleRollMessage,
+    IronswornRoll,
+    IronswornPrerollDialog,
+    IronswornRollMessage,
+    OracleRollMessage,
+  },
 
   importFromDatasworn,
 
@@ -59,8 +71,4 @@ export const IRONSWORN: IronswornConfig = {
   dataforgedHelpers,
 
   emitter: Mitt<EmitterEvents>(),
-
-  beta: {
-    AssetCompendiumBrowser,
-  },
 }

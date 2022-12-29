@@ -12,7 +12,6 @@ import { StarforgedLocationSheet } from './module/actor/sheets/sf-locationsheet'
 import { IronswornSharedSheetV2 } from './module/actor/sheets/sharedsheet-v2'
 import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { StarshipSheet } from './module/actor/sheets/starshipsheet'
-import { CreateActorDialog } from './module/applications/createActorDialog'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { registerChatAlertHooks } from './module/features/chat-alert'
@@ -186,7 +185,6 @@ Hooks.once('ready', async () => {
   registerChatAlertHooks()
   runStartupMacro()
 
-  CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   FirstStartDialog.maybeShow()
 
   // Pre-load all the oracles
