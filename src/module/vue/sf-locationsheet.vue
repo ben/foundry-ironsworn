@@ -94,44 +94,45 @@
         />
       </SheetHeaderBasic>
     </template>
+
     <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
       <div class="flexrow boxrow">
-        <IronBtn
-          class="btn-randomize-name box"
-          block
-          nogrow
-          @click="rollFirstLook"
-          icon="ironsworn:d10-tilt"
-          @mouseenter="data.firstLookHighlight = true"
-          @mouseleave="data.firstLookHighlight = false"
-          :text="$t('IRONSWORN.RollForDetails')"
-        />
+        <div class="box flexrow">
+          <IronBtn
+            block
+            @click="rollFirstLook"
+            icon="ironsworn:d10-tilt"
+            @mouseenter="data.firstLookHighlight = true"
+            @mouseleave="data.firstLookHighlight = false"
+            :text="$t('IRONSWORN.RollForDetails')"
+          />
+        </div>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
-        <IronBtn
-          class="box"
-          v-for="oracle of row"
-          block
-          :disabled="oracle.requiresKlass && klassIsNotValid"
-          :class="{
-            highlighted: oracle.fl && data.firstLookHighlight,
-          }"
-          :tooltip="
-            oracle.requiresKlass && klassIsNotValid
-              ? $t('IRONSWORN.RequiresLocationType')
-              : undefined
-          "
-          :key="oracle.dfId"
-          @click="rollOracle(oracle)"
-          icon="ironsworn:d10-tilt"
-        >
-          <template #text>
-            {{ oracle.title }}
-            <span v-if="oracle.qty" class="oracle-quantity"
-              >({{ oracle.qty }})</span
-            >
-          </template>
-        </IronBtn>
+        <div class="box flexrow" v-for="oracle of row">
+          <IronBtn
+            block
+            :disabled="oracle.requiresKlass && klassIsNotValid"
+            :class="{
+              highlighted: oracle.fl && data.firstLookHighlight,
+            }"
+            :tooltip="
+              oracle.requiresKlass && klassIsNotValid
+                ? $t('IRONSWORN.RequiresLocationType')
+                : undefined
+            "
+            :key="oracle.dfId"
+            @click="rollOracle(oracle)"
+            icon="ironsworn:d10-tilt"
+          >
+            <template #text>
+              {{ oracle.title }}
+              <span v-if="oracle.qty" class="oracle-quantity"
+                >({{ oracle.qty }})</span
+              >
+            </template>
+          </IronBtn>
+        </div>
       </div>
     </section>
     <section class="flexcol">
@@ -169,7 +170,7 @@ label {
     flex-grow: 0;
   }
 }
-.box {
+.box button {
   padding: 7px;
 }
 .theme-starforged .highlighted {
@@ -368,12 +369,14 @@ const oracles = computed((): OracleSpec[][] => {
             dfId: `Starforged/Oracles/Planets/Peril/Lifebearing`,
           },
           {
-            title: 'Peril (lifeless)',
-            dfId: `Starforged/Oracles/Planets/Peril/Lifeless`,
-          },
-          {
             title: 'Opportunity (life)',
             dfId: `Starforged/Oracles/Planets/Opportunity/Lifebearing`,
+          },
+        ],
+        [
+          {
+            title: 'Peril (lifeless)',
+            dfId: `Starforged/Oracles/Planets/Peril/Lifeless`,
           },
           {
             title: 'Opportunity (lifeless)',

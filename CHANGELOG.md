@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix some yucky layout in the location sheet
+
 ## 1.20.6
 
 - There's now a button in the sidebar that opens the oracle browser as a standalone window ([#570](https://github.com/ben/foundry-ironsworn/pull/570))
