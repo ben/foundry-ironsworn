@@ -7,17 +7,19 @@
         v-model="state.searchQuery"
         @keydown.enter.prevent
       />
-      <BtnFaicon
-        icon="times-circle"
-        class="nogrow clickable text"
+      <IronBtn
+        icon="fa:xmark-circle"
+        class="nogrow"
         @click="clearSearch()"
         :class="$style.searchBtn"
+        style="padding: 6px"
       />
-      <BtnFaicon
-        icon="compress-alt"
-        class="nogrow clickable text"
+      <IronBtn
+        icon="fa:down-left-and-up-right-to-center"
+        class="nogrow"
         @click="collapseMoveCategories()"
         :class="$style.searchBtn"
+        style="padding: 6px"
       />
     </nav>
 
@@ -89,6 +91,7 @@
   overflow-x: clip;
   overflow-clip-margin: 5px; // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
   // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
+  --ironsworn-line-height: var(--ironsworn-line-height-md);
 }
 .filteredMoveRow {
   border-radius: var(--ironsworn-border-radius-lg);
@@ -104,7 +107,7 @@ import {
 } from '../../features/custommoves'
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
-import BtnFaicon from './buttons/btn-faicon.vue'
+import IronBtn from './buttons/iron-btn.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)

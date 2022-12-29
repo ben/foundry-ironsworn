@@ -32,13 +32,13 @@
 }
 
 h3 {
-  margin: 5px 0;
+  margin: var(--ironsworn-spacer-md) 0;
   transition: background-color 0.2s ease;
 }
 
 textarea.notes {
   border-color: rgba(0, 0, 0, 0.1);
-  border-radius: 1px;
+  border-radius: var(--ironsworn-border-radius-sm);
   font-family: var(--font-primary);
   resize: none;
   flex: 1;

@@ -1,0 +1,32 @@
+{{#if data.title.show}}
+<header class="journal-page-header">
+    <h{{data.title.level}}>{{title}}</h{{data.title.level}}>
+</header>
+{{/if}}
+<section class="journal-page-content">
+  <section class="truth-option-description">
+    {{{enrichMarkdown data.system.Description}}}
+    {{#if data.system.Subtable}}
+    <table>
+      <thead>
+        <th>{{localize 'IRONSWORN.OracleTable.ColumnLabel.Roll'}}</th>
+        <th>{{localize 'IRONSWORN.OracleTable.ColumnLabel.Result'}}</th>
+      </thead>
+      <tbody>
+        {{#each data.system.Subtable}}
+          <tr>
+            <td>{{Floor}}—{{Ceiling}}</td>
+            <td>{{Result}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+  </section>
+  <section class="truth-quest-starter">
+    <h{{sum data.title.level 1}}>
+      {{localize 'IRONSWORN.QuestStarter'}}
+    </h{{sum data.title.level 1}}>
+    {{{data.system.Quest}}}
+  </section>
+</section>

@@ -1,8 +1,7 @@
 // styles for TinyMCE and ProseMirror editors
 
 // Editors: shared styles
-.editor,
-.editor-content {
+.editor {
   min-height: 100px;
 }
 .editor {
@@ -54,7 +53,7 @@
   .tox-toolbar__primary {
     justify-content: center;
     & > .tox-toolbar__group {
-      padding: 0 5px;
+      padding: 0 var(--ironsworn-spacer-md);
     }
   }
 
@@ -71,7 +70,7 @@
     border-style: solid;
     border-width: var(--ironsworn-border-width-md);
     transition: var(--std-animation);
-    // margin: 6px 1px 5px 0;
+    // margin: 6px 1px var(--ironsworn-spacer-md) 0;
     &:focus {
       color: var(--ironsworn-color-clickable-block-fg);
       background: var(--ironsworn-color-clickable-block-bg);
@@ -219,7 +218,7 @@
     border-left-width: 0;
     border-right-width: 0;
     border-style: solid;
-    border-top-width: 1px;
+    border-top-width: var(--ironsworn-border-width-md);
 
     &:first-child {
       border-top-width: 0;
@@ -317,13 +316,15 @@
 
 .tox:not([dir='rtl']) {
   .tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
-    border-right: 1px solid @toolbar-group-separator-color;
+    border-right: var(--ironsworn-border-width-md) solid
+      @toolbar-group-separator-color;
   }
 }
 
 // RTL
 .tox[dir='rtl'] {
   .tox-collection--horizontal .tox-collection__group:not(:last-of-type) {
-    border-left: 1px solid @toolbar-group-separator-color;
+    border-left: var(--ironsworn-border-width-md) solid
+      @toolbar-group-separator-color;
   }
 }

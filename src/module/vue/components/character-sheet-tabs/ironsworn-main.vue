@@ -10,7 +10,12 @@
         <DropTarget is="div" dropType="asset" class="flexcol item-list">
           <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
 
-          <CollapseTransition tag="div" class="nogrow" group>
+          <CollapseTransition
+            tag="div"
+            class="nogrow flexcol"
+            group
+            :class="$style.items"
+          >
             <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
               <OrderButtons
                 v-if="editMode"
@@ -23,24 +28,36 @@
             </div>
           </CollapseTransition>
           <div class="flexrow nogrow" style="text-align: center">
-            <BtnFaicon
-              icon="atlas"
+            <IronBtn
+              icon="fa:book-atlas"
               @click="assetBrowser"
-              class="clickable block"
-            >
-              {{ $t('IRONSWORN.Assets') }}
-            </BtnFaicon>
+              block
+              :text="$t('IRONSWORN.Assets')"
+            />
           </div>
         </DropTarget>
       </section>
     </div>
-    <ActiveCompletedProgresses :compactProgress="true" />
+    <ActiveCompletedProgresses
+      :compactProgress="true"
+      :class="$style.progress"
+    />
   </div>
 </template>
-
+<style lang="less" module>
+.items {
+  gap: var(--ironsworn-spacer-md);
+}
+.progress {
+  margin-top: var(--ironsworn-spacer-md);
+}
+</style>
 <style lang="less" scoped>
+h4 {
+  text-transform: uppercase;
+}
 h3 {
-  margin: 5px 0;
+  margin: var(--ironsworn-spacer-md) 0;
   transition: background-color 0.2s ease;
   i {
     width: 15px;
@@ -55,7 +72,7 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import CollapseTransition from '../transition/collapse-transition.vue'

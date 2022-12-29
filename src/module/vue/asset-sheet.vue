@@ -10,21 +10,31 @@
       :class="$style.tabSet"
     >
       <TabList :class="$style.tabList">
-        <Tab tab-key="description" :class="$style.tab">
-          {{ $t('IRONSWORN.Description') }}
-        </Tab>
-        <Tab tab-key="fields" :class="$style.tab">
-          {{ $t('IRONSWORN.Fields') }}
-        </Tab>
-        <Tab tab-key="abilities" :class="$style.tab">
-          {{ $t('IRONSWORN.Abilities') }}
-        </Tab>
-        <Tab tab-key="options" :class="$style.tab">
-          {{ $t('IRONSWORN.Options') }}
-        </Tab>
-        <Tab tab-key="track" :class="$style.tab">
-          {{ $t('IRONSWORN.Track') }}
-        </Tab>
+        <Tab
+          tab-key="description"
+          :class="$style.tab"
+          :text="$t('IRONSWORN.Description')"
+        />
+        <Tab
+          tab-key="fields"
+          :class="$style.tab"
+          :text="$t('IRONSWORN.Fields')"
+        />
+        <Tab
+          tab-key="abilities"
+          :class="$style.tab"
+          :text="$t('IRONSWORN.Abilities')"
+        />
+        <Tab
+          tab-key="options"
+          :class="$style.tab"
+          :text="$t('IRONSWORN.Options')"
+        />
+        <Tab
+          tab-key="track"
+          :class="$style.tab"
+          :text="$t('IRONSWORN.Track')"
+        />
       </TabList>
       <TabPanels :class="$style.tabPanels">
         <TabPanel

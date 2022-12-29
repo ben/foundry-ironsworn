@@ -15,8 +15,8 @@
   >
     <template #label>
       <BtnMomentumburn
-        class="text"
-        :class="{ 'vertical-text': sliderStyle === 'vertical' }"
+        :vertical="sliderStyle === 'vertical'"
+        :text="$t('IRONSWORN.Momentum')"
         :tooltip="
           $t('IRONSWORN.BurnMomentumAndResetTo', {
             value: actorSys.momentum,
@@ -24,7 +24,6 @@
           })
         "
       >
-        {{ $t('IRONSWORN.Momentum') }}
       </BtnMomentumburn>
     </template>
   </AttrSlider>
@@ -33,7 +32,7 @@
 <style lang="less">
 @import '../../../../styles/mixins.less';
 .momentum-meter {
-  gap: 5px 0;
+  gap: var(--ironsworn-spacer-md) 0;
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
       .blockHoverMixin();

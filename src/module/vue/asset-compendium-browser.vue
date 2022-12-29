@@ -5,14 +5,12 @@
     :key="category.title"
   >
     <h2 class="flexrow">
-      <BtnFaicon
-        :icon="category.expanded ? 'caret-down' : 'caret-right'"
+      <IronBtn
         :aria-controls="category.title"
-        class="juicy text"
+        :text="category.title"
+        :icon="category.expanded ? 'fa:caret-down' : 'fa:caret-right'"
         @click="category.expanded = !category.expanded"
-      >
-        {{ category.title }}
-      </BtnFaicon>
+      />
     </h2>
 
     <CollapseTransition>
@@ -61,17 +59,17 @@ h2 {
 
 .asset-category {
   margin-bottom: 1em;
-  padding: 5px;
-  border: 1px solid;
-  border-radius: 5px;
+  padding: var(--ironsworn-spacer-md);
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  border-radius: var(--ironsworn-border-radius-lg);
 }
 
 .asset-category-contents {
-  margin: 5px 10px;
+  margin: var(--ironsworn-spacer-md) var(--ironsworn-spacer-xl);
 }
 
 .category-description {
-  padding-bottom: 10px;
+  padding-bottom: var(--ironsworn-spacer-xl);
 }
 </style>
 
@@ -79,13 +77,13 @@ h2 {
 import { provide, reactive } from 'vue'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
-import BtnFaicon from './components/buttons/btn-faicon.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
 import {
   createIronswornAssetTree,
   createStarforgedAssetTree,
   DisplayCategory,
 } from '../features/customassets'
+import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{ toolset: 'starforged' | 'ironsworn' }>()
 

@@ -7,20 +7,21 @@
     :data-document-id="foundryItem().id"
     :class="{ [`asset-${toolset}`]: true }"
     @dragstart="dragStart"
+    @dragend="dragEnd"
   >
     <header class="asset-header nogrow flexrow">
-      <i class="fa-solid fa-grip nogrow block draggable item"></i>
-
-      <button
-        type="button"
+      <FontIcon name="grip" class="nogrow block draggable item" />
+      <IronBtn
         @click="state.expanded = !state.expanded"
         :aria-controls="bodyId"
-        class="clickable text asset-expand-toggle"
+        class="asset-expand-toggle"
       >
-        <h4 class="asset-title">
-          {{ foundryItem().name }}
-        </h4>
-      </button>
+        <template #text>
+          <h4 class="asset-title button-text">
+            {{ foundryItem().name }}
+          </h4>
+        </template>
+      </IronBtn>
     </header>
 
     <CollapseTransition>
@@ -86,45 +87,57 @@
     </CollapseTransition>
   </article>
 </template>
+
 <style lang="less" scoped>
 .ironsworn .ironsworn__asset {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
-  margin: 10px 0;
-  padding: 5px;
+  margin: var(--ironsworn-spacer-xl) 0;
+  padding: var(--ironsworn-spacer-md);
   --ironsworn-color-thematic: v-bind('system.color');
 }
 </style>
+
 <script setup lang="ts">
 import { IAsset } from 'dataforged'
 import { computed, inject, provide, reactive } from 'vue'
 import { IronswornItem } from '../../../item/item'
 import { AssetDataPropertiesData } from '../../../item/itemtypes'
+import { $ItemKey, ItemKey } from '../../provisions.js'
+
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
-import { $ItemKey, ItemKey } from '../../provisions.js'
+import FontIcon from '../icon/font-icon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
+
 const props = defineProps<{
   df?: IAsset
   foundryItem: () => IronswornItem
 }>()
+
 const toolset = inject('toolset')
 const system = (props.foundryItem() as any).system as AssetDataPropertiesData
+
 provide($ItemKey, props.foundryItem())
 provide(
   ItemKey,
   computed(() => props.foundryItem().toObject() as any)
 )
+
 const state = reactive({
   expanded: false,
 })
+
 const bodyId = `asset-body-${props.foundryItem().id}`
+
 function moveClick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
 }
+
 function dragStart(ev) {
   ev.dataTransfer.setData(
     'text/plain',
@@ -135,5 +148,11 @@ function dragStart(ev) {
       uuid: props.foundryItem().uuid,
     })
   )
+
+  CONFIG.IRONSWORN.emitter.emit('dragStart', props.foundryItem().type)
+}
+
+function dragEnd() {
+  CONFIG.IRONSWORN.emitter.emit('dragEnd', props.foundryItem().type)
 }
 </script>

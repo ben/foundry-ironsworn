@@ -1,5 +1,5 @@
 <template>
-  <div class="flexrow" style="gap: 10px">
+  <div class="flexrow" style="gap: var(--ironsworn-spacer-xl)">
     <!-- TABS -->
     <div class="flexcol" style="flex-basis: 10em">
       <div
@@ -10,14 +10,14 @@
         @click="selectBondIndex(i)"
       >
         <span>{{ i + 1 }}. {{ bond.name }}</span>
-        <BtnFaicon class="nogrow block" icon="trash" @click="deleteBond(i)" />
+        <IronBtn block nogrow @click="deleteBond(i)" icon="fa:trash" />
       </div>
-
-      <BtnFaicon
-        class="block nogrow"
-        icon="plus"
+      <IronBtn
+        block
+        nogrow
         style="flex: 0; width: 100%"
         @click="addBond"
+        icon="fa:plus"
       />
     </div>
 
@@ -45,7 +45,7 @@
 .clickable.block {
   border-style: none;
   line-height: 25px;
-  padding: 5px;
+  padding: var(--ironsworn-spacer-md);
   .selected & {
     color: var(--ironsworn-color-clickable-block-fg-selected);
     &:hover {
@@ -66,8 +66,8 @@
 import { computed, inject, provide, reactive, watch, ref } from 'vue'
 import { $ItemKey, ItemKey } from './provisions'
 import { BondsetDataPropertiesData } from '../item/itemtypes'
-import BtnFaicon from '../vue/components/buttons/btn-faicon.vue'
 import MceEditor from './components/mce-editor.vue'
+import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{ item: any }>()
 provide(ItemKey, computed(() => props.item) as any)

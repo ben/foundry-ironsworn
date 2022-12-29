@@ -1,23 +1,27 @@
 <template>
-  <btn-faicon
-    icon="fire"
+  <IronBtn
     class="burn-momentum"
     @click="burnMomentum"
-    :disabled="disabled"
     :tooltip="tooltip"
+    icon="fa:fire"
+    v-bind="($props, $attrs)"
   >
-    <slot name="default"></slot>
-  </btn-faicon>
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
+  </IronBtn>
 </template>
 
 <script lang="ts" setup>
 import { computed } from '@vue/reactivity'
-import { inject } from 'vue'
+import { ExtractPropTypes, inject } from 'vue'
 import { CharacterDataPropertiesData } from '../../../actor/actortypes'
 import { $ActorKey } from '../../provisions'
-import btnFaicon from './btn-faicon.vue'
+import IronBtn from './iron-btn.vue'
 
-defineProps<{ disabled?: boolean }>()
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {}
+
+defineProps<Props>()
 const $actor = inject($ActorKey)
 
 const tooltip = computed(() => {

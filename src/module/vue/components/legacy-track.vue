@@ -8,15 +8,17 @@
       <span v-if="overflowLabel" class="nogrow">
         {{ overflowLabel }}
       </span>
-      <BtnFaicon
-        class="block nogrow"
+      <IronBtn
         v-if="editMode"
-        icon="caret-left"
+        block
+        nogrow
+        icon="fa:caret-left"
         @click="decrease"
       />
-      <BtnFaicon
-        class="block nogrow"
-        icon="caret-right"
+      <IronBtn
+        block
+        nogrow
+        icon="fa:caret-right"
         @click="increase"
         :data-tooltip="markTooltip"
       />
@@ -79,7 +81,6 @@
     align-items: center;
     justify-content: end;
     .icon-button {
-      aspect-ratio: 1;
       height: 100%;
     }
   }
@@ -141,7 +142,7 @@
 <script setup lang="ts">
 import { computed, inject, Ref } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
-import BtnFaicon from './buttons/btn-faicon.vue'
+import IronBtn from './buttons/iron-btn.vue'
 import { capitalize } from 'lodash'
 import XpTrack from './xp-track.vue'
 import _ from 'lodash'

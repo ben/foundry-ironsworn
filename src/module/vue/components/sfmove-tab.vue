@@ -11,10 +11,11 @@
     ]"
   >
     <span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
-    <btn-faicon
-      class="nogrow block"
+    <IronBtn
+      nogrow
+      block
       v-if="$attrs.onDelete"
-      icon="trash"
+      icon="fa:trash"
       @click="$emit('delete')"
     />
   </div>
@@ -29,7 +30,7 @@ span {
 </style>
 
 <script setup lang="ts">
-import BtnFaicon from './buttons/btn-faicon.vue'
+import IronBtn from './buttons/iron-btn.vue'
 
 const props = defineProps<{
   title?: string

@@ -444,7 +444,8 @@
     }
   },
   "JournalEntryPage": {
-    "types": ["progress"],
+    "types": ["truth", "progress"],
+    "truth": {},
     "progress": {
       "rank": 1,
       "current": 0

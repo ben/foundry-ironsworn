@@ -20,6 +20,7 @@
         :key="`progress-item-${i}`"
         :item="progressItem"
         :show-star="true"
+        class="nogrow"
       />
     </section>
   </article>

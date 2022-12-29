@@ -18,25 +18,28 @@
         :class="[toggleWrapperClass, $style.toggleWrapper, 'toggle-wrapper']"
         :is="toggleWrapperIs"
       >
-        <component
-          :is="noIcon ? 'button' : BtnFaicon"
+        <IronBtn
           :id="controlId"
-          type="button"
           :aria-controls="contentId"
-          :icon="noIcon ? undefined : 'chevron-right'"
           @click="toggle()"
           :disabled="disabled"
-          :class="[
-            $style.toggle,
-            toggleButtonClass,
-            $style.toggleButtonTransition,
-          ]"
-          :data-tooltip="toggleTooltip"
+          :class="[$style.toggle, toggleButtonClass]"
+          :tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"
+          :text="toggleLabel"
           ref="$toggle"
         >
-          {{ toggleLabel }}
-        </component>
+          <template #icon>
+            <slot name="toggleIcon">
+              <FontIcon
+                v-if="icon"
+                :name="icon"
+                :class="$style.toggleButton"
+                :size="FontAwesome.Size['xs']"
+              />
+            </slot>
+          </template>
+        </IronBtn>
       </component>
       <slot name="after-toggle"></slot>
     </component>
@@ -81,12 +84,12 @@
 .contentWrapper {
 }
 
-.toggleButtonTransition:before {
+.toggleButton {
   transition: transform 0.4s;
-  font-size: 75%;
+  margin-left: var(--ironsworn-spacer-xs);
   display: flex;
   .wrapper[aria-expanded='true'] & {
-    transform: rotate(90deg);
+    transform: v-bind(transform);
   }
 }
 
@@ -114,9 +117,12 @@
 <script setup lang="ts">
 import { ExtractPropTypes, reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
 import { computed, ref } from '@vue/reactivity'
 import { ExpandEvent, CollapseEvent } from './collapsible-helpers'
+import IronBtn from '../buttons/iron-btn.vue'
+import { FontAwesome } from '../icon/icon-common'
+import { TransformProperty } from 'csstype'
+import FontIcon from '../icon/font-icon.vue'
 
 const props = withDefaults(
   defineProps<{
@@ -133,7 +139,7 @@ const props = withDefaults(
      * @defaultValue `'vertical'`
      */
     orientation?: 'horizontal' | 'vertical'
-    noIcon?: boolean
+    icon?: FontAwesome.Name | null
 
     toggleTooltip?: string
     disabled?: boolean
@@ -174,6 +180,7 @@ const props = withDefaults(
      * Prevents transition from animating.
      */
     disableTransition?: boolean
+    disableToggleAnimation?: boolean
   }>(),
   {
     wrapperIs: 'article',
@@ -184,11 +191,11 @@ const props = withDefaults(
     contentWrapperClass: '',
     toggleWrapperClass: '',
     headingClass: '',
-    toggleTextClass: '',
-    noClickable: false,
     expanded: false,
     duration: 300,
     disableTransition: false,
+    icon: 'chevron-right',
+    disableToggleAnimation: false,
   }
 )
 
@@ -235,6 +242,13 @@ function expand() {
 function collapse() {
   state.expanded = false
 }
+
+const transform = computed<TransformProperty>(() => {
+  if (props.disableToggleAnimation || !props.icon) {
+    return 'none'
+  }
+  return 'rotate(90deg)'
+})
 
 defineExpose({
   $element,

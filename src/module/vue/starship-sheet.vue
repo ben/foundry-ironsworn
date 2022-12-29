@@ -2,12 +2,12 @@
   <SheetBasic :document="actor" body-class="flexcol">
     <TabSet :id="`${actor._id}-starship-sheet`" :tabKeys="['assets', 'notes']">
       <TabList>
-        <Tab tab-key="assets">{{ $t('IRONSWORN.Assets') }}</Tab>
-        <Tab tab-key="notes">{{ $t('IRONSWORN.Notes') }}</Tab>
+        <Tab tab-key="assets" :text="$t('IRONSWORN.Assets')" />
+        <Tab tab-key="notes" :text="$t('IRONSWORN.Notes')" />
       </TabList>
       <TabPanels>
         <TabPanel tab-key="assets" class="flexcol">
-          <SfAssets />
+          <SfAssets :class="$style.assets" />
         </TabPanel>
         <TabPanel tab-key="notes" class="flexcol">
           <SfNotes />
@@ -32,7 +32,11 @@
   </SheetBasic>
 </template>
 
-<style lang="less" scoped></style>
+<style lang="less" module>
+.assets {
+  padding-top: var(--ironsworn-spacer-md);
+}
+</style>
 
 <script setup lang="ts">
 import { provide, computed } from 'vue'
@@ -47,6 +51,7 @@ import TabList from './components/tabs/tab-list.vue'
 import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
+import IronButton from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
   actor: ReturnType<typeof IronswornActor.prototype.toObject>

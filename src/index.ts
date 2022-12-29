@@ -13,7 +13,6 @@ import { StarforgedLocationSheet } from './module/actor/sheets/sf-locationsheet'
 import { IronswornSharedSheetV2 } from './module/actor/sheets/sharedsheet-v2'
 import { IronswornSiteSheet } from './module/actor/sheets/sitesheet'
 import { StarshipSheet } from './module/actor/sheets/starshipsheet'
-import { CreateActorDialog } from './module/applications/createActorDialog'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
 import { IronswornChatCard } from './module/chat/cards'
 import { registerChatAlertHooks } from './module/features/chat-alert'
@@ -37,6 +36,9 @@ import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 import { IronswornJournalPage } from './module/journal/journal-entry-page'
 import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
+import { TruthJournalPageSheet } from './module/journal/truth-page'
+
+import 'virtual:svg-icons-register'
 
 declare global {
   interface LenientGlobalVariableTypes {
@@ -167,6 +169,32 @@ Hooks.once('init', async () => {
     }
   )
 
+  DocumentSheetConfig.registerSheet(
+    // @ts-ignore
+    JournalEntryPage,
+    'ironsworn',
+    // @ts-ignore
+    TruthJournalPageSheet,
+    {
+      types: ['truth'],
+      makeDefault: true,
+      label: 'IRONSWORN.First Start.SettingTruth',
+    }
+  )
+
+  // @ts-ignore
+  CONFIG.JournalEntryPage.typeLabels = merge(
+    // @ts-ignore
+    CONFIG.JournalEntryPage.typeLabels,
+    {
+      truth: 'IRONSWORN.First Start.SettingTruth',
+    }
+  )
+  // @ts-ignore
+  CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
+    truth: 'fa-solid fa-angles-up',
+  })
+
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
   IronswornChatCard.registerHooks()
@@ -183,7 +211,6 @@ Hooks.once('ready', async () => {
   registerChatAlertHooks()
   runStartupMacro()
 
-  CONFIG.IRONSWORN.applications.createActorDialog = new CreateActorDialog({})
   FirstStartDialog.maybeShow()
 
   // Pre-load all the oracles

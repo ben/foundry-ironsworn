@@ -3,10 +3,10 @@
   "title": "Ironsworn & Starforged",
   "description": "An implementation of the Ironsworn and Starforged systems, by Shawn Tomkin.",
   "license": "LICENSE.txt",
-  "version": "1.20.5",
+  "version": "1.20.6",
   "url": "https://github.com/ben/foundry-ironsworn",
   "manifest": "https://github.com/ben/foundry-ironsworn/releases/latest/download/system.json",
-  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.20.5/ironsworn.zip",
+  "download": "https://github.com/ben/foundry-ironsworn/releases/download/1.20.6/ironsworn.zip",
   "compatibility": {
     "minimum": 10,
     "verified": 10
@@ -188,6 +188,22 @@
       "path": "packs/starforged-oracles.db",
       "type": "RollTable",
       "private": false
+    },
+    {
+      "name": "starforgedtruths",
+      "label": "Starforged Setting Truths",
+      "system": "foundry-ironsworn",
+      "path": "packs/starforged-truths.db",
+      "type": "JournalEntry",
+      "private": false
+    },
+    {
+      "name": "macros",
+      "label": "Ironsworn Macros",
+      "system": "foundry-ironsworn",
+      "path": "packs/macros.db",
+      "type": "Macro",
+      "private": false
     }
   ],
   "languages": [
@@ -205,11 +221,6 @@
       "lang": "es",
       "name": "Español",
       "path": "lang/es.json"
-    },
-    {
-      "lang": "rus",
-      "name": "Pусский",
-      "path": "lang/rus.json"
     },
     {
       "lang": "pl",

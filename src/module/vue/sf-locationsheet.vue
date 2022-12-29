@@ -1,9 +1,12 @@
 <template>
   <SheetBasic :document="actor">
     <template #before-header>
-      <div class="flexrow nogrow" style="gap: 5px">
+      <div class="flexrow nogrow" style="gap: var(--ironsworn-spacer-md)">
         <!-- Region -->
-        <label class="flexrow" style="flex-basis: 150px; gap: 10px">
+        <label
+          class="flexrow"
+          style="flex-basis: 150px; gap: var(--ironsworn-spacer-xl)"
+        >
           <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
           <select v-model="region" @change="regionChanged">
             <option value="terminus">
@@ -19,7 +22,10 @@
         </label>
 
         <!-- Subtype -->
-        <label class="flexrow" style="flex-basis: 200px; gap: 10px">
+        <label
+          class="flexrow"
+          style="flex-basis: 200px; gap: var(--ironsworn-spacer-xl)"
+        >
           {{ $t('IRONSWORN.LocationType') }}
           <select v-model="actor.system.subtype" @change="subtypeChanged">
             <option value="planet">Planet</option>
@@ -32,7 +38,10 @@
       </div>
 
       <!-- Klass -->
-      <label class="flexrow nogrow" style="position: relative; gap: 10px">
+      <label
+        class="flexrow nogrow"
+        style="position: relative; gap: var(--ironsworn-spacer-xl)"
+      >
         <!-- TODO: i18n and subtype text -->
         <span class="select-label">{{ subtypeSelectText }}:</span>
         <select
@@ -48,11 +57,12 @@
             {{ opt.label }}
           </option>
         </select>
-        <btn-isicon
-          icon="d10-tilt juicy"
-          class="block nogrow"
+        <IronBtn
+          block
+          nogrow
+          icon="ironsworn:d10-tilt"
           style="
-            padding: 0px 5px;
+            padding: 0px var(--ironsworn-spacer-md);
             position: absolute;
             right: 15px;
             height: 25px;
@@ -73,34 +83,38 @@
         }"
         @change="nameChange"
       >
-        <btn-isicon
+        <IronBtn
           v-if="canRandomizeName"
-          icon="d10-tilt"
-          class="btn-randomize-name juicy block nogrow"
+          class="btn-randomize-name"
+          block
+          nogrow
           :tooltip="$t('IRONSWORN.RandomName')"
           @click="randomizeName"
+          icon="ironsworn:d10-tilt"
         />
       </SheetHeaderBasic>
     </template>
     <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
       <div class="flexrow boxrow">
-        <btn-isicon
-          icon="d10-tilt"
-          class="block box"
+        <IronBtn
+          class="btn-randomize-name box"
+          block
+          nogrow
+          @click="rollFirstLook"
+          icon="ironsworn:d10-tilt"
           @mouseenter="data.firstLookHighlight = true"
           @mouseleave="data.firstLookHighlight = false"
-          @click="rollFirstLook"
-        >
-          {{ $t('IRONSWORN.RollForDetails') }}
-        </btn-isicon>
+          :text="$t('IRONSWORN.RollForDetails')"
+        />
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
-        <btn-icon
+        <IronBtn
+          class="box"
           v-for="oracle of row"
-          class="block box"
+          block
+          :disabled="oracle.requiresKlass && klassIsNotValid"
           :class="{
             highlighted: oracle.fl && data.firstLookHighlight,
-            disabled: oracle.requiresKlass && klassIsNotValid,
           }"
           :tooltip="
             oracle.requiresKlass && klassIsNotValid
@@ -109,12 +123,15 @@
           "
           :key="oracle.dfId"
           @click="rollOracle(oracle)"
+          icon="ironsworn:d10-tilt"
         >
-          {{ oracle.title }}
-          <span v-if="oracle.qty" class="oracle-quantity"
-            >({{ oracle.qty }})</span
-          >
-        </btn-icon>
+          <template #text>
+            {{ oracle.title }}
+            <span v-if="oracle.qty" class="oracle-quantity"
+              >({{ oracle.qty }})</span
+            >
+          </template>
+        </IronBtn>
       </div>
     </section>
     <section class="flexcol">
@@ -138,7 +155,8 @@
     grid-column: 3;
     height: 50px;
     aspect-ratio: 1;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 var(--ironsworn-border-radius-md)
+      var(--ironsworn-border-radius-md) 0;
   }
 }
 </style>
@@ -166,14 +184,14 @@ label {
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import { capitalize, flatten, sample } from 'lodash'
-import { provide, computed, reactive, inject, watch } from 'vue'
+import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
-import BtnIsicon from './components/buttons/btn-isicon.vue'
-import BtnIcon from './components/buttons/btn-icon.vue'
+
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
 import { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
+import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
   actor: any

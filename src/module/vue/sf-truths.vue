@@ -1,62 +1,102 @@
 <template>
-  <div class="flexcol">
-    <div v-for="category in truths" :key="category.Name">
-      <h2 style="margin-top: 1em">{{ category.Name }}</h2>
-
-      <SfTruth
-        v-for="option in category.Table"
-        :key="option.$id"
-        :radiogroup="category.Name"
-        :truth="option"
-        @change="radioselect"
+  <div class="flexrow" style="position: relative">
+    <nav class="flexcol">
+      <IronBtn
+        v-for="(truth, i) in truths"
+        nogrow
+        :text="truth.je().name ?? '???'"
+        @click="scrollToCategory(i)"
       />
 
-      <!-- TODO: custom truth entry -->
-    </div>
-
-    <hr />
-    <BtnFaicon class="block" icon="feather" @click="saveTruths">
-      {{ $t('IRONSWORN.SaveYourTruths') }}
-    </BtnFaicon>
+      <hr class="nogrow" />
+      <IronBtn
+        nogrow
+        icon="ironsworn:d10-tilt"
+        :text="$t('IRONSWORN.RandomizeAll')"
+        @click="randomizeAll"
+      />
+      <IronBtn
+        nogrow
+        :text="$t('IRONSWORN.SaveYourTruths')"
+        icon="fa:feather"
+        @click="saveTruths"
+      />
+    </nav>
+    <section class="flexcol">
+      <TruthCategory
+        v-for="truth in truths"
+        ref="categoryComponents"
+        :key="truth.df.$id"
+        :df="truth.df"
+        :je="truth.je"
+      />
+    </section>
   </div>
 </template>
 
+<style lang="less" scoped>
+nav {
+  position: fixed;
+  margin-top: 1em;
+  height: 100%;
+}
+
+section {
+  margin-left: 15em;
+}
+
+.save-button {
+  justify-self: flex-end;
+}
+</style>
+
 <script setup lang="ts">
-import { computed, inject, reactive } from 'vue'
-import SfTruth from './components/sf-truth.vue'
-import BtnFaicon from './components/buttons/btn-faicon.vue'
+import { inject, ref } from 'vue'
 import { ISettingTruth } from 'dataforged'
+import { $LocalEmitterKey } from './provisions'
+import IronBtn from './components/buttons/iron-btn.vue'
+import TruthCategory from './components/truth/truth-category.vue'
 
-const props = defineProps<{ truths: ISettingTruth[] }>()
+const props = defineProps<{
+  truths: {
+    df: ISettingTruth
+    je: () => JournalEntry
+  }[]
+}>()
 
-const output = {}
-for (const category of props.truths ?? []) {
-  output[category.Name] = null
+const categoryComponents = ref<typeof TruthCategory[]>([])
+
+function scrollToCategory(i: number) {
+  categoryComponents.value[i]?.scrollIntoView()
 }
 
-const data = reactive({ output })
-
-const composedOutput = computed(() =>
-  props.truths
-    .map((category) => category.Name)
-    .map((name) =>
-      data.output[name]
-        ? `<h2>${name}</h2>\n${data.output[name]}\n\n`
-        : undefined
-    )
-    .filter((x) => x !== undefined)
-    .join('\n')
-)
-function radioselect(category, value) {
-  data.output[category] = value
-}
-
+const $localEmitter = inject($LocalEmitterKey)
 async function saveTruths() {
+  // Fetch values from the category components
+  const values = categoryComponents.value
+    .map((x) => x.selectedValue())
+    .filter((x) => x.valid)
+
+  const content = values
+    .map(
+      ({ title, html }) => `
+        <h2>${title}</h2>
+        ${html}
+      `
+    )
+    .join('\n\n')
+
   const journal = await JournalEntry.create({
     name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
-    content: composedOutput.value,
+    content,
   })
   journal?.sheet?.render(true)
-  CONFIG.IRONSWORN.emitter.emit('closeApp')
+  $localEmitter?.emit('closeApp')
+}
+
+async function randomizeAll() {
+  for (const cat of categoryComponents.value) {
+    await cat.randomize()
+  }
 }
 </script>

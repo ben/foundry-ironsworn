@@ -1,28 +1,31 @@
 <template>
-  <btn-faicon
+  <IronBtn
     class="move-chat"
-    icon="comment"
     :tooltip="$t('IRONSWORN.SendToChat', { move: move.displayName })"
     @click="sendToChat"
-    :disabled="disabled"
+    icon="fa:comment"
+    v-bind="($props, $attrs)"
   >
-    <slot name="default"></slot>
-  </btn-faicon>
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
+  </IronBtn>
 </template>
 
 <style lang="less"></style>
 
 <script setup lang="ts">
-import { inject } from 'vue'
+import { ExtractPropTypes, inject } from 'vue'
 import { createSfMoveChatMessage } from '../../../chat/sf-move-chat-message'
 import { Move } from '../../../features/custommoves'
 import { $ItemKey } from '../../provisions.js'
-import btnFaicon from './btn-faicon.vue'
+import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
   move: Move
-  disabled?: boolean
-}>()
+}
+
+defineProps<Props>()
 
 const $item = inject($ItemKey)
 

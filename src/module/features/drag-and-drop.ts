@@ -16,9 +16,8 @@ export function registerDragAndDropHooks() {
           const indexEntry = getIndexEntry(ev.target) as ReturnType<
             typeof getIndexEntry
           > & { type: string }
-          $(document)
-            .find(`[data-ironsworn-drop-type="${indexEntry?.type}"]`)
-            .attr('data-ironsworn-drop-active', 'true')
+
+          CONFIG.IRONSWORN.emitter.emit('dragStart', indexEntry?.type)
         }
       )
       .on(
@@ -28,9 +27,7 @@ export function registerDragAndDropHooks() {
             typeof getIndexEntry
           > & { type: string }
 
-          $(document)
-            .find(`[data-ironsworn-drop-type="${indexEntry?.type}"]`)
-            .attr('data-ironsworn-drop-active', 'false')
+          CONFIG.IRONSWORN.emitter.emit('dragEnd', indexEntry?.type)
         }
       )
   })

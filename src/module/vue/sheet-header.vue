@@ -18,7 +18,7 @@
   .profile-img {
     flex: 0 0 50px;
     height: 50px;
-    margin-right: 10px;
+    margin-right: var(--ironsworn-spacer-xl);
   }
   .header-fields {
     flex: 1;

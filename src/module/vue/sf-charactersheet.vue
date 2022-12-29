@@ -19,7 +19,7 @@
         <!-- Attributes -->
         <div
           class="flexrow stats"
-          style="margin-bottom: 10px"
+          style="margin-bottom: var(--ironsworn-spacer-xl)"
           data-tooltip-direction="UP"
         >
           <attr-box attr="edge" />
@@ -33,11 +33,11 @@
           :id="`${actor._id}_sf-character-sheet`"
         >
           <TabList>
-            <Tab tab-key="legacies">{{ $t('IRONSWORN.Legacies') }}</Tab>
-            <Tab tab-key="assets">{{ $t('IRONSWORN.Assets') }}</Tab>
-            <Tab tab-key="progress">{{ $t('IRONSWORN.Progress') }}</Tab>
-            <Tab tab-key="connections">{{ $t('IRONSWORN.Connections') }}</Tab>
-            <Tab tab-key="notes">{{ $t('IRONSWORN.Notes') }}</Tab>
+            <Tab tab-key="legacies" :text="$t('IRONSWORN.Legacies')" />
+            <Tab tab-key="assets" :text="$t('IRONSWORN.Assets')" />
+            <Tab tab-key="progress" :text="$t('IRONSWORN.Progress')" />
+            <Tab tab-key="connections" :text="$t('IRONSWORN.Connections')" />
+            <Tab tab-key="notes" :text="$t('IRONSWORN.Notes')" />
           </TabList>
           <TabPanels>
             <TabPanel tab-key="legacies" class="flexcol">
@@ -75,7 +75,7 @@
 
 <style lang="less" module>
 .topPadding {
-  padding-top: var(--ironsworn-spacer-lg);
+  padding-top: var(--ironsworn-spacer-md);
 }
 </style>
 

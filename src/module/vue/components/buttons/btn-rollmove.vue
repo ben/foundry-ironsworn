@@ -1,5 +1,5 @@
 <template>
-  <btn-isicon
+  <IronBtn
     @click="rollMove"
     :tooltip="
       $t('IRONSWORN.RollMove', {
@@ -7,31 +7,34 @@
       })
     "
     class="action-roll move-roll"
-    icon="d10-tilt"
     aria-haspopup="dialog"
-    :disabled="disabled"
+    icon="ironsworn:d10-tilt"
+    v-bind="($props, $attrs)"
   >
-    <slot name="default"></slot>
-  </btn-isicon>
+    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+      <slot :name="slot" v-bind="scope" />
+    </template>
+  </IronBtn>
 </template>
 
 <script setup lang="ts">
-import { inject, useAttrs } from 'vue'
+import { ExtractPropTypes, inject } from 'vue'
 import { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
-import btnIsicon from './btn-isicon.vue'
+import IronBtn from './iron-btn.vue'
 
-const props = defineProps<{
+interface Props extends Omit<ExtractPropTypes<typeof IronBtn>, 'tooltip'> {
   move?: Move
-  disabled?: boolean
   overrideClick?: boolean
 
   // Hack: if we declare `click` in the emits, there's no $attrs['onClick']
   // This allows us to check for presence and still use $emit('click')
   // https://github.com/vuejs/core/issues/4736#issuecomment-934156497
   onClick?: Function
-}>()
+}
+
+const props = defineProps<Props>()
 
 const $actor = inject($ActorKey)
 const $emit = defineEmits(['click'])

@@ -16,12 +16,12 @@
 <style lang="less" scoped>
 label {
   margin-left: -2px;
-  margin-right: 5px;
+  margin-right: var(--ironsworn-spacer-md);
 }
 input[type='text'] {
   border: 0;
   outline: 0;
-  border-bottom: 1px solid;
+  border-bottom: var(--ironsworn-border-width-md) solid;
 }
 </style>
 

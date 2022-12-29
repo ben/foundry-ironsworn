@@ -27,7 +27,7 @@
     </div>
 
     <AttrSlider
-      style="margin-top: 5px"
+      style="margin-top: var(--ironsworn-spacer-md)"
       attr="track.current"
       documentType="Item"
       :max="item.system.track.max"
@@ -46,12 +46,15 @@
       >
         <label>{{ $t('IRONSWORN.Name') }}</label>
         <input type="text" @blur="saveConditions" v-model="condition.name" />
-        <BtnFaicon icon="trash" @click="deleteCondition(i)" />
+        <IronBtn icon="fa:trash" @click="deleteCondition(i)" />
       </div>
     </CollapseTransition>
-    <BtnFaicon icon="plus" class="button block" @click="addCondition">
-      {{ $t('IRONSWORN.Condition') }}
-    </BtnFaicon>
+    <IronBtn
+      icon="fa:plus"
+      block
+      @click="addCondition"
+      :text="$t('IRONSWORN.Condition')"
+    />
   </div>
 </template>
 
@@ -60,7 +63,7 @@ import { computed, inject, Ref } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 
 const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)

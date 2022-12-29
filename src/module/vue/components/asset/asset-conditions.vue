@@ -24,7 +24,7 @@
   flex-grow: 0;
   flex-direction: column;
   justify-content: space-around;
-  margin: 5px;
+  margin: var(--ironsworn-spacer-md);
 }
 .condition {
   font-size: x-small;

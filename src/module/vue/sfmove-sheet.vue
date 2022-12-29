@@ -25,7 +25,7 @@
         <hr class="nogrow" />
         <h4 class="flexrow nogrow">
           <span class="flexrow">Actions</span>
-          <btn-faicon icon="plus" class="block" @click="addTrigger" />
+          <IronBtn block @click="addTrigger" icon="fa:plus" />
         </h4>
         <sfmove-tab
           v-for="option in triggerOptions"
@@ -132,7 +132,7 @@ import { get, set } from 'lodash'
 import { $ItemKey, ItemKey } from './provisions'
 import DocumentName from './components/document-name.vue'
 import SfmoveTab from './components/sfmove-tab.vue'
-import BtnFaicon from './components/buttons/btn-faicon.vue'
+import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
   item: any

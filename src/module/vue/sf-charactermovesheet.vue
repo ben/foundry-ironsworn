@@ -6,12 +6,16 @@
     :tabKeys="['moves', 'oracles']"
   >
     <TabList>
-      <Tab :is="BtnIsicon" icon="d10-tilt" tab-key="moves">{{
-        $t('IRONSWORN.Moves')
-      }}</Tab>
-      <Tab :is="BtnIsicon" icon="oracle" tab-key="oracles">{{
-        $t('IRONSWORN.Oracles')
-      }}</Tab>
+      <Tab tab-key="moves" :text="$t('IRONSWORN.Moves')">
+        <template #icon>
+          <IronIcon name="d10-tilt" size="1.25em"></IronIcon>
+        </template>
+      </Tab>
+      <Tab tab-key="oracles" :text="$t('IRONSWORN.Oracles')">
+        <template #icon>
+          <IronIcon name="oracle" size="1.25em"></IronIcon>
+        </template>
+      </Tab>
     </TabList>
     <TabPanels>
       <TabPanel tab-key="moves" class="flexcol">
@@ -58,7 +62,7 @@ import TabList from './components/tabs/tab-list.vue'
 import Tab from './components/tabs/tab.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 import TabPanel from './components/tabs/tab-panel.vue'
-import BtnIsicon from './components/buttons/btn-isicon.vue'
+import IronIcon from './components/icon/iron-icon.vue'
 
 const props = defineProps<{
   actor: CharacterDataProperties

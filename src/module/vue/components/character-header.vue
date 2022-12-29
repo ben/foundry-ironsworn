@@ -1,6 +1,9 @@
 <template>
   <SheetHeaderBasic class="nogrow" :document="actor">
-    <section class="flexrow xp-track-classic" style="gap: 5px">
+    <section
+      class="flexrow xp-track-classic"
+      style="gap: var(--ironsworn-spacer-md)"
+    >
       <h4 class="nogrow" style="margin: 0">{{ $t('IRONSWORN.XP') }}</h4>
       <div class="flexrow">
         <XpBox :key="0" :current="-1" :value="0" @click="setXp(0)"> × </XpBox>

@@ -3,7 +3,7 @@
     <CollapseTransition group tag="div">
       <div
         class="form-group nogrow"
-        style="gap: 5px"
+        style="gap: var(--ironsworn-spacer-md)"
         v-for="(option, i) in item.system.exclusiveOptions"
         :key="`item${i}`"
       >
@@ -13,12 +13,15 @@
           v-model="option.name"
           @blur="save"
         />
-        <BtnFaicon icon="trash" @click="deleteOption(i)" />
+        <IronBtn icon="fa:trash" @click="deleteOption(i)" />
       </div>
     </CollapseTransition>
-    <BtnFaicon icon="plus" class="block" @click="addOption">
-      {{ $t('IRONSWORN.Option') }}
-    </BtnFaicon>
+    <IronBtn
+      icon="fa:plus"
+      block
+      @click="addOption"
+      :text="$t('IRONSWORN.Option')"
+    />
   </div>
 </template>
 
@@ -26,7 +29,7 @@
 import { inject, nextTick, Ref } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from '../transition/collapse-transition.vue'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 
 const item = inject(ItemKey) as Ref
 const $item = inject($ItemKey)

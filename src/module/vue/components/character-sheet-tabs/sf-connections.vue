@@ -7,19 +7,27 @@
       ref="$connectionList"
     />
     <section
+      :class="$style.listControls"
       class="progress-controls flexrow nogrow"
-      style="text-align: center"
     >
-      <BtnFaicon icon="plus" class="block" @click="newConnection">
-        {{ $t('IRONSWORN.Connection') }}
-      </BtnFaicon>
+      <IronBtn
+        icon="fa:plus"
+        block
+        @click="newConnection"
+        :text="$t('IRONSWORN.Connection')"
+      />
     </section>
   </article>
 </template>
+<style lang="less" module>
+.listControls {
+  --ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
+</style>
 <script setup lang="ts">
 import { inject } from 'vue'
 import { $ActorKey } from '../../provisions'
-import BtnFaicon from '../buttons/btn-faicon.vue'
+import IronBtn from '../buttons/iron-btn.vue'
 import ProgressList from '../progress-list.vue'
 
 const $actor = inject($ActorKey)
