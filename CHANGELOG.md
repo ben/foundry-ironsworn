@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.7
+
 - Fix some yucky layout in the location sheet
 
 ## 1.20.6
