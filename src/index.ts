@@ -61,18 +61,6 @@ Hooks.once('init', async () => {
   CONFIG.Actor.documentClass = IronswornActor
   CONFIG.Item.documentClass = IronswornItem
   CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
-  CONFIG.JournalEntryPage.typeLabels = merge(
-    CONFIG.JournalEntryPage.typeLabels,
-    {
-      progress: 'ITEM.TypeProgress',
-      clock: 'IRONSWORN.Clock',
-    }
-  )
-  CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
-    // TODO: a new icon: 4 ticks of progress (forming an 8-pointed asterisk)
-    progress: 'fas fa-asterisk',
-    clock: 'fas fa-clock',
-  })
 
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
@@ -188,11 +176,13 @@ Hooks.once('init', async () => {
     CONFIG.JournalEntryPage.typeLabels,
     {
       truth: 'IRONSWORN.First Start.SettingTruth',
+      progress: 'ITEM.TypeProgress',
     }
   )
   // @ts-ignore
   CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
     truth: 'fa-solid fa-angles-up',
+    progress: 'fas fa-asterisk',
   })
 
   // Register Handlebars helpers

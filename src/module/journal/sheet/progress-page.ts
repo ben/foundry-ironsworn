@@ -39,7 +39,7 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     const data = super.getData(options) as any
 
     data.currentRank = game.i18n.localize(
-      NumericRankI18nKeys[data.data.system.rank]
+      NumericRankI18nKeys[data.data.system.rank ?? NumericRank.troublesome]
     )
     data.rankButtons = range(1, 6).map((numericRank) => ({
       rank: numericRank,
@@ -47,7 +47,7 @@ export class JournalProgressPageSheet extends JournalPageSheet {
       selected: data.data.system.rank === numericRank,
     }))
 
-    // Compute some basic information
+    // Compute some progress numbers
     const boxes = range(10).map((_) => ({
       ticks: 0,
       lineTransforms: [] as string[],
@@ -75,8 +75,6 @@ export class JournalProgressPageSheet extends JournalPageSheet {
     }
     data.boxes = boxes
 
-    // Compute the svg marks for progress
-    console.log(data)
     return data
   }
 
@@ -109,7 +107,7 @@ export class JournalProgressPageSheet extends JournalPageSheet {
 function increment(object: any, direction: 1 | -1) {
   const rank = object.system.rank ?? NumericRank.troublesome
   const increment = NumericRankIncrements[rank]
-  const currentValue = object.system.ticks
+  const currentValue = object.system.ticks || 0
   const newValue = currentValue + increment * direction
   return object.update({
     system: { ticks: Math.min(Math.max(newValue, 0), 40) },
