@@ -2,7 +2,8 @@
 
 ## Next Release
 
-- Create Dependabot config
+- Fix a bug where some sheets won't open
+- Under the hood: dependabot enabled, and some dependencies are updated
 
 ## 1.20.7
 
