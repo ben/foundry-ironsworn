@@ -83,7 +83,8 @@ export class JournalProgressPageSheet extends JournalPageSheet {
   activateListeners(html: JQuery<HTMLElement>): void {
     html.find('.rank-pip').on('click', async (ev) => {
       await this.object.update({
-        system: { rank: parseInt(ev.currentTarget.dataset.rank) },
+        // @ts-ignore
+        system: { rank: parseInt(ev.currentTarget.dataset.rank ?? '0') },
       })
       this.render()
     })

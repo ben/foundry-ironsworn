@@ -22,7 +22,7 @@ export enum NumericRank {
   'epic' = 5,
 }
 
-export const NumericRankI18nKeys: { [k: NumericRank]: string } = {
+export const NumericRankI18nKeys: { [k in NumericRank]: string } = {
   [NumericRank.troublesome]: 'IRONSWORN.Troublesome',
   [NumericRank.dangerous]: 'IRONSWORN.Dangerous',
   [NumericRank.formidable]: 'IRONSWORN.Formidable',
@@ -30,7 +30,7 @@ export const NumericRankI18nKeys: { [k: NumericRank]: string } = {
   [NumericRank.epic]: 'IRONSWORN.Epic',
 }
 
-export const NumericRankIncrements: { [k: NumericRank]: number } = {
+export const NumericRankIncrements: { [k in NumericRank]: number } = {
   [NumericRank.troublesome]: 12,
   [NumericRank.dangerous]: 8,
   [NumericRank.formidable]: 4,

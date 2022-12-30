@@ -20,7 +20,7 @@
             type="radio"
             ref="suboptions"
             class="nogrow"
-            :name="page.system.dfid"
+            :name="pageSystem.dfid"
             @change="subtableSelect(entry as any)"
           />
           <p v-html="entry.Result" />
@@ -50,7 +50,9 @@ const props = defineProps<{
   page: JournalEntryPage
   radioGroup: string
 }>()
-const pageSystem = props.page.system as ISettingTruthOption
+const pageSystem = (props.page as any).system as ISettingTruthOption & {
+  dfid: string
+}
 
 function select() {
   emitValue()
@@ -73,7 +75,7 @@ function emitValue() {
   if (state.suboption && template?.Description) {
     text = template.Description.replace(/\${{.*?}}/, state.suboption)
   }
-  $emit('change', props.page.name, text.trim())
+  $emit('change', props.page.name ?? '???', text.trim())
 }
 
 const suboptions = ref<HTMLElement[]>([])
@@ -91,7 +93,7 @@ async function selectAndRandomize() {
     )
     const msg = OracleRollMessage.fromRows(
       rows,
-      props.page.name,
+      props.page.name ?? '???',
       game.i18n.localize('IRONSWORN.First Start.SettingTruths')
     )
     await msg.createOrUpdate()
