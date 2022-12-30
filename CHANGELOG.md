@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.8
+
 - Fix a bug where some sheets won't open
 - Under the hood: dependabot enabled, and some dependencies are updated
 
