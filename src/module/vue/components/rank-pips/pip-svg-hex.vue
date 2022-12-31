@@ -12,12 +12,6 @@
   </svg>
 </template>
 
-<style lang="less" scoped>
-.svg-hex {
-  aspect-ratio: (sqrt(3) / 2) / 1;
-}
-</style>
-
 <script setup lang="ts">
 import { computed } from '@vue/reactivity'
 import { times } from 'lodash'

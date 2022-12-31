@@ -82,8 +82,7 @@
 <script setup lang="ts">
 import { computed } from '@vue/runtime-core'
 import { fill, clamp } from 'lodash'
-import { RANKS } from '../../../constants.js'
-import { NumericRank } from '../../../dataforged/import.js'
+import { NumericRank, RANKS } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
 
 const props = defineProps<{

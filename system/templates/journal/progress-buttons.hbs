@@ -1,0 +1,30 @@
+<section
+  class='flexrow progress-controls nogrow'
+  data-tooltip-direction='UP'
+  style='flex-flow: nowrap;'
+>
+  <button
+    class='icon-button clickable fas fa-caret-left block ironsworn__progress__unmark'
+    type='button'
+    tooltip='{{localize "IRONSWORN.UnmarkProgress"}}'
+    aria-label='{{localize "IRONSWORN.UnmarkProgress"}}'
+    data-tooltip='{{localize "IRONSWORN.UnmarkProgress"}}'
+    aria-disabled='false'
+  ></button>
+  <button
+    class='icon-button clickable fas fa-caret-right block ironsworn__progress__mark'
+    type='button'
+    tooltip='{{localize "IRONSWORN.MarkProgress"}}'
+    aria-label='{{localize "IRONSWORN.MarkProgress"}}'
+    data-tooltip='{{localize "IRONSWORN.MarkProgress"}}'
+    aria-disabled='false'
+  ></button>
+  <button
+    class='icon-button clickable isicon-d10-tilt progress-roll block ironsworn__progress__roll'
+    type='button'
+    tooltip='{{localize "IRONSWORN.MakeAProgressRoll" score=filledBoxes}}'
+    aria-label='{{localize "IRONSWORN.MakeAProgressRoll" score=filledBoxes}}'
+    data-tooltip='{{localize "IRONSWORN.MakeAProgressRoll" score=filledBoxes}}'
+    aria-disabled='false'
+  ></button>
+</section>

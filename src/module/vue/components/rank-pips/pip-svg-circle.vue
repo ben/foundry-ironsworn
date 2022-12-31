@@ -8,11 +8,3 @@
     <circle cx="5" cy="5" r="5" vector-effect="non-scaling-stroke" />
   </svg>
 </template>
-
-<style lang="less">
-.svg-circle {
-  aspect-ratio: 1;
-}
-</style>
-
-<script setup lang="ts"></script>
