@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- New journal-page type: progress ([#508](https://github.com/ben/foundry-ironsworn/pull/508))
+
 ## 1.20.8
 
 - Fix a bug where some sheets won't open
