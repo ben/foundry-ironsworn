@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.10
+
 - Fix release-on-tag action
 
 ## 1.20.9
