@@ -43,11 +43,12 @@ input[type='radio'] {
 <script setup lang="ts">
 import { ISettingTruthOption, ISettingTruthOptionSubtableRow } from 'dataforged'
 import { reactive, ref } from 'vue'
+import { IronswornJournalPage } from '../../../journal/journal-entry-page'
 import { OracleRollMessage, TableRow } from '../../../rolls'
 
 const props = defineProps<{
   //@ts-ignore
-  page: JournalEntryPage
+  page: IronswornJournalPage
   radioGroup: string
 }>()
 const pageSystem = (props.page as any).system as ISettingTruthOption & {
