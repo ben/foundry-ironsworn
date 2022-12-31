@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.9
+
 - New journal-page type: progress ([#508](https://github.com/ben/foundry-ironsworn/pull/508))
 
 ## 1.20.8
