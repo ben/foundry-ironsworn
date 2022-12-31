@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix release-on-tag action
+
 ## 1.20.9
 
 - New journal-page type: progress ([#508](https://github.com/ben/foundry-ironsworn/pull/508))
