@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.11
+
 - Stop minifying for production builds
 
 ## 1.20.10
