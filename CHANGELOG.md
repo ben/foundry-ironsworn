@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Stop minifying for production builds
+
 ## 1.20.10
 
 - Fix release-on-tag action
