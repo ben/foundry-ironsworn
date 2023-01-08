@@ -34,7 +34,7 @@
   </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 nav {
   position: fixed;
   margin-top: 1em;

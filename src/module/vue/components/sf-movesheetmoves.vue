@@ -61,7 +61,7 @@
   </article>
 </template>
 
-<style lang="less" module>
+<style lang="scss" module>
 .navSearch {
   margin-top: var(--ironsworn-spacer-lg);
 }

@@ -28,7 +28,7 @@
   </article>
 </template>
 
-<style lang="less">
+<style lang="scss">
 .rank-pips {
   width: max-content;
   flex-grow: 0;
@@ -41,7 +41,7 @@
   }
 }
 </style>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .rank-pips {
   // so that hover effects only happen when a pip is hovered
   pointer-events: none;
