@@ -69,3 +69,7 @@ a[data-pack][data-uuid] {
     }
   }
 }
+
+.icon-button {
+  @include mixins.icon-button-base;
+}
