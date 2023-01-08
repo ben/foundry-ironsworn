@@ -134,6 +134,7 @@
     @include meta.load-css('tables');
     @include meta.load-css('inputs');
     @include meta.load-css('box');
+    @include meta.load-css('progress-track');
 
     // .window-title {
     //   @include initial-caps;

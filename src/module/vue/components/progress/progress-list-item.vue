@@ -21,7 +21,7 @@
     </section>
     <DocumentImg class="progress-img" :document="item" size="40px" />
     <RankPips
-      class="progress-rank-pips"
+      class="progress-rank-pips nogrow"
       :current="item.system.rank"
       @click="rankClick"
     />
