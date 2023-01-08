@@ -21,7 +21,7 @@ import SheetHeaderBasic from './sheet-header-basic.vue'
 const props = withDefaults(
   defineProps<{
     document: any
-    bodyClass: any
+    bodyClass?: any
   }>(),
   { bodyClass: { flexcol: true } }
 )
