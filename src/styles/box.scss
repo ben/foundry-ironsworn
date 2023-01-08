@@ -1,0 +1,32 @@
+.boxgroup {
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  border-radius: var(--ironsworn-border-radius-lg);
+
+  .boxrow {
+    border-top: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &.small {
+      flex-basis: 25px;
+      flex-grow: 0;
+      line-height: 25px;
+    }
+  }
+
+  .box {
+    display: flex;
+    justify-content: center;
+    border-left: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
+    border-width: var(--ironsworn-border-width-md);
+    text-align: center;
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
