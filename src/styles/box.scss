@@ -30,10 +30,5 @@
     justify-content: center;
     text-align: center;
     margin: var(--ironsworn-box-margin-offset);
-    &:hover,
-    &:focus,
-    &.hover {
-      z-index: var(--ironsworn-z-index-highest);
-    }
   }
 }

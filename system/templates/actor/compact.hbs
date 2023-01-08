@@ -4,7 +4,7 @@
     <div class="flexrow boxrow">
       {{#*inline "stat"}}
       <div class="box flexcol clickable block ironsworn__stat__roll" data-stat="{{stat}}">
-        <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
+        <h4 class="initial-caps">{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
         <h2>{{lookup data.system stat}}</h2>
       </div>
       {{/inline}}
@@ -21,13 +21,13 @@
   <div class="flexcol boxgroup" style="margin: var(--ironsworn-spacer-md);">
     <div class="flexrow boxrow">
       {{#*inline "resource"}}
-      <div class="box flexcol">
-        <div class="flexcol boxrow {{#unless burn}}clickable block ironsworn__stat__roll{{/unless}}"
+      <div class="flexcol">
+        <div class="box flexcol  {{#unless burn}}clickable block ironsworn__stat__roll{{/unless}}"
           data-stat="{{stat}}">
-          <h5>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h5>
+          <h5 class="initial-caps">{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h5>
           <h4>{{lookup data.system stat}}</h4>
         </div>
-        <div class="flexrow boxrow small">
+        <div class="flexrow small">
           <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
             data-min="{{min}}">&minus;</div>
           {{#if burn}}

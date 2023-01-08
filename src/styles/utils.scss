@@ -1,3 +1,5 @@
+@use 'mixins.scss';
+
 // for classes that apply a set of commonly used styles, but don't describe an element with a specific purpose
 
 .grid {
@@ -8,6 +10,10 @@
   // property intentionally duplicated to provide fallback
   overflow-y: scroll;
   overflow-y: overlay;
+}
+
+.initial-caps {
+  @include mixins.initial-caps;
 }
 
 .vertical-text {
