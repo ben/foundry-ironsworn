@@ -1,19 +1,7 @@
 .boxgroup {
-  // border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-  // --ironsworn-box-border-width: calc(var(--ironsworn-border-width-md) / 2);
-  // --ironsworn-box-border-radius: var(--ironsworn-border-radius-lg);
-  // border-radius: var(--ironsworn-border-radius-lg);
-  // border: var(--ironsworn-boxgroup-border-width) solid
-  //   var(--ironsworn-color-border);
+  --ironsworn-box-border-radius: 0;
 
   .boxrow {
-    // border-top: var(--ironsworn-border-width-md) solid
-    //   var(--ironsworn-color-border);
-
-    &:first-child {
-      // border-top: none;
-    }
-
     &.small {
       flex-basis: 25px;
       flex-grow: 0;
@@ -21,14 +9,35 @@
     }
   }
 
+  & > .boxrow {
+    &:first-child {
+      & > *:first-child {
+        border-top-left-radius: var(--ironsworn-box-border-radius);
+      }
+      & > *:last-child {
+        border-top-right-radius: var(--ironsworn-box-border-radius);
+      }
+    }
+    &:last-child {
+      & > *:first-child {
+        border-bottom-left-radius: var(--ironsworn-box-border-radius);
+      }
+      & > *:last-child {
+        border-bottom-right-radius: var(--ironsworn-box-border-radius);
+      }
+    }
+  }
+
   .box {
-    --ironsworn-box-margin-offset: calc(
-      var(--ironsworn-border-width-md) * -0.5
-    );
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-    display: flex;
-    justify-content: center;
-    text-align: center;
     margin: var(--ironsworn-box-margin-offset);
   }
+}
+
+.box {
+  --ironsworn-box-margin-offset: calc(var(--ironsworn-border-width-md) * -0.5);
+
+  display: flex;
+  justify-content: center;
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  text-align: center;
 }

@@ -94,17 +94,16 @@
     </template>
 
     <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
-      <div class="flexrow boxrow">
-        <div class="box flexrow">
-          <IronBtn
-            block
-            @click="rollFirstLook"
-            icon="ironsworn:d10-tilt"
-            @mouseenter="data.firstLookHighlight = true"
-            @mouseleave="data.firstLookHighlight = false"
-            :text="$t('IRONSWORN.RollForDetails')"
-          />
-        </div>
+      <div class="flexrow">
+        <IronBtn
+          block
+          class="box"
+          @click="rollFirstLook"
+          icon="ironsworn:d10-tilt"
+          @mouseenter="data.firstLookHighlight = true"
+          @mouseleave="data.firstLookHighlight = false"
+          :text="$t('IRONSWORN.RollForDetails')"
+        />
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
         <IronBtn
