@@ -92,18 +92,19 @@
         />
       </SheetHeaderBasic>
     </template>
+
     <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
       <div class="flexrow boxrow">
-        <IronBtn
-          class="btn-randomize-name box"
-          block
-          nogrow
-          @click="rollFirstLook"
-          icon="ironsworn:d10-tilt"
-          @mouseenter="data.firstLookHighlight = true"
-          @mouseleave="data.firstLookHighlight = false"
-          :text="$t('IRONSWORN.RollForDetails')"
-        />
+        <div class="box flexrow">
+          <IronBtn
+            block
+            @click="rollFirstLook"
+            icon="ironsworn:d10-tilt"
+            @mouseenter="data.firstLookHighlight = true"
+            @mouseleave="data.firstLookHighlight = false"
+            :text="$t('IRONSWORN.RollForDetails')"
+          />
+        </div>
       </div>
       <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
         <IronBtn
@@ -365,12 +366,14 @@ const oracles = computed((): OracleSpec[][] => {
             dfId: `Starforged/Oracles/Planets/Peril/Lifebearing`,
           },
           {
-            title: 'Peril (lifeless)',
-            dfId: `Starforged/Oracles/Planets/Peril/Lifeless`,
-          },
-          {
             title: 'Opportunity (life)',
             dfId: `Starforged/Oracles/Planets/Opportunity/Lifebearing`,
+          },
+        ],
+        [
+          {
+            title: 'Peril (lifeless)',
+            dfId: `Starforged/Oracles/Planets/Peril/Lifeless`,
           },
           {
             title: 'Opportunity (lifeless)',

@@ -78,6 +78,7 @@ function progressCompleted() {
 
 async function applySort(oldI, newI, sortBefore, filterFn) {
   const foundryItems = ($actor?.items ?? [])
+    // @ts-ignore
     .filter(filterFn)
     .sort((a, b) => (a.sort || 0) - (b.sort || 0))
   const updates = SortingHelpers.performIntegerSort(foundryItems[oldI], {

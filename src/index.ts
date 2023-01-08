@@ -2,6 +2,7 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
+import { merge } from 'lodash'
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
@@ -33,8 +34,9 @@ import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvet
 import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
+import { IronswornJournalPage } from './module/journal/journal-entry-page'
+import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
 import { TruthJournalPageSheet } from './module/journal/truth-page'
-import { merge } from 'lodash'
 
 import 'virtual:svg-icons-register'
 
@@ -58,6 +60,7 @@ Hooks.once('init', async () => {
   // Define custom Entity classes
   CONFIG.Actor.documentClass = IronswornActor
   CONFIG.Item.documentClass = IronswornItem
+  CONFIG.JournalEntryPage.documentClass = IronswornJournalPage
 
   // CONFIG.RollTable.resultTemplate =
   //   'systems/foundry-ironsworn/templates/chat/table-draw.hbs'
@@ -144,6 +147,17 @@ Hooks.once('init', async () => {
   })
 
   DocumentSheetConfig.registerSheet(
+    JournalEntryPage,
+    'ironsworn',
+    JournalProgressPageSheet,
+    {
+      types: ['progress'],
+      makeDefault: true,
+      label: 'ITEM.TypeProgress',
+    }
+  )
+
+  DocumentSheetConfig.registerSheet(
     // @ts-ignore
     JournalEntryPage,
     'ironsworn',
@@ -162,11 +176,13 @@ Hooks.once('init', async () => {
     CONFIG.JournalEntryPage.typeLabels,
     {
       truth: 'IRONSWORN.First Start.SettingTruth',
+      progress: 'ITEM.TypeProgress',
     }
   )
   // @ts-ignore
   CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
     truth: 'fa-solid fa-angles-up',
+    progress: 'fas fa-asterisk',
   })
 
   // Register Handlebars helpers
