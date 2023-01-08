@@ -9,8 +9,7 @@
 {{/inline}}
 
 <form class='{{cssClass}} flexcol' autocomplete='off'>
-  <div class="flexcol">
-    <div class="flexrow boxrow">
+  <div class="flexrow boxgroup boxrow">
       {{#if sfenabled}}
       {{>createBox type="sfcharacter" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
       {{else}}
@@ -29,10 +28,5 @@
       {{/if}}
 
       {{>createBox type="foe" labelkey="IRONSWORN.NPC" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
-    </div>
-  </div>
-
-  {{#if sfenabled}}
-  {{/if}}
   </div>
 </form>
