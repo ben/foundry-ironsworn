@@ -396,7 +396,7 @@
 // since gradients are *images*, they're overlaid on top of background-colour. great for a lazy tint on a highlighted element.
 // we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
 // only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
-@mixin static-highlight($opacity: 20, $direction: 'to bottom') {
+@mixin static-highlight($opacity: 20, $direction: to bottom) {
   background-image: linear-gradient(
     $direction,
     var(--ironsworn-color-warm-#{$opacity}),
