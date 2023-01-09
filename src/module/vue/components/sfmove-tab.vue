@@ -22,6 +22,15 @@
 </template>
 
 <style lang="scss" scoped>
+div {
+  --ironsworn-move-tab-border-width: var(--ironsworn-border-width-md);
+  border-width: var(--ironsworn-move-tab-border-width);
+  border-right-width: 0;
+  &:not(:first-child) {
+    margin-top: calc(var(--ironsworn-move-tab-border-width) * -1);
+  }
+  padding: var(--ironsworn-spacer-xs);
+}
 span {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -30,9 +39,10 @@ span {
 </style>
 
 <script setup lang="ts">
+// FIXME: migrate to new tab components
 import IronBtn from './buttons/iron-btn.vue'
 
-const props = defineProps<{
+defineProps<{
   title?: string
   titleKey?: string
   property: string
