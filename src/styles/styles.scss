@@ -139,6 +139,7 @@
     &.dialog {
       @include fvtt-dialog.dialog;
     }
+
     .window-title {
       // there's a mixin for this, but it runs afoul of SCSS imports.
       &::first-letter {
