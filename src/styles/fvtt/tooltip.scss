@@ -1,6 +1,7 @@
+/* stylelint-disable mavrin/stylelint-declaration-use-css-custom-properties */
+
 #tooltip {
-  border:
-    var(--ironsworn-border-radius-md) solid
+  border: var(--ironsworn-border-radius-md) solid
     var(--color-border-dark-secondary);
   border-radius: var(--ironsworn-border-radius-md);
   box-shadow: 0 0 4px #000;
