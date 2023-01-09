@@ -145,7 +145,7 @@ export function activateSceneButtonListeners() {
       const sfControl: SceneControl = {
         name: 'Starforged',
         title: game.i18n.localize('IRONSWORN.StarforgedTools'),
-        icon: 'ironsworn-icon isicon-logo-starforged-dk',
+        icon: 'ironsworn-icon block-icon isicon-logo-starforged-dk',
         layer: 'ironsworn',
         visible: true,
         activeTool: 'select',
@@ -156,43 +156,43 @@ export function activateSceneButtonListeners() {
         sfControl.tools.push(
           {
             name: 'edit',
-            icon: 'ironsworn-icon isicon-region-sf',
+            icon: 'ironsworn-icon block-icon isicon-region-sf',
             title: game.i18n.localize('IRONSWORN.EditSector'),
             onClick: editSector,
           },
           // { // TODO: maybe reenable this when we have a good way of doing it
           //   name: 'sector',
-          //   icon: 'ironsworn-icon isicon-sector',
+          //   icon: 'ironsworn-icon block-icon isicon-sector',
           //   title: game.i18n.localize('IRONSWORN.NewSector'),
           //   onClick: warn,
           // },
           {
             name: 'star',
-            icon: 'ironsworn-icon isicon-stellar-object',
+            icon: 'ironsworn-icon block-icon isicon-stellar-object',
             title: game.i18n.localize('IRONSWORN.NewStar'),
             onClick: newStar,
           },
           {
             name: 'planet',
-            icon: 'ironsworn-icon isicon-world',
+            icon: 'ironsworn-icon block-icon isicon-world',
             title: game.i18n.localize('IRONSWORN.NewPlanet'),
             onClick: newPlanet,
           },
           {
             name: 'settlement',
-            icon: 'ironsworn-icon isicon-settlement-sf',
+            icon: 'ironsworn-icon block-icon isicon-settlement-sf',
             title: game.i18n.localize('IRONSWORN.NewSettlement'),
             onClick: newSettlement,
           },
           {
             name: 'derelict',
-            icon: 'ironsworn-icon isicon-derelict',
+            icon: 'ironsworn-icon block-icon isicon-derelict',
             title: game.i18n.localize('IRONSWORN.NewDerelict'),
             onClick: newDerelict,
           },
           {
             name: 'vault',
-            icon: 'ironsworn-icon isicon-precursor-vault',
+            icon: 'ironsworn-icon block-icon isicon-precursor-vault',
             title: game.i18n.localize('IRONSWORN.NewVault'),
             onClick: newVault,
           }
@@ -204,7 +204,7 @@ export function activateSceneButtonListeners() {
       const isControl: SceneControl = {
         name: 'Ironsworn',
         title: game.i18n.localize('IRONSWORN.IronswornTools'),
-        icon: 'ironsworn-icon isicon-logo-ironsworn-dk',
+        icon: 'ironsworn-icon block-icon isicon-logo-ironsworn-dk',
         layer: 'ironsworn',
         visible: true,
         activeTool: 'select',
