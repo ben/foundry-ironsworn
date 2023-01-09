@@ -1,11 +1,16 @@
 <template>
-  <article class="flexrow xp-track nogrow">
+  <article
+    class="flexrow xp-track nogrow"
+    :aria-valuenow="marked"
+    aria-valuemin="0"
+    :aria-valuemax="max"
+  >
     <button
       class="xp-box"
       type="button"
       v-for="box in computedBoxes"
       :key="box.key"
-      :data-value="box.value"
+      :value="box.value"
       :data-segment-state="box.state"
       :aria-selected="box.value == marked"
       @mouseover="hovered = box.value"
