@@ -45,9 +45,11 @@
 [data-legacy='discoveries'] {
   --ironsworn-color-thematic: var(--ironsworn-color-legacy-discoveries);
 }
+
 [data-legacy='bonds'] {
   --ironsworn-color-thematic: var(--ironsworn-color-legacy-bonds);
 }
+
 [data-legacy='quests'] {
   --ironsworn-color-thematic: var(--ironsworn-color-legacy-quests);
 }
@@ -61,11 +63,13 @@
 );
 
 .legacy-track {
-  --legacy-xp-box-size: @max_xp_box_size;
+  --ironsworn-legacy-xp-box-size: @max_xp_box_size;
+
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;
   grid-template-columns: max-content 1fr;
   max-width: @max_progress_track_width;
+
   .legacy-track-title {
     grid-row: 1;
     grid-column: 1;
@@ -75,24 +79,29 @@
     letter-spacing: 0.02em;
     font-weight: bold;
   }
+
   .legacy-track-controls {
     grid-row: 1;
     grid-column: 2;
     align-items: center;
     justify-content: end;
+
     .icon-button {
       height: 100%;
     }
   }
+
   .legacy-track-progress {
     grid-row: 2 / span 2;
     grid-column: 1 / span 2;
     max-width: @max_progress_track_width;
   }
+
   .progress-track {
     gap: @progress_box_gap;
     margin: 0;
   }
+
   .progress-track-box {
     gap: @progress_box_gap;
     // extra padding to allow comfy overlap with xp pips (similar to legacy tracks on the SF character sheet and in the book's illustrations).
@@ -100,6 +109,7 @@
     max-width: @max_progress_box_width;
     max-height: unset;
   }
+
   .legacy-track-xp {
     display: grid;
     position: relative;
@@ -110,6 +120,7 @@
     justify-self: center;
     width: 100%;
     max-width: @max_progress_track_width;
+
     .xp-box {
       z-index: 1;
       margin: 0;
@@ -117,6 +128,7 @@
       width: 100%;
       max-width: @max_xp_box_size;
       @xpBoxOffset: calc((@progress_box_gap + @xp_box_border_width) / -2);
+
       &:not(:nth-child(n + 21)) {
         &:nth-child(2n) {
           justify-self: left;
@@ -124,6 +136,7 @@
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
         }
+
         &:nth-child(2n + 1) {
           justify-self: right;
           margin-right: @xpBoxOffset;
@@ -131,6 +144,7 @@
           border-bottom-right-radius: 0;
         }
       }
+
       &:nth-child(n + 21) {
         grid-column: span 2;
         justify-self: center;

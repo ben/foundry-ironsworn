@@ -133,7 +133,6 @@
   --ironsworn-color-clickable-block-border: var(--ironsworn-color-danger);
   --ironsworn-color-clickable-block-fg: var(--ironsworn-color-danger);
   --ironsworn-color-clickable-block-bg: transparent;
-
   --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-danger);
   --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
   --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-danger);

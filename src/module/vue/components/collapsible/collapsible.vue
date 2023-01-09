@@ -77,17 +77,19 @@
 </template>
 
 <style lang="less" module>
-// TODO: horizontal and vertical versions
 .wrapper {
+  // TODO: horizontal and vertical versions
 }
 
 .contentWrapper {
+  // TODO: horizontal and vertical versions
 }
 
 .toggleButton {
   display: flex;
   transition: transform 0.4s;
   margin-left: var(--ironsworn-spacer-xs);
+
   .wrapper[aria-expanded='true'] & {
     transform: v-bind(transform);
   }

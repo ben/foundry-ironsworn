@@ -18,6 +18,7 @@ label {
   margin-right: var(--ironsworn-spacer-md);
   margin-left: -2px;
 }
+
 input[type='text'] {
   outline: 0;
   border: 0;

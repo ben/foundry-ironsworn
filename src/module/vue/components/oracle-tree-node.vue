@@ -79,19 +79,23 @@
 .show-oracle-info {
   // padding: 4px;
 }
+
 .movesheet-row {
   transition: all 0.4s ease;
 }
+
 h4 {
   margin: 0;
   height: min-content;
   line-height: 1;
+
   button {
     height: min-content;
     text-transform: uppercase;
     line-height: 1;
   }
 }
+
 .hidden {
   display: none;
 }

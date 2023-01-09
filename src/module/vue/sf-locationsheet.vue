@@ -65,7 +65,7 @@
             position: absolute;
             top: 1px;
             right: 15px;
-            padding: 0px var(--ironsworn-spacer-md);
+            padding: 0 var(--ironsworn-spacer-md);
             height: 25px;
             line-height: 30px;
           "
@@ -146,12 +146,15 @@
   display: grid;
   grid-template-columns: max-content 1fr max-content;
   grid-auto-flow: column;
+
   > * {
     grid-row: 1;
   }
+
   .charname {
     grid-column: 2 / span 2;
   }
+
   .btn-randomize-name {
     grid-column: 3;
     border-radius: 0 var(--ironsworn-border-radius-md)
@@ -170,9 +173,11 @@ label {
     flex-grow: 0;
   }
 }
+
 .box button {
   padding: 7px;
 }
+
 .theme-starforged .highlighted {
   background: #055;
 }

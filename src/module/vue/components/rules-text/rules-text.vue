@@ -17,30 +17,37 @@
 
 .rules-text {
   --ironsworn-rules-text-spacer: 0.5em;
+
   display: flex;
   flex-direction: column;
   gap: var(--ironsworn-rules-text-spacer);
 }
+
 .rules-text-main {
   display: flex;
   flex-direction: column;
   gap: var(--ironsworn-rules-text-spacer);
+
   p {
     &:first-of-type {
       margin-top: 0;
     }
+
     &:last-of-type:not(:last-child) {
       margin-bottom: 0;
     }
   }
+
   & > * {
     margin: 0;
   }
   .textCompactMixin();
 }
+
 .rules-text-footer {
   text-align: right;
 }
+
 .rules-source-info {
   opacity: 0.5;
   font-size: small;

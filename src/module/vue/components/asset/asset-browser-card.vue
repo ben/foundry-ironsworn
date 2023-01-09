@@ -91,6 +91,7 @@
 <style lang="less" scoped>
 .ironsworn .ironsworn__asset {
   --ironsworn-color-thematic: v-bind('system.color');
+
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;

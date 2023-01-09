@@ -38,16 +38,18 @@
 input,
 textarea {
   border-radius: var(--ironsworn-border-radius-sm);
-  border-color: rgba(0, 0, 0, 0.1);
+  border-color: rgb(0 0 0 / 10%);
   resize: none;
   font-family: var(--font-primary);
   font-size: inherit;
 }
+
 textarea {
   flex-basis: 300px;
   flex-grow: 2;
   margin: 0;
 }
+
 .header-pc-vitals {
   flex-basis: 100px;
   flex-grow: 1;

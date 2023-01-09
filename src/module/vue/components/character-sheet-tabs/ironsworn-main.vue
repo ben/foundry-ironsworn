@@ -48,6 +48,7 @@
 .items {
   gap: var(--ironsworn-spacer-md);
 }
+
 .progress {
   margin-top: var(--ironsworn-spacer-md);
 }
@@ -56,9 +57,11 @@
 h4 {
   text-transform: uppercase;
 }
+
 h3 {
   transition: background-color 0.2s ease;
   margin: var(--ironsworn-spacer-md) 0;
+
   i {
     width: 15px;
     text-align: center;

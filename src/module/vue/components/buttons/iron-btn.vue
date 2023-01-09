@@ -48,12 +48,14 @@
   justify-content: start;
   justify-items: start;
 }
+
 .flexCenter {
   align-content: center;
   align-items: center;
   justify-content: center;
   justify-items: center;
 }
+
 .flexEnd {
   align-content: center;
   align-items: center;
@@ -72,6 +74,7 @@
   width: v-bind(width);
   height: v-bind(height);
   color: inherit;
+
   & > svg {
     // prevents double hover effect on svg hover
     pointer-events: none;
@@ -81,8 +84,10 @@
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     line-height: 1.25;
+
     .verticalText.buttonText {
       .vertical-text();
+
       display: inherit;
       width: max-content;
       line-height: inherit;
@@ -93,7 +98,8 @@
 
 .buttonText {
   display: inline;
-  border-width: 0px;
+  border-width: 0;
+
   strong {
     white-space: nowrap;
   }
@@ -110,12 +116,16 @@
   line-height: 1;
   aspect-ratio: 1;
 }
+
 .clickableText {
   .clickableTextMixin();
+
   line-height: var(--ironsworn-line-height);
 }
+
 .clickableBlock {
   .clickableBlockMixin();
+
   &:hover:not(:focus) {
     box-shadow: none;
   }

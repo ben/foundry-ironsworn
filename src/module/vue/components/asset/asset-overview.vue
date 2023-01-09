@@ -137,6 +137,7 @@
 <style lang="less" module>
 .ironsworn__asset {
   --ironsworn-color-thematic: v-bind('item.system.color');
+
   margin: var(--ironsworn-spacer-xl) 0;
   padding: var(--ironsworn-spacer-md);
 }

@@ -28,6 +28,7 @@
 <style lang="less" module>
 .sfLegacies {
   gap: var(--ironsworn-spacer-md);
+
   > *:not(:first-child) {
     border-top: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
@@ -38,10 +39,12 @@
   gap: var(--ironsworn-spacer-md);
   padding: var(--ironsworn-spacer-md) 0;
 }
+
 .legacyTracks {
   gap: var(--ironsworn-spacer-md);
   align-items: center;
 }
+
 .legacyTrack {
   width: 100%;
   height: max-content;

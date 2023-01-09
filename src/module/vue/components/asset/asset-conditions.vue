@@ -26,6 +26,7 @@
   justify-content: space-around;
   margin: var(--ironsworn-spacer-md);
 }
+
 .condition {
   flex-basis: 12px;
   margin: 1px 0;

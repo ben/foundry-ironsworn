@@ -27,9 +27,11 @@
   border-color: var(--ironsworn-color-fg-10);
   background-color: var(--ironsworn-color-fg-10);
 }
+
 .completedProgressList {
   margin: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
 }
+
 .completedProgressListItem {
   border-color: var(--ironsworn-color-bg-50);
   background-color: var(--ironsworn-color-bg-50);

@@ -68,11 +68,12 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
+
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
-
   color: var(--ironsworn-color-light);
 }
+
 .cardColorsMixin {
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-bg);
@@ -82,8 +83,10 @@
 .sfMoveRow {
   --ironsworn-line-height: (--ironsworn-line-height-md);
   .thematicColorMixin();
+
   position: relative;
   padding: 0 @wrapper_spacing;
+
   &[aria-expanded='true'] {
     padding-top: @wrapper_spacing;
     padding-bottom: @wrapper_spacing;
@@ -98,6 +101,7 @@
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   .clickableTextMixin();
+
   align-self: center;
   font-size: var(--font-size-20);
   aspect-ratio: 1 !important;
@@ -110,6 +114,7 @@
   .clickableTextMixin();
   .textStrokeMixin( var(--ironsworn-color-dark));
   .thematicColorMixin();
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -122,6 +127,7 @@
   height: inherit;
   text-align: left;
   font-size: var(--font-size-16);
+
   &:hover {
     box-shadow: none;
   }
@@ -133,6 +139,7 @@
   background-color: var(--ironsworn-color-bg-80);
   color: var(--ironsworn-color-fg);
 }
+
 .moveControls {
   display: flex;
   flex-flow: row;
@@ -154,6 +161,7 @@
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   height: var(--ironsworn-line-height-lg);
+
   header:not(:last-child) & {
     border-color: var(--ironsworn-color-clickable-block-border-selected);
     background-color: var(--ironsworn-color-dark);
@@ -167,6 +175,7 @@
   border-radius: var(--ironsworn-border-radius-sm);
   border-color: var(--ironsworn-color-border);
   padding: 0;
+
   h4 {
     font-size: var(--font-size-16);
 

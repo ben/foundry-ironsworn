@@ -67,10 +67,12 @@
   &.track-overflow .ghost-ticks {
     opacity: 0.2;
   }
+
   .progress-track-box-marks {
     margin: 10%;
   }
 }
+
 .progress-track-box-marks {
   aspect-ratio: 1;
   overflow: visible;
@@ -86,18 +88,23 @@
 .draw-progress-tick-enter-active {
   transition: 0.8s stroke-dashoffset, stroke-dasharray;
 }
+
 .draw-progress-tick-leave-active {
   transition: 0.8s;
 }
+
 .draw-progress-tick-enter-from {
   stroke-dashoffset: -100%;
 }
+
 .draw-progress-tick-leave-from {
   opacity: 1;
 }
+
 .draw-progress-tick-leave-to {
   opacity: 0;
 }
+
 .draw-progress-tick-enter-to {
   stroke-dashoffset: 0;
 }
@@ -109,12 +116,15 @@
     @box1: 0.75s;
     @box2: 0.75s;
     @box3: 0.75s;
+
     .progress-track-box:nth-child(3n + 1) {
       .animateBox(@box1);
     }
+
     .progress-track-box:nth-child(3n + 2) {
       .animateBox(@box2, @box1);
     }
+
     .progress-track-box:nth-child(3n) {
       @d1: (@box1+ @box2);
       .animateBox(@box3,@d1);
@@ -126,39 +136,48 @@
       .progress-track-box:nth-child(3n + 2) {
         .animateBox(@box1);
       }
+
       .progress-track-box:nth-child(3n) {
         .animateBox(@box2, @box1);
       }
+
       .progress-track-box:nth-child(3n + 1) {
         @d1: (@box1+ @box2);
         .animateBox(@box3,@d1);
       }
     }
+
     &[data-score='2'],
     &[data-score='5'],
     &[data-score='8'] {
       .progress-track-box:nth-child(3n) {
         .animateBox(@box1);
       }
+
       .progress-track-box:nth-child(3n + 1) {
         .animateBox(@box2, @box1);
       }
+
       .progress-track-box:nth-child(3n + 2) {
         @d1: (@box1+ @box2);
         .animateBox(@box3,@d1);
       }
     }
   }
+
   &[data-rank='2'] {
     // Challenge rank dangerous: marks 2 boxes (8 ticks)
     @box1: 1s;
     @box2: 0.75s;
+
     .progress-track-box:nth-child(2n + 1) {
       .animateBox(@box1);
     }
+
     .progress-track-box:nth-child(2n) {
       .animateBox(@box2, @box1);
     }
+
     &[data-score='1'],
     &[data-score='3'],
     &[data-score='5'],
@@ -168,15 +187,18 @@
       .progress-track-box:nth-child(2n) {
         .animateBox(@box1);
       }
+
       .progress-track-box:nth-child(2n + 1) {
         .animateBox(@box2, @box1);
       }
     }
   }
+
   &[data-rank='3'] {
     // Challenge rank formidable: marks 1 box (4 ticks).
     .animateBox(1s);
   }
+
   &[data-rank='4'] {
     // Challenge rank extreme: marks 2 ticks.
     @d1: 0.5s;
@@ -186,6 +208,7 @@
     .animateTick(3,@d1);
     .animateTick(4,@d2,@d1);
   }
+
   &[data-rank='5'] {
     // Challenge rank epic: marks 1 tick.
     .draw-progress-tick-enter-active {

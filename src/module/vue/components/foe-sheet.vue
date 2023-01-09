@@ -57,6 +57,7 @@
 .dropTarget {
   justify-items: space-around;
   text-align: center;
+
   .clickable.block {
     flex-grow: 0;
     padding: 1rem;

@@ -65,6 +65,7 @@
 .navSearch {
   margin-top: var(--ironsworn-spacer-lg);
 }
+
 .searchBtn {
   aspect-ratio: 1;
   flex: 0;
@@ -76,9 +77,11 @@
     height: var(--form-field-height);
   }
 }
+
 .wrapper {
   gap: var(--ironsworn-spacer-lg);
 }
+
 .itemList {
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
@@ -86,6 +89,7 @@
   gap: var(--ironsworn-spacer-md);
   margin: 0;
 }
+
 .categoryList {
   // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
   --ironsworn-line-height: var(--ironsworn-line-height-md);
@@ -93,6 +97,7 @@
   overflow-x: clip;
   overflow-clip-margin: 5px; // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
 }
+
 .filteredMoveRow {
   border-radius: var(--ironsworn-border-radius-lg);
 }

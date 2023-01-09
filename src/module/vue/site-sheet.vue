@@ -126,9 +126,11 @@
 .siteSheet {
   gap: 0.5em;
 }
+
 .rankRow {
   gap: var(--ironsworn-spacer-lg);
 }
+
 .rankLabel {
   display: flex;
   flex-direction: row nowrap;
@@ -140,6 +142,7 @@
 }
 
 .denizenMatrix {
+  // TODO: extract this as its own component
 }
 
 .main {
@@ -149,10 +152,12 @@
 .siteMoves {
   height: max-content;
 }
+
 .rightColumn {
   flex-basis: 12em;
   max-height: 411px;
 }
+
 .leftColumn {
   flex-basis: 20em;
   gap: 1em;
@@ -167,6 +172,7 @@
   font-size: var(--font-size-14);
   font-weight: bold;
 }
+
 .featureBtn {
   text-transform: uppercase;
 }

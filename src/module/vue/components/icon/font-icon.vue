@@ -21,16 +21,19 @@
   width: 1em;
   height: 1em;
   line-height: 1 !important;
-  &:before {
+
+  &::before {
     display: flex-item;
     flex-basis: 0;
   }
 }
+
 .fontIconBorder {
   each(v-bind('borderOptions'), {
     @{key}: @value
   });
 }
+
 .fontIconAnimation {
   each(v-bind('animationOptions'), {
     @{key}: @value;

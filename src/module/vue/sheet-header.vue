@@ -20,6 +20,7 @@
     margin-right: var(--ironsworn-spacer-xl);
     height: 50px;
   }
+
   .header-fields {
     flex: 1;
     height: 100px;
@@ -29,7 +30,7 @@
     flex-grow: 1;
     margin: 0;
     border-bottom: 0;
-    padding: 0px;
+    padding: 0;
     height: 50px;
 
     input {

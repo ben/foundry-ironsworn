@@ -46,8 +46,10 @@
   border-style: none;
   padding: var(--ironsworn-spacer-md);
   line-height: 25px;
+
   .selected & {
     color: var(--ironsworn-color-clickable-block-fg-selected);
+
     &:hover {
       color: var(--ironsworn-color-midtone-50);
     }

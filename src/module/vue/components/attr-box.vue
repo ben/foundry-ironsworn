@@ -18,22 +18,24 @@
 </template>
 
 <style lang="less" scoped>
-@import '../../../styles/mixins.less';
+@import (reference) '../../../styles/mixins.less';
+
 .stat {
-  &:before {
+  &::before {
     --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
-  }
-  &:before {
+
     transition: opacity 0.4s ease;
     opacity: 0;
     z-index: 0;
     padding: 0.25em;
   }
+
   &:hover {
-    &:before {
+    &::before {
       opacity: 1;
     }
   }
+
   & > * {
     position: relative; // must be set to manipulate z-index
     z-index: 1;

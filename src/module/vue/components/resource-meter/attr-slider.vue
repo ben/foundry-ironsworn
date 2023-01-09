@@ -42,42 +42,51 @@
     grid-template-columns: max-content max-content;
     grid-auto-flow: column;
     place-items: start;
+
     .attr-slider-label {
       grid-row: 1;
       max-height: 50%;
     }
+
     .attr-slider-bar {
       grid-row: 1;
     }
+
     &.label-none {
       display: flex;
     }
+
     &.label-left {
       .attr-slider-label {
         grid-column: 1;
       }
     }
+
     &.label-right {
       .attr-slider-label {
         grid-column: 2;
       }
     }
   }
+
   &[aria-orientation='horizontal'] {
     display: flex;
     flex-flow: row wrap;
     justify-items: space-between;
+
     .attr-slider-label {
       > * {
         padding-inline-end: @segment_border_radius;
       }
     }
   }
+
   .attr-slider-label {
     display: flex;
     align-items: center;
     text-transform: uppercase;
     line-height: 1;
+
     > * {
       text-transform: inherit;
     }

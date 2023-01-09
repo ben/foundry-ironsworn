@@ -44,6 +44,7 @@
 
 .wrapper {
   .thematicColorMixin();
+
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-thematic);
 }
@@ -55,28 +56,36 @@
   padding: 0;
   list-style: none;
 }
+
 .toggleWrapper {
   box-sizing: content-box;
 }
+
 .toggleSection {
   box-sizing: content-box;
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-thematic);
   height: var(--ironsworn-line-height);
+
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
     --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
     .clickableTextMixin();
+
     height: inherit;
   }
 }
+
 .toggleButton {
   .textStrokeMixin( var(--ironsworn-color-dark));
+
   background: none;
 }
 
 .listItem {
+  //
 }
+
 .moveRow {
   &:focus {
     border: 0;
@@ -85,9 +94,11 @@
     // TODO: figure out a better way to convey focus here.
     box-shadow: none;
   }
-  &[data-highlighted='true']:after {
+
+  &[data-highlighted='true']::after {
     .overlayMixin();
     .staticHighlightMixin(50);
+
     opacity: 0;
     animation: overlay-fadeout v-bind('$props.highlightDuration +"ms"')
       ease-in-out;
@@ -97,9 +108,11 @@
   0% {
     opacity: 0;
   }
+
   15% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
   }

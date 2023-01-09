@@ -24,7 +24,9 @@
 </template>
 <style lang="less" module>
 .progressControls {
+  //
 }
+
 .progressControlBtn {
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }

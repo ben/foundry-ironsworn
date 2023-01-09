@@ -78,6 +78,7 @@
     text-align: left;
   }
 }
+
 h3 {
   margin-top: 1em;
 }

@@ -93,6 +93,7 @@
 
 <style lang="less" scoped>
 @progress_widget_spacing: 6px;
+
 .progress-list-item {
   display: grid;
   grid-template-rows: max-content max-content 1fr;
@@ -100,15 +101,18 @@
   gap: @progress_widget_spacing;
   padding: (@progress_widget_spacing / 2) (@progress_widget_spacing / 2)
     @progress_widget_spacing;
+
   .progress-img {
     grid-row: 1 / span 2;
     grid-column: 2;
     margin: 0;
   }
+
   .progress-rank-pips {
     grid-row: 1;
     grid-column: 3 / span 2;
   }
+
   .progress-title {
     grid-row: 2;
     grid-column: 3;
@@ -116,6 +120,7 @@
     height: max-content;
     line-height: 1;
   }
+
   .progress-subtitle {
     grid-row: 1 / span 3;
     grid-column: 1;
@@ -127,23 +132,28 @@
     color: var(--ironsworn-color-fg-muted);
     font-weight: normal;
   }
+
   .progress-widgets {
     grid-row: 3;
     grid-column: 2 / span 3;
     gap: 2px;
+
     .progress-clock {
       flex-basis: 50px;
     }
   }
+
   .progress-controls {
     display: grid;
     grid-row: 1 / span 2;
     grid-column: 4;
     grid-auto-flow: column;
+
     > * {
       aspect-ratio: 1;
       grid-row: 1;
     }
+
     .star-progress {
       grid-row: 2;
     }

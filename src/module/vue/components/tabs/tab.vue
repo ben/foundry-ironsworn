@@ -29,8 +29,11 @@
   padding: var(--ironsworn-spacer-md);
   overflow-x: visible;
 }
+
 .vertical {
+  // TODO
 }
+
 .horizontal {
   line-height: var(--ironsworn-line-height-lg);
 }
