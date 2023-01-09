@@ -10,16 +10,19 @@
         border-radius: var(--ironsworn-border-radius-md);
         background-color: var(--ironsworn-color-fg-10);
       }
+
       details {
         summary {
           border-radius: var(--ironsworn-border-radius-md);
           cursor: pointer;
+
           &:focus {
             .inputFieldFocusMixin();
           }
         }
       }
     }
+
     .dialog-buttons {
       display: flex;
       flex-flow: row wrap;
@@ -27,21 +30,26 @@
       gap: var(--ironsworn-spacer-sm);
       align-items: flex-end;
       height: max-content;
+
       button.default,
       button {
         .clickableBlockMixin();
+
         display: flex;
         align-items: center;
         justify-content: center;
         border-width: var(--ironsworn-border-radius-md);
         border-radius: 0;
         height: max-content;
+
         .button-text {
           .nogrow();
           .initial-caps();
+
           width: auto;
           height: max-content;
         }
+
         i {
           margin: 0;
         }

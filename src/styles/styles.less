@@ -3,37 +3,29 @@
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
   --ironsworn-widget-stroke-width: 1;
-
   --ironsworn-clock-fill-opacity-hover: 0.6;
-
   --ironsworn-border-radius-sm: 2px;
   --ironsworn-border-radius-md: 3px;
   --ironsworn-border-radius-lg: 5px;
-
   --ironsworn-border-width-md: 1px;
   --ironsworn-border-width-lg: 2px;
-
   --ironsworn-spacer-xs: 2px;
   --ironsworn-spacer-sm: 3px;
   --ironsworn-spacer-md: 5px;
   --ironsworn-spacer-lg: 7px;
   --ironsworn-spacer-xl: 10px;
-
   --ironsworn-vertical-slider-width: 50px;
-
   --ironsworn-line-height-lg: 2;
   --ironsworn-line-height-md: 1.5;
   --ironsworn-line-height-sm: 1.25;
   --ironsworn-line-height-xs: 1;
   --ironsworn-line-height: var(--ironsworn-line-height-md);
-
   --ironsworn-z-index-highest: 100;
   --ironsworn-z-index-higher: 75;
   --ironsworn-z-index-high: 25;
   --ironsworn-z-index-low: -1;
   --ironsworn-z-index-lower: -2;
   --ironsworn-z-index-lowest: -3;
-
   --ironsworn-transition-duration: 0.5s;
   --ironsworn-transition-timing-function: ease;
 
@@ -44,51 +36,47 @@
   --ironsworn-transition-property-color: background-color, border-color,
     box-shadow, caret-color, color, column-rule-color, filter, opacity,
     outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
-
   --ironsworn-transition-timing: var(--ironsworn-transition-duration)
     var(--ironsworn-transition-timing-function);
-
   --ironsworn-transition: all 0.5s ease;
-
   --fa-display: inline-block;
   --fa-invert: var(--ironsworn-color-bg);
 
   // original sample from PDF: #c9181a
-  --ironsworn-color-red-light: hsl(355, 100%, 65%);
-  --ironsworn-color-red: hsl(7, 78%, 51%);
-  --ironsworn-color-red-dark: hsl(357, 100%, 28%);
+  --ironsworn-color-red-light: hsl(355deg 100% 65%);
+  --ironsworn-color-red: hsl(7deg 78% 51%);
+  --ironsworn-color-red-dark: hsl(357deg 100% 28%);
 
   // original sample from PDF: #8c1d81
-  --ironsworn-color-purple-light: hsl(298, 72%, 62%);
-  --ironsworn-color-purple: hsl(299, 59%, 45%);
-  --ironsworn-color-purple-dark: hsl(296, 100%, 23%);
+  --ironsworn-color-purple-light: hsl(298deg 72% 62%);
+  --ironsworn-color-purple: hsl(299deg 59% 45%);
+  --ironsworn-color-purple-dark: hsl(296deg 100% 23%);
 
   // original sample from PDF: #35a9e0
-  --ironsworn-color-blue-light: hsl(191, 100%, 50%);
-  --ironsworn-color-blue: hsl(199, 100%, 47%);
-  --ironsworn-color-blue-dark: hsl(214, 100%, 45%);
-
+  --ironsworn-color-blue-light: hsl(191deg 100% 50%);
+  --ironsworn-color-blue: hsl(199deg 100% 47%);
+  --ironsworn-color-blue-dark: hsl(214deg 100% 45%);
   --ironsworn-color-legacy-quests: var(--ironsworn-color-red);
   --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
   --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
-
   --ironsworn-color-danger: var(--ironsworn-color-red);
-  --ironsworn-color-danger-inverted: hsl(0, 0%, 100%);
+  --ironsworn-color-danger-inverted: hsl(0deg 0% 100%);
   --ironsworn-color-success: var(--ironsworn-color-blue);
-  --ironsworn-color-warning: hsl(55, 100%, 50%);
-
+  --ironsworn-color-warning: hsl(55deg 100% 50%);
   --ironsworn-tab-transition: fade;
 }
 
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
-  @import 'utils.less';
-  @import 'inputs.less';
+  @import url('utils.less');
+  @import url('inputs.less');
   @import (reference) './fvtt/dialog.less';
+
   &.dialog {
     .dialog();
   }
+
   form button,
   button {
     margin: 0;
@@ -98,25 +86,25 @@
   }
 }
 
-@import 'transitions.less';
+@import url('transitions.less');
 
 .system-foundry-ironsworn {
   // importing within this selector to ensure higher specificity
-  @import 'assets.less';
-  @import 'attr-box.less';
-  @import 'chat-message.less';
-  @import 'clickable.less';
-  @import 'dialog.less';
-  @import 'dice.less';
-  @import 'drag-and-drop.less';
-  @import 'editor.less';
-  @import 'icons.less';
-  @import 'list.less';
-  @import 'scrollbar.less';
-  @import 'sheet.less';
-  @import 'tables.less';
-  @import 'utils.less';
-  @import 'progress.less';
+  @import url('assets.less');
+  @import url('attr-box.less');
+  @import url('chat-message.less');
+  @import url('clickable.less');
+  @import url('dialog.less');
+  @import url('dice.less');
+  @import url('drag-and-drop.less');
+  @import url('editor.less');
+  @import url('icons.less');
+  @import url('list.less');
+  @import url('scrollbar.less');
+  @import url('sheet.less');
+  @import url('tables.less');
+  @import url('utils.less');
+  @import url('progress.less');
   // transitions for interactive elements
   a,
   button,
@@ -126,6 +114,7 @@
   .scene-control,
   .macro {
     transition: var(--ironsworn-transition);
+
     &.active {
       color: var(--ironsworn-color-clickable-text-selected);
     }
@@ -138,23 +127,27 @@
     .window-title {
       .initial-caps();
     }
+
     .window-content {
       background: var(--ironsworn-color-bg);
       padding: var(--ironsworn-spacer-md);
       height: 100%;
       color: var(--ironsworn-color-fg);
     }
+
     hr {
       border: 0 solid var(--ironsworn-color-border);
       border-width: 0 0 var(--ironsworn-border-width-md);
       width: 100%;
     }
+
     h1,
     h2,
     h3 {
       border: none;
     }
   }
+
   #tooltip {
     // disables additional margin on paragraph elements in tooltips (FVTT doesn't use them, but we do)
     & > {
@@ -162,6 +155,7 @@
         &:first-child {
           margin-top: 0;
         }
+
         &:last-child {
           margin-bottom: 0;
         }

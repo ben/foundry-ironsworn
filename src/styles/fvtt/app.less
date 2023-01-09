@@ -1,5 +1,5 @@
 // styles for FVTT application windows.
-@import '../mixins.less';
+@import url('../mixins.less');
 
 .app {
   border-color: var(--ironsworn-color-midtone-80);
@@ -11,9 +11,11 @@
     .sidebar {
       background: var(--ironsworn-color-cool-10);
     }
+
     .categories {
       .scrollable {
       }
+
       footer {
         background: var(--ironsworn-color-warm-20);
       }
@@ -32,6 +34,7 @@
             var(--ironsworn-color-cool-20)
           );
         }
+
         &.active {
           background: linear-gradient(
             to right,
@@ -83,6 +86,7 @@ a,
     .key {
       background: var(--ironsworn-color-light-20);
     }
+
     .binding-controls {
       .control {
         &.uneditable {

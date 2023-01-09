@@ -7,11 +7,13 @@
     border-color: var(--ironsworn-color-border-muted);
     box-shadow: 0 0 2px var(--ironsworn-color-bg) inset;
     background: var(--ironsworn-color-fg-10);
-    padding: var(--ironsworn-spacer-md) 0px var(--ironsworn-spacer-md) 0px;
+    padding: var(--ironsworn-spacer-md) 0 var(--ironsworn-spacer-md) 0;
+
     .die {
       &.min {
         color: var(--ironsworn-color-fg);
       }
+
       &.max {
         color: var(--ironsworn-color-fg);
       }
@@ -20,6 +22,7 @@
 
   .roll-graphic {
     @graphic-gap: 0.25rem;
+
     &.dice-formula {
       display: flex;
       flex: auto;
@@ -28,22 +31,28 @@
       justify-content: center;
       margin: 0;
       padding: @graphic-gap;
+
       * {
         margin: 0;
       }
+
       .die {
         --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+
         flex-grow: 0;
         width: 1.5em;
         height: 100%;
         .textStrokeMixin();
       }
+
       .indeterminate-value {
         color: var(--ironsworn-color-midtone-60);
       }
+
       .action-score-capped {
         text-decoration: dotted underline;
       }
+
       .score {
         display: flex;
         align-items: center;
@@ -55,17 +64,20 @@
         height: 24px;
         font-weight: bold;
       }
+
       .challenge-dice {
         display: flex;
         flex-direction: row;
         flex-grow: 0;
         gap: (@graphic-gap / 2);
+
         .challenge-die {
         }
       }
     }
   }
 }
+
 .ironsworn-roll {
   h3,
   .hit-type {
@@ -82,6 +94,7 @@
   .roll {
     --ironsworn-dice-background-color: var(--ironsworn-color-fg-30);
     --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+
     display: inline-block;
     margin-right: 1px;
     background-repeat: no-repeat;
@@ -95,7 +108,7 @@
       background-image: url('../../icons/svg/d4-grey.svg');
     }
 
-    &.d6:before {
+    &.d6::before {
       background-color: var(--ironsworn-dice-background-color);
       mask-image: url('/assets/icons/d6-blank.svg');
       content: '';
@@ -105,7 +118,7 @@
       background-image: url('../../icons/svg/d8-grey.svg');
     }
 
-    &.d10:before {
+    &.d10::before {
       background-color: var(--ironsworn-dice-background-color);
       mask-image: url('/assets/icons/d10-blank.svg');
       content: '';
@@ -133,6 +146,7 @@
       .diceGlowMixin(var(--ironsworn-color-warning));
     }
   }
+
   del .roll {
     text-decoration: line-through;
     .diceGlowMixin(var(--ironsworn-color-warning));

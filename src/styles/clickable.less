@@ -4,6 +4,7 @@
 // ideally, all of them would share an identifying data attribute that could be selected for -- something like "data-action", maybe?
 a[data-pack][data-uuid] {
   .clickableBlockMixin();
+
   border-width: var(--ironsworn-border-width-md);
   border-radius: var(--ironsworn-border-radius-sm);
   border-color: var(--ironsworn-color-fg-30);
@@ -14,13 +15,15 @@ a[data-pack][data-uuid] {
   // forces fg colour so that it is the same colour as the text.
   color: inherit;
   filter: none;
+
   &:hover {
     background-color: var(--ironsworn-color-bg-50);
     text-shadow: none;
     color: var(--ironsworn-color-fg-warm);
   }
+
   i,
-  &:before {
+  &::before {
     margin-right: var(--ironsworn-spacer-xs);
     color: inherit;
   }
@@ -28,15 +31,18 @@ a[data-pack][data-uuid] {
 
 .clickable {
   .interactiveMixin();
+
   cursor: pointer;
   // &:not(svg):not(.svg) {
   &.text:not(.block) {
     .clickableTextMixin();
-    &:not(:before) {
+
+    &:not(::before) {
       justify-content: left;
       text-align: left;
     }
   }
+
   &.block {
     .clickableBlockMixin();
   }
@@ -53,6 +59,7 @@ a[data-pack][data-uuid] {
     &[aria-selected=true] {
       fill-opacity: 1;
     }
+
     &.hover,
     &:hover {
       fill-opacity: 0.35;

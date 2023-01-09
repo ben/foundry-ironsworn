@@ -4,19 +4,23 @@
 .editor {
   min-height: 100px;
 }
+
 .editor {
   border: var(--ironsworn-border-width-md) solid
     var(--ironsworn-color-input-border);
   background: var(--ironsworn-color-input-bg);
   caret-color: var(--ironsworn-color-fg-highlight);
 }
+
 .tab .editor {
   border-top-width: 0;
   border-radius: 0 0 var(--ironsworn-border-radius-lg)
     var(--ironsworn-border-radius-lg);
 }
+
 .editor-edit {
   .clickableBlockMixin();
+
   border-radius: var(--ironsworn-border-radius-md);
   background: var(--ironsworn-color-bg);
 }
@@ -25,6 +29,7 @@
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
   .clickableBlockMixin();
+
   border-radius: var(--ironsworn-border-radius-md);
 }
 
@@ -32,6 +37,7 @@
 
 .ProseMirror {
   .inputFieldMixin();
+
   padding: 0.5rem;
 }
 
@@ -40,18 +46,23 @@
   border: 0;
   border-radius: 0;
 }
+
 .tox {
   font-family: var(--font-primary);
+
   &:not(.tox-tinymce-inline) .tox-editor-header {
     justify-content: center;
     border-bottom: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border-muted);
   }
-  :not(svg):not(rect) {
-    color: currentColor;
+
+  :not(svg, rect) {
+    color: currentcolor;
   }
+
   .tox-toolbar__primary {
     justify-content: center;
+
     & > .tox-toolbar__group {
       padding: 0 var(--ironsworn-spacer-md);
     }
@@ -63,6 +74,7 @@
     background: var(--ironsworn-color-bg);
     color: var(--ironsworn-color-fg);
   }
+
   .tox-tbtn {
     transition: var(--ironsworn-transition);
     border-width: var(--ironsworn-border-width-md);
@@ -76,38 +88,48 @@
       border-style: solid;
       background: var(--ironsworn-color-clickable-block-bg);
       color: var(--ironsworn-color-clickable-block-fg);
+
       &:not(.tox-tbtn--disabled) {
         color: var(--ironsworn-color-clickable-block-fg);
+
         svg {
-          fill: currentColor;
+          fill: currentcolor;
         }
       }
     }
+
     &:hover {
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
       border-color: var(--ironsworn-color-clickable-block-border-hover);
       background: var(--ironsworn-color-clickable-block-bg-hover);
       color: var(--ironsworn-color-clickable-block-fg-hover);
+
       svg {
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
+
     svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
+
     &[aria-pressed='true'] {
       background: var(--ironsworn-color-clickable-block-bg-selected);
       color: var(--ironsworn-color-clickable-block-fg-selected);
+
       svg {
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
   }
+
   .tox-tbtn--select {
     .inputFieldMixin();
+
     text-shadow: none;
   }
+
   .tox-collection--list {
     .tox-collection__item--active {
       background: var(--ironsworn-color-clickable-block-bg-hover);
@@ -230,6 +252,7 @@
     background: @collection-group-label-background-color;
     color: @collection-group-label-text-color;
   }
+
   .tox-collection__item {
     transition: var(--ironsworn-transition);
     color: @collection-item-label-text-color;
@@ -278,12 +301,12 @@
   .tox-collection__item-icon,
   .tox-collection__item-checkmark {
     svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
   .tox-collection__item-label {
-    color: currentColor;
+    color: currentcolor;
   }
 
   .tox-collection__item-accessory {
@@ -292,7 +315,7 @@
 
   .tox-collection__item-caret {
     svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
@@ -300,8 +323,9 @@
   .tox-collection__item--state-disabled {
     background: transparent !important;
     color: @collection-item-label-disabled-text-color;
+
     .tox-collection__item-caret svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 

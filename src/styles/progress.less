@@ -1,9 +1,11 @@
 .rank-pips {
   flex-grow: 0;
   width: max-content;
+
   .rank-pip {
     margin: 0;
     border: none;
+
     .pip-shape > * {
       stroke-width: var(--ironsworn-widget-stroke-width);
     }
@@ -21,9 +23,11 @@
   stroke: var(--ironsworn-color-fg);
   fill: var(--ironsworn-color-fg-80);
   fill-opacity: 1;
+
   &:hover {
     fill: var(--ironsworn-color-fg-40);
   }
+
   &:not(:hover) {
     button.rank-pip {
       &[aria-selected='true'] {
@@ -33,6 +37,7 @@
       }
     }
   }
+
   button.rank-pip {
     display: flex;
     align-items: center;
@@ -43,13 +48,16 @@
     height: auto;
     line-height: 0;
     pointer-events: all;
+
     &:hover {
       box-shadow: unset;
-      color: currentColor;
+      color: currentcolor;
+
       ~ .rank-pip {
         fill-opacity: 0;
       }
     }
+
     .pip-shape {
       width: 1em;
       height: inherit;

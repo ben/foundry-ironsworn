@@ -1,5 +1,5 @@
 // for classes that apply a set of commonly used styles, but don't describe an element with a specific purpose
-@import 'mixins.less';
+@import url('mixins.less');
 
 .grid {
   display: grid;
@@ -22,10 +22,12 @@
 .margin-right {
   .marginMixin(left);
 }
+
 .vertical-text {
   writing-mode: vertical-lr;
   border: none;
   width: 1.5rem;
+
   i {
     display: inline-block;
     transform: rotate(90deg);
@@ -39,6 +41,7 @@
   border-radius: var(--ironsworn-border-radius-md);
   padding: var(--ironsworn-spacer-md);
 }
+
 .boxgroup {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   border-radius: var(--ironsworn-border-radius-lg);
@@ -46,15 +49,18 @@
   .boxrow {
     border-top: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
+
     &:first-child {
       border-top: none;
     }
+
     &.small {
       flex-basis: 25px;
       flex-grow: 0;
       line-height: 25px;
     }
   }
+
   .box {
     display: flex;
     justify-content: center;
@@ -62,6 +68,7 @@
       var(--ironsworn-color-border);
     border-width: var(--ironsworn-border-width-md);
     text-align: center;
+
     &:first-child {
       border-left: none;
     }
@@ -70,6 +77,7 @@
 
 .stack {
   flex-grow: 0;
+
   .stack-row {
     position: relative;
     // FIXME refactor as component and encapsulate the relevant css there
@@ -81,6 +89,7 @@
     min-width: var(--ironsworn-vertical-slider-width);
     text-align: center;
     line-height: var(--ironsworn-line-height-lg);
+
     &:hover,
     &.hover,
     &.selected,
@@ -89,10 +98,12 @@
         --ironsworn-z-index-high
       ); // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
     }
+
     &:first-child {
       border-top-left-radius: var(--ironsworn-border-radius-lg);
       border-top-right-radius: var(--ironsworn-border-radius-lg);
     }
+
     &:last-child {
       border-bottom-left-radius: var(--ironsworn-border-radius-lg);
       border-bottom-right-radius: var(--ironsworn-border-radius-lg);
