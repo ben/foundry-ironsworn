@@ -71,9 +71,17 @@
 }
 
 a,
-.scene-control {
+.scene-control,
+.control-tool {
   &:hover {
     color: var(--ironsworn-color-clickable-text-hover);
+  }
+}
+.scene-control,
+.control-tool {
+  .ironsworn-icon.isicon-logo-starforged-dk:before {
+    // the border creates a size illusion, so this gets adjusted manually
+    font-size: 32px;
   }
 }
 

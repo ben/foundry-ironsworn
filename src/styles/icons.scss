@@ -194,14 +194,6 @@ i {
     height: 1.5em;
     font-size: inherit;
     aspect-ratio: 1;
-
-    &::before {
-      $pad-icon: 2px;
-
-      display: flex;
-      width: calc(100% - ($pad-icon * 2));
-      height: calc(100% - ($pad-icon * 2));
-    }
   }
 }
 
