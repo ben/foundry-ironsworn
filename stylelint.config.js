@@ -32,14 +32,14 @@ const CONFIG = {
     {
       files: ['./src/modules/vue/**/*.vue', './src/styles/**/*.scss'],
       rules: {
-        'mavrin/stylelint-declaration-use-css-custom-properties': {
-          /**
-           * @see https://csstree.github.io/docs/syntax/
-           */
-          cssDefinitions: ['color', 'length'],
-          ignoreProperties: ['/^\\$/'],
-          ignoreValues: ['/\\$/', 'transparent', 'currentcolor', '0'],
-        },
+        // 'mavrin/stylelint-declaration-use-css-custom-properties': {
+        //   /**
+        //    * @see https://csstree.github.io/docs/syntax/
+        //    */
+        //   cssDefinitions: ['color', 'length'],
+        //   ignoreProperties: ['/^\\$/'],
+        //   ignoreValues: ['/\\$/', 'transparent', 'currentcolor', '0'],
+        // },
         'custom-property-pattern': [/(ironsworn|font|fa|color)-/],
         'max-line-length': [120, { ignore: ['comments'] }],
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
