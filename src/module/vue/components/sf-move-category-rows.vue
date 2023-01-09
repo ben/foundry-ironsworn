@@ -51,17 +51,17 @@
 .list {
   display: flex;
   flex-flow: column nowrap;
-  list-style: none;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 .toggleWrapper {
   box-sizing: content-box;
 }
 .toggleSection {
   box-sizing: content-box;
-  background-color: var(--ironsworn-color-thematic);
   border-radius: var(--ironsworn-border-radius-lg);
+  background-color: var(--ironsworn-color-thematic);
   height: var(--ironsworn-line-height);
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);

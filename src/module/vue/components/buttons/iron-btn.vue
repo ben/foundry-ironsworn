@@ -43,35 +43,35 @@
 @import (reference) '../../../../styles/mixins.less';
 
 .flexStart {
-  align-items: center;
   align-content: center;
-  justify-items: start;
+  align-items: center;
   justify-content: start;
+  justify-items: start;
 }
 .flexCenter {
-  align-items: center;
   align-content: center;
-  justify-items: center;
+  align-items: center;
   justify-content: center;
+  justify-items: center;
 }
 .flexEnd {
-  align-items: center;
   align-content: center;
-  justify-items: end;
+  align-items: center;
   justify-content: end;
+  justify-items: end;
 }
 
 .ironBtn {
   display: flex;
   flex-wrap: nowrap;
-  border-radius: 0;
-  border-width: 0;
-  color: inherit;
-  margin: 0;
-  height: v-bind(height);
-  width: v-bind(width);
   gap: var(--ironsworn-spacer-sm);
+  margin: 0;
+  border-width: 0;
+  border-radius: 0;
   padding: var(--ironsworn-spacer-xs);
+  width: v-bind(width);
+  height: v-bind(height);
+  color: inherit;
   & > svg {
     // prevents double hover effect on svg hover
     pointer-events: none;
@@ -83,9 +83,9 @@
     line-height: 1.25;
     .verticalText.buttonText {
       .vertical-text();
+      display: inherit;
       width: max-content;
       line-height: inherit;
-      display: inherit;
       writing-mode: vertical-lr !important;
     }
   }
@@ -100,15 +100,15 @@
 }
 
 .iconOnly {
-  aspect-ratio: 1;
-  flex-direction: row;
   box-sizing: content-box;
-  padding: 2px;
-  height: 1em;
-  width: 1em;
-  justify-content: center;
+  flex-direction: row;
   align-content: center;
+  justify-content: center;
+  padding: 2px;
+  width: 1em;
+  height: 1em;
   line-height: 1;
+  aspect-ratio: 1;
 }
 .clickableText {
   .clickableTextMixin();

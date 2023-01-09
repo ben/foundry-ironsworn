@@ -37,23 +37,23 @@
 <style lang="less" scoped>
 input,
 textarea {
-  border-color: rgba(0, 0, 0, 0.1);
   border-radius: var(--ironsworn-border-radius-sm);
-  font-family: var(--font-primary);
+  border-color: rgba(0, 0, 0, 0.1);
   resize: none;
+  font-family: var(--font-primary);
   font-size: inherit;
 }
 textarea {
   flex-basis: 300px;
-  margin: 0;
   flex-grow: 2;
+  margin: 0;
 }
 .header-pc-vitals {
   flex-basis: 100px;
+  flex-grow: 1;
+  gap: var(--ironsworn-spacer-md);
   min-width: 20ch;
   max-width: 30ch;
-  gap: var(--ironsworn-spacer-md);
-  flex-grow: 1;
 }
 </style>
 

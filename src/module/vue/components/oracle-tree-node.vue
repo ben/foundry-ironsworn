@@ -84,12 +84,12 @@
 }
 h4 {
   margin: 0;
-  line-height: 1;
   height: min-content;
+  line-height: 1;
   button {
-    line-height: 1;
-    text-transform: uppercase;
     height: min-content;
+    text-transform: uppercase;
+    line-height: 1;
   }
 }
 .hidden {

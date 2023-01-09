@@ -42,8 +42,8 @@
 // helper mixin functions
 .animateTick(@value,@duration,@delay:0s) {
   .draw-progress-tick-enter-active[data-tick='@{value}'] {
-    transition-duration: @duration;
     transition-delay: @delay;
+    transition-duration: @duration;
   }
 }
 .animateBox(@totalDuration:1s; @baseDelay:0s) {
@@ -55,12 +55,12 @@
 }
 
 .progress-track-box {
-  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   align-items: center;
   justify-content: center;
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  border-radius: var(--ironsworn-border-radius-md);
   aspect-ratio: 1;
   object-fit: contain;
-  border-radius: var(--ironsworn-border-radius-md);
   stroke: var(--ironsworn-color-fg);
   stroke-width: 5;
 

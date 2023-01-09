@@ -17,8 +17,8 @@
 
   .profile-img {
     flex: 0 0 50px;
-    height: 50px;
     margin-right: var(--ironsworn-spacer-xl);
+    height: 50px;
   }
   .header-fields {
     flex: 1;
@@ -27,15 +27,15 @@
 
   h1.charname {
     flex-grow: 1;
-    height: 50px;
-    padding: 0px;
-    border-bottom: 0;
     margin: 0;
+    border-bottom: 0;
+    padding: 0px;
+    height: 50px;
 
     input {
+      margin: 0;
       width: 100%;
       height: 100%;
-      margin: 0;
     }
   }
 }

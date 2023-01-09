@@ -10,14 +10,14 @@
   height: @scrollbarWidth;
 }
 ::-webkit-scrollbar-track {
-  box-shadow: 0 0 1px var(--ironsworn-color-cool-50) inset;
   border-radius: 4px;
+  box-shadow: 0 0 1px var(--ironsworn-color-cool-50) inset;
 }
 ::-webkit-scrollbar-thumb {
   outline: none;
+  border: 1px solid @scrollbarThumbBorderColor;
   border-radius: (@scrollbarWidth / 2);
   background: @scrollbarThumbBgColor;
-  border: 1px solid @scrollbarThumbBorderColor;
 }
 :root {
   scrollbar-width: thin;

@@ -8,9 +8,11 @@ table {
     var(--ironsworn-color-border);
   border-width: var(--ironsworn-border-width-md);
   background: var(--ironsworn-color-fg-10);
+
   thead {
     border-color: var(--ironsworn-color-border-muted);
   }
+
   tr:nth-child(even) {
     background-color: var(--ironsworn-color-fg-10);
   }
@@ -21,20 +23,24 @@ table {
   .oracle-table-column-result-text {
     a.entity-link {
       .clickableTextMixin();
+
       border: none;
       background: none !important;
     }
   }
+
   td,
   th {
     // hack that forces the roll range column to its minimum size
     width: auto;
+
     &.oracle-table-column-roll-range {
+      padding-right: calc(var(--ironsworn-spacer-md) * 2);
       width: 1%;
       white-space: nowrap;
-      padding-right: calc(var(--ironsworn-spacer-md) * 2);
     }
   }
+
   .oracle-result-row {
     &.selected,
     &[aria-selected='true'] {

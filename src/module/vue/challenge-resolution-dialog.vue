@@ -53,9 +53,9 @@
 
 <style lang="less" scoped>
 div.grid {
-  margin: 1em;
-  justify-items: center;
   flex-grow: 1;
+  justify-items: center;
+  margin: 1em;
 }
 
 input {

@@ -1,51 +1,28 @@
 .rank-pips {
-  width: max-content;
   flex-grow: 0;
+  width: max-content;
   .rank-pip {
     margin: 0;
     border: none;
     .pip-shape > * {
-      stroke-width: var(--widget-stroke-width);
+      stroke-width: var(--ironsworn-widget-stroke-width);
     }
   }
 }
 
 .rank-pips {
-  // so that hover effects only happen when a pip is hovered
-  pointer-events: none;
   display: flex;
   flex-flow: row nowrap;
+  gap: 2px;
+  align-content: center;
+  transition: var(--ironsworn-transition);
+  // so that hover effects only happen when a pip is hovered
+  pointer-events: none;
   stroke: var(--ironsworn-color-fg);
   fill: var(--ironsworn-color-fg-80);
   fill-opacity: 1;
-  align-content: center;
-  gap: 2px;
-  transition: var(--ironsworn-transition);
   &:hover {
     fill: var(--ironsworn-color-fg-40);
-  }
-  button.rank-pip {
-    background-color: unset;
-    pointer-events: all;
-    display: flex;
-    height: auto;
-    padding: 0;
-    line-height: 0;
-    justify-items: center;
-    align-items: center;
-    transition-duration: 0s;
-    .pip-shape {
-      height: inherit;
-      overflow: visible;
-      width: 1em;
-    }
-    &:hover {
-      box-shadow: unset;
-      color: currentColor;
-      ~ .rank-pip {
-        fill-opacity: 0;
-      }
-    }
   }
   &:not(:hover) {
     button.rank-pip {
@@ -54,6 +31,29 @@
           fill-opacity: 0;
         }
       }
+    }
+  }
+  button.rank-pip {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    transition-duration: 0s;
+    background-color: unset;
+    padding: 0;
+    height: auto;
+    line-height: 0;
+    pointer-events: all;
+    &:hover {
+      box-shadow: unset;
+      color: currentColor;
+      ~ .rank-pip {
+        fill-opacity: 0;
+      }
+    }
+    .pip-shape {
+      width: 1em;
+      height: inherit;
+      overflow: visible;
     }
   }
 }

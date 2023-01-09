@@ -130,13 +130,13 @@
   gap: var(--ironsworn-spacer-lg);
 }
 .rankLabel {
-  margin: 0;
-  line-height: 22px;
-  font-size: var(--font-size-14);
-  text-transform: uppercase;
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 22px;
+  font-size: var(--font-size-14);
 }
 
 .denizenMatrix {
@@ -159,13 +159,13 @@
 }
 
 .heading {
-  font-size: var(--font-size-14);
-  text-transform: uppercase;
-  font-weight: bold;
-  margin: 0;
   display: flex;
   align-items: center;
+  margin: 0;
+  text-transform: uppercase;
   line-height: 1.5;
+  font-size: var(--font-size-14);
+  font-weight: bold;
 }
 .featureBtn {
   text-transform: uppercase;

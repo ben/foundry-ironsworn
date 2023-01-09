@@ -3,7 +3,7 @@
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="item" />
 
-    <div class="flexrow nogrow" style="margin: 0.5rem 0; gap: 1em">
+    <div class="flexrow nogrow" style=" gap: 1em;margin: 0.5rem 0">
       <RankPips class="nogrow" :current="item.system.rank" @click="setRank" />
       <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
       <label class="checkbox nogrow">
@@ -139,10 +139,10 @@
   --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-danger);
 
   margin: var(--ironsworn-spacer-md) 0 0;
-  color: var(--ironsworn-color-danger);
   border-width: var(--ironsworn-border-width-lg);
   border-style: solid;
   border-radius: var(--ironsworn-border-radius-lg);
+  color: var(--ironsworn-color-danger);
 }
 </style>
 

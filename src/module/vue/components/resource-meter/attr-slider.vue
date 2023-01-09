@@ -38,10 +38,10 @@
 .attr-slider {
   &[aria-orientation='vertical'] {
     display: grid;
+    grid-template-rows: max-content max-content max-content;
+    grid-template-columns: max-content max-content;
     grid-auto-flow: column;
     place-items: start;
-    grid-template-columns: max-content max-content;
-    grid-template-rows: max-content max-content max-content;
     .attr-slider-label {
       grid-row: 1;
       max-height: 50%;
@@ -74,10 +74,10 @@
     }
   }
   .attr-slider-label {
-    text-transform: uppercase;
-    line-height: 1;
     display: flex;
     align-items: center;
+    text-transform: uppercase;
+    line-height: 1;
     > * {
       text-transform: inherit;
     }

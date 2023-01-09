@@ -2,9 +2,9 @@
 
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
-  --widget-stroke-width: 1;
+  --ironsworn-widget-stroke-width: 1;
 
-  --clock-fill-opacity-hover: 0.6;
+  --ironsworn-clock-fill-opacity-hover: 0.6;
 
   --ironsworn-border-radius-sm: 2px;
   --ironsworn-border-radius-md: 3px;
@@ -92,8 +92,8 @@
   form button,
   button {
     margin: 0;
-    width: auto;
     border: 0 solid var(--ironsworn-color-border);
+    width: auto;
     line-height: var(--ironsworn-line-height);
   }
 }
@@ -101,6 +101,22 @@
 @import 'transitions.less';
 
 .system-foundry-ironsworn {
+  // importing within this selector to ensure higher specificity
+  @import 'assets.less';
+  @import 'attr-box.less';
+  @import 'chat-message.less';
+  @import 'clickable.less';
+  @import 'dialog.less';
+  @import 'dice.less';
+  @import 'drag-and-drop.less';
+  @import 'editor.less';
+  @import 'icons.less';
+  @import 'list.less';
+  @import 'scrollbar.less';
+  @import 'sheet.less';
+  @import 'tables.less';
+  @import 'utils.less';
+  @import 'progress.less';
   // transitions for interactive elements
   a,
   button,
@@ -124,14 +140,14 @@
     }
     .window-content {
       background: var(--ironsworn-color-bg);
-      color: var(--ironsworn-color-fg);
-      height: 100%;
       padding: var(--ironsworn-spacer-md);
+      height: 100%;
+      color: var(--ironsworn-color-fg);
     }
     hr {
-      width: 100%;
       border: 0 solid var(--ironsworn-color-border);
       border-width: 0 0 var(--ironsworn-border-width-md);
+      width: 100%;
     }
     h1,
     h2,
@@ -152,21 +168,4 @@
       }
     }
   }
-
-  // importing within this selector to ensure higher specificity
-  @import 'assets.less';
-  @import 'attr-box.less';
-  @import 'chat-message.less';
-  @import 'clickable.less';
-  @import 'dialog.less';
-  @import 'dice.less';
-  @import 'drag-and-drop.less';
-  @import 'editor.less';
-  @import 'icons.less';
-  @import 'list.less';
-  @import 'scrollbar.less';
-  @import 'sheet.less';
-  @import 'tables.less';
-  @import 'utils.less';
-  @import 'progress.less';
 }

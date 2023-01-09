@@ -27,18 +27,18 @@
     );
 
     .clickableBlockMixin(var(--legacy-xp-box-size));
-    aspect-ratio: 1;
-    border-radius: var(--ironsworn-border-radius-md);
     border-style: solid;
+    border-radius: var(--ironsworn-border-radius-md);
+    aspect-ratio: 1;
 
     &:hover,
     &.hover {
-      // legacy-xp-box-size is set in legacy-track.vue
-      box-shadow: inset 0 0 var(--legacy-xp-box-size, 15px)
-        var(--ironsworn-color-thematic) !important;
       border-color: var(
         --ironsworn-color-clickable-block-border-hover
       ) !important;
+      // legacy-xp-box-size is set in legacy-track.vue
+      box-shadow: inset 0 0 var(--legacy-xp-box-size, 15px)
+        var(--ironsworn-color-thematic) !important;
       &[aria-selected='true'],
       &.selected,
       &.active {

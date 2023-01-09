@@ -35,12 +35,12 @@
 }
 
 .starredProgressTracks {
-  padding: var(--ironsworn-spacer-md) 0;
   gap: var(--ironsworn-spacer-md);
+  padding: var(--ironsworn-spacer-md) 0;
 }
 .legacyTracks {
-  align-items: center;
   gap: var(--ironsworn-spacer-md);
+  align-items: center;
 }
 .legacyTrack {
   width: 100%;

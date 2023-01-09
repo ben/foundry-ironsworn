@@ -4,24 +4,24 @@
   --ironsworn-drop-zone-outline-width: 3px;
   --ironsworn-drop-zone-outline-style: dotted;
   position: relative;
-  outline: 0 var(--ironsworn-drop-zone-outline-style) transparent;
   transition: all 0.2s ease;
+  outline: 0 var(--ironsworn-drop-zone-outline-style) transparent;
   &:after {
     .overlayMixin();
-    opacity: 0;
-    visibility: hidden;
     transition: all 0.2s ease;
+    visibility: hidden;
+    opacity: 0;
     border-radius: inherit;
     .staticHighlightMixin(20);
   }
   &[data-ironsworn-drop-active='true'] {
+    outline-offset: calc(-1 * var(--ironsworn-drop-zone-outline-width));
     outline-width: var(--ironsworn-drop-zone-outline-width);
     outline-color: var(--ironsworn-color-fg-warm-30);
-    outline-offset: calc(-1 * var(--ironsworn-drop-zone-outline-width));
     animation: drop-zone-pulsate-outline 0.8s ease-in-out infinite both;
     &:after {
-      opacity: 1;
       visibility: visible;
+      opacity: 1;
       background-blend-mode: screen;
       animation: drop-zone-pulsate-gradient 0.8s ease-in-out infinite both;
     }

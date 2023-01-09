@@ -14,9 +14,9 @@
     .ironsworn-roll-title,
     h3,
     h2 {
+      margin: 0;
       font-size: var(--font-size-16);
       font-weight: bold;
-      margin: 0;
       .initial-caps();
     }
     .move-oracle-buttons {
@@ -27,14 +27,14 @@
     }
     button {
       margin: 0;
+      border-width: var(--ironsworn-border-width-md);
+      border-radius: var(--ironsworn-border-radius-md);
+      background-color: var(--ironsworn-color-bg-20);
       .button-text {
         white-space: nowrap;
       }
       .initial-caps();
       .clickableBlockMixin();
-      border-radius: var(--ironsworn-border-radius-md);
-      border-width: var(--ironsworn-border-width-md);
-      background-color: var(--ironsworn-color-bg-20);
     }
   }
 
@@ -46,8 +46,8 @@
     .roll-outcome {
       display: flex;
       flex-flow: column;
-      justify-content: center;
       gap: 0.25rem;
+      justify-content: center;
       margin-bottom: 0.25rem;
       p {
         margin: 0;
@@ -76,6 +76,22 @@
   .oracle-roll {
     border: none;
     .oracle-table.oracle-table-partial {
+      transition: none;
+      margin: var(--ironsworn-spacer-xs) 0;
+      // tint to make this an easier read when the message uses e.g. FVTT's default background texture
+      background-color: var(--ironsworn-color-bg-20);
+      &:hover {
+        // hide row content and reveal controls on *table* hover
+        .oracle-row-content {
+          visibility: hidden;
+          opacity: 0;
+        }
+        .oracle-result-control {
+          visibility: visible;
+          opacity: 1;
+          color: inherit;
+        }
+      }
       caption {
         font-size: large;
         > * {
@@ -90,20 +106,16 @@
       td:last-child {
         width: 0;
       }
-      // tint to make this an easier read when the message uses e.g. FVTT's default background texture
-      background-color: var(--ironsworn-color-bg-20);
-      margin: var(--ironsworn-spacer-xs) 0;
-      transition: none;
       .oracle-result-row {
         > td {
           position: relative;
-          > * {
-            transition: var(--ironsworn-transition);
-          }
           &:last-child {
             > .oracle-row-content {
               padding-right: var(--ironsworn-spacer-xs);
             }
+          }
+          > * {
+            transition: var(--ironsworn-transition);
           }
         }
       }
@@ -112,12 +124,12 @@
         white-space: nowrap;
       }
       .oracle-row-content {
-        opacity: 1;
-        visibility: visible;
-        height: 100%;
         display: flex;
         gap: var(--ironsworn-spacer-sm);
         align-items: center;
+        visibility: visible;
+        opacity: 1;
+        height: 100%;
       }
       .icon {
         display: flex;
@@ -126,34 +138,22 @@
       }
       .oracle-result-control {
         .clickableTextMixin();
-        background: none !important;
-        border: none !important;
-        opacity: 0;
-        visibility: hidden;
-        margin: 0;
+        display: flex;
         position: absolute;
         top: 0;
-        bottom: 0;
         right: 0;
+        bottom: 0;
         left: 0;
-        display: flex;
         gap: var(--ironsworn-spacer-sm);
+        visibility: hidden;
+        opacity: 0;
+        margin: 0;
+        border: none !important;
+        background: none !important;
         padding: var(--ironsworn-spacer-sm);
         &.clickable.text {
-          justify-content: center;
           align-items: center;
-        }
-      }
-      &:hover {
-        // hide row content and reveal controls on *table* hover
-        .oracle-row-content {
-          opacity: 0;
-          visibility: hidden;
-        }
-        .oracle-result-control {
-          opacity: 1;
-          visibility: visible;
-          color: inherit;
+          justify-content: center;
         }
       }
     }

@@ -17,8 +17,8 @@
 }
 .editor-edit {
   .clickableBlockMixin();
-  background: var(--ironsworn-color-bg);
   border-radius: var(--ironsworn-border-radius-md);
+  background: var(--ironsworn-color-bg);
 }
 
 // Editor custom select elements
@@ -42,13 +42,13 @@
 }
 .tox {
   font-family: var(--font-primary);
-  :not(svg):not(rect) {
-    color: currentColor;
-  }
   &:not(.tox-tinymce-inline) .tox-editor-header {
+    justify-content: center;
     border-bottom: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border-muted);
-    justify-content: center;
+  }
+  :not(svg):not(rect) {
+    color: currentColor;
   }
   .tox-toolbar__primary {
     justify-content: center;
@@ -60,22 +60,22 @@
   .tox-tbtn .tox-toolbar-overlord,
   .tox-toolbar__primary,
   &:not(.tox-tinymce-inline) .tox-editor-header {
-    color: var(--ironsworn-color-fg);
     background: var(--ironsworn-color-bg);
+    color: var(--ironsworn-color-fg);
   }
   .tox-tbtn {
-    color: var(--ironsworn-color-clickable-block-fg);
+    transition: var(--ironsworn-transition);
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
     border-color: transparent;
     background: var(--ironsworn-color-clickable-block-bg);
-    border-style: solid;
-    border-width: var(--ironsworn-border-width-md);
-    transition: var(--ironsworn-transition);
+    color: var(--ironsworn-color-clickable-block-fg);
     // margin: 6px 1px var(--ironsworn-spacer-md) 0;
     &:focus {
-      color: var(--ironsworn-color-clickable-block-fg);
-      background: var(--ironsworn-color-clickable-block-bg);
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
+      background: var(--ironsworn-color-clickable-block-bg);
+      color: var(--ironsworn-color-clickable-block-fg);
       &:not(.tox-tbtn--disabled) {
         color: var(--ironsworn-color-clickable-block-fg);
         svg {
@@ -83,22 +83,22 @@
         }
       }
     }
-    svg {
-      fill: currentColor;
-    }
     &:hover {
-      color: var(--ironsworn-color-clickable-block-fg-hover);
-      background: var(--ironsworn-color-clickable-block-bg-hover);
-      border-color: var(--ironsworn-color-clickable-block-border-hover);
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
+      border-color: var(--ironsworn-color-clickable-block-border-hover);
+      background: var(--ironsworn-color-clickable-block-bg-hover);
+      color: var(--ironsworn-color-clickable-block-fg-hover);
       svg {
         fill: currentColor;
       }
     }
+    svg {
+      fill: currentColor;
+    }
     &[aria-pressed='true'] {
-      color: var(--ironsworn-color-clickable-block-fg-selected);
       background: var(--ironsworn-color-clickable-block-bg-selected);
+      color: var(--ironsworn-color-clickable-block-fg-selected);
       svg {
         fill: currentColor;
       }
@@ -149,9 +149,9 @@
 
 .tox {
   .tox-menu {
-    background: @menu-background-color;
     border: var(--ironsworn-border-width-md) solid @menu-border-color;
     box-shadow: @menu-box-shadow;
+    background: @menu-background-color;
   }
 }
 
@@ -213,12 +213,12 @@
 
 .tox {
   .tox-collection--list .tox-collection__group {
-    border-bottom-width: 0;
-    border-color: @collection-item-separator-color;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-style: solid;
     border-top-width: var(--ironsworn-border-width-md);
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: @collection-item-separator-color;
 
     &:first-child {
       border-top-width: 0;
@@ -231,8 +231,8 @@
     color: @collection-group-label-text-color;
   }
   .tox-collection__item {
-    color: @collection-item-label-text-color;
     transition: var(--ironsworn-transition);
+    color: @collection-item-label-text-color;
   }
 
   // Note: Ensure "enabled" is before "active", as active styles should have a higher precedence
@@ -306,9 +306,9 @@
   }
 
   .tox-collection--horizontal {
-    background: @menu-background-color;
     border: var(--ironsworn-border-width-md) solid
       @collection-item-separator-color;
+    background: @menu-background-color;
   }
 }
 

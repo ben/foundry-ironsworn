@@ -21,14 +21,14 @@
   flex-grow: 0;
   &[aria-orientation='horizontal'] {
     flex-flow: row nowrap;
-    height: max-content;
     border-bottom: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
+    height: max-content;
   }
   &[aria-orientation='vertical'] {
-    border-left: var(--ironsworn-border-width-md) solid
-      var(--ironsworn-color-border);
     border-right: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
+    border-left: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
   }
 }

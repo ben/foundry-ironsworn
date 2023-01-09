@@ -44,8 +44,8 @@
 <style lang="less" scoped>
 .clickable.block {
   border-style: none;
-  line-height: 25px;
   padding: var(--ironsworn-spacer-md);
+  line-height: 25px;
   .selected & {
     color: var(--ironsworn-color-clickable-block-fg-selected);
     &:hover {
@@ -56,8 +56,8 @@
 
 .no-bonds {
   flex: 1;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
   background-color: var(--ironsworn-color-input-bg);
 }
 </style>

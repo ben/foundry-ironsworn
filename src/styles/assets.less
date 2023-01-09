@@ -2,80 +2,80 @@
 
 .ironsworn__asset {
   --ironsworn-asset-spacer: 0.5em;
+  transition: var(--ironsworn-transition);
 
   overflow: hidden;
-  transition: var(--ironsworn-transition);
   .asset-header {
     gap: var(--ironsworn-asset-spacer);
     align-items: center;
     .asset-expand-toggle {
-      transition: var(--ironsworn-transition);
       display: flex;
-      gap: var(--ironsworn-asset-spacer);
-      background: none;
-      box-shadow: none !important;
       flex-flow: row wrap;
+      gap: var(--ironsworn-asset-spacer);
+      transition: var(--ironsworn-transition);
+      box-shadow: none !important;
+      background: none;
     }
     .asset-title {
+      transition: inherit;
       margin: 0;
+      text-transform: uppercase;
+      line-height: 1;
+      word-spacing: 0.02em;
+      letter-spacing: 0.02em;
       font-size: var(--font-size-14);
       font-weight: bold;
-      letter-spacing: 0.02em;
-      word-spacing: 0.02em;
-      line-height: 1;
-      text-transform: uppercase;
-      transition: inherit;
     }
     .asset-type {
-      color: var(--ironsworn-color-thematic);
       flex-grow: 0;
-      line-height: 1;
-      font-style: italic;
       transition: inherit;
+      line-height: 1;
+      color: var(--ironsworn-color-thematic);
+      font-style: italic;
     }
     .asset-controls {
-      justify-items: flex-end;
       display: flex;
       flex-grow: 0;
       flex-wrap: nowrap;
+      justify-items: flex-end;
     }
   }
   .asset-body {
-    transition: var(--ironsworn-transition);
-    overflow: hidden;
-    padding: calc(var(--ironsworn-asset-spacer) / 2);
     gap: var(--ironsworn-asset-spacer);
+    transition: var(--ironsworn-transition);
+    padding: calc(var(--ironsworn-asset-spacer) / 2);
+    overflow: hidden;
     .asset-fields {
-      margin: 0;
       display: flex;
       flex-direction: column;
+      margin: 0;
       .asset-field {
         display: flex;
         flex-direction: row;
-        gap: (--ironsworn-asset-spacer / 2);
         flex-grow: 0;
+        gap: var(--ironsworn-asset-spacer / 2);
         border-bottom-width: var(--ironsworn-border-width-md);
         border-bottom-style: solid;
         border-bottom-color: var(--ironsworn-color-thematic);
         .asset-field-label {
-          padding: 0;
           margin: 0;
+          padding: 0;
         }
         .asset-field-value {
-          margin: 0;
           flex-grow: 1;
-          padding: 0 (--ironsworn-asset-spacer / 2);
+          margin: 0;
+          padding: 0 var(--ironsworn-asset-spacer / 2);
         }
       }
     }
     .asset-abilities {
-      padding-left: var(--ironsworn-asset-spacer);
       gap: var(--ironsworn-asset-spacer);
+      padding-left: var(--ironsworn-asset-spacer);
       .asset-ability {
-        list-style: none;
         display: flex;
         flex-direction: row;
         gap: var(--ironsworn-asset-spacer);
+        list-style: none;
       }
     }
   }
@@ -117,30 +117,30 @@
 // elements
 .asset-ability-bullet {
   display: block;
-  mask-repeat: no-repeat;
-  background-repeat: no-repeat;
-  mask-position: center;
-  background-position: center;
   transition: var(--ironsworn-transition);
+  background-position: center;
+  background-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  mask-position: center;
 }
 .asset-ability-bullet-marked {
   background-color: currentColor;
 }
 
 .asset-ability-bullet-ironsworn {
-  aspect-ratio: 1;
-  border-radius: 50%;
-  border-width: var(--ironsworn-border-width-md);
-  height: 0.75em;
   margin-top: 0.15em;
+  border-width: var(--ironsworn-border-width-md);
+  border-radius: 50%;
+  height: 0.75em;
+  aspect-ratio: 1;
 }
 
 .asset-ability-bullet-starforged {
-  aspect-ratio: @hexagon_aspect_ratio;
-  background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-  mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-  height: 1em;
   margin-top: 0.15em;
+  background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+  height: 1em;
+  aspect-ratio: @hexagon_aspect_ratio;
+  mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
 }
 .asset-ability-bullet-starforged-marked {
   mask-image: url('/assets/misc/hex-checkbox-checked.svg');

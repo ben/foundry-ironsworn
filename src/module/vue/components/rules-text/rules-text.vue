@@ -22,7 +22,9 @@
   gap: var(--ironsworn-rules-text-spacer);
 }
 .rules-text-main {
-  .textCompactMixin();
+  display: flex;
+  flex-direction: column;
+  gap: var(--ironsworn-rules-text-spacer);
   p {
     &:first-of-type {
       margin-top: 0;
@@ -31,12 +33,10 @@
       margin-bottom: 0;
     }
   }
-  display: flex;
-  flex-direction: column;
-  gap: var(--ironsworn-rules-text-spacer);
   & > * {
     margin: 0;
   }
+  .textCompactMixin();
 }
 .rules-text-footer {
   text-align: right;
