@@ -24,13 +24,16 @@
 <style lang="scss" scoped>
 div {
   --ironsworn-move-tab-border-width: var(--ironsworn-border-width-md);
+
   border-width: var(--ironsworn-move-tab-border-width);
   border-right-width: 0;
+  padding: var(--ironsworn-spacer-xs);
+
   &:not(:first-child) {
     margin-top: calc(var(--ironsworn-move-tab-border-width) * -1);
   }
-  padding: var(--ironsworn-spacer-xs);
 }
+
 span {
   overflow: hidden;
   text-overflow: ellipsis;
