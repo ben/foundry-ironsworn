@@ -41,6 +41,8 @@ const CONFIG = {
         //   ignoreValues: ['/\\$/', 'transparent', 'currentcolor', '0'],
         // },
         'number-max-precision': null,
+        'declaration-block-no-redundant-longhand-properties': null,
+        'block-no-empty': null,
         'custom-property-pattern': [/(ironsworn|font|fa|color)-/],
         'max-line-length': [120, { ignore: ['comments'] }],
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
