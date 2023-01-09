@@ -70,6 +70,7 @@ $wrapper-spacing: 4px;
     @include mixins.thematic-color(v-bind('thematicColor'));
   }
 
+  transition: var(--ironsworn-transition);
   position: relative;
   padding: 0 $wrapper-spacing;
 
