@@ -51,6 +51,7 @@
   @include meta.load-css('@styles/fvtt/sidebar');
   @include meta.load-css('@styles/fvtt/tooltip');
   @include meta.load-css('@styles/fvtt/nue');
+  @include meta.load-css('@styles/fvtt/journal');
   @include meta.load-css('@styles/inputs');
 
   // specific configuration. avoid adding to this -- generalize where possible to keep the code neat and maintainable.
