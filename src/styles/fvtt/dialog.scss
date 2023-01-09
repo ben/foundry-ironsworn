@@ -2,7 +2,7 @@
 @use 'sass:meta';
 @use '@styles/mixins';
 
-.dialog {
+@mixin dialog {
   .window-content {
     .dialog-content {
       fieldset {
@@ -34,11 +34,12 @@
       button.default,
       button {
         @include mixins.clickable-block;
+        @include mixins.icon-button-base;
 
         display: flex;
         align-items: center;
         justify-content: center;
-        border-width: var(--ironsworn-border-radius-md);
+        border-width: var(--ironsworn-border-width-md);
         border-radius: 0;
         height: max-content;
 

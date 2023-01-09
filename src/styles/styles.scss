@@ -1,5 +1,6 @@
 @use 'sass:meta';
-@use 'themes/mixins/colors';
+@use '@styles/themes/mixins/colors';
+@use '@styles/fvtt/dialog' as fvtt-dialog;
 
 :root {
   // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
@@ -79,7 +80,6 @@
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
   @include meta.load-css('utils');
-  @include meta.load-css('dialog');
 
   form button,
   button {
@@ -127,8 +127,7 @@
   .ironsworn {
     // stuff scoped to .ironsworn app windows only
     // include these in a theme it to FVTT's own dialogs and inputs as well.
-    @include meta.load-css('fvtt/dialog');
-    @include meta.load-css('dialog');
+    @include meta.load-css('dialog-custom');
     @include meta.load-css('editor');
     @include meta.load-css('scrollbar');
     @include meta.load-css('tables');
@@ -136,9 +135,15 @@
     @include meta.load-css('box');
     @include meta.load-css('progress-track');
 
-    // .window-title {
-    //   @include initial-caps;
-    // }
+    &.dialog {
+      @include fvtt-dialog.dialog;
+    }
+    .window-title {
+      // there's a mixin for this, but it runs afoul of SCSS imports.
+      &::first-letter {
+        text-transform: uppercase;
+      }
+    }
 
     .window-content {
       background: var(--ironsworn-color-bg);
