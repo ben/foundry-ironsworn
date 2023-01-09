@@ -1,6 +1,7 @@
 const { stylelint } = require('stylelint')
 
 const commonConfigs = [
+  'stylelint-config-standard',
   /**
    * @see https://github.com/chaucerbao/stylelint-config-concentric-order
    */
@@ -11,30 +12,23 @@ const commonConfigs = [
   'stylelint-config-prettier',
 ]
 
+const commonPlugins = [
+  /**
+   * @see https://github.com/Mavrin/stylelint-declaration-use-css-custom-properties
+   */
+  // FIXME Omitted for now because it's noisy. it'll be addressed in the SCSS migration PR.
+  // '@mavrin/stylelint-declaration-use-css-custom-properties',
+]
+
 /**
- * @type stylelint.Options
+ * @type {stylelint.Options}
  */
 const CONFIG = {
   extends: commonConfigs,
-  plugins: [
-    /**
-     * @see https://github.com/Mavrin/stylelint-declaration-use-css-custom-properties
-     */
-    // FIXME Omitted for now because it's noisy. it'll be addressed in the SCSS migration PR.
-    // '@mavrin/stylelint-declaration-use-css-custom-properties',
-  ],
+  plugins: commonPlugins,
   overrides: [
     {
-      files: ['**/*.vue'],
-      extends: [...commonConfigs, 'stylelint-config-recommended-vue'],
-      customSyntax: 'postcss-html',
-    },
-    {
-      files: ['**/*.less'],
-      customSyntax: 'postcss-less',
-    },
-    {
-      files: ['**/*.vue', '**/*.less'],
+      files: ['**/*.vue', '**/*.less', '**/*.scss'],
       rules: {
         // FIXME Omitted for now because it's noisy. it'll be addressed in the SCSS migration PR.
         // 'mavrin/stylelint-declaration-use-css-custom-properties': {
@@ -51,7 +45,7 @@ const CONFIG = {
         //     '0',
         //   ],
         // },
-        'custom-property-pattern': '(ironsworn|font|color|fa)-.+',
+        'custom-property-pattern': '(ironsworn|font|color|fa|form-field)-.+',
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,
         'string-quotes': ['single'],
@@ -62,6 +56,18 @@ const CONFIG = {
           },
         ],
       },
+    },
+
+    {
+      // Vue-specific configuration
+      files: ['**/*.vue'],
+      extends: [...commonConfigs, 'stylelint-config-recommended-vue'],
+      customSyntax: 'postcss-html',
+    },
+    {
+      // LESS-specific configuration
+      files: ['**/*.less'],
+      customSyntax: 'postcss-less',
     },
   ],
 }
