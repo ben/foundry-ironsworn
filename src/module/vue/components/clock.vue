@@ -40,7 +40,7 @@ svg.clock {
     pointer-events: fill;
     cursor: pointer;
     vector-effect: non-scaling-stroke;
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
     &:active {
       fill-opacity: 1;
     }

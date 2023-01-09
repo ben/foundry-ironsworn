@@ -1,17 +1,17 @@
 @import (reference) './themes/mixins/decorations.less';
 
-@asset_spacer: 0.5em;
-
 .ironsworn__asset {
+  --ironsworn-asset-spacer: 0.5em;
+
   overflow: hidden;
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
   .asset-header {
-    gap: @asset_spacer;
+    gap: var(--ironsworn-asset-spacer);
     align-items: center;
     .asset-expand-toggle {
-      transition: var(--std-animation);
+      transition: var(--ironsworn-transition);
       display: flex;
-      gap: @asset_spacer;
+      gap: var(--ironsworn-asset-spacer);
       background: none;
       box-shadow: none !important;
       flex-flow: row wrap;
@@ -41,10 +41,10 @@
     }
   }
   .asset-body {
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
     overflow: hidden;
-    padding: (@asset_spacer / 2);
-    gap: @asset_spacer;
+    padding: calc(var(--ironsworn-asset-spacer) / 2);
+    gap: var(--ironsworn-asset-spacer);
     .asset-fields {
       margin: 0;
       display: flex;
@@ -52,7 +52,7 @@
       .asset-field {
         display: flex;
         flex-direction: row;
-        gap: (@asset_spacer / 2);
+        gap: (--ironsworn-asset-spacer / 2);
         flex-grow: 0;
         border-bottom-width: var(--ironsworn-border-width-md);
         border-bottom-style: solid;
@@ -64,18 +64,18 @@
         .asset-field-value {
           margin: 0;
           flex-grow: 1;
-          padding: 0 (@asset_spacer / 2);
+          padding: 0 (--ironsworn-asset-spacer / 2);
         }
       }
     }
     .asset-abilities {
-      padding-left: @asset_spacer;
-      gap: @asset_spacer;
+      padding-left: var(--ironsworn-asset-spacer);
+      gap: var(--ironsworn-asset-spacer);
       .asset-ability {
         list-style: none;
         display: flex;
         flex-direction: row;
-        gap: @asset_spacer;
+        gap: var(--ironsworn-asset-spacer);
       }
     }
   }
@@ -121,7 +121,7 @@
   background-repeat: no-repeat;
   mask-position: center;
   background-position: center;
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
 }
 .asset-ability-bullet-marked {
   background-color: currentColor;

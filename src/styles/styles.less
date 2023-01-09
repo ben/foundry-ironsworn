@@ -45,10 +45,10 @@
     box-shadow, caret-color, color, column-rule-color, filter, opacity,
     outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
 
-  --std-animation-timing: var(--ironsworn-transition-duration)
+  --ironsworn-transition-timing: var(--ironsworn-transition-duration)
     var(--ironsworn-transition-timing-function);
 
-  --std-animation: all 0.5s ease;
+  --ironsworn-transition: all 0.5s ease;
 
   --fa-display: inline-block;
   --fa-invert: var(--ironsworn-color-bg);
@@ -109,7 +109,7 @@
   textarea,
   .scene-control,
   .macro {
-    transition: var(--std-animation);
+    transition: var(--ironsworn-transition);
     &.active {
       color: var(--ironsworn-color-clickable-text-selected);
     }

@@ -146,7 +146,7 @@
 }
 
 .toggleWrapper {
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
   height: var(--ironsworn-line-height-lg);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
@@ -246,7 +246,7 @@ const data = reactive({
 
 const $collapsible = ref<typeof Collapsible>()
 
-type CollapsibleEmits = typeof Collapsible['$emit']
+type CollapsibleEmits = (typeof Collapsible)['$emit']
 
 interface MoveRowEmits extends CollapsibleEmits {
   rollClick(): void
