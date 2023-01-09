@@ -40,6 +40,8 @@
 </template>
 
 <style lang="scss">
+@use 'sass:math';
+
 // helper mixin functions
 
 @mixin transition-box($total-duration: 1s, $base-delay: 0s) {
@@ -218,7 +220,6 @@
 
   // EPIC challenge rank: marks 1 tick, no add'l styling required.
 }
-@use 'sass:math';
 </style>
 <script setup lang="ts">
 import { range } from 'lodash'
