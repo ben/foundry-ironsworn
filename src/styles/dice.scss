@@ -92,7 +92,7 @@
   }
 
   .roll {
-    --dice-background-color: var(--ironsworn-color-fg-30);
+    --ironsworn-dice-background-color: var(--ironsworn-color-fg-30);
     --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
     display: inline-block;
@@ -109,7 +109,7 @@
     }
 
     &.d6::before {
-      background-color: var(--dice-background-color);
+      background-color: var(--ironsworn-dice-background-color);
       content: '';
       mask-image: url('/assets/icons/d6-blank.svg');
     }
@@ -119,7 +119,7 @@
     }
 
     &.d10::before {
-      background-color: var(--dice-background-color);
+      background-color: var(--ironsworn-dice-background-color);
       content: '';
       mask-image: url('/assets/icons/d10-blank.svg');
     }
