@@ -56,9 +56,9 @@
   );
 
   // for later use as a mixin to scope transitions to colors effects only.
-  --transition-property-color: background-color, border-color, box-shadow,
-    caret-color, color, column-rule-color, filter, opacity, outline-color,
-    text-decoration-color, fill-opacity, fill-color, stroke;
+  --ironsworn-transition-property-color: background-color, border-color,
+    box-shadow, caret-color, color, column-rule-color, filter, opacity,
+    outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
   --ironsworn-transition: var(--ironsworn-transition-properties, all)
     var(--ironsworn-transition-duration)
     var(--ironsworn-transition-timing-function, ease);
