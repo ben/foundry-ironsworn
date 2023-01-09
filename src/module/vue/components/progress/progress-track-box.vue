@@ -38,26 +38,24 @@
     </svg>
   </div>
 </template>
+
 <style lang="scss">
-@use 'sass:math';
-/* stylelint-disable no-descending-specificity */
-
 // helper mixin functions
-@mixin animate-tick($value, $duration, $delay: 0s) {
-  .draw-progress-tick-enter-active[data-tick='#{$value}'] {
-    transition-delay: $delay;
-    transition-duration: $duration;
-  }
-}
 
-@mixin animate-box($total-duration: 1s, $base-delay: 0s) {
+@mixin transition-box($total-duration: 1s, $base-delay: 0s) {
   $tick-duration: math.div($total-duration, 4);
-  $ticks: 1, 2, 3, 4;
-  @each $value in $ticks {
-    $tick-delay: ($tick-duration * ($value - 1));
-    @include animate-tick($value, $tick-duration, $base-delay + $tick-delay);
+  @each $tick in (1, 2, 3, 4) {
+    .progress-tick[data-tick='#{$tick}'] {
+      $tick-offset-factor: $tick - 1;
+      $tick-delay-offset: $tick-duration * $tick-offset-factor;
+      $delay: $base-delay + $tick-delay-offset;
+
+      --ironsworn-tick-draw-delay: #{$delay};
+      --ironsworn-tick-draw-duration: #{$tick-duration};
+    }
   }
 }
+/* stylelint-disable no-descending-specificity */
 
 .progress-track-box {
   align-items: center;
@@ -70,35 +68,42 @@
   stroke-width: 5;
 
   &.track-overflow .ghost-ticks {
+    // shown to indicate overflow progress on Legacy tracks
     opacity: 0.2;
   }
 
   .progress-track-box-marks {
+    // groups the individual progress ticks
     aspect-ratio: 1;
     margin: 10%;
     overflow: visible;
   }
 
   .progress-tick {
-    stroke-dasharray: 100%;
-    stroke-dashoffset: 0;
+    --ironsworn-tick-draw-delay: 0s;
+    --ironsworn-tick-draw-duration: 0.5s;
+    --ironsworn-tick-erase-duration: 0.5s;
+
+    transition: stroke-dashoffset var(--ironsworn-tick-draw-duration)
+        var(--ironsworn-tick-draw-delay) ease,
+      opacity var(--ironsworn-tick-erase-duration);
     stroke-linecap: round;
+
+    // dash length = stroke length. the draw animation then adjusts the dashoffset
+    stroke-dasharray: 100%;
   }
 }
 
-// Progress tick draw animation
-.draw-progress-tick-enter-active {
-  transition: 0.8s stroke-dashoffset, stroke-dasharray;
-}
-
-.draw-progress-tick-leave-active {
-  transition: 0.8s;
-}
-
+// draw animation.
 .draw-progress-tick-enter-from {
   stroke-dashoffset: -100%;
 }
 
+.draw-progress-tick-enter-to {
+  stroke-dashoffset: 0;
+}
+
+// erase animation. doesn't bother with draw order - just fades out
 .draw-progress-tick-leave-from {
   opacity: 1;
 }
@@ -107,30 +112,25 @@
   opacity: 0;
 }
 
-.draw-progress-tick-enter-to {
-  stroke-dashoffset: 0;
-}
-
 .progress-track {
   &[data-rank='1'] {
-    // see the Track component
-    // Challenge rank troublesome: marks 3 boxes (12 ticks)
+    // TROUBLESOME challenge rank: marks 3 boxes (12 ticks)
     $box1: 0.75s;
     $box2: 0.75s;
     $box3: 0.75s;
 
     .progress-track-box:nth-child(3n + 1) {
-      @include animate-box($box1);
+      @include transition-box($box1);
     }
 
     .progress-track-box:nth-child(3n + 2) {
-      @include animate-box($box2, $box1);
+      @include transition-box($box2, $box1);
     }
 
     .progress-track-box:nth-child(3n) {
       $d1: ($box1 + $box2);
 
-      @include animate-box($box3, $d1);
+      @include transition-box($box3, $d1);
     }
 
     // offsets the draw delay when the score has a value not divisible by 3, which is rare but technically possible
@@ -138,17 +138,17 @@
     &[data-score='4'],
     &[data-score='7'] {
       .progress-track-box:nth-child(3n + 2) {
-        @include animate-box($box1);
+        @include transition-box($box1);
       }
 
       .progress-track-box:nth-child(3n) {
-        @include animate-box($box2, $box1);
+        @include transition-box($box2, $box1);
       }
 
       .progress-track-box:nth-child(3n + 1) {
         $d1: ($box1 + $box2);
 
-        @include animate-box($box3, $d1);
+        @include transition-box($box3, $d1);
       }
     }
 
@@ -156,32 +156,32 @@
     &[data-score='5'],
     &[data-score='8'] {
       .progress-track-box:nth-child(3n) {
-        @include animate-box($box1);
+        @include transition-box($box1);
       }
 
       .progress-track-box:nth-child(3n + 1) {
-        @include animate-box($box2, $box1);
+        @include transition-box($box2, $box1);
       }
 
       .progress-track-box:nth-child(3n + 2) {
         $d1: ($box1 + $box2);
 
-        @include animate-box($box3, $d1);
+        @include transition-box($box3, $d1);
       }
     }
   }
 
   &[data-rank='2'] {
-    // Challenge rank dangerous: marks 2 boxes (8 ticks)
+    // DANGEROUS challenge rank: marks 2 boxes (8 ticks)
     $box1: 1s;
     $box2: 0.75s;
 
     .progress-track-box:nth-child(2n + 1) {
-      @include animate-box($box1);
+      @include transition-box($box1);
     }
 
     .progress-track-box:nth-child(2n) {
-      @include animate-box($box2, $box1);
+      @include transition-box($box2, $box1);
     }
 
     &[data-score='1'],
@@ -191,38 +191,34 @@
     &[data-score='9'] {
       // inverts the draw delay when the score has an odd value, which is rare but technically possible
       .progress-track-box:nth-child(2n) {
-        @include animate-box($box1);
+        @include transition-box($box1);
       }
 
       .progress-track-box:nth-child(2n + 1) {
-        @include animate-box($box2, $box1);
+        @include transition-box($box2, $box1);
       }
     }
   }
 
   &[data-rank='3'] {
-    // Challenge rank formidable: marks 1 box (4 ticks).
-    @include animate-box(1s);
+    // FORMIDABLE challenge rank: marks 1 box (4 ticks).
+    @include transition-box(1s);
   }
 
   &[data-rank='4'] {
-    // Challenge rank extreme: marks 2 ticks.
-    $d1: 0.5s;
-    $d2: 0.5s;
-
-    @include animate-tick(1, $d1);
-    @include animate-tick(2, $d2, $d1);
-    @include animate-tick(3, $d1);
-    @include animate-tick(4, $d2, $d1);
-  }
-
-  &[data-rank='5'] {
-    // Challenge rank epic: marks 1 tick.
-    .draw-progress-tick-enter-active {
-      transition-duration: 0.5s;
+    // EXTREME challenge rank: marks 2 ticks at a time.
+    .progress-tick {
+      // stagger even ticks because they're always drawn second
+      &[data-tick='2'],
+      &[data-tick='4'] {
+        --ironsworn-tick-draw-delay: 0.5s;
+      }
     }
   }
+
+  // EPIC challenge rank: marks 1 tick, no add'l styling required.
 }
+@use 'sass:math';
 </style>
 <script setup lang="ts">
 import { range } from 'lodash'
