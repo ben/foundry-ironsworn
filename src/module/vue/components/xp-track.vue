@@ -3,13 +3,14 @@
     <button
       class="xp-box"
       type="button"
-      v-for="(box, i) in computedBoxes"
+      v-for="box in computedBoxes"
       :key="box.key"
+      :data-value="box.value"
       :data-segment-state="box.state"
-      :aria-selected="i == marked"
-      @mouseover="hovered = i"
-      @mouseleave="hovered = -1"
-      @click="click(i)"
+      :aria-selected="box.value == marked"
+      @mouseover="hovered = box.value"
+      @mouseleave="hovered = 0"
+      @click="click(box.value)"
     />
   </article>
 </template>
@@ -67,24 +68,25 @@ const props = defineProps<{
   marked: number
 }>()
 
-const hovered = ref(-1)
+const hovered = ref(0)
 
 type BoxState = 'hovered' | 'selected' | 'inactive'
 interface Box {
   key: string
   state: BoxState
+  value: number
 }
 
 const computedBoxes = computed(() => {
   const ret = [] as Box[]
-  const activeHover = hovered.value > -1
-  for (let i = 0; i < props.max; i++) {
+  const activeHover = hovered.value > 0
+  for (let xpValue = 1; xpValue <= props.max; xpValue++) {
     let state: BoxState
     switch (true) {
-      case !activeHover && props.marked >= i:
+      case !activeHover && props.marked >= xpValue:
         state = 'selected'
         break
-      case hovered.value >= i:
+      case hovered.value >= xpValue:
         state = 'hovered'
         break
       default:
@@ -92,18 +94,19 @@ const computedBoxes = computed(() => {
         break
     }
     ret.push({
-      key: `box${i}`,
+      key: `box${xpValue}`,
       state,
+      value: xpValue,
     })
   }
   return ret
 })
 
 const $emit = defineEmits<{ (e: 'click', value: number): void }>()
-function click(i) {
-  if (i === 0 && props.marked === 1) {
-    i = -1
+function click(xpValue) {
+  if (xpValue === 1 && props.marked === 1) {
+    xpValue = 0
   }
-  $emit('click', i + 1)
+  $emit('click', xpValue)
 }
 </script>
