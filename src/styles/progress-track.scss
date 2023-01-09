@@ -1,6 +1,7 @@
 // Challenge rank indicator
 .rank-pips {
   --ironsworn-pip-stroke-width: 1px;
+  --ironsworn-pip-width: 1em;
 
   display: flex;
   flex-flow: row nowrap;
@@ -60,7 +61,7 @@
     }
 
     .pip-shape {
-      width: 1em;
+      width: var(--ironsworn-pip-width);
       height: inherit;
       overflow: visible;
     }
