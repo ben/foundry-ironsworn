@@ -31,10 +31,10 @@ svg.clock {
   // so that only *segment* hovers appear
   pointer-events: none;
   stroke: var(--ironsworn-color-fg);
-  stroke-width: var(--widget-stroke-width);
+  stroke-width: var(--ironsworn-widget-stroke-width);
 
   &:hover {
-    fill-opacity: var(--clock-fill-opacity-hover);
+    fill-opacity: var(--ironsworn-clock-fill-opacity-hover);
 
     .clock-segment {
       &:hover {
