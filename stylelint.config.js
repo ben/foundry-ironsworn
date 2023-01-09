@@ -5,7 +5,13 @@ const { stylelint } = require('stylelint')
  */
 const CONFIG = {
   extends: [
+    /**
+     * @see https://github.com/stylelint-scss/stylelint-config-standard-scss
+     */
     'stylelint-config-standard-scss',
+    /**
+     * @see https://github.com/ota-meshi/stylelint-config-recommended-vue
+     */
     'stylelint-config-recommended-vue/scss',
     /**
      * @see https://github.com/chaucerbao/stylelint-config-concentric-order
@@ -32,7 +38,7 @@ const CONFIG = {
            */
           cssDefinitions: ['color', 'length'],
           ignoreProperties: ['/^\\$/'],
-          ignoreValues: ['/\\$/', 'transparent', '/current[Cc]olor/', '0'],
+          ignoreValues: ['/\\$/', 'transparent', 'currentcolor', '0'],
         },
         'custom-property-pattern': [/ironsworn-/],
         'max-line-length': [120, { ignore: ['comments'] }],
