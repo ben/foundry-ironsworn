@@ -53,6 +53,7 @@
   @include meta.load-css('@styles/fvtt/nue');
   @include meta.load-css('@styles/fvtt/journal');
   @include meta.load-css('@styles/inputs');
+  @include meta.load-css('@styles/editor');
 
   // specific configuration. avoid adding to this -- generalize where possible to keep the code neat and maintainable.
   .chat-message {

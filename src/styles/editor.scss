@@ -25,7 +25,8 @@
   @include mixins.clickable-block;
 
   border-radius: var(--ironsworn-border-radius-md);
-  background: var(--ironsworn-color-bg);
+  background: var(--ironsworn-color-midtone-30);
+  border-color: var(--ironsworn-color-midtone-50);
 }
 
 // Editor custom select elements
