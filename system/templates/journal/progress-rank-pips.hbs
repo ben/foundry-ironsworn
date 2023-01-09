@@ -1,7 +1,8 @@
 <article
   class='rank-pips progress-rank-pips nogrow'
-  aria-label='Challenge rank'
-  aria-valuetext='{{i18nRank}}'
+  aria-label='{{localize "IRONSWORN.ChallengeRank"}}'
+  aria-valuetext='{{currentRank}}'
+  aria-valuenow='{{rank}}'
 >
   {{#each rankButtons}}
     <button
