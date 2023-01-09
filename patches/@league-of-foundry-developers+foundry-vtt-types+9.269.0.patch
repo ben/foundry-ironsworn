@@ -1,5 +1,5 @@
 diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
-index 2eae92c..3824036 100644
+index 8cc4b52..197c630 100644
 --- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
 +++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
 @@ -1,9 +1,22 @@
