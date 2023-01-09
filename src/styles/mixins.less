@@ -1,3 +1,4 @@
+/* stylelint-disable function-name-case */
 // typography mixins
 
 // until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
@@ -321,8 +322,8 @@
     .borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
 
     &:hover {
-      box-shadow: .inputfieldfocusmixin() [box-shadow],
-        .borderglowinteriormixin(@spread, 0, var(--ironsworn-color-cool))
+      box-shadow: .inputFieldFocusMixin() [box-shadow],
+        .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool))
           [box-shadow];
     }
   }
