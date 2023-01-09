@@ -37,7 +37,14 @@
   --ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool),
     0 0 3px var(--ironsworn-color-cool);
   --ironsworn-tab-transition: slide;
-  --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  --ironsworn-path-hexagon: polygon(
+    0 25%,
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%
+  );
 
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
   @include fvtt-retheme.color-variables;
