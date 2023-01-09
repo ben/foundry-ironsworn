@@ -63,7 +63,7 @@ $max-progress-track-width: calc(
 }
 
 .legacy-track {
-  --legacy-xp-box-size: #{$max-xp-box-size};
+  --ironsworn-legacy-xp-box-size: #{$max-xp-box-size};
 
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;

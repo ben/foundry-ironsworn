@@ -49,6 +49,8 @@
 </template>
 
 <style lang="scss" scoped>
+/* stylelint-disable no-descending-specificity */
+
 $segment-border-width: var(--ironsworn-border-width-md);
 $segment-border-radius: var(--ironsworn-border-radius-lg);
 $segment-line-height: var(--ironsworn-line-height-lg);

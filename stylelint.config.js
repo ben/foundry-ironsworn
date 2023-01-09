@@ -30,7 +30,7 @@ const CONFIG = {
   ],
   overrides: [
     {
-      files: ['./src/modules/vue/**/*.vue', './src/styles/**/*.scss'],
+      files: ['./src/module/vue/**/*.vue', './src/styles/**/*.scss'],
       rules: {
         // 'mavrin/stylelint-declaration-use-css-custom-properties': {
         //   /**
@@ -43,17 +43,18 @@ const CONFIG = {
         'number-max-precision': null,
         'declaration-block-no-redundant-longhand-properties': null,
         'block-no-empty': null,
-        'custom-property-pattern': [/(ironsworn|font|fa|color)-/],
-        'max-line-length': [120, { ignore: ['comments'] }],
+        'custom-property-pattern': [/(ironsworn|font|fa|color|form)-/],
+        // 'max-line-length': [120, { ignore: ['comments'] }],
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,
         'string-quotes': ['single'],
-        'selector-class-pattern': [
-          /^((ironsworn__|tox-[a-z+]__)?[a-z][a-z-0-9]*[a-z0-9])|ProseMirror$/,
-          {
-            resolveNestedSelectors: true,
-          },
-        ],
+        'selector-class-pattern': null,
+        // 'selector-class-pattern': [
+        //   /^((ironsworn__|tox-[a-z+]__)?[a-z][a-z-0-9]*[a-z0-9])|ProseMirror$/,
+        //   {
+        //     resolveNestedSelectors: true,
+        //   },
+        // ],
       },
     },
   ],
