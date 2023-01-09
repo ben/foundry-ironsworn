@@ -69,8 +69,8 @@
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
-  @import url('utils.less');
-  @import url('inputs.less');
+  @import (once) 'utils.less';
+  @import (once) 'inputs.less';
   @import (reference) './fvtt/dialog.less';
 
   &.dialog {
@@ -86,25 +86,25 @@
   }
 }
 
-@import url('transitions.less');
+@import (once) 'transitions.less';
 
 .system-foundry-ironsworn {
   // importing within this selector to ensure higher specificity
-  @import url('assets.less');
-  @import url('attr-box.less');
-  @import url('chat-message.less');
-  @import url('clickable.less');
-  @import url('dialog.less');
-  @import url('dice.less');
-  @import url('drag-and-drop.less');
-  @import url('editor.less');
-  @import url('icons.less');
-  @import url('list.less');
-  @import url('scrollbar.less');
-  @import url('sheet.less');
-  @import url('tables.less');
-  @import url('utils.less');
-  @import url('progress.less');
+  @import (once) 'assets.less';
+  @import (once) 'attr-box.less';
+  @import (once) 'chat-message.less';
+  @import (once) 'clickable.less';
+  @import (once) 'dialog.less';
+  @import (once) 'dice.less';
+  @import (once) 'drag-and-drop.less';
+  @import (once) 'editor.less';
+  @import (once) 'icons.less';
+  @import (once) 'list.less';
+  @import (once) 'scrollbar.less';
+  @import (once) 'sheet.less';
+  @import (once) 'tables.less';
+  @import (once) 'utils.less';
+  @import (once) 'progress.less';
   // transitions for interactive elements
   a,
   button,

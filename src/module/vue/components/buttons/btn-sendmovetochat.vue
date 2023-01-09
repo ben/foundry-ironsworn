@@ -12,8 +12,6 @@
   </IronBtn>
 </template>
 
-<style lang="less"></style>
-
 <script setup lang="ts">
 import { ExtractPropTypes, inject } from 'vue'
 import { createSfMoveChatMessage } from '../../../chat/sf-move-chat-message'

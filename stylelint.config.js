@@ -45,6 +45,22 @@ const CONFIG = {
         //     '0',
         //   ],
         // },
+
+        // FIXME workaround required for LESS to lint
+        'no-invalid-position-at-import-rule': null,
+        // FIXME workaround required for LESS to lint
+        'function-no-unknown': null,
+        // FIXME workaround required for LESS to lint
+        'no-duplicate-at-import-rules': null,
+        // FIXME workaround required for LESS to lint
+        'no-invalid-double-slash-comments': null,
+        // silence complaints about floating points (which are a temp workaround anyways)
+        'number-max-precision': null,
+        // silence complaints about longhand properties, because personally, i have trouble remembering the positional values
+        'declaration-block-no-redundant-longhand-properties': null,
+        // we have a bunch of these that are mainly so we don't have to go look up the dang class again
+        'block-no-empty': null,
+
         'custom-property-pattern': '(ironsworn|font|color|fa|form-field)-.+',
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,

@@ -1,23 +1,11 @@
 .rank-pips {
-  flex-grow: 0;
-  width: max-content;
-
-  .rank-pip {
-    margin: 0;
-    border: none;
-
-    .pip-shape > * {
-      stroke-width: var(--ironsworn-widget-stroke-width);
-    }
-  }
-}
-
-.rank-pips {
   display: flex;
   flex-flow: row nowrap;
+  flex-grow: 0;
   gap: 2px;
   align-content: center;
   transition: var(--ironsworn-transition);
+  width: max-content;
   // so that hover effects only happen when a pip is hovered
   pointer-events: none;
   stroke: var(--ironsworn-color-fg);
@@ -35,6 +23,15 @@
           fill-opacity: 0;
         }
       }
+    }
+  }
+
+  .rank-pip {
+    margin: 0;
+    border: none;
+
+    .pip-shape > * {
+      stroke-width: var(--ironsworn-widget-stroke-width);
     }
   }
 
