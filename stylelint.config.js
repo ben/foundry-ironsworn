@@ -33,9 +33,16 @@ const CONFIG = {
           /**
            * @see https://csstree.github.io/docs/syntax/
            */
-          cssDefinitions: ['color', 'length'],
+          cssDefinitions: ['color', 'length', 'z-index', 'line-height'],
           ignoreProperties: ['/^\\@/'],
-          ignoreValues: ['/\\@/', '/\\$/', 'transparent', 'currentcolor', '0'],
+          ignoreValues: [
+            '/\\@/',
+            '/\\$/',
+            'transparent',
+            'currentcolor',
+            '0',
+            '/[0-9\\.]+em/',
+          ],
         },
 
         'import-notation': null,
