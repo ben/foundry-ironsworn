@@ -31,10 +31,10 @@
     flex-basis: 15px;
     align-items: center;
     justify-content: center;
-    margin: 3px;
+    margin: var(--ironsworn-spacer-sm);
     border: 1px solid currentcolor;
     background-clip: content-box;
-    padding: 2px;
+    padding: var(--ironsworn-spacer-xs);
     height: 15px;
     text-align: center;
     aspect-ratio: 1;

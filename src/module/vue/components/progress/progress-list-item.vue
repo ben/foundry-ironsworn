@@ -136,7 +136,7 @@
   .progress-widgets {
     grid-row: 3;
     grid-column: 2 / span 3;
-    gap: 2px;
+    gap: var(--ironsworn-spacer-xs);
 
     .progress-clock {
       flex-basis: 50px;
