@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Remove tables from roll-result chat message when there are oracle buttons
+
 ## 1.20.11
 
 - Stop minifying for production builds
