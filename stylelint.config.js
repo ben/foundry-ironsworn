@@ -46,6 +46,7 @@ const CONFIG = {
         //   ],
         // },
 
+        'import-notation': null,
         // FIXME workaround required for LESS to lint
         'no-invalid-position-at-import-rule': null,
         // FIXME workaround required for LESS to lint
@@ -60,7 +61,19 @@ const CONFIG = {
         'declaration-block-no-redundant-longhand-properties': null,
         // we have a bunch of these that are mainly so we don't have to go look up the dang class again
         'block-no-empty': null,
-
+        /**
+         * Enforces consistent naming for CSS custom properties.
+         *
+         * `ironsworn` - Properties specific to this module. If you're adding a brand new property, it should have this.
+         * `font` - FVTT font properties.
+         * `color` - FVTT color properties.
+         * `form-field` - FVTT form-field properties.
+         * `fa` - FontAwesome properties.
+         *
+         * @example ```less
+         * --ironsworn-custom-property: sqrt(2);
+         * ```
+         */
         'custom-property-pattern': '(ironsworn|font|color|fa|form-field)-.+',
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,
