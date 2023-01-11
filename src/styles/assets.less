@@ -24,8 +24,8 @@
       margin: 0;
       text-transform: uppercase;
       line-height: 1;
-      word-spacing: 0.02em;
-      letter-spacing: 0.02em;
+      word-spacing: var(--ironsworn-word-spacing-sm);
+      letter-spacing: var(--ironsworn-letter-spacing-sm);
       font-size: var(--font-size-14);
       font-weight: bold;
     }
@@ -61,7 +61,7 @@
         display: flex;
         flex-direction: row;
         flex-grow: 0;
-        gap: var(--ironsworn-asset-spacer / 2);
+        gap: calc(var(--ironsworn-asset-spacer) / 2);
         border-bottom-width: var(--ironsworn-border-width-md);
         border-bottom-style: solid;
         border-bottom-color: var(--ironsworn-color-thematic);
@@ -74,7 +74,7 @@
         .asset-field-value {
           flex-grow: 1;
           margin: 0;
-          padding: 0 var(--ironsworn-asset-spacer / 2);
+          padding: 0 calc(var(--ironsworn-asset-spacer) / 2);
         }
       }
     }

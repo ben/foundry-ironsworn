@@ -16,8 +16,7 @@ const commonPlugins = [
   /**
    * @see https://github.com/Mavrin/stylelint-declaration-use-css-custom-properties
    */
-  // FIXME Omitted for now because it's noisy. it'll be addressed in the SCSS migration PR.
-  // '@mavrin/stylelint-declaration-use-css-custom-properties',
+  '@mavrin/stylelint-declaration-use-css-custom-properties',
 ]
 
 /**
@@ -30,21 +29,14 @@ const CONFIG = {
     {
       files: ['**/*.vue', '**/*.less', '**/*.scss'],
       rules: {
-        // FIXME Omitted for now because it's noisy. it'll be addressed in the SCSS migration PR.
-        // 'mavrin/stylelint-declaration-use-css-custom-properties': {
-        //   /**
-        //    * @see https://csstree.github.io/docs/syntax/
-        //    */
-        //   cssDefinitions: ['color', 'length'],
-        //   ignoreProperties: ['/^\\@/'],
-        //   ignoreValues: [
-        //     '/\\@/',
-        //     '/\\$/',
-        //     'transparent',
-        //     '/current[Cc]olor/',
-        //     '0',
-        //   ],
-        // },
+        'mavrin/stylelint-declaration-use-css-custom-properties': {
+          /**
+           * @see https://csstree.github.io/docs/syntax/
+           */
+          cssDefinitions: ['color', 'length'],
+          ignoreProperties: ['/^\\@/'],
+          ignoreValues: ['/\\@/', '/\\$/', 'transparent', 'currentcolor', '0'],
+        },
 
         'import-notation': null,
         // FIXME workaround required for LESS to lint
