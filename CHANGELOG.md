@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.12
+
 - Remove tables from roll-result chat message when there are oracle buttons
 
 ## 1.20.11
