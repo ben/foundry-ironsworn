@@ -10,7 +10,8 @@
     "bump:patch": "node script/bump-version.js patch",
     "bump:minor": "node script/bump-version.js minor",
     "bump:major": "node script/bump-version.js major",
-    "postinstall": "patch-package"
+    "postinstall": "patch-package",
+    "lint:css": "stylelint ./src --config stylelint.config.js"
   },
   "author": "Ben Straub",
   "license": "MIT",
