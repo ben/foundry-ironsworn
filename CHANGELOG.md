@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.13
+
 - Avoid overriding move names with Dataforged data, so translation modules can ship move names.
 
 ## 1.20.12
