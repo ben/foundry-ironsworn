@@ -2,6 +2,14 @@
 
 ## Next Release
 
+## 1.20.13
+
+- Avoid overriding move names with Dataforged data, so translation modules can ship move names.
+
+## 1.20.12
+
+- Remove tables from roll-result chat message when there are oracle buttons
+
 ## 1.20.11
 
 - Stop minifying for production builds
