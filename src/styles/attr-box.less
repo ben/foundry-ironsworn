@@ -7,12 +7,13 @@
 
   .stat {
     --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+    --ironsworn-attr-box-width: 75px;
 
-    flex: 0 0 75px;
+    flex: 0 0 var(--ironsworn-attr-box-width);
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
     border-radius: var(--ironsworn-border-radius-lg) !important;
-    padding: 0.5rem 0;
+    padding: var(--ironsworn-spacer-lg) 0;
     text-align: center;
     text-transform: uppercase;
 
@@ -32,14 +33,16 @@
       margin-bottom: var(--ironsworn-spacer-md);
       width: 50%;
       text-align: center;
-      font-size: 18px;
+      font-size: var(--font-size-18);
       font-weight: bold;
     }
     .textStrokeMixin();
   }
 
   .edit {
-    flex: 0 0 30px;
+    --ironsworn-attr-box-edit-size: 30px;
+
+    flex: 0 0 var(--ironsworn-attr-box-edit-size);
     align-items: center;
     justify-items: center;
     transition: var(--ironsworn-transition);

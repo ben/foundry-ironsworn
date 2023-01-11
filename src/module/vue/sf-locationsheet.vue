@@ -175,7 +175,7 @@ label {
 }
 
 .box button {
-  padding: 7px;
+  padding: var(--ironsworn-spacer-lg);
 }
 
 .theme-starforged .highlighted {

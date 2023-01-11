@@ -12,8 +12,10 @@
 }
 
 .item-list {
+  --ironsworn-item-list-size: 100px;
+
   display: flex;
-  flex: 1 0 100px;
+  flex: 1 0 var(--ironsworn-item-list-size);
   flex-direction: column;
   margin: 0;
   padding-left: 0;
@@ -24,7 +26,8 @@
   }
 
   .item-controls {
-    flex: 0 0 36px;
+    --ironsworn-item-controls-size: 36px;
+    flex: 0 0 var(--ironsworn-item-controls-size);
   }
 
   .item {

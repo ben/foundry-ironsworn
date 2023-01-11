@@ -57,48 +57,54 @@ input[type='range'] {
   margin: 0;
   background: transparent;
   width: 100%;
-  height: 20px;
+  height: var(--ironsworn-range-height);
 
   &::-webkit-slider-runnable-track {
-    border: 1px solid @sliderTrackBorderColor;
-    border-radius: @sliderTrackBorderRadius;
-    box-shadow: @sliderBoxShadow;
-    background: @sliderTrackBgColor;
+    border: var(--ironsworn-range-track-border-width) solid
+      var(--ironsworn-range-track-border-color);
+    border-radius: var(--ironsworn-range-track-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-track-bg-color);
     cursor: pointer;
     width: 100%;
-    height: @sliderTrackHeight;
+    height: var(--ironsworn-range-track-height);
   }
 
   &::-webkit-slider-thumb {
     appearance: none;
+    // FIXME: figure out a smarter way to interpolate this
+    /* stylelint-disable-next-line mavrin/stylelint-declaration-use-css-custom-properties */
     margin-top: -4px;
-    border: 1px solid @sliderThumbBorderColor;
-    border-radius: 2px;
-    box-shadow: @sliderBoxShadow;
-    background: @sliderThumbBgColor;
+    border: var(--ironsworn-range-thumb-border-width) solid
+      var(--ironsworn-range-thumb-border-color);
+    border-radius: var(--ironsworn-range-thumb-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
-    width: @sliderThumbWidth;
-    height: @sliderThumbHeight;
+    width: var(--ironsworn-range-thumb-width);
+    height: var(--ironsworn-range-thumb-height);
   }
 
   &::-moz-range-track {
-    border: 1px solid @sliderTrackBorderColor;
-    border-radius: @sliderTrackBorderRadius;
-    box-shadow: @sliderBoxShadow;
-    background: @sliderTrackBgColor;
+    border: var(--ironsworn-range-track-border-width) solid
+      var(--ironsworn-range-track-border-color);
+    border-radius: var(--ironsworn-range-track-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-track-bg-color);
     cursor: pointer;
     width: 100%;
-    height: @sliderTrackHeight;
+    height: var(--ironsworn-range-track-height);
   }
 
   &::-moz-range-thumb {
-    border: 1px solid @sliderThumbBorderColor;
-    border-radius: 2px;
-    box-shadow: @sliderBoxShadow;
-    background: @sliderThumbBgColor;
+    border: var(--ironsworn-range-thumb-border-width) solid
+      var(--ironsworn-range-thumb-border-color);
+    border-radius: var(--ironsworn-range-thumb-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
-    width: @sliderThumbWidth;
-    height: @sliderThumbHeight;
+    width: var(--ironsworn-range-thumb-width);
+    height: var(--ironsworn-range-thumb-height);
   }
 
   &::-ms-track {
@@ -106,32 +112,35 @@ input[type='range'] {
     background: transparent;
     cursor: pointer;
     width: 100%;
-    height: @sliderTrackHeight;
+    height: var(--ironsworn-range-track-height);
     color: transparent;
   }
 
   &::-ms-fill-lower {
-    border: 1px solid @sliderTrackBorderColor;
-    border-radius: @sliderTrackHeight;
-    box-shadow: @sliderBoxShadow;
-    background: #8c8c8c;
+    border: var(--ironsworn-range-track-border-width) solid
+      var(--ironsworn-range-track-border-color);
+    border-radius: var(--ironsworn-range-track-height);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-color-midtone-50);
   }
 
   &::-ms-fill-upper {
-    border: 1px solid @sliderTrackBorderColor;
-    border-radius: @sliderTrackHeight;
-    box-shadow: @sliderBoxShadow;
-    background: @sliderTrackBgColor;
+    border: var(--ironsworn-range-track-border-width) solid
+      var(--ironsworn-range-track-border-color);
+    border-radius: var(--ironsworn-range-track-height);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-track-bg-color);
   }
 
   &::-ms-thumb {
-    border: 1px solid @sliderThumbBorderColor;
-    border-radius: 2px;
-    box-shadow: @sliderBoxShadow;
-    background: @sliderThumbBgColor;
+    border: var(--ironsworn-range-thumb-border-width) solid
+      var(--ironsworn-range-thumb-border-color);
+    border-radius: var(--ironsworn-range-thumb-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
-    width: @sliderThumbWidth;
-    height: @sliderThumbHeight;
+    width: var(--ironsworn-range-thumb-width);
+    height: var(--ironsworn-range-thumb-height);
   }
 
   &:focus {
@@ -139,41 +148,29 @@ input[type='range'] {
   }
 
   &:focus::-webkit-slider-runnable-track {
-    border-color: @sliderTrackBorderColorFocus;
-    background: @sliderTrackBgColorFocus;
+    border-color: var(--ironsworn-range-track-border-color-focus);
+    background: var(--ironsworn-range-track-bg-color-focus);
   }
 
   &:focus::-ms-fill-lower {
-    border-color: @sliderTrackBorderColorFocus;
-    background: @sliderTrackBgColor;
+    border-color: var(--ironsworn-range-track-border-color-focus);
+    background: var(--ironsworn-range-track-bg-color);
   }
 
   &:focus::-ms-fill-upper {
-    border-color: @sliderTrackBorderColorFocus;
-    background: @sliderTrackBgColorFocus;
+    border-color: var(--ironsworn-range-track-border-color-focus);
+    background: var(--ironsworn-range-track-bg-color-focus);
   }
 
   input[type='range'] + .range-value {
     display: block;
+    /* stylelint-disable-next-line mavrin/stylelint-declaration-use-css-custom-properties */
     flex: 0 1 48px;
+    /* stylelint-disable-next-line mavrin/stylelint-declaration-use-css-custom-properties */
     margin-left: 10px;
-    border: 1px solid var(--ironsworn-color-fg);
-    padding: 2px;
+    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
+    padding: var(--ironsworn-spacer-xs);
     text-align: center;
     .inputFieldStaticMixin();
   }
-  @sliderThumbBgColor: var(--ironsworn-color-fg);
-  @sliderThumbBorderColor: var(--ironsworn-color-cool-50);
-  @sliderThumbBgColorFocus: var(--ironsworn-color-fg);
-  @sliderThumbBorderColorFocus: var(--ironsworn-color-warm-90);
-  @sliderThumbHeight: 12px;
-  @sliderThumbWidth: 12px;
-
-  @sliderTrackHeight: 6px;
-  @sliderTrackBorderRadius: (@sliderTrackHeight / 2);
-  @sliderTrackBgColor: var(--ironsworn-color-fg-20);
-  @sliderTrackBorderColor: var(--ironsworn-color-fg-20);
-  @sliderTrackBgColorFocus: var(--ironsworn-color-warm-20);
-  @sliderTrackBorderColorFocus: var(--ironsworn-color-cool-50);
-  @sliderBoxShadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }

@@ -3,7 +3,9 @@
 
 // Editors: shared styles
 .editor {
-  min-height: 100px;
+  --ironsworn-editor-height-min: 100px;
+
+  min-height: var(--ironsworn-editor-height-min);
 }
 
 .editor {
@@ -39,7 +41,7 @@
 .ProseMirror {
   .inputFieldMixin();
 
-  padding: 0.5rem;
+  padding: var(--ironsworn-spacer-lg);
 }
 
 // Editors: TinyMCE

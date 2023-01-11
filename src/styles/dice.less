@@ -1,4 +1,6 @@
 .dice-roll {
+  --ironsworn-roll-term-size: var(--font-size-24);
+
   .dice-formula,
   .dice-total {
     border-width: var(--ironsworn-border-width-md);
@@ -40,7 +42,7 @@
         --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
         flex-grow: 0;
-        width: 1.5em;
+        width: var(--ironsworn-roll-term-size);
         height: 100%;
         .textStrokeMixin();
       }
@@ -60,8 +62,8 @@
         border: var(--ironsworn-border-width-lg) solid
           var(--ironsworn-color-border);
         border-radius: 50%;
-        width: 24px;
-        height: 24px;
+        width: var(--ironsworn-roll-term-size);
+        height: var(--ironsworn-roll-term-size);
         font-weight: bold;
       }
 
@@ -98,10 +100,11 @@
     display: inline-block;
     margin-right: 1px;
     background-repeat: no-repeat;
-    background-size: $width $width;
-    width: 24px;
+    background-size: var(--ironsworn-roll-term-size)
+      var(--ironsworn-roll-term-size);
+    width: var(--ironsworn-roll-term-size);
     text-align: center;
-    line-height: $width;
+    line-height: var(--ironsworn-roll-term-size);
     font-weight: bold;
 
     &.d4 {
