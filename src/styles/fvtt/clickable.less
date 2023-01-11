@@ -1,10 +1,11 @@
-@import '../mixins.less';
+@import (reference) '../mixins.less';
 
 .app:not(.ironsworn) button {
   .clickableBlockMixin();
-  border-radius: var(--ironsworn-border-radius-md);
+
   border-width: var(--ironsworn-border-width-md);
   border-style: solid;
+  border-radius: var(--ironsworn-border-radius-md);
 }
 
 form,

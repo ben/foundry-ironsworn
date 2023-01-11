@@ -1,58 +1,68 @@
 .entity-link,
 .content-link,
-// the following selector is a proxy for compendium links which don't have a class attached to them.
-// ideally, all of them would share an identifying data attribute that could be selected for -- something like 'data-action', maybe?
+// the following selector is a proxy for compendium links which dont have a class attached to them.
+// ideally, all of them would share an identifying data attribute that could be selected for -- something like "data-action", maybe?
 a[data-pack][data-uuid] {
   .clickableBlockMixin();
-  filter: none;
-  border-radius: var(--ironsworn-border-radius-sm);
+
   border-width: var(--ironsworn-border-width-md);
-  word-break: nowrap;
+  border-radius: var(--ironsworn-border-radius-sm);
+  border-color: var(--ironsworn-color-fg-30);
+  background-color: var(--ironsworn-color-bg-20);
+  padding: 0 var(--ironsworn-spacer-xs);
   white-space: nowrap;
+  word-break: nowrap;
   // forces fg colour so that it is the same colour as the text.
   color: inherit;
-  padding: 0 var(--ironsworn-spacer-xs);
-  background-color: var(--ironsworn-color-bg-20);
-  border-color: var(--ironsworn-color-fg-30);
+  filter: none;
+
   &:hover {
     background-color: var(--ironsworn-color-bg-50);
-    color: var(--ironsworn-color-fg-warm);
     text-shadow: none;
+    color: var(--ironsworn-color-fg-warm);
   }
+
   i,
-  &:before {
-    color: inherit;
+  &::before {
     margin-right: var(--ironsworn-spacer-xs);
+    color: inherit;
   }
 }
 
 .clickable {
   .interactiveMixin();
+
   cursor: pointer;
   // &:not(svg):not(.svg) {
   &.text:not(.block) {
     .clickableTextMixin();
-    &:not(:before) {
-      text-align: left;
+
+    &:not(::before) {
       justify-content: left;
+      text-align: left;
     }
   }
+
   &.block {
     .clickableBlockMixin();
   }
   // }
   svg,
   &.svg {
+    &:active {
+      fill-opacity: 0.5;
+    }
     &.selected,
-    &[aria-selected='true'] {
+    // FIXME workaround for prettier/postcss-less being crappy with quotes. ditto the quotes in the comment at the top of this file.
+    // can be removed once SCSS migration is complete
+    // prettier-ignore
+    &[aria-selected=true] {
       fill-opacity: 1;
     }
+
     &.hover,
     &:hover {
       fill-opacity: 0.35;
-    }
-    &:active {
-      fill-opacity: 0.5;
     }
   }
 }

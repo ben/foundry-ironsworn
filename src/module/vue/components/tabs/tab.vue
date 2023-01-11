@@ -21,16 +21,19 @@
 </template>
 <style lang="less" module>
 .tab {
-  border-radius: 0;
+  flex: 1 1 0;
+  gap: var(--ironsworn-spacer-sm);
   margin: 0;
   border: 0;
-  flex: 1 1 0;
-  overflow-x: visible;
+  border-radius: 0;
   padding: var(--ironsworn-spacer-md);
-  gap: var(--ironsworn-spacer-sm);
+  overflow-x: visible;
 }
+
 .vertical {
+  // TODO
 }
+
 .horizontal {
   line-height: var(--ironsworn-line-height-lg);
 }

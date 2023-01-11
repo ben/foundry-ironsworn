@@ -1,30 +1,36 @@
+/* stylelint-disable no-duplicate-selectors */
 // styles for TinyMCE and ProseMirror editors
 
 // Editors: shared styles
 .editor {
   min-height: 100px;
 }
+
 .editor {
   border: var(--ironsworn-border-width-md) solid
     var(--ironsworn-color-input-border);
   background: var(--ironsworn-color-input-bg);
   caret-color: var(--ironsworn-color-fg-highlight);
 }
+
 .tab .editor {
   border-top-width: 0;
   border-radius: 0 0 var(--ironsworn-border-radius-lg)
     var(--ironsworn-border-radius-lg);
 }
+
 .editor-edit {
   .clickableBlockMixin();
-  background: var(--ironsworn-color-bg);
+
   border-radius: var(--ironsworn-border-radius-md);
+  background: var(--ironsworn-color-bg);
 }
 
 // Editor custom select elements
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
   .clickableBlockMixin();
+
   border-radius: var(--ironsworn-border-radius-md);
 }
 
@@ -32,6 +38,7 @@
 
 .ProseMirror {
   .inputFieldMixin();
+
   padding: 0.5rem;
 }
 
@@ -40,18 +47,23 @@
   border: 0;
   border-radius: 0;
 }
+
 .tox {
   font-family: var(--font-primary);
-  :not(svg):not(rect) {
-    color: currentColor;
-  }
+
   &:not(.tox-tinymce-inline) .tox-editor-header {
+    justify-content: center;
     border-bottom: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border-muted);
-    justify-content: center;
   }
+
+  :not(svg, rect) {
+    color: currentcolor;
+  }
+
   .tox-toolbar__primary {
     justify-content: center;
+
     & > .tox-toolbar__group {
       padding: 0 var(--ironsworn-spacer-md);
     }
@@ -60,54 +72,65 @@
   .tox-tbtn .tox-toolbar-overlord,
   .tox-toolbar__primary,
   &:not(.tox-tinymce-inline) .tox-editor-header {
-    color: var(--ironsworn-color-fg);
     background: var(--ironsworn-color-bg);
+    color: var(--ironsworn-color-fg);
   }
+
   .tox-tbtn {
-    color: var(--ironsworn-color-clickable-block-fg);
+    transition: var(--ironsworn-transition);
+    border-width: var(--ironsworn-border-width-md);
+    border-style: solid;
     border-color: transparent;
     background: var(--ironsworn-color-clickable-block-bg);
-    border-style: solid;
-    border-width: var(--ironsworn-border-width-md);
-    transition: var(--std-animation);
+    color: var(--ironsworn-color-clickable-block-fg);
     // margin: 6px 1px var(--ironsworn-spacer-md) 0;
     &:focus {
-      color: var(--ironsworn-color-clickable-block-fg);
-      background: var(--ironsworn-color-clickable-block-bg);
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
+      background: var(--ironsworn-color-clickable-block-bg);
+      color: var(--ironsworn-color-clickable-block-fg);
+
       &:not(.tox-tbtn--disabled) {
         color: var(--ironsworn-color-clickable-block-fg);
+
         svg {
-          fill: currentColor;
+          fill: currentcolor;
         }
       }
     }
-    svg {
-      fill: currentColor;
-    }
+
     &:hover {
-      color: var(--ironsworn-color-clickable-block-fg-hover);
-      background: var(--ironsworn-color-clickable-block-bg-hover);
-      border-color: var(--ironsworn-color-clickable-block-border-hover);
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
+      border-color: var(--ironsworn-color-clickable-block-border-hover);
+      background: var(--ironsworn-color-clickable-block-bg-hover);
+      color: var(--ironsworn-color-clickable-block-fg-hover);
+
       svg {
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
+
+    svg {
+      fill: currentcolor;
+    }
+
     &[aria-pressed='true'] {
-      color: var(--ironsworn-color-clickable-block-fg-selected);
       background: var(--ironsworn-color-clickable-block-bg-selected);
+      color: var(--ironsworn-color-clickable-block-fg-selected);
+
       svg {
-        fill: currentColor;
+        fill: currentcolor;
       }
     }
   }
+
   .tox-tbtn--select {
     .inputFieldMixin();
+
     text-shadow: none;
   }
+
   .tox-collection--list {
     .tox-collection__item--active {
       background: var(--ironsworn-color-clickable-block-bg-hover);
@@ -149,9 +172,9 @@
 
 .tox {
   .tox-menu {
-    background: @menu-background-color;
     border: var(--ironsworn-border-width-md) solid @menu-border-color;
     box-shadow: @menu-box-shadow;
+    background: @menu-background-color;
   }
 }
 
@@ -213,12 +236,12 @@
 
 .tox {
   .tox-collection--list .tox-collection__group {
-    border-bottom-width: 0;
-    border-color: @collection-item-separator-color;
-    border-left-width: 0;
-    border-right-width: 0;
-    border-style: solid;
     border-top-width: var(--ironsworn-border-width-md);
+    border-right-width: 0;
+    border-bottom-width: 0;
+    border-left-width: 0;
+    border-style: solid;
+    border-color: @collection-item-separator-color;
 
     &:first-child {
       border-top-width: 0;
@@ -230,9 +253,10 @@
     background: @collection-group-label-background-color;
     color: @collection-group-label-text-color;
   }
+
   .tox-collection__item {
+    transition: var(--ironsworn-transition);
     color: @collection-item-label-text-color;
-    transition: var(--std-animation);
   }
 
   // Note: Ensure "enabled" is before "active", as active styles should have a higher precedence
@@ -278,12 +302,12 @@
   .tox-collection__item-icon,
   .tox-collection__item-checkmark {
     svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
   .tox-collection__item-label {
-    color: currentColor;
+    color: currentcolor;
   }
 
   .tox-collection__item-accessory {
@@ -292,7 +316,7 @@
 
   .tox-collection__item-caret {
     svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
@@ -300,15 +324,16 @@
   .tox-collection__item--state-disabled {
     background: transparent !important;
     color: @collection-item-label-disabled-text-color;
+
     .tox-collection__item-caret svg {
-      fill: currentColor;
+      fill: currentcolor;
     }
   }
 
   .tox-collection--horizontal {
-    background: @menu-background-color;
     border: var(--ironsworn-border-width-md) solid
       @collection-item-separator-color;
+    background: @menu-background-color;
   }
 }
 

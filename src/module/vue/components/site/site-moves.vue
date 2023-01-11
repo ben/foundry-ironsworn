@@ -64,16 +64,16 @@
 
 <style lang="less" module>
 .wrapper {
+  margin: 0;
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-midtone-30);
   height: max-content;
-  margin: 0;
 }
 
 .moveRowWrapper {
   flex-grow: 0;
-  height: max-content;
   border-color: var(--ironsworn-color-midtone-30);
+  height: max-content;
 }
 </style>
 

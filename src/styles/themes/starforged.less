@@ -1,6 +1,9 @@
+/* stylelint-disable order/order */
+// FIXME postcss-less apparently doesn't recognize fairly normal LESS imports. the pragma above can be removed once SCSS migration is complete
+
 // Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
-@import './starforged-font.css'; // HACK to avoid import error
+@import url('./starforged-font.css'); // HACK to avoid import error
 @import (reference) '../mixins.less';
 @import (reference) './mixins/colors.less';
 @import (reference) './mixins/palettize.less';
@@ -13,8 +16,8 @@
   .ironswornDarkThemeMixin(ironsworn-color);
   .softBorderMixin(ironsworn-color);
   .interactiveTintMixin(ironsworn-color-clickable-block,ironsworn-color);
-  --font-primary: 'Carrois Gothic SC', sans-serif;
 
+  --font-primary: 'Carrois Gothic SC', sans-serif;
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
   // CLICKABLE TEXT: HOVER EFFECT
@@ -22,10 +25,15 @@
     drop-shadow(0 0 3px var(--ironsworn-color-cool));
   --ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool),
     0 0 3px var(--ironsworn-color-cool);
-
   --ironsworn-tab-transition: slide;
-
-  --path-hexagon: polygon(0 25%, 50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%);
+  --ironsworn-path-hexagon: polygon(
+    0 25%,
+    50% 0,
+    100% 25%,
+    100% 75%,
+    50% 100%,
+    0 75%
+  );
 
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
   .fvttVarOverridesMixin();

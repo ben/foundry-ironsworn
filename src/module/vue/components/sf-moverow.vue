@@ -69,21 +69,24 @@
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
 
-  color: var(--ironsworn-color-light);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-thematic);
+  color: var(--ironsworn-color-light);
 }
+
 .cardColorsMixin {
-  color: var(--ironsworn-color-fg);
   border-color: var(--ironsworn-color-thematic);
   background-color: var(--ironsworn-color-bg);
+  color: var(--ironsworn-color-fg);
 }
 
 .sfMoveRow {
   --ironsworn-line-height: (--ironsworn-line-height-md);
   .thematicColorMixin();
-  padding: 0 @wrapper_spacing;
+
   position: relative;
+  padding: 0 @wrapper_spacing;
+
   &[aria-expanded='true'] {
     padding-top: @wrapper_spacing;
     padding-bottom: @wrapper_spacing;
@@ -98,9 +101,10 @@
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   .clickableTextMixin();
+
+  align-self: center;
   font-size: var(--font-size-20);
   aspect-ratio: 1 !important;
-  align-self: center;
 }
 
 .toggleButton {
@@ -110,29 +114,32 @@
   .clickableTextMixin();
   .textStrokeMixin( var(--ironsworn-color-dark));
   .thematicColorMixin();
-  height: inherit;
-  border: none;
-  background: none;
+
   display: flex;
   flex-direction: row;
-  text-align: left;
-  font-size: var(--font-size-16);
-  border-color: transparent;
+  align-items: center;
+  border: none;
   border-width: var(--ironsworn-border-width-md)
     var(--ironsworn-border-width-md) 0 var(--ironsworn-border-width-md);
   border-style: solid;
-  align-items: center;
+  border-color: transparent;
+  background: none;
+  height: inherit;
+  text-align: left;
+  font-size: var(--font-size-16);
+
   &:hover {
     box-shadow: none;
   }
 }
 
 .contentWrapper {
-  color: var(--ironsworn-color-fg);
-  background-color: var(--ironsworn-color-bg-80);
   border: 1px solid var(--ironsworn-color-light);
   border-radius: 0 @border_radius @border_radius @border_radius;
+  background-color: var(--ironsworn-color-bg-80);
+  color: var(--ironsworn-color-fg);
 }
+
 .moveControls {
   display: flex;
   flex-flow: row;
@@ -140,33 +147,35 @@
 }
 
 .toggleSection {
-  gap: @wrapper_spacing;
   display: flex;
   flex-flow: row nowrap;
+  gap: @wrapper_spacing;
 }
 
 .toggleWrapper {
-  transition: var(--std-animation);
-  height: var(--ironsworn-line-height-lg);
+  transition: var(--ironsworn-transition);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
   border-top-left-radius: @border_radius;
   border-top-right-radius: @border_radius;
-  border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  height: var(--ironsworn-line-height-lg);
+
   header:not(:last-child) & {
-    color: var(--ironsworn-color-light);
-    background-color: var(--ironsworn-color-dark);
     border-color: var(--ironsworn-color-clickable-block-border-selected);
+    background-color: var(--ironsworn-color-dark);
+    color: var(--ironsworn-color-light);
   }
 }
 
 .moveOracle {
   border-width: var(--ironsworn-border-width-md);
-  border-color: var(--ironsworn-color-border);
   border-style: solid;
   border-radius: var(--ironsworn-border-radius-sm);
+  border-color: var(--ironsworn-color-border);
   padding: 0;
+
   h4 {
     font-size: var(--font-size-16);
 
@@ -246,7 +255,7 @@ const data = reactive({
 
 const $collapsible = ref<typeof Collapsible>()
 
-type CollapsibleEmits = typeof Collapsible['$emit']
+type CollapsibleEmits = (typeof Collapsible)['$emit']
 
 interface MoveRowEmits extends CollapsibleEmits {
   rollClick(): void

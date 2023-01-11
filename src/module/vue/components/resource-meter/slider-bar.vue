@@ -49,7 +49,7 @@
 </template>
 
 <style lang="less" scoped>
-@import '../../../../styles/mixins.less';
+@import (reference) '../../../../styles/mixins.less';
 @segment_border_width: var(--ironsworn-border-width-md);
 @segment_border_radius: var(--ironsworn-border-radius-lg);
 @segment_line_height: var(--ironsworn-line-height-lg);
@@ -58,68 +58,83 @@
 .slider-bar {
   display: flex;
   flex-wrap: none;
-  border-radius: @segment_border_radius; // so the focus effect aligns properly
   grid-row: 1;
   border: 0;
+  border-radius: @segment_border_radius; // so the focus effect aligns properly
   padding: 0;
+
   &:focus {
     .focusOutlineMixin();
   }
+
   .slider-segment {
     box-sizing: border-box;
-    border: @segment_border_width solid currentColor;
-    text-align: center;
-    min-width: max-content;
-    line-height: @segment_line_height;
     position: relative;
     z-index: 1;
-    padding: 0;
+    border: @segment_border_width solid currentcolor;
     border-radius: 0;
+    padding: 0;
+    min-width: max-content;
+    text-align: center;
+    line-height: @segment_line_height;
+
     &:hover,
     &[aria-selected='true'] {
       z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
     }
   }
+
   &[aria-orientation='vertical'] {
-    flex-grow: 0;
     flex-direction: column;
+    flex-grow: 0;
+
     .slider-segment {
       flex: 0 0 auto;
       width: @segment_vertical_width;
+
       &:not(:first-child) {
         margin-block-start: calc(-1 * @segment_border_width);
       }
+
       &:first-child {
         border-start-start-radius: @segment_border_radius;
         border-start-end-radius: @segment_border_radius;
       }
+
       &:last-child {
         border-end-start-radius: @segment_border_radius;
         border-end-end-radius: @segment_border_radius;
       }
     }
   }
+
   &[aria-orientation='horizontal'] {
-    flex-direction: row;
     flex: 1;
+    flex-direction: row;
     flex-wrap: nowrap;
+
     .slider-segment {
       flex-grow: 1;
+
       &:not(:first-child) {
         margin-inline-start: calc(-1 * @segment_border_width);
       }
+
       &:first-child {
         border-top-left-radius: @segment_border_radius;
         border-bottom-left-radius: @segment_border_radius;
       }
+
       &:last-child {
         border-top-right-radius: @segment_border_radius;
         border-bottom-right-radius: @segment_border_radius;
       }
     }
   }
+
   &[aria-readonly='true'] {
     pointer-events: none !important;
+
     .slider-segment {
       pointer-events: none !important;
     }

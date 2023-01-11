@@ -73,11 +73,12 @@
 .fieldrow {
   p,
   input {
-    text-align: left;
-    padding: 0 0.5em;
     margin: 3px;
+    padding: 0 0.5em;
+    text-align: left;
   }
 }
+
 h3 {
   margin-top: 1em;
 }

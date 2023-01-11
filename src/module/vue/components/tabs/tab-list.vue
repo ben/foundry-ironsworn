@@ -19,16 +19,18 @@
   // TODO:
   // * fun slidey animation by applying some kind of border stroke or gradient background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.
   flex-grow: 0;
+
   &[aria-orientation='horizontal'] {
     flex-flow: row nowrap;
-    height: max-content;
     border-bottom: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
+    height: max-content;
   }
+
   &[aria-orientation='vertical'] {
-    border-left: var(--ironsworn-border-width-md) solid
-      var(--ironsworn-color-border);
     border-right: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
+    border-left: var(--ironsworn-border-width-md) solid
       var(--ironsworn-color-border);
   }
 }

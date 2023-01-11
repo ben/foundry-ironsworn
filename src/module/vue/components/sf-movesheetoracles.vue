@@ -38,9 +38,11 @@
 .wrapper {
   gap: var(--ironsworn-spacer-lg);
 }
+
 .navSearch {
   margin-top: var(--ironsworn-spacer-lg);
 }
+
 .itemList {
   padding: 0 var(--ironsworn-spacer-lg);
 }

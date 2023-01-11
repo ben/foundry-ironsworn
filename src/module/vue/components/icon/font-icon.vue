@@ -15,22 +15,25 @@
 
 <style lang="less" module>
 .fontIcon {
-  height: 1em;
-  width: 1em;
-  line-height: 1 !important;
-  position: relative;
   display: flex;
+  position: relative;
   justify-content: center;
-  &:before {
-    flex-basis: 0;
+  width: 1em;
+  height: 1em;
+  line-height: 1 !important;
+
+  &::before {
     display: flex-item;
+    flex-basis: 0;
   }
 }
+
 .fontIconBorder {
   each(v-bind('borderOptions'), {
     @{key}: @value
   });
 }
+
 .fontIconAnimation {
   each(v-bind('animationOptions'), {
     @{key}: @value;

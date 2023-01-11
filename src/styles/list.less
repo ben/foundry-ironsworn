@@ -1,9 +1,10 @@
 .item-row {
   border-width: var(--ironsworn-border-width-md);
-  border-color: var(--ironsworn-color-border);
   border-style: solid;
   border-radius: var(--ironsworn-border-radius-sm);
+  border-color: var(--ironsworn-color-border);
   padding: var(--ironsworn-spacer-sm);
+
   .item-row-control {
     flex-grow: 0;
     padding: var(--ironsworn-spacer-md);
@@ -11,84 +12,94 @@
 }
 
 .item-list {
-  list-style: none;
-  flex: 1 0 100px;
   display: flex;
+  flex: 1 0 100px;
   flex-direction: column;
-  padding-left: 0;
   margin: 0;
+  padding-left: 0;
+  list-style: none;
 
   .item-name {
     margin: 0;
   }
+
   .item-controls {
     flex: 0 0 36px;
   }
+
   .item {
+    border-bottom: var(--ironsworn-border-width-md) solid
+      var(--ironsworn-color-border);
+    padding: var(--ironsworn-spacer-sm) 0;
     // FIXME: what's this for?
     height: 30px;
     line-height: 24px;
-    padding: var(--ironsworn-spacer-sm) 0;
-    border-bottom: var(--ironsworn-border-width-md) solid
-      var(--ironsworn-color-border);
 
     img {
       flex: 0 0 24px;
       margin-right: var(--ironsworn-spacer-md);
     }
   }
+
   ol {
-    list-style: none;
     margin: 0;
     padding: 0;
+    list-style: none;
+
     li {
       border-color: var(--ironsworn-color-border);
     }
 
     & > h2 {
-      text-align: center;
       border-width: var(--ironsworn-border-width-md) 0;
+      text-align: center;
     }
   }
 }
 
 // WIP: genericizes appearance of the move tree browser
 .list-block {
-  --list-block-border-style: outset;
-  --list-block-border-width: var(--ironsworn-border-width-md);
-  --list-block-border-highlight: var(--ironsworn-color-light-10);
-  --list-block-border-shadow: var(--ironsworn-color-dark-10);
+  --ironsworn-list-block-border-style: outset;
+  --ironsworn-list-block-border-width: var(--ironsworn-border-width-md);
+  --ironsworn-list-block-border-highlight: var(--ironsworn-color-light-10);
+  --ironsworn-list-block-border-shadow: var(--ironsworn-color-dark-10);
+
   display: flex;
   flex-flow: column nowrap;
-  list-style: none;
   padding: 0;
+  list-style: none;
+
   .list-block-item {
     margin: 0;
-    height: max-content;
-    border-style: var(--list-block-border-style);
     border-width: 0;
+    border-style: var(--ironsworn-list-block-border-style);
+    height: max-content;
+
     &:not(:first-of-type) {
-      border-top-width: var(--list-block-border-width);
-      border-top-color: var(--list-block-border-highlight);
+      border-top-width: var(--ironsworn-list-block-border-width);
+      border-top-color: var(--ironsworn-list-block-border-highlight);
     }
+
     &:not(:last-of-type) {
-      border-bottom-width: var(--list-block-border-width);
-      border-bottom-color: var(--list-block-border-shadow);
+      border-bottom-width: var(--ironsworn-list-block-border-width);
+      border-bottom-color: var(--ironsworn-list-block-border-shadow);
     }
   }
+
   .list-block-header {
     &:not(:last-child) {
       // applies bottom border only if there's subsequent content
       border-width: 0;
-      border-style: var(--list-block-border-style);
-      border-bottom-width: var(--list-block-border-width);
-      border-bottom-color: var(--list-block-border-shadow);
+      border-bottom-width: var(--ironsworn-list-block-border-width);
+      border-style: var(--ironsworn-list-block-border-style);
+      border-bottom-color: var(--ironsworn-list-block-border-shadow);
+
       & ~ * {
         // applies top border to first sibling after list-block-header
         border-width: 0;
-        border-style: var(--list-block-border-style);
-        border-top-width: var(--list-block-border-width);
-        border-top-color: var(--list-block-border-highlight);
+        border-top-width: var(--ironsworn-list-block-border-width);
+        border-style: var(--ironsworn-list-block-border-style);
+        border-top-color: var(--ironsworn-list-block-border-highlight);
       }
     }
   }

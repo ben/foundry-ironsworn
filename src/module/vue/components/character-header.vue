@@ -20,25 +20,27 @@
 </template>
 <style lang="less">
 .xp-track-classic {
-  flex-grow: 0;
-  flex-direction: row;
   flex-basis: 130px;
+  flex-direction: row;
+  flex-grow: 0;
   align-items: center;
+
   .xp-box {
-    border: 1px solid currentColor;
-    aspect-ratio: 1;
-    height: 15px;
-    flex-basis: 15px;
-    margin: 3px;
-    text-align: center;
-    padding: 2px;
     box-sizing: border-box;
-    background-clip: content-box;
-    align-items: center;
     display: flex;
+    flex-basis: 15px;
+    align-items: center;
     justify-content: center;
+    margin: 3px;
+    border: 1px solid currentcolor;
+    background-clip: content-box;
+    padding: 2px;
+    height: 15px;
+    text-align: center;
+    aspect-ratio: 1;
+
     &.selected {
-      background-color: currentColor;
+      background-color: currentcolor;
     }
   }
 }

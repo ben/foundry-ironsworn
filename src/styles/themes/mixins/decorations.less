@@ -1,44 +1,48 @@
 .ironswornDecorationMixin {
-  .asset-ironsworn .asset-ability:before {
+  .asset-ironsworn .asset-ability::before {
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
   }
 }
 
 .starforgedDecorationMixin {
-  .asset-ironsworn .asset-ability:before {
+  .asset-ironsworn .asset-ability::before {
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
   }
-  .asset-starforged .asset-ability:before {
-    background-color: var(--ironsworn-color-fg);
+
+  .asset-starforged .asset-ability::before {
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
+    background-color: var(--ironsworn-color-fg);
   }
 }
 
 .starforgedAssetDecoMixin(@hex_deco_expanded_height: 50px,
 @hex_deco_collapsed_height: 32px) {
-  @hex_deco_aspect_ratio: 24 / 28;
   position: relative;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: -($height * 0.09);
+    right: ($height * 0.03);
+    transform: scaleX(-1);
+    z-index: auto;
+    background: var(--ironsworn-color-thematic);
+    height: @hex_deco_collapsed_height;
+    content: '';
+    pointer-events: none;
+    mask-image: url('/assets/misc/hex-deco.svg');
+    aspect-ratio: @hex_deco_aspect_ratio;
+    mask-repeat: no-repeat;
+  }
+
   & > * {
     z-index: 2;
   }
-  &:before {
-    display: block;
-    pointer-events: none;
-    content: '';
-    mask-image: url(/assets/misc/hex-deco.svg);
-    background: var(--ironsworn-color-thematic);
-    position: absolute;
-    aspect-ratio: @hex_deco_aspect_ratio;
-    z-index: auto;
-    mask-repeat: no-repeat;
-    transform: scaleX(-1);
-    height: @hex_deco_collapsed_height;
-    top: -($height * 0.09);
-    right: ($height * 0.03);
-  }
+
   .asset-header {
     padding-right: (@hex_deco_collapsed_height * @hex_deco_aspect_ratio);
   }
+  @hex_deco_aspect_ratio: 24 / 28;
 }

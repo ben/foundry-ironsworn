@@ -1,18 +1,21 @@
 // styles for FVTT's sidebar
 
-@import '../mixins.less';
+@import (reference) '../mixins.less';
+
 #sidebar {
   li.folder > .folder-header {
     background: var(--ironsworn-color-fg-20);
   }
+
   .settings-sidebar,
   .compendium-sidebar {
     h2,
     h3 {
-      background-color: var(--ironsworn-color-light-10);
       border-color: var(--ironsworn-color-midtone-50);
+      background-color: var(--ironsworn-color-light-10);
     }
   }
+
   .combat-sidebar {
     .combat-tracker-header {
       a.combat-button {
@@ -20,11 +23,13 @@
       }
     }
   }
+
   #sidebar-tabs {
     .collapse {
       .clickableBlockMixin();
-      background-color: transparent;
+
       border: 0;
+      background-color: transparent;
     }
   }
 
@@ -33,12 +38,15 @@
     #chat-log {
       // for chat *messages*, see chat-messages.less
     }
+
     #chat-controls {
       .roll-type-select {
         .inputFieldMixin();
+
         border-style: outset;
       }
     }
+
     textarea#chat-message {
       .inputFieldMixin();
     }

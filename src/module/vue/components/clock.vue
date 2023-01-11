@@ -29,24 +29,12 @@ svg.clock {
   fill: var(--ironsworn-color-thematic, var(--ironsworn-color-widget-fill));
   fill-opacity: 1;
   stroke: var(--ironsworn-color-fg);
-  stroke-width: var(--widget-stroke-width);
+  stroke-width: var(--ironsworn-widget-stroke-width);
   aspect-ratio: 1;
-  &[aria-valuenow='0']:not(:hover) {
-    .clock-segment {
-      fill-opacity: 0;
-    }
-  }
-  .clock-segment {
-    pointer-events: fill;
-    cursor: pointer;
-    vector-effect: non-scaling-stroke;
-    transition: var(--std-animation);
-    &:active {
-      fill-opacity: 1;
-    }
-  }
+
   &:hover {
-    fill-opacity: var(--clock-fill-opacity-hover);
+    fill-opacity: var(--ironsworn-clock-fill-opacity-hover);
+
     .clock-segment {
       &:hover {
         ~ .clock-segment {
@@ -55,14 +43,33 @@ svg.clock {
       }
     }
   }
+
   &:not(:hover) {
     .clock-segment {
       fill-opacity: 1;
+
       &[aria-selected='true'] {
         ~ .clock-segment {
           fill-opacity: 0;
         }
       }
+    }
+  }
+
+  &[aria-valuenow='0']:not(:hover) {
+    .clock-segment {
+      fill-opacity: 0;
+    }
+  }
+
+  .clock-segment {
+    transition: var(--ironsworn-transition);
+    cursor: pointer;
+    pointer-events: fill;
+    vector-effect: non-scaling-stroke;
+
+    &:active {
+      fill-opacity: 1;
     }
   }
 }

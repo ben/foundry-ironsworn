@@ -38,46 +38,55 @@
 .attr-slider {
   &[aria-orientation='vertical'] {
     display: grid;
+    grid-template-rows: max-content max-content max-content;
+    grid-template-columns: max-content max-content;
     grid-auto-flow: column;
     place-items: start;
-    grid-template-columns: max-content max-content;
-    grid-template-rows: max-content max-content max-content;
+
     .attr-slider-label {
       grid-row: 1;
       max-height: 50%;
     }
+
     .attr-slider-bar {
       grid-row: 1;
     }
+
     &.label-none {
       display: flex;
     }
+
     &.label-left {
       .attr-slider-label {
         grid-column: 1;
       }
     }
+
     &.label-right {
       .attr-slider-label {
         grid-column: 2;
       }
     }
   }
+
   &[aria-orientation='horizontal'] {
     display: flex;
     flex-flow: row wrap;
     justify-items: space-between;
+
     .attr-slider-label {
       > * {
         padding-inline-end: @segment_border_radius;
       }
     }
   }
+
   .attr-slider-label {
-    text-transform: uppercase;
-    line-height: 1;
     display: flex;
     align-items: center;
+    text-transform: uppercase;
+    line-height: 1;
+
     > * {
       text-transform: inherit;
     }

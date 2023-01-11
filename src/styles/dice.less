@@ -1,17 +1,19 @@
 .dice-roll {
   .dice-formula,
   .dice-total {
-    padding: var(--ironsworn-spacer-md) 0px var(--ironsworn-spacer-md) 0px;
-    background: var(--ironsworn-color-fg-10);
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
-    border-color: var(--ironsworn-color-border-muted);
     border-radius: var(--ironsworn-border-radius-md);
+    border-color: var(--ironsworn-color-border-muted);
     box-shadow: 0 0 2px var(--ironsworn-color-bg) inset;
+    background: var(--ironsworn-color-fg-10);
+    padding: var(--ironsworn-spacer-md) 0 var(--ironsworn-spacer-md) 0;
+
     .die {
       &.min {
         color: var(--ironsworn-color-fg);
       }
+
       &.max {
         color: var(--ironsworn-color-fg);
       }
@@ -20,52 +22,62 @@
 
   .roll-graphic {
     @graphic-gap: 0.25rem;
+
     &.dice-formula {
       display: flex;
-      flex-flow: row nowrap;
       flex: auto;
+      flex-flow: row nowrap;
       gap: @graphic-gap;
       justify-content: center;
       margin: 0;
       padding: @graphic-gap;
+
       * {
         margin: 0;
       }
+
       .die {
+        --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+
+        flex-grow: 0;
         width: 1.5em;
         height: 100%;
-        flex-grow: 0;
-        --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
         .textStrokeMixin();
       }
+
       .indeterminate-value {
         color: var(--ironsworn-color-midtone-60);
       }
+
       .action-score-capped {
         text-decoration: dotted underline;
       }
+
       .score {
-        font-weight: bold;
-        border: var(--ironsworn-border-width-lg) solid
-          var(--ironsworn-color-border);
-        border-radius: 50%;
-        height: 24px;
-        width: 24px;
         display: flex;
         align-items: center;
         justify-content: center;
+        border: var(--ironsworn-border-width-lg) solid
+          var(--ironsworn-color-border);
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        font-weight: bold;
       }
+
       .challenge-dice {
         display: flex;
         flex-direction: row;
         flex-grow: 0;
         gap: (@graphic-gap / 2);
+
         .challenge-die {
         }
       }
     }
   }
 }
+
 .ironsworn-roll {
   h3,
   .hit-type {
@@ -73,30 +85,31 @@
   }
 
   .diceGlowMixin(@color, @diceDropShadowSize: 0px 0px 2px) {
+    background-blend-mode: screen;
     color: @color !important;
     filter: drop-shadow(@diceDropShadowSize @color)
       drop-shadow(@diceDropShadowSize @color);
-    background-blend-mode: screen;
   }
 
   .roll {
-    width: 24px;
-    line-height: $width;
+    --ironsworn-dice-background-color: var(--ironsworn-color-fg-30);
+    --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+
     display: inline-block;
     margin-right: 1px;
     background-repeat: no-repeat;
     background-size: $width $width;
-    font-weight: bold;
+    width: 24px;
     text-align: center;
-    --dice-background-color: var(--ironsworn-color-fg-30);
-    --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+    line-height: $width;
+    font-weight: bold;
 
     &.d4 {
       background-image: url('../../icons/svg/d4-grey.svg');
     }
 
-    &.d6:before {
-      background-color: var(--dice-background-color);
+    &.d6::before {
+      background-color: var(--ironsworn-dice-background-color);
       mask-image: url('/assets/icons/d6-blank.svg');
       content: '';
     }
@@ -105,8 +118,8 @@
       background-image: url('../../icons/svg/d8-grey.svg');
     }
 
-    &.d10:before {
-      background-color: var(--dice-background-color);
+    &.d10::before {
+      background-color: var(--ironsworn-dice-background-color);
       mask-image: url('/assets/icons/d10-blank.svg');
       content: '';
     }
@@ -133,6 +146,7 @@
       .diceGlowMixin(var(--ironsworn-color-warning));
     }
   }
+
   del .roll {
     text-decoration: line-through;
     .diceGlowMixin(var(--ironsworn-color-warning));

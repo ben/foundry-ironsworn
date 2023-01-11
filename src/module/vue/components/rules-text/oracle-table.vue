@@ -31,14 +31,13 @@ caption,
 th {
   text-align: left;
 }
+
 th,
 td {
   &:first-child {
     padding-inline-start: 2px;
   }
-}
-th,
-td {
+
   &:last-child {
     padding-inline-end: 2px;
   }

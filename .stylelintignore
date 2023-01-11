@@ -1,0 +1,3 @@
+*.*
+!src/styles/**/*.less
+!src/module/vue/**/*.vue

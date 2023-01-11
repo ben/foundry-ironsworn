@@ -6,7 +6,7 @@
 
     <div class="flexrow">
       <!-- Tab selection on left -->
-      <div class="flexcol nogrow" style="white-space: nowrap; max-width: 33%">
+      <div class="flexcol nogrow" style=" max-width: 33%;white-space: nowrap">
         <!-- These are always here -->
         <sfmove-tab
           :currentProperty="state.currentProperty"

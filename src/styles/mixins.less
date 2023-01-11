@@ -1,3 +1,4 @@
+/* stylelint-disable function-name-case */
 // typography mixins
 
 // until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
@@ -6,11 +7,12 @@
 // if you want this + a soft shadow, LESS can combine them with square bracket notation to access the text-shadow property.
 // generated with owumaro.github.io/text-stroke-generator/
 .textStrokeMixin(@color: var(--ironsworn-color-text-stroke)) {
-  text-shadow: 1px 0px 0px @color, 0.540302px 0.841471px 0px @color,
-    -0.416147px 0.909297px 0px @color, -0.989993px 0.14112px 0px @color,
-    -0.653644px -0.756803px 0px @color, 0.283662px -0.958924px 0px @color,
-    0.96017px -0.279416px 0px @color;
+  text-shadow: 1px 0 0 @color, 0.540302px 0.841471px 0 @color,
+    -0.416147px 0.909297px 0 @color, -0.989993px 0.14112px 0 @color,
+    -0.653644px -0.756803px 0 @color, 0.283662px -0.958924px 0 @color,
+    0.96017px -0.279416px 0 @color;
 }
+
 .initial-caps {
   &::first-letter {
     text-transform: uppercase;
@@ -51,59 +53,67 @@
 
 .tabBaseMixin(@glowSpread: 5px, @glowBlur: 1px,@borderWidth: var(--ironsworn-border-width-md)) {
   border-width: @borderWidth;
+
   &:hover {
     .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-clickable-block-bg-selected));
+
     border-color: var(--ironsworn-color-fg-muted);
   }
+
   &[aria-selected='true'],
   &.active {
     .borderGlowInteriorMixin(@glowSpread, @glowBlur, var(--ironsworn-color-cool));
+
     border-color: var(--ironsworn-color-warm);
   }
 }
 
 .tabTopMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
   .tabBaseMixin();
-  border-top-right-radius: @borderRadius;
+
+  border-bottom-width: 0;
   border-top-left-radius: @borderRadius;
-  border-bottom-width: 0px;
+  border-top-right-radius: @borderRadius;
 }
 .tabBottomMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
   .tabBaseMixin();
-  border-bottom-right-radius: @borderRadius;
+
+  border-top-width: 0;
   border-bottom-left-radius: @borderRadius;
-  border-top-width: 0px;
+  border-bottom-right-radius: @borderRadius;
 }
 .tabLeftMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
   .tabBaseMixin();
+
+  border-right-width: 0;
   border-top-left-radius: @borderRadius;
   border-bottom-left-radius: @borderRadius;
-  border-right-width: 0px;
 }
 .tabRightMixin(@borderRadius:var(--ironsworn-border-radius-lg)) {
   .tabBaseMixin();
+
+  border-left-width: 0;
   border-top-right-radius: @borderRadius;
   border-bottom-right-radius: @borderRadius;
-  border-left-width: 0px;
 }
 
 .borderMixin(@color:var(--ironsworn-color-border),@width:var(--ironsworn-border-width-md)) {
-  color: @color;
-  border-style: solid;
   border-width: @width;
+  border-style: solid;
+  color: @color;
 }
 
 // CLICKABLE MIXINS
 
 .interactiveMixin {
-  transition: var(--std-animation);
+  transition: var(--ironsworn-transition);
   &.disabled, // FIXME: ditch this class, its redundant with more semantic options
     &:disabled,
     &[aria-disabled="true"] {
-    color: inherit;
-    cursor: not-allowed;
-    pointer-events: none;
     opacity: 0.35;
+    cursor: not-allowed;
+    color: inherit;
+    pointer-events: none;
   }
 }
 
@@ -111,6 +121,7 @@
   color: var(--ironsworn-color-clickable-text-hover);
   filter: var(--ironsworn-filter-highlight);
 }
+
 .textFocusMixin {
   .focusOutlineMixin();
 }
@@ -122,16 +133,28 @@
 
 .clickableTextMixin {
   --ironsworn-color-text-stroke: transparent;
-  .interactiveMixin();
+
+  transition-duration: var(--ironsworn-transition-duration);
+  transition-property: color, filter, text-shadow, text-stroke;
+  transition-timing-function: var(--ironsworn-transition-timing-function);
   margin: 0;
+  border-width: 0;
+  box-shadow: none !important;
   // .textStrokeMixin();
   background: transparent;
   color: var(--ironsworn-color-clickable-text);
-  border-width: 0;
-  box-shadow: none !important;
-  transition-property: color, filter, text-shadow, text-stroke;
-  transition-duration: var(--ironsworn-transition-duration);
-  transition-timing-function: var(--ironsworn-transition-timing-function);
+
+  &:hover,
+  &.hover {
+    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
+    .textHoverMixin();
+  }
+
+  &:focus,
+  &:focus-within {
+    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
+    .textFocusMixin();
+  }
   // we can't do much about the paint order here, but that's fine -- the overlap of a transparent color creates a nice effect here.
   &[aria-selected='true'],
   &.selected,
@@ -139,23 +162,14 @@
     --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
     .textActiveMixin();
   }
-  &:hover,
-  &.hover {
-    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    .textHoverMixin();
-  }
-  &:focus,
-  &:focus-within {
-    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    .textFocusMixin();
-  }
+  .interactiveMixin();
 }
 
 .blockHoverMixin(@blockSize:50px) {
-  color: var(--ironsworn-color-clickable-block-fg-hover);
-  background-color: var(--ironsworn-color-clickable-block-bg-hover);
-  border-color: var(--ironsworn-color-clickable-block-border-hover);
   z-index: var(--ironsworn-z-index-higher);
+  border-color: var(--ironsworn-color-clickable-block-border-hover);
+  background-color: var(--ironsworn-color-clickable-block-bg-hover);
+  color: var(--ironsworn-color-clickable-block-fg-hover);
 }
 
 .blockFocusMixin {
@@ -164,28 +178,31 @@
 }
 
 .blockActiveMixin {
+  z-index: var(--ironsworn-z-index-high);
   outline: none;
-  color: var(--ironsworn-color-clickable-block-fg-selected);
+  border-color: var(--ironsworn-color-clickable-block-border-selected);
   background-color: var(
     --ironsworn-color-thematic,
     var(--ironsworn-color-clickable-block-bg-selected)
   );
-  border-color: var(--ironsworn-color-clickable-block-border-selected);
-  z-index: var(--ironsworn-z-index-high);
+  color: var(--ironsworn-color-clickable-block-fg-selected);
 }
 
 // For the block's 'default' state.
 .blockMixin(@blockSize:50px) {
   .interactiveMixin();
-  box-shadow: none;
-  overflow-y: visible;
-  border-color: var(--ironsworn-color-clickable-block-border);
+
   border-style: solid;
-  color: var(--ironsworn-color-clickable-block-fg);
+  border-color: var(--ironsworn-color-clickable-block-border);
+  box-shadow: none;
   background-color: var(--ironsworn-color-clickable-block-bg);
+  overflow-y: visible;
+  color: var(--ironsworn-color-clickable-block-fg);
+
   &.vertical-text {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
+
     & > * {
       writing-mode: vertical-lr !important;
     }
@@ -194,42 +211,48 @@
 
 .iconButtonBaseMixin {
   display: flex;
-  align-items: center;
   flex-flow: row nowrap;
   align-content: center;
-  text-align: center;
+  align-items: center;
   justify-content: center;
   padding: var(--ironsworn-spacer-xs);
+  text-align: center;
+
+  &::before {
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+  }
+
   &:not(:empty) {
     gap: var(--ironsworn-spacer-xs);
   }
+
   &:empty {
+    flex-grow: 0;
     // restricts width + removes border if there's no text
     border: none !important;
-    flex-grow: 0;
-    line-height: 1;
-    height: max-content;
     width: max-content;
-  }
-  &:before {
+    height: max-content;
     line-height: 1;
-    height: 1em;
-    width: 1em;
   }
   // override to compensate for chrome user agent stylesheet bug: https://bugs.chromium.org/p/chromium/issues/detail?id=681917
   .button-text {
     // makes this seamless with existing buttons that don't need this styling
     display: inline;
+
     strong {
       white-space: nowrap;
     }
   }
+
   &.vertical-text {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
+
     .button-text {
-      line-height: inherit;
       display: inherit;
+      line-height: inherit;
       writing-mode: inherit;
     }
   }
@@ -237,14 +260,17 @@
 
 .clickableBlockMixin(@blockSize:50px,) {
   .blockMixin(@blockSize);
+
   &:hover,
   &.hover {
     .blockHoverMixin(@blockSize);
   }
+
   &:focus,
   &:focus-within {
     .blockFocusMixin();
   }
+
   &[aria-selected='true'],
   &.selected,
   &.active {
@@ -257,16 +283,17 @@
 .inputFieldFocusMixin(@spread: 6px) {
   .borderGlowExteriorMixin(@spread);
   .borderAccentColorMixin(var(--ironsworn-color-warm-50), var(--ironsworn-color-cool-50));
+
   outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-warm);
 }
 
 .inputFieldStaticMixin() {
-  color: var(--ironsworn-color-fg);
-  background: var(--ironsworn-color-input-bg);
   border-width: var(--ironsworn-border-width-md);
   border-style: var(--ironsworn-input-border-style);
-  border-color: var(--ironsworn-color-input-border);
   border-radius: var(--ironsworn-border-radius-md);
+  border-color: var(--ironsworn-color-input-border);
+  background: var(--ironsworn-color-input-bg);
+  color: var(--ironsworn-color-fg);
 }
 
 .inputFieldMixin(@spread:6px) {
@@ -276,19 +303,24 @@
   outline-color: transparent;
   .interactiveMixin();
   .inputFieldStaticMixin();
+
   cursor: initial;
+
   &::placeholder {
-    color: var(--ironsworn-color-fg);
     opacity: 0.5;
+    color: var(--ironsworn-color-fg);
   }
+
   &:hover {
     border-color: var(--ironsworn-color-clickable-block-border-hover);
     .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool));
   }
+
   &:focus,
   &:focus-within {
     .inputFieldFocusMixin();
     .borderAccentColorMixin(var(--ironsworn-color-warm-80), var(--ironsworn-color-cool-80));
+
     &:hover {
       box-shadow: .inputFieldFocusMixin() [box-shadow],
         .borderGlowInteriorMixin(@spread, 0, var(--ironsworn-color-cool))
@@ -299,9 +331,10 @@
 
 .marginMixin(@direction) {
   @spacer: var(--ironsworn-spacer-md);
+
+  position: relative;
   flex: 0;
   border-@{direction}-style: solid;
-  position: relative;
   border-@{direction}-width: var(--ironsworn-border-width-md);
   margin-@{direction}: @spacer;
   border-@{direction}-color: var(--ironsworn-color-border);
@@ -330,34 +363,43 @@
 }
 
 .overlayMixin() {
-  content: '';
   position: absolute;
   top: 0;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
-  pointer-events: none;
   z-index: var(--ironsworn-z-index-highest);
+  content: '';
+  pointer-events: none;
 }
 
 .textCompactMixin() {
   ol,
   ul {
-    padding: 0 0 0 1em;
+    --ironsworn-compact-list-indent: 1em;
+
+    padding: 0;
+    padding-left: var(--ironsworn-compact-list-indent);
+
     li {
       margin: 0.2em 0;
+
       &:last-child {
         margin-bottom: 0;
       }
+
       &:first-child {
         margin-top: 0;
       }
     }
   }
+
   ul {
     list-style-type: disc;
+
     ul {
       list-style-type: circle;
+
       ul {
         list-style-type: square;
       }

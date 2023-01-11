@@ -12,6 +12,7 @@
 <style lang="less">
 .document-img {
   cursor: pointer;
+
   &[src$='.svg'] {
     // tint to ensure that transparent SVGs have adequate contrast
     background-color: var(--ironsworn-color-fg-10);

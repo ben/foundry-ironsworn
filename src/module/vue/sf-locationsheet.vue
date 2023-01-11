@@ -62,12 +62,12 @@
           nogrow
           icon="ironsworn:d10-tilt"
           style="
-            padding: 0px var(--ironsworn-spacer-md);
             position: absolute;
+            top: 1px;
             right: 15px;
+            padding: 0 var(--ironsworn-spacer-md);
             height: 25px;
             line-height: 30px;
-            top: 1px;
           "
           @click="randomizeKlass"
           :tooltip="randomKlassTooltip"
@@ -144,20 +144,23 @@
 <style lang="less">
 .sf-location-header {
   display: grid;
-  grid-auto-flow: column;
   grid-template-columns: max-content 1fr max-content;
+  grid-auto-flow: column;
+
   > * {
     grid-row: 1;
   }
+
   .charname {
     grid-column: 2 / span 2;
   }
+
   .btn-randomize-name {
     grid-column: 3;
-    height: 50px;
-    aspect-ratio: 1;
     border-radius: 0 var(--ironsworn-border-radius-md)
       var(--ironsworn-border-radius-md) 0;
+    height: 50px;
+    aspect-ratio: 1;
   }
 }
 </style>
@@ -170,9 +173,11 @@ label {
     flex-grow: 0;
   }
 }
+
 .box button {
   padding: 7px;
 }
+
 .theme-starforged .highlighted {
   background: #055;
 }

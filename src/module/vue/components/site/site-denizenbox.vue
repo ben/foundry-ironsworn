@@ -7,7 +7,7 @@
   >
     <label
       class="nogrow"
-      style="white-space: nowrap; flex-basis: 4em; line-height: 26px"
+      style=" flex-basis: 4em; line-height: 26px;white-space: nowrap"
     >
       <span v-if="denizen.low === denizen.high">{{ denizen.low }}</span>
       <span v-else>{{ denizen.low }}–{{ denizen.high }}</span>

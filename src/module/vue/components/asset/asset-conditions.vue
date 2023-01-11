@@ -21,23 +21,24 @@
 <style lang="less" module>
 .assetconditions {
   display: flex;
-  flex-grow: 0;
   flex-direction: column;
+  flex-grow: 0;
   justify-content: space-around;
   margin: var(--ironsworn-spacer-md);
 }
+
 .condition {
-  font-size: x-small;
-  white-space: nowrap;
-  line-height: 12px;
   flex-basis: 12px;
   margin: 1px 0;
+  line-height: 12px;
+  white-space: nowrap;
+  font-size: x-small;
 
   input[type='checkbox'] {
-    width: 12px;
-    height: 12px;
     flex: 0 0 12px;
     margin: 0 3px;
+    width: 12px;
+    height: 12px;
     vertical-align: bottom;
   }
 }

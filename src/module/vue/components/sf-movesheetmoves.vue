@@ -65,20 +65,23 @@
 .navSearch {
   margin-top: var(--ironsworn-spacer-lg);
 }
+
 .searchBtn {
-  // padding: 6px;
-  &:empty {
-    // to override default icon-button styling
-    height: var(--form-field-height);
-    width: var(--form-field-height);
-    padding: var(--ironsworn-spacer-md);
-  }
   aspect-ratio: 1;
   flex: 0;
+  // padding: 6px;
+  &:empty {
+    padding: var(--ironsworn-spacer-md);
+    width: var(--form-field-height);
+    // to override default icon-button styling
+    height: var(--form-field-height);
+  }
 }
+
 .wrapper {
   gap: var(--ironsworn-spacer-lg);
 }
+
 .itemList {
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
@@ -86,13 +89,15 @@
   gap: var(--ironsworn-spacer-md);
   margin: 0;
 }
+
 .categoryList {
+  // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
+  --ironsworn-line-height: var(--ironsworn-line-height-md);
   // FIXME: for some reason, no matter where i set overflow, the focus outline on the list items is clipped. ideally, they shouldn't be!
   overflow-x: clip;
   overflow-clip-margin: 5px; // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
-  // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
-  --ironsworn-line-height: var(--ironsworn-line-height-md);
 }
+
 .filteredMoveRow {
   border-radius: var(--ironsworn-border-radius-lg);
 }

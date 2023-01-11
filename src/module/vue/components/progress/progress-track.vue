@@ -29,50 +29,60 @@
 </template>
 
 <style lang="less">
-@import '../../../../styles/mixins.less';
+@import (reference) '../../../../styles/mixins.less';
 @box_border_radius: var(--ironsworn-border-radius-md);
 @box_border_width: var(--ironsworn-border-width-md);
 @box_gap: 4px;
+
 .progress-track {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-auto-flow: column;
+  gap: @box_gap;
+  align-items: center;
+  justify-content: center;
+
   &:focus {
     .focusOutlineMixin();
   }
-  display: grid;
-  grid-auto-flow: column;
-  grid-template-columns: repeat(10, 1fr);
-  justify-content: center;
-  align-items: center;
-  gap: @box_gap;
+
   .progress-track-box {
-    max-height: var(--ironsworn-vertical-slider-width);
-    max-width: var(--ironsworn-vertical-slider-width);
     border-radius: @box_border_radius;
+    max-width: var(--ironsworn-vertical-slider-width);
+    max-height: var(--ironsworn-vertical-slider-width);
   }
+
   &.compact-progress {
-    gap: 0;
     display: flex;
     flex-flow: row nowrap;
+    gap: 0;
+
     .progress-track-box {
       flex-basis: 10%;
-      border: @box_border_width solid currentColor;
+      margin: 0;
+      border: @box_border_width solid currentcolor;
+      border-radius: 0;
+
+      &:first-child {
+        border-radius: @box_border_radius 0 0 @box_border_radius;
+      }
+
+      &:not(:first-child) {
+        margin-left: calc(@box_border_width / -2);
+      }
+
+      &:last-child {
+        border-radius: 0 @box_border_radius @box_border_radius 0;
+      }
+
+      &:not(:last-child) {
+        margin-right: calc(@box_border_width / -2);
+      }
+
       .progress-tick {
         // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
         vector-effect: non-scaling-stroke;
         stroke-width: 1px;
-      }
-      border-radius: 0;
-      margin: 0;
-      &:first-child {
-        border-radius: @box_border_radius 0 0 @box_border_radius;
-      }
-      &:not(:first-child) {
-        margin-left: calc(@box_border_width / -2);
-      }
-      &:last-child {
-        border-radius: 0 @box_border_radius @box_border_radius 0;
-      }
-      &:not(:last-child) {
-        margin-right: calc(@box_border_width / -2);
       }
     }
   }
