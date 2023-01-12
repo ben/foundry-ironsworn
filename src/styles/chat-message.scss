@@ -95,6 +95,7 @@
     .oracle-table.oracle-table-partial {
       transition: none;
       margin: var(--ironsworn-spacer-xs) 0;
+
       // tint to make this an easier read when the message uses e.g. FVTT's default background texture
       background-color: var(--ironsworn-color-bg-20);
 

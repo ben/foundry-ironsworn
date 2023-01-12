@@ -3,8 +3,10 @@
 [data-ironsworn-drop-type] {
   --ironsworn-drop-outline-width: 3px;
   --ironsworn-drop-outline-style: dotted;
+
   // The duration of the transition that starts and ends the animation
   --ironsworn-drop-transition-duration: 0.2s;
+
   // The duration of the looped pulse animation
   --ironsworn-drop-animation-duration: 0.8s;
   --ironsworn-drop-animation-timing-function: ease-in-out;
