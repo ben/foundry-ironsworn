@@ -51,17 +51,19 @@
 <style lang="scss" scoped>
 /* stylelint-disable no-descending-specificity */
 
-$segment-border-width: var(--ironsworn-border-width-md);
-$segment-border-radius: var(--ironsworn-border-radius-lg);
-$segment-line-height: var(--ironsworn-line-height-lg);
-$segment-vertical-width: var(--ironsworn-vertical-slider-width);
-
 .slider-bar {
+  --ironsworn-slider-segment-border-width: var(--ironsworn-border-width-md);
+  --ironsworn-slider-segment-border-radius: var(--ironsworn-border-radius-lg);
+  --ironsworn-slider-segment-line-height: var(--ironsworn-line-height-lg);
+  --ironsworn-slider-segment-vertical-width: var(
+    --ironsworn-vertical-slider-width
+  );
+
   display: flex;
   flex-wrap: none;
   grid-row: 1;
   border: 0;
-  border-radius: $segment-border-radius; // so the focus effect aligns properly
+  border-radius: var(--ironsworn-slider-segment-border-radius);
   padding: 0;
 
   &:focus {
@@ -72,12 +74,12 @@ $segment-vertical-width: var(--ironsworn-vertical-slider-width);
     box-sizing: border-box;
     position: relative;
     z-index: 1;
-    border: $segment-border-width solid currentcolor;
+    border: var(--ironsworn-slider-segment-border-width) solid currentcolor;
     border-radius: 0;
     padding: 0;
     min-width: max-content;
     text-align: center;
-    line-height: $segment-line-height;
+    line-height: var(--ironsworn-slider-segment-line-height);
 
     &:hover,
     &[aria-selected='true'] {
@@ -92,20 +94,24 @@ $segment-vertical-width: var(--ironsworn-vertical-slider-width);
 
     .slider-segment {
       flex: 0 0 auto;
-      width: $segment-vertical-width;
+      width: var(--ironsworn-slider-segment-vertical-width);
 
       &:not(:first-child) {
-        margin-block-start: calc(-1 * $segment-border-width);
+        margin-block-start: calc(
+          -1 * var(--ironsworn-slider-segment-border-width)
+        );
       }
 
       &:first-child {
-        border-start-start-radius: $segment-border-radius;
-        border-start-end-radius: $segment-border-radius;
+        border-start-start-radius: var(
+          --ironsworn-slider-segment-border-radius
+        );
+        border-start-end-radius: var(--ironsworn-slider-segment-border-radius);
       }
 
       &:last-child {
-        border-end-start-radius: $segment-border-radius;
-        border-end-end-radius: $segment-border-radius;
+        border-end-start-radius: var(--ironsworn-slider-segment-border-radius);
+        border-end-end-radius: var(--ironsworn-slider-segment-border-radius);
       }
     }
   }
@@ -118,17 +124,23 @@ $segment-vertical-width: var(--ironsworn-vertical-slider-width);
       flex-grow: 1;
 
       &:not(:first-child) {
-        margin-inline-start: calc(-1 * $segment-border-width);
+        margin-inline-start: calc(
+          -1 * var(--ironsworn-slider-segment-border-width)
+        );
       }
 
       &:first-child {
-        border-top-left-radius: $segment-border-radius;
-        border-bottom-left-radius: $segment-border-radius;
+        border-top-left-radius: var(--ironsworn-slider-segment-border-radius);
+        border-bottom-left-radius: var(
+          --ironsworn-slider-segment-border-radius
+        );
       }
 
       &:last-child {
-        border-top-right-radius: $segment-border-radius;
-        border-bottom-right-radius: $segment-border-radius;
+        border-top-right-radius: var(--ironsworn-slider-segment-border-radius);
+        border-bottom-right-radius: var(
+          --ironsworn-slider-segment-border-radius
+        );
       }
     }
   }
