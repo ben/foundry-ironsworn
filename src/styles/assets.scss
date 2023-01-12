@@ -2,8 +2,6 @@
 @use 'sass:math';
 @use 'mixins';
 
-$hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
-
 // Here we encode the bullet styles as classes, and pull them into the
 // ul>li bullet class from there. These will also be available for block
 // elements
@@ -32,7 +30,7 @@ $hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
   margin-top: 0.15em;
   background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
   height: 1em;
-  aspect-ratio: $hexagon-aspect-ratio;
+  aspect-ratio: var(--ironsworn-hexagon-aspect-ratio);
   mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
 }
 
