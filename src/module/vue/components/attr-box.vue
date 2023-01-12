@@ -25,6 +25,7 @@
   margin: 0;
   font-size: var(--font-size-14);
   font-weight: bold;
+  pointer-events: none;
 }
 
 .attr-value {
@@ -51,7 +52,7 @@
     transition: opacity 0.4s ease;
     opacity: 0;
     z-index: 0;
-    padding: 0.25em;
+    padding: var(--ironsworn-spacer-sm);
   }
 
   &:hover {
