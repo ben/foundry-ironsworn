@@ -207,6 +207,7 @@ i {
 
 // icons require a key (the file name without the extension) and a value (a string describing the source information/credit).
 // the value isn't used by any LESS functions, it's just to make it harder to forget to include source/credit info.
+/* stylelint-disable-next-line mavrin/stylelint-declaration-use-css-custom-properties */
 $icons: (
   // game logos
   logo-delve-dk:
