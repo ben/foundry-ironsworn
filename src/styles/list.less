@@ -13,6 +13,9 @@
 
 .item-list {
   --ironsworn-item-list-size: 100px;
+  --ironsworn-item-line-height: 24px;
+  --ironsworn-item-height: 30px;
+  --ironsworn-item-controls-size: 36px;
 
   display: flex;
   flex: 1 0 var(--ironsworn-item-list-size);
@@ -26,7 +29,6 @@
   }
 
   .item-controls {
-    --ironsworn-item-controls-size: 36px;
     flex: 0 0 var(--ironsworn-item-controls-size);
   }
 
@@ -35,11 +37,11 @@
       var(--ironsworn-color-border);
     padding: var(--ironsworn-spacer-sm) 0;
     // FIXME: what's this for?
-    height: 30px;
-    line-height: 24px;
+    height: var(--ironsworn-item-height);
+    line-height: var(--ironsworn-item-line-height);
 
     img {
-      flex: 0 0 24px;
+      flex: 0 0 var(--ironsworn-item-line-height);
       margin-right: var(--ironsworn-spacer-md);
     }
   }
