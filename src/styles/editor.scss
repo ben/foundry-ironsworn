@@ -1,3 +1,4 @@
+/* stylelint-disable mavrin/stylelint-declaration-use-css-custom-properties */
 /* stylelint-disable no-duplicate-selectors */
 @use 'mixins';
 
@@ -88,7 +89,7 @@
     border-color: transparent;
     background: var(--ironsworn-color-clickable-block-bg);
     color: var(--ironsworn-color-clickable-block-fg);
-    // margin: 6px 1px var(--ironsworn-spacer-md) 0;
+
     &:focus {
       border-width: var(--ironsworn-border-width-md);
       border-style: solid;
