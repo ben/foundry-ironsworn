@@ -76,7 +76,7 @@ $max-progress-track-width: calc(
     margin: 0;
     text-transform: uppercase;
     line-height: 2;
-    letter-spacing: 0.02em;
+    letter-spacing: var(--ironsworn-letter-spacing);
     font-weight: bold;
   }
 
