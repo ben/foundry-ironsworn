@@ -37,12 +37,13 @@ const CONFIG = {
            * @see https://csstree.github.io/docs/syntax/
            */
           cssDefinitions: ['color', 'length', 'z-index', 'line-height'],
+          ignoreProperties: ['/^\\$/'],
           ignoreValues: [
-            '/\\$/',
+            '/^\\$/',
             'transparent',
             'currentcolor',
             '0',
-            '/.*\\s[0-9]+(\\.[0-9]+)?em(\\s.*)?/',
+            '/^[0-9]+(\\.[0-9]+)?em$/',
           ],
         },
         // silence complaints about floating points (which are a temp workaround anyways)
@@ -63,7 +64,6 @@ const CONFIG = {
          * ```
          */
         'custom-property-pattern': /(ironsworn|font|color|fa|form-field)-.+/,
-        // 'max-line-length': [120, { ignore: ['comments'] }],
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,
         'string-quotes': ['single'],
