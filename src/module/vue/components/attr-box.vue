@@ -1,16 +1,16 @@
 <template>
   <div
-    class="attr-box block"
-    :class="classes"
+    class="block"
+    :class="{ [$style['attr-box']]: true, ...classes }"
     @click="click"
     :data-tooltip="$t('IRONSWORN.Roll +x', { stat: $t(i18nKey) })"
   >
-    <h4>{{ $t(i18nKey) }}</h4>
+    <label :class="$style['attr-label']">{{ $t(i18nKey) }}</label>
     <div class="flexrow">
       <div class="clickable text" v-if="editMode" @click="decrement">
         &minus;
       </div>
-      <h4>{{ actorSys[attr] }}</h4>
+      <span :class="$style['attr-value']">{{ actorSys[attr] }}</span>
       <div class="clickable text" v-if="editMode" @click="increment">
         &plus;
       </div>
@@ -20,6 +20,18 @@
 
 <style lang="less" module>
 @import (reference) '../../../styles/mixins.less';
+
+.attr-label {
+  margin: 0;
+  font-size: var(--font-size-14);
+  font-weight: bold;
+}
+
+.attr-value {
+  margin: 0;
+  font-size: var(--font-size-16);
+  font-weight: bold;
+}
 
 .attr-box {
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
@@ -46,11 +58,6 @@
     &::before {
       opacity: 1;
     }
-  }
-
-  h4 {
-    margin: 0;
-    font-weight: bold;
   }
 
   input {
