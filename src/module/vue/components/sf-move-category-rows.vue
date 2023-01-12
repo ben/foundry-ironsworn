@@ -90,11 +90,11 @@
 .moveRow {
   &:focus {
     border: 0;
+    box-shadow: none;
     // outline: 1px solid var(--ironsworn-color-cool);
     // box-shadow: var(--ironsworn-box-shadow-highlight) !important;
     // TODO: figure out a better way to convey focus here.
     background-color: transparent;
-    box-shadow: none;
   }
 
   &[data-highlighted='true']::after {
