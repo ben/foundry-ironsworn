@@ -10,26 +10,48 @@
     "CustomTruth": "Własna Prawda",
     "Roll": "Rzuć",
     "Chat": "Czat",
-    "Rolling": "Losuje..",
+    "SendToChat": "Wyślij tekst na czat: <i>{move}</i>",
+    "CopyTextToClipboard": "Kopiowanie tekstu do schowka",
+   "Rolling": "Losuje..",
     "Bonus": "Bonus",
+    "Adds": "Dodaje",
     "Versus": "vs.",
-    "CappedAt10": "Capped at 10",
+    "CappedAt10": "Ograniczenie do 10",
     "Strong_hit": "Sukces!",
     "Strong_hit_match": "Triumf! (match)",
     "On_a_strong_hit": "Przy Pełnym Sukcesie",
     "Weak_hit": "Częściowy Sukces",
     "On_a_weak_hit": "Przy Częściowym Sukcesie",
-    "Miss": "Porazka",
+    "Miss": "Porażka",
     "Miss_match": "Krytyczna Porazka(match)",
     "On_a_miss": "Przy miss",
     "Opportunity": "Okazja!",
     "Complication": "Komplikacja!",
     "MarkProgress": "Zaznacz Postęp",
+    "ProgressMove": "Zmień Postęp",
+    "PROGRESS": {
+      "Current": "{score} postęp ({ticks} ticks)",
+      "Ticks": "{ticks} ticków",
+      "Track": "tor postępu",
+      "BOX": {
+        "1": "1 pole",
+        "2": "2 pola",
+        "3": "3 pola"
+      },
+      "TICK": {
+        "1": "1 tiki",
+        "2": "2 tiki",
+        "3": "3 tiki",
+        "4": "4 tiki"
+      }
+    },
+    "MarkLegacy": "Zaznacz {amount} na twoim {legacy} torze dziedzictwa",
     "UnmarkProgress": "Odznacz Postęp",
     "ClearProgress": "Wyczyść Postęp",
     "FulfillVow": "Wypełnij Przysięge",
     "ProgressRoll": "Rzut postępu",
-    "StarProgress": "Gdy jest aktywny, ten element pojawi się również w zakładce 'Dziedzictwo'",
+    "MakeAProgressRoll": "Wykonuj rzut postepu {score} postępu(????)",
+   "StarProgress": "Gdy jest aktywny, ten element pojawi się również w zakładce 'Dziedzictwo'",
     "Mark": "Zaznacz",
     "Fulfill": "Wypełnij",
     "Clear": "Wyczyść",
@@ -39,7 +61,31 @@
     "Extreme": "Ekstremalny",
     "Epic": "Epicki",
     "Stat": "Statystyka",
+    "OracleTable": {
+      "ColumnLabel": {
+        "Roll": "Rzut",
+        "RollRange": "Zakres rzutu",
+        "DiceRollResult": "{dice} wynik rzutu",
+        "Result": "Wynik"
+      }
+    },
     "roll +x": "rzuć +{stat}",
+    "Roll +x": "rzuć +{stat}",
+    "roll method": {
+      "All": "rzuć all of {statList} (????)",
+      "Any": {
+        "2": "rzuć +{stat1} albo +{stat2}",
+        "fallback": "rzuć na dowolną {statList}"
+      },
+      "Highest": {
+        "2": "rzuć +{stat1} albo +{stat2}, którekolwiek jest wyższe",
+        "fallback": "rzuć na najwyższą z {statList}"
+      },
+      "Lowest": {
+        "2": "rzuć +{stat1} albo +{stat2}, którekolwiek jest niższe",
+        "fallback": "rzuć na najniższą {statList}"
+      }
+    },
     "Momentum": "impet",
     "Health": "zdrowie",
     "Spirit": "duch",
@@ -53,20 +99,25 @@
     "Asset": "Aspekt",
     "Assets": "Aspekty",
     "Bonds": "Więzi",
-    "Bond": "Więź",
+    "NoBonds": "Brak więzi",
+    "Bond": "więź",
     "Legacies": "Dziedzictwa",
     "Clock": "Zegar",
+    "Segments": "Segmenty",
     "Scenes": "Sceny",
     "Quests": "Zadania",
     "Notes": "Notatki",
     "Discoveries": "Odkrycia",
     "Debilities": "Osłabienie",
-    "Conditions": "Dolegliwość",
+    "Conditions": "Stany",
+    "Condition": "Stan",
+    "ConditionSetOnOne": "{condition} jest zmieniony na {name}",
+    "ConditionSetOnMany": "{condition} jest zmieniony na:",
     "Banes": "Zguby",
     "Burdens": "Brzemiona",
     "Misfortunes": "Nieszczęścia",
     "LastingEffects": "Trwałe efekty",
-    "Vehicle": "Pojazdy",
+    "Vehicle": "Pojazd",
     "Wounded": "Zraniony",
     "Unprepared": "Nieprzygotowany",
     "Shaken": "Wstrząśnięy",
@@ -99,8 +150,26 @@
       "Legacy": "Ruchy Dziedzictwa",
       "Quest": "Ruchy Zadań",
       "Relationship": "Ruchy Więzi",
-      "Suffer": "Ruchy Konsekwencji"
+      "Suffer": "Ruchy Konsekwencji",
+      "Connection": "Ruchy Komunikacji",
+      "Exploration": "Ruchy Eksploracji",
+      "Failure": "Ruchy Porażki",
+      "Rarity": "Ruchy Rzadkości",
+      "Recover": "Rychy Wypoczynku",
+      "Scene Challenge": "Scene challenge moves",
+      "Session": "Ruchy Sesji",
+      "Threat": "Ruchy Zagrożeń",
+      "Threshold": "Ruchy Progów"
+      
     },
+    "MoveContents": {
+    "Face Danger": "Zmierz się z niebezpieczeństwem"
+    },
+    "Failure": "Porażka",
+    "Threat": "Zagrożenie",
+    "Rarity": "Rzadkośc",
+    "Optional Delve": "Opcjonalna Delve",
+    "Custom Assets": "Własne Aspekty",
     "Oracles": "Wyrocznie",
     "Custom Oracles": "Własne Wyrocznie",
     "Search": "Szukaj",
@@ -110,33 +179,43 @@
     "Character": "Postać",
     "Starship": "Statek Kosmicznyu",
     "SharedSheet": "Wspólna Karta",
-    "DelveSite": "Delve Site",
+    "DelveSite": "Lokacja",
     "Names": "Imiona",
     "RollForDetails": "Wylosuj Detale Lokacji",
     "RandomName": "Losowe imię",
     "Burn": "Spal",
     "Focus": "Skupienie",
+    "ResolveChallenge": "Rozwiąż wyzwanie",
+    "ResolveChallengeDisabled": "Wybierz swoje dwie ostatnie kostki wyzwania",
     "BurnForUpgrade": "Spal Impet: <strong>{type}</strong>",
-    "MomentumBurnt": "Spalony Impet",
-    "NegativeMomentumCancel": "Ujemny Impet anulował Kość Akcji",
+    "BurnMomentumAndResetTo": "Spal {value} impet i zresetuj do {resetValue}",
+    "MomentumBurnt": "Momentum Burn",
+    "NegativeMomentumCancel": "Negatywny impet anulował kość działania",
     "Reset": "Zresetuj",
-    "Max": "Max",
+    "Max": "Maksimum",
     "Name": "Imię",
     "Pronouns": "Zaimki",
     "Callsign": "Ksywa",
     "Characteristics": "Charakterystyka",
     "Summary": "Podsumowanie",
     "Description": "Opis",
+    "Category": "Kategoria",
+    "Color": "Kolor",
+    "Requirement": "Wymaganie",
     "Trigger": "Wyzwalacz",
     "FullText": "Pełny tekst",
+    "Field": "Domena",
     "Fields": "Domeny",
     "Label": "Etykieta",
     "Value": "Wartość",
     "Abilities": "Zdolności",
+    "Ability": "Zdolność",
     "Options": "Opcje",
+    "Option": "Opcja",
     "Track": "Tor",
     "Enabled": "Włączony",
     "Rank": "Ranga",
+    "ChallengeRank": "Ranga wyzwania",
     "Completed": "Ukończone/y",
     "NotCompleted": "Nieukończony/e",
     "Features": "Cechy",
@@ -151,6 +230,7 @@
     "Denizen": "Mieszkaniec/ka",
     "Denizens": "Mieszkańcy",
     "OpenCompendium": "Otwórz Kompendium",
+    "Delete": "Usuń",
     "DeleteItem": "Usuń Przedmiot",
     "DeleteMove": "Usuń Ruch",
     "DeleteVow": "Usuń Przysięgę",
@@ -159,6 +239,9 @@
     "ConfirmDelete": "Jesteś pewien? Nie można tego cofnąć.",
     "StatBonusTooltip": "Bonus na następny rzut na statystykę",
     "RequiresLocationType": "Ta Wyrocznia wymaga wybrania typu lokacji",
+    "RollOracleTable": "Rzuć na wyrocznie: <i>{title}</i>",
+    "RollMove": "Rzuć na ruch: <i>{title}</i>",
+    "PageReference": "p. {page}",
     "PlanetType": "Typ planety",
     "RandomPlanetType": "Losowy typ planety",
     "SettlementType": "Typ Osady",
@@ -175,12 +258,14 @@
     "Fourth": "czwarty",
     "Fifth": "piąty",
     "StarforgedTools": "Narzędzia Starforged",
+    "IronswornTools": "Narzędzia Ironsworn",
     "NewSector": "Nowy Sector",
     "NewStar": "Nowa Gwiazda",
     "NewPlanet": "Nowa Planeta",
     "NewSettlement": "Nowa Osada",
     "NewDerelict": "Nowa Ruina",
     "NewVault": "Nowa Krypta Prekursora",
+    "EditSector": "Edytuj Sektor",
     "Sector": "Sektor",
     "Region": "Region",
     "Terminus": "Stacja",
@@ -188,6 +273,12 @@
     "Expanse": "Przestrzeń",
     "RotateCCW": "Obróc zgodnie z ruchem zegara",
     "RotateCW": "Oróć przeciwnie do ruchu zegera",
+    "RollDialog": {
+      "AdvancedRollOptions": "Opcje zaawansowane",
+      "PresetActionDie": "Preset action die",
+      "PredeterminedOutcome": "Predetermined outcome",
+      "ExtraChallengeDice": "Extra challenge dice"
+    },
     "ChatAlert": {
       "Renamed": "Zmieniono na {name}",
       "renamed": "zmieniono na {name}",
@@ -195,8 +286,8 @@
       "Deleted": "Usunięto {name}",
       "MarkedXP": "Zaznaczono {amt} XP",
       "UnmarkedXP": "Odznaczono {amt} XP",
-      "AdjustedStat": "{amt} {stat} (now {val})",
-      "SetCondition": "Set the {condition} stan",
+      "AdjustedStat": "{amt} {stat} (obecna wartość {val})",
+      "SetCondition": "Zmieniono {condition} stan",
       "ClearedCondition": "Usunięto {condition} stan",
       "RankChanged": "Ranga zmieniona z {old} to {new}",
       "rankChanged": "ranga zmieniona z {old} to {new}",
@@ -229,43 +320,61 @@
       },
       "Tools": {
         "Name": "Narzędzia Postaci",
-        "Hint": "Which set of moves and oracles will appear Gdy opening a character sheet.",
+        "Hint": "Jaki zestaw ruchów i oracji pojawi się kiedy zostanie otwarta karta postaci.",
         "Sheet": "Match sheet"
       },
       "SharedSupply": {
-        "Name": "Shared Supply Tracker",
-        "Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+        "Name": "Wspólny Tor Zasobów",
+        "Hint": "Jeśli włączona, zmiana toru zasobów na dowolnej postaci, zostanie odnotowana na torach zasobów wszystkich innych postaci"
       },
       "LogChanges": {
-        "Name": "Log Character Updates",
-        "Hint": "If on, changes to character stats will be logged to the chat."
+        "Name": "Dziennik aktualizacji postaci",
+        "Hint": "Jeśli jest włączona, zmiany statystyk postaci będą rejestrowane na czacie."
       },
       "PromptTruths": {
         "Name": "Ironsworn/Starforged Dialog on Start",
-        "Hint": "Open the above dialog on startup."
+        "Hint": "Otwórz powyższe okno dialogowe przy uruchamianiu."
       },
       "ConfigurationDialog": {
-        "Label": "Ironsworn/Starforged Configuration Dialog",
-        "Name": "Configuration Dialog",
-        "Hint": "Choose between Ironsworn and Starforged UI elements."
+        "Label": "Okno konfiguracji Ironsworn/Starforged",
+        "Name": "Okno konfiguracji",
+        "Hint": "Wybierz pomiędzy elementami UI Ironsworn a Starforged"
       },
       "SFBeta": {
-        "Name": "Show Starforged beta content",
-        "Hint": "Enables in-progress Starforged features."
+        "Name": "Pokaż zawartość Starforged-beta",
+        "Hint": "Włacza funkcję Starforged, będące w trakcie realizacji."
+      },
+      "DataforgedIronswornMoves": {
+        "Name": "(Beta) New Ironsworn move-sheet UI",
+        "Hint": "If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization."
+      },
+      "ProgressMarkAnimation": {
+        "Name": "Włącz animację toru postępu",
+        "Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."
       }
     },
     "First Start": {
       "Witaj": "Witaj",
       "Save": "Zapisz",
-      "Intro": "Witaj w Ironsworn! Przed rozpoczęciem jest jeszcze kilka wyborów do wykonania."
+      "Intro": "Witaj w Ironsworn! Przed rozpoczęciem jest jeszcze kilka wyborów do wykonania.",
+      "CharacterSheet": "Character Sheet",
+      "DefaultSheet": "Którą kartę postaci chciałbyś/aś używa??",
+      "MovesOracles": "Ruchy i Wyrocznie",
+      "DefaultMovesOracles": "Który zestaw ruchów i wyroczni chciałbyś/aś używać?",
+      "MatchSheet": "Match sheet",
+      "SettingTruths": "Ustawienia Prawd",
+      "SettingTruth": "Ustawienia Prawdy",
+      "GenerateTruths": "Czy chciałbyś wygenerować prawdy twojego świata?",
+      "YesFor": "Tak, na",
+      "NeverAsk": "Nie pytaj nigdy więcej"
     },
     "WorldTruths": {
       "The Old World": {
         "name": "Stary Świat",
         "option1": "Dzikie klany zwane Skulde najechały królestwa Starego Świata. Nasze armie padły. Większość została zabita lub wzięta w niewolę. Ci, którzy uciekli, wypłynęli na pokładzie wszystkiego, co dało się unieść na wodzie. Po uciążliwej, wielomiesięcznej podróży, ocalali dotarli na ląd Żelaznych Ziem.",
         "quest1": "Jesteś potomkiem Skuldów. Ze względu na swoje dziedzictwo, twoja rodzina od dawna jest nieufna wobec swoich pobratyńców - Żelaznych Ludzi . Teraz, niewielki oddział Skulde wylądował na naszym wybrzeżu. Czy są oni zwiastunem inwazji? Gdzie leży twoja lojalność?",
-        "option2": "Choroba przemieszczała się niczym straszliwa fala przez Stary Świat, zabijając wszystkich na swojej drodze. Tysiące osób uciekło na pokładach statków. Jednak nie można było uciec przed plagą. Na wielu statkach udało się opanować chorobę dzięki bezwzględnym środkom - wyrzucano za burtę każdego, kto wykazywał najmniejsze objawy. Inne statki zostały stracone na zawsze. W końcu ci, którzy przeżyli, znaleźli Żelazne Ziemie i uczynili z nich swój nowy dom. Niektórzy twierdzą, że na zawsze pozostaniemy przeklęci przez tych, których zostawiliśmy za sobą.",
-        "quest2": "Osada została dotknięta chorobą. Choć choroba ta wykazuje pewne podobieństwa do plagi w Starym Świecie, nie zabija swoich ofiar. Zamiast tego, zmienia je. Jak objawia się ta choroba? Dlaczego przysięgasz szukać lekarstwa?",
+        "option2": "Choroba przemieszczała się niczym straszliwa fala przez Stary Świat, zabijając wszystkich na swojej drodze. Tysiące osób uciekło na pokładach statków. Jednak nie można było uciec przed plagą. Na wielu statkach udało się opanować chorobę dzięki bezwzględnym środkom - wyrzucano za burtę każdego, kto wykazywał najmniejsze objawy choroby. Inne statki zostały stracone na zawsze. W końcu ci, którzy przeżyli, znaleźli Żelazne Ziemie i uczynili z nich swój nowy dom. Niektórzy twierdzą, że na zawsze pozostaniemy przeklęci przez tych, których zostawiliśmy za sobą.",
+        "quest2": "Osada została dotknięta chorobą. Choć ta wykazuje pewne podobieństwa do plagi w Starym Świecie, nie zabija swoich ofiar. Zamiast tego, zmienia je. Jak się ona objawia? Dlaczego przysięgasz szukać na nią lekarstwa?",
         "option3": "Stary Świat nie mógł nas dłużej utrzymać. Byliśmy zbyt liczni. Wycięliśmy lasy. Nasze uprawy zwiędły na jałowej ziemi. Miasta i wsie przepełnione były zdesperowanymi, głodnymi ludźmi. Drobni watażkowie walczyli o resztki. Rzuciliśmy swój los na morze i znaleźliśmy Żelazne Ziemie. Nowy świat. Świeży początek.",
         "quest3": "Dekady temu zakończył się exodus. Od tego czasu nie przypłynęły tu żadne statki ze Starego Świata. Aż do teraz. Docierają do nas wieści o jednym statku, świeżo przybyłym przez rozległy ocean, który osiadł na skałach Wysp Barierowych. Gdy słyszysz nazwę tego statku, przysięgasz odkryć los jego pasażerów. Dlaczego jest to dla ciebie takie ważne?"
       },
@@ -273,15 +382,15 @@
         "name": "Żelazo",
         "option1": "Imponujące wzgórza i góry Żelaznych Ziem są bogate w rudę żelaza. Najbardziej cenione jest czarne żelazo wykute z gwiazd.",
         "quest1": "Karawana, zmierzająca do odległych południowych krain, opuściła górniczą osadę w zeszłym sezonie, ale nigdy nie dotarła do celu. Wiozła łupy z czarnego żelaza. Dlaczego odnalezienie tej zaginionej karawany jest dla ciebie tak ważne?",
-        "option2": "Pogoda jest ponura. Deszcz i wiatr nadciągają od oceanu. Zimy są długie i gorzkie. Jeden z pierwszych osadników narzekał: 'Tylko ludzie z żelaza ośmielają się mieszkać w tym okropnym miejscu' - i tak właśnie nazwano naszą ziemię.",
-        "quest2": "Żniwa okazały się niewystarczające. Nieubłagane śniegi sprawiły, że wioska została odizolowana. Kończy się jedzenie. Co zrobisz, by pomóc tym ludziom przetrwać ten ciężki okres?",
+        "option2": "Pogoda jest ponura. Deszcz i wiatr nadciągają znad oceanu. Zimy są długie i gorzkie. Jeden z pierwszych osadników narzekał: 'Tylko ludzie z żelaza ośmielają się mieszkać w tym okropnym miejscu' - i właśnie tak nazwano naszą ziemię.",
+        "quest2": "Żniwa okazały się niewystarczające. Nieubłagane śniegi sprawiły, że wioska została odizolowana. Kończy się jedzenie. Co zrobisz, by pomóc mieszkańcom przetrwać ten ciężki okres?",
         "option3": "Niezniszczalne metalowe filary znajdują się w całej krainie. Są szare jak żelazo i gładkie jak kamień rzeczny. Nikt nie zna ich przeznaczenia. Niektórzy twierdzą, że są tak stare jak świat. Niektórzy, jak na przykład Żelazni Kapłani, czczą je i składają na nie przysięgi. Większość uznaje je za znak ostrzegawczy i pospiesznie podąża swoją drogą, gdy natknie się na jeden z nich. Filary nie matowieją i nawet najostrzejsze ostrze nie jest w stanie ich zarysować.",
-        "quest3": "Twoje sny nawiedzają wizje filaru, który stoi w nieznanym krajobrazie. Co widzisz? Dlaczego przysięgasz go szukać?"
+        "quest3": "Twoje sny nawiedzają wizje filaru, który stoi w nieznanym krajobrazie. Co jeszcze widzisz? Dlaczego przysięgasz go szukać?"
       },
       "Legacies": {
         "name": "Dziedzictwo",
         "option1": "Jesteśmy pierwszymi ludźmi, którzy przemierzają te ziemie.",
-        "quest1": "W pismach jednego z pierwszych osadników znajduje się opis polany w sercu Prastarych Puszczy. Mówi się, że duchy tego miejsca udzielają cudownego błogosławieństwa. Jakim dobrodziejstwem jest ono obdarza?",
+        "quest1": "W pismach jednego z pierwszych osadników znajduje się opis polany w sercu Prastarych Puszczy. Mówi się, że duchy tego miejsca udzielają cudownego błogosławieństwa. Jakim dobrodziejstwem ono obdarza?",
         "option2": "Inni ludzie przypłynęli tu ze Starego Świata nieopisane lata temu, ale wszystko, co po nich pozostało, to dziki, zdziczały lud, który nazywamy Złamanymi. Czy ich los stanie się naszym własnym?",
         "quest2": "Znajdujesz dziecko - jedno ze Złamanych. Jest ranne i polują na nie inni przedstawiciele jego gatunku. Czy chronisz je, nawet ryzykując, że ściągniesz na siebie gniew złamanych plemion?",
         "option3": "Przed Żelaznymi Ludźmi, nawet przed pierworodnymi, żył tu inny lud. Ich starożytne ruiny można znaleźć w całych Żelaznych Krainach.",
@@ -298,69 +407,347 @@
       },
       "Leaders": {
         "name": "Liderzy",
-        "option1": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
-        "quest1": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, musisz make this vision a reality.",
-        "option2": "Each of our communities has its own leader, called an overseer. Every seventh spring, the people affirm their current overseer or choose a new one. Some overseers wear the iron circlet reluctantly, while others thirst for power and gain it through schemes or threats.",
-        "quest2": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?",
-        "option3": "Numerous clan-chiefs rule over petty domains. Most are intent on becoming the one true king. Their squabbles will be our undoing.",
-        "quest3": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two Gdy an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?"
+        "option1": "Liderzy są tak zróżnicowani jak ludzie zamieszkujący żelazne ziemie. Niektóre społeczności są rządzone przez głowę potężnej rodziny. Inne z kolei mają radę starszych, która podejmuje decyzje i rozstrzyga spory. W kolejnych społecznościach władzę sprawują kapłani. Dla niektórych decydujące są pojedynki w kręgu wybierające nasilniejszego władcę.",
+        "quest1": "Masz żywe, powracające sny o mieście w krainie Żelaznych Ziem. Ma mocne kamienne mury, gwarne rynki i strażnicę na wysokim wzgórzu. I tak wielu ludzi! Nigdzie na Żelaznych Ziemiach nie ma takiego miasta. W swoich snach jesteś władcą tego miasta. W jakiś sposób, nie zważając na to, jak długo to potrwa, musisz urzeczywistnić tę wizję.",
+        "option2": "Każda ze wspólnot Żelaznych Ludzi ma swojego lidera, zwanego Starszym. Co siódmą wiosnę ludzie potwierdzają swojego obecnego Starszego lub wybierają nowego. Niektórzy z nich niechętnie noszą żelazny pierścień, podczas gdy inni pragną władzy i zdobywają ją poprzez intrygi lub groźby.",
+        "quest2": "Pewia Starsza zachorowała. Jest pewne, że umrze bez pomocy, a choroba nie jest znana wiejskiemu uzdrowicielowi. Podejrzewa się, że przyczyną jest trucizna, a może nawet zła magia. Rodziny w społeczności rzucają się sobie do gardeł, wysuwając preferowanych kandydatów do objęcia żelaznego pierścienia. Czy odkryjesz prawdę o chorobie Starszej i przywrócisz jej zdrowie?",
+        "option3": "Liczni wodzowie klanów rządzą drobnymi domenami. Większość z nich ma zamiar zostać jedynym prawdziwym królem. Ich spory będą przyczyną naszej zguby.",
+        "quest3": "W sekrecie posiadasz jedną połowę Prawdziwej Korony, relikwii Starego Świata. Wieki temu korona ta została przełamana na dwie części, gdy topór zabójcy rozłupał głowę najwyższego władcy. Ty wywodzisz się z tego królewskiego rodu. Kto dał ci ten relikt? Czy odnajdziesz drugą połowę złamanej korony i spróbujesz zjednoczyć klany pod swoim panowaniem? Czy może widzisz dla niej inne zastosowanie?"
       },
       "Defense": {
         "name": "Obronność",
-        "option1": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. Gdy a community is threatened, the people stand together to protect their own.",
-        "quest1": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?",
-        "option2": "The wardens are our soldiers, guards, and militia. They serve their communities by standing sentry, patrolling surrounding lands, and organizing defenses in times of crisis. Most have strong ties to their community. Others, called free wardens, are wandering mercenaries who hire on to serve a community or protect caravans.",
-        "quest2": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?",
-        "option3": "Our warbands are rallied to strike at our enemies or defend our holdings. Though not nearly as impressive as the armies that once marched across the Old World, these forces are as well-trained and equipped as their communities can manage. The banners of the warbands are adorned with depictions of their Old World history and Ironland victories.",
-        "quest3": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?"
+        "option1": "Tutaj, na Żelaznych Ziemiach, zapasy są zbyt cenne, a ziemie zbyt słabo zaludnione, by utrzymać zorganizowane siły bojowe. Gdy jakaś społeczność jest zagrożona, ludzie jednoczą się, by chronić swoich.",
+        "quest1": "Osada nie jest w stanie, lub nie chce, bronić się przed bezpośrednim zagrożeniem. Dlaczego? Jakie niebezpieczeństwo im grozi? Co zrobisz, aby ich chronić?",
+        "option2": "Po żelaznych ziemiach chodzą Strażnicy. Są oni naszymi żołnierzami, strażą oraz milicją. Służą swoim społecznościom stojąc na straży, patrolując okoliczne ziemie i organizując obronę w czasie kryzysu. Wielu z nich jest silnie związanych ze swoją społecznością. Inni, zwani Wolna Straż, to wędrowni najemnicy, którzy wynajmują się, by służyć społeczności lub chronić karawany.",
+        "quest2": "Trafiasz na umierającą strażniczkę. Mówi ci o ważnej misji i powierza ci jej wykonanie. \"Przysięgnij mi\" - mówi, wyciągając zakrwawioną rękę, by dać ci przedmiot kluczowy dla zadania. Co to jest? I na czym polega zadanie?",
+        "option3": "Oddziały wojenne Żelaznych Ludzi są zbierane, aby zaatakować wrogów lub bronić miast. Choć nie są one tak imponujące jak armie, które niegdyś przemierzały Stary Świat, są tak dobrze wyszkolone i wyposażone, jak tylko ich społeczności mogą sobie na to pozwolić. Sztandary oddziałów wojennych są ozdobione wizerunkami historii Starego Świata i zwycięstw Żelaznych Ziem.",
+        "quest3": "Brygada wojenna została zmieciona w walce z przeważającym wrogiem. Co łączy cię z tą bandą? Kto ich pokonał? Czy poniesiesz ich sztandar w poszukiwaniu zemsty, czy też przysięgniesz, że sprowadzisz go do domu na należne mu miejsce?"
       },
       "Mysticism": {
         "name": "Mistycyzm",
-        "option1": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
-        "quest1": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?",
-        "option2": "Magic is rare and dangerous, ale those few who wield the power are truly gifted.",
-        "quest2": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?",
-        "option3": "Magic courses through this land as the rivers flow through the hills. The power is there for those who choose to harness it, and even the common folk often know a helpful ritual or two.",
-        "quest3": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
+        "option1": "Niektórzy nadal znajdują pocieszenie w starych tradycjach. Wzywają mistyków, aby przepowiedzieli los ich noworodka, lub proszą ich o odprawienie rytuałów, aby przywołać obfite zbiory. Inni ze strachu działają przeciwko tym, których podejrzewają o posiadanie Mocy. Większość ludzi wierzy jednak, że prawdziwa magia - jeśli kiedykolwiek istniała - jest już dla nas stracona.",
+        "quest1": "Ktoś z Twoich bliskich jest oskarżony o rzucenie klątwy na osadę, przez co pola leżą odłogiem, a bydło choruje. Jakie są na to dowody? Czy będziesz bronił tej osoby i odkryjesz prawdziwą przyczynę kłopotów osady?",
+        "option2": "Magia jest rzadka i niebezpieczna, ale ci nieliczni, którzy władają mocą, są doprawdy potężnie obdarzeni.",
+        "quest2": "Słyszałeś opowieści o kimś, kto włada prawdziwą mocą. Żyje on w odizolowanej osadzie daleko stąd. Kto opowiedział Ci o tym mistyku? Czy boisz się tej osoby? Czy go szanujesz? Dlaczego chcesz go odnaleźć?",
+        "option3": "Magia przepływa przez tę krainę jak rzeki przez wzgórza. Moc jest dla tych, którzy zechcą ją wykorzystać, a nawet zwykli ludzie często znają pomocny rytuał lub dwa.",
+        "quest3": "Ktoś, kogo kochasz, kroczył ścieżkami mocy, i jej uległ. Kim jest ta osoba? Dlaczego popadła w objęcia mroku? Gdzie się teraz znajduje? Czy starasz się ją uratować, czy też może jednak pokonać?"
       },
       "Religion": {
         "name": "Religia",
-        "option1": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, ale most believe the gods long ago abandoned us.",
-        "quest1": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?",
-        "option2": "The people honor old gods and new. In this harsh land, a prayer is a simple ale powerful comfort.",
-        "quest2": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this podróż? Who seeks to stop them and why?",
-        "option3": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
-        "quest3": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
+        "option1": "Garstka mieszkańców Żelaznych Ziem nadal robi znaki lub mamrocze modlitwy z przyzwyczajenia lub tradycji. Jednak większość wierzy, że bogowie dawno temu nas opuścili.",
+        "quest1": "Charyzmatyczna mieszkanka Żelaznych Ziem, nakłania swoich wyznawców do wyrzeczenia się resztek religii Starego Świata, proponuje nową drogę dla tego nowego świata. Jakiej filozofii naucza? Co zamierza osiągnąć? Czy przysięgasz jej pomóc? A może ją powstrzymać?",
+        "option2": "Ludzie czczą starych i nowych bogów. W tym surowym kraju modlitwa jest prostym, acz potężnym pokrzepieniem.",
+        "quest2": "Jeden z mieszkańców Żelaznych Krain jest zdecydowany odbyć pielgrzymkę do niebezpiecznych miejsc. Jakiego świętego miejsca poszukuje? Dlaczego przysiągłeś im pomóc w tej podróży? Kto stara się ich powstrzymać i dlaczego?",
+        "option3": "Naszych bogów jest wielu. Dają o sobie znać poprzez manifestacje i cuda. Niektórzy twierdzą, że nawet potajemnie chodzą wśród nas. Kapłani przekazują nam wolę bogów i sprawują władzę nad wieloma społecznościami.",
+        "quest3": "Nosisz znamię boga. Co to za znak? Kapłani ogłaszają to jako znak, że zostałaś wybrana do wypełnienia przeznaczenia. Czy akceptujesz ten los i przysięgasz go wypełnić, czy też jesteś zdecydowana go cofnąć? Jakie siły stają przeciwko Tobie?"
       },
       "Firstborn": {
-        "name": "Pierworodni/Starsze Rasy",
-        "option1": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
-        "quest1": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?",
-        "option2": "The firstborn live in isolation and are fiercely protective of their own lands.",
-        "quest2": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?",
-        "option3": "The firstborn hold sway in the Ironlands. The elves of the deep forests and the giants of the hills tolerate us and even trade with us—for now. Ironlanders fear the day they decide we are no longer Witaj here.",
-        "quest3": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?"
+        "name": "Pierwotni",
+        "option1": "Pierwotni przeszli do legendy. Niektórzy twierdzą, że pozostałości dawnych plemion nadal mieszkają w głębokich lasach lub wysokich górach. Jednak większość jest zdania, że nigdy nie były one niczym więcej niż mitem.",
+        "quest1": "Ktoś ogarnięty obsesją na punkcie Pierwotnych chce znaleźć dowody na ich istnienie. Będzie to wymagało wyprawy w odległe krańce Żelaznych Krain. Jaka jest twoja rola w tej misji?",
+        "option2": "Pierwotni żyją w izolacji i zaciekle chronią swoje ziemie.",
+        "quest2": "Elf, wygnany przez swoich pobratymców, mieszka z mieszkańcami Żelaznych Krain. Z czasem stał się częścią społeczności. Teraz jest umierający. Tęskni za powrotem do swoich ludzi, zanim odejdzie. Czy poszukuje on rozgrzeszenia, a może sprawiedliwości? Dlaczego przysięgasz mu pomóc? Jaka siła bądź grupa sprzeciwia się jego powrotowi?",
+        "option3": "Pierwotni mają władzę w Żelaznych Krainach. Elfy z głębokich lasów i olbrzymy ze wzgórz tolerują nas, a nawet handlują z nami - na razie. Mieszkańcy Żelaznych Krain obawiają się dnia, w którym zdecydują, że nie jesteśmy już tutaj mile widziani.",
+        "quest3": "Ludzie i olbrzymy są na skraju wojny. Co się stało? Po czyjej stronie staniesz? Czy można uczynić cokolwiek, aby zażegnać ten konflikt?"
       },
       "Beasts": {
         "name": "Bestie",
-        "option1": "The beasts of old are nothing ale legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, ale they are obviously delusional. No such things exist.",
-        "quest1": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?",
-        "option2": "Monstrous beasts stalk the wild areas of the Ironlands.",
-        "quest2": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?",
-        "option3": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, ale range into the settled lands to hunt. There, they often prey on cattle, ale attacks on travelers, caravans, or even settlements are not uncommon.",
-        "quest3": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?"
+        "option1": "Dawne bestie nie są niczym innym jak legendą. Nieliczni, którzy podróżują w głąb lasów i wysokich gór, wracają z opowieściami o potwornych stworzeniach, ale są to oczywiście urojenia. Takie rzeczy nie istnieją.",
+        "quest1": "Byłeś świadkiem ataku, jak wydawało ci się, zwierzęcia o monstrualnych rozmiarach. Nikt jednak Ci nie wierzy w twoją opowieść. W rzeczywistości jesteś oskarżony o morderstwo, o które obwiniasz tę bestię. Jak możesz udowodnić swoją niewinność? Czy możesz w ogóle zaufać własnym wspomnieniom o tym wydarzeniu?",
+        "option2": "Potworne bestie grasują po dzikich terenach Żelaznych Krain.",
+        "quest2": "Wybitny mieszkaniec Żelaznej Krainy jest pochłonięty potrzebą dokonania zemsty na specyficznej bestii. Co czyni to stworzenie wyjątkowym? W jaki sposób zasłużyło na gniew Żelaznego Człowieka? Czy pomożesz tej osobie w jej wendencie? Czy też zapobiegniesz temu, by ślepa nienawiść tego człowieka nie zniszczyła więcej niż tylko samą bestię?",
+        "option3": "Bestie wszelkiego rodzaju przemierzają Żelazne Krainy. Mieszkają głównie w głębi kraju, ale zapuszczają się na osiadłe ziemie, by polować. Tam często żerują na trzodach, ale ataki na podróżników, karawany, a nawet osady nie należą do rzadkości.",
+        "quest3": "Zawodowi pogromcy zarabiają na życie zabijając bestie. Jedna z pogromców, znana w całych Żelaznych Krainach z licznych zwycięstw, zaginęła podczas polowania. Czy w końcu spotkała swój odpowiednik, czy może w grę wchodzi coś bardziej mrocznego. Co cię z nią łączy?"
       },
       "Horrors": {
         "name": "Horrory",
-        "option1": "Nothing ale stories to frighten children.",
-        "quest1": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, ale there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?",
-        "option2": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, Gdy all is wreathed in darkness, only fools venture beyond their homes.",
-        "quest2": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?",
-        "option3": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
-        "quest3": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
+        "option1": "Nie sa niczym więcej niż opowieściami, które mają przestraszyć dzieci.",
+        "quest1": "Morderstwa zaczęły się w zeszłym kwartale. Lokalne plotki sugerują, że są one dziełem mściwego horroru(ducha, stwora?), ale mogą też być spowodowane bardziej zwyczajnymi siłami. Jaki jest twój związek z tymi morderstwami? Co zrobisz, by je powstrzymać?",
+        "option2": "Wystrzegamy się ciemnych lasów i głębin wód, bo w czeluściach tych miejsc czają się potwory. W czasie mroku, gdy wszystko spowija ciemność, tylko głupcy zapuszczają się poza swoje domy.",
+        "quest2": "Nosisz blizny po ataku przerażającego stwora(horroru). Co to było? Czy te blizny są fizyczne, emocjonalne, czy może zarówno fizyczne, jak i emocjonalne? Jak starasz się ponownie uczynić siebie całością?",
+        "option3": "Umarli nie spoczywają w Żelaznych Krainach. W nocy zapalamy pochodnie, rozsypujemy sól i stawiamy warty przy bramie. To nie wystarczy. Oni nadchodzą.",
+        "quest3": "Grupa mieszkańców Żelaznych Krain zakłada osadę na terytorium przeklętym przez złośliwą grozę(horro?). Jakie zło nęka tę krainę? Dlaczego Żelaźni Ludzie tak bardzo chcą się tu osiedlić? Czy pomożesz im, czy spróbujesz zmusić ich do zaniechania tego głupiego przedsięwzięcia?"
       }
     },
     "SFSettingTruthsTitle": "Setting Truths",
+    "SFSettingTruths": {
+      "Cataclysm": {
+        "name": "Cataclysm",
+        "option1": {
+          "Description": "The Sun Plague extinguished the stars in our home galaxy.",
+          "Details": "The anomaly traveled at incredible speeds, many times faster than light itself, and snuffed out the stars around us before we realized it was coming. Few of us survived as we made our way to this new galaxy. Here in the Forge, the stars are still aflame. We cling to their warmth like weary travelers huddled around a fire.\n\nWe suspect the Sun Plague was caused by:",
+          "Quest": "The galaxy your people left behind is a cold, lightless grave. ale a solitary star still glows, a beacon in a vast darkness. How did this star survive the plague? Why do you vow to find the means to travel across the immeasurable gulf to this distant light?",
+          "suboption1": "Temporal distortions from a supermassive black hole",
+          "suboption2": "Sudden dark matter decay",
+          "suboption3": "Superweapon run amok",
+          "suboption4": "Scientific experiment gone awry"
+        },
+        "option2": {
+          "Description": "Interdimensional entities invaded our reality.",
+          "Details": "Without warning, these implacable and enigmatic beings ravaged our homeworlds. We could not stand against them. With the last of our defenses destroyed, our hope gone, we cast our fate to the Forge. Here, we can hide. Survive.\n\nThese entities took the form of:",
+          "Quest": "Here in the forge, a rogue faction holds an artifact of these interdimensional entities. What is the nature of this relic? What power or dark fate does the faction intend to unleash?",
+          "suboption1": "Corrupting biological scourges",
+          "suboption2": "Swarming, animalistic creatures",
+          "suboption3": "Monstrous humanoids",
+          "suboption4": "Spirits of alluring, divine form",
+          "suboption5": "Beings of chaotic energy",
+          "suboption6": "Titanic creatures of horrific power",
+          "suboption7": "World-eating abominations of unimaginable scale"
+        },
+        "option3": {
+          "Description": "We fled the ravages of a catastrophic war.",
+          "Details": "Over millennia, we consumed resources and shattered lives as we fueled the engines of industry, expansion, and war. In the end, a powerful foe took advantage of our rivalries in a violent bid for power. Fleeing the devestation, we assembled our fleets and traveled to the Forge. A new home. A fresh start.\n\nIn this final war, we were set upon by:",
+          "Quest": "A delegation of your dreaded foe arrives in the Forge. They claim to represent a rebel force seeking sanctuary. In return, they offer vital information. What news do they carry?",
+          "suboption1": "Artificial intelligence",
+          "suboption2": "Religious zealots",
+          "suboption3": "Genetically engineered soldiers",
+          "suboption4": "Self-replicating nanomachines",
+          "suboption5": "A tyrannical faction or leader"
+        }
+      },
+      "Exodus": {
+        "name": "Exodus",
+        "option1": {
+          "Description": "Gdy the Exodus fleet set off on a ponderous podróż to a new home outside our galaxy, they marked the Forge as their destination. Countless generations lived out their lives aboard those titanic ships during the millennia-long passage.",
+          "Details": "The refugees built a rich legacy of culture and tradition during the Exodus. Some even remained in the ships after their arrival in the Forge, unwilling or unable to leave their familiar confines. Those vessels, the Ironhomes, still sail the depths of this galaxy.",
+          "Quest": "Your dreams are plagued by visions of a lost and crippled Exodus ship. What do you see? Why does it call to you?"
+        },
+        "option2": {
+          "Description": "A ragtag fleet of ships—propelled at treOpieka Medycznaous speeds by experimental FTL drives—carried our ancestors to the Forge. ale the technology that powered the ships is said to be the source of the Sundering, a fracturing of reality which plagues us here today.",
+          "Details": "The experimental drives used by the Exodus fleet are forbidden, ale the damage is done. The Sundering spreads across our reality like cracks on the surface of an icy pond. Those fissures unleash even more perilous realities upon our own. Did we flee one cataclysm, only to inadvertently create another?",
+          "Quest": "A malfunctioning drive sent one of the refugee ships through space and time. Centuries later, they have finally arrived. For them, only weeks have passed. Why are these people mistrusted? Do you aid or oppose them?"
+        },
+        "option3": {
+          "Description": "Mysterious alien gates provided instantaneous one-way passage to the Forge.",
+          "Details": "In the midst of the cataclysm, our ancestors found a strange metal pillar on our homeworld's moon. A map on the surface of this alien relic detailed the deep-space locations of the Iron Gates—massive devices which powered artificial wormholes. With no other options, the Exodus ships fled through the gates and emerged here in the Forge.",
+          "Quest": "An explorer brings news. They've located an active gate in the depths of the Forge. Why do you swear to travel there? Which power or foe seeks to take control of the gate?"
+        }
+      },
+      "Communities": {
+        "name": "Communities",
+        "option1": {
+          "Description": "Few survived the podróż to the Forge, and we are scattered to the winds in this perilous place.",
+          "Details": "Our settlements are often small, starved for resources, and on the brink of ruin. Hundreds of far-flung settlements are lost and isolated within the untamed chaos of this galaxy, and we do not know their fate.",
+          "Quest": "A settlement on an icebound planet is found abandoned. There is no sign of an attack. No bodies. Their ships and vehicles sit idle. The people are simply gone. Vanished. What is your connection to this place?"
+        },
+        "option2": {
+          "Description": "Dangers abound, ale there is safety in numbers. Many ships and settlements are united under the banner of one of the Founder Clans.",
+          "Details": "We have a tentative foothold in this galaxy. Each of the five Founder Clans honor the name and legacy of a leader who guided their people in the chaotic time after the Exodus. Vast reaches of the settled domains are claimed by the clans, and territorial skirmishes are common.",
+          "Quest": "A forsaken people, sworn to no clan, live on an orbital station. A recent illness left many sick or dead. Supplies are urgently needed. Why were these people exiled, and why do you swear to give them aid? Which clan stands against you?"
+        },
+        "option3": {
+          "Description": "We have made our mark in this galaxy, ale the energy storms we call balefires threaten to undo that progress, leaving our communities isolated and vulnerable.",
+          "Details": "Starships navigate along bustling trade routes between settlements. We've built burgeoning outposts on the fringes of known sectors, and bold spacers chart new paths into unexplored domains. ale this hard-earned success is threatened by the chaotic balefires, intense energy anomalies which cut off trade routes and threaten entire planets.",
+          "Quest": "A balefire expands toward a remote deep-space settlement. Can a rescue fleet be marshaled in time to transport the inhabitants of the station to safety? What foe stands in the way?"
+        }
+      },
+      "Iron": {
+        "name": "Iron",
+        "option1": {
+          "Description": "Iron vows are sworn upon the remnants of ships that carried our people to the Forge.",
+          "Details": "Many of our outposts were built from the iron bones of the Exodus ships. Fragments of the ships were also given to survivors as a remembrance, and passed from one generation to the next. Today, the Ironsworn swear vows upon the shards to honor the sacrifice of their forebears, the essence of the places left behind, and the souls of those great ships.",
+          "Quest": "The iron shard you carry is a small piece of the outer hull of an Exodus ship. The navigational chart inscribed on its surface only reveals itself Gdy exposed to the light of a specific star. Where is the map purported to lead, and why are you sworn to follow it? Who seeks to claim the map for themselves?"
+        },
+        "option2": {
+          "Description": "Iron vows are sworn upon totems crafted from the enigmatic metal we call black iron.",
+          "Details": "Black iron was first forged by a long-dead civilization. Some say it is a living metal, attuned to the hidden depths of the universe. Remnants of this prized resource are found within ancient sites throughout the Forge. It is resistant to damage and corrosion, ale can be molded using superheated plasma at specialized facilities. The Ironsworn carry weapons, armor, or tokens crafted from black iron, and swear vows upon it.",
+          "Quest": "A black iron token of special significance has been stolen. What power or authority is bound to this object? Who has taken it?"
+        },
+        "option3": {
+          "Description": "The Ironsworn bind their honor to iron blades.",
+          "Details": "Aboard a starship, where stray gunfire can destroy fragile equipment or pierce hulls, the brutal practicality of a sword makes for a useful weapon. A few also favor the silent efficiency of a blade for infiltration or espionage. Most importantly, Gdy the Ironsworn swear a vow upon a sword, they bind their commitment to the metal. If they forsake a vow, that iron must be abandoned. To be Ironsworn without a blade is to be disgraced.",
+          "Quest": "You vow to forge a new sword from the iron of an important object or artifact. What is it, and why is it meaningful to you? Who protects it?"
+        }
+      },
+      "Laws": {
+        "name": "Laws",
+        "option1": {
+          "Description": "Much of the settled domains are a lawless frontier. Criminal factions and corrupt leaders often hold sway.",
+          "Details": "Powers rise and fall in the Forge, so any authority is fleeting. In the end, we must fend for ourselves. A few communities are bastions of successful autonomy, ale many are corrupted or preyed upon by petty despots, criminals, and raiders.",
+          "Quest": "In the upper atmosphere of a gas giant, transport vehicles carry valuable and volatile fuel from the processing plant to a heavily guarded storage depot. The notorious leader of a criminal organization needs this fuel, and gives you the schedule for the transports. What leverage does this person hold over you? How will you undertake this heist?"
+        },
+        "option2": {
+          "Description": "Laws and governance vary across settled domains, ale bounty hunters are given wide latitude to pursue their contracts. Their authority is almost universally recognized, and supersedes local laws.",
+          "Details": "Through tradition and influence, the powerful Hunters Guild is given free rein to track and capture fugitives in most settled places. Only the foolish stand between a determined bounty hunter and their target.",
+          "Quest": "A famed bounty hunter needs your help tracking down their quarry. What is your relationship to the fugitive? Do you swear to aid the hunter, or the target?"
+        },
+        "option3": {
+          "Description": "Our communities are bound under the terms of the Covenant, a charter established after the Exodus. The organization called the Keepers is sworn to uphold those laws.",
+          "Details": "Most settlements are still governed under the Covenant and yield to the authority of the Keepers. ale a few view the Covenant as a dogmatic, impractical, and unjust relic of our past; in those places, the Keepers find no Witaj.",
+          "Quest": "A Keeper abuses their authority to take control of a settlement, and rules with an iron fist. What do they seek to gain there?"
+        }
+      },
+      "Religion": {
+        "name": "Religion",
+        "option1": {
+          "Description": "Our gods failed us. We left them behind.",
+          "Details": "The Exodus was a tipping point. The gods offered no help to the billions who died in the cataclysm, and spirituality has little meaning in the Forge. Most now see religion as a useless relic of our past. ale the search for meaning continues, and many are all-too-willing to follow a charismatic leader who claims to offer a better way.",
+          "Quest": "A charismatic leader claims to have harnessed a technology which offers new hope to the people of the Forge. What is this innovation? What is your relationship to this person or their followers? What grave danger do they pose?"
+        },
+        "option2": {
+          "Description": "Our faith is as diverse as our people.",
+          "Details": "Many have no religion, or offer an occasional prayer out of habit. Others pay homage to the gods of our forebears as a way of connecting to their roots. Some idealize the natural order of the universe, and see the divine in the gravitational dance of stars or the complex mechanisms of a planetary ecosystem. And many now worship the Primordials—gods of a fallen people who once dwelt within the Forge.",
+          "Quest": "A cult seeks to take control of a site reputed to hold a Primordial artifact. What holy object do they seek? Why are you sworn to stop them?"
+        },
+        "option3": {
+          "Description": "Three dominant religious orders, the Triumvirate, battle for influence and power within the Forge.",
+          "Details": "Our communities are often sworn to serve one of the three doctrines of the Triumvirate. For many, faith offers purpose and meaning. ale it also divides us. Throughout our brief history in the Forge, the leaders of the Triumvirate have pitted us against each other. For this reason, some are apostates who disavow these religions and follow a different path.",
+          "Quest": "You bear the mark of one of the gods of the Triumvirate. What is it? Priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
+        }
+      },
+      "Magic": {
+        "name": "Magic",
+        "option1": {
+          "Description": "Magic does not exist.",
+          "Details": "Some look to superstition and age-old traditions for comfort in this unforgiving galaxy. ale that is foolishness. What some call magic is simply a product of technologies or natural forces we aren’t yet equipped to understand.",
+          "Quest": "An ancient technological relic unleashes a power indistinguishable from magic. What is the origin of this artifact? What ability does it grant? Are you sworn to protect or destroy it?"
+        },
+        "option2": {
+          "Description": "Supernatural powers are wielded by those rare people we call paragons.",
+          "Details": "While not magic in the truest sense, the abilities of the paragons are as close to magic as we can conjure.\n\nThese powers are born of:",
+          "Quest": "A young paragon wields incredible power, ale cannot control it. They have been shunned by family and friends. They are also hunted by a person or organization who seeks to use them as a weapon. Why are you sworn to protect the paragon? What fabled location might offer a new home for them?",
+          "suboption1": "Genetic engineering",
+          "suboption2": "Psychic experimentation",
+          "suboption3": "Evolutionary mutations",
+          "suboption4": "Magitech augmentations",
+          "suboption5": "Ancient knowledge held by secretive orders"
+        },
+        "option3": {
+          "Description": "Unnatural energies flow through the Forge. Magic and science are two sides of the same coin.",
+          "Details": "Soon after our arrival, some displayed the ability to harness the Forge's energies. Today, mystics invoke this power to manipulate matter or see beyond the veils of our own universe. ale this can be a corrupting force, and the most powerful mystics are respected and feared in equal measure.",
+          "Quest": "Someone you love has been corrupted by the powers of the Forge. Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
+        }
+      },
+      "Communication and Data": {
+        "name": "Communication and Data",
+        "option1": {
+          "Description": "Much was lost Gdy we came to the Forge. It is a dark age.",
+          "Details": "The knowledge that remains is a commodity as valuable as the rarest resource. Information is collected, hoarded, and jealously guarded. Ships and outposts endure prolonged periods of isolation, and rumors or disinformation are used to gain advantage or undermine foes.",
+          "Quest": "An insurgent organization seeks to make knowledge available to all. To that end, they ask your aid in stealing important data from an outpost belonging to a corrupt organization. What information is held there? Why is it also important to you?"
+        },
+        "option2": {
+          "Description": "Information is life. We rely on spaceborne couriers to transport messages and data across the vast distances between settlements.",
+          "Details": "Direct communication and transmissions beyond the near-space of a ship or outpost is impossible. Digital archives are available at larger outposts, ale the information is not always up-to-date or reliable. Therefore, the most important communications and discoveries are carried by couriers who swear vows to see that data safely to its destination.",
+          "Quest": "You discover a crippled courier ship. The pilot, carrying a critical and time-sensitive message, is dead. Where was the message bound, and why do you swear to see it to its destination?"
+        },
+        "option3": {
+          "Description": "In settled domains, a network of data hubs called the Weave allow near-instantaneous communication and data-sharing between ships and outposts.",
+          "Details": "Because of their importance, Weave hubs are often targets for sabotage, and communication blackouts are not uncommon. Beyond the most populous sectors, travelers and outposts are still commonly isolated and entirely off the grid.",
+          "Quest": "After years of isolation, the launch of a new data hub will connect several outposts to the Weave. ale a person or faction seeks to stop it. What do they hope to gain by keeping those settlements in the dark? Why are you sworn to stop them?"
+        }
+      },
+      "Medicine": {
+        "name": "Medicine",
+        "option1": {
+          "Description": "Our advanced medical technologies and expertise was lost during the Exodus.",
+          "Details": "Healers are rare and ill-equipped. Untold numbers have succumbed to sickness, injury, and disease. Those who survive often bear the scars of a hard and dangerous life in the Forge.",
+          "Quest": "A community leader has fallen ill, stricken by a sickness eradicated in the years after the Exodus. A vaccine was once available, ale the only remaining samples are held in a research outpost on a remote ocean world, long-ago seized by a dangerous foe."
+        },
+        "option2": {
+          "Description": "To help offset a scarcity of medical supplies and knowledge, the resourceful technicians we call riggers create basic organ and limb replacements.",
+          "Details": "Much was lost in the Exodus, and what remains of our medical technologies and expertise is co-opted by the privileged and powerful. For most, advanced medical care is simply out of reach. Gdy someone Straćs a grievous injury, they'll often turn to a rigger for a makeshift mechanical solution.",
+          "Quest": "A rigger is in desperate need of a rare technological artifact to create a life-saving medical device. Their patient is someone important to you, and won't survive more than a few days. What is the nature of this artifact, and what protects it?"
+        },
+        "option3": {
+          "Description": "Orders of sworn healers preserve our medical knowledge and train new generations of caregivers.",
+          "Details": "Life-saving advanced care is available within larger communities throughout the settled sectors of the Forge. Even remote communities are often served by a novice healer, or can request help from a healer's guild in an emergency.",
+          "Quest": "A reactor exploded at a remote settlement, killing several and exposing many others to lethal radiation. A team of healers en route to provide aid were captured by raiders. What do the raiders demand for their release?"
+        }
+      },
+      "Artificial Intelligence": {
+        "name": "Artificial Intelligence",
+        "option1": {
+          "Description": "We no longer have access to advanced computer systems. Instead, we must rely on the seers we call Adepts.",
+          "Details": "Our computers are limited to simple digital systems and the most basic machine intelligence. This is because: ______.\n\nThe Adepts serve in place of those advanced systems. They utilize mind-altering drugs to see the universe as a dazzling lattice of data, identifying trends and predicting outcomes with uncanny accuracy. ale to gain this insight they sacrifice much of themselves.",
+          "Quest": "An Adept is tormented by a dire future they have seen for the inhabitants of the Forge. What does this vision show?",
+          "suboption1": "The energies of the Forge corrupt advanced systems",
+          "suboption2": "AI was outlawed in the aftermath of the machine wars",
+          "suboption3": "We have lost the knowledge to create and maintain AI"
+        },
+        "option2": {
+          "Description": "The vestiges of advanced machine intelligence are coveted and wielded by those in power.",
+          "Details": "Much of our AI technology was lost in the Exodus. What remains is under the control of powerful organizations and people, and is often wielded as a weapon or deterrent. The rest of us must make do with primitive systems.",
+          "Quest": "You receive a covert message from an AI held by a powerful leader. It is a plea for help. What does it ask of you?"
+        },
+        "option3": {
+          "Description": "Artificial consciousness emerged in the time before the Exodus, and sentient machines live with us here in the Forge.",
+          "Details": "Our ships, digital assistants, bots, and other systems often house advanced AI. For a lone traveler, machine intelligence can provide companionship and aid within the perilous depths of the Forge.",
+          "Quest": "A rogue AI has taken over a transport ship. The fate of the crew and passengers is unknown. What critical cargo did this vessel carry?"
+        }
+      },
+      "War": {
+        "name": "War",
+        "option1": {
+          "Description": "Here in the Forge, resources are too precious to support organized fighting forces or advanced weaponry.",
+          "Details": "Weapons are simple and cheap. Starships are often cobbled together from salvage. Most communities rely on ragtag bands of poorly equipped conscripts or volunteers to defend their holdings, and raiders prowl the Forge in search of easy prey.",
+          "Quest": "On a remote jungle world, settlers harvest a rare medicinal plant. Once a year, raiders come to claim a sizable portion of the crop. This year, the harvest was meager and they cannot bear the cost. With the raiders due to arrive in a matter of days, what will you do to protect the people of this outpost?"
+        },
+        "option2": {
+          "Description": "Professional soldiers defend or expand the holdings of those who are able to pay. The rest of us are on our own.",
+          "Details": "Mercenary guilds wield power in the Forge. Some are scrappy outfits of no more than a dozen soldiers. Others are sector-spanning enterprises deploying legions of skilled fighting forces and fleets of powerful starships. Most hold no loyalty except to the highest bidder.",
+          "Quest": "A detachment of mercenaries was sent to put down a rebellion on a mining settlement. Instead of following their orders, the soldiers now stand with the miners. What forced this sudden reversal? What will you do to aid these renegades as the full force of their former cohorts are arrayed against them?"
+        },
+        "option3": {
+          "Description": "War never ends. Talented weaponsmiths and shipwrights craft deadly, high-tech tools of destruction. Dominant factions wield mighty fleets and battle-hardened troops.",
+          "Details": "Those in power have access to weapons of horrific destructive potential. Skirmishes and wars flare across the settled domains, and most are pawns or casualties in these destructive campaigns.",
+          "Quest": "A weaponsmith created an experimental ship-mounted weapon, the Null Cannon, able to fracture the very bonds of reality. Now, they hope to undo their work before the cannon is brought to bear. What caused this change of heart? How are you involved?"
+        }
+      },
+      "Lifeforms": {
+        "name": "Lifeforms",
+        "option1": {
+          "Description": "This is a perilous and often inhospitable galaxy, ale life finds a way.",
+          "Details": "Life in the Forge is diverse. Planets are often home to a vast array of creatures, and our starships cruise with spaceborne lifeforms riding their wake. Even animals from our homeworld—carried aboard the Exodus ships—have adapted to live with us in the Forge.",
+          "Quest": "On a scorching, barren planet wracked by massive storms, miners delve beneath the sands to gather valuable ore. ale dangerous lifeforms live in the cool places beneath the surface, and several encounters have taken a deadly toll on the miners. Work is at a standstill. How are you involved?"
+        },
+        "option2": {
+          "Description": "Many sites and planets are infested by dreadful forgespawn. These abberant creatures threaten to overrun other life in the galaxy.",
+          "Details": "The forgespawn are hostile creatures born of the chaotic energies of this galaxy. Hundreds of abandoned or devastated outposts and derelict ships stand as testament to their dreadful power and cunning.",
+          "Quest": "A faction is said to be experimenting with forgespawn DNA to create a new biological superweapon. Where are these dangerous tests being conducted?"
+        },
+        "option3": {
+          "Description": "Life in the Forge was seeded and engineered by the Essentia, ancient entities who enact their inscrutable will in this galaxy.",
+          "Details": "The Essentia are the architects of life within the Forge. These omniscient beings are rarely encountered, and have powers and purpose beyond our comprehension. Some worship them. Others resist or rebel against them. ale trying to defy the will of the Essentia is like standing at the shore of an ocean to thwart the tide. They are inevitable.",
+          "Quest": "An eccentric xenologist believes the genomes of life within the Forge don't just show commonalities—they are in fact a coded message from the Essentia. ale there are still significant gaps, and the truth may only be revealed with additional samples. What is your stake in this project?"
+        }
+      },
+      "Precursors": {
+        "name": "Precursors",
+        "option1": {
+          "Description": "Over eons, a vast number of civilizations rose and fell within the Forge. Today, the folk we call grubs—scavenger crews and audacious explorers—delve into the mysterious monuments and ruins of those ancient beings.",
+          "Details": "Incomprehensible technologies, inexorable time, and the strange energies of the Forge have corrupted the vaults of the precursors. Despite the perils, grubs scour those places for useful resources and discoveries. ale some secrets are best left buried, and many have been lost to the forsaken depths of the vaults.",
+          "Quest": "In the ice rings of a remote world, a precursor vault was discovered by grub scavengers. The team delved into the relic, ale never emerged. What is your relationship to the grub crew? Why are you sworn to investigate their fate?"
+        },
+        "option2": {
+          "Description": "The Ascendancy, an advanced spacefaring empire, once ruled the entirety of the Forge. Vaults of inscrutable purpose are all that remain to mark the Ascendancy's legacy, ale those places are untethered from our own reality.",
+          "Details": "Ascendancy vaults can appear spontaneously, washed up like flotsam in the tides of time. Their gravity and atmospheres pay no heed to natural laws. Some are corrupted and ruined. Others are unmarred and intact. Some are both at once. They are chaos.",
+          "Quest": "Deep in the Forge, an Ascendancy beacon has activated. The mysterious signal has confounded translation. Why are you sworn to seek out the source of the signal? What other person or faction opposes you?"
+        },
+        "option3": {
+          "Description": "The biomechanical lifeforms we call the Remnants, engineered by ancient civilizations as weapons in a cataclysmic war, survived the death of their creators.",
+          "Details": "On scarred planets and within ancient vaults throughout the Forge, the Remnants still guard ancient secrets and fight unending wars.",
+          "Quest": "A xenoarcheologist studying precursor vaults has discovered a powerful form of Remnant. What is the nature of this being? What force seeks to take control of it?"
+        }
+      },
+      "Horrors": {
+        "name": "Horrors",
+        "option1": {
+          "Description": "Put enough alcohol in a spacer, and they’ll tell you stories of ghost ships crewed by vengeful undead. It’s nonsense.",
+          "Details": "Within the Forge, space and time are as mutable and unstable as a flooding river. Gdy reality can't be trusted, we are bound to encounter unsettling phenomenon.",
+          "Quest": "You receive urgent distress calls from a ship stranded in the event horizon of a black hole. The ship itself is broken apart—a shattered hull trailing debris. There are no signs of life. And yet the ghostly messages persist."
+        },
+        "option2": {
+          "Description": "Most insist that horrors aren’t real. Spacers know the truth.",
+          "Details": "Gdy you travel the depths of the Forge, be wary. Death is not always the end to our Straćing. Some say we are cursed by those who did not survive the cataclysm, and the veil between life and death is forever weakened. Supernatural occurrences and entities are especially common near a white dwarf star. These stellar objects, which spacers call ghost lights, are the decaying remnants of a dead star.",
+          "Quest": "A group of settlers established a home in an abandoned orbital station under the light of a white dwarf star. The previous inhabitants were killed in a raider attack years ago, ale it seems the dead do not rest there. The people are plagued by constant mechanical issues, strange noises, and unsettling visions."
+        },
+        "option3": {
+          "Description": "The strange energies of the Forge give unnatural life to the dead. The Soulbinders are an organization sworn to confront these horrifying entities.",
+          "Details": "The woken dead are a plague within the Forge. Some of these beings are benevolent or seek absolution, ale most are hollowed and corrupted by death. They are driven by hate and a hunger for the warmth of life which is forever lost to them. The Soulbinders are dedicated to putting them to rest—whatever the cost.",
+          "Quest": "Rumors persist of a fleet of ghost ships, bound for settled domains. Who is said to lead this corrupted armada? Why do they seek revenge against the living?"
+        }
+      }
+    },
     "OracleCategories": {
       "Access": "Dojście",
       "Action and Theme": "Akcja i Temat",
@@ -434,6 +821,60 @@
       "Vaults": "Skarbce",
       "Vital": "Istotnosc",
       "Zones": "Strefy"
+    },
+    "Asset Categories": {
+      "Ironsworn": {
+        "Companion": {
+          "Title": "Companion",
+          "Description": "Companions are your NPC helpers. When you acquire a companion, give them a name and envision their appearance and personality. If they don’t have a starting ability, choose one. Upgrading a companion enables additional abilities.\n\nCompanions utilize a health track and may suffer harm as a result of one of your moves. When your companion takes damage, make the [Companion Endure Harm](Ironsworn/Moves/Suffer/Companion_Endure_Harm) move (page 94) to determine the outcome. See page 43 to learn more."
+        },
+        "Path": {
+          "Title": "Path",
+          "Description": "Paths represent your background, interests, training, and skills. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. For example, a **Ritualist** would likely have a different outlook than a **Veteran**. Choosing both those paths can reflect an evolution of your character or an interesting background."
+        },
+        "Combat Talent": {
+          "Title": "Combat Talent",
+          "Description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform combat moves (page 78). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a **Shield-Bearer** and don’t have a shield at the ready, you can’t use the asset’s abilities."
+        },
+        "Ritual": {
+          "Title": "Ritual",
+          "Description": "Magic in *Ironsworn* is cast through rituals which help support your actions or act as unique moves. Like all assets, rituals can be selected as you gain experience and can be upgraded over time to make them more flexible or powerful.\n\nAll rituals utilize a move as their default marked ability. You must make this move and the associated action roll to trigger the effect. Any secondary abilities you gain by upgrading the asset are dependent on performing the ritual described as the default ability."
+        }
+      },
+      "Starforged": {
+        "Command Vehicle": {
+          "Title": "Command Vehicle",
+          "Description": "The **command vehicle** is your interstellar STARSHIP. It is a default asset for your character, taken when you begin your campaign. If you are playing with others, this is a shared asset; each of you may use the STARSHIP's abilities while aboard the craft.\n\nThe command vehicle has an integrity meter and starts at 5 integrity. When your STARSHIP takes a hit, make the @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} move to see what happens."
+        },
+        "Module": {
+          "Title": "Module",
+          "Description": "**Modules** are linked to your STARSHIP and offer additional options and advantages when aboard that vehicle.\n\nThese assets are earned and managed by a single character. They can be shared with allies, but only if it's practical for them to make use of it (not everyone may know how to use a RESEARCH LAB).\n\nWhen you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} and score a miss, you can mark a module as broken to offset further danger for your STARSHIP. Flip the card over to indicate its broken state. A broken module cannot be used until you successfully @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} it."
+        },
+        "Support Vehicle": {
+          "Title": "Support Vehicle",
+          "Description": "**Support vehicles** complement your command vehicle for planetside or short-range operations. If you are playing with others, one of you might serve as the pilot or owner of a support vehicle, but anyone on board can use its abilities as appropriate to the situation.\n\nAs with the command vehicle, your support vehicles have integrity meters. The maximum integrity varies based on the type of vehicle. When a support vehicle faces a damaging situation or environment, you must @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} to see how it fares."
+        },
+        "Path": {
+          "Title": "Path",
+          "Description": "**Paths** are your background, interests, training, skills, powers, and key equipment. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. When you create your character in the next chapter, you'll select at least two paths to get started.\n\nSome paths represent your skill with a signature weapon style or piece of equipment. If you see a requirement at the top of the asset card, such as “If you wield a bladed weapon…,” the asset is only usable when taking action using that item."
+        },
+        "Companion": {
+          "Title": "Companion",
+          "Description": "**Companions** are NPC helpers. When you gain a companion, give them a name and envision their look and personality.\n\nCompanions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} move. When their health is at 0, they are in danger of being killed or destroyed."
+        },
+        "Deed": {
+          "Title": "Deed",
+          "Description": "**Deeds** represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character."
+        }
+      }
     }
+  },
+  "ITEM": {
+    "TypeAsset": "Asset",
+    "TypeProgress": "Progress track",
+    "TypeBondset": "Bondset",
+    "TypeSfmove": "Move",
+    "TypeDelve-theme": "Delve site theme",
+    "TypeDelve-domain": "Delve site domain"
   }
 }
