@@ -1,4 +1,4 @@
-@use 'mixins';
+@use '@styles/mixins';
 
 .chat-message {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);

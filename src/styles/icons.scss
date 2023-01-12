@@ -114,16 +114,12 @@
 [class*=' isicon-']::before {
   display: inline-block;
   background-color: currentcolor; // inherits text color by default. any valid background is fine if you want to get fancy, though.
-  width: 1em;
-  height: 1em; // height and width of the :before pseudo-element can be set as desired, these are just reasonable defaults that scale the current font size.
+  width: var(--ironsworn-icon-size);
+  height: var(--ironsworn-icon-size);
   content: '';
   mask-repeat: no-repeat;
   mask-position: center;
   mask-size: contain;
-
-  .vertical-text& {
-    transform: rotateZ(90deg);
-  }
 }
 
 [class^='isiconbg-'],

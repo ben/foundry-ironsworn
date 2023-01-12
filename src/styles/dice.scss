@@ -1,4 +1,4 @@
-@use 'mixins';
+@use '@styles/mixins';
 
 @mixin dice-glow($color, $diceDropShadowSize: 0 0 2px) {
   background-blend-mode: screen;

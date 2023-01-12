@@ -3,7 +3,7 @@
 @use '@styles/fvtt/dialog' as fvtt-dialog;
 
 // Common CSS custom properties are coralled in their own file.
-@import 'custom-properties.less';
+@forward '@styles/custom-properties';
 
 // THEMES
 // TODO: this could probably be set up to extract everything from the theme directory automatically.

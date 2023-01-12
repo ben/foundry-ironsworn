@@ -88,7 +88,11 @@
     outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
   --ironsworn-transition-timing: var(--ironsworn-transition-duration)
     var(--ironsworn-transition-timing-function);
-  --ironsworn-transition: all 0.5s ease;
+  --ironsworn-transition: all var(--ironsworn-transition-timing);
+
+  // Tabs
+  --ironsworn-tab-transition: fade;
+  --ironsworn-tab-transition-duration: 0.5s;
 
   // FontAwesome
   --fa-display: inline-block;
@@ -96,26 +100,8 @@
 
   // Ironsworn colors
 
-  // original sample from PDF: #c9181a
-  --ironsworn-color-red-light: hsl(355deg 100% 65%);
-  --ironsworn-color-red: hsl(7deg 78% 51%);
-  --ironsworn-color-red-dark: hsl(357deg 100% 28%);
-
-  // original sample from PDF: #8c1d81
-  --ironsworn-color-purple-light: hsl(298deg 72% 62%);
-  --ironsworn-color-purple: hsl(299deg 59% 45%);
-  --ironsworn-color-purple-dark: hsl(296deg 100% 23%);
-
-  // original sample from PDF: #35a9e0
-  --ironsworn-color-blue-light: hsl(191deg 100% 50%);
-  --ironsworn-color-blue: hsl(199deg 100% 47%);
-  --ironsworn-color-blue-dark: hsl(214deg 100% 45%);
-  --ironsworn-color-legacy-quests: var(--ironsworn-color-red);
-  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
-  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
   --ironsworn-color-danger: var(--ironsworn-color-red);
   --ironsworn-color-danger-inverted: hsl(0deg 0% 100%);
   --ironsworn-color-success: var(--ironsworn-color-blue);
   --ironsworn-color-warning: hsl(55deg 100% 50%);
-  --ironsworn-tab-transition: fade;
 }
