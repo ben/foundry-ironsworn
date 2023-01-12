@@ -44,6 +44,7 @@ const CONFIG = {
             'currentcolor',
             '0',
             '/^[0-9]+(\\.[0-9]+)?em$/',
+            '/#\\{.+?\\}/',
           ],
         },
         // silence complaints about floating points (which are a temp workaround anyways)
