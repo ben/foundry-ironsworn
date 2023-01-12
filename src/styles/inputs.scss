@@ -60,20 +60,6 @@ input[type='number'] {
 // RANGE SLIDERS
 
 input[type='range'] {
-  $slider-thumb-bg-color: var(--ironsworn-color-fg);
-  $slider-thumb-border-color: var(--ironsworn-color-cool-50);
-  $slider-thumb-bg-color-focus: var(--ironsworn-color-fg);
-  $slider-thumb-border-color-focus: var(--ironsworn-color-warm-90);
-  $slider-thumb-height: 12px;
-  $slider-thumb-width: 12px;
-  $slider-track-height: 6px;
-  $slider-track-border-radius: calc($slider-track-height / 2);
-  $slider-track-bg-color: var(--ironsworn-color-fg-20);
-  $slider-track-border-color: var(--ironsworn-color-fg-20);
-  $slider-track-bg-color-focus: var(--ironsworn-color-warm-20);
-  $slider-track-border-color-focus: var(--ironsworn-color-cool-50);
-  $slider-box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
-
   appearance: none;
   margin: 0;
   background: transparent;
@@ -81,45 +67,45 @@ input[type='range'] {
   height: 20px;
 
   &::-webkit-slider-runnable-track {
-    border: 1px solid $slider-track-border-color;
-    border-radius: $slider-track-border-radius;
-    box-shadow: $slider-box-shadow;
-    background: $slider-track-bg-color;
+    border: 1px solid var(--ironsworn-range-track-border-color);
+    border-radius: var(--ironsworn-range-track-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-track-bg-color);
     cursor: pointer;
     width: 100%;
-    height: $slider-track-height;
+    height: var(--ironsworn-range-track-height);
   }
 
   &::-webkit-slider-thumb {
     appearance: none;
     margin-top: -4px;
-    border: 1px solid $slider-thumb-border-color;
-    border-radius: 2px;
-    box-shadow: $slider-box-shadow;
-    background: $slider-thumb-bg-color;
+    border: 1px solid var(--ironsworn-range-thumb-border-color);
+    border-radius: var(--ironsworn-range-track-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
-    width: $slider-thumb-width;
-    height: $slider-thumb-height;
+    width: var(--ironsworn-range-thumb-width);
+    height: var(--ironsworn-range-thumb-height);
   }
 
   &::-moz-range-track {
-    border: 1px solid $slider-track-border-color;
-    border-radius: $slider-track-border-radius;
-    box-shadow: $slider-box-shadow;
-    background: $slider-track-bg-color;
+    border: 1px solid var(--ironsworn-range-track-border-color);
+    border-radius: var(--ironsworn-range-track-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-track-bg-color);
     cursor: pointer;
     width: 100%;
-    height: $slider-track-height;
+    height: var(--ironsworn-range-track-height);
   }
 
   &::-moz-range-thumb {
-    border: 1px solid $slider-thumb-border-color;
-    border-radius: 2px;
-    box-shadow: $slider-box-shadow;
-    background: $slider-thumb-bg-color;
+    border: 1px solid var(--ironsworn-range-thumb-border-color);
+    border-radius: var(--ironsworn-range-track-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
-    width: $slider-thumb-width;
-    height: $slider-thumb-height;
+    width: var(--ironsworn-range-thumb-width);
+    height: var(--ironsworn-range-thumb-height);
   }
 
   &::-ms-track {
@@ -127,32 +113,32 @@ input[type='range'] {
     background: transparent;
     cursor: pointer;
     width: 100%;
-    height: $slider-track-height;
+    height: var(--ironsworn-range-track-height);
     color: transparent;
   }
 
   &::-ms-fill-lower {
-    border: 1px solid $slider-track-border-color;
-    border-radius: $slider-track-height;
-    box-shadow: $slider-box-shadow;
+    border: 1px solid var(--ironsworn-range-track-border-color);
+    border-radius: var(--ironsworn-range-track-height);
+    box-shadow: var(--ironsworn-range-box-shadow);
     background: #8c8c8c;
   }
 
   &::-ms-fill-upper {
-    border: 1px solid $slider-track-border-color;
-    border-radius: $slider-track-height;
-    box-shadow: $slider-box-shadow;
-    background: $slider-track-bg-color;
+    border: 1px solid var(--ironsworn-range-track-border-color);
+    border-radius: var(--ironsworn-range-track-height);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-track-bg-color);
   }
 
   &::-ms-thumb {
-    border: 1px solid $slider-thumb-border-color;
-    border-radius: 2px;
-    box-shadow: $slider-box-shadow;
-    background: $slider-thumb-bg-color;
+    border: 1px solid var(--ironsworn-range-thumb-border-color);
+    border-radius: var(--ironsworn-range-track-border-radius);
+    box-shadow: var(--ironsworn-range-box-shadow);
+    background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
-    width: $slider-thumb-width;
-    height: $slider-thumb-height;
+    width: var(--ironsworn-range-thumb-width);
+    height: var(--ironsworn-range-thumb-height);
   }
 
   &:focus {
@@ -160,18 +146,18 @@ input[type='range'] {
   }
 
   &:focus::-webkit-slider-runnable-track {
-    border-color: $slider-track-border-color-focus;
-    background: $slider-track-bg-color-focus;
+    border-color: var(--ironsworn-range-track-border-color-focus);
+    background: var(--ironsworn-range-track-bg-color-focus);
   }
 
   &:focus::-ms-fill-lower {
-    border-color: $slider-track-border-color-focus;
-    background: $slider-track-bg-color;
+    border-color: var(--ironsworn-range-track-border-color-focus);
+    background: var(--ironsworn-range-track-bg-color);
   }
 
   &:focus::-ms-fill-upper {
-    border-color: $slider-track-border-color-focus;
-    background: $slider-track-bg-color-focus;
+    border-color: var(--ironsworn-range-track-border-color-focus);
+    background: var(--ironsworn-range-track-bg-color-focus);
   }
 
   input[type='range'] + .range-value {
