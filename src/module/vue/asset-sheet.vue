@@ -7,9 +7,8 @@
       v-if="editMode"
       :tabKeys="['description', 'fields', 'abilities', 'options', 'track']"
       :id="`${item._id}-asset-sheet`"
-      :class="$style.tabSet"
     >
-      <TabList :class="$style.tabList">
+      <TabList>
         <Tab
           tab-key="description"
           :class="$style.tab"
@@ -36,24 +35,20 @@
           :text="$t('IRONSWORN.Track')"
         />
       </TabList>
-      <TabPanels :class="$style.tabPanels">
-        <TabPanel
-          tab-key="description"
-          class="flexcol"
-          :class="$style.TabPanel"
-        >
+      <TabPanels>
+        <TabPanel tab-key="description" class="flexcol">
           <AssetEditDescription />
         </TabPanel>
-        <TabPanel tab-key="fields" class="flexcol" :class="$style.TabPanel">
+        <TabPanel tab-key="fields" class="flexcol">
           <AssetEditFields />
         </TabPanel>
-        <TabPanel tab-key="abilities" class="flexcol" :class="$style.TabPanel">
+        <TabPanel tab-key="abilities" class="flexcol">
           <AssetEditAbilities />
         </TabPanel>
-        <TabPanel tab-key="options" class="flexcol" :class="$style.TabPanel">
+        <TabPanel tab-key="options" class="flexcol">
           <AssetEditOptions />
         </TabPanel>
-        <TabPanel tab-key="track" class="flexcol" :class="$style.TabPanel">
+        <TabPanel tab-key="track" class="flexcol">
           <AssetEditTrack />
         </TabPanel>
       </TabPanels>

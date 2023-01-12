@@ -1,27 +1,27 @@
 <template>
   <ul class="list-block flexcol" :class="$style.wrapper">
-    <li class="list-block-item" :class="$style.moveRowWrapper">
+    <li class="list-block-item" :class="$style['move-row-wrapper']">
       <SfMoverow
         :move="moves.discoverASite"
         v-if="moves.discoverASite"
         class="nogrow"
       />
     </li>
-    <li class="list-block-item" :class="$style.moveRowWrapper">
+    <li class="list-block-item" :class="$style['move-row-wrapper']">
       <SfMoverow
         :move="moves.delveTheDepths"
         v-if="moves.delveTheDepths"
         class="nogrow"
       />
     </li>
-    <li class="list-block-item" :class="$style.moveRowWrapper">
+    <li class="list-block-item" :class="$style['move-row-wrapper']">
       <SfMoverow
         :move="moves.findAnOpportunity"
         v-if="moves.findAnOpportunity"
         class="nogrow"
       />
     </li>
-    <li class="list-block-item" :class="$style.moveRowWrapper">
+    <li class="list-block-item" :class="$style['move-row-wrapper']">
       <SfMoverow
         :move="moves.revealADanger"
         v-if="moves.revealADanger"
@@ -30,14 +30,14 @@
         :oracle-disabled="!hasThemeAndDomain"
       />
     </li>
-    <li class="list-block-item" :class="$style.moveRowWrapper">
+    <li class="list-block-item" :class="$style['move-row-wrapper']">
       <SfMoverow
         :move="moves.checkYourGear"
         v-if="moves.checkYourGear"
         class="nogrow"
       />
     </li>
-    <li class="list-block-item" :class="$style.moveRowWrapper">
+    <li class="list-block-item" :class="$style['move-row-wrapper']">
       <SfMoverow
         :move="moves.locateObjective"
         v-if="moves.locateObjective"
@@ -45,14 +45,14 @@
         @rollClick="locateObjective"
       />
     </li>
-    <li class="list-block-item" :class="$style.moveRowWrapper">
+    <li class="list-block-item" :class="$style['move-row-wrapper']">
       <SfMoverow
         :move="moves.escapeTheDepths"
         v-if="moves.escapeTheDepths"
         class="nogrow"
       />
     </li>
-    <li class="list-block-item" :class="$style.moveRowWrapper">
+    <li class="list-block-item" :class="$style['move-row-wrapper']">
       <SfMoverow
         :move="moves.revealADangerAlt"
         v-if="moves.revealADangerAlt"
@@ -70,7 +70,7 @@
   height: max-content;
 }
 
-.moveRowWrapper {
+.move-row-wrapper {
   flex-grow: 0;
   border-color: var(--ironsworn-color-midtone-30);
   height: max-content;

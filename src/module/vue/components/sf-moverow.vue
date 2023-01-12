@@ -2,52 +2,56 @@
   <Collapsible
     v-bind="$props.collapsible"
     class="movesheet-row"
-    :class="$style.sfMoveRow"
+    :class="$style['sf-move-row']"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
-    :contentWrapperClass="$style.contentWrapper"
+    :contentWrapperClass="$style['content-wrapper']"
     :toggleWrapperIs="`h${headingLevel}`"
-    :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
+    :toggleSectionClass="[$style['toggle-section'], toggleSectionClass]"
     :icon="null"
-    :toggleButtonClass="['bordered', $style.toggleButton, toggleButtonClass]"
+    :toggleButtonClass="[
+      'bordered',
+      $style['toggle-button'],
+      toggleButtonClass,
+    ]"
     :toggleTooltip="toggleTooltip"
-    :toggleWrapperClass="$style.toggleWrapper"
+    :toggleWrapperClass="$style['toggle-wrapper']"
     :toggleLabel="move?.displayName"
     :data-move-id="move.moveItem().id"
   >
     <template #after-toggle>
       <section
-        :class="$style.moveControls"
+        :class="$style['move-controls']"
         class="nogrow"
         data-tooltip-direction="UP"
       >
         <BtnRollmove
           :disabled="!canRoll"
           :move="move"
-          :class="$style.moveButton"
+          :class="$style['move-button']"
           :override-click="onRollClick !== undefined"
           @click="$emit('rollClick')"
         />
         <BtnOracle
           :node="data.oracles[0] ?? {}"
           :disabled="preventOracle"
-          :class="$style.moveButton"
+          :class="$style['move-button']"
           :override-click="onOracleClick !== undefined"
           @click="$emit('oracleClick')"
         />
-        <BtnSendmovetochat :move="move" :class="$style.moveButton" />
+        <BtnSendmovetochat :move="move" :class="$style['move-button']" />
       </section>
     </template>
     <template #default>
       <RulesTextMove
         @moveclick="moveClick"
         :move="move"
-        :class="$style.moveSummary"
+        :class="$style['move-summary']"
       >
         <template #after-footer>
           <OracleTreeNode
-            :class="$style.moveOracle"
+            :class="$style['move-oracle']"
             v-for="node of data.oracles"
             :key="node.displayName"
             :node="node"
@@ -59,10 +63,8 @@
 </template>
 
 <style lang="scss" module>
-@use '../../../styles/mixins.scss';
-
 .sf-move-row {
-  @include mixins.thematic-color;
+  @include mixins.thematic-color(v-bind('thematicColor'));
 
   position: relative;
   padding: 0 var(--ironsworn-spacer-md);

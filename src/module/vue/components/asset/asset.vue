@@ -3,7 +3,7 @@
     class="ironsworn__asset"
     :class="{
       [`asset-${$actor?.toolset}`]: true,
-      [$style.themeColor]: props.asset?.system?.color,
+      [$style['theme-color']]: props.asset?.system?.color,
     }"
     :aria-expanded="expanded"
   >

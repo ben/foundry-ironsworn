@@ -2,7 +2,7 @@
   <component
     :is="is"
     :class="{
-      [$style.tabList]: true,
+      [$style['tab-list']]: true,
       flexcol: tabState.orientation === 'vertical',
       flexrow: tabState.orientation === 'horizontal',
     }"
@@ -15,7 +15,7 @@
 </template>
 
 <style lang="scss" module>
-.tabList {
+.tab-list {
   // TODO:
   // * fun slidey animation by applying some kind of border stroke or gradient background image, and transitioning its offset? basically, apply it to 1/n of the height or width, where n == the number of tabs.
   flex-grow: 0;

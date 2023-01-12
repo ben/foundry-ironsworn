@@ -1,17 +1,17 @@
 <template>
-  <article :class="$style.sfLegacies" class="sf-legacies flexcol">
-    <section class="legacy-tracks flexcol" :class="$style.legacyTracks">
+  <article :class="$style['sf-legacies']" class="sf-legacies flexcol">
+    <section class="legacy-tracks flexcol" :class="$style['legacy-tracks']">
       <LegacyTrack
         v-for="legacy in ['quests', 'bonds', 'discoveries']"
         :key="legacy"
         :actor="actor"
         :legacy="(legacy as any)"
         class="nogrow"
-        :class="$style.legacyTrack"
+        :class="$style['legacy-track']"
       />
     </section>
     <section
-      :class="$style.starredProgressTracks"
+      :class="$style['starred-progress-tracks']"
       class="starred-progress-tracks flexcol"
       v-if="starredProgresses.length"
     >
@@ -26,7 +26,7 @@
   </article>
 </template>
 <style lang="scss" module>
-.sfLegacies {
+.sf-legacies {
   gap: var(--ironsworn-spacer-md);
 
   > *:not(:first-child) {
@@ -35,17 +35,17 @@
   }
 }
 
-.starredProgressTracks {
+.starred-progress-tracks {
   gap: var(--ironsworn-spacer-md);
   padding: var(--ironsworn-spacer-md) 0;
 }
 
-.legacyTracks {
+.legacy-tracks {
   gap: var(--ironsworn-spacer-md);
   align-items: center;
 }
 
-.legacyTrack {
+.legacy-track {
   width: 100%;
   height: max-content;
 }

@@ -2,7 +2,7 @@
   <TabSet
     :id="`${(actor as any)._id}_move-sheet`"
     ref="$tabSet"
-    :class="$style.tabSet"
+    :class="$style['tab-set']"
     :tabKeys="['moves', 'oracles']"
   >
     <TabList>
@@ -21,7 +21,7 @@
       <TabPanel tab-key="moves" class="flexcol">
         <Suspense>
           <SfMovesheetmoves
-            :class="$style.panelContent"
+            :class="$style['panel-content']"
             ref="movesTab"
             :toolset="toolset"
           />
@@ -30,7 +30,7 @@
       <TabPanel tab-key="oracles" class="flexcol">
         <Suspense>
           <SfMovesheetoracles
-            :class="$style.panelContent"
+            :class="$style['panel-content']"
             ref="oraclesTab"
             :toolset="toolset"
           />
@@ -41,11 +41,11 @@
 </template>
 
 <style lang="scss" module>
-.tabSet {
+.tab-set {
   // TODO make alternate layouts possible, possibly with media query?
 }
 
-.panelContent {
+.panel-content {
   flex-grow: 1;
 
   // HACK: offsets the padding on window.content with a negative margin, then pads it out. this way, the scrollbar appears in the empty space left by the padding instead of overlapping the content.

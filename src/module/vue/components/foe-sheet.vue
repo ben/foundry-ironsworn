@@ -31,7 +31,7 @@
       is="div"
       dropType="progress"
       class="flexcol"
-      :class="$style.dropTarget"
+      :class="$style['drop-target']"
     >
       <IronBtn
         @click="addEmpty"
@@ -54,7 +54,7 @@
 </template>
 
 <style lang="scss" module>
-.dropTarget {
+.drop-target {
   justify-items: space-around;
   text-align: center;
 

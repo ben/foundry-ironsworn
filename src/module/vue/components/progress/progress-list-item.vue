@@ -92,9 +92,9 @@
 </template>
 
 <style lang="scss" scoped>
---ironsworn-progress-widget-spacing: 6px;
-
 .progress-list-item {
+  --ironsworn-progress-widget-spacing: 6px;
+
   display: grid;
   grid-template-rows: max-content max-content 1fr;
   grid-template-columns: max-content max-content 1fr max-content;

@@ -19,8 +19,6 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins';
-
 .attr-label {
   margin: 0;
   font-size: var(--font-size-14);

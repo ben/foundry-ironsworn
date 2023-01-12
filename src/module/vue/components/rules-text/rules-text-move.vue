@@ -9,7 +9,7 @@
     <template #before-main>
       <slot name="before-main">
         <i
-          :class="$style.progressMoveLabel"
+          :class="$style['progress-move-label']"
           v-if="move.moveItem().isProgressMove()"
           >{{ $t('IRONSWORN.ProgressMove') }}</i
         >
@@ -25,7 +25,7 @@
 </template>
 
 <style lang="scss" module>
-.progressMoveLabel {
+.progress-move-label {
   opacity: 0.5;
 }
 </style>

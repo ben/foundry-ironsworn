@@ -28,7 +28,7 @@
       <TabSet
         :tabKeys="['character', 'notes']"
         :id="`${actor._id}-character-sheet-classic`"
-        :class="$style.tabSet"
+        :class="$style['tab-set']"
         :v-slot:icon="{ size: 'sm' }"
       >
         <TabList>
@@ -40,7 +40,7 @@
             <IronswornMain />
           </TabPanel>
           <TabPanel tab-key="notes" class="flexcol">
-            <IronswornNotes :class="$style.tabContent" />
+            <IronswornNotes :class="$style['tab-content']" />
           </TabPanel>
         </TabPanels>
       </TabSet>
@@ -70,11 +70,11 @@
   @include mixins.margin(right);
 }
 
-.tabContent {
+.tab-content {
   height: inherit;
 }
 
-.tabSet {
+.tab-set {
   margin-top: var(--ironsworn-spacer-lg);
 }
 </style>

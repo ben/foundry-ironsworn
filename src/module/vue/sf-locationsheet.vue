@@ -174,7 +174,7 @@ label {
 }
 
 [data-highlighted='true'] {
-  @include mixins.block-hover-mixin;
+  @include mixins.block-hover;
 }
 </style>
 

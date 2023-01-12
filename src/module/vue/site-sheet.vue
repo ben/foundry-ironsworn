@@ -1,19 +1,19 @@
 <template>
-  <div class="flexcol" :class="$style.siteSheet">
+  <div class="flexcol" :class="$style['site-sheet']">
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="actor" />
     <div class="flexrow nogrow" :class="$style.main">
-      <div class="flexcol" :class="$style.leftColumn">
+      <div class="flexcol" :class="$style['left-column']">
         <!-- RANK -->
-        <article :class="$style.progressWidget">
-          <div class="flexrow nogrow" :class="$style.rankRow">
+        <article :class="$style['progress-widget']">
+          <div class="flexrow nogrow" :class="$style['rank-row']">
             <RankPips
               :current="actor.system.rank"
               class="nogrow"
               @click="setRank"
               :id="`${actor._id}_rank`"
             />
-            <label :for="`${actor._id}_rank`" :class="$style.rankLabel">{{
+            <label :for="`${actor._id}_rank`" :class="$style['rank-label']">{{
               rankText
             }}</label>
             <IronBtn
@@ -60,12 +60,12 @@
           </div>
         </div>
         <!-- DENIZENS -->
-        <article :class="$style.denizenMatrix">
+        <article :class="$style['denizen-matrix']">
           <h2 class="flexrow nogrow" :class="$style.heading">
             <span>{{ $t('IRONSWORN.Denizens') }}</span>
             <IronBtn
               nogrow
-              style="padding: 2px"
+              style="padding: var(--ironsworn-spacer-xs)"
               @click="randomDenizen"
               icon="ironsworn:d10-tilt"
             />
@@ -99,7 +99,7 @@
           </div>
         </article>
       </div>
-      <div class="scrollable flexcol" :class="$style.rightColumn">
+      <div class="scrollable flexcol" :class="$style['right-column']">
         <SiteMoves class="nogrow" />
       </div>
     </div>
@@ -111,7 +111,7 @@
           nogrow
           class="box"
           :disabled="!hasThemeAndDomain"
-          :class="{ [$style.featureBtn]: true }"
+          :class="{ [$style['feature-btn']]: true }"
           @click="randomFeature"
           icon="ironsworn:d10-tilt"
           :text="$t('IRONSWORN.Feature')"
@@ -123,15 +123,15 @@
 </template>
 
 <style lang="scss" module>
-.siteSheet {
+.site-sheet {
   gap: 0.5em;
 }
 
-.rankRow {
+.rank-row {
   gap: var(--ironsworn-spacer-lg);
 }
 
-.rankLabel {
+.rank-label {
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
@@ -141,7 +141,7 @@
   font-size: var(--font-size-14);
 }
 
-.denizenMatrix {
+.denizen-matrix {
   // TODO: extract this as its own component
 }
 
@@ -153,12 +153,12 @@
   height: max-content;
 }
 
-.rightColumn {
+.right-column {
   flex-basis: 12em;
   max-height: 411px;
 }
 
-.leftColumn {
+.left-column {
   flex-basis: 20em;
   gap: 1em;
 }
@@ -173,7 +173,7 @@
   font-weight: bold;
 }
 
-.featureBtn {
+.feature-btn {
   text-transform: uppercase;
 }
 </style>

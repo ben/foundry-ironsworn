@@ -1,7 +1,7 @@
 <template>
   <Collapsible
     class="list-block"
-    :class="$style['wrapper']"
+    :class="$style.wrapper"
     :toggleButtonClass="$style['toggle-button']"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
@@ -9,7 +9,7 @@
     :toggleSectionClass="`${$style['toggle-section']} list-block-header`"
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
-    :toggleTextClass="$style['toggleText']"
+    :toggleTextClass="$style['toggle-text']"
     ref="$collapsible"
   >
     <template #default>
@@ -37,7 +37,7 @@
 <style lang="scss" module>
 .wrapper {
   border-radius: var(--ironsworn-border-radius-lg);
-  background-color: var(--ironsworn-color-thematic);
+  background-color: v-bind('thematicColor');
 }
 
 .list {
@@ -120,6 +120,7 @@ import { snakeCase } from 'lodash'
 
 const props = withDefaults(
   defineProps<{
+    thematicColor: string
     category: MoveCategory
     /**
      * Duration of the move highlight effect, in milliseconds.

@@ -8,7 +8,7 @@
     <CollapseTransition
       tag="ul"
       class="item-list"
-      :class="$style.assetList"
+      :class="$style['asset-list']"
       group
     >
       <li class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
@@ -23,7 +23,7 @@
       </li>
     </CollapseTransition>
     <section
-      :class="$style.listControls"
+      :class="$style['list-controls']"
       class="flexrow nogrow"
       style="text-align: center"
     >
@@ -38,7 +38,7 @@
 </template>
 
 <style lang="scss" module>
-.listControls {
+.list-controls {
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 
@@ -46,7 +46,7 @@
   gap: var(--ironsworn-spacer-md);
 }
 
-.assetList {
+.asset-list {
   gap: var(--ironsworn-spacer-md);
 }
 </style>

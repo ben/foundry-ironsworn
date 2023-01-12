@@ -7,7 +7,7 @@
       ref="$connectionList"
     />
     <section
-      :class="$style.listControls"
+      :class="$style['list-controls']"
       class="progress-controls flexrow nogrow"
     >
       <IronBtn
@@ -20,7 +20,7 @@
   </article>
 </template>
 <style lang="scss" module>
-.listControls {
+.list-controls {
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 </style>
