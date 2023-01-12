@@ -19,8 +19,8 @@
   display: flex;
   position: relative;
   justify-content: center;
-  width: 1em;
-  height: 1em;
+  width: var(--ironsworn-icon-size);
+  height: var(--ironsworn-icon-size);
   line-height: 1 !important;
 
   &::before {
