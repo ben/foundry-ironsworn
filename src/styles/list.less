@@ -76,17 +76,17 @@
 
   .list-block-item {
     margin: 0;
-    border-width: 0;
+    border-width: var(--ironsworn-list-block-border-width) 0;
     border-style: var(--ironsworn-list-block-border-style);
+    // transparent border is applied so that the first + last items have a height consistent with their siblings
+    border-color: transparent;
     height: max-content;
 
     &:not(:first-of-type) {
-      border-top-width: var(--ironsworn-list-block-border-width);
       border-top-color: var(--ironsworn-list-block-border-highlight);
     }
 
     &:not(:last-of-type) {
-      border-bottom-width: var(--ironsworn-list-block-border-width);
       border-bottom-color: var(--ironsworn-list-block-border-shadow);
     }
   }
