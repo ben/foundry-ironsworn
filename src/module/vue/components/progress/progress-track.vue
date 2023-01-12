@@ -29,15 +29,15 @@
 </template>
 
 <style lang="scss">
-$box-border-radius: var(--ironsworn-border-radius-md);
-$box-border-width: var(--ironsworn-border-width-md);
-$box-gap: 4px;
-
 .progress-track {
+  --ironsworn-box-border-radius: var(--ironsworn-border-radius-md);
+  --ironsworn-box-border-width: var(--ironsworn-border-width-md);
+  --ironsworn-box-gap: 4px;
+
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-auto-flow: column;
-  gap: $box-gap;
+  gap: var(--ironsworn-box-gap);
   align-items: center;
   justify-content: center;
 
@@ -46,7 +46,7 @@ $box-gap: 4px;
   }
 
   .progress-track-box {
-    border-radius: $box-border-radius;
+    border-radius: var(--ironsworn-box-border-radius);
     max-width: var(--ironsworn-vertical-slider-width);
     max-height: var(--ironsworn-vertical-slider-width);
   }
@@ -59,23 +59,25 @@ $box-gap: 4px;
     .progress-track-box {
       flex-basis: 10%;
       margin: 0;
-      border: $box-border-width solid currentcolor;
+      border: var(--ironsworn-box-border-width) solid currentcolor;
       border-radius: 0;
 
       &:first-child {
-        border-radius: $box-border-radius 0 0 $box-border-radius;
+        border-radius: var(--ironsworn-box-border-radius) 0 0
+          var(--ironsworn-box-border-radius);
       }
 
       &:not(:first-child) {
-        margin-left: calc($box-border-width / -2);
+        margin-left: calc(var(--ironsworn-box-border-width) / -2);
       }
 
       &:last-child {
-        border-radius: 0 $box-border-radius $box-border-radius 0;
+        border-radius: 0 var(--ironsworn-box-border-radius)
+          var(--ironsworn-box-border-radius) 0;
       }
 
       &:not(:last-child) {
-        margin-right: calc($box-border-width / -2);
+        margin-right: calc(var(--ironsworn-box-border-width) / -2);
       }
 
       .progress-tick {

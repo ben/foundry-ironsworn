@@ -32,10 +32,10 @@
 </template>
 
 <style lang="scss">
-$segment-border-width: var(--ironsworn-border-width-md);
-$segment-border-radius: var(--ironsworn-border-radius-lg);
-
 .attr-slider {
+  --ironsworn-segment-border-width: var(--ironsworn-border-width-md);
+  --ironsworn-segment-border-radius: var(--ironsworn-border-radius-lg);
+
   &[aria-orientation='vertical'] {
     display: grid;
     grid-template-rows: max-content max-content max-content;
@@ -76,7 +76,7 @@ $segment-border-radius: var(--ironsworn-border-radius-lg);
 
     .attr-slider-label {
       > * {
-        padding-inline-end: $segment-border-radius;
+        padding-inline-end: var(--ironsworn-segment-border-radius);
       }
     }
   }
