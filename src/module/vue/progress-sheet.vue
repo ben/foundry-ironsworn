@@ -105,7 +105,7 @@
               class="nogrow"
               v-model="item.system.clockMax"
               @change="clockMaxChange"
-              style="margin: 0.5rem 0"
+              style="margin: var(--ironsworn-spacer-lg) 0"
             >
               <option
                 v-for="clockSize in [4, 6, 8, 10, 12]"

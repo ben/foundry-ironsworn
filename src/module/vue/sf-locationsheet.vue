@@ -165,6 +165,8 @@
 }
 </style>
 <style lang="less" scoped>
+@import (reference) '../../styles/mixins.less';
+
 label {
   line-height: 27px;
 
@@ -178,12 +180,8 @@ label {
   padding: var(--ironsworn-spacer-lg);
 }
 
-.theme-starforged .highlighted {
-  background: #055;
-}
-
-.theme-ironsworn .highlighted {
-  background: #ccc;
+.highlighted {
+  .blockHoverMixin;
 }
 </style>
 

@@ -40,14 +40,16 @@
   --ironsworn-range-thumb-width: 12px;
   // range slider track
   --ironsworn-range-track-height: 6px;
-  --ironsworn-range-track-border-radius: (@sliderTrackHeight / 2);
+  --ironsworn-range-track-border-radius: calc(
+    var(--ironsworn-range-track-height) / 2
+  );
   --ironsworn-range-track-border-width: var(--ironsworn-border-width-md);
   --ironsworn-range-track-bg-color: var(--ironsworn-color-fg-20);
   --ironsworn-range-track-border-color: var(--ironsworn-color-fg-20);
   --ironsworn-range-track-bg-color-focus: var(--ironsworn-color-warm-20);
   --ironsworn-range-track-border-color-focus: var(--ironsworn-color-cool-50);
   --ironsworn-range-box-shadow: 1px 1px 1px var(--color-shadow-dark),
-    0px 0px 1px #0d0d0d;
+    0 0 1px #0d0d0d;
 
   // Width for custom slider widgets
   --ironsworn-vertical-slider-width: 50px;
