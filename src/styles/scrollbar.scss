@@ -1,11 +1,20 @@
-$scrollbar-thumb-bg-color: var(--ironsworn-color-fg-50);
-$scrollbar-thumb-border-color: var(--ironsworn-color-warm-50);
-$scrollbar-track-color: var(--ironsworn-color-fg-50);
-$scrollbar-width: 6px;
+/* stylelint-disable mavrin/stylelint-declaration-use-css-custom-properties */
+
+:root {
+  --ironsworn-scrollbar-thumb-bg-color: var(--ironsworn-color-fg-50);
+  --ironsworn-scrollbar-thumb-border-color: var(--ironsworn-color-warm-50);
+  --ironsworn-scrollbar-track-color: var(--ironsworn-color-fg-50);
+  --ironsworn-scrollbar-width: 6px;
+
+  scrollbar-color: var(--ironsworn-scrollbar-thumb-bg-color)
+    var(--ironsworn-scrollbar-track-color);
+  scrollbar-gutter: auto;
+  scrollbar-width: thin;
+}
 
 ::-webkit-scrollbar {
-  width: $scrollbar-width;
-  height: $scrollbar-width;
+  width: var(--ironsworn-scrollbar-width);
+  height: var(--ironsworn-scrollbar-width);
 }
 
 ::-webkit-scrollbar-track {
@@ -15,13 +24,7 @@ $scrollbar-width: 6px;
 
 ::-webkit-scrollbar-thumb {
   outline: none;
-  border: 1px solid $scrollbar-thumb-border-color;
-  border-radius: calc($scrollbar-width / 2);
-  background: $scrollbar-thumb-bg-color;
-}
-
-:root {
-  scrollbar-color: $scrollbar-thumb-bg-color $scrollbar-track-color;
-  scrollbar-gutter: auto;
-  scrollbar-width: thin;
+  border: 1px solid var(--ironsworn-scrollbar-thumb-border-color);
+  border-radius: calc(var(--ironsworn-scrollbar-width) / 2);
+  background: var(--ironsworn-scrollbar-thumb-bg-color);
 }
