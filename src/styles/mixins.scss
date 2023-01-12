@@ -247,7 +247,7 @@
   }
 }
 
-@mixin icon-button-base() {
+@mixin icon-button-base($size: var(--ironsworn-icon-size)) {
   display: flex;
   flex-flow: row nowrap;
   align-content: center;
@@ -257,8 +257,8 @@
   text-align: center;
 
   &::before {
-    width: 1em;
-    height: 1em;
+    width: $size;
+    height: $size;
     line-height: 1;
   }
 
