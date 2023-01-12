@@ -59,7 +59,10 @@ a[data-pack][data-uuid] {
     }
 
     &.selected,
-    &[aria-selected='true'] {
+    // FIXME workaround for prettier/postcss-less being crappy with quotes. ditto the quotes in the comment at the top of this file.
+    // can be removed once SCSS migration is complete
+    // prettier-ignore
+    &[aria-selected=true] {
       fill-opacity: 1;
     }
 

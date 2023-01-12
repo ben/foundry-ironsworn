@@ -13,6 +13,12 @@
   </component>
 </template>
 
+<style lang="less" module>
+.fontIconStack {
+  // TODO
+}
+</style>
+
 <script lang="ts" setup>
 import { ExtractPropTypes } from 'vue'
 import FontIcon from './font-icon.vue'

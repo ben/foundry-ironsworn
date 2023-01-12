@@ -35,11 +35,11 @@ th {
 th,
 td {
   &:first-child {
-    padding-inline-start: 2px;
+    padding-inline-start: var(--ironsworn-spacer-xs);
   }
 
   &:last-child {
-    padding-inline-end: 2px;
+    padding-inline-end: var(--ironsworn-spacer-xs);
   }
 }
 </style>

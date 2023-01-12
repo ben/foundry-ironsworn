@@ -57,9 +57,9 @@
     .roll-outcome {
       display: flex;
       flex-flow: column;
-      gap: 0.25rem;
+      gap: var(--ironsworn-spacer-sm);
       justify-content: center;
-      margin-bottom: 0.25rem;
+      margin-bottom: var(--ironsworn-spacer-sm);
 
       p {
         margin: 0;
@@ -95,7 +95,6 @@
     .oracle-table.oracle-table-partial {
       transition: none;
       margin: var(--ironsworn-spacer-xs) 0;
-
       // tint to make this an easier read when the message uses e.g. FVTT's default background texture
       background-color: var(--ironsworn-color-bg-20);
 
@@ -122,7 +121,7 @@
         }
 
         .subtitle {
-          font-size: 0.75em;
+          font-size: var(--font-size-12);
         }
       }
 

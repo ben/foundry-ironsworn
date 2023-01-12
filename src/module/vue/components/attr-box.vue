@@ -1,15 +1,16 @@
 <template>
   <div
-    :class="classes"
+    class="block"
+    :class="{ [$style['attr-box']]: true, ...classes }"
     @click="click"
     :data-tooltip="$t('IRONSWORN.Roll +x', { stat: $t(i18nKey) })"
   >
-    <h4>{{ $t(i18nKey) }}</h4>
+    <label :class="$style['attr-label']">{{ $t(i18nKey) }}</label>
     <div class="flexrow">
       <div class="clickable text" v-if="editMode" @click="decrement">
         &minus;
       </div>
-      <h4>{{ actorSys[attr] }}</h4>
+      <span :class="$style['attr-value']">{{ actorSys[attr] }}</span>
       <div class="clickable text" v-if="editMode" @click="increment">
         &plus;
       </div>
@@ -17,21 +18,56 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.stat {
+<style lang="scss" module>
+@use 'mixins';
+
+.attr-label {
+  margin: 0;
+  font-size: var(--font-size-14);
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.attr-value {
+  margin: 0;
+  font-size: var(--font-size-16);
+  font-weight: bold;
+}
+
+.attr-box {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+  --ironsworn-attr-box-width: 75px;
+  @include mixins.text-stroke;
+
+  flex: 0 0 var(--ironsworn-attr-box-width);
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-lg) !important;
+  padding: var(--ironsworn-spacer-lg) 0;
+  text-align: center;
+  text-transform: uppercase;
+
   &::before {
     --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
 
     transition: opacity 0.4s ease;
     opacity: 0;
     z-index: 0;
-    padding: 0.25em;
+    padding: var(--ironsworn-spacer-sm);
   }
 
   &:hover {
     &::before {
       opacity: 1;
     }
+  }
+
+  input {
+    margin-bottom: var(--ironsworn-spacer-md);
+    width: 50%;
+    text-align: center;
+    font-size: var(--font-size-18);
+    font-weight: bold;
   }
 
   & > * {
@@ -58,8 +94,6 @@ const actorSys = computed(
 )
 
 const classes = computed(() => ({
-  stat: true,
-  block: true,
   clickable: !editMode.value,
   'isiconbg-d10-tilt': !editMode.value,
 }))

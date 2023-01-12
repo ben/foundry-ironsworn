@@ -75,7 +75,7 @@
 }
 
 .tabSet {
-  margin-top: 0.5rem;
+  margin-top: var(--ironsworn-spacer-lg);
 }
 </style>
 

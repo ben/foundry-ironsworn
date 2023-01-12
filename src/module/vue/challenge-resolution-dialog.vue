@@ -59,7 +59,7 @@ div.grid {
 }
 
 input {
-  margin: 7px;
+  margin: var(--ironsworn-spacer-lg);
   width: 30px;
 
   &.a {

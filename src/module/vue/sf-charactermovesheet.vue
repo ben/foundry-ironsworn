@@ -42,6 +42,7 @@
 
 <style lang="scss" module>
 .tabSet {
+  // TODO make alternate layouts possible, possibly with media query?
 }
 
 .panelContent {

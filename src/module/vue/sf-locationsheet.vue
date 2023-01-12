@@ -170,11 +170,11 @@ label {
 }
 
 .box {
-  padding: 7px;
+  padding: var(--ironsworn-spacer-lg);
 }
 
 [data-highlighted='true'] {
-  @include mixins.static-highlight;
+  @include mixins.block-hover-mixin;
 }
 </style>
 

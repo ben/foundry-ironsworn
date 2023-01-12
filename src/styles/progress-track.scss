@@ -20,7 +20,6 @@
     fill: var(--ironsworn-color-fg-40);
   }
 
-  // so that hover effects only happen when a pip is hovered
   &:not(:hover) {
     button.rank-pip {
       &[aria-selected='true'] {

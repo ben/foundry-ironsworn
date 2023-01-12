@@ -142,6 +142,7 @@
 }
 
 .denizenMatrix {
+  // TODO: extract this as its own component
 }
 
 .main {

@@ -62,8 +62,8 @@ $hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
       margin: 0;
       text-transform: uppercase;
       line-height: 1;
-      word-spacing: 0.02em;
-      letter-spacing: 0.02em;
+      word-spacing: var(--ironsworn-word-spacing-sm);
+      letter-spacing: var(--ironsworn-letter-spacing-sm);
       font-size: var(--font-size-14);
       font-weight: bold;
     }
@@ -131,10 +131,13 @@ $hexagon-aspect-ratio: math.div(math.sqrt(3), 2);
   }
 
   .asset-ability-clock {
-    min-width: 40px;
-    max-width: 75px;
-    min-height: 40px;
-    max-height: 75px;
+    --ironsworn-clock-size-min: 40px;
+    --ironsworn-clock-size-max: 75px;
+
+    min-width: var(--ironsworn-clock-size-min);
+    max-width: var(--ironsworn-clock-size-max);
+    min-height: var(--ironsworn-clock-size-min);
+    max-height: var(--ironsworn-clock-size-max);
   }
 
   .asset-ability-text {

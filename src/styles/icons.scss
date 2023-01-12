@@ -1,3 +1,5 @@
+/* stylelint-disable no-duplicate-selectors */
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
 // styles for icons
 
 .icon {
@@ -103,7 +105,6 @@
 .fat {
   &:not(i) {
     &::before {
-      /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
       font-family: 'Font Awesome 6 Pro';
     }
   }
@@ -112,19 +113,15 @@
 [class^='isicon-']::before,
 [class*=' isicon-']::before {
   display: inline-block;
-
-  // inherits text color by default. any valid background is fine if you want to get fancy, though.
-  background-color: currentcolor;
-
-  // height and width of the :before pseudo-element can be set as desired, these are just reasonable defaults that scale the current font size.
+  background-color: currentcolor; // inherits text color by default. any valid background is fine if you want to get fancy, though.
   width: 1em;
-  height: 1em;
+  height: 1em; // height and width of the :before pseudo-element can be set as desired, these are just reasonable defaults that scale the current font size.
   content: '';
-  mask-position: center;
   mask-repeat: no-repeat;
+  mask-position: center;
   mask-size: contain;
 
-  .vertical-text & {
+  .vertical-text& {
     transform: rotateZ(90deg);
   }
 }

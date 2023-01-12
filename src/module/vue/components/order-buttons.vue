@@ -20,10 +20,10 @@
 
 <style lang="scss" scoped>
 .order-buttons {
-  padding-right: 3px;
+  padding-right: var(--ironsworn-spacer-sm);
 
   .icon-button {
-    padding: 2px;
+    padding: var(--ironsworn-spacer-xs);
   }
 }
 </style>

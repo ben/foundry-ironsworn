@@ -59,32 +59,26 @@
 </template>
 
 <style lang="scss" module>
-$icon-size: 1.2em;
-$border-width: var(--ironsworn-border-width-lg);
-$border-radius: var(--ironsworn-border-radius-lg);
-$wrapper-spacing: 4px;
+@use '../../../styles/mixins.scss';
 
-.sfMoveRow {
-  --ironsworn-line-height: (--ironsworn-line-height-md);
-  @if v-bind('thematicColor') {
-    @include mixins.thematic-color(v-bind('thematicColor'));
-  }
+.sf-move-row {
+  @include mixins.thematic-color;
 
   position: relative;
-  transition: var(--ironsworn-transition);
-  padding: 0 $wrapper-spacing;
+  padding: 0 var(--ironsworn-spacer-md);
 
   &[aria-expanded='true'] {
-    padding-top: $wrapper-spacing;
-    padding-bottom: $wrapper-spacing;
+    padding-top: var(--ironsworn-spacer-md);
+    padding-bottom: var(--ironsworn-spacer-md);
   }
 }
 
-.moveSummary {
-  padding: 0.5rem 0.5rem 0.3rem;
+.move-summary {
+  padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
+    var(--ironsworn-spacer-md);
 }
 
-.moveButton {
+.move-button {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   @include mixins.clickable-text;
@@ -94,7 +88,7 @@ $wrapper-spacing: 4px;
   font-size: var(--font-size-20);
 }
 
-.toggleButton {
+.toggle-button {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
 
@@ -113,7 +107,9 @@ $wrapper-spacing: 4px;
   border-style: solid;
   border-color: transparent;
   background: none;
-  height: inherit;
+  padding: 0;
+  padding-left: var(--ironsworn-spacer-sm);
+  height: 100%;
   text-align: left;
   font-size: var(--font-size-16);
 
@@ -122,35 +118,36 @@ $wrapper-spacing: 4px;
   }
 }
 
-.contentWrapper {
-  border: 1px solid var(--ironsworn-color-light);
-  border-radius: 0 $border-radius $border-radius $border-radius;
+.content-wrapper {
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-light);
+  border-radius: 0 var(--ironsworn-border-radius-lg)
+    var(--ironsworn-border-radius-lg) var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-bg-80);
   color: var(--ironsworn-color-fg);
 }
 
-.moveControls {
+.move-controls {
   display: flex;
   flex-flow: row;
   background: none;
   color: var(--ironsworn-color-light);
 }
 
-.toggleSection {
+.toggle-section {
   display: flex;
   flex-flow: row nowrap;
-  gap: $wrapper-spacing;
+  gap: var(--ironsworn-spacer-md);
 }
 
-.toggleWrapper {
+.toggle-wrapper {
   transition: var(--ironsworn-transition);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
-  border-top-left-radius: $border-radius;
-  border-top-right-radius: $border-radius;
+  border-top-left-radius: var(--ironsworn-border-radius-lg);
+  border-top-right-radius: var(--ironsworn-border-radius-lg);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: var(--ironsworn-line-height-lg);
+  line-height: 1.5;
 
   header:not(:last-child) & {
     border-color: var(--ironsworn-color-clickable-block-border-selected);
@@ -159,7 +156,7 @@ $wrapper-spacing: 4px;
   }
 }
 
-.moveOracle {
+.move-oracle {
   border-width: var(--ironsworn-border-width-md);
   border-style: solid;
   border-radius: var(--ironsworn-border-radius-sm);
@@ -245,7 +242,7 @@ const data = reactive({
 
 const $collapsible = ref<typeof Collapsible>()
 
-type CollapsibleEmits = typeof Collapsible['$emit']
+type CollapsibleEmits = (typeof Collapsible)['$emit']
 
 interface MoveRowEmits extends CollapsibleEmits {
   rollClick(): void

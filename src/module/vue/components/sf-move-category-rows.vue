@@ -26,7 +26,7 @@
             ref="$children"
             :headingLevel="headingLevel + 1"
             :class="$style['move-row']"
-            :thematicColor="category.color"
+            thematicColor="transparent"
           />
         </li>
       </ul>
@@ -36,8 +36,6 @@
 
 <style lang="scss" module>
 .wrapper {
-  @include mixins.thematic-color(v-bind('category?.color'));
-
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-thematic);
 }
@@ -57,8 +55,6 @@
 .toggle-section {
   box-sizing: content-box;
   border-radius: var(--ironsworn-border-radius-lg);
-  background-color: var(--ironsworn-color-thematic);
-  height: var(--ironsworn-line-height);
 
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
@@ -78,16 +74,18 @@
 }
 
 .list-item {
+  //
 }
 
 .move-row {
   &:focus {
     border: 0;
+    box-shadow: none;
 
     // outline: 1px solid var(--ironsworn-color-cool);
     // box-shadow: var(--ironsworn-box-shadow-highlight) !important;
     // TODO: figure out a better way to convey focus here.
-    box-shadow: none;
+    background-color: transparent;
   }
 
   &[data-highlighted='true']::after {

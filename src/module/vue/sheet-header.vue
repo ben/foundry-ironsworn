@@ -11,19 +11,21 @@
 <style lang="scss">
 // not scoped, so it also applies to handlebars templates with the appropriate class
 .sheet-header {
+  --ironsworn-title-height: 50px;
+
   display: flex;
   flex-direction: row;
-  gap: 6px;
+  gap: var(--ironsworn-spacer-md);
 
   .profile-img {
-    flex: 0 0 50px;
+    flex: 0 0 var(--ironsworn-title-height);
     margin-right: var(--ironsworn-spacer-xl);
-    height: 50px;
+    height: var(--ironsworn-title-height);
   }
 
   .header-fields {
     flex: 1;
-    height: 100px;
+    height: calc(var(--ironsworn-title-height) * 2);
   }
 
   h1.charname {
@@ -31,7 +33,7 @@
     margin: 0;
     border-bottom: 0;
     padding: 0;
-    height: 50px;
+    height: var(--ironsworn-title-height);
 
     input {
       margin: 0;

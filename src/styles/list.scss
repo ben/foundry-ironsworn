@@ -12,8 +12,13 @@
 }
 
 .item-list {
+  --ironsworn-item-list-size: 100px;
+  --ironsworn-item-line-height: 24px;
+  --ironsworn-item-height: 30px;
+  --ironsworn-item-controls-size: 36px;
+
   display: flex;
-  flex: 1 0 100px;
+  flex: 1 0 var(--ironsworn-item-list-size);
   flex-direction: column;
   margin: 0;
   padding-left: 0;
@@ -24,7 +29,7 @@
   }
 
   .item-controls {
-    flex: 0 0 36px;
+    flex: 0 0 var(--ironsworn-item-controls-size);
   }
 
   .item {
@@ -33,11 +38,11 @@
     padding: var(--ironsworn-spacer-sm) 0;
 
     // FIXME: what's this for?
-    height: 30px;
-    line-height: 24px;
+    height: var(--ironsworn-item-height);
+    line-height: var(--ironsworn-item-line-height);
 
     img {
-      flex: 0 0 24px;
+      flex: 0 0 var(--ironsworn-item-line-height);
       margin-right: var(--ironsworn-spacer-md);
     }
   }
@@ -72,17 +77,18 @@
 
   .list-block-item {
     margin: 0;
-    border-width: 0;
+    border-width: var(--ironsworn-list-block-border-width) 0;
     border-style: var(--ironsworn-list-block-border-style);
+
+    // transparent border is applied so that the first + last items have a height consistent with their siblings
+    border-color: transparent;
     height: max-content;
 
     &:not(:first-of-type) {
-      border-top-width: var(--ironsworn-list-block-border-width);
       border-top-color: var(--ironsworn-list-block-border-highlight);
     }
 
     &:not(:last-of-type) {
-      border-bottom-width: var(--ironsworn-list-block-border-width);
       border-bottom-color: var(--ironsworn-list-block-border-shadow);
     }
   }

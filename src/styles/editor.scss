@@ -5,7 +5,9 @@
 
 // Editors: shared styles
 .editor {
-  min-height: 100px;
+  --ironsworn-editor-height-min: 100px;
+
+  min-height: var(--ironsworn-editor-height-min);
 }
 
 .editor {
@@ -42,7 +44,7 @@
 .ProseMirror {
   @include mixins.input-field;
 
-  padding: 0.5rem;
+  padding: var(--ironsworn-spacer-lg);
 }
 
 // Editors: TinyMCE
@@ -86,7 +88,6 @@
     border-color: transparent;
     background: var(--ironsworn-color-clickable-block-bg);
     color: var(--ironsworn-color-clickable-block-fg);
-
     // margin: 6px 1px var(--ironsworn-spacer-md) 0;
     &:focus {
       border-width: var(--ironsworn-border-width-md);

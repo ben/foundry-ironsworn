@@ -27,8 +27,6 @@ svg.clock {
   aspect-ratio: 1;
   fill: var(--ironsworn-color-thematic, var(--ironsworn-color-widget-fill));
   fill-opacity: 1;
-
-  // so that only *segment* hovers appear
   pointer-events: none;
   stroke: var(--ironsworn-color-fg);
   stroke-width: var(--ironsworn-widget-stroke-width);
@@ -57,6 +55,12 @@ svg.clock {
     }
   }
 
+  &[aria-valuenow='0']:not(:hover) {
+    .clock-segment {
+      fill-opacity: 0;
+    }
+  }
+
   .clock-segment {
     transition: var(--ironsworn-transition);
     cursor: pointer;
@@ -65,12 +69,6 @@ svg.clock {
 
     &:active {
       fill-opacity: 1;
-    }
-  }
-
-  &[aria-valuenow='0']:not(:hover) {
-    .clock-segment {
-      fill-opacity: 0;
     }
   }
 }

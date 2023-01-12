@@ -73,7 +73,7 @@
 .fieldrow {
   p,
   input {
-    margin: 3px;
+    margin: var(--ironsworn-spacer-sm);
     padding: 0 0.5em;
     text-align: left;
   }

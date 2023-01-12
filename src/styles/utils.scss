@@ -18,8 +18,8 @@
 
 .vertical-text {
   border: none;
-  width: 1.5rem;
   writing-mode: vertical-lr;
+  width: var(--font-size-24);
 
   i {
     display: inline-block;

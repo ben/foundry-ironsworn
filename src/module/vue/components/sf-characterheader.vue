@@ -38,6 +38,7 @@
 input,
 textarea {
   resize: none;
+  font-family: var(--font-primary);
   font-size: inherit;
 }
 

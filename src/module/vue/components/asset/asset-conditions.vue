@@ -28,17 +28,19 @@
 }
 
 .condition {
-  flex-basis: 12px;
+  --ironsworn-checkbox-size: 12px;
+
+  flex-basis: var(--ironsworn-checkbox-size);
   margin: 1px 0;
-  line-height: 12px;
+  line-height: var(--ironsworn-checkbox-size);
   white-space: nowrap;
   font-size: x-small;
 
   input[type='checkbox'] {
-    flex: 0 0 12px;
-    margin: 0 3px;
-    width: 12px;
-    height: 12px;
+    flex: 0 0 var(--ironsworn-checkbox-size);
+    margin: 0 var(--ironsworn-spacer-sm);
+    width: var(--ironsworn-checkbox-size);
+    height: var(--ironsworn-checkbox-size);
     vertical-align: bottom;
   }
 }

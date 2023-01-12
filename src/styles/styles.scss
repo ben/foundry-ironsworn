@@ -2,74 +2,8 @@
 @use '@styles/themes/mixins/colors';
 @use '@styles/fvtt/dialog' as fvtt-dialog;
 
-:root {
-  // VARIABLES: DIMENSIONS FOR SPACERS, BORDERS, ETC
-  --ironsworn-widget-stroke-width: 1;
-  --ironsworn-clock-fill-opacity-hover: 0.6;
-
-  // BORDERS
-  --ironsworn-border-radius-sm: 2px;
-  --ironsworn-border-radius-md: 3px;
-  --ironsworn-border-radius-lg: 5px;
-  --ironsworn-border-radius-xl: 7px;
-  --ironsworn-border-width-md: 1px;
-  --ironsworn-border-width-lg: 2px;
-
-  // LAYOUT + SPACING + MARGINS
-  --ironsworn-spacer-xs: 2px;
-  --ironsworn-spacer-sm: 3px;
-  --ironsworn-spacer-md: 5px;
-  --ironsworn-spacer-lg: 7px;
-  --ironsworn-spacer-xl: 10px;
-  --ironsworn-vertical-slider-width: 50px;
-
-  // TYPOGRAPHY
-  --ironsworn-line-height-lg: 2;
-  --ironsworn-line-height-md: 1.5;
-  --ironsworn-line-height-sm: 1.25;
-  --ironsworn-line-height-xs: 1;
-  --ironsworn-line-height: var(--ironsworn-line-height-md);
-
-  // Z-INDEX
-  --ironsworn-z-index-highest: 100;
-  --ironsworn-z-index-higher: 75;
-  --ironsworn-z-index-high: 25;
-  --ironsworn-z-index-low: -1;
-  --ironsworn-z-index-lower: -2;
-  --ironsworn-z-index-lowest: -3;
-
-  // This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
-  --ironsworn-input-border-style: solid;
-
-  // TRANSITION AND ANIMATION
-  --ironsworn-transition-duration: 0.5s;
-  --ironsworn-transition-timing-function: ease;
-  --ironsworn-transition-properties: all;
-  --ironsworn-tab-transition-duration: 0.3s;
-
-  // visualize timing functions here: https://matthewlein.com/tools/ceaser
-  --ironsworn-tab-transition-timing-function: cubic-bezier(
-    0.455,
-    0.03,
-    0.515,
-    0.955
-  );
-
-  // for later use as a mixin to scope transitions to colors effects only.
-  --ironsworn-transition-property-color: background-color, border-color,
-    box-shadow, caret-color, color, column-rule-color, filter, opacity,
-    outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
-  --ironsworn-transition: var(--ironsworn-transition-properties, all)
-    var(--ironsworn-transition-duration)
-    var(--ironsworn-transition-timing-function, ease);
-
-  // FontAwesome-specific variables.
-  /* stylelint-disable-next-line custom-property-pattern */
-  --fa-display: inline-block;
-  /* stylelint-disable-next-line custom-property-pattern */
-  --fa-invert: var(--ironsworn-color-bg);
-  --ironsworn-tab-transition: fade;
-}
+// Common CSS custom properties are coralled in their own file.
+@import 'custom-properties.less';
 
 // THEMES
 // TODO: this could probably be set up to extract everything from the theme directory automatically.

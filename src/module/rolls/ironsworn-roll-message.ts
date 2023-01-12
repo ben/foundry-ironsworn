@@ -4,6 +4,7 @@ import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { SFMoveDataProperties } from '../item/itemtypes'
+import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
 
@@ -254,11 +255,17 @@ export class IronswornRollMessage {
     if (move?.data.type !== 'sfmove') return ret
 
     const key = DfRollOutcome[theOutcome]
-    let dfOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
-    if (this.roll.isMatch && dfOutcome?.['With a Match']?.Text)
-      dfOutcome = dfOutcome['With a Match']
-    if (dfOutcome) {
-      ret.moveOutcome = dfOutcome.Text
+    let moveOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
+    if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
+      moveOutcome = moveOutcome['With a Match']
+    if (moveOutcome) {
+      // Render the markdown here so we can strip the tables.
+      // We include oracle buttons in the chat message, no need to
+      // also spam the table contents.
+      ret.moveOutcome = enrichMarkdown(moveOutcome.Text).replace(
+        /<table>[\s\S]*<\/table>/gm,
+        ''
+      )
     }
     return ret
   }

@@ -24,6 +24,7 @@
 </template>
 <style lang="scss" module>
 .progressControls {
+  //
 }
 
 .progressControlBtn {

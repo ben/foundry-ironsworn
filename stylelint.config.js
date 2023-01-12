@@ -1,7 +1,7 @@
 const { stylelint } = require('stylelint')
 
 /**
- * @type stylelint.Options
+ * @type {stylelint.Options}
  */
 const CONFIG = {
   extends: [
@@ -30,32 +30,54 @@ const CONFIG = {
   ],
   overrides: [
     {
-      files: ['./src/module/vue/**/*.vue', './src/styles/**/*.scss'],
+      files: ['**/*.vue', '**/*.scss'],
       rules: {
-        // 'mavrin/stylelint-declaration-use-css-custom-properties': {
-        //   /**
-        //    * @see https://csstree.github.io/docs/syntax/
-        //    */
-        //   cssDefinitions: ['color', 'length'],
-        //   ignoreProperties: ['/^\\$/'],
-        //   ignoreValues: ['/\\$/', 'transparent', 'currentcolor', '0'],
-        // },
+        'mavrin/stylelint-declaration-use-css-custom-properties': {
+          /**
+           * @see https://csstree.github.io/docs/syntax/
+           */
+          cssDefinitions: ['color', 'length', 'z-index', 'line-height'],
+          ignoreValues: [
+            '/\\$/',
+            'transparent',
+            'currentcolor',
+            '0',
+            '/.*\\s[0-9]+(\\.[0-9]+)?em(\\s.*)?/',
+          ],
+        },
+        // silence complaints about floating points (which are a temp workaround anyways)
         'number-max-precision': null,
         'declaration-block-no-redundant-longhand-properties': null,
         'block-no-empty': null,
-        'custom-property-pattern': [/(ironsworn|font|fa|color|form)-/],
+        /**
+         * Enforces consistent naming for CSS custom properties.
+         *
+         * `ironsworn` - Properties specific to this module. If you're adding a brand new property, it should have this.
+         * `font` - FVTT font properties.
+         * `color` - FVTT color properties.
+         * `form-field` - FVTT form-field properties.
+         * `fa` - FontAwesome properties.
+         *
+         * @example ```less
+         * --ironsworn-custom-property: sqrt(2);
+         * ```
+         */
+        'custom-property-pattern': /(ironsworn|font|color|fa|form-field)-.+/,
         // 'max-line-length': [120, { ignore: ['comments'] }],
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,
         'string-quotes': ['single'],
-        'selector-class-pattern': null,
-        // 'selector-class-pattern': [
-        //   /^((ironsworn__|tox-[a-z+]__)?[a-z][a-z-0-9]*[a-z0-9])|ProseMirror$/,
-        //   {
-        //     resolveNestedSelectors: true,
-        //   },
-        // ],
+        'selector-class-pattern': [
+          /^((ironsworn__|tox-[a-z+]__)?[a-z][a-z-0-9]*[a-z0-9])|ProseMirror$/,
+          {
+            resolveNestedSelectors: true,
+          },
+        ],
       },
+    },
+    {
+      files: ['**/*.vue'],
+      customSyntax: 'postcss-html',
     },
   ],
 }
