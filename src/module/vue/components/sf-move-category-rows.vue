@@ -26,7 +26,7 @@
             ref="$children"
             :headingLevel="headingLevel + 1"
             :class="$style.moveRow"
-            :thematicColor="category.color"
+            thematicColor="transparent"
           />
         </li>
       </ul>
@@ -59,13 +59,14 @@
 
 .toggleWrapper {
   box-sizing: content-box;
+  // background-color: var(--ironsworn-color-thematic);
 }
 
 .toggleSection {
   box-sizing: content-box;
   border-radius: var(--ironsworn-border-radius-lg);
-  background-color: var(--ironsworn-color-thematic);
-  height: var(--ironsworn-line-height);
+
+  // height: var(--ironsworn-line-height);
 
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
@@ -92,6 +93,7 @@
     // outline: 1px solid var(--ironsworn-color-cool);
     // box-shadow: var(--ironsworn-box-shadow-highlight) !important;
     // TODO: figure out a better way to convey focus here.
+    background-color: transparent;
     box-shadow: none;
   }
 
