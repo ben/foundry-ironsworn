@@ -1,5 +1,6 @@
 <template>
   <div
+    class="attr-box block"
     :class="classes"
     @click="click"
     :data-tooltip="$t('IRONSWORN.Roll +x', { stat: $t(i18nKey) })"
@@ -17,10 +18,21 @@
   </div>
 </template>
 
-<style lang="less" scoped>
+<style lang="less" module>
 @import (reference) '../../../styles/mixins.less';
 
-.stat {
+.attr-box {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+  --ironsworn-attr-box-width: 75px;
+
+  flex: 0 0 var(--ironsworn-attr-box-width);
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-lg) !important;
+  padding: var(--ironsworn-spacer-lg) 0;
+  text-align: center;
+  text-transform: uppercase;
+
   &::before {
     --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
 
@@ -36,10 +48,24 @@
     }
   }
 
+  h4 {
+    margin: 0;
+    font-weight: bold;
+  }
+
+  input {
+    margin-bottom: var(--ironsworn-spacer-md);
+    width: 50%;
+    text-align: center;
+    font-size: var(--font-size-18);
+    font-weight: bold;
+  }
+
   & > * {
     position: relative; // must be set to manipulate z-index
     z-index: 1;
   }
+  .textStrokeMixin();
 }
 </style>
 
@@ -60,8 +86,6 @@ const actorSys = computed(
 )
 
 const classes = computed(() => ({
-  stat: true,
-  block: true,
   clickable: !editMode.value,
   'isiconbg-d10-tilt': !editMode.value,
 }))
