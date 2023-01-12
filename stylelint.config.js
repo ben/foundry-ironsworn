@@ -41,7 +41,7 @@ const CONFIG = {
             'transparent',
             'currentcolor',
             '0',
-            '/[0-9\\.]+em/',
+            '/[0-9]+(\\.[0-9]+)?em/',
           ],
         },
 
