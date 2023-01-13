@@ -376,9 +376,7 @@
   }
 }
 
-@mixin margin($direction) {
-  $spacer: var(--ironsworn-spacer-md);
-
+@mixin margin($direction, $spacer: var(--ironsworn-spacer-md)) {
   position: relative;
   flex: 0;
   border-#{$direction}-style: solid;
