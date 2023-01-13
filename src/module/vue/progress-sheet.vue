@@ -3,7 +3,10 @@
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="item" />
 
-    <div class="flexrow nogrow" style=" gap: 1em;margin: 0.5rem 0">
+    <div
+      class="flexrow nogrow"
+      style="gap: 1em; margin: var(--ironsworn-spacer-lg) 0"
+    >
       <RankPips class="nogrow" :current="item.system.rank" @click="setRank" />
       <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
       <label class="checkbox nogrow">
@@ -42,7 +45,10 @@
         <div class="nogrow" v-if="item.system.hasTrack">
           <div
             class="flexrow nogrow"
-            style="justify-content: flex-end; margin-bottom: 0.25rem"
+            style="
+              justify-content: flex-end;
+              margin-bottom: var(--ironsworn-spacer-sm);
+            "
           >
             <IronBtn
               v-if="item.system.hasTrack"
@@ -99,7 +105,7 @@
               class="nogrow"
               v-model="item.system.clockMax"
               @change="clockMaxChange"
-              style="margin: 0.5rem 0"
+              style="margin: var(--ironsworn-spacer-lg) 0"
             >
               <option
                 v-for="clockSize in [4, 6, 8, 10, 12]"

@@ -61,11 +61,6 @@
 <style lang="less" module>
 @import (reference) '../../../styles/mixins.less';
 
-@icon_size: 1.2em;
-@border_width: var(--ironsworn-border-width-lg);
-@border_radius: var(--ironsworn-border-radius-lg);
-@wrapper_spacing: 4px;
-
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
 
@@ -85,16 +80,17 @@
   .thematicColorMixin();
 
   position: relative;
-  padding: 0 @wrapper_spacing;
+  padding: 0 var(--ironsworn-spacer-md);
 
   &[aria-expanded='true'] {
-    padding-top: @wrapper_spacing;
-    padding-bottom: @wrapper_spacing;
+    padding-top: var(--ironsworn-spacer-md);
+    padding-bottom: var(--ironsworn-spacer-md);
   }
 }
 
 .moveSummary {
-  padding: 0.5rem 0.5rem 0.3rem;
+  padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
+    var(--ironsworn-spacer-md);
 }
 
 .moveButton {
@@ -124,7 +120,9 @@
   border-style: solid;
   border-color: transparent;
   background: none;
-  height: inherit;
+  padding: 0;
+  padding-left: var(--ironsworn-spacer-sm);
+  height: 100%;
   text-align: left;
   font-size: var(--font-size-16);
 
@@ -134,8 +132,9 @@
 }
 
 .contentWrapper {
-  border: 1px solid var(--ironsworn-color-light);
-  border-radius: 0 @border_radius @border_radius @border_radius;
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-light);
+  border-radius: 0 var(--ironsworn-border-radius-lg)
+    var(--ironsworn-border-radius-lg) var(--ironsworn-border-radius-lg);
   background-color: var(--ironsworn-color-bg-80);
   color: var(--ironsworn-color-fg);
 }
@@ -149,18 +148,18 @@
 .toggleSection {
   display: flex;
   flex-flow: row nowrap;
-  gap: @wrapper_spacing;
+  gap: var(--ironsworn-spacer-md);
 }
 
 .toggleWrapper {
   transition: var(--ironsworn-transition);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
-  border-top-left-radius: @border_radius;
-  border-top-right-radius: @border_radius;
+  border-top-left-radius: var(--ironsworn-border-radius-lg);
+  border-top-right-radius: var(--ironsworn-border-radius-lg);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  height: var(--ironsworn-line-height-lg);
+  line-height: 1.5;
 
   header:not(:last-child) & {
     border-color: var(--ironsworn-color-clickable-block-border-selected);

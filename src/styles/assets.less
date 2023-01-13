@@ -24,8 +24,8 @@
       margin: 0;
       text-transform: uppercase;
       line-height: 1;
-      word-spacing: 0.02em;
-      letter-spacing: 0.02em;
+      word-spacing: var(--ironsworn-word-spacing-sm);
+      letter-spacing: var(--ironsworn-letter-spacing-sm);
       font-size: var(--font-size-14);
       font-weight: bold;
     }
@@ -61,7 +61,7 @@
         display: flex;
         flex-direction: row;
         flex-grow: 0;
-        gap: var(--ironsworn-asset-spacer / 2);
+        gap: calc(var(--ironsworn-asset-spacer) / 2);
         border-bottom-width: var(--ironsworn-border-width-md);
         border-bottom-style: solid;
         border-bottom-color: var(--ironsworn-color-thematic);
@@ -74,7 +74,7 @@
         .asset-field-value {
           flex-grow: 1;
           margin: 0;
-          padding: 0 var(--ironsworn-asset-spacer / 2);
+          padding: 0 calc(var(--ironsworn-asset-spacer) / 2);
         }
       }
     }
@@ -93,10 +93,13 @@
   }
 
   .asset-ability-clock {
-    min-width: 40px;
-    max-width: 75px;
-    min-height: 40px;
-    max-height: 75px;
+    --ironsworn-clock-size-min: 40px;
+    --ironsworn-clock-size-max: 75px;
+
+    min-width: var(--ironsworn-clock-size-min);
+    max-width: var(--ironsworn-clock-size-max);
+    min-height: var(--ironsworn-clock-size-min);
+    max-height: var(--ironsworn-clock-size-max);
   }
 
   .asset-ability-text {
@@ -124,11 +127,6 @@
   }
 }
 
-@hexagon_aspect_ratio: (sqrt(3) / 2);
-@hex_deco_aspect_ratio: 24 / 28;
-@hex_deco_expanded_height: 50px;
-@hex_deco_collapsed_height: 32px;
-
 // Here we encode the bullet styles as classes, and pull them into the
 // ul>li bullet class from there. These will also be available for block
 // elements
@@ -146,18 +144,24 @@
 }
 
 .asset-ability-bullet-ironsworn {
-  margin-top: 0.15em;
+  --ironsworn-bullet-height: 0.75em;
+  --ironsworn-bullet-margin-top: 0.15em;
+
+  margin-top: var(--ironsworn-bullet-margin-top);
   border-width: var(--ironsworn-border-width-md);
   border-radius: 50%;
-  height: 0.75em;
+  height: var(--ironsworn-bullet-height);
   aspect-ratio: 1;
 }
 
 .asset-ability-bullet-starforged {
-  margin-top: 0.15em;
+  --ironsworn-bullet-height: 1em;
+  --ironsworn-bullet-margin-top: 0.15em;
+
+  margin-top: var(--ironsworn-bullet-margin-top);
   background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
-  height: 1em;
-  aspect-ratio: @hexagon_aspect_ratio;
+  height: var(--ironsworn-bullet-height);
+  aspect-ratio: var(--ironsworn-hexagon-aspect-ratio);
   mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
 }
 
@@ -189,7 +193,7 @@
 }
 
 .asset-starforged {
-  .starforgedAssetDecoMixin(50px,32px);
+  .starforgedAssetDecoMixin(50px, 32px);
 
   .asset-abilities {
     .asset-ability {

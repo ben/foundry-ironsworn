@@ -110,7 +110,7 @@
   flex-direction: row;
   align-content: center;
   justify-content: center;
-  padding: 2px;
+  padding: var(--ironsworn-spacer-xs);
   width: 1em;
   height: 1em;
   line-height: 1;

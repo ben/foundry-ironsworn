@@ -1,7 +1,14 @@
 :root {
+  // typography
+  --ironsworn-word-spacing-sm: 0.02em;
+  --ironsworn-letter-spacing-sm: 0.02em;
+
   // SVG widgets
   --ironsworn-widget-stroke-width: 1;
   --ironsworn-clock-fill-opacity-hover: 0.6;
+
+  // Shapes
+  --ironsworn-hexagon-aspect-ratio: calc(sqrt(3) / 2);
 
   // Border radius and corners
   --ironsworn-border-radius-sm: 2px;
@@ -19,8 +26,37 @@
   --ironsworn-spacer-lg: 7px;
   --ironsworn-spacer-xl: 10px;
 
+  // Range input elements
+  --ironsworn-range-height: 20px;
+
+  // range slider thumb
+  --ironsworn-range-thumb-bg-color: var(--ironsworn-color-fg);
+  --ironsworn-range-thumb-border-color: var(--ironsworn-color-cool-50);
+  --ironsworn-range-thumb-border-width: var(--ironsworn-border-width-md);
+  --ironsworn-range-thumb-border-radius: 2px;
+  --ironsworn-range-thumb-bg-color-focus: var(--ironsworn-color-fg);
+  --ironsworn-range-thumb-border-color-focus: var(--ironsworn-color-warm-90);
+  --ironsworn-range-thumb-height: 12px;
+  --ironsworn-range-thumb-width: 12px;
+
+  // range slider track
+  --ironsworn-range-track-height: 6px;
+  --ironsworn-range-track-border-radius: calc(
+    var(--ironsworn-range-track-height) / 2
+  );
+  --ironsworn-range-track-border-width: var(--ironsworn-border-width-md);
+  --ironsworn-range-track-bg-color: var(--ironsworn-color-fg-20);
+  --ironsworn-range-track-border-color: var(--ironsworn-color-fg-20);
+  --ironsworn-range-track-bg-color-focus: var(--ironsworn-color-warm-20);
+  --ironsworn-range-track-border-color-focus: var(--ironsworn-color-cool-50);
+  --ironsworn-range-box-shadow: 1px 1px 1px var(--color-shadow-dark),
+    0 0 1px #0d0d0d;
+
   // Width for custom slider widgets
   --ironsworn-vertical-slider-width: 50px;
+
+  // Icon sizing
+  --ironsworn-icon-size: 1em;
 
   // Line height for text. Relative line height is preferred, without units.
   --ironsworn-line-height-lg: 2;

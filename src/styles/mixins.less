@@ -219,8 +219,8 @@
   text-align: center;
 
   &::before {
-    width: 1em;
-    height: 1em;
+    width: var(--ironsworn-icon-size);
+    height: var(--ironsworn-icon-size);
     line-height: 1;
   }
 
@@ -258,7 +258,7 @@
   }
 }
 
-.clickableBlockMixin(@blockSize:50px,) {
+.clickableBlockMixin(@blockSize:50px) {
   .blockMixin(@blockSize);
 
   &:hover,
