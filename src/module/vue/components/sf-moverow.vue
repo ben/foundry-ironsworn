@@ -61,9 +61,6 @@
 <style lang="less" module>
 @import (reference) '../../../styles/mixins.less';
 
-@icon_size: 1.2em;
-@wrapper_spacing: var(--ironsworn-spacer-md);
-
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
 
