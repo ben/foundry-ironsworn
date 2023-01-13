@@ -2,6 +2,8 @@
   // typography
   --ironsworn-word-spacing-sm: 0.02em;
   --ironsworn-letter-spacing-sm: 0.02em;
+  --ironsworn-word-spacing: var(--ironsworn-word-spacing-sm);
+  --ironsworn-letter-spacing: var(--ironsworn-letter-spacing-sm);
 
   // SVG widgets
   --ironsworn-widget-stroke-width: 1;
