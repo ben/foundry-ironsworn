@@ -1,12 +1,5 @@
 @use '@styles/mixins';
 
-@mixin dice-glow($color, $diceDropShadowSize: 0 0 2px) {
-  background-blend-mode: screen;
-  color: $color !important;
-  filter: drop-shadow($diceDropShadowSize $color)
-    drop-shadow($diceDropShadowSize $color);
-}
-
 .dice-roll {
   --ironsworn-roll-term-size: var(--font-size-24);
 
@@ -32,16 +25,16 @@
   }
 
   .roll-graphic {
-    $graphic-gap: 0.25rem;
+    --ironsworn-roll-graphic-gap: 0.25rem;
 
     &.dice-formula {
       display: flex;
       flex: auto;
       flex-flow: row nowrap;
-      gap: $graphic-gap;
+      gap: var(--ironsworn-roll-graphic-gap);
       justify-content: center;
       margin: 0;
-      padding: $graphic-gap;
+      padding: var(--ironsworn-roll-graphic-gap);
 
       * {
         margin: 0;
@@ -81,7 +74,7 @@
         display: flex;
         flex-direction: row;
         flex-grow: 0;
-        gap: calc($graphic-gap / 2);
+        gap: calc(var(--ironsworn-roll-graphic-gap) / 2);
       }
     }
   }
@@ -137,21 +130,38 @@
 
     &.min:not(.challenge),
     &.challenge.max {
-      @include dice-glow(var(--ironsworn-color-danger));
+      --ironsworn-thematic-color: var(--ironsworn-color-danger);
     }
 
     &.max:not(.challenge),
     &.challenge.min {
-      @include dice-glow(var(--ironsworn-color-success));
+      --ironsworn-thematic-color: var(--ironsworn-color-success);
     }
 
     &.canceled {
-      @include dice-glow(var(--ironsworn-color-warning));
+      --ironsworn-thematic-color: var(--ironsworn-color-warning);
     }
   }
 
+  // dice glow effect: shared properties
+  del .roll,
+  .min:not(.challenge),
+  .challenge.max,
+  .max:not(.challenge),
+  .challenge.min,
+  .canceled {
+    background-blend-mode: screen;
+    color: var(--ironsworn-thematic-color) !important;
+    filter: drop-shadow(
+        var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-thematic-color)
+      )
+      drop-shadow(
+        var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-thematic-color)
+      );
+  }
+
   del .roll {
-    @include dice-glow(var(--ironsworn-color-warning));
+    --ironsworn-thematic-color: var(--ironsworn-color-warning);
 
     text-decoration: line-through;
   }
