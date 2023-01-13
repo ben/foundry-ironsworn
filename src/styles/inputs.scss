@@ -121,7 +121,7 @@ input[type='range'] {
     border: 1px solid var(--ironsworn-range-track-border-color);
     border-radius: var(--ironsworn-range-track-height);
     box-shadow: var(--ironsworn-range-box-shadow);
-    background: #8c8c8c;
+    background: var(--ironsworn-color-fg-muted);
   }
 
   &::-ms-fill-upper {
@@ -165,9 +165,9 @@ input[type='range'] {
 
     display: block;
     flex: 0 1 48px;
-    margin-left: 10px;
+    margin-left: var(--ironsworn-spacer-xl);
     border: 1px solid var(--ironsworn-color-fg);
-    padding: 2px;
+    padding: var(--ironsworn-spacer-xs);
     text-align: center;
   }
 }
