@@ -1,8 +1,8 @@
 /* stylelint-disable order/order */
 // Light theme for Ironsworn, with minimal restyling of FVTT's stock UI.
 
-@use 'mixins/colors';
-@use 'mixins/decorations';
+@use '@styles/mixins/colors';
+@use '@styles/mixins/decorations';
 
 .theme-ironsworn {
   // #ff6600 and #ff0000 chosen because they're what FVTT uses for its accents.

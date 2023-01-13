@@ -2,10 +2,10 @@
 // Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
 @use 'sass:meta';
-@use 'starforged-font.css'; // HACK to avoid import error
-@use 'mixins/colors';
-@use 'mixins/fvtt-retheme';
-@use 'mixins/decorations';
+@use '@styles/themes/starforged-font.css'; // HACK to avoid import error
+@use '@styles/mixins/colors';
+@use '@styles/mixins/fvtt-retheme';
+@use '@styles/mixins/decorations';
 
 .theme-starforged {
   @include colors.palettize(

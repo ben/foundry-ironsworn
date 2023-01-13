@@ -1,6 +1,6 @@
 // styles for FVTT's sidebar
 
-@use '@styles/mixins';
+@use '@styles/mixins/common';
 
 #sidebar {
   li.folder > .folder-header {
