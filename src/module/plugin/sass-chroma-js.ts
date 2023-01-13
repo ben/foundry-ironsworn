@@ -11,6 +11,7 @@ import {
   assertString,
   assertMode as assertColorMode,
   assertList,
+  SassLegacyValue,
 } from './sass-assert'
 import {
   sass2Chroma,
@@ -31,9 +32,9 @@ const plugin: Record<string, SassSyncFunction> = {
    */
   // @ts-ignore
   'set-channel($color, $modechan, $value)': (
-    color: Sass.Color,
-    modechan: Sass.String,
-    value: Sass.Number
+    color: SassLegacyValue<Sass.Color>,
+    modechan: SassLegacyValue<Sass.String>,
+    value: SassLegacyValue<Sass.Number>
   ) => {
     assertColor(color)
     assertColorModeChannel(modechan)
@@ -50,8 +51,8 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   'get-channel($color, $modechan)': (
-    color: Sass.Color,
-    modechan: Sass.String
+    color: SassLegacyValue<Sass.Color>,
+    modechan: SassLegacyValue<Sass.String>
   ) => {
     assertColor(color)
     assertColorModeChannel(modechan)
@@ -64,17 +65,17 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   "luminance($color, $luminance: null, $color-space: 'rgb')": (
-    color: Sass.Color,
+    color: SassLegacyValue<Sass.Color>,
     /**
      * @default null
      * @min 0
      * @max 1
      */
-    luminance: Sass.Number | Sass.Null,
+    luminance: SassLegacyValue<Sass.Number> | SassLegacyValue<Sass.Null>,
     /**
      * @default 'rgb'
      */
-    mode: Sass.String
+    mode: SassLegacyValue<Sass.String>
   ) => {
     assertColor(color)
     assertColorMode(mode)
@@ -100,22 +101,28 @@ const plugin: Record<string, SassSyncFunction> = {
   },
 
   // @ts-ignore
-  'lightest($colors...)': (colors: Sass.List) => {
+  'lightest($colors...)': (colors: SassLegacyValue<Sass.List>) => {
     assertList(colors)
-    const arr = sassList2Array<chroma.Color, Sass.Color>(colors, (v) => {
-      assertColor(v)
-      return sass2Chroma(v)
-    })
+    const arr = sassList2Array<chroma.Color, SassLegacyValue<Sass.Color>>(
+      colors,
+      (v) => {
+        assertColor(v)
+        return sass2Chroma(v)
+      }
+    )
     return maxBy(arr, (color) => color.luminance())
   },
 
   // @ts-ignore
-  'darkest($colors...)': (colors: Sass.List) => {
+  'darkest($colors...)': (colors: SassLegacyValue<Sass.List>) => {
     assertList(colors)
-    const arr = sassList2Array<chroma.Color, Sass.Color>(colors, (v) => {
-      assertColor(v)
-      return sass2Chroma(v)
-    })
+    const arr = sassList2Array<chroma.Color, SassLegacyValue<Sass.Color>>(
+      colors,
+      (v) => {
+        assertColor(v)
+        return sass2Chroma(v)
+      }
+    )
     return minBy(arr, (color) => color.luminance())
   },
   /**
@@ -123,7 +130,10 @@ const plugin: Record<string, SassSyncFunction> = {
    */
 
   // @ts-ignore
-  'contrast($color1, $color2)': (color1: Sass.Color, color2: Sass.Color) => {
+  'contrast($color1, $color2)': (
+    color1: SassLegacyValue<Sass.Color>,
+    color2: SassLegacyValue<Sass.Color>
+  ) => {
     const [chromaColor1, chromaColor2] = [color1, color2].map((c) => {
       assertColor(c)
       return sass2Chroma(c)
@@ -134,10 +144,10 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   "mix($color1, $color2, $f: 0.5, $color-space: 'lrgb')": (
-    color1: Sass.Color,
-    color2: Sass.Color,
-    f: Sass.Number,
-    colorSpace: Sass.String
+    color1: SassLegacyValue<Sass.Color>,
+    color2: SassLegacyValue<Sass.Color>,
+    f: SassLegacyValue<Sass.Number>,
+    colorSpace: SassLegacyValue<Sass.String>
   ) => {
     assertNumber(f)
     assertColorMode(colorSpace)
@@ -159,7 +169,11 @@ const plugin: Record<string, SassSyncFunction> = {
    */
 
   // @ts-ignore
-  'hcl($h, $c, $l)': (h: Sass.Number, c: Sass.Number, l: Sass.Number) => {
+  'hcl($h, $c, $l)': (
+    h: SassLegacyValue<Sass.Number>,
+    c: SassLegacyValue<Sass.Number>,
+    l: SassLegacyValue<Sass.Number>
+  ) => {
     ;[h, c, l].forEach((channel) => assertNumber(channel))
     const chromaColor = chroma(
       [h.getValue(), c.getValue(), l.getValue()],
@@ -171,7 +185,11 @@ const plugin: Record<string, SassSyncFunction> = {
    * @see {@link chroma.Color.lch}
    */
   // @ts-ignore
-  'lch($l,$c,$h)': (l: Sass.Number, c: Sass.Number, h: Sass.Number) => {
+  'lch($l,$c,$h)': (
+    l: SassLegacyValue<Sass.Number>,
+    c: SassLegacyValue<Sass.Number>,
+    h: SassLegacyValue<Sass.Number>
+  ) => {
     ;[l, c, h].forEach((channel) => assertNumber(channel))
     const chromaColor = chroma(
       [l.getValue(), c.getValue(), h.getValue()],
@@ -184,7 +202,11 @@ const plugin: Record<string, SassSyncFunction> = {
    * @see {@link chroma.Color.oklch}
    */
   // @ts-ignore
-  'oklch($l,$c,$h)': (l: Sass.Number, c: Sass.Number, h: Sass.Number) => {
+  'oklch($l,$c,$h)': (
+    l: SassLegacyValue<Sass.Number>,
+    c: SassLegacyValue<Sass.Number>,
+    h: SassLegacyValue<Sass.Number>
+  ) => {
     ;[l, c, h].forEach((channel) => assertNumber(channel))
 
     const chromaColor = chroma(
@@ -198,17 +220,18 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   "scale-steps($colors, $steps, $mode: 'lrgb')": (
-    colors: Sass.List,
-    steps: Sass.Number,
-    mode: Sass.String
+    colors: SassLegacyValue<Sass.List>,
+    steps: SassLegacyValue<Sass.Number>,
+    mode: SassLegacyValue<Sass.String>
   ) => {
     assertList(colors)
     assertNumber(steps)
     assertColorMode(mode)
 
-    const chromaColors = sassList2Array<chroma.Color, Sass.Color>(colors, (v) =>
-      sass2Chroma(v)
-    )
+    const chromaColors = sassList2Array<
+      chroma.Color,
+      SassLegacyValue<Sass.Color>
+    >(colors, (v) => sass2Chroma(v))
     const scale = chroma
       .scale(chromaColors)
       .correctLightness(true)
@@ -217,7 +240,7 @@ const plugin: Record<string, SassSyncFunction> = {
       .colors(steps.getValue(), null)
 
     return array2SassList<chroma.Color, Sass.Color>(scale, (v) =>
-      chroma2Sass(v)
+      chroma2Sass(v as any)
     )
   },
   /**
@@ -230,21 +253,21 @@ const plugin: Record<string, SassSyncFunction> = {
    * @param warmColor - A saturated accent/highlight color, used both as-is and in mixtures with the other colours.
    * @param coolColor - A second saturated accent/highlight color, used both as-is and in mixtures with the other colours.
    * @param prefix - the prefix to use for the generated CSS variables.
-   * @returns A {@link Sass.Map} of keyed colours. Iterate over it with `@each` to set CSS custom properties that can
+   * @returns A {@link SassLegacyValue<Sass.Map>} of keyed colours. Iterate over it with `@each` to set CSS custom properties that can
    *
    * @remarks 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' are more about a UX element's importance/activity (warmer = more active/dramatic).
    */
   // @ts-ignore
   "gamutize($fg-color, $bg-color, $warm-color, $cool-color, $prefix: 'palette')":
     (
-      fgColor: Sass.Color,
-      bgColor: Sass.Color,
-      warmColor: Sass.Color,
-      coolColor: Sass.Color,
+      fgColor: SassLegacyValue<Sass.Color>,
+      bgColor: SassLegacyValue<Sass.Color>,
+      warmColor: SassLegacyValue<Sass.Color>,
+      coolColor: SassLegacyValue<Sass.Color>,
       /**
        * @default 'palette'
        */
-      prefix: Sass.String
+      prefix: SassLegacyValue<Sass.String>
     ) => {
       // typecheck the parameters SASS passed us
       ;[fgColor, bgColor, warmColor, coolColor].forEach((c) => assertColor(c))

@@ -2,7 +2,7 @@ import chroma, { InterpolationMode } from 'chroma-js'
 import { LegacyValue, types as Sass } from 'sass'
 
 // Hack because the sass types package appears to be incorrect.
-declare type SassLegacyValue<T extends LegacyValue> = T & {
+export type SassLegacyValue<T extends LegacyValue> = T & {
   dartValue: any
   getValue: () => any
 }
