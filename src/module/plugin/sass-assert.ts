@@ -1,6 +1,11 @@
 import chroma, { InterpolationMode } from 'chroma-js'
 import { LegacyValue, types as Sass } from 'sass'
 
+declare type SassLegacyValue = LegacyValue & {
+  dartValue: any
+  getValue: () => any
+}
+
 const COLOR_MODES: chroma.InterpolationMode[] = [
   'rgb',
   'hsl',
@@ -14,27 +19,27 @@ const COLOR_MODES: chroma.InterpolationMode[] = [
   'oklch',
 ]
 // HELPER FUNCTIONS: TYPECHECK SASS VALUES
-export function assertColor(obj: LegacyValue) {
+export function assertColor(obj: SassLegacyValue) {
   if (!(obj instanceof Sass.Color)) {
     throw new Sass.Error(`Expected SASS Color, received: ${obj?.dartValue}`)
   }
 }
-export function assertNumber(obj: LegacyValue) {
+export function assertNumber(obj: SassLegacyValue) {
   if (!(obj instanceof Sass.Number)) {
     throw new Sass.Error(`Expected SASS Number, received: ${obj?.dartValue}`)
   }
 }
-export function assertList(obj: LegacyValue) {
+export function assertList(obj: SassLegacyValue) {
   if (!(obj instanceof Sass.List)) {
     throw new Sass.Error(`Expected SASS List, received: ${obj?.dartValue}`)
   }
 }
-export function assertString(obj: LegacyValue) {
+export function assertString(obj: SassLegacyValue) {
   if (!(obj instanceof Sass.String)) {
     throw new Sass.Error(`Expected SASS String, received: ${obj?.dartValue}`)
   }
 }
-export function assertMode(obj: LegacyValue) {
+export function assertMode(obj: SassLegacyValue) {
   assertString(obj)
   if (!COLOR_MODES.includes(obj?.getValue() as InterpolationMode)) {
     throw new Sass.Error(
@@ -42,9 +47,9 @@ export function assertMode(obj: LegacyValue) {
     )
   }
 }
-export function assertModeChannel(obj: LegacyValue) {
+export function assertModeChannel(obj: SassLegacyValue) {
   assertString(obj)
-  const [mode, chan] = obj?.getValue().split('.')
+  const [mode, chan] = obj.getValue().split('.')
 
   if (
     // invalid color mode
