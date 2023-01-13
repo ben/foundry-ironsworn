@@ -32,6 +32,8 @@ const CONFIG = {
     {
       files: ['**/*.vue', '**/*.scss'],
       rules: {
+        // 'scss/dollar-variable-no-missing-interpolation': [true],
+        'scss/no-dollar-variables': [true],
         'mavrin/stylelint-declaration-use-css-custom-properties': {
           /**
            * @see https://csstree.github.io/docs/syntax/
