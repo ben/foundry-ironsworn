@@ -64,10 +64,11 @@ input[type='range'] {
   margin: 0;
   background: transparent;
   width: 100%;
-  height: 20px;
+  height: var(--ironsworn-range-height);
 
   &::-webkit-slider-runnable-track {
-    border: 1px solid var(--ironsworn-range-track-border-color);
+    border: var(--ironsworn-range-track-border-width) solid
+      var(--ironsworn-range-track-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
     background: var(--ironsworn-range-track-bg-color);
@@ -78,8 +79,11 @@ input[type='range'] {
 
   &::-webkit-slider-thumb {
     appearance: none;
+
+    // TODO: figure out the cleanest way to interpolate this
     margin-top: -4px;
-    border: 1px solid var(--ironsworn-range-thumb-border-color);
+    border: var(--ironsworn-range-thumb-border-width) solid
+      var(--ironsworn-range-thumb-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
     background: var(--ironsworn-range-thumb-bg-color);
@@ -89,7 +93,8 @@ input[type='range'] {
   }
 
   &::-moz-range-track {
-    border: 1px solid var(--ironsworn-range-track-border-color);
+    border: var(--ironsworn-range-track-border-width) solid
+      var(--ironsworn-range-track-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
     background: var(--ironsworn-range-track-bg-color);
@@ -99,7 +104,8 @@ input[type='range'] {
   }
 
   &::-moz-range-thumb {
-    border: 1px solid var(--ironsworn-range-thumb-border-color);
+    border: var(--ironsworn-range-thumb-border-width) solid
+      var(--ironsworn-range-thumb-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
     background: var(--ironsworn-range-thumb-bg-color);
@@ -118,21 +124,24 @@ input[type='range'] {
   }
 
   &::-ms-fill-lower {
-    border: 1px solid var(--ironsworn-range-track-border-color);
+    border: var(--ironsworn-range-track-border-width) solid
+      var(--ironsworn-range-track-border-color);
     border-radius: var(--ironsworn-range-track-height);
     box-shadow: var(--ironsworn-range-box-shadow);
     background: var(--ironsworn-color-fg-muted);
   }
 
   &::-ms-fill-upper {
-    border: 1px solid var(--ironsworn-range-track-border-color);
+    border: var(--ironsworn-range-track-border-width) solid
+      var(--ironsworn-range-track-border-color);
     border-radius: var(--ironsworn-range-track-height);
     box-shadow: var(--ironsworn-range-box-shadow);
     background: var(--ironsworn-range-track-bg-color);
   }
 
   &::-ms-thumb {
-    border: 1px solid var(--ironsworn-range-thumb-border-color);
+    border: var(--ironsworn-range-thumb-border-width) solid
+      var(--ironsworn-range-thumb-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
     background: var(--ironsworn-range-thumb-bg-color);
@@ -164,9 +173,8 @@ input[type='range'] {
     @include mixins.input-field-static;
 
     display: block;
-    flex: 0 1 48px;
+    flex: 0 1 var(--ironsworn-range-value-input-width);
     margin-left: var(--ironsworn-spacer-xl);
-    border: 1px solid var(--ironsworn-color-fg);
     padding: var(--ironsworn-spacer-xs);
     text-align: center;
   }
