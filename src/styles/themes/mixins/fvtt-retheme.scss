@@ -37,3 +37,20 @@
 
   // TODO: danger, warning (etc) colours
 }
+
+@mixin ui {
+  @include meta.load-css('@styles/fvtt/app');
+  @include meta.load-css('@styles/fvtt/dialog');
+  @include meta.load-css('@styles/fvtt/clickable');
+  @include meta.load-css('@styles/fvtt/settings');
+  @include meta.load-css('@styles/fvtt/sidebar');
+  @include meta.load-css('@styles/fvtt/tooltip');
+  @include meta.load-css('@styles/fvtt/nue');
+  @include meta.load-css('@styles/fvtt/journal');
+  @include meta.load-css('@styles/inputs');
+  @include meta.load-css('@styles/editor');
+
+  .chat-message {
+    background: var(--ironsworn-color-bg);
+  }
+}

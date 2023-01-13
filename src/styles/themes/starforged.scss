@@ -8,16 +8,11 @@
 @use 'mixins/decorations';
 
 .theme-starforged {
-  $fg-color: hsl(180deg 70% 60%);
-  $bg-color: hsl(180deg 20% 0%);
-  $warm-color: hsl(185deg 100% 50%);
-  $cool-color: hsl(210deg 100% 50%);
-
   @include colors.palettize(
-    $fg-color: $fg-color,
-    $bg-color: $bg-color,
-    $warm-color: $warm-color,
-    $cool-color: $cool-color,
+    $fg-color: hsl(180deg 70% 60%),
+    $bg-color: hsl(180deg 20% 0%),
+    $warm-color: hsl(185deg 100% 50%),
+    $cool-color: hsl(210deg 100% 50%),
     $prefix: 'ironsworn-color'
   );
   @include colors.dark-theme('ironsworn-color');
@@ -36,34 +31,16 @@
     drop-shadow(0 0 3px var(--ironsworn-color-cool-50));
   --ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool),
     0 0 3px var(--ironsworn-color-cool);
+
+  // TABS
   --ironsworn-tab-transition: slide;
-  --ironsworn-path-hexagon: polygon(
-    0 25%,
-    50% 0,
-    100% 25%,
-    100% 75%,
-    50% 100%,
-    0 75%
-  );
 
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
   @include fvtt-retheme.color-variables;
+
+  // Restyle FVTT's UI
+  @include fvtt-retheme.ui;
+
+  // Hexagon motif for certain widgets and decorations
   @include decorations.starforged;
-
-  // restyle FVTT's UI
-  @include meta.load-css('@styles/fvtt/app');
-  @include meta.load-css('@styles/fvtt/dialog');
-  @include meta.load-css('@styles/fvtt/clickable');
-  @include meta.load-css('@styles/fvtt/settings');
-  @include meta.load-css('@styles/fvtt/sidebar');
-  @include meta.load-css('@styles/fvtt/tooltip');
-  @include meta.load-css('@styles/fvtt/nue');
-  @include meta.load-css('@styles/fvtt/journal');
-  @include meta.load-css('@styles/inputs');
-  @include meta.load-css('@styles/editor');
-
-  // specific configuration. avoid adding to this -- generalize where possible to keep the code neat and maintainable.
-  .chat-message {
-    background: var(--ironsworn-color-bg);
-  }
 }
