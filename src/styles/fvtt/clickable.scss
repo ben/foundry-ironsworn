@@ -1,7 +1,7 @@
-@use '@styles/mixins/common';
+@use 'mixins:clickable';
 
 .app:not(.ironsworn) button {
-  @include mixins.clickable-block;
+  @include clickable.block;
 
   border-width: var(--ironsworn-border-width-md);
   border-style: solid;

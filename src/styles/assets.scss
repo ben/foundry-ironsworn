@@ -1,6 +1,6 @@
-@use '@styles/themes/mixins/decorations';
+@use 'mixins:decoration';
 @use 'sass:math';
-@use '@styles/mixins/common';
+@use 'mixins:text';
 
 // Here we encode the bullet styles as classes, and pull them into the
 // ul>li bullet class from there. These will also be available for block
@@ -160,7 +160,7 @@
   .slider-segment {
     --ironsworn-text-stroke-color: var(--ironsworn-dark-color);
 
-    @include mixins.text-stroke;
+    @include text.stroke;
   }
 }
 
@@ -209,7 +209,7 @@
 }
 
 .asset-starforged {
-  @include decorations.starforged-asset-deco(50px, 32px);
+  @include decoration.starforged-asset-deco(50px, 32px);
 
   .asset-abilities {
     .asset-ability {

@@ -1,13 +1,13 @@
 /* stylelint-disable order/order */
 // Light theme for Ironsworn, with minimal restyling of FVTT's stock UI.
 
-@use '@styles/mixins/colors';
-@use '@styles/mixins/decorations';
+@use 'mixins:color';
+@use 'mixins:decoration';
 
 .theme-ironsworn {
   // #ff6600 and #ff0000 chosen because they're what FVTT uses for its accents.
 
-  @include colors.palettize(
+  @include color.palettize(
     $fg-color: hsl(0deg 0% 0%),
     $bg-color: rgb(255 255 255),
     $warm-color: hsl(24deg 100% 50%),
@@ -15,13 +15,13 @@
     $prefix: 'ironsworn-color'
   );
 
-  @include colors.light-theme('ironsworn-color');
-  @include colors.sharp-border('ironsworn-color');
-  @include colors.interactive-invert(
+  @include color.light-theme('ironsworn-color');
+  @include color.sharp-border('ironsworn-color');
+  @include color.interactive-invert(
     'ironsworn-color-clickable-block',
     'ironsworn-color'
   );
-  @include decorations.ironsworn;
+  @include decoration.ironsworn;
 
   --ironsworn-color-text-stroke: transparent;
 

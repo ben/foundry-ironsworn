@@ -1,21 +1,21 @@
 // styles for form input elements. for ProseMirror and TinyMCE styles, see editors.scss.
 // the main style sheet scopes these to .ironsworn, so import them again globally if you want to retheme the form inputs on the UX elements that belong to FVTT.
 
-@use '@styles/mixins/common';
+@use 'mixins:input';
 
 *::placeholder {
   font-family: inherit;
 }
 
 select {
-  @include mixins.input-field;
+  @include input.field;
 
   border: var(--ironsworn-border-width-md) outset
     var(--ironsworn-color-input-border);
 }
 
 textarea {
-  @include mixins.input-field;
+  @include input.field;
 
   border-radius: var(--ironsworn-border-radius-md);
   font-family: var(--font-primary);
@@ -27,7 +27,7 @@ input[type='password'],
 input[type='date'],
 input[type='time'],
 input[type='search'] {
-  @include mixins.input-field;
+  @include input.field;
 }
 
 // CHECKBOXES
@@ -170,7 +170,7 @@ input[type='range'] {
   }
 
   input[type='range'] + .range-value {
-    @include mixins.input-field-static;
+    @include input.field;
 
     display: block;
     flex: 0 1 var(--ironsworn-range-value-input-width);

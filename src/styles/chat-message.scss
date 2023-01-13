@@ -1,4 +1,5 @@
-@use '@styles/mixins/common';
+@use 'mixins:text';
+@use 'mixins:clickable';
 
 .chat-message {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
@@ -11,14 +12,14 @@
 
   // General message content styling
   .message-content {
-    @include mixins.text-compact;
+    @include text.compact;
 
     border: none;
 
     .ironsworn-roll-title,
     h3,
     h2 {
-      @include mixins.initial-caps;
+      @include text.initial-caps;
 
       margin: 0;
       font-size: var(--font-size-16);
@@ -34,8 +35,8 @@
     }
 
     button {
-      @include mixins.initial-caps;
-      @include mixins.clickable-block;
+      @include text.initial-caps;
+      @include clickable.block;
 
       margin: 0;
       border-width: var(--ironsworn-border-width-md);
@@ -168,7 +169,7 @@
       }
 
       .oracle-result-control {
-        @include mixins.clickable-text;
+        @include clickable.text;
 
         display: flex;
         position: absolute;

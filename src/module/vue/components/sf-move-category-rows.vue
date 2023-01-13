@@ -35,6 +35,10 @@
 </template>
 
 <style lang="scss" module>
+@use 'mixins:clickable';
+@use 'mixins:text';
+@use 'mixins:fx';
+
 .wrapper {
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: v-bind('thematicColor');
@@ -59,14 +63,15 @@
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-light);
     --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-    @include mixins.clickable-text;
+    @include clickable.text;
 
     height: inherit;
   }
 }
 
 .toggle-button {
-  @include mixins.text-stroke(var(--ironsworn-color-dark));
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
+  @include text.stroke;
 
   background: none;
   padding: var(--ironsworn-spacer-md);
@@ -89,8 +94,8 @@
   }
 
   &[data-highlighted='true']::after {
-    @include mixins.overlay;
-    @include mixins.static-highlight(50);
+    @include fx.overlay;
+    @include fx.accent-gradient(50);
 
     opacity: 0;
     animation: overlay-fadeout v-bind('$props.highlightDuration +"ms"')

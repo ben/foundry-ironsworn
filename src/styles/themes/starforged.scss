@@ -2,22 +2,22 @@
 // Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
 @use 'sass:meta';
-@use '@styles/themes/starforged-font.css'; // HACK to avoid import error
-@use '@styles/mixins/colors';
-@use '@styles/mixins/fvtt-retheme';
-@use '@styles/mixins/decorations';
+@use 'mixins:color';
+@use 'mixins:fvtt';
+@use 'mixins:decoration';
+@import 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap';
 
 .theme-starforged {
-  @include colors.palettize(
+  @include color.palettize(
     $fg-color: hsl(180deg 70% 60%),
     $bg-color: hsl(180deg 20% 0%),
     $warm-color: hsl(185deg 100% 50%),
     $cool-color: hsl(210deg 100% 50%),
     $prefix: 'ironsworn-color'
   );
-  @include colors.dark-theme('ironsworn-color');
-  @include colors.soft-border('ironsworn-color');
-  @include colors.interactive-tint(
+  @include color.dark-theme('ironsworn-color');
+  @include color.soft-border('ironsworn-color');
+  @include color.interactive-tint(
     'ironsworn-color-clickable-block',
     'ironsworn-color'
   );
@@ -36,11 +36,11 @@
   --ironsworn-tab-transition: slide;
 
   // now that the vars are set, set the overrides to FVTT's vars that are dependent on them.
-  @include fvtt-retheme.color-variables;
+  @include fvtt.colors;
 
   // Restyle FVTT's UI
-  @include fvtt-retheme.ui;
+  @include fvtt.ui;
 
   // Hexagon motif for certain widgets and decorations
-  @include decorations.starforged;
+  @include decoration.starforged;
 }

@@ -1,4 +1,4 @@
-@use '@styles/mixins/common';
+@use 'mixins:fx';
 
 [data-ironsworn-drop-type] {
   --ironsworn-drop-outline-width: 3px;
@@ -16,8 +16,8 @@
   outline: 0 var(--ironsworn-drop-outline-style) transparent;
 
   &::after {
-    @include mixins.overlay;
-    @include mixins.static-highlight(20);
+    @include fx.overlay;
+    @include fx.accent-gradient(20);
 
     transition: all var(--ironsworn-drop-transition-duration) ease;
     visibility: hidden;

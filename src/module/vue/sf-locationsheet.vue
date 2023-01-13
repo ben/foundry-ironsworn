@@ -160,6 +160,8 @@
 }
 </style>
 <style lang="scss" scoped>
+@use 'mixins:clickable';
+
 label {
   line-height: 27px;
 
@@ -174,7 +176,7 @@ label {
 }
 
 [data-highlighted='true'] {
-  @include mixins.block-hover;
+  @include clickable.block-hover;
 }
 </style>
 

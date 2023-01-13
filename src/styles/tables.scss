@@ -1,4 +1,5 @@
-@use '@styles/mixins/common';
+@use 'mixins:clickable';
+@use 'mixins:fx';
 
 // general table styles
 table {
@@ -22,7 +23,7 @@ table {
 .oracle-table {
   .oracle-table-column-result-text {
     a.entity-link {
-      @include mixins.clickable-text;
+      @include clickable.text;
 
       border: none;
       background: none !important;
@@ -44,7 +45,7 @@ table {
   .oracle-result-row {
     &.selected,
     &[aria-selected='true'] {
-      @include mixins.static-highlight(20);
+      @include fx.accent-gradient(20);
     }
   }
 }

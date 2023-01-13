@@ -1,4 +1,4 @@
-@use '@styles/mixins/common';
+@use 'mixins:text';
 
 .dice-roll {
   --ironsworn-roll-term-size: var(--font-size-24);
@@ -43,7 +43,7 @@
       .die {
         --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
-        @include mixins.text-stroke;
+        @include text.stroke;
 
         flex-grow: 0;
         width: 1.5em;

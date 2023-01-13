@@ -1,4 +1,4 @@
-@use '@styles/mixins/common';
+@use 'mixins:text';
 
 // for classes that apply a set of commonly used styles, but don't describe an element with a specific purpose
 
@@ -13,7 +13,7 @@
 }
 
 .initial-caps {
-  @include mixins.initial-caps;
+  @include text.initial-caps;
 }
 
 .vertical-text {

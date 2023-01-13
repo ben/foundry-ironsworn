@@ -1,6 +1,8 @@
 // styles for any FVTT dialog. You can import them globally, or scoped to e.g. the .ironsworn class.
 @use 'sass:meta';
-@use '@styles/mixins/common';
+@use 'mixins:clickable';
+@use 'mixins:input';
+@use 'mixins:text';
 
 @mixin dialog {
   .window-content {
@@ -17,7 +19,7 @@
           cursor: pointer;
 
           &:focus {
-            @include mixins.input-field-focus;
+            @include input.field-focus;
           }
         }
       }
@@ -33,8 +35,8 @@
 
       button.default,
       button {
-        @include mixins.clickable-block;
-        @include mixins.icon-button-base;
+        @include clickable.block;
+        @include clickable.icon;
 
         display: flex;
         align-items: center;
@@ -44,7 +46,7 @@
         height: max-content;
 
         .button-text {
-          @include mixins.initial-caps;
+          @include text.initial-caps;
 
           flex-grow: 0;
           width: auto;

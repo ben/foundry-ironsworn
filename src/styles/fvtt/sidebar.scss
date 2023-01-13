@@ -1,6 +1,7 @@
 // styles for FVTT's sidebar
 
-@use '@styles/mixins/common';
+@use 'mixins:clickable';
+@use 'mixins:input';
 
 #sidebar {
   li.folder > .folder-header {
@@ -19,14 +20,14 @@
   .combat-sidebar {
     .combat-tracker-header {
       a.combat-button {
-        @include mixins.clickable-text;
+        @include clickable.text;
       }
     }
   }
 
   #sidebar-tabs {
     .collapse {
-      @include mixins.clickable-block;
+      @include clickable.block;
 
       border: 0;
       background-color: transparent;
@@ -41,14 +42,14 @@
 
     #chat-controls {
       .roll-type-select {
-        @include mixins.input-field;
+        @include input.field;
 
         border-style: outset;
       }
     }
 
     textarea#chat-message {
-      @include mixins.input-field;
+      @include input.field;
     }
   }
 }
@@ -57,7 +58,7 @@
   .directory-header {
     .header-search {
       input {
-        @include mixins.input-field;
+        @include input.field;
       }
     }
   }

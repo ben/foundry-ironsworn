@@ -50,6 +50,7 @@
 
 <style lang="scss" scoped>
 /* stylelint-disable no-descending-specificity */
+@use 'mixins:clickable';
 
 .slider-bar {
   --ironsworn-slider-segment-border-width: var(--ironsworn-border-width-md);
@@ -67,7 +68,7 @@
   padding: 0;
 
   &:focus {
-    @include mixins.focus-outline;
+    @include clickable.focus-outline;
   }
 
   .slider-segment {

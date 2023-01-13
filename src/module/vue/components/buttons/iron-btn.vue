@@ -42,6 +42,8 @@
   </button>
 </template>
 <style lang="scss" module>
+@use 'mixins:clickable';
+
 .flex-start {
   align-content: center;
   align-items: center;
@@ -121,13 +123,13 @@
 }
 
 .clickable-text {
-  @include mixins.clickable-text;
+  @include clickable.text;
 
   line-height: var(--ironsworn-line-height);
 }
 
 .clickable-block {
-  @include mixins.clickable-block;
+  @include clickable.block;
 
   &:hover:not(:focus) {
     box-shadow: none;

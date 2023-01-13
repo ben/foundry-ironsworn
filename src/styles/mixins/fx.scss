@@ -1,0 +1,48 @@
+// special effects
+
+// used to mark focused fields
+@mixin glow-exterior($spread: 6px) {
+  box-shadow: 0 0 $spread var(--ironsworn-color-cool);
+}
+
+// used inside block/tab like elements. it's inset so that both the focus effect and the hover effect can be visible at once.
+@mixin glow-interior(
+  $spread: 5px,
+  $blur: 0,
+  $color: var(--ironsworn-color-cool)
+) {
+  box-shadow: inset 0 0 $spread $blur $color;
+}
+
+@mixin text-glow($color: var(--ironsworn-color-fg-highlight), $spread: 10px) {
+  text-shadow: 0 0 $spread $color;
+}
+
+// used on draggables, highlighted table rows in chat. set opacity in increments of 10 (because otherwise the CSS variable won't exist).
+// since gradients are *images*, they're overlaid on top of background-colour. great for a lazy tint on a highlighted element.
+// we *could* just make it a single-color 'gradient', but i think the subtle colour movement is kinda fun. :)
+// only problem is they're not currently animatable... at least, not without getting some sorcery w/ pseudo-elements involved.
+@mixin accent-gradient($opacity: 20, $direction: to bottom) {
+  background-image: linear-gradient(
+    $direction,
+    var(--ironsworn-color-warm-#{$opacity}),
+    var(--ironsworn-color-cool-#{$opacity})
+  );
+  background-blend-mode: overlay;
+}
+
+@mixin overlay($z-index: var(--ironsworn-z-index-highest)) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $z-index;
+  content: '';
+  pointer-events: none;
+}
+
+@mixin tint($background, $opacity: 0.5) {
+  opacity: $opacity;
+  background: $background;
+}

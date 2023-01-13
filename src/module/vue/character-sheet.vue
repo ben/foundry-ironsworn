@@ -62,12 +62,14 @@
 </template>
 
 <style lang="scss" module>
+@use 'mixins:border';
+
 .margin-left {
-  @include mixins.margin(left);
+  @include border.margin(left);
 }
 
 .margin-right {
-  @include mixins.margin(right);
+  @include border.margin(right);
 }
 
 .tab-content {

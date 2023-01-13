@@ -19,6 +19,8 @@
 </template>
 
 <style lang="scss" module>
+@use 'mixins:text';
+
 .attr-label {
   margin: 0;
   font-size: var(--font-size-14);
@@ -35,7 +37,7 @@
 .attr-box {
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
   --ironsworn-attr-box-width: 75px;
-  @include mixins.text-stroke;
+  @include text.stroke;
 
   flex: 0 0 var(--ironsworn-attr-box-width);
   border-width: var(--ironsworn-border-width-md);

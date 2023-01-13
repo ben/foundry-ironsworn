@@ -13,6 +13,8 @@
   </WithRolllisteners>
 </template>
 <style lang="scss">
+@use 'mixins:text';
+
 .rules-text {
   --ironsworn-rules-text-spacer: 0.5em;
 
@@ -22,7 +24,7 @@
 }
 
 .rules-text-main {
-  @include mixins.text-compact;
+  @include text.compact;
 
   display: flex;
   flex-direction: column;

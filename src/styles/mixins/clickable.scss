@@ -1,0 +1,185 @@
+@mixin interactive() {
+  transition: var(--ironsworn-transition);
+
+  &.disabled,
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.5;
+    cursor: not-allowed;
+    color: inherit;
+    pointer-events: none;
+  }
+}
+
+@mixin text-hover() {
+  color: var(--ironsworn-color-clickable-text-hover);
+  filter: var(--ironsworn-filter-highlight);
+}
+@mixin text-focus() {
+  @include focus-outline;
+}
+
+@mixin text-active() {
+  color: var(--ironsworn-color-clickable-text-selected);
+  filter: var(--ironsworn-filter-highlight);
+}
+
+@mixin text() {
+  --ironsworn-color-text-stroke: transparent;
+  @include interactive;
+
+  transition-duration: var(--ironsworn-transition-duration);
+  transition-property: color, filter, text-shadow, text-stroke;
+  transition-timing-function: var(--ironsworn-transition-timing-function);
+  margin: 0;
+  border-width: 0;
+  box-shadow: none !important;
+
+  // @include text-stroke();
+  background: transparent;
+  color: var(--ironsworn-color-clickable-text);
+
+  &:hover,
+  &.hover {
+    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
+    @include text-hover;
+  }
+
+  &:focus,
+  &:focus-within {
+    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
+    @include text-focus;
+  }
+
+  // we can't do much about the paint order here, but that's fine -- the overlap of a transparent color creates a nice effect here.
+  &[aria-selected='true'],
+  &.selected,
+  &.active {
+    --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
+    @include text-active;
+  }
+}
+
+@mixin block-hover($blockSize: 50px) {
+  z-index: var(--ironsworn-z-index-higher);
+  border-color: var(--ironsworn-color-clickable-block-border-hover);
+  background-color: var(--ironsworn-color-clickable-block-bg-hover);
+  color: var(--ironsworn-color-clickable-block-fg-hover);
+}
+
+@mixin block-focus() {
+  @include focus-outline;
+
+  z-index: var(--ironsworn-z-index-highest);
+}
+
+@mixin block-active() {
+  z-index: var(--ironsworn-z-index-high);
+  outline: none;
+  border-color: var(--ironsworn-color-clickable-block-border-selected);
+  background-color: var(
+    --ironsworn-color-thematic,
+    var(--ironsworn-color-clickable-block-bg-selected)
+  );
+  color: var(--ironsworn-color-clickable-block-fg-selected);
+}
+
+// For the block's 'default' state.
+@mixin block-base($blockSize: 50px) {
+  @include interactive;
+
+  border-style: solid;
+  border-color: var(--ironsworn-color-clickable-block-border);
+  box-shadow: none;
+  background-color: var(--ironsworn-color-clickable-block-bg);
+  overflow-y: visible;
+  color: var(--ironsworn-color-clickable-block-fg);
+
+  &.vertical-text {
+    flex-direction: column;
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+
+    & > * {
+      writing-mode: vertical-lr !important;
+    }
+  }
+}
+
+@mixin icon($size: var(--ironsworn-icon-size)) {
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ironsworn-spacer-xs);
+  text-align: center;
+
+  &::before {
+    width: $size;
+    height: $size;
+    line-height: 1;
+  }
+
+  &:not(:empty) {
+    gap: var(--ironsworn-spacer-xs);
+  }
+
+  &:empty {
+    flex-grow: 0;
+
+    // restricts width + removes border if there's no text
+    border: none !important;
+    width: max-content;
+    height: max-content;
+    line-height: 1;
+  }
+
+  // override to compensate for chrome user agent stylesheet bug: https://bugs.chromium.org/p/chromium/issues/detail?id=681917
+  .button-text {
+    // makes this seamless with existing buttons that don't need this styling
+    display: inline;
+
+    strong {
+      white-space: nowrap;
+    }
+  }
+
+  &.vertical-text {
+    flex-direction: column;
+    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+
+    .button-text {
+      display: inherit;
+      line-height: inherit;
+      writing-mode: inherit;
+    }
+  }
+}
+
+@mixin block($blockSize: 50px) {
+  @include block-base($blockSize);
+
+  &:hover,
+  &.hover {
+    @include block-hover($blockSize);
+  }
+
+  &:focus,
+  &:focus-within {
+    @include block-focus;
+  }
+
+  &[aria-selected='true'],
+  &.selected,
+  &.active {
+    @include block-active;
+  }
+}
+
+// CLICKABLE MIXINS
+
+@mixin focus-outline() {
+  // outline disabled for now
+  // outline: 1px solid var(--ironsworn-color-cool) !important;
+  z-index: var(--ironsworn-z-index-highest);
+}

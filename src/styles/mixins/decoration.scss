@@ -23,7 +23,7 @@
 ) {
   --ironsworn-deco-aspect-ratio: calc(24 / 28);
   --ironsworn-deco-expanded-height: $deco-expanded-height;
-  --ironsworn-deco-collapsed-height: $deco-collapsed-height
+  --ironsworn-deco-collapsed-height: $deco-collapsed-height;
 
   position: relative;
 
@@ -48,6 +48,9 @@
   }
 
   .asset-header {
-    padding-right: calc(var(--ironsworn-deco-collapsed-height) * var(--ironsworn-deco-aspect-ratio));
+    padding-right: calc(
+      var(--ironsworn-deco-collapsed-height) *
+        var(--ironsworn-deco-aspect-ratio)
+    );
   }
 }

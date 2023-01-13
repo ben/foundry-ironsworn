@@ -63,8 +63,12 @@
 </template>
 
 <style lang="scss" module>
+@use 'mixins:color';
+@use 'mixins:clickable';
+@use 'mixins:text';
+
 .sf-move-row {
-  @include mixins.thematic-color(v-bind('thematicColor'));
+  @include color.thematic(v-bind('thematicColor'));
 
   position: relative;
   padding: 0 var(--ironsworn-spacer-md);
@@ -83,7 +87,7 @@
 .move-button {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
-  @include mixins.clickable-text;
+  @include clickable.text;
 
   align-self: center;
   aspect-ratio: 1 !important;
@@ -93,11 +97,12 @@
 .toggle-button {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
 
-  @include mixins.clickable-text;
-  @include mixins.text-stroke(var(--ironsworn-color-dark));
+  @include clickable.text;
+  @include text.stroke;
   @if v-bind('thematicColor') {
-    @include mixins.thematic-color(v-bind('thematicColor'));
+    @include color.thematic(v-bind('thematicColor'));
   }
 
   display: flex;

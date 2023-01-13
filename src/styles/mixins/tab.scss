@@ -1,0 +1,61 @@
+@use 'mixins:fx';
+
+// FVTT-style tabs, like those used on FVTT's sidebar.
+
+@mixin base(
+  $glowSpread: 5px,
+  $glowBlur: 1px,
+  $borderWidth: var(--ironsworn-border-width-md)
+) {
+  border-width: $borderWidth;
+
+  &:hover {
+    @include fx.glow-interior(
+      $glowSpread,
+      $glowBlur,
+      var(--ironsworn-color-clickable-block-bg-selected)
+    );
+
+    border-color: var(--ironsworn-color-fg-muted);
+  }
+
+  &[aria-selected='true'],
+  &.active {
+    @include fx.glow-interior(
+      $glowSpread,
+      $glowBlur,
+      var(--ironsworn-color-cool)
+    );
+
+    border-color: var(--ironsworn-color-warm);
+  }
+}
+
+@mixin top($borderRadius: var(--ironsworn-border-radius-lg)) {
+  @include base;
+
+  border-bottom-width: 0;
+  border-top-left-radius: $borderRadius;
+  border-top-right-radius: $borderRadius;
+}
+@mixin bottom($borderRadius: var(--ironsworn-border-radius-lg)) {
+  @include base;
+
+  border-top-width: 0;
+  border-bottom-left-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+}
+@mixin left($borderRadius: var(--ironsworn-border-radius-lg)) {
+  @include base;
+
+  border-right-width: 0;
+  border-top-left-radius: $borderRadius;
+  border-bottom-left-radius: $borderRadius;
+}
+@mixin right($borderRadius: var(--ironsworn-border-radius-lg)) {
+  @include base;
+
+  border-left-width: 0;
+  border-top-right-radius: $borderRadius;
+  border-bottom-right-radius: $borderRadius;
+}

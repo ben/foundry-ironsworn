@@ -29,6 +29,8 @@
 </template>
 
 <style lang="scss">
+@use 'mixins:clickable';
+
 .progress-track {
   --ironsworn-box-border-radius: var(--ironsworn-border-radius-md);
   --ironsworn-box-border-width: var(--ironsworn-border-width-md);
@@ -42,7 +44,7 @@
   justify-content: center;
 
   &:focus {
-    @include mixins.focus-outline;
+    @include clickable.focus-outline;
   }
 
   .progress-track-box {

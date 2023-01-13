@@ -13,12 +13,7 @@ const PORT = 30000
 const sassOptions: sass.LegacyStringOptions<'sync'> = {
   functions: sassChroma,
   // @ts-ignore
-  additionalData: `
-              @use "${path.resolve(
-                __dirname,
-                'src/styles/mixins.scss'
-              )}" as mixins;
-            `,
+  additionalData: '',
 }
 
 const config: UserConfig = {
@@ -35,11 +30,24 @@ const config: UserConfig = {
     }),
   ],
   resolve: {
-    alias: {
-      '@styles': path.resolve(__dirname, 'src/styles'),
-      '@components': path.resolve(__dirname, 'src/module/vue/components'),
-      vue: 'vue/dist/vue.esm-bundler.js',
-    },
+    alias: [
+      {
+        find: /^styles:(.*)/,
+        replacement: path.resolve(__dirname, 'src/styles', '$1'),
+      },
+      {
+        find: /^mixins:(.*)/,
+        replacement: path.resolve(__dirname, 'src/styles/mixins', '$1'),
+      },
+      {
+        find: /^components:(.*)/,
+        replacement: path.resolve(__dirname, 'src/module/vue/components', '$1'),
+      },
+      {
+        find: /^vue$/,
+        replacement: 'vue/dist/vue.esm-bundler.js',
+      },
+    ],
   },
   define: {
     'process.env': process.env,

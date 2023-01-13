@@ -1,11 +1,11 @@
-@use '@styles/mixins/common';
+@use 'mixins:clickable';
 
 .entity-link,
 .content-link,
 // FIXME the following selector is a proxy for compendium links which don't have a class attached to them.
 // ideally, all of them would share an identifying data attribute that could be selected for -- something like 'data-action', maybe?
 a[data-pack][data-uuid] {
-  @include mixins.clickable-block;
+  @include clickable.block;
 
   border-width: var(--ironsworn-border-width-md);
   border-radius: var(--ironsworn-border-radius-sm);
@@ -33,13 +33,13 @@ a[data-pack][data-uuid] {
 }
 
 .clickable {
-  @include mixins.interactive;
+  @include clickable.interactive;
 
   cursor: pointer;
 
   // &:not(svg):not(.svg) {
   &.text:not(.block) {
-    @include mixins.clickable-text;
+    @include clickable.text;
 
     &:not(::before) {
       justify-content: left;
@@ -48,7 +48,7 @@ a[data-pack][data-uuid] {
   }
 
   &.block {
-    @include mixins.clickable-block;
+    @include clickable.block;
   }
 
   // }
@@ -74,5 +74,5 @@ a[data-pack][data-uuid] {
 }
 
 .icon-button {
-  @include mixins.icon-button-base;
+  @include clickable.icon;
 }

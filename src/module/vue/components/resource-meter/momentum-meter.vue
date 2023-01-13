@@ -30,12 +30,14 @@
 </template>
 
 <style lang="scss">
+@use 'mixins:clickable';
+
 .momentum-meter {
   gap: var(--ironsworn-spacer-md) 0;
 
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
-      @include mixins.block-hover;
+      @include clickable.block-hover;
 
       box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
         0 0 5px var(--ironsworn-color-warm),

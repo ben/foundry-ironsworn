@@ -79,12 +79,15 @@
 </template>
 
 <style lang="scss" module>
+@use 'mixins:border';
+@use 'mixins:clickable';
+
 .margin-right {
-  @include mixins.margin(right);
+  @include border.margin(right);
 }
 
 .margin-left {
-  @include mixins.margin(left);
+  @include border.margin(left);
 }
 
 .top-padding {

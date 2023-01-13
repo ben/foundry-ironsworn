@@ -1,7 +1,8 @@
 /* stylelint-disable scss/no-dollar-variables */
 /* stylelint-disable mavrin/stylelint-declaration-use-css-custom-properties */
 /* stylelint-disable no-duplicate-selectors */
-@use '@styles/mixins/common';
+@use 'mixins:clickable';
+@use 'mixins:input';
 
 // styles for TinyMCE and ProseMirror editors
 
@@ -26,7 +27,7 @@
 }
 
 .editor-edit {
-  @include mixins.clickable-block;
+  @include clickable.block;
 
   border-radius: var(--ironsworn-border-radius-md);
   border-color: var(--ironsworn-color-midtone-50);
@@ -36,7 +37,7 @@
 // Editor custom select elements
 .prosemirror button,
 .tox .tox-tbtn--bespoke {
-  @include mixins.clickable-block;
+  @include clickable.block;
 
   border-radius: var(--ironsworn-border-radius-md);
 }
@@ -44,7 +45,7 @@
 // Editors: ProseMirror
 
 .ProseMirror {
-  @include mixins.input-field;
+  @include input.field;
 
   padding: var(--ironsworn-spacer-lg);
 }
@@ -133,7 +134,7 @@
   }
 
   .tox-tbtn--select {
-    @include mixins.input-field;
+    @include input.field;
 
     text-shadow: none;
   }

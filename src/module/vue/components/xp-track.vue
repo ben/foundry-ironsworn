@@ -20,6 +20,8 @@
   </article>
 </template>
 <style lang="scss" scoped>
+@use 'mixins:fx';
+
 .xp-track {
   position: relative;
 
@@ -35,8 +37,8 @@
     aspect-ratio: 1;
 
     &::after {
-      @include mixins.overlay(var(--ironsworn-z-index-high));
-      @include mixins.tint(var(--ironsworn-color-thematic), 0);
+      @include fx.overlay(var(--ironsworn-z-index-high));
+      @include fx.tint(var(--ironsworn-color-thematic), 0);
 
       transition: var(--ironsworn-transition);
       background-blend-mode: normal;
