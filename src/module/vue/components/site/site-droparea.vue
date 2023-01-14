@@ -2,7 +2,7 @@
   <DropTarget is="div" class="flexcol box" :dropType="itemType">
     <div
       v-if="item"
-      style=" position: relative;padding: var(--ironsworn-spacer-xl)"
+      style="position: relative; padding: var(--ironsworn-spacer-xl)"
     >
       <div class="flexrow">
         <document-img
@@ -75,10 +75,8 @@ function foundryitem() {
 }
 
 function destroy() {
-  const titleKey = 'IRONSWORN.DeleteItem'
-
   Dialog.confirm({
-    title: game.i18n.localize(titleKey),
+    title: game.i18n.format('DOCUMENT.Delete', { type: 'DOCUMENT.Item' }),
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
     )}</strong></p>`,

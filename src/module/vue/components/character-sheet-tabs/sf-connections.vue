@@ -14,7 +14,7 @@
         icon="fa:plus"
         block
         @click="newConnection"
-        :text="$t('IRONSWORN.Connection')"
+        :text="$t('IRONSWORN.ITEM.PROGRESS.SubtypeConnection')"
       />
     </section>
   </article>
@@ -35,7 +35,7 @@ const $actor = inject($ActorKey)
 async function newConnection() {
   const item = await Item.create(
     {
-      name: game.i18n.localize('IRONSWORN.Connection'),
+      name: game.i18n.localize('IRONSWORN.ITEM.PROGRESS.SubtypeConnection'),
       type: 'progress',
       system: { subtype: 'bond' },
       sort: 9000000,

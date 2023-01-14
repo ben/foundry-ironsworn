@@ -105,7 +105,7 @@
     </div>
     <div class="flexcol">
       <div class="flexrow nogrow">
-        <h2 :class="$style.heading">{{ $t('IRONSWORN.Notes') }}</h2>
+        <h2 :class="$style.heading">{{ $t('Notes') }}</h2>
         <IronBtn
           block
           nogrow

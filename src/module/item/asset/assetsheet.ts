@@ -157,7 +157,9 @@ export class AssetSheet extends IronswornItemSheet {
     ev.preventDefault()
 
     Dialog.confirm({
-      title: game.i18n.localize(`IRONSWORN.DeleteAsset`),
+      title: game.i18n.format(`DOCUMENT.Delete`, {
+        type: 'IRONSWORN.ITEM.TypeAsset',
+      }),
       content: `<p><strong>${game.i18n.localize(
         'IRONSWORN.ConfirmDelete'
       )}</strong></p>`,

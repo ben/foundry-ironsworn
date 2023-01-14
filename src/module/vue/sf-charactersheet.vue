@@ -37,7 +37,7 @@
             <Tab tab-key="assets" :text="$t('IRONSWORN.Assets')" />
             <Tab tab-key="progress" :text="$t('IRONSWORN.Progress')" />
             <Tab tab-key="connections" :text="$t('IRONSWORN.Connections')" />
-            <Tab tab-key="notes" :text="$t('IRONSWORN.Notes')" />
+            <Tab tab-key="notes" :text="$t('Notes')" />
           </TabList>
           <TabPanels>
             <TabPanel tab-key="legacies" class="flexcol">

@@ -75,7 +75,9 @@ async function dropToken(location: IronswornActor) {
 }
 
 async function newLocation(subtype: string, i18nKey: string, scale = 1) {
-  const name = game.i18n.localize(`IRONSWORN.${i18nKey}`)
+  const name = game.i18n.format('DOCUMENT.Create', {
+    type: `IRONSWORN.${i18nKey}`,
+  })
   const parentFolder = await ensureFolder(
     'Locations',
     game.scenes?.current?.name ?? '???'
@@ -99,23 +101,23 @@ async function newLocation(subtype: string, i18nKey: string, scale = 1) {
 }
 
 function newPlanet() {
-  newLocation('planet', 'NewPlanet')
+  newLocation('planet', 'ACTOR.LOCATION.SubtypePlanet')
 }
 
 function newStar() {
-  newLocation('star', 'NewStar')
+  newLocation('star', 'ACTOR.LOCATION.SubtypeStar')
 }
 
 function newSettlement() {
-  newLocation('settlement', 'NewSettlement', 2)
+  newLocation('settlement', 'ACTOR.LOCATION.SubtypeSettlement', 2)
 }
 
 function newDerelict() {
-  newLocation('derelict', 'NewDerelict', 2)
+  newLocation('derelict', 'ACTOR.LOCATION.SubtypeDerelict', 2)
 }
 
 function newVault() {
-  newLocation('vault', 'NewVault', 2)
+  newLocation('vault', 'ACTOR.LOCATION.SubtypeVault', 2)
 }
 
 let ORACLE_WINDOW: OracleWindow | undefined
@@ -163,37 +165,47 @@ export function activateSceneButtonListeners() {
           // { // TODO: maybe reenable this when we have a good way of doing it
           //   name: 'sector',
           //   icon: 'isicon-sector',
-          //   title: game.i18n.localize('IRONSWORN.NewSector'),
+          //   title: game.i18n.format('DOCUMENT.Create',{type: 'IRONSWORN.Sector'}),
           //   onClick: warn,
           // },
           {
             name: 'star',
             icon: 'isicon-stellar-object',
-            title: game.i18n.localize('IRONSWORN.NewStar'),
+            title: game.i18n.format('DOCUMENT.Create', {
+              type: 'IRONSWORN.ACTOR.LOCATION.SubtypeStar',
+            }),
             onClick: newStar,
           },
           {
             name: 'planet',
             icon: 'isicon-world',
-            title: game.i18n.localize('IRONSWORN.NewPlanet'),
+            title: game.i18n.format('DOCUMENT.Create', {
+              type: 'IRONSWORN.ACTOR.LOCATION.SubtypePlanet',
+            }),
             onClick: newPlanet,
           },
           {
             name: 'settlement',
             icon: 'isicon-settlement-sf',
-            title: game.i18n.localize('IRONSWORN.NewSettlement'),
+            title: game.i18n.format('DOCUMENT.Create', {
+              type: 'IRONSWORN.ACTOR.LOCATION.SubtypeSettlement',
+            }),
             onClick: newSettlement,
           },
           {
             name: 'derelict',
             icon: 'isicon-derelict',
-            title: game.i18n.localize('IRONSWORN.NewDerelict'),
+            title: game.i18n.format('DOCUMENT.Create', {
+              type: 'IRONSWORN.ACTOR.LOCATION.SubtypeDerelict',
+            }),
             onClick: newDerelict,
           },
           {
             name: 'vault',
             icon: 'isicon-precursor-vault',
-            title: game.i18n.localize('IRONSWORN.NewVault'),
+            title: game.i18n.format('DOCUMENT.Create', {
+              type: 'IRONSWORN.ACTOR.LOCATION.SubtypeVault',
+            }),
             onClick: newVault,
           }
         )
