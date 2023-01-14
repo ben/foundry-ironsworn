@@ -13,17 +13,15 @@
     "Versus": "vs.",
     "CappedAt10": "La puntuación total de la acción está limitada a 10",
     "Strong_hit": "Éxito total",
-    "Strong_hit_with_a_match": "¡Éxito total con un empate!",
+    "Strong_hit_match": "¡Éxito total con un empate!",
     "On_a_strong_hit": "Con un éxito total",
     "Weak_hit": "Éxito parcial",
     "On_a_weak_hit": "Con un éxito parcial",
     "Miss": "Fallo",
-    "Miss_with_a_match": "¡Fallo con un empate!",
+    "Miss_match": "¡Fallo con un empate!",
     "On_a_miss": "Con un fallo",
     "MarkProgress": "Registra el progreso",
     "UnmarkProgress": "Desmarcar el progreso",
-    "ClearProgress": "Borrar progreso",
-    "FulfillVow": "Cumplir tu juramento",
     "ProgressRoll": "Tirada de progreso",
     "MakeAProgressRoll": "Hacer una tirada con {score} de progreso",
     "StarProgress": "Cuando se activa, este elemento también aparecerá en la pestaña 'Legados'.",
@@ -94,11 +92,6 @@
     "Indebted": "Indebted",
     "Battered": "Battered",
     "Reroll": "Volver a tirar",
-    "Session": "Sesión",
-    "Connections": "Conexiones",
-    "Scene Challenge": "Escenas de desafío",
-    "Quest": "Búsqueda",
-    "Delve": "Delve",
     "Moves": "Movimientos",
     "MOVES": {
       "Adventure": "Movimientos de aventura",
@@ -108,16 +101,13 @@
       "Fate": "Movimientos del destino",
       "Legacy": "Movimientos de legado",
       "Relationship": "Movimientos de relación",
-      "Suffer": "Movimientos de sufrimiento"
+      "Suffer": "Movimientos de sufrimiento",
     },
     "Oracles": "Oráculos",
     "Custom Oracles": "Oráculos personalizados",
-    "Search": "Buscar",
-    "Plot": "Trama",
     "LocationType": "Tipo de localización",
     "RollForDetails": "Tirar los detalles de la localización",
     "RandomName": "Nombre aleatorio",
-    "Burn": "Aprovechar",
     "ResolveChallenge": "Resolver el desafío",
     "ResolveChallengeDisabled": "Choose your final two challenge dice",
     "BurnForUpgrade": "Aprovechar impulso: <strong>{type}</strong>",
@@ -153,7 +143,6 @@
     "Denizens": "Denizens",
     "OpenCompendium": "Abrir compendio",
     "ConfirmDelete": "¿Estás seguro? Esta acción no puede deshacerse.",
-    "StatBonusTooltip": "Bonificación para la siguiente tirada de característica",
     "RequiresLocationType": "This oracle requires a location type to be selected.",
     "RollOracleTable": "Tirar Oráculo: <i>{title}</i>",
     "RollMove": "Tirar movimiento: <i>{title}</i>",
@@ -174,7 +163,6 @@
     "Fourth": "cuarta",
     "Fifth": "quinta",
     "StarforgedTools": "Starforged Tools",
-    "Sector": "Sector",
     "Region": "Region",
     "Terminus": "Terminus",
     "Outlands": "Outlands",
@@ -438,6 +426,9 @@
       "Vital": "Vital",
       "Zones": "Zones"
     },
+    "SCENE": {
+      "TypeSector": "Sector"
+    },
     "ACTOR": {
       "TypeCharacter": "Personaje",
       "TypeFoe": "PNJ",
@@ -447,11 +438,9 @@
     "ITEM": {
       "TypeAsset": "Recurso",
       "TypeSfmove": "Movimiento",
-      "PROGRESS": {
-        "SubtypeConnection": "Conexión",
-        "SubtypeProgress": "Progreso",
-        "SubtypeVow": "Juramento"
-      }
+      "SubtypeConnection": "Conexión",
+      "SubtypeProgress": "Progreso",
+      "SubtypeVow": "Juramento"
     }
   }
 }

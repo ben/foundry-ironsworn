@@ -2,31 +2,25 @@
   "IRONSWORN": {
     "Ironsworn": "Ironsworn",
     "Starforged": "Starforged",
-    "CreateActor": "Créer un acteur",
     "YourWorldTruths": "Votre Monde: Vérités",
     "TruthQuestStarter": "Quête d’introduction :",
     "QuestStarter": "Quête d’introduction",
     "SaveYourTruths": "Enregistrer vos Vérités",
     "CustomTruth": "Vérité personalisée",
     "Roll": "Lancer les dés",
-    "Chat": "Chat",
     "CopyTextToClipboard": "Copier le texte dans le presse-papier",
     "SendToChat": "Envoyer le texte des règles dans le chat",
-    "Rolling": "Lancement des dés",
-    "Bonus": "Bonus",
     "Adds": "Ajoute",
     "Versus": "vs.",
     "CappedAt10": "Le scorce de l'action est limité à 10",
     "Strong_hit": "Coup fort",
-    "Strong_hit_with_a_match": "Coup fort avec une égalité!",
+    "Strong_hit_match": "Coup fort avec une égalité!",
     "On_a_strong_hit": "Sur un coup fort",
     "Weak_hit": "Coup faible",
     "On_a_weak_hit": "Sur un coup faible",
     "Miss": "Échec",
     "Miss_match": "Échec avec une égalité!",
     "On_a_miss": "Sur un échec",
-    "Opportunity": "Opportunité!",
-    "Complication": "Complication!",
     "MarkProgress": "Marquer la progression",
     "PROGRESS": {
       "Track": "Jauge de progrès",
@@ -44,8 +38,6 @@
     },
     "MarkLegacy": "Marquez {amount} sur votre {legacy} progrès d'héritage",
     "UnmarkProgress": "Progrès non marqué",
-    "ClearProgress": "Effacer la progression",
-    "FulfillVow": "Réaliser un vœu",
     "ProgressRoll": "Jet de progrès",
     "MakeAProgressRoll": "Faire un jet de progression avec {score} de progrès",
     "StarProgress": "Lorsqu'activé, cet objet sera aussi affiché dans l'onglet 'Héritage'.",
@@ -55,6 +47,7 @@
     "Extreme": "Extrême",
     "Epic": "Épique",
     "Stat": "Caractéristique",
+    "Stats": "Caractéristiques",
     "OracleTable": {
       "ColumnLabel": {
         "Roll": "Jet de dés",
@@ -96,7 +89,6 @@
     "Legacies": "Héritages",
     "Clock": "Horloge",
     "Quests": "Quêtes",
-    "Notes": "Notes",
     "Discoveries": "Découvertes",
     "Debilities": "Handicaps",
     "Conditions": "États",
@@ -118,8 +110,6 @@
     "Doomed": "Maudit",
     "Indebted": "Endetté",
     "Battered": "Battu",
-    "Vow": "Vœu",
-    "Progress": "Progrès",
     "Reroll": "Relancez les dés",
     "Moves": "Actions",
     "Connections": "Connexions",
@@ -135,12 +125,10 @@
       "Suffer": "Actions de souffrance"
     },
     "Custom Assets": "Ressources personnalisées",
-    "Custom Moves": "Actions personnalisées",
     "Oracles": "Oracles",
     "Custom Oracles": "Oracles personnalisés",
     "LocationType": "Type de lieu",
     "RollForDetails": "Jet de type de lieu",
-    "Burn": "Brûler",
     "ResolveChallenge": "Résoudre le défi",
     "ResolveChallengeDisabled": "Choisissez vos deux derniers dés de défi",
     "BurnForUpgrade": "Brûler de l'Élan: <strong>{type}</strong>",
@@ -176,7 +164,6 @@
     "Denizens": "Habitants",
     "OpenCompendium": "Ouvrir le Compendium",
     "ConfirmDelete": "Êtes-vous sûr? Cette action est irréversible.",
-    "StatBonusTooltip": "Bonus le prochain jet de caractéristique",
     "RequiresLocationType": "Cet oracle nécessite la sélection d'un type de lieu.",
     "RollOracleTable": "Jet d'oracle: <i>{title}</i>",
     "RollMove": "Jet d'Action: <i>{title}</i>",
@@ -389,29 +376,29 @@
         "option3": "La mort rôde, dans les Terres de Fer. La nuit tombée nous allumons des torches, nous répandons du sel et nous postons des sentinelles sur les palissades. Mais ce n’est jamais assez. Elles reviennent toujours.",
         "quest3": "Un groupe de colons a fondé un village dans un territoire maudit par une horreur virulente. Quel mal ravage ces terres ? Pourquoi est-ce que les colons sont déterminés à s’installer ici ? Allez-vous les aider ou au contraire, allez vous tenter de les forcer à abandonner cette folie ?"
       }
-    }
-  },
-  "ACTOR": {
-    "TypeCharacter": "Personnage",
-    "TypeFoe": "PNJ",
-    "TypeLocation": "Lieux",
-    "TypeShared": "Feuille partagée",
-    "TypeSite": "Site de fouilles",
-    "TypeStarship": "Vaisseau spatial",
-    "LOCATION": {
+    },
+    "ACTOR": {
+      "TypeCharacter": "Personnage",
+      "TypeFoe": "PNJ",
+      "TypeLocation": "Lieux",
+      "TypeShared": "Feuille partagée",
+      "TypeSite": "Site de fouilles",
+      "TypeStarship": "Vaisseau spatial",
       "SubtypeDerelict": "Épave",
       "SubtypePlanet": "Planète",
       "SubtypeSettlement": "Colonie",
       "SubtypeStar": "Étoile",
       "SubtypeVault": "Chambre forte de précurseurs"
+    },
+    "ITEM": {
+      "TypeAsset": "Actif",
+      "TypeProgress": "Jauge de progrès",
+      "TypeBondset": "Forger un lien",
+      "TypeSfmove": "Action",
+      "TypeDelve-theme": "Delve site theme",
+      "TypeDelve-domain": "Delve site domain",
+      "SubtypeVow": "Vœu",
+      "SubtypeProgress": "Progrès"
     }
-  },
-  "ITEM": {
-    "TypeAsset": "Actif",
-    "TypeProgress": "Jauge de progrès",
-    "TypeBondset": "Forger un lien",
-    "TypeSfmove": "Action",
-    "TypeDelve-theme": "Delve site theme",
-    "TypeDelve-domain": "Delve site domain"
   }
 }

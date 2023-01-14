@@ -196,7 +196,7 @@ const editMode = computed(() => {
 const subtitle = computed(() => {
   let subtype = capitalize(props.item.system.subtype)
   if (subtype === 'Bond') subtype = 'Connection' // translate name
-  return game.i18n.localize(`IRONSWORN.ITEM.PROGRESS.${subtype}`)
+  return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)
 })
 const completedIcon = computed(() => {
   return props.item.system.completed ? 'fa:circle-check' : 'fa:circle-notch'

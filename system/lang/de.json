@@ -46,7 +46,6 @@
     "Progress": "Fortschritt",
     "Moves": "Spielzüge",
     "Oracles": "Orakel",
-    "Burn": "Verbrennen",
     "BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
     "MomentumBurnt": "Momentum verbrannt",
     "Fields": "Felder",
@@ -56,10 +55,10 @@
     "Track": "Statusleiste",
     "Enabled": "Aktiviert",
     "Rank": "Rang",
-    "ConfirmDelete": "Bist Du sicher? Dies kann nicht rückgängig gemacht werden."
-  },
-  "ACTOR": {
-    "TypeCharacter": "Charakter",
-    "TypeLocation": "Schauplatz"
+    "ConfirmDelete": "Bist Du sicher? Dies kann nicht rückgängig gemacht werden.",
+    "ACTOR": {
+      "TypeCharacter": "Charakter",
+      "TypeLocation": "Schauplatz"
+    }
   }
 }

@@ -25,13 +25,13 @@
       @change="subtypeChange"
     >
       <option value="vow">
-        {{ $t('IRONSWORN.ITEM.PROGRESS.SubtypeVow') }}
+        {{ $t('IRONSWORN.ITEM.SubtypeVow') }}
       </option>
       <option value="progress">
-        {{ $t('IRONSWORN.ITEM.PROGRESS.SubtypeProgress') }}
+        {{ $t('IRONSWORN.ITEM.SubtypeProgress') }}
       </option>
       <option value="bond">
-        {{ $t('IRONSWORN.ITEM.PROGRESS.SubtypeConnection') }}
+        {{ $t('IRONSWORN.ITEM.SubtypeConnection') }}
       </option>
     </select>
 
