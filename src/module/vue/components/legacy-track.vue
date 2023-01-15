@@ -209,7 +209,9 @@ const xpSpent = computed(
 )
 
 const markTooltip = computed(() => {
-  let legacy = game.i18n.localize(`IRONSWORN.${capitalize(props.legacy)}`)
+  let legacy = game.i18n.localize(
+    `IRONSWORN.LEGACY.${capitalize(props.legacy)}`
+  )
   let amount = game.i18n.localize(`IRONSWORN.PROGRESS.TICK.1`)
   return game.i18n.format(`IRONSWORN.MarkLegacy`, { amount, legacy })
 })
