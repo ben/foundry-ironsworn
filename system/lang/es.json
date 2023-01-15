@@ -453,6 +453,7 @@
       "TypeAsset": "Recursos",
       "TypeMove": "Movimientos",
       "TypeBond": "Vínculos",
+      "SubtypeProgress": "Progreso",
       "SubtypeVow": "Juramentos"
     }
   }

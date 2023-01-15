@@ -406,6 +406,7 @@
     },
     "ITEMS": {
       "SubtypeConnection": "Connexions",
+      "SubtypeProgress": "Progrès",
       "SubtypeVow": "Vœux",
       "TypeAsset": "Atouts",
       "TypeBond": "Liens",

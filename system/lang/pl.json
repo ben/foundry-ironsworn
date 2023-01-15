@@ -524,6 +524,7 @@
     },
     "ITEMS": {
       "SubtypeConnection": "Połączenia",
+      "SubtypeProgress": "Postęp",
       "TypeAsset": "Aspekty",
       "TypeBond": "Więzi",
       "TypeMove": "Ruchy"

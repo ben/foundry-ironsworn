@@ -35,7 +35,10 @@
           <TabList>
             <Tab tab-key="legacies" :text="$t('IRONSWORN.Legacies')" />
             <Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
-            <Tab tab-key="progress" :text="$t('IRONSWORN.Progress')" />
+            <Tab
+              tab-key="progress"
+              :text="$t('IRONSWORN.ITEMS.SubtypeProgress')"
+            />
             <Tab
               tab-key="connections"
               :text="$t('IRONSWORN.ITEMS.SubtypeConnection')"
