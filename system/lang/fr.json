@@ -369,6 +369,9 @@
         "quest3": "Un groupe de colons a fondé un village dans un territoire maudit par une horreur virulente. Quel mal ravage ces terres ? Pourquoi est-ce que les colons sont déterminés à s’installer ici ? Allez-vous les aider ou au contraire, allez vous tenter de les forcer à abandonner cette folie ?"
       }
     },
+    "OracleCategories": {
+      "Custom": "Oracles personnalisés"
+    },
     "Asset Categories": {
       "Custom": "Ressources personnalisées"
     },
@@ -386,7 +389,7 @@
       "SubtypeVault": "Chambre forte de précurseurs",
       "TypeCharacter": "Personnage",
       "TypeFoe": "PNJ",
-      "TypeLocation": "Lieux",
+      "TypeLocation": "Lieu",
       "TypeShared": "Feuille partagée",
       "TypeSite": "Site de fouilles",
       "TypeStarship": "Vaisseau spatial"
@@ -395,7 +398,7 @@
       "SubtypeConnection": "Connexion",
       "SubtypeProgress": "Progrès",
       "SubtypeVow": "Vœu",
-      "TypeAsset": "Actif",
+      "TypeAsset": "Atout",
       "TypeBond": "Lien",
       "TypeBondset": "Forger un lien",
       "TypeMove": "Action",
