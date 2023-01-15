@@ -80,69 +80,69 @@ Hooks.once('init', async () => {
     types: ['character'],
   })
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
-    label: 'Compact sheet',
+    label: 'IRONSWORN.ACTOR.SheetCompact',
     types: ['character'],
   })
 
   Actors.registerSheet('ironsworn', IronswornSharedSheetV2, {
     types: ['shared'],
-    label: 'Shared sheet',
+    label: 'IRONSWORN.ACTOR.TypeShared',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', FoeSheet, {
     types: ['foe'],
-    label: 'Foe Sheet',
+    label: 'IRONSWORN.ACTOR.SheetFoe',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', StarshipSheet, {
     types: ['starship'],
-    label: 'Starship sheet',
+    label: 'IRONSWORN.ACTOR.TypeStarship',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', StarforgedLocationSheet, {
     types: ['location'],
-    label: 'Starforged Location Sheet',
+    label: 'IRONSWORN.ACTOR.SheetStarforgedLocation',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
     types: ['site'],
-    label: 'Site sheet',
+    label: 'IRONSWORN.ACTOR.TypeSite',
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', AssetSheetV2, {
     types: ['asset'],
-    label: 'Asset sheet v2',
+    label: 'IRONSWORN.ITEM.SheetAssetV2',
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', AssetSheet, {
     types: ['asset'],
-    label: 'Asset sheet',
+    label: 'IRONSWORN.ITEM.TypeAsset',
   })
 
   Items.registerSheet('ironsworn', BondsetSheetV2, {
     types: ['bondset'],
-    label: 'Bondset sheet v2',
+    label: 'IRONSWORN.ITEM.TypeBondset',
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', SFMoveSheet, {
     types: ['sfmove'],
-    label: 'Starforged move sheet',
+    label: 'IRONSWORN.ITEM.TypeSfmove',
   })
   Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
     types: ['delve-theme', 'delve-domain'],
-    label: 'Delve Theme/Domain Sheet',
+    label: 'IRONSWORN.ITEM.SheetDelveThemeDomain',
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', ProgressSheetV2, {
     types: ['progress'],
-    label: 'Progress sheet v2',
+    label: 'IRONSWORN.ITEM.TypeProgress',
     makeDefault: true,
   })
 
@@ -153,7 +153,7 @@ Hooks.once('init', async () => {
     {
       types: ['progress'],
       makeDefault: true,
-      label: 'ITEM.TypeProgress',
+      label: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgress',
     }
   )
 
@@ -176,7 +176,7 @@ Hooks.once('init', async () => {
     CONFIG.JournalEntryPage.typeLabels,
     {
       truth: 'IRONSWORN.First Start.SettingTruth',
-      progress: 'ITEM.TypeProgress',
+      progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgress',
     }
   )
   // @ts-ignore

@@ -543,7 +543,13 @@
     "SCENE": {
       "TypeSector": "Sector"
     },
+    "SCENES": {
+      "TypeSector": "Sectors"
+    },
     "ACTOR": {
+      "SheetFoe": "Foe",
+      "SheetCompact": "Compact",
+      "SheetStarforgedLocation": "Starforged Location",
       "TypeCharacter": "Character",
       "TypeFoe": "NPC",
       "TypeLocation": "Location",
@@ -556,7 +562,25 @@
       "SubtypeStar": "Star",
       "SubtypeVault": "Precursor vault"
     },
+    "ACTORS": {
+      "SheetFoe": "Foe",
+      "SheetCompact": "Compact",
+      "SheetStarforgedLocation": "Starforged Locations",
+      "TypeCharacter": "Character",
+      "TypeFoe": "NPCs",
+      "TypeLocation": "Locations",
+      "TypeShared": "Shared sheets",
+      "TypeSite": "Delve sites",
+      "TypeStarship": "Starships",
+      "SubtypeDerelict": "Derelicts",
+      "SubtypePlanet": "Planets",
+      "SubtypeSettlement": "Settlements",
+      "SubtypeStar": "Stars",
+      "SubtypeVault": "Precursor vaults"
+    },
     "ITEM": {
+      "SheetAssetV2": "Asset v2",
+      "SheetDelveThemeDomain": "Delve Theme/Domain",
       "TypeAsset": "Asset",
       "TypeBondset": "Bondset",
       "TypeDelve-domain": "Delve site domain",
@@ -566,6 +590,27 @@
       "SubtypeConnection": "Connection",
       "SubtypeProgress": "Progress",
       "SubtypeVow": "Vow"
+    },
+    "ITEMS": {
+      "TypeAsset": "Assets",
+      "TypeBondset": "Bondsets",
+      "TypeDelve-domain": "Delve site domains",
+      "TypeDelve-theme": "Delve site themes",
+      "TypeProgress": "Progress tracks",
+      "TypeSfmove": "Moves",
+      "SubtypeConnection": "Connections",
+      "SubtypeProgress": "Progress tracks",
+      "SubtypeVow": "Vows"
+    },
+    "JOURNALENTRYPAGE": {
+      "TypeProgress": "Progress track",
+      "TypeTruthStarforged": "Setting Truth",
+      "TypeTruthClassic": "World Truth"
+    },
+    "JOURNALENTRYPAGES": {
+      "TypeProgress": "Progress tracks",
+      "TypeTruthStarforged": "Setting Truths",
+      "TypeTruthClassic": "World Truths"
     }
   }
 }
