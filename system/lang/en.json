@@ -147,7 +147,6 @@
     "Failure": "Failure",
     "Threat": "Threat",
     "Rarity": "Rarity",
-    "Custom Assets": "Custom Assets",
     "Oracles": "Oracles",
     "LocationType": "Location type",
     "RollForDetails": "Roll location details",
@@ -495,6 +494,7 @@
       "Custom": "Custom Oracles"
     },
     "Asset Categories": {
+      "Custom": "Custom Assets",
       "Ironsworn": {
         "Companion": {
           "Title": "Companion",

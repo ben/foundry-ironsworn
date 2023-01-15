@@ -124,7 +124,6 @@
       "Scene Challenge": "Actions de défi de scène",
       "Suffer": "Actions de souffrance"
     },
-    "Custom Assets": "Ressources personnalisées",
     "Oracles": "Oracles",
     "Custom Oracles": "Oracles personnalisés",
     "LocationType": "Type de lieu",
@@ -376,6 +375,9 @@
         "option3": "La mort rôde, dans les Terres de Fer. La nuit tombée nous allumons des torches, nous répandons du sel et nous postons des sentinelles sur les palissades. Mais ce n’est jamais assez. Elles reviennent toujours.",
         "quest3": "Un groupe de colons a fondé un village dans un territoire maudit par une horreur virulente. Quel mal ravage ces terres ? Pourquoi est-ce que les colons sont déterminés à s’installer ici ? Allez-vous les aider ou au contraire, allez vous tenter de les forcer à abandonner cette folie ?"
       }
+    },
+    "Asset Categories": {
+      "Custom": "Ressources personnalisées"
     },
     "ACTOR": {
       "TypeCharacter": "Personnage",
