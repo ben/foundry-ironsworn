@@ -1,7 +1,7 @@
 <template>
   <article class="legacy-track flexcol" ref="legacyTrack" :data-legacy="legacy">
     <h4 class="legacy-track-title">
-      {{ $t(`IRONSWORN.${capitalize(legacy)}`) }}
+      {{ $t(`IRONSWORN.LEGACY.${capitalize(legacy)}`) }}
     </h4>
 
     <section class="legacy-track-controls flexrow" data-tooltip-direction="UP">

@@ -89,6 +89,11 @@
     "Assets": "Assets",
     "NoBonds": "No Bonds",
     "Legacies": "Legacies",
+    "LEGACY": {
+      "Bonds": "Bonds",
+      "Discoveries": "Discoveries",
+      "Quests": "Quests"
+    },
     "Clock": "Clock",
     "Segments": "Segments",
     "Quests": "Quests",
@@ -556,12 +561,12 @@
       "SubtypePlanet": "Planet",
       "SubtypeSettlement": "Settlement",
       "SubtypeStar": "Star",
-      "SubtypeVault": "Precursor vault",
+      "SubtypeVault": "Precursor Vault",
       "TypeCharacter": "Character",
       "TypeFoe": "NPC",
       "TypeLocation": "Location",
       "TypeShared": "Shared sheet",
-      "TypeSite": "Delve site",
+      "TypeSite": "Delve Site",
       "TypeStarship": "Starship"
     },
     "ACTORS": {
@@ -569,11 +574,11 @@
       "SubtypePlanet": "Planets",
       "SubtypeSettlement": "Settlements",
       "SubtypeStar": "Stars",
-      "SubtypeVault": "Precursor vaults",
+      "SubtypeVault": "Precursor Vaults",
       "TypeCharacter": "Character",
       "TypeFoe": "NPCs",
       "TypeLocation": "Locations",
-      "TypeSite": "Delve sites",
+      "TypeSite": "Delve Sites",
       "TypeStarship": "Starships"
     },
     "ITEM": {

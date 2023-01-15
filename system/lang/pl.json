@@ -40,9 +40,12 @@
     "Wits": "rozum",
     "XP": "Exp",
     "Legacies": "Dziedzictwa",
+    "LEGACY": {
+      "Bonds": "Więzi",
+      "Quests": "Zadania",
+      "Discoveries": "Odkrycia"
+    },
     "Clock": "Zegar",
-    "Quests": "Zadania",
-    "Discoveries": "Odkrycia",
     "Debilities": "Osłabienie",
     "Conditions": "Dolegliwość",
     "Banes": "Zguby",

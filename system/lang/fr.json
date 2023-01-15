@@ -83,9 +83,12 @@
     "Wits": "astuces",
     "XP": "XP",
     "Legacies": "Héritages",
+    "LEGACY": {
+      "Bonds": "Liens",
+      "Quests": "Quêtes",
+      "Discoveries": "Découvertes"
+    },
     "Clock": "Horloge",
-    "Quests": "Quêtes",
-    "Discoveries": "Découvertes",
     "Debilities": "Handicaps",
     "Conditions": "États",
     "Banes": "Fléaux",

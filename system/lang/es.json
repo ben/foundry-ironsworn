@@ -65,9 +65,12 @@
     "Wits": "mente",
     "XP": "EXP",
     "Legacies": "Legados",
+    "LEGACY": {
+      "Bonds": "Vínculos",
+      "Discoveries": "Descubrimientos",
+      "Quests": "Búsquedas"
+    },
     "Clock": "Reloj",
-    "Quests": "Búsquedas",
-    "Discoveries": "Descubrimientos",
     "Debilities": "Debilidades",
     "Conditions": "Condiciones",
     "Banes": "Desgracias",
