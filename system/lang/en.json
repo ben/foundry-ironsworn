@@ -578,15 +578,14 @@
       "TypeStarship": "Starships"
     },
     "ITEM": {
-      "SheetDelveThemeDomain": "Delve Theme/Domain",
       "SubtypeConnection": "Connection",
       "SubtypeProgress": "Progress",
       "SubtypeVow": "Vow",
       "TypeAsset": "Asset",
       "TypeBond": "Bond",
       "TypeBondset": "Bondset",
-      "TypeDelve-domain": "Delve site domain",
-      "TypeDelve-theme": "Delve site theme",
+      "TypeDelve-domain": "Site domain",
+      "TypeDelve-theme": "Site theme",
       "TypeMove": "Move",
       "TypeProgressTrack": "Progress track"
     },
@@ -597,8 +596,8 @@
       "TypeAsset": "Assets",
       "TypeBond": "Bonds",
       "TypeBondset": "Bondsets",
-      "TypeDelve-domain": "Delve site domains",
-      "TypeDelve-theme": "Delve site themes",
+      "TypeDelve-domain": "Site domains",
+      "TypeDelve-theme": "Site themes",
       "TypeMove": "Moves",
       "TypeProgressTrack": "Progress tracks"
     },

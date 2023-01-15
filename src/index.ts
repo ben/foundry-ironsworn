@@ -136,7 +136,10 @@ Hooks.once('init', async () => {
   })
   Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
     types: ['delve-theme', 'delve-domain'],
-    label: 'IRONSWORN.ITEM.SheetDelveThemeDomain',
+    label:
+      game.i18n.localize('IRONSWORN.ITEM.TypeDelveTheme') +
+      ' / ' +
+      game.i18n.localize('IRONSWORN.ITEM.TypeDelveDomain'),
     makeDefault: true,
   })
 
