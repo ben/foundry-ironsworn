@@ -49,13 +49,11 @@
     "Abilities": "Eigenschaften",
     "Track": "Statusleiste",
     "Enabled": "Aktiviert",
-    "Rank": "Rang",
     "ConfirmDelete": "Bist Du sicher? Dies kann nicht rückgängig gemacht werden.",
     "ACTOR": {
       "TypeCharacter": "Charakter",
       "TypeLocation": "Schauplatz"
     },
-    "ACTORS": {},
     "ITEM": {
       "SubtypeProgress": "Fortschritt"
     },
@@ -64,11 +62,8 @@
       "TypeAsset": "Ressourcen",
       "TypeBond": "Bande"
     },
-    "ROLLTABLE": {},
     "ROLLTABLES": {
       "TypeOracle": "Orakel"
-    },
-    "JOURNALENTRYPAGE": {},
-    "JOURNALENTRYPAGES": {}
+    }
   }
 }
