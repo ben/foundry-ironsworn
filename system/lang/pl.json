@@ -8,13 +8,8 @@
     "SaveYourTruths": "Zapisz Prawdy",
     "CustomTruth": "Własna Prawda",
     "Roll": "Rzuć",
-    "Versus": "vs.",
-    "CappedAt10": "Action score is capped at 10",
-    "Chat": "Czat",
     "SendToChat": "Wyślij tekst na czat: <i>{move}</i>",
     "CopyTextToClipboard": "Kopiowanie tekstu do schowka",
-    "Rolling": "Losuje..",
-    "Bonus": "Bonus",
     "Adds": "Dodaje",
     "Versus": "vs.",
     "CappedAt10": "Ograniczenie do 10",
@@ -31,7 +26,6 @@
     "PROGRESS": {
       "Current": "{score} postęp ({ticks} ticks)",
       "Ticks": "{ticks} ticków",
-      "Track": "tor postępu",
       "BOX": {
         "1": "1 pole",
         "2": "2 pola",
@@ -49,9 +43,6 @@
     "ProgressRoll": "Rzut postępu",
     "MakeAProgressRoll": "Wykonuj rzut postepu {score} postępu(????)",
     "StarProgress": "Gdy jest aktywny, ten element pojawi się również w zakładce 'Dziedzictwo'",
-    "Mark": "Zaznacz",
-    "Fulfill": "Wypełnij",
-    "Clear": "Wyczyść",
     "Troublesome": "Kłopotliwy",
     "Dangerous": "Niebezpieczny",
     "Formidable": "Nadzwyczajny",
@@ -93,11 +84,7 @@
     "Shadow": "cień",
     "Wits": "rozum",
     "XP": "Exp",
-    "Asset": "Aspekt",
-    "Assets": "Aspekty",
-    "Bonds": "Więzi",
     "NoBonds": "Brak więzi",
-    "Bond": "więź",
     "Legacies": "Dziedzictwa",
     "LEGACY": {
       "Bonds": "Więzi",
@@ -106,10 +93,6 @@
     },
     "Clock": "Zegar",
     "Segments": "Segmenty",
-    "Scenes": "Sceny",
-    "Quests": "Zadania",
-    "Notes": "Notatki",
-    "Discoveries": "Odkrycia",
     "Debilities": "Osłabienie",
     "Conditions": "Stany",
     "Condition": "Stan",
@@ -157,37 +140,19 @@
     "Failure": "Porażka",
     "Threat": "Zagrożenie",
     "Rarity": "Rzadkośc",
-    "Optional Delve": "Opcjonalna Delve",
-    "Custom Assets": "Własne Aspekty",
-    "Oracles": "Wyrocznie",
-    "Custom Oracles": "Własne Wyrocznie",
-    "Search": "Szukaj",
-    "Plot": "Wątek",
-    "Location": "Lokacja",
     "LocationType": "Typ Lokacji",
-    "Character": "Postać",
-    "Starship": "Statek Kosmicznyu",
-    "SharedSheet": "Wspólna Karta",
-    "DelveSite": "Lokacja",
-    "Names": "Imiona",
     "RollForDetails": "Wylosuj Detale Lokacji",
     "RandomName": "Losowe imię",
-    "Burn": "Spal",
-    "Focus": "Skupienie",
     "ResolveChallenge": "Rozwiąż wyzwanie",
     "ResolveChallengeDisabled": "Wybierz swoje dwie ostatnie kostki wyzwania",
     "BurnForUpgrade": "Spal Impet: <strong>{type}</strong>",
     "BurnMomentumAndResetTo": "Spal {value} impet i zresetuj do {resetValue}",
     "MomentumBurnt": "Momentum Burn",
     "NegativeMomentumCancel": "Negatywny impet anulował kość działania",
-    "Reset": "Zresetuj",
-    "Max": "Maksimum",
-    "Name": "Imię",
     "Pronouns": "Zaimki",
     "Callsign": "Ksywa",
     "Characteristics": "Charakterystyka",
     "Summary": "Podsumowanie",
-    "Description": "Opis",
     "Category": "Kategoria",
     "Color": "Kolor",
     "Requirement": "Wymaganie",
@@ -203,7 +168,6 @@
     "Option": "Opcja",
     "Track": "Tor",
     "Enabled": "Włączony",
-    "Rank": "Ranga",
     "ChallengeRank": "Ranga wyzwania",
     "Completed": "Ukończone/y",
     "NotCompleted": "Nieukończony/e",
@@ -218,12 +182,6 @@
     "Denizen": "Mieszkaniec/ka",
     "Denizens": "Mieszkańcy",
     "OpenCompendium": "Otwórz Kompendium",
-    "Delete": "Usuń",
-    "DeleteItem": "Usuń Przedmiot",
-    "DeleteMove": "Usuń Ruch",
-    "DeleteVow": "Usuń Przysięgę",
-    "DeleteProgress": "Usuń Postęp",
-    "DeleteAsset": "Usuń Aspekt",
     "ConfirmDelete": "Jesteś pewien? Nie można tego cofnąć.",
     "RequiresLocationType": "Ta Wyrocznia wymaga wybrania typu lokacji",
     "RollOracleTable": "Rzuć na wyrocznie: <i>{title}</i>",
@@ -246,12 +204,6 @@
     "Fifth": "piąty",
     "StarforgedTools": "Narzędzia Starforged",
     "IronswornTools": "Narzędzia Ironsworn",
-    "NewSector": "Nowy Sector",
-    "NewStar": "Nowa Gwiazda",
-    "NewPlanet": "Nowa Planeta",
-    "NewSettlement": "Nowa Osada",
-    "NewDerelict": "Nowa Ruina",
-    "NewVault": "Nowa Krypta Prekursora",
     "EditSector": "Edytuj Sektor",
     "Sector": "Sektor",
     "Region": "Region",
@@ -531,6 +483,9 @@
       "Zones": "Strefy",
       "Custom": "Własne Wyrocznie"
     },
+    "Asset Categories": {
+      "Custom": "Własne Aspekty"
+    },
     "ROLLTABLE": {
       "TypeOracle": "Wyroczni"
     },
@@ -541,22 +496,31 @@
       "TypeSector": "Sektor"
     },
     "ACTOR": {
-      "TypeCharacter": "Postać",
-      "SubtypeStar": "Gwiazda",
+      "SubtypeDerelict": "Ruina",
       "SubtypePlanet": "Planeta",
       "SubtypeSettlement": "Osada",
-      "SubtypeDerelict": "Ruina",
+      "SubtypeStar": "Gwiazda",
       "SubtypeVault": "Krypta Prekursora",
-      "TypeStarship": "Statek Kosmicznyu",
+      "TypeCharacter": "Postać",
+      "TypeFoe": "BG",
+      "TypeLocation": "Lokacja",
       "TypeShared": "Wspólna Karta",
-      "TypeFoe": "BG"
+      "TypeStarship": "Statek Kosmicznyu"
+    },
+    "ACTORS": {
+      "SubtypePlanet": "Planety",
+      "SubtypeSettlement": "Osady",
+      "SubtypeStar": "Gwiazdy",
+      "TypeCharacter": "Postaci",
+      "TypeLocation": "Lokacji"
     },
     "ITEM": {
-      "SubtypeVow": "Przysięga",
+      "SubtypeConnection": "Połączenie",
       "SubtypeProgress": "Postęp",
+      "SubtypeVow": "Przysięga",
       "TypeAsset": "Aspekt",
       "TypeBond": "Więź",
-      "SubtypeConnection": "Połączenie"
+      "TypeProgressTrack": "Tor postępu"
     },
     "ITEMS": {
       "SubtypeConnection": "Połączenia",
@@ -564,7 +528,8 @@
       "TypeBond": "Więzi",
       "TypeMove": "Ruchy"
     },
-    "JOURNALENTRYPAGE": {},
-    "JOURNALENTRYPAGES": {}
+    "JOURNALENTRYPAGE": {
+      "TypeProgressTrack": "Tor postępu"
+    }
   }
 }
