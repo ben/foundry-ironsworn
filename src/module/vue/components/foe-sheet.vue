@@ -37,7 +37,7 @@
         @click="addEmpty"
         block
         icon="fa:file"
-        :text="$t('IRONSWORN.ITEM.TypeProgress')"
+        :text="$t('IRONSWORN.ITEM.TypeProgressTrack')"
       />
       <BtnCompendium
         block

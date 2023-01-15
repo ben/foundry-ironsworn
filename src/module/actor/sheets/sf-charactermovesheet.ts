@@ -48,6 +48,8 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
   }
 
   get title() {
-    return `${game.i18n.localize('IRONSWORN.Moves')} — ${this.actor.name}`
+    return `${game.i18n.localize('IRONSWORN.ITEMS.TypeMove')} — ${
+      this.actor.name
+    }`
   }
 }

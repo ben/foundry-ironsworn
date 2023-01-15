@@ -2,7 +2,7 @@
   <SheetBasic :document="actor" body-class="flexcol">
     <TabSet :id="`${actor._id}-starship-sheet`" :tabKeys="['assets', 'notes']">
       <TabList>
-        <Tab tab-key="assets" :text="$t('IRONSWORN.Assets')" />
+        <Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
         <Tab tab-key="notes" :text="$t('Notes')" />
       </TabList>
       <TabPanels>

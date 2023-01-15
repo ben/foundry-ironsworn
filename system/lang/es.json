@@ -64,9 +64,6 @@
     "Shadow": "sombra",
     "Wits": "mente",
     "XP": "EXP",
-    "Assets": "Recursos",
-    "Bonds": "Vínculos",
-    "Bond": "Vínculo",
     "Legacies": "Legados",
     "Clock": "Reloj",
     "Quests": "Búsquedas",
@@ -92,7 +89,6 @@
     "Indebted": "Indebted",
     "Battered": "Battered",
     "Reroll": "Volver a tirar",
-    "Moves": "Movimientos",
     "MOVES": {
       "Adventure": "Movimientos de aventura",
       "Combat": "Movimientos de combate",
@@ -101,10 +97,8 @@
       "Fate": "Movimientos del destino",
       "Legacy": "Movimientos de legado",
       "Relationship": "Movimientos de relación",
-      "Suffer": "Movimientos de sufrimiento",
+      "Suffer": "Movimientos de sufrimiento"
     },
-    "Oracles": "Oráculos",
-    "Custom Oracles": "Oráculos personalizados",
     "LocationType": "Tipo de localización",
     "RollForDetails": "Tirar los detalles de la localización",
     "RandomName": "Nombre aleatorio",
@@ -351,7 +345,6 @@
         "quest3": "Un grupo de habitantes del Hierro ha establecido una comunidad en un territorio maldito por una abominación diabólica. ¿Qué mal azota esta tierra? ¿Por qué insisten en establecerse aquí? ¿Ayudarás a los colonos o intentarás forzarlos a que abandonen su imprudente empresa?"
       }
     },
-    "SFSettingTruthsTitle": "Setting Truths",
     "OracleCategories": {
       "Access": "Access",
       "Action and Theme": "Acción y Tema",
@@ -424,7 +417,14 @@
       "Type": "Tipo",
       "Vaults": "Vaults",
       "Vital": "Vital",
-      "Zones": "Zones"
+      "Zones": "Zones",
+      "Custom": "Oráculos personalizados"
+    },
+    "ROLLTABLE": {
+      "TypeOracle": "Oráculo"
+    },
+    "ROLLTABLES": {
+      "TypeOracle": "Oráculos"
     },
     "SCENE": {
       "TypeSector": "Sector"
@@ -435,12 +435,21 @@
       "TypeLocation": "Localización",
       "TypeShared": "Ficha compartida"
     },
+    "ACTORS": {
+      "TypeCharacter": "Personajes"
+    },
     "ITEM": {
       "TypeAsset": "Recurso",
-      "TypeSfmove": "Movimiento",
+      "TypeMove": "Movimiento",
       "SubtypeConnection": "Conexión",
       "SubtypeProgress": "Progreso",
-      "SubtypeVow": "Juramento"
+      "SubtypeVow": "Juramento",
+      "TypeBond": "Vínculo"
+    },
+    "ITEMS": {
+      "TypeAsset": "Recursos",
+      "TypeMove": "Movimientos",
+      "TypeBond": "Vínculos"
     }
   }
 }

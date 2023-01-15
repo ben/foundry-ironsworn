@@ -135,7 +135,7 @@ export function activateSceneButtonListeners() {
   Hooks.on('getSceneControlButtons', (controls) => {
     const oracleButton: SceneControlTool = {
       name: 'Oracles',
-      title: game.i18n.localize('IRONSWORN.Oracles'),
+      title: game.i18n.localize('IRONSWORN.ROLLTABLES.TypeOracle'),
       icon: 'isicon-oracle',
       visible: true,
       button: true,

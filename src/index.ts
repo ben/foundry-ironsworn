@@ -71,12 +71,12 @@ Hooks.once('init', async () => {
 
   // Register our own sheets
   Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
-    label: 'IRONSWORN.ACTORS.SheetCharacterClassic',
+    label: 'IRONSWORN.ACTOR.SheetCharacterClassic',
     types: ['character'],
     makeDefault: true,
   })
   Actors.registerSheet('ironsworn', StarforgedCharacterSheet, {
-    label: 'IRONSWORN.ACTORS.SheetCharacterStarforged',
+    label: 'IRONSWORN.ACTOR.SheetCharacterStarforged',
     types: ['character'],
   })
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
@@ -116,7 +116,7 @@ Hooks.once('init', async () => {
 
   Items.registerSheet('ironsworn', AssetSheetV2, {
     types: ['asset'],
-    label: 'IRONSWORN.ITEM.SheetAssetV2',
+    label: `${game.i18n.localize('IRONSWORN.ITEM.SheetAssetV2')} v2`,
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', AssetSheet, {
@@ -132,7 +132,7 @@ Hooks.once('init', async () => {
 
   Items.registerSheet('ironsworn', SFMoveSheet, {
     types: ['sfmove'],
-    label: 'IRONSWORN.ITEM.TypeSfmove',
+    label: 'IRONSWORN.ITEM.TypeMove',
   })
   Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
     types: ['delve-theme', 'delve-domain'],
@@ -142,7 +142,7 @@ Hooks.once('init', async () => {
 
   Items.registerSheet('ironsworn', ProgressSheetV2, {
     types: ['progress'],
-    label: 'IRONSWORN.ITEM.TypeProgress',
+    label: 'IRONSWORN.ITEM.TypeProgressTrack',
     makeDefault: true,
   })
 
@@ -153,7 +153,7 @@ Hooks.once('init', async () => {
     {
       types: ['progress'],
       makeDefault: true,
-      label: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgress',
+      label: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack',
     }
   )
 
@@ -176,7 +176,7 @@ Hooks.once('init', async () => {
     CONFIG.JournalEntryPage.typeLabels,
     {
       truth: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
-      progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgress',
+      progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack',
     }
   )
   // @ts-ignore

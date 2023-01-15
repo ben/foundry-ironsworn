@@ -23,7 +23,6 @@
     "On_a_miss": "Sur un échec",
     "MarkProgress": "Marquer la progression",
     "PROGRESS": {
-      "Track": "Jauge de progrès",
       "BOX": {
         "1": "1 case",
         "2": "2 cases",
@@ -83,9 +82,6 @@
     "Shadow": "ombre",
     "Wits": "astuces",
     "XP": "XP",
-    "Assets": "Atouts",
-    "Bonds": "Liens",
-    "Bond": "Lien",
     "Legacies": "Héritages",
     "Clock": "Horloge",
     "Quests": "Quêtes",
@@ -111,9 +107,6 @@
     "Indebted": "Endetté",
     "Battered": "Battu",
     "Reroll": "Relancez les dés",
-    "Moves": "Actions",
-    "Connections": "Connexions",
-    "Connection": "Connexion",
     "MOVES": {
       "Adventure": "Actions d’aventure",
       "Combat": "Actions de combat",
@@ -124,8 +117,6 @@
       "Scene Challenge": "Actions de défi de scène",
       "Suffer": "Actions de souffrance"
     },
-    "Oracles": "Oracles",
-    "Custom Oracles": "Oracles personnalisés",
     "LocationType": "Type de lieu",
     "RollForDetails": "Jet de type de lieu",
     "ResolveChallenge": "Résoudre le défi",
@@ -379,28 +370,41 @@
     "Asset Categories": {
       "Custom": "Ressources personnalisées"
     },
+    "ROLLTABLE": {
+      "TypeOracle": "Oracle"
+    },
+    "ROLLTABLES": {
+      "TypeOracle": "Oracles"
+    },
     "ACTOR": {
+      "SubtypeDerelict": "Épave",
+      "SubtypePlanet": "Planète",
+      "SubtypeSettlement": "Colonie",
+      "SubtypeStar": "Étoile",
+      "SubtypeVault": "Chambre forte de précurseurs",
       "TypeCharacter": "Personnage",
       "TypeFoe": "PNJ",
       "TypeLocation": "Lieux",
       "TypeShared": "Feuille partagée",
       "TypeSite": "Site de fouilles",
-      "TypeStarship": "Vaisseau spatial",
-      "SubtypeDerelict": "Épave",
-      "SubtypePlanet": "Planète",
-      "SubtypeSettlement": "Colonie",
-      "SubtypeStar": "Étoile",
-      "SubtypeVault": "Chambre forte de précurseurs"
+      "TypeStarship": "Vaisseau spatial"
     },
     "ITEM": {
-      "TypeAsset": "Actif",
-      "TypeProgress": "Jauge de progrès",
-      "TypeBondset": "Forger un lien",
-      "TypeSfmove": "Action",
-      "TypeDelve-theme": "Delve site theme",
-      "TypeDelve-domain": "Delve site domain",
+      "SubtypeConnection": "Connexion",
+      "SubtypeProgress": "Progrès",
       "SubtypeVow": "Vœu",
-      "SubtypeProgress": "Progrès"
+      "TypeAsset": "Actif",
+      "TypeBond": "Lien",
+      "TypeBondset": "Forger un lien",
+      "TypeMove": "Action",
+      "TypeProgressTrack": "Jauge de progrès"
+    },
+    "ITEMS": {
+      "SubtypeConnection": "Connexions",
+      "SubtypeVow": "Vœux",
+      "TypeAsset": "Atouts",
+      "TypeBond": "Liens",
+      "TypeMove": "Actions"
     }
   }
 }

@@ -64,7 +64,7 @@ const props = defineProps<{
   }[]
 }>()
 
-const categoryComponents = ref<typeof TruthCategory[]>([])
+const categoryComponents = ref<(typeof TruthCategory)[]>([])
 
 function scrollToCategory(i: number) {
   categoryComponents.value[i]?.scrollIntoView()
@@ -87,7 +87,7 @@ async function saveTruths() {
     .join('\n\n')
 
   const journal = await JournalEntry.create({
-    name: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
+    name: game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth'),
     content,
   })
   journal?.sheet?.render(true)

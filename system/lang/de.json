@@ -37,15 +37,10 @@
     "Shadow": "Schatten",
     "Wits": "Verstand",
     "XP": "EP",
-    "Assets": "Ressourcen",
-    "Bonds": "Bande",
     "Debilities": "Schwächen",
     "Conditions": "Zustände",
     "Banes": "Verhängnisse",
     "Burdens": "Bürden",
-    "Progress": "Fortschritt",
-    "Moves": "Spielzüge",
-    "Oracles": "Orakel",
     "BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
     "MomentumBurnt": "Momentum verbrannt",
     "Fields": "Felder",
@@ -59,6 +54,21 @@
     "ACTOR": {
       "TypeCharacter": "Charakter",
       "TypeLocation": "Schauplatz"
-    }
+    },
+    "ACTORS": {},
+    "ITEM": {
+      "SubtypeProgress": "Fortschritt"
+    },
+    "ITEMS": {
+      "TypeMove": "Spielzüge",
+      "TypeAsset": "Ressourcen",
+      "TypeBond": "Bande"
+    },
+    "ROLLTABLE": {},
+    "ROLLTABLES": {
+      "TypeOracle": "Orakel"
+    },
+    "JOURNALENTRYPAGE": {},
+    "JOURNALENTRYPAGES": {}
   }
 }

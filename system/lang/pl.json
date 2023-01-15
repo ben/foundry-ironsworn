@@ -39,9 +39,6 @@
     "Shadow": "cień",
     "Wits": "rozum",
     "XP": "Exp",
-    "Assets": "Aspekty",
-    "Bonds": "Więzi",
-    "Bond": "Więź",
     "Legacies": "Dziedzictwa",
     "Clock": "Zegar",
     "Quests": "Zadania",
@@ -67,9 +64,6 @@
     "Indebted": "Zadłużony",
     "Battered": "Poobijany",
     "Reroll": "Przerzut",
-    "Connections": "Połączenia",
-    "Connection": "Połączenie",
-    "Moves": "Ruchy",
     "MOVES": {
       "Adventure": "Ruchy Podróży",
       "Combat": "Ruchy Walki",
@@ -82,7 +76,6 @@
       "Suffer": "Ruchy Konsekwencji",
       "Threshold": "Próg"
     },
-    "Oracles": "Wyrocznie",
     "LocationType": "Typ Lokacji",
     "RollForDetails": "Wylosuj Detale Lokacji",
     "RandomName": "Losowe imię",
@@ -134,7 +127,6 @@
     "Fourth": "czwarty",
     "Fifth": "piąty",
     "StarforgedTools": "Narzędzia Starforged",
-    "Sector": "Sektor",
     "Region": "Region",
     "Terminus": "Stacja",
     "Outlands": "Rubieże",
@@ -313,7 +305,6 @@
         "quest3": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
       }
     },
-    "SFSettingTruthsTitle": "Setting Truths",
     "OracleCategories": {
       "Access": "Dojście",
       "Action and Theme": "Akcja i Temat",
@@ -389,8 +380,14 @@
       "Zones": "Strefy",
       "Custom": "Własne Wyrocznie"
     },
+    "ROLLTABLE": {
+      "TypeOracle": "Wyroczni"
+    },
+    "ROLLTABLES": {
+      "TypeOracle": "Wyrocznie"
+    },
     "SCENE": {
-      "TypeSector": "Sector"
+      "TypeSector": "Sektor"
     },
     "ACTOR": {
       "TypeCharacter": "Postać",
@@ -401,13 +398,22 @@
       "SubtypeVault": "Krypta Prekursora",
       "TypeStarship": "Statek Kosmicznyu",
       "TypeShared": "Wspólna Karta",
-      "TypeSite": "Delve Site",
       "TypeFoe": "BG"
     },
     "ITEM": {
       "SubtypeVow": "Przysięga",
       "SubtypeProgress": "Postęp",
-      "TypeAsset": "Aspekt"
-    }
+      "TypeAsset": "Aspekt",
+      "TypeBond": "Więź",
+      "SubtypeConnection": "Połączenie"
+    },
+    "ITEMS": {
+      "SubtypeConnection": "Połączenia",
+      "TypeAsset": "Aspekty",
+      "TypeBond": "Więzi",
+      "TypeMove": "Ruchy"
+    },
+    "JOURNALENTRYPAGE": {},
+    "JOURNALENTRYPAGES": {}
   }
 }

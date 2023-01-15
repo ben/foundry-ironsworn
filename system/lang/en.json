@@ -27,7 +27,6 @@
     "PROGRESS": {
       "Current": "{score} progress ({ticks} ticks)",
       "Ticks": "{ticks} ticks",
-      "Track": "progress track",
       "BOX": {
         "1": "1 box",
         "2": "2 boxes",
@@ -88,9 +87,7 @@
     "Wits": "wits",
     "XP": "XP",
     "Assets": "Assets",
-    "Bonds": "Bonds",
     "NoBonds": "No Bonds",
-    "Bond": "Bond",
     "Legacies": "Legacies",
     "Clock": "Clock",
     "Segments": "Segments",
@@ -123,7 +120,6 @@
     "Reroll": "Reroll",
     "Connections": "Connections",
     "Connection": "Connection",
-    "Moves": "Moves",
     "MOVES": {
       "Adventure": "Adventure moves",
       "Combat": "Combat moves",
@@ -147,7 +143,6 @@
     "Failure": "Failure",
     "Threat": "Threat",
     "Rarity": "Rarity",
-    "Oracles": "Oracles",
     "LocationType": "Location type",
     "RollForDetails": "Roll location details",
     "RandomName": "Random name",
@@ -417,7 +412,6 @@
         "quest3": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
       }
     },
-    "SFSettingTruthsTitle": "Setting Truths",
     "OracleCategories": {
       "Access": "Access",
       "Action and Theme": "Action and Theme",
@@ -456,8 +450,8 @@
       "Medical": "Medical",
       "Misc": "Misc",
       "Mission": "Mission",
-      "Monstrosity": "Monstrosity",
       "Moves": "Moves",
+      "Monstrosity": "Monstrosity",
       "Name": "Name",
       "Ocean": "Ocean",
       "Operations": "Operations",
@@ -540,6 +534,12 @@
         }
       }
     },
+    "ROLLTABLE": {
+      "TypeOracle": "Oracle"
+    },
+    "ROLLTABLES": {
+      "TypeOracle": "Oracles"
+    },
     "SCENE": {
       "TypeSector": "Sector"
     },
@@ -547,73 +547,71 @@
       "TypeSector": "Sectors"
     },
     "ACTOR": {
-      "SheetFoe": "Foe",
+      "SheetCharacterClassic": "Ironsworn character sheet",
+      "SheetCharacterStarforged": "Starforged character sheet",
       "SheetCompact": "Compact",
+      "SheetFoe": "Foe",
       "SheetStarforgedLocation": "Starforged Location",
+      "SubtypeDerelict": "Derelict",
+      "SubtypePlanet": "Planet",
+      "SubtypeSettlement": "Settlement",
+      "SubtypeStar": "Star",
+      "SubtypeVault": "Precursor vault",
       "TypeCharacter": "Character",
       "TypeFoe": "NPC",
       "TypeLocation": "Location",
       "TypeShared": "Shared sheet",
       "TypeSite": "Delve site",
-      "TypeStarship": "Starship",
-      "SubtypeDerelict": "Derelict",
-      "SubtypePlanet": "Planet",
-      "SubtypeSettlement": "Settlement",
-      "SubtypeStar": "Star",
-      "SubtypeVault": "Precursor vault"
+      "TypeStarship": "Starship"
     },
     "ACTORS": {
-      "SheetCharacterStarforged": "Starforged character sheet",
-      "SheetCharacterClassic": "Ironsworn character sheet",
-      "SheetFoe": "Foe",
-      "SheetCompact": "Compact",
-      "SheetStarforgedLocation": "Starforged Locations",
-      "TypeCharacter": "Character",
-      "TypeFoe": "NPCs",
-      "TypeLocation": "Locations",
-      "TypeShared": "Shared sheets",
-      "TypeSite": "Delve sites",
-      "TypeStarship": "Starships",
       "SubtypeDerelict": "Derelicts",
       "SubtypePlanet": "Planets",
       "SubtypeSettlement": "Settlements",
       "SubtypeStar": "Stars",
-      "SubtypeVault": "Precursor vaults"
+      "SubtypeVault": "Precursor vaults",
+      "TypeCharacter": "Character",
+      "TypeFoe": "NPCs",
+      "TypeLocation": "Locations",
+      "TypeSite": "Delve sites",
+      "TypeStarship": "Starships"
     },
     "ITEM": {
-      "SheetAssetV2": "Asset v2",
       "SheetDelveThemeDomain": "Delve Theme/Domain",
+      "SubtypeConnection": "Connection",
+      "SubtypeProgress": "Progress",
+      "SubtypeVow": "Vow",
       "TypeAsset": "Asset",
+      "TypeBond": "Bond",
       "TypeBondset": "Bondset",
       "TypeDelve-domain": "Delve site domain",
       "TypeDelve-theme": "Delve site theme",
-      "TypeProgress": "Progress track",
-      "TypeSfmove": "Move",
-      "SubtypeConnection": "Connection",
-      "SubtypeProgress": "Progress",
-      "SubtypeVow": "Vow"
+      "TypeMove": "Move",
+      "TypeProgressTrack": "Progress track"
     },
     "ITEMS": {
+      "SubtypeConnection": "Connections",
+      "SubtypeProgress": "Progress",
+      "SubtypeVow": "Vows",
       "TypeAsset": "Assets",
+      "TypeBond": "Bonds",
       "TypeBondset": "Bondsets",
       "TypeDelve-domain": "Delve site domains",
       "TypeDelve-theme": "Delve site themes",
-      "TypeProgress": "Progress tracks",
-      "TypeSfmove": "Moves",
-      "SubtypeConnection": "Connections",
-      "SubtypeProgress": "Progress tracks",
-      "SubtypeVow": "Vows"
+      "TypeMove": "Moves",
+      "TypeProgressTrack": "Progress tracks"
     },
     "JOURNALENTRYPAGE": {
-      "TypeProgress": "Progress track",
+      "TypeProgressTrack": "Progress track",
       "TypeTruth": "Setting Truth",
-      "TypeTruthStarforged": "Setting Truth",
-      "TypeTruthClassic": "World Truth"
+      "TypeTruthClassic": "World Truth",
+      "TypeTruthStarforged": "Setting Truth"
     },
     "JOURNALENTRYPAGES": {
-      "TypeProgress": "Progress tracks",
-      "TypeTruthStarforged": "Setting Truths",
-      "TypeTruthClassic": "World Truths"
+      "TypeProgressTrack": "Progress tracks",
+      "TypeTruth": "Setting Truths",
+      "TypeTruthClassic": "World Truths",
+      "TypeTruthStarforged": "Setting Truths"
     }
   }
 }

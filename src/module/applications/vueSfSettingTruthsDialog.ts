@@ -6,7 +6,7 @@ import { VueAppMixin } from '../vue/vueapp.js'
 export class SFSettingTruthsDialogVue extends VueAppMixin(Application) {
   static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
-      title: game.i18n.localize('IRONSWORN.SFSettingTruthsTitle'),
+      title: game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth'),
       template: 'systems/foundry-ironsworn/templates/sf-truths-vue.hbs',
       id: 'setting-truths-dialog',
       resizable: true,

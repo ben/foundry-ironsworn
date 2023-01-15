@@ -32,7 +32,7 @@
         icon="fa:trash"
         @click="destroy"
         :tooltip="
-          $t('DOCUMENT.Delete', { type: 'IRONSWORN.ITEM.TypeProgress' })
+          $t('DOCUMENT.Delete', { type: 'IRONSWORN.ITEM.TypeProgressTrack' })
         "
       />
       <IronBtn
@@ -212,7 +212,7 @@ function edit() {
 function destroy() {
   Dialog.confirm({
     title: game.i18n.format('DOCUMENT.Delete', {
-      type: 'IRONSWORN.ITEM.TypeProgress',
+      type: 'IRONSWORN.ITEM.TypeProgressTrack',
     }),
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
