@@ -563,6 +563,8 @@
       "SubtypeVault": "Precursor vault"
     },
     "ACTORS": {
+      "SheetCharacterStarforged": "Starforged character sheet",
+      "SheetCharacterClassic": "Ironsworn character sheet",
       "SheetFoe": "Foe",
       "SheetCompact": "Compact",
       "SheetStarforgedLocation": "Starforged Locations",
@@ -604,6 +606,7 @@
     },
     "JOURNALENTRYPAGE": {
       "TypeProgress": "Progress track",
+      "TypeTruth": "Setting Truth",
       "TypeTruthStarforged": "Setting Truth",
       "TypeTruthClassic": "World Truth"
     },

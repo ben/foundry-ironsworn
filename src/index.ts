@@ -71,12 +71,12 @@ Hooks.once('init', async () => {
 
   // Register our own sheets
   Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
-    label: 'Ironsworn character sheet',
+    label: 'IRONSWORN.ACTORS.SheetCharacterClassic',
     types: ['character'],
     makeDefault: true,
   })
   Actors.registerSheet('ironsworn', StarforgedCharacterSheet, {
-    label: 'Starforged character sheet',
+    label: 'IRONSWORN.ACTORS.SheetCharacterStarforged',
     types: ['character'],
   })
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
@@ -166,7 +166,7 @@ Hooks.once('init', async () => {
     {
       types: ['truth'],
       makeDefault: true,
-      label: 'IRONSWORN.First Start.SettingTruth',
+      label: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
     }
   )
 
@@ -175,7 +175,7 @@ Hooks.once('init', async () => {
     // @ts-ignore
     CONFIG.JournalEntryPage.typeLabels,
     {
-      truth: 'IRONSWORN.First Start.SettingTruth',
+      truth: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
       progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgress',
     }
   )
