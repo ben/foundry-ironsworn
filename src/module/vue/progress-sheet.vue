@@ -135,7 +135,9 @@
       :class="$style.danger"
       @click="destroy"
       icon="fa:trash"
-      :text="      $t(`DOCUMENT.Delete`, { type: 'IRONSWORN.ITEM.TypeProgressTrack' }),"
+      :text="
+        $t(`DOCUMENT.Delete`, { type: 'IRONSWORN.ITEM.TypeProgressTrack' })
+      "
     />
   </div>
 </template>
