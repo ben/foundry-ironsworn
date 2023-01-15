@@ -442,6 +442,7 @@
     },
     "ITEM": {
       "TypeAsset": "Recurso",
+      "TypeFoe": "PNJs",
       "TypeMove": "Movimiento",
       "SubtypeConnection": "Conexión",
       "SubtypeProgress": "Progreso",
@@ -451,7 +452,8 @@
     "ITEMS": {
       "TypeAsset": "Recursos",
       "TypeMove": "Movimientos",
-      "TypeBond": "Vínculos"
+      "TypeBond": "Vínculos",
+      "SubtypeVow": "Juramentos"
     }
   }
 }
