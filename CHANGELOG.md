@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Improvements to the Polish translation
+
 ## 1.20.13
 
 - Avoid overriding move names with Dataforged data, so translation modules can ship move names.
