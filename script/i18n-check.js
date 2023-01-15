@@ -96,7 +96,13 @@ const localeKeys = {}
 locales.forEach(
   (locale) =>
     (localeKeys[locale] = new Set(
-      Object.keys(flattenObject(require(`../system/lang/${locale}.json`)))
+      Object.keys(
+        _.filter(
+          // omit empty placeholder keys
+          flattenObject(require(`../system/lang/${locale}.json`)),
+          (value) => value !== {}
+        )
+      )
     ))
 )
 
