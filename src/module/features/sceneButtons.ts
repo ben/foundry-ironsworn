@@ -75,8 +75,8 @@ async function dropToken(location: IronswornActor) {
 }
 
 async function newLocation(subtype: string, i18nKey: string, scale = 1) {
-  const name = game.i18n.format('DOCUMENT.Create', {
-    type: `IRONSWORN.${i18nKey}`,
+  const name = game.i18n.format('DOCUMENT.New', {
+    type: game.i18n.localize(`IRONSWORN.${i18nKey}`),
   })
   const parentFolder = await ensureFolder(
     'Locations',
@@ -165,14 +165,14 @@ export function activateSceneButtonListeners() {
           // { // TODO: maybe reenable this when we have a good way of doing it
           //   name: 'sector',
           //   icon: 'isicon-sector',
-          //   title: game.i18n.format('DOCUMENT.Create',{type: 'IRONSWORN.SCENE.TypeSector'}),
+          //   title: game.i18n.format('DOCUMENT.Create',{type: ('IRONSWORN.SCENE.TypeSector')}),
           //   onClick: warn,
           // },
           {
             name: 'star',
             icon: 'isicon-stellar-object',
             title: game.i18n.format('DOCUMENT.Create', {
-              type: 'IRONSWORN.ACTOR.SubtypeStar',
+              type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeStar'),
             }),
             onClick: newStar,
           },
@@ -180,7 +180,7 @@ export function activateSceneButtonListeners() {
             name: 'planet',
             icon: 'isicon-world',
             title: game.i18n.format('DOCUMENT.Create', {
-              type: 'IRONSWORN.ACTOR.SubtypePlanet',
+              type: game.i18n.localize('IRONSWORN.ACTOR.SubtypePlanet'),
             }),
             onClick: newPlanet,
           },
@@ -188,7 +188,7 @@ export function activateSceneButtonListeners() {
             name: 'settlement',
             icon: 'isicon-settlement-sf',
             title: game.i18n.format('DOCUMENT.Create', {
-              type: 'IRONSWORN.ACTOR.SubtypeSettlement',
+              type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeSettlement'),
             }),
             onClick: newSettlement,
           },
@@ -196,7 +196,7 @@ export function activateSceneButtonListeners() {
             name: 'derelict',
             icon: 'isicon-derelict',
             title: game.i18n.format('DOCUMENT.Create', {
-              type: 'IRONSWORN.ACTOR.SubtypeDerelict',
+              type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeDerelict'),
             }),
             onClick: newDerelict,
           },
@@ -204,7 +204,7 @@ export function activateSceneButtonListeners() {
             name: 'vault',
             icon: 'isicon-precursor-vault',
             title: game.i18n.format('DOCUMENT.Create', {
-              type: 'IRONSWORN.ACTOR.SubtypeVault',
+              type: game.i18n.localize('IRONSWORN.ACTOR.SubtypeVault'),
             }),
             onClick: newVault,
           }

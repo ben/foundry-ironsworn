@@ -4,7 +4,7 @@
       <input
         type="search"
         :placeholder="
-          $t('SIDEBAR.Search', { types: 'IRONSWORN.ITEMS.TypeMove' })
+          $t('SIDEBAR.Search', { types: $t('IRONSWORN.ITEMS.TypeMove') })
         "
         v-model="state.searchQuery"
         @keydown.enter.prevent
