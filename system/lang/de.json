@@ -1,22 +1,14 @@
 {
   "IRONSWORN": {
     "Roll": "Wurf",
-    "Rolling": "Würfeln",
-    "Bonus": "Bonus",
     "Versus": "vs.",
     "Strong_hit": "Voller Erfolg",
     "Strong_hit_match": "Voller Erfolg mit einem Pasch!",
     "Weak_hit": "Teilerfolg",
     "Miss": "Fehlschlag",
     "Miss_match": "Fehlschlag mit einem Pasch!",
-    "Opportunity": "Gelegenheit!",
-    "Complication": "Verschlimmerung!",
     "MarkProgress": "Markiere Fortschritt",
-    "FulfillVow": "Eid erfüllen",
     "ProgressRoll": "Fortschrittswurf",
-    "Mark": "Markiere",
-    "Fulfill": "Erfülle",
-    "Clear": "Loswerden",
     "Troublesome": "Lästig",
     "Dangerous": "Gefährlich",
     "Formidable": "Gewaltig",
@@ -45,36 +37,33 @@
     "Shadow": "Schatten",
     "Wits": "Verstand",
     "XP": "EP",
-    "Assets": "Ressourcen",
-    "Bonds": "Bande",
     "Debilities": "Schwächen",
     "Conditions": "Zustände",
     "Banes": "Verhängnisse",
     "Burdens": "Bürden",
-    "Vows": "Eide",
-    "Progress": "Fortschritt",
-    "Moves": "Spielzüge",
-    "Oracles": "Orakel",
-    "Plot": "Handlung",
-    "Location": "Schauplatz",
-    "Character": "Charakter",
-    "Names": "Namen",
-    "Burn": "Verbrennen",
     "BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
     "MomentumBurnt": "Momentum verbrannt",
-    "Reset": "Zurücksetzen",
-    "Max": "Maximum",
-    "Name": "Name",
-    "Description": "Beschreibung",
     "Fields": "Felder",
     "Label": "Beschriftung",
     "Value": "Wert",
     "Abilities": "Eigenschaften",
     "Track": "Statusleiste",
     "Enabled": "Aktiviert",
-    "Rank": "Rang",
-    "DeleteItem": "Gegenstand löschen",
-    "DeleteAsset": "Ressourcen löschen",
-    "ConfirmDelete": "Bist Du sicher? Dies kann nicht rückgängig gemacht werden."
+    "ConfirmDelete": "Bist Du sicher? Dies kann nicht rückgängig gemacht werden.",
+    "ACTOR": {
+      "TypeCharacter": "Charakter",
+      "TypeLocation": "Schauplatz"
+    },
+    "ITEM": {
+      "SubtypeProgress": "Fortschritt"
+    },
+    "ITEMS": {
+      "TypeMove": "Spielzüge",
+      "TypeAsset": "Ressourcen",
+      "TypeBond": "Bande"
+    },
+    "ROLLTABLES": {
+      "TypeOracle": "Orakel"
+    }
   }
 }

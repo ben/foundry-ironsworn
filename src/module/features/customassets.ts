@@ -60,7 +60,7 @@ async function compendiumMoves(
   const i18n = (categoryName: string, extension: string) => {
     const capCat = capitalize(categoryName)
     return game.i18n.localize(
-      `IRONSWORN.Asset Categories.${i18nkeyslug}.${capCat}.${extension}`
+      `IRONSWORN.ITEM.TypeAsset Categories.${i18nkeyslug}.${capCat}.${extension}`
     )
   }
 
@@ -92,7 +92,7 @@ async function compendiumMoves(
 }
 
 async function augmentWithFolderContents(categories: DisplayCategory[]) {
-  const name = game.i18n.localize('IRONSWORN.Custom Assets')
+  const name = game.i18n.localize('IRONSWORN.ITEM.TypeAsset Categories.Custom')
   const folder = (game.items?.directory as any)?.folders.find(
     (x) => x.name === name
   ) as Folder | undefined

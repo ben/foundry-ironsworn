@@ -31,7 +31,9 @@
         block
         icon="fa:trash"
         @click="destroy"
-        :tooltip="$t('IRONSWORN.DeleteItem')"
+        :tooltip="
+          $t('DOCUMENT.Delete', { type: 'IRONSWORN.ITEM.TypeProgressTrack' })
+        "
       />
       <IronBtn
         block
@@ -60,12 +62,7 @@
         @click="advance"
         :tooltip="$t('IRONSWORN.MarkProgress')"
       />
-      <BtnRollprogress
-        v-if="item.system.hasTrack"
-        :item="item"
-        :tooltip="$t('IRONSWORN.ProgressRoll')"
-        block
-      />
+      <BtnRollprogress v-if="item.system.hasTrack" :item="item" block />
       <IronBtn
         v-if="showStar"
         class="star-progress"
@@ -199,7 +196,7 @@ const editMode = computed(() => {
 const subtitle = computed(() => {
   let subtype = capitalize(props.item.system.subtype)
   if (subtype === 'Bond') subtype = 'Connection' // translate name
-  return game.i18n.localize(`IRONSWORN.${subtype}`)
+  return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)
 })
 const completedIcon = computed(() => {
   return props.item.system.completed ? 'fa:circle-check' : 'fa:circle-notch'
@@ -213,10 +210,10 @@ function edit() {
   foundryItem?.sheet?.render(true)
 }
 function destroy() {
-  const titleKey = `IRONSWORN.Delete${capitalize(foundryItem?.type || '')}`
-
   Dialog.confirm({
-    title: game.i18n.localize(titleKey),
+    title: game.i18n.format('DOCUMENT.Delete', {
+      type: 'IRONSWORN.ITEM.TypeProgressTrack',
+    }),
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
     )}</strong></p>`,

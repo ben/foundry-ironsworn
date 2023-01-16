@@ -1,7 +1,7 @@
 <template>
   <component :is="tag || 'h1'" class="charname">
     <input
-      :placeholder="$t('IRONSWORN.Name')"
+      :placeholder="$t('Name')"
       v-model="document.name"
       name="name"
       type="text"

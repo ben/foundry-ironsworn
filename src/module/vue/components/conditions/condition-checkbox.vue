@@ -91,8 +91,7 @@ function refreshGlobalHint() {
       const assetData = x.system as AssetDataPropertiesData
       const nameField = assetData.fields.find((x) => {
         const downcase = x.name.toLowerCase()
-        if (downcase === game.i18n.localize('IRONSWORN.Name').toLowerCase())
-          return true
+        if (downcase === game.i18n.localize('Name').toLowerCase()) return true
         if (downcase === 'name') return true
         return false
       })
