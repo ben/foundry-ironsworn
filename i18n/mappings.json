@@ -21,14 +21,17 @@
   },
   "sfmove": {
     "name": "name",
-    "displayName": "system.Display.Title",
     "fullText": "system.Text",
-    "triggerTextMain": "system.Trigger.Text",
-    "triggerOptionText1": "system.Trigger.Options.1.Text",
-    "strongHitText": "system.Outcomes.Strong Hit.Text",
-    "strongHitWithAMatchText": "system.Outcomes.Strong Hit.With a Match.Text",
-    "weakHitText": "system.Outcomes.Weak Hit.Text",
-    "missText": "system.Outcomes.Miss.Text",
-    "missWithAMatchText": "system.Outcomes.Miss.With a Match.Text"
+    "triggerMain": "system.Trigger.Text",
+    "triggerOption1": "system.Trigger.Options.1.Text",
+    "triggerOption2": "system.Trigger.Options.2.Text",
+    "triggerOption3": "system.Trigger.Options.3.Text",
+    "triggerOption4": "system.Trigger.Options.4.Text",
+    "triggerOption5": "system.Trigger.Options.5.Text",
+    "strongHit": "system.Outcomes.Strong Hit.Text",
+    "strongHitWithAMatch": "system.Outcomes.Strong Hit.With a Match.Text",
+    "weakHit": "system.Outcomes.Weak Hit.Text",
+    "miss": "system.Outcomes.Miss.Text",
+    "missWithAMatch": "system.Outcomes.Miss.With a Match.Text"
   }
 }
