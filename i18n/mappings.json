@@ -19,7 +19,7 @@
     "exclusiveOption4": "system.exclusiveOptions.4.name",
     "exclusiveOption5": "system.exclusiveOptions.5.name"
   },
-  "move": {
+  "sfmove": {
     "name": "name",
     "displayName": "system.Display.Title",
     "fullText": "system.Text",
