@@ -406,7 +406,11 @@ async function processSFFoes() {
       { pack: 'foundry-ironsworn.foeactorssf' }
     )
     await actor?.createEmbeddedDocuments('Item', [
-      foeItem.system as unknown as Record<string, unknown>,
+      {
+        name: foeItem.name ?? 'wups',
+        type: 'progress',
+        system: foeItem.system as unknown as Record<string, unknown>,
+      },
     ])
   }
 }
