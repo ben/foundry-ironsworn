@@ -136,6 +136,4 @@ const testData = packs.filter((pack) =>
   ['Assets'].some((str) => pack.label.includes(str))
 )
 
-testData.forEach((pack) =>
-  writeLocaleTemplate(pack, pack.name.includes('Assets') ? 'asset' : 'sfmove')
-)
+testData.forEach((pack) => writeLocaleTemplate(pack, 'asset'))
