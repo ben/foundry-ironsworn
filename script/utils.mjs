@@ -1,15 +1,14 @@
-const masterFile = require('../system/lang/en.json')
-const _ = require('lodash')
+import _ from 'lodash'
 
 // Object manipulation functions adapted from FVTT's source.
-
 /**
  * Flatten a possibly multi-dimensional object to a one-dimensional one by converting all nested keys to dot notation
  * @param {object} obj        The object to flatten
  * @param {number} [_d=0]     Track the recursion depth to prevent overflow
  * @return {object}           A flattened object
  */
-function flattenObject(obj, _d = 0) {
+
+export function flattenObject(obj, _d = 0) {
   const flat = {}
   if (_d > 100) {
     throw new Error('Maximum depth exceeded')
@@ -25,14 +24,14 @@ function flattenObject(obj, _d = 0) {
   }
   return flat
 }
-
 /**
  * Expand a flattened object to be a standard nested Object by converting all dot-notation keys to inner objects.
  * @param {object} obj      The object to expand
  * @param {number} [_d=0]   Track the recursion depth to prevent overflow
  * @return {object}         An expanded object
  */
-function expandObject(obj, _d = 0) {
+
+export function expandObject(obj, _d = 0) {
   if (_d > 100) throw new Error('Maximum object expansion depth exceeded')
 
   // Recursive expansion function
@@ -51,7 +50,6 @@ function expandObject(obj, _d = 0) {
   }
   return expanded
 }
-
 /**
  * A helper function which searches through an object to assign a value using a string key
  * This string key supports the notation a.b.c which would target object[a][b][c]
@@ -60,7 +58,8 @@ function expandObject(obj, _d = 0) {
  * @param {*} value         The value to be assigned
  * @return {boolean}        Whether the value was changed from its previous value
  */
-function setProperty(object, key, value) {
+
+export function setProperty(object, key, value) {
   let target = object
   let changed = false
 
@@ -84,44 +83,21 @@ function setProperty(object, key, value) {
   return changed
 }
 
-const masterLocale = 'en'
-
-const locales = ['en', 'de', 'es', 'fr', 'pl']
-
 /**
- * @type {Record<string,Set<string>>}
+ * A helper function which searches through an object to retrieve a value by a string key.
+ * The method also supports arrays if the provided key is an integer index of the array.
+ * The string key supports the notation a.b.c which would return object[a][b][c]
+ * @param {object} object   The object to traverse
+ * @param {string} key      An object property with notation a.b.c
+ * @return {*}              The value of the found property
  */
-const localeKeys = {}
-
-locales.forEach(
-  (locale) =>
-    (localeKeys[locale] = new Set(
-      Object.keys(flattenObject(require(`../system/lang/${locale}.json`)))
-    ))
-)
-
-_.forEach(localeKeys, (keys, locale) => {
-  if (locale !== masterLocale) {
-    const masterKeys = localeKeys[masterLocale]
-    const extraKeys = difference(keys, masterKeys)
-    console.log(`Extra keys in ${locale}.json:\n`, extraKeys)
-    // const missingKeys = difference(masterKeys, keys)
-    // console.log(`Missing keys in ${locale}.json:\n`, missingKeys)
+export function getProperty(object, key) {
+  if (!key) return undefined
+  let target = object
+  for (let p of key.split('.')) {
+    if (!(_.isPlainObject(target) || Array.isArray(target))) return undefined
+    if (p in target) target = target[p]
+    else return undefined
   }
-})
-
-/**
- *
- * @param {Set<any>} setA
- * @param {Set<any>} setB
- * @returns {Set<any>}
- */
-function difference(setA, setB) {
-  const _difference = new Set(setA)
-  for (const elem of setB) {
-    _difference.delete(elem)
-  }
-  return _difference
+  return target
 }
-
-// TODO: check that the variable name is consistent from string to string
