@@ -135,7 +135,7 @@ export function writeLocaleTemplate(packData) {
   const json = JSON.stringify(dataOut, undefined, 2)
   const baseName = `${packData.system}.${path.basename(
     packData.path,
-    'db'
+    '.db'
   )}.json`
   const filePathOut = `${I18N_PATH}/packs/${baseName}`
 
