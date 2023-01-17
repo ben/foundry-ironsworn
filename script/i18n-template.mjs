@@ -74,6 +74,7 @@ export function getMapping(documentType) {
  */
 export function writeLocaleTemplate(packData, documentType) {
   const documentData = parseFoundryDb(packData)
+  console.log(`Writing template for "${packData.label}" (${packData.path})...`)
   // TODO: flatten objects for key comparison
   const mapping = getMapping(documentType)
   if (!mapping) {
@@ -93,11 +94,13 @@ export function writeLocaleTemplate(packData, documentType) {
 
     _.forEach(mapping, (documentKey, mapKey) => {
       if (document.data) {
-        documentKey = documentKey.replace('system.', 'data.')
+        throw new Error(
+          'Document uses deprecated "data" property. Please migrate to FVTTv10+ "system" and try again.'
+        )
       }
       const mappedValue = getProperty(document, documentKey)
       if (mappedValue) {
-        console.log(`Mapping - ${documentKey}: ${mappedValue}`)
+        // console.log(`Mapping - ${documentKey}: ${mappedValue}`)
         if (typeof mappedValue === 'string' && mappedValue.length > 0) {
           documentLocale[mapKey] = mappedValue
         } else if (Array.isArray(mappedValue)) {
