@@ -19,5 +19,19 @@
     "weakHit": "system.Outcomes.Weak Hit.Text",
     "miss": "system.Outcomes.Miss.Text",
     "missWithAMatch": "system.Outcomes.Miss.With a Match.Text"
+  },
+  "delve-theme": {
+    "name": "name",
+    "summary": "system.summary",
+    "description": "system.description",
+    "features": "system.features",
+    "dangers": "system.dangers"
+  },
+  "delve-domain": {
+    "name": "name",
+    "summary": "system.summary",
+    "description": "system.description",
+    "features": "system.features",
+    "dangers": "system.dangers"
   }
 }
