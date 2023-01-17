@@ -1,10 +1,42 @@
-import { flattenObject, getProperty } from './utils.mjs'
+import { getProperty } from './utils.mjs'
 import { readFileSync, writeFileSync } from 'fs'
 import _ from 'lodash'
 import systemData from '../system/system.json' assert { type: 'json' }
 import path from 'path'
+import { extractRollTableStrings } from './i18n-converters.mjs'
 
 const { packs } = systemData
+
+export const I18N_PATH = path.resolve(process.cwd(), 'i18n')
+export const SYSTEM_PATH = path.resolve(process.cwd(), 'system')
+
+const mappingsPath = path.resolve(I18N_PATH, 'mappings.json')
+
+// "truth": {
+//   "summary": "name",
+//   "description": "system.Description",
+//   "questStarter": "system.Quest Starter",
+//   "table": "system.Subtable",
+//   "text": "text.markdown"
+// },
+// "truth-category": {
+//   "name": "name",
+//   "pages": {
+//     "path": "pages",
+//     "converter": "truth"
+//   }
+// }
+
+/**
+ * @type {Record<string,string|Converter>}
+ */
+const mappings = JSON.parse(readFileSync(mappingsPath, { encoding: 'utf8' }))
+
+/**
+ * @typedef Converter
+ * @property {string} path
+ * @property {keyof typeof mappings} conveter
+ */
 
 /**
  * @typedef PackData
@@ -15,11 +47,7 @@ const { packs } = systemData
  * @property {string} type
  * @property {boolean} private
  */
-
 export const I18N_TYPES = []
-export const I18N_PATH = path.resolve(process.cwd(), 'i18n')
-export const SYSTEM_PATH = path.resolve(process.cwd(), 'system')
-
 export const I18N_KEYS = [
   'Text',
   'text',
@@ -35,7 +63,14 @@ export const I18N_KEYS = [
   'Result',
   'Quest Starter',
   'Subtable',
+  'markdown',
 ]
+
+const CONVERTERS = {
+  Actor: {},
+  RollTable: extractRollTableStrings,
+  Item: {},
+}
 
 /**
  * Parses a Foundry `*.db` file as an array of JSON objects.
@@ -62,12 +97,10 @@ export function parseFoundryDb(packData) {
 /**
  *
  * @param {PackData} packData The pack data object from `system.json`.
+ * @param {keyof typeof mappings} converterKey The key of the {@link mappings} converter to use.
+
  */
-export function writeLocaleTemplate(packData) {
-  const mappingFilePath = path.resolve(I18N_PATH, 'mappings.json')
-  const mappingData = JSON.parse(
-    readFileSync(mappingFilePath, { encoding: 'utf8' })
-  )
+export function writeLocaleTemplate(packData, converterKey) {
   const documentData = parseFoundryDb(packData)
   console.log(
     `Writing localization template for "${packData.label}" (${packData.path})...`
@@ -77,15 +110,15 @@ export function writeLocaleTemplate(packData) {
   const dataOut = { label: packData.label, mapping: {}, entries: {} }
 
   documentData.forEach((document) => {
-    const mapping = mappingData[document.type]
+    const mapping = mappings[converterKey ?? document.type]
 
     if (!mapping) {
       throw new Error(`No mapping available for type: ${document.type}`)
     }
+    const key = document._id
 
-    const key = document.name
     if (!key) {
-      throw new Error("Document data has no 'name' key.")
+      throw new Error("Document data has no valid 'name' key.")
     }
     if (dataOut.entries[key]) {
       throw new Error(`Duplicate ${document.type} key: ${key}`)

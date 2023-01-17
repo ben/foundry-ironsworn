@@ -11,7 +11,7 @@
     "options": "system.exclusiveOptions"
   },
   "entries": {
-    "Outcast": {
+    "085d80b933598615": {
       "name": "Outcast",
       "category": "Path",
       "abilities": [
@@ -27,7 +27,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Combat Bot": {
+    "0b01e49c6b28c384": {
       "name": "Combat Bot",
       "category": "Companion",
       "inputFields": [
@@ -53,7 +53,7 @@
         }
       ]
     },
-    "Gunslinger": {
+    "0b42a1e32bdb10c9": {
       "name": "Gunslinger",
       "requirement": "If you wield a pistol...",
       "category": "Path",
@@ -70,7 +70,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Glowcat": {
+    "100749b9b4b6f831": {
       "name": "Glowcat",
       "category": "Companion",
       "inputFields": [
@@ -96,7 +96,7 @@
         }
       ]
     },
-    "Scavenger": {
+    "11de92d262291440": {
       "name": "Scavenger",
       "category": "Path",
       "abilities": [
@@ -112,7 +112,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Skiff": {
+    "1230b61a8ef57467": {
       "name": "Skiff",
       "category": "Support Vehicle",
       "inputFields": [
@@ -138,7 +138,7 @@
         }
       ]
     },
-    "Shade": {
+    "12a922e088c35efa": {
       "name": "Shade",
       "category": "Path",
       "abilities": [
@@ -154,7 +154,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Devotant": {
+    "14c1e6ecd4680fee": {
       "name": "Devotant",
       "category": "Path",
       "inputFields": [
@@ -192,7 +192,7 @@
         }
       ]
     },
-    "Internal Refit": {
+    "15657695837c3550": {
       "name": "Internal Refit",
       "category": "Module",
       "abilities": [
@@ -208,7 +208,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Engine Upgrade": {
+    "16c1d4b9168a2e58": {
       "name": "Engine Upgrade",
       "category": "Module",
       "abilities": [
@@ -224,7 +224,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Vehicle Bay": {
+    "1a0bdff40e8dfa29": {
       "name": "Vehicle Bay",
       "category": "Module",
       "abilities": [
@@ -240,7 +240,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Hoverbike": {
+    "1ba26529a815a322": {
       "name": "Hoverbike",
       "category": "Support Vehicle",
       "inputFields": [
@@ -266,7 +266,7 @@
         }
       ]
     },
-    "Infiltrator": {
+    "1e03c8d44d0b3ffc": {
       "name": "Infiltrator",
       "category": "Path",
       "abilities": [
@@ -282,7 +282,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Bonded": {
+    "1e32e94f0b11a882": {
       "name": "Bonded",
       "requirement": "One time only, once you @Compendium[foundry-ironsworn.starforgedmoves.287bb4c2b53ea847]{Forge a Bond} with a special individual...",
       "category": "Deed",
@@ -304,7 +304,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Starship": {
+    "21d5a48992b8eb81": {
       "name": "Starship",
       "category": "Command Vehicle",
       "inputFields": [
@@ -333,7 +333,7 @@
         }
       ]
     },
-    "Sleuth": {
+    "26787f46840c03ad": {
       "name": "Sleuth",
       "category": "Path",
       "abilities": [
@@ -349,7 +349,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Voidglider": {
+    "28ae330bfb7f2f28": {
       "name": "Voidglider",
       "category": "Companion",
       "inputFields": [
@@ -375,7 +375,7 @@
         }
       ]
     },
-    "Gearhead": {
+    "2d9f63e491a880c8": {
       "name": "Gearhead",
       "category": "Path",
       "abilities": [
@@ -391,7 +391,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Expanded Hold": {
+    "2dfd2ac2ae1be92c": {
       "name": "Expanded Hold",
       "category": "Module",
       "abilities": [
@@ -407,7 +407,7 @@
       ],
       "conditionMeter": "Cargo"
     },
-    "Research Lab": {
+    "2f869a1096bfbaa7": {
       "name": "Research Lab",
       "category": "Module",
       "abilities": [
@@ -423,7 +423,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Armored": {
+    "3bd3cddf27041c08": {
       "name": "Armored",
       "requirement": "If you wear your finely crafted set of personal armor...",
       "category": "Path",
@@ -440,7 +440,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Homesteader": {
+    "3e3e29a3ea71a80e": {
       "name": "Homesteader",
       "requirement": "Once you fill 4 boxes on your bonds legacy track...",
       "category": "Deed",
@@ -462,7 +462,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Navigator": {
+    "4692e18baff8bd18": {
       "name": "Navigator",
       "category": "Path",
       "abilities": [
@@ -478,7 +478,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Augmented": {
+    "4c75d631a38fd3b8": {
       "name": "Augmented",
       "category": "Path",
       "inputFields": [
@@ -502,7 +502,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Healer": {
+    "4fafc93fdd8873ce": {
       "name": "Healer",
       "category": "Path",
       "abilities": [
@@ -518,7 +518,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Heavy Cannons": {
+    "54fa93cb09bf5d88": {
       "name": "Heavy Cannons",
       "category": "Module",
       "abilities": [
@@ -534,7 +534,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Medbay": {
+    "56a9e5dfa8e51287": {
       "name": "Medbay",
       "category": "Module",
       "abilities": [
@@ -550,7 +550,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Crew Commander": {
+    "5700a76b914a881e": {
       "name": "Crew Commander",
       "category": "Path",
       "abilities": [
@@ -566,7 +566,7 @@
       ],
       "conditionMeter": "Command"
     },
-    "Veteran": {
+    "5b517486f8722fdb": {
       "name": "Veteran",
       "category": "Path",
       "abilities": [
@@ -582,7 +582,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Fleet Commander": {
+    "60ad542bfe480b44": {
       "name": "Fleet Commander",
       "requirement": "Once you fill 12 legacy track boxes and take command of a mighty fleet...",
       "category": "Deed",
@@ -604,7 +604,7 @@
         }
       ]
     },
-    "Explorer": {
+    "62c8297fab069013": {
       "name": "Explorer",
       "category": "Path",
       "abilities": [
@@ -620,7 +620,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Sprite": {
+    "663fec98be23a3f5": {
       "name": "Sprite",
       "category": "Companion",
       "inputFields": [
@@ -646,7 +646,7 @@
         }
       ]
     },
-    "Naturalist": {
+    "6830f088164f3c60": {
       "name": "Naturalist",
       "category": "Path",
       "abilities": [
@@ -662,7 +662,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Workshop": {
+    "685a7784d0944a20": {
       "name": "Workshop",
       "category": "Module",
       "abilities": [
@@ -678,7 +678,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Demolitionist": {
+    "69c86f19e7cbcf43": {
       "name": "Demolitionist",
       "category": "Path",
       "abilities": [
@@ -694,7 +694,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Brawler": {
+    "6e439be2dd0bd5a4": {
       "name": "Brawler",
       "requirement": "If you fight unarmed or with a close quarters weapon...",
       "category": "Path",
@@ -711,7 +711,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Vanguard": {
+    "6f2206d5ae2b734b": {
       "name": "Vanguard",
       "requirement": "Once you fill 6 boxes on your discoveries legacy track...",
       "category": "Deed",
@@ -728,7 +728,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Sidekick": {
+    "708cfa0a6ff29049": {
       "name": "Sidekick",
       "category": "Companion",
       "inputFields": [
@@ -757,7 +757,7 @@
         }
       ]
     },
-    "Overseer": {
+    "70aef39e95ed202f": {
       "name": "Overseer",
       "category": "Module",
       "inputFields": [
@@ -778,7 +778,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Shuttle": {
+    "745bc2438fb918ed": {
       "name": "Shuttle",
       "category": "Support Vehicle",
       "inputFields": [
@@ -804,7 +804,7 @@
         }
       ]
     },
-    "Weapon Master": {
+    "761b4d38bb1148d0": {
       "name": "Weapon Master",
       "category": "Path",
       "abilities": [
@@ -820,7 +820,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Voidborn": {
+    "77b99abd50137354": {
       "name": "Voidborn",
       "category": "Path",
       "abilities": [
@@ -836,7 +836,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Loyalist": {
+    "7978ba0785000e24": {
       "name": "Loyalist",
       "category": "Path",
       "abilities": [
@@ -852,7 +852,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Stealth Tech": {
+    "7ed884448731a0fa": {
       "name": "Stealth Tech",
       "category": "Module",
       "abilities": [
@@ -868,7 +868,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Haunted": {
+    "7fdebd942b7163b6": {
       "name": "Haunted",
       "category": "Path",
       "abilities": [
@@ -884,7 +884,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Blademaster": {
+    "82cb2564aae5bf0f": {
       "name": "Blademaster",
       "requirement": "If you wield a bladed weapon...",
       "category": "Path",
@@ -901,7 +901,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Marked": {
+    "8403fda4bc493eb5": {
       "name": "Marked",
       "requirement": "Once you fill 5 boxes on your quests legacy track...",
       "category": "Deed",
@@ -923,7 +923,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Service Pod": {
+    "86175861752f8ce4": {
       "name": "Service Pod",
       "category": "Support Vehicle",
       "inputFields": [
@@ -949,7 +949,7 @@
         }
       ]
     },
-    "Courier": {
+    "87222132d6c0379b": {
       "name": "Courier",
       "category": "Path",
       "abilities": [
@@ -965,7 +965,7 @@
       ],
       "conditionMeter": "Safety"
     },
-    "Protocol Bot": {
+    "8a170a260aef1866": {
       "name": "Protocol Bot",
       "category": "Companion",
       "inputFields": [
@@ -991,7 +991,7 @@
         }
       ]
     },
-    "Reinforced Hull": {
+    "8d155855ddba016c": {
       "name": "Reinforced Hull",
       "category": "Module",
       "abilities": [
@@ -1007,7 +1007,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Missile Array": {
+    "8eb1183afbac2e9e": {
       "name": "Missile Array",
       "category": "Module",
       "abilities": [
@@ -1023,7 +1023,7 @@
       ],
       "conditionMeter": "Ammo"
     },
-    "Exosuit": {
+    "8fc08c6791a3caa0": {
       "name": "Exosuit",
       "category": "Support Vehicle",
       "inputFields": [
@@ -1049,7 +1049,7 @@
         }
       ]
     },
-    "Firebrand": {
+    "9167e29940b36ec1": {
       "name": "Firebrand",
       "category": "Path",
       "abilities": [
@@ -1065,7 +1065,7 @@
       ],
       "conditionMeter": "Fire"
     },
-    "Bannersworn": {
+    "92c1672053d9fba4": {
       "name": "Bannersworn",
       "category": "Path",
       "inputFields": [
@@ -1086,7 +1086,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Fugitive": {
+    "93b030423d23059d": {
       "name": "Fugitive",
       "category": "Path",
       "abilities": [
@@ -1102,7 +1102,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Survivor": {
+    "94806563c3d1dfa4": {
       "name": "Survivor",
       "requirement": "Once you mark traumatized or permanently harmed...",
       "category": "Deed",
@@ -1119,7 +1119,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Cohort": {
+    "950af07a0b1bceb3": {
       "name": "Cohort",
       "requirement": "Once you @Compendium[foundry-ironsworn.starforgedmoves.05909d6310d209a6]{Make a Connection} and take them on as a crewmate...",
       "category": "Deed",
@@ -1136,7 +1136,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Mercenary": {
+    "9530a642ebdca5a5": {
       "name": "Mercenary",
       "category": "Path",
       "abilities": [
@@ -1152,7 +1152,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Seer": {
+    "98f1ff9b338b5695": {
       "name": "Seer",
       "category": "Path",
       "abilities": [
@@ -1168,7 +1168,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Snub Fighter": {
+    "992af1282a7bf8f8": {
       "name": "Snub Fighter",
       "category": "Support Vehicle",
       "inputFields": [
@@ -1194,7 +1194,7 @@
         }
       ]
     },
-    "Fated": {
+    "9ab94d1a123ed80e": {
       "name": "Fated",
       "category": "Path",
       "abilities": [
@@ -1210,7 +1210,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Bounty Hunter": {
+    "9e8a91f52b96c95b": {
       "name": "Bounty Hunter",
       "category": "Path",
       "abilities": [
@@ -1226,7 +1226,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Shields": {
+    "a2b30d037d7be39e": {
       "name": "Shields",
       "category": "Module",
       "abilities": [
@@ -1242,7 +1242,7 @@
       ],
       "conditionMeter": "Shields"
     },
-    "Symbiote": {
+    "aee2cb608775fc97": {
       "name": "Symbiote",
       "category": "Companion",
       "inputFields": [
@@ -1268,7 +1268,7 @@
         }
       ]
     },
-    "Slayer": {
+    "b01dc7301d7d8fb3": {
       "name": "Slayer",
       "category": "Path",
       "abilities": [
@@ -1284,7 +1284,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Oathbreaker": {
+    "b40fdb80c31d46c5": {
       "name": "Oathbreaker",
       "requirement": "Once you @Compendium[foundry-ironsworn.starforgedmoves.449c1e260c941a40]{Forsake Your Vow}...",
       "category": "Deed",
@@ -1301,7 +1301,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Survey Bot": {
+    "b7adf924ed931610": {
       "name": "Survey Bot",
       "category": "Companion",
       "inputFields": [
@@ -1327,7 +1327,7 @@
         }
       ]
     },
-    "Sniper": {
+    "b888c7c1b0fd46db": {
       "name": "Sniper",
       "requirement": "If you wield a rifle...",
       "category": "Path",
@@ -1344,7 +1344,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Archer": {
+    "bbff76cd9b9fb67f": {
       "name": "Archer",
       "requirement": "If you wield a power bow...",
       "category": "Path",
@@ -1361,7 +1361,7 @@
       ],
       "conditionMeter": "Ammo"
     },
-    "Diplomat": {
+    "bcc219b0ebfb5c68": {
       "name": "Diplomat",
       "category": "Path",
       "abilities": [
@@ -1377,7 +1377,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Utility Bot": {
+    "c06ce547c698414c": {
       "name": "Utility Bot",
       "category": "Companion",
       "inputFields": [
@@ -1403,7 +1403,7 @@
         }
       ]
     },
-    "Revenant": {
+    "c2476ae763dbd952": {
       "name": "Revenant",
       "requirement": "Once you @Compendium[foundry-ironsworn.starforgedmoves.0cfcd6fbaf6135d0]{Face Death}...",
       "category": "Deed",
@@ -1420,7 +1420,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Rockhorn": {
+    "c71de9016635bae2": {
       "name": "Rockhorn",
       "category": "Companion",
       "inputFields": [
@@ -1446,7 +1446,7 @@
         }
       ]
     },
-    "Ace": {
+    "c7a0220765d0b579": {
       "name": "Ace",
       "category": "Path",
       "abilities": [
@@ -1462,7 +1462,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Lore Hunter": {
+    "ce347bbfcee2e8ae": {
       "name": "Lore Hunter",
       "category": "Path",
       "abilities": [
@@ -1478,7 +1478,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Artist": {
+    "d0f668219593b7a5": {
       "name": "Artist",
       "category": "Path",
       "abilities": [
@@ -1494,7 +1494,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Vestige": {
+    "d68e04a72dd54d32": {
       "name": "Vestige",
       "category": "Path",
       "inputFields": [
@@ -1515,7 +1515,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Scoundrel": {
+    "d7fbe5fded75531c": {
       "name": "Scoundrel",
       "category": "Path",
       "abilities": [
@@ -1531,7 +1531,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Leader": {
+    "dabb03f5d0a167f0": {
       "name": "Leader",
       "category": "Path",
       "abilities": [
@@ -1547,7 +1547,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Empath": {
+    "db0df04af3ca4cc4": {
       "name": "Empath",
       "category": "Path",
       "abilities": [
@@ -1563,7 +1563,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Banshee": {
+    "e4073bee0b5a7b04": {
       "name": "Banshee",
       "category": "Companion",
       "inputFields": [
@@ -1589,7 +1589,7 @@
         }
       ]
     },
-    "Rover": {
+    "e623b0a98c6c87cb": {
       "name": "Rover",
       "category": "Support Vehicle",
       "inputFields": [
@@ -1615,7 +1615,7 @@
         }
       ]
     },
-    "Gunner": {
+    "e6dd0f7e6ac6e3cc": {
       "name": "Gunner",
       "requirement": "If you wield a heavy ranged personal weapon...",
       "category": "Path",
@@ -1632,7 +1632,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Grappler": {
+    "eec452a2b44b2ee6": {
       "name": "Grappler",
       "category": "Module",
       "abilities": [
@@ -1648,7 +1648,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Sensor Array": {
+    "f344365d99bf87b3": {
       "name": "Sensor Array",
       "category": "Module",
       "abilities": [
@@ -1664,7 +1664,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Trader": {
+    "f64df27e8f9083bd": {
       "name": "Trader",
       "category": "Path",
       "abilities": [
@@ -1680,7 +1680,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Looper": {
+    "fafa7ef1a81ae7d7": {
       "name": "Looper",
       "category": "Path",
       "abilities": [
@@ -1696,7 +1696,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Tech": {
+    "fd358fb5b9dcad41": {
       "name": "Tech",
       "category": "Path",
       "abilities": [
@@ -1712,7 +1712,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Kinetic": {
+    "fd7a1b4ec8ae5771": {
       "name": "Kinetic",
       "category": "Path",
       "abilities": [

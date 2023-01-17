@@ -11,7 +11,7 @@
     "options": "system.exclusiveOptions"
   },
   "entries": {
-    "Giant Spider": {
+    "00ba504ddae0c06d": {
       "name": "Giant Spider",
       "requirement": "Your spider uncovers secrets.",
       "category": "Companion",
@@ -36,7 +36,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Animal Kin": {
+    "03b1a72871745961": {
       "name": "Animal Kin",
       "category": "Path",
       "abilities": [
@@ -52,7 +52,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Blade-Bound": {
+    "04c87926913c3612": {
       "name": "Blade-Bound",
       "requirement": "Once you mark a bond with a kin-blade, a sentient weapon imbued with the spirit of your ancestor...",
       "category": "Path",
@@ -74,7 +74,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Infiltrator": {
+    "0636995c2d9af2c6": {
       "name": "Infiltrator",
       "category": "Path",
       "abilities": [
@@ -90,7 +90,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Mammoth": {
+    "0b27c8e07fdd4fbc": {
       "name": "Mammoth",
       "requirement": "Your mammoth walks a resolute path.",
       "category": "Companion",
@@ -115,7 +115,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Revenant": {
+    "0bdeecae41e18172": {
       "name": "Revenant",
       "requirement": "Once you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death} and return to the world of the living...",
       "category": "Path",
@@ -132,7 +132,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Young Wyvern": {
+    "0d35e94d513f0a64": {
       "name": "Young Wyvern",
       "requirement": "Your wyvern won’t devour you. For now.",
       "category": "Companion",
@@ -157,7 +157,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Invoke": {
+    "0f0755a88b6dae09": {
       "name": "Invoke",
       "category": "Ritual",
       "abilities": [
@@ -173,7 +173,7 @@
       ],
       "conditionMeter": "Essence"
     },
-    "Sway": {
+    "13ed0564db8f97aa": {
       "name": "Sway",
       "category": "Ritual",
       "abilities": [
@@ -189,7 +189,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Augur": {
+    "153f1eb966607782": {
       "name": "Augur",
       "category": "Ritual",
       "abilities": [
@@ -205,7 +205,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Visage": {
+    "15b725bb12711958": {
       "name": "Visage",
       "category": "Ritual",
       "abilities": [
@@ -221,7 +221,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Wright": {
+    "1b5af86638bfe3a1": {
       "name": "Wright",
       "category": "Path",
       "inputFields": [
@@ -242,7 +242,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Keen": {
+    "1e977a081d0ffa91": {
       "name": "Keen",
       "category": "Ritual",
       "abilities": [
@@ -258,7 +258,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Wayfinder": {
+    "1fc65674606733f7": {
       "name": "Wayfinder",
       "category": "Path",
       "abilities": [
@@ -274,7 +274,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Improviser": {
+    "20909cc1f3071721": {
       "name": "Improviser",
       "category": "Path",
       "abilities": [
@@ -290,7 +290,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Leech": {
+    "236be2e679ef8420": {
       "name": "Leech",
       "category": "Ritual",
       "abilities": [
@@ -306,7 +306,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Spirit-Bound": {
+    "251eda40699e98e7": {
       "name": "Spirit-Bound",
       "category": "Path",
       "abilities": [
@@ -322,7 +322,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Sunderer": {
+    "273d07c95cd1c166": {
       "name": "Sunderer",
       "requirement": "If you wield an axe...",
       "category": "Combat Talent",
@@ -339,7 +339,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Ironclad": {
+    "2d3070fbde3039ac": {
       "name": "Ironclad",
       "requirement": "If you wear armor...",
       "category": "Combat Talent",
@@ -364,7 +364,7 @@
         }
       ]
     },
-    "Slinger": {
+    "326fd92b2e6d2b72": {
       "name": "Slinger",
       "requirement": "If you wield a sling...",
       "category": "Combat Talent",
@@ -381,7 +381,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Communion": {
+    "36d419710e044188": {
       "name": "Communion",
       "category": "Ritual",
       "abilities": [
@@ -397,7 +397,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Sighted": {
+    "37487d67a9217a34": {
       "name": "Sighted",
       "category": "Path",
       "abilities": [
@@ -413,7 +413,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Fated": {
+    "374ac3f212dec7a9": {
       "name": "Fated",
       "category": "Path",
       "abilities": [
@@ -429,7 +429,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Outcast": {
+    "396433f39ad3318f": {
       "name": "Outcast",
       "category": "Path",
       "abilities": [
@@ -445,7 +445,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Oathbreaker": {
+    "3e00199bf4b596d5": {
       "name": "Oathbreaker",
       "requirement": "Once you @Compendium[foundry-ironsworn.ironswornmoves.f968f5e0a837a83a]{Forsake Your Vow}...",
       "category": "Path",
@@ -462,7 +462,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Long-Arm": {
+    "423bcfe28d34228b": {
       "name": "Long-Arm",
       "requirement": "If you wield a staff...",
       "category": "Combat Talent",
@@ -479,7 +479,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Kindred": {
+    "42b2403326eb2098": {
       "name": "Kindred",
       "requirement": "Your friend stands by you.",
       "category": "Companion",
@@ -504,7 +504,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Loyalist": {
+    "442f32d8fa97f4df": {
       "name": "Loyalist",
       "category": "Path",
       "abilities": [
@@ -520,7 +520,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Cutthroat": {
+    "451486420967253f": {
       "name": "Cutthroat",
       "requirement": "If you wield a dagger or knife...",
       "category": "Combat Talent",
@@ -537,7 +537,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Brawler": {
+    "477ea0401fa056c3": {
       "name": "Brawler",
       "requirement": "If you are unarmed or fighting with a non-deadly weapon...",
       "category": "Combat Talent",
@@ -554,7 +554,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Empowered": {
+    "47f9b350e463ae1b": {
       "name": "Empowered",
       "category": "Path",
       "inputFields": [
@@ -575,7 +575,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Horse": {
+    "4b92f6859793c0b8": {
       "name": "Horse",
       "requirement": "You and your horse ride as one.",
       "category": "Companion",
@@ -600,7 +600,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Fortune Hunter": {
+    "4d63664ebda2297a": {
       "name": "Fortune Hunter",
       "category": "Path",
       "abilities": [
@@ -616,7 +616,7 @@
       ],
       "conditionMeter": "Wealth"
     },
-    "Bonded": {
+    "527f8eb6bdcc729d": {
       "name": "Bonded",
       "category": "Path",
       "abilities": [
@@ -632,7 +632,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Ritualist": {
+    "55a3b0ee5d864242": {
       "name": "Ritualist",
       "requirement": "Once you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} (formidable or greater) in service to an elder\nmystic, and @Compendium[foundry-ironsworn.ironswornmoves.b643d9ea53ff8d98]{Forge a Bond} to train with them...",
       "category": "Path",
@@ -649,7 +649,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Tether": {
+    "56eb2ad6c077dc00": {
       "name": "Tether",
       "category": "Ritual",
       "abilities": [
@@ -665,7 +665,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Commander": {
+    "57f5d48e8b42672d": {
       "name": "Commander",
       "category": "Path",
       "abilities": [
@@ -681,7 +681,7 @@
       ],
       "conditionMeter": "Strength"
     },
-    "Weaponmaster": {
+    "5c59c95dd4677c7d": {
       "name": "Weaponmaster",
       "requirement": "Once you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} (formidable or greater) in service to a seasoned warrior, and @Compendium[foundry-ironsworn.ironswornmoves.b643d9ea53ff8d98]{Forge a Bond} to train with them...",
       "category": "Path",
@@ -698,7 +698,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Bind": {
+    "5dae96957d13ef59": {
       "name": "Bind",
       "category": "Ritual",
       "abilities": [
@@ -714,7 +714,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Shield-Bearer": {
+    "5e86f277a23f1113": {
       "name": "Shield-Bearer",
       "requirement": "If you wield a shield...",
       "category": "Combat Talent",
@@ -731,7 +731,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Battle-Scarred": {
+    "66c77ad45a248aa4": {
       "name": "Battle-Scarred",
       "requirement": "Once you become maimed...",
       "category": "Path",
@@ -748,7 +748,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Archer": {
+    "6926a7946db88fb0": {
       "name": "Archer",
       "requirement": "If you wield a bow...",
       "category": "Combat Talent",
@@ -765,7 +765,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Swordmaster": {
+    "69c1fb37cca33c7f": {
       "name": "Swordmaster",
       "requirement": "If you wield a sword...",
       "category": "Combat Talent",
@@ -782,7 +782,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Wildblood": {
+    "6b9296e71492e653": {
       "name": "Wildblood",
       "category": "Path",
       "abilities": [
@@ -798,7 +798,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Owl": {
+    "6dd53ac5ff6509c5": {
       "name": "Owl",
       "requirement": "Your owl soars through the darkness.",
       "category": "Companion",
@@ -823,7 +823,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Berserker": {
+    "706e4c7598fbe5cf": {
       "name": "Berserker",
       "requirement": "If you are clad only in animal pelts...",
       "category": "Combat Talent",
@@ -840,7 +840,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Divination": {
+    "7348f1fbd148fc9b": {
       "name": "Divination",
       "category": "Ritual",
       "abilities": [
@@ -856,7 +856,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Ward": {
+    "7367052c4a8487c4": {
       "name": "Ward",
       "category": "Ritual",
       "abilities": [
@@ -872,7 +872,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Lorekeeper": {
+    "76a77fceda12651b": {
       "name": "Lorekeeper",
       "category": "Path",
       "abilities": [
@@ -888,7 +888,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Masked": {
+    "791b0f94c35cdd8c": {
       "name": "Masked",
       "requirement": "Once you mark a bond with elves, and are gifted a mask of precious elderwood...",
       "category": "Path",
@@ -919,7 +919,7 @@
         }
       ]
     },
-    "Honorbound": {
+    "7972c98dd1950a40": {
       "name": "Honorbound",
       "category": "Path",
       "abilities": [
@@ -935,7 +935,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Totem": {
+    "7bc6083bc264421c": {
       "name": "Totem",
       "category": "Ritual",
       "abilities": [
@@ -951,7 +951,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Shadow-Walk": {
+    "81f991193d03427b": {
       "name": "Shadow-Walk",
       "category": "Ritual",
       "abilities": [
@@ -967,7 +967,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Talisman": {
+    "84e9642aa474c8f2": {
       "name": "Talisman",
       "category": "Ritual",
       "abilities": [
@@ -983,7 +983,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Hawk": {
+    "85f433e1e8451ce4": {
       "name": "Hawk",
       "requirement": "Your hawk can aid you while it is aloft.",
       "category": "Companion",
@@ -1008,7 +1008,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Lightbearer": {
+    "88d41f2b0c60c55a": {
       "name": "Lightbearer",
       "category": "Ritual",
       "abilities": [
@@ -1024,7 +1024,7 @@
       ],
       "conditionMeter": "Light"
     },
-    "Thunder-Bringer": {
+    "89c41b8229d92ade": {
       "name": "Thunder-Bringer",
       "requirement": "If you wield a mighty hammer...",
       "category": "Combat Talent",
@@ -1041,7 +1041,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Scry": {
+    "914329828cf3de4b": {
       "name": "Scry",
       "category": "Ritual",
       "abilities": [
@@ -1057,7 +1057,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Slayer": {
+    "933e5f8efc35f206": {
       "name": "Slayer",
       "category": "Path",
       "abilities": [
@@ -1073,7 +1073,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Duelist": {
+    "962309d5fcf3ac53": {
       "name": "Duelist",
       "requirement": "If you wield a bladed weapon in each hand...",
       "category": "Combat Talent",
@@ -1090,7 +1090,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Alchemist": {
+    "98bf680786f73035": {
       "name": "Alchemist",
       "category": "Path",
       "abilities": [
@@ -1106,7 +1106,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Shadow-Kin": {
+    "ac35a2e607c86003": {
       "name": "Shadow-Kin",
       "requirement": "Once you become corrupted...",
       "category": "Path",
@@ -1123,7 +1123,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Dancer": {
+    "b4d8d1c527faa8c0": {
       "name": "Dancer",
       "category": "Path",
       "abilities": [
@@ -1139,7 +1139,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Veteran": {
+    "bc1d497da5950da5": {
       "name": "Veteran",
       "category": "Path",
       "abilities": [
@@ -1155,7 +1155,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Banner-Sworn": {
+    "bc8db0abea6bdc73": {
       "name": "Banner-Sworn",
       "requirement": "Once you mark a bond with a leader or faction...",
       "category": "Path",
@@ -1177,7 +1177,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Fletcher": {
+    "bedf73be9b9ef0a8": {
       "name": "Fletcher",
       "category": "Combat Talent",
       "abilities": [
@@ -1193,7 +1193,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Herbalist": {
+    "c0411e3ea22ea5c7": {
       "name": "Herbalist",
       "category": "Path",
       "abilities": [
@@ -1209,7 +1209,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Pretender": {
+    "c4f6c49b2b3d9a35": {
       "name": "Pretender",
       "category": "Path",
       "abilities": [
@@ -1225,7 +1225,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Cave Lion": {
+    "d0a165b555a66717": {
       "name": "Cave Lion",
       "requirement": "Your cat takes down its prey.",
       "category": "Companion",
@@ -1250,7 +1250,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Waterborn": {
+    "d9aee221fb9b67ea": {
       "name": "Waterborn",
       "category": "Path",
       "abilities": [
@@ -1266,7 +1266,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Skirmisher": {
+    "dadad68f11e12d1c": {
       "name": "Skirmisher",
       "requirement": "If you wield a spear...",
       "category": "Combat Talent",
@@ -1283,7 +1283,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Devotant": {
+    "e22239c28754b5a2": {
       "name": "Devotant",
       "category": "Path",
       "inputFields": [
@@ -1321,7 +1321,7 @@
         }
       ]
     },
-    "Raven": {
+    "e5ff13d9dfb1688b": {
       "name": "Raven",
       "requirement": "Your raven heeds your call.",
       "category": "Companion",
@@ -1346,7 +1346,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Hound": {
+    "ea35adf52c5b108e": {
       "name": "Hound",
       "requirement": "Your hound is your steadfast companion.",
       "category": "Companion",
@@ -1371,7 +1371,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Storyweaver": {
+    "efae6bb28decca8a": {
       "name": "Storyweaver",
       "category": "Path",
       "abilities": [
@@ -1387,7 +1387,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Awakening": {
+    "f046c70dae00c59e": {
       "name": "Awakening",
       "category": "Ritual",
       "abilities": [
@@ -1403,7 +1403,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Trickster": {
+    "f090095196ad0dd5": {
       "name": "Trickster",
       "category": "Path",
       "abilities": [
@@ -1419,7 +1419,7 @@
       ],
       "conditionMeter": "Health"
     },
-    "Rider": {
+    "f9cebc2a4b73432d": {
       "name": "Rider",
       "requirement": "If you are with your horse companion...",
       "category": "Path",
