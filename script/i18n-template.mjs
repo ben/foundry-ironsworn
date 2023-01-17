@@ -58,38 +58,36 @@ export function parseFoundryDb(packData) {
 
 /**
  *
- * @param {string} documentType The document type to get the mapping for.
- * @returns {Record<string,string>|undefined}
- */
-export function getMapping(documentType) {
-  const filePath = path.resolve(I18N_PATH, 'mappings.json')
-  const json = JSON.parse(readFileSync(filePath, { encoding: 'utf8' }))
-  return json[documentType]
-}
-
-/**
- *
  * @param {PackData} packData The pack data object from `system.json`.
- * @param {string} documentType The expected document type.
  */
-export function writeLocaleTemplate(packData, documentType) {
+export function writeLocaleTemplate(packData) {
+  const mappingFilePath = path.resolve(I18N_PATH, 'mappings.json')
+  const mappingData = JSON.parse(
+    readFileSync(mappingFilePath, { encoding: 'utf8' })
+  )
   const documentData = parseFoundryDb(packData)
-  console.log(`Writing template for "${packData.label}" (${packData.path})...`)
+  console.log(
+    `Writing localization template for "${packData.label}" (${packData.path})...`
+  )
   // TODO: flatten objects for key comparison
-  const mapping = getMapping(documentType)
-  if (!mapping) {
-    throw new Error(`No mapping available for type: ${documentType}`)
-  }
-  const entries = {}
+
+  const dataOut = { label: packData.label, mapping: {}, entries: {} }
 
   documentData.forEach((document) => {
+    const mapping = mappingData[document.type]
+
+    if (!mapping) {
+      throw new Error(`No mapping available for type: ${document.type}`)
+    }
+
     const key = document.name
     if (!key) {
       throw new Error("Document data has no 'name' key.")
     }
-    if (entries[key]) {
+    if (dataOut.entries[key]) {
       throw new Error(`Duplicate ${document.type} key: ${key}`)
     }
+
     const documentLocale = {}
 
     _.forEach(mapping, (oldKey, newKey) => {
@@ -124,10 +122,12 @@ export function writeLocaleTemplate(packData, documentType) {
         }
       }
     })
-    entries[key] = documentLocale
-  })
+    dataOut.entries[key] = documentLocale
 
-  const dataOut = { label: packData.label, mapping, entries }
+    if (_.isEmpty(dataOut.mapping)) {
+      dataOut.mapping = mapping
+    }
+  })
 
   const json = JSON.stringify(dataOut, undefined, 2)
   const baseName = `${packData.system}.${path.basename(
@@ -150,5 +150,3 @@ assetData.forEach((pack) => writeLocaleTemplate(pack, 'asset'))
  */
 const moveData = packs.filter((pack) => pack.label.includes('Moves'))
 moveData.forEach((pack) => writeLocaleTemplate(pack, 'sfmove'))
-
-const oracleData = packs.filter((pack) => pack.label.includes('Oracles'))
