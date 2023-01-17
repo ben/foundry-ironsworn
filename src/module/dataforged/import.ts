@@ -196,6 +196,10 @@ function assetsForTypes(types: IAssetType[]) {
             enabled: ability.Enabled || false,
             description: renderLinksInStr(ability.Text),
           } as any
+          // Insert name for the handful of asset abilities that use it
+          if (ability.Name) {
+            ret.description = `**${ability.Name}:** ${ret.description}`
+          }
 
           for (const input of ability.Inputs ?? []) {
             if (input['Input Type'] === 'Clock') {
