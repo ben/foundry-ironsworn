@@ -135,8 +135,13 @@ export function writeLocaleTemplate(packData, documentType) {
 /**
  * @type {PackData[]}
  */
-const testData = packs.filter((pack) =>
-  ['Assets'].some((str) => pack.label.includes(str))
-)
+const assetData = packs.filter((pack) => pack.label.includes('Assets'))
+assetData.forEach((pack) => writeLocaleTemplate(pack, 'asset'))
 
-testData.forEach((pack) => writeLocaleTemplate(pack, 'asset'))
+/**
+ * @type {PackData[]}
+ */
+const moveData = packs.filter((pack) => pack.label.includes('Moves'))
+moveData.forEach((pack) => writeLocaleTemplate(pack, 'sfmove'))
+
+const oracleData = packs.filter((pack) => pack.label.includes('Oracles'))
