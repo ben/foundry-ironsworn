@@ -1,0 +1,492 @@
+{
+  "label": "Ironsworn Delve Themes",
+  "mapping": {
+    "name": "name",
+    "summary": "system.summary",
+    "description": "system.description",
+    "features": "system.features",
+    "dangers": "system.dangers"
+  },
+  "entries": {
+    "Haunted": {
+      "name": "Haunted",
+      "summary": "Restless spirits are bound to this place.",
+      "description": "Within a haunted site, dread, sadness, and fear are palpable. Disturbing sounds and visions lure the unwary and terrorize the vulnerable. Gird your will when you enter this place, for you walk at the boundary of life and death.\n\nSome lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. But all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing but hate for the living and a hunger for warmth which will never be sated.",
+      "features": [
+        {
+          "description": "Tomb or burial site"
+        },
+        {
+          "description": "Blood was spilled here"
+        },
+        {
+          "description": "Unnatural mists or darkness"
+        },
+        {
+          "description": "Messages from beyond the grave"
+        },
+        {
+          "description": "Apparitions of a person or event"
+        }
+      ],
+      "dangers": [
+        {
+          "description": "Denizen haunts this area"
+        },
+        {
+          "description": "Unsettling sounds or foreboding signs"
+        },
+        {
+          "description": "Denizen attacks without warning"
+        },
+        {
+          "description": "Denizen makes a costly demand"
+        },
+        {
+          "description": "Denizen seizes your body or mind"
+        },
+        {
+          "description": "Denizen taunts or lures you"
+        },
+        {
+          "description": "A disturbing truth is revealed"
+        },
+        {
+          "description": "Frightening visions"
+        },
+        {
+          "description": "The environment is used against you"
+        },
+        {
+          "description": "Trickery leads you astray"
+        },
+        {
+          "description": "True nature of this place is revealed"
+        },
+        {
+          "description": "Sudden, shocking manifestation"
+        }
+      ]
+    },
+    "Ancient": {
+      "name": "Ancient",
+      "summary": "This place holds the secrets of a bygone age.",
+      "description": "An ancient site contains the mysteries, legacies, and dangers of another age.\n\nWalking the paths of this place is like stepping through time. Ruins and relics provide glimpses of long-forgotten people and events. The knowledge and power hidden here are a tempting lure, but those treasures may come with a dire cost. Some secrets are best left buried.",
+      "features": [
+        {
+          "description": "Evidence of lost knowledge"
+        },
+        {
+          "description": "Inscrutable relics"
+        },
+        {
+          "description": "Ancient artistry or craft"
+        },
+        {
+          "description": "Preserved corpses or fossils"
+        },
+        {
+          "description": "Visions of this place in another time"
+        }
+      ],
+      "dangers": [
+        {
+          "description": "Ancient trap"
+        },
+        {
+          "description": "Hazardous architecture or terrain"
+        },
+        {
+          "description": "Blocked or broken path"
+        },
+        {
+          "description": "Denizen protects an ancient secret"
+        },
+        {
+          "description": "Denizen reveres an ancient power"
+        },
+        {
+          "description": "Living relics of a lost age"
+        },
+        {
+          "description": "Ancient evil resurgent"
+        },
+        {
+          "description": "Dire warnings of a long-buried danger"
+        },
+        {
+          "description": "Ancient disease or contamination"
+        },
+        {
+          "description": "Artifact of terrible meaning or power"
+        },
+        {
+          "description": "Disturbing evidence of ancient wrongs"
+        },
+        {
+          "description": "Others seek power or knowledge"
+        }
+      ]
+    },
+    "Infested": {
+      "name": "Infested",
+      "summary": "Foul creatures dwell here.",
+      "description": "Foul creatures swarm these sites, overwhelming trespassers with sheer numbers and unchecked ferocity. The denizens do little beyond multiplying, feeding, and expanding, ravenous for fresh kills to feed the swarm.\n\nNavigation through this place, across paths undermined by the hordes, may be perilous. The sights and smells may test your fortitude. But it is the creatures which pose the greatest threat, as they ambush and cut off your escape with unforeseen cunning.",
+      "features": [
+        {
+          "description": "Inhabited nest"
+        },
+        {
+          "description": "Abandoned nest"
+        },
+        {
+          "description": "Ravaged terrain or architecture"
+        },
+        {
+          "description": "Remains or carrion"
+        },
+        {
+          "description": "Hoarded food"
+        }
+      ],
+      "dangers": [
+        {
+          "description": "Denizens swarm and attack"
+        },
+        {
+          "description": "Toxic or sickening environment"
+        },
+        {
+          "description": "Denizen stalks you"
+        },
+        {
+          "description": "Denizen takes or destroys something"
+        },
+        {
+          "description": "Denizen reveals surprising cleverness"
+        },
+        {
+          "description": "Denizen guided by a greater threat"
+        },
+        {
+          "description": "Denizen blocks the path"
+        },
+        {
+          "description": "Denizen funnels you down a new path"
+        },
+        {
+          "description": "Denizen undermines the path"
+        },
+        {
+          "description": "Denizen lays in wait"
+        },
+        {
+          "description": "Trap or snare"
+        },
+        {
+          "description": "Victim’s horrible fate is revealed"
+        }
+      ]
+    },
+    "Fortified": {
+      "name": "Fortified",
+      "summary": "Foes defend this place against intruders.",
+      "description": "A fortified site is held and defended by an enemy force. It might be an enemy camp, an outpost, a fortress, or a closely-guarded territory.\n\nInfiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to your objective.",
+      "features": [
+        {
+          "description": "Camp or quarters"
+        },
+        {
+          "description": "Guarded location"
+        },
+        {
+          "description": "Storage or repository"
+        },
+        {
+          "description": "Work or training area"
+        },
+        {
+          "description": "Command center or leadership"
+        }
+      ],
+      "dangers": [
+        {
+          "description": "Denizen patrols the area"
+        },
+        {
+          "description": "Denizen on guard"
+        },
+        {
+          "description": "Denizen ready to sound the alarm"
+        },
+        {
+          "description": "Denizen sets an ambush"
+        },
+        {
+          "description": "Denizen lures you into a trap"
+        },
+        {
+          "description": "Denizens converge on this area"
+        },
+        {
+          "description": "Pets or underlings"
+        },
+        {
+          "description": "Unexpected alliance revealed"
+        },
+        {
+          "description": "Nefarious plans revealed"
+        },
+        {
+          "description": "Unexpected leader revealed"
+        },
+        {
+          "description": "Trap"
+        },
+        {
+          "description": "Alarm trigger"
+        }
+      ]
+    },
+    "Ravaged": {
+      "name": "Ravaged",
+      "summary": "Time, disaster, or strife have taken their toll.",
+      "description": "Time, weather, war, or calamity have laid waste to a ravaged site. The terrain is precarious. Hazards lurk around every corner. You may face glimpses of a former greatness, but this place is a ruined shadow of what it once was.\n\nTraversing a ravaged site requires care, cunning, and quick wits to react to sudden perils. The environment here is your greatest enemy. It is a force, as willful as any intelligent adversary, which will see your quest undone.",
+      "features": [
+        {
+          "description": "Path of destruction"
+        },
+        {
+          "description": "Abandoned or ruined dwelling"
+        },
+        {
+          "description": "Untouched or preserved area"
+        },
+        {
+          "description": "Traces of what was lost"
+        },
+        {
+          "description": "Ill-fated victims"
+        }
+      ],
+      "dangers": [
+        {
+          "description": "Precarious architecture or terrain"
+        },
+        {
+          "description": "Imminent collapse or destruction"
+        },
+        {
+          "description": "Path undermined"
+        },
+        {
+          "description": "Blocked or broken path"
+        },
+        {
+          "description": "Vestiges of a destructive force"
+        },
+        {
+          "description": "Unexpected environmental threat"
+        },
+        {
+          "description": "Echoes of a troubling past"
+        },
+        {
+          "description": "Signs of a horrible fate"
+        },
+        {
+          "description": "Denizen seeks retribution"
+        },
+        {
+          "description": "Denizen leverages the environment"
+        },
+        {
+          "description": "Denizen restores what was lost"
+        },
+        {
+          "description": "Ravages return anew"
+        }
+      ]
+    },
+    "Corrupted": {
+      "name": "Corrupted",
+      "summary": "This place is tainted by dark magic.",
+      "description": "A corrupted site is befouled by dark forces. It might be the ancient magic of the Ironlands, or the residue of ancient evils, concentrated here like poisoned water soaked into a sponge. Perhaps a powerful mystic dwells in this place, one who walks a sinister path in search of power.\n\nWhen you enter a corrupted site, you can feel the wrongness of it down to your bones. The air is tainted with foul smells, or tinged with strange energies. You hear unintelligible whispers. Shadows lurk at the edge of your vision. The creatures of this place are twisted by corruption, and the people are in thrall to a dark influence.",
+      "features": [
+        {
+          "description": "Mystic focus or conduit"
+        },
+        {
+          "description": "Strange environmental disturbances"
+        },
+        {
+          "description": "Mystic runes or markings"
+        },
+        {
+          "description": "Blight or decay"
+        },
+        {
+          "description": "Evidence of a foul ritual"
+        }
+      ],
+      "dangers": [
+        {
+          "description": "Denizen spawned from dark magic"
+        },
+        {
+          "description": "Denizen controls dark magic"
+        },
+        {
+          "description": "Denizen corrupted by dark magic"
+        },
+        {
+          "description": "Corruption marks you"
+        },
+        {
+          "description": "Innocents held in thrall"
+        },
+        {
+          "description": "Revelations of a terrible truth"
+        },
+        {
+          "description": "Mystic trap or trigger"
+        },
+        {
+          "description": "Mystic barrier or ward"
+        },
+        {
+          "description": "Illusions lead you astray"
+        },
+        {
+          "description": "Dark ritual in progress"
+        },
+        {
+          "description": "Lingering effects of a dark ritual"
+        },
+        {
+          "description": "Dread harbingers of a greater magic"
+        }
+      ]
+    },
+    "Wild": {
+      "name": "Wild",
+      "summary": "Nature prevails in this place.",
+      "description": "Despite our attempts to extend our control into untracked reaches, the primal forces of nature still hold sway across the Ironlands. In those wild places, we must test our shields against tooth and claw, our wits against insidious creatures, and our resolve against dangerous terrain and harsh environments.\n\nBe wary when you enter the wild places of this world. Beyond the comforting walls of your village, you are not the hunter. You are the prey.",
+      "features": [
+        {
+          "description": "Denizen’s lair"
+        },
+        {
+          "description": "Territorial markings"
+        },
+        {
+          "description": "Impressive flora or fauna"
+        },
+        {
+          "description": "Hunting ground or watering hole"
+        },
+        {
+          "description": "Remains or carrion"
+        }
+      ],
+      "dangers": [
+        {
+          "description": "Denizen hunts"
+        },
+        {
+          "description": "Denizen strikes without warning"
+        },
+        {
+          "description": "Denizen leverages the environment"
+        },
+        {
+          "description": "Denizen wields unexpected abilities"
+        },
+        {
+          "description": "Denizen guided by a greater threat"
+        },
+        {
+          "description": "Denizen protects something"
+        },
+        {
+          "description": "Hazardous terrain"
+        },
+        {
+          "description": "Weather or environmental threat"
+        },
+        {
+          "description": "Benign aspect becomes a threat"
+        },
+        {
+          "description": "Overzealous hunter"
+        },
+        {
+          "description": "Disturbing evidence of a victim’s fate"
+        },
+        {
+          "description": "Ill-fated victim in danger"
+        }
+      ]
+    },
+    "Hallowed": {
+      "name": "Hallowed",
+      "summary": "The faithful worship here.",
+      "description": "A hallowed site is a place of great reverence, suffused with the power of old gods or the fervency of belief. It might be a location of religious significance, the resting place of legendary relics or figures, or the haven of a religious leader.\n\nHallowed places may be warded by ancient rituals, or imbued with divine energy. But it is the faithful and the zealous who will sacrifice everything to defend this place.",
+      "features": [
+        {
+          "description": "Temple or altar"
+        },
+        {
+          "description": "Offerings or atonements"
+        },
+        {
+          "description": "Religious relic or idol"
+        },
+        {
+          "description": "Consecrated ground"
+        },
+        {
+          "description": "Dwellings or gathering place"
+        }
+      ],
+      "dangers": [
+        {
+          "description": "Denizen defends their sanctum"
+        },
+        {
+          "description": "Denizen enacts the will of their god"
+        },
+        {
+          "description": "Denizen seeks martyrdom"
+        },
+        {
+          "description": "Secret of the faith is revealed"
+        },
+        {
+          "description": "Greater purpose is revealed"
+        },
+        {
+          "description": "Unexpected disciples are revealed"
+        },
+        {
+          "description": "Divine manifestations"
+        },
+        {
+          "description": "Aspect of the faith beguiles you"
+        },
+        {
+          "description": "Unexpected leader is revealed"
+        },
+        {
+          "description": "Embodiment of a god or myth"
+        },
+        {
+          "description": "Protective ward or barrier"
+        },
+        {
+          "description": "Prophecies reveal a dark fate"
+        }
+      ]
+    }
+  }
+}

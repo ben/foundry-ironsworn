@@ -107,7 +107,10 @@ export function writeLocaleTemplate(packData) {
         } else if (Array.isArray(mappedValue)) {
           {
             const filteredArray = mappedValue.map((mappedchild) =>
-              _.pickBy(mappedchild, (_, key) => I18N_KEYS.includes(key))
+              _.pickBy(
+                mappedchild,
+                (value, key) => I18N_KEYS.includes(key) && !_.isEmpty(value)
+              )
             )
             if (
               filteredArray.length &&
@@ -146,10 +149,26 @@ export function writeLocaleTemplate(packData) {
  * @type {PackData[]}
  */
 const assetData = packs.filter((pack) => pack.label.includes('Assets'))
-assetData.forEach((pack) => writeLocaleTemplate(pack, 'asset'))
+assetData.forEach((pack) => writeLocaleTemplate(pack))
 
 /**
  * @type {PackData[]}
  */
 const moveData = packs.filter((pack) => pack.label.includes('Moves'))
-moveData.forEach((pack) => writeLocaleTemplate(pack, 'sfmove'))
+moveData.forEach((pack) => writeLocaleTemplate(pack))
+
+/**
+ * @type {PackData[]}
+ */
+const siteThemeData = packs.filter((pack) =>
+  pack.label.includes('Delve Themes')
+)
+siteThemeData.forEach((pack) => writeLocaleTemplate(pack))
+
+/**
+ * @type {PackData[]}
+ */
+const siteDomainData = packs.filter((pack) =>
+  pack.label.includes('Delve Domains')
+)
+siteDomainData.forEach((pack) => writeLocaleTemplate(pack))
