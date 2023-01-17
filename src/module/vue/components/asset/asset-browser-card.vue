@@ -35,7 +35,7 @@
           v-html="$enrichHtml(system.description ?? '')"
           v-if="system.description"
         ></div>
-        <div v-html="$enrichHtml(system.requirement ?? '')"></div>
+        <div v-html="$enrichMarkdown(system.requirement ?? '')"></div>
         <dl class="asset-fields" v-if="system.fields?.length">
           <div
             class="asset-field"
@@ -60,7 +60,7 @@
           >
             <div
               class="asset-ability-text flexcol"
-              v-html="$enrichHtml(ability.description)"
+              v-html="$enrichMarkdown(ability.description)"
             ></div>
             <clock
               v-if="ability.hasClock"

@@ -32,6 +32,9 @@ export const I18N_KEYS = [
   'label',
   'Label',
   'biography',
+  'Result',
+  'Quest Starter',
+  'Subtable',
 ]
 
 /**

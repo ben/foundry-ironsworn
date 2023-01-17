@@ -187,14 +187,14 @@ function assetsForTypes(types: IAssetType[]) {
       }
 
       const data = {
-        requirement: renderMarkdown(asset.Requirement ?? ''),
+        requirement: renderLinksInStr(asset.Requirement ?? ''),
         category: assetType.Name,
         color: assetType.Display.Color ?? '',
         fields,
         abilities: (asset.Abilities ?? []).map((ability) => {
           const ret = {
             enabled: ability.Enabled || false,
-            description: renderMarkdown(ability.Text),
+            description: renderLinksInStr(ability.Text),
           } as any
 
           for (const input of ability.Inputs ?? []) {
