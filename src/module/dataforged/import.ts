@@ -19,6 +19,7 @@ import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import { NumericRank } from '../constants'
 import { IronswornItem } from '../item/item'
+import { AssetAbility } from '../item/itemtypes'
 import {
   ISAssetTypes,
   ISMoveCategories,
@@ -192,14 +193,11 @@ function assetsForTypes(types: IAssetType[]) {
         color: assetType.Display.Color ?? '',
         fields,
         abilities: (asset.Abilities ?? []).map((ability) => {
-          const ret = {
+          const ret: AssetAbility = {
+            name: ability.Name || null,
             enabled: ability.Enabled || false,
             description: renderLinksInStr(ability.Text),
           } as any
-          // Insert name for the handful of asset abilities that use it
-          if (ability.Name) {
-            ret.description = `**${ability.Name}:** ${ret.description}`
-          }
 
           for (const input of ability.Inputs ?? []) {
             if (input['Input Type'] === 'Clock') {
