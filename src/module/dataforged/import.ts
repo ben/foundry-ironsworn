@@ -12,7 +12,7 @@ import {
   Starforged,
   starforged,
 } from 'dataforged'
-import { isArray, isObject, max } from 'lodash'
+import { isArray, isObject, max, maxBy } from 'lodash'
 import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
@@ -136,7 +136,9 @@ function movesForCategories(
       movesToCreate.push({
         _id: hashLookup(cleanMove['dfid']),
         type: 'sfmove',
-        name: move.Name,
+        name:
+          maxBy([move.Name, move.Display.Title], (name) => name.length) ??
+          move.Name,
         img: 'icons/dice/d10black.svg',
         system: cleanMove,
       })
