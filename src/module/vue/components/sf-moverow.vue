@@ -13,7 +13,7 @@
     :toggleButtonClass="['bordered', $style.toggleButton, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
-    :toggleLabel="move?.moveItem().name"
+    :toggleLabel="(move?.moveItem().name as string)"
     :data-move-id="move.moveItem().id"
   >
     <template #after-toggle>

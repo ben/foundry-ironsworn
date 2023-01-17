@@ -153,7 +153,7 @@ const searchResults = computed(() => {
   if (!checkedSearchQuery.value) return null
 
   const re = new RegExp(checkedSearchQuery.value, 'i')
-  return flatMoves.value.filter((x) => re.test(x.name))
+  return flatMoves.value.filter((x) => re.test(x.moveItem().name as string))
 })
 
 function clearSearch() {
