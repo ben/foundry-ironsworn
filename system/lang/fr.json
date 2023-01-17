@@ -144,16 +144,9 @@
     "ChallengeRank": "Rang du défi",
     "Completed": "Achevé",
     "NotCompleted": "Non achevé",
-    "Features": "Caractéristiques",
-    "Feature": "Caractéristique",
-    "Dangers": "Dangers",
     "Foes": "Ennemis",
     "Foe": "Ennemi",
     "Edit": "Modifier",
-    "Domain": "Domaine",
-    "Theme": "Thème",
-    "Denizen": "Habitant",
-    "Denizens": "Habitants",
     "OpenCompendium": "Ouvrir le Compendium",
     "ConfirmDelete": "Êtes-vous sûr? Cette action est irréversible.",
     "RequiresLocationType": "Cet oracle nécessite la sélection d'un type de lieu.",
@@ -402,7 +395,9 @@
       "TypeBond": "Lien",
       "TypeBondset": "Forger un lien",
       "TypeMove": "Action",
-      "TypeProgressTrack": "Jauge de progrès"
+      "TypeProgressTrack": "Jauge de progrès",
+      "TypeDelve-domain": "Domaine du site",
+      "TypeDelve-theme": "Thème du site"
     },
     "ITEMS": {
       "SubtypeConnection": "Connexions",
@@ -411,6 +406,14 @@
       "TypeAsset": "Atouts",
       "TypeBond": "Liens",
       "TypeMove": "Actions"
+    },
+    "DELVESITE": {
+      "Danger": "Danger",
+      "Dangers": "Dangers",
+      "Denizen": "Habitant",
+      "Denizens": "Habitants",
+      "Feature": "Caractéristique",
+      "Features": "Caractéristiques"
     }
   }
 }

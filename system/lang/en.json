@@ -175,16 +175,9 @@
     "ChallengeRank": "Challenge rank",
     "Completed": "Completed",
     "NotCompleted": "Not Completed",
-    "Features": "Features",
-    "Feature": "Feature",
-    "Dangers": "Dangers",
     "Foes": "Foes",
     "Foe": "Foe",
     "Edit": "Edit",
-    "Domain": "Domain",
-    "Theme": "Theme",
-    "Denizen": "Denizen",
-    "Denizens": "Denizens",
     "OpenCompendium": "Open Compendium",
     "ConfirmDelete": "Are you sure? This cannot be undone.",
     "RequiresLocationType": "This oracle requires a location type to be selected.",
@@ -611,6 +604,21 @@
       "TypeTruth": "Setting Truths",
       "TypeTruthClassic": "World Truths",
       "TypeTruthStarforged": "Setting Truths"
+    },
+    "DELVESITE": {
+      "Danger": "Danger",
+      "Dangers": "Dangers",
+      "Denizen": "Denizen",
+      "Denizens": "Denizens",
+      "Feature": "Feature",
+      "Features": "Features",
+      "FREQUENCY": {
+        "VeryCommon": "Very common",
+        "Common": "Common",
+        "Uncommon": "Uncommon",
+        "Rare": "Rare",
+        "Unforeseen": "Unforeseen"
+      }
     }
   }
 }

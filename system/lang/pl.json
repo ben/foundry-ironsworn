@@ -171,16 +171,9 @@
     "ChallengeRank": "Ranga wyzwania",
     "Completed": "Ukończone/y",
     "NotCompleted": "Nieukończony/e",
-    "Features": "Cechy",
-    "Feature": "Cecha",
-    "Dangers": "Zagrożenia",
     "Foes": "Przeciwnicy",
     "Foe": "Przeciwnik",
     "Edit": "Edytuj",
-    "Domain": "Domena",
-    "Theme": "Motyw",
-    "Denizen": "Mieszkaniec/ka",
-    "Denizens": "Mieszkańcy",
     "OpenCompendium": "Otwórz Kompendium",
     "ConfirmDelete": "Jesteś pewien? Nie można tego cofnąć.",
     "RequiresLocationType": "Ta Wyrocznia wymaga wybrania typu lokacji",
@@ -531,6 +524,15 @@
     },
     "JOURNALENTRYPAGE": {
       "TypeProgressTrack": "Tor postępu"
+    },
+    "DELVESITE": {
+      "Dangers": "Zagrożenia",
+      "Denizen": "Mieszkaniec/ka",
+      "Denizens": "Mieszkańcy",
+      "Feature": "Cecha",
+      "Features": "Cechy",
+      "TypeDelve-domain": "Domena",
+      "TypeDelve-theme": "Motyw"
     }
   }
 }

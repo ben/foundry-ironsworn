@@ -127,16 +127,9 @@
     "ChallengeRank": "Nivel de desafío",
     "Completed": "Completado",
     "NotCompleted": "Sin completar",
-    "Features": "Impresiones",
-    "Feature": "Impresión",
-    "Dangers": "Peligros",
     "Foes": "Oponentes",
     "Foe": "Oponente",
     "Edit": "Editar",
-    "Domain": "Domain",
-    "Theme": "Tema",
-    "Denizen": "Denizen",
-    "Denizens": "Denizens",
     "OpenCompendium": "Abrir compendio",
     "ConfirmDelete": "¿Estás seguro? Esta acción no puede deshacerse.",
     "RequiresLocationType": "This oracle requires a location type to be selected.",
@@ -438,11 +431,11 @@
       "TypeShared": "Ficha compartida"
     },
     "ACTORS": {
-      "TypeCharacter": "Personajes"
+      "TypeCharacter": "Personajes",
+      "TypeFoe": "PNJs"
     },
     "ITEM": {
       "TypeAsset": "Recurso",
-      "TypeFoe": "PNJs",
       "TypeMove": "Movimiento",
       "SubtypeConnection": "Conexión",
       "SubtypeProgress": "Progreso",
@@ -455,6 +448,11 @@
       "TypeBond": "Vínculos",
       "SubtypeProgress": "Progreso",
       "SubtypeVow": "Juramentos"
+    },
+    "DELVESITE": {
+      "Features": "Impresiones",
+      "Feature": "Impresión",
+      "Dangers": "Peligros"
     }
   }
 }
