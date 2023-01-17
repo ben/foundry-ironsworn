@@ -24,14 +24,26 @@
     "name": "name",
     "summary": "system.summary",
     "description": "system.description",
-    "features": "system.features",
-    "dangers": "system.dangers"
+    "features": {
+      "path": "system.features",
+      "converter": "range"
+    },
+    "dangers": {
+      "path": "system.dangers",
+      "converter": "range"
+    }
   },
   "delve-domain": {
     "name": "name",
     "summary": "system.summary",
     "description": "system.description",
-    "features": "system.features",
-    "dangers": "system.dangers"
+    "features": {
+      "path": "system.features",
+      "converter": "range"
+    },
+    "dangers": {
+      "path": "system.dangers",
+      "converter": "range"
+    }
   }
 }

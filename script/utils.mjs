@@ -1,4 +1,28 @@
+import fs from 'fs'
 import _ from 'lodash'
+import path from 'path'
+
+/**
+ * Parses a Foundry `*.db` file as an array of JSON objects.
+ * @param {PackData} packData The pack data object from `system.json`.
+ * @returns {Array<object>}
+ */
+export function parseFoundryDb(packData) {
+  const rawData = fs.readFileSync(
+    path.resolve(process.cwd(), 'system', packData.path),
+    {
+      encoding: 'utf8',
+    }
+  )
+  const splitData = _.compact(rawData.split(/\n/g))
+  const documents = splitData.map((document) => {
+    // console.log('attempting to parse as JSON', document)
+    const newObj = JSON.parse(document)
+    // console.log(newObj)
+    return newObj
+  })
+  return _.compact(documents)
+}
 
 // Object manipulation functions adapted from FVTT's source.
 /**

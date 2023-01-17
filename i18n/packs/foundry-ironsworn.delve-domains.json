@@ -4,729 +4,327 @@
     "name": "name",
     "summary": "system.summary",
     "description": "system.description",
-    "features": "system.features",
-    "dangers": "system.dangers"
+    "features": {
+      "path": "system.features",
+      "converter": "range"
+    },
+    "dangers": {
+      "path": "system.dangers",
+      "converter": "range"
+    }
   },
   "entries": {
     "058BdtjZuW0pOLeE": {
       "name": "Pass",
       "summary": "Treacherous paths over high mountains.",
       "description": "Winding through highlands and mountain ranges, these sites offer a tempting route over otherwise impassable terrain. But treacherous landscapes, foul weather, and a host of mountain predators offer their own dangers. Raiders and others take advantage of these natural chokepoints to ambush the unwary.\n\nLonely cairns mark the resting places of those who walked these routes undefended or unprepared. Pray that your path here does not end under a pile of mountain stones.",
-      "features": [
-        {
-          "description": "Winding mountain path"
-        },
-        {
-          "description": "Snowfield or glacial rocks"
-        },
-        {
-          "description": "River gorge"
-        },
-        {
-          "description": "Crashing waterfall"
-        },
-        {
-          "description": "Highland lake"
-        },
-        {
-          "description": "Forgotten cairn"
-        },
-        {
-          "description": "Bridge"
-        },
-        {
-          "description": "Overlook"
-        },
-        {
-          "description": "Camp or outpost"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Denizen lairs here"
-        },
-        {
-          "description": "Denizen hunts"
-        },
-        {
-          "description": "Perilous climb or descent"
-        },
-        {
-          "description": "Avalanche or rockslide"
-        },
-        {
-          "description": "Foul weather"
-        }
-      ]
+      "features": {
+        "21-43": "Winding mountain path",
+        "44-56": "Snowfield or glacial rocks",
+        "57-64": "River gorge",
+        "65-68": "Crashing waterfall",
+        "69-72": "Highland lake",
+        "73-76": "Forgotten cairn",
+        "77-80": "Bridge",
+        "81-84": "Overlook",
+        "85-88": "Camp or outpost",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Denizen lairs here",
+        "34-36": "Denizen hunts",
+        "37-39": "Perilous climb or descent",
+        "40-42": "Avalanche or rockslide",
+        "43-45": "Foul weather"
+      }
     },
     "2c2t4chqfpZ9ydid": {
       "name": "Frozen Cavern",
       "summary": "A place of deep caves and enduring cold.",
       "description": "These maze-like tunnels are found in the most inhospitable northern reaches of the Ironlands—carved through glacier, mountain, and hill—or in places of supernatural cold. Their icy depths are a perilous environment of fracturing terrain, shadowy reflections, hollow echoes, and lurking predators.\n\nEntering a frozen cavern is like delving into another world. There is a stark beauty in the icebound passages and glistening chambers. Amazing discoveries, locked in the ice, lie unseen for millennia. But do not be distracted by those enticements. The hazards of this site have no sympathy for the unwary and ill-prepared.",
-      "features": [
-        {
-          "description": "Maze of icy tunnels"
-        },
-        {
-          "description": "Glistening cave"
-        },
-        {
-          "description": "Vast chamber"
-        },
-        {
-          "description": "Frigid waterway"
-        },
-        {
-          "description": "Icy pools"
-        },
-        {
-          "description": "Magnificent ice formations"
-        },
-        {
-          "description": "Frozen waterfall"
-        },
-        {
-          "description": "Deep crevasses"
-        },
-        {
-          "description": "Discovery locked in the ice"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Denizen lairs here"
-        },
-        {
-          "description": "Fracturing ice"
-        },
-        {
-          "description": "Crumbling chasm"
-        },
-        {
-          "description": "Bitter chill"
-        },
-        {
-          "description": "Disorienting reflections"
-        }
-      ]
+      "features": {
+        "21-43": "Maze of icy tunnels",
+        "44-56": "Glistening cave",
+        "57-64": "Vast chamber",
+        "65-68": "Frigid waterway",
+        "69-72": "Icy pools",
+        "73-76": "Magnificent ice formations",
+        "77-80": "Frozen waterfall",
+        "81-84": "Deep crevasses",
+        "85-88": "Discovery locked in the ice",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Denizen lairs here",
+        "34-36": "Fracturing ice",
+        "37-39": "Crumbling chasm",
+        "40-42": "Bitter chill",
+        "43-45": "Disorienting reflections"
+      }
     },
     "HjxXUr5xrV1mobAO": {
       "name": "Mine",
       "summary": "Tunnels dug greedily and deep.",
       "description": "Within the earth, riches await the bold. Some mines are shallow pits worked by pick and shovel. Others are offshoots of existing caverns which pierce deep into hills and mountains. A few are the remains of vast underground complexes built by forgotten cultures.\n\nThe iron and other metals claimed from these sites feed our furnaces. From those fires, we craft tools, armor, weapons, and other precious goods. Our hunger for these resources is never satiated, and we often dig into places best left undisturbed.",
-      "features": [
-        {
-          "description": "Cramped tunnels"
-        },
-        {
-          "description": "Mine works"
-        },
-        {
-          "description": "Excavated chamber"
-        },
-        {
-          "description": "Mineshaft"
-        },
-        {
-          "description": "Collapsed tunnel"
-        },
-        {
-          "description": "Cluttered storage"
-        },
-        {
-          "description": "Housing or common areas"
-        },
-        {
-          "description": "Flooded chamber"
-        },
-        {
-          "description": "Unearthed secret"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Cave-in"
-        },
-        {
-          "description": "Flooding"
-        },
-        {
-          "description": "Unstable platforms or architecture"
-        },
-        {
-          "description": "Hazardous gas pocket"
-        },
-        {
-          "description": "Weakened terrain"
-        }
-      ]
+      "features": {
+        "21-43": "Cramped tunnels",
+        "44-56": "Mine works",
+        "57-64": "Excavated chamber",
+        "65-68": "Mineshaft",
+        "69-72": "Collapsed tunnel",
+        "73-76": "Cluttered storage",
+        "77-80": "Housing or common areas",
+        "81-84": "Flooded chamber",
+        "85-88": "Unearthed secret",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Cave-in",
+        "34-36": "Flooding",
+        "37-39": "Unstable platforms or architecture",
+        "40-42": "Hazardous gas pocket",
+        "43-45": "Weakened terrain"
+      }
     },
     "LIoWYBGBBMPlPNam": {
       "name": "Barrow",
       "summary": "The dead are enshrined here.",
       "description": "In this cruel land, there is no shortage of dead to be put to rest. Some barrows are simple crypts for a family or steading. Others are more elaborate or extensive, plunging well into the depths of the earth. A few inconspicuous mounds, their rock and earth worn by time, mark an entryway into impossibly labyrinthine tombs built by long-forgotten people.\n\nEven the most ancient of these sites still echo with the memory and power of lives once lived, battles once fought, loves gained or lost, and vows unfulfilled.",
-      "features": [
-        {
-          "description": "Burial chambers"
-        },
-        {
-          "description": "Maze of narrow passages"
-        },
-        {
-          "description": "Shrine"
-        },
-        {
-          "description": "Stately vault"
-        },
-        {
-          "description": "Offerings to the dead"
-        },
-        {
-          "description": "Statuary or tapestries"
-        },
-        {
-          "description": "Remains of a grave robber"
-        },
-        {
-          "description": "Mass grave"
-        },
-        {
-          "description": "Exhumed corpses"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Denizen guards this area"
-        },
-        {
-          "description": "Trap"
-        },
-        {
-          "description": "Death makes its presence known"
-        },
-        {
-          "description": "Crumbling architecture"
-        },
-        {
-          "description": "Grave goods with hidden dangers"
-        }
-      ]
+      "features": {
+        "21-43": "Burial chambers",
+        "44-56": "Maze of narrow passages",
+        "57-64": "Shrine",
+        "65-68": "Stately vault",
+        "69-72": "Offerings to the dead",
+        "73-76": "Statuary or tapestries",
+        "77-80": "Remains of a grave robber",
+        "81-84": "Mass grave",
+        "85-88": "Exhumed corpses",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Denizen guards this area",
+        "34-36": "Trap",
+        "37-39": "Death makes its presence known",
+        "40-42": "Crumbling architecture",
+        "43-45": "Grave goods with hidden dangers"
+      }
     },
     "MbJlpR81C4Q4WDV2": {
       "name": "Tanglewood",
       "summary": "A perilous forest of eternal shadow.",
       "description": "A tanglewood is a thick wilderness, shrouded in mist. Overhanging, twisted boughs obscure the sky. The ground is snarled with exposed roots. The wind carries foreboding whispers, and branches rattle like old bones.\n\nMany refuse to harvest wood from these places, believing the spirits who reside within will bring a curse upon them and their families. Others fear the creatures and beings which lurk within. For these reasons, even near settled areas, the tangles still stand.",
-      "features": [
-        {
-          "description": "Dense thicket"
-        },
-        {
-          "description": "Overgrown path"
-        },
-        {
-          "description": "Waterway"
-        },
-        {
-          "description": "Clearing "
-        },
-        {
-          "description": "Elder tree"
-        },
-        {
-          "description": "Brambles"
-        },
-        {
-          "description": "Overgrown structure"
-        },
-        {
-          "description": "Rocky outcrop"
-        },
-        {
-          "description": "Camp or outpost"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Denizen hunts"
-        },
-        {
-          "description": "Denizen lairs here"
-        },
-        {
-          "description": "Trap or snare"
-        },
-        {
-          "description": "Path leads you astray"
-        },
-        {
-          "description": "Entangling plant life"
-        }
-      ]
+      "features": {
+        "21-43": "Dense thicket",
+        "44-56": "Overgrown path",
+        "57-64": "Waterway",
+        "65-68": "Clearing ",
+        "69-72": "Elder tree",
+        "73-76": "Brambles",
+        "77-80": "Overgrown structure",
+        "81-84": "Rocky outcrop",
+        "85-88": "Camp or outpost",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Denizen hunts",
+        "34-36": "Denizen lairs here",
+        "37-39": "Trap or snare",
+        "40-42": "Path leads you astray",
+        "43-45": "Entangling plant life"
+      }
     },
     "QM2Y2Iop7fQ3yifB": {
       "name": "Cavern",
       "summary": "A place of stone and darkness.",
       "description": "Another world lies beneath our feet. Caverns vein the Ironlands with meandering tunnels, plunging pits, soaring chambers, and absolute darkness. Claustrophobic crawlspaces and crevices may lead to miles-long cave complexes. Underground waterways carve a relentless path through stone.\n\nWhen you enter these sites, you are a trespasser in a hostile domain. What unseen things dwell here, watching and waiting, amidst the depths?",
-      "features": [
-        {
-          "description": "Twisting passages"
-        },
-        {
-          "description": "Cramped caves"
-        },
-        {
-          "description": "Vast chamber"
-        },
-        {
-          "description": "Subterranean waterway"
-        },
-        {
-          "description": "Cave pool"
-        },
-        {
-          "description": "Natural bridge"
-        },
-        {
-          "description": "Towering stone formations"
-        },
-        {
-          "description": "Natural illumination"
-        },
-        {
-          "description": "Dark pit"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Denizen lairs here"
-        },
-        {
-          "description": "Cave-in"
-        },
-        {
-          "description": "Flooding"
-        },
-        {
-          "description": "Perilous climb or descent"
-        },
-        {
-          "description": "Fissure or sinkhole"
-        }
-      ]
+      "features": {
+        "21-43": "Twisting passages",
+        "44-56": "Cramped caves",
+        "57-64": "Vast chamber",
+        "65-68": "Subterranean waterway",
+        "69-72": "Cave pool",
+        "73-76": "Natural bridge",
+        "77-80": "Towering stone formations",
+        "81-84": "Natural illumination",
+        "85-88": "Dark pit",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Denizen lairs here",
+        "34-36": "Cave-in",
+        "37-39": "Flooding",
+        "40-42": "Perilous climb or descent",
+        "43-45": "Fissure or sinkhole"
+      }
     },
     "Xn1xz4l3r6AMWzg8": {
       "name": "Shadowfen",
       "summary": "A primeval marsh, cloaked in mist.",
       "description": "These foul sites are cloaked in mist, clogged with muddy peat, and drenched in fetid water. Thickets of gray, skeletal trees conceal stalking creatures. Strange shapes move in the fog and beneath dark, placid water. Narrow trails tease with the promise of passage, but instead lead to hidden quagmires.\n\nBe wary. When you enter a shadowfen, the specter of death is your constant companion.",
-      "features": [
-        {
-          "description": "Narrow path through a fetid bog"
-        },
-        {
-          "description": "Stagnant waterway"
-        },
-        {
-          "description": "Flooded thicket"
-        },
-        {
-          "description": "Island of dry land"
-        },
-        {
-          "description": "Submerged discovery"
-        },
-        {
-          "description": "Preserved corpses"
-        },
-        {
-          "description": "Overgrown structure"
-        },
-        {
-          "description": "Tall reeds"
-        },
-        {
-          "description": "Camp or outpost"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Denizen hunts"
-        },
-        {
-          "description": "Deep water blocks the path"
-        },
-        {
-          "description": "Toxic environment"
-        },
-        {
-          "description": "Concealing or disorienting mist"
-        },
-        {
-          "description": "Hidden quagmire"
-        }
-      ]
+      "features": {
+        "21-43": "Narrow path through a fetid bog",
+        "44-56": "Stagnant waterway",
+        "57-64": "Flooded thicket",
+        "65-68": "Island of dry land",
+        "69-72": "Submerged discovery",
+        "73-76": "Preserved corpses",
+        "77-80": "Overgrown structure",
+        "81-84": "Tall reeds",
+        "85-88": "Camp or outpost",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Denizen hunts",
+        "34-36": "Deep water blocks the path",
+        "37-39": "Toxic environment",
+        "40-42": "Concealing or disorienting mist",
+        "43-45": "Hidden quagmire"
+      }
     },
     "Yy9KkvSOvB2tWxOp": {
       "name": "Stronghold",
       "summary": "A fortress secured against trespassers.",
       "description": "These sites weather storms and sieges alike. Their walls stand firm against the forces of this dark land. They are fortified against attack and rife with guards, traps, and other defenses. For those who dwell within, strongholds provide the comfort of wood and stone, axe and bow. For those who seek to breach the walls, they can be as unyielding and unforgiving as the most stalwart ironbound shield.",
-      "features": [
-        {
-          "description": "Connecting passageways"
-        },
-        {
-          "description": "Barracks or common quarters"
-        },
-        {
-          "description": "Large hall"
-        },
-        {
-          "description": "Workshop or library"
-        },
-        {
-          "description": "Command center or leadership"
-        },
-        {
-          "description": "Ladder or stairwell"
-        },
-        {
-          "description": "Storage"
-        },
-        {
-          "description": "Kitchen or larder"
-        },
-        {
-          "description": "Courtyard"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Blocked or guarded path"
-        },
-        {
-          "description": "Caught in the open"
-        },
-        {
-          "description": "Chokepoint"
-        },
-        {
-          "description": "Trap"
-        },
-        {
-          "description": "Alarm trigger"
-        }
-      ]
+      "features": {
+        "21-43": "Connecting passageways",
+        "44-56": "Barracks or common quarters",
+        "57-64": "Large hall",
+        "65-68": "Workshop or library",
+        "69-72": "Command center or leadership",
+        "73-76": "Ladder or stairwell",
+        "77-80": "Storage",
+        "81-84": "Kitchen or larder",
+        "85-88": "Courtyard",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Blocked or guarded path",
+        "34-36": "Caught in the open",
+        "37-39": "Chokepoint",
+        "40-42": "Trap",
+        "43-45": "Alarm trigger"
+      }
     },
     "hziNL2ikUkcPkd6A": {
       "name": "Icereach",
       "summary": "A frigid landscape formed of frozen seas.",
       "description": "An Icereach is an expanse of frozen sea, blue-white and sprawling in all directions. These sites are typically found in the northernmost waters. However, a few vast icereaches— kept perpetually frozen by forces we do not understand—clog the seas in southern regions.\n\nOnly the cruelest, most powerful creatures can survive here. The terrain is rugged and cut-through with unstable ice and frigid waterways. Food is scarce. Bitter winds blast the landscape. The remains of ships, locked within the ice, stand as monuments to those who braved these places and were forever lost.",
-      "features": [
-        {
-          "description": "Plains of ice and snow"
-        },
-        {
-          "description": "Seawater channel"
-        },
-        {
-          "description": "Icy highlands"
-        },
-        {
-          "description": "Crevasse"
-        },
-        {
-          "description": "Ice floes"
-        },
-        {
-          "description": "Ship trapped in ice"
-        },
-        {
-          "description": "Animal herd or habitat"
-        },
-        {
-          "description": "Frozen carcass"
-        },
-        {
-          "description": "Camp or outpost"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Denizen hunts"
-        },
-        {
-          "description": "Fragile ice above watery depths"
-        },
-        {
-          "description": "Perilous climb or descent"
-        },
-        {
-          "description": "Avalanche or icefall"
-        },
-        {
-          "description": "Foul weather"
-        }
-      ]
+      "features": {
+        "21-43": "Plains of ice and snow",
+        "44-56": "Seawater channel",
+        "57-64": "Icy highlands",
+        "65-68": "Crevasse",
+        "69-72": "Ice floes",
+        "73-76": "Ship trapped in ice",
+        "77-80": "Animal herd or habitat",
+        "81-84": "Frozen carcass",
+        "85-88": "Camp or outpost",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Denizen hunts",
+        "34-36": "Fragile ice above watery depths",
+        "37-39": "Perilous climb or descent",
+        "40-42": "Avalanche or icefall",
+        "43-45": "Foul weather"
+      }
     },
     "jdJOGqg4DyEeCFg4": {
       "name": "Sea Cave",
       "summary": "Stone passages carved by ocean waves.",
       "description": "Carved by ocean waves and unyielding currents, the sea caves pockmarking the coasts plunge deep into the land’s dark heart. Deadly creatures or determined foes often lair within, but it is the water that is your ever-present enemy. The chill and damp seep into your bones. The tides and upland flooding can bring a torrent of water with little warning. You plunge desperately through submerged passages, praying that an opening will provide a pocket of air.\n\nThis is a realm of water and stone, cold and darkness. You are not welcome here.",
-      "features": [
-        {
-          "description": "Watery tunnels"
-        },
-        {
-          "description": "Eroded chamber"
-        },
-        {
-          "description": "Flooded chamber"
-        },
-        {
-          "description": "Vast chamber"
-        },
-        {
-          "description": "Dry passages"
-        },
-        {
-          "description": "Freshwater inlet"
-        },
-        {
-          "description": "Rocky island"
-        },
-        {
-          "description": "Waterborne debris"
-        },
-        {
-          "description": "Shipwreck or boat"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Denizen strikes without warning"
-        },
-        {
-          "description": "Denizen lurks below"
-        },
-        {
-          "description": "Flooding"
-        },
-        {
-          "description": "Rushing current"
-        },
-        {
-          "description": "Claustrophobic squeeze"
-        }
-      ]
+      "features": {
+        "21-43": "Watery tunnels",
+        "44-56": "Eroded chamber",
+        "57-64": "Flooded chamber",
+        "65-68": "Vast chamber",
+        "69-72": "Dry passages",
+        "73-76": "Freshwater inlet",
+        "77-80": "Rocky island",
+        "81-84": "Waterborne debris",
+        "85-88": "Shipwreck or boat",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Denizen strikes without warning",
+        "34-36": "Denizen lurks below",
+        "37-39": "Flooding",
+        "40-42": "Rushing current",
+        "43-45": "Claustrophobic squeeze"
+      }
     },
     "lkqTLuiB3g9dD7ed": {
       "name": "Ruin",
       "summary": "The crumbling legacy of a dead civilization.",
       "description": "These decaying edifices, skeletal and shadowed, mark the remains of once-great communities and civilizations. Some of these sites have been newly adapted by Ironlanders as shelter, temple, or citadel. Others are home only to dangerous creatures and dark forces.\n\nNewly discovered ruins tempt bold explorers with the promise of powerful legacies and forgotten secrets. But most see these places as a portent of our inescapable, grim fate in these lands. Someday, another people may delve into the ruins of what we leave behind.",
-      "features": [
-        {
-          "description": "Crumbling corridors and chambers"
-        },
-        {
-          "description": "Collapsed architecture"
-        },
-        {
-          "description": "Rubble-choked hall"
-        },
-        {
-          "description": "Courtyard"
-        },
-        {
-          "description": "Archive or library"
-        },
-        {
-          "description": "Broken statuary or fading murals"
-        },
-        {
-          "description": "Preserved vault"
-        },
-        {
-          "description": "Temple to forgotten gods"
-        },
-        {
-          "description": "Mausoleum"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Ancient mechanism or trap"
-        },
-        {
-          "description": "Collapsing wall or ceiling"
-        },
-        {
-          "description": "Blocked or broken passage"
-        },
-        {
-          "description": "Unstable floor above a new danger"
-        },
-        {
-          "description": "Ancient secrets best left buried"
-        }
-      ]
+      "features": {
+        "21-43": "Crumbling corridors and chambers",
+        "44-56": "Collapsed architecture",
+        "57-64": "Rubble-choked hall",
+        "65-68": "Courtyard",
+        "69-72": "Archive or library",
+        "73-76": "Broken statuary or fading murals",
+        "77-80": "Preserved vault",
+        "81-84": "Temple to forgotten gods",
+        "85-88": "Mausoleum",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Ancient mechanism or trap",
+        "34-36": "Collapsing wall or ceiling",
+        "37-39": "Blocked or broken passage",
+        "40-42": "Unstable floor above a new danger",
+        "43-45": "Ancient secrets best left buried"
+      }
     },
     "vyyrG8pPtDQ6FAgG": {
       "name": "Underkeep",
       "summary": "An age-old subterranean dungeon.",
       "description": "These subterranean structures are a mystery. They are inexplicably ancient, older perhaps than even the Firstborn. Their passages and halls hide dangers within unfathomable darkness.\n\nMost Ironlanders stay well clear of these places. But some stumble upon the entrance to an underkeep and delve inside, drawn by its secrets or the alluring promise of forgotten power. Others, desperate for protection from the perils of the surface world, foolishly try to use the depths of an underkeep as a sanctum for their kin or clan. They soon discover that the greatest threats lie beneath.",
-      "features": [
-        {
-          "description": "Carved passages"
-        },
-        {
-          "description": "Hall or chamber"
-        },
-        {
-          "description": "Stairs into the depths"
-        },
-        {
-          "description": "Grand doorway or entrance"
-        },
-        {
-          "description": "Tomb or catacombs"
-        },
-        {
-          "description": "Rough-hewn cave"
-        },
-        {
-          "description": "Foundry or workshop"
-        },
-        {
-          "description": "Shrine or temple"
-        },
-        {
-          "description": "Imposing architecture or artistry"
-        },
-        {
-          "description": "Something unusual or unexpected"
-        },
-        {
-          "description": "You transition into a new theme"
-        },
-        {
-          "description": "You transition into a new domain"
-        }
-      ],
-      "dangers": [
-        {
-          "description": "Ancient mechanism or trap"
-        },
-        {
-          "description": "Crumbling architecture"
-        },
-        {
-          "description": "Blocked or broken passage"
-        },
-        {
-          "description": "Artifact with a hidden danger"
-        },
-        {
-          "description": "Denizen lurks in darkness"
-        }
-      ]
+      "features": {
+        "21-43": "Carved passages",
+        "44-56": "Hall or chamber",
+        "57-64": "Stairs into the depths",
+        "65-68": "Grand doorway or entrance",
+        "69-72": "Tomb or catacombs",
+        "73-76": "Rough-hewn cave",
+        "77-80": "Foundry or workshop",
+        "81-84": "Shrine or temple",
+        "85-88": "Imposing architecture or artistry",
+        "89-98": "Something unusual or unexpected",
+        "99-99": "You transition into a new theme",
+        "100-100": "You transition into a new domain"
+      },
+      "dangers": {
+        "31-33": "Ancient mechanism or trap",
+        "34-36": "Crumbling architecture",
+        "37-39": "Blocked or broken passage",
+        "40-42": "Artifact with a hidden danger",
+        "43-45": "Denizen lurks in darkness"
+      }
     }
   }
 }
