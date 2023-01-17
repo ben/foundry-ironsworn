@@ -3,7 +3,7 @@
     @click="rollMove"
     :tooltip="
       $t('IRONSWORN.RollMove', {
-        title: props.move?.displayName,
+        title: props.move?.name,
       })
     "
     class="action-roll move-roll"
