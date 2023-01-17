@@ -4,18 +4,18 @@
     "name": "name",
     "requirement": "system.requirement",
     "category": "system.category",
-    "fields": "system.fields",
+    "inputFields": "system.fields",
     "abilities": "system.abilities",
-    "track": "system.track.name",
+    "conditionMeter": "system.track.name",
     "conditions": "system.conditions",
-    "exclusiveOptions": "system.exclusiveOptions"
+    "options": "system.exclusiveOptions"
   },
   "entries": {
     "Giant Spider": {
       "name": "Giant Spider",
       "requirement": "<p>Your spider uncovers secrets.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -31,7 +31,7 @@
           "description": "<p>When your spider sets a trap, add +1 as you @Compendium[foundry-ironsworn.ironswornmoves.ed343c963b08f301]{Enter the Fray} +shadow. On a strong hit, also inflict 2 harm.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Animal Kin": {
       "name": "Animal Kin",
@@ -47,13 +47,13 @@
           "description": "<p>Once per fight, when you leverage your animal or beast companion to make a move, reroll any dice. On a hit, take +1 momentum.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Blade-Bound": {
       "name": "Blade-Bound",
       "requirement": "<p>Once you mark a bond with a kin-blade, a sentient weapon imbued with the spirit of your ancestor...</p>\n",
       "category": "Path",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -69,7 +69,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} with your kin-blade to inflict savage harm (decide before rolling), add +1 and inflict +2 harm on a hit. Then, @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (2 stress).</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Infiltrator": {
       "name": "Infiltrator",
@@ -85,13 +85,13 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} within an enemy area by scavenging or looting, you may roll +shadow (instead of +wits). If you do, take +1 momentum or +1 supply on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Mammoth": {
       "name": "Mammoth",
       "requirement": "<p>Your mammoth walks a resolute path.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -107,7 +107,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} by riding your mammoth against a pack of foes, add +1 and inflict +1 harm on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Revenant": {
       "name": "Revenant",
@@ -124,13 +124,13 @@
           "description": "<p>When you bring death to your foe to @Compendium[foundry-ironsworn.ironswornmoves.aac3783710ad7499]{End the Fight}, you may burn momentum to cancel one (not both) of the challenge dice if your momentum is greater than the value of that die. If you do, @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (2 stress).</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Young Wyvern": {
       "name": "Young Wyvern",
       "requirement": "<p>Your wyvern won’t devour you. For now.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -146,7 +146,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} by commanding your wyvern to attack, roll +heart. Your wyvern inflicts 3 harm on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Invoke": {
       "name": "Invoke",
@@ -162,7 +162,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 essence on a hit.</p>\n"
         }
       ],
-      "track": "Essence"
+      "conditionMeter": "Essence"
     },
     "Sway": {
       "name": "Sway",
@@ -178,7 +178,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Augur": {
       "name": "Augur",
@@ -194,7 +194,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Visage": {
       "name": "Visage",
@@ -210,12 +210,12 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Wright": {
       "name": "Wright",
       "category": "Path",
-      "fields": [
+      "inputFields": [
         {
           "name": "Specialty"
         }
@@ -231,7 +231,7 @@
           "description": "<p>When you give the item you create as a gift to commemorate an important event or relationship, you may (one time only) reroll any dice when you @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel}, @Compendium[foundry-ironsworn.ironswornmoves.b643d9ea53ff8d98]{Forge a Bond}, or @Compendium[foundry-ironsworn.ironswornmoves.421b379cb40b6ab7]{Test Your Bond}.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Keen": {
       "name": "Keen",
@@ -247,7 +247,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Wayfinder": {
       "name": "Wayfinder",
@@ -263,7 +263,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} to safely guide someone on a perilous journey, you may reroll any dice. When you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} and mark experience, take +1 experience.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Improviser": {
       "name": "Improviser",
@@ -279,7 +279,7 @@
           "description": "<p>When you throw caution to the wind and make an impulsive move in a risky situation, you may add +2. If you do, take +1 momentum on a strong hit, but count a weak hit as a miss.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Leech": {
       "name": "Leech",
@@ -295,7 +295,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Spirit-Bound": {
       "name": "Spirit-Bound",
@@ -311,7 +311,7 @@
           "description": "<p>One time only, when you successfully @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} (formidable or greater) in service to the spirit, choose one.</p>\n<ul>\n<li>Let them go: Take 2 experience for each marked ability and discard this asset.</li>\n<li>Deepen your connection: Add +1 more when you leverage this asset.</li>\n</ul>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Sunderer": {
       "name": "Sunderer",
@@ -328,7 +328,7 @@
           "description": "<p>When you make a tribute to a fallen foe (formidable or greater) by carving a rune in the haft of your axe, roll +heart. On a strong hit, inflict +1d6 harm (one time only) when you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash}. On a weak hit, as above, but this death weighs on you; @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} (2 stress).</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Ironclad": {
       "name": "Ironclad",
@@ -345,8 +345,8 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} in a situation where strength of arms is a factor, add +2.</p>\n"
         }
       ],
-      "track": "Health",
-      "exclusiveOptions": [
+      "conditionMeter": "Health",
+      "options": [
         {
           "name": "Lightly armored"
         },
@@ -370,7 +370,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} by preparing stones of a special quality or material, add +1. Then, take +1 momentum or +1 supply on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Communion": {
       "name": "Communion",
@@ -386,7 +386,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Sighted": {
       "name": "Sighted",
@@ -402,7 +402,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} by studying someone or something in a charged situation, add +1 and take +1 momentum on a hit. When you also pierce the veil to explore deeper truths (decide before rolling), you may reroll any dice. If you do, count a weak hit as a miss.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Fated": {
       "name": "Fated",
@@ -418,7 +418,7 @@
           "description": "<p>For every two boxes filled on your background vow progress track, take 1 experience. When you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow}, your fate is at hand. Envision your final sacrifice and reroll any dice.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Outcast": {
       "name": "Outcast",
@@ -434,7 +434,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.727eb47e8f031e81]{Reach Your Destination} and score a strong hit, you recall or recognize something helpful about this place. Envision what it is, and take +2 momentum.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Oathbreaker": {
       "name": "Oathbreaker",
@@ -451,7 +451,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} on your marked quest and score a hit, you find redemption and automatically activate this ability at no cost. You may then improve one of your stats by +1 and discard this asset.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Long-Arm": {
       "name": "Long-Arm",
@@ -468,13 +468,13 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.ac19f4c7f3fe31be]{Undertake a Journey} and score a strong hit, or if you accompany an ally who scores a strong hit on that move, your staff provides support and comfort in your travels; take +1 momentum.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Kindred": {
       "name": "Kindred",
       "requirement": "<p>Your friend stands by you.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -490,7 +490,7 @@
           "description": "<p>Once you mark a bond with your companion, add +1 when you @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation} in their presence.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Loyalist": {
       "name": "Loyalist",
@@ -506,7 +506,7 @@
           "description": "<p>When you stand with your ally as they make a progress move, envision how you support them. Then, roll one challenge die. On a 1-9, your ally may replace one of their challenge dice with yours. On a 10, envision how you inadvertently undermine their action; your ally must replace their lowest challenge die with yours.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Cutthroat": {
       "name": "Cutthroat",
@@ -523,7 +523,7 @@
           "description": "<p>Once per fight, when you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} +shadow by performing a feint or misdirection, reroll any dice and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Brawler": {
       "name": "Brawler",
@@ -540,12 +540,12 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} against a brawling attack, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Empowered": {
       "name": "Empowered",
       "category": "Path",
-      "fields": [
+      "inputFields": [
         {
           "name": "Title/Lineage"
         }
@@ -561,13 +561,13 @@
           "description": "<p>When you forgo your title or lineage and @Compendium[foundry-ironsworn.ironswornmoves.b643d9ea53ff8d98]{Forge a Bond} as an equal, or when you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} to serve someone of a lower station, add +1 and take +1 momentum or +1 spirit on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Horse": {
       "name": "Horse",
       "requirement": "<p>You and your horse ride as one.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -583,7 +583,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} at close range while mounted, add +1 and inflict +1 harm on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Fortune Hunter": {
       "name": "Fortune Hunter",
@@ -599,7 +599,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} by scavenging or looting, and score a strong hit with a match, you may envision finding an object of value. If you do, take +1 supply (instead of +2) and +1 wealth.</p>\n"
         }
       ],
-      "track": "Wealth"
+      "conditionMeter": "Wealth"
     },
     "Bonded": {
       "name": "Bonded",
@@ -615,7 +615,7 @@
           "description": "<p>When you make a move in a crucial moment and score a miss, you may cling to thoughts of your bond-kin for courage or encouragement. If you do, reroll any dice. On another miss, in addition to the outcome of the move, you must mark shaken or corrupted. If both debilities are already marked, @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation}.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Ritualist": {
       "name": "Ritualist",
@@ -632,7 +632,7 @@
           "description": "<p>When you tattoo the essence of a new ritual onto your skin, envision the mark you create. You may then purchase and upgrade that ritual asset for 1 fewer experience.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Tether": {
       "name": "Tether",
@@ -648,7 +648,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Commander": {
       "name": "Commander",
@@ -664,7 +664,7 @@
           "description": "<p>Once you @Compendium[foundry-ironsworn.ironswornmoves.b643d9ea53ff8d98]{Forge a Bond} with your warband, take +1 momentum on a hit when you leverage a warband ability.</p>\n"
         }
       ],
-      "track": "Strength"
+      "conditionMeter": "Strength"
     },
     "Weaponmaster": {
       "name": "Weaponmaster",
@@ -681,7 +681,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.12e23cfe23534a8f]{Turn the Tide} with a sudden change of weapon or technique, and your next move is a @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike}, add +1 and inflict +2 harm on a strong hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Bind": {
       "name": "Bind",
@@ -697,7 +697,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Shield-Bearer": {
       "name": "Shield-Bearer",
@@ -714,7 +714,7 @@
           "description": "<p>When forced to @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} in a fight, you may instead sacrifice your shield and ignore all harm. If you do, the shield is destroyed. Once per fight, you also take initiative when you sacrifice your shield to avoid harm.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Battle-Scarred": {
       "name": "Battle-Scarred",
@@ -731,7 +731,7 @@
           "description": "<p>You have stared down death before: When you are at 0 health and @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm}, you may roll +wits or +heart (instead of +health or +iron). If you do, take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Archer": {
       "name": "Archer",
@@ -748,7 +748,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} by hunting, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Swordmaster": {
       "name": "Swordmaster",
@@ -765,7 +765,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow} by kneeling and grasping your sword’s blade, add +1 and take +1 momentum on a hit. If you let the edge draw blood from your hands, @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} (1 harm) in exchange for an additional +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Wildblood": {
       "name": "Wildblood",
@@ -781,13 +781,13 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.30046577bc83f2f0]{Make Camp} in the woodlands, you may roll +wits (instead of +supply). If you do, you and your allies each choose 1 more option on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Owl": {
       "name": "Owl",
       "requirement": "<p>Your owl soars through the darkness.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -803,7 +803,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}, take your owl’s health as +momentum before you roll.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Berserker": {
       "name": "Berserker",
@@ -820,7 +820,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.fdb51ee928b4fca2]{Endure Harm} in a fight, and your health is above 0, you may let the pain inflame your wildness (decide before rolling). If you then score a strong hit and choose to embrace the pain, take +momentum equal to your remaining health. A weak hit counts as a miss.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Divination": {
       "name": "Divination",
@@ -836,7 +836,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Ward": {
       "name": "Ward",
@@ -852,7 +852,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Lorekeeper": {
       "name": "Lorekeeper",
@@ -868,7 +868,7 @@
           "description": "<p>One time only, you may browse the archive’s forbidden depths. If you do, raise your wits by 1 and roll an action die. On 1-3, you must also mark corrupted or @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation} (ignoring momentum).</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Masked": {
       "name": "Masked",
@@ -885,8 +885,8 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death} or @Compendium[foundry-ironsworn.ironswornmoves.1f978f9faa43d5c6]{Face Desolation} while wearing the mask, you may roll +its stat (instead of +heart).</p>\n"
         }
       ],
-      "track": "Health",
-      "exclusiveOptions": [
+      "conditionMeter": "Health",
+      "options": [
         {
           "name": "Thunderwood"
         },
@@ -915,7 +915,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} and score a miss, you may reroll one challenge die. If you score a miss again, reduce your maximum spirit by 1. You may recover this lost spirit when you next @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} and score a strong hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Totem": {
       "name": "Totem",
@@ -931,7 +931,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Shadow-Walk": {
       "name": "Shadow-Walk",
@@ -947,7 +947,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Talisman": {
       "name": "Talisman",
@@ -963,13 +963,13 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Hawk": {
       "name": "Hawk",
       "requirement": "<p>Your hawk can aid you while it is aloft.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -985,7 +985,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.c8bacc17f73d3103]{Face Danger} +wits to detect an approaching threat, or when you @Compendium[foundry-ironsworn.ironswornmoves.ed343c963b08f301]{Enter the Fray} +wits against an ambush, add +2.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Lightbearer": {
       "name": "Lightbearer",
@@ -1001,7 +1001,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Light"
+      "conditionMeter": "Light"
     },
     "Thunder-Bringer": {
       "name": "Thunder-Bringer",
@@ -1018,7 +1018,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.12e23cfe23534a8f]{Turn the Tide}, you may @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} with all the fury and power you can muster. If you do (decide before rolling), you may reroll any dice and inflict +2 harm on a strong hit, but count a weak hit as a miss.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Scry": {
       "name": "Scry",
@@ -1034,7 +1034,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Slayer": {
       "name": "Slayer",
@@ -1050,7 +1050,7 @@
           "description": "<p>When you slay a beast or horror (at least formidable), you may take a trophy and choose one.</p>\n<ul>\n<li>Power a ritual: When you or an ally make a ritual move, reroll any dice (one time only).</li>\n<li>Prove your worth: When you @Compendium[foundry-ironsworn.ironswornmoves.25421995c803340e]{Sojourn}, reroll any dice (one time only).</li>\n</ul>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Duelist": {
       "name": "Duelist",
@@ -1067,7 +1067,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.c0967ba47f57393b]{Draw the Circle}, choose one (before rolling).</p>\n<ul>\n<li>Add +2.</li>\n<li>Take +2 momentum on a hit.</li>\n</ul>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Alchemist": {
       "name": "Alchemist",
@@ -1083,7 +1083,7 @@
           "description": "<p>When you prepare an elixir, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Shadow-Kin": {
       "name": "Shadow-Kin",
@@ -1100,7 +1100,7 @@
           "description": "<p>You know the sly ways of death: When you @Compendium[foundry-ironsworn.ironswornmoves.92b85c33a17ab487]{Face Death}, you may roll +shadow (instead of +heart). On a weak hit, if you choose to undertake a deathbound quest, you may roll +shadow (instead of +heart) and reroll any dice as you @Compendium[foundry-ironsworn.ironswornmoves.010e27aa4376d4df]{Swear an Iron Vow}. When you @Compendium[foundry-ironsworn.ironswornmoves.725a21e2f02d7e12]{Fulfill Your Vow} on that quest and and mark experience, take +2 experience.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Dancer": {
       "name": "Dancer",
@@ -1116,7 +1116,7 @@
           "description": "<p>When you or an ally make a progress move and score a hit, you may perform a dance to commemorate the event. If you do, roll +edge. On a strong hit, you and each of your allies take +2 momentum and +1 spirit. On a weak hit, you take +1 momentum or +1 spirit, but your allies are unmoved.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Veteran": {
       "name": "Veteran",
@@ -1132,13 +1132,13 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.8d90dd472856be27]{Resupply} by looting the dead on a field of battle, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Banner-Sworn": {
       "name": "Banner-Sworn",
       "requirement": "<p>Once you mark a bond with a leader or faction...</p>\n",
       "category": "Path",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -1154,7 +1154,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.ed343c963b08f301]{Enter the Fray} bearing your banner, add +1 and take +1 momentum on a hit. When you burn momentum while carrying your banner in combat, take +1 momentum after you reset.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Fletcher": {
       "name": "Fletcher",
@@ -1170,7 +1170,7 @@
           "description": "<p>When you craft a single arrow designated for a specific foe, envision the process and materials, and roll +wits. On a strong hit, take both. On a weak hit, choose one.</p>\n<ul>\n<li>Seeker: When a shooter uses the arrow to @Compendium[foundry-ironsworn.ironswornmoves.5288e935906f6d28]{Strike} or @Compendium[foundry-ironsworn.ironswornmoves.7e008d0f656dc8b3]{Clash} against this foe, reroll any dice (one time only).</li>\n<li>Ravager: When a shooter uses the arrow to inflict harm against this foe, inflict +1d6 harm (one time only).</li>\n</ul>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Herbalist": {
       "name": "Herbalist",
@@ -1186,7 +1186,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.30046577bc83f2f0]{Make Camp} and choose the option to partake, you can create a restorative meal. If you do, you and your companions take +1 health. Any allies who choose to partake also take +1 health, and do not suffer -supply.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Pretender": {
       "name": "Pretender",
@@ -1202,13 +1202,13 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} by revealing your true identity in a dramatic moment, reroll any dice.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Cave Lion": {
       "name": "Cave Lion",
       "requirement": "<p>Your cat takes down its prey.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -1224,7 +1224,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.30046577bc83f2f0]{Make Camp}, your cat is alert to trouble. If you or an ally choose to relax, take +1 spirit. If you focus, take +1 momentum.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Waterborn": {
       "name": "Waterborn",
@@ -1240,7 +1240,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.ed343c963b08f301]{Enter the Fray} aboard a boat or ship, reroll any dice.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Skirmisher": {
       "name": "Skirmisher",
@@ -1257,12 +1257,12 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} by bracing your spear against a charging foe, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Devotant": {
       "name": "Devotant",
       "category": "Path",
-      "fields": [
+      "inputFields": [
         {
           "name": "God's Name"
         }
@@ -1278,8 +1278,8 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.25421995c803340e]{Sojourn} by sharing the word of your god, you may roll +your god’s stat. If you do, take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health",
-      "exclusiveOptions": [
+      "conditionMeter": "Health",
+      "options": [
         {
           "name": "Edge"
         },
@@ -1301,7 +1301,7 @@
       "name": "Raven",
       "requirement": "<p>Your raven heeds your call.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -1317,13 +1317,13 @@
           "description": "<p>When your raven carries messages for you, you may @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage}, @Compendium[foundry-ironsworn.ironswornmoves.4244b77103f55bc4]{Gather Information}, or @Compendium[foundry-ironsworn.ironswornmoves.be95ca063ded2b19]{Compel} from a distance.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Hound": {
       "name": "Hound",
       "requirement": "<p>Your hound is your steadfast companion.</p>\n",
       "category": "Companion",
-      "fields": [
+      "inputFields": [
         {
           "name": "Name"
         }
@@ -1339,7 +1339,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.e09e2fc8bb709320]{Endure Stress} in the company of your hound, add +1.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Storyweaver": {
       "name": "Storyweaver",
@@ -1355,7 +1355,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.25421995c803340e]{Sojourn} within a community with which you share a bond, add +2 (instead of +1).</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Awakening": {
       "name": "Awakening",
@@ -1371,7 +1371,7 @@
           "description": "<p>When you perform this ritual, add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Trickster": {
       "name": "Trickster",
@@ -1387,7 +1387,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.b643d9ea53ff8d98]{Forge a Bond} for a relationship founded on a lie, choose one.</p>\n<ul>\n<li>Keep your secret: Roll +shadow (instead of +heart).</li>\n<li>Reveal the truth: Roll +heart. On a strong hit, mark a bond twice and take 1 experience. A weak hit counts as a miss.</li>\n</ul>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     },
     "Rider": {
       "name": "Rider",
@@ -1404,7 +1404,7 @@
           "description": "<p>When you @Compendium[foundry-ironsworn.ironswornmoves.4dd8468e095810a4]{Secure an Advantage} +wits by sizing up a perilous situation from the saddle, you are one with your horse’s instincts. Add +1 and take +1 momentum on a hit.</p>\n"
         }
       ],
-      "track": "Health"
+      "conditionMeter": "Health"
     }
   }
 }

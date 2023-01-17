@@ -213,7 +213,7 @@
       ],
       "track": {
         "enabled": false,
-        "name": "Health",
+        "name": "",
         "current": 0,
         "max": 0
       },

@@ -92,27 +92,34 @@ export function writeLocaleTemplate(packData, documentType) {
     }
     const documentLocale = {}
 
-    _.forEach(mapping, (documentKey, mapKey) => {
+    _.forEach(mapping, (oldKey, newKey) => {
       if (document.data) {
         throw new Error(
           'Document uses deprecated "data" property. Please migrate to FVTTv10+ "system" and try again.'
         )
       }
-      const mappedValue = getProperty(document, documentKey)
+      const mappedValue = getProperty(document, oldKey)
       if (mappedValue) {
         // console.log(`Mapping - ${documentKey}: ${mappedValue}`)
         if (typeof mappedValue === 'string' && mappedValue.length > 0) {
-          documentLocale[mapKey] = mappedValue
+          documentLocale[newKey] = mappedValue
         } else if (Array.isArray(mappedValue)) {
-          if (mappedValue.length) {
+          {
             const filteredArray = mappedValue.map((mappedchild) =>
               _.pickBy(mappedchild, (_, key) => I18N_KEYS.includes(key))
             )
-            documentLocale[mapKey] = filteredArray
+            if (
+              filteredArray.length &&
+              !filteredArray.every((value) => _.isEmpty(value))
+            ) {
+              documentLocale[newKey] = filteredArray
+            }
           }
         } else {
           throw new Error(
-            `Expected a string or an array for key "documentKey", but got: ${mappedValue}`
+            `Expected a string or an array for key "documentKey", but got: ${JSON.stringify(
+              mappedValue
+            )}`
           )
         }
       }

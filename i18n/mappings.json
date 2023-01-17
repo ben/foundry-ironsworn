@@ -3,11 +3,11 @@
     "name": "name",
     "requirement": "system.requirement",
     "category": "system.category",
-    "fields": "system.fields",
+    "inputFields": "system.fields",
     "abilities": "system.abilities",
-    "track": "system.track.name",
+    "conditionMeter": "system.track.name",
     "conditions": "system.conditions",
-    "exclusiveOptions": "system.exclusiveOptions"
+    "options": "system.exclusiveOptions"
   },
   "sfmove": {
     "name": "name",
