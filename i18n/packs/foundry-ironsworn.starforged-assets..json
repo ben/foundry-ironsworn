@@ -1,0 +1,286 @@
+{
+  "label": "Starforged Assets",
+  "mapping": {
+    "name": "name",
+    "fullText": "system.Text",
+    "triggerMain": "system.Trigger.Text",
+    "triggerOptions": "system.Trigger.Options",
+    "strongHit": "system.Outcomes.Strong Hit.Text",
+    "strongHitWithAMatch": "system.Outcomes.Strong Hit.With a Match.Text",
+    "weakHit": "system.Outcomes.Weak Hit.Text",
+    "miss": "system.Outcomes.Miss.Text",
+    "missWithAMatch": "system.Outcomes.Miss.With a Match.Text"
+  },
+  "entries": {
+    "Outcast": {
+      "name": "Outcast"
+    },
+    "Combat Bot": {
+      "name": "Combat Bot"
+    },
+    "Gunslinger": {
+      "name": "Gunslinger"
+    },
+    "Glowcat": {
+      "name": "Glowcat"
+    },
+    "Scavenger": {
+      "name": "Scavenger"
+    },
+    "Skiff": {
+      "name": "Skiff"
+    },
+    "Shade": {
+      "name": "Shade"
+    },
+    "Devotant": {
+      "name": "Devotant"
+    },
+    "Internal Refit": {
+      "name": "Internal Refit"
+    },
+    "Engine Upgrade": {
+      "name": "Engine Upgrade"
+    },
+    "Vehicle Bay": {
+      "name": "Vehicle Bay"
+    },
+    "Hoverbike": {
+      "name": "Hoverbike"
+    },
+    "Infiltrator": {
+      "name": "Infiltrator"
+    },
+    "Bonded": {
+      "name": "Bonded"
+    },
+    "Starship": {
+      "name": "Starship"
+    },
+    "Sleuth": {
+      "name": "Sleuth"
+    },
+    "Voidglider": {
+      "name": "Voidglider"
+    },
+    "Gearhead": {
+      "name": "Gearhead"
+    },
+    "Expanded Hold": {
+      "name": "Expanded Hold"
+    },
+    "Research Lab": {
+      "name": "Research Lab"
+    },
+    "Armored": {
+      "name": "Armored"
+    },
+    "Homesteader": {
+      "name": "Homesteader"
+    },
+    "Navigator": {
+      "name": "Navigator"
+    },
+    "Augmented": {
+      "name": "Augmented"
+    },
+    "Healer": {
+      "name": "Healer"
+    },
+    "Heavy Cannons": {
+      "name": "Heavy Cannons"
+    },
+    "Medbay": {
+      "name": "Medbay"
+    },
+    "Crew Commander": {
+      "name": "Crew Commander"
+    },
+    "Veteran": {
+      "name": "Veteran"
+    },
+    "Fleet Commander": {
+      "name": "Fleet Commander"
+    },
+    "Explorer": {
+      "name": "Explorer"
+    },
+    "Sprite": {
+      "name": "Sprite"
+    },
+    "Naturalist": {
+      "name": "Naturalist"
+    },
+    "Workshop": {
+      "name": "Workshop"
+    },
+    "Demolitionist": {
+      "name": "Demolitionist"
+    },
+    "Brawler": {
+      "name": "Brawler"
+    },
+    "Vanguard": {
+      "name": "Vanguard"
+    },
+    "Sidekick": {
+      "name": "Sidekick"
+    },
+    "Overseer": {
+      "name": "Overseer"
+    },
+    "Shuttle": {
+      "name": "Shuttle"
+    },
+    "Weapon Master": {
+      "name": "Weapon Master"
+    },
+    "Voidborn": {
+      "name": "Voidborn"
+    },
+    "Loyalist": {
+      "name": "Loyalist"
+    },
+    "Stealth Tech": {
+      "name": "Stealth Tech"
+    },
+    "Haunted": {
+      "name": "Haunted"
+    },
+    "Blademaster": {
+      "name": "Blademaster"
+    },
+    "Marked": {
+      "name": "Marked"
+    },
+    "Service Pod": {
+      "name": "Service Pod"
+    },
+    "Courier": {
+      "name": "Courier"
+    },
+    "Protocol Bot": {
+      "name": "Protocol Bot"
+    },
+    "Reinforced Hull": {
+      "name": "Reinforced Hull"
+    },
+    "Missile Array": {
+      "name": "Missile Array"
+    },
+    "Exosuit": {
+      "name": "Exosuit"
+    },
+    "Firebrand": {
+      "name": "Firebrand"
+    },
+    "Bannersworn": {
+      "name": "Bannersworn"
+    },
+    "Fugitive": {
+      "name": "Fugitive"
+    },
+    "Survivor": {
+      "name": "Survivor"
+    },
+    "Cohort": {
+      "name": "Cohort"
+    },
+    "Mercenary": {
+      "name": "Mercenary"
+    },
+    "Seer": {
+      "name": "Seer"
+    },
+    "Snub Fighter": {
+      "name": "Snub Fighter"
+    },
+    "Fated": {
+      "name": "Fated"
+    },
+    "Bounty Hunter": {
+      "name": "Bounty Hunter"
+    },
+    "Shields": {
+      "name": "Shields"
+    },
+    "Symbiote": {
+      "name": "Symbiote"
+    },
+    "Slayer": {
+      "name": "Slayer"
+    },
+    "Oathbreaker": {
+      "name": "Oathbreaker"
+    },
+    "Survey Bot": {
+      "name": "Survey Bot"
+    },
+    "Sniper": {
+      "name": "Sniper"
+    },
+    "Archer": {
+      "name": "Archer"
+    },
+    "Diplomat": {
+      "name": "Diplomat"
+    },
+    "Utility Bot": {
+      "name": "Utility Bot"
+    },
+    "Revenant": {
+      "name": "Revenant"
+    },
+    "Rockhorn": {
+      "name": "Rockhorn"
+    },
+    "Ace": {
+      "name": "Ace"
+    },
+    "Lore Hunter": {
+      "name": "Lore Hunter"
+    },
+    "Artist": {
+      "name": "Artist"
+    },
+    "Vestige": {
+      "name": "Vestige"
+    },
+    "Scoundrel": {
+      "name": "Scoundrel"
+    },
+    "Leader": {
+      "name": "Leader"
+    },
+    "Empath": {
+      "name": "Empath"
+    },
+    "Banshee": {
+      "name": "Banshee"
+    },
+    "Rover": {
+      "name": "Rover"
+    },
+    "Gunner": {
+      "name": "Gunner"
+    },
+    "Grappler": {
+      "name": "Grappler"
+    },
+    "Sensor Array": {
+      "name": "Sensor Array"
+    },
+    "Trader": {
+      "name": "Trader"
+    },
+    "Looper": {
+      "name": "Looper"
+    },
+    "Tech": {
+      "name": "Tech"
+    },
+    "Kinetic": {
+      "name": "Kinetic"
+    }
+  }
+}

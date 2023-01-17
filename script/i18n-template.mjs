@@ -133,7 +133,7 @@ export function writeLocaleTemplate(packData, documentType) {
  * @type {PackData[]}
  */
 const testData = packs.filter((pack) =>
-  ['Assets', 'Moves'].some((str) => pack.label.includes(str))
+  ['Assets'].some((str) => pack.label.includes(str))
 )
 
 testData.forEach((pack) =>

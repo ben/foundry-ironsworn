@@ -1,0 +1,250 @@
+{
+  "label": "Ironsworn Assets",
+  "mapping": {
+    "name": "name",
+    "fullText": "system.Text",
+    "triggerMain": "system.Trigger.Text",
+    "triggerOptions": "system.Trigger.Options",
+    "strongHit": "system.Outcomes.Strong Hit.Text",
+    "strongHitWithAMatch": "system.Outcomes.Strong Hit.With a Match.Text",
+    "weakHit": "system.Outcomes.Weak Hit.Text",
+    "miss": "system.Outcomes.Miss.Text",
+    "missWithAMatch": "system.Outcomes.Miss.With a Match.Text"
+  },
+  "entries": {
+    "Giant Spider": {
+      "name": "Giant Spider"
+    },
+    "Animal Kin": {
+      "name": "Animal Kin"
+    },
+    "Blade-Bound": {
+      "name": "Blade-Bound"
+    },
+    "Infiltrator": {
+      "name": "Infiltrator"
+    },
+    "Mammoth": {
+      "name": "Mammoth"
+    },
+    "Revenant": {
+      "name": "Revenant"
+    },
+    "Young Wyvern": {
+      "name": "Young Wyvern"
+    },
+    "Invoke": {
+      "name": "Invoke"
+    },
+    "Sway": {
+      "name": "Sway"
+    },
+    "Augur": {
+      "name": "Augur"
+    },
+    "Visage": {
+      "name": "Visage"
+    },
+    "Wright": {
+      "name": "Wright"
+    },
+    "Keen": {
+      "name": "Keen"
+    },
+    "Wayfinder": {
+      "name": "Wayfinder"
+    },
+    "Improviser": {
+      "name": "Improviser"
+    },
+    "Leech": {
+      "name": "Leech"
+    },
+    "Spirit-Bound": {
+      "name": "Spirit-Bound"
+    },
+    "Sunderer": {
+      "name": "Sunderer"
+    },
+    "Ironclad": {
+      "name": "Ironclad"
+    },
+    "Slinger": {
+      "name": "Slinger"
+    },
+    "Communion": {
+      "name": "Communion"
+    },
+    "Sighted": {
+      "name": "Sighted"
+    },
+    "Fated": {
+      "name": "Fated"
+    },
+    "Outcast": {
+      "name": "Outcast"
+    },
+    "Oathbreaker": {
+      "name": "Oathbreaker"
+    },
+    "Long-Arm": {
+      "name": "Long-Arm"
+    },
+    "Kindred": {
+      "name": "Kindred"
+    },
+    "Loyalist": {
+      "name": "Loyalist"
+    },
+    "Cutthroat": {
+      "name": "Cutthroat"
+    },
+    "Brawler": {
+      "name": "Brawler"
+    },
+    "Empowered": {
+      "name": "Empowered"
+    },
+    "Horse": {
+      "name": "Horse"
+    },
+    "Fortune Hunter": {
+      "name": "Fortune Hunter"
+    },
+    "Bonded": {
+      "name": "Bonded"
+    },
+    "Ritualist": {
+      "name": "Ritualist"
+    },
+    "Tether": {
+      "name": "Tether"
+    },
+    "Commander": {
+      "name": "Commander"
+    },
+    "Weaponmaster": {
+      "name": "Weaponmaster"
+    },
+    "Bind": {
+      "name": "Bind"
+    },
+    "Shield-Bearer": {
+      "name": "Shield-Bearer"
+    },
+    "Battle-Scarred": {
+      "name": "Battle-Scarred"
+    },
+    "Archer": {
+      "name": "Archer"
+    },
+    "Swordmaster": {
+      "name": "Swordmaster"
+    },
+    "Wildblood": {
+      "name": "Wildblood"
+    },
+    "Owl": {
+      "name": "Owl"
+    },
+    "Berserker": {
+      "name": "Berserker"
+    },
+    "Divination": {
+      "name": "Divination"
+    },
+    "Ward": {
+      "name": "Ward"
+    },
+    "Lorekeeper": {
+      "name": "Lorekeeper"
+    },
+    "Masked": {
+      "name": "Masked"
+    },
+    "Honorbound": {
+      "name": "Honorbound"
+    },
+    "Totem": {
+      "name": "Totem"
+    },
+    "Shadow-Walk": {
+      "name": "Shadow-Walk"
+    },
+    "Talisman": {
+      "name": "Talisman"
+    },
+    "Hawk": {
+      "name": "Hawk"
+    },
+    "Lightbearer": {
+      "name": "Lightbearer"
+    },
+    "Thunder-Bringer": {
+      "name": "Thunder-Bringer"
+    },
+    "Scry": {
+      "name": "Scry"
+    },
+    "Slayer": {
+      "name": "Slayer"
+    },
+    "Duelist": {
+      "name": "Duelist"
+    },
+    "Alchemist": {
+      "name": "Alchemist"
+    },
+    "Shadow-Kin": {
+      "name": "Shadow-Kin"
+    },
+    "Dancer": {
+      "name": "Dancer"
+    },
+    "Veteran": {
+      "name": "Veteran"
+    },
+    "Banner-Sworn": {
+      "name": "Banner-Sworn"
+    },
+    "Fletcher": {
+      "name": "Fletcher"
+    },
+    "Herbalist": {
+      "name": "Herbalist"
+    },
+    "Pretender": {
+      "name": "Pretender"
+    },
+    "Cave Lion": {
+      "name": "Cave Lion"
+    },
+    "Waterborn": {
+      "name": "Waterborn"
+    },
+    "Skirmisher": {
+      "name": "Skirmisher"
+    },
+    "Devotant": {
+      "name": "Devotant"
+    },
+    "Raven": {
+      "name": "Raven"
+    },
+    "Hound": {
+      "name": "Hound"
+    },
+    "Storyweaver": {
+      "name": "Storyweaver"
+    },
+    "Awakening": {
+      "name": "Awakening"
+    },
+    "Trickster": {
+      "name": "Trickster"
+    },
+    "Rider": {
+      "name": "Rider"
+    }
+  }
+}
