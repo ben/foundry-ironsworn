@@ -119,6 +119,7 @@ export function writeLocaleTemplate(packData, converterKey) {
         documentLocale = extractRollTableStrings(document)
         break
       case 'JournalEntry':
+        // TODO
         break
       default:
         {
