@@ -66,12 +66,6 @@ export const I18N_KEYS = [
   'markdown',
 ]
 
-const CONVERTERS = {
-  Actor: {},
-  RollTable: extractRollTableStrings,
-  Item: {},
-}
-
 /**
  * Parses a Foundry `*.db` file as an array of JSON objects.
  * @param {PackData} packData The pack data object from `system.json`.
@@ -107,65 +101,70 @@ export function writeLocaleTemplate(packData, converterKey) {
   )
   // TODO: flatten objects for key comparison
 
-  const dataOut = { label: packData.label, mapping: {}, entries: {} }
+  const dataOut = { label: packData.label, mapping: undefined, entries: {} }
 
   documentData.forEach((document) => {
-    const mapping = mappings[converterKey ?? document.type]
-
-    if (!mapping) {
-      throw new Error(`No mapping available for type: ${document.type}`)
+    if (document.data) {
+      // this is a bit strict, but anything like this probably has other weird stuff happening.
+      throw new Error(
+        'Document uses deprecated "data" property. Please migrate to FVTTv10+ "system" and try again.'
+      )
     }
-    const key = document._id
+    let documentLocale = {}
+    let mapping
+    const id = document._id
 
-    if (!key) {
-      throw new Error("Document data has no valid 'name' key.")
-    }
-    if (dataOut.entries[key]) {
-      throw new Error(`Duplicate ${document.type} key: ${key}`)
-    }
-
-    const documentLocale = {}
-
-    _.forEach(mapping, (oldKey, newKey) => {
-      if (document.data) {
-        throw new Error(
-          'Document uses deprecated "data" property. Please migrate to FVTTv10+ "system" and try again.'
-        )
-      }
-      const mappedValue = getProperty(document, oldKey)
-      if (mappedValue) {
-        // console.log(`Mapping - ${documentKey}: ${mappedValue}`)
-        if (typeof mappedValue === 'string' && mappedValue.length > 0) {
-          documentLocale[newKey] = mappedValue
-        } else if (Array.isArray(mappedValue)) {
-          {
-            const filteredArray = mappedValue.map((mappedchild) =>
-              _.pickBy(
-                mappedchild,
-                (value, key) => I18N_KEYS.includes(key) && !_.isEmpty(value)
-              )
-            )
-            if (
-              filteredArray.length &&
-              !filteredArray.every((value) => _.isEmpty(value))
-            ) {
-              documentLocale[newKey] = filteredArray
-            }
+    switch (packData.type) {
+      case 'RollTable':
+        documentLocale = extractRollTableStrings(document)
+        break
+      case 'JournalEntry':
+        break
+      default:
+        {
+          mapping = mappings[document.type]
+          if (!mapping) {
+            throw new Error(`No mapping available for type: ${document.type}`)
           }
-        } else {
-          throw new Error(
-            `Expected a string or an array for key "documentKey", but got: ${JSON.stringify(
-              mappedValue
-            )}`
-          )
+          if (!dataOut.mapping) {
+            dataOut.mapping = mapping
+          }
+          _.forEach(mapping, (oldKey, newKey) => {
+            const mappedValue = getProperty(document, oldKey)
+            if (mappedValue) {
+              // console.log(`Mapping - ${documentKey}: ${mappedValue}`)
+              if (typeof mappedValue === 'string' && mappedValue.length > 0) {
+                documentLocale[newKey] = mappedValue
+              } else if (Array.isArray(mappedValue)) {
+                {
+                  const filteredArray = mappedValue.map((mappedchild) =>
+                    _.pickBy(
+                      mappedchild,
+                      (value, key) =>
+                        I18N_KEYS.includes(key) && !_.isEmpty(value)
+                    )
+                  )
+                  if (
+                    filteredArray.length &&
+                    !filteredArray.every((value) => _.isEmpty(value))
+                  ) {
+                    documentLocale[newKey] = filteredArray
+                  }
+                }
+              } else {
+                throw new Error(
+                  `Expected a string or an array for key "documentKey", but got: ${JSON.stringify(
+                    mappedValue
+                  )}`
+                )
+              }
+            }
+          })
         }
-      }
-    })
-    dataOut.entries[key] = documentLocale
-
-    if (_.isEmpty(dataOut.mapping)) {
-      dataOut.mapping = mapping
+        break
     }
+
+    dataOut.entries[id] = documentLocale
   })
 
   const json = JSON.stringify(dataOut, undefined, 2)
@@ -176,6 +175,48 @@ export function writeLocaleTemplate(packData, converterKey) {
   const filePathOut = `${I18N_PATH}/packs/${baseName}`
 
   writeFileSync(filePathOut, json)
+}
+
+function extractWithMapping(document, mapping) {
+  const localeStrings = {}
+
+  _.forEach(mapping, (oldKey, newKey) => {
+    if (document.data) {
+      throw new Error(
+        'Document uses deprecated "data" property. Please migrate to FVTTv10+ "system" and try again.'
+      )
+    }
+    const mappedValue = getProperty(document, oldKey)
+    if (mappedValue) {
+      // console.log(`Mapping - ${documentKey}: ${mappedValue}`)
+      if (typeof mappedValue === 'string' && mappedValue.length > 0) {
+        localeStrings[newKey] = mappedValue
+      } else if (Array.isArray(mappedValue)) {
+        {
+          const filteredArray = mappedValue.map((mappedchild) =>
+            _.pickBy(
+              mappedchild,
+              (value, key) => I18N_KEYS.includes(key) && !_.isEmpty(value)
+            )
+          )
+          if (
+            filteredArray.length &&
+            !filteredArray.every((value) => _.isEmpty(value))
+          ) {
+            localeStrings[newKey] = filteredArray
+          }
+        }
+      } else {
+        throw new Error(
+          `Expected a string or an array for key "documentKey", but got: ${JSON.stringify(
+            mappedValue
+          )}`
+        )
+      }
+    }
+  })
+
+  return localeStrings
 }
 
 /**
@@ -205,3 +246,9 @@ const siteDomainData = packs.filter((pack) =>
   pack.label.includes('Delve Domains')
 )
 siteDomainData.forEach((pack) => writeLocaleTemplate(pack))
+
+/**
+ * @type {PackData[]}
+ */
+const oracleData = packs.filter((pack) => pack.label.includes('Oracles'))
+oracleData.forEach((pack) => writeLocaleTemplate(pack))
