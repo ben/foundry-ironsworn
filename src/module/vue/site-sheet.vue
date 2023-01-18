@@ -187,7 +187,7 @@ textarea {
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { provide, computed, inject, nextTick, ref, Component } from 'vue'
+import { provide, computed, inject, nextTick, ref } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnCompendium from './components/buttons/btn-compendium.vue'
@@ -198,7 +198,7 @@ import { RANKS, RANK_INCREMENTS } from '../constants'
 import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
-import { OracleRollMessage, TableRow } from '../rolls'
+import { OracleRollMessage } from '../rolls'
 import { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
 
@@ -273,18 +273,13 @@ async function randomFeature() {
 
   const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
   const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  const rows: TableRow[] = [...themeData.features, ...domainData.features].map(
-    ({ low, high, description }) => ({
-      low,
-      high,
-      text: description,
-      selected: false,
-    })
-  )
-
   const title = game.i18n.localize('IRONSWORN.Feature')
   const subtitle = `${$actor?.name} – ${theme.value?.name} ${domain.value?.name}`
-  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
+  const orm = await OracleRollMessage.fromTableResults(
+    [...themeData.features, ...domainData.features],
+    title,
+    subtitle
+  )
   orm.createOrUpdate()
 }
 

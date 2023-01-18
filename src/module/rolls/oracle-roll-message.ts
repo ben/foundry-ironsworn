@@ -1,3 +1,4 @@
+import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { compact, pick, sortBy } from 'lodash'
 import { marked } from 'marked'
 import { getFoundryTableByDfId } from '../dataforged'
@@ -87,6 +88,23 @@ export class OracleRollMessage {
 
   static fromRows(tableRows: TableRow[], title: string, subtitle?: string) {
     return new OracleRollMessage({ tableRows, title, subtitle })
+  }
+
+  static fromTableResults(
+    tableResults: TableResultDataConstructorData[],
+    title: string,
+    subtitle?: string
+  ) {
+    const tableRows = tableResults.map(
+      ({ range: [low, high], text }) =>
+        ({
+          low,
+          high,
+          text,
+          selected: false,
+        } as TableRow)
+    )
+    return OracleRollMessage.fromRows(tableRows, title, subtitle)
   }
 
   private async getRollTable(): Promise<RollTable | undefined> {

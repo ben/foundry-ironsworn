@@ -78,6 +78,7 @@
 </style>
 
 <script lang="ts" setup>
+import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { computed, inject, reactive } from 'vue'
 import { SiteDataPropertiesData } from '../../../actor/actortypes'
 import { getFoundryTableByDfId } from '../../../dataforged'
@@ -136,31 +137,24 @@ async function revealADanger() {
     'Ironsworn/Oracles/Moves/Reveal_a_Danger'
   )
   if (!oracle) return
-  const oracleRows = oracle.results.map((x: any) => ({
-    low: x.range[0],
-    high: x.range[1],
-    text: x.text,
-    selected: false,
-  }))
-  // Remove the first two rows
-  oracleRows.shift()
-  oracleRows.shift()
 
   const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
   const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  const tdRows = [...themeData.dangers, ...domainData.dangers].map(
-    ({ low, high, description }) => ({
-      low,
-      high,
-      text: description,
-      selected: false,
-    })
-  )
-  const rows = [...tdRows, ...oracleRows]
+
+  const tableResults = [
+    ...themeData.dangers,
+    ...domainData.dangers,
+    // Omits the first two rows
+    ...Array.from(oracle.results.values()).slice(1),
+  ]
 
   const title = moves.revealADanger.moveItem().name ?? 'Reveal a Danger'
   const subtitle = `${$site?.name} – ${theme.value?.name} ${domain.value?.name}`
-  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
+  const orm = await OracleRollMessage.fromTableResults(
+    tableResults as TableResultDataConstructorData[],
+    title,
+    subtitle
+  )
   orm.createOrUpdate()
 }
 

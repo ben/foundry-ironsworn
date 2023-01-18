@@ -60,76 +60,52 @@
       "current": 0,
       "denizens": [
         {
-          "low": 1,
-          "high": 27,
-          "descriptor": "Very Common",
-          "description": ""
+          "range": [1, 27],
+          "text": ""
         },
         {
-          "low": 28,
-          "high": 41,
-          "descriptor": "Common",
-          "description": ""
+          "range": [28, 41],
+          "text": ""
         },
         {
-          "low": 42,
-          "high": 55,
-          "descriptor": "Common",
-          "description": ""
+          "range": [42, 55],
+          "text": ""
         },
         {
-          "low": 56,
-          "high": 69,
-          "descriptor": "Common",
-          "description": ""
+          "range": [56, 69],
+          "text": ""
         },
         {
-          "low": 70,
-          "high": 75,
-          "descriptor": "Uncommon",
-          "description": ""
+          "range": [70, 75],
+          "text": ""
         },
         {
-          "low": 76,
-          "high": 81,
-          "descriptor": "Uncommon",
-          "description": ""
+          "range": [76, 81],
+          "text": ""
         },
         {
-          "low": 82,
-          "high": 87,
-          "descriptor": "Uncommon",
-          "description": ""
+          "range": [82, 87],
+          "text": ""
         },
         {
-          "low": 88,
-          "high": 93,
-          "descriptor": "Uncommon",
-          "description": ""
+          "range": [88, 93],
+          "text": ""
         },
         {
-          "low": 94,
-          "high": 95,
-          "descriptor": "Rare",
-          "description": ""
+          "range": [94, 95],
+          "text": ""
         },
         {
-          "low": 96,
-          "high": 97,
-          "descriptor": "Rare",
-          "description": ""
+          "range": [96, 97],
+          "text": ""
         },
         {
-          "low": 98,
-          "high": 99,
-          "descriptor": "Rare",
-          "description": ""
+          "range": [98, 99],
+          "text": ""
         },
         {
-          "low": 100,
-          "high": 100,
-          "descriptor": "Unforeseen",
-          "description": ""
+          "range": [100, 100],
+          "text": ""
         }
       ]
     },

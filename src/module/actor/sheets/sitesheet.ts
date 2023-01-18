@@ -43,7 +43,7 @@ export class IronswornSiteSheet extends VueActorSheet {
     const description = item.pack
       ? `@Compendium[${item.pack}.${item.id}]{${item.name}}`
       : item.link
-    denizens[idx].description = description
+    denizens[idx].text = description
     this.actor.update({ system: { denizens } }, { render: true })
     return true
   }

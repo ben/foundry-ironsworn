@@ -1,3 +1,5 @@
+import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+
 interface CharacterDataSourceData {
   biography: string
   notes: string
@@ -91,10 +93,38 @@ export interface FoeDataProperties {
 
 ////////////////////////////////////////
 
+export interface DelveSiteDenizen extends TableResultDataConstructorData {
+  flags: {
+    'foundry-ironsworn': {
+      type: 'delve-site-denizen'
+      frequency: string
+      /**
+       * The ID of the originating Item.
+       */
+      sourceId: Item['id']
+    }
+  }
+}
+
+/**
+ * @deprecated Use {@link DelveSiteDenizen} instead
+ */
 export interface DenizenSlot {
+  /**
+   * @see {@link DelveSiteDenizen.range}
+   */
   low: number
+  /**
+   * @see {@link DelveSiteDenizen.range}
+   */
   high: number
+  /**
+   * @see {@link DelveSiteDenizen.flags}
+   */
   descriptor: string
+  /**
+   * @see {@link DelveSiteDenizen.text}
+   */
   description: string
 }
 
@@ -104,7 +134,7 @@ interface SiteDataSourceData {
   notes: string
   rank: string
   current: number
-  denizens: DenizenSlot[]
+  denizens: DelveSiteDenizen[]
 }
 export type SiteDataPropertiesData = SiteDataSourceData
 

@@ -7,10 +7,12 @@
   >
     <label
       class="nogrow"
-      style=" flex-basis: 4em; line-height: 26px;white-space: nowrap"
+      style="flex-basis: 4em; line-height: 26px; white-space: nowrap"
     >
-      <span v-if="denizen.low === denizen.high">{{ denizen.low }}</span>
-      <span v-else>{{ denizen.low }}–{{ denizen.high }}</span>
+      <span v-if="denizen.range[0] === denizen.range[1]">{{
+        denizen.range[0]
+      }}</span>
+      <span v-else>{{ denizen.range[0] }}–{{ denizen.range[1] }}</span>
     </label>
 
     <input
@@ -18,15 +20,11 @@
       ref="description"
       type="text"
       :class="{ highlight: data.focused }"
-      :value="denizen.description"
+      :value="denizen.text"
       @input="input"
-      :placeholder="denizen.descriptor"
+      :placeholder="frequencyLabel"
     />
-    <div
-      v-else
-      style="line-height: 26px"
-      v-html="$enrichHtml(denizen.description)"
-    />
+    <div v-else style="line-height: 26px" v-html="$enrichHtml(denizen.text)" />
   </DropTarget>
 </template>
 
@@ -40,7 +38,10 @@ input {
 import { reactive, Ref } from '@vue/reactivity'
 import { inject } from '@vue/runtime-core'
 import { computed, ref } from 'vue'
-import { SiteDataPropertiesData } from '../../../actor/actortypes'
+import {
+  DelveSiteDenizen,
+  SiteDataPropertiesData,
+} from '../../../actor/actortypes'
 import DropTarget from '../../drop-target.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 
@@ -55,15 +56,38 @@ const editMode = computed(() => {
 })
 
 const denizen = computed(() => {
-  return actor.value?.system.denizens[props.idx]
+  return actor.value?.system.denizens[props.idx] as DelveSiteDenizen
 })
+
+/**
+ * Given a dice range, get a localized string describing a site denizen encounter percentage chance.
+ */
+function toFrequencyDescriptor(floor: number, ceiling: number) {
+  const chance = ceiling - floor + 1
+  switch (true) {
+    case chance >= 20:
+      return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.VeryCommon')
+    case chance >= 10:
+      return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.Common')
+    case chance >= 5:
+      return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.Uncommon')
+    case chance >= 2:
+      return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.Rare')
+    default:
+      return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.Unforeseen')
+  }
+}
+
+const frequencyLabel = computed(() =>
+  toFrequencyDescriptor(...denizen.value.range)
+)
 
 function input(ev) {
   const val = ev.currentTarget.value || ''
   const data = $actor?.system as SiteDataPropertiesData | undefined
   if (!data) return
   const denizens = Object.values(data.denizens)
-  denizens[props.idx].description = val
+  denizens[props.idx].text = val
   $actor?.update({ system: { denizens } })
 }
 
