@@ -2,7 +2,8 @@
 
 ## Next Release
 
-- Under the hoood: update Dataforged import with documents built in Foundry v10 ([#601](https://github.com/ben/foundry-ironsworn/pull/601))
+- Under the hood: update Dataforged import with documents built in Foundry v10 ([#601](https://github.com/ben/foundry-ironsworn/pull/601))
+- Under the hood: migrate Delve site denizens, features, and dangers to format consistent with `TableResult`s, which should make them easier to localize
 
 ## 1.20.13
 
