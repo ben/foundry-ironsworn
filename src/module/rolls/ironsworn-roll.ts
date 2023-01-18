@@ -119,6 +119,11 @@ export interface PreRollOptions {
    */
   presetActionDie?: SourcedValue
   /**
+   * As in Weapon Master #2
+   */
+  presetChallenge1?: SourcedValue
+  presetChallenge2?: SourcedValue
+  /**
    * As in Sleuth #1
    */
   extraChallengeDice?: SourcedValue
