@@ -2,7 +2,7 @@
 {{#each (lookup data.system field)}}
 <tr>
   <td>
-    {{#if (eq low high)}}{{low}}{{else}}{{low}} - {{high}}{{/if}}
+    {{#if (eq range.[0] range.[1])}}{{range.[0]}}{{else}}{{range.[0]}} - {{range.[1]}}{{/if}}
   </td>
   <td>
     <input class="ironsworn__{{lookup .. 'field'}}__description" data-idx="{{@index}}" type="text" value="{{text}}" />
