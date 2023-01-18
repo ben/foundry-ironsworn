@@ -237,73 +237,73 @@
       "description": "This place is so old...",
       "features": [
         {
-          "range": [ 1, 4 ],
+          "range": [1, 4],
           "text": ""
         },
         {
-          "range": [ 5, 8 ],
+          "range": [5, 8],
           "text": ""
         },
         {
-          "range": [ 9, 12 ],
+          "range": [9, 12],
           "text": ""
         },
         {
-          "range": [ 13, 16 ],
+          "range": [13, 16],
           "text": ""
         },
         {
-          "range": [ 17, 20 ],
+          "range": [17, 20],
           "text": ""
         }
       ],
       "dangers": [
         {
-          "range": [ 1, 5 ],
+          "range": [1, 5],
           "text": ""
         },
         {
-          "range": [ 6, 10 ],
+          "range": [6, 10],
           "text": ""
         },
         {
-          "range": [ 11, 12 ],
+          "range": [11, 12],
           "text": ""
         },
         {
-          "range": [ 13, 14 ],
+          "range": [13, 14],
           "text": ""
         },
         {
-          "range": [ 15, 16 ],
+          "range": [15, 16],
           "text": ""
         },
         {
-          "range": [ 17, 18 ],
+          "range": [17, 18],
           "text": ""
         },
         {
-          "range": [ 19, 20 ],
+          "range": [19, 20],
           "text": ""
         },
         {
-          "range": [ 21, 22 ],
+          "range": [21, 22],
           "text": ""
         },
         {
-          "range": [ 23, 24 ],
+          "range": [23, 24],
           "text": ""
         },
         {
-          "range": [ 25, 26 ],
+          "range": [25, 26],
           "text": ""
         },
         {
-          "range": [ 27, 28 ],
+          "range": [27, 28],
           "text": ""
         },
         {
-          "range": [ 29, 30 ],
+          "range": [29, 30],
           "text": ""
         }
       ]
@@ -313,73 +313,73 @@
       "description": "In this dark and dreary place...",
       "features": [
         {
-          "range": [ 21, 43 ],
+          "range": [21, 43],
           "text": ""
         },
         {
-          "range": [ 44, 56 ],
+          "range": [44, 56],
           "text": ""
         },
         {
-          "range": [ 57, 64 ],
+          "range": [57, 64],
           "text": ""
         },
         {
-          "range": [ 65, 68 ],
+          "range": [65, 68],
           "text": ""
         },
         {
-          "range": [ 69, 72 ],
+          "range": [69, 72],
           "text": ""
         },
         {
-          "range": [ 73, 76 ],
+          "range": [73, 76],
           "text": ""
         },
         {
-          "range": [ 77, 80 ],
+          "range": [77, 80],
           "text": ""
         },
         {
-          "range": [ 81, 84 ],
+          "range": [81, 84],
           "text": ""
         },
         {
-          "range": [ 85, 88 ],
+          "range": [85, 88],
           "text": ""
         },
         {
-          "range": [ 89, 98 ],
+          "range": [89, 98],
           "description": "Something unusual or unexpected"
         },
         {
-          "range": [ 99, 99 ],
+          "range": [99, 99],
           "description": "You transition into a new theme"
         },
         {
-          "range": [ 100, 100 ],
+          "range": [100, 100],
           "description": "You transition into a new domain"
         }
       ],
       "dangers": [
         {
-          "range": [ 31, 33 ],
+          "range": [31, 33],
           "text": ""
         },
         {
-          "range": [ 34, 36 ],
+          "range": [34, 36],
           "text": ""
         },
         {
-          "range": [ 37, 39 ],
+          "range": [37, 39],
           "text": ""
         },
         {
-          "range": [ 40, 42 ],
+          "range": [40, 42],
           "text": ""
         },
         {
-          "range": [ 43, 45 ],
+          "range": [43, 45],
           "text": ""
         }
       ]
