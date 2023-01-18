@@ -2,7 +2,18 @@ import { TableResultDataConstructorData } from '@league-of-foundry-developers/fo
 import { LegacyFeatureOrDanger } from '../item/itemtypes'
 import { TableRow } from '../rolls'
 
-export function normalizeTableRows(document: any, key: string, type: string) {
+/**
+ *
+ * @param document The parent document.
+ * @param key The dot-notation key to convert to TableResults
+ * @param type A value for the `foundry-ironsworn.type` flag, used to differentiate the table row for later migration.
+ * @returns
+ */
+export function normalizeTableRows(
+  document: any,
+  key: string,
+  type: string
+): TableResultDataConstructorData[] {
   const oldRows = getProperty(document, key) as Array<
     TableRow | LegacyFeatureOrDanger
   >
@@ -21,7 +32,7 @@ export function normalizeTableRows(document: any, key: string, type: string) {
   return oldRows.map((row) => {
     if ((row as any).range) {
       // If the row is somehow already converted, just merge the flags.
-      return mergeObject(row, { flags })
+      return { row, flags: mergeObject((row as any).flags ?? {}, flags) } as any
     }
     return toTableResult(row, flags)
   })
