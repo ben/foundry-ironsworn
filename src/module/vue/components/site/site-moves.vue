@@ -145,7 +145,7 @@ async function revealADanger() {
     ...themeData.dangers,
     ...domainData.dangers,
     // Omits the first two rows
-    ...Array.from(oracle.results.values()).slice(1),
+    ...Array.from(oracle.results.values()).slice(2),
   ]
 
   const title = moves.revealADanger.moveItem().name ?? 'Reveal a Danger'
