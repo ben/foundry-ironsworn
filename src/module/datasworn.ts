@@ -134,7 +134,12 @@ export async function importFromDatasworn() {
   for (const key of PACKS) {
     const pack = game.packs.get(key)
     if (!pack) continue
-    const idsToDelete = pack.index.map((x: any) => x._id)
+
+    // Unlock all the packs
+    await pack.configure({ locked: false })
+
+    // Delete all the contents
+    const idsToDelete = pack.index.map((x) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
@@ -147,7 +152,7 @@ export async function importFromDatasworn() {
       type: 'delve-theme',
       name: rawTheme.Name,
       img: THEME_IMAGES[rawTheme.Name],
-      data: {
+      system: {
         summary: rawTheme.Summary,
         description: rawTheme.Description,
         features: importDelveFeaturesOrDangers(rawTheme.Features, 'feature', 1),
@@ -170,7 +175,7 @@ export async function importFromDatasworn() {
       type: 'delve-domain',
       name: rawDomain.Name,
       img: DOMAIN_IMAGES[rawDomain.Name],
-      data: {
+      system: {
         summary: rawDomain.Summary,
         description: rawDomain.Description,
         features: importDelveFeaturesOrDangers(
@@ -209,7 +214,7 @@ export async function importFromDatasworn() {
         type: 'progress',
         name: foe.Name,
         img: FOE_IMAGES[foe.Name] || undefined,
-        data: {
+        system: {
           description,
           rank: foe.Rank.toLowerCase(),
         },
@@ -236,5 +241,10 @@ export async function importFromDatasworn() {
     await actor?.createEmbeddedDocuments('Item', [
       foeItem.data as unknown as Record<string, unknown>,
     ])
+  }
+
+  // Lock the packs again
+  for (const key of PACKS) {
+    await game.packs.get(key)?.configure({ locked: true })
   }
 }
