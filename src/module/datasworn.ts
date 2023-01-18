@@ -14,6 +14,17 @@ const THEME_IMAGES = {
   Wild: 'icons/magic/nature/root-vines-grow-brown.webp',
 }
 
+const THEME_IDS = {
+  Ancient: '9RnSqMcrekJoJbXH',
+  Corrupted: 'pKCYCvdI2WjjKsjY',
+  Fortified: 'ONZWFYrqxgFIzppP',
+  Hallowed: 'zhOq6bjCvYhXkMQB',
+  Haunted: '9BtnJYn9vXBGEV5R',
+  Infested: 'H5aJvBKwPrbEnzMe',
+  Ravaged: 'iDOVA8797p4kYar7',
+  Wild: 'v3jYuNrr1Jt4TzNZ',
+}
+
 const DOMAIN_IMAGES = {
   Barrow: 'icons/environment/wilderness/cave-entrance-dwarven-hill.webp',
   Cavern: 'icons/environment/wilderness/cave-entrance-mountain-blue.webp',
@@ -27,6 +38,21 @@ const DOMAIN_IMAGES = {
   Stronghold: 'icons/environment/settlement/castle.webp',
   Tanglewood: 'icons/environment/wilderness/terrain-forest-gray.webp',
   Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp',
+}
+
+const DOMAIN_IDS = {
+  Barrow: 'LIoWYBGBBMPlPNam',
+  Cavern: 'QM2Y2Iop7fQ3yifB',
+  'Frozen Cavern': '2c2t4chqfpZ9ydid',
+  Icereach: 'hziNL2ikUkcPkd6A',
+  Mine: 'HjxXUr5xrV1mobAO',
+  Pass: '058BdtjZuW0pOLeE',
+  Ruin: 'lkqTLuiB3g9dD7ed',
+  'Sea Cave': 'jdJOGqg4DyEeCFg4',
+  Shadowfen: 'Xn1xz4l3r6AMWzg8',
+  Stronghold: 'Yy9KkvSOvB2tWxOp',
+  Tanglewood: 'MbJlpR81C4Q4WDV2',
+  Underkeep: 'vyyrG8pPtDQ6FAgG',
 }
 
 const FOE_IMAGES = {
@@ -109,8 +135,8 @@ type RawFeatureOrDanger = {
 function importDelveFeaturesOrDangers(
   rawFeaturesOrDangers: RawFeatureOrDanger[],
   type: 'feature' | 'danger',
-  low = 1,
-  sourceId: Item['id'] = null
+  sourceId: Item['id'] = null,
+  low = 1
 ) {
   const result: DelveSiteFeatureOrDanger[] = []
   for (const featureOrDanger of rawFeaturesOrDangers) {
@@ -148,15 +174,27 @@ export async function importFromDatasworn() {
     'systems/foundry-ironsworn/assets/delve-themes.json'
   ).then((x) => x.json())
   const themesToCreate = themesJson.Themes.map((rawTheme) => {
+    const _id = THEME_IDS[rawTheme.Name]
     const themeData = {
+      _id,
       type: 'delve-theme',
       name: rawTheme.Name,
       img: THEME_IMAGES[rawTheme.Name],
       system: {
         summary: rawTheme.Summary,
         description: rawTheme.Description,
-        features: importDelveFeaturesOrDangers(rawTheme.Features, 'feature', 1),
-        dangers: importDelveFeaturesOrDangers(rawTheme.Dangers, 'danger', 1),
+        features: importDelveFeaturesOrDangers(
+          rawTheme.Features,
+          'feature',
+          _id,
+          1
+        ),
+        dangers: importDelveFeaturesOrDangers(
+          rawTheme.Dangers,
+          'danger',
+          _id,
+          1
+        ),
       },
     }
 
@@ -164,6 +202,7 @@ export async function importFromDatasworn() {
   })
   await Item.createDocuments(themesToCreate, {
     pack: 'foundry-ironsworn.ironsworndelvethemes',
+    keepId: true,
   })
 
   // Domains
@@ -171,7 +210,9 @@ export async function importFromDatasworn() {
     'systems/foundry-ironsworn/assets/delve-domains.json'
   ).then((x) => x.json())
   const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
+    const _id = DOMAIN_IDS[rawDomain.Name]
     const domainData = {
+      _id,
       type: 'delve-domain',
       name: rawDomain.Name,
       img: DOMAIN_IMAGES[rawDomain.Name],
@@ -181,9 +222,15 @@ export async function importFromDatasworn() {
         features: importDelveFeaturesOrDangers(
           rawDomain.Features,
           'feature',
+          _id,
           21
         ),
-        dangers: importDelveFeaturesOrDangers(rawDomain.Dangers, 'danger', 31),
+        dangers: importDelveFeaturesOrDangers(
+          rawDomain.Dangers,
+          'danger',
+          _id,
+          31
+        ),
       },
     }
 
@@ -191,6 +238,7 @@ export async function importFromDatasworn() {
   })
   await Item.createDocuments(domainsToCreate, {
     pack: 'foundry-ironsworn.ironsworndelvedomains',
+    keepId: true,
   })
 
   // Foes
