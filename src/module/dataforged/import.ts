@@ -12,13 +12,14 @@ import {
   Starforged,
   starforged,
 } from 'dataforged'
-import { isArray, isObject, max } from 'lodash'
+import { isArray, isObject, max, maxBy } from 'lodash'
 import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import { NumericRank } from '../constants'
 import { IronswornItem } from '../item/item'
+import { AssetAbility } from '../item/itemtypes'
 import {
   ISAssetTypes,
   ISMoveCategories,
@@ -136,7 +137,9 @@ function movesForCategories(
       movesToCreate.push({
         _id: hashLookup(cleanMove['dfid']),
         type: 'sfmove',
-        name: move.Name,
+        name:
+          maxBy([move.Name, move.Display.Title], (name) => name.length) ??
+          move.Name,
         img: 'icons/dice/d10black.svg',
         system: cleanMove,
       })
@@ -185,14 +188,15 @@ function assetsForTypes(types: IAssetType[]) {
       }
 
       const data = {
-        requirement: renderMarkdown(asset.Requirement ?? ''),
+        requirement: renderLinksInStr(asset.Requirement ?? ''),
         category: assetType.Name,
         color: assetType.Display.Color ?? '',
         fields,
         abilities: (asset.Abilities ?? []).map((ability) => {
-          const ret = {
+          const ret: AssetAbility = {
+            name: ability.Name || null,
             enabled: ability.Enabled || false,
-            description: renderMarkdown(ability.Text),
+            description: renderLinksInStr(ability.Text),
           } as any
 
           for (const input of ability.Inputs ?? []) {

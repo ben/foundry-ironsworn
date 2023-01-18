@@ -2,44 +2,78 @@
   "IRONSWORN": {
     "Ironsworn": "Ironsworn",
     "Starforged": "Starforged",
-    "CreateActor": "Stworz Kartę",
     "YourWorldTruths": "Swiat: Prawdy",
     "TruthQuestStarter": "Zadanie poczatkowe:",
     "QuestStarter": "Zadanie poczatkowe",
     "SaveYourTruths": "Zapisz Prawdy",
     "CustomTruth": "Własna Prawda",
     "Roll": "Rzuć",
-    "Chat": "Czat",
-    "Rolling": "Losuje..",
-    "Bonus": "Bonus",
+    "SendToChat": "Wyślij tekst na czat: <i>{move}</i>",
+    "CopyTextToClipboard": "Kopiowanie tekstu do schowka",
+    "Adds": "Dodaje",
     "Versus": "vs.",
-    "CappedAt10": "Capped at 10",
+    "CappedAt10": "Ograniczenie do 10",
     "Strong_hit": "Sukces!",
     "Strong_hit_match": "Triumf! (match)",
     "On_a_strong_hit": "Przy Pełnym Sukcesie",
     "Weak_hit": "Częściowy Sukces",
     "On_a_weak_hit": "Przy Częściowym Sukcesie",
-    "Miss": "Porazka",
+    "Miss": "Porażka",
     "Miss_match": "Krytyczna Porazka(match)",
     "On_a_miss": "Przy miss",
-    "Opportunity": "Okazja!",
-    "Complication": "Komplikacja!",
     "MarkProgress": "Zaznacz Postęp",
+    "ProgressMove": "Zmień Postęp",
+    "PROGRESS": {
+      "Current": "{score} postęp ({ticks} ticks)",
+      "Ticks": "{ticks} ticków",
+      "BOX": {
+        "1": "1 pole",
+        "2": "2 pola",
+        "3": "3 pola"
+      },
+      "TICK": {
+        "1": "1 tiki",
+        "2": "2 tiki",
+        "3": "3 tiki",
+        "4": "4 tiki"
+      }
+    },
+    "MarkLegacy": "Zaznacz {amount} na twoim {legacy} torze dziedzictwa",
     "UnmarkProgress": "Odznacz Postęp",
-    "ClearProgress": "Wyczyść Postęp",
-    "FulfillVow": "Wypełnij Przysięge",
     "ProgressRoll": "Rzut postępu",
+    "MakeAProgressRoll": "Wykonuj rzut postepu {score} postępu(????)",
     "StarProgress": "Gdy jest aktywny, ten element pojawi się również w zakładce 'Dziedzictwo'",
-    "Mark": "Zaznacz",
-    "Fulfill": "Wypełnij",
-    "Clear": "Wyczyść",
     "Troublesome": "Kłopotliwy",
     "Dangerous": "Niebezpieczny",
     "Formidable": "Nadzwyczajny",
     "Extreme": "Ekstremalny",
     "Epic": "Epicki",
     "Stat": "Statystyka",
+    "OracleTable": {
+      "ColumnLabel": {
+        "Roll": "Rzut",
+        "RollRange": "Zakres rzutu",
+        "DiceRollResult": "{dice} wynik rzutu",
+        "Result": "Wynik"
+      }
+    },
     "roll +x": "rzuć +{stat}",
+    "Roll +x": "rzuć +{stat}",
+    "roll method": {
+      "All": "rzuć all of {statList} (????)",
+      "Any": {
+        "2": "rzuć +{stat1} albo +{stat2}",
+        "fallback": "rzuć na dowolną {statList}"
+      },
+      "Highest": {
+        "2": "rzuć +{stat1} albo +{stat2}, którekolwiek jest wyższe",
+        "fallback": "rzuć na najwyższą z {statList}"
+      },
+      "Lowest": {
+        "2": "rzuć +{stat1} albo +{stat2}, którekolwiek jest niższe",
+        "fallback": "rzuć na najniższą {statList}"
+      }
+    },
     "Momentum": "impet",
     "Health": "zdrowie",
     "Spirit": "duch",
@@ -50,23 +84,25 @@
     "Shadow": "cień",
     "Wits": "rozum",
     "XP": "Exp",
-    "Asset": "Aspekt",
-    "Assets": "Aspekty",
-    "Bonds": "Więzi",
-    "Bond": "Więź",
+    "NoBonds": "Brak więzi",
     "Legacies": "Dziedzictwa",
+    "LEGACY": {
+      "Bonds": "Więzi",
+      "Quests": "Zadania",
+      "Discoveries": "Odkrycia"
+    },
     "Clock": "Zegar",
-    "Scenes": "Sceny",
-    "Quests": "Zadania",
-    "Notes": "Notatki",
-    "Discoveries": "Odkrycia",
+    "Segments": "Segmenty",
     "Debilities": "Osłabienie",
-    "Conditions": "Dolegliwość",
+    "Conditions": "Stany",
+    "Condition": "Stan",
+    "ConditionSetOnOne": "{condition} jest zmieniony na {name}",
+    "ConditionSetOnMany": "{condition} jest zmieniony na:",
     "Banes": "Zguby",
     "Burdens": "Brzemiona",
     "Misfortunes": "Nieszczęścia",
     "LastingEffects": "Trwałe efekty",
-    "Vehicle": "Pojazdy",
+    "Vehicle": "Pojazd",
     "Wounded": "Zraniony",
     "Unprepared": "Nieprzygotowany",
     "Shaken": "Wstrząśnięy",
@@ -80,16 +116,7 @@
     "Doomed": "Zgubiony",
     "Indebted": "Zadłużony",
     "Battered": "Poobijany",
-    "Vow": "Przysięga",
-    "Vows": "Przysięgi",
-    "Progress": "Postęp",
     "Reroll": "Przerzut",
-    "Connections": "Połączenia",
-    "Connection": "Połączenie",
-    "Exploration": "Eksploracja",
-    "Legacy": "Dziedzictwo",
-    "Moves": "Ruchy",
-    "Threshold": "Próg",
     "MOVES": {
       "Adventure": "Ruchy Podróży",
       "Combat": "Ruchy Walki",
@@ -99,44 +126,49 @@
       "Legacy": "Ruchy Dziedzictwa",
       "Quest": "Ruchy Zadań",
       "Relationship": "Ruchy Więzi",
-      "Suffer": "Ruchy Konsekwencji"
+      "Suffer": "Ruchy Konsekwencji",
+      "Connection": "Ruchy Komunikacji",
+      "Exploration": "Ruchy Eksploracji",
+      "Failure": "Ruchy Porażki",
+      "Rarity": "Ruchy Rzadkości",
+      "Recover": "Rychy Wypoczynku",
+      "Scene Challenge": "Scene challenge moves",
+      "Session": "Ruchy Sesji",
+      "Threat": "Ruchy Zagrożeń",
+      "Threshold": "Ruchy Progów"
     },
-    "Oracles": "Wyrocznie",
-    "Custom Oracles": "Własne Wyrocznie",
-    "Search": "Szukaj",
-    "Plot": "Wątek",
-    "Location": "Lokacja",
+    "Failure": "Porażka",
+    "Threat": "Zagrożenie",
+    "Rarity": "Rzadkośc",
     "LocationType": "Typ Lokacji",
-    "Character": "Postać",
-    "Starship": "Statek Kosmicznyu",
-    "SharedSheet": "Wspólna Karta",
-    "DelveSite": "Delve Site",
-    "Names": "Imiona",
     "RollForDetails": "Wylosuj Detale Lokacji",
     "RandomName": "Losowe imię",
-    "Burn": "Spal",
-    "Focus": "Skupienie",
+    "ResolveChallenge": "Rozwiąż wyzwanie",
+    "ResolveChallengeDisabled": "Wybierz swoje dwie ostatnie kostki wyzwania",
     "BurnForUpgrade": "Spal Impet: <strong>{type}</strong>",
-    "MomentumBurnt": "Spalony Impet",
-    "NegativeMomentumCancel": "Ujemny Impet anulował Kość Akcji",
-    "Reset": "Zresetuj",
-    "Max": "Max",
-    "Name": "Imię",
+    "BurnMomentumAndResetTo": "Spal {value} impet i zresetuj do {resetValue}",
+    "MomentumBurnt": "Momentum Burn",
+    "NegativeMomentumCancel": "Negatywny impet anulował kość działania",
     "Pronouns": "Zaimki",
     "Callsign": "Ksywa",
     "Characteristics": "Charakterystyka",
     "Summary": "Podsumowanie",
-    "Description": "Opis",
+    "Category": "Kategoria",
+    "Color": "Kolor",
+    "Requirement": "Wymaganie",
     "Trigger": "Wyzwalacz",
     "FullText": "Pełny tekst",
+    "Field": "Domena",
     "Fields": "Domeny",
     "Label": "Etykieta",
     "Value": "Wartość",
     "Abilities": "Zdolności",
+    "Ability": "Zdolność",
     "Options": "Opcje",
+    "Option": "Opcja",
     "Track": "Tor",
     "Enabled": "Włączony",
-    "Rank": "Ranga",
+    "ChallengeRank": "Ranga wyzwania",
     "Completed": "Ukończone/y",
     "NotCompleted": "Nieukończony/e",
     "Features": "Cechy",
@@ -144,21 +176,17 @@
     "Dangers": "Zagrożenia",
     "Foes": "Przeciwnicy",
     "Foe": "Przeciwnik",
-    "NPC": "BG",
     "Edit": "Edytuj",
     "Domain": "Domena",
     "Theme": "Motyw",
     "Denizen": "Mieszkaniec/ka",
     "Denizens": "Mieszkańcy",
     "OpenCompendium": "Otwórz Kompendium",
-    "DeleteItem": "Usuń Przedmiot",
-    "DeleteMove": "Usuń Ruch",
-    "DeleteVow": "Usuń Przysięgę",
-    "DeleteProgress": "Usuń Postęp",
-    "DeleteAsset": "Usuń Aspekt",
     "ConfirmDelete": "Jesteś pewien? Nie można tego cofnąć.",
-    "StatBonusTooltip": "Bonus na następny rzut na statystykę",
     "RequiresLocationType": "Ta Wyrocznia wymaga wybrania typu lokacji",
+    "RollOracleTable": "Rzuć na wyrocznie: <i>{title}</i>",
+    "RollMove": "Rzuć na ruch: <i>{title}</i>",
+    "PageReference": "p. {page}",
     "PlanetType": "Typ planety",
     "RandomPlanetType": "Losowy typ planety",
     "SettlementType": "Typ Osady",
@@ -175,12 +203,8 @@
     "Fourth": "czwarty",
     "Fifth": "piąty",
     "StarforgedTools": "Narzędzia Starforged",
-    "NewSector": "Nowy Sector",
-    "NewStar": "Nowa Gwiazda",
-    "NewPlanet": "Nowa Planeta",
-    "NewSettlement": "Nowa Osada",
-    "NewDerelict": "Nowa Ruina",
-    "NewVault": "Nowa Krypta Prekursora",
+    "IronswornTools": "Narzędzia Ironsworn",
+    "EditSector": "Edytuj Sektor",
     "Sector": "Sektor",
     "Region": "Region",
     "Terminus": "Stacja",
@@ -188,6 +212,12 @@
     "Expanse": "Przestrzeń",
     "RotateCCW": "Obróc zgodnie z ruchem zegara",
     "RotateCW": "Oróć przeciwnie do ruchu zegera",
+    "RollDialog": {
+      "AdvancedRollOptions": "Opcje zaawansowane",
+      "PresetActionDie": "Preset action die",
+      "PredeterminedOutcome": "Predetermined outcome",
+      "ExtraChallengeDice": "Extra challenge dice"
+    },
     "ChatAlert": {
       "Renamed": "Zmieniono na {name}",
       "renamed": "zmieniono na {name}",
@@ -195,8 +225,8 @@
       "Deleted": "Usunięto {name}",
       "MarkedXP": "Zaznaczono {amt} XP",
       "UnmarkedXP": "Odznaczono {amt} XP",
-      "AdjustedStat": "{amt} {stat} (now {val})",
-      "SetCondition": "Set the {condition} stan",
+      "AdjustedStat": "{amt} {stat} (obecna wartość {val})",
+      "SetCondition": "Zmieniono {condition} stan",
       "ClearedCondition": "Usunięto {condition} stan",
       "RankChanged": "Ranga zmieniona z {old} to {new}",
       "rankChanged": "ranga zmieniona z {old} to {new}",
@@ -229,43 +259,61 @@
       },
       "Tools": {
         "Name": "Narzędzia Postaci",
-        "Hint": "Which set of moves and oracles will appear Gdy opening a character sheet.",
+        "Hint": "Jaki zestaw ruchów i oracji pojawi się kiedy zostanie otwarta karta postaci.",
         "Sheet": "Match sheet"
       },
       "SharedSupply": {
-        "Name": "Shared Supply Tracker",
-        "Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+        "Name": "Wspólny Tor Zasobów",
+        "Hint": "Jeśli włączona, zmiana toru zasobów na dowolnej postaci, zostanie odnotowana na torach zasobów wszystkich innych postaci"
       },
       "LogChanges": {
-        "Name": "Log Character Updates",
-        "Hint": "If on, changes to character stats will be logged to the chat."
+        "Name": "Dziennik aktualizacji postaci",
+        "Hint": "Jeśli jest włączona, zmiany statystyk postaci będą rejestrowane na czacie."
       },
       "PromptTruths": {
         "Name": "Ironsworn/Starforged Dialog on Start",
-        "Hint": "Open the above dialog on startup."
+        "Hint": "Otwórz powyższe okno dialogowe przy uruchamianiu."
       },
       "ConfigurationDialog": {
-        "Label": "Ironsworn/Starforged Configuration Dialog",
-        "Name": "Configuration Dialog",
-        "Hint": "Choose between Ironsworn and Starforged UI elements."
+        "Label": "Okno konfiguracji Ironsworn/Starforged",
+        "Name": "Okno konfiguracji",
+        "Hint": "Wybierz pomiędzy elementami UI Ironsworn a Starforged"
       },
       "SFBeta": {
-        "Name": "Show Starforged beta content",
-        "Hint": "Enables in-progress Starforged features."
+        "Name": "Pokaż zawartość Starforged-beta",
+        "Hint": "Włacza funkcję Starforged, będące w trakcie realizacji."
+      },
+      "DataforgedIronswornMoves": {
+        "Name": "(Beta) New Ironsworn move-sheet UI",
+        "Hint": "If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization."
+      },
+      "ProgressMarkAnimation": {
+        "Name": "Włącz animację toru postępu",
+        "Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."
       }
     },
     "First Start": {
-      "Witaj": "Witaj",
+      "Welcome": "Witaj",
       "Save": "Zapisz",
-      "Intro": "Witaj w Ironsworn! Przed rozpoczęciem jest jeszcze kilka wyborów do wykonania."
+      "Intro": "Witaj w Ironsworn! Przed rozpoczęciem jest jeszcze kilka wyborów do wykonania.",
+      "CharacterSheet": "Character Sheet",
+      "DefaultSheet": "Którą kartę postaci chciałbyś/aś używa??",
+      "MovesOracles": "Ruchy i Wyrocznie",
+      "DefaultMovesOracles": "Który zestaw ruchów i wyroczni chciałbyś/aś używać?",
+      "MatchSheet": "Match sheet",
+      "SettingTruths": "Ustawienia Prawd",
+      "SettingTruth": "Ustawienia Prawdy",
+      "GenerateTruths": "Czy chciałbyś wygenerować prawdy twojego świata?",
+      "YesFor": "Tak, na",
+      "NeverAsk": "Nie pytaj nigdy więcej"
     },
     "WorldTruths": {
       "The Old World": {
         "name": "Stary Świat",
         "option1": "Dzikie klany zwane Skulde najechały królestwa Starego Świata. Nasze armie padły. Większość została zabita lub wzięta w niewolę. Ci, którzy uciekli, wypłynęli na pokładzie wszystkiego, co dało się unieść na wodzie. Po uciążliwej, wielomiesięcznej podróży, ocalali dotarli na ląd Żelaznych Ziem.",
         "quest1": "Jesteś potomkiem Skuldów. Ze względu na swoje dziedzictwo, twoja rodzina od dawna jest nieufna wobec swoich pobratyńców - Żelaznych Ludzi . Teraz, niewielki oddział Skulde wylądował na naszym wybrzeżu. Czy są oni zwiastunem inwazji? Gdzie leży twoja lojalność?",
-        "option2": "Choroba przemieszczała się niczym straszliwa fala przez Stary Świat, zabijając wszystkich na swojej drodze. Tysiące osób uciekło na pokładach statków. Jednak nie można było uciec przed plagą. Na wielu statkach udało się opanować chorobę dzięki bezwzględnym środkom - wyrzucano za burtę każdego, kto wykazywał najmniejsze objawy. Inne statki zostały stracone na zawsze. W końcu ci, którzy przeżyli, znaleźli Żelazne Ziemie i uczynili z nich swój nowy dom. Niektórzy twierdzą, że na zawsze pozostaniemy przeklęci przez tych, których zostawiliśmy za sobą.",
-        "quest2": "Osada została dotknięta chorobą. Choć choroba ta wykazuje pewne podobieństwa do plagi w Starym Świecie, nie zabija swoich ofiar. Zamiast tego, zmienia je. Jak objawia się ta choroba? Dlaczego przysięgasz szukać lekarstwa?",
+        "option2": "Choroba przemieszczała się niczym straszliwa fala przez Stary Świat, zabijając wszystkich na swojej drodze. Tysiące osób uciekło na pokładach statków. Jednak nie można było uciec przed plagą. Na wielu statkach udało się opanować chorobę dzięki bezwzględnym środkom - wyrzucano za burtę każdego, kto wykazywał najmniejsze objawy choroby. Inne statki zostały stracone na zawsze. W końcu ci, którzy przeżyli, znaleźli Żelazne Ziemie i uczynili z nich swój nowy dom. Niektórzy twierdzą, że na zawsze pozostaniemy przeklęci przez tych, których zostawiliśmy za sobą.",
+        "quest2": "Osada została dotknięta chorobą. Choć ta wykazuje pewne podobieństwa do plagi w Starym Świecie, nie zabija swoich ofiar. Zamiast tego, zmienia je. Jak się ona objawia? Dlaczego przysięgasz szukać na nią lekarstwa?",
         "option3": "Stary Świat nie mógł nas dłużej utrzymać. Byliśmy zbyt liczni. Wycięliśmy lasy. Nasze uprawy zwiędły na jałowej ziemi. Miasta i wsie przepełnione były zdesperowanymi, głodnymi ludźmi. Drobni watażkowie walczyli o resztki. Rzuciliśmy swój los na morze i znaleźliśmy Żelazne Ziemie. Nowy świat. Świeży początek.",
         "quest3": "Dekady temu zakończył się exodus. Od tego czasu nie przypłynęły tu żadne statki ze Starego Świata. Aż do teraz. Docierają do nas wieści o jednym statku, świeżo przybyłym przez rozległy ocean, który osiadł na skałach Wysp Barierowych. Gdy słyszysz nazwę tego statku, przysięgasz odkryć los jego pasażerów. Dlaczego jest to dla ciebie takie ważne?"
       },
@@ -273,15 +321,15 @@
         "name": "Żelazo",
         "option1": "Imponujące wzgórza i góry Żelaznych Ziem są bogate w rudę żelaza. Najbardziej cenione jest czarne żelazo wykute z gwiazd.",
         "quest1": "Karawana, zmierzająca do odległych południowych krain, opuściła górniczą osadę w zeszłym sezonie, ale nigdy nie dotarła do celu. Wiozła łupy z czarnego żelaza. Dlaczego odnalezienie tej zaginionej karawany jest dla ciebie tak ważne?",
-        "option2": "Pogoda jest ponura. Deszcz i wiatr nadciągają od oceanu. Zimy są długie i gorzkie. Jeden z pierwszych osadników narzekał: 'Tylko ludzie z żelaza ośmielają się mieszkać w tym okropnym miejscu' - i tak właśnie nazwano naszą ziemię.",
-        "quest2": "Żniwa okazały się niewystarczające. Nieubłagane śniegi sprawiły, że wioska została odizolowana. Kończy się jedzenie. Co zrobisz, by pomóc tym ludziom przetrwać ten ciężki okres?",
+        "option2": "Pogoda jest ponura. Deszcz i wiatr nadciągają znad oceanu. Zimy są długie i gorzkie. Jeden z pierwszych osadników narzekał: 'Tylko ludzie z żelaza ośmielają się mieszkać w tym okropnym miejscu' - i właśnie tak nazwano naszą ziemię.",
+        "quest2": "Żniwa okazały się niewystarczające. Nieubłagane śniegi sprawiły, że wioska została odizolowana. Kończy się jedzenie. Co zrobisz, by pomóc mieszkańcom przetrwać ten ciężki okres?",
         "option3": "Niezniszczalne metalowe filary znajdują się w całej krainie. Są szare jak żelazo i gładkie jak kamień rzeczny. Nikt nie zna ich przeznaczenia. Niektórzy twierdzą, że są tak stare jak świat. Niektórzy, jak na przykład Żelazni Kapłani, czczą je i składają na nie przysięgi. Większość uznaje je za znak ostrzegawczy i pospiesznie podąża swoją drogą, gdy natknie się na jeden z nich. Filary nie matowieją i nawet najostrzejsze ostrze nie jest w stanie ich zarysować.",
-        "quest3": "Twoje sny nawiedzają wizje filaru, który stoi w nieznanym krajobrazie. Co widzisz? Dlaczego przysięgasz go szukać?"
+        "quest3": "Twoje sny nawiedzają wizje filaru, który stoi w nieznanym krajobrazie. Co jeszcze widzisz? Dlaczego przysięgasz go szukać?"
       },
       "Legacies": {
         "name": "Dziedzictwo",
         "option1": "Jesteśmy pierwszymi ludźmi, którzy przemierzają te ziemie.",
-        "quest1": "W pismach jednego z pierwszych osadników znajduje się opis polany w sercu Prastarych Puszczy. Mówi się, że duchy tego miejsca udzielają cudownego błogosławieństwa. Jakim dobrodziejstwem jest ono obdarza?",
+        "quest1": "W pismach jednego z pierwszych osadników znajduje się opis polany w sercu Prastarych Puszczy. Mówi się, że duchy tego miejsca udzielają cudownego błogosławieństwa. Jakim dobrodziejstwem ono obdarza?",
         "option2": "Inni ludzie przypłynęli tu ze Starego Świata nieopisane lata temu, ale wszystko, co po nich pozostało, to dziki, zdziczały lud, który nazywamy Złamanymi. Czy ich los stanie się naszym własnym?",
         "quest2": "Znajdujesz dziecko - jedno ze Złamanych. Jest ranne i polują na nie inni przedstawiciele jego gatunku. Czy chronisz je, nawet ryzykując, że ściągniesz na siebie gniew złamanych plemion?",
         "option3": "Przed Żelaznymi Ludźmi, nawet przed pierworodnymi, żył tu inny lud. Ich starożytne ruiny można znaleźć w całych Żelaznych Krainach.",
@@ -298,69 +346,68 @@
       },
       "Leaders": {
         "name": "Liderzy",
-        "option1": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
-        "quest1": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, musisz make this vision a reality.",
-        "option2": "Each of our communities has its own leader, called an overseer. Every seventh spring, the people affirm their current overseer or choose a new one. Some overseers wear the iron circlet reluctantly, while others thirst for power and gain it through schemes or threats.",
-        "quest2": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?",
-        "option3": "Numerous clan-chiefs rule over petty domains. Most are intent on becoming the one true king. Their squabbles will be our undoing.",
-        "quest3": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two Gdy an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?"
+        "option1": "Liderzy są tak zróżnicowani jak ludzie zamieszkujący żelazne ziemie. Niektóre społeczności są rządzone przez głowę potężnej rodziny. Inne z kolei mają radę starszych, która podejmuje decyzje i rozstrzyga spory. W kolejnych społecznościach władzę sprawują kapłani. Dla niektórych decydujące są pojedynki w kręgu wybierające nasilniejszego władcę.",
+        "quest1": "Masz żywe, powracające sny o mieście w krainie Żelaznych Ziem. Ma mocne kamienne mury, gwarne rynki i strażnicę na wysokim wzgórzu. I tak wielu ludzi! Nigdzie na Żelaznych Ziemiach nie ma takiego miasta. W swoich snach jesteś władcą tego miasta. W jakiś sposób, nie zważając na to, jak długo to potrwa, musisz urzeczywistnić tę wizję.",
+        "option2": "Każda ze wspólnot Żelaznych Ludzi ma swojego lidera, zwanego Starszym. Co siódmą wiosnę ludzie potwierdzają swojego obecnego Starszego lub wybierają nowego. Niektórzy z nich niechętnie noszą żelazny pierścień, podczas gdy inni pragną władzy i zdobywają ją poprzez intrygi lub groźby.",
+        "quest2": "Pewia Starsza zachorowała. Jest pewne, że umrze bez pomocy, a choroba nie jest znana wiejskiemu uzdrowicielowi. Podejrzewa się, że przyczyną jest trucizna, a może nawet zła magia. Rodziny w społeczności rzucają się sobie do gardeł, wysuwając preferowanych kandydatów do objęcia żelaznego pierścienia. Czy odkryjesz prawdę o chorobie Starszej i przywrócisz jej zdrowie?",
+        "option3": "Liczni wodzowie klanów rządzą drobnymi domenami. Większość z nich ma zamiar zostać jedynym prawdziwym królem. Ich spory będą przyczyną naszej zguby.",
+        "quest3": "W sekrecie posiadasz jedną połowę Prawdziwej Korony, relikwii Starego Świata. Wieki temu korona ta została przełamana na dwie części, gdy topór zabójcy rozłupał głowę najwyższego władcy. Ty wywodzisz się z tego królewskiego rodu. Kto dał ci ten relikt? Czy odnajdziesz drugą połowę złamanej korony i spróbujesz zjednoczyć klany pod swoim panowaniem? Czy może widzisz dla niej inne zastosowanie?"
       },
       "Defense": {
         "name": "Obronność",
-        "option1": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. Gdy a community is threatened, the people stand together to protect their own.",
-        "quest1": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?",
-        "option2": "The wardens are our soldiers, guards, and militia. They serve their communities by standing sentry, patrolling surrounding lands, and organizing defenses in times of crisis. Most have strong ties to their community. Others, called free wardens, are wandering mercenaries who hire on to serve a community or protect caravans.",
-        "quest2": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?",
-        "option3": "Our warbands are rallied to strike at our enemies or defend our holdings. Though not nearly as impressive as the armies that once marched across the Old World, these forces are as well-trained and equipped as their communities can manage. The banners of the warbands are adorned with depictions of their Old World history and Ironland victories.",
-        "quest3": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?"
+        "option1": "Tutaj, na Żelaznych Ziemiach, zapasy są zbyt cenne, a ziemie zbyt słabo zaludnione, by utrzymać zorganizowane siły bojowe. Gdy jakaś społeczność jest zagrożona, ludzie jednoczą się, by chronić swoich.",
+        "quest1": "Osada nie jest w stanie, lub nie chce, bronić się przed bezpośrednim zagrożeniem. Dlaczego? Jakie niebezpieczeństwo im grozi? Co zrobisz, aby ich chronić?",
+        "option2": "Po żelaznych ziemiach chodzą Strażnicy. Są oni naszymi żołnierzami, strażą oraz milicją. Służą swoim społecznościom stojąc na straży, patrolując okoliczne ziemie i organizując obronę w czasie kryzysu. Wielu z nich jest silnie związanych ze swoją społecznością. Inni, zwani Wolna Straż, to wędrowni najemnicy, którzy wynajmują się, by służyć społeczności lub chronić karawany.",
+        "quest2": "Trafiasz na umierającą strażniczkę. Mówi ci o ważnej misji i powierza ci jej wykonanie. \"Przysięgnij mi\" - mówi, wyciągając zakrwawioną rękę, by dać ci przedmiot kluczowy dla zadania. Co to jest? I na czym polega zadanie?",
+        "option3": "Oddziały wojenne Żelaznych Ludzi są zbierane, aby zaatakować wrogów lub bronić miast. Choć nie są one tak imponujące jak armie, które niegdyś przemierzały Stary Świat, są tak dobrze wyszkolone i wyposażone, jak tylko ich społeczności mogą sobie na to pozwolić. Sztandary oddziałów wojennych są ozdobione wizerunkami historii Starego Świata i zwycięstw Żelaznych Ziem.",
+        "quest3": "Brygada wojenna została zmieciona w walce z przeważającym wrogiem. Co łączy cię z tą bandą? Kto ich pokonał? Czy poniesiesz ich sztandar w poszukiwaniu zemsty, czy też przysięgniesz, że sprowadzisz go do domu na należne mu miejsce?"
       },
       "Mysticism": {
         "name": "Mistycyzm",
-        "option1": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
-        "quest1": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?",
-        "option2": "Magic is rare and dangerous, ale those few who wield the power are truly gifted.",
-        "quest2": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?",
-        "option3": "Magic courses through this land as the rivers flow through the hills. The power is there for those who choose to harness it, and even the common folk often know a helpful ritual or two.",
-        "quest3": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
+        "option1": "Niektórzy nadal znajdują pocieszenie w starych tradycjach. Wzywają mistyków, aby przepowiedzieli los ich noworodka, lub proszą ich o odprawienie rytuałów, aby przywołać obfite zbiory. Inni ze strachu działają przeciwko tym, których podejrzewają o posiadanie Mocy. Większość ludzi wierzy jednak, że prawdziwa magia - jeśli kiedykolwiek istniała - jest już dla nas stracona.",
+        "quest1": "Ktoś z Twoich bliskich jest oskarżony o rzucenie klątwy na osadę, przez co pola leżą odłogiem, a bydło choruje. Jakie są na to dowody? Czy będziesz bronił tej osoby i odkryjesz prawdziwą przyczynę kłopotów osady?",
+        "option2": "Magia jest rzadka i niebezpieczna, ale ci nieliczni, którzy władają mocą, są doprawdy potężnie obdarzeni.",
+        "quest2": "Słyszałeś opowieści o kimś, kto włada prawdziwą mocą. Żyje on w odizolowanej osadzie daleko stąd. Kto opowiedział Ci o tym mistyku? Czy boisz się tej osoby? Czy go szanujesz? Dlaczego chcesz go odnaleźć?",
+        "option3": "Magia przepływa przez tę krainę jak rzeki przez wzgórza. Moc jest dla tych, którzy zechcą ją wykorzystać, a nawet zwykli ludzie często znają pomocny rytuał lub dwa.",
+        "quest3": "Ktoś, kogo kochasz, kroczył ścieżkami mocy, i jej uległ. Kim jest ta osoba? Dlaczego popadła w objęcia mroku? Gdzie się teraz znajduje? Czy starasz się ją uratować, czy też może jednak pokonać?"
       },
       "Religion": {
         "name": "Religia",
-        "option1": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, ale most believe the gods long ago abandoned us.",
-        "quest1": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?",
-        "option2": "The people honor old gods and new. In this harsh land, a prayer is a simple ale powerful comfort.",
-        "quest2": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this podróż? Who seeks to stop them and why?",
-        "option3": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
-        "quest3": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
+        "option1": "Garstka mieszkańców Żelaznych Ziem nadal robi znaki lub mamrocze modlitwy z przyzwyczajenia lub tradycji. Jednak większość wierzy, że bogowie dawno temu nas opuścili.",
+        "quest1": "Charyzmatyczna mieszkanka Żelaznych Ziem, nakłania swoich wyznawców do wyrzeczenia się resztek religii Starego Świata, proponuje nową drogę dla tego nowego świata. Jakiej filozofii naucza? Co zamierza osiągnąć? Czy przysięgasz jej pomóc? A może ją powstrzymać?",
+        "option2": "Ludzie czczą starych i nowych bogów. W tym surowym kraju modlitwa jest prostym, acz potężnym pokrzepieniem.",
+        "quest2": "Jeden z mieszkańców Żelaznych Krain jest zdecydowany odbyć pielgrzymkę do niebezpiecznych miejsc. Jakiego świętego miejsca poszukuje? Dlaczego przysiągłeś im pomóc w tej podróży? Kto stara się ich powstrzymać i dlaczego?",
+        "option3": "Naszych bogów jest wielu. Dają o sobie znać poprzez manifestacje i cuda. Niektórzy twierdzą, że nawet potajemnie chodzą wśród nas. Kapłani przekazują nam wolę bogów i sprawują władzę nad wieloma społecznościami.",
+        "quest3": "Nosisz znamię boga. Co to za znak? Kapłani ogłaszają to jako znak, że zostałaś wybrana do wypełnienia przeznaczenia. Czy akceptujesz ten los i przysięgasz go wypełnić, czy też jesteś zdecydowana go cofnąć? Jakie siły stają przeciwko Tobie?"
       },
       "Firstborn": {
-        "name": "Pierworodni/Starsze Rasy",
-        "option1": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
-        "quest1": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?",
-        "option2": "The firstborn live in isolation and are fiercely protective of their own lands.",
-        "quest2": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?",
-        "option3": "The firstborn hold sway in the Ironlands. The elves of the deep forests and the giants of the hills tolerate us and even trade with us—for now. Ironlanders fear the day they decide we are no longer Witaj here.",
-        "quest3": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?"
+        "name": "Pierwotni",
+        "option1": "Pierwotni przeszli do legendy. Niektórzy twierdzą, że pozostałości dawnych plemion nadal mieszkają w głębokich lasach lub wysokich górach. Jednak większość jest zdania, że nigdy nie były one niczym więcej niż mitem.",
+        "quest1": "Ktoś ogarnięty obsesją na punkcie Pierwotnych chce znaleźć dowody na ich istnienie. Będzie to wymagało wyprawy w odległe krańce Żelaznych Krain. Jaka jest twoja rola w tej misji?",
+        "option2": "Pierwotni żyją w izolacji i zaciekle chronią swoje ziemie.",
+        "quest2": "Elf, wygnany przez swoich pobratymców, mieszka z mieszkańcami Żelaznych Krain. Z czasem stał się częścią społeczności. Teraz jest umierający. Tęskni za powrotem do swoich ludzi, zanim odejdzie. Czy poszukuje on rozgrzeszenia, a może sprawiedliwości? Dlaczego przysięgasz mu pomóc? Jaka siła bądź grupa sprzeciwia się jego powrotowi?",
+        "option3": "Pierwotni mają władzę w Żelaznych Krainach. Elfy z głębokich lasów i olbrzymy ze wzgórz tolerują nas, a nawet handlują z nami - na razie. Mieszkańcy Żelaznych Krain obawiają się dnia, w którym zdecydują, że nie jesteśmy już tutaj mile widziani.",
+        "quest3": "Ludzie i olbrzymy są na skraju wojny. Co się stało? Po czyjej stronie staniesz? Czy można uczynić cokolwiek, aby zażegnać ten konflikt?"
       },
       "Beasts": {
         "name": "Bestie",
-        "option1": "The beasts of old are nothing ale legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, ale they are obviously delusional. No such things exist.",
-        "quest1": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?",
-        "option2": "Monstrous beasts stalk the wild areas of the Ironlands.",
-        "quest2": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?",
-        "option3": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, ale range into the settled lands to hunt. There, they often prey on cattle, ale attacks on travelers, caravans, or even settlements are not uncommon.",
-        "quest3": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?"
+        "option1": "Dawne bestie nie są niczym innym jak legendą. Nieliczni, którzy podróżują w głąb lasów i wysokich gór, wracają z opowieściami o potwornych stworzeniach, ale są to oczywiście urojenia. Takie rzeczy nie istnieją.",
+        "quest1": "Byłeś świadkiem ataku, jak wydawało ci się, zwierzęcia o monstrualnych rozmiarach. Nikt jednak Ci nie wierzy w twoją opowieść. W rzeczywistości jesteś oskarżony o morderstwo, o które obwiniasz tę bestię. Jak możesz udowodnić swoją niewinność? Czy możesz w ogóle zaufać własnym wspomnieniom o tym wydarzeniu?",
+        "option2": "Potworne bestie grasują po dzikich terenach Żelaznych Krain.",
+        "quest2": "Wybitny mieszkaniec Żelaznej Krainy jest pochłonięty potrzebą dokonania zemsty na specyficznej bestii. Co czyni to stworzenie wyjątkowym? W jaki sposób zasłużyło na gniew Żelaznego Człowieka? Czy pomożesz tej osobie w jej wendencie? Czy też zapobiegniesz temu, by ślepa nienawiść tego człowieka nie zniszczyła więcej niż tylko samą bestię?",
+        "option3": "Bestie wszelkiego rodzaju przemierzają Żelazne Krainy. Mieszkają głównie w głębi kraju, ale zapuszczają się na osiadłe ziemie, by polować. Tam często żerują na trzodach, ale ataki na podróżników, karawany, a nawet osady nie należą do rzadkości.",
+        "quest3": "Zawodowi pogromcy zarabiają na życie zabijając bestie. Jedna z pogromców, znana w całych Żelaznych Krainach z licznych zwycięstw, zaginęła podczas polowania. Czy w końcu spotkała swój odpowiednik, czy może w grę wchodzi coś bardziej mrocznego. Co cię z nią łączy?"
       },
       "Horrors": {
         "name": "Horrory",
-        "option1": "Nothing ale stories to frighten children.",
-        "quest1": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, ale there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?",
-        "option2": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, Gdy all is wreathed in darkness, only fools venture beyond their homes.",
-        "quest2": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?",
-        "option3": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
-        "quest3": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
+        "option1": "Nie sa niczym więcej niż opowieściami, które mają przestraszyć dzieci.",
+        "quest1": "Morderstwa zaczęły się w zeszłym kwartale. Lokalne plotki sugerują, że są one dziełem mściwego horroru(ducha, stwora?), ale mogą też być spowodowane bardziej zwyczajnymi siłami. Jaki jest twój związek z tymi morderstwami? Co zrobisz, by je powstrzymać?",
+        "option2": "Wystrzegamy się ciemnych lasów i głębin wód, bo w czeluściach tych miejsc czają się potwory. W czasie mroku, gdy wszystko spowija ciemność, tylko głupcy zapuszczają się poza swoje domy.",
+        "quest2": "Nosisz blizny po ataku przerażającego stwora(horroru). Co to było? Czy te blizny są fizyczne, emocjonalne, czy może zarówno fizyczne, jak i emocjonalne? Jak starasz się ponownie uczynić siebie całością?",
+        "option3": "Umarli nie spoczywają w Żelaznych Krainach. W nocy zapalamy pochodnie, rozsypujemy sól i stawiamy warty przy bramie. To nie wystarczy. Oni nadchodzą.",
+        "quest3": "Grupa mieszkańców Żelaznych Krain zakłada osadę na terytorium przeklętym przez złośliwą grozę(horro?). Jakie zło nęka tę krainę? Dlaczego Żelaźni Ludzie tak bardzo chcą się tu osiedlić? Czy pomożesz im, czy spróbujesz zmusić ich do zaniechania tego głupiego przedsięwzięcia?"
       }
     },
-    "SFSettingTruthsTitle": "Setting Truths",
     "OracleCategories": {
       "Access": "Dojście",
       "Action and Theme": "Akcja i Temat",
@@ -433,7 +480,57 @@
       "Type": "Rodzaj",
       "Vaults": "Skarbce",
       "Vital": "Istotnosc",
-      "Zones": "Strefy"
+      "Zones": "Strefy",
+      "Custom": "Własne Wyrocznie"
+    },
+    "Asset Categories": {
+      "Custom": "Własne Aspekty"
+    },
+    "ROLLTABLE": {
+      "TypeOracle": "Wyroczni"
+    },
+    "ROLLTABLES": {
+      "TypeOracle": "Wyrocznie"
+    },
+    "SCENE": {
+      "TypeSector": "Sektor"
+    },
+    "ACTOR": {
+      "SubtypeDerelict": "Ruina",
+      "SubtypePlanet": "Planeta",
+      "SubtypeSettlement": "Osada",
+      "SubtypeStar": "Gwiazda",
+      "SubtypeVault": "Krypta Prekursora",
+      "TypeCharacter": "Postać",
+      "TypeFoe": "BG",
+      "TypeLocation": "Lokacja",
+      "TypeShared": "Wspólna Karta",
+      "TypeStarship": "Statek Kosmicznyu"
+    },
+    "ACTORS": {
+      "SubtypePlanet": "Planety",
+      "SubtypeSettlement": "Osady",
+      "SubtypeStar": "Gwiazdy",
+      "TypeCharacter": "Postaci",
+      "TypeLocation": "Lokacji"
+    },
+    "ITEM": {
+      "SubtypeConnection": "Połączenie",
+      "SubtypeProgress": "Postęp",
+      "SubtypeVow": "Przysięga",
+      "TypeAsset": "Aspekt",
+      "TypeBond": "Więź",
+      "TypeProgressTrack": "Tor postępu"
+    },
+    "ITEMS": {
+      "SubtypeConnection": "Połączenia",
+      "SubtypeProgress": "Postęp",
+      "TypeAsset": "Aspekty",
+      "TypeBond": "Więzi",
+      "TypeMove": "Ruchy"
+    },
+    "JOURNALENTRYPAGE": {
+      "TypeProgressTrack": "Tor postępu"
     }
   }
 }

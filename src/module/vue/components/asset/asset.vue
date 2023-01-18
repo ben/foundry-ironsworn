@@ -46,7 +46,7 @@
           v-if="asset.system.description"
           @moveclick="moveclick"
         />
-        <div v-html="$enrichHtml(asset.system.requirement ?? '')"></div>
+        <div v-html="$enrichMarkdown(asset.system.requirement ?? '')"></div>
 
         <dl class="asset-fields" v-if="asset.system.fields?.length">
           <div
@@ -68,7 +68,7 @@
           >
             <div
               class="asset-ability-text flexcol"
-              v-html="$enrichHtml(ability.description)"
+              v-html="$enrichMarkdown(ability.description)"
             ></div>
             <clock
               v-if="ability.hasClock"
@@ -172,10 +172,9 @@ function edit() {
 }
 function destroy() {
   Dialog.confirm({
-    title: game.i18n.localize('IRONSWORN.DeleteAsset'),
-    content: `<p><strong>${game.i18n.localize(
-      'IRONSWORN.ConfirmDelete'
-    )}</strong></p>`,
+    title: game.i18n.format('DOCUMENT.Delete', {
+      type: 'IRONSWORN.ITEM.TypeAsset',
+    }),
     yes: () => foundryItem?.delete(),
     defaultYes: false,
   })

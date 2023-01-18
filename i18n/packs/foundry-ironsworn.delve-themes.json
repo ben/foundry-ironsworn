@@ -1,0 +1,226 @@
+{
+  "label": "Ironsworn Delve Themes",
+  "mapping": {
+    "name": "name",
+    "summary": "system.summary",
+    "description": "system.description",
+    "features": {
+      "path": "system.features",
+      "converter": "range"
+    },
+    "dangers": {
+      "path": "system.dangers",
+      "converter": "range"
+    }
+  },
+  "entries": {
+    "9BtnJYn9vXBGEV5R": {
+      "name": "Haunted",
+      "summary": "Restless spirits are bound to this place.",
+      "description": "Within a haunted site, dread, sadness, and fear are palpable. Disturbing sounds and visions lure the unwary and terrorize the vulnerable. Gird your will when you enter this place, for you walk at the boundary of life and death.\n\nSome lost souls, unaware they have passed, wander the site in search of answers. Others, stricken by eternal grief, seek to set right what caused their death or see their vows fulfilled. But all too often, the denizens of this place are undone by their deaths. They are rage and terror made incarnate, feeling nothing but hate for the living and a hunger for warmth which will never be sated.",
+      "features": {
+        "1-4": "Tomb or burial site",
+        "5-8": "Blood was spilled here",
+        "9-12": "Unnatural mists or darkness",
+        "13-16": "Messages from beyond the grave",
+        "17-20": "Apparitions of a person or event"
+      },
+      "dangers": {
+        "1-5": "Denizen haunts this area",
+        "6-10": "Unsettling sounds or foreboding signs",
+        "11-12": "Denizen attacks without warning",
+        "13-14": "Denizen makes a costly demand",
+        "15-16": "Denizen seizes your body or mind",
+        "17-18": "Denizen taunts or lures you",
+        "19-20": "A disturbing truth is revealed",
+        "21-22": "Frightening visions",
+        "23-24": "The environment is used against you",
+        "25-26": "Trickery leads you astray",
+        "27-28": "True nature of this place is revealed",
+        "29-30": "Sudden, shocking manifestation"
+      }
+    },
+    "9RnSqMcrekJoJbXH": {
+      "name": "Ancient",
+      "summary": "This place holds the secrets of a bygone age.",
+      "description": "An ancient site contains the mysteries, legacies, and dangers of another age.\n\nWalking the paths of this place is like stepping through time. Ruins and relics provide glimpses of long-forgotten people and events. The knowledge and power hidden here are a tempting lure, but those treasures may come with a dire cost. Some secrets are best left buried.",
+      "features": {
+        "1-4": "Evidence of lost knowledge",
+        "5-8": "Inscrutable relics",
+        "9-12": "Ancient artistry or craft",
+        "13-16": "Preserved corpses or fossils",
+        "17-20": "Visions of this place in another time"
+      },
+      "dangers": {
+        "1-5": "Ancient trap",
+        "6-10": "Hazardous architecture or terrain",
+        "11-12": "Blocked or broken path",
+        "13-14": "Denizen protects an ancient secret",
+        "15-16": "Denizen reveres an ancient power",
+        "17-18": "Living relics of a lost age",
+        "19-20": "Ancient evil resurgent",
+        "21-22": "Dire warnings of a long-buried danger",
+        "23-24": "Ancient disease or contamination",
+        "25-26": "Artifact of terrible meaning or power",
+        "27-28": "Disturbing evidence of ancient wrongs",
+        "29-30": "Others seek power or knowledge"
+      }
+    },
+    "H5aJvBKwPrbEnzMe": {
+      "name": "Infested",
+      "summary": "Foul creatures dwell here.",
+      "description": "Foul creatures swarm these sites, overwhelming trespassers with sheer numbers and unchecked ferocity. The denizens do little beyond multiplying, feeding, and expanding, ravenous for fresh kills to feed the swarm.\n\nNavigation through this place, across paths undermined by the hordes, may be perilous. The sights and smells may test your fortitude. But it is the creatures which pose the greatest threat, as they ambush and cut off your escape with unforeseen cunning.",
+      "features": {
+        "1-4": "Inhabited nest",
+        "5-8": "Abandoned nest",
+        "9-12": "Ravaged terrain or architecture",
+        "13-16": "Remains or carrion",
+        "17-20": "Hoarded food"
+      },
+      "dangers": {
+        "1-5": "Denizens swarm and attack",
+        "6-10": "Toxic or sickening environment",
+        "11-12": "Denizen stalks you",
+        "13-14": "Denizen takes or destroys something",
+        "15-16": "Denizen reveals surprising cleverness",
+        "17-18": "Denizen guided by a greater threat",
+        "19-20": "Denizen blocks the path",
+        "21-22": "Denizen funnels you down a new path",
+        "23-24": "Denizen undermines the path",
+        "25-26": "Denizen lays in wait",
+        "27-28": "Trap or snare",
+        "29-30": "Victim’s horrible fate is revealed"
+      }
+    },
+    "ONZWFYrqxgFIzppP": {
+      "name": "Fortified",
+      "summary": "Foes defend this place against intruders.",
+      "description": "A fortified site is held and defended by an enemy force. It might be an enemy camp, an outpost, a fortress, or a closely-guarded territory.\n\nInfiltrating this place requires caution and cunning. You may be forced to avoid inhabitants, sentries, and patrols. Revealing yourself or causing a disturbance will catch the attention of the denizens, perhaps forcing you to fight your way to your objective.",
+      "features": {
+        "1-4": "Camp or quarters",
+        "5-8": "Guarded location",
+        "9-12": "Storage or repository",
+        "13-16": "Work or training area",
+        "17-20": "Command center or leadership"
+      },
+      "dangers": {
+        "1-5": "Denizen patrols the area",
+        "6-10": "Denizen on guard",
+        "11-12": "Denizen ready to sound the alarm",
+        "13-14": "Denizen sets an ambush",
+        "15-16": "Denizen lures you into a trap",
+        "17-18": "Denizens converge on this area",
+        "19-20": "Pets or underlings",
+        "21-22": "Unexpected alliance revealed",
+        "23-24": "Nefarious plans revealed",
+        "25-26": "Unexpected leader revealed",
+        "27-28": "Trap",
+        "29-30": "Alarm trigger"
+      }
+    },
+    "iDOVA8797p4kYar7": {
+      "name": "Ravaged",
+      "summary": "Time, disaster, or strife have taken their toll.",
+      "description": "Time, weather, war, or calamity have laid waste to a ravaged site. The terrain is precarious. Hazards lurk around every corner. You may face glimpses of a former greatness, but this place is a ruined shadow of what it once was.\n\nTraversing a ravaged site requires care, cunning, and quick wits to react to sudden perils. The environment here is your greatest enemy. It is a force, as willful as any intelligent adversary, which will see your quest undone.",
+      "features": {
+        "1-4": "Path of destruction",
+        "5-8": "Abandoned or ruined dwelling",
+        "9-12": "Untouched or preserved area",
+        "13-16": "Traces of what was lost",
+        "17-20": "Ill-fated victims"
+      },
+      "dangers": {
+        "1-5": "Precarious architecture or terrain",
+        "6-10": "Imminent collapse or destruction",
+        "11-12": "Path undermined",
+        "13-14": "Blocked or broken path",
+        "15-16": "Vestiges of a destructive force",
+        "17-18": "Unexpected environmental threat",
+        "19-20": "Echoes of a troubling past",
+        "21-22": "Signs of a horrible fate",
+        "23-24": "Denizen seeks retribution",
+        "25-26": "Denizen leverages the environment",
+        "27-28": "Denizen restores what was lost",
+        "29-30": "Ravages return anew"
+      }
+    },
+    "pKCYCvdI2WjjKsjY": {
+      "name": "Corrupted",
+      "summary": "This place is tainted by dark magic.",
+      "description": "A corrupted site is befouled by dark forces. It might be the ancient magic of the Ironlands, or the residue of ancient evils, concentrated here like poisoned water soaked into a sponge. Perhaps a powerful mystic dwells in this place, one who walks a sinister path in search of power.\n\nWhen you enter a corrupted site, you can feel the wrongness of it down to your bones. The air is tainted with foul smells, or tinged with strange energies. You hear unintelligible whispers. Shadows lurk at the edge of your vision. The creatures of this place are twisted by corruption, and the people are in thrall to a dark influence.",
+      "features": {
+        "1-4": "Mystic focus or conduit",
+        "5-8": "Strange environmental disturbances",
+        "9-12": "Mystic runes or markings",
+        "13-16": "Blight or decay",
+        "17-20": "Evidence of a foul ritual"
+      },
+      "dangers": {
+        "1-5": "Denizen spawned from dark magic",
+        "6-10": "Denizen controls dark magic",
+        "11-12": "Denizen corrupted by dark magic",
+        "13-14": "Corruption marks you",
+        "15-16": "Innocents held in thrall",
+        "17-18": "Revelations of a terrible truth",
+        "19-20": "Mystic trap or trigger",
+        "21-22": "Mystic barrier or ward",
+        "23-24": "Illusions lead you astray",
+        "25-26": "Dark ritual in progress",
+        "27-28": "Lingering effects of a dark ritual",
+        "29-30": "Dread harbingers of a greater magic"
+      }
+    },
+    "v3jYuNrr1Jt4TzNZ": {
+      "name": "Wild",
+      "summary": "Nature prevails in this place.",
+      "description": "Despite our attempts to extend our control into untracked reaches, the primal forces of nature still hold sway across the Ironlands. In those wild places, we must test our shields against tooth and claw, our wits against insidious creatures, and our resolve against dangerous terrain and harsh environments.\n\nBe wary when you enter the wild places of this world. Beyond the comforting walls of your village, you are not the hunter. You are the prey.",
+      "features": {
+        "1-4": "Denizen’s lair",
+        "5-8": "Territorial markings",
+        "9-12": "Impressive flora or fauna",
+        "13-16": "Hunting ground or watering hole",
+        "17-20": "Remains or carrion"
+      },
+      "dangers": {
+        "1-5": "Denizen hunts",
+        "6-10": "Denizen strikes without warning",
+        "11-12": "Denizen leverages the environment",
+        "13-14": "Denizen wields unexpected abilities",
+        "15-16": "Denizen guided by a greater threat",
+        "17-18": "Denizen protects something",
+        "19-20": "Hazardous terrain",
+        "21-22": "Weather or environmental threat",
+        "23-24": "Benign aspect becomes a threat",
+        "25-26": "Overzealous hunter",
+        "27-28": "Disturbing evidence of a victim’s fate",
+        "29-30": "Ill-fated victim in danger"
+      }
+    },
+    "zhOq6bjCvYhXkMQB": {
+      "name": "Hallowed",
+      "summary": "The faithful worship here.",
+      "description": "A hallowed site is a place of great reverence, suffused with the power of old gods or the fervency of belief. It might be a location of religious significance, the resting place of legendary relics or figures, or the haven of a religious leader.\n\nHallowed places may be warded by ancient rituals, or imbued with divine energy. But it is the faithful and the zealous who will sacrifice everything to defend this place.",
+      "features": {
+        "1-4": "Temple or altar",
+        "5-8": "Offerings or atonements",
+        "9-12": "Religious relic or idol",
+        "13-16": "Consecrated ground",
+        "17-20": "Dwellings or gathering place"
+      },
+      "dangers": {
+        "1-5": "Denizen defends their sanctum",
+        "6-10": "Denizen enacts the will of their god",
+        "11-12": "Denizen seeks martyrdom",
+        "13-14": "Secret of the faith is revealed",
+        "15-16": "Greater purpose is revealed",
+        "17-18": "Unexpected disciples are revealed",
+        "19-20": "Divine manifestations",
+        "21-22": "Aspect of the faith beguiles you",
+        "23-24": "Unexpected leader is revealed",
+        "25-26": "Embodiment of a god or myth",
+        "27-28": "Protective ward or barrier",
+        "29-30": "Prophecies reveal a dark fate"
+      }
+    }
+  }
+}

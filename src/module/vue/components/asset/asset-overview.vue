@@ -66,7 +66,7 @@
             element="div"
             @moveclick="moveClick"
             class="asset-ability-text flexcol"
-            v-html="$enrichHtml(ability.description)"
+            v-html="$enrichMarkdown(ability.description)"
           >
           </WithRollListeners>
           <Clock

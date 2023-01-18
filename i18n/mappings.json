@@ -1,0 +1,49 @@
+{
+  "asset": {
+    "name": "name",
+    "requirement": "system.requirement",
+    "category": "system.category",
+    "inputFields": "system.fields",
+    "abilities": "system.abilities",
+    "conditionMeter": "system.track.name",
+    "conditions": "system.conditions",
+    "options": "system.exclusiveOptions"
+  },
+  "sfmove": {
+    "name": "name",
+    "fullText": "system.Text",
+    "triggerMain": "system.Trigger.Text",
+    "triggerOptions": "system.Trigger.Options",
+    "strongHit": "system.Outcomes.Strong Hit.Text",
+    "strongHitWithAMatch": "system.Outcomes.Strong Hit.With a Match.Text",
+    "weakHit": "system.Outcomes.Weak Hit.Text",
+    "miss": "system.Outcomes.Miss.Text",
+    "missWithAMatch": "system.Outcomes.Miss.With a Match.Text"
+  },
+  "delve-theme": {
+    "name": "name",
+    "summary": "system.summary",
+    "description": "system.description",
+    "features": {
+      "path": "system.features",
+      "converter": "range"
+    },
+    "dangers": {
+      "path": "system.dangers",
+      "converter": "range"
+    }
+  },
+  "delve-domain": {
+    "name": "name",
+    "summary": "system.summary",
+    "description": "system.description",
+    "features": {
+      "path": "system.features",
+      "converter": "range"
+    },
+    "dangers": {
+      "path": "system.dangers",
+      "converter": "range"
+    }
+  }
+}

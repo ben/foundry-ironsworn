@@ -196,24 +196,23 @@
       "abilities": [
         {
           "enabled": true,
+          "name": "",
           "description": "the default ability of this asset"
         },
         {
           "enabled": false,
+          "name": "",
           "description": ""
         },
         {
           "enabled": false,
-          "description": ""
-        },
-        {
-          "enabled": false,
+          "name": "",
           "description": ""
         }
       ],
       "track": {
         "enabled": false,
-        "name": "Health",
+        "name": "",
         "current": 0,
         "max": 0
       },

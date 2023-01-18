@@ -13,7 +13,6 @@ export interface MoveCategory {
 
 export interface Move {
   color: string | null
-  displayName: string
   moveItem: () => IronswornItem
   dataforgedMove?: IMove
 }
@@ -97,11 +96,6 @@ function walkCategory(
       newCategory.moves.push({
         color: category.Display.Color ?? null,
         dataforgedMove: move,
-        displayName:
-          // TODO: ideally, alternate versions wouldn't have the same move at all! they'd be selectable within the move display. maybe a radio select, or expandable into its own tree? or displayed as a second text?
-          // 'alternate version' gets too long for a single line in many cases, so it gets trimmed
-          // move.Display.Title.replace(/alternate version/i, 'alt') ??
-          moveItem.name as string,
         moveItem: () => moveItem,
       })
     } else {
@@ -127,7 +121,6 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
     if (moveItem.documentName !== 'Item' || moveItem.type !== 'sfmove') continue
     customMoves.push({
       color,
-      displayName: moveItem.name ?? '(move)',
       moveItem: () => moveItem,
     })
   }

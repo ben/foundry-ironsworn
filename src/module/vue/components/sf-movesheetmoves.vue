@@ -3,7 +3,9 @@
     <nav class="flexrow nogrow" :class="$style.navSearch">
       <input
         type="search"
-        :placeholder="$t('IRONSWORN.Search')"
+        :placeholder="
+          $t('SIDEBAR.Search', { types: $t('IRONSWORN.ITEMS.TypeMove') })
+        "
         v-model="state.searchQuery"
         @keydown.enter.prevent
       />
@@ -151,7 +153,7 @@ const searchResults = computed(() => {
   if (!checkedSearchQuery.value) return null
 
   const re = new RegExp(checkedSearchQuery.value, 'i')
-  return flatMoves.value.filter((x) => re.test(x.displayName))
+  return flatMoves.value.filter((x) => re.test(x.moveItem().name as string))
 })
 
 function clearSearch() {
