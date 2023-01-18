@@ -1,10 +1,8 @@
-import { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import { RANK_INCREMENTS } from '../constants'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornPrerollDialog } from '../rolls'
 import {
   BondsetDataPropertiesData,
-  DelveThemeDataPropertiesData,
   ProgressDataPropertiesData,
   SFMoveDataPropertiesData,
 } from './itemtypes'
@@ -17,22 +15,6 @@ export class IronswornItem extends Item {
   // Type hacks for v10 compatibility updates
   declare system: typeof this.data.data
   declare sort: typeof this.data.sort
-
-  protected _onCreate(
-    data: this['data']['_source'],
-    options: DocumentModificationOptions,
-    userId: string
-  ): void {
-    super._onCreate(data, options, userId)
-
-    if (this.type !== 'delve-theme' || this.type !== 'delve-domain') return
-    ;(this.system as DelveThemeDataPropertiesData).features.forEach(
-      (feature) => (feature.flags['foundry-ironsworn'].sourceId = this.id)
-    )
-    ;(this.system as DelveThemeDataPropertiesData).dangers.forEach(
-      (feature) => (feature.flags['foundry-ironsworn'].sourceId = this.id)
-    )
-  }
   /**
    * Progress methods
    */
