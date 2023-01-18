@@ -1,10 +1,6 @@
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
-import {
-  DelveThemeDataSourceData,
-  FeatureOrDanger,
-  ItemDataSource,
-} from '../item/itemtypes'
+import { normalizeTableRows } from './items'
 import { IronswornSettings } from './settings.js'
 
 // Utilities
@@ -98,44 +94,31 @@ async function statsAreAlwaysNumbers() {
   })
 }
 
-// Migration 4: Site themes and site domains use TableResultData for features
-async function normalizeFeaturesAndDangers() {
-  interface LegacyFeatureOrDanger {
-    low: number
-    high: number
-    description: string
-  }
+/**
+ * Migration 4: Transform site denizens, site features, and site dangers into a {@link TableResult}-like format.
+ */
+async function normalizeDelveTableRows() {
+  await everyActor(async (actor) => {
+    const typeToMigrate = 'site'
+    const keyToMigrate = 'system.denizens'
+    if (actor.type === 'site') {
+      const denizens = normalizeTableRows(actor, keyToMigrate, typeToMigrate)
+      actor.update({ system: { denizens } })
+    }
+  })
   await everyItem(async (item) => {
-    const targetTypes: ItemDataSource['type'][] = [
-      'delve-theme',
+    const typesToMigrate = [
       'delve-domain',
-    ]
-    if (!targetTypes.includes(item.type)) return
-    const targetKeys: (keyof DelveThemeDataSourceData)[] = [
-      'dangers',
-      'features',
-    ]
-    targetKeys.forEach((key) => {
-      const legacyRows: (LegacyFeatureOrDanger | FeatureOrDanger)[] =
-        item.system[key]
-      item.system[key] = legacyRows.map((row) => {
-        if (!(row as any).flags?.type) {
-          const legacyRow = row as LegacyFeatureOrDanger
-          const tableResult: FeatureOrDanger = {
-            range: [legacyRow.low, legacyRow.high],
-            text: legacyRow.description,
-            flags: {
-              'foundry-ironsworn': {
-                type: `delve-site-${key === 'dangers' ? 'danger' : 'feature'}`,
-                sourceId: item.id,
-              },
-            },
-          }
-          return tableResult
-        }
-        return row
+      'delve-theme',
+    ] as SourceConfig['Item']['type'][]
+    const keysToMigrate = ['system.features', 'system.dangers']
+    if (typesToMigrate.includes(item.type)) {
+      keysToMigrate.forEach((key) => {
+        item.update({
+          [key]: normalizeTableRows(item, key, item.type),
+        })
       })
-    })
+    }
   })
 }
 
@@ -145,7 +128,7 @@ const MIGRATIONS: Array<() => Promise<any>> = [
   fixFormidableSpelling,
   everythingIsAProgress,
   statsAreAlwaysNumbers,
-  normalizeFeaturesAndDangers,
+  normalizeDelveTableRows,
 ]
 const NEWEST_VERSION = MIGRATIONS.length
 

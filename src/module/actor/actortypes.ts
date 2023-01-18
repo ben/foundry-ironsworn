@@ -93,15 +93,17 @@ export interface FoeDataProperties {
 
 ////////////////////////////////////////
 
+/**
+ * Represents an entry in the denizen matrix.
+ */
 export interface DelveSiteDenizen extends TableResultDataConstructorData {
   flags: {
     'foundry-ironsworn': {
       type: 'delve-site-denizen'
-      frequency: string
       /**
-       * The ID of the originating Item.
+       * The ID of the originating Actor.
        */
-      sourceId: Item['id']
+      sourceId: Actor['id']
     }
   }
 }

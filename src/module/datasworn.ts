@@ -1,7 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { IronswornItem } from './item/item.js'
-import { FeatureOrDanger } from './item/itemtypes'
+import { DelveSiteFeatureOrDanger } from './item/itemtypes'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
@@ -112,7 +112,7 @@ function importDelveFeaturesOrDangers(
   low = 1,
   sourceId: Item['id'] = null
 ) {
-  const result: FeatureOrDanger[] = []
+  const result: DelveSiteFeatureOrDanger[] = []
   for (const featureOrDanger of rawFeaturesOrDangers) {
     result.push({
       range: [low, featureOrDanger.Chance],
