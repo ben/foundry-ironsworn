@@ -593,7 +593,16 @@
     "TypeProgress": "Progress track",
     "TypeBondset": "Bondset",
     "TypeSfmove": "Move",
-    "TypeDelve-theme": "Delve site theme",
-    "TypeDelve-domain": "Delve site domain"
+    "TypeDelve-theme": "Site theme",
+    "TypeDelve-domain": "Site domain"
+  },
+  "DELVESITE": {
+    "FREQUENCY": {
+      "VeryCommon": "Very common",
+      "Common": "Common",
+      "Uncommon": "Uncommon",
+      "Rare": "Rare",
+      "Unforeseen": "Unforeseen"
+    }
   }
 }
