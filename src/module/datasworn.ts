@@ -1,6 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { IronswornItem } from './item/item.js'
+import { FeatureOrDanger } from './item/itemtypes'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
@@ -100,6 +101,34 @@ const PACKS = [
   'foundry-ironsworn.ironswornoracles',
 ]
 
+type RawFeatureOrDanger = {
+  Chance: number
+  Description: string
+}
+
+function importDelveFeaturesOrDangers(
+  rawFeaturesOrDangers: RawFeatureOrDanger[],
+  type: 'feature' | 'danger',
+  low = 1,
+  sourceId: Item['id'] = null
+) {
+  const result: FeatureOrDanger[] = []
+  for (const featureOrDanger of rawFeaturesOrDangers) {
+    result.push({
+      range: [low, featureOrDanger.Chance],
+      text: featureOrDanger.Description as string,
+      flags: {
+        'foundry-ironsworn': {
+          type: `delve-site-${type}`,
+          sourceId,
+        },
+      },
+    })
+    low = featureOrDanger.Chance + 1
+  }
+  return result
+}
+
 export async function importFromDatasworn() {
   // Empty out the packs
   for (const key of PACKS) {
@@ -121,28 +150,9 @@ export async function importFromDatasworn() {
       data: {
         summary: rawTheme.Summary,
         description: rawTheme.Description,
-        features: [] as any[],
-        dangers: [] as any[],
+        features: importDelveFeaturesOrDangers(rawTheme.Features, 'feature', 1),
+        dangers: importDelveFeaturesOrDangers(rawTheme.Dangers, 'danger', 1),
       },
-    }
-
-    let low = 1
-    for (const feature of rawTheme.Features) {
-      themeData.data.features.push({
-        low,
-        high: feature.Chance,
-        description: feature.Description,
-      })
-      low = feature.Chance + 1
-    }
-    low = 1
-    for (const danger of rawTheme.Dangers) {
-      themeData.data.dangers.push({
-        low,
-        high: danger.Chance,
-        description: danger.Description,
-      })
-      low = danger.Chance + 1
     }
 
     return themeData
@@ -163,28 +173,13 @@ export async function importFromDatasworn() {
       data: {
         summary: rawDomain.Summary,
         description: rawDomain.Description,
-        features: [] as any[],
-        dangers: [] as any[],
+        features: importDelveFeaturesOrDangers(
+          rawDomain.Features,
+          'feature',
+          21
+        ),
+        dangers: importDelveFeaturesOrDangers(rawDomain.Dangers, 'danger', 31),
       },
-    }
-
-    let low = 21
-    for (const feature of rawDomain.Features) {
-      domainData.data.features.push({
-        low,
-        high: feature.Chance,
-        description: feature.Description,
-      })
-      low = feature.Chance + 1
-    }
-    low = 31
-    for (const danger of rawDomain.Dangers) {
-      domainData.data.dangers.push({
-        low,
-        high: danger.Chance,
-        description: danger.Description,
-      })
-      low = danger.Chance + 1
     }
 
     return domainData

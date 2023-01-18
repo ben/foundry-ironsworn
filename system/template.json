@@ -261,91 +261,74 @@
       "description": "This place is so old...",
       "features": [
         {
-          "low": 1,
-          "high": 4,
-          "description": ""
+          "range": [ 1, 4 ],
+          "text": ""
         },
         {
-          "low": 5,
-          "high": 8,
-          "description": ""
+          "range": [ 5, 8 ],
+          "text": ""
         },
         {
-          "low": 9,
-          "high": 12,
-          "description": ""
+          "range": [ 9, 12 ],
+          "text": ""
         },
         {
-          "low": 13,
-          "high": 16,
-          "description": ""
+          "range": [ 13, 16 ],
+          "text": ""
         },
         {
-          "low": 17,
-          "high": 20,
-          "description": ""
+          "range": [ 17, 20 ],
+          "text": ""
         }
       ],
       "dangers": [
         {
-          "low": 1,
-          "high": 5,
-          "description": ""
+          "range": [ 1, 5 ],
+          "text": ""
         },
         {
-          "low": 6,
-          "high": 10,
-          "description": ""
+          "range": [ 6, 10 ],
+          "text": ""
         },
         {
-          "low": 11,
-          "high": 12,
-          "description": ""
+          "range": [ 11, 12 ],
+          "text": ""
         },
         {
-          "low": 13,
-          "high": 14,
-          "description": ""
+          "range": [ 13, 14 ],
+          "text": ""
         },
         {
-          "low": 15,
-          "high": 16,
-          "description": ""
+          "range": [ 15, 16 ],
+          "text": ""
         },
         {
-          "low": 17,
-          "high": 18,
-          "description": ""
+          "range": [ 17, 18 ],
+          "text": ""
         },
         {
-          "low": 19,
-          "high": 20,
-          "description": ""
+          "range": [ 19, 20 ],
+          "text": ""
         },
         {
-          "low": 21,
-          "high": 22,
-          "description": ""
+          "range": [ 21, 22 ],
+          "text": ""
         },
         {
-          "low": 23,
-          "high": 24,
-          "description": ""
+          "range": [ 23, 24 ],
+          "text": ""
         },
         {
-          "low": 25,
-          "high": 26,
-          "description": ""
+          "range": [ 25, 26 ],
+          "text": ""
         },
         {
-          "low": 27,
-          "high": 28,
-          "description": ""
+          "range": [ 27, 28 ],
+          "text": ""
         },
         {
-          "low": 29,
-          "high": 30,
-          "description": ""
+          "range": [ 29, 30 ],
+          "text": ""
         }
       ]
     },
@@ -354,97 +337,83 @@
       "description": "In this dark and dreary place...",
       "features": [
         {
-          "low": 21,
-          "high": 43,
-          "description": ""
+          "range": [ 21, 43 ],
+          "text": ""
         },
         {
-          "low": 44,
-          "high": 56,
-          "description": ""
+          "range": [ 44, 56 ],
+          "text": ""
         },
         {
-          "low": 57,
-          "high": 64,
-          "description": ""
+          "range": [ 57, 64 ],
+          "text": ""
         },
         {
-          "low": 65,
-          "high": 68,
-          "description": ""
+          "range": [ 65, 68 ],
+          "text": ""
         },
         {
-          "low": 69,
-          "high": 72,
-          "description": ""
+          "range": [ 69, 72 ],
+          "text": ""
         },
         {
-          "low": 73,
-          "high": 76,
-          "description": ""
+          "range": [ 73, 76 ],
+          "text": ""
         },
         {
-          "low": 77,
-          "high": 80,
-          "description": ""
+          "range": [ 77, 80 ],
+          "text": ""
         },
         {
-          "low": 81,
-          "high": 84,
-          "description": ""
+          "range": [ 81, 84 ],
+          "text": ""
         },
         {
-          "low": 85,
-          "high": 88,
-          "description": ""
+          "range": [ 85, 88 ],
+          "text": ""
         },
         {
-          "low": 89,
-          "high": 98,
+          "range": [ 89, 98 ],
           "description": "Something unusual or unexpected"
         },
         {
-          "low": 99,
-          "high": 99,
+          "range": [ 99, 99 ],
           "description": "You transition into a new theme"
         },
         {
-          "low": 100,
-          "high": 100,
+          "range": [ 100, 100 ],
           "description": "You transition into a new domain"
         }
       ],
       "dangers": [
         {
-          "low": 31,
-          "high": 33,
-          "description": ""
+          "range": [ 31, 33 ],
+          "text": ""
         },
         {
-          "low": 34,
-          "high": 36,
-          "description": ""
+          "range": [ 34, 36 ],
+          "text": ""
         },
         {
-          "low": 37,
-          "high": 39,
-          "description": ""
+          "range": [ 37, 39 ],
+          "text": ""
         },
         {
-          "low": 40,
-          "high": 42,
-          "description": ""
+          "range": [ 40, 42 ],
+          "text": ""
         },
         {
-          "low": 43,
-          "high": 45,
-          "description": ""
+          "range": [ 43, 45 ],
+          "text": ""
         }
       ]
     }
   },
   "JournalEntryPage": {
-    "types": ["truth", "progress"],
+    "types": [
+      "truth",
+      "progress"
+    ],
     "truth": {},
     "progress": {
       "rank": 1,

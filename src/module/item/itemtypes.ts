@@ -1,3 +1,4 @@
+import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { IMove } from 'dataforged'
 import { RANKS } from '../constants'
 
@@ -107,10 +108,19 @@ export interface BondsetDataProperties {
 
 ///////////////////////////////
 
-export interface FeatureOrDanger {
-  low: number
-  high: number
-  description: string
+export interface FeatureOrDanger extends TableResultDataConstructorData {
+  flags: {
+    'foundry-ironsworn': {
+      /**
+       * Whether this is a site danger or a site feature.
+       */
+      type: 'delve-site-danger' | 'delve-site-feature'
+      /**
+       * The ID of the originating Item.
+       */
+      sourceId: Item['id']
+    }
+  }
 }
 
 export interface DelveThemeDataSourceData {
@@ -132,7 +142,7 @@ export interface DelveThemeDataProperties {
 }
 ///////////////////////////////
 
-interface DelveDomainDataSourceData {
+export interface DelveDomainDataSourceData {
   summary: string
   description: string
   features: FeatureOrDanger[]

@@ -1,5 +1,10 @@
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
+import {
+  DelveThemeDataSourceData,
+  FeatureOrDanger,
+  ItemDataSource,
+} from '../item/itemtypes'
 import { IronswornSettings } from './settings.js'
 
 // Utilities
@@ -71,6 +76,7 @@ async function everythingIsAProgress() {
   })
 }
 
+// Migration 3: Cast any string values that should be numbers
 async function statsAreAlwaysNumbers() {
   await everyActor(async (actor) => {
     if (actor.type !== 'character') return
@@ -92,12 +98,54 @@ async function statsAreAlwaysNumbers() {
   })
 }
 
+// Migration 4: Site themes and site domains use TableResultData for features
+async function normalizeFeaturesAndDangers() {
+  interface LegacyFeatureOrDanger {
+    low: number
+    high: number
+    description: string
+  }
+  await everyItem(async (item) => {
+    const targetTypes: ItemDataSource['type'][] = [
+      'delve-theme',
+      'delve-domain',
+    ]
+    if (!targetTypes.includes(item.type)) return
+    const targetKeys: (keyof DelveThemeDataSourceData)[] = [
+      'dangers',
+      'features',
+    ]
+    targetKeys.forEach((key) => {
+      const legacyRows: (LegacyFeatureOrDanger | FeatureOrDanger)[] =
+        item.system[key]
+      item.system[key] = legacyRows.map((row) => {
+        if (!(row as any).flags?.type) {
+          const legacyRow = row as LegacyFeatureOrDanger
+          const tableResult: FeatureOrDanger = {
+            range: [legacyRow.low, legacyRow.high],
+            text: legacyRow.description,
+            flags: {
+              'foundry-ironsworn': {
+                type: `delve-site-${key === 'dangers' ? 'danger' : 'feature'}`,
+                sourceId: item.id,
+              },
+            },
+          }
+          return tableResult
+        }
+        return row
+      })
+    })
+  })
+}
+
 // index 1 is the function to run when upgrading from 1 to 2, and so on
 const MIGRATIONS: Array<() => Promise<any>> = [
   noop,
   fixFormidableSpelling,
   everythingIsAProgress,
   statsAreAlwaysNumbers,
+  normalizeFeaturesAndDangers,
 ]
 const NEWEST_VERSION = MIGRATIONS.length
 
