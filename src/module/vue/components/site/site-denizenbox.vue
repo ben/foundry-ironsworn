@@ -62,16 +62,16 @@ const denizen = computed(() => {
 /**
  * Given a dice range, get a localized string describing a site denizen encounter percentage chance.
  */
-function toFrequencyDescriptor(floor: number, ceiling: number) {
-  const chance = ceiling - floor + 1
+function getFrequencyDescriptor(floor: number, ceiling: number) {
+  const percentChance = ceiling - floor + 1
   switch (true) {
-    case chance >= 20:
+    case percentChance >= 20:
       return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.VeryCommon')
-    case chance >= 10:
+    case percentChance >= 10:
       return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.Common')
-    case chance >= 5:
+    case percentChance >= 5:
       return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.Uncommon')
-    case chance >= 2:
+    case percentChance >= 2:
       return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.Rare')
     default:
       return game.i18n.localize('IRONSWORN.DELVESITE.FREQUENCY.Unforeseen')
@@ -79,7 +79,7 @@ function toFrequencyDescriptor(floor: number, ceiling: number) {
 }
 
 const frequencyLabel = computed(() =>
-  toFrequencyDescriptor(...denizen.value.range)
+  getFrequencyDescriptor(...denizen.value.range)
 )
 
 function input(ev) {
