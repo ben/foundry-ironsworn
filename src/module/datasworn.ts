@@ -194,54 +194,54 @@ export async function importFromDatasworn() {
   })
 
   // Foes
-  const foesJson = await fetch(
-    'systems/foundry-ironsworn/assets/foes.json'
-  ).then((x) => x.json())
-  const foesToCreate = [] as (ItemDataConstructorData &
-    Record<string, unknown>)[]
-  for (const category of foesJson.Categories) {
-    for (const foe of category.Foes) {
-      const description = await renderTemplate(
-        'systems/foundry-ironsworn/templates/item/foe.hbs',
-        {
-          ...foe,
-          Category: category.Name,
-          CategoryDescription: category.Description,
-        }
-      )
+  // const foesJson = await fetch(
+  //   'systems/foundry-ironsworn/assets/foes.json'
+  // ).then((x) => x.json())
+  // const foesToCreate = [] as (ItemDataConstructorData &
+  //   Record<string, unknown>)[]
+  // for (const category of foesJson.Categories) {
+  //   for (const foe of category.Foes) {
+  //     const description = await renderTemplate(
+  //       'systems/foundry-ironsworn/templates/item/foe.hbs',
+  //       {
+  //         ...foe,
+  //         Category: category.Name,
+  //         CategoryDescription: category.Description,
+  //       }
+  //     )
 
-      foesToCreate.push({
-        type: 'progress',
-        name: foe.Name,
-        img: FOE_IMAGES[foe.Name] || undefined,
-        system: {
-          description,
-          rank: foe.Rank.toLowerCase(),
-        },
-      })
-    }
-  }
-  await Item.createDocuments(foesToCreate, {
-    pack: 'foundry-ironsworn.ironswornfoes',
-  })
+  //     foesToCreate.push({
+  //       type: 'progress',
+  //       name: foe.Name,
+  //       img: FOE_IMAGES[foe.Name] || undefined,
+  //       system: {
+  //         description,
+  //         rank: foe.Rank.toLowerCase(),
+  //       },
+  //     })
+  //   }
+  // }
+  // await Item.createDocuments(foesToCreate, {
+  //   pack: 'foundry-ironsworn.ironswornfoes',
+  // })
 
-  // Foe actors
-  const foesPack = game.packs.get('foundry-ironsworn.ironswornfoes')
-  const foeItems =
-    (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
-  for (const foeItem of foeItems ?? []) {
-    const actor = await IronswornActor.create(
-      {
-        name: foeItem.name ?? 'wups',
-        img: foeItem.data.img,
-        type: 'foe',
-      },
-      { pack: 'foundry-ironsworn.foeactorsis' }
-    )
-    await actor?.createEmbeddedDocuments('Item', [
-      foeItem.data as unknown as Record<string, unknown>,
-    ])
-  }
+  // // Foe actors
+  // const foesPack = game.packs.get('foundry-ironsworn.ironswornfoes')
+  // const foeItems =
+  //   (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
+  // for (const foeItem of foeItems ?? []) {
+  //   const actor = await IronswornActor.create(
+  //     {
+  //       name: foeItem.name ?? 'wups',
+  //       img: foeItem.img,
+  //       type: 'foe',
+  //     },
+  //     { pack: 'foundry-ironsworn.foeactorsis' }
+  //   )
+  //   await actor?.createEmbeddedDocuments('Item', [
+  //     foeItem.data as unknown as Record<string, unknown>,
+  //   ])
+  // }
 
   // Lock the packs again
   for (const key of PACKS) {
