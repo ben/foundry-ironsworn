@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Under the hood: update Dataforged import with documents built in Foundry v10 ([#601](https://github.com/ben/foundry-ironsworn/pull/601))
 - Improvements to the Polish translation
 
 ## 1.20.13
