@@ -342,10 +342,21 @@ export class IronswornRoll {
       }))
     }
 
+    // If challenge dice haven't been rolled but values were pre-set, use those
+    if (
+      this.preRollOptions.presetChallenge1 &&
+      this.preRollOptions.presetChallenge2
+    ) {
+      return [
+        this.preRollOptions.presetChallenge1,
+        this.preRollOptions.presetChallenge2,
+      ]
+    }
+
     // Not rolled yet. Definitely include two, then maybe some extras
     const ret = [
-      { source: '', value: undefined },
-      { source: '', value: undefined },
+      { source: '', value: this.preRollOptions.presetChallenge1?.value },
+      { source: '', value: this.preRollOptions.presetChallenge2?.value },
     ] as SourcedValue<number | undefined>[]
     if (this.preRollOptions.extraChallengeDice) {
       for (let i = 0; i < this.preRollOptions.extraChallengeDice.value; i++) {
@@ -361,8 +372,10 @@ export class IronswornRoll {
   // Either [N,N] or undefined
   get finalChallengeDice(): undefined | [SourcedValue, SourcedValue] {
     const replaced = compact([
-      this.postRollOptions.replacedChallenge1,
-      this.postRollOptions.replacedChallenge2,
+      this.postRollOptions.replacedChallenge1 ??
+        this.preRollOptions.presetChallenge1,
+      this.postRollOptions.replacedChallenge2 ??
+        this.preRollOptions.presetChallenge2,
     ])
     if (replaced.length === 2) {
       return replaced as [SourcedValue, SourcedValue]
