@@ -355,8 +355,14 @@ export class IronswornRoll {
 
     // Not rolled yet. Definitely include two, then maybe some extras
     const ret = [
-      { source: '', value: this.preRollOptions.presetChallenge1?.value },
-      { source: '', value: this.preRollOptions.presetChallenge2?.value },
+      {
+        source: this.preRollOptions.presetChallenge1?.source ?? '',
+        value: this.preRollOptions.presetChallenge1?.value,
+      },
+      {
+        source: this.preRollOptions.presetChallenge2?.source ?? '',
+        value: this.preRollOptions.presetChallenge2?.value,
+      },
     ] as SourcedValue<number | undefined>[]
     if (this.preRollOptions.extraChallengeDice) {
       for (let i = 0; i < this.preRollOptions.extraChallengeDice.value; i++) {
@@ -381,10 +387,16 @@ export class IronswornRoll {
       return replaced as [SourcedValue, SourcedValue]
     }
     if (this.rawChallengeDiceValues?.length === 2) {
-      return this.rawChallengeDiceValues.map((d) => ({
-        source: 'd10',
-        value: d,
-      })) as [SourcedValue, SourcedValue]
+      return [0, 1].map((i) => {
+        const preset = this.preRollOptions[`presetChallenge${i + 1}`] as
+          | SourcedValue
+          | undefined
+        const die = this.rawChallengeDiceValues[i] as number
+        return {
+          source: preset?.source ?? 'd10',
+          value: preset?.value ?? die,
+        }
+      }) as [SourcedValue, SourcedValue]
     }
     return undefined
   }
