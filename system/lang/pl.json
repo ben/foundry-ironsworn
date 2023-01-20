@@ -12,7 +12,7 @@
     "Chat": "Czat",
     "SendToChat": "Wyślij tekst na czat: <i>{move}</i>",
     "CopyTextToClipboard": "Kopiowanie tekstu do schowka",
-   "Rolling": "Losuje..",
+    "Rolling": "Losuje..",
     "Bonus": "Bonus",
     "Adds": "Dodaje",
     "Versus": "vs.",
@@ -51,7 +51,7 @@
     "FulfillVow": "Wypełnij Przysięge",
     "ProgressRoll": "Rzut postępu",
     "MakeAProgressRoll": "Wykonuj rzut postepu {score} postępu(????)",
-   "StarProgress": "Gdy jest aktywny, ten element pojawi się również w zakładce 'Dziedzictwo'",
+    "StarProgress": "Gdy jest aktywny, ten element pojawi się również w zakładce 'Dziedzictwo'",
     "Mark": "Zaznacz",
     "Fulfill": "Wypełnij",
     "Clear": "Wyczyść",
@@ -70,7 +70,7 @@
       }
     },
     "roll +x": "rzuć +{stat}",
-    "Roll +x": "rzuć +{stat}",
+    "Roll +x": "Rzuć +{stat}",
     "roll method": {
       "All": "rzuć all of {statList} (????)",
       "Any": {
@@ -160,10 +160,6 @@
       "Session": "Ruchy Sesji",
       "Threat": "Ruchy Zagrożeń",
       "Threshold": "Ruchy Progów"
-      
-    },
-    "MoveContents": {
-    "Face Danger": "Zmierz się z niebezpieczeństwem"
     },
     "Failure": "Porażka",
     "Threat": "Zagrożenie",
