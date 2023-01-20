@@ -26,7 +26,7 @@
 .vertical-text {
   writing-mode: vertical-lr;
   border: none;
-  width: 1.5rem;
+  width: var(--font-size-24);
 
   i {
     display: inline-block;
@@ -43,6 +43,8 @@
 }
 
 .boxgroup {
+  --ironsworn-boxrow-size-sm: 25px;
+
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
   border-radius: var(--ironsworn-border-radius-lg);
 
@@ -55,9 +57,9 @@
     }
 
     &.small {
-      flex-basis: 25px;
+      flex-basis: var(--ironsworn-boxrow-size-sm);
       flex-grow: 0;
-      line-height: 25px;
+      line-height: var(--ironsworn-boxrow-size-sm);
     }
   }
 

@@ -109,35 +109,49 @@ function prerollOptionsWithFormData(
     automaticOutcomeValue?: number
     extraChallengeDiceValue?: number
     presetActionDieValue?: number
-    automaticOutcome?: boolean
-    extraChallengeDice?: boolean
-    presetActionDie?: boolean
+    presetChallengeDie1Value?: number
+    presetChallengeDie2Value?: number
   }
+
+  const isSet = (x) =>
+    x !== null && x !== 'null' && x !== undefined && !isNaN(x) && x !== ''
 
   const valMap: ValueMap = form
     .serializeArray()
     .reduce((coll, { name, value }) => {
-      if (name == 'adds' || name.endsWith('Value')) {
-        return { ...coll, [name]: parseInt(value, 10) }
+      if (isSet(value)) {
+        coll[name] = parseInt(value, 10)
       }
-      return { ...coll, [name]: parseCheckbox(value) }
+      return coll
     }, {})
 
   opts.adds = valMap.adds
 
-  if (valMap.automaticOutcome) {
+  if (isSet(valMap.automaticOutcomeValue)) {
     opts.automaticOutcome = {
       source: 'set manually',
       value: valMap.automaticOutcomeValue as RollOutcome,
     }
   }
-  if (valMap.presetActionDie) {
+  if (isSet(valMap.presetActionDieValue)) {
     opts.presetActionDie = {
       source: 'set manually',
       value: valMap.presetActionDieValue as number,
     }
   }
-  if (valMap.extraChallengeDice) {
+  if (isSet(valMap.presetChallengeDie1Value)) {
+    opts.presetChallenge1 = {
+      source: 'set manually',
+      value: valMap.presetChallengeDie1Value as number,
+    }
+  }
+  if (isSet(valMap.presetChallengeDie2Value)) {
+    opts.presetChallenge2 = {
+      source: 'set manually',
+      value: valMap.presetChallengeDie2Value as number,
+    }
+  }
+  if (isSet(valMap.extraChallengeDiceValue)) {
     opts.extraChallengeDice = {
       source: 'set manually',
       value: valMap.extraChallengeDiceValue as number,
@@ -417,7 +431,7 @@ export class IronswornPrerollDialog extends Dialog<
 
     // Resize when expanding the "advanced" section
     html.find('details').on('toggle', (ev) => {
-      const delta = (ev.currentTarget.open ? 1 : -1) * 120
+      const delta = (ev.currentTarget.open ? 1 : -1) * 160
       const app = html.parents('.app')
       app.height((app.height() ?? 0) + delta)
     })

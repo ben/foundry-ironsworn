@@ -95,6 +95,8 @@
 @progress_widget_spacing: 6px;
 
 .progress-list-item {
+  --ironsworn-clock-size: 50px;
+
   display: grid;
   grid-template-rows: max-content max-content 1fr;
   grid-template-columns: max-content max-content 1fr max-content;
@@ -136,10 +138,10 @@
   .progress-widgets {
     grid-row: 3;
     grid-column: 2 / span 3;
-    gap: 2px;
+    gap: var(--ironsworn-spacer-xs);
 
     .progress-clock {
-      flex-basis: 50px;
+      flex-basis: var(--ironsworn-clock-size);
     }
   }
 

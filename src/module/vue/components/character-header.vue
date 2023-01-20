@@ -20,7 +20,10 @@
 </template>
 <style lang="less">
 .xp-track-classic {
-  flex-basis: 130px;
+  --ironsworn-xp-box-size: 15px;
+  --ironsworn-xp-track-classic-size: 130px;
+
+  flex-basis: var(--ironsworn-xp-track-classic-size);
   flex-direction: row;
   flex-grow: 0;
   align-items: center;
@@ -28,14 +31,14 @@
   .xp-box {
     box-sizing: border-box;
     display: flex;
-    flex-basis: 15px;
+    flex-basis: var(--ironsworn-xp-box-size);
     align-items: center;
     justify-content: center;
-    margin: 3px;
-    border: 1px solid currentcolor;
+    margin: var(--ironsworn-spacer-sm);
+    border: var(--ironsworn-border-width-md) solid currentcolor;
     background-clip: content-box;
-    padding: 2px;
-    height: 15px;
+    padding: var(--ironsworn-spacer-xs);
+    height: var(--ironsworn-xp-box-size);
     text-align: center;
     aspect-ratio: 1;
 

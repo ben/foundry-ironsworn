@@ -1,52 +1,6 @@
-// styles attr-box (aka stat box) elements.
-// these could probably just live in their own component, but the compact sheet would need to be migrated to Vue, first.
+// FIXME: rewrite the associate elements as a component, put this styling there
 
 .stats {
   flex: 0;
   justify-content: space-around;
-
-  .stat {
-    --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-
-    flex: 0 0 75px;
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    border-radius: var(--ironsworn-border-radius-lg) !important;
-    padding: 0.5rem 0;
-    text-align: center;
-    text-transform: uppercase;
-
-    h3 {
-      margin: 0;
-      margin-bottom: var(--ironsworn-spacer-md);
-      font-size: 22px;
-      font-weight: bold;
-    }
-
-    h4 {
-      margin: 0;
-      font-weight: bold;
-    }
-
-    input {
-      margin-bottom: var(--ironsworn-spacer-md);
-      width: 50%;
-      text-align: center;
-      font-size: 18px;
-      font-weight: bold;
-    }
-    .textStrokeMixin();
-  }
-
-  .edit {
-    flex: 0 0 30px;
-    align-items: center;
-    justify-items: center;
-    transition: var(--ironsworn-transition);
-    border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-
-    &.editing {
-      background: var(--ironsworn-color-bg-muted);
-    }
-  }
 }
