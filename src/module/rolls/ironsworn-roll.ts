@@ -391,7 +391,7 @@ export class IronswornRoll {
         const preset = this.preRollOptions[`presetChallenge${i + 1}`] as
           | SourcedValue
           | undefined
-        const die = this.rawChallengeDiceValues[i] as number
+        const die = this.rawChallengeDiceValues![i] as number
         return {
           source: preset?.source ?? 'd10',
           value: preset?.value ?? die,

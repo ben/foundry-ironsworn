@@ -114,7 +114,7 @@ function prerollOptionsWithFormData(
   }
 
   const isSet = (x) =>
-    x !== null && x !== undefined && x !== NaN && x !== '' && x !== 'null'
+    x !== null && x !== 'null' && x !== undefined && !isNaN(x) && x !== ''
 
   const valMap: ValueMap = form
     .serializeArray()
