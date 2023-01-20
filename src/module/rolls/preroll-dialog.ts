@@ -120,14 +120,12 @@ function prerollOptionsWithFormData(
     .serializeArray()
     .reduce((coll, { name, value }) => {
       if (isSet(value)) {
-        return { ...coll, [name]: parseInt(value, 10) }
+        coll[name] = parseInt(value, 10)
       }
       return coll
     }, {})
 
   opts.adds = valMap.adds
-
-  console.log({ valMap })
 
   if (isSet(valMap.automaticOutcomeValue)) {
     opts.automaticOutcome = {
