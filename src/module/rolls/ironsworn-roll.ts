@@ -119,6 +119,11 @@ export interface PreRollOptions {
    */
   presetActionDie?: SourcedValue
   /**
+   * As in Weapon Master #2
+   */
+  presetChallenge1?: SourcedValue
+  presetChallenge2?: SourcedValue
+  /**
    * As in Sleuth #1
    */
   extraChallengeDice?: SourcedValue
@@ -337,10 +342,27 @@ export class IronswornRoll {
       }))
     }
 
+    // If challenge dice haven't been rolled but values were pre-set, use those
+    if (
+      this.preRollOptions.presetChallenge1 &&
+      this.preRollOptions.presetChallenge2
+    ) {
+      return [
+        this.preRollOptions.presetChallenge1,
+        this.preRollOptions.presetChallenge2,
+      ]
+    }
+
     // Not rolled yet. Definitely include two, then maybe some extras
     const ret = [
-      { source: '', value: undefined },
-      { source: '', value: undefined },
+      {
+        source: this.preRollOptions.presetChallenge1?.source ?? '',
+        value: this.preRollOptions.presetChallenge1?.value,
+      },
+      {
+        source: this.preRollOptions.presetChallenge2?.source ?? '',
+        value: this.preRollOptions.presetChallenge2?.value,
+      },
     ] as SourcedValue<number | undefined>[]
     if (this.preRollOptions.extraChallengeDice) {
       for (let i = 0; i < this.preRollOptions.extraChallengeDice.value; i++) {
@@ -356,17 +378,25 @@ export class IronswornRoll {
   // Either [N,N] or undefined
   get finalChallengeDice(): undefined | [SourcedValue, SourcedValue] {
     const replaced = compact([
-      this.postRollOptions.replacedChallenge1,
-      this.postRollOptions.replacedChallenge2,
+      this.postRollOptions.replacedChallenge1 ??
+        this.preRollOptions.presetChallenge1,
+      this.postRollOptions.replacedChallenge2 ??
+        this.preRollOptions.presetChallenge2,
     ])
     if (replaced.length === 2) {
       return replaced as [SourcedValue, SourcedValue]
     }
     if (this.rawChallengeDiceValues?.length === 2) {
-      return this.rawChallengeDiceValues.map((d) => ({
-        source: 'd10',
-        value: d,
-      })) as [SourcedValue, SourcedValue]
+      return [0, 1].map((i) => {
+        const preset = this.preRollOptions[`presetChallenge${i + 1}`] as
+          | SourcedValue
+          | undefined
+        const die = this.rawChallengeDiceValues![i] as number
+        return {
+          source: preset?.source ?? 'd10',
+          value: preset?.value ?? die,
+        }
+      }) as [SourcedValue, SourcedValue]
     }
     return undefined
   }
