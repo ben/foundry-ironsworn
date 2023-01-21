@@ -201,6 +201,7 @@ import SiteMoves from './components/site/site-moves.vue'
 import { OracleRollMessage } from '../rolls'
 import { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { SiteDataPropertiesData } from '../actor/actortypes'
 
 const props = defineProps<{
   actor: any
@@ -245,8 +246,9 @@ const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
   const roll = await new Roll('1d100').evaluate({ async: true })
   const result = roll.total
-  const denizen = props.actor.system.denizens.find(
-    (x) => x.low <= result && x.high >= result
+  const denizens = (props.actor.system as SiteDataPropertiesData).denizens
+  const denizen = denizens.find(
+    (x) => x.range[0] <= result && x.range[1] >= result
   )
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
   const idx = props.actor.system.denizens.indexOf(denizen)
@@ -257,7 +259,7 @@ async function randomDenizen() {
   })
 
   // Denizen slot is empty; set focus and add a class
-  if (!denizen?.description) {
+  if (!denizen?.text) {
     await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
     await nextTick()
     denizenRefs.value[idx]?.focus?.()
