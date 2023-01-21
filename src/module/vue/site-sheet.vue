@@ -46,7 +46,7 @@
               :item="theme"
               item-type="delve-theme"
               compendium-key="ironsworndelvethemes"
-              title-key="IRONSWORN.ITEM.TypeDelve-theme"
+              title-key="IRONSWORN.ITEM.TypeDelveTheme"
             />
           </div>
           <div class="flexrow boxrow nogrow">
@@ -55,7 +55,7 @@
               :item="domain"
               item-type="delve-domain"
               compendium-key="ironsworndelvedomains"
-              title-key="IRONSWORN.ITEM.TypeDelve-domain"
+              title-key="IRONSWORN.ITEM.TypeDelveDomain"
             />
           </div>
         </div>

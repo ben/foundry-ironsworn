@@ -396,8 +396,8 @@
       "TypeBondset": "Forger un lien",
       "TypeMove": "Action",
       "TypeProgressTrack": "Jauge de progrès",
-      "TypeDelve-domain": "Domaine du site",
-      "TypeDelve-theme": "Thème du site"
+      "TypeDelveDomain": "Domaine du site",
+      "TypeDelveTheme": "Thème du site"
     },
     "ITEMS": {
       "SubtypeConnection": "Connexions",

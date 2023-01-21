@@ -575,8 +575,8 @@
       "TypeAsset": "Asset",
       "TypeBond": "Bond",
       "TypeBondset": "Bondset",
-      "TypeDelve-domain": "Site domain",
-      "TypeDelve-theme": "Site theme",
+      "TypeDelveDomain": "Site domain",
+      "TypeDelveTheme": "Site theme",
       "TypeMove": "Move",
       "TypeProgressTrack": "Progress track"
     },
@@ -587,8 +587,8 @@
       "TypeAsset": "Assets",
       "TypeBond": "Bonds",
       "TypeBondset": "Bondsets",
-      "TypeDelve-domain": "Site domains",
-      "TypeDelve-theme": "Site themes",
+      "TypeDelveDomain": "Site domains",
+      "TypeDelveTheme": "Site themes",
       "TypeMove": "Moves",
       "TypeProgressTrack": "Progress tracks"
     },

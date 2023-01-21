@@ -178,8 +178,8 @@ Hooks.once('init', async () => {
     progress: 'IRONSWORN.ITEM.TypeProgressTrack',
     bondset: 'IRONSWORN.ITEM.TypeBondset',
     sfmove: 'IRONSWORN.ITEM.TypeMove',
-    'delve-domain': 'IRONSWORN.ITEM.TypeDelve-domain',
-    'delve-theme': 'IRONSWORN.ITEM.TypeDelve-theme',
+    'delve-domain': 'IRONSWORN.ITEM.TypeDelveDomain',
+    'delve-theme': 'IRONSWORN.ITEM.TypeDelveTheme',
   })
 
   CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {

@@ -513,7 +513,9 @@
       "SubtypeVow": "Przysięga",
       "TypeAsset": "Aspekt",
       "TypeBond": "Więź",
-      "TypeProgressTrack": "Tor postępu"
+      "TypeProgressTrack": "Tor postępu",
+      "TypeDelveDomain": "Domena",
+      "TypeDelveTheme": "Motyw"
     },
     "ITEMS": {
       "SubtypeConnection": "Połączenia",
@@ -530,9 +532,7 @@
       "Denizen": "Mieszkaniec/ka",
       "Denizens": "Mieszkańcy",
       "Feature": "Cecha",
-      "Features": "Cechy",
-      "TypeDelve-domain": "Domena",
-      "TypeDelve-theme": "Motyw"
+      "Features": "Cechy"
     }
   }
 }
