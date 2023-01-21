@@ -169,7 +169,6 @@
     "Fourth": "quatrième",
     "Fifth": "cinquième",
     "StarforgedTools": "Outils Starforged",
-    "Sector": "Secteur",
     "Region": "Région",
     "Terminus": "Terminus",
     "Outlands": "Contrées lointaines",
@@ -367,6 +366,9 @@
     },
     "Asset Categories": {
       "Custom": "Ressources personnalisées"
+    },
+    "SCENE": {
+      "TypeSector": "Secteur"
     },
     "ROLLTABLE": {
       "TypeOracle": "Oracle"
