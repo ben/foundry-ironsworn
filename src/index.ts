@@ -2,7 +2,6 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
-import { merge } from 'lodash'
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
@@ -201,10 +200,13 @@ Hooks.once('init', async () => {
     }
   )
   // @ts-ignore
-  CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
-    truth: 'fa-solid fa-angles-up',
-    progress: 'fas fa-asterisk',
-  })
+  CONFIG.JournalEntryPage.typeIcons = mergeObject(
+    CONFIG.JournalEntryPage.typeIcons,
+    {
+      truth: 'fa-solid fa-angles-up',
+      progress: 'fas fa-asterisk',
+    }
+  )
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()
