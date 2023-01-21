@@ -60,7 +60,7 @@ async function compendiumMoves(
   const i18n = (categoryName: string, extension: string) => {
     const capCat = capitalize(categoryName)
     return game.i18n.localize(
-      `IRONSWORN.ITEM.TypeAsset Categories.${i18nkeyslug}.${capCat}.${extension}`
+      `IRONSWORN.Asset Categories.${i18nkeyslug}.${capCat}.${extension}`
     )
   }
 
