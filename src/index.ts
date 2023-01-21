@@ -108,8 +108,8 @@ Hooks.once('init', async () => {
   })
 
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
-    types: ['site'],
-    label: 'IRONSWORN.ACTOR.TypeSite',
+    types: ['delve-site'],
+    label: 'IRONSWORN.ACTOR.TypeDelveSite',
     makeDefault: true,
   })
 
@@ -186,7 +186,7 @@ Hooks.once('init', async () => {
     foe: 'IRONSWORN.Actor.TypeFoe',
     location: 'IRONSWORN.Actor.TypeLocation',
     shared: 'IRONSWORN.Actor.TypeShared',
-    site: 'IRONSWORN.Actor.TypeSite',
+    site: 'IRONSWORN.Actor.TypeDelveSite',
     starship: 'IRONSWORN.Actor.TypeStarship',
   })
 

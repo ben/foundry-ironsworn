@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "shared", "foe", "site", "starship", "location"],
+    "types": ["character", "shared", "foe", "delve-site", "starship", "location"],
     "character": {
       "biography": "",
       "notes": "",
@@ -52,7 +52,7 @@
       "supply": 5
     },
     "foe": {},
-    "site": {
+    "delve-site": {
       "objective": "",
       "description": "",
       "notes": "",
@@ -150,13 +150,6 @@
     },
     "bondset": {
       "bonds": []
-    },
-    "site": {
-      "templates": ["progress"],
-      "objective": "",
-      "theme": "",
-      "domain": "",
-      "notes": ""
     },
     "asset": {
       "templates": [],

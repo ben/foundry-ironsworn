@@ -94,8 +94,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _siteCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      game.i18n.localize('IRONSWORN.ACTOR.TypeSite'),
-      'site',
+      game.i18n.localize('IRONSWORN.ACTOR.TypeDelveSite'),
+      'delve-site',
       ev.currentTarget.dataset.img || undefined
     )
   }
@@ -142,7 +142,13 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _createWithFolder(
     name: string,
-    type: 'character' | 'site' | 'shared' | 'foe' | 'starship' | 'location',
+    type:
+      | 'character'
+      | 'delve-site'
+      | 'shared'
+      | 'foe'
+      | 'starship'
+      | 'location',
     img: string,
     sheetClass?: string
   ) {

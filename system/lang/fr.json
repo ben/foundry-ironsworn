@@ -386,7 +386,7 @@
       "TypeFoe": "PNJ",
       "TypeLocation": "Lieu",
       "TypeShared": "Feuille partagée",
-      "TypeSite": "Site de fouilles",
+      "TypeDelveSite": "Site de fouilles",
       "TypeStarship": "Vaisseau spatial"
     },
     "ITEM": {
