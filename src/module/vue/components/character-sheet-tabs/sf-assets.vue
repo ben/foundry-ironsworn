@@ -31,7 +31,7 @@
         icon="fa:book-atlas"
         @click="assetBrowser"
         block
-        :text="$t('IRONSWORN.Assets')"
+        :text="$t('IRONSWORN.ITEMS.TypeAsset')"
       />
     </section>
   </DropTarget>

@@ -9,7 +9,7 @@
       >
         <input
           type="text"
-          :placeholder="$t('IRONSWORN.Name')"
+          :placeholder="$t('Name')"
           v-model="field.name"
           @blur="save"
         />

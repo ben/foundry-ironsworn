@@ -71,78 +71,81 @@ Hooks.once('init', async () => {
 
   // Register our own sheets
   Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
-    label: 'Ironsworn character sheet',
+    label: 'IRONSWORN.Ironsworn',
     types: ['character'],
     makeDefault: true,
   })
   Actors.registerSheet('ironsworn', StarforgedCharacterSheet, {
-    label: 'Starforged character sheet',
+    label: 'IRONSWORN.Starforged',
     types: ['character'],
   })
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
-    label: 'Compact sheet',
+    label: 'IRONSWORN.ACTOR.SheetCompact',
     types: ['character'],
   })
 
   Actors.registerSheet('ironsworn', IronswornSharedSheetV2, {
     types: ['shared'],
-    label: 'Shared sheet',
+    label: 'IRONSWORN.ACTOR.TypeShared',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', FoeSheet, {
     types: ['foe'],
-    label: 'Foe Sheet',
+    label: 'IRONSWORN.ACTOR.SheetFoe',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', StarshipSheet, {
     types: ['starship'],
-    label: 'Starship sheet',
+    label: 'IRONSWORN.ACTOR.TypeStarship',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', StarforgedLocationSheet, {
     types: ['location'],
-    label: 'Starforged Location Sheet',
+    label: 'IRONSWORN.ACTOR.SheetStarforgedLocation',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
     types: ['site'],
-    label: 'Site sheet',
+    label: 'IRONSWORN.ACTOR.TypeSite',
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', AssetSheetV2, {
     types: ['asset'],
-    label: 'Asset sheet v2',
+    label: `${game.i18n.localize('IRONSWORN.ITEM.TypeAsset')} v2`,
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', AssetSheet, {
     types: ['asset'],
-    label: 'Asset sheet',
+    label: 'IRONSWORN.ITEM.TypeAsset',
   })
 
   Items.registerSheet('ironsworn', BondsetSheetV2, {
     types: ['bondset'],
-    label: 'Bondset sheet v2',
+    label: 'IRONSWORN.ITEM.TypeBondset',
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', SFMoveSheet, {
     types: ['sfmove'],
-    label: 'Starforged move sheet',
+    label: 'IRONSWORN.ITEM.TypeMove',
   })
   Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
     types: ['delve-theme', 'delve-domain'],
-    label: 'Delve Theme/Domain Sheet',
+    label:
+      game.i18n.localize('IRONSWORN.ITEM.TypeDelveTheme') +
+      ' / ' +
+      game.i18n.localize('IRONSWORN.ITEM.TypeDelveDomain'),
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', ProgressSheetV2, {
     types: ['progress'],
-    label: 'Progress sheet v2',
+    label: 'IRONSWORN.ITEM.TypeProgressTrack',
     makeDefault: true,
   })
 
@@ -153,7 +156,7 @@ Hooks.once('init', async () => {
     {
       types: ['progress'],
       makeDefault: true,
-      label: 'ITEM.TypeProgress',
+      label: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack',
     }
   )
 
@@ -166,17 +169,35 @@ Hooks.once('init', async () => {
     {
       types: ['truth'],
       makeDefault: true,
-      label: 'IRONSWORN.First Start.SettingTruth',
+      label: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
     }
   )
 
+  CONFIG.Item.typeLabels = mergeObject(CONFIG.Item.typeLabels, {
+    asset: 'IRONSWORN.ITEM.TypeAsset',
+    progress: 'IRONSWORN.ITEM.TypeProgressTrack',
+    bondset: 'IRONSWORN.ITEM.TypeBondset',
+    sfmove: 'IRONSWORN.ITEM.TypeMove',
+    'delve-domain': 'IRONSWORN.ITEM.TypeDelveDomain',
+    'delve-theme': 'IRONSWORN.ITEM.TypeDelveTheme',
+  })
+
+  CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
+    character: 'IRONSWORN.Actor.TypeCharacter',
+    foe: 'IRONSWORN.Actor.TypeFoe',
+    location: 'IRONSWORN.Actor.TypeLocation',
+    shared: 'IRONSWORN.Actor.TypeShared',
+    site: 'IRONSWORN.Actor.TypeSite',
+    starship: 'IRONSWORN.Actor.TypeStarship',
+  })
+
   // @ts-ignore
-  CONFIG.JournalEntryPage.typeLabels = merge(
+  CONFIG.JournalEntryPage.typeLabels = mergeObject(
     // @ts-ignore
     CONFIG.JournalEntryPage.typeLabels,
     {
-      truth: 'IRONSWORN.First Start.SettingTruth',
-      progress: 'ITEM.TypeProgress',
+      truth: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
+      progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack',
     }
   )
   // @ts-ignore

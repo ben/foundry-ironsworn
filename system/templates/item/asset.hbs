@@ -2,11 +2,11 @@
   <header class="sheet-header">
     <div class="header-fields">
       <h1 class="charname">
-        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'IRONSWORN.Name'}}" />
+        <input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'Name'}}" />
       </h1>
       <h3>
         <input name="data.description" type="text" value="{{data.data.description}}"
-          placeholder="{{localize 'IRONSWORN.Description'}}" />
+          placeholder="{{localize 'Description'}}" />
       </h3>
     </div>
   </header>
@@ -77,9 +77,9 @@
       <input type="checkbox" name="data.track.enabled" {{checked data.data.track.enabled}} style="flex-grow: 0;" />
       <span>{{localize 'IRONSWORN.Enabled'}}</span>
     </label>
-    <span style="flex-grow: 0; margin: 0 var(--ironsworn-spacer-md);">{{localize 'IRONSWORN.Name'}}</span>
+    <span style="flex-grow: 0; margin: 0 var(--ironsworn-spacer-md);">{{localize 'Name'}}</span>
     <input type="text" name="data.track.name" value={{data.data.track.name}}>
-    <span style="flex-grow: 0; margin: 0 var(--ironsworn-spacer-md);">{{localize 'IRONSWORN.Max'}}</span>
+    <span style="flex-grow: 0; margin: 0 var(--ironsworn-spacer-md);">{{localize 'Maximum'}}</span>
     <input type="number" name="data.track.max" value={{data.data.track.max}}>
   </div>
   <div class="flexrow track" style="margin-top: var(--ironsworn-spacer-md);">
@@ -93,5 +93,5 @@
   </div>
 
   <hr>
-  <button class="ironsworn__asset__delete">{{localize 'IRONSWORN.DeleteAsset'}}</button>
+  <button class="ironsworn__asset__delete">{{localize 'DOCUMENT.Delete' type=(localize 'IRONSWORN.ITEM.TypeAsset')}}</button>
 </form>
