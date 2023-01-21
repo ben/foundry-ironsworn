@@ -2,7 +2,6 @@
   "IRONSWORN": {
     "Ironsworn": "Ironsworn",
     "Starforged": "Starforged",
-    "CreateActor": "Create Actor",
     "YourWorldTruths": "Your World: Truths",
     "TruthQuestStarter": "Quest Starter:",
     "QuestStarter": "Quest Starter",
@@ -10,11 +9,8 @@
     "CustomTruth": "Custom Truth",
     "RandomizeAll": "Randomize All",
     "Roll": "Roll",
-    "Chat": "Chat",
     "SendToChat": "Send text to chat: <i>{move}</i>",
     "CopyTextToClipboard": "Copy text to clipboard",
-    "Rolling": "Rolling",
-    "Bonus": "Bonus",
     "Adds": "Adds",
     "Versus": "vs.",
     "CappedAt10": "Action score is capped at 10",
@@ -26,14 +22,11 @@
     "Miss": "Miss",
     "Miss_match": "Miss with a match!",
     "On_a_miss": "On a miss",
-    "Opportunity": "Opportunity!",
-    "Complication": "Complication!",
     "MarkProgress": "Mark Progress",
     "ProgressMove": "Progress Move",
     "PROGRESS": {
       "Current": "{score} progress ({ticks} ticks)",
       "Ticks": "{ticks} ticks",
-      "Track": "progress track",
       "BOX": {
         "1": "1 box",
         "2": "2 boxes",
@@ -48,20 +41,18 @@
     },
     "MarkLegacy": "Mark {amount} on your {legacy} legacy track",
     "UnmarkProgress": "Unmark Progress",
-    "ClearProgress": "Clear Progress",
-    "FulfillVow": "Fulfill Vow",
     "ProgressRoll": "Progress Roll",
     "MakeAProgressRoll": "Make a progress roll with {score} progress",
     "StarProgress": "When active, this item will also show up on the 'Legacies' tab.",
-    "Mark": "Mark",
-    "Fulfill": "Fulfill",
-    "Clear": "Clear",
-    "Troublesome": "Troublesome",
-    "Dangerous": "Dangerous",
-    "Formidable": "Formidable",
-    "Extreme": "Extreme",
-    "Epic": "Epic",
+    "CHALLENGERANK": {
+      "Troublesome": "Troublesome",
+      "Dangerous": "Dangerous",
+      "Formidable": "Formidable",
+      "Extreme": "Extreme",
+      "Epic": "Epic"
+    },
     "Stat": "Stat",
+    "Stats": "Stats",
     "OracleTable": {
       "ColumnLabel": {
         "Roll": "Roll",
@@ -97,18 +88,15 @@
     "Shadow": "shadow",
     "Wits": "wits",
     "XP": "XP",
-    "Asset": "Asset",
-    "Assets": "Assets",
-    "Bonds": "Bonds",
     "NoBonds": "No Bonds",
-    "Bond": "Bond",
     "Legacies": "Legacies",
+    "LEGACY": {
+      "Bonds": "Bonds",
+      "Discoveries": "Discoveries",
+      "Quests": "Quests"
+    },
     "Clock": "Clock",
     "Segments": "Segments",
-    "Scenes": "Scenes",
-    "Quests": "Quests",
-    "Notes": "Notes",
-    "Discoveries": "Discoveries",
     "Debilities": "Debilities",
     "Conditions": "Conditions",
     "Condition": "Condition",
@@ -132,16 +120,9 @@
     "Doomed": "Doomed",
     "Indebted": "Indebted",
     "Battered": "Battered",
-    "Vow": "Vow",
-    "Vows": "Vows",
-    "Progress": "Progress",
     "Reroll": "Reroll",
     "Connections": "Connections",
     "Connection": "Connection",
-    "Quest": "Quest",
-    "Delve": "Delve",
-    "Move": "Move",
-    "Moves": "Moves",
     "MOVES": {
       "Adventure": "Adventure moves",
       "Combat": "Combat moves",
@@ -165,37 +146,19 @@
     "Failure": "Failure",
     "Threat": "Threat",
     "Rarity": "Rarity",
-    "Optional Delve": "Optional Delve",
-    "Custom Assets": "Custom Assets",
-    "Oracles": "Oracles",
-    "Custom Oracles": "Custom Oracles",
-    "Search": "Search",
-    "Plot": "Plot",
-    "Location": "Location",
     "LocationType": "Location type",
-    "Character": "Character",
-    "Starship": "Starship",
-    "SharedSheet": "Shared Sheet",
-    "DelveSite": "Delve Site",
-    "Names": "Names",
     "RollForDetails": "Roll location details",
     "RandomName": "Random name",
-    "Burn": "Burn",
-    "Focus": "Focus",
     "ResolveChallenge": "Resolve challenge",
     "ResolveChallengeDisabled": "Choose your final two challenge dice",
     "BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",
     "BurnMomentumAndResetTo": "Burn {value} momentum and reset to {resetValue}",
     "MomentumBurnt": "Momentum Burn",
     "NegativeMomentumCancel": "Negative momentum canceled action die",
-    "Reset": "Reset",
-    "Max": "Max",
-    "Name": "Name",
     "Pronouns": "Pronouns",
     "Callsign": "Callsign",
     "Characteristics": "Characteristics",
     "Summary": "Summary",
-    "Description": "Description",
     "Category": "Category",
     "Color": "Color",
     "Requirement": "Requirement",
@@ -211,30 +174,14 @@
     "Option": "Option",
     "Track": "Track",
     "Enabled": "Enabled",
-    "Rank": "Rank",
     "ChallengeRank": "Challenge rank",
     "Completed": "Completed",
     "NotCompleted": "Not Completed",
-    "Features": "Features",
-    "Feature": "Feature",
-    "Dangers": "Dangers",
     "Foes": "Foes",
     "Foe": "Foe",
-    "NPC": "NPC",
     "Edit": "Edit",
-    "Domain": "Domain",
-    "Theme": "Theme",
-    "Denizen": "Denizen",
-    "Denizens": "Denizens",
     "OpenCompendium": "Open Compendium",
-    "Delete": "Delete",
-    "DeleteItem": "Delete Item",
-    "DeleteMove": "Delete Move",
-    "DeleteVow": "Delete Vow",
-    "DeleteProgress": "Delete Progress",
-    "DeleteAsset": "Delete Asset",
     "ConfirmDelete": "Are you sure? This cannot be undone.",
-    "StatBonusTooltip": "Bonus for the next stat roll",
     "RequiresLocationType": "This oracle requires a location type to be selected.",
     "RollOracleTable": "Roll oracle: <i>{title}</i>",
     "RollMove": "Roll move: <i>{title}</i>",
@@ -256,23 +203,18 @@
     "Fifth": "fifth",
     "StarforgedTools": "Starforged Tools",
     "IronswornTools": "Ironsworn Tools",
-    "NewSector": "New Sector",
-    "NewStar": "New Star",
-    "NewPlanet": "New Planet",
-    "NewSettlement": "New Settlement",
-    "NewDerelict": "New Derelict",
-    "NewVault": "New Precursor Vault",
-    "EditSector": "Edit Sector",
-    "Sector": "Sector",
     "Region": "Region",
-    "Terminus": "Terminus",
-    "Outlands": "Outlands",
-    "Expanse": "Expanse",
+    "REGION": {
+      "Terminus": "Terminus",
+      "Outlands": "Outlands",
+      "Expanse": "Expanse"
+    },
     "RotateCCW": "Rotate counter-clockwise",
     "RotateCW": "Rotate clockwise",
     "RollDialog": {
       "AdvancedRollOptions": "Advanced options",
       "PresetActionDie": "Preset action die",
+      "PresetChallengeDice": "Preset challenge dice",
       "PredeterminedOutcome": "Predetermined outcome",
       "ExtraChallengeDice": "Extra challenge dice"
     },
@@ -466,7 +408,6 @@
         "quest3": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
       }
     },
-    "SFSettingTruthsTitle": "Setting Truths",
     "OracleCategories": {
       "Access": "Access",
       "Action and Theme": "Action and Theme",
@@ -505,8 +446,8 @@
       "Medical": "Medical",
       "Misc": "Misc",
       "Mission": "Mission",
-      "Monstrosity": "Monstrosity",
       "Moves": "Moves",
+      "Monstrosity": "Monstrosity",
       "Name": "Name",
       "Ocean": "Ocean",
       "Operations": "Operations",
@@ -539,9 +480,11 @@
       "Type": "Type",
       "Vaults": "Vaults",
       "Vital": "Vital",
-      "Zones": "Zones"
+      "Zones": "Zones",
+      "Custom": "Custom Oracles"
     },
     "Asset Categories": {
+      "Custom": "Custom Assets",
       "Ironsworn": {
         "Companion": {
           "Title": "Companion",
@@ -586,23 +529,97 @@
           "Description": "**Deeds** represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character."
         }
       }
-    }
-  },
-  "ITEM": {
-    "TypeAsset": "Asset",
-    "TypeProgress": "Progress track",
-    "TypeBondset": "Bondset",
-    "TypeSfmove": "Move",
-    "TypeDelve-theme": "Site theme",
-    "TypeDelve-domain": "Site domain"
-  },
-  "DELVESITE": {
-    "FREQUENCY": {
-      "VeryCommon": "Very common",
-      "Common": "Common",
-      "Uncommon": "Uncommon",
-      "Rare": "Rare",
-      "Unforeseen": "Unforeseen"
+    },
+    "ROLLTABLE": {
+      "TypeOracle": "Oracle"
+    },
+    "ROLLTABLES": {
+      "TypeOracle": "Oracles"
+    },
+    "SCENE": {
+      "TypeSector": "Sector"
+    },
+    "SCENES": {
+      "TypeSector": "Sectors"
+    },
+    "ACTOR": {
+      "SheetCompact": "Compact",
+      "SheetFoe": "Foe",
+      "SheetStarforgedLocation": "Starforged Location",
+      "SubtypeDerelict": "Derelict",
+      "SubtypePlanet": "Planet",
+      "SubtypeSettlement": "Settlement",
+      "SubtypeStar": "Stellar Object",
+      "SubtypeVault": "Precursor Vault",
+      "TypeCharacter": "Character",
+      "TypeFoe": "NPC",
+      "TypeLocation": "Location",
+      "TypeShared": "Shared sheet",
+      "TypeSite": "Delve Site",
+      "TypeStarship": "Starship"
+    },
+    "ACTORS": {
+      "SubtypeDerelict": "Derelicts",
+      "SubtypePlanet": "Planets",
+      "SubtypeSettlement": "Settlements",
+      "SubtypeStar": "Stellar Objects",
+      "SubtypeVault": "Precursor Vaults",
+      "TypeCharacter": "Characters",
+      "TypeFoe": "NPCs",
+      "TypeLocation": "Locations",
+      "TypeSite": "Delve Sites",
+      "TypeStarship": "Starships"
+    },
+    "ITEM": {
+      "SubtypeConnection": "Connection",
+      "SubtypeProgress": "Progress",
+      "SubtypeVow": "Vow",
+      "TypeAsset": "Asset",
+      "TypeBond": "Bond",
+      "TypeBondset": "Bondset",
+      "TypeDelveDomain": "Site domain",
+      "TypeDelveTheme": "Site theme",
+      "TypeMove": "Move",
+      "TypeProgressTrack": "Progress track"
+    },
+    "ITEMS": {
+      "SubtypeConnection": "Connections",
+      "SubtypeProgress": "Progress",
+      "SubtypeVow": "Vows",
+      "TypeAsset": "Assets",
+      "TypeBond": "Bonds",
+      "TypeBondset": "Bondsets",
+      "TypeDelveDomain": "Site domains",
+      "TypeDelveTheme": "Site themes",
+      "TypeMove": "Moves",
+      "TypeProgressTrack": "Progress tracks"
+    },
+    "JOURNALENTRYPAGE": {
+      "TypeProgressTrack": "Progress track",
+      "TypeTruth": "Setting Truth",
+      "TypeTruthClassic": "World Truth",
+      "TypeTruthStarforged": "Setting Truth"
+    },
+    "JOURNALENTRYPAGES": {
+      "TypeProgressTrack": "Progress tracks",
+      "TypeTruth": "Setting Truths",
+      "TypeTruthClassic": "World Truths",
+      "TypeTruthStarforged": "Setting Truths"
+    },
+    "DELVESITE": {
+      "Danger": "Danger",
+      "Dangers": "Dangers",
+      "Denizen": "Denizen",
+      "Denizens": "Denizens",
+      "Feature": "Feature",
+      "Features": "Features",
+      "FREQUENCY": {
+        "VeryCommon": "Very common",
+        "Common": "Common",
+        "Uncommon": "Uncommon",
+        "Rare": "Rare",
+        "Unforeseen": "Unforeseen"
+      }
     }
   }
 }

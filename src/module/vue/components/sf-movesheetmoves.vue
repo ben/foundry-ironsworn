@@ -3,7 +3,9 @@
     <nav class="flexrow nogrow" :class="$style.navSearch">
       <input
         type="search"
-        :placeholder="$t('IRONSWORN.Search')"
+        :placeholder="
+          $t('SIDEBAR.Search', { types: $t('IRONSWORN.ITEMS.TypeMove') })
+        "
         v-model="state.searchQuery"
         @keydown.enter.prevent
       />

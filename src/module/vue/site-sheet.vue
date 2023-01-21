@@ -46,7 +46,7 @@
               :item="theme"
               item-type="delve-theme"
               compendium-key="ironsworndelvethemes"
-              title-key="IRONSWORN.Theme"
+              title-key="IRONSWORN.ITEM.TypeDelveTheme"
             />
           </div>
           <div class="flexrow boxrow nogrow">
@@ -55,14 +55,14 @@
               :item="domain"
               item-type="delve-domain"
               compendium-key="ironsworndelvedomains"
-              title-key="IRONSWORN.Domain"
+              title-key="IRONSWORN.ITEM.TypeDelveDomain"
             />
           </div>
         </div>
         <!-- DENIZENS -->
         <article :class="$style.denizenMatrix">
           <h2 class="flexrow nogrow" :class="$style.heading">
-            <span>{{ $t('IRONSWORN.Denizens') }}</span>
+            <span>{{ $t('IRONSWORN.DELVESITE.Denizens') }}</span>
             <IronBtn
               nogrow
               style="padding: 2px"
@@ -105,7 +105,7 @@
     </div>
     <div class="flexcol">
       <div class="flexrow nogrow">
-        <h2 :class="$style.heading">{{ $t('IRONSWORN.Notes') }}</h2>
+        <h2 :class="$style.heading">{{ $t('Notes') }}</h2>
         <IronBtn
           block
           nogrow
@@ -114,7 +114,7 @@
           :class="{ [$style.featureBtn]: true }"
           @click="randomFeature"
           icon="ironsworn:d10-tilt"
-          :text="$t('IRONSWORN.Feature')"
+          :text="$t('IRONSWORN.DELVESITE.Feature')"
         />
       </div>
       <MceEditor v-model="actor.system.description" @save="saveDescription" />
@@ -273,7 +273,16 @@ async function randomFeature() {
 
   const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
   const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  const title = game.i18n.localize('IRONSWORN.Feature')
+  const rows: TableRow[] = [...themeData.features, ...domainData.features].map(
+    ({ low, high, description }) => ({
+      low,
+      high,
+      text: description,
+      selected: false,
+    })
+  )
+
+  const title = game.i18n.localize('IRONSWORN.DELVESITE.Feature')
   const subtitle = `${$actor?.name} – ${theme.value?.name} ${domain.value?.name}`
   const orm = await OracleRollMessage.fromTableResults(
     [...themeData.features, ...domainData.features],

@@ -6,12 +6,12 @@
     :tabKeys="['moves', 'oracles']"
   >
     <TabList>
-      <Tab tab-key="moves" :text="$t('IRONSWORN.Moves')">
+      <Tab tab-key="moves" :text="$t('IRONSWORN.ITEMS.TypeMove')">
         <template #icon>
           <IronIcon name="d10-tilt" size="1.25em"></IronIcon>
         </template>
       </Tab>
-      <Tab tab-key="oracles" :text="$t('IRONSWORN.Oracles')">
+      <Tab tab-key="oracles" :text="$t('IRONSWORN.ROLLTABLES.TypeOracle')">
         <template #icon>
           <IronIcon name="oracle" size="1.25em"></IronIcon>
         </template>

@@ -1,9 +1,9 @@
 export const RANKS = {
-  troublesome: 'IRONSWORN.Troublesome',
-  dangerous: 'IRONSWORN.Dangerous',
-  formidable: 'IRONSWORN.Formidable',
-  extreme: 'IRONSWORN.Extreme',
-  epic: 'IRONSWORN.Epic',
+  troublesome: 'IRONSWORN.CHALLENGERANK.Troublesome',
+  dangerous: 'IRONSWORN.CHALLENGERANK.Dangerous',
+  formidable: 'IRONSWORN.CHALLENGERANK.Formidable',
+  extreme: 'IRONSWORN.CHALLENGERANK.Extreme',
+  epic: 'IRONSWORN.CHALLENGERANK.Epic',
 }
 
 export const RANK_INCREMENTS = {
@@ -23,11 +23,11 @@ export enum NumericRank {
 }
 
 export const NumericRankI18nKeys: { [k in NumericRank]: string } = {
-  [NumericRank.troublesome]: 'IRONSWORN.Troublesome',
-  [NumericRank.dangerous]: 'IRONSWORN.Dangerous',
-  [NumericRank.formidable]: 'IRONSWORN.Formidable',
-  [NumericRank.extreme]: 'IRONSWORN.Extreme',
-  [NumericRank.epic]: 'IRONSWORN.Epic',
+  [NumericRank.troublesome]: 'IRONSWORN.CHALLENGERANK.Troublesome',
+  [NumericRank.dangerous]: 'IRONSWORN.CHALLENGERANK.Dangerous',
+  [NumericRank.formidable]: 'IRONSWORN.CHALLENGERANK.Formidable',
+  [NumericRank.extreme]: 'IRONSWORN.CHALLENGERANK.Extreme',
+  [NumericRank.epic]: 'IRONSWORN.CHALLENGERANK.Epic',
 }
 
 export const NumericRankIncrements: { [k in NumericRank]: number } = {

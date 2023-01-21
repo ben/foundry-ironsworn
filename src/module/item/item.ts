@@ -114,7 +114,7 @@ export class IronswornItem extends Item {
       {
         actor: this.actor || undefined,
         progress: {
-          source: game.i18n.localize('IRONSWORN.Bonds'),
+          source: game.i18n.localize('IRONSWORN.ITEMS.TypeBond'),
           value: progress,
         },
       }
