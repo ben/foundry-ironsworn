@@ -273,18 +273,9 @@ async function randomFeature() {
 
   const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
   const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  const rows: TableRow[] = [...themeData.features, ...domainData.features].map(
-    ({ low, high, description }) => ({
-      low,
-      high,
-      text: description,
-      selected: false,
-    })
-  )
-
   const title = game.i18n.localize('IRONSWORN.DELVESITE.Feature')
   const subtitle = `${$actor?.name} – ${theme.value?.name} ${domain.value?.name}`
-  const orm = await OracleRollMessage.fromTableResults(
+  const orm = OracleRollMessage.fromTableResults(
     [...themeData.features, ...domainData.features],
     title,
     subtitle
