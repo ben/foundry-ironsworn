@@ -92,7 +92,7 @@ async function compendiumMoves(
 }
 
 async function augmentWithFolderContents(categories: DisplayCategory[]) {
-  const name = game.i18n.localize('IRONSWORN.ITEM.TypeAsset Categories.Custom')
+  const name = game.i18n.localize('IRONSWORN.Asset Categories.Custom')
   const folder = (game.items?.directory as any)?.folders.find(
     (x) => x.name === name
   ) as Folder | undefined
