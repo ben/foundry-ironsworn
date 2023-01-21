@@ -116,7 +116,7 @@ Hooks.once('init', async () => {
 
   Items.registerSheet('ironsworn', AssetSheetV2, {
     types: ['asset'],
-    label: `${game.i18n.localize('IRONSWORN.ITEM.SheetAssetV2')} v2`,
+    label: `${game.i18n.localize('IRONSWORN.ITEM.TypeAsset')} v2`,
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', AssetSheet, {
