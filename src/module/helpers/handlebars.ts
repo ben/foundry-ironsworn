@@ -204,7 +204,7 @@ export class IronswornHandlebarsHelpers {
         const isFilled = position >= Object.keys(RANKS).indexOf(testRank)
         hexes.push(`
           <div class="nogrow" title="${game.i18n.localize(
-            `IRONSWORN.${capitalize(testRank)}`
+            `IRONSWORN.CHALLENGERANK.${capitalize(testRank)}`
           )}">
             <svg
               version="1.1"

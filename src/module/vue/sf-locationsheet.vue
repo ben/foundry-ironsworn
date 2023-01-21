@@ -187,7 +187,7 @@ label {
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { capitalize, flatten, sample } from 'lodash'
+import { camelCase, capitalize, flatten, sample } from 'lodash'
 import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 
@@ -546,12 +546,12 @@ const canRandomizeName = computed(() => {
 
 const randomKlassTooltip = computed(() => {
   const { subtype } = props.actor.system
-  return game.i18n.localize(`IRONSWORN.Random${capitalize(subtype)}Type`)
+  return game.i18n.localize(`IRONSWORN.Random${camelCase(subtype)}Type`)
 })
 
 const subtypeSelectText = computed(() => {
   const { subtype } = props.actor.system
-  return game.i18n.localize(`IRONSWORN.${capitalize(subtype)}Type`)
+  return game.i18n.localize(`IRONSWORN.${camelCase(subtype)}Type`)
 })
 
 const klassIsNotValid = computed(() => {

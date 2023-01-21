@@ -44,11 +44,13 @@
     "ProgressRoll": "Progress Roll",
     "MakeAProgressRoll": "Make a progress roll with {score} progress",
     "StarProgress": "When active, this item will also show up on the 'Legacies' tab.",
-    "Troublesome": "Troublesome",
-    "Dangerous": "Dangerous",
-    "Formidable": "Formidable",
-    "Extreme": "Extreme",
-    "Epic": "Epic",
+    "CHALLENGERANK": {
+      "Troublesome": "Troublesome",
+      "Dangerous": "Dangerous",
+      "Formidable": "Formidable",
+      "Extreme": "Extreme",
+      "Epic": "Epic"
+    },
     "Stat": "Stat",
     "Stats": "Stats",
     "OracleTable": {
@@ -202,9 +204,11 @@
     "StarforgedTools": "Starforged Tools",
     "IronswornTools": "Ironsworn Tools",
     "Region": "Region",
-    "Terminus": "Terminus",
-    "Outlands": "Outlands",
-    "Expanse": "Expanse",
+    "REGION": {
+      "Terminus": "Terminus",
+      "Outlands": "Outlands",
+      "Expanse": "Expanse"
+    },
     "RotateCCW": "Rotate counter-clockwise",
     "RotateCW": "Rotate clockwise",
     "RollDialog": {
