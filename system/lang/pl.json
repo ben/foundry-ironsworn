@@ -50,7 +50,7 @@
     "ClearProgress": "Wyczyść Postęp",
     "FulfillVow": "Wypełnij Przysięge",
     "ProgressRoll": "Rzut postępu",
-    "MakeAProgressRoll": "Wykonuj rzut postepu {score} postępu(????)",
+    "MakeAProgressRoll": "Wykonuj rzut postepu {score} postępu",
     "StarProgress": "Gdy jest aktywny, ten element pojawi się również w zakładce 'Dziedzictwo'",
     "Mark": "Zaznacz",
     "Fulfill": "Wypełnij",
@@ -72,7 +72,7 @@
     "roll +x": "rzuć +{stat}",
     "Roll +x": "Rzuć +{stat}",
     "roll method": {
-      "All": "rzuć all of {statList} (????)",
+      "All": "rzuć all of {statList}",
       "Any": {
         "2": "rzuć +{stat1} albo +{stat2}",
         "fallback": "rzuć na dowolną {statList}"
