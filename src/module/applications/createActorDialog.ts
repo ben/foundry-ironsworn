@@ -75,7 +75,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const drawResult = await table?.draw({ displayChat: false })
 
     this._createWithFolder(
-      drawResult.results[0]?.data.text || 'Character',
+      drawResult.results[0]?.data.text ||
+        game.i18n.localize('IRONSWORN.ACTOR.TypeCharacter'),
       'character',
       ev.currentTarget.dataset.img || undefined
     )
@@ -84,7 +85,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sharedCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'Shared',
+      game.i18n.localize('IRONSWORN.ACTOR.TypeShared'),
       'shared',
       ev.currentTarget.dataset.img || undefined
     )
@@ -93,7 +94,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _siteCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'Site',
+      game.i18n.localize('IRONSWORN.ACTOR.TypeSite'),
       'site',
       ev.currentTarget.dataset.img || undefined
     )
@@ -102,7 +103,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _foeCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'NPC',
+      game.i18n.localize('IRONSWORN.ACTOR.TypeFoe'),
       'foe',
       ev.currentTarget.dataset.img || undefined
     )
@@ -111,11 +112,10 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfcharacterCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
-    // Roll an Ironlander name
     const name = await this._randomStarforgedName()
 
     this._createWithFolder(
-      name || 'Character',
+      name || game.i18n.localize('IRONSWORN.ACTOR.TypeCharacter'),
       'character',
       ev.currentTarget.dataset.img || undefined,
       'ironsworn.StarforgedCharacterSheet'
@@ -125,7 +125,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfshipCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'Starship',
+      game.i18n.localize('IRONSWORN.ACTOR.TypeStarship'),
       'starship',
       ev.currentTarget.dataset.img || undefined
     )
@@ -134,7 +134,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfLocationCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      'Location',
+      game.i18n.localize('IRONSWORN.ACTOR.TypeLocation'),
       'location',
       ev.currentTarget.dataset.img || undefined
     )
