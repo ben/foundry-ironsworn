@@ -25,7 +25,7 @@ export class IronswornActor extends Actor {
   ): void {
     super._onCreate(data, options, userId)
     switch (this.type) {
-      case 'delve-site':
+      case 'site':
         // initialize sourceId flags for denizens
         {
           const denizens = (this.system as SiteDataPropertiesData).denizens.map(

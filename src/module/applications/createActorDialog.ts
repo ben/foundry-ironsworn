@@ -95,7 +95,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     ev.preventDefault()
     this._createWithFolder(
       game.i18n.localize('IRONSWORN.ACTOR.TypeDelveSite'),
-      'delve-site',
+      'site',
       ev.currentTarget.dataset.img || undefined
     )
   }
@@ -142,13 +142,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _createWithFolder(
     name: string,
-    type:
-      | 'character'
-      | 'delve-site'
-      | 'shared'
-      | 'foe'
-      | 'starship'
-      | 'location',
+    type: 'character' | 'site' | 'shared' | 'foe' | 'starship' | 'location',
     img: string,
     sheetClass?: string
   ) {

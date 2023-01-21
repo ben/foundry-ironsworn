@@ -108,7 +108,7 @@ Hooks.once('init', async () => {
   })
 
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
-    types: ['delve-site'],
+    types: ['site'],
     label: 'IRONSWORN.ACTOR.TypeDelveSite',
     makeDefault: true,
   })
@@ -195,7 +195,7 @@ Hooks.once('init', async () => {
     foe: 'IRONSWORN.Actor.TypeFoe',
     location: 'IRONSWORN.Actor.TypeLocation',
     shared: 'IRONSWORN.Actor.TypeShared',
-    'delve-site': 'IRONSWORN.Actor.TypeDelveSite',
+    site: 'IRONSWORN.Actor.TypeDelveSite',
     starship: 'IRONSWORN.Actor.TypeStarship',
   })
   CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
@@ -203,7 +203,7 @@ Hooks.once('init', async () => {
     foe: 'icon isicon-npc',
     location: 'icon isicon-waypoint',
     shared: 'icon isicon-sheet-shared',
-    'delve-site': 'icon isicon-delve-site',
+    site: 'icon isicon-delve-site',
     starship: 'icon isicon-starship',
   })
 

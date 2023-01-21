@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "shared", "foe", "delve-site", "starship", "location"],
+    "types": ["character", "shared", "foe", "site", "starship", "location"],
     "character": {
       "biography": "",
       "notes": "",
@@ -52,7 +52,7 @@
       "supply": 5
     },
     "foe": {},
-    "delve-site": {
+    "site": {
       "objective": "",
       "description": "",
       "notes": "",
@@ -379,10 +379,7 @@
     }
   },
   "JournalEntryPage": {
-    "types": [
-      "truth",
-      "progress"
-    ],
+    "types": ["truth", "progress"],
     "truth": {},
     "progress": {
       "rank": 1,

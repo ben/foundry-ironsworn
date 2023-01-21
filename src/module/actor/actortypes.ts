@@ -143,7 +143,7 @@ export interface SiteDataSourceData {
 export type SiteDataPropertiesData = SiteDataSourceData
 
 export interface SiteDataSource {
-  type: 'delve-site'
+  type: 'site'
   /**
    * @deprecated
    */
@@ -151,7 +151,7 @@ export interface SiteDataSource {
   system: SiteDataSourceData
 }
 export interface SiteDataProperties {
-  type: 'delve-site'
+  type: 'site'
   /**
    * @deprecated
    */

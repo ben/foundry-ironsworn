@@ -97,7 +97,6 @@ async function statsAreAlwaysNumbers() {
 /**
  * Migration 4:
  * Transform site denizens, site features, and site dangers into a {@link TableResult}-like format.
- * Rename the 'site' type to the more descriptive 'delve-site'.
  */
 async function normalizeDelveTableRows() {
   await everyActor(async (actor) => {
@@ -107,7 +106,7 @@ async function normalizeDelveTableRows() {
       const denizens = normalizeTableRows(actor, keyToMigrate, typeToMigrate)
       actor.update({
         system: { denizens },
-        type: 'delve-site',
+        type: 'site',
       })
     }
   })

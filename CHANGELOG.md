@@ -3,7 +3,6 @@
 ## Next Release
 
 - Under the hood: migrate Delve site denizens, features, and dangers to format consistent with `TableResult`s, which should make them easier to localize ([#605](https://github.com/ben/foundry-ironsworn/pull/606))
-- Under the hood: rename the 'site' type to the more descriptive 'delve-site'
 - Allow pre-setting of challenge dice, and revamp the advanced rolling options UI ([#606](https://github.com/ben/foundry-ironsworn/pull/606))
 - Improvements to the Polish translation ([#595](https://github.com/ben/foundry-ironsworn/pull/595))
 - Under the hood: update Dataforged import with documents built in Foundry v10 ([#601](https://github.com/ben/foundry-ironsworn/pull/601))
