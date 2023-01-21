@@ -202,6 +202,7 @@ export interface LocationDataSource {
    * @deprecated
    */
   data: LocationDataSourceData
+  system: LocationDataSourceData
 }
 export interface LocationDataProperties {
   type: 'location'
@@ -209,6 +210,7 @@ export interface LocationDataProperties {
    * @deprecated
    */
   data: LocationDataPropertiesData
+  system: LocationDataPropertiesData
 }
 
 ////////////////////////////////////////
