@@ -31,8 +31,8 @@ export function normalizeTableRows(
   }
   return oldRows.map((row) => {
     if ((row as any).range) {
-      // If the row is somehow already converted, just merge the flags.
-      return { row, flags: mergeObject((row as any).flags ?? {}, flags) } as any
+      // If the row is somehow already converted, just update the flags.
+      return { row, flags } as any
     }
     return toTableResult(row, flags)
   })
