@@ -52,12 +52,20 @@ export interface CharacterDataPropertiesData extends CharacterDataSourceData {
 
 export interface CharacterDataProperties {
   type: 'character'
+  /**
+   * @deprecated
+   */
   data: CharacterDataPropertiesData
+  system: CharacterDataPropertiesData
 }
 
 export interface CharacterDataSource {
   type: 'character'
+  /**
+   * @deprecated
+   */
   data: CharacterDataSourceData
+  system: CharacterDataSourceData
 }
 
 ////////////////////////////////////////
@@ -70,11 +78,19 @@ export type SharedDataPropertiesData = SharedDataSourceData
 
 interface SharedDataSource {
   type: 'shared'
+  /**
+   * @deprecated
+   */
   data: SharedDataSourceData
+  system: SharedDataSourceData
 }
 export interface SharedDataProperties {
   type: 'shared'
+  /**
+   * @deprecated
+   */
   data: SharedDataPropertiesData
+  system: SharedDataPropertiesData
 }
 
 ////////////////////////////////////////
@@ -84,11 +100,19 @@ type FoeDataPropertiesData = FoeDataSourceData
 
 interface FoeDataSource {
   type: 'foe'
+  /**
+   * @deprecated
+   */
   data: FoeDataSourceData
+  system: FoeDataSourceData
 }
 export interface FoeDataProperties {
   type: 'foe'
+  /**
+   * @deprecated
+   */
   data: FoeDataPropertiesData
+  system: FoeDataPropertiesData
 }
 
 ////////////////////////////////////////
@@ -108,7 +132,7 @@ export interface DelveSiteDenizen extends TableResultDataConstructorData {
   }
 }
 
-interface SiteDataSourceData {
+export interface SiteDataSourceData {
   objective: string
   description: string
   notes: string
@@ -120,11 +144,19 @@ export type SiteDataPropertiesData = SiteDataSourceData
 
 export interface SiteDataSource {
   type: 'site'
+  /**
+   * @deprecated
+   */
   data: SiteDataSourceData
+  system: SiteDataSourceData
 }
 export interface SiteDataProperties {
   type: 'site'
+  /**
+   * @deprecated
+   */
   data: SiteDataPropertiesData
+  system: SiteDataPropertiesData
 }
 
 ////////////////////////////////////////
@@ -140,11 +172,19 @@ export type StarshipDataPropertiesData = StarshipDataSourceData
 
 export interface StarshipDataSource {
   type: 'starship'
+  /**
+   * @deprecated
+   */
   data: StarshipDataSourceData
+  system: StarshipDataSourceData
 }
 export interface StarshipDataProperties {
   type: 'starship'
+  /**
+   * @deprecated
+   */
   data: StarshipDataPropertiesData
+  system: StarshipDataPropertiesData
 }
 
 ////////////////////////////////////////
@@ -158,10 +198,16 @@ type LocationDataPropertiesData = LocationDataSourceData
 
 export interface LocationDataSource {
   type: 'location'
+  /**
+   * @deprecated
+   */
   data: LocationDataSourceData
 }
 export interface LocationDataProperties {
   type: 'location'
+  /**
+   * @deprecated
+   */
   data: LocationDataPropertiesData
 }
 
