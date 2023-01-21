@@ -94,7 +94,7 @@ export interface FoeDataProperties {
 ////////////////////////////////////////
 
 /**
- * Represents an entry in the denizen matrix.
+ * Represents an entry in the delve site denizen matrix.
  */
 export interface DelveSiteDenizen extends TableResultDataConstructorData {
   flags: {
@@ -106,28 +106,6 @@ export interface DelveSiteDenizen extends TableResultDataConstructorData {
       sourceId: Actor['id']
     }
   }
-}
-
-/**
- * @deprecated Use {@link DelveSiteDenizen} instead
- */
-export interface DenizenSlot {
-  /**
-   * @see {@link DelveSiteDenizen.range}
-   */
-  low: number
-  /**
-   * @see {@link DelveSiteDenizen.range}
-   */
-  high: number
-  /**
-   * @see {@link DelveSiteDenizen.flags}
-   */
-  descriptor: string
-  /**
-   * @see {@link DelveSiteDenizen.text}
-   */
-  description: string
 }
 
 interface SiteDataSourceData {
