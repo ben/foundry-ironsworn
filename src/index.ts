@@ -180,31 +180,45 @@ Hooks.once('init', async () => {
     'delve-domain': 'IRONSWORN.ITEM.TypeDelveDomain',
     'delve-theme': 'IRONSWORN.ITEM.TypeDelveTheme',
   })
+  CONFIG.Item.typeIcons = mergeObject(CONFIG.Item.typeIcons, {
+    asset: 'fa-solid fa-cards-blank',
+    progress: 'fa-solid fa-asterisk',
+    bondset: 'fa-solid fa-handshake',
+    sfmove: 'icon isicon-d10-tilt',
+    // FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
+    'delve-domain': 'fa-solid fa-cards-blank',
+    'delve-theme': 'fa-solid fa-cards-blank',
+  })
 
   CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
     character: 'IRONSWORN.Actor.TypeCharacter',
     foe: 'IRONSWORN.Actor.TypeFoe',
     location: 'IRONSWORN.Actor.TypeLocation',
     shared: 'IRONSWORN.Actor.TypeShared',
-    site: 'IRONSWORN.Actor.TypeDelveSite',
+    'delve-site': 'IRONSWORN.Actor.TypeDelveSite',
     starship: 'IRONSWORN.Actor.TypeStarship',
   })
+  CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
+    character: 'icon isicon-sheet-character',
+    foe: 'icon isicon-npc',
+    location: 'icon isicon-waypoint',
+    shared: 'icon isicon-sheet-shared',
+    'delve-site': 'icon isicon-delve-site',
+    starship: 'icon isicon-starship',
+  })
 
-  // @ts-ignore
   CONFIG.JournalEntryPage.typeLabels = mergeObject(
-    // @ts-ignore
     CONFIG.JournalEntryPage.typeLabels,
     {
       truth: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
       progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack',
     }
   )
-  // @ts-ignore
   CONFIG.JournalEntryPage.typeIcons = mergeObject(
     CONFIG.JournalEntryPage.typeIcons,
     {
-      truth: 'fa-solid fa-angles-up',
-      progress: 'fas fa-asterisk',
+      truth: 'fa-solid fa-books',
+      progress: 'fa-solid fa-asterisk',
     }
   )
 
