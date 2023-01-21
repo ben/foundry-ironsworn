@@ -2,8 +2,9 @@
 
 ## Next Release
 
+- Allow pre-setting of challenge dice, and revamp the advanced rolling options UI ([#606](https://github.com/ben/foundry-ironsworn/pull/606))
+- Improvements to the Polish translation ([#595](https://github.com/ben/foundry-ironsworn/pull/595))
 - Under the hood: update Dataforged import with documents built in Foundry v10 ([#601](https://github.com/ben/foundry-ironsworn/pull/601))
-- Improvements to the Polish translation
 
 ## 1.20.13
 

@@ -212,6 +212,7 @@
     "RollDialog": {
       "AdvancedRollOptions": "Advanced options",
       "PresetActionDie": "Preset action die",
+      "PresetChallengeDice": "Preset challenge dice",
       "PredeterminedOutcome": "Predetermined outcome",
       "ExtraChallengeDice": "Extra challenge dice"
     },

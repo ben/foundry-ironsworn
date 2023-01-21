@@ -43,11 +43,11 @@
     <summary>{{localize 'IRONSWORN.RollDialog.AdvancedRollOptions'}}</summary>
 
     <fieldset class='form-group'>
-      <label class='checkbox'>
-        <input type='checkbox' class='advanced-roll-options-toggle' name='automaticOutcome' />
+      <label>
         {{localize 'IRONSWORN.RollDialog.PredeterminedOutcome'}}
       </label>
       <select name='automaticOutcomeValue'>
+        <option value='null'></option>
         <option value='0'>{{localize 'IRONSWORN.Miss'}}</option>
         <option value='1'>{{localize 'IRONSWORN.Weak_hit'}}</option>
         <option value='2'>{{localize 'IRONSWORN.Strong_hit'}}</option>
@@ -56,19 +56,24 @@
 
     {{#if action}}
     <fieldset class='form-group'>
-      <label class='checkbox'>
-        <input type='checkbox' class='advanced-roll-options-toggle' name='presetActionDie' />
-        {{localize 'IRONSWORN.RollDialog.PresetActionDie'}}
-      </label>
-      <input type='number' step='1' name='presetActionDieValue' value='0' />
+      <label>{{localize 'IRONSWORN.RollDialog.PresetActionDie'}}</label>
+      <input type='number' step='1' name='presetActionDieValue' />
     </fieldset>
     {{/if}}
+
     <fieldset class='form-group'>
-      <label class='checkbox'>
-        <input type='checkbox' class='advanced-roll-options-toggle' name='extraChallengeDice' />
+      <label>{{localize 'IRONSWORN.RollDialog.PresetChallengeDice'}}</label>
+      <div class="flexrow" style="gap: 5px">
+        <input type='number' step='1' name='presetChallengeDie1Value' />
+        <input type='number' step='1' name='presetChallengeDie2Value' />
+      </div>
+    </fieldset>
+
+    <fieldset class='form-group'>
+      <label>
         {{localize 'IRONSWORN.RollDialog.ExtraChallengeDice'}}
       </label>
-      <input type='number' step='1' name='extraChallengeDiceValue' value='0' min='0' />
+      <input type='number' step='1' name='extraChallengeDiceValue' min='0' />
     </fieldset>
 
   </details>
