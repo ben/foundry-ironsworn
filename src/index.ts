@@ -173,8 +173,26 @@ Hooks.once('init', async () => {
     }
   )
 
+  CONFIG.Item.typeLabels = mergeObject(CONFIG.Item.typeLabels, {
+    asset: 'IRONSWORN.ITEM.TypeAsset',
+    progress: 'IRONSWORN.ITEM.TypeProgressTrack',
+    bondset: 'IRONSWORN.ITEM.TypeBondset',
+    sfmove: 'IRONSWORN.ITEM.TypeMove',
+    'delve-domain': 'IRONSWORN.ITEM.TypeDelve-domain',
+    'delve-theme': 'IRONSWORN.ITEM.TypeDelve-theme',
+  })
+
+  CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
+    character: 'IRONSWORN.Actor.TypeCharacter',
+    foe: 'IRONSWORN.Actor.TypeFoe',
+    location: 'IRONSWORN.Actor.TypeLocation',
+    shared: 'IRONSWORN.Actor.TypeShared',
+    site: 'IRONSWORN.Actor.TypeSite',
+    starship: 'IRONSWORN.Actor.TypeStarship',
+  })
+
   // @ts-ignore
-  CONFIG.JournalEntryPage.typeLabels = merge(
+  CONFIG.JournalEntryPage.typeLabels = mergeObject(
     // @ts-ignore
     CONFIG.JournalEntryPage.typeLabels,
     {
