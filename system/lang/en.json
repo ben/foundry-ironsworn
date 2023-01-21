@@ -541,8 +541,6 @@
       "TypeSector": "Sectors"
     },
     "ACTOR": {
-      "SheetCharacterClassic": "Ironsworn character sheet",
-      "SheetCharacterStarforged": "Starforged character sheet",
       "SheetCompact": "Compact",
       "SheetFoe": "Foe",
       "SheetStarforgedLocation": "Starforged Location",
