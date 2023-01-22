@@ -32,6 +32,15 @@
     }
 
     button {
+      --ironsworn-icon-size: 1.15em;
+
+      .initial-caps();
+      .clickableBlockMixin();
+
+      display: flex;
+      gap: var(--ironsworn-border-radius-sm);
+      align-items: center;
+      justify-content: center;
       margin: 0;
       border-width: var(--ironsworn-border-width-md);
       border-radius: var(--ironsworn-border-radius-md);
@@ -40,8 +49,6 @@
       .button-text {
         white-space: nowrap;
       }
-      .initial-caps();
-      .clickableBlockMixin();
     }
   }
 
