@@ -61,51 +61,87 @@
       "denizens": [
         {
           "range": [1, 27],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [28, 41],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [42, 55],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [56, 69],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [70, 75],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [76, 81],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [82, 87],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [88, 93],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [94, 95],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [96, 97],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [98, 99],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
           "range": [100, 100],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         }
       ]
     },
@@ -231,19 +267,31 @@
       "features": [
         {
           "range": [1, 4],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [5, 8],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [9, 12],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [13, 16],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [17, 20],
@@ -253,51 +301,87 @@
       "dangers": [
         {
           "range": [1, 5],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [6, 10],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [11, 12],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [13, 14],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [15, 16],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [17, 18],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [19, 20],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [21, 22],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [23, 24],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [25, 26],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [27, 28],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [29, 30],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         }
       ]
     },
@@ -307,39 +391,66 @@
       "features": [
         {
           "range": [21, 43],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [44, 56],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [57, 64],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [65, 68],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [69, 72],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [73, 76],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [77, 80],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [81, 84],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [85, 88],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [89, 98],
@@ -357,23 +468,38 @@
       "dangers": [
         {
           "range": [31, 33],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [34, 36],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [37, 39],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [40, 42],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
           "range": [43, 45],
-          "text": ""
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         }
       ]
     }
