@@ -46,7 +46,7 @@ export function toTableResult(
     (tableRow as LegacyFeatureOrDanger).description ??
     (tableRow as TableRow).text
   return {
-    range: [tableRow.low, tableRow.high],
+    range: (tableRow as any).range ?? [tableRow.low, tableRow.high],
     text,
     flags,
   } as TableResultDataConstructorData
