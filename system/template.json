@@ -454,15 +454,24 @@
         },
         {
           "range": [89, 98],
-          "description": "Something unusual or unexpected"
+          "description": "Something unusual or unexpected",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [99, 99],
-          "description": "You transition into a new theme"
+          "description": "You transition into a new theme",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
           "range": [100, 100],
-          "description": "You transition into a new domain"
+          "description": "You transition into a new domain",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         }
       ],
       "dangers": [
