@@ -200,7 +200,7 @@ Hooks.once('init', async () => {
   })
   CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
     character: 'fa-solid fa-user-pen',
-    foe: 'fa-solid fa-drama-masks',
+    foe: 'fa-solid fa-masks-theater',
     location: 'fa-solid fa-location-dot',
     shared: 'fa-solid fa-people-group',
     site: 'fa-solid fa-dungeon',
