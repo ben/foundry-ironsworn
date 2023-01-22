@@ -186,8 +186,8 @@ Hooks.once('init', async () => {
     bondset: 'fa-solid fa-handshake',
     sfmove: 'icon isicon-d10-tilt',
     // FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
-    'delve-domain': 'fa-solid fa-cards-blank',
-    'delve-theme': 'fa-solid fa-cards-blank',
+    'delve-domain': 'fa-duotone fa-cards-blank',
+    'delve-theme': 'fa-duotone fa-cards-blank',
   })
 
   CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
