@@ -199,12 +199,12 @@ Hooks.once('init', async () => {
     starship: 'IRONSWORN.Actor.TypeStarship',
   })
   CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
-    character: 'fa-solid user-pen',
-    foe: 'fa-solid drama-masks',
-    location: 'fa-solid location-dot',
-    shared: 'fa-solid people-group',
-    site: 'fa-solid dungeon',
-    starship: 'fa-solid starship-freighter',
+    character: 'fa-solid fa-user-pen',
+    foe: 'fa-solid fa-drama-masks',
+    location: 'fa-solid fa-location-dot',
+    shared: 'fa-solid fa-people-group',
+    site: 'fa-solid fa-dungeon',
+    starship: 'fa-solid fa-starship-freighter',
   })
 
   CONFIG.JournalEntryPage.typeLabels = mergeObject(
