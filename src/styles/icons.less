@@ -187,17 +187,15 @@ i {
   &[class*=' isicon-'] {
     display: flex;
     align-items: center;
+    align-self: center;
     justify-content: center;
-    height: 1.5em;
     font-size: inherit;
     aspect-ratio: 1;
 
     &::before {
-      @padIcon: 2px;
-
       display: flex;
-      width: calc(100% - (@padIcon*2));
-      height: calc(100% - (@padIcon*2));
+      width: var(--ironsworn-icon-size);
+      height: var(--ironsworn-icon-size);
     }
   }
 }
