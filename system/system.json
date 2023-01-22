@@ -87,14 +87,6 @@
       "private": false
     },
     {
-      "name": "ironsworntables",
-      "label": "Ironsworn Tables",
-      "system": "foundry-ironsworn",
-      "path": "packs/tables.db",
-      "type": "RollTable",
-      "private": false
-    },
-    {
       "name": "ironswornoracles",
       "label": "Ironsworn Oracles",
       "system": "foundry-ironsworn",
