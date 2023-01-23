@@ -2,6 +2,10 @@
 
 ## Next Release
 
+- Under the hood: Major styling refactor to replace LESS preprocessor with SCSS/SASS, which supports more robust tooling, including much better support from Stylelint ([#568](https://github.com/ben/foundry-ironsworn/pull/v))
+  - Introduces opinionated Stylelint rules for property ordering, variable usage, class naming, etc. We have a _lot_ of styling to manage, and hopefully this will make it a bit easier to maintain.
+  - Much of what `palettize.less` did is now written in Typescript for use as a custom SASS plugin. This lets us use `chroma.js` for better colour mixing, and lays the groundwork for generating color themes on the fly.
+
 ## 1.20.14
 
 - Allow pre-setting of challenge dice, and revamp the advanced rolling options UI ([#606](https://github.com/ben/foundry-ironsworn/pull/606))
