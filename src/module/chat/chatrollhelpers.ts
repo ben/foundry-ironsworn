@@ -1,11 +1,11 @@
 // this file is basically deprecated. use rolls/chat-message.ts instead
 import { IronswornActor } from '../actor/actor'
-import { DenizenSlot } from '../actor/actortypes'
+import { DelveSiteDenizen } from '../actor/actortypes'
 
 interface DenizenChatInput {
   roll: Roll
   site: IronswornActor
-  denizen: DenizenSlot
+  denizen: DelveSiteDenizen
 }
 
 export async function createIronswornDenizenChat(params: DenizenChatInput) {

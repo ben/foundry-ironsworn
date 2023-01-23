@@ -187,7 +187,7 @@ textarea {
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { provide, computed, inject, nextTick, ref, Component } from 'vue'
+import { provide, computed, inject, nextTick, ref } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnCompendium from './components/buttons/btn-compendium.vue'
@@ -198,9 +198,10 @@ import { RANKS, RANK_INCREMENTS } from '../constants'
 import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
-import { OracleRollMessage, TableRow } from '../rolls'
+import { OracleRollMessage } from '../rolls'
 import { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { SiteDataPropertiesData } from '../actor/actortypes'
 
 const props = defineProps<{
   actor: any
@@ -245,8 +246,9 @@ const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
   const roll = await new Roll('1d100').evaluate({ async: true })
   const result = roll.total
-  const denizen = props.actor.system.denizens.find(
-    (x) => x.low <= result && x.high >= result
+  const denizens = (props.actor.system as SiteDataPropertiesData).denizens
+  const denizen = denizens.find(
+    (x) => x.range[0] <= result && x.range[1] >= result
   )
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
   const idx = props.actor.system.denizens.indexOf(denizen)
@@ -257,7 +259,7 @@ async function randomDenizen() {
   })
 
   // Denizen slot is empty; set focus and add a class
-  if (!denizen?.description) {
+  if (!denizen?.text) {
     await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
     await nextTick()
     denizenRefs.value[idx]?.focus?.()
@@ -273,18 +275,13 @@ async function randomFeature() {
 
   const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
   const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  const rows: TableRow[] = [...themeData.features, ...domainData.features].map(
-    ({ low, high, description }) => ({
-      low,
-      high,
-      text: description,
-      selected: false,
-    })
-  )
-
   const title = game.i18n.localize('IRONSWORN.DELVESITE.Feature')
   const subtitle = `${$actor?.name} – ${theme.value?.name} ${domain.value?.name}`
-  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
+  const orm = OracleRollMessage.fromTableResults(
+    [...themeData.features, ...domainData.features],
+    title,
+    subtitle
+  )
   orm.createOrUpdate()
 }
 

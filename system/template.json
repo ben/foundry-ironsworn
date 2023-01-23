@@ -60,76 +60,88 @@
       "current": 0,
       "denizens": [
         {
-          "low": 1,
-          "high": 27,
-          "descriptor": "Very Common",
-          "description": ""
+          "range": [1, 27],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 28,
-          "high": 41,
-          "descriptor": "Common",
-          "description": ""
+          "range": [28, 41],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 42,
-          "high": 55,
-          "descriptor": "Common",
-          "description": ""
+          "range": [42, 55],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 56,
-          "high": 69,
-          "descriptor": "Common",
-          "description": ""
+          "range": [56, 69],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 70,
-          "high": 75,
-          "descriptor": "Uncommon",
-          "description": ""
+          "range": [70, 75],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 76,
-          "high": 81,
-          "descriptor": "Uncommon",
-          "description": ""
+          "range": [76, 81],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 82,
-          "high": 87,
-          "descriptor": "Uncommon",
-          "description": ""
+          "range": [82, 87],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 88,
-          "high": 93,
-          "descriptor": "Uncommon",
-          "description": ""
+          "range": [88, 93],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 94,
-          "high": 95,
-          "descriptor": "Rare",
-          "description": ""
+          "range": [94, 95],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 96,
-          "high": 97,
-          "descriptor": "Rare",
-          "description": ""
+          "range": [96, 97],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 98,
-          "high": 99,
-          "descriptor": "Rare",
-          "description": ""
+          "range": [98, 99],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         },
         {
-          "low": 100,
-          "high": 100,
-          "descriptor": "Unforeseen",
-          "description": ""
+          "range": [100, 100],
+          "text": "",
+          "flags": {
+            "type": "delve-site-denizen"
+          }
         }
       ]
     },
@@ -174,13 +186,6 @@
     },
     "bondset": {
       "bonds": []
-    },
-    "site": {
-      "templates": ["progress"],
-      "objective": "",
-      "theme": "",
-      "domain": "",
-      "notes": ""
     },
     "asset": {
       "templates": [],
@@ -261,91 +266,122 @@
       "description": "This place is so old...",
       "features": [
         {
-          "low": 1,
-          "high": 4,
-          "description": ""
+          "range": [1, 4],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 5,
-          "high": 8,
-          "description": ""
+          "range": [5, 8],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 9,
-          "high": 12,
-          "description": ""
+          "range": [9, 12],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 13,
-          "high": 16,
-          "description": ""
+          "range": [13, 16],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 17,
-          "high": 20,
-          "description": ""
+          "range": [17, 20],
+          "text": ""
         }
       ],
       "dangers": [
         {
-          "low": 1,
-          "high": 5,
-          "description": ""
+          "range": [1, 5],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 6,
-          "high": 10,
-          "description": ""
+          "range": [6, 10],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 11,
-          "high": 12,
-          "description": ""
+          "range": [11, 12],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 13,
-          "high": 14,
-          "description": ""
+          "range": [13, 14],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 15,
-          "high": 16,
-          "description": ""
+          "range": [15, 16],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 17,
-          "high": 18,
-          "description": ""
+          "range": [17, 18],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 19,
-          "high": 20,
-          "description": ""
+          "range": [19, 20],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 21,
-          "high": 22,
-          "description": ""
+          "range": [21, 22],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 23,
-          "high": 24,
-          "description": ""
+          "range": [23, 24],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 25,
-          "high": 26,
-          "description": ""
+          "range": [25, 26],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 27,
-          "high": 28,
-          "description": ""
+          "range": [27, 28],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 29,
-          "high": 30,
-          "description": ""
+          "range": [29, 30],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         }
       ]
     },
@@ -354,91 +390,125 @@
       "description": "In this dark and dreary place...",
       "features": [
         {
-          "low": 21,
-          "high": 43,
-          "description": ""
+          "range": [21, 43],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 44,
-          "high": 56,
-          "description": ""
+          "range": [44, 56],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 57,
-          "high": 64,
-          "description": ""
+          "range": [57, 64],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 65,
-          "high": 68,
-          "description": ""
+          "range": [65, 68],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 69,
-          "high": 72,
-          "description": ""
+          "range": [69, 72],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 73,
-          "high": 76,
-          "description": ""
+          "range": [73, 76],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 77,
-          "high": 80,
-          "description": ""
+          "range": [77, 80],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 81,
-          "high": 84,
-          "description": ""
+          "range": [81, 84],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 85,
-          "high": 88,
-          "description": ""
+          "range": [85, 88],
+          "text": "",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 89,
-          "high": 98,
-          "description": "Something unusual or unexpected"
+          "range": [89, 98],
+          "description": "Something unusual or unexpected",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 99,
-          "high": 99,
-          "description": "You transition into a new theme"
+          "range": [99, 99],
+          "description": "You transition into a new theme",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         },
         {
-          "low": 100,
-          "high": 100,
-          "description": "You transition into a new domain"
+          "range": [100, 100],
+          "description": "You transition into a new domain",
+          "flags": {
+            "type": "delve-site-feature"
+          }
         }
       ],
       "dangers": [
         {
-          "low": 31,
-          "high": 33,
-          "description": ""
+          "range": [31, 33],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 34,
-          "high": 36,
-          "description": ""
+          "range": [34, 36],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 37,
-          "high": 39,
-          "description": ""
+          "range": [37, 39],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 40,
-          "high": 42,
-          "description": ""
+          "range": [40, 42],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         },
         {
-          "low": 43,
-          "high": 45,
-          "description": ""
+          "range": [43, 45],
+          "text": "",
+          "flags": {
+            "type": "delve-site-danger"
+          }
         }
       ]
     }

@@ -1,5 +1,9 @@
+import { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import { CreateActorDialog } from '../applications/createActorDialog'
-import { CharacterDataPropertiesData } from './actortypes'
+import {
+  CharacterDataPropertiesData,
+  SiteDataPropertiesData,
+} from './actortypes'
 import { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 let CREATE_DIALOG: CreateActorDialog
@@ -13,6 +17,31 @@ export class IronswornActor extends Actor {
   declare system: typeof this.data.data
 
   moveSheet?: SFCharacterMoveSheet
+
+  protected override _onCreate(
+    data: this['data']['_source'],
+    options: DocumentModificationOptions,
+    userId: string
+  ): void {
+    super._onCreate(data, options, userId)
+    switch (this.type) {
+      case 'site':
+        // initialize sourceId flags for denizens
+        {
+          const denizens = (this.system as SiteDataPropertiesData).denizens.map(
+            (denizen) => {
+              denizen.flags['foundry-ironsworn'].sourceId = this.id
+              return denizen
+            }
+          )
+          this.update({ system: { denizens } })
+        }
+
+        break
+      default:
+        break
+    }
+  }
 
   static async createDialog(data, _options = {}) {
     if (!CREATE_DIALOG) CREATE_DIALOG = new CreateActorDialog()

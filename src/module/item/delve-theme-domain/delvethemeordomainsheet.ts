@@ -27,7 +27,7 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
     const val = $(ev.currentTarget).val()?.toString() || ''
     const idx = parseInt(ev.target.dataset.idx)
     const { features } = this.themeData
-    features[idx].description = val
+    features[idx].text = val
     this.item.update({ system: { features } }, { render: false })
   }
 
@@ -35,7 +35,7 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
     const val = $(ev.currentTarget).val()?.toString() || ''
     const idx = parseInt(ev.target.dataset.idx)
     const { dangers } = this.themeData
-    dangers[idx].description = val
+    dangers[idx].text = val
     this.item.update({ system: { dangers } }, { render: false })
   }
 }

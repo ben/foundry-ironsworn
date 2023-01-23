@@ -1,5 +1,6 @@
 import { IronswornActor } from '../actor/actor'
 import { IronswornItem } from '../item/item'
+import { normalizeTableRows } from './items'
 import { IronswornSettings } from './settings.js'
 
 // Utilities
@@ -71,6 +72,7 @@ async function everythingIsAProgress() {
   })
 }
 
+// Migration 3: Cast any string values that should be numbers
 async function statsAreAlwaysNumbers() {
   await everyActor(async (actor) => {
     if (actor.type !== 'character') return
@@ -92,12 +94,45 @@ async function statsAreAlwaysNumbers() {
   })
 }
 
+/**
+ * Migration 4:
+ * Transform site denizens, site features, and site dangers into a {@link TableResult}-like format.
+ */
+async function normalizeDelveTableRows() {
+  await everyActor(async (actor) => {
+    const typeToMigrate = 'site'
+    const keyToMigrate = 'system.denizens'
+    if ((actor.type as any) === 'site') {
+      const denizens = normalizeTableRows(actor, keyToMigrate, typeToMigrate)
+      actor.update({
+        system: { denizens },
+        type: 'site',
+      })
+    }
+  })
+  await everyItem(async (item) => {
+    const typesToMigrate = [
+      'delve-domain',
+      'delve-theme',
+    ] as SourceConfig['Item']['type'][]
+    const keysToMigrate = ['system.features', 'system.dangers']
+    if (typesToMigrate.includes(item.type)) {
+      keysToMigrate.forEach((key) => {
+        item.update({
+          [key]: normalizeTableRows(item, key, item.type),
+        })
+      })
+    }
+  })
+}
+
 // index 1 is the function to run when upgrading from 1 to 2, and so on
 const MIGRATIONS: Array<() => Promise<any>> = [
   noop,
   fixFormidableSpelling,
   everythingIsAProgress,
   statsAreAlwaysNumbers,
+  normalizeDelveTableRows,
 ]
 const NEWEST_VERSION = MIGRATIONS.length
 

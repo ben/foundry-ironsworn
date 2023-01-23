@@ -555,7 +555,7 @@
       "TypeFoe": "NPC",
       "TypeLocation": "Location",
       "TypeShared": "Shared sheet",
-      "TypeSite": "Delve Site",
+      "TypeDelveSite": "Delve Site",
       "TypeStarship": "Starship"
     },
     "ACTORS": {
@@ -567,7 +567,7 @@
       "TypeCharacter": "Characters",
       "TypeFoe": "NPCs",
       "TypeLocation": "Locations",
-      "TypeSite": "Delve Sites",
+      "TypeDelveSite": "Delve Sites",
       "TypeStarship": "Starships"
     },
     "ITEM": {
