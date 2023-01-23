@@ -32,21 +32,16 @@ const props = defineProps<{
   onClick?: Function
 }>()
 
-const toolset = inject<'ironsworn' | 'starforged'>('toolset')
 const $emit = defineEmits(['click'])
 
 async function rollOracle() {
   if (props.overrideClick && props.onClick) return $emit('click')
 
-  const randomTable = sample(props.node.tables)
-  const pack = {
-    ironsworn: 'foundry-ironsworn.ironswornoracles',
-    starforged: 'foundry-ironsworn.starforgedoracles',
-  }[toolset ?? '']
+  const randomTable = sample(props.node.tables)?.()
 
   const orm = await OracleRollMessage.fromTableId(
-    randomTable?.()?.id ?? '',
-    pack
+    randomTable?.id ?? '',
+    randomTable?.pack || undefined
   )
   orm.createOrUpdate()
 }
