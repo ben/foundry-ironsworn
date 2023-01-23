@@ -16,10 +16,10 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
     super.activateListeners(html)
 
     html
-      .find('[data-on-blur="ironsworn:updateFeatureText"]')
+      .find('[data-on-blur="updateFeatureText"]')
       .on('blur', (ev) => this._updateFeatureText.call(this, ev))
     html
-      .find('[data-on-blur="ironsworn:updateDangerText"]')
+      .find('[data-on-blur="updateDangerText"]')
       .on('blur', (ev) => this._updateDangerText.call(this, ev))
   }
 
