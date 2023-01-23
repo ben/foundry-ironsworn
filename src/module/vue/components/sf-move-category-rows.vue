@@ -40,6 +40,8 @@
 @use 'mixins:fx';
 
 .wrapper {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
+
   border-radius: var(--ironsworn-border-radius-lg);
   background-color: v-bind('thematicColor');
 }
