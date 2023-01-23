@@ -70,28 +70,6 @@
   }
 }
 
-a,
-.scene-control,
-.control-tool {
-  &:hover {
-    color: var(--ironsworn-color-clickable-text-hover);
-  }
-}
-
-.scene-control,
-.control-tool {
-  .block-icon {
-    --ironsworn-block-icon-spacer: 1px;
-
-    padding: var(--ironsworn-block-icon-spacer);
-
-    &::before {
-      width: 100%;
-      height: 100%;
-    }
-  }
-}
-
 #keybindings {
   .binding {
     .key {
@@ -110,4 +88,12 @@ a,
 
 .notification {
   color: var(--color-text-light-1);
+}
+
+a,
+.scene-control,
+.control-tool {
+  &:hover {
+    color: var(--ironsworn-color-clickable-text-hover);
+  }
 }

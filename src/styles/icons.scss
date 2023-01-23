@@ -262,3 +262,19 @@ $icons: (
     }
   }
 }
+
+.scene-control,
+.control-tool {
+  .ironsworn-icon.block-icon {
+    --ironsworn-block-icon-spacer: 1px;
+    --ironsworn-scene-control-size: 38px;
+    --ironsworn-icon-size: 34px;
+
+    padding: var(--ironsworn-block-icon-spacer);
+
+    &::before {
+      width: var(--ironsworn-icon-size);
+      height: var(--ironsworn-icon-size);
+    }
+  }
+}
