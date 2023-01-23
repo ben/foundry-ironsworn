@@ -2,7 +2,6 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
-import { merge } from 'lodash'
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
@@ -110,7 +109,7 @@ Hooks.once('init', async () => {
 
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
     types: ['site'],
-    label: 'IRONSWORN.ACTOR.TypeSite',
+    label: 'IRONSWORN.ACTOR.TypeDelveSite',
     makeDefault: true,
   })
 
@@ -181,30 +180,47 @@ Hooks.once('init', async () => {
     'delve-domain': 'IRONSWORN.ITEM.TypeDelveDomain',
     'delve-theme': 'IRONSWORN.ITEM.TypeDelveTheme',
   })
+  CONFIG.Item.typeIcons = mergeObject(CONFIG.Item.typeIcons, {
+    asset: 'fa-solid fa-cards-blank',
+    progress: 'fa-solid fa-asterisk',
+    bondset: 'fa-solid fa-handshake',
+    sfmove: 'icon isicon-d10-tilt',
+    // FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
+    'delve-domain': 'fa-duotone fa-cards-blank',
+    'delve-theme': 'fa-duotone fa-cards-blank',
+  })
 
   CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
     character: 'IRONSWORN.Actor.TypeCharacter',
     foe: 'IRONSWORN.Actor.TypeFoe',
     location: 'IRONSWORN.Actor.TypeLocation',
     shared: 'IRONSWORN.Actor.TypeShared',
-    site: 'IRONSWORN.Actor.TypeSite',
+    site: 'IRONSWORN.Actor.TypeDelveSite',
     starship: 'IRONSWORN.Actor.TypeStarship',
   })
+  CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
+    character: 'fa-solid fa-user-pen',
+    foe: 'fa-solid fa-masks-theater',
+    location: 'fa-solid fa-location-dot',
+    shared: 'fa-solid fa-people-group',
+    site: 'fa-solid fa-dungeon',
+    starship: 'fa-solid fa-starship-freighter',
+  })
 
-  // @ts-ignore
   CONFIG.JournalEntryPage.typeLabels = mergeObject(
-    // @ts-ignore
     CONFIG.JournalEntryPage.typeLabels,
     {
       truth: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
       progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack',
     }
   )
-  // @ts-ignore
-  CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
-    truth: 'fa-solid fa-angles-up',
-    progress: 'fas fa-asterisk',
-  })
+  CONFIG.JournalEntryPage.typeIcons = mergeObject(
+    CONFIG.JournalEntryPage.typeIcons,
+    {
+      truth: 'fa-solid fa-books',
+      progress: 'fa-solid fa-asterisk',
+    }
+  )
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()

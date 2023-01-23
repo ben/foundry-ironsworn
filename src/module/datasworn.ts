@@ -1,6 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { IronswornItem } from './item/item.js'
+import { DelveSiteFeatureOrDanger } from './item/itemtypes'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',
@@ -11,6 +12,17 @@ const THEME_IMAGES = {
   Infested: 'icons/creatures/eyes/icy-cluster-blue.webp',
   Ravaged: 'icons/environment/settlement/building-rubble.webp',
   Wild: 'icons/magic/nature/root-vines-grow-brown.webp',
+}
+
+const THEME_IDS = {
+  Ancient: '9RnSqMcrekJoJbXH',
+  Corrupted: 'pKCYCvdI2WjjKsjY',
+  Fortified: 'ONZWFYrqxgFIzppP',
+  Hallowed: 'zhOq6bjCvYhXkMQB',
+  Haunted: '9BtnJYn9vXBGEV5R',
+  Infested: 'H5aJvBKwPrbEnzMe',
+  Ravaged: 'iDOVA8797p4kYar7',
+  Wild: 'v3jYuNrr1Jt4TzNZ',
 }
 
 const DOMAIN_IMAGES = {
@@ -26,6 +38,21 @@ const DOMAIN_IMAGES = {
   Stronghold: 'icons/environment/settlement/castle.webp',
   Tanglewood: 'icons/environment/wilderness/terrain-forest-gray.webp',
   Underkeep: 'icons/environment/wilderness/mine-interior-dungeon-door.webp',
+}
+
+const DOMAIN_IDS = {
+  Barrow: 'LIoWYBGBBMPlPNam',
+  Cavern: 'QM2Y2Iop7fQ3yifB',
+  'Frozen Cavern': '2c2t4chqfpZ9ydid',
+  Icereach: 'hziNL2ikUkcPkd6A',
+  Mine: 'HjxXUr5xrV1mobAO',
+  Pass: '058BdtjZuW0pOLeE',
+  Ruin: 'lkqTLuiB3g9dD7ed',
+  'Sea Cave': 'jdJOGqg4DyEeCFg4',
+  Shadowfen: 'Xn1xz4l3r6AMWzg8',
+  Stronghold: 'Yy9KkvSOvB2tWxOp',
+  Tanglewood: 'MbJlpR81C4Q4WDV2',
+  Underkeep: 'vyyrG8pPtDQ6FAgG',
 }
 
 const FOE_IMAGES = {
@@ -100,12 +127,45 @@ const PACKS = [
   'foundry-ironsworn.ironswornoracles',
 ]
 
+type RawFeatureOrDanger = {
+  Chance: number
+  Description: string
+}
+
+function importDelveFeaturesOrDangers(
+  rawFeaturesOrDangers: RawFeatureOrDanger[],
+  type: 'feature' | 'danger',
+  sourceId: Item['id'] = null,
+  low = 1
+) {
+  const result: DelveSiteFeatureOrDanger[] = []
+  for (const featureOrDanger of rawFeaturesOrDangers) {
+    result.push({
+      range: [low, featureOrDanger.Chance],
+      text: featureOrDanger.Description as string,
+      flags: {
+        'foundry-ironsworn': {
+          type: `delve-site-${type}`,
+          sourceId,
+        },
+      },
+    })
+    low = featureOrDanger.Chance + 1
+  }
+  return result
+}
+
 export async function importFromDatasworn() {
   // Empty out the packs
   for (const key of PACKS) {
     const pack = game.packs.get(key)
     if (!pack) continue
-    const idsToDelete = pack.index.map((x: any) => x._id)
+
+    // Unlock all the packs
+    await pack.configure({ locked: false })
+
+    // Delete all the contents
+    const idsToDelete = pack.index.map((x) => x._id)
     await Item.deleteDocuments(idsToDelete, { pack: key })
   }
 
@@ -114,41 +174,35 @@ export async function importFromDatasworn() {
     'systems/foundry-ironsworn/assets/delve-themes.json'
   ).then((x) => x.json())
   const themesToCreate = themesJson.Themes.map((rawTheme) => {
+    const _id = THEME_IDS[rawTheme.Name]
     const themeData = {
+      _id,
       type: 'delve-theme',
       name: rawTheme.Name,
       img: THEME_IMAGES[rawTheme.Name],
-      data: {
+      system: {
         summary: rawTheme.Summary,
         description: rawTheme.Description,
-        features: [] as any[],
-        dangers: [] as any[],
+        features: importDelveFeaturesOrDangers(
+          rawTheme.Features,
+          'feature',
+          _id,
+          1
+        ),
+        dangers: importDelveFeaturesOrDangers(
+          rawTheme.Dangers,
+          'danger',
+          _id,
+          1
+        ),
       },
-    }
-
-    let low = 1
-    for (const feature of rawTheme.Features) {
-      themeData.data.features.push({
-        low,
-        high: feature.Chance,
-        description: feature.Description,
-      })
-      low = feature.Chance + 1
-    }
-    low = 1
-    for (const danger of rawTheme.Dangers) {
-      themeData.data.dangers.push({
-        low,
-        high: danger.Chance,
-        description: danger.Description,
-      })
-      low = danger.Chance + 1
     }
 
     return themeData
   })
   await Item.createDocuments(themesToCreate, {
     pack: 'foundry-ironsworn.ironsworndelvethemes',
+    keepId: true,
   })
 
   // Domains
@@ -156,90 +210,39 @@ export async function importFromDatasworn() {
     'systems/foundry-ironsworn/assets/delve-domains.json'
   ).then((x) => x.json())
   const domainsToCreate = domainsJson.Domains.map((rawDomain) => {
+    const _id = DOMAIN_IDS[rawDomain.Name]
     const domainData = {
+      _id,
       type: 'delve-domain',
       name: rawDomain.Name,
       img: DOMAIN_IMAGES[rawDomain.Name],
-      data: {
+      system: {
         summary: rawDomain.Summary,
         description: rawDomain.Description,
-        features: [] as any[],
-        dangers: [] as any[],
+        features: importDelveFeaturesOrDangers(
+          rawDomain.Features,
+          'feature',
+          _id,
+          21
+        ),
+        dangers: importDelveFeaturesOrDangers(
+          rawDomain.Dangers,
+          'danger',
+          _id,
+          31
+        ),
       },
-    }
-
-    let low = 21
-    for (const feature of rawDomain.Features) {
-      domainData.data.features.push({
-        low,
-        high: feature.Chance,
-        description: feature.Description,
-      })
-      low = feature.Chance + 1
-    }
-    low = 31
-    for (const danger of rawDomain.Dangers) {
-      domainData.data.dangers.push({
-        low,
-        high: danger.Chance,
-        description: danger.Description,
-      })
-      low = danger.Chance + 1
     }
 
     return domainData
   })
   await Item.createDocuments(domainsToCreate, {
     pack: 'foundry-ironsworn.ironsworndelvedomains',
+    keepId: true,
   })
 
-  // Foes
-  const foesJson = await fetch(
-    'systems/foundry-ironsworn/assets/foes.json'
-  ).then((x) => x.json())
-  const foesToCreate = [] as (ItemDataConstructorData &
-    Record<string, unknown>)[]
-  for (const category of foesJson.Categories) {
-    for (const foe of category.Foes) {
-      const description = await renderTemplate(
-        'systems/foundry-ironsworn/templates/item/foe.hbs',
-        {
-          ...foe,
-          Category: category.Name,
-          CategoryDescription: category.Description,
-        }
-      )
-
-      foesToCreate.push({
-        type: 'progress',
-        name: foe.Name,
-        img: FOE_IMAGES[foe.Name] || undefined,
-        data: {
-          description,
-          rank: foe.Rank.toLowerCase(),
-        },
-      })
-    }
-  }
-  await Item.createDocuments(foesToCreate, {
-    pack: 'foundry-ironsworn.ironswornfoes',
-  })
-
-  // Foe actors
-  const foesPack = game.packs.get('foundry-ironsworn.ironswornfoes')
-  const foeItems =
-    (await foesPack?.getDocuments()) as StoredDocument<IronswornItem>[]
-  for (const foeItem of foeItems ?? []) {
-    const actor = await IronswornActor.create(
-      {
-        name: foeItem.name ?? 'wups',
-        img: foeItem.data.img,
-        type: 'foe',
-      },
-      { pack: 'foundry-ironsworn.foeactorsis' }
-    )
-    await actor?.createEmbeddedDocuments('Item', [
-      foeItem.data as unknown as Record<string, unknown>,
-    ])
+  // Lock the packs again
+  for (const key of PACKS) {
+    await game.packs.get(key)?.configure({ locked: true })
   }
 }

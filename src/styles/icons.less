@@ -114,8 +114,8 @@
 [class*=' isicon-']::before {
   display: inline-block;
   background-color: currentcolor; // inherits text color by default. any valid background is fine if you want to get fancy, though.
-  width: 1em;
-  height: 1em; // height and width of the :before pseudo-element can be set as desired, these are just reasonable defaults that scale the current font size.
+  width: var(--ironsworn-icon-size);
+  height: var(--ironsworn-icon-size);
   content: '';
   mask-repeat: no-repeat;
   mask-position: center;
@@ -187,17 +187,15 @@ i {
   &[class*=' isicon-'] {
     display: flex;
     align-items: center;
+    align-self: center;
     justify-content: center;
-    height: 1.5em;
     font-size: inherit;
     aspect-ratio: 1;
 
     &::before {
-      @padIcon: 2px;
-
       display: flex;
-      width: calc(100% - (@padIcon*2));
-      height: calc(100% - (@padIcon*2));
+      width: var(--ironsworn-icon-size);
+      height: var(--ironsworn-icon-size);
     }
   }
 }
@@ -258,3 +256,69 @@ each(@icons, {
       mask-image: url('/assets/icons/@{key}.svg');
   }}
 });
+
+// FVTT doesn't get subtype icons from items in compendium packs, so we override them depending on the pack
+
+// NPC actor
+a[data-pack='foundry-ironsworn.foeactorsis'],
+a[data-pack='foundry-ironsworn.foeactorssf'] {
+  i::before {
+    content: '\f630';
+  }
+}
+
+// Assets
+a[data-pack='foundry-ironsworn.starforgedassets'],
+a[data-pack='foundry-ironsworn.ironswornassets'] {
+  i::before {
+    content: '\e4df';
+  }
+}
+
+// Delve site themes + domains
+a[data-pack='foundry-ironsworn.ironsworndelvedomains'],
+a[data-pack='foundry-ironsworn.ironsworndelvethemes'] {
+  i {
+    &::before {
+      position: absolute;
+      color: var(--fa-primary-color, inherit);
+      opacity: var(--fa-primary-opacity, 1);
+      content: '\e4df';
+    }
+    &::after {
+      content: '\e4df\e4df';
+      opacity: var(--fa-secondary-opacity, 0.4);
+      color: var(--fa-secondary-color, inherit);
+    }
+  }
+}
+
+// Moves
+a[data-pack='foundry-ironsworn.ironswornmoves'],
+a[data-pack='foundry-ironsworn.starforgedmoves'] {
+  & > i {
+    height: var(--ironsworn-icon-size);
+    width: var(--ironsworn-icon-size);
+    align-self: center;
+
+    &:before {
+      display: inline-block;
+      background-color: currentcolor;
+      width: var(--ironsworn-icon-size);
+      height: var(--ironsworn-icon-size);
+      content: '';
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      mask-image: url('/assets/icons/d10-tilt.svg');
+    }
+  }
+}
+
+// NPC progress track
+a[data-pack='foundry-ironsworn.ironswornfoes'],
+a[data-pack='foundry-ironsworn.starforgedencounters'] {
+  i::before {
+    content: '\2a';
+  }
+}

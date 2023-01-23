@@ -1,4 +1,4 @@
-import { SiteDataSource } from '../actortypes'
+import { SiteDataSourceData } from '../actortypes'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import siteSheetVue from '../../vue/site-sheet.vue'
@@ -18,10 +18,6 @@ export class IronswornSiteSheet extends VueActorSheet {
     }
   }
 
-  get siteData() {
-    return this.actor.data as SiteDataSource
-  }
-
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
     // Fetch the item. We only want to override denizens (progress-type items)
     const item = await Item.fromDropData(data)
@@ -36,14 +32,14 @@ export class IronswornSiteSheet extends VueActorSheet {
     )[0]
     if (!dropTarget) return false
     const idx = parseInt(dropTarget.dataset.idx || '')
-    const { denizens } = this.siteData.data
+    const { denizens } = this.actor.system as SiteDataSourceData
     if (!denizens[idx]) return false
 
     // Set the denizen description
-    const description = item.pack
+    const text = item.pack
       ? `@Compendium[${item.pack}.${item.id}]{${item.name}}`
       : item.link
-    denizens[idx].description = description
+    denizens[idx].text = text
     this.actor.update({ system: { denizens } }, { render: true })
     return true
   }

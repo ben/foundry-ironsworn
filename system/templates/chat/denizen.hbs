@@ -13,8 +13,10 @@
     </p>
 
     <h4>
-      {{denizen.low}}–{{denizen.high}}:
-      {{denizen.description}}
+      {{#if
+        (eq denizen.range.[0] denizen.range.[1])
+      }}{{denizen.range.[0]}}{{else}}{{denizen.range.[0]}}–{{denizen.range.[1]}}{{/if}}:
+      {{denizen.text}}
     </h4>
 
   </div>
