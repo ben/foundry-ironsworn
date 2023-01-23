@@ -32,10 +32,10 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
     super.activateListeners(html)
     html
       .find('[data-on-click="saveSettings"]')
-      .on('click', (ev) => this._save.call(this, ev))
+      .on('click', (ev) => this._saveSettings.call(this, ev))
   }
 
-  async _save(ev: JQuery.ClickEvent) {
+  async _saveSettings(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const setValues = this.element.find('form').serializeArray()

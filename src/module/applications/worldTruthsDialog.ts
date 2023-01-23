@@ -60,14 +60,14 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
       .on('focus', (ev) => this._selectTruthOption.call(this, ev))
     html
       .find('[data-on-click="saveTruths"]')
-      .on('click', (ev) => this._save.call(this, ev))
+      .on('click', (ev) => this._saveTruths.call(this, ev))
   }
 
   _selectTruthOption(ev: JQuery.FocusEvent) {
     $(ev.currentTarget).siblings('input').prop('checked', true)
   }
 
-  async _save(ev: JQuery.ClickEvent) {
+  async _saveTruths(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     // Get elements that are checked
