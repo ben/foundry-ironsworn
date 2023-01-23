@@ -143,7 +143,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _createWithFolder(
     name: string,
-    type: 'character' | 'site' | 'shared' | 'foe' | 'starship' | 'location',
+    type: IronswornActor['type'],
     img: string,
     sheetClass?: string
   ) {
