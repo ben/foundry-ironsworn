@@ -1,0 +1,94 @@
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/config.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/config.d.ts
+index da561df..740b40e 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/config.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/config.d.ts
+@@ -128,6 +128,9 @@ declare global {
+ 
+       /** @defaultValue `{}` */
+       typeLabels: Record<string, string>;
++
++      /** @defaultValue `{}` */
++      typeIcons: Record<string, string>;
+     };
+ 
+     /**
+@@ -332,6 +335,9 @@ declare global {
+ 
+       /** @defaultValue `{}` */
+       typeLabels: Record<string, string>;
++
++      /** @defaultValue `{}` */
++      typeIcons: Record<string, string>;
+     };
+ 
+     /**
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts
+index ca6d3f2..34792e6 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/foundry/client/data/documents/table.d.ts
+@@ -134,30 +134,30 @@ declare global {
+       /**
+        * An existing Roll instance to use for drawing from the table
+        */
+-      roll: Roll;
++      roll?: Roll;
+ 
+       /**
+        * Allow drawing recursively from inner RollTable results
+        * @defaultValue `true`
+        */
+-      recursive: boolean;
++      recursive?: boolean;
+ 
+       /**
+        * One or more table results which have been drawn
+        * @defaultValue `[]`
+        */
+-      results: foundry.data.TableResultData[];
++      results?: foundry.data.TableResultData[];
+ 
+       /**
+        * Whether to automatically display the results in chat
+        * @defaultValue `true`
+        */
+-      displayChat: boolean;
++      displayChat?: boolean;
+ 
+       /**
+        * The chat roll mode to use when displaying the result
+        */
+-      rollMode: keyof CONFIG.Dice.RollModes | "roll";
++      rollMode?: keyof CONFIG.Dice.RollModes | "roll";
+     }
+ 
+     /**
+diff --git a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
+index 8cc4b52..197c630 100644
+--- a/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
++++ b/node_modules/@league-of-foundry-developers/foundry-vtt-types/src/types/utils.d.ts
+@@ -1,9 +1,22 @@
+ /**
+- * Recursively sets keys of an object to optional. Used primarily for update methods
++ * Recursively sets keys of an object to optional. Used primarily for update methods.
++ *
++ * Recursion limited to a few levels deep to prevent segfaults.
+  * @internal
+  */
+-type DeepPartial<T> = {
+-  [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P];
++type DeepPartial<T>  = {
++  [P in keyof T]?: T[P] extends object ?
++    ( {[P1 in keyof T[P]]?: T[P][P1] extends object ?
++      ({[P2 in keyof T[P][P1]]?: T[P][P1][P2] extends object ?
++        ({[P3 in keyof T[P][P1][P2]]?: T[P][P1][P2][P3] extends object ?
++          {[P4 in keyof T[P][P1][P2][P3]]?: T[P][P1][P2][P3][P4]}
++          : T[P][P1][P2][P3]
++        })
++        : T[P][P1][P2]
++      })
++      : T[P][P1]
++    } )
++  : T[P];
+ };
+ 
+ /**

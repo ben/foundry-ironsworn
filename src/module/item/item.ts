@@ -1,8 +1,13 @@
+import { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import { RANK_INCREMENTS } from '../constants'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornPrerollDialog } from '../rolls'
 import {
   BondsetDataPropertiesData,
+  DelveDomainDataPropertiesData,
+  DelveSiteDanger,
+  DelveSiteFeature,
+  DelveThemeDataPropertiesData,
   ProgressDataPropertiesData,
   SFMoveDataPropertiesData,
 } from './itemtypes'
@@ -16,6 +21,39 @@ export class IronswornItem extends Item {
   declare system: typeof this.data.data
   declare sort: typeof this.data.sort
 
+  protected override _onCreate(
+    data: this['data']['_source'],
+    options: DocumentModificationOptions,
+    userId: string
+  ): void {
+    super._onCreate(data, options, userId)
+
+    switch (this.type) {
+      case 'delve-theme':
+      case 'delve-domain':
+        {
+          // initialize sourceId flags for delve site features and dangers
+          this.system = this.system as
+            | DelveDomainDataPropertiesData
+            | DelveThemeDataPropertiesData
+          const features = this.system.features.map(
+            (feature: DelveSiteFeature) => {
+              feature.flags['foundry-ironsworn'].sourceId = this.id
+              return feature
+            }
+          )
+          const dangers = this.system.dangers.map((danger: DelveSiteDanger) => {
+            danger.flags['foundry-ironsworn'].sourceId = this.id
+            return danger
+          })
+          this.update({ system: { features, dangers } })
+        }
+        break
+
+      default:
+        break
+    }
+  }
   /**
    * Progress methods
    */
