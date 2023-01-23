@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.14
+
 - Allow pre-setting of challenge dice, and revamp the advanced rolling options UI ([#606](https://github.com/ben/foundry-ironsworn/pull/606))
 - Updated icons for journal links to various in-game entities ([#605](https://github.com/ben/foundry-ironsworn/pull/606))
 - Pruned, updated, and reorganized many localization keys, and borrow from FVTT's own translations to reduce the work required for future translations ([#596](https://github.com/ben/foundry-ironsworn/pull/596))
