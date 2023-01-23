@@ -5,7 +5,7 @@
     {{#if (eq low high)}}{{low}}{{else}}{{low}} - {{high}}{{/if}}
   </td>
   <td>
-    <input class="ironsworn__{{lookup .. 'field'}}__description" data-idx="{{@index}}" type="text" value="{{description}}" />
+    <input data-on-blur="update{{capitalize (lookup .. 'field')}}Text" data-idx="{{@index}}" type="text" value="{{description}}" />
   </td>
 </tr>
 {{/each}}

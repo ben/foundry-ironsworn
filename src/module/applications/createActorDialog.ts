@@ -45,25 +45,25 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     super.activateListeners(html)
 
     html
-      .find('.ironsworn__character__create')
+      .find('[data-on-click="createCharacter]')
       .on('click', (ev) => this._characterCreate.call(this, ev))
     html
-      .find('.ironsworn__shared__create')
+      .find('[data-on-click="createShared"]')
       .on('click', (ev) => this._sharedCreate.call(this, ev))
     html
-      .find('.ironsworn__site__create')
+      .find('[data-on-click="createSite"]')
       .on('click', (ev) => this._siteCreate.call(this, ev))
     html
-      .find('.ironsworn__foe__create')
+      .find('[data-on-click="createFoe"]')
       .on('click', (ev) => this._foeCreate.call(this, ev))
     html
-      .find('.ironsworn__sfcharacter__create')
+      .find('[data-on-click="createCharacterSf"]')
       .on('click', (ev) => this._sfcharacterCreate.call(this, ev))
     html
-      .find('.ironsworn__sfship__create')
+      .find('[data-on-click="createStarship"]')
       .on('click', (ev) => this._sfshipCreate.call(this, ev))
     html
-      .find('.ironsworn__sflocation__create')
+      .find('[data-on-click="createSfLocation"]')
       .on('click', (ev) => this._sfLocationCreate.call(this, ev))
   }
 

@@ -30,7 +30,9 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
   activateListeners(html: JQuery) {
     super.activateListeners(html)
-    html.find('.ironsworn__save').on('click', (ev) => this._save.call(this, ev))
+    html
+      .find('[data-on-click="saveSettings"]')
+      .on('click', (ev) => this._save.call(this, ev))
   }
 
   async _save(ev: JQuery.ClickEvent) {

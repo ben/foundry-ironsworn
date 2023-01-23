@@ -3,7 +3,7 @@
   <div class="flexcol boxgroup" style="margin: var(--ironsworn-spacer-md);">
     <div class="flexrow boxrow">
       {{#*inline "stat"}}
-      <div class="box flexcol clickable block ironsworn__stat__roll" data-stat="{{stat}}">
+      <div class="box flexcol clickable block" data-stat="{{stat}}" data-on-click="rollStat">
         <h4>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h4>
         <h2>{{lookup data.system stat}}</h2>
       </div>
@@ -22,24 +22,25 @@
     <div class="flexrow boxrow">
       {{#*inline "resource"}}
       <div class="box flexcol">
-        <div class="flexcol boxrow {{#unless burn}}clickable block ironsworn__stat__roll{{/unless}}"
+        <div data-on-click="rollStat" class="flexcol boxrow {{#unless burn}}clickable block{{/unless}}"
           data-stat="{{stat}}">
           <h5>{{localize (concat 'IRONSWORN.' (capitalize stat))}}</h5>
           <h4>{{lookup data.system stat}}</h4>
         </div>
         <div class="flexrow boxrow small">
-          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
+          <div data-on-click="adjustResource" class="box clickable block" data-stat="{{stat}}" data-amt="-1"
             data-min="{{min}}">&minus;</div>
           {{#if burn}}
             <div
-              class='flexrow box ironsworn__momentum__burn clickable block'
+              data-on-click="burnMomentum"
+              class='flexrow box clickable block'
               type='button'
               data-tooltip="{{localize 'IRONSWORN.BurnMomentumAndResetTo' value=data.system.momentum resetValue=data.system.momentumReset}}"
             >
             <i class="fas fa-fire" style="align-self:center"></i>
             </div>
           {{/if}}
-          <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1"
+          <div class="box clickable block" data-on-click="adjustResource" data-stat="{{stat}}" data-amt="1"
             data-max="{{max}}">&plus;</div>
         </div>
       </div>

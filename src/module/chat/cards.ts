@@ -66,27 +66,24 @@ export class IronswornChatCard {
     html
       .find('a.oracle-category-link')
       .on('click', (ev) => this._oracleNavigate.call(this, ev))
+    // FIXME: the classes in these selectors below don't appear in new messages, but they're provided so that recent chat messages have coverage. Remove them in April 2023.
     html
-      .find('.burn-momentum')
+      .find(
+        '[data-on-click="burnMomentum"], .burn-momentum, .burn-momentum-sf, .ironsworn-roll-burn-momentum'
+      )
       .on('click', (ev) => this._burnMomentum.call(this, ev))
     html
-      .find('.burn-momentum-sf')
-      .on('click', (ev) => this._burnMomentum.call(this, ev))
-    html
-      .find('.ironsworn-roll-burn-momentum')
-      .on('click', (ev) => this._burnMomentum.call(this, ev))
-    html
-      .find('.oracle-roll .oracle-reroll')
+      .find('[data-on-click="rerollOracle"], .oracle-roll .oracle-reroll')
       .on('click', (ev) => this._oracleReroll.call(this, ev))
     html
-      .find('.copy-result')
-      .on('click', (ev) => this._oracleResultCopy.call(this, ev))
+      .find('[data-on-click="copyOracleResult"], .copy-result')
+      .on('click', (ev) => this._copyOracleResult.call(this, ev))
     html
-      .find('.ironsworn-roll-resolve')
-      .on('click', (ev) => this._resolveChallenge.call(this, ev))
+      .find('[data-on-click="resolveChallengeDice"], .ironsworn-roll-resolve')
+      .on('click', (ev) => this._resolveChallengeDice.call(this, ev))
     html
-      .find('.starforged__oracle__roll')
-      .on('click', (ev) => this._oracleRoll.call(this, ev))
+      .find('[data-on-click="rollOracle"], .starforged__oracle__roll')
+      .on('click', (ev) => this._rollOracle.call(this, ev))
   }
 
   async _moveNavigate(ev: JQuery.ClickEvent) {
@@ -122,7 +119,7 @@ export class IronswornChatCard {
     return irmsg?.burnMomentum()
   }
 
-  async _resolveChallenge(ev: JQuery.ClickEvent) {
+  async _resolveChallengeDice(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const msgId = $(ev.target).parents('.chat-message').data('message-id')
@@ -138,7 +135,7 @@ export class IronswornChatCard {
     return orm?.createOrUpdate()
   }
 
-  async _oracleRoll(ev: JQuery.ClickEvent) {
+  async _rollOracle(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     const { tableid } = ev.currentTarget.dataset
     const sfPack = game.packs.get('foundry-ironsworn.starforgedoracles')
@@ -154,7 +151,7 @@ export class IronswornChatCard {
     msg.createOrUpdate()
   }
 
-  async _oracleResultCopy(ev: JQuery.ClickEvent) {
+  async _copyOracleResult(ev: JQuery.ClickEvent) {
     const { result } = ev.currentTarget.dataset
     await navigator.clipboard.writeText(result)
     const icon = $(ev.currentTarget).find('i.fas')

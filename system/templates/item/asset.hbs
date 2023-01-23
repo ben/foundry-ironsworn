@@ -19,20 +19,20 @@
         <div class="flexrow">
           <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Label'}}:</label>
           &nbsp;
-          <input class="attribute-value ironsworn__field__label" data-idx="{{@index}}" type="text" value="{{name}}" />
+          <input data-on-blur="updateFieldLabel" class="attribute-value" data-idx="{{@index}}" type="text" value="{{name}}" />
         </div>
         <div class="flexrow">
           <label style="flex-grow: 0; align-self: center;">{{localize 'IRONSWORN.Value'}}:</label>
           &nbsp;
-          <input class="attribute-value ironsworn__field__value" data-idx="{{@index}}" type="text" value="{{value}}" />
+          <input data-on-blur="updateFieldValue" class="attribute-value" data-idx="{{@index}}" type="text" value="{{value}}" />
         </div>
       </div>
-      <div class="block clickable item-row-control ironsworn__field__delete" data-idx="{{@index}}">
+      <div data-on-click="deleteField" class="block clickable item-row-control" data-idx="{{@index}}">
         <i class="fas fa-trash"></i>
       </div>
     </div>
     {{/each}}
-    <div class="block clickable ironsworn__field__add" style="padding: var(--ironsworn-spacer-md); text-align: center;">
+    <div data-on-click="addField" class="block clickable" style="padding: var(--ironsworn-spacer-md); text-align: center;">
       <i class="fas fa-plus"></i>
     </div>
   </div>
@@ -42,7 +42,7 @@
   {{#each data.data.abilities}}
   <div class="flexcol item">
     <div class="flexrow">
-      <input type="checkbox" class="ironsworn__ability__enable" data-idx="{{@index}}" {{checked enabled}}
+      <input type="checkbox" data-on-click="toggleAbility" data-idx="{{@index}}" {{checked enabled}}
         style="flex-grow: 0;" />
       {{#if ../item.data.flags.foundry-ironsworn.edit-mode}}
       <input class="attribute-value" type="text" name="data.abilities.{{@index}}.description"
@@ -59,15 +59,15 @@
   <h2>{{localize 'IRONSWORN.Options'}}</h2>
   {{#each data.data.exclusiveOptions}}
   <div class="flexrow">
-    <input type="checkbox" class="ironsworn__option__enable" data-idx="{{@index}}" {{checked selected}}
+    <input type="checkbox" data-on-click="toggleOption" data-idx="{{@index}}" {{checked selected}}
       style="flex-grow: 0;" />
-    <input class="attribute-value ironsworn__option__name" data-idx="{{@index}}" type="text" value="{{name}}" />
-    <div class="block nogrow clickable item-row-control ironsworn__option__delete" data-idx="{{@index}}">
+    <input data-on-blur="updateOptionName" class="attribute-value" data-idx="{{@index}}" type="text" value="{{name}}" />
+    <div class="block nogrow clickable item-row-control" data-idx="{{@index}}" data-on-click="deleteOption">
       <i style="padding: var(--ironsworn-spacer-md);" class="fas fa-trash"></i>
     </div>
   </div>
   {{/each}}
-  <div class="block clickable ironsworn__option__add" style="padding: var(--ironsworn-spacer-md); text-align: center;">
+  <div data-on-click="addOption" class="block clickable" style="padding: var(--ironsworn-spacer-md); text-align: center;">
     <i class="fas fa-plus"></i>
   </div>
 
@@ -93,5 +93,5 @@
   </div>
 
   <hr>
-  <button class="ironsworn__asset__delete">{{localize 'DOCUMENT.Delete' type=(localize 'IRONSWORN.ITEM.TypeAsset')}}</button>
+  <button data-on-click="deleteAsset">{{localize 'DOCUMENT.Delete' type=(localize 'IRONSWORN.ITEM.TypeAsset')}}</button>
 </form>

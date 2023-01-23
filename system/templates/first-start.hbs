@@ -80,13 +80,15 @@
       <div class='box flexcol'>
         <label>
           <input type='radio' name='truths' value='ironsworn' />
-          {{localize 'IRONSWORN.First Start.YesFor'}} {{localize 'IRONSWORN.Ironsworn'}}
+          {{localize 'IRONSWORN.First Start.YesFor'}}
+          {{localize 'IRONSWORN.Ironsworn'}}
         </label>
       </div>
       <div class='box flexcol'>
         <label>
           <input type='radio' name='truths' value='starforged' />
-          {{localize 'IRONSWORN.First Start.YesFor'}} {{localize 'IRONSWORN.Starforged'}}
+          {{localize 'IRONSWORN.First Start.YesFor'}}
+          {{localize 'IRONSWORN.Starforged'}}
         </label>
       </div>
       <div class='box flexcol'>
@@ -100,7 +102,11 @@
 
   <div class='boxgroup' style='margin-top: 1rem'>
     <div class='boxrow flexrow'>
-      <button class='clickable block ironsworn__save'>
+      <button
+        type='button'
+        data-on-click='saveSettings'
+        class='clickable block'
+      >
         <i class='fas fa-check'></i>
         {{localize 'IRONSWORN.First Start.Save'}}
       </button>

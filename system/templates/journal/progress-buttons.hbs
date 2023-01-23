@@ -4,7 +4,8 @@
   style='flex-flow: nowrap;'
 >
   <button
-    class='icon-button clickable fas fa-caret-left block ironsworn__progress__unmark'
+    data-on-click='eraseProgress'
+    class='icon-button clickable fas fa-caret-left block'
     type='button'
     tooltip='{{localize "IRONSWORN.UnmarkProgress"}}'
     aria-label='{{localize "IRONSWORN.UnmarkProgress"}}'
@@ -12,7 +13,8 @@
     aria-disabled='false'
   ></button>
   <button
-    class='icon-button clickable fas fa-caret-right block ironsworn__progress__mark'
+    data-on-click='markProgress'
+    class='icon-button clickable fas fa-caret-right block'
     type='button'
     tooltip='{{localize "IRONSWORN.MarkProgress"}}'
     aria-label='{{localize "IRONSWORN.MarkProgress"}}'
@@ -20,8 +22,9 @@
     aria-disabled='false'
   ></button>
   <button
-    class='icon-button clickable isicon-d10-tilt progress-roll block ironsworn__progress__roll'
+    class='icon-button clickable isicon-d10-tilt progress-roll block'
     type='button'
+    data-on-click='rollProgress'
     tooltip='{{localize "IRONSWORN.MakeAProgressRoll" score=filledBoxes}}'
     aria-label='{{localize "IRONSWORN.MakeAProgressRoll" score=filledBoxes}}'
     data-tooltip='{{localize "IRONSWORN.MakeAProgressRoll" score=filledBoxes}}'

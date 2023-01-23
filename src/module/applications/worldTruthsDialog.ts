@@ -56,14 +56,14 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
     super.activateListeners(html)
 
     html
-      .find('.ironsworn__custom__truth')
-      .on('focus', (ev) => this._customTruthFocus.call(this, ev))
+      .find('[data-on-focus="selectTruthOption"]')
+      .on('focus', (ev) => this._selectTruthOption.call(this, ev))
     html
-      .find('.ironsworn__save__truths')
+      .find('[data-on-click="saveTruths"]')
       .on('click', (ev) => this._save.call(this, ev))
   }
 
-  _customTruthFocus(ev: JQuery.FocusEvent) {
+  _selectTruthOption(ev: JQuery.FocusEvent) {
     $(ev.currentTarget).siblings('input').prop('checked', true)
   }
 
