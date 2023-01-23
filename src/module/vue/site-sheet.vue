@@ -46,7 +46,7 @@
               :item="theme"
               item-type="delve-theme"
               compendium-key="ironsworndelvethemes"
-              title-key="IRONSWORN.Theme"
+              title-key="IRONSWORN.ITEM.TypeDelveTheme"
             />
           </div>
           <div class="flexrow boxrow nogrow">
@@ -55,14 +55,14 @@
               :item="domain"
               item-type="delve-domain"
               compendium-key="ironsworndelvedomains"
-              title-key="IRONSWORN.Domain"
+              title-key="IRONSWORN.ITEM.TypeDelveDomain"
             />
           </div>
         </div>
         <!-- DENIZENS -->
         <article :class="$style['denizen-matrix']">
           <h2 class="flexrow nogrow" :class="$style.heading">
-            <span>{{ $t('IRONSWORN.Denizens') }}</span>
+            <span>{{ $t('IRONSWORN.DELVESITE.Denizens') }}</span>
             <IronBtn
               nogrow
               style="padding: var(--ironsworn-spacer-xs)"
@@ -105,7 +105,7 @@
     </div>
     <div class="flexcol">
       <div class="flexrow nogrow">
-        <h2 :class="$style.heading">{{ $t('IRONSWORN.Notes') }}</h2>
+        <h2 :class="$style.heading">{{ $t('Notes') }}</h2>
         <IronBtn
           block
           nogrow
@@ -114,7 +114,7 @@
           :class="{ [$style['feature-btn']]: true }"
           @click="randomFeature"
           icon="ironsworn:d10-tilt"
-          :text="$t('IRONSWORN.Feature')"
+          :text="$t('IRONSWORN.DELVESITE.Feature')"
         />
       </div>
       <MceEditor v-model="actor.system.description" @save="saveDescription" />
@@ -187,7 +187,7 @@ textarea {
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { provide, computed, inject, nextTick, ref, Component } from 'vue'
+import { provide, computed, inject, nextTick, ref } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 import RankPips from './components/rank-pips/rank-pips.vue'
 import BtnCompendium from './components/buttons/btn-compendium.vue'
@@ -198,9 +198,10 @@ import { RANKS, RANK_INCREMENTS } from '../constants'
 import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
-import { OracleRollMessage, TableRow } from '../rolls'
+import { OracleRollMessage } from '../rolls'
 import { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
+import { SiteDataPropertiesData } from '../actor/actortypes'
 
 const props = defineProps<{
   actor: any
@@ -245,8 +246,9 @@ const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
   const roll = await new Roll('1d100').evaluate({ async: true })
   const result = roll.total
-  const denizen = props.actor.system.denizens.find(
-    (x) => x.low <= result && x.high >= result
+  const denizens = (props.actor.system as SiteDataPropertiesData).denizens
+  const denizen = denizens.find(
+    (x) => x.range[0] <= result && x.range[1] >= result
   )
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
   const idx = props.actor.system.denizens.indexOf(denizen)
@@ -257,7 +259,7 @@ async function randomDenizen() {
   })
 
   // Denizen slot is empty; set focus and add a class
-  if (!denizen?.description) {
+  if (!denizen?.text) {
     await $actor?.setFlag('foundry-ironsworn', 'edit-mode', true)
     await nextTick()
     denizenRefs.value[idx]?.focus?.()
@@ -273,18 +275,13 @@ async function randomFeature() {
 
   const themeData = (theme.value as any)?.system as DelveThemeDataSourceData
   const domainData = (domain.value as any)?.system as DelveThemeDataSourceData
-  const rows: TableRow[] = [...themeData.features, ...domainData.features].map(
-    ({ low, high, description }) => ({
-      low,
-      high,
-      text: description,
-      selected: false,
-    })
-  )
-
-  const title = game.i18n.localize('IRONSWORN.Feature')
+  const title = game.i18n.localize('IRONSWORN.DELVESITE.Feature')
   const subtitle = `${$actor?.name} – ${theme.value?.name} ${domain.value?.name}`
-  const orm = await OracleRollMessage.fromRows(rows, title, subtitle)
+  const orm = OracleRollMessage.fromTableResults(
+    [...themeData.features, ...domainData.features],
+    title,
+    subtitle
+  )
   orm.createOrUpdate()
 }
 

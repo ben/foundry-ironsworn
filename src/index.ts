@@ -2,7 +2,6 @@
  * A Foundry implementation of the Ironsworn family of systems, by Shawn Tomkin
  */
 
-import { merge } from 'lodash'
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
@@ -71,78 +70,81 @@ Hooks.once('init', async () => {
 
   // Register our own sheets
   Actors.registerSheet('ironsworn', IronswornCharacterSheetV2, {
-    label: 'Ironsworn character sheet',
+    label: 'IRONSWORN.Ironsworn',
     types: ['character'],
     makeDefault: true,
   })
   Actors.registerSheet('ironsworn', StarforgedCharacterSheet, {
-    label: 'Starforged character sheet',
+    label: 'IRONSWORN.Starforged',
     types: ['character'],
   })
   Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
-    label: 'Compact sheet',
+    label: 'IRONSWORN.ACTOR.SheetCompact',
     types: ['character'],
   })
 
   Actors.registerSheet('ironsworn', IronswornSharedSheetV2, {
     types: ['shared'],
-    label: 'Shared sheet',
+    label: 'IRONSWORN.ACTOR.TypeShared',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', FoeSheet, {
     types: ['foe'],
-    label: 'Foe Sheet',
+    label: 'IRONSWORN.ACTOR.SheetFoe',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', StarshipSheet, {
     types: ['starship'],
-    label: 'Starship sheet',
+    label: 'IRONSWORN.ACTOR.TypeStarship',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', StarforgedLocationSheet, {
     types: ['location'],
-    label: 'Starforged Location Sheet',
+    label: 'IRONSWORN.ACTOR.SheetStarforgedLocation',
     makeDefault: true,
   })
 
   Actors.registerSheet('ironsworn', IronswornSiteSheet, {
     types: ['site'],
-    label: 'Site sheet',
+    label: 'IRONSWORN.ACTOR.TypeDelveSite',
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', AssetSheetV2, {
     types: ['asset'],
-    label: 'Asset sheet v2',
+    label: `${game.i18n.localize('IRONSWORN.ITEM.TypeAsset')} v2`,
     makeDefault: true,
   })
   Items.registerSheet('ironsworn', AssetSheet, {
     types: ['asset'],
-    label: 'Asset sheet',
+    label: 'IRONSWORN.ITEM.TypeAsset',
   })
 
   Items.registerSheet('ironsworn', BondsetSheetV2, {
     types: ['bondset'],
-    label: 'Bondset sheet v2',
+    label: 'IRONSWORN.ITEM.TypeBondset',
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', SFMoveSheet, {
     types: ['sfmove'],
-    label: 'Starforged move sheet',
+    label: 'IRONSWORN.ITEM.TypeMove',
   })
   Items.registerSheet('ironsworn', DelveThemeOrDomainSheet, {
     types: ['delve-theme', 'delve-domain'],
-    label: 'Delve Theme/Domain Sheet',
+    label:
+      game.i18n.localize('IRONSWORN.ITEM.TypeDelveTheme') +
+      ' / ' +
+      game.i18n.localize('IRONSWORN.ITEM.TypeDelveDomain'),
     makeDefault: true,
   })
 
   Items.registerSheet('ironsworn', ProgressSheetV2, {
     types: ['progress'],
-    label: 'Progress sheet v2',
+    label: 'IRONSWORN.ITEM.TypeProgressTrack',
     makeDefault: true,
   })
 
@@ -153,7 +155,7 @@ Hooks.once('init', async () => {
     {
       types: ['progress'],
       makeDefault: true,
-      label: 'ITEM.TypeProgress',
+      label: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack',
     }
   )
 
@@ -166,24 +168,59 @@ Hooks.once('init', async () => {
     {
       types: ['truth'],
       makeDefault: true,
-      label: 'IRONSWORN.First Start.SettingTruth',
+      label: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
     }
   )
 
-  // @ts-ignore
-  CONFIG.JournalEntryPage.typeLabels = merge(
-    // @ts-ignore
+  CONFIG.Item.typeLabels = mergeObject(CONFIG.Item.typeLabels, {
+    asset: 'IRONSWORN.ITEM.TypeAsset',
+    progress: 'IRONSWORN.ITEM.TypeProgressTrack',
+    bondset: 'IRONSWORN.ITEM.TypeBondset',
+    sfmove: 'IRONSWORN.ITEM.TypeMove',
+    'delve-domain': 'IRONSWORN.ITEM.TypeDelveDomain',
+    'delve-theme': 'IRONSWORN.ITEM.TypeDelveTheme',
+  })
+  CONFIG.Item.typeIcons = mergeObject(CONFIG.Item.typeIcons, {
+    asset: 'fa-solid fa-cards-blank',
+    progress: 'fa-solid fa-asterisk',
+    bondset: 'fa-solid fa-handshake',
+    sfmove: 'icon isicon-d10-tilt',
+    // FIXME ideally, these would be distinct from assets, but all three card types are abstract enough than an icon is tricky
+    'delve-domain': 'fa-duotone fa-cards-blank',
+    'delve-theme': 'fa-duotone fa-cards-blank',
+  })
+
+  CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
+    character: 'IRONSWORN.Actor.TypeCharacter',
+    foe: 'IRONSWORN.Actor.TypeFoe',
+    location: 'IRONSWORN.Actor.TypeLocation',
+    shared: 'IRONSWORN.Actor.TypeShared',
+    site: 'IRONSWORN.Actor.TypeDelveSite',
+    starship: 'IRONSWORN.Actor.TypeStarship',
+  })
+  CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
+    character: 'fa-solid fa-user-pen',
+    foe: 'fa-solid fa-masks-theater',
+    location: 'fa-solid fa-location-dot',
+    shared: 'fa-solid fa-people-group',
+    site: 'fa-solid fa-dungeon',
+    starship: 'fa-solid fa-starship-freighter',
+  })
+
+  CONFIG.JournalEntryPage.typeLabels = mergeObject(
     CONFIG.JournalEntryPage.typeLabels,
     {
-      truth: 'IRONSWORN.First Start.SettingTruth',
-      progress: 'ITEM.TypeProgress',
+      truth: 'IRONSWORN.JOURNALENTRYPAGE.TypeTruth',
+      progress: 'IRONSWORN.JOURNALENTRYPAGE.TypeProgressTrack',
     }
   )
-  // @ts-ignore
-  CONFIG.JournalEntryPage.typeIcons = merge(CONFIG.JournalEntryPage.typeIcons, {
-    truth: 'fa-solid fa-angles-up',
-    progress: 'fas fa-asterisk',
-  })
+  CONFIG.JournalEntryPage.typeIcons = mergeObject(
+    CONFIG.JournalEntryPage.typeIcons,
+    {
+      truth: 'fa-solid fa-books',
+      progress: 'fa-solid fa-asterisk',
+    }
+  )
 
   // Register Handlebars helpers
   IronswornHandlebarsHelpers.registerHelpers()

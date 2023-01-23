@@ -12,7 +12,7 @@
         <Tab
           tab-key="description"
           :class="$style.tab"
-          :text="$t('IRONSWORN.Description')"
+          :text="$t('Description')"
         />
         <Tab
           tab-key="fields"

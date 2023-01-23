@@ -24,9 +24,15 @@
       v-model="item.system.subtype"
       @change="subtypeChange"
     >
-      <option value="vow">{{ $t('IRONSWORN.Vow') }}</option>
-      <option value="progress">{{ $t('IRONSWORN.Progress') }}</option>
-      <option value="bond">{{ $t('IRONSWORN.Connection') }}</option>
+      <option value="vow">
+        {{ $t('IRONSWORN.ITEM.SubtypeVow') }}
+      </option>
+      <option value="progress">
+        {{ $t('IRONSWORN.ITEM.SubtypeProgress') }}
+      </option>
+      <option value="bond">
+        {{ $t('IRONSWORN.ITEM.SubtypeConnection') }}
+      </option>
     </select>
 
     <hr class="nogrow" />
@@ -129,7 +135,9 @@
       :class="$style.danger"
       @click="destroy"
       icon="fa:trash"
-      :text="$t('IRONSWORN.DeleteProgress')"
+      :text="
+        $t(`DOCUMENT.Delete`, { type: $t('IRONSWORN.ITEM.TypeProgressTrack') })
+      "
     />
   </div>
 </template>
@@ -214,7 +222,9 @@ function saveDescription() {
 
 function destroy() {
   Dialog.confirm({
-    title: game.i18n.localize('IRONSWORN.DeleteAsset'),
+    title: game.i18n.format('DOCUMENT.Delete', {
+      type: game.i18n.localize('IRONSWORN.ITEM.TypeProgressTrack'),
+    }),
     content: `<p><strong>${game.i18n.localize(
       'IRONSWORN.ConfirmDelete'
     )}</strong></p>`,

@@ -31,8 +31,13 @@
           <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="-1"
             data-min="{{min}}">&minus;</div>
           {{#if burn}}
-          <div class="box clickable block ironsworn__momentum__burn" style="padding: 0 var(--ironsworn-spacer-md);">{{localize
-            'IRONSWORN.Burn'}}</div>
+            <div
+              class='flexrow box ironsworn__momentum__burn clickable block'
+              type='button'
+              data-tooltip="{{localize 'IRONSWORN.BurnMomentumAndResetTo' value=data.system.momentum resetValue=data.system.momentumReset}}"
+            >
+            <i class="fas fa-fire" style="align-self:center"></i>
+            </div>
           {{/if}}
           <div class="box clickable block ironsworn__resource__adjust" data-stat="{{stat}}" data-amt="1"
             data-max="{{max}}">&plus;</div>

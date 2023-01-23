@@ -1,7 +1,7 @@
 <template>
   <div class="flexcol nogrow">
     <div class="flexrow">
-      <h4>{{ $t('IRONSWORN.Bonds') }}</h4>
+      <h4>{{ $t('IRONSWORN.ITEMS.TypeBond') }}</h4>
       <IronBtn block nogrow @click="editBonds" icon="fa:pen-to-square" />
       <IronBtn block nogrow @click="rollBonds" icon="ironsworn:d10-tilt" />
     </div>

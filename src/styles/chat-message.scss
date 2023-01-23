@@ -38,6 +38,10 @@
       @include text.initial-caps;
       @include clickable.block;
 
+      display: flex;
+      gap: var(--ironsworn-border-radius-sm);
+      align-items: center;
+      justify-content: center;
       margin: 0;
       border-width: var(--ironsworn-border-width-md);
       border-radius: var(--ironsworn-border-radius-md);

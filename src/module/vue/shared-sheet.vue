@@ -20,7 +20,7 @@
     <active-completed-progresses />
 
     <section class="sheet-area flexcol">
-      <h4 class="nogrow">{{ $t('IRONSWORN.Notes') }}</h4>
+      <h4 class="nogrow">{{ $t('Notes') }}</h4>
       <mce-editor v-model="actor.system.biography" @save="saveNotes" />
     </section>
   </SheetBasic>

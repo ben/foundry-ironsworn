@@ -13,12 +13,12 @@
     </div>
 
     <div class="form-group">
-      <label>{{ $t('IRONSWORN.Name') }}</label>
+      <label>{{ $t('Name') }}</label>
       <input type="text" @blur="updateName" v-model="item.system.track.name" />
     </div>
 
     <div class="form-group">
-      <label>{{ $t('IRONSWORN.Max') }}</label>
+      <label>{{ $t('Maximum') }}</label>
       <input
         type="number"
         @blur="updateMax"
@@ -44,7 +44,7 @@
         v-for="(condition, i) in item.system.conditions"
         :key="`condition${i}`"
       >
-        <label>{{ $t('IRONSWORN.Name') }}</label>
+        <label>{{ $t('Name') }}</label>
         <input type="text" @blur="saveConditions" v-model="condition.name" />
         <IronBtn icon="fa:trash" @click="deleteCondition(i)" />
       </div>

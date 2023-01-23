@@ -4,7 +4,7 @@
     <section class="header-pc-vitals flexcol">
       <input
         type="text"
-        :placeholder="$t('IRONSWORN.Name')"
+        :placeholder="$t('Name')"
         v-model="actor.name"
         ref="name"
         @keyup="save"

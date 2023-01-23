@@ -183,10 +183,16 @@ i {
   &[class*=' isicon-'] {
     display: flex;
     align-items: center;
+    align-self: center;
     justify-content: center;
-    height: 1.5em;
     font-size: inherit;
     aspect-ratio: 1;
+
+    &::before {
+      display: flex;
+      width: var(--ironsworn-icon-size);
+      height: var(--ironsworn-icon-size);
+    }
   }
 }
 
@@ -208,52 +214,115 @@ i {
 $icons: (
   // game logos
   logo-delve-dk:
-    'original icon by Shawn Tomkin, minor adjustments for FVTT format by rsek',
+    'original icon by Shawn Tomkin, minor adjustments for FVTT format by rsek';
   logo-ironsworn-dk:
-    'original icon by Shawn Tomkin, minor adjustments for FVTT format by rsek',
+    'original icon by Shawn Tomkin, minor adjustments for FVTT format by rsek';
   logo-starforged-dk:
-    'icon by rsek, based on illustrations by Joshua Meehan and icons Nathan Graey',
+    'icon by rsek, based on illustrations by Joshua Meehan and icons Nathan Graey';
   // dice
-  d6-blank: '',
+  d6-blank: '';
   // FIXME
-  d10-blank: '',
+  d10-blank: '';
   // FIXME
-  d10-tilt: '',
+  d10-tilt: '';
   // FIXME
-  oracle: 'icon by rsek',
+  oracle: 'icon by rsek';
   // PC sheets
-  sheet-character: 'https://game-icons.net/1x1/delapouite/skills.html',
-  sheet-shared: 'https://game-icons.net/1x1/delapouite/three-friends.html',
+  sheet-character: 'https://game-icons.net/1x1/delapouite/skills.html';
+  sheet-shared: 'https://game-icons.net/1x1/delapouite/three-friends.html';
   // PC stats
-  stat-edge: 'https://game-icons.net/1x1/delapouite/liberty-wing.html',
-  stat-heart: 'https://game-icons.net/1x1/lorc/crowned-heart.html',
-  stat-iron: 'https://game-icons.net/1x1/lorc/swords-emblem.html',
-  stat-shadow: 'https://game-icons.net/1x1/lorc/double-face-mask.html',
-  stat-wits: 'https://game-icons.net/1x1/lorc/star-pupil.html',
+  stat-edge: 'https://game-icons.net/1x1/delapouite/liberty-wing.html';
+  stat-heart: 'https://game-icons.net/1x1/lorc/crowned-heart.html';
+  stat-iron: 'https://game-icons.net/1x1/lorc/swords-emblem.html';
+  stat-shadow: 'https://game-icons.net/1x1/lorc/double-face-mask.html';
+  stat-wits: 'https://game-icons.net/1x1/lorc/star-pupil.html';
   // canvas tools
-  creature: 'https://game-icons.net/1x1/lorc/dna1.html',
-  // Starforged. see 'monstrosity' for Delve creatures
-  delve-site: 'https://game-icons.net/1x1/delapouite/dungeon-gate.html',
-  derelict: 'https://game-icons.net/1x1/delapouite/crime-scene-tape.html',
-  faction: 'https://game-icons.net/1x1/delapouite/vertical-banner.html',
-  monstrosity: 'https://game-icons.net/1x1/lorc/beast-eye.html',
-  // AKA the creature oracles from delve
-  npc: 'https://game-icons.net/1x1/lorc/drama-masks.html',
-  precursor-vault: 'https://game-icons.net/1x1/lorc/moebius-triangle.html',
-  region-sf: 'https://game-icons.net/1x1/delapouite/galaxy.html',
-  sector: 'https://game-icons.net/1x1/skoll/hexes.html',
-  settlement-is: 'https://game-icons.net/1x1/delapouite/huts-village.html',
-  settlement-sf: 'https://game-icons.net/1x1/delapouite/modern-city.html',
-  starship: 'https://game-icons.net/1x1/delapouite/spaceship.html',
-  stellar-object: 'https://game-icons.net/1x1/lorc/star-prominences.html',
-  waypoint: 'https://game-icons.net/1x1/delapouite/position-marker.html',
-  world: 'https://game-icons.net/1x1/lorc/ringed-planet.html'
+  creature: 'https://game-icons.net/1x1/lorc/dna1.html'; // Starforged. see 'monstrosity' for Delve creatures
+  delve-site: 'https://game-icons.net/1x1/delapouite/dungeon-gate.html';
+  derelict: 'https://game-icons.net/1x1/delapouite/crime-scene-tape.html';
+  faction: 'https://game-icons.net/1x1/delapouite/vertical-banner.html';
+  monstrosity: 'https://game-icons.net/1x1/lorc/beast-eye.html'; // AKA the creature oracles from delve
+  npc: 'https://game-icons.net/1x1/lorc/drama-masks.html';
+  precursor-vault: 'https://game-icons.net/1x1/lorc/moebius-triangle.html';
+  region-sf: 'https://game-icons.net/1x1/delapouite/galaxy.html';
+  sector: 'https://game-icons.net/1x1/skoll/hexes.html';
+  settlement-is: 'https://game-icons.net/1x1/delapouite/huts-village.html';
+  settlement-sf: 'https://game-icons.net/1x1/delapouite/modern-city.html';
+  starship: 'https://game-icons.net/1x1/delapouite/spaceship.html';
+  stellar-object: 'https://game-icons.net/1x1/lorc/star-prominences.html';
+  waypoint: 'https://game-icons.net/1x1/delapouite/position-marker.html';
+  world: 'https://game-icons.net/1x1/lorc/ringed-planet.html';
 );
-@each $key, $value in $icons {
-  .isicon-#{$key},
-  .isiconbg-#{$key} {
+
+each(@icons, {
+  .isicon-@{key}, .isiconbg-@{key} {
+    &:before {
+      mask-image: url('/assets/icons/@{key}.svg');
+  }}
+});
+
+// FVTT doesn't get subtype icons from items in compendium packs, so we override them depending on the pack
+
+// NPC actor
+a[data-pack='foundry-ironsworn.foeactorsis'],
+a[data-pack='foundry-ironsworn.foeactorssf'] {
+  i::before {
+    content: '\f630';
+  }
+}
+
+// Assets
+a[data-pack='foundry-ironsworn.starforgedassets'],
+a[data-pack='foundry-ironsworn.ironswornassets'] {
+  i::before {
+    content: '\e4df';
+  }
+}
+
+// Delve site themes + domains
+a[data-pack='foundry-ironsworn.ironsworndelvedomains'],
+a[data-pack='foundry-ironsworn.ironsworndelvethemes'] {
+  i {
     &::before {
-      mask-image: url('/assets/icons/#{$key}.svg');
+      position: absolute;
+      color: var(--fa-primary-color, inherit);
+      opacity: var(--fa-primary-opacity, 1);
+      content: '\e4df';
     }
+    &::after {
+      content: '\e4df\e4df';
+      opacity: var(--fa-secondary-opacity, 0.4);
+      color: var(--fa-secondary-color, inherit);
+    }
+  }
+}
+
+// Moves
+a[data-pack='foundry-ironsworn.ironswornmoves'],
+a[data-pack='foundry-ironsworn.starforgedmoves'] {
+  & > i {
+    height: var(--ironsworn-icon-size);
+    width: var(--ironsworn-icon-size);
+    align-self: center;
+
+    &:before {
+      display: inline-block;
+      background-color: currentcolor;
+      width: var(--ironsworn-icon-size);
+      height: var(--ironsworn-icon-size);
+      content: '';
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      mask-image: url('/assets/icons/d10-tilt.svg');
+    }
+  }
+}
+
+// NPC progress track
+a[data-pack='foundry-ironsworn.ironswornfoes'],
+a[data-pack='foundry-ironsworn.starforgedencounters'] {
+  i::before {
+    content: '\2a';
   }
 }

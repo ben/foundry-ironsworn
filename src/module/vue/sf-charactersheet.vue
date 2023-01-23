@@ -38,10 +38,16 @@
         >
           <TabList>
             <Tab tab-key="legacies" :text="$t('IRONSWORN.Legacies')" />
-            <Tab tab-key="assets" :text="$t('IRONSWORN.Assets')" />
-            <Tab tab-key="progress" :text="$t('IRONSWORN.Progress')" />
-            <Tab tab-key="connections" :text="$t('IRONSWORN.Connections')" />
-            <Tab tab-key="notes" :text="$t('IRONSWORN.Notes')" />
+            <Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
+            <Tab
+              tab-key="progress"
+              :text="$t('IRONSWORN.ITEMS.SubtypeProgress')"
+            />
+            <Tab
+              tab-key="connections"
+              :text="$t('IRONSWORN.ITEMS.SubtypeConnection')"
+            />
+            <Tab tab-key="notes" :text="$t('Notes')" />
           </TabList>
           <TabPanels>
             <TabPanel tab-key="legacies" class="flexcol">

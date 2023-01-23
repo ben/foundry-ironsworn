@@ -6,7 +6,7 @@
       ['compact-progress']: compactProgress,
     }"
     role="slider"
-    :aria-label="$t('IRONSWORN.PROGRESS.Track')"
+    :aria-label="$t('IRONSWORN.ITEM.TypeProgressTrack')"
     aria-orientation="horizontal"
     :data-rank="numericRank"
     :data-ticks="ticks"

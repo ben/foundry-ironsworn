@@ -32,8 +32,11 @@
         :v-slot:icon="{ size: 'sm' }"
       >
         <TabList>
-          <Tab tab-key="character" :text="$t('IRONSWORN.Character')" />
-          <Tab tab-key="notes" :text="$t('IRONSWORN.Notes')" />
+          <Tab
+            tab-key="character"
+            :text="$t('IRONSWORN.ACTOR.TypeCharacter')"
+          />
+          <Tab tab-key="notes" :text="$t('Notes')" />
         </TabList>
         <TabPanels>
           <TabPanel tab-key="character" class="flexcol">

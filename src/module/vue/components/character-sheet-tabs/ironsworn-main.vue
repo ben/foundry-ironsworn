@@ -8,7 +8,7 @@
         <hr class="nogrow" />
         <!-- Assets -->
         <DropTarget is="div" dropType="asset" class="flexcol item-list">
-          <h4 class="nogrow">{{ $t('IRONSWORN.Assets') }}</h4>
+          <h4 class="nogrow">{{ $t('IRONSWORN.ITEMS.TypeAsset') }}</h4>
 
           <CollapseTransition
             tag="div"
@@ -32,7 +32,7 @@
               icon="fa:book-atlas"
               @click="assetBrowser"
               block
-              :text="$t('IRONSWORN.Assets')"
+              :text="$t('IRONSWORN.ITEMS.TypeAsset')"
             />
           </div>
         </DropTarget>

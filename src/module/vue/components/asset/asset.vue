@@ -172,10 +172,9 @@ function edit() {
 }
 function destroy() {
   Dialog.confirm({
-    title: game.i18n.localize('IRONSWORN.DeleteAsset'),
-    content: `<p><strong>${game.i18n.localize(
-      'IRONSWORN.ConfirmDelete'
-    )}</strong></p>`,
+    title: game.i18n.format('DOCUMENT.Delete', {
+      type: game.i18n.localize('IRONSWORN.ITEM.TypeAsset'),
+    }),
     yes: () => foundryItem?.delete(),
     defaultYes: false,
   })

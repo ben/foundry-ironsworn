@@ -10,23 +10,23 @@
 
 <form class='{{cssClass}} flexcol' autocomplete='off'>
   <div class="flexrow boxgroup boxrow">
-      {{#if sfenabled}}
-      {{>createBox type="sfcharacter" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{else}}
-      {{>createBox type="character" labelkey="IRONSWORN.Character" img="icons/creatures/eyes/human-single-blue.webp"}}
-      {{/if}}
+    {{#if sfenabled}}
+    {{>createBox type="sfcharacter" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
+    {{else}}
+    {{>createBox type="character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
+    {{/if}}
 
-      {{>createBox type="shared" labelkey="IRONSWORN.SharedSheet" img="icons/environment/settlement/wagon-black.webp"}}
+    {{>createBox type="shared" labelkey="IRONSWORN.ACTOR.TypeShared" img="icons/environment/settlement/wagon-black.webp"}}
 
-      {{#if sfenabled}}
-      {{>createBox type="sfship" labelkey="IRONSWORN.Starship" img="icons/environment/settlement/wizard-castle.webp"}}
-      {{>createBox type="sflocation" labelkey="IRONSWORN.Location"
-      img="systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp"}}
-      {{else}}
-      {{>createBox type="site" labelkey="IRONSWORN.DelveSite"
-      img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
-      {{/if}}
+    {{#if sfenabled}}
+    {{>createBox type="sfship" labelkey="IRONSWORN.ACTOR.TypeStarship" img="icons/environment/settlement/wizard-castle.webp"}}
+    {{>createBox type="sflocation" labelkey="IRONSWORN.ACTOR.TypeLocation"
+    img="systems/foundry-ironsworn/assets/planets/Starforged-Planet-Token-Ocean-02.webp"}}
+    {{else}}
+    {{>createBox type="site" labelkey="IRONSWORN.ACTOR.TypeDelveSite"
+    img="icons/environment/wilderness/cave-entrance-vulcano.webp"}}
+    {{/if}}
 
-      {{>createBox type="foe" labelkey="IRONSWORN.NPC" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
+    {{>createBox type="foe" labelkey="IRONSWORN.NPC" img="icons/creatures/eyes/lizard-single-slit-pink.webp"}}
   </div>
 </form>

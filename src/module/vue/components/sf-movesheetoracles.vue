@@ -3,7 +3,9 @@
     <div class="flexrow nogrow" :class="$style['nav-search']">
       <input
         type="text"
-        :placeholder="$t('IRONSWORN.Search')"
+        :placeholder="
+          $t('SIDEBAR.Search', { types: $t('IRONSWORN.ROLLTABLES.TypeOracle') })
+        "
         v-model="search.q"
         @keydown.enter.prevent
       />

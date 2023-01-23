@@ -1,3 +1,5 @@
+import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+
 interface CharacterDataSourceData {
   biography: string
   notes: string
@@ -50,12 +52,20 @@ export interface CharacterDataPropertiesData extends CharacterDataSourceData {
 
 export interface CharacterDataProperties {
   type: 'character'
+  /**
+   * @deprecated
+   */
   data: CharacterDataPropertiesData
+  system: CharacterDataPropertiesData
 }
 
 export interface CharacterDataSource {
   type: 'character'
+  /**
+   * @deprecated
+   */
   data: CharacterDataSourceData
+  system: CharacterDataSourceData
 }
 
 ////////////////////////////////////////
@@ -68,11 +78,19 @@ export type SharedDataPropertiesData = SharedDataSourceData
 
 interface SharedDataSource {
   type: 'shared'
+  /**
+   * @deprecated
+   */
   data: SharedDataSourceData
+  system: SharedDataSourceData
 }
 export interface SharedDataProperties {
   type: 'shared'
+  /**
+   * @deprecated
+   */
   data: SharedDataPropertiesData
+  system: SharedDataPropertiesData
 }
 
 ////////////////////////////////////////
@@ -82,39 +100,63 @@ type FoeDataPropertiesData = FoeDataSourceData
 
 interface FoeDataSource {
   type: 'foe'
+  /**
+   * @deprecated
+   */
   data: FoeDataSourceData
+  system: FoeDataSourceData
 }
 export interface FoeDataProperties {
   type: 'foe'
+  /**
+   * @deprecated
+   */
   data: FoeDataPropertiesData
+  system: FoeDataPropertiesData
 }
 
 ////////////////////////////////////////
 
-export interface DenizenSlot {
-  low: number
-  high: number
-  descriptor: string
-  description: string
+/**
+ * Represents an entry in the delve site denizen matrix.
+ */
+export interface DelveSiteDenizen extends TableResultDataConstructorData {
+  flags: {
+    'foundry-ironsworn': {
+      type: 'delve-site-denizen'
+      /**
+       * The ID of the originating Actor.
+       */
+      sourceId: Actor['id']
+    }
+  }
 }
 
-interface SiteDataSourceData {
+export interface SiteDataSourceData {
   objective: string
   description: string
   notes: string
   rank: string
   current: number
-  denizens: DenizenSlot[]
+  denizens: DelveSiteDenizen[]
 }
 export type SiteDataPropertiesData = SiteDataSourceData
 
 export interface SiteDataSource {
   type: 'site'
+  /**
+   * @deprecated
+   */
   data: SiteDataSourceData
+  system: SiteDataSourceData
 }
 export interface SiteDataProperties {
   type: 'site'
+  /**
+   * @deprecated
+   */
   data: SiteDataPropertiesData
+  system: SiteDataPropertiesData
 }
 
 ////////////////////////////////////////
@@ -130,11 +172,19 @@ export type StarshipDataPropertiesData = StarshipDataSourceData
 
 export interface StarshipDataSource {
   type: 'starship'
+  /**
+   * @deprecated
+   */
   data: StarshipDataSourceData
+  system: StarshipDataSourceData
 }
 export interface StarshipDataProperties {
   type: 'starship'
+  /**
+   * @deprecated
+   */
   data: StarshipDataPropertiesData
+  system: StarshipDataPropertiesData
 }
 
 ////////////////////////////////////////
@@ -148,11 +198,19 @@ type LocationDataPropertiesData = LocationDataSourceData
 
 export interface LocationDataSource {
   type: 'location'
+  /**
+   * @deprecated
+   */
   data: LocationDataSourceData
+  system: LocationDataSourceData
 }
 export interface LocationDataProperties {
   type: 'location'
+  /**
+   * @deprecated
+   */
   data: LocationDataPropertiesData
+  system: LocationDataPropertiesData
 }
 
 ////////////////////////////////////////

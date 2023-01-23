@@ -5,7 +5,7 @@
   <div class='ironsworn-roll'>
 
     <p class='flexrow' style='align-items: center;'>
-      <span>{{localize 'IRONSWORN.Denizen'}}: {{site.name}}</span>
+      <span>{{localize 'IRONSWORN.DELVESITE.Denizen'}}: {{site.name}}</span>
       <span
         class='roll die d10 isiconbg-d10-blank'
         style='flex: 0 0 25px;'
@@ -13,8 +13,10 @@
     </p>
 
     <h4>
-      {{denizen.low}}–{{denizen.high}}:
-      {{denizen.description}}
+      {{#if
+        (eq denizen.range.[0] denizen.range.[1])
+      }}{{denizen.range.[0]}}{{else}}{{denizen.range.[0]}}–{{denizen.range.[1]}}{{/if}}:
+      {{denizen.text}}
     </h4>
 
   </div>

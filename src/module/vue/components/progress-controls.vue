@@ -5,14 +5,14 @@
       block
       icon="fa:plus"
       @click="addProgressItem('vow')"
-      :text="$t('IRONSWORN.Vow')"
+      :text="$t('IRONSWORN.ITEM.SubtypeVow')"
     />
     <IronBtn
       :class="$style['progress-control-btn']"
       block
       icon="fa:plus"
       @click="addProgressItem('progress')"
-      :text="$t('IRONSWORN.Progress')"
+      :text="$t('IRONSWORN.ITEM.SubtypeProgress')"
     />
     <btn-compendium
       :class="$style['progress-control-btn']"

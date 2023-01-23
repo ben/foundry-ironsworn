@@ -1,7 +1,7 @@
 <template>
   <article class="legacy-track flexcol" ref="legacyTrack" :data-legacy="legacy">
     <h4 class="legacy-track-title">
-      {{ $t(`IRONSWORN.${capitalize(legacy)}`) }}
+      {{ $t(`IRONSWORN.LEGACY.${capitalize(legacy)}`) }}
     </h4>
 
     <section class="legacy-track-controls flexrow" data-tooltip-direction="UP">
@@ -213,7 +213,9 @@ const xpSpent = computed(
 )
 
 const markTooltip = computed(() => {
-  let legacy = game.i18n.localize(`IRONSWORN.${capitalize(props.legacy)}`)
+  let legacy = game.i18n.localize(
+    `IRONSWORN.LEGACY.${capitalize(props.legacy)}`
+  )
   let amount = game.i18n.localize(`IRONSWORN.PROGRESS.TICK.1`)
   return game.i18n.format(`IRONSWORN.MarkLegacy`, { amount, legacy })
 })

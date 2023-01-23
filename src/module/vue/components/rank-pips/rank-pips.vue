@@ -8,7 +8,7 @@
       v-for="rank in ranks"
       :key="rank"
       @click="$emit('click', rank)"
-      :data-tooltip="$t(`IRONSWORN.${$capitalize(rank)}`)"
+      :data-tooltip="$t(`IRONSWORN.CHALLENGERANK.${$capitalize(rank)}`)"
       data-tooltip-direction="UP"
       type="button"
       class="rank-pip nogrow theme-pip"
