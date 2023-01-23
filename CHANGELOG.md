@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Under the hood: Remove the old `tables.db` (superceded by `ironsworn-oracles.db`) and all remaining references to it
+
 ## 1.20.14
 
 - Allow pre-setting of challenge dice, and revamp the advanced rolling options UI ([#606](https://github.com/ben/foundry-ironsworn/pull/606))
