@@ -196,6 +196,10 @@ import { OracleRollMessage } from '../rolls'
 import { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
+import {
+  createStarforgedOracleTree,
+  findPathToNodeByDfId,
+} from '../features/customoracles'
 
 const props = defineProps<{
   actor: any
@@ -673,9 +677,11 @@ async function rollFirstLook() {
 }
 
 async function rollOracle(oracle) {
-  const table = await CONFIG.IRONSWORN.dataforgedHelpers.getFoundryTableByDfId(
-    oracle.dfId
-  )
+  // Make sure we use customized oracles
+  const tree = await createStarforgedOracleTree()
+  const nodes = await findPathToNodeByDfId(tree, oracle.dfId)
+  const node = nodes[nodes.length - 1]
+  const table = sample(node.tables)?.()
   const drawText = await drawAndReturnResult(table)
   if (!drawText) return
 
