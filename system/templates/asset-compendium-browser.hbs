@@ -1,5 +1,17 @@
 <form class='{{cssClass}} flexcol vueroot' autocomplete='off'>
-  <asset-compendium-browser :toolset='data.toolset'>
-    Loading…
-  </asset-compendium-browser>
+  <Suspense>
+    <asset-compendium-browser :toolset='data.toolset'>
+      Loading…
+    </asset-compendium-browser>
+
+    <template #fallback>
+      <div class='flexrow'>
+        <grid-loader
+          :loading='true'
+          color='#ccc'
+          style='margin: auto; max-width: 57px'
+        />
+      </div>
+    </template>
+  </Suspense>
 </form>
