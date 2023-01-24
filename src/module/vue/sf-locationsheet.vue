@@ -10,13 +10,13 @@
           <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
           <select v-model="region" @change="regionChanged">
             <option value="terminus">
-              {{ $t('IRONSWORN.Terminus') }}
+              {{ $t('IRONSWORN.REGION.Terminus') }}
             </option>
             <option value="outlands">
-              {{ $t('IRONSWORN.Outlands') }}
+              {{ $t('IRONSWORN.REGION.Outlands') }}
             </option>
             <option value="expanse">
-              {{ $t('IRONSWORN.Expanse') }}
+              {{ $t('IRONSWORN.REGION.Expanse') }}
             </option>
           </select>
         </label>
@@ -551,7 +551,7 @@ const randomKlassTooltip = computed(() => {
 
 const subtypeSelectText = computed(() => {
   const { subtype } = props.actor.system
-  return game.i18n.localize(`IRONSWORN.${camelCase(subtype)}Type`)
+  return game.i18n.localize(`IRONSWORN.${capitalize(subtype)}Type`)
 })
 
 const klassIsNotValid = computed(() => {
