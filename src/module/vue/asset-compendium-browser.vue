@@ -1,7 +1,7 @@
 <template>
   <section
     class="nogrow asset-category"
-    v-for="category in categories"
+    v-for="category in data.categories"
     :key="category.title"
   >
     <h2 class="flexrow">
@@ -74,7 +74,7 @@ h2 {
 </style>
 
 <script setup lang="ts">
-import { provide } from 'vue'
+import { provide, reactive } from 'vue'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
@@ -91,6 +91,8 @@ provide('toolset', props.toolset)
 const categories = await (props.toolset === 'ironsworn'
   ? createIronswornAssetTree()
   : createStarforgedAssetTree())
+
+const data = reactive({ categories })
 
 function moveClick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
