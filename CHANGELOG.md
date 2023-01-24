@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Add a loading spinner for the asset browser ([#618](https://github.com/ben/foundry-ironsworn/pull/618))
+
 ## 1.20.14
 
 - Allow pre-setting of challenge dice, and revamp the advanced rolling options UI ([#606](https://github.com/ben/foundry-ironsworn/pull/606))
