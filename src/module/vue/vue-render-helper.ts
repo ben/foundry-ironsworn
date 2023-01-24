@@ -8,7 +8,6 @@ import {
   LocalEmitterEvents,
 } from './provisions'
 import LoadingSpinner from './components/loading-spinner.vue'
-import * as Loaders from 'vue-spinner/src/index'
 
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
