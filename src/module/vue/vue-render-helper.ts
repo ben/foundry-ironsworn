@@ -7,6 +7,7 @@ import {
   LocalEmitter,
   LocalEmitterEvents,
 } from './provisions'
+import * as Loaders from 'vue-spinner/src/index'
 
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
@@ -48,7 +49,10 @@ export class VueSheetRenderHelper {
           return { data: data }
         },
 
-        components: this.options.components,
+        components: {
+          'grid-loader': Loaders.GridLoader,
+          ...this.options.components,
+        },
 
         provide: {
           context: {
