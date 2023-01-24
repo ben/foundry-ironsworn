@@ -7,6 +7,7 @@ import {
   LocalEmitter,
   LocalEmitterEvents,
 } from './provisions'
+import LoadingSpinner from './components/loading-spinner.vue'
 import * as Loaders from 'vue-spinner/src/index'
 
 export interface VueSheetRenderHelperOptions {
@@ -50,7 +51,7 @@ export class VueSheetRenderHelper {
         },
 
         components: {
-          'grid-loader': Loaders.GridLoader,
+          'loading-spinner': LoadingSpinner,
           ...this.options.components,
         },
 
