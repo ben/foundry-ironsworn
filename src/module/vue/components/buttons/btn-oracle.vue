@@ -41,7 +41,8 @@ async function rollOracle() {
 
   const orm = await OracleRollMessage.fromTableId(
     randomTable?.id ?? '',
-    randomTable?.pack || undefined
+    randomTable?.pack || undefined,
+    (randomTable as any)?.formula
   )
   orm.createOrUpdate()
 }

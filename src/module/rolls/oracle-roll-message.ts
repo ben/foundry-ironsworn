@@ -33,6 +33,7 @@ export class OracleRollMessage {
   protected dfOracleId?: string
   protected tableId?: string
   protected tablePack?: string // valid if tableId is set
+  protected diceFormula?: string
   protected tableRows?: TableRow[]
 
   // Display properties
@@ -50,6 +51,7 @@ export class OracleRollMessage {
     dfOracleId?: string
     tableId?: string
     tablePack?: string
+    diceFormula?: string
     tableRows?: TableRow[]
     title?: string
     subtitle?: string
@@ -82,8 +84,12 @@ export class OracleRollMessage {
     })
   }
 
-  static fromTableId(tableId: string, tablePack?: string) {
-    return new OracleRollMessage({ tableId, tablePack })
+  static fromTableId(
+    tableId: string,
+    tablePack?: string,
+    diceFormula?: string
+  ) {
+    return new OracleRollMessage({ tableId, tablePack, diceFormula })
   }
 
   static fromRows(tableRows: TableRow[], title: string, subtitle?: string) {
@@ -161,7 +167,7 @@ export class OracleRollMessage {
     const rows = await this.getTableRows()
 
     const highestValue = rows[rows.length - 1].high
-    this.roll = new Roll(`1d${highestValue}`)
+    this.roll = new Roll(this.diceFormula ?? `1d${highestValue}`)
     await this.roll.evaluate({ async: true })
   }
 
