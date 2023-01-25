@@ -57,14 +57,14 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       .find('[data-on-click="createFoe"]')
       .on('click', (ev) => this._createFoe.call(this, ev))
     html
-      .find('[data-on-click="createSfCharacter"]')
-      .on('click', (ev) => this._createSfCharacter.call(this, ev))
+      .find('[data-on-click="createSfcharacter"]')
+      .on('click', (ev) => this._createSfcharacter.call(this, ev))
     html
       .find('[data-on-click="createStarship"]')
       .on('click', (ev) => this._createStarship.call(this, ev))
     html
-      .find('[data-on-click="createSfLocation"]')
-      .on('click', (ev) => this._createSfLocation.call(this, ev))
+      .find('[data-on-click="createSflocation"]')
+      .on('click', (ev) => this._createSflocation.call(this, ev))
   }
 
   async _createCharacter(ev: JQuery.ClickEvent) {
@@ -109,7 +109,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     )
   }
 
-  async _createSfCharacter(ev: JQuery.ClickEvent) {
+  async _createSfcharacter(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const name = await this._randomStarforgedName()
@@ -131,7 +131,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     )
   }
 
-  async _createSfLocation(ev: JQuery.ClickEvent) {
+  async _createSflocation(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
       game.i18n.localize('IRONSWORN.ACTOR.TypeLocation'),
