@@ -81,26 +81,18 @@ import CollapseTransition from './components/transition/collapse-transition.vue'
 import {
   createIronswornAssetTree,
   createStarforgedAssetTree,
-  DisplayCategory,
 } from '../features/customassets'
 import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{ toolset: 'starforged' | 'ironsworn' }>()
 
-const data = reactive({
-  categories: [] as DisplayCategory[],
-})
-
 provide('toolset', props.toolset)
 
-// Kick into async without requiring a <Suspense>
-const promise =
-  props.toolset === 'ironsworn'
-    ? createIronswornAssetTree()
-    : createStarforgedAssetTree()
-promise.then((categories) => {
-  data.categories = categories
-})
+const categories = await (props.toolset === 'ironsworn'
+  ? createIronswornAssetTree()
+  : createStarforgedAssetTree())
+
+const data = reactive({ categories })
 
 function moveClick(item) {
   CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
