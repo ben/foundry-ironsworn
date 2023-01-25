@@ -187,8 +187,8 @@ export class OracleRollMessage {
     const starforgedRoot = await createStarforgedOracleTree()
     const ironswornRooot = await createIronswornOracleTree()
     const pathElements =
-      findPathToNodeByTableId(starforgedRoot, this.tableId) ??
-      findPathToNodeByTableId(ironswornRooot, this.tableId)
+      (await findPathToNodeByTableId(starforgedRoot, this.tableId)) ??
+      (await findPathToNodeByTableId(ironswornRooot, this.tableId))
     pathElements.shift() // no display name for root node
     pathElements.pop() // last node is the table we rolled
     return pathElements.map((x) => x.displayName).join(' / ')

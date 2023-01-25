@@ -37,12 +37,13 @@ const $emit = defineEmits(['click'])
 async function rollOracle() {
   if (props.overrideClick && props.onClick) return $emit('click')
 
-  const randomTable = sample(props.node.tables)?.()
+  const tableGetter = sample(props.node.tables)
+  const table = await tableGetter?.()
 
   const orm = await OracleRollMessage.fromTableId(
-    randomTable?.id ?? '',
-    randomTable?.pack || undefined,
-    (randomTable as any)?.formula
+    table?.id ?? '',
+    table?.pack || undefined,
+    (table as any)?.formula
   )
   orm.createOrUpdate()
 }

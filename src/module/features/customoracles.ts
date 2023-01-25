@@ -12,7 +12,7 @@ import { cachedDocumentsForPack } from './pack-cache'
 
 export interface IOracleTreeNode {
   dataforgedNode?: IOracle | IOracleCategory
-  tables: (() => RollTable)[]
+  tables: (() => RollTable | Promise<RollTable>)[]
   displayName: string
   children: IOracleTreeNode[]
   forceExpanded?: boolean
@@ -178,23 +178,24 @@ async function augmentWithFolderContents(node: IOracleTreeNode) {
   walkFolder(node, rootFolder)
 }
 
-export function findPathToNodeByTableId(
+export async function findPathToNodeByTableId(
   rootNode: IOracleTreeNode,
   tableId: string
-): IOracleTreeNode[] {
+): Promise<IOracleTreeNode[]> {
   const ret: IOracleTreeNode[] = []
-  function walk(node: IOracleTreeNode) {
+  async function walk(node: IOracleTreeNode) {
     ret.push(node)
-    const foundTable = node.tables.find((x) => x().id === tableId)
+    const tables = await Promise.all(node.tables.map((x) => x()))
+    const foundTable = tables.find((x) => x.id === tableId)
     if (foundTable) return true
     for (const child of node.children) {
-      if (walk(child)) return true
+      if (await walk(child)) return true
     }
     ret.pop()
     return false
   }
 
-  walk(rootNode)
+  await walk(rootNode)
   return ret
 }
 

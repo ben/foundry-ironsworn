@@ -20,5 +20,8 @@ import RulesText from './rules-text.vue'
 import OracleTable from './oracle-table.vue'
 import { ISource } from 'dataforged'
 
-const props = defineProps<{ oracleTable: () => RollTable; source?: ISource }>()
+const props = defineProps<{
+  oracleTable: () => RollTable | Promise<RollTable>
+  source?: ISource
+}>()
 </script>

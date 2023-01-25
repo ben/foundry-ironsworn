@@ -681,14 +681,15 @@ async function rollOracle(oracle) {
   const tree = await createStarforgedOracleTree()
   const nodes = await findPathToNodeByDfId(tree, oracle.dfId)
   const node = nodes[nodes.length - 1]
-  const table = sample(node.tables)?.()
+  const tableGetter = sample(node.tables)
+  const table = await tableGetter?.()
   const drawText = await drawAndReturnResult(table)
   if (!drawText) return
 
   // Append to description
   const actor = props.actor as LocationDataProperties
   const parts = [
-    props.actor.system.description,
+    actor.system.description,
     '<p><strong>',
     oracle.title,
     ':</strong> ',
