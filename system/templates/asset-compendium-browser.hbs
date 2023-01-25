@@ -1,5 +1,13 @@
 <form class='{{cssClass}} flexcol vueroot' autocomplete='off'>
-  <asset-compendium-browser :toolset='data.toolset'>
-    Loading…
-  </asset-compendium-browser>
+  <Suspense>
+    <asset-compendium-browser :toolset='data.toolset'>
+      Loading…
+    </asset-compendium-browser>
+
+    <template #fallback>
+      <div class='flexrow'>
+        <loading-spinner />
+      </div>
+    </template>
+  </Suspense>
 </form>
