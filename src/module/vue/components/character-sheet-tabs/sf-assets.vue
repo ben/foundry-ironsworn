@@ -98,6 +98,6 @@ function assetBrowser() {
       $actor?.toolset ?? 'starforged'
     )
   }
-  theAssetBrowser.render(true)
+  theAssetBrowser.render(true, { focus: true })
 }
 </script>
