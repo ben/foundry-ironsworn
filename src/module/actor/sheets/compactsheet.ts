@@ -29,8 +29,8 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
       .find('[data-on-click="adjustResource"]')
       .on('click', (e) => this._adjustResource.call(this, e))
     html
-      .find('[data-on-click="momentumBurn"]')
-      .on('click', (e) => this._momentumBurn.call(this, e))
+      .find('[data-on-click="burnMomentum"]')
+      .on('click', (e) => this._burnMomentum.call(this, e))
   }
 
   _getHeaderButtons() {
@@ -95,7 +95,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     }
   }
 
-  _momentumBurn(ev: JQuery.ClickEvent) {
+  _burnMomentum(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     if (this.actor.type === 'character') {

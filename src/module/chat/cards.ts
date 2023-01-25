@@ -1,7 +1,6 @@
 import { compact, flatten } from 'lodash'
 import { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { IronswornItem } from '../item/item'
-import { cachedDocumentsForPack } from '../features/pack-cache'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { getFoundryTableByDfId } from '../dataforged'
@@ -74,7 +73,7 @@ export class IronswornChatCard {
       .on('click', (ev) => this._burnMomentum.call(this, ev))
     html
       .find('[data-on-click="rerollOracle"], .oracle-roll .oracle-reroll')
-      .on('click', (ev) => this._oracleReroll.call(this, ev))
+      .on('click', (ev) => this._rerollOracle.call(this, ev))
     html
       .find('[data-on-click="copyOracleResult"], .copy-result')
       .on('click', (ev) => this._copyOracleResult.call(this, ev))
@@ -126,7 +125,7 @@ export class IronswornChatCard {
     ChallengeResolutionDialog.showForMessage(msgId)
   }
 
-  async _oracleReroll(ev: JQuery.ClickEvent) {
+  async _rerollOracle(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const msgId = $(ev.target).parents('.chat-message').data('message-id')
