@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Under the hood: apply Handlebars template listeners with `data-on-*` HTML attributes rather than classes ([#608](https://github.com/ben/foundry-ironsworn/pull/608))
+
 ## 1.20.14
 
 - Allow pre-setting of challenge dice, and revamp the advanced rolling options UI ([#606](https://github.com/ben/foundry-ironsworn/pull/606))
