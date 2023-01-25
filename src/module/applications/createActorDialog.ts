@@ -1,4 +1,5 @@
 import { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
+import _ from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
@@ -71,12 +72,12 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     ev.preventDefault()
 
     // Roll an Ironlander name
-    const table: any = await this._ironlanderNameTable()
+    const tables = await this._ironlanderNameTables()
+    const table = _.sample(tables)
     const drawResult = await table?.draw({ displayChat: false })
 
     this._createWithFolder(
-      drawResult.results[0]?.data.text ||
-        game.i18n.localize('IRONSWORN.ACTOR.TypeCharacter'),
+      drawResult?.results[0]?.data.text || CONFIG.Actor.typeLabels['character'],
       'character',
       ev.currentTarget.dataset.img || undefined
     )
@@ -85,7 +86,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sharedCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      game.i18n.localize('IRONSWORN.ACTOR.TypeShared'),
+      CONFIG.Actor.typeLabels['shared'],
       'shared',
       ev.currentTarget.dataset.img || undefined
     )
@@ -94,7 +95,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _siteCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      game.i18n.localize('IRONSWORN.ACTOR.TypeDelveSite'),
+      CONFIG.Actor.typeLabels['site'],
       'site',
       ev.currentTarget.dataset.img || undefined
     )
@@ -103,7 +104,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _foeCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      game.i18n.localize('IRONSWORN.ACTOR.TypeFoe'),
+      CONFIG.Actor.typeLabels['foe'],
       'foe',
       ev.currentTarget.dataset.img || undefined
     )
@@ -115,7 +116,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const name = await this._randomStarforgedName()
 
     this._createWithFolder(
-      name || game.i18n.localize('IRONSWORN.ACTOR.TypeCharacter'),
+      name || CONFIG.Actor.typeLabels['character'],
       'character',
       ev.currentTarget.dataset.img || undefined,
       'ironsworn.StarforgedCharacterSheet'
@@ -125,7 +126,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfshipCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      game.i18n.localize('IRONSWORN.ACTOR.TypeStarship'),
+      CONFIG.Actor.typeLabels['starship'],
       'starship',
       ev.currentTarget.dataset.img || undefined
     )
@@ -134,7 +135,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfLocationCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      game.i18n.localize('IRONSWORN.ACTOR.TypeLocation'),
+      CONFIG.Actor.typeLabels['location'],
       'location',
       ev.currentTarget.dataset.img || undefined
     )
@@ -142,7 +143,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
   async _createWithFolder(
     name: string,
-    type: 'character' | 'site' | 'shared' | 'foe' | 'starship' | 'location',
+    type: IronswornActor['type'],
     img: string,
     sheetClass?: string
   ) {
@@ -164,18 +165,14 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     await this.close()
   }
 
-  async _ironlanderNameTable(): Promise<RollTable | undefined> {
-    const table = game.tables?.find(
-      (x) => x.name === 'Oracle: Ironlander Names'
-    )
-    if (table) return table
-
-    const pack = game.packs?.get('foundry-ironsworn.ironsworntables')
-    const entry = pack?.index.find(
-      (x: any) => x.name === 'Oracle: Ironlander Names'
-    )
-    if (entry)
-      return pack?.getDocument((entry as any)._id) as RollTable | undefined
+  async _ironlanderNameTables(): Promise<RollTable[] | undefined> {
+    const tableA = (await getFoundryTableByDfId(
+      'Ironsworn/Oracles/Name/Ironlander/A'
+    )) as any
+    const tableB = (await getFoundryTableByDfId(
+      'Ironsworn/Oracles/Name/Ironlander/B'
+    )) as any
+    if (tableA && tableB) return [tableA, tableB]
     return undefined
   }
 
