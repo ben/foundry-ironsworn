@@ -5,6 +5,13 @@ function reload() {
   window.location.reload()
 }
 
+async function closeAllMoveSheets() {
+  for (const actor of game.actors?.contents ?? []) {
+    await actor.moveSheet?.close()
+    actor.moveSheet = undefined
+  }
+}
+
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace ClientSettings {
@@ -67,7 +74,7 @@ export class IronswornSettings {
         starforged: 'IRONSWORN.Starforged',
       },
       default: 'sheet',
-      onChange: reload,
+      onChange: closeAllMoveSheets,
     })
 
     game.settings.register('foundry-ironsworn', 'shared-supply', {
