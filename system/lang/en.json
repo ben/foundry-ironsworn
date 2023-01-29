@@ -272,11 +272,11 @@
         "Hint": "If on, changes to character stats will be logged to the chat."
       },
       "PromptTruths": {
-        "Name": "Ironsworn/Starforged Dialog on Start",
-        "Hint": "Open the above dialog on startup."
+        "Name": "Configuration Dialog on Start",
+        "Hint": "Open the above dialog on the next reload."
       },
       "ConfigurationDialog": {
-        "Label": "Ironsworn/Starforged Configuration Dialog",
+        "Label": "Configuration Dialog",
         "Name": "Configuration Dialog",
         "Hint": "Choose between Ironsworn and Starforged UI elements."
       },
