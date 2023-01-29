@@ -23,6 +23,10 @@
       />
     </nav>
     <section class="flexcol">
+      <aside class="flexrow nowrap">
+        <i class="fa-regular fa-circle-info nogrow"></i>
+        <p>{{ $t('IRONSWORN.TruthsAreOptional') }}</p>
+      </aside>
       <TruthCategory
         v-for="truth in truths"
         ref="categoryComponents"
@@ -45,8 +49,19 @@ section {
   margin-left: 15em;
 }
 
-.save-button {
-  justify-self: flex-end;
+aside {
+  border: 1px solid var(--ironsworn-color-cool-70);
+  border-radius: var(--ironsworn-border-radius-md);
+  padding: 0.75em;
+  gap: 5px;
+
+  p {
+    margin: 0;
+  }
+
+  i {
+    margin-top: 0.1em;
+  }
 }
 </style>
 
