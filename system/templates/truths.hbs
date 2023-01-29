@@ -1,4 +1,14 @@
 <form>
+  <aside class="flexrow nowrap" style="
+    border: 1px solid var(--ironsworn-color-cool-70);
+    border-radius: var(--ironsworn-border-radius-md);
+    padding: 0.75em;
+    gap: 5px;
+  ">
+    <i class="fa-regular fa-circle-info nogrow" style="margin-top: 0.1em;"></i>
+    <p style="margin: 0;">{{ localize 'IRONSWORN.TruthsAreOptional' }}</p>
+  </aside>
+
   {{#each truths.Categories}}
   <h2 style="margin-top: 1em;">{{Name}}</h2>
 
