@@ -86,15 +86,15 @@ export class JournalProgressPageSheet extends JournalPageSheet {
       })
       this.render()
     })
-    html.find('.ironsworn__progress__mark').on('click', async () => {
+    html.find('[data-on-click="markProgress"]').on('click', async () => {
       await increment(this.object, 1)
       this.render()
     })
-    html.find('.ironsworn__progress__unmark').on('click', async () => {
+    html.find('[data-on-click="eraseProgress"]').on('click', async () => {
       await increment(this.object, -1)
       this.render()
     })
-    html.find('.ironsworn__progress__roll').on('click', async () => {
+    html.find('[data-on-click="rollProgress"]').on('click', async () => {
       const { filledBoxes } = await this.getData()
       IronswornPrerollDialog.showForProgress(
         this.object.name ?? '(progress)',

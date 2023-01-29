@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Under the hood: apply Handlebars template listeners with `data-on-*` HTML attributes rather than classes ([#608](https://github.com/ben/foundry-ironsworn/pull/608))
 - Under the hood: Remove the old `tables.db` (superceded by `ironsworn-oracles.db`) and all remaining references to it ([#614](https://github.com/ben/foundry-ironsworn/pull/614))
 - Add a loading spinner for the asset browser ([#618](https://github.com/ben/foundry-ironsworn/pull/618))
 

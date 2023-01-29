@@ -33,7 +33,8 @@
     {{#if unresolved}}
       <section class='resolve'>
         <button
-          class='icon-button isicon-d10-tilt ironsworn-roll-resolve'
+          data-on-click='resolveChallengeDice'
+          class='icon-button isicon-d10-tilt'
           type='button'
         >
           <span class='button-text'>
@@ -45,7 +46,8 @@
     {{#if possibleMomentumBurn}}
       <section class='momentum-burn'>
         <button
-          class='icon-button fas fa-fire ironsworn-roll-burn-momentum'
+          class='icon-button fas fa-fire'
+          data-on-click='burnMomentum'
           type='button'
         >
           <span class='button-text'>
@@ -58,7 +60,8 @@
       <section class='move-oracle-buttons flexrow'>
         {{#each nextOracles}}
           <button
-            class='starforged__oracle__roll icon-button clickable isicon-oracle'
+            data-on-click='rollOracle'
+            class='icon-button clickable isicon-oracle'
             data-tooltip='{{{localize "IRONSWORN.RollOracleTable" title=name}}}'
             data-tableid='{{id}}'
             type='button'

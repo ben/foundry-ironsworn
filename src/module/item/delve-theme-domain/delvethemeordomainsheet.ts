@@ -16,14 +16,14 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
     super.activateListeners(html)
 
     html
-      .find('.ironsworn__features__description')
-      .on('blur', (ev) => this._featureDescription.call(this, ev))
+      .find('[data-on-blur="updateFeatureText"]')
+      .on('blur', (ev) => this._updateFeatureText.call(this, ev))
     html
-      .find('.ironsworn__dangers__description')
-      .on('blur', (ev) => this._dangerDescription.call(this, ev))
+      .find('[data-on-blur="updateDangerText"]')
+      .on('blur', (ev) => this._updateDangerText.call(this, ev))
   }
 
-  _featureDescription(ev: JQuery.BlurEvent) {
+  _updateFeatureText(ev: JQuery.BlurEvent) {
     const val = $(ev.currentTarget).val()?.toString() || ''
     const idx = parseInt(ev.target.dataset.idx)
     const { features } = this.themeData
@@ -31,7 +31,7 @@ export class DelveThemeOrDomainSheet extends IronswornItemSheet {
     this.item.update({ system: { features } }, { render: false })
   }
 
-  _dangerDescription(ev: JQuery.BlurEvent) {
+  _updateDangerText(ev: JQuery.BlurEvent) {
     const val = $(ev.currentTarget).val()?.toString() || ''
     const idx = parseInt(ev.target.dataset.idx)
     const { dangers } = this.themeData

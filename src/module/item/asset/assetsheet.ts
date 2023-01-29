@@ -13,35 +13,35 @@ export class AssetSheet extends IronswornItemSheet {
     if (!this.options.editable) return
 
     html
-      .find('.ironsworn__ability__enable')
-      .on('click', (ev) => this._abilityToggle.call(this, ev))
+      .find('[data-on-click="toggleAbility"]')
+      .on('click', (ev) => this._toggleAbility.call(this, ev))
     html
-      .find('.ironsworn__option__enable')
-      .on('click', (ev) => this._optionToggle.call(this, ev))
+      .find('[data-on-click="toggleOption"]')
+      .on('click', (ev) => this._toggleOption.call(this, ev))
     html
-      .find('.ironsworn__option__name')
+      .find('[data-on-blur="updateOptionName"]')
       .on('blur', (ev) => this._updateOptionName.call(this, ev))
     html
-      .find('.ironsworn__option__delete')
-      .on('click', (ev) => this._optionDelete.call(this, ev))
+      .find('[data-on-click="deleteOption"]')
+      .on('click', (ev) => this._deleteOption.call(this, ev))
     html
-      .find('.ironsworn__option__add')
-      .on('click', (ev) => this._optionAdd.call(this, ev))
+      .find('[data-on-click="addOption"]')
+      .on('click', (ev) => this._addOption.call(this, ev))
     html
-      .find('.ironsworn__field__add')
+      .find('[data-on-click="addField"]')
       .on('click', (ev) => this._addField.call(this, ev))
     html
-      .find('.ironsworn__field__label')
+      .find('[data-on-blur="updateFieldLabel"]')
       .on('blur', (ev) => this._updateFieldLabel.call(this, ev))
     html
-      .find('.ironsworn__field__value')
+      .find('[data-on-blur="updateFieldValue"]')
       .on('blur', (ev) => this._updateFieldValue.call(this, ev))
     html
-      .find('.ironsworn__field__delete')
+      .find('[data-on-click="deleteField"]')
       .on('click', (ev) => this._deleteField.call(this, ev))
     html
-      .find('.ironsworn__asset__delete')
-      .on('click', (ev) => this.assetDelete.call(this, ev))
+      .find('[data-on-click="deleteAsset"]')
+      .on('click', (ev) => this._deleteAsset.call(this, ev))
 
     attachInlineRollListeners(html, { actor: this.actor || undefined })
   }
@@ -70,7 +70,7 @@ export class AssetSheet extends IronswornItemSheet {
     this.item.setFlag('foundry-ironsworn', 'edit-mode', !currentValue)
   }
 
-  _abilityToggle(ev: JQuery.ClickEvent) {
+  _toggleAbility(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const { idx } = ev.currentTarget.dataset
@@ -79,7 +79,7 @@ export class AssetSheet extends IronswornItemSheet {
     this.item.update({ system: { abilities } })
   }
 
-  _optionToggle(ev: JQuery.ClickEvent) {
+  _toggleOption(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const { idx } = ev.currentTarget.dataset
@@ -99,7 +99,7 @@ export class AssetSheet extends IronswornItemSheet {
     this.item.update({ system: { exclusiveOptions } })
   }
 
-  _optionAdd(ev: JQuery.ClickEvent) {
+  _addOption(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const exclusiveOptions = Object.values(
@@ -109,7 +109,7 @@ export class AssetSheet extends IronswornItemSheet {
     this.item.update({ system: { exclusiveOptions } })
   }
 
-  _optionDelete(ev: JQuery.ClickEvent) {
+  _deleteOption(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const { idx } = ev.currentTarget.dataset
@@ -153,7 +153,7 @@ export class AssetSheet extends IronswornItemSheet {
     this.item.update({ system: { fields } })
   }
 
-  assetDelete(ev: JQuery.ClickEvent) {
+  _deleteAsset(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     Dialog.confirm({

@@ -23,14 +23,14 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     super.activateListeners(html)
 
     html
-      .find('.ironsworn__stat__roll')
-      .on('click', (e) => this._onStatRoll.call(this, e))
+      .find('[data-on-click="rollStat"]')
+      .on('click', (e) => this._rollStat.call(this, e))
     html
-      .find('.ironsworn__resource__adjust')
-      .on('click', (e) => this._resourceAdjust.call(this, e))
+      .find('[data-on-click="adjustResource"]')
+      .on('click', (e) => this._adjustResource.call(this, e))
     html
-      .find('.ironsworn__momentum__burn')
-      .on('click', (e) => this._momentumBurn.call(this, e))
+      .find('[data-on-click="burnMomentum"]')
+      .on('click', (e) => this._burnMomentum.call(this, e))
   }
 
   _getHeaderButtons() {
@@ -60,7 +60,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     this.actor.moveSheet.render(true, { focus: true })
   }
 
-  async _onStatRoll(ev: JQuery.ClickEvent) {
+  async _rollStat(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const el = ev.currentTarget
@@ -75,7 +75,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     }
   }
 
-  _resourceAdjust(ev: JQuery.ClickEvent) {
+  _adjustResource(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     const amt = parseInt(ev.currentTarget.dataset.amt || '0')
@@ -95,7 +95,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
     }
   }
 
-  _momentumBurn(ev: JQuery.ClickEvent) {
+  _burnMomentum(ev: JQuery.ClickEvent) {
     ev.preventDefault()
 
     if (this.actor.type === 'character') {

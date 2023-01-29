@@ -28,14 +28,14 @@
   <div class="flexrow">
     <input type="radio" name="{{Name}} class=" nogrow" style="flex: 0 0 20px; margin: var(--ironsworn-spacer-md) 8px;""
       id=" {{concat Name '#custom' }}" data-category="{{Name}}">
-    <input type="text" class="ironsworn__custom__truth description" placeholder="{{localize 'IRONSWORN.CustomTruth'}}">
+    <input type="text" data-on-focus="selectTruthOption" class=" description" placeholder="{{localize 'IRONSWORN.CustomTruth'}}">
   </div>
 
   {{/each}}
 
   <hr>
 
-  <button class="ironsworn__save__truths">
+  <button data-on-click="saveTruths">
     <i class="fas fa-feather"></i>
     {{localize 'IRONSWORN.SaveYourTruths'}}
   </button>
