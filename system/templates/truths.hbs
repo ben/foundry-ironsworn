@@ -14,7 +14,7 @@
 
   {{#each Options}}
   <div class="flexrow">
-    <input type="radio" name="{{../Name}} class="nogrow" style="flex: 0 0 20px; margin: 8px;""
+    <input type="radio" name="{{../Name}} class="nogrow" style="flex: 0 0 20px; margin: 8px; align-self: flex-start;"
       id="{{concat ../Name '#' @index}}" data-category="{{../Name}}">
     <div class="flexcol">
       <label for="{{concat ../Name '#' @index}}" class="description">
@@ -35,8 +35,10 @@
 
   <hr>
 
-  <button class="ironsworn__save__truths">
-    <i class="fas fa-feather"></i>
-    {{localize 'IRONSWORN.SaveYourTruths'}}
-  </button>
+  <div class="flexcol">
+    <button class="ironsworn__save__truths">
+      <i class="fas fa-feather"></i>
+      {{localize 'IRONSWORN.SaveYourTruths'}}
+    </button>
+  </div>
 </form>
