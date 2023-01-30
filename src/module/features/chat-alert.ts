@@ -1,5 +1,5 @@
 import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
-import { capitalize, get } from 'lodash'
+import { capitalize, compact, get } from 'lodash'
 import { IronswornActor } from '../actor/actor'
 import {
   CharacterDataPropertiesData,
@@ -373,11 +373,16 @@ const ITEM_TYPE_HANDLERS: { [key: string]: ItemTypeHandler } = {
   },
 }
 
-function sendToChat(actor: IronswornActor, msg: string) {
+function sendToChat(speaker: IronswornActor, msg: string) {
+  const whisperToCurrentUser =
+    speaker.getFlag('foundry-ironsworn', 'muteBroadcast') ?? (false as boolean)
+  const whisper = whisperToCurrentUser ? compact([game.user?.id]) : undefined
+
   const messageData: ChatMessageDataConstructorData = {
+    whisper,
     content: `<em>${msg}</em>`,
     type: CONST.CHAT_MESSAGE_TYPES.EMOTE,
-    speaker: { actor: actor.id },
+    speaker: { actor: speaker.id },
   }
 
   const cls = CONFIG.ChatMessage.documentClass
