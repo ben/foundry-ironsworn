@@ -305,18 +305,9 @@
     },
     "First Start": {
       "Welcome": "Welcome",
-      "Save": "Save",
       "Intro": "Please choose which system you'll be primarily using. This sets sheet and move/oracle defaults; more detailed options are available in the settings.",
-      "CharacterSheet": "Character Sheet",
-      "DefaultSheet": "Which character sheet would you like to use as the default?",
-      "MovesOracles": "Moves & Oracles",
-      "DefaultMovesOracles": "Which set of moves and oracles would you like to use?",
-      "MatchSheet": "Match sheet",
       "SettingTruths": "Setting Truths",
-      "SettingTruth": "Setting Truth",
-      "GenerateTruths": "Would you like to generate your setting's truths?",
-      "YesFor": "Yes, for",
-      "NeverAsk": "Never ask again"
+      "SettingTruth": "Setting Truth"
     },
     "WorldTruths": {
       "The Old World": {
