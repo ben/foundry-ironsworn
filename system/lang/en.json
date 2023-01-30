@@ -280,6 +280,16 @@
         "Name": "Configuration Dialog",
         "Hint": "Choose between Ironsworn and Starforged UI elements."
       },
+      "ISTruthsDialog": {
+        "Label": "Ironsworn Truths",
+        "Name": "Ironsworn Truths",
+        "Hint": "Open the dialog to generate your Ironsworn setting truths."
+      },
+      "SFTruthsDialog": {
+        "Label": "Starforged Truths",
+        "Name": "Starforged Truths",
+        "Hint": "Open the dialog to generate your Starforged setting truths."
+      },
       "SFBeta": {
         "Name": "Show Starforged beta content",
         "Hint": "Enables in-progress Starforged features."
