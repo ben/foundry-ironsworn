@@ -26,6 +26,7 @@ declare global {
       'foundry-ironsworn.log-changes': boolean
       'foundry-ironsworn.progress-mark-animation': boolean
       'foundry-ironsworn.data-version': number
+      'foundry-ironsworn.first-run-tips-shown': boolean
     }
   }
 }
@@ -131,6 +132,13 @@ export class IronswornSettings {
       config: false,
       type: Number,
       default: 1,
+    })
+
+    game.settings.register('foundry-ironsworn', 'first-run-tips-shown', {
+      scope: 'world',
+      config: false,
+      type: Boolean,
+      default: false,
     })
   }
   /**
