@@ -9,6 +9,14 @@
           style="margin-right: 1em"
         />
         <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
+        <IronBtn
+          v-if="multipleGms"
+          block
+          nogrow
+          :icon="whisperIcon"
+          @click="toggleWhisper"
+          :data-tooltip="whisperTooltip"
+        />
         <IronBtn block nogrow icon="fa:trash" @click="clearProgress" />
         <IronBtn block nogrow icon="fa:caret-right" @click="markProgress" />
       </div>
@@ -34,18 +42,30 @@
       :class="$style.dropTarget"
     >
       <IronBtn
+        v-if="multipleGms"
+        block
+        nogrow
+        :icon="whisperIcon"
+        @click="toggleWhisper"
+        :data-tooltip="whisperTooltip"
+        :text="$t('IRONSWORN.ChatAlert.ToggleMute')"
+      />
+      <IronBtn
         @click="addEmpty"
         block
+        nogrow
         icon="fa:file"
         :text="$t('IRONSWORN.ITEM.TypeProgressTrack')"
       />
       <BtnCompendium
         block
+        nogrow
         compendium="ironswornfoes"
         :text="`${$t('IRONSWORN.Foes')} (Ironsworn)`"
       />
       <BtnCompendium
         block
+        nogrow
         compendium="starforgedencounters"
         :text="`${$t('IRONSWORN.Foes')} (Starforged)`"
       />
@@ -58,8 +78,7 @@
   justify-items: space-around;
   text-align: center;
 
-  .clickable.block {
-    flex-grow: 0;
+  button {
     padding: 1rem;
   }
 }
@@ -113,17 +132,32 @@ function addEmpty() {
   )
 }
 
-function openCompendium(name) {
-  const pack = game.packs?.get(`foundry-ironsworn.${name}`)
-  pack?.render(true)
-}
-
 function setRank(rank) {
   foundryFoe()?.update({ system: { rank } })
 }
 
 function clearProgress() {
   foundryFoe()?.update({ 'system.current': 0 })
+}
+
+const gms = game.users?.contents?.filter((x) => x.hasRole('GAMEMASTER')) ?? []
+const multipleGms = gms.length > 1
+
+const whisperIcon = computed(() =>
+  (props.actor.flags['foundry-ironsworn'] as any)?.['muteBroadcast']
+    ? 'fa:volume-xmark'
+    : 'fa:volume'
+)
+
+const whisperTooltip = computed(() =>
+  (props.actor.flags['foundry-ironsworn'] as any)?.['muteBroadcast']
+    ? 'IRONSWORN.ChatAlert.Muted'
+    : 'IRONSWORN.ChatAlert.Unmuted'
+)
+
+function toggleWhisper() {
+  const current = $actor?.getFlag('foundry-ironsworn', 'muteBroadcast') ?? false
+  return $actor?.setFlag('foundry-ironsworn', 'muteBroadcast', !current)
 }
 
 function markProgress() {
