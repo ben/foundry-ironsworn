@@ -3,6 +3,7 @@
     "Ironsworn": "Ironsworn",
     "Starforged": "Starforged",
     "YourWorldTruths": "Your World: Truths",
+    "TruthsAreOptional": "Creating truths is an optional step. You can always come back to this later in the settings.",
     "TruthQuestStarter": "Quest Starter:",
     "QuestStarter": "Quest Starter",
     "SaveYourTruths": "Save Your Truths",
@@ -271,13 +272,23 @@
         "Hint": "If on, changes to character stats will be logged to the chat."
       },
       "PromptTruths": {
-        "Name": "Ironsworn/Starforged Dialog on Start",
-        "Hint": "Open the above dialog on startup."
+        "Name": "Configuration Dialog on Start",
+        "Hint": "Open the above dialog on the next reload."
       },
       "ConfigurationDialog": {
-        "Label": "Ironsworn/Starforged Configuration Dialog",
+        "Label": "Configuration Dialog",
         "Name": "Configuration Dialog",
         "Hint": "Choose between Ironsworn and Starforged UI elements."
+      },
+      "ISTruthsDialog": {
+        "Label": "Ironsworn Truths",
+        "Name": "Ironsworn Truths",
+        "Hint": "Open the dialog to generate your Ironsworn setting truths."
+      },
+      "SFTruthsDialog": {
+        "Label": "Starforged Truths",
+        "Name": "Starforged Truths",
+        "Hint": "Open the dialog to generate your Starforged setting truths."
       },
       "SFBeta": {
         "Name": "Show Starforged beta content",
@@ -294,18 +305,9 @@
     },
     "First Start": {
       "Welcome": "Welcome",
-      "Save": "Save",
-      "Intro": "Welcome to Ironsworn! There are just a few choices to make before starting.",
-      "CharacterSheet": "Character Sheet",
-      "DefaultSheet": "Which character sheet would you like to use as the default?",
-      "MovesOracles": "Moves & Oracles",
-      "DefaultMovesOracles": "Which set of moves and oracles would you like to use?",
-      "MatchSheet": "Match sheet",
+      "Intro": "Please choose which system you'll be primarily using. This sets sheet and move/oracle defaults; more detailed options are available in the settings.",
       "SettingTruths": "Setting Truths",
-      "SettingTruth": "Setting Truth",
-      "GenerateTruths": "Would you like to generate your setting's truths?",
-      "YesFor": "Yes, for",
-      "NeverAsk": "Never ask again"
+      "SettingTruth": "Setting Truth"
     },
     "WorldTruths": {
       "The Old World": {

@@ -3,8 +3,12 @@ import sfTruthsVue from '../vue/sf-truths.vue'
 import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
 import { VueAppMixin } from '../vue/vueapp.js'
 
-export class SFSettingTruthsDialogVue extends VueAppMixin(Application) {
-  static get defaultOptions(): ApplicationOptions {
+export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
+  constructor() {
+    super({})
+  }
+
+  static get defaultOptions(): FormApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth'),
       template: 'systems/foundry-ironsworn/templates/sf-truths-vue.hbs',
@@ -13,6 +17,13 @@ export class SFSettingTruthsDialogVue extends VueAppMixin(Application) {
       width: 700,
       height: 700,
     })
+  }
+
+  protected async _updateObject(
+    _event: Event,
+    _formData?: object | undefined
+  ): Promise<void> {
+    // Nothing to do
   }
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {

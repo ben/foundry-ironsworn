@@ -1,8 +1,17 @@
 import { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
+import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
+import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 
 function reload() {
   window.location.reload()
+}
+
+async function closeAllMoveSheets() {
+  for (const actor of game.actors?.contents ?? []) {
+    await actor.moveSheet?.close()
+    actor.moveSheet = undefined
+  }
 }
 
 declare global {
@@ -41,6 +50,24 @@ export class IronswornSettings {
       default: true,
     })
 
+    game.settings.registerMenu('foundry-ironsworn', 'is-truths-dialog', {
+      name: 'IRONSWORN.Settings.ISTruthsDialog.Name',
+      label: 'IRONSWORN.Settings.ISTruthsDialog.Label',
+      icon: 'fas fa-feather',
+      hint: 'IRONSWORN.Settings.ISTruthsDialog.Hint',
+      type: WorldTruthsDialog,
+      restricted: true,
+    })
+    game.settings.registerMenu('foundry-ironsworn', 'sf-truths-dialog', {
+      name: 'IRONSWORN.Settings.SFTruthsDialog.Name',
+      label: 'IRONSWORN.Settings.SFTruthsDialog.Label',
+      icon: 'fas fa-feather',
+      hint: 'IRONSWORN.Settings.SFTruthsDialog.Hint',
+      // @ts-ignore
+      type: SFSettingTruthsDialogVue,
+      restricted: true,
+    })
+
     game.settings.register('foundry-ironsworn', 'theme', {
       name: 'IRONSWORN.Settings.Theme.Name',
       hint: 'IRONSWORN.Settings.Theme.Hint',
@@ -67,7 +94,7 @@ export class IronswornSettings {
         starforged: 'IRONSWORN.Starforged',
       },
       default: 'sheet',
-      onChange: reload,
+      onChange: closeAllMoveSheets,
     })
 
     game.settings.register('foundry-ironsworn', 'shared-supply', {

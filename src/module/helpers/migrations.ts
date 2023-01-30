@@ -144,7 +144,7 @@ export async function runDataMigrations() {
   let currentVersion = IronswornSettings.get('data-version')
   if (currentVersion >= NEWEST_VERSION) return
 
-  const showWarnings = currentVersion >= 1 // Don't show these for a brand-new world
+  const showWarnings = currentVersion > 1 // Don't show these for a brand-new world
 
   try {
     if (showWarnings) {
