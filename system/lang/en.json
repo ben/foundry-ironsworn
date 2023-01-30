@@ -3,7 +3,7 @@
     "Ironsworn": "Ironsworn",
     "Starforged": "Starforged",
     "YourWorldTruths": "Your World: Truths",
-    "TruthsAreOptional": "Creating truths is an optional step. You can always come back to this later.",
+    "TruthsAreOptional": "Creating truths is an optional step. You can always come back to this later in the settings.",
     "TruthQuestStarter": "Quest Starter:",
     "QuestStarter": "Quest Starter",
     "SaveYourTruths": "Save Your Truths",
@@ -296,7 +296,7 @@
     "First Start": {
       "Welcome": "Welcome",
       "Save": "Save",
-      "Intro": "Welcome to Ironsworn! There are just a few choices to make before starting.",
+      "Intro": "Please choose which system you'll be primarily using. More detailed options are available in the settings.",
       "CharacterSheet": "Character Sheet",
       "DefaultSheet": "Which character sheet would you like to use as the default?",
       "MovesOracles": "Moves & Oracles",
