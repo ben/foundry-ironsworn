@@ -36,6 +36,7 @@ import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 import { IronswornJournalPage } from './module/journal/journal-entry-page'
 import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
 import { TruthJournalPageSheet } from './module/journal/truth-page'
+import { registerTours } from './module/features/tours'
 
 import 'virtual:svg-icons-register'
 
@@ -239,6 +240,7 @@ Hooks.once('ready', async () => {
   runStartupMacro()
 
   FirstStartDialog.maybeShow()
+  await registerTours()
 
   // Pre-load all the oracles
   await primeCommonPackCaches()
