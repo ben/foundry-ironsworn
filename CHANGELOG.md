@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix bugs in the Starforged truths, and include the quest starters ([#627](https://github.com/ben/foundry-ironsworn/pull/627))
+
 ## 1.20.15
 
 - Add a loading spinner for the asset browser ([#618](https://github.com/ben/foundry-ironsworn/pull/618))
