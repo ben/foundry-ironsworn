@@ -10,7 +10,7 @@
         />
         <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
         <IronBtn
-          v-if="multipleGms"
+          v-if="multipleUsers"
           block
           nogrow
           :icon="whisperIcon"
@@ -42,7 +42,7 @@
       :class="$style.dropTarget"
     >
       <IronBtn
-        v-if="multipleGms"
+        v-if="multipleUsers"
         block
         nogrow
         :icon="whisperIcon"
@@ -139,8 +139,7 @@ function clearProgress() {
   foundryFoe()?.update({ 'system.current': 0 })
 }
 
-const gms = game.users?.contents?.filter((x) => x.hasRole('GAMEMASTER')) ?? []
-const multipleGms = gms.length > 1
+const multipleUsers = (game.users?.contents?.length ?? 0) > 1
 
 const whisperIcon = computed(() =>
   (props.actor.flags['foundry-ironsworn'] as any)?.['muteBroadcast']
