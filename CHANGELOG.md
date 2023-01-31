@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix icon paths if you have your Foundry configured with a URL prefix path ([#626](https://github.com/ben/foundry-ironsworn/pull/626))
+
 ## 1.20.16
 
 - Fix bugs in the Starforged truths, and include the quest starters ([#627](https://github.com/ben/foundry-ironsworn/pull/627))
