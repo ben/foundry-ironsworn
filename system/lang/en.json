@@ -220,6 +220,9 @@
       "ExtraChallengeDice": "Extra challenge dice"
     },
     "ChatAlert": {
+      "Muted": "Currently whispering updates to the user who triggered them",
+      "Unmuted": "Currently broadcasting updates to all users",
+      "ToggleMute": "Toggle mute",
       "Renamed": "Renamed to {name}",
       "renamed": "renamed to {name}",
       "Added": "Added {name}",
