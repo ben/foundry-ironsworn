@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.15
+
 - Add a loading spinner for the asset browser ([#618](https://github.com/ben/foundry-ironsworn/pull/618))
 - Add a "mute" toggle to the NPC sheet, so GMs can surprise the other players in the game ([#625](https://github.com/ben/foundry-ironsworn/pull/625))
 - Fix some issues with the first-start-in-a-new-world experience ([#620](https://github.com/ben/foundry-ironsworn/pull/620))
