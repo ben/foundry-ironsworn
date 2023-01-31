@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.17
+
 - Add a "roll progress" icon to the NPC sheet ([#628](https://github.com/ben/foundry-ironsworn/pull/628))
 - NPC sheet "mute" button appears if there are multiple users of any kind (also [#628](https://github.com/ben/foundry-ironsworn/pull/628))
 - Fix icon paths if you have your Foundry configured with a URL prefix path ([#626](https://github.com/ben/foundry-ironsworn/pull/626))
