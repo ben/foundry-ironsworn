@@ -2,8 +2,12 @@ import { IOutcomeInfo, RollMethod } from 'dataforged'
 import { capitalize, compact, fromPairs, isUndefined, kebabCase } from 'lodash'
 import { IronswornRoll } from '.'
 import { IronswornActor } from '../actor/actor'
+import { CharacterDataPropertiesData } from '../actor/actortypes'
 import { getFoundryTableByDfId } from '../dataforged'
-import { SFMoveDataProperties } from '../item/itemtypes'
+import {
+  SFMoveDataProperties,
+  SFMoveDataPropertiesData,
+} from '../item/itemtypes'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
@@ -154,8 +158,8 @@ export class IronswornRollMessage {
   }
 
   async burnMomentum() {
-    if (this.actor?.data.type !== 'character') return
-    const { momentum } = this.actor.data.data
+    if (this.actor?.type !== 'character') return
+    const { momentum } = this.actor.system as CharacterDataPropertiesData
 
     const [c1, c2] = this.roll.finalChallengeDice ?? []
     if (c1 === undefined || c2 === undefined) return
@@ -252,10 +256,11 @@ export class IronswornRollMessage {
         this.roll.postRollOptions.replacedOutcome?.source,
     }
     const move = await this.roll.moveItem
-    if (move?.data.type !== 'sfmove') return ret
+    if (move?.type !== 'sfmove') return ret
 
     const key = DfRollOutcome[theOutcome]
-    let moveOutcome = move.data.data.Outcomes?.[key] as IOutcomeInfo
+    const moveSystem = move.system as SFMoveDataPropertiesData
+    let moveOutcome = moveSystem.Outcomes?.[key] as IOutcomeInfo
     if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
       moveOutcome = moveOutcome['With a Match']
     if (moveOutcome) {
@@ -282,7 +287,7 @@ export class IronswornRollMessage {
   }
 
   private momentumData() {
-    if (this.actor?.data.type !== 'character') return {}
+    if (this.actor?.type !== 'character') return {}
 
     // Can't burn momentum on progress rolls
     if (this.roll.preRollOptions.progress) return {}
@@ -293,7 +298,7 @@ export class IronswornRollMessage {
     const [c1, c2] = this.roll.finalChallengeDice ?? []
     if (c1 === undefined || c2 === undefined) return {}
 
-    const momentum = this.actor.data.data.momentum
+    const { momentum } = this.actor.system as CharacterDataPropertiesData
     const rawOutcome = this.roll.rawOutcome?.value
     const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
 
@@ -312,8 +317,8 @@ export class IronswornRollMessage {
     const move = await this.roll.moveItem
     if (move?.type !== 'sfmove') return {}
 
-    const data = move.data as SFMoveDataProperties
-    const dfIds = data.data.Oracles ?? []
+    const system = move.system as SFMoveDataPropertiesData
+    const dfIds = system.Oracles ?? []
     const nextOracles = compact(
       await Promise.all(dfIds.map(getFoundryTableByDfId))
     )
