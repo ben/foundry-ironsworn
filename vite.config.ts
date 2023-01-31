@@ -25,7 +25,7 @@ const config: UserConfig = {
     'process.env': process.env,
   },
   publicDir: 'system',
-  base: '',
+  base: '/systems/foundry-ironsworn/',
   server: {
     port: 8080,
     proxy: {
