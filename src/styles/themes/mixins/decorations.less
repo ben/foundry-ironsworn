@@ -39,7 +39,8 @@
     height: var(--ironsworn-asset-deco-collapsed-height);
     content: '';
     pointer-events: none;
-    mask-image: url('/assets/misc/hex-deco.svg');
+    // This seems wrong, but imports. See https://github.com/vitejs/vite/issues/7651
+    mask-image: url('/../../../system/assets/misc/hex-deco.svg');
     aspect-ratio: var(--ironsworn-asset-deco-aspect-ratio);
     mask-repeat: no-repeat;
   }
