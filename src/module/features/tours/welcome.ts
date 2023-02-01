@@ -5,7 +5,14 @@ export class WelcomeTour extends Tour {
       description: 'Overview of Ironsworn & Starforged system',
       canBeResumed: false,
       display: true,
-      steps: [],
+      steps: [
+        {
+          id: 'welcome',
+          selector: '',
+          title: 'Hey there',
+          content: 'hey wassup',
+        },
+      ],
     })
   }
 }
