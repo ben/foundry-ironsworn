@@ -19,14 +19,7 @@ export async function registerTours() {
   ChatMessage.create({
     whisper: gms,
     speaker: { alias: game.i18n.localize('IRONSWORN.Ironsworn') },
-    content: `
-      <h3>Welcome to Ironsworn!</h3>
-      <p>If this is your first time using the system, click this to for an interactive tour:</p>
-      <button id="ironsworn-tour">
-        <i class="fas fa-person-hiking"></i>
-        Launch Tour
-      </button>
-    `,
+    content: game.i18n.localize('IRONSWORN.Tours.ChatMessage'),
   })
 
   game.settings.set('foundry-ironsworn', 'first-run-tips-shown', true)

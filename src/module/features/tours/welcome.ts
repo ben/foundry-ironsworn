@@ -1,16 +1,16 @@
 export class WelcomeTour extends Tour {
   constructor() {
     super({
-      title: 'Welcome to Ironsworn',
-      description: 'Overview of Ironsworn & Starforged system',
+      title: 'IRONSWORN.Tours.Welcome.Title',
+      description: 'IRONSWORN.Tours.Welcome.Description',
       canBeResumed: false,
       display: true,
       steps: [
         {
           id: 'welcome',
           selector: '',
-          title: 'Hey there',
-          content: 'hey wassup',
+          title: 'IRONSWORN.Tours.Welcome.WelcomeTitle',
+          content: 'IRONSWORN.Tours.Welcome.WelcomeContent',
         },
       ],
     })

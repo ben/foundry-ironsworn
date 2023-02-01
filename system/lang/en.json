@@ -313,6 +313,15 @@
       "SettingTruths": "Setting Truths",
       "SettingTruth": "Setting Truth"
     },
+    "Tours": {
+      "ChatMessage": "<h3>Welcome to Ironsworn!</h3><p>If this is your first time using the system, click this to for an interactive tour:</p> <button id=\"ironsworn-tour\"> <i class=\"fas fa-person-hiking\"></i> Launch Tour </button>",
+      "Welcome": {
+        "Title": "Welcome to Ironsworn",
+        "Description": "Overview of Ironsworn & Starforged system",
+        "WelcomeTitle": "Welcome",
+        "WelcomeContent": "<p>This is the stuff right here.</p>"
+      }
+    },
     "WorldTruths": {
       "The Old World": {
         "name": "The Old World",
