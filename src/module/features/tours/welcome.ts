@@ -1,4 +1,6 @@
-export class WelcomeTour extends Tour {
+import { IronswornTour } from './ironsworn_tour'
+
+export class WelcomeTour extends IronswornTour {
   constructor() {
     super({
       title: 'IRONSWORN.Tours.Welcome.Title',
@@ -8,9 +10,15 @@ export class WelcomeTour extends Tour {
       steps: [
         {
           id: 'welcome',
-          selector: '',
           title: 'IRONSWORN.Tours.Welcome.WelcomeTitle',
           content: 'IRONSWORN.Tours.Welcome.WelcomeContent',
+        },
+        {
+          id: 'character-tab',
+          title: 'IRONSWORN.Tours.Welcome.ActorTabTitle',
+          content: 'IRONSWORN.Tours.Welcome.ActorTabContent',
+          sidebarTab: 'actors',
+          selector: '#actors .create-document',
         },
       ],
     })

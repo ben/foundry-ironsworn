@@ -314,12 +314,14 @@
       "SettingTruth": "Setting Truth"
     },
     "Tours": {
-      "ChatMessage": "<h3>Welcome to Ironsworn!</h3><p>If this is your first time using the system, click this to for an interactive tour:</p> <button id=\"ironsworn-tour\"> <i class=\"fas fa-person-hiking\"></i> Launch Tour </button>",
+      "ChatMessage": "<h3>Welcome to Ironsworn!</h3><p>If this is your first time using the system, click this to for an interactive tour:</p> <button id=\"ironsworn-tour-chat-button\"> <i class=\"fas fa-person-hiking\"></i> Launch Tour </button>",
       "Welcome": {
         "Title": "Welcome to Ironsworn",
         "Description": "Overview of Ironsworn & Starforged system",
         "WelcomeTitle": "Welcome",
-        "WelcomeContent": "<p>This is the stuff right here.</p>"
+        "WelcomeContent": "<p>Welcome to Ironsworn/Starforged! This tour will help you find where all the things are that will help you set up and play your game.</p><p>At this point you will have seen the game-selection dialog, which configures the default character sheet, moves, and oracles. Let's look at where the other system features can be found.</p>",
+        "ActorTabTitle": "Creating a Character",
+        "ActorTabContent": "<p>At some point, you'll want to create a character. To do that, navigate to the \"Actors\" tab and click this button.</p>"
       }
     },
     "WorldTruths": {
