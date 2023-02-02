@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix some string bugs in the sector and location sheets
+
 ## 1.20.17
 
 - Add a "roll progress" icon to the NPC sheet ([#628](https://github.com/ben/foundry-ironsworn/pull/628))

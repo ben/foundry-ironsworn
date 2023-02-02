@@ -1,17 +1,19 @@
 <template>
   <div class="flexcol">
-    <h4 class="nogrow">{{ $t('IRONSWORN.Region') }}</h4>
+    <h4 class="nogrow">
+      {{ $t('IRONSWORN.Region') }}
+    </h4>
     <label class="nogrow">
       <input type="radio" v-model="data.region" value="terminus" />
-      {{ $t('IRONSWORN.Terminus') }}
+      {{ $t('IRONSWORN.REGION.Terminus') }}
     </label>
     <label class="nogrow">
       <input type="radio" v-model="data.region" value="outlands" />
-      {{ $t('IRONSWORN.Outlands') }}
+      {{ $t('IRONSWORN.REGION.Outlands') }}
     </label>
     <label class="nogrow">
       <input type="radio" v-model="data.region" value="expanse" />
-      {{ $t('IRONSWORN.Expanse') }}
+      {{ $t('IRONSWORN.REGION.Expanse') }}
     </label>
   </div>
 </template>
