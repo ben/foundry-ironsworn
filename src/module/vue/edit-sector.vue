@@ -2,6 +2,7 @@
   <div class="flexcol">
     <h4 class="nogrow">
       {{ $t('IRONSWORN.Region') }}
+      <i class="fa fa-circle-question" data-tooltip="IRONSWORN.RegionTip"></i>
     </h4>
     <label class="nogrow">
       <input type="radio" v-model="data.region" value="terminus" />

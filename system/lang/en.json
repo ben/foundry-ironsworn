@@ -205,6 +205,7 @@
     "StarforgedTools": "Starforged Tools",
     "IronswornTools": "Ironsworn Tools",
     "Region": "Region",
+    "RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
     "REGION": {
       "Terminus": "Terminus",
       "Outlands": "Outlands",

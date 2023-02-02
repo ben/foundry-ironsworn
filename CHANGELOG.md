@@ -3,6 +3,7 @@
 ## Next Release
 
 - Fix some string bugs in the sector and location sheets
+- Add a tooltip to the sector sheet to explain what the setting is for
 
 ## 1.20.17
 
