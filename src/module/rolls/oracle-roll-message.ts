@@ -256,6 +256,16 @@ export class OracleRollMessage {
     const json = html?.find('.oracle-roll').data('oracleroll')
     if (!json) return undefined
 
+    // Older messages include tableId/tablePack; if that's the case we reconstruct a uuid
+    // Compendium.foundry-ironsworn.starforgedoracles.16fbeb54dfe52e19
+    const { tableId, tablePack } = json
+    if (tableId) {
+      delete json.tableId
+      delete json.tablePack
+      if (tablePack) json.tableUuid = `Compendium.${tablePack}.${tableId}`
+      else json.tableUuid = `RollTable.${tableId}`
+    }
+
     const orm = new OracleRollMessage(json)
     orm.roll = msg?.roll || undefined
     orm.chatMessageId = messageId
