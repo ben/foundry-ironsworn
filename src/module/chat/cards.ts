@@ -1,7 +1,6 @@
 import { compact, flatten } from 'lodash'
 import { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { IronswornItem } from '../item/item'
-import { cachedDocumentsForPack } from '../features/pack-cache'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { getFoundryTableByDfId } from '../dataforged'
@@ -43,10 +42,7 @@ export class IronswornChatCard {
         name: t.name || '',
         icon: '<i class="isicon-oracle"></i>',
         callback: async () => {
-          const msg = await OracleRollMessage.fromTableId(
-            t.id,
-            t.pack || undefined
-          )
+          const msg = await OracleRollMessage.fromTableUuid(t.uuid)
           msg.createOrUpdate()
         },
       }))
@@ -147,10 +143,7 @@ export class IronswornChatCard {
       (await isPack?.getDocument(tableid))) as RollTable | undefined
     if (!table?.id) return
 
-    const msg = await OracleRollMessage.fromTableId(
-      table.id,
-      table.pack || undefined
-    )
+    const msg = await OracleRollMessage.fromTableUuid(table.uuid)
     msg.createOrUpdate()
   }
 
