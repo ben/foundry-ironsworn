@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Under the hood: using Foundry v10 uuids more than id/pack pairs
+
 ## 1.20.18
 
 - Fix some string bugs in the sector and location sheets

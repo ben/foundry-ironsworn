@@ -29,10 +29,9 @@ function maybeShowDice(roll: Roll) {
  * initiated so it can be performed again.
  */
 export class OracleRollMessage {
-  // A valid object has either `dfOracleId`, `tableId`, or `tableRows`
+  // A valid object has either `dfOracleId`, `tableUuid`, or `tableRows`
   protected dfOracleId?: string
-  protected tableId?: string
-  protected tablePack?: string // valid if tableId is set
+  protected tableUuid?: string
   protected tableRows?: TableRow[]
 
   // Display properties
@@ -44,19 +43,20 @@ export class OracleRollMessage {
 
   /**
    *
-   * @param opts Exactly one of `dfOracleId`, `tableId`, or `tableRows` is required. If `tableId` is provided, `tablePack` may also be provided.
+   * @param opts Exactly one of `dfOracleId`, `tableUuid`, or `tableRows` is required.
    */
   constructor(opts: {
     dfOracleId?: string
-    tableId?: string
-    tablePack?: string
+    tableUuid?: string
     tableRows?: TableRow[]
     title?: string
     subtitle?: string
   }) {
-    if (compact([opts.dfOracleId, opts.tableId, opts.tableRows]).length !== 1) {
+    if (
+      compact([opts.dfOracleId, opts.tableUuid, opts.tableRows]).length !== 1
+    ) {
       throw new Error(
-        'Exactly one of `dfOracleId`, `tableId`, or `tableRows` is required.'
+        'Exactly one of `dfOracleId`, `tableUuid`, or `tableRows` is required.'
       )
     }
 
@@ -82,8 +82,8 @@ export class OracleRollMessage {
     })
   }
 
-  static fromTableId(tableId: string, tablePack?: string) {
-    return new OracleRollMessage({ tableId, tablePack })
+  static fromTableUuid(tableUuid: string) {
+    return new OracleRollMessage({ tableUuid })
   }
 
   static fromRows(tableRows: TableRow[], title: string, subtitle?: string) {
@@ -114,13 +114,11 @@ export class OracleRollMessage {
       return getFoundryTableByDfId(this.dfOracleId)
     }
 
-    if (this.tablePack) {
-      const pack = game.packs.get(this.tablePack)
-      const packTable = pack?.get(this.tableId ?? '') as RollTable
-      if (packTable) return packTable
+    if (this.tableUuid) {
+      return (await fromUuid(this.tableUuid)) as RollTable
     }
 
-    return game.tables?.get(this.tableId ?? '')
+    return undefined
   }
 
   /**
@@ -174,13 +172,16 @@ export class OracleRollMessage {
   }
 
   private async oraclePath(): Promise<string | undefined> {
-    if (!this.tableId) return undefined
+    if (!this.tableUuid) return undefined
+    const uuid = _parseUuid(this.tableUuid)
 
-    const starforgedRoot = await createStarforgedOracleTree()
-    const ironswornRooot = await createIronswornOracleTree()
+    const [starforgedRoot, ironswornRooot] = await Promise.all([
+      createStarforgedOracleTree(),
+      createIronswornOracleTree(),
+    ])
     const pathElements =
-      findPathToNodeByTableId(starforgedRoot, this.tableId) ??
-      findPathToNodeByTableId(ironswornRooot, this.tableId)
+      findPathToNodeByTableId(starforgedRoot, uuid.documentId!) ??
+      findPathToNodeByTableId(ironswornRooot, uuid.documentId!)
     pathElements.shift() // no display name for root node
     pathElements.pop() // last node is the table we rolled
     return pathElements.map((x) => x.displayName).join(' / ')
@@ -238,8 +239,7 @@ export class OracleRollMessage {
   toJSON(): any {
     return pick(this, [
       'dfOracleId',
-      'tableId',
-      'tablePack',
+      'tableUuid',
       'tableRows',
       'title',
       'subtitle',

@@ -603,10 +603,7 @@ async function drawAndReturnResult(
 ): Promise<string | undefined> {
   if (!table) return undefined
 
-  const orm = await OracleRollMessage.fromTableId(
-    table.id || '',
-    table.pack || undefined
-  )
+  const orm = await OracleRollMessage.fromTableUuid(table.uuid)
   orm.createOrUpdate()
   const result = await orm.getResult()
   return result?.text
