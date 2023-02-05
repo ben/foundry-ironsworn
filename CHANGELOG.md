@@ -2,7 +2,7 @@
 
 ## Next Release
 
-- Under the hood: using Foundry v10 uuids more than id/pack pairs ([#629](https://github.com/ben/foundry-ironsworn/pull/629))
+- Under the hood: using Foundry v10 uuids more than id/pack pairs ([#629](https://github.com/ben/foundry-ironsworn/pull/629) and [#630](https://github.com/ben/foundry-ironsworn/pull/630))
 
 ## 1.20.18
 
