@@ -36,10 +36,7 @@ export class IronswornSiteSheet extends VueActorSheet {
     if (!denizens[idx]) return false
 
     // Set the denizen description
-    const text = item.pack
-      ? `@Compendium[${item.pack}.${item.id}]{${item.name}}`
-      : item.link
-    denizens[idx].text = text
+    denizens[idx].text = item.link
     this.actor.update({ system: { denizens } }, { render: true })
     return true
   }
