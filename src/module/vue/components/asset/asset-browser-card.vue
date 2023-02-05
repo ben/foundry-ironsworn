@@ -144,8 +144,6 @@ function dragStart(ev) {
     'text/plain',
     JSON.stringify({
       type: 'AssetBrowserData',
-      pack: props.foundryItem().pack || undefined,
-      id: props.foundryItem().id,
       uuid: props.foundryItem().uuid,
     })
   )
