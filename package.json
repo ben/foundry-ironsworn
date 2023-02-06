@@ -24,7 +24,7 @@
     "@types/marked": "^4.0.3",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
-    "@typescript-eslint/parser": "^5.49.0",
+    "@typescript-eslint/parser": "^5.50.0",
     "@typescript/analyze-trace": "^0.9.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "autoprefixer": "^10.4.8",
