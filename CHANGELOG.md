@@ -2,6 +2,7 @@
 
 ## Next Release
 
+- Fix: the "Launch tour" button in the chat message works now 😳
 - Under the hood: using Foundry v10 uuids more than id/pack pairs ([#629](https://github.com/ben/foundry-ironsworn/pull/629) and [#630](https://github.com/ben/foundry-ironsworn/pull/630))
 
 ## 1.20.18

@@ -6,7 +6,7 @@ export async function registerTours() {
   game.tours.register('foundry-ironsworn', 'welcome', new WelcomeTour())
 
   // Add listener for the chat-message button
-  $(document).on('click', '#chat-log #ironsworn-tour', (el) => {
+  $(document).on('click', '#chat-log #ironsworn-tour-chat-button', (el) => {
     const tour = game.tours.get('foundry-ironsworn.welcome')
     tour?.start()
   })
