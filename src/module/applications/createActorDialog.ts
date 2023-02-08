@@ -151,11 +151,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       name,
       img,
       type,
-      token: {
-        displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
-        disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
-        actorLink: true,
-      },
+      token: { actorLink: true },
       folder: this.options.folder || undefined,
     }
     if (sheetClass) {

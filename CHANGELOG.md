@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Obey the Foundry default-token settings for disposition and name display
+
 ## 1.20.19
 
 - Fix: the "Launch tour" button in the chat message works now 😳
