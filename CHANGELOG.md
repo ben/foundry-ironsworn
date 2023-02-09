@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.20
+
 - Obey the Foundry default-token settings for disposition and name display
 - Only randomize location "kind" and name if they're not already set
 
