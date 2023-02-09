@@ -47,7 +47,9 @@
         <select
           v-model="actor.system.klass"
           @change="klassChanged"
-          :class="{ highlighted: data.firstLookHighlight }"
+          :class="{
+            highlighted: data.firstLookHighlight && firstLookWillRandomizeKlass,
+          }"
         >
           <option
             v-for="opt in klassOptions"
@@ -79,7 +81,7 @@
         :document="actor"
         class="sf-location-header nogrow"
         :nameClass="{
-          highlighted: data.firstLookHighlight && canRandomizeName,
+          highlighted: data.firstLookHighlight && firstLookWillRandomizeName,
         }"
         @change="nameChange"
       >
@@ -529,6 +531,11 @@ const oracles = computed((): OracleSpec[][] => {
       throw new Error('bad type yo')
   }
 })
+
+const firstLookWillRandomizeKlass = computed(() => {
+  return !props.actor.system.klass
+})
+
 const canRandomizeName = computed(() => {
   const { subtype, klass } = props.actor.system
 
@@ -541,6 +548,21 @@ const canRandomizeName = computed(() => {
   } else if (subtype === 'settlement') {
     return true
   }
+  return false
+})
+
+const firstLookWillRandomizeName = computed(() => {
+  const { subtype, klass } = props.actor.system
+
+  // No klass? We only randomize names for settlements and planets
+  if (!klass) return ['settlement', 'planet'].includes(subtype)
+
+  const i18nKey = `ACTOR.Subtype${capitalize(subtype)}`
+  const newThingName = game.i18n.format('DOCUMENT.New', {
+    type: game.i18n.localize(`IRONSWORN.${i18nKey}`),
+  })
+  if (props.actor.name === newThingName) return canRandomizeName.value
+
   return false
 })
 
@@ -660,8 +682,8 @@ async function randomizeKlass() {
 }
 
 async function rollFirstLook() {
-  await randomizeKlass()
-  await randomizeName()
+  if (firstLookWillRandomizeKlass.value) await randomizeKlass()
+  if (firstLookWillRandomizeName.value) await randomizeName()
   for (const oracle of flatten(oracles.value)) {
     if (oracle.fl) {
       await rollOracle(oracle)
