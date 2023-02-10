@@ -74,7 +74,7 @@ h2 {
 </style>
 
 <script setup lang="ts">
-import { provide, reactive } from 'vue'
+import { inject, reactive } from 'vue'
 import WithRolllisteners from './components/with-rolllisteners.vue'
 import AssetBrowserCard from './components/asset/asset-browser-card.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
@@ -84,11 +84,8 @@ import {
 } from '../features/customassets'
 import IronBtn from './components/buttons/iron-btn.vue'
 
-const props = defineProps<{ toolset: 'starforged' | 'ironsworn' }>()
-
-provide('toolset', props.toolset)
-
-const categories = await (props.toolset === 'ironsworn'
+const toolset = inject('toolset') as 'ironsworn' | 'starforged'
+const categories = await (toolset === 'ironsworn'
   ? createIronswornAssetTree()
   : createStarforgedAssetTree())
 

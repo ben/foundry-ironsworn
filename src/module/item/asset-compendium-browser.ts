@@ -1,5 +1,5 @@
 import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
-import AssetCompendiumBrowserVue from '../vue/asset-compendium-browser.vue'
+import AssetCompendiumBrowserWrapperVue from '../vue/asset-compendium-browser-wrapper.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 
 export class AssetCompendiumBrowser extends VueAppMixin(Application) {
@@ -16,14 +16,12 @@ export class AssetCompendiumBrowser extends VueAppMixin(Application) {
       width: 400,
       height: 600,
       resizable: true,
-      template:
-        'systems/foundry-ironsworn/templates/asset-compendium-browser.hbs',
     })
   }
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'asset-compendium-browser': AssetCompendiumBrowserVue },
+      rootComponent: AssetCompendiumBrowserWrapperVue,
       vueData: async () => ({ toolset: this.toolset }),
     }
   }
