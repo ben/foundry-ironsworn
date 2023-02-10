@@ -7,7 +7,6 @@ import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 export class StarforgedCharacterSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'systems/foundry-ironsworn/templates/actor/sf-character.hbs',
       width: 630,
       height: 820,
       left: 50,
@@ -16,7 +15,7 @@ export class StarforgedCharacterSheet extends VueActorSheet {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'sf-charactersheet': SfCharacterSheet },
+      rootComponent: SfCharacterSheet,
     }
   }
 
