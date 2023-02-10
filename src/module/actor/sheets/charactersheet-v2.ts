@@ -7,7 +7,6 @@ import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 export class IronswornCharacterSheetV2 extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'systems/foundry-ironsworn/templates/actor/character-v2.hbs',
       width: 700,
       height: 800,
       left: 50,
@@ -16,7 +15,7 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'character-sheet': characterSheetVue },
+      rootComponent: characterSheetVue,
     }
   }
 
