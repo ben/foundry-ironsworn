@@ -3,6 +3,7 @@
     <input
       :placeholder="$t('Name')"
       v-model="document.name"
+      @blur="save"
       name="name"
       type="text"
     />
