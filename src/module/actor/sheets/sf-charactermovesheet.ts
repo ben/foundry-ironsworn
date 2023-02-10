@@ -16,7 +16,7 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'sfcharacter-movesheet': CharacterMoveSheet },
+      rootComponent: CharacterMoveSheet,
       vueData: async () => ({
         actor: this.actor.toObject(),
         toolset: this.toolset,
@@ -38,8 +38,6 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template:
-        'systems/foundry-ironsworn/templates/actor/sf-charactermoves.hbs',
       resizable: true,
       width: 350,
       height: 820,
