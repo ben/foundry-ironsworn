@@ -19,6 +19,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
         {
           classes: ['ironsworn'],
           submitOnClose: false,
+          submitOnChange: false,
         }
       )
     }

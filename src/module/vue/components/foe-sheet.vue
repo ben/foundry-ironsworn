@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol">
-    <SheetHeaderBasic :document="actor" class="nogrow" />
+    <SheetHeaderBasic :document="data.actor" class="nogrow" />
     <ProgressItemDetail v-if="foe" :item="foe" />
 
     <DropTarget
@@ -65,12 +65,14 @@ import DropTarget from '../drop-target.vue'
 import ProgressItemDetail from './progress-item-detail.vue'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject> &
-    FoeDataProperties
+  data: {
+    actor: ReturnType<typeof IronswornActor.prototype.toObject> &
+      FoeDataProperties
+  }
 }>()
-provide(ActorKey, computed(() => props.actor) as any)
+provide(ActorKey, computed(() => props.data.actor) as any)
 const foe = computed(() => {
-  return props.actor.items.find((x) => x.type === 'progress')
+  return props.data.actor.items.find((x) => x.type === 'progress')
 })
 
 const $actor = inject($ActorKey)
@@ -84,13 +86,13 @@ function addEmpty() {
 
 const multipleUsers = (game.users?.contents?.length ?? 0) > 1
 const whisperIcon = computed(() =>
-  (props.actor.flags['foundry-ironsworn'] as any)?.['muteBroadcast']
+  (props.data.actor.flags['foundry-ironsworn'] as any)?.['muteBroadcast']
     ? 'fa:volume-xmark'
     : 'fa:volume'
 )
 
 const whisperTooltip = computed(() =>
-  (props.actor.flags['foundry-ironsworn'] as any)?.['muteBroadcast']
+  (props.data.actor.flags['foundry-ironsworn'] as any)?.['muteBroadcast']
     ? 'IRONSWORN.ChatAlert.Muted'
     : 'IRONSWORN.ChatAlert.Unmuted'
 )
