@@ -10,7 +10,6 @@ export class EditSectorDialog extends VueAppMixin(Application) {
   static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.SCENE.TypeSector'),
-      template: 'systems/foundry-ironsworn/templates/edit-sector.hbs',
       id: 'edit-sector-dialog',
       resizable: true,
       left: 115,
@@ -22,7 +21,7 @@ export class EditSectorDialog extends VueAppMixin(Application) {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'edit-sector': editSectorVue },
+      rootComponent: editSectorVue,
       vueData: async () => ({ sceneId: this.sceneId }),
     }
   }
