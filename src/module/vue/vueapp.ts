@@ -18,13 +18,14 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
         super.defaultOptions,
         {
           classes: ['ironsworn'],
+          submitOnClose: false,
         }
       )
     }
     abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
 
     setupVueApp(app: App): void {
-      return
+      // Implement in descendants if needed
     }
 
     render(force?: boolean, inputOptions?: Application.RenderOptions) {
@@ -35,6 +36,20 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
       )
       this.renderHelper.render(force, inputOptions)
       return this
+    }
+
+    protected async _renderInner(data: any): Promise<JQuery<HTMLElement>> {
+      return $('<div />').html(`
+        <form
+          class='ironsworn flexcol vueroot'
+          style='height: 100%'
+          autocomplete='off'
+        >
+          <root-component :data='data'>
+            Whoops, an error occurred.
+          </root-component>
+        </form>
+      `)
     }
 
     async close(options?: Application.CloseOptions | undefined) {
