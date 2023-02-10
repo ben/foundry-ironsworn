@@ -5,7 +5,6 @@ import { VueActorSheet } from '../../vue/vueactorsheet'
 export class IronswornSharedSheetV2 extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'systems/foundry-ironsworn/templates/actor/shared-v2.hbs',
       width: 350,
       height: 700,
     })
@@ -13,7 +12,7 @@ export class IronswornSharedSheetV2 extends VueActorSheet {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'shared-sheet': sharedSheetVue },
+      rootComponent: sharedSheetVue,
     }
   }
 }
