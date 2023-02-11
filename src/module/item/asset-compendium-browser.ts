@@ -16,14 +16,12 @@ export class AssetCompendiumBrowser extends VueAppMixin(Application) {
       width: 400,
       height: 600,
       resizable: true,
-      template:
-        'systems/foundry-ironsworn/templates/asset-compendium-browser.hbs',
     })
   }
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'asset-compendium-browser': AssetCompendiumBrowserVue },
+      rootComponent: AssetCompendiumBrowserVue,
       vueData: async () => ({ toolset: this.toolset }),
     }
   }

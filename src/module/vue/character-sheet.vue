@@ -1,6 +1,6 @@
 <template>
   <SheetBasic
-    :document="actor"
+    :document="data.actor"
     class="character-sheet-classic"
     bodyClass="flexrow"
   >
@@ -27,7 +27,7 @@
       </div>
       <TabSet
         :tabKeys="['character', 'notes']"
-        :id="`${actor._id}-character-sheet-classic`"
+        :id="`${data.actor._id}-character-sheet-classic`"
         :class="$style.tabSet"
         :v-slot:icon="{ size: 'sm' }"
       >
@@ -103,11 +103,11 @@ import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
 }>()
 
 provide(
   ActorKey,
-  computed(() => props.actor)
+  computed(() => props.data.actor)
 )
 </script>

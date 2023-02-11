@@ -3,6 +3,7 @@
 ## Next Release
 
 - Assets like **Bonded** with move links in their requirement fields now work properly when you click the links.
+- Under the hood: refactored Vue sheets and dialogs to use the same template
 
 ## 1.20.20
 

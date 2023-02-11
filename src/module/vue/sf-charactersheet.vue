@@ -30,7 +30,7 @@
         </div>
         <TabSet
           :tabKeys="['legacies', 'assets', 'progress', 'connections', 'notes']"
-          :id="`${actor._id}_sf-character-sheet`"
+          :id="`${data.actor._id}_sf-character-sheet`"
         >
           <TabList>
             <Tab tab-key="legacies" :text="$t('IRONSWORN.Legacies')" />
@@ -125,8 +125,10 @@ import TabPanel from './components/tabs/tab-panel.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 
 const props = defineProps<{
-  actor: any
+  data: {
+    actor: any
+  }
 }>()
 
-provide(ActorKey, computed(() => props.actor) as any)
+provide(ActorKey, computed(() => props.data.actor) as any)
 </script>

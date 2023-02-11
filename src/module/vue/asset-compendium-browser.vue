@@ -84,11 +84,11 @@ import {
 } from '../features/customassets'
 import IronBtn from './components/buttons/iron-btn.vue'
 
-const props = defineProps<{ toolset: 'starforged' | 'ironsworn' }>()
+const props = defineProps<{ data: { toolset: 'starforged' | 'ironsworn' } }>()
 
-provide('toolset', props.toolset)
+provide('toolset', props.data.toolset)
 
-const categories = await (props.toolset === 'ironsworn'
+const categories = await (props.data.toolset === 'ironsworn'
   ? createIronswornAssetTree()
   : createStarforgedAssetTree())
 

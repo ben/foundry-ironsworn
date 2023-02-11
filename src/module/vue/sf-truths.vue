@@ -2,7 +2,7 @@
   <div class="flexrow" style="position: relative">
     <nav class="flexcol">
       <IronBtn
-        v-for="(truth, i) in truths"
+        v-for="(truth, i) in data.truths"
         nogrow
         :text="truth.je().name ?? '???'"
         @click="scrollToCategory(i)"
@@ -28,7 +28,7 @@
         <p>{{ $t('IRONSWORN.TruthsAreOptional') }}</p>
       </aside>
       <TruthCategory
-        v-for="truth in truths"
+        v-for="truth in data.truths"
         ref="categoryComponents"
         :key="truth.df.$id"
         :df="truth.df"
@@ -73,10 +73,12 @@ import IronBtn from './components/buttons/iron-btn.vue'
 import TruthCategory from './components/truth/truth-category.vue'
 
 const props = defineProps<{
-  truths: {
-    df: ISettingTruth
-    je: () => JournalEntry
-  }[]
+  data: {
+    truths: {
+      df: ISettingTruth
+      je: () => JournalEntry
+    }[]
+  }
 }>()
 
 const categoryComponents = ref<(typeof TruthCategory)[]>([])

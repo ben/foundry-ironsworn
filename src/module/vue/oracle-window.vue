@@ -26,7 +26,6 @@
 </template>
 
 <script setup lang="ts">
-import { reactive } from 'vue'
 import { IronswornSettings } from '../helpers/settings'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
 import TabList from './components/tabs/tab-list.vue'

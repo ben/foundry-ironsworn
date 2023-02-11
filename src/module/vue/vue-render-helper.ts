@@ -11,6 +11,7 @@ import LoadingSpinner from './components/loading-spinner.vue'
 
 export interface VueSheetRenderHelperOptions {
   vueData: () => Promise<Record<string, any>>
+  rootComponent?: Component
   components: { [k: string]: Component }
   helperHook?: (helper: VueSheetRenderHelper) => any
 }
@@ -51,6 +52,7 @@ export class VueSheetRenderHelper {
 
         components: {
           'loading-spinner': LoadingSpinner,
+          'root-component': this.options.rootComponent!,
           ...this.options.components,
         },
 

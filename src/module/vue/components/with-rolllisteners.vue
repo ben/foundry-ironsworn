@@ -26,6 +26,7 @@ onMounted(() => {
   })
 
   $(el.value).on('click', '.content-link', click)
+  $(el.value).on('click', '.entity-link', click)
 })
 
 const $emit = defineEmits(['moveclick', 'oracleclick'])

@@ -5,7 +5,6 @@ import { VueActorSheet } from '../../vue/vueactorsheet'
 export class StarshipSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'systems/foundry-ironsworn/templates/actor/starship.hbs',
       width: 500,
       height: 500,
     })
@@ -13,7 +12,7 @@ export class StarshipSheet extends VueActorSheet {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'starship-sheet': starshipSheetVue },
+      rootComponent: starshipSheetVue,
     }
   }
 }

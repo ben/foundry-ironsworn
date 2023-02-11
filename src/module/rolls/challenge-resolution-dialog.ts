@@ -1,5 +1,5 @@
 import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
-import VueDialog from '../vue/challenge-resolution-dialog.vue'
+import ChallengeResolutionDialogVue from '../vue/challenge-resolution-dialog.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 
 export class ChallengeResolutionDialog extends VueAppMixin(Application) {
@@ -36,8 +36,6 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template:
-        'systems/foundry-ironsworn/templates/rolls/challenge-resolution-dialog.hbs',
       title: 'IRONSWORN.ResolveChallenge',
       width: 300,
       height: 280,
@@ -46,7 +44,7 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'challenge-resolution-dialog': VueDialog },
+      rootComponent: ChallengeResolutionDialogVue,
       vueData: async () => ({ messageId: this.messageId }),
     }
   }

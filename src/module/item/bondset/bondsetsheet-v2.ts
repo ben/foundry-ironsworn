@@ -9,13 +9,9 @@ export class BondsetSheetV2 extends VueItemSheet {
     })
   }
 
-  get template() {
-    return 'systems/foundry-ironsworn/templates/item/bondsetv2.hbs'
-  }
-
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'bondset-sheet': bondsetSheetVue },
+      rootComponent: bondsetSheetVue,
     }
   }
 }

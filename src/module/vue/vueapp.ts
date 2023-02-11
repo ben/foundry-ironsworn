@@ -18,13 +18,16 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
         super.defaultOptions,
         {
           classes: ['ironsworn'],
+          template: 'systems/foundry-ironsworn/templates/vue-app.hbs',
+          submitOnClose: false,
+          submitOnChange: false,
         }
       )
     }
     abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
 
     setupVueApp(app: App): void {
-      return
+      // Implement in descendants if needed
     }
 
     render(force?: boolean, inputOptions?: Application.RenderOptions) {

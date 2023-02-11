@@ -11,7 +11,6 @@ export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
   static get defaultOptions(): FormApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth'),
-      template: 'systems/foundry-ironsworn/templates/sf-truths-vue.hbs',
       id: 'setting-truths-dialog',
       resizable: true,
       width: 700,
@@ -28,7 +27,7 @@ export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'sf-truths': sfTruthsVue },
+      rootComponent: sfTruthsVue,
       vueData: async () => {
         const pack = game.packs.get('foundry-ironsworn.starforgedtruths')
         const documents = (await pack?.getDocuments()) as JournalEntry[]

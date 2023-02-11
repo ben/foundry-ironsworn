@@ -6,7 +6,6 @@ export class OracleWindow extends VueAppMixin(Application) {
   static get defaultOptions(): ApplicationOptions {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.ROLLTABLES.TypeOracle'),
-      template: 'systems/foundry-ironsworn/templates/oracle-window.hbs',
       id: 'oracles',
       resizable: true,
       width: 350,
@@ -16,7 +15,7 @@ export class OracleWindow extends VueAppMixin(Application) {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { Oracles: OracleWindowComponent },
+      rootComponent: OracleWindowComponent,
     }
   }
 }

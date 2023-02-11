@@ -6,7 +6,6 @@ import siteSheetVue from '../../vue/site-sheet.vue'
 export class IronswornSiteSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
       width: 750,
       height: 700,
     })
@@ -14,7 +13,7 @@ export class IronswornSiteSheet extends VueActorSheet {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'site-sheet': siteSheetVue },
+      rootComponent: siteSheetVue,
     }
   }
 
