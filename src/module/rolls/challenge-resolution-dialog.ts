@@ -36,8 +36,6 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template:
-        'systems/foundry-ironsworn/templates/rolls/challenge-resolution-dialog.hbs',
       title: 'IRONSWORN.ResolveChallenge',
       width: 300,
       height: 280,

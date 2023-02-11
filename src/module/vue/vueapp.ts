@@ -18,6 +18,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
         super.defaultOptions,
         {
           classes: ['ironsworn'],
+          template: 'systems/foundry-ironsworn/templates/vue-app.hbs',
           submitOnClose: false,
           submitOnChange: false,
         }
@@ -37,27 +38,6 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
       )
       this.renderHelper.render(force, inputOptions)
       return this
-    }
-
-    protected async _renderInner(data: any): Promise<JQuery<HTMLElement>> {
-      return $('<div />').html(`
-        <form
-          class='ironsworn flexcol vueroot'
-          style='height: 100%'
-          autocomplete='off'
-        >
-          <Suspense>
-            <root-component :data='data'>
-              Whoops, an error occurred.
-            </root-component>
-
-            <template #fallback>
-              <div class="flexrow">
-                <loading-spinner />
-              </div>
-            </template>
-        </form>
-      `)
     }
 
     async close(options?: Application.CloseOptions | undefined) {
