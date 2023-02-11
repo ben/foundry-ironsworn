@@ -46,9 +46,16 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
           style='height: 100%'
           autocomplete='off'
         >
-          <root-component :data='data'>
-            Whoops, an error occurred.
-          </root-component>
+          <Suspense>
+            <root-component :data='data'>
+              Whoops, an error occurred.
+            </root-component>
+
+            <template #fallback>
+              <div class="flexrow">
+                <loading-spinner />
+              </div>
+            </template>
         </form>
       `)
     }

@@ -80,8 +80,8 @@ import { IronswornRollMessage } from '../rolls'
 import { renderRollGraphic } from '../rolls/roll-graphic'
 import { $LocalEmitterKey } from './provisions'
 
-const props = defineProps<{ messageId: string }>()
-const irm = await IronswornRollMessage.fromMessage(props.messageId)
+const props = defineProps<{ data: { messageId: string } }>()
+const irm = await IronswornRollMessage.fromMessage(props.data.messageId)
 
 type AOrB = 'a' | '' | 'b'
 const state = reactive({
