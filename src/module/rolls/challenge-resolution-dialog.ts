@@ -1,5 +1,5 @@
 import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
-import VueDialog from '../vue/challenge-resolution-dialog.vue'
+import ChallengeResolutionDialogWrapper from '../vue/challenge-resolution-dialog-wrapper.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 
 export class ChallengeResolutionDialog extends VueAppMixin(Application) {
@@ -46,7 +46,7 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
 
   get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
     return {
-      components: { 'challenge-resolution-dialog': VueDialog },
+      rootComponent: ChallengeResolutionDialogWrapper,
       vueData: async () => ({ messageId: this.messageId }),
     }
   }
