@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Assets like **Bonded** with move links in their requirement fields now work properly when you click the links.
+
 ## 1.20.20
 
 - Obey the Foundry default-token settings for disposition and name display
