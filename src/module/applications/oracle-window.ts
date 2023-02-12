@@ -1,21 +1,15 @@
-import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
 import { VueAppMixin } from '../vue/vueapp'
 import OracleWindowComponent from '../vue/oracle-window.vue'
 
 export class OracleWindow extends VueAppMixin(Application) {
-  static get defaultOptions(): ApplicationOptions {
+  static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.ROLLTABLES.TypeOracle'),
       id: 'oracles',
       resizable: true,
       width: 350,
       height: 400,
-    })
-  }
-
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
       rootComponent: OracleWindowComponent,
-    }
+    }) as any
   }
 }

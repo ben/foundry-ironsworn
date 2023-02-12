@@ -1,5 +1,4 @@
 import foeSheetVue from '../../vue/components/foe-sheet.vue'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 
 export class FoeSheet extends VueActorSheet {
@@ -7,13 +6,8 @@ export class FoeSheet extends VueActorSheet {
     return mergeObject(super.defaultOptions, {
       width: 450,
       height: 500,
-    })
-  }
-
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
       rootComponent: foeSheetVue,
-    }
+    }) as any
   }
 
   // Override

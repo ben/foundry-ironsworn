@@ -23,13 +23,7 @@
               @click="clearProgress"
               icon="fa:trash"
             />
-            <IronBtn
-              v-if="editMode"
-              block
-              nogrow
-              @click="markProgress"
-              icon="fa:caret-right"
-            />
+            <IronBtn block nogrow @click="markProgress" icon="fa:caret-right" />
           </div>
           <!-- PROGRESS -->
           <ProgressTrack

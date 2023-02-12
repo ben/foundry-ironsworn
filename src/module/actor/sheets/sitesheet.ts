@@ -1,6 +1,5 @@
 import { SiteDataSourceData } from '../actortypes'
 import { VueActorSheet } from '../../vue/vueactorsheet'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import siteSheetVue from '../../vue/site-sheet.vue'
 
 export class IronswornSiteSheet extends VueActorSheet {
@@ -8,13 +7,8 @@ export class IronswornSiteSheet extends VueActorSheet {
     return mergeObject(super.defaultOptions, {
       width: 750,
       height: 700,
-    })
-  }
-
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
       rootComponent: siteSheetVue,
-    }
+    }) as any
   }
 
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {

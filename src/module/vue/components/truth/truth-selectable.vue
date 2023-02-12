@@ -94,7 +94,7 @@ const suboptions = ref<HTMLElement[]>([])
 async function selectAndRandomize() {
   topRadio.value?.click()
 
-  if (pageSystem.Subtable) {
+  if (pageSystem.Subtable && pageSystem.Subtable.length > 0) {
     const rows = pageSystem.Subtable.map(
       (x): TableRow => ({
         low: x.Floor || 0,

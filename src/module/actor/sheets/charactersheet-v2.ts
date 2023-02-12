@@ -1,6 +1,5 @@
 import { IronswornSettings } from '../../helpers/settings'
 import characterSheetVue from '../../vue/character-sheet.vue'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
@@ -10,18 +9,13 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
       width: 700,
       height: 800,
       left: 50,
-    })
-  }
-
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
       rootComponent: characterSheetVue,
-    }
+    }) as any
   }
 
-  render(...args) {
+  render(...args: any[]) {
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
-    return super.render(...args)
+    return super.render(...args) as any
   }
 
   _getHeaderButtons() {
