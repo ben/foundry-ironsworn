@@ -7,7 +7,7 @@ export class FoeSheet extends VueActorSheet {
       width: 450,
       height: 500,
       rootComponent: foeSheetVue,
-    })
+    }) as any
   }
 
   // Override

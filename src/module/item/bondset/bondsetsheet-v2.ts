@@ -6,6 +6,6 @@ export class BondsetSheetV2 extends VueItemSheet {
     return mergeObject(super.defaultOptions, {
       width: 800,
       rootComponent: bondsetSheetVue,
-    })
+    }) as any
   }
 }

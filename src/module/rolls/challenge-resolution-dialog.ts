@@ -40,7 +40,7 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
       width: 300,
       height: 280,
       rootComponent: ChallengeResolutionDialogVue,
-    })
+    }) as any
   }
 
   getData(

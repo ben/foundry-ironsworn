@@ -16,7 +16,7 @@ export class AssetCompendiumBrowser extends VueAppMixin(Application) {
       height: 600,
       resizable: true,
       rootComponent: AssetCompendiumBrowserVue,
-    })
+    }) as any
   }
 
   getData(

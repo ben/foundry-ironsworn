@@ -8,7 +8,7 @@ export class IronswornSiteSheet extends VueActorSheet {
       width: 750,
       height: 700,
       rootComponent: siteSheetVue,
-    })
+    }) as any
   }
 
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {

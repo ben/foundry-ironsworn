@@ -7,6 +7,6 @@ export class IronswornSharedSheetV2 extends VueActorSheet {
       width: 350,
       height: 700,
       rootComponent: sharedSheetVue,
-    })
+    }) as any
   }
 }

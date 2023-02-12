@@ -6,7 +6,7 @@ export class ProgressSheetV2 extends VueItemSheet {
     return mergeObject(super.defaultOptions, {
       height: 550,
       rootComponent: progressSheetVue,
-    })
+    }) as any
   }
 
   get hasEditMode(): boolean {

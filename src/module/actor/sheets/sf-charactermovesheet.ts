@@ -34,7 +34,7 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
       height: 820,
       left: 685,
       rootComponent: CharacterMoveSheet,
-    })
+    }) as any
   }
 
   get title() {

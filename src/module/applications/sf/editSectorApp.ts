@@ -16,7 +16,7 @@ export class EditSectorDialog extends VueAppMixin(Application) {
       width: 400,
       height: 200,
       rootComponent: editSectorVue,
-    })
+    }) as any
   }
 
   getData(

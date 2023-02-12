@@ -16,7 +16,7 @@ export class IronswornCompactCharacterSheet extends ActorSheet {
       height: 210,
       template: 'systems/foundry-ironsworn/templates/actor/compact.hbs',
       resizable: false,
-    })
+    }) as any
   }
 
   activateListeners(html: JQuery) {

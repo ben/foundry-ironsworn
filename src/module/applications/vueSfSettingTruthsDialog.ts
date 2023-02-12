@@ -15,7 +15,7 @@ export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
       width: 700,
       height: 700,
       rootComponent: sfTruthsVue,
-    })
+    }) as any
   }
 
   protected async _updateObject(

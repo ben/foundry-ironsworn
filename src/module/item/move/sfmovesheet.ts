@@ -6,6 +6,6 @@ export class SFMoveSheet extends VueItemSheet {
     return mergeObject(super.defaultOptions, {
       height: 650,
       rootComponent: sfmoveSheetVue,
-    })
+    }) as any
   }
 }

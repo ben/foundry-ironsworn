@@ -10,6 +10,6 @@ export class OracleWindow extends VueAppMixin(Application) {
       width: 350,
       height: 400,
       rootComponent: OracleWindowComponent,
-    })
+    }) as any
   }
 }

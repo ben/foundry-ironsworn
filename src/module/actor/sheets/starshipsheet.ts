@@ -7,6 +7,6 @@ export class StarshipSheet extends VueActorSheet {
       width: 500,
       height: 500,
       rootComponent: starshipSheetVue,
-    })
+    }) as any
   }
 }

@@ -10,7 +10,7 @@ export class StarforgedCharacterSheet extends VueActorSheet {
       height: 820,
       left: 50,
       rootComponent: SfCharacterSheet,
-    })
+    }) as any
   }
 
   render(...renderArgs: any[]) {
