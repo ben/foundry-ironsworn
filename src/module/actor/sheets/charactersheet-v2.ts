@@ -10,18 +10,13 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
       width: 700,
       height: 800,
       left: 50,
+      rootComponent: characterSheetVue,
     })
   }
 
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
-      rootComponent: characterSheetVue,
-    }
-  }
-
-  render(...args) {
+  render(...args: any[]) {
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
-    return super.render(...args)
+    return super.render(...args) as any
   }
 
   _getHeaderButtons() {
