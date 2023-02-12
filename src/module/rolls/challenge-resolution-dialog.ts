@@ -23,7 +23,8 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
     this.openDialogs[messageId] = new ChallengeResolutionDialog(messageId, {
       left: window.innerWidth - 620,
       top: Math.min(el[0].offsetTop - 50, window.innerHeight - 300),
-    }).render(true)
+    })
+    this.openDialogs[messageId].render(true)
 
     return this.openDialogs[messageId]
   }

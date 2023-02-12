@@ -7,7 +7,7 @@ export class SFSettingTruthsDialogVue extends VueAppMixin(FormApplication) {
     super({})
   }
 
-  static get defaultOptions(): FormApplicationOptions {
+  static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.JOURNALENTRYPAGES.TypeTruth'),
       id: 'setting-truths-dialog',

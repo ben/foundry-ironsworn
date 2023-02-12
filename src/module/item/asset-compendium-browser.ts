@@ -9,7 +9,7 @@ export class AssetCompendiumBrowser extends VueAppMixin(Application) {
     super(options)
   }
 
-  static get defaultOptions(): ApplicationOptions {
+  static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       title: game.i18n.localize('IRONSWORN.ITEMS.TypeAsset'),
       width: 400,
