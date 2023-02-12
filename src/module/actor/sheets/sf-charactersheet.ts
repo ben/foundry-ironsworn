@@ -1,6 +1,5 @@
 import { IronswornSettings } from '../../helpers/settings'
 import SfCharacterSheet from '../../vue/sf-charactersheet.vue'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
@@ -10,19 +9,14 @@ export class StarforgedCharacterSheet extends VueActorSheet {
       width: 630,
       height: 820,
       left: 50,
+      rootComponent: SfCharacterSheet,
     })
   }
 
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
-      rootComponent: SfCharacterSheet,
-    }
-  }
-
-  render(...args) {
-    super.render(...args)
+  render(...renderArgs: any[]) {
+    super.render(...renderArgs)
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
-    return this
+    return Promise.resolve(this) as any
   }
 
   _getHeaderButtons() {
