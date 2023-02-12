@@ -1,5 +1,4 @@
 import editSectorVue from '../../vue/edit-sector.vue'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueAppMixin } from '../../vue/vueapp.js'
 
 export class EditSectorDialog extends VueAppMixin(Application) {
