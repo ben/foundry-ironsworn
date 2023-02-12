@@ -1,25 +1,24 @@
 import { App } from 'vue'
 import { IronswornItem } from '../item/item'
 import { $ActorKey } from './provisions'
-import {
-  VueSheetRenderHelper,
-  VueSheetRenderHelperOptions,
-} from './vue-render-helper'
 import { VueAppMixin } from './vueapp.js'
 
 export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
-  renderHelper: VueSheetRenderHelper | undefined
-
-  static get defaultOptions(): ActorSheet.Options {
+  static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'actor'],
     })
   }
 
-  abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
-
   setupVueApp(app: App) {
     app.provide($ActorKey, this.actor)
+  }
+
+  getData(...args): MaybePromise<object> {
+    return {
+      ...super.getData(...args),
+      actor: this.actor.toObject(),
+    }
   }
 
   close(...args) {
@@ -27,22 +26,6 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
     return super.close(...args)
   }
 
-  render(
-    force?: boolean | undefined,
-    options?: Application.RenderOptions<ActorSheet.Options> | undefined
-  ): this {
-    this.renderHelper ||= new VueSheetRenderHelper(
-      this,
-      {
-        vueData: async () => ({ actor: this.actor.toObject() }),
-        ...this.renderHelperOptions,
-      },
-      this.setupVueApp.bind(this)
-    )
-
-    this.renderHelper.render(force, options)
-    return this
-  }
   _getHeaderButtons() {
     return [
       {
