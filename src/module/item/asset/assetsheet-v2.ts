@@ -6,12 +6,7 @@ export class AssetSheetV2 extends VueItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       width: 450,
-    })
-  }
-
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
       rootComponent: assetSheetVue,
-    }
+    })
   }
 }
