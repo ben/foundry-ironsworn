@@ -16,13 +16,16 @@ export class EditSectorDialog extends VueAppMixin(Application) {
       top: 60,
       width: 400,
       height: 200,
+      rootComponent: editSectorVue,
     })
   }
 
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+  getData(
+    options?: Partial<ApplicationOptions> | undefined
+  ): MaybePromise<object> {
     return {
-      rootComponent: editSectorVue,
-      vueData: async () => ({ sceneId: this.sceneId }),
+      ...super.getData(options),
+      sceneId: this.sceneId,
     }
   }
 }
