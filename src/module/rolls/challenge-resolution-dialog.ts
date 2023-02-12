@@ -1,4 +1,3 @@
-import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
 import ChallengeResolutionDialogVue from '../vue/challenge-resolution-dialog.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 
@@ -39,13 +38,16 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
       title: 'IRONSWORN.ResolveChallenge',
       width: 300,
       height: 280,
+      rootComponent: ChallengeResolutionDialogVue,
     })
   }
 
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+  getData(
+    options?: Partial<ApplicationOptions> | undefined
+  ): MaybePromise<object> {
     return {
-      rootComponent: ChallengeResolutionDialogVue,
-      vueData: async () => ({ messageId: this.messageId }),
+      ...super.getData(options),
+      messageId: this.messageId,
     }
   }
 }
