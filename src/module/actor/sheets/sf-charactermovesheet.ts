@@ -14,26 +14,18 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
     super(options)
   }
 
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+  getData(
+    options?: Partial<ApplicationOptions> | undefined
+  ): MaybePromise<object> {
     return {
-      rootComponent: CharacterMoveSheet,
-      vueData: async () => ({
-        actor: this.actor.toObject(),
-        toolset: this.toolset,
-      }),
+      ...super.getData(options),
+      toolset: this.toolset,
+      actor: this.actor.toObject(),
     }
   }
 
   setupVueApp(app: App<any>): void {
     app.provide($ActorKey, this.actor)
-  }
-
-  render(
-    force?: boolean | undefined,
-    inputOptions?: Application.RenderOptions<ApplicationOptions> | undefined
-  ): this {
-    super.render(force, inputOptions)
-    return this
   }
 
   static get defaultOptions() {
@@ -42,6 +34,7 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
       width: 350,
       height: 820,
       left: 685,
+      rootComponent: CharacterMoveSheet,
     })
   }
 
