@@ -1,5 +1,4 @@
 import sharedSheetVue from '../../vue/shared-sheet.vue'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 
 export class IronswornSharedSheetV2 extends VueActorSheet {
@@ -7,12 +6,7 @@ export class IronswornSharedSheetV2 extends VueActorSheet {
     return mergeObject(super.defaultOptions, {
       width: 350,
       height: 700,
-    })
-  }
-
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
       rootComponent: sharedSheetVue,
-    }
+    })
   }
 }
