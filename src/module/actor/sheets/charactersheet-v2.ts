@@ -1,6 +1,5 @@
 import { IronswornSettings } from '../../helpers/settings'
 import characterSheetVue from '../../vue/character-sheet.vue'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import { SFCharacterMoveSheet } from './sf-charactermovesheet'
 
