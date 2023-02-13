@@ -10,18 +10,14 @@
 
     <section class="boxgroup nogrow">
       <div class="flexrow boxrow">
-        <div class="box flexcol" :class="$style.box" style="height: 100%">
-          <h4>{{ $capitalize($t('IRONSWORN.Momentum')) }}</h4>
-          <h4>{{ data.actor.system.momentum }}</h4>
-          <div class="flexrow" style="flex: 1">
-            <IronBtn icon="fa:subtract" />
-            <IronBtn icon="fa:flame" />
-            <IronBtn icon="fa:plus" />
-          </div>
-        </div>
-        <div class="box flexcol">health</div>
-        <div class="box flexcol">spirit</div>
-        <div class="box flexcol">supply</div>
+        <CompactCharacterSheetButton
+          prop-key="momentum"
+          :burn-button="true"
+          :rollable="false"
+        />
+        <CompactCharacterSheetButton prop-key="health" />
+        <CompactCharacterSheetButton prop-key="spirit" />
+        <CompactCharacterSheetButton prop-key="supply" />
       </div>
     </section>
 
@@ -64,6 +60,7 @@
 import { provide, computed } from 'vue'
 import AttrBox from './components/attr-box.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
+import CompactCharacterSheetButton from './components/compact-character-sheet-button.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
 import { ActorKey } from './provisions'
 
