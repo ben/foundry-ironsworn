@@ -1,6 +1,8 @@
 <template>
   <div class="box flexcol block" style="height: 100%">
-    <h4>{{ $capitalize($t(`IRONSWORN.${$capitalize(propKey)}`)) }}</h4>
+    <h4 :class="$style.statTitle">
+      {{ $t(`IRONSWORN.${$capitalize(propKey)}`) }}
+    </h4>
     <h4>{{ value }}</h4>
     <div class="flexrow clickable" style="flex: 1; justify-content: center">
       <IronBtn icon="fa:subtract" @click="increment(-1)" />
@@ -14,7 +16,12 @@
   </div>
 </template>
 
-<style lang="less" module></style>
+<style lang="less" module>
+.statTitle {
+  margin: var(--ironsworn-spacer-sm) 0;
+  text-transform: uppercase;
+}
+</style>
 
 <script setup lang="ts">
 import { computed, inject } from 'vue'
