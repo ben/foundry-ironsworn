@@ -5,7 +5,6 @@
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
-import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { FoeSheet } from './module/actor/sheets/foesheet'
 import { StarforgedCharacterSheet } from './module/actor/sheets/sf-charactersheet'
 import { StarforgedLocationSheet } from './module/actor/sheets/sf-locationsheet'
@@ -80,12 +79,8 @@ Hooks.once('init', async () => {
     label: 'IRONSWORN.Starforged',
     types: ['character'],
   })
-  Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
-    label: 'IRONSWORN.ACTOR.SheetCompact',
-    types: ['character'],
-  })
   Actors.registerSheet('ironsworn', CompactPCSheet, {
-    label: 'Compact Sheet v2',
+    label: 'IRONSWORN.ACTOR.SheetCompact',
     types: ['character'],
   })
 
