@@ -15,6 +15,7 @@
         v-if="isMomentum"
         icon="fa:fire"
         @click="$actor?.burnMomentum()"
+        :data-tooltip="burnMomentumTooltip"
       />
       <IronBtn icon="fa:plus" @click="increment(1)" />
     </div>
@@ -63,7 +64,7 @@
 
 <script setup lang="ts">
 import { capitalize, computed, inject } from 'vue'
-import { CharacterDataProperties } from '../../actor/actortypes'
+import { CharacterDataPropertiesData } from '../../actor/actortypes'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
@@ -83,7 +84,7 @@ const tooltip = computed(() =>
 
 const actor = inject(ActorKey)
 const actorSystem = computed(
-  () => (actor?.value as any)?.system as CharacterDataProperties
+  () => (actor?.value as any)?.system as CharacterDataPropertiesData
 )
 const value = computed(() => actorSystem?.value?.[propKey])
 const $actor = inject($ActorKey)
@@ -91,6 +92,13 @@ const $actor = inject($ActorKey)
 function increment(delta: number) {
   $actor?.update({ system: { [propKey]: value.value + delta } })
 }
+
+const burnMomentumTooltip = computed(() =>
+  game.i18n.format('IRONSWORN.BurnMomentumAndResetTo', {
+    value: actorSystem.value?.momentum,
+    resetValue: actorSystem.value?.momentumReset,
+  })
+)
 
 function click() {
   if (isMomentum) return
