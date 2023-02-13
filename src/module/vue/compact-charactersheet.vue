@@ -17,7 +17,7 @@
       </div>
     </section>
 
-    <section class="flexrow nogrow" :class="$style.conditions">
+    <section class="flexrow" :class="$style.conditions">
       <ConditionCheckbox name="wounded" />
       <ConditionCheckbox name="unprepared" />
       <ConditionCheckbox name="shaken" />
@@ -45,6 +45,7 @@
 
 .conditions {
   justify-content: space-around;
+  align-items: center;
 
   label {
     flex-grow: 0;
