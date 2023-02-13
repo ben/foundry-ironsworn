@@ -1,11 +1,11 @@
 <template>
-  <div class="box flexcol" style="height: 100%">
+  <div class="box flexcol block" style="height: 100%">
     <h4>{{ $capitalize($t(`IRONSWORN.${$capitalize(propKey)}`)) }}</h4>
     <h4>{{ value }}</h4>
-    <div class="flexrow" style="flex: 1; justify-content: center">
+    <div class="flexrow clickable" style="flex: 1; justify-content: center">
       <IronBtn icon="fa:subtract" @click="increment(-1)" />
       <IronBtn
-        v-if="burnButton"
+        v-if="isMomentum"
         icon="fa:flame"
         @click="$actor?.burnMomentum()"
       />
@@ -22,15 +22,11 @@ import { CharacterDataProperties } from '../../actor/actortypes'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 
-const {
-  propKey,
-  rollable = true,
-  burnButton = false,
-} = defineProps<{
+const { propKey } = defineProps<{
   propKey: string
-  rollable?: boolean
-  burnButton?: boolean
 }>()
+
+const isMomentum = computed(() => propKey === 'momentum')
 
 const actor = inject(ActorKey)
 const actorSystem = computed(

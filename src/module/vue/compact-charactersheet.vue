@@ -10,11 +10,7 @@
 
     <section class="boxgroup nogrow">
       <div class="flexrow boxrow">
-        <CompactCharacterSheetButton
-          prop-key="momentum"
-          :burn-button="true"
-          :rollable="false"
-        />
+        <CompactCharacterSheetButton prop-key="momentum" />
         <CompactCharacterSheetButton prop-key="health" />
         <CompactCharacterSheetButton prop-key="spirit" />
         <CompactCharacterSheetButton prop-key="supply" />
