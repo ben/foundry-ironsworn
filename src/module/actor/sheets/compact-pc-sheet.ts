@@ -1,7 +1,7 @@
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import CompactCharacterSheet from '../../vue/compact-charactersheet.vue'
 
-export class CompactSheetV2 extends VueActorSheet {
+export class CompactPCSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       width: 560,

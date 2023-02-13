@@ -39,7 +39,7 @@ import { TruthJournalPageSheet } from './module/journal/truth-page'
 import { registerTours } from './module/features/tours'
 
 import 'virtual:svg-icons-register'
-import { CompactSheetV2 } from './module/actor/sheets/compact-v2'
+import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 declare global {
   interface LenientGlobalVariableTypes {
@@ -84,7 +84,7 @@ Hooks.once('init', async () => {
     label: 'IRONSWORN.ACTOR.SheetCompact',
     types: ['character'],
   })
-  Actors.registerSheet('ironsworn', CompactSheetV2, {
+  Actors.registerSheet('ironsworn', CompactPCSheet, {
     label: 'Compact Sheet v2',
     types: ['character'],
   })
