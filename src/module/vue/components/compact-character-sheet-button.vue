@@ -1,10 +1,14 @@
 <template>
   <div
-    class="box flexcol block isiconbg-d10-tilt"
-    :class="$style.wrapper"
+    class="box flexcol block"
+    :class="{
+      [$style.wrapper]: true,
+      [$style.interactive]: !isMomentum,
+      'isiconbg-d10-tilt': !isMomentum,
+    }"
   >
-    <h4 :class="$style.statTitle" :data-tooltip="tooltip">{{ i18nStat }}</h4>
-    <h4 :data-tooltip="tooltip">{{ value }}</h4>
+    <h4 :data-tooltip="tooltip" @click="click">{{ i18nStat }}</h4>
+    <h4 :data-tooltip="tooltip" @click="click">{{ value }}</h4>
     <div class="flexrow clickable" style="flex: 1; justify-content: center">
       <IronBtn icon="fa:subtract" @click="increment(-1)" />
       <IronBtn
@@ -20,8 +24,7 @@
 <style lang="less" module>
 @import (reference) '../../../styles/mixins.less';
 
-.wrapper {
-  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+.interactive {
   cursor: pointer;
   .interactiveMixin();
 
@@ -42,19 +45,26 @@
       opacity: 1;
     }
   }
-
-  .textStrokeMixin();
 }
 
-.statTitle {
-  margin: var(--ironsworn-spacer-sm) 0;
-  text-transform: uppercase;
+.wrapper {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+  .textStrokeMixin();
+
+  h4 {
+    font-weight: bold;
+
+    margin: 0;
+    padding: var(--ironsworn-spacer-sm) 0;
+    text-transform: uppercase;
+  }
 }
 </style>
 
 <script setup lang="ts">
 import { capitalize, computed, inject } from 'vue'
 import { CharacterDataProperties } from '../../actor/actortypes'
+import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 
@@ -80,5 +90,10 @@ const $actor = inject($ActorKey)
 
 function increment(delta: number) {
   $actor?.update({ system: { [propKey]: value.value + delta } })
+}
+
+function click() {
+  if (isMomentum) return
+  IronswornPrerollDialog.showForStat(i18nStat, $actor?.system[propKey], $actor)
 }
 </script>
