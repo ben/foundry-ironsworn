@@ -13,7 +13,7 @@
       <IronBtn icon="fa:subtract" @click="increment(-1)" />
       <IronBtn
         v-if="isMomentum"
-        icon="fa:flame"
+        icon="fa:fire"
         @click="$actor?.burnMomentum()"
       />
       <IronBtn icon="fa:plus" @click="increment(1)" />
