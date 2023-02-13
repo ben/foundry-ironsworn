@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.21
+
 - Assets like **Bonded** with move links in their requirement fields now work properly when you click the links.
 - Update the compact PC sheet, fixing visual glitches, and converting it to Vue.
 - Under the hood: refactored the Vue layer to have a more sensible architecture.
