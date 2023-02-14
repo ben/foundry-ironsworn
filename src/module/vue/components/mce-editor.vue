@@ -45,7 +45,7 @@ const data = reactive({ editing: props.editing ?? false })
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
 }
 function oracleClick(dfId: string) {
   CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfId)

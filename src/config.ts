@@ -16,7 +16,7 @@ import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { OracleWindow } from './module/applications/oracle-window'
 
 export type EmitterEvents = {
-  highlightMove: string // Foundry ID
+  highlightMove: string // Foundry UUID
   highlightOracle: string // DF ID
   globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
   dragStart: string // type of item

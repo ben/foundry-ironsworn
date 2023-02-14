@@ -172,14 +172,15 @@ function collapseMoveCategories() {
   }
 }
 
-CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveId) => {
+CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
   clearSearch()
   await nextTick()
+  const { documentId } = _parseUuid(targetMoveUuid)
   const categoryWithMove = allCategories.value.find((moveCategory) =>
-    moveCategory.moveItems.has(targetMoveId)
+    moveCategory.moveItems.has(documentId ?? '')
   )
   if (categoryWithMove) {
-    categoryWithMove.expandAndHighlightMove(targetMoveId)
+    categoryWithMove.expandAndHighlightMove(targetMoveUuid)
   }
 })
 </script>

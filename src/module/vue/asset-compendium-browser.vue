@@ -95,6 +95,6 @@ const categories = await (props.data.toolset === 'ironsworn'
 const data = reactive({ categories })
 
 function moveClick(item) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
 </script>

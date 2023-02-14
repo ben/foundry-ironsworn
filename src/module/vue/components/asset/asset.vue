@@ -192,7 +192,7 @@ function exclusiveOptionClick(selectedIdx) {
   foundryItem?.update({ system: { exclusiveOptions: options } })
 }
 function moveclick(item) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(

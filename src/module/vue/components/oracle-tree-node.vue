@@ -134,7 +134,7 @@ function toggleManually() {
 
 // Click on a move link: broadcast event
 function moveclick(item: IronswornItem) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id ?? '')
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
 
 function oracleclick(dfid) {
