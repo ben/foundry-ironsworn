@@ -2,11 +2,13 @@
 
 ## Next Release
 
+- Fix some bugs around move-link navigation throughout the UI ([#647](https://github.com/ben/foundry-ironsworn/pull/647))
+
 ## 1.20.21
 
 - Assets like **Bonded** with move links in their requirement fields now work properly when you click the links.
-- Update the compact PC sheet, fixing visual glitches, and converting it to Vue.
-- Under the hood: refactored the Vue layer to have a more sensible architecture.
+- Update the compact PC sheet, fixing visual glitches, and converting it to Vue ([#640](https://github.com/ben/foundry-ironsworn/pull/640)).
+- Under the hood: refactored the Vue layer to have a more sensible architecture ([#638](https://github.com/ben/foundry-ironsworn/pull/638) and [#639](https://github.com/ben/foundry-ironsworn/pull/639)).
 
 ## 1.20.20
 
