@@ -290,7 +290,7 @@ Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
 }
 
 defineExpose({

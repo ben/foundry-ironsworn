@@ -87,21 +87,15 @@ export class IronswornChatCard {
 
   async _moveNavigate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    const { pack, id } = ev.target.dataset
+    const { uuid } = ev.currentTarget.dataset
 
-    let item: IronswornItem | undefined
-    if (pack) {
-      const fPack = game.packs.get(pack)
-      item = (await fPack?.getDocument(id)) as IronswornItem
-    } else {
-      item = await game.items?.get(id)
-    }
+    const item = (await fromUuid(uuid)) as IronswornItem
     if (item?.type !== 'sfmove') {
       console.log('falling through')
       return (TextEditor as any)._onClickContentLink(ev)
     }
 
-    CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id ?? '')
+    CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
   }
 
   async _oracleNavigate(ev: JQuery.ClickEvent) {

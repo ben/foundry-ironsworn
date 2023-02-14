@@ -136,7 +136,7 @@ const state = reactive({
 const bodyId = `asset-body-${props.foundryItem().id}`
 
 function moveClick(item) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
 
 function dragStart(ev) {

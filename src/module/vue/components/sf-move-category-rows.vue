@@ -171,12 +171,13 @@ function collapseMoves() {
   }
 }
 
-async function expandAndHighlightMove(targetMoveId: string) {
+async function expandAndHighlightMove(targetMoveUuid: string) {
   if ($collapsible.value?.isExpanded === false) {
     $collapsible.value.expand()
     await nextTick()
   }
-  const move = $children.value.find((child) => child.moveId === targetMoveId)
+  const { documentId } = _parseUuid(targetMoveUuid)
+  const move = $children.value.find((child) => child.moveId === documentId)
   highlightMove(move?.$collapsible?.$element as HTMLElement)
   if (move?.$collapsible?.isExpanded === false) {
     await move?.$collapsible?.expand()
