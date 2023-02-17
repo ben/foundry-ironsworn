@@ -21,19 +21,24 @@ export class StarforgedCharacterSheet extends VueActorSheet {
   }
 
   _getHeaderButtons() {
+    const [editButton, sheetButton, tokenButton, ...otherButtons] =
+      super._getHeaderButtons()
     return [
-      {
-        class: 'ironsworn-help',
-        icon: 'fas fa-question',
-        onclick: (e) => new SFCharacterTour(this.actor).start(),
-      },
       {
         class: 'ironsworn-open-move-sheet',
         label: game.i18n.localize('IRONSWORN.ITEMS.TypeMove'),
         icon: 'fas fa-directions',
         onclick: (e) => this._openMoveSheet(e),
       },
-      ...super._getHeaderButtons(),
+      editButton,
+      sheetButton,
+      tokenButton,
+      {
+        class: 'ironsworn-help',
+        icon: 'fa fa-circle-question',
+        onclick: (e) => new SFCharacterTour(this.actor).start(),
+      },
+      ...otherButtons,
     ]
   }
   _openMoveSheet(_e?: JQuery.ClickEvent) {
