@@ -1,5 +1,5 @@
 import { IronswornSettings } from '../../helpers/settings'
-import { WelcomeTour } from './welcome_tour'
+import { WelcomeTour } from './welcome-tour'
 
 export async function registerTours() {
   // Register our tours
