@@ -68,13 +68,6 @@ export class SFCharacterTour extends IronswornTour {
           selector: `${sheetSel} [data-tourid="tabs"]`,
         },
         {
-          // TODO: asset browser
-          id: 'asset-browser',
-          title: 'IRONSWORN.Tours.SFCharacter.AssetBrowserTitle',
-          content: 'IRONSWORN.Tours.SFCharacter.AssetBrowserContent',
-          selector: `???`,
-        },
-        {
           id: 'progress',
           title: 'IRONSWORN.Tours.SFCharacter.ProgressTabTitle',
           content: 'IRONSWORN.Tours.SFCharacter.ProgressTabContent',
