@@ -12,7 +12,8 @@
 
 <script lang="ts" setup>
 import { forEach } from 'lodash'
-import { onMounted, provide, reactive } from 'vue'
+import { inject, onMounted, provide, reactive } from 'vue'
+import { $LocalEmitterKey } from '../../provisions'
 import {
   FocusActivePanelKey,
   getTabId,
@@ -78,6 +79,9 @@ function setActiveTab(tabKey: TabKey) {
     tabState.focusedTab = tabKey
   }
 }
+
+const $localEmitter = inject($LocalEmitterKey)
+$localEmitter?.on('activateTab', setActiveTab)
 
 provide(TabStateKey, tabState)
 provide(SetActiveTabKey, setActiveTab)

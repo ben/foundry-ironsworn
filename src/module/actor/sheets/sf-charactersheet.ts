@@ -14,6 +14,10 @@ export class StarforgedCharacterSheet extends VueActorSheet {
     }) as any
   }
 
+  activateTab(tabKey: string) {
+    this.localEmitter.emit('activateTab', tabKey)
+  }
+
   render(...renderArgs: any[]) {
     super.render(...renderArgs)
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()

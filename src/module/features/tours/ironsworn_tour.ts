@@ -4,7 +4,7 @@ declare global {
     sidebarTab?: string
     layer?: string
     tool?: string
-    hook?: () => Promise<unknown>
+    hook?: () => Promise<unknown> | unknown
   }
 }
 
