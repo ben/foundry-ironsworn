@@ -36,6 +36,7 @@ export class StarforgedCharacterSheet extends VueActorSheet {
       {
         class: 'ironsworn-help',
         icon: 'fa fa-circle-question',
+        label: '',
         onclick: (e) => new SFCharacterTour(this.actor).start(),
       },
       ...otherButtons,
