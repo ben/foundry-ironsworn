@@ -1,5 +1,5 @@
 <template>
-  <article class="flexcol sf-character-sheet">
+  <article class="flexcol sf-character-sheet" data-tourid="sheet">
     <!-- TODO: rm inline styles added to maintain consistent styling (required largely because of other inline styles) -->
     <!-- Header row -->
     <sf-characterheader />
