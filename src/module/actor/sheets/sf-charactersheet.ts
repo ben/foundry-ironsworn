@@ -1,3 +1,4 @@
+import { SFCharacterTour } from '../../features/tours/sf-character-tour'
 import { IronswornSettings } from '../../helpers/settings'
 import SfCharacterSheet from '../../vue/sf-charactersheet.vue'
 import { VueActorSheet } from '../../vue/vueactorsheet'
@@ -21,6 +22,11 @@ export class StarforgedCharacterSheet extends VueActorSheet {
 
   _getHeaderButtons() {
     return [
+      {
+        class: 'ironsworn-help',
+        icon: 'fas fa-question',
+        onclick: (e) => new SFCharacterTour(this.actor).start(),
+      },
       {
         class: 'ironsworn-open-move-sheet',
         label: game.i18n.localize('IRONSWORN.ITEMS.TypeMove'),
