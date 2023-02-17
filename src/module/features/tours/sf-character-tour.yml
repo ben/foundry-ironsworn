@@ -1,0 +1,21 @@
+rootKey: IRONSWORN.Tours.SFCharacter
+languages:
+  - lang: en
+    entries:
+      - key: ''
+        title: Starforged Character Sheet
+        plainDescription: The PC sheet for a Starforged character
+      - key: Sheet
+        title: Character Sheet
+        mdDescription: This is the player character sheet. It can help you manage your character's attributes, resources, assets, and vows.
+      - key: EditButton
+        title: Edit Button
+        mdDescription: The "edit" button in the title bar is used to switch between interaction and edit modes for this character.
+      - key: Stats
+        title: Character Stats
+        mdDescription: |
+          These are your character's basic attributes, which tell you something about their personality, but also tell you that when they're trying certain kinds of actions, the story will tend to go better for them.
+
+          To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.
+
+          **EDIT MODE** allows you to adjust these numbers.

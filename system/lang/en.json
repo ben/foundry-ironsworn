@@ -332,14 +332,14 @@
         "ToursContent": "<p>That's it for now! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the <code>#foundry-vtt</code> channel in the <a href=\"https://discord.gg/8bRuZwK\">Ironsworn Discord</a>.</p><p>Enjoy!</p>"
       },
       "SFCharacter": {
-        "Title": "Starforged Character",
+        "Title": "Starforged Character Sheet",
         "Description": "The PC sheet for a Starforged character",
         "SheetTitle": "Character Sheet",
-        "SheetContent": "<p>This is the player character sheet. It can help you manage your character’s attributes, resources, assets, and vows.</p>",
-        "EditButtonTitle": "",
-        "EditButtonContent": "",
-        "StatsTitle": "",
-        "StatsContent": "",
+        "SheetContent": "<p>This is the player character sheet. It can help you manage your character&#39;s attributes, resources, assets, and vows.</p>",
+        "EditButtonTitle": "Edit Button",
+        "EditButtonContent": "<p>The &quot;edit&quot; button in the title bar is used to switch between interaction and edit modes for this character.</p>",
+        "StatsTitle": "Character Stats",
+        "StatsContent": "<p>These are your character&#39;s basic attributes, which tell you something about their personality, but also tell you that when they&#39;re trying certain kinds of actions, the story will tend to go better for them.</p><p>To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.</p><p><strong>EDIT MODE</strong> allows you to adjust these numbers.</p>",
         "ResourcesTitle": "",
         "ResourcesContent": "",
         "MomentumTitle": "",
@@ -359,7 +359,8 @@
         "NotesTabTitle": "",
         "NotesTabContent": "",
         "EndTitle": "",
-        "EndContent": ""
+        "EndContent": "",
+        "Content": "The PC sheet for a Starforged character"
       }
     },
     "WorldTruths": {
