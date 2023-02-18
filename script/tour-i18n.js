@@ -28,12 +28,10 @@ async function doit() {
 
       // Update the entries
       for (const entry of entries) {
-        const description = entry.mdDescription
-          ? marked
-              .parse(entry.mdDescription)
-              .replace(/<\/p>\n<p>/g, '</p><p>')
-              .trim()
-          : entry.plainDescription ?? ''
+        const description = marked
+          .parse(entry.content)
+          .replace(/<\/p>\n<p>/g, '</p><p>') // remove extra newlines
+          .trim()
         _.set(i18njson, `${rootKey}.${entry.key}Title`, entry.title)
         _.set(i18njson, `${rootKey}.${entry.key}Content`, description)
       }
