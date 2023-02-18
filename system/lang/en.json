@@ -319,17 +319,17 @@
         "Title": "Welcome to Ironsworn",
         "Description": "Overview of Ironsworn & Starforged system",
         "WelcomeTitle": "Welcome",
-        "WelcomeContent": "<p>Welcome to Ironsworn & Starforged! This tour will help you find where all the things are that will help you set up and play your game.</p><p>At this point you will have seen the game-selection dialog, which configures the default character sheet, moves, and oracles. Let's look at where the other system features can be found.</p>",
+        "WelcomeContent": "<p>Welcome to Ironsworn &amp; Starforged! This tour will help you find where all the things are that will help you set up and play your game.</p><p>At this point you will have seen the game-selection dialog, which configures the default character sheet, moves, and oracles. Let&#39;s look at where the other system features can be found.</p>",
         "ActorTabTitle": "Creating a Character",
-        "ActorTabContent": "<p>At some point, you'll want to create a character. To do that, navigate to the \"Actors\" tab and click this button.</p>",
+        "ActorTabContent": "<p>At some point, you&#39;ll want to create a character. To do that, navigate to the &quot;<i class=\"fas fa-user\"></i> Actors&quot; tab and click this button.</p>",
         "CharacterCreateTitle": "Creating a Character",
         "CharacterCreateContent": "<p>This button will create a primary character, which is all you need to get started. As your game progresses, you may need the other types here to organize things.</p>",
         "CompendiumTitle": "Maps",
-        "CompendiumContent": "<p>You'll probably want a map of the Ironlands or a sector of the Forge. You can create your own scene for this, or you can use one of ours. Open one of these compendiums and drag a map to your scenes area (the tab that looks like a folded map).</p>",
+        "CompendiumContent": "<p>You&#39;ll probably want a map of the Ironlands or a sector of the Forge. You can create your own scene for this, or you can use one of ours. Open one of these compendiums and drag a map to your &quot;<i class=\"fas fa-map\"></i> Scenes&quot; area.</p>",
         "OracleToolTitle": "Oracles",
         "OracleToolContent": "<p>No game of Ironsworn or Starforged would be complete without oracles. This button will pop up a window with all the oracles in your chosen game. The oracles are also available from the character sheet.</p>",
         "ToursTitle": "Next Steps",
-        "ToursContent": "<p>That's it for now! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the <code>#foundry-vtt</code> channel in the <a href=\"https://discord.gg/8bRuZwK\">Ironsworn Discord</a>.</p><p>Enjoy!</p>"
+        "ToursContent": "<p>That&#39;s it for now! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the <code>#foundry-vtt</code> channel in the <a href=\"https://discord.gg/8bRuZwK\">Ironsworn Discord</a>.</p><p>Enjoy!</p>"
       },
       "SFCharacter": {
         "Title": "Starforged Character Sheet",
