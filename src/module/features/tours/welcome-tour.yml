@@ -1,0 +1,37 @@
+rootKey: IRONSWORN.Tours.Welcome
+languages:
+  - lang: en
+    entries:
+      - key: Welcome
+        title: Welcome
+        content: |
+          Welcome to Ironsworn & Starforged! This tour will help you find where all the things are that will help you set up and play your game.
+
+          At this point you will have seen the game-selection dialog, which configures the default character sheet, moves, and oracles. Let's look at where the other system features can be found.
+
+      - key: ActorTab
+        title: Creating a Character
+        content: |
+          At some point, you'll want to create a character. To do that, navigate to the "<i class="fas fa-user"></i> Actors" tab and click this button.
+
+      - key: CharacterCreate
+        title: Creating a Character
+        content: |
+          This button will create a primary character, which is all you need to get started. As your game progresses, you may need the other types here to organize things.
+
+      - key: Compendium
+        title: Maps
+        content: |
+          You'll probably want a map of the Ironlands or a sector of the Forge. You can create your own scene for this, or you can use one of ours. Open one of these compendiums and drag a map to your "<i class="fas fa-map"></i> Scenes" area.
+
+      - key: OracleTool
+        title: Oracles
+        content: |
+          No game of Ironsworn or Starforged would be complete without oracles. This button will pop up a window with all the oracles in your chosen game. The oracles are also available from the character sheet.
+
+      - key: Tours
+        title: Next Steps
+        content: |
+          That's it for now! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the `#foundry-vtt` channel in the [Ironsworn Discord](https://discord.gg/8bRuZwK).
+
+          Enjoy!

@@ -1,5 +1,5 @@
 <template>
-  <article class="flexcol sf-character-sheet">
+  <article class="flexcol sf-character-sheet" data-tourid="sheet">
     <!-- TODO: rm inline styles added to maintain consistent styling (required largely because of other inline styles) -->
     <!-- Header row -->
     <sf-characterheader />
@@ -7,7 +7,11 @@
     <!-- Main body row -->
     <div class="flexrow">
       <!-- Momentum on left -->
-      <div class="flexcol margin-left nogrow" style="width: min-content">
+      <div
+        class="flexcol margin-left nogrow"
+        style="width: min-content"
+        data-tourid="momentum"
+      >
         <MomentumMeterSlider
           labelPosition="right"
           data-tooltip-direction="UP"
@@ -19,8 +23,10 @@
         <!-- Attributes -->
         <div
           class="flexrow stats"
+          id="stats"
           style="margin-bottom: var(--ironsworn-spacer-xl)"
           data-tooltip-direction="UP"
+          data-tourid="stats"
         >
           <attr-box attr="edge" />
           <attr-box attr="heart" />
@@ -31,6 +37,7 @@
         <TabSet
           :tabKeys="['legacies', 'assets', 'progress', 'connections', 'notes']"
           :id="`${data.actor._id}_sf-character-sheet`"
+          data-tourid="tabs"
         >
           <TabList>
             <Tab tab-key="legacies" :text="$t('IRONSWORN.Legacies')" />
@@ -70,12 +77,13 @@
         class="flexcol margin-right"
         data-tooltip-direction="UP"
         labelPosition="left"
+        data-tourid="resources"
       />
     </div>
 
     <!-- Impacts -->
     <hr class="nogrow" />
-    <sf-impacts class="nogrow" />
+    <sf-impacts class="nogrow" data-tourid="impacts" />
   </article>
 </template>
 

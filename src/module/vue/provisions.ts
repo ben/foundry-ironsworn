@@ -15,6 +15,7 @@ export const $EnrichMarkdownKey = Symbol('$enrichMarkdown') as InjectionKey<
 // Provided by the render helper
 export type LocalEmitterEvents = {
   closeApp: void
+  activateTab: string
 }
 export type LocalEmitter = Emitter<LocalEmitterEvents>
 export const $LocalEmitterKey = Symbol(

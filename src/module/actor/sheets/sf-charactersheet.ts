@@ -1,3 +1,4 @@
+import { SFCharacterTour } from '../../features/tours/sf-character-tour'
 import { IronswornSettings } from '../../helpers/settings'
 import SfCharacterSheet from '../../vue/sf-charactersheet.vue'
 import { VueActorSheet } from '../../vue/vueactorsheet'
@@ -13,6 +14,10 @@ export class StarforgedCharacterSheet extends VueActorSheet {
     }) as any
   }
 
+  activateTab(tabKey: string) {
+    this.localEmitter.emit('activateTab', tabKey)
+  }
+
   render(...renderArgs: any[]) {
     super.render(...renderArgs)
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
@@ -20,6 +25,8 @@ export class StarforgedCharacterSheet extends VueActorSheet {
   }
 
   _getHeaderButtons() {
+    const [editButton, sheetButton, tokenButton, ...otherButtons] =
+      super._getHeaderButtons()
     return [
       {
         class: 'ironsworn-open-move-sheet',
@@ -27,7 +34,16 @@ export class StarforgedCharacterSheet extends VueActorSheet {
         icon: 'fas fa-directions',
         onclick: (e) => this._openMoveSheet(e),
       },
-      ...super._getHeaderButtons(),
+      editButton,
+      sheetButton,
+      tokenButton,
+      {
+        class: 'ironsworn-help',
+        icon: 'fa fa-circle-question',
+        label: '',
+        onclick: (e) => new SFCharacterTour(this.actor).start(),
+      },
+      ...otherButtons,
     ]
   }
   _openMoveSheet(_e?: JQuery.ClickEvent) {

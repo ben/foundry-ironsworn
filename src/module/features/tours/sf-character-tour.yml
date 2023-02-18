@@ -1,0 +1,81 @@
+rootKey: IRONSWORN.Tours.SFCharacter
+languages:
+  - lang: en
+    entries:
+      - key: Sheet
+        title: Character Sheet
+        content: This is the player character sheet. It can help you manage your character's attributes, resources, assets, and vows.
+
+      - key: EditButton
+        title: Edit Button
+        content: The "<i class="fa-solid fa-edit"></i> Edit" button in the title bar is used to switch between interaction and edit modes for this character.
+
+      - key: Stats
+        title: Character Stats
+        content: |
+          These are your character's basic attributes, which tell you something about their personality, but also tell you that when they're trying certain kinds of actions, the story will tend to go better for them.
+
+          To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.
+
+          **EDIT MODE** allows you to adjust these numbers.
+
+      - key: Resources
+        title: Resources
+        content: |
+          On the side here we have the three basic resources: Health, Spirit, and Supply. You can adjust the levels of these resources by clicking on the new value.
+
+          You can also make rolls by clicking on the resource's name.
+
+      - key: Momentum
+        title: Momentum
+        content: |
+          On the other side is the momentum tracker. You can set your character's momentum by clicking on one of the numbers, and if you have debilities marked, one or more of the highest values will be disabled.
+
+          Hover over the "<i class="fa-solid fa-fire"></i> MOMENTUM" title for a preview of what burning your momentum will do, and click it to perform the burn.
+
+      - key: Impacts
+        title: Impacts
+        content: |
+          Down at the bottom of the sheet are your character's impacts. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom impacts.
+
+          If there is a vehicle in the game with Battered or Cursed marked, that impact will be highlighted here to remind you that it should apply while you're on that vehicle.
+
+      - key: LegaciesTab
+        title: Legacies Tab
+        content: |
+          In the center area are a series of tabs. The first one is the "Legacies" tab, where you track your three primary Starforged legacies. Also appearing here will be any "starred" items from the Progress or Connections tabs.
+
+          To advance a legacy, click the "<i class="fa-solid fa-caret-right"></i>" button on the right. When enough legacy boxes are filled, XP boxes will appear; simply click them to expend XP. **EDIT MODE** also displays buttons for removing legacy ticks if you accidentally marked too many.
+
+      - key: AssetsTab
+        title: Assets Tab
+        content: |
+          The Assets tab is where your character's assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the "<i class="fa-solid fa-edit"></i>" icon to open a detail sheet for any asset.
+
+          **EDIT MODE** displays buttons for deleting and reordering assets.
+
+          The "<i class="fa-solid fa-book-atlas"></i> Assets" button at the bottom opens the asset browser.
+
+      - key: ProgressTab
+        title: Progress Tab
+        content: |
+          The Progress tab displays your character's current vows and other progress items. You can add a new blank item by clicking the "+Vow" or "+Progress" buttons at the bottom, or you can open the "<i class="fa-solid fa-book-atlas"></i> Foes" compendium and drag an enemy into the list.
+
+          Each item shows current progress, and has controls for marking ticks and making a progress roll. Use the "<i class="fa-solid fa-star"></i>" button to also display an item in the Legacies tab.
+
+          **EDIT MODE** adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.
+
+      - key: ConnectionsTab
+        title: Connections Tab
+        content: |
+          Connections are tracked separately from other progress items, and can be found in this tab. Otherwise this behaves the same as the Progress tab.
+
+      - key: NotesTab
+        title: Notes Tab
+        content: |
+          The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you're carrying, jot down the scars you've earned on your way.
+
+      - key: End
+        title: Character Sheet
+        content: |
+          That's all for now. Look for the <i class="fa-solid fa-circle-question"></i> button in other sheet title bars for more information on how they work.
