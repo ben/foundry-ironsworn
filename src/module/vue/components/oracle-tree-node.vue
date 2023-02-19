@@ -4,6 +4,7 @@
     :class="{ hidden: node?.forceHidden, highlighted: state.highlighted }"
     ref="$el"
     data-tooltip-direction="LEFT"
+    :data-tourid="`oracle-${node.dataforgedNode?.$id}`"
   >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->

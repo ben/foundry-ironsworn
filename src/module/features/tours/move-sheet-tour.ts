@@ -4,6 +4,48 @@ export class MoveSheetTour extends IronswornTour {
   constructor(sheet: Application) {
     const sheetSel = `.app[data-appid="${sheet?.appId}"]`
 
+    const isMoveUuid =
+      'Compendium.foundry-ironsworn.ironswornmoves.c8bacc17f73d3103'
+    const sfMoveUuid =
+      'Compendium.foundry-ironsworn.starforgedmoves.e6ed148eff82c171'
+    const moveCategories = [
+      'Starforged/Moves/Adventure',
+      'Ironsworn/Moves/Adventure',
+    ]
+    const moveCategorySelector = moveCategories
+      .map((id) => `${sheetSel} [data-tourid="move-category-${id}"]`)
+      .join(',')
+    const moveLinkSelector = moveCategories
+      .map(
+        (id) => `${sheetSel} [data-tourid="move-category-${id}"] .content-link`
+      )
+      .join(',')
+    const moveButtonsSelector = [sfMoveUuid, isMoveUuid]
+      .map(
+        (u) =>
+          `${sheetSel} [data-move-uuid="${u}"] [data-tourid="move-buttons"]`
+      )
+      .join(',')
+
+    const oracleCategoryDfIds = [
+      'Starforged/Oracles/Core',
+      'Ironsworn/Oracles/Action_and_Theme',
+    ]
+    const oracleCategorySelector = oracleCategoryDfIds
+      .map((dfid) => `${sheetSel} [data-tourid="oracle-${dfid}"]`)
+      .join(',')
+    const oracleRowSelector = [
+      'Starforged/Oracles/Core/Action',
+      'Ironsworn/Oracles/Action_and_Theme/Action',
+    ]
+      .map((dfid) => `${sheetSel} [data-tourid="oracle-${dfid}"]`)
+      .join(',')
+
+    const scrollIntoView = async (selector) => {
+      document.querySelector(selector)?.scrollIntoView()
+      await new Promise((r) => setTimeout(r, 600))
+    }
+
     super({
       title: 'IRONSWORN.Tours.MoveSheet.Title',
       description: 'IRONSWORN.Tours.MoveSheet.Description',
@@ -20,50 +62,77 @@ export class MoveSheetTour extends IronswornTour {
           id: 'move-category',
           title: 'IRONSWORN.Tours.MoveSheet.MoveCategoryTitle',
           content: 'IRONSWORN.Tours.MoveSheet.MoveCategoryContent',
-          selector: `${sheetSel} [data-tourid="sheet"]`,
+          selector: moveCategorySelector,
+          async hook() {
+            CONFIG.IRONSWORN.emitter.emit('highlightMove', isMoveUuid)
+            CONFIG.IRONSWORN.emitter.emit('highlightMove', sfMoveUuid)
+            await scrollIntoView(moveCategorySelector)
+          },
         },
         {
           id: 'move-buttons',
           title: 'IRONSWORN.Tours.MoveSheet.MoveButtonsTitle',
           content: 'IRONSWORN.Tours.MoveSheet.MoveButtonsContent',
-          selector: `${sheetSel} [data-tourid="sheet"]`,
+          selector: moveButtonsSelector,
+          hook: () => scrollIntoView(moveButtonsSelector),
         },
         {
           id: 'move-link',
           title: 'IRONSWORN.Tours.MoveSheet.MoveLinkTitle',
           content: 'IRONSWORN.Tours.MoveSheet.MoveLinkContent',
-          selector: `${sheetSel} [data-tourid="sheet"]`,
+          selector: moveLinkSelector,
+          hook: () => scrollIntoView(moveLinkSelector),
         },
         {
           id: 'oracles-tab',
           title: 'IRONSWORN.Tours.MoveSheet.OraclesTabTitle',
           content: 'IRONSWORN.Tours.MoveSheet.OraclesTabContent',
-          hook: () => sheet.activateTab('oracles'),
+          async hook() {
+            sheet.activateTab('oracles')
+          },
           selector: `${sheetSel} [data-tourid="sheet"]`,
         },
         {
           id: 'oracle-category',
           title: 'IRONSWORN.Tours.MoveSheet.OracleCategoryTitle',
           content: 'IRONSWORN.Tours.MoveSheet.OracleCategoryContent',
-          selector: `${sheetSel} [data-tourid="sheet"]`,
+          selector: oracleCategorySelector,
+          async hook() {
+            CONFIG.IRONSWORN.emitter.emit(
+              'highlightOracle',
+              'Ironsworn/Oracles/Action_and_Theme'
+            )
+            CONFIG.IRONSWORN.emitter.emit(
+              'highlightOracle',
+              'Starforged/Oracles/Core'
+            )
+            await scrollIntoView(oracleCategorySelector)
+          },
         },
         {
           id: 'oracle-row',
           title: 'IRONSWORN.Tours.MoveSheet.OracleRowTitle',
           content: 'IRONSWORN.Tours.MoveSheet.OracleRowContent',
-          selector: `${sheetSel} [data-tourid="sheet"]`,
+          selector: oracleRowSelector,
+          hook: () => scrollIntoView(oracleRowSelector),
         },
         {
           id: 'oracle-chat-message',
           title: 'IRONSWORN.Tours.MoveSheet.OracleChatMessageTitle',
           content: 'IRONSWORN.Tours.MoveSheet.OracleChatMessageContent',
           selector: `${sheetSel} [data-tourid="sheet"]`,
+          async hook() {
+            // TODO: create ORM for this oracle
+            // TODO: selector for the message
+          },
         },
         {
           id: 'fin',
           title: 'IRONSWORN.Tours.MoveSheet.EndTitle',
           content: 'IRONSWORN.Tours.MoveSheet.EndContent',
-          hook: () => sheet.activateTab('moves'),
+          async hook() {
+            sheet.activateTab('moves')
+          },
           selector: `${sheetSel} [data-tourid="sheet"]`,
         },
       ],

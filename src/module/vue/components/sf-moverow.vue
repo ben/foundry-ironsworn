@@ -15,12 +15,14 @@
     :toggleWrapperClass="$style.toggleWrapper"
     :toggleLabel="move?.displayName"
     :data-move-id="move.moveItem().id"
+    :data-move-uuid="move.moveItem().uuid"
   >
     <template #after-toggle>
       <section
         :class="$style.moveControls"
         class="nogrow"
         data-tooltip-direction="UP"
+        data-tourid="move-buttons"
       >
         <BtnRollmove
           :disabled="!canRoll"

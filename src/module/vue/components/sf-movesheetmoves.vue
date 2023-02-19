@@ -57,6 +57,7 @@
           :class="$style.categoryList"
           :category="category"
           ref="allCategories"
+          :data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
         />
       </li>
     </ul>
