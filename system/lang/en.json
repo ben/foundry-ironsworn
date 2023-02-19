@@ -358,6 +358,10 @@
         "NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
         "EndTitle": "Character Sheet",
         "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+      },
+      "MoveSheet": {
+        "Title": "",
+        "Description": ""
       }
     },
     "WorldTruths": {
