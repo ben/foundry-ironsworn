@@ -71,6 +71,7 @@ export class MoveSheetTour extends IronswornTour {
         },
         {
           id: 'move-buttons',
+          // TODO: direction -> left
           title: 'IRONSWORN.Tours.MoveSheet.MoveButtonsTitle',
           content: 'IRONSWORN.Tours.MoveSheet.MoveButtonsContent',
           selector: moveButtonsSelector,
