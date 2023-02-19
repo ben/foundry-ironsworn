@@ -4,10 +4,6 @@ export class MoveSheetTour extends IronswornTour {
   constructor(sheet: Application) {
     const sheetSel = `.app[data-appid="${sheet?.appId}"]`
 
-    const isMoveUuid =
-      'Compendium.foundry-ironsworn.ironswornmoves.c8bacc17f73d3103'
-    const sfMoveUuid =
-      'Compendium.foundry-ironsworn.starforgedmoves.e6ed148eff82c171'
     const moveCategories = [
       'Starforged/Moves/Adventure',
       'Ironsworn/Moves/Adventure',
@@ -20,6 +16,11 @@ export class MoveSheetTour extends IronswornTour {
         (id) => `${sheetSel} [data-tourid="move-category-${id}"] .content-link`
       )
       .join(',')
+
+    const isMoveUuid =
+      'Compendium.foundry-ironsworn.ironswornmoves.c8bacc17f73d3103'
+    const sfMoveUuid =
+      'Compendium.foundry-ironsworn.starforgedmoves.e6ed148eff82c171'
     const moveButtonsSelector = [sfMoveUuid, isMoveUuid]
       .map(
         (u) =>
@@ -27,13 +28,13 @@ export class MoveSheetTour extends IronswornTour {
       )
       .join(',')
 
-    const oracleCategoryDfIds = [
+    const oracleCategorySelector = [
       'Starforged/Oracles/Core',
       'Ironsworn/Oracles/Action_and_Theme',
     ]
-    const oracleCategorySelector = oracleCategoryDfIds
       .map((dfid) => `${sheetSel} [data-tourid="oracle-${dfid}"]`)
       .join(',')
+
     const oracleRowSelector = [
       'Starforged/Oracles/Core/Action',
       'Ironsworn/Oracles/Action_and_Theme/Action',
@@ -43,7 +44,7 @@ export class MoveSheetTour extends IronswornTour {
 
     const scrollIntoView = async (selector) => {
       document.querySelector(selector)?.scrollIntoView()
-      await new Promise((r) => setTimeout(r, 600))
+      await new Promise((r) => setTimeout(r, 400))
     }
 
     super({
@@ -66,14 +67,15 @@ export class MoveSheetTour extends IronswornTour {
           async hook() {
             CONFIG.IRONSWORN.emitter.emit('highlightMove', isMoveUuid)
             CONFIG.IRONSWORN.emitter.emit('highlightMove', sfMoveUuid)
+            await new Promise((r) => setTimeout(r, 300))
             await scrollIntoView(moveCategorySelector)
           },
         },
         {
           id: 'move-buttons',
-          // TODO: direction -> left
           title: 'IRONSWORN.Tours.MoveSheet.MoveButtonsTitle',
           content: 'IRONSWORN.Tours.MoveSheet.MoveButtonsContent',
+          tooltipDirection: 'LEFT',
           selector: moveButtonsSelector,
           hook: () => scrollIntoView(moveButtonsSelector),
         },
