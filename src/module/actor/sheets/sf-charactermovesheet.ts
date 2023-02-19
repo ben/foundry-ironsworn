@@ -44,13 +44,21 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
     }`
   }
 
+  activateTab(tabKey: string) {
+    this.localEmitter.emit('activateTab', tabKey)
+  }
+
   protected _getHeaderButtons(): Application.HeaderButton[] {
     return [
       {
         class: 'ironsworn-help',
         icon: 'fa fa-circle-question',
         label: '',
-        onclick: () => new MoveSheetTour(this).start(),
+        onclick: async () => {
+          const tour = new MoveSheetTour(this)
+          await tour.reset()
+          tour.start()
+        },
       },
       ...super._getHeaderButtons(),
     ]
