@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fixed: when the Starforged theme was active, the system tour would hang on the second step.
+
 ## 1.20.22
 
 - Fix some bugs around move-link navigation throughout the UI ([#647](https://github.com/ben/foundry-ironsworn/pull/647))
