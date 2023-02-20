@@ -1,3 +1,4 @@
+import { OracleRollMessage } from '../../rolls'
 import { IronswornTour } from './ironsworn_tour'
 
 export class MoveSheetTour extends IronswornTour {
@@ -56,6 +57,7 @@ export class MoveSheetTour extends IronswornTour {
           id: 'sheet',
           title: 'IRONSWORN.Tours.MoveSheet.SheetTitle',
           content: 'IRONSWORN.Tours.MoveSheet.SheetContent',
+          tooltipDirection: 'LEFT',
           hook: () => sheet.activateTab('moves'),
           selector: `${sheetSel} [data-tourid="sheet"]`,
         },
@@ -63,6 +65,7 @@ export class MoveSheetTour extends IronswornTour {
           id: 'move-category',
           title: 'IRONSWORN.Tours.MoveSheet.MoveCategoryTitle',
           content: 'IRONSWORN.Tours.MoveSheet.MoveCategoryContent',
+          tooltipDirection: 'LEFT',
           selector: moveCategorySelector,
           async hook() {
             CONFIG.IRONSWORN.emitter.emit('highlightMove', isMoveUuid)
@@ -83,6 +86,7 @@ export class MoveSheetTour extends IronswornTour {
           id: 'move-link',
           title: 'IRONSWORN.Tours.MoveSheet.MoveLinkTitle',
           content: 'IRONSWORN.Tours.MoveSheet.MoveLinkContent',
+          tooltipDirection: 'LEFT',
           selector: moveLinkSelector,
           hook: () => scrollIntoView(moveLinkSelector),
         },
@@ -90,6 +94,7 @@ export class MoveSheetTour extends IronswornTour {
           id: 'oracles-tab',
           title: 'IRONSWORN.Tours.MoveSheet.OraclesTabTitle',
           content: 'IRONSWORN.Tours.MoveSheet.OraclesTabContent',
+          tooltipDirection: 'LEFT',
           async hook() {
             sheet.activateTab('oracles')
           },
@@ -99,6 +104,7 @@ export class MoveSheetTour extends IronswornTour {
           id: 'oracle-category',
           title: 'IRONSWORN.Tours.MoveSheet.OracleCategoryTitle',
           content: 'IRONSWORN.Tours.MoveSheet.OracleCategoryContent',
+          tooltipDirection: 'LEFT',
           selector: oracleCategorySelector,
           async hook() {
             CONFIG.IRONSWORN.emitter.emit(
@@ -116,24 +122,32 @@ export class MoveSheetTour extends IronswornTour {
           id: 'oracle-row',
           title: 'IRONSWORN.Tours.MoveSheet.OracleRowTitle',
           content: 'IRONSWORN.Tours.MoveSheet.OracleRowContent',
+          tooltipDirection: 'LEFT',
           selector: oracleRowSelector,
-          hook: () => scrollIntoView(oracleRowSelector),
         },
         {
           id: 'oracle-chat-message',
           title: 'IRONSWORN.Tours.MoveSheet.OracleChatMessageTitle',
           content: 'IRONSWORN.Tours.MoveSheet.OracleChatMessageContent',
-          selector: `${sheetSel} [data-tourid="sheet"]`,
+          sidebarTab: 'chat',
+          selector: `#chat .chat-message:last-of-type`,
+          tooltipDirection: 'LEFT',
           async hook() {
-            // TODO: create ORM for this oracle
-            // TODO: selector for the message
+            await sheet.minimize()
+            await new OracleRollMessage({
+              dfOracleId: 'Starforged/Oracles/Core/Action',
+            }).createOrUpdate()
+            await new Promise((r) => setTimeout(r, 300))
           },
         },
         {
           id: 'fin',
           title: 'IRONSWORN.Tours.MoveSheet.EndTitle',
           content: 'IRONSWORN.Tours.MoveSheet.EndContent',
+          tooltipDirection: 'LEFT',
           async hook() {
+            await sheet.maximize()
+            await new Promise((r) => setTimeout(r, 100))
             sheet.activateTab('moves')
           },
           selector: `${sheetSel} [data-tourid="sheet"]`,
