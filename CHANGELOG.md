@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.23
+
 - Fixed: when the Starforged theme was active, the system tour would hang on the second step.
 
 ## 1.20.22
