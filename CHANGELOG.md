@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.22
+
 - Fix some bugs around move-link navigation throughout the UI ([#647](https://github.com/ben/foundry-ironsworn/pull/647))
 - Add a tour for the Starforged character sheet ([#648](https://github.com/ben/foundry-ironsworn/pull/648)) and one for the move sheet ([#649](https://github.com/ben/foundry-ironsworn/pull/649))
 
