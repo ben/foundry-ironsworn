@@ -4,6 +4,7 @@
     ref="$tabSet"
     :class="$style.tabSet"
     :tabKeys="['moves', 'oracles']"
+    data-tourid="sheet"
   >
     <TabList>
       <Tab tab-key="moves" :text="$t('IRONSWORN.ITEMS.TypeMove')">

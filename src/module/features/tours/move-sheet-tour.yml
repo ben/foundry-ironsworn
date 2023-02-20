@@ -1,0 +1,49 @@
+rootKey: IRONSWORN.Tours.MoveSheet
+languages:
+  - lang: en
+    entries:
+      - key: Sheet
+        title: Move/Oracle Sheet
+        content: This is the window that provides easy access to moves and oracles.
+
+      - key: MoveCategory
+        title: Move Categories
+        content: Click on a category title to expand that category and show all of the moves. Click on one of the moves to expand its description.
+
+      - key: MoveButtons
+        title: Move Shortcuts
+        content: |
+          Up here you'll see shortcut buttons.
+
+          The first one is a shortcut to "roll this move," and will open the rolling dialog with some details pre-filled for you. It's only available if this move has a roll associated with it -- some, like Pay the Price, do not have an action/challenge roll, so this button will be disabled.
+
+          The second one is a shortcut to "roll the oracle," and immediately rolls on an oracle table. It's only available if the move has exactly one oracle to roll.
+
+          The third one sends a copy of the description to the chat sidebar.
+
+      - key: MoveLink
+        title: Move Links
+        content: Clicking on a link to another move will expand it and scroll it into view.
+
+      - key: OraclesTab
+        title: Oracles Tab
+        content: The second tab displays oracles, random tables to spark your inspiration.
+
+      - key: OracleCategory
+        title: Oracle Tree
+        content: The oracles are organized into a directory structure. Click anywhere on a category line to expand it and display its contents.
+
+      - key: OracleRow
+        title: Oracle Controls
+        content: Click the <i class="fas fa-eye"></i> icon to display a preview of the oracle table, or click anywhere else on the line to draw a result from the table and display it in chat.
+
+      - key: OracleChatMessage
+        title: Oracle Results
+        content: |
+          When you roll an oracle, a chat card is displayed. The highlighted row is the rolled result, and the adjacent rolls are also displayed.
+
+          If you hover your mouse over the message, you'll see buttons appear, which let you copy a result's text to your clipboard, or re-roll on the same oracle table.
+
+      - key: End
+        title: Move Sheet
+        content: That's all for now. Look for the <i class="fa-solid fa-circle-question"></i> button in other sheet title bars for more information on how they work.

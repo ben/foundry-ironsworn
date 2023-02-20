@@ -358,6 +358,28 @@
         "NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
         "EndTitle": "Character Sheet",
         "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+      },
+      "MoveSheet": {
+        "Title": "",
+        "Description": "",
+        "SheetTitle": "Move/Oracle Sheet",
+        "SheetContent": "<p>This is the window that provides easy access to moves and oracles.</p>",
+        "MoveCategoryTitle": "Move Categories",
+        "MoveCategoryContent": "<p>Click on a category title to expand that category and show all of the moves. Click on one of the moves to expand its description.</p>",
+        "MoveButtonsTitle": "Move Shortcuts",
+        "MoveButtonsContent": "<p>Up here you&#39;ll see shortcut buttons.</p><p>The first one is a shortcut to &quot;roll this move,&quot; and will open the rolling dialog with some details pre-filled for you. It&#39;s only available if this move has a roll associated with it -- some, like Pay the Price, do not have an action/challenge roll, so this button will be disabled.</p><p>The second one is a shortcut to &quot;roll the oracle,&quot; and immediately rolls on an oracle table. It&#39;s only available if the move has exactly one oracle to roll.</p><p>The third one sends a copy of the description to the chat sidebar.</p>",
+        "MoveLinkTitle": "Move Links",
+        "MoveLinkContent": "<p>Clicking on a link to another move will expand it and scroll it into view.</p>",
+        "OraclesTabTitle": "Oracles Tab",
+        "OraclesTabContent": "<p>The second tab displays oracles, random tables to spark your inspiration.</p>",
+        "OracleCategoryTitle": "Oracle Tree",
+        "OracleCategoryContent": "<p>The oracles are organized into a directory structure. Click anywhere on a category line to expand it and display its contents.</p>",
+        "OracleRowTitle": "Oracle Controls",
+        "OracleRowContent": "<p>Click the <i class=\"fas fa-eye\"></i> icon to display a preview of the oracle table, or click anywhere else on the line to draw a result from the table and display it in chat.</p>",
+        "OracleChatMessageTitle": "Oracle Results",
+        "OracleChatMessageContent": "<p>When you roll an oracle, a chat card is displayed. The highlighted row is the rolled result, and the adjacent rolls are also displayed.</p><p>If you hover your mouse over the message, you&#39;ll see buttons appear, which let you copy a result&#39;s text to your clipboard, or re-roll on the same oracle table.</p>",
+        "EndTitle": "Move Sheet",
+        "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
       }
     },
     "WorldTruths": {
