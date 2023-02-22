@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.24
+
 - Make the compact sheet resizable
 
 ## 1.20.23
