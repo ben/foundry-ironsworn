@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Make the compact sheet resizable
+
 ## 1.20.23
 
 - Fixed: when the Starforged theme was active, the system tour would hang on the second step.

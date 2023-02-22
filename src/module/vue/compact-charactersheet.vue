@@ -17,7 +17,7 @@
       </div>
     </section>
 
-    <section class="flexrow" :class="$style.conditions">
+    <section class="flexrow nogrow" :class="$style.conditions">
       <ConditionCheckbox name="wounded" />
       <ConditionCheckbox name="unprepared" />
       <ConditionCheckbox name="shaken" />

@@ -8,7 +8,7 @@ export class CompactPCSheet extends VueActorSheet {
     return mergeObject(super.defaultOptions, {
       width: 560,
       height: 210,
-      resizable: false,
+      resizable: true,
       rootComponent: CompactCharacterSheet,
     }) as any
   }
