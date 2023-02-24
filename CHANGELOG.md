@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.25
+
 - Fix the names of new non-PC actors
 
 ## 1.20.24
