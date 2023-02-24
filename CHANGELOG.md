@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix the names of new non-PC actors
+
 ## 1.20.24
 
 - Make the compact sheet resizable

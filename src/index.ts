@@ -192,12 +192,12 @@ Hooks.once('init', async () => {
   })
 
   CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
-    character: 'IRONSWORN.Actor.TypeCharacter',
-    foe: 'IRONSWORN.Actor.TypeFoe',
-    location: 'IRONSWORN.Actor.TypeLocation',
-    shared: 'IRONSWORN.Actor.TypeShared',
-    site: 'IRONSWORN.Actor.TypeDelveSite',
-    starship: 'IRONSWORN.Actor.TypeStarship',
+    character: 'IRONSWORN.ACTOR.TypeCharacter',
+    foe: 'IRONSWORN.ACTOR.TypeFoe',
+    location: 'IRONSWORN.ACTOR.TypeLocation',
+    shared: 'IRONSWORN.ACTOR.TypeShared',
+    site: 'IRONSWORN.ACTOR.TypeDelveSite',
+    starship: 'IRONSWORN.ACTOR.TypeStarship',
   })
   CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
     character: 'fa-solid fa-user-pen',
