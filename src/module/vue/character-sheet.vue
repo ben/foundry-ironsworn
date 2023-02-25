@@ -3,6 +3,7 @@
     :document="data.actor"
     class="character-sheet-classic"
     bodyClass="flexrow"
+    data-tourid="sheet"
   >
     <!-- Header row -->
     <template #header>

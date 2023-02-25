@@ -1,3 +1,4 @@
+import { ISCharacterTour } from '../../features/tours/is-character-tour'
 import { IronswornSettings } from '../../helpers/settings'
 import characterSheetVue from '../../vue/character-sheet.vue'
 import { VueActorSheet } from '../../vue/vueactorsheet'
@@ -19,6 +20,8 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
   }
 
   _getHeaderButtons() {
+    const [editButton, sheetButton, tokenButton, ...otherButtons] =
+      super._getHeaderButtons()
     return [
       {
         class: 'ironsworn-open-move-sheet',
@@ -26,7 +29,16 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
         icon: 'fas fa-directions',
         onclick: (e) => this._openMoveSheet(e),
       },
-      ...super._getHeaderButtons(),
+      editButton,
+      sheetButton,
+      tokenButton,
+      {
+        class: 'ironsworn-help',
+        icon: 'fa fa-circle-question',
+        label: '',
+        onclick: (e) => new ISCharacterTour(this.actor).start(),
+      },
+      ...otherButtons,
     ]
   }
 
