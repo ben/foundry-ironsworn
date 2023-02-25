@@ -1,3 +1,4 @@
+import { compact } from 'lodash'
 import { CreateActorDialog } from '../../applications/createActorDialog'
 import { IronswornTour } from './ironsworn_tour'
 
@@ -10,7 +11,7 @@ export class WelcomeTour extends IronswornTour {
       description: 'IRONSWORN.Tours.Welcome.Description',
       canBeResumed: false,
       display: true,
-      steps: [
+      steps: compact([
         {
           id: 'welcome',
           title: 'IRONSWORN.Tours.Welcome.WelcomeTitle',
@@ -42,7 +43,7 @@ export class WelcomeTour extends IronswornTour {
           sidebarTab: 'compendium',
           selector: 'li[data-pack="foundry-ironsworn.ironswornscenes"]',
         },
-        {
+        game.user?.viewedScene && {
           id: 'oracletool',
           title: 'IRONSWORN.Tours.Welcome.OracleToolTitle',
           content: 'IRONSWORN.Tours.Welcome.OracleToolContent',
@@ -56,7 +57,7 @@ export class WelcomeTour extends IronswornTour {
           sidebarTab: 'settings',
           selector: 'button[data-action="tours"]',
         },
-      ],
+      ]),
     })
   }
 }

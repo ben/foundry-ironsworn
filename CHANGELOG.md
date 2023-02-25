@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Tours: the "welcome" tour now skips the 5th step if there's no scene, avoiding a dangling ending.
+
 ## 1.20.25
 
 - Fix the names of new non-PC actors
