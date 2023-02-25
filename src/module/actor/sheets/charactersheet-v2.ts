@@ -14,6 +14,10 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
     }) as any
   }
 
+  activateTab(tabKey: string) {
+    this.localEmitter.emit('activateTab', tabKey)
+  }
+
   render(...args: any[]) {
     if (this._state <= Application.RENDER_STATES.NONE) this._openMoveSheet()
     return super.render(...args) as any
