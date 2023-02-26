@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix scrollbar width styling
+
 ## 1.20.27
 
 - Updated français translations ([#656](https://github.com/ben/foundry-ironsworn/pull/656))
