@@ -33,42 +33,36 @@ languages:
 
           Hover over the "<i class="fa-solid fa-fire"></i> MOMENTUM" title for a preview of what burning your momentum will do, and click it to perform the burn.
 
-      - key: Impacts
-        title: Impacts
+      - key: Conditions
+        title: Conditions
         content: |
-          Down at the bottom of the sheet are your character's impacts. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom impacts.
+          Down at the bottom of the sheet are your character's conditions, banes, and burdens. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom conditions.
 
-          If there is a vehicle in the game with Battered or Cursed marked, that impact will be highlighted here to remind you that it should apply while you're on that vehicle.
-
-      - key: LegaciesTab
-        title: Legacies Tab
+      - key: CharacterTab
+        title: Character Tab
         content: |
-          In the center area are a series of tabs. The first one is the "Legacies" tab, where you track your three primary Starforged legacies. Also appearing here will be any "starred" items from the Progress or Connections tabs.
+          In the center area are a series of tabs. The first one is the "Character" tab, where you track most of the details you need for an Ironsworn character.
 
-          To advance a legacy, click the "<i class="fa-solid fa-caret-right"></i>" button on the right. When enough legacy boxes are filled, XP boxes will appear; simply click them to expend XP. **EDIT MODE** also displays buttons for removing legacy ticks if you accidentally marked too many.
-
-      - key: AssetsTab
-        title: Assets Tab
+      - key: Bonds
+        title: Bonds
         content: |
-          The Assets tab is where your character's assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the "<i class="fa-solid fa-edit"></i>" icon to open a detail sheet for any asset.
+          At the top-left are your bonds. This displays how many bonds your character has made during their adventures. Click the <i class="fa-solid fa-edit"></i> button to add or remove bonds, and keep notes about them. Click the <svg fill="currentColor" height="1em" width="1em" role="img" aria-hidden="true" class="icon"><use href="#ironsworn-d10-tilt"></use></svg> button to roll the _Write Your Epilogue_ move.
+
+      - key: Assets
+        title: Assets
+        content: |
+          The Assets area is where your character's assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the "<i class="fa-solid fa-edit"></i>" icon to open a detail sheet for any asset.
 
           **EDIT MODE** displays buttons for deleting and reordering assets.
 
-          The "<i class="fa-solid fa-book-atlas"></i> Assets" button at the bottom opens the asset browser.
+          The "<i class="fa-solid fa-book-atlas"></i> Assets" button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.
 
-      - key: ProgressTab
-        title: Progress Tab
+      - key: Progress
+        title: Progress
         content: |
-          The Progress tab displays your character's current vows and other progress items. You can add a new blank item by clicking the "+Vow" or "+Progress" buttons at the bottom, or you can open the "<i class="fa-solid fa-book-atlas"></i> Foes" compendium and drag an enemy into the list.
+          The Progress area displays your character's current vows and other progress items. You can add a new blank item by clicking the "+Vow" or "+Progress" buttons at the bottom, or you can open the "<i class="fa-solid fa-book-atlas"></i> Foes" compendium and drag an enemy into the list.
 
-          Each item shows current progress, and has controls for marking ticks and making a progress roll. Use the "<i class="fa-solid fa-star"></i>" button to also display an item in the Legacies tab.
-
-          **EDIT MODE** adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.
-
-      - key: ConnectionsTab
-        title: Connections Tab
-        content: |
-          Connections are tracked separately from other progress items, and can be found in this tab. Otherwise this behaves the same as the Progress tab.
+          Each item shows current progress, and has controls for marking ticks and making a progress roll. **EDIT MODE** adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.
 
       - key: NotesTab
         title: Notes Tab

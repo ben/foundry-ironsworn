@@ -54,7 +54,7 @@ languages:
 
           **EDIT MODE** displays buttons for deleting and reordering assets.
 
-          The "<i class="fa-solid fa-book-atlas"></i> Assets" button at the bottom opens the asset browser.
+          The "<i class="fa-solid fa-book-atlas"></i> Assets" button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.
 
       - key: ProgressTab
         title: Progress Tab
