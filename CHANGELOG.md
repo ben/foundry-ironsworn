@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Fix: changing the _default_ character sheet now also updates move sheets
+
 ## 1.20.26
 
 - Fix: changing a character's sheet now properly updates their move sheet

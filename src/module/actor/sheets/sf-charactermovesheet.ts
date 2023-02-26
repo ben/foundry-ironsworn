@@ -71,3 +71,10 @@ Hooks.on('preUpdateActor', (actor: IronswornActor, data: any) => {
     actor.moveSheet = undefined
   }
 })
+Hooks.on('preUpdateSetting', (setting: Setting, data: any) => {
+  if (setting.key === 'core.sheetClasses') {
+    for (const actor of game.actors ?? []) {
+      actor.moveSheet = undefined
+    }
+  }
+})
