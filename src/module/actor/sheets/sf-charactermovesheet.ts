@@ -64,3 +64,10 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
     ]
   }
 }
+
+// When changing actor sheets, make sure we don't get a stale move sheet
+Hooks.on('preUpdateActor', (actor: IronswornActor, data: any) => {
+  if (actor.type === 'character' && data.flags?.core?.sheetClass) {
+    actor.moveSheet = undefined
+  }
+})
