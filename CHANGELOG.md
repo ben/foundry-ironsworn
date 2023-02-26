@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.27
+
 - Updated français translations ([#656](https://github.com/ben/foundry-ironsworn/pull/656))
 - Fix: changing the _default_ character sheet now also updates move sheets
 
