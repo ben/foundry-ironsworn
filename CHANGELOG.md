@@ -3,6 +3,7 @@
 ## Next Release
 
 - Tours: the "welcome" tour now skips the 5th step if there's no scene, avoiding a dangling ending.
+- Tours: add a tour for the Ironsworn character sheet ([#657](https://github.com/ben/foundry-ironsworn/pull/657))
 
 ## 1.20.25
 

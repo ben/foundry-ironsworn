@@ -3,11 +3,16 @@
     <div class="flexcol">
       <section class="sheet-area flexcol">
         <!-- Bonds -->
-        <Bonds :compactProgress="true" />
+        <Bonds :compactProgress="true" data-tourid="bonds" />
 
         <hr class="nogrow" />
         <!-- Assets -->
-        <DropTarget is="div" dropType="asset" class="flexcol item-list">
+        <DropTarget
+          is="div"
+          dropType="asset"
+          class="flexcol item-list"
+          data-tourid="assets"
+        >
           <h4 class="nogrow">{{ $t('IRONSWORN.ITEMS.TypeAsset') }}</h4>
 
           <CollapseTransition
@@ -41,6 +46,7 @@
     <ActiveCompletedProgresses
       :compactProgress="true"
       :class="$style.progress"
+      data-tourid="progress"
     />
   </div>
 </template>

@@ -3,6 +3,7 @@
     :document="data.actor"
     class="character-sheet-classic"
     bodyClass="flexrow"
+    data-tourid="sheet"
   >
     <!-- Header row -->
     <template #header>
@@ -11,14 +12,18 @@
 
     <!-- Main body row -->
     <!-- Momentum on left -->
-    <div class="flexcol margin-left">
+    <div class="flexcol margin-left" data-tourid="momentum">
       <MomentumMeterSlider labelPosition="right" data-tooltip-direction="UP" />
     </div>
 
     <!-- Center area -->
     <div class="flexcol">
       <!-- Attributes -->
-      <div class="flexrow stats" data-tooltip-direction="UP">
+      <div
+        class="flexrow stats"
+        data-tooltip-direction="UP"
+        data-tourid="stats"
+      >
         <attr-box attr="edge"></attr-box>
         <attr-box attr="heart"></attr-box>
         <attr-box attr="iron"></attr-box>
@@ -30,6 +35,7 @@
         :id="`${data.actor._id}-character-sheet-classic`"
         :class="$style.tabSet"
         :v-slot:icon="{ size: 'sm' }"
+        data-tourid="tabs"
       >
         <TabList>
           <Tab
@@ -49,7 +55,7 @@
       </TabSet>
 
       <!-- Conditions & Banes & Burdens -->
-      <section class="sheet-area nogrow">
+      <section class="sheet-area nogrow" data-tourid="conditions">
         <conditions />
       </section>
     </div>
@@ -59,6 +65,7 @@
       class="flexcol margin-right"
       data-tooltip-direction="UP"
       labelPosition="left"
+      data-tourid="resources"
     />
   </SheetBasic>
 </template>
