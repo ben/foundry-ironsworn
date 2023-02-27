@@ -22,7 +22,7 @@
     "@tinymce/tinymce-vue": "^5.0.0",
     "@types/lodash": "^4.14.170",
     "@types/marked": "^4.0.3",
-    "@types/node": "^18.14.0",
+    "@types/node": "^18.14.2",
     "@typescript-eslint/eslint-plugin": "^5.53.0",
     "@typescript-eslint/parser": "^5.51.0",
     "@typescript/analyze-trace": "^0.10.0",
