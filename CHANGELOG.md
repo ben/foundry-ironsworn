@@ -3,6 +3,7 @@
 ## Next Release
 
 - Fix scrollbar width styling
+- Disable custom colors for volume sliders in Starforged theme, they were invisible
 
 ## 1.20.27
 
