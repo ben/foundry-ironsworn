@@ -74,7 +74,7 @@ export class IronswornItem extends Item {
   }
 
   fulfill() {
-    if (this.data.type !== 'progress') return
+    if (this.type !== 'progress') return
     const system = this.system as ProgressDataPropertiesData
 
     let moveDfId: string | undefined

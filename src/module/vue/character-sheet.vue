@@ -1,8 +1,9 @@
 <template>
   <SheetBasic
-    :document="actor"
+    :document="data.actor"
     class="character-sheet-classic"
     bodyClass="flexrow"
+    data-tourid="sheet"
   >
     <!-- Header row -->
     <template #header>
@@ -11,14 +12,18 @@
 
     <!-- Main body row -->
     <!-- Momentum on left -->
-    <div class="flexcol nogrow" :class="$style['margin-right']">
+    <div class="flexcol nogrow" :class="$style['margin-right']" data-tourid="momentum">
       <MomentumMeterSlider labelPosition="right" data-tooltip-direction="UP" />
     </div>
 
     <!-- Center area -->
     <div class="flexcol">
       <!-- Attributes -->
-      <div class="flexrow stats" data-tooltip-direction="UP">
+      <div
+        class="flexrow stats"
+        data-tooltip-direction="UP"
+        data-tourid="stats"
+      >
         <attr-box attr="edge"></attr-box>
         <attr-box attr="heart"></attr-box>
         <attr-box attr="iron"></attr-box>
@@ -27,9 +32,10 @@
       </div>
       <TabSet
         :tabKeys="['character', 'notes']"
-        :id="`${actor._id}-character-sheet-classic`"
+        :id="`${data.actor._id}-character-sheet-classic`"
         :class="$style['tab-set']"
         :v-slot:icon="{ size: 'sm' }"
+        data-tourid="tabs"
       >
         <TabList>
           <Tab
@@ -49,7 +55,7 @@
       </TabSet>
 
       <!-- Conditions & Banes & Burdens -->
-      <section class="sheet-area nogrow">
+      <section class="sheet-area nogrow" data-tourid="conditions">
         <conditions />
       </section>
     </div>
@@ -60,6 +66,7 @@
       :class="$style['margin-left']"
       data-tooltip-direction="UP"
       labelPosition="left"
+      data-tourid="resources"
     />
   </SheetBasic>
 </template>
@@ -114,11 +121,11 @@ import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
 import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
 }>()
 
 provide(
   ActorKey,
-  computed(() => props.actor)
+  computed(() => props.data.actor)
 )
 </script>

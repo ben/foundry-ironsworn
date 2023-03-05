@@ -3,16 +3,18 @@
     "Ironsworn": "Ironsworn",
     "Starforged": "Starforged",
     "YourWorldTruths": "Votre Monde: Vérités",
+    "TruthsAreOptional": "Créer des Vérités est une étape optionnelle. Vous pouvez toujours y revenir plus tard ans les paramètres",
     "TruthQuestStarter": "Quête d’introduction :",
     "QuestStarter": "Quête d’introduction",
     "SaveYourTruths": "Enregistrer vos Vérités",
-    "CustomTruth": "Vérité personalisée",
+    "CustomTruth": "Vérité personnalisée",
+    "RandomizeAll": "Rendre tout aléatoire",
     "Roll": "Lancer les dés",
+    "SendToChat": "Envoyer le texte des règles dans le chat: <i>{move}</i>",
     "CopyTextToClipboard": "Copier le texte dans le presse-papier",
-    "SendToChat": "Envoyer le texte des règles dans le chat",
     "Adds": "Ajoute",
     "Versus": "vs.",
-    "CappedAt10": "Le scorce de l'action est limité à 10",
+    "CappedAt10": "Le score de l'action est limité à 10",
     "Strong_hit": "Coup fort",
     "Strong_hit_match": "Coup fort avec une égalité!",
     "On_a_strong_hit": "Sur un coup fort",
@@ -22,7 +24,10 @@
     "Miss_match": "Échec avec une égalité!",
     "On_a_miss": "Sur un échec",
     "MarkProgress": "Marquer la progression",
+    "ProgressMove": "Progress Move",
     "PROGRESS": {
+      "Current": "{score} progresse de ({ticks} coches)",
+      "Ticks": "{ticks} coches",
       "BOX": {
         "1": "1 case",
         "2": "2 cases",
@@ -40,11 +45,13 @@
     "ProgressRoll": "Jet de progrès",
     "MakeAProgressRoll": "Faire un jet de progression avec {score} de progrès",
     "StarProgress": "Lorsqu'activé, cet objet sera aussi affiché dans l'onglet 'Héritage'.",
-    "Troublesome": "Pénible",
-    "Dangerous": "Dangereux",
-    "Formidable": "Redoutable",
-    "Extreme": "Extrême",
-    "Epic": "Épique",
+    "CHALLENGERANK": {
+      "Troublesome": "Pénible",
+      "Dangerous": "Dangereux",
+      "Formidable": "Redoutable",
+      "Extreme": "Extrême",
+      "Epic": "Epique"
+    },
     "Stat": "Caractéristique",
     "Stats": "Caractéristiques",
     "OracleTable": {
@@ -72,16 +79,17 @@
         "fallback": "lancez le score le plus bas de {statList}"
       }
     },
-    "Momentum": "élan",
-    "Health": "santé",
-    "Spirit": "esprit",
-    "Supply": "provisions",
-    "Edge": "vivacité",
-    "Heart": "cœur",
-    "Iron": "fer",
-    "Shadow": "ombre",
-    "Wits": "astuces",
+    "Momentum": "Élan",
+    "Health": "Santé",
+    "Spirit": "Esprit",
+    "Supply": "Provisions",
+    "Edge": "Vivacité",
+    "Heart": "Cœur",
+    "Iron": "Fer",
+    "Shadow": "Ombre",
+    "Wits": "Astuces",
     "XP": "XP",
+    "NoBonds": "Aucun lien",
     "Legacies": "Héritages",
     "LEGACY": {
       "Bonds": "Liens",
@@ -91,6 +99,9 @@
     "Clock": "Horloge",
     "Debilities": "Handicaps",
     "Conditions": "États",
+    "Condition": "État",
+    "ConditionSetOnOne": "{condition} is set on {name}",
+    "ConditionSetOnMany": "{condition} is set on:",
     "Banes": "Fléaux",
     "Burdens": "Fardeaux",
     "Misfortunes": "Malheurs",
@@ -110,18 +121,34 @@
     "Indebted": "Endetté",
     "Battered": "Battu",
     "Reroll": "Relancez les dés",
+    "Connections": "Connections",
+    "Connection": "Connection",
     "MOVES": {
       "Adventure": "Actions d’aventure",
       "Combat": "Actions de combat",
+      "Connection": "Actions de connection",
       "Custom": "Actions personnalisées",
+      "Delve": "Actions de fouilles",
+      "Exploration": "Actions d'exploration",
       "Fate": "Actions de destin",
+      "Failure": "Actions d'Échec",
+      "Legacy": "Actions d'Héritages",
       "Quest": "Actions de quête",
+      "Rarity": "Actions de rareté",
+      "Recover": "Action de récupération",
       "Relationship": "Actions de relations",
       "Scene Challenge": "Actions de défi de scène",
-      "Suffer": "Actions de souffrance"
+      "Session": "Action de session",
+      "Suffer": "Actions de souffrance",
+      "Threat": "Actions de menace",
+      "Threshold": "Action de seuil"
     },
+    "Failure": "Échec",
+    "Threat": "Menace",
+    "Rarity": "Rareté",
     "LocationType": "Type de lieu",
     "RollForDetails": "Jet de type de lieu",
+    "RandomName": "Nom aléatoire",
     "ResolveChallenge": "Résoudre le défi",
     "ResolveChallengeDisabled": "Choisissez vos deux derniers dés de défi",
     "BurnForUpgrade": "Brûler de l'Élan: <strong>{type}</strong>",
@@ -132,18 +159,24 @@
     "Callsign": "Indicatif",
     "Characteristics": "Caractéristiques",
     "Summary": "Résumé",
+    "Category": "Catégorie",
+    "Color": "Coleur",
+    "Requirement": "Prérequis",
     "Trigger": "Déclencheur",
     "FullText": "Texte complet",
+    "Field": "Champ",
     "Fields": "Champs",
     "Label": "Étiquette",
     "Value": "Valeur",
     "Abilities": "Capacités",
+    "Ability": "Capacité",
     "Options": "Options",
+    "Option": "Option",
     "Track": "Jauge",
     "Enabled": "Débloqué",
     "ChallengeRank": "Rang du défi",
     "Completed": "Achevé",
-    "NotCompleted": "Non achevé",
+    "NotCompleted": "Inachevé",
     "Foes": "Ennemis",
     "Foe": "Ennemi",
     "Edit": "Modifier",
@@ -169,19 +202,27 @@
     "Fourth": "quatrième",
     "Fifth": "cinquième",
     "StarforgedTools": "Outils Starforged",
+    "IronswornTools": "Outils d'Ironsworn",
     "Region": "Région",
-    "Terminus": "Terminus",
-    "Outlands": "Contrées lointaines",
-    "Expanse": "Étendue",
+    "RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
+    "REGION": {
+      "Terminus": "Terminus",
+      "Outlands": "Contrées lointaines",
+      "Expanse": "Étendue"
+    },
     "RotateCCW": "Tourner dans le sens inverse des aiguilles d'une montre",
     "RotateCW": "Tourner dans le sens des aiguilles d'une montre",
     "RollDialog": {
       "AdvancedRollOptions": "Options avancées",
       "PresetActionDie": "Dé d'action prédéfinie",
+      "PresetChallengeDice": "Dés de challenge",
       "PredeterminedOutcome": "Résultat prédéterminé",
       "ExtraChallengeDice": "Dés de défi supplémentaires"
     },
     "ChatAlert": {
+      "Muted": "Chuchote des infos à l'utilisateur qui les a déclenchées",
+      "Unmuted": "Dévoile des infos à tout le monde",
+      "ToggleMute": "Mute",
       "Renamed": "Renommé {name}",
       "renamed": "renommé {name}",
       "Added": "{name} ajouté",
@@ -235,12 +276,22 @@
       },
       "PromptTruths": {
         "Name": "Proposition pour les Vérités du Monde",
-        "Hint": "Propose au démarrage de générer les Vérités de votre Monde avec l'assitant, si ce n'a pas été déjà fait."
+        "Hint": "Propose au démarrage de générer les Vérités de votre Monde avec l'assistant, si ce n'a pas été déjà fait."
       },
       "ConfigurationDialog": {
         "Label": "Ironsworn/Starforged Boîte de dialogue de configuration",
         "Name": "Boîte de dialogue de configuration",
         "Hint": "Choisissez entre les éléments d'interface utilisateur Ironsworn et Starforged.."
+      },
+      "ISTruthsDialog": {
+        "Label": "Vérités d'Ironsworn",
+        "Name": "Vérités d'Ironsworn",
+        "Hint": "Ouvrir la boite de dialogue pour générer les Vérités du monde d'Ironsworn."
+      },
+      "SFTruthsDialog": {
+        "Label": "Vérités de Starforged",
+        "Name": "Vérités de Starforged",
+        "Hint": "Ouvrir la boite de dialogue pour générer les Vérités du monde de Starforged."
       },
       "SFBeta": {
         "Name": "Montrer le contenu de la bêta de Starforged",
@@ -257,8 +308,28 @@
     },
     "First Start": {
       "Welcome": "Bienvenue",
-      "Save": "Enregistrer",
-      "Intro": "Bienvenue dans Ironsworn ! Il y a juste quelques choix à faire avant de commencer."
+      "Intro": "SVP, choisissez le système que vous voulez utiliser. Cela définira la feuille de personnage et les actions par défaut de l'Oracle. Des options détaillées sont disponibles dans les paramètres",
+      "SettingTruths": "Établir les Vérités",
+      "SettingTruth": "Établir la Vérité"
+    },
+    "Tours": {
+      "ChatMessage": "<h3>Bienvenue dans Ironsworn!</h3><p>Si vous utlisez ce système pour la première fois, cliquez ici pour une visite guidée</p> <button id=\"ironsworn-tour-chat-button\"> <i class=\"fas fa-person-hiking\"></i> Lancer la visite </button>",
+      "Welcome": {
+        "Title": "Bienvenue dans Ironsworn",
+        "Description": "Aperçu du système Ironsworn & Starforged",
+        "WelcomeTitle": "Bienvenue",
+        "WelcomeContent": "<p>Bienvenue dans Ironsworn & Starforged! Cette visite vous aidera à trouver toutes les choses nécessaire pour paramétrer et jouer vos parties.</p><p>À ce stade, vous aurez vu la boîte de dialogue de sélection de jeu, qui configure la feuille de personnage, les actions et les oracles par défaut. Voyons où se trouvent les autres fonctionnalités du système.</p>",
+        "ActorTabTitle": "Création de Personnage",
+        "ActorTabContent": "<p>À un moment donné, vous aurez envie de créer un personnage. Pour ce faire, accédez à l'onglet \"Actors\" et cliquez sur ce bouton.</p>",
+        "CharacterCreateTitle": "Créer un Personnage",
+        "CharacterCreateContent": "<p>Ce bouton créera un personnage principal, qui est tout ce dont vous avez besoin pour commencer. Au fur et à mesure que votre jeu progresse, vous aurez peut-être besoin des autres types ici pour organiser les choses.</p>",
+        "CompendiumTitle": "Cartes",
+        "CompendiumContent": "<p>Vous aurez probablement besoin d'une carte des Terres de Fer ou d'un secteur de la Forge. Vous pouvez créer votre propre scène pour cela, ou vous pouvez utiliser l'une des nôtres. Ouvrez l'un de ces compendiums et faites glisser une carte dans votre zone de scènes (l'onglet qui ressemble à une carte pliée).</p>",
+        "OracleToolTitle": "Oracles",
+        "OracleToolContent": "<p>Aucune partie d'Ironsworn ou Starforged ne serait complète sans oracles. Ce bouton fera apparaître une fenêtre avec tous les oracles du jeu choisi. Les oracles sont également disponibles depuis la fiche de personnage.</p>",
+        "ToursTitle": "Prochaines étapes",
+        "ToursContent": "<p>C'est tout pour le moment ! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the <code>#foundry-vtt</code> channel in the <a href=\"https://discord.gg/8bRuZwK\">Ironsworn Discord</a>.</p><p>Enjoy!</p>"
+      }
     },
     "WorldTruths": {
       "The Old World": {
@@ -362,13 +433,126 @@
       }
     },
     "OracleCategories": {
+      "Access": "Accès",
+      "Action and Theme": "Action et Thème",
+      "Ask the Oracle": "Demander à l'Oracle",
+      "Basic Form": "Forme Basique",
+      "Challenge Rank": "Niveau de Challenge",
+      "Chaotic": "Chaotique",
+      "Character Creation": "Création de personnage",
+      "Character Name": "Nom du personnage",
+      "Character": "Personnage",
+      "Characters": "Personnages",
+      "Combat Event": "Évènement de combat",
+      "Community": "Communauté",
+      "Core": "Core",
+      "Creatures": "Créatures",
+      "Delve the Depths": "Fouiller les Profondeurs",
+      "Derelicts": "Derelicts",
+      "Desert": "Désert",
+      "Engineering": "Engineering",
+      "Factions": "Factions",
+      "Feature": "Feature",
+      "Fortified": "Fortifié",
+      "Furnace": "Fourneau",
+      "Grave": "Tombe",
+      "Haunted": "Hanté",
+      "Ice": "Glace",
+      "Infested": "Infesté",
+      "Inhabited": "Inhabited",
+      "Interior": "Intérieur",
+      "Ironlander": "Ironlander",
+      "Jovian": "Jovien",
+      "Jungle": "Jungle",
+      "Living": "Vivant",
+      "Location Themes": "Thèmes des lieux",
+      "Mechanical": "Mécanique",
+      "Medical": "Médical",
+      "Misc": "Divers",
+      "Mission": "Mission",
+      "Moves": "Actions",
+      "Monstrosity": "Monstruosité",
+      "Name": "Nom",
+      "Ocean": "Océan",
+      "Operations": "Opérations",
+      "Opportunity": "Opportunité",
+      "Other": "Autre",
+      "Peril": "Péril",
+      "Place": "Lieu",
+      "Planets": "Planètes",
+      "Population": "Population",
+      "Production": "Production",
+      "Quick Name": "Surnom",
+      "Research": "Recherche",
+      "Rocky": "Rocheux",
+      "Ruined": "En Ruines",
+      "Sacred": "Sacré",
+      "Sanctum": "Sanctuaire",
+      "Sector Name": "Nom du Secteur",
+      "Settlement": "Colonie",
+      "Settlements": "Colonies",
+      "Shattered": "Éclaté",
+      "Sighting": "Observation",
+      "Site Name": "Nom du Site",
+      "Site Nature": "Nature du Site",
+      "Space": "Espace",
+      "Starships": "Vaisseaux",
+      "Tainted": "Teinté",
+      "Threat": "Menace",
+      "Trap": "Piège",
+      "Turning Point": "Moment Décisif",
+      "Type": "Type",
+      "Vaults": "Coffres",
+      "Vital": "Vital",
+      "Zones": "Zones",
       "Custom": "Oracles personnalisés"
     },
     "Asset Categories": {
-      "Custom": "Ressources personnalisées"
-    },
-    "SCENE": {
-      "TypeSector": "Secteur"
+      "Custom": "Ressources personnalisées",
+      "Ironsworn": {
+        "Companion": {
+          "Title": "Compagnon",
+          "Description": "Les compagnons sont vos assistants PNJ. Lorsque vous acquérez un compagnon, donnez-lui un nom et imaginez son apparence et sa personnalité. S'ils n'ont pas de capacité de départ, choisissez-en une. L'amélioration d'un compagnon active des capacités supplémentaires.\n\nLes compagnons utilisent une piste de santé et peuvent subir des dommages à la suite de l'une de vos actions. Lorsque votre compagnon subit des dégâts, effectuez le mouvement [Companion Endure Harm](Ironsworn/Moves/Suffer/Companion_Endure_Harm) (page 94) pour déterminer le résultat. Voir page 43 pour en savoir plus."
+        },
+        "Path": {
+          "Title": "Voies",
+          "Description": "Les voies représentent votre background, vos intérêts, votre formation et vos compétences. Ils offrent des avantages mécaniques et narratifs, mais reflètent également qui vous êtes et comment vous interagissez avec le monde. Par exemple, un **Ritualiste** aurait probablement une vision différente de celle d'un **Veteran**. Choisir ces deux voies peut refléter une évolution de votre personnage ou un parcours intéressant."
+        },
+        "Combat Talent": {
+          "Title": "Talent de Combat",
+          "Description": "Les personnages *Ironsworn* sont supposés être des combattants qualifiés. Même sans talent de combat, vous pouvez manier des armes et effectuer des mouvements de combat (page 78). Un talent de combat reflète un domaine d'expertise particulier et vous offre des options et des bonus supplémentaires.\n\nLes atouts des talents de combat nécessitent généralement que vous maniez une arme spécifique, comme indiqué dans le texte de l'actif. Par exemple, si vous êtes un **Shield-Bearer** et que vous n'avez pas de bouclier à portée de main, vous ne pouvez pas utiliser les capacités de cet atout."
+        },
+        "Ritual": {
+          "Title": "Rituels",
+          "Description": "La magie dans *Ironsworn* est lancée à travers des rituels qui aident à soutenir vos actions ou agissent comme des mouvements uniques. Comme tous les atouts, les rituels peuvent être sélectionnés au fur et à mesure que vous gagnez de l'expérience et peuvent être améliorés au fil du temps pour les rendre plus flexibles ou plus puissants.\n\nTous les rituels utilisent une action comme capacité marquée par défaut. Vous devez effectuer cette action et le jet d'action associé pour déclencher l'effet. Toutes les capacités secondaires que vous gagnez en améliorant l'actif dépendent de l'exécution du rituel décrit comme la capacité par défaut."
+        }
+      },
+      "Starforged": {
+        "Command Vehicle": {
+          "Title": "Vehicle de Commandement",
+          "Description": "The **command vehicle** is your interstellar STARSHIP. It is a default asset for your character, taken when you begin your campaign. If you are playing with others, this is a shared asset; each of you may use the STARSHIP's abilities while aboard the craft.\n\nThe command vehicle has an integrity meter and starts at 5 integrity. When your STARSHIP takes a hit, make the @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} move to see what happens."
+        },
+        "Module": {
+          "Title": "Module",
+          "Description": "**Modules** are linked to your STARSHIP and offer additional options and advantages when aboard that vehicle.\n\nThese assets are earned and managed by a single character. They can be shared with allies, but only if it's practical for them to make use of it (not everyone may know how to use a RESEARCH LAB).\n\nWhen you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} and score a miss, you can mark a module as broken to offset further danger for your STARSHIP. Flip the card over to indicate its broken state. A broken module cannot be used until you successfully @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} it."
+        },
+        "Support Vehicle": {
+          "Title": "Support Vehicle",
+          "Description": "**Support vehicles** complement your command vehicle for planetside or short-range operations. If you are playing with others, one of you might serve as the pilot or owner of a support vehicle, but anyone on board can use its abilities as appropriate to the situation.\n\nAs with the command vehicle, your support vehicles have integrity meters. The maximum integrity varies based on the type of vehicle. When a support vehicle faces a damaging situation or environment, you must @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} to see how it fares."
+        },
+        "Path": {
+          "Title": "Path",
+          "Description": "**Paths** are your background, interests, training, skills, powers, and key equipment. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. When you create your character in the next chapter, you'll select at least two paths to get started.\n\nSome paths represent your skill with a signature weapon style or piece of equipment. If you see a requirement at the top of the asset card, such as “If you wield a bladed weapon…,” the asset is only usable when taking action using that item."
+        },
+        "Companion": {
+          "Title": "Companion",
+          "Description": "**Companions** are NPC helpers. When you gain a companion, give them a name and envision their look and personality.\n\nCompanions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} move. When their health is at 0, they are in danger of being killed or destroyed."
+        },
+        "Deed": {
+          "Title": "Deed",
+          "Description": "**Deeds** represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character."
+        }
+      }
     },
     "ROLLTABLE": {
       "TypeOracle": "Oracle"
@@ -376,7 +560,16 @@
     "ROLLTABLES": {
       "TypeOracle": "Oracles"
     },
+    "SCENE": {
+      "TypeSector": "Secteur"
+    },
+    "SCENES": {
+      "TypeSector": "Secteurs"
+    },
     "ACTOR": {
+      "SheetCompact": "Compact",
+      "SheetFoe": "Énemi",
+      "SheetStarforgedLocation": "Starforged Location",
       "SubtypeDerelict": "Épave",
       "SubtypePlanet": "Planète",
       "SubtypeSettlement": "Colonie",
@@ -389,6 +582,18 @@
       "TypeDelveSite": "Site de fouilles",
       "TypeStarship": "Vaisseau spatial"
     },
+    "ACTORS": {
+      "SubtypeDerelict": "Épaves",
+      "SubtypePlanet": "Planètes",
+      "SubtypeSettlement": "Colonies",
+      "SubtypeStar": "Étoiles",
+      "SubtypeVault": "Chambres forte de précurseurs",
+      "TypeCharacter": "Personnages",
+      "TypeFoe": "PNJs",
+      "TypeLocation": "Lieux",
+      "TypeDelveSite": "Sites de fouilles",
+      "TypeStarship": "Vaisseaux spatiaux"
+    },
     "ITEM": {
       "SubtypeConnection": "Connexion",
       "SubtypeProgress": "Progrès",
@@ -396,10 +601,10 @@
       "TypeAsset": "Atout",
       "TypeBond": "Lien",
       "TypeBondset": "Forger un lien",
-      "TypeMove": "Action",
-      "TypeProgressTrack": "Jauge de progrès",
       "TypeDelveDomain": "Domaine du site",
-      "TypeDelveTheme": "Thème du site"
+      "TypeDelveTheme": "Thème du site",
+      "TypeMove": "Action",
+      "TypeProgressTrack": "Jauge de progrès"
     },
     "ITEMS": {
       "SubtypeConnection": "Connexions",
@@ -407,7 +612,23 @@
       "SubtypeVow": "Vœux",
       "TypeAsset": "Atouts",
       "TypeBond": "Liens",
-      "TypeMove": "Actions"
+      "TypeBondset": "Forger des liens",
+      "TypeDelveDomain": "Domaines de site",
+      "TypeDelveTheme": "Thèmes de sites",
+      "TypeMove": "Actions",
+      "TypeProgressTrack": "Jauges de progrès"
+    },
+    "JOURNALENTRYPAGE": {
+      "TypeProgressTrack": "Jauge de progrès",
+      "TypeTruth": "Établir une Vérité",
+      "TypeTruthClassic": "Vérité du monde",
+      "TypeTruthStarforged": "Établir une Vérité"
+    },
+    "JOURNALENTRYPAGES": {
+      "TypeProgressTrack": "Jauges de progrès",
+      "TypeTruth": "Établir les Vérités",
+      "TypeTruthClassic": "Vérités du monde",
+      "TypeTruthStarforged": "Établir les Vérités"
     },
     "DELVESITE": {
       "Danger": "Danger",
@@ -416,6 +637,13 @@
       "Denizens": "Habitants",
       "Feature": "Caractéristique",
       "Features": "Caractéristiques"
+    },
+    "FREQUENCY": {
+      "VeryCommon": "Très commun",
+      "Common": "Commun",
+      "Uncommon": "Peu commun",
+      "Rare": "Rare",
+      "Unforeseen": "Du jamais vu"
     }
   }
 }

@@ -86,13 +86,6 @@ let $el = ref<typeof IronBtn>()
 
 const isActive = computed(() => tabState.activeTab === props.tabKey)
 
-watch(tabState, async () => {
-  if (tabState.focusedTab === props.tabKey) {
-    await nextTick()
-    $el.value?.element.focus()
-  }
-})
-
 const tabSetId = computed(() => tabState.tabSetId)
 defineExpose({
   tabSetId: tabSetId.value,

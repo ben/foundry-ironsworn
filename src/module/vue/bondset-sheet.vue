@@ -71,13 +71,13 @@ import { BondsetDataPropertiesData } from '../item/itemtypes'
 import MceEditor from './components/mce-editor.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 
-const props = defineProps<{ item: any }>()
-provide(ItemKey, computed(() => props.item) as any)
+const props = defineProps<{ data: { item: any } }>()
+provide(ItemKey, computed(() => props.data.item) as any)
 
 const $item = inject($ItemKey)
 
 const bonds = computed(
-  () => (props.item.system as BondsetDataPropertiesData).bonds
+  () => (props.data.item.system as BondsetDataPropertiesData).bonds
 )
 
 const data = reactive({
@@ -98,7 +98,7 @@ function selectBondIndex(i: number) {
 }
 
 async function deleteBond(i) {
-  const system = props.item.system as BondsetDataPropertiesData
+  const system = props.data.item.system as BondsetDataPropertiesData
   const bonds = Object.values(system.bonds)
   bonds.splice(i, 1)
   await $item?.update({ system: { bonds } })
@@ -111,7 +111,7 @@ async function deleteBond(i) {
 }
 
 async function addBond() {
-  const system = props.item.system as BondsetDataPropertiesData
+  const system = props.data.item.system as BondsetDataPropertiesData
   const bonds = Object.values(system.bonds)
   bonds.push({ name: '', notes: '' })
   await $item?.update({ system: { bonds } })

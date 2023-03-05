@@ -1,14 +1,8 @@
 import { App } from 'vue'
 import { $ItemKey } from './provisions'
 import { VueAppMixin } from './vueapp.js'
-import {
-  VueSheetRenderHelper,
-  VueSheetRenderHelperOptions,
-} from './vue-render-helper'
 
 export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
-  renderHelper: VueSheetRenderHelper | undefined
-
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ['ironsworn', 'item'],
@@ -17,27 +11,15 @@ export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
     })
   }
 
-  abstract get renderHelperOptions(): Partial<VueSheetRenderHelperOptions>
-
   setupVueApp(app: App) {
     app.provide($ItemKey, this.item)
   }
 
-  render(
-    force?: boolean | undefined,
-    options?: Application.RenderOptions<DocumentSheetOptions> | undefined
-  ): this {
-    this.renderHelper ||= new VueSheetRenderHelper(
-      this,
-      {
-        vueData: async () => ({ item: this.item.toObject() }),
-        ...this.renderHelperOptions,
-      },
-      this.setupVueApp.bind(this)
-    )
-
-    this.renderHelper.render(force, options)
-    return this
+  getData(...args): MaybePromise<object> {
+    return {
+      ...super.getData(...args),
+      item: this.item.toObject(),
+    }
   }
 
   get hasEditMode() {

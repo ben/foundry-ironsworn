@@ -1,12 +1,12 @@
 <template>
   <div class="flexcol">
     <SheetHeader class="nogrow">
-      <DocumentName :document="item" />
+      <DocumentName :document="data.item" />
     </SheetHeader>
     <TabSet
       v-if="editMode"
       :tabKeys="['description', 'fields', 'abilities', 'options', 'track']"
-      :id="`${item._id}-asset-sheet`"
+      :id="`${data.item._id}-asset-sheet`"
     >
       <TabList>
         <Tab
@@ -98,22 +98,22 @@ import Tab from './components/tabs/tab.vue'
 
 const $item = inject($ItemKey)
 
-const props = defineProps<{ item: any }>()
-provide(ItemKey, computed(() => props.item) as any)
+const props = defineProps<{ data: { item: any } }>()
+provide(ItemKey, computed(() => props.data.item) as any)
 
 const editMode = computed(() => {
-  return props.item.flags['foundry-ironsworn']?.['edit-mode']
+  return props.data.item.flags['foundry-ironsworn']?.['edit-mode']
 })
 
 const hasOptions = computed(() => {
-  return Object.values(props.item.system.exclusiveOptions || []).length > 0
+  return Object.values(props.data.item.system.exclusiveOptions || []).length > 0
 })
 
 const hasFields = computed(() => {
-  return Object.values(props.item.system.fields || []).length > 0
+  return Object.values(props.data.item.system.fields || []).length > 0
 })
 
 function setRequirement() {
-  $item?.update({ system: { requirement: props.item.system.requirement } })
+  $item?.update({ system: { requirement: props.data.item.system.requirement } })
 }
 </script>

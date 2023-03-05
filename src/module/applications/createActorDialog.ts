@@ -77,7 +77,8 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const drawResult = await table?.draw({ displayChat: false })
 
     this._createWithFolder(
-      drawResult?.results[0]?.data.text || CONFIG.Actor.typeLabels['character'],
+      drawResult?.results[0]?.data.text ||
+        game.i18n.localize(CONFIG.Actor.typeLabels['character']),
       'character',
       ev.currentTarget.dataset.img || undefined
     )
@@ -86,7 +87,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sharedCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      CONFIG.Actor.typeLabels['shared'],
+      game.i18n.localize(CONFIG.Actor.typeLabels['shared']),
       'shared',
       ev.currentTarget.dataset.img || undefined
     )
@@ -95,7 +96,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _siteCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      CONFIG.Actor.typeLabels['site'],
+      game.i18n.localize(CONFIG.Actor.typeLabels['site']),
       'site',
       ev.currentTarget.dataset.img || undefined
     )
@@ -104,7 +105,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _foeCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      CONFIG.Actor.typeLabels['foe'],
+      game.i18n.localize(CONFIG.Actor.typeLabels['foe']),
       'foe',
       ev.currentTarget.dataset.img || undefined
     )
@@ -116,7 +117,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
     const name = await this._randomStarforgedName()
 
     this._createWithFolder(
-      name || CONFIG.Actor.typeLabels['character'],
+      name || game.i18n.localize(CONFIG.Actor.typeLabels['character']),
       'character',
       ev.currentTarget.dataset.img || undefined,
       'ironsworn.StarforgedCharacterSheet'
@@ -126,7 +127,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfshipCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      CONFIG.Actor.typeLabels['starship'],
+      game.i18n.localize(CONFIG.Actor.typeLabels['starship']),
       'starship',
       ev.currentTarget.dataset.img || undefined
     )
@@ -135,7 +136,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
   async _sfLocationCreate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
     this._createWithFolder(
-      CONFIG.Actor.typeLabels['location'],
+      game.i18n.localize(CONFIG.Actor.typeLabels['location']),
       'location',
       ev.currentTarget.dataset.img || undefined
     )
@@ -151,11 +152,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
       name,
       img,
       type,
-      token: {
-        displayName: CONST.TOKEN_DISPLAY_MODES.ALWAYS,
-        disposition: CONST.TOKEN_DISPOSITIONS.NEUTRAL,
-        actorLink: true,
-      },
+      token: { actorLink: true },
       folder: this.options.folder || undefined,
     }
     if (sheetClass) {

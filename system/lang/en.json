@@ -3,6 +3,7 @@
     "Ironsworn": "Ironsworn",
     "Starforged": "Starforged",
     "YourWorldTruths": "Your World: Truths",
+    "TruthsAreOptional": "Creating truths is an optional step. You can always come back to this later in the settings.",
     "TruthQuestStarter": "Quest Starter:",
     "QuestStarter": "Quest Starter",
     "SaveYourTruths": "Save Your Truths",
@@ -204,6 +205,7 @@
     "StarforgedTools": "Starforged Tools",
     "IronswornTools": "Ironsworn Tools",
     "Region": "Region",
+    "RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
     "REGION": {
       "Terminus": "Terminus",
       "Outlands": "Outlands",
@@ -219,6 +221,9 @@
       "ExtraChallengeDice": "Extra challenge dice"
     },
     "ChatAlert": {
+      "Muted": "Currently whispering updates to the user who triggered them",
+      "Unmuted": "Currently broadcasting updates to all users",
+      "ToggleMute": "Toggle mute",
       "Renamed": "Renamed to {name}",
       "renamed": "renamed to {name}",
       "Added": "Added {name}",
@@ -271,13 +276,23 @@
         "Hint": "If on, changes to character stats will be logged to the chat."
       },
       "PromptTruths": {
-        "Name": "Ironsworn/Starforged Dialog on Start",
-        "Hint": "Open the above dialog on startup."
+        "Name": "Configuration Dialog on Start",
+        "Hint": "Open the above dialog on the next reload."
       },
       "ConfigurationDialog": {
-        "Label": "Ironsworn/Starforged Configuration Dialog",
+        "Label": "Configuration Dialog",
         "Name": "Configuration Dialog",
         "Hint": "Choose between Ironsworn and Starforged UI elements."
+      },
+      "ISTruthsDialog": {
+        "Label": "Ironsworn Truths",
+        "Name": "Ironsworn Truths",
+        "Hint": "Open the dialog to generate your Ironsworn setting truths."
+      },
+      "SFTruthsDialog": {
+        "Label": "Starforged Truths",
+        "Name": "Starforged Truths",
+        "Hint": "Open the dialog to generate your Starforged setting truths."
       },
       "SFBeta": {
         "Name": "Show Starforged beta content",
@@ -294,18 +309,104 @@
     },
     "First Start": {
       "Welcome": "Welcome",
-      "Save": "Save",
-      "Intro": "Welcome to Ironsworn! There are just a few choices to make before starting.",
-      "CharacterSheet": "Character Sheet",
-      "DefaultSheet": "Which character sheet would you like to use as the default?",
-      "MovesOracles": "Moves & Oracles",
-      "DefaultMovesOracles": "Which set of moves and oracles would you like to use?",
-      "MatchSheet": "Match sheet",
+      "Intro": "Please choose which system you'll be primarily using. This sets sheet and move/oracle defaults; more detailed options are available in the settings.",
       "SettingTruths": "Setting Truths",
-      "SettingTruth": "Setting Truth",
-      "GenerateTruths": "Would you like to generate your setting's truths?",
-      "YesFor": "Yes, for",
-      "NeverAsk": "Never ask again"
+      "SettingTruth": "Setting Truth"
+    },
+    "Tours": {
+      "ChatMessage": "<h3>Welcome to Ironsworn!</h3><p>If this is your first time using the system, click this to for an interactive tour:</p> <button id=\"ironsworn-tour-chat-button\"> <i class=\"fas fa-person-hiking\"></i> Launch Tour </button>",
+      "Welcome": {
+        "Title": "Welcome to Ironsworn",
+        "Description": "Overview of Ironsworn & Starforged system",
+        "WelcomeTitle": "Welcome",
+        "WelcomeContent": "<p>Welcome to Ironsworn &amp; Starforged! This tour will help you find where all the things are that will help you set up and play your game.</p><p>At this point you will have seen the game-selection dialog, which configures the default character sheet, moves, and oracles. Let&#39;s look at where the other system features can be found.</p>",
+        "ActorTabTitle": "Creating a Character",
+        "ActorTabContent": "<p>At some point, you&#39;ll want to create a character. To do that, navigate to the &quot;<i class=\"fas fa-user\"></i> Actors&quot; tab and click this button.</p>",
+        "CharacterCreateTitle": "Creating a Character",
+        "CharacterCreateContent": "<p>This button will create a primary character, which is all you need to get started. As your game progresses, you may need the other types here to organize things.</p>",
+        "CompendiumTitle": "Maps",
+        "CompendiumContent": "<p>You&#39;ll probably want a map of the Ironlands or a sector of the Forge. You can create your own scene for this, or you can use one of ours. Open one of these compendiums and drag a map to your &quot;<i class=\"fas fa-map\"></i> Scenes&quot; area.</p>",
+        "OracleToolTitle": "Oracles",
+        "OracleToolContent": "<p>No game of Ironsworn or Starforged would be complete without oracles. This button will pop up a window with all the oracles in your chosen game. The oracles are also available from the character sheet.</p>",
+        "ToursTitle": "Next Steps",
+        "ToursContent": "<p>That&#39;s it for now! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the <code>#foundry-vtt</code> channel in the <a href=\"https://discord.gg/8bRuZwK\">Ironsworn Discord</a>.</p><p>Enjoy!</p>"
+      },
+      "ISCharacter": {
+        "SheetTitle": "Character Sheet",
+        "SheetContent": "<p>This is the player character sheet. It can help you manage your character&#39;s attributes, resources, assets, and vows.</p>",
+        "EditButtonTitle": "Edit Button",
+        "EditButtonContent": "<p>The &quot;<i class=\"fa-solid fa-edit\"></i> Edit&quot; button in the title bar is used to switch between interaction and edit modes for this character.</p>",
+        "StatsTitle": "Character Stats",
+        "StatsContent": "<p>These are your character&#39;s basic attributes, which tell you something about their personality, but also tell you that when they&#39;re trying certain kinds of actions, the story will tend to go better for them.</p><p>To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.</p><p><strong>EDIT MODE</strong> allows you to adjust these numbers.</p>",
+        "ResourcesTitle": "Resources",
+        "ResourcesContent": "<p>On the side here we have the three basic resources: Health, Spirit, and Supply. You can adjust the levels of these resources by clicking on the new value.</p><p>You can also make rolls by clicking on the resource&#39;s name.</p>",
+        "MomentumTitle": "Momentum",
+        "MomentumContent": "<p>On the other side is the momentum tracker. You can set your character&#39;s momentum by clicking on one of the numbers, and if you have debilities marked, one or more of the highest values will be disabled.</p><p>Hover over the &quot;<i class=\"fa-solid fa-fire\"></i> MOMENTUM&quot; title for a preview of what burning your momentum will do, and click it to perform the burn.</p>",
+        "ConditionsTitle": "Conditions",
+        "ConditionsContent": "<p>Down at the bottom of the sheet are your character&#39;s conditions, banes, and burdens. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom conditions.</p>",
+        "CharacterTabTitle": "Character Tab",
+        "CharacterTabContent": "<p>In the center area are a series of tabs. The first one is the &quot;Character&quot; tab, where you track most of the details you need for an Ironsworn character.</p>",
+        "BondsTitle": "Bonds",
+        "BondsContent": "<p>At the top-left are your bonds. This displays how many bonds your character has made during their adventures. Click the <i class=\"fa-solid fa-edit\"></i> button to add or remove bonds, and keep notes about them. Click the <svg fill=\"currentColor\" height=\"1em\" width=\"1em\" role=\"img\" aria-hidden=\"true\" class=\"icon\"><use href=\"#ironsworn-d10-tilt\"></use></svg> button to roll the <em>Write Your Epilogue</em> move.</p>",
+        "AssetsTitle": "Assets",
+        "AssetsContent": "<p>The Assets area is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
+        "ProgressTitle": "Progress",
+        "ProgressContent": "<p>The Progress area displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. <strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
+        "NotesTabTitle": "Notes Tab",
+        "NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
+        "EndTitle": "Character Sheet",
+        "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+      },
+      "SFCharacter": {
+        "Title": "Starforged Character Sheet",
+        "Description": "The PC sheet for a Starforged character",
+        "SheetTitle": "Character Sheet",
+        "SheetContent": "<p>This is the player character sheet. It can help you manage your character&#39;s attributes, resources, assets, and vows.</p>",
+        "EditButtonTitle": "Edit Button",
+        "EditButtonContent": "<p>The &quot;<i class=\"fa-solid fa-edit\"></i> Edit&quot; button in the title bar is used to switch between interaction and edit modes for this character.</p>",
+        "StatsTitle": "Character Stats",
+        "StatsContent": "<p>These are your character&#39;s basic attributes, which tell you something about their personality, but also tell you that when they&#39;re trying certain kinds of actions, the story will tend to go better for them.</p><p>To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.</p><p><strong>EDIT MODE</strong> allows you to adjust these numbers.</p>",
+        "ResourcesTitle": "Resources",
+        "ResourcesContent": "<p>On the side here we have the three basic resources: Health, Spirit, and Supply. You can adjust the levels of these resources by clicking on the new value.</p><p>You can also make rolls by clicking on the resource&#39;s name.</p>",
+        "MomentumTitle": "Momentum",
+        "MomentumContent": "<p>On the other side is the momentum tracker. You can set your character&#39;s momentum by clicking on one of the numbers, and if you have debilities marked, one or more of the highest values will be disabled.</p><p>Hover over the &quot;<i class=\"fa-solid fa-fire\"></i> MOMENTUM&quot; title for a preview of what burning your momentum will do, and click it to perform the burn.</p>",
+        "ImpactsTitle": "Impacts",
+        "ImpactsContent": "<p>Down at the bottom of the sheet are your character&#39;s impacts. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom impacts.</p><p>If there is a vehicle in the game with Battered or Cursed marked, that impact will be highlighted here to remind you that it should apply while you&#39;re on that vehicle.</p>",
+        "LegaciesTabTitle": "Legacies Tab",
+        "LegaciesTabContent": "<p>In the center area are a series of tabs. The first one is the &quot;Legacies&quot; tab, where you track your three primary Starforged legacies. Also appearing here will be any &quot;starred&quot; items from the Progress or Connections tabs.</p><p>To advance a legacy, click the &quot;<i class=\"fa-solid fa-caret-right\"></i>&quot; button on the right. When enough legacy boxes are filled, XP boxes will appear; simply click them to expend XP. <strong>EDIT MODE</strong> also displays buttons for removing legacy ticks if you accidentally marked too many.</p>",
+        "AssetsTabTitle": "Assets Tab",
+        "AssetsTabContent": "<p>The Assets tab is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
+        "ProgressTabTitle": "Progress Tab",
+        "ProgressTabContent": "<p>The Progress tab displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. Use the &quot;<i class=\"fa-solid fa-star\"></i>&quot; button to also display an item in the Legacies tab.</p><p><strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
+        "ConnectionsTabTitle": "Connections Tab",
+        "ConnectionsTabContent": "<p>Connections are tracked separately from other progress items, and can be found in this tab. Otherwise this behaves the same as the Progress tab.</p>",
+        "NotesTabTitle": "Notes Tab",
+        "NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
+        "EndTitle": "Character Sheet",
+        "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+      },
+      "MoveSheet": {
+        "Title": "",
+        "Description": "",
+        "SheetTitle": "Move/Oracle Sheet",
+        "SheetContent": "<p>This is the window that provides easy access to moves and oracles.</p>",
+        "MoveCategoryTitle": "Move Categories",
+        "MoveCategoryContent": "<p>Click on a category title to expand that category and show all of the moves. Click on one of the moves to expand its description.</p>",
+        "MoveButtonsTitle": "Move Shortcuts",
+        "MoveButtonsContent": "<p>Up here you&#39;ll see shortcut buttons.</p><p>The first one is a shortcut to &quot;roll this move,&quot; and will open the rolling dialog with some details pre-filled for you. It&#39;s only available if this move has a roll associated with it -- some, like Pay the Price, do not have an action/challenge roll, so this button will be disabled.</p><p>The second one is a shortcut to &quot;roll the oracle,&quot; and immediately rolls on an oracle table. It&#39;s only available if the move has exactly one oracle to roll.</p><p>The third one sends a copy of the description to the chat sidebar.</p>",
+        "MoveLinkTitle": "Move Links",
+        "MoveLinkContent": "<p>Clicking on a link to another move will expand it and scroll it into view.</p>",
+        "OraclesTabTitle": "Oracles Tab",
+        "OraclesTabContent": "<p>The second tab displays oracles, random tables to spark your inspiration.</p>",
+        "OracleCategoryTitle": "Oracle Tree",
+        "OracleCategoryContent": "<p>The oracles are organized into a directory structure. Click anywhere on a category line to expand it and display its contents.</p>",
+        "OracleRowTitle": "Oracle Controls",
+        "OracleRowContent": "<p>Click the <i class=\"fas fa-eye\"></i> icon to display a preview of the oracle table, or click anywhere else on the line to draw a result from the table and display it in chat.</p>",
+        "OracleChatMessageTitle": "Oracle Results",
+        "OracleChatMessageContent": "<p>When you roll an oracle, a chat card is displayed. The highlighted row is the rolled result, and the adjacent rolls are also displayed.</p><p>If you hover your mouse over the message, you&#39;ll see buttons appear, which let you copy a result&#39;s text to your clipboard, or re-roll on the same oracle table.</p>",
+        "EndTitle": "Move Sheet",
+        "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+      }
     },
     "WorldTruths": {
       "The Old World": {

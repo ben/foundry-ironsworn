@@ -74,6 +74,7 @@ const config: UserConfig = {
     },
   },
   build: {
+    assetsInlineLimit: 0,
     outDir: 'dist',
     emptyOutDir: true,
     sourcemap: true,

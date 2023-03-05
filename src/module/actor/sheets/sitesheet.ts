@@ -1,21 +1,14 @@
 import { SiteDataSourceData } from '../actortypes'
 import { VueActorSheet } from '../../vue/vueactorsheet'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import siteSheetVue from '../../vue/site-sheet.vue'
 
 export class IronswornSiteSheet extends VueActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template: 'systems/foundry-ironsworn/templates/actor/site-v2.hbs',
       width: 750,
       height: 700,
-    })
-  }
-
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
-    return {
-      components: { 'site-sheet': siteSheetVue },
-    }
+      rootComponent: siteSheetVue,
+    }) as any
   }
 
   async _onDropItem(event: DragEvent, data: ActorSheet.DropData.Item) {
@@ -36,10 +29,7 @@ export class IronswornSiteSheet extends VueActorSheet {
     if (!denizens[idx]) return false
 
     // Set the denizen description
-    const text = item.pack
-      ? `@Compendium[${item.pack}.${item.id}]{${item.name}}`
-      : item.link
-    denizens[idx].text = text
+    denizens[idx].text = item.link
     this.actor.update({ system: { denizens } }, { render: true })
     return true
   }

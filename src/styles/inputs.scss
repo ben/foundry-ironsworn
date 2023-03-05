@@ -71,7 +71,7 @@ input[type='range'] {
       var(--ironsworn-range-track-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
-    background: var(--ironsworn-range-track-bg-color);
+    // background: var(--ironsworn-range-track-bg-color);
     cursor: pointer;
     width: 100%;
     height: var(--ironsworn-range-track-height);
@@ -86,7 +86,7 @@ input[type='range'] {
       var(--ironsworn-range-thumb-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
-    background: var(--ironsworn-range-thumb-bg-color);
+    // background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
     width: var(--ironsworn-range-thumb-width);
     height: var(--ironsworn-range-thumb-height);
@@ -97,7 +97,7 @@ input[type='range'] {
       var(--ironsworn-range-track-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
-    background: var(--ironsworn-range-track-bg-color);
+    // background: var(--ironsworn-range-track-bg-color);
     cursor: pointer;
     width: 100%;
     height: var(--ironsworn-range-track-height);
@@ -108,7 +108,7 @@ input[type='range'] {
       var(--ironsworn-range-thumb-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
-    background: var(--ironsworn-range-thumb-bg-color);
+    // background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
     width: var(--ironsworn-range-thumb-width);
     height: var(--ironsworn-range-thumb-height);
@@ -144,7 +144,7 @@ input[type='range'] {
       var(--ironsworn-range-thumb-border-color);
     border-radius: var(--ironsworn-range-track-border-radius);
     box-shadow: var(--ironsworn-range-box-shadow);
-    background: var(--ironsworn-range-thumb-bg-color);
+    // background: var(--ironsworn-range-thumb-bg-color);
     cursor: pointer;
     width: var(--ironsworn-range-thumb-width);
     height: var(--ironsworn-range-thumb-height);
@@ -156,7 +156,7 @@ input[type='range'] {
 
   &:focus::-webkit-slider-runnable-track {
     border-color: var(--ironsworn-range-track-border-color-focus);
-    background: var(--ironsworn-range-track-bg-color-focus);
+    // background: var(--ironsworn-range-track-bg-color-focus);
   }
 
   &:focus::-ms-fill-lower {

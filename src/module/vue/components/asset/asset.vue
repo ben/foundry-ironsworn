@@ -46,7 +46,12 @@
           v-if="asset.system.description"
           @moveclick="moveclick"
         />
-        <div v-html="$enrichHtml(asset.system.requirement ?? '')"></div>
+        <with-rolllisteners
+          element="div"
+          v-html="$enrichHtml(asset.system.requirement ?? '')"
+          v-if="asset.system.requirement"
+          @moveclick="moveclick"
+        />
 
         <dl class="asset-fields" v-if="asset.system.fields?.length">
           <div
@@ -187,7 +192,7 @@ function exclusiveOptionClick(selectedIdx) {
   foundryItem?.update({ system: { exclusiveOptions: options } })
 }
 function moveclick(item) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(

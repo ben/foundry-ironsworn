@@ -28,6 +28,8 @@
 
         <!-- TODO: custom input -->
       </section>
+
+      <div class="quest" v-html="$enrichMarkdown(pageSystem.Quest)" />
     </div>
   </label>
 </template>
@@ -37,6 +39,10 @@ input[type='radio'] {
   flex-grow: 0;
   align-self: flex-start;
   margin: var(--ironsworn-spacer-lg);
+}
+
+.quest {
+  font-style: italic;
 }
 </style>
 
@@ -53,6 +59,7 @@ const props = defineProps<{
 }>()
 const pageSystem = (props.page as any).system as ISettingTruthOption & {
   dfid: string
+  Quest: string
 }
 
 function select() {
@@ -71,10 +78,14 @@ const $emit = defineEmits<{
   (e: 'change', title: string, text: string)
 }>()
 function emitValue() {
-  let text = `${pageSystem.Description} ${state.suboption ?? ''}`
+  let text = `${pageSystem.Description} ${state.suboption ?? ''}\n\n_${
+    pageSystem.Quest
+  }_`
   const template = pageSystem['Roll template']
   if (state.suboption && template?.Description) {
-    text = template.Description.replace(/\${{.*?}}/, state.suboption)
+    text =
+      template.Description.replace(/\${{.*?}}/, state.suboption) +
+      `\n\n_${pageSystem.Quest}_`
   }
   $emit('change', props.page.name ?? '???', text.trim())
 }
@@ -83,7 +94,7 @@ const suboptions = ref<HTMLElement[]>([])
 async function selectAndRandomize() {
   topRadio.value?.click()
 
-  if (pageSystem.Subtable) {
+  if (pageSystem.Subtable && pageSystem.Subtable.length > 0) {
     const rows = pageSystem.Subtable.map(
       (x): TableRow => ({
         low: x.Floor || 0,

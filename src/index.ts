@@ -5,7 +5,6 @@
 import { IRONSWORN } from './config'
 import { IronswornActor } from './module/actor/actor'
 import { IronswornCharacterSheetV2 } from './module/actor/sheets/charactersheet-v2'
-import { IronswornCompactCharacterSheet } from './module/actor/sheets/compactsheet'
 import { FoeSheet } from './module/actor/sheets/foesheet'
 import { StarforgedCharacterSheet } from './module/actor/sheets/sf-charactersheet'
 import { StarforgedLocationSheet } from './module/actor/sheets/sf-locationsheet'
@@ -36,8 +35,10 @@ import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
 import { IronswornJournalPage } from './module/journal/journal-entry-page'
 import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
 import { TruthJournalPageSheet } from './module/journal/truth-page'
+import { registerTours } from './module/features/tours'
 
 import 'virtual:svg-icons-register'
+import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 declare global {
   interface LenientGlobalVariableTypes {
@@ -78,7 +79,7 @@ Hooks.once('init', async () => {
     label: 'IRONSWORN.Starforged',
     types: ['character'],
   })
-  Actors.registerSheet('ironsworn', IronswornCompactCharacterSheet, {
+  Actors.registerSheet('ironsworn', CompactPCSheet, {
     label: 'IRONSWORN.ACTOR.SheetCompact',
     types: ['character'],
   })
@@ -191,12 +192,12 @@ Hooks.once('init', async () => {
   })
 
   CONFIG.Actor.typeLabels = mergeObject(CONFIG.Actor.typeLabels, {
-    character: 'IRONSWORN.Actor.TypeCharacter',
-    foe: 'IRONSWORN.Actor.TypeFoe',
-    location: 'IRONSWORN.Actor.TypeLocation',
-    shared: 'IRONSWORN.Actor.TypeShared',
-    site: 'IRONSWORN.Actor.TypeDelveSite',
-    starship: 'IRONSWORN.Actor.TypeStarship',
+    character: 'IRONSWORN.ACTOR.TypeCharacter',
+    foe: 'IRONSWORN.ACTOR.TypeFoe',
+    location: 'IRONSWORN.ACTOR.TypeLocation',
+    shared: 'IRONSWORN.ACTOR.TypeShared',
+    site: 'IRONSWORN.ACTOR.TypeDelveSite',
+    starship: 'IRONSWORN.ACTOR.TypeStarship',
   })
   CONFIG.Actor.typeIcons = mergeObject(CONFIG.Actor.typeIcons, {
     character: 'fa-solid fa-user-pen',
@@ -239,6 +240,7 @@ Hooks.once('ready', async () => {
   runStartupMacro()
 
   FirstStartDialog.maybeShow()
+  await registerTours()
 
   // Pre-load all the oracles
   await primeCommonPackCaches()

@@ -425,21 +425,24 @@ async function processTruths(
   for (const truth of truths) {
     const je = await JournalEntry.create(
       {
-        id: hashLookup(truth.$id),
         name: truth.Display.Title,
         flags: { 'foundry-ironsworn': { dfid: truth.$id } },
       },
-      { keepId: true, pack: outputCompendium }
+      { pack: outputCompendium }
     )
 
     for (const entry of truth.Table) {
       //@ts-ignore
       await JournalEntryPage.create(
         {
-          id: hashLookup(entry.$id),
           type: 'truth',
           name: entry.Result,
-          system: cleanDollars({ ...entry, Quest: entry['Quest Starter'] }),
+          system: cleanDollars({
+            Subtable: [], // work around a Foundry bug
+            ...entry,
+            Quest: entry['Quest Starter'],
+            'Quest Starter': undefined,
+          }),
         },
         { parent: je }
       )
@@ -448,7 +451,6 @@ async function processTruths(
     //@ts-ignore
     JournalEntryPage.create(
       {
-        id: hashLookup(`${truth.$id}/character`),
         name: 'Character Inspiration',
         text: {
           markdown: truth.Character,

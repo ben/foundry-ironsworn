@@ -1,5 +1,5 @@
 <template>
-  <SheetBasic :document="actor">
+  <SheetBasic :document="state.actor">
     <template #before-header>
       <div class="flexrow nogrow" style="gap: var(--ironsworn-spacer-md)">
         <!-- Region -->
@@ -10,13 +10,13 @@
           <span class="select-label">{{ $t('IRONSWORN.Region') }}</span>
           <select v-model="region" @change="regionChanged">
             <option value="terminus">
-              {{ $t('IRONSWORN.Terminus') }}
+              {{ $t('IRONSWORN.REGION.Terminus') }}
             </option>
             <option value="outlands">
-              {{ $t('IRONSWORN.Outlands') }}
+              {{ $t('IRONSWORN.REGION.Outlands') }}
             </option>
             <option value="expanse">
-              {{ $t('IRONSWORN.Expanse') }}
+              {{ $t('IRONSWORN.REGION.Expanse') }}
             </option>
           </select>
         </label>
@@ -27,7 +27,7 @@
           style="flex-basis: 200px; gap: var(--ironsworn-spacer-xl)"
         >
           {{ $t('IRONSWORN.LocationType') }}
-          <select v-model="actor.system.subtype" @change="subtypeChanged">
+          <select v-model="state.actor.system.subtype" @change="subtypeChanged">
             <option value="planet">Planet</option>
             <option value="settlement">Settlement</option>
             <option value="star">Stellar Object</option>
@@ -45,9 +45,9 @@
         <!-- TODO: i18n and subtype text -->
         <span class="select-label">{{ subtypeSelectText }}:</span>
         <select
-          v-model="actor.system.klass"
+          v-model="state.actor.system.klass"
           @change="klassChanged"
-          :data-highlighted="data.firstLookHighlight"
+          :data-highlighted="state.firstLookHighlight && firstLookWillRandomizeKlass"
         >
           <option
             v-for="opt in klassOptions"
@@ -76,9 +76,9 @@
     </template>
     <template #header>
       <SheetHeaderBasic
-        :document="actor"
+        :document="state.actor"
         class="sf-location-header nogrow"
-        :highlightName="data.firstLookHighlight && canRandomizeName"
+        :highlightName="state.firstLookHighlight && firstLookWillRandomizeName"
         @change="nameChange"
       >
         <IronBtn
@@ -100,8 +100,8 @@
           class="box"
           @click="rollFirstLook"
           icon="ironsworn:d10-tilt"
-          @mouseenter="data.firstLookHighlight = true"
-          @mouseleave="data.firstLookHighlight = false"
+          @mouseenter="state.firstLookHighlight = true"
+          @mouseleave="state.firstLookHighlight = false"
           :text="$t('IRONSWORN.RollForDetails')"
         />
       </div>
@@ -111,7 +111,7 @@
           v-for="oracle of row"
           block
           :disabled="oracle.requiresKlass && klassIsNotValid"
-          :data-highlighted="oracle.fl && data.firstLookHighlight"
+          :data-highlighted="oracle.fl && state.firstLookHighlight"
           :tooltip="
             oracle.requiresKlass && klassIsNotValid
               ? $t('IRONSWORN.RequiresLocationType')
@@ -131,7 +131,10 @@
       </div>
     </section>
     <section class="flexcol">
-      <MceEditor v-model="actor.system.description" @save="saveDescription" />
+      <MceEditor
+        v-model="state.actor.system.description"
+        @save="saveDescription"
+      />
     </section>
   </SheetBasic>
 </template>
@@ -193,17 +196,17 @@ import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
-  actor: any
+  state: { actor: any }
 }>()
 
-provide(ActorKey, computed(() => props.actor) as any)
+provide(ActorKey, computed(() => props.state.actor) as any)
 const $actor = inject($ActorKey)
 
 const sceneId = game.user?.viewedScene
 const scene = game.scenes?.get(sceneId ?? '')
 const region =
   (scene?.getFlag('foundry-ironsworn', 'region') as string) || 'terminus'
-const data = reactive({
+const state = reactive({
   region,
   firstLookHighlight: false,
 })
@@ -235,7 +238,7 @@ function randomImage(subtype, klass): string | void {
 }
 
 const klassOptions = computed((): { value: string; label: string }[] => {
-  switch (props.actor.system.subtype) {
+  switch (props.state.actor.system.subtype) {
     case 'planet':
       return [
         { value: 'desert', label: 'Desert World' },
@@ -318,12 +321,12 @@ interface OracleSpec {
   requiresKlass?: boolean
 }
 const oracles = computed((): OracleSpec[][] => {
-  const { subtype, klass } = props.actor.system
+  const { subtype, klass } = props.state.actor.system
   const kc = klass
     .split(' ')
     .map((x) => capitalize(x))
     .join(' ')
-  const rc = capitalize(data.region)
+  const rc = capitalize(state.region)
   switch (subtype) {
     case 'planet':
       return [
@@ -524,8 +527,13 @@ const oracles = computed((): OracleSpec[][] => {
       throw new Error('bad type yo')
   }
 })
+
+const firstLookWillRandomizeKlass = computed(() => {
+  return !props.state.actor.system.klass
+})
+
 const canRandomizeName = computed(() => {
-  const { subtype, klass } = props.actor.system
+  const { subtype, klass } = props.state.actor.system
 
   if (subtype === 'planet') {
     const kc = capitalize(klass)
@@ -539,24 +547,39 @@ const canRandomizeName = computed(() => {
   return false
 })
 
+const firstLookWillRandomizeName = computed(() => {
+  const { subtype, klass } = props.state.actor.system
+
+  // No klass? We only randomize names for settlements and planets
+  if (!klass) return ['settlement', 'planet'].includes(subtype)
+
+  const i18nKey = `ACTOR.Subtype${capitalize(subtype)}`
+  const newThingName = game.i18n.format('DOCUMENT.New', {
+    type: game.i18n.localize(`IRONSWORN.${i18nKey}`),
+  })
+  if (props.state.actor.name === newThingName) return canRandomizeName.value
+
+  return false
+})
+
 const randomKlassTooltip = computed(() => {
-  const { subtype } = props.actor.system
-  return game.i18n.localize(`IRONSWORN.Random${camelCase(subtype)}Type`)
+  const { subtype } = props.state.actor.system
+  return game.i18n.localize(`IRONSWORN.Random${capitalize(subtype)}Type`)
 })
 
 const subtypeSelectText = computed(() => {
-  const { subtype } = props.actor.system
-  return game.i18n.localize(`IRONSWORN.${camelCase(subtype)}Type`)
+  const { subtype } = props.state.actor.system
+  return game.i18n.localize(`IRONSWORN.${capitalize(subtype)}Type`)
 })
 
 const klassIsNotValid = computed(() => {
-  const { klass } = props.actor.system
+  const { klass } = props.state.actor.system
   const selectedOption = klassOptions.value.find((x) => x.value === klass)
   return selectedOption === undefined
 })
 
 function saveDescription() {
-  $actor?.update({ 'system.description': props.actor.system.description })
+  $actor?.update({ 'system.description': props.state.actor.system.description })
 }
 
 function regionChanged(evt) {
@@ -573,7 +596,7 @@ function klassChanged(evt) {
 }
 
 async function saveSubtype(subtype) {
-  const img = randomImage(subtype, props.actor.system.klass)
+  const img = randomImage(subtype, props.state.actor.system.klass)
   await $actor?.update({ system: { subtype } })
 
   const scale = {
@@ -586,7 +609,7 @@ async function saveSubtype(subtype) {
   await updateAllTokens({ img, scale })
 }
 async function saveKlass(klass) {
-  const { subtype } = props.actor.system
+  const { subtype } = props.state.actor.system
   const img = randomImage(subtype, klass)
 
   await $actor?.update({ img: img || undefined, system: { klass } })
@@ -598,17 +621,14 @@ async function drawAndReturnResult(
 ): Promise<string | undefined> {
   if (!table) return undefined
 
-  const orm = await OracleRollMessage.fromTableId(
-    table.id || '',
-    table.pack || undefined
-  )
+  const orm = await OracleRollMessage.fromTableUuid(table.uuid)
   orm.createOrUpdate()
   const result = await orm.getResult()
   return result?.text
 }
 
 async function randomizeName() {
-  const { subtype, klass } = props.actor.system
+  const { subtype, klass } = props.state.actor.system
   let name
   if (subtype === 'planet') {
     const kc = capitalize(klass)
@@ -632,15 +652,15 @@ async function randomizeName() {
 
 async function randomizeKlass() {
   let tableKey
-  if (props.actor.system.subtype === 'planet') {
+  if (props.state.actor.system.subtype === 'planet') {
     tableKey = 'Starforged/Oracles/Planets/Class'
-  } else if (props.actor.system.subtype === 'settlement') {
+  } else if (props.state.actor.system.subtype === 'settlement') {
     tableKey = 'Starforged/Oracles/Settlements/Location'
-  } else if (props.actor.system.subtype === 'star') {
+  } else if (props.state.actor.system.subtype === 'star') {
     tableKey = 'Starforged/Oracles/Space/Stellar_Object'
-  } else if (props.actor.system.subtype === 'derelict') {
+  } else if (props.state.actor.system.subtype === 'derelict') {
     tableKey = 'Starforged/Oracles/Derelicts/Location'
-  } else if (props.actor.system.subtype === 'vault') {
+  } else if (props.state.actor.system.subtype === 'vault') {
     tableKey = 'Starforged/Oracles/Vaults/Location'
   }
 
@@ -658,8 +678,8 @@ async function randomizeKlass() {
 }
 
 async function rollFirstLook() {
-  await randomizeKlass()
-  await randomizeName()
+  if (firstLookWillRandomizeKlass.value) await randomizeKlass()
+  if (firstLookWillRandomizeName.value) await randomizeName()
   for (const oracle of flatten(oracles.value)) {
     if (oracle.fl) {
       await rollOracle(oracle)
@@ -675,9 +695,9 @@ async function rollOracle(oracle) {
   if (!drawText) return
 
   // Append to description
-  const actor = props.actor as LocationDataProperties
+  const actor = props.state.actor as LocationDataProperties
   const parts = [
-    props.actor.system.description,
+    props.state.actor.system.description,
     '<p><strong>',
     oracle.title,
     ':</strong> ',
@@ -688,7 +708,7 @@ async function rollOracle(oracle) {
 }
 
 function nameChange() {
-  updateAllTokens({ name: props.actor.name })
+  updateAllTokens({ name: props.state.actor.name })
 }
 
 async function updateAllTokens(data) {

@@ -286,18 +286,9 @@
     },
     "First Start": {
       "Welcome": "Witaj",
-      "Save": "Zapisz",
       "Intro": "Witaj w Ironsworn! Przed rozpoczęciem jest jeszcze kilka wyborów do wykonania.",
-      "CharacterSheet": "Character Sheet",
-      "DefaultSheet": "Którą kartę postaci chciałbyś/aś używa??",
-      "MovesOracles": "Ruchy i Wyrocznie",
-      "DefaultMovesOracles": "Który zestaw ruchów i wyroczni chciałbyś/aś używać?",
-      "MatchSheet": "Match sheet",
       "SettingTruths": "Ustawienia Prawd",
-      "SettingTruth": "Ustawienia Prawdy",
-      "GenerateTruths": "Czy chciałbyś wygenerować prawdy twojego świata?",
-      "YesFor": "Tak, na",
-      "NeverAsk": "Nie pytaj nigdy więcej"
+      "SettingTruth": "Ustawienia Prawdy"
     },
     "WorldTruths": {
       "The Old World": {

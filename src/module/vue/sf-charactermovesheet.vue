@@ -1,9 +1,10 @@
 <template>
   <TabSet
-    :id="`${(actor as any)._id}_move-sheet`"
+    :id="`${(data.actor as any)._id}_move-sheet`"
     ref="$tabSet"
     :class="$style['tab-set']"
     :tabKeys="['moves', 'oracles']"
+    data-tourid="sheet"
   >
     <TabList>
       <Tab tab-key="moves" :text="$t('IRONSWORN.ITEMS.TypeMove')">
@@ -23,7 +24,7 @@
           <SfMovesheetmoves
             :class="$style['panel-content']"
             ref="movesTab"
-            :toolset="toolset"
+            :toolset="data.toolset"
           />
         </Suspense>
       </TabPanel>
@@ -32,7 +33,7 @@
           <SfMovesheetoracles
             :class="$style['panel-content']"
             ref="oraclesTab"
-            :toolset="toolset"
+            :toolset="data.toolset"
           />
         </Suspense>
       </TabPanel>
@@ -68,11 +69,13 @@ import TabPanel from './components/tabs/tab-panel.vue'
 import IronIcon from './components/icon/iron-icon.vue'
 
 const props = defineProps<{
-  actor: CharacterDataProperties
-  toolset: 'ironsworn' | 'starforged'
+  data: {
+    actor: CharacterDataProperties
+    toolset: 'ironsworn' | 'starforged'
+  }
 }>()
 
-provide(ActorKey, computed(() => props.actor) as any)
+provide(ActorKey, computed(() => props.data.actor) as any)
 
 const $tabSet = ref<InstanceType<typeof TabSet>>()
 const movesTab = ref<InstanceType<typeof SfMovesheetmoves>>()

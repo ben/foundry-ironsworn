@@ -17,11 +17,13 @@
 
     <section class="asset-body flexcol">
       <!-- DESCRIPTION -->
-      <div
+      <WithRollListeners
+        element="div"
+        @moveclick="moveClick"
         class="nogrow"
         v-if="item.system.description"
         v-html="$enrichHtml(item.system.description)"
-      ></div>
+      />
 
       <!-- FIELDS -->
       <div
@@ -193,7 +195,7 @@ function exclusiveOptionClick(selectedIdx: number) {
 }
 
 function moveClick(item) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id)
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
 
 function toggleCondition(idx: number) {

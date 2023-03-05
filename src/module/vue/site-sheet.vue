@@ -1,19 +1,19 @@
 <template>
   <div class="flexcol" :class="$style['site-sheet']">
     <!-- HEADER -->
-    <SheetHeaderBasic class="nogrow" :document="actor" />
+    <SheetHeaderBasic class="nogrow" :document="data.actor" />
     <div class="flexrow nogrow" :class="$style.main">
       <div class="flexcol" :class="$style['left-column']">
         <!-- RANK -->
         <article :class="$style['progress-widget']">
           <div class="flexrow nogrow" :class="$style['rank-row']">
             <RankPips
-              :current="actor.system.rank"
+              :current="data.actor.system.rank"
               class="nogrow"
               @click="setRank"
-              :id="`${actor._id}_rank`"
+              :id="`${data.actor._id}_rank`"
             />
-            <label :for="`${actor._id}_rank`" :class="$style['rank-label']">{{
+            <label :for="`${data.actor._id}_rank`" :class="$style['rank-label']">{{
               rankText
             }}</label>
             <IronBtn
@@ -23,19 +23,13 @@
               @click="clearProgress"
               icon="fa:trash"
             />
-            <IronBtn
-              v-if="editMode"
-              block
-              nogrow
-              @click="markProgress"
-              icon="fa:caret-right"
-            />
+            <IronBtn block nogrow @click="markProgress" icon="fa:caret-right" />
           </div>
           <!-- PROGRESS -->
           <ProgressTrack
             class="nogrow"
-            :ticks="actor.system.current"
-            :rank="actor.system.rank"
+            :ticks="data.actor.system.current"
+            :rank="data.actor.system.rank"
           />
         </article>
         <!-- THEME/DOMAIN -->
@@ -117,7 +111,10 @@
           :text="$t('IRONSWORN.DELVESITE.Feature')"
         />
       </div>
-      <MceEditor v-model="actor.system.description" @save="saveDescription" />
+      <MceEditor
+        v-model="data.actor.system.description"
+        @save="saveDescription"
+      />
     </div>
   </div>
 </template>
@@ -204,28 +201,28 @@ import IronBtn from './components/buttons/iron-btn.vue'
 import { SiteDataPropertiesData } from '../actor/actortypes'
 
 const props = defineProps<{
-  actor: any
+  data: { actor: any }
 }>()
 
-provide(ActorKey, computed(() => props.actor) as any)
+provide(ActorKey, computed(() => props.data.actor) as any)
 provide('toolset', 'ironsworn')
 
 const $actor = inject($ActorKey)
 
 const editMode = computed(() => {
-  return (props.actor.flags['foundry-ironsworn'] as any)?.['edit-mode']
+  return (props.data.actor.flags['foundry-ironsworn'] as any)?.['edit-mode']
 })
 
 const theme = computed(() => {
-  return props.actor.items.find((x) => x.type === 'delve-theme')
+  return props.data.actor.items.find((x) => x.type === 'delve-theme')
 })
 
 const domain = computed(() => {
-  return props.actor.items.find((x) => x.type === 'delve-domain')
+  return props.data.actor.items.find((x) => x.type === 'delve-domain')
 })
 
 const rankText = computed(() => {
-  return game.i18n.localize(RANKS[props.actor.system.rank])
+  return game.i18n.localize(RANKS[props.data.actor.system.rank])
 })
 
 function setRank(rank) {
@@ -237,8 +234,8 @@ function clearProgress() {
 }
 
 function markProgress() {
-  const increment = RANK_INCREMENTS[props.actor.system.rank]
-  const newValue = Math.min(props.actor.system.current + increment, 40)
+  const increment = RANK_INCREMENTS[props.data.actor.system.rank]
+  const newValue = Math.min(props.data.actor.system.current + increment, 40)
   $actor?.update({ 'system.current': newValue })
 }
 
@@ -246,12 +243,12 @@ const denizenRefs = ref<{ [k: number]: any }>({})
 async function randomDenizen() {
   const roll = await new Roll('1d100').evaluate({ async: true })
   const result = roll.total
-  const denizens = (props.actor.system as SiteDataPropertiesData).denizens
+  const denizens = (props.data.actor.system as SiteDataPropertiesData).denizens
   const denizen = denizens.find(
     (x) => x.range[0] <= result && x.range[1] >= result
   )
   if (!denizen) throw new Error(`Rolled a ${result} but got no denizen???`)
-  const idx = props.actor.system.denizens.indexOf(denizen)
+  const idx = props.data.actor.system.denizens.indexOf(denizen)
   await createIronswornDenizenChat({
     roll,
     denizen,
@@ -286,6 +283,6 @@ async function randomFeature() {
 }
 
 function saveDescription() {
-  $actor?.update({ 'system.description': props.actor.system.description })
+  $actor?.update({ 'system.description': props.data.actor.system.description })
 }
 </script>

@@ -19,12 +19,14 @@
     :toggleWrapperClass="$style['toggle-wrapper']"
     :toggleLabel="move?.displayName"
     :data-move-id="move.moveItem().id"
+    :data-move-uuid="move.moveItem().uuid"
   >
     <template #after-toggle>
       <section
         :class="$style['move-controls']"
         class="nogrow"
         data-tooltip-direction="UP"
+        data-tourid="move-buttons"
       >
         <BtnRollmove
           :disabled="!canRoll"
@@ -285,7 +287,7 @@ Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.id ?? '')
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
 }
 
 defineExpose({

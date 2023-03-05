@@ -1,5 +1,4 @@
-import { VueSheetRenderHelperOptions } from '../vue/vue-render-helper'
-import VueDialog from '../vue/challenge-resolution-dialog.vue'
+import ChallengeResolutionDialogVue from '../vue/challenge-resolution-dialog.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 
 export class ChallengeResolutionDialog extends VueAppMixin(Application) {
@@ -24,7 +23,8 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
     this.openDialogs[messageId] = new ChallengeResolutionDialog(messageId, {
       left: window.innerWidth - 620,
       top: Math.min(el[0].offsetTop - 50, window.innerHeight - 300),
-    }).render(true)
+    })
+    this.openDialogs[messageId].render(true)
 
     return this.openDialogs[messageId]
   }
@@ -36,18 +36,19 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
 
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template:
-        'systems/foundry-ironsworn/templates/rolls/challenge-resolution-dialog.hbs',
       title: 'IRONSWORN.ResolveChallenge',
       width: 300,
       height: 280,
-    })
+      rootComponent: ChallengeResolutionDialogVue,
+    }) as any
   }
 
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+  getData(
+    options?: Partial<ApplicationOptions> | undefined
+  ): MaybePromise<object> {
     return {
-      components: { 'challenge-resolution-dialog': VueDialog },
-      vueData: async () => ({ messageId: this.messageId }),
+      ...super.getData(options),
+      messageId: this.messageId,
     }
   }
 }

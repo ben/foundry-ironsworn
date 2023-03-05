@@ -1,9 +1,9 @@
 import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
 import { IronswornActor } from '../actor'
-import { VueSheetRenderHelperOptions } from '../../vue/vue-render-helper'
 import { App } from 'vue'
 import { $ActorKey } from '../../vue/provisions'
 import { VueAppMixin } from '../../vue/vueapp.js'
+import { MoveSheetTour } from '../../features/tours/move-sheet-tour'
 
 export class SFCharacterMoveSheet extends VueAppMixin(Application) {
   constructor(
@@ -14,13 +14,13 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
     super(options)
   }
 
-  get renderHelperOptions(): Partial<VueSheetRenderHelperOptions> {
+  getData(
+    options?: Partial<ApplicationOptions> | undefined
+  ): MaybePromise<object> {
     return {
-      components: { 'sfcharacter-movesheet': CharacterMoveSheet },
-      vueData: async () => ({
-        actor: this.actor.toObject(),
-        toolset: this.toolset,
-      }),
+      ...super.getData(options),
+      toolset: this.toolset,
+      actor: this.actor.toObject(),
     }
   }
 
@@ -28,23 +28,14 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
     app.provide($ActorKey, this.actor)
   }
 
-  render(
-    force?: boolean | undefined,
-    inputOptions?: Application.RenderOptions<ApplicationOptions> | undefined
-  ): this {
-    super.render(force, inputOptions)
-    return this
-  }
-
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      template:
-        'systems/foundry-ironsworn/templates/actor/sf-charactermoves.hbs',
       resizable: true,
       width: 350,
       height: 820,
       left: 685,
-    })
+      rootComponent: CharacterMoveSheet,
+    }) as any
   }
 
   get title() {
@@ -52,4 +43,38 @@ export class SFCharacterMoveSheet extends VueAppMixin(Application) {
       this.actor.name
     }`
   }
+
+  activateTab(tabKey: string) {
+    this.localEmitter.emit('activateTab', tabKey)
+  }
+
+  protected _getHeaderButtons(): Application.HeaderButton[] {
+    return [
+      {
+        class: 'ironsworn-help',
+        icon: 'fa fa-circle-question',
+        label: '',
+        onclick: async () => {
+          const tour = new MoveSheetTour(this)
+          await tour.reset()
+          tour.start()
+        },
+      },
+      ...super._getHeaderButtons(),
+    ]
+  }
 }
+
+// When changing actor sheets, make sure we don't get a stale move sheet
+Hooks.on('preUpdateActor', (actor: IronswornActor, data: any) => {
+  if (actor.type === 'character' && data.flags?.core?.sheetClass) {
+    actor.moveSheet = undefined
+  }
+})
+Hooks.on('preUpdateSetting', (setting: Setting, data: any) => {
+  if (setting.key === 'core.sheetClasses') {
+    for (const actor of game.actors ?? []) {
+      actor.moveSheet = undefined
+    }
+  }
+})

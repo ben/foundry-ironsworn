@@ -5,6 +5,7 @@
     ref="$el"
     :data-highlighted="state.highlighted"
     data-tooltip-direction="LEFT"
+    :data-tourid="`oracle-${node.dataforgedNode?.$id}`"
   >
     <!-- TODO: split this into two components, yo -->
     <!-- Leaf node -->
@@ -135,7 +136,7 @@ function toggleManually() {
 
 // Click on a move link: broadcast event
 function moveclick(item: IronswornItem) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id ?? '')
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
 
 function oracleclick(dfid) {

@@ -2,7 +2,7 @@
   <div class="flexrow" style="position: relative">
     <nav class="flexcol">
       <IronBtn
-        v-for="(truth, i) in truths"
+        v-for="(truth, i) in data.truths"
         nogrow
         :text="truth.je().name ?? '???'"
         @click="scrollToCategory(i)"
@@ -23,8 +23,12 @@
       />
     </nav>
     <section class="flexcol">
+      <aside class="flexrow nowrap">
+        <i class="fa-regular fa-circle-info nogrow"></i>
+        <p>{{ $t('IRONSWORN.TruthsAreOptional') }}</p>
+      </aside>
       <TruthCategory
-        v-for="truth in truths"
+        v-for="truth in data.truths"
         ref="categoryComponents"
         :key="truth.df.$id"
         :df="truth.df"
@@ -45,8 +49,19 @@ section {
   margin-left: 15em;
 }
 
-.save-button {
-  justify-self: flex-end;
+aside {
+  border: 1px solid var(--ironsworn-color-cool-70);
+  border-radius: var(--ironsworn-border-radius-md);
+  padding: 0.75em;
+  gap: 5px;
+
+  p {
+    margin: 0;
+  }
+
+  i {
+    margin-top: 0.1em;
+  }
 }
 </style>
 
@@ -58,10 +73,12 @@ import IronBtn from './components/buttons/iron-btn.vue'
 import TruthCategory from './components/truth/truth-category.vue'
 
 const props = defineProps<{
-  truths: {
-    df: ISettingTruth
-    je: () => JournalEntry
-  }[]
+  data: {
+    truths: {
+      df: ISettingTruth
+      je: () => JournalEntry
+    }[]
+  }
 }>()
 
 const categoryComponents = ref<(typeof TruthCategory)[]>([])

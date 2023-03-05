@@ -1,7 +1,6 @@
 import { compact, flatten } from 'lodash'
 import { SFMoveDataPropertiesData } from '../item/itemtypes'
 import { IronswornItem } from '../item/item'
-import { cachedDocumentsForPack } from '../features/pack-cache'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { getFoundryTableByDfId } from '../dataforged'
@@ -43,10 +42,7 @@ export class IronswornChatCard {
         name: t.name || '',
         icon: '<i class="isicon-oracle"></i>',
         callback: async () => {
-          const msg = await OracleRollMessage.fromTableId(
-            t.id,
-            t.pack || undefined
-          )
+          const msg = await OracleRollMessage.fromTableUuid(t.uuid)
           msg.createOrUpdate()
         },
       }))
@@ -91,21 +87,15 @@ export class IronswornChatCard {
 
   async _moveNavigate(ev: JQuery.ClickEvent) {
     ev.preventDefault()
-    const { pack, id } = ev.target.dataset
+    const { uuid } = ev.currentTarget.dataset
 
-    let item: IronswornItem | undefined
-    if (pack) {
-      const fPack = game.packs.get(pack)
-      item = (await fPack?.getDocument(id)) as IronswornItem
-    } else {
-      item = await game.items?.get(id)
-    }
+    const item = (await fromUuid(uuid)) as IronswornItem
     if (item?.type !== 'sfmove') {
       console.log('falling through')
       return (TextEditor as any)._onClickContentLink(ev)
     }
 
-    CONFIG.IRONSWORN.emitter.emit('highlightMove', item.id ?? '')
+    CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
   }
 
   async _oracleNavigate(ev: JQuery.ClickEvent) {
@@ -147,10 +137,7 @@ export class IronswornChatCard {
       (await isPack?.getDocument(tableid))) as RollTable | undefined
     if (!table?.id) return
 
-    const msg = await OracleRollMessage.fromTableId(
-      table.id,
-      table.pack || undefined
-    )
+    const msg = await OracleRollMessage.fromTableUuid(table.uuid)
     msg.createOrUpdate()
   }
 

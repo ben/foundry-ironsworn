@@ -20,7 +20,7 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
         `theme-${IronswornSettings.get('theme')}`,
       ],
       width: 600,
-      height: 700,
+      height: 360,
     } as FormApplicationOptions)
   }
 
@@ -30,37 +30,42 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
   activateListeners(html: JQuery) {
     super.activateListeners(html)
-    html.find('.ironsworn__save').on('click', (ev) => this._save.call(this, ev))
+    html
+      .find('#select-ironsworn')
+      .on('click', (ev) => this._selectIronsworn.call(this, ev))
+    html
+      .find('#select-starforged')
+      .on('click', (ev) => this._selectStarforged.call(this, ev))
   }
 
-  async _save(ev: JQuery.ClickEvent) {
+  async _selectIronsworn(ev) {
     ev.preventDefault()
 
-    const setValues = this.element.find('form').serializeArray()
-    for (const { name, value } of setValues) {
-      if (name === 'sheet') {
-        const setting = game.settings.get('core', 'sheetClasses')
-        foundry.utils.mergeObject(setting, { 'Actor.character': value })
-        await game.settings.set('core', 'sheetClasses', setting)
-      }
-      if (name === 'moves') {
-        await game.settings.set(
-          'foundry-ironsworn',
-          'toolbox',
-          value as ClientSettings.Values['foundry-ironsworn.toolbox']
-        )
-      }
-      if (name === 'truths') {
-        if (value === 'ironsworn') {
-          new WorldTruthsDialog().render(true)
-        }
+    // Character sheet
+    const setting = game.settings.get('core', 'sheetClasses')
+    foundry.utils.mergeObject(setting, {
+      'Actor.character': 'ironsworn.IronswornCharacterSheetV2',
+    })
+    await game.settings.set('core', 'sheetClasses', setting)
 
-        if (value === 'starforged') {
-          new SFSettingTruthsDialogVue().render(true)
-        }
-      }
-    }
+    // Truths
+    new WorldTruthsDialog().render(true)
+    game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
+    this.close()
+  }
 
+  async _selectStarforged(ev) {
+    ev.preventDefault()
+
+    // Character sheet
+    const setting = game.settings.get('core', 'sheetClasses')
+    foundry.utils.mergeObject(setting, {
+      'Actor.character': 'ironsworn.StarforgedCharacterSheet',
+    })
+    await game.settings.set('core', 'sheetClasses', setting)
+
+    // Truths
+    new SFSettingTruthsDialogVue().render(true)
     game.settings.set('foundry-ironsworn', 'prompt-world-truths', false)
     this.close()
   }

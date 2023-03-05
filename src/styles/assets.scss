@@ -28,14 +28,21 @@
 
 @mixin asset-ability-bullet-starforged {
   margin-top: 0.15em;
-  background-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+  background-image: url('../../system/assets/misc/hex-checkbox-unchecked.svg');
   height: 1em;
   aspect-ratio: var(--ironsworn-hexagon-aspect-ratio);
-  mask-image: url('/assets/misc/hex-checkbox-unchecked.svg');
+  mask-image: ;
 }
 
 @mixin asset-ability-bullet-starforged-marked {
-  mask-image: url('/assets/misc/hex-checkbox-checked.svg');
+  --ironsworn-bullet-height: 1em;
+  --ironsworn-bullet-margin-top: 0.15em;
+
+  mask-image: url('../../system/assets/misc/hex-checkbox-checked.svg');
+  margin-top: var(--ironsworn-bullet-margin-top);
+  background-image: url('../../system/assets/misc/hex-checkbox-unchecked.svg');
+  height: var(--ironsworn-bullet-height);
+  aspect-ratio: var(--ironsworn-hexagon-aspect-ratio);
 }
 
 .ironsworn__asset {

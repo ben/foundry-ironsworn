@@ -1,6 +1,10 @@
 {{#*inline "createBox"}}
-<div class="flexrow box clickable block ironsworn__{{type}}__create" style="align-items: center; padding: 1rem;"
-  data-img="{{img}}">
+<div
+  {{#if id}}id="{{id}}"{{/if}}
+  class="flexrow box clickable block ironsworn__{{type}}__create"
+  style="align-items: center; padding: 1rem;"
+  data-img="{{img}}"
+>
   <div class="flexcol" style="align-items: center;">
     <img src="{{img}}" width="75" height="75" alt="">
     <h4 style="margin: 0.1rem 0;">{{localize labelkey}}</h4>
@@ -11,9 +15,9 @@
 <form class='{{cssClass}} flexcol' autocomplete='off'>
   <div class="flexrow boxgroup boxrow">
     {{#if sfenabled}}
-    {{>createBox type="sfcharacter" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
+    {{>createBox type="sfcharacter" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
     {{else}}
-    {{>createBox type="character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
+    {{>createBox type="character" id="new-character" labelkey="IRONSWORN.ACTOR.TypeCharacter" img="icons/creatures/eyes/human-single-blue.webp"}}
     {{/if}}
 
     {{>createBox type="shared" labelkey="IRONSWORN.ACTOR.TypeShared" img="icons/environment/settlement/wagon-black.webp"}}

@@ -5,8 +5,78 @@
 - Under the hood: Major styling refactor to replace LESS preprocessor with SCSS/SASS, which supports more robust tooling, including much better support from Stylelint ([#567](https://github.com/ben/foundry-ironsworn/issues/567), [#568](https://github.com/ben/foundry-ironsworn/pull/568))
   - Adds opinionated Stylelint rules for property ordering, variable usage, class naming, etc. We have a _lot_ of styling to manage, and hopefully this will make it a bit easier to maintain.
   - Much of what `palettize.less` did is now written in Typescript for use as a custom SASS plugin. This lets us use `chroma.js` for better colour mixing, and lays the groundwork for generating color themes on the fly.
-- Under the hood: Remove the old `tables.db` (superceded by `ironsworn-oracles.db`) and all remaining references to it ([#614](https://github.com/ben/foundry-ironsworn/pull/614))
+
+## 1.20.28
+
+- Fix scrollbar width styling
+- Disable custom colors for volume sliders in Starforged theme, they were invisible
+
+## 1.20.27
+
+- Updated français translations ([#656](https://github.com/ben/foundry-ironsworn/pull/656))
+- Fix: changing the _default_ character sheet now also updates move sheets
+
+## 1.20.26
+
+- Fix: changing a character's sheet now properly updates their move sheet
+- Tours: the "welcome" tour now skips the 5th step if there's no scene, avoiding a dangling ending.
+- Tours: add a tour for the Ironsworn character sheet ([#657](https://github.com/ben/foundry-ironsworn/pull/657))
+
+## 1.20.25
+
+- Fix the names of new non-PC actors
+
+## 1.20.24
+
+- Make the compact sheet resizable
+
+## 1.20.23
+
+- Fixed: when the Starforged theme was active, the system tour would hang on the second step.
+
+## 1.20.22
+
+- Fix some bugs around move-link navigation throughout the UI ([#647](https://github.com/ben/foundry-ironsworn/pull/647))
+- Add a tour for the Starforged character sheet ([#648](https://github.com/ben/foundry-ironsworn/pull/648)) and one for the move sheet ([#649](https://github.com/ben/foundry-ironsworn/pull/649))
+
+## 1.20.21
+
+- Assets like **Bonded** with move links in their requirement fields now work properly when you click the links.
+- Update the compact PC sheet, fixing visual glitches, and converting it to Vue ([#640](https://github.com/ben/foundry-ironsworn/pull/640)).
+- Under the hood: refactored the Vue layer to have a more sensible architecture ([#638](https://github.com/ben/foundry-ironsworn/pull/638) and [#639](https://github.com/ben/foundry-ironsworn/pull/639)).
+
+## 1.20.20
+
+- Obey the Foundry default-token settings for disposition and name display
+- Only randomize location "kind" and name if they're not already set
+
+## 1.20.19
+
+- Fix: the "Launch tour" button in the chat message works now 😳
+- Under the hood: using Foundry v10 uuids more than id/pack pairs ([#629](https://github.com/ben/foundry-ironsworn/pull/629) and [#630](https://github.com/ben/foundry-ironsworn/pull/630))
+
+## 1.20.18
+
+- Fix some string bugs in the sector and location sheets
+- Add a tooltip to the sector sheet to explain what the setting is for
+- Add a few Foundry tours ([#624](https://github.com/ben/foundry-ironsworn/pull/624))
+
+## 1.20.17
+
+- Add a "roll progress" icon to the NPC sheet ([#628](https://github.com/ben/foundry-ironsworn/pull/628))
+- NPC sheet "mute" button appears if there are multiple users of any kind (also [#628](https://github.com/ben/foundry-ironsworn/pull/628))
+- Fix icon paths if you have your Foundry configured with a URL prefix path ([#626](https://github.com/ben/foundry-ironsworn/pull/626))
+
+## 1.20.16
+
+- Fix bugs in the Starforged truths, and include the quest starters ([#627](https://github.com/ben/foundry-ironsworn/pull/627))
+
+## 1.20.15
+
 - Add a loading spinner for the asset browser ([#618](https://github.com/ben/foundry-ironsworn/pull/618))
+- Add a "mute" toggle to the NPC sheet, so GMs can surprise the other players in the game ([#625](https://github.com/ben/foundry-ironsworn/pull/625))
+- Fix some issues with the first-start-in-a-new-world experience ([#620](https://github.com/ben/foundry-ironsworn/pull/620))
+- Under the hood: Remove the old `tables.db` (superceded by `ironsworn-oracles.db`) and all remaining references to it ([#614](https://github.com/ben/foundry-ironsworn/pull/614))
 
 ## 1.20.14
 

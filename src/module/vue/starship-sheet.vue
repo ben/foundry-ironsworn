@@ -1,6 +1,9 @@
 <template>
-  <SheetBasic :document="actor" body-class="flexcol">
-    <TabSet :id="`${actor._id}-starship-sheet`" :tabKeys="['assets', 'notes']">
+  <SheetBasic :document="data.actor" body-class="flexcol">
+    <TabSet
+      :id="`${data.actor._id}-starship-sheet`"
+      :tabKeys="['assets', 'notes']"
+    >
       <TabList>
         <Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
         <Tab tab-key="notes" :text="$t('Notes')" />
@@ -54,8 +57,8 @@ import TabPanel from './components/tabs/tab-panel.vue'
 import IronButton from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
-  actor: ReturnType<typeof IronswornActor.prototype.toObject>
+  data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
 }>()
 
-provide(ActorKey, computed(() => props.actor) as any)
+provide(ActorKey, computed(() => props.data.actor) as any)
 </script>

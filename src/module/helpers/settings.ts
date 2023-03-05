@@ -1,8 +1,17 @@
 import { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
+import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
+import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'
 
 function reload() {
   window.location.reload()
+}
+
+async function closeAllMoveSheets() {
+  for (const actor of game.actors?.contents ?? []) {
+    await actor.moveSheet?.close()
+    actor.moveSheet = undefined
+  }
 }
 
 declare global {
@@ -17,6 +26,7 @@ declare global {
       'foundry-ironsworn.log-changes': boolean
       'foundry-ironsworn.progress-mark-animation': boolean
       'foundry-ironsworn.data-version': number
+      'foundry-ironsworn.first-run-tips-shown': boolean
     }
   }
 }
@@ -39,6 +49,24 @@ export class IronswornSettings {
       config: true,
       type: Boolean,
       default: true,
+    })
+
+    game.settings.registerMenu('foundry-ironsworn', 'is-truths-dialog', {
+      name: 'IRONSWORN.Settings.ISTruthsDialog.Name',
+      label: 'IRONSWORN.Settings.ISTruthsDialog.Label',
+      icon: 'fas fa-feather',
+      hint: 'IRONSWORN.Settings.ISTruthsDialog.Hint',
+      type: WorldTruthsDialog,
+      restricted: true,
+    })
+    game.settings.registerMenu('foundry-ironsworn', 'sf-truths-dialog', {
+      name: 'IRONSWORN.Settings.SFTruthsDialog.Name',
+      label: 'IRONSWORN.Settings.SFTruthsDialog.Label',
+      icon: 'fas fa-feather',
+      hint: 'IRONSWORN.Settings.SFTruthsDialog.Hint',
+      // @ts-ignore
+      type: SFSettingTruthsDialogVue,
+      restricted: true,
     })
 
     game.settings.register('foundry-ironsworn', 'theme', {
@@ -67,7 +95,7 @@ export class IronswornSettings {
         starforged: 'IRONSWORN.Starforged',
       },
       default: 'sheet',
-      onChange: reload,
+      onChange: closeAllMoveSheets,
     })
 
     game.settings.register('foundry-ironsworn', 'shared-supply', {
@@ -104,6 +132,13 @@ export class IronswornSettings {
       config: false,
       type: Number,
       default: 1,
+    })
+
+    game.settings.register('foundry-ironsworn', 'first-run-tips-shown', {
+      scope: 'world',
+      config: false,
+      type: Boolean,
+      default: false,
     })
   }
   /**

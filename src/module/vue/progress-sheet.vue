@@ -1,18 +1,22 @@
 <template>
   <div class="flexcol">
     <!-- HEADER -->
-    <SheetHeaderBasic class="nogrow" :document="item" />
+    <SheetHeaderBasic class="nogrow" :document="data.item" />
 
     <div
       class="flexrow nogrow"
       style="gap: 1em; margin: var(--ironsworn-spacer-lg) 0"
     >
-      <RankPips class="nogrow" :current="item.system.rank" @click="setRank" />
+      <RankPips
+        class="nogrow"
+        :current="data.item.system.rank"
+        @click="setRank"
+      />
       <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
       <label class="checkbox nogrow">
         <input
           type="checkbox"
-          v-model="item.system.completed"
+          v-model="data.item.system.completed"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Completed') }}
@@ -21,7 +25,7 @@
 
     <select
       class="nogrow"
-      v-model="item.system.subtype"
+      v-model="data.item.system.subtype"
       @change="subtypeChange"
     >
       <option value="vow">
@@ -41,14 +45,14 @@
       <label class="checkbox">
         <input
           type="checkbox"
-          v-model="item.system.hasTrack"
+          v-model="data.item.system.hasTrack"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Track') }}
       </label>
 
       <CollapseTransition>
-        <div class="nogrow" v-if="item.system.hasTrack">
+        <div class="nogrow" v-if="data.item.system.hasTrack">
           <div
             class="flexrow nogrow"
             style="
@@ -57,7 +61,7 @@
             "
           >
             <IronBtn
-              v-if="item.system.hasTrack"
+              v-if="data.item.system.hasTrack"
               block
               nogrow
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
@@ -65,7 +69,7 @@
               icon="fa:caret-left"
             />
             <IronBtn
-              v-if="item.system.hasTrack"
+              v-if="data.item.system.hasTrack"
               block
               nogrow
               :tooltip="$t('IRONSWORN.MarkProgress')"
@@ -76,8 +80,8 @@
           <!-- PROGRESS -->
           <div class="flexrow track nogrow" style="margin-bottom: 1em">
             <ProgressTrack
-              :ticks="item.system.current"
-              :rank="item.system.rank"
+              :ticks="data.item.system.current"
+              :rank="data.item.system.rank"
             />
           </div>
         </div>
@@ -90,18 +94,18 @@
       <label class="checkbox">
         <input
           type="checkbox"
-          v-model="item.system.hasClock"
+          v-model="data.item.system.hasClock"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Clock') }}
       </label>
 
       <CollapseTransition>
-        <div class="flexrow nogrow" v-if="item.system.hasClock">
+        <div class="flexrow nogrow" v-if="data.item.system.hasClock">
           <div class="nogrow" style="margin: 0 1rem">
             <Clock
-              :wedges="item.system.clockMax"
-              :ticked="item.system.clockTicks"
+              :wedges="data.item.system.clockMax"
+              :ticked="data.item.system.clockTicks"
               @click="setClock"
             />
           </div>
@@ -109,7 +113,7 @@
             {{ $t('IRONSWORN.Segments') }}:
             <select
               class="nogrow"
-              v-model="item.system.clockMax"
+              v-model="data.item.system.clockMax"
               @change="clockMaxChange"
               style="margin: var(--ironsworn-spacer-lg) 0"
             >
@@ -128,7 +132,7 @@
 
     <hr class="nogrow" />
     <!-- DESCRIPTION -->
-    <MceEditor v-model="item.system.description" @save="saveDescription" />
+    <MceEditor v-model="data.item.system.description" @save="saveDescription" />
     <IronBtn
       nogrow
       block
@@ -171,16 +175,16 @@ import ProgressTrack from './components/progress/progress-track.vue'
 import CollapseTransition from './components/transition/collapse-transition.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 
-const props = defineProps<{ item: any }>()
+const props = defineProps<{ data: { item: any } }>()
 const $item = inject($ItemKey)
 
 provide(
   ItemKey,
-  computed(() => props.item)
+  computed(() => props.data.item)
 )
 
 const rankText = computed(() =>
-  game.i18n.localize(RANKS[props.item.system.rank])
+  game.i18n.localize(RANKS[props.data.item.system.rank])
 )
 
 function setRank(rank) {
@@ -195,19 +199,21 @@ function retreat() {
 }
 
 function subtypeChange() {
-  $item?.update({ system: { subtype: props.item.system.subtype } })
+  $item?.update({ system: { subtype: props.data.item.system.subtype } })
 }
 
 function clockMaxChange() {
-  $item?.update({ system: { clockMax: parseInt(props.item.system.clockMax) } })
+  $item?.update({
+    system: { clockMax: parseInt(props.data.item.system.clockMax) },
+  })
 }
 
 function saveChecks() {
   $item?.update({
     system: {
-      completed: props.item.system.completed,
-      hasTrack: props.item.system.hasTrack,
-      hasClock: props.item.system.hasClock,
+      completed: props.data.item.system.completed,
+      hasTrack: props.data.item.system.hasTrack,
+      hasClock: props.data.item.system.hasClock,
     },
   })
 }
@@ -217,7 +223,7 @@ function setClock(num) {
 }
 
 function saveDescription() {
-  $item?.update({ system: { description: props.item.system.description } })
+  $item?.update({ system: { description: props.data.item.system.description } })
 }
 
 function destroy() {

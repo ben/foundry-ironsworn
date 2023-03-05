@@ -1,12 +1,12 @@
 <template>
   <div class="move-sheet flexcol">
     <SheetHeader class="nogrow">
-      <document-name :document="item" />
+      <document-name :document="data.item" />
     </SheetHeader>
 
     <div class="flexrow">
       <!-- Tab selection on left -->
-      <div class="flexcol nogrow" style=" max-width: 33%;white-space: nowrap">
+      <div class="flexcol nogrow" style="max-width: 33%; white-space: nowrap">
         <!-- These are always here -->
         <sfmove-tab
           :currentProperty="state.currentProperty"
@@ -135,9 +135,9 @@ import SfmoveTab from './components/sfmove-tab.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
-  item: any
+  data: { item: any }
 }>()
-provide(ItemKey, computed(() => props.item) as any)
+provide(ItemKey, computed(() => props.data.item) as any)
 
 const $item = inject($ItemKey)
 
@@ -150,11 +150,11 @@ const state = reactive<{
   currentStatText?: string
 }>({
   currentProperty: 'Text',
-  currentContent: props.item.system.Text,
+  currentContent: props.data.item.system.Text,
 })
 
 const triggerOptions = computed(() => {
-  const itemTriggerOptions = props.item.system.Trigger?.Options || []
+  const itemTriggerOptions = props.data.item.system.Trigger?.Options || []
   return itemTriggerOptions.map((x, i) => {
     const title = x['Action roll']
       ? `Roll +${x['Action roll'].Stat}`
@@ -170,7 +170,7 @@ const triggerOptions = computed(() => {
 
 function switchContent(prop, actionPropKey?: string) {
   state.currentProperty = prop
-  state.currentContent = get(props.item.system, prop)
+  state.currentContent = get(props.data.item.system, prop)
   state.currentActionPropKey = actionPropKey
   // {
   //   Method: 'Any',
@@ -180,14 +180,15 @@ function switchContent(prop, actionPropKey?: string) {
   //   dfid: 'Starforged/Moves/Recover/Heal/Trigger/Options/1',
   // }
   const ap =
-    actionPropKey && (get(props.item.system, actionPropKey) as any | undefined)
+    actionPropKey &&
+    (get(props.data.item.system, actionPropKey) as any | undefined)
   state.currentRollType = ap?.['Roll type']
   state.currentMethod = ap?.Method
   state.currentStatText = ap?.Using?.join?.(',') ?? ''
 }
 
 function addTrigger() {
-  let { Options } = props.item.system.Trigger
+  let { Options } = props.data.item.system.Trigger
   Options ||= []
   Options.push({
     Text: '',
@@ -200,7 +201,7 @@ function addTrigger() {
 
 function removeTrigger(option) {
   const idx = triggerOptions.value.findIndex((x) => x.key === option.key)
-  let { Options } = props.item.system.Trigger
+  let { Options } = props.data.item.system.Trigger
   Options ||= []
   Options.splice(idx, 1)
   $item?.update({ system: { Trigger: { Options } } })
@@ -216,18 +217,18 @@ function saveActionProps() {
   )
     return
 
-  const opt = get(props.item.system, state.currentActionPropKey)
+  const opt = get(props.data.item.system, state.currentActionPropKey)
   opt.Method = state.currentMethod
   opt['Roll type'] = state.currentRollType
   opt.Using = state.currentStatText.split(',').map((x) => x.trim())
-  set(props.item.system, state.currentActionPropKey, opt)
-  $item?.update({ system: props.item.system })
+  set(props.data.item.system, state.currentActionPropKey, opt)
+  $item?.update({ system: props.data.item.system })
 }
 
 function saveText() {
   if (state.currentProperty.includes('Options')) {
-    set(props.item.system, state.currentProperty, state.currentContent)
-    const { Options } = props.item.system.Trigger
+    set(props.data.item.system, state.currentProperty, state.currentContent)
+    const { Options } = props.data.item.system.Trigger
     $item?.update({ system: { Trigger: { Options } } })
   } else {
     $item?.update({

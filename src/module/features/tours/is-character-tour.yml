@@ -1,0 +1,75 @@
+rootKey: IRONSWORN.Tours.ISCharacter
+languages:
+  - lang: en
+    entries:
+      - key: Sheet
+        title: Character Sheet
+        content: This is the player character sheet. It can help you manage your character's attributes, resources, assets, and vows.
+
+      - key: EditButton
+        title: Edit Button
+        content: The "<i class="fa-solid fa-edit"></i> Edit" button in the title bar is used to switch between interaction and edit modes for this character.
+
+      - key: Stats
+        title: Character Stats
+        content: |
+          These are your character's basic attributes, which tell you something about their personality, but also tell you that when they're trying certain kinds of actions, the story will tend to go better for them.
+
+          To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.
+
+          **EDIT MODE** allows you to adjust these numbers.
+
+      - key: Resources
+        title: Resources
+        content: |
+          On the side here we have the three basic resources: Health, Spirit, and Supply. You can adjust the levels of these resources by clicking on the new value.
+
+          You can also make rolls by clicking on the resource's name.
+
+      - key: Momentum
+        title: Momentum
+        content: |
+          On the other side is the momentum tracker. You can set your character's momentum by clicking on one of the numbers, and if you have debilities marked, one or more of the highest values will be disabled.
+
+          Hover over the "<i class="fa-solid fa-fire"></i> MOMENTUM" title for a preview of what burning your momentum will do, and click it to perform the burn.
+
+      - key: Conditions
+        title: Conditions
+        content: |
+          Down at the bottom of the sheet are your character's conditions, banes, and burdens. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom conditions.
+
+      - key: CharacterTab
+        title: Character Tab
+        content: |
+          In the center area are a series of tabs. The first one is the "Character" tab, where you track most of the details you need for an Ironsworn character.
+
+      - key: Bonds
+        title: Bonds
+        content: |
+          At the top-left are your bonds. This displays how many bonds your character has made during their adventures. Click the <i class="fa-solid fa-edit"></i> button to add or remove bonds, and keep notes about them. Click the <svg fill="currentColor" height="1em" width="1em" role="img" aria-hidden="true" class="icon"><use href="#ironsworn-d10-tilt"></use></svg> button to roll the _Write Your Epilogue_ move.
+
+      - key: Assets
+        title: Assets
+        content: |
+          The Assets area is where your character's assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the "<i class="fa-solid fa-edit"></i>" icon to open a detail sheet for any asset.
+
+          **EDIT MODE** displays buttons for deleting and reordering assets.
+
+          The "<i class="fa-solid fa-book-atlas"></i> Assets" button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.
+
+      - key: Progress
+        title: Progress
+        content: |
+          The Progress area displays your character's current vows and other progress items. You can add a new blank item by clicking the "+Vow" or "+Progress" buttons at the bottom, or you can open the "<i class="fa-solid fa-book-atlas"></i> Foes" compendium and drag an enemy into the list.
+
+          Each item shows current progress, and has controls for marking ticks and making a progress roll. **EDIT MODE** adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.
+
+      - key: NotesTab
+        title: Notes Tab
+        content: |
+          The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you're carrying, jot down the scars you've earned on your way.
+
+      - key: End
+        title: Character Sheet
+        content: |
+          That's all for now. Look for the <i class="fa-solid fa-circle-question"></i> button in other sheet title bars for more information on how they work.

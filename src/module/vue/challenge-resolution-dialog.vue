@@ -1,60 +1,56 @@
 <template>
-  <form class="challenge-resolution-dialog flexcol" style="flex-grow: 1">
-    <div class="grid">
-      <div class="flexrow" v-for="(row, i) in state.rows" :key="`row${i}`">
-        <input
-          type="radio"
-          class="a"
-          :checked="row.choice === 'a'"
-          @change="update(i, 'a')"
-        />
-        <div class="ironsworn-roll roll-graphic dice-formula">
-          <span
-            class="roll die isiconbg-d10-blank d10 challenge challenge-die {{minmax}}"
-          >
-            {{ row.dieValue }}
-          </span>
-        </div>
-        <input
-          type="radio"
-          class="b"
-          :checked="row.choice === 'b'"
-          @change="update(i, 'b')"
-        />
-      </div>
-    </div>
-
-    <section
-      class="dice-result dice-tooltip dice-roll ironsworn-roll"
-      v-html="state.renderedGraphic"
-    ></section>
-
-    <div
-      class="boxgroup"
-      style="margin-top: 1rem"
-      :data-tooltip="
-        saveDisabled ? $t('IRONSWORN.ResolveChallengeDisabled') : undefined
-      "
-    >
-      <div class="boxrow flexrow">
-        <button
-          type="button"
-          class="clickable block save"
-          :class="{ disabled: saveDisabled }"
-          @click="save"
+  <div class="grid">
+    <div class="flexrow" v-for="(row, i) in state.rows" :key="`row${i}`">
+      <input
+        type="radio"
+        class="a"
+        :checked="row.choice === 'a'"
+        @change="update(i, 'a')"
+      />
+      <div class="ironsworn-roll dice-roll roll-graphic dice-formula nogrow">
+        <span
+          class="roll die isiconbg-d10-blank d10 challenge challenge-die {{minmax}}"
         >
-          <i class="fas fa-check"></i>
-          {{ $t('Save') }}
-        </button>
+          {{ row.dieValue }}
+        </span>
       </div>
+      <input
+        type="radio"
+        class="b"
+        :checked="row.choice === 'b'"
+        @change="update(i, 'b')"
+      />
     </div>
-  </form>
+  </div>
+
+  <section
+    class="dice-result dice-tooltip dice-roll ironsworn-roll nogrow"
+    v-html="state.renderedGraphic"
+  ></section>
+
+  <div class="boxgroup nogrow" style="margin-top: 1rem">
+    <div class="boxrow flexrow">
+      <button
+        type="button"
+        class="clickable block save"
+        :class="{ disabled: saveDisabled }"
+        @click="save"
+        :data-tooltip="
+          saveDisabled ? $t('IRONSWORN.ResolveChallengeDisabled') : undefined
+        "
+      >
+        <i class="fas fa-check"></i>
+        {{ $t('Save') }}
+      </button>
+    </div>
+  </div>
 </template>
 
 <style lang="scss" scoped>
 div.grid {
   flex-grow: 1;
   justify-items: center;
+  align-items: center;
   margin: 1em;
 }
 
@@ -80,8 +76,8 @@ import { IronswornRollMessage } from '../rolls'
 import { renderRollGraphic } from '../rolls/roll-graphic'
 import { $LocalEmitterKey } from './provisions'
 
-const props = defineProps<{ messageId: string }>()
-const irm = await IronswornRollMessage.fromMessage(props.messageId)
+const props = defineProps<{ data: { messageId: string } }>()
+const irm = await IronswornRollMessage.fromMessage(props.data.messageId)
 
 type AOrB = 'a' | '' | 'b'
 const state = reactive({

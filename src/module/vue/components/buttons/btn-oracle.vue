@@ -39,15 +39,7 @@ async function rollOracle() {
   if (props.overrideClick && props.onClick) return $emit('click')
 
   const randomTable = sample(props.node.tables)
-  const pack = {
-    ironsworn: 'foundry-ironsworn.ironswornoracles',
-    starforged: 'foundry-ironsworn.starforgedoracles',
-  }[toolset ?? '']
-
-  const orm = await OracleRollMessage.fromTableId(
-    randomTable?.()?.id ?? '',
-    pack
-  )
+  const orm = await OracleRollMessage.fromTableUuid(randomTable?.()?.uuid ?? '')
   orm.createOrUpdate()
 }
 </script>
