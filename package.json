@@ -2,6 +2,7 @@
   "name": "foundry-ironsworn",
   "version": "1.0.0",
   "description": "CSS compiler for the Ironsworn system",
+  "type": "module",
   "scripts": {
     "build": "vite build",
     "build:production": "vite build",
@@ -20,6 +21,7 @@
     "@league-of-foundry-developers/foundry-vtt-types": "github:rsek/foundry-vtt-types#v10-journal",
     "@mavrin/stylelint-declaration-use-css-custom-properties": "^2.0.0",
     "@tinymce/tinymce-vue": "^5.0.0",
+    "@types/eslint": "^8.21.1",
     "@types/lodash": "^4.14.170",
     "@types/marked": "^4.0.3",
     "@types/node": "^18.14.2",
