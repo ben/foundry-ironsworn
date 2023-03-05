@@ -22,12 +22,13 @@
   </div>
 </template>
 
-<style lang="less" module>
-@import (reference) '../../../styles/mixins.less';
+<style lang="scss" module>
+@use 'mixins:clickable.scss';
+@use 'mixins:text.scss';
 
 .interactive {
+  @include clickable.interactive;
   cursor: pointer;
-  .interactiveMixin();
 
   &::before {
     --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
@@ -50,7 +51,7 @@
 
 .wrapper {
   --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-  .textStrokeMixin();
+  @include text.stroke;
 
   h4 {
     font-weight: bold;

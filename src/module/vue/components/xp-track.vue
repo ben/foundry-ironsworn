@@ -20,7 +20,7 @@
   </article>
 </template>
 <style lang="scss" scoped>
-@use 'mixins:fx';
+@use 'mixins:fx.scss';
 
 .xp-track {
   position: relative;

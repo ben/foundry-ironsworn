@@ -19,7 +19,7 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins:text';
+@use 'mixins:text.scss';
 
 .attr-label {
   margin: 0;

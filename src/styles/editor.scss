@@ -1,8 +1,8 @@
 /* stylelint-disable scss/no-dollar-variables */
 /* stylelint-disable mavrin/stylelint-declaration-use-css-custom-properties */
 /* stylelint-disable no-duplicate-selectors */
-@use 'mixins:clickable';
-@use 'mixins:input';
+@use 'mixins:clickable.scss';
+@use 'mixins:input.scss';
 
 // styles for TinyMCE and ProseMirror editors
 

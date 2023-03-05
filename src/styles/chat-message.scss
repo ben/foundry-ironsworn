@@ -1,5 +1,5 @@
-@use 'mixins:text';
-@use 'mixins:clickable';
+@use 'mixins:text.scss';
+@use 'mixins:clickable.scss';
 
 .chat-message {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);

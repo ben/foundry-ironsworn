@@ -1,7 +1,7 @@
 @use 'sass:meta';
-@use 'mixins:color';
-@use 'mixins:fx';
-@use 'mixins:border';
+@use 'mixins:color.scss';
+@use 'mixins:fx.scss';
+@use 'mixins:border.scss';
 @use 'styles:fvtt/dialog' as fvtt-dialog;
 
 // Common CSS custom properties are coralled in their own file.

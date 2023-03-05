@@ -1,4 +1,4 @@
-@use 'mixins:text';
+@use 'mixins:text.scss';
 
 .dice-roll {
   --ironsworn-roll-term-size: var(--font-size-24);

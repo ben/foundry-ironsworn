@@ -35,9 +35,9 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins:clickable';
-@use 'mixins:text';
-@use 'mixins:fx';
+@use 'mixins:clickable.scss';
+@use 'mixins:text.scss';
+@use 'mixins:fx.scss';
 
 .wrapper {
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);

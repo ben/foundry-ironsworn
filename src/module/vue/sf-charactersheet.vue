@@ -90,8 +90,8 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins:border';
-@use 'mixins:clickable';
+@use 'mixins:border.scss';
+@use 'mixins:clickable.scss';
 
 .margin-right {
   @include border.margin(right);

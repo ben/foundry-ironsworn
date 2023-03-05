@@ -163,7 +163,7 @@
 }
 </style>
 <style lang="scss" scoped>
-@use 'mixins:clickable';
+@use 'mixins:clickable.scss';
 
 label {
   line-height: 27px;

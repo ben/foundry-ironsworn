@@ -72,7 +72,7 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins:border';
+@use 'mixins:border.scss';
 
 .margin-left {
   @include border.margin(left);

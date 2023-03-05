@@ -65,9 +65,9 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins:color';
-@use 'mixins:clickable';
-@use 'mixins:text';
+@use 'mixins:color.scss';
+@use 'mixins:clickable.scss';
+@use 'mixins:text.scss';
 
 .sf-move-row {
   @include color.thematic(v-bind('thematicColor'));

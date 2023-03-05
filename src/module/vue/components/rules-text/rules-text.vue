@@ -13,7 +13,7 @@
   </WithRolllisteners>
 </template>
 <style lang="scss">
-@use 'mixins:text';
+@use 'mixins:text.scss';
 
 .rules-text {
   --ironsworn-rules-text-spacer: 0.5em;
