@@ -1,4 +1,4 @@
-/** @type {import('eslint').Linter.Config} */
+/** @type {import('eslint').Linter.Config & typeof import('@typescript-eslint/eslint-plugin')} */
 module.exports = {
   $schema: 'https://json.schemastore.org/eslintrc',
   root: true,
@@ -8,6 +8,7 @@ module.exports = {
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
+  /** @type {import('@typescript-eslint/parser').ParserOptions} */
   parserOptions: {
     ecmaVersion: 11,
     sourceType: 'module',
