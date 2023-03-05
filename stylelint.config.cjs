@@ -1,5 +1,3 @@
-const { stylelint } = require('stylelint')
-
 const commonConfigs = [
   'stylelint-config-standard',
   /**
@@ -19,10 +17,8 @@ const commonPlugins = [
   '@mavrin/stylelint-declaration-use-css-custom-properties',
 ]
 
-/**
- * @type {stylelint.Options}
- */
-const CONFIG = {
+/** @type {import('stylelint').Options} */
+module.exports = {
   extends: commonConfigs,
   plugins: commonPlugins,
   overrides: [
@@ -99,5 +95,3 @@ const CONFIG = {
     },
   ],
 }
-
-module.exports = CONFIG
