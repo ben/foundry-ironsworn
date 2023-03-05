@@ -1,6 +1,6 @@
-import { BaseAdventure } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseAdventure.js'
-import { IronswornActor } from '../actor/actor'
-import { IronswornItem } from '../item/item'
+import type { BaseAdventure } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs/baseAdventure.js'
+import type { IronswornActor } from '../actor/actor'
+import type { IronswornItem } from '../item/item'
 
 const ONE_MINUTE_IN_MS = 60 * 1000
 

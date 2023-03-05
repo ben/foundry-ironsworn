@@ -1,6 +1,6 @@
 import { attachInlineRollListeners } from '../../features/rollplus'
 import { IronswornItemSheet } from '../item-sheet'
-import { AssetDataSource } from '../itemtypes'
+import type { AssetDataSource } from '../itemtypes'
 
 export class AssetSheet extends IronswornItemSheet {
   static get defaultOptions() {

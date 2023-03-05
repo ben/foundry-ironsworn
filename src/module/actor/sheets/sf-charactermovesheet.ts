@@ -1,6 +1,6 @@
 import CharacterMoveSheet from '../../vue/sf-charactermovesheet.vue'
-import { IronswornActor } from '../actor'
-import { App } from 'vue'
+import type { IronswornActor } from '../actor'
+import type { App } from 'vue'
 import { $ActorKey } from '../../vue/provisions'
 import { VueAppMixin } from '../../vue/vueapp.js'
 import { MoveSheetTour } from '../../features/tours/move-sheet-tour'

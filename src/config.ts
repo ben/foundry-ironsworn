@@ -2,7 +2,8 @@ import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { starforged } from 'dataforged'
-import Mitt, { Emitter } from 'mitt'
+import type { Emitter } from 'mitt';
+import Mitt from 'mitt'
 import {
   IronswornRoll,
   IronswornPrerollDialog,

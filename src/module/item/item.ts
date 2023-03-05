@@ -1,8 +1,8 @@
-import { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import { RANK_INCREMENTS } from '../constants'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornPrerollDialog } from '../rolls'
-import {
+import type {
   BondsetDataPropertiesData,
   DelveDomainDataPropertiesData,
   DelveSiteDanger,

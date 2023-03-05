@@ -1,6 +1,6 @@
-import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import { IMove } from 'dataforged'
-import { RANKS } from '../constants'
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { IMove } from 'dataforged'
+import type { RANKS } from '../constants'
 
 interface ProgressBase {
   description: string

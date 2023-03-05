@@ -1,12 +1,13 @@
-import { IOutcomeInfo, RollMethod } from 'dataforged'
+import type { IOutcomeInfo, RollMethod } from 'dataforged'
 import { capitalize, compact, fromPairs, isUndefined, kebabCase } from 'lodash'
 import { IronswornRoll } from '.'
-import { IronswornActor } from '../actor/actor'
-import { CharacterDataPropertiesData } from '../actor/actortypes'
+import type { IronswornActor } from '../actor/actor'
+import type { CharacterDataPropertiesData } from '../actor/actortypes'
 import { getFoundryTableByDfId } from '../dataforged'
+import type {
+  SFMoveDataPropertiesData} from '../item/itemtypes';
 import {
-  SFMoveDataProperties,
-  SFMoveDataPropertiesData,
+  SFMoveDataProperties
 } from '../item/itemtypes'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'

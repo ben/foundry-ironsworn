@@ -1,7 +1,7 @@
 // adapted from https://github.com/jakedohm/vue-accessible-tabs
 // more about the recommendations for this design pattern, for later reference: https://www.w3.org/WAI/ARIA/apg/example-index/tabs/tabs-manual.html
 
-import { InjectionKey } from 'vue'
+import type { InjectionKey } from 'vue'
 
 // not strictly necessary, but helps clarify what the string values reperesent
 export type TabKey = string

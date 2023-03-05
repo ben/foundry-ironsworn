@@ -1,4 +1,5 @@
-import { Starforged, starforged } from 'dataforged'
+import type { Starforged} from 'dataforged';
+import { starforged } from 'dataforged'
 import sfTruthsVue from '../vue/sf-truths.vue'
 import { VueAppMixin } from '../vue/vueapp.js'
 

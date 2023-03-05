@@ -1,5 +1,5 @@
-import { IronswornActor } from '../../actor/actor'
-import { StarforgedCharacterSheet } from '../../actor/sheets/sf-charactersheet'
+import type { IronswornActor } from '../../actor/actor'
+import type { StarforgedCharacterSheet } from '../../actor/sheets/sf-charactersheet'
 import { IronswornTour } from './ironsworn_tour'
 
 export class ISCharacterTour extends IronswornTour {

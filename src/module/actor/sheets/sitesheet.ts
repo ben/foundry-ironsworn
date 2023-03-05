@@ -1,4 +1,4 @@
-import { SiteDataSourceData } from '../actortypes'
+import type { SiteDataSourceData } from '../actortypes'
 import { VueActorSheet } from '../../vue/vueactorsheet'
 import siteSheetVue from '../../vue/site-sheet.vue'
 

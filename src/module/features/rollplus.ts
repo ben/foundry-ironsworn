@@ -1,4 +1,4 @@
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 import { IronswornPrerollDialog } from '../rolls'
 
 interface InlineRollListenerOptions {

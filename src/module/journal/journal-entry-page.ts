@@ -1,8 +1,8 @@
-import { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
-import { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
+import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
 import { clamp } from 'lodash'
 import { NumericRank, RANK_INCREMENTS } from '../constants'
-import { ProgressTrackDataPropertiesData } from './journal-entry-page-types'
+import type { ProgressTrackDataPropertiesData } from './journal-entry-page-types'
 
 /**
  * Extends the base {@link JournalEntryPage} document class.

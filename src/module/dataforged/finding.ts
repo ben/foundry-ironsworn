@@ -1,5 +1,5 @@
-import { IMove, IOracle, IOracleCategory } from 'dataforged'
-import { IronswornItem } from '../item/item'
+import type { IMove, IOracle, IOracleCategory } from 'dataforged'
+import type { IronswornItem } from '../item/item'
 import { cachedDocumentsForPack } from '../features/pack-cache'
 import {
   SFMoveCategories,

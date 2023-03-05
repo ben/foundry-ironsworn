@@ -7,7 +7,7 @@
 
 import { cloneDeep, compact, pick, range, sum } from 'lodash'
 import { getFoundryMoveByDfId } from '../dataforged'
-import { IronswornItem } from '../item/item'
+import type { IronswornItem } from '../item/item'
 import { computeRollOutcome } from './ironsworn-roll-message'
 
 /**

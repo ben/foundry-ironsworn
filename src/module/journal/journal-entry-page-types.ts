@@ -1,4 +1,4 @@
-import { NumericRank } from '../constants'
+import type { NumericRank } from '../constants'
 
 interface CounterBase {
   max: number
