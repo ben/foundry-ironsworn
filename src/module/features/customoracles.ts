@@ -1,11 +1,10 @@
-import {
-  starforged,
-  ironsworn,
+import type {
   IOracle,
   IOracleCategory,
   Starforged,
   Ironsworn,
 } from 'dataforged'
+import { starforged, ironsworn } from 'dataforged'
 import { compact } from 'lodash'
 import { getFoundryTableByDfId } from '../dataforged'
 import { cachedDocumentsForPack } from './pack-cache'

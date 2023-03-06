@@ -1,10 +1,12 @@
+import type {
+  PreRollOptions,
+  RollOutcome,
+  SourcedValue,
+} from './ironsworn-roll'
 import {
   ACTION_DIE_SIDES,
   CHALLENGE_DIE_SIDES,
   IronswornRoll,
-  PreRollOptions,
-  RollOutcome,
-  SourcedValue,
 } from './ironsworn-roll'
 
 interface RenderData {
