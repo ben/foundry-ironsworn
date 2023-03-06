@@ -9,10 +9,9 @@ import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import type {
   PreRollOptions,
   RollOutcome,
-  SourcedValue} from './ironsworn-roll';
-import {
-  IronswornRoll
+  SourcedValue,
 } from './ironsworn-roll'
+import { IronswornRoll } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
 import type { CharacterDataPropertiesData } from '../actor/actortypes'
 import { IronswornRollMessage } from '.'

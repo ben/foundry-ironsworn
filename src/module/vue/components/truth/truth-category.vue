@@ -92,7 +92,7 @@ function scrollIntoView() {
   })
 }
 
-const selectables = ref<typeof TruthSelectable[]>([])
+const selectables = ref<(typeof TruthSelectable)[]>([])
 const customTruth = ref<typeof CustomTruth>()
 
 async function randomize() {

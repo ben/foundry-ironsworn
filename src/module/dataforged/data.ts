@@ -1,4 +1,4 @@
-import type { Starforged, Ironsworn } from 'dataforged';
+import type { Starforged, Ironsworn } from 'dataforged'
 import { starforged, ironsworn } from 'dataforged'
 
 // For some reason, rollupJs mangles this

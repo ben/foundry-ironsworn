@@ -8,11 +8,9 @@ import type {
   IOracleCategory,
   Ironsworn,
   ISettingTruth,
-  Starforged} from 'dataforged';
-import {
-  ironsworn,
-  starforged,
+  Starforged,
 } from 'dataforged'
+import { ironsworn, starforged } from 'dataforged'
 import { isArray, isObject, max } from 'lodash'
 import { marked } from 'marked'
 import shajs from 'sha.js'

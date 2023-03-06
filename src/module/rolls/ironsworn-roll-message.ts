@@ -4,11 +4,8 @@ import { IronswornRoll } from '.'
 import type { IronswornActor } from '../actor/actor'
 import type { CharacterDataPropertiesData } from '../actor/actortypes'
 import { getFoundryTableByDfId } from '../dataforged'
-import type {
-  SFMoveDataPropertiesData} from '../item/itemtypes';
-import {
-  SFMoveDataProperties
-} from '../item/itemtypes'
+import type { SFMoveDataPropertiesData } from '../item/itemtypes'
+import { SFMoveDataProperties } from '../item/itemtypes'
 import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
