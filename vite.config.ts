@@ -21,6 +21,9 @@ const config: UserConfig = {
       vue: 'vue/dist/vue.esm-bundler.js',
     },
   },
+  define: {
+    'process.env': {},
+  },
   publicDir: 'system',
   base: '/systems/foundry-ironsworn/',
   server: {
