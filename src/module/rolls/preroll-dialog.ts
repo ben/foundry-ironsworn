@@ -1,19 +1,19 @@
-import { IMoveTrigger, ProgressTypeIronsworn } from 'dataforged'
+import type { IMoveTrigger, ProgressTypeIronsworn } from 'dataforged'
 import type { RollMethod, RollType } from 'dataforged'
 import { capitalize, cloneDeep, maxBy, minBy, sortBy } from 'lodash'
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
-import { IronswornItem } from '../item/item'
-import { SFMoveDataPropertiesData } from '../item/itemtypes'
-import {
-  IronswornRoll,
+import type { IronswornItem } from '../item/item'
+import type { SFMoveDataPropertiesData } from '../item/itemtypes'
+import type {
   PreRollOptions,
   RollOutcome,
   SourcedValue,
 } from './ironsworn-roll'
+import { IronswornRoll } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
-import { CharacterDataPropertiesData } from '../actor/actortypes'
+import type { CharacterDataPropertiesData } from '../actor/actortypes'
 import { IronswornRollMessage } from '.'
 import { formatRollPlusStat } from './ironsworn-roll-message.js'
 import { ChallengeResolutionDialog } from './challenge-resolution-dialog'

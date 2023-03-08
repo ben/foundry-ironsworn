@@ -1,6 +1,6 @@
 import { RANKS } from '../constants'
 import { IronswornSettings } from '../helpers/settings'
-import { BondsetDataPropertiesData } from './itemtypes'
+import type { BondsetDataPropertiesData } from './itemtypes'
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}

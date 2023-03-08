@@ -1,7 +1,7 @@
 import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
 import { IronswornActor } from './actor/actor'
 import { IronswornItem } from './item/item.js'
-import { DelveSiteFeatureOrDanger } from './item/itemtypes'
+import type { DelveSiteFeatureOrDanger } from './item/itemtypes'
 
 const THEME_IMAGES = {
   Ancient: 'icons/environment/wilderness/carved-standing-stone.webp',

@@ -1,8 +1,8 @@
-import { InjectionKey, Ref } from 'vue'
-import { enrichHtml, enrichMarkdown } from './vue-plugin'
-import { IronswornActor } from '../actor/actor'
-import { IronswornItem } from '../item/item'
-import { Emitter } from 'mitt'
+import type { InjectionKey, Ref } from 'vue'
+import type { enrichHtml, enrichMarkdown } from './vue-plugin'
+import type { IronswornActor } from '../actor/actor'
+import type { IronswornItem } from '../item/item'
+import type { Emitter } from 'mitt'
 
 // Provided by the Vue plugin
 export const $EnrichHtmlKey = Symbol('$enrichHtml') as InjectionKey<

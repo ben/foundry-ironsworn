@@ -1,4 +1,4 @@
-import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { compact, pick, sortBy } from 'lodash'
 import { marked } from 'marked'
 import { getFoundryTableByDfId } from '../dataforged'

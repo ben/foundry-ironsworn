@@ -1,4 +1,4 @@
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 
 export function defaultActor(): IronswornActor {
   if (game.user?.character) return game.user.character

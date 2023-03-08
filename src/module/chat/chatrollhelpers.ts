@@ -1,6 +1,6 @@
 // this file is basically deprecated. use rolls/chat-message.ts instead
-import { IronswornActor } from '../actor/actor'
-import { DelveSiteDenizen } from '../actor/actortypes'
+import type { IronswornActor } from '../actor/actor'
+import type { DelveSiteDenizen } from '../actor/actortypes'
 
 interface DenizenChatInput {
   roll: Roll

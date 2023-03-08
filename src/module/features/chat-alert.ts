@@ -1,7 +1,7 @@
-import { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
+import type { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
 import { capitalize, compact, get } from 'lodash'
-import { IronswornActor } from '../actor/actor'
-import {
+import type { IronswornActor } from '../actor/actor'
+import type {
   CharacterDataPropertiesData,
   SharedDataPropertiesData,
   SiteDataPropertiesData,
@@ -9,8 +9,8 @@ import {
 } from '../actor/actortypes'
 import { RANKS } from '../constants'
 import { IronswornSettings } from '../helpers/settings'
-import { IronswornItem } from '../item/item'
-import {
+import type { IronswornItem } from '../item/item'
+import type {
   AssetDataPropertiesData,
   BondsetDataPropertiesData,
   ProgressDataPropertiesData,

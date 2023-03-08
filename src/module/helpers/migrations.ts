@@ -1,5 +1,5 @@
-import { IronswornActor } from '../actor/actor'
-import { IronswornItem } from '../item/item'
+import type { IronswornActor } from '../actor/actor'
+import type { IronswornItem } from '../item/item'
 import { normalizeTableRows } from './items'
 import { IronswornSettings } from './settings.js'
 

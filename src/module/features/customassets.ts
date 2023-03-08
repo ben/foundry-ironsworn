@@ -1,8 +1,8 @@
-import { IAsset, IAssetType } from 'dataforged'
+import type { IAsset, IAssetType } from 'dataforged'
 import { capitalize } from 'vue'
 import { renderLinksInStr, hashLookup } from '../dataforged'
 import { ISAssetTypes, SFAssetTypes } from '../dataforged/data'
-import { IronswornItem } from '../item/item'
+import type { IronswornItem } from '../item/item'
 
 export interface DisplayAsset {
   df?: IAsset
