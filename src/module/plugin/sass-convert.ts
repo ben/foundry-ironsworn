@@ -65,5 +65,5 @@ export function chroma2Sass(color: Chroma.Color) {
  * Converts a {@link Sass.types.Color} to a  {@link Chroma.Color}.
  */
 export function sass2Chroma(color: Sass.types.Color) {
-  return Chroma(color.getR(), color.getG(), color.getB(), color.getA(), 'rgba')
+  return Chroma.rgb(color.getR(), color.getG(), color.getB(), color.getA())
 }

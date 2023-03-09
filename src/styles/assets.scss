@@ -31,7 +31,7 @@
   background-image: url('../../system/assets/misc/hex-checkbox-unchecked.svg');
   height: 1em;
   aspect-ratio: var(--ironsworn-hexagon-aspect-ratio);
-  mask-image: ;
+  mask-image: url('../../system/assets/misc/hex-checkbox-checked.svg');
 }
 
 @mixin asset-ability-bullet-starforged-marked {
