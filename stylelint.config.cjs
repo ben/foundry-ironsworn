@@ -3,19 +3,28 @@
  */
 module.exports = {
   extends: [
+    'stylelint-config-standard-scss',
     /**
      * @see https://github.com/ota-meshi/stylelint-config-standard-vue
      */
     'stylelint-config-standard-vue/scss',
+    /** This isn't required by newer versions of stylelint, but we're stuck with 14.3 for the moment.  */
+    'stylelint-config-prettier',
     /**
+     * Orders properties beginning with properties that exist outside the styled box (e.g. `margin`), with subsequent properties moving inwards from that. This way, properties that affect placement of sibling elements are always at the top.
      * @see https://github.com/chaucerbao/stylelint-config-concentric-order
      */
     'stylelint-config-concentric-order',
   ],
   plugins: [
     /**
+     * This is the plugin that keeps us using stylelint 14.3 for now (and has a cascade effect on the versions of every other stylelint plugin). It makes it possible to require variables for properties *by the type of property value* (like length, color, etc).
+     *
+     * Other plugins I've found for requiring CSS variables usually need call out *individual properties* like `width`, `margin`, `background-color`, etc. Life's too short for that shit.
+     *
      * @see https://github.com/Mavrin/stylelint-declaration-use-css-custom-properties
      */
+    // FIXME: submit a PR to update this plugin for stylelint 15
     '@mavrin/stylelint-declaration-use-css-custom-properties',
   ],
   overrides: [

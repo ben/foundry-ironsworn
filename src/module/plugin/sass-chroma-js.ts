@@ -1,6 +1,6 @@
 // based on https://github.com/bugsnag/chromatic-sass
 
-import chroma, { contrast } from 'chroma-js'
+import Chroma from 'chroma-js'
 import { last, maxBy, minBy } from 'lodash'
 
 import type { LegacySyncFunction as SassSyncFunction } from 'sass'
@@ -25,11 +25,11 @@ import { gamutize } from './gamutize'
 
 /**
  * A SASS plugin that partially implements the `chroma.js` color manipulation library.
- * @see {@link chroma}
+ * @see {@link Chroma}
  */
 const plugin: Record<string, SassSyncFunction> = {
   /**
-   * @see {@link chroma.Color.set}
+   * @see {@link Chroma.Color.set}
    */
   // @ts-ignore
   'set-channel($color, $modechan, $value)': (
@@ -47,7 +47,7 @@ const plugin: Record<string, SassSyncFunction> = {
     return chroma2Sass(newColor)
   },
   /**
-   * @see {@link chroma.Color.get}
+   * @see {@link Chroma.Color.get}
    */
 
   // @ts-ignore
@@ -61,7 +61,7 @@ const plugin: Record<string, SassSyncFunction> = {
     return new Sass.types.Number(chromaColor.get(modechan.getValue()))
   },
   /**
-   * @see {@link chroma.Color.luminance}
+   * @see {@link Chroma.Color.luminance}
    */
 
   // @ts-ignore
@@ -97,7 +97,7 @@ const plugin: Record<string, SassSyncFunction> = {
       return new Sass.types.Color(
         ...chromaColor.luminance(
           luminance.getValue(),
-          mode?.getValue() as chroma.InterpolationMode
+          mode?.getValue() as Chroma.InterpolationMode
         )._rgb._unclipped
       )
     }
@@ -106,7 +106,7 @@ const plugin: Record<string, SassSyncFunction> = {
   // @ts-ignore
   'lightest($colors...)': (colors: SassLegacyValue<Sass.types.List>) => {
     assertList(colors)
-    const arr = sassList2Array<chroma.Color, SassLegacyValue<Sass.types.Color>>(
+    const arr = sassList2Array<Chroma.Color, SassLegacyValue<Sass.types.Color>>(
       colors,
       (v) => {
         assertColor(v)
@@ -119,7 +119,7 @@ const plugin: Record<string, SassSyncFunction> = {
   // @ts-ignore
   'darkest($colors...)': (colors: SassLegacyValue<Sass.types.List>) => {
     assertList(colors)
-    const arr = sassList2Array<chroma.Color, SassLegacyValue<Sass.types.Color>>(
+    const arr = sassList2Array<Chroma.Color, SassLegacyValue<Sass.types.Color>>(
       colors,
       (v) => {
         assertColor(v)
@@ -129,7 +129,7 @@ const plugin: Record<string, SassSyncFunction> = {
     return minBy(arr, (color) => color.luminance())
   },
   /**
-   * @see {@link chroma.Color.contrast}
+   * @see {@link Chroma.contrast}
    */
 
   // @ts-ignore
@@ -141,7 +141,7 @@ const plugin: Record<string, SassSyncFunction> = {
       assertColor(c)
       return sass2Chroma(c)
     })
-    const contrastValue = contrast(chromaColor1, chromaColor2)
+    const contrastValue = Chroma.contrast(chromaColor1, chromaColor2)
     return new Sass.types.Number(contrastValue)
   },
 
@@ -158,17 +158,17 @@ const plugin: Record<string, SassSyncFunction> = {
       assertColor(c)
       return sass2Chroma(c)
     })
-    const newColor = chroma.mix(
+    const newColor = Chroma.mix(
       chromaColor1,
       chromaColor2,
       f?.getValue(),
-      colorSpace?.getValue() as chroma.InterpolationMode
+      colorSpace?.getValue() as Chroma.InterpolationMode
     )
     return chroma2Sass(newColor)
   },
 
   /**
-   * @see {@link chroma.Color.hcl}
+   * @see {@link Chroma.Color.hcl}
    */
 
   // @ts-ignore
@@ -178,14 +178,14 @@ const plugin: Record<string, SassSyncFunction> = {
     l: SassLegacyValue<Sass.types.Number>
   ) => {
     ;[h, c, l].forEach((channel) => assertNumber(channel))
-    const chromaColor = chroma(
+    const chromaColor = Chroma(
       [h.getValue(), c.getValue(), l.getValue()],
       'hcl'
     )
     return chroma2Sass(chromaColor)
   },
   /**
-   * @see {@link chroma.Color.lch}
+   * @see {@link Chroma.Color.lch}
    */
   // @ts-ignore
   'lch($l,$c,$h)': (
@@ -194,7 +194,7 @@ const plugin: Record<string, SassSyncFunction> = {
     h: SassLegacyValue<Sass.types.Number>
   ) => {
     ;[l, c, h].forEach((channel) => assertNumber(channel))
-    const chromaColor = chroma(
+    const chromaColor = Chroma(
       [l.getValue(), c.getValue(), h.getValue()],
       'lch'
     )
@@ -202,7 +202,7 @@ const plugin: Record<string, SassSyncFunction> = {
   },
 
   /**
-   * @see {@link chroma.Color.oklch}
+   * @see {@link Chroma.Color.oklch}
    */
   // @ts-ignore
   'oklch($l,$c,$h)': (
@@ -212,7 +212,7 @@ const plugin: Record<string, SassSyncFunction> = {
   ) => {
     ;[l, c, h].forEach((channel) => assertNumber(channel))
 
-    const chromaColor = chroma(
+    const chromaColor = Chroma(
       l.getValue(),
       c.getValue(),
       h.getValue(),
@@ -232,17 +232,16 @@ const plugin: Record<string, SassSyncFunction> = {
     assertColorMode(mode)
 
     const chromaColors = sassList2Array<
-      chroma.Color,
+      Chroma.Color,
       SassLegacyValue<Sass.types.Color>
     >(colors, (v) => sass2Chroma(v))
-    const scale = chroma
-      .scale(chromaColors)
+    const scale = Chroma.scale(chromaColors)
       .correctLightness(true)
       .classes(steps.getValue())
-      .mode(mode.getValue() as chroma.InterpolationMode)
+      .mode(mode.getValue() as Chroma.InterpolationMode)
       .colors(steps.getValue(), null)
 
-    return array2SassList<chroma.Color, Sass.types.Color>(scale, (v) =>
+    return array2SassList<Chroma.Color, Sass.types.Color>(scale, (v) =>
       chroma2Sass(v as any)
     )
   },
@@ -256,7 +255,7 @@ const plugin: Record<string, SassSyncFunction> = {
    * @param warmColor - A saturated accent/highlight color, used both as-is and in mixtures with the other colours.
    * @param coolColor - A second saturated accent/highlight color, used both as-is and in mixtures with the other colours.
    * @param prefix - the prefix to use for the generated CSS variables.
-   * @returns A {@link SassLegacyValue<sass.types.Map>} of keyed colours. Iterate over it with `@each` to set CSS custom properties that can
+   * @returns A {@link SassLegacyValue<sass.types.Map>} of keyed colours. Iterate over it with `@each` to set CSS bariables.
    *
    * @remarks 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' are more about a UX element's importance/activity (warmer = more active/dramatic).
    */
@@ -284,10 +283,10 @@ const plugin: Record<string, SassSyncFunction> = {
       const lightness = {
         light: maxBy([ground.fg, ground.bg], (color) =>
           color?.luminance()
-        ) as chroma.Color,
+        ) as Chroma.Color,
         dark: minBy([ground.fg, ground.bg], (color) =>
           color?.luminance()
-        ) as chroma.Color,
+        ) as Chroma.Color,
       }
       const isDarkTheme = ground.fg.luminance() > ground.bg.luminance()
 

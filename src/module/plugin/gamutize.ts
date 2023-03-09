@@ -1,5 +1,5 @@
 import chroma from 'chroma-js'
-import { forEach, range } from 'lodash'
+import _ from 'lodash'
 /**
  * Interpolates a palette of colors from four 'anchor' colors.
  *
@@ -20,15 +20,15 @@ export function gamutize(
   cool: chroma.Color
 ) {
   // steps to use when mixing scales
-  const steps = range(10, 100, 10)
+  const steps = _.range(10, 100, 10)
   const luminance = { light, dark }
   const temperature = { warm, cool }
   // initialize color container
   const colors = new Map<string, chroma.Color>()
 
-  forEach(luminance, (lValue, lKey) => {
+  _.forEach(luminance, (lValue, lKey) => {
     colors.set(lKey, lValue)
-    forEach(temperature, (tValue, tKey) => {
+    _.forEach(temperature, (tValue, tKey) => {
       if (!colors.has(tKey)) {
         colors.set(tKey, tValue)
       }
@@ -47,7 +47,7 @@ export function gamutize(
     colors.set(`scale-${step}`, luminanceScale(step))
   })
   // mix overlays
-  forEach({ ...luminance, ...temperature }, (color, key) => {
+  _.forEach({ ...luminance, ...temperature }, (color, key) => {
     steps.forEach((step) => {
       const factor = step / 100
       colors.set(`${key}-${step}`, color.alpha(factor))

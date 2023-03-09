@@ -47,7 +47,7 @@
 </style>
 
 <script lang="ts" setup>
-import { forEach } from 'lodash'
+import _ from 'lodash'
 import { computed } from 'vue'
 import { FontAwesome, IconPropsCommon } from './icon-common'
 
@@ -120,7 +120,7 @@ const classes = computed(() => {
     icon: true,
     [`fa-${props.name}`]: true,
   }
-  forEach(props, (value, key) => {
+  _.forEach(props, (value, key) => {
     switch (true) {
       case key === 'title':
       case key === 'icon':

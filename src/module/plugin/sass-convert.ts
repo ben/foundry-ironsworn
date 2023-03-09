@@ -1,4 +1,4 @@
-import chroma from 'chroma-js'
+import Chroma from 'chroma-js'
 import Sass from 'sass'
 
 /**
@@ -55,15 +55,15 @@ export function map2SassMap<
 }
 
 /**
- * Converts a {@link chroma.Color} to a {@link Sass.types.Color}.
+ * Converts a {@link Chroma.Color} to a {@link Sass.types.Color}.
  */
-export function chroma2Sass(color: chroma.Color) {
+export function chroma2Sass(color: Chroma.Color) {
   const [red, green, blue, alpha] = color.rgba()
   return new Sass.types.Color(red, green, blue, alpha)
 }
 /**
- * Converts a {@link Sass.types.Color} to a  {@link chroma.Color}.
+ * Converts a {@link Sass.types.Color} to a  {@link Chroma.Color}.
  */
 export function sass2Chroma(color: Sass.types.Color) {
-  return chroma(color.getR(), color.getG(), color.getB(), color.getA(), 'rgba')
+  return Chroma(color.getR(), color.getG(), color.getB(), color.getA(), 'rgba')
 }

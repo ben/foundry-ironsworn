@@ -6,7 +6,7 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import sassChroma from './src/module/plugin/sass-chroma-js'
-import type * as Sass from 'sass'
+import type Sass from 'sass'
 
 const PORT = 30000
 

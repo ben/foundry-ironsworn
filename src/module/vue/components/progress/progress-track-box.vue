@@ -40,6 +40,8 @@
 </template>
 
 <style lang="scss">
+/* stylelint-disable scss/no-dollar-variables */
+
 @use 'sass:math';
 
 // helper mixin functions

@@ -19,6 +19,7 @@
     "strict": true,
     "allowJs": true,
     "checkJs": false,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,
