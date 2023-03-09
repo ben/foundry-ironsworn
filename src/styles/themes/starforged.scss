@@ -9,6 +9,7 @@
 
 .theme-starforged {
   @include color.palettize(
+    // FIXME: migrate to OKLCH once this issue is resolved and VSC provides color previews: https://github.com/microsoft/vscode-css-languageservice/issues/305
     $fg-color: hsl(180deg 70% 60%),
     $bg-color: hsl(180deg 20% 0%),
     $warm-color: hsl(185deg 100% 50%),
