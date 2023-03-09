@@ -6,11 +6,11 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import tsconfigPaths from 'vite-tsconfig-paths'
 import sassChroma from './src/module/plugin/sass-chroma-js'
-import * as sass from 'sass'
+import type * as Sass from 'sass'
 
 const PORT = 30000
 
-const sassOptions: sass.LegacyStringOptions<'sync'> = {
+const sassOptions: Sass.LegacyStringOptions<'sync'> = {
   functions: sassChroma,
   // @ts-ignore
   additionalData: '',
