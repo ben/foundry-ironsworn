@@ -1,7 +1,9 @@
 # IDE
 .idea/
 .vs/
-.vscode/
+.vscode/*
+# allow extension recommendations
+!/.vscode/extensions.json
 
 # Node Modules
 node_modules/
