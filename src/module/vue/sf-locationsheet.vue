@@ -48,7 +48,7 @@
           v-model="data.actor.system.klass"
           @change="klassChanged"
           :data-highlighted="
-            data.firstLookHighlight && firstLookWillRandomizeKlass
+            state.firstLookHighlight && firstLookWillRandomizeKlass
           "
         >
           <option
@@ -80,7 +80,7 @@
       <SheetHeaderBasic
         :document="data.actor"
         class="sf-location-header nogrow"
-        :highlightName="data.firstLookHighlight && firstLookWillRandomizeName"
+        :highlightName="state.firstLookHighlight && firstLookWillRandomizeName"
         @change="nameChange"
       >
         <IronBtn
@@ -102,8 +102,8 @@
           class="box"
           @click="rollFirstLook"
           icon="ironsworn:d10-tilt"
-          @mouseenter="data.firstLookHighlight = true"
-          @mouseleave="data.firstLookHighlight = false"
+          @mouseenter="state.firstLookHighlight = true"
+          @mouseleave="state.firstLookHighlight = false"
           :text="$t('IRONSWORN.RollForDetails')"
         />
       </div>
@@ -113,7 +113,7 @@
           v-for="oracle of row"
           block
           :disabled="oracle.requiresKlass && klassIsNotValid"
-          :data-highlighted="oracle.fl && data.firstLookHighlight"
+          :data-highlighted="oracle.fl && state.firstLookHighlight"
           :tooltip="
             oracle.requiresKlass && klassIsNotValid
               ? $t('IRONSWORN.RequiresLocationType')
