@@ -2,7 +2,7 @@ import { execSync } from 'child_process'
 import { readFile, writeFile } from 'fs-promises'
 
 async function doit() {
-  const [_node, script, mode] = process.argv
+  const [, script, mode] = process.argv
   if (!['major', 'minor', 'patch'].includes(mode)) {
     console.error(`USAGE: node ${script} [major|minor|patch]`)
     process.exit(-1)
