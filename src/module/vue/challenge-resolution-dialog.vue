@@ -49,8 +49,8 @@
 <style lang="scss" scoped>
 div.grid {
   flex-grow: 1;
-  justify-items: center;
   align-items: center;
+  justify-items: center;
   margin: 1em;
 }
 
