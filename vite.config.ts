@@ -1,11 +1,11 @@
 import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import autoprefixer from 'autoprefixer'
 import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import sassChroma from './src/module/plugin/sass-chroma-js'
 import type Sass from 'sass'
+import postcssPresetEnv from 'postcss-preset-env'
 
 const PORT = 30000
 
@@ -69,7 +69,7 @@ const config: UserConfig = {
       scss: sassOptions,
     },
     postcss: {
-      plugins: [autoprefixer()],
+      plugins: [postcssPresetEnv()],
     },
   },
   build: {
