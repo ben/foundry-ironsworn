@@ -46,7 +46,7 @@ td {
 
 <script setup lang="ts">
 import { computed } from '@vue/reactivity'
-import { sortBy } from 'lodash'
+import { sortBy } from 'lodash-es'
 import { enrichMarkdown } from '../../vue-plugin.js'
 
 // FIXME: use v10 types when available, or hack some together for tables

@@ -31,6 +31,7 @@ module.exports = {
     {
       files: ['**/*.vue', '**/*.scss'],
       rules: {
+        'scss/operator-no-newline-after': null,
         // prefer vanilla CSS variables (a.k.a. custom properties) instead
         'scss/no-dollar-variables': [true],
         'mavrin/stylelint-declaration-use-css-custom-properties': {

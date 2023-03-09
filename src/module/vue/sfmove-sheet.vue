@@ -128,7 +128,7 @@
 <script setup lang="ts">
 import SheetHeader from './sheet-header.vue'
 import { provide, computed, reactive, inject } from 'vue'
-import { get, set } from 'lodash'
+import { get, set } from 'lodash-es'
 import { $ItemKey, ItemKey } from './provisions'
 import DocumentName from './components/document-name.vue'
 import SfmoveTab from './components/sfmove-tab.vue'

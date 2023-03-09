@@ -1,7 +1,7 @@
 // based on https://github.com/bugsnag/chromatic-sass
 
 import Chroma from 'chroma-js'
-import { last, maxBy, minBy } from 'lodash'
+import { last, maxBy, minBy } from 'lodash-es'
 
 import type { LegacySyncFunction as SassSyncFunction } from 'sass'
 import Sass from 'sass'

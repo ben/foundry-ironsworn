@@ -160,7 +160,7 @@
 /**
  * A bar that functions as a number slider.
  */
-import { clamp, inRange, min, range, rangeRight } from 'lodash'
+import { clamp, inRange, min, range, rangeRight } from 'lodash-es'
 import { computed } from 'vue'
 
 const props = withDefaults(

@@ -5,7 +5,7 @@
 // - Rolling that plays nicer with DF Manual Rolls (all in one go, not {d6+N,d10,d10})
 // - Rerolls update chat message
 
-import { cloneDeep, compact, pick, range, sum } from 'lodash'
+import { cloneDeep, compact, pick, range, sum } from 'lodash-es'
 import { getFoundryMoveByDfId } from '../dataforged'
 import type { IronswornItem } from '../item/item'
 import { computeRollOutcome } from './ironsworn-roll-message'

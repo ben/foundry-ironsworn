@@ -1,7 +1,5 @@
-const { execSync } = require('child_process')
-const {
-  promises: { readFile, writeFile },
-} = require('fs')
+import { execSync } from 'child_process'
+import { readFile, writeFile } from 'fs-promises'
 
 async function doit() {
   const [_node, script, mode] = process.argv

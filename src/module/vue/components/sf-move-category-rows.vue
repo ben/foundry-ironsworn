@@ -123,7 +123,7 @@ import { computed, ExtractPropTypes, nextTick, ref } from 'vue'
 import { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
-import { snakeCase } from 'lodash'
+import { snakeCase } from 'lodash-es'
 
 const props = withDefaults(
   defineProps<{

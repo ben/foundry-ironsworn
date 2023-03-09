@@ -1,5 +1,5 @@
 import chroma from 'chroma-js'
-import _ from 'lodash'
+import _ from 'lodash-es'
 /**
  * Interpolates a palette of colors from four 'anchor' colors.
  *

@@ -102,7 +102,7 @@
 
   // Tabs
   --ironsworn-tab-transition: fade;
-  --ironsworn-tab-transition-duration: 0.5s;
+  --ironsworn-tab-transition-duration: var(--ironsworn-transition-timing);
 
   // FontAwesome
   --fa-display: inline-block;

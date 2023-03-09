@@ -198,7 +198,7 @@ import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
 import { SFMoveDataPropertiesData } from '../../item/itemtypes'
-import { uniq } from 'lodash'
+import { uniq } from 'lodash-es'
 
 const props = withDefaults(
   defineProps<{

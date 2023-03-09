@@ -1,5 +1,11 @@
 import type { IOutcomeInfo, RollMethod } from 'dataforged'
-import { capitalize, compact, fromPairs, isUndefined, kebabCase } from 'lodash'
+import {
+  capitalize,
+  compact,
+  fromPairs,
+  isUndefined,
+  kebabCase,
+} from 'lodash-es'
 import { IronswornRoll } from '.'
 import type { IronswornActor } from '../actor/actor'
 import type { CharacterDataPropertiesData } from '../actor/actortypes'
