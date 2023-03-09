@@ -15,9 +15,9 @@
     $prefix: 'ironsworn-color'
   );
 
-  @include color.light-theme('ironsworn-color');
-  @include color.sharp-border('ironsworn-color');
-  @include color.interactive-invert(
+  @include color.lightTheme('ironsworn-color');
+  @include color.sharpBorder('ironsworn-color');
+  @include color.interactiveInvert(
     'ironsworn-color-clickable-block',
     'ironsworn-color'
   );

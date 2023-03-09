@@ -15,9 +15,9 @@
     $cool-color: hsl(210deg 100% 50%),
     $prefix: 'ironsworn-color'
   );
-  @include color.dark-theme('ironsworn-color');
-  @include color.soft-border('ironsworn-color');
-  @include color.interactive-tint(
+  @include color.darkTheme('ironsworn-color');
+  @include color.softBorder('ironsworn-color');
+  @include color.interativeTint(
     'ironsworn-color-clickable-block',
     'ironsworn-color'
   );

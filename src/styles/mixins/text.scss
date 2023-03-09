@@ -16,7 +16,7 @@
     0.96017px -0.279416px 0 var(--ironsworn-color-text-stroke);
 }
 
-@mixin initial-caps() {
+@mixin initialCaps() {
   &::first-letter {
     text-transform: uppercase;
   }

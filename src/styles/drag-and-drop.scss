@@ -17,7 +17,7 @@
 
   &::after {
     @include fx.overlay;
-    @include fx.accent-gradient(20);
+    @include fx.accentGradient(20);
 
     transition: all var(--ironsworn-drop-transition-duration) ease;
     visibility: hidden;

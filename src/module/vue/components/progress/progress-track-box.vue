@@ -46,7 +46,7 @@
 
 // helper mixin functions
 
-@mixin transition-box($total-duration: 1s, $base-delay: 0s) {
+@mixin transitionBox($total-duration: 1s, $base-delay: 0s) {
   $tick-duration: math.div($total-duration, 4);
   @each $tick in (1, 2, 3, 4) {
     .progress-tick[data-tick='#{$tick}'] {
@@ -123,17 +123,17 @@
     $box3: 0.75s;
 
     .progress-track-box:nth-child(3n + 1) {
-      @include transition-box($box1);
+      @include transitionBox($box1);
     }
 
     .progress-track-box:nth-child(3n + 2) {
-      @include transition-box($box2, $box1);
+      @include transitionBox($box2, $box1);
     }
 
     .progress-track-box:nth-child(3n) {
       $d1: ($box1 + $box2);
 
-      @include transition-box($box3, $d1);
+      @include transitionBox($box3, $d1);
     }
 
     // offsets the draw delay when the score has a value not divisible by 3, which is rare but technically possible
@@ -141,17 +141,17 @@
     &[data-score='4'],
     &[data-score='7'] {
       .progress-track-box:nth-child(3n + 2) {
-        @include transition-box($box1);
+        @include transitionBox($box1);
       }
 
       .progress-track-box:nth-child(3n) {
-        @include transition-box($box2, $box1);
+        @include transitionBox($box2, $box1);
       }
 
       .progress-track-box:nth-child(3n + 1) {
         $d1: ($box1 + $box2);
 
-        @include transition-box($box3, $d1);
+        @include transitionBox($box3, $d1);
       }
     }
 
@@ -159,17 +159,17 @@
     &[data-score='5'],
     &[data-score='8'] {
       .progress-track-box:nth-child(3n) {
-        @include transition-box($box1);
+        @include transitionBox($box1);
       }
 
       .progress-track-box:nth-child(3n + 1) {
-        @include transition-box($box2, $box1);
+        @include transitionBox($box2, $box1);
       }
 
       .progress-track-box:nth-child(3n + 2) {
         $d1: ($box1 + $box2);
 
-        @include transition-box($box3, $d1);
+        @include transitionBox($box3, $d1);
       }
     }
   }
@@ -180,11 +180,11 @@
     $box2: 0.75s;
 
     .progress-track-box:nth-child(2n + 1) {
-      @include transition-box($box1);
+      @include transitionBox($box1);
     }
 
     .progress-track-box:nth-child(2n) {
-      @include transition-box($box2, $box1);
+      @include transitionBox($box2, $box1);
     }
 
     &[data-score='1'],
@@ -194,18 +194,18 @@
     &[data-score='9'] {
       // inverts the draw delay when the score has an odd value, which is rare but technically possible
       .progress-track-box:nth-child(2n) {
-        @include transition-box($box1);
+        @include transitionBox($box1);
       }
 
       .progress-track-box:nth-child(2n + 1) {
-        @include transition-box($box2, $box1);
+        @include transitionBox($box2, $box1);
       }
     }
   }
 
   &[data-rank='3'] {
     // FORMIDABLE challenge rank: marks 1 box (4 ticks).
-    @include transition-box(1s);
+    @include transitionBox(1s);
   }
 
   &[data-rank='4'] {

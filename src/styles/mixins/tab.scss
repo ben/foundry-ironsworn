@@ -10,7 +10,7 @@
   border-width: $borderWidth;
 
   &:hover {
-    @include fx.glow-interior(
+    @include fx.glowInterior(
       $glowSpread,
       $glowBlur,
       var(--ironsworn-color-clickable-block-bg-selected)
@@ -21,7 +21,7 @@
 
   &[aria-selected='true'],
   &.active {
-    @include fx.glow-interior(
+    @include fx.glowInterior(
       $glowSpread,
       $glowBlur,
       var(--ironsworn-color-cool)

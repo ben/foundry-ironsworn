@@ -5,7 +5,7 @@
 // Here we encode the bullet styles as classes, and pull them into the
 // ul>li bullet class from there. These will also be available for block
 // elements
-@mixin asset-ability-bullet {
+@mixin assetAbilityBullet {
   display: block;
   transition: var(--ironsworn-transition);
   background-position: center;
@@ -14,11 +14,11 @@
   mask-repeat: no-repeat;
 }
 
-@mixin asset-ability-bullet-marked {
+@mixin assetAbilityBulletMarked {
   background-color: currentcolor;
 }
 
-@mixin asset-ability-bullet-ironsworn {
+@mixin assetAbilityBulletIronsworn {
   margin-top: 0.15em;
   border-width: var(--ironsworn-border-width-md);
   border-radius: 50%;
@@ -26,7 +26,7 @@
   aspect-ratio: 1;
 }
 
-@mixin asset-ability-bullet-starforged {
+@mixin assetAbilityBulletStarforged {
   margin-top: 0.15em;
   background-image: url('../../system/assets/misc/hex-checkbox-unchecked.svg');
   height: 1em;
@@ -34,7 +34,7 @@
   mask-image: url('../../system/assets/misc/hex-checkbox-checked.svg');
 }
 
-@mixin asset-ability-bullet-starforged-marked {
+@mixin assetAbilityBulletStarforgedMarked {
   --ironsworn-bullet-height: 1em;
   --ironsworn-bullet-margin-top: 0.15em;
 
@@ -172,23 +172,23 @@
 }
 
 .asset-ability-bullet {
-  @include asset-ability-bullet;
+  @include assetAbilityBullet;
 }
 
 .asset-ability-bullet-marked {
-  @include asset-ability-bullet-marked;
+  @include assetAbilityBulletMarked;
 }
 
 .asset-ability-bullet-ironsworn {
-  @include asset-ability-bullet-ironsworn;
+  @include assetAbilityBulletIronsworn;
 }
 
 .asset-ability-bullet-starforged {
-  @include asset-ability-bullet-starforged;
+  @include assetAbilityBulletStarforged;
 }
 
 .asset-ability-bullet-starforged-marked {
-  @include asset-ability-bullet-starforged-marked;
+  @include assetAbilityBulletStarforgedMarked;
 }
 
 .asset-ironsworn,
@@ -196,13 +196,13 @@
   // common properties for asset ability bullet/checkbox
   .asset-ability {
     &::before {
-      @include asset-ability-bullet;
+      @include assetAbilityBullet;
 
       content: '';
     }
 
     &.marked::before {
-      @include asset-ability-bullet-marked;
+      @include assetAbilityBulletMarked;
     }
   }
 }
@@ -210,22 +210,22 @@
 .asset-ironsworn {
   .asset-ability {
     &::before {
-      @include asset-ability-bullet-ironsworn;
+      @include assetAbilityBulletIronsworn;
     }
   }
 }
 
 .asset-starforged {
-  @include decoration.starforged-asset-deco(50px, 32px);
+  @include decoration.starforgedAssetDeco(50px, 32px);
 
   .asset-abilities {
     .asset-ability {
       &::before {
-        @include asset-ability-bullet-starforged;
+        @include assetAbilityBulletStarforged;
       }
 
       &.marked::before {
-        @include asset-ability-bullet-starforged-marked;
+        @include assetAbilityBulletStarforgedMarked;
       }
     }
   }

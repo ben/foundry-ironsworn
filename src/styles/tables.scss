@@ -45,7 +45,7 @@ table {
   .oracle-result-row {
     &.selected,
     &[aria-selected='true'] {
-      @include fx.accent-gradient(20);
+      @include fx.accentGradient(20);
     }
   }
 }

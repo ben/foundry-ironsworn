@@ -1,6 +1,5 @@
 @use 'sass:meta';
 
-/* stylelint-disable custom-property-pattern */
 // overrides for most of FVTT's default color variables, mainly useful for retheming them with e.g. a dark theme.
 @mixin colors {
   --color-text-hyperlink: var(--ironsworn-color-warm);

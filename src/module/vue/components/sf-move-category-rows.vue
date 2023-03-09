@@ -97,7 +97,7 @@
 
   &[data-highlighted='true']::after {
     @include fx.overlay;
-    @include fx.accent-gradient(50);
+    @include fx.accentGradient(50);
 
     opacity: 0;
     animation: overlay-fadeout v-bind('$props.highlightDuration +"ms"')

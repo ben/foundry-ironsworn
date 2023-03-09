@@ -11,15 +11,15 @@
   }
 }
 
-@mixin text-hover() {
+@mixin textHover() {
   color: var(--ironsworn-color-clickable-text-hover);
   filter: var(--ironsworn-filter-highlight);
 }
-@mixin text-focus() {
-  @include focus-outline;
+@mixin textFocus() {
+  @include focusOutline;
 }
 
-@mixin text-active() {
+@mixin textActive() {
   color: var(--ironsworn-color-clickable-text-selected);
   filter: var(--ironsworn-filter-highlight);
 }
@@ -35,20 +35,20 @@
   border-width: 0;
   box-shadow: none !important;
 
-  // @include text-stroke();
+  // @include textStroke();
   background: transparent;
   color: var(--ironsworn-color-clickable-text);
 
   &:hover,
   &.hover {
     // --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include text-hover;
+    @include textHover;
   }
 
   &:focus,
   &:focus-within {
     // --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include text-focus;
+    @include textFocus;
   }
 
   // we can't do much about the paint order here, but that's fine -- the overlap of a transparent color creates a nice effect here.
@@ -56,24 +56,24 @@
   &.selected,
   &.active {
     // --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include text-active;
+    @include textActive;
   }
 }
 
-@mixin block-hover($blockSize: 50px) {
+@mixin blockHover($blockSize: 50px) {
   z-index: var(--ironsworn-z-index-higher);
   border-color: var(--ironsworn-color-clickable-block-border-hover);
   background-color: var(--ironsworn-color-clickable-block-bg-hover);
   color: var(--ironsworn-color-clickable-block-fg-hover);
 }
 
-@mixin block-focus() {
-  @include focus-outline;
+@mixin blockFocus() {
+  @include focusOutline;
 
   z-index: var(--ironsworn-z-index-highest);
 }
 
-@mixin block-active() {
+@mixin blockActive() {
   z-index: var(--ironsworn-z-index-high);
   outline: none;
   border-color: var(--ironsworn-color-clickable-block-border-selected);
@@ -85,7 +85,7 @@
 }
 
 // For the block's 'default' state.
-@mixin block-base($blockSize: 50px) {
+@mixin blockBase($blockSize: 50px) {
   @include interactive;
 
   border-style: solid;
@@ -157,28 +157,28 @@
 }
 
 @mixin block($blockSize: 50px) {
-  @include block-base($blockSize);
+  @include blockBase($blockSize);
 
   &:hover,
   &.hover {
-    @include block-hover($blockSize);
+    @include blockHover($blockSize);
   }
 
   &:focus,
   &:focus-within {
-    @include block-focus;
+    @include blockFocus;
   }
 
   &[aria-selected='true'],
   &.selected,
   &.active {
-    @include block-active;
+    @include blockActive;
   }
 }
 
 // CLICKABLE MIXINS
 
-@mixin focus-outline() {
+@mixin focusOutline() {
   // outline disabled for now
   // outline: 1px solid var(--ironsworn-color-cool) !important;
   z-index: var(--ironsworn-z-index-highest);

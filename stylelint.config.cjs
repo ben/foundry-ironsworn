@@ -27,6 +27,53 @@ module.exports = {
     // FIXME: submit a PR to update this plugin for stylelint 15
     '@mavrin/stylelint-declaration-use-css-custom-properties',
   ],
+  rules: {
+    'mavrin/stylelint-declaration-use-css-custom-properties': {
+      /**
+       * @see https://csstree.github.io/docs/syntax/
+       */
+      cssDefinitions: ['color', 'length', 'z-index', 'line-height'],
+      ignoreProperties: [/^\$/],
+      ignoreValues: [
+        /^\$/,
+        'transparent',
+        'currentcolor',
+        '0',
+        /[0-9]+(\.[0-9]+)?em/,
+        /#\{.+?\}/,
+      ],
+    },
+    // silence complaints about floating points (which are a temp workaround anyways)
+    'number-max-precision': null,
+    'declaration-block-no-redundant-longhand-properties': null,
+    // useful as placeholders when prototyping SFC that will later get styled
+    'block-no-empty': null,
+
+    /**
+     * Enforces consistent naming for CSS custom properties.
+     *
+     * `ironsworn` - Properties specific to this module. If you're adding a brand new property, it should have this.
+     * `font` - FVTT font properties.
+     * `color` - FVTT color properties.
+     * `form-field` - FVTT form-field properties.
+     * `fa` - FontAwesome properties.
+     *
+     * @example ```less
+     * --ironsworn-custom-property: sqrt(2);
+     * ```
+     */
+    'custom-property-pattern': /(ironsworn|font|color|fa|form-field)-.+/,
+    // *theoretically* this would be good to use, but i don't have the patience to do it right now
+    'no-descending-specificity': null,
+    'string-quotes': ['single'],
+
+    'selector-class-pattern': [
+      /^((ironsworn__|tox-[a-z+]__)?[a-z][a-z-0-9]*[a-z0-9])|ProseMirror$/,
+      {
+        resolveNestedSelectors: true,
+      },
+    ],
+  },
   overrides: [
     {
       files: ['**/*.vue', '**/*.scss'],
@@ -34,48 +81,7 @@ module.exports = {
         'scss/operator-no-newline-after': null,
         // prefer vanilla CSS variables (a.k.a. custom properties) instead
         'scss/no-dollar-variables': [true],
-        'mavrin/stylelint-declaration-use-css-custom-properties': {
-          /**
-           * @see https://csstree.github.io/docs/syntax/
-           */
-          cssDefinitions: ['color', 'length', 'z-index', 'line-height'],
-          ignoreProperties: ['/^\\$/'],
-          ignoreValues: [
-            '/^\\$/',
-            'transparent',
-            'currentcolor',
-            '0',
-            '/^[0-9]+(\\.[0-9]+)?em$/',
-            '/#\\{.+?\\}/',
-          ],
-        },
-        // silence complaints about floating points (which are a temp workaround anyways)
-        'number-max-precision': null,
-        'declaration-block-no-redundant-longhand-properties': null,
-        'block-no-empty': null,
-        /**
-         * Enforces consistent naming for CSS custom properties.
-         *
-         * `ironsworn` - Properties specific to this module. If you're adding a brand new property, it should have this.
-         * `font` - FVTT font properties.
-         * `color` - FVTT color properties.
-         * `form-field` - FVTT form-field properties.
-         * `fa` - FontAwesome properties.
-         *
-         * @example ```less
-         * --ironsworn-custom-property: sqrt(2);
-         * ```
-         */
-        'custom-property-pattern': /(ironsworn|font|color|fa|form-field)-.+/,
-        // *theoretically* this would be good to use, but i don't have the patience to do it right now
-        'no-descending-specificity': null,
-        'string-quotes': ['single'],
-        'selector-class-pattern': [
-          /^((ironsworn__|tox-[a-z+]__)?[a-z][a-z-0-9]*[a-z0-9])|ProseMirror$/,
-          {
-            resolveNestedSelectors: true,
-          },
-        ],
+        'scss/at-mixin-pattern': /^[a-z]+([A-Z][a-z]+)*$/,
       },
     },
     {

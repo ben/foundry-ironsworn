@@ -24,14 +24,14 @@
   }
 }
 
-@mixin light-theme($prefix) {
+@mixin lightTheme($prefix) {
   @include defaults('dark', 'light', $prefix);
-  @include normalize-ironsworn-colors($luminance-target: 0.2);
+  @include normalizeIronswornColors($luminance-target: 0.2);
 }
 
-@mixin dark-theme($prefix) {
+@mixin darkTheme($prefix) {
   @include defaults('light', 'dark', $prefix);
-  @include normalize-ironsworn-colors($luminance-target: 0, $intensity: 0.65);
+  @include normalizeIronswornColors($luminance-target: 0, $intensity: 0.65);
 }
 
 // Set sensible defaults for semantically-oriented colors
@@ -53,7 +53,7 @@
 }
 
 // generates color variables to style an interactive element with an invert effect when it's active
-@mixin interactive-invert($element-prefix, $source-prefix) {
+@mixin interactiveInvert($element-prefix, $source-prefix) {
   --#{$element-prefix}-fg: var(--#{$source-prefix}-fg);
   --#{$element-prefix}-bg: transparent;
   --#{$element-prefix}-border: var(--#{$source-prefix}-border);
@@ -66,7 +66,7 @@
 }
 
 // generates color variables to style an interactive element with slightly dulled colours in its default state, and a tint effect when it's active.
-@mixin interactive-tint($element-prefix, $source-prefix) {
+@mixin interactiveTint($element-prefix, $source-prefix) {
   --#{$element-prefix}-fg: var(--#{$source-prefix}-midtone-80);
   --#{$element-prefix}-bg: transparent;
   --#{$element-prefix}-border: var(--#{$source-prefix}-midtone-80);
@@ -78,13 +78,13 @@
   --#{$element-prefix}-border-selected: var(--#{$source-prefix}-fg-warm);
 }
 
-@mixin soft-border($prefix) {
+@mixin softBorder($prefix) {
   --#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
   --#{$prefix}-border: var(--#{$prefix}-fg-80);
   --#{$prefix}-border-muted: var(--#{$prefix}-fg-30);
 }
 
-@mixin sharp-border($prefix) {
+@mixin sharpBorder($prefix) {
   --#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
   --#{$prefix}-border: var(--#{$prefix}-fg);
   --#{$prefix}-border-muted: var(--#{$prefix}-fg-80);
@@ -110,7 +110,7 @@
 }
 
 // Sets
-@mixin normalize-ironsworn-colors($luminance-target, $intensity: null) {
+@mixin normalizeIronswornColors($luminance-target, $intensity: null) {
   // contrast ratio is the desired ratio of background luminance to foreground luminance.
   // broadly speaking: 3 is OK on big elements, 4.5 for body text.
 
