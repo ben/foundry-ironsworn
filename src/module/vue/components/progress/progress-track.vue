@@ -29,7 +29,7 @@
 </template>
 
 <style lang="scss">
-@use 'mixins:clickable.scss';
+@use 'mixin:clickable.scss';
 
 .progress-track {
   --ironsworn-box-border-radius: var(--ironsworn-border-radius-md);

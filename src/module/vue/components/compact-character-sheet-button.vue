@@ -23,8 +23,8 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins:clickable.scss';
-@use 'mixins:text.scss';
+@use 'mixin:clickable.scss';
+@use 'mixin:text.scss';
 
 .interactive {
   @include clickable.interactive;

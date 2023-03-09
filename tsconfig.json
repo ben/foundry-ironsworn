@@ -3,9 +3,9 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "styles:*": ["./styles/*"],
-      "mixins:*": ["./styles/mixins/*"],
-      "components:*": ["./module/vue/components/*"]
+      "style:*": ["styles/*"],
+      "mixin:*": ["styles/mixins/*"],
+      "component:*": ["module/vue/components/*"]
     },
     "target": "es2018",
     "module": "esnext",

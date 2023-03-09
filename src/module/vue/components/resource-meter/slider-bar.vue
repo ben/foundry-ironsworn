@@ -50,7 +50,7 @@
 
 <style lang="scss" scoped>
 /* stylelint-disable no-descending-specificity */
-@use 'mixins:clickable.scss';
+@use 'mixin:clickable.scss';
 
 .slider-bar {
   --ironsworn-slider-segment-border-width: var(--ironsworn-border-width-md);

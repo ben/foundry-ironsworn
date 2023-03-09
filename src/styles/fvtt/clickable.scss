@@ -1,4 +1,4 @@
-@use 'mixins:clickable.scss';
+@use 'mixin:clickable.scss';
 
 .app:not(.ironsworn) button {
   @include clickable.block;

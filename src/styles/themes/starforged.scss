@@ -2,9 +2,9 @@
 // Dark theme for Starforged, with aggressive restyling of FVTT's stock UX elements.
 
 @use 'sass:meta';
-@use 'mixins:color.scss';
-@use 'mixins:fvtt.scss';
-@use 'mixins:decoration.scss';
+@use 'mixin:color.scss';
+@use 'mixin:fvtt.scss';
+@use 'mixin:decoration.scss';
 @import 'https://fonts.googleapis.com/css2?family=Big+Shoulders+Text&family=Carrois+Gothic+SC&display=swap';
 
 .theme-starforged {

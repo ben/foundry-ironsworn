@@ -4,7 +4,6 @@ import autoprefixer from 'autoprefixer'
 import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
-import tsconfigPaths from 'vite-tsconfig-paths'
 import sassChroma from './src/module/plugin/sass-chroma-js'
 import type Sass from 'sass'
 
@@ -19,9 +18,9 @@ const sassOptions: Sass.LegacyStringOptions<'sync'> = {
 const config: UserConfig = {
   root: './',
   plugins: [
-    tsconfigPaths({
-      loose: true,
-    }),
+    // tsconfigPaths({
+    //   loose: true,
+    // }),
     vue(),
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
     createSvgIconsPlugin({
@@ -32,15 +31,15 @@ const config: UserConfig = {
   resolve: {
     alias: [
       {
-        find: /^styles:(.*)/,
+        find: /^style:(.*)/,
         replacement: path.resolve(__dirname, 'src/styles', '$1'),
       },
       {
-        find: /^mixins:(.*)/,
+        find: /^mixin:(.*)/,
         replacement: path.resolve(__dirname, 'src/styles/mixins', '$1'),
       },
       {
-        find: /^components:(.*)/,
+        find: /^component:(.*)/,
         replacement: path.resolve(__dirname, 'src/module/vue/components', '$1'),
       },
       {

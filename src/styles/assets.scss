@@ -1,6 +1,6 @@
-@use 'mixins:decoration.scss';
+@use 'mixin:decoration.scss';
 @use 'sass:math';
-@use 'mixins:text.scss';
+@use 'mixin:text.scss';
 
 // Here we encode the bullet styles as classes, and pull them into the
 // ul>li bullet class from there. These will also be available for block

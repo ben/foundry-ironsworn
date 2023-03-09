@@ -12,7 +12,11 @@
 
     <!-- Main body row -->
     <!-- Momentum on left -->
-    <div class="flexcol nogrow" :class="$style['margin-right']" data-tourid="momentum">
+    <div
+      class="flexcol nogrow"
+      :class="$style['margin-right']"
+      data-tourid="momentum"
+    >
       <MomentumMeterSlider labelPosition="right" data-tooltip-direction="UP" />
     </div>
 
@@ -72,7 +76,7 @@
 </template>
 
 <style lang="scss" module>
-@use 'mixins:border.scss';
+@use 'mixin:border.scss';
 
 .margin-left {
   @include border.margin(left);

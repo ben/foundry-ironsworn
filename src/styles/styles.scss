@@ -1,11 +1,11 @@
 @use 'sass:meta';
-@use 'mixins:color.scss';
-@use 'mixins:fx.scss';
-@use 'mixins:border.scss';
-@use 'styles:fvtt/dialog' as fvtt-dialog;
+@use 'mixin:color.scss';
+@use 'mixin:fx.scss';
+@use 'mixin:border.scss';
+@use 'style:fvtt/dialog' as fvtt-dialog;
 
 // Common CSS custom properties are coralled in their own file.
-@forward 'styles:custom-properties';
+@forward 'style:custom-properties';
 
 // THEMES
 // TODO: this could probably be set up to extract everything from the theme directory automatically.

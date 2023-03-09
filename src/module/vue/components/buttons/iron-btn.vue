@@ -42,7 +42,7 @@
   </button>
 </template>
 <style lang="scss" module>
-@use 'mixins:clickable.scss';
+@use 'mixin:clickable.scss';
 
 .flex-start {
   align-content: center;

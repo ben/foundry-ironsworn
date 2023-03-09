@@ -1,6 +1,6 @@
-@use 'mixins:clickable.scss';
-@use 'mixins:fx.scss';
-@use 'mixins:border.scss';
+@use 'mixin:clickable.scss';
+@use 'mixin:fx.scss';
+@use 'mixin:border.scss';
 
 @mixin field-focus($spread: 6px) {
   @include fx.glow-exterior($spread);

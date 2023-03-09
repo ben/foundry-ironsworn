@@ -1,6 +1,6 @@
 import { IronswornSettings } from '../helpers/settings'
 
-import 'styles:styles.scss'
+import 'style:styles.scss'
 
 // FIXME: import theme names from the sass sheet as a map, so that all theme config is done there
 

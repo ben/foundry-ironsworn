@@ -64,8 +64,8 @@ const props = withDefaults(
   }
 )
 
-const state = reactive<{ dimension: Dimension; cachedStyles: CSSProperties }>({
-  cachedStyles: {},
+const state = reactive<{ dimension: Dimension; cachedstyle: CSSProperties }>({
+  cachedstyle: {},
   dimension: props.dimension,
 })
 

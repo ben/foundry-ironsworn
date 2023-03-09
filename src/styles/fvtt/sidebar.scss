@@ -1,7 +1,7 @@
 // styles for FVTT's sidebar
 
-@use 'mixins:clickable.scss';
-@use 'mixins:input.scss';
+@use 'mixin:clickable.scss';
+@use 'mixin:input.scss';
 
 #sidebar {
   li.folder > .folder-header {

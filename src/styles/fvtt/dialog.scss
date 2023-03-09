@@ -1,8 +1,8 @@
 // styles for any FVTT dialog. You can import them globally, or scoped to e.g. the .ironsworn class.
 @use 'sass:meta';
-@use 'mixins:clickable.scss';
-@use 'mixins:input.scss';
-@use 'mixins:text.scss';
+@use 'mixin:clickable.scss';
+@use 'mixin:input.scss';
+@use 'mixin:text.scss';
 
 @mixin dialog {
   .window-content {
