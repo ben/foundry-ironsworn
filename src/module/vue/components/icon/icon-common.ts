@@ -1,4 +1,4 @@
-import {
+import type {
   BorderColorProperty,
   BorderRadiusProperty,
   BorderStyleProperty,
@@ -17,7 +17,7 @@ import {
 
 import type ironswornIconNames from 'virtual:svg-icons-names'
 
-export type IronswornIconName = typeof ironswornIconNames[number]
+export type IronswornIconName = (typeof ironswornIconNames)[number]
 
 type IronswornIconId = `ironsworn:${IronswornIconName}`
 type FontAwesomeIconId = `fa:${FontAwesome.Name}`

@@ -1,4 +1,4 @@
-import { App } from 'vue'
+import type { App } from 'vue'
 import { $ItemKey } from './provisions'
 import { VueAppMixin } from './vueapp.js'
 

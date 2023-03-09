@@ -39,5 +39,5 @@
 
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "dist", "**/*.js"]
+  "exclude": ["node_modules", "dist", "**/*.{js|cjs}"]
 }

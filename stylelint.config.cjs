@@ -1,26 +1,16 @@
-const { stylelint } = require('stylelint')
-
 /**
  * @type {stylelint.Options}
  */
-const CONFIG = {
+module.exports = {
   extends: [
     /**
-     * @see https://github.com/stylelint-scss/stylelint-config-standard-scss
+     * @see https://github.com/ota-meshi/stylelint-config-standard-vue
      */
-    'stylelint-config-standard-scss',
-    /**
-     * @see https://github.com/ota-meshi/stylelint-config-recommended-vue
-     */
-    'stylelint-config-recommended-vue/scss',
+    'stylelint-config-standard-vue/scss',
     /**
      * @see https://github.com/chaucerbao/stylelint-config-concentric-order
      */
     'stylelint-config-concentric-order',
-    /**
-     * @see https://github.com/prettier/stylelint-config-prettier-scss
-     */
-    'stylelint-config-prettier-scss',
   ],
   plugins: [
     /**
@@ -32,7 +22,7 @@ const CONFIG = {
     {
       files: ['**/*.vue', '**/*.scss'],
       rules: {
-        // 'scss/dollar-variable-no-missing-interpolation': [true],
+        // prefer vanilla CSS variables (a.k.a. custom properties) instead
         'scss/no-dollar-variables': [true],
         'mavrin/stylelint-declaration-use-css-custom-properties': {
           /**
@@ -84,5 +74,3 @@ const CONFIG = {
     },
   ],
 }
-
-module.exports = CONFIG

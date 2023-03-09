@@ -1,10 +1,8 @@
-import { App, Component, ComponentPublicInstance, createApp } from 'vue'
+import type { App, Component, ComponentPublicInstance } from 'vue'
+import { createApp } from 'vue'
 import Mitt from 'mitt'
-import {
-  $LocalEmitterKey,
-  LocalEmitter,
-  LocalEmitterEvents,
-} from './provisions.js'
+import type { LocalEmitter, LocalEmitterEvents } from './provisions.js'
+import { $LocalEmitterKey } from './provisions.js'
 import LoadingSpinner from './components/loading-spinner.vue'
 import { IronswornSettings } from '../helpers/settings.js'
 import { IronswornVuePlugin } from './vue-plugin.js'
@@ -102,7 +100,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 
         // Run Vue's render, assign it to our prop for tracking.
         const selector = `[data-appid="${this.appId}"] .vueroot`
-        let $appEl = $(selector)
+        const $appEl = $(selector)
         if ($appEl.length > 0) {
           this.vueRoot = this.vueApp.mount(selector)
           setTimeout(() => {

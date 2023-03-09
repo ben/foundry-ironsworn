@@ -1,6 +1,6 @@
-import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import { LegacyFeatureOrDanger } from '../item/itemtypes'
-import { TableRow } from '../rolls'
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { LegacyFeatureOrDanger } from '../item/itemtypes'
+import type { TableRow } from '../rolls'
 
 /**
  *

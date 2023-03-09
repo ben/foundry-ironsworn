@@ -1,6 +1,6 @@
 import { compact, flatten } from 'lodash'
-import { SFMoveDataPropertiesData } from '../item/itemtypes'
-import { IronswornItem } from '../item/item'
+import type { SFMoveDataPropertiesData } from '../item/itemtypes'
+import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'
 import { ChallengeResolutionDialog } from '../rolls/challenge-resolution-dialog'
 import { getFoundryTableByDfId } from '../dataforged'

@@ -1,7 +1,7 @@
 import { compact } from 'lodash'
 import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
-import { IronswornItem } from '../item/item'
-import { SFMoveDataPropertiesData } from '../item/itemtypes'
+import type { IronswornItem } from '../item/item'
+import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 
 export async function createSfMoveChatMessage(move: IronswornItem) {
   const { dfid, Oracles } = move.system as SFMoveDataPropertiesData

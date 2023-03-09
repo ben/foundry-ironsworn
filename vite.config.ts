@@ -50,7 +50,7 @@ const config: UserConfig = {
     ],
   },
   define: {
-    'process.env': process.env,
+    'process.env': {},
   },
   publicDir: 'system',
   base: '/systems/foundry-ironsworn/',

@@ -1,5 +1,5 @@
 import { IronswornItemSheet } from '../item-sheet'
-import { DelveDomainDataPropertiesData } from '../itemtypes'
+import type { DelveDomainDataPropertiesData } from '../itemtypes'
 
 export class DelveThemeOrDomainSheet extends IronswornItemSheet {
   static get defaultOptions() {

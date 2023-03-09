@@ -1,4 +1,4 @@
-import { IronswornActor } from '../actor/actor.js'
+import type { IronswornActor } from '../actor/actor.js'
 import { FirstStartDialog } from '../applications/firstStartDialog'
 import { SFSettingTruthsDialogVue } from '../applications/vueSfSettingTruthsDialog.js'
 import { WorldTruthsDialog } from '../applications/worldTruthsDialog.js'

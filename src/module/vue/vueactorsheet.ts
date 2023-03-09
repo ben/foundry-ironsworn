@@ -1,5 +1,5 @@
-import { App } from 'vue'
-import { IronswornItem } from '../item/item'
+import type { App } from 'vue'
+import type { IronswornItem } from '../item/item'
 import { $ActorKey } from './provisions'
 import { VueAppMixin } from './vueapp.js'
 

@@ -1,10 +1,10 @@
-import { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
+import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import { CreateActorDialog } from '../applications/createActorDialog'
-import {
+import type {
   CharacterDataPropertiesData,
   SiteDataPropertiesData,
 } from './actortypes'
-import { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
+import type { SFCharacterMoveSheet } from './sheets/sf-charactermovesheet'
 
 let CREATE_DIALOG: CreateActorDialog
 

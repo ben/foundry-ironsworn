@@ -1,24 +1,23 @@
-import { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
-import { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
-import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
-import {
+import type { ItemDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/itemData'
+import type { RollTableDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/rollTableData'
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type {
   IAssetType,
   IMoveCategory,
   IOracle,
   IOracleCategory,
-  ironsworn,
   Ironsworn,
   ISettingTruth,
   Starforged,
-  starforged,
 } from 'dataforged'
+import { ironsworn, starforged } from 'dataforged'
 import { isArray, isObject, max } from 'lodash'
 import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'
 import { IronswornActor } from '../actor/actor'
 import { NumericRank } from '../constants'
-import { IronswornItem } from '../item/item'
+import type { IronswornItem } from '../item/item'
 import {
   ISAssetTypes,
   ISMoveCategories,
