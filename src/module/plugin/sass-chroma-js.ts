@@ -3,7 +3,9 @@
 import chroma, { contrast } from 'chroma-js'
 import { last, maxBy, minBy } from 'lodash'
 
-import { types as Sass, LegacySyncFunction as SassSyncFunction } from 'sass'
+import type { LegacySyncFunction as SassSyncFunction } from 'sass'
+import Sass from 'sass'
+import type { SassLegacyValue } from './sass-assert'
 import {
   assertColor,
   assertModeChannel as assertColorModeChannel,
@@ -11,7 +13,6 @@ import {
   assertString,
   assertMode as assertColorMode,
   assertList,
-  SassLegacyValue,
 } from './sass-assert'
 import {
   sass2Chroma,
@@ -32,9 +33,9 @@ const plugin: Record<string, SassSyncFunction> = {
    */
   // @ts-ignore
   'set-channel($color, $modechan, $value)': (
-    color: SassLegacyValue<Sass.Color>,
-    modechan: SassLegacyValue<Sass.String>,
-    value: SassLegacyValue<Sass.Number>
+    color: SassLegacyValue<Sass.types.Color>,
+    modechan: SassLegacyValue<Sass.types.String>,
+    value: SassLegacyValue<Sass.types.Number>
   ) => {
     assertColor(color)
     assertColorModeChannel(modechan)
@@ -51,13 +52,13 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   'get-channel($color, $modechan)': (
-    color: SassLegacyValue<Sass.Color>,
-    modechan: SassLegacyValue<Sass.String>
+    color: SassLegacyValue<Sass.types.Color>,
+    modechan: SassLegacyValue<Sass.types.String>
   ) => {
     assertColor(color)
     assertColorModeChannel(modechan)
     const chromaColor = sass2Chroma(color)
-    return new Sass.Number(chromaColor.get(modechan.getValue()))
+    return new Sass.types.Number(chromaColor.get(modechan.getValue()))
   },
   /**
    * @see {@link chroma.Color.luminance}
@@ -65,33 +66,35 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   "luminance($color, $luminance: null, $color-space: 'rgb')": (
-    color: SassLegacyValue<Sass.Color>,
+    color: SassLegacyValue<Sass.types.Color>,
     /**
      * @default null
      * @min 0
      * @max 1
      */
-    luminance: SassLegacyValue<Sass.Number> | SassLegacyValue<Sass.Null>,
+    luminance:
+      | SassLegacyValue<Sass.types.Number>
+      | SassLegacyValue<Sass.types.Null>,
     /**
      * @default 'rgb'
      */
-    mode: SassLegacyValue<Sass.String>
+    mode: SassLegacyValue<Sass.types.String>
   ) => {
     assertColor(color)
     assertColorMode(mode)
 
     const chromaColor = sass2Chroma(color)
 
-    if (!luminance || luminance instanceof Sass.Null) {
+    if (!luminance || luminance instanceof Sass.types.Null) {
       // return the colour's luminance
       const luminance = chromaColor.luminance()
 
-      return new Sass.Number(luminance)
+      return new Sass.types.Number(luminance)
     } else {
       assertNumber(luminance)
       // set the colour's luminance and return the new color
 
-      return new Sass.Color(
+      return new Sass.types.Color(
         ...chromaColor.luminance(
           luminance.getValue(),
           mode?.getValue() as chroma.InterpolationMode
@@ -101,9 +104,9 @@ const plugin: Record<string, SassSyncFunction> = {
   },
 
   // @ts-ignore
-  'lightest($colors...)': (colors: SassLegacyValue<Sass.List>) => {
+  'lightest($colors...)': (colors: SassLegacyValue<Sass.types.List>) => {
     assertList(colors)
-    const arr = sassList2Array<chroma.Color, SassLegacyValue<Sass.Color>>(
+    const arr = sassList2Array<chroma.Color, SassLegacyValue<Sass.types.Color>>(
       colors,
       (v) => {
         assertColor(v)
@@ -114,9 +117,9 @@ const plugin: Record<string, SassSyncFunction> = {
   },
 
   // @ts-ignore
-  'darkest($colors...)': (colors: SassLegacyValue<Sass.List>) => {
+  'darkest($colors...)': (colors: SassLegacyValue<Sass.types.List>) => {
     assertList(colors)
-    const arr = sassList2Array<chroma.Color, SassLegacyValue<Sass.Color>>(
+    const arr = sassList2Array<chroma.Color, SassLegacyValue<Sass.types.Color>>(
       colors,
       (v) => {
         assertColor(v)
@@ -131,23 +134,23 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   'contrast($color1, $color2)': (
-    color1: SassLegacyValue<Sass.Color>,
-    color2: SassLegacyValue<Sass.Color>
+    color1: SassLegacyValue<Sass.types.Color>,
+    color2: SassLegacyValue<Sass.types.Color>
   ) => {
     const [chromaColor1, chromaColor2] = [color1, color2].map((c) => {
       assertColor(c)
       return sass2Chroma(c)
     })
     const contrastValue = contrast(chromaColor1, chromaColor2)
-    return new Sass.Number(contrastValue)
+    return new Sass.types.Number(contrastValue)
   },
 
   // @ts-ignore
   "mix($color1, $color2, $f: 0.5, $color-space: 'lrgb')": (
-    color1: SassLegacyValue<Sass.Color>,
-    color2: SassLegacyValue<Sass.Color>,
-    f: SassLegacyValue<Sass.Number>,
-    colorSpace: SassLegacyValue<Sass.String>
+    color1: SassLegacyValue<Sass.types.Color>,
+    color2: SassLegacyValue<Sass.types.Color>,
+    f: SassLegacyValue<Sass.types.Number>,
+    colorSpace: SassLegacyValue<Sass.types.String>
   ) => {
     assertNumber(f)
     assertColorMode(colorSpace)
@@ -170,9 +173,9 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   'hcl($h, $c, $l)': (
-    h: SassLegacyValue<Sass.Number>,
-    c: SassLegacyValue<Sass.Number>,
-    l: SassLegacyValue<Sass.Number>
+    h: SassLegacyValue<Sass.types.Number>,
+    c: SassLegacyValue<Sass.types.Number>,
+    l: SassLegacyValue<Sass.types.Number>
   ) => {
     ;[h, c, l].forEach((channel) => assertNumber(channel))
     const chromaColor = chroma(
@@ -186,9 +189,9 @@ const plugin: Record<string, SassSyncFunction> = {
    */
   // @ts-ignore
   'lch($l,$c,$h)': (
-    l: SassLegacyValue<Sass.Number>,
-    c: SassLegacyValue<Sass.Number>,
-    h: SassLegacyValue<Sass.Number>
+    l: SassLegacyValue<Sass.types.Number>,
+    c: SassLegacyValue<Sass.types.Number>,
+    h: SassLegacyValue<Sass.types.Number>
   ) => {
     ;[l, c, h].forEach((channel) => assertNumber(channel))
     const chromaColor = chroma(
@@ -203,9 +206,9 @@ const plugin: Record<string, SassSyncFunction> = {
    */
   // @ts-ignore
   'oklch($l,$c,$h)': (
-    l: SassLegacyValue<Sass.Number>,
-    c: SassLegacyValue<Sass.Number>,
-    h: SassLegacyValue<Sass.Number>
+    l: SassLegacyValue<Sass.types.Number>,
+    c: SassLegacyValue<Sass.types.Number>,
+    h: SassLegacyValue<Sass.types.Number>
   ) => {
     ;[l, c, h].forEach((channel) => assertNumber(channel))
 
@@ -220,9 +223,9 @@ const plugin: Record<string, SassSyncFunction> = {
 
   // @ts-ignore
   "scale-steps($colors, $steps, $mode: 'lrgb')": (
-    colors: SassLegacyValue<Sass.List>,
-    steps: SassLegacyValue<Sass.Number>,
-    mode: SassLegacyValue<Sass.String>
+    colors: SassLegacyValue<Sass.types.List>,
+    steps: SassLegacyValue<Sass.types.Number>,
+    mode: SassLegacyValue<Sass.types.String>
   ) => {
     assertList(colors)
     assertNumber(steps)
@@ -230,7 +233,7 @@ const plugin: Record<string, SassSyncFunction> = {
 
     const chromaColors = sassList2Array<
       chroma.Color,
-      SassLegacyValue<Sass.Color>
+      SassLegacyValue<Sass.types.Color>
     >(colors, (v) => sass2Chroma(v))
     const scale = chroma
       .scale(chromaColors)
@@ -239,7 +242,7 @@ const plugin: Record<string, SassSyncFunction> = {
       .mode(mode.getValue() as chroma.InterpolationMode)
       .colors(steps.getValue(), null)
 
-    return array2SassList<chroma.Color, Sass.Color>(scale, (v) =>
+    return array2SassList<chroma.Color, Sass.types.Color>(scale, (v) =>
       chroma2Sass(v as any)
     )
   },
@@ -253,21 +256,21 @@ const plugin: Record<string, SassSyncFunction> = {
    * @param warmColor - A saturated accent/highlight color, used both as-is and in mixtures with the other colours.
    * @param coolColor - A second saturated accent/highlight color, used both as-is and in mixtures with the other colours.
    * @param prefix - the prefix to use for the generated CSS variables.
-   * @returns A {@link SassLegacyValue<Sass.Map>} of keyed colours. Iterate over it with `@each` to set CSS custom properties that can
+   * @returns A {@link SassLegacyValue<sass.types.Map>} of keyed colours. Iterate over it with `@each` to set CSS custom properties that can
    *
    * @remarks 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' are more about a UX element's importance/activity (warmer = more active/dramatic).
    */
   // @ts-ignore
   "gamutize($fg-color, $bg-color, $warm-color, $cool-color, $prefix: 'palette')":
     (
-      fgColor: SassLegacyValue<Sass.Color>,
-      bgColor: SassLegacyValue<Sass.Color>,
-      warmColor: SassLegacyValue<Sass.Color>,
-      coolColor: SassLegacyValue<Sass.Color>,
+      fgColor: SassLegacyValue<Sass.types.Color>,
+      bgColor: SassLegacyValue<Sass.types.Color>,
+      warmColor: SassLegacyValue<Sass.types.Color>,
+      coolColor: SassLegacyValue<Sass.types.Color>,
       /**
        * @default 'palette'
        */
-      prefix: SassLegacyValue<Sass.String>
+      prefix: SassLegacyValue<Sass.types.String>
     ) => {
       // typecheck the parameters SASS passed us
       ;[fgColor, bgColor, warmColor, coolColor].forEach((c) => assertColor(c))
@@ -321,12 +324,12 @@ const plugin: Record<string, SassSyncFunction> = {
             {
               const oldScaleValueSubstring = last(colorKey.split('-'))
               if (!oldScaleValueSubstring)
-                throw new Sass.Error(
+                throw new Sass.types.Error(
                   `Could not parse the last substring of ${colorKey}`
                 )
               const oldScaleValue = parseInt(oldScaleValueSubstring)
               if (isNaN(oldScaleValue))
-                throw new Sass.Error(
+                throw new Sass.types.Error(
                   `Could not parse a number from the last substring of ${colorKey}`
                 )
               const newMidtoneValue = 100 - oldScaleValue
@@ -339,7 +342,7 @@ const plugin: Record<string, SassSyncFunction> = {
       })
 
       const sassColors = map2SassMap(colors, (colorKey, colorValue) => ({
-        key: new Sass.String(`${prefix.getValue()}-${colorKey}`),
+        key: new Sass.types.String(`${prefix.getValue()}-${colorKey}`),
         value: chroma2Sass(colorValue),
       }))
 

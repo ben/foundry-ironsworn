@@ -1,13 +1,13 @@
 import chroma from 'chroma-js'
-import { types as Sass, LegacyValue as SassValue } from 'sass'
+import Sass from 'sass'
 
 /**
- * Converts a {@link Sass.List} to a standard {@link Array}.
+ * Converts a {@link Sass.types.List} to a standard {@link Array}.
  */
-export function sassList2Array<V, VSass extends SassValue = SassValue>(
-  list: Sass.List,
-  converter: (value: VSass) => V
-) {
+export function sassList2Array<
+  V,
+  VSass extends Sass.LegacyValue = Sass.LegacyValue
+>(list: Sass.types.List, converter: (value: VSass) => V) {
   const array: V[] = []
   for (let i = 1; i < list.getLength(); i++) {
     array.push(converter(list.getValue(i) as VSass))
@@ -16,14 +16,14 @@ export function sassList2Array<V, VSass extends SassValue = SassValue>(
 }
 
 /**
- * Converts a standard {@link Array} to a {@link Sass.List}.
+ * Converts a standard {@link Array} to a {@link Sass.types.List}.
  * @param converter - A function used to convert each value in the original Array.
  */
-export function array2SassList<V, VSass extends SassValue = SassValue>(
-  array: V[],
-  converter: (value: V) => VSass
-) {
-  const list = new Sass.List(array.length)
+export function array2SassList<
+  V,
+  VSass extends Sass.LegacyValue = Sass.LegacyValue
+>(array: V[], converter: (value: V) => VSass) {
+  const list = new Sass.types.List(array.length)
   array.forEach((v, i) => {
     list.setValue(i, converter(v))
   })
@@ -31,15 +31,19 @@ export function array2SassList<V, VSass extends SassValue = SassValue>(
 }
 
 /**
- * Converts a standard {@link Map} to a {@link Sass.Map}.
+ * Converts a standard {@link Map} to a {@link Sass.types.Map}.
  * @param map - The standard JS Map to be converted.
  * @param converter - A function used to convert each key/value pair in the original Map.
  */
-export function map2SassMap<K, V, VSass extends SassValue = SassValue>(
+export function map2SassMap<
+  K,
+  V,
+  VSass extends Sass.LegacyValue = Sass.LegacyValue
+>(
   map: Map<K, V>,
-  converter: (key: K, value: V) => { key: Sass.String; value: VSass }
+  converter: (key: K, value: V) => { key: Sass.types.String; value: VSass }
 ) {
-  const sassMap = new Sass.Map(map.size)
+  const sassMap = new Sass.types.Map(map.size)
   let index = 0
   map.forEach((oldValue, oldKey) => {
     const { key, value } = converter(oldKey, oldValue)
@@ -51,20 +55,15 @@ export function map2SassMap<K, V, VSass extends SassValue = SassValue>(
 }
 
 /**
- * Converts a {@link chroma.Color} to a {@link Sass.Color}.
+ * Converts a {@link chroma.Color} to a {@link Sass.types.Color}.
  */
 export function chroma2Sass(color: chroma.Color) {
   const [red, green, blue, alpha] = color.rgba()
-  return new Sass.Color(red, green, blue, alpha)
+  return new Sass.types.Color(red, green, blue, alpha)
 }
 /**
- * Converts a {@link Sass.Color} to a  {@link chroma.Color}.
+ * Converts a {@link Sass.types.Color} to a  {@link chroma.Color}.
  */
-export function sass2Chroma(color: Sass.Color) {
-  return chroma({
-    r: color.getR(),
-    g: color.getG(),
-    b: color.getB(),
-    a: color.getA(),
-  })
+export function sass2Chroma(color: Sass.types.Color) {
+  return chroma(color.getR(), color.getG(), color.getB(), color.getA(), 'rgba')
 }
