@@ -181,7 +181,7 @@ label {
 }
 
 [data-highlighted='true'] {
-  @include clickable.block-hover;
+  @include clickable.blockHover;
 }
 </style>
 

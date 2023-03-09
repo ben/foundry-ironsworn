@@ -32,7 +32,7 @@ const plugin: Record<string, SassSyncFunction> = {
    * @see {@link Chroma.Color.set}
    */
   // @ts-ignore
-  'set-channel($color, $modechan, $value)': (
+  'setChannel($color, $modechan, $value)': (
     color: SassLegacyValue<Sass.types.Color>,
     modechan: SassLegacyValue<Sass.types.String>,
     value: SassLegacyValue<Sass.types.Number>
@@ -51,7 +51,7 @@ const plugin: Record<string, SassSyncFunction> = {
    */
 
   // @ts-ignore
-  'get-channel($color, $modechan)': (
+  'getChannel($color, $modechan)': (
     color: SassLegacyValue<Sass.types.Color>,
     modechan: SassLegacyValue<Sass.types.String>
   ) => {
@@ -222,7 +222,7 @@ const plugin: Record<string, SassSyncFunction> = {
   },
 
   // @ts-ignore
-  "scale-steps($colors, $steps, $mode: 'lrgb')": (
+  "scaleSteps($colors, $steps, $mode: 'lrgb')": (
     colors: SassLegacyValue<Sass.types.List>,
     steps: SassLegacyValue<Sass.types.Number>,
     mode: SassLegacyValue<Sass.types.String>

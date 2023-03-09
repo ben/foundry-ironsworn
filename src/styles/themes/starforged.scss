@@ -17,7 +17,7 @@
   );
   @include color.darkTheme('ironsworn-color');
   @include color.softBorder('ironsworn-color');
-  @include color.interativeTint(
+  @include color.interactiveTint(
     'ironsworn-color-clickable-block',
     'ironsworn-color'
   );

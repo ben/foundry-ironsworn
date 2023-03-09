@@ -68,7 +68,7 @@
   padding: 0;
 
   &:focus {
-    @include clickable.focus-outline;
+    @include clickable.focusOutline;
   }
 
   .slider-segment {

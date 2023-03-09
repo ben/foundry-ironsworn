@@ -19,7 +19,7 @@
     .ironsworn-roll-title,
     h3,
     h2 {
-      @include text.initial-caps;
+      @include text.initialCaps;
 
       margin: 0;
       font-size: var(--font-size-16);
@@ -35,7 +35,7 @@
     }
 
     button {
-      @include text.initial-caps;
+      @include text.initialCaps;
       @include clickable.block;
 
       display: flex;

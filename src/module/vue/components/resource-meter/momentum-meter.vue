@@ -37,7 +37,7 @@
 
   .attr-slider-label:hover ~ .slider-bar {
     .segment-momentum-reset {
-      @include clickable.block-hover;
+      @include clickable.blockHover;
 
       box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
         0 0 5px var(--ironsworn-color-warm),

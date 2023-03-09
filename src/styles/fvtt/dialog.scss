@@ -19,7 +19,7 @@
           cursor: pointer;
 
           &:focus {
-            @include input.field-focus;
+            @include input.fieldFocus;
           }
         }
       }
@@ -46,7 +46,7 @@
         height: max-content;
 
         .button-text {
-          @include text.initial-caps;
+          @include text.initialCaps;
 
           flex-grow: 0;
           width: auto;

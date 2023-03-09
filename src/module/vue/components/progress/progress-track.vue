@@ -44,7 +44,7 @@
   justify-content: center;
 
   &:focus {
-    @include clickable.focus-outline;
+    @include clickable.focusOutline;
   }
 
   .progress-track-box {

@@ -33,14 +33,14 @@ module.exports = {
        * @see https://csstree.github.io/docs/syntax/
        */
       cssDefinitions: ['color', 'length', 'z-index', 'line-height'],
-      ignoreProperties: [/^\$/],
+      ignoreProperties: ['/^\\$/'],
       ignoreValues: [
-        /^\$/,
+        '/^\\$/',
         'transparent',
         'currentcolor',
         '0',
-        /[0-9]+(\.[0-9]+)?em/,
-        /#\{.+?\}/,
+        '/[0-9]+(\\.[0-9]+)?em/',
+        '/#\\{.+?\\}/',
       ],
     },
     // silence complaints about floating points (which are a temp workaround anyways)
@@ -48,6 +48,10 @@ module.exports = {
     'declaration-block-no-redundant-longhand-properties': null,
     // useful as placeholders when prototyping SFC that will later get styled
     'block-no-empty': null,
+    'function-name-case': [
+      'lower',
+      { ignoreFunctions: [/[a-z]+([A-Z][a-z]+)+/] },
+    ],
 
     /**
      * Enforces consistent naming for CSS custom properties.
