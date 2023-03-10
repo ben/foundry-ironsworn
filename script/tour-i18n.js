@@ -1,5 +1,5 @@
 import fs from 'fs/promises'
-import { parse } from 'yaml'
+import yaml from 'yaml'
 import { set } from 'lodash-es'
 import { marked } from 'marked'
 
@@ -16,7 +16,7 @@ async function doit() {
     const contents = await (
       await fs.readFile(`./src/module/features/tours/${yamlFilename}`)
     ).toString()
-    const { rootKey, languages } = parse(contents)
+    const { rootKey, languages } = yaml.parse(contents)
 
     for (const { lang, entries } of languages ?? []) {
       console.log(`  - ${lang}`)
