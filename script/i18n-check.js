@@ -1,6 +1,7 @@
 // import masterFile from '../system/lang/en.json' assert { type: 'json' }
 import { readFileSync } from 'fs'
 import { isPlainObject, isEmpty, forEach } from 'lodash-es'
+import path from 'path'
 
 // Object manipulation functions adapted from FVTT's source.
 
@@ -98,7 +99,13 @@ locales.forEach(
   (locale) =>
     (localeKeys[locale] = new Set(
       Object.keys(
-        flattenObject(JSON.parse(readFileSync(`../system/lang/${locale}.json`)))
+        flattenObject(
+          JSON.parse(
+            readFileSync(
+              path.join(process.cwd(), 'system/lang', `${locale}.json`)
+            )
+          )
+        )
       )
     ))
 )
