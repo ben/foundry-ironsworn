@@ -1,5 +1,6 @@
-import masterFile from '../system/lang/en.json'
+import { readFileSync } from 'fs'
 import { isPlainObject, isEmpty, forEach } from 'lodash-es'
+import path from 'path'
 
 // Object manipulation functions adapted from FVTT's source.
 
@@ -32,7 +33,7 @@ function flattenObject(obj, _d = 0) {
  * @param {number} [_d=0]   Track the recursion depth to prevent overflow
  * @return {object}         An expanded object
  */
-function expandObject(obj, _d = 0) {
+export function expandObject(obj, _d = 0) {
   if (_d > 100) throw new Error('Maximum object expansion depth exceeded')
 
   // Recursive expansion function
@@ -96,7 +97,15 @@ const localeKeys = {}
 locales.forEach(
   (locale) =>
     (localeKeys[locale] = new Set(
-      Object.keys(flattenObject(require(`../system/lang/${locale}.json`)))
+      Object.keys(
+        flattenObject(
+          JSON.parse(
+            readFileSync(
+              path.join(process.cwd(), 'system/lang', `${locale}.json`)
+            )
+          )
+        )
+      )
     ))
 )
 
