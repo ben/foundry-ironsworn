@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Under the hood: updated dependencies
+
 ## 1.20.28
 
 - Fix scrollbar width styling
