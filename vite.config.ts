@@ -18,9 +18,6 @@ const sassOptions: Sass.LegacyStringOptions<'sync'> = {
 const config: UserConfig = {
   root: './',
   plugins: [
-    // tsconfigPaths({
-    //   loose: true,
-    // }),
     vue(),
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
     createSvgIconsPlugin({
