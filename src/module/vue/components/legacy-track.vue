@@ -157,9 +157,9 @@
 import { computed, inject, Ref } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
-import { capitalize } from 'lodash'
+import { capitalize } from 'lodash-es'
 import XpTrack from './xp-track.vue'
-import _ from 'lodash'
+import _ from 'lodash-es'
 import ProgressTrack from './progress/progress-track.vue'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it

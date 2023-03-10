@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { sample } from 'lodash'
+import { sample } from 'lodash-es'
 import { ExtractPropTypes, inject } from 'vue'
 import { IOracleTreeNode } from '../../../features/customoracles.js'
 import { OracleRollMessage } from '../../../rolls'

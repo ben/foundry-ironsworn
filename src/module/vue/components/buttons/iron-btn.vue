@@ -133,7 +133,7 @@
 </style>
 
 <script setup lang="ts">
-import { capitalize } from 'lodash'
+import { capitalize } from 'lodash-es'
 import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
 import FontIcon from '../icon/font-icon.vue'
 import { FontAwesome, IconId } from '../icon/icon-common'

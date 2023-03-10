@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import { computed } from '@vue/reactivity'
-import { times } from 'lodash'
+import { times } from 'lodash-es'
 
 const sides = 6
 const hexHeight = 10

@@ -5,7 +5,7 @@ import type {
   Ironsworn,
 } from 'dataforged'
 import { starforged, ironsworn } from 'dataforged'
-import { compact } from 'lodash'
+import { compact } from 'lodash-es'
 import { getFoundryTableByDfId } from '../dataforged'
 import { cachedDocumentsForPack } from './pack-cache'
 

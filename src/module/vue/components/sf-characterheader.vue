@@ -61,7 +61,7 @@ textarea {
 
 <script lang="ts" setup>
 import SheetHeader from '../sheet-header.vue'
-import { debounce } from 'lodash'
+import { debounce } from 'lodash-es'
 import { inject, ref, Ref } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import DocumentImg from './document-img.vue'

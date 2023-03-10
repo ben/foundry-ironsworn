@@ -52,7 +52,7 @@
 </style>
 
 <script lang="ts" setup>
-import { sortBy } from 'lodash'
+import { sortBy } from 'lodash-es'
 import { computed, inject, Ref } from 'vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'

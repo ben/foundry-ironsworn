@@ -1,5 +1,5 @@
 import type { IMove } from 'dataforged'
-import { get, set } from 'lodash'
+import { get, set } from 'lodash-es'
 import { marked } from 'marked'
 import { hash } from '.'
 

@@ -1,4 +1,4 @@
-import { range, sum } from 'lodash'
+import { range, sum } from 'lodash-es'
 import { RANKS } from '../constants'
 import { capitalize } from './util'
 import { marked } from 'marked'

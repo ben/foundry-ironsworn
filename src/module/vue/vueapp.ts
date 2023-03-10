@@ -6,7 +6,7 @@ import { $LocalEmitterKey } from './provisions.js'
 import LoadingSpinner from './components/loading-spinner.vue'
 import { IronswornSettings } from '../helpers/settings.js'
 import { IronswornVuePlugin } from './vue-plugin.js'
-import { pickBy } from 'lodash'
+import { pickBy } from 'lodash-es'
 
 type Constructor<T = object> = abstract new (...args: any[]) => T
 

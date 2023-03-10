@@ -1,6 +1,6 @@
 import type { DocumentModificationOptions } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/abstract/document.mjs'
 import type { BaseUser } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/documents.mjs'
-import { clamp } from 'lodash'
+import { clamp } from 'lodash-es'
 import { NumericRank, RANK_INCREMENTS } from '../constants'
 import type { ProgressTrackDataPropertiesData } from './journal-entry-page-types'
 

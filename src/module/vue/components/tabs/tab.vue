@@ -40,7 +40,7 @@
 </style>
 
 <script lang="ts" setup>
-import { omit } from 'lodash'
+import { omit } from 'lodash-es'
 import { computed, ExtractPropTypes, inject, nextTick, ref, watch } from 'vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import {

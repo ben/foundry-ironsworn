@@ -42,7 +42,7 @@
 </style>
 
 <script lang="ts" setup>
-import { forEach } from 'lodash'
+import { forEach } from 'lodash-es'
 import { computed } from 'vue'
 import { FontAwesome, IconPropsCommon } from './icon-common'
 

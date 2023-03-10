@@ -91,7 +91,7 @@
 
 <script setup lang="ts">
 import { computed } from '@vue/runtime-core'
-import { fill, clamp } from 'lodash'
+import { fill, clamp } from 'lodash-es'
 import { NumericRank, RANKS } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
 

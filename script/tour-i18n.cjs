@@ -1,6 +1,6 @@
 const fs = require('fs').promises
 const YAML = require('yaml')
-const _ = require('lodash')
+const _ = require('lodash-es')
 const { marked } = require('marked')
 
 async function doit() {

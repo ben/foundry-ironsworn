@@ -76,7 +76,7 @@ svg.clock {
 </style>
 
 <script setup lang="ts">
-import { inRange, mean } from 'lodash'
+import { inRange, mean } from 'lodash-es'
 import { computed } from 'vue'
 const R = 50
 

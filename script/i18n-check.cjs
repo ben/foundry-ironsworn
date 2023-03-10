@@ -1,5 +1,5 @@
 const masterFile = require('../system/lang/en.json')
-const _ = require('lodash')
+const _ = require('lodash-es')
 
 // Object manipulation functions adapted from FVTT's source.
 
