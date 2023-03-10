@@ -1,4 +1,4 @@
-import { promises as fs } from 'fs'
+import fs from 'fs/promises'
 import { parse } from 'yaml'
 import { set } from 'lodash-es'
 import { marked } from 'marked'
