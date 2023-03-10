@@ -159,7 +159,7 @@ import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 import { capitalize } from 'lodash-es'
 import XpTrack from './xp-track.vue'
-import _ from 'lodash-es'
+import { clamp } from 'lodash-es'
 import ProgressTrack from './progress/progress-track.vue'
 
 // TODO: make this use an enum from dataforged instead, once rsek gets around to adding it
@@ -190,7 +190,7 @@ const ticks = computed(
 const ticksDisplayed = computed(() => ticks.value % maxTicks)
 
 const score = computed(() =>
-  _.clamp(Math.floor(ticks.value / ticksPerBox), 0, maxScore)
+  clamp(Math.floor(ticks.value / ticksPerBox), 0, maxScore)
 )
 
 const xpEarned = computed(() => {
