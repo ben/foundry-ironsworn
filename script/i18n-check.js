@@ -1,5 +1,5 @@
-const masterFile = require('../system/lang/en.json')
-const _ = require('lodash-es')
+import masterFile from '../system/lang/en.json'
+import { isPlainObject, isEmpty, forEach } from 'lodash-es'
 
 // Object manipulation functions adapted from FVTT's source.
 
@@ -15,8 +15,8 @@ function flattenObject(obj, _d = 0) {
     throw new Error('Maximum depth exceeded')
   }
   for (let [k, v] of Object.entries(obj)) {
-    if (_.isPlainObject(v)) {
-      if (_.isEmpty(v)) flat[k] = v
+    if (isPlainObject(v)) {
+      if (isEmpty(v)) flat[k] = v
       let inner = flattenObject(v, _d + 1)
       for (let [ik, iv] of Object.entries(inner)) {
         flat[`${k}.${ik}`] = iv
@@ -100,7 +100,7 @@ locales.forEach(
     ))
 )
 
-_.forEach(localeKeys, (keys, locale) => {
+forEach(localeKeys, (keys, locale) => {
   if (locale !== masterLocale) {
     const masterKeys = localeKeys[masterLocale]
     const extraKeys = difference(keys, masterKeys)

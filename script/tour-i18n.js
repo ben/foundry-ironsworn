@@ -1,7 +1,7 @@
-const fs = require('fs').promises
-const YAML = require('yaml')
-const _ = require('lodash-es')
-const { marked } = require('marked')
+import fs from 'fs/promises'
+import { parse } from 'yaml'
+import { set } from 'lodash-es'
+import { marked } from 'marked'
 
 async function doit() {
   // List the yaml files in the tours directory
@@ -16,7 +16,7 @@ async function doit() {
     const contents = await (
       await fs.readFile(`./src/module/features/tours/${yamlFilename}`)
     ).toString()
-    const { rootKey, languages } = YAML.parse(contents)
+    const { rootKey, languages } = parse(contents)
 
     for (const { lang, entries } of languages ?? []) {
       console.log(`  - ${lang}`)
@@ -32,8 +32,8 @@ async function doit() {
           .parse(entry.content)
           .replace(/<\/p>\n<p>/g, '</p><p>') // remove extra newlines
           .trim()
-        _.set(i18njson, `${rootKey}.${entry.key}Title`, entry.title)
-        _.set(i18njson, `${rootKey}.${entry.key}Content`, description)
+        set(i18njson, `${rootKey}.${entry.key}Title`, entry.title)
+        set(i18njson, `${rootKey}.${entry.key}Content`, description)
       }
 
       // Write the i18n json file
