@@ -68,7 +68,10 @@ function setProperty(object, key, value) {
   // Convert the key to an object reference if it contains dot notation
   if (key.indexOf('.') !== -1) {
     let parts = key.split('.')
-    key = parts.pop()
+    let newKey = parts.pop()
+    if (!newKey)
+      throw new Error(`Couldn't parse key "${key}" into an object path`)
+    key = newKey
     target = parts.reduce((o, i) => {
       if (!Object.prototype.hasOwnProperty.call(o, i)) o[i] = {}
       return o[i]
@@ -102,7 +105,7 @@ locales.forEach(
           JSON.parse(
             readFileSync(
               path.join(process.cwd(), 'system/lang', `${locale}.json`)
-            )
+            ).toString()
           )
         )
       )

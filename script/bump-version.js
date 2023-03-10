@@ -10,7 +10,7 @@ async function doit() {
 
   // Read in the system file
   const systemFile = await readFile('./system/system.json')
-  const systemJson = JSON.parse(systemFile)
+  const systemJson = JSON.parse(systemFile.toString())
 
   // Calculate next version
   const { version } = systemJson
