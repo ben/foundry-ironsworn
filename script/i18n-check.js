@@ -1,4 +1,3 @@
-// import masterFile from '../system/lang/en.json' assert { type: 'json' }
 import { readFileSync } from 'fs'
 import { isPlainObject, isEmpty, forEach } from 'lodash-es'
 import path from 'path'
