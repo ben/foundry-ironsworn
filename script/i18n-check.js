@@ -1,4 +1,4 @@
-import masterFile from '../system/lang/en.json'
+import masterFile from '../system/lang/en.json' assert { type: 'json' }
 import { isPlainObject, isEmpty, forEach } from 'lodash-es'
 
 // Object manipulation functions adapted from FVTT's source.
