@@ -2,49 +2,6 @@
 @use 'sass:math';
 @use 'mixin:text.scss';
 
-// Here we encode the bullet styles as classes, and pull them into the
-// ul>li bullet class from there. These will also be available for block
-// elements
-@mixin assetAbilityBullet {
-  display: block;
-  transition: var(--ironsworn-transition);
-  background-position: center;
-  background-repeat: no-repeat;
-  mask-position: center;
-  mask-repeat: no-repeat;
-}
-
-@mixin assetAbilityBulletMarked {
-  background-color: currentcolor;
-}
-
-@mixin assetAbilityBulletIronsworn {
-  margin-top: 0.15em;
-  border-width: var(--ironsworn-border-width-md);
-  border-radius: 50%;
-  height: 0.75em;
-  aspect-ratio: 1;
-}
-
-@mixin assetAbilityBulletStarforged {
-  margin-top: 0.15em;
-  background-image: url('../../system/assets/misc/hex-checkbox-unchecked.svg');
-  height: 1em;
-  aspect-ratio: var(--ironsworn-hexagon-aspect-ratio);
-  mask-image: url('../../system/assets/misc/hex-checkbox-checked.svg');
-}
-
-@mixin assetAbilityBulletStarforgedMarked {
-  --ironsworn-bullet-height: 1em;
-  --ironsworn-bullet-margin-top: 0.15em;
-
-  mask-image: url('../../system/assets/misc/hex-checkbox-checked.svg');
-  margin-top: var(--ironsworn-bullet-margin-top);
-  background-image: url('../../system/assets/misc/hex-checkbox-unchecked.svg');
-  height: var(--ironsworn-bullet-height);
-  aspect-ratio: var(--ironsworn-hexagon-aspect-ratio);
-}
-
 .ironsworn__asset {
   transition: var(--ironsworn-transition);
   overflow: hidden;
@@ -125,35 +82,7 @@
     .asset-abilities {
       gap: var(--ironsworn-spacer-lg);
       padding-left: var(--ironsworn-spacer-lg);
-
-      .asset-ability {
-        display: flex;
-        flex-direction: row;
-        gap: var(--ironsworn-spacer-lg);
-        list-style: none;
-      }
     }
-  }
-
-  .asset-ability-clock {
-    --ironsworn-clock-size-min: 40px;
-    --ironsworn-clock-size-max: 75px;
-
-    min-width: var(--ironsworn-clock-size-min);
-    max-width: var(--ironsworn-clock-size-max);
-    min-height: var(--ironsworn-clock-size-min);
-    max-height: var(--ironsworn-clock-size-max);
-  }
-
-  .asset-ability-text {
-    p {
-      margin: 0;
-    }
-  }
-
-  ul,
-  ol {
-    margin: 0;
   }
 }
 
@@ -171,62 +100,6 @@
   }
 }
 
-.asset-ability-bullet {
-  @include assetAbilityBullet;
-}
-
-.asset-ability-bullet-marked {
-  @include assetAbilityBulletMarked;
-}
-
-.asset-ability-bullet-ironsworn {
-  @include assetAbilityBulletIronsworn;
-}
-
-.asset-ability-bullet-starforged {
-  @include assetAbilityBulletStarforged;
-}
-
-.asset-ability-bullet-starforged-marked {
-  @include assetAbilityBulletStarforgedMarked;
-}
-
-.asset-ironsworn,
-.asset-starforged {
-  // common properties for asset ability bullet/checkbox
-  .asset-ability {
-    &::before {
-      @include assetAbilityBullet;
-
-      content: '';
-    }
-
-    &.marked::before {
-      @include assetAbilityBulletMarked;
-    }
-  }
-}
-
-.asset-ironsworn {
-  .asset-ability {
-    &::before {
-      @include assetAbilityBulletIronsworn;
-    }
-  }
-}
-
 .asset-starforged {
   @include decoration.starforgedAssetDeco(50px, 32px);
-
-  .asset-abilities {
-    .asset-ability {
-      &::before {
-        @include assetAbilityBulletStarforged;
-      }
-
-      &.marked::before {
-        @include assetAbilityBulletStarforgedMarked;
-      }
-    }
-  }
 }

@@ -64,25 +64,14 @@
           </div>
         </dl>
         <ul class="asset-abilities flexcol">
-          <with-rolllisteners
+          <AssetAbility
             v-for="(ability, i) in enabledAbilities"
             :key="'ability' + i"
-            element="li"
-            :class="`asset-ability marked bullet-${$actor?.toolset}`"
-            @moveclick="moveclick"
-          >
-            <div
-              class="asset-ability-text flexcol"
-              v-html="$enrichHtml(ability.description)"
-            ></div>
-            <clock
-              v-if="ability.hasClock"
-              class="asset-ability-clock"
-              :wedges="ability.clockMax"
-              :ticked="ability.clockTicks"
-              @click="setAbilityClock(i, $event)"
-            />
-          </with-rolllisteners>
+            is="li"
+            :readonly="true"
+            :ability="ability"
+            @setClock="setAbilityClock(i, $event)"
+          />
         </ul>
 
         <div class="flexrow nogrow">
@@ -126,7 +115,11 @@
 
 <script setup lang="ts">
 import { computed, inject, provide, Ref } from 'vue'
-import { AssetAbility, AssetDataPropertiesData } from '../../../item/itemtypes'
+import type {
+  AssetAbility as AssetAbilityType,
+  AssetDataPropertiesData,
+} from '../../../item/itemtypes'
+import AssetAbility from './asset-ability.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
@@ -197,7 +190,7 @@ function moveclick(item) {
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
   const abilities = Object.values(
     props.asset.system.abilities
-  ) as AssetAbility[]
+  ) as AssetAbilityType[]
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
   foundryItem?.update({ system: { abilities } })
 }

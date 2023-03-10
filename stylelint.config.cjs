@@ -4,10 +4,13 @@
 module.exports = {
   extends: [
     'stylelint-config-standard-scss',
+    /** @see https://github.com/pascalduez/stylelint-config-css-modules  */
+    'stylelint-config-css-modules',
     /**
      * @see https://github.com/ota-meshi/stylelint-config-standard-vue
      */
     'stylelint-config-standard-vue/scss',
+
     /** This isn't required by newer versions of stylelint, but we're stuck with 14.3 for the moment.  */
     'stylelint-config-prettier',
     /**
@@ -33,7 +36,7 @@ module.exports = {
        * @see https://csstree.github.io/docs/syntax/
        */
       cssDefinitions: ['color', 'length', 'z-index', 'line-height'],
-      ignoreProperties: ['/^\\$/'],
+      ignoreProperties: ['/^\\$/', '/^--/'],
       ignoreValues: [
         '/^\\$/',
         'transparent',
@@ -52,7 +55,7 @@ module.exports = {
       'lower',
       { ignoreFunctions: [/[a-z]+([A-Z][a-z]+)+/] },
     ],
-
+    'rule-empty-line-before': null,
     /**
      * Enforces consistent naming for CSS custom properties.
      *
@@ -86,7 +89,18 @@ module.exports = {
         // prefer vanilla CSS variables (a.k.a. custom properties) instead
         'scss/no-dollar-variables': [true],
         'scss/at-mixin-pattern': /^[a-z]+([A-Z][a-z]+)*$/,
+
+        'at-rule-no-unknown': null,
+        'scss/at-rule-no-unknown': [
+          true,
+          {
+            ignoreAtRules: ['value'],
+          },
+        ],
       },
+    },
+    {
+      files: ['**/*.scss'],
     },
     {
       files: ['**/*.vue'],

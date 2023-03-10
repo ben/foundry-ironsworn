@@ -46,29 +46,14 @@
             <dd class="asset-field-value">{{ field.value }}</dd>
           </div>
         </dl>
-        <ul class="asset-abilities flexcol">
-          <WithRolllisteners
+        <ul class="asset-abilities flexcol" ref="$abilities">
+          <AssetAbility
             v-for="(ability, i) in system.abilities"
             :key="'ability' + i"
-            element="li"
-            :class="{
-              'asset-ability': true,
-              [`bullet-${toolset}`]: true,
-              marked: ability.enabled,
-            }"
-            @moveclick="moveClick"
-          >
-            <div
-              class="asset-ability-text flexcol"
-              v-html="$enrichHtml(ability.description)"
-            ></div>
-            <clock
-              v-if="ability.hasClock"
-              class="asset-ability-clock"
-              :wedges="ability.clockMax"
-              :ticked="ability.clockTicks"
-            />
-          </WithRolllisteners>
+            is="li"
+            :readonly="true"
+            :ability="ability"
+          />
         </ul>
         <AttrSlider
           v-if="system.track.enabled"
@@ -102,7 +87,7 @@
 
 <script setup lang="ts">
 import { IAsset } from 'dataforged'
-import { computed, inject, provide, reactive } from 'vue'
+import { computed, inject, provide, reactive, ref } from 'vue'
 import { IronswornItem } from '../../../item/item'
 import { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions.js'
@@ -113,6 +98,7 @@ import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'
 import FontIcon from '../icon/font-icon.vue'
 import IronBtn from '../buttons/iron-btn.vue'
+import AssetAbility from './asset-ability.vue'
 
 const props = defineProps<{
   df?: IAsset
@@ -153,4 +139,6 @@ function dragStart(ev) {
 function dragEnd() {
   CONFIG.IRONSWORN.emitter.emit('dragEnd', props.foundryItem().type)
 }
+
+let $abilities = ref<HTMLElement>()
 </script>

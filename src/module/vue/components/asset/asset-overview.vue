@@ -1,5 +1,9 @@
 <template>
-  <article class="flexcol ironsworn__asset" :class="articleClasses">
+  <article
+    class="flexcol ironsworn__asset"
+    :class="articleClasses"
+    ref="$wrapper"
+  >
     <!--
         Semi-edit view:
         * Text entry for field VALUES (not names)
@@ -44,41 +48,14 @@
 
       <!-- ABILITIES -->
       <div class="asset-abilities flexcol nogrow">
-        <div
+        <AssetAbility
           v-for="(ability, i) in item.system.abilities"
           :key="`ability${i}`"
-          :class="{
-            flexrow: true,
-            marked: ability.enabled,
-          }"
-          @click="toggleAbility(i)"
-        >
-          <div class="flexrow nogrow bullet-wrapper">
-            <div
-              :class="{
-                nogrow: true,
-                'asset-ability-bullet': true,
-                'asset-ability-bullet-marked': ability.enabled,
-                [`asset-ability-bullet-${toolset}`]: true,
-                [`asset-ability-bullet-${toolset}-marked`]: ability.enabled,
-              }"
-            />
-          </div>
-          <WithRollListeners
-            element="div"
-            @moveclick="moveClick"
-            class="asset-ability-text flexcol"
-            v-html="$enrichHtml(ability.description)"
-          >
-          </WithRollListeners>
-          <Clock
-            v-if="ability.hasClock"
-            class="asset-ability-clock"
-            :wedges="ability.clockMax"
-            :ticked="ability.clockTicks"
-            @click="setAbilityClock(i, $event)"
-          />
-        </div>
+          class="flexrow"
+          :ability="ability"
+          @setClock="setAbilityClock(i, $event)"
+          @toggleEnabled="toggleAbility(i)"
+        />
       </div>
 
       <!-- OPTIONS -->
@@ -146,14 +123,14 @@
 </style>
 
 <script lang="ts" setup>
-import { computed, ComputedRef, inject, useCssModule } from 'vue'
+import { computed, ComputedRef, inject, ref, useCssModule } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
-import { AssetAbility } from '../../../item/itemtypes'
 import WithRollListeners from '../with-rolllisteners.vue'
-import Clock from '../clock.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import AssetConditions from './asset-conditions.vue'
+import AssetAbility from './asset-ability.vue'
+import { type AssetAbility as AssetAbilityType } from 'module/item/itemtypes'
 
 const $item = inject($ItemKey)
 const item = inject(ItemKey) as ComputedRef
@@ -181,7 +158,9 @@ function toggleAbility(i: number) {
 }
 
 function setAbilityClock(abilityIdx: number, clockTicks: number) {
-  const abilities = Object.values(item.value.system.abilities) as AssetAbility[]
+  const abilities = Object.values(
+    item.value.system.abilities
+  ) as AssetAbilityType[]
   abilities[abilityIdx] = { ...abilities[abilityIdx], clockTicks }
   $item?.update({ system: { abilities } })
 }
@@ -203,4 +182,6 @@ function toggleCondition(idx: number) {
   conditions[idx].ticked = !conditions[idx].ticked
   $item?.update({ system: { conditions } })
 }
+
+const $wrapper = ref<HTMLElement>()
 </script>

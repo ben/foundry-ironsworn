@@ -15,18 +15,9 @@
 </template>
 
 <style lang="scss" module>
+@use 'mixin:icon.scss';
 .font-icon {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  width: var(--ironsworn-icon-size);
-  height: var(--ironsworn-icon-size);
-  line-height: 1 !important;
-
-  &::before {
-    display: flex-item;
-    flex-basis: 0;
-  }
+  @include icon.fontIcon;
 }
 
 .font-icon-border {
@@ -79,7 +70,6 @@ interface FontAwesomeIconProps extends IconPropsCommon {
   /**
    * Rether to render the item at a fixed width.
    * @default true
-   * @see
    */
   fw?: boolean // fa-fw
   /**

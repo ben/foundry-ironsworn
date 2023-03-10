@@ -2,12 +2,12 @@
   <button
     class="iron-btn"
     :class="{
-      [$style['iron-btn']]: true,
-      [$style['vertical-button']]: vertical,
-      [$style['icon-only']]: !hasText,
-      [$style['clickable-block']]: block,
-      [$style['clickable-text']]: !block,
-      [$style[`flex-${justify}`]]: true,
+      [$style.ironBtn]: true,
+      [$style.verticalBtn]: vertical,
+      [$style.iconOnly]: !hasText,
+      [$style.clickableBlock]: block,
+      [$style.clickableText]: !block,
+      [$style[`flex${capitalize(justify)}`]]: true,
       nogrow,
     }"
     type="button"
@@ -33,8 +33,8 @@
         v-if="text"
         class="button-text"
         :class="{
-          [$style['vertical-text']]: vertical,
-          [$style['button-text']]: true,
+          [$style.verticalText]: vertical,
+          [$style.btnText]: true,
         }"
         >{{ text }}</span
       >
@@ -44,28 +44,28 @@
 <style lang="scss" module>
 @use 'mixin:clickable.scss';
 
-.flex-start {
+.flexStart {
   align-content: center;
   align-items: center;
   justify-content: start;
   justify-items: start;
 }
 
-.flex-center {
+.flexCenter {
   align-content: center;
   align-items: center;
   justify-content: center;
   justify-items: center;
 }
 
-.flex-end {
+.flexEnd {
   align-content: center;
   align-items: center;
   justify-content: end;
   justify-items: end;
 }
 
-.iron-btn {
+.ironBtn {
   display: flex;
   flex-wrap: nowrap;
   gap: var(--ironsworn-spacer-sm);
@@ -87,18 +87,18 @@
     pointer-events: none;
   }
 
-  &.vertical-button {
+  &.verticalBtn {
     flex-direction: column;
     line-height: 1.25;
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
   }
 }
 
-.button-text {
+.btnText {
   display: inline;
   border-width: 0;
 
-  &.vertical-text {
+  &.verticalText {
     display: inherit;
     width: max-content;
     line-height: inherit;
@@ -110,7 +110,7 @@
   }
 }
 
-.icon-only {
+.iconOnly {
   box-sizing: content-box;
   flex-direction: row;
   align-content: center;
@@ -122,13 +122,13 @@
   aspect-ratio: 1;
 }
 
-.clickable-text {
+.clickableText {
   @include clickable.text;
 
   line-height: var(--ironsworn-line-height);
 }
 
-.clickable-block {
+.clickableBlock {
   @include clickable.block;
 
   &:hover:not(:focus) {

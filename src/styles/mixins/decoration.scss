@@ -1,10 +1,20 @@
 @mixin ironsworn {
+  --ironsworn-asset-ability-bullet-checked: fa:circle;
+  --ironsworn-asset-ability-bullet-unchecked: fa:circle;
+  --ironsworn-asset-ability-bullet-checked-classes: fa-solid;
+  --ironsworn-asset-ability-bullet-unchecked-classes: fa-regular;
+
   .asset-ironsworn .asset-ability::before {
     border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-fg);
   }
 }
 
 @mixin starforged {
+  --ironsworn-asset-ability-bullet-checked: fa:hexagon;
+  --ironsworn-asset-ability-bullet-unchecked: fa:hexagon;
+  --ironsworn-asset-ability-bullet-checked-classes: fa-solid fa-rotate-90;
+  --ironsworn-asset-ability-bullet-unchecked-classes: fa-regular fa-rotate-90;
+
   .asset-ironsworn .asset-ability::before {
     border-width: var(--ironsworn-border-width-md);
     border-style: solid;
@@ -56,3 +66,5 @@
     );
   }
 }
+
+
