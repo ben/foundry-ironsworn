@@ -14,7 +14,12 @@ const config: UserConfig = {
     vue(),
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), 'system/assets/icons')],
+      customDomId: 'ironsworn-sprites',
+      iconDirs: [
+        path.resolve(process.cwd(), 'system/assets/icons'),
+
+        path.resolve(process.cwd(), 'system/assets/misc'),
+      ],
       symbolId: 'ironsworn-[dir]-[name]',
     }),
   ],
