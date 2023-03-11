@@ -79,6 +79,7 @@ module.exports = {
             resolveNestedSelectors: true,
           },
         ],
+        'custom-property-empty-line-before': null,
       },
     },
 
