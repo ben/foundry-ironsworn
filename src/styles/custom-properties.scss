@@ -89,7 +89,7 @@
   --ironsworn-input-border-style: solid;
 
   // Transitions
-  --ironsworn-transition-duration: 0.5s;
+  --ironsworn-transition-duration: 400ms;
   --ironsworn-transition-timing-function: ease;
 
   // for later use as a mixin to scope transitions to colors effects only.
@@ -102,7 +102,7 @@
 
   // Tabs
   --ironsworn-tab-transition: fade;
-  --ironsworn-tab-transition-duration: var(--ironsworn-transition-timing);
+  --ironsworn-tab-transition-duration: var(--ironsworn-transition-duration);
 
   // FontAwesome
   --fa-display: inline-block;

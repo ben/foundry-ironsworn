@@ -50,7 +50,7 @@
   &::before {
     --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
 
-    transition: opacity 0.4s ease;
+    transition: opacity var(--ironsworn-transition-timing);
     opacity: 0;
     z-index: 0;
     padding: var(--ironsworn-spacer-sm);

@@ -83,7 +83,7 @@
 }
 
 .movesheet-row {
-  transition: all 0.4s ease;
+  transition: var(--ironsworn-transition);
 }
 
 h4 {

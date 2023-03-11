@@ -30,7 +30,7 @@
 
 <style lang="scss" scoped>
 input {
-  transition: 0.4s ease-out;
+  transition: var(--ironsworn-transition);
 }
 </style>
 

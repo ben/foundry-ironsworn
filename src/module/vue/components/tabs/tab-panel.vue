@@ -30,15 +30,15 @@
 
 <style lang="scss" module>
 .wrapper {
-  --ironsworn-transition-duration: var(--ironsworn-tab-transition-duration);
-
   // improves performance of transform transitions
   backface-visibility: hidden;
   background-color: var(--ironsworn-color-bg);
+  transition-duration: var(--ironsworn-tab-transition-duration);
 }
 </style>
 
 <script lang="ts" setup>
+import { getCssVar } from '../../../../module/vue/composable/getCssVar'
 import { computed, inject, Ref, ref, watch } from 'vue'
 import {
   getSlideTransitionName,
@@ -70,7 +70,7 @@ const props = withDefaults(
 
 const tabState = inject(TabStateKey) as TabState
 
-const $el = ref<HTMLElement>() as Ref<HTMLElement>
+let $el = ref<HTMLElement>() as Ref<HTMLElement>
 const isActive = computed(() => tabState.activeTab === props.tabKey)
 const setActivePanelRef = inject(SetActivePanelRefKey) as SetActivePanelRef
 

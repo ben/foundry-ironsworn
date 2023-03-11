@@ -258,16 +258,7 @@ $icons: (
   .isicon-#{$key},
   .isiconbg-#{$key} {
     &::before {
-      position: absolute;
-      opacity: var(--fa-primary-opacity, 1);
-      color: var(--fa-primary-color, inherit);
-      content: '\e4df';
-    }
-
-    &::after {
-      opacity: var(--fa-secondary-opacity, 0.4);
-      color: var(--fa-secondary-color, inherit);
-      content: '\e4df\e4df';
+      mask-image: url('/assets/icons/#{$key}.svg');
     }
   }
 }
@@ -298,7 +289,6 @@ a[data-pack='foundry-ironsworn.starforgedmoves'] {
 
     &::before {
       display: inline-block;
-      background-color: currentcolor;
       width: var(--ironsworn-icon-size);
       height: var(--ironsworn-icon-size);
     }
