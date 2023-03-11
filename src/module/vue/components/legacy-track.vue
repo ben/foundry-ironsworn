@@ -55,24 +55,26 @@
 }
 
 .legacy-track {
-  --ironsworn-xp-box-border-width: var(--ironsworn-border-width-md);
+  // TODO: repeats progress track variables, because the xp boxes need them to calculate placement (and they aren't direct children of the progress track component... though maybe they should be?)
+  --ironsworn-progress-box-border-radius: var(--ironsworn-border-radius-md);
+  --ironsworn-progress-box-border-width: var(--ironsworn-border-width-md);
+
+  // TODO: replace this with a 4px variable when available
+  --ironsworn-progress-box-gap: 4px;
+  --ironsworn-progress-box-max-size: 50px;
   --ironsworn-legacy-xp-box-size: 15px;
-  --ironsworn-max-progress-box-width: 50px;
-  --ironsworn-max-progress-track-width: calc(
-    var(--ironsworn-max-progress-box-width) * 10 +
-      (var(--ironsworn-progress-box-gap) * 9)
+  --ironsworn-legacy-track-max-width: calc(
+    (
+      (var(--ironsworn-progress-box-max-size) * 10) +
+        (var(--ironsworn-progress-box-gap) * 9)
+    )
   );
-  --ironsworn-progress-box-gap: calc(var(--ironsworn-spacer-xs) * 2);
-  --ironsworn-xp-box-offset: calc(
-    calc(
-        var(--ironsworn-progress-box-gap) + var(--ironsworn-xp-box-border-width)
-      ) / -2
-  );
+  --ironsworn-legacy-xp-border-width: var(--ironsworn-border-width-md);
 
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;
   grid-template-columns: max-content 1fr;
-  max-width: var(--ironsworn-max-progress-track-width);
+  max-width: var(--ironsworn-legacy-track-max-width);
 
   .legacy-track-title {
     grid-row: 1;
@@ -98,11 +100,10 @@
   .legacy-track-progress {
     grid-row: 2 / span 2;
     grid-column: 1 / span 2;
-    max-width: var(--ironsworn-max-progress-track-width);
+    max-width: var(--ironsworn-legacy-track-max-width);
   }
 
   .progress-track {
-    gap: var(--ironsworn-progress-box-gap);
     margin: 0;
   }
 
@@ -111,7 +112,7 @@
 
     // extra padding to allow comfy overlap with xp pips (similar to legacy tracks on the SF character sheet and in the book's illustrations).
     padding-bottom: calc(var(--ironsworn-legacy-xp-box-size) * 0.4);
-    max-width: var(--ironsworn-max-progress-box-width);
+    max-width: var(--ironsworn-progress-box-max-size);
     max-height: unset;
   }
 
@@ -124,26 +125,33 @@
     gap: var(--ironsworn-progress-box-gap);
     justify-self: center;
     width: 100%;
-    max-width: var(--ironsworn-max-progress-track-width);
+    max-width: var(--ironsworn-legacy-track-max-width);
 
     .xp-box {
+      --ironsworn-legacy-xp-box-offset: calc(
+        (
+            var(--ironsworn-progress-box-gap) +
+              var(--ironsworn-legacy-xp-border-width)
+          ) / -2
+      );
+
       z-index: 1;
       margin: 0;
-      border-width: var(--ironsworn-xp-box-border-width);
+      border-width: var(--ironsworn-legacy-xp-border-width);
       width: 100%;
       max-width: var(--ironsworn-legacy-xp-box-size);
 
       &:not(:nth-child(n + 21)) {
         &:nth-child(2n) {
           justify-self: left;
-          margin-left: var(--ironsworn-xp-box-offset);
+          margin-left: var(--ironsworn-legacy-xp-box-offset);
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
         }
 
         &:nth-child(2n + 1) {
           justify-self: right;
-          margin-right: var(--ironsworn-xp-box-offset);
+          margin-right: var(--ironsworn-legacy-xp-box-offset);
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
         }

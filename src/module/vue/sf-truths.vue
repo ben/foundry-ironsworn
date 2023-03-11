@@ -51,7 +51,7 @@ section {
 
 aside {
   gap: var(--ironsworn-spacer-md);
-  border: 1px solid var(--ironsworn-color-cool-70);
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-cool-70);
   border-radius: var(--ironsworn-border-radius-md);
   padding: 0.75em;
 
