@@ -258,7 +258,16 @@ $icons: (
   .isicon-#{$key},
   .isiconbg-#{$key} {
     &::before {
-      mask-image: url('/assets/icons/#{$key}.svg');
+      position: absolute;
+      opacity: var(--fa-primary-opacity, 1);
+      color: var(--fa-primary-color, inherit);
+      content: '\e4df';
+    }
+
+    &::after {
+      opacity: var(--fa-secondary-opacity, 0.4);
+      color: var(--fa-secondary-color, inherit);
+      content: '\e4df\e4df';
     }
   }
 }
@@ -273,6 +282,23 @@ $icons: (
     padding: var(--ironsworn-block-icon-spacer);
 
     &::before {
+      width: var(--ironsworn-icon-size);
+      height: var(--ironsworn-icon-size);
+    }
+  }
+}
+
+// Moves
+a[data-pack='foundry-ironsworn.ironswornmoves'],
+a[data-pack='foundry-ironsworn.starforgedmoves'] {
+  & > i {
+    align-self: center;
+    width: var(--ironsworn-icon-size);
+    height: var(--ironsworn-icon-size);
+
+    &::before {
+      display: inline-block;
+      background-color: currentcolor;
       width: var(--ironsworn-icon-size);
       height: var(--ironsworn-icon-size);
     }

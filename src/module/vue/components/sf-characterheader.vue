@@ -37,6 +37,8 @@
 <style lang="scss" scoped>
 input,
 textarea {
+  border-radius: var(--ironsworn-border-radius-sm);
+  border-color: var(--ironsworn-color-fg-10);
   resize: none;
   font-family: var(--font-primary);
   font-size: inherit;

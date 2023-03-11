@@ -32,14 +32,17 @@
 @use 'mixin:clickable.scss';
 
 .progress-track {
-  --ironsworn-box-border-radius: var(--ironsworn-border-radius-md);
-  --ironsworn-box-border-width: var(--ironsworn-border-width-md);
-  --ironsworn-box-gap: 4px;
+  --ironsworn-progress-box-border-radius: var(--ironsworn-border-radius-md);
+  --ironsworn-progress-box-border-width: var(--ironsworn-border-width-md);
+
+  // TODO: replace this with a 4px variable when available
+  --ironsworn-progress-box-gap: 4px;
+  --ironsworn-progress-box-max-size: 50px;
 
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-auto-flow: column;
-  gap: var(--ironsworn-box-gap);
+  gap: var(--ironsworn-progress-box-gap);
   align-items: center;
   justify-content: center;
 
@@ -49,44 +52,44 @@
 
   .progress-track-box {
     border-radius: var(--ironsworn-box-border-radius);
-    max-width: var(--ironsworn-vertical-slider-width);
-    max-height: var(--ironsworn-vertical-slider-width);
+    max-width: var(--ironsworn-progress-box-max-size);
+    max-height: var(--ironsworn-progress-box-max-size);
   }
 
   &.compact-progress {
+    --ironsworn-progress-box-gap: 0;
+
     display: flex;
     flex-flow: row nowrap;
-    gap: 0;
 
     .progress-track-box {
       flex-basis: 10%;
       margin: 0;
-      border: var(--ironsworn-box-border-width) solid currentcolor;
+      border: var(--ironsworn-progress-box-border-width) solid currentcolor;
       border-radius: 0;
 
       &:first-child {
-        border-radius: var(--ironsworn-box-border-radius) 0 0
-          var(--ironsworn-box-border-radius);
+        border-radius: var(--ironsworn-progress-box-border-radius) 0 0
+          var(--ironsworn-progress-box-border-radius);
       }
 
       &:not(:first-child) {
-        margin-left: calc(var(--ironsworn-box-border-width) / -2);
+        margin-left: calc(var(--ironsworn-progress-box-border-width) / -2);
       }
 
       &:last-child {
-        border-radius: 0 var(--ironsworn-box-border-radius)
-          var(--ironsworn-box-border-radius) 0;
+        border-radius: 0 var(--ironsworn-progress-box-border-radius)
+          var(--ironsworn-progress-box-border-radius) 0;
       }
 
       &:not(:last-child) {
-        margin-right: calc(var(--ironsworn-box-border-width) / -2);
+        margin-right: calc(var(--ironsworn-progress-box-border-width) / -2);
       }
 
       .progress-tick {
-        stroke-width: 1px;
-
         // sets absolute width so compact progress doesn't totally disappear when displayed in the compact format
         vector-effect: non-scaling-stroke;
+        stroke-width: var(--ironsworn-border-width-md);
       }
     }
   }

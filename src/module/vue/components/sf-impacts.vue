@@ -40,7 +40,7 @@
 
 h5 {
   flex-grow: 0;
-  margin: 0.2rem 0;
+  margin: var(--ironsworn-spacer-sm) 0;
 }
 </style>
 

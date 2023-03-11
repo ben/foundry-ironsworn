@@ -39,7 +39,7 @@ h3 {
 textarea.notes {
   flex: 1;
   border-radius: var(--ironsworn-border-radius-sm);
-  border-color: rgb(0 0 0 / 10%);
+  border-color: var(--ironsworn-color-fg-10);
   min-height: 150px;
   resize: none;
   font-family: var(--font-primary);
