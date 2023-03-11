@@ -1,5 +1,5 @@
 /**
- * @type {stylelint.Options}
+ * @type {stylelint.Config}
  */
 module.exports = {
   extends: [

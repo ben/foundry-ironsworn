@@ -23,7 +23,7 @@ async function doit() {
 
       // Load the i18n json file
       const i18njson = JSON.parse(
-        await fs.readFile(`./system/lang/${lang}.json`)
+        (await fs.readFile(`./system/lang/${lang}.json`)).toString()
       )
 
       // Update the entries
