@@ -56,20 +56,6 @@ module.exports = {
       { ignoreFunctions: [/[a-z]+([A-Z][a-z]+)+/] },
     ],
     'rule-empty-line-before': null,
-    /**
-     * Enforces consistent naming for CSS custom properties.
-     *
-     * `ironsworn` - Properties specific to this module. If you're adding a brand new property, it should have this.
-     * `font` - FVTT font properties.
-     * `color` - FVTT color properties.
-     * `form-field` - FVTT form-field properties.
-     * `fa` - FontAwesome properties.
-     *
-     * @example ```less
-     * --ironsworn-custom-property: sqrt(2);
-     * ```
-     */
-    'custom-property-pattern': /(ironsworn|font|color|fa|form-field)-.+/,
     // *theoretically* this would be good to use, but i don't have the patience to do it right now
     'no-descending-specificity': null,
     'string-quotes': ['single'],
@@ -80,6 +66,33 @@ module.exports = {
         resolveNestedSelectors: true,
       },
     ],
+    'import-notation': null,
+    // FIXME workaround required for LESS to lint
+    'no-invalid-position-at-import-rule': null,
+    // FIXME workaround required for LESS to lint
+    'function-no-unknown': null,
+    // FIXME workaround required for LESS to lint
+    'no-duplicate-at-import-rules': null,
+    // FIXME workaround required for LESS to lint
+    'no-invalid-double-slash-comments': null,
+
+    /**
+     * Enforces consistent naming for CSS custom properties.
+     *
+     * `ironsworn` - Properties specific to this module. If you're adding a brand new property, it should probably have this.
+     * `starforged` - An alternative namespace for Starforged specific content. Avoid this and generalize to themes where possible.
+     * `isicon` - Properties that represent the relative URL of a custom icon.
+     * `font` - FVTT font properties.
+     * `color` - FVTT color properties.
+     * `form-field` - FVTT form-field properties.
+     * `fa` - FontAwesome properties.
+     *
+     * @example ```less
+     * --ironsworn-custom-property: sqrt(2);
+     * ```
+     */
+    'custom-property-pattern':
+      '(ironsworn|starforged|isicon|font|color|fa|form-field)-.+',
   },
   overrides: [
     {
@@ -93,10 +106,12 @@ module.exports = {
         'at-rule-no-unknown': null,
         'scss/at-rule-no-unknown': [
           true,
+
           {
             ignoreAtRules: ['value'],
           },
         ],
+        'custom-property-empty-line-before': null,
       },
     },
     {

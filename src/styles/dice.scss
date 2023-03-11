@@ -106,7 +106,7 @@
 
     &.d6::before {
       background-color: var(--ironsworn-dice-background-color);
-      mask-image: url('../../system/assets/icons/d6-blank.svg');
+      mask-image: var(--isicon-d6);
       content: '';
     }
 
@@ -116,7 +116,7 @@
 
     &.d10::before {
       background-color: var(--ironsworn-dice-background-color);
-      mask-image: url('../../system/assets/icons/d10-blank.svg');
+      mask-image: var(--isicon-d10);
       content: '';
     }
 
