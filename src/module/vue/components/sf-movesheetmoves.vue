@@ -98,7 +98,9 @@
   --ironsworn-line-height: var(--ironsworn-line-height-md);
   // FIXME: for some reason, no matter where i set overflow, the focus outline on the list items is clipped. ideally, they shouldn't be!
   overflow-x: clip;
-  overflow-clip-margin: 5px; // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
+  overflow-clip-margin: var(
+    --ironsworn-spacer-md
+  ); // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
 }
 
 .filteredMoveRow {

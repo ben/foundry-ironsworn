@@ -31,7 +31,7 @@
   --ironsworn-checkbox-size: 12px;
 
   flex-basis: var(--ironsworn-checkbox-size);
-  margin: 1px 0;
+  margin: var(--ironsworn-border-width-md) 0;
   line-height: var(--ironsworn-checkbox-size);
   white-space: nowrap;
   font-size: x-small;

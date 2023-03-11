@@ -42,8 +42,8 @@
     background-color: var(--ironsworn-color-clickable-block-bg-hover);
 
     &::before {
-      background-color: ar(--ironsworn-color-fg);
       opacity: 1;
+      background-color: var(--ironsworn-color-fg);
     }
   }
 }
@@ -53,11 +53,10 @@
   .textStrokeMixin();
 
   h4 {
-    font-weight: bold;
-
     margin: 0;
     padding: var(--ironsworn-spacer-sm) 0;
     text-transform: uppercase;
+    font-weight: bold;
   }
 }
 </style>

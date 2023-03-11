@@ -59,7 +59,7 @@
             <span>{{ $t('IRONSWORN.DELVESITE.Denizens') }}</span>
             <IronBtn
               nogrow
-              style="padding: 2px"
+              style="padding: var(--ironsworn-spacer-xs)"
               @click="randomDenizen"
               icon="ironsworn:d10-tilt"
             />

@@ -281,14 +281,15 @@ a[data-pack='foundry-ironsworn.ironsworndelvethemes'] {
   i {
     &::before {
       position: absolute;
-      color: var(--fa-primary-color, inherit);
       opacity: var(--fa-primary-opacity, 1);
+      color: var(--fa-primary-color, inherit);
       content: '\e4df';
     }
+
     &::after {
-      content: '\e4df\e4df';
       opacity: var(--fa-secondary-opacity, 0.4);
       color: var(--fa-secondary-color, inherit);
+      content: '\e4df\e4df';
     }
   }
 }
@@ -297,11 +298,11 @@ a[data-pack='foundry-ironsworn.ironsworndelvethemes'] {
 a[data-pack='foundry-ironsworn.ironswornmoves'],
 a[data-pack='foundry-ironsworn.starforgedmoves'] {
   & > i {
-    height: var(--ironsworn-icon-size);
-    width: var(--ironsworn-icon-size);
     align-self: center;
+    width: var(--ironsworn-icon-size);
+    height: var(--ironsworn-icon-size);
 
-    &:before {
+    &::before {
       display: inline-block;
       background-color: currentcolor;
       width: var(--ironsworn-icon-size);
