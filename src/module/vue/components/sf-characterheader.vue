@@ -38,7 +38,7 @@
 input,
 textarea {
   border-radius: var(--ironsworn-border-radius-sm);
-  border-color: rgb(0 0 0 / 10%);
+  border-color: var(--ironsworn-color-fg-10);
   resize: none;
   font-family: var(--font-primary);
   font-size: inherit;
