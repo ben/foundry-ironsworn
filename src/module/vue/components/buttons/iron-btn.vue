@@ -2,11 +2,11 @@
   <button
     class="iron-btn"
     :class="{
-      [$style.ironBtn]: true,
-      [$style.verticalBtn]: vertical,
+      [$style.btn]: true,
+      [$style.vertical]: vertical,
       [$style.iconOnly]: !hasText,
-      [$style.clickableBlock]: block,
-      [$style.clickableText]: !block,
+      [$style.block]: block,
+      [$style.noBlock]: !block,
       [$style[`flex${capitalize(justify)}`]]: true,
       nogrow,
     }"
@@ -32,10 +32,7 @@
       <span
         v-if="text"
         class="button-text"
-        :class="{
-          [$style.verticalText]: vertical,
-          [$style.text]: true,
-        }"
+        :class="{ [$style.vertical]: vertical, [$style.text]: true }"
         >{{ text }}</span
       >
     </slot>
@@ -65,7 +62,7 @@
   justify-items: end;
 }
 
-.ironBtn {
+.btn {
   display: flex;
   flex-wrap: nowrap;
   gap: var(--ironsworn-spacer-sm);
@@ -87,7 +84,7 @@
     pointer-events: none;
   }
 
-  &.verticalBtn {
+  &:local(.vertical) {
     flex-direction: column;
     line-height: 1.25;
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
@@ -98,7 +95,7 @@
   display: inline;
   border-width: 0;
 
-  &.verticalText {
+  &:local(.vertical) {
     display: inherit;
     width: max-content;
     line-height: inherit;
@@ -122,13 +119,13 @@
   aspect-ratio: 1;
 }
 
-.clickableText {
+.noBlock {
   @include clickable.text;
 
   line-height: var(--ironsworn-line-height);
 }
 
-.clickableBlock {
+.block {
   @include clickable.block;
 
   &:hover:not(:focus) {

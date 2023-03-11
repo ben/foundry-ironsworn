@@ -72,7 +72,7 @@
   }
 }
 
-.toggleButton {
+.toggleBtn {
   background: none;
   padding: var(--ironsworn-spacer-md);
   line-height: 1;

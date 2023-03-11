@@ -6,6 +6,7 @@ import path from 'path'
 import sassChroma from './src/module/plugin/sass-chroma-js'
 import type Sass from 'sass'
 import presetEnv from 'postcss-preset-env'
+import { kebabCase } from 'lodash-es'
 import cssNano from 'cssnano'
 
 const PORT = 30000
@@ -22,7 +23,12 @@ const config: UserConfig = {
     vue(),
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), 'system/assets/icons')],
+      customDomId: 'ironsworn-sprites',
+      iconDirs: [
+        path.resolve(process.cwd(), 'system/assets/icons'),
+
+        path.resolve(process.cwd(), 'system/assets/misc'),
+      ],
       symbolId: 'ironsworn-[dir]-[name]',
     }),
   ],
@@ -68,6 +74,12 @@ const config: UserConfig = {
     },
     postcss: {
       plugins: [presetEnv(), cssNano()],
+    },
+    modules: {
+      generateScopedName(className, filename, _) {
+        const [file] = path.basename(filename).split('.')
+        return kebabCase(file) + '__' + kebabCase(className)
+      },
     },
   },
   build: {

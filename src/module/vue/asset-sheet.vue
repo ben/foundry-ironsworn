@@ -35,7 +35,7 @@
           :text="$t('IRONSWORN.Track')"
         />
       </TabList>
-      <TabPanels>
+      <TabPanels :class="$style.tabPanels">
         <TabPanel tab-key="description" class="flexcol">
           <AssetEditDescription />
         </TabPanel>

@@ -40,7 +40,7 @@
           :move="move"
           ref="allMoves"
           :thematicColor="move.color"
-          :class="$style.filteredItem"
+          :class="$style.filteredResult"
         />
       </li>
     </ul>
@@ -105,7 +105,7 @@
   // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
 }
 
-.filteredItem {
+.filteredResult {
   border-radius: var(--ironsworn-border-radius-lg);
 }
 </style>

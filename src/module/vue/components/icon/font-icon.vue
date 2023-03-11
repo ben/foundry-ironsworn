@@ -2,7 +2,7 @@
   <component
     :is="el"
     :class="{
-      [$style.icon]: true,
+      [$style.wrapper]: true,
       [$style.border]: border && !!$style.border,
       [$style.animation]: animation && !!$style.animation,
       ...classes,
@@ -15,7 +15,7 @@
 
 <style lang="scss" module>
 @use 'mixin:icon.scss';
-.icon {
+.wrapper {
   @include icon.fontIcon;
 }
 

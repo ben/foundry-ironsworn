@@ -71,7 +71,7 @@
   color: var(--ironsworn-color-fg);
 }
 
-.sfMoveRow {
+.wrapper {
   --ironsworn-line-height: (--ironsworn-line-height-md);
 
   position: relative;
@@ -89,7 +89,7 @@
     var(--ironsworn-spacer-md);
 }
 
-.moveButton {
+.btn {
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
   @include clickable.text;
@@ -99,7 +99,7 @@
   font-size: var(--font-size-20);
 }
 
-.toggleButton {
+.toggleBtn {
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
 
