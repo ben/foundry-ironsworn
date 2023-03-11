@@ -252,8 +252,9 @@ i {
 
 each(@icons, {
   @iconName: e(%('isicon-%s', @key));
+  @iconNameBg: e(%('isiconbg-%s', @key));
   @var: e(%('var(--%s)', @iconName));
-  .@{iconName} {
+  .@{iconName}, .@{iconNameBg} {
       &::before {
       // FIXME: workaround to avoid vite inlining these as base64. can be done the normal way once this issue is resolved: https://github.com/vitejs/vite/pull/9734
 
