@@ -5,7 +5,8 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import sassChroma from './src/module/plugin/sass-chroma-js'
 import type Sass from 'sass'
-import postcssPresetEnv from 'postcss-preset-env'
+import presetEnv from 'postcss-preset-env'
+import cssNano from 'cssnano'
 
 const PORT = 30000
 
@@ -66,7 +67,7 @@ const config: UserConfig = {
       scss: sassOptions,
     },
     postcss: {
-      plugins: [postcssPresetEnv()],
+      plugins: [presetEnv(), cssNano()],
     },
   },
   build: {
