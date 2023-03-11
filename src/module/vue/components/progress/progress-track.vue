@@ -51,7 +51,7 @@
   }
 
   .progress-track-box {
-    border-radius: var(--ironsworn-box-border-radius);
+    border-radius: var(--ironsworn-progress-box-border-radius);
     max-width: var(--ironsworn-progress-box-max-size);
     max-height: var(--ironsworn-progress-box-max-size);
   }
