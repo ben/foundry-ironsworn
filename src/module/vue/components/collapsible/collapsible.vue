@@ -34,7 +34,7 @@
               <FontIcon
                 v-if="icon"
                 :name="icon"
-                :class="$style.toggleButton"
+                :class="$style.toggleBtn"
                 :size="FontAwesome.Size['xs']"
               />
             </slot>
@@ -67,7 +67,7 @@
         role="region"
         :aria-labelledby="controlId"
         :id="contentId"
-        :class="[contentWrapperClass, $style.contentWrapper]"
+        :class="[contentWrapperClass, $style.content]"
         ref="$contentWrapper"
       >
         <slot name="default"></slot>
@@ -81,11 +81,11 @@
   // TODO: horizontal and vertical versions
 }
 
-.contentWrapper {
+.content {
   // TODO: horizontal and vertical versions
 }
 
-.toggleButton {
+.toggleBtn {
   display: flex;
   transition: transform 0.4s;
   margin-left: var(--ironsworn-spacer-xs);

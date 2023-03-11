@@ -2,11 +2,11 @@
   <button
     class="iron-btn"
     :class="{
-      [$style.ironBtn]: true,
-      [$style.verticalButton]: vertical,
+      [$style.btn]: true,
+      [$style.vertical]: vertical,
       [$style.iconOnly]: !hasText,
-      [$style.clickableBlock]: block,
-      [$style.clickableText]: !block,
+      [$style.block]: block,
+      [$style.noBlock]: !block,
       [$style[`flex${capitalize(justify)}`]]: true,
       nogrow,
     }"
@@ -32,7 +32,7 @@
       <span
         v-if="text"
         class="button-text"
-        :class="{ [$style.verticalText]: vertical, [$style.buttonText]: true }"
+        :class="{ [$style.vertical]: vertical, [$style.text]: true }"
         >{{ text }}</span
       >
     </slot>
@@ -42,28 +42,29 @@
 @import (reference) '../../../../styles/utils.less';
 @import (reference) '../../../../styles/mixins.less';
 
-.flexStart {
+.flexStart,
+.flexCenter,
+.flexEnd {
   align-content: center;
   align-items: center;
+}
+
+.flexStart {
   justify-content: start;
   justify-items: start;
 }
 
 .flexCenter {
-  align-content: center;
-  align-items: center;
   justify-content: center;
   justify-items: center;
 }
 
 .flexEnd {
-  align-content: center;
-  align-items: center;
   justify-content: end;
   justify-items: end;
 }
 
-.ironBtn {
+.btn {
   display: flex;
   flex-wrap: nowrap;
   gap: var(--ironsworn-spacer-sm);
@@ -80,12 +81,21 @@
     pointer-events: none;
   }
 
-  &.verticalButton {
+  &:local(.vertical) {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     line-height: 1.25;
+  }
 
-    .verticalText.buttonText {
+  .text {
+    display: inline;
+    border-width: 0;
+
+    strong {
+      white-space: nowrap;
+    }
+
+    &:local(.vertical) {
       .vertical-text();
 
       display: inherit;
@@ -93,15 +103,6 @@
       line-height: inherit;
       writing-mode: vertical-lr !important;
     }
-  }
-}
-
-.buttonText {
-  display: inline;
-  border-width: 0;
-
-  strong {
-    white-space: nowrap;
   }
 }
 
@@ -117,13 +118,13 @@
   aspect-ratio: 1;
 }
 
-.clickableText {
+.noBlock {
   .clickableTextMixin();
 
   line-height: var(--ironsworn-line-height);
 }
 
-.clickableBlock {
+.block {
   .clickableBlockMixin();
 
   &:hover:not(:focus) {
@@ -194,11 +195,11 @@ const $style = useCssModule()
 
 const classes = computed(() => {
   return {
-    [$style.ironBtn]: true,
-    [$style.verticalButton]: props.vertical,
+    [$style.btn]: true,
+    [$style.vertical]: props.vertical,
     [$style.iconOnly]: !hasText,
-    [$style.clickableBlock]: props.block,
-    [$style.clickableText]: !props.block,
+    [$style.block]: props.block,
+    [$style.noBlock]: !props.block,
     [$style[`flex${capitalize(justify.value)}`]]: true,
     nogrow: props.nogrow,
   }

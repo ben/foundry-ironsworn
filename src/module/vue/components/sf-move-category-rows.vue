@@ -2,7 +2,7 @@
   <Collapsible
     class="list-block"
     :class="$style.wrapper"
-    :toggleButtonClass="$style.toggleButton"
+    :toggleButtonClass="$style.toggleBtn"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
     :toggleWrapperClass="$style.toggleWrapper"
@@ -75,7 +75,7 @@
   }
 }
 
-.toggleButton {
+.toggleBtn {
   background: none;
 }
 

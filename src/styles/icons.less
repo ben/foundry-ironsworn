@@ -251,10 +251,20 @@ i {
 };
 
 each(@icons, {
-  .isicon-@{key}, .isiconbg-@{key} {
-    &:before {
-      mask-image: url('../../system/assets/icons/@{key}.svg');
-  }}
+  @iconName: e(%('isicon-%s', @key));
+  @iconNameBg: e(%('isiconbg-%s', @key));
+  @var: e(%('var(--%s)', @iconName));
+  .@{iconName}, .@{iconNameBg} {
+      &::before {
+      // FIXME: workaround to avoid vite inlining these as base64. can be done the normal way once this issue is resolved: https://github.com/vitejs/vite/pull/9734
+
+      mask-image: @var;
+    }
+  }
+  // :root {
+    // this gets rendered within another selector
+  --@{iconName}: e(%('url(/assets/icons/%a.svg)', @key));
+  // }
 });
 
 // FVTT doesn't get subtype icons from items in compendium packs, so we override them depending on the pack
@@ -311,7 +321,7 @@ a[data-pack='foundry-ironsworn.starforgedmoves'] {
       mask-repeat: no-repeat;
       mask-position: center;
       mask-size: contain;
-      mask-image: url('../../system/assets/icons/d10-tilt.svg');
+      mask-image: var(--isicon-d10-tilt);
     }
   }
 }

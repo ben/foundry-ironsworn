@@ -30,8 +30,8 @@
     "@typescript-eslint/parser": "^5.53.0",
     "@typescript/analyze-trace": "^0.10.0",
     "@vitejs/plugin-vue": "^4.0.0",
-    "autoprefixer": "^10.4.8",
     "buffer": "^6.0.3",
+    "cssnano": "^5.1.15",
     "dataforged": "^1.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
@@ -44,6 +44,7 @@
     "postcss": "^8.4.21",
     "postcss-html": "^1.5.0",
     "postcss-less": "^6.0.0",
+    "postcss-preset-env": "^8.0.1",
     "prettier": "^2.8.4",
     "sha.js": "^2.4.11",
     "stylelint": "^14.16.1",
@@ -61,11 +62,6 @@
     "vue2-animate": "^2.1.4"
   },
   "browserslist": [
-    "defaults",
-    "not ie < 11",
-    "last 2 versions",
-    "> 1%",
-    "iOS 7",
-    "last 3 iOS versions"
+    "defaults"
   ]
 }

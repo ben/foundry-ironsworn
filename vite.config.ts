@@ -1,9 +1,11 @@
 import type { UserConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import autoprefixer from 'autoprefixer'
 import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
+import { kebabCase } from 'lodash-es'
+import cssnano from 'cssnano'
+import presetEnv from 'postcss-preset-env'
 
 const PORT = 30000
 
@@ -12,7 +14,12 @@ const config: UserConfig = {
     vue(),
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
     createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), 'system/assets/icons')],
+      customDomId: 'ironsworn-sprites',
+      iconDirs: [
+        path.resolve(process.cwd(), 'system/assets/icons'),
+
+        path.resolve(process.cwd(), 'system/assets/misc'),
+      ],
       symbolId: 'ironsworn-[dir]-[name]',
     }),
   ],
@@ -43,7 +50,13 @@ const config: UserConfig = {
       },
     },
     postcss: {
-      plugins: [autoprefixer()],
+      plugins: [presetEnv(), cssnano()],
+    },
+    modules: {
+      generateScopedName(className, filename, _) {
+        const [file] = path.basename(filename).split('.')
+        return kebabCase(file) + '__' + kebabCase(className)
+      },
     },
   },
   build: {
