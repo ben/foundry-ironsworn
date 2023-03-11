@@ -59,7 +59,9 @@ module.exports = {
         /**
          * Enforces consistent naming for CSS custom properties.
          *
-         * `ironsworn` - Properties specific to this module. If you're adding a brand new property, it should have this.
+         * `ironsworn` - Properties specific to this module. If you're adding a brand new property, it should probably have this.
+         * `starforged` - An alternative namespace for Starforged specific content. Avoid this and generalize to themes where possible.
+         * `isicon` - Properties that represent the relative URL of a custom icon.
          * `font` - FVTT font properties.
          * `color` - FVTT color properties.
          * `form-field` - FVTT form-field properties.
@@ -69,7 +71,8 @@ module.exports = {
          * --ironsworn-custom-property: sqrt(2);
          * ```
          */
-        'custom-property-pattern': '(ironsworn|font|color|fa|form-field)-.+',
+        'custom-property-pattern':
+          '(ironsworn|starforged|isicon|font|color|fa|form-field)-.+',
         // *theoretically* this would be good to use, but i don't have the patience to do it right now
         'no-descending-specificity': null,
         'string-quotes': ['single'],
