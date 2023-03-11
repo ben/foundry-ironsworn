@@ -2,7 +2,7 @@
   <Collapsible
     v-bind="$props.collapsible"
     class="movesheet-row"
-    :class="$style.sfMoveRow"
+    :class="$style.wrapper"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
@@ -10,7 +10,7 @@
     :toggleWrapperIs="`h${headingLevel}`"
     :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
     :icon="null"
-    :toggleButtonClass="['bordered', $style.toggleButton, toggleButtonClass]"
+    :toggleButtonClass="['bordered', $style.toggleBtn, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
     :toggleWrapperClass="$style.toggleWrapper"
     :toggleLabel="move?.displayName"
@@ -19,7 +19,7 @@
   >
     <template #after-toggle>
       <section
-        :class="$style.moveControls"
+        :class="$style.controls"
         class="nogrow"
         data-tooltip-direction="UP"
         data-tourid="move-buttons"
@@ -27,29 +27,29 @@
         <BtnRollmove
           :disabled="!canRoll"
           :move="move"
-          :class="$style.moveButton"
+          :class="$style.btn"
           :override-click="onRollClick !== undefined"
           @click="$emit('rollClick')"
         />
         <BtnOracle
           :node="data.oracles[0] ?? {}"
           :disabled="preventOracle"
-          :class="$style.moveButton"
+          :class="$style.btn"
           :override-click="onOracleClick !== undefined"
           @click="$emit('oracleClick')"
         />
-        <BtnSendmovetochat :move="move" :class="$style.moveButton" />
+        <BtnSendmovetochat :move="move" :class="$style.btn" />
       </section>
     </template>
     <template #default>
       <RulesTextMove
         @moveclick="moveClick"
         :move="move"
-        :class="$style.moveSummary"
+        :class="$style.summary"
       >
         <template #after-footer>
           <OracleTreeNode
-            :class="$style.moveOracle"
+            :class="$style.oracle"
             v-for="node of data.oracles"
             :key="node.displayName"
             :node="node"
@@ -68,7 +68,7 @@
   color: var(--ironsworn-color-fg);
 }
 
-.sfMoveRow {
+.wrapper {
   --ironsworn-line-height: (--ironsworn-line-height-md);
 
   position: relative;
@@ -81,12 +81,12 @@
   }
 }
 
-.moveSummary {
+.summary {
   padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
     var(--ironsworn-spacer-md);
 }
 
-.moveButton {
+.btn {
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
   .clickableTextMixin();
@@ -96,7 +96,7 @@
   aspect-ratio: 1 !important;
 }
 
-.toggleButton {
+.toggleBtn {
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
 
@@ -122,7 +122,7 @@
   color: var(--ironsworn-color-fg);
 }
 
-.moveControls {
+.controls {
   display: flex;
   flex-flow: row;
   background: none;
@@ -143,7 +143,7 @@
   }
 }
 
-.moveOracle {
+.oracle {
   border-width: var(--ironsworn-border-width-md);
   border-style: solid;
   border-radius: var(--ironsworn-border-radius-sm);

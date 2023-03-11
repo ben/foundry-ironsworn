@@ -25,7 +25,7 @@
       <CollapseTransition>
         <RulesTextOracle
           v-if="state.descriptionExpanded"
-          :class="$style.oracleContent"
+          :class="$style.content"
           @moveclick="moveclick"
           @oracleclick="oracleclick"
           :oracle-table="node.tables[0]"
@@ -71,7 +71,7 @@
 </template>
 
 <style lang="less" module>
-.oracleContent {
+.content {
   margin: var(--ironsworn-spacer-sm);
 }
 </style>

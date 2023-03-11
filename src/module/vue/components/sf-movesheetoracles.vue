@@ -1,6 +1,6 @@
 <template>
   <div class="flexcol" :class="$style.wrapper">
-    <div class="flexrow nogrow" :class="$style.navSearch">
+    <div class="flexrow nogrow" :class="$style.nav">
       <input
         type="text"
         :placeholder="
@@ -13,19 +13,19 @@
         icon="fa:xmark-circle"
         class="nogrow"
         @click="clearSearch"
-        :class="$style.searchBtn"
+        :class="$style.btn"
         style="padding: 6px"
       />
       <IronBtn
         icon="fa:down-left-and-up-right-to-center"
         class="nogrow"
         @click="collapseAll"
-        :class="$style.searchBtn"
+        :class="$style.btn"
         style="padding: 6px"
       />
     </div>
 
-    <div class="item-list scrollable flexcol" :class="$style.itemList">
+    <div class="item-list scrollable flexcol" :class="$style.list">
       <OracleTreeNode
         v-for="node in treeRoot.children"
         :key="node.displayName"
@@ -41,11 +41,11 @@
   gap: var(--ironsworn-spacer-lg);
 }
 
-.navSearch {
+.nav {
   margin-top: var(--ironsworn-spacer-lg);
 }
 
-.itemList {
+.list {
   padding: 0 var(--ironsworn-spacer-lg);
 }
 </style>

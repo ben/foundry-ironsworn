@@ -6,10 +6,7 @@
       :progress-stars="true"
       ref="$connectionList"
     />
-    <section
-      :class="$style.listControls"
-      class="progress-controls flexrow nogrow"
-    >
+    <section :class="$style.controls" class="progress-controls flexrow nogrow">
       <IronBtn
         icon="fa:plus"
         block
@@ -20,7 +17,7 @@
   </article>
 </template>
 <style lang="less" module>
-.listControls {
+.controls {
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 </style>

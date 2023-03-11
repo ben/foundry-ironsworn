@@ -1,6 +1,6 @@
 <template>
   <article class="flexcol" :class="$style.wrapper">
-    <nav class="flexrow nogrow" :class="$style.navSearch">
+    <nav class="flexrow nogrow" :class="$style.nav">
       <input
         type="search"
         :placeholder="
@@ -13,14 +13,14 @@
         icon="fa:xmark-circle"
         class="nogrow"
         @click="clearSearch()"
-        :class="$style.searchBtn"
+        :class="$style.btn"
         style="padding: 6px"
       />
       <IronBtn
         icon="fa:down-left-and-up-right-to-center"
         class="nogrow"
         @click="collapseMoveCategories()"
-        :class="$style.searchBtn"
+        :class="$style.btn"
         style="padding: 6px"
       />
     </nav>
@@ -28,7 +28,7 @@
     <ul
       v-if="state.searchQuery"
       class="item-list scrollable flexcol"
-      :class="$style.itemList"
+      :class="$style.list"
     >
       <!-- Flat search results -->
       <li
@@ -40,12 +40,12 @@
           :move="move"
           ref="allMoves"
           :thematicColor="move.color"
-          :class="$style.filteredMoveRow"
+          :class="$style.filteredResult"
         />
       </li>
     </ul>
 
-    <ul v-else class="item-list scrollable flexcol" :class="$style.itemList">
+    <ul v-else class="item-list scrollable flexcol" :class="$style.list">
       <!-- Categorized moves if not searching -->
       <li
         v-for="(category, catIndex) in state.categories"
@@ -54,7 +54,7 @@
       >
         <SfMoveCategoryRows
           class="nogrow"
-          :class="$style.categoryList"
+          :class="$style.catList"
           :category="category"
           ref="allCategories"
           :data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
@@ -65,11 +65,11 @@
 </template>
 
 <style lang="less" module>
-.navSearch {
+.nav {
   margin-top: var(--ironsworn-spacer-lg);
 }
 
-.searchBtn {
+.btn {
   aspect-ratio: 1;
   flex: 0;
   // padding: 6px;
@@ -85,7 +85,7 @@
   gap: var(--ironsworn-spacer-lg);
 }
 
-.itemList {
+.list {
   scroll-behavior: smooth;
   scroll-snap-type: mandatory;
   scroll-snap-align: start;
@@ -93,7 +93,7 @@
   margin: 0;
 }
 
-.categoryList {
+.catList {
   // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
   --ironsworn-line-height: var(--ironsworn-line-height-md);
   // FIXME: for some reason, no matter where i set overflow, the focus outline on the list items is clipped. ideally, they shouldn't be!
@@ -103,7 +103,7 @@
   ); // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
 }
 
-.filteredMoveRow {
+.filteredResult {
   border-radius: var(--ironsworn-border-radius-lg);
 }
 </style>

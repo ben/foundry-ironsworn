@@ -1,5 +1,5 @@
 <template>
-  <article :class="$style.sfLegacies" class="sf-legacies flexcol">
+  <article :class="$style.wrapper" class="sf-legacies flexcol">
     <section class="legacy-tracks flexcol" :class="$style.legacyTracks">
       <LegacyTrack
         v-for="legacy in ['quests', 'bonds', 'discoveries']"
@@ -11,7 +11,7 @@
       />
     </section>
     <section
-      :class="$style.starredProgressTracks"
+      :class="$style.starredProgress"
       class="starred-progress-tracks flexcol"
       v-if="starredProgresses.length"
     >
@@ -26,7 +26,7 @@
   </article>
 </template>
 <style lang="less" module>
-.sfLegacies {
+.wrapper {
   gap: var(--ironsworn-spacer-md);
 
   > *:not(:first-child) {
@@ -35,7 +35,7 @@
   }
 }
 
-.starredProgressTracks {
+.starredProgress {
   gap: var(--ironsworn-spacer-md);
   padding: var(--ironsworn-spacer-md) 0;
 }

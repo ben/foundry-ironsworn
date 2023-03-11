@@ -1,12 +1,12 @@
 <template>
-  <div class="flexcol" :class="$style.siteSheet">
+  <div class="flexcol" :class="$style.sheet">
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="data.actor" />
     <div class="flexrow nogrow" :class="$style.main">
-      <div class="flexcol" :class="$style.leftColumn">
+      <div class="flexcol" :class="$style.leftCol">
         <!-- RANK -->
-        <article :class="$style.progressWidget">
-          <div class="flexrow nogrow" :class="$style.rankRow">
+        <article :class="$style.progress">
+          <div class="flexrow nogrow" :class="$style.progressTopRow">
             <RankPips
               :current="data.actor.system.rank"
               class="nogrow"
@@ -54,7 +54,7 @@
           </div>
         </div>
         <!-- DENIZENS -->
-        <article :class="$style.denizenMatrix">
+        <article :class="$style.matrix">
           <h2 class="flexrow nogrow" :class="$style.heading">
             <span>{{ $t('IRONSWORN.DELVESITE.Denizens') }}</span>
             <IronBtn
@@ -93,7 +93,7 @@
           </div>
         </article>
       </div>
-      <div class="scrollable flexcol" :class="$style.rightColumn">
+      <div class="scrollable flexcol" :class="$style.rightCol">
         <SiteMoves class="nogrow" />
       </div>
     </div>
@@ -120,11 +120,11 @@
 </template>
 
 <style lang="less" module>
-.siteSheet {
+.sheet {
   gap: 0.5em;
 }
 
-.rankRow {
+.progressTopRow {
   gap: var(--ironsworn-spacer-lg);
 }
 
@@ -138,7 +138,7 @@
   font-size: var(--font-size-14);
 }
 
-.denizenMatrix {
+.matrix {
   // TODO: extract this as its own component
 }
 
@@ -150,12 +150,12 @@
   height: max-content;
 }
 
-.rightColumn {
+.rightCol {
   flex-basis: 12em;
   max-height: 411px;
 }
 
-.leftColumn {
+.leftCol {
   flex-basis: 20em;
   gap: 1em;
 }

@@ -2,9 +2,9 @@
   <component
     :is="el"
     :class="{
-      [$style.fontIcon]: true,
-      [$style.fontIconBorder]: border && !!$style.fontIconBorder,
-      [$style.fontIconAnimation]: animation && !!$style.fontIconAnimation,
+      [$style.wrapper]: true,
+      [$style.border]: border && !!$style.border,
+      [$style.animation]: animation && !!$style.animation,
       ...classes,
     }"
     :aria-label="label"
@@ -14,7 +14,7 @@
 </template>
 
 <style lang="less" module>
-.fontIcon {
+.wrapper {
   display: flex;
   position: relative;
   justify-content: center;
@@ -28,13 +28,13 @@
   }
 }
 
-.fontIconBorder {
+.border {
   each(v-bind('borderOptions'), {
     @{key}: @value
   });
 }
 
-.fontIconAnimation {
+.animation {
   each(v-bind('animationOptions'), {
     @{key}: @value;
   });

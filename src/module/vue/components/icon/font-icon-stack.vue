@@ -1,7 +1,7 @@
 <template>
   <component
     :is="el"
-    :class="{ [$style.fontIconStack]: true, 'fa-stack': true }"
+    :class="{ [$style.wrapper]: true, 'fa-stack': true }"
     :aria-label="label"
     :role="label ? 'img' : 'presentational'"
     :aria-hidden="label ? false : true"
@@ -14,7 +14,7 @@
 </template>
 
 <style lang="less" module>
-.fontIconStack {
+.wrapper {
   // TODO
 }
 </style>
