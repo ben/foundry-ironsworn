@@ -71,9 +71,6 @@
   position: relative;
   transition: var(--ironsworn-transition);
   padding: 0 var(--ironsworn-spacer-md);
-
-  &[aria-expanded='true'] {
-  }
 }
 
 .summary {

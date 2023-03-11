@@ -61,7 +61,6 @@
 
 .toggleSection {
   box-sizing: content-box;
-  border-radius: var(--ironsworn-border-radius-lg);
 
   button {
     --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
