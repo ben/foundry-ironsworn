@@ -2,6 +2,9 @@
 
 ## Next Release
 
+- Update move-sheet aesthetics to reduce the use of color a bit ([#672](https://github.com/ben/foundry-ironsworn/pull/672))
+- Under the hood: updated dependencies, and switched to ES modules
+
 ## 1.20.28
 
 - Fix scrollbar width styling

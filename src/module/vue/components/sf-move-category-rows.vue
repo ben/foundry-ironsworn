@@ -46,7 +46,8 @@
   .thematicColorMixin();
 
   border-radius: var(--ironsworn-border-radius-lg);
-  background-color: var(--ironsworn-color-thematic);
+  border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
+  border-left-width: 10px;
 }
 
 .list {
@@ -59,18 +60,15 @@
 
 .toggleWrapper {
   box-sizing: content-box;
-  // background-color: var(--ironsworn-color-thematic);
 }
 
 .toggleSection {
   box-sizing: content-box;
   border-radius: var(--ironsworn-border-radius-lg);
 
-  // height: var(--ironsworn-line-height);
-
   button {
-    --ironsworn-color-clickable-text: var(--ironsworn-color-light);
-    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+    --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
     .clickableTextMixin();
 
     height: inherit;
@@ -78,8 +76,6 @@
 }
 
 .toggleButton {
-  .textStrokeMixin( var(--ironsworn-color-dark));
-
   background: none;
 }
 
