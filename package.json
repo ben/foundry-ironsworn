@@ -32,6 +32,7 @@
     "@vitejs/plugin-vue": "^4.0.0",
     "autoprefixer": "^10.4.8",
     "buffer": "^6.0.3",
+    "cssnano": "^5.1.15",
     "dataforged": "^1.0",
     "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
@@ -61,11 +62,6 @@
     "vue2-animate": "^2.1.4"
   },
   "browserslist": [
-    "defaults",
-    "not ie < 11",
-    "last 2 versions",
-    "> 1%",
-    "iOS 7",
-    "last 3 iOS versions"
+    "defaults"
   ]
 }

@@ -5,6 +5,7 @@ import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
 import { kebabCase } from 'lodash-es'
+import cssnano from 'cssnano'
 
 const PORT = 30000
 
@@ -44,12 +45,10 @@ const config: UserConfig = {
       },
     },
     postcss: {
-      plugins: [autoprefixer()],
+      plugins: [autoprefixer(), cssnano()],
     },
     modules: {
       generateScopedName(className, filename, _) {
-        // const i = css.indexOf('.' + className)
-        // const lineNumber = css.substr(0, i).split(/[\r\n]/).length
         const [file] = path.basename(filename).split('.')
         return kebabCase(file) + '__' + kebabCase(className)
       },
