@@ -65,24 +65,15 @@
 
 .thematicColorMixin {
   --ironsworn-color-thematic: v-bind('thematicColor');
-
-  border-color: var(--ironsworn-color-thematic);
-  background-color: var(--ironsworn-color-thematic);
-  color: var(--ironsworn-color-light);
-}
-
-.cardColorsMixin {
-  border-color: var(--ironsworn-color-thematic);
-  background-color: var(--ironsworn-color-bg);
   color: var(--ironsworn-color-fg);
 }
 
 .sfMoveRow {
   --ironsworn-line-height: (--ironsworn-line-height-md);
-  .thematicColorMixin();
 
   position: relative;
   padding: 0 var(--ironsworn-spacer-md);
+  transition: var(--ironsworn-transition);
 
   &[aria-expanded='true'] {
     padding-top: var(--ironsworn-spacer-md);
@@ -96,8 +87,8 @@
 }
 
 .moveButton {
-  --ironsworn-color-clickable-text: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+  --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
   .clickableTextMixin();
 
   align-self: center;
@@ -106,21 +97,15 @@
 }
 
 .toggleButton {
-  --ironsworn-color-clickable-text: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+  --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
 
   .clickableTextMixin();
-  .textStrokeMixin( var(--ironsworn-color-dark));
   .thematicColorMixin();
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  border: none;
-  border-width: var(--ironsworn-border-width-md)
-    var(--ironsworn-border-width-md) 0 var(--ironsworn-border-width-md);
-  border-style: solid;
-  border-color: transparent;
   background: none;
   padding: 0;
   padding-left: var(--ironsworn-spacer-sm);
@@ -134,10 +119,6 @@
 }
 
 .contentWrapper {
-  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-light);
-  border-radius: 0 var(--ironsworn-border-radius-lg)
-    var(--ironsworn-border-radius-lg) var(--ironsworn-border-radius-lg);
-  background-color: var(--ironsworn-color-bg-80);
   color: var(--ironsworn-color-fg);
 }
 
@@ -155,17 +136,9 @@
 
 .toggleWrapper {
   transition: var(--ironsworn-transition);
-  border: var(--ironsworn-border-width-md) solid transparent;
-  border-bottom-width: 0;
-  border-top-left-radius: var(--ironsworn-border-radius-lg);
-  border-top-right-radius: var(--ironsworn-border-radius-lg);
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
   line-height: 1.5;
 
   header:not(:last-child) & {
-    border-color: var(--ironsworn-color-clickable-block-border-selected);
-    background-color: var(--ironsworn-color-dark);
     color: var(--ironsworn-color-light);
   }
 }
