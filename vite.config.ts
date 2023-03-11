@@ -10,9 +10,6 @@ import cssnano from 'cssnano'
 const PORT = 30000
 
 const config: UserConfig = {
-  build: {
-    assetsInlineLimit: 0,
-  },
   plugins: [
     vue(),
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
