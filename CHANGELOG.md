@@ -2,6 +2,8 @@
 
 ## Next Release
 
+## 1.20.29
+
 - Update move-sheet aesthetics to reduce the use of color a bit ([#672](https://github.com/ben/foundry-ironsworn/pull/672))
 - Fix SVG sizes in Firefox ([#663](https://github.com/ben/foundry-ironsworn/pull/663))
 - Under the hood: updated dependencies and node configs ([#664](https://github.com/ben/foundry-ironsworn/pull/664), [#673](https://github.com/ben/foundry-ironsworn/pull/673))
