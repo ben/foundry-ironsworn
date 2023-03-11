@@ -42,23 +42,24 @@
 @import (reference) '../../../../styles/utils.less';
 @import (reference) '../../../../styles/mixins.less';
 
-.flexStart {
+.flexStart,
+.flexCenter,
+.flexEnd {
   align-content: center;
   align-items: center;
+}
+
+.flexStart {
   justify-content: start;
   justify-items: start;
 }
 
 .flexCenter {
-  align-content: center;
-  align-items: center;
   justify-content: center;
   justify-items: center;
 }
 
 .flexEnd {
-  align-content: center;
-  align-items: center;
   justify-content: end;
   justify-items: end;
 }
