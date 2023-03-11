@@ -105,7 +105,7 @@
 
   @include clickable.text;
 
-  @include color.thematic;
+  // @include color.thematic;
 
   display: flex;
   flex-direction: row;

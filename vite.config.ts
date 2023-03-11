@@ -8,11 +8,12 @@ import type Sass from 'sass'
 import presetEnv from 'postcss-preset-env'
 import { kebabCase } from 'lodash-es'
 import cssNano from 'cssnano'
+import sassIcons, { ICON_DIRS } from './src/module/plugin/custom-icons'
 
 const PORT = 30000
 
 const sassOptions: Sass.LegacyStringOptions<'sync'> = {
-  functions: sassChroma,
+  functions: { ...sassChroma, ...sassIcons },
   // @ts-ignore
   additionalData: '',
 }
@@ -24,11 +25,7 @@ const config: UserConfig = {
     Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
     createSvgIconsPlugin({
       customDomId: 'ironsworn-sprites',
-      iconDirs: [
-        path.resolve(process.cwd(), 'system/assets/icons'),
-
-        path.resolve(process.cwd(), 'system/assets/misc'),
-      ],
+      iconDirs: ICON_DIRS,
       symbolId: 'ironsworn-[dir]-[name]',
     }),
   ],

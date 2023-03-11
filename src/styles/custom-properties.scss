@@ -1,3 +1,5 @@
+@use 'mixin:icon.scss';
+
 :root {
   // typography
   --ironsworn-word-spacing-sm: 0.02em;
@@ -118,4 +120,11 @@
   --starforged-asset-ability-bullet-checked: url('/assets/misc/hex-checkbox-checked.svg');
   --starforged-asset-ability-bullet-unchecked: url('/assets/misc/hex-checkbox-unchecked.svg');
   --starforged-asset-deco: url('/assets/misc/hex-deco.svg');
+
+  // these are configured to make adding them from game-icons.net take as little effort as possible
+  // HOW TO ADD AN ICON FROM GAME-ICONS.NET
+  // 1) use the game-icons studio, turn off the black background
+  // 2) download the icon as an svg and place it in system/assets/icons
+  // 3) that's it. the next time the CSS is rebuilt, the icon's classes and variables will be usable
+  @include icon.buildIcons('system/assets/icons', '/assets/icons');
 }

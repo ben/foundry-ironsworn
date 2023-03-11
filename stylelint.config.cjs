@@ -1,3 +1,5 @@
+const camelCase = /^[a-z]+([A-Z][a-z]+)*$/
+
 /**
  * @type {import('stylelint').Config}
  */
@@ -51,10 +53,7 @@ module.exports = {
     'declaration-block-no-redundant-longhand-properties': null,
     // useful as placeholders when prototyping SFC that will later get styled
     'block-no-empty': null,
-    'function-name-case': [
-      'lower',
-      { ignoreFunctions: [/[a-z]+([A-Z][a-z]+)+/] },
-    ],
+    'function-name-case': ['lower', { ignoreFunctions: [camelCase] }],
     'rule-empty-line-before': null,
     // *theoretically* this would be good to use, but i don't have the patience to do it right now
     'no-descending-specificity': null,
@@ -101,7 +100,8 @@ module.exports = {
         'scss/operator-no-newline-after': null,
         // prefer vanilla CSS variables (a.k.a. custom properties) instead
         'scss/no-dollar-variables': [true],
-        'scss/at-mixin-pattern': /^[a-z]+([A-Z][a-z]+)*$/,
+        'scss/dollar-variable-pattern': camelCase,
+        'scss/at-mixin-pattern': camelCase,
 
         'at-rule-no-unknown': null,
         'scss/at-rule-no-unknown': [
@@ -112,6 +112,28 @@ module.exports = {
           },
         ],
         'custom-property-empty-line-before': null,
+        'scss/dollar-variable-empty-line-before': null,
+        'scss/function-no-unknown': [
+          true,
+          {
+            ignoreFunctions: [
+              'getIconVars',
+              'getIconClasses',
+              'setChannel',
+              'getChannel',
+              'luminance',
+              'lightest',
+              'darkest',
+              'contrast',
+              'mix',
+              'hcl',
+              'lch',
+              'oklch',
+              'scaleSteps',
+              'gamutize',
+            ],
+          },
+        ],
       },
     },
     {
