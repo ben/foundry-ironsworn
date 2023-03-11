@@ -32,7 +32,7 @@
       <span
         v-if="text"
         class="button-text"
-        :class="{ [$style.verticalText]: vertical, [$style.btnText]: true }"
+        :class="{ [$style.vertical]: vertical, [$style.text]: true }"
         >{{ text }}</span
       >
     </slot>
@@ -80,12 +80,21 @@
     pointer-events: none;
   }
 
-  &.vertical {
+  &:local(.vertical) {
     writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
     flex-direction: column;
     line-height: 1.25;
+  }
 
-    .verticalText.btnText {
+  .text {
+    display: inline;
+    border-width: 0;
+
+    strong {
+      white-space: nowrap;
+    }
+
+    &:local(.vertical) {
       .vertical-text();
 
       display: inherit;
@@ -93,15 +102,6 @@
       line-height: inherit;
       writing-mode: vertical-lr !important;
     }
-  }
-}
-
-.btnText {
-  display: inline;
-  border-width: 0;
-
-  strong {
-    white-space: nowrap;
   }
 }
 
