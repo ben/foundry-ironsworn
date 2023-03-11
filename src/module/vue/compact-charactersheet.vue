@@ -44,8 +44,8 @@
 }
 
 .conditions {
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
 
   label {
     flex-grow: 0;
