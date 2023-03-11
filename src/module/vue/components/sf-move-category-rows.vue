@@ -42,9 +42,9 @@
 .wrapper {
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
 
-  border-radius: var(--ironsworn-border-radius-lg);
-  border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
-  border-left-width: 10px;
+  // border-radius: var(--ironsworn-border-radius-lg);
+  // border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
+  // border-left-width: 10px;
 }
 
 .list {
@@ -76,6 +76,7 @@
   background: none;
   padding: var(--ironsworn-spacer-md);
   line-height: 1;
+  padding-left: var(--ironsworn-spacer-sm);
 }
 
 .item {

@@ -51,6 +51,8 @@
         v-for="(category, catIndex) in state.categories"
         :key="catIndex"
         class="nogrow"
+        :class="$style.listItem"
+        :style="`--ironsworn-color-thematic: ${category.color};`"
       >
         <SfMoveCategoryRows
           class="nogrow"
@@ -96,7 +98,24 @@
   margin: 0;
 }
 
+.listItem {
+  border-style: solid;
+  border-color: var(--ironsworn-color-thematic);
+  border-width: var(--ironsworn-border-width-lg);
+  background-color: var(--ironsworn-color-thematic);
+  border-radius: var(--ironsworn-border-radius-lg);
+
+  // padding: var(--ironsworn-border-width-lg);
+  padding-left: var(--ironsworn-spacer-xl);
+}
+
 .catList {
+  background-color: var(--ironsworn-color-bg);
+  border-top-right-radius: var(--ironsworn-border-radius-md);
+  border-bottom-right-radius: var(--ironsworn-border-radius-md);
+  border-top-left-radius: var(--ironsworn-border-radius-lg);
+  border-bottom-left-radius: var(--ironsworn-border-radius-lg);
+
   // FIXME: for some reason, no matter where i set overflow, the focus outline on the list items is clipped. ideally, they shouldn't be!
   overflow-x: clip;
   overflow-clip-margin: var(

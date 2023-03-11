@@ -65,12 +65,6 @@
 @use 'mixin:clickable.scss';
 @use 'mixin:text.scss';
 
-.thematicColorMixin {
-  --ironsworn-color-thematic: v-bind('thematicColor');
-
-  color: var(--ironsworn-color-fg);
-}
-
 .wrapper {
   --ironsworn-line-height: (--ironsworn-line-height-md);
 
@@ -79,8 +73,6 @@
   padding: 0 var(--ironsworn-spacer-md);
 
   &[aria-expanded='true'] {
-    padding-top: var(--ironsworn-spacer-md);
-    padding-bottom: var(--ironsworn-spacer-md);
   }
 }
 
@@ -123,14 +115,12 @@
 }
 
 .contentWrapper {
-  color: var(--ironsworn-color-fg);
 }
 
 .controls {
   display: flex;
   flex-flow: row;
   background: none;
-  color: var(--ironsworn-color-light);
 }
 
 .toggleSection {
@@ -142,10 +132,6 @@
 .toggleWrapper {
   transition: var(--ironsworn-transition);
   line-height: 1.5;
-
-  header:not(:last-child) & {
-    color: var(--ironsworn-color-light);
-  }
 }
 
 .oracle {
