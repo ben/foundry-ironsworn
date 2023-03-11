@@ -43,7 +43,8 @@
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
 
   border-radius: var(--ironsworn-border-radius-lg);
-  background-color: v-bind('thematicColor');
+  border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
+  border-left-width: 10px;
 }
 
 .list {
@@ -63,18 +64,15 @@
   border-radius: var(--ironsworn-border-radius-lg);
 
   button {
-    --ironsworn-color-clickable-text: var(--ironsworn-color-light);
-    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
+    --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
     @include clickable.text;
 
     height: inherit;
   }
 }
 
-.toggleBtn {
-  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-  @include text.stroke;
-
+.toggleButton {
   background: none;
   padding: var(--ironsworn-spacer-md);
   line-height: 1;
