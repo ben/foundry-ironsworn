@@ -2,7 +2,7 @@
 
 ## Next Release
 
-- Under the hood: updated dependencies
+- Under the hood: updated dependencies, and switched to ES modules
 
 ## 1.20.28
 
