@@ -1,5 +1,5 @@
 import type { ChatMessageDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/chatMessageData'
-import { capitalize, compact, get } from 'lodash'
+import { capitalize, compact, get } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import type {
   CharacterDataPropertiesData,

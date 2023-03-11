@@ -1,4 +1,4 @@
-import { fill, range } from 'lodash'
+import { fill, range } from 'lodash-es'
 import {
   NumericRank,
   NumericRankI18nKeys,

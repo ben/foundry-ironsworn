@@ -1,7 +1,5 @@
-const { execSync } = require('child_process')
-const {
-  promises: { readFile, writeFile },
-} = require('fs')
+import { execSync } from 'child_process'
+import { readFile, writeFile } from 'fs/promises'
 
 async function doit() {
   const [_node, script, mode] = process.argv
@@ -12,7 +10,7 @@ async function doit() {
 
   // Read in the system file
   const systemFile = await readFile('./system/system.json')
-  const systemJson = JSON.parse(systemFile)
+  const systemJson = JSON.parse(systemFile.toString())
 
   // Calculate next version
   const { version } = systemJson
@@ -41,7 +39,7 @@ async function doit() {
 
   // Update the changelog
   const changelog = (await readFile('./CHANGELOG.md')).toString()
-  newChangelog = changelog.replace(
+  const newChangelog = changelog.replace(
     '## Next Release',
     `## Next Release\n\n## ${nextVersion}`
   )

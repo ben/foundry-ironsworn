@@ -1,4 +1,4 @@
-import { compact, flatten } from 'lodash'
+import { compact, flatten } from 'lodash-es'
 import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 import type { IronswornItem } from '../item/item'
 import { IronswornRollMessage, OracleRollMessage } from '../rolls'

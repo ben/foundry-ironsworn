@@ -1,4 +1,4 @@
-import { compact } from 'lodash'
+import { compact } from 'lodash-es'
 import { getDFMoveByDfId, getFoundryTableByDfId } from '../dataforged'
 import type { IronswornItem } from '../item/item'
 import type { SFMoveDataPropertiesData } from '../item/itemtypes'

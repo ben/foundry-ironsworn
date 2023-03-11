@@ -17,7 +17,7 @@ const commonPlugins = [
   '@mavrin/stylelint-declaration-use-css-custom-properties',
 ]
 
-/** @type {import('stylelint').Options} */
+/** @type {import('stylelint').Config} */
 module.exports = {
   extends: commonConfigs,
   plugins: commonPlugins,

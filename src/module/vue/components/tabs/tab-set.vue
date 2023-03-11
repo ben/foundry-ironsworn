@@ -11,7 +11,7 @@
 </template>
 
 <script lang="ts" setup>
-import { forEach } from 'lodash'
+import { forEach } from 'lodash-es'
 import { inject, onMounted, provide, reactive } from 'vue'
 import { $LocalEmitterKey } from '../../provisions'
 import {

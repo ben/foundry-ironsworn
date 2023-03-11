@@ -1,5 +1,5 @@
 import type { ActorDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData'
-import _ from 'lodash'
+import { sample } from 'lodash-es'
 import { IronswornActor } from '../actor/actor'
 import { getFoundryTableByDfId } from '../dataforged'
 import { IronswornSettings } from '../helpers/settings'
@@ -73,7 +73,7 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 
     // Roll an Ironlander name
     const tables = await this._ironlanderNameTables()
-    const table = _.sample(tables)
+    const table = sample(tables)
     const drawResult = await table?.draw({ displayChat: false })
 
     this._createWithFolder(

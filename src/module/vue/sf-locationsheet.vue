@@ -193,7 +193,7 @@ label {
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
-import { camelCase, capitalize, flatten, sample } from 'lodash'
+import { camelCase, capitalize, flatten, sample } from 'lodash-es'
 import { provide, computed, reactive, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
 

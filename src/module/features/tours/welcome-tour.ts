@@ -1,4 +1,4 @@
-import { compact } from 'lodash'
+import { compact } from 'lodash-es'
 import { CreateActorDialog } from '../../applications/createActorDialog'
 import { IronswornTour } from './ironsworn_tour'
 

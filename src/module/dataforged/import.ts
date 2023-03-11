@@ -11,7 +11,7 @@ import type {
   Starforged,
 } from 'dataforged'
 import { ironsworn, starforged } from 'dataforged'
-import { isArray, isObject, max } from 'lodash'
+import { isArray, isObject, max } from 'lodash-es'
 import { marked } from 'marked'
 import shajs from 'sha.js'
 import { renderLinksInMove, renderLinksInStr } from '.'

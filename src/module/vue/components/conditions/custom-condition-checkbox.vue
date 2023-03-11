@@ -27,7 +27,7 @@ input[type='text'] {
 </style>
 
 <script lang="ts" setup>
-import { throttle } from 'lodash'
+import { throttle } from 'lodash-es'
 import { computed, inject, nextTick, Ref } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 

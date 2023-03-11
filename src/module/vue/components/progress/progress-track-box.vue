@@ -218,7 +218,7 @@
 }
 </style>
 <script setup lang="ts">
-import { range } from 'lodash'
+import { range } from 'lodash-es'
 import { computed } from 'vue'
 import { IronswornSettings } from '../../../helpers/settings.js'
 

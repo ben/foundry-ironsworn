@@ -12,7 +12,7 @@
     "sourceMap": true,
     "strict": true,
     "allowJs": true,
-    "checkJs": false,
+    "checkJs": true,
     "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "noImplicitAny": false /* Raise error on expressions and declarations with an implied 'any' type. */,

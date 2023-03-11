@@ -1,5 +1,6 @@
-const masterFile = require('../system/lang/en.json')
-const _ = require('lodash')
+import { readFileSync } from 'fs'
+import { isPlainObject, isEmpty, forEach } from 'lodash-es'
+import path from 'path'
 
 // Object manipulation functions adapted from FVTT's source.
 
@@ -15,8 +16,8 @@ function flattenObject(obj, _d = 0) {
     throw new Error('Maximum depth exceeded')
   }
   for (let [k, v] of Object.entries(obj)) {
-    if (_.isPlainObject(v)) {
-      if (_.isEmpty(v)) flat[k] = v
+    if (isPlainObject(v)) {
+      if (isEmpty(v)) flat[k] = v
       let inner = flattenObject(v, _d + 1)
       for (let [ik, iv] of Object.entries(inner)) {
         flat[`${k}.${ik}`] = iv
@@ -32,7 +33,7 @@ function flattenObject(obj, _d = 0) {
  * @param {number} [_d=0]   Track the recursion depth to prevent overflow
  * @return {object}         An expanded object
  */
-function expandObject(obj, _d = 0) {
+export function expandObject(obj, _d = 0) {
   if (_d > 100) throw new Error('Maximum object expansion depth exceeded')
 
   // Recursive expansion function
@@ -67,7 +68,10 @@ function setProperty(object, key, value) {
   // Convert the key to an object reference if it contains dot notation
   if (key.indexOf('.') !== -1) {
     let parts = key.split('.')
-    key = parts.pop()
+    let newKey = parts.pop()
+    if (!newKey)
+      throw new Error(`Couldn't parse key "${key}" into an object path`)
+    key = newKey
     target = parts.reduce((o, i) => {
       if (!Object.prototype.hasOwnProperty.call(o, i)) o[i] = {}
       return o[i]
@@ -96,11 +100,19 @@ const localeKeys = {}
 locales.forEach(
   (locale) =>
     (localeKeys[locale] = new Set(
-      Object.keys(flattenObject(require(`../system/lang/${locale}.json`)))
+      Object.keys(
+        flattenObject(
+          JSON.parse(
+            readFileSync(
+              path.join(process.cwd(), 'system/lang', `${locale}.json`)
+            ).toString()
+          )
+        )
+      )
     ))
 )
 
-_.forEach(localeKeys, (keys, locale) => {
+forEach(localeKeys, (keys, locale) => {
   if (locale !== masterLocale) {
     const masterKeys = localeKeys[masterLocale]
     const extraKeys = difference(keys, masterKeys)
