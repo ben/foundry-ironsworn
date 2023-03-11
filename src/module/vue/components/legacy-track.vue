@@ -54,21 +54,26 @@
   --ironsworn-color-thematic: var(--ironsworn-color-legacy-quests);
 }
 
-@max_progress_box_width: 50px;
-@max_xp_box_size: 15px;
-@xp_box_border_width: var(--ironsworn-border-width-md);
-@progress_box_gap: calc(var(--ironsworn-spacer-xs) * 2);
-@max_progress_track_width: calc(
-  (@max_progress_box_width*10 + (@progress_box_gap*9))
-);
-
 .legacy-track {
-  --ironsworn-legacy-xp-box-size: @max_xp_box_size;
+  // TODO: repeats progress track variables, because the xp boxes need them to calculate placement (and they aren't direct children of the progress track component... though maybe they should be?)
+  --ironsworn-progress-box-border-radius: var(--ironsworn-border-radius-md);
+  --ironsworn-progress-box-border-width: var(--ironsworn-border-width-md);
+  // TODO: replace this with a 4px variable when available
+  --ironsworn-progress-box-gap: 4px;
+  --ironsworn-progress-box-max-size: 50px;
+  --ironsworn-legacy-xp-box-size: 15px;
+  --ironsworn-legacy-track-max-width: calc(
+    (
+      (var(--ironsworn-progress-box-max-size) * 10) +
+        (var(--ironsworn-progress-box-gap) * 9)
+    )
+  );
+  --ironsworn-legacy-xp-border-width: var(--ironsworn-border-width-md);
 
   display: grid;
   grid-template-rows: max-content max-content 0.5em max-content;
   grid-template-columns: max-content 1fr;
-  max-width: @max_progress_track_width;
+  max-width: var(--ironsworn-legacy-track-max-width);
 
   .legacy-track-title {
     grid-row: 1;
@@ -94,19 +99,18 @@
   .legacy-track-progress {
     grid-row: 2 / span 2;
     grid-column: 1 / span 2;
-    max-width: @max_progress_track_width;
+    max-width: var(--ironsworn-legacy-track-max-width);
   }
 
   .progress-track {
-    gap: @progress_box_gap;
     margin: 0;
   }
 
   .progress-track-box {
-    gap: @progress_box_gap;
+    gap: var(--ironsworn-progress-box-gap);
     // extra padding to allow comfy overlap with xp pips (similar to legacy tracks on the SF character sheet and in the book's illustrations).
-    padding-bottom: calc(@max_xp_box_size * 0.4);
-    max-width: @max_progress_box_width;
+    padding-bottom: calc(var(--ironsworn-legacy-xp-box-size) * 0.4);
+    max-width: var(--ironsworn-progress-box-max-size);
     max-height: unset;
   }
 
@@ -116,30 +120,35 @@
     grid-template-columns: repeat(20, 1fr);
     grid-row: 3 / span 2;
     grid-column: 1 / span 2;
-    gap: @progress_box_gap;
+    gap: var(--ironsworn-progress-box-gap);
     justify-self: center;
     width: 100%;
-    max-width: @max_progress_track_width;
+    max-width: var(--ironsworn-legacy-track-max-width);
 
     .xp-box {
+      --ironsworn-legacy-xp-box-offset: calc(
+        (
+            var(--ironsworn-progress-box-gap) +
+              var(--ironsworn-legacy-xp-border-width)
+          ) / -2
+      );
       z-index: 1;
       margin: 0;
-      border-width: @xp_box_border_width;
+      border-width: var(--ironsworn-legacy-xp-border-width);
       width: 100%;
-      max-width: @max_xp_box_size;
-      @xpBoxOffset: calc((@progress_box_gap + @xp_box_border_width) / -2);
+      max-width: var(--ironsworn-legacy-xp-box-size);
 
       &:not(:nth-child(n + 21)) {
         &:nth-child(2n) {
           justify-self: left;
-          margin-left: @xpBoxOffset;
+          margin-left: var(--ironsworn-legacy-xp-box-offset);
           border-top-left-radius: 0;
           border-bottom-left-radius: 0;
         }
 
         &:nth-child(2n + 1) {
           justify-self: right;
-          margin-right: @xpBoxOffset;
+          margin-right: var(--ironsworn-legacy-xp-box-offset);
           border-top-right-radius: 0;
           border-bottom-right-radius: 0;
         }
