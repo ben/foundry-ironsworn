@@ -43,7 +43,7 @@
 
     &::before {
       opacity: 1;
-      background-color: ar(--ironsworn-color-fg);
+      background-color: var(--ironsworn-color-fg);
     }
   }
 }
