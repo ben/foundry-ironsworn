@@ -4,8 +4,7 @@ import autoprefixer from 'autoprefixer'
 import Inspector from 'vite-plugin-vue-inspector'
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import path from 'path'
-import { camelCase, kebabCase } from 'lodash-es'
-import { capitalize } from './src/module/helpers/util'
+import { kebabCase } from 'lodash-es'
 
 const PORT = 30000
 
