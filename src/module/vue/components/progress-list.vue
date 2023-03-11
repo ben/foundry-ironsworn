@@ -3,7 +3,7 @@
     group
     tag="ul"
     class="progress-list item-list"
-    :class="$style['progress-list']"
+    :class="$style.list"
   >
     <li class="flexrow nogrow" v-for="(item, i) in items" :key="item._id">
       <OrderButtons
@@ -25,7 +25,7 @@
 </template>
 
 <style lang="scss" module>
-.progress-list {
+.list {
   gap: var(--ironsworn-spacer-md);
 }
 </style>

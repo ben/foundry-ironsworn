@@ -1,21 +1,21 @@
 <template>
-  <div class="flexrow nogrow" :class="$style['progress-controls']">
+  <div class="flexrow nogrow" :class="$style.controls">
     <IronBtn
-      :class="$style['progress-control-btn']"
+      :class="$style.controlBtn"
       block
       icon="fa:plus"
       @click="addProgressItem('vow')"
       :text="$t('IRONSWORN.ITEM.SubtypeVow')"
     />
     <IronBtn
-      :class="$style['progress-control-btn']"
+      :class="$style.controlBtn"
       block
       icon="fa:plus"
       @click="addProgressItem('progress')"
       :text="$t('IRONSWORN.ITEM.SubtypeProgress')"
     />
     <btn-compendium
-      :class="$style['progress-control-btn']"
+      :class="$style.controlBtn"
       block
       :compendium="props.foeCompendium ?? 'ironswornfoes'"
       :text="$t('IRONSWORN.Foes')"
@@ -23,11 +23,11 @@
   </div>
 </template>
 <style lang="scss" module>
-.progress-controls {
+.controls {
   //
 }
 
-.progress-control-btn {
+.controlBtn {
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 </style>

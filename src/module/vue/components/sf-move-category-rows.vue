@@ -2,30 +2,30 @@
   <Collapsible
     class="list-block"
     :class="$style.wrapper"
-    :toggleButtonClass="$style['toggle-button']"
+    :toggleButtonClass="$style.toggleBtn"
     :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
     :toggleWrapperIs="`h${headingLevel}`"
-    :toggleWrapperClass="$style['toggle-wrapper']"
-    :toggleSectionClass="`${$style['toggle-section']} list-block-header`"
+    :toggleWrapperClass="$style.toggleWrapper"
+    :toggleSectionClass="`${$style.toggleSection} list-block-header`"
     :baseId="`move_category_${snakeCase(category.displayName)}`"
     :toggleLabel="category.displayName"
-    :toggleTextClass="$style['toggle-text']"
+    :toggleTextClass="$style.text"
     ref="$collapsible"
   >
     <template #default>
-      <ul class="flexcol" :class="$style['list']">
+      <ul class="flexcol" :class="$style.list">
         <li
           v-for="(move, i) of category.moves"
           :key="i"
           class="list-block-item nogrow"
-          :class="$style['list-item']"
+          :class="$style.item"
         >
           <SfMoverow
             @afterExpand="afterMoveExpand"
             :move="move"
             ref="$children"
             :headingLevel="headingLevel + 1"
-            :class="$style['move-row']"
+            :class="$style.move"
             thematicColor="transparent"
           />
         </li>
@@ -54,11 +54,11 @@
   list-style: none;
 }
 
-.toggle-wrapper {
+.toggleWrapper {
   box-sizing: content-box;
 }
 
-.toggle-section {
+.toggleSection {
   box-sizing: content-box;
   border-radius: var(--ironsworn-border-radius-lg);
 
@@ -71,7 +71,7 @@
   }
 }
 
-.toggle-button {
+.toggleBtn {
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
   @include text.stroke;
 
@@ -80,11 +80,11 @@
   line-height: 1;
 }
 
-.list-item {
+.item {
   // TODO
 }
 
-.move-row {
+.move {
   &:focus {
     border: 0;
     box-shadow: none;

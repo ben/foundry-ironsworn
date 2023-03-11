@@ -14,7 +14,7 @@
     <!-- Momentum on left -->
     <div
       class="flexcol nogrow"
-      :class="$style['margin-right']"
+      :class="$style.marginRight"
       data-tourid="momentum"
     >
       <MomentumMeterSlider labelPosition="right" data-tooltip-direction="UP" />
@@ -37,7 +37,7 @@
       <TabSet
         :tabKeys="['character', 'notes']"
         :id="`${data.actor._id}-character-sheet-classic`"
-        :class="$style['tab-set']"
+        :class="$style.tabSet"
         :v-slot:icon="{ size: 'sm' }"
         data-tourid="tabs"
       >
@@ -53,7 +53,7 @@
             <IronswornMain />
           </TabPanel>
           <TabPanel tab-key="notes" class="flexcol">
-            <IronswornNotes :class="$style['tab-content']" />
+            <IronswornNotes :class="$style.tabContent" />
           </TabPanel>
         </TabPanels>
       </TabSet>
@@ -67,7 +67,7 @@
     <!-- Stats on right -->
     <PcConditionMeters
       class="flexcol nogrow"
-      :class="$style['margin-left']"
+      :class="$style.marginLeft"
       data-tooltip-direction="UP"
       labelPosition="left"
       data-tourid="resources"
@@ -78,19 +78,19 @@
 <style lang="scss" module>
 @use 'mixin:border.scss';
 
-.margin-left {
+.marginLeft {
   @include border.margin(left);
 }
 
-.margin-right {
+.marginRight {
   @include border.margin(right);
 }
 
-.tab-content {
+.tabContent {
   height: inherit;
 }
 
-.tab-set {
+.tabSet {
   margin-top: var(--ironsworn-spacer-lg);
 }
 </style>

@@ -5,12 +5,7 @@
     class="sf-assets flexcol"
     :class="$style.wrapper"
   >
-    <CollapseTransition
-      tag="ul"
-      class="item-list"
-      :class="$style['asset-list']"
-      group
-    >
+    <CollapseTransition tag="ul" class="item-list" :class="$style.list" group>
       <li class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
         <order-buttons
           v-if="editMode"
@@ -23,7 +18,7 @@
       </li>
     </CollapseTransition>
     <section
-      :class="$style['list-controls']"
+      :class="$style.controls"
       class="flexrow nogrow"
       style="text-align: center"
     >
@@ -38,7 +33,7 @@
 </template>
 
 <style lang="scss" module>
-.list-controls {
+.controls {
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 
@@ -46,7 +41,7 @@
   gap: var(--ironsworn-spacer-md);
 }
 
-.asset-list {
+.list {
   gap: var(--ironsworn-spacer-md);
 }
 </style>

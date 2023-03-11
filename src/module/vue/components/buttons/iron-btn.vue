@@ -34,7 +34,7 @@
         class="button-text"
         :class="{
           [$style.verticalText]: vertical,
-          [$style.btnText]: true,
+          [$style.text]: true,
         }"
         >{{ text }}</span
       >
@@ -94,7 +94,7 @@
   }
 }
 
-.btnText {
+.text {
   display: inline;
   border-width: 0;
 

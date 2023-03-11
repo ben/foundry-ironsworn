@@ -2,10 +2,9 @@
   <component
     :is="el"
     :class="{
-      [$style['font-icon']]: true,
-      [$style['font-icon-border']]: border && !!$style['font-icon-border'],
-      [$style['font-icon-animation']]:
-        animation && !!$style['font-icon-animation'],
+      [$style.icon]: true,
+      [$style.border]: border && !!$style.border,
+      [$style.animation]: animation && !!$style.animation,
       ...classes,
     }"
     :aria-label="label"
@@ -16,11 +15,11 @@
 
 <style lang="scss" module>
 @use 'mixin:icon.scss';
-.font-icon {
+.icon {
   @include icon.fontIcon;
 }
 
-.font-icon-border {
+.border {
   // @each $value, $key in v-bind('borderOptions') {
   //   @if $value {
   //     #{$key}: $value;
@@ -28,7 +27,7 @@
   // }
 }
 
-.font-icon-animation {
+.animation {
   // @each $value, $key in v-bind('animationOptions') {
   //   @if $value {
   //     #{$key}: $value;

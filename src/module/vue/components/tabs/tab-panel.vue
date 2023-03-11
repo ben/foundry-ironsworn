@@ -10,7 +10,7 @@
       v-show="isActive"
       :data-tab-set="tabState.tabSetId"
       :data-tab-key="tabKey"
-      :class="$style['tab-panel']"
+      :class="$style.wrapper"
     >
       <slot></slot>
     </component>
@@ -29,7 +29,7 @@
 </style>
 
 <style lang="scss" module>
-.tab-panel {
+.wrapper {
   --ironsworn-transition-duration: var(--ironsworn-tab-transition-duration);
 
   // improves performance of transform transitions

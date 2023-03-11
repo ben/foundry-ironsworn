@@ -28,6 +28,7 @@ module.exports = {
       'warn',
       { prefer: 'type-imports' },
     ],
+    'dot-notation': 1,
   },
   overrides: [
     {

@@ -11,15 +11,11 @@
   >
     <component
       :is="toggleSectionIs"
-      :class="[toggleSectionClass, $style['toggle-section']]"
+      :class="[toggleSectionClass, $style.toggleSection]"
     >
       <slot name="before-toggle"></slot>
       <component
-        :class="[
-          toggleWrapperClass,
-          $style['toggle-wrapper'],
-          'toggle-wrapper',
-        ]"
+        :class="[toggleWrapperClass, $style.toggleWrapper, 'toggle-wrapper']"
         :is="toggleWrapperIs"
       >
         <IronBtn
@@ -38,7 +34,7 @@
               <FontIcon
                 v-if="icon"
                 :name="icon"
-                :class="$style['toggle-button']"
+                :class="$style.toggleBtn"
                 :size="FontAwesome.Size['xs']"
               />
             </slot>
@@ -71,7 +67,7 @@
         role="region"
         :aria-labelledby="controlId"
         :id="contentId"
-        :class="[contentWrapperClass, $style['content-wrapper']]"
+        :class="[contentWrapperClass, $style.content]"
         ref="$contentWrapper"
       >
         <slot name="default"></slot>
@@ -86,11 +82,11 @@
   // TODO: horizontal and vertical versions
 }
 
-.content-wrapper {
+.content {
   // TODO: horizontal and vertical versions
 }
 
-.toggle-button {
+.toggleBtn {
   display: flex;
   transition: transform 0.4s;
   margin-left: var(--ironsworn-spacer-xs);
@@ -100,14 +96,14 @@
   }
 }
 
-.toggle-wrapper {
+.toggleWrapper {
   display: flex;
   flex-grow: 1;
   margin: 0;
   padding: 0;
 }
 
-.toggle-section {
+.toggleSection {
   display: flex;
 }
 

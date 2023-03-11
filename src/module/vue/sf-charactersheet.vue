@@ -11,7 +11,7 @@
         class="flexcol nogrow"
         style="width: min-content"
         data-tourid="momentum"
-        :class="$style['margin-right']"
+        :class="$style.marginRight"
       >
         <MomentumMeterSlider
           labelPosition="right"
@@ -58,13 +58,13 @@
               <SfLegacies />
             </TabPanel>
             <TabPanel tab-key="assets" class="flexcol">
-              <SfAssets :class="$style['top-padding']" />
+              <SfAssets :class="$style.topPadding" />
             </TabPanel>
             <TabPanel tab-key="progress" class="flexcol">
-              <SfProgresses :class="$style['top-padding']" />
+              <SfProgresses :class="$style.topPadding" />
             </TabPanel>
             <TabPanel tab-key="connections" class="flexcol">
-              <SfConnections :class="$style['top-padding']" />
+              <SfConnections :class="$style.topPadding" />
             </TabPanel>
             <TabPanel tab-key="notes" class="flexcol">
               <SfNotes />
@@ -76,7 +76,7 @@
       <!-- Stats on right -->
       <PcConditionMeters
         class="flexcol"
-        :class="$style['margin-left']"
+        :class="$style.marginLeft"
         data-tooltip-direction="UP"
         labelPosition="left"
         data-tourid="resources"
@@ -93,15 +93,15 @@
 @use 'mixin:border.scss';
 @use 'mixin:clickable.scss';
 
-.margin-right {
+.marginRight {
   @include border.margin(right);
 }
 
-.margin-left {
+.marginLeft {
   @include border.margin(left);
 }
 
-.top-padding {
+.topPadding {
   padding-top: var(--ironsworn-spacer-md);
 }
 </style>

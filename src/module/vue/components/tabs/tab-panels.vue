@@ -5,9 +5,9 @@
     :class="{
       flexcol: tabState.orientation === 'vertical',
       flexrow: tabState.orientation === 'horizontal',
-      [$style['tab-panels']]: true,
-      [$style['tab-panels-horizontal']]: tabState.orientation === 'horizontal',
-      [$style['tab-panels-vertical']]: tabState.orientation === 'vertical',
+      [$style.wrapper]: true,
+      [$style.horizontal]: tabState.orientation === 'horizontal',
+      [$style.vertical]: tabState.orientation === 'vertical',
     }"
   >
     <slot></slot>
@@ -15,17 +15,17 @@
 </template>
 
 <style lang="scss" module>
-.tab-panels {
+.wrapper {
   // ensures that the TabPanels have a recent ancestor for their absolute positioning.
   position: relative;
 }
 
-.tab-panels-horizontal {
+.horizontal {
   // so the animation doesn't encroach on adjacent elements
   overflow-x: clip;
 }
 
-.tab-panels-vertical {
+.vertical {
   // so the animation doesn't encroach on adjacent elements
   overflow-x: clip;
 }

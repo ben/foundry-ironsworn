@@ -2,28 +2,24 @@
   <Collapsible
     v-bind="$props.collapsible"
     class="movesheet-row"
-    :class="$style['sf-move-row']"
+    :class="$style.wrapper"
     data-tooltip-direction="LEFT"
     :baseId="`move_row_${move.moveItem().id}`"
     ref="$collapsible"
-    :contentWrapperClass="$style['content-wrapper']"
+    :contentWrapperClass="$style.content"
     :toggleWrapperIs="`h${headingLevel}`"
-    :toggleSectionClass="[$style['toggle-section'], toggleSectionClass]"
+    :toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
     :icon="null"
-    :toggleButtonClass="[
-      'bordered',
-      $style['toggle-button'],
-      toggleButtonClass,
-    ]"
+    :toggleButtonClass="['bordered', $style.toggleBtn, toggleButtonClass]"
     :toggleTooltip="toggleTooltip"
-    :toggleWrapperClass="$style['toggle-wrapper']"
+    :toggleWrapperClass="$style.toggleWrapper"
     :toggleLabel="move?.displayName"
     :data-move-id="move.moveItem().id"
     :data-move-uuid="move.moveItem().uuid"
   >
     <template #after-toggle>
       <section
-        :class="$style['move-controls']"
+        :class="$style.controls"
         class="nogrow"
         data-tooltip-direction="UP"
         data-tourid="move-buttons"
@@ -31,29 +27,29 @@
         <BtnRollmove
           :disabled="!canRoll"
           :move="move"
-          :class="$style['move-button']"
+          :class="$style.btn"
           :override-click="onRollClick !== undefined"
           @click="$emit('rollClick')"
         />
         <BtnOracle
           :node="data.oracles[0] ?? {}"
           :disabled="preventOracle"
-          :class="$style['move-button']"
+          :class="$style.btn"
           :override-click="onOracleClick !== undefined"
           @click="$emit('oracleClick')"
         />
-        <BtnSendmovetochat :move="move" :class="$style['move-button']" />
+        <BtnSendmovetochat :move="move" :class="$style.btn" />
       </section>
     </template>
     <template #default>
       <RulesTextMove
         @moveclick="moveClick"
         :move="move"
-        :class="$style['move-summary']"
+        :class="$style.summary"
       >
         <template #after-footer>
           <OracleTreeNode
-            :class="$style['move-oracle']"
+            :class="$style.oracle"
             v-for="node of data.oracles"
             :key="node.displayName"
             :node="node"
@@ -69,7 +65,7 @@
 @use 'mixin:clickable.scss';
 @use 'mixin:text.scss';
 
-.sf-move-row {
+.wrapper {
   @include color.thematic(v-bind('thematicColor'));
 
   position: relative;
@@ -81,12 +77,12 @@
   }
 }
 
-.move-summary {
+.summary {
   padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
     var(--ironsworn-spacer-md);
 }
 
-.move-button {
+.btn {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   @include clickable.text;
@@ -96,7 +92,7 @@
   font-size: var(--font-size-20);
 }
 
-.toggle-button {
+.toggleBtn {
   --ironsworn-color-clickable-text: var(--ironsworn-color-light);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-light-warm);
   --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
@@ -127,7 +123,7 @@
   }
 }
 
-.content-wrapper {
+.content {
   border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-light);
   border-radius: 0 var(--ironsworn-border-radius-lg)
     var(--ironsworn-border-radius-lg) var(--ironsworn-border-radius-lg);
@@ -135,20 +131,20 @@
   color: var(--ironsworn-color-fg);
 }
 
-.move-controls {
+.controls {
   display: flex;
   flex-flow: row;
   background: none;
   color: var(--ironsworn-color-light);
 }
 
-.toggle-section {
+.toggleSection {
   display: flex;
   flex-flow: row nowrap;
   gap: var(--ironsworn-spacer-md);
 }
 
-.toggle-wrapper {
+.toggleWrapper {
   transition: var(--ironsworn-transition);
   border: var(--ironsworn-border-width-md) solid transparent;
   border-bottom-width: 0;
@@ -165,7 +161,7 @@
   }
 }
 
-.move-oracle {
+.oracle {
   border-width: var(--ironsworn-border-width-md);
   border-style: solid;
   border-radius: var(--ironsworn-border-radius-sm);

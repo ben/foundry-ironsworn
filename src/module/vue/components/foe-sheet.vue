@@ -8,7 +8,7 @@
       is="div"
       dropType="progress"
       class="flexcol"
-      :class="$style['drop-target']"
+      :class="$style.dropTarget"
     >
       <IronBtn
         v-if="multipleUsers"
@@ -43,7 +43,7 @@
 </template>
 
 <style lang="scss" module>
-.drop-target {
+.dropTarget {
   justify-items: space-around;
   text-align: center;
 

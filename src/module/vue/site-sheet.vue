@@ -1,19 +1,19 @@
 <template>
-  <div class="flexcol" :class="$style['site-sheet']">
+  <div class="flexcol" :class="$style.sheet">
     <!-- HEADER -->
     <SheetHeaderBasic class="nogrow" :document="data.actor" />
     <div class="flexrow nogrow" :class="$style.main">
-      <div class="flexcol" :class="$style['left-column']">
+      <div class="flexcol" :class="$style.leftCol">
         <!-- RANK -->
-        <article :class="$style['progress-widget']">
-          <div class="flexrow nogrow" :class="$style['rank-row']">
+        <article :class="$style.progress">
+          <div class="flexrow nogrow" :class="$style.progressTopRow">
             <RankPips
               :current="data.actor.system.rank"
               class="nogrow"
               @click="setRank"
               :id="`${data.actor._id}_rank`"
             />
-            <label :for="`${data.actor._id}_rank`" :class="$style['rank-label']">{{
+            <label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
               rankText
             }}</label>
             <IronBtn
@@ -54,7 +54,7 @@
           </div>
         </div>
         <!-- DENIZENS -->
-        <article :class="$style['denizen-matrix']">
+        <article :class="$style.matrix">
           <h2 class="flexrow nogrow" :class="$style.heading">
             <span>{{ $t('IRONSWORN.DELVESITE.Denizens') }}</span>
             <IronBtn
@@ -93,7 +93,7 @@
           </div>
         </article>
       </div>
-      <div class="scrollable flexcol" :class="$style['right-column']">
+      <div class="scrollable flexcol" :class="$style.rightCol">
         <SiteMoves class="nogrow" />
       </div>
     </div>
@@ -105,7 +105,7 @@
           nogrow
           class="box"
           :disabled="!hasThemeAndDomain"
-          :class="{ [$style['feature-btn']]: true }"
+          :class="{ [$style.featureBtn]: true }"
           @click="randomFeature"
           icon="ironsworn:d10-tilt"
           :text="$t('IRONSWORN.DELVESITE.Feature')"
@@ -120,15 +120,15 @@
 </template>
 
 <style lang="scss" module>
-.site-sheet {
+.sheet {
   gap: 0.5em;
 }
 
-.rank-row {
+.progressTopRow {
   gap: var(--ironsworn-spacer-lg);
 }
 
-.rank-label {
+.rankLabel {
   display: flex;
   flex-direction: row nowrap;
   align-items: center;
@@ -138,7 +138,7 @@
   font-size: var(--font-size-14);
 }
 
-.denizen-matrix {
+.matrix {
   // TODO: extract this as its own component
 }
 
@@ -150,12 +150,12 @@
   height: max-content;
 }
 
-.right-column {
+.rightCol {
   flex-basis: 12em;
   max-height: 411px;
 }
 
-.left-column {
+.leftCol {
   flex-basis: 20em;
   gap: 1em;
 }
@@ -170,8 +170,11 @@
   font-weight: bold;
 }
 
-.feature-btn {
+.featureBtn {
   text-transform: uppercase;
+}
+
+.progress {
 }
 </style>
 

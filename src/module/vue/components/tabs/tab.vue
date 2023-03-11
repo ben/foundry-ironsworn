@@ -4,7 +4,7 @@
     role="tab"
     :data-tab-set="tabState.tabSetId"
     :data-tab-key="tabKey"
-    :class="{ [$style.tab]: true, [$style[tabState.orientation]]: true }"
+    :class="{ [$style.wrapper]: true, [$style[tabState.orientation]]: true }"
     :aria-selected="isActive"
     :aria-controls="getTabPanelId(tabState.tabSetId, tabKey)"
     :id="getTabId(tabState.tabSetId, tabKey)"
@@ -20,7 +20,7 @@
   </IronBtn>
 </template>
 <style lang="scss" module>
-.tab {
+.wrapper {
   flex: 1 1 0;
   gap: var(--ironsworn-spacer-sm);
   margin: 0;
