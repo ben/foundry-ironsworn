@@ -12,14 +12,14 @@
   --ironsworn-drop-animation-timing-function: ease-in-out;
 
   position: relative;
-  transition: all var(--ironsworn-drop-transition-duration) ease;
+  transition: outline var(--ironsworn-drop-transition-duration) ease;
   outline: 0 var(--ironsworn-drop-outline-style) transparent;
 
   &::after {
     @include fx.overlay;
     @include fx.accentGradient(20);
 
-    transition: all var(--ironsworn-drop-transition-duration) ease;
+    transition: opacity var(--ironsworn-drop-transition-duration) ease;
     visibility: hidden;
     opacity: 0;
     border-radius: inherit;
