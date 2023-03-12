@@ -5,8 +5,13 @@
 - Under the hood: Major styling refactor to replace LESS preprocessor with SCSS/SASS, which supports more robust tooling, including much better support from Stylelint ([#567](https://github.com/ben/foundry-ironsworn/issues/567), [#568](https://github.com/ben/foundry-ironsworn/pull/568))
   - Adds opinionated Stylelint rules for property ordering, variable usage, class naming, etc. We have a _lot_ of styling to manage, and hopefully this will make it a bit easier to maintain.
   - Much of what `palettize.less` did is now written in Typescript for use as a custom SASS plugin. This lets us use `chroma.js` for better colour mixing, and lays the groundwork for generating color themes on the fly.
+
+## 1.20.29
+
 - Update move-sheet aesthetics to reduce the use of color a bit ([#672](https://github.com/ben/foundry-ironsworn/pull/672))
-- Under the hood: updated dependencies, and switched to ES modules
+- Fix SVG sizes in Firefox ([#663](https://github.com/ben/foundry-ironsworn/pull/663))
+- Under the hood: updated dependencies and node configs ([#664](https://github.com/ben/foundry-ironsworn/pull/664), [#673](https://github.com/ben/foundry-ironsworn/pull/673))
+- Under the hood: streamlined the CSS process and reduced the output file size by half ([#675](https://github.com/ben/foundry-ironsworn/pull/675))
 
 ## 1.20.28
 

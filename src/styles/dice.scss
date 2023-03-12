@@ -106,7 +106,7 @@
 
     &.d6::before {
       background-color: var(--ironsworn-dice-background-color);
-      mask-image: var(--isicon-d6);
+      mask-image: var(--isicon-d6-blank);
       content: '';
     }
 
@@ -116,7 +116,7 @@
 
     &.d10::before {
       background-color: var(--ironsworn-dice-background-color);
-      mask-image: var(--isicon-d10);
+      mask-image: var(--isicon-d10-blank);
       content: '';
     }
 
