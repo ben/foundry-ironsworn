@@ -59,7 +59,7 @@
               <SfLegacies />
             </TabPanel>
             <TabPanel tab-key="assets" class="flexcol">
-              <SfAssets :class="$style.topPadding" />
+              <AssetsList :class="$style.topPadding" />
             </TabPanel>
             <TabPanel tab-key="progress" class="flexcol">
               <SfProgresses :class="$style.topPadding" />
@@ -139,7 +139,7 @@ import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
 import SfConnections from './components/character-sheet-tabs/sf-connections.vue'
 import SfCharacterheader from './components/sf-characterheader.vue'
 import SfImpacts from './components/sf-impacts.vue'
-import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
+import AssetsList from './components/character-sheet-tabs/assets-list.vue'
 import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import { ActorKey } from './provisions.js'
