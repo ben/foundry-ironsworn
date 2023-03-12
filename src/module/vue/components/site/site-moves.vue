@@ -66,7 +66,6 @@
 .wrapper {
   margin: 0;
   border-radius: var(--ironsworn-border-radius-lg);
-  background-color: var(--ironsworn-color-midtone-30);
   height: max-content;
 }
 
