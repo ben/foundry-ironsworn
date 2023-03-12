@@ -37,19 +37,23 @@
         />
       </TabList>
       <TabPanels :class="$style.tabPanels">
-        <TabPanel tab-key="description" class="flexcol">
+        <TabPanel
+          tab-key="description"
+          class="flexcol"
+          :class="$style.tabPanel"
+        >
           <AssetEditDescription />
         </TabPanel>
-        <TabPanel tab-key="fields" class="flexcol">
+        <TabPanel tab-key="fields" class="flexcol" :class="$style.tabPanel">
           <AssetEditFields />
         </TabPanel>
-        <TabPanel tab-key="abilities" class="flexcol">
+        <TabPanel tab-key="abilities" class="flexcol" :class="$style.tabPanel">
           <AssetEditAbilities />
         </TabPanel>
-        <TabPanel tab-key="options" class="flexcol">
+        <TabPanel tab-key="options" class="flexcol" :class="$style.tabPanel">
           <AssetEditOptions />
         </TabPanel>
-        <TabPanel tab-key="track" class="flexcol">
+        <TabPanel tab-key="track" class="flexcol" :class="$style.tabPanel">
           <AssetEditTrack />
         </TabPanel>
       </TabPanels>
@@ -59,24 +63,16 @@
 </template>
 
 <style lang="less" module>
-.entrygrid {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-}
-</style>
-
-<style lang="less" scoped>
-.fieldrow {
-  p,
-  input {
-    margin: var(--ironsworn-spacer-sm);
-    padding: 0 0.5em;
-    text-align: left;
-  }
+.tabList {
 }
 
-h3 {
-  margin-top: 1em;
+.tab {
+}
+
+.tabPanels {
+}
+
+.tabPanel {
 }
 </style>
 
