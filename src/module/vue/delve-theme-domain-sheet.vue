@@ -26,10 +26,10 @@
     <h3 class="nogrow">{{ $t('IRONSWORN.DELVESITE.Dangers') }}</h3>
     <table>
       <tbody>
-        <tr v-for="feature in typedSystem.dangers">
-          <td>{{ formattedRange(feature.range) }}</td>
+        <tr v-for="danger in typedSystem.dangers">
+          <td>{{ formattedRange(danger.range) }}</td>
           <td>
-            <input type="text" v-model="feature.text" @blur="save" />
+            <input type="text" v-model="danger.text" @blur="save" />
           </td>
         </tr>
       </tbody>
