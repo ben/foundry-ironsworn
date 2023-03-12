@@ -2,19 +2,20 @@
   <DropTarget
     dropType="asset"
     is="article"
-    class="sf-assets flexcol"
+    class="flexcol"
     :class="$style.wrapper"
   >
+    <slot name="start"></slot>
     <CollapseTransition tag="ul" class="item-list" :class="$style.list" group>
       <li class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
-        <order-buttons
+        <OrderButtons
           v-if="editMode"
           :i="i"
           :length="assets.length"
           @sortUp="sortUp"
           @sortDown="sortDown"
         />
-        <asset :asset="asset" class="item-row" />
+        <Asset :asset="asset" class="item-row" />
       </li>
     </CollapseTransition>
     <section
@@ -29,6 +30,7 @@
         :text="$t('IRONSWORN.ITEMS.TypeAsset')"
       />
     </section>
+    <slot name="end"></slot>
   </DropTarget>
 </template>
 
