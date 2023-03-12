@@ -25,45 +25,42 @@
       />
     </nav>
 
-    <ul
-      v-if="state.searchQuery"
-      class="item-list scrollable flexcol"
-      :class="$style.list"
-    >
-      <!-- Flat search results -->
-      <li
-        v-for="(move, resultIndex) of searchResults"
-        :key="move.moveItem().id ?? `move${resultIndex}`"
-        class="nogrow"
-      >
-        <SfMoverow
-          :move="move"
-          ref="allMoves"
-          :thematicColor="move.color"
-          :class="$style.filteredResult"
-        />
-      </li>
-    </ul>
-
-    <ul v-else class="item-list scrollable flexcol" :class="$style.list">
-      <!-- Categorized moves if not searching -->
-      <li
-        v-for="(category, catIndex) in state.categories"
-        :key="catIndex"
-        class="nogrow"
-        :class="$style.listItem"
-        :style="`--ironsworn-color-thematic: ${category.color};`"
-      >
-        <SfMoveCategoryRows
+    <ItemList class="scrollable flexcol" :class="$style.list">
+      <template v-if="state.searchQuery">
+        <!-- Flat search results -->
+        <li
+          v-for="(move, resultIndex) of searchResults"
+          :key="move.moveItem().id ?? `move${resultIndex}`"
           class="nogrow"
-          :thematicColor="(category.color as string)"
-          :class="$style.catList"
-          :category="category"
-          ref="allCategories"
-          :data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
-        />
-      </li>
-    </ul>
+        >
+          <SfMoverow
+            :move="move"
+            ref="allMoves"
+            :thematicColor="move.color"
+            :class="$style.filteredResult"
+          />
+        </li>
+      </template>
+      <template v-else>
+        <!-- Categorized moves if not searching -->
+        <li
+          v-for="(category, catIndex) in state.categories"
+          :key="catIndex"
+          class="nogrow"
+          :class="$style.listItem"
+          :style="`--ironsworn-color-thematic: ${category.color};`"
+        >
+          <SfMoveCategoryRows
+            class="nogrow"
+            :thematicColor="(category.color as string)"
+            :class="$style.catList"
+            :category="category"
+            ref="allCategories"
+            :data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
+          />
+        </li>
+      </template>
+    </ItemList>
   </article>
 </template>
 
@@ -139,6 +136,7 @@ import {
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
 import IronBtn from './buttons/iron-btn.vue'
+import ItemList from 'component:list/item-list.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)

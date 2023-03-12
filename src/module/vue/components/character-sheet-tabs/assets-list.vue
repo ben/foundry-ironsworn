@@ -6,18 +6,41 @@
     :class="$style.wrapper"
   >
     <slot name="start"></slot>
-    <CollapseTransition tag="ul" class="item-list" :class="$style.list" group>
-      <li class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
-        <OrderButtons
-          v-if="editMode"
+    <ItemList :class="$style.list">
+      <CollapseTransition group>
+        <SortableItem
+          class="flexrow"
+          v-for="(asset, i) in assets"
+          :key="asset._id"
+          :item="asset"
           :i="i"
           :length="assets.length"
           @sortUp="sortUp"
           @sortDown="sortDown"
-        />
-        <Asset :asset="asset" class="item-row" />
-      </li>
-    </CollapseTransition>
+        >
+          <AssetCard
+            :asset="asset"
+            :collapsible="true"
+            :showUncheckedAbilities="false"
+            :editable="false"
+            :showAssetType="true"
+          >
+            <template #headerEnd>
+              <div :class="$style.assetControls" class="flexrow nogrow">
+                <IronBtn
+                  v-if="editMode"
+                  block
+                  nogrow
+                  icon="fa:trash"
+                  @click="destroy"
+                />
+                <IronBtn block nogrow icon="fa:pen-to-square" @click="edit" />
+              </div>
+            </template>
+          </AssetCard>
+        </SortableItem>
+      </CollapseTransition>
+    </ItemList>
     <section
       :class="$style.controls"
       class="flexrow nogrow"
@@ -39,6 +62,13 @@
   --ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 
+.assetControls {
+  display: flex;
+  flex-grow: 0;
+  flex-wrap: nowrap;
+  justify-items: flex-end;
+}
+
 .wrapper {
   gap: var(--ironsworn-spacer-md);
 }
@@ -51,13 +81,14 @@
 <script lang="ts" setup>
 import { sortBy } from 'lodash-es'
 import { computed, inject, Ref } from 'vue'
-import OrderButtons from '../order-buttons.vue'
-import Asset from '../asset/asset-card.vue'
+import AssetCard from '../asset/asset-card.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import DropTarget from '../../drop-target.vue'
+import ItemList from 'component:list/item-list.vue'
+import SortableItem from 'component:list/sortable-item.vue'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
@@ -87,6 +118,9 @@ function sortUp(i) {
 function sortDown(i) {
   applySort(i, i + 1, false)
 }
+
+function edit(i) {}
+function destroy(i) {}
 
 let theAssetBrowser: AssetCompendiumBrowser | undefined
 function assetBrowser() {

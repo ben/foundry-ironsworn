@@ -25,14 +25,14 @@
       />
     </div>
 
-    <div class="item-list scrollable flexcol" :class="$style.list">
+    <ItemList class="scrollable flexcol" :class="$style.list">
       <OracleTreeNode
         v-for="node in treeRoot.children"
         :key="node.displayName"
         :node="node"
         ref="oracles"
       />
-    </div>
+    </ItemList>
   </div>
 </template>
 
@@ -51,6 +51,7 @@
 </style>
 
 <script setup lang="ts">
+import ItemList from 'component:list/item-list.vue'
 import { inject, nextTick, provide, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
 import {

@@ -1,48 +1,43 @@
 <template>
-  <article class="progress-list-item flexrow item-row">
-    <h4 class="progress-title">{{ item.name }}</h4>
-    <h5 class="progress-subtitle vertical-text">{{ subtitle }}</h5>
-    <section class="progress-widgets flexrow">
-      <ProgressTrack
-        v-if="item.system.hasTrack"
-        class="progress-track"
-        :rank="item.system.rank"
-        :ticks="item.system.current"
-        :compact-progress="compactProgress"
+  <SortableListItem
+    :item="item"
+    :length="length"
+    :i="i"
+    :contentWrapperClass="$style.content"
+    class="flexrow"
+  >
+    <template #default>
+      <h4 :class="$style.title">{{ item.name }}</h4>
+      <h5 :class="$style.subtitle">
+        {{ subtitle }}
+      </h5>
+      <section :class="$style.widgets" class="flexrow">
+        <ProgressTrack
+          v-if="item.system.hasTrack"
+          :class="$style.track"
+          :rank="item.system.rank"
+          :ticks="item.system.current"
+          :compact-progress="compactProgress"
+        />
+        <Clock
+          v-if="item.system.hasClock"
+          :class="$style.clock"
+          class="nogrow"
+          size="50px"
+          :wedges="item.system.clockMax"
+          :ticked="item.system.clockTicks"
+          @click="setClock"
+        />
+      </section>
+      <DocumentImg :class="$style.img" :document="item" size="40px" />
+      <RankPips
+        :class="$style.rank"
+        class="nogrow"
+        :current="item.system.rank"
+        @click="rankClick"
       />
-      <Clock
-        v-if="item.system.hasClock"
-        class="progress-clock nogrow"
-        size="50px"
-        :wedges="item.system.clockMax"
-        :ticked="item.system.clockTicks"
-        @click="setClock"
-      />
-    </section>
-    <DocumentImg class="progress-img" :document="item" size="40px" />
-    <RankPips
-      class="progress-rank-pips nogrow"
-      :current="item.system.rank"
-      @click="rankClick"
-    />
-    <section class="progress-controls" data-tooltip-direction="UP">
-      <IronBtn
-        v-if="editMode"
-        block
-        icon="fa:trash"
-        @click="destroy"
-        :tooltip="
-          $t('DOCUMENT.Delete', {
-            type: $t('IRONSWORN.ITEM.TypeProgressTrack'),
-          })
-        "
-      />
-      <IronBtn
-        block
-        icon="fa:pen-to-square"
-        @click="edit"
-        :tooltip="$t('IRONSWORN.Edit')"
-      />
+    </template>
+    <template #controls>
       <IronBtn
         block
         v-if="editMode"
@@ -86,12 +81,12 @@
           </Transition>
         </template>
       </IronBtn>
-    </section>
-  </article>
+    </template>
+  </SortableListItem>
 </template>
 
-<style lang="scss" scoped>
-.progress-list-item {
+<style lang="scss" module>
+.content {
   --ironsworn-progress-widget-spacing: 6px;
 
   display: grid;
@@ -101,63 +96,55 @@
   padding: calc(var(--ironsworn-progress-widget-spacing) / 2)
     calc(var(--ironsworn-progress-widget-spacing) / 2)
     var(--ironsworn-progress-widget-spacing);
+}
 
-  .progress-img {
-    grid-row: 1 / span 2;
-    grid-column: 2;
-    margin: 0;
-  }
+.img {
+  grid-row: 1 / span 2;
+  grid-column: 2;
+  margin: 0;
+}
 
-  .progress-rank-pips {
-    grid-row: 1;
-    grid-column: 3 / span 2;
-  }
+.rank {
+  grid-row: 1;
+  grid-column: 3 / span 2;
+}
 
-  .progress-title {
-    grid-row: 2;
-    grid-column: 3;
-    margin: 0;
-    height: max-content;
-    line-height: 1;
-  }
+.title {
+  grid-row: 2;
+  grid-column: 3;
+  margin: 0;
+  height: max-content;
+  line-height: 1;
+}
 
-  .progress-subtitle {
-    grid-row: 1 / span 3;
-    grid-column: 1;
-    margin: 0;
-    padding: 0;
-    width: max-content;
-    text-transform: uppercase;
-    line-height: 1;
-    color: var(--ironsworn-color-fg-muted);
-    font-weight: normal;
-  }
+.subtitle {
+  grid-row: 1 / span 3;
+  grid-column: 1;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--ironsworn-color-fg-muted);
+  font-weight: normal;
+  writing-mode: vertical-lr;
+}
 
-  .progress-widgets {
-    grid-row: 3;
-    grid-column: 2 / span 3;
-    gap: var(--ironsworn-spacer-xs);
+.widgets {
+  grid-row: 3;
+  grid-column: 2 / span 3;
+  gap: var(--ironsworn-spacer-xs);
+}
 
-    .progress-clock {
-      flex-basis: var(--ironsworn-clock-size);
-    }
-  }
+.clock {
+  flex-basis: var(--ironsworn-clock-size);
+}
 
-  .progress-controls {
-    display: grid;
-    grid-row: 1 / span 2;
-    grid-column: 4;
-    grid-auto-flow: column;
+.star-progress {
+  grid-row: 2;
+}
 
-    > * {
-      aspect-ratio: 1;
-      grid-row: 1;
-    }
-
-    .star-progress {
-      grid-row: 2;
-    }
-  }
+.track {
 }
 </style>
 
@@ -173,6 +160,7 @@ import { RANKS } from '../../../constants.js'
 import ProgressTrack from './progress-track.vue'
 import FontIcon from '../icon/font-icon.vue'
 import { FontAwesome } from '../icon/icon-common'
+import SortableListItem from 'component:list/sortable-item.vue'
 
 const props = defineProps<{
   item: any
@@ -181,6 +169,8 @@ const props = defineProps<{
    * When true, renders the progress bar for more compact display.
    */
   compactProgress?: boolean
+  length: number
+  i: number
 }>()
 
 const actor = inject(ActorKey)
@@ -207,21 +197,6 @@ const completedTooltip = computed(() => {
   return game.i18n.localize('IRONSWORN.' + suffix)
 })
 
-function edit() {
-  foundryItem?.sheet?.render(true)
-}
-function destroy() {
-  Dialog.confirm({
-    title: game.i18n.format('DOCUMENT.Delete', {
-      type: game.i18n.localize('IRONSWORN.ITEM.TypeProgressTrack'),
-    }),
-    content: `<p><strong>${game.i18n.localize(
-      'IRONSWORN.ConfirmDelete'
-    )}</strong></p>`,
-    yes: () => foundryItem?.delete(),
-    defaultYes: false,
-  })
-}
 function rankClick(rank: keyof typeof RANKS) {
   foundryItem?.update({ system: { rank } })
 }

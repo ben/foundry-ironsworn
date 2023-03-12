@@ -1,27 +1,20 @@
 <template>
-  <CollapseTransition
-    group
-    tag="ul"
-    class="progress-list item-list"
-    :class="$style.list"
-  >
-    <li class="flexrow nogrow" v-for="(item, i) in items" :key="item._id">
-      <OrderButtons
-        v-if="editMode"
+  <ItemList :class="$style.list">
+    <CollapseTransition group>
+      <ProgressListItem
+        v-for="(item, i) in items"
+        :key="item._id"
         :i="i"
         :length="items.length"
-        @sortUp="sortUp"
-        @sortDown="sortDown"
-      />
-      <ProgressListItem
         :item="item"
         :showStar="progressStars"
         @completed="progressCompleted"
         :compact-progress="compactProgress"
         :class="progressListItemClass"
+        class="nogrow"
       />
-    </li>
-  </CollapseTransition>
+    </CollapseTransition>
+  </ItemList>
 </template>
 
 <style lang="scss" module>
@@ -33,11 +26,11 @@
 <script setup lang="ts">
 import { computed, inject, reactive, Ref } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
-import OrderButtons from './order-buttons.vue'
 import ProgressListItem from './progress/progress-list-item.vue'
 import { ProgressDataPropertiesData } from '../../item/itemtypes'
 import CollapseTransition from './transition/collapse-transition.vue'
 import { getProgressItems, isValidProgressItem } from './progress-common'
+import ItemList from 'component:list/item-list.vue'
 
 const props = defineProps<{
   excludedSubtypes?: ProgressDataPropertiesData['subtype'][]
@@ -61,10 +54,6 @@ const $actor = inject($ActorKey)
 const items = computed(() =>
   getProgressItems(actor.value, props.showCompleted, props.excludedSubtypes)
 )
-
-const editMode = computed(() => {
-  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
-})
 
 let highlightCompletedTimer: NodeJS.Timer | undefined
 
