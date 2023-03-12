@@ -46,7 +46,7 @@
   gap: var(--ironsworn-spacer-md);
 
   h3 {
-    margin: 0;
+    margin: var(--ironsworn-spacer-lg) 0 0 0;
   }
 }
 </style>
