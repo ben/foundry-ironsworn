@@ -11,7 +11,7 @@
       :min="0"
       :statLabel="asset.system.track.name"
       labelPosition="left"
-      :read-only="readOnly"
+      :read-only="readonly"
     />
     <div :class="$style.conditions">
       <label
@@ -80,7 +80,7 @@ import ConditionMeter from 'component:resource-meter/condition-meter.vue'
 import { ComputedRef, inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 
-const props = defineProps<{ readOnly?: boolean }>()
+const props = defineProps<{ readonly?: boolean }>()
 
 const $asset = inject($ItemKey)
 const asset = inject(ItemKey) as ComputedRef

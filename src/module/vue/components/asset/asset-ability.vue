@@ -12,25 +12,22 @@
     class="flexrow"
     @input="$emit('toggleEnabled', $event)"
   >
-    <slot name="default">
-      <WithRolllisteners
-        element="div"
-        @moveclick="moveClick"
-        :class="$style.text"
-        class="flexcol"
-        v-html="$enrichHtml($props.ability.description)"
-      >
-      </WithRolllisteners>
-    </slot>
-    <slot name="clock">
-      <Clock
-        v-if="$props.ability.hasClock"
-        :class="$style.clock"
-        :wedges="$props.ability.clockMax"
-        :ticked="$props.ability.clockTicks"
-        @click.prevent="$emit('setClock', $event)"
-      />
-    </slot>
+    <WithRolllisteners
+      element="div"
+      @moveclick="moveClick"
+      :class="$style.text"
+      class="flexcol"
+      v-html="$enrichHtml($props.ability.description)"
+    >
+    </WithRolllisteners>
+
+    <Clock
+      v-if="$props.ability.hasClock"
+      :class="$style.clock"
+      :wedges="$props.ability.clockMax"
+      :ticked="$props.ability.clockTicks"
+      @click.prevent="$emit('setClock', $event)"
+    />
   </IronCheckbox>
 </template>
 
@@ -40,6 +37,11 @@
   flex-direction: row;
   gap: var(--ironsworn-spacer-lg);
   list-style: none;
+  &[aria-readonly='true'] {
+    :local(.text) {
+      pointer-events: initial;
+    }
+  }
 }
 .clock {
   --ironsworn-clock-size-min: 40px;
@@ -58,9 +60,6 @@
   ol {
     margin: 0;
   }
-}
-.wrapper[aria-readonly='true'] :local(.text) {
-  pointer-events: initial;
 }
 </style>
 

@@ -21,7 +21,7 @@
           {{ asset.system.category }}
         </span>
       </button>
-      <div class="asset-controls flexrow nogrow">
+      <div :class="$style.controls" class="asset-controls flexrow nogrow">
         <IronBtn
           v-if="editMode"
           block

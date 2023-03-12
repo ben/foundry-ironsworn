@@ -25,7 +25,7 @@ import { $ItemKey, ItemKey } from 'module/vue/provisions'
 
 const props = withDefaults(
   defineProps<{
-    readOnly?: boolean
+    readonly?: boolean
   }>(),
   {}
 )

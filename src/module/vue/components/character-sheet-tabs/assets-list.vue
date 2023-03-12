@@ -52,7 +52,7 @@
 import { sortBy } from 'lodash-es'
 import { computed, inject, Ref } from 'vue'
 import OrderButtons from '../order-buttons.vue'
-import Asset from '../asset/asset.vue'
+import Asset from '../asset/asset-card.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'

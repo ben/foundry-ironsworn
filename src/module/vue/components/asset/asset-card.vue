@@ -1,0 +1,227 @@
+<template>
+  <article :class="$style.card" :aria-expanded="state.expanded">
+    <header class="nogrow" :class="$style.header">
+      <slot name="header-start"></slot>
+      <button
+        v-if="collapsible"
+        type="button"
+        @click="toggle"
+        :aria-controls="bodyId"
+        :class="{ [$style.expandToggle]: true, [$style.titleGroup]: true }"
+        class="clickable text"
+      >
+        <h4 :class="$style.title">
+          {{ asset.name }}
+        </h4>
+        <span :class="$style.type" aria-label="asset type">
+          {{ asset.system.category }}
+        </span>
+      </button>
+      <div v-else :class="$style.titleGroup">
+        <h4 :class="$style.title">
+          {{ asset.name }}
+        </h4>
+        <span :class="$style.type" aria-label="asset type">
+          {{ asset.system.category }}
+        </span>
+      </div>
+      <slot name="header-end"></slot>
+    </header>
+
+    <component
+      :is="collapsible ? CollapseTransition : 'section'"
+      :class="$style.body"
+      :id="bodyId"
+      v-bind="bodyProps"
+    >
+      <div :class="$style.fields" v-if="asset.system.fields?.length">
+        <slot
+          v-for="(field, i) in asset.system.fields"
+          name="field"
+          :key="'field' + i"
+          :class="$style.field"
+          v-bind="{ field, readonly, class: $style.fieldLabel }"
+        >
+          <AssetField :readonly="readonly" :field="field" :class="class" />
+        </slot>
+      </div>
+
+      <WithRolllisteners
+        v-if="asset.system.description"
+        element="div"
+        v-html="$enrichHtml(asset.system.description ?? '')"
+        @moveclick="moveClick"
+      />
+
+      <WithRolllisteners
+        v-if="asset.system.requirement"
+        element="div"
+        v-html="$enrichMarkdown(asset.system.requirement ?? '')"
+        @moveclick="moveClick"
+      />
+
+      <ul :class="$style.abilities" class="flexcol">
+        <template
+          v-for="(ability, i) in asset.system.abilities"
+          :key="'ability' + i"
+        >
+          <li v-if="ability.enabled || showUncheckedAbilities">
+            <slot name="ability" v-bind="{ ability, readonly }"></slot>
+          </li>
+        </template>
+      </ul>
+
+      <slot name="options">
+        <template v-if="asset.system.exclusiveOptions > 0">
+          <AssetOptions class="nogrow" :readonly="readonly" />
+        </template>
+      </slot>
+
+      <slot name="conditionMeter">
+        <template
+          v-if="
+            asset.system.track.enabled || asset.system.conditions?.length > 0
+          "
+        >
+          <AssetConditionMeter
+            class="nogrow"
+            :readonly="readonly"
+            :asset="asset"
+          />
+        </template>
+      </slot>
+    </component>
+  </article>
+</template>
+
+<style lang="scss" module>
+.card {
+  --ironsworn-color-thematic: v-bind(themeColor);
+
+  transition: var(--ironsworn-transition);
+  overflow: hidden;
+}
+
+.abilities {
+  gap: var(--ironsworn-spacer-lg);
+  padding-left: var(--ironsworn-spacer-lg);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.body {
+  gap: var(--ironsworn-spacer-lg);
+  transition: var(--ironsworn-transition);
+  padding: var(--ironsworn-spacer-sm);
+  overflow: hidden;
+}
+
+.header {
+  gap: var(--ironsworn-spacer-lg);
+  align-items: center;
+}
+
+.type {
+  flex-grow: 0;
+  transition: inherit;
+  line-height: 1;
+  color: var(--ironsworn-color-thematic);
+  font-style: italic;
+}
+
+.title {
+  transition: inherit;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  word-spacing: var(--ironsworn-word-spacing-sm);
+  letter-spacing: var(--ironsworn-letter-spacing-sm);
+  font-size: var(--font-size-14);
+  font-weight: bold;
+}
+
+.titleGroup {
+}
+
+.controls {
+  display: flex;
+  flex-grow: 0;
+  flex-wrap: nowrap;
+  justify-items: flex-end;
+}
+
+.expandToggle {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--ironsworn-spacer-lg);
+  transition: var(--ironsworn-transition);
+  box-shadow: none !important;
+  background: none;
+}
+</style>
+
+<script lang="ts" setup>
+import AssetConditionMeter from 'component:asset/asset-condition-meter.vue'
+import AssetOptions from 'component:asset/asset-options.vue'
+import WithRolllisteners from 'component:with-rolllisteners.vue'
+import { computed, inject, reactive } from 'vue'
+import { $ItemKey } from 'module/vue/provisions'
+import AssetField from 'component:asset/asset-field.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
+
+const props = withDefaults(
+  defineProps<{
+    asset: any
+    /**
+     * If the actor is omitted, this renders a static asset preview.
+     */
+    actor?: any
+    readonly?: boolean
+    showUncheckedAbilities?: boolean
+    collapsible?: boolean
+    /** @default true */
+    showAssetType?: boolean
+  }>(),
+  { showAssetType: true }
+)
+
+const $asset = inject($ItemKey)
+const asset = props.asset
+
+function moveClick(item) {
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
+}
+
+const state = reactive({
+  expanded: props.collapsible
+    ? asset.flag['foundry-ironsworn']['expanded'] || false
+    : undefined,
+})
+
+function toggle(event: Event) {
+  state.expanded = !state.expanded
+  if (props.actor) {
+    $asset?.setFlag(
+      'foundry-ironsworn',
+      'expanded',
+      !asset?.flags['foundry-ironsworn']?.expanded
+    )
+  }
+}
+
+const bodyId = computed(() => `asset-body-${$asset?.id}`)
+
+const bodyProps = computed(() => {
+  if (!props.collapsible) return {}
+  return {
+    group: true,
+    tag: 'section',
+  }
+})
+
+const themeColor = computed(() => asset?.system?.color)
+</script>
