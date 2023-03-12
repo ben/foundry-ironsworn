@@ -505,7 +505,8 @@
       "TypeBond": "Więź",
       "TypeProgressTrack": "Tor postępu",
       "TypeDelveDomain": "Domena",
-      "TypeDelveTheme": "Motyw"
+      "TypeDelveTheme": "Motyw",
+      "TypeDelveThemeOrDomain": "Motyw/domena"
     },
     "ITEMS": {
       "SubtypeConnection": "Połączenia",
