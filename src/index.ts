@@ -25,7 +25,6 @@ import { patchZIndex } from './module/features/z-index'
 import { IronswornHandlebarsHelpers } from './module/helpers/handlebars'
 import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
-import { AssetSheet } from './module/item/asset/assetsheet'
 import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
 import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
 import { DelveThemeOrDomainSheet } from './module/item/delve-theme-domain/delvethemeordomainsheet'
@@ -118,10 +117,6 @@ Hooks.once('init', async () => {
     types: ['asset'],
     label: `${game.i18n.localize('IRONSWORN.ITEM.TypeAsset')} v2`,
     makeDefault: true,
-  })
-  Items.registerSheet('ironsworn', AssetSheet, {
-    types: ['asset'],
-    label: 'IRONSWORN.ITEM.TypeAsset',
   })
 
   Items.registerSheet('ironsworn', BondsetSheetV2, {
