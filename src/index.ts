@@ -35,9 +35,9 @@ import { IronswornJournalPage } from './module/journal/journal-entry-page'
 import { JournalProgressPageSheet } from './module/journal/sheet/progress-page'
 import { TruthJournalPageSheet } from './module/journal/truth-page'
 import { registerTours } from './module/features/tours'
+import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 import 'virtual:svg-icons-register'
-import { CompactPCSheet } from './module/actor/sheets/compact-pc-sheet'
 
 declare global {
   interface LenientGlobalVariableTypes {
