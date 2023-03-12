@@ -9,11 +9,7 @@
       :placeholder="$t('IRONSWORN.Summary')"
       @blur="save"
     />
-    <MceEditor
-      v-model="typedSystem.description"
-      :editing="true"
-      style="flex-basis: 10rem"
-    />
+    <MceEditor v-model="typedSystem.description" style="flex-basis: 8rem" />
 
     <h3 class="nogrow">{{ $t('IRONSWORN.DELVESITE.Features') }}</h3>
     <table>
@@ -62,7 +58,6 @@ const $item = inject($ItemKey)
 
 const props = defineProps<{ data: { item: any } }>()
 provide(ItemKey, computed(() => props.data.item) as any)
-console.log({ props })
 
 const typedSystem = props.data.item.system as DelveThemeDataPropertiesData
 
