@@ -78,6 +78,9 @@
     var(--ironsworn-spacer-md);
 }
 
+.content {
+}
+
 .btn {
   --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
   --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);

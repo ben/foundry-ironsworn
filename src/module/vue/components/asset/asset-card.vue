@@ -113,6 +113,9 @@
   margin: 0;
 }
 
+.fieldLabel {
+}
+
 .body {
   gap: var(--ironsworn-spacer-lg);
   transition: var(--ironsworn-transition);
