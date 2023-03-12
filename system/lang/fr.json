@@ -603,6 +603,7 @@
       "TypeBondset": "Forger un lien",
       "TypeDelveDomain": "Domaine du site",
       "TypeDelveTheme": "Thème du site",
+      "TypeDelveThemeOrDomain": "Thème/domaine du site",
       "TypeMove": "Action",
       "TypeProgressTrack": "Jauge de progrès"
     },

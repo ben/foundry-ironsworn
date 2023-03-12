@@ -680,6 +680,7 @@
       "TypeBondset": "Bondset",
       "TypeDelveDomain": "Site domain",
       "TypeDelveTheme": "Site theme",
+      "TypeDelveThemeOrDomain": "Site theme/domain",
       "TypeMove": "Move",
       "TypeProgressTrack": "Progress track"
     },
