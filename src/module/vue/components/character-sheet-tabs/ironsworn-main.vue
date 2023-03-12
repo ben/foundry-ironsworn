@@ -46,34 +46,7 @@ h3 {
 </style>
 
 <script lang="ts" setup>
-import { computed, inject, Ref } from 'vue'
-import { $ActorKey, ActorKey } from '../../provisions'
 import Bonds from '../bonds.vue'
 import ActiveCompletedProgresses from '../active-completed-progresses.vue'
-import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import AssetsList from './assets-list.vue'
-
-const actor = inject(ActorKey) as Ref
-const $actor = inject($ActorKey)
-
-async function applySort(oldI, newI, sortBefore, collection) {
-  const sorted = collection.sort(
-    (a, b) => (a.data.sort || 0) - (b.data.sort || 0)
-  )
-  const updates = SortingHelpers.performIntegerSort(sorted[oldI], {
-    target: sorted[newI],
-    siblings: sorted,
-    sortBefore,
-  })
-  await Promise.all(updates.map(({ target, update }) => target.update(update)))
-}
-let theAssetBrowser: AssetCompendiumBrowser | undefined
-function assetBrowser() {
-  if (!theAssetBrowser) {
-    theAssetBrowser = new AssetCompendiumBrowser(
-      $actor?.toolset ?? 'starforged'
-    )
-  }
-  theAssetBrowser.render(true, { focus: true })
-}
 </script>
