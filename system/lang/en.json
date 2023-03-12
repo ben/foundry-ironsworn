@@ -12,6 +12,7 @@
     "Roll": "Roll",
     "SendToChat": "Send text to chat: <i>{move}</i>",
     "CopyTextToClipboard": "Copy text to clipboard",
+    "ClipboardDisabled": "The browser has prevented access to the clipboard. You'll need to load Foundry from localhost or using an <code>https://</code> URL to use this feature.",
     "Adds": "Adds",
     "Versus": "vs.",
     "CappedAt10": "Action score is capped at 10",
