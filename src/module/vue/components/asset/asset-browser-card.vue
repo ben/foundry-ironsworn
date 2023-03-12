@@ -1,6 +1,6 @@
 <template>
   <article
-    class="item-row document ironsworn__asset"
+    class="document ironsworn__asset"
     draggable="true"
     :data-pack="foundryItem().pack"
     :data-id="foundryItem().id"
@@ -82,6 +82,12 @@
   justify-content: flex-start;
   margin: var(--ironsworn-spacer-xl) 0;
   padding: var(--ironsworn-spacer-md);
+
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-sm);
+  border-color: var(--ironsworn-color-border);
+  padding: var(--ironsworn-spacer-sm);
 }
 </style>
 

@@ -31,6 +31,7 @@
 </template>
 
 <style lang="scss" module>
+@use 'mixin:text.scss';
 .wrapper {
 }
 

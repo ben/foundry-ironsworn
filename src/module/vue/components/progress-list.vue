@@ -1,5 +1,5 @@
 <template>
-  <ItemList :class="$style.list">
+  <IronList :class="$style.list">
     <CollapseTransition group>
       <ProgressListItem
         v-for="(item, i) in items"
@@ -14,7 +14,7 @@
         class="nogrow"
       />
     </CollapseTransition>
-  </ItemList>
+  </IronList>
 </template>
 
 <style lang="scss" module>
@@ -30,7 +30,7 @@ import ProgressListItem from './progress/progress-list-item.vue'
 import { ProgressDataPropertiesData } from '../../item/itemtypes'
 import CollapseTransition from './transition/collapse-transition.vue'
 import { getProgressItems, isValidProgressItem } from './progress-common'
-import ItemList from 'component:list/item-list.vue'
+import IronList from 'component:list/iron-list.vue'
 
 const props = defineProps<{
   excludedSubtypes?: ProgressDataPropertiesData['subtype'][]

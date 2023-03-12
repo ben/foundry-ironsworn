@@ -6,7 +6,7 @@
     :class="$style.wrapper"
   >
     <slot name="start"></slot>
-    <ItemList :class="$style.list">
+    <IronList :class="$style.list">
       <CollapseTransition group>
         <SortableItem
           class="flexrow"
@@ -40,7 +40,7 @@
           </AssetCard>
         </SortableItem>
       </CollapseTransition>
-    </ItemList>
+    </IronList>
     <section
       :class="$style.controls"
       class="flexrow nogrow"
@@ -87,7 +87,7 @@ import { $ActorKey, ActorKey } from '../../provisions'
 import { AssetCompendiumBrowser } from '../../../item/asset-compendium-browser'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import DropTarget from '../../drop-target.vue'
-import ItemList from 'component:list/item-list.vue'
+import IronList from 'component:list/iron-list.vue'
 import SortableItem from 'component:list/sortable-item.vue'
 
 const actor = inject(ActorKey) as Ref

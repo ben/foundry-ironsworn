@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import { ComputedRef, inject } from 'vue'
-import { $ItemKey, ItemKey } from 'module/vue/provisions'
+import { $ItemKey, ItemKey } from '../../../../module/vue/provisions'
 
 const props = withDefaults(
   defineProps<{

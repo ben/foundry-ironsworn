@@ -25,7 +25,7 @@
       />
     </nav>
 
-    <ItemList class="scrollable flexcol" :class="$style.list">
+    <IronList class="scrollable flexcol" :class="$style.list">
       <template v-if="state.searchQuery">
         <!-- Flat search results -->
         <li
@@ -60,7 +60,7 @@
           />
         </li>
       </template>
-    </ItemList>
+    </IronList>
   </article>
 </template>
 
@@ -136,7 +136,7 @@ import {
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
 import IronBtn from './buttons/iron-btn.vue'
-import ItemList from 'component:list/item-list.vue'
+import IronList from 'component:list/iron-list.vue'
 
 const props = defineProps<{ toolset: 'ironsworn' | 'starforged' }>()
 provide('toolset', props.toolset)

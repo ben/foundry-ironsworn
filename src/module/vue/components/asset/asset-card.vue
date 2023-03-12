@@ -1,7 +1,7 @@
 <template>
   <article :class="$style.card" :aria-expanded="state.expanded">
     <header class="nogrow" :class="$style.header">
-      <slot name="header-start"></slot>
+      <slot name="headerStart"></slot>
       <button
         v-if="collapsible"
         type="button"
@@ -25,7 +25,7 @@
           {{ asset.system.category }}
         </span>
       </div>
-      <slot name="header-end"></slot>
+      <slot name="headerEnd"></slot>
     </header>
 
     <component
@@ -147,13 +147,6 @@
 .titleGroup {
 }
 
-.controls {
-  display: flex;
-  flex-grow: 0;
-  flex-wrap: nowrap;
-  justify-items: flex-end;
-}
-
 .expandToggle {
   display: flex;
   flex-flow: row wrap;
@@ -168,18 +161,20 @@
 import AssetConditionMeter from 'component:asset/asset-condition-meter.vue'
 import AssetOptions from 'component:asset/asset-options.vue'
 import WithRolllisteners from 'component:with-rolllisteners.vue'
-import { computed, inject, reactive } from 'vue'
-import { $ItemKey } from 'module/vue/provisions'
+import { computed, inject, provide, reactive } from 'vue'
+import {
+  $ActorKey,
+  $ItemKey,
+  ActorKey,
+  ItemKey,
+} from '../../../../module/vue/provisions'
 import AssetField from 'component:asset/asset-field.vue'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 
 const props = withDefaults(
   defineProps<{
     asset: any
-    /**
-     * If the actor is omitted, this renders a static asset preview.
-     */
-    actor?: any
+    editable?: boolean
     readonly?: boolean
     showUncheckedAbilities?: boolean
     collapsible?: boolean
@@ -189,22 +184,26 @@ const props = withDefaults(
   { showAssetType: true }
 )
 
-const $asset = inject($ItemKey)
-const asset = props.asset
+const actor = inject(ActorKey)
+const $actor = inject($ActorKey)
 
-function moveClick(item) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
+const asset = props.asset
+const $asset = $actor
+  ? $actor?.items.find((x) => x.id === props.asset._id)
+  : game.items?.get(props.asset._id)
+
+provide($ItemKey, $asset)
+provide(ItemKey, computed(() => props.asset) as any)
 
 const state = reactive({
   expanded: props.collapsible
-    ? asset.flag['foundry-ironsworn']['expanded'] || false
+    ? asset.flags['foundry-ironsworn']['expanded'] || false
     : undefined,
 })
 
 function toggle(event: Event) {
   state.expanded = !state.expanded
-  if (props.actor) {
+  if (actor) {
     $asset?.setFlag(
       'foundry-ironsworn',
       'expanded',
@@ -212,6 +211,8 @@ function toggle(event: Event) {
     )
   }
 }
+
+const themeColor = computed(() => asset?.system?.color)
 
 const bodyId = computed(() => `asset-body-${$asset?.id}`)
 
@@ -223,5 +224,7 @@ const bodyProps = computed(() => {
   }
 })
 
-const themeColor = computed(() => asset?.system?.color)
+function moveClick(item) {
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
+}
 </script>
