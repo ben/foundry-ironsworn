@@ -1,9 +1,5 @@
 <template>
-  <div
-    class="flexcol"
-    style="gap: var(--ironsworn-spacer-md)"
-    :class="$style.sheetStyles"
-  >
+  <div class="flexcol" :class="$style.sheetStyles">
     <SheetHeaderBasic class="nogrow" :document="data.item" />
 
     <input
@@ -47,6 +43,8 @@
 
 <style lang="less" module>
 .sheetStyles {
+  gap: var(--ironsworn-spacer-md);
+
   h3 {
     margin: 0;
   }
