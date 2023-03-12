@@ -17,6 +17,8 @@
     >
       <ProgressListItem
         v-for="(progressItem, i) in starredProgresses"
+        :length="starredProgresses.length"
+        :i="i"
         :key="`progress-item-${i}`"
         :item="progressItem"
         :show-star="true"

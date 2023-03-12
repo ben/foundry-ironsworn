@@ -1,20 +1,24 @@
 <template>
   <li :class="$style.wrapper" class="flexrow">
-    <div v-if="editMode" class="flexcol nogrow" :class="$style.orderBtns">
+    <div
+      v-if="editMode && sortUp && sortDown"
+      class="flexcol nogrow"
+      :class="$style.orderBtns"
+    >
       <!-- TODO: replace with better disabled attr? either aria-disabled or disabled attr -->
       <IronBtn
         icon="fa:caret-up"
         block
         nogrow
         :class="{ disabled: i == 0, [$style.orderBtn]: true }"
-        @click="$emit('sortUp', i)"
+        @click="sortUp!(i)"
       />
       <IronBtn
         icon="fa:caret-down"
         block
         nogrow
         :class="{ disabled: i == length - 1, [$style.orderBtn]: true }"
-        @click="$emit('sortDown', i)"
+        @click="sortDown!(i)"
       />
     </div>
     <div :class="[$style.content, contentWrapperClass ?? '']">
@@ -97,6 +101,13 @@ const props = withDefaults(
   { deleteButton: true, editButton: true }
 )
 
+// provided by sortable-item-list
+const sortUp = inject('sortUp', undefined) as
+  | undefined
+  | ((index: number) => Promise<void>)
+const sortDown = inject('sortDown', undefined) as
+  | undefined
+  | ((index: number) => Promise<void>)
 const $actor = inject($ActorKey)
 const actor = inject(ActorKey)
 
