@@ -3,6 +3,7 @@
 ## Next Release
 
 - Replace the delve theme/domain sheet with a vue implementation ([#677](https://github.com/ben/foundry-ironsworn/pull/677))
+- Disable and add a tooltip to chat-message copy buttons if access to the clipboard is restricted ([#678](https://github.com/ben/foundry-ironsworn/pull/678))
 
 ## 1.20.29
 
