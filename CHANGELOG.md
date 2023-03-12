@@ -2,6 +2,8 @@
 
 ## Next Release
 
+- Replace the delve theme/domain sheet with a vue implementation ([#677](https://github.com/ben/foundry-ironsworn/pull/677))
+
 ## 1.20.29
 
 - Update move-sheet aesthetics to reduce the use of color a bit ([#672](https://github.com/ben/foundry-ironsworn/pull/672))
