@@ -23,6 +23,7 @@
       <div class="flexcol">
         <!-- Attributes -->
         <div
+          :class="$style.stats"
           class="flexrow stats"
           id="stats"
           style="margin-bottom: var(--ironsworn-spacer-xl)"
@@ -92,6 +93,11 @@
 <style lang="scss" module>
 @use 'mixin:border.scss';
 @use 'mixin:clickable.scss';
+
+.stats {
+  flex: 0;
+  justify-content: space-around;
+}
 
 .marginRight {
   @include border.margin(right);

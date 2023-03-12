@@ -35,7 +35,6 @@
 .system-foundry-ironsworn {
   // load files within this selector to ensure higher specificity
   @include meta.load-css('assets');
-  @include meta.load-css('attr-box');
   @include meta.load-css('chat-message');
   @include meta.load-css('clickable');
   @include meta.load-css('dice');

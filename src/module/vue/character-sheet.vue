@@ -24,6 +24,7 @@
     <div class="flexcol">
       <!-- Attributes -->
       <div
+        :class="$style.stats"
         class="flexrow stats"
         data-tooltip-direction="UP"
         data-tourid="stats"
@@ -77,6 +78,11 @@
 
 <style lang="scss" module>
 @use 'mixin:border.scss';
+
+.stats {
+  flex: 0;
+  justify-content: space-around;
+}
 
 .marginLeft {
   @include border.margin(left);

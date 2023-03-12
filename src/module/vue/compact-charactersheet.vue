@@ -32,6 +32,8 @@
 }
 
 .stats {
+  flex: 0;
+  justify-content: space-around;
   gap: var(--ironsworn-spacer-lg);
 }
 
