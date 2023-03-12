@@ -130,16 +130,16 @@
 
     &.min:not(.challenge),
     &.challenge.max {
-      --ironsworn-thematic-color: var(--ironsworn-color-danger);
+      --ironsworn-color-thematic: var(--ironsworn-color-danger);
     }
 
     &.max:not(.challenge),
     &.challenge.min {
-      --ironsworn-thematic-color: var(--ironsworn-color-success);
+      --ironsworn-color-thematic: var(--ironsworn-color-success);
     }
 
     &.canceled {
-      --ironsworn-thematic-color: var(--ironsworn-color-warning);
+      --ironsworn-color-thematic: var(--ironsworn-color-warning);
     }
   }
 
@@ -151,17 +151,17 @@
   .challenge.min,
   .canceled {
     background-blend-mode: screen;
-    color: var(--ironsworn-thematic-color) !important;
+    color: var(--ironsworn-color-thematic) !important;
     filter: drop-shadow(
-        var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-thematic-color)
+        var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-color-thematic)
       )
       drop-shadow(
-        var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-thematic-color)
+        var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-color-thematic)
       );
   }
 
   del .roll {
-    --ironsworn-thematic-color: var(--ironsworn-color-warning);
+    --ironsworn-color-thematic: var(--ironsworn-color-warning);
 
     text-decoration: line-through;
   }
