@@ -27,7 +27,7 @@ import { runDataMigrations } from './module/helpers/migrations'
 import { IronswornSettings } from './module/helpers/settings'
 import { AssetSheetV2 } from './module/item/asset/assetsheet-v2'
 import { BondsetSheetV2 } from './module/item/bondset/bondsetsheet-v2'
-import { ThemeDomainSheetV2 } from './module/item/delve-theme-domain/theme-domain-sheet-v2'
+import { ThemeDomainSheet } from './module/item/delve-theme-domain/theme-domain-sheet'
 import { IronswornItem } from './module/item/item'
 import { SFMoveSheet } from './module/item/move/sfmovesheet'
 import { ProgressSheetV2 } from './module/item/progress/progresssheet-v2'
@@ -130,7 +130,7 @@ Hooks.once('init', async () => {
     label: 'IRONSWORN.ITEM.TypeMove',
   })
 
-  Items.registerSheet('ironsworn', ThemeDomainSheetV2, {
+  Items.registerSheet('ironsworn', ThemeDomainSheet, {
     types: ['delve-theme', 'delve-domain'],
     label: 'IRONSWORN.ITEM.TypeDelveThemeOrDomain',
     makeDefault: true,
