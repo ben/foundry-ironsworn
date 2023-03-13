@@ -1,11 +1,23 @@
 <template>
   <article class="flexcol">
-    <ProgressList
-      :showCompleted="'all'"
-      :excludedSubtypes="['vow', 'progress']"
-      :progress-stars="true"
+    <SortableItemList
       ref="$connectionList"
-    />
+      :filterFn="
+        (item) =>
+          item.type === 'progress' &&
+          !(item as any).system.completed &&
+          (item as any).system.subtype === 'bond'
+      "
+    >
+      <template #item="{ item, i, length }">
+        <ProgressListItem
+          :item="item"
+          :i="i"
+          :length="length"
+          :showStar="true"
+        />
+      </template>
+    </SortableItemList>
     <section :class="$style.controls" class="progress-controls flexrow nogrow">
       <IronBtn
         icon="fa:plus"
@@ -22,10 +34,11 @@
 }
 </style>
 <script setup lang="ts">
+import SortableItemList from 'component:list/sortable-item-list.vue'
+import ProgressListItem from 'component:progress/progress-list-item.vue'
 import { inject } from 'vue'
 import { $ActorKey } from '../../provisions'
 import IronBtn from '../buttons/iron-btn.vue'
-import ProgressList from '../progress-list.vue'
 
 const $actor = inject($ActorKey)
 

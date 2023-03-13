@@ -34,15 +34,15 @@
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
-import { RANKS, RANK_INCREMENTS } from '../../constants'
-import { ProgressDataPropertiesData } from '../../item/itemtypes'
-import { $ActorKey, $ItemKey, ActorKey } from '../provisions'
+import { RANKS, RANK_INCREMENTS } from '../../../constants'
+import { ProgressDataPropertiesData } from '../../../item/itemtypes'
+import { $ActorKey, $ItemKey, ActorKey } from '../../provisions'
 
-import IronBtn from './buttons/iron-btn.vue'
-import RankPips from './rank-pips/rank-pips.vue'
-import MceEditor from './mce-editor.vue'
-import ProgressTrack from './progress/progress-track.vue'
-import BtnRollprogress from './buttons/btn-rollprogress.vue'
+import IronBtn from '../buttons/iron-btn.vue'
+import RankPips from '../rank-pips/rank-pips.vue'
+import MceEditor from '../mce-editor.vue'
+import ProgressTrack from './progress-track.vue'
+import BtnRollprogress from '../buttons/btn-rollprogress.vue'
 
 const actor = inject(ActorKey)
 const $actor = inject($ActorKey)

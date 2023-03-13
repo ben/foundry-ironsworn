@@ -9,7 +9,7 @@
     ref="$collapsible"
   >
     <SortableItemList
-      :filterFn="(item) => item.type === 'progress' && (item as any).system.completed"
+      :filterFn="completedFilterFn"
       :class="$style.list"
       ref="$progressList"
     >
@@ -46,13 +46,12 @@
 </style>
 
 <script lang="ts" setup>
+import { ItemLike } from 'component:list/helpers'
 import SortableItemList from 'component:list/sortable-item-list.vue'
 import ProgressListItem from 'component:progress/progress-list-item.vue'
 import { computed, ExtractPropTypes, inject, ref, Ref, watch } from 'vue'
 import { ActorKey } from '../../provisions'
 import Collapsible from '../collapsible/collapsible.vue'
-import { CompletedProgressType, getProgressItems } from '../progress-common'
-import ProgressList from './progress-list.vue'
 
 const props = defineProps<{
   collapsibleProps?: Omit<
@@ -60,25 +59,25 @@ const props = defineProps<{
     'toggleLabel' | 'baseId'
   >
   collapsibleAttrs?: Record<string, any>
-  listProps?: Omit<ExtractPropTypes<typeof ProgressList>, 'showCompleted'>
-  listAttrs?: Record<string, any>
+  filterFn?: (
+    item: ItemLike & { type: 'progress'; system: { completed: true } }
+  ) => boolean | undefined
 }>()
-
-const showCompleted: CompletedProgressType = 'completed-only'
 
 const actor = inject(ActorKey) as Ref
 
-let $progressList = ref<InstanceType<typeof ProgressList>>()
+const completedFilterFn = computed(() => {
+  const fn = (item: ItemLike) =>
+    item.type === 'progress' && (item as any).system.completed
+  if (props.filterFn) return (item) => fn(item) && (props.filterFn as any)(item)
+  return fn
+})
+
+let $progressList = ref<InstanceType<typeof SortableItemList>>()
 let $collapsible = ref<InstanceType<typeof Collapsible>>()
 
 // collapsible inserts/removes components from DOM, so the list's exposed stuff don't always exist.
-const items = computed(() =>
-  getProgressItems(
-    actor.value,
-    showCompleted,
-    props.listProps?.excludedSubtypes
-  )
-)
+const items = computed(() => actor.value.items.filter(completedFilterFn.value))
 
 const editMode = computed(
   () => !!(actor.value.flags as any)['foundry-ironsworn']?.['edit-mode']

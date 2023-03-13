@@ -6,41 +6,33 @@
     :class="$style.wrapper"
   >
     <slot name="start"></slot>
-    <IronList :class="$style.list">
-      <CollapseTransition group>
-        <SortableItem
-          class="flexrow"
-          v-for="(asset, i) in assets"
-          :key="asset._id"
-          :item="asset"
-          :i="i"
-          :length="assets.length"
-          @sortUp="sortUp"
-          @sortDown="sortDown"
+    <SortableItemList
+      :class="$style.list"
+      :filterFn="(item) => item?.type === 'asset'"
+    >
+      <template #itemContent="{ item }">
+        <AssetCard
+          :asset="item"
+          :collapsible="true"
+          :showUncheckedAbilities="false"
+          :editable="false"
+          :showAssetType="true"
         >
-          <AssetCard
-            :asset="asset"
-            :collapsible="true"
-            :showUncheckedAbilities="false"
-            :editable="false"
-            :showAssetType="true"
-          >
-            <template #headerEnd>
-              <div :class="$style.assetControls" class="flexrow nogrow">
-                <IronBtn
-                  v-if="editMode"
-                  block
-                  nogrow
-                  icon="fa:trash"
-                  @click="destroy"
-                />
-                <IronBtn block nogrow icon="fa:pen-to-square" @click="edit" />
-              </div>
-            </template>
-          </AssetCard>
-        </SortableItem>
-      </CollapseTransition>
-    </IronList>
+          <template #headerEnd>
+            <div :class="$style.assetControls" class="flexrow nogrow">
+              <IronBtn
+                v-if="editMode"
+                block
+                nogrow
+                icon="fa:trash"
+                @click="destroy"
+              />
+              <IronBtn block nogrow icon="fa:pen-to-square" @click="edit" />
+            </div>
+          </template>
+        </AssetCard>
+      </template>
+    </SortableItemList>
     <section
       :class="$style.controls"
       class="flexrow nogrow"
@@ -53,7 +45,6 @@
         :text="$t('IRONSWORN.ITEMS.TypeAsset')"
       />
     </section>
-    <slot name="end"></slot>
   </DropTarget>
 </template>
 
@@ -89,6 +80,7 @@ import CollapseTransition from '../transition/collapse-transition.vue'
 import DropTarget from '../../drop-target.vue'
 import IronList from 'component:list/iron-list.vue'
 import SortableItem from 'component:list/sortable-item.vue'
+import SortableItemList from 'component:list/sortable-item-list.vue'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)

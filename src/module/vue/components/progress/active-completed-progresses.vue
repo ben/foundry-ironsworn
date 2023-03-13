@@ -3,7 +3,7 @@
     <DropTarget
       dropType="progress"
       :is="SortableItemList"
-      :filterFn="(item) => !item.system.completed"
+      :filterFn="(item) => filterFn(item) && !item.system.completed"
     >
       <template #item="{ item, i, length }">
         <ProgressListItem
@@ -11,17 +11,10 @@
           :i="i"
           :length="length"
           :showStar="progressStars"
+          :compactProgress="compactProgress"
         />
       </template>
     </DropTarget>
-    <DropTarget
-      :is="ProgressList"
-      dropType="progress"
-      :compact-progress="compactProgress"
-      :excludedSubtypes="excludedSubtypes"
-      :progress-stars="progressStars"
-      :showCompleted="'no-completed'"
-    />
     <ProgressControls class="nogrow" :foeCompendium="foeCompendium" />
     <CompletedProgressList
       class="nogrow"
@@ -32,13 +25,13 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import ProgressControls from '../progress-controls.vue'
+import ProgressControls from './progress-controls.vue'
 import { IronswornSettings } from '../../../helpers/settings'
-import ProgressList from '../progress-list.vue'
 import DropTarget from '../../drop-target.vue'
 import CompletedProgressList from './completed-progress-list.vue'
 import SortableItemList from 'component:list/sortable-item-list.vue'
 import ProgressListItem from 'component:progress/progress-list-item.vue'
+import { ItemLike } from 'component:list/helpers'
 
 defineProps<{
   /**
@@ -51,7 +44,7 @@ defineProps<{
    * When true, renders the progress bars for more compact display.
    */
   compactProgress?: boolean
-  filterFn: (item: ItemLike)
+  filterFn: (item: ItemLike) => boolean | undefined
 }>()
 
 const foeCompendium = computed(() => {

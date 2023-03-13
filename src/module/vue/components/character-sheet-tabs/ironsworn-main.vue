@@ -47,6 +47,6 @@ h3 {
 
 <script lang="ts" setup>
 import Bonds from '../bonds.vue'
-import ActiveCompletedProgresses from '../active-completed-progresses.vue'
+import ActiveCompletedProgresses from '../progress/active-completed-progresses.vue'
 import AssetsList from './assets-list.vue'
 </script>

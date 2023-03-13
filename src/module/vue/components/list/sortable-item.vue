@@ -1,24 +1,25 @@
 <template>
   <li :class="$style.wrapper" class="flexrow">
     <div
-      v-if="editMode && sortUp && sortDown"
+      v-if="showSortButtons"
       class="flexcol nogrow"
       :class="$style.orderBtns"
     >
-      <!-- TODO: replace with better disabled attr? either aria-disabled or disabled attr -->
       <IronBtn
         icon="fa:caret-up"
         block
         nogrow
-        :class="{ disabled: i == 0, [$style.orderBtn]: true }"
-        @click="sortUp!(i)"
+        :disabled="!canSortUp"
+        :class="{ [$style.orderBtn]: true }"
+        @click="sortUp"
       />
       <IronBtn
         icon="fa:caret-down"
         block
         nogrow
-        :class="{ disabled: i == length - 1, [$style.orderBtn]: true }"
-        @click="sortDown!(i)"
+        :disabled="!canSortDown"
+        :class="{ [$style.orderBtn]: true }"
+        @click="sortDown"
       />
     </div>
     <div :class="[$style.content, contentWrapperClass ?? '']">
@@ -95,19 +96,20 @@ const props = withDefaults(
     length: number
     item: ReturnType<Item['toObject']>
     contentWrapperClass?: string
+    /**
+     * Function used adjust sort order. Can be omitted to disable sorting.
+     */
+    sortFn?: (
+      oldIndex: number,
+      newIndex: number,
+      sortBefore: boolean
+    ) => Promise<void>
     deleteButton?: boolean
     editButton?: boolean
   }>(),
   { deleteButton: true, editButton: true }
 )
 
-// provided by sortable-item-list
-const sortUp = inject('sortUp', undefined) as
-  | undefined
-  | ((index: number) => Promise<void>)
-const sortDown = inject('sortDown', undefined) as
-  | undefined
-  | ((index: number) => Promise<void>)
 const $actor = inject($ActorKey)
 const actor = inject(ActorKey)
 
@@ -117,8 +119,15 @@ provide(ItemKey, computed(() => $item?.toObject()) as any)
 provide($ItemKey, $item)
 
 const editMode = computed(() => {
-  return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
+  return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode'] as
+    | boolean
+    | undefined
 })
+
+const showSortButtons = computed(() => props.sortFn && editMode.value)
+
+const canSortUp = computed(() => props.i !== 0)
+const canSortDown = computed(() => props.i === length - 1)
 
 function edit() {
   $item?.sheet?.render(true)
@@ -137,5 +146,16 @@ function destroy() {
     yes: () => $item?.delete(),
     defaultYes: false,
   })
+}
+
+function sortUp() {
+  if (!props.sortFn)
+    throw new Error('sortUp invoked but sortFn was not provided')
+  return props.sortFn(props.i, props.i - 1, true)
+}
+function sortDown() {
+  if (!props.sortFn)
+    throw new Error('sortDown invoked but sortFn was not provided')
+  return props.sortFn(props.i, props.i + 1, false)
 }
 </script>
