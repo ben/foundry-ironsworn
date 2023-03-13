@@ -24,10 +24,10 @@
 
 <script setup lang="ts">
 import { computed, inject, reactive, Ref } from 'vue'
-import { $ActorKey, ActorKey } from '../provisions'
-import ProgressListItem from './progress/progress-list-item.vue'
-import { ProgressDataPropertiesData } from '../../item/itemtypes'
-import { getProgressItems, isValidProgressItem } from './progress-common'
+import { $ActorKey, ActorKey } from '../../provisions'
+import ProgressListItem from './progress-list-item.vue'
+import { ProgressDataPropertiesData } from '../../../item/itemtypes'
+import { getProgressItems, isValidProgressItem } from '../progress-common'
 import SortableItemList from 'component:list/sortable-item-list.vue'
 
 const props = defineProps<{
