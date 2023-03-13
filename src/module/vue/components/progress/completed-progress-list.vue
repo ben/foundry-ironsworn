@@ -8,13 +8,20 @@
     v-bind="$props.collapsibleProps"
     ref="$collapsible"
   >
-    <ProgressList
-      v-bind="$props.listProps"
-      :showCompleted="showCompleted"
-      :progressListItemClass="$style.listItem"
+    <SortableItemList
+      :filterFn="(item) => item.type === 'progress' && (item as any).system.completed"
       :class="$style.list"
       ref="$progressList"
-    />
+    >
+      <template #item="{ item, i, length }">
+        <ProgressListItem
+          :item="item"
+          :i="i"
+          :length="length"
+          :showStar="true"
+        />
+      </template>
+    </SortableItemList>
   </Collapsible>
 </template>
 
@@ -39,11 +46,13 @@
 </style>
 
 <script lang="ts" setup>
+import SortableItemList from 'component:list/sortable-item-list.vue'
+import ProgressListItem from 'component:progress/progress-list-item.vue'
 import { computed, ExtractPropTypes, inject, ref, Ref, watch } from 'vue'
-import { ActorKey } from '../provisions'
-import Collapsible from './collapsible/collapsible.vue'
-import { CompletedProgressType, getProgressItems } from './progress-common'
-import ProgressList from './progress-list.vue'
+import { ActorKey } from '../../provisions'
+import Collapsible from '../collapsible/collapsible.vue'
+import { CompletedProgressType, getProgressItems } from '../progress-common'
+import ProgressList from '../progress-list.vue'
 
 const props = defineProps<{
   collapsibleProps?: Omit<
