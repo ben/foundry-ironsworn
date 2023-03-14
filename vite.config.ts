@@ -14,7 +14,6 @@ const PORT = 30000
 
 const sassOptions: Sass.LegacyStringOptions<'sync'> = {
 	functions: { ...sassChroma, ...sassIcons },
-	// @ts-expect-error
 	additionalData: ''
 }
 
@@ -34,9 +33,24 @@ const config: UserConfig = {
 		})
 	],
 	resolve: {
-		alias: {
-			vue: 'vue/dist/vue.esm-bundler.js'
-		}
+		alias: [
+			{
+				find: /^style:(.*)/,
+				replacement: path.resolve(__dirname, 'src/styles', '$1')
+			},
+			{
+				find: /^mixin:(.*)/,
+				replacement: path.resolve(__dirname, 'src/styles/mixins', '$1')
+			},
+			{
+				find: /^component:(.*)/,
+				replacement: path.resolve(__dirname, 'src/module/vue/components', '$1')
+			},
+			{
+				find: /^vue$/,
+				replacement: 'vue/dist/vue.esm-bundler.js'
+			}
+		]
 	},
 	define: {
 		'process.env': {}
@@ -56,6 +70,9 @@ const config: UserConfig = {
 
 	css: {
 		preprocessorOptions: {
+			less: {
+				rewriteUrls: 'local'
+			},
 			scss: sassOptions
 		},
 		postcss: {
