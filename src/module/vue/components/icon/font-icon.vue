@@ -111,7 +111,6 @@ const classes = computed(() => {
 </script>
 
 <style lang="scss" module>
-@use 'mixin:icon.scss';
 .wrapper {
 }
 
