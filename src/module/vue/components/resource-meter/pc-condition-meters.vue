@@ -32,17 +32,17 @@ const actorSys = computed(
 	() => (actor?.value as any)?.system as CharacterDataPropertiesData
 )
 </script>
-<style lang="less">
-@meter_spacing: 6px;
-
+<style lang="scss">
 .condition-meters {
-	gap: @meter_spacing;
+	--ironsworn-meter-spacing: 6px;
+
+	gap: var(--ironsworn-meter-spacing);
 
 	.condition-meter {
 		&:not(:first-child) {
 			border-top: var(--ironsworn-border-width-md) solid
 				var(--ironsworn-color-border);
-			padding-top: @meter_spacing;
+			padding-top: var(--ironsworn-meter-spacing);
 		}
 	}
 
