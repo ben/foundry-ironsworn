@@ -82,7 +82,7 @@ const transitionName = computed(() => {
 })
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 [class*='-leave-active'] {
 	// prevents outgoing panels from fighting incoming panels for space
 	position: absolute;
@@ -93,7 +93,7 @@ const transitionName = computed(() => {
 }
 </style>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tabPanel {
 	backface-visibility: hidden;
 	background-color: var(--ironsworn-color-bg);

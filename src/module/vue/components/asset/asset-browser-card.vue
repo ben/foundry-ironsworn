@@ -134,7 +134,7 @@ function dragEnd() {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .ironsworn .ironsworn__asset {
 	--ironsworn-color-thematic: v-bind('system.color');
 

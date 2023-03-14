@@ -41,7 +41,7 @@ const starredProgresses = computed(() =>
 )
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
 	gap: var(--ironsworn-spacer-md);
 

@@ -80,7 +80,7 @@ function assetBrowser() {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .controls {
 	--ironsworn-line-height: var(--ironsworn-line-height-sm);
 }

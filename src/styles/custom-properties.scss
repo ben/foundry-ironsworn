@@ -1,0 +1,130 @@
+@use 'mixin:icon.scss';
+
+:root {
+	// typography
+	--ironsworn-word-spacing-sm: 0.02em;
+	--ironsworn-letter-spacing-sm: 0.02em;
+	--ironsworn-word-spacing: var(--ironsworn-word-spacing-sm);
+	--ironsworn-letter-spacing: var(--ironsworn-letter-spacing-sm);
+
+	// SVG widgets
+	--ironsworn-widget-stroke-width: 1;
+	--ironsworn-clock-fill-opacity-hover: 0.6;
+
+	// Shapes
+	--ironsworn-hexagon-aspect-ratio: calc(sqrt(3) / 2);
+	--ironsworn-path-hexagon: polygon(
+		0 25%,
+		50% 0,
+		100% 25%,
+		100% 75%,
+		50% 100%,
+		0 75%
+	);
+
+	// Border radius and corners
+	--ironsworn-border-radius-sm: 2px;
+	--ironsworn-border-radius-md: 3px;
+	--ironsworn-border-radius-lg: 5px;
+
+	// Border width
+	--ironsworn-border-width-md: 1px;
+	--ironsworn-border-width-lg: 2px;
+
+	// Standard spacers for margin, padding, gap
+	--ironsworn-spacer-xs: 2px;
+	--ironsworn-spacer-sm: 3px;
+	--ironsworn-spacer-md: 5px;
+	--ironsworn-spacer-lg: 7px;
+	--ironsworn-spacer-xl: 10px;
+
+	// Range input elements
+	--ironsworn-range-height: 20px;
+
+	// range slider thumb
+	--ironsworn-range-thumb-bg-color: var(--ironsworn-color-fg);
+	--ironsworn-range-thumb-border-color: var(--ironsworn-color-cool-50);
+	--ironsworn-range-thumb-border-width: var(--ironsworn-border-width-md);
+	--ironsworn-range-thumb-border-radius: 2px;
+	--ironsworn-range-thumb-bg-color-focus: var(--ironsworn-color-fg);
+	--ironsworn-range-thumb-border-color-focus: var(--ironsworn-color-warm-90);
+	--ironsworn-range-thumb-height: 12px;
+	--ironsworn-range-thumb-width: 12px;
+
+	// range slider track
+	--ironsworn-range-track-height: 6px;
+	--ironsworn-range-track-border-radius: calc(
+		var(--ironsworn-range-track-height) / 2
+	);
+	--ironsworn-range-track-border-width: var(--ironsworn-border-width-md);
+	--ironsworn-range-track-bg-color: var(--ironsworn-color-fg-20);
+	--ironsworn-range-track-border-color: var(--ironsworn-color-fg-20);
+	--ironsworn-range-track-bg-color-focus: var(--ironsworn-color-warm-20);
+	--ironsworn-range-track-border-color-focus: var(--ironsworn-color-cool-50);
+	--ironsworn-range-box-shadow: 1px 1px 1px var(--color-shadow-dark),
+		0 0 1px #0d0d0d;
+	--ironsworn-range-value-input-width: 48px;
+
+	// Width for custom slider widgets
+	--ironsworn-vertical-slider-width: 50px;
+
+	// Icon sizing
+	--ironsworn-icon-size: 1em;
+
+	// Line height for text. Relative line height is preferred, without units.
+	--ironsworn-line-height-lg: 2;
+	--ironsworn-line-height-md: 1.5;
+	--ironsworn-line-height-sm: 1.25;
+	--ironsworn-line-height-xs: 1;
+	--ironsworn-line-height: var(--ironsworn-line-height-md);
+
+	// z-index presets to keep them consistent throughout.
+	// FIXME: FVTT may have its own set of z-indices. If so, we ought to use those instead.
+	--ironsworn-z-index-highest: 100;
+	--ironsworn-z-index-higher: 75;
+	--ironsworn-z-index-high: 25;
+	--ironsworn-z-index-low: -1;
+	--ironsworn-z-index-lower: -2;
+	--ironsworn-z-index-lowest: -3;
+
+	// This could be inset, but for some reason certain states don't inherit this properly, creating an annoying 'pop' in the input hover animation.
+	--ironsworn-input-border-style: solid;
+
+	// Transitions
+	--ironsworn-transition-duration: 0.4s;
+	--ironsworn-transition-timing-function: ease;
+
+	// for later use as a mixin to scope transitions to colors effects only.
+	--ironsworn-transition-property-color: background-color, border-color,
+		box-shadow, caret-color, color, column-rule-color, filter, opacity,
+		outline-color, text-decoration-color, fill-opacity, fill-color, stroke;
+	--ironsworn-transition-timing: var(--ironsworn-transition-duration)
+		var(--ironsworn-transition-timing-function);
+	--ironsworn-transition: all var(--ironsworn-transition-timing);
+
+	// Tabs
+	--ironsworn-tab-transition: fade;
+	--ironsworn-tab-transition-duration: var(--ironsworn-transition-duration);
+
+	// FontAwesome
+	--fa-display: inline-block;
+	--fa-invert: var(--ironsworn-color-bg);
+
+	// Ironsworn colors
+
+	--ironsworn-color-danger: var(--ironsworn-color-red);
+	--ironsworn-color-danger-inverted: hsl(0deg 0% 100%);
+	--ironsworn-color-success: var(--ironsworn-color-blue);
+	--ironsworn-color-warning: hsl(55deg 100% 50%);
+
+	--starforged-asset-ability-bullet-checked: url('/assets/misc/hex-checkbox-checked.svg');
+	--starforged-asset-ability-bullet-unchecked: url('/assets/misc/hex-checkbox-unchecked.svg');
+	--starforged-asset-deco: url('/assets/misc/hex-deco.svg');
+
+	// these are configured to make adding them from game-icons.net take as little effort as possible
+	// HOW TO ADD AN ICON FROM GAME-ICONS.NET
+	// 1) use the game-icons studio, turn off the black background
+	// 2) download the icon as an svg and place it in system/assets/icons
+	// 3) that's it. the next time the CSS is rebuilt, the icon's classes and variables will be usable
+	@include icon.buildIcons('system/assets/icons', '/assets/icons');
+}

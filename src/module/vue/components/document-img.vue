@@ -40,7 +40,7 @@ function click() {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 .document-img {
 	cursor: pointer;
 

@@ -168,18 +168,18 @@ function setClock(clockTicks: number) {
 }
 </script>
 
-<style lang="less" scoped>
-@progress_widget_spacing: 6px;
-
+<style lang="scss" scoped>
 .progress-list-item {
 	--ironsworn-clock-size: 50px;
+	--ironsworn-progress-widget-spacing: 6px;
 
 	display: grid;
 	grid-template-rows: max-content max-content 1fr;
 	grid-template-columns: max-content max-content 1fr max-content;
-	gap: @progress_widget_spacing;
-	padding: (@progress_widget_spacing / 2) (@progress_widget_spacing / 2)
-		@progress_widget_spacing;
+	gap: var(--ironsworn-progress-widget-spacing);
+	padding: calc(var(--ironsworn-progress-widget-spacing) / 2)
+		calc(var(--ironsworn-progress-widget-spacing) / 2)
+		var(--ironsworn-progress-widget-spacing);
 
 	.progress-img {
 		grid-row: 1 / span 2;

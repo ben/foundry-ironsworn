@@ -71,7 +71,7 @@ defineExpose({
 })
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
 	margin-top: var(--ironsworn-spacer-lg);
 	border-width: var(--ironsworn-border-width-md);

@@ -92,7 +92,7 @@ function focus() {
 defineExpose({ focus })
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 input {
 	transition: 0.4s ease-out;
 }

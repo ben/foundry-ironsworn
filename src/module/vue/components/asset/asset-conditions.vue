@@ -35,7 +35,7 @@ async function toggleCondition(idx: number) {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .assetconditions {
 	display: flex;
 	flex-direction: column;

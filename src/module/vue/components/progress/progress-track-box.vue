@@ -77,20 +77,25 @@ function onTransitionEnd(event) {
 	// console.log('transitionEnd', event)
 }
 </script>
-<style lang="less">
+<style lang="scss">
+/* stylelint-disable scss/no-dollar-variables */
+
+@use 'sass:math';
+
 // helper mixin functions
-.animateTick(@value,@duration,@delay:0s) {
-	.draw-progress-tick-enter-active[data-tick='@{value}'] {
-		transition-delay: @delay;
-		transition-duration: @duration;
+
+@mixin transitionBox($totalDuration: 1s, $baseDelay: 0s) {
+	$tickDuration: math.div($totalDuration, 4);
+	@each $tick in (1, 2, 3, 4) {
+		.progress-tick[data-tick='#{$tick}'] {
+			$tickOffsetFactor: $tick - 1;
+			$tickDelayOffset: $tickDuration * $tickOffsetFactor;
+			$delay: $baseDelay + $tickDelayOffset;
+
+			--ironsworn-tick-draw-delay: #{$delay};
+			--ironsworn-tick-draw-duration: #{$tickDuration};
+		}
 	}
-}
-.animateBox(@totalDuration:1s; @baseDelay:0s) {
-	@tickDuration: (@totalDuration / 4);
-	each(1,2,3,4; {
-    @tickDelay: (@tickDuration*(@value - 1));
-    .animateTick(@value,@tickDuration,@baseDelay+ @tickDelay);
-  });
 }
 
 .progress-track-box {
@@ -104,38 +109,42 @@ function onTransitionEnd(event) {
 	stroke-width: 5;
 
 	&.track-overflow .ghost-ticks {
+		// shown to indicate overflow progress on Legacy tracks
 		opacity: 0.2;
 	}
 
 	.progress-track-box-marks {
+		// groups the individual progress ticks
+		aspect-ratio: 1;
 		margin: 10%;
+		overflow: visible;
+	}
+
+	.progress-tick {
+		--ironsworn-tick-draw-delay: 0s;
+		--ironsworn-tick-draw-duration: 0.5s;
+		--ironsworn-tick-erase-duration: 0.5s;
+
+		transition: stroke-dashoffset var(--ironsworn-tick-draw-duration)
+				var(--ironsworn-tick-draw-delay) ease,
+			opacity var(--ironsworn-tick-erase-duration);
+		stroke-linecap: round;
+
+		// dash length = stroke length. the draw animation then adjusts the dashoffset
+		stroke-dasharray: 100%;
 	}
 }
 
-.progress-track-box-marks {
-	aspect-ratio: 1;
-	overflow: visible;
-}
-
-.progress-tick {
-	stroke-dasharray: 100%;
-	stroke-dashoffset: 0;
-	stroke-linecap: round;
-}
-
-// Progress tick draw animation
-.draw-progress-tick-enter-active {
-	transition: 0.8s stroke-dashoffset, stroke-dasharray;
-}
-
-.draw-progress-tick-leave-active {
-	transition: 0.8s;
-}
-
+// draw animation.
 .draw-progress-tick-enter-from {
 	stroke-dashoffset: -100%;
 }
 
+.draw-progress-tick-enter-to {
+	stroke-dashoffset: 0;
+}
+
+// erase animation. doesn't bother with draw order - just fades out
 .draw-progress-tick-leave-from {
 	opacity: 1;
 }
@@ -144,45 +153,43 @@ function onTransitionEnd(event) {
 	opacity: 0;
 }
 
-.draw-progress-tick-enter-to {
-	stroke-dashoffset: 0;
-}
-
 .progress-track {
 	&[data-rank='1'] {
-		// see the Track component
-		// Challenge rank troublesome: marks 3 boxes (12 ticks)
-		@box1: 0.75s;
-		@box2: 0.75s;
-		@box3: 0.75s;
+		// TROUBLESOME challenge rank: marks 3 boxes (12 ticks)
+		$box1: 0.75s;
+		$box2: 0.75s;
+		$box3: 0.75s;
 
 		.progress-track-box:nth-child(3n + 1) {
-			.animateBox(@box1);
+			@include transitionBox($box1);
 		}
 
 		.progress-track-box:nth-child(3n + 2) {
-			.animateBox(@box2, @box1);
+			@include transitionBox($box2, $box1);
 		}
 
 		.progress-track-box:nth-child(3n) {
-			@d1: (@box1+ @box2);
-			.animateBox(@box3,@d1);
+			$d1: ($box1 + $box2);
+
+			@include transitionBox($box3, $d1);
 		}
+
 		// offsets the draw delay when the score has a value not divisible by 3, which is rare but technically possible
 		&[data-score='1'],
 		&[data-score='4'],
 		&[data-score='7'] {
 			.progress-track-box:nth-child(3n + 2) {
-				.animateBox(@box1);
+				@include transitionBox($box1);
 			}
 
 			.progress-track-box:nth-child(3n) {
-				.animateBox(@box2, @box1);
+				@include transitionBox($box2, $box1);
 			}
 
 			.progress-track-box:nth-child(3n + 1) {
-				@d1: (@box1+ @box2);
-				.animateBox(@box3,@d1);
+				$d1: ($box1 + $box2);
+
+				@include transitionBox($box3, $d1);
 			}
 		}
 
@@ -190,31 +197,32 @@ function onTransitionEnd(event) {
 		&[data-score='5'],
 		&[data-score='8'] {
 			.progress-track-box:nth-child(3n) {
-				.animateBox(@box1);
+				@include transitionBox($box1);
 			}
 
 			.progress-track-box:nth-child(3n + 1) {
-				.animateBox(@box2, @box1);
+				@include transitionBox($box2, $box1);
 			}
 
 			.progress-track-box:nth-child(3n + 2) {
-				@d1: (@box1+ @box2);
-				.animateBox(@box3,@d1);
+				$d1: ($box1 + $box2);
+
+				@include transitionBox($box3, $d1);
 			}
 		}
 	}
 
 	&[data-rank='2'] {
-		// Challenge rank dangerous: marks 2 boxes (8 ticks)
-		@box1: 1s;
-		@box2: 0.75s;
+		// DANGEROUS challenge rank: marks 2 boxes (8 ticks)
+		$box1: 1s;
+		$box2: 0.75s;
 
 		.progress-track-box:nth-child(2n + 1) {
-			.animateBox(@box1);
+			@include transitionBox($box1);
 		}
 
 		.progress-track-box:nth-child(2n) {
-			.animateBox(@box2, @box1);
+			@include transitionBox($box2, $box1);
 		}
 
 		&[data-score='1'],
@@ -224,35 +232,31 @@ function onTransitionEnd(event) {
 		&[data-score='9'] {
 			// inverts the draw delay when the score has an odd value, which is rare but technically possible
 			.progress-track-box:nth-child(2n) {
-				.animateBox(@box1);
+				@include transitionBox($box1);
 			}
 
 			.progress-track-box:nth-child(2n + 1) {
-				.animateBox(@box2, @box1);
+				@include transitionBox($box2, $box1);
 			}
 		}
 	}
 
 	&[data-rank='3'] {
-		// Challenge rank formidable: marks 1 box (4 ticks).
-		.animateBox(1s);
+		// FORMIDABLE challenge rank: marks 1 box (4 ticks).
+		@include transitionBox(1s);
 	}
 
 	&[data-rank='4'] {
-		// Challenge rank extreme: marks 2 ticks.
-		@d1: 0.5s;
-		@d2: 0.5s;
-		.animateTick(1,@d1);
-		.animateTick(2,@d2,@d1);
-		.animateTick(3,@d1);
-		.animateTick(4,@d2,@d1);
-	}
-
-	&[data-rank='5'] {
-		// Challenge rank epic: marks 1 tick.
-		.draw-progress-tick-enter-active {
-			transition-duration: 0.5s;
+		// EXTREME challenge rank: marks 2 ticks at a time.
+		.progress-tick {
+			// stagger even ticks because they're always drawn second
+			&[data-tick='2'],
+			&[data-tick='4'] {
+				--ironsworn-tick-draw-delay: 0.5s;
+			}
 		}
 	}
+
+	// EPIC challenge rank: marks 1 tick, no add'l styling required.
 }
 </style>

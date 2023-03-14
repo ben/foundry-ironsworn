@@ -64,7 +64,7 @@ const tableRows = computed(() =>
 )
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 caption,
 th {
 	text-align: left;

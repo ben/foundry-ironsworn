@@ -51,7 +51,7 @@ function rollBonds() {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 h4 {
 	text-transform: uppercase;
 }

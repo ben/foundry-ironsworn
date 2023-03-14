@@ -131,7 +131,7 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
 })
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
 	gap: var(--ironsworn-spacer-lg);
 }

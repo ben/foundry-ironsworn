@@ -134,7 +134,7 @@ function decrease() {
 	adjustTrack(-1)
 }
 </script>
-<style lang="less">
+<style lang="scss">
 [data-legacy='discoveries'] {
 	--ironsworn-color-thematic: var(--ironsworn-color-legacy-discoveries);
 }

@@ -119,7 +119,7 @@ async function randomize() {
 defineExpose({ selectedValue, scrollIntoView, randomize })
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 h1 {
 	margin-top: 1em;
 }

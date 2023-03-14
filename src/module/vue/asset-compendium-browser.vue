@@ -64,7 +64,7 @@ function moveClick(item) {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 h2 {
 	margin: 0;
 	border: none;

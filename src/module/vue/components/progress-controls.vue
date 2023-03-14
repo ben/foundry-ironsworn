@@ -41,7 +41,7 @@ async function addProgressItem(subtype) {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
 	//
 }

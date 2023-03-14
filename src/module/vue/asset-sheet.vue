@@ -94,7 +94,7 @@ function setRequirement() {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tabList {
 }
 

@@ -93,11 +93,11 @@ async function onChange(newValue: number) {
 }
 </script>
 
-<style lang="less">
-@segment_border_width: var(--ironsworn-border-width-md);
-@segment_border_radius: var(--ironsworn-border-radius-lg);
-
+<style lang="scss">
 .attr-slider {
+	--ironsworn-segment-border-width: var(--ironsworn-border-width-md);
+	--ironsworn-segment-border-radius: var(--ironsworn-border-radius-lg);
+
 	&[aria-orientation='vertical'] {
 		display: grid;
 		grid-template-rows: max-content max-content max-content;
@@ -138,15 +138,11 @@ async function onChange(newValue: number) {
 
 		.attr-slider-label {
 			> * {
-				padding-inline-end: @segment_border_radius;
+				padding-inline-end: var(--ironsworn-segment-border-radius);
 			}
 		}
 	}
-
 	.attr-slider-label {
-		display: flex;
-		align-items: center;
-		text-transform: uppercase;
 		line-height: 1;
 
 		> * {

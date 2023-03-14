@@ -138,39 +138,44 @@ const keybindInfo = computed(
 )
 </script>
 
-<style lang="less" scoped>
-@import (reference) '../../../../styles/mixins.less';
-@segment_border_width: var(--ironsworn-border-width-md);
-@segment_border_radius: var(--ironsworn-border-radius-lg);
-@segment_line_height: var(--ironsworn-line-height-lg);
-@segment_vertical_width: var(--ironsworn-vertical-slider-width);
+<style lang="scss" scoped>
+/* stylelint-disable no-descending-specificity */
+@use 'mixin:clickable.scss';
 
 .slider-bar {
+	--ironsworn-slider-segment-border-width: var(--ironsworn-border-width-md);
+	--ironsworn-slider-segment-border-radius: var(--ironsworn-border-radius-lg);
+	--ironsworn-slider-segment-line-height: var(--ironsworn-line-height-lg);
+	--ironsworn-slider-segment-vertical-width: var(
+		--ironsworn-vertical-slider-width
+	);
+
 	display: flex;
 	flex-wrap: none;
 	grid-row: 1;
 	border: 0;
-	border-radius: @segment_border_radius; // so the focus effect aligns properly
+	border-radius: var(--ironsworn-slider-segment-border-radius);
 	padding: 0;
 
 	&:focus {
-		.focusOutlineMixin();
+		@include clickable.focusOutline;
 	}
 
 	.slider-segment {
 		box-sizing: border-box;
 		position: relative;
 		z-index: 1;
-		border: @segment_border_width solid currentcolor;
+		border: var(--ironsworn-slider-segment-border-width) solid currentcolor;
 		border-radius: 0;
 		padding: 0;
 		min-width: max-content;
 		text-align: center;
-		line-height: @segment_line_height;
+		line-height: var(--ironsworn-slider-segment-line-height);
 
 		&:hover,
 		&[aria-selected='true'] {
-			z-index: 10; // with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
+			// with position: relative, ensures that hovered item borders/filters aren't rendered behind other items
+			z-index: 10;
 		}
 	}
 
@@ -180,44 +185,53 @@ const keybindInfo = computed(
 
 		.slider-segment {
 			flex: 0 0 auto;
-			width: @segment_vertical_width;
+			width: var(--ironsworn-slider-segment-vertical-width);
 
 			&:not(:first-child) {
-				margin-block-start: calc(-1 * @segment_border_width);
+				margin-block-start: calc(
+					-1 * var(--ironsworn-slider-segment-border-width)
+				);
 			}
 
 			&:first-child {
-				border-start-start-radius: @segment_border_radius;
-				border-start-end-radius: @segment_border_radius;
+				border-start-start-radius: var(
+					--ironsworn-slider-segment-border-radius
+				);
+				border-start-end-radius: var(--ironsworn-slider-segment-border-radius);
 			}
 
 			&:last-child {
-				border-end-start-radius: @segment_border_radius;
-				border-end-end-radius: @segment_border_radius;
+				border-end-start-radius: var(--ironsworn-slider-segment-border-radius);
+				border-end-end-radius: var(--ironsworn-slider-segment-border-radius);
 			}
 		}
 	}
 
 	&[aria-orientation='horizontal'] {
 		flex: 1;
-		flex-direction: row;
-		flex-wrap: nowrap;
+		flex-flow: row nowrap;
 
 		.slider-segment {
 			flex-grow: 1;
 
 			&:not(:first-child) {
-				margin-inline-start: calc(-1 * @segment_border_width);
+				margin-inline-start: calc(
+					-1 * var(--ironsworn-slider-segment-border-width)
+				);
 			}
 
 			&:first-child {
-				border-top-left-radius: @segment_border_radius;
-				border-bottom-left-radius: @segment_border_radius;
+				border-top-left-radius: var(--ironsworn-slider-segment-border-radius);
+				border-bottom-left-radius: var(
+					--ironsworn-slider-segment-border-radius
+				);
 			}
 
 			&:last-child {
-				border-top-right-radius: @segment_border_radius;
-				border-bottom-right-radius: @segment_border_radius;
+				border-top-right-radius: var(--ironsworn-slider-segment-border-radius);
+				border-bottom-right-radius: var(
+					--ironsworn-slider-segment-border-radius
+				);
 			}
 		}
 	}

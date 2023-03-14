@@ -32,7 +32,7 @@ const props = defineProps<{
 defineEmits<{ (e: 'click', property: string) }>()
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 span {
 	overflow: hidden;
 	text-overflow: ellipsis;

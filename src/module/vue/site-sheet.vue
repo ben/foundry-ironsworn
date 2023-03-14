@@ -216,7 +216,7 @@ function saveDescription() {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .sheet {
 	gap: 0.5em;
 }
@@ -272,7 +272,7 @@ function saveDescription() {
 }
 </style>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 textarea {
 	border-radius: var(--ironsworn-border-radius-sm);
 	resize: none;

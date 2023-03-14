@@ -32,7 +32,7 @@ interface IconStackOptions
 const props = withDefaults(defineProps<IconStackOptions>(), {})
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
 	// TODO
 }
