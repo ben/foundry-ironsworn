@@ -1,0 +1,65 @@
+// styles for FVTT's sidebar
+
+@use 'mixin:clickable.scss';
+@use 'mixin:input.scss';
+
+#sidebar {
+	li.folder > .folder-header {
+		background: var(--ironsworn-color-fg-20);
+	}
+
+	.settings-sidebar,
+	.compendium-sidebar {
+		h2,
+		h3 {
+			border-color: var(--ironsworn-color-midtone-50);
+			background-color: var(--ironsworn-color-light-10);
+		}
+	}
+
+	.combat-sidebar {
+		.combat-tracker-header {
+			a.combat-button {
+				@include clickable.text;
+			}
+		}
+	}
+
+	#sidebar-tabs {
+		.collapse {
+			@include clickable.block;
+
+			border: 0;
+			background-color: transparent;
+		}
+	}
+
+	// CHAT TAB
+	#chat {
+		#chat-log {
+			// for chat *messages*, see chat-messages.scss
+		}
+
+		#chat-controls {
+			.roll-type-select {
+				@include input.field;
+
+				border-style: outset;
+			}
+		}
+
+		textarea#chat-message {
+			@include input.field;
+		}
+	}
+}
+
+.directory {
+	.directory-header {
+		.header-search {
+			input {
+				@include input.field;
+			}
+		}
+	}
+}

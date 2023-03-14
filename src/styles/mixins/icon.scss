@@ -1,0 +1,40 @@
+/* stylelint-disable scss/no-dollar-variables */
+@mixin fontIcon() {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	width: var(--ironsworn-icon-size);
+	height: var(--ironsworn-icon-size);
+	line-height: 1 !important;
+
+	&::before {
+		display: flex-item;
+		flex-basis: 0;
+	}
+}
+
+@mixin buildIcons($iconRoot, $iconUrlRoot) {
+	$iconVars: getIconVars($iconRoot, 'isicon');
+
+	// generates properties and assigns urls to them
+	@each $cssProperty, $url in $iconVars {
+		//   // FIXME: workaround to avoid vite inlining these as base64. can be done the normal way once this issue is resolved: https://github.com/vitejs/vite/pull/9734
+
+		//   @at-root {
+		//     #{$cssProperty}: url('#{$iconRoot}/#{$url}');
+		//   }
+		@at-root :root {
+			#{$cssProperty}: url('#{$iconUrlRoot}/#{$url}');
+		}
+	}
+
+	$iconClasses: getIconClasses($iconRoot, 'isicon');
+
+	@each $selector, $cssVarName in $iconClasses {
+		#{$selector} {
+			&::before {
+				mask-image: var(#{$cssVarName});
+			}
+		}
+	}
+}
