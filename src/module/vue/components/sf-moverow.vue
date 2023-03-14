@@ -78,7 +78,6 @@ const props = withDefaults(
 	defineProps<{
 		move: Move
 		headingLevel?: number
-		thematicColor?: string | null
 		toggleSectionClass?: any
 		toggleButtonClass?: any
 		oracleDisabled?: true | false | null
@@ -170,13 +169,8 @@ defineExpose({
 })
 </script>
 
-<style lang="less" module>
-@import (reference) '../../../styles/mixins.less';
-
-.thematicColorMixin {
-	--ironsworn-color-thematic: v-bind('thematicColor');
-	color: var(--ironsworn-color-fg);
-}
+<style lang="scss" module>
+@use 'mixin:clickable.scss';
 
 .wrapper {
 	--ironsworn-line-height: (--ironsworn-line-height-md);
@@ -199,7 +193,7 @@ defineExpose({
 .btn {
 	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
 	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
-	.clickableTextMixin();
+	@include clickable.text;
 
 	align-self: center;
 	font-size: var(--font-size-20);
@@ -210,8 +204,7 @@ defineExpose({
 	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
 	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
 
-	.clickableTextMixin();
-	.thematicColorMixin();
+	@include clickable.text;
 
 	display: flex;
 	flex-direction: row;
@@ -229,7 +222,6 @@ defineExpose({
 }
 
 .contentWrapper {
-	color: var(--ironsworn-color-fg);
 }
 
 .controls {
@@ -247,10 +239,6 @@ defineExpose({
 .toggleWrapper {
 	transition: var(--ironsworn-transition);
 	line-height: 1.5;
-
-	header:not(:last-child) & {
-		color: var(--ironsworn-color-light);
-	}
 }
 
 .oracle {
