@@ -54,7 +54,7 @@ async function immediateNameUpdate() {
 const nameUpdate = throttle(immediateNameUpdate, 1000)
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 label {
 	margin-right: var(--ironsworn-spacer-md);
 	margin-left: calc(var(--ironsworn-spacer-xs) * -1);

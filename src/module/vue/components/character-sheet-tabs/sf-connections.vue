@@ -35,7 +35,7 @@ async function newConnection() {
 	item?.sheet?.render(true)
 }
 </script>
-<style lang="less" module>
+<style lang="scss" module>
 .controls {
 	--ironsworn-line-height: var(--ironsworn-line-height-sm);
 }

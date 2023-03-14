@@ -63,7 +63,7 @@ function save() {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .sheetStyles {
 	gap: var(--ironsworn-spacer-md);
 

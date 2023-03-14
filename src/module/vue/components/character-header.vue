@@ -31,7 +31,7 @@ function setXp(n) {
 	$actor?.update({ system: { xp: n } })
 }
 </script>
-<style lang="less">
+<style lang="scss">
 .xp-track-classic {
 	--ironsworn-xp-box-size: 15px;
 	--ironsworn-xp-track-classic-size: 130px;

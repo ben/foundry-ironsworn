@@ -55,7 +55,7 @@ const props = defineProps<{
 provide(ActorKey, computed(() => props.data.actor) as any)
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .assets {
 	padding-top: var(--ironsworn-spacer-md);
 }

@@ -99,7 +99,7 @@ defineExpose({
 })
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .list {
 	gap: var(--ironsworn-spacer-md);
 }

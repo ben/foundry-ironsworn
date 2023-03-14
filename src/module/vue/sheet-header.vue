@@ -8,7 +8,7 @@
  * Wrapper to standardize + encapsulate sheet header styles.
  */
 </script>
-<style lang="less">
+<style lang="scss">
 // not scoped, so it also applies to handlebars templates with the appropriate class
 .sheet-header {
 	--ironsworn-title-height: 50px;

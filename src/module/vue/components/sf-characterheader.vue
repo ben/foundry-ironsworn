@@ -58,7 +58,7 @@ const save = debounce(() => {
 }, 500)
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 input,
 textarea {
 	border-radius: var(--ironsworn-border-radius-sm);

@@ -43,7 +43,7 @@ function emitHtml() {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 input[type='radio'] {
 	flex-grow: 0;
 	align-self: flex-start;

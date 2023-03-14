@@ -100,7 +100,7 @@ function click(i: number) {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 svg.clock {
 	// so that only *segment* hovers appear
 	pointer-events: none;

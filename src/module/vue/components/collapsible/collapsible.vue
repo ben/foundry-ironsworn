@@ -227,7 +227,7 @@ defineExpose({
 })
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
 	// TODO: horizontal and vertical versions
 }

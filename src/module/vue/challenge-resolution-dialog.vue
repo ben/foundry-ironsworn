@@ -129,7 +129,7 @@ function save() {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 div.grid {
 	flex-grow: 1;
 	align-items: center;

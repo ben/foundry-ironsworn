@@ -108,13 +108,13 @@ const props = defineProps<{
 provide(ActorKey, computed(() => props.data.actor) as any)
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .topPadding {
 	padding-top: var(--ironsworn-spacer-md);
 }
 </style>
 
-<style lang="less">
+<style lang="scss">
 .sf-character-sheet {
 	gap: var(--ironsworn-spacer-lg);
 

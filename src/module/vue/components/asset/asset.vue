@@ -194,7 +194,7 @@ function toggleCondition(idx: number) {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .themeColor {
 	--ironsworn-color-thematic: v-bind('asset?.system?.color');
 }

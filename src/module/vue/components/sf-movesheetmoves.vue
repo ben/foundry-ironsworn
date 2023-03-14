@@ -136,7 +136,7 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 })
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .nav {
 	margin-top: var(--ironsworn-spacer-lg);
 }

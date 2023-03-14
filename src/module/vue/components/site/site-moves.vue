@@ -154,7 +154,7 @@ async function locateObjective() {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
 	margin: 0;
 	border-radius: var(--ironsworn-border-radius-lg);

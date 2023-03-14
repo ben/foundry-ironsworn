@@ -103,7 +103,7 @@ function save() {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .clickable.block {
 	border-style: none;
 	padding: var(--ironsworn-spacer-md);

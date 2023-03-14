@@ -28,7 +28,7 @@ import ConditionCheckbox from './condition-checkbox.vue'
 import CustomConditionCheckbox from './custom-condition-checkbox.vue'
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .grid {
 	grid-template-columns: repeat(4, 1fr);
 }

@@ -100,7 +100,7 @@ function assetBrowser() {
 	theAssetBrowser.render(true, { focus: true })
 }
 </script>
-<style lang="less" module>
+<style lang="scss" module>
 .items {
 	gap: var(--ironsworn-spacer-md);
 }
@@ -110,7 +110,7 @@ function assetBrowser() {
 }
 </style>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 h4 {
 	text-transform: uppercase;
 }

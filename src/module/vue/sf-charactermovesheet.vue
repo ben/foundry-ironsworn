@@ -72,7 +72,7 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', () =>
 )
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tabSet {
 	// TODO make alternate layouts possible, possibly with media query?
 }

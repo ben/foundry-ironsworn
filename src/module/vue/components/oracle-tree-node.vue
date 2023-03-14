@@ -138,13 +138,13 @@ defineExpose({
 })
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .content {
 	margin: var(--ironsworn-spacer-sm);
 }
 </style>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .show-oracle-info {
 	// padding: 4px;
 }

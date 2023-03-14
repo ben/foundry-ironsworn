@@ -168,7 +168,7 @@ function toggleCondition(idx: number) {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .bullet-wrapper {
 	flex-basis: 1.5em;
 	align-content: flex-start;
@@ -187,7 +187,7 @@ function toggleCondition(idx: number) {
 }
 </style>
 
-<style lang="less" module>
+<style lang="scss" module>
 .ironsworn__asset {
 	--ironsworn-color-thematic: v-bind('item.system.color');
 

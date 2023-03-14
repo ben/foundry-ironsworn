@@ -112,7 +112,7 @@ function handleKeydown(event: KeyboardEvent) {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .tab {
 	flex: 1 1 0;
 	gap: var(--ironsworn-spacer-sm);

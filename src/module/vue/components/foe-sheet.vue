@@ -87,7 +87,7 @@ function toggleWhisper() {
 }
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .dropTarget {
 	justify-items: space-around;
 	text-align: center;
