@@ -62,8 +62,8 @@ function decrement() {
 }
 </script>
 
-<style lang="less" module>
-@import (reference) '../../../styles/mixins.less';
+<style lang="scss" module>
+@use 'mixin:text.scss';
 
 .label {
 	margin: 0;
@@ -81,6 +81,7 @@ function decrement() {
 .box {
 	--ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 	--ironsworn-attr-box-width: 75px;
+	@include text.stroke;
 
 	flex: 0 0 var(--ironsworn-attr-box-width);
 	border-width: var(--ironsworn-border-width-md);
@@ -93,7 +94,7 @@ function decrement() {
 	&::before {
 		--ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
 
-		transition: opacity 0.4s ease;
+		transition: opacity var(--ironsworn-transition-timing);
 		opacity: 0;
 		z-index: 0;
 		padding: var(--ironsworn-spacer-sm);
@@ -117,6 +118,5 @@ function decrement() {
 		position: relative; // must be set to manipulate z-index
 		z-index: 1;
 	}
-	.textStrokeMixin();
 }
 </style>
