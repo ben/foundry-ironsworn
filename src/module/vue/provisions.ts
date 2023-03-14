@@ -2,7 +2,7 @@ import type { InjectionKey, Ref } from 'vue'
 import type { enrichHtml, enrichMarkdown } from './vue-plugin'
 import type { IronswornActor } from '../actor/actor'
 import type { IronswornItem } from '../item/item'
-import type { Emitter } from 'mitt'
+import type { Emitter, EventType } from 'mitt'
 
 // Provided by the Vue plugin
 export const $EnrichHtmlKey = Symbol('$enrichHtml') as InjectionKey<
@@ -13,7 +13,7 @@ export const $EnrichMarkdownKey = Symbol('$enrichMarkdown') as InjectionKey<
 >
 
 // Provided by the render helper
-export interface LocalEmitterEvents {
+export interface LocalEmitterEvents extends Record<EventType, unknown> {
 	closeApp: void
 	activateTab: string
 }

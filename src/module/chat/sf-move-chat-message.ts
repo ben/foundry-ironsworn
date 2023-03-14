@@ -6,7 +6,7 @@ import type { SFMoveDataPropertiesData } from '../item/itemtypes'
 export async function createSfMoveChatMessage(move: IronswornItem) {
 	const { dfid, Oracles } = move.system as SFMoveDataPropertiesData
 	const dfMove = await getDFMoveByDfId(dfid)
-	const dfIds = Oracles != null || dfMove?.Oracles != null || []
+	const dfIds = Oracles ?? dfMove?.Oracles ?? []
 	const nextOracles = compact(
 		await Promise.all(dfIds.map(getFoundryTableByDfId))
 	)
@@ -16,7 +16,7 @@ export async function createSfMoveChatMessage(move: IronswornItem) {
 		'systems/foundry-ironsworn/templates/chat/sf-move.hbs',
 		params
 	)
-	ChatMessage.create({
+	await ChatMessage.create({
 		speaker: ChatMessage.getSpeaker(),
 		content
 	})

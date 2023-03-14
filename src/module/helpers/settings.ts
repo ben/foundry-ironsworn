@@ -64,7 +64,6 @@ export class IronswornSettings {
 			label: 'IRONSWORN.Settings.SFTruthsDialog.Label',
 			icon: 'fas fa-feather',
 			hint: 'IRONSWORN.Settings.SFTruthsDialog.Hint',
-			// @ts-expect-error
 			type: SFSettingTruthsDialogVue,
 			restricted: true
 		})
@@ -173,8 +172,7 @@ export class IronswornSettings {
 		actorTypes: Array<IronswornActor['type']> = ['character', 'shared']
 	) {
 		const actorsToUpdate =
-			game.actors?.contents.filter((x) => actorTypes.includes(x.type)) !=
-				null || []
+			game.actors?.contents.filter((x) => actorTypes.includes(x.type)) ?? []
 		// FIXME: Document.updateDocuments might make more sense here?
 		for (const actor of actorsToUpdate) {
 			await actor.update(data, {

@@ -258,7 +258,7 @@ async function processOracle(
 		const description = marked.parseInline(
 			renderLinksInStr(oracle.Description ?? '')
 		)
-		const maxRoll = max(oracle.Table.map((x) => x.Ceiling || 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
+		const maxRoll = max(oracle.Table.map((x) => x.Ceiling ?? 0)) // oracle.Table && maxBy(oracle.Table, (x) => x.Ceiling)?.Ceiling
 		output.push({
 			_id: hashLookup(oracle.$id),
 			flags: {
@@ -268,7 +268,7 @@ async function processOracle(
 			name: oracle.Name,
 			img: 'icons/dice/d10black.svg',
 			description,
-			formula: `d${maxRoll}`,
+			formula: `d${maxRoll as number}`,
 			replacement: true,
 			displayRoll: true,
 			/* folder: // would require using an additional module */
@@ -369,8 +369,8 @@ async function processSFEncounters() {
 				{
 					...encounter,
 					...variant,
-					Category: variant.Nature || encounter.Nature,
-					CategoryDescription: variant.Summary || encounter.Summary
+					Category: variant.Nature ?? encounter.Nature,
+					CategoryDescription: (variant as any).Summary ?? encounter.Summary
 				}
 			)
 
@@ -435,7 +435,6 @@ async function processTruths(
 		)
 
 		for (const entry of truth.Table) {
-			// @ts-expect-error
 			await JournalEntryPage.create(
 				{
 					type: 'truth',
@@ -451,8 +450,7 @@ async function processTruths(
 			)
 		}
 
-		// @ts-expect-error
-		JournalEntryPage.create(
+		await JournalEntryPage.create(
 			{
 				name: 'Character Inspiration',
 				text: {
