@@ -46,7 +46,6 @@ interface FontAwesomeIconProps extends IconPropsCommon {
 	/**
 	 * Rether to render the item at a fixed width.
 	 * @default true
-	 * @see
 	 */
 	fw?: boolean // fa-fw
 	/**
@@ -111,30 +110,23 @@ const classes = computed(() => {
 })
 </script>
 
-<style lang="less" module>
+<style lang="scss" module>
 .wrapper {
-	display: flex;
-	position: relative;
-	justify-content: center;
-	width: 1em;
-	height: 1em;
-	line-height: 1 !important;
-
-	&::before {
-		display: flex-item;
-		flex-basis: 0;
-	}
 }
 
 .border {
-	each(v-bind('borderOptions'), {
-    @{key}: @value
-  });
+	// @each $value, $key in v-bind('borderOptions') {
+	//   @if $value {
+	//     #{$key}: $value;
+	//   }
+	// }
 }
 
 .animation {
-	each(v-bind('animationOptions'), {
-    @{key}: @value;
-  });
+	// @each $value, $key in v-bind('animationOptions') {
+	//   @if $value {
+	//     #{$key}: $value;
+	//   }
+	// }
 }
 </style>
