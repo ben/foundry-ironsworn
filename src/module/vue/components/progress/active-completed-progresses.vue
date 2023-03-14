@@ -34,11 +34,6 @@ import ProgressListItem from 'component:progress/progress-list-item.vue'
 import { ItemLike } from 'component:list/helpers'
 
 defineProps<{
-  /**
-   * List of progress subtypes to exclude from the list. To leave out
-   * connections, pass `['bond']` here.
-   */
-  excludedSubtypes?: string[]
   progressStars?: boolean
   /**
    * When true, renders the progress bars for more compact display.
