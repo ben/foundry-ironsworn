@@ -38,8 +38,9 @@ module.exports = {
 			 * @see https://csstree.github.io/docs/syntax/
 			 */
 			cssDefinitions: ['color', 'length', 'z-index', 'line-height'],
-			ignoreProperties: ['/^\\$/', '/^--/'],
+			ignoreProperties: ['/^\\$/', '/^--/', '//^@'],
 			ignoreValues: [
+				'/^@/',
 				'/^\\$/',
 				'transparent',
 				'currentcolor',
