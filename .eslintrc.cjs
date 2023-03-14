@@ -4,11 +4,12 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:vue/vue3-recommended',
     'prettier',
   ],
-  parser: '@typescript-eslint/parser',
-  /** @type {import('@typescript-eslint/parser').ParserOptions} */
+  parser: 'vue-eslint-parser',
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 11,
     sourceType: 'module',
   },
@@ -30,22 +31,6 @@ module.exports = {
     ],
   },
   overrides: [
-    {
-      files: ['*.vue'],
-      extends: [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:vue/vue3-recommended',
-        'prettier',
-      ],
-      parser: 'vue-eslint-parser',
-      /** @type {import('@typescript-eslint/parser').ParserOptions} */
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        ecmaVersion: 11,
-        sourceType: 'module',
-      },
-    },
     {
       files: ['*.js', '*.cjs'],
       rules: {
