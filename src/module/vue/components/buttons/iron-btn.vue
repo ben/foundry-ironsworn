@@ -96,20 +96,7 @@ const justify = computed(() => {
 
 const $style = useCssModule()
 
-const classes = computed(() => {
-	return {
-		[$style.btn]: true,
-		[$style.vertical]: props.vertical,
-		[$style.iconOnly]: !hasText.value,
-		[$style.block]: props.block,
-		[$style.noBlock]: !props.block,
-		[$style[`flex${capitalize(justify.value)}`]]: true,
-		nogrow: props.nogrow
-	}
-})
-// so the span can be omitted if there's no slot content
-
-let $el = ref<HTMLElement>()
+const $el = ref<HTMLElement>()
 
 const hasText = computed(() => {
 	if (props.text || useSlots().text?.()[0]) return true
@@ -132,9 +119,8 @@ defineExpose({
 })
 </script>
 
-<style lang="less" module>
-@import (reference) '../../../../styles/utils.less';
-@import (reference) '../../../../styles/mixins.less';
+<style lang="scss" module>
+@use 'mixin:clickable.scss';
 
 .flexStart,
 .flexCenter,
@@ -170,33 +156,36 @@ defineExpose({
 	height: v-bind(height);
 	color: inherit;
 
+	&:disabled,
+	&[aria-disabled='true'] {
+		color: inherit;
+	}
+
 	& > svg {
 		// prevents double hover effect on svg hover
 		pointer-events: none;
 	}
 
 	&:local(.vertical) {
-		writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
 		flex-direction: column;
 		line-height: 1.25;
+		writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+	}
+}
+
+.text {
+	display: inline;
+	border-width: 0;
+
+	&:local(.vertical) {
+		display: inherit;
+		width: max-content;
+		line-height: inherit;
+		writing-mode: vertical-lr !important;
 	}
 
-	.text {
-		display: inline;
-		border-width: 0;
-
-		strong {
-			white-space: nowrap;
-		}
-
-		&:local(.vertical) {
-			.vertical-text();
-
-			display: inherit;
-			width: max-content;
-			line-height: inherit;
-			writing-mode: vertical-lr !important;
-		}
+	strong {
+		white-space: nowrap;
 	}
 }
 
@@ -213,13 +202,13 @@ defineExpose({
 }
 
 .noBlock {
-	.clickableTextMixin();
+	@include clickable.text;
 
 	line-height: var(--ironsworn-line-height);
 }
 
 .block {
-	.clickableBlockMixin();
+	@include clickable.block;
 
 	&:hover:not(:focus) {
 		box-shadow: none;
