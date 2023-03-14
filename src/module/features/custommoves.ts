@@ -44,11 +44,17 @@ async function createMoveTree(
 }
 
 export async function createIronswornMoveTree(): Promise<MoveCategory[]> {
-	return await createMoveTree('foundry-ironsworn.ironswornmoves', ISMoveCategories)
+	return await createMoveTree(
+		'foundry-ironsworn.ironswornmoves',
+		ISMoveCategories
+	)
 }
 
 export async function createStarforgedMoveTree(): Promise<MoveCategory[]> {
-	return await createMoveTree('foundry-ironsworn.starforgedmoves', SFMoveCategories)
+	return await createMoveTree(
+		'foundry-ironsworn.starforgedmoves',
+		SFMoveCategories
+	)
 }
 
 // TODO dataforged has a key for move colours...., but they appear to have changed significantly since the last time i updated them! they'll be fixed for 2.0, but until then, here's a workaround.
@@ -117,7 +123,7 @@ async function augmentWithFolderContents(categories: MoveCategory[]) {
 	const folder = (game.items?.directory as any)?.folders.find(
 		(x) => x.name === name
 	) as Folder | undefined
-	if ((folder == null) || folder.contents.length == 0) return
+	if (folder == null || folder.contents.length == 0) return
 
 	// @ts-expect-error Exists only in FVTT v10 API
 	const color = (folder.color ?? null) as string | null

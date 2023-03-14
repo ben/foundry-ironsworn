@@ -58,7 +58,9 @@ export class MoveSheetTour extends IronswornTour {
 					title: 'IRONSWORN.Tours.MoveSheet.SheetTitle',
 					content: 'IRONSWORN.Tours.MoveSheet.SheetContent',
 					tooltipDirection: 'LEFT',
-					hook: () => { sheet.activateTab('moves'); },
+					hook: () => {
+						sheet.activateTab('moves')
+					},
 					selector: `${sheetSel} [data-tourid="sheet"]`
 				},
 				{
@@ -80,7 +82,9 @@ export class MoveSheetTour extends IronswornTour {
 					content: 'IRONSWORN.Tours.MoveSheet.MoveButtonsContent',
 					tooltipDirection: 'LEFT',
 					selector: moveButtonsSelector,
-					hook: async () => { await scrollIntoView(moveButtonsSelector); }
+					hook: async () => {
+						await scrollIntoView(moveButtonsSelector)
+					}
 				},
 				{
 					id: 'move-link',
@@ -88,7 +92,9 @@ export class MoveSheetTour extends IronswornTour {
 					content: 'IRONSWORN.Tours.MoveSheet.MoveLinkContent',
 					tooltipDirection: 'LEFT',
 					selector: moveLinkSelector,
-					hook: async () => { await scrollIntoView(moveLinkSelector); }
+					hook: async () => {
+						await scrollIntoView(moveLinkSelector)
+					}
 				},
 				{
 					id: 'oracles-tab',

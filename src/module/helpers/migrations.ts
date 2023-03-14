@@ -111,10 +111,9 @@ async function normalizeDelveTableRows() {
 		}
 	})
 	await everyItem(async (item) => {
-		const typesToMigrate = [
-			'delve-domain',
-			'delve-theme'
-		] as Array<SourceConfig['Item']['type']>
+		const typesToMigrate = ['delve-domain', 'delve-theme'] as Array<
+			SourceConfig['Item']['type']
+		>
 		const keysToMigrate = ['system.features', 'system.dangers']
 		if (typesToMigrate.includes(item.type)) {
 			keysToMigrate.forEach((key) => {

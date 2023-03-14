@@ -107,7 +107,7 @@ export async function walkOracle(
 	const node: IOracleTreeNode = {
 		...emptyNode(),
 		dataforgedNode: oracle,
-		tables: compact([(table != null) ? () => table : undefined]),
+		tables: compact([table != null ? () => table : undefined]),
 		displayName:
 			table?.name ||
 			game.i18n.localize(`IRONSWORN.OracleCategories.${oracle.Name}`)

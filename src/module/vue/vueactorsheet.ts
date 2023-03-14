@@ -23,7 +23,7 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 
 	async close(...args) {
 		this.actor.moveSheet?.close(...args)
-		await super.close(...args);
+		await super.close(...args)
 	}
 
 	_getHeaderButtons() {
@@ -32,7 +32,9 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 				class: 'ironsworn-toggle-edit-mode',
 				label: game.i18n.localize('IRONSWORN.Edit'),
 				icon: 'fas fa-edit',
-				onclick: (e) => { this._toggleEditMode(e); }
+				onclick: (e) => {
+					this._toggleEditMode(e)
+				}
 			},
 			...super._getHeaderButtons()
 		]
@@ -60,6 +62,6 @@ export abstract class VueActorSheet extends VueAppMixin(ActorSheet) {
 			}
 		}
 
-		super._onDrop(event);
+		super._onDrop(event)
 	}
 }

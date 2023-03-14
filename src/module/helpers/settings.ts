@@ -173,7 +173,8 @@ export class IronswornSettings {
 		actorTypes: Array<IronswornActor['type']> = ['character', 'shared']
 	) {
 		const actorsToUpdate =
-			((game.actors?.contents.filter((x) => actorTypes.includes(x.type))) != null) || []
+			game.actors?.contents.filter((x) => actorTypes.includes(x.type)) !=
+				null || []
 		// FIXME: Document.updateDocuments might make more sense here?
 		for (const actor of actorsToUpdate) {
 			await actor.update(data, {

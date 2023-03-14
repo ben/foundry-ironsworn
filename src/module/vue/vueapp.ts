@@ -45,12 +45,11 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 			const data = await this.getData()
 
 			// Create the Vue App instance
-			if ((this.vueApp == null) || (this.vueRoot == null)) {
+			if (this.vueApp == null || this.vueRoot == null) {
 				const provides = pickBy(data, (v, k) => k.startsWith('$'))
 
 				this.vueRoot = undefined
 				this.vueApp = createApp({
-
 					components: {
 						'loading-spinner': LoadingSpinner,
 						'root-component': vueOptions.rootComponent
@@ -131,7 +130,7 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 			this.vueApp?.unmount()
 			this.vueApp = undefined
 			this.vueRoot = undefined
-			await super.close(options);
+			await super.close(options)
 		}
 
 		/**
@@ -146,7 +145,9 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 			// Input listeners.
 			const inputs =
 				'.section input[type="text"], .section input[type="number"]'
-			html.on('focus', inputs, (event) => { this._onFocus(event); })
+			html.on('focus', inputs, (event) => {
+				this._onFocus(event)
+			})
 		}
 
 		_onFocus(event: JQuery.FocusEvent) {
@@ -159,7 +160,9 @@ export function VueAppMixin<TBase extends Constructor<Application>>(
 		}
 
 		_dragHandler(html: JQuery) {
-			const dragHandler = (event: DragEvent) => { this._onDragStart(event); }
+			const dragHandler = (event: DragEvent) => {
+				this._onDragStart(event)
+			}
 			html.find('.item[data-draggable="true"]').each((i, li) => {
 				li.setAttribute('draggable', 'true') // this apparently requires a string, rather than a boolean
 				li.addEventListener('dragstart', dragHandler, false)

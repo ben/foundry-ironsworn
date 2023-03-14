@@ -139,7 +139,7 @@ export function outcomeKey(
 
 export class IronswornRollMessage {
 	constructor(public roll: IronswornRoll, public actor?: IronswornActor) {
-		if ((actor == null) && roll.preRollOptions.actorId) {
+		if (actor == null && roll.preRollOptions.actorId) {
 			this.actor = game.actors?.get(roll.preRollOptions.actorId)
 		}
 	}
@@ -156,7 +156,7 @@ export class IronswornRollMessage {
 
 		const r = IronswornRoll.fromJson(json)
 		r.chatMessageId = messageId
-		r.roll = ((msg?.roll) != null) || undefined
+		r.roll = msg?.roll != null || undefined
 
 		return new IronswornRollMessage(r)
 	}
@@ -283,7 +283,7 @@ export class IronswornRollMessage {
 		// Only continue if this roll needs manual resolution
 		if (this.roll.preRollOptions.extraChallengeDice == null) return {}
 		const { replacedChallenge1, replacedChallenge2 } = this.roll.postRollOptions
-		if ((replacedChallenge1 != null) && (replacedChallenge2 != null)) return {}
+		if (replacedChallenge1 != null && replacedChallenge2 != null) return {}
 
 		return {
 			unresolved: true

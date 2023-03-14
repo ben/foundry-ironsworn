@@ -96,7 +96,7 @@ async function augmentWithFolderContents(categories: DisplayCategory[]) {
 	const folder = (game.items?.directory as any)?.folders.find(
 		(x) => x.name === name
 	) as Folder | undefined
-	if ((folder == null) || folder.contents.length == 0) return
+	if (folder == null || folder.contents.length == 0) return
 
 	const customAssets = [] as DisplayAsset[]
 	for (const item of folder.contents) {

@@ -24,7 +24,7 @@ export class IronswornTour extends Tour {
 			else layer.activate({ tool: this.currentStep.tool })
 		}
 
-		if ((this.currentStep?.hook) != null) {
+		if (this.currentStep?.hook != null) {
 			await this.currentStep.hook()
 		}
 	}

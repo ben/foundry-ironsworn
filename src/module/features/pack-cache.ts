@@ -4,17 +4,19 @@ import type { IronswornItem } from '../item/item'
 
 const ONE_MINUTE_IN_MS = 60 * 1000
 
-type PackContents = Array<StoredDocument<
-	| Scene
-	| IronswornActor
-	| Cards
-	| IronswornItem
-	| JournalEntry
-	| Macro
-	| Playlist
-	| RollTable
-	| BaseAdventure
->>
+type PackContents = Array<
+	StoredDocument<
+		| Scene
+		| IronswornActor
+		| Cards
+		| IronswornItem
+		| JournalEntry
+		| Macro
+		| Playlist
+		| RollTable
+		| BaseAdventure
+	>
+>
 const PACK_CACHE: Record<string, PackContents | undefined> = {}
 
 async function populateCacheForPack(packName: string) {

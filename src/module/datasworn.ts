@@ -142,7 +142,7 @@ function importDelveFeaturesOrDangers(
 	for (const featureOrDanger of rawFeaturesOrDangers) {
 		result.push({
 			range: [low, featureOrDanger.Chance],
-			text: featureOrDanger.Description ,
+			text: featureOrDanger.Description,
 			flags: {
 				'foundry-ironsworn': {
 					type: `delve-site-${type}`,

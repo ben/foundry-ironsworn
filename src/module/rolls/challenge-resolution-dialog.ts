@@ -31,7 +31,7 @@ export class ChallengeResolutionDialog extends VueAppMixin(Application) {
 
 	async close(options?: Application.CloseOptions): Promise<void> {
 		delete ChallengeResolutionDialog.openDialogs[this.messageId]
-		await super.close(options);
+		await super.close(options)
 	}
 
 	static get defaultOptions() {

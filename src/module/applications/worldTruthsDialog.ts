@@ -55,12 +55,12 @@ export class WorldTruthsDialog extends FormApplication<FormApplicationOptions> {
 	activateListeners(html: JQuery) {
 		super.activateListeners(html)
 
-		html
-			.find('.ironsworn__custom__truth')
-			.on('focus', (ev) => { this._customTruthFocus.call(this, ev); })
-		html
-			.find('.ironsworn__save__truths')
-			.on('click', async (ev) => { await this._save.call(this, ev); })
+		html.find('.ironsworn__custom__truth').on('focus', (ev) => {
+			this._customTruthFocus.call(this, ev)
+		})
+		html.find('.ironsworn__save__truths').on('click', async (ev) => {
+			await this._save.call(this, ev)
+		})
 	}
 
 	_customTruthFocus(ev: JQuery.FocusEvent) {

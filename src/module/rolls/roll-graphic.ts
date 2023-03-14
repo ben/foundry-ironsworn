@@ -40,7 +40,7 @@ interface RollGraphicRenderOpts {
 }
 
 export async function renderRollGraphic(opts: RollGraphicRenderOpts) {
-	if ((opts.roll == null) && (opts.preRollOptions == null)) {
+	if (opts.roll == null && opts.preRollOptions == null) {
 		throw new Error('Need roll or preRollOptions here')
 	}
 	opts.roll ||= new IronswornRoll(opts.preRollOptions)

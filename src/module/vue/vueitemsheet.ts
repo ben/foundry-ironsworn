@@ -22,7 +22,7 @@ export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
 		}
 	}
 
-	readonly hasEditMode = true;
+	readonly hasEditMode = true
 	_getHeaderButtons() {
 		if (this.hasEditMode) {
 			return [
@@ -30,7 +30,9 @@ export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
 					class: 'ironsworn-toggle-edit-mode',
 					label: game.i18n.localize('IRONSWORN.Edit'),
 					icon: 'fas fa-edit',
-					onclick: (e) => { this._toggleEditMode(e); }
+					onclick: (e) => {
+						this._toggleEditMode(e)
+					}
 				},
 				...super._getHeaderButtons()
 			]

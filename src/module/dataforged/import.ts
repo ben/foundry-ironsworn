@@ -119,8 +119,9 @@ export async function importFromDataforged() {
 function movesForCategories(
 	categories: IMoveCategory[]
 ): Array<ItemDataConstructorData & Record<string, unknown>> {
-	const movesToCreate = [] as Array<ItemDataConstructorData &
-		Record<string, unknown>>
+	const movesToCreate = [] as Array<
+		ItemDataConstructorData & Record<string, unknown>
+	>
 	for (const category of categories) {
 		for (const move of category.Moves) {
 			renderLinksInMove(move)
@@ -164,8 +165,9 @@ async function processSFMoves() {
  */
 
 function assetsForTypes(types: IAssetType[]) {
-	const assetsToCreate = [] as Array<ItemDataConstructorData &
-		Record<string, unknown>>
+	const assetsToCreate = [] as Array<
+		ItemDataConstructorData & Record<string, unknown>
+	>
 	for (const assetType of types) {
 		for (const asset of assetType.Assets) {
 			// Inputs map to fields and exclusive options
@@ -336,8 +338,9 @@ function getLegacyRank(numericRank) {
 }
 
 async function processSFEncounters() {
-	const encountersToCreate = [] as Array<ItemDataConstructorData &
-		Record<string, unknown>>
+	const encountersToCreate = [] as Array<
+		ItemDataConstructorData & Record<string, unknown>
+	>
 	for (const encounter of starforged.Encounters) {
 		const description = await renderTemplate(
 			'systems/foundry-ironsworn/templates/item/sf-foe.hbs',
@@ -393,8 +396,9 @@ async function processSFEncounters() {
 
 async function processSFFoes() {
 	const foesPack = game.packs.get('foundry-ironsworn.starforgedencounters')
-	const foeItems =
-		(await foesPack?.getDocuments()) as Array<StoredDocument<IronswornItem>>
+	const foeItems = (await foesPack?.getDocuments()) as Array<
+		StoredDocument<IronswornItem>
+	>
 	for (const foeItem of foeItems ?? []) {
 		const actor = await IronswornActor.create(
 			{
@@ -470,11 +474,11 @@ async function processSFTruths() {
 	await processTruths(
 		((starforged as any).default as Starforged)['Setting Truths'],
 		'foundry-ironsworn.starforgedtruths'
-	);
+	)
 }
 async function processISTruths() {
 	await processTruths(
 		((ironsworn as any).default as Ironsworn)['Setting Truths']!,
 		'foundry-ironsworn.starforgedtruths'
-	);
+	)
 }

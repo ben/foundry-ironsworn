@@ -31,7 +31,9 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
 				class: 'ironsworn-open-move-sheet',
 				label: game.i18n.localize('IRONSWORN.ITEMS.TypeMove'),
 				icon: 'fas fa-directions',
-				onclick: (e) => { this._openMoveSheet(e); }
+				onclick: (e) => {
+					this._openMoveSheet(e)
+				}
 			},
 			editButton,
 			sheetButton,
@@ -40,7 +42,9 @@ export class IronswornCharacterSheetV2 extends VueActorSheet {
 				class: 'ironsworn-help',
 				icon: 'fa fa-circle-question',
 				label: '',
-				onclick: async (e) => { await new ISCharacterTour(this.actor).start(); }
+				onclick: async (e) => {
+					await new ISCharacterTour(this.actor).start()
+				}
 			},
 			...otherButtons
 		]

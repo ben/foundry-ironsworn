@@ -1,4 +1,9 @@
-import type { IMoveTrigger, ProgressTypeIronsworn , RollMethod, RollType } from 'dataforged'
+import type {
+	IMoveTrigger,
+	ProgressTypeIronsworn,
+	RollMethod,
+	RollType
+} from 'dataforged'
 import { capitalize, cloneDeep, maxBy, minBy, sortBy } from 'lodash-es'
 import type { IronswornActor } from '../actor/actor'
 import { getFoundryMoveByDfId } from '../dataforged'

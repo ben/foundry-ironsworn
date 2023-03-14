@@ -42,7 +42,9 @@ export const IronswornVuePlugin: Plugin = {
 			stringId: string,
 			data?: Record<string, unknown>
 		) =>
-			(data != null) ? game.i18n.format(stringId, data) : game.i18n.localize(stringId)
+			data != null
+				? game.i18n.format(stringId, data)
+				: game.i18n.localize(stringId)
 		app.config.globalProperties.$concat = (...args) => args.join('')
 		app.config.globalProperties.$capitalize = function (txt) {
 			const [first, ...rest] = txt

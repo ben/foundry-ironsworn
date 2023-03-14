@@ -12,7 +12,7 @@ export class IronswornJournalPage<
 > extends JournalEntryPage {
 	system!: T['system']
 	type!: T['type']
-	protected async override _preCreate(
+	protected override async _preCreate(
 		data: JournalEntryPageData.ConstructorData,
 		options: DocumentModificationOptions,
 		user: BaseUser
@@ -31,7 +31,7 @@ export class IronswornJournalPage<
 			// @ts-expect-error
 			this.updateSource({ system: newSourceData })
 		}
-		await super._preCreate(data, options, user);
+		await super._preCreate(data, options, user)
 	}
 
 	// PROGRESS METHODS

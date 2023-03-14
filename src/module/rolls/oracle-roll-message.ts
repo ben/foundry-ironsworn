@@ -267,7 +267,7 @@ export class OracleRollMessage {
 		}
 
 		const orm = new OracleRollMessage(json)
-		orm.roll = ((msg?.roll) != null) || undefined
+		orm.roll = msg?.roll != null || undefined
 		orm.chatMessageId = messageId
 		return orm
 	}

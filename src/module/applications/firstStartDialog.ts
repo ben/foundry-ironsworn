@@ -30,12 +30,12 @@ export class FirstStartDialog extends FormApplication<FormApplicationOptions> {
 
 	activateListeners(html: JQuery) {
 		super.activateListeners(html)
-		html
-			.find('#select-ironsworn')
-			.on('click', async (ev) => { await this._selectIronsworn.call(this, ev); })
-		html
-			.find('#select-starforged')
-			.on('click', async (ev) => { await this._selectStarforged.call(this, ev); })
+		html.find('#select-ironsworn').on('click', async (ev) => {
+			await this._selectIronsworn.call(this, ev)
+		})
+		html.find('#select-starforged').on('click', async (ev) => {
+			await this._selectStarforged.call(this, ev)
+		})
 	}
 
 	async _selectIronsworn(ev) {

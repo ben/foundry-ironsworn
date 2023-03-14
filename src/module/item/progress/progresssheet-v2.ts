@@ -9,5 +9,5 @@ export class ProgressSheetV2 extends VueItemSheet {
 		}) as any
 	}
 
-	readonly hasEditMode = false;
+	readonly hasEditMode = false
 }

@@ -19,7 +19,9 @@ export class CompactPCSheet extends VueActorSheet {
 				class: 'ironsworn-open-move-sheet',
 				label: game.i18n.localize('IRONSWORN.ITEMS.TypeMove'),
 				icon: 'fas fa-directions',
-				onclick: (e) => { this._openMoveSheet(e); }
+				onclick: (e) => {
+					this._openMoveSheet(e)
+				}
 			},
 			...super._getHeaderButtons()
 		]

@@ -45,27 +45,27 @@ export class CreateActorDialog extends FormApplication<CreateActorDialogOptions>
 	activateListeners(html: JQuery) {
 		super.activateListeners(html)
 
-		html
-			.find('.ironsworn__character__create')
-			.on('click', async (ev) => { await this._characterCreate.call(this, ev); })
-		html
-			.find('.ironsworn__shared__create')
-			.on('click', async (ev) => { await this._sharedCreate.call(this, ev); })
-		html
-			.find('.ironsworn__site__create')
-			.on('click', async (ev) => { await this._siteCreate.call(this, ev); })
-		html
-			.find('.ironsworn__foe__create')
-			.on('click', async (ev) => { await this._foeCreate.call(this, ev); })
-		html
-			.find('.ironsworn__sfcharacter__create')
-			.on('click', async (ev) => { await this._sfcharacterCreate.call(this, ev); })
-		html
-			.find('.ironsworn__sfship__create')
-			.on('click', async (ev) => { await this._sfshipCreate.call(this, ev); })
-		html
-			.find('.ironsworn__sflocation__create')
-			.on('click', async (ev) => { await this._sfLocationCreate.call(this, ev); })
+		html.find('.ironsworn__character__create').on('click', async (ev) => {
+			await this._characterCreate.call(this, ev)
+		})
+		html.find('.ironsworn__shared__create').on('click', async (ev) => {
+			await this._sharedCreate.call(this, ev)
+		})
+		html.find('.ironsworn__site__create').on('click', async (ev) => {
+			await this._siteCreate.call(this, ev)
+		})
+		html.find('.ironsworn__foe__create').on('click', async (ev) => {
+			await this._foeCreate.call(this, ev)
+		})
+		html.find('.ironsworn__sfcharacter__create').on('click', async (ev) => {
+			await this._sfcharacterCreate.call(this, ev)
+		})
+		html.find('.ironsworn__sfship__create').on('click', async (ev) => {
+			await this._sfshipCreate.call(this, ev)
+		})
+		html.find('.ironsworn__sflocation__create').on('click', async (ev) => {
+			await this._sfLocationCreate.call(this, ev)
+		})
 	}
 
 	async _characterCreate(ev: JQuery.ClickEvent) {

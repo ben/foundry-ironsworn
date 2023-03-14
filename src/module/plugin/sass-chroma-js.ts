@@ -177,7 +177,9 @@ const plugin: Record<string, SassSyncFunction> = {
 		c: SassLegacyValue<Sass.types.Number>,
 		l: SassLegacyValue<Sass.types.Number>
 	) => {
-		;[h, c, l].forEach((channel) => { assertNumber(channel); })
+		;[h, c, l].forEach((channel) => {
+			assertNumber(channel)
+		})
 		const chromaColor = Chroma(
 			[h.getValue(), c.getValue(), l.getValue()],
 			'hcl'
@@ -193,7 +195,9 @@ const plugin: Record<string, SassSyncFunction> = {
 		c: SassLegacyValue<Sass.types.Number>,
 		h: SassLegacyValue<Sass.types.Number>
 	) => {
-		;[l, c, h].forEach((channel) => { assertNumber(channel); })
+		;[l, c, h].forEach((channel) => {
+			assertNumber(channel)
+		})
 		const chromaColor = Chroma(
 			[l.getValue(), c.getValue(), h.getValue()],
 			'lch'
@@ -210,7 +214,9 @@ const plugin: Record<string, SassSyncFunction> = {
 		c: SassLegacyValue<Sass.types.Number>,
 		h: SassLegacyValue<Sass.types.Number>
 	) => {
-		;[l, c, h].forEach((channel) => { assertNumber(channel); })
+		;[l, c, h].forEach((channel) => {
+			assertNumber(channel)
+		})
 
 		const chromaColor = Chroma(
 			l.getValue(),
@@ -272,7 +278,9 @@ const plugin: Record<string, SassSyncFunction> = {
 			prefix: SassLegacyValue<Sass.types.String>
 		) => {
 			// typecheck the parameters SASS passed us
-			;[fgColor, bgColor, warmColor, coolColor].forEach((c) => { assertColor(c); })
+			;[fgColor, bgColor, warmColor, coolColor].forEach((c) => {
+				assertColor(c)
+			})
 			assertString(prefix)
 
 			// establish the how the dark and light colours will be mapped to the foreground and background colours

@@ -45,7 +45,8 @@ function editSector() {
 }
 
 async function dropToken(location: IronswornActor) {
-	if (((canvas?.scene) == null) || (canvas.stage == null) || (canvas.grid == null)) return
+	if (canvas?.scene == null || canvas.stage == null || canvas.grid == null)
+		return
 
 	// Calculate coordinates in the center of the viewport
 	const { clientWidth, clientHeight } = document.documentElement

@@ -56,7 +56,9 @@ export class ISCharacterTour extends IronswornTour {
 					id: 'charactertab',
 					title: 'IRONSWORN.Tours.ISCharacter.CharacterTabTitle',
 					content: 'IRONSWORN.Tours.ISCharacter.CharacterTabContent',
-					hook: () => { sheet.activateTab('character'); },
+					hook: () => {
+						sheet.activateTab('character')
+					},
 					selector: `${sheetSel} [data-tourid="tabs"]`
 				},
 				{
@@ -83,7 +85,9 @@ export class ISCharacterTour extends IronswornTour {
 					id: 'notes',
 					title: 'IRONSWORN.Tours.ISCharacter.NotesTabTitle',
 					content: 'IRONSWORN.Tours.ISCharacter.NotesTabContent',
-					hook: () => { sheet.activateTab('notes'); },
+					hook: () => {
+						sheet.activateTab('notes')
+					},
 					selector: `${sheetSel} [data-tourid="tabs"]`
 				},
 				{

@@ -59,9 +59,9 @@ export class IronswornChatCard {
 			.find('a.content-link')
 			.removeClass('content-link') // Prevent default Foundry behavior
 			.on('click', async (ev) => await this._moveNavigate.call(this, ev))
-		html
-			.find('a.oracle-category-link')
-			.on('click', async (ev) => { await this._oracleNavigate.call(this, ev); })
+		html.find('a.oracle-category-link').on('click', async (ev) => {
+			await this._oracleNavigate.call(this, ev)
+		})
 		html
 			.find('.burn-momentum')
 			.on('click', async (ev) => await this._burnMomentum.call(this, ev))
@@ -74,15 +74,15 @@ export class IronswornChatCard {
 		html
 			.find('.oracle-roll .oracle-reroll')
 			.on('click', async (ev) => await this._oracleReroll.call(this, ev))
-		html
-			.find('.copy-result')
-			.on('click', async (ev) => { await this._oracleResultCopy.call(this, ev); })
-		html
-			.find('.ironsworn-roll-resolve')
-			.on('click', async (ev) => { await this._resolveChallenge.call(this, ev); })
-		html
-			.find('.starforged__oracle__roll')
-			.on('click', async (ev) => { await this._oracleRoll.call(this, ev); })
+		html.find('.copy-result').on('click', async (ev) => {
+			await this._oracleResultCopy.call(this, ev)
+		})
+		html.find('.ironsworn-roll-resolve').on('click', async (ev) => {
+			await this._resolveChallenge.call(this, ev)
+		})
+		html.find('.starforged__oracle__roll').on('click', async (ev) => {
+			await this._oracleRoll.call(this, ev)
+		})
 	}
 
 	async _moveNavigate(ev: JQuery.ClickEvent) {

@@ -192,8 +192,9 @@ export class IronswornRoll {
 
 	async evaluate() {
 		if (
-			(this.roll != null) ||
-			((this.rawChallengeDiceValues != null) && this.rawChallengeDiceValues.length > 0)
+			this.roll != null ||
+			(this.rawChallengeDiceValues != null &&
+				this.rawChallengeDiceValues.length > 0)
 		) {
 			return
 		}
@@ -209,7 +210,10 @@ export class IronswornRoll {
 
 		// Gather the dice we need to roll
 		const diceTerms = [] as string[]
-		if ((this.preRollOptions.stat != null) && (this.preRollOptions.presetActionDie == null)) {
+		if (
+			this.preRollOptions.stat != null &&
+			this.preRollOptions.presetActionDie == null
+		) {
 			diceTerms.push('d6')
 		}
 		const numChallengeDice =
@@ -308,7 +312,7 @@ export class IronswornRoll {
 		// Second term: the stat for an action roll
 		if (this.preRollOptions.stat != null) {
 			terms.push(this.preRollOptions.stat.value)
-		} else if ((this.moveItem != null) && (this.preRollOptions.progress == null)) {
+		} else if (this.moveItem != null && this.preRollOptions.progress == null) {
 			// This is a move roll (not Fulfill Your Vow), but the action input
 			// isn't set, which means we haven't rolled yet
 			terms.push(undefined)
@@ -344,8 +348,8 @@ export class IronswornRoll {
 
 		// If challenge dice haven't been rolled but values were pre-set, use those
 		if (
-			(this.preRollOptions.presetChallenge1 != null) &&
-			(this.preRollOptions.presetChallenge2 != null)
+			this.preRollOptions.presetChallenge1 != null &&
+			this.preRollOptions.presetChallenge2 != null
 		) {
 			return [
 				this.preRollOptions.presetChallenge1,
@@ -391,7 +395,7 @@ export class IronswornRoll {
 				const preset = this.preRollOptions[`presetChallenge${i + 1}`] as
 					| SourcedValue
 					| undefined
-				const die = this.rawChallengeDiceValues![i] 
+				const die = this.rawChallengeDiceValues![i]
 				return {
 					source: preset?.source ?? 'd10',
 					value: preset?.value ?? die
@@ -411,7 +415,8 @@ export class IronswornRoll {
 		if (this.preRollOptions.automaticOutcome != null) {
 			return this.preRollOptions.automaticOutcome
 		}
-		if ((this.finalChallengeDice == null) || this.score === undefined) return undefined
+		if (this.finalChallengeDice == null || this.score === undefined)
+			return undefined
 
 		const [c1, c2] = this.finalChallengeDice
 		const outcome = computeRollOutcome(this.score, c1.value, c2.value)
