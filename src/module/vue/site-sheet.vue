@@ -8,10 +8,10 @@
         <article :class="$style.progress">
           <div class="flexrow nogrow" :class="$style.progressTopRow">
             <RankPips
+              :id="`${data.actor._id}_rank`"
               :current="data.actor.system.rank"
               class="nogrow"
               @click="setRank"
-              :id="`${data.actor._id}_rank`"
             />
             <label :for="`${data.actor._id}_rank`" :class="$style.rankLabel">{{
               rankText
@@ -20,10 +20,10 @@
               v-if="editMode"
               block
               nogrow
-              @click="clearProgress"
               icon="fa:trash"
+              @click="clearProgress"
             />
-            <IronBtn block nogrow @click="markProgress" icon="fa:caret-right" />
+            <IronBtn block nogrow icon="fa:caret-right" @click="markProgress" />
           </div>
           <!-- PROGRESS -->
           <ProgressTrack
@@ -60,35 +60,35 @@
             <IronBtn
               nogrow
               style="padding: var(--ironsworn-spacer-xs)"
-              @click="randomDenizen"
               icon="ironsworn:d10-tilt"
+              @click="randomDenizen"
             />
             <BtnCompendium compendium="ironswornfoes" nogrow />
           </h2>
           <div class="boxgroup nogrow">
             <div class="flexrow boxrow">
-              <SiteDenizenbox :idx="0" :ref="(e) => (denizenRefs[0] = e)" />
-              <SiteDenizenbox :idx="1" :ref="(e) => (denizenRefs[1] = e)" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[0] = e)" :idx="0" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[1] = e)" :idx="1" />
             </div>
             <div class="flexrow boxrow">
-              <SiteDenizenbox :idx="2" :ref="(e) => (denizenRefs[2] = e)" />
-              <SiteDenizenbox :idx="3" :ref="(e) => (denizenRefs[3] = e)" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[2] = e)" :idx="2" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[3] = e)" :idx="3" />
             </div>
             <div class="flexrow boxrow">
-              <SiteDenizenbox :idx="4" :ref="(e) => (denizenRefs[4] = e)" />
-              <SiteDenizenbox :idx="5" :ref="(e) => (denizenRefs[5] = e)" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[4] = e)" :idx="4" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[5] = e)" :idx="5" />
             </div>
             <div class="flexrow boxrow">
-              <SiteDenizenbox :idx="6" :ref="(e) => (denizenRefs[6] = e)" />
-              <SiteDenizenbox :idx="7" :ref="(e) => (denizenRefs[7] = e)" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[6] = e)" :idx="6" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[7] = e)" :idx="7" />
             </div>
             <div class="flexrow boxrow">
-              <SiteDenizenbox :idx="8" :ref="(e) => (denizenRefs[8] = e)" />
-              <SiteDenizenbox :idx="9" :ref="(e) => (denizenRefs[9] = e)" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[8] = e)" :idx="8" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[9] = e)" :idx="9" />
             </div>
             <div class="flexrow boxrow">
-              <SiteDenizenbox :idx="10" :ref="(e) => (denizenRefs[10] = e)" />
-              <SiteDenizenbox :idx="11" :ref="(e) => (denizenRefs[11] = e)" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[10] = e)" :idx="10" />
+              <SiteDenizenbox :ref="(e) => (denizenRefs[11] = e)" :idx="11" />
             </div>
           </div>
         </article>
@@ -106,9 +106,9 @@
           class="box"
           :disabled="!hasThemeAndDomain"
           :class="{ [$style.featureBtn]: true }"
-          @click="randomFeature"
           icon="ironsworn:d10-tilt"
           :text="$t('IRONSWORN.DELVESITE.Feature')"
+          @click="randomFeature"
         />
       </div>
       <MceEditor
@@ -118,69 +118,6 @@
     </div>
   </div>
 </template>
-
-<style lang="less" module>
-.sheet {
-  gap: 0.5em;
-}
-
-.progressTopRow {
-  gap: var(--ironsworn-spacer-lg);
-}
-
-.rankLabel {
-  display: flex;
-  flex-direction: row nowrap;
-  align-items: center;
-  margin: 0;
-  text-transform: uppercase;
-  line-height: 22px;
-  font-size: var(--font-size-14);
-}
-
-.matrix {
-  // TODO: extract this as its own component
-}
-
-.main {
-  gap: inherit;
-}
-
-.siteMoves {
-  height: max-content;
-}
-
-.rightCol {
-  flex-basis: 12em;
-  max-height: 411px;
-}
-
-.leftCol {
-  flex-basis: 20em;
-  gap: 1em;
-}
-
-.heading {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  text-transform: uppercase;
-  line-height: 1.5;
-  font-size: var(--font-size-14);
-  font-weight: bold;
-}
-
-.featureBtn {
-  text-transform: uppercase;
-}
-</style>
-
-<style lang="less" scoped>
-textarea {
-  border-radius: var(--ironsworn-border-radius-sm);
-  resize: none;
-}
-</style>
 
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
@@ -196,9 +133,9 @@ import { createIronswornDenizenChat } from '../chat/chatrollhelpers'
 import ProgressTrack from './components/progress/progress-track.vue'
 import SiteMoves from './components/site/site-moves.vue'
 import { OracleRollMessage } from '../rolls'
-import { DelveThemeDataSourceData } from '../item/itemtypes'
+import type { DelveThemeDataSourceData } from '../item/itemtypes'
 import IronBtn from './components/buttons/iron-btn.vue'
-import { SiteDataPropertiesData } from '../actor/actortypes'
+import type { SiteDataPropertiesData } from '../actor/actortypes'
 
 const props = defineProps<{
   data: { actor: any }
@@ -286,3 +223,66 @@ function saveDescription() {
   $actor?.update({ 'system.description': props.data.actor.system.description })
 }
 </script>
+
+<style lang="less" module>
+.sheet {
+  gap: 0.5em;
+}
+
+.progressTopRow {
+  gap: var(--ironsworn-spacer-lg);
+}
+
+.rankLabel {
+  display: flex;
+  flex-direction: row nowrap;
+  align-items: center;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 22px;
+  font-size: var(--font-size-14);
+}
+
+.matrix {
+  // TODO: extract this as its own component
+}
+
+.main {
+  gap: inherit;
+}
+
+.siteMoves {
+  height: max-content;
+}
+
+.rightCol {
+  flex-basis: 12em;
+  max-height: 411px;
+}
+
+.leftCol {
+  flex-basis: 20em;
+  gap: 1em;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1.5;
+  font-size: var(--font-size-14);
+  font-weight: bold;
+}
+
+.featureBtn {
+  text-transform: uppercase;
+}
+</style>
+
+<style lang="less" scoped>
+textarea {
+  border-radius: var(--ironsworn-border-radius-sm);
+  resize: none;
+}
+</style>

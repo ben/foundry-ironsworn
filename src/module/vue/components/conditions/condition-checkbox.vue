@@ -6,24 +6,19 @@
   >
     <input
       type="checkbox"
-      @change="input"
       :checked="actor.system.debility[name]"
+      @change="input"
     />
     {{ $t(`IRONSWORN.${$capitalize(name)}`) }}
   </label>
 </template>
 
-<style lang="less" scoped>
-.condition-hint {
-  text-shadow: 0 0 5px var(--ironsworn-color-warning);
-}
-</style>
-
 <script lang="ts" setup>
-import { capitalize, inject, nextTick, reactive, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { capitalize, inject, nextTick, reactive } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'
-import { AssetDataPropertiesData } from '../../../item/itemtypes'
+import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 const actor = inject(ActorKey) as Ref
@@ -121,3 +116,9 @@ function refreshGlobalHint() {
 }
 if (props.globalHint) refreshGlobalHint()
 </script>
+
+<style lang="less" scoped>
+.condition-hint {
+  text-shadow: 0 0 5px var(--ironsworn-color-warning);
+}
+</style>

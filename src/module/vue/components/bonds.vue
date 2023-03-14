@@ -2,8 +2,8 @@
   <div class="flexcol nogrow">
     <div class="flexrow">
       <h4>{{ $t('IRONSWORN.ITEMS.TypeBond') }}</h4>
-      <IronBtn block nogrow @click="editBonds" icon="fa:pen-to-square" />
-      <IronBtn block nogrow @click="rollBonds" icon="ironsworn:d10-tilt" />
+      <IronBtn block nogrow icon="fa:pen-to-square" @click="editBonds" />
+      <IronBtn block nogrow icon="ironsworn:d10-tilt" @click="rollBonds" />
     </div>
     <ProgressTrack
       :ticks="bondcount"
@@ -13,16 +13,10 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-h4 {
-  text-transform: uppercase;
-}
-</style>
-
 <script setup lang="ts">
-import { ActorDataBaseSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
+import type { ActorDataBaseSource } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/actorData.js'
 import { inject, computed, Ref } from 'vue'
-import {
+import type {
   BondsetDataPropertiesData,
   BondsetDataSource,
 } from '../../item/itemtypes.js'
@@ -57,3 +51,9 @@ function rollBonds() {
   item?.writeEpilogue()
 }
 </script>
+
+<style lang="less" scoped>
+h4 {
+  text-transform: uppercase;
+}
+</style>

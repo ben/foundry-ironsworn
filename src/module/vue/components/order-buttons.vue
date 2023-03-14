@@ -18,6 +18,11 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import IronBtn from './buttons/iron-btn.vue'
+defineProps<{ i: number; length: number }>()
+</script>
+
 <style lang="less" scoped>
 .order-buttons {
   padding-right: var(--ironsworn-spacer-sm);
@@ -27,8 +32,3 @@
   }
 }
 </style>
-
-<script setup lang="ts">
-import IronBtn from './buttons/iron-btn.vue'
-defineProps<{ i: number; length: number }>()
-</script>

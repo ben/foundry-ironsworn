@@ -1,16 +1,16 @@
 <template>
   <Collapsible
     class="list-block"
-    :class="$style.wrapper"
-    :toggleButtonClass="$style.toggleBtn"
-    :toggleTooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
-    :toggleWrapperIs="`h${headingLevel}`"
-    :toggleWrapperClass="$style.toggleWrapper"
-    :toggleSectionClass="`${$style.toggleSection} list-block-header`"
-    :baseId="`move_category_${snakeCase(category.displayName)}`"
-    :toggleLabel="category.displayName"
-    :toggleTextClass="$style.toggleText"
     ref="$collapsible"
+    :class="$style.wrapper"
+    :toggle-button-class="$style.toggleBtn"
+    :toggle-tooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"
+    :toggle-wrapper-is="`h${headingLevel}`"
+    :toggle-wrapper-class="$style.toggleWrapper"
+    :toggle-section-class="`${$style.toggleSection} list-block-header`"
+    :base-id="`move_category_${snakeCase(category.displayName)}`"
+    :toggle-label="category.displayName"
+    :toggle-text-class="$style.toggleText"
   >
     <template #default>
       <ul class="flexcol" :class="$style.list">
@@ -21,12 +21,12 @@
           :class="$style.listItem"
         >
           <SfMoverow
-            @afterExpand="afterMoveExpand"
-            :move="move"
             ref="$children"
-            :headingLevel="headingLevel + 1"
+            :move="move"
+            :heading-level="headingLevel + 1"
             :class="$style.moveRow"
-            thematicColor="transparent"
+            thematic-color="transparent"
+            @afterExpand="afterMoveExpand"
           />
         </li>
       </ul>
@@ -34,91 +34,10 @@
   </Collapsible>
 </template>
 
-<style lang="less" module>
-@import (reference) '../../../styles/mixins.less';
-
-.thematicColorMixin {
-  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-  --ironsworn-color-thematic: v-bind('category?.color');
-}
-
-.wrapper {
-  .thematicColorMixin();
-
-  border-radius: var(--ironsworn-border-radius-lg);
-  border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
-  border-left-width: 10px;
-}
-
-.list {
-  display: flex;
-  flex-flow: column nowrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.toggleWrapper {
-  box-sizing: content-box;
-}
-
-.toggleSection {
-  box-sizing: content-box;
-  border-radius: var(--ironsworn-border-radius-lg);
-
-  button {
-    --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
-    .clickableTextMixin();
-
-    height: inherit;
-  }
-}
-
-.toggleBtn {
-  background: none;
-}
-
-.listItem {
-  //
-}
-
-.moveRow {
-  &:focus {
-    border: 0;
-    box-shadow: none;
-    // outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-cool);
-    // box-shadow: var(--ironsworn-box-shadow-highlight) !important;
-    // TODO: figure out a better way to convey focus here.
-    background-color: transparent;
-  }
-
-  &[data-highlighted='true']::after {
-    .overlayMixin();
-    .staticHighlightMixin(50);
-
-    opacity: 0;
-    animation: overlay-fadeout v-bind('$props.highlightDuration +"ms"')
-      ease-in-out;
-  }
-}
-@keyframes overlay-fadeout {
-  0% {
-    opacity: 0;
-  }
-
-  15% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-</style>
 <script setup lang="ts">
-import { computed, ExtractPropTypes, nextTick, ref } from 'vue'
-import { MoveCategory } from '../../features/custommoves.js'
+import type { ExtractPropTypes} from 'vue';
+import { computed, nextTick, ref } from 'vue'
+import type { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'
 import Collapsible from './collapsible/collapsible.vue'
 import { snakeCase } from 'lodash-es'
@@ -206,3 +125,85 @@ defineExpose({
   $collapsible,
 })
 </script>
+<style lang="less" module>
+@import (reference) '../../../styles/mixins.less';
+
+.thematicColorMixin {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
+  --ironsworn-color-thematic: v-bind('category?.color');
+}
+
+.wrapper {
+  .thematicColorMixin();
+
+  border-radius: var(--ironsworn-border-radius-lg);
+  border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
+  border-left-width: 10px;
+}
+
+.list {
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toggleWrapper {
+  box-sizing: content-box;
+}
+
+.toggleSection {
+  box-sizing: content-box;
+  border-radius: var(--ironsworn-border-radius-lg);
+
+  button {
+    --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+    --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
+    .clickableTextMixin();
+
+    height: inherit;
+  }
+}
+
+.toggleBtn {
+  background: none;
+}
+
+.listItem {
+  //
+}
+
+.moveRow {
+  &:focus {
+    border: 0;
+    box-shadow: none;
+    // outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-cool);
+    // box-shadow: var(--ironsworn-box-shadow-highlight) !important;
+    // TODO: figure out a better way to convey focus here.
+    background-color: transparent;
+  }
+
+  &[data-highlighted='true']::after {
+    .overlayMixin();
+    .staticHighlightMixin(50);
+
+    opacity: 0;
+    animation: overlay-fadeout v-bind('$props.highlightDuration +"ms"')
+      ease-in-out;
+  }
+}
+@keyframes overlay-fadeout {
+  0% {
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+</style>

@@ -13,38 +13,11 @@
   />
 </template>
 
-<style lang="less" module>
-.wrapper {
-  display: flex;
-  position: relative;
-  justify-content: center;
-  width: 1em;
-  height: 1em;
-  line-height: 1 !important;
-
-  &::before {
-    display: flex-item;
-    flex-basis: 0;
-  }
-}
-
-.border {
-  each(v-bind('borderOptions'), {
-    @{key}: @value
-  });
-}
-
-.animation {
-  each(v-bind('animationOptions'), {
-    @{key}: @value;
-  });
-}
-</style>
-
 <script lang="ts" setup>
 import { forEach } from 'lodash-es'
 import { computed } from 'vue'
-import { FontAwesome, IconPropsCommon } from './icon-common'
+import type { IconPropsCommon } from './icon-common';
+import { FontAwesome } from './icon-common'
 
 interface FontAwesomeIconProps extends IconPropsCommon {
   /**
@@ -138,3 +111,31 @@ const classes = computed(() => {
   return iconClasses
 })
 </script>
+
+<style lang="less" module>
+.wrapper {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 1em;
+  height: 1em;
+  line-height: 1 !important;
+
+  &::before {
+    display: flex-item;
+    flex-basis: 0;
+  }
+}
+
+.border {
+  each(v-bind('borderOptions'), {
+    @{key}: @value
+  });
+}
+
+.animation {
+  each(v-bind('animationOptions'), {
+    @{key}: @value;
+  });
+}
+</style>

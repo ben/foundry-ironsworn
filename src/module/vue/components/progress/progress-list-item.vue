@@ -30,39 +30,39 @@
         v-if="editMode"
         block
         icon="fa:trash"
-        @click="destroy"
         :tooltip="
           $t('DOCUMENT.Delete', {
             type: $t('IRONSWORN.ITEM.TypeProgressTrack'),
           })
         "
+        @click="destroy"
       />
       <IronBtn
         block
         icon="fa:pen-to-square"
-        @click="edit"
         :tooltip="$t('IRONSWORN.Edit')"
+        @click="edit"
       />
       <IronBtn
-        block
         v-if="editMode"
+        block
         :icon="completedIcon"
-        @click="toggleComplete"
         :tooltip="completedTooltip"
+        @click="toggleComplete"
       />
       <IronBtn
-        block
         v-if="editMode && item.system.hasTrack"
+        block
         icon="fa:caret-left"
-        @click="retreat"
         :tooltip="$t('IRONSWORN.UnmarkProgress')"
+        @click="retreat"
       />
       <IronBtn
-        block
         v-if="item.system.hasTrack"
+        block
         icon="fa:caret-right"
-        @click="advance"
         :tooltip="$t('IRONSWORN.MarkProgress')"
+        @click="advance"
       />
       <BtnRollprogress v-if="item.system.hasTrack" :item="item" block />
       <IronBtn
@@ -90,78 +90,6 @@
   </article>
 </template>
 
-<style lang="less" scoped>
-@progress_widget_spacing: 6px;
-
-.progress-list-item {
-  --ironsworn-clock-size: 50px;
-
-  display: grid;
-  grid-template-rows: max-content max-content 1fr;
-  grid-template-columns: max-content max-content 1fr max-content;
-  gap: @progress_widget_spacing;
-  padding: (@progress_widget_spacing / 2) (@progress_widget_spacing / 2)
-    @progress_widget_spacing;
-
-  .progress-img {
-    grid-row: 1 / span 2;
-    grid-column: 2;
-    margin: 0;
-  }
-
-  .progress-rank-pips {
-    grid-row: 1;
-    grid-column: 3 / span 2;
-  }
-
-  .progress-title {
-    grid-row: 2;
-    grid-column: 3;
-    margin: 0;
-    height: max-content;
-    line-height: 1;
-  }
-
-  .progress-subtitle {
-    grid-row: 1 / span 3;
-    grid-column: 1;
-    margin: 0;
-    padding: 0;
-    width: max-content;
-    text-transform: uppercase;
-    line-height: 1;
-    color: var(--ironsworn-color-fg-muted);
-    font-weight: normal;
-  }
-
-  .progress-widgets {
-    grid-row: 3;
-    grid-column: 2 / span 3;
-    gap: var(--ironsworn-spacer-xs);
-
-    .progress-clock {
-      flex-basis: var(--ironsworn-clock-size);
-    }
-  }
-
-  .progress-controls {
-    display: grid;
-    grid-row: 1 / span 2;
-    grid-column: 4;
-    grid-auto-flow: column;
-
-    > * {
-      aspect-ratio: 1;
-      grid-row: 1;
-    }
-
-    .star-progress {
-      grid-row: 2;
-    }
-  }
-}
-</style>
-
 <script lang="ts" setup>
 import { capitalize, computed, inject, provide, Ref } from 'vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
@@ -170,7 +98,7 @@ import BtnRollprogress from '../buttons/btn-rollprogress.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import RankPips from '../rank-pips/rank-pips.vue'
 import DocumentImg from '../document-img.vue'
-import { RANKS } from '../../../constants.js'
+import type { RANKS } from '../../../constants.js'
 import ProgressTrack from './progress-track.vue'
 import FontIcon from '../icon/font-icon.vue'
 import { FontAwesome } from '../icon/icon-common'
@@ -249,3 +177,75 @@ function setClock(clockTicks: number) {
   foundryItem?.update({ system: { clockTicks } })
 }
 </script>
+
+<style lang="less" scoped>
+@progress_widget_spacing: 6px;
+
+.progress-list-item {
+  --ironsworn-clock-size: 50px;
+
+  display: grid;
+  grid-template-rows: max-content max-content 1fr;
+  grid-template-columns: max-content max-content 1fr max-content;
+  gap: @progress_widget_spacing;
+  padding: (@progress_widget_spacing / 2) (@progress_widget_spacing / 2)
+    @progress_widget_spacing;
+
+  .progress-img {
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    margin: 0;
+  }
+
+  .progress-rank-pips {
+    grid-row: 1;
+    grid-column: 3 / span 2;
+  }
+
+  .progress-title {
+    grid-row: 2;
+    grid-column: 3;
+    margin: 0;
+    height: max-content;
+    line-height: 1;
+  }
+
+  .progress-subtitle {
+    grid-row: 1 / span 3;
+    grid-column: 1;
+    margin: 0;
+    padding: 0;
+    width: max-content;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--ironsworn-color-fg-muted);
+    font-weight: normal;
+  }
+
+  .progress-widgets {
+    grid-row: 3;
+    grid-column: 2 / span 3;
+    gap: var(--ironsworn-spacer-xs);
+
+    .progress-clock {
+      flex-basis: var(--ironsworn-clock-size);
+    }
+  }
+
+  .progress-controls {
+    display: grid;
+    grid-row: 1 / span 2;
+    grid-column: 4;
+    grid-auto-flow: column;
+
+    > * {
+      aspect-ratio: 1;
+      grid-row: 1;
+    }
+
+    .star-progress {
+      grid-row: 2;
+    }
+  }
+}
+</style>

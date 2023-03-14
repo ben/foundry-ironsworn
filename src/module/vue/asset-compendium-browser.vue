@@ -1,8 +1,8 @@
 <template>
   <section
-    class="nogrow asset-category"
     v-for="category in data.categories"
     :key="category.title"
+    class="nogrow asset-category"
   >
     <h2 class="flexrow">
       <IronBtn
@@ -16,25 +16,25 @@
     <CollapseTransition>
       <div v-if="category.expanded">
         <section
+          :id="category.title"
           class="asset-category-contents"
           :aria-expanded="category.expanded"
-          :id="category.title"
         >
           <WithRolllisteners
             v-if="category.description"
             element="div"
             class="category-description"
+            @moveclick="moveClick"
             v-html="
               category.description && $enrichMarkdown(category.description)
             "
-            @moveclick="moveClick"
           />
 
           <AssetBrowserCard
-            :df="asset.df"
-            :foundry-item="asset.foundryItem"
             v-for="asset in category.assets"
             :key="asset.foundryItem()?.id ?? ''"
+            :df="asset.df"
+            :foundry-item="asset.foundryItem"
             class="nogrow movesheet-row"
           />
         </section>
@@ -42,6 +42,32 @@
     </CollapseTransition>
   </section>
 </template>
+
+<script setup lang="ts">
+import { provide, reactive } from 'vue'
+import WithRolllisteners from './components/with-rolllisteners.vue'
+import AssetBrowserCard from './components/asset/asset-browser-card.vue'
+import CollapseTransition from './components/transition/collapse-transition.vue'
+import {
+  createIronswornAssetTree,
+  createStarforgedAssetTree,
+} from '../features/customassets'
+import IronBtn from './components/buttons/iron-btn.vue'
+
+const props = defineProps<{ data: { toolset: 'starforged' | 'ironsworn' } }>()
+
+provide('toolset', props.data.toolset)
+
+const categories = await (props.data.toolset === 'ironsworn'
+  ? createIronswornAssetTree()
+  : createStarforgedAssetTree())
+
+const data = reactive({ categories })
+
+function moveClick(item) {
+  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
+}
+</script>
 
 <style lang="less" scoped>
 h2 {
@@ -72,29 +98,3 @@ h2 {
   padding-bottom: var(--ironsworn-spacer-xl);
 }
 </style>
-
-<script setup lang="ts">
-import { provide, reactive } from 'vue'
-import WithRolllisteners from './components/with-rolllisteners.vue'
-import AssetBrowserCard from './components/asset/asset-browser-card.vue'
-import CollapseTransition from './components/transition/collapse-transition.vue'
-import {
-  createIronswornAssetTree,
-  createStarforgedAssetTree,
-} from '../features/customassets'
-import IronBtn from './components/buttons/iron-btn.vue'
-
-const props = defineProps<{ data: { toolset: 'starforged' | 'ironsworn' } }>()
-
-provide('toolset', props.data.toolset)
-
-const categories = await (props.data.toolset === 'ironsworn'
-  ? createIronswornAssetTree()
-  : createStarforgedAssetTree())
-
-const data = reactive({ categories })
-
-function moveClick(item) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
-</script>

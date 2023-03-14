@@ -6,9 +6,9 @@
 
 <script setup lang="ts">
 import { inject, onMounted, ref, useAttrs } from 'vue'
-import { IronswornActor } from '../../actor/actor'
+import type { IronswornActor } from '../../actor/actor'
 import { attachInlineRollListeners } from '../../features/rollplus'
-import { IronswornItem } from '../../item/item'
+import type { IronswornItem } from '../../item/item'
 import { $ActorKey } from '../provisions'
 
 const props = defineProps<{ element: string }>()

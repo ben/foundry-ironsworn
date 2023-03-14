@@ -3,13 +3,13 @@
     <div class="flexcol">
       <section class="sheet-area flexcol">
         <!-- Bonds -->
-        <Bonds :compactProgress="true" data-tourid="bonds" />
+        <Bonds :compact-progress="true" data-tourid="bonds" />
 
         <hr class="nogrow" />
         <!-- Assets -->
         <DropTarget
           is="div"
-          dropType="asset"
+          drop-type="asset"
           class="flexcol item-list"
           data-tourid="assets"
         >
@@ -21,7 +21,7 @@
             group
             :class="$style.items"
           >
-            <div class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
+            <div v-for="(asset, i) in assets" :key="asset._id" class="flexrow">
               <OrderButtons
                 v-if="editMode"
                 :i="i"
@@ -35,48 +35,24 @@
           <div class="flexrow nogrow" style="text-align: center">
             <IronBtn
               icon="fa:book-atlas"
-              @click="assetBrowser"
               block
               :text="$t('IRONSWORN.ITEMS.TypeAsset')"
+              @click="assetBrowser"
             />
           </div>
         </DropTarget>
       </section>
     </div>
     <ActiveCompletedProgresses
-      :compactProgress="true"
+      :compact-progress="true"
       :class="$style.progress"
       data-tourid="progress"
     />
   </div>
 </template>
-<style lang="less" module>
-.items {
-  gap: var(--ironsworn-spacer-md);
-}
-
-.progress {
-  margin-top: var(--ironsworn-spacer-md);
-}
-</style>
-<style lang="less" scoped>
-h4 {
-  text-transform: uppercase;
-}
-
-h3 {
-  transition: background-color 0.2s ease;
-  margin: var(--ironsworn-spacer-md) 0;
-
-  i {
-    width: 15px;
-    text-align: center;
-  }
-}
-</style>
-
 <script lang="ts" setup>
-import { computed, inject, reactive, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { computed, inject, reactive } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import Bonds from '../bonds.vue'
 import OrderButtons from '../order-buttons.vue'
@@ -129,3 +105,28 @@ function assetBrowser() {
   theAssetBrowser.render(true, { focus: true })
 }
 </script>
+<style lang="less" module>
+.items {
+  gap: var(--ironsworn-spacer-md);
+}
+
+.progress {
+  margin-top: var(--ironsworn-spacer-md);
+}
+</style>
+
+<style lang="less" scoped>
+h4 {
+  text-transform: uppercase;
+}
+
+h3 {
+  transition: background-color 0.2s ease;
+  margin: var(--ironsworn-spacer-md) 0;
+
+  i {
+    width: 15px;
+    text-align: center;
+  }
+}
+</style>

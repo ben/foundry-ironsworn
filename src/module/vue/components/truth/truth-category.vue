@@ -1,5 +1,5 @@
 <template>
-  <div class="flexcol" ref="root">
+  <div ref="root" class="flexcol">
     <h1 class="flexrow">
       <span>{{ je().name }}</span>
       <IronBtn nogrow icon="ironsworn:d10-tilt" @click="randomize" />
@@ -14,29 +14,24 @@
     />
 
     <CustomTruth
-      :radio-group="df.$id"
       ref="customTruth"
+      :radio-group="df.$id"
       @change="customValueChange"
     />
 
     <div
-      class="nogrow"
       v-for="page in nonTruthPages"
+      class="nogrow"
       v-html="page.text.content"
     />
   </div>
 </template>
 
-<style lang="less" scoped>
-h1 {
-  margin-top: 1em;
-}
-</style>
-
 <script lang="ts" setup>
-import { ISettingTruth, ISettingTruthOption } from 'dataforged'
+import type { ISettingTruth, ISettingTruthOption } from 'dataforged'
 import { reactive, ref } from 'vue'
-import { OracleRollMessage, TableRow } from '../../../rolls'
+import type { TableRow } from '../../../rolls';
+import { OracleRollMessage } from '../../../rolls'
 import { enrichMarkdown } from '../../vue-plugin'
 import IronBtn from '../buttons/iron-btn.vue'
 import CustomTruth from './custom-truth.vue'
@@ -124,3 +119,9 @@ async function randomize() {
 
 defineExpose({ selectedValue, scrollIntoView, randomize })
 </script>
+
+<style lang="less" scoped>
+h1 {
+  margin-top: 1em;
+}
+</style>

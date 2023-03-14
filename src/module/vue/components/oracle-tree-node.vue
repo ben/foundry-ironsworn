@@ -1,8 +1,8 @@
 <template>
   <div
+    ref="$el"
     class="flexcol nogrow movesheet-row"
     :class="{ hidden: node?.forceHidden, highlighted: state.highlighted }"
-    ref="$el"
     data-tooltip-direction="LEFT"
     :data-tourid="`oracle-${node.dataforgedNode?.$id}`"
   >
@@ -18,18 +18,18 @@
         <IronBtn
           nogrow
           class="show-oracle-info"
-          @click="toggleDescription()"
           icon="fa:eye"
+          @click="toggleDescription()"
         />
       </h4>
       <CollapseTransition>
         <RulesTextOracle
           v-if="state.descriptionExpanded"
           :class="$style.content"
-          @moveclick="moveclick"
-          @oracleclick="oracleclick"
           :oracle-table="node.tables[0]"
           :source="node.dataforgedNode?.Source"
+          @moveclick="moveclick"
+          @oracleclick="oracleclick"
         />
       </CollapseTransition>
     </div>
@@ -37,7 +37,7 @@
     <!-- Branch node -->
     <div v-else>
       <h4 class="flexrow">
-        <IronBtn @click="toggleManually()" :text="node?.displayName">
+        <IronBtn :text="node?.displayName" @click="toggleManually()">
           <template #icon>
             <FontIcon
               nogrow
@@ -60,9 +60,9 @@
           <oracle-tree-node
             v-for="child in node?.children"
             :key="child.displayName"
+            ref="children"
             :node="child"
             @oracleclick="oracleclick"
-            ref="children"
           />
         </div>
       </CollapseTransition>
@@ -70,44 +70,12 @@
   </div>
 </template>
 
-<style lang="less" module>
-.content {
-  margin: var(--ironsworn-spacer-sm);
-}
-</style>
-
-<style lang="less" scoped>
-.show-oracle-info {
-  // padding: 4px;
-}
-
-.movesheet-row {
-  transition: all 0.4s ease;
-}
-
-h4 {
-  margin: 0;
-  height: min-content;
-  line-height: 1;
-
-  button {
-    height: min-content;
-    text-transform: uppercase;
-    line-height: 1;
-  }
-}
-
-.hidden {
-  display: none;
-}
-</style>
-
 <script setup lang="ts">
 import { computed, reactive, ref } from 'vue'
-import { IOracleTreeNode } from '../../features/customoracles'
+import type { IOracleTreeNode } from '../../features/customoracles'
 import { FontAwesome } from './icon/icon-common'
 import BtnOracle from './buttons/btn-oracle.vue'
-import { IronswornItem } from '../../item/item'
+import type { IronswornItem } from '../../item/item'
 import RulesTextOracle from './rules-text/rules-text-oracle.vue'
 import CollapseTransition from './transition/collapse-transition.vue'
 import IronBtn from './buttons/iron-btn.vue'
@@ -175,3 +143,35 @@ defineExpose({
   collapse,
 })
 </script>
+
+<style lang="less" module>
+.content {
+  margin: var(--ironsworn-spacer-sm);
+}
+</style>
+
+<style lang="less" scoped>
+.show-oracle-info {
+  // padding: 4px;
+}
+
+.movesheet-row {
+  transition: all 0.4s ease;
+}
+
+h4 {
+  margin: 0;
+  height: min-content;
+  line-height: 1;
+
+  button {
+    height: min-content;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+}
+
+.hidden {
+  display: none;
+}
+</style>

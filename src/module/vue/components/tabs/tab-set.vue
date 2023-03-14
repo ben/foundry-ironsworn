@@ -14,15 +14,16 @@
 import { forEach } from 'lodash-es'
 import { inject, onMounted, provide, reactive } from 'vue'
 import { $LocalEmitterKey } from '../../provisions'
+import type {
+  Orientation,
+  TabActivationMode,
+  TabKey,
+  TabState} from './tab-helpers.js';
 import {
   FocusActivePanelKey,
   getTabId,
-  Orientation,
   SetActivePanelRefKey,
   SetActiveTabKey,
-  TabActivationMode,
-  TabKey,
-  TabState,
   TabStateKey,
 } from './tab-helpers.js'
 

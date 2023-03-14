@@ -1,11 +1,11 @@
 <template>
   <label class="nogrow flexrow">
     <input
+      ref="topRadio"
       type="radio"
       class="nogrow"
-      @change="select"
       :name="radioGroup"
-      ref="topRadio"
+      @change="select"
     />
     <div class="flexcol">
       <p>
@@ -15,10 +15,10 @@
       <div v-html="$enrichMarkdown(pageSystem.Description)" />
 
       <section v-if="pageSystem.Subtable">
-        <label class="flexrow nogrow" v-for="entry in pageSystem.Subtable">
+        <label v-for="entry in pageSystem.Subtable" class="flexrow nogrow">
           <input
-            type="radio"
             ref="suboptions"
+            type="radio"
             class="nogrow"
             :name="pageSystem.dfid"
             @change="subtableSelect(entry as any)"
@@ -34,23 +34,12 @@
   </label>
 </template>
 
-<style lang="less" scoped>
-input[type='radio'] {
-  flex-grow: 0;
-  align-self: flex-start;
-  margin: var(--ironsworn-spacer-lg);
-}
-
-.quest {
-  font-style: italic;
-}
-</style>
-
 <script setup lang="ts">
-import { ISettingTruthOption, ISettingTruthOptionSubtableRow } from 'dataforged'
+import type { ISettingTruthOption, ISettingTruthOptionSubtableRow } from 'dataforged'
 import { reactive, ref } from 'vue'
-import { IronswornJournalPage } from '../../../journal/journal-entry-page'
-import { OracleRollMessage, TableRow } from '../../../rolls'
+import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
+import type { TableRow } from '../../../rolls';
+import { OracleRollMessage } from '../../../rolls'
 
 const props = defineProps<{
   //@ts-ignore
@@ -120,3 +109,15 @@ async function selectAndRandomize() {
 
 defineExpose({ selectAndRandomize })
 </script>
+
+<style lang="less" scoped>
+input[type='radio'] {
+  flex-grow: 0;
+  align-self: flex-start;
+  margin: var(--ironsworn-spacer-lg);
+}
+
+.quest {
+  font-style: italic;
+}
+</style>

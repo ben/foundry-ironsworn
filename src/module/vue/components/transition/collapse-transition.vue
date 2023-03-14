@@ -22,9 +22,10 @@
 <script setup lang="ts">
 // adapted for Vue3 from ivanvermeyen's collapse transition component: https://github.com/ivanvermeyen/vue-collapse-transition
 
-import { computed, reactive } from '@vue/reactivity'
+import { computed, reactive } from 'vue'
 import { isEmpty, kebabCase } from 'lodash-es'
-import { CSSProperties, Transition, TransitionGroup, watch } from 'vue'
+import type { CSSProperties} from 'vue';
+import { Transition, TransitionGroup, watch } from 'vue'
 import type { PropertiesHyphen } from 'csstype'
 
 type Dimension = 'height' | 'width'

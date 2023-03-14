@@ -18,6 +18,21 @@
     </section>
   </SheetHeaderBasic>
 </template>
+<script setup lang="ts">
+import SheetHeaderBasic from '../sheet-header-basic.vue'
+import type { Ref} from 'vue';
+import { inject } from 'vue'
+import { $ActorKey, ActorKey } from '../provisions'
+import XpBox from './xp-box.vue'
+
+const actor = inject(ActorKey) as Ref
+const xpArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+const $actor = inject($ActorKey)
+function setXp(n) {
+  $actor?.update({ system: { xp: n } })
+}
+</script>
 <style lang="less">
 .xp-track-classic {
   --ironsworn-xp-box-size: 15px;
@@ -48,17 +63,3 @@
   }
 }
 </style>
-<script setup lang="ts">
-import SheetHeaderBasic from '../sheet-header-basic.vue'
-import { Ref, inject } from 'vue'
-import { $ActorKey, ActorKey } from '../provisions'
-import XpBox from './xp-box.vue'
-
-const actor = inject(ActorKey) as Ref
-const xpArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
-const $actor = inject($ActorKey)
-function setXp(n) {
-  $actor?.update({ system: { xp: n } })
-}
-</script>

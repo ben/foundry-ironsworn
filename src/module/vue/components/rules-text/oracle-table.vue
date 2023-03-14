@@ -26,26 +26,8 @@
   </table>
 </template>
 
-<style lang="less" scoped>
-caption,
-th {
-  text-align: left;
-}
-
-th,
-td {
-  &:first-child {
-    padding-inline-start: var(--ironsworn-spacer-xs);
-  }
-
-  &:last-child {
-    padding-inline-end: var(--ironsworn-spacer-xs);
-  }
-}
-</style>
-
 <script setup lang="ts">
-import { computed } from '@vue/reactivity'
+import { computed } from 'vue'
 import { sortBy } from 'lodash-es'
 import { enrichMarkdown } from '../../vue-plugin.js'
 
@@ -83,3 +65,21 @@ const tableRows = computed(() =>
   )
 )
 </script>
+
+<style lang="less" scoped>
+caption,
+th {
+  text-align: left;
+}
+
+th,
+td {
+  &:first-child {
+    padding-inline-start: var(--ironsworn-spacer-xs);
+  }
+
+  &:last-child {
+    padding-inline-end: var(--ironsworn-spacer-xs);
+  }
+}
+</style>

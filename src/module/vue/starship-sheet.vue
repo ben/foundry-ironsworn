@@ -2,7 +2,7 @@
   <SheetBasic :document="data.actor" body-class="flexcol">
     <TabSet
       :id="`${data.actor._id}-starship-sheet`"
-      :tabKeys="['assets', 'notes']"
+      :tab-keys="['assets', 'notes']"
     >
       <TabList>
         <Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
@@ -35,15 +35,9 @@
   </SheetBasic>
 </template>
 
-<style lang="less" module>
-.assets {
-  padding-top: var(--ironsworn-spacer-md);
-}
-</style>
-
 <script setup lang="ts">
 import { provide, computed } from 'vue'
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
@@ -62,3 +56,9 @@ const props = defineProps<{
 
 provide(ActorKey, computed(() => props.data.actor) as any)
 </script>
+
+<style lang="less" module>
+.assets {
+  padding-top: var(--ironsworn-spacer-md);
+}
+</style>

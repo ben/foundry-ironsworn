@@ -9,19 +9,8 @@
   />
 </template>
 
-<style lang="less">
-.document-img {
-  cursor: pointer;
-
-  &[src$='.svg'] {
-    // tint to ensure that transparent SVGs have adequate contrast
-    background-color: var(--ironsworn-color-fg-10);
-  }
-}
-</style>
-
 <script setup lang="ts">
-import { computed, inject } from '@vue/runtime-core'
+import { computed, inject } from 'vue'
 import { $ActorKey, $ItemKey } from '../provisions'
 const props = withDefaults(
   defineProps<{
@@ -51,3 +40,14 @@ function click() {
   return fp.browse(current)
 }
 </script>
+
+<style lang="less">
+.document-img {
+  cursor: pointer;
+
+  &[src$='.svg'] {
+    // tint to ensure that transparent SVGs have adequate contrast
+    background-color: var(--ironsworn-color-fg-10);
+  }
+}
+</style>

@@ -2,14 +2,14 @@
   <AttrSlider
     class="momentum-meter"
     attr="momentum"
-    documentType="Actor"
-    :labelPosition="labelPosition"
-    :sliderStyle="props.sliderStyle"
+    document-type="Actor"
+    :label-position="labelPosition"
+    :slider-style="props.sliderStyle"
     :current-value="actorSys.momentum ?? 2"
     :min="-6"
     :max="10"
-    :softMax="actorSys.momentumMax"
-    :segmentClass="{
+    :soft-max="actorSys.momentumMax"
+    :segment-class="{
       [actorSys.momentumReset]: 'segment-momentum-reset',
     }"
   >
@@ -29,28 +29,11 @@
   </AttrSlider>
 </template>
 
-<style lang="less">
-@import (reference) '../../../../styles/mixins.less';
-
-.momentum-meter {
-  gap: var(--ironsworn-spacer-md) 0;
-
-  .attr-slider-label:hover ~ .slider-bar {
-    .segment-momentum-reset {
-      .blockHoverMixin();
-
-      box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
-        0 0 5px var(--ironsworn-color-warm),
-        0 0 10px var(--ironsworn-color-cool);
-    }
-  }
-}
-</style>
-
 <script lang="ts" setup>
-import { computed, inject, Ref } from 'vue'
-import { IronswornActor } from '../../../actor/actor.js'
-import {
+import type { Ref } from 'vue';
+import { computed, inject } from 'vue'
+import type { IronswornActor } from '../../../actor/actor.js'
+import type {
   CharacterDataProperties,
   CharacterDataPropertiesData,
 } from '../../../actor/actortypes.js'
@@ -74,3 +57,21 @@ const actorSys = computed(
   () => (actor.value as any)?.system as CharacterDataPropertiesData
 )
 </script>
+
+<style lang="less">
+@import (reference) '../../../../styles/mixins.less';
+
+.momentum-meter {
+  gap: var(--ironsworn-spacer-md) 0;
+
+  .attr-slider-label:hover ~ .slider-bar {
+    .segment-momentum-reset {
+      .blockHoverMixin();
+
+      box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
+        0 0 5px var(--ironsworn-color-warm),
+        0 0 10px var(--ironsworn-color-cool);
+    }
+  }
+}
+</style>

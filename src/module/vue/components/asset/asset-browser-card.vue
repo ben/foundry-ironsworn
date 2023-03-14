@@ -12,9 +12,9 @@
     <header class="asset-header nogrow flexrow">
       <FontIcon name="grip" class="nogrow block draggable item" />
       <IronBtn
-        @click="state.expanded = !state.expanded"
         :aria-controls="bodyId"
         class="asset-expand-toggle"
+        @click="state.expanded = !state.expanded"
       >
         <template #text>
           <h4 class="asset-title button-text">
@@ -27,20 +27,20 @@
     <CollapseTransition>
       <section
         v-if="state.expanded"
+        :id="bodyId"
         class="asset-body flexcol"
         :aria-expanded="state.expanded"
-        :id="bodyId"
       >
         <div
-          v-html="$enrichHtml(system.description ?? '')"
           v-if="system.description"
+          v-html="$enrichHtml(system.description ?? '')"
         ></div>
         <div v-html="$enrichHtml(system.requirement ?? '')"></div>
-        <dl class="asset-fields" v-if="system.fields?.length">
+        <dl v-if="system.fields?.length" class="asset-fields">
           <div
-            class="asset-field"
             v-for="(field, i) in system.fields"
             :key="'field' + i"
+            class="asset-field"
           >
             <dt class="asset-field-label">{{ field.name }}</dt>
             <dd class="asset-field-value">{{ field.value }}</dd>
@@ -73,10 +73,10 @@
         <AttrSlider
           v-if="system.track.enabled"
           attr="track"
-          documentType="Item"
-          sliderStyle="horizontal"
+          document-type="Item"
+          slider-style="horizontal"
           :max="system.track.max"
-          :currentValue="system.track.current"
+          :current-value="system.track.current"
           :read-only="true"
         >
           <template #label>
@@ -88,24 +88,11 @@
   </article>
 </template>
 
-<style lang="less" scoped>
-.ironsworn .ironsworn__asset {
-  --ironsworn-color-thematic: v-bind('system.color');
-
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  margin: var(--ironsworn-spacer-xl) 0;
-  padding: var(--ironsworn-spacer-md);
-}
-</style>
-
 <script setup lang="ts">
-import { IAsset } from 'dataforged'
+import type { IAsset } from 'dataforged'
 import { computed, inject, provide, reactive } from 'vue'
-import { IronswornItem } from '../../../item/item'
-import { AssetDataPropertiesData } from '../../../item/itemtypes'
+import type { IronswornItem } from '../../../item/item'
+import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions.js'
 
 import Clock from '../clock.vue'
@@ -155,3 +142,16 @@ function dragEnd() {
   CONFIG.IRONSWORN.emitter.emit('dragEnd', props.foundryItem().type)
 }
 </script>
+
+<style lang="less" scoped>
+.ironsworn .ironsworn__asset {
+  --ironsworn-color-thematic: v-bind('system.color');
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  margin: var(--ironsworn-spacer-xl) 0;
+  padding: var(--ironsworn-spacer-md);
+}
+</style>

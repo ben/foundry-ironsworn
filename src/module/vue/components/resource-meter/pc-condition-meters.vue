@@ -3,20 +3,36 @@
     <ConditionMeterSlider
       v-for="resource in ['Health', 'Spirit', 'Supply']"
       :key="resource"
-      sliderStyle="vertical"
+      slider-style="vertical"
       class="nogrow"
-      documentType="Actor"
+      document-type="Actor"
       :global="resource === 'Supply' && IronswornSettings.get('shared-supply')"
       :attr="resource.toLowerCase()"
       :current-value="actorSys[resource.toLowerCase()]"
       :max="5"
       :min="0"
-      :statLabel="$t(`IRONSWORN.${resource}`)"
-      :labelPosition="props.labelPosition"
+      :stat-label="$t(`IRONSWORN.${resource}`)"
+      :label-position="props.labelPosition"
     />
   </div>
 </template>
 
+<script lang="ts" setup>
+import { computed, inject } from 'vue'
+import { ActorKey } from '../../provisions.js'
+import ConditionMeterSlider from './condition-meter.vue'
+import { IronswornSettings } from '../../../helpers/settings.js'
+import type { CharacterDataPropertiesData } from '../../../actor/actortypes.js'
+
+const props = defineProps<{
+  labelPosition: 'left' | 'right'
+}>()
+
+const actor = inject(ActorKey)
+const actorSys = computed(
+  () => (actor?.value as any)?.system as CharacterDataPropertiesData
+)
+</script>
 <style lang="less">
 @meter_spacing: 6px;
 
@@ -36,19 +52,3 @@
   }
 }
 </style>
-<script lang="ts" setup>
-import { computed, inject } from 'vue'
-import { ActorKey } from '../../provisions.js'
-import ConditionMeterSlider from './condition-meter.vue'
-import { IronswornSettings } from '../../../helpers/settings.js'
-import { CharacterDataPropertiesData } from '../../../actor/actortypes.js'
-
-const props = defineProps<{
-  labelPosition: 'left' | 'right'
-}>()
-
-const actor = inject(ActorKey)
-const actorSys = computed(
-  () => (actor?.value as any)?.system as CharacterDataPropertiesData
-)
-</script>

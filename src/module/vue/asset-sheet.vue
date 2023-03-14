@@ -5,8 +5,8 @@
     </SheetHeader>
     <TabSet
       v-if="editMode"
-      :tabKeys="['description', 'fields', 'abilities', 'options', 'track']"
       :id="`${data.item._id}-asset-sheet`"
+      :tab-keys="['description', 'fields', 'abilities', 'options', 'track']"
       :class="$style.tabSet"
     >
       <TabList :class="$style.tabList">
@@ -62,20 +62,6 @@
   </div>
 </template>
 
-<style lang="less" module>
-.tabList {
-}
-
-.tab {
-}
-
-.tabPanels {
-}
-
-.tabPanel {
-}
-</style>
-
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import SheetHeader from './sheet-header.vue'
@@ -114,3 +100,17 @@ function setRequirement() {
   $item?.update({ system: { requirement: props.data.item.system.requirement } })
 }
 </script>
+
+<style lang="less" module>
+.tabList {
+}
+
+.tab {
+}
+
+.tabPanels {
+}
+
+.tabPanel {
+}
+</style>

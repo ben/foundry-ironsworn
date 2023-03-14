@@ -2,26 +2,26 @@
   <div class="flexcol" :class="$style.wrapper">
     <div class="flexrow nogrow" :class="$style.nav">
       <input
+        v-model="search.q"
         type="text"
         :placeholder="
           $t('SIDEBAR.Search', { types: $t('IRONSWORN.ROLLTABLES.TypeOracle') })
         "
-        v-model="search.q"
         @keydown.enter.prevent
       />
       <IronBtn
         icon="fa:xmark-circle"
         class="nogrow"
-        @click="clearSearch"
         :class="$style.btn"
         style="padding: 6px"
+        @click="clearSearch"
       />
       <IronBtn
         icon="fa:down-left-and-up-right-to-center"
         class="nogrow"
-        @click="collapseAll"
         :class="$style.btn"
         style="padding: 6px"
+        @click="collapseAll"
       />
     </div>
 
@@ -29,34 +29,21 @@
       <OracleTreeNode
         v-for="node in treeRoot.children"
         :key="node.displayName"
-        :node="node"
         ref="oracles"
+        :node="node"
       />
     </div>
   </div>
 </template>
 
-<style lang="less" module>
-.wrapper {
-  gap: var(--ironsworn-spacer-lg);
-}
-
-.nav {
-  margin-top: var(--ironsworn-spacer-lg);
-}
-
-.list {
-  padding: 0 var(--ironsworn-spacer-lg);
-}
-</style>
-
 <script setup lang="ts">
 import { inject, nextTick, provide, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
+import type {
+  IOracleTreeNode} from '../../features/customoracles';
 import {
   createIronswornOracleTree,
-  createStarforgedOracleTree,
-  IOracleTreeNode,
+  createStarforgedOracleTree
 } from '../../features/customoracles'
 import IronBtn from './buttons/iron-btn.vue'
 import OracleTreeNode from './oracle-tree-node.vue'
@@ -148,3 +135,17 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', async (dfid) => {
   }
 })
 </script>
+
+<style lang="less" module>
+.wrapper {
+  gap: var(--ironsworn-spacer-lg);
+}
+
+.nav {
+  margin-top: var(--ironsworn-spacer-lg);
+}
+
+.list {
+  padding: 0 var(--ironsworn-spacer-lg);
+}
+</style>

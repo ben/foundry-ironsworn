@@ -2,12 +2,12 @@
   <Transition :name="transitionName">
     <component
       :is="is"
+      v-show="isActive"
+      :id="getTabPanelId(tabState.tabSetId, tabKey)"
       ref="$el"
       role="tabpanel"
       :aria-labelledby="getTabId(tabState.tabSetId, tabKey)"
-      :id="getTabPanelId(tabState.tabSetId, tabKey)"
       tabindex="-1"
-      v-show="isActive"
       :data-tab-set="tabState.tabSetId"
       :data-tab-key="tabKey"
       :class="$style.tabPanel"
@@ -17,34 +17,18 @@
   </Transition>
 </template>
 
-<style lang="less" scoped>
-[class*='-leave-active'] {
-  // prevents outgoing panels from fighting incoming panels for space
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-</style>
-
-<style lang="less" module>
-.tabPanel {
-  backface-visibility: hidden;
-  background-color: var(--ironsworn-color-bg);
-}
-</style>
-
 <script lang="ts" setup>
-import { computed, inject, Ref, ref, watch } from 'vue'
+import type { Ref} from 'vue';
+import { computed, inject, ref, watch } from 'vue'
+import type {
+  SetActivePanelRef,
+  TabKey,
+  TabState} from './tab-helpers.js';
 import {
   getSlideTransitionName,
   getTabId,
   getTabPanelId,
-  SetActivePanelRef,
   SetActivePanelRefKey,
-  TabKey,
-  TabState,
   TabStateKey,
 } from './tab-helpers.js'
 
@@ -101,3 +85,21 @@ const transitionName = computed(() => {
   return themeTransition
 })
 </script>
+
+<style lang="less" scoped>
+[class*='-leave-active'] {
+  // prevents outgoing panels from fighting incoming panels for space
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+</style>
+
+<style lang="less" module>
+.tabPanel {
+  backface-visibility: hidden;
+  background-color: var(--ironsworn-color-bg);
+}
+</style>

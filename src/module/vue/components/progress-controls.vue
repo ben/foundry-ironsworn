@@ -4,15 +4,15 @@
       :class="$style.btn"
       block
       icon="fa:plus"
-      @click="addProgressItem('vow')"
       :text="$t('IRONSWORN.ITEM.SubtypeVow')"
+      @click="addProgressItem('vow')"
     />
     <IronBtn
       :class="$style.btn"
       block
       icon="fa:plus"
-      @click="addProgressItem('progress')"
       :text="$t('IRONSWORN.ITEM.SubtypeProgress')"
+      @click="addProgressItem('progress')"
     />
     <btn-compendium
       :class="$style.btn"
@@ -22,16 +22,6 @@
     />
   </div>
 </template>
-<style lang="less" module>
-.wrapper {
-  //
-}
-
-.btn {
-  --ironsworn-line-height: var(--ironsworn-line-height-sm);
-}
-</style>
-
 <script setup lang="ts">
 import { capitalize, inject } from 'vue'
 import { $ActorKey } from '../provisions'
@@ -53,3 +43,13 @@ async function addProgressItem(subtype) {
   item?.sheet?.render(true)
 }
 </script>
+
+<style lang="less" module>
+.wrapper {
+  //
+}
+
+.btn {
+  --ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
+</style>

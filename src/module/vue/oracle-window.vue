@@ -1,8 +1,8 @@
 <template>
   <div class="flexcol">
     <TabSet
-      :tabKeys="['ironsworn', 'starforged']"
       id="oracleset"
+      :tab-keys="['ironsworn', 'starforged']"
       :default-key="defaultTab"
     >
       <TabList>

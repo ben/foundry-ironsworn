@@ -1,12 +1,12 @@
 <template>
   <DropTarget
-    dropType="asset"
     is="article"
+    drop-type="asset"
     class="sf-assets flexcol"
     :class="$style.wrapper"
   >
     <CollapseTransition tag="ul" class="item-list" :class="$style.list" group>
-      <li class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
+      <li v-for="(asset, i) in assets" :key="asset._id" class="flexrow">
         <order-buttons
           v-if="editMode"
           :i="i"
@@ -24,31 +24,18 @@
     >
       <IronBtn
         icon="fa:book-atlas"
-        @click="assetBrowser"
         block
         :text="$t('IRONSWORN.ITEMS.TypeAsset')"
+        @click="assetBrowser"
       />
     </section>
   </DropTarget>
 </template>
 
-<style lang="less" module>
-.controls {
-  --ironsworn-line-height: var(--ironsworn-line-height-sm);
-}
-
-.wrapper {
-  gap: var(--ironsworn-spacer-md);
-}
-
-.list {
-  gap: var(--ironsworn-spacer-md);
-}
-</style>
-
 <script lang="ts" setup>
 import { sortBy } from 'lodash-es'
-import { computed, inject, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { computed, inject } from 'vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
 import IronBtn from '../buttons/iron-btn.vue'
@@ -96,3 +83,17 @@ function assetBrowser() {
   theAssetBrowser.render(true, { focus: true })
 }
 </script>
+
+<style lang="less" module>
+.controls {
+  --ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
+
+.wrapper {
+  gap: var(--ironsworn-spacer-md);
+}
+
+.list {
+  gap: var(--ironsworn-spacer-md);
+}
+</style>

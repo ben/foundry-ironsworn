@@ -9,28 +9,28 @@
       <div class="flexcol nogrow" style="max-width: 33%; white-space: nowrap">
         <!-- These are always here -->
         <sfmove-tab
-          :currentProperty="state.currentProperty"
-          @click="switchContent"
-          titleKey="FullText"
+          :current-property="state.currentProperty"
+          title-key="FullText"
           property="Text"
+          @click="switchContent"
         />
         <sfmove-tab
-          :currentProperty="state.currentProperty"
-          @click="switchContent"
-          titleKey="Trigger"
+          :current-property="state.currentProperty"
+          title-key="Trigger"
           property="Trigger.Text"
+          @click="switchContent"
         />
 
         <!-- Actions -->
         <hr class="nogrow" />
         <h4 class="flexrow nogrow">
           <span class="flexrow">Actions</span>
-          <IronBtn block @click="addTrigger" icon="fa:plus" />
+          <IronBtn block icon="fa:plus" @click="addTrigger" />
         </h4>
         <sfmove-tab
           v-for="option in triggerOptions"
           :key="option.key"
-          :currentProperty="state.currentProperty"
+          :current-property="state.currentProperty"
           :title="option.title"
           :property="option.property"
           @click="switchContent($event, option.actionPropKey)"
@@ -41,52 +41,52 @@
         <hr class="nogrow" />
         <h4 class="nogrow">Outcomes</h4>
         <sfmove-tab
-          :currentProperty="state.currentProperty"
-          @click="switchContent"
-          titleKey="Strong_hit"
+          :current-property="state.currentProperty"
+          title-key="Strong_hit"
           property="Outcomes.Strong Hit.Text"
+          @click="switchContent"
         />
         <sfmove-tab
-          :currentProperty="state.currentProperty"
-          @click="switchContent"
-          titleKey="Strong_hit_match"
+          :current-property="state.currentProperty"
+          title-key="Strong_hit_match"
           property="Outcomes.Strong Hit.With a Match.Text"
+          @click="switchContent"
         />
         <sfmove-tab
-          :currentProperty="state.currentProperty"
-          @click="switchContent"
-          titleKey="Weak_hit"
+          :current-property="state.currentProperty"
+          title-key="Weak_hit"
           property="Outcomes.Weak Hit.Text"
+          @click="switchContent"
         />
         <sfmove-tab
-          :currentProperty="state.currentProperty"
-          @click="switchContent"
-          titleKey="Miss"
+          :current-property="state.currentProperty"
+          title-key="Miss"
           property="Outcomes.Miss.Text"
+          @click="switchContent"
         />
         <sfmove-tab
-          :currentProperty="state.currentProperty"
-          @click="switchContent"
-          titleKey="Miss_match"
+          :current-property="state.currentProperty"
+          title-key="Miss_match"
           property="Outcomes.Miss.With a Match.Text"
+          @click="switchContent"
         />
       </div>
 
       <!-- Editor on right -->
       <div class="flexcol">
-        <div class="flexcol nogrow" v-if="state.currentRollType">
+        <div v-if="state.currentRollType" class="flexcol nogrow">
           <div class="flexrow">
             <div class="flexcol">
               <label
-                class="nogrow"
                 v-for="x in ['Action roll', 'Progress roll']"
                 :key="x"
+                class="nogrow"
               >
                 <input
+                  v-model="state.currentRollType"
                   type="radio"
                   name="actiontype"
                   :value="x"
-                  v-model="state.currentRollType"
                   @change="saveActionProps"
                 />
                 {{ x.split(' ')[0] }}
@@ -94,15 +94,15 @@
             </div>
             <div class="flexcol">
               <label
-                class="nogrow"
                 v-for="x in ['Any', 'Highest', 'Lowest', 'All']"
                 :key="x"
+                class="nogrow"
               >
                 <input
+                  v-model="state.currentMethod"
                   type="radio"
                   name="rollType"
                   :value="x"
-                  v-model="state.currentMethod"
                   @change="saveActionProps"
                 />
                 {{ x }}
@@ -116,14 +116,6 @@
     </div>
   </div>
 </template>
-
-<style lang="less">
-.movesheet-row {
-  h4 {
-    align-items: center;
-  }
-}
-</style>
 
 <script setup lang="ts">
 import SheetHeader from './sheet-header.vue'
@@ -237,3 +229,11 @@ function saveText() {
   }
 }
 </script>
+
+<style lang="less">
+.movesheet-row {
+  h4 {
+    align-items: center;
+  }
+}
+</style>

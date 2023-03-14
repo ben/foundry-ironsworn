@@ -19,14 +19,67 @@
   >
     <ProgressTrackBox
       v-for="(boxTicks, i) in boxes"
+      :key="`progress-box-${i + 1}`"
       tabindex="-1"
       role="presentational"
-      :key="`progress-box-${i + 1}`"
       :ticks="boxTicks ?? 0"
-      :isOverflowBox="legacyOverflow"
+      :is-overflow-box="legacyOverflow"
     />
   </article>
 </template>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+import { fill, clamp } from 'lodash-es'
+import type { RANKS } from '../../../constants.js';
+import { NumericRank } from '../../../constants.js'
+import ProgressTrackBox from './progress-track-box.vue'
+
+const props = defineProps<{
+  /**
+   * The number of ticks marked on this track.
+   */
+  ticks: number
+  /**
+   * Use 'null' if it's an unranked track, such as a Legacy or classic Bonds.
+   */
+  rank: keyof typeof RANKS | null
+  legacyOverflow?: boolean
+  /**
+   * When true, renders the progress bar for more compact display.
+   */
+  compactProgress?: boolean
+}>()
+
+const minBoxes = 0
+const maxBoxes = 10
+const ticksPerBox = 4
+const maxTicks = maxBoxes * ticksPerBox
+
+const score = computed(() =>
+  clamp(Math.floor(props.ticks / ticksPerBox), minBoxes, maxBoxes)
+)
+
+const numericRank = computed(() =>
+  props.rank != null ? NumericRank[props.rank] : null
+)
+
+const visibleTicks = computed(() =>
+  props.ticks > maxTicks ? props.ticks % maxTicks : props.ticks
+)
+
+const boxes = computed(() => {
+  const boxTicks = Array<number>(maxBoxes)
+  const filledBoxes = Math.floor(visibleTicks.value / ticksPerBox)
+  const ticksRemainder = visibleTicks.value % ticksPerBox
+
+  fill(boxTicks, ticksPerBox, 0, filledBoxes)
+  if (ticksRemainder > 0) {
+    boxTicks[filledBoxes] = ticksRemainder
+  }
+  return boxTicks
+})
+</script>
 
 <style lang="less">
 @import (reference) '../../../../styles/mixins.less';
@@ -94,55 +147,3 @@
   }
 }
 </style>
-
-<script setup lang="ts">
-import { computed } from '@vue/runtime-core'
-import { fill, clamp } from 'lodash-es'
-import { NumericRank, RANKS } from '../../../constants.js'
-import ProgressTrackBox from './progress-track-box.vue'
-
-const props = defineProps<{
-  /**
-   * The number of ticks marked on this track.
-   */
-  ticks: number
-  /**
-   * Use 'null' if it's an unranked track, such as a Legacy or classic Bonds.
-   */
-  rank: keyof typeof RANKS | null
-  legacyOverflow?: boolean
-  /**
-   * When true, renders the progress bar for more compact display.
-   */
-  compactProgress?: boolean
-}>()
-
-const minBoxes = 0
-const maxBoxes = 10
-const ticksPerBox = 4
-const maxTicks = maxBoxes * ticksPerBox
-
-const score = computed(() =>
-  clamp(Math.floor(props.ticks / ticksPerBox), minBoxes, maxBoxes)
-)
-
-const numericRank = computed(() =>
-  props.rank != null ? NumericRank[props.rank] : null
-)
-
-const visibleTicks = computed(() =>
-  props.ticks > maxTicks ? props.ticks % maxTicks : props.ticks
-)
-
-const boxes = computed(() => {
-  const boxTicks = Array<number>(maxBoxes)
-  const filledBoxes = Math.floor(visibleTicks.value / ticksPerBox)
-  const ticksRemainder = visibleTicks.value % ticksPerBox
-
-  fill(boxTicks, ticksPerBox, 0, filledBoxes)
-  if (ticksRemainder > 0) {
-    boxTicks[filledBoxes] = ticksRemainder
-  }
-  return boxTicks
-})
-</script>

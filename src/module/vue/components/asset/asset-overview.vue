@@ -18,27 +18,27 @@
     <section class="asset-body flexcol">
       <!-- DESCRIPTION -->
       <WithRollListeners
-        element="div"
-        @moveclick="moveClick"
-        class="nogrow"
         v-if="item.system.description"
+        element="div"
+        class="nogrow"
+        @moveclick="moveClick"
         v-html="$enrichHtml(item.system.description)"
       />
 
       <!-- FIELDS -->
       <div
-        class="form-group nogrow"
         v-for="(field, i) in item.system.fields"
         :key="`field${i}`"
+        class="form-group nogrow"
       >
         <label>{{ field.name }}</label>
-        <input type="text" v-model="field.value" @blur="saveFields" />
+        <input v-model="field.value" type="text" @blur="saveFields" />
       </div>
 
       <!-- REQUIREMENT -->
       <p
-        class="nogrow"
         v-if="item.system.requirement"
+        class="nogrow"
         v-html="$enrichMarkdown(item.system.requirement)"
       ></p>
 
@@ -66,8 +66,8 @@
           </div>
           <WithRollListeners
             element="div"
-            @moveclick="moveClick"
             class="asset-ability-text flexcol"
+            @moveclick="moveClick"
             v-html="$enrichHtml(ability.description)"
           >
           </WithRollListeners>
@@ -83,8 +83,8 @@
 
       <!-- OPTIONS -->
       <section
-        class="flexcol stack nogrow"
         v-if="item.system.exclusiveOptions.length > 0"
+        class="flexcol stack nogrow"
       >
         <AssetExclusiveoption
           v-for="(opt, i) in item.system.exclusiveOptions"
@@ -98,15 +98,15 @@
         <!-- TRACK -->
         <ConditionMeterSlider
           v-if="item.system.track.enabled"
-          sliderStyle="horizontal"
+          slider-style="horizontal"
           class="asset-condition-meter"
-          documentType="Item"
+          document-type="Item"
           attr="track.current"
           :current-value="item.system.track.current"
           :max="item.system.track.max"
           :min="0"
-          :statLabel="item.system.track.name"
-          labelPosition="left"
+          :stat-label="item.system.track.name"
+          label-position="left"
           :read-only="false"
         />
 
@@ -117,38 +117,11 @@
   </article>
 </template>
 
-<style lang="less" scoped>
-.bullet-wrapper {
-  flex-basis: 1.5em;
-  align-content: flex-start;
-  padding-top: 0.05em;
-}
-
-.asset-ability-bullet-ironsworn {
-  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-  height: 15px;
-}
-
-.asset-ability-bullet-starforged {
-  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
-  background-color: var(--ironsworn-color-border);
-  height: 1em;
-}
-</style>
-
-<style lang="less" module>
-.ironsworn__asset {
-  --ironsworn-color-thematic: v-bind('item.system.color');
-
-  margin: var(--ironsworn-spacer-xl) 0;
-  padding: var(--ironsworn-spacer-md);
-}
-</style>
-
 <script lang="ts" setup>
-import { computed, ComputedRef, inject, useCssModule } from 'vue'
+import type { ComputedRef} from 'vue';
+import { computed, inject, useCssModule } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
-import { AssetAbility } from '../../../item/itemtypes'
+import type { AssetAbility } from '../../../item/itemtypes'
 import WithRollListeners from '../with-rolllisteners.vue'
 import Clock from '../clock.vue'
 import ConditionMeterSlider from '../resource-meter/condition-meter.vue'
@@ -204,3 +177,31 @@ function toggleCondition(idx: number) {
   $item?.update({ system: { conditions } })
 }
 </script>
+
+<style lang="less" scoped>
+.bullet-wrapper {
+  flex-basis: 1.5em;
+  align-content: flex-start;
+  padding-top: 0.05em;
+}
+
+.asset-ability-bullet-ironsworn {
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  height: 15px;
+}
+
+.asset-ability-bullet-starforged {
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+  background-color: var(--ironsworn-color-border);
+  height: 1em;
+}
+</style>
+
+<style lang="less" module>
+.ironsworn__asset {
+  --ironsworn-color-thematic: v-bind('item.system.color');
+
+  margin: var(--ironsworn-spacer-xl) 0;
+  padding: var(--ironsworn-spacer-md);
+}
+</style>

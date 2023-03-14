@@ -38,36 +38,9 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-nav {
-  position: fixed;
-  margin-top: 1em;
-  height: 100%;
-}
-
-section {
-  margin-left: 15em;
-}
-
-aside {
-  gap: var(--ironsworn-spacer-md);
-  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-cool-70);
-  border-radius: var(--ironsworn-border-radius-md);
-  padding: 0.75em;
-
-  p {
-    margin: 0;
-  }
-
-  i {
-    margin-top: 0.1em;
-  }
-}
-</style>
-
 <script setup lang="ts">
 import { inject, ref } from 'vue'
-import { ISettingTruth } from 'dataforged'
+import type { ISettingTruth } from 'dataforged'
 import { $LocalEmitterKey } from './provisions'
 import IronBtn from './components/buttons/iron-btn.vue'
 import TruthCategory from './components/truth/truth-category.vue'
@@ -117,3 +90,30 @@ async function randomizeAll() {
   }
 }
 </script>
+
+<style lang="less" scoped>
+nav {
+  position: fixed;
+  margin-top: 1em;
+  height: 100%;
+}
+
+section {
+  margin-left: 15em;
+}
+
+aside {
+  gap: var(--ironsworn-spacer-md);
+  border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-cool-70);
+  border-radius: var(--ironsworn-border-radius-md);
+  padding: 0.75em;
+
+  p {
+    margin: 0;
+  }
+
+  i {
+    margin-top: 0.1em;
+  }
+}
+</style>

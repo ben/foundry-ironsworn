@@ -1,48 +1,30 @@
 <template>
   <Collapsible
-    :toggleLabel="$t('IRONSWORN.Completed')"
-    :disabled="!items.length"
-    :class="$style.wrapper"
-    toggleButtonClass="clickable text"
-    :baseId="`${actor._id}_progress-completed`"
     v-bind="$props.collapsibleProps"
     ref="$collapsible"
+    :toggle-label="$t('IRONSWORN.Completed')"
+    :disabled="!items.length"
+    :class="$style.wrapper"
+    toggle-button-class="clickable text"
+    :base-id="`${actor._id}_progress-completed`"
   >
     <ProgressList
       v-bind="$props.listProps"
-      :showCompleted="showCompleted"
-      :progressListItemClass="$style.listItem"
-      :class="$style.list"
       ref="$progressList"
+      :show-completed="showCompleted"
+      :progress-list-item-class="$style.listItem"
+      :class="$style.list"
     />
   </Collapsible>
 </template>
 
-<style lang="less" module>
-.wrapper {
-  margin-top: var(--ironsworn-spacer-lg);
-  border-width: var(--ironsworn-border-width-md);
-  border-style: solid;
-  border-radius: var(--ironsworn-border-radius-lg);
-  border-color: var(--ironsworn-color-fg-10);
-  background-color: var(--ironsworn-color-fg-10);
-}
-
-.list {
-  margin: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
-}
-
-.listItem {
-  border-color: var(--ironsworn-color-bg-50);
-  background-color: var(--ironsworn-color-bg-50);
-}
-</style>
-
 <script lang="ts" setup>
-import { computed, ExtractPropTypes, inject, ref, Ref, watch } from 'vue'
+import type { ExtractPropTypes, Ref} from 'vue';
+import { computed, inject, ref, watch } from 'vue'
 import { ActorKey } from '../provisions'
 import Collapsible from './collapsible/collapsible.vue'
-import { CompletedProgressType, getProgressItems } from './progress-common'
+import type { CompletedProgressType} from './progress-common';
+import { getProgressItems } from './progress-common'
 import ProgressList from './progress-list.vue'
 
 const props = defineProps<{
@@ -90,3 +72,23 @@ defineExpose({
   $progressList,
 })
 </script>
+
+<style lang="less" module>
+.wrapper {
+  margin-top: var(--ironsworn-spacer-lg);
+  border-width: var(--ironsworn-border-width-md);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-lg);
+  border-color: var(--ironsworn-color-fg-10);
+  background-color: var(--ironsworn-color-fg-10);
+}
+
+.list {
+  margin: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
+}
+
+.listItem {
+  border-color: var(--ironsworn-color-bg-50);
+  background-color: var(--ironsworn-color-bg-50);
+}
+</style>

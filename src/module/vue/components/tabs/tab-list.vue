@@ -14,6 +14,23 @@
   </component>
 </template>
 
+<script lang="ts" setup>
+import { computed, inject } from 'vue'
+import type { TabState} from './tab-helpers.js';
+import { TabStateKey } from './tab-helpers.js'
+import Tab from './tab.vue'
+/**
+ * The container for {@link Tab}s.
+ */
+withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
+const tabState = inject(TabStateKey) as TabState
+
+const tabSetId = computed(() => tabState?.tabSetId)
+defineExpose({
+  tabSetId: tabSetId.value,
+})
+</script>
+
 <style lang="less" module>
 .tabList {
   // TODO:
@@ -35,19 +52,3 @@
   }
 }
 </style>
-
-<script lang="ts" setup>
-import { computed, inject } from 'vue'
-import { TabState, TabStateKey } from './tab-helpers.js'
-import Tab from './tab.vue'
-/**
- * The container for {@link Tab}s.
- */
-withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
-const tabState = inject(TabStateKey) as TabState
-
-const tabSetId = computed(() => tabState?.tabSetId)
-defineExpose({
-  tabSetId: tabSetId.value,
-})
-</script>

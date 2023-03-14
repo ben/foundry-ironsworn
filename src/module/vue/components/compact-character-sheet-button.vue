@@ -14,56 +14,17 @@
       <IronBtn
         v-if="isMomentum"
         icon="fa:fire"
-        @click="$actor?.burnMomentum()"
         :data-tooltip="burnMomentumTooltip"
+        @click="$actor?.burnMomentum()"
       />
       <IronBtn icon="fa:plus" @click="increment(1)" />
     </div>
   </div>
 </template>
 
-<style lang="less" module>
-@import (reference) '../../../styles/mixins.less';
-
-.interactive {
-  cursor: pointer;
-  .interactiveMixin();
-
-  &::before {
-    --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
-
-    transition: all 0.4s ease;
-    opacity: 0;
-    z-index: 0;
-    padding: var(--ironsworn-spacer-sm);
-  }
-
-  &:hover {
-    background-color: var(--ironsworn-color-clickable-block-bg-hover);
-
-    &::before {
-      opacity: 1;
-      background-color: var(--ironsworn-color-fg);
-    }
-  }
-}
-
-.wrapper {
-  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-  .textStrokeMixin();
-
-  h4 {
-    margin: 0;
-    padding: var(--ironsworn-spacer-sm) 0;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-}
-</style>
-
 <script setup lang="ts">
 import { capitalize, computed, inject } from 'vue'
-import { CharacterDataPropertiesData } from '../../actor/actortypes'
+import type { CharacterDataPropertiesData } from '../../actor/actortypes'
 import { IronswornPrerollDialog } from '../../rolls'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
@@ -104,3 +65,42 @@ function click() {
   IronswornPrerollDialog.showForStat(i18nStat, $actor?.system[propKey], $actor)
 }
 </script>
+
+<style lang="less" module>
+@import (reference) '../../../styles/mixins.less';
+
+.interactive {
+  cursor: pointer;
+  .interactiveMixin();
+
+  &::before {
+    --ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
+
+    transition: all 0.4s ease;
+    opacity: 0;
+    z-index: 0;
+    padding: var(--ironsworn-spacer-sm);
+  }
+
+  &:hover {
+    background-color: var(--ironsworn-color-clickable-block-bg-hover);
+
+    &::before {
+      opacity: 1;
+      background-color: var(--ironsworn-color-fg);
+    }
+  }
+}
+
+.wrapper {
+  --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+  .textStrokeMixin();
+
+  h4 {
+    margin: 0;
+    padding: var(--ironsworn-spacer-sm) 0;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+}
+</style>

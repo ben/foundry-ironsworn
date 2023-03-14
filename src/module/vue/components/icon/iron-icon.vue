@@ -12,9 +12,9 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from '@vue/reactivity'
-import { FillProperty } from 'csstype'
-import { IconPropsCommon, IronswornIconName } from './icon-common'
+import { computed } from 'vue'
+import type { FillProperty } from 'csstype'
+import type { IconPropsCommon, IronswornIconName } from './icon-common'
 
 interface Props extends IconPropsCommon {
   name: IronswornIconName

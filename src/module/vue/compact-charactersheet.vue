@@ -26,6 +26,23 @@
   </div>
 </template>
 
+<script setup lang="ts">
+import { provide, computed } from 'vue'
+import AttrBox from './components/attr-box.vue'
+import IronBtn from './components/buttons/iron-btn.vue'
+import CompactCharacterSheetButton from './components/compact-character-sheet-button.vue'
+import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
+import { ActorKey } from './provisions'
+
+const props = defineProps<{
+  data: {
+    actor: any
+  }
+}>()
+
+provide(ActorKey, computed(() => props.data.actor) as any)
+</script>
+
 <style lang="less" module>
 .wrapper {
   gap: var(--ironsworn-spacer-lg);
@@ -52,20 +69,3 @@
   }
 }
 </style>
-
-<script setup lang="ts">
-import { provide, computed } from 'vue'
-import AttrBox from './components/attr-box.vue'
-import IronBtn from './components/buttons/iron-btn.vue'
-import CompactCharacterSheetButton from './components/compact-character-sheet-button.vue'
-import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
-import { ActorKey } from './provisions'
-
-const props = defineProps<{
-  data: {
-    actor: any
-  }
-}>()
-
-provide(ActorKey, computed(() => props.data.actor) as any)
-</script>

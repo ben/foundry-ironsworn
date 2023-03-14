@@ -11,9 +11,9 @@
       />
     </section>
     <section
+      v-if="starredProgresses.length"
       :class="$style.starredProgress"
       class="starred-progress-tracks flexcol"
-      v-if="starredProgresses.length"
     >
       <ProgressListItem
         v-for="(progressItem, i) in starredProgresses"
@@ -25,6 +25,25 @@
     </section>
   </article>
 </template>
+<script lang="ts" setup>
+import type { Ref } from 'vue';
+import { computed, inject } from 'vue'
+import LegacyTrack from '../legacy-track.vue'
+import ProgressListItem from '../progress/progress-list-item.vue'
+import type { ProgressDataPropertiesData } from '../../../item/itemtypes.js'
+import { ActorKey } from '../../provisions.js'
+
+const actor = inject(ActorKey) as Ref
+
+const starredProgresses = computed(() =>
+  actor?.value.items.filter(
+    (item) =>
+      item.type === 'progress' &&
+      (item.system as unknown as ProgressDataPropertiesData)?.starred
+  )
+)
+</script>
+
 <style lang="less" module>
 .wrapper {
   gap: var(--ironsworn-spacer-md);
@@ -50,21 +69,3 @@
   height: max-content;
 }
 </style>
-
-<script lang="ts" setup>
-import { computed, inject, Ref } from 'vue'
-import LegacyTrack from '../legacy-track.vue'
-import ProgressListItem from '../progress/progress-list-item.vue'
-import { ProgressDataPropertiesData } from '../../../item/itemtypes.js'
-import { ActorKey } from '../../provisions.js'
-
-const actor = inject(ActorKey) as Ref
-
-const starredProgresses = computed(() =>
-  actor?.value.items.filter(
-    (item) =>
-      item.type === 'progress' &&
-      (item.system as unknown as ProgressDataPropertiesData)?.starred
-  )
-)
-</script>

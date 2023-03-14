@@ -15,8 +15,8 @@
       <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
       <label class="checkbox nogrow">
         <input
-          type="checkbox"
           v-model="data.item.system.completed"
+          type="checkbox"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Completed') }}
@@ -24,8 +24,8 @@
     </div>
 
     <select
-      class="nogrow"
       v-model="data.item.system.subtype"
+      class="nogrow"
       @change="subtypeChange"
     >
       <option value="vow">
@@ -44,15 +44,15 @@
     <div class="nogrow">
       <label class="checkbox">
         <input
-          type="checkbox"
           v-model="data.item.system.hasTrack"
+          type="checkbox"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Track') }}
       </label>
 
       <CollapseTransition>
-        <div class="nogrow" v-if="data.item.system.hasTrack">
+        <div v-if="data.item.system.hasTrack" class="nogrow">
           <div
             class="flexrow nogrow"
             style="
@@ -65,16 +65,16 @@
               block
               nogrow
               :tooltip="$t('IRONSWORN.UnmarkProgress')"
-              @click="retreat"
               icon="fa:caret-left"
+              @click="retreat"
             />
             <IronBtn
               v-if="data.item.system.hasTrack"
               block
               nogrow
               :tooltip="$t('IRONSWORN.MarkProgress')"
-              @click="advance"
               icon="fa:caret-right"
+              @click="advance"
             />
           </div>
           <!-- PROGRESS -->
@@ -93,15 +93,15 @@
     <div class="nogrow">
       <label class="checkbox">
         <input
-          type="checkbox"
           v-model="data.item.system.hasClock"
+          type="checkbox"
           @change="saveChecks"
         />
         {{ $t('IRONSWORN.Clock') }}
       </label>
 
       <CollapseTransition>
-        <div class="flexrow nogrow" v-if="data.item.system.hasClock">
+        <div v-if="data.item.system.hasClock" class="flexrow nogrow">
           <div class="nogrow" style="margin: 0 1rem">
             <Clock
               :wedges="data.item.system.clockMax"
@@ -112,10 +112,10 @@
           <div class="flexcol">
             {{ $t('IRONSWORN.Segments') }}:
             <select
-              class="nogrow"
               v-model="data.item.system.clockMax"
-              @change="clockMaxChange"
+              class="nogrow"
               style="margin: var(--ironsworn-spacer-lg) 0"
+              @change="clockMaxChange"
             >
               <option
                 v-for="clockSize in [4, 6, 8, 10, 12]"
@@ -137,31 +137,14 @@
       nogrow
       block
       :class="$style.danger"
-      @click="destroy"
       icon="fa:trash"
       :text="
         $t(`DOCUMENT.Delete`, { type: $t('IRONSWORN.ITEM.TypeProgressTrack') })
       "
+      @click="destroy"
     />
   </div>
 </template>
-
-<style lang="less" module>
-.danger {
-  --ironsworn-color-clickable-block-border: var(--ironsworn-color-danger);
-  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-danger);
-  --ironsworn-color-clickable-block-bg: transparent;
-  --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-danger);
-  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-danger);
-
-  margin: var(--ironsworn-spacer-md) 0 0;
-  border-width: var(--ironsworn-border-width-lg);
-  border-style: solid;
-  border-radius: var(--ironsworn-border-radius-lg);
-  color: var(--ironsworn-color-danger);
-}
-</style>
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
@@ -239,3 +222,20 @@ function destroy() {
   })
 }
 </script>
+
+<style lang="less" module>
+.danger {
+  --ironsworn-color-clickable-block-border: var(--ironsworn-color-danger);
+  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-danger);
+  --ironsworn-color-clickable-block-bg: transparent;
+  --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-danger);
+  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
+  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-danger);
+
+  margin: var(--ironsworn-spacer-md) 0 0;
+  border-width: var(--ironsworn-border-width-lg);
+  border-style: solid;
+  border-radius: var(--ironsworn-border-radius-lg);
+  color: var(--ironsworn-color-danger);
+}
+</style>

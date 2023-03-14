@@ -3,7 +3,8 @@
 </template>
 
 <script setup lang="ts">
-import { inject, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { inject } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import MceEditor from '../mce-editor.vue'
 

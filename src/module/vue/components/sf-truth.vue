@@ -1,11 +1,11 @@
 <template>
   <div class="flexrow">
     <input
+      :id="truth?.$id"
       type="radio"
       class="nogrow"
       style="flex: 0 0 20px; margin: 8px"
       :name="radiogroup"
-      :id="truth?.$id"
       :value="radiovalue"
       @change="changed"
     />
@@ -19,18 +19,18 @@
         <CollapseTransition v-if="truth?.Subtable">
           <div v-show="data.selected">
             <div
-              class="flexrow"
               v-for="suboption in truth?.Subtable"
               :key="suboption.$id || ''"
+              class="flexrow"
             >
               <input
+                :id="suboption.$id || ''"
+                v-model="data.subOptionDescription"
                 type="radio"
                 class="nogrow"
                 style="flex: 0 0 20px; margin: 8px"
                 :name="truth?.$id"
-                :id="suboption.$id || ''"
                 :value="suboption.Result"
-                v-model="data.subOptionDescription"
                 @change="changed"
               />
               <label :for="suboption.$id || ''">
@@ -53,7 +53,7 @@
 
 <script setup lang="ts">
 import { computed, defineComponent, PropType, reactive } from 'vue'
-import { ISettingTruthOption } from 'dataforged'
+import type { ISettingTruthOption } from 'dataforged'
 import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{

@@ -1,6 +1,6 @@
 <template>
   <div class="grid">
-    <div class="flexrow" v-for="(row, i) in state.rows" :key="`row${i}`">
+    <div v-for="(row, i) in state.rows" :key="`row${i}`" class="flexrow">
       <input
         type="radio"
         class="a"
@@ -34,10 +34,10 @@
         type="button"
         class="clickable block save"
         :class="{ disabled: saveDisabled }"
-        @click="save"
         :data-tooltip="
           saveDisabled ? $t('IRONSWORN.ResolveChallengeDisabled') : undefined
         "
+        @click="save"
       >
         <i class="fas fa-check"></i>
         {{ $t('Save') }}
@@ -45,30 +45,6 @@
     </div>
   </div>
 </template>
-
-<style lang="less" scoped>
-div.grid {
-  flex-grow: 1;
-  align-items: center;
-  justify-items: center;
-  margin: 1em;
-}
-
-input {
-  margin: var(--ironsworn-spacer-lg);
-  width: 30px;
-
-  &.a {
-    grid-column: 1;
-    justify-self: end;
-  }
-
-  &.b {
-    grid-column: 3;
-    justify-self: start;
-  }
-}
-</style>
 
 <script setup lang="ts">
 import { computed, inject, reactive } from 'vue'
@@ -157,3 +133,27 @@ function save() {
   $localEmitter?.emit('closeApp')
 }
 </script>
+
+<style lang="less" scoped>
+div.grid {
+  flex-grow: 1;
+  align-items: center;
+  justify-items: center;
+  margin: 1em;
+}
+
+input {
+  margin: var(--ironsworn-spacer-lg);
+  width: 30px;
+
+  &.a {
+    grid-column: 1;
+    justify-self: end;
+  }
+
+  &.b {
+    grid-column: 3;
+    justify-self: start;
+  }
+}
+</style>

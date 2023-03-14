@@ -2,26 +2,26 @@
   <article class="flexcol" :class="$style.wrapper">
     <nav class="flexrow nogrow" :class="$style.nav">
       <input
+        v-model="state.searchQuery"
         type="search"
         :placeholder="
           $t('SIDEBAR.Search', { types: $t('IRONSWORN.ITEMS.TypeMove') })
         "
-        v-model="state.searchQuery"
         @keydown.enter.prevent
       />
       <IronBtn
         icon="fa:xmark-circle"
         class="nogrow"
-        @click="clearSearch()"
         :class="$style.btn"
         style="padding: 6px"
+        @click="clearSearch()"
       />
       <IronBtn
         icon="fa:down-left-and-up-right-to-center"
         class="nogrow"
-        @click="collapseMoveCategories()"
         :class="$style.btn"
         style="padding: 6px"
+        @click="collapseMoveCategories()"
       />
     </nav>
 
@@ -37,9 +37,9 @@
         class="nogrow"
       >
         <SfMoverow
-          :move="move"
           ref="allMoves"
-          :thematicColor="move.color"
+          :move="move"
+          :thematic-color="move.color"
           :class="$style.filteredResult"
         />
       </li>
@@ -53,10 +53,10 @@
         class="nogrow"
       >
         <SfMoveCategoryRows
+          ref="allCategories"
           class="nogrow"
           :class="$style.catList"
           :category="category"
-          ref="allCategories"
           :data-tourid="`move-category-${category.dataforgedCategory?.$id}`"
         />
       </li>
@@ -64,56 +64,13 @@
   </article>
 </template>
 
-<style lang="less" module>
-.nav {
-  margin-top: var(--ironsworn-spacer-lg);
-}
-
-.btn {
-  aspect-ratio: 1;
-  flex: 0;
-  // padding: 6px;
-  &:empty {
-    padding: var(--ironsworn-spacer-md);
-    width: var(--form-field-height);
-    // to override default icon-button styling
-    height: var(--form-field-height);
-  }
-}
-
-.wrapper {
-  gap: var(--ironsworn-spacer-lg);
-}
-
-.list {
-  scroll-behavior: smooth;
-  scroll-snap-type: mandatory;
-  scroll-snap-align: start;
-  gap: var(--ironsworn-spacer-md);
-  margin: 0;
-}
-
-.catList {
-  // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
-  --ironsworn-line-height: var(--ironsworn-line-height-md);
-  // FIXME: for some reason, no matter where i set overflow, the focus outline on the list items is clipped. ideally, they shouldn't be!
-  overflow-x: clip;
-  overflow-clip-margin: var(
-    --ironsworn-spacer-md
-  ); // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
-}
-
-.filteredResult {
-  border-radius: var(--ironsworn-border-radius-lg);
-}
-</style>
-
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
+import type {
+  MoveCategory} from '../../features/custommoves';
 import {
   createIronswornMoveTree,
-  createStarforgedMoveTree,
-  MoveCategory,
+  createStarforgedMoveTree
 } from '../../features/custommoves'
 import SfMoveCategoryRows from './sf-move-category-rows.vue'
 import SfMoverow from './sf-moverow.vue'
@@ -187,3 +144,47 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
   }
 })
 </script>
+
+<style lang="less" module>
+.nav {
+  margin-top: var(--ironsworn-spacer-lg);
+}
+
+.btn {
+  aspect-ratio: 1;
+  flex: 0;
+  // padding: 6px;
+  &:empty {
+    padding: var(--ironsworn-spacer-md);
+    width: var(--form-field-height);
+    // to override default icon-button styling
+    height: var(--form-field-height);
+  }
+}
+
+.wrapper {
+  gap: var(--ironsworn-spacer-lg);
+}
+
+.list {
+  scroll-behavior: smooth;
+  scroll-snap-type: mandatory;
+  scroll-snap-align: start;
+  gap: var(--ironsworn-spacer-md);
+  margin: 0;
+}
+
+.catList {
+  // details: https://developer.mozilla.org/en-US/docs/Web/CSS/overflow-clip-margin
+  --ironsworn-line-height: var(--ironsworn-line-height-md);
+  // FIXME: for some reason, no matter where i set overflow, the focus outline on the list items is clipped. ideally, they shouldn't be!
+  overflow-x: clip;
+  overflow-clip-margin: var(
+    --ironsworn-spacer-md
+  ); // Dec 10, 2022: this would be better as 'padding-box', but major browsers only support length values at the moment.
+}
+
+.filteredResult {
+  border-radius: var(--ironsworn-border-radius-lg);
+}
+</style>

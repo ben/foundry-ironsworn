@@ -13,15 +13,9 @@
   </component>
 </template>
 
-<style lang="less" module>
-.wrapper {
-  // TODO
-}
-</style>
-
 <script lang="ts" setup>
-import { ExtractPropTypes } from 'vue'
-import FontIcon from './font-icon.vue'
+import type { ExtractPropTypes } from 'vue'
+import type FontIcon from './font-icon.vue'
 import Icon from './icon-helpers.vue'
 
 interface IconStackLayerOptions
@@ -38,3 +32,9 @@ interface IconStackOptions
 
 const props = withDefaults(defineProps<IconStackOptions>(), {})
 </script>
+
+<style lang="less" module>
+.wrapper {
+  // TODO
+}
+</style>

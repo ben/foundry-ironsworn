@@ -1,5 +1,6 @@
 <template>
   <IronBtn
+    :id="getTabId(tabState.tabSetId, tabKey)"
     ref="$el"
     role="tab"
     :data-tab-set="tabState.tabSetId"
@@ -7,51 +8,32 @@
     :class="{ [$style.tab]: true, [$style[tabState.orientation]]: true }"
     :aria-selected="isActive"
     :aria-controls="getTabPanelId(tabState.tabSetId, tabKey)"
-    :id="getTabId(tabState.tabSetId, tabKey)"
     :tabindex="isActive ? undefined : -1"
-    @click="setActiveTab(tabKey)"
     :block="block"
-    @keydown="handleKeydown"
     v-bind="(buttonProps, $attrs)"
+    @click="setActiveTab(tabKey)"
+    @keydown="handleKeydown"
   >
-    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+    <template v-for="(_, slot) of $slots" #[slot]="scope">
       <slot :name="slot" v-bind="scope" />
     </template>
   </IronBtn>
 </template>
-<style lang="less" module>
-.tab {
-  flex: 1 1 0;
-  gap: var(--ironsworn-spacer-sm);
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  padding: var(--ironsworn-spacer-md);
-  overflow-x: visible;
-}
-
-.vertical {
-  // TODO
-}
-
-.horizontal {
-  line-height: var(--ironsworn-line-height-lg);
-}
-</style>
-
 <script lang="ts" setup>
 import { omit } from 'lodash-es'
-import { computed, ExtractPropTypes, inject, nextTick, ref, watch } from 'vue'
+import type { ExtractPropTypes} from 'vue';
+import { computed, inject, nextTick, ref, watch } from 'vue'
 import IronBtn from '../buttons/iron-btn.vue'
-import {
+import type {
   FocusActivePanel,
+  SetActiveTab,
+  TabKey,
+  TabState} from './tab-helpers.js';
+import {
   FocusActivePanelKey,
   getTabId,
   getTabPanelId,
-  SetActiveTab,
   SetActiveTabKey,
-  TabKey,
-  TabState,
   TabStateKey,
 } from './tab-helpers.js'
 
@@ -129,3 +111,23 @@ function handleKeydown(event: KeyboardEvent) {
   }
 }
 </script>
+
+<style lang="less" module>
+.tab {
+  flex: 1 1 0;
+  gap: var(--ironsworn-spacer-sm);
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  padding: var(--ironsworn-spacer-md);
+  overflow-x: visible;
+}
+
+.vertical {
+  // TODO
+}
+
+.horizontal {
+  line-height: var(--ironsworn-line-height-lg);
+}
+</style>

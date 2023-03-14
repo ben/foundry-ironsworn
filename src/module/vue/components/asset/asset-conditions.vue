@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="$style.assetconditions"
     v-if="asset.system.conditions?.length > 0"
+    :class="$style.assetconditions"
   >
     <label
       v-for="(condition, i) in asset.system.conditions"
@@ -17,6 +17,26 @@
     </label>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { inject } from 'vue'
+import { $ItemKey } from '../../provisions'
+
+const props = defineProps<{ asset: any }>()
+
+const $item = inject($ItemKey)
+
+async function toggleCondition(idx: number) {
+  const { conditions } = props.asset.system
+  conditions[idx].ticked = !conditions[idx].ticked
+  await $item?.update({ system: { conditions } })
+
+  CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
+    name: conditions[idx].name.toLowerCase(),
+    enabled: conditions[idx].ticked,
+  })
+}
+</script>
 
 <style lang="less" module>
 .assetconditions {
@@ -45,23 +65,3 @@
   }
 }
 </style>
-
-<script lang="ts" setup>
-import { inject } from 'vue'
-import { $ItemKey } from '../../provisions'
-
-const props = defineProps<{ asset: any }>()
-
-const $item = inject($ItemKey)
-
-async function toggleCondition(idx: number) {
-  const { conditions } = props.asset.system
-  conditions[idx].ticked = !conditions[idx].ticked
-  await $item?.update({ system: { conditions } })
-
-  CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
-    name: conditions[idx].name.toLowerCase(),
-    enabled: conditions[idx].ticked,
-  })
-}
-</script>

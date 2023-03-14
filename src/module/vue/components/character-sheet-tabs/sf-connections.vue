@@ -1,26 +1,21 @@
 <template>
   <article class="flexcol">
     <ProgressList
-      :showCompleted="'all'"
-      :excludedSubtypes="['vow', 'progress']"
-      :progress-stars="true"
       ref="$connectionList"
+      :show-completed="'all'"
+      :excluded-subtypes="['vow', 'progress']"
+      :progress-stars="true"
     />
     <section :class="$style.controls" class="progress-controls flexrow nogrow">
       <IronBtn
         icon="fa:plus"
         block
-        @click="newConnection"
         :text="$t('IRONSWORN.ITEM.SubtypeConnection')"
+        @click="newConnection"
       />
     </section>
   </article>
 </template>
-<style lang="less" module>
-.controls {
-  --ironsworn-line-height: var(--ironsworn-line-height-sm);
-}
-</style>
 <script setup lang="ts">
 import { inject } from 'vue'
 import { $ActorKey } from '../../provisions'
@@ -42,3 +37,8 @@ async function newConnection() {
   item?.sheet?.render(true)
 }
 </script>
+<style lang="less" module>
+.controls {
+  --ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
+</style>

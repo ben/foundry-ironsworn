@@ -3,9 +3,9 @@
     <SheetHeaderBasic class="nogrow" :document="data.item" />
 
     <input
+      v-model="typedSystem.summary"
       class="nogrow"
       type="text"
-      v-model="typedSystem.summary"
       :placeholder="$t('IRONSWORN.Summary')"
       @blur="save"
     />
@@ -17,7 +17,7 @@
         <tr v-for="feature in typedSystem.features">
           <td>{{ formattedRange(feature.range) }}</td>
           <td>
-            <input type="text" v-model="feature.text" @blur="save" />
+            <input v-model="feature.text" type="text" @blur="save" />
           </td>
         </tr>
       </tbody>
@@ -29,7 +29,7 @@
         <tr v-for="danger in typedSystem.dangers">
           <td>{{ formattedRange(danger.range) }}</td>
           <td>
-            <input type="text" v-model="danger.text" @blur="save" />
+            <input v-model="danger.text" type="text" @blur="save" />
           </td>
         </tr>
       </tbody>
@@ -37,19 +37,9 @@
   </div>
 </template>
 
-<style lang="less" module>
-.sheetStyles {
-  gap: var(--ironsworn-spacer-md);
-
-  h3 {
-    margin: var(--ironsworn-spacer-lg) 0 0 0;
-  }
-}
-</style>
-
 <script setup lang="ts">
 import { inject, provide, computed } from 'vue'
-import { DelveThemeDataPropertiesData } from '../item/itemtypes'
+import type { DelveThemeDataPropertiesData } from '../item/itemtypes'
 import MceEditor from './components/mce-editor.vue'
 import { $ItemKey, ItemKey } from './provisions'
 import SheetHeaderBasic from './sheet-header-basic.vue'
@@ -73,3 +63,13 @@ function save() {
   })
 }
 </script>
+
+<style lang="less" module>
+.sheetStyles {
+  gap: var(--ironsworn-spacer-md);
+
+  h3 {
+    margin: var(--ironsworn-spacer-lg) 0 0 0;
+  }
+}
+</style>

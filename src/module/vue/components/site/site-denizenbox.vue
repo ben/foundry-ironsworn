@@ -1,7 +1,7 @@
 <template>
   <DropTarget
-    dropType="progress"
     is="div"
+    drop-type="progress"
     class="box flexrow ironsworn__denizen__drop"
     :data-idx="idx"
   >
@@ -21,24 +21,19 @@
       type="text"
       :class="{ highlight: data.focused }"
       :value="denizen.text"
-      @input="input"
       :placeholder="frequencyLabel"
+      @input="input"
     />
     <div v-else style="line-height: 26px" v-html="$enrichHtml(denizen.text)" />
   </DropTarget>
 </template>
 
-<style lang="less" scoped>
-input {
-  transition: 0.4s ease-out;
-}
-</style>
-
 <script setup lang="ts">
-import { reactive, Ref } from '@vue/reactivity'
-import { inject } from '@vue/runtime-core'
+import type { Ref } from 'vue';
+import { reactive } from 'vue'
+import { inject } from 'vue'
 import { computed, ref } from 'vue'
-import {
+import type {
   DelveSiteDenizen,
   SiteDataPropertiesData,
 } from '../../../actor/actortypes'
@@ -99,3 +94,9 @@ function focus() {
 }
 defineExpose({ focus })
 </script>
+
+<style lang="less" scoped>
+input {
+  transition: 0.4s ease-out;
+}
+</style>

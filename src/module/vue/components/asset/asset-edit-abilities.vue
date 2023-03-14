@@ -2,14 +2,14 @@
   <div class="flexcol nogrow" style="margin-top: 1em">
     <CollapseTransition group tag="div" class="nogrow">
       <div
-        class="flexcol nogrow"
         v-for="(ability, i) in item.system.abilities"
         :key="`ability${i}`"
+        class="flexcol nogrow"
       >
         <textarea
+          v-model="ability.description"
           rows="5"
           style="min-height: 90px"
-          v-model="ability.description"
           @blur="save"
         ></textarea>
         <div class="flexrow">
@@ -23,10 +23,10 @@
               {{ $t('IRONSWORN.Clock') }}
             </label>
             <select
-              class="nogrow"
               v-model="ability.clockMax"
-              @change="clockMaxChange(i)"
+              class="nogrow"
               style="margin: 0.5rem 0"
+              @change="clockMaxChange(i)"
             >
               <option value="4">4 segments</option>
               <option value="6">6 segments</option>
@@ -52,15 +52,16 @@
     <IronBtn
       icon="fa:plus"
       block
-      @click="addAbility"
       :text="$t('IRONSWORN.Ability')"
+      @click="addAbility"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed, Ref, inject, onUnmounted } from 'vue'
-import { AssetDataPropertiesData } from '../../../item/itemtypes'
+import type { Ref} from 'vue';
+import { computed, inject, onUnmounted } from 'vue'
+import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import Clock from '../clock.vue'

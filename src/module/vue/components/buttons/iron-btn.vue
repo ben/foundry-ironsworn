@@ -1,5 +1,6 @@
 <template>
   <button
+    ref="$el"
     class="iron-btn"
     :class="{
       [$style.btn]: true,
@@ -14,7 +15,6 @@
     :data-tooltip="tooltip"
     :disabled="disabled"
     :aria-disabled="disabled"
-    ref="$el"
   >
     <!-- @slot The button icon. Provide an ID string for an icon with default settings, or use this slot if you need to do something specific.  -->
     <slot name="icon">
@@ -38,6 +38,103 @@
     </slot>
   </button>
 </template>
+<script setup lang="ts">
+import { capitalize } from 'lodash-es'
+import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
+import FontIcon from '../icon/font-icon.vue'
+import type { IconId } from '../icon/icon-common';
+import { FontAwesome } from '../icon/icon-common'
+import IronIcon from '../icon/iron-icon.vue'
+
+/**
+ * Generic button that applies styles and behaviour common to this system.
+ */
+const props = withDefaults(
+  defineProps<{
+    /**
+     *  The button text/label, which appears as the default content for the "text" slot.
+     */
+    text?: string
+    /**
+     * A simple way to specify an icon with default settings. For something weirder, you can override it with the "icon" slot.
+     */
+    icon?: IconId | null
+    tooltip?: string
+    hoverBg?: boolean
+    disabled?: boolean
+    /**
+     * Should the button grow in flex containers?
+     */
+    nogrow?: boolean
+    /**
+     * Should the button be styled with a block background?
+     */
+    block?: boolean
+    /**
+     * Should the button be styled as vertical?
+     */
+    vertical?: boolean
+    height?: string
+    width?: string
+    /**
+     * How to justify the button content. If it's a block or icon-only button, this is 'center'. Otherwise, it's 'start'.
+     */
+    justify?: 'start' | 'center' | 'end'
+  }>(),
+  { disabled: false, vertical: false, width: 'auto', height: 'auto' }
+)
+
+const justify = computed(() => {
+  if (props.justify) {
+    return props.justify
+  }
+  switch (true) {
+    case !hasText.value:
+    case props.block:
+      return 'center'
+    default:
+      return 'start'
+  }
+})
+
+const $style = useCssModule()
+
+const classes = computed(() => {
+  return {
+    [$style.btn]: true,
+    [$style.vertical]: props.vertical,
+    [$style.iconOnly]: !hasText.value,
+    [$style.block]: props.block,
+    [$style.noBlock]: !props.block,
+    [$style[`flex${capitalize(justify.value)}`]]: true,
+    nogrow: props.nogrow,
+  }
+})
+// so the span can be omitted if there's no slot content
+
+let $el = ref<HTMLElement>()
+
+const hasText = computed(() => {
+  if (props.text || useSlots().text?.()[0]) return true
+  return false
+})
+
+const iconOptions = computed(() => {
+  if (!props.icon) {
+    return null
+  }
+  const [set, name] = props.icon.split(/:/)
+  return {
+    set,
+    name,
+  }
+})
+
+defineExpose({
+  element: $el,
+})
+</script>
+
 <style lang="less" module>
 @import (reference) '../../../../styles/utils.less';
 @import (reference) '../../../../styles/mixins.less';
@@ -132,99 +229,3 @@
   }
 }
 </style>
-
-<script setup lang="ts">
-import { capitalize } from 'lodash-es'
-import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
-import FontIcon from '../icon/font-icon.vue'
-import { FontAwesome, IconId } from '../icon/icon-common'
-import IronIcon from '../icon/iron-icon.vue'
-
-/**
- * Generic button that applies styles and behaviour common to this system.
- */
-const props = withDefaults(
-  defineProps<{
-    /**
-     *  The button text/label, which appears as the default content for the "text" slot.
-     */
-    text?: string
-    /**
-     * A simple way to specify an icon with default settings. For something weirder, you can override it with the "icon" slot.
-     */
-    icon?: IconId | null
-    tooltip?: string
-    hoverBg?: boolean
-    disabled?: boolean
-    /**
-     * Should the button grow in flex containers?
-     */
-    nogrow?: boolean
-    /**
-     * Should the button be styled with a block background?
-     */
-    block?: boolean
-    /**
-     * Should the button be styled as vertical?
-     */
-    vertical?: boolean
-    height?: string
-    width?: string
-    /**
-     * How to justify the button content. If it's a block or icon-only button, this is 'center'. Otherwise, it's 'start'.
-     */
-    justify?: 'start' | 'center' | 'end'
-  }>(),
-  { disabled: false, vertical: false, width: 'auto', height: 'auto' }
-)
-
-const justify = computed(() => {
-  if (props.justify) {
-    return props.justify
-  }
-  switch (true) {
-    case !hasText.value:
-    case props.block:
-      return 'center'
-    default:
-      return 'start'
-  }
-})
-
-const $style = useCssModule()
-
-const classes = computed(() => {
-  return {
-    [$style.btn]: true,
-    [$style.vertical]: props.vertical,
-    [$style.iconOnly]: !hasText,
-    [$style.block]: props.block,
-    [$style.noBlock]: !props.block,
-    [$style[`flex${capitalize(justify.value)}`]]: true,
-    nogrow: props.nogrow,
-  }
-})
-// so the span can be omitted if there's no slot content
-
-let $el = ref<HTMLElement>()
-
-const hasText = computed(() => {
-  if (props.text || useSlots().text?.()[0]) return true
-  return false
-})
-
-const iconOptions = computed(() => {
-  if (!props.icon) {
-    return null
-  }
-  const [set, name] = props.icon.split(/:/)
-  return {
-    set,
-    name,
-  }
-})
-
-defineExpose({
-  element: $el,
-})
-</script>

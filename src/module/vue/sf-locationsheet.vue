@@ -46,11 +46,11 @@
         <span class="select-label">{{ subtypeSelectText }}:</span>
         <select
           v-model="data.actor.system.klass"
-          @change="klassChanged"
           :class="{
             highlighted:
               state.firstLookHighlight && firstLookWillRandomizeKlass,
           }"
+          @change="klassChanged"
         >
           <option
             v-for="opt in klassOptions"
@@ -72,8 +72,8 @@
             height: 25px;
             line-height: 30px;
           "
-          @click="randomizeKlass"
           :tooltip="randomKlassTooltip"
+          @click="randomizeKlass"
         />
       </label>
     </template>
@@ -81,7 +81,7 @@
       <SheetHeaderBasic
         :document="data.actor"
         class="sf-location-header nogrow"
-        :nameClass="{
+        :name-class="{
           highlighted: state.firstLookHighlight && firstLookWillRandomizeName,
         }"
         @change="nameChange"
@@ -92,28 +92,29 @@
           block
           nogrow
           :tooltip="$t('IRONSWORN.RandomName')"
-          @click="randomizeName"
           icon="ironsworn:d10-tilt"
+          @click="randomizeName"
         />
       </SheetHeaderBasic>
     </template>
 
-    <section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
+    <section v-if="oracles.length > 0" class="boxgroup flexcol nogrow">
       <div class="flexrow boxrow">
         <div class="box flexrow">
           <IronBtn
             block
-            @click="rollFirstLook"
             icon="ironsworn:d10-tilt"
+            :text="$t('IRONSWORN.RollForDetails')"
+            @click="rollFirstLook"
             @mouseenter="state.firstLookHighlight = true"
             @mouseleave="state.firstLookHighlight = false"
-            :text="$t('IRONSWORN.RollForDetails')"
           />
         </div>
       </div>
-      <div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
-        <div class="box flexrow" v-for="oracle of row">
+      <div v-for="(row, i) of oracles" :key="`row${i}`" class="flexrow boxrow">
+        <div v-for="oracle of row" class="box flexrow">
           <IronBtn
+            :key="oracle.dfId"
             block
             :disabled="oracle.requiresKlass && klassIsNotValid"
             :class="{
@@ -124,9 +125,8 @@
                 ? $t('IRONSWORN.RequiresLocationType')
                 : undefined
             "
-            :key="oracle.dfId"
-            @click="rollOracle(oracle)"
             icon="ironsworn:d10-tilt"
+            @click="rollOracle(oracle)"
           >
             <template #text>
               {{ oracle.title }}
@@ -147,50 +147,6 @@
   </SheetBasic>
 </template>
 
-<style lang="less">
-.sf-location-header {
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  grid-auto-flow: column;
-
-  > * {
-    grid-row: 1;
-  }
-
-  .charname {
-    grid-column: 2 / span 2;
-  }
-
-  .btn-randomize-name {
-    grid-column: 3;
-    border-radius: 0 var(--ironsworn-border-radius-md)
-      var(--ironsworn-border-radius-md) 0;
-    height: 50px;
-    aspect-ratio: 1;
-  }
-}
-</style>
-<style lang="less" scoped>
-@import (reference) '../../styles/mixins.less';
-
-label {
-  line-height: 27px;
-
-  .select-label {
-    flex-basis: 130px;
-    flex-grow: 0;
-  }
-}
-
-.box button {
-  padding: var(--ironsworn-spacer-lg);
-}
-
-.highlighted {
-  .blockHoverMixin;
-}
-</style>
-
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import { camelCase, capitalize, flatten, sample } from 'lodash-es'
@@ -199,7 +155,7 @@ import { $ActorKey, ActorKey } from './provisions'
 
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
-import { LocationDataProperties } from '../actor/actortypes'
+import type { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 
@@ -733,3 +689,47 @@ async function updateAllTokens(data) {
   await canvas?.scene?.updateEmbeddedDocuments('Token', updates)
 }
 </script>
+<style lang="less">
+.sf-location-header {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  grid-auto-flow: column;
+
+  > * {
+    grid-row: 1;
+  }
+
+  .charname {
+    grid-column: 2 / span 2;
+  }
+
+  .btn-randomize-name {
+    grid-column: 3;
+    border-radius: 0 var(--ironsworn-border-radius-md)
+      var(--ironsworn-border-radius-md) 0;
+    height: 50px;
+    aspect-ratio: 1;
+  }
+}
+</style>
+
+<style lang="less" scoped>
+@import (reference) '../../styles/mixins.less';
+
+label {
+  line-height: 27px;
+
+  .select-label {
+    flex-basis: 130px;
+    flex-grow: 0;
+  }
+}
+
+.box button {
+  padding: var(--ironsworn-spacer-lg);
+}
+
+.highlighted {
+  .blockHoverMixin;
+}
+</style>

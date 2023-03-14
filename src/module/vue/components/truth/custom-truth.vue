@@ -1,28 +1,20 @@
 <template>
   <label class="nogrow flexrow">
     <input
+      ref="radio"
       type="radio"
       :name="radioGroup"
       class="nogrow"
       @change="select"
-      ref="radio"
     />
     <MceEditor
-      v-model="state.html"
       ref="editor"
-      @save="emitHtml"
+      v-model="state.html"
       :style="{ height: state.height, 'min-height': state.height }"
+      @save="emitHtml"
     />
   </label>
 </template>
-
-<style lang="less" scoped>
-input[type='radio'] {
-  flex-grow: 0;
-  align-self: flex-start;
-  margin: var(--ironsworn-spacer-lg);
-}
-</style>
 
 <script lang="ts" setup>
 import { reactive, ref } from 'vue'
@@ -52,3 +44,11 @@ function emitHtml() {
   $emit('change', state.html)
 }
 </script>
+
+<style lang="less" scoped>
+input[type='radio'] {
+  flex-grow: 0;
+  align-self: flex-start;
+  margin: var(--ironsworn-spacer-lg);
+}
+</style>

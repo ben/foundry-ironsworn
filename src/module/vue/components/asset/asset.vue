@@ -10,9 +10,9 @@
     <header class="asset-header nogrow flexrow">
       <button
         type="button"
-        @click="toggle"
         :aria-controls="bodyId"
         class="clickable text asset-expand-toggle"
+        @click="toggle"
       >
         <h4 class="asset-title">
           {{ asset.name }}
@@ -36,28 +36,28 @@
     <CollapseTransition>
       <section
         v-if="expanded"
+        :id="bodyId"
         class="asset-body flexcol"
         :aria-expanded="expanded"
-        :id="bodyId"
       >
         <with-rolllisteners
-          element="div"
-          v-html="$enrichHtml(asset.system.description ?? '')"
           v-if="asset.system.description"
+          element="div"
           @moveclick="moveclick"
+          v-html="$enrichHtml(asset.system.description ?? '')"
         />
         <with-rolllisteners
-          element="div"
-          v-html="$enrichHtml(asset.system.requirement ?? '')"
           v-if="asset.system.requirement"
+          element="div"
           @moveclick="moveclick"
+          v-html="$enrichHtml(asset.system.requirement ?? '')"
         />
 
-        <dl class="asset-fields" v-if="asset.system.fields?.length">
+        <dl v-if="asset.system.fields?.length" class="asset-fields">
           <div
-            class="asset-field"
             v-for="(field, i) in asset.system.fields"
             :key="'field' + i"
+            class="asset-field"
           >
             <dt class="asset-field-label">{{ field.name }}</dt>
             <dd class="asset-field-value">{{ field.value }}</dd>
@@ -88,23 +88,23 @@
         <div class="flexrow nogrow">
           <ConditionMeterSlider
             v-if="asset.system.track.enabled"
-            sliderStyle="horizontal"
+            slider-style="horizontal"
             class="asset-condition-meter"
-            documentType="Item"
+            document-type="Item"
             attr="track.current"
             :current-value="asset.system.track.current"
             :max="asset.system.track.max"
             :min="0"
-            :statLabel="asset.system.track.name"
-            labelPosition="left"
+            :stat-label="asset.system.track.name"
+            label-position="left"
             :read-only="false"
           />
           <AssetConditions :asset="asset" />
         </div>
 
         <section
-          class="flexcol stack nogrow"
           v-if="asset.system.exclusiveOptions.length > 0"
+          class="flexcol stack nogrow"
         >
           <asset-exclusiveoption
             v-for="(opt, i) in asset.system.exclusiveOptions"
@@ -118,15 +118,10 @@
   </article>
 </template>
 
-<style lang="less" module>
-.themeColor {
-  --ironsworn-color-thematic: v-bind('asset?.system?.color');
-}
-</style>
-
 <script setup lang="ts">
-import { computed, inject, provide, Ref } from 'vue'
-import { AssetAbility, AssetDataPropertiesData } from '../../../item/itemtypes'
+import type { Ref } from 'vue';
+import { computed, inject, provide } from 'vue'
+import type { AssetAbility, AssetDataPropertiesData } from '../../../item/itemtypes'
 import AssetExclusiveoption from './asset-exclusiveoption.vue'
 import Clock from '../clock.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
@@ -208,3 +203,9 @@ function toggleCondition(idx: number) {
   foundryItem?.update({ system: { conditions } })
 }
 </script>
+
+<style lang="less" module>
+.themeColor {
+  --ironsworn-color-thematic: v-bind('asset?.system?.color');
+}
+</style>

@@ -2,7 +2,7 @@
   <SheetBasic
     :document="data.actor"
     class="character-sheet-classic"
-    bodyClass="flexrow"
+    body-class="flexrow"
     data-tourid="sheet"
   >
     <!-- Header row -->
@@ -13,7 +13,7 @@
     <!-- Main body row -->
     <!-- Momentum on left -->
     <div class="flexcol margin-left" data-tourid="momentum">
-      <MomentumMeterSlider labelPosition="right" data-tooltip-direction="UP" />
+      <MomentumMeterSlider label-position="right" data-tooltip-direction="UP" />
     </div>
 
     <!-- Center area -->
@@ -31,8 +31,8 @@
         <attr-box attr="wits"></attr-box>
       </div>
       <TabSet
-        :tabKeys="['character', 'notes']"
         :id="`${data.actor._id}-character-sheet-classic`"
+        :tab-keys="['character', 'notes']"
         :class="$style.tabSet"
         :v-slot:icon="{ size: 'sm' }"
         data-tourid="tabs"
@@ -64,36 +64,16 @@
     <PcConditionMeters
       class="flexcol margin-right"
       data-tooltip-direction="UP"
-      labelPosition="left"
+      label-position="left"
       data-tourid="resources"
     />
   </SheetBasic>
 </template>
 
-<style lang="less" module>
-.tabContent {
-  height: inherit;
-}
-
-.tabSet {
-  margin-top: var(--ironsworn-spacer-lg);
-}
-</style>
-
-<style lang="less" scoped>
-.character-sheet-classic {
-  gap: var(--ironsworn-spacer-xl);
-}
-
-.stat-roll {
-  text-transform: uppercase;
-}
-</style>
-
 <script setup lang="ts">
 import { ActorKey } from './provisions'
 import AttrBox from './components/attr-box.vue'
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 import { provide, computed } from 'vue'
 import CharacterHeader from './components/character-header.vue'
 import Conditions from './components/conditions/conditions.vue'
@@ -118,3 +98,23 @@ provide(
   computed(() => props.data.actor)
 )
 </script>
+
+<style lang="less" module>
+.tabContent {
+  height: inherit;
+}
+
+.tabSet {
+  margin-top: var(--ironsworn-spacer-lg);
+}
+</style>
+
+<style lang="less" scoped>
+.character-sheet-classic {
+  gap: var(--ironsworn-spacer-xl);
+}
+
+.stat-roll {
+  text-transform: uppercase;
+}
+</style>

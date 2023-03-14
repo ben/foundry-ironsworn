@@ -13,7 +13,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity'
+import { computed } from 'vue'
 import { times } from 'lodash-es'
 
 const sides = 6

@@ -13,10 +13,10 @@
       viewBox="0 0 100 100"
       role="presentational"
     >
-      <g class="ghost-ticks" v-if="isOverflowBox">
+      <g v-if="isOverflowBox" class="ghost-ticks">
         <line
-          v-bind="tickProps"
           v-for="(tick, i) in tickRange"
+          v-bind="tickProps"
           :key="`ghost-tick-${tick}`"
           :transform="tickTransforms[i]"
           class="ghost-tick"
@@ -26,10 +26,10 @@
       <g>
         <TransitionGroup :name="transitionName">
           <line
-            v-bind="tickProps"
             v-for="(tick, i) in tickRange"
-            :key="`tick-${tick}`"
             v-show="props.ticks > i"
+            v-bind="tickProps"
+            :key="`tick-${tick}`"
             :transform="tickTransforms[i]"
             :data-tick="tick"
           />
@@ -38,6 +38,49 @@
     </svg>
   </div>
 </template>
+<script setup lang="ts">
+import { range } from 'lodash-es'
+import { computed } from 'vue'
+import { IronswornSettings } from '../../../helpers/settings.js'
+
+const props = defineProps<{
+  ticks: number
+  /**
+   * Whether to indicate this as an "overflow" progress box by rendering a second set of 4 ticks with low opacity. Used by legacy tracks that have previously been filled to 10.
+   */
+  isOverflowBox?: boolean
+}>()
+
+const transitionName = computed(() =>
+  IronswornSettings.get('progress-mark-animation')
+    ? 'draw-progress-tick'
+    : undefined
+)
+
+const tickRange = range(1, 5)
+
+const tickTransforms = [
+  'rotate(-45, 50, 50)',
+  'rotate(45, 50, 50)',
+  'rotate(-90, 50, 50)',
+  '',
+]
+
+const tickProps = computed(() => ({
+  x1: '50',
+  y1: '100',
+  x2: '50',
+  y2: '0',
+  class: 'progress-tick',
+}))
+
+function onTransitionStart(event) {
+  // console.log('transitionStart', event)
+}
+function onTransitionEnd(event) {
+  // console.log('transitionEnd', event)
+}
+</script>
 <style lang="less">
 // helper mixin functions
 .animateTick(@value,@duration,@delay:0s) {
@@ -217,46 +260,3 @@
   }
 }
 </style>
-<script setup lang="ts">
-import { range } from 'lodash-es'
-import { computed } from 'vue'
-import { IronswornSettings } from '../../../helpers/settings.js'
-
-const props = defineProps<{
-  ticks: number
-  /**
-   * Whether to indicate this as an "overflow" progress box by rendering a second set of 4 ticks with low opacity. Used by legacy tracks that have previously been filled to 10.
-   */
-  isOverflowBox?: boolean
-}>()
-
-const transitionName = computed(() =>
-  IronswornSettings.get('progress-mark-animation')
-    ? 'draw-progress-tick'
-    : undefined
-)
-
-const tickRange = range(1, 5)
-
-const tickTransforms = [
-  'rotate(-45, 50, 50)',
-  'rotate(45, 50, 50)',
-  'rotate(-90, 50, 50)',
-  '',
-]
-
-const tickProps = computed(() => ({
-  x1: '50',
-  y1: '100',
-  x2: '50',
-  y2: '0',
-  class: 'progress-tick',
-}))
-
-function onTransitionStart(event) {
-  // console.log('transitionStart', event)
-}
-function onTransitionEnd(event) {
-  // console.log('transitionEnd', event)
-}
-</script>

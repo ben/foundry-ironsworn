@@ -1,22 +1,23 @@
 <template>
   <IronBtn
-    @click="rollStat"
     :data-tooltip="$t('IRONSWORN.Roll +x', { stat: statLabel })"
     class="action-roll stat-roll"
     aria-haspopup="dialog"
     icon="ironsworn:d10-tilt"
     v-bind="($props, $attrs)"
+    @click="rollStat"
   >
-    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+    <template v-for="(_, slot) of $slots" #[slot]="scope">
       <slot :name="slot" v-bind="scope" />
     </template>
   </IronBtn>
 </template>
 
 <script lang="ts" setup>
-import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import { ExtractPropTypes, inject, useSlots } from 'vue'
-import { AssetDataProperties } from '../../../item/itemtypes.js'
+import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
+import type { ExtractPropTypes} from 'vue';
+import { inject, useSlots } from 'vue'
+import type { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'

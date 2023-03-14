@@ -1,14 +1,14 @@
 <template>
   <IronBtn
     class="oracle-roll"
-    @click="rollOracle"
     :tooltip="
       $t('IRONSWORN.RollOracleTable', { title: props.node.displayName })
     "
     icon="ironsworn:oracle"
     v-bind="($props, $attrs)"
+    @click="rollOracle"
   >
-    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+    <template v-for="(_, slot) of $slots" #[slot]="scope">
       <slot :name="slot" v-bind="scope" />
     </template>
   </IronBtn>
@@ -16,8 +16,9 @@
 
 <script setup lang="ts">
 import { sample } from 'lodash-es'
-import { ExtractPropTypes, inject } from 'vue'
-import { IOracleTreeNode } from '../../../features/customoracles.js'
+import type { ExtractPropTypes} from 'vue';
+import { inject } from 'vue'
+import type { IOracleTreeNode } from '../../../features/customoracles.js'
 import { OracleRollMessage } from '../../../rolls'
 import IronBtn from './iron-btn.vue'
 

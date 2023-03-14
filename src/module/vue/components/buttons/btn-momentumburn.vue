@@ -1,21 +1,22 @@
 <template>
   <IronBtn
     class="burn-momentum"
-    @click="burnMomentum"
     :tooltip="tooltip"
     icon="fa:fire"
     v-bind="($props, $attrs)"
+    @click="burnMomentum"
   >
-    <template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+    <template v-for="(_, slot) of $slots" #[slot]="scope">
       <slot :name="slot" v-bind="scope" />
     </template>
   </IronBtn>
 </template>
 
 <script lang="ts" setup>
-import { computed } from '@vue/reactivity'
-import { ExtractPropTypes, inject } from 'vue'
-import { CharacterDataPropertiesData } from '../../../actor/actortypes'
+import { computed } from 'vue'
+import type { ExtractPropTypes} from 'vue';
+import { inject } from 'vue'
+import type { CharacterDataPropertiesData } from '../../../actor/actortypes'
 import { $ActorKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'
 

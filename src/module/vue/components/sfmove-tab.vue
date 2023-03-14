@@ -1,6 +1,5 @@
 <template>
   <div
-    @click="$emit('click', property)"
     :class="[
       'clickable',
       'block',
@@ -9,25 +8,18 @@
       'flexrow',
       { selected: currentProperty === property },
     ]"
+    @click="$emit('click', property)"
   >
     <span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
     <IronBtn
+      v-if="$attrs.onDelete"
       nogrow
       block
-      v-if="$attrs.onDelete"
       icon="fa:trash"
       @click="$emit('delete')"
     />
   </div>
 </template>
-
-<style lang="less" scoped>
-span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-</style>
 
 <script setup lang="ts">
 import IronBtn from './buttons/iron-btn.vue'
@@ -41,3 +33,11 @@ const props = defineProps<{
 
 defineEmits<{ (e: 'click', property: string) }>()
 </script>
+
+<style lang="less" scoped>
+span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+</style>

@@ -5,7 +5,7 @@
     class="progress-list item-list"
     :class="$style.list"
   >
-    <li class="flexrow nogrow" v-for="(item, i) in items" :key="item._id">
+    <li v-for="(item, i) in items" :key="item._id" class="flexrow nogrow">
       <OrderButtons
         v-if="editMode"
         :i="i"
@@ -15,27 +15,22 @@
       />
       <ProgressListItem
         :item="item"
-        :showStar="progressStars"
-        @completed="progressCompleted"
+        :show-star="progressStars"
         :compact-progress="compactProgress"
         :class="progressListItemClass"
+        @completed="progressCompleted"
       />
     </li>
   </CollapseTransition>
 </template>
 
-<style lang="less" module>
-.list {
-  gap: var(--ironsworn-spacer-md);
-}
-</style>
-
 <script setup lang="ts">
-import { computed, inject, reactive, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { computed, inject, reactive } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import OrderButtons from './order-buttons.vue'
 import ProgressListItem from './progress/progress-list-item.vue'
-import { ProgressDataPropertiesData } from '../../item/itemtypes'
+import type { ProgressDataPropertiesData } from '../../item/itemtypes'
 import CollapseTransition from './transition/collapse-transition.vue'
 import { getProgressItems, isValidProgressItem } from './progress-common'
 
@@ -106,3 +101,9 @@ defineExpose({
   items,
 })
 </script>
+
+<style lang="less" module>
+.list {
+  gap: var(--ironsworn-spacer-md);
+}
+</style>

@@ -48,6 +48,98 @@
   </article>
 </template>
 
+<script lang="ts" setup>
+/**
+ * A bar that functions as a number slider.
+ */
+import { clamp, inRange, min, range, rangeRight } from 'lodash-es'
+import { computed } from 'vue'
+
+const props = withDefaults(
+  defineProps<{
+    readOnly?: boolean
+    currentValue: number
+    /**
+     * @default 0
+     */
+    min?: number | undefined
+    max: number
+    softMax?: number | undefined
+    /**
+     * @default "vertical"
+     */
+    orientation?: 'vertical' | 'horizontal'
+    /**
+     * Classes to assign to segments, keyed by the segment's value.
+     * @example
+     * ```typescript
+     * // Assign the 'momentum-reset' class to the segment with the value of the variable 'reset'
+     * {[reset]: 'momentum-reset'}
+     * ```
+     */
+    segmentClass?: Record<number, any>
+  }>(),
+  {
+    readOnly: false,
+    orientation: 'vertical',
+    min: 0,
+  }
+)
+
+const $emit = defineEmits<{
+  (e: 'change', value: number): void
+}>()
+
+const sliderSegments = computed(() => rangeRight(props.min, props.max + 1))
+
+const currentMax = computed(() =>
+  Math.min(props.softMax ?? props.max, props.max)
+)
+
+function setSliderValue(newValue: number, event: Event) {
+  if (props.readOnly) {
+    return
+  }
+  event.preventDefault()
+  $emit('change', clamp(newValue, props.min, currentMax.value))
+}
+
+/**
+ * Generates a label string for a slider segment.
+ * If the slider's range includes both positive and negative values, positive values are prefixed with a '+'.
+ * @param value The value to generate a label for.
+ */
+function segmentLabel(value: number) {
+  if (props.min < 0 && value > 0) {
+    return `+${value}`
+  }
+  return value.toString()
+}
+
+// TODO: wire this up with a tooltip configuration that isn't annoying to mouse users
+const keybindInfo = computed(
+  () => `<dl>
+<dt><kbd>Enter</kbd></dt>
+<dd>Burn your momentum and reset it to ${props.min}.</dd>
+<dt><kbd>+</kbd></dt>
+<dt><kbd>UpArrow</kbd></dt>
+<dt><kbd>RightArrow</kbd></dt>
+<dd>Increase by 1.</dd>
+<dt><kbd>-</kbd></dt>
+<dt><kbd>DownArrow</kbd></dt>
+<dt><kbd>LeftArrow</kbd></dt>
+<dd>Decrease by 1.</dd>
+<dt><kbd>Home</kbd></dt>
+<dd>Set to maximum (${currentMax.value}).</dd>
+<dt><kbd>End</kbd></dt>
+<dd>Set to minimum (${props.min}).</dd>
+<dt><kbd>0-9</kbd></dt>
+<dd>Set to a specific value.</dd>
+</dl>
+`
+)
+</script>
+
 <style lang="less" scoped>
 @import (reference) '../../../../styles/mixins.less';
 @segment_border_width: var(--ironsworn-border-width-md);
@@ -141,95 +233,3 @@
   }
 }
 </style>
-
-<script lang="ts" setup>
-/**
- * A bar that functions as a number slider.
- */
-import { clamp, inRange, min, range, rangeRight } from 'lodash-es'
-import { computed } from 'vue'
-
-const props = withDefaults(
-  defineProps<{
-    readOnly?: boolean
-    currentValue: number
-    /**
-     * @default 0
-     */
-    min?: number | undefined
-    max: number
-    softMax?: number | undefined
-    /**
-     * @default "vertical"
-     */
-    orientation?: 'vertical' | 'horizontal'
-    /**
-     * Classes to assign to segments, keyed by the segment's value.
-     * @example
-     * ```typescript
-     * // Assign the 'momentum-reset' class to the segment with the value of the variable 'reset'
-     * {[reset]: 'momentum-reset'}
-     * ```
-     */
-    segmentClass?: Record<number, any>
-  }>(),
-  {
-    readOnly: false,
-    orientation: 'vertical',
-    min: 0,
-  }
-)
-
-const $emit = defineEmits<{
-  (e: 'change', value: number): void
-}>()
-
-const sliderSegments = computed(() => rangeRight(props.min, props.max + 1))
-
-const currentMax = computed(() =>
-  Math.min(props.softMax ?? props.max, props.max)
-)
-
-function setSliderValue(newValue: number, event: Event) {
-  if (props.readOnly) {
-    return
-  }
-  event.preventDefault()
-  $emit('change', clamp(newValue, props.min, currentMax.value))
-}
-
-/**
- * Generates a label string for a slider segment.
- * If the slider's range includes both positive and negative values, positive values are prefixed with a '+'.
- * @param value The value to generate a label for.
- */
-function segmentLabel(value: number) {
-  if (props.min < 0 && value > 0) {
-    return `+${value}`
-  }
-  return value.toString()
-}
-
-// TODO: wire this up with a tooltip configuration that isn't annoying to mouse users
-const keybindInfo = computed(
-  () => `<dl>
-<dt><kbd>Enter</kbd></dt>
-<dd>Burn your momentum and reset it to ${props.min}.</dd>
-<dt><kbd>+</kbd></dt>
-<dt><kbd>UpArrow</kbd></dt>
-<dt><kbd>RightArrow</kbd></dt>
-<dd>Increase by 1.</dd>
-<dt><kbd>-</kbd></dt>
-<dt><kbd>DownArrow</kbd></dt>
-<dt><kbd>LeftArrow</kbd></dt>
-<dd>Decrease by 1.</dd>
-<dt><kbd>Home</kbd></dt>
-<dd>Set to maximum (${currentMax.value}).</dd>
-<dt><kbd>End</kbd></dt>
-<dd>Set to minimum (${props.min}).</dd>
-<dt><kbd>0-9</kbd></dt>
-<dd>Set to a specific value.</dd>
-</dl>
-`
-)
-</script>

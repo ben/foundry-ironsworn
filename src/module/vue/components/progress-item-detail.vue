@@ -3,8 +3,8 @@
     <div class="flexrow nogrow" style="margin: 0.5rem 0">
       <RankPips
         :current="foeSystem.rank"
-        @click="setRank"
         style="margin-right: 1em"
+        @click="setRank"
       />
       <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
       <IronBtn
@@ -12,8 +12,8 @@
         block
         nogrow
         :icon="whisperIcon"
-        @click="toggleWhisper"
         :data-tooltip="whisperTooltip"
+        @click="toggleWhisper"
       />
       <IronBtn block nogrow icon="fa:trash" @click="clearProgress" />
       <IronBtn block nogrow icon="fa:caret-right" @click="markProgress" />
@@ -35,7 +35,7 @@
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
 import { RANKS, RANK_INCREMENTS } from '../../constants'
-import { ProgressDataPropertiesData } from '../../item/itemtypes'
+import type { ProgressDataPropertiesData } from '../../item/itemtypes'
 import { $ActorKey, $ItemKey, ActorKey } from '../provisions'
 
 import IronBtn from './buttons/iron-btn.vue'

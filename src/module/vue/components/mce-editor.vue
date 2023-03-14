@@ -2,7 +2,7 @@
   <div v-if="data.editing" class="editor flexcol">
     <Editor
       v-bind="$attrs"
-      :modelValue="modelValue"
+      :model-value="modelValue"
       :init="mceConfig"
       @blur="$emit('save')"
     />
@@ -11,9 +11,9 @@
     <with-rolllisteners
       v-if="interceptClicks"
       element="div"
+      class="editor-content"
       @moveclick="moveClick"
       @oracleclick="oracleClick"
-      class="editor-content"
       v-html="$enrichHtml(modelValue)"
     />
     <div v-else class="editor-content" v-html="$enrichHtml(modelValue)"></div>
@@ -24,9 +24,9 @@
 </template>
 
 <script setup lang="ts">
-import { RawEditorOptions } from 'tinymce'
+import type { RawEditorOptions } from 'tinymce'
 import { onUnmounted, reactive } from 'vue'
-import { IronswornItem } from '../../item/item'
+import type { IronswornItem } from '../../item/item'
 import Editor from '@tinymce/tinymce-vue'
 import WithRolllisteners from './with-rolllisteners.vue'
 

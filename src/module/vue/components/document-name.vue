@@ -1,11 +1,11 @@
 <template>
   <component :is="tag || 'h1'" class="charname">
     <input
-      :placeholder="$t('Name')"
       v-model="document.name"
-      @blur="save"
+      :placeholder="$t('Name')"
       name="name"
       type="text"
+      @blur="save"
     />
   </component>
 </template>

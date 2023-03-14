@@ -10,12 +10,6 @@
   </article>
 </template>
 
-<style lang="less" scoped>
-.ironsworn-sheet {
-  gap: var(--ironsworn-spacer-xl);
-}
-</style>
-
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
 const props = withDefaults(
@@ -26,3 +20,9 @@ const props = withDefaults(
   { bodyClass: { flexcol: true } }
 )
 </script>
+
+<style lang="less" scoped>
+.ironsworn-sheet {
+  gap: var(--ironsworn-spacer-xl);
+}
+</style>

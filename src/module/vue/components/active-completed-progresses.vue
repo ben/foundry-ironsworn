@@ -2,16 +2,16 @@
   <article class="flexcol">
     <DropTarget
       :is="ProgressList"
-      dropType="progress"
+      drop-type="progress"
       :compact-progress="compactProgress"
-      :excludedSubtypes="excludedSubtypes"
+      :excluded-subtypes="excludedSubtypes"
       :progress-stars="progressStars"
-      :showCompleted="'no-completed'"
+      :show-completed="'no-completed'"
     />
-    <ProgressControls class="nogrow" :foeCompendium="foeCompendium" />
+    <ProgressControls class="nogrow" :foe-compendium="foeCompendium" />
     <CompletedProgressList
       class="nogrow"
-      :collapsibleProps="{ toggleWrapperIs: 'h3' }"
+      :collapsible-props="{ toggleWrapperIs: 'h3' }"
     />
   </article>
 </template>

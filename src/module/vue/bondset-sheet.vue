@@ -10,20 +10,20 @@
         @click="selectBondIndex(i)"
       >
         <span>{{ i + 1 }}. {{ bond.name }}</span>
-        <IronBtn block nogrow @click="deleteBond(i)" icon="fa:trash" />
+        <IronBtn block nogrow icon="fa:trash" @click="deleteBond(i)" />
       </div>
       <IronBtn
         block
         nogrow
         style="flex: 0; width: 100%"
-        @click="addBond"
         icon="fa:plus"
+        @click="addBond"
       />
     </div>
 
     <!-- EDITORS -->
     <div class="flexcol" style="flex-basis: 25em">
-      <div class="flexcol" v-if="data.selectedBondIndex >= 0">
+      <div v-if="data.selectedBondIndex >= 0" class="flexcol">
         <h1 class="nogrow">
           <input v-model="data.currentBondName" type="text" @blur="save" />
         </h1>
@@ -41,33 +41,10 @@
   </div>
 </template>
 
-<style lang="less" scoped>
-.clickable.block {
-  border-style: none;
-  padding: var(--ironsworn-spacer-md);
-  line-height: 25px;
-
-  .selected & {
-    color: var(--ironsworn-color-clickable-block-fg-selected);
-
-    &:hover {
-      color: var(--ironsworn-color-midtone-50);
-    }
-  }
-}
-
-.no-bonds {
-  flex: 1;
-  align-content: center;
-  justify-content: center;
-  background-color: var(--ironsworn-color-input-bg);
-}
-</style>
-
 <script setup lang="ts">
 import { computed, inject, provide, reactive, watch, ref } from 'vue'
 import { $ItemKey, ItemKey } from './provisions'
-import { BondsetDataPropertiesData } from '../item/itemtypes'
+import type { BondsetDataPropertiesData } from '../item/itemtypes'
 import MceEditor from './components/mce-editor.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 
@@ -128,3 +105,26 @@ function save() {
   $item?.update({ system: { bonds: localBonds } })
 }
 </script>
+
+<style lang="less" scoped>
+.clickable.block {
+  border-style: none;
+  padding: var(--ironsworn-spacer-md);
+  line-height: 25px;
+
+  .selected & {
+    color: var(--ironsworn-color-clickable-block-fg-selected);
+
+    &:hover {
+      color: var(--ironsworn-color-midtone-50);
+    }
+  }
+}
+
+.no-bonds {
+  flex: 1;
+  align-content: center;
+  justify-content: center;
+  background-color: var(--ironsworn-color-input-bg);
+}
+</style>

@@ -1,13 +1,13 @@
 <template>
   <component
-    :id="wrapperId"
     :is="wrapperIs"
+    :id="wrapperId"
+    ref="$element"
     :class="$style.wrapper"
     :aria-expanded="state.expanded"
     :tabindex="-1"
     :aria-orientation="orientation"
     :aria-disabled="disabled"
-    ref="$element"
   >
     <component
       :is="toggleSectionIs"
@@ -15,19 +15,19 @@
     >
       <slot name="before-toggle"></slot>
       <component
-        :class="[toggleWrapperClass, $style.toggleWrapper, 'toggle-wrapper']"
         :is="toggleWrapperIs"
+        :class="[toggleWrapperClass, $style.toggleWrapper, 'toggle-wrapper']"
       >
         <IronBtn
           :id="controlId"
           :aria-controls="contentId"
-          @click="toggle()"
           :disabled="disabled"
+          ref="$toggle"
           :class="[$style.toggle, toggleButtonClass]"
           :tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"
           :text="toggleLabel"
-          ref="$toggle"
+          @click="toggle()"
         >
           <template #icon>
             <slot name="toggleIcon">
@@ -44,10 +44,10 @@
       <slot name="after-toggle"></slot>
     </component>
     <CollapseTransition
+      ref="$collapseTransition"
       :v-bind="props.collapseTransition"
       :duration="currentDuration"
       :orientation="dimension"
-      ref="$collapseTransition"
       @before-enter="
         $emit('before-expand', $event, $collapseTransition, $element)
       "
@@ -62,13 +62,13 @@
       "
     >
       <component
-        v-if="state.expanded"
         :is="contentWrapperIs"
+        v-if="state.expanded"
+        :id="contentId"
+        ref="$contentWrapper"
         role="region"
         :aria-labelledby="controlId"
-        :id="contentId"
         :class="[contentWrapperClass, $style.content]"
-        ref="$contentWrapper"
       >
         <slot name="default"></slot>
       </component>
@@ -76,54 +76,15 @@
   </component>
 </template>
 
-<style lang="less" module>
-.wrapper {
-  // TODO: horizontal and vertical versions
-}
-
-.content {
-  // TODO: horizontal and vertical versions
-}
-
-.toggleBtn {
-  display: flex;
-  transition: transform 0.4s;
-  margin-left: var(--ironsworn-spacer-xs);
-
-  .wrapper[aria-expanded='true'] & {
-    transform: v-bind(transform);
-  }
-}
-
-.toggleWrapper {
-  display: flex;
-  flex-grow: 1;
-  margin: 0;
-  padding: 0;
-}
-
-.toggleSection {
-  display: flex;
-}
-
-.toggle {
-  flex-grow: 1;
-  justify-content: left;
-  margin: 0;
-  height: inherit;
-  text-transform: uppercase;
-  font-size: inherit;
-}
-</style>
-
 <script setup lang="ts">
-import { ExtractPropTypes, reactive } from 'vue'
+import type { ExtractPropTypes} from 'vue';
+import { reactive } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
-import { computed, ref } from '@vue/reactivity'
-import { ExpandEvent, CollapseEvent } from './collapsible-helpers'
+import { computed, ref } from 'vue'
+import type { ExpandEvent, CollapseEvent } from './collapsible-helpers'
 import IronBtn from '../buttons/iron-btn.vue'
 import { FontAwesome } from '../icon/icon-common'
-import { TransformProperty } from 'csstype'
+import type { TransformProperty } from 'csstype'
 import FontIcon from '../icon/font-icon.vue'
 
 const props = withDefaults(
@@ -272,3 +233,43 @@ defineExpose({
   },
 })
 </script>
+
+<style lang="less" module>
+.wrapper {
+  // TODO: horizontal and vertical versions
+}
+
+.content {
+  // TODO: horizontal and vertical versions
+}
+
+.toggleBtn {
+  display: flex;
+  transition: transform 0.4s;
+  margin-left: var(--ironsworn-spacer-xs);
+
+  .wrapper[aria-expanded='true'] & {
+    transform: v-bind(transform);
+  }
+}
+
+.toggleWrapper {
+  display: flex;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.toggleSection {
+  display: flex;
+}
+
+.toggle {
+  flex-grow: 1;
+  justify-content: left;
+  margin: 0;
+  height: inherit;
+  text-transform: uppercase;
+  font-size: inherit;
+}
+</style>

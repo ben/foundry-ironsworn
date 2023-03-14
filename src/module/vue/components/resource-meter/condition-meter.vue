@@ -1,13 +1,13 @@
 <template>
   <AttrSlider
     class="condition-meter"
-    :documentType="documentType"
+    :document-type="documentType"
     :attr="props.attr"
-    :sliderStyle="sliderStyle"
+    :slider-style="sliderStyle"
     :current-value="currentValue"
     :min="0"
     :max="max"
-    :softMax="softMax"
+    :soft-max="softMax"
     :read-only="readOnly"
     :global="global"
   >
@@ -15,10 +15,10 @@
       <BtnRollstat
         v-if="labelPosition != 'none'"
         tabindex="0"
-        :documentType="documentType"
+        :document-type="documentType"
         :vertical="sliderStyle === 'vertical'"
         :attr="attr"
-        :statLabel="statLabel"
+        :stat-label="statLabel"
         :text="statLabel"
       />
     </template>
@@ -27,7 +27,7 @@
 
 <script setup lang="ts">
 import AttrSlider from './attr-slider.vue'
-import { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
+import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
 import BtnRollstat from '../buttons/btn-rollstat.vue'
 import { inject } from 'vue'
 import { ItemKey } from '../../provisions.js'

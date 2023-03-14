@@ -14,6 +14,24 @@
   </component>
 </template>
 
+<script lang="ts" setup>
+import { computed, inject } from 'vue'
+import type { TabState} from './tab-helpers';
+import { TabStateKey } from './tab-helpers'
+
+/**
+ * Container for {@link TabPanel} components. Should be descended from a {@link TabSet} component.
+ */
+withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
+
+const tabState = inject(TabStateKey) as TabState
+
+const tabSetId = computed(() => tabState.tabSetId)
+defineExpose({
+  tabSetId: tabSetId.value,
+})
+</script>
+
 <style lang="less" module>
 .tabPanels {
   // ensures that the TabPanels have a recent ancestor for their absolute positioning.
@@ -30,20 +48,3 @@
   overflow-x: clip;
 }
 </style>
-
-<script lang="ts" setup>
-import { computed, inject } from 'vue'
-import { TabState, TabStateKey } from './tab-helpers'
-
-/**
- * Container for {@link TabPanel} components. Should be descended from a {@link TabSet} component.
- */
-withDefaults(defineProps<{ is?: any }>(), { is: 'div' })
-
-const tabState = inject(TabStateKey) as TabState
-
-const tabSetId = computed(() => tabState.tabSetId)
-defineExpose({
-  tabSetId: tabSetId.value,
-})
-</script>

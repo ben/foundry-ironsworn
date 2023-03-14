@@ -13,7 +13,7 @@
         data-tourid="momentum"
       >
         <MomentumMeterSlider
-          labelPosition="right"
+          label-position="right"
           data-tooltip-direction="UP"
         />
       </div>
@@ -22,8 +22,8 @@
       <div class="flexcol">
         <!-- Attributes -->
         <div
-          class="flexrow stats"
           id="stats"
+          class="flexrow stats"
           style="margin-bottom: var(--ironsworn-spacer-xl)"
           data-tooltip-direction="UP"
           data-tourid="stats"
@@ -35,8 +35,8 @@
           <attr-box attr="wits" />
         </div>
         <TabSet
-          :tabKeys="['legacies', 'assets', 'progress', 'connections', 'notes']"
           :id="`${data.actor._id}_sf-character-sheet`"
+          :tab-keys="['legacies', 'assets', 'progress', 'connections', 'notes']"
           data-tourid="tabs"
         >
           <TabList>
@@ -76,7 +76,7 @@
       <PcConditionMeters
         class="flexcol margin-right"
         data-tooltip-direction="UP"
-        labelPosition="left"
+        label-position="left"
         data-tourid="resources"
       />
     </div>
@@ -86,32 +86,6 @@
     <sf-impacts class="nogrow" data-tourid="impacts" />
   </article>
 </template>
-
-<style lang="less" module>
-.topPadding {
-  padding-top: var(--ironsworn-spacer-md);
-}
-</style>
-
-<style lang="less">
-.sf-character-sheet {
-  gap: var(--ironsworn-spacer-lg);
-
-  .stat-roll {
-    text-transform: uppercase;
-  }
-
-  .condition-meters {
-    .icon-button {
-      flex-direction: column;
-
-      .button-text {
-        writing-mode: vertical-lr;
-      }
-    }
-  }
-}
-</style>
 
 <script lang="ts" setup>
 import { computed, provide } from 'vue'
@@ -140,3 +114,29 @@ const props = defineProps<{
 
 provide(ActorKey, computed(() => props.data.actor) as any)
 </script>
+
+<style lang="less" module>
+.topPadding {
+  padding-top: var(--ironsworn-spacer-md);
+}
+</style>
+
+<style lang="less">
+.sf-character-sheet {
+  gap: var(--ironsworn-spacer-lg);
+
+  .stat-roll {
+    text-transform: uppercase;
+  }
+
+  .condition-meters {
+    .icon-button {
+      flex-direction: column;
+
+      .button-text {
+        writing-mode: vertical-lr;
+      }
+    }
+  }
+}
+</style>

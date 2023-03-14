@@ -4,9 +4,9 @@
     <ProgressItemDetail v-if="foe" :item="foe" />
 
     <DropTarget
-      v-else
       is="div"
-      dropType="progress"
+      v-else
+      drop-type="progress"
       class="flexcol"
       :class="$style.dropTarget"
     >
@@ -15,16 +15,16 @@
         block
         nogrow
         :icon="whisperIcon"
-        @click="toggleWhisper"
         :data-tooltip="whisperTooltip"
         :text="$t('IRONSWORN.ChatAlert.ToggleMute')"
+        @click="toggleWhisper"
       />
       <IronBtn
-        @click="addEmpty"
         block
         nogrow
         icon="fa:file"
         :text="$t('IRONSWORN.ITEM.TypeProgressTrack')"
+        @click="addEmpty"
       />
       <BtnCompendium
         block
@@ -42,25 +42,14 @@
   </div>
 </template>
 
-<style lang="less" module>
-.dropTarget {
-  justify-items: space-around;
-  text-align: center;
-
-  button {
-    padding: 1rem;
-  }
-}
-</style>
-
 <script setup lang="ts">
 import SheetHeaderBasic from '../sheet-header-basic.vue'
 import { computed, inject, provide } from 'vue'
-import { IronswornActor } from '../../actor/actor'
+import type { IronswornActor } from '../../actor/actor'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
 import BtnCompendium from './buttons/btn-compendium.vue'
-import { FoeDataProperties } from '../../actor/actortypes'
+import type { FoeDataProperties } from '../../actor/actortypes'
 import DropTarget from '../drop-target.vue'
 import ProgressItemDetail from './progress-item-detail.vue'
 
@@ -102,3 +91,14 @@ function toggleWhisper() {
   return $actor?.setFlag('foundry-ironsworn', 'muteBroadcast', !current)
 }
 </script>
+
+<style lang="less" module>
+.dropTarget {
+  justify-items: space-around;
+  text-align: center;
+
+  button {
+    padding: 1rem;
+  }
+}
+</style>
