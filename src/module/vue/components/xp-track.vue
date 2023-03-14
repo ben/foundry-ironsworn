@@ -51,9 +51,8 @@ function click(i) {
 	$emit('click', i + 1)
 }
 </script>
-<style lang="less" scoped>
-@import (reference) '../../../styles/mixins.less';
-
+<style lang="scss" scoped>
+@use 'mixin:clickable.scss';
 .xp-track {
 	.xp-box {
 		// for sizing/layout concerns, see legacy-track.vue
@@ -64,7 +63,7 @@ function click(i) {
 			--ironsworn-color-thematic
 		);
 
-		.clickableBlockMixin(var(--ironsworn-legacy-xp-box-size));
+		@include clickable.block(var(--ironsworn-legacy-xp-box-size));
 
 		border-style: solid;
 		border-radius: var(--ironsworn-border-radius-md);
@@ -82,15 +81,15 @@ function click(i) {
 			&[aria-selected='true'],
 			&.selected,
 			&.active {
-				.blockHoverMixin(var(--ironsworn-legacy-xp-box-size));
+				@include clickable.blockHover(var(--ironsworn-legacy-xp-box-size));
 
 				&:first-child {
-					.blockMixin();
+					@include clickable.block;
 				}
 			}
 
 			& ~ .xp-box {
-				.blockMixin();
+				@include clickable.block;
 			}
 		}
 	}
