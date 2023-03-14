@@ -677,7 +677,7 @@ async function updateAllTokens(data) {
 	await canvas?.scene?.updateEmbeddedDocuments('Token', updates)
 }
 </script>
-<style lang="less">
+<style lang="scss">
 .sf-location-header {
 	display: grid;
 	grid-template-columns: max-content 1fr max-content;
