@@ -15,11 +15,10 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { IronswornHandlebarsHelpers } from '../../../helpers/handlebars.js'
-import { enrichMarkdown } from '../../vue-plugin.js'
+import { enrichMarkdown, enrichHtml } from '../../vue-plugin.js'
 import RulesSourceInfo from './rules-source-info.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import type { ISource } from 'dataforged'
-import { enrichHtml } from '../../vue-plugin.js'
 
 const props = defineProps<{
 	/**
@@ -57,8 +56,8 @@ const enrichedText = computed(() => {
 })
 </script>
 
-<style lang="less">
-@import (reference) '../../../../styles/mixins.less';
+<style lang="scss">
+@use 'mixin:text.scss';
 
 .rules-text {
 	--ironsworn-rules-text-spacer: 0.5em;
@@ -69,24 +68,21 @@ const enrichedText = computed(() => {
 }
 
 .rules-text-main {
-	display: flex;
+	@include text.compact;
+
 	flex-direction: column;
 	gap: var(--ironsworn-rules-text-spacer);
+	&:first-of-type {
+		margin-top: 0;
+	}
 
-	p {
-		&:first-of-type {
-			margin-top: 0;
-		}
-
-		&:last-of-type:not(:last-child) {
-			margin-bottom: 0;
-		}
+	&:last-of-type:not(:last-child) {
+		margin-bottom: 0;
 	}
 
 	& > * {
 		margin: 0;
 	}
-	.textCompactMixin();
 }
 
 .rules-text-footer {
