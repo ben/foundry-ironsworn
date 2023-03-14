@@ -56,19 +56,16 @@ const actorSys = computed(
 )
 </script>
 
-<style lang="less">
-@import (reference) '../../../../styles/mixins.less';
+<style lang="scss">
+@use 'mixin:clickable.scss';
 
 .momentum-meter {
 	gap: var(--ironsworn-spacer-md) 0;
 
 	.attr-slider-label:hover ~ .slider-bar {
 		.segment-momentum-reset {
-			.blockHoverMixin();
-
-			box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
-				0 0 5px var(--ironsworn-color-warm),
-				0 0 10px var(--ironsworn-color-cool);
+			@include clickable.blockHover;
+			box-shadow: 0 0 5px var(--ironsworn-color-warm) inset;
 		}
 	}
 }
