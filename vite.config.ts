@@ -14,6 +14,7 @@ const PORT = 30000
 
 const sassOptions: Sass.LegacyStringOptions<'sync'> = {
 	functions: { ...sassChroma, ...sassIcons },
+	// @ts-expect-error
 	additionalData: ''
 }
 
