@@ -2,7 +2,7 @@ import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { starforged } from 'dataforged'
-import type { Emitter } from 'mitt'
+import type { Emitter, EventType } from 'mitt'
 import Mitt from 'mitt'
 import {
 	IronswornRoll,
@@ -16,7 +16,7 @@ import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTrut
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { OracleWindow } from './module/applications/oracle-window'
 
-export interface EmitterEvents {
+export interface EmitterEvents extends Record<EventType, unknown> {
 	highlightMove: string // Foundry UUID
 	highlightOracle: string // DF ID
 	globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
