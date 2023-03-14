@@ -31,6 +31,22 @@ module.exports = {
   },
   overrides: [
     {
+      files: ['*.vue'],
+      extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:vue/vue3-recommended',
+        'prettier',
+      ],
+      parser: 'vue-eslint-parser',
+      /** @type {import('@typescript-eslint/parser').ParserOptions} */
+      parserOptions: {
+        parser: '@typescript-eslint/parser',
+        ecmaVersion: 11,
+        sourceType: 'module',
+      },
+    },
+    {
       files: ['*.js', '*.cjs'],
       rules: {
         '@typescript-eslint/no-var-requires': 'off',
