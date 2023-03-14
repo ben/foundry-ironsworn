@@ -1,90 +1,83 @@
 <template>
-  <article class="flexcol sf-character-sheet" data-tourid="sheet">
-    <!-- TODO: rm inline styles added to maintain consistent styling (required largely because of other inline styles) -->
-    <!-- Header row -->
-    <sf-characterheader />
+	<article class="flexcol sf-character-sheet" data-tourid="sheet">
+		<!-- TODO: rm inline styles added to maintain consistent styling (required largely because of other inline styles) -->
+		<!-- Header row -->
+		<sf-characterheader />
 
-    <!-- Main body row -->
-    <div class="flexrow">
-      <!-- Momentum on left -->
-      <div
-        class="flexcol margin-left nogrow"
-        style="width: min-content"
-        data-tourid="momentum"
-      >
-        <MomentumMeterSlider
-          label-position="right"
-          data-tooltip-direction="UP"
-        />
-      </div>
+		<!-- Main body row -->
+		<div class="flexrow">
+			<!-- Momentum on left -->
+			<div
+				class="flexcol margin-left nogrow"
+				style="width: min-content"
+				data-tourid="momentum">
+				<MomentumMeterSlider
+					label-position="right"
+					data-tooltip-direction="UP" />
+			</div>
 
-      <!-- Center area -->
-      <div class="flexcol">
-        <!-- Attributes -->
-        <div
-          id="stats"
-          class="flexrow stats"
-          style="margin-bottom: var(--ironsworn-spacer-xl)"
-          data-tooltip-direction="UP"
-          data-tourid="stats"
-        >
-          <attr-box attr="edge" />
-          <attr-box attr="heart" />
-          <attr-box attr="iron" />
-          <attr-box attr="shadow" />
-          <attr-box attr="wits" />
-        </div>
-        <TabSet
-          :id="`${data.actor._id}_sf-character-sheet`"
-          :tab-keys="['legacies', 'assets', 'progress', 'connections', 'notes']"
-          data-tourid="tabs"
-        >
-          <TabList>
-            <Tab tab-key="legacies" :text="$t('IRONSWORN.Legacies')" />
-            <Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
-            <Tab
-              tab-key="progress"
-              :text="$t('IRONSWORN.ITEMS.SubtypeProgress')"
-            />
-            <Tab
-              tab-key="connections"
-              :text="$t('IRONSWORN.ITEMS.SubtypeConnection')"
-            />
-            <Tab tab-key="notes" :text="$t('Notes')" />
-          </TabList>
-          <TabPanels>
-            <TabPanel tab-key="legacies" class="flexcol">
-              <SfLegacies />
-            </TabPanel>
-            <TabPanel tab-key="assets" class="flexcol">
-              <SfAssets :class="$style.topPadding" />
-            </TabPanel>
-            <TabPanel tab-key="progress" class="flexcol">
-              <SfProgresses :class="$style.topPadding" />
-            </TabPanel>
-            <TabPanel tab-key="connections" class="flexcol">
-              <SfConnections :class="$style.topPadding" />
-            </TabPanel>
-            <TabPanel tab-key="notes" class="flexcol">
-              <SfNotes />
-            </TabPanel>
-          </TabPanels>
-        </TabSet>
-      </div>
+			<!-- Center area -->
+			<div class="flexcol">
+				<!-- Attributes -->
+				<div
+					id="stats"
+					class="flexrow stats"
+					style="margin-bottom: var(--ironsworn-spacer-xl)"
+					data-tooltip-direction="UP"
+					data-tourid="stats">
+					<attr-box attr="edge" />
+					<attr-box attr="heart" />
+					<attr-box attr="iron" />
+					<attr-box attr="shadow" />
+					<attr-box attr="wits" />
+				</div>
+				<TabSet
+					:id="`${data.actor._id}_sf-character-sheet`"
+					:tab-keys="['legacies', 'assets', 'progress', 'connections', 'notes']"
+					data-tourid="tabs">
+					<TabList>
+						<Tab tab-key="legacies" :text="$t('IRONSWORN.Legacies')" />
+						<Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
+						<Tab
+							tab-key="progress"
+							:text="$t('IRONSWORN.ITEMS.SubtypeProgress')" />
+						<Tab
+							tab-key="connections"
+							:text="$t('IRONSWORN.ITEMS.SubtypeConnection')" />
+						<Tab tab-key="notes" :text="$t('Notes')" />
+					</TabList>
+					<TabPanels>
+						<TabPanel tab-key="legacies" class="flexcol">
+							<SfLegacies />
+						</TabPanel>
+						<TabPanel tab-key="assets" class="flexcol">
+							<SfAssets :class="$style.topPadding" />
+						</TabPanel>
+						<TabPanel tab-key="progress" class="flexcol">
+							<SfProgresses :class="$style.topPadding" />
+						</TabPanel>
+						<TabPanel tab-key="connections" class="flexcol">
+							<SfConnections :class="$style.topPadding" />
+						</TabPanel>
+						<TabPanel tab-key="notes" class="flexcol">
+							<SfNotes />
+						</TabPanel>
+					</TabPanels>
+				</TabSet>
+			</div>
 
-      <!-- Stats on right -->
-      <PcConditionMeters
-        class="flexcol margin-right"
-        data-tooltip-direction="UP"
-        label-position="left"
-        data-tourid="resources"
-      />
-    </div>
+			<!-- Stats on right -->
+			<PcConditionMeters
+				class="flexcol margin-right"
+				data-tooltip-direction="UP"
+				label-position="left"
+				data-tourid="resources" />
+		</div>
 
-    <!-- Impacts -->
-    <hr class="nogrow" />
-    <sf-impacts class="nogrow" data-tourid="impacts" />
-  </article>
+		<!-- Impacts -->
+		<hr class="nogrow" />
+		<sf-impacts class="nogrow" data-tourid="impacts" />
+	</article>
 </template>
 
 <script lang="ts" setup>
@@ -107,9 +100,9 @@ import TabPanel from './components/tabs/tab-panel.vue'
 import TabPanels from './components/tabs/tab-panels.vue'
 
 const props = defineProps<{
-  data: {
-    actor: any
-  }
+	data: {
+		actor: any
+	}
 }>()
 
 provide(ActorKey, computed(() => props.data.actor) as any)
@@ -117,26 +110,26 @@ provide(ActorKey, computed(() => props.data.actor) as any)
 
 <style lang="less" module>
 .topPadding {
-  padding-top: var(--ironsworn-spacer-md);
+	padding-top: var(--ironsworn-spacer-md);
 }
 </style>
 
 <style lang="less">
 .sf-character-sheet {
-  gap: var(--ironsworn-spacer-lg);
+	gap: var(--ironsworn-spacer-lg);
 
-  .stat-roll {
-    text-transform: uppercase;
-  }
+	.stat-roll {
+		text-transform: uppercase;
+	}
 
-  .condition-meters {
-    .icon-button {
-      flex-direction: column;
+	.condition-meters {
+		.icon-button {
+			flex-direction: column;
 
-      .button-text {
-        writing-mode: vertical-lr;
-      }
-    }
-  }
+			.button-text {
+				writing-mode: vertical-lr;
+			}
+		}
+	}
 }
 </style>

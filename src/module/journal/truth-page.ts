@@ -1,11 +1,11 @@
-// @ts-ignore
+// @ts-expect-error
 export class TruthJournalPageSheet extends JournalPageSheet {
-  // @ts-ignore
-  isEditable: boolean
+	// @ts-expect-error
+	isEditable: boolean
 
-  get template() {
-    return `systems/foundry-ironsworn/templates/journal/page-truth-${
-      this.isEditable ? 'edit' : 'view'
-    }.hbs`
-  }
+	get template() {
+		return `systems/foundry-ironsworn/templates/journal/page-truth-${
+			this.isEditable ? 'edit' : 'view'
+		}.hbs`
+	}
 }

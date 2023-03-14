@@ -1,71 +1,65 @@
 <template>
-  <Collapsible
-    v-bind="$props.collapsible"
-    ref="$collapsible"
-    class="movesheet-row"
-    :class="$style.wrapper"
-    data-tooltip-direction="LEFT"
-    :base-id="`move_row_${move.moveItem().id}`"
-    :content-wrapper-class="$style.contentWrapper"
-    :toggle-wrapper-is="`h${headingLevel}`"
-    :toggle-section-class="[$style.toggleSection, toggleSectionClass]"
-    :icon="null"
-    :toggle-button-class="['bordered', $style.toggleBtn, toggleButtonClass]"
-    :toggle-tooltip="toggleTooltip"
-    :toggle-wrapper-class="$style.toggleWrapper"
-    :toggle-label="move?.displayName"
-    :data-move-id="move.moveItem().id"
-    :data-move-uuid="move.moveItem().uuid"
-  >
-    <template #after-toggle>
-      <section
-        :class="$style.controls"
-        class="nogrow"
-        data-tooltip-direction="UP"
-        data-tourid="move-buttons"
-      >
-        <BtnRollmove
-          :disabled="!canRoll"
-          :move="move"
-          :class="$style.btn"
-          :override-click="onRollClick !== undefined"
-          @click="$emit('rollClick')"
-        />
-        <BtnOracle
-          :node="data.oracles[0] ?? {}"
-          :disabled="preventOracle"
-          :class="$style.btn"
-          :override-click="onOracleClick !== undefined"
-          @click="$emit('oracleClick')"
-        />
-        <BtnSendmovetochat :move="move" :class="$style.btn" />
-      </section>
-    </template>
-    <template #default>
-      <RulesTextMove
-        :move="move"
-        :class="$style.summary"
-        @moveclick="moveClick"
-      >
-        <template #after-footer>
-          <OracleTreeNode
-            v-for="node of data.oracles"
-            :key="node.displayName"
-            :class="$style.oracle"
-            :node="node"
-          />
-        </template>
-      </RulesTextMove>
-    </template>
-  </Collapsible>
+	<Collapsible
+		v-bind="$props.collapsible"
+		ref="$collapsible"
+		class="movesheet-row"
+		:class="$style.wrapper"
+		data-tooltip-direction="LEFT"
+		:base-id="`move_row_${move.moveItem().id}`"
+		:content-wrapper-class="$style.contentWrapper"
+		:toggle-wrapper-is="`h${headingLevel}`"
+		:toggle-section-class="[$style.toggleSection, toggleSectionClass]"
+		:icon="null"
+		:toggle-button-class="['bordered', $style.toggleBtn, toggleButtonClass]"
+		:toggle-tooltip="toggleTooltip"
+		:toggle-wrapper-class="$style.toggleWrapper"
+		:toggle-label="move?.displayName"
+		:data-move-id="move.moveItem().id"
+		:data-move-uuid="move.moveItem().uuid">
+		<template #after-toggle>
+			<section
+				:class="$style.controls"
+				class="nogrow"
+				data-tooltip-direction="UP"
+				data-tourid="move-buttons">
+				<BtnRollmove
+					:disabled="!canRoll"
+					:move="move"
+					:class="$style.btn"
+					:override-click="onRollClick !== undefined"
+					@click="$emit('rollClick')" />
+				<BtnOracle
+					:node="data.oracles[0] ?? {}"
+					:disabled="preventOracle"
+					:class="$style.btn"
+					:override-click="onOracleClick !== undefined"
+					@click="$emit('oracleClick')" />
+				<BtnSendmovetochat :move="move" :class="$style.btn" />
+			</section>
+		</template>
+		<template #default>
+			<RulesTextMove
+				:move="move"
+				:class="$style.summary"
+				@moveclick="moveClick">
+				<template #after-footer>
+					<OracleTreeNode
+						v-for="node of data.oracles"
+						:key="node.displayName"
+						:class="$style.oracle"
+						:node="node" />
+				</template>
+			</RulesTextMove>
+		</template>
+	</Collapsible>
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { computed, provide, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import type { Move } from '../../features/custommoves'
-import type { IOracleTreeNode} from '../../features/customoracles';
+import type { IOracleTreeNode } from '../../features/customoracles'
 import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
@@ -81,52 +75,52 @@ import type { SFMoveDataPropertiesData } from '../../item/itemtypes'
 import { uniq } from 'lodash-es'
 
 const props = withDefaults(
-  defineProps<{
-    move: Move
-    headingLevel?: number
-    thematicColor?: string | null
-    toggleSectionClass?: any
-    toggleButtonClass?: any
-    oracleDisabled?: true | false | null
+	defineProps<{
+		move: Move
+		headingLevel?: number
+		thematicColor?: string | null
+		toggleSectionClass?: any
+		toggleButtonClass?: any
+		oracleDisabled?: true | false | null
 
-    // Hack: if we declare `click` in the emits, there's no $attrs['onClick']
-    // This allows us to check for presence and still use $emit('click')
-    // https://github.com/vuejs/core/issues/4736#issuecomment-934156497
-    onRollClick?: Function
-    onOracleClick?: Function
-    /**
-     * Props to be passed to the Collapsible component.
-     */
-    collapsible?: Omit<
-      ExtractPropTypes<typeof Collapsible>,
-      | 'contentWrapperClass'
-      | 'toggleWrapperIs'
-      | 'toggleSectionClass'
-      | 'noIcon'
-      | 'toggleButtonClass'
-      | 'toggleTooltip'
-      | 'toggleWrapperClass'
-      | 'toggleLabel'
-    >
-  }>(),
-  {
-    headingLevel: 4,
-    toggleSectionClass: '',
-    toggleButtonClass: '',
-    oracleDisabled: null,
-  }
+		// Hack: if we declare `click` in the emits, there's no $attrs['onClick']
+		// This allows us to check for presence and still use $emit('click')
+		// https://github.com/vuejs/core/issues/4736#issuecomment-934156497
+		onRollClick?: Function
+		onOracleClick?: Function
+		/**
+		 * Props to be passed to the Collapsible component.
+		 */
+		collapsible?: Omit<
+			ExtractPropTypes<typeof Collapsible>,
+			| 'contentWrapperClass'
+			| 'toggleWrapperIs'
+			| 'toggleSectionClass'
+			| 'noIcon'
+			| 'toggleButtonClass'
+			| 'toggleTooltip'
+			| 'toggleWrapperClass'
+			| 'toggleLabel'
+		>
+	}>(),
+	{
+		headingLevel: 4,
+		toggleSectionClass: '',
+		toggleButtonClass: '',
+		oracleDisabled: null
+	}
 )
 
 const $item = computed(() => props.move.moveItem() as IronswornItem)
 const $itemSystem = computed(
-  () => $item.value?.system as SFMoveDataPropertiesData
+	() => $item.value?.system as SFMoveDataPropertiesData
 )
 
 provide(ItemKey, computed(() => $item.value.toObject()) as any)
 provide($ItemKey, $item.value)
 
 const data = reactive({
-  oracles: [] as IOracleTreeNode[],
+	oracles: [] as IOracleTreeNode[]
 })
 
 const $collapsible = ref<typeof Collapsible>()
@@ -134,45 +128,45 @@ const $collapsible = ref<typeof Collapsible>()
 type CollapsibleEmits = (typeof Collapsible)['$emit']
 
 interface MoveRowEmits extends CollapsibleEmits {
-  rollClick(): void
-  oracleClick(): void
+	rollClick(): void
+	oracleClick(): void
 }
 
 const $emit = defineEmits<MoveRowEmits>()
 
 const canRoll = computed(() => {
-  if (props.onRollClick) return true
-  return moveHasRollableOptions($item.value)
+	if (props.onRollClick) return true
+	return moveHasRollableOptions($item.value)
 })
 const preventOracle = computed(() => {
-  if (props.oracleDisabled !== null) return props.oracleDisabled
-  return data.oracles.length !== 1
+	if (props.oracleDisabled !== null) return props.oracleDisabled
+	return data.oracles.length !== 1
 })
 
 const toggleTooltip = computed(() =>
-  // @ts-ignore
-  enrichMarkdown($item.value.system.Trigger?.Text)
+	// @ts-ignore
+	enrichMarkdown($item.value.system.Trigger?.Text)
 )
 
 const moveId = computed(() => props.move.moveItem().id)
 
 const oracleIds = uniq([
-  ...($itemSystem.value?.Oracles ?? []),
-  ...(props.move.dataforgedMove?.Oracles ?? []),
+	...($itemSystem.value?.Oracles ?? []),
+	...(props.move.dataforgedMove?.Oracles ?? [])
 ])
 Promise.all(oracleIds.map(getDFOracleByDfId)).then(async (dfOracles) => {
-  const nodes = await Promise.all(dfOracles.map(walkOracle))
-  data.oracles.push(...nodes)
+	const nodes = await Promise.all(dfOracles.map(walkOracle))
+	data.oracles.push(...nodes)
 })
 
 // Outbound link clicks: broadcast events
 function moveClick(move: IronswornItem) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
+	CONFIG.IRONSWORN.emitter.emit('highlightMove', move.uuid)
 }
 
 defineExpose({
-  moveId: moveId.value,
-  $collapsible,
+	moveId: moveId.value,
+	$collapsible
 })
 </script>
 
@@ -180,98 +174,98 @@ defineExpose({
 @import (reference) '../../../styles/mixins.less';
 
 .thematicColorMixin {
-  --ironsworn-color-thematic: v-bind('thematicColor');
-  color: var(--ironsworn-color-fg);
+	--ironsworn-color-thematic: v-bind('thematicColor');
+	color: var(--ironsworn-color-fg);
 }
 
 .wrapper {
-  --ironsworn-line-height: (--ironsworn-line-height-md);
+	--ironsworn-line-height: (--ironsworn-line-height-md);
 
-  position: relative;
-  padding: 0 var(--ironsworn-spacer-md);
-  transition: var(--ironsworn-transition);
+	position: relative;
+	padding: 0 var(--ironsworn-spacer-md);
+	transition: var(--ironsworn-transition);
 
-  &[aria-expanded='true'] {
-    padding-top: var(--ironsworn-spacer-md);
-    padding-bottom: var(--ironsworn-spacer-md);
-  }
+	&[aria-expanded='true'] {
+		padding-top: var(--ironsworn-spacer-md);
+		padding-bottom: var(--ironsworn-spacer-md);
+	}
 }
 
 .summary {
-  padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
-    var(--ironsworn-spacer-md);
+	padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
+		var(--ironsworn-spacer-md);
 }
 
 .btn {
-  --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
-  .clickableTextMixin();
+	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
+	.clickableTextMixin();
 
-  align-self: center;
-  font-size: var(--font-size-20);
-  aspect-ratio: 1 !important;
+	align-self: center;
+	font-size: var(--font-size-20);
+	aspect-ratio: 1 !important;
 }
 
 .toggleBtn {
-  --ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-  --ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
+	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
 
-  .clickableTextMixin();
-  .thematicColorMixin();
+	.clickableTextMixin();
+	.thematicColorMixin();
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  background: none;
-  padding: 0;
-  padding-left: var(--ironsworn-spacer-sm);
-  height: 100%;
-  text-align: left;
-  font-size: var(--font-size-16);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: none;
+	padding: 0;
+	padding-left: var(--ironsworn-spacer-sm);
+	height: 100%;
+	text-align: left;
+	font-size: var(--font-size-16);
 
-  &:hover {
-    box-shadow: none;
-  }
+	&:hover {
+		box-shadow: none;
+	}
 }
 
 .contentWrapper {
-  color: var(--ironsworn-color-fg);
+	color: var(--ironsworn-color-fg);
 }
 
 .controls {
-  display: flex;
-  flex-flow: row;
-  background: none;
+	display: flex;
+	flex-flow: row;
+	background: none;
 }
 
 .toggleSection {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: var(--ironsworn-spacer-md);
+	display: flex;
+	flex-flow: row nowrap;
+	gap: var(--ironsworn-spacer-md);
 }
 
 .toggleWrapper {
-  transition: var(--ironsworn-transition);
-  line-height: 1.5;
+	transition: var(--ironsworn-transition);
+	line-height: 1.5;
 
-  header:not(:last-child) & {
-    color: var(--ironsworn-color-light);
-  }
+	header:not(:last-child) & {
+		color: var(--ironsworn-color-light);
+	}
 }
 
 .oracle {
-  border-width: var(--ironsworn-border-width-md);
-  border-style: solid;
-  border-radius: var(--ironsworn-border-radius-sm);
-  border-color: var(--ironsworn-color-border);
-  padding: 0;
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
+	padding: 0;
 
-  h4 {
-    font-size: var(--font-size-16);
+	h4 {
+		font-size: var(--font-size-16);
 
-    button.icon-button {
-      height: inherit;
-    }
-  }
+		button.icon-button {
+			height: inherit;
+		}
+	}
 }
 </style>

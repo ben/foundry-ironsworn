@@ -1,20 +1,19 @@
 <template>
-  <IronBtn
-    class="burn-momentum"
-    :tooltip="tooltip"
-    icon="fa:fire"
-    v-bind="($props, $attrs)"
-    @click="burnMomentum"
-  >
-    <template v-for="(_, slot) of $slots" #[slot]="scope">
-      <slot :name="slot" v-bind="scope" />
-    </template>
-  </IronBtn>
+	<IronBtn
+		class="burn-momentum"
+		:tooltip="tooltip"
+		icon="fa:fire"
+		v-bind="($props, $attrs)"
+		@click="burnMomentum">
+		<template v-for="(_, slot) of $slots" #[slot]="scope">
+			<slot :name="slot" v-bind="scope" />
+		</template>
+	</IronBtn>
 </template>
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { inject } from 'vue'
 import type { CharacterDataPropertiesData } from '../../../actor/actortypes'
 import { $ActorKey } from '../../provisions'
@@ -26,12 +25,12 @@ defineProps<Props>()
 const $actor = inject($ActorKey)
 
 const tooltip = computed(() => {
-  const { momentum, momentumReset } =
-    $actor?.system as CharacterDataPropertiesData
-  return game.i18n.format('IRONSWORN.BurnMomentumAndResetTo', {
-    value: momentum,
-    resetValue: momentumReset,
-  })
+	const { momentum, momentumReset } =
+		$actor?.system as CharacterDataPropertiesData
+	return game.i18n.format('IRONSWORN.BurnMomentumAndResetTo', {
+		value: momentum,
+		resetValue: momentumReset
+	})
 })
 
 const burnMomentum = () => $actor?.burnMomentum()

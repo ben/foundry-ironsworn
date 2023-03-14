@@ -1,34 +1,31 @@
 <template>
-  <article
-    class="attr-slider"
-    :class="{ [`label-${labelPosition}`]: true }"
-    :aria-labelledby="`${baseId}-label`"
-    :aria-orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
-  >
-    <section
-      v-if="labelPosition != 'none'"
-      :id="`${baseId}-label`"
-      class="attr-slider-label nogrow"
-    >
-      <slot name="label">
-        <!-- button or static label goes here -->
-        <!-- the tabindex for this item should be -1 -->
-      </slot>
-    </section>
-    <slot name="default"></slot>
-    <SliderBar
-      class="attr-slider-bar"
-      :orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
-      :max="props.max"
-      :min="props.min ?? 0"
-      :soft-max="props.softMax"
-      :current-value="props.currentValue"
-      :segment-class="segmentClass"
-      :read-only="readOnly"
-      @change="onChange"
-    >
-    </SliderBar>
-  </article>
+	<article
+		class="attr-slider"
+		:class="{ [`label-${labelPosition}`]: true }"
+		:aria-labelledby="`${baseId}-label`"
+		:aria-orientation="sliderStyle !== 'compact' ? sliderStyle : undefined">
+		<section
+			v-if="labelPosition != 'none'"
+			:id="`${baseId}-label`"
+			class="attr-slider-label nogrow">
+			<slot name="label">
+				<!-- button or static label goes here -->
+				<!-- the tabindex for this item should be -1 -->
+			</slot>
+		</section>
+		<slot name="default"></slot>
+		<SliderBar
+			class="attr-slider-bar"
+			:orientation="sliderStyle !== 'compact' ? sliderStyle : undefined"
+			:max="props.max"
+			:min="props.min ?? 0"
+			:soft-max="props.softMax"
+			:current-value="props.currentValue"
+			:segment-class="segmentClass"
+			:read-only="readOnly"
+			@change="onChange">
+		</SliderBar>
+	</article>
 </template>
 
 <script lang="ts" setup>
@@ -43,56 +40,56 @@ import { pickInjectedDocument } from '../../composable/pickInjectedDocument.js'
 import SliderBar from './slider-bar.vue'
 
 const props = withDefaults(
-  defineProps<{
-    /**
-     * The key of the attribute controlled by the slider. This is the property of the injected document that will be controlled.
-     */
-    attr: string
-    /**
-     * The type of injectable document to use. Currently only "Actor" and "Item" work - they'll target `ActorKey`/`$ActorKey` or `ItemKey`/`$ItemKey` as appropriate.
-     * @see {$ActorKey}
-     * @see {$ItemKey}
-     */
-    documentType: DocumentType
-    /**
-     * When 'true' and documentType is set to "Actor", updates *all* actors of the 'shared' and 'character' types.
-     */
-    global?: boolean
-    max: number
-    min?: number
-    softMax?: number
-    currentValue: number
-    sliderStyle?: 'vertical' | 'horizontal' | 'compact'
-    labelPosition?: 'right' | 'left' | 'none'
-    /**
-     * @see {@link sliderBar} props for more info
-     */
-    segmentClass?: Record<number, any>
-    readOnly?: boolean
-  }>(),
-  {
-    global: false,
-    readOnly: false,
-    sliderStyle: 'vertical',
-    labelPosition: 'left',
-  }
+	defineProps<{
+		/**
+		 * The key of the attribute controlled by the slider. This is the property of the injected document that will be controlled.
+		 */
+		attr: string
+		/**
+		 * The type of injectable document to use. Currently only "Actor" and "Item" work - they'll target `ActorKey`/`$ActorKey` or `ItemKey`/`$ItemKey` as appropriate.
+		 * @see {$ActorKey}
+		 * @see {$ItemKey}
+		 */
+		documentType: DocumentType
+		/**
+		 * When 'true' and documentType is set to "Actor", updates *all* actors of the 'shared' and 'character' types.
+		 */
+		global?: boolean
+		max: number
+		min?: number
+		softMax?: number
+		currentValue: number
+		sliderStyle?: 'vertical' | 'horizontal' | 'compact'
+		labelPosition?: 'right' | 'left' | 'none'
+		/**
+		 * @see {@link sliderBar} props for more info
+		 */
+		segmentClass?: Record<number, any>
+		readOnly?: boolean
+	}>(),
+	{
+		global: false,
+		readOnly: false,
+		sliderStyle: 'vertical',
+		labelPosition: 'left'
+	}
 )
 
 const { $document } = pickInjectedDocument(props.documentType)
 
 const baseId = computed(() => {
-  return `${$document?.id}-attr-slider-${props.attr}`
+	return `${$document?.id}-attr-slider-${props.attr}`
 })
 
 async function onChange(newValue: number) {
-  const data = {
-    system: { [props.attr]: newValue },
-  }
-  // redundant with the below if it's global, but fires anyway so that a single message appears in the chatlog.
-  await $document?.update(data)
-  if (props.global) {
-    await IronswornSettings.updateGlobalAttribute(data)
-  }
+	const data = {
+		system: { [props.attr]: newValue }
+	}
+	// redundant with the below if it's global, but fires anyway so that a single message appears in the chatlog.
+	await $document?.update(data)
+	if (props.global) {
+		await IronswornSettings.updateGlobalAttribute(data)
+	}
 }
 </script>
 
@@ -101,60 +98,60 @@ async function onChange(newValue: number) {
 @segment_border_radius: var(--ironsworn-border-radius-lg);
 
 .attr-slider {
-  &[aria-orientation='vertical'] {
-    display: grid;
-    grid-template-rows: max-content max-content max-content;
-    grid-template-columns: max-content max-content;
-    grid-auto-flow: column;
-    place-items: start;
+	&[aria-orientation='vertical'] {
+		display: grid;
+		grid-template-rows: max-content max-content max-content;
+		grid-template-columns: max-content max-content;
+		grid-auto-flow: column;
+		place-items: start;
 
-    .attr-slider-label {
-      grid-row: 1;
-      max-height: 50%;
-    }
+		.attr-slider-label {
+			grid-row: 1;
+			max-height: 50%;
+		}
 
-    .attr-slider-bar {
-      grid-row: 1;
-    }
+		.attr-slider-bar {
+			grid-row: 1;
+		}
 
-    &.label-none {
-      display: flex;
-    }
+		&.label-none {
+			display: flex;
+		}
 
-    &.label-left {
-      .attr-slider-label {
-        grid-column: 1;
-      }
-    }
+		&.label-left {
+			.attr-slider-label {
+				grid-column: 1;
+			}
+		}
 
-    &.label-right {
-      .attr-slider-label {
-        grid-column: 2;
-      }
-    }
-  }
+		&.label-right {
+			.attr-slider-label {
+				grid-column: 2;
+			}
+		}
+	}
 
-  &[aria-orientation='horizontal'] {
-    display: flex;
-    flex-flow: row wrap;
-    justify-items: space-between;
+	&[aria-orientation='horizontal'] {
+		display: flex;
+		flex-flow: row wrap;
+		justify-items: space-between;
 
-    .attr-slider-label {
-      > * {
-        padding-inline-end: @segment_border_radius;
-      }
-    }
-  }
+		.attr-slider-label {
+			> * {
+				padding-inline-end: @segment_border_radius;
+			}
+		}
+	}
 
-  .attr-slider-label {
-    display: flex;
-    align-items: center;
-    text-transform: uppercase;
-    line-height: 1;
+	.attr-slider-label {
+		display: flex;
+		align-items: center;
+		text-transform: uppercase;
+		line-height: 1;
 
-    > * {
-      text-transform: inherit;
-    }
-  }
+		> * {
+			text-transform: inherit;
+		}
+	}
 }
 </style>

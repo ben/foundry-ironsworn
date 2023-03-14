@@ -1,44 +1,44 @@
 <article
-  class='progress-track nogrow'
-  style='flex-grow: 0;'
-  role='slider'
-  aria-label='progress track'
-  aria-orientation='horizontal'
-  data-rank='{{data.system.rank}}'
-  data-ticks='{{data.system.ticks}}'
-  data-score='{{data.filledBoxes}}'
-  aria-valuenow='{{data.system.ticks}}'
-  aria-valuemin='0'
-  aria-valuemax='40'
-  aria-valuetext='{{data.filledBoxes}} progress ({{data.system.ticks}} ticks)'
-  data-tooltip='{{data.filledBoxes}} progress ({{data.system.ticks}} ticks)'
-  aria-describedby='tooltip'
+	class='progress-track nogrow'
+	style='flex-grow: 0;'
+	role='slider'
+	aria-label='progress track'
+	aria-orientation='horizontal'
+	data-rank='{{data.system.rank}}'
+	data-ticks='{{data.system.ticks}}'
+	data-score='{{data.filledBoxes}}'
+	aria-valuenow='{{data.system.ticks}}'
+	aria-valuemin='0'
+	aria-valuemax='40'
+	aria-valuetext='{{data.filledBoxes}} progress ({{data.system.ticks}} ticks)'
+	data-tooltip='{{data.filledBoxes}} progress ({{data.system.ticks}} ticks)'
+	aria-describedby='tooltip'
 >
-  {{#each boxes}}
-    <div
-      class='flexcol progress-track-box'
-      aria-valuenow='{{ticks}}'
-      aria-valuetext='{{ticks}} ticks'
-      role='presentational'
-    ><svg
-        class='progress-track-box-marks'
-        xmlns='http://www.w3.org/2000/svg'
-        viewBox='0 0 100 100'
-        role='presentational'
-      >
-        <g>
-          {{#each lineTransforms}}
-            <line
-              x1='50'
-              y1='100'
-              x2='50'
-              y2='0'
-              class='progress-tick'
-              transform='{{this}}'
-              data-tick='{{@index}}'
-            ></line>
-          {{/each}}
-        </g>
-      </svg></div>
-  {{/each}}
+	{{#each boxes}}
+		<div
+			class='flexcol progress-track-box'
+			aria-valuenow='{{ticks}}'
+			aria-valuetext='{{ticks}} ticks'
+			role='presentational'
+		><svg
+				class='progress-track-box-marks'
+				xmlns='http://www.w3.org/2000/svg'
+				viewBox='0 0 100 100'
+				role='presentational'
+			>
+				<g>
+					{{#each lineTransforms}}
+						<line
+							x1='50'
+							y1='100'
+							x2='50'
+							y2='0'
+							class='progress-tick'
+							transform='{{this}}'
+							data-tick='{{@index}}'
+						></line>
+					{{/each}}
+				</g>
+			</svg></div>
+	{{/each}}
 </article>

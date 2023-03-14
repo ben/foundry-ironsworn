@@ -6,97 +6,97 @@
 // :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
 // https://developer.mozilla.org/en-US/docs/Web/CSS/:where
 :where(.ironsworn) {
-  @import 'utils.less';
-  @import 'inputs.less';
-  @import (reference) './fvtt/dialog.less';
+	@import 'utils.less';
+	@import 'inputs.less';
+	@import (reference) './fvtt/dialog.less';
 
-  &.dialog {
-    .dialog();
-  }
+	&.dialog {
+		.dialog();
+	}
 
-  form button,
-  button {
-    margin: 0;
-    border: 0 solid var(--ironsworn-color-border);
-    width: auto;
-    line-height: var(--ironsworn-line-height);
-  }
+	form button,
+	button {
+		margin: 0;
+		border: 0 solid var(--ironsworn-color-border);
+		width: auto;
+		line-height: var(--ironsworn-line-height);
+	}
 }
 
 @import 'transitions.less';
 
 .system-foundry-ironsworn {
-  // importing within this selector to ensure higher specificity
-  @import 'assets.less';
-  @import 'attr-box.less';
-  @import 'chat-message.less';
-  @import 'clickable.less';
-  @import 'dialog.less';
-  @import 'dice.less';
-  @import 'drag-and-drop.less';
-  @import 'editor.less';
-  @import 'icons.less';
-  @import 'list.less';
-  @import 'scrollbar.less';
-  @import 'sheet.less';
-  @import 'tables.less';
-  @import 'utils.less';
-  @import 'progress.less';
-  // transitions for interactive elements
-  a,
-  button,
-  select,
-  input,
-  textarea,
-  .scene-control,
-  .macro {
-    transition: var(--ironsworn-transition);
+	// importing within this selector to ensure higher specificity
+	@import 'assets.less';
+	@import 'attr-box.less';
+	@import 'chat-message.less';
+	@import 'clickable.less';
+	@import 'dialog.less';
+	@import 'dice.less';
+	@import 'drag-and-drop.less';
+	@import 'editor.less';
+	@import 'icons.less';
+	@import 'list.less';
+	@import 'scrollbar.less';
+	@import 'sheet.less';
+	@import 'tables.less';
+	@import 'utils.less';
+	@import 'progress.less';
+	// transitions for interactive elements
+	a,
+	button,
+	select,
+	input,
+	textarea,
+	.scene-control,
+	.macro {
+		transition: var(--ironsworn-transition);
 
-    &.active {
-      color: var(--ironsworn-color-clickable-text-selected);
-    }
-  }
+		&.active {
+			color: var(--ironsworn-color-clickable-text-selected);
+		}
+	}
 
-  .ironsworn {
-    // import these to the theme apply it to FVTT's own dialogs and inputs as well.
+	.ironsworn {
+		// import these to the theme apply it to FVTT's own dialogs and inputs as well.
 
-    // stuff scoped to .ironsworn app windows only
-    .window-title {
-      .initial-caps();
-    }
+		// stuff scoped to .ironsworn app windows only
+		.window-title {
+			.initial-caps();
+		}
 
-    .window-content {
-      background: var(--ironsworn-color-bg);
-      padding: var(--ironsworn-spacer-sm);
-      height: 100%;
-      color: var(--ironsworn-color-fg);
-    }
+		.window-content {
+			background: var(--ironsworn-color-bg);
+			padding: var(--ironsworn-spacer-sm);
+			height: 100%;
+			color: var(--ironsworn-color-fg);
+		}
 
-    hr {
-      border: 0 solid var(--ironsworn-color-border);
-      border-width: 0 0 var(--ironsworn-border-width-md);
-      width: 100%;
-    }
+		hr {
+			border: 0 solid var(--ironsworn-color-border);
+			border-width: 0 0 var(--ironsworn-border-width-md);
+			width: 100%;
+		}
 
-    h1,
-    h2,
-    h3 {
-      border: none;
-    }
-  }
+		h1,
+		h2,
+		h3 {
+			border: none;
+		}
+	}
 
-  #tooltip {
-    // disables additional margin on paragraph elements in tooltips (FVTT doesn't use them, but we do)
-    & > {
-      p {
-        &:first-child {
-          margin-top: 0;
-        }
+	#tooltip {
+		// disables additional margin on paragraph elements in tooltips (FVTT doesn't use them, but we do)
+		& > {
+			p {
+				&:first-child {
+					margin-top: 0;
+				}
 
-        &:last-child {
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
 }
