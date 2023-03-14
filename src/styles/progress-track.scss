@@ -1,72 +1,72 @@
 // Challenge rank indicator
 .rank-pips {
-  --ironsworn-pip-stroke-width: 1px;
-  --ironsworn-pip-width: 1em;
+	--ironsworn-pip-stroke-width: 1px;
+	--ironsworn-pip-width: 1em;
 
-  display: flex;
-  flex-flow: row nowrap;
-  flex-grow: 0;
-  gap: 0;
-  align-content: center;
-  transition: var(--ironsworn-transition);
-  width: max-content;
-  pointer-events: none;
-  stroke: var(--ironsworn-color-fg);
-  stroke-width: var(--ironsworn-widget-stroke-width);
-  fill: var(--ironsworn-color-fg-80);
-  fill-opacity: 1;
+	display: flex;
+	flex-flow: row nowrap;
+	flex-grow: 0;
+	gap: 0;
+	align-content: center;
+	transition: var(--ironsworn-transition);
+	width: max-content;
+	pointer-events: none;
+	stroke: var(--ironsworn-color-fg);
+	stroke-width: var(--ironsworn-widget-stroke-width);
+	fill: var(--ironsworn-color-fg-80);
+	fill-opacity: 1;
 
-  &:hover {
-    fill: var(--ironsworn-color-fg-40);
-  }
+	&:hover {
+		fill: var(--ironsworn-color-fg-40);
+	}
 
-  &:not(:hover) {
-    button.rank-pip {
-      &[aria-selected='true'] {
-        ~ button.rank-pip {
-          fill-opacity: 0;
-        }
-      }
-    }
-  }
+	&:not(:hover) {
+		button.rank-pip {
+			&[aria-selected='true'] {
+				~ button.rank-pip {
+					fill-opacity: 0;
+				}
+			}
+		}
+	}
 
-  button.rank-pip {
-    // doing the spacing as padding means there's less 'jitter' when hovering the pips
-    // offsets the border stroke
-    --ironsworn-pip-stroke-offset: calc(var(--ironsworn-pip-stroke-width) / 2);
-    --ironsworn-pip-padding-y: var(--ironsworn-pip-stroke-offset);
-    --ironsworn-pip-padding-x: calc(0.5px + var(--ironsworn-pip-stroke-offset));
+	button.rank-pip {
+		// doing the spacing as padding means there's less 'jitter' when hovering the pips
+		// offsets the border stroke
+		--ironsworn-pip-stroke-offset: calc(var(--ironsworn-pip-stroke-width) / 2);
+		--ironsworn-pip-padding-y: var(--ironsworn-pip-stroke-offset);
+		--ironsworn-pip-padding-x: calc(0.5px + var(--ironsworn-pip-stroke-offset));
 
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    transition-duration: 0s;
-    margin: 0;
-    border: none;
-    background-color: unset;
-    padding: var(--ironsworn-pip-padding-y) var(--ironsworn-pip-padding-x);
-    height: auto;
-    line-height: 0;
-    pointer-events: all;
-    aspect-ratio: 1;
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		transition-duration: 0s;
+		margin: 0;
+		border: none;
+		background-color: unset;
+		padding: var(--ironsworn-pip-padding-y) var(--ironsworn-pip-padding-x);
+		height: auto;
+		line-height: 0;
+		pointer-events: all;
+		aspect-ratio: 1;
 
-    &:hover {
-      box-shadow: unset;
-      color: currentcolor;
+		&:hover {
+			box-shadow: unset;
+			color: currentcolor;
 
-      ~ .rank-pip {
-        fill-opacity: 0;
-      }
-    }
+			~ .rank-pip {
+				fill-opacity: 0;
+			}
+		}
 
-    .pip-shape {
-      width: var(--ironsworn-pip-width);
-      height: inherit;
-      overflow: visible;
-    }
+		.pip-shape {
+			width: var(--ironsworn-pip-width);
+			height: inherit;
+			overflow: visible;
+		}
 
-    .pip-shape > * {
-      stroke-width: var(--ironsworn-widget-stroke-width);
-    }
-  }
+		.pip-shape > * {
+			stroke-width: var(--ironsworn-widget-stroke-width);
+		}
+	}
 }

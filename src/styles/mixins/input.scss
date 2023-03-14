@@ -3,57 +3,57 @@
 @use 'mixin:border.scss';
 
 @mixin fieldFocus($spread: 6px) {
-  @include fx.glowExterior($spread);
-  @include border.accent(
-    var(--ironsworn-color-warm-50),
-    var(--ironsworn-color-cool-50)
-  );
+	@include fx.glowExterior($spread);
+	@include border.accent(
+		var(--ironsworn-color-warm-50),
+		var(--ironsworn-color-cool-50)
+	);
 
-  outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-warm);
+	outline: var(--ironsworn-border-width-md) solid var(--ironsworn-color-warm);
 }
 
 @mixin fieldBase() {
-  border-width: var(--ironsworn-border-width-md);
-  border-style: var(--ironsworn-input-border-style);
-  border-radius: var(--ironsworn-border-radius-md);
-  border-color: var(--ironsworn-color-input-border);
-  background: var(--ironsworn-color-input-bg);
-  color: var(--ironsworn-color-fg);
+	border-width: var(--ironsworn-border-width-md);
+	border-style: var(--ironsworn-input-border-style);
+	border-radius: var(--ironsworn-border-radius-md);
+	border-color: var(--ironsworn-color-input-border);
+	background: var(--ironsworn-color-input-bg);
+	color: var(--ironsworn-color-fg);
 }
 
 @mixin field($spread: 6px) {
-  @include clickable.interactive;
-  @include fieldBase;
+	@include clickable.interactive;
+	@include fieldBase;
 
-  // specify invisible outline to stop jitter from border width transition
-  outline-width: var(--ironsworn-border-width-md);
-  outline-style: solid;
-  outline-color: transparent;
-  cursor: initial;
+	// specify invisible outline to stop jitter from border width transition
+	outline-width: var(--ironsworn-border-width-md);
+	outline-style: solid;
+	outline-color: transparent;
+	cursor: initial;
 
-  &::placeholder {
-    opacity: 0.5;
-    color: var(--ironsworn-color-fg);
-  }
+	&::placeholder {
+		opacity: 0.5;
+		color: var(--ironsworn-color-fg);
+	}
 
-  &:hover {
-    @include fx.glowInterior($spread, 0, var(--ironsworn-color-cool));
+	&:hover {
+		@include fx.glowInterior($spread, 0, var(--ironsworn-color-cool));
 
-    border-color: var(--ironsworn-color-clickable-block-border-hover);
-  }
+		border-color: var(--ironsworn-color-clickable-block-border-hover);
+	}
 
-  &:focus,
-  &:focus-within {
-    @include fieldFocus;
-    @include border.accent(
-      var(--ironsworn-color-warm-80),
-      var(--ironsworn-color-cool-80)
-    );
+	&:focus,
+	&:focus-within {
+		@include fieldFocus;
+		@include border.accent(
+			var(--ironsworn-color-warm-80),
+			var(--ironsworn-color-cool-80)
+		);
 
-    &:hover {
-      // box-shadow: @include fieldFocus(); [box-shadow],
-      //   @include fx.glowInterior($spread, 0, var(--ironsworn-color-cool));
-      //     [box-shadow];
-    }
-  }
+		&:hover {
+			// box-shadow: @include fieldFocus(); [box-shadow],
+			//   @include fx.glowInterior($spread, 0, var(--ironsworn-color-cool));
+			//     [box-shadow];
+		}
+	}
 }

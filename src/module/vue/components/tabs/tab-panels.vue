@@ -1,33 +1,32 @@
 <template>
-  <component
-    :is="is"
-    :data-tab-set="tabState.tabSetId"
-    :class="{
-      flexcol: tabState.orientation === 'vertical',
-      flexrow: tabState.orientation === 'horizontal',
-      [$style.wrapper]: true,
-      [$style.horizontal]: tabState.orientation === 'horizontal',
-      [$style.vertical]: tabState.orientation === 'vertical',
-    }"
-  >
-    <slot></slot>
-  </component>
+	<component
+		:is="is"
+		:data-tab-set="tabState.tabSetId"
+		:class="{
+			flexcol: tabState.orientation === 'vertical',
+			flexrow: tabState.orientation === 'horizontal',
+			[$style.wrapper]: true,
+			[$style.horizontal]: tabState.orientation === 'horizontal',
+			[$style.vertical]: tabState.orientation === 'vertical'
+		}">
+		<slot></slot>
+	</component>
 </template>
 
 <style lang="scss" module>
 .wrapper {
-  // ensures that the TabPanels have a recent ancestor for their absolute positioning.
-  position: relative;
+	// ensures that the TabPanels have a recent ancestor for their absolute positioning.
+	position: relative;
 }
 
 .horizontal {
-  // so the animation doesn't encroach on adjacent elements
-  overflow-x: clip;
+	// so the animation doesn't encroach on adjacent elements
+	overflow-x: clip;
 }
 
 .vertical {
-  // so the animation doesn't encroach on adjacent elements
-  overflow-x: clip;
+	// so the animation doesn't encroach on adjacent elements
+	overflow-x: clip;
 }
 </style>
 
@@ -44,6 +43,6 @@ const tabState = inject(TabStateKey) as TabState
 
 const tabSetId = computed(() => tabState.tabSetId)
 defineExpose({
-  tabSetId: tabSetId.value,
+	tabSetId: tabSetId.value
 })
 </script>

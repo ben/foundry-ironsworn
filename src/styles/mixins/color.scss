@@ -7,138 +7,138 @@
 @use 'sass:string';
 
 @mixin palettize(
-  $fg-color,
-  $bg-color,
-  $warm-color,
-  $cool-color,
-  $prefix: palette
+	$fg-color,
+	$bg-color,
+	$warm-color,
+	$cool-color,
+	$prefix: palette
 ) {
-  // generate a large set of colour values from the four anchor colours.
+	// generate a large set of colour values from the four anchor colours.
 
-  $palette: gamutize($fg-color, $bg-color, $warm-color, $cool-color, $prefix);
+	$palette: gamutize($fg-color, $bg-color, $warm-color, $cool-color, $prefix);
 
-  // Start writing the CSS custom properties.
-  // see: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
-  @each $css-property, $color in $palette {
-    --#{$css-property}: #{$color};
-  }
+	// Start writing the CSS custom properties.
+	// see: https://developer.mozilla.org/en-US/docs/Web/CSS/--*
+	@each $css-property, $color in $palette {
+		--#{$css-property}: #{$color};
+	}
 }
 
 @mixin lightTheme($prefix) {
-  @include defaults('dark', 'light', $prefix);
-  @include normalizeIronswornColors($luminance-target: 0.2);
+	@include defaults('dark', 'light', $prefix);
+	@include normalizeIronswornColors($luminance-target: 0.2);
 }
 
 @mixin darkTheme($prefix) {
-  @include defaults('light', 'dark', $prefix);
-  @include normalizeIronswornColors($luminance-target: 0, $intensity: 0.65);
+	@include defaults('light', 'dark', $prefix);
+	@include normalizeIronswornColors($luminance-target: 0, $intensity: 0.65);
 }
 
 // Set sensible defaults for semantically-oriented colors
 @mixin defaults($fg-type, $bg-type, $prefix) {
-  --#{$prefix}-fg-muted: var(--#{$prefix}-midtone-70);
-  --#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
+	--#{$prefix}-fg-muted: var(--#{$prefix}-midtone-70);
+	--#{$prefix}-fg-highlight: var(--#{$prefix}-#{$fg-type}-warm);
 
-  // INPUT
-  --#{$prefix}-input-bg: var(--#{$prefix}-#{$fg-type}-10);
-  --#{$prefix}-input-border: var(--#{$prefix}-#{$fg-type}-10);
+	// INPUT
+	--#{$prefix}-input-bg: var(--#{$prefix}-#{$fg-type}-10);
+	--#{$prefix}-input-border: var(--#{$prefix}-#{$fg-type}-10);
 
-  // CLICKABLE TEXT
-  --#{$prefix}-clickable-text: inherit;
-  --#{$prefix}-clickable-text-hover: var(--#{$prefix}-#{$fg-type}-warm);
-  --#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{$fg-type}-warm);
+	// CLICKABLE TEXT
+	--#{$prefix}-clickable-text: inherit;
+	--#{$prefix}-clickable-text-hover: var(--#{$prefix}-#{$fg-type}-warm);
+	--#{$prefix}-clickable-text-selected: var(--#{$prefix}-#{$fg-type}-warm);
 
-  // WIDGETS
-  --#{$prefix}-widget-fill: var(--#{$prefix}-#{$fg-type}-80);
+	// WIDGETS
+	--#{$prefix}-widget-fill: var(--#{$prefix}-#{$fg-type}-80);
 }
 
 // generates color variables to style an interactive element with an invert effect when it's active
 @mixin interactiveInvert($element-prefix, $source-prefix) {
-  --#{$element-prefix}-fg: var(--#{$source-prefix}-fg);
-  --#{$element-prefix}-bg: transparent;
-  --#{$element-prefix}-border: var(--#{$source-prefix}-border);
-  --#{$element-prefix}-fg-hover: var(--#{$source-prefix}-fg);
-  --#{$element-prefix}-bg-hover: var(--#{$source-prefix}-fg-20);
-  --#{$element-prefix}-border-hover: var(--#{$source-prefix}-border);
-  --#{$element-prefix}-fg-selected: var(--#{$source-prefix}-bg);
-  --#{$element-prefix}-bg-selected: var(--#{$source-prefix}-fg);
-  --#{$element-prefix}-border-selected: var(--#{$source-prefix}-fg);
+	--#{$element-prefix}-fg: var(--#{$source-prefix}-fg);
+	--#{$element-prefix}-bg: transparent;
+	--#{$element-prefix}-border: var(--#{$source-prefix}-border);
+	--#{$element-prefix}-fg-hover: var(--#{$source-prefix}-fg);
+	--#{$element-prefix}-bg-hover: var(--#{$source-prefix}-fg-20);
+	--#{$element-prefix}-border-hover: var(--#{$source-prefix}-border);
+	--#{$element-prefix}-fg-selected: var(--#{$source-prefix}-bg);
+	--#{$element-prefix}-bg-selected: var(--#{$source-prefix}-fg);
+	--#{$element-prefix}-border-selected: var(--#{$source-prefix}-fg);
 }
 
 // generates color variables to style an interactive element with slightly dulled colours in its default state, and a tint effect when it's active.
 @mixin interactiveTint($element-prefix, $source-prefix) {
-  --#{$element-prefix}-fg: var(--#{$source-prefix}-midtone-80);
-  --#{$element-prefix}-bg: transparent;
-  --#{$element-prefix}-border: var(--#{$source-prefix}-midtone-80);
-  --#{$element-prefix}-fg-hover: var(--#{$source-prefix}-fg-warm);
-  --#{$element-prefix}-bg-hover: var(--#{$source-prefix}-fg-30);
-  --#{$element-prefix}-border-hover: var(--#{$source-prefix}-fg);
-  --#{$element-prefix}-fg-selected: var(--#{$source-prefix}-fg-warm);
-  --#{$element-prefix}-bg-selected: var(--#{$source-prefix}-fg-50);
-  --#{$element-prefix}-border-selected: var(--#{$source-prefix}-fg-warm);
+	--#{$element-prefix}-fg: var(--#{$source-prefix}-midtone-80);
+	--#{$element-prefix}-bg: transparent;
+	--#{$element-prefix}-border: var(--#{$source-prefix}-midtone-80);
+	--#{$element-prefix}-fg-hover: var(--#{$source-prefix}-fg-warm);
+	--#{$element-prefix}-bg-hover: var(--#{$source-prefix}-fg-30);
+	--#{$element-prefix}-border-hover: var(--#{$source-prefix}-fg);
+	--#{$element-prefix}-fg-selected: var(--#{$source-prefix}-fg-warm);
+	--#{$element-prefix}-bg-selected: var(--#{$source-prefix}-fg-50);
+	--#{$element-prefix}-border-selected: var(--#{$source-prefix}-fg-warm);
 }
 
 @mixin softBorder($prefix) {
-  --#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
-  --#{$prefix}-border: var(--#{$prefix}-fg-80);
-  --#{$prefix}-border-muted: var(--#{$prefix}-fg-30);
+	--#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
+	--#{$prefix}-border: var(--#{$prefix}-fg-80);
+	--#{$prefix}-border-muted: var(--#{$prefix}-fg-30);
 }
 
 @mixin sharpBorder($prefix) {
-  --#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
-  --#{$prefix}-border: var(--#{$prefix}-fg);
-  --#{$prefix}-border-muted: var(--#{$prefix}-fg-80);
+	--#{$prefix}-border-highlight: var(--#{$prefix}-fg-warm);
+	--#{$prefix}-border: var(--#{$prefix}-fg);
+	--#{$prefix}-border-muted: var(--#{$prefix}-fg-80);
 }
 
 @function normalize($color, $luminance-target, $intensity: null) {
-  // These colours are interpolated in the OKLCH colourspace.
-  $chroma: getChannel($color, 'oklch.c');
+	// These colours are interpolated in the OKLCH colourspace.
+	$chroma: getChannel($color, 'oklch.c');
 
-  @if $intensity {
-    // Chroma in OKLCH is theoretically unbounded, but for web design purposes 0.4 is the practical maximum.
-    $chroma-max: 0.4;
-    $chroma: $chroma-max * $intensity;
-  }
+	@if $intensity {
+		// Chroma in OKLCH is theoretically unbounded, but for web design purposes 0.4 is the practical maximum.
+		$chroma-max: 0.4;
+		$chroma: $chroma-max * $intensity;
+	}
 
-  $old-luminance: luminance($color);
-  $sum: $old-luminance + $luminance-target;
-  $new-luminance: math.div($sum, 2);
-  $normalize-lum: luminance($color, $new-luminance, 'oklch');
-  $normalize-chroma: setChannel($normalize-lum, 'oklch.c', $chroma);
+	$old-luminance: luminance($color);
+	$sum: $old-luminance + $luminance-target;
+	$new-luminance: math.div($sum, 2);
+	$normalize-lum: luminance($color, $new-luminance, 'oklch');
+	$normalize-chroma: setChannel($normalize-lum, 'oklch.c', $chroma);
 
-  @return $normalize-chroma;
+	@return $normalize-chroma;
 }
 
 // Sets
 @mixin normalizeIronswornColors($luminance-target, $intensity: null) {
-  // contrast ratio is the desired ratio of background luminance to foreground luminance.
-  // broadly speaking: 3 is OK on big elements, 4.5 for body text.
+	// contrast ratio is the desired ratio of background luminance to foreground luminance.
+	// broadly speaking: 3 is OK on big elements, 4.5 for body text.
 
-  // these colors were eyedroppered directly from the Starforged PDF, but we need to adjust them for web use
-  $pdf-colors: (
-    'red': #c9181a,
-    'purple': #8c1d81,
-    'blue': #35a9e0,
-  );
+	// these colors were eyedroppered directly from the Starforged PDF, but we need to adjust them for web use
+	$pdf-colors: (
+		'red': #c9181a,
+		'purple': #8c1d81,
+		'blue': #35a9e0
+	);
 
-  @each $key, $color in $pdf-colors {
-    $new-color: normalize($color, $luminance-target, $intensity);
+	@each $key, $color in $pdf-colors {
+		$new-color: normalize($color, $luminance-target, $intensity);
 
-    --ironsworn-color-#{$key}: #{$new-color};
-  }
+		--ironsworn-color-#{$key}: #{$new-color};
+	}
 
-  // set dependent variables
-  --ironsworn-color-legacy-quests: var(--ironsworn-color-red);
-  --ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
-  --ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
-  --ironsworn-color-danger: var(--ironsworn-color-red);
-  --ironsworn-color-success: var(--ironsworn-color-blue);
-  --ironsworn-color-warning: hsl(55deg 100% 50%);
+	// set dependent variables
+	--ironsworn-color-legacy-quests: var(--ironsworn-color-red);
+	--ironsworn-color-legacy-bonds: var(--ironsworn-color-purple);
+	--ironsworn-color-legacy-discoveries: var(--ironsworn-color-blue);
+	--ironsworn-color-danger: var(--ironsworn-color-red);
+	--ironsworn-color-success: var(--ironsworn-color-blue);
+	--ironsworn-color-warning: hsl(55deg 100% 50%);
 }
 
 // HELPER FUNCTIONS
 
 @mixin thematic($color) {
-  --ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-  --ironsworn-color-thematic: #{$color};
+	--ironsworn-color-text-stroke: var(--ironsworn-color-dark);
+	--ironsworn-color-thematic: #{$color};
 }

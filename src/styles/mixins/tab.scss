@@ -3,59 +3,59 @@
 // FVTT-style tabs, like those used on FVTT's sidebar.
 
 @mixin base(
-  $glowSpread: 5px,
-  $glowBlur: 1px,
-  $borderWidth: var(--ironsworn-border-width-md)
+	$glowSpread: 5px,
+	$glowBlur: 1px,
+	$borderWidth: var(--ironsworn-border-width-md)
 ) {
-  border-width: $borderWidth;
+	border-width: $borderWidth;
 
-  &:hover {
-    @include fx.glowInterior(
-      $glowSpread,
-      $glowBlur,
-      var(--ironsworn-color-clickable-block-bg-selected)
-    );
+	&:hover {
+		@include fx.glowInterior(
+			$glowSpread,
+			$glowBlur,
+			var(--ironsworn-color-clickable-block-bg-selected)
+		);
 
-    border-color: var(--ironsworn-color-fg-muted);
-  }
+		border-color: var(--ironsworn-color-fg-muted);
+	}
 
-  &[aria-selected='true'],
-  &.active {
-    @include fx.glowInterior(
-      $glowSpread,
-      $glowBlur,
-      var(--ironsworn-color-cool)
-    );
+	&[aria-selected='true'],
+	&.active {
+		@include fx.glowInterior(
+			$glowSpread,
+			$glowBlur,
+			var(--ironsworn-color-cool)
+		);
 
-    border-color: var(--ironsworn-color-warm);
-  }
+		border-color: var(--ironsworn-color-warm);
+	}
 }
 
 @mixin top($borderRadius: var(--ironsworn-border-radius-lg)) {
-  @include base;
+	@include base;
 
-  border-bottom-width: 0;
-  border-top-left-radius: $borderRadius;
-  border-top-right-radius: $borderRadius;
+	border-bottom-width: 0;
+	border-top-left-radius: $borderRadius;
+	border-top-right-radius: $borderRadius;
 }
 @mixin bottom($borderRadius: var(--ironsworn-border-radius-lg)) {
-  @include base;
+	@include base;
 
-  border-top-width: 0;
-  border-bottom-left-radius: $borderRadius;
-  border-bottom-right-radius: $borderRadius;
+	border-top-width: 0;
+	border-bottom-left-radius: $borderRadius;
+	border-bottom-right-radius: $borderRadius;
 }
 @mixin left($borderRadius: var(--ironsworn-border-radius-lg)) {
-  @include base;
+	@include base;
 
-  border-right-width: 0;
-  border-top-left-radius: $borderRadius;
-  border-bottom-left-radius: $borderRadius;
+	border-right-width: 0;
+	border-top-left-radius: $borderRadius;
+	border-bottom-left-radius: $borderRadius;
 }
 @mixin right($borderRadius: var(--ironsworn-border-radius-lg)) {
-  @include base;
+	@include base;
 
-  border-left-width: 0;
-  border-top-right-radius: $borderRadius;
-  border-bottom-right-radius: $borderRadius;
+	border-left-width: 0;
+	border-top-right-radius: $borderRadius;
+	border-bottom-right-radius: $borderRadius;
 }

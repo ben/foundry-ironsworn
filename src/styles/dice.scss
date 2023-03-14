@@ -1,168 +1,168 @@
 @use 'mixin:text.scss';
 
 .dice-roll {
-  --ironsworn-roll-term-size: var(--font-size-24);
+	--ironsworn-roll-term-size: var(--font-size-24);
 
-  .dice-formula,
-  .dice-total {
-    border-width: var(--ironsworn-border-width-md);
-    border-style: solid;
-    border-radius: var(--ironsworn-border-radius-md);
-    border-color: var(--ironsworn-color-border-muted);
-    box-shadow: 0 0 2px var(--ironsworn-color-bg) inset;
-    background: var(--ironsworn-color-fg-10);
-    padding: var(--ironsworn-spacer-md) 0 var(--ironsworn-spacer-md) 0;
+	.dice-formula,
+	.dice-total {
+		border-width: var(--ironsworn-border-width-md);
+		border-style: solid;
+		border-radius: var(--ironsworn-border-radius-md);
+		border-color: var(--ironsworn-color-border-muted);
+		box-shadow: 0 0 2px var(--ironsworn-color-bg) inset;
+		background: var(--ironsworn-color-fg-10);
+		padding: var(--ironsworn-spacer-md) 0 var(--ironsworn-spacer-md) 0;
 
-    .die {
-      &.min {
-        color: var(--ironsworn-color-fg);
-      }
+		.die {
+			&.min {
+				color: var(--ironsworn-color-fg);
+			}
 
-      &.max {
-        color: var(--ironsworn-color-fg);
-      }
-    }
-  }
+			&.max {
+				color: var(--ironsworn-color-fg);
+			}
+		}
+	}
 
-  .roll-graphic {
-    --ironsworn-roll-graphic-gap: 0.25rem;
+	.roll-graphic {
+		--ironsworn-roll-graphic-gap: 0.25rem;
 
-    &.dice-formula {
-      display: flex;
-      flex: auto;
-      flex-flow: row nowrap;
-      gap: var(--ironsworn-roll-graphic-gap);
-      justify-content: center;
-      margin: 0;
-      padding: var(--ironsworn-roll-graphic-gap);
+		&.dice-formula {
+			display: flex;
+			flex: auto;
+			flex-flow: row nowrap;
+			gap: var(--ironsworn-roll-graphic-gap);
+			justify-content: center;
+			margin: 0;
+			padding: var(--ironsworn-roll-graphic-gap);
 
-      * {
-        margin: 0;
-      }
+			* {
+				margin: 0;
+			}
 
-      .die {
-        --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+			.die {
+				--ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
-        @include text.stroke;
+				@include text.stroke;
 
-        flex-grow: 0;
-        width: 1.5em;
-        height: 100%;
-      }
+				flex-grow: 0;
+				width: 1.5em;
+				height: 100%;
+			}
 
-      .indeterminate-value {
-        color: var(--ironsworn-color-midtone-60);
-      }
+			.indeterminate-value {
+				color: var(--ironsworn-color-midtone-60);
+			}
 
-      .action-score-capped {
-        text-decoration: dotted underline;
-      }
+			.action-score-capped {
+				text-decoration: dotted underline;
+			}
 
-      .score {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: var(--ironsworn-border-width-lg) solid
-          var(--ironsworn-color-border);
-        border-radius: 50%;
-        width: var(--ironsworn-roll-term-size);
-        height: var(--ironsworn-roll-term-size);
-        font-weight: bold;
-      }
+			.score {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border: var(--ironsworn-border-width-lg) solid
+					var(--ironsworn-color-border);
+				border-radius: 50%;
+				width: var(--ironsworn-roll-term-size);
+				height: var(--ironsworn-roll-term-size);
+				font-weight: bold;
+			}
 
-      .challenge-dice {
-        display: flex;
-        flex-direction: row;
-        flex-grow: 0;
-        gap: calc(var(--ironsworn-roll-graphic-gap) / 2);
-      }
-    }
-  }
+			.challenge-dice {
+				display: flex;
+				flex-direction: row;
+				flex-grow: 0;
+				gap: calc(var(--ironsworn-roll-graphic-gap) / 2);
+			}
+		}
+	}
 }
 
 .ironsworn-roll {
-  h3,
-  .hit-type {
-    font-weight: bold;
-  }
+	h3,
+	.hit-type {
+		font-weight: bold;
+	}
 
-  .roll {
-    --ironsworn-dice-background-color: var(--ironsworn-color-fg-30);
-    --ironsworn-color-text-stroke: var(--ironsworn-color-bg);
+	.roll {
+		--ironsworn-dice-background-color: var(--ironsworn-color-fg-30);
+		--ironsworn-color-text-stroke: var(--ironsworn-color-bg);
 
-    display: inline-block;
-    margin-right: 1px;
-    background-repeat: no-repeat;
-    background-size: var(--ironsworn-roll-term-size)
-      var(--ironsworn-roll-term-size);
-    width: var(--ironsworn-roll-term-size);
-    text-align: center;
-    line-height: var(--ironsworn-roll-term-size);
-    font-weight: bold;
+		display: inline-block;
+		margin-right: 1px;
+		background-repeat: no-repeat;
+		background-size: var(--ironsworn-roll-term-size)
+			var(--ironsworn-roll-term-size);
+		width: var(--ironsworn-roll-term-size);
+		text-align: center;
+		line-height: var(--ironsworn-roll-term-size);
+		font-weight: bold;
 
-    &.d4 {
-      background-image: url('../../icons/svg/d4-grey.svg');
-    }
+		&.d4 {
+			background-image: url('../../icons/svg/d4-grey.svg');
+		}
 
-    &.d6::before {
-      background-color: var(--ironsworn-dice-background-color);
-      mask-image: var(--isicon-d6-blank);
-      content: '';
-    }
+		&.d6::before {
+			background-color: var(--ironsworn-dice-background-color);
+			mask-image: var(--isicon-d6-blank);
+			content: '';
+		}
 
-    &.d8 {
-      background-image: url('../../icons/svg/d8-grey.svg');
-    }
+		&.d8 {
+			background-image: url('../../icons/svg/d8-grey.svg');
+		}
 
-    &.d10::before {
-      background-color: var(--ironsworn-dice-background-color);
-      mask-image: var(--isicon-d10-blank);
-      content: '';
-    }
+		&.d10::before {
+			background-color: var(--ironsworn-dice-background-color);
+			mask-image: var(--isicon-d10-blank);
+			content: '';
+		}
 
-    &.d12 {
-      background-image: url('../../icons/svg/d12-grey.svg');
-    }
+		&.d12 {
+			background-image: url('../../icons/svg/d12-grey.svg');
+		}
 
-    &.d20 {
-      background-image: url('../../icons/svg/d20-grey.svg');
-    }
+		&.d20 {
+			background-image: url('../../icons/svg/d20-grey.svg');
+		}
 
-    &.min:not(.challenge),
-    &.challenge.max {
-      --ironsworn-color-thematic: var(--ironsworn-color-danger);
-    }
+		&.min:not(.challenge),
+		&.challenge.max {
+			--ironsworn-color-thematic: var(--ironsworn-color-danger);
+		}
 
-    &.max:not(.challenge),
-    &.challenge.min {
-      --ironsworn-color-thematic: var(--ironsworn-color-success);
-    }
+		&.max:not(.challenge),
+		&.challenge.min {
+			--ironsworn-color-thematic: var(--ironsworn-color-success);
+		}
 
-    &.canceled {
-      --ironsworn-color-thematic: var(--ironsworn-color-warning);
-    }
-  }
+		&.canceled {
+			--ironsworn-color-thematic: var(--ironsworn-color-warning);
+		}
+	}
 
-  // dice glow effect: shared properties
-  del .roll,
-  .min:not(.challenge),
-  .challenge.max,
-  .max:not(.challenge),
-  .challenge.min,
-  .canceled {
-    background-blend-mode: screen;
-    color: var(--ironsworn-color-thematic) !important;
-    filter: drop-shadow(
-        var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-color-thematic)
-      )
-      drop-shadow(
-        var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-color-thematic)
-      );
-  }
+	// dice glow effect: shared properties
+	del .roll,
+	.min:not(.challenge),
+	.challenge.max,
+	.max:not(.challenge),
+	.challenge.min,
+	.canceled {
+		background-blend-mode: screen;
+		color: var(--ironsworn-color-thematic) !important;
+		filter: drop-shadow(
+				var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-color-thematic)
+			)
+			drop-shadow(
+				var(--ironsworn-dice-drop-shadow-size) var(--ironsworn-color-thematic)
+			);
+	}
 
-  del .roll {
-    --ironsworn-color-thematic: var(--ironsworn-color-warning);
+	del .roll {
+		--ironsworn-color-thematic: var(--ironsworn-color-warning);
 
-    text-decoration: line-through;
-  }
+		text-decoration: line-through;
+	}
 }

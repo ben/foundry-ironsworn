@@ -1,5 +1,5 @@
 <template>
-  <Loading :active="true" loader="bars" :is-full-page="false" />
+	<Loading :active="true" loader="bars" :is-full-page="false" />
 </template>
 
 <script lang="ts" setup>

@@ -5,58 +5,58 @@
 @use 'mixin:text.scss';
 
 @mixin dialog {
-  .window-content {
-    .dialog-content {
-      fieldset {
-        border: none;
-        border-radius: var(--ironsworn-border-radius-md);
-        background-color: var(--ironsworn-color-fg-10);
-      }
+	.window-content {
+		.dialog-content {
+			fieldset {
+				border: none;
+				border-radius: var(--ironsworn-border-radius-md);
+				background-color: var(--ironsworn-color-fg-10);
+			}
 
-      details {
-        summary {
-          border-radius: var(--ironsworn-border-radius-md);
-          cursor: pointer;
+			details {
+				summary {
+					border-radius: var(--ironsworn-border-radius-md);
+					cursor: pointer;
 
-          &:focus {
-            @include input.fieldFocus;
-          }
-        }
-      }
-    }
+					&:focus {
+						@include input.fieldFocus;
+					}
+				}
+			}
+		}
 
-    .dialog-buttons {
-      display: flex;
-      flex-flow: row wrap;
-      flex-grow: 0;
-      gap: var(--ironsworn-spacer-sm);
-      align-items: flex-end;
-      height: max-content;
+		.dialog-buttons {
+			display: flex;
+			flex-flow: row wrap;
+			flex-grow: 0;
+			gap: var(--ironsworn-spacer-sm);
+			align-items: flex-end;
+			height: max-content;
 
-      button.default,
-      button {
-        @include clickable.block;
-        @include clickable.icon;
+			button.default,
+			button {
+				@include clickable.block;
+				@include clickable.icon;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-width: var(--ironsworn-border-width-md);
-        border-radius: 0;
-        height: max-content;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-width: var(--ironsworn-border-width-md);
+				border-radius: 0;
+				height: max-content;
 
-        .button-text {
-          @include text.initialCaps;
+				.button-text {
+					@include text.initialCaps;
 
-          flex-grow: 0;
-          width: auto;
-          height: max-content;
-        }
+					flex-grow: 0;
+					width: auto;
+					height: max-content;
+				}
 
-        i {
-          margin: 0;
-        }
-      }
-    }
-  }
+				i {
+					margin: 0;
+				}
+			}
+		}
+	}
 }

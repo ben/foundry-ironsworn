@@ -7,48 +7,48 @@
 // generated with owumaro.github.io/text-stroke-generator/
 // TODO: rewrite this as a function
 @mixin stroke() {
-  text-shadow: 1px 0 0 var(--ironsworn-color-text-stroke),
-    0.540302px 0.841471px 0 var(--ironsworn-color-text-stroke),
-    -0.416147px 0.909297px 0 var(--ironsworn-color-text-stroke),
-    -0.989993px 0.14112px 0 var(--ironsworn-color-text-stroke),
-    -0.653644px -0.756803px 0 var(--ironsworn-color-text-stroke),
-    0.283662px -0.958924px 0 var(--ironsworn-color-text-stroke),
-    0.96017px -0.279416px 0 var(--ironsworn-color-text-stroke);
+	text-shadow: 1px 0 0 var(--ironsworn-color-text-stroke),
+		0.540302px 0.841471px 0 var(--ironsworn-color-text-stroke),
+		-0.416147px 0.909297px 0 var(--ironsworn-color-text-stroke),
+		-0.989993px 0.14112px 0 var(--ironsworn-color-text-stroke),
+		-0.653644px -0.756803px 0 var(--ironsworn-color-text-stroke),
+		0.283662px -0.958924px 0 var(--ironsworn-color-text-stroke),
+		0.96017px -0.279416px 0 var(--ironsworn-color-text-stroke);
 }
 
 @mixin initialCaps() {
-  &::first-letter {
-    text-transform: uppercase;
-  }
+	&::first-letter {
+		text-transform: uppercase;
+	}
 }
 
 @mixin compact() {
-  ol,
-  ul {
-    padding: 0 0 0 1em;
+	ol,
+	ul {
+		padding: 0 0 0 1em;
 
-    li {
-      margin: 0.2em 0;
+		li {
+			margin: 0.2em 0;
 
-      &:last-child {
-        margin-bottom: 0;
-      }
+			&:last-child {
+				margin-bottom: 0;
+			}
 
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-  }
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
 
-  ul {
-    list-style-type: disc;
+	ul {
+		list-style-type: disc;
 
-    ul {
-      list-style-type: circle;
+		ul {
+			list-style-type: circle;
 
-      ul {
-        list-style-type: square;
-      }
-    }
-  }
+			ul {
+				list-style-type: square;
+			}
+		}
+	}
 }

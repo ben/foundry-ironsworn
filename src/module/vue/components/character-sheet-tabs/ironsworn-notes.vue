@@ -1,5 +1,5 @@
 <template>
-  <MceEditor v-model="actor.system.biography" @save="immediateSave" />
+	<MceEditor v-model="actor.system.biography" @save="immediateSave" />
 </template>
 
 <script setup lang="ts">
@@ -11,6 +11,6 @@ const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const immediateSave = () => {
-  $actor?.update({ 'system.biography': actor.value.system.biography })
+	$actor?.update({ 'system.biography': actor.value.system.biography })
 }
 </script>

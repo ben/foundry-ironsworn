@@ -2,11 +2,11 @@
 // styles for icons
 
 .icon {
-  &::before {
-    display: inline-block;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-  }
+	&::before {
+		display: inline-block;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+	}
 }
 
 // workaround to make FA easier to use as button decoration without adding a whole extra element. the pseudo-element is already there, and can be simply be attached to the parent element rather than it being an <i> element
@@ -27,70 +27,70 @@
 .fas,
 .fass,
 .fat {
-  &:not(i) {
-    text-rendering: inherit;
-    line-height: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    -moz-osx-font-smoothing: inherit;
-    font-variant: inherit;
-    font-style: inherit;
-    speak: inherit;
+	&:not(i) {
+		text-rendering: inherit;
+		line-height: inherit;
+		font-family: inherit;
+		font-weight: inherit;
+		-moz-osx-font-smoothing: inherit;
+		font-variant: inherit;
+		font-style: inherit;
+		speak: inherit;
 
-    &::before {
-      display: var(--fa-display, inline-block);
-      text-rendering: auto;
-      line-height: 1;
-      -moz-osx-font-smoothing: grayscale;
-      -webkit-font-smoothing: antialiased;
-      font-variant: normal;
-      font-style: normal;
-    }
-  }
+		&::before {
+			display: var(--fa-display, inline-block);
+			text-rendering: auto;
+			line-height: 1;
+			-moz-osx-font-smoothing: grayscale;
+			-webkit-font-smoothing: antialiased;
+			font-variant: normal;
+			font-style: normal;
+		}
+	}
 }
 
 .fa-thin,
 .fat {
-  &:not(i) {
-    font-weight: unset;
+	&:not(i) {
+		font-weight: unset;
 
-    &::before {
-      font-weight: 100;
-    }
-  }
+		&::before {
+			font-weight: 100;
+		}
+	}
 }
 
 .fa-light,
 .fal {
-  &:not(i) {
-    font-weight: unset;
+	&:not(i) {
+		font-weight: unset;
 
-    &::before {
-      font-weight: 300;
-    }
-  }
+		&::before {
+			font-weight: 300;
+		}
+	}
 }
 
 .fa-regular,
 .far {
-  &:not(i) {
-    font-weight: unset;
+	&:not(i) {
+		font-weight: unset;
 
-    &::before {
-      font-weight: 400;
-    }
-  }
+		&::before {
+			font-weight: 400;
+		}
+	}
 }
 
 .fa-solid,
 .fas {
-  &:not(i) {
-    font-weight: unset;
+	&:not(i) {
+		font-weight: unset;
 
-    &::before {
-      font-weight: 900;
-    }
-  }
+		&::before {
+			font-weight: 900;
+		}
+	}
 }
 
 .fa-classic,
@@ -102,23 +102,23 @@
 .far,
 .fas,
 .fat {
-  &:not(i) {
-    &::before {
-      font-family: 'Font Awesome 6 Pro';
-    }
-  }
+	&:not(i) {
+		&::before {
+			font-family: 'Font Awesome 6 Pro';
+		}
+	}
 }
 
 [class^='isicon-']::before,
 [class*=' isicon-']::before {
-  display: inline-block;
-  background-color: currentcolor; // inherits text color by default. any valid background is fine if you want to get fancy, though.
-  width: var(--ironsworn-icon-size);
-  height: var(--ironsworn-icon-size);
-  content: '';
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: contain;
+	display: inline-block;
+	background-color: currentcolor; // inherits text color by default. any valid background is fine if you want to get fancy, though.
+	width: var(--ironsworn-icon-size);
+	height: var(--ironsworn-icon-size);
+	content: '';
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: contain;
 }
 
 [class^='isiconbg-'],
@@ -127,89 +127,89 @@
 [class*=' isicon-'],
 [class^='fa-'],
 [class*=' fa-'] {
-  i.juicy &,
-  &:not(i).juicy::before {
-    font-size: 120%;
-  }
+	i.juicy &,
+	&:not(i).juicy::before {
+		font-size: 120%;
+	}
 }
 
 // BACKGROUND ICONS
 
 [class^='isiconbg-'],
 [class*=' isiconbg-'] {
-  position: relative; // required for the pseudo-element's position to function
-  z-index: 1;
+	position: relative; // required for the pseudo-element's position to function
+	z-index: 1;
 
-  &::before {
-    box-sizing: border-box;
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: var(--ironsworn-z-index-low);
-    background-color: var(--ironsworn-color-fg-30);
-    width: 100%;
-    height: 100%;
-    content: '';
-    mask-origin: content-box; // this + above make this sensitive to padding on the :before pseudo-element.
-    mask-position: center;
-    mask-repeat: no-repeat;
-    mask-size: contain;
-  }
+	&::before {
+		box-sizing: border-box;
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: var(--ironsworn-z-index-low);
+		background-color: var(--ironsworn-color-fg-30);
+		width: 100%;
+		height: 100%;
+		content: '';
+		mask-origin: content-box; // this + above make this sensitive to padding on the :before pseudo-element.
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: contain;
+	}
 }
 
 // additional CSS to maintain compatibility with FVTT's icon fonts until FVTT drops icon fonts
 // if the icon needs to be clickable, IronBtn + FontIcon/IronIcon should be preferred instead
 [class^='isicon-'],
 [class*=' isicon-'] {
-  i & {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1em;
-    height: 1em;
-    vertical-align: inherit;
+	i & {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 1em;
+		height: 1em;
+		vertical-align: inherit;
 
-    &::before {
-      width: 100%;
-      height: 100%;
-    }
-  }
+		&::before {
+			width: 100%;
+			height: 100%;
+		}
+	}
 }
 
 i {
-  &[class^='isicon-'],
-  &[class*=' isicon-'] {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: inherit;
-    aspect-ratio: 1;
+	&[class^='isicon-'],
+	&[class*=' isicon-'] {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: inherit;
+		aspect-ratio: 1;
 
-    &::before {
-      display: flex;
-      width: var(--ironsworn-icon-size);
-      height: var(--ironsworn-icon-size);
-    }
-  }
+		&::before {
+			display: flex;
+			width: var(--ironsworn-icon-size);
+			height: var(--ironsworn-icon-size);
+		}
+	}
 }
 
 // Canvas buttons
 
 .scene-control,
 .control-tool {
-  .ironsworn-icon.block-icon {
-    --ironsworn-block-icon-spacer: 1px;
-    --ironsworn-scene-control-size: 38px;
-    --ironsworn-icon-size: 34px;
+	.ironsworn-icon.block-icon {
+		--ironsworn-block-icon-spacer: 1px;
+		--ironsworn-scene-control-size: 38px;
+		--ironsworn-icon-size: 34px;
 
-    padding: var(--ironsworn-block-icon-spacer);
+		padding: var(--ironsworn-block-icon-spacer);
 
-    &::before {
-      width: var(--ironsworn-icon-size);
-      height: var(--ironsworn-icon-size);
-    }
-  }
+		&::before {
+			width: var(--ironsworn-icon-size);
+			height: var(--ironsworn-icon-size);
+		}
+	}
 }
 
 // FVTT doesn't get subtype icons from items in compendium packs, so we override them depending on the pack
@@ -217,64 +217,64 @@ i {
 // NPC actor
 a[data-pack='foundry-ironsworn.foeactorsis'],
 a[data-pack='foundry-ironsworn.foeactorssf'] {
-  i::before {
-    content: '\f630';
-  }
+	i::before {
+		content: '\f630';
+	}
 }
 
 // Assets
 a[data-pack='foundry-ironsworn.starforgedassets'],
 a[data-pack='foundry-ironsworn.ironswornassets'] {
-  i::before {
-    content: '\e4df';
-  }
+	i::before {
+		content: '\e4df';
+	}
 }
 
 // Delve site themes + domains
 a[data-pack='foundry-ironsworn.ironsworndelvedomains'],
 a[data-pack='foundry-ironsworn.ironsworndelvethemes'] {
-  i {
-    &::before {
-      position: absolute;
-      opacity: var(--fa-primary-opacity, 1);
-      color: var(--fa-primary-color, inherit);
-      content: '\e4df';
-    }
+	i {
+		&::before {
+			position: absolute;
+			opacity: var(--fa-primary-opacity, 1);
+			color: var(--fa-primary-color, inherit);
+			content: '\e4df';
+		}
 
-    &::after {
-      opacity: var(--fa-secondary-opacity, 0.4);
-      color: var(--fa-secondary-color, inherit);
-      content: '\e4df\e4df';
-    }
-  }
+		&::after {
+			opacity: var(--fa-secondary-opacity, 0.4);
+			color: var(--fa-secondary-color, inherit);
+			content: '\e4df\e4df';
+		}
+	}
 }
 
 // Moves
 a[data-pack='foundry-ironsworn.ironswornmoves'],
 a[data-pack='foundry-ironsworn.starforgedmoves'] {
-  & > i {
-    align-self: center;
-    width: var(--ironsworn-icon-size);
-    height: var(--ironsworn-icon-size);
+	& > i {
+		align-self: center;
+		width: var(--ironsworn-icon-size);
+		height: var(--ironsworn-icon-size);
 
-    &::before {
-      display: inline-block;
-      background-color: currentcolor;
-      width: var(--ironsworn-icon-size);
-      height: var(--ironsworn-icon-size);
-      content: '';
-      mask-repeat: no-repeat;
-      mask-position: center;
-      mask-size: contain;
-      mask-image: var(--isicon-d10-tilt);
-    }
-  }
+		&::before {
+			display: inline-block;
+			background-color: currentcolor;
+			width: var(--ironsworn-icon-size);
+			height: var(--ironsworn-icon-size);
+			content: '';
+			mask-repeat: no-repeat;
+			mask-position: center;
+			mask-size: contain;
+			mask-image: var(--isicon-d10-tilt);
+		}
+	}
 }
 
 // NPC progress track
 a[data-pack='foundry-ironsworn.ironswornfoes'],
 a[data-pack='foundry-ironsworn.starforgedencounters'] {
-  i::before {
-    content: '\2a';
-  }
+	i::before {
+		content: '\2a';
+	}
 }

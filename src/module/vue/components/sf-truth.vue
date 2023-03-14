@@ -1,54 +1,51 @@
 <template>
-  <div class="flexrow">
-    <input
-      type="radio"
-      class="nogrow"
-      style="flex: 0 0 20px; margin: 8px"
-      :name="radiogroup"
-      :id="truth?.$id"
-      :value="radiovalue"
-      @change="changed"
-    />
-    <div class="flexcol">
-      <label :for="truth?.$id">
-        <p>
-          <strong>{{ truth?.Result }}</strong>
-        </p>
-        <p>{{ truth?.Description }}</p>
+	<div class="flexrow">
+		<input
+			type="radio"
+			class="nogrow"
+			style="flex: 0 0 20px; margin: 8px"
+			:name="radiogroup"
+			:id="truth?.$id"
+			:value="radiovalue"
+			@change="changed" />
+		<div class="flexcol">
+			<label :for="truth?.$id">
+				<p>
+					<strong>{{ truth?.Result }}</strong>
+				</p>
+				<p>{{ truth?.Description }}</p>
 
-        <CollapseTransition v-if="truth?.Subtable">
-          <div v-show="data.selected">
-            <div
-              class="flexrow"
-              v-for="suboption in truth?.Subtable"
-              :key="suboption.$id || ''"
-            >
-              <input
-                type="radio"
-                class="nogrow"
-                style="flex: 0 0 20px; margin: 8px"
-                :name="truth?.$id"
-                :id="suboption.$id || ''"
-                :value="suboption.Result"
-                v-model="data.subOptionDescription"
-                @change="changed"
-              />
-              <label :for="suboption.$id || ''">
-                <p>{{ suboption.Result }}</p>
-              </label>
-            </div>
-          </div>
-        </CollapseTransition>
+				<CollapseTransition v-if="truth?.Subtable">
+					<div v-show="data.selected">
+						<div
+							class="flexrow"
+							v-for="suboption in truth?.Subtable"
+							:key="suboption.$id || ''">
+							<input
+								type="radio"
+								class="nogrow"
+								style="flex: 0 0 20px; margin: 8px"
+								:name="truth?.$id"
+								:id="suboption.$id || ''"
+								:value="suboption.Result"
+								v-model="data.subOptionDescription"
+								@change="changed" />
+							<label :for="suboption.$id || ''">
+								<p>{{ suboption.Result }}</p>
+							</label>
+						</div>
+					</div>
+				</CollapseTransition>
 
-        <p>
-          <em>
-            {{ $t('IRONSWORN.TruthQuestStarter') }}
-            {{ truth?.['Quest Starter'] }}
-          </em>
-        </p>
-      </label>
-    </div>
-  </div>
+				<p>
+					<em>
+						{{ $t('IRONSWORN.TruthQuestStarter') }}
+						{{ truth?.['Quest Starter'] }}
+					</em>
+				</p>
+			</label>
+		</div>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -57,26 +54,26 @@ import { ISettingTruthOption } from 'dataforged'
 import CollapseTransition from './transition/collapse-transition.vue'
 
 const props = defineProps<{
-  radiogroup: string
-  truth: ISettingTruthOption
+	radiogroup: string
+	truth: ISettingTruthOption
 }>()
 
 const $emit = defineEmits({
-  change(category: string, value: string) {
-    return category.length > 0 && value.length > 0
-  },
+	change(category: string, value: string) {
+		return category.length > 0 && value.length > 0
+	}
 })
 
 const data = reactive({
-  selected: false,
-  subOptionDescription: '',
+	selected: false,
+	subOptionDescription: ''
 })
 
 const radiovalue = computed(() => {
-  const subOptionText = data.subOptionDescription
-    ? `(${data.subOptionDescription})`
-    : ''
-  return `
+	const subOptionText = data.subOptionDescription
+		? `(${data.subOptionDescription})`
+		: ''
+	return `
       <p><strong>${props.truth.Result}</strong></p>
       <p>${props.truth.Description} ${subOptionText}</p>
       <p><em>
@@ -87,7 +84,7 @@ const radiovalue = computed(() => {
 })
 
 function changed(evt) {
-  data.selected = evt.target.checked
-  $emit('change', props.radiogroup, radiovalue.value)
+	data.selected = evt.target.checked
+	$emit('change', props.radiogroup, radiovalue.value)
 }
 </script>

@@ -1,55 +1,52 @@
 <template>
-  <article :class="$style.wrapper" class="sf-legacies flexcol">
-    <section class="legacy-tracks flexcol" :class="$style.legacyTracks">
-      <LegacyTrack
-        v-for="legacy in ['quests', 'bonds', 'discoveries']"
-        :key="legacy"
-        :actor="actor"
-        :legacy="(legacy as any)"
-        class="nogrow"
-        :class="$style.legacyTrack"
-      />
-    </section>
-    <section
-      :class="$style.starredProgress"
-      class="starred-progress-tracks flexcol"
-      v-if="starredProgresses.length"
-    >
-      <ProgressListItem
-        v-for="(progressItem, i) in starredProgresses"
-        :length="starredProgresses.length"
-        :i="i"
-        :key="`progress-item-${i}`"
-        :item="progressItem"
-        :show-star="true"
-        class="nogrow"
-      />
-    </section>
-  </article>
+	<article :class="$style.wrapper" class="sf-legacies flexcol">
+		<section class="legacy-tracks flexcol" :class="$style.legacyTracks">
+			<LegacyTrack
+				v-for="legacy in ['quests', 'bonds', 'discoveries']"
+				:key="legacy"
+				:actor="actor"
+				:legacy="(legacy as any)"
+				class="nogrow"
+				:class="$style.legacyTrack" />
+		</section>
+		<section
+			:class="$style.starredProgress"
+			class="starred-progress-tracks flexcol"
+			v-if="starredProgresses.length">
+			<ProgressListItem
+				v-for="(progressItem, i) in starredProgresses"
+				:length="starredProgresses.length"
+				:i="i"
+				:key="`progress-item-${i}`"
+				:item="progressItem"
+				:show-star="true"
+				class="nogrow" />
+		</section>
+	</article>
 </template>
 <style lang="scss" module>
 .wrapper {
-  gap: var(--ironsworn-spacer-md);
+	gap: var(--ironsworn-spacer-md);
 
-  > *:not(:first-child) {
-    border-top: var(--ironsworn-border-width-md) solid
-      var(--ironsworn-color-border);
-  }
+	> *:not(:first-child) {
+		border-top: var(--ironsworn-border-width-md) solid
+			var(--ironsworn-color-border);
+	}
 }
 
 .starredProgress {
-  gap: var(--ironsworn-spacer-md);
-  padding: var(--ironsworn-spacer-md) 0;
+	gap: var(--ironsworn-spacer-md);
+	padding: var(--ironsworn-spacer-md) 0;
 }
 
 .legacyTracks {
-  gap: var(--ironsworn-spacer-md);
-  align-items: center;
+	gap: var(--ironsworn-spacer-md);
+	align-items: center;
 }
 
 .legacyTrack {
-  width: 100%;
-  height: max-content;
+	width: 100%;
+	height: max-content;
 }
 </style>
 
@@ -63,10 +60,10 @@ import { ActorKey } from '../../provisions.js'
 const actor = inject(ActorKey) as Ref
 
 const starredProgresses = computed(() =>
-  actor?.value.items.filter(
-    (item) =>
-      item.type === 'progress' &&
-      (item.system as unknown as ProgressDataPropertiesData)?.starred
-  )
+	actor?.value.items.filter(
+		(item) =>
+			item.type === 'progress' &&
+			(item.system as unknown as ProgressDataPropertiesData)?.starred
+	)
 )
 </script>

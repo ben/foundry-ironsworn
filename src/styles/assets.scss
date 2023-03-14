@@ -3,103 +3,103 @@
 @use 'mixin:text.scss';
 
 .ironsworn__asset {
-  transition: var(--ironsworn-transition);
-  overflow: hidden;
+	transition: var(--ironsworn-transition);
+	overflow: hidden;
 
-  .asset-header {
-    gap: var(--ironsworn-spacer-lg);
-    align-items: center;
+	.asset-header {
+		gap: var(--ironsworn-spacer-lg);
+		align-items: center;
 
-    .asset-expand-toggle {
-      display: flex;
-      flex-flow: row wrap;
-      gap: var(--ironsworn-spacer-lg);
-      transition: var(--ironsworn-transition);
-      box-shadow: none !important;
-      background: none;
-    }
+		.asset-expand-toggle {
+			display: flex;
+			flex-flow: row wrap;
+			gap: var(--ironsworn-spacer-lg);
+			transition: var(--ironsworn-transition);
+			box-shadow: none !important;
+			background: none;
+		}
 
-    .asset-title {
-      transition: inherit;
-      margin: 0;
-      text-transform: uppercase;
-      line-height: 1;
-      word-spacing: var(--ironsworn-word-spacing-sm);
-      letter-spacing: var(--ironsworn-letter-spacing-sm);
-      font-size: var(--font-size-14);
-      font-weight: bold;
-    }
+		.asset-title {
+			transition: inherit;
+			margin: 0;
+			text-transform: uppercase;
+			line-height: 1;
+			word-spacing: var(--ironsworn-word-spacing-sm);
+			letter-spacing: var(--ironsworn-letter-spacing-sm);
+			font-size: var(--font-size-14);
+			font-weight: bold;
+		}
 
-    .asset-type {
-      flex-grow: 0;
-      transition: inherit;
-      line-height: 1;
-      color: var(--ironsworn-color-thematic);
-      font-style: italic;
-    }
+		.asset-type {
+			flex-grow: 0;
+			transition: inherit;
+			line-height: 1;
+			color: var(--ironsworn-color-thematic);
+			font-style: italic;
+		}
 
-    .asset-controls {
-      display: flex;
-      flex-grow: 0;
-      flex-wrap: nowrap;
-      justify-items: flex-end;
-    }
-  }
+		.asset-controls {
+			display: flex;
+			flex-grow: 0;
+			flex-wrap: nowrap;
+			justify-items: flex-end;
+		}
+	}
 
-  .asset-body {
-    gap: var(--ironsworn-spacer-lg);
-    transition: var(--ironsworn-transition);
-    padding: var(--ironsworn-spacer-sm);
-    overflow: hidden;
+	.asset-body {
+		gap: var(--ironsworn-spacer-lg);
+		transition: var(--ironsworn-transition);
+		padding: var(--ironsworn-spacer-sm);
+		overflow: hidden;
 
-    .asset-fields {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
+		.asset-fields {
+			display: flex;
+			flex-direction: column;
+			margin: 0;
 
-      .asset-field {
-        display: flex;
-        flex-direction: row;
-        flex-grow: 0;
-        gap: var(--ironsworn-spacer-sm);
-        border-bottom-width: var(--ironsworn-border-width-md);
-        border-bottom-style: solid;
-        border-bottom-color: var(--ironsworn-color-thematic);
+			.asset-field {
+				display: flex;
+				flex-direction: row;
+				flex-grow: 0;
+				gap: var(--ironsworn-spacer-sm);
+				border-bottom-width: var(--ironsworn-border-width-md);
+				border-bottom-style: solid;
+				border-bottom-color: var(--ironsworn-color-thematic);
 
-        .asset-field-label {
-          margin: 0;
-          padding: 0;
-        }
+				.asset-field-label {
+					margin: 0;
+					padding: 0;
+				}
 
-        .asset-field-value {
-          flex-grow: 1;
-          margin: 0;
-          padding: 0 var(--ironsworn-spacer-sm);
-        }
-      }
-    }
+				.asset-field-value {
+					flex-grow: 1;
+					margin: 0;
+					padding: 0 var(--ironsworn-spacer-sm);
+				}
+			}
+		}
 
-    .asset-abilities {
-      gap: var(--ironsworn-spacer-lg);
-      padding-left: var(--ironsworn-spacer-lg);
-    }
-  }
+		.asset-abilities {
+			gap: var(--ironsworn-spacer-lg);
+			padding-left: var(--ironsworn-spacer-lg);
+		}
+	}
 }
 
 .asset-condition-meter {
-  gap: var(--ironsworn-spacer-sm);
+	gap: var(--ironsworn-spacer-sm);
 
-  .icon-button .button-text {
-    text-align: left;
-  }
+	.icon-button .button-text {
+		text-align: left;
+	}
 
-  .slider-segment {
-    --ironsworn-text-stroke-color: var(--ironsworn-dark-color);
+	.slider-segment {
+		--ironsworn-text-stroke-color: var(--ironsworn-dark-color);
 
-    @include text.stroke;
-  }
+		@include text.stroke;
+	}
 }
 
 .asset-starforged {
-  @include decoration.starforgedAssetDeco(50px, 32px);
+	@include decoration.starforgedAssetDeco(50px, 32px);
 }

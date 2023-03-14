@@ -1,18 +1,18 @@
 <template>
-  <RulesText class="rules-text-oracle" :source="source" type="slot">
-    <template #default>
-      <OracleTable :oracleTable="oracleTable" />
-    </template>
-    <template #before-main>
-      <slot name="before-main"></slot>
-    </template>
-    <template #after-main>
-      <slot name="after-main"></slot>
-    </template>
-    <template #after-footer>
-      <slot name="after-footer"></slot>
-    </template>
-  </RulesText>
+	<RulesText class="rules-text-oracle" :source="source" type="slot">
+		<template #default>
+			<OracleTable :oracleTable="oracleTable" />
+		</template>
+		<template #before-main>
+			<slot name="before-main"></slot>
+		</template>
+		<template #after-main>
+			<slot name="after-main"></slot>
+		</template>
+		<template #after-footer>
+			<slot name="after-footer"></slot>
+		</template>
+	</RulesText>
 </template>
 
 <script setup lang="ts">

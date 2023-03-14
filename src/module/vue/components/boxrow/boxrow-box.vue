@@ -1,11 +1,10 @@
 <template>
-  <div
-    class="box clickable block"
-    :class="{ selected }"
-    @click="$emit('click', value)"
-  >
-    {{ text }}
-  </div>
+	<div
+		class="box clickable block"
+		:class="{ selected }"
+		@click="$emit('click', value)">
+		{{ text }}
+	</div>
 </template>
 
 <script setup lang="ts">

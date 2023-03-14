@@ -1,10 +1,10 @@
 import type { IOutcomeInfo, RollMethod } from 'dataforged'
 import {
-  capitalize,
-  compact,
-  fromPairs,
-  isUndefined,
-  kebabCase,
+	capitalize,
+	compact,
+	fromPairs,
+	isUndefined,
+	kebabCase
 } from 'lodash-es'
 import { IronswornRoll } from '.'
 import type { IronswornActor } from '../actor/actor'
@@ -16,11 +16,11 @@ import { enrichMarkdown } from '../vue/vue-plugin'
 import { DfRollOutcome, RollOutcome } from './ironsworn-roll'
 import { renderRollGraphic } from './roll-graphic'
 
-type MoveTemplateData = {
-  outcomeClass?: string
-  outcomeText?: string
-  outcomeReplacementReason?: string
-  moveOutcome?: string
+interface MoveTemplateData {
+	outcomeClass?: string
+	outcomeText?: string
+	outcomeReplacementReason?: string
+	moveOutcome?: string
 }
 
 /**
@@ -34,9 +34,9 @@ type MoveTemplateData = {
  * ```
  */
 export function formatRollPlusStat(stat: string) {
-  let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
-  if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
-  return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
+	let localizedStat = game.i18n.localize('IRONSWORN.' + capitalize(stat))
+	if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat
+	return game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
 }
 
 /**
@@ -49,33 +49,33 @@ export function formatRollPlusStat(stat: string) {
  * // returns "roll highest of spirit, heart, wits" for en.json
  */
 export function formatRollMethod(rollMethod: RollMethod, stats: string[]) {
-  // skip if there's no choice to be made
-  if (stats.length === 1) {
-    return formatRollPlusStat(stats[0])
-  }
-  // canonical triggers have 2 stats; there's a good chance a nice string already exists, so we check for that first.
-  const localizedStats = stats.map((stat) =>
-    game.i18n.localize('IRONSWORN.' + capitalize(stat))
-  )
-  const methodKeyRoot = `IRONSWORN.roll method.${rollMethod}`
-  const possibleNiceKey = `${methodKeyRoot}.${stats.length}`
-  if (game.i18n.has(possibleNiceKey)) {
-    /**
-     * @example {stat1: "iron", stat2: "health"}
-     */
-    const statStringHash = fromPairs(
-      localizedStats.map((stat, index) => [`stat${index + 1}`, stat])
-    )
-    return game.i18n.format(possibleNiceKey, statStringHash)
-  }
-  const fallbackKey = `${methodKeyRoot}.fallback`
+	// skip if there's no choice to be made
+	if (stats.length === 1) {
+		return formatRollPlusStat(stats[0])
+	}
+	// canonical triggers have 2 stats; there's a good chance a nice string already exists, so we check for that first.
+	const localizedStats = stats.map((stat) =>
+		game.i18n.localize('IRONSWORN.' + capitalize(stat))
+	)
+	const methodKeyRoot = `IRONSWORN.roll method.${rollMethod}`
+	const possibleNiceKey = `${methodKeyRoot}.${stats.length}`
+	if (game.i18n.has(possibleNiceKey)) {
+		/**
+		 * @example {stat1: "iron", stat2: "health"}
+		 */
+		const statStringHash = fromPairs(
+			localizedStats.map((stat, index) => [`stat${index + 1}`, stat])
+		)
+		return game.i18n.format(possibleNiceKey, statStringHash)
+	}
+	const fallbackKey = `${methodKeyRoot}.fallback`
 
-  // TODO: figure out if the separator would differ in some languages?
-  const separator = ', '
-  const statList = localizedStats.join(separator)
-  return game.i18n.format(fallbackKey, {
-    statList,
-  })
+	// TODO: figure out if the separator would differ in some languages?
+	const separator = ', '
+	const statList = localizedStats.join(separator)
+	return game.i18n.format(fallbackKey, {
+		statList
+	})
 }
 
 /**
@@ -85,13 +85,13 @@ export function formatRollMethod(rollMethod: RollMethod, stats: string[]) {
  * @param challengeDie2 The value of the second challenge die.
  */
 export function computeRollOutcome(
-  score: number,
-  challengeDie1: number,
-  challengeDie2: number
+	score: number,
+	challengeDie1: number,
+	challengeDie2: number
 ): RollOutcome {
-  return [challengeDie1, challengeDie2].filter(
-    (challengeDie) => score > challengeDie
-  ).length
+	return [challengeDie1, challengeDie2].filter(
+		(challengeDie) => score > challengeDie
+	).length
 }
 
 /**
@@ -100,14 +100,14 @@ export function computeRollOutcome(
  * @param match Whether or not the outcome has matched challenge dice.
  */
 export function computeOutcomeText(
-  outcome: RollOutcome | DfRollOutcome,
-  match?: boolean | undefined
+	outcome: RollOutcome | DfRollOutcome,
+	match?: boolean | undefined
 ) {
-  let outcomeKey = RollOutcome[outcome]
-  if (match) {
-    outcomeKey += '_match'
-  }
-  return game.i18n.localize(`IRONSWORN.${outcomeKey}`)
+	let outcomeKey = RollOutcome[outcome]
+	if (match) {
+		outcomeKey += '_match'
+	}
+	return game.i18n.localize(`IRONSWORN.${outcomeKey}`)
 }
 
 /**
@@ -116,216 +116,216 @@ export function computeOutcomeText(
  * @param momentumOutcome The outcome after burning momentum.
  */
 export function momentumBurnWouldUpgrade(
-  rawOutcome: RollOutcome | undefined,
-  momentumOutcome: RollOutcome
+	rawOutcome: RollOutcome | undefined,
+	momentumOutcome: RollOutcome
 ) {
-  return rawOutcome ? momentumOutcome > rawOutcome : false
+	return rawOutcome ? momentumOutcome > rawOutcome : false
 }
 
 type i18nOutcomeKey =
-  | `${keyof typeof RollOutcome}`
-  | `${keyof typeof RollOutcome}_match`
+	| `${keyof typeof RollOutcome}`
+	| `${keyof typeof RollOutcome}_match`
 
 export function outcomeKey(
-  outcome: RollOutcome,
-  match: boolean
+	outcome: RollOutcome,
+	match: boolean
 ): i18nOutcomeKey {
-  let key: i18nOutcomeKey = RollOutcome[outcome] as keyof typeof RollOutcome
-  if (match) {
-    key += '_match'
-  }
-  return key as i18nOutcomeKey
+	let key: i18nOutcomeKey = RollOutcome[outcome] as keyof typeof RollOutcome
+	if (match) {
+		key += '_match'
+	}
+	return key as i18nOutcomeKey
 }
 
 export class IronswornRollMessage {
-  constructor(public roll: IronswornRoll, public actor?: IronswornActor) {
-    if (!actor && roll.preRollOptions.actorId) {
-      this.actor = game.actors?.get(roll.preRollOptions.actorId)
-    }
-  }
+	constructor(public roll: IronswornRoll, public actor?: IronswornActor) {
+		if ((actor == null) && roll.preRollOptions.actorId) {
+			this.actor = game.actors?.get(roll.preRollOptions.actorId)
+		}
+	}
 
-  static async fromMessage(
-    messageId: string
-  ): Promise<IronswornRollMessage | undefined> {
-    const msg = game.messages?.get(messageId)
-    const html = await msg?.getHTML()
+	static async fromMessage(
+		messageId: string
+	): Promise<IronswornRollMessage | undefined> {
+		const msg = game.messages?.get(messageId)
+		const html = await msg?.getHTML()
 
-    // Reconstitute roll
-    const json = html?.find('.ironsworn-roll').data('ironswornroll')
-    if (!json) return undefined
+		// Reconstitute roll
+		const json = html?.find('.ironsworn-roll').data('ironswornroll')
+		if (!json) return undefined
 
-    const r = IronswornRoll.fromJson(json)
-    r.chatMessageId = messageId
-    r.roll = msg?.roll || undefined
+		const r = IronswornRoll.fromJson(json)
+		r.chatMessageId = messageId
+		r.roll = ((msg?.roll) != null) || undefined
 
-    return new IronswornRollMessage(r)
-  }
+		return new IronswornRollMessage(r)
+	}
 
-  async burnMomentum() {
-    if (this.actor?.type !== 'character') return
-    const { momentum } = this.actor.system as CharacterDataPropertiesData
+	async burnMomentum() {
+		if (this.actor?.type !== 'character') return
+		const { momentum } = this.actor.system as CharacterDataPropertiesData
 
-    const [c1, c2] = this.roll.finalChallengeDice ?? []
-    if (c1 === undefined || c2 === undefined) return
+		const [c1, c2] = this.roll.finalChallengeDice ?? []
+		if (c1 === undefined || c2 === undefined) return
 
-    await this.actor.burnMomentum()
-    this.roll.postRollOptions.replacedOutcome = {
-      value: computeRollOutcome(momentum, c1.value, c2.value),
-      source: game.i18n.localize('IRONSWORN.MomentumBurnt'),
-    }
-    return this.createOrUpdate()
-  }
+		await this.actor.burnMomentum()
+		this.roll.postRollOptions.replacedOutcome = {
+			value: computeRollOutcome(momentum, c1.value, c2.value),
+			source: game.i18n.localize('IRONSWORN.MomentumBurnt')
+		}
+		return await this.createOrUpdate()
+	}
 
-  async createOrUpdate() {
-    await this.roll.evaluate()
+	async createOrUpdate() {
+		await this.roll.evaluate()
 
-    // console.log('sent renderData', renderData)
-    const renderData = {
-      graphic: await renderRollGraphic({ roll: this.roll, hideOutcome: true }),
-      ironswornroll: this.roll.serialize(),
-      move: await this.roll.moveItem,
-      ...(await this.titleData()),
-      ...(await this.moveData()),
-      ...(await this.challengeDiceData()),
-      ...(await this.momentumData()),
-      ...(await this.oraclesData()),
-    }
-    const content = await renderTemplate(
-      'systems/foundry-ironsworn/templates/rolls/ironsworn-roll-message.hbs',
-      renderData
-    )
+		// console.log('sent renderData', renderData)
+		const renderData = {
+			graphic: await renderRollGraphic({ roll: this.roll, hideOutcome: true }),
+			ironswornroll: this.roll.serialize(),
+			move: await this.roll.moveItem,
+			...(await this.titleData()),
+			...(await this.moveData()),
+			...(await this.challengeDiceData()),
+			...(await this.momentumData()),
+			...(await this.oraclesData())
+		}
+		const content = await renderTemplate(
+			'systems/foundry-ironsworn/templates/rolls/ironsworn-roll-message.hbs',
+			renderData
+		)
 
-    if (this.roll.chatMessageId) {
-      const msg = game.messages?.get(this.roll.chatMessageId)
-      return msg?.update({ content })
-    } else {
-      const speaker = ChatMessage.getSpeaker()
-      if (this.actor) {
-        speaker.actor = this.actor.id
-        speaker.alias = this.actor.name || undefined
-      }
-      const messageData = {
-        speaker,
-        content,
-        type: CONST.CHAT_MESSAGE_TYPES.ROLL,
-        roll: this.roll.roll,
-      }
+		if (this.roll.chatMessageId) {
+			const msg = game.messages?.get(this.roll.chatMessageId)
+			return await msg?.update({ content })
+		} else {
+			const speaker = ChatMessage.getSpeaker()
+			if (this.actor != null) {
+				speaker.actor = this.actor.id
+				speaker.alias = this.actor.name || undefined
+			}
+			const messageData = {
+				speaker,
+				content,
+				type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+				roll: this.roll.roll
+			}
 
-      const cls = CONFIG.ChatMessage.documentClass
-      const msg = await cls.create(messageData as any, {})
-      this.roll.chatMessageId = msg?.id
-      return msg
-    }
-  }
+			const cls = CONFIG.ChatMessage.documentClass
+			const msg = await cls.create(messageData as any, {})
+			this.roll.chatMessageId = msg?.id
+			return msg
+		}
+	}
 
-  private async titleData(): Promise<{
-    title: string
-  }> {
-    const move = await this.roll.moveItem
+	private async titleData(): Promise<{
+		title: string
+	}> {
+		const move = await this.roll.moveItem
 
-    const { progress, stat } = this.roll.preRollOptions
-    if (progress) {
-      const prefix = move?.name || game.i18n.localize('IRONSWORN.ProgressRoll')
-      return {
-        title: `${prefix}: ${progress.source}`,
-      }
-    }
+		const { progress, stat } = this.roll.preRollOptions
+		if (progress != null) {
+			const prefix = move?.name || game.i18n.localize('IRONSWORN.ProgressRoll')
+			return {
+				title: `${prefix}: ${progress.source}`
+			}
+		}
 
-    if (!stat) throw new Error('Need progress or stat here')
+		if (stat == null) throw new Error('Need progress or stat here')
 
-    if (move) {
-      return { title: `${move.name} +${stat.source}` }
-    }
-    let localizedStat = game.i18n.localize(
-      'IRONSWORN.' + capitalize(stat.source)
-    )
-    if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat.source
-    return {
-      title: game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat }),
-    }
-  }
+		if (move != null) {
+			return { title: `${move.name} +${stat.source}` }
+		}
+		let localizedStat = game.i18n.localize(
+			'IRONSWORN.' + capitalize(stat.source)
+		)
+		if (localizedStat.startsWith('IRONSWORN.')) localizedStat = stat.source
+		return {
+			title: game.i18n.format('IRONSWORN.roll +x', { stat: localizedStat })
+		}
+	}
 
-  private async moveData(): Promise<MoveTemplateData> {
-    // Outcome can be overridden
-    const theOutcome = this.roll.finalOutcome?.value
-    if (theOutcome === undefined) return {}
+	private async moveData(): Promise<MoveTemplateData> {
+		// Outcome can be overridden
+		const theOutcome = this.roll.finalOutcome?.value
+		if (theOutcome === undefined) return {}
 
-    // Original outcome
-    const ret: MoveTemplateData = {
-      outcomeText: computeOutcomeText(theOutcome, this.roll.isMatch),
-      outcomeClass: `${kebabCase(RollOutcome[theOutcome])}${
-        this.roll.isMatch ? ' match' : ''
-      }`,
-      outcomeReplacementReason:
-        this.roll.postRollOptions.replacedOutcome?.source,
-    }
-    const move = await this.roll.moveItem
-    if (move?.type !== 'sfmove') return ret
+		// Original outcome
+		const ret: MoveTemplateData = {
+			outcomeText: computeOutcomeText(theOutcome, this.roll.isMatch),
+			outcomeClass: `${kebabCase(RollOutcome[theOutcome])}${
+				this.roll.isMatch ? ' match' : ''
+			}`,
+			outcomeReplacementReason:
+				this.roll.postRollOptions.replacedOutcome?.source
+		}
+		const move = await this.roll.moveItem
+		if (move?.type !== 'sfmove') return ret
 
-    const key = DfRollOutcome[theOutcome]
-    const moveSystem = move.system as SFMoveDataPropertiesData
-    let moveOutcome = moveSystem.Outcomes?.[key] as IOutcomeInfo
-    if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
-      moveOutcome = moveOutcome['With a Match']
-    if (moveOutcome) {
-      // Render the markdown here so we can strip the tables.
-      // We include oracle buttons in the chat message, no need to
-      // also spam the table contents.
-      ret.moveOutcome = enrichMarkdown(moveOutcome.Text).replace(
-        /<table>[\s\S]*<\/table>/gm,
-        ''
-      )
-    }
-    return ret
-  }
+		const key = DfRollOutcome[theOutcome]
+		const moveSystem = move.system as SFMoveDataPropertiesData
+		let moveOutcome = moveSystem.Outcomes?.[key] as IOutcomeInfo
+		if (this.roll.isMatch && moveOutcome?.['With a Match']?.Text)
+			moveOutcome = moveOutcome['With a Match']
+		if (moveOutcome) {
+			// Render the markdown here so we can strip the tables.
+			// We include oracle buttons in the chat message, no need to
+			// also spam the table contents.
+			ret.moveOutcome = enrichMarkdown(moveOutcome.Text).replace(
+				/<table>[\s\S]*<\/table>/gm,
+				''
+			)
+		}
+		return ret
+	}
 
-  private challengeDiceData() {
-    // Only continue if this roll needs manual resolution
-    if (!this.roll.preRollOptions.extraChallengeDice) return {}
-    const { replacedChallenge1, replacedChallenge2 } = this.roll.postRollOptions
-    if (replacedChallenge1 && replacedChallenge2) return {}
+	private challengeDiceData() {
+		// Only continue if this roll needs manual resolution
+		if (this.roll.preRollOptions.extraChallengeDice == null) return {}
+		const { replacedChallenge1, replacedChallenge2 } = this.roll.postRollOptions
+		if ((replacedChallenge1 != null) && (replacedChallenge2 != null)) return {}
 
-    return {
-      unresolved: true,
-    }
-  }
+		return {
+			unresolved: true
+		}
+	}
 
-  private momentumData() {
-    if (this.actor?.type !== 'character') return {}
+	private momentumData() {
+		if (this.actor?.type !== 'character') return {}
 
-    // Can't burn momentum on progress rolls
-    if (this.roll.preRollOptions.progress) return {}
+		// Can't burn momentum on progress rolls
+		if (this.roll.preRollOptions.progress != null) return {}
 
-    // If momentum has already been burnt, do not suggest more burns
-    if (this.roll.postRollOptions.replacedOutcome) return {}
+		// If momentum has already been burnt, do not suggest more burns
+		if (this.roll.postRollOptions.replacedOutcome != null) return {}
 
-    const [c1, c2] = this.roll.finalChallengeDice ?? []
-    if (c1 === undefined || c2 === undefined) return {}
+		const [c1, c2] = this.roll.finalChallengeDice ?? []
+		if (c1 === undefined || c2 === undefined) return {}
 
-    const { momentum } = this.actor.system as CharacterDataPropertiesData
-    const rawOutcome = this.roll.rawOutcome?.value
-    const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
+		const { momentum } = this.actor.system as CharacterDataPropertiesData
+		const rawOutcome = this.roll.rawOutcome?.value
+		const momentumBurnOutcome = computeRollOutcome(momentum, c1.value, c2.value)
 
-    if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
-      return {
-        possibleMomentumBurn: computeOutcomeText(
-          momentumBurnOutcome,
-          c1.value === c2.value
-        ),
-      }
-    }
-    return {}
-  }
+		if (!isUndefined(rawOutcome) && momentumBurnOutcome > rawOutcome) {
+			return {
+				possibleMomentumBurn: computeOutcomeText(
+					momentumBurnOutcome,
+					c1.value === c2.value
+				)
+			}
+		}
+		return {}
+	}
 
-  private async oraclesData(): Promise<any> {
-    const move = await this.roll.moveItem
-    if (move?.type !== 'sfmove') return {}
+	private async oraclesData(): Promise<any> {
+		const move = await this.roll.moveItem
+		if (move?.type !== 'sfmove') return {}
 
-    const system = move.system as SFMoveDataPropertiesData
-    const dfIds = system.Oracles ?? []
-    const nextOracles = compact(
-      await Promise.all(dfIds.map(getFoundryTableByDfId))
-    )
-    return { nextOracles }
-  }
+		const system = move.system as SFMoveDataPropertiesData
+		const dfIds = system.Oracles ?? []
+		const nextOracles = compact(
+			await Promise.all(dfIds.map(getFoundryTableByDfId))
+		)
+		return { nextOracles }
+	}
 }

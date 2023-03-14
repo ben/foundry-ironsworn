@@ -5,29 +5,29 @@
 @use 'mixin:decoration.scss';
 
 .theme-ironsworn {
-  // #ff6600 and #ff0000 chosen because they're what FVTT uses for its accents.
+	// #ff6600 and #ff0000 chosen because they're what FVTT uses for its accents.
 
-  @include color.palettize(
-    $fg-color: hsl(0deg 0% 0%),
-    $bg-color: rgb(255 255 255),
-    $warm-color: hsl(24deg 100% 50%),
-    $cool-color: hsl(0deg 100% 50%),
-    $prefix: 'ironsworn-color'
-  );
+	@include color.palettize(
+		$fg-color: hsl(0deg 0% 0%),
+		$bg-color: rgb(255 255 255),
+		$warm-color: hsl(24deg 100% 50%),
+		$cool-color: hsl(0deg 100% 50%),
+		$prefix: 'ironsworn-color'
+	);
 
-  @include color.lightTheme('ironsworn-color');
-  @include color.sharpBorder('ironsworn-color');
-  @include color.interactiveInvert(
-    'ironsworn-color-clickable-block',
-    'ironsworn-color'
-  );
-  @include decoration.ironsworn;
+	@include color.lightTheme('ironsworn-color');
+	@include color.sharpBorder('ironsworn-color');
+	@include color.interactiveInvert(
+		'ironsworn-color-clickable-block',
+		'ironsworn-color'
+	);
+	@include decoration.ironsworn;
 
-  --ironsworn-color-text-stroke: transparent;
+	--ironsworn-color-text-stroke: transparent;
 
-  // CLICKABLE TEXT: HOVER FILTER EFFECT
-  --ironsworn-filter-highlight: drop-shadow(
-    0 0 3px var(--ironsworn-color-cool)
-  );
-  --ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool);
+	// CLICKABLE TEXT: HOVER FILTER EFFECT
+	--ironsworn-filter-highlight: drop-shadow(
+		0 0 3px var(--ironsworn-color-cool)
+	);
+	--ironsworn-box-shadow-highlight: 0 0 3px var(--ironsworn-color-cool);
 }

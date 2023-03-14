@@ -1,105 +1,99 @@
 <template>
-  <div
-    class="flexcol nogrow movesheet-row"
-    :class="{ hidden: node?.forceHidden }"
-    ref="$el"
-    :data-highlighted="state.highlighted"
-    data-tooltip-direction="LEFT"
-    :data-tourid="`oracle-${node.dataforgedNode?.$id}`"
-  >
-    <!-- TODO: split this into two components, yo -->
-    <!-- Leaf node -->
-    <div v-if="isLeaf">
-      <h4 class="flexrow">
-        <BtnOracle :node="node" :text="node?.displayName">
-          <template #icon>
-            <IronIcon name="oracle" size="1.25em" />
-          </template>
-        </BtnOracle>
-        <IronBtn
-          nogrow
-          class="show-oracle-info"
-          @click="toggleDescription()"
-          icon="fa:eye"
-        />
-      </h4>
-      <CollapseTransition>
-        <RulesTextOracle
-          v-if="state.descriptionExpanded"
-          :class="$style.content"
-          @moveclick="moveclick"
-          @oracleclick="oracleclick"
-          :oracle-table="node.tables[0]"
-          :source="node.dataforgedNode?.Source"
-        />
-      </CollapseTransition>
-    </div>
+	<div
+		class="flexcol nogrow movesheet-row"
+		:class="{ hidden: node?.forceHidden }"
+		ref="$el"
+		:data-highlighted="state.highlighted"
+		data-tooltip-direction="LEFT"
+		:data-tourid="`oracle-${node.dataforgedNode?.$id}`">
+		<!-- TODO: split this into two components, yo -->
+		<!-- Leaf node -->
+		<div v-if="isLeaf">
+			<h4 class="flexrow">
+				<BtnOracle :node="node" :text="node?.displayName">
+					<template #icon>
+						<IronIcon name="oracle" size="1.25em" />
+					</template>
+				</BtnOracle>
+				<IronBtn
+					nogrow
+					class="show-oracle-info"
+					@click="toggleDescription()"
+					icon="fa:eye" />
+			</h4>
+			<CollapseTransition>
+				<RulesTextOracle
+					v-if="state.descriptionExpanded"
+					:class="$style.content"
+					@moveclick="moveclick"
+					@oracleclick="oracleclick"
+					:oracle-table="node.tables[0]"
+					:source="node.dataforgedNode?.Source" />
+			</CollapseTransition>
+		</div>
 
-    <!-- Branch node -->
-    <div v-else>
-      <h4 class="flexrow">
-        <IronBtn @click="toggleManually()" :text="node?.displayName">
-          <template #icon>
-            <FontIcon
-              nogrow
-              :size="FontAwesome.Size['lg']"
-              name="caret-right"
-              :rotate="
-                state.manuallyExpanded ? FontAwesome.Rotate['90deg'] : undefined
-              "
-            />
-          </template>
-        </IronBtn>
-      </h4>
+		<!-- Branch node -->
+		<div v-else>
+			<h4 class="flexrow">
+				<IronBtn @click="toggleManually()" :text="node?.displayName">
+					<template #icon>
+						<FontIcon
+							nogrow
+							:size="FontAwesome.Size['lg']"
+							name="caret-right"
+							:rotate="
+								state.manuallyExpanded ? FontAwesome.Rotate['90deg'] : undefined
+							" />
+					</template>
+				</IronBtn>
+			</h4>
 
-      <CollapseTransition>
-        <div
-          v-show="state.manuallyExpanded"
-          class="flexcol"
-          style="margin-left: 1rem"
-        >
-          <oracle-tree-node
-            v-for="child in node?.children"
-            :key="child.displayName"
-            :node="child"
-            @oracleclick="oracleclick"
-            ref="children"
-          />
-        </div>
-      </CollapseTransition>
-    </div>
-  </div>
+			<CollapseTransition>
+				<div
+					v-show="state.manuallyExpanded"
+					class="flexcol"
+					style="margin-left: 1rem">
+					<oracle-tree-node
+						v-for="child in node?.children"
+						:key="child.displayName"
+						:node="child"
+						@oracleclick="oracleclick"
+						ref="children" />
+				</div>
+			</CollapseTransition>
+		</div>
+	</div>
 </template>
 
 <style lang="scss" module>
 .content {
-  margin: var(--ironsworn-spacer-sm);
+	margin: var(--ironsworn-spacer-sm);
 }
 </style>
 
 <style lang="scss" scoped>
 .show-oracle-info {
-  // padding: 4px;
+	// padding: 4px;
 }
 
 .movesheet-row {
-  transition: var(--ironsworn-transition);
+	transition: var(--ironsworn-transition);
 }
 
 h4 {
-  margin: 0;
-  height: min-content;
-  line-height: 1;
+	margin: 0;
+	height: min-content;
+	line-height: 1;
 
-  button {
-    height: min-content;
-    text-transform: uppercase;
-    line-height: 1;
-  }
+	button {
+		height: min-content;
+		text-transform: uppercase;
+		line-height: 1;
+	}
 }
 
 .hidden {
-  display: none;
+	display: none;
 }
 </style>
 
@@ -118,61 +112,61 @@ import IronIcon from './icon/iron-icon.vue'
 const props = defineProps<{ node: IOracleTreeNode }>()
 
 const state = reactive({
-  manuallyExpanded: props.node.forceExpanded ?? false,
-  descriptionExpanded: false,
-  highlighted: false,
+	manuallyExpanded: props.node.forceExpanded ?? false,
+	descriptionExpanded: false,
+	highlighted: false
 })
 
 const isLeaf = computed(() => {
-  return props.node.tables.length > 0
+	return props.node.tables.length > 0
 })
 
 function toggleDescription() {
-  state.descriptionExpanded = !state.descriptionExpanded
+	state.descriptionExpanded = !state.descriptionExpanded
 }
 function toggleManually() {
-  state.manuallyExpanded = !state.manuallyExpanded
+	state.manuallyExpanded = !state.manuallyExpanded
 }
 
 // Click on a move link: broadcast event
 function moveclick(item: IronswornItem) {
-  CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
+	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
 }
 
 function oracleclick(dfid) {
-  CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
+	CONFIG.IRONSWORN.emitter.emit('highlightOracle', dfid)
 }
 
 const children = ref([] as any[])
 
 function collapse() {
-  state.manuallyExpanded = false
-  state.descriptionExpanded = false
-  for (const child of children.value ?? []) {
-    child.collapse()
-  }
+	state.manuallyExpanded = false
+	state.descriptionExpanded = false
+	for (const child of children.value ?? []) {
+		child.collapse()
+	}
 }
 function expand() {
-  state.manuallyExpanded = true
+	state.manuallyExpanded = true
 }
 
 let $el = ref<HTMLElement>()
 CONFIG.IRONSWORN.emitter.on('highlightOracle', (dfid) => {
-  if (props.node.dataforgedNode?.$id === dfid) {
-    state.highlighted = true
-    $el.value?.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-    })
-    setTimeout(() => {
-      state.highlighted = false
-    }, 2000)
-  }
+	if (props.node.dataforgedNode?.$id === dfid) {
+		state.highlighted = true
+		$el.value?.scrollIntoView({
+			behavior: 'smooth',
+			block: 'center'
+		})
+		setTimeout(() => {
+			state.highlighted = false
+		}, 2000)
+	}
 })
 
 defineExpose({
-  dfId: () => props.node.dataforgedNode?.$id,
-  expand,
-  collapse,
+	dfId: () => props.node.dataforgedNode?.$id,
+	expand,
+	collapse
 })
 </script>

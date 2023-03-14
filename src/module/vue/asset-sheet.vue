@@ -1,64 +1,57 @@
 <template>
-  <div class="flexcol">
-    <SheetHeader class="nogrow">
-      <DocumentName :document="data.item" />
-    </SheetHeader>
-    <TabSet
-      v-if="editMode"
-      :tabKeys="['description', 'fields', 'abilities', 'options', 'track']"
-      :id="`${data.item._id}-asset-sheet`"
-    >
-      <TabList>
-        <Tab
-          tab-key="description"
-          :class="$style.tab"
-          :text="$t('Description')"
-        />
-        <Tab
-          tab-key="fields"
-          :class="$style.tab"
-          :text="$t('IRONSWORN.Fields')"
-        />
-        <Tab
-          tab-key="abilities"
-          :class="$style.tab"
-          :text="$t('IRONSWORN.Abilities')"
-        />
-        <Tab
-          tab-key="options"
-          :class="$style.tab"
-          :text="$t('IRONSWORN.Options')"
-        />
-        <Tab
-          tab-key="track"
-          :class="$style.tab"
-          :text="$t('IRONSWORN.Track')"
-        />
-      </TabList>
-      <TabPanels :class="$style.tabPanels">
-        <TabPanel
-          tab-key="description"
-          class="flexcol"
-          :class="$style.tabPanel"
-        >
-          <AssetEditDescription />
-        </TabPanel>
-        <TabPanel tab-key="fields" class="flexcol" :class="$style.tabPanel">
-          <AssetEditFields />
-        </TabPanel>
-        <TabPanel tab-key="abilities" class="flexcol" :class="$style.tabPanel">
-          <AssetEditAbilities />
-        </TabPanel>
-        <TabPanel tab-key="options" class="flexcol" :class="$style.tabPanel">
-          <AssetEditOptions />
-        </TabPanel>
-        <TabPanel tab-key="track" class="flexcol" :class="$style.tabPanel">
-          <AssetEditTrack />
-        </TabPanel>
-      </TabPanels>
-    </TabSet>
-    <AssetOverview v-else />
-  </div>
+	<div class="flexcol">
+		<SheetHeader class="nogrow">
+			<DocumentName :document="data.item" />
+		</SheetHeader>
+		<TabSet
+			v-if="editMode"
+			:tabKeys="['description', 'fields', 'abilities', 'options', 'track']"
+			:id="`${data.item._id}-asset-sheet`">
+			<TabList>
+				<Tab
+					tab-key="description"
+					:class="$style.tab"
+					:text="$t('Description')" />
+				<Tab
+					tab-key="fields"
+					:class="$style.tab"
+					:text="$t('IRONSWORN.Fields')" />
+				<Tab
+					tab-key="abilities"
+					:class="$style.tab"
+					:text="$t('IRONSWORN.Abilities')" />
+				<Tab
+					tab-key="options"
+					:class="$style.tab"
+					:text="$t('IRONSWORN.Options')" />
+				<Tab
+					tab-key="track"
+					:class="$style.tab"
+					:text="$t('IRONSWORN.Track')" />
+			</TabList>
+			<TabPanels :class="$style.tabPanels">
+				<TabPanel
+					tab-key="description"
+					class="flexcol"
+					:class="$style.tabPanel">
+					<AssetEditDescription />
+				</TabPanel>
+				<TabPanel tab-key="fields" class="flexcol" :class="$style.tabPanel">
+					<AssetEditFields />
+				</TabPanel>
+				<TabPanel tab-key="abilities" class="flexcol" :class="$style.tabPanel">
+					<AssetEditAbilities />
+				</TabPanel>
+				<TabPanel tab-key="options" class="flexcol" :class="$style.tabPanel">
+					<AssetEditOptions />
+				</TabPanel>
+				<TabPanel tab-key="track" class="flexcol" :class="$style.tabPanel">
+					<AssetEditTrack />
+				</TabPanel>
+			</TabPanels>
+		</TabSet>
+		<AssetOverview v-else />
+	</div>
 </template>
 
 <style lang="scss" module>
@@ -95,18 +88,18 @@ const props = defineProps<{ data: { item: any } }>()
 provide(ItemKey, computed(() => props.data.item) as any)
 
 const editMode = computed(() => {
-  return props.data.item.flags['foundry-ironsworn']?.['edit-mode']
+	return props.data.item.flags['foundry-ironsworn']?.['edit-mode']
 })
 
 const hasOptions = computed(() => {
-  return Object.values(props.data.item.system.exclusiveOptions || []).length > 0
+	return Object.values(props.data.item.system.exclusiveOptions || []).length > 0
 })
 
 const hasFields = computed(() => {
-  return Object.values(props.data.item.system.fields || []).length > 0
+	return Object.values(props.data.item.system.fields || []).length > 0
 })
 
 function setRequirement() {
-  $item?.update({ system: { requirement: props.data.item.system.requirement } })
+	$item?.update({ system: { requirement: props.data.item.system.requirement } })
 }
 </script>

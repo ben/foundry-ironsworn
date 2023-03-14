@@ -1,147 +1,138 @@
 <template>
-  <SortableListItem
-    :item="item"
-    :length="length"
-    :i="i"
-    :contentWrapperClass="$style.content"
-    class="flexrow"
-  >
-    <template #default>
-      <h4 :class="$style.title">{{ item.name }}</h4>
-      <h5 :class="$style.subtitle">
-        {{ subtitle }}
-      </h5>
-      <section :class="$style.widgets" class="flexrow">
-        <ProgressTrack
-          v-if="item.system.hasTrack"
-          :class="$style.track"
-          :rank="item.system.rank"
-          :ticks="item.system.current"
-          :compact-progress="compactProgress"
-        />
-        <Clock
-          v-if="item.system.hasClock"
-          :class="$style.clock"
-          class="nogrow"
-          size="50px"
-          :wedges="item.system.clockMax"
-          :ticked="item.system.clockTicks"
-          @click="setClock"
-        />
-      </section>
-      <DocumentImg :class="$style.img" :document="item" size="40px" />
-      <RankPips
-        :class="$style.rank"
-        class="nogrow"
-        :current="item.system.rank"
-        @click="rankClick"
-      />
-    </template>
-    <template #controls>
-      <IronBtn
-        block
-        v-if="editMode"
-        :icon="completedIcon"
-        @click="toggleComplete"
-        :tooltip="completedTooltip"
-      />
-      <IronBtn
-        block
-        v-if="editMode && item.system.hasTrack"
-        icon="fa:caret-left"
-        @click="retreat"
-        :tooltip="$t('IRONSWORN.UnmarkProgress')"
-      />
-      <IronBtn
-        block
-        v-if="item.system.hasTrack"
-        icon="fa:caret-right"
-        @click="advance"
-        :tooltip="$t('IRONSWORN.MarkProgress')"
-      />
-      <BtnRollprogress v-if="item.system.hasTrack" :item="item" block />
-      <IronBtn
-        v-if="showStar"
-        class="star-progress"
-        block
-        :tooltip="$t('IRONSWORN.StarProgress')"
-        data-tooltip-direction="RIGHT"
-        @click="toggleStar"
-      >
-        <template #icon>
-          <Transition name="fade">
-            <FontIcon
-              name="star"
-              :family="
-                item.system.starred
-                  ? FontAwesome.Family.Solid
-                  : FontAwesome.Family.Regular
-              "
-            />
-          </Transition>
-        </template>
-      </IronBtn>
-    </template>
-  </SortableListItem>
+	<SortableListItem
+		:item="item"
+		:length="length"
+		:i="i"
+		:contentWrapperClass="$style.content"
+		class="flexrow">
+		<template #default>
+			<h4 :class="$style.title">{{ item.name }}</h4>
+			<h5 :class="$style.subtitle">
+				{{ subtitle }}
+			</h5>
+			<section :class="$style.widgets" class="flexrow">
+				<ProgressTrack
+					v-if="item.system.hasTrack"
+					:class="$style.track"
+					:rank="item.system.rank"
+					:ticks="item.system.current"
+					:compact-progress="compactProgress" />
+				<Clock
+					v-if="item.system.hasClock"
+					:class="$style.clock"
+					class="nogrow"
+					size="50px"
+					:wedges="item.system.clockMax"
+					:ticked="item.system.clockTicks"
+					@click="setClock" />
+			</section>
+			<DocumentImg :class="$style.img" :document="item" size="40px" />
+			<RankPips
+				:class="$style.rank"
+				class="nogrow"
+				:current="item.system.rank"
+				@click="rankClick" />
+		</template>
+		<template #controls>
+			<IronBtn
+				block
+				v-if="editMode"
+				:icon="completedIcon"
+				@click="toggleComplete"
+				:tooltip="completedTooltip" />
+			<IronBtn
+				block
+				v-if="editMode && item.system.hasTrack"
+				icon="fa:caret-left"
+				@click="retreat"
+				:tooltip="$t('IRONSWORN.UnmarkProgress')" />
+			<IronBtn
+				block
+				v-if="item.system.hasTrack"
+				icon="fa:caret-right"
+				@click="advance"
+				:tooltip="$t('IRONSWORN.MarkProgress')" />
+			<BtnRollprogress v-if="item.system.hasTrack" :item="item" block />
+			<IronBtn
+				v-if="showStar"
+				class="star-progress"
+				block
+				:tooltip="$t('IRONSWORN.StarProgress')"
+				data-tooltip-direction="RIGHT"
+				@click="toggleStar">
+				<template #icon>
+					<Transition name="fade">
+						<FontIcon
+							name="star"
+							:family="
+								item.system.starred
+									? FontAwesome.Family.Solid
+									: FontAwesome.Family.Regular
+							" />
+					</Transition>
+				</template>
+			</IronBtn>
+		</template>
+	</SortableListItem>
 </template>
 
 <style lang="scss" module>
 .content {
-  --ironsworn-progress-widget-spacing: 6px;
+	--ironsworn-progress-widget-spacing: 6px;
 
-  display: grid;
-  grid-template-rows: max-content max-content 1fr;
-  grid-template-columns: max-content max-content 1fr max-content;
-  gap: var(--ironsworn-progress-widget-spacing);
-  padding: calc(var(--ironsworn-progress-widget-spacing) / 2)
-    calc(var(--ironsworn-progress-widget-spacing) / 2)
-    var(--ironsworn-progress-widget-spacing);
+	display: grid;
+	grid-template-rows: max-content max-content 1fr;
+	grid-template-columns: max-content max-content 1fr max-content;
+	gap: var(--ironsworn-progress-widget-spacing);
+	padding: calc(var(--ironsworn-progress-widget-spacing) / 2)
+		calc(var(--ironsworn-progress-widget-spacing) / 2)
+		var(--ironsworn-progress-widget-spacing);
 }
 
 .img {
-  grid-row: 1 / span 2;
-  grid-column: 2;
-  margin: 0;
+	grid-row: 1 / span 2;
+	grid-column: 2;
+	margin: 0;
 }
 
 .rank {
-  grid-row: 1;
-  grid-column: 3 / span 2;
+	grid-row: 1;
+	grid-column: 3 / span 2;
 }
 
 .title {
-  grid-row: 2;
-  grid-column: 3;
-  margin: 0;
-  height: max-content;
-  line-height: 1;
+	grid-row: 2;
+	grid-column: 3;
+	margin: 0;
+	height: max-content;
+	line-height: 1;
 }
 
 .subtitle {
-  grid-row: 1 / span 3;
-  grid-column: 1;
-  margin: 0;
-  padding: 0;
-  width: max-content;
-  text-transform: uppercase;
-  line-height: 1;
-  color: var(--ironsworn-color-fg-muted);
-  font-weight: normal;
-  writing-mode: vertical-lr;
+	grid-row: 1 / span 3;
+	grid-column: 1;
+	margin: 0;
+	padding: 0;
+	width: max-content;
+	text-transform: uppercase;
+	line-height: 1;
+	color: var(--ironsworn-color-fg-muted);
+	font-weight: normal;
+	writing-mode: vertical-lr;
 }
 
 .widgets {
-  grid-row: 3;
-  grid-column: 2 / span 3;
-  gap: var(--ironsworn-spacer-xs);
+	grid-row: 3;
+	grid-column: 2 / span 3;
+	gap: var(--ironsworn-spacer-xs);
 }
 
 .clock {
-  flex-basis: var(--ironsworn-clock-size);
+	flex-basis: var(--ironsworn-clock-size);
 }
 
 .star-progress {
-  grid-row: 2;
+	grid-row: 2;
 }
 
 .track {
@@ -163,14 +154,14 @@ import { FontAwesome } from '../icon/icon-common'
 import SortableListItem from 'component:list/sortable-item.vue'
 
 const props = defineProps<{
-  item: any
-  showStar?: boolean
-  /**
-   * When true, renders the progress bar for more compact display.
-   */
-  compactProgress?: boolean
-  length: number
-  i: number
+	item: any
+	showStar?: boolean
+	/**
+	 * When true, renders the progress bar for more compact display.
+	 */
+	compactProgress?: boolean
+	length: number
+	i: number
 }>()
 
 const actor = inject(ActorKey)
@@ -182,44 +173,44 @@ provide(ItemKey, computed(() => foundryItem?.toObject()) as any)
 provide($ItemKey, foundryItem)
 
 const editMode = computed(() => {
-  return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
+	return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
 })
 const subtitle = computed(() => {
-  let subtype = capitalize(props.item.system.subtype)
-  if (subtype === 'Bond') subtype = 'Connection' // translate name
-  return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)
+	let subtype = capitalize(props.item.system.subtype)
+	if (subtype === 'Bond') subtype = 'Connection' // translate name
+	return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)
 })
 const completedIcon = computed(() => {
-  return props.item.system.completed ? 'fa:circle-check' : 'fa:circle-notch'
+	return props.item.system.completed ? 'fa:circle-check' : 'fa:circle-notch'
 })
 const completedTooltip = computed(() => {
-  const suffix = props.item.system.completed ? 'Completed' : 'NotCompleted'
-  return game.i18n.localize('IRONSWORN.' + suffix)
+	const suffix = props.item.system.completed ? 'Completed' : 'NotCompleted'
+	return game.i18n.localize('IRONSWORN.' + suffix)
 })
 
 function rankClick(rank: keyof typeof RANKS) {
-  foundryItem?.update({ system: { rank } })
+	foundryItem?.update({ system: { rank } })
 }
 function advance() {
-  foundryItem?.markProgress(1)
+	foundryItem?.markProgress(1)
 }
 function retreat() {
-  foundryItem?.markProgress(-1)
+	foundryItem?.markProgress(-1)
 }
 
 const $emit = defineEmits(['completed'])
 
 function toggleComplete() {
-  const completed = !props.item.system.completed
-  if (completed) $emit('completed')
-  foundryItem?.update({ system: { completed } })
+	const completed = !props.item.system.completed
+	if (completed) $emit('completed')
+	foundryItem?.update({ system: { completed } })
 }
 function toggleStar() {
-  foundryItem?.update({
-    system: { starred: !props.item.system.starred },
-  })
+	foundryItem?.update({
+		system: { starred: !props.item.system.starred }
+	})
 }
 function setClock(clockTicks: number) {
-  foundryItem?.update({ system: { clockTicks } })
+	foundryItem?.update({ system: { clockTicks } })
 }
 </script>

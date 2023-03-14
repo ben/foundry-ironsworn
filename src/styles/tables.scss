@@ -3,49 +3,49 @@
 
 // general table styles
 table {
-  border-top: var(--ironsworn-border-width-md) solid
-    var(--ironsworn-color-border);
-  border-bottom: var(--ironsworn-border-width-md) solid
-    var(--ironsworn-color-border);
-  border-width: var(--ironsworn-border-width-md);
-  background: var(--ironsworn-color-fg-10);
+	border-top: var(--ironsworn-border-width-md) solid
+		var(--ironsworn-color-border);
+	border-bottom: var(--ironsworn-border-width-md) solid
+		var(--ironsworn-color-border);
+	border-width: var(--ironsworn-border-width-md);
+	background: var(--ironsworn-color-fg-10);
 
-  thead {
-    border-color: var(--ironsworn-color-border-muted);
-  }
+	thead {
+		border-color: var(--ironsworn-color-border-muted);
+	}
 
-  tr:nth-child(even) {
-    background-color: var(--ironsworn-color-fg-10);
-  }
+	tr:nth-child(even) {
+		background-color: var(--ironsworn-color-fg-10);
+	}
 }
 
 // oracle table specific styles
 .oracle-table {
-  .oracle-table-column-result-text {
-    a.entity-link {
-      @include clickable.text;
+	.oracle-table-column-result-text {
+		a.entity-link {
+			@include clickable.text;
 
-      border: none;
-      background: none !important;
-    }
-  }
+			border: none;
+			background: none !important;
+		}
+	}
 
-  td,
-  th {
-    // hack that forces the roll range column to its minimum size
-    width: auto;
+	td,
+	th {
+		// hack that forces the roll range column to its minimum size
+		width: auto;
 
-    &.oracle-table-column-roll-range {
-      padding-right: calc(var(--ironsworn-spacer-md) * 2);
-      width: 1%;
-      white-space: nowrap;
-    }
-  }
+		&.oracle-table-column-roll-range {
+			padding-right: calc(var(--ironsworn-spacer-md) * 2);
+			width: 1%;
+			white-space: nowrap;
+		}
+	}
 
-  .oracle-result-row {
-    &.selected,
-    &[aria-selected='true'] {
-      @include fx.accentGradient(20);
-    }
-  }
+	.oracle-result-row {
+		&.selected,
+		&[aria-selected='true'] {
+			@include fx.accentGradient(20);
+		}
+	}
 }

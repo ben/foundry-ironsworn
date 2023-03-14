@@ -13,59 +13,59 @@ export type SetActiveTab<TabKeyType = TabKey> = (tabKey: TabKeyType) => void
 export type TabIndexIncrementer = (tabCount: number) => void
 
 export function getTabId(tabSetId: string, tabKey: TabKey) {
-  return `tabs--${tabSetId}--tab--${tabKey}`
+	return `tabs--${tabSetId}--tab--${tabKey}`
 }
 export function getTabPanelId(tabSetId: string, tabKey: TabKey) {
-  return `tabs--${tabSetId}--panel--${tabKey}`
+	return `tabs--${tabSetId}--panel--${tabKey}`
 }
 
 export interface TabState {
-  activeTab: TabKey
-  activePanelRef: HTMLElement | null
-  focusedTab: TabKey | null
-  orientation: Orientation
-  mode: TabActivationMode
-  tabKeys: TabKey[]
-  tabSetId: string
-  previousTab: TabKey
+	activeTab: TabKey
+	activePanelRef: HTMLElement | null
+	focusedTab: TabKey | null
+	orientation: Orientation
+	mode: TabActivationMode
+	tabKeys: TabKey[]
+	tabSetId: string
+	previousTab: TabKey
 }
 
 export const TabStateKey = Symbol('tabState') as InjectionKey<TabState>
 export const SetActiveTabKey = Symbol(
-  'setActiveTab'
+	'setActiveTab'
 ) as InjectionKey<SetActiveTab>
 export const SetActivePanelRefKey = Symbol(
-  'setActivePanelRef'
+	'setActivePanelRef'
 ) as InjectionKey<SetActivePanelRef>
 export const FocusActivePanelKey = Symbol(
-  'focusActivePanel'
+	'focusActivePanel'
 ) as InjectionKey<FocusActivePanel>
 
 export function getSlideTransitionName(
-  thisIndex: number,
-  oldIndex: number,
-  newIndex: number,
-  orientation: 'horizontal' | 'vertical'
+	thisIndex: number,
+	oldIndex: number,
+	newIndex: number,
+	orientation: 'horizontal' | 'vertical'
 ) {
-  // for a horizontal tab set: lower = positioned to the left, higher = positioned to the right
-  const horizontal = orientation === 'horizontal'
-  // for a vertical tab set: lower = positioned above, higher = positioned below
-  const vertical = orientation === 'vertical'
+	// for a horizontal tab set: lower = positioned to the left, higher = positioned to the right
+	const horizontal = orientation === 'horizontal'
+	// for a vertical tab set: lower = positioned above, higher = positioned below
+	const vertical = orientation === 'vertical'
 
-  switch (true) {
-    case horizontal && oldIndex < newIndex && thisIndex === oldIndex:
-    case horizontal && oldIndex > newIndex && thisIndex === newIndex:
-      return 'slideLeft'
-    case horizontal && oldIndex < newIndex && thisIndex === newIndex:
-    case horizontal && oldIndex > newIndex && thisIndex === oldIndex:
-      return 'slideRight'
-    case vertical && oldIndex < newIndex && thisIndex === oldIndex:
-    case vertical && oldIndex > newIndex && thisIndex === newIndex:
-      return 'slideUp'
-    case vertical && oldIndex < newIndex && thisIndex === newIndex:
-    case vertical && oldIndex > newIndex && thisIndex === oldIndex:
-      return 'slideDown'
-    default:
-      return ''
-  }
+	switch (true) {
+		case horizontal && oldIndex < newIndex && thisIndex === oldIndex:
+		case horizontal && oldIndex > newIndex && thisIndex === newIndex:
+			return 'slideLeft'
+		case horizontal && oldIndex < newIndex && thisIndex === newIndex:
+		case horizontal && oldIndex > newIndex && thisIndex === oldIndex:
+			return 'slideRight'
+		case vertical && oldIndex < newIndex && thisIndex === oldIndex:
+		case vertical && oldIndex > newIndex && thisIndex === newIndex:
+			return 'slideUp'
+		case vertical && oldIndex < newIndex && thisIndex === newIndex:
+		case vertical && oldIndex > newIndex && thisIndex === oldIndex:
+			return 'slideDown'
+		default:
+			return ''
+	}
 }

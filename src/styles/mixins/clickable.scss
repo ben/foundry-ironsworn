@@ -1,185 +1,185 @@
 @mixin interactive() {
-  transition: var(--ironsworn-transition);
+	transition: var(--ironsworn-transition);
 
-  &.disabled,
-  &:disabled,
-  &[aria-disabled='true'] {
-    opacity: 0.5;
-    cursor: not-allowed;
-    color: inherit;
-    pointer-events: none;
-  }
+	&.disabled,
+	&:disabled,
+	&[aria-disabled='true'] {
+		opacity: 0.5;
+		cursor: not-allowed;
+		color: inherit;
+		pointer-events: none;
+	}
 }
 
 @mixin textHover() {
-  color: var(--ironsworn-color-clickable-text-hover);
-  filter: var(--ironsworn-filter-highlight);
+	color: var(--ironsworn-color-clickable-text-hover);
+	filter: var(--ironsworn-filter-highlight);
 }
 @mixin textFocus() {
-  @include focusOutline;
+	@include focusOutline;
 }
 
 @mixin textActive() {
-  color: var(--ironsworn-color-clickable-text-selected);
-  filter: var(--ironsworn-filter-highlight);
+	color: var(--ironsworn-color-clickable-text-selected);
+	filter: var(--ironsworn-filter-highlight);
 }
 
 @mixin text() {
-  // --ironsworn-color-text-stroke: transparent;
-  @include interactive;
+	// --ironsworn-color-text-stroke: transparent;
+	@include interactive;
 
-  transition-duration: var(--ironsworn-transition-duration);
-  transition-property: color, filter, text-shadow, text-stroke;
-  transition-timing-function: var(--ironsworn-transition-timing-function);
-  margin: 0;
-  border-width: 0;
-  box-shadow: none !important;
+	transition-duration: var(--ironsworn-transition-duration);
+	transition-property: color, filter, text-shadow, text-stroke;
+	transition-timing-function: var(--ironsworn-transition-timing-function);
+	margin: 0;
+	border-width: 0;
+	box-shadow: none !important;
 
-  // @include textStroke();
-  background: transparent;
-  color: var(--ironsworn-color-clickable-text);
+	// @include textStroke();
+	background: transparent;
+	color: var(--ironsworn-color-clickable-text);
 
-  &:hover,
-  &.hover {
-    // --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include textHover;
-  }
+	&:hover,
+	&.hover {
+		// --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
+		@include textHover;
+	}
 
-  &:focus,
-  &:focus-within {
-    // --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include textFocus;
-  }
+	&:focus,
+	&:focus-within {
+		// --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
+		@include textFocus;
+	}
 
-  // we can't do much about the paint order here, but that's fine -- the overlap of a transparent color creates a nice effect here.
-  &[aria-selected='true'],
-  &.selected,
-  &.active {
-    // --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
-    @include textActive;
-  }
+	// we can't do much about the paint order here, but that's fine -- the overlap of a transparent color creates a nice effect here.
+	&[aria-selected='true'],
+	&.selected,
+	&.active {
+		// --ironsworn-color-text-stroke: var(--ironsworn-color-warm-50);
+		@include textActive;
+	}
 }
 
 @mixin blockHover($blockSize: 50px) {
-  z-index: var(--ironsworn-z-index-higher);
-  border-color: var(--ironsworn-color-clickable-block-border-hover);
-  background-color: var(--ironsworn-color-clickable-block-bg-hover);
-  color: var(--ironsworn-color-clickable-block-fg-hover);
+	z-index: var(--ironsworn-z-index-higher);
+	border-color: var(--ironsworn-color-clickable-block-border-hover);
+	background-color: var(--ironsworn-color-clickable-block-bg-hover);
+	color: var(--ironsworn-color-clickable-block-fg-hover);
 }
 
 @mixin blockFocus() {
-  @include focusOutline;
+	@include focusOutline;
 
-  z-index: var(--ironsworn-z-index-highest);
+	z-index: var(--ironsworn-z-index-highest);
 }
 
 @mixin blockActive() {
-  z-index: var(--ironsworn-z-index-high);
-  outline: none;
-  border-color: var(--ironsworn-color-clickable-block-border-selected);
-  background-color: var(
-    --ironsworn-color-thematic,
-    var(--ironsworn-color-clickable-block-bg-selected)
-  );
-  color: var(--ironsworn-color-clickable-block-fg-selected);
+	z-index: var(--ironsworn-z-index-high);
+	outline: none;
+	border-color: var(--ironsworn-color-clickable-block-border-selected);
+	background-color: var(
+		--ironsworn-color-thematic,
+		var(--ironsworn-color-clickable-block-bg-selected)
+	);
+	color: var(--ironsworn-color-clickable-block-fg-selected);
 }
 
 // For the block's 'default' state.
 @mixin blockBase($blockSize: 50px) {
-  @include interactive;
+	@include interactive;
 
-  border-style: solid;
-  border-color: var(--ironsworn-color-clickable-block-border);
-  box-shadow: none;
-  background-color: var(--ironsworn-color-clickable-block-bg);
-  overflow-y: visible;
-  color: var(--ironsworn-color-clickable-block-fg);
+	border-style: solid;
+	border-color: var(--ironsworn-color-clickable-block-border);
+	box-shadow: none;
+	background-color: var(--ironsworn-color-clickable-block-bg);
+	overflow-y: visible;
+	color: var(--ironsworn-color-clickable-block-fg);
 
-  &.vertical-text {
-    flex-direction: column;
-    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+	&.vertical-text {
+		flex-direction: column;
+		writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
 
-    & > * {
-      writing-mode: vertical-lr !important;
-    }
-  }
+		& > * {
+			writing-mode: vertical-lr !important;
+		}
+	}
 }
 
 @mixin icon($size: var(--ironsworn-icon-size)) {
-  display: flex;
-  flex-flow: row nowrap;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  padding: var(--ironsworn-spacer-xs);
-  text-align: center;
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	padding: var(--ironsworn-spacer-xs);
+	text-align: center;
 
-  &::before {
-    width: $size;
-    height: $size;
-    line-height: 1;
-  }
+	&::before {
+		width: $size;
+		height: $size;
+		line-height: 1;
+	}
 
-  &:not(:empty) {
-    gap: var(--ironsworn-spacer-xs);
-  }
+	&:not(:empty) {
+		gap: var(--ironsworn-spacer-xs);
+	}
 
-  &:empty {
-    flex-grow: 0;
+	&:empty {
+		flex-grow: 0;
 
-    // restricts width + removes border if there's no text
-    border: none !important;
-    width: max-content;
-    height: max-content;
-    line-height: 1;
-  }
+		// restricts width + removes border if there's no text
+		border: none !important;
+		width: max-content;
+		height: max-content;
+		line-height: 1;
+	}
 
-  // override to compensate for chrome user agent stylesheet bug: https://bugs.chromium.org/p/chromium/issues/detail?id=681917
-  .button-text {
-    // makes this seamless with existing buttons that don't need this styling
-    display: inline;
+	// override to compensate for chrome user agent stylesheet bug: https://bugs.chromium.org/p/chromium/issues/detail?id=681917
+	.button-text {
+		// makes this seamless with existing buttons that don't need this styling
+		display: inline;
 
-    strong {
-      white-space: nowrap;
-    }
-  }
+		strong {
+			white-space: nowrap;
+		}
+	}
 
-  &.vertical-text {
-    flex-direction: column;
-    writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
+	&.vertical-text {
+		flex-direction: column;
+		writing-mode: initial !important; // prevents this fix from breaking the button layout in FF
 
-    .button-text {
-      display: inherit;
-      line-height: inherit;
-      writing-mode: inherit;
-    }
-  }
+		.button-text {
+			display: inherit;
+			line-height: inherit;
+			writing-mode: inherit;
+		}
+	}
 }
 
 @mixin block($blockSize: 50px) {
-  @include blockBase($blockSize);
+	@include blockBase($blockSize);
 
-  &:hover,
-  &.hover {
-    @include blockHover($blockSize);
-  }
+	&:hover,
+	&.hover {
+		@include blockHover($blockSize);
+	}
 
-  &:focus,
-  &:focus-within {
-    @include blockFocus;
-  }
+	&:focus,
+	&:focus-within {
+		@include blockFocus;
+	}
 
-  &[aria-selected='true'],
-  &.selected,
-  &.active {
-    @include blockActive;
-  }
+	&[aria-selected='true'],
+	&.selected,
+	&.active {
+		@include blockActive;
+	}
 }
 
 // CLICKABLE MIXINS
 
 @mixin focusOutline() {
-  // outline disabled for now
-  // outline: 1px solid var(--ironsworn-color-cool) !important;
-  z-index: var(--ironsworn-z-index-highest);
+	// outline disabled for now
+	// outline: 1px solid var(--ironsworn-color-cool) !important;
+	z-index: var(--ironsworn-z-index-highest);
 }

@@ -7,14 +7,14 @@ type CssCustomProperty = `--${string}`
  * @template TValue The expected type of the value.
  */
 export function getCssVar<TValue extends string = string>(
-  property: CssCustomProperty,
-  element?: HTMLElement
+	property: CssCustomProperty,
+	element?: HTMLElement
 ) {
-  // console.log('received element', element)
-  if (!element)
-    element = document.documentElement.querySelector(
-      '.system-foundry-ironsworn'
-    ) as HTMLElement
-  const value = getComputedStyle(element).getPropertyValue(property).trim()
-  return value as TValue
+	// console.log('received element', element)
+	if (element == null)
+		element = document.documentElement.querySelector(
+			'.system-foundry-ironsworn'
+		) as HTMLElement
+	const value = getComputedStyle(element).getPropertyValue(property).trim()
+	return value as TValue
 }

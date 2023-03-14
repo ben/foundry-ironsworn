@@ -6,34 +6,34 @@ import type { Emitter } from 'mitt'
 
 // Provided by the Vue plugin
 export const $EnrichHtmlKey = Symbol('$enrichHtml') as InjectionKey<
-  typeof enrichHtml
+	typeof enrichHtml
 >
 export const $EnrichMarkdownKey = Symbol('$enrichMarkdown') as InjectionKey<
-  typeof enrichMarkdown
+	typeof enrichMarkdown
 >
 
 // Provided by the render helper
-export type LocalEmitterEvents = {
-  closeApp: void
-  activateTab: string
+export interface LocalEmitterEvents {
+	closeApp: void
+	activateTab: string
 }
 export type LocalEmitter = Emitter<LocalEmitterEvents>
 export const $LocalEmitterKey = Symbol(
-  '$localEmitter'
+	'$localEmitter'
 ) as InjectionKey<LocalEmitter>
 
 // Sheets have to provide these
 export const $ActorKey = Symbol('$actor') as InjectionKey<IronswornActor>
 export const ActorKey = Symbol('actor') as InjectionKey<
-  Ref<ReturnType<typeof IronswornActor.prototype.toObject>>
+	Ref<ReturnType<typeof IronswornActor.prototype.toObject>>
 >
 
 export const $ItemKey = Symbol('$item') as InjectionKey<IronswornItem>
 export const ItemKey = Symbol('item') as InjectionKey<
-  Ref<ReturnType<typeof IronswornItem.prototype.toObject>>
+	Ref<ReturnType<typeof IronswornItem.prototype.toObject>>
 >
 
 export const $PageKey = Symbol('$page') as InjectionKey<JournalEntryPage>
 export const PageKey = Symbol('page') as InjectionKey<
-  Ref<ReturnType<typeof JournalEntryPage.prototype.toObject>>
+	Ref<ReturnType<typeof JournalEntryPage.prototype.toObject>>
 >

@@ -1,36 +1,33 @@
 <template>
-  <article class="flexcol">
-    <SortableItemList
-      ref="$connectionList"
-      :filterFn="
+	<article class="flexcol">
+		<SortableItemList
+			ref="$connectionList"
+			:filterFn="
         (item) =>
           item.type === 'progress' &&
           !(item as any).system.completed &&
           (item as any).system.subtype === 'bond'
-      "
-    >
-      <template #item="{ item, i, length }">
-        <ProgressListItem
-          :item="item"
-          :i="i"
-          :length="length"
-          :showStar="true"
-        />
-      </template>
-    </SortableItemList>
-    <section :class="$style.controls" class="progress-controls flexrow nogrow">
-      <IronBtn
-        icon="fa:plus"
-        block
-        @click="newConnection"
-        :text="$t('IRONSWORN.ITEM.SubtypeConnection')"
-      />
-    </section>
-  </article>
+      ">
+			<template #item="{ item, i, length }">
+				<ProgressListItem
+					:item="item"
+					:i="i"
+					:length="length"
+					:showStar="true" />
+			</template>
+		</SortableItemList>
+		<section :class="$style.controls" class="progress-controls flexrow nogrow">
+			<IronBtn
+				icon="fa:plus"
+				block
+				@click="newConnection"
+				:text="$t('IRONSWORN.ITEM.SubtypeConnection')" />
+		</section>
+	</article>
 </template>
 <style lang="scss" module>
 .controls {
-  --ironsworn-line-height: var(--ironsworn-line-height-sm);
+	--ironsworn-line-height: var(--ironsworn-line-height-sm);
 }
 </style>
 <script setup lang="ts">
@@ -43,15 +40,15 @@ import IronBtn from '../buttons/iron-btn.vue'
 const $actor = inject($ActorKey)
 
 async function newConnection() {
-  const item = await Item.create(
-    {
-      name: game.i18n.localize('IRONSWORN.ITEM.SubtypeConnection'),
-      type: 'progress',
-      system: { subtype: 'bond' },
-      sort: 9000000,
-    },
-    { parent: $actor }
-  )
-  item?.sheet?.render(true)
+	const item = await Item.create(
+		{
+			name: game.i18n.localize('IRONSWORN.ITEM.SubtypeConnection'),
+			type: 'progress',
+			system: { subtype: 'bond' },
+			sort: 9000000
+		},
+		{ parent: $actor }
+	)
+	item?.sheet?.render(true)
 }
 </script>

@@ -1,7 +1,7 @@
 <template>
-  <div class="flexcol">
-    <MceEditor v-model="actor.system.notes" @save="save" />
-  </div>
+	<div class="flexcol">
+		<MceEditor v-model="actor.system.notes" @save="save" />
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -13,6 +13,6 @@ const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const save = () => {
-  $actor?.update({ 'system.notes': actor.value.system.notes })
+	$actor?.update({ 'system.notes': actor.value.system.notes })
 }
 </script>

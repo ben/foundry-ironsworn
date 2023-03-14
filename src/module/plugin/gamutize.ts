@@ -14,45 +14,45 @@ import _ from 'lodash-es'
  * @remarks 'warm' and 'cool' are used here primarily because they're more memorable labels than 'primary' or 'secondary'. They *could* be 'warmer'/'cooler' colours, but they don't have to be; 'warm'/'cool' are more about a UX element's importance/activity (warmer = more active/dramatic).
  */
 export function gamutize(
-  light: chroma.Color,
-  dark: chroma.Color,
-  warm: chroma.Color,
-  cool: chroma.Color
+	light: chroma.Color,
+	dark: chroma.Color,
+	warm: chroma.Color,
+	cool: chroma.Color
 ) {
-  // steps to use when mixing scales
-  const steps = _.range(10, 100, 10)
-  const luminance = { light, dark }
-  const temperature = { warm, cool }
-  // initialize color container
-  const colors = new Map<string, chroma.Color>()
+	// steps to use when mixing scales
+	const steps = _.range(10, 100, 10)
+	const luminance = { light, dark }
+	const temperature = { warm, cool }
+	// initialize color container
+	const colors = new Map<string, chroma.Color>()
 
-  _.forEach(luminance, (lValue, lKey) => {
-    colors.set(lKey, lValue)
-    _.forEach(temperature, (tValue, tKey) => {
-      if (!colors.has(tKey)) {
-        colors.set(tKey, tValue)
-      }
-      // TODO: have this do something smarter. ideally, should have sufficient contrast from the original colour.
-      const newColor = chroma.mix(lValue, tValue, 0.5, 'oklab')
-      colors.set(`${lKey}-${tKey}`, newColor)
-    })
-  })
+	_.forEach(luminance, (lValue, lKey) => {
+		colors.set(lKey, lValue)
+		_.forEach(temperature, (tValue, tKey) => {
+			if (!colors.has(tKey)) {
+				colors.set(tKey, tValue)
+			}
+			// TODO: have this do something smarter. ideally, should have sufficient contrast from the original colour.
+			const newColor = chroma.mix(lValue, tValue, 0.5, 'oklab')
+			colors.set(`${lKey}-${tKey}`, newColor)
+		})
+	})
 
-  // mix scale from dark to light
-  const luminanceScale = chroma
-    .scale([dark, light])
-    .domain([0, 100])
-    .mode('oklab')
-  steps.forEach((step) => {
-    colors.set(`scale-${step}`, luminanceScale(step))
-  })
-  // mix overlays
-  _.forEach({ ...luminance, ...temperature }, (color, key) => {
-    steps.forEach((step) => {
-      const factor = step / 100
-      colors.set(`${key}-${step}`, color.alpha(factor))
-    })
-  })
+	// mix scale from dark to light
+	const luminanceScale = chroma
+		.scale([dark, light])
+		.domain([0, 100])
+		.mode('oklab')
+	steps.forEach((step) => {
+		colors.set(`scale-${step}`, luminanceScale(step))
+	})
+	// mix overlays
+	_.forEach({ ...luminance, ...temperature }, (color, key) => {
+		steps.forEach((step) => {
+			const factor = step / 100
+			colors.set(`${key}-${step}`, color.alpha(factor))
+		})
+	})
 
-  return colors
+	return colors
 }
