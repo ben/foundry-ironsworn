@@ -701,8 +701,8 @@ async function updateAllTokens(data) {
 }
 </style>
 
-<style lang="less" scoped>
-@import (reference) '../../styles/mixins.less';
+<style lang="scss" scoped>
+@use 'mixin:clickable.scss';
 
 label {
 	line-height: 27px;
@@ -718,6 +718,6 @@ label {
 }
 
 .highlighted {
-	.blockHoverMixin;
+	@include clickable.blockHover;
 }
 </style>

@@ -122,17 +122,13 @@ defineExpose({
 	$collapsible
 })
 </script>
-<style lang="less" module>
-@import (reference) '../../../styles/mixins.less';
-
-.thematicColorMixin {
-	--ironsworn-color-text-stroke: var(--ironsworn-color-dark);
-	--ironsworn-color-thematic: v-bind('category?.color');
-}
+<style lang="scss" module>
+@use 'mixin:fx.scss';
+@use 'mixin:clickable.scss';
 
 .wrapper {
-	.thematicColorMixin();
-
+	--ironsworn-color-text-stroke: var(--ironsworn-color-dark);
+	--ironsworn-color-thematic: v-bind('category?.color');
 	border-radius: var(--ironsworn-border-radius-lg);
 	border: var(--ironsworn-border-width-lg) solid var(--ironsworn-color-thematic);
 	border-left-width: 10px;
@@ -157,7 +153,7 @@ defineExpose({
 	button {
 		--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
 		--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
-		.clickableTextMixin();
+		@include clickable.text;
 
 		height: inherit;
 	}
@@ -182,8 +178,8 @@ defineExpose({
 	}
 
 	&[data-highlighted='true']::after {
-		.overlayMixin();
-		.staticHighlightMixin(50);
+		@include fx.overlay;
+		@include fx.accentGradient(50);
 
 		opacity: 0;
 		animation: overlay-fadeout v-bind('$props.highlightDuration +"ms"')
