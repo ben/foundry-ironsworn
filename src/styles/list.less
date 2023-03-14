@@ -1,111 +1,111 @@
 .item-row {
-  border-width: var(--ironsworn-border-width-md);
-  border-style: solid;
-  border-radius: var(--ironsworn-border-radius-sm);
-  border-color: var(--ironsworn-color-border);
-  padding: var(--ironsworn-spacer-sm);
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
+	padding: var(--ironsworn-spacer-sm);
 
-  .item-row-control {
-    flex-grow: 0;
-    padding: var(--ironsworn-spacer-md);
-  }
+	.item-row-control {
+		flex-grow: 0;
+		padding: var(--ironsworn-spacer-md);
+	}
 }
 
 .item-list {
-  --ironsworn-item-list-size: 100px;
-  --ironsworn-item-line-height: 24px;
-  --ironsworn-item-height: 30px;
-  --ironsworn-item-controls-size: 36px;
+	--ironsworn-item-list-size: 100px;
+	--ironsworn-item-line-height: 24px;
+	--ironsworn-item-height: 30px;
+	--ironsworn-item-controls-size: 36px;
 
-  display: flex;
-  flex: 1 0 var(--ironsworn-item-list-size);
-  flex-direction: column;
-  margin: 0;
-  padding-left: 0;
-  list-style: none;
+	display: flex;
+	flex: 1 0 var(--ironsworn-item-list-size);
+	flex-direction: column;
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
 
-  .item-name {
-    margin: 0;
-  }
+	.item-name {
+		margin: 0;
+	}
 
-  .item-controls {
-    flex: 0 0 var(--ironsworn-item-controls-size);
-  }
+	.item-controls {
+		flex: 0 0 var(--ironsworn-item-controls-size);
+	}
 
-  .item {
-    border-bottom: var(--ironsworn-border-width-md) solid
-      var(--ironsworn-color-border);
-    padding: var(--ironsworn-spacer-sm) 0;
-    // FIXME: what's this for?
-    height: var(--ironsworn-item-height);
-    line-height: var(--ironsworn-item-line-height);
+	.item {
+		border-bottom: var(--ironsworn-border-width-md) solid
+			var(--ironsworn-color-border);
+		padding: var(--ironsworn-spacer-sm) 0;
+		// FIXME: what's this for?
+		height: var(--ironsworn-item-height);
+		line-height: var(--ironsworn-item-line-height);
 
-    img {
-      flex: 0 0 var(--ironsworn-item-line-height);
-      margin-right: var(--ironsworn-spacer-md);
-    }
-  }
+		img {
+			flex: 0 0 var(--ironsworn-item-line-height);
+			margin-right: var(--ironsworn-spacer-md);
+		}
+	}
 
-  ol {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
 
-    li {
-      border-color: var(--ironsworn-color-border);
-    }
+		li {
+			border-color: var(--ironsworn-color-border);
+		}
 
-    & > h2 {
-      border-width: var(--ironsworn-border-width-md) 0;
-      text-align: center;
-    }
-  }
+		& > h2 {
+			border-width: var(--ironsworn-border-width-md) 0;
+			text-align: center;
+		}
+	}
 }
 
 // WIP: genericizes appearance of the move tree browser
 .list-block {
-  --ironsworn-list-block-border-style: outset;
-  --ironsworn-list-block-border-width: var(--ironsworn-border-width-md);
-  --ironsworn-list-block-border-highlight: var(--ironsworn-color-light-10);
-  --ironsworn-list-block-border-shadow: var(--ironsworn-color-dark-10);
+	--ironsworn-list-block-border-style: outset;
+	--ironsworn-list-block-border-width: var(--ironsworn-border-width-md);
+	--ironsworn-list-block-border-highlight: var(--ironsworn-color-light-10);
+	--ironsworn-list-block-border-shadow: var(--ironsworn-color-dark-10);
 
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 0;
-  list-style: none;
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 0;
+	list-style: none;
 
-  .list-block-item {
-    margin: 0;
-    border-width: var(--ironsworn-list-block-border-width) 0;
-    border-style: var(--ironsworn-list-block-border-style);
-    // transparent border is applied so that the first + last items have a height consistent with their siblings
-    border-color: transparent;
-    height: max-content;
+	.list-block-item {
+		margin: 0;
+		border-width: var(--ironsworn-list-block-border-width) 0;
+		border-style: var(--ironsworn-list-block-border-style);
+		// transparent border is applied so that the first + last items have a height consistent with their siblings
+		border-color: transparent;
+		height: max-content;
 
-    &:not(:first-of-type) {
-      border-top-color: var(--ironsworn-list-block-border-highlight);
-    }
+		&:not(:first-of-type) {
+			border-top-color: var(--ironsworn-list-block-border-highlight);
+		}
 
-    &:not(:last-of-type) {
-      border-bottom-color: var(--ironsworn-list-block-border-shadow);
-    }
-  }
+		&:not(:last-of-type) {
+			border-bottom-color: var(--ironsworn-list-block-border-shadow);
+		}
+	}
 
-  .list-block-header {
-    &:not(:last-child) {
-      // applies bottom border only if there's subsequent content
-      border-width: 0;
-      border-bottom-width: var(--ironsworn-list-block-border-width);
-      border-style: var(--ironsworn-list-block-border-style);
-      border-bottom-color: var(--ironsworn-list-block-border-shadow);
+	.list-block-header {
+		&:not(:last-child) {
+			// applies bottom border only if there's subsequent content
+			border-width: 0;
+			border-bottom-width: var(--ironsworn-list-block-border-width);
+			border-style: var(--ironsworn-list-block-border-style);
+			border-bottom-color: var(--ironsworn-list-block-border-shadow);
 
-      & ~ * {
-        // applies top border to first sibling after list-block-header
-        border-width: 0;
-        border-top-width: var(--ironsworn-list-block-border-width);
-        border-style: var(--ironsworn-list-block-border-style);
-        border-top-color: var(--ironsworn-list-block-border-highlight);
-      }
-    }
-  }
+			& ~ * {
+				// applies top border to first sibling after list-block-header
+				border-width: 0;
+				border-top-width: var(--ironsworn-list-block-border-width);
+				border-style: var(--ironsworn-list-block-border-style);
+				border-top-color: var(--ironsworn-list-block-border-highlight);
+			}
+		}
+	}
 }

@@ -1,64 +1,64 @@
 .rank-pips {
-  display: flex;
-  flex-flow: row nowrap;
-  flex-grow: 0;
-  gap: var(--ironsworn-spacer-xs);
-  align-content: center;
-  transition: var(--ironsworn-transition);
-  width: max-content;
-  // so that hover effects only happen when a pip is hovered
-  pointer-events: none;
-  stroke: var(--ironsworn-color-fg);
-  fill: var(--ironsworn-color-fg-80);
-  fill-opacity: 1;
+	display: flex;
+	flex-flow: row nowrap;
+	flex-grow: 0;
+	gap: var(--ironsworn-spacer-xs);
+	align-content: center;
+	transition: var(--ironsworn-transition);
+	width: max-content;
+	// so that hover effects only happen when a pip is hovered
+	pointer-events: none;
+	stroke: var(--ironsworn-color-fg);
+	fill: var(--ironsworn-color-fg-80);
+	fill-opacity: 1;
 
-  &:hover {
-    fill: var(--ironsworn-color-fg-40);
-  }
+	&:hover {
+		fill: var(--ironsworn-color-fg-40);
+	}
 
-  &:not(:hover) {
-    button.rank-pip {
-      &[aria-selected='true'] {
-        ~ button.rank-pip {
-          fill-opacity: 0;
-        }
-      }
-    }
-  }
+	&:not(:hover) {
+		button.rank-pip {
+			&[aria-selected='true'] {
+				~ button.rank-pip {
+					fill-opacity: 0;
+				}
+			}
+		}
+	}
 
-  .rank-pip {
-    margin: 0;
-    border: none;
+	.rank-pip {
+		margin: 0;
+		border: none;
 
-    .pip-shape > * {
-      stroke-width: var(--ironsworn-widget-stroke-width);
-    }
-  }
+		.pip-shape > * {
+			stroke-width: var(--ironsworn-widget-stroke-width);
+		}
+	}
 
-  button.rank-pip {
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    transition-duration: 0s;
-    background-color: unset;
-    padding: 0;
-    height: auto;
-    line-height: 0;
-    pointer-events: all;
+	button.rank-pip {
+		display: flex;
+		align-items: center;
+		justify-items: center;
+		transition-duration: 0s;
+		background-color: unset;
+		padding: 0;
+		height: auto;
+		line-height: 0;
+		pointer-events: all;
 
-    &:hover {
-      box-shadow: unset;
-      color: currentcolor;
+		&:hover {
+			box-shadow: unset;
+			color: currentcolor;
 
-      ~ .rank-pip {
-        fill-opacity: 0;
-      }
-    }
+			~ .rank-pip {
+				fill-opacity: 0;
+			}
+		}
 
-    .pip-shape {
-      width: var(--ironsworn-icon-size);
-      height: inherit;
-      overflow: visible;
-    }
-  }
+		.pip-shape {
+			width: var(--ironsworn-icon-size);
+			height: inherit;
+			overflow: visible;
+		}
+	}
 }

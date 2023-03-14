@@ -5,13 +5,13 @@ import '../../styles/themes/ironsworn.less'
 import '../../styles/themes/starforged.less'
 
 export function themeSetup() {
-  const currentTheme = IronswornSettings.get('theme')
+	const currentTheme = IronswornSettings.get('theme')
 
-  $(document.body).addClass(`theme-${currentTheme}`)
+	$(document.body).addClass(`theme-${currentTheme}`)
 
-  if (currentTheme === 'starforged') {
-    ;(<string[]>CONFIG.TinyMCE.content_css)?.push(
-      '/systems/foundry-ironsworn/styles/starforged-tinymce.css'
-    )
-  }
+	if (currentTheme === 'starforged') {
+		;(<string[]>CONFIG.TinyMCE.content_css)?.push(
+			'/systems/foundry-ironsworn/styles/starforged-tinymce.css'
+		)
+	}
 }

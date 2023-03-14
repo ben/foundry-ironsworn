@@ -2,13 +2,13 @@ import { IronswornActor } from './module/actor/actor'
 import * as dataforgedHelpers from './module/dataforged'
 import { importFromDatasworn } from './module/datasworn'
 import { starforged } from 'dataforged'
-import type { Emitter } from 'mitt'
+import type { Emitter, EventType } from 'mitt'
 import Mitt from 'mitt'
 import {
-  IronswornRoll,
-  IronswornPrerollDialog,
-  IronswornRollMessage,
-  OracleRollMessage,
+	IronswornRoll,
+	IronswornPrerollDialog,
+	IronswornRollMessage,
+	OracleRollMessage
 } from './module/rolls'
 import { AssetCompendiumBrowser } from './module/item/asset-compendium-browser'
 import { FirstStartDialog } from './module/applications/firstStartDialog'
@@ -16,60 +16,60 @@ import { SFSettingTruthsDialogVue } from './module/applications/vueSfSettingTrut
 import { WorldTruthsDialog } from './module/applications/worldTruthsDialog'
 import { OracleWindow } from './module/applications/oracle-window'
 
-export type EmitterEvents = {
-  highlightMove: string // Foundry UUID
-  highlightOracle: string // DF ID
-  globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
-  dragStart: string // type of item
-  dragEnd: string // type of item
+export interface EmitterEvents extends Record<EventType, unknown> {
+	highlightMove: string // Foundry UUID
+	highlightOracle: string // DF ID
+	globalConditionChanged: { name: string; enabled: boolean } // info about condition that changed
+	dragStart: string // type of item
+	dragEnd: string // type of item
 }
 export type IronswornEmitter = Emitter<EmitterEvents>
 
 export interface IronswornConfig {
-  actorClass: typeof IronswornActor
-  importFromDatasworn: typeof importFromDatasworn
+	actorClass: typeof IronswornActor
+	importFromDatasworn: typeof importFromDatasworn
 
-  applications: {
-    // Dialogs
-    FirstStartDialog: typeof FirstStartDialog
-    ISSettingTruthsDialog: typeof WorldTruthsDialog
-    SFSettingTruthsDialog: typeof SFSettingTruthsDialogVue
-    AssetCompendiumBrowser: typeof AssetCompendiumBrowser
-    OracleWindow: typeof OracleWindow
+	applications: {
+		// Dialogs
+		FirstStartDialog: typeof FirstStartDialog
+		ISSettingTruthsDialog: typeof WorldTruthsDialog
+		SFSettingTruthsDialog: typeof SFSettingTruthsDialogVue
+		AssetCompendiumBrowser: typeof AssetCompendiumBrowser
+		OracleWindow: typeof OracleWindow
 
-    // Rolling
-    IronswornRoll: typeof IronswornRoll
-    IronswornPrerollDialog: typeof IronswornPrerollDialog
-    IronswornRollMessage: typeof IronswornRollMessage
-    OracleRollMessage: typeof OracleRollMessage
-  }
+		// Rolling
+		IronswornRoll: typeof IronswornRoll
+		IronswornPrerollDialog: typeof IronswornPrerollDialog
+		IronswornRollMessage: typeof IronswornRollMessage
+		OracleRollMessage: typeof OracleRollMessage
+	}
 
-  Dataforged: typeof starforged
-  dataforgedHelpers: typeof dataforgedHelpers
+	Dataforged: typeof starforged
+	dataforgedHelpers: typeof dataforgedHelpers
 
-  emitter: IronswornEmitter
+	emitter: IronswornEmitter
 }
 
 export const IRONSWORN: IronswornConfig = {
-  actorClass: IronswornActor,
+	actorClass: IronswornActor,
 
-  applications: {
-    FirstStartDialog,
-    ISSettingTruthsDialog: WorldTruthsDialog,
-    SFSettingTruthsDialog: SFSettingTruthsDialogVue,
-    AssetCompendiumBrowser,
-    OracleWindow,
+	applications: {
+		FirstStartDialog,
+		ISSettingTruthsDialog: WorldTruthsDialog,
+		SFSettingTruthsDialog: SFSettingTruthsDialogVue,
+		AssetCompendiumBrowser,
+		OracleWindow,
 
-    IronswornRoll,
-    IronswornPrerollDialog,
-    IronswornRollMessage,
-    OracleRollMessage,
-  },
+		IronswornRoll,
+		IronswornPrerollDialog,
+		IronswornRollMessage,
+		OracleRollMessage
+	},
 
-  importFromDatasworn,
+	importFromDatasworn,
 
-  Dataforged: starforged,
-  dataforgedHelpers,
+	Dataforged: starforged,
+	dataforgedHelpers,
 
-  emitter: Mitt<EmitterEvents>(),
+	emitter: Mitt<EmitterEvents>()
 }

@@ -1,49 +1,41 @@
 <template>
-  <SheetBasic :document="data.actor" body-class="flexcol">
-    <TabSet
-      :id="`${data.actor._id}-starship-sheet`"
-      :tabKeys="['assets', 'notes']"
-    >
-      <TabList>
-        <Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
-        <Tab tab-key="notes" :text="$t('Notes')" />
-      </TabList>
-      <TabPanels>
-        <TabPanel tab-key="assets" class="flexcol">
-          <SfAssets :class="$style.assets" />
-        </TabPanel>
-        <TabPanel tab-key="notes" class="flexcol">
-          <SfNotes />
-        </TabPanel>
-      </TabPanels>
-    </TabSet>
+	<SheetBasic :document="data.actor" body-class="flexcol">
+		<TabSet
+			:id="`${data.actor._id}-starship-sheet`"
+			:tab-keys="['assets', 'notes']">
+			<TabList>
+				<Tab tab-key="assets" :text="$t('IRONSWORN.ITEMS.TypeAsset')" />
+				<Tab tab-key="notes" :text="$t('Notes')" />
+			</TabList>
+			<TabPanels>
+				<TabPanel tab-key="assets" class="flexcol">
+					<SfAssets :class="$style.assets" />
+				</TabPanel>
+				<TabPanel tab-key="notes" class="flexcol">
+					<SfNotes />
+				</TabPanel>
+			</TabPanels>
+		</TabSet>
 
-    <hr class="nogrow" />
+		<hr class="nogrow" />
 
-    <section class="flexrow nogrow">
-      <div style="text-align: center">
-        <condition-checkbox
-          class="nogrow"
-          name="battered"
-          :global-hint="true"
-        />
-      </div>
-      <div style="text-align: center">
-        <condition-checkbox class="nogrow" name="cursed" :global-hint="true" />
-      </div>
-    </section>
-  </SheetBasic>
+		<section class="flexrow nogrow">
+			<div style="text-align: center">
+				<condition-checkbox
+					class="nogrow"
+					name="battered"
+					:global-hint="true" />
+			</div>
+			<div style="text-align: center">
+				<condition-checkbox class="nogrow" name="cursed" :global-hint="true" />
+			</div>
+		</section>
+	</SheetBasic>
 </template>
-
-<style lang="less" module>
-.assets {
-  padding-top: var(--ironsworn-spacer-md);
-}
-</style>
 
 <script setup lang="ts">
 import { provide, computed } from 'vue'
-import { IronswornActor } from '../actor/actor'
+import type { IronswornActor } from '../actor/actor'
 import SfAssets from './components/character-sheet-tabs/sf-assets.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
@@ -57,8 +49,14 @@ import TabPanel from './components/tabs/tab-panel.vue'
 import IronButton from './components/buttons/iron-btn.vue'
 
 const props = defineProps<{
-  data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
+	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
 }>()
 
 provide(ActorKey, computed(() => props.data.actor) as any)
 </script>
+
+<style lang="less" module>
+.assets {
+	padding-top: var(--ironsworn-spacer-md);
+}
+</style>

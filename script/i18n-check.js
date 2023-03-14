@@ -11,20 +11,20 @@ import path from 'path'
  * @return {object}           A flattened object
  */
 function flattenObject(obj, _d = 0) {
-  const flat = {}
-  if (_d > 100) {
-    throw new Error('Maximum depth exceeded')
-  }
-  for (let [k, v] of Object.entries(obj)) {
-    if (isPlainObject(v)) {
-      if (isEmpty(v)) flat[k] = v
-      let inner = flattenObject(v, _d + 1)
-      for (let [ik, iv] of Object.entries(inner)) {
-        flat[`${k}.${ik}`] = iv
-      }
-    } else flat[k] = v
-  }
-  return flat
+	const flat = {}
+	if (_d > 100) {
+		throw new Error('Maximum depth exceeded')
+	}
+	for (const [k, v] of Object.entries(obj)) {
+		if (isPlainObject(v)) {
+			if (isEmpty(v)) flat[k] = v
+			const inner = flattenObject(v, _d + 1)
+			for (const [ik, iv] of Object.entries(inner)) {
+				flat[`${k}.${ik}`] = iv
+			}
+		} else flat[k] = v
+	}
+	return flat
 }
 
 /**
@@ -34,23 +34,23 @@ function flattenObject(obj, _d = 0) {
  * @return {object}         An expanded object
  */
 export function expandObject(obj, _d = 0) {
-  if (_d > 100) throw new Error('Maximum object expansion depth exceeded')
+	if (_d > 100) throw new Error('Maximum object expansion depth exceeded')
 
-  // Recursive expansion function
-  function _expand(value) {
-    if (value instanceof Object) {
-      if (Array.isArray(value)) return value.map(_expand)
-      else return expandObject(value, _d + 1)
-    }
-    return value
-  }
+	// Recursive expansion function
+	function _expand(value) {
+		if (value instanceof Object) {
+			if (Array.isArray(value)) return value.map(_expand)
+			else return expandObject(value, _d + 1)
+		}
+		return value
+	}
 
-  // Expand all object keys
-  const expanded = {}
-  for (let [k, v] of Object.entries(obj)) {
-    setProperty(expanded, k, _expand(v))
-  }
-  return expanded
+	// Expand all object keys
+	const expanded = {}
+	for (const [k, v] of Object.entries(obj)) {
+		setProperty(expanded, k, _expand(v))
+	}
+	return expanded
 }
 
 /**
@@ -62,30 +62,30 @@ export function expandObject(obj, _d = 0) {
  * @return {boolean}        Whether the value was changed from its previous value
  */
 function setProperty(object, key, value) {
-  let target = object
-  let changed = false
+	let target = object
+	let changed = false
 
-  // Convert the key to an object reference if it contains dot notation
-  if (key.indexOf('.') !== -1) {
-    let parts = key.split('.')
-    let newKey = parts.pop()
-    if (!newKey)
-      throw new Error(`Couldn't parse key "${key}" into an object path`)
-    key = newKey
-    target = parts.reduce((o, i) => {
-      if (!Object.prototype.hasOwnProperty.call(o, i)) o[i] = {}
-      return o[i]
-    }, object)
-  }
+	// Convert the key to an object reference if it contains dot notation
+	if (key.indexOf('.') !== -1) {
+		const parts = key.split('.')
+		const newKey = parts.pop()
+		if (!newKey)
+			throw new Error(`Couldn't parse key "${key}" into an object path`)
+		key = newKey
+		target = parts.reduce((o, i) => {
+			if (!Object.prototype.hasOwnProperty.call(o, i)) o[i] = {}
+			return o[i]
+		}, object)
+	}
 
-  // Update the target
-  if (target[key] !== value) {
-    changed = true
-    target[key] = value
-  }
+	// Update the target
+	if (target[key] !== value) {
+		changed = true
+		target[key] = value
+	}
 
-  // Return changed status
-  return changed
+	// Return changed status
+	return changed
 }
 
 const masterLocale = 'en'
@@ -98,28 +98,28 @@ const locales = ['en', 'de', 'es', 'fr', 'pl']
 const localeKeys = {}
 
 locales.forEach(
-  (locale) =>
-    (localeKeys[locale] = new Set(
-      Object.keys(
-        flattenObject(
-          JSON.parse(
-            readFileSync(
-              path.join(process.cwd(), 'system/lang', `${locale}.json`)
-            ).toString()
-          )
-        )
-      )
-    ))
+	(locale) =>
+		(localeKeys[locale] = new Set(
+			Object.keys(
+				flattenObject(
+					JSON.parse(
+						readFileSync(
+							path.join(process.cwd(), 'system/lang', `${locale}.json`)
+						).toString()
+					)
+				)
+			)
+		))
 )
 
 forEach(localeKeys, (keys, locale) => {
-  if (locale !== masterLocale) {
-    const masterKeys = localeKeys[masterLocale]
-    const extraKeys = difference(keys, masterKeys)
-    console.log(`Extra keys in ${locale}.json:\n`, extraKeys)
-    // const missingKeys = difference(masterKeys, keys)
-    // console.log(`Missing keys in ${locale}.json:\n`, missingKeys)
-  }
+	if (locale !== masterLocale) {
+		const masterKeys = localeKeys[masterLocale]
+		const extraKeys = difference(keys, masterKeys)
+		console.log(`Extra keys in ${locale}.json:\n`, extraKeys)
+		// const missingKeys = difference(masterKeys, keys)
+		// console.log(`Missing keys in ${locale}.json:\n`, missingKeys)
+	}
 })
 
 /**
@@ -129,11 +129,11 @@ forEach(localeKeys, (keys, locale) => {
  * @returns {Set<any>}
  */
 function difference(setA, setB) {
-  const _difference = new Set(setA)
-  for (const elem of setB) {
-    _difference.delete(elem)
-  }
-  return _difference
+	const _difference = new Set(setA)
+	for (const elem of setB) {
+		_difference.delete(elem)
+	}
+	return _difference
 }
 
 // TODO: check that the variable name is consistent from string to string

@@ -1,54 +1,37 @@
 <template>
-  <DropTarget
-    dropType="asset"
-    is="article"
-    class="sf-assets flexcol"
-    :class="$style.wrapper"
-  >
-    <CollapseTransition tag="ul" class="item-list" :class="$style.list" group>
-      <li class="flexrow" v-for="(asset, i) in assets" :key="asset._id">
-        <order-buttons
-          v-if="editMode"
-          :i="i"
-          :length="assets.length"
-          @sortUp="sortUp"
-          @sortDown="sortDown"
-        />
-        <asset :asset="asset" class="item-row" />
-      </li>
-    </CollapseTransition>
-    <section
-      :class="$style.controls"
-      class="flexrow nogrow"
-      style="text-align: center"
-    >
-      <IronBtn
-        icon="fa:book-atlas"
-        @click="assetBrowser"
-        block
-        :text="$t('IRONSWORN.ITEMS.TypeAsset')"
-      />
-    </section>
-  </DropTarget>
+	<DropTarget
+		is="article"
+		drop-type="asset"
+		class="sf-assets flexcol"
+		:class="$style.wrapper">
+		<CollapseTransition tag="ul" class="item-list" :class="$style.list" group>
+			<li v-for="(asset, i) in assets" :key="asset._id" class="flexrow">
+				<order-buttons
+					v-if="editMode"
+					:i="i"
+					:length="assets.length"
+					@sortUp="sortUp"
+					@sortDown="sortDown" />
+				<asset :asset="asset" class="item-row" />
+			</li>
+		</CollapseTransition>
+		<section
+			:class="$style.controls"
+			class="flexrow nogrow"
+			style="text-align: center">
+			<IronBtn
+				icon="fa:book-atlas"
+				block
+				:text="$t('IRONSWORN.ITEMS.TypeAsset')"
+				@click="assetBrowser" />
+		</section>
+	</DropTarget>
 </template>
-
-<style lang="less" module>
-.controls {
-  --ironsworn-line-height: var(--ironsworn-line-height-sm);
-}
-
-.wrapper {
-  gap: var(--ironsworn-spacer-md);
-}
-
-.list {
-  gap: var(--ironsworn-spacer-md);
-}
-</style>
 
 <script lang="ts" setup>
 import { sortBy } from 'lodash-es'
-import { computed, inject, Ref } from 'vue'
+import type { Ref } from 'vue'
+import { computed, inject } from 'vue'
 import OrderButtons from '../order-buttons.vue'
 import Asset from '../asset/asset.vue'
 import IronBtn from '../buttons/iron-btn.vue'
@@ -61,38 +44,52 @@ const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
 
 const editMode = computed(() => {
-  return actor.value.flags['foundry-ironsworn']?.['edit-mode']
+	return actor.value.flags['foundry-ironsworn']?.['edit-mode']
 })
 const assets = computed(() => {
-  const assets = actor.value.items.filter((x) => x.type === 'asset')
-  return sortBy(assets, (x) => x.sort)
+	const assets = actor.value.items.filter((x) => x.type === 'asset')
+	return sortBy(assets, (x) => x.sort)
 })
 
 async function applySort(oldI, newI, sortBefore) {
-  const foundryItems = $actor?.items
-    .filter((x) => x.type === 'asset')
-    .sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
-  const updates = SortingHelpers.performIntegerSort(foundryItems?.[oldI], {
-    target: (foundryItems ?? [])[newI],
-    siblings: foundryItems,
-    sortBefore,
-  })
-  await Promise.all(updates.map(({ target, update }) => target?.update(update)))
+	const foundryItems = $actor?.items
+		.filter((x) => x.type === 'asset')
+		.sort((a, b) => (a.data.sort || 0) - (b.data.sort || 0))
+	const updates = SortingHelpers.performIntegerSort(foundryItems?.[oldI], {
+		target: (foundryItems ?? [])[newI],
+		siblings: foundryItems,
+		sortBefore
+	})
+	await Promise.all(updates.map(({ target, update }) => target?.update(update)))
 }
 function sortUp(i) {
-  applySort(i, i - 1, true)
+	applySort(i, i - 1, true)
 }
 function sortDown(i) {
-  applySort(i, i + 1, false)
+	applySort(i, i + 1, false)
 }
 
 let theAssetBrowser: AssetCompendiumBrowser | undefined
 function assetBrowser() {
-  if (!theAssetBrowser) {
-    theAssetBrowser = new AssetCompendiumBrowser(
-      $actor?.toolset ?? 'starforged'
-    )
-  }
-  theAssetBrowser.render(true, { focus: true })
+	if (!theAssetBrowser) {
+		theAssetBrowser = new AssetCompendiumBrowser(
+			$actor?.toolset ?? 'starforged'
+		)
+	}
+	theAssetBrowser.render(true, { focus: true })
 }
 </script>
+
+<style lang="less" module>
+.controls {
+	--ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
+
+.wrapper {
+	gap: var(--ironsworn-spacer-md);
+}
+
+.list {
+	gap: var(--ironsworn-spacer-md);
+}
+</style>

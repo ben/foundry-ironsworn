@@ -1,167 +1,136 @@
 <template>
-  <div class="flexcol">
-    <!-- HEADER -->
-    <SheetHeaderBasic class="nogrow" :document="data.item" />
+	<div class="flexcol">
+		<!-- HEADER -->
+		<SheetHeaderBasic class="nogrow" :document="data.item" />
 
-    <div
-      class="flexrow nogrow"
-      style="gap: 1em; margin: var(--ironsworn-spacer-lg) 0"
-    >
-      <RankPips
-        class="nogrow"
-        :current="data.item.system.rank"
-        @click="setRank"
-      />
-      <h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
-      <label class="checkbox nogrow">
-        <input
-          type="checkbox"
-          v-model="data.item.system.completed"
-          @change="saveChecks"
-        />
-        {{ $t('IRONSWORN.Completed') }}
-      </label>
-    </div>
+		<div
+			class="flexrow nogrow"
+			style="gap: 1em; margin: var(--ironsworn-spacer-lg) 0">
+			<RankPips
+				class="nogrow"
+				:current="data.item.system.rank"
+				@click="setRank" />
+			<h4 style="margin: 0; line-height: 22px">{{ rankText }}</h4>
+			<label class="checkbox nogrow">
+				<input
+					v-model="data.item.system.completed"
+					type="checkbox"
+					@change="saveChecks" />
+				{{ $t('IRONSWORN.Completed') }}
+			</label>
+		</div>
 
-    <select
-      class="nogrow"
-      v-model="data.item.system.subtype"
-      @change="subtypeChange"
-    >
-      <option value="vow">
-        {{ $t('IRONSWORN.ITEM.SubtypeVow') }}
-      </option>
-      <option value="progress">
-        {{ $t('IRONSWORN.ITEM.SubtypeProgress') }}
-      </option>
-      <option value="bond">
-        {{ $t('IRONSWORN.ITEM.SubtypeConnection') }}
-      </option>
-    </select>
+		<select
+			v-model="data.item.system.subtype"
+			class="nogrow"
+			@change="subtypeChange">
+			<option value="vow">
+				{{ $t('IRONSWORN.ITEM.SubtypeVow') }}
+			</option>
+			<option value="progress">
+				{{ $t('IRONSWORN.ITEM.SubtypeProgress') }}
+			</option>
+			<option value="bond">
+				{{ $t('IRONSWORN.ITEM.SubtypeConnection') }}
+			</option>
+		</select>
 
-    <hr class="nogrow" />
+		<hr class="nogrow" />
 
-    <div class="nogrow">
-      <label class="checkbox">
-        <input
-          type="checkbox"
-          v-model="data.item.system.hasTrack"
-          @change="saveChecks"
-        />
-        {{ $t('IRONSWORN.Track') }}
-      </label>
+		<div class="nogrow">
+			<label class="checkbox">
+				<input
+					v-model="data.item.system.hasTrack"
+					type="checkbox"
+					@change="saveChecks" />
+				{{ $t('IRONSWORN.Track') }}
+			</label>
 
-      <CollapseTransition>
-        <div class="nogrow" v-if="data.item.system.hasTrack">
-          <div
-            class="flexrow nogrow"
-            style="
-              justify-content: flex-end;
-              margin-bottom: var(--ironsworn-spacer-sm);
-            "
-          >
-            <IronBtn
-              v-if="data.item.system.hasTrack"
-              block
-              nogrow
-              :tooltip="$t('IRONSWORN.UnmarkProgress')"
-              @click="retreat"
-              icon="fa:caret-left"
-            />
-            <IronBtn
-              v-if="data.item.system.hasTrack"
-              block
-              nogrow
-              :tooltip="$t('IRONSWORN.MarkProgress')"
-              @click="advance"
-              icon="fa:caret-right"
-            />
-          </div>
-          <!-- PROGRESS -->
-          <div class="flexrow track nogrow" style="margin-bottom: 1em">
-            <ProgressTrack
-              :ticks="data.item.system.current"
-              :rank="data.item.system.rank"
-            />
-          </div>
-        </div>
-      </CollapseTransition>
-    </div>
+			<CollapseTransition>
+				<div v-if="data.item.system.hasTrack" class="nogrow">
+					<div
+						class="flexrow nogrow"
+						style="
+							justify-content: flex-end;
+							margin-bottom: var(--ironsworn-spacer-sm);
+						">
+						<IronBtn
+							v-if="data.item.system.hasTrack"
+							block
+							nogrow
+							:tooltip="$t('IRONSWORN.UnmarkProgress')"
+							icon="fa:caret-left"
+							@click="retreat" />
+						<IronBtn
+							v-if="data.item.system.hasTrack"
+							block
+							nogrow
+							:tooltip="$t('IRONSWORN.MarkProgress')"
+							icon="fa:caret-right"
+							@click="advance" />
+					</div>
+					<!-- PROGRESS -->
+					<div class="flexrow track nogrow" style="margin-bottom: 1em">
+						<ProgressTrack
+							:ticks="data.item.system.current"
+							:rank="data.item.system.rank" />
+					</div>
+				</div>
+			</CollapseTransition>
+		</div>
 
-    <hr class="nogrow" />
+		<hr class="nogrow" />
 
-    <div class="nogrow">
-      <label class="checkbox">
-        <input
-          type="checkbox"
-          v-model="data.item.system.hasClock"
-          @change="saveChecks"
-        />
-        {{ $t('IRONSWORN.Clock') }}
-      </label>
+		<div class="nogrow">
+			<label class="checkbox">
+				<input
+					v-model="data.item.system.hasClock"
+					type="checkbox"
+					@change="saveChecks" />
+				{{ $t('IRONSWORN.Clock') }}
+			</label>
 
-      <CollapseTransition>
-        <div class="flexrow nogrow" v-if="data.item.system.hasClock">
-          <div class="nogrow" style="margin: 0 1rem">
-            <Clock
-              :wedges="data.item.system.clockMax"
-              :ticked="data.item.system.clockTicks"
-              @click="setClock"
-            />
-          </div>
-          <div class="flexcol">
-            {{ $t('IRONSWORN.Segments') }}:
-            <select
-              class="nogrow"
-              v-model="data.item.system.clockMax"
-              @change="clockMaxChange"
-              style="margin: var(--ironsworn-spacer-lg) 0"
-            >
-              <option
-                v-for="clockSize in [4, 6, 8, 10, 12]"
-                :key="clockSize"
-                :value="clockSize"
-              >
-                {{ clockSize }}
-              </option>
-            </select>
-          </div>
-        </div>
-      </CollapseTransition>
-    </div>
+			<CollapseTransition>
+				<div v-if="data.item.system.hasClock" class="flexrow nogrow">
+					<div class="nogrow" style="margin: 0 1rem">
+						<Clock
+							:wedges="data.item.system.clockMax"
+							:ticked="data.item.system.clockTicks"
+							@click="setClock" />
+					</div>
+					<div class="flexcol">
+						{{ $t('IRONSWORN.Segments') }}:
+						<select
+							v-model="data.item.system.clockMax"
+							class="nogrow"
+							style="margin: var(--ironsworn-spacer-lg) 0"
+							@change="clockMaxChange">
+							<option
+								v-for="clockSize in [4, 6, 8, 10, 12]"
+								:key="clockSize"
+								:value="clockSize">
+								{{ clockSize }}
+							</option>
+						</select>
+					</div>
+				</div>
+			</CollapseTransition>
+		</div>
 
-    <hr class="nogrow" />
-    <!-- DESCRIPTION -->
-    <MceEditor v-model="data.item.system.description" @save="saveDescription" />
-    <IronBtn
-      nogrow
-      block
-      :class="$style.danger"
-      @click="destroy"
-      icon="fa:trash"
-      :text="
-        $t(`DOCUMENT.Delete`, { type: $t('IRONSWORN.ITEM.TypeProgressTrack') })
-      "
-    />
-  </div>
+		<hr class="nogrow" />
+		<!-- DESCRIPTION -->
+		<MceEditor v-model="data.item.system.description" @save="saveDescription" />
+		<IronBtn
+			nogrow
+			block
+			:class="$style.danger"
+			icon="fa:trash"
+			:text="
+				$t(`DOCUMENT.Delete`, { type: $t('IRONSWORN.ITEM.TypeProgressTrack') })
+			"
+			@click="destroy" />
+	</div>
 </template>
-
-<style lang="less" module>
-.danger {
-  --ironsworn-color-clickable-block-border: var(--ironsworn-color-danger);
-  --ironsworn-color-clickable-block-fg: var(--ironsworn-color-danger);
-  --ironsworn-color-clickable-block-bg: transparent;
-  --ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-danger);
-  --ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
-  --ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-danger);
-
-  margin: var(--ironsworn-spacer-md) 0 0;
-  border-width: var(--ironsworn-border-width-lg);
-  border-style: solid;
-  border-radius: var(--ironsworn-border-radius-lg);
-  color: var(--ironsworn-color-danger);
-}
-</style>
 
 <script setup lang="ts">
 import { computed, inject, provide } from 'vue'
@@ -179,63 +148,80 @@ const props = defineProps<{ data: { item: any } }>()
 const $item = inject($ItemKey)
 
 provide(
-  ItemKey,
-  computed(() => props.data.item)
+	ItemKey,
+	computed(() => props.data.item)
 )
 
 const rankText = computed(() =>
-  game.i18n.localize(RANKS[props.data.item.system.rank])
+	game.i18n.localize(RANKS[props.data.item.system.rank])
 )
 
 function setRank(rank) {
-  $item?.update({ system: { rank } })
+	$item?.update({ system: { rank } })
 }
 
 function advance() {
-  $item?.markProgress(1)
+	$item?.markProgress(1)
 }
 function retreat() {
-  $item?.markProgress(-1)
+	$item?.markProgress(-1)
 }
 
 function subtypeChange() {
-  $item?.update({ system: { subtype: props.data.item.system.subtype } })
+	$item?.update({ system: { subtype: props.data.item.system.subtype } })
 }
 
 function clockMaxChange() {
-  $item?.update({
-    system: { clockMax: parseInt(props.data.item.system.clockMax) },
-  })
+	$item?.update({
+		system: { clockMax: parseInt(props.data.item.system.clockMax) }
+	})
 }
 
 function saveChecks() {
-  $item?.update({
-    system: {
-      completed: props.data.item.system.completed,
-      hasTrack: props.data.item.system.hasTrack,
-      hasClock: props.data.item.system.hasClock,
-    },
-  })
+	$item?.update({
+		system: {
+			completed: props.data.item.system.completed,
+			hasTrack: props.data.item.system.hasTrack,
+			hasClock: props.data.item.system.hasClock
+		}
+	})
 }
 
 function setClock(num) {
-  $item?.update({ system: { clockTicks: num } })
+	$item?.update({ system: { clockTicks: num } })
 }
 
 function saveDescription() {
-  $item?.update({ system: { description: props.data.item.system.description } })
+	$item?.update({ system: { description: props.data.item.system.description } })
 }
 
 function destroy() {
-  Dialog.confirm({
-    title: game.i18n.format('DOCUMENT.Delete', {
-      type: game.i18n.localize('IRONSWORN.ITEM.TypeProgressTrack'),
-    }),
-    content: `<p><strong>${game.i18n.localize(
-      'IRONSWORN.ConfirmDelete'
-    )}</strong></p>`,
-    yes: () => $item?.delete(),
-    defaultYes: false,
-  })
+	Dialog.confirm({
+		title: game.i18n.format('DOCUMENT.Delete', {
+			type: game.i18n.localize('IRONSWORN.ITEM.TypeProgressTrack')
+		}),
+		content: `<p><strong>${game.i18n.localize(
+			'IRONSWORN.ConfirmDelete'
+		)}</strong></p>`,
+		yes: () => $item?.delete(),
+		defaultYes: false
+	})
 }
 </script>
+
+<style lang="less" module>
+.danger {
+	--ironsworn-color-clickable-block-border: var(--ironsworn-color-danger);
+	--ironsworn-color-clickable-block-fg: var(--ironsworn-color-danger);
+	--ironsworn-color-clickable-block-bg: transparent;
+	--ironsworn-color-clickable-block-border-hover: var(--ironsworn-color-danger);
+	--ironsworn-color-clickable-block-fg-hover: var(--ironsworn-color-light);
+	--ironsworn-color-clickable-block-bg-hover: var(--ironsworn-color-danger);
+
+	margin: var(--ironsworn-spacer-md) 0 0;
+	border-width: var(--ironsworn-border-width-lg);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-lg);
+	color: var(--ironsworn-color-danger);
+}
+</style>
