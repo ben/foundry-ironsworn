@@ -64,12 +64,14 @@ function click() {
 }
 </script>
 
-<style lang="less" module>
-@import (reference) '../../../styles/mixins.less';
+<style lang="scss" module>
+@use 'mixin:clickable';
+@use 'mixin:text';
 
 .interactive {
+	@include clickable.interactive;
+
 	cursor: pointer;
-	.interactiveMixin();
 
 	&::before {
 		--ironsworn-color-bg-highlight: var(--ironsworn-color-fg);
@@ -92,7 +94,7 @@ function click() {
 
 .wrapper {
 	--ironsworn-color-text-stroke: var(--ironsworn-color-bg);
-	.textStrokeMixin();
+	@include text.stroke;
 
 	h4 {
 		margin: 0;
