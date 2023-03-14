@@ -1,7 +1,7 @@
 <template>
   <Collapsible
-    class="list-block"
     ref="$collapsible"
+    class="list-block"
     :class="$style.wrapper"
     :toggle-button-class="$style.toggleBtn"
     :toggle-tooltip="$enrichMarkdown(category.dataforgedCategory?.Description)"

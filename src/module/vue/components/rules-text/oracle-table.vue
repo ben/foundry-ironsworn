@@ -15,7 +15,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="row in tableRows">
+      <tr v-for="(row, i) in tableRows" :key="`row${i}`">
         <td class="oracle-table-column-roll-range">{{ rangeString(row) }}</td>
         <td
           class="oracle-table-column-result-text"

@@ -20,9 +20,9 @@
       >
         <IronBtn
           :id="controlId"
+          ref="$toggle"
           :aria-controls="contentId"
           :disabled="disabled"
-          ref="$toggle"
           :class="[$style.toggle, toggleButtonClass]"
           :tooltip="toggleTooltip"
           data-tooltip-direction="LEFT"

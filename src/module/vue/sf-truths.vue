@@ -3,6 +3,7 @@
     <nav class="flexcol">
       <IronBtn
         v-for="(truth, i) in data.truths"
+        :key="i"
         nogrow
         :text="truth.je().name ?? '???'"
         @click="scrollToCategory(i)"

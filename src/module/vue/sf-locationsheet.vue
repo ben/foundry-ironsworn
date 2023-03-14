@@ -112,7 +112,7 @@
         </div>
       </div>
       <div v-for="(row, i) of oracles" :key="`row${i}`" class="flexrow boxrow">
-        <div v-for="oracle of row" class="box flexrow">
+        <div v-for="(oracle, x) of row" :key="`oracle${x}`" class="box flexrow">
           <IronBtn
             :key="oracle.dfId"
             block

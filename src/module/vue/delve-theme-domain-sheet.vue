@@ -14,7 +14,7 @@
     <h3 class="nogrow">{{ $t('IRONSWORN.DELVESITE.Features') }}</h3>
     <table>
       <tbody>
-        <tr v-for="feature in typedSystem.features">
+        <tr v-for="(feature, i) in typedSystem.features" :key="`feature${i}`">
           <td>{{ formattedRange(feature.range) }}</td>
           <td>
             <input v-model="feature.text" type="text" @blur="save" />
@@ -26,7 +26,7 @@
     <h3 class="nogrow">{{ $t('IRONSWORN.DELVESITE.Dangers') }}</h3>
     <table>
       <tbody>
-        <tr v-for="danger in typedSystem.dangers">
+        <tr v-for="(danger, i) in typedSystem.dangers" :key="`danger${i}`">
           <td>{{ formattedRange(danger.range) }}</td>
           <td>
             <input v-model="danger.text" type="text" @blur="save" />

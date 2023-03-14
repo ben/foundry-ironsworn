@@ -15,7 +15,11 @@
       <div v-html="$enrichMarkdown(pageSystem.Description)" />
 
       <section v-if="pageSystem.Subtable">
-        <label v-for="entry in pageSystem.Subtable" class="flexrow nogrow">
+        <label
+          v-for="(entry, i) in pageSystem.Subtable"
+          :key="`subtableRow${i}`"
+          class="flexrow nogrow"
+        >
           <input
             ref="suboptions"
             type="radio"
@@ -35,10 +39,13 @@
 </template>
 
 <script setup lang="ts">
-import type { ISettingTruthOption, ISettingTruthOptionSubtableRow } from 'dataforged'
+import type {
+  ISettingTruthOption,
+  ISettingTruthOptionSubtableRow,
+} from 'dataforged'
 import { reactive, ref } from 'vue'
 import type { IronswornJournalPage } from '../../../journal/journal-entry-page'
-import type { TableRow } from '../../../rolls';
+import type { TableRow } from '../../../rolls'
 import { OracleRollMessage } from '../../../rolls'
 
 const props = defineProps<{

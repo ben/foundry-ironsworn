@@ -6,7 +6,8 @@
     </h1>
 
     <TruthSelectable
-      v-for="page in truthPages"
+      v-for="(page, i) in truthPages"
+      :key="`truthPage${i}`"
       ref="selectables"
       :page="page"
       :radio-group="df.$id"
@@ -20,7 +21,8 @@
     />
 
     <div
-      v-for="page in nonTruthPages"
+      v-for="(page, i) in nonTruthPages"
+      :key="`nonTruthPage${i}`"
       class="nogrow"
       v-html="page.text.content"
     />
@@ -30,7 +32,7 @@
 <script lang="ts" setup>
 import type { ISettingTruth, ISettingTruthOption } from 'dataforged'
 import { reactive, ref } from 'vue'
-import type { TableRow } from '../../../rolls';
+import type { TableRow } from '../../../rolls'
 import { OracleRollMessage } from '../../../rolls'
 import { enrichMarkdown } from '../../vue-plugin'
 import IronBtn from '../buttons/iron-btn.vue'
