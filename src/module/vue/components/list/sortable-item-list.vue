@@ -22,7 +22,7 @@
 <script lang="ts" setup>
 import IronList from './iron-list.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
-import { inject , computed } from 'vue'
+import { inject, computed } from 'vue'
 import SortableItem from './sortable-item.vue'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
 import type { ItemLike } from './helpers'

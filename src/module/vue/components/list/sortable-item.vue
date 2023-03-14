@@ -46,7 +46,7 @@
 </template>
 
 <script lang="ts" setup>
-import { computed , inject, provide } from 'vue'
+import { computed, inject, provide } from 'vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
 import IronBtn from '../buttons/iron-btn.vue'
 
