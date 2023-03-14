@@ -54,7 +54,7 @@ const props = withDefaults(
 	defineProps<{
 		i: number
 		length: number
-		item: ReturnType<Item['toObject']>
+		item: any
 		contentWrapperClass?: string
 		/**
 		 * Function used adjust sort order. Can be omitted to disable sorting.

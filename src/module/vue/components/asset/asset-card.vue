@@ -35,11 +35,14 @@
 			<div v-if="asset.system.fields?.length" :class="$style.fields">
 				<slot
 					v-for="(field, i) in asset.system.fields"
-					:key="'field' + i"
+					:key="`field${i}`"
 					name="field"
 					:class="$style.field"
-					v-bind="{ field, readonly, class: $style.fieldLabel }">
-					<AssetField :readonly="readonly" :field="field" :class="class" />
+					v-bind="{ field, readonly }">
+					<AssetField
+						:readonly="readonly"
+						:field="field"
+						:class="$style.fieldLabel" />
 				</slot>
 			</div>
 
@@ -57,8 +60,8 @@
 
 			<ul :class="$style.abilities" class="flexcol">
 				<template
-					v-for="(ability, i) in asset.system.abilities"
-					:key="'ability' + i">
+					v-for="(ability, x) in asset.system.abilities"
+					:key="`ability${x}`">
 					<li v-if="ability.enabled || showUncheckedAbilities">
 						<slot name="ability" v-bind="{ ability, readonly }"></slot>
 					</li>

@@ -19,6 +19,7 @@
 		</div>
 		<ActiveCompletedProgresses
 			:compact-progress="true"
+			:filter-fn="(item) => true"
 			:class="$style.progress"
 			data-tourid="progress" />
 	</div>

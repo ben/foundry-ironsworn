@@ -21,34 +21,6 @@ import type { ExtractPropTypes } from 'vue'
 import type FontIcon from './font-icon.vue'
 import type IronIcon from './iron-icon.vue'
 
-/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
-// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
-export function parseClassesToFaProps(cssClasses: string) {
-	const props: Partial<ExtractPropTypes<typeof FontIcon>> = {}
-	cssClasses.split(' ').forEach((clsName) => {
-		switch (true) {
-			case enumHas(FontAwesome.Style, clsName):
-				props.style = clsName
-				break
-			case enumHas(FontAwesome.Family, clsName):
-				props.family = clsName
-				break
-			case enumHas(FontAwesome.Rotate, clsName):
-				props.rotate = clsName
-				break
-			case enumHas(FontAwesome.Animation, clsName):
-				if (!props.animation) props.animation = []
-				props.animation.push(clsName)
-				break
-			default:
-				if (!props.class) props.class = []
-				props.class.push(clsName)
-				break
-		}
-	})
-	return props
-}
-
 export interface IconSwitchState {
 	/**
 	 * The ID of the icon to be used for this state.
@@ -4004,4 +3976,32 @@ export namespace FontAwesome {
 		| 'korvue'
 		| 'pix'
 		| 'steam-symbol'
+}
+
+/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
+// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
+export function parseClassesToFaProps(cssClasses: string) {
+	const props: Partial<ExtractPropTypes<typeof FontIcon>> = {}
+	cssClasses.split(' ').forEach((clsName) => {
+		switch (true) {
+			case enumHas(FontAwesome.Style, clsName):
+				props.style = clsName
+				break
+			case enumHas(FontAwesome.Family, clsName):
+				props.family = clsName
+				break
+			case enumHas(FontAwesome.Rotate, clsName):
+				props.rotate = clsName
+				break
+			case enumHas(FontAwesome.Animation, clsName):
+				if (!props.animation) props.animation = []
+				props.animation.push(clsName)
+				break
+			default:
+				if (!props.class) props.class = []
+				props.class.push(clsName)
+				break
+		}
+	})
+	return props
 }

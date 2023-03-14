@@ -8,12 +8,14 @@
           !(item as any).system.completed &&
           (item as any).system.subtype === 'bond'
       ">
-			<template #item="{ item, i, length }">
+			<template #item="{ item, i, length, sortFn }">
 				<ProgressListItem
+					:key="(item._id as string)"
 					:item="item"
 					:i="i"
 					:length="length"
-					:show-star="true" />
+					:show-star="true"
+					:sort-fn="sortFn" />
 			</template>
 		</SortableItemList>
 		<section :class="$style.controls" class="progress-controls flexrow nogrow">

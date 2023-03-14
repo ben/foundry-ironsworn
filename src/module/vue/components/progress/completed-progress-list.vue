@@ -11,12 +11,14 @@
 			ref="$progressList"
 			:filter-fn="completedFilterFn"
 			:class="$style.list">
-			<template #item="{ item, i, length }">
+			<template #item="{ item, i, length, sortFn }">
 				<ProgressListItem
+					:key="(item._id as string)"
 					:item="item"
 					:i="i"
 					:length="length"
-					:show-star="true" />
+					:show-star="true"
+					:sort-fn="sortFn" />
 			</template>
 		</SortableItemList>
 	</Collapsible>

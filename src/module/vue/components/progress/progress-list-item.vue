@@ -4,6 +4,7 @@
 		:length="length"
 		:i="i"
 		:content-wrapper-class="$style.content"
+		:sort-fn="sortFn"
 		class="flexrow">
 		<template #default>
 			<h4 :class="$style.title">{{ item.name }}</h4>
@@ -99,16 +100,27 @@ const props = defineProps<{
 	compactProgress?: boolean
 	length: number
 	i: number
+	/**
+	 * Function used adjust sort order. Can be omitted to disable sorting.
+	 */
+	sortFn?: (
+		oldIndex: number,
+		newIndex: number,
+		sortBefore: boolean
+	) => Promise<void>
 }>()
 
 const actor = inject(ActorKey)
 const $actor = inject($ActorKey)
 
-const foundryItem = $actor?.items.get(props.item.id ?? props.item._id)
+const $item = $actor?.items.get(props.item.id ?? props.item._id)
 
-provide($ItemKey, foundryItem)
-
-	let subtype = capitalize(props.item.system.subtype)
+provide($ItemKey, $item)
+const editMode = computed(() => {
+	return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
+})
+const subtitle = computed(() => {
+	let subtype = capitalize(props.item?.system?.subtype ?? '')
 	if (subtype === 'Bond') subtype = 'Connection' // translate name
 	return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)
 })
@@ -121,13 +133,13 @@ const completedTooltip = computed(() => {
 })
 
 function rankClick(rank: keyof typeof RANKS) {
-	foundryItem?.update({ system: { rank } })
+	$item?.update({ system: { rank } })
 }
 function advance() {
-	foundryItem?.markProgress(1)
+	$item?.markProgress(1)
 }
 function retreat() {
-	foundryItem?.markProgress(-1)
+	$item?.markProgress(-1)
 }
 
 const $emit = defineEmits(['completed'])
@@ -135,15 +147,15 @@ const $emit = defineEmits(['completed'])
 function toggleComplete() {
 	const completed = !props.item.system.completed
 	if (completed) $emit('completed')
-	foundryItem?.update({ system: { completed } })
+	$item?.update({ system: { completed } })
 }
 function toggleStar() {
-	foundryItem?.update({
+	$item?.update({
 		system: { starred: !props.item.system.starred }
 	})
 }
 function setClock(clockTicks: number) {
-	foundryItem?.update({ system: { clockTicks } })
+	$item?.update({ system: { clockTicks } })
 }
 </script>
 

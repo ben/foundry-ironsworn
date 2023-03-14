@@ -16,7 +16,7 @@
 			<bonds :compact-progress="true" />
 		</section>
 
-		<active-completed-progresses />
+		<active-completed-progresses :filter-fn="(_) => true" />
 
 		<section class="sheet-area flexcol">
 			<h4 class="nogrow">{{ $t('Notes') }}</h4>

@@ -15,7 +15,7 @@
 			class="starred-progress-tracks flexcol">
 			<ProgressListItem
 				v-for="(progressItem, i) in starredProgresses"
-				:key="`progress-item-${i}`"
+				:key="progressItem._id"
 				:length="starredProgresses.length"
 				:i="i"
 				:item="progressItem"

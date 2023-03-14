@@ -9,7 +9,7 @@
 					v-for="(iconData, state) in $props.icons"
 					:key="state"
 					:data-icon-state="state"
-					:class="`${$style.icon} ${getIconOptions(iconData).props.class}`"
+					:class="`${$style.icon} ${getIconOptions(iconData).props?.class}`"
 					v-bind="getIconOptions(iconData).props" />
 			</TransitionGroup>
 		</template>
@@ -74,7 +74,10 @@ function getIconOptions(iconState: IconSwitchState) {
 	}
 
 	if (set === 'fa' && iconState.class) {
-		props = mergeObject(props, parseClassesToFaProps(iconState.class ?? ''))
+		props = foundry.utils.mergeObject(
+			props,
+			parseClassesToFaProps(iconState.class ?? '')
+		)
 	}
 
 	return {

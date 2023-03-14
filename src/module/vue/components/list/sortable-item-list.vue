@@ -6,7 +6,7 @@
 					v-bind="{ item, i, length: items?.length ?? 0, sortFn }"
 					name="item">
 					<SortableItem
-						:key="i"
+						:key="(item._id as string)"
 						:item="item"
 						:i="i"
 						:length="items?.length ?? 0"
@@ -32,7 +32,7 @@ const props = withDefaults(
 		/**
 		 * Function to test whether an actor's item should be included in this list
 		 */
-		filterFn: (item: ItemLike, key?: number | string) => boolean
+		filterFn: (item: ItemLike, key?: number | string) => boolean | undefined
 	}>(),
 	{}
 )

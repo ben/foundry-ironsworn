@@ -1,6 +1,6 @@
 <template>
 	<active-completed-progresses
-		:excluded-subtypes="['bond']"
+		:filter-fn="(item: any) => item.system.subtype != 'bond'"
 		:progress-stars="true" />
 </template>
 

@@ -4,7 +4,7 @@
 		drop-type="asset"
 		class="flexcol"
 		:class="$style.wrapper">
-		<slot name="start"></slot>
+		<slot name="before"></slot>
 		<SortableItemList
 			:class="$style.list"
 			:filter-fn="(item) => item?.type === 'asset'">
@@ -39,6 +39,7 @@
 				:text="$t('IRONSWORN.ITEMS.TypeAsset')"
 				@click="assetBrowser" />
 		</section>
+		<slot name="after"></slot>
 	</DropTarget>
 </template>
 
