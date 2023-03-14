@@ -2,7 +2,7 @@
 	<article class="flexcol">
 		<SortableItemList
 			ref="$connectionList"
-			:filterFn="
+			:filter-fn="
         (item) =>
           item.type === 'progress' &&
           !(item as any).system.completed &&
@@ -13,23 +13,18 @@
 					:item="item"
 					:i="i"
 					:length="length"
-					:showStar="true" />
+					:show-star="true" />
 			</template>
 		</SortableItemList>
 		<section :class="$style.controls" class="progress-controls flexrow nogrow">
 			<IronBtn
 				icon="fa:plus"
 				block
-				@click="newConnection"
-				:text="$t('IRONSWORN.ITEM.SubtypeConnection')" />
+				:text="$t('IRONSWORN.ITEM.SubtypeConnection')"
+				@click="newConnection" />
 		</section>
 	</article>
 </template>
-<style lang="scss" module>
-.controls {
-	--ironsworn-line-height: var(--ironsworn-line-height-sm);
-}
-</style>
 <script setup lang="ts">
 import SortableItemList from 'component:list/sortable-item-list.vue'
 import ProgressListItem from 'component:progress/progress-list-item.vue'
@@ -52,3 +47,8 @@ async function newConnection() {
 	item?.sheet?.render(true)
 }
 </script>
+<style lang="scss" module>
+.controls {
+	--ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
+</style>

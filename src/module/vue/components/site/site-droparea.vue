@@ -1,5 +1,5 @@
 <template>
-	<DropTarget is="div" class="flexcol box" :dropType="itemType">
+	<DropTarget is="div" class="flexcol box" :drop-type="itemType">
 		<div
 			v-if="item"
 			style="position: relative; padding: var(--ironsworn-spacer-xl)">
@@ -16,8 +16,8 @@
 				</div>
 
 				<div
-					class="flexrow"
 					v-if="editMode"
+					class="flexrow"
 					style="
 						position: absolute;
 						top: var(--ironsworn-spacer-md);
@@ -44,9 +44,9 @@
 </template>
 
 <script setup lang="ts">
-import { inject, Ref } from '@vue/runtime-core'
+import type { Ref } from 'vue';
+import { inject , computed } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
-import { computed } from 'vue'
 import DocumentImg from '../document-img.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import BtnCompendium from '../buttons/btn-compendium.vue'

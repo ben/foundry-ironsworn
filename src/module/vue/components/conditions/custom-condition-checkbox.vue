@@ -5,28 +5,16 @@
 			:checked="actor.system.debility[debilitykey]"
 			@input="toggled" />
 		<input
-			type="text"
 			v-model="actor.system.debility[nameKey]"
+			type="text"
 			@input="nameUpdate" />
 	</label>
 </template>
 
-<style lang="scss" scoped>
-label {
-	margin-right: var(--ironsworn-spacer-md);
-	margin-left: calc(var(--ironsworn-spacer-xs) * -1);
-}
-
-input[type='text'] {
-	outline: 0;
-	border: 0;
-	border-bottom: var(--ironsworn-border-width-md) solid;
-}
-</style>
-
 <script lang="ts" setup>
 import { throttle } from 'lodash-es'
-import { computed, inject, nextTick, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { computed, inject, nextTick } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 
 const props = defineProps<{ debilitykey: string }>()
@@ -65,3 +53,16 @@ async function immediateNameUpdate() {
 }
 const nameUpdate = throttle(immediateNameUpdate, 1000)
 </script>
+
+<style lang="scss" scoped>
+label {
+	margin-right: var(--ironsworn-spacer-md);
+	margin-left: calc(var(--ironsworn-spacer-xs) * -1);
+}
+
+input[type='text'] {
+	outline: 0;
+	border: 0;
+	border-bottom: var(--ironsworn-border-width-md) solid;
+}
+</style>

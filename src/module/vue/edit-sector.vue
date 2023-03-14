@@ -5,15 +5,15 @@
 			<i class="fa fa-circle-question" data-tooltip="IRONSWORN.RegionTip"></i>
 		</h4>
 		<label class="nogrow">
-			<input type="radio" v-model="data.region" value="terminus" />
+			<input v-model="data.region" type="radio" value="terminus" />
 			{{ $t('IRONSWORN.REGION.Terminus') }}
 		</label>
 		<label class="nogrow">
-			<input type="radio" v-model="data.region" value="outlands" />
+			<input v-model="data.region" type="radio" value="outlands" />
 			{{ $t('IRONSWORN.REGION.Outlands') }}
 		</label>
 		<label class="nogrow">
-			<input type="radio" v-model="data.region" value="expanse" />
+			<input v-model="data.region" type="radio" value="expanse" />
 			{{ $t('IRONSWORN.REGION.Expanse') }}
 		</label>
 	</div>
@@ -32,7 +32,7 @@ function foundryScene() {
 const scene = computed(() => foundryScene()?.toObject() as any)
 
 const data = reactive({
-	region: scene.value?.flags['foundry-ironsworn']?.['region']
+	region: scene.value?.flags['foundry-ironsworn']?.region
 })
 watch(data, ({ region }) => {
 	foundryScene()?.setFlag('foundry-ironsworn', 'region', region)

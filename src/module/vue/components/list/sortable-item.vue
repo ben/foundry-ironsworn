@@ -27,17 +27,17 @@
 					v-if="editMode"
 					block
 					icon="fa:trash"
-					@click="destroy"
 					:tooltip="
 						$t('DOCUMENT.Delete', {
 							type: $t('IRONSWORN.ITEM.TypeProgressTrack')
 						})
-					" />
+					"
+					@click="destroy" />
 				<IronBtn
 					block
 					icon="fa:pen-to-square"
-					@click="edit"
-					:tooltip="$t('IRONSWORN.Edit')" />
+					:tooltip="$t('IRONSWORN.Edit')"
+					@click="edit" />
 
 				<slot name="controls"></slot>
 			</div>
@@ -45,44 +45,9 @@
 	</li>
 </template>
 
-<style lang="scss" module>
-.wrapper {
-}
-.content {
-	border-width: var(--ironsworn-border-width-md);
-	border-style: solid;
-	border-radius: var(--ironsworn-border-radius-sm);
-	border-color: var(--ironsworn-color-border);
-	padding: var(--ironsworn-spacer-sm);
-}
-
-.orderBtns {
-	padding-right: var(--ironsworn-spacer-sm);
-}
-.orderBtn {
-	padding: var(--ironsworn-spacer-xs);
-}
-.controls {
-	display: grid;
-	grid-row: 1 / span 2;
-	grid-column: 4;
-	grid-auto-flow: column;
-
-	> * {
-		aspect-ratio: 1;
-		grid-row: 1;
-	}
-}
-.controlBtn {
-	flex-grow: 0;
-	padding: var(--ironsworn-spacer-md);
-}
-</style>
-
 <script lang="ts" setup>
-import { computed } from '@vue/reactivity'
+import { computed , inject, provide } from 'vue'
 import { $ActorKey, $ItemKey, ActorKey, ItemKey } from '../../provisions'
-import { inject, provide } from 'vue'
 import IronBtn from '../buttons/iron-btn.vue'
 
 const props = withDefaults(
@@ -154,3 +119,37 @@ function sortDown() {
 	return props.sortFn(props.i, props.i + 1, false)
 }
 </script>
+
+<style lang="scss" module>
+.wrapper {
+}
+.content {
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
+	padding: var(--ironsworn-spacer-sm);
+}
+
+.orderBtns {
+	padding-right: var(--ironsworn-spacer-sm);
+}
+.orderBtn {
+	padding: var(--ironsworn-spacer-xs);
+}
+.controls {
+	display: grid;
+	grid-row: 1 / span 2;
+	grid-column: 4;
+	grid-auto-flow: column;
+
+	> * {
+		aspect-ratio: 1;
+		grid-row: 1;
+	}
+}
+.controlBtn {
+	flex-grow: 0;
+	padding: var(--ironsworn-spacer-md);
+}
+</style>

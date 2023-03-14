@@ -13,7 +13,7 @@
 				data-tourid="momentum"
 				:class="$style.marginRight">
 				<MomentumMeterSlider
-					labelPosition="right"
+					label-position="right"
 					data-tooltip-direction="UP" />
 			</div>
 
@@ -21,9 +21,9 @@
 			<div class="flexcol">
 				<!-- Attributes -->
 				<div
+					id="stats"
 					:class="$style.stats"
 					class="flexrow stats"
-					id="stats"
 					style="margin-bottom: var(--ironsworn-spacer-xl)"
 					data-tooltip-direction="UP"
 					data-tourid="stats">
@@ -34,8 +34,8 @@
 					<attr-box attr="wits" />
 				</div>
 				<TabSet
-					:tabKeys="['legacies', 'assets', 'progress', 'connections', 'notes']"
 					:id="`${data.actor._id}_sf-character-sheet`"
+					:tab-keys="['legacies', 'assets', 'progress', 'connections', 'notes']"
 					data-tourid="tabs">
 					<TabList>
 						<Tab tab-key="legacies" :text="$t('IRONSWORN.Legacies')" />
@@ -73,7 +73,7 @@
 				class="flexcol"
 				:class="$style.marginLeft"
 				data-tooltip-direction="UP"
-				labelPosition="left"
+				label-position="left"
 				data-tourid="resources" />
 		</div>
 
@@ -82,6 +82,34 @@
 		<sf-impacts class="nogrow" data-tourid="impacts" />
 	</article>
 </template>
+
+<script lang="ts" setup>
+import { computed, provide } from 'vue'
+import AttrBox from './components/attr-box.vue'
+import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
+import SfConnections from './components/character-sheet-tabs/sf-connections.vue'
+import SfCharacterheader from './components/sf-characterheader.vue'
+import SfImpacts from './components/sf-impacts.vue'
+import AssetsList from './components/character-sheet-tabs/assets-list.vue'
+import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
+import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
+import { ActorKey } from './provisions.js'
+import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
+import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
+import TabSet from './components/tabs/tab-set.vue'
+import TabList from './components/tabs/tab-list.vue'
+import Tab from './components/tabs/tab.vue'
+import TabPanel from './components/tabs/tab-panel.vue'
+import TabPanels from './components/tabs/tab-panels.vue'
+
+const props = defineProps<{
+	data: {
+		actor: any
+	}
+}>()
+
+provide(ActorKey, computed(() => props.data.actor) as any)
+</script>
 
 <style lang="scss" module>
 @use 'mixin:border.scss';
@@ -124,31 +152,3 @@
 	}
 }
 </style>
-
-<script lang="ts" setup>
-import { computed, provide } from 'vue'
-import AttrBox from './components/attr-box.vue'
-import SfLegacies from './components/character-sheet-tabs/sf-legacies.vue'
-import SfConnections from './components/character-sheet-tabs/sf-connections.vue'
-import SfCharacterheader from './components/sf-characterheader.vue'
-import SfImpacts from './components/sf-impacts.vue'
-import AssetsList from './components/character-sheet-tabs/assets-list.vue'
-import SfProgresses from './components/character-sheet-tabs/sf-progresses.vue'
-import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
-import { ActorKey } from './provisions.js'
-import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
-import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
-import TabSet from './components/tabs/tab-set.vue'
-import TabList from './components/tabs/tab-list.vue'
-import Tab from './components/tabs/tab.vue'
-import TabPanel from './components/tabs/tab-panel.vue'
-import TabPanels from './components/tabs/tab-panels.vue'
-
-const props = defineProps<{
-	data: {
-		actor: any
-	}
-}>()
-
-provide(ActorKey, computed(() => props.data.actor) as any)
-</script>

@@ -1,8 +1,8 @@
 <template>
 	<IronCheckbox
 		:is="is"
-		:class="$style.wrapper"
 		ref="$el"
+		:class="$style.wrapper"
 		:checked="$props.ability.enabled"
 		v-bind="{
 			iconChecked,
@@ -13,9 +13,9 @@
 		@input="$emit('toggleEnabled', $event)">
 		<WithRolllisteners
 			element="div"
-			@moveclick="moveClick"
 			:class="$style.text"
 			class="flexcol"
+			@moveclick="moveClick"
 			v-html="$enrichHtml($props.ability.description)">
 		</WithRolllisteners>
 
@@ -27,6 +27,62 @@
 			@click.prevent="$emit('setClock', $event)" />
 	</IronCheckbox>
 </template>
+
+<script lang="ts" setup>
+import Clock from 'component:clock.vue'
+import type { IconId } from 'component:icon/icon-common'
+import IronCheckbox from 'component:input/iron-checkbox.vue'
+import WithRolllisteners from 'component:with-rolllisteners.vue'
+import type { AssetAbility as AssetAbilityType } from 'module/item/itemtypes'
+import { getCssVar } from '../../composable/getCssVar'
+import { computed, ref } from 'vue'
+
+interface Props {
+	readonly?: boolean
+	ability: AssetAbilityType
+	is?: any
+}
+
+const props = withDefaults(defineProps<Props>(), { readonly: false, is: 'div' })
+
+const cssVarSource = document.documentElement.querySelector('body') as any
+
+const iconChecked = computed(
+	() => ({
+		icon: getCssVar<IconId>(
+			'--ironsworn-asset-ability-bullet-checked',
+			// FIXME this should really point to the wrapper element
+			cssVarSource
+		),
+		class: getCssVar(
+			'--ironsworn-asset-ability-bullet-checked-classes',
+			cssVarSource
+		)
+	})
+	// FIXME: ideally this would point at a specific ability's computed value. but this will have to wait for an asset ability component.
+)
+const $el = ref<HTMLElement>()
+
+const iconUnchecked = computed(() => ({
+	icon: getCssVar<IconId>(
+		'--ironsworn-asset-ability-bullet-unchecked',
+		cssVarSource
+	),
+	class: getCssVar(
+		'--ironsworn-asset-ability-bullet-unchecked-classes',
+		cssVarSource
+	)
+}))
+
+function moveClick(item) {
+	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
+}
+
+const $emit = defineEmits<{
+	(event: 'setClock', clockValue: number): void
+	(event: 'toggleEnabled', value: boolean): void
+}>()
+</script>
 
 <style lang="scss" module>
 .wrapper {
@@ -59,59 +115,3 @@
 	}
 }
 </style>
-
-<script lang="ts" setup>
-import Clock from 'component:clock.vue'
-import { IconId } from 'component:icon/icon-common'
-import IronCheckbox from 'component:input/iron-checkbox.vue'
-import WithRolllisteners from 'component:with-rolllisteners.vue'
-import type { AssetAbility as AssetAbilityType } from 'module/item/itemtypes'
-import { getCssVar } from '../../composable/getCssVar'
-import { computed, ref } from 'vue'
-
-interface Props {
-	readonly?: boolean
-	ability: AssetAbilityType
-	is?: any
-}
-
-const props = withDefaults(defineProps<Props>(), { readonly: false, is: 'div' })
-
-const cssVarSource = document.documentElement.querySelector('body') as any
-
-const iconChecked = computed(
-	() => ({
-		icon: getCssVar<IconId>(
-			'--ironsworn-asset-ability-bullet-checked',
-			// FIXME this should really point to the wrapper element
-			cssVarSource
-		),
-		class: getCssVar(
-			'--ironsworn-asset-ability-bullet-checked-classes',
-			cssVarSource
-		)
-	})
-	// FIXME: ideally this would point at a specific ability's computed value. but this will have to wait for an asset ability component.
-)
-let $el = ref<HTMLElement>()
-
-const iconUnchecked = computed(() => ({
-	icon: getCssVar<IconId>(
-		'--ironsworn-asset-ability-bullet-unchecked',
-		cssVarSource
-	),
-	class: getCssVar(
-		'--ironsworn-asset-ability-bullet-unchecked-classes',
-		cssVarSource
-	)
-}))
-
-function moveClick(item) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
-
-const $emit = defineEmits<{
-	(event: 'setClock', clockValue: number): void
-	(event: 'toggleEnabled', value: boolean): void
-}>()
-</script>

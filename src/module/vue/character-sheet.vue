@@ -2,7 +2,7 @@
 	<SheetBasic
 		:document="data.actor"
 		class="character-sheet-classic"
-		bodyClass="flexrow"
+		body-class="flexrow"
 		data-tourid="sheet">
 		<!-- Header row -->
 		<template #header>
@@ -15,7 +15,7 @@
 			class="flexcol nogrow"
 			:class="$style.marginRight"
 			data-tourid="momentum">
-			<MomentumMeterSlider labelPosition="right" data-tooltip-direction="UP" />
+			<MomentumMeterSlider label-position="right" data-tooltip-direction="UP" />
 		</div>
 
 		<!-- Center area -->
@@ -33,8 +33,8 @@
 				<attr-box attr="wits"></attr-box>
 			</div>
 			<TabSet
-				:tabKeys="['character', 'notes']"
 				:id="`${data.actor._id}-character-sheet-classic`"
+				:tab-keys="['character', 'notes']"
 				:class="$style.tabSet"
 				:v-slot:icon="{ size: 'sm' }"
 				data-tourid="tabs">
@@ -65,10 +65,39 @@
 			class="flexcol nogrow"
 			:class="$style.marginLeft"
 			data-tooltip-direction="UP"
-			labelPosition="left"
+			label-position="left"
 			data-tourid="resources" />
 	</SheetBasic>
 </template>
+
+<script setup lang="ts">
+import { ActorKey } from './provisions'
+import AttrBox from './components/attr-box.vue'
+import type { IronswornActor } from '../actor/actor'
+import { provide, computed } from 'vue'
+import CharacterHeader from './components/character-header.vue'
+import Conditions from './components/conditions/conditions.vue'
+import { CharacterDataProperties } from '../actor/actortypes'
+import SheetBasic from './sheet-basic.vue'
+import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
+import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
+import TabSet from './components/tabs/tab-set.vue'
+import TabList from './components/tabs/tab-list.vue'
+import Tab from './components/tabs/tab.vue'
+import TabPanels from './components/tabs/tab-panels.vue'
+import TabPanel from './components/tabs/tab-panel.vue'
+import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
+import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
+
+const props = defineProps<{
+	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
+}>()
+
+provide(
+	ActorKey,
+	computed(() => props.data.actor)
+)
+</script>
 
 <style lang="scss" module>
 @use 'mixin:border.scss';
@@ -104,32 +133,3 @@
 	text-transform: uppercase;
 }
 </style>
-
-<script setup lang="ts">
-import { ActorKey } from './provisions'
-import AttrBox from './components/attr-box.vue'
-import { IronswornActor } from '../actor/actor'
-import { provide, computed } from 'vue'
-import CharacterHeader from './components/character-header.vue'
-import Conditions from './components/conditions/conditions.vue'
-import { CharacterDataProperties } from '../actor/actortypes'
-import SheetBasic from './sheet-basic.vue'
-import PcConditionMeters from './components/resource-meter/pc-condition-meters.vue'
-import MomentumMeterSlider from './components/resource-meter/momentum-meter.vue'
-import TabSet from './components/tabs/tab-set.vue'
-import TabList from './components/tabs/tab-list.vue'
-import Tab from './components/tabs/tab.vue'
-import TabPanels from './components/tabs/tab-panels.vue'
-import TabPanel from './components/tabs/tab-panel.vue'
-import IronswornMain from './components/character-sheet-tabs/ironsworn-main.vue'
-import IronswornNotes from './components/character-sheet-tabs/ironsworn-notes.vue'
-
-const props = defineProps<{
-	data: { actor: ReturnType<typeof IronswornActor.prototype.toObject> }
-}>()
-
-provide(
-	ActorKey,
-	computed(() => props.data.actor)
-)
-</script>

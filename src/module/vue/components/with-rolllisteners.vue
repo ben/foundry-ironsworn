@@ -6,9 +6,9 @@
 
 <script setup lang="ts">
 import { inject, onMounted, ref, useAttrs } from 'vue'
-import { IronswornActor } from '../../actor/actor'
+import type { IronswornActor } from '../../actor/actor'
 import { attachInlineRollListeners } from '../../features/rollplus'
-import { IronswornItem } from '../../item/item'
+import type { IronswornItem } from '../../item/item'
 import { $ActorKey } from '../provisions'
 
 const props = defineProps<{ element: string }>()
@@ -41,7 +41,7 @@ async function click(ev: JQuery.ClickEvent) {
 		const gameItem = (await fromUuid(uuid)) as IronswornItem | IronswornActor
 		if (gameItem?.type === 'sfmove') {
 			$emit('moveclick', gameItem)
-			return !!$attrs['onMoveclick']
+			return !!$attrs.onMoveclick
 		}
 
 		// @ts-ignore
@@ -52,7 +52,7 @@ async function click(ev: JQuery.ClickEvent) {
 		// TODO: allow for custom oracles
 		// Probably an oracle category click
 		$emit('oracleclick', dfid)
-		return !!$attrs['onOracleclick']
+		return !!$attrs.onOracleclick
 	}
 }
 </script>

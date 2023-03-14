@@ -8,19 +8,8 @@
 		@click="click" />
 </template>
 
-<style lang="scss">
-.document-img {
-	cursor: pointer;
-
-	&[src$='.svg'] {
-		// tint to ensure that transparent SVGs have adequate contrast
-		background-color: var(--ironsworn-color-fg-10);
-	}
-}
-</style>
-
 <script setup lang="ts">
-import { computed, inject } from '@vue/runtime-core'
+import { computed, inject } from 'vue'
 import { $ActorKey, $ItemKey } from '../provisions'
 const props = withDefaults(
 	defineProps<{
@@ -41,7 +30,7 @@ function click() {
 	const current = props.document.img
 	const fp = new FilePicker({
 		type: 'image',
-		current: current,
+		current,
 		callback: (img) => {
 			const doc = $item ?? $actor
 			doc?.update({ img })
@@ -50,3 +39,14 @@ function click() {
 	return fp.browse(current)
 }
 </script>
+
+<style lang="scss">
+.document-img {
+	cursor: pointer;
+
+	&[src$='.svg'] {
+		// tint to ensure that transparent SVGs have adequate contrast
+		background-color: var(--ironsworn-color-fg-10);
+	}
+}
+</style>

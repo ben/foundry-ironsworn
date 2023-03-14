@@ -1,52 +1,33 @@
 <template>
 	<Collapsible
-		:toggleLabel="$t('IRONSWORN.Completed')"
+		v-bind="$props.collapsibleProps"
+		ref="$collapsible"
+		:toggle-label="$t('IRONSWORN.Completed')"
 		:disabled="!items.length"
 		:class="$style.wrapper"
-		toggleButtonClass="clickable text"
-		:baseId="`${actor._id}_progress-completed`"
-		v-bind="$props.collapsibleProps"
-		ref="$collapsible">
+		toggle-button-class="clickable text"
+		:base-id="`${actor._id}_progress-completed`">
 		<SortableItemList
-			:filterFn="completedFilterFn"
-			:class="$style.list"
-			ref="$progressList">
+			ref="$progressList"
+			:filter-fn="completedFilterFn"
+			:class="$style.list">
 			<template #item="{ item, i, length }">
 				<ProgressListItem
 					:item="item"
 					:i="i"
 					:length="length"
-					:showStar="true" />
+					:show-star="true" />
 			</template>
 		</SortableItemList>
 	</Collapsible>
 </template>
 
-<style lang="scss" module>
-.wrapper {
-	margin-top: var(--ironsworn-spacer-lg);
-	border-width: var(--ironsworn-border-width-md);
-	border-style: solid;
-	border-radius: var(--ironsworn-border-radius-lg);
-	border-color: var(--ironsworn-color-fg-10);
-	background-color: var(--ironsworn-color-fg-10);
-}
-
-.list {
-	margin: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
-}
-
-.listItem {
-	border-color: var(--ironsworn-color-bg-50);
-	background-color: var(--ironsworn-color-bg-50);
-}
-</style>
-
 <script lang="ts" setup>
-import { ItemLike } from 'component:list/helpers'
+import type { ItemLike } from 'component:list/helpers'
 import SortableItemList from 'component:list/sortable-item-list.vue'
 import ProgressListItem from 'component:progress/progress-list-item.vue'
-import { computed, ExtractPropTypes, inject, ref, Ref, watch } from 'vue'
+import type { ExtractPropTypes, Ref} from 'vue';
+import { computed, inject, ref, watch } from 'vue'
 import { ActorKey } from '../../provisions'
 import Collapsible from '../collapsible/collapsible.vue'
 
@@ -70,8 +51,8 @@ const completedFilterFn = computed(() => {
 	return fn
 })
 
-let $progressList = ref<InstanceType<typeof SortableItemList>>()
-let $collapsible = ref<InstanceType<typeof Collapsible>>()
+const $progressList = ref<InstanceType<typeof SortableItemList>>()
+const $collapsible = ref<InstanceType<typeof Collapsible>>()
 
 // collapsible inserts/removes components from DOM, so the list's exposed stuff don't always exist.
 const items = computed(() => actor.value.items.filter(completedFilterFn.value))
@@ -95,3 +76,23 @@ defineExpose({
 	$progressList
 })
 </script>
+
+<style lang="scss" module>
+.wrapper {
+	margin-top: var(--ironsworn-spacer-lg);
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-lg);
+	border-color: var(--ironsworn-color-fg-10);
+	background-color: var(--ironsworn-color-fg-10);
+}
+
+.list {
+	margin: 0 var(--ironsworn-spacer-md) var(--ironsworn-spacer-md);
+}
+
+.listItem {
+	border-color: var(--ironsworn-color-bg-50);
+	background-color: var(--ironsworn-color-bg-50);
+}
+</style>

@@ -3,7 +3,7 @@
 		<div class="flexcol">
 			<section class="sheet-area flexcol">
 				<!-- Bonds -->
-				<Bonds :compactProgress="true" data-tourid="bonds" />
+				<Bonds :compact-progress="true" data-tourid="bonds" />
 
 				<hr class="nogrow" />
 
@@ -18,16 +18,22 @@
 			</section>
 		</div>
 		<ActiveCompletedProgresses
-			:compactProgress="true"
+			:compact-progress="true"
 			:class="$style.progress"
 			data-tourid="progress" />
 	</div>
 </template>
+<script lang="ts" setup>
+import Bonds from '../bonds.vue'
+import ActiveCompletedProgresses from '../progress/active-completed-progresses.vue'
+import AssetsList from './assets-list.vue'
+</script>
 <style lang="scss" module>
 .progress {
 	margin-top: var(--ironsworn-spacer-md);
 }
 </style>
+
 <style lang="scss" scoped>
 h4 {
 	text-transform: uppercase;
@@ -43,9 +49,3 @@ h3 {
 	}
 }
 </style>
-
-<script lang="ts" setup>
-import Bonds from '../bonds.vue'
-import ActiveCompletedProgresses from '../progress/active-completed-progresses.vue'
-import AssetsList from './assets-list.vue'
-</script>

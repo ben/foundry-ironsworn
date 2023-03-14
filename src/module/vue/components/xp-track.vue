@@ -5,10 +5,10 @@
 		aria-valuemin="0"
 		:aria-valuemax="max">
 		<button
-			class="xp-box"
-			type="button"
 			v-for="box in computedBoxes"
 			:key="box.key"
+			class="xp-box"
+			type="button"
 			:value="box.value"
 			:data-segment-state="box.state"
 			:aria-selected="box.value == marked"
@@ -17,54 +17,6 @@
 			@click="click(box.value)" />
 	</article>
 </template>
-<style lang="scss" scoped>
-@use 'mixin:fx.scss';
-
-.xp-track {
-	position: relative;
-
-	.xp-box {
-		// for sizing/layout concerns, see legacy-track.vue
-
-		position: relative;
-		z-index: auto;
-		border-style: solid;
-		border-radius: var(--ironsworn-border-radius-md);
-		background-color: var(--ironsworn-color-bg);
-		overflow: clip;
-		aspect-ratio: 1;
-
-		&::after {
-			@include fx.overlay(var(--ironsworn-z-index-high));
-			@include fx.tint(var(--ironsworn-color-thematic), 0);
-
-			transition: var(--ironsworn-transition);
-			background-blend-mode: normal;
-		}
-
-		&[data-segment-state='hovered'] {
-			z-index: var(--ironsworn-z-index-high);
-			border-color: var(--ironsworn-color-clickable-block-border-hover);
-			box-shadow: none;
-
-			&::after {
-				opacity: 0.5;
-			}
-		}
-
-		&[data-segment-state='selected'],
-		&:hover[data-segment-state='hovered'] {
-			// selected boxes, plus the box currently being hovered when previewing.
-			z-index: var(--ironsworn-z-index-high);
-			border-color: var(--ironsworn-color-clickable-block-border-selected);
-
-			&::after {
-				opacity: 1;
-			}
-		}
-	}
-}
-</style>
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
 
@@ -115,3 +67,51 @@ function click(xpValue) {
 	$emit('click', xpValue)
 }
 </script>
+<style lang="scss" scoped>
+@use 'mixin:fx.scss';
+
+.xp-track {
+	position: relative;
+
+	.xp-box {
+		// for sizing/layout concerns, see legacy-track.vue
+
+		position: relative;
+		z-index: auto;
+		border-style: solid;
+		border-radius: var(--ironsworn-border-radius-md);
+		background-color: var(--ironsworn-color-bg);
+		overflow: clip;
+		aspect-ratio: 1;
+
+		&::after {
+			@include fx.overlay(var(--ironsworn-z-index-high));
+			@include fx.tint(var(--ironsworn-color-thematic), 0);
+
+			transition: var(--ironsworn-transition);
+			background-blend-mode: normal;
+		}
+
+		&[data-segment-state='hovered'] {
+			z-index: var(--ironsworn-z-index-high);
+			border-color: var(--ironsworn-color-clickable-block-border-hover);
+			box-shadow: none;
+
+			&::after {
+				opacity: 0.5;
+			}
+		}
+
+		&[data-segment-state='selected'],
+		&:hover[data-segment-state='hovered'] {
+			// selected boxes, plus the box currently being hovered when previewing.
+			z-index: var(--ironsworn-z-index-high);
+			border-color: var(--ironsworn-color-clickable-block-border-selected);
+
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+}
+</style>

@@ -2,12 +2,12 @@
 	<Transition :name="transitionName">
 		<component
 			:is="is"
+			v-show="isActive"
+			:id="getTabPanelId(tabState.tabSetId, tabKey)"
 			ref="$el"
 			role="tabpanel"
 			:aria-labelledby="getTabId(tabState.tabSetId, tabKey)"
-			:id="getTabPanelId(tabState.tabSetId, tabKey)"
 			tabindex="-1"
-			v-show="isActive"
 			:data-tab-set="tabState.tabSetId"
 			:data-tab-key="tabKey"
 			:class="$style.wrapper">
@@ -16,37 +16,19 @@
 	</Transition>
 </template>
 
-<style lang="scss" scoped>
-[class*='-leave-active'] {
-	// prevents outgoing panels from fighting incoming panels for space
-	position: absolute;
-	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-}
-</style>
-
-<style lang="scss" module>
-.wrapper {
-	// improves performance of transform transitions
-	backface-visibility: hidden;
-	background-color: var(--ironsworn-color-bg);
-	transition-duration: var(--ironsworn-tab-transition-duration);
-}
-</style>
-
 <script lang="ts" setup>
 import { getCssVar } from '../../../../module/vue/composable/getCssVar'
-import { computed, inject, Ref, ref, watch } from 'vue'
+import type { Ref} from 'vue';
+import { computed, inject, ref, watch } from 'vue'
+import type {
+	SetActivePanelRef,
+	TabKey,
+	TabState} from './tab-helpers.js';
 import {
 	getSlideTransitionName,
 	getTabId,
 	getTabPanelId,
-	SetActivePanelRef,
 	SetActivePanelRefKey,
-	TabKey,
-	TabState,
 	TabStateKey
 } from './tab-helpers.js'
 
@@ -69,7 +51,7 @@ const props = withDefaults(
 
 const tabState = inject(TabStateKey) as TabState
 
-let $el = ref<HTMLElement>() as Ref<HTMLElement>
+const $el = ref<HTMLElement>() as Ref<HTMLElement>
 const isActive = computed(() => tabState.activeTab === props.tabKey)
 const setActivePanelRef = inject(SetActivePanelRefKey) as SetActivePanelRef
 
@@ -103,3 +85,23 @@ const transitionName = computed(() => {
 	return themeTransition
 })
 </script>
+
+<style lang="scss" scoped>
+[class*='-leave-active'] {
+	// prevents outgoing panels from fighting incoming panels for space
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+</style>
+
+<style lang="scss" module>
+.wrapper {
+	// improves performance of transform transitions
+	backface-visibility: hidden;
+	background-color: var(--ironsworn-color-bg);
+	transition-duration: var(--ironsworn-tab-transition-duration);
+}
+</style>

@@ -30,6 +30,11 @@
 	</div>
 </template>
 
+<script setup lang="ts">
+import conditionCheckbox from './conditions/condition-checkbox.vue'
+import CustomConditionCheckbox from './conditions/custom-condition-checkbox.vue'
+</script>
+
 <style lang="scss" scoped>
 .grid {
 	grid-template-columns: repeat(4, 1fr);
@@ -40,8 +45,3 @@ h5 {
 	margin: var(--ironsworn-spacer-sm) 0;
 }
 </style>
-
-<script setup lang="ts">
-import conditionCheckbox from './conditions/condition-checkbox.vue'
-import CustomConditionCheckbox from './conditions/custom-condition-checkbox.vue'
-</script>

@@ -13,48 +13,49 @@
 
 		<div class="form-group">
 			<label>{{ $t('Name') }}</label>
-			<input type="text" @blur="updateName" v-model="item.system.track.name" />
+			<input v-model="item.system.track.name" type="text" @blur="updateName" />
 		</div>
 
 		<div class="form-group">
 			<label>{{ $t('Maximum') }}</label>
 			<input
+				v-model.number="item.system.track.max"
 				type="number"
-				@blur="updateMax"
-				v-model.number="item.system.track.max" />
+				@blur="updateMax" />
 		</div>
 
 		<AttrSlider
 			style="margin-top: var(--ironsworn-spacer-md)"
 			attr="track.current"
-			documentType="Item"
+			document-type="Item"
 			:max="item.system.track.max"
-			:currentValue="item.system.track.current"
-			sliderStyle="horizontal" />
+			:current-value="item.system.track.current"
+			slider-style="horizontal" />
 
 		<hr />
 
 		<h4>{{ $t('IRONSWORN.Conditions') }}</h4>
 		<CollapseTransition group tag="div" class="nogrow">
 			<div
-				class="form-group nogrow"
 				v-for="(condition, i) in item.system.conditions"
-				:key="`condition${i}`">
+				:key="`condition${i}`"
+				class="form-group nogrow">
 				<label>{{ $t('Name') }}</label>
-				<input type="text" @blur="saveConditions" v-model="condition.name" />
+				<input v-model="condition.name" type="text" @blur="saveConditions" />
 				<IronBtn icon="fa:trash" @click="deleteCondition(i)" />
 			</div>
 		</CollapseTransition>
 		<IronBtn
 			icon="fa:plus"
 			block
-			@click="addCondition"
-			:text="$t('IRONSWORN.Condition')" />
+			:text="$t('IRONSWORN.Condition')"
+			@click="addCondition" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import { computed, inject, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { computed, inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import AttrSlider from '../resource-meter/attr-slider.vue'

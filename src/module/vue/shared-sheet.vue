@@ -2,13 +2,13 @@
 	<SheetBasic :document="data.actor" class="shared-sheet" body-class="flexcol">
 		<section class="sheet-area nogrow">
 			<ConditionMeter
-				sliderStyle="horizontal"
+				slider-style="horizontal"
 				attr="supply"
-				:statLabel="$t('IRONSWORN.Supply')"
+				:stat-label="$t('IRONSWORN.Supply')"
 				:max="5"
 				:min="0"
-				:currentValue="data.actor.system.supply"
-				documentType="Actor"
+				:current-value="data.actor.system.supply"
+				document-type="Actor"
 				:global="IronswornSettings.get('shared-supply')" />
 		</section>
 
@@ -25,26 +25,6 @@
 	</SheetBasic>
 </template>
 
-<style lang="scss" scoped>
-.stat-roll {
-	text-transform: uppercase;
-}
-
-h3 {
-	transition: background-color 0.2s ease;
-	margin: var(--ironsworn-spacer-md) 0;
-}
-
-textarea.notes {
-	flex: 1;
-	border-radius: var(--ironsworn-border-radius-sm);
-	border-color: var(--ironsworn-color-fg-10);
-	min-height: 150px;
-	resize: none;
-	font-family: var(--font-primary);
-}
-</style>
-
 <script setup lang="ts">
 import { provide, computed, inject } from 'vue'
 import { $ActorKey, ActorKey } from './provisions'
@@ -52,7 +32,7 @@ import Bonds from './components/bonds.vue'
 import MceEditor from './components/mce-editor.vue'
 import { throttle } from 'lodash-es'
 import ActiveCompletedProgresses from './components/progress/active-completed-progresses.vue'
-import { BondsetDataPropertiesData } from '../item/itemtypes'
+import type { BondsetDataPropertiesData } from '../item/itemtypes'
 import SheetBasic from './sheet-basic.vue'
 import ConditionMeter from './components/resource-meter/condition-meter.vue'
 import { IronswornSettings } from '../helpers/settings.js'
@@ -74,3 +54,23 @@ function saveNotes() {
 	$actor?.update({ 'system.biography': props.data.actor.system.biography })
 }
 </script>
+
+<style lang="scss" scoped>
+.stat-roll {
+	text-transform: uppercase;
+}
+
+h3 {
+	transition: background-color 0.2s ease;
+	margin: var(--ironsworn-spacer-md) 0;
+}
+
+textarea.notes {
+	flex: 1;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-fg-10);
+	min-height: 150px;
+	resize: none;
+	font-family: var(--font-primary);
+}
+</style>

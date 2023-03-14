@@ -1,19 +1,19 @@
 <template>
 	<Collapsible
 		v-bind="$props.collapsible"
+		ref="$collapsible"
 		class="movesheet-row"
 		:class="$style.wrapper"
 		data-tooltip-direction="LEFT"
-		:baseId="`move_row_${move.moveItem().id}`"
-		ref="$collapsible"
-		:contentWrapperClass="$style.content"
-		:toggleWrapperIs="`h${headingLevel}`"
-		:toggleSectionClass="[$style.toggleSection, toggleSectionClass]"
+		:base-id="`move_row_${move.moveItem().id}`"
+		:content-wrapper-class="$style.content"
+		:toggle-wrapper-is="`h${headingLevel}`"
+		:toggle-section-class="[$style.toggleSection, toggleSectionClass]"
 		:icon="null"
-		:toggleButtonClass="['bordered', $style.toggleBtn, toggleButtonClass]"
-		:toggleTooltip="toggleTooltip"
-		:toggleWrapperClass="$style.toggleWrapper"
-		:toggleLabel="move?.displayName"
+		:toggle-button-class="['bordered', $style.toggleBtn, toggleButtonClass]"
+		:toggle-tooltip="toggleTooltip"
+		:toggle-wrapper-class="$style.toggleWrapper"
+		:toggle-label="move?.displayName"
 		:data-move-id="move.moveItem().id"
 		:data-move-uuid="move.moveItem().uuid">
 		<template #after-toggle>
@@ -39,14 +39,14 @@
 		</template>
 		<template #default>
 			<RulesTextMove
-				@moveclick="moveClick"
 				:move="move"
-				:class="$style.summary">
+				:class="$style.summary"
+				@moveclick="moveClick">
 				<template #after-footer>
 					<OracleTreeNode
-						:class="$style.oracle"
 						v-for="node of data.oracles"
 						:key="node.displayName"
+						:class="$style.oracle"
 						:node="node" />
 				</template>
 			</RulesTextMove>
@@ -54,103 +54,14 @@
 	</Collapsible>
 </template>
 
-<style lang="scss" module>
-@use 'mixin:color.scss';
-@use 'mixin:clickable.scss';
-@use 'mixin:text.scss';
-
-.wrapper {
-	--ironsworn-line-height: (--ironsworn-line-height-md);
-
-	position: relative;
-	transition: var(--ironsworn-transition);
-	padding: 0 var(--ironsworn-spacer-md);
-}
-
-.summary {
-	padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
-		var(--ironsworn-spacer-md);
-}
-
-.content {
-}
-
-.btn {
-	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
-	@include clickable.text;
-
-	align-self: center;
-	aspect-ratio: 1 !important;
-	font-size: var(--font-size-20);
-}
-
-.toggleBtn {
-	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
-	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
-
-	@include clickable.text;
-
-	// @include color.thematic;
-
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	background: none;
-	padding: 0;
-	padding-left: var(--ironsworn-spacer-sm);
-	height: 100%;
-	text-align: left;
-	font-size: var(--font-size-16);
-
-	&:hover {
-		box-shadow: none;
-	}
-}
-
-.contentWrapper {
-}
-
-.controls {
-	display: flex;
-	flex-flow: row;
-	background: none;
-}
-
-.toggleSection {
-	display: flex;
-	flex-flow: row nowrap;
-	gap: var(--ironsworn-spacer-md);
-}
-
-.toggleWrapper {
-	transition: var(--ironsworn-transition);
-	line-height: 1.5;
-}
-
-.oracle {
-	border-width: var(--ironsworn-border-width-md);
-	border-style: solid;
-	border-radius: var(--ironsworn-border-radius-sm);
-	border-color: var(--ironsworn-color-border);
-	padding: 0;
-
-	h4 {
-		font-size: var(--font-size-16);
-
-		button.icon-button {
-			height: inherit;
-		}
-	}
-}
-</style>
-
 <script setup lang="ts">
-import { computed, ExtractPropTypes, provide, reactive, ref } from 'vue'
+import type { ExtractPropTypes} from 'vue';
+import { computed, provide, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
-import { Move } from '../../features/custommoves'
-import { IOracleTreeNode, walkOracle } from '../../features/customoracles'
-import { IronswornItem } from '../../item/item'
+import type { Move } from '../../features/custommoves'
+import type { IOracleTreeNode} from '../../features/customoracles';
+import { walkOracle } from '../../features/customoracles'
+import type { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'
 import BtnRollmove from './buttons/btn-rollmove.vue'
 import BtnSendmovetochat from './buttons/btn-sendmovetochat.vue'
@@ -160,7 +71,7 @@ import Collapsible from './collapsible/collapsible.vue'
 import BtnOracle from './buttons/btn-oracle.vue'
 import { ItemKey, $ItemKey } from '../provisions.js'
 import { enrichMarkdown } from '../vue-plugin.js'
-import { SFMoveDataPropertiesData } from '../../item/itemtypes'
+import type { SFMoveDataPropertiesData } from '../../item/itemtypes'
 import { uniq } from 'lodash-es'
 
 const props = withDefaults(
@@ -258,3 +169,94 @@ defineExpose({
 	$collapsible
 })
 </script>
+
+<style lang="scss" module>
+@use 'mixin:color.scss';
+@use 'mixin:clickable.scss';
+@use 'mixin:text.scss';
+
+.wrapper {
+	--ironsworn-line-height: (--ironsworn-line-height-md);
+
+	position: relative;
+	transition: var(--ironsworn-transition);
+	padding: 0 var(--ironsworn-spacer-md);
+}
+
+.summary {
+	padding: var(--ironsworn-spacer-lg) var(--ironsworn-spacer-lg)
+		var(--ironsworn-spacer-md);
+}
+
+.content {
+}
+
+.btn {
+	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
+	@include clickable.text;
+
+	align-self: center;
+	aspect-ratio: 1 !important;
+	font-size: var(--font-size-20);
+}
+
+.toggleBtn {
+	--ironsworn-color-clickable-text: var(--ironsworn-color-fg);
+	--ironsworn-color-clickable-text-hover: var(--ironsworn-color-fg-warm);
+
+	@include clickable.text;
+
+	// @include color.thematic;
+
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background: none;
+	padding: 0;
+	padding-left: var(--ironsworn-spacer-sm);
+	height: 100%;
+	text-align: left;
+	font-size: var(--font-size-16);
+
+	&:hover {
+		box-shadow: none;
+	}
+}
+
+.contentWrapper {
+}
+
+.controls {
+	display: flex;
+	flex-flow: row;
+	background: none;
+}
+
+.toggleSection {
+	display: flex;
+	flex-flow: row nowrap;
+	gap: var(--ironsworn-spacer-md);
+}
+
+.toggleWrapper {
+	transition: var(--ironsworn-transition);
+	line-height: 1.5;
+}
+
+.oracle {
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
+	padding: 0;
+
+	h4 {
+		font-size: var(--font-size-16);
+
+		button.icon-button {
+			height: inherit;
+		}
+	}
+}
+</style>

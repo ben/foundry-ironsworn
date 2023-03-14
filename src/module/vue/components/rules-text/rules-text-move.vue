@@ -8,8 +8,8 @@
 		<template #before-main>
 			<slot name="before-main">
 				<i
-					:class="$style.progressMoveLabel"
 					v-if="move.moveItem().isProgressMove()"
+					:class="$style.progressMoveLabel"
 					>{{ $t('IRONSWORN.ProgressMove') }}</i
 				>
 			</slot>
@@ -23,16 +23,10 @@
 	</RulesText>
 </template>
 
-<style lang="scss" module>
-.progressMoveLabel {
-	opacity: 0.5;
-}
-</style>
-
 <script setup lang="ts">
 import { computed } from 'vue'
-import { Move } from '../../../features/custommoves.js'
-import { SFMoveDataPropertiesData } from '../../../item/itemtypes.js'
+import type { Move } from '../../../features/custommoves.js'
+import type { SFMoveDataPropertiesData } from '../../../item/itemtypes.js'
 
 import RulesText from './rules-text.vue'
 
@@ -47,3 +41,9 @@ const hasOracles = computed(
 	() => (props.move?.dataforgedMove?.Oracles?.length ?? 0) > 0
 )
 </script>
+
+<style lang="scss" module>
+.progressMoveLabel {
+	opacity: 0.5;
+}
+</style>

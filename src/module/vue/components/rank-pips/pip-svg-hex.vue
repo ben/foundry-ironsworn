@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity'
+import { computed } from 'vue'
 import { times } from 'lodash-es'
 
 const sides = 6
@@ -34,8 +34,8 @@ function toSigDigits(value: number) {
 
 // cribbed from https://www.redblobgames.com/grids/hexagons/
 function pointyHexCorner(center: Point, radius: number, index: number): Point {
-	let angleDegrees = 60 * index - 30
-	let angleRadius = (Math.PI / 180) * angleDegrees
+	const angleDegrees = 60 * index - 30
+	const angleRadius = (Math.PI / 180) * angleDegrees
 	return {
 		x: toSigDigits(center.x + radius * Math.cos(angleRadius)),
 		y: toSigDigits(center.y + radius * Math.sin(angleRadius))
@@ -44,8 +44,8 @@ function pointyHexCorner(center: Point, radius: number, index: number): Point {
 
 function pointyHexPolygon(center: Point, height: number) {
 	const radius = height / 2
-	let points = times(sides, (i) => pointyHexCorner(center, radius, i))
-	let pointsString = points.map((point) => `${point.x},${point.y}`).join(' ')
+	const points = times(sides, (i) => pointyHexCorner(center, radius, i))
+	const pointsString = points.map((point) => `${point.x},${point.y}`).join(' ')
 	return pointsString
 }
 </script>

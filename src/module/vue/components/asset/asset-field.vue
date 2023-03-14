@@ -2,13 +2,32 @@
 	<div :class="$style.wrapper">
 		<label :class="$style.label">{{ field.name }}</label>
 		<input
+			v-model="field.value"
 			:class="$style.value"
 			type="text"
-			v-model="field.value"
-			@blur="saveFields"
-			:readonly="readonly" />
+			:readonly="readonly"
+			@blur="saveFields" />
 	</div>
 </template>
+
+<script lang="ts" setup>
+import { $ItemKey, ItemKey } from '../../../../module/vue/provisions'
+import type { ComputedRef} from 'vue';
+import { inject } from 'vue'
+
+defineProps<{
+	field: { name: string; value: string }
+	readonly?: boolean
+}>()
+
+const $asset = inject($ItemKey)
+const asset = inject(ItemKey) as ComputedRef
+
+function saveFields() {
+	const fields = asset.value?.system.fields
+	$asset?.update({ system: { fields } })
+}
+</script>
 
 <style lang="scss" module>
 .wrapper {
@@ -30,21 +49,3 @@
 	padding: 0 var(--ironsworn-spacer-sm);
 }
 </style>
-
-<script lang="ts" setup>
-import { $ItemKey, ItemKey } from '../../../../module/vue/provisions'
-import { ComputedRef, inject } from 'vue'
-
-defineProps<{
-	field: { name: string; value: string }
-	readonly?: boolean
-}>()
-
-const $asset = inject($ItemKey)
-const asset = inject(ItemKey) as ComputedRef
-
-function saveFields() {
-	const fields = asset.value?.system.fields
-	$asset?.update({ system: { fields } })
-}
-</script>

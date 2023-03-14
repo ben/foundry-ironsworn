@@ -1,22 +1,22 @@
 <template>
 	<article class="flexcol">
 		<DropTarget
-			dropType="progress"
 			:is="SortableItemList"
-			:filterFn="(item) => filterFn(item) && !item.system.completed">
+			drop-type="progress"
+			:filter-fn="(item) => filterFn(item) && !item.system.completed">
 			<template #item="{ item, i, length }">
 				<ProgressListItem
 					:item="item"
 					:i="i"
 					:length="length"
-					:showStar="progressStars"
-					:compactProgress="compactProgress" />
+					:show-star="progressStars"
+					:compact-progress="compactProgress" />
 			</template>
 		</DropTarget>
-		<ProgressControls class="nogrow" :foeCompendium="foeCompendium" />
+		<ProgressControls class="nogrow" :foe-compendium="foeCompendium" />
 		<CompletedProgressList
 			class="nogrow"
-			:collapsibleProps="{ toggleWrapperIs: 'h3' }" />
+			:collapsible-props="{ toggleWrapperIs: 'h3' }" />
 	</article>
 </template>
 
@@ -28,7 +28,7 @@ import DropTarget from '../../drop-target.vue'
 import CompletedProgressList from './completed-progress-list.vue'
 import SortableItemList from 'component:list/sortable-item-list.vue'
 import ProgressListItem from 'component:progress/progress-list-item.vue'
-import { ItemLike } from 'component:list/helpers'
+import type { ItemLike } from 'component:list/helpers'
 
 defineProps<{
 	progressStars?: boolean

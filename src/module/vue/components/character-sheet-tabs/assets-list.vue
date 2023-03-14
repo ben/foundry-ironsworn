@@ -1,20 +1,20 @@
 <template>
 	<DropTarget
-		dropType="asset"
 		is="article"
+		drop-type="asset"
 		class="flexcol"
 		:class="$style.wrapper">
 		<slot name="start"></slot>
 		<SortableItemList
 			:class="$style.list"
-			:filterFn="(item) => item?.type === 'asset'">
+			:filter-fn="(item) => item?.type === 'asset'">
 			<template #itemContent="{ item }">
 				<AssetCard
 					:asset="item"
 					:collapsible="true"
-					:showUncheckedAbilities="false"
+					:show-unchecked-abilities="false"
 					:editable="false"
-					:showAssetType="true">
+					:show-asset-type="true">
 					<template #headerEnd>
 						<div :class="$style.assetControls" class="flexrow nogrow">
 							<IronBtn
@@ -35,37 +35,17 @@
 			style="text-align: center">
 			<IronBtn
 				icon="fa:book-atlas"
-				@click="assetBrowser"
 				block
-				:text="$t('IRONSWORN.ITEMS.TypeAsset')" />
+				:text="$t('IRONSWORN.ITEMS.TypeAsset')"
+				@click="assetBrowser" />
 		</section>
 	</DropTarget>
 </template>
 
-<style lang="scss" module>
-.controls {
-	--ironsworn-line-height: var(--ironsworn-line-height-sm);
-}
-
-.assetControls {
-	display: flex;
-	flex-grow: 0;
-	flex-wrap: nowrap;
-	justify-items: flex-end;
-}
-
-.wrapper {
-	gap: var(--ironsworn-spacer-md);
-}
-
-.list {
-	gap: var(--ironsworn-spacer-md);
-}
-</style>
-
 <script lang="ts" setup>
 import { sortBy } from 'lodash-es'
-import { computed, inject, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { computed, inject } from 'vue'
 import AssetCard from '../asset/asset-card.vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
@@ -118,3 +98,24 @@ function assetBrowser() {
 	theAssetBrowser.render(true, { focus: true })
 }
 </script>
+
+<style lang="scss" module>
+.controls {
+	--ironsworn-line-height: var(--ironsworn-line-height-sm);
+}
+
+.assetControls {
+	display: flex;
+	flex-grow: 0;
+	flex-wrap: nowrap;
+	justify-items: flex-end;
+}
+
+.wrapper {
+	gap: var(--ironsworn-spacer-md);
+}
+
+.list {
+	gap: var(--ironsworn-spacer-md);
+}
+</style>

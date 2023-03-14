@@ -2,15 +2,15 @@
 	<div :class="$style.wrapper" class="flexrow">
 		<ConditionMeter
 			v-if="asset.system.track.enabled"
-			sliderStyle="horizontal"
+			slider-style="horizontal"
 			:class="$style.meter"
-			documentType="Item"
+			document-type="Item"
 			attr="track.current"
 			:current-value="asset.system.track.current"
 			:max="asset.system.track.max"
 			:min="0"
-			:statLabel="asset.system.track.name"
-			labelPosition="left"
+			:stat-label="asset.system.track.name"
+			label-position="left"
 			:read-only="readonly" />
 		<div :class="$style.conditions">
 			<label
@@ -26,6 +26,29 @@
 		</div>
 	</div>
 </template>
+
+<script lang="ts" setup>
+import ConditionMeter from 'component:resource-meter/condition-meter.vue'
+import type { ComputedRef} from 'vue';
+import { inject } from 'vue'
+import { $ItemKey, ItemKey } from '../../provisions'
+
+const props = defineProps<{ readonly?: boolean }>()
+
+const $asset = inject($ItemKey)
+const asset = inject(ItemKey) as ComputedRef
+
+async function toggleCondition(idx: number) {
+	const { conditions } = asset?.value.system
+	conditions[idx].ticked = !conditions[idx].ticked
+	await $asset?.update({ system: { conditions } })
+
+	CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
+		name: conditions[idx].name.toLowerCase(),
+		enabled: conditions[idx].ticked
+	})
+}
+</script>
 
 <style lang="scss" module>
 @use 'mixin:text.scss';
@@ -72,25 +95,3 @@
 	}
 }
 </style>
-
-<script lang="ts" setup>
-import ConditionMeter from 'component:resource-meter/condition-meter.vue'
-import { ComputedRef, inject } from 'vue'
-import { $ItemKey, ItemKey } from '../../provisions'
-
-const props = defineProps<{ readonly?: boolean }>()
-
-const $asset = inject($ItemKey)
-const asset = inject(ItemKey) as ComputedRef
-
-async function toggleCondition(idx: number) {
-	const { conditions } = asset?.value.system
-	conditions[idx].ticked = !conditions[idx].ticked
-	await $asset?.update({ system: { conditions } })
-
-	CONFIG.IRONSWORN.emitter.emit('globalConditionChanged', {
-		name: conditions[idx].name.toLowerCase(),
-		enabled: conditions[idx].ticked
-	})
-}
-</script>

@@ -16,14 +16,10 @@
 	</svg>
 </template>
 
-<style lang="scss" module>
-// FIXME non-scaling stroke effect doesn't seem to work here. what gives?
-</style>
-
 <script lang="ts" setup>
-import { computed } from '@vue/reactivity'
-import { ColorProperty, FillProperty, StrokeWidthProperty } from 'csstype'
-import { IconPropsCommon, IronswornIconName } from './icon-common'
+import { computed } from 'vue'
+import type { ColorProperty, FillProperty, StrokeWidthProperty } from 'csstype'
+import type { IconPropsCommon, IronswornIconName } from './icon-common'
 
 interface Props extends IconPropsCommon {
 	name: IronswornIconName
@@ -55,3 +51,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 const symbolId = computed(() => `#${props.prefix}-${props.name}`)
 </script>
+
+<style lang="scss" module>
+// FIXME non-scaling stroke effect doesn't seem to work here. what gives?
+</style>

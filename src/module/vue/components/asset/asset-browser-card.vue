@@ -11,9 +11,9 @@
 		<header class="asset-header nogrow flexrow">
 			<FontIcon name="grip" class="nogrow block draggable item" />
 			<IronBtn
-				@click="state.expanded = !state.expanded"
 				:aria-controls="bodyId"
-				class="asset-expand-toggle">
+				class="asset-expand-toggle"
+				@click="state.expanded = !state.expanded">
 				<template #text>
 					<h4 class="asset-title button-text">
 						{{ foundryItem().name }}
@@ -25,37 +25,37 @@
 		<CollapseTransition>
 			<section
 				v-if="state.expanded"
+				:id="bodyId"
 				class="asset-body flexcol"
-				:aria-expanded="state.expanded"
-				:id="bodyId">
+				:aria-expanded="state.expanded">
 				<div
-					v-html="$enrichHtml(system.description ?? '')"
-					v-if="system.description"></div>
+					v-if="system.description"
+					v-html="$enrichHtml(system.description ?? '')"></div>
 				<div v-html="$enrichHtml(system.requirement ?? '')"></div>
-				<dl class="asset-fields" v-if="system.fields?.length">
+				<dl v-if="system.fields?.length" class="asset-fields">
 					<div
-						class="asset-field"
 						v-for="(field, i) in system.fields"
-						:key="'field' + i">
+						:key="'field' + i"
+						class="asset-field">
 						<dt class="asset-field-label">{{ field.name }}</dt>
 						<dd class="asset-field-value">{{ field.value }}</dd>
 					</div>
 				</dl>
-				<ul class="asset-abilities flexcol" ref="$abilities">
+				<ul ref="$abilities" class="asset-abilities flexcol">
 					<AssetAbility
+						is="li"
 						v-for="(ability, i) in system.abilities"
 						:key="'ability' + i"
-						is="li"
 						:readonly="true"
 						:ability="ability" />
 				</ul>
 				<AttrSlider
 					v-if="system.track.enabled"
 					attr="track"
-					documentType="Item"
-					sliderStyle="horizontal"
+					document-type="Item"
+					slider-style="horizontal"
 					:max="system.track.max"
-					:currentValue="system.track.current"
+					:current-value="system.track.current"
 					:read-only="true">
 					<template #label>
 						<label>{{ system.track.name }}</label>
@@ -66,29 +66,11 @@
 	</article>
 </template>
 
-<style lang="scss" scoped>
-.ironsworn .ironsworn__asset {
-	--ironsworn-color-thematic: v-bind('system.color');
-
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: flex-start;
-	margin: var(--ironsworn-spacer-xl) 0;
-	padding: var(--ironsworn-spacer-md);
-
-	border-width: var(--ironsworn-border-width-md);
-	border-style: solid;
-	border-radius: var(--ironsworn-border-radius-sm);
-	border-color: var(--ironsworn-color-border);
-	padding: var(--ironsworn-spacer-sm);
-}
-</style>
-
 <script setup lang="ts">
-import { IAsset } from 'dataforged'
+import type { IAsset } from 'dataforged'
 import { computed, inject, provide, reactive, ref } from 'vue'
-import { IronswornItem } from '../../../item/item'
-import { AssetDataPropertiesData } from '../../../item/itemtypes'
+import type { IronswornItem } from '../../../item/item'
+import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions.js'
 
 import Clock from '../clock.vue'
@@ -135,5 +117,23 @@ function dragEnd() {
 	CONFIG.IRONSWORN.emitter.emit('dragEnd', props.foundryItem().type)
 }
 
-let $abilities = ref<HTMLElement>()
+const $abilities = ref<HTMLElement>()
 </script>
+
+<style lang="scss" scoped>
+.ironsworn .ironsworn__asset {
+	--ironsworn-color-thematic: v-bind('system.color');
+
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: flex-start;
+	margin: var(--ironsworn-spacer-xl) 0;
+	padding: var(--ironsworn-spacer-md);
+
+	border-width: var(--ironsworn-border-width-md);
+	border-style: solid;
+	border-radius: var(--ironsworn-border-radius-sm);
+	border-color: var(--ironsworn-color-border);
+	padding: var(--ironsworn-spacer-sm);
+}
+</style>

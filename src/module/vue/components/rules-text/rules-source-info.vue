@@ -11,8 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from '@vue/reactivity'
-import { ISource } from 'dataforged'
+import { computed } from 'vue'
+import type { ISource } from 'dataforged'
 
 const props = defineProps<{ source: ISource }>()
 

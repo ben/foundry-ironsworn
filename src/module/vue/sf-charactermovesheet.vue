@@ -3,7 +3,7 @@
 		:id="`${(data.actor as any)._id}_move-sheet`"
 		ref="$tabSet"
 		:class="$style.tabSet"
-		:tabKeys="['moves', 'oracles']"
+		:tab-keys="['moves', 'oracles']"
 		data-tourid="sheet">
 		<TabList>
 			<Tab tab-key="moves" :text="$t('IRONSWORN.ITEMS.TypeMove')">
@@ -21,16 +21,16 @@
 			<TabPanel tab-key="moves" class="flexcol">
 				<Suspense>
 					<SfMovesheetmoves
-						:class="$style.panelContent"
 						ref="movesTab"
+						:class="$style.panelContent"
 						:toolset="data.toolset" />
 				</Suspense>
 			</TabPanel>
 			<TabPanel tab-key="oracles" class="flexcol">
 				<Suspense>
 					<SfMovesheetoracles
-						:class="$style.panelContent"
 						ref="oraclesTab"
+						:class="$style.panelContent"
 						:toolset="data.toolset" />
 				</Suspense>
 			</TabPanel>
@@ -38,25 +38,11 @@
 	</TabSet>
 </template>
 
-<style lang="scss" module>
-.tabSet {
-	// TODO make alternate layouts possible, possibly with media query?
-}
-
-.panelContent {
-	flex-grow: 1;
-
-	// HACK: offsets the padding on window.content with a negative margin, then pads it out. this way, the scrollbar appears in the empty space left by the padding instead of overlapping the content.
-	margin: 0 calc(var(--ironsworn-spacer-md) * -1);
-	padding: 0 var(--ironsworn-spacer-md);
-}
-</style>
-
 <script lang="ts" setup>
 import SfMovesheetmoves from './components/sf-movesheetmoves.vue'
 import SfMovesheetoracles from './components/sf-movesheetoracles.vue'
 import { computed, provide, ref } from 'vue'
-import { CharacterDataProperties } from '../actor/actortypes'
+import type { CharacterDataProperties } from '../actor/actortypes'
 import { ActorKey } from './provisions.js'
 import TabSet from './components/tabs/tab-set.vue'
 import TabList from './components/tabs/tab-list.vue'
@@ -85,3 +71,17 @@ CONFIG.IRONSWORN.emitter.on('highlightOracle', () =>
 	$tabSet.value?.setActiveTab('oracles')
 )
 </script>
+
+<style lang="scss" module>
+.tabSet {
+	// TODO make alternate layouts possible, possibly with media query?
+}
+
+.panelContent {
+	flex-grow: 1;
+
+	// HACK: offsets the padding on window.content with a negative margin, then pads it out. this way, the scrollbar appears in the empty space left by the padding instead of overlapping the content.
+	margin: 0 calc(var(--ironsworn-spacer-md) * -1);
+	padding: 0 var(--ironsworn-spacer-md);
+}
+</style>

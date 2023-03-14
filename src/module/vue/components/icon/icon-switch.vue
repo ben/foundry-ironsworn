@@ -3,43 +3,32 @@
 		<template #icon>
 			<TransitionGroup :name="transitionName">
 				<component
+					:is="
+						getIconOptions(iconData).set === 'ironsworn' ? IronIcon : FontIcon
+					"
 					v-for="(iconData, state) in $props.icons"
 					:key="state"
 					:data-icon-state="state"
 					:class="`${$style.icon} ${getIconOptions(iconData).props.class}`"
-					:is="
-						getIconOptions(iconData).set === 'ironsworn' ? IronIcon : FontIcon
-					"
 					v-bind="getIconOptions(iconData).props" />
 			</TransitionGroup>
 		</template>
 	</IronBtn>
 </template>
 
-<style lang="scss" module>
-.iconSwitch {
-	// use grid to position stacked icons, which is more flexible than absolute positioning
-	display: grid;
-}
-
-.icon {
-	// stacks icons on top of each other by assigning them to the same grid cell
-	grid-row: 1;
-	grid-column: 1;
-}
-</style>
-
 <script lang="ts" setup>
 import IronBtn from 'component:buttons/iron-btn.vue'
-import {
+import type {
 	IconSwitchState,
-	IronswornIconId,
+	IronswornIconId} from 'component:icon/icon-common';
+import {
 	parseClassesToFaProps
 } from 'component:icon/icon-common'
 import IronIcon from 'component:icon/iron-icon.vue'
 import FontIcon from 'component:icon/font-icon.vue'
 import { omit } from 'lodash-es'
-import { computed, ComputedRef, ExtractPropTypes, TransitionGroup } from 'vue'
+import type { ComputedRef, ExtractPropTypes} from 'vue';
+import { computed, TransitionGroup } from 'vue'
 
 type IronBtnProps = ExtractPropTypes<typeof IronBtn>
 interface Props
@@ -95,3 +84,16 @@ function getIconOptions(iconState: IconSwitchState) {
 	}
 }
 </script>
+
+<style lang="scss" module>
+.iconSwitch {
+	// use grid to position stacked icons, which is more flexible than absolute positioning
+	display: grid;
+}
+
+.icon {
+	// stacks icons on top of each other by assigning them to the same grid cell
+	grid-row: 1;
+	grid-column: 1;
+}
+</style>

@@ -43,10 +43,10 @@
 				<span class="select-label">{{ subtypeSelectText }}:</span>
 				<select
 					v-model="data.actor.system.klass"
-					@change="klassChanged"
 					:data-highlighted="
 						state.firstLookHighlight && firstLookWillRandomizeKlass
-					">
+					"
+					@change="klassChanged">
 					<option
 						v-for="opt in klassOptions"
 						:key="opt.value"
@@ -66,15 +66,15 @@
 						height: 25px;
 						line-height: 30px;
 					"
-					@click="randomizeKlass"
-					:tooltip="randomKlassTooltip" />
+					:tooltip="randomKlassTooltip"
+					@click="randomizeKlass" />
 			</label>
 		</template>
 		<template #header>
 			<SheetHeaderBasic
 				:document="data.actor"
 				class="sf-location-header nogrow"
-				:highlightName="state.firstLookHighlight && firstLookWillRandomizeName"
+				:highlight-name="state.firstLookHighlight && firstLookWillRandomizeName"
 				@change="nameChange">
 				<IronBtn
 					v-if="canRandomizeName"
@@ -82,26 +82,27 @@
 					block
 					nogrow
 					:tooltip="$t('IRONSWORN.RandomName')"
-					@click="randomizeName"
-					icon="ironsworn:d10-tilt" />
+					icon="ironsworn:d10-tilt"
+					@click="randomizeName" />
 			</SheetHeaderBasic>
 		</template>
 
-		<section class="boxgroup flexcol nogrow" v-if="oracles.length > 0">
+		<section v-if="oracles.length > 0" class="boxgroup flexcol nogrow">
 			<div class="flexrow">
 				<IronBtn
 					block
 					class="box"
-					@click="rollFirstLook"
 					icon="ironsworn:d10-tilt"
+					:text="$t('IRONSWORN.RollForDetails')"
+					@click="rollFirstLook"
 					@mouseenter="state.firstLookHighlight = true"
-					@mouseleave="state.firstLookHighlight = false"
-					:text="$t('IRONSWORN.RollForDetails')" />
+					@mouseleave="state.firstLookHighlight = false" />
 			</div>
-			<div class="flexrow boxrow" v-for="(row, i) of oracles" :key="`row${i}`">
+			<div v-for="(row, i) of oracles" :key="`row${i}`" class="flexrow boxrow">
 				<IronBtn
-					class="box"
 					v-for="oracle of row"
+					:key="oracle.dfId"
+					class="box"
 					block
 					:disabled="oracle.requiresKlass && klassIsNotValid"
 					:data-highlighted="oracle.fl && state.firstLookHighlight"
@@ -110,9 +111,8 @@
 							? $t('IRONSWORN.RequiresLocationType')
 							: undefined
 					"
-					:key="oracle.dfId"
-					@click="rollOracle(oracle)"
-					icon="ironsworn:d10-tilt">
+					icon="ironsworn:d10-tilt"
+					@click="rollOracle(oracle)">
 					<template #text>
 						{{ oracle.title }}
 						<span v-if="oracle.qty" class="oracle-quantity"
@@ -130,50 +130,6 @@
 	</SheetBasic>
 </template>
 
-<style lang="scss">
-.sf-location-header {
-	display: grid;
-	grid-template-columns: max-content 1fr max-content;
-	grid-auto-flow: column;
-
-	> * {
-		grid-row: 1;
-	}
-
-	.charname {
-		grid-column: 2 / span 2;
-	}
-
-	.btn-randomize-name {
-		grid-column: 3;
-		border-radius: 0 var(--ironsworn-border-radius-md)
-			var(--ironsworn-border-radius-md) 0;
-		height: 50px;
-		aspect-ratio: 1;
-	}
-}
-</style>
-<style lang="scss" scoped>
-@use 'mixin:clickable.scss';
-
-label {
-	line-height: 27px;
-
-	.select-label {
-		flex-basis: 130px;
-		flex-grow: 0;
-	}
-}
-
-.box {
-	padding: var(--ironsworn-spacer-lg);
-}
-
-[data-highlighted='true'] {
-	@include clickable.blockHover;
-}
-</style>
-
 <script setup lang="ts">
 import SheetHeaderBasic from './sheet-header-basic.vue'
 import { camelCase, capitalize, flatten, sample } from 'lodash-es'
@@ -182,7 +138,7 @@ import { $ActorKey, ActorKey } from './provisions'
 
 import MceEditor from './components/mce-editor.vue'
 import { OracleRollMessage } from '../rolls'
-import { LocationDataProperties } from '../actor/actortypes'
+import type { LocationDataProperties } from '../actor/actortypes'
 import SheetBasic from './sheet-basic.vue'
 import IronBtn from './components/buttons/iron-btn.vue'
 
@@ -716,3 +672,47 @@ async function updateAllTokens(data) {
 	await canvas?.scene?.updateEmbeddedDocuments('Token', updates)
 }
 </script>
+<style lang="scss">
+.sf-location-header {
+	display: grid;
+	grid-template-columns: max-content 1fr max-content;
+	grid-auto-flow: column;
+
+	> * {
+		grid-row: 1;
+	}
+
+	.charname {
+		grid-column: 2 / span 2;
+	}
+
+	.btn-randomize-name {
+		grid-column: 3;
+		border-radius: 0 var(--ironsworn-border-radius-md)
+			var(--ironsworn-border-radius-md) 0;
+		height: 50px;
+		aspect-ratio: 1;
+	}
+}
+</style>
+
+<style lang="scss" scoped>
+@use 'mixin:clickable.scss';
+
+label {
+	line-height: 27px;
+
+	.select-label {
+		flex-basis: 130px;
+		flex-grow: 0;
+	}
+}
+
+.box {
+	padding: var(--ironsworn-spacer-lg);
+}
+
+[data-highlighted='true'] {
+	@include clickable.blockHover;
+}
+</style>

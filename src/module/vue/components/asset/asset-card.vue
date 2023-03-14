@@ -5,10 +5,10 @@
 			<button
 				v-if="collapsible"
 				type="button"
-				@click="toggle"
 				:aria-controls="bodyId"
 				:class="{ [$style.expandToggle]: true, [$style.titleGroup]: true }"
-				class="clickable text">
+				class="clickable text"
+				@click="toggle">
 				<h4 :class="$style.title">
 					{{ asset.name }}
 				</h4>
@@ -29,14 +29,14 @@
 
 		<component
 			:is="collapsible ? CollapseTransition : 'section'"
-			:class="$style.body"
 			:id="bodyId"
+			:class="$style.body"
 			v-bind="bodyProps">
-			<div :class="$style.fields" v-if="asset.system.fields?.length">
+			<div v-if="asset.system.fields?.length" :class="$style.fields">
 				<slot
 					v-for="(field, i) in asset.system.fields"
-					name="field"
 					:key="'field' + i"
+					name="field"
 					:class="$style.field"
 					v-bind="{ field, readonly, class: $style.fieldLabel }">
 					<AssetField :readonly="readonly" :field="field" :class="class" />
@@ -46,14 +46,14 @@
 			<WithRolllisteners
 				v-if="asset.system.description"
 				element="div"
-				v-html="$enrichHtml(asset.system.description ?? '')"
-				@moveclick="moveClick" />
+				@moveclick="moveClick"
+				v-html="$enrichHtml(asset.system.description ?? '')" />
 
 			<WithRolllisteners
 				v-if="asset.system.requirement"
 				element="div"
-				v-html="$enrichMarkdown(asset.system.requirement ?? '')"
-				@moveclick="moveClick" />
+				@moveclick="moveClick"
+				v-html="$enrichMarkdown(asset.system.requirement ?? '')" />
 
 			<ul :class="$style.abilities" class="flexcol">
 				<template
@@ -85,6 +85,78 @@
 		</component>
 	</article>
 </template>
+
+<script lang="ts" setup>
+import AssetConditionMeter from 'component:asset/asset-condition-meter.vue'
+import AssetOptions from 'component:asset/asset-options.vue'
+import WithRolllisteners from 'component:with-rolllisteners.vue'
+import { computed, inject, provide, reactive } from 'vue'
+import {
+	$ActorKey,
+	$ItemKey,
+	ActorKey,
+	ItemKey
+} from '../../../../module/vue/provisions'
+import AssetField from 'component:asset/asset-field.vue'
+import CollapseTransition from 'component:transition/collapse-transition.vue'
+
+const props = withDefaults(
+	defineProps<{
+		asset: any
+		editable?: boolean
+		readonly?: boolean
+		showUncheckedAbilities?: boolean
+		collapsible?: boolean
+		/** @default true */
+		showAssetType?: boolean
+	}>(),
+	{ showAssetType: true }
+)
+
+const actor = inject(ActorKey)
+const $actor = inject($ActorKey)
+
+const asset = props.asset
+const $asset = $actor
+	? $actor?.items.find((x) => x.id === props.asset._id)
+	: game.items?.get(props.asset._id)
+
+provide($ItemKey, $asset)
+provide(ItemKey, computed(() => props.asset) as any)
+
+const state = reactive({
+	expanded: props.collapsible
+		? asset.flags['foundry-ironsworn'].expanded || false
+		: undefined
+})
+
+function toggle(event: Event) {
+	state.expanded = !state.expanded
+	if (actor) {
+		$asset?.setFlag(
+			'foundry-ironsworn',
+			'expanded',
+			!asset?.flags['foundry-ironsworn']?.expanded
+		)
+	}
+}
+
+const themeColor = computed(() => asset?.system?.color)
+
+const bodyId = computed(() => `asset-body-${$asset?.id}`)
+
+const bodyProps = computed(() => {
+	if (!props.collapsible) return {}
+	return {
+		group: true,
+		tag: 'section'
+	}
+})
+
+function moveClick(item) {
+	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
+}
+</script>
 
 <style lang="scss" module>
 .card {
@@ -151,75 +223,3 @@
 	background: none;
 }
 </style>
-
-<script lang="ts" setup>
-import AssetConditionMeter from 'component:asset/asset-condition-meter.vue'
-import AssetOptions from 'component:asset/asset-options.vue'
-import WithRolllisteners from 'component:with-rolllisteners.vue'
-import { computed, inject, provide, reactive } from 'vue'
-import {
-	$ActorKey,
-	$ItemKey,
-	ActorKey,
-	ItemKey
-} from '../../../../module/vue/provisions'
-import AssetField from 'component:asset/asset-field.vue'
-import CollapseTransition from 'component:transition/collapse-transition.vue'
-
-const props = withDefaults(
-	defineProps<{
-		asset: any
-		editable?: boolean
-		readonly?: boolean
-		showUncheckedAbilities?: boolean
-		collapsible?: boolean
-		/** @default true */
-		showAssetType?: boolean
-	}>(),
-	{ showAssetType: true }
-)
-
-const actor = inject(ActorKey)
-const $actor = inject($ActorKey)
-
-const asset = props.asset
-const $asset = $actor
-	? $actor?.items.find((x) => x.id === props.asset._id)
-	: game.items?.get(props.asset._id)
-
-provide($ItemKey, $asset)
-provide(ItemKey, computed(() => props.asset) as any)
-
-const state = reactive({
-	expanded: props.collapsible
-		? asset.flags['foundry-ironsworn']['expanded'] || false
-		: undefined
-})
-
-function toggle(event: Event) {
-	state.expanded = !state.expanded
-	if (actor) {
-		$asset?.setFlag(
-			'foundry-ironsworn',
-			'expanded',
-			!asset?.flags['foundry-ironsworn']?.expanded
-		)
-	}
-}
-
-const themeColor = computed(() => asset?.system?.color)
-
-const bodyId = computed(() => `asset-body-${$asset?.id}`)
-
-const bodyProps = computed(() => {
-	if (!props.collapsible) return {}
-	return {
-		group: true,
-		tag: 'section'
-	}
-})
-
-function moveClick(item) {
-	CONFIG.IRONSWORN.emitter.emit('highlightMove', item.uuid)
-}
-</script>

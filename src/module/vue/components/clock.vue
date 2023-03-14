@@ -14,63 +14,11 @@
 			:d="wedge"
 			class="clock-segment svg"
 			:aria-selected="props.ticked === i + 1"
-			@click="click(i)"
 			:data-tooltip="`${i + 1}⁄${wedges}`"
-			:data-tooltip-direction="tooltipDirection(i + 1, wedges)"></path>
+			:data-tooltip-direction="tooltipDirection(i + 1, wedges)"
+			@click="click(i)"></path>
 	</svg>
 </template>
-
-<style lang="scss" scoped>
-svg.clock {
-	aspect-ratio: 1;
-	fill: var(--ironsworn-color-thematic, var(--ironsworn-color-widget-fill));
-	fill-opacity: 1;
-	pointer-events: none;
-	stroke: var(--ironsworn-color-fg);
-	stroke-width: var(--ironsworn-widget-stroke-width);
-
-	&:hover {
-		fill-opacity: var(--ironsworn-clock-fill-opacity-hover);
-
-		.clock-segment {
-			&:hover {
-				~ .clock-segment {
-					fill-opacity: 0;
-				}
-			}
-		}
-	}
-
-	&:not(:hover) {
-		.clock-segment {
-			fill-opacity: 1;
-
-			&[aria-selected='true'] {
-				~ .clock-segment {
-					fill-opacity: 0;
-				}
-			}
-		}
-	}
-
-	&[aria-valuenow='0']:not(:hover) {
-		.clock-segment {
-			fill-opacity: 0;
-		}
-	}
-
-	.clock-segment {
-		transition: var(--ironsworn-transition);
-		cursor: pointer;
-		pointer-events: fill;
-		vector-effect: non-scaling-stroke;
-
-		&:active {
-			fill-opacity: 1;
-		}
-	}
-}
-</style>
 
 <script setup lang="ts">
 import { inRange, mean } from 'lodash-es'
@@ -93,11 +41,11 @@ function pathString(wedgeIdx: number, numWedges: number) {
  * Picks a sensible tooltip position for a given wedge in a clock.
  */
 function tooltipDirection(currentWedge: number, maxWedge: number) {
-	let increment = 1 / maxWedge
-	let start = currentWedge / maxWedge
-	let end = start + increment
-	let mid = mean([start, end])
-	let breakPoints = [0.125, 0.375, 0.625, 0.875]
+	const increment = 1 / maxWedge
+	const start = currentWedge / maxWedge
+	const end = start + increment
+	const mid = mean([start, end])
+	const breakPoints = [0.125, 0.375, 0.625, 0.875]
 	switch (true) {
 		case inRange(mid, 0, breakPoints[0]): {
 			return 'UP'
@@ -151,3 +99,55 @@ function click(i: number) {
 	$emit('click', i + 1)
 }
 </script>
+
+<style lang="scss" scoped>
+svg.clock {
+	aspect-ratio: 1;
+	fill: var(--ironsworn-color-thematic, var(--ironsworn-color-widget-fill));
+	fill-opacity: 1;
+	pointer-events: none;
+	stroke: var(--ironsworn-color-fg);
+	stroke-width: var(--ironsworn-widget-stroke-width);
+
+	&:hover {
+		fill-opacity: var(--ironsworn-clock-fill-opacity-hover);
+
+		.clock-segment {
+			&:hover {
+				~ .clock-segment {
+					fill-opacity: 0;
+				}
+			}
+		}
+	}
+
+	&:not(:hover) {
+		.clock-segment {
+			fill-opacity: 1;
+
+			&[aria-selected='true'] {
+				~ .clock-segment {
+					fill-opacity: 0;
+				}
+			}
+		}
+	}
+
+	&[aria-valuenow='0']:not(:hover) {
+		.clock-segment {
+			fill-opacity: 0;
+		}
+	}
+
+	.clock-segment {
+		transition: var(--ironsworn-transition);
+		cursor: pointer;
+		pointer-events: fill;
+		vector-effect: non-scaling-stroke;
+
+		&:active {
+			fill-opacity: 1;
+		}
+	}
+}
+</style>

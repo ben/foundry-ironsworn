@@ -10,7 +10,7 @@
 						:item="item"
 						:i="i"
 						:length="items?.length ?? 0"
-						:sortFn="sortFn">
+						:sort-fn="sortFn">
 						<slot v-bind="{ item }" name="itemContent"></slot>
 					</SortableItem>
 				</slot>
@@ -19,19 +19,13 @@
 	</IronList>
 </template>
 
-<style lang="scss" module>
-.wrapper {
-}
-</style>
-
 <script lang="ts" setup>
 import IronList from './iron-list.vue'
 import { $ActorKey, ActorKey } from '../../provisions'
-import { inject } from 'vue'
-import { computed } from '@vue/reactivity'
+import { inject , computed } from 'vue'
 import SortableItem from './sortable-item.vue'
 import CollapseTransition from 'component:transition/collapse-transition.vue'
-import { ItemLike } from './helpers'
+import type { ItemLike } from './helpers'
 
 const props = withDefaults(
 	defineProps<{
@@ -66,3 +60,8 @@ async function sortFn(oldIndex: number, newIndex: number, sortBefore: boolean) {
 	await Promise.all(updates.map(({ target, update }) => target.update(update)))
 }
 </script>
+
+<style lang="scss" module>
+.wrapper {
+}
+</style>

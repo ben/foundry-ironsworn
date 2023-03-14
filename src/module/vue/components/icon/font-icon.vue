@@ -12,33 +12,11 @@
 		:aria-hidden="label ? false : true" />
 </template>
 
-<style lang="scss" module>
-@use 'mixin:icon.scss';
-.wrapper {
-	@include icon.fontIcon;
-}
-
-.border {
-	// @each $value, $key in v-bind('borderOptions') {
-	//   @if $value {
-	//     #{$key}: $value;
-	//   }
-	// }
-}
-
-.animation {
-	// @each $value, $key in v-bind('animationOptions') {
-	//   @if $value {
-	//     #{$key}: $value;
-	//   }
-	// }
-}
-</style>
-
 <script lang="ts" setup>
 import { forEach } from 'lodash-es'
 import { computed } from 'vue'
-import { FontAwesome, IconPropsCommon } from './icon-common'
+import type { IconPropsCommon } from './icon-common';
+import { FontAwesome } from './icon-common'
 
 interface FontAwesomeIconProps extends IconPropsCommon {
 	/**
@@ -131,3 +109,26 @@ const classes = computed(() => {
 	return iconClasses
 })
 </script>
+
+<style lang="scss" module>
+@use 'mixin:icon.scss';
+.wrapper {
+	@include icon.fontIcon;
+}
+
+.border {
+	// @each $value, $key in v-bind('borderOptions') {
+	//   @if $value {
+	//     #{$key}: $value;
+	//   }
+	// }
+}
+
+.animation {
+	// @each $value, $key in v-bind('animationOptions') {
+	//   @if $value {
+	//     #{$key}: $value;
+	//   }
+	// }
+}
+</style>

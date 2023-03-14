@@ -2,14 +2,14 @@
 	<div class="flexcol nogrow" style="margin-top: 1em">
 		<CollapseTransition group tag="div">
 			<div
-				class="form-group nogrow"
-				style="gap: var(--ironsworn-spacer-md)"
 				v-for="(option, i) in item.system.exclusiveOptions"
-				:key="`item${i}`">
+				:key="`item${i}`"
+				class="form-group nogrow"
+				style="gap: var(--ironsworn-spacer-md)">
 				<input
+					v-model="option.name"
 					type="text"
 					:placeholder="$t('IRONSWORN.Label')"
-					v-model="option.name"
 					@blur="save" />
 				<IronBtn icon="fa:trash" @click="deleteOption(i)" />
 			</div>
@@ -17,13 +17,14 @@
 		<IronBtn
 			icon="fa:plus"
 			block
-			@click="addOption"
-			:text="$t('IRONSWORN.Option')" />
+			:text="$t('IRONSWORN.Option')"
+			@click="addOption" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import { inject, nextTick, Ref } from 'vue'
+import type { Ref } from 'vue';
+import { inject, nextTick } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import IronBtn from '../buttons/iron-btn.vue'

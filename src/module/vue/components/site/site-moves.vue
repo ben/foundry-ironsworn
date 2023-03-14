@@ -2,79 +2,66 @@
 	<ul class="list-block flexcol" :class="$style.wrapper">
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
-				:move="moves.discoverASite"
 				v-if="moves.discoverASite"
+				:move="moves.discoverASite"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
-				:move="moves.delveTheDepths"
 				v-if="moves.delveTheDepths"
+				:move="moves.delveTheDepths"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
-				:move="moves.findAnOpportunity"
 				v-if="moves.findAnOpportunity"
+				:move="moves.findAnOpportunity"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
-				:move="moves.revealADanger"
 				v-if="moves.revealADanger"
+				:move="moves.revealADanger"
 				class="nogrow"
-				@oracleClick="revealADanger"
-				:oracle-disabled="!hasThemeAndDomain" />
+				:oracle-disabled="!hasThemeAndDomain"
+				@oracleClick="revealADanger" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
-				:move="moves.checkYourGear"
 				v-if="moves.checkYourGear"
+				:move="moves.checkYourGear"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
-				:move="moves.locateObjective"
 				v-if="moves.locateObjective"
+				:move="moves.locateObjective"
 				class="nogrow"
 				@rollClick="locateObjective" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
-				:move="moves.escapeTheDepths"
 				v-if="moves.escapeTheDepths"
+				:move="moves.escapeTheDepths"
 				class="nogrow" />
 		</li>
 		<li class="list-block-item" :class="$style.listItem">
 			<SfMoverow
-				:move="moves.revealADangerAlt"
 				v-if="moves.revealADangerAlt"
+				:move="moves.revealADangerAlt"
 				class="nogrow" />
 		</li>
 	</ul>
 </template>
 
-<style lang="scss" module>
-.wrapper {
-	margin: 0;
-	border-radius: var(--ironsworn-border-radius-lg);
-	height: max-content;
-}
-
-.listItem {
-	flex-grow: 0;
-	border-color: var(--ironsworn-color-midtone-30);
-	height: max-content;
-}
-</style>
-
 <script lang="ts" setup>
-import { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
+import type { TableResultDataConstructorData } from '@league-of-foundry-developers/foundry-vtt-types/src/foundry/common/data/data.mjs/tableResultData'
 import { computed, inject, reactive } from 'vue'
-import { SiteDataPropertiesData } from '../../../actor/actortypes'
+import type { SiteDataPropertiesData } from '../../../actor/actortypes'
 import { getFoundryTableByDfId } from '../../../dataforged'
-import { createIronswornMoveTree, Move } from '../../../features/custommoves'
-import { DelveThemeDataSourceData } from '../../../item/itemtypes'
+import type { Move } from '../../../features/custommoves';
+import { createIronswornMoveTree } from '../../../features/custommoves'
+import type { DelveThemeDataSourceData } from '../../../item/itemtypes'
 import { OracleRollMessage, IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey, ActorKey } from '../../provisions'
 
@@ -166,3 +153,17 @@ async function locateObjective() {
 	)
 }
 </script>
+
+<style lang="scss" module>
+.wrapper {
+	margin: 0;
+	border-radius: var(--ironsworn-border-radius-lg);
+	height: max-content;
+}
+
+.listItem {
+	flex-grow: 0;
+	border-color: var(--ironsworn-color-midtone-30);
+	height: max-content;
+}
+</style>

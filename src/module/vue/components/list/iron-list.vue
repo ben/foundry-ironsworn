@@ -4,6 +4,8 @@
 	</ul>
 </template>
 
+<script lang="ts" setup></script>
+
 <style lang="scss" module>
 .wrapper {
 	--ironsworn-item-list-size: 100px;
@@ -48,5 +50,3 @@
 	}
 }
 </style>
-
-<script lang="ts" setup></script>

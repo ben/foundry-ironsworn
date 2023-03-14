@@ -1,6 +1,5 @@
 <template>
 	<IronBtn
-		@click="rollMove"
 		:tooltip="
 			$t('IRONSWORN.RollMove', {
 				title: props.move?.displayName
@@ -9,16 +8,18 @@
 		class="action-roll move-roll"
 		aria-haspopup="dialog"
 		icon="ironsworn:d10-tilt"
-		v-bind="($props, $attrs)">
-		<template v-for="(_, slot) of $slots" v-slot:[slot]="scope">
+		v-bind="($props, $attrs)"
+		@click="rollMove">
+		<template v-for="(_, slot) of $slots" #[slot]="scope">
 			<slot :name="slot" v-bind="scope" />
 		</template>
 	</IronBtn>
 </template>
 
 <script setup lang="ts">
-import { ExtractPropTypes, inject } from 'vue'
-import { Move } from '../../../features/custommoves.js'
+import type { ExtractPropTypes} from 'vue';
+import { inject } from 'vue'
+import type { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'
 import { $ActorKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'

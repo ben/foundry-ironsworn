@@ -1,35 +1,36 @@
 <template>
 	<div class="form-group nogrow">
 		<label>{{ $t('IRONSWORN.Category') }}</label>
-		<input type="text" v-model="item.system.category" @blur="setCategory" />
+		<input v-model="item.system.category" type="text" @blur="setCategory" />
 	</div>
 
 	<div class="form-group nogrow">
 		<label>{{ $t('IRONSWORN.Color') }}</label>
-		<input type="color" v-model="item.system.color" @change="setColor" />
+		<input v-model="item.system.color" type="color" @change="setColor" />
 	</div>
 
 	<div class="form-group nogrow">
 		<label>{{ $t('IRONSWORN.Requirement') }}</label>
 		<input
-			type="text"
 			v-model="item.system.requirement"
+			type="text"
 			@blur="setRequirement" />
 	</div>
 
 	<hr class="nogrow" />
 	<MceEditor
 		v-model="item.system.description"
-		@save="setDescription"
 		:editing="true"
-		style="flex: 1; height: 100%" />
+		style="flex: 1; height: 100%"
+		@save="setDescription" />
 </template>
 
 <script lang="ts" setup>
 import MceEditor from '../mce-editor.vue'
 import DocumentName from '../document-name.vue'
 
-import { computed, ComputedRef, inject } from 'vue'
+import type { ComputedRef} from 'vue';
+import { computed, inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import { AssetDataPropertiesData } from '../../../item/itemtypes'
 

@@ -1,6 +1,5 @@
 <template>
 	<div
-		@click="$emit('click', property)"
 		:class="[
 			'clickable',
 			'block',
@@ -8,16 +7,31 @@
 			'tab',
 			'flexrow',
 			{ selected: currentProperty === property }
-		]">
+		]"
+		@click="$emit('click', property)">
 		<span>{{ title || $t('IRONSWORN.' + titleKey) }}</span>
 		<IronBtn
+			v-if="$attrs.onDelete"
 			nogrow
 			block
-			v-if="$attrs.onDelete"
 			icon="fa:trash"
 			@click="$emit('delete')" />
 	</div>
 </template>
+
+<script setup lang="ts">
+// FIXME: migrate to new tab components
+import IronBtn from './buttons/iron-btn.vue'
+
+defineProps<{
+	title?: string
+	titleKey?: string
+	property: string
+	currentProperty: string
+}>()
+
+defineEmits<{ (e: 'click', property: string) }>()
+</script>
 
 <style lang="scss" scoped>
 div {
@@ -38,17 +52,3 @@ span {
 	white-space: nowrap;
 }
 </style>
-
-<script setup lang="ts">
-// FIXME: migrate to new tab components
-import IronBtn from './buttons/iron-btn.vue'
-
-defineProps<{
-	title?: string
-	titleKey?: string
-	property: string
-	currentProperty: string
-}>()
-
-defineEmits<{ (e: 'click', property: string) }>()
-</script>

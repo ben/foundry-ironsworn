@@ -1,15 +1,15 @@
 <template>
 	<component
 		:is="is"
+		ref="$wrapper"
 		role="checkbox"
 		tabindex="0"
-		@keydown.space.prevent
-		@keyup.space.prevent="toggle"
-		@click="toggle"
 		:class="$style.wrapper"
 		:aria-checked="checked"
 		:aria-readonly="readonly"
-		ref="$wrapper">
+		@keydown.space.prevent
+		@keyup.space.prevent="toggle"
+		@click="toggle">
 		<IconSwitch
 			tabindex="-1"
 			:class="{ [$style.checkbox]: true }"
@@ -19,68 +19,11 @@
 	</component>
 </template>
 
-<style lang="scss" module>
-@use 'mixin:clickable.scss';
-.icon {
-	opacity: 0;
-	transition: var(--ironsworn-transition);
-	&[data-icon-state='unchecked'] {
-		// Usually the unchecked state is an empty frame -- so it can say opaque all the time.
-		// TODO: make this configurable
-		opacity: 1;
-	}
-}
-.checkbox,
-:local(.wrapper) {
-	// strip transition from ancestors of icon, to prevent staggered transition behaviour on chromium
-	transition-duration: 0;
-}
-
-.wrapper {
-	&:active {
-		:local(.icon) {
-			color: var(--ironsworn-color-warm);
-		}
-	}
-	&[aria-checked='true'] {
-		:local(.icon) {
-			&[data-icon-state='checked'] {
-				opacity: 1;
-			}
-		}
-	}
-	&:not([aria-readonly='true']) {
-		cursor: pointer;
-
-		&:hover {
-			:local(.icon) {
-				&[data-icon-state='checked'] {
-					// hover while unchecked: preview checked state
-					opacity: 0.5;
-				}
-			}
-			:local(.checkbox) {
-				&:not(:hover) {
-					@include clickable.textHover;
-				}
-			}
-		}
-	}
-	&[aria-readonly='true'] {
-		// prevent hovereffects when set to readonly
-		pointer-events: none;
-		:local(.icon),
-		:local(.icon) * {
-			pointer-events: none;
-		}
-	}
-}
-</style>
-
 <script lang="ts" setup>
-import { IconSwitchState } from 'component:icon/icon-common'
+import type { IconSwitchState } from 'component:icon/icon-common'
 import IconSwitch from 'component:icon/icon-switch.vue'
-import { ExtractPropTypes, computed, useCssModule, ref } from 'vue'
+import type { ExtractPropTypes} from 'vue';
+import { computed, useCssModule, ref } from 'vue'
 
 /**
  * An accessible icon-based checkbox.
@@ -147,3 +90,61 @@ defineExpose({
 	element: $wrapper.value
 })
 </script>
+
+<style lang="scss" module>
+@use 'mixin:clickable.scss';
+.icon {
+	opacity: 0;
+	transition: var(--ironsworn-transition);
+	&[data-icon-state='unchecked'] {
+		// Usually the unchecked state is an empty frame -- so it can say opaque all the time.
+		// TODO: make this configurable
+		opacity: 1;
+	}
+}
+.checkbox,
+:local(.wrapper) {
+	// strip transition from ancestors of icon, to prevent staggered transition behaviour on chromium
+	transition-duration: 0;
+}
+
+.wrapper {
+	&:active {
+		:local(.icon) {
+			color: var(--ironsworn-color-warm);
+		}
+	}
+	&[aria-checked='true'] {
+		:local(.icon) {
+			&[data-icon-state='checked'] {
+				opacity: 1;
+			}
+		}
+	}
+	&:not([aria-readonly='true']) {
+		cursor: pointer;
+
+		&:hover {
+			:local(.icon) {
+				&[data-icon-state='checked'] {
+					// hover while unchecked: preview checked state
+					opacity: 0.5;
+				}
+			}
+			:local(.checkbox) {
+				&:not(:hover) {
+					@include clickable.textHover;
+				}
+			}
+		}
+	}
+	&[aria-readonly='true'] {
+		// prevent hovereffects when set to readonly
+		pointer-events: none;
+		:local(.icon),
+		:local(.icon) * {
+			pointer-events: none;
+		}
+	}
+}
+</style>
