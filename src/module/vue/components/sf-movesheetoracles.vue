@@ -36,9 +36,7 @@
 import IronList from 'component:list/iron-list.vue'
 import { inject, nextTick, provide, reactive, ref, watch } from 'vue'
 import { findOracleWithIntermediateNodes } from '../../dataforged'
-import type {
-	IOracleTreeNode
-} from '../../features/customoracles';
+import type { IOracleTreeNode } from '../../features/customoracles'
 import {
 	createIronswornOracleTree,
 	createStarforgedOracleTree

@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import { throttle } from 'lodash-es'
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { computed, inject, nextTick } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 

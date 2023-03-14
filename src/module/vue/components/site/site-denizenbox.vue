@@ -26,8 +26,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue';
-import { reactive , inject , computed, ref } from 'vue'
+import type { Ref } from 'vue'
+import { reactive, inject, computed, ref } from 'vue'
 import type {
 	DelveSiteDenizen,
 	SiteDataPropertiesData

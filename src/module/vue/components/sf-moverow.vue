@@ -55,11 +55,11 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { computed, provide, reactive, ref } from 'vue'
 import { getDFOracleByDfId } from '../../dataforged'
 import type { Move } from '../../features/custommoves'
-import type { IOracleTreeNode} from '../../features/customoracles';
+import type { IOracleTreeNode } from '../../features/customoracles'
 import { walkOracle } from '../../features/customoracles'
 import type { IronswornItem } from '../../item/item'
 import { moveHasRollableOptions } from '../../rolls/preroll-dialog'

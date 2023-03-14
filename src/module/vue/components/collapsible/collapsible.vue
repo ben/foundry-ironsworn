@@ -70,8 +70,8 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes} from 'vue';
-import { reactive , computed, ref } from 'vue'
+import type { ExtractPropTypes } from 'vue'
+import { reactive, computed, ref } from 'vue'
 import CollapseTransition from '../transition/collapse-transition.vue'
 import type { ExpandEvent, CollapseEvent } from './collapsible-helpers'
 import IronBtn from '../buttons/iron-btn.vue'

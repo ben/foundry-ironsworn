@@ -20,14 +20,15 @@
 </template>
 <script lang="ts" setup>
 import { omit } from 'lodash-es'
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { computed, inject, nextTick, ref, watch } from 'vue'
 import IronBtn from '../buttons/iron-btn.vue'
 import type {
 	FocusActivePanel,
 	SetActiveTab,
 	TabKey,
-	TabState} from './tab-helpers.js';
+	TabState
+} from './tab-helpers.js'
 import {
 	FocusActivePanelKey,
 	getTabId,

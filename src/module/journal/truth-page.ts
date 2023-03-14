@@ -1,4 +1,3 @@
-// @ts-expect-error
 export class TruthJournalPageSheet extends JournalPageSheet {
 	// @ts-expect-error
 	isEditable: boolean

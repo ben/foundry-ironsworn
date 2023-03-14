@@ -29,7 +29,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { fill, clamp } from 'lodash-es'
-import type { RANKS } from '../../../constants.js';
+import type { RANKS } from '../../../constants.js'
 import { NumericRank } from '../../../constants.js'
 import ProgressTrackBox from './progress-track-box.vue'
 
@@ -85,7 +85,6 @@ const boxes = computed(() => {
 .progress-track {
 	--ironsworn-progress-box-border-radius: var(--ironsworn-border-radius-md);
 	--ironsworn-progress-box-border-width: var(--ironsworn-border-width-md);
-
 	// TODO: replace this with a 4px variable when available
 	--ironsworn-progress-box-gap: 4px;
 	--ironsworn-progress-box-max-size: 50px;

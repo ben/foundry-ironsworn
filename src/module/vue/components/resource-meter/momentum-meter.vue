@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import type { IronswornActor } from '../../../actor/actor.js'
 import type {
@@ -65,10 +65,7 @@ const actorSys = computed(
 	.attr-slider-label:hover ~ .slider-bar {
 		.segment-momentum-reset {
 			@include clickable.blockHover;
-
-			box-shadow: 0 0 5px var(--ironsworn-color-warm) inset,
-				0 0 5px var(--ironsworn-color-warm),
-				0 0 10px var(--ironsworn-color-cool);
+			box-shadow: 0 0 5px var(--ironsworn-color-warm) inset;
 		}
 	}
 }

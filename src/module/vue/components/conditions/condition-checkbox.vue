@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { capitalize, inject, nextTick, reactive } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'

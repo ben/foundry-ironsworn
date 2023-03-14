@@ -64,6 +64,7 @@
 		<PcConditionMeters
 			class="flexcol nogrow"
 			:class="$style.marginLeft"
+			eslint-vue
 			data-tooltip-direction="UP"
 			label-position="left"
 			data-tourid="resources" />
@@ -114,7 +115,6 @@ provide(
 .marginRight {
 	@include border.margin(right);
 }
-
 .tabContent {
 	height: inherit;
 }

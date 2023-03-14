@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { inject, nextTick } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import CollapseTransition from '../transition/collapse-transition.vue'

@@ -6,8 +6,9 @@
 		<TabSet
 			v-if="editMode"
 			:id="`${data.item._id}-asset-sheet`"
-			:tab-keys="['description', 'fields', 'abilities', 'options', 'track']">
-			<TabList>
+			:tab-keys="['description', 'fields', 'abilities', 'options', 'track']"
+			:class="$style.tabSet">
+			<TabList :class="$style.tabList">
 				<Tab
 					tab-key="description"
 					:class="$style.tab"
@@ -101,5 +102,10 @@ function setRequirement() {
 }
 
 .tabPanel {
+}
+
+.tabSet {
+}
+.tabList {
 }
 </style>

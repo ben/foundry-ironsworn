@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { computed, nextTick, ref } from 'vue'
 import type { MoveCategory } from '../../features/custommoves.js'
 import SfMoverow from './sf-moverow.vue'

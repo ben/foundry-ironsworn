@@ -47,5 +47,3 @@ function pointyHexPolygon(center: Point, height: number) {
 	const points = times(sides, (i) => pointyHexCorner(center, radius, i))
 	const pointsString = points.map((point) => `${point.x},${point.y}`).join(' ')
 	return pointsString
-}
-</script>

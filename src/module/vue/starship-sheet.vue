@@ -9,7 +9,7 @@
 			</TabList>
 			<TabPanels>
 				<TabPanel tab-key="assets" class="flexcol">
-					<AssetsLists :class="$style.assets" />
+					<AssetsList :class="$style.assets" />
 				</TabPanel>
 				<TabPanel tab-key="notes" class="flexcol">
 					<SfNotes />
@@ -36,7 +36,7 @@
 <script setup lang="ts">
 import { provide, computed } from 'vue'
 import type { IronswornActor } from '../actor/actor'
-import AssetsLists from './components/character-sheet-tabs/assets-list.vue'
+import AssetsList from './components/character-sheet-tabs/assets-list.vue'
 import SfNotes from './components/character-sheet-tabs/sf-notes.vue'
 import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
 import SheetBasic from './sheet-basic.vue'

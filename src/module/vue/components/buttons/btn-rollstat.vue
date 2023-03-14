@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import type { DocumentType } from '@league-of-foundry-developers/foundry-vtt-types/src/types/helperTypes.js'
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { inject, useSlots } from 'vue'
 import type { AssetDataProperties } from '../../../item/itemtypes.js'
 import { IronswornPrerollDialog } from '../../../rolls'

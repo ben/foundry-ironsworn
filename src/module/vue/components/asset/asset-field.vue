@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 import { $ItemKey, ItemKey } from '../../../../module/vue/provisions'
-import type { ComputedRef} from 'vue';
+import type { ComputedRef } from 'vue'
 import { inject } from 'vue'
 
 defineProps<{

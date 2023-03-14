@@ -15,7 +15,7 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import type { TabState} from './tab-helpers';
+import type { TabState } from './tab-helpers'
 import { TabStateKey } from './tab-helpers'
 
 /**

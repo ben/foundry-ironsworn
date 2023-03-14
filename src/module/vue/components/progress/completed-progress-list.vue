@@ -26,7 +26,7 @@
 import type { ItemLike } from 'component:list/helpers'
 import SortableItemList from 'component:list/sortable-item-list.vue'
 import ProgressListItem from 'component:progress/progress-list-item.vue'
-import type { ExtractPropTypes, Ref} from 'vue';
+import type { ExtractPropTypes, Ref } from 'vue'
 import { computed, inject, ref, watch } from 'vue'
 import { ActorKey } from '../../provisions'
 import Collapsible from '../collapsible/collapsible.vue'

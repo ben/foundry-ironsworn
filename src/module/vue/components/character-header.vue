@@ -18,7 +18,7 @@
 </template>
 <script setup lang="ts">
 import SheetHeaderBasic from '../sheet-header-basic.vue'
-import type { Ref} from 'vue';
+import type { Ref } from 'vue'
 import { inject } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import XpBox from './xp-box.vue'

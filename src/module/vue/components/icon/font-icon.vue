@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import { forEach } from 'lodash-es'
 import { computed } from 'vue'
-import type { IconPropsCommon } from './icon-common';
+import type { IconPropsCommon } from './icon-common'
 import { FontAwesome } from './icon-common'
 
 interface FontAwesomeIconProps extends IconPropsCommon {
@@ -113,7 +113,6 @@ const classes = computed(() => {
 <style lang="scss" module>
 @use 'mixin:icon.scss';
 .wrapper {
-	@include icon.fontIcon;
 }
 
 .border {

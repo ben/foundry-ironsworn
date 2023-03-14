@@ -15,7 +15,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { IronswornHandlebarsHelpers } from '../../../helpers/handlebars.js'
-import { enrichMarkdown , enrichHtml } from '../../vue-plugin.js'
+import { enrichMarkdown, enrichHtml } from '../../vue-plugin.js'
 import RulesSourceInfo from './rules-source-info.vue'
 import WithRolllisteners from '../with-rolllisteners.vue'
 import type { ISource } from 'dataforged'
@@ -70,18 +70,14 @@ const enrichedText = computed(() => {
 .rules-text-main {
 	@include text.compact;
 
-	display: flex;
 	flex-direction: column;
 	gap: var(--ironsworn-rules-text-spacer);
+	&:first-of-type {
+		margin-top: 0;
+	}
 
-	p {
-		&:first-of-type {
-			margin-top: 0;
-		}
-
-		&:last-of-type:not(:last-child) {
-			margin-bottom: 0;
-		}
+	&:last-of-type:not(:last-child) {
+		margin-bottom: 0;
 	}
 
 	& > * {

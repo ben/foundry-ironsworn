@@ -106,13 +106,8 @@ const $actor = inject($ActorKey)
 
 const foundryItem = $actor?.items.get(props.item.id ?? props.item._id)
 
-provide(ItemKey, computed(() => foundryItem?.toObject()) as any)
 provide($ItemKey, foundryItem)
 
-const editMode = computed(() => {
-	return (actor?.value.flags as any)['foundry-ironsworn']?.['edit-mode']
-})
-const subtitle = computed(() => {
 	let subtype = capitalize(props.item.system.subtype)
 	if (subtype === 'Bond') subtype = 'Connection' // translate name
 	return game.i18n.localize(`IRONSWORN.ITEM.Subtype${subtype}`)

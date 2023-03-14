@@ -44,8 +44,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue';
-import { inject , computed } from 'vue'
+import type { Ref } from 'vue'
+import { inject, computed } from 'vue'
 import { $ActorKey, ActorKey } from '../../provisions'
 import DocumentImg from '../document-img.vue'
 import IronBtn from '../buttons/iron-btn.vue'

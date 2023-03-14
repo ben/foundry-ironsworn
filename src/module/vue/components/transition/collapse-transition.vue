@@ -21,9 +21,9 @@
 <script setup lang="ts">
 // adapted for Vue3 from ivanvermeyen's collapse transition component: https://github.com/ivanvermeyen/vue-collapse-transition
 
-import { computed, reactive , Transition, TransitionGroup, watch } from 'vue'
+import { computed, reactive, Transition, TransitionGroup, watch } from 'vue'
 import { isEmpty, kebabCase } from 'lodash-es'
-import type { CSSProperties} from 'vue';
+import type { CSSProperties } from 'vue'
 import type { PropertiesHyphen } from 'csstype'
 
 type Dimension = 'height' | 'width'

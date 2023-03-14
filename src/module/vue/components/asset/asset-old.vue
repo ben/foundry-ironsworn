@@ -97,7 +97,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { computed, inject, provide } from 'vue'
 import type {
 	AssetAbility as AssetAbilityType,

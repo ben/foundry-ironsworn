@@ -53,7 +53,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref} from 'vue';
+import type { Ref } from 'vue'
 import { computed, inject, onUnmounted } from 'vue'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ItemKey, ItemKey } from '../../provisions'

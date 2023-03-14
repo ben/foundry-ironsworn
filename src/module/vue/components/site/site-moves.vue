@@ -59,7 +59,7 @@ import type { TableResultDataConstructorData } from '@league-of-foundry-develope
 import { computed, inject, reactive } from 'vue'
 import type { SiteDataPropertiesData } from '../../../actor/actortypes'
 import { getFoundryTableByDfId } from '../../../dataforged'
-import type { Move } from '../../../features/custommoves';
+import type { Move } from '../../../features/custommoves'
 import { createIronswornMoveTree } from '../../../features/custommoves'
 import type { DelveThemeDataSourceData } from '../../../item/itemtypes'
 import { OracleRollMessage, IronswornPrerollDialog } from '../../../rolls'

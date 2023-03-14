@@ -7,14 +7,13 @@ import sassChroma from './src/module/plugin/sass-chroma-js'
 import type Sass from 'sass'
 import presetEnv from 'postcss-preset-env'
 import { kebabCase } from 'lodash-es'
-import cssNano from 'cssnano'
+import cssnano from 'cssnano'
 import sassIcons, { ICON_DIRS } from './src/module/plugin/custom-icons'
 
 const PORT = 30000
 
 const sassOptions: Sass.LegacyStringOptions<'sync'> = {
 	functions: { ...sassChroma, ...sassIcons },
-	// @ts-expect-error
 	additionalData: ''
 }
 
@@ -25,29 +24,18 @@ const config: UserConfig = {
 		Inspector({ appendTo: 'src/index.ts', toggleComboKey: 'control-alt' }),
 		createSvgIconsPlugin({
 			customDomId: 'ironsworn-sprites',
-			iconDirs: ICON_DIRS,
+			iconDirs: [
+				path.resolve(process.cwd(), 'system/assets/icons'),
+
+				path.resolve(process.cwd(), 'system/assets/misc')
+			],
 			symbolId: 'ironsworn-[dir]-[name]'
 		})
 	],
 	resolve: {
-		alias: [
-			{
-				find: /^style:(.*)/,
-				replacement: path.resolve(__dirname, 'src/styles', '$1')
-			},
-			{
-				find: /^mixin:(.*)/,
-				replacement: path.resolve(__dirname, 'src/styles/mixins', '$1')
-			},
-			{
-				find: /^component:(.*)/,
-				replacement: path.resolve(__dirname, 'src/module/vue/components', '$1')
-			},
-			{
-				find: /^vue$/,
-				replacement: 'vue/dist/vue.esm-bundler.js'
-			}
-		]
+		alias: {
+			vue: 'vue/dist/vue.esm-bundler.js'
+		}
 	},
 	define: {
 		'process.env': {}
@@ -70,7 +58,7 @@ const config: UserConfig = {
 			scss: sassOptions
 		},
 		postcss: {
-			plugins: [presetEnv(), cssNano()]
+			plugins: [presetEnv(), cssnano()]
 		},
 		modules: {
 			generateScopedName(className, filename, _) {

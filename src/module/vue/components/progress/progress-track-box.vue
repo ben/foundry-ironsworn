@@ -34,7 +34,6 @@
 		</svg>
 	</div>
 </template>
-
 <script setup lang="ts">
 import { range } from 'lodash-es'
 import { computed } from 'vue'

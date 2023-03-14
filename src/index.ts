@@ -154,10 +154,8 @@ Hooks.once('init', async () => {
 	)
 
 	DocumentSheetConfig.registerSheet(
-		// @ts-expect-error
 		JournalEntryPage,
 		'ironsworn',
-		// @ts-expect-error
 		TruthJournalPageSheet,
 		{
 			types: ['truth'],
@@ -221,7 +219,7 @@ Hooks.once('init', async () => {
 	IronswornChatCard.registerHooks()
 	patchZIndex()
 	registerCompendiumCategoryHook()
-	registerTokenHUDButtons()
+	await registerTokenHUDButtons()
 	activateSceneButtonListeners()
 })
 
@@ -232,7 +230,7 @@ Hooks.once('ready', async () => {
 	registerChatAlertHooks()
 	runStartupMacro()
 
-	FirstStartDialog.maybeShow()
+	await FirstStartDialog.maybeShow()
 	await registerTours()
 
 	// Pre-load all the oracles

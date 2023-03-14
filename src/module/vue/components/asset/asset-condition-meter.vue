@@ -29,7 +29,7 @@
 
 <script lang="ts" setup>
 import ConditionMeter from 'component:resource-meter/condition-meter.vue'
-import type { ComputedRef} from 'vue';
+import type { ComputedRef } from 'vue'
 import { inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 

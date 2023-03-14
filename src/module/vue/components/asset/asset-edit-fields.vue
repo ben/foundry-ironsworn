@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import IronBtn from '../buttons/iron-btn.vue'

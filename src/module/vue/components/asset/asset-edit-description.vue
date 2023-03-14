@@ -29,7 +29,7 @@
 import MceEditor from '../mce-editor.vue'
 import DocumentName from '../document-name.vue'
 
-import type { ComputedRef} from 'vue';
+import type { ComputedRef } from 'vue'
 import { computed, inject } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import { AssetDataPropertiesData } from '../../../item/itemtypes'

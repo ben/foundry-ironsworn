@@ -142,11 +142,7 @@ async function onChange(newValue: number) {
 			}
 		}
 	}
-
 	.attr-slider-label {
-		display: flex;
-		align-items: center;
-		text-transform: uppercase;
 		line-height: 1;
 
 		> * {

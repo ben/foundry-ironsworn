@@ -46,8 +46,4 @@ const actorSys = computed(
 		}
 	}
 
-	button {
 		height: max-content;
-	}
-}
-</style>

@@ -25,7 +25,7 @@
 	</article>
 </template>
 <script lang="ts" setup>
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import LegacyTrack from '../legacy-track.vue'
 import ProgressListItem from '../progress/progress-list-item.vue'

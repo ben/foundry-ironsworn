@@ -59,9 +59,7 @@
 
 <script setup lang="ts">
 import { computed, nextTick, provide, reactive, ref } from 'vue'
-import type {
-	MoveCategory
-} from '../../features/custommoves';
+import type { MoveCategory } from '../../features/custommoves'
 import {
 	createIronswornMoveTree,
 	createStarforgedMoveTree
@@ -148,12 +146,10 @@ CONFIG.IRONSWORN.emitter.on('highlightMove', async (targetMoveUuid) => {
 .btn {
 	aspect-ratio: 1;
 	flex: 0;
-
 	// padding: 6px;
 	&:empty {
 		padding: var(--ironsworn-spacer-md);
 		width: var(--form-field-height);
-
 		// to override default icon-button styling
 		height: var(--form-field-height);
 	}

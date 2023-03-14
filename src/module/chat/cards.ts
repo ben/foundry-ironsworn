@@ -74,9 +74,18 @@ export class IronswornChatCard {
 		html
 			.find('.oracle-roll .oracle-reroll')
 			.on('click', async (ev) => await this._oracleReroll.call(this, ev))
-		html.find('.copy-result').on('click', async (ev) => {
-			await this._oracleResultCopy.call(this, ev)
-		})
+		if (!navigator.clipboard) {
+			html
+				.find('.copy-result')
+				.addClass('disabled')
+				.parent()
+				.attr('data-tooltip', game.i18n.localize('IRONSWORN.ClipboardDisabled'))
+				.attr('data-tooltip-direction', 'LEFT')
+		} else {
+			html.find('.copy-result').on('click', async (ev) => {
+				await this._oracleResultCopy.call(this, ev)
+			})
+		}
 		html.find('.ironsworn-roll-resolve').on('click', async (ev) => {
 			await this._resolveChallenge.call(this, ev)
 		})

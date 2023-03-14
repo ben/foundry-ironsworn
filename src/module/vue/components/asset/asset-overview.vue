@@ -87,7 +87,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { ComputedRef} from 'vue';
+import type { ComputedRef } from 'vue'
 import { computed, inject, ref, useCssModule } from 'vue'
 import { $ItemKey, ItemKey } from '../../provisions'
 import WithRollListeners from '../with-rolllisteners.vue'

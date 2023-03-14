@@ -18,12 +18,9 @@
 
 <script lang="ts" setup>
 import { getCssVar } from '../../../../module/vue/composable/getCssVar'
-import type { Ref} from 'vue';
+import type { Ref } from 'vue'
 import { computed, inject, ref, watch } from 'vue'
-import type {
-	SetActivePanelRef,
-	TabKey,
-	TabState} from './tab-helpers.js';
+import type { SetActivePanelRef, TabKey, TabState } from './tab-helpers.js'
 import {
 	getSlideTransitionName,
 	getTabId,

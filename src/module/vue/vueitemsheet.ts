@@ -22,7 +22,7 @@ export abstract class VueItemSheet extends VueAppMixin(ItemSheet) {
 		}
 	}
 
-	readonly hasEditMode = true
+	readonly hasEditMode: boolean = true
 	_getHeaderButtons() {
 		if (this.hasEditMode) {
 			return [

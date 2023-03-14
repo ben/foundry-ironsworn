@@ -39,7 +39,7 @@
 import { capitalize } from 'lodash-es'
 import { computed, onMounted, ref, useCssModule, useSlots } from 'vue'
 import FontIcon from '../icon/font-icon.vue'
-import type { IconId } from '../icon/icon-common';
+import type { IconId } from '../icon/icon-common'
 import { FontAwesome } from '../icon/icon-common'
 import IronIcon from '../icon/iron-icon.vue'
 

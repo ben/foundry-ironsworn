@@ -17,7 +17,8 @@ import type {
 	Orientation,
 	TabActivationMode,
 	TabKey,
-	TabState} from './tab-helpers.js';
+	TabState
+} from './tab-helpers.js'
 import {
 	FocusActivePanelKey,
 	getTabId,

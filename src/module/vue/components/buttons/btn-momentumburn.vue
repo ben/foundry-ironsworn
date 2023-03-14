@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts" setup>
-import { computed , inject } from 'vue'
-import type { ExtractPropTypes} from 'vue';
+import { computed, inject } from 'vue'
+import type { ExtractPropTypes } from 'vue'
 import type { CharacterDataPropertiesData } from '../../../actor/actortypes'
 import { $ActorKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'

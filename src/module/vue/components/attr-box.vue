@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { inject, computed, capitalize } from 'vue'
 import type { IronswornActor } from '../../actor/actor'
 import type { CharacterDataPropertiesData } from '../../actor/actortypes'

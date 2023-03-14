@@ -33,7 +33,7 @@
 <script lang="ts" setup>
 import SheetHeader from '../sheet-header.vue'
 import { debounce } from 'lodash-es'
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { inject, ref } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import DocumentImg from './document-img.vue'

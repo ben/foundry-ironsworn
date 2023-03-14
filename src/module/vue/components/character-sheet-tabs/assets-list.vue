@@ -44,7 +44,7 @@
 
 <script lang="ts" setup>
 import { sortBy } from 'lodash-es'
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import AssetCard from '../asset/asset-card.vue'
 import IronBtn from '../buttons/iron-btn.vue'

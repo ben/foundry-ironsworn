@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { inject } from 'vue'
 import type { Move } from '../../../features/custommoves.js'
 import { IronswornPrerollDialog } from '../../../rolls'

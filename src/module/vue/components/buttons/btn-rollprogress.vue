@@ -12,7 +12,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { computed, inject } from 'vue'
 import { $ItemKey } from '../../provisions'
 import IronBtn from './iron-btn.vue'

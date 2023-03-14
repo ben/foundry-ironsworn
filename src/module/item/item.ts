@@ -89,9 +89,9 @@ export class IronswornItem extends Item {
 
 		const progress = Math.floor(system.current / 4)
 		return await IronswornPrerollDialog.showForProgress(
-			this.name || '(progress)',
+			this.name ?? '(progress)',
 			progress,
-			this.actor != null || undefined,
+			this.actor ?? undefined,
 			moveDfId
 		)
 	}
@@ -113,7 +113,7 @@ export class IronswornItem extends Item {
 		IronswornPrerollDialog.showForOfficialMove(
 			'Ironsworn/Moves/Relationship/Write_Your_Epilogue',
 			{
-				actor: this.actor != null || undefined,
+				actor: this.actor ?? undefined,
 				progress: {
 					source: game.i18n.localize('IRONSWORN.ITEMS.TypeBond'),
 					value: progress

@@ -38,7 +38,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Ref } from 'vue';
+import type { Ref } from 'vue'
 import { computed, inject } from 'vue'
 import { $ActorKey, ActorKey } from '../provisions'
 import IronBtn from './buttons/iron-btn.vue'
@@ -151,7 +151,6 @@ function decrease() {
 	// TODO: repeats progress track variables, because the xp boxes need them to calculate placement (and they aren't direct children of the progress track component... though maybe they should be?)
 	--ironsworn-progress-box-border-radius: var(--ironsworn-border-radius-md);
 	--ironsworn-progress-box-border-width: var(--ironsworn-border-width-md);
-
 	// TODO: replace this with a 4px variable when available
 	--ironsworn-progress-box-gap: 4px;
 	--ironsworn-progress-box-max-size: 50px;
@@ -202,7 +201,6 @@ function decrease() {
 
 	.progress-track-box {
 		gap: var(--ironsworn-progress-box-gap);
-
 		// extra padding to allow comfy overlap with xp pips (similar to legacy tracks on the SF character sheet and in the book's illustrations).
 		padding-bottom: calc(var(--ironsworn-legacy-xp-box-size) * 0.4);
 		max-width: var(--ironsworn-progress-box-max-size);
@@ -227,7 +225,6 @@ function decrease() {
 							var(--ironsworn-legacy-xp-border-width)
 					) / -2
 			);
-
 			z-index: 1;
 			margin: 0;
 			border-width: var(--ironsworn-legacy-xp-border-width);

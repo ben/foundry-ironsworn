@@ -22,7 +22,7 @@
 <script lang="ts" setup>
 import type { IconSwitchState } from 'component:icon/icon-common'
 import IconSwitch from 'component:icon/icon-switch.vue'
-import type { ExtractPropTypes} from 'vue';
+import type { ExtractPropTypes } from 'vue'
 import { computed, useCssModule, ref } from 'vue'
 
 /**
