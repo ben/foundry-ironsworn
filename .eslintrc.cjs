@@ -13,8 +13,7 @@ module.exports = {
 	parserOptions: {
 		parser: '@typescript-eslint/parser',
 		ecmaVersion: 11,
-		sourceType: 'module',
-		project: './tsconfig.json'
+		sourceType: 'module'
 	},
 	env: {
 		browser: true,
@@ -37,6 +36,10 @@ module.exports = {
 		'@typescript-eslint/explicit-function-return-type': 'off'
 	},
 	overrides: [
+		{
+			files: ['*.ts', '*.js', '*.cjs'],
+			parserOptions: { project: './tsconfig.json' }
+		},
 		{
 			files: ['*.js', '*.cjs'],
 			rules: {
