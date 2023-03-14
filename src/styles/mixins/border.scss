@@ -1,0 +1,22 @@
+@mixin floating() {
+	border-style: outset;
+	border-color: var(--ironsworn-color-border);
+}
+
+// sets border colours, modelled after the hover effect on FVTT's canvas buttons.
+@mixin accent(
+	$color1: var(--ironsworn-color-warm),
+	$color2: var(--ironsworn-color-cool)
+) {
+	border-color: var(--ironsworn-color-warm);
+	border-bottom-color: var(--ironsworn-color-cool);
+}
+
+@mixin margin($direction, $spacer: var(--ironsworn-spacer-md)) {
+	position: relative;
+	flex: 0;
+	border-#{$direction}-style: solid;
+	border-#{$direction}-width: var(--ironsworn-border-width-md);
+	margin-#{$direction}: $spacer;
+	border-#{$direction}-color: var(--ironsworn-color-border);
+}

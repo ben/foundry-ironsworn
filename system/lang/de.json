@@ -1,69 +1,69 @@
 {
-  "IRONSWORN": {
-    "Roll": "Wurf",
-    "Versus": "vs.",
-    "Strong_hit": "Voller Erfolg",
-    "Strong_hit_match": "Voller Erfolg mit einem Pasch!",
-    "Weak_hit": "Teilerfolg",
-    "Miss": "Fehlschlag",
-    "Miss_match": "Fehlschlag mit einem Pasch!",
-    "MarkProgress": "Markiere Fortschritt",
-    "ProgressRoll": "Fortschrittswurf",
-    "Troublesome": "Lästig",
-    "Dangerous": "Gefährlich",
-    "Formidable": "Gewaltig",
-    "Extreme": "Extrem",
-    "Epic": "Episch",
-    "Stat": "Attribut",
-    "Stats": "Attribute",
-    "roll +x": "würfle +{stat}",
-    "roll method": {
-      "Any": {
-        "2": "würfle dann +{stat1} oder +{stat2}"
-      },
-      "Highest": {
-        "2": "würfle dann +{stat1} oder +{stat2}, je nachdem, was höher ist"
-      },
-      "Lowest": {
-        "2": "würfle dann +{stat1} oder +{stat2}, je nachdem, was niedriger ist"
-      }
-    },
-    "Momentum": "Momentum",
-    "Health": "Leben",
-    "Spirit": "Willen",
-    "Edge": "Geschick",
-    "Heart": "Herz",
-    "Iron": "Eisen",
-    "Shadow": "Schatten",
-    "Wits": "Verstand",
-    "XP": "EP",
-    "Debilities": "Schwächen",
-    "Conditions": "Zustände",
-    "Banes": "Verhängnisse",
-    "Burdens": "Bürden",
-    "BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
-    "MomentumBurnt": "Momentum verbrannt",
-    "Fields": "Felder",
-    "Label": "Beschriftung",
-    "Value": "Wert",
-    "Abilities": "Eigenschaften",
-    "Track": "Statusleiste",
-    "Enabled": "Aktiviert",
-    "ConfirmDelete": "Bist Du sicher? Dies kann nicht rückgängig gemacht werden.",
-    "ACTOR": {
-      "TypeCharacter": "Charakter",
-      "TypeLocation": "Schauplatz"
-    },
-    "ITEM": {
-      "SubtypeProgress": "Fortschritt"
-    },
-    "ITEMS": {
-      "TypeMove": "Spielzüge",
-      "TypeAsset": "Ressourcen",
-      "TypeBond": "Bande"
-    },
-    "ROLLTABLES": {
-      "TypeOracle": "Orakel"
-    }
-  }
+	"IRONSWORN": {
+		"Roll": "Wurf",
+		"Versus": "vs.",
+		"Strong_hit": "Voller Erfolg",
+		"Strong_hit_match": "Voller Erfolg mit einem Pasch!",
+		"Weak_hit": "Teilerfolg",
+		"Miss": "Fehlschlag",
+		"Miss_match": "Fehlschlag mit einem Pasch!",
+		"MarkProgress": "Markiere Fortschritt",
+		"ProgressRoll": "Fortschrittswurf",
+		"Troublesome": "Lästig",
+		"Dangerous": "Gefährlich",
+		"Formidable": "Gewaltig",
+		"Extreme": "Extrem",
+		"Epic": "Episch",
+		"Stat": "Attribut",
+		"Stats": "Attribute",
+		"roll +x": "würfle +{stat}",
+		"roll method": {
+			"Any": {
+				"2": "würfle dann +{stat1} oder +{stat2}"
+			},
+			"Highest": {
+				"2": "würfle dann +{stat1} oder +{stat2}, je nachdem, was höher ist"
+			},
+			"Lowest": {
+				"2": "würfle dann +{stat1} oder +{stat2}, je nachdem, was niedriger ist"
+			}
+		},
+		"Momentum": "Momentum",
+		"Health": "Leben",
+		"Spirit": "Willen",
+		"Edge": "Geschick",
+		"Heart": "Herz",
+		"Iron": "Eisen",
+		"Shadow": "Schatten",
+		"Wits": "Verstand",
+		"XP": "EP",
+		"Debilities": "Schwächen",
+		"Conditions": "Zustände",
+		"Banes": "Verhängnisse",
+		"Burdens": "Bürden",
+		"BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
+		"MomentumBurnt": "Momentum verbrannt",
+		"Fields": "Felder",
+		"Label": "Beschriftung",
+		"Value": "Wert",
+		"Abilities": "Eigenschaften",
+		"Track": "Statusleiste",
+		"Enabled": "Aktiviert",
+		"ConfirmDelete": "Bist Du sicher? Dies kann nicht rückgängig gemacht werden.",
+		"ACTOR": {
+			"TypeCharacter": "Charakter",
+			"TypeLocation": "Schauplatz"
+		},
+		"ITEM": {
+			"SubtypeProgress": "Fortschritt"
+		},
+		"ITEMS": {
+			"TypeMove": "Spielzüge",
+			"TypeAsset": "Ressourcen",
+			"TypeBond": "Bande"
+		},
+		"ROLLTABLES": {
+			"TypeOracle": "Orakel"
+		}
+	}
 }

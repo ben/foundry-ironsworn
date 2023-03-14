@@ -1,0 +1,209 @@
+@use 'mixin:text.scss';
+@use 'mixin:clickable.scss';
+
+.chat-message {
+	border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+	color: var(--ironsworn-color-fg);
+
+	.message-header {
+		// FVTT's default message header. Some modules restyle this, so be careful with any layout changes.
+		color: var(--ironsworn-color-fg-muted);
+	}
+
+	// General message content styling
+	.message-content {
+		@include text.compact;
+
+		border: none;
+
+		.ironsworn-roll-title,
+		h3,
+		h2 {
+			@include text.initialCaps;
+
+			margin: 0;
+			font-size: var(--font-size-16);
+			font-weight: bold;
+		}
+
+		.move-oracle-buttons {
+			gap: var(--ironsworn-spacer-xs);
+
+			button {
+				margin: 0;
+			}
+		}
+
+		button {
+			@include text.initialCaps;
+			@include clickable.block;
+
+			display: flex;
+			gap: var(--ironsworn-border-radius-sm);
+			align-items: center;
+			justify-content: center;
+			margin: 0;
+			border-width: var(--ironsworn-border-width-md);
+			border-radius: var(--ironsworn-border-radius-md);
+			background-color: var(--ironsworn-color-bg-20);
+
+			.button-text {
+				white-space: nowrap;
+			}
+		}
+	}
+
+	// Action rolls, progress rolls
+	.ironsworn-roll {
+		display: flex;
+		flex-direction: column;
+		gap: var(--ironsworn-spacer-md);
+
+		.roll-outcome {
+			display: flex;
+			flex-flow: column;
+			gap: var(--ironsworn-spacer-sm);
+			justify-content: center;
+			margin-bottom: var(--ironsworn-spacer-sm);
+
+			p {
+				margin: 0;
+			}
+
+			.outcome-label {
+				margin: 0;
+				text-align: center;
+				text-transform: uppercase;
+				font-size: larger;
+
+				span {
+					display: inline;
+					white-space: nowrap;
+				}
+
+				.outcome-text {
+					font-weight: bold;
+				}
+			}
+		}
+
+		.outcome-shortcuts {
+			// embedded buttons for momentum burn, oracle roll suggestions, etc.
+			display: contents;
+		}
+	}
+
+	// Oracle rolls
+	.oracle-roll {
+		border: none;
+
+		.oracle-table.oracle-table-partial {
+			transition: none;
+			margin: var(--ironsworn-spacer-xs) 0;
+
+			// tint to make this an easier read when the message uses e.g. FVTT's default background texture
+			background-color: var(--ironsworn-color-bg-20);
+
+			&:hover {
+				// hide row content and reveal controls on *table* hover
+				.oracle-row-content {
+					visibility: hidden;
+					opacity: 0;
+				}
+
+				.oracle-result-control {
+					visibility: visible;
+					opacity: 1;
+					color: inherit;
+				}
+			}
+
+			caption {
+				font-size: large;
+
+				> * {
+					display: block;
+					text-align: left;
+				}
+
+				.subtitle {
+					font-size: var(--font-size-12);
+				}
+			}
+
+			td:first-child,
+			td:last-child {
+				width: 0;
+			}
+
+			.oracle-result-row {
+				> td {
+					position: relative;
+
+					&:last-child {
+						> .oracle-row-content {
+							padding-right: var(--ironsworn-spacer-xs);
+						}
+					}
+
+					> * {
+						transition: var(--ironsworn-transition);
+					}
+				}
+			}
+
+			.oracle-table-column-roll-result {
+				padding: 0;
+				white-space: nowrap;
+			}
+
+			.oracle-row-content {
+				display: flex;
+				gap: var(--ironsworn-spacer-sm);
+				align-items: center;
+				visibility: visible;
+				opacity: 1;
+				height: 100%;
+			}
+
+			.icon {
+				aspect-ratio: 1;
+				display: flex;
+				margin: 0;
+			}
+
+			.oracle-result-control {
+				@include clickable.text;
+
+				display: flex;
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				gap: var(--ironsworn-spacer-sm);
+				visibility: hidden;
+				opacity: 0;
+				margin: 0;
+				border: none !important;
+				background: none !important;
+				padding: var(--ironsworn-spacer-sm);
+
+				&.clickable.text {
+					align-items: center;
+					justify-content: center;
+				}
+			}
+		}
+	}
+
+	// FIXME: is this still in use?
+	.bonus-content .dice-formula {
+		word-break: normal;
+	}
+
+	// September 2022: styling so that old messages don't have their overall layout disrupted. can probably be removed in a few versions.
+	.hover-controls {
+		display: none;
+	}
+}

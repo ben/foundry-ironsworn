@@ -1,0 +1,46 @@
+.boxgroup {
+	--ironsworn-box-border-radius: 0;
+
+	.boxrow {
+		&.small {
+			flex-basis: 25px;
+			flex-grow: 0;
+			line-height: 25px;
+		}
+	}
+
+	& > .boxrow {
+		&:first-child {
+			& > *:first-child {
+				border-top-left-radius: var(--ironsworn-box-border-radius);
+			}
+
+			& > *:last-child {
+				border-top-right-radius: var(--ironsworn-box-border-radius);
+			}
+		}
+
+		&:last-child {
+			& > *:first-child {
+				border-bottom-left-radius: var(--ironsworn-box-border-radius);
+			}
+
+			& > *:last-child {
+				border-bottom-right-radius: var(--ironsworn-box-border-radius);
+			}
+		}
+	}
+
+	.box {
+		margin: var(--ironsworn-box-margin-offset);
+	}
+}
+
+.box {
+	--ironsworn-box-margin-offset: calc(var(--ironsworn-border-width-md) * -0.5);
+
+	display: flex;
+	justify-content: center;
+	border: var(--ironsworn-border-width-md) solid var(--ironsworn-color-border);
+	text-align: center;
+}

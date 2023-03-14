@@ -1,0 +1,119 @@
+@use 'sass:meta';
+@use 'mixin:color.scss';
+@use 'mixin:fx.scss';
+@use 'mixin:border.scss';
+@use 'style:fvtt/dialog' as fvtt-dialog;
+
+// Common CSS custom properties are coralled in their own file.
+@forward 'style:custom-properties';
+
+// THEMES
+// TODO: this could probably be set up to extract everything from the theme directory automatically.
+@include meta.load-css('themes/starforged');
+@include meta.load-css('themes/ironsworn');
+
+// :where is a zero-specificity selector, used here so that it's not impossible for components to override global styles
+// https://developer.mozilla.org/en-US/docs/Web/CSS/:where
+:where(.ironsworn) {
+	@include meta.load-css('utils');
+
+	form button,
+	button {
+		margin: 0;
+		border: 0 solid var(--ironsworn-color-border);
+		width: auto;
+		line-height: var(--ironsworn-line-height);
+		color: currentcolor;
+
+		&:disabled,
+		&[aria-disabled='true'] {
+			color: currentcolor;
+		}
+	}
+}
+
+.system-foundry-ironsworn {
+	// load files within this selector to ensure higher specificity
+	@include meta.load-css('assets');
+	@include meta.load-css('chat-message');
+	@include meta.load-css('clickable');
+	@include meta.load-css('dice');
+	@include meta.load-css('drag-and-drop');
+	@include meta.load-css('icons');
+	@include meta.load-css('list');
+	@include meta.load-css('sheet');
+	@include meta.load-css('transitions');
+
+	// transitions for interactive elements
+	a,
+	button,
+	select,
+	input,
+	textarea,
+	.scene-control,
+	.control-tool,
+	.macro {
+		transition: var(--ironsworn-transition);
+
+		&.active {
+			color: var(--ironsworn-color-clickable-text-selected);
+		}
+	}
+
+	.ironsworn {
+		// stuff scoped to .ironsworn app windows only
+		// include these in a theme it to FVTT's own dialogs and inputs as well.
+		@include meta.load-css('dialog-custom');
+		@include meta.load-css('editor');
+		@include meta.load-css('scrollbar');
+		@include meta.load-css('tables');
+		@include meta.load-css('inputs');
+		@include meta.load-css('box');
+		@include meta.load-css('progress-track');
+
+		&.dialog {
+			@include fvtt-dialog.dialog;
+		}
+
+		.window-title {
+			// there's a mixin for this, but it runs afoul of SCSS imports.
+			&::first-letter {
+				text-transform: uppercase;
+			}
+		}
+
+		.window-content {
+			background: var(--ironsworn-color-bg);
+			padding: var(--ironsworn-spacer-sm);
+			height: 100%;
+			color: var(--ironsworn-color-fg);
+		}
+
+		hr {
+			border: 0 solid var(--ironsworn-color-border);
+			border-width: 0 0 var(--ironsworn-border-width-md);
+			width: 100%;
+		}
+
+		h1,
+		h2,
+		h3 {
+			border: none;
+		}
+	}
+
+	#tooltip {
+		// disables additional margin on paragraph elements in tooltips (FVTT doesn't use them, but we do)
+		& > {
+			p {
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

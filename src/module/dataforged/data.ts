@@ -3,20 +3,20 @@ import { starforged, ironsworn } from 'dataforged'
 
 // For some reason, rollupJs mangles this
 export const SFMoveCategories = ((starforged as any).default as Starforged)[
-  'Move Categories'
+	'Move Categories'
 ]
 export const ISMoveCategories = ((ironsworn as any).default as Ironsworn)[
-  'Move Categories'
+	'Move Categories'
 ]
 export const SFOracleCategories = ((starforged as any).default as Starforged)[
-  'Oracle Categories'
+	'Oracle Categories'
 ]
 export const ISOracleCategories = ((ironsworn as any).default as Ironsworn)[
-  'Oracle Categories'
+	'Oracle Categories'
 ]
 export const SFAssetTypes = ((starforged as any).default as Starforged)[
-  'Asset Types'
+	'Asset Types'
 ]
 export const ISAssetTypes = ((ironsworn as any).default as Ironsworn)[
-  'Asset Types'
+	'Asset Types'
 ]

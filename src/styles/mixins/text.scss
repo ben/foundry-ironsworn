@@ -1,0 +1,54 @@
+// typography mixins
+
+// until this chromium issue with paint-order is resolved, text-stroke is functionally useless: https://bugs.chromium.org/p/chromium/issues/detail?id=815111
+// yes, i am bitter, because even safari has supported it for ~4 years at this point :)
+// in the mean time, we can fake a 1px solid outside stroke by stacking text-shadow or drop-shadow filters. be cautious with overusing it; they're not blurred, so the computational cost isn't *too* bad, but that's still 6x as many shadows as we want to be drawing.
+// if you want this + a soft shadow, LESS can combine them with square bracket notation to access the text-shadow property.
+// generated with owumaro.github.io/text-stroke-generator/
+// TODO: rewrite this as a function
+@mixin stroke() {
+	text-shadow: 1px 0 0 var(--ironsworn-color-text-stroke),
+		0.540302px 0.841471px 0 var(--ironsworn-color-text-stroke),
+		-0.416147px 0.909297px 0 var(--ironsworn-color-text-stroke),
+		-0.989993px 0.14112px 0 var(--ironsworn-color-text-stroke),
+		-0.653644px -0.756803px 0 var(--ironsworn-color-text-stroke),
+		0.283662px -0.958924px 0 var(--ironsworn-color-text-stroke),
+		0.96017px -0.279416px 0 var(--ironsworn-color-text-stroke);
+}
+
+@mixin initialCaps() {
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+
+@mixin compact() {
+	ol,
+	ul {
+		padding: 0 0 0 1em;
+
+		li {
+			margin: 0.2em 0;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+	}
+
+	ul {
+		list-style-type: disc;
+
+		ul {
+			list-style-type: circle;
+
+			ul {
+				list-style-type: square;
+			}
+		}
+	}
+}

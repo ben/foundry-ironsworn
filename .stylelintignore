@@ -1,3 +1,5 @@
 *.*
 !src/styles/**/*.less
+!src/styles/**/*.scss
+!src/styles/**/*.pcss
 !src/module/vue/**/*.vue

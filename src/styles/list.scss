@@ -1,0 +1,48 @@
+// WIP: genericizes appearance of the move tree browser
+.list-block {
+	--ironsworn-list-block-border-style: outset;
+	--ironsworn-list-block-border-width: var(--ironsworn-border-width-md);
+	--ironsworn-list-block-border-highlight: var(--ironsworn-color-light-10);
+	--ironsworn-list-block-border-shadow: var(--ironsworn-color-dark-10);
+
+	display: flex;
+	flex-flow: column nowrap;
+	padding: 0;
+	list-style: none;
+
+	.list-block-item {
+		margin: 0;
+		border-width: var(--ironsworn-list-block-border-width) 0;
+		border-style: var(--ironsworn-list-block-border-style);
+
+		// transparent border is applied so that the first + last items have a height consistent with their siblings
+		border-color: transparent;
+		height: max-content;
+
+		&:not(:first-of-type) {
+			border-top-color: var(--ironsworn-list-block-border-highlight);
+		}
+
+		&:not(:last-of-type) {
+			border-bottom-color: var(--ironsworn-list-block-border-shadow);
+		}
+	}
+
+	.list-block-header {
+		&:not(:last-child) {
+			// applies bottom border only if there's subsequent content
+			border-width: 0;
+			border-bottom-width: var(--ironsworn-list-block-border-width);
+			border-style: var(--ironsworn-list-block-border-style);
+			border-bottom-color: var(--ironsworn-list-block-border-shadow);
+
+			& ~ * {
+				// applies top border to first sibling after list-block-header
+				border-width: 0;
+				border-top-width: var(--ironsworn-list-block-border-width);
+				border-style: var(--ironsworn-list-block-border-style);
+				border-top-color: var(--ironsworn-list-block-border-highlight);
+			}
+		}
+	}
+}

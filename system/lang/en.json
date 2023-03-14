@@ -1,728 +1,728 @@
 {
-  "IRONSWORN": {
-    "Ironsworn": "Ironsworn",
-    "Starforged": "Starforged",
-    "YourWorldTruths": "Your World: Truths",
-    "TruthsAreOptional": "Creating truths is an optional step. You can always come back to this later in the settings.",
-    "TruthQuestStarter": "Quest Starter:",
-    "QuestStarter": "Quest Starter",
-    "SaveYourTruths": "Save Your Truths",
-    "CustomTruth": "Custom Truth",
-    "RandomizeAll": "Randomize All",
-    "Roll": "Roll",
-    "SendToChat": "Send text to chat: <i>{move}</i>",
-    "CopyTextToClipboard": "Copy text to clipboard",
-    "ClipboardDisabled": "The browser has prevented access to the clipboard. You'll need to load Foundry from localhost or using an <code>https://</code> URL to use this feature.",
-    "Adds": "Adds",
-    "Versus": "vs.",
-    "CappedAt10": "Action score is capped at 10",
-    "Strong_hit": "Strong hit",
-    "Strong_hit_match": "Strong hit with a match!",
-    "On_a_strong_hit": "On a strong hit",
-    "Weak_hit": "Weak hit",
-    "On_a_weak_hit": "On a weak hit",
-    "Miss": "Miss",
-    "Miss_match": "Miss with a match!",
-    "On_a_miss": "On a miss",
-    "MarkProgress": "Mark Progress",
-    "ProgressMove": "Progress Move",
-    "PROGRESS": {
-      "Current": "{score} progress ({ticks} ticks)",
-      "Ticks": "{ticks} ticks",
-      "BOX": {
-        "1": "1 box",
-        "2": "2 boxes",
-        "3": "3 boxes"
-      },
-      "TICK": {
-        "1": "1 tick",
-        "2": "2 ticks",
-        "3": "3 ticks",
-        "4": "4 ticks"
-      }
-    },
-    "MarkLegacy": "Mark {amount} on your {legacy} legacy track",
-    "UnmarkProgress": "Unmark Progress",
-    "ProgressRoll": "Progress Roll",
-    "MakeAProgressRoll": "Make a progress roll with {score} progress",
-    "StarProgress": "When active, this item will also show up on the 'Legacies' tab.",
-    "CHALLENGERANK": {
-      "Troublesome": "Troublesome",
-      "Dangerous": "Dangerous",
-      "Formidable": "Formidable",
-      "Extreme": "Extreme",
-      "Epic": "Epic"
-    },
-    "Stat": "Stat",
-    "Stats": "Stats",
-    "OracleTable": {
-      "ColumnLabel": {
-        "Roll": "Roll",
-        "RollRange": "Roll range",
-        "DiceRollResult": "{dice} roll result",
-        "Result": "Result"
-      }
-    },
-    "roll +x": "roll +{stat}",
-    "Roll +x": "Roll +{stat}",
-    "roll method": {
-      "All": "roll all of {statList}",
-      "Any": {
-        "2": "roll +{stat1} or +{stat2}",
-        "fallback": "roll any of {statList}"
-      },
-      "Highest": {
-        "2": "roll +{stat1} or +{stat2}, whichever is higher",
-        "fallback": "roll highest of {statList}"
-      },
-      "Lowest": {
-        "2": "roll +{stat1} or +{stat2}, whichever is lower",
-        "fallback": "roll lowest of {statList}"
-      }
-    },
-    "Momentum": "momentum",
-    "Health": "health",
-    "Spirit": "spirit",
-    "Supply": "supply",
-    "Edge": "edge",
-    "Heart": "heart",
-    "Iron": "iron",
-    "Shadow": "shadow",
-    "Wits": "wits",
-    "XP": "XP",
-    "NoBonds": "No Bonds",
-    "Legacies": "Legacies",
-    "LEGACY": {
-      "Bonds": "Bonds",
-      "Discoveries": "Discoveries",
-      "Quests": "Quests"
-    },
-    "Clock": "Clock",
-    "Segments": "Segments",
-    "Debilities": "Debilities",
-    "Conditions": "Conditions",
-    "Condition": "Condition",
-    "ConditionSetOnOne": "{condition} is set on {name}",
-    "ConditionSetOnMany": "{condition} is set on:",
-    "Banes": "Banes",
-    "Burdens": "Burdens",
-    "Misfortunes": "Misfortunes",
-    "LastingEffects": "Lasting Effects",
-    "Vehicle": "Vehicle",
-    "Wounded": "Wounded",
-    "Unprepared": "Unprepared",
-    "Shaken": "Shaken",
-    "Encumbered": "Encumbered",
-    "Maimed": "Maimed",
-    "Corrupted": "Corrupted",
-    "Cursed": "Cursed",
-    "Tormented": "Tormented",
-    "Permanentlyharmed": "Permanently Harmed",
-    "Traumatized": "Traumatized",
-    "Doomed": "Doomed",
-    "Indebted": "Indebted",
-    "Battered": "Battered",
-    "Reroll": "Reroll",
-    "Connections": "Connections",
-    "Connection": "Connection",
-    "MOVES": {
-      "Adventure": "Adventure moves",
-      "Combat": "Combat moves",
-      "Connection": "Connection moves",
-      "Custom": "Custom Moves",
-      "Delve": "Delve moves",
-      "Exploration": "Exploration moves",
-      "Fate": "Fate moves",
-      "Failure": "Failure moves",
-      "Legacy": "Legacy moves",
-      "Quest": "Quest moves",
-      "Rarity": "Rarity moves",
-      "Recover": "Recover moves",
-      "Relationship": "Relationship moves",
-      "Scene Challenge": "Scene challenge moves",
-      "Session": "Session moves",
-      "Suffer": "Suffer moves",
-      "Threat": "Threat moves",
-      "Threshold": "Threshold moves"
-    },
-    "Failure": "Failure",
-    "Threat": "Threat",
-    "Rarity": "Rarity",
-    "LocationType": "Location type",
-    "RollForDetails": "Roll location details",
-    "RandomName": "Random name",
-    "ResolveChallenge": "Resolve challenge",
-    "ResolveChallengeDisabled": "Choose your final two challenge dice",
-    "BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",
-    "BurnMomentumAndResetTo": "Burn {value} momentum and reset to {resetValue}",
-    "MomentumBurnt": "Momentum Burn",
-    "NegativeMomentumCancel": "Negative momentum canceled action die",
-    "Pronouns": "Pronouns",
-    "Callsign": "Callsign",
-    "Characteristics": "Characteristics",
-    "Summary": "Summary",
-    "Category": "Category",
-    "Color": "Color",
-    "Requirement": "Requirement",
-    "Trigger": "Trigger",
-    "FullText": "Full text",
-    "Field": "Field",
-    "Fields": "Fields",
-    "Label": "Label",
-    "Value": "Value",
-    "Abilities": "Abilities",
-    "Ability": "Ability",
-    "Options": "Options",
-    "Option": "Option",
-    "Track": "Track",
-    "Enabled": "Enabled",
-    "ChallengeRank": "Challenge rank",
-    "Completed": "Completed",
-    "NotCompleted": "Not Completed",
-    "Foes": "Foes",
-    "Foe": "Foe",
-    "Edit": "Edit",
-    "OpenCompendium": "Open Compendium",
-    "ConfirmDelete": "Are you sure? This cannot be undone.",
-    "RequiresLocationType": "This oracle requires a location type to be selected.",
-    "RollOracleTable": "Roll oracle: <i>{title}</i>",
-    "RollMove": "Roll move: <i>{title}</i>",
-    "PageReference": "p. {page}",
-    "PlanetType": "Type of planet",
-    "RandomPlanetType": "Random planet type",
-    "SettlementType": "Type of settlement",
-    "RandomSettlementType": "Random settlement type",
-    "StarType": "Type of star",
-    "RandomStarType": "Random star type",
-    "DerelictType": "Type of derelict",
-    "RandomDerelictType": "Random derelict type",
-    "VaultType": "Type of vault",
-    "RandomVaultType": "Random vault type",
-    "First": "first",
-    "Second": "second",
-    "Third": "third",
-    "Fourth": "fourth",
-    "Fifth": "fifth",
-    "StarforgedTools": "Starforged Tools",
-    "IronswornTools": "Ironsworn Tools",
-    "Region": "Region",
-    "RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
-    "REGION": {
-      "Terminus": "Terminus",
-      "Outlands": "Outlands",
-      "Expanse": "Expanse"
-    },
-    "RotateCCW": "Rotate counter-clockwise",
-    "RotateCW": "Rotate clockwise",
-    "RollDialog": {
-      "AdvancedRollOptions": "Advanced options",
-      "PresetActionDie": "Preset action die",
-      "PresetChallengeDice": "Preset challenge dice",
-      "PredeterminedOutcome": "Predetermined outcome",
-      "ExtraChallengeDice": "Extra challenge dice"
-    },
-    "ChatAlert": {
-      "Muted": "Currently whispering updates to the user who triggered them",
-      "Unmuted": "Currently broadcasting updates to all users",
-      "ToggleMute": "Toggle mute",
-      "Renamed": "Renamed to {name}",
-      "renamed": "renamed to {name}",
-      "Added": "Added {name}",
-      "Deleted": "Deleted {name}",
-      "MarkedXP": "Marked {amt} XP",
-      "UnmarkedXP": "Unmarked {amt} XP",
-      "AdjustedStat": "{amt} {stat} (now {val})",
-      "SetCondition": "Set the {condition} condition",
-      "ClearedCondition": "Cleared the {condition} condition",
-      "RankChanged": "Rank changed from {old} to {new}",
-      "rankChanged": "rank changed from {old} to {new}",
-      "ProgressAdvanced": "Progress advanced",
-      "progressAdvanced": "progress advanced",
-      "ProgressReduced": "Progress reduced",
-      "progressReduced": "progress reduced",
-      "MarkedAbility": "marked {pos} ability",
-      "UnmarkedAbility": "unmarked {pos} ability",
-      "MarkedOption": "marked {name}",
-      "SetField": "set {name} to {val}",
-      "AddBond": "Added a bond",
-      "LostBond": "Lost a bond",
-      "completedMarked": "marked completed",
-      "completedUnmarked": "unmarked completed",
-      "clockAdvancedOneSegment": "clock advanced to {new}⁄{max}",
-      "clockAdvancedTwoSegments": "clock advanced by {change} segments to {new}⁄{max}",
-      "clockAdvancedManySegments": "clock advanced by {change} segments to {new}⁄{max}",
-      "clockCompletedOneSegment": "clock advanced to {new}⁄{max}—clock completed!",
-      "clockCompletedTwoSegments": "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
-      "clockCompletedManySegments": "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
-      "clockSet": "clock set to {new}⁄{max}"
-    },
-    "Settings": {
-      "Theme": {
-        "Name": "Visual Theme",
-        "Hint": "Select the visual look for this game. Requires a reload.",
-        "Ironsworn": "Ironsworn Classic",
-        "Starforged": "Starforged (experimental)"
-      },
-      "Tools": {
-        "Name": "Character Tools",
-        "Hint": "Which set of moves and oracles will appear when opening a character sheet.",
-        "Sheet": "Match sheet"
-      },
-      "SharedSupply": {
-        "Name": "Shared Supply Tracker",
-        "Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
-      },
-      "LogChanges": {
-        "Name": "Log Character Updates",
-        "Hint": "If on, changes to character stats will be logged to the chat."
-      },
-      "PromptTruths": {
-        "Name": "Configuration Dialog on Start",
-        "Hint": "Open the above dialog on the next reload."
-      },
-      "ConfigurationDialog": {
-        "Label": "Configuration Dialog",
-        "Name": "Configuration Dialog",
-        "Hint": "Choose between Ironsworn and Starforged UI elements."
-      },
-      "ISTruthsDialog": {
-        "Label": "Ironsworn Truths",
-        "Name": "Ironsworn Truths",
-        "Hint": "Open the dialog to generate your Ironsworn setting truths."
-      },
-      "SFTruthsDialog": {
-        "Label": "Starforged Truths",
-        "Name": "Starforged Truths",
-        "Hint": "Open the dialog to generate your Starforged setting truths."
-      },
-      "SFBeta": {
-        "Name": "Show Starforged beta content",
-        "Hint": "Enables in-progress Starforged features."
-      },
-      "DataforgedIronswornMoves": {
-        "Name": "(Beta) New Ironsworn move-sheet UI",
-        "Hint": "If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization."
-      },
-      "ProgressMarkAnimation": {
-        "Name": "Enable progress mark animation",
-        "Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."
-      }
-    },
-    "First Start": {
-      "Welcome": "Welcome",
-      "Intro": "Please choose which system you'll be primarily using. This sets sheet and move/oracle defaults; more detailed options are available in the settings.",
-      "SettingTruths": "Setting Truths",
-      "SettingTruth": "Setting Truth"
-    },
-    "Tours": {
-      "ChatMessage": "<h3>Welcome to Ironsworn!</h3><p>If this is your first time using the system, click this to for an interactive tour:</p> <button id=\"ironsworn-tour-chat-button\"> <i class=\"fas fa-person-hiking\"></i> Launch Tour </button>",
-      "Welcome": {
-        "Title": "Welcome to Ironsworn",
-        "Description": "Overview of Ironsworn & Starforged system",
-        "WelcomeTitle": "Welcome",
-        "WelcomeContent": "<p>Welcome to Ironsworn &amp; Starforged! This tour will help you find where all the things are that will help you set up and play your game.</p><p>At this point you will have seen the game-selection dialog, which configures the default character sheet, moves, and oracles. Let&#39;s look at where the other system features can be found.</p>",
-        "ActorTabTitle": "Creating a Character",
-        "ActorTabContent": "<p>At some point, you&#39;ll want to create a character. To do that, navigate to the &quot;<i class=\"fas fa-user\"></i> Actors&quot; tab and click this button.</p>",
-        "CharacterCreateTitle": "Creating a Character",
-        "CharacterCreateContent": "<p>This button will create a primary character, which is all you need to get started. As your game progresses, you may need the other types here to organize things.</p>",
-        "CompendiumTitle": "Maps",
-        "CompendiumContent": "<p>You&#39;ll probably want a map of the Ironlands or a sector of the Forge. You can create your own scene for this, or you can use one of ours. Open one of these compendiums and drag a map to your &quot;<i class=\"fas fa-map\"></i> Scenes&quot; area.</p>",
-        "OracleToolTitle": "Oracles",
-        "OracleToolContent": "<p>No game of Ironsworn or Starforged would be complete without oracles. This button will pop up a window with all the oracles in your chosen game. The oracles are also available from the character sheet.</p>",
-        "ToursTitle": "Next Steps",
-        "ToursContent": "<p>That&#39;s it for now! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the <code>#foundry-vtt</code> channel in the <a href=\"https://discord.gg/8bRuZwK\">Ironsworn Discord</a>.</p><p>Enjoy!</p>"
-      },
-      "ISCharacter": {
-        "SheetTitle": "Character Sheet",
-        "SheetContent": "<p>This is the player character sheet. It can help you manage your character&#39;s attributes, resources, assets, and vows.</p>",
-        "EditButtonTitle": "Edit Button",
-        "EditButtonContent": "<p>The &quot;<i class=\"fa-solid fa-edit\"></i> Edit&quot; button in the title bar is used to switch between interaction and edit modes for this character.</p>",
-        "StatsTitle": "Character Stats",
-        "StatsContent": "<p>These are your character&#39;s basic attributes, which tell you something about their personality, but also tell you that when they&#39;re trying certain kinds of actions, the story will tend to go better for them.</p><p>To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.</p><p><strong>EDIT MODE</strong> allows you to adjust these numbers.</p>",
-        "ResourcesTitle": "Resources",
-        "ResourcesContent": "<p>On the side here we have the three basic resources: Health, Spirit, and Supply. You can adjust the levels of these resources by clicking on the new value.</p><p>You can also make rolls by clicking on the resource&#39;s name.</p>",
-        "MomentumTitle": "Momentum",
-        "MomentumContent": "<p>On the other side is the momentum tracker. You can set your character&#39;s momentum by clicking on one of the numbers, and if you have debilities marked, one or more of the highest values will be disabled.</p><p>Hover over the &quot;<i class=\"fa-solid fa-fire\"></i> MOMENTUM&quot; title for a preview of what burning your momentum will do, and click it to perform the burn.</p>",
-        "ConditionsTitle": "Conditions",
-        "ConditionsContent": "<p>Down at the bottom of the sheet are your character&#39;s conditions, banes, and burdens. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom conditions.</p>",
-        "CharacterTabTitle": "Character Tab",
-        "CharacterTabContent": "<p>In the center area are a series of tabs. The first one is the &quot;Character&quot; tab, where you track most of the details you need for an Ironsworn character.</p>",
-        "BondsTitle": "Bonds",
-        "BondsContent": "<p>At the top-left are your bonds. This displays how many bonds your character has made during their adventures. Click the <i class=\"fa-solid fa-edit\"></i> button to add or remove bonds, and keep notes about them. Click the <svg fill=\"currentColor\" height=\"1em\" width=\"1em\" role=\"img\" aria-hidden=\"true\" class=\"icon\"><use href=\"#ironsworn-d10-tilt\"></use></svg> button to roll the <em>Write Your Epilogue</em> move.</p>",
-        "AssetsTitle": "Assets",
-        "AssetsContent": "<p>The Assets area is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
-        "ProgressTitle": "Progress",
-        "ProgressContent": "<p>The Progress area displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. <strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
-        "NotesTabTitle": "Notes Tab",
-        "NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
-        "EndTitle": "Character Sheet",
-        "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
-      },
-      "SFCharacter": {
-        "Title": "Starforged Character Sheet",
-        "Description": "The PC sheet for a Starforged character",
-        "SheetTitle": "Character Sheet",
-        "SheetContent": "<p>This is the player character sheet. It can help you manage your character&#39;s attributes, resources, assets, and vows.</p>",
-        "EditButtonTitle": "Edit Button",
-        "EditButtonContent": "<p>The &quot;<i class=\"fa-solid fa-edit\"></i> Edit&quot; button in the title bar is used to switch between interaction and edit modes for this character.</p>",
-        "StatsTitle": "Character Stats",
-        "StatsContent": "<p>These are your character&#39;s basic attributes, which tell you something about their personality, but also tell you that when they&#39;re trying certain kinds of actions, the story will tend to go better for them.</p><p>To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.</p><p><strong>EDIT MODE</strong> allows you to adjust these numbers.</p>",
-        "ResourcesTitle": "Resources",
-        "ResourcesContent": "<p>On the side here we have the three basic resources: Health, Spirit, and Supply. You can adjust the levels of these resources by clicking on the new value.</p><p>You can also make rolls by clicking on the resource&#39;s name.</p>",
-        "MomentumTitle": "Momentum",
-        "MomentumContent": "<p>On the other side is the momentum tracker. You can set your character&#39;s momentum by clicking on one of the numbers, and if you have debilities marked, one or more of the highest values will be disabled.</p><p>Hover over the &quot;<i class=\"fa-solid fa-fire\"></i> MOMENTUM&quot; title for a preview of what burning your momentum will do, and click it to perform the burn.</p>",
-        "ImpactsTitle": "Impacts",
-        "ImpactsContent": "<p>Down at the bottom of the sheet are your character&#39;s impacts. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom impacts.</p><p>If there is a vehicle in the game with Battered or Cursed marked, that impact will be highlighted here to remind you that it should apply while you&#39;re on that vehicle.</p>",
-        "LegaciesTabTitle": "Legacies Tab",
-        "LegaciesTabContent": "<p>In the center area are a series of tabs. The first one is the &quot;Legacies&quot; tab, where you track your three primary Starforged legacies. Also appearing here will be any &quot;starred&quot; items from the Progress or Connections tabs.</p><p>To advance a legacy, click the &quot;<i class=\"fa-solid fa-caret-right\"></i>&quot; button on the right. When enough legacy boxes are filled, XP boxes will appear; simply click them to expend XP. <strong>EDIT MODE</strong> also displays buttons for removing legacy ticks if you accidentally marked too many.</p>",
-        "AssetsTabTitle": "Assets Tab",
-        "AssetsTabContent": "<p>The Assets tab is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
-        "ProgressTabTitle": "Progress Tab",
-        "ProgressTabContent": "<p>The Progress tab displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. Use the &quot;<i class=\"fa-solid fa-star\"></i>&quot; button to also display an item in the Legacies tab.</p><p><strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
-        "ConnectionsTabTitle": "Connections Tab",
-        "ConnectionsTabContent": "<p>Connections are tracked separately from other progress items, and can be found in this tab. Otherwise this behaves the same as the Progress tab.</p>",
-        "NotesTabTitle": "Notes Tab",
-        "NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
-        "EndTitle": "Character Sheet",
-        "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
-      },
-      "MoveSheet": {
-        "Title": "",
-        "Description": "",
-        "SheetTitle": "Move/Oracle Sheet",
-        "SheetContent": "<p>This is the window that provides easy access to moves and oracles.</p>",
-        "MoveCategoryTitle": "Move Categories",
-        "MoveCategoryContent": "<p>Click on a category title to expand that category and show all of the moves. Click on one of the moves to expand its description.</p>",
-        "MoveButtonsTitle": "Move Shortcuts",
-        "MoveButtonsContent": "<p>Up here you&#39;ll see shortcut buttons.</p><p>The first one is a shortcut to &quot;roll this move,&quot; and will open the rolling dialog with some details pre-filled for you. It&#39;s only available if this move has a roll associated with it -- some, like Pay the Price, do not have an action/challenge roll, so this button will be disabled.</p><p>The second one is a shortcut to &quot;roll the oracle,&quot; and immediately rolls on an oracle table. It&#39;s only available if the move has exactly one oracle to roll.</p><p>The third one sends a copy of the description to the chat sidebar.</p>",
-        "MoveLinkTitle": "Move Links",
-        "MoveLinkContent": "<p>Clicking on a link to another move will expand it and scroll it into view.</p>",
-        "OraclesTabTitle": "Oracles Tab",
-        "OraclesTabContent": "<p>The second tab displays oracles, random tables to spark your inspiration.</p>",
-        "OracleCategoryTitle": "Oracle Tree",
-        "OracleCategoryContent": "<p>The oracles are organized into a directory structure. Click anywhere on a category line to expand it and display its contents.</p>",
-        "OracleRowTitle": "Oracle Controls",
-        "OracleRowContent": "<p>Click the <i class=\"fas fa-eye\"></i> icon to display a preview of the oracle table, or click anywhere else on the line to draw a result from the table and display it in chat.</p>",
-        "OracleChatMessageTitle": "Oracle Results",
-        "OracleChatMessageContent": "<p>When you roll an oracle, a chat card is displayed. The highlighted row is the rolled result, and the adjacent rolls are also displayed.</p><p>If you hover your mouse over the message, you&#39;ll see buttons appear, which let you copy a result&#39;s text to your clipboard, or re-roll on the same oracle table.</p>",
-        "EndTitle": "Move Sheet",
-        "EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
-      }
-    },
-    "WorldTruths": {
-      "The Old World": {
-        "name": "The Old World",
-        "option1": "The savage clans called the Skulde invaded the kingdoms of the Old World. Our armies fell. Most were killed or taken into slavery. Those who escaped set sail aboard anything that would float. After an arduous months-long voyage, the survivors made landfall upon the Ironlands.",
-        "quest1": "You are a descendant of the Skulde. Because of your heritage, your family has long borne the distrust of your fellow Ironlanders. Now, a small force of Skulde have landed on our shores. Are they the harbinger of an invasion? Where do your loyalties lie?",
-        "option2": "The sickness moved like a horrible wave across the Old World, killing all in its path. Thousands fled aboard ships. However, the plague could not be outrun. On many ships, the disease was contained through ruthless measures—tossing overboard any who exhibited the slightest symptom. Other ships were forever lost. In the end, those who survived found the Ironlands and made it their new home. Some say we will forever be cursed by those we left behind.",
-        "quest2": "A settlement is stricken by disease. Though this sickness bears some similarities to the Old World plague, it doesn’t kill its victims. Instead, it changes them. How does this disease manifest? Why do you swear to seek out a cure?",
-        "option3": "The Old World could no longer sustain us. We were too large in number. We had felled the forests. Our crops withered in the barren ground. The cities and villages overflowed with desperate, hungry people. Petty kings battled for scraps. We cast our fate to the sea and found the Ironlands. A new world. A fresh start.",
-        "quest3": "Decades ago, the exodus ended. Since then, no ships have sailed here from the Old World. Until now. Word comes of a single ship, newly arrived across the vast ocean, grounded on the rocks of the Barrier Islands. When you hear the name of this ship, you swear to uncover the fate of its passengers. Why is it so important to you?"
-      },
-      "Iron": {
-        "name": "Iron",
-        "option1": "The imposing hills and mountains of the Ironlands are rich in iron ore. Most prized of all is the star-forged black iron.",
-        "quest1": "The caravan, bound for the distant southlands, left the mining settlement last season but never arrived at its destination. It carried a bounty of black iron. Why is finding this lost caravan so important to you?",
-        "option2": "The weather is bleak. Rain and wind sweep in from the ocean. The winters are long and bitter. One of the first settlers complained, \"Only those made of iron dare live in this foul place\" – and thus our land was named.",
-        "quest2": "The harvest fell short. The unrelenting snows left the village isolated. The food is running out. What will you do to see these people through this harsh season?",
-        "option3": "Inscrutable metal pillars are found throughout the land. They are iron gray, and smooth as river stone. No one knows their purpose. Some say they are as old as the world. Some, such as the Iron Priests, worship them and swear vows upon them. Most make the warding sign and hurry along their way when they happen across one. The pillars do not tarnish, and even the sharpest blade cannot mark them.",
-        "quest3": "Your dreams are haunted by visions of a pillar which stands in an unfamiliar landscape. What do you see? Why are you sworn to seek it out?"
-      },
-      "Legacies": {
-        "name": "Legacies",
-        "option1": "We are the first humans to walk these lands.",
-        "quest1": "In the writings of one of the first settlers, there is a description of a glade in the heart of the Deep Wilds. The spirits of this place are said to grant a miraculous blessing. What boon does it bestow?",
-        "option2": "Other humans sailed here from the Old World untold years ago, but all that is left of them is a savage, feral people we call the broken. Is their fate to become our own?",
-        "quest2": "You find a child—one of the broken. It is wounded, and hunted by others of its kind. Do you protect it, even at the risk of inviting the wrath of the broken tribes?",
-        "option3": "Before the Ironlanders, before even the firstborn, another people lived here. Their ancient ruins are found throughout the Ironlands.",
-        "quest3": "Miners uncovered an underground ruin. Thereafter, the people of the settlement are haunted by strange dreams. The ruins call to them, they say. Several have disappeared in that dark, ancient place – including someone important to you."
-      },
-      "Communities": {
-        "name": "Communities",
-        "option1": "We are few in number in this accursed land. Most rarely have contact with anyone outside our own small steading or village, and strangers are viewed with deep suspicion.",
-        "quest1": "In the dead of winter, a desperate man arrives at a snowbound steading. He is wounded, hungry, and nearly frozen to death. His family has been taken. By whom? Will you brave the merciless winter to save them?",
-        "option2": "We live in communities called circles. These are settlements ranging in size from a steading with a few families to a village of several hundred. Some circles belong to nomadic folk. Some powerful circles might include a cluster of settlements. We trade (and sometimes feud) with other circles.",
-        "quest2": "A decades-long feud between two circles has flared into open conflict. What is the cause of this dispute? Do you join in the fight, or swear to put a stop to it?",
-        "option3": "We have forged the Ironlands into a home. Villages within the Havens are connected by well-trod roads. Trade caravans travel between settlements in the Havens and those in outlying regions. Even so, much of this land is untamed.",
-        "quest3": "Caravans are forced to pay for passage along a trade road. This payment, one-quarter of the goods carried, leaves several communities without sufficient winter stores. Who is making these demands? How will you set things right?"
-      },
-      "Leaders": {
-        "name": "Leaders",
-        "option1": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
-        "quest1": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, you must make this vision a reality.",
-        "option2": "Each of our communities has its own leader, called an overseer. Every seventh spring, the people affirm their current overseer or choose a new one. Some overseers wear the iron circlet reluctantly, while others thirst for power and gain it through schemes or threats.",
-        "quest2": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?",
-        "option3": "Numerous clan-chiefs rule over petty domains. Most are intent on becoming the one true king. Their squabbles will be our undoing.",
-        "quest3": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two when an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?"
-      },
-      "Defense": {
-        "name": "Defense",
-        "option1": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. When a community is threatened, the people stand together to protect their own.",
-        "quest1": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?",
-        "option2": "The wardens are our soldiers, guards, and militia. They serve their communities by standing sentry, patrolling surrounding lands, and organizing defenses in times of crisis. Most have strong ties to their community. Others, called free wardens, are wandering mercenaries who hire on to serve a community or protect caravans.",
-        "quest2": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?",
-        "option3": "Our warbands are rallied to strike at our enemies or defend our holdings. Though not nearly as impressive as the armies that once marched across the Old World, these forces are as well-trained and equipped as their communities can manage. The banners of the warbands are adorned with depictions of their Old World history and Ironland victories.",
-        "quest3": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?"
-      },
-      "Mysticism": {
-        "name": "Mysticism",
-        "option1": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
-        "quest1": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?",
-        "option2": "Magic is rare and dangerous, but those few who wield the power are truly gifted.",
-        "quest2": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?",
-        "option3": "Magic courses through this land as the rivers flow through the hills. The power is there for those who choose to harness it, and even the common folk often know a helpful ritual or two.",
-        "quest3": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
-      },
-      "Religion": {
-        "name": "Religion",
-        "option1": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, but most believe the gods long ago abandoned us.",
-        "quest1": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?",
-        "option2": "The people honor old gods and new. In this harsh land, a prayer is a simple but powerful comfort.",
-        "quest2": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this journey? Who seeks to stop them and why?",
-        "option3": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
-        "quest3": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
-      },
-      "Firstborn": {
-        "name": "Firstborn",
-        "option1": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
-        "quest1": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?",
-        "option2": "The firstborn live in isolation and are fiercely protective of their own lands.",
-        "quest2": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?",
-        "option3": "The firstborn hold sway in the Ironlands. The elves of the deep forests and the giants of the hills tolerate us and even trade with us—for now. Ironlanders fear the day they decide we are no longer welcome here.",
-        "quest3": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?"
-      },
-      "Beasts": {
-        "name": "Beasts",
-        "option1": "The beasts of old are nothing but legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, but they are obviously delusional. No such things exist.",
-        "quest1": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?",
-        "option2": "Monstrous beasts stalk the wild areas of the Ironlands.",
-        "quest2": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?",
-        "option3": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, but range into the settled lands to hunt. There, they often prey on cattle, but attacks on travelers, caravans, or even settlements are not uncommon.",
-        "quest3": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?"
-      },
-      "Horrors": {
-        "name": "Horrors",
-        "option1": "Nothing but stories to frighten children.",
-        "quest1": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, but there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?",
-        "option2": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, when all is wreathed in darkness, only fools venture beyond their homes.",
-        "quest2": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?",
-        "option3": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
-        "quest3": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
-      }
-    },
-    "OracleCategories": {
-      "Access": "Access",
-      "Action and Theme": "Action and Theme",
-      "Ask the Oracle": "Ask the Oracle",
-      "Basic Form": "Basic Form",
-      "Challenge Rank": "Challenge Rank",
-      "Chaotic": "Chaotic",
-      "Character Creation": "Character Creation",
-      "Character Name": "Character Name",
-      "Character": "Character",
-      "Characters": "Characters",
-      "Combat Event": "Combat Event",
-      "Community": "Community",
-      "Core": "Core",
-      "Creatures": "Creatures",
-      "Delve the Depths": "Delve the Depths",
-      "Derelicts": "Derelicts",
-      "Desert": "Desert",
-      "Engineering": "Engineering",
-      "Factions": "Factions",
-      "Feature": "Feature",
-      "Fortified": "Fortified",
-      "Furnace": "Furnace",
-      "Grave": "Grave",
-      "Haunted": "Haunted",
-      "Ice": "Ice",
-      "Infested": "Infested",
-      "Inhabited": "Inhabited",
-      "Interior": "Interior",
-      "Ironlander": "Ironlander",
-      "Jovian": "Jovian",
-      "Jungle": "Jungle",
-      "Living": "Living",
-      "Location Themes": "Location Themes",
-      "Mechanical": "Mechanical",
-      "Medical": "Medical",
-      "Misc": "Misc",
-      "Mission": "Mission",
-      "Moves": "Moves",
-      "Monstrosity": "Monstrosity",
-      "Name": "Name",
-      "Ocean": "Ocean",
-      "Operations": "Operations",
-      "Opportunity": "Opportunity",
-      "Other": "Other",
-      "Peril": "Peril",
-      "Place": "Place",
-      "Planets": "Planets",
-      "Population": "Population",
-      "Production": "Production",
-      "Quick Name": "Quick Name",
-      "Research": "Research",
-      "Rocky": "Rocky",
-      "Ruined": "Ruined",
-      "Sacred": "Sacred",
-      "Sanctum": "Sanctum",
-      "Sector Name": "Sector Name",
-      "Settlement": "Settlement",
-      "Settlements": "Settlements",
-      "Shattered": "Shattered",
-      "Sighting": "Sighting",
-      "Site Name": "Site Name",
-      "Site Nature": "Site Nature",
-      "Space": "Space",
-      "Starships": "Starships",
-      "Tainted": "Tainted",
-      "Threat": "Threat",
-      "Trap": "Trap",
-      "Turning Point": "Turning Point",
-      "Type": "Type",
-      "Vaults": "Vaults",
-      "Vital": "Vital",
-      "Zones": "Zones",
-      "Custom": "Custom Oracles"
-    },
-    "Asset Categories": {
-      "Custom": "Custom Assets",
-      "Ironsworn": {
-        "Companion": {
-          "Title": "Companion",
-          "Description": "Companions are your NPC helpers. When you acquire a companion, give them a name and envision their appearance and personality. If they don’t have a starting ability, choose one. Upgrading a companion enables additional abilities.\n\nCompanions utilize a health track and may suffer harm as a result of one of your moves. When your companion takes damage, make the [Companion Endure Harm](Ironsworn/Moves/Suffer/Companion_Endure_Harm) move (page 94) to determine the outcome. See page 43 to learn more."
-        },
-        "Path": {
-          "Title": "Path",
-          "Description": "Paths represent your background, interests, training, and skills. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. For example, a **Ritualist** would likely have a different outlook than a **Veteran**. Choosing both those paths can reflect an evolution of your character or an interesting background."
-        },
-        "Combat Talent": {
-          "Title": "Combat Talent",
-          "Description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform combat moves (page 78). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a **Shield-Bearer** and don’t have a shield at the ready, you can’t use the asset’s abilities."
-        },
-        "Ritual": {
-          "Title": "Ritual",
-          "Description": "Magic in *Ironsworn* is cast through rituals which help support your actions or act as unique moves. Like all assets, rituals can be selected as you gain experience and can be upgraded over time to make them more flexible or powerful.\n\nAll rituals utilize a move as their default marked ability. You must make this move and the associated action roll to trigger the effect. Any secondary abilities you gain by upgrading the asset are dependent on performing the ritual described as the default ability."
-        }
-      },
-      "Starforged": {
-        "Command Vehicle": {
-          "Title": "Command Vehicle",
-          "Description": "The **command vehicle** is your interstellar STARSHIP. It is a default asset for your character, taken when you begin your campaign. If you are playing with others, this is a shared asset; each of you may use the STARSHIP's abilities while aboard the craft.\n\nThe command vehicle has an integrity meter and starts at 5 integrity. When your STARSHIP takes a hit, make the @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} move to see what happens."
-        },
-        "Module": {
-          "Title": "Module",
-          "Description": "**Modules** are linked to your STARSHIP and offer additional options and advantages when aboard that vehicle.\n\nThese assets are earned and managed by a single character. They can be shared with allies, but only if it's practical for them to make use of it (not everyone may know how to use a RESEARCH LAB).\n\nWhen you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} and score a miss, you can mark a module as broken to offset further danger for your STARSHIP. Flip the card over to indicate its broken state. A broken module cannot be used until you successfully @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} it."
-        },
-        "Support Vehicle": {
-          "Title": "Support Vehicle",
-          "Description": "**Support vehicles** complement your command vehicle for planetside or short-range operations. If you are playing with others, one of you might serve as the pilot or owner of a support vehicle, but anyone on board can use its abilities as appropriate to the situation.\n\nAs with the command vehicle, your support vehicles have integrity meters. The maximum integrity varies based on the type of vehicle. When a support vehicle faces a damaging situation or environment, you must @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} to see how it fares."
-        },
-        "Path": {
-          "Title": "Path",
-          "Description": "**Paths** are your background, interests, training, skills, powers, and key equipment. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. When you create your character in the next chapter, you'll select at least two paths to get started.\n\nSome paths represent your skill with a signature weapon style or piece of equipment. If you see a requirement at the top of the asset card, such as “If you wield a bladed weapon…,” the asset is only usable when taking action using that item."
-        },
-        "Companion": {
-          "Title": "Companion",
-          "Description": "**Companions** are NPC helpers. When you gain a companion, give them a name and envision their look and personality.\n\nCompanions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} move. When their health is at 0, they are in danger of being killed or destroyed."
-        },
-        "Deed": {
-          "Title": "Deed",
-          "Description": "**Deeds** represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character."
-        }
-      }
-    },
-    "ROLLTABLE": {
-      "TypeOracle": "Oracle"
-    },
-    "ROLLTABLES": {
-      "TypeOracle": "Oracles"
-    },
-    "SCENE": {
-      "TypeSector": "Sector"
-    },
-    "SCENES": {
-      "TypeSector": "Sectors"
-    },
-    "ACTOR": {
-      "SheetCompact": "Compact",
-      "SheetFoe": "Foe",
-      "SheetStarforgedLocation": "Starforged Location",
-      "SubtypeDerelict": "Derelict",
-      "SubtypePlanet": "Planet",
-      "SubtypeSettlement": "Settlement",
-      "SubtypeStar": "Stellar Object",
-      "SubtypeVault": "Precursor Vault",
-      "TypeCharacter": "Character",
-      "TypeFoe": "NPC",
-      "TypeLocation": "Location",
-      "TypeShared": "Shared sheet",
-      "TypeDelveSite": "Delve Site",
-      "TypeStarship": "Starship"
-    },
-    "ACTORS": {
-      "SubtypeDerelict": "Derelicts",
-      "SubtypePlanet": "Planets",
-      "SubtypeSettlement": "Settlements",
-      "SubtypeStar": "Stellar Objects",
-      "SubtypeVault": "Precursor Vaults",
-      "TypeCharacter": "Characters",
-      "TypeFoe": "NPCs",
-      "TypeLocation": "Locations",
-      "TypeDelveSite": "Delve Sites",
-      "TypeStarship": "Starships"
-    },
-    "ITEM": {
-      "SubtypeConnection": "Connection",
-      "SubtypeProgress": "Progress",
-      "SubtypeVow": "Vow",
-      "TypeAsset": "Asset",
-      "TypeBond": "Bond",
-      "TypeBondset": "Bondset",
-      "TypeDelveDomain": "Site domain",
-      "TypeDelveTheme": "Site theme",
-      "TypeDelveThemeOrDomain": "Site theme/domain",
-      "TypeMove": "Move",
-      "TypeProgressTrack": "Progress track"
-    },
-    "ITEMS": {
-      "SubtypeConnection": "Connections",
-      "SubtypeProgress": "Progress",
-      "SubtypeVow": "Vows",
-      "TypeAsset": "Assets",
-      "TypeBond": "Bonds",
-      "TypeBondset": "Bondsets",
-      "TypeDelveDomain": "Site domains",
-      "TypeDelveTheme": "Site themes",
-      "TypeMove": "Moves",
-      "TypeProgressTrack": "Progress tracks"
-    },
-    "JOURNALENTRYPAGE": {
-      "TypeProgressTrack": "Progress track",
-      "TypeTruth": "Setting Truth",
-      "TypeTruthClassic": "World Truth",
-      "TypeTruthStarforged": "Setting Truth"
-    },
-    "JOURNALENTRYPAGES": {
-      "TypeProgressTrack": "Progress tracks",
-      "TypeTruth": "Setting Truths",
-      "TypeTruthClassic": "World Truths",
-      "TypeTruthStarforged": "Setting Truths"
-    },
-    "DELVESITE": {
-      "Danger": "Danger",
-      "Dangers": "Dangers",
-      "Denizen": "Denizen",
-      "Denizens": "Denizens",
-      "Feature": "Feature",
-      "Features": "Features",
-      "FREQUENCY": {
-        "VeryCommon": "Very common",
-        "Common": "Common",
-        "Uncommon": "Uncommon",
-        "Rare": "Rare",
-        "Unforeseen": "Unforeseen"
-      }
-    }
-  }
+	"IRONSWORN": {
+		"Ironsworn": "Ironsworn",
+		"Starforged": "Starforged",
+		"YourWorldTruths": "Your World: Truths",
+		"TruthsAreOptional": "Creating truths is an optional step. You can always come back to this later in the settings.",
+		"TruthQuestStarter": "Quest Starter:",
+		"QuestStarter": "Quest Starter",
+		"SaveYourTruths": "Save Your Truths",
+		"CustomTruth": "Custom Truth",
+		"RandomizeAll": "Randomize All",
+		"Roll": "Roll",
+		"SendToChat": "Send text to chat: <i>{move}</i>",
+		"CopyTextToClipboard": "Copy text to clipboard",
+		"ClipboardDisabled": "The browser has prevented access to the clipboard. You'll need to load Foundry from localhost or using an <code>https://</code> URL to use this feature.",
+		"Adds": "Adds",
+		"Versus": "vs.",
+		"CappedAt10": "Action score is capped at 10",
+		"Strong_hit": "Strong hit",
+		"Strong_hit_match": "Strong hit with a match!",
+		"On_a_strong_hit": "On a strong hit",
+		"Weak_hit": "Weak hit",
+		"On_a_weak_hit": "On a weak hit",
+		"Miss": "Miss",
+		"Miss_match": "Miss with a match!",
+		"On_a_miss": "On a miss",
+		"MarkProgress": "Mark Progress",
+		"ProgressMove": "Progress Move",
+		"PROGRESS": {
+			"Current": "{score} progress ({ticks} ticks)",
+			"Ticks": "{ticks} ticks",
+			"BOX": {
+				"1": "1 box",
+				"2": "2 boxes",
+				"3": "3 boxes"
+			},
+			"TICK": {
+				"1": "1 tick",
+				"2": "2 ticks",
+				"3": "3 ticks",
+				"4": "4 ticks"
+			}
+		},
+		"MarkLegacy": "Mark {amount} on your {legacy} legacy track",
+		"UnmarkProgress": "Unmark Progress",
+		"ProgressRoll": "Progress Roll",
+		"MakeAProgressRoll": "Make a progress roll with {score} progress",
+		"StarProgress": "When active, this item will also show up on the 'Legacies' tab.",
+		"CHALLENGERANK": {
+			"Troublesome": "Troublesome",
+			"Dangerous": "Dangerous",
+			"Formidable": "Formidable",
+			"Extreme": "Extreme",
+			"Epic": "Epic"
+		},
+		"Stat": "Stat",
+		"Stats": "Stats",
+		"OracleTable": {
+			"ColumnLabel": {
+				"Roll": "Roll",
+				"RollRange": "Roll range",
+				"DiceRollResult": "{dice} roll result",
+				"Result": "Result"
+			}
+		},
+		"roll +x": "roll +{stat}",
+		"Roll +x": "Roll +{stat}",
+		"roll method": {
+			"All": "roll all of {statList}",
+			"Any": {
+				"2": "roll +{stat1} or +{stat2}",
+				"fallback": "roll any of {statList}"
+			},
+			"Highest": {
+				"2": "roll +{stat1} or +{stat2}, whichever is higher",
+				"fallback": "roll highest of {statList}"
+			},
+			"Lowest": {
+				"2": "roll +{stat1} or +{stat2}, whichever is lower",
+				"fallback": "roll lowest of {statList}"
+			}
+		},
+		"Momentum": "momentum",
+		"Health": "health",
+		"Spirit": "spirit",
+		"Supply": "supply",
+		"Edge": "edge",
+		"Heart": "heart",
+		"Iron": "iron",
+		"Shadow": "shadow",
+		"Wits": "wits",
+		"XP": "XP",
+		"NoBonds": "No Bonds",
+		"Legacies": "Legacies",
+		"LEGACY": {
+			"Bonds": "Bonds",
+			"Discoveries": "Discoveries",
+			"Quests": "Quests"
+		},
+		"Clock": "Clock",
+		"Segments": "Segments",
+		"Debilities": "Debilities",
+		"Conditions": "Conditions",
+		"Condition": "Condition",
+		"ConditionSetOnOne": "{condition} is set on {name}",
+		"ConditionSetOnMany": "{condition} is set on:",
+		"Banes": "Banes",
+		"Burdens": "Burdens",
+		"Misfortunes": "Misfortunes",
+		"LastingEffects": "Lasting Effects",
+		"Vehicle": "Vehicle",
+		"Wounded": "Wounded",
+		"Unprepared": "Unprepared",
+		"Shaken": "Shaken",
+		"Encumbered": "Encumbered",
+		"Maimed": "Maimed",
+		"Corrupted": "Corrupted",
+		"Cursed": "Cursed",
+		"Tormented": "Tormented",
+		"Permanentlyharmed": "Permanently Harmed",
+		"Traumatized": "Traumatized",
+		"Doomed": "Doomed",
+		"Indebted": "Indebted",
+		"Battered": "Battered",
+		"Reroll": "Reroll",
+		"Connections": "Connections",
+		"Connection": "Connection",
+		"MOVES": {
+			"Adventure": "Adventure moves",
+			"Combat": "Combat moves",
+			"Connection": "Connection moves",
+			"Custom": "Custom Moves",
+			"Delve": "Delve moves",
+			"Exploration": "Exploration moves",
+			"Fate": "Fate moves",
+			"Failure": "Failure moves",
+			"Legacy": "Legacy moves",
+			"Quest": "Quest moves",
+			"Rarity": "Rarity moves",
+			"Recover": "Recover moves",
+			"Relationship": "Relationship moves",
+			"Scene Challenge": "Scene challenge moves",
+			"Session": "Session moves",
+			"Suffer": "Suffer moves",
+			"Threat": "Threat moves",
+			"Threshold": "Threshold moves"
+		},
+		"Failure": "Failure",
+		"Threat": "Threat",
+		"Rarity": "Rarity",
+		"LocationType": "Location type",
+		"RollForDetails": "Roll location details",
+		"RandomName": "Random name",
+		"ResolveChallenge": "Resolve challenge",
+		"ResolveChallengeDisabled": "Choose your final two challenge dice",
+		"BurnForUpgrade": "Burn momentum: <strong>{type}</strong>",
+		"BurnMomentumAndResetTo": "Burn {value} momentum and reset to {resetValue}",
+		"MomentumBurnt": "Momentum Burn",
+		"NegativeMomentumCancel": "Negative momentum canceled action die",
+		"Pronouns": "Pronouns",
+		"Callsign": "Callsign",
+		"Characteristics": "Characteristics",
+		"Summary": "Summary",
+		"Category": "Category",
+		"Color": "Color",
+		"Requirement": "Requirement",
+		"Trigger": "Trigger",
+		"FullText": "Full text",
+		"Field": "Field",
+		"Fields": "Fields",
+		"Label": "Label",
+		"Value": "Value",
+		"Abilities": "Abilities",
+		"Ability": "Ability",
+		"Options": "Options",
+		"Option": "Option",
+		"Track": "Track",
+		"Enabled": "Enabled",
+		"ChallengeRank": "Challenge rank",
+		"Completed": "Completed",
+		"NotCompleted": "Not Completed",
+		"Foes": "Foes",
+		"Foe": "Foe",
+		"Edit": "Edit",
+		"OpenCompendium": "Open Compendium",
+		"ConfirmDelete": "Are you sure? This cannot be undone.",
+		"RequiresLocationType": "This oracle requires a location type to be selected.",
+		"RollOracleTable": "Roll oracle: <i>{title}</i>",
+		"RollMove": "Roll move: <i>{title}</i>",
+		"PageReference": "p. {page}",
+		"PlanetType": "Type of planet",
+		"RandomPlanetType": "Random planet type",
+		"SettlementType": "Type of settlement",
+		"RandomSettlementType": "Random settlement type",
+		"StarType": "Type of star",
+		"RandomStarType": "Random star type",
+		"DerelictType": "Type of derelict",
+		"RandomDerelictType": "Random derelict type",
+		"VaultType": "Type of vault",
+		"RandomVaultType": "Random vault type",
+		"First": "first",
+		"Second": "second",
+		"Third": "third",
+		"Fourth": "fourth",
+		"Fifth": "fifth",
+		"StarforgedTools": "Starforged Tools",
+		"IronswornTools": "Ironsworn Tools",
+		"Region": "Region",
+		"RegionTip": "This sets the default region for locations in this scene. It affects the outcomes of some location oracles.",
+		"REGION": {
+			"Terminus": "Terminus",
+			"Outlands": "Outlands",
+			"Expanse": "Expanse"
+		},
+		"RotateCCW": "Rotate counter-clockwise",
+		"RotateCW": "Rotate clockwise",
+		"RollDialog": {
+			"AdvancedRollOptions": "Advanced options",
+			"PresetActionDie": "Preset action die",
+			"PresetChallengeDice": "Preset challenge dice",
+			"PredeterminedOutcome": "Predetermined outcome",
+			"ExtraChallengeDice": "Extra challenge dice"
+		},
+		"ChatAlert": {
+			"Muted": "Currently whispering updates to the user who triggered them",
+			"Unmuted": "Currently broadcasting updates to all users",
+			"ToggleMute": "Toggle mute",
+			"Renamed": "Renamed to {name}",
+			"renamed": "renamed to {name}",
+			"Added": "Added {name}",
+			"Deleted": "Deleted {name}",
+			"MarkedXP": "Marked {amt} XP",
+			"UnmarkedXP": "Unmarked {amt} XP",
+			"AdjustedStat": "{amt} {stat} (now {val})",
+			"SetCondition": "Set the {condition} condition",
+			"ClearedCondition": "Cleared the {condition} condition",
+			"RankChanged": "Rank changed from {old} to {new}",
+			"rankChanged": "rank changed from {old} to {new}",
+			"ProgressAdvanced": "Progress advanced",
+			"progressAdvanced": "progress advanced",
+			"ProgressReduced": "Progress reduced",
+			"progressReduced": "progress reduced",
+			"MarkedAbility": "marked {pos} ability",
+			"UnmarkedAbility": "unmarked {pos} ability",
+			"MarkedOption": "marked {name}",
+			"SetField": "set {name} to {val}",
+			"AddBond": "Added a bond",
+			"LostBond": "Lost a bond",
+			"completedMarked": "marked completed",
+			"completedUnmarked": "unmarked completed",
+			"clockAdvancedOneSegment": "clock advanced to {new}⁄{max}",
+			"clockAdvancedTwoSegments": "clock advanced by {change} segments to {new}⁄{max}",
+			"clockAdvancedManySegments": "clock advanced by {change} segments to {new}⁄{max}",
+			"clockCompletedOneSegment": "clock advanced to {new}⁄{max}—clock completed!",
+			"clockCompletedTwoSegments": "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
+			"clockCompletedManySegments": "clock advanced by {change} segments to {new}⁄{max}—clock completed!",
+			"clockSet": "clock set to {new}⁄{max}"
+		},
+		"Settings": {
+			"Theme": {
+				"Name": "Visual Theme",
+				"Hint": "Select the visual look for this game. Requires a reload.",
+				"Ironsworn": "Ironsworn Classic",
+				"Starforged": "Starforged (experimental)"
+			},
+			"Tools": {
+				"Name": "Character Tools",
+				"Hint": "Which set of moves and oracles will appear when opening a character sheet.",
+				"Sheet": "Match sheet"
+			},
+			"SharedSupply": {
+				"Name": "Shared Supply Tracker",
+				"Hint": "If on, changing any character/shared supply tracker changes all other actors' supply trackers as well."
+			},
+			"LogChanges": {
+				"Name": "Log Character Updates",
+				"Hint": "If on, changes to character stats will be logged to the chat."
+			},
+			"PromptTruths": {
+				"Name": "Configuration Dialog on Start",
+				"Hint": "Open the above dialog on the next reload."
+			},
+			"ConfigurationDialog": {
+				"Label": "Configuration Dialog",
+				"Name": "Configuration Dialog",
+				"Hint": "Choose between Ironsworn and Starforged UI elements."
+			},
+			"ISTruthsDialog": {
+				"Label": "Ironsworn Truths",
+				"Name": "Ironsworn Truths",
+				"Hint": "Open the dialog to generate your Ironsworn setting truths."
+			},
+			"SFTruthsDialog": {
+				"Label": "Starforged Truths",
+				"Name": "Starforged Truths",
+				"Hint": "Open the dialog to generate your Starforged setting truths."
+			},
+			"SFBeta": {
+				"Name": "Show Starforged beta content",
+				"Hint": "Enables in-progress Starforged features."
+			},
+			"DataforgedIronswornMoves": {
+				"Name": "(Beta) New Ironsworn move-sheet UI",
+				"Hint": "If on, uses the Starforged-style UI for the Ironsworn move/oracle sheet, and allows custom entries and hooks for customization."
+			},
+			"ProgressMarkAnimation": {
+				"Name": "Enable progress mark animation",
+				"Hint": "Toggle the progress mark animation. Note that the animation doesn't lock the mark button, so this change is purely cosmetic."
+			}
+		},
+		"First Start": {
+			"Welcome": "Welcome",
+			"Intro": "Please choose which system you'll be primarily using. This sets sheet and move/oracle defaults; more detailed options are available in the settings.",
+			"SettingTruths": "Setting Truths",
+			"SettingTruth": "Setting Truth"
+		},
+		"Tours": {
+			"ChatMessage": "<h3>Welcome to Ironsworn!</h3><p>If this is your first time using the system, click this to for an interactive tour:</p> <button id=\"ironsworn-tour-chat-button\"> <i class=\"fas fa-person-hiking\"></i> Launch Tour </button>",
+			"Welcome": {
+				"Title": "Welcome to Ironsworn",
+				"Description": "Overview of Ironsworn & Starforged system",
+				"WelcomeTitle": "Welcome",
+				"WelcomeContent": "<p>Welcome to Ironsworn &amp; Starforged! This tour will help you find where all the things are that will help you set up and play your game.</p><p>At this point you will have seen the game-selection dialog, which configures the default character sheet, moves, and oracles. Let&#39;s look at where the other system features can be found.</p>",
+				"ActorTabTitle": "Creating a Character",
+				"ActorTabContent": "<p>At some point, you&#39;ll want to create a character. To do that, navigate to the &quot;<i class=\"fas fa-user\"></i> Actors&quot; tab and click this button.</p>",
+				"CharacterCreateTitle": "Creating a Character",
+				"CharacterCreateContent": "<p>This button will create a primary character, which is all you need to get started. As your game progresses, you may need the other types here to organize things.</p>",
+				"CompendiumTitle": "Maps",
+				"CompendiumContent": "<p>You&#39;ll probably want a map of the Ironlands or a sector of the Forge. You can create your own scene for this, or you can use one of ours. Open one of these compendiums and drag a map to your &quot;<i class=\"fas fa-map\"></i> Scenes&quot; area.</p>",
+				"OracleToolTitle": "Oracles",
+				"OracleToolContent": "<p>No game of Ironsworn or Starforged would be complete without oracles. This button will pop up a window with all the oracles in your chosen game. The oracles are also available from the character sheet.</p>",
+				"ToursTitle": "Next Steps",
+				"ToursContent": "<p>That&#39;s it for now! For more information on other topics, check out the Tour Management area in the settings tabs. And if you want to get in contact, check out the <code>#foundry-vtt</code> channel in the <a href=\"https://discord.gg/8bRuZwK\">Ironsworn Discord</a>.</p><p>Enjoy!</p>"
+			},
+			"ISCharacter": {
+				"SheetTitle": "Character Sheet",
+				"SheetContent": "<p>This is the player character sheet. It can help you manage your character&#39;s attributes, resources, assets, and vows.</p>",
+				"EditButtonTitle": "Edit Button",
+				"EditButtonContent": "<p>The &quot;<i class=\"fa-solid fa-edit\"></i> Edit&quot; button in the title bar is used to switch between interaction and edit modes for this character.</p>",
+				"StatsTitle": "Character Stats",
+				"StatsContent": "<p>These are your character&#39;s basic attributes, which tell you something about their personality, but also tell you that when they&#39;re trying certain kinds of actions, the story will tend to go better for them.</p><p>To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.</p><p><strong>EDIT MODE</strong> allows you to adjust these numbers.</p>",
+				"ResourcesTitle": "Resources",
+				"ResourcesContent": "<p>On the side here we have the three basic resources: Health, Spirit, and Supply. You can adjust the levels of these resources by clicking on the new value.</p><p>You can also make rolls by clicking on the resource&#39;s name.</p>",
+				"MomentumTitle": "Momentum",
+				"MomentumContent": "<p>On the other side is the momentum tracker. You can set your character&#39;s momentum by clicking on one of the numbers, and if you have debilities marked, one or more of the highest values will be disabled.</p><p>Hover over the &quot;<i class=\"fa-solid fa-fire\"></i> MOMENTUM&quot; title for a preview of what burning your momentum will do, and click it to perform the burn.</p>",
+				"ConditionsTitle": "Conditions",
+				"ConditionsContent": "<p>Down at the bottom of the sheet are your character&#39;s conditions, banes, and burdens. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom conditions.</p>",
+				"CharacterTabTitle": "Character Tab",
+				"CharacterTabContent": "<p>In the center area are a series of tabs. The first one is the &quot;Character&quot; tab, where you track most of the details you need for an Ironsworn character.</p>",
+				"BondsTitle": "Bonds",
+				"BondsContent": "<p>At the top-left are your bonds. This displays how many bonds your character has made during their adventures. Click the <i class=\"fa-solid fa-edit\"></i> button to add or remove bonds, and keep notes about them. Click the <svg fill=\"currentColor\" height=\"1em\" width=\"1em\" role=\"img\" aria-hidden=\"true\" class=\"icon\"><use href=\"#ironsworn-d10-tilt\"></use></svg> button to roll the <em>Write Your Epilogue</em> move.</p>",
+				"AssetsTitle": "Assets",
+				"AssetsContent": "<p>The Assets area is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
+				"ProgressTitle": "Progress",
+				"ProgressContent": "<p>The Progress area displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. <strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
+				"NotesTabTitle": "Notes Tab",
+				"NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
+				"EndTitle": "Character Sheet",
+				"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+			},
+			"SFCharacter": {
+				"Title": "Starforged Character Sheet",
+				"Description": "The PC sheet for a Starforged character",
+				"SheetTitle": "Character Sheet",
+				"SheetContent": "<p>This is the player character sheet. It can help you manage your character&#39;s attributes, resources, assets, and vows.</p>",
+				"EditButtonTitle": "Edit Button",
+				"EditButtonContent": "<p>The &quot;<i class=\"fa-solid fa-edit\"></i> Edit&quot; button in the title bar is used to switch between interaction and edit modes for this character.</p>",
+				"StatsTitle": "Character Stats",
+				"StatsContent": "<p>These are your character&#39;s basic attributes, which tell you something about their personality, but also tell you that when they&#39;re trying certain kinds of actions, the story will tend to go better for them.</p><p>To roll against these stats, click on one of them. A dialog will open, allowing you to add bonuses and confirm the roll.</p><p><strong>EDIT MODE</strong> allows you to adjust these numbers.</p>",
+				"ResourcesTitle": "Resources",
+				"ResourcesContent": "<p>On the side here we have the three basic resources: Health, Spirit, and Supply. You can adjust the levels of these resources by clicking on the new value.</p><p>You can also make rolls by clicking on the resource&#39;s name.</p>",
+				"MomentumTitle": "Momentum",
+				"MomentumContent": "<p>On the other side is the momentum tracker. You can set your character&#39;s momentum by clicking on one of the numbers, and if you have debilities marked, one or more of the highest values will be disabled.</p><p>Hover over the &quot;<i class=\"fa-solid fa-fire\"></i> MOMENTUM&quot; title for a preview of what burning your momentum will do, and click it to perform the burn.</p>",
+				"ImpactsTitle": "Impacts",
+				"ImpactsContent": "<p>Down at the bottom of the sheet are your character&#39;s impacts. Checking these will affect your maximum momentum. There are also two boxes for you to enter custom impacts.</p><p>If there is a vehicle in the game with Battered or Cursed marked, that impact will be highlighted here to remind you that it should apply while you&#39;re on that vehicle.</p>",
+				"LegaciesTabTitle": "Legacies Tab",
+				"LegaciesTabContent": "<p>In the center area are a series of tabs. The first one is the &quot;Legacies&quot; tab, where you track your three primary Starforged legacies. Also appearing here will be any &quot;starred&quot; items from the Progress or Connections tabs.</p><p>To advance a legacy, click the &quot;<i class=\"fa-solid fa-caret-right\"></i>&quot; button on the right. When enough legacy boxes are filled, XP boxes will appear; simply click them to expend XP. <strong>EDIT MODE</strong> also displays buttons for removing legacy ticks if you accidentally marked too many.</p>",
+				"AssetsTabTitle": "Assets Tab",
+				"AssetsTabContent": "<p>The Assets tab is where your character&#39;s assets are displayed and managed. You can click on any asset here to expand its display and show its marked abilities. Click the &quot;<i class=\"fa-solid fa-edit\"></i>&quot; icon to open a detail sheet for any asset.</p><p><strong>EDIT MODE</strong> displays buttons for deleting and reordering assets.</p><p>The &quot;<i class=\"fa-solid fa-book-atlas\"></i> Assets&quot; button at the bottom opens the asset browser. From there, you can drag any asset onto your character sheet to add it to your game.</p>",
+				"ProgressTabTitle": "Progress Tab",
+				"ProgressTabContent": "<p>The Progress tab displays your character&#39;s current vows and other progress items. You can add a new blank item by clicking the &quot;+Vow&quot; or &quot;+Progress&quot; buttons at the bottom, or you can open the &quot;<i class=\"fa-solid fa-book-atlas\"></i> Foes&quot; compendium and drag an enemy into the list.</p><p>Each item shows current progress, and has controls for marking ticks and making a progress roll. Use the &quot;<i class=\"fa-solid fa-star\"></i>&quot; button to also display an item in the Legacies tab.</p><p><strong>EDIT MODE</strong> adds buttons for reordering items, adjusting progress ticks, and marking an item as complete, which hides it in the section at the bottom of the tab.</p>",
+				"ConnectionsTabTitle": "Connections Tab",
+				"ConnectionsTabContent": "<p>Connections are tracked separately from other progress items, and can be found in this tab. Otherwise this behaves the same as the Progress tab.</p>",
+				"NotesTabTitle": "Notes Tab",
+				"NotesTabContent": "<p>The Notes tab is just for you. Keep track of your narrative here (or use journal entries), note down what kind of gear you&#39;re carrying, jot down the scars you&#39;ve earned on your way.</p>",
+				"EndTitle": "Character Sheet",
+				"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+			},
+			"MoveSheet": {
+				"Title": "",
+				"Description": "",
+				"SheetTitle": "Move/Oracle Sheet",
+				"SheetContent": "<p>This is the window that provides easy access to moves and oracles.</p>",
+				"MoveCategoryTitle": "Move Categories",
+				"MoveCategoryContent": "<p>Click on a category title to expand that category and show all of the moves. Click on one of the moves to expand its description.</p>",
+				"MoveButtonsTitle": "Move Shortcuts",
+				"MoveButtonsContent": "<p>Up here you&#39;ll see shortcut buttons.</p><p>The first one is a shortcut to &quot;roll this move,&quot; and will open the rolling dialog with some details pre-filled for you. It&#39;s only available if this move has a roll associated with it -- some, like Pay the Price, do not have an action/challenge roll, so this button will be disabled.</p><p>The second one is a shortcut to &quot;roll the oracle,&quot; and immediately rolls on an oracle table. It&#39;s only available if the move has exactly one oracle to roll.</p><p>The third one sends a copy of the description to the chat sidebar.</p>",
+				"MoveLinkTitle": "Move Links",
+				"MoveLinkContent": "<p>Clicking on a link to another move will expand it and scroll it into view.</p>",
+				"OraclesTabTitle": "Oracles Tab",
+				"OraclesTabContent": "<p>The second tab displays oracles, random tables to spark your inspiration.</p>",
+				"OracleCategoryTitle": "Oracle Tree",
+				"OracleCategoryContent": "<p>The oracles are organized into a directory structure. Click anywhere on a category line to expand it and display its contents.</p>",
+				"OracleRowTitle": "Oracle Controls",
+				"OracleRowContent": "<p>Click the <i class=\"fas fa-eye\"></i> icon to display a preview of the oracle table, or click anywhere else on the line to draw a result from the table and display it in chat.</p>",
+				"OracleChatMessageTitle": "Oracle Results",
+				"OracleChatMessageContent": "<p>When you roll an oracle, a chat card is displayed. The highlighted row is the rolled result, and the adjacent rolls are also displayed.</p><p>If you hover your mouse over the message, you&#39;ll see buttons appear, which let you copy a result&#39;s text to your clipboard, or re-roll on the same oracle table.</p>",
+				"EndTitle": "Move Sheet",
+				"EndContent": "<p>That&#39;s all for now. Look for the <i class=\"fa-solid fa-circle-question\"></i> button in other sheet title bars for more information on how they work.</p>"
+			}
+		},
+		"WorldTruths": {
+			"The Old World": {
+				"name": "The Old World",
+				"option1": "The savage clans called the Skulde invaded the kingdoms of the Old World. Our armies fell. Most were killed or taken into slavery. Those who escaped set sail aboard anything that would float. After an arduous months-long voyage, the survivors made landfall upon the Ironlands.",
+				"quest1": "You are a descendant of the Skulde. Because of your heritage, your family has long borne the distrust of your fellow Ironlanders. Now, a small force of Skulde have landed on our shores. Are they the harbinger of an invasion? Where do your loyalties lie?",
+				"option2": "The sickness moved like a horrible wave across the Old World, killing all in its path. Thousands fled aboard ships. However, the plague could not be outrun. On many ships, the disease was contained through ruthless measures—tossing overboard any who exhibited the slightest symptom. Other ships were forever lost. In the end, those who survived found the Ironlands and made it their new home. Some say we will forever be cursed by those we left behind.",
+				"quest2": "A settlement is stricken by disease. Though this sickness bears some similarities to the Old World plague, it doesn’t kill its victims. Instead, it changes them. How does this disease manifest? Why do you swear to seek out a cure?",
+				"option3": "The Old World could no longer sustain us. We were too large in number. We had felled the forests. Our crops withered in the barren ground. The cities and villages overflowed with desperate, hungry people. Petty kings battled for scraps. We cast our fate to the sea and found the Ironlands. A new world. A fresh start.",
+				"quest3": "Decades ago, the exodus ended. Since then, no ships have sailed here from the Old World. Until now. Word comes of a single ship, newly arrived across the vast ocean, grounded on the rocks of the Barrier Islands. When you hear the name of this ship, you swear to uncover the fate of its passengers. Why is it so important to you?"
+			},
+			"Iron": {
+				"name": "Iron",
+				"option1": "The imposing hills and mountains of the Ironlands are rich in iron ore. Most prized of all is the star-forged black iron.",
+				"quest1": "The caravan, bound for the distant southlands, left the mining settlement last season but never arrived at its destination. It carried a bounty of black iron. Why is finding this lost caravan so important to you?",
+				"option2": "The weather is bleak. Rain and wind sweep in from the ocean. The winters are long and bitter. One of the first settlers complained, \"Only those made of iron dare live in this foul place\" – and thus our land was named.",
+				"quest2": "The harvest fell short. The unrelenting snows left the village isolated. The food is running out. What will you do to see these people through this harsh season?",
+				"option3": "Inscrutable metal pillars are found throughout the land. They are iron gray, and smooth as river stone. No one knows their purpose. Some say they are as old as the world. Some, such as the Iron Priests, worship them and swear vows upon them. Most make the warding sign and hurry along their way when they happen across one. The pillars do not tarnish, and even the sharpest blade cannot mark them.",
+				"quest3": "Your dreams are haunted by visions of a pillar which stands in an unfamiliar landscape. What do you see? Why are you sworn to seek it out?"
+			},
+			"Legacies": {
+				"name": "Legacies",
+				"option1": "We are the first humans to walk these lands.",
+				"quest1": "In the writings of one of the first settlers, there is a description of a glade in the heart of the Deep Wilds. The spirits of this place are said to grant a miraculous blessing. What boon does it bestow?",
+				"option2": "Other humans sailed here from the Old World untold years ago, but all that is left of them is a savage, feral people we call the broken. Is their fate to become our own?",
+				"quest2": "You find a child—one of the broken. It is wounded, and hunted by others of its kind. Do you protect it, even at the risk of inviting the wrath of the broken tribes?",
+				"option3": "Before the Ironlanders, before even the firstborn, another people lived here. Their ancient ruins are found throughout the Ironlands.",
+				"quest3": "Miners uncovered an underground ruin. Thereafter, the people of the settlement are haunted by strange dreams. The ruins call to them, they say. Several have disappeared in that dark, ancient place – including someone important to you."
+			},
+			"Communities": {
+				"name": "Communities",
+				"option1": "We are few in number in this accursed land. Most rarely have contact with anyone outside our own small steading or village, and strangers are viewed with deep suspicion.",
+				"quest1": "In the dead of winter, a desperate man arrives at a snowbound steading. He is wounded, hungry, and nearly frozen to death. His family has been taken. By whom? Will you brave the merciless winter to save them?",
+				"option2": "We live in communities called circles. These are settlements ranging in size from a steading with a few families to a village of several hundred. Some circles belong to nomadic folk. Some powerful circles might include a cluster of settlements. We trade (and sometimes feud) with other circles.",
+				"quest2": "A decades-long feud between two circles has flared into open conflict. What is the cause of this dispute? Do you join in the fight, or swear to put a stop to it?",
+				"option3": "We have forged the Ironlands into a home. Villages within the Havens are connected by well-trod roads. Trade caravans travel between settlements in the Havens and those in outlying regions. Even so, much of this land is untamed.",
+				"quest3": "Caravans are forced to pay for passage along a trade road. This payment, one-quarter of the goods carried, leaves several communities without sufficient winter stores. Who is making these demands? How will you set things right?"
+			},
+			"Leaders": {
+				"name": "Leaders",
+				"option1": "Leadership is as varied as the people. Some communities are governed by the head of a powerful family. Or, they have a council of elders who make decisions and settle disputes. In others, the priests hold sway. For some, it is duels in the circle that decide.",
+				"quest1": "You have vivid reoccurring dreams of an Ironlands city. It has strong stone walls, bustling markets, and a keep on a high hill. And so many people! Nowhere in the Ironlands does such a city exist. In your dreams, you are the ruler of this city. Somehow, no matter how long it takes, you must make this vision a reality.",
+				"option2": "Each of our communities has its own leader, called an overseer. Every seventh spring, the people affirm their current overseer or choose a new one. Some overseers wear the iron circlet reluctantly, while others thirst for power and gain it through schemes or threats.",
+				"quest2": "An overseer has fallen ill. She is sure to die without help, and the illness is unknown to the village healer. Poison, or perhaps even foul magic, is suspected. The families in the community are now at each other’s throats as they position their preferred candidates to take up the iron circlet. Will you discover the truth of the overseer’s illness and restore her to health?",
+				"option3": "Numerous clan-chiefs rule over petty domains. Most are intent on becoming the one true king. Their squabbles will be our undoing.",
+				"quest3": "You secretly possess one-half of the True Crown, an Old World relic. Centuries ago, this crown was broken in two when an assassin’s axe split the head of the supreme ruler. You are descended from that lineage. Who gave you this relic? Will you find the other half of the broken crown and attempt to unite the clans under your rule? Or, do you see another use for it?"
+			},
+			"Defense": {
+				"name": "Defense",
+				"option1": "Here in the Ironlands, supplies are too precious, and the lands are too sparsely populated, to support organized fighting forces. When a community is threatened, the people stand together to protect their own.",
+				"quest1": "A settlement is unable, or unwilling, to defend itself against an imminent threat. Why? What peril do they face? What will you do to protect them?",
+				"option2": "The wardens are our soldiers, guards, and militia. They serve their communities by standing sentry, patrolling surrounding lands, and organizing defenses in times of crisis. Most have strong ties to their community. Others, called free wardens, are wandering mercenaries who hire on to serve a community or protect caravans.",
+				"quest2": "You come upon a dying warden. She tells you of an important mission, and charges you with its completion. \"Swear to me,\" she says, reaching out with a bloodied hand to give you an object crucial to the quest. What is it?",
+				"option3": "Our warbands are rallied to strike at our enemies or defend our holdings. Though not nearly as impressive as the armies that once marched across the Old World, these forces are as well-trained and equipped as their communities can manage. The banners of the warbands are adorned with depictions of their Old World history and Ironland victories.",
+				"quest3": "A warband was wiped out in a battle against an overwhelming enemy. What is your connection to this band? Who defeated them? Will you carry their banner on a quest for vengeance, or do you vow to see it brought home to a place of honor?"
+			},
+			"Mysticism": {
+				"name": "Mysticism",
+				"option1": "Some still find comfort in the old ways. They call on mystics to divine the fortune of their newborn, or ask them to perform rituals to invoke a bountiful harvest. Others act out of fear against those who they suspect of having power. However, most folk believe true magic—if it ever existed—is lost to us now.",
+				"quest1": "Someone close to you is accused of cursing a settlement, causing fields to go fallow and cattle to become sick. What is the evidence of this? Will you defend this person and uncover the true cause of the settlement’s troubles?",
+				"option2": "Magic is rare and dangerous, but those few who wield the power are truly gifted.",
+				"quest2": "You have heard stories of someone who wields true power. They live in an isolated settlement far away. Who told you of this mystic? Are they feared or respected? Why do you swear to seek them out?",
+				"option3": "Magic courses through this land as the rivers flow through the hills. The power is there for those who choose to harness it, and even the common folk often know a helpful ritual or two.",
+				"quest3": "Someone you love walked the paths of power, and succumbed to it. Who are they? Why did they fall into darkness? Where are they now? Do you seek to save them or defeat them?"
+			},
+			"Religion": {
+				"name": "Religion",
+				"option1": "A few Ironlanders still make signs or mumble prayers out of habit or tradition, but most believe the gods long ago abandoned us.",
+				"quest1": "A charismatic Ironlander, encouraging her followers to renounce the vestiges of Old World religions, proposes a new path for this new world. What doctrine does she teach? What does she seek to achieve? Are you sworn to aid or stop her?",
+				"option2": "The people honor old gods and new. In this harsh land, a prayer is a simple but powerful comfort.",
+				"quest2": "An Ironlander is determined to make a pilgrimage into dangerous lands. What holy place do they seek? Why do you swear to aid them on this journey? Who seeks to stop them and why?",
+				"option3": "Our gods are many. They make themselves known through manifestations and miracles. Some say they even secretly walk among us. The priests convey the will of the gods and hold sway over many communities.",
+				"quest3": "You bear the mark of a god. What is it? The priests declare this as a sign you are chosen to fulfill a destiny. Do you accept this fate, and swear to see it through, or are you determined to see it undone? What force opposes you?"
+			},
+			"Firstborn": {
+				"name": "Firstborn",
+				"option1": "The firstborn have passed into legend. Some say the remnants of the old tribes still dwell in deep forests or high mountains. Most believe they were never anything more than myth.",
+				"quest1": "Someone obsessed with the firstborn wants to find evidence of their existence. This will require an expedition into the far reaches of the Ironlands. What is your role in this mission?",
+				"option2": "The firstborn live in isolation and are fiercely protective of their own lands.",
+				"quest2": "The elf, outcast from his kind, lives with Ironlanders. Over time, he became a part of the community. Now, he is dying. He yearns to return to his people before he passes. Does he seek absolution or justice? Why do you swear to help him? What force opposes his return?",
+				"option3": "The firstborn hold sway in the Ironlands. The elves of the deep forests and the giants of the hills tolerate us and even trade with us—for now. Ironlanders fear the day they decide we are no longer welcome here.",
+				"quest3": "Humans and giants are on the brink of war. What has happened? Who do you side with? Can anything be done to defuse the situation?"
+			},
+			"Beasts": {
+				"name": "Beasts",
+				"option1": "The beasts of old are nothing but legend. A few who travel into the deep forests and high mountains return with wild tales of monstrous creatures, but they are obviously delusional. No such things exist.",
+				"quest1": "You were witness to an attack by what you thought was an animal of monstrous proportions. No one believes you. In fact, you are accused of the murder you blame on this beast. How can you prove your innocence? Can you even trust your own memories of the event?",
+				"option2": "Monstrous beasts stalk the wild areas of the Ironlands.",
+				"quest2": "A prominent Ironlander is consumed with the need to bring vengeance upon a specific beast. What makes this creature distinctive? How did it earn the wrath of this Ironlander? Do you aid this person in their quest, or act to prevent their blind hate from destroying more than just the beast?",
+				"option3": "Beasts of all sorts roam the Ironlands. They dwell primarily in the reaches, but range into the settled lands to hunt. There, they often prey on cattle, but attacks on travelers, caravans, or even settlements are not uncommon.",
+				"quest3": "Professional slayers earn their keep by killing beasts. This particular slayer, famed throughout the Ironlands for her numerous kills, has gone missing on a hunt. Did she finally meet her match, or is something more nefarious at play. What is your connection to her?"
+			},
+			"Horrors": {
+				"name": "Horrors",
+				"option1": "Nothing but stories to frighten children.",
+				"quest1": "The murders began last season. Local gossip suggests they are the work of a vengeful horror, but there may be more mundane forces at work. What is your connection to these killings? What will you do to stop them?",
+				"option2": "We are wary of dark forests and deep waterways, for monsters lurk in those places. In the depths of the long-night, when all is wreathed in darkness, only fools venture beyond their homes.",
+				"quest2": "You bear the scars of an attack by a horror. What was it? Are those scars physical, emotional, or both? How do you seek to make yourself whole again?",
+				"option3": "The dead do not rest in the Ironlands. At night we light torches, scatter salt, and post sentries at the gate. It is not enough. They are coming.",
+				"quest3": "A group of Ironlanders establish a settlement in a territory cursed by a malevolent horror. What evil plagues this land? Why are the Ironlanders so intent on settling here? Will you aid them, or attempt to force them to give up this foolish undertaking?"
+			}
+		},
+		"OracleCategories": {
+			"Access": "Access",
+			"Action and Theme": "Action and Theme",
+			"Ask the Oracle": "Ask the Oracle",
+			"Basic Form": "Basic Form",
+			"Challenge Rank": "Challenge Rank",
+			"Chaotic": "Chaotic",
+			"Character Creation": "Character Creation",
+			"Character Name": "Character Name",
+			"Character": "Character",
+			"Characters": "Characters",
+			"Combat Event": "Combat Event",
+			"Community": "Community",
+			"Core": "Core",
+			"Creatures": "Creatures",
+			"Delve the Depths": "Delve the Depths",
+			"Derelicts": "Derelicts",
+			"Desert": "Desert",
+			"Engineering": "Engineering",
+			"Factions": "Factions",
+			"Feature": "Feature",
+			"Fortified": "Fortified",
+			"Furnace": "Furnace",
+			"Grave": "Grave",
+			"Haunted": "Haunted",
+			"Ice": "Ice",
+			"Infested": "Infested",
+			"Inhabited": "Inhabited",
+			"Interior": "Interior",
+			"Ironlander": "Ironlander",
+			"Jovian": "Jovian",
+			"Jungle": "Jungle",
+			"Living": "Living",
+			"Location Themes": "Location Themes",
+			"Mechanical": "Mechanical",
+			"Medical": "Medical",
+			"Misc": "Misc",
+			"Mission": "Mission",
+			"Moves": "Moves",
+			"Monstrosity": "Monstrosity",
+			"Name": "Name",
+			"Ocean": "Ocean",
+			"Operations": "Operations",
+			"Opportunity": "Opportunity",
+			"Other": "Other",
+			"Peril": "Peril",
+			"Place": "Place",
+			"Planets": "Planets",
+			"Population": "Population",
+			"Production": "Production",
+			"Quick Name": "Quick Name",
+			"Research": "Research",
+			"Rocky": "Rocky",
+			"Ruined": "Ruined",
+			"Sacred": "Sacred",
+			"Sanctum": "Sanctum",
+			"Sector Name": "Sector Name",
+			"Settlement": "Settlement",
+			"Settlements": "Settlements",
+			"Shattered": "Shattered",
+			"Sighting": "Sighting",
+			"Site Name": "Site Name",
+			"Site Nature": "Site Nature",
+			"Space": "Space",
+			"Starships": "Starships",
+			"Tainted": "Tainted",
+			"Threat": "Threat",
+			"Trap": "Trap",
+			"Turning Point": "Turning Point",
+			"Type": "Type",
+			"Vaults": "Vaults",
+			"Vital": "Vital",
+			"Zones": "Zones",
+			"Custom": "Custom Oracles"
+		},
+		"Asset Categories": {
+			"Custom": "Custom Assets",
+			"Ironsworn": {
+				"Companion": {
+					"Title": "Companion",
+					"Description": "Companions are your NPC helpers. When you acquire a companion, give them a name and envision their appearance and personality. If they don’t have a starting ability, choose one. Upgrading a companion enables additional abilities.\n\nCompanions utilize a health track and may suffer harm as a result of one of your moves. When your companion takes damage, make the [Companion Endure Harm](Ironsworn/Moves/Suffer/Companion_Endure_Harm) move (page 94) to determine the outcome. See page 43 to learn more."
+				},
+				"Path": {
+					"Title": "Path",
+					"Description": "Paths represent your background, interests, training, and skills. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. For example, a **Ritualist** would likely have a different outlook than a **Veteran**. Choosing both those paths can reflect an evolution of your character or an interesting background."
+				},
+				"Combat Talent": {
+					"Title": "Combat Talent",
+					"Description": "*Ironsworn* characters are assumed to be skilled fighters. Even without a combat talent, you can wield weapons and perform combat moves (page 78). A combat talent reflects a particular area of expertise, and gives you additional options and bonuses.\n\nCombat talent assets typically require you to wield a specific weapon, as noted in the asset text. For example, if you are a **Shield-Bearer** and don’t have a shield at the ready, you can’t use the asset’s abilities."
+				},
+				"Ritual": {
+					"Title": "Ritual",
+					"Description": "Magic in *Ironsworn* is cast through rituals which help support your actions or act as unique moves. Like all assets, rituals can be selected as you gain experience and can be upgraded over time to make them more flexible or powerful.\n\nAll rituals utilize a move as their default marked ability. You must make this move and the associated action roll to trigger the effect. Any secondary abilities you gain by upgrading the asset are dependent on performing the ritual described as the default ability."
+				}
+			},
+			"Starforged": {
+				"Command Vehicle": {
+					"Title": "Command Vehicle",
+					"Description": "The **command vehicle** is your interstellar STARSHIP. It is a default asset for your character, taken when you begin your campaign. If you are playing with others, this is a shared asset; each of you may use the STARSHIP's abilities while aboard the craft.\n\nThe command vehicle has an integrity meter and starts at 5 integrity. When your STARSHIP takes a hit, make the @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} move to see what happens."
+				},
+				"Module": {
+					"Title": "Module",
+					"Description": "**Modules** are linked to your STARSHIP and offer additional options and advantages when aboard that vehicle.\n\nThese assets are earned and managed by a single character. They can be shared with allies, but only if it's practical for them to make use of it (not everyone may know how to use a RESEARCH LAB).\n\nWhen you @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} and score a miss, you can mark a module as broken to offset further danger for your STARSHIP. Flip the card over to indicate its broken state. A broken module cannot be used until you successfully @Compendium[foundry-ironsworn.starforgedmoves.eece9a67d1961f70]{Repair} it."
+				},
+				"Support Vehicle": {
+					"Title": "Support Vehicle",
+					"Description": "**Support vehicles** complement your command vehicle for planetside or short-range operations. If you are playing with others, one of you might serve as the pilot or owner of a support vehicle, but anyone on board can use its abilities as appropriate to the situation.\n\nAs with the command vehicle, your support vehicles have integrity meters. The maximum integrity varies based on the type of vehicle. When a support vehicle faces a damaging situation or environment, you must @Compendium[foundry-ironsworn.starforgedmoves.3782f1b3c8ca8b88]{Withstand Damage} to see how it fares."
+				},
+				"Path": {
+					"Title": "Path",
+					"Description": "**Paths** are your background, interests, training, skills, powers, and key equipment. They provide mechanical and narrative advantages, but also reflect who you are and how you interact with the world. When you create your character in the next chapter, you'll select at least two paths to get started.\n\nSome paths represent your skill with a signature weapon style or piece of equipment. If you see a requirement at the top of the asset card, such as “If you wield a bladed weapon…,” the asset is only usable when taking action using that item."
+				},
+				"Companion": {
+					"Title": "Companion",
+					"Description": "**Companions** are NPC helpers. When you gain a companion, give them a name and envision their look and personality.\n\nCompanions utilize a health meter that can be reduced if an outcome puts them in harm's way. When your companion faces harm, make the @Compendium[foundry-ironsworn.starforgedmoves.d34cdf2408cd22b6]{Companion Takes a Hit} move. When their health is at 0, they are in danger of being killed or destroyed."
+				},
+				"Deed": {
+					"Title": "Deed",
+					"Description": "**Deeds** represent the notable achievement and situations of your story, and how those events change your character.\n\nDeeds have a requirement listed at the top of the card, phrased as “Once you \\[blank\\].” You may not spend experience to acquire a deed until you fulfill the requirement, and you cannot choose a deed when creating your character."
+				}
+			}
+		},
+		"ROLLTABLE": {
+			"TypeOracle": "Oracle"
+		},
+		"ROLLTABLES": {
+			"TypeOracle": "Oracles"
+		},
+		"SCENE": {
+			"TypeSector": "Sector"
+		},
+		"SCENES": {
+			"TypeSector": "Sectors"
+		},
+		"ACTOR": {
+			"SheetCompact": "Compact",
+			"SheetFoe": "Foe",
+			"SheetStarforgedLocation": "Starforged Location",
+			"SubtypeDerelict": "Derelict",
+			"SubtypePlanet": "Planet",
+			"SubtypeSettlement": "Settlement",
+			"SubtypeStar": "Stellar Object",
+			"SubtypeVault": "Precursor Vault",
+			"TypeCharacter": "Character",
+			"TypeFoe": "NPC",
+			"TypeLocation": "Location",
+			"TypeShared": "Shared sheet",
+			"TypeDelveSite": "Delve Site",
+			"TypeStarship": "Starship"
+		},
+		"ACTORS": {
+			"SubtypeDerelict": "Derelicts",
+			"SubtypePlanet": "Planets",
+			"SubtypeSettlement": "Settlements",
+			"SubtypeStar": "Stellar Objects",
+			"SubtypeVault": "Precursor Vaults",
+			"TypeCharacter": "Characters",
+			"TypeFoe": "NPCs",
+			"TypeLocation": "Locations",
+			"TypeDelveSite": "Delve Sites",
+			"TypeStarship": "Starships"
+		},
+		"ITEM": {
+			"SubtypeConnection": "Connection",
+			"SubtypeProgress": "Progress",
+			"SubtypeVow": "Vow",
+			"TypeAsset": "Asset",
+			"TypeBond": "Bond",
+			"TypeBondset": "Bondset",
+			"TypeDelveDomain": "Site domain",
+			"TypeDelveTheme": "Site theme",
+			"TypeDelveThemeOrDomain": "Site theme/domain",
+			"TypeMove": "Move",
+			"TypeProgressTrack": "Progress track"
+		},
+		"ITEMS": {
+			"SubtypeConnection": "Connections",
+			"SubtypeProgress": "Progress",
+			"SubtypeVow": "Vows",
+			"TypeAsset": "Assets",
+			"TypeBond": "Bonds",
+			"TypeBondset": "Bondsets",
+			"TypeDelveDomain": "Site domains",
+			"TypeDelveTheme": "Site themes",
+			"TypeMove": "Moves",
+			"TypeProgressTrack": "Progress tracks"
+		},
+		"JOURNALENTRYPAGE": {
+			"TypeProgressTrack": "Progress track",
+			"TypeTruth": "Setting Truth",
+			"TypeTruthClassic": "World Truth",
+			"TypeTruthStarforged": "Setting Truth"
+		},
+		"JOURNALENTRYPAGES": {
+			"TypeProgressTrack": "Progress tracks",
+			"TypeTruth": "Setting Truths",
+			"TypeTruthClassic": "World Truths",
+			"TypeTruthStarforged": "Setting Truths"
+		},
+		"DELVESITE": {
+			"Danger": "Danger",
+			"Dangers": "Dangers",
+			"Denizen": "Denizen",
+			"Denizens": "Denizens",
+			"Feature": "Feature",
+			"Features": "Features",
+			"FREQUENCY": {
+				"VeryCommon": "Very common",
+				"Common": "Common",
+				"Uncommon": "Uncommon",
+				"Rare": "Rare",
+				"Unforeseen": "Unforeseen"
+			}
+		}
+	}
 }
