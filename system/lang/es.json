@@ -71,26 +71,44 @@
 			"Quests": "Búsquedas"
 		},
 		"Clock": "Reloj",
+
+		"Impacts": "Impacts",
+		"IMPACT": {
+			"Custom": "Custom impact",
+			"CATEGORY": {
+				"Misfortunes": "Misfortunes",
+				"LastingEffects": "Lasting Effects",
+				"Burdens": "Burdens",
+				"Vehicle": "Current vehicle"
+			},
+			"Wounded": "Herido",
+			"Shaken": "Conmocionado",
+			"Unprepared": "Sin suministros",
+			"Permanentlyharmed": "Permanently Harmed",
+			"Traumatized": "Traumatized",
+			"Tormented": "Atormentado",
+			"Doomed": "Doomed",
+			"Indebted": "Indebted",
+			"Cursed": "Maldito",
+			"Battered": "Battered"
+		},
 		"Debilities": "Debilidades",
-		"Conditions": "Condiciones",
-		"Banes": "Desgracias",
-		"Burdens": "Cargas",
-		"Misfortunes": "Misfortunes",
-		"LastingEffects": "Lasting Effects",
-		"Vehicle": "Vehicle",
-		"Wounded": "Herido",
-		"Unprepared": "Sin suministros",
-		"Shaken": "Conmocionado",
-		"Encumbered": "Sobrecargado",
-		"Maimed": "Mutilado",
-		"Corrupted": "Corrompido",
-		"Cursed": "Maldito",
-		"Tormented": "Atormentado",
-		"Permanentlyharmed": "Permanently Harmed",
-		"Traumatized": "Traumatized",
-		"Doomed": "Doomed",
-		"Indebted": "Indebted",
-		"Battered": "Battered",
+		"DEBILITY": {
+			"Custom": "Custom debility",
+			"CATEGORY": {
+				"Conditions": "Condiciones",
+				"Banes": "Desgracias",
+				"Burdens": "Cargas"
+			},
+			"Wounded": "Herido",
+			"Unprepared": "Sin suministros",
+			"Shaken": "Conmocionado",
+			"Encumbered": "Sobrecargado",
+			"Maimed": "Mutilado",
+			"Corrupted": "Corrompido",
+			"Cursed": "Maldito",
+			"Tormented": "Atormentado"
+		},
 		"Reroll": "Volver a tirar",
 		"MOVES": {
 			"Adventure": "Movimientos de aventura",

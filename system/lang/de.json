@@ -38,9 +38,13 @@
 		"Wits": "Verstand",
 		"XP": "EP",
 		"Debilities": "Schwächen",
-		"Conditions": "Zustände",
-		"Banes": "Verhängnisse",
-		"Burdens": "Bürden",
+		"DEBILITY": {
+			"CATEGORY": {
+				"Conditions": "Zustände",
+				"Banes": "Verhängnisse",
+				"Burdens": "Bürden"
+			}
+		},
 		"BurnForUpgrade": "Momentum verbrennst: <strong>{type}</strong>",
 		"MomentumBurnt": "Momentum verbrannt",
 		"Fields": "Felder",
