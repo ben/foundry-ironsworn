@@ -15,15 +15,12 @@
 <script lang="ts" setup>
 import { forEach } from 'lodash-es'
 import { computed } from 'vue'
-import type { FontAwesomeIconProps } from './icon-common'
-import { FontAwesome } from './icon-common'
-
-type Props = FontAwesomeIconProps // workaround because vue-tsc complains about needing a type literal otherwise
+import { FontAwesomeIconProps, FontAwesome } from './icon-common'
 
 /**
  * A FontAwesome 6 icon.
  */
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<FontAwesomeIconProps>(), {
 	family: FontAwesome.Family.Solid,
 	style: FontAwesome.Style.Classic,
 	fw: true,

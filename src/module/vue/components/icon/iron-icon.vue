@@ -18,16 +18,14 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import type { IronIconProps } from './icon-common'
+import { IronIconProps } from './icon-common'
 
 // without this, vue-tsc complains  even though it shouldn't
-
-type Props = IronIconProps
 
 /**
  * Displays a custom SVG icon from the sprite sheet. Anything in `system/assets/icons` is automatically included as a sprite.
  */
-const props = withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<IronIconProps>(), {
 	prefix: 'ironsworn',
 	size: '1em',
 	color: 'currentColor'
