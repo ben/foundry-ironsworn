@@ -8,9 +8,11 @@
 		:icon-checked="{ icon: 'fa:dot-circle', props: { family: 'fa-regular' } }"
 		:aria-labelledby="`label_${baseId}`"
 		@change="input($event)">
-		<span :id="`label_${baseId}`">{{
-			$t(`IRONSWORN.${$capitalize(name)}`)
-		}}</span>
+		<slot name="default" :id="`label_${baseId}`">
+			<span :id="`label_${baseId}`">
+				{{ $t(`IRONSWORN.${$capitalize(name)}`) }}
+			</span>
+		</slot>
 	</IronCheckbox>
 </template>
 

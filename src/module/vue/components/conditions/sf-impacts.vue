@@ -31,8 +31,8 @@
 </template>
 
 <script setup lang="ts">
-import conditionCheckbox from './conditions/condition-checkbox.vue'
-import CustomConditionCheckbox from './conditions/custom-condition-checkbox.vue'
+import conditionCheckbox from './condition-checkbox.vue'
+import CustomConditionCheckbox from './custom-condition-checkbox.vue'
 </script>
 
 <style lang="scss" scoped>
