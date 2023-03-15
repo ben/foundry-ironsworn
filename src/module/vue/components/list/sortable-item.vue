@@ -87,7 +87,7 @@ const editMode = computed(() => {
 const showSortButtons = computed(() => props.sortFn && editMode.value)
 
 const canSortUp = computed(() => props.i !== 0)
-const canSortDown = computed(() => props.i === length - 1)
+const canSortDown = computed(() => props.i !== props.length - 1)
 
 function edit() {
 	$item?.sheet?.render(true)
