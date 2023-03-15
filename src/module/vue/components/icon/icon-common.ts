@@ -12,15 +12,38 @@ import type {
 	RotateProperty,
 	ScaleProperty,
 	StandardLonghandPropertiesHyphen,
-	StrokeProperty
+	StrokeWidthProperty
 } from 'csstype'
+import { enumHas } from './../../composable/enumHas'
 
 import type ironswornIconNames from 'virtual:svg-icons-names'
+import type { ExtractPropTypes } from 'vue'
+import type FontIcon from './font-icon.vue'
+import type IronIcon from './iron-icon.vue'
+
+export interface IconSwitchState {
+	/**
+	 * The ID of the icon to be used for this state.
+	 */
+	icon: IconId
+	/**
+	 * @default ''
+	 */
+	class?: string
+	/**
+	 * Additional props to be passed to the icon component.
+	 */
+	props?: this['icon'] extends IronswornIconId ? IronIconState : FontIconState
+}
+
+export type IronIconState = Omit<ExtractPropTypes<typeof IronIcon>, 'name'>
+
+export type FontIconState = Omit<ExtractPropTypes<typeof FontIcon>, 'name'>
 
 export type IronswornIconName = (typeof ironswornIconNames)[number]
 
-type IronswornIconId = `ironsworn:${IronswornIconName}`
-type FontAwesomeIconId = `fa:${FontAwesome.Name}`
+export type IronswornIconId = `ironsworn:${IronswornIconName}`
+export type FontAwesomeIconId = `fa:${FontAwesome.Name}`
 
 export type IconId = IronswornIconId | FontAwesomeIconId
 
@@ -34,9 +57,12 @@ export interface IconPropsCommon {
 	 */
 	color?: FillProperty | ColorProperty
 	/**
-	 * The icon's stroke color.
+	 * The icon's stroke.
 	 */
-	stroke?: StrokeProperty | ColorProperty
+	stroke?: {
+		width: StrokeWidthProperty<any> | string
+		color: ColorProperty
+	}
 	/**
 	 * The height and width of the icon.
 	 * @remarks For simplicity's sake, we render all icons with a 1:1 aspect ratio.
@@ -3950,4 +3976,32 @@ export namespace FontAwesome {
 		| 'korvue'
 		| 'pix'
 		| 'steam-symbol'
+}
+
+/* Parse FontAwesome classes into the corresponding props. this is basically so that a theme's CSS variable can be used to set component properties. */
+// TODO: This could be ditched if Themes are migrated to e.g. a design-token like format, so that we could pass props objects to the icon rather than strings
+export function parseClassesToFaProps(cssClasses: string) {
+	const props: Partial<ExtractPropTypes<typeof FontIcon>> = {}
+	cssClasses.split(' ').forEach((clsName) => {
+		switch (true) {
+			case enumHas(FontAwesome.Style, clsName):
+				props.style = clsName
+				break
+			case enumHas(FontAwesome.Family, clsName):
+				props.family = clsName
+				break
+			case enumHas(FontAwesome.Rotate, clsName):
+				props.rotate = clsName
+				break
+			case enumHas(FontAwesome.Animation, clsName):
+				if (!props.animation) props.animation = []
+				props.animation.push(clsName)
+				break
+			default:
+				if (!props.class) props.class = []
+				props.class.push(clsName)
+				break
+		}
+	})
+	return props
 }
