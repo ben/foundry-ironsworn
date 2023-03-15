@@ -21,10 +21,18 @@
 
 		<section class="flexrow nogrow">
 			<div style="text-align: center">
-				<ImpactCheckbox class="nogrow" name="battered" :global-hint="true" />
+				<ImpactCheckbox
+					type="impact"
+					class="nogrow"
+					name="battered"
+					:global-hint="true" />
 			</div>
 			<div style="text-align: center">
-				<ImpactCheckbox class="nogrow" name="cursed" :global-hint="true" />
+				<ImpactCheckbox
+					type="impact"
+					class="nogrow"
+					name="cursed"
+					:global-hint="true" />
 			</div>
 		</section>
 	</SheetBasic>

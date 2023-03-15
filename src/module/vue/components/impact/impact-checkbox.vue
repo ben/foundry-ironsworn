@@ -10,7 +10,7 @@
 		@change="input($event)">
 		<slot :id="`label_${baseId}`" name="default">
 			<span :id="`label_${baseId}`">
-				{{ $t(`IRONSWORN.${type.toUpperCase()}.${$capitalize(name)}`) }}
+				{{ label }}
 			</span>
 		</slot>
 	</IronCheckbox>
@@ -83,7 +83,11 @@ CONFIG.IRONSWORN.emitter.on('globalConditionChanged', ({ name }) => {
 	}
 })
 
-const i18nCondition = game.i18n.localize(`IRONSWORN.${capitalize(props.name)}`)
+const label = computed(() =>
+	game.i18n.localize(
+		`IRONSWORN.${props.type.toUpperCase()}.${capitalize(props.name)}`
+	)
+)
 function refreshGlobalHint() {
 	const { actors, assets } = actorsOrAssetsWithConditionEnabled(props.name)
 	const names = [
@@ -105,14 +109,14 @@ function refreshGlobalHint() {
 	} else if (names.length == 1) {
 		// Condition only set on one other actor
 		state.hintText = game.i18n.format('IRONSWORN.ConditionSetOnOne', {
-			condition: i18nCondition,
+			condition: label.value,
 			name: names[0]
 		})
 	} else {
 		// This condition is set on several other actors, display them as a list
 		state.hintText = `
     <p>${game.i18n.format('IRONSWORN.ConditionSetOnMany', {
-			condition: i18nCondition
+			condition: label.value
 		})}</p>
     <ul>
       ${names.map((x) => `<li>${x}</li>`).join('\n')}
