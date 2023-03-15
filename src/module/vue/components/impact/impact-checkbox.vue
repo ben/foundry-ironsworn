@@ -2,7 +2,7 @@
 	<IronCheckbox
 		:data-tooltip="state.hintText"
 		class="flexrow"
-		:class="{ [$style.hint]: !!state.hintText, [$style.checkbox]: true }"
+		:class="{ [$style.hint]: !!state.hintText, [$style.wrapper]: true }"
 		:icon-unchecked="{ icon: 'fa:circle', props: { family: 'fa-regular' } }"
 		:checked="actor.system.debility[name]"
 		:icon-checked="{ icon: 'fa:dot-circle', props: { family: 'fa-regular' } }"
@@ -123,8 +123,9 @@ if (props.globalHint) refreshGlobalHint()
 </script>
 
 <style lang="scss" module>
-.checkbox {
+.wrapper {
 	gap: var(--ironsworn-spacer-sm);
+	align-items: center;
 }
 .hint {
 	text-shadow: 0 0 5px var(--ironsworn-color-warning);

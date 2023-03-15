@@ -5,34 +5,27 @@
 		<h5>{{ $t('IRONSWORN.Burdens') }}</h5>
 		<h5>{{ $t('IRONSWORN.Vehicle') }}</h5>
 
-		<condition-checkbox class="nogrow" name="wounded" />
-		<condition-checkbox class="nogrow" name="permanentlyharmed" />
-		<condition-checkbox class="nogrow" name="doomed" />
-		<condition-checkbox class="nogrow" name="battered" :global-hint="true" />
+		<ImpactCheckbox class="nogrow" name="wounded" />
+		<ImpactCheckbox class="nogrow" name="permanentlyharmed" />
+		<ImpactCheckbox class="nogrow" name="doomed" />
+		<ImpactCheckbox class="nogrow" name="battered" :global-hint="true" />
 
-		<condition-checkbox class="nogrow" name="shaken" />
-		<condition-checkbox class="nogrow" name="traumatized" />
-		<condition-checkbox class="nogrow" name="tormented" />
-		<condition-checkbox class="nogrow" name="cursed" :global-hint="true" />
+		<ImpactCheckbox class="nogrow" name="shaken" />
+		<ImpactCheckbox class="nogrow" name="traumatized" />
+		<ImpactCheckbox class="nogrow" name="tormented" />
+		<ImpactCheckbox class="nogrow" name="cursed" :global-hint="true" />
 
-		<condition-checkbox class="nogrow" name="unprepared" />
-		<condition-checkbox
-			class="nogrow"
-			name="indebted"
-			style="grid-column: 3/4" />
+		<ImpactCheckbox class="nogrow" name="unprepared" />
+		<ImpactCheckbox class="nogrow" name="indebted" style="grid-column: 3/4" />
 
-		<custom-condition-checkbox
-			style="grid-column: 1 / 3"
-			debilitykey="custom1" />
-		<custom-condition-checkbox
-			style="grid-column: 3 / 5"
-			debilitykey="custom2" />
+		<ImpactCheckboxCustom style="grid-column: 1 / 3" debilitykey="custom1" />
+		<ImpactCheckboxCustom style="grid-column: 3 / 5" debilitykey="custom2" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import conditionCheckbox from './impact-checkbox.vue'
-import CustomConditionCheckbox from './impact-checkbox-custom.vue'
+import ImpactCheckbox from './impact-checkbox.vue'
+import ImpactCheckboxCustom from './impact-checkbox-custom.vue'
 </script>
 
 <style lang="scss" scoped>

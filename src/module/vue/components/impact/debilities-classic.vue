@@ -4,28 +4,24 @@
 		<h4 style="grid-column: 3">{{ $t('IRONSWORN.Banes') }}</h4>
 		<h4 style="grid-column: 4">{{ $t('IRONSWORN.Burdens') }}</h4>
 
-		<condition-checkbox name="wounded" />
-		<condition-checkbox name="shaken" />
-		<condition-checkbox name="maimed" />
-		<condition-checkbox name="cursed" :global-hint="true" />
+		<ImpactCheckbox name="wounded" />
+		<ImpactCheckbox name="shaken" />
+		<ImpactCheckbox name="maimed" />
+		<ImpactCheckbox name="cursed" :global-hint="true" />
 
-		<condition-checkbox name="unprepared" />
-		<condition-checkbox name="encumbered" />
-		<condition-checkbox name="corrupted" />
-		<condition-checkbox name="tormented" />
+		<ImpactCheckbox name="unprepared" />
+		<ImpactCheckbox name="encumbered" />
+		<ImpactCheckbox name="corrupted" />
+		<ImpactCheckbox name="tormented" />
 
-		<custom-condition-checkbox
-			style="grid-column: 1 / 3"
-			debilitykey="custom1" />
-		<custom-condition-checkbox
-			style="grid-column: 3 / 5"
-			debilitykey="custom2" />
+		<ImpactCheckboxCustom style="grid-column: 1 / 3" debilitykey="custom1" />
+		<ImpactCheckboxCustom style="grid-column: 3 / 5" debilitykey="custom2" />
 	</div>
 </template>
 
 <script setup lang="ts">
-import ConditionCheckbox from './impact-checkbox.vue'
-import CustomConditionCheckbox from './impact-checkbox-custom.vue'
+import ImpactCheckbox from './impact-checkbox.vue'
+import ImpactCheckboxCustom from './impact-checkbox-custom.vue'
 </script>
 
 <style lang="scss" scoped>

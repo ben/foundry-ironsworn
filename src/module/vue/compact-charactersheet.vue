@@ -29,9 +29,8 @@
 <script setup lang="ts">
 import { provide, computed } from 'vue'
 import AttrBox from './components/attr-box.vue'
-import IronBtn from './components/buttons/iron-btn.vue'
 import CompactCharacterSheetButton from './components/compact-character-sheet-button.vue'
-import ConditionCheckbox from './components/conditions/condition-checkbox.vue'
+import ConditionCheckbox from 'component:impact/impact-checkbox.vue'
 import { ActorKey } from './provisions'
 
 const props = defineProps<{
