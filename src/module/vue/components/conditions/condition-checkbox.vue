@@ -1,26 +1,32 @@
 <template>
-	<label
-		class="checkbox"
+	<IronCheckbox
 		:data-tooltip="state.hintText"
-		:class="{ 'condition-hint': !!state.hintText }">
-		<input
-			type="checkbox"
-			:checked="actor.system.debility[name]"
-			@change="input" />
-		{{ $t(`IRONSWORN.${$capitalize(name)}`) }}
-	</label>
+		class="flexrow"
+		:class="{ [$style.hint]: !!state.hintText, [$style.checkbox]: true }"
+		:icon-unchecked="{ icon: 'fa:circle', props: { family: 'fa-regular' } }"
+		:checked="actor.system.debility[name]"
+		:icon-checked="{ icon: 'fa:dot-circle', props: { family: 'fa-regular' } }"
+		:aria-labelledby="`label_${baseId}`"
+		@change="input($event)">
+		<span :id="`label_${baseId}`">{{
+			$t(`IRONSWORN.${$capitalize(name)}`)
+		}}</span>
+	</IronCheckbox>
 </template>
 
 <script lang="ts" setup>
+import { computed, capitalize, inject, nextTick, reactive } from 'vue'
 import type { Ref } from 'vue'
-import { capitalize, inject, nextTick, reactive } from 'vue'
 import { actorsOrAssetsWithConditionEnabled } from '../../../helpers/globalConditions'
 import { IronswornSettings } from '../../../helpers/settings'
 import type { AssetDataPropertiesData } from '../../../item/itemtypes'
 import { $ActorKey, ActorKey } from '../../provisions'
+import IronCheckbox from '../input/iron-checkbox.vue'
 
 const actor = inject(ActorKey) as Ref
 const $actor = inject($ActorKey)
+
+const baseId = computed(() => `condition_${props.name}_${actor.value._id}`)
 
 const props = defineProps<{
 	name: string
@@ -30,9 +36,8 @@ const props = defineProps<{
 
 const state = reactive<{ hintText?: string }>({})
 
-async function input(ev: Event) {
+async function input(value: boolean) {
 	const impactKey = 'debility'
-	const value = (ev.currentTarget as HTMLInputElement)?.checked
 	const data = {
 		system: {
 			[impactKey]: {
@@ -115,8 +120,11 @@ function refreshGlobalHint() {
 if (props.globalHint) refreshGlobalHint()
 </script>
 
-<style lang="scss" scoped>
-.condition-hint {
+<style lang="scss" module>
+.checkbox {
+	gap: var(--ironsworn-spacer-sm);
+}
+.hint {
 	text-shadow: 0 0 5px var(--ironsworn-color-warning);
 }
 </style>

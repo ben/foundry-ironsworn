@@ -14,12 +14,15 @@ import type {
 	StandardLonghandPropertiesHyphen,
 	StrokeWidthProperty
 } from 'csstype'
-import { enumHas } from './../../composable/enumHas'
 
 import type ironswornIconNames from 'virtual:svg-icons-names'
 import type { ExtractPropTypes } from 'vue'
 import type FontIcon from './font-icon.vue'
 import type IronIcon from './iron-icon.vue'
+
+export function enumHas(enumLike: object, value: string) {
+	return Object.values(enumLike).includes(value)
+}
 
 export interface IconSwitchState {
 	/**

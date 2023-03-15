@@ -7,8 +7,10 @@
 		:class="$style.wrapper"
 		:aria-checked="checked"
 		:aria-readonly="readonly"
+		:aria-disabled="disabled"
 		@keydown.space.prevent
 		@keyup.space.prevent="toggle"
+		@keyup.enter.prevent="toggle"
 		@click="toggle">
 		<IconSwitch
 			tabindex="-1"
@@ -35,15 +37,19 @@ const props = withDefaults(
 		checked?: boolean
 		// TODO
 		readonly?: boolean
+		disabled?: boolean
 		iconChecked: IconSwitchState
 		iconUnchecked: IconSwitchState
+		/**
+		 * @default 'fade'
+		 */
 		transitionName?: string
 		/**
 		 * Show a preview of the toggled result when hovering the checkbox?
 		 * @default true
 		 */
 		hoverPreview?: boolean
-		is: any
+		is?: any
 	}>(),
 	{
 		checked: false,
@@ -62,7 +68,12 @@ const $emit = defineEmits<{
 	 * Fires when the checkbox is activated.
 	 * @param checked The new value of the checkbox. Note that this component doesn't maintain state -- so the prop isn't updated automatically.
 	 */
-	(event: 'input', checked: boolean): void
+	(name: 'input', checked: boolean): void
+	/**
+	 * Fires when the checkbox is activated.
+	 * @param checked The new value of the checkbox. Note that this component doesn't maintain state -- so the prop isn't updated automatically.
+	 */
+	(name: 'change', checked: boolean): void
 }>()
 
 const iconSwitchProps = computed<ExtractPropTypes<typeof IconSwitch>>(() => {
@@ -78,8 +89,9 @@ const iconSwitchProps = computed<ExtractPropTypes<typeof IconSwitch>>(() => {
 	return { icons, transitionName: props.transitionName }
 })
 
-function toggle() {
+function toggle(event) {
 	$emit('input', !props.checked)
+	$emit('change', !props.checked)
 }
 
 const $wrapper = ref(null)
