@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import conditionCheckbox from './impact-checkbox.vue'
-import CustomConditionCheckbox from './custom-condition-checkbox.vue'
+import CustomConditionCheckbox from './impact-checkbox-custom.vue'
 </script>
 
 <style lang="scss" scoped>
