@@ -138,6 +138,8 @@ async function onChange(newValue: number) {
 
 		.attr-slider-label {
 			> * {
+				height: 100%;
+
 				padding-inline-end: var(--ironsworn-segment-border-radius);
 			}
 		}

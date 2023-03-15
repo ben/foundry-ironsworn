@@ -3,6 +3,7 @@
 		<ImpactCategory
 			type="impact"
 			name="misfortunes"
+			class="flexcol"
 			:impacts="[
 				{ name: 'wounded' },
 				{ name: 'shaken' },
@@ -12,11 +13,13 @@
 		<ImpactCategory
 			type="impact"
 			name="lastingEffects"
+			class="flexcol"
 			:impacts="[{ name: 'permanentlyharmed' }, { name: 'traumatized' }]" />
 
 		<ImpactCategory
 			type="impact"
 			name="burdens"
+			class="flexcol"
 			:impacts="[
 				{ name: 'doomed' },
 				{ name: 'tormented' },
@@ -26,6 +29,7 @@
 		<ImpactCategory
 			type="impact"
 			name="vehicle"
+			class="flexcol"
 			:impacts="[
 				{ name: 'battered', globalHint: true },
 				{ name: 'cursed', globalHint: true }
@@ -51,5 +55,7 @@ import ImpactCategory from './impact-category.vue'
 .grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	gap: var(--ironsworn-spacer-md);
+	padding: 0 var(--ironsworn-spacer-md);
 }
 </style>

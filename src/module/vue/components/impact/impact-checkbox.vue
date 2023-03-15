@@ -8,7 +8,7 @@
 		:icon-checked="{ icon: 'fa:dot-circle', props: { family: 'fa-regular' } }"
 		:aria-labelledby="`label_${baseId}`"
 		@change="input($event)">
-		<slot name="default" :id="`label_${baseId}`">
+		<slot :id="`label_${baseId}`" name="default">
 			<span :id="`label_${baseId}`">
 				{{ $t(`IRONSWORN.${type.toUpperCase()}.${$capitalize(name)}`) }}
 			</span>

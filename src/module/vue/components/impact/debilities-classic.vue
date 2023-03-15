@@ -14,10 +14,12 @@
 		<ImpactCategory
 			type="debility"
 			name="banes"
+			class="flexcol"
 			:impacts="[{ name: 'maimed' }, { name: 'corrupted' }]" />
 		<ImpactCategory
 			type="debility"
 			name="burdens"
+			class="flexcol"
 			:impacts="[{ name: 'cursed' }, { name: 'tormented' }]" />
 
 		<ImpactCheckboxCustom

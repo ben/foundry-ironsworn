@@ -121,6 +121,7 @@ defineExpose({
 }
 
 .wrapper {
+	@include clickable.text;
 	&:active {
 		:local(.icon) {
 			color: var(--ironsworn-color-warm);
@@ -136,23 +137,6 @@ defineExpose({
 	}
 	&:not([aria-readonly='true']) {
 		cursor: pointer;
-
-		&:hover {
-			:local(.checkbox) {
-				&:not(:hover) {
-					@include clickable.textHover;
-				}
-			}
-
-			&[aria-checked='false'] {
-				:local(.icon) {
-					&[data-icon-state='checked'] {
-						// hover while unchecked: preview checked state
-						opacity: 0.5;
-					}
-				}
-			}
-		}
 	}
 	&[aria-readonly='true'] {
 		// prevent hovereffects when set to readonly
@@ -162,5 +146,9 @@ defineExpose({
 			pointer-events: none;
 		}
 	}
+}
+.checkbox {
+	// disable pointer events on the icon itself so that it doesn't double up on certain hover FX
+	pointer-events: none;
 }
 </style>

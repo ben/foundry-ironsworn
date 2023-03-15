@@ -1,5 +1,5 @@
 <template>
-	<ImpactCheckbox :name="debilitykey" :type="type">
+	<ImpactCheckbox :name="debilitykey" :type="type" :class="$style.wrapper">
 		<template #default="{ id }">
 			<input
 				:id="id"
@@ -39,9 +39,15 @@ const nameUpdate = throttle(immediateNameUpdate, 1000)
 </script>
 
 <style lang="scss" module>
+.wrapper {
+}
 .input {
 	outline: 0;
 	border: 0;
 	border-bottom: var(--ironsworn-border-width-md) solid;
+	&:hover {
+		// hides box shadow to avoid doubling up on the glow FX from the checkbox component
+		box-shadow: none !important;
+	}
 }
 </style>

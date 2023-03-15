@@ -39,10 +39,13 @@ const baseId = computed(() => `impacts_${props.name}_${actor.value._id}`)
 
 <style lang="scss" module>
 .wrapper {
+	gap: var(--ironsworn-spacer-sm);
 }
 
 .title {
 	flex-grow: 0;
-	margin: var(--ironsworn-spacer-sm) 0;
+	margin: 0;
+	text-transform: uppercase;
+	font-weight: bold;
 }
 </style>
